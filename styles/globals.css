@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Mulish:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #07090A;
+  --bg1: #0C1014;
+  --bg2: #101820;
+  --bg3: #182030;
+  --green: #00D47A;
+  --green2: #00B566;
+  --gfaint: rgba(0, 212, 122, 0.07);
+  --gglow: rgba(0, 212, 122, 0.15);
+  --red: #EF5350;
+  --amber: #F9A825;
+  --blue: #42A5F5;
+  --purple: #9945FF;
+  --white: #EEF2F0;
+  --muted: rgba(238, 242, 240, 0.45);
+  --muted2: rgba(238, 242, 240, 0.22);
+  --muted3: rgba(238, 242, 240, 0.1);
+  --border: rgba(238, 242, 240, 0.07);
+  --border2: rgba(238, 242, 240, 0.13);
+  --gold: #FFD700;
+  --silver: #B0BEC5;
+  --bronze: #CD7F32;
+  --serif: 'Syne', sans-serif;
+  --sans: 'Mulish', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--white);
+}
+
+@layer utilities {
+  .font-serif { font-family: var(--serif); }
+  .font-sans { font-family: var(--sans); }
+  .text-muted { color: var(--muted); }
+  .text-green { color: var(--green); }
+  .text-red { color: var(--red); }
+  .text-amber { color: var(--amber); }
+  .text-blue { color: var(--blue); }
+  .text-purple { color: var(--purple); }
+  .text-gold { color: var(--gold); }
+  .bg-main { background: var(--bg); }
+  .bg-card { background: var(--bg1); }
+  .bg-input { background: var(--bg2); }
+  .bg-hover { background: var(--bg3); }
+  .border-subtle { border-color: var(--border2); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes pop {
+  0% { transform: scale(0.85); opacity: 0; }
+  70% { transform: scale(1.04); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes flame {
+  0%, 100% { transform: scaleY(1) rotate(-2deg); }
+  50% { transform: scaleY(1.12) rotate(2deg); }
+}
+
+@keyframes xpFly {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-50px) scale(1.3); }
+}
+
+.animate-fade-up { animation: fadeUp 0.6s ease both; }
+.animate-pop { animation: pop 0.3s ease; }
+.animate-blink { animation: blink 1.5s infinite; }
+.animate-flame { animation: flame 2s ease-in-out infinite; }
