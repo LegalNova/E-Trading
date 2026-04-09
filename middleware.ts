@@ -20,7 +20,7 @@ export default withAuth(
         const { pathname } = req.nextUrl
         // Las rutas públicas siempre pasan
         const publicPaths = ['/login', '/register', '/forgot-password', '/reset-password',
-                             '/privacidad', '/terminos', '/cookies', '/aviso-legal', '/brokers']
+                             '/privacidad', '/terminos', '/cookies', '/aviso-legal', '/brokers', '/demo']
         if (publicPaths.some(p => pathname.startsWith(p))) return true
         // El resto requiere sesión
         return !!token

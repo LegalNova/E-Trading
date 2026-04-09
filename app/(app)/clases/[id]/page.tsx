@@ -147,6 +147,26 @@ function getDefaultContent(clase: { titulo: string; descripcion: string; xp: num
 }
 
 type Step = 'lectura' | 'quiz' | 'done'
+type Tab = 'teoria' | 'practica' | 'quiz'
+
+const PRACTICA_EJERCICIOS: Record<string, { titulo: string; descripcion: string }[]> = {
+  c1: [
+    { titulo: 'Calcula tu pérdida por inflación', descripcion: 'Si tienes 10.000€ en una cuenta al 0% y la inflación es del 3%, calcula cuánto poder adquisitivo pierdes en 5 años. Fórmula: Valor real = Capital / (1 + inflación)^años' },
+    { titulo: 'Busca la inflación actual en España', descripcion: 'Visita el INE (ine.es) y busca el IPC actual. Compara con el interés de una cuenta de ahorro estándar y calcula tu rentabilidad real.' },
+  ],
+  c2: [
+    { titulo: 'Calcula tu fondo de emergencia ideal', descripcion: 'Suma tus gastos mensuales fijos (alquiler, comida, transporte, servicios). Multiplica por 3 y por 6. Ese es el rango de tu fondo de emergencia.' },
+    { titulo: 'Simula €10.000 en distintos vehículos', descripcion: 'Compara qué pasa con €10.000 en: (1) cuenta corriente 0%, (2) depósito 2%, (3) ETF S&P 500 histórico 10%. Usa la fórmula: Capital × (1+r)^n durante 20 años.' },
+  ],
+  c3: [
+    { titulo: 'Aplica la regla del 72', descripcion: 'Calcula cuántos años tardarás en duplicar tu dinero si inviertes al 6%, 8% y 12% anual. Fórmula: 72 / rentabilidad = años para doblar.' },
+    { titulo: 'Compara dos inversores', descripcion: 'Ana invierte €5.000 a los 25 años al 8%. Carlos invierte €5.000 a los 45 años al 8%. Calcula cuánto tienen cada uno a los 65 años. Fórmula: C × (1.08)^años.' },
+  ],
+  c4: [
+    { titulo: 'Calcula el tamaño de posición correcto', descripcion: 'Tienes €10.000. Regla del 1%. Compras AAPL a €150. Stop loss en €145. ¿Cuántas acciones puedes comprar? Fórmula: (Capital × 1%) / (Precio entrada - Stop) = unidades.' },
+    { titulo: 'Diseña un trade con ratio 1:2', descripcion: 'Escoge un activo del simulador. Define entrada, stop loss y take profit de forma que el ratio beneficio/riesgo sea al menos 1:2.' },
+  ],
+}
 
 export default function ClasePage() {
   const params = useParams()
@@ -155,6 +175,7 @@ export default function ClasePage() {
   const clase = CLASES.find(c => c.id === claseId)
 
   const [step, setStep] = useState<Step>('lectura')
+  const [activeTab, setActiveTab] = useState<Tab>('teoria')
   const [currentQ, setCurrentQ] = useState(0)
   const [answers, setAnswers] = useState<number[]>([])
   const [selected, setSelected] = useState<number | null>(null)
@@ -231,7 +252,24 @@ export default function ClasePage() {
 
   const PLAN_BADGE: Record<string, string> = { free: '🟢 Free', starter: '🔵 Starter', pro: '🟣 Pro', elite: '🟡 Elite' }
 
+  // Extract YouTube video ID from URL
+  function getYoutubeId(url: string): string | null {
+    const match = url.match(/(?:v=|youtu\.be\/)([A-Za-z0-9_-]{11})/)
+    return match ? match[1] : null
+  }
+
+  const ejercicios = PRACTICA_EJERCICIOS[clase.id] ?? [
+    { titulo: 'Aplica en el simulador', descripcion: 'Abre el mercado en E-Trading y busca un activo relacionado con el tema de esta clase. Observa su gráfico y anota 3 observaciones basadas en lo que has aprendido.' },
+    { titulo: 'Reflexión guiada', descripcion: '¿Cómo cambiaría tu comportamiento financiero real si aplicaras este concepto? Escribe al menos 3 acciones concretas que podrías tomar hoy.' },
+  ]
+
   if (step === 'lectura') {
+    const TABS: { key: Tab; label: string }[] = [
+      { key: 'teoria', label: 'Teoría' },
+      { key: 'practica', label: 'Práctica' },
+      { key: 'quiz', label: 'Quiz' },
+    ]
+
     return (
       <div style={{ maxWidth: 780, margin: '0 auto', padding: '24px 24px', overflowY: 'auto', position: 'relative' }}>
         {/* XP toast */}
@@ -250,53 +288,130 @@ export default function ClasePage() {
         <Link href="/clases" style={{ fontSize: 12, color: 'var(--muted)', textDecoration: 'none', display: 'inline-flex', gap: 4, marginBottom: 20 }}>← Volver a Clases</Link>
 
         {/* Header */}
-        <div style={{ marginBottom: 28 }}>
-          <div style={{ display: 'flex', gap: 8, marginBottom: 10 }}>
+        <div style={{ marginBottom: 20 }}>
+          <div style={{ display: 'flex', gap: 8, marginBottom: 10, flexWrap: 'wrap' }}>
             <span style={{ fontSize: 10, fontWeight: 600, padding: '3px 9px', borderRadius: 100, background: 'var(--gfaint)', color: 'var(--green)', border: '.5px solid rgba(0,212,122,.2)' }}>{PLAN_BADGE[clase.plan]}</span>
             <span style={{ fontSize: 10, fontWeight: 600, padding: '3px 9px', borderRadius: 100, background: 'var(--muted3)', color: 'var(--muted)', border: '.5px solid var(--border2)' }}>{clase.categoria.replace('-', ' ')}</span>
             <span style={{ fontSize: 10, fontWeight: 600, padding: '3px 9px', borderRadius: 100, background: 'var(--muted3)', color: 'var(--muted)', border: '.5px solid var(--border2)' }}>{clase.duracion} min</span>
+            {alreadyCompleted && <span style={{ fontSize: 10, fontWeight: 700, padding: '3px 9px', borderRadius: 100, background: 'rgba(0,212,122,.1)', color: 'var(--green)', border: '.5px solid rgba(0,212,122,.3)' }}>✅ Completada</span>}
           </div>
-          <div style={{ fontFamily: 'var(--serif)', fontSize: 28, fontWeight: 800, marginBottom: 12, lineHeight: 1.2 }}>{clase.titulo}</div>
+          <div style={{ fontFamily: 'var(--serif)', fontSize: 28, fontWeight: 800, marginBottom: 10, lineHeight: 1.2 }}>{clase.titulo}</div>
           <div style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.7 }}>{content.intro}</div>
         </div>
 
-        {/* Content sections */}
-        {content.secciones.map((sec, i) => (
-          <div key={i} style={{ marginBottom: 28 }}>
-            <div style={{ fontFamily: 'var(--serif)', fontSize: 18, fontWeight: 700, marginBottom: 12, color: 'var(--white)' }}>{sec.titulo}</div>
-            <div style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.8, whiteSpace: 'pre-line' }}>{sec.contenido}</div>
-          </div>
-        ))}
-
-        {/* Key concepts */}
-        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 14, padding: 20, marginBottom: 28 }}>
-          <div style={{ fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 700, marginBottom: 12 }}>💡 Conceptos clave</div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-            {content.conceptosClave.map(c => (
-              <span key={c} style={{ fontSize: 12, fontWeight: 600, padding: '4px 12px', borderRadius: 100, background: 'var(--gfaint)', color: 'var(--green)', border: '.5px solid rgba(0,212,122,.2)' }}>{c}</span>
-            ))}
-          </div>
-        </div>
-
-        {/* Start quiz / already completed */}
-        <div style={{ background: alreadyCompleted ? 'rgba(0,212,122,.06)' : 'var(--bg1)', border: `.5px solid ${alreadyCompleted ? 'rgba(0,212,122,.4)' : 'rgba(0,212,122,.2)'}`, borderRadius: 14, padding: 20 }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <div>
-              <div style={{ fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 700, marginBottom: 4 }}>
-                {alreadyCompleted ? '✅ Clase completada' : '🎓 Quiz final'}
-              </div>
-              {alreadyCompleted
-                ? <div style={{ fontSize: 13, color: 'var(--green)' }}>Has ganado +{clase.xp} XP · Bien hecho</div>
-                : <div style={{ fontSize: 13, color: 'var(--muted)' }}>5 preguntas · Necesitas 3/5 para aprobar · Ganas +{clase.xp} XP</div>
-              }
+        {/* YouTube embed if available */}
+        {clase.videoUrl && (() => {
+          const vid = getYoutubeId(clase.videoUrl!)
+          return vid ? (
+            <div style={{ marginBottom: 28, borderRadius: 14, overflow: 'hidden', border: '.5px solid var(--border2)', aspectRatio: '16/9', position: 'relative' }}>
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${vid}?rel=0&modestbranding=1`}
+                style={{ width: '100%', height: '100%', border: 'none', display: 'block' }}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title={clase.titulo}
+              />
             </div>
-            {!alreadyCompleted && (
-              <button onClick={() => setStep('quiz')} style={{ padding: '12px 24px', background: 'var(--green)', color: 'var(--bg)', border: 'none', borderRadius: 10, fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
-                Hacer quiz →
-              </button>
-            )}
-          </div>
+          ) : null
+        })()}
+
+        {/* Tabs */}
+        <div style={{ display: 'flex', gap: 0, marginBottom: 24, borderBottom: '.5px solid var(--border)' }}>
+          {TABS.map(t => (
+            <button key={t.key} onClick={() => setActiveTab(t.key)} style={{
+              padding: '10px 20px', background: 'none', border: 'none',
+              borderBottom: activeTab === t.key ? '2px solid var(--green)' : '2px solid transparent',
+              color: activeTab === t.key ? 'var(--white)' : 'var(--muted)',
+              fontFamily: 'var(--sans)', fontSize: 13, fontWeight: activeTab === t.key ? 700 : 500,
+              cursor: 'pointer', transition: 'all .15s', marginBottom: -1,
+            }}>
+              {t.label}
+            </button>
+          ))}
         </div>
+
+        {/* Tab: Teoría */}
+        {activeTab === 'teoria' && (
+          <>
+            {content.secciones.map((sec, i) => (
+              <div key={i} style={{ marginBottom: 28 }}>
+                <div style={{ fontFamily: 'var(--serif)', fontSize: 18, fontWeight: 700, marginBottom: 12, color: 'var(--white)', display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <span style={{ width: 28, height: 28, borderRadius: 8, background: 'rgba(0,212,122,.1)', border: '.5px solid rgba(0,212,122,.2)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--serif)', fontSize: 12, fontWeight: 800, color: 'var(--green)', flexShrink: 0 }}>{i + 1}</span>
+                  {sec.titulo}
+                </div>
+                <div style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.85, whiteSpace: 'pre-line', paddingLeft: 38 }}>{sec.contenido}</div>
+              </div>
+            ))}
+            {/* Key concepts */}
+            <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 14, padding: 20, marginBottom: 20 }}>
+              <div style={{ fontFamily: 'var(--serif)', fontSize: 15, fontWeight: 700, marginBottom: 12 }}>Conceptos clave</div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                {content.conceptosClave.map(c => (
+                  <span key={c} style={{ fontSize: 12, fontWeight: 600, padding: '4px 12px', borderRadius: 100, background: 'var(--gfaint)', color: 'var(--green)', border: '.5px solid rgba(0,212,122,.2)' }}>{c}</span>
+                ))}
+              </div>
+            </div>
+          </>
+        )}
+
+        {/* Tab: Práctica */}
+        {activeTab === 'practica' && (
+          <div>
+            <div style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 20, lineHeight: 1.6 }}>
+              Los conocimientos teóricos solo tienen valor cuando se aplican. Completa estos ejercicios en el simulador de E-Trading.
+            </div>
+            {ejercicios.map((ej, i) => (
+              <div key={i} style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 14, padding: 20, marginBottom: 14 }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+                  <div style={{ width: 32, height: 32, borderRadius: 9, background: 'rgba(0,212,122,.1)', border: '.5px solid rgba(0,212,122,.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--serif)', fontWeight: 800, fontSize: 14, color: 'var(--green)', flexShrink: 0 }}>
+                    {i + 1}
+                  </div>
+                  <div>
+                    <div style={{ fontFamily: 'var(--serif)', fontSize: 15, fontWeight: 700, marginBottom: 8 }}>{ej.titulo}</div>
+                    <div style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.7 }}>{ej.descripcion}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+            <div style={{ background: 'rgba(66,165,245,.06)', border: '.5px solid rgba(66,165,245,.2)', borderRadius: 12, padding: 16, marginTop: 8 }}>
+              <div style={{ fontSize: 13, color: 'var(--blue)', lineHeight: 1.6 }}>
+                Cuando hayas completado los ejercicios, ve a la pestaña <strong>Quiz</strong> para demostrar lo aprendido y ganar +{clase.xp} XP.
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Tab: Quiz */}
+        {activeTab === 'quiz' && (
+          <div>
+            <div style={{ background: alreadyCompleted ? 'rgba(0,212,122,.06)' : 'var(--bg1)', border: `.5px solid ${alreadyCompleted ? 'rgba(0,212,122,.4)' : 'rgba(0,212,122,.2)'}`, borderRadius: 14, padding: 24 }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ fontFamily: 'var(--serif)', fontSize: 18, fontWeight: 700, marginBottom: 6 }}>
+                    {alreadyCompleted ? '✅ Clase completada' : 'Quiz final'}
+                  </div>
+                  {alreadyCompleted
+                    ? <div style={{ fontSize: 13, color: 'var(--green)' }}>Has ganado +{clase.xp} XP. Bien hecho.</div>
+                    : (
+                      <ul style={{ fontSize: 13, color: 'var(--muted)', paddingLeft: 18, lineHeight: 1.8, margin: 0 }}>
+                        <li>5 preguntas de opción múltiple</li>
+                        <li>Necesitas 3/5 correctas para pasar</li>
+                        <li>Puedes repetir si no superas el umbral</li>
+                        <li>Ganas <strong style={{ color: 'var(--green)' }}>+{clase.xp} XP</strong> al completar</li>
+                      </ul>
+                    )
+                  }
+                </div>
+                {!alreadyCompleted && (
+                  <button onClick={() => setStep('quiz')} style={{ padding: '12px 24px', background: 'var(--green)', color: 'var(--bg)', border: 'none', borderRadius: 10, fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700, cursor: 'pointer', flexShrink: 0 }}>
+                    Empezar quiz →
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+
         <style>{`@keyframes fadeInUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}`}</style>
       </div>
     )
