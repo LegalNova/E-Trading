@@ -44,7 +44,6 @@ export async function POST(req: NextRequest) {
         trial_ends_at: trialEndsAt,
         xp: 0,
         racha: 0,
-        provider: 'credentials',
       })
       .select('id')
       .single()

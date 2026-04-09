@@ -104,9 +104,6 @@ export async function createUser(payload: {
       password_hash: payload.password_hash ?? null,
       plan: 'pro_trial',
       trial_ends_at: trialEndsAt,
-      provider: payload.provider ?? 'credentials',
-      provider_id: payload.provider_id ?? null,
-      avatar_url: payload.avatar_url ?? null,
     })
     .select()
     .single()

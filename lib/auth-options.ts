@@ -36,7 +36,6 @@ export const authOptions: NextAuthOptions = {
           xp:            user.xp,
           racha:         user.racha,
           trial_ends_at: user.trial_ends_at,
-          role:          user.role,
         } as Record<string, unknown> & { id: string; email: string; name: string }
       },
     }),
@@ -73,7 +72,6 @@ export const authOptions: NextAuthOptions = {
         u.xp            = dbUser.xp
         u.racha         = dbUser.racha
         u.trial_ends_at = dbUser.trial_ends_at
-        u.role          = dbUser.role
         await touchLastActive(dbUser.id)
       }
       return true
@@ -87,7 +85,6 @@ export const authOptions: NextAuthOptions = {
         token.xp           = (u.xp           as number)  ?? 0
         token.racha        = (u.racha         as number)  ?? 0
         token.trial_ends_at = (u.trial_ends_at as string | null) ?? null
-        token.role         = (u.role          as string)  ?? 'user'
       }
       if (trigger === 'update' && session) {
         Object.assign(token, session)
@@ -102,7 +99,6 @@ export const authOptions: NextAuthOptions = {
       u.xp           = token.xp
       u.racha        = token.racha
       u.trial_ends_at = token.trial_ends_at
-      u.role         = token.role
       return session
     },
   },
