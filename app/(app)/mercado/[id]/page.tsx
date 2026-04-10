@@ -76,6 +76,7 @@ export default function AssetPage() {
   const [limitPrice, setLimitPrice] = useState('')
   const [chartData, setChartData] = useState<number[]>([])
   const [notification, setNotification] = useState('')
+  const [showTradeModal, setShowTradeModal] = useState(false)
 
   const TABS: Tab[] = ['1D', '1S', '1M', '3M', '1A']
   const TAB_CONFIG: Record<Tab, { points: number; vol: number }> = {
@@ -106,10 +107,13 @@ export default function AssetPage() {
   const chartColor = up ? '#00D47A' : '#EF5350'
   const currentPrice = pd?.price ?? asset.basePrice
   const units = amount ? parseFloat(amount) / currentPrice : 0
-
-  // 52-week simulated range
   const low52 = asset.basePrice * 0.68
   const high52 = asset.basePrice * 1.42
+
+  function openModal(type: OpType) {
+    setOpType(type)
+    setShowTradeModal(true)
+  }
 
   function handleOperate(e: React.FormEvent) {
     e.preventDefault()
@@ -117,265 +121,452 @@ export default function AssetPage() {
     if (!total || total <= 0) return
     const orderLabel = orderType === 'market' ? 'mercado' : orderType === 'limit' ? 'límite' : 'stop-loss'
     const priceLabel = orderType === 'market' ? formatPrice(currentPrice, asset.symbol) : `${limitPrice} ${asset.currency}`
-    setNotification(`✅ Orden ${orderLabel} ${opType === 'buy' ? 'compra' : 'venta'} enviada: ${units.toFixed(4)} ${asset.symbol} · ${priceLabel}`)
+    setNotification(`Orden ${orderLabel} ${opType === 'buy' ? 'compra' : 'venta'} enviada: ${units.toFixed(4)} ${asset.symbol} · ${priceLabel}`)
     setAmount('')
     setLimitPrice('')
+    setShowTradeModal(false)
     setTimeout(() => setNotification(''), 5000)
   }
 
   return (
-    <div style={{ display: 'flex', height: '100%', overflow: 'hidden' }}>
-      {/* Main content */}
-      <div style={{ flex: 1, overflowY: 'auto', padding: '20px 24px' }}>
-        {/* Breadcrumb */}
-        <div style={{ fontSize: 11, color: 'var(--muted)', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 6 }}>
-          <Link href="/mercado" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Mercado</Link>
-          <span>›</span>
-          <span style={{ color: 'var(--white)' }}>{asset.symbol}</span>
+    <>
+      <style>{`
+        @keyframes slideUp {
+          from { transform: translateY(100%); }
+          to { transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+      `}</style>
+
+      <div style={{ display: 'flex', flexDirection: 'column', height: '100%', position: 'relative' }}>
+
+        {/* A. Sticky top header */}
+        <div style={{
+          position: 'sticky', top: 0, zIndex: 20,
+          background: 'rgba(7,9,10,0.92)',
+          backdropFilter: 'blur(12px)',
+          borderBottom: '.5px solid var(--border)',
+          padding: '12px 20px',
+          display: 'flex', alignItems: 'center', gap: 14,
+        }}>
+          <Link href="/mercado" style={{
+            color: 'var(--muted)', textDecoration: 'none', fontSize: 20, lineHeight: 1,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            width: 32, height: 32, borderRadius: 8, background: 'var(--bg2)',
+            flexShrink: 0,
+          }}>←</Link>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 800, color: 'var(--white)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+              {asset.name}
+            </div>
+            <div style={{ fontSize: 11, color: 'var(--muted)' }}>{asset.symbol}</div>
+          </div>
+          <div style={{
+            fontFamily: 'var(--serif)', fontSize: 18, fontWeight: 800, flexShrink: 0,
+            color: pd?.direction === 'up' ? 'var(--green)' : pd?.direction === 'down' ? 'var(--red)' : 'var(--white)',
+            transition: 'color .3s',
+          }}>
+            {formatPrice(currentPrice, asset.symbol)}
+          </div>
         </div>
 
-        {/* Asset header */}
-        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 24 }}>
-          <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
-            <div style={{ width: 52, height: 52, borderRadius: 14, background: 'var(--bg2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 14, color: 'var(--green)' }}>
-              {asset.flag ?? asset.symbol.slice(0, 3)}
+        {/* Main scrollable area */}
+        <div style={{ flex: 1, overflowY: 'auto', paddingBottom: 96 }}>
+
+          {/* Notification */}
+          {notification && (
+            <div style={{ margin: '12px 16px 0', background: 'var(--gfaint)', border: '.5px solid rgba(0,212,122,.3)', borderRadius: 12, padding: '10px 16px', fontSize: 13, color: 'var(--green)', lineHeight: 1.5 }}>
+              ✅ {notification}
             </div>
-            <div>
-              <div style={{ fontFamily: 'var(--serif)', fontSize: 24, fontWeight: 800 }}>{asset.name}</div>
-              <div style={{ fontSize: 12, color: 'var(--muted)', display: 'flex', gap: 8, marginTop: 2 }}>
-                <span>{asset.symbol}</span>
-                <span>·</span>
-                <span>{CATEGORY_LABELS[asset.category]}</span>
-                <span>·</span>
-                <span>{asset.currency}</span>
+          )}
+
+          {/* B. Hero section */}
+          <div style={{ padding: '24px 20px 20px' }}>
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}>
+              <div style={{
+                width: 56, height: 56, borderRadius: 16, background: 'var(--bg2)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                fontWeight: 800, fontSize: 16, color: 'var(--green)', flexShrink: 0,
+              }}>
+                {asset.flag ?? asset.symbol.slice(0, 3)}
+              </div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontFamily: 'var(--serif)', fontSize: 24, fontWeight: 800, color: 'var(--white)', marginBottom: 2 }}>
+                  {asset.name}
+                </div>
+                <div style={{ fontSize: 12, color: 'var(--muted)', display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+                  <span>{asset.symbol}</span>
+                  <span>·</span>
+                  <span>{CATEGORY_LABELS[asset.category]}</span>
+                  <span>·</span>
+                  <span>{asset.currency}</span>
+                  {asset.sector && <><span>·</span><span>{asset.sector}</span></>}
+                </div>
+              </div>
+            </div>
+
+            <div style={{ marginTop: 20 }}>
+              <div style={{
+                fontFamily: 'var(--serif)', fontSize: 40, fontWeight: 800, lineHeight: 1,
+                color: pd?.direction === 'up' ? 'var(--green)' : pd?.direction === 'down' ? 'var(--red)' : 'var(--white)',
+                transition: 'color .3s', marginBottom: 8,
+              }}>
+                {formatPrice(currentPrice, asset.symbol)}
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                <span style={{
+                  fontSize: 14, fontWeight: 700, padding: '4px 10px', borderRadius: 8,
+                  color: up ? 'var(--green)' : 'var(--red)',
+                  background: up ? 'rgba(0,212,122,.1)' : 'rgba(239,83,80,.1)',
+                }}>
+                  {up ? '+' : ''}{pd?.changePct.toFixed(2) ?? '0.00'}%
+                </span>
+                <span style={{ fontSize: 13, color: 'var(--muted)' }}>
+                  {up ? '+' : ''}{formatPrice(Math.abs(pd?.change ?? 0), asset.symbol)} hoy
+                </span>
+              </div>
+              {asset.description && (
+                <p style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.7, marginTop: 14, marginBottom: 0 }}>
+                  {asset.description}
+                </p>
+              )}
+            </div>
+          </div>
+
+          {/* C. Chart section */}
+          <div style={{ margin: '0 16px 16px', background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 16, padding: 18 }}>
+            {/* Time tabs */}
+            <div style={{ display: 'flex', gap: 4, marginBottom: 16 }}>
+              {TABS.map(t => (
+                <button key={t} onClick={() => setTab(t)} style={{
+                  flex: 1, padding: '7px 4px', borderRadius: 9, border: 'none',
+                  background: tab === t ? (up ? 'var(--green)' : 'var(--red)') : 'var(--bg2)',
+                  color: tab === t ? 'var(--bg)' : 'var(--muted)',
+                  fontSize: 12, fontWeight: 700, cursor: 'pointer',
+                }}>{t}</button>
+              ))}
+            </div>
+            <MiniChart data={chartData} color={chartColor} />
+            {/* Chart stats row */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 8, marginTop: 14 }}>
+              {[
+                { lbl: 'Apertura', val: formatPrice(asset.basePrice, asset.symbol) },
+                { lbl: 'Máx. día', val: formatPrice(pd?.high ?? asset.basePrice * 1.008, asset.symbol) },
+                { lbl: 'Mín. día', val: formatPrice(pd?.low ?? asset.basePrice * 0.992, asset.symbol) },
+              ].map(s => (
+                <div key={s.lbl} style={{ textAlign: 'center' }}>
+                  <div style={{ fontSize: 10, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '.06em', fontWeight: 600, marginBottom: 3 }}>{s.lbl}</div>
+                  <div style={{ fontFamily: 'var(--serif)', fontSize: 13, fontWeight: 700, color: 'var(--white)' }}>{s.val}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* D. Key stats grid */}
+          <div style={{ margin: '0 16px 16px' }}>
+            <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 10 }}>Estadísticas clave</div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 10 }}>
+              {[
+                { lbl: 'Cap. mercado', val: asset.marketCap ? asset.marketCap : '—' },
+                { lbl: 'PER', val: asset.pe != null ? `${asset.pe}x` : '—' },
+                { lbl: 'Dividendo', val: asset.dividendYield != null ? `${asset.dividendYield}%` : '—' },
+                { lbl: 'Volumen', val: pd?.volume ? (pd.volume > 1000000 ? `${(pd.volume / 1000000).toFixed(1)}M` : `${(pd.volume / 1000).toFixed(0)}K`) : '—' },
+                { lbl: 'Máx. 52 sem.', val: formatPrice(high52, asset.symbol) },
+                { lbl: 'Mín. 52 sem.', val: formatPrice(low52, asset.symbol) },
+              ].map(s => (
+                <div key={s.lbl} style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 12, padding: '12px 14px' }}>
+                  <div style={{ fontSize: 10, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '.06em', fontWeight: 600, marginBottom: 4 }}>{s.lbl}</div>
+                  <div style={{ fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 700, color: 'var(--white)' }}>{s.val}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 52-week range */}
+          <div style={{ margin: '0 16px 16px', background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 12, padding: '14px 18px' }}>
+            <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 12 }}>Rango 52 semanas</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+              <div style={{ textAlign: 'right', minWidth: 70 }}>
+                <div style={{ fontSize: 10, color: 'var(--muted)' }}>Mínimo</div>
+                <div style={{ fontFamily: 'var(--serif)', fontSize: 13, fontWeight: 700, color: 'var(--red)' }}>{formatPrice(low52, asset.symbol)}</div>
+              </div>
+              <div style={{ flex: 1 }}>
+                <WeekRangeBar low={low52} high={high52} current={currentPrice} />
+              </div>
+              <div style={{ minWidth: 70 }}>
+                <div style={{ fontSize: 10, color: 'var(--muted)' }}>Máximo</div>
+                <div style={{ fontFamily: 'var(--serif)', fontSize: 13, fontWeight: 700, color: 'var(--green)' }}>{formatPrice(high52, asset.symbol)}</div>
               </div>
             </div>
           </div>
-          <div style={{ textAlign: 'right' }}>
-            <div style={{ fontFamily: 'var(--serif)', fontSize: 32, fontWeight: 800, color: pd?.direction === 'up' ? 'var(--green)' : pd?.direction === 'down' ? 'var(--red)' : 'var(--white)' }}>
-              {formatPrice(currentPrice, asset.symbol)}
-            </div>
-            <div style={{ fontSize: 14, fontWeight: 700, color: up ? 'var(--green)' : 'var(--red)', marginTop: 2 }}>
-              {up ? '+' : ''}{pd?.changePct.toFixed(2) ?? '0.00'}%
-              <span style={{ fontSize: 11, marginLeft: 6, fontWeight: 400 }}>hoy</span>
-            </div>
-          </div>
-        </div>
 
-        {/* Stats grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10, marginBottom: 16 }}>
-          {[
-            { lbl: 'Máx. día', val: formatPrice(pd?.high ?? asset.basePrice * 1.008, asset.symbol) },
-            { lbl: 'Mín. día', val: formatPrice(pd?.low ?? asset.basePrice * 0.992, asset.symbol) },
-            { lbl: 'Volumen', val: pd?.volume ? `${(pd.volume / 1000000).toFixed(1)}M` : '—' },
-            { lbl: 'Apertura', val: formatPrice(asset.basePrice, asset.symbol) },
-          ].map(s => (
-            <div key={s.lbl} style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 10, padding: '10px 14px' }}>
-              <div style={{ fontSize: 10, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '.06em', fontWeight: 600, marginBottom: 4 }}>{s.lbl}</div>
-              <div style={{ fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 700 }}>{s.val}</div>
+          {/* E. About section */}
+          {asset.description && (
+            <div style={{ margin: '0 16px 16px', background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 14, padding: 18 }}>
+              <div style={{ fontFamily: 'var(--serif)', fontSize: 15, fontWeight: 700, marginBottom: 10 }}>
+                Sobre {asset.name}
+              </div>
+              <p style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.7, margin: 0 }}>
+                {asset.description}
+              </p>
+              {asset.sector && (
+                <div style={{ marginTop: 12 }}>
+                  <span style={{ fontSize: 11, fontWeight: 700, padding: '4px 10px', borderRadius: 100, background: 'var(--bg2)', color: 'var(--muted)', border: '.5px solid var(--border2)' }}>
+                    {asset.sector}
+                  </span>
+                </div>
+              )}
             </div>
-          ))}
-        </div>
+          )}
 
-        {/* 52-week range */}
-        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 12, padding: '14px 18px', marginBottom: 16 }}>
-          <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 12 }}>Rango 52 semanas</div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-            <div style={{ textAlign: 'right', minWidth: 70 }}>
-              <div style={{ fontSize: 10, color: 'var(--muted)' }}>Mínimo</div>
-              <div style={{ fontFamily: 'var(--serif)', fontSize: 13, fontWeight: 700, color: 'var(--red)' }}>{formatPrice(low52, asset.symbol)}</div>
+          {/* F. Contexto educativo */}
+          <div style={{ margin: '0 16px 16px', background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 14, padding: 18 }}>
+            <div style={{ fontFamily: 'var(--serif)', fontSize: 15, fontWeight: 700, marginBottom: 10 }}>💡 Contexto educativo</div>
+            <div style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.7 }}>
+              {asset.name} muestra una variación de{' '}
+              <strong style={{ color: up ? 'var(--green)' : 'var(--red)' }}>
+                {up ? '+' : ''}{pd?.changePct.toFixed(2) ?? '0.00'}%
+              </strong>{' '}hoy.
+              {asset.category === 'cripto' && ' Las criptomonedas tienen alta volatilidad — la gestión del riesgo es crítica. Nunca inviertas más de lo que puedas perder.'}
+              {asset.category === 'acciones-us' && ' Recuerda analizar los fundamentales antes de operar. Busca el PER y el crecimiento de beneficios.'}
+              {asset.category === 'acciones-eu' && ' Las acciones europeas pueden estar influenciadas por decisiones del BCE y el tipo de cambio EUR/USD.'}
+              {asset.category === 'forex' && ' El mercado forex opera 24/5 y reacciona a eventos macroeconómicos y decisiones de bancos centrales.'}
+              {asset.category === 'etfs' && ' Los ETFs ofrecen diversificación instantánea. Revisa el TER (coste anual) antes de invertir.'}
+              {asset.category === 'materias' && ' Las materias primas son sensibles a eventos geopolíticos y oferta/demanda global.'}
+              {asset.category === 'indices' && ' Los índices reflejan la salud del mercado en su conjunto. Invertir en índices es la base del value investing.'}
+              {' '}Practica en el simulador antes de arriesgar capital real.
             </div>
-            <div style={{ flex: 1 }}>
-              <WeekRangeBar low={low52} high={high52} current={currentPrice} />
-            </div>
-            <div style={{ minWidth: 70 }}>
-              <div style={{ fontSize: 10, color: 'var(--muted)' }}>Máximo</div>
-              <div style={{ fontFamily: 'var(--serif)', fontSize: 13, fontWeight: 700, color: 'var(--green)' }}>{formatPrice(high52, asset.symbol)}</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Chart */}
-        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 14, padding: 18, marginBottom: 16 }}>
-          <div style={{ display: 'flex', gap: 6, marginBottom: 16 }}>
-            {TABS.map(t => (
-              <button key={t} onClick={() => setTab(t)} style={{
-                padding: '5px 12px', borderRadius: 8, border: 'none',
-                background: tab === t ? (up ? 'var(--green)' : 'var(--red)') : 'var(--bg2)',
-                color: tab === t ? 'var(--bg)' : 'var(--muted)',
-                fontSize: 12, fontWeight: 700, cursor: 'pointer',
-              }}>{t}</button>
-            ))}
-          </div>
-          <MiniChart data={chartData} color={chartColor} />
-        </div>
-
-        {/* AI Analysis */}
-        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 14, padding: 18, marginBottom: 16 }}>
-          <div style={{ fontFamily: 'var(--serif)', fontSize: 15, fontWeight: 700, marginBottom: 12 }}>🤖 Análisis E-AI</div>
-          <div style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.7 }}>
-            {asset.name} muestra una variación de <strong style={{ color: up ? 'var(--green)' : 'var(--red)' }}>{up ? '+' : ''}{pd?.changePct.toFixed(2) ?? '0.00'}%</strong> hoy.
-            {asset.category === 'cripto' && ' Las criptomonedas tienen alta volatilidad — la gestión del riesgo es crítica. Nunca inviertas más de lo que puedas perder.'}
-            {asset.category === 'acciones-us' && ' Recuerda analizar los fundamentales antes de operar. Busca el PER y el crecimiento de beneficios.'}
-            {asset.category === 'forex' && ' El mercado forex opera 24/5 y reacciona a eventos macroeconómicos y decisiones de bancos centrales.'}
-            {asset.category === 'etfs' && ' Los ETFs ofrecen diversificación instantánea. Revisa el TER (coste anual) antes de invertir.'}
-            {asset.category === 'materias' && ' Las materias primas son sensibles a eventos geopolíticos y oferta/demanda global.'}
-            {' '}Practica en el simulador antes de arriesgar capital real.
-          </div>
-          <Link href="/ia" style={{ display: 'inline-block', marginTop: 10, fontSize: 12, color: 'var(--green)', textDecoration: 'none', fontWeight: 600 }}>
-            Analizar {asset.symbol} con E-AI →
-          </Link>
-        </div>
-
-        {/* Broker affiliate card */}
-        <div style={{ background: 'linear-gradient(135deg,rgba(0,212,122,.06),rgba(66,165,245,.06))', border: '.5px solid rgba(0,212,122,.2)', borderRadius: 14, padding: 18 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 12 }}>
-            <div style={{ fontSize: 28 }}>🏦</div>
-            <div>
-              <div style={{ fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700 }}>¿Listo para invertir con dinero real?</div>
-              <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>Estos son los brokers regulados que recomendamos para invertir en {asset.name}</div>
-            </div>
-          </div>
-          <div style={{ display: 'flex', gap: 8 }}>
-            {[
-              { name: 'DEGIRO', note: 'Comisiones desde 0€', href: process.env.NEXT_PUBLIC_AFFILIATE_DEGIRO ?? '/brokers' },
-              { name: 'Trading212', note: 'Sin comisiones en ETFs', href: process.env.NEXT_PUBLIC_AFFILIATE_TRADING212 ?? '/brokers' },
-              { name: 'eToro', note: 'Ideal para cripto', href: process.env.NEXT_PUBLIC_AFFILIATE_ETORO ?? '/brokers' },
-            ].map(b => (
-              <a key={b.name} href={b.href} target="_blank" rel="noopener noreferrer nofollow"
-                onClick={() => fetch('/api/affiliate/click', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ broker: b.name.toLowerCase().replace(' ', ''), source: `asset_${asset.symbol}` }) }).catch(() => {})}
-                style={{ flex: 1, background: 'var(--bg2)', border: '.5px solid var(--border2)', borderRadius: 10, padding: '10px 14px', textDecoration: 'none', textAlign: 'center', cursor: 'pointer', transition: '.15s' }}
-                onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--green)')}
-                onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border2)')}
-              >
-                <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--white)', marginBottom: 2 }}>{b.name}</div>
-                <div style={{ fontSize: 10, color: 'var(--muted)' }}>{b.note}</div>
-              </a>
-            ))}
-            <Link href="/brokers" style={{ flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '10px 14px', background: 'transparent', border: '.5px solid var(--border2)', borderRadius: 10, color: 'var(--muted)', fontSize: 11, textDecoration: 'none', fontWeight: 600 }}>
-              Ver todos →
+            <Link href="/ia" style={{ display: 'inline-block', marginTop: 10, fontSize: 12, color: 'var(--green)', textDecoration: 'none', fontWeight: 600 }}>
+              Analizar {asset.symbol} con E-AI →
             </Link>
           </div>
+
+          {/* G. Brokers card */}
+          <div style={{ margin: '0 16px 16px', background: 'linear-gradient(135deg,rgba(0,212,122,.06),rgba(66,165,245,.06))', border: '.5px solid rgba(0,212,122,.2)', borderRadius: 14, padding: 18 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 12 }}>
+              <div style={{ fontSize: 28 }}>🏦</div>
+              <div>
+                <div style={{ fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700 }}>¿Listo para invertir con dinero real?</div>
+                <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>Brokers regulados para invertir en {asset.name}</div>
+              </div>
+            </div>
+            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+              {[
+                { name: 'DEGIRO', note: 'Comisiones desde 0€', href: process.env.NEXT_PUBLIC_AFFILIATE_DEGIRO ?? '/brokers' },
+                { name: 'Trading212', note: 'Sin comisiones en ETFs', href: process.env.NEXT_PUBLIC_AFFILIATE_TRADING212 ?? '/brokers' },
+                { name: 'eToro', note: 'Ideal para cripto', href: process.env.NEXT_PUBLIC_AFFILIATE_ETORO ?? '/brokers' },
+              ].map(b => (
+                <a key={b.name} href={b.href} target="_blank" rel="noopener noreferrer nofollow"
+                  onClick={() => fetch('/api/affiliate/click', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ broker: b.name.toLowerCase().replace(' ', ''), source: `asset_${asset.symbol}` }) }).catch(() => {})}
+                  style={{ flex: 1, minWidth: 100, background: 'var(--bg2)', border: '.5px solid var(--border2)', borderRadius: 10, padding: '10px 14px', textDecoration: 'none', textAlign: 'center', cursor: 'pointer', transition: '.15s' }}
+                  onMouseEnter={e => ((e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--green)')}
+                  onMouseLeave={e => ((e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--border2)')}
+                >
+                  <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--white)', marginBottom: 2 }}>{b.name}</div>
+                  <div style={{ fontSize: 10, color: 'var(--muted)' }}>{b.note}</div>
+                </a>
+              ))}
+              <Link href="/brokers" style={{ flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '10px 14px', background: 'transparent', border: '.5px solid var(--border2)', borderRadius: 10, color: 'var(--muted)', fontSize: 11, textDecoration: 'none', fontWeight: 600 }}>
+                Ver todos →
+              </Link>
+            </div>
+          </div>
+
+          {/* H. Bottom spacer */}
+          <div style={{ height: 20 }} />
         </div>
-      </div>
 
-      {/* Trading panel */}
-      <div style={{ width: 310, flexShrink: 0, borderLeft: '.5px solid var(--border2)', padding: '20px', overflowY: 'auto', background: 'var(--bg1)' }}>
-        <div style={{ fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 800, marginBottom: 16 }}>Simulador</div>
-
-        {/* Buy / Sell */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6, marginBottom: 16 }}>
-          {(['buy', 'sell'] as OpType[]).map(t => (
-            <button key={t} onClick={() => setOpType(t)} style={{
-              padding: '10px', borderRadius: 9, border: 'none', cursor: 'pointer',
-              background: opType === t ? (t === 'buy' ? 'var(--green)' : 'var(--red)') : 'var(--bg2)',
-              color: opType === t ? 'var(--bg)' : 'var(--muted)',
-              fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700,
+        {/* I. Sticky bottom bar */}
+        <div style={{
+          position: 'sticky', bottom: 0, left: 0, right: 0,
+          background: 'var(--bg1)',
+          borderTop: '.5px solid var(--border2)',
+          padding: '12px 20px',
+          display: 'flex', alignItems: 'center', gap: 10,
+          zIndex: 30,
+        }}>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontSize: 11, color: 'var(--muted)', marginBottom: 1 }}>Precio actual</div>
+            <div style={{
+              fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 800,
+              color: pd?.direction === 'up' ? 'var(--green)' : pd?.direction === 'down' ? 'var(--red)' : 'var(--white)',
+              transition: 'color .3s',
             }}>
-              {t === 'buy' ? '▲ Comprar' : '▼ Vender'}
-            </button>
-          ))}
-        </div>
-
-        {/* Order type tabs */}
-        <div style={{ marginBottom: 16 }}>
-          <div style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: 'var(--muted)', marginBottom: 8 }}>Tipo de orden</div>
-          <div style={{ display: 'flex', gap: 4 }}>
-            {([['market', 'Mercado'], ['limit', 'Límite'], ['stop', 'Stop-Loss']] as [OrderType, string][]).map(([k, label]) => (
-              <button key={k} onClick={() => setOrderType(k)} style={{
-                flex: 1, padding: '7px 4px', borderRadius: 8, border: `.5px solid ${orderType === k ? (k === 'stop' ? 'var(--amber)' : 'var(--border2)') : 'var(--border2)'}`,
-                background: orderType === k ? (k === 'stop' ? 'rgba(249,168,37,.1)' : 'var(--bg3)') : 'transparent',
-                color: orderType === k ? (k === 'stop' ? 'var(--amber)' : 'var(--white)') : 'var(--muted)',
-                fontSize: 10, fontWeight: 700, cursor: 'pointer',
-              }}>{label}</button>
-            ))}
-          </div>
-          <div style={{ fontSize: 10, color: 'var(--muted)', marginTop: 6, lineHeight: 1.5 }}>
-            {orderType === 'market' && 'Se ejecuta inmediatamente al precio actual del mercado.'}
-            {orderType === 'limit' && 'Se ejecuta solo cuando el precio llegue al nivel que indiques.'}
-            {orderType === 'stop' && 'Venta automática si el precio cae al nivel que indiques. Protege tu capital.'}
-          </div>
-        </div>
-
-        <form onSubmit={handleOperate}>
-          {/* Precio actual */}
-          <div style={{ marginBottom: 14 }}>
-            <label style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: 'var(--muted)', display: 'block', marginBottom: 6 }}>Precio actual</label>
-            <div style={{ background: 'var(--bg2)', border: '.5px solid var(--border2)', borderRadius: 10, padding: '10px 14px', fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 700, color: up ? 'var(--green)' : 'var(--red)' }}>
-              {formatPrice(currentPrice, asset.symbol)} {asset.currency}
+              {formatPrice(currentPrice, asset.symbol)}
             </div>
           </div>
-
-          {/* Precio límite / stop (condicional) */}
-          {(orderType === 'limit' || orderType === 'stop') && (
-            <div style={{ marginBottom: 14 }}>
-              <label style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: orderType === 'stop' ? 'var(--amber)' : 'var(--muted)', display: 'block', marginBottom: 6 }}>
-                {orderType === 'limit' ? 'Precio límite' : 'Precio stop-loss'}
-              </label>
-              <input
-                type="number" value={limitPrice} onChange={e => setLimitPrice(e.target.value)}
-                placeholder={formatPrice(currentPrice * (orderType === 'limit' ? 0.98 : 0.95), asset.symbol).replace(/[^0-9.]/g, '')}
-                min="0" step="any" required
-                style={{ width: '100%', background: 'var(--bg2)', border: `.5px solid ${orderType === 'stop' ? 'rgba(249,168,37,.4)' : 'var(--border2)'}`, borderRadius: 10, padding: '10px 14px', color: 'var(--white)', fontFamily: 'var(--sans)', fontSize: 14, outline: 'none' }}
-              />
-            </div>
-          )}
-
-          {/* Importe */}
-          <div style={{ marginBottom: 14 }}>
-            <label style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: 'var(--muted)', display: 'block', marginBottom: 6 }}>Importe (€)</label>
-            <input
-              type="number" value={amount} onChange={e => setAmount(e.target.value)}
-              placeholder="100" min="1" step="any" required
-              style={{ width: '100%', background: 'var(--bg2)', border: '.5px solid var(--border2)', borderRadius: 10, padding: '10px 14px', color: 'var(--white)', fontFamily: 'var(--sans)', fontSize: 14, outline: 'none' }}
-            />
-          </div>
-
-          {/* Quick amounts */}
-          <div style={{ display: 'flex', gap: 5, marginBottom: 14 }}>
-            {[100, 250, 500, 1000].map(v => (
-              <button key={v} type="button" onClick={() => setAmount(String(v))} style={{
-                flex: 1, padding: '5px', borderRadius: 7, border: '.5px solid var(--border2)',
-                background: amount === String(v) ? 'var(--bg3)' : 'transparent',
-                color: amount === String(v) ? 'var(--white)' : 'var(--muted)',
-                fontSize: 10, fontWeight: 700, cursor: 'pointer',
-              }}>€{v}</button>
-            ))}
-          </div>
-
-          {/* Unidades */}
-          {amount && units > 0 && (
-            <div style={{ background: 'var(--bg2)', borderRadius: 10, padding: '10px 14px', marginBottom: 14, fontSize: 12, color: 'var(--muted)', display: 'flex', justifyContent: 'space-between' }}>
-              <span>Unidades</span>
-              <span style={{ fontFamily: 'var(--serif)', color: 'var(--white)', fontWeight: 700 }}>{units.toFixed(6)} {asset.symbol}</span>
-            </div>
-          )}
-
-          {/* Capital */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: 'var(--muted)', marginBottom: 16 }}>
-            <span>Capital disponible</span>
-            <span style={{ fontWeight: 700, color: 'var(--white)' }}>€10.000,00</span>
-          </div>
-
-          <button type="submit" style={{
-            width: '100%', padding: '13px', border: 'none', borderRadius: 10,
-            background: opType === 'buy' ? 'var(--green)' : 'var(--red)',
-            color: 'var(--bg)', fontFamily: 'var(--serif)', fontSize: 15, fontWeight: 700, cursor: 'pointer',
-          }}>
-            {opType === 'buy' ? '▲ Comprar' : '▼ Vender'} {asset.symbol}
+          <button
+            onClick={() => openModal('buy')}
+            style={{
+              flex: 1, padding: '13px', border: 'none', borderRadius: 12, cursor: 'pointer',
+              background: 'var(--green)', color: 'var(--bg)',
+              fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700,
+            }}
+          >
+            ▲ Comprar
           </button>
-        </form>
-
-        {notification && (
-          <div style={{ marginTop: 12, background: 'var(--gfaint)', border: '.5px solid rgba(0,212,122,.3)', borderRadius: 10, padding: '10px 14px', fontSize: 12, color: 'var(--green)', lineHeight: 1.5 }}>
-            {notification}
-          </div>
-        )}
-
-        <div style={{ marginTop: 20, fontSize: 10, color: 'var(--muted2)', lineHeight: 1.6, textAlign: 'center' }}>
-          💡 Simulación educativa — no se usa dinero real
+          <button
+            onClick={() => openModal('sell')}
+            style={{
+              flex: 1, padding: '13px', border: 'none', borderRadius: 12, cursor: 'pointer',
+              background: 'var(--red)', color: 'var(--white)',
+              fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700,
+            }}
+          >
+            ▼ Vender
+          </button>
         </div>
       </div>
-    </div>
+
+      {/* J. Trade Modal */}
+      {showTradeModal && (
+        <div
+          style={{
+            position: 'fixed', inset: 0, zIndex: 100,
+            background: 'rgba(0,0,0,0.8)',
+            display: 'flex', alignItems: 'flex-end', justifyContent: 'center',
+            animation: 'fadeIn .2s ease',
+          }}
+          onClick={e => { if (e.target === e.currentTarget) setShowTradeModal(false) }}
+        >
+          <div style={{
+            background: 'var(--bg1)',
+            borderRadius: '24px 24px 0 0',
+            width: '100%',
+            maxWidth: 540,
+            padding: '24px 24px 32px',
+            animation: 'slideUp .3s ease',
+            maxHeight: '90vh',
+            overflowY: 'auto',
+          }}>
+            {/* Modal header */}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
+              <div>
+                <div style={{ fontFamily: 'var(--serif)', fontSize: 18, fontWeight: 800 }}>Simulador</div>
+                <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>{asset.name} · {formatPrice(currentPrice, asset.symbol)}</div>
+              </div>
+              <button
+                onClick={() => setShowTradeModal(false)}
+                style={{ width: 32, height: 32, borderRadius: 8, border: 'none', background: 'var(--bg2)', color: 'var(--muted)', fontSize: 16, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Buy / Sell toggle */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 20 }}>
+              {(['buy', 'sell'] as OpType[]).map(t => (
+                <button key={t} onClick={() => setOpType(t)} style={{
+                  padding: '11px', borderRadius: 10, border: 'none', cursor: 'pointer',
+                  background: opType === t ? (t === 'buy' ? 'var(--green)' : 'var(--red)') : 'var(--bg2)',
+                  color: opType === t ? (t === 'buy' ? 'var(--bg)' : 'var(--white)') : 'var(--muted)',
+                  fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700,
+                }}>
+                  {t === 'buy' ? '▲ Comprar' : '▼ Vender'}
+                </button>
+              ))}
+            </div>
+
+            {/* Order type */}
+            <div style={{ marginBottom: 18 }}>
+              <div style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: 'var(--muted)', marginBottom: 8 }}>Tipo de orden</div>
+              <div style={{ display: 'flex', gap: 6 }}>
+                {([['market', 'Mercado'], ['limit', 'Límite'], ['stop', 'Stop-Loss']] as [OrderType, string][]).map(([k, label]) => (
+                  <button key={k} onClick={() => setOrderType(k)} style={{
+                    flex: 1, padding: '8px 4px', borderRadius: 9,
+                    border: `.5px solid ${orderType === k ? (k === 'stop' ? 'var(--amber)' : 'var(--green)') : 'var(--border2)'}`,
+                    background: orderType === k ? (k === 'stop' ? 'rgba(249,168,37,.1)' : 'rgba(0,212,122,.08)') : 'transparent',
+                    color: orderType === k ? (k === 'stop' ? 'var(--amber)' : 'var(--green)') : 'var(--muted)',
+                    fontSize: 11, fontWeight: 700, cursor: 'pointer',
+                  }}>{label}</button>
+                ))}
+              </div>
+              <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 8, lineHeight: 1.5 }}>
+                {orderType === 'market' && 'Se ejecuta inmediatamente al precio actual del mercado.'}
+                {orderType === 'limit' && 'Se ejecuta solo cuando el precio llegue al nivel que indiques.'}
+                {orderType === 'stop' && 'Venta automática si el precio cae al nivel que indiques. Protege tu capital.'}
+              </div>
+            </div>
+
+            <form onSubmit={handleOperate}>
+              {/* Current price display */}
+              <div style={{ marginBottom: 14 }}>
+                <label style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: 'var(--muted)', display: 'block', marginBottom: 6 }}>Precio actual</label>
+                <div style={{ background: 'var(--bg2)', border: '.5px solid var(--border2)', borderRadius: 10, padding: '11px 14px', fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 700, color: up ? 'var(--green)' : 'var(--red)' }}>
+                  {formatPrice(currentPrice, asset.symbol)} {asset.currency}
+                </div>
+              </div>
+
+              {/* Limit / stop price */}
+              {(orderType === 'limit' || orderType === 'stop') && (
+                <div style={{ marginBottom: 14 }}>
+                  <label style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: orderType === 'stop' ? 'var(--amber)' : 'var(--muted)', display: 'block', marginBottom: 6 }}>
+                    {orderType === 'limit' ? 'Precio límite' : 'Precio stop-loss'}
+                  </label>
+                  <input
+                    type="number" value={limitPrice} onChange={e => setLimitPrice(e.target.value)}
+                    placeholder={formatPrice(currentPrice * (orderType === 'limit' ? 0.98 : 0.95), asset.symbol).replace(/[^0-9.]/g, '')}
+                    min="0" step="any" required
+                    style={{ width: '100%', background: 'var(--bg2)', border: `.5px solid ${orderType === 'stop' ? 'rgba(249,168,37,.4)' : 'var(--border2)'}`, borderRadius: 10, padding: '11px 14px', color: 'var(--white)', fontFamily: 'var(--sans)', fontSize: 14, outline: 'none', boxSizing: 'border-box' }}
+                  />
+                </div>
+              )}
+
+              {/* Amount */}
+              <div style={{ marginBottom: 14 }}>
+                <label style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: 'var(--muted)', display: 'block', marginBottom: 6 }}>Importe (€)</label>
+                <input
+                  type="number" value={amount} onChange={e => setAmount(e.target.value)}
+                  placeholder="100" min="1" step="any" required
+                  style={{ width: '100%', background: 'var(--bg2)', border: '.5px solid var(--border2)', borderRadius: 10, padding: '11px 14px', color: 'var(--white)', fontFamily: 'var(--sans)', fontSize: 14, outline: 'none', boxSizing: 'border-box' }}
+                />
+              </div>
+
+              {/* Quick amounts */}
+              <div style={{ display: 'flex', gap: 6, marginBottom: 14 }}>
+                {[100, 250, 500, 1000].map(v => (
+                  <button key={v} type="button" onClick={() => setAmount(String(v))} style={{
+                    flex: 1, padding: '7px 4px', borderRadius: 8, border: '.5px solid var(--border2)',
+                    background: amount === String(v) ? 'var(--bg3)' : 'transparent',
+                    color: amount === String(v) ? 'var(--white)' : 'var(--muted)',
+                    fontSize: 11, fontWeight: 700, cursor: 'pointer',
+                  }}>€{v}</button>
+                ))}
+              </div>
+
+              {/* Units display */}
+              {amount && units > 0 && (
+                <div style={{ background: 'var(--bg2)', borderRadius: 10, padding: '10px 14px', marginBottom: 14, fontSize: 13, color: 'var(--muted)', display: 'flex', justifyContent: 'space-between' }}>
+                  <span>Unidades</span>
+                  <span style={{ fontFamily: 'var(--serif)', color: 'var(--white)', fontWeight: 700 }}>{units.toFixed(6)} {asset.symbol}</span>
+                </div>
+              )}
+
+              {/* Available capital */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: 'var(--muted)', marginBottom: 18 }}>
+                <span>Capital disponible</span>
+                <span style={{ fontWeight: 700, color: 'var(--white)' }}>€10.000,00</span>
+              </div>
+
+              <button type="submit" style={{
+                width: '100%', padding: '14px', border: 'none', borderRadius: 12,
+                background: opType === 'buy' ? 'var(--green)' : 'var(--red)',
+                color: opType === 'buy' ? 'var(--bg)' : 'var(--white)',
+                fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 700, cursor: 'pointer',
+              }}>
+                {opType === 'buy' ? '▲ Comprar' : '▼ Vender'} {asset.symbol}
+              </button>
+            </form>
+
+            <div style={{ marginTop: 14, fontSize: 11, color: 'var(--muted2)', lineHeight: 1.6, textAlign: 'center' }}>
+              💡 Simulación educativa — no se usa dinero real
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   )
 }

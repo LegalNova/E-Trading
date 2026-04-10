@@ -8,18 +8,23 @@ export interface Asset {
   basePrice: number
   currency: string
   flag?: string
+  description?: string
+  sector?: string
+  marketCap?: string
+  pe?: number | null
+  dividendYield?: number | null
 }
 
 // ─── ACCIONES EEUU (50) ───────────────────────────────────────────────────
 const ACCIONES_US: Asset[] = [
-  { symbol: 'AAPL', name: 'Apple', category: 'acciones-us', finnhubSymbol: 'AAPL', basePrice: 185, currency: 'USD', flag: '🇺🇸' },
-  { symbol: 'MSFT', name: 'Microsoft', category: 'acciones-us', finnhubSymbol: 'MSFT', basePrice: 415, currency: 'USD', flag: '🇺🇸' },
-  { symbol: 'NVDA', name: 'NVIDIA', category: 'acciones-us', finnhubSymbol: 'NVDA', basePrice: 875, currency: 'USD', flag: '🇺🇸' },
-  { symbol: 'TSLA', name: 'Tesla', category: 'acciones-us', finnhubSymbol: 'TSLA', basePrice: 175, currency: 'USD', flag: '🇺🇸' },
-  { symbol: 'AMZN', name: 'Amazon', category: 'acciones-us', finnhubSymbol: 'AMZN', basePrice: 185, currency: 'USD', flag: '🇺🇸' },
-  { symbol: 'GOOGL', name: 'Alphabet', category: 'acciones-us', finnhubSymbol: 'GOOGL', basePrice: 165, currency: 'USD', flag: '🇺🇸' },
-  { symbol: 'META', name: 'Meta', category: 'acciones-us', finnhubSymbol: 'META', basePrice: 510, currency: 'USD', flag: '🇺🇸' },
-  { symbol: 'NFLX', name: 'Netflix', category: 'acciones-us', finnhubSymbol: 'NFLX', basePrice: 630, currency: 'USD', flag: '🇺🇸' },
+  { symbol: 'AAPL', name: 'Apple', category: 'acciones-us', finnhubSymbol: 'AAPL', basePrice: 185, currency: 'USD', flag: '🇺🇸', description: 'Apple diseña, fabrica y vende iPhones, Macs, iPads y servicios digitales como App Store y Apple Music. Es la empresa más valiosa del mundo.', sector: 'Tecnología', marketCap: '2.8T', pe: 28, dividendYield: 0.5 },
+  { symbol: 'MSFT', name: 'Microsoft', category: 'acciones-us', finnhubSymbol: 'MSFT', basePrice: 415, currency: 'USD', flag: '🇺🇸', description: 'Microsoft crea software empresarial, la nube Azure, y la suite Office. Propietaria de LinkedIn, GitHub y Xbox.', sector: 'Tecnología', marketCap: '3.1T', pe: 35, dividendYield: 0.7 },
+  { symbol: 'NVDA', name: 'NVIDIA', category: 'acciones-us', finnhubSymbol: 'NVDA', basePrice: 875, currency: 'USD', flag: '🇺🇸', description: 'NVIDIA fabrica GPUs para videojuegos, centros de datos e IA. Sus chips son el estándar para entrenar modelos de inteligencia artificial.', sector: 'Semiconductores', marketCap: '2.2T', pe: 65, dividendYield: 0.1 },
+  { symbol: 'TSLA', name: 'Tesla', category: 'acciones-us', finnhubSymbol: 'TSLA', basePrice: 175, currency: 'USD', flag: '🇺🇸', description: 'Tesla diseña vehículos eléctricos, paneles solares y baterías. Liderada por Elon Musk, es la marca de coches eléctricos más conocida del mundo.', sector: 'Automoción', marketCap: '560B', pe: 55, dividendYield: null },
+  { symbol: 'AMZN', name: 'Amazon', category: 'acciones-us', finnhubSymbol: 'AMZN', basePrice: 185, currency: 'USD', flag: '🇺🇸', description: 'Amazon es el mayor marketplace del mundo y líder en cloud con AWS. También opera Prime Video, Alexa y Whole Foods.', sector: 'Consumo/Tecnología', marketCap: '1.9T', pe: 42, dividendYield: null },
+  { symbol: 'GOOGL', name: 'Alphabet', category: 'acciones-us', finnhubSymbol: 'GOOGL', basePrice: 165, currency: 'USD', flag: '🇺🇸', description: 'Alphabet es la matriz de Google, el buscador más usado del mundo. También opera YouTube, Google Cloud y Android.', sector: 'Tecnología', marketCap: '2.0T', pe: 24, dividendYield: null },
+  { symbol: 'META', name: 'Meta', category: 'acciones-us', finnhubSymbol: 'META', basePrice: 510, currency: 'USD', flag: '🇺🇸', description: 'Meta Platforms opera Facebook, Instagram y WhatsApp. Invierte fuertemente en realidad virtual con Quest.', sector: 'Tecnología', marketCap: '1.3T', pe: 26, dividendYield: null },
+  { symbol: 'NFLX', name: 'Netflix', category: 'acciones-us', finnhubSymbol: 'NFLX', basePrice: 630, currency: 'USD', flag: '🇺🇸', description: 'Netflix es la plataforma de streaming líder con más de 260 millones de suscriptores. Produce series y películas originales en todo el mundo.', sector: 'Entretenimiento', marketCap: '290B', pe: 40, dividendYield: null },
   { symbol: 'AMD', name: 'AMD', category: 'acciones-us', finnhubSymbol: 'AMD', basePrice: 165, currency: 'USD', flag: '🇺🇸' },
   { symbol: 'INTC', name: 'Intel', category: 'acciones-us', finnhubSymbol: 'INTC', basePrice: 30, currency: 'USD', flag: '🇺🇸' },
   { symbol: 'CRM', name: 'Salesforce', category: 'acciones-us', finnhubSymbol: 'CRM', basePrice: 295, currency: 'USD', flag: '🇺🇸' },
@@ -66,7 +71,7 @@ const ACCIONES_US: Asset[] = [
 
 // ─── ACCIONES EUROPEAS (20) ───────────────────────────────────────────────
 const ACCIONES_EU: Asset[] = [
-  { symbol: 'ITX', name: 'Inditex', category: 'acciones-eu', finnhubSymbol: 'BME:ITX', basePrice: 48, currency: 'EUR', flag: '🇪🇸' },
+  { symbol: 'ITX', name: 'Inditex', category: 'acciones-eu', finnhubSymbol: 'BME:ITX', basePrice: 48, currency: 'EUR', flag: '🇪🇸', description: 'Inditex es el mayor grupo de moda del mundo, propietario de Zara, Pull&Bear, Massimo Dutti y otras marcas. Con sede en Arteixo (A Coruña).', sector: 'Moda/Retail', marketCap: '95B', pe: 21, dividendYield: 3.2 },
   { symbol: 'MC', name: 'LVMH', category: 'acciones-eu', finnhubSymbol: 'EPA:MC', basePrice: 785, currency: 'EUR', flag: '🇫🇷' },
   { symbol: 'RMS', name: 'Hermès', category: 'acciones-eu', finnhubSymbol: 'EPA:RMS', basePrice: 2100, currency: 'EUR', flag: '🇫🇷' },
   { symbol: 'RACE', name: 'Ferrari', category: 'acciones-eu', finnhubSymbol: 'NYSE:RACE', basePrice: 395, currency: 'EUR', flag: '🇮🇹' },
@@ -90,8 +95,8 @@ const ACCIONES_EU: Asset[] = [
 
 // ─── CRIPTOMONEDAS (30) ──────────────────────────────────────────────────
 const CRIPTO: Asset[] = [
-  { symbol: 'BTC', name: 'Bitcoin', category: 'cripto', finnhubSymbol: 'BINANCE:BTCUSDT', basePrice: 67000, currency: 'USD' },
-  { symbol: 'ETH', name: 'Ethereum', category: 'cripto', finnhubSymbol: 'BINANCE:ETHUSDT', basePrice: 3500, currency: 'USD' },
+  { symbol: 'BTC', name: 'Bitcoin', category: 'cripto', finnhubSymbol: 'BINANCE:BTCUSDT', basePrice: 67000, currency: 'USD', description: 'Bitcoin es la primera criptomoneda del mundo, creada en 2009. Funciona como reserva de valor digital y medio de pago descentralizado.', sector: 'Cripto', marketCap: '1.3T', pe: null, dividendYield: null },
+  { symbol: 'ETH', name: 'Ethereum', category: 'cripto', finnhubSymbol: 'BINANCE:ETHUSDT', basePrice: 3500, currency: 'USD', description: 'Ethereum es la blockchain más usada para contratos inteligentes y aplicaciones descentralizadas (DeFi, NFTs).', sector: 'Cripto', marketCap: '370B', pe: null, dividendYield: null },
   { symbol: 'SOL', name: 'Solana', category: 'cripto', finnhubSymbol: 'BINANCE:SOLUSDT', basePrice: 175, currency: 'USD' },
   { symbol: 'BNB', name: 'BNB Chain', category: 'cripto', finnhubSymbol: 'BINANCE:BNBUSDT', basePrice: 580, currency: 'USD' },
   { symbol: 'XRP', name: 'XRP', category: 'cripto', finnhubSymbol: 'BINANCE:XRPUSDT', basePrice: 0.55, currency: 'USD' },
@@ -124,7 +129,7 @@ const CRIPTO: Asset[] = [
 
 // ─── ETFs (15) ────────────────────────────────────────────────────────────
 const ETFS: Asset[] = [
-  { symbol: 'SPY', name: 'S&P 500 ETF', category: 'etfs', finnhubSymbol: 'SPY', basePrice: 520, currency: 'USD' },
+  { symbol: 'SPY', name: 'S&P 500 ETF', category: 'etfs', finnhubSymbol: 'SPY', basePrice: 520, currency: 'USD', description: 'El SPDR S&P 500 ETF replica el índice S&P 500, que agrupa las 500 mayores empresas de EE.UU. Es el ETF más negociado del mundo.', sector: 'ETF', marketCap: '580B', pe: null, dividendYield: 1.3 },
   { symbol: 'QQQ', name: 'Nasdaq 100 ETF', category: 'etfs', finnhubSymbol: 'QQQ', basePrice: 445, currency: 'USD' },
   { symbol: 'IWM', name: 'Russell 2000 ETF', category: 'etfs', finnhubSymbol: 'IWM', basePrice: 205, currency: 'USD' },
   { symbol: 'VTI', name: 'Total Market ETF', category: 'etfs', finnhubSymbol: 'VTI', basePrice: 240, currency: 'USD' },
