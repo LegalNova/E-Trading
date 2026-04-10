@@ -1,10 +1,9 @@
 import { withAuth } from 'next-auth/middleware'
 import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
 
 export default withAuth(
   function middleware(req) {
-    const token = (req as NextRequest & { nextauth?: { token: unknown } }).nextauth?.token
+    const token = req.nextauth?.token
     const { pathname } = req.nextUrl
 
     // Si usuario logueado visita /login o /register → redirigir a /dashboard
@@ -16,21 +15,14 @@ export default withAuth(
   },
   {
     callbacks: {
-      authorized: ({ token, req }) => {
-        const { pathname } = req.nextUrl
-        // Las rutas públicas siempre pasan
-        const publicPaths = ['/login', '/register', '/forgot-password', '/reset-password',
-                             '/privacidad', '/terminos', '/cookies', '/aviso-legal', '/brokers', '/demo']
-        if (publicPaths.some(p => pathname.startsWith(p))) return true
-        // El resto requiere sesión
-        return !!token
-      },
+      authorized: ({ token }) => !!token,
     },
     pages: { signIn: '/login' },
   }
 )
 
 export const config = {
+  // Solo proteger rutas privadas — login/register/demo son públicas y NO pasan por aquí
   matcher: [
     '/dashboard/:path*',
     '/mercado/:path*',
@@ -40,9 +32,6 @@ export const config = {
     '/insignias/:path*',
     '/liga/:path*',
     '/ia/:path*',
-    '/precios/:path*',
     '/onboarding/:path*',
-    '/login',
-    '/register',
   ],
 }
