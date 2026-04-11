@@ -188,6 +188,113 @@ export async function getPortfolio(userId: string) {
   return data
 }
 
+// Positions
+export async function getPositions(userId: string) {
+  const db = getServerSupabase()
+  const { data } = await db
+    .from('positions')
+    .select('*')
+    .eq('user_id', userId)
+    .order('opened_at', { ascending: false })
+  return data ?? []
+}
+
+export async function getPositionBySymbol(userId: string, symbol: string) {
+  const db = getServerSupabase()
+  const { data } = await db
+    .from('positions')
+    .select('*')
+    .eq('user_id', userId)
+    .eq('symbol', symbol)
+    .maybeSingle()
+  return data
+}
+
+// Trades
+export async function getTrades(userId: string, limit = 50) {
+  const db = getServerSupabase()
+  const { data } = await db
+    .from('trades')
+    .select('*')
+    .eq('user_id', userId)
+    .order('executed_at', { ascending: false })
+    .limit(limit)
+  return data ?? []
+}
+
+// Update portfolio cash
+export async function updatePortfolioCash(userId: string, newCash: number) {
+  const db = getServerSupabase()
+  const { error } = await db
+    .from('portfolio')
+    .update({ cash: newCash, updated_at: new Date().toISOString() })
+    .eq('user_id', userId)
+  if (error) throw error
+}
+
+// Upsert position (for buys that increase, or creates new)
+export async function upsertPosition(params: {
+  userId: string
+  symbol: string
+  newShares: number
+  newAvgPrice: number
+}) {
+  const db = getServerSupabase()
+  const existing = await getPositionBySymbol(params.userId, params.symbol)
+  if (existing) {
+    const { error } = await db
+      .from('positions')
+      .update({ shares: params.newShares, avg_price: params.newAvgPrice })
+      .eq('user_id', params.userId)
+      .eq('symbol', params.symbol)
+    if (error) throw error
+  } else {
+    const { error } = await db
+      .from('positions')
+      .insert({
+        user_id: params.userId,
+        symbol: params.symbol,
+        shares: params.newShares,
+        avg_price: params.newAvgPrice,
+      })
+    if (error) throw error
+  }
+}
+
+// Delete position (for full sells)
+export async function deletePosition(userId: string, symbol: string) {
+  const db = getServerSupabase()
+  const { error } = await db
+    .from('positions')
+    .delete()
+    .eq('user_id', userId)
+    .eq('symbol', symbol)
+  if (error) throw error
+}
+
+// Record trade
+export async function recordTrade(params: {
+  userId: string
+  type: 'buy' | 'sell'
+  symbol: string
+  shares: number
+  price: number
+  total: number
+}) {
+  const db = getServerSupabase()
+  const { error } = await db
+    .from('trades')
+    .insert({
+      user_id: params.userId,
+      type: params.type,
+      symbol: params.symbol,
+      shares: params.shares,
+      price: params.price,
+      total: params.total,
+    })
+  if (error) throw error
+}
+
 /* ─── Utils ──────────────────────────────────────────────────── */
 
 function getMonday(date: Date): string {

@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 import { DashboardBanner } from '@/components/banners/EducationalBanner'
+import { usePortfolio } from '@/hooks/usePortfolio'
+import { usePrices, formatPrice } from '@/hooks/usePrices'
 
 function TrialBanner() {
   const { data: session } = useSession()
@@ -53,6 +55,34 @@ function TrialBanner() {
 }
 
 export default function DashboardPage() {
+  const { data: session } = useSession()
+  const { data: portfolioData } = usePortfolio()
+  const heldSymbols = portfolioData?.positions.map(p => p.symbol) ?? []
+  const { prices } = usePrices(heldSymbols.length ? heldSymbols : undefined)
+
+  const sessionUser = session?.user as Record<string, unknown> | undefined
+  const xp = Number(sessionUser?.xp ?? 0)
+  const racha = Number(sessionUser?.racha ?? 0)
+
+  const cash = portfolioData?.cash ?? 10000
+  const positions = portfolioData?.positions ?? []
+  const invested = positions.reduce((acc, p) => acc + p.shares * p.avg_price, 0)
+  const marketValue = positions.reduce((acc, p) => {
+    const current = prices[p.symbol]?.price ?? p.avg_price
+    return acc + p.shares * current
+  }, 0)
+  const totalValue = cash + marketValue
+  const pnlEur = marketValue - invested
+  const pnlPct = invested > 0 ? (pnlEur / invested) * 100 : 0
+  const pnlColor = pnlEur >= 0 ? 'var(--green)' : 'var(--red)'
+
+  const nivel =
+    xp >= 5000 ? '5 · Maestro' :
+    xp >= 3000 ? '4 · Avanzado' :
+    xp >= 1500 ? '3 · Intermedio' :
+    xp >= 500 ? '2 · Aficionado' :
+    '1 · Principiante'
+
   const mockMovers = [
     { sym: 'NVDA', name: 'NVIDIA', price: 875.42, chg: 3.21, up: true },
     { sym: 'TSLA', name: 'Tesla', price: 174.83, chg: -1.87, up: false },
@@ -74,18 +104,41 @@ export default function DashboardPage() {
 
       {/* Stats grid */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 12, marginBottom: 24 }}>
-        {[
-          { lbl: 'Valor portafolio', val: '€10.000', sub: 'Capital inicial' },
-          { lbl: 'P&L total', val: '€0,00', sub: '0.00%', up: null },
-          { lbl: 'XP total', val: '0', sub: 'Nivel 1 · Principiante' },
-          { lbl: 'Racha actual', val: '0 días', sub: 'Empieza hoy' },
-        ].map(s => (
-          <div key={s.lbl} style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 12, padding: 16 }}>
-            <div style={{ fontSize: 10, color: 'var(--muted)', letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 600, marginBottom: 6 }}>{s.lbl}</div>
-            <div style={{ fontFamily: 'var(--serif)', fontSize: 22, fontWeight: 700 }}>{s.val}</div>
-            <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 4 }}>{s.sub}</div>
+        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 12, padding: 16 }}>
+          <div style={{ fontSize: 10, color: 'var(--muted)', letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 600, marginBottom: 6 }}>Valor portafolio</div>
+          <div style={{ fontFamily: 'var(--serif)', fontSize: 22, fontWeight: 700, color: 'var(--white)' }}>
+            €{formatPrice(totalValue)}
           </div>
-        ))}
+          <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 4 }}>
+            {positions.length === 0 ? 'Capital inicial' : `${positions.length} ${positions.length === 1 ? 'posición' : 'posiciones'}`}
+          </div>
+        </div>
+
+        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 12, padding: 16 }}>
+          <div style={{ fontSize: 10, color: 'var(--muted)', letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 600, marginBottom: 6 }}>P&amp;L total</div>
+          <div style={{ fontFamily: 'var(--serif)', fontSize: 22, fontWeight: 700, color: invested > 0 ? pnlColor : 'var(--white)' }}>
+            {invested > 0 ? (pnlEur >= 0 ? '+' : '−') : ''}€{formatPrice(Math.abs(pnlEur))}
+          </div>
+          <div style={{ fontSize: 11, color: invested > 0 ? pnlColor : 'var(--muted)', marginTop: 4, fontWeight: 600 }}>
+            {invested > 0 ? `${pnlEur >= 0 ? '+' : ''}${pnlPct.toFixed(2)}%` : '0.00%'}
+          </div>
+        </div>
+
+        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 12, padding: 16 }}>
+          <div style={{ fontSize: 10, color: 'var(--muted)', letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 600, marginBottom: 6 }}>XP total</div>
+          <div style={{ fontFamily: 'var(--serif)', fontSize: 22, fontWeight: 700, color: 'var(--white)' }}>{xp}</div>
+          <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 4 }}>Nivel {nivel}</div>
+        </div>
+
+        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 12, padding: 16 }}>
+          <div style={{ fontSize: 10, color: 'var(--muted)', letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 600, marginBottom: 6 }}>Racha actual</div>
+          <div style={{ fontFamily: 'var(--serif)', fontSize: 22, fontWeight: 700, color: 'var(--white)' }}>
+            {racha} {racha === 1 ? 'día' : 'días'}
+          </div>
+          <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 4 }}>
+            {racha === 0 ? 'Empieza hoy' : 'Sigue así'}
+          </div>
+        </div>
       </div>
 
       {/* Two columns */}

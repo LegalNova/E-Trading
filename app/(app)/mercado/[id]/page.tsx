@@ -4,6 +4,7 @@ import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { ASSET_BY_SYMBOL, CATEGORY_LABELS } from '@/data/assets'
 import { usePrices, formatPrice } from '@/hooks/usePrices'
+import { usePortfolio } from '@/hooks/usePortfolio'
 
 type Tab = '1D' | '1S' | '1M' | '3M' | '1A'
 type OpType = 'buy' | 'sell'
@@ -68,6 +69,7 @@ export default function AssetPage() {
   const asset = ASSET_BY_SYMBOL[symbolRaw]
   const { prices } = usePrices(asset ? [asset.symbol] : [])
   const pd = asset ? prices[asset.symbol] : null
+  const { data: portfolio, refetch: refetchPortfolio } = usePortfolio()
 
   const [tab, setTab] = useState<Tab>('1D')
   const [opType, setOpType] = useState<OpType>('buy')
@@ -77,6 +79,8 @@ export default function AssetPage() {
   const [chartData, setChartData] = useState<number[]>([])
   const [notification, setNotification] = useState('')
   const [showTradeModal, setShowTradeModal] = useState(false)
+  const [showConfirm, setShowConfirm] = useState(false)
+  const [confirming, setConfirming] = useState(false)
 
   const TABS: Tab[] = ['1D', '1S', '1M', '3M', '1A']
   const TAB_CONFIG: Record<Tab, { points: number; vol: number }> = {
@@ -119,13 +123,39 @@ export default function AssetPage() {
     e.preventDefault()
     const total = parseFloat(amount)
     if (!total || total <= 0) return
-    const orderLabel = orderType === 'market' ? 'mercado' : orderType === 'limit' ? 'límite' : 'stop-loss'
-    const priceLabel = orderType === 'market' ? formatPrice(currentPrice, asset.symbol) : `${limitPrice} ${asset.currency}`
-    setNotification(`Orden ${orderLabel} ${opType === 'buy' ? 'compra' : 'venta'} enviada: ${units.toFixed(4)} ${asset.symbol} · ${priceLabel}`)
-    setAmount('')
-    setLimitPrice('')
-    setShowTradeModal(false)
-    setTimeout(() => setNotification(''), 5000)
+    setShowConfirm(true)
+  }
+
+  async function confirmTrade() {
+    setConfirming(true)
+    try {
+      const res = await fetch('/api/trade/execute', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: opType,
+          symbol: asset.symbol,
+          amountEur: parseFloat(amount),
+          currentPrice: currentPrice,
+        }),
+      })
+      const json = await res.json()
+      if (!res.ok) {
+        setNotification(`Error: ${json.error ?? 'No se pudo ejecutar'}`)
+      } else {
+        setNotification(`${opType === 'buy' ? 'Compra' : 'Venta'} ejecutada: ${Number(json.shares).toFixed(6)} ${asset.symbol}`)
+        setAmount('')
+        setLimitPrice('')
+        setShowTradeModal(false)
+        await refetchPortfolio()
+      }
+    } catch {
+      setNotification('Error de conexión')
+    } finally {
+      setConfirming(false)
+      setShowConfirm(false)
+      setTimeout(() => setNotification(''), 5000)
+    }
   }
 
   return (
@@ -546,23 +576,175 @@ export default function AssetPage() {
               )}
 
               {/* Available capital */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: 'var(--muted)', marginBottom: 18 }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: 'var(--muted)', marginBottom: 8 }}>
                 <span>Capital disponible</span>
-                <span style={{ fontWeight: 700, color: 'var(--white)' }}>€10.000,00</span>
+                <span style={{ fontWeight: 700, color: 'var(--white)' }}>
+                  {portfolio ? `€${formatPrice(portfolio.cash)}` : '—'}
+                </span>
               </div>
 
-              <button type="submit" style={{
-                width: '100%', padding: '14px', border: 'none', borderRadius: 12,
-                background: opType === 'buy' ? 'var(--green)' : 'var(--red)',
-                color: opType === 'buy' ? 'var(--bg)' : 'var(--white)',
-                fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 700, cursor: 'pointer',
-              }}>
+              {opType === 'buy' && portfolio && parseFloat(amount || '0') > portfolio.cash && (
+                <div style={{
+                  background: 'rgba(239,83,80,.08)',
+                  border: '.5px solid rgba(239,83,80,.3)',
+                  borderRadius: 10,
+                  padding: '9px 14px',
+                  fontSize: 12,
+                  color: 'var(--red)',
+                  fontWeight: 600,
+                  marginBottom: 12,
+                }}>
+                  Saldo insuficiente
+                </div>
+              )}
+
+              {(opType !== 'buy' || !portfolio || parseFloat(amount || '0') <= portfolio.cash) && (
+                <div style={{ height: 10 }} />
+              )}
+
+              <button
+                type="submit"
+                disabled={opType === 'buy' && portfolio !== null && parseFloat(amount || '0') > portfolio.cash}
+                style={{
+                  width: '100%', padding: '14px', border: 'none', borderRadius: 12,
+                  background: opType === 'buy' ? 'var(--green)' : 'var(--red)',
+                  color: opType === 'buy' ? 'var(--bg)' : 'var(--white)',
+                  fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 700,
+                  cursor: opType === 'buy' && portfolio !== null && parseFloat(amount || '0') > portfolio.cash ? 'not-allowed' : 'pointer',
+                  opacity: opType === 'buy' && portfolio !== null && parseFloat(amount || '0') > portfolio.cash ? 0.5 : 1,
+                }}
+              >
                 {opType === 'buy' ? '▲ Comprar' : '▼ Vender'} {asset.symbol}
               </button>
             </form>
 
             <div style={{ marginTop: 14, fontSize: 11, color: 'var(--muted2)', lineHeight: 1.6, textAlign: 'center' }}>
               💡 Simulación educativa — no se usa dinero real
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* K. Confirm Modal */}
+      {showConfirm && (
+        <div
+          style={{
+            position: 'fixed', inset: 0, zIndex: 200,
+            background: 'rgba(0,0,0,0.75)',
+            backdropFilter: 'blur(4px)',
+            WebkitBackdropFilter: 'blur(4px)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            padding: 20,
+            animation: 'fadeIn .18s ease',
+          }}
+          onClick={e => { if (e.target === e.currentTarget && !confirming) setShowConfirm(false) }}
+        >
+          <div style={{
+            background: 'var(--bg1)',
+            borderRadius: 18,
+            border: '.5px solid var(--border2)',
+            width: '100%',
+            maxWidth: 440,
+            padding: 28,
+            boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
+          }}>
+            <div style={{
+              fontFamily: 'var(--serif)',
+              fontSize: 20,
+              fontWeight: 800,
+              color: 'var(--white)',
+              marginBottom: 4,
+            }}>
+              Confirmar {opType === 'buy' ? 'compra' : 'venta'}
+            </div>
+            <div style={{ fontSize: 12, color: 'var(--muted)', marginBottom: 20 }}>
+              Revisa los detalles antes de ejecutar la orden
+            </div>
+
+            <div style={{
+              background: 'var(--bg2)',
+              border: '.5px solid var(--border2)',
+              borderRadius: 12,
+              padding: 18,
+              marginBottom: 22,
+            }}>
+              {[
+                { lbl: 'Activo', val: `${asset.name} (${asset.symbol})` },
+                { lbl: 'Tipo de orden', val: orderType === 'market' ? 'Mercado' : orderType === 'limit' ? 'Límite' : 'Stop-Loss' },
+                { lbl: 'Precio', val: `${formatPrice(currentPrice, asset.symbol)} ${asset.currency}` },
+                { lbl: 'Unidades', val: `${units.toFixed(6)} ${asset.symbol}`, mono: true },
+                { lbl: 'Importe total', val: `€${formatPrice(parseFloat(amount || '0'))}`, strong: true },
+                {
+                  lbl: 'Saldo después',
+                  val: portfolio
+                    ? `€${formatPrice(opType === 'buy' ? portfolio.cash - parseFloat(amount || '0') : portfolio.cash + parseFloat(amount || '0'))}`
+                    : '—',
+                },
+              ].map((row, idx, arr) => (
+                <div
+                  key={row.lbl}
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    padding: '8px 0',
+                    borderBottom: idx < arr.length - 1 ? '.5px solid var(--border)' : 'none',
+                  }}
+                >
+                  <span style={{ fontSize: 12, color: 'var(--muted)', fontWeight: 500 }}>{row.lbl}</span>
+                  <span style={{
+                    fontSize: row.strong ? 14 : 13,
+                    fontWeight: row.strong ? 800 : 700,
+                    color: 'var(--white)',
+                    fontFamily: row.mono || row.strong ? 'var(--serif)' : 'var(--sans)',
+                  }}>
+                    {row.val}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ display: 'flex', gap: 10 }}>
+              <button
+                type="button"
+                disabled={confirming}
+                onClick={() => setShowConfirm(false)}
+                style={{
+                  flex: 1,
+                  padding: '13px',
+                  border: 'none',
+                  borderRadius: 12,
+                  background: 'var(--bg3)',
+                  color: 'var(--muted)',
+                  fontFamily: 'var(--sans)',
+                  fontSize: 14,
+                  fontWeight: 700,
+                  cursor: confirming ? 'not-allowed' : 'pointer',
+                  opacity: confirming ? 0.5 : 1,
+                }}
+              >
+                Cancelar
+              </button>
+              <button
+                type="button"
+                disabled={confirming}
+                onClick={confirmTrade}
+                style={{
+                  flex: 1.3,
+                  padding: '13px',
+                  border: 'none',
+                  borderRadius: 12,
+                  background: opType === 'buy' ? 'var(--green)' : 'var(--red)',
+                  color: opType === 'buy' ? 'var(--bg)' : 'var(--white)',
+                  fontFamily: 'var(--serif)',
+                  fontSize: 14,
+                  fontWeight: 800,
+                  cursor: confirming ? 'not-allowed' : 'pointer',
+                  opacity: confirming ? 0.7 : 1,
+                }}
+              >
+                {confirming ? 'Procesando...' : opType === 'buy' ? 'Confirmar compra' : 'Confirmar venta'}
+              </button>
             </div>
           </div>
         </div>
