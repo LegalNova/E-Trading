@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { ASSETS, Asset } from '@/data/assets'
+import { MAIN_SYMBOLS } from '@/lib/finnhub'
 
 export interface PriceData {
   symbol: string
@@ -18,6 +19,9 @@ export interface PriceData {
 }
 
 type PriceMap = Record<string, PriceData>
+
+// Set for O(1) lookup when deciding which symbols to simulate
+const MAIN_SYMBOLS_SET = new Set(MAIN_SYMBOLS)
 
 // Finnhub symbol mapping (client-side WebSocket)
 const WS_SYMBOL_MAP: Record<string, string> = {
@@ -60,21 +64,23 @@ function initPrices(): PriceMap {
   return map
 }
 
-function simulateTick(current: PriceData, asset: Asset): PriceData {
-  const volatilityMap: Record<string, number> = {
-    'acciones-us': 0.0008,
-    'acciones-eu': 0.0007,
-    'cripto': 0.003,
-    'etfs': 0.0004,
-    'forex': 0.0002,
-    'materias': 0.001,
-    'indices': 0.0005,
-  }
-  const vol = volatilityMap[asset.category] ?? 0.001
-  const change = (Math.random() - 0.499) * 2 * vol
-  const newPrice = Math.max(current.price * (1 + change), 0.0001)
-  const absChange = newPrice - current.open
-  const pctChange = (absChange / current.open) * 100
+// Very small zero-mean oscillation, clamped to ±0.5% of open price
+// so the simulated price stays close to its real anchor.
+function simulateTick(current: PriceData, _asset: Asset): PriceData {
+  const vol = 0.0003 // very small — just a visible twitch
+  const delta = (Math.random() - 0.5) * 2 * vol // pure oscillation, zero drift
+  let newPrice = current.price * (1 + delta)
+
+  // Clamp so it never drifts more than ±0.5% from open
+  const anchor = current.open > 0 ? current.open : current.price
+  const maxUp = anchor * 1.005
+  const maxDown = anchor * 0.995
+  if (newPrice > maxUp) newPrice = maxUp
+  if (newPrice < maxDown) newPrice = maxDown
+  if (newPrice < 0.0001) newPrice = 0.0001
+
+  const absChange = newPrice - anchor
+  const pctChange = anchor > 0 ? (absChange / anchor) * 100 : 0
 
   return {
     ...current,
@@ -84,7 +90,7 @@ function simulateTick(current: PriceData, asset: Asset): PriceData {
     changePct: pctChange,
     high: Math.max(current.high, newPrice),
     low: Math.min(current.low, newPrice),
-    volume: current.volume + Math.floor(Math.random() * 10000),
+    volume: current.volume + Math.floor(Math.random() * 1000),
     timestamp: Date.now(),
     direction: newPrice > current.price ? 'up' : newPrice < current.price ? 'down' : 'flat',
     source: 'simulated',
@@ -134,7 +140,7 @@ export function usePrices(symbols?: string[]) {
   const targetSymbols = symbols ?? ASSETS.map(a => a.symbol)
   const targetAssets = ASSETS.filter(a => targetSymbols.includes(a.symbol))
 
-  // Initial fetch of real prices
+  // Fetch real prices — always replace the price completely (real data wins)
   const loadRealPrices = useCallback(async () => {
     const real = await fetchRealPrices()
     if (!real) return
@@ -233,15 +239,17 @@ export function usePrices(symbols?: string[]) {
     // 2. Try WebSocket for real-time updates
     connectWebSocket()
 
-    // 3. Simulation for ALL assets (fills gaps + keeps non-main assets moving)
+    // 3. Light simulation ONLY for non-main assets (those without real data).
+    //    Main symbols always come from Finnhub or the WS — never simulated.
     intervalRef.current = setInterval(() => {
       setPrices(prev => {
         const updated = { ...prev }
         for (const asset of targetAssets) {
-          // Only simulate assets not receiving live WS data
           const current = updated[asset.symbol]
           if (!current) continue
-          // If it was recently updated via WS (< 3s ago), skip simulation
+          // If the asset has real data from Finnhub, never overwrite it with sim.
+          if (MAIN_SYMBOLS_SET.has(asset.symbol)) continue
+          // Skip if WS just updated this symbol
           if (current.source === 'live' && Date.now() - current.timestamp < 3000) continue
           updated[asset.symbol] = simulateTick(current, asset)
         }
@@ -249,8 +257,8 @@ export function usePrices(symbols?: string[]) {
       })
     }, 2000)
 
-    // 4. Re-fetch REST prices every 15 seconds (backup for non-WS assets)
-    pollRef.current = setInterval(loadRealPrices, 15000)
+    // 4. Re-fetch REST prices every 10 seconds (server cache handles deduping).
+    pollRef.current = setInterval(loadRealPrices, 10000)
 
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current)

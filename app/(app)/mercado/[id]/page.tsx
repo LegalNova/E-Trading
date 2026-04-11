@@ -243,8 +243,17 @@ export default function AssetPage() {
                 fontFamily: 'var(--serif)', fontSize: 40, fontWeight: 800, lineHeight: 1,
                 color: pd?.direction === 'up' ? 'var(--green)' : pd?.direction === 'down' ? 'var(--red)' : 'var(--white)',
                 transition: 'color .3s', marginBottom: 8,
+                display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap',
               }}>
-                {formatPrice(currentPrice, asset.symbol)}
+                <span>{formatPrice(currentPrice, asset.symbol)}</span>
+                {pd?.source === 'simulated' && (
+                  <span style={{
+                    fontSize: 10, fontWeight: 700, letterSpacing: '.08em',
+                    padding: '2px 6px', borderRadius: 4,
+                    background: 'var(--bg3)', color: 'var(--muted)',
+                    fontFamily: 'var(--sans)',
+                  }}>SIM</span>
+                )}
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                 <span style={{

@@ -3,6 +3,9 @@ import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { ASSETS, AssetCategory } from '@/data/assets'
 import { usePrices, formatPrice } from '@/hooks/usePrices'
+import { MAIN_SYMBOLS } from '@/lib/finnhub'
+
+const REAL_COUNT = MAIN_SYMBOLS.length
 
 const CATS: { key: AssetCategory | 'todos'; label: string }[] = [
   { key: 'todos', label: 'Todos' },
@@ -83,6 +86,25 @@ export default function MercadoPage() {
               boxSizing: 'border-box',
             }}
           />
+        </div>
+
+        {/* Stats line */}
+        <div style={{
+          display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap',
+          fontSize: 12, color: 'var(--muted)', marginBottom: 14,
+        }}>
+          <span>{ASSETS.length} activos</span>
+          <span style={{ opacity: .4 }}>·</span>
+          <span>{filtered.length} mostrando</span>
+          <span style={{ opacity: .4 }}>·</span>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+            <span style={{
+              width: 6, height: 6, borderRadius: '50%',
+              background: 'var(--green)', display: 'inline-block',
+              boxShadow: '0 0 6px rgba(0,212,122,.6)',
+            }} />
+            {REAL_COUNT} con precios reales
+          </span>
         </div>
 
         {/* Category chips */}
@@ -246,6 +268,15 @@ export default function MercadoPage() {
                       marginBottom: 3,
                     }}>
                       {formatPrice(pd.price, asset.symbol)}
+                      {pd.source === 'simulated' && (
+                        <span style={{
+                          fontSize: 8, fontWeight: 700, letterSpacing: '.08em',
+                          padding: '1px 4px', borderRadius: 3,
+                          background: 'var(--bg3)', color: 'var(--muted)',
+                          marginLeft: 4, verticalAlign: 'middle',
+                          fontFamily: 'var(--sans)',
+                        }}>SIM</span>
+                      )}
                     </div>
                     <div style={{
                       display: 'inline-block',
