@@ -19,7 +19,7 @@ export interface Asset {
 const ACCIONES_US: Asset[] = [
   { symbol: 'AAPL', name: 'Apple', category: 'acciones-us', finnhubSymbol: 'AAPL', basePrice: 185, currency: 'USD', flag: '🇺🇸', description: 'Apple diseña, fabrica y vende iPhones, Macs, iPads y servicios digitales como App Store y Apple Music. Es la empresa más valiosa del mundo.', sector: 'Tecnología', marketCap: '2.8T', pe: 28, dividendYield: 0.5 },
   { symbol: 'MSFT', name: 'Microsoft', category: 'acciones-us', finnhubSymbol: 'MSFT', basePrice: 415, currency: 'USD', flag: '🇺🇸', description: 'Microsoft crea software empresarial, la nube Azure, y la suite Office. Propietaria de LinkedIn, GitHub y Xbox.', sector: 'Tecnología', marketCap: '3.1T', pe: 35, dividendYield: 0.7 },
-  { symbol: 'NVDA', name: 'NVIDIA', category: 'acciones-us', finnhubSymbol: 'NVDA', basePrice: 875, currency: 'USD', flag: '🇺🇸', description: 'NVIDIA fabrica GPUs para videojuegos, centros de datos e IA. Sus chips son el estándar para entrenar modelos de inteligencia artificial.', sector: 'Semiconductores', marketCap: '2.2T', pe: 65, dividendYield: 0.1 },
+  { symbol: 'NVDA', name: 'NVIDIA', category: 'acciones-us', finnhubSymbol: 'NVDA', basePrice: 142, currency: 'USD', flag: '🇺🇸', description: 'NVIDIA fabrica GPUs para videojuegos, centros de datos e IA. Sus chips son el estándar para entrenar modelos de inteligencia artificial.', sector: 'Semiconductores', marketCap: '3.5T', pe: 65, dividendYield: 0.1 },
   { symbol: 'TSLA', name: 'Tesla', category: 'acciones-us', finnhubSymbol: 'TSLA', basePrice: 175, currency: 'USD', flag: '🇺🇸', description: 'Tesla diseña vehículos eléctricos, paneles solares y baterías. Liderada por Elon Musk, es la marca de coches eléctricos más conocida del mundo.', sector: 'Automoción', marketCap: '560B', pe: 55, dividendYield: null },
   { symbol: 'AMZN', name: 'Amazon', category: 'acciones-us', finnhubSymbol: 'AMZN', basePrice: 185, currency: 'USD', flag: '🇺🇸', description: 'Amazon es el mayor marketplace del mundo y líder en cloud con AWS. También opera Prime Video, Alexa y Whole Foods.', sector: 'Consumo/Tecnología', marketCap: '1.9T', pe: 42, dividendYield: null },
   { symbol: 'GOOGL', name: 'Alphabet', category: 'acciones-us', finnhubSymbol: 'GOOGL', basePrice: 165, currency: 'USD', flag: '🇺🇸', description: 'Alphabet es la matriz de Google, el buscador más usado del mundo. También opera YouTube, Google Cloud y Android.', sector: 'Tecnología', marketCap: '2.0T', pe: 24, dividendYield: null },
@@ -104,7 +104,7 @@ const ACCIONES_US: Asset[] = [
   { symbol: 'BKNG', name: 'Booking Holdings', category: 'acciones-us', finnhubSymbol: 'BKNG', basePrice: 3650, currency: 'USD', flag: '🇺🇸' },
   { symbol: 'COIN', name: 'Coinbase', category: 'acciones-us', finnhubSymbol: 'COIN', basePrice: 220, currency: 'USD', flag: '🇺🇸' },
   { symbol: 'MSTR', name: 'MicroStrategy', category: 'acciones-us', finnhubSymbol: 'MSTR', basePrice: 1450, currency: 'USD', flag: '🇺🇸' },
-  { symbol: 'SMCI', name: 'Super Micro', category: 'acciones-us', finnhubSymbol: 'SMCI', basePrice: 920, currency: 'USD', flag: '🇺🇸' },
+  { symbol: 'SMCI', name: 'Super Micro', category: 'acciones-us', finnhubSymbol: 'SMCI', basePrice: 48, currency: 'USD', flag: '🇺🇸' },
   { symbol: 'ARM', name: 'ARM Holdings', category: 'acciones-us', finnhubSymbol: 'ARM', basePrice: 135, currency: 'USD', flag: '🇺🇸' },
   { symbol: 'DELL', name: 'Dell Technologies', category: 'acciones-us', finnhubSymbol: 'DELL', basePrice: 130, currency: 'USD', flag: '🇺🇸' },
 ]

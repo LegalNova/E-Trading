@@ -13,13 +13,18 @@ export interface FinnhubQuote {
   timestamp: number
 }
 
-// Server-side cache to avoid hitting Finnhub rate limits
+// Server-side cache to avoid hitting Finnhub rate limits.
+// We keep TWO timestamps:
+//   - `freshUntil`: under this, we serve directly without re-fetching
+//   - the quote itself never expires — once we got a real quote we keep
+//     serving it as the last-known value if Finnhub fails on retry.
+//     This prevents random simulated drift overwriting real data.
 interface CacheEntry {
   quote: FinnhubQuote
-  expiry: number
+  freshUntil: number
 }
 const quoteCache = new Map<string, CacheEntry>()
-const CACHE_TTL_MS = 20_000 // 20 seconds
+const CACHE_TTL_MS = 20_000 // 20 seconds of "fresh" data before re-checking Finnhub
 
 // Main symbols with real Finnhub data (~105 total)
 // - All 90 US stocks (ACCIONES_US)
@@ -105,16 +110,20 @@ function getFinnhubSymbol(ourSymbol: string): string {
   return FINNHUB_MAP[ourSymbol] ?? ourSymbol
 }
 
-// Fetch a single quote from Finnhub REST API (with server-side cache)
+// Fetch a single quote from Finnhub REST API (with server-side cache).
+// If Finnhub fails but we have a previous successful quote in cache, we
+// return that stale quote rather than null — this avoids the upstream
+// `getMainPrices` falling through to `simulateQuote` and drifting the
+// price randomly each call.
 async function fetchQuote(ourSymbol: string): Promise<FinnhubQuote | null> {
-  // Check cache first
   const cached = quoteCache.get(ourSymbol)
-  if (cached && cached.expiry > Date.now()) {
+  // Serve fresh cache directly
+  if (cached && cached.freshUntil > Date.now()) {
     return cached.quote
   }
 
   const apiKey = process.env.FINNHUB_API_KEY
-  if (!apiKey) return null
+  if (!apiKey) return cached?.quote ?? null
 
   const finnhubSym = getFinnhubSymbol(ourSymbol)
 
@@ -123,10 +132,10 @@ async function fetchQuote(ourSymbol: string): Promise<FinnhubQuote | null> {
       `https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(finnhubSym)}&token=${apiKey}`,
       { cache: 'no-store', signal: AbortSignal.timeout(5000) }
     )
-    if (!res.ok) return null
+    if (!res.ok) return cached?.quote ?? null
 
     const data = await res.json()
-    if (!data.c || data.c === 0) return null
+    if (!data.c || data.c === 0) return cached?.quote ?? null
 
     const quote: FinnhubQuote = {
       symbol: ourSymbol,
@@ -140,18 +149,44 @@ async function fetchQuote(ourSymbol: string): Promise<FinnhubQuote | null> {
       volume: data.v ?? 0,
       timestamp: Date.now(),
     }
-    quoteCache.set(ourSymbol, { quote, expiry: Date.now() + CACHE_TTL_MS })
+    quoteCache.set(ourSymbol, { quote, freshUntil: Date.now() + CACHE_TTL_MS })
     return quote
   } catch {
-    return null
+    // Network error: serve last-known good value if we have one
+    return cached?.quote ?? null
   }
+}
+
+// When Finnhub gives us nothing (no API key, network error, never seen),
+// we still need to return *something*. We build a stable quote anchored
+// to the asset's basePrice and remember it, so subsequent calls return
+// the SAME value instead of generating a fresh random drift each poll.
+function getStableFallback(sym: string): FinnhubQuote {
+  const cached = quoteCache.get(sym)
+  if (cached) return cached.quote
+
+  const asset = ASSETS.find(a => a.symbol === sym)
+  const base = asset?.basePrice ?? 100
+  const quote: FinnhubQuote = {
+    symbol: sym,
+    price: base,
+    change: 0,
+    changePercent: 0,
+    high: base,
+    low: base,
+    open: base,
+    prevClose: base,
+    volume: 0,
+    timestamp: Date.now(),
+  }
+  // Persist as a "soft" cache entry — never expires, but the next time
+  // Finnhub answers with real data we'll overwrite it.
+  quoteCache.set(sym, { quote, freshUntil: 0 })
+  return quote
 }
 
 // Fetch prices for all main assets
 export async function getMainPrices(): Promise<FinnhubQuote[]> {
-  const apiKey = process.env.FINNHUB_API_KEY
-  if (!apiKey) return getSimulatedPrices(MAIN_SYMBOLS)
-
   // The cache layer absorbs the load so that concurrent requests don't
   // multiply Finnhub calls. Each symbol hits the network at most once per
   // CACHE_TTL_MS window.
@@ -164,9 +199,7 @@ export async function getMainPrices(): Promise<FinnhubQuote[]> {
     if (result.status === 'fulfilled' && result.value) {
       return result.value
     }
-    // Fallback to simulation for this asset
-    const asset = ASSETS.find(a => a.symbol === sym)
-    return simulateQuote(sym, asset?.basePrice ?? 100)
+    return getStableFallback(sym)
   })
 }
 
@@ -188,8 +221,7 @@ export async function getPricesForSymbols(symbols: string[]): Promise<FinnhubQuo
   const real: FinnhubQuote[] = (realPrices as PromiseSettledResult<FinnhubQuote | null>[])
     .map((r, i) => {
       if (r.status === 'fulfilled' && r.value) return r.value
-      const asset = ASSETS.find(a => a.symbol === mainRequested[i])
-      return simulateQuote(mainRequested[i], asset?.basePrice ?? 100)
+      return getStableFallback(mainRequested[i])
     })
 
   return [...real, ...simPrices]

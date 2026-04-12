@@ -75,6 +75,7 @@ export default function AssetPage() {
   const [opType, setOpType] = useState<OpType>('buy')
   const [orderType, setOrderType] = useState<OrderType>('market')
   const [amount, setAmount] = useState('')
+  const [sellPct, setSellPct] = useState(25)
   const [limitPrice, setLimitPrice] = useState('')
   const [chartData, setChartData] = useState<number[]>([])
   const [notification, setNotification] = useState('')
@@ -114,15 +115,31 @@ export default function AssetPage() {
   const low52 = asset.basePrice * 0.68
   const high52 = asset.basePrice * 1.42
 
+  // Current position for this symbol (used by sell flow)
+  const currentPosition = portfolio?.positions.find(p => p.symbol === asset.symbol) ?? null
+  const positionShares = currentPosition?.shares ?? 0
+  const positionValue = positionShares * currentPrice
+  const sharesToSell = positionShares * (sellPct / 100)
+  const sellReceiveAmount = sharesToSell * currentPrice
+
+  // Derived final values for the trade — same shape regardless of buy/sell
+  const tradeShares = opType === 'buy' ? units : sharesToSell
+  const tradeAmount = opType === 'buy' ? parseFloat(amount || '0') : sellReceiveAmount
+
   function openModal(type: OpType) {
     setOpType(type)
+    if (type === 'sell') setSellPct(25)
     setShowTradeModal(true)
   }
 
   function handleOperate(e: React.FormEvent) {
     e.preventDefault()
-    const total = parseFloat(amount)
-    if (!total || total <= 0) return
+    if (opType === 'buy') {
+      const total = parseFloat(amount)
+      if (!total || total <= 0) return
+    } else {
+      if (!currentPosition || sellPct <= 0 || sharesToSell <= 0) return
+    }
     setShowConfirm(true)
   }
 
@@ -135,7 +152,7 @@ export default function AssetPage() {
         body: JSON.stringify({
           type: opType,
           symbol: asset.symbol,
-          amountEur: parseFloat(amount),
+          amountEur: tradeAmount,
           currentPrice: currentPrice,
         }),
       })
@@ -146,6 +163,7 @@ export default function AssetPage() {
         setNotification(`${opType === 'buy' ? 'Compra' : 'Venta'} ejecutada: ${Number(json.shares).toFixed(6)} ${asset.symbol}`)
         setAmount('')
         setLimitPrice('')
+        setSellPct(25)
         setShowTradeModal(false)
         await refetchPortfolio()
       }
@@ -450,9 +468,12 @@ export default function AssetPage() {
           <button
             onClick={() => openModal('sell')}
             style={{
-              flex: 1, padding: '13px', border: 'none', borderRadius: 12, cursor: 'pointer',
-              background: 'var(--red)', color: 'var(--white)',
+              flex: 1, padding: '13px', border: 'none', borderRadius: 12,
+              cursor: 'pointer',
+              background: currentPosition ? 'var(--red)' : 'var(--bg3)',
+              color: currentPosition ? 'var(--white)' : 'var(--muted)',
               fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700,
+              opacity: currentPosition ? 1 : 0.7,
             }}
           >
             ▼ Vender
@@ -554,77 +575,220 @@ export default function AssetPage() {
                 </div>
               )}
 
-              {/* Amount */}
-              <div style={{ marginBottom: 14 }}>
-                <label style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: 'var(--muted)', display: 'block', marginBottom: 6 }}>Importe (€)</label>
-                <input
-                  type="number" value={amount} onChange={e => setAmount(e.target.value)}
-                  placeholder="100" min="1" step="any" required
-                  style={{ width: '100%', background: 'var(--bg2)', border: '.5px solid var(--border2)', borderRadius: 10, padding: '11px 14px', color: 'var(--white)', fontFamily: 'var(--sans)', fontSize: 14, outline: 'none', boxSizing: 'border-box' }}
-                />
-              </div>
+              {opType === 'buy' ? (
+                <>
+                  {/* Amount */}
+                  <div style={{ marginBottom: 14 }}>
+                    <label style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: 'var(--muted)', display: 'block', marginBottom: 6 }}>Importe (€)</label>
+                    <input
+                      type="number" value={amount} onChange={e => setAmount(e.target.value)}
+                      placeholder="100" min="1" step="any" required
+                      style={{ width: '100%', background: 'var(--bg2)', border: '.5px solid var(--border2)', borderRadius: 10, padding: '11px 14px', color: 'var(--white)', fontFamily: 'var(--sans)', fontSize: 14, outline: 'none', boxSizing: 'border-box' }}
+                    />
+                  </div>
 
-              {/* Quick amounts */}
-              <div style={{ display: 'flex', gap: 6, marginBottom: 14 }}>
-                {[100, 250, 500, 1000].map(v => (
-                  <button key={v} type="button" onClick={() => setAmount(String(v))} style={{
-                    flex: 1, padding: '7px 4px', borderRadius: 8, border: '.5px solid var(--border2)',
-                    background: amount === String(v) ? 'var(--bg3)' : 'transparent',
-                    color: amount === String(v) ? 'var(--white)' : 'var(--muted)',
-                    fontSize: 11, fontWeight: 700, cursor: 'pointer',
-                  }}>€{v}</button>
-                ))}
-              </div>
+                  {/* Quick amounts */}
+                  <div style={{ display: 'flex', gap: 6, marginBottom: 14 }}>
+                    {[100, 250, 500, 1000].map(v => (
+                      <button key={v} type="button" onClick={() => setAmount(String(v))} style={{
+                        flex: 1, padding: '7px 4px', borderRadius: 8, border: '.5px solid var(--border2)',
+                        background: amount === String(v) ? 'var(--bg3)' : 'transparent',
+                        color: amount === String(v) ? 'var(--white)' : 'var(--muted)',
+                        fontSize: 11, fontWeight: 700, cursor: 'pointer',
+                      }}>€{v}</button>
+                    ))}
+                  </div>
 
-              {/* Units display */}
-              {amount && units > 0 && (
-                <div style={{ background: 'var(--bg2)', borderRadius: 10, padding: '10px 14px', marginBottom: 14, fontSize: 13, color: 'var(--muted)', display: 'flex', justifyContent: 'space-between' }}>
-                  <span>Unidades</span>
-                  <span style={{ fontFamily: 'var(--serif)', color: 'var(--white)', fontWeight: 700 }}>{units.toFixed(6)} {asset.symbol}</span>
-                </div>
+                  {/* Units display */}
+                  {amount && units > 0 && (
+                    <div style={{ background: 'var(--bg2)', borderRadius: 10, padding: '10px 14px', marginBottom: 14, fontSize: 13, color: 'var(--muted)', display: 'flex', justifyContent: 'space-between' }}>
+                      <span>Unidades</span>
+                      <span style={{ fontFamily: 'var(--serif)', color: 'var(--white)', fontWeight: 700 }}>{units.toFixed(6)} {asset.symbol}</span>
+                    </div>
+                  )}
+
+                  {/* Available capital */}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: 'var(--muted)', marginBottom: 8 }}>
+                    <span>Capital disponible</span>
+                    <span style={{ fontWeight: 700, color: 'var(--white)' }}>
+                      {portfolio ? `€${formatPrice(portfolio.cash)}` : '—'}
+                    </span>
+                  </div>
+
+                  {portfolio && parseFloat(amount || '0') > portfolio.cash ? (
+                    <div style={{
+                      background: 'rgba(239,83,80,.08)',
+                      border: '.5px solid rgba(239,83,80,.3)',
+                      borderRadius: 10,
+                      padding: '9px 14px',
+                      fontSize: 12,
+                      color: 'var(--red)',
+                      fontWeight: 600,
+                      marginBottom: 12,
+                    }}>
+                      Saldo insuficiente
+                    </div>
+                  ) : (
+                    <div style={{ height: 10 }} />
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={portfolio !== null && parseFloat(amount || '0') > portfolio.cash}
+                    style={{
+                      width: '100%', padding: '14px', border: 'none', borderRadius: 12,
+                      background: 'var(--green)', color: 'var(--bg)',
+                      fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 700,
+                      cursor: portfolio !== null && parseFloat(amount || '0') > portfolio.cash ? 'not-allowed' : 'pointer',
+                      opacity: portfolio !== null && parseFloat(amount || '0') > portfolio.cash ? 0.5 : 1,
+                    }}
+                  >
+                    ▲ Comprar {asset.symbol}
+                  </button>
+                </>
+              ) : (
+                <>
+                  {/* SELL — by percentage of position */}
+                  {!currentPosition ? (
+                    <>
+                      <div style={{
+                        background: 'rgba(239,83,80,.08)',
+                        border: '.5px solid rgba(239,83,80,.3)',
+                        borderRadius: 12,
+                        padding: '20px 16px',
+                        marginBottom: 14,
+                        textAlign: 'center',
+                      }}>
+                        <div style={{ fontSize: 28, marginBottom: 8 }}>📭</div>
+                        <div style={{ fontFamily: 'var(--serif)', fontSize: 15, fontWeight: 700, color: 'var(--white)', marginBottom: 4 }}>
+                          Sin posición en {asset.symbol}
+                        </div>
+                        <div style={{ fontSize: 12, color: 'var(--muted)', lineHeight: 1.5 }}>
+                          No tienes unidades de este activo. Compra primero para poder vender.
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        disabled
+                        style={{
+                          width: '100%', padding: '14px', border: 'none', borderRadius: 12,
+                          background: 'var(--bg3)', color: 'var(--muted)',
+                          fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 700,
+                          cursor: 'not-allowed', opacity: 0.6,
+                        }}
+                      >
+                        ▼ Vender {asset.symbol}
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      {/* Position summary */}
+                      <div style={{
+                        background: 'var(--bg2)',
+                        border: '.5px solid var(--border2)',
+                        borderRadius: 12,
+                        padding: '14px 16px',
+                        marginBottom: 16,
+                      }}>
+                        <div style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: 'var(--muted)', marginBottom: 8 }}>Tu posición</div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
+                          <span style={{ fontSize: 12, color: 'var(--muted)' }}>Unidades</span>
+                          <span style={{ fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700, color: 'var(--white)' }}>
+                            {positionShares.toFixed(6)} {asset.symbol}
+                          </span>
+                        </div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+                          <span style={{ fontSize: 12, color: 'var(--muted)' }}>Valor actual</span>
+                          <span style={{ fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700, color: 'var(--white)' }}>
+                            €{formatPrice(positionValue)}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Percentage selector */}
+                      <div style={{ marginBottom: 14 }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
+                          <label style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: 'var(--muted)' }}>
+                            Porcentaje a vender
+                          </label>
+                          <span style={{ fontFamily: 'var(--serif)', fontSize: 18, fontWeight: 800, color: 'var(--red)' }}>
+                            {sellPct}%
+                          </span>
+                        </div>
+                        <div style={{ display: 'flex', gap: 6, marginBottom: 12 }}>
+                          {[25, 50, 75, 100].map(v => (
+                            <button key={v} type="button" onClick={() => setSellPct(v)} style={{
+                              flex: 1, padding: '9px 4px', borderRadius: 9,
+                              border: `.5px solid ${sellPct === v ? 'var(--red)' : 'var(--border2)'}`,
+                              background: sellPct === v ? 'rgba(239,83,80,.12)' : 'transparent',
+                              color: sellPct === v ? 'var(--red)' : 'var(--muted)',
+                              fontSize: 12, fontWeight: 700, cursor: 'pointer',
+                            }}>{v}%</button>
+                          ))}
+                        </div>
+                        <input
+                          type="range"
+                          min="1"
+                          max="100"
+                          value={sellPct}
+                          onChange={e => setSellPct(parseInt(e.target.value, 10))}
+                          style={{
+                            width: '100%',
+                            accentColor: '#EF5350',
+                            cursor: 'pointer',
+                          }}
+                        />
+                      </div>
+
+                      {/* Sell summary */}
+                      <div style={{
+                        background: 'var(--bg2)',
+                        borderRadius: 10,
+                        padding: '12px 14px',
+                        marginBottom: 14,
+                        fontSize: 12,
+                        color: 'var(--muted)',
+                      }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
+                          <span>Acciones a vender</span>
+                          <span style={{ fontFamily: 'var(--serif)', color: 'var(--white)', fontWeight: 700 }}>
+                            {sharesToSell.toFixed(6)} {asset.symbol}
+                          </span>
+                        </div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
+                          <span>Precio actual</span>
+                          <span style={{ fontFamily: 'var(--serif)', color: 'var(--white)', fontWeight: 700 }}>
+                            {formatPrice(currentPrice, asset.symbol)} {asset.currency}
+                          </span>
+                        </div>
+                        <div style={{
+                          display: 'flex', justifyContent: 'space-between',
+                          paddingTop: 8, marginTop: 6, borderTop: '.5px solid var(--border)',
+                        }}>
+                          <span style={{ color: 'var(--white)', fontWeight: 700 }}>Recibirás</span>
+                          <span style={{ fontFamily: 'var(--serif)', color: 'var(--green)', fontSize: 15, fontWeight: 800 }}>
+                            €{formatPrice(sellReceiveAmount)}
+                          </span>
+                        </div>
+                      </div>
+
+                      <button
+                        type="submit"
+                        disabled={sellPct <= 0 || sharesToSell <= 0}
+                        style={{
+                          width: '100%', padding: '14px', border: 'none', borderRadius: 12,
+                          background: 'var(--red)', color: 'var(--white)',
+                          fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 700,
+                          cursor: sellPct <= 0 ? 'not-allowed' : 'pointer',
+                          opacity: sellPct <= 0 ? 0.5 : 1,
+                        }}
+                      >
+                        ▼ Vender {sellPct}% de {asset.symbol}
+                      </button>
+                    </>
+                  )}
+                </>
               )}
-
-              {/* Available capital */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: 'var(--muted)', marginBottom: 8 }}>
-                <span>Capital disponible</span>
-                <span style={{ fontWeight: 700, color: 'var(--white)' }}>
-                  {portfolio ? `€${formatPrice(portfolio.cash)}` : '—'}
-                </span>
-              </div>
-
-              {opType === 'buy' && portfolio && parseFloat(amount || '0') > portfolio.cash && (
-                <div style={{
-                  background: 'rgba(239,83,80,.08)',
-                  border: '.5px solid rgba(239,83,80,.3)',
-                  borderRadius: 10,
-                  padding: '9px 14px',
-                  fontSize: 12,
-                  color: 'var(--red)',
-                  fontWeight: 600,
-                  marginBottom: 12,
-                }}>
-                  Saldo insuficiente
-                </div>
-              )}
-
-              {(opType !== 'buy' || !portfolio || parseFloat(amount || '0') <= portfolio.cash) && (
-                <div style={{ height: 10 }} />
-              )}
-
-              <button
-                type="submit"
-                disabled={opType === 'buy' && portfolio !== null && parseFloat(amount || '0') > portfolio.cash}
-                style={{
-                  width: '100%', padding: '14px', border: 'none', borderRadius: 12,
-                  background: opType === 'buy' ? 'var(--green)' : 'var(--red)',
-                  color: opType === 'buy' ? 'var(--bg)' : 'var(--white)',
-                  fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 700,
-                  cursor: opType === 'buy' && portfolio !== null && parseFloat(amount || '0') > portfolio.cash ? 'not-allowed' : 'pointer',
-                  opacity: opType === 'buy' && portfolio !== null && parseFloat(amount || '0') > portfolio.cash ? 0.5 : 1,
-                }}
-              >
-                {opType === 'buy' ? '▲ Comprar' : '▼ Vender'} {asset.symbol}
-              </button>
             </form>
 
             <div style={{ marginTop: 14, fontSize: 11, color: 'var(--muted2)', lineHeight: 1.6, textAlign: 'center' }}>
@@ -681,12 +845,19 @@ export default function AssetPage() {
                 { lbl: 'Activo', val: `${asset.name} (${asset.symbol})` },
                 { lbl: 'Tipo de orden', val: orderType === 'market' ? 'Mercado' : orderType === 'limit' ? 'Límite' : 'Stop-Loss' },
                 { lbl: 'Precio', val: `${formatPrice(currentPrice, asset.symbol)} ${asset.currency}` },
-                { lbl: 'Unidades', val: `${units.toFixed(6)} ${asset.symbol}`, mono: true },
-                { lbl: 'Importe total', val: `€${formatPrice(parseFloat(amount || '0'))}`, strong: true },
+                ...(opType === 'sell'
+                  ? [{ lbl: 'Porcentaje', val: `${sellPct}% de tu posición` }]
+                  : []),
+                { lbl: opType === 'buy' ? 'Unidades' : 'Acciones a vender', val: `${tradeShares.toFixed(6)} ${asset.symbol}`, mono: true },
+                {
+                  lbl: opType === 'buy' ? 'Importe total' : 'Recibirás',
+                  val: `€${formatPrice(tradeAmount)}`,
+                  strong: true,
+                },
                 {
                   lbl: 'Saldo después',
                   val: portfolio
-                    ? `€${formatPrice(opType === 'buy' ? portfolio.cash - parseFloat(amount || '0') : portfolio.cash + parseFloat(amount || '0'))}`
+                    ? `€${formatPrice(opType === 'buy' ? portfolio.cash - tradeAmount : portfolio.cash + tradeAmount)}`
                     : '—',
                 },
               ].map((row, idx, arr) => (
