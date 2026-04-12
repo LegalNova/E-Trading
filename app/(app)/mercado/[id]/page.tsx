@@ -6,6 +6,13 @@ import { ASSET_BY_SYMBOL, CATEGORY_LABELS } from '@/data/assets'
 import { usePrices, formatPrice } from '@/hooks/usePrices'
 import { usePortfolio } from '@/hooks/usePortfolio'
 
+// Prevent hydration mismatch: prices differ between server and client.
+function useHydrated() {
+  const [hydrated, setHydrated] = useState(false)
+  useEffect(() => setHydrated(true), [])
+  return hydrated
+}
+
 type Tab = '1D' | '1S' | '1M' | '3M' | '1A'
 type OpType = 'buy' | 'sell'
 type OrderType = 'market' | 'limit' | 'stop'
@@ -65,10 +72,11 @@ function WeekRangeBar({ low, high, current }: { low: number; high: number; curre
 
 export default function AssetPage() {
   const params = useParams()
+  const hydrated = useHydrated()
   const symbolRaw = (params.id as string).toUpperCase()
   const asset = ASSET_BY_SYMBOL[symbolRaw]
   const { prices } = usePrices(asset ? [asset.symbol] : [])
-  const pd = asset ? prices[asset.symbol] : null
+  const pd = hydrated && asset ? prices[asset.symbol] : null
   const { data: portfolio, refetch: refetchPortfolio } = usePortfolio()
 
   const [tab, setTab] = useState<Tab>('1D')

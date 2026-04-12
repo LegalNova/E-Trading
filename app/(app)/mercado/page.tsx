@@ -1,5 +1,5 @@
 'use client'
-import { useState, useMemo } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import { ASSETS, AssetCategory } from '@/data/assets'
 import { usePrices, formatPrice } from '@/hooks/usePrices'
@@ -19,7 +19,11 @@ const CATS: { key: AssetCategory | 'todos'; label: string }[] = [
 ]
 
 function MiniSparkline({ up }: { up: boolean }) {
+  // Generate points only on client to avoid hydration mismatch from Math.random()
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
   const pts = useMemo(() => {
+    if (!mounted) return []
     const arr: number[] = []
     let v = 50
     for (let i = 0; i < 20; i++) {
@@ -27,7 +31,8 @@ function MiniSparkline({ up }: { up: boolean }) {
       arr.push(v)
     }
     return arr
-  }, [up])
+  }, [up, mounted])
+  if (!pts.length) return <div style={{ width: 80, height: 32 }} />
   const w = 80, h = 32
   const min = Math.min(...pts), max = Math.max(...pts)
   const range = max - min || 1
