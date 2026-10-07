@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth-options'
-import { getServerSupabase } from '@/lib/db'
+import { sql } from '@/lib/db'
 
 const BOT_NAMES = [
   'Carlos M.', 'Ana García', 'Pedro L.', 'María S.', 'Juan A.',
@@ -45,56 +45,42 @@ export async function GET() {
     const userId = user.id as string
     const weekStart = getWeekStart()
 
-    const supabase = getServerSupabase()
+    const db = sql()
 
-    // Get real users from liga_weekly
-    const { data: weeklyUsers } = await supabase
-      .from('liga_weekly')
-      .select('user_id, xp_semanal, liga_nivel')
-      .eq('week_start', weekStart)
-      .order('xp_semanal', { ascending: false })
-      .limit(30)
+    // Usuarios reales de esta semana (con nombre y racha)
+    const weeklyUsers = (await db`
+      SELECT lw.user_id, lw.xp_semanal, lw.liga_nivel, u.name, u.racha
+      FROM liga_weekly lw JOIN users u ON u.id = lw.user_id
+      WHERE lw.week_start = ${weekStart}
+      ORDER BY lw.xp_semanal DESC
+      LIMIT 30`) as {
+        user_id: string; xp_semanal: number; liga_nivel: number; name: string | null; racha: number
+      }[]
 
     const realEntries: {
       pos: number; name: string; xp: number; racha: number;
       isMe: boolean; isBot: boolean; initials: string; avatarColor: string; ligaNivel: number;
     }[] = []
 
-    if (weeklyUsers && weeklyUsers.length > 0) {
-      // Fetch user names
-      const userIds = weeklyUsers.map(u => u.user_id)
-      const { data: users } = await supabase
-        .from('users')
-        .select('id, name, racha, liga_nivel')
-        .in('id', userIds)
-
-      const userMap = new Map((users ?? []).map(u => [u.id, u]))
-
-      for (const wu of weeklyUsers) {
-        const u = userMap.get(wu.user_id)
-        if (!u) continue
-        realEntries.push({
-          pos: 0,
-          name: u.name ?? u.id.slice(0, 8),
-          xp: wu.xp_semanal ?? 0,
-          racha: u.racha ?? 0,
-          isMe: wu.user_id === userId,
-          isBot: false,
-          initials: getInitials(u.name ?? 'U'),
-          avatarColor: '#00D47A',
-          ligaNivel: wu.liga_nivel ?? 1,
-        })
-      }
+    for (const wu of weeklyUsers) {
+      realEntries.push({
+        pos: 0,
+        name: wu.name ?? wu.user_id.slice(0, 8),
+        xp: wu.xp_semanal ?? 0,
+        racha: wu.racha ?? 0,
+        isMe: wu.user_id === userId,
+        isBot: false,
+        initials: getInitials(wu.name ?? 'U'),
+        avatarColor: '#00D47A',
+        ligaNivel: wu.liga_nivel ?? 1,
+      })
     }
 
     // Check if current user is in the list
     const meInList = realEntries.some(e => e.isMe)
     if (!meInList) {
-      const { data: myData } = await supabase
-        .from('users')
-        .select('name, racha, liga_nivel, xp')
-        .eq('id', userId)
-        .single()
+      const myRows = await db`SELECT name, racha, liga_nivel, xp FROM users WHERE id = ${userId} LIMIT 1`
+      const myData = myRows[0] as { name: string | null; racha: number; liga_nivel: number; xp: number } | undefined
 
       if (myData) {
         realEntries.push({
@@ -156,27 +142,14 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'xpEarned requerido' }, { status: 400 })
     }
 
-    const supabase = getServerSupabase()
     const weekStart = getWeekStart()
+    const ligaNivel = (user.liga_nivel as number) ?? 1
 
-    const { data: existing } = await supabase
-      .from('liga_weekly')
-      .select('xp_semanal')
-      .eq('user_id', userId)
-      .eq('week_start', weekStart)
-      .single()
-
-    if (existing) {
-      await supabase
-        .from('liga_weekly')
-        .update({ xp_semanal: (existing.xp_semanal ?? 0) + xpEarned })
-        .eq('user_id', userId)
-        .eq('week_start', weekStart)
-    } else {
-      await supabase
-        .from('liga_weekly')
-        .insert({ user_id: userId, week_start: weekStart, xp_semanal: xpEarned, liga_nivel: (user.liga_nivel as number) ?? 1 })
-    }
+    await sql()`
+      INSERT INTO liga_weekly (user_id, week_start, xp_semanal, liga_nivel)
+      VALUES (${userId}, ${weekStart}, ${xpEarned}, ${ligaNivel})
+      ON CONFLICT (user_id, week_start)
+      DO UPDATE SET xp_semanal = liga_weekly.xp_semanal + EXCLUDED.xp_semanal`
 
     return NextResponse.json({ success: true })
   } catch (err) {

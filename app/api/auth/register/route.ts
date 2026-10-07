@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import bcrypt from 'bcryptjs'
-import { getServerSupabase } from '@/lib/db'
+import { getUserByEmail, createUser } from '@/lib/db'
 
 export async function POST(req: NextRequest) {
   try {
@@ -17,44 +17,17 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Email no válido' }, { status: 400 })
     }
 
-    const supabase = getServerSupabase()
-
-    // Check if email exists
-    const { data: existing } = await supabase
-      .from('users')
-      .select('id')
-      .eq('email', email.toLowerCase())
-      .single()
-
-    if (existing) {
+    if (await getUserByEmail(email)) {
       return NextResponse.json({ error: 'Ya existe una cuenta con este email' }, { status: 409 })
     }
 
     const password_hash = await bcrypt.hash(password, 10)
-    const trialEndsAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString()
 
-    // Create user
-    const { data: user, error } = await supabase
-      .from('users')
-      .insert({
-        email: email.toLowerCase(),
-        name: name.trim(),
-        password_hash,
-        plan: 'pro_trial',
-        trial_ends_at: trialEndsAt,
-        xp: 0,
-        racha: 0,
-      })
-      .select('id')
-      .single()
-
-    if (error || !user) {
-      console.error('Register DB error:', error)
-      throw new Error('DB insert failed')
+    // Crea usuario + portafolio (10.000€) + registro de liga
+    const user = await createUser({ email, name: name.trim(), password_hash })
+    if (!user) {
+      return NextResponse.json({ error: 'Ya existe una cuenta con este email' }, { status: 409 })
     }
-
-    // Create portfolio
-    await supabase.from('portfolio').insert({ user_id: user.id, cash: 10000 })
 
     return NextResponse.json({ success: true, userId: user.id })
   } catch (err: unknown) {

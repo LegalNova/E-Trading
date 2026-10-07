@@ -1,39 +1,36 @@
-import { createClient, SupabaseClient } from '@supabase/supabase-js'
+import { neon, types, NeonQueryFunction } from '@neondatabase/serverless'
 
-function getSupabaseUrl() {
-  return process.env.NEXT_PUBLIC_SUPABASE_URL ?? ''
-}
+/* ─── Conexión (Neon serverless, HTTP) ───────────────────────── */
 
-let _supabase: SupabaseClient | null = null
-export function getSupabase(): SupabaseClient {
-  if (!_supabase) {
-    _supabase = createClient(getSupabaseUrl(), process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? '')
+// Devolver tipos con la misma forma que antes (JSON-friendly):
+// numeric → number, bigint → number, date → 'YYYY-MM-DD', timestamptz → ISO string
+const parseTimestamp = types.getTypeParser(1184) as (v: string) => Date
+types.setTypeParser(1700, (v: string) => parseFloat(v))                      // numeric
+types.setTypeParser(20, (v: string) => parseInt(v, 10))                      // int8
+types.setTypeParser(1082, (v: string) => v)                                  // date
+types.setTypeParser(1184, (v: string) => parseTimestamp(v).toISOString())    // timestamptz
+
+let _sql: NeonQueryFunction<false, false> | null = null
+
+/** Cliente SQL de Neon. Uso: await sql()`SELECT * FROM users WHERE id = ${id}` */
+export function sql(): NeonQueryFunction<false, false> {
+  if (!_sql) {
+    const url = process.env.DATABASE_URL
+    if (!url) throw new Error('DATABASE_URL no configurada')
+    _sql = neon(url)
   }
-  return _supabase
-}
-
-// Keep for backwards compat (client-side)
-export const supabase = new Proxy({} as SupabaseClient, {
-  get(_target, prop) {
-    return (getSupabase() as unknown as Record<string, unknown>)[prop as string]
-  },
-})
-
-export function getServerSupabase(): SupabaseClient {
-  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
-  if (serviceKey) {
-    return createClient(getSupabaseUrl(), serviceKey)
-  }
-  return getSupabase()
+  return _sql
 }
 
 /* ─── Types ─────────────────────────────────────────────────── */
+export type Plan = 'free' | 'starter' | 'pro' | 'elite'
+
 export type DbUser = {
   id: string
   email: string
   name: string | null
   password_hash: string | null
-  plan: 'free' | 'starter' | 'pro' | 'elite' | 'pro_trial'
+  plan: Plan | 'pro_trial'
   trial_ends_at: string | null
   xp: number
   racha: number
@@ -49,42 +46,49 @@ export type DbUser = {
   created_at: string
 }
 
+export type DbPortfolio = { id: string; user_id: string; cash: number; updated_at: string }
+
+export type DbPosition = {
+  id: string
+  user_id: string
+  symbol: string
+  shares: number
+  avg_price: number
+  opened_at: string
+}
+
+export type DbTrade = {
+  id: string
+  user_id: string
+  type: 'buy' | 'sell'
+  symbol: string
+  shares: number
+  price: number
+  total: number
+  executed_at: string
+}
+
 /* ─── User helpers ───────────────────────────────────────────── */
 
 /** Buscar usuario por email */
 export async function getUserByEmail(email: string): Promise<DbUser | null> {
-  const db = getServerSupabase()
-  const { data } = await db
-    .from('users')
-    .select('*')
-    .eq('email', email.toLowerCase())
-    .single()
-  return data ?? null
+  const rows = await sql()`SELECT * FROM users WHERE email = ${email.toLowerCase()} LIMIT 1`
+  return (rows[0] as DbUser | undefined) ?? null
 }
 
 /** Buscar usuario por ID */
 export async function getUserById(id: string): Promise<DbUser | null> {
-  const db = getServerSupabase()
-  const { data } = await db
-    .from('users')
-    .select('*')
-    .eq('id', id)
-    .single()
-  return data ?? null
+  const rows = await sql()`SELECT * FROM users WHERE id = ${id} LIMIT 1`
+  return (rows[0] as DbUser | undefined) ?? null
 }
 
 /** Buscar usuario por provider_id (Google) */
 export async function getUserByProviderId(providerId: string): Promise<DbUser | null> {
-  const db = getServerSupabase()
-  const { data } = await db
-    .from('users')
-    .select('*')
-    .eq('provider_id', providerId)
-    .single()
-  return data ?? null
+  const rows = await sql()`SELECT * FROM users WHERE provider_id = ${providerId} LIMIT 1`
+  return (rows[0] as DbUser | undefined) ?? null
 }
 
-/** Crear usuario nuevo */
+/** Crear usuario nuevo (con portafolio de 10.000€ y registro de liga) */
 export async function createUser(payload: {
   email: string
   name: string
@@ -93,80 +97,58 @@ export async function createUser(payload: {
   provider_id?: string
   avatar_url?: string
 }): Promise<DbUser | null> {
-  const db = getServerSupabase()
+  const db = sql()
   const trialEndsAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString()
 
-  const { data, error } = await db
-    .from('users')
-    .insert({
-      email: payload.email.toLowerCase(),
-      name: payload.name,
-      password_hash: payload.password_hash ?? null,
-      plan: 'pro_trial',
-      trial_ends_at: trialEndsAt,
-    })
-    .select()
-    .single()
+  const rows = await db`
+    INSERT INTO users (email, name, password_hash, plan, trial_ends_at, provider, provider_id, avatar_url)
+    VALUES (
+      ${payload.email.toLowerCase()}, ${payload.name}, ${payload.password_hash ?? null},
+      'pro_trial', ${trialEndsAt}, ${payload.provider ?? 'credentials'},
+      ${payload.provider_id ?? null}, ${payload.avatar_url ?? null}
+    )
+    ON CONFLICT (email) DO NOTHING
+    RETURNING *`
+  const user = rows[0] as DbUser | undefined
+  if (!user) return null
 
-  if (error || !data) return null
-
-  // Crear portafolio inicial con 10.000€ virtuales
-  await db
-    .from('portfolio')
-    .insert({ user_id: data.id, cash: 10000.00 })
-
-  // Crear registro de liga semanal
   const weekStart = getMonday(new Date())
-  await db
-    .from('liga_weekly')
-    .insert({ user_id: data.id, week_start: weekStart, liga_nivel: 1 })
+  await db.transaction([
+    db`INSERT INTO portfolio (user_id, cash) VALUES (${user.id}, 10000.00) ON CONFLICT (user_id) DO NOTHING`,
+    db`INSERT INTO liga_weekly (user_id, week_start, liga_nivel) VALUES (${user.id}, ${weekStart}, 1)
+       ON CONFLICT (user_id, week_start) DO NOTHING`,
+  ])
 
-  return data as DbUser
+  return user
 }
 
 /** Actualizar last_active */
 export async function touchLastActive(userId: string) {
-  const db = getServerSupabase()
-  const today = new Date().toISOString().slice(0, 10)
-  await db
-    .from('users')
-    .update({ last_active: today })
-    .eq('id', userId)
+  await sql()`UPDATE users SET last_active = CURRENT_DATE WHERE id = ${userId}`
 }
 
-/** Actualizar XP del usuario */
+/** Sumar XP al usuario y a su liga semanal (atómico) */
 export async function addXP(userId: string, amount: number) {
-  const db = getServerSupabase()
-  const { data: user } = await db
-    .from('users')
-    .select('xp')
-    .eq('id', userId)
-    .single()
-  if (!user) return
-  await db
-    .from('users')
-    .update({ xp: (user.xp ?? 0) + amount })
-    .eq('id', userId)
-
-  // Sumar a liga semanal
+  const db = sql()
   const weekStart = getMonday(new Date())
-  await db
-    .from('liga_weekly')
-    .upsert(
-      { user_id: userId, week_start: weekStart, xp_semanal: amount },
-      { onConflict: 'user_id,week_start', ignoreDuplicates: false }
-    )
+  await db.transaction([
+    db`UPDATE users SET xp = xp + ${amount} WHERE id = ${userId}`,
+    db`INSERT INTO liga_weekly (user_id, week_start, xp_semanal, liga_nivel)
+       SELECT ${userId}, ${weekStart}, ${amount}, liga_nivel FROM users WHERE id = ${userId}
+       ON CONFLICT (user_id, week_start)
+       DO UPDATE SET xp_semanal = liga_weekly.xp_semanal + EXCLUDED.xp_semanal`,
+  ])
 }
 
 /** Obtener plan efectivo (degradar si trial expiró) */
-export function getEffectivePlan(user: DbUser): 'free' | 'starter' | 'pro' | 'elite' {
+export function getEffectivePlan(user: DbUser): Plan {
   if (user.plan === 'pro_trial') {
     if (user.trial_ends_at && new Date(user.trial_ends_at) < new Date()) {
       return 'free'
     }
     return 'pro'
   }
-  return user.plan as 'free' | 'starter' | 'pro' | 'elite'
+  return user.plan
 }
 
 /** Días restantes de trial */
@@ -178,101 +160,51 @@ export function trialDaysLeft(user: DbUser): number | null {
 
 /* ─── Portfolio helpers ──────────────────────────────────────── */
 
-export async function getPortfolio(userId: string) {
-  const db = getServerSupabase()
-  const { data } = await db
-    .from('portfolio')
-    .select('*')
-    .eq('user_id', userId)
-    .single()
-  return data
+export async function getPortfolio(userId: string): Promise<DbPortfolio | null> {
+  const rows = await sql()`SELECT * FROM portfolio WHERE user_id = ${userId} LIMIT 1`
+  return (rows[0] as DbPortfolio | undefined) ?? null
 }
 
-// Positions
-export async function getPositions(userId: string) {
-  const db = getServerSupabase()
-  const { data } = await db
-    .from('positions')
-    .select('*')
-    .eq('user_id', userId)
-    .order('opened_at', { ascending: false })
-  return data ?? []
+export async function getPositions(userId: string): Promise<DbPosition[]> {
+  const rows = await sql()`SELECT * FROM positions WHERE user_id = ${userId} ORDER BY opened_at DESC`
+  return rows as DbPosition[]
 }
 
-export async function getPositionBySymbol(userId: string, symbol: string) {
-  const db = getServerSupabase()
-  const { data } = await db
-    .from('positions')
-    .select('*')
-    .eq('user_id', userId)
-    .eq('symbol', symbol)
-    .maybeSingle()
-  return data
+export async function getPositionBySymbol(userId: string, symbol: string): Promise<DbPosition | null> {
+  const rows = await sql()`SELECT * FROM positions WHERE user_id = ${userId} AND symbol = ${symbol} LIMIT 1`
+  return (rows[0] as DbPosition | undefined) ?? null
 }
 
-// Trades
-export async function getTrades(userId: string, limit = 50) {
-  const db = getServerSupabase()
-  const { data } = await db
-    .from('trades')
-    .select('*')
-    .eq('user_id', userId)
-    .order('executed_at', { ascending: false })
-    .limit(limit)
-  return data ?? []
+export async function getTrades(userId: string, limit = 50): Promise<DbTrade[]> {
+  const rows = await sql()`
+    SELECT * FROM trades WHERE user_id = ${userId} ORDER BY executed_at DESC LIMIT ${limit}`
+  return rows as DbTrade[]
 }
 
-// Update portfolio cash
 export async function updatePortfolioCash(userId: string, newCash: number) {
-  const db = getServerSupabase()
-  const { error } = await db
-    .from('portfolio')
-    .update({ cash: newCash, updated_at: new Date().toISOString() })
-    .eq('user_id', userId)
-  if (error) throw error
+  await sql()`UPDATE portfolio SET cash = ${newCash}, updated_at = NOW() WHERE user_id = ${userId}`
 }
 
-// Upsert position (for buys that increase, or creates new)
+/** Crear o actualizar posición */
 export async function upsertPosition(params: {
   userId: string
   symbol: string
   newShares: number
   newAvgPrice: number
 }) {
-  const db = getServerSupabase()
-  const existing = await getPositionBySymbol(params.userId, params.symbol)
-  if (existing) {
-    const { error } = await db
-      .from('positions')
-      .update({ shares: params.newShares, avg_price: params.newAvgPrice })
-      .eq('user_id', params.userId)
-      .eq('symbol', params.symbol)
-    if (error) throw error
-  } else {
-    const { error } = await db
-      .from('positions')
-      .insert({
-        user_id: params.userId,
-        symbol: params.symbol,
-        shares: params.newShares,
-        avg_price: params.newAvgPrice,
-      })
-    if (error) throw error
-  }
+  await sql()`
+    INSERT INTO positions (user_id, symbol, shares, avg_price)
+    VALUES (${params.userId}, ${params.symbol}, ${params.newShares}, ${params.newAvgPrice})
+    ON CONFLICT (user_id, symbol)
+    DO UPDATE SET shares = EXCLUDED.shares, avg_price = EXCLUDED.avg_price`
 }
 
-// Delete position (for full sells)
+/** Eliminar posición (venta total) */
 export async function deletePosition(userId: string, symbol: string) {
-  const db = getServerSupabase()
-  const { error } = await db
-    .from('positions')
-    .delete()
-    .eq('user_id', userId)
-    .eq('symbol', symbol)
-  if (error) throw error
+  await sql()`DELETE FROM positions WHERE user_id = ${userId} AND symbol = ${symbol}`
 }
 
-// Record trade
+/** Registrar operación */
 export async function recordTrade(params: {
   userId: string
   type: 'buy' | 'sell'
@@ -281,23 +213,14 @@ export async function recordTrade(params: {
   price: number
   total: number
 }) {
-  const db = getServerSupabase()
-  const { error } = await db
-    .from('trades')
-    .insert({
-      user_id: params.userId,
-      type: params.type,
-      symbol: params.symbol,
-      shares: params.shares,
-      price: params.price,
-      total: params.total,
-    })
-  if (error) throw error
+  await sql()`
+    INSERT INTO trades (user_id, type, symbol, shares, price, total)
+    VALUES (${params.userId}, ${params.type}, ${params.symbol}, ${params.shares}, ${params.price}, ${params.total})`
 }
 
 /* ─── Utils ──────────────────────────────────────────────────── */
 
-function getMonday(date: Date): string {
+export function getMonday(date: Date): string {
   const d = new Date(date)
   const day = d.getDay()
   const diff = d.getDate() - day + (day === 0 ? -6 : 1)

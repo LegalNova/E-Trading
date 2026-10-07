@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { getStripe } from '@/lib/stripe'
-import { getSupabase } from '@/lib/db'
+import { sql } from '@/lib/db'
 
 export const runtime = 'nodejs'
 
@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Invalid signature' }, { status: 400 })
   }
 
-  const supabase = getSupabase()
+  const db = sql()
 
   switch (event.type) {
     case 'checkout.session.completed': {
@@ -36,10 +36,7 @@ export async function POST(req: Request) {
       const userId = session.metadata?.userId
       const plan = session.metadata?.plan
       if (userId && plan) {
-        await supabase
-          .from('users')
-          .update({ plan, trial_ends_at: null })
-          .eq('id', userId)
+        await db`UPDATE users SET plan = ${plan}, trial_ends_at = NULL WHERE id = ${userId}`
         console.log(`[stripe/webhook] Updated user ${userId} to plan ${plan}`)
       }
       break
@@ -52,7 +49,7 @@ export async function POST(req: Request) {
       if (userId && status === 'active') {
         const plan = sub.metadata?.plan
         if (plan) {
-          await supabase.from('users').update({ plan }).eq('id', userId)
+          await db`UPDATE users SET plan = ${plan} WHERE id = ${userId}`
         }
       }
       break
@@ -62,7 +59,7 @@ export async function POST(req: Request) {
       const sub = event.data.object
       const userId = sub.metadata?.userId
       if (userId) {
-        await supabase.from('users').update({ plan: 'free' }).eq('id', userId)
+        await db`UPDATE users SET plan = 'free' WHERE id = ${userId}`
         console.log(`[stripe/webhook] Downgraded user ${userId} to free`)
       }
       break
@@ -72,12 +69,8 @@ export async function POST(req: Request) {
       const invoice = event.data.object
       const customerId = invoice.customer as string
       if (customerId) {
-        const { data: user } = await supabase
-          .from('users')
-          .select('id')
-          .eq('stripe_customer_id', customerId)
-          .single()
-        if (user) {
+        const users = await db`SELECT id FROM users WHERE stripe_customer_id = ${customerId} LIMIT 1`
+        if (users.length > 0) {
           // Keep plan for now — Stripe will retry. Downgrade after 3 failures.
           console.log(`[stripe/webhook] Payment failed for customer ${customerId}`)
         }

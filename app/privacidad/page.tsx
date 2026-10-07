@@ -58,7 +58,7 @@ export default function PrivacidadPage() {
       <Section title="7. Transferencias internacionales">
         <p>Utilizamos los siguientes servicios que pueden procesar datos fuera de la UE, todos con las garantías adecuadas:</p>
         <ul>
-          <li>Supabase (base de datos) — proveedores con sede en la UE disponibles.</li>
+          <li>Neon (base de datos PostgreSQL) — alojada a través de Vercel.</li>
           <li>Anthropic (IA) — USA, protegido por Cláusulas Contractuales Estándar.</li>
           <li>Resend (emails) — USA, protegido por Cláusulas Contractuales Estándar.</li>
           <li>Vercel (hosting) — USA/UE, protegido por Data Processing Agreement.</li>

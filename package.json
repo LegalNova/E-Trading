@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.82.0",
-    "@supabase/supabase-js": "^2.101.1",
+    "@neondatabase/serverless": "^1.2.0",
     "@types/bcryptjs": "^2.4.6",
     "bcryptjs": "^3.0.3",
     "framer-motion": "^12.38.0",

@@ -7,7 +7,7 @@ Plataforma educativa de trading e inversión para principiantes. Convierte a cua
 ## Stack
 
 - **Frontend**: Next.js 14 (App Router) + TypeScript
-- **Base de datos**: PostgreSQL via Supabase
+- **Base de datos**: PostgreSQL vía Neon (integración de Vercel)
 - **Auth**: NextAuth.js v4 (email/password + Google OAuth)
 - **IA**: Anthropic API (claude-sonnet-4-5)
 - **Precios**: Finnhub WebSocket API
@@ -22,10 +22,9 @@ Plataforma educativa de trading e inversión para principiantes. Convierte a cua
 Crea un archivo `.env.local` en la raíz del proyecto con estas variables:
 
 ```bash
-# Base de datos (Supabase)
-DATABASE_URL=postgresql://postgres:[PASSWORD]@db.[PROJECT].supabase.co:5432/postgres
-NEXT_PUBLIC_SUPABASE_URL=https://[PROJECT].supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...
+# Base de datos (Neon — se crean solas con la integración de Vercel: `vercel env pull`)
+DATABASE_URL=postgresql://USER:PASSWORD@ep-xxx-pooler.REGION.aws.neon.tech/neondb?sslmode=require
+DATABASE_URL_UNPOOLED=postgresql://USER:PASSWORD@ep-xxx.REGION.aws.neon.tech/neondb?sslmode=require
 
 # Auth
 NEXTAUTH_SECRET=genera-uno-con: openssl rand -base64 32
@@ -68,9 +67,8 @@ npm install
 
 # 2. Crear .env.local con las variables de arriba
 
-# 3. Ejecutar el schema en Supabase
-# Ve a Supabase Dashboard > SQL Editor y ejecuta el contenido de:
-# supabase/schema.sql
+# 3. Crear las tablas en Neon (idempotente)
+psql "$DATABASE_URL_UNPOOLED" -f db/schema.sql
 
 # 4. Arrancar en desarrollo
 npm run dev
@@ -130,9 +128,9 @@ El deploy tardará ~2 minutos. Si hay errores, ve a la pestaña "Build Logs".
 
 ## Schema de base de datos
 
-Ejecuta `supabase/schema.sql` en Supabase SQL Editor antes del primer uso.
+Aplica `db/schema.sql` en Neon antes del primer uso: `psql "$DATABASE_URL_UNPOOLED" -f db/schema.sql` (se puede re-ejecutar sin problema).
 
-El schema incluye todas las tablas necesarias y una función `downgrade_expired_trials()` que puedes llamar con un cron job diario en Supabase para convertir pruebas expiradas a plan free.
+El schema incluye todas las tablas necesarias y una función `downgrade_expired_trials()` que puedes llamar con un cron job diario para convertir pruebas expiradas a plan free.
 
 ---
 
@@ -154,7 +152,7 @@ easytrading/
 ├── hooks/               # usePrices, usePortfolio, useProgress
 ├── lib/                 # db, auth-options, email, anthropic, finnhub
 ├── styles/              # globals.css con variables de diseño
-├── supabase/            # schema.sql
+├── db/                  # schema.sql (PostgreSQL / Neon)
 └── types/               # next-auth.d.ts module augmentation
 ```
 

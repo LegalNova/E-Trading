@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth-options'
-import { getServerSupabase, addXP } from '@/lib/db'
+import { sql, addXP } from '@/lib/db'
 import { RETOS } from '@/data/retos'
 
 export async function GET() {
@@ -13,19 +13,9 @@ export async function GET() {
     const userId = (session.user as Record<string, unknown>).id as string
     if (!userId) return NextResponse.json({ completedIds: [] })
 
-    const db = getServerSupabase()
-    const { data, error } = await db
-      .from('reto_progress')
-      .select('reto_id')
-      .eq('user_id', userId)
-      .eq('completed', true)
-
-    if (error) {
-      console.error('GET /api/progress/reto error:', error)
-      return NextResponse.json({ completedIds: [] })
-    }
-
-    const completedIds = (data ?? []).map((r: { reto_id: string }) => r.reto_id)
+    const rows = await sql()`
+      SELECT reto_id FROM reto_progress WHERE user_id = ${userId} AND completed = TRUE`
+    const completedIds = rows.map(r => r.reto_id as string)
     return NextResponse.json({ completedIds })
   } catch (err) {
     console.error('GET /api/progress/reto unexpected:', err)
@@ -55,32 +45,16 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Reto no encontrado' }, { status: 404 })
     }
 
-    const db = getServerSupabase()
-
-    // Check if already completed
-    const { data: existing } = await db
-      .from('reto_progress')
-      .select('reto_id')
-      .eq('user_id', userId)
-      .eq('reto_id', retoId)
-      .eq('completed', true)
-      .single()
-
-    if (existing) {
+    // Marcar completado; solo devuelve fila si antes no lo estaba (evita XP doble)
+    const updated = await sql()`
+      INSERT INTO reto_progress (user_id, reto_id, completed, completed_at)
+      VALUES (${userId}, ${retoId}, TRUE, NOW())
+      ON CONFLICT (user_id, reto_id)
+      DO UPDATE SET completed = TRUE, completed_at = NOW()
+      WHERE reto_progress.completed = FALSE
+      RETURNING reto_id`
+    if (updated.length === 0) {
       return NextResponse.json({ success: true, alreadyCompleted: true, xp: 0 })
-    }
-
-    // Upsert completion
-    const { error: upsertError } = await db
-      .from('reto_progress')
-      .upsert(
-        { user_id: userId, reto_id: retoId, completed: true, completed_at: new Date().toISOString() },
-        { onConflict: 'user_id,reto_id', ignoreDuplicates: false }
-      )
-
-    if (upsertError) {
-      console.error('Upsert reto_progress error:', upsertError)
-      return NextResponse.json({ error: 'Error al guardar progreso' }, { status: 500 })
     }
 
     // Add XP

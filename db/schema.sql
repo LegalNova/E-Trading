@@ -1,6 +1,6 @@
 -- ============================================================
--- E-Trading — Supabase Schema completo
--- Ejecutar en el SQL Editor de Supabase
+-- E-Trading — Esquema PostgreSQL (Neon)
+-- Aplicar con: psql "$DATABASE_URL_UNPOOLED" -f db/schema.sql (idempotente)
 -- ============================================================
 
 -- Extensiones necesarias
@@ -38,6 +38,7 @@ RETURNS TRIGGER AS $$
 BEGIN NEW.updated_at = NOW(); RETURN NEW; END;
 $$ LANGUAGE plpgsql;
 
+DROP TRIGGER IF EXISTS users_updated_at ON users;
 CREATE TRIGGER users_updated_at
   BEFORE UPDATE ON users
   FOR EACH ROW EXECUTE FUNCTION update_updated_at();
@@ -165,7 +166,7 @@ CREATE INDEX IF NOT EXISTS idx_liga_week        ON liga_weekly(week_start, liga_
 CREATE INDEX IF NOT EXISTS idx_affiliates_broker ON affiliate_clicks(broker, clicked_at);
 
 -- ─── FUNCIÓN: Degradar trial expirado ────────────────────────
--- Llamar periódicamente con un cron job en Supabase
+-- Llamar periódicamente con un cron job
 CREATE OR REPLACE FUNCTION downgrade_expired_trials()
 RETURNS void AS $$
 BEGIN

@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth-options'
 import { getStripe, PLAN_PRICE_IDS } from '@/lib/stripe'
-import { getSupabase } from '@/lib/db'
+import { sql } from '@/lib/db'
 
 export async function POST(req: Request) {
   try {
@@ -25,12 +25,9 @@ export async function POST(req: Request) {
     }
 
     // Get or create Stripe customer
-    const supabase = getSupabase()
-    const { data: user } = await supabase
-      .from('users')
-      .select('stripe_customer_id, email, name')
-      .eq('id', session.user.id)
-      .single()
+    const db = sql()
+    const rows = await db`SELECT stripe_customer_id, email, name FROM users WHERE id = ${session.user.id} LIMIT 1`
+    const user = rows[0] as { stripe_customer_id: string | null; email: string; name: string | null } | undefined
 
     let customerId = user?.stripe_customer_id
     if (!customerId) {
@@ -40,7 +37,7 @@ export async function POST(req: Request) {
         metadata: { userId: session.user.id },
       })
       customerId = customer.id
-      await supabase.from('users').update({ stripe_customer_id: customerId }).eq('id', session.user.id)
+      await db`UPDATE users SET stripe_customer_id = ${customerId} WHERE id = ${session.user.id}`
     }
 
     const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'

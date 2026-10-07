@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth-options'
-import { getServerSupabase } from '@/lib/db'
+import { sql } from '@/lib/db'
 
 const STREAK_REWARDS: { days: number; xp: number; badge?: string; message: string }[] = [
   { days: 3,   xp: 50,   message: '¡3 días seguidos! Vas bien.' },
@@ -21,13 +21,10 @@ export async function POST() {
     const user = session.user as Record<string, unknown>
     const userId = user.id as string
 
-    const supabase = getServerSupabase()
+    const db = sql()
 
-    const { data: dbUser } = await supabase
-      .from('users')
-      .select('racha, last_active, xp')
-      .eq('id', userId)
-      .single()
+    const rows = await db`SELECT racha, last_active, xp FROM users WHERE id = ${userId} LIMIT 1`
+    const dbUser = rows[0] as { racha: number; last_active: string | null; xp: number } | undefined
 
     if (!dbUser) {
       return NextResponse.json({ error: 'Usuario no encontrado' }, { status: 404 })
@@ -54,23 +51,17 @@ export async function POST() {
     // Check for streak reward
     const reward = STREAK_REWARDS.find(r => r.days === newRacha)
     const bonusXP = reward?.xp ?? 0
-    const newXP = (dbUser.xp ?? 0) + bonusXP
 
     // Update user
-    const updateData: Record<string, unknown> = {
-      racha: newRacha,
-      last_active: today,
-      xp: newXP,
-    }
-
-    await supabase.from('users').update(updateData).eq('id', userId)
+    await db`
+      UPDATE users SET racha = ${newRacha}, last_active = ${today}, xp = xp + ${bonusXP}
+      WHERE id = ${userId}`
 
     // Award badge if applicable
     if (reward?.badge) {
-      await supabase
-        .from('badges')
-        .upsert({ user_id: userId, badge_id: reward.badge })
-        .select()
+      await db`
+        INSERT INTO badges (user_id, badge_id) VALUES (${userId}, ${reward.badge})
+        ON CONFLICT (user_id, badge_id) DO NOTHING`
     }
 
     return NextResponse.json({

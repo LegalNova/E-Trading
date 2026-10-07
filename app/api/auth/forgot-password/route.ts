@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server'
 import { randomBytes } from 'crypto'
-import { getUserByEmail } from '@/lib/db'
-import { getServerSupabase } from '@/lib/db'
+import { getUserByEmail, sql } from '@/lib/db'
 import { sendPasswordResetEmail } from '@/lib/email'
 
 export async function POST(req: Request) {
@@ -19,13 +18,13 @@ export async function POST(req: Request) {
     }
 
     const token = randomBytes(32).toString('hex')
-    const db = getServerSupabase()
+    const db = sql()
 
-    // Invalidar tokens anteriores
-    await db.from('password_resets').update({ used: true }).eq('user_id', user.id).eq('used', false)
-
-    // Crear nuevo token
-    await db.from('password_resets').insert({ user_id: user.id, token })
+    // Invalidar tokens anteriores y crear el nuevo
+    await db.transaction([
+      db`UPDATE password_resets SET used = TRUE WHERE user_id = ${user.id} AND used = FALSE`,
+      db`INSERT INTO password_resets (user_id, token) VALUES (${user.id}, ${token})`,
+    ])
 
     // Enviar email (no bloqueante)
     sendPasswordResetEmail(user.email, user.name ?? 'Trader', token).catch(console.error)

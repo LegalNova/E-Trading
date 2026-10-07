@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import bcrypt from 'bcryptjs'
-import { getServerSupabase } from '@/lib/db'
+import { sql } from '@/lib/db'
 
 export async function POST(req: Request) {
   try {
@@ -10,15 +10,13 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Datos inválidos.' }, { status: 400 })
     }
 
-    const db = getServerSupabase()
+    const db = sql()
 
     // Buscar token válido
-    const { data: reset } = await db
-      .from('password_resets')
-      .select('*')
-      .eq('token', token)
-      .eq('used', false)
-      .single()
+    const rows = await db`
+      SELECT id, user_id, expires_at FROM password_resets
+      WHERE token = ${token} AND used = FALSE LIMIT 1`
+    const reset = rows[0] as { id: string; user_id: string; expires_at: string } | undefined
 
     if (!reset) {
       return NextResponse.json({ error: 'El enlace es inválido o ha expirado.' }, { status: 400 })
@@ -30,11 +28,11 @@ export async function POST(req: Request) {
 
     const password_hash = await bcrypt.hash(password, 12)
 
-    // Actualizar contraseña
-    await db.from('users').update({ password_hash }).eq('id', reset.user_id)
-
-    // Marcar token como usado
-    await db.from('password_resets').update({ used: true }).eq('id', reset.id)
+    // Actualizar contraseña y marcar token como usado
+    await db.transaction([
+      db`UPDATE users SET password_hash = ${password_hash} WHERE id = ${reset.user_id}`,
+      db`UPDATE password_resets SET used = TRUE WHERE id = ${reset.id}`,
+    ])
 
     return NextResponse.json({ ok: true })
   } catch (err) {
