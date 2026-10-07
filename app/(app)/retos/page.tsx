@@ -4,10 +4,10 @@ import { useSession } from 'next-auth/react'
 import { RETOS, FASES, Reto } from '@/data/retos'
 
 const TIPO_COLORS: Record<string, { bg: string; color: string; border: string }> = {
-  daily:   { bg: 'rgba(0,212,122,.08)',   color: 'var(--green)',  border: 'rgba(0,212,122,.25)' },
-  weekly:  { bg: 'rgba(66,165,245,.08)',  color: 'var(--blue)',   border: 'rgba(66,165,245,.25)' },
-  monthly: { bg: 'rgba(153,69,255,.08)', color: 'var(--purple)', border: 'rgba(153,69,255,.25)' },
-  special: { bg: 'rgba(249,168,37,.08)', color: 'var(--amber)',  border: 'rgba(249,168,37,.25)' },
+  daily:   { bg: 'color-mix(in srgb, var(--green) 8%, transparent)',   color: 'var(--green)',  border: 'color-mix(in srgb, var(--green) 25%, transparent)' },
+  weekly:  { bg: 'color-mix(in srgb, var(--blue) 8%, transparent)',  color: 'var(--blue)',   border: 'color-mix(in srgb, var(--blue) 25%, transparent)' },
+  monthly: { bg: 'color-mix(in srgb, var(--purple) 8%, transparent)', color: 'var(--purple)', border: 'color-mix(in srgb, var(--purple) 25%, transparent)' },
+  special: { bg: 'color-mix(in srgb, var(--amber) 8%, transparent)', color: 'var(--amber)',  border: 'color-mix(in srgb, var(--amber) 25%, transparent)' },
 }
 
 interface Question {
@@ -234,15 +234,15 @@ export default function RetosPage() {
   const passed = finalCorrect >= MIN_CORRECT
 
   return (
-    <div style={{ padding: '24px 28px', overflowY: 'auto', flex: 1, position: 'relative' }}>
+    <div style={{ padding: '24px 16px', maxWidth: 1040, margin: '0 auto', width: '100%', position: 'relative' }}>
       {/* XP Toast */}
       {xpToast !== null && (
         <div style={{
           position: 'fixed', top: 24, right: 24, zIndex: 9999,
           background: 'var(--green)', color: 'var(--bg)',
-          fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 800,
-          padding: '12px 24px', borderRadius: 12,
-          boxShadow: '0 8px 32px rgba(0,212,122,.4)',
+          fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 700,
+          padding: '12px 24px', borderRadius: 6,
+          boxShadow: '0 8px 32px color-mix(in srgb, var(--green) 40%, transparent)',
           animation: 'fadeInUp .4s ease',
         }}>
           +{xpToast} XP
@@ -253,8 +253,8 @@ export default function RetosPage() {
       {racha > 0 && (
         <div style={{
           display: 'inline-flex', alignItems: 'center', gap: 8,
-          background: 'rgba(249,168,37,.08)', border: '.5px solid rgba(249,168,37,.25)',
-          borderRadius: 10, padding: '8px 14px', fontSize: 13, fontWeight: 700, color: 'var(--amber)',
+          background: 'color-mix(in srgb, var(--amber) 8%, transparent)', border: '.5px solid color-mix(in srgb, var(--amber) 25%, transparent)',
+          borderRadius: 6, padding: '8px 14px', fontSize: 13, fontWeight: 700, color: 'var(--amber)',
           marginBottom: 16,
         }}>
           Racha activa: {racha} dias seguidos
@@ -262,18 +262,18 @@ export default function RetosPage() {
       )}
 
       <div style={{ marginBottom: 24 }}>
-        <div style={{ fontFamily: 'var(--serif)', fontSize: 24, fontWeight: 800, marginBottom: 4 }}>Retos</div>
+        <div style={{ fontFamily: 'var(--serif)', fontSize: 24, fontWeight: 700, marginBottom: 4 }}>Retos</div>
         <div style={{ fontSize: 13, color: 'var(--muted)' }}>7 fases · Tu camino a inversor autónomo</div>
       </div>
 
       {/* Progress */}
-      <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 14, padding: 18, marginBottom: 24 }}>
+      <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 6, padding: 18, marginBottom: 24 }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
           <span style={{ fontFamily: 'var(--serif)', fontSize: 15, fontWeight: 700 }}>Progreso total</span>
-          <span style={{ fontFamily: 'var(--serif)', fontSize: 18, fontWeight: 800, color: 'var(--green)' }}>{totalCompleted} / {RETOS.length}</span>
+          <span style={{ fontFamily: 'var(--serif)', fontSize: 18, fontWeight: 700, color: 'var(--green)' }}>{totalCompleted} / {RETOS.length}</span>
         </div>
         <div style={{ height: 6, background: 'var(--border)', borderRadius: 3, overflow: 'hidden' }}>
-          <div style={{ height: '100%', width: `${(totalCompleted / RETOS.length) * 100}%`, background: 'linear-gradient(90deg,var(--green),#00F090)', borderRadius: 3, transition: 'width .6s' }} />
+          <div style={{ height: '100%', width: `${(totalCompleted / RETOS.length) * 100}%`, background: 'linear-gradient(90deg,var(--green),var(--green))', borderRadius: 3, transition: 'width .6s' }} />
         </div>
         <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 6 }}>Completa retos para ganar XP y ascender en la liga</div>
       </div>
@@ -285,7 +285,7 @@ export default function RetosPage() {
         const pct = (faseCompleted / fase.retos.length) * 100
 
         return (
-          <div key={fase.fase} style={{ marginBottom: 16, background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 14, overflow: 'hidden' }}>
+          <div key={fase.fase} style={{ marginBottom: 16, background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 6, overflow: 'hidden' }}>
             {/* Phase header */}
             <div
               onClick={() => setExpandedFases(prev =>
@@ -293,7 +293,7 @@ export default function RetosPage() {
               )}
               style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '16px 18px', cursor: 'pointer', userSelect: 'none' }}
             >
-              <div style={{ width: 36, height: 36, borderRadius: 10, background: faseCompleted === fase.retos.length ? 'rgba(0,212,122,.15)' : 'var(--bg2)', border: `.5px solid ${faseCompleted === fase.retos.length ? 'rgba(0,212,122,.3)' : 'var(--border2)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--serif)', fontSize: 15, fontWeight: 800, color: 'var(--green)', flexShrink: 0 }}>
+              <div style={{ width: 36, height: 36, borderRadius: 6, background: faseCompleted === fase.retos.length ? 'color-mix(in srgb, var(--green) 15%, transparent)' : 'var(--bg2)', border: `.5px solid ${faseCompleted === fase.retos.length ? 'color-mix(in srgb, var(--green) 30%, transparent)' : 'var(--border2)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--serif)', fontSize: 15, fontWeight: 700, color: 'var(--green)', flexShrink: 0 }}>
                 {faseCompleted === fase.retos.length ? '✓' : fase.fase}
               </div>
               <div style={{ flex: 1, minWidth: 0 }}>
@@ -313,7 +313,7 @@ export default function RetosPage() {
 
             {/* Retos grid */}
             {isExpanded && (
-              <div style={{ padding: '0 14px 14px', display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }}>
+              <div style={{ padding: '0 14px 14px', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: 8 }}>
                 {fase.retos.map(reto => {
                   const rtc = TIPO_COLORS[reto.tipo]
                   const locked = isLocked(reto)
@@ -327,9 +327,9 @@ export default function RetosPage() {
                       onClick={() => canOpen && openPanel(reto)}
                       title={locked ? `Requiere plan ${reto.plan}` : !unlocked ? 'Completa el reto anterior primero' : ''}
                       style={{
-                        background: done ? 'rgba(0,212,122,.06)' : 'var(--bg2)',
-                        border: done ? '.5px solid rgba(0,212,122,.3)' : `.5px solid ${!canOpen && !done ? 'rgba(238,242,240,.04)' : 'var(--border2)'}`,
-                        borderRadius: 10, padding: 12,
+                        background: done ? 'color-mix(in srgb, var(--green) 6%, transparent)' : 'var(--bg2)',
+                        border: done ? '.5px solid color-mix(in srgb, var(--green) 30%, transparent)' : `.5px solid ${!canOpen && !done ? 'color-mix(in srgb, var(--text-primary) 4%, transparent)' : 'var(--border2)'}`,
+                        borderRadius: 6, padding: 12,
                         cursor: canOpen ? 'pointer' : 'not-allowed',
                         opacity: (locked || !unlocked) && !done ? 0.45 : 1,
                         transition: 'all .15s',
@@ -337,7 +337,7 @@ export default function RetosPage() {
                       }}
                     >
                       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 7 }}>
-                        <span style={{ fontSize: 9, fontWeight: 700, padding: '2px 7px', borderRadius: 100, background: rtc.bg, color: rtc.color, border: `.5px solid ${rtc.border}` }}>
+                        <span style={{ fontSize: 9, fontWeight: 700, padding: '2px 7px', borderRadius: 4, background: rtc.bg, color: rtc.color, border: `.5px solid ${rtc.border}` }}>
                           {reto.tipo}
                         </span>
                         {done ? <span style={{ fontSize: 12 }}>✅</span>
@@ -366,7 +366,7 @@ export default function RetosPage() {
       {panelOpen && (
         <div
           onClick={closePanel}
-          style={{ position: 'fixed', inset: 0, zIndex: 100, background: 'rgba(7,9,10,.75)', backdropFilter: 'blur(4px)', transition: 'opacity .3s' }}
+          style={{ position: 'fixed', inset: 0, zIndex: 100, background: 'color-mix(in srgb, var(--bg) 75%, transparent)', backdropFilter: 'blur(4px)', transition: 'opacity .3s' }}
         />
       )}
 
@@ -385,17 +385,17 @@ export default function RetosPage() {
             {/* Panel header */}
             <div style={{ padding: '20px 24px', borderBottom: '.5px solid var(--border)', flexShrink: 0 }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
-                <span style={{ fontSize: 10, fontWeight: 600, padding: '3px 10px', borderRadius: 100, background: tc.bg, color: tc.color, border: `.5px solid ${tc.border}` }}>
+                <span style={{ fontSize: 10, fontWeight: 600, padding: '3px 10px', borderRadius: 4, background: tc.bg, color: tc.color, border: `.5px solid ${tc.border}` }}>
                   {selectedReto.tipo}
                 </span>
                 <button onClick={closePanel} style={{ background: 'none', border: 'none', color: 'var(--muted)', fontSize: 20, cursor: 'pointer', padding: 4, lineHeight: 1 }}>×</button>
               </div>
-              <div style={{ fontFamily: 'var(--serif)', fontSize: 19, fontWeight: 800, marginBottom: 6, lineHeight: 1.2 }}>{selectedReto.titulo}</div>
+              <div style={{ fontFamily: 'var(--serif)', fontSize: 19, fontWeight: 700, marginBottom: 6, lineHeight: 1.2 }}>{selectedReto.titulo}</div>
               <div style={{ fontSize: 12, color: 'var(--muted)', lineHeight: 1.55, marginBottom: 10 }}>{selectedReto.descripcion}</div>
               <div style={{ display: 'flex', gap: 8 }}>
-                <span style={{ background: 'rgba(0,212,122,.08)', border: '.5px solid rgba(0,212,122,.2)', borderRadius: 7, padding: '4px 10px', fontSize: 11, color: 'var(--green)', fontWeight: 700 }}>+{selectedReto.xp} XP</span>
-                <span style={{ background: 'var(--bg2)', border: '.5px solid var(--border2)', borderRadius: 7, padding: '4px 10px', fontSize: 11, color: 'var(--muted)' }}>{selectedReto.duracion} min</span>
-                <span style={{ background: 'var(--bg2)', border: '.5px solid var(--border2)', borderRadius: 7, padding: '4px 10px', fontSize: 11, color: 'var(--muted)' }}>Fase {selectedReto.fase}</span>
+                <span style={{ background: 'color-mix(in srgb, var(--green) 8%, transparent)', border: '.5px solid color-mix(in srgb, var(--green) 20%, transparent)', borderRadius: 6, padding: '4px 10px', fontSize: 11, color: 'var(--green)', fontWeight: 700 }}>+{selectedReto.xp} XP</span>
+                <span style={{ background: 'var(--bg2)', border: '.5px solid var(--border2)', borderRadius: 6, padding: '4px 10px', fontSize: 11, color: 'var(--muted)' }}>{selectedReto.duracion} min</span>
+                <span style={{ background: 'var(--bg2)', border: '.5px solid var(--border2)', borderRadius: 6, padding: '4px 10px', fontSize: 11, color: 'var(--muted)' }}>Fase {selectedReto.fase}</span>
               </div>
             </div>
 
@@ -404,9 +404,9 @@ export default function RetosPage() {
               {completedIds.includes(selectedReto.id) ? (
                 <div style={{ textAlign: 'center', paddingTop: 40 }}>
                   <div style={{ fontSize: 56, marginBottom: 14 }}>✅</div>
-                  <div style={{ fontFamily: 'var(--serif)', fontSize: 20, fontWeight: 800, marginBottom: 8 }}>Reto completado</div>
+                  <div style={{ fontFamily: 'var(--serif)', fontSize: 20, fontWeight: 700, marginBottom: 8 }}>Reto completado</div>
                   <div style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 24 }}>Ya has completado este reto y ganado sus XP.</div>
-                  <button onClick={closePanel} style={{ padding: '12px 24px', background: 'var(--green)', color: 'var(--bg)', border: 'none', borderRadius: 10, fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>Cerrar</button>
+                  <button onClick={closePanel} style={{ padding: '12px 24px', background: 'var(--green)', color: 'var(--bg)', border: 'none', borderRadius: 6, fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>Cerrar</button>
                 </div>
               ) : !quizDone ? (
                 <>
@@ -431,15 +431,15 @@ export default function RetosPage() {
                     {q?.opciones.map((op, idx) => {
                       let bg = 'var(--bg2)', border = 'var(--border2)', color = 'var(--white)'
                       if (showResult) {
-                        if (idx === q.correcta) { bg = 'rgba(0,212,122,.15)'; border = 'var(--green)'; color = 'var(--green)' }
-                        else if (idx === selected && idx !== q.correcta) { bg = 'rgba(239,83,80,.12)'; border = 'var(--red)'; color = 'var(--red)' }
+                        if (idx === q.correcta) { bg = 'color-mix(in srgb, var(--green) 15%, transparent)'; border = 'var(--green)'; color = 'var(--green)' }
+                        else if (idx === selected && idx !== q.correcta) { bg = 'color-mix(in srgb, var(--red) 12%, transparent)'; border = 'var(--red)'; color = 'var(--red)' }
                         else { color = 'var(--muted)' }
                       } else if (selected === idx) { bg = 'var(--bg3)'; border = 'var(--green)' }
                       return (
                         <div
                           key={idx}
                           onClick={() => handleAnswer(idx)}
-                          style={{ background: bg, border: `.5px solid ${border}`, borderRadius: 12, padding: '12px 16px', cursor: showResult ? 'default' : 'pointer', display: 'flex', alignItems: 'center', gap: 10, color, transition: 'all .1s' }}
+                          style={{ background: bg, border: `.5px solid ${border}`, borderRadius: 6, padding: '12px 16px', cursor: showResult ? 'default' : 'pointer', display: 'flex', alignItems: 'center', gap: 10, color, transition: 'all .1s' }}
                         >
                           <div style={{ width: 26, height: 26, borderRadius: '50%', background: 'var(--bg3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--serif)', fontWeight: 700, fontSize: 11, flexShrink: 0 }}>
                             {String.fromCharCode(65 + idx)}
@@ -453,7 +453,7 @@ export default function RetosPage() {
                   </div>
 
                   {showResult && (
-                    <div style={{ background: isCorrect ? 'rgba(0,212,122,.08)' : 'rgba(239,83,80,.08)', border: `.5px solid ${isCorrect ? 'rgba(0,212,122,.3)' : 'rgba(239,83,80,.3)'}`, borderRadius: 10, padding: '12px 14px', marginBottom: 14 }}>
+                    <div style={{ background: isCorrect ? 'color-mix(in srgb, var(--green) 8%, transparent)' : 'color-mix(in srgb, var(--red) 8%, transparent)', border: `.5px solid ${isCorrect ? 'color-mix(in srgb, var(--green) 30%, transparent)' : 'color-mix(in srgb, var(--red) 30%, transparent)'}`, borderRadius: 6, padding: '12px 14px', marginBottom: 14 }}>
                       <div style={{ fontSize: 13, fontWeight: 700, color: isCorrect ? 'var(--green)' : 'var(--red)', marginBottom: 4 }}>
                         {feedbackMsg}
                       </div>
@@ -462,7 +462,7 @@ export default function RetosPage() {
                   )}
 
                   {showResult && (
-                    <button onClick={handleNext} style={{ width: '100%', padding: 13, background: 'var(--green)', color: 'var(--bg)', border: 'none', borderRadius: 10, fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
+                    <button onClick={handleNext} style={{ width: '100%', padding: 13, background: 'var(--green)', color: 'var(--bg)', border: 'none', borderRadius: 6, fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
                       {currentQ < questions.length - 1 ? 'Siguiente →' : 'Ver resultado →'}
                     </button>
                   )}
@@ -470,7 +470,7 @@ export default function RetosPage() {
               ) : (
                 <div style={{ textAlign: 'center', paddingTop: 16 }}>
                   <div style={{ fontSize: 52, marginBottom: 12 }}>{passed ? '🎯' : '💪'}</div>
-                  <div style={{ fontFamily: 'var(--serif)', fontSize: 22, fontWeight: 800, marginBottom: 8 }}>
+                  <div style={{ fontFamily: 'var(--serif)', fontSize: 22, fontWeight: 700, marginBottom: 8 }}>
                     {passed ? '¡Reto superado!' : 'Casi lo tienes'}
                   </div>
                   <div style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 20 }}>
@@ -478,12 +478,12 @@ export default function RetosPage() {
                   </div>
 
                   {passed ? (
-                    <div style={{ background: 'rgba(0,212,122,.08)', border: '.5px solid rgba(0,212,122,.3)', borderRadius: 12, padding: 20, marginBottom: 20 }}>
-                      <div style={{ fontFamily: 'var(--serif)', fontSize: 32, fontWeight: 800, color: 'var(--green)' }}>+{selectedReto.xp} XP</div>
+                    <div style={{ background: 'color-mix(in srgb, var(--green) 8%, transparent)', border: '.5px solid color-mix(in srgb, var(--green) 30%, transparent)', borderRadius: 6, padding: 20, marginBottom: 20 }}>
+                      <div style={{ fontFamily: 'var(--serif)', fontSize: 32, fontWeight: 700, color: 'var(--green)' }}>+{selectedReto.xp} XP</div>
                       <div style={{ fontSize: 13, color: 'var(--muted)', marginTop: 4 }}>Se añadirán a tu perfil</div>
                     </div>
                   ) : (
-                    <div style={{ background: 'rgba(239,83,80,.08)', border: '.5px solid rgba(239,83,80,.25)', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+                    <div style={{ background: 'color-mix(in srgb, var(--red) 8%, transparent)', border: '.5px solid color-mix(in srgb, var(--red) 25%, transparent)', borderRadius: 6, padding: 16, marginBottom: 20 }}>
                       <div style={{ fontSize: 13, color: 'var(--red)', lineHeight: 1.6 }}>
                         Necesitas {MIN_CORRECT} respuestas correctas. Solo has obtenido {finalCorrect}. Repasa la teoría e inténtalo de nuevo.
                       </div>
@@ -492,7 +492,7 @@ export default function RetosPage() {
 
                   <div style={{ display: 'flex', gap: 10 }}>
                     {!passed && (
-                      <button onClick={retryQuiz} style={{ flex: 1, padding: 12, background: 'var(--bg2)', border: '.5px solid var(--border2)', color: 'var(--white)', borderRadius: 10, fontFamily: 'var(--serif)', fontSize: 13, fontWeight: 700, cursor: 'pointer' }}>
+                      <button onClick={retryQuiz} style={{ flex: 1, padding: 12, background: 'var(--bg2)', border: '.5px solid var(--border2)', color: 'var(--white)', borderRadius: 6, fontFamily: 'var(--serif)', fontSize: 13, fontWeight: 700, cursor: 'pointer' }}>
                         Intentar de nuevo
                       </button>
                     )}
@@ -500,12 +500,12 @@ export default function RetosPage() {
                       <button
                         onClick={handleComplete}
                         disabled={completing}
-                        style={{ flex: 1, padding: 12, background: completing ? 'var(--bg3)' : 'var(--green)', color: completing ? 'var(--muted)' : 'var(--bg)', border: 'none', borderRadius: 10, fontFamily: 'var(--serif)', fontSize: 13, fontWeight: 700, cursor: completing ? 'not-allowed' : 'pointer' }}
+                        style={{ flex: 1, padding: 12, background: completing ? 'var(--bg3)' : 'var(--green)', color: completing ? 'var(--muted)' : 'var(--bg)', border: 'none', borderRadius: 6, fontFamily: 'var(--serif)', fontSize: 13, fontWeight: 700, cursor: completing ? 'not-allowed' : 'pointer' }}
                       >
                         {completing ? 'Guardando...' : 'Completar reto →'}
                       </button>
                     )}
-                    <button onClick={closePanel} style={{ padding: '12px 18px', background: 'var(--bg2)', border: '.5px solid var(--border2)', color: 'var(--muted)', borderRadius: 10, fontFamily: 'var(--serif)', fontSize: 13, cursor: 'pointer' }}>
+                    <button onClick={closePanel} style={{ padding: '12px 18px', background: 'var(--bg2)', border: '.5px solid var(--border2)', color: 'var(--muted)', borderRadius: 6, fontFamily: 'var(--serif)', fontSize: 13, cursor: 'pointer' }}>
                       Cerrar
                     </button>
                   </div>

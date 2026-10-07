@@ -46,8 +46,8 @@ function buildSystemPrompt(user: UserContext, modo: IAModo, marketData: MarketTi
 DATOS DEL USUARIO AHORA MISMO:
 - Plan: ${user.plan}
 - XP: ${user.xp} · Nivel: ${user.nivel}
-- Retos completados: ${user.retosCompletados}/50
-- Clases completadas: ${user.clasesCompletadas}/12
+- Retos completados: ${user.retosCompletados}/100
+- Clases completadas: ${user.clasesCompletadas}/50
 - Portafolio: ${user.numPosiciones} posiciones, €${user.cash.toFixed(2)} disponibles
 - Racha: ${user.racha} días consecutivos
 - Total operaciones: ${user.totalOperaciones}
@@ -86,7 +86,7 @@ export async function chatIA({
   const recentHistory = history.slice(-10)
 
   const response = await client.messages.create({
-    model: 'claude-sonnet-4-5',
+    model: 'claude-sonnet-5-5',
     max_tokens: 400,
     system: systemPrompt,
     messages: [

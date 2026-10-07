@@ -82,7 +82,7 @@ function LegalPage({ title, updated, children }: { title: string; updated: strin
         <div style={{ fontSize: 10, color: 'var(--green)', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', marginBottom: 8 }}>
           Documento legal
         </div>
-        <h1 style={{ fontFamily: 'var(--serif)', fontSize: 36, fontWeight: 800, letterSpacing: '-.03em', marginBottom: 8 }}>{title}</h1>
+        <h1 style={{ fontFamily: 'var(--serif)', fontSize: 36, fontWeight: 700, letterSpacing: '-.03em', marginBottom: 8 }}>{title}</h1>
         <p style={{ fontSize: 12, color: 'var(--muted)', marginBottom: 40 }}>Última actualización: {updated}</p>
         <div style={{ fontSize: 14, lineHeight: 1.8, color: 'var(--muted)' }}>
           {children}

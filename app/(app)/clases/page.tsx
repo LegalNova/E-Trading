@@ -1,225 +1,150 @@
 'use client'
-import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { CLASES, ClaseCategoria } from '@/data/clases'
-import { useSession } from 'next-auth/react'
+import { useEffect, useState } from 'react'
+import { NavBar } from '@/components/ui/NavBar'
+import { Seg } from '@/components/ui/Seg'
+import { Sheet } from '@/components/ui/Sheet'
+import { Icon, ICONS } from '@/components/ui/Icon'
+import { card, h1, h2, bar, btnPrimary } from '@/components/ui/styles'
+import { fwait } from '@/lib/format'
 
-const CATEGORIAS: { key: ClaseCategoria | 'todas'; label: string }[] = [
-  { key: 'todas', label: 'Todas' },
-  { key: 'fundamentos', label: 'Fundamentos' },
-  { key: 'riesgo', label: 'Riesgo' },
-  { key: 'macroeconomia', label: 'Macro' },
-  { key: 'estrategia', label: 'Estrategia' },
-  { key: 'analisis-tecnico', label: 'Técnico' },
-  { key: 'criptomonedas', label: 'Cripto' },
-  { key: 'etfs', label: 'ETFs' },
-  { key: 'forex', label: 'Forex' },
-  { key: 'materias', label: 'Materias' },
-  { key: 'opciones', label: 'Opciones' },
-]
+type Estado = 'completada' | 'disponible' | 'espera' | 'bloqueada' | 'proximamente'
 
-const PLAN_BADGE: Record<string, { bg: string; color: string; border: string; label: string }> = {
-  free:    { bg: 'rgba(0,212,122,.1)',   color: '#00D47A', border: 'rgba(0,212,122,.3)',  label: 'Free' },
-  starter: { bg: 'rgba(66,165,245,.1)', color: '#42A5F5', border: 'rgba(66,165,245,.3)', label: 'Starter' },
-  pro:     { bg: 'rgba(153,69,255,.1)', color: '#9945FF', border: 'rgba(153,69,255,.3)', label: 'Pro' },
-  elite:   { bg: 'rgba(255,215,0,.1)',  color: '#FFD700', border: 'rgba(255,215,0,.3)',  label: 'Elite' },
+interface ClaseItem {
+  id: string
+  numero: number
+  modulo: number
+  titulo: string
+  duracion: string | null
+  xp: number | null
+  plan: 'free' | 'starter' | 'pro' | 'elite'
+  estado: Estado
+  retryAt: string | null
 }
 
-const CAT_ICONS: Record<string, string> = {
-  fundamentos: '📐', riesgo: '🛡️', macroeconomia: '🌍', estrategia: '🧭',
-  'analisis-tecnico': '📈', criptomonedas: '₿', etfs: '🗂️', forex: '💱',
-  materias: '🪙', opciones: '⚙️',
+interface Data {
+  plan: string
+  modulos: { n: number; titulo: string; plan: string; total: number; completadas: number }[]
+  clases: ClaseItem[]
 }
 
-const DIFF_LABELS: Record<string, string> = {
-  free: '★☆☆', starter: '★★☆', pro: '★★★', elite: '★★★',
-}
+const PLAN_LABEL: Record<string, string> = { free: 'Free', starter: 'Starter', pro: 'Pro', elite: 'Elite' }
 
-export default function ClasesPage() {
+export default function AprenderPage() {
   const router = useRouter()
-  const { data: session } = useSession()
-  const userPlan = (session?.user as Record<string, unknown>)?.plan as string ?? 'free'
-
-  const [cat, setCat] = useState<ClaseCategoria | 'todas'>('todas')
-  const [completedIds, setCompletedIds] = useState<string[]>([])
-
-  const planOrder: Record<string, number> = { free: 0, starter: 1, pro: 2, elite: 3, pro_trial: 2 }
-  const userPlanLevel = planOrder[userPlan] ?? 0
+  const [data, setData] = useState<Data | null>(null)
+  const [error, setError] = useState(false)
+  const [locked, setLocked] = useState<ClaseItem | null>(null)
+  const [open, setOpen] = useState<Record<number, boolean>>({ 1: true })
 
   useEffect(() => {
-    fetch('/api/progress/clase')
-      .then(r => r.json())
-      .then(d => { if (d.completedIds) setCompletedIds(d.completedIds) })
-      .catch(() => {})
+    fetch('/api/progress/clase', { cache: 'no-store' })
+      .then(r => (r.ok ? r.json() : Promise.reject()))
+      .then((d: Data) => {
+        setData(d)
+        // abre el primer módulo con clases pendientes
+        const firstOpen = d.modulos.find(m => d.clases.some(c => c.modulo === m.n && (c.estado === 'disponible' || c.estado === 'espera')))
+        if (firstOpen) setOpen({ [firstOpen.n]: true })
+      })
+      .catch(() => setError(true))
   }, [])
 
-  const filtradas = cat === 'todas' ? CLASES : CLASES.filter(c => c.categoria === cat)
-  const totalCompleted = completedIds.length
-
-  function isLocked(plan: string): boolean {
-    return planOrder[plan] > userPlanLevel
-  }
-
-  function handleOpen(claseId: string, locked: boolean) {
-    if (locked) return
-    router.push(`/clases/${claseId}`)
-  }
+  const nextId = data?.clases.find(c => c.estado === 'disponible')?.id
 
   return (
-    <div style={{ padding: '24px 28px', overflowY: 'auto', flex: 1 }}>
-      {/* Header */}
-      <div style={{ marginBottom: 20 }}>
-        <div style={{ fontFamily: 'var(--serif)', fontSize: 24, fontWeight: 800, marginBottom: 4 }}>Clases</div>
-        <div style={{ fontSize: 13, color: 'var(--muted)' }}>
-          {CLASES.length} clases · 10 categorías · De principiante a experto
-        </div>
+    <div className="et-page" style={{ paddingBottom: 32 }}>
+      <NavBar title="Aprender" />
+      <div style={{ padding: '4px 16px 0', display: 'flex', flexDirection: 'column', gap: 16 }}>
+        <h1 style={h1}>Aprender</h1>
+        <Seg label="Sección" options={['Clases', 'Retos'] as const} value="Clases" onChange={v => v === 'Retos' && router.push('/retos')} />
       </div>
 
-      {/* Progress bar */}
-      <div style={{
-        background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 12,
-        padding: '14px 18px', marginBottom: 20,
-        display: 'flex', alignItems: 'center', gap: 16,
-      }}>
-        <div style={{ flex: 1 }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-            <span style={{ fontSize: 13, fontWeight: 600 }}>Progreso</span>
-            <span style={{ fontSize: 13, color: 'var(--green)', fontWeight: 700 }}>
-              {totalCompleted} / {CLASES.length} completadas
-            </span>
-          </div>
-          <div style={{ height: 6, background: 'var(--border)', borderRadius: 3, overflow: 'hidden' }}>
-            <div style={{
-              height: '100%',
-              width: `${(totalCompleted / CLASES.length) * 100}%`,
-              background: 'linear-gradient(90deg,var(--green),#00F090)',
-              borderRadius: 3, transition: 'width .6s',
-            }} />
-          </div>
-        </div>
-      </div>
+      {error && <p style={{ margin: '24px 16px', font: '400 15px var(--font)', color: 'var(--red)' }}>No se pudieron cargar las clases. Recarga la página.</p>}
 
-      {/* Filter pills */}
-      <div style={{ display: 'flex', gap: 8, marginBottom: 20, flexWrap: 'wrap' }}>
-        {CATEGORIAS.map(c => (
-          <button key={c.key} onClick={() => setCat(c.key)} style={{
-            padding: '6px 14px', borderRadius: 100,
-            border: `.5px solid ${cat === c.key ? 'var(--green)' : 'var(--border2)'}`,
-            background: cat === c.key ? 'rgba(0,212,122,.08)' : 'transparent',
-            color: cat === c.key ? 'var(--green)' : 'var(--muted)',
-            fontSize: 12, fontWeight: 600, cursor: 'pointer', transition: 'all .15s',
-          }}>
-            {c.label}
-          </button>
-        ))}
-      </div>
-
-      {/* Grid — 2 cols desktop */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 14 }}>
-        {filtradas.map(clase => {
-          const badge = PLAN_BADGE[clase.plan]
-          const locked = isLocked(clase.plan)
-          const done = completedIds.includes(clase.id)
-          const icon = CAT_ICONS[clase.categoria] ?? '📚'
-          const diff = DIFF_LABELS[clase.plan] ?? '★☆☆'
-
+      <div style={{ padding: '24px 16px 0', display: 'flex', flexDirection: 'column', gap: 24 }}>
+        {(data?.modulos ?? [1, 2, 3, 4, 5].map(n => ({ n, titulo: '', plan: 'free', total: 10, completadas: 0 }))).map(m => {
+          const items = data?.clases.filter(c => c.modulo === m.n) ?? []
+          const isOpen = !!open[m.n]
+          const soon = items.length > 0 && items.every(c => c.estado === 'proximamente')
+          const pct = (m.completadas / m.total) * 100
           return (
-            <div
-              key={clase.id}
-              onClick={() => handleOpen(clase.id, locked)}
-              style={{
-                background: done ? 'rgba(0,212,122,.04)' : 'var(--bg1)',
-                border: done
-                  ? '.5px solid rgba(0,212,122,.25)'
-                  : locked
-                    ? '.5px solid rgba(238,242,240,.04)'
-                    : '.5px solid var(--border2)',
-                borderRadius: 14, padding: 18,
-                cursor: locked ? 'not-allowed' : 'pointer',
-                opacity: locked ? 0.55 : 1,
-                transition: 'all .15s', position: 'relative', overflow: 'hidden',
-              }}
-            >
-              {/* Number watermark */}
-              <div style={{
-                position: 'absolute', top: 8, right: 12,
-                fontFamily: 'var(--serif)', fontSize: 44, fontWeight: 800,
-                color: 'var(--border2)', lineHeight: 1, opacity: 0.4, userSelect: 'none',
-              }}>
-                {String(clase.numero).padStart(2, '0')}
-              </div>
+            <section key={m.n} style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              <button
+                onClick={() => setOpen(o => ({ ...o, [m.n]: !o[m.n] }))}
+                aria-expanded={isOpen}
+                style={{ border: 'none', background: 'none', padding: 0, color: 'var(--text-primary)', cursor: 'pointer', display: 'flex', flexDirection: 'column', gap: 8, textAlign: 'left' }}
+              >
+                <span style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', width: '100%', gap: 12 }}>
+                  <span style={h2}>{data ? `Módulo ${m.n} · ${m.titulo}` : <span className="skeleton" style={{ display: 'inline-block', width: 200, height: 24 }} />}</span>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: 6, font: '500 13px var(--font)', color: 'var(--text-secondary)', fontVariantNumeric: 'tabular-nums', flex: 'none' }}>
+                    {m.completadas}/{m.total}
+                    <Icon d={ICONS.chevron} size={14} style={{ transform: isOpen ? 'rotate(90deg)' : 'none', transition: 'transform 150ms ease-out' }} />
+                  </span>
+                </span>
+                <span style={{ ...bar(pct).track, display: 'block', width: '100%' }}><i style={bar(pct).fill} /></span>
+                {!isOpen && soon && <span style={{ font: '400 13px var(--font)', color: 'var(--text-tertiary)' }}>Próximamente · plan {PLAN_LABEL[m.plan]}</span>}
+              </button>
 
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
-                {/* Icon */}
-                <div style={{
-                  width: 42, height: 42, borderRadius: 11, flexShrink: 0,
-                  background: done ? 'rgba(0,212,122,.12)' : 'var(--bg2)',
-                  border: `.5px solid ${done ? 'rgba(0,212,122,.2)' : 'var(--border2)'}`,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20,
-                }}>
-                  {done ? '✅' : locked ? '🔒' : icon}
+              {isOpen && items.length > 0 && (
+                <div style={card}>
+                  {items.map((c, i) => {
+                    const dim = c.estado === 'bloqueada' || c.estado === 'proximamente'
+                    const isNext = c.id === nextId
+                    const status =
+                      c.estado === 'completada' ? { t: 'Completada', c: 'var(--green)' }
+                      : c.estado === 'espera' ? { t: `Reintenta en ${fwait(c.retryAt)}`, c: 'var(--amber)' }
+                      : c.estado === 'bloqueada' ? { t: `Disponible en ${PLAN_LABEL[c.plan]}`, c: 'var(--text-tertiary)' }
+                      : c.estado === 'proximamente' ? { t: 'Próximamente', c: 'var(--text-tertiary)' }
+                      : isNext ? { t: 'Siguiente', c: 'var(--green)' } : null
+                    const inner = (
+                      <>
+                        <span style={{
+                          width: 36, height: 36, flex: 'none', borderRadius: 4, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          border: `1px solid ${c.estado === 'completada' || isNext ? 'var(--green)' : 'var(--border)'}`,
+                          background: c.estado === 'completada' ? 'var(--green)' : 'transparent',
+                          color: c.estado === 'completada' ? 'var(--on-green)' : isNext ? 'var(--green)' : 'var(--text-secondary)',
+                          font: '600 13px var(--font)', fontVariantNumeric: 'tabular-nums',
+                        }}>
+                          {c.estado === 'completada' ? <Icon d={ICONS.check} size={16} stroke={2} /> : String(c.numero).padStart(2, '0')}
+                        </span>
+                        <span style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 2 }}>
+                          <span style={{ font: '600 15px/20px var(--font)' }}>{c.titulo}</span>
+                          {(c.duracion || c.xp) && <span style={{ font: '400 13px var(--font)', color: 'var(--text-secondary)' }}>{[c.duracion, c.xp ? `+${c.xp} XP` : null].filter(Boolean).join(' · ')}</span>}
+                          {status && <span style={{ font: '500 12px var(--font)', color: status.c }}>{status.t}</span>}
+                        </span>
+                        {c.estado === 'bloqueada' && <Icon d={ICONS.lock} size={18} color="var(--text-secondary)" />}
+                        {c.estado !== 'proximamente' && <Icon d={ICONS.chevron} size={16} color="var(--text-tertiary)" />}
+                      </>
+                    )
+                    const rowStyle: React.CSSProperties = {
+                      width: '100%', minHeight: 64, display: 'flex', alignItems: 'center', gap: 12, padding: '10px 16px', border: 'none',
+                      borderBottom: i < items.length - 1 ? '1px solid var(--border)' : 'none', background: 'none', color: 'var(--text-primary)',
+                      textAlign: 'left', textDecoration: 'none', opacity: dim ? 0.55 : 1, cursor: c.estado === 'proximamente' ? 'default' : 'pointer',
+                    }
+                    if (c.estado === 'bloqueada') return <button key={c.id} onClick={() => setLocked(c)} style={rowStyle}>{inner}</button>
+                    if (c.estado === 'proximamente') return <div key={c.id} style={rowStyle}>{inner}</div>
+                    return <Link key={c.id} href={`/clases/${c.id}`} style={rowStyle}>{inner}</Link>
+                  })}
                 </div>
-
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  {/* Badges row */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 6, flexWrap: 'wrap' }}>
-                    <span style={{
-                      fontSize: 10, fontWeight: 700, padding: '2px 8px', borderRadius: 100,
-                      background: badge.bg, color: badge.color, border: `.5px solid ${badge.border}`,
-                    }}>
-                      {badge.label}
-                    </span>
-                    <span style={{
-                      fontSize: 10, color: 'var(--muted)', textTransform: 'uppercase',
-                      letterSpacing: '.05em', fontWeight: 600,
-                    }}>
-                      {clase.categoria.replace('-', ' ')}
-                    </span>
-                    {clase.videoUrl && (
-                      <span style={{
-                        fontSize: 10, fontWeight: 600, padding: '2px 7px', borderRadius: 100,
-                        background: 'rgba(239,83,80,.1)', color: '#EF5350',
-                        border: '.5px solid rgba(239,83,80,.25)',
-                      }}>
-                        ▶ Vídeo
-                      </span>
-                    )}
-                  </div>
-
-                  <div style={{ fontFamily: 'var(--serif)', fontSize: 15, fontWeight: 700, marginBottom: 6, lineHeight: 1.3, paddingRight: 40 }}>
-                    {clase.titulo}
-                  </div>
-                  <div style={{ fontSize: 12, color: 'var(--muted)', lineHeight: 1.55, marginBottom: 12 }}>
-                    {clase.descripcion}
-                  </div>
-
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-                      <span style={{ fontSize: 11, color: 'var(--green)', fontWeight: 700 }}>+{clase.xp} XP</span>
-                      <span style={{ fontSize: 11, color: 'var(--muted)' }}>{clase.duracion} min</span>
-                      <span style={{ fontSize: 10, color: 'var(--amber)', letterSpacing: '.05em' }}>{diff}</span>
-                    </div>
-                    {!locked && !done && (
-                      <button style={{
-                        padding: '5px 12px', background: 'var(--green)', color: 'var(--bg)',
-                        borderRadius: 7, border: 'none', fontSize: 11, fontWeight: 700, cursor: 'pointer',
-                      }}>
-                        Empezar
-                      </button>
-                    )}
-                    {done && (
-                      <span style={{ fontSize: 11, color: 'var(--green)', fontWeight: 700 }}>Completada</span>
-                    )}
-                    {locked && (
-                      <span style={{ fontSize: 11, color: 'var(--muted)' }}>🔒 {badge.label}+</span>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
+              )}
+            </section>
           )
         })}
       </div>
+
+      <Sheet open={!!locked} onClose={() => setLocked(null)} label="Contenido de pago">
+        {locked && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12, alignItems: 'flex-start' }}>
+            <Icon d={ICONS.lock} size={28} color="var(--text-secondary)" />
+            <span style={{ font: '600 22px/28px var(--font)' }}>Disponible en {PLAN_LABEL[locked.plan]}</span>
+            <p style={{ margin: 0, font: '400 15px/22px var(--font)', color: 'var(--text-secondary)' }}>
+              «{locked.titulo}» forma parte del plan {PLAN_LABEL[locked.plan]}. Tu plan actual es {PLAN_LABEL[data?.plan ?? 'free']}.
+            </p>
+            <Link href="/precios" style={{ ...btnPrimary, width: '100%', height: 44, marginTop: 8, textDecoration: 'none' }}>Ver planes</Link>
+          </div>
+        )}
+      </Sheet>
     </div>
   )
 }

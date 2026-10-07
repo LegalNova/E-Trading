@@ -1,201 +1,239 @@
 'use client'
-import { useState, useEffect } from 'react'
-import { useSession } from 'next-auth/react'
 import Link from 'next/link'
-import { DashboardBanner } from '@/components/banners/EducationalBanner'
-import { usePortfolio } from '@/hooks/usePortfolio'
-import { usePrices, formatPrice } from '@/hooks/usePrices'
+import { useMemo, useState } from 'react'
+import { useMe } from '@/components/shell/MeProvider'
+import { usePortfolio, PortfolioData } from '@/hooks/usePortfolio'
+import { useQuotes } from '@/hooks/useQuotes'
+import { ASSET_BY_SYMBOL, ASSETS } from '@/data/assets'
+import { syntheticSeries, Period, PERIOD_KEYS } from '@/lib/sim'
+import { fe, fes, fpct, fcountdown } from '@/lib/format'
+import { NavBar } from '@/components/ui/NavBar'
+import { Icon, ICONS } from '@/components/ui/Icon'
+import { Seg } from '@/components/ui/Seg'
+import { AreaChart } from '@/components/ui/AreaChart'
+import { Help, HelpSheet } from '@/components/ui/Help'
+import { ThemeSheet } from '@/components/ui/ThemeSheet'
+import { AssetRow } from '@/components/market/AssetRow'
+import { card, btnPrimary, h1, h2, bar, btnText } from '@/components/ui/styles'
 
-function TrialBanner() {
-  const { data: session } = useSession()
-  const [dismissed, setDismissed] = useState(false)
+const DAY = 86_400_000
+const SPAN: Record<Period, number> = { '1D': DAY, '1S': 7 * DAY, '1M': 30 * DAY, '3M': 90 * DAY, '1A': 365 * DAY, Todo: Infinity }
+const PERIOD_LABEL: Record<Period, string> = { '1D': 'hoy', '1S': 'esta semana', '1M': 'este mes', '3M': 'en 3 meses', '1A': 'este año', Todo: 'desde el inicio' }
 
-  const user = session?.user as Record<string, unknown> | undefined
-  const plan = user?.plan as string | undefined
-  const trialEndsAt = user?.trial_ends_at as string | null | undefined
-
-  useEffect(() => {
-    const key = 'trial_banner_dismissed'
-    if (localStorage.getItem(key) === 'true') setDismissed(true)
-  }, [])
-
-  if (plan !== 'pro_trial' || dismissed) return null
-
-  let daysLeft = 7
-  if (trialEndsAt) {
-    const diff = new Date(trialEndsAt).getTime() - Date.now()
-    daysLeft = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)))
+/** Serie del valor del portafolio para el periodo elegido */
+function portfolioSeries(p: PortfolioData, period: Period): number[] {
+  if (period === '1D') {
+    if (p.positions.length === 0) return [p.total, p.total]
+    const n = 48
+    const out = new Array<number>(n).fill(p.cash)
+    for (const pos of p.positions) {
+      const a = ASSET_BY_SYMBOL[pos.symbol]
+      if (!a || pos.price <= 0) continue
+      const prev = pos.price / (1 + pos.changePct / 100)
+      const s = syntheticSeries(pos.symbol, a.basePrice, DAY, n, pos.price, prev)
+      const eurPerUnit = pos.valueEur / pos.price
+      s.forEach((v, i) => { out[i] += v * eurPerUnit })
+    }
+    return out
   }
-
-  const urgent = daysLeft <= 2
-  const bg = urgent ? 'rgba(239,83,80,.1)' : 'rgba(249,168,37,.08)'
-  const border = urgent ? 'rgba(239,83,80,.35)' : 'rgba(249,168,37,.25)'
-  const color = urgent ? 'var(--red)' : 'var(--amber)'
-
-  function dismiss() {
-    localStorage.setItem('trial_banner_dismissed', 'true')
-    setDismissed(true)
-  }
-
-  return (
-    <div style={{ background: bg, border: `.5px solid ${border}`, borderRadius: 12, padding: '12px 18px', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 12 }}>
-      <span style={{ fontSize: 18 }}>{urgent ? '⚠️' : '🎉'}</span>
-      <div style={{ flex: 1, fontSize: 13, lineHeight: 1.5 }}>
-        {urgent
-          ? <><strong style={{ color }}>¡Solo te quedan {daysLeft} días de Plan Pro!</strong> Actualiza ahora para no perder el acceso a todas las funcionalidades.</>
-          : <>Estás disfrutando del <strong style={{ color }}>Plan Pro gratis</strong> — te quedan <strong style={{ color }}>{daysLeft} días</strong>. Actualiza para no perder el acceso.</>
-        }
-      </div>
-      <Link href="/precios" style={{ background: color, color: 'var(--bg)', padding: '7px 16px', borderRadius: 8, fontSize: 12, fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0 }}>
-        Actualizar ahora
-      </Link>
-      <button onClick={dismiss} style={{ background: 'none', border: 'none', color: 'var(--muted)', fontSize: 16, cursor: 'pointer', padding: 4, lineHeight: 1, flexShrink: 0 }}>×</button>
-    </div>
-  )
+  const from = Date.now() - SPAN[period]
+  const pts = p.history.filter(h => new Date(h.date).getTime() >= from).map(h => h.value)
+  const before = p.history.filter(h => new Date(h.date).getTime() < from).pop()
+  const series = [...(before ? [before.value] : []), ...pts]
+  series[series.length - 1] = p.total
+  return series.length >= 2 ? series : [series[0] ?? p.total, p.total]
 }
 
-export default function DashboardPage() {
-  const { data: session } = useSession()
-  const { data: portfolioData } = usePortfolio()
-  const heldSymbols = portfolioData?.positions.map(p => p.symbol) ?? []
-  const { prices } = usePrices(heldSymbols.length ? heldSymbols : undefined)
+export default function HomePage() {
+  const { me } = useMe()
+  const { data: pf } = usePortfolio()
+  const { quotes } = useQuotes()
+  const [period, setPeriod] = useState<Period>('1M')
+  const [themeOpen, setThemeOpen] = useState(false)
+  const [help, setHelp] = useState<string | null>(null)
 
-  const sessionUser = session?.user as Record<string, unknown> | undefined
-  const xp = Number(sessionUser?.xp ?? 0)
-  const racha = Number(sessionUser?.racha ?? 0)
+  const series = useMemo(() => (pf ? portfolioSeries(pf, period) : []), [pf, period])
+  const chg = series.length ? series[series.length - 1] - series[0] : 0
+  const chgPct = series.length && series[0] ? (chg / series[0]) * 100 : 0
 
-  const cash = portfolioData?.cash ?? 10000
-  const positions = portfolioData?.positions ?? []
-  const invested = positions.reduce((acc, p) => acc + p.shares * p.avg_price, 0)
-  const marketValue = positions.reduce((acc, p) => {
-    const current = prices[p.symbol]?.price ?? p.avg_price
-    return acc + p.shares * current
-  }, 0)
-  const totalValue = cash + marketValue
-  const pnlEur = marketValue - invested
-  const pnlPct = invested > 0 ? (pnlEur / invested) * 100 : 0
-  const pnlColor = pnlEur >= 0 ? 'var(--green)' : 'var(--red)'
+  const movers = useMemo(() => {
+    const qs = Object.values(quotes)
+    const real = qs.filter(q => !q.simulated)
+    return (real.length >= 5 ? real : qs)
+      .filter(q => ASSET_BY_SYMBOL[q.symbol])
+      .sort((a, b) => Math.abs(b.changePercent) - Math.abs(a.changePercent))
+      .slice(0, 5)
+  }, [quotes])
 
-  const nivel =
-    xp >= 5000 ? '5 · Maestro' :
-    xp >= 3000 ? '4 · Avanzado' :
-    xp >= 1500 ? '3 · Intermedio' :
-    xp >= 500 ? '2 · Aficionado' :
-    '1 · Principiante'
-
-  const mockMovers = [
-    { sym: 'NVDA', name: 'NVIDIA', price: 875.42, chg: 3.21, up: true },
-    { sym: 'TSLA', name: 'Tesla', price: 174.83, chg: -1.87, up: false },
-    { sym: 'BTC', name: 'Bitcoin', price: 67240, chg: 2.14, up: true },
-    { sym: 'ETH', name: 'Ethereum', price: 3498, chg: -0.94, up: false },
-  ]
+  const name = me?.user.name?.split(' ')[0]
+  const xpMax = me?.level.xpMax
 
   return (
-    <div style={{ padding: '24px 28px', overflowY: 'auto', flex: 1 }}>
-      <TrialBanner />
-      <DashboardBanner />
-      {/* Header */}
-      <div style={{ marginBottom: 24 }}>
-        <div style={{ fontFamily: 'var(--serif)', fontSize: 24, fontWeight: 800, marginBottom: 4 }}>
-          Buenos días 👋
-        </div>
-        <div style={{ fontSize: 13, color: 'var(--muted)' }}>Aquí tienes tu resumen de hoy</div>
+    <div className="et-page" style={{ paddingBottom: 32 }}>
+      <NavBar
+        title="Inicio"
+        left={
+          <button
+            onClick={() => setHelp('racha')}
+            aria-label={`Racha de ${me?.user.racha ?? 0} días`}
+            style={{ height: 44, padding: '0 12px', border: 'none', background: 'none', display: 'flex', alignItems: 'center', gap: 6, font: '600 13px var(--font)', color: 'var(--amber)', cursor: 'pointer' }}
+          >
+            <Icon d={ICONS.flame} size={16} />
+            {me?.user.racha ?? ''}
+          </button>
+        }
+        right={
+          <button onClick={() => setThemeOpen(true)} aria-label="Apariencia" style={{ width: 44, height: 44, border: 'none', background: 'none', color: 'var(--text-primary)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Icon d={ICONS.moon} size={20} />
+          </button>
+        }
+      />
+
+      <div style={{ padding: '4px 16px 0', display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <h1 style={h1}>{name ? `Hola, ${name}` : 'Hola'}</h1>
+        {me && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', font: '500 13px var(--font)' }}>
+              <span>Nivel {me.level.n} · {me.level.nombre}</span>
+              <span style={{ color: 'var(--text-secondary)', fontVariantNumeric: 'tabular-nums', display: 'flex', alignItems: 'center', gap: 4 }}>
+                {me.user.xp.toLocaleString('es-ES')}{xpMax ? ` / ${xpMax.toLocaleString('es-ES')}` : ''} XP <Help k="xp" />
+              </span>
+            </div>
+            <div style={bar(me.level.progress).track}><i style={bar(me.level.progress).fill} /></div>
+          </div>
+        )}
       </div>
 
-      {/* Stats grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 12, marginBottom: 24 }}>
-        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 12, padding: 16 }}>
-          <div style={{ fontSize: 10, color: 'var(--muted)', letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 600, marginBottom: 6 }}>Valor portafolio</div>
-          <div style={{ fontFamily: 'var(--serif)', fontSize: 22, fontWeight: 700, color: 'var(--white)' }}>
-            €{formatPrice(totalValue)}
-          </div>
-          <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 4 }}>
-            {positions.length === 0 ? 'Capital inicial' : `${positions.length} ${positions.length === 1 ? 'posición' : 'posiciones'}`}
-          </div>
-        </div>
-
-        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 12, padding: 16 }}>
-          <div style={{ fontSize: 10, color: 'var(--muted)', letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 600, marginBottom: 6 }}>P&amp;L total</div>
-          <div style={{ fontFamily: 'var(--serif)', fontSize: 22, fontWeight: 700, color: invested > 0 ? pnlColor : 'var(--white)' }}>
-            {invested > 0 ? (pnlEur >= 0 ? '+' : '−') : ''}€{formatPrice(Math.abs(pnlEur))}
-          </div>
-          <div style={{ fontSize: 11, color: invested > 0 ? pnlColor : 'var(--muted)', marginTop: 4, fontWeight: 600 }}>
-            {invested > 0 ? `${pnlEur >= 0 ? '+' : ''}${pnlPct.toFixed(2)}%` : '0.00%'}
-          </div>
-        </div>
-
-        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 12, padding: 16 }}>
-          <div style={{ fontSize: 10, color: 'var(--muted)', letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 600, marginBottom: 6 }}>XP total</div>
-          <div style={{ fontFamily: 'var(--serif)', fontSize: 22, fontWeight: 700, color: 'var(--white)' }}>{xp}</div>
-          <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 4 }}>Nivel {nivel}</div>
-        </div>
-
-        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 12, padding: 16 }}>
-          <div style={{ fontSize: 10, color: 'var(--muted)', letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 600, marginBottom: 6 }}>Racha actual</div>
-          <div style={{ fontFamily: 'var(--serif)', fontSize: 22, fontWeight: 700, color: 'var(--white)' }}>
-            {racha} {racha === 1 ? 'día' : 'días'}
-          </div>
-          <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 4 }}>
-            {racha === 0 ? 'Empieza hoy' : 'Sigue así'}
-          </div>
+      {/* Valor del portafolio */}
+      <div style={{ padding: '32px 16px 0', display: 'flex', flexDirection: 'column', gap: 4 }}>
+        <span style={{ font: '400 13px var(--font)', color: 'var(--text-secondary)' }}>Valor del portafolio</span>
+        {pf ? (
+          <>
+            <span style={{ font: '600 44px/52px var(--font)', letterSpacing: '-0.03em', fontVariantNumeric: 'tabular-nums' }}>{fe(pf.total)}</span>
+            <span style={{ font: '500 15px var(--font)', color: chg >= 0 ? 'var(--green)' : 'var(--red)', fontVariantNumeric: 'tabular-nums' }}>
+              {fes(chg)} · {fpct(chgPct)} <span style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>{PERIOD_LABEL[period]}</span>
+            </span>
+          </>
+        ) : (
+          <>
+            <span className="skeleton" style={{ width: 220, height: 48 }} />
+            <span className="skeleton" style={{ width: 180, height: 18 }} />
+          </>
+        )}
+      </div>
+      <div style={{ padding: '16px 16px 0' }}>
+        {pf ? (
+          <AreaChart values={series} up={chg >= 0} label={`Gráfico del valor del portafolio ${PERIOD_LABEL[period]}`} />
+        ) : (
+          <div className="skeleton" style={{ height: 150 }} />
+        )}
+        <div style={{ marginTop: 12 }}>
+          <Seg label="Periodo" options={PERIOD_KEYS} value={period} onChange={setPeriod} />
         </div>
       </div>
 
-      {/* Two columns */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
-        {/* Mayores movimientos */}
-        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 14, padding: 18 }}>
-          <div style={{ fontFamily: 'var(--serif)', fontSize: 15, fontWeight: 700, marginBottom: 12, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            Mayores movimientos
-            <span style={{ fontFamily: 'var(--sans)', fontSize: 11, color: 'var(--green)', fontWeight: 500, cursor: 'pointer' }}>Ver mercado →</span>
-          </div>
-          {mockMovers.map(m => (
-            <div key={m.sym} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '8px 0', borderBottom: '.5px solid var(--border)' }}>
-              <div>
-                <div style={{ fontSize: 13, fontWeight: 600 }}>{m.sym}</div>
-                <div style={{ fontSize: 11, color: 'var(--muted)' }}>{m.name}</div>
+      {/* Siguiente paso */}
+      <div style={{ padding: '32px 16px 0' }}>
+        <div style={{ ...card, padding: 20, display: 'flex', flexDirection: 'column', gap: 16 }}>
+          {me?.nextClase ? (
+            <>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                <span style={{ font: '500 12px var(--font)', color: 'var(--green)' }}>Siguiente paso</span>
+                <span style={{ font: '600 22px/28px var(--font)' }}>Clase {me.nextClase.numero} · {me.nextClase.titulo}</span>
+                <span style={{ font: '400 13px var(--font)', color: 'var(--text-secondary)' }}>
+                  Módulo {me.nextClase.modulo}{me.nextClase.duracion ? ` · ${me.nextClase.duracion}` : ''}{me.nextClase.xp ? ` · +${me.nextClase.xp} XP` : ''}
+                </span>
               </div>
-              <div style={{ textAlign: 'right' }}>
-                <div style={{ fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700 }}>{m.price > 1000 ? m.price.toLocaleString() : m.price}</div>
-                <div style={{ fontSize: 11, color: m.up ? 'var(--green)' : 'var(--red)' }}>
-                  {m.up ? '+' : ''}{m.chg.toFixed(2)}%
+              <Link href={`/clases/${me.nextClase.id}`} style={{ ...btnPrimary, height: 44, textDecoration: 'none' }}>Continuar</Link>
+            </>
+          ) : me ? (
+            <>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                <span style={{ font: '500 12px var(--font)', color: 'var(--green)' }}>Siguiente paso</span>
+                <span style={{ font: '600 22px/28px var(--font)' }}>Has terminado las clases disponibles</span>
+                <span style={{ font: '400 13px var(--font)', color: 'var(--text-secondary)' }}>Sigue practicando con los retos mientras publicamos nuevas.</span>
+              </div>
+              <Link href="/retos" style={{ ...btnPrimary, height: 44, textDecoration: 'none' }}>Ver retos</Link>
+            </>
+          ) : (
+            <div className="skeleton" style={{ height: 120 }} />
+          )}
+        </div>
+      </div>
+
+      {/* Objetivos de hoy */}
+      <div style={{ padding: '32px 16px 0', display: 'flex', flexDirection: 'column', gap: 8 }}>
+        <h2 style={h2}>Objetivos de hoy</h2>
+        <div style={card}>
+          {(me?.daily ?? [{ id: 'a', titulo: ' ', hecho: 0, meta: 1 }, { id: 'b', titulo: ' ', hecho: 0, meta: 1 }, { id: 'c', titulo: ' ', hecho: 0, meta: 1 }]).map((d, i, arr) => {
+            const pct = (d.hecho / d.meta) * 100
+            const done = d.hecho >= d.meta
+            return (
+              <div key={d.id} style={{ padding: '14px 16px', display: 'flex', flexDirection: 'column', gap: 8, borderBottom: i < arr.length - 1 ? '1px solid var(--border)' : 'none' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', font: '400 15px var(--font)' }}>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                    {done ? <Icon d={ICONS.check} size={14} color="var(--green)" stroke={2} /> : <i style={{ width: 8, height: 8, margin: 3, background: 'var(--green)', display: 'block' }} />}
+                    {d.titulo}
+                  </span>
+                  <span style={{ font: '500 13px var(--font)', color: done ? 'var(--green)' : 'var(--text-secondary)', fontVariantNumeric: 'tabular-nums' }}>{d.hecho}/{d.meta}</span>
                 </div>
+                <div style={bar(pct).track}><i style={bar(pct).fill} /></div>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Recomendaciones IA */}
-        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 14, padding: 18 }}>
-          <div style={{ fontFamily: 'var(--serif)', fontSize: 15, fontWeight: 700, marginBottom: 12 }}>
-            🤖 E-AI recomienda
-          </div>
-          <div style={{ background: 'var(--bg2)', borderRadius: 11, padding: 14, marginBottom: 10, fontSize: 13, color: 'var(--muted)', lineHeight: 1.65 }}>
-            Bienvenido a E-Trading. Para empezar bien, te recomiendo completar los primeros 3 retos de la <strong style={{ color: 'var(--white)' }}>Fase 1: Despertar Financiero</strong>. Tardarás menos de 30 minutos y ganarás 100 XP.
-          </div>
-          <div style={{ display: 'flex', gap: 8 }}>
-            <div style={{ flex: 1, background: 'var(--gfaint)', border: '.5px solid rgba(0,212,122,.2)', borderRadius: 10, padding: '10px 14px' }}>
-              <div style={{ fontSize: 10, color: 'var(--green)', fontWeight: 700, marginBottom: 4 }}>SIGUIENTE RETO</div>
-              <div style={{ fontSize: 12, fontWeight: 600 }}>¿Qué es el dinero?</div>
-            </div>
-            <div style={{ flex: 1, background: 'var(--bg2)', borderRadius: 10, padding: '10px 14px' }}>
-              <div style={{ fontSize: 10, color: 'var(--muted)', fontWeight: 700, marginBottom: 4 }}>SIGUIENTE CLASE</div>
-              <div style={{ fontSize: 12, fontWeight: 600 }}>Tu dinero pierde valor</div>
-            </div>
-          </div>
+            )
+          })}
         </div>
       </div>
 
       {/* Alerta anti-sesgo */}
-      <div style={{ background: 'rgba(249,168,37,.07)', border: '.5px solid rgba(249,168,37,.2)', borderRadius: 14, padding: '14px 18px', display: 'flex', alignItems: 'center', gap: 14 }}>
-        <span style={{ fontSize: 22 }}>⚠️</span>
-        <div>
-          <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 3 }}>Alerta de sesgo de recencia</div>
-          <div style={{ fontSize: 12, color: 'var(--muted)', lineHeight: 1.5 }}>
-            NVDA sube un 3% hoy. Cuidado con el <strong style={{ color: 'var(--amber)' }}>FOMO</strong> — los movimientos de un día no predicen el futuro. Revisa tu tesis de inversión antes de actuar.
+      {me?.alerta && (
+        <div style={{ padding: '32px 16px 0' }}>
+          <div style={{ border: '1px solid color-mix(in srgb, var(--amber) 50%, transparent)', borderRadius: 6, background: 'color-mix(in srgb, var(--amber) 8%, var(--surface-1))', padding: 16, display: 'flex', gap: 12 }}>
+            <Icon d={ICONS.warn} size={20} color="var(--amber)" style={{ marginTop: 1 }} />
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+              <span style={{ font: '400 15px/20px var(--font)' }}>{me.alerta.texto}</span>
+              <button onClick={() => setHelp('aversion')} style={{ ...btnText, alignSelf: 'flex-start', padding: 0, color: 'var(--amber)', fontWeight: 600 }}>Ver por qué</button>
+            </div>
           </div>
         </div>
+      )}
+
+      {/* Mayores movimientos */}
+      <div style={{ padding: '32px 16px 0', display: 'flex', flexDirection: 'column', gap: 8 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+          <h2 style={h2}>Mayores movimientos</h2>
+          <Link href="/mercado" style={{ ...btnText, textDecoration: 'none' }}>Ver mercado</Link>
+        </div>
+        <div style={card}>
+          {movers.length
+            ? movers.map((q, i) => <AssetRow key={q.symbol} asset={ASSET_BY_SYMBOL[q.symbol]} q={q} last={i === movers.length - 1} />)
+            : ASSETS.slice(0, 5).map((a, i) => <AssetRow key={a.symbol} asset={a} last={i === 4} />)}
+        </div>
       </div>
+
+      {/* Liga */}
+      {me?.liga && (
+        <div style={{ padding: '32px 16px 0' }}>
+          <Link href="/liga" style={{ ...card, padding: 16, display: 'flex', alignItems: 'center', gap: 12, color: 'var(--text-primary)', textDecoration: 'none' }}>
+            <span style={{ width: 40, height: 40, flex: 'none', border: `1px solid ${me.liga.zone === 'down' ? 'var(--red)' : 'var(--green)'}`, borderRadius: 4, display: 'flex', alignItems: 'center', justifyContent: 'center', font: '700 17px var(--font)', color: me.liga.zone === 'down' ? 'var(--red)' : 'var(--green)', fontVariantNumeric: 'tabular-nums' }}>
+              {me.liga.pos}
+            </span>
+            <span style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 2 }}>
+              <span style={{ font: '600 15px var(--font)' }}>Liga {me.liga.nombre} · puesto {me.liga.pos} de {me.liga.total}</span>
+              <span style={{ font: '400 13px var(--font)', color: me.liga.zone === 'up' ? 'var(--green)' : me.liga.zone === 'down' ? 'var(--red)' : 'var(--text-secondary)' }}>
+                {me.liga.zone === 'up' ? '▲ Zona de ascenso' : me.liga.zone === 'down' ? '▼ Zona de descenso' : 'Zona segura'} · quedan {fcountdown(me.liga.endsAt)}
+              </span>
+            </span>
+            <Icon d={ICONS.chevron} size={18} color="var(--text-tertiary)" />
+          </Link>
+        </div>
+      )}
+
+      <p style={{ margin: '24px 16px 0', font: '400 12px/16px var(--font)', color: 'var(--text-tertiary)', textAlign: 'center' }}>
+        Simulación educativa · No es asesoramiento financiero
+      </p>
+
+      <ThemeSheet open={themeOpen} onClose={() => setThemeOpen(false)} />
+      <HelpSheet k={help} onClose={() => setHelp(null)} />
     </div>
   )
 }

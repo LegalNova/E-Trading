@@ -1,34 +1,29 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getPricesForSymbols, getMainPrices } from '@/lib/finnhub'
+import { getPricesForSymbols, getAllQuotes, hasRealData } from '@/lib/finnhub'
+import { getPriced } from '@/lib/market'
 
-// GET /api/market/quotes?symbols=AAPL,MSFT,BTC
-// GET /api/market/quotes  → returns all 21 main assets
+export const dynamic = 'force-dynamic'
+
+// GET /api/market/quotes?symbols=AAPL,MSFT,BTC  → esos símbolos
+// GET /api/market/quotes                        → todo el catálogo
+// Incluye `fx` (euros por unidad de cada moneda) para convertir a €.
 export async function GET(req: NextRequest) {
-  const { searchParams } = new URL(req.url)
-  const symbolsParam = searchParams.get('symbols')
+  const symbolsParam = new URL(req.url).searchParams.get('symbols')
 
   try {
-    let quotes
-
-    if (symbolsParam) {
-      const symbols = symbolsParam.split(',').map(s => s.trim().toUpperCase())
-      quotes = await getPricesForSymbols(symbols)
-    } else {
-      // Default: return all 21 main assets
-      quotes = await getMainPrices()
-    }
-
-    const hasRealData = !!process.env.FINNHUB_API_KEY
-    const source = hasRealData ? 'finnhub' : 'simulated'
+    const quotes = symbolsParam
+      ? await getPricesForSymbols(symbolsParam.split(',').map(s => s.trim().toUpperCase()).filter(Boolean))
+      : await getAllQuotes()
+    const { fx } = await getPriced([])
 
     return NextResponse.json(
-      { quotes, source, timestamp: Date.now() },
       {
-        headers: {
-          'Cache-Control': 'no-store',
-          'Access-Control-Allow-Origin': '*',
-        },
-      }
+        quotes: quotes.map(q => ({ ...q, simulated: q.simulated ?? !hasRealData(q.symbol) })),
+        fx,
+        source: process.env.FINNHUB_API_KEY ? 'finnhub' : 'simulated',
+        timestamp: Date.now(),
+      },
+      { headers: { 'Cache-Control': 'no-store' } },
     )
   } catch (error) {
     console.error('Quotes error:', error)

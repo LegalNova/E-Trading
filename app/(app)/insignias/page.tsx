@@ -2,9 +2,9 @@ import { INSIGNIAS, InsigniaRareza } from '@/data/insignias'
 
 const RAREZA_CONFIG: Record<InsigniaRareza, { label: string; color: string; bg: string }> = {
   comun: { label: 'Común', color: 'var(--green)', bg: 'var(--gfaint)' },
-  rara: { label: 'Rara', color: 'var(--blue)', bg: 'rgba(66,165,245,.1)' },
-  epica: { label: 'Épica', color: 'var(--purple)', bg: 'rgba(153,69,255,.1)' },
-  legendaria: { label: 'Legendaria', color: 'var(--gold)', bg: 'rgba(255,215,0,.1)' },
+  rara: { label: 'Rara', color: 'var(--blue)', bg: 'color-mix(in srgb, var(--blue) 10%, transparent)' },
+  epica: { label: 'Épica', color: 'var(--purple)', bg: 'color-mix(in srgb, var(--purple) 10%, transparent)' },
+  legendaria: { label: 'Legendaria', color: 'var(--gold)', bg: 'color-mix(in srgb, var(--gold) 10%, transparent)' },
 }
 
 const RAREZA_ORDER: InsigniaRareza[] = ['comun', 'rara', 'epica', 'legendaria']
@@ -17,9 +17,9 @@ export default function InsigniasPage() {
   }))
 
   return (
-    <div style={{ padding: '24px 28px', overflowY: 'auto', flex: 1 }}>
+    <div style={{ padding: '24px 16px', maxWidth: 1040, margin: '0 auto', width: '100%' }}>
       <div style={{ marginBottom: 24 }}>
-        <div style={{ fontFamily: 'var(--serif)', fontSize: 24, fontWeight: 800, marginBottom: 4 }}>Insignias</div>
+        <div style={{ fontFamily: 'var(--serif)', fontSize: 24, fontWeight: 700, marginBottom: 4 }}>Insignias</div>
         <div style={{ fontSize: 13, color: 'var(--muted)' }}>20 insignias · 4 rarezas · 0 obtenidas</div>
       </div>
 
@@ -33,18 +33,18 @@ export default function InsigniasPage() {
             <div style={{ height: 2, flex: 1, background: `${grupo.config.color}30`, borderRadius: 1 }} />
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 12 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(104px, 1fr))', gap: 12 }}>
             {grupo.insignias.map(ins => (
               <div key={ins.id} style={{
                 background: 'var(--bg1)', border: `.5px solid var(--border2)`,
-                borderRadius: 14, padding: 16, textAlign: 'center',
+                borderRadius: 6, padding: 16, textAlign: 'center',
                 opacity: 0.45, filter: 'grayscale(60%)',
                 transition: '.2s',
               }}>
                 <div style={{ fontSize: 36, marginBottom: 8 }}>{ins.emoji}</div>
                 <div style={{ fontSize: 12, fontWeight: 700, marginBottom: 4 }}>{ins.nombre}</div>
                 <div style={{ fontSize: 10, color: 'var(--muted)', lineHeight: 1.5, marginBottom: 10 }}>{ins.descripcion}</div>
-                <span style={{ fontSize: 10, fontWeight: 600, padding: '2px 8px', borderRadius: 100, background: grupo.config.bg, color: grupo.config.color }}>
+                <span style={{ fontSize: 10, fontWeight: 600, padding: '2px 8px', borderRadius: 4, background: grupo.config.bg, color: grupo.config.color }}>
                   {grupo.config.label}
                 </span>
               </div>

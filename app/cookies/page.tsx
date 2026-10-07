@@ -6,7 +6,7 @@ function LegalPage({ title, updated, children }: { title: string; updated: strin
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <Link href="/" style={{ fontSize: 12, color: 'var(--muted)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6, marginBottom: 32 }}>← Volver a E-Trading</Link>
         <div style={{ fontSize: 10, color: 'var(--green)', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', marginBottom: 8 }}>Documento legal</div>
-        <h1 style={{ fontFamily: 'var(--serif)', fontSize: 36, fontWeight: 800, letterSpacing: '-.03em', marginBottom: 8 }}>{title}</h1>
+        <h1 style={{ fontFamily: 'var(--serif)', fontSize: 36, fontWeight: 700, letterSpacing: '-.03em', marginBottom: 8 }}>{title}</h1>
         <p style={{ fontSize: 12, color: 'var(--muted)', marginBottom: 40 }}>Última actualización: {updated}</p>
         <div style={{ fontSize: 14, lineHeight: 1.8, color: 'var(--muted)' }}>{children}</div>
         <div style={{ marginTop: 48, paddingTop: 24, borderTop: '.5px solid var(--border)', fontSize: 12, color: 'var(--muted2)', display: 'flex', gap: 16, flexWrap: 'wrap' }}>
@@ -61,9 +61,9 @@ export default function CookiesPage() {
                 <td style={{ ...TD, fontWeight: 600, color: 'var(--white)', fontFamily: 'monospace' }}>{c.name}</td>
                 <td style={TD}>
                   <span style={{
-                    padding: '2px 8px', borderRadius: 100, fontSize: 10, fontWeight: 700,
-                    background: c.type === 'Esencial' ? 'rgba(0,212,122,.12)' : 'rgba(66,165,245,.12)',
-                    color: c.type === 'Esencial' ? 'var(--green)' : '#42A5F5',
+                    padding: '2px 8px', borderRadius: 4, fontSize: 10, fontWeight: 700,
+                    background: c.type === 'Esencial' ? 'color-mix(in srgb, var(--green) 12%, transparent)' : 'color-mix(in srgb, var(--blue) 12%, transparent)',
+                    color: c.type === 'Esencial' ? 'var(--green)' : 'var(--blue)',
                   }}>{c.type}</span>
                 </td>
                 <td style={TD}>{c.duration}</td>

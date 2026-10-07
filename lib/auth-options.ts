@@ -6,7 +6,6 @@ import {
   getUserByEmail,
   getUserByProviderId,
   createUser,
-  touchLastActive,
 } from '@/lib/db'
 
 export const authOptions: NextAuthOptions = {
@@ -25,8 +24,6 @@ export const authOptions: NextAuthOptions = {
 
         const valid = await bcrypt.compare(credentials.password, user.password_hash)
         if (!valid) return null
-
-        await touchLastActive(user.id)
 
         return {
           id:            user.id,
@@ -98,7 +95,6 @@ export const authOptions: NextAuthOptions = {
         u.xp            = dbUser.xp
         u.racha         = dbUser.racha
         u.trial_ends_at = dbUser.trial_ends_at
-        await touchLastActive(dbUser.id)
       }
       return true
     },

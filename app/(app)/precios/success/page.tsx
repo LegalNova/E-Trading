@@ -27,7 +27,7 @@ function SuccessContent() {
       {/* Celebration */}
       <div style={{ fontSize: 72, marginBottom: 24, animation: 'bounce 0.6s ease infinite alternate' }}>🎉</div>
 
-      <div style={{ fontFamily: 'var(--serif)', fontSize: 32, fontWeight: 800, marginBottom: 12 }}>
+      <div style={{ fontFamily: 'var(--serif)', fontSize: 32, fontWeight: 700, marginBottom: 12 }}>
         ¡Bienvenido al club!
       </div>
       <div style={{ fontSize: 16, color: 'var(--muted)', marginBottom: 8, maxWidth: 500 }}>
@@ -40,7 +40,7 @@ function SuccessContent() {
         </div>
       )}
 
-      <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 14, padding: '20px 28px', marginBottom: 32, maxWidth: 400 }}>
+      <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 6, padding: '20px 28px', marginBottom: 32, maxWidth: 400 }}>
         <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 16, color: 'var(--green)' }}>Lo que acabas de desbloquear:</div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           {[
@@ -61,14 +61,14 @@ function SuccessContent() {
       <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
         <Link href="/dashboard" style={{
           padding: '14px 32px', background: 'var(--green)', color: 'var(--bg)',
-          borderRadius: 12, fontFamily: 'var(--serif)', fontSize: 15, fontWeight: 700,
+          borderRadius: 6, fontFamily: 'var(--serif)', fontSize: 15, fontWeight: 700,
           textDecoration: 'none',
         }}>
           Ir al Dashboard →
         </Link>
         <Link href="/retos" style={{
           padding: '14px 24px', background: 'transparent', color: 'var(--white)',
-          border: '.5px solid var(--border2)', borderRadius: 12, fontSize: 14, fontWeight: 600,
+          border: '.5px solid var(--border2)', borderRadius: 6, fontSize: 14, fontWeight: 600,
           textDecoration: 'none',
         }}>
           Ver retos →

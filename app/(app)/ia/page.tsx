@@ -45,6 +45,20 @@ export default function IAPage() {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
 
+  // Conversación guardada y mensajes restantes de hoy
+  useEffect(() => {
+    fetch('/api/ia/chat', { cache: 'no-store' })
+      .then(r => (r.ok ? r.json() : null))
+      .then((d: { messages: { role: 'user' | 'assistant'; content: string; mode: string | null; created_at: string }[]; remaining: number | null } | null) => {
+        if (!d) return
+        setRemaining(d.remaining)
+        if (d.messages.length) {
+          setMessages(prev => [prev[0], ...d.messages.map(m => ({ role: m.role, content: m.content, mode: m.mode ?? undefined, ts: new Date(m.created_at).getTime() }))])
+        }
+      })
+      .catch(() => {})
+  }, [])
+
   async function sendMessage() {
     if (!input.trim() || loading) return
     const userMsg = input.trim()
@@ -55,16 +69,16 @@ export default function IAPage() {
     setLoading(true)
 
     try {
-      const history = messages.slice(-10).map(m => ({ role: m.role, content: m.content }))
       const res = await fetch('/api/ia/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: userMsg, mode: modo, history }),
+        body: JSON.stringify({ message: userMsg, mode: modo }),
       })
       const data = await res.json()
 
       if (data.error) {
         setMessages(prev => [...prev, { role: 'assistant', content: `⚠️ ${data.error}`, ts: Date.now() }])
+        if (data.remaining !== undefined) setRemaining(data.remaining)
       } else {
         setMessages(prev => [...prev, { role: 'assistant', content: data.response, mode: modo, ts: Date.now() }])
         if (data.remaining !== undefined) setRemaining(data.remaining)
@@ -85,20 +99,20 @@ export default function IAPage() {
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', background: 'var(--bg)' }}>
+    <div className="et-fullheight" style={{ display: 'flex', flexDirection: 'column', background: 'var(--bg)' }}>
       {/* Header */}
       <div style={{ padding: '16px 24px 0', borderBottom: '.5px solid var(--border)', flexShrink: 0 }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
-          <div style={{ fontFamily: 'var(--serif)', fontSize: 20, fontWeight: 800 }}>🤖 E-AI Profesora</div>
+          <div style={{ fontFamily: 'var(--serif)', fontSize: 20, fontWeight: 700 }}>🤖 E-AI Profesora</div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             {isDemo !== null && (
-              <div style={{ fontSize: 11, color: isDemo ? 'var(--amber)' : 'var(--green)', background: isDemo ? 'rgba(249,168,37,.1)' : 'rgba(0,212,122,.1)', padding: '4px 10px', borderRadius: 100, border: `.5px solid ${isDemo ? 'rgba(249,168,37,.3)' : 'rgba(0,212,122,.3)'}`, display: 'flex', alignItems: 'center', gap: 5 }}>
+              <div style={{ fontSize: 11, color: isDemo ? 'var(--amber)' : 'var(--green)', background: isDemo ? 'color-mix(in srgb, var(--amber) 10%, transparent)' : 'color-mix(in srgb, var(--green) 10%, transparent)', padding: '4px 10px', borderRadius: 4, border: `.5px solid ${isDemo ? 'color-mix(in srgb, var(--amber) 30%, transparent)' : 'color-mix(in srgb, var(--green) 30%, transparent)'}`, display: 'flex', alignItems: 'center', gap: 5 }}>
                 <span style={{ width: 6, height: 6, borderRadius: '50%', background: isDemo ? 'var(--amber)' : 'var(--green)', display: 'inline-block' }} />
                 {isDemo ? 'Modo demo' : 'IA conectada'}
               </div>
             )}
             {remaining !== null && (
-              <div style={{ fontSize: 11, color: 'var(--muted)', background: 'var(--bg2)', padding: '4px 10px', borderRadius: 100, border: '.5px solid var(--border2)' }}>
+              <div style={{ fontSize: 11, color: 'var(--muted)', background: 'var(--bg2)', padding: '4px 10px', borderRadius: 4, border: '.5px solid var(--border2)' }}>
                 {remaining} mensajes restantes hoy
               </div>
             )}
@@ -109,7 +123,7 @@ export default function IAPage() {
         <div style={{ display: 'flex', gap: 6, paddingBottom: 12, overflowX: 'auto' }}>
           {MODOS.map(m => (
             <button key={m.id} onClick={() => setModo(m.id)} style={{
-              padding: '6px 14px', borderRadius: 100, whiteSpace: 'nowrap', flexShrink: 0,
+              padding: '6px 14px', borderRadius: 4, whiteSpace: 'nowrap', flexShrink: 0,
               border: `.5px solid ${modo === m.id ? 'var(--green)' : 'var(--border2)'}`,
               background: modo === m.id ? 'var(--gfaint)' : 'transparent',
               color: modo === m.id ? 'var(--green)' : 'var(--muted)',
@@ -136,9 +150,9 @@ export default function IAPage() {
               )}
               <div style={{
                 padding: '12px 16px',
-                borderRadius: msg.role === 'user' ? '14px 14px 4px 14px' : '14px 14px 14px 4px',
+                borderRadius: msg.role === 'user' ? '6px 6px 2px 6px' : '6px 6px 6px 2px',
                 background: msg.role === 'user' ? 'var(--gfaint)' : 'var(--bg1)',
-                border: `.5px solid ${msg.role === 'user' ? 'rgba(0,212,122,.2)' : 'var(--border2)'}`,
+                border: `.5px solid ${msg.role === 'user' ? 'color-mix(in srgb, var(--green) 20%, transparent)' : 'var(--border2)'}`,
                 fontSize: 13, lineHeight: 1.7,
               }}
                 dangerouslySetInnerHTML={{ __html: renderContent(msg.content) }}
@@ -153,7 +167,7 @@ export default function IAPage() {
         {loading && (
           <div style={{ display: 'flex', gap: 12 }}>
             <div style={{ width: 34, height: 34, borderRadius: '50%', background: 'var(--green)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 15 }}>🤖</div>
-            <div style={{ padding: '14px 18px', background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: '14px 14px 14px 4px', display: 'flex', gap: 5, alignItems: 'center' }}>
+            <div style={{ padding: '14px 18px', background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: '6px 6px 6px 2px', display: 'flex', gap: 5, alignItems: 'center' }}>
               {[0, 1, 2].map(i => (
                 <div key={i} style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--green)', animation: `blink 1.2s ${i * 0.2}s infinite` }} />
               ))}
@@ -181,7 +195,7 @@ export default function IAPage() {
           placeholder={modoActual.placeholder}
           rows={2}
           style={{
-            flex: 1, background: 'var(--bg2)', border: '.5px solid var(--border2)', borderRadius: 12,
+            flex: 1, background: 'var(--bg2)', border: '.5px solid var(--border2)', borderRadius: 6,
             padding: '12px 16px', color: 'var(--white)', fontFamily: 'var(--sans)', fontSize: 13, outline: 'none',
             resize: 'none', lineHeight: 1.5,
           }}
@@ -191,7 +205,7 @@ export default function IAPage() {
           disabled={loading || !input.trim()}
           style={{
             padding: '12px 20px', background: 'var(--green)', color: 'var(--bg)', border: 'none',
-            borderRadius: 12, fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700, cursor: 'pointer',
+            borderRadius: 6, fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700, cursor: 'pointer',
             opacity: loading || !input.trim() ? .5 : 1, flexShrink: 0,
           }}
         >

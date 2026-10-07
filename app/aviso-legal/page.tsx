@@ -6,7 +6,7 @@ function LegalPage({ title, updated, children }: { title: string; updated: strin
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <Link href="/" style={{ fontSize: 12, color: 'var(--muted)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6, marginBottom: 32 }}>← Volver a E-Trading</Link>
         <div style={{ fontSize: 10, color: 'var(--green)', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', marginBottom: 8 }}>Documento legal</div>
-        <h1 style={{ fontFamily: 'var(--serif)', fontSize: 36, fontWeight: 800, letterSpacing: '-.03em', marginBottom: 8 }}>{title}</h1>
+        <h1 style={{ fontFamily: 'var(--serif)', fontSize: 36, fontWeight: 700, letterSpacing: '-.03em', marginBottom: 8 }}>{title}</h1>
         <p style={{ fontSize: 12, color: 'var(--muted)', marginBottom: 40 }}>Última actualización: {updated}</p>
         <div style={{ fontSize: 14, lineHeight: 1.8, color: 'var(--muted)' }}>{children}</div>
         <div style={{ marginTop: 48, paddingTop: 24, borderTop: '.5px solid var(--border)', fontSize: 12, color: 'var(--muted2)', display: 'flex', gap: 16, flexWrap: 'wrap' }}>
@@ -44,7 +44,7 @@ export default function AvisoLegalPage() {
       </Section>
 
       <Section title="Disclaimer financiero">
-        <div style={{ background: 'rgba(239,83,80,.08)', border: '.5px solid rgba(239,83,80,.2)', borderRadius: 12, padding: '14px 18px' }}>
+        <div style={{ background: 'color-mix(in srgb, var(--red) 8%, transparent)', border: '.5px solid color-mix(in srgb, var(--red) 20%, transparent)', borderRadius: 6, padding: '14px 18px' }}>
           <p><strong>E-Trading es una plataforma educativa con simulador virtual.</strong></p>
           <p>Todo el contenido publicado en E-Trading tiene carácter exclusivamente educativo e informativo. Nada en este sitio constituye asesoramiento financiero, recomendación de inversión ni oferta de compra o venta de valores.</p>
           <p>Las simulaciones son aproximaciones educativas y no reflejan con exactitud la operativa real de los mercados. Los resultados pasados en el simulador no garantizan resultados futuros.</p>

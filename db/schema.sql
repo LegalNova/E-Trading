@@ -176,3 +176,48 @@ BEGIN
     AND trial_ends_at < NOW();
 END;
 $$ LANGUAGE plpgsql;
+
+-- ============================================================
+-- v2 · Rediseño (octubre 2026)
+-- ============================================================
+
+-- Contabilidad en euros: coste total de cada posición y tipo de cambio de cada operación
+ALTER TABLE positions ADD COLUMN IF NOT EXISTS cost_eur DECIMAL(14,2) NOT NULL DEFAULT 0;
+ALTER TABLE trades    ADD COLUMN IF NOT EXISTS currency TEXT NOT NULL DEFAULT 'USD';
+ALTER TABLE trades    ADD COLUMN IF NOT EXISTS fx_rate  DECIMAL(18,8) NOT NULL DEFAULT 1;  -- € por unidad de moneda
+ALTER TABLE trades    ADD COLUMN IF NOT EXISTS pnl_eur  DECIMAL(14,2);                     -- solo ventas: ganancia realizada
+CREATE INDEX IF NOT EXISTS idx_trades_user_date ON trades(user_id, executed_at DESC);
+
+-- ─── FAVORITOS ───────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS favorites (
+  user_id    UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  symbol     TEXT NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  PRIMARY KEY (user_id, symbol)
+);
+
+-- ─── INTENTOS DE QUIZ (para el tiempo de espera entre intentos) ─
+CREATE TABLE IF NOT EXISTS clase_attempts (
+  id           UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id      UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  clase_id     TEXT NOT NULL,
+  score        INTEGER NOT NULL,
+  passed       BOOLEAN NOT NULL,
+  attempted_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+CREATE INDEX IF NOT EXISTS idx_attempts_user ON clase_attempts(user_id, clase_id, attempted_at DESC);
+
+-- ─── HISTÓRICO DEL VALOR DEL PORTAFOLIO (1 punto por día) ────
+CREATE TABLE IF NOT EXISTS portfolio_snapshots (
+  user_id   UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  date      DATE NOT NULL,
+  value_eur DECIMAL(14,2) NOT NULL,
+  PRIMARY KEY (user_id, date)
+);
+
+-- ─── ÚLTIMA COTIZACIÓN REAL (compartida entre instancias del servidor) ─
+CREATE TABLE IF NOT EXISTS quote_cache (
+  symbol     TEXT PRIMARY KEY,
+  quote      JSONB NOT NULL,
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);

@@ -32,6 +32,7 @@ export const config = {
     '/insignias/:path*',
     '/liga/:path*',
     '/ia/:path*',
+    '/mas/:path*',
     '/onboarding/:path*',
   ],
 }

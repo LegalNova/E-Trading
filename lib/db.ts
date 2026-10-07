@@ -54,6 +54,7 @@ export type DbPosition = {
   symbol: string
   shares: number
   avg_price: number
+  cost_eur: number
   opened_at: string
 }
 
@@ -65,6 +66,9 @@ export type DbTrade = {
   shares: number
   price: number
   total: number
+  currency: string
+  fx_rate: number
+  pnl_eur: number | null
   executed_at: string
 }
 
@@ -122,11 +126,6 @@ export async function createUser(payload: {
   return user
 }
 
-/** Actualizar last_active */
-export async function touchLastActive(userId: string) {
-  await sql()`UPDATE users SET last_active = CURRENT_DATE WHERE id = ${userId}`
-}
-
 /** Sumar XP al usuario y a su liga semanal (atómico) */
 export async function addXP(userId: string, amount: number) {
   const db = sql()
@@ -179,43 +178,6 @@ export async function getTrades(userId: string, limit = 50): Promise<DbTrade[]> 
   const rows = await sql()`
     SELECT * FROM trades WHERE user_id = ${userId} ORDER BY executed_at DESC LIMIT ${limit}`
   return rows as DbTrade[]
-}
-
-export async function updatePortfolioCash(userId: string, newCash: number) {
-  await sql()`UPDATE portfolio SET cash = ${newCash}, updated_at = NOW() WHERE user_id = ${userId}`
-}
-
-/** Crear o actualizar posición */
-export async function upsertPosition(params: {
-  userId: string
-  symbol: string
-  newShares: number
-  newAvgPrice: number
-}) {
-  await sql()`
-    INSERT INTO positions (user_id, symbol, shares, avg_price)
-    VALUES (${params.userId}, ${params.symbol}, ${params.newShares}, ${params.newAvgPrice})
-    ON CONFLICT (user_id, symbol)
-    DO UPDATE SET shares = EXCLUDED.shares, avg_price = EXCLUDED.avg_price`
-}
-
-/** Eliminar posición (venta total) */
-export async function deletePosition(userId: string, symbol: string) {
-  await sql()`DELETE FROM positions WHERE user_id = ${userId} AND symbol = ${symbol}`
-}
-
-/** Registrar operación */
-export async function recordTrade(params: {
-  userId: string
-  type: 'buy' | 'sell'
-  symbol: string
-  shares: number
-  price: number
-  total: number
-}) {
-  await sql()`
-    INSERT INTO trades (user_id, type, symbol, shares, price, total)
-    VALUES (${params.userId}, ${params.type}, ${params.symbol}, ${params.shares}, ${params.price}, ${params.total})`
 }
 
 /* ─── Utils ──────────────────────────────────────────────────── */

@@ -1,23 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/lib/auth-options'
+import { getCurrentUser } from '@/lib/session'
+import { sql } from '@/lib/db'
 import { PLANES } from '@/lib/plans'
+import { getXPProgress } from '@/lib/xp'
+import { getPriced } from '@/lib/market'
+import type { IAModo, ChatMessage } from '@/lib/anthropic'
 
-// In-memory rate limiting (replace with Redis in production)
-const dailyUsage = new Map<string, { count: number; date: string }>()
+export const dynamic = 'force-dynamic'
 
-function getDailyCount(userId: string): number {
-  const today = new Date().toISOString().split('T')[0]
-  const record = dailyUsage.get(userId)
-  if (!record || record.date !== today) return 0
-  return record.count
-}
-
-function incrementDaily(userId: string) {
-  const today = new Date().toISOString().split('T')[0]
-  const current = getDailyCount(userId)
-  dailyUsage.set(userId, { count: current + 1, date: today })
-}
+const MODOS: IAModo[] = ['explicar', 'operacion', 'aprender', 'mercado', 'sesgos']
 
 // ── Mock responses keyed by mode and keywords ───────────────
 const MOCK_RESPONSES: Record<string, { keywords: string[]; response: string }[]> = {
@@ -123,79 +114,108 @@ function getMockResponse(mode: string, message: string): string {
   return fallback?.response ?? 'Pregúntame cualquier duda sobre inversión y mercados. Estoy aquí para ayudarte a aprender.'
 }
 
+// GET /api/ia/chat → últimos mensajes guardados y mensajes restantes hoy
+export async function GET() {
+  const user = await getCurrentUser()
+  if (!user) return NextResponse.json({ error: 'No autenticado' }, { status: 401 })
+  const db = sql()
+  const [rows, usage] = await Promise.all([
+    db`SELECT role, content, mode, created_at FROM chat_history
+       WHERE user_id = ${user.id} ORDER BY created_at DESC LIMIT 30`,
+    db`SELECT ia_messages FROM daily_usage WHERE user_id = ${user.id} AND date = CURRENT_DATE`,
+  ])
+  const limit = PLANES[user.effectivePlan].iaMsgsDia
+  const used = (usage[0]?.ia_messages as number) ?? 0
+  return NextResponse.json({
+    messages: rows.reverse(),
+    remaining: limit === null ? null : Math.max(0, limit - used),
+    limit,
+  })
+}
+
+// POST /api/ia/chat { message, mode }
 export async function POST(req: NextRequest) {
   try {
-    const session = await getServerSession(authOptions)
-    const body = await req.json()
-    const { message, mode, history = [] } = body
+    const user = await getCurrentUser()
+    if (!user) return NextResponse.json({ error: 'Inicia sesión para hablar con la Profesora IA' }, { status: 401 })
 
-    if (!message || typeof message !== 'string') {
-      return NextResponse.json({ error: 'Mensaje requerido' }, { status: 400 })
+    const body = (await req.json().catch(() => ({}))) as { message?: unknown; mode?: unknown }
+    const message = typeof body.message === 'string' ? body.message.trim().slice(0, 2000) : ''
+    const mode: IAModo = MODOS.includes(body.mode as IAModo) ? (body.mode as IAModo) : 'explicar'
+    if (!message) return NextResponse.json({ error: 'Mensaje requerido' }, { status: 400 })
+
+    // Límite diario del plan, contado de forma atómica en la base de datos
+    const plan = PLANES[user.effectivePlan]
+    const limit = plan.iaMsgsDia ?? 1_000_000_000
+    const db = sql()
+    const counted = await db`
+      INSERT INTO daily_usage (user_id, date, ia_messages) VALUES (${user.id}, CURRENT_DATE, 1)
+      ON CONFLICT (user_id, date) DO UPDATE SET ia_messages = daily_usage.ia_messages + 1
+      WHERE daily_usage.ia_messages < ${limit}::int
+      RETURNING ia_messages`
+    if (counted.length === 0) {
+      return NextResponse.json({
+        error: `Has usado los ${plan.iaMsgsDia} mensajes de hoy del plan ${plan.label}. Mañana tendrás más.`,
+        limitReached: true,
+        remaining: 0,
+      }, { status: 429 })
     }
+    const used = counted[0].ia_messages as number
+    const remaining = plan.iaMsgsDia === null ? null : Math.max(0, plan.iaMsgsDia - used)
 
-    // Get user plan
-    const userPlan = ((session?.user as Record<string, unknown>)?.plan as string) ?? 'free'
-    const userId = ((session?.user as Record<string, unknown>)?.id as string) ?? 'anonymous'
-
-    // Check daily limit
-    const planConfig = PLANES[userPlan as keyof typeof PLANES] ?? PLANES.free
-    const dailyLimit = planConfig.iaMsgsDia
-    if (dailyLimit !== null) {
-      const used = getDailyCount(userId)
-      if (used >= dailyLimit) {
-        return NextResponse.json({
-          error: `Has alcanzado el límite de ${dailyLimit} mensajes diarios del plan ${userPlan}. Mejora tu plan para continuar.`,
-          limitReached: true,
-        }, { status: 429 })
-      }
-    }
-
-    const hasAnthropicKey = !!(process.env.ANTHROPIC_API_KEY?.startsWith('sk-ant-'))
+    const hasAnthropicKey = !!process.env.ANTHROPIC_API_KEY?.startsWith('sk-ant-')
     let response: string
     let isDemo = false
 
     if (hasAnthropicKey) {
-      // Use real Anthropic API
       try {
+        const [stats, historyRows, cashRows] = await Promise.all([
+          db`SELECT
+               (SELECT count(*) FROM clases_completadas WHERE user_id = ${user.id}) AS clases,
+               (SELECT count(*) FROM reto_progress WHERE user_id = ${user.id} AND completed) AS retos,
+               (SELECT count(*) FROM positions WHERE user_id = ${user.id}) AS posiciones,
+               (SELECT count(*) FROM trades WHERE user_id = ${user.id}) AS operaciones`,
+          db`SELECT role, content FROM chat_history WHERE user_id = ${user.id} ORDER BY created_at DESC LIMIT 10`,
+          db`SELECT cash FROM portfolio WHERE user_id = ${user.id}`,
+        ])
+        const st = stats[0] as Record<string, number>
+        const { priced } = await getPriced(['SPY', 'AAPL', 'NVDA', 'BTC', 'ETH'])
         const { chatIA } = await import('@/lib/anthropic')
-        const userContext = {
-          plan: userPlan,
-          xp: ((session?.user as Record<string, unknown>)?.xp as number) ?? 0,
-          nivel: 'Principiante',
-          retosCompletados: 0,
-          clasesCompletadas: 0,
-          numPosiciones: 0,
-          cash: 10000,
-          racha: 0,
-          totalOperaciones: 0,
-        }
-        const marketData = [
-          { sym: 'AAPL', price: 185.42, chg: 1.23 },
-          { sym: 'NVDA', price: 875.20, chg: 3.21 },
-          { sym: 'BTC', price: 67240, chg: 2.14 },
-          { sym: 'SPY', price: 521.18, chg: 0.87 },
-          { sym: 'ETH', price: 3498, chg: -0.94 },
-        ]
         response = await chatIA({
           userMessage: message,
-          user: userContext,
-          mode: (mode as import('@/lib/anthropic').IAModo) || 'explicar',
-          marketData,
-          history: history.slice(-10),
+          user: {
+            plan: plan.label,
+            xp: user.xp,
+            nivel: getXPProgress(user.xp).nivel.nombre,
+            retosCompletados: st.retos,
+            clasesCompletadas: st.clases,
+            numPosiciones: st.posiciones,
+            cash: (cashRows[0]?.cash as number) ?? 10000,
+            racha: user.racha,
+            totalOperaciones: st.operaciones,
+          },
+          mode,
+          marketData: Object.values(priced).map(p => ({
+            sym: p.asset.symbol,
+            price: Math.round(p.quote.price * 100) / 100,
+            chg: p.quote.changePercent,
+          })),
+          history: (historyRows.reverse() as ChatMessage[]),
         })
       } catch (err) {
         console.error('Anthropic API error, falling back to mock:', err)
-        response = getMockResponse(mode || 'explicar', message)
+        response = getMockResponse(mode, message)
         isDemo = true
       }
     } else {
-      response = getMockResponse(mode || 'explicar', message)
+      response = getMockResponse(mode, message)
       isDemo = true
     }
 
-    // Count usage
-    incrementDaily(userId)
-    const remaining = dailyLimit !== null ? dailyLimit - getDailyCount(userId) : null
+    await db.transaction([
+      db`INSERT INTO chat_history (user_id, role, content, mode) VALUES (${user.id}, 'user', ${message}, ${mode})`,
+      db`INSERT INTO chat_history (user_id, role, content, mode) VALUES (${user.id}, 'assistant', ${response}, ${mode})`,
+    ])
 
     return NextResponse.json({ response, remaining, isDemo })
   } catch (error) {

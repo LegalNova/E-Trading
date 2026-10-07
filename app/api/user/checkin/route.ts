@@ -2,13 +2,14 @@ import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth-options'
 import { sql } from '@/lib/db'
+import { checkBadges } from '@/lib/badges'
 
-const STREAK_REWARDS: { days: number; xp: number; badge?: string; message: string }[] = [
+const STREAK_REWARDS: { days: number; xp: number; message: string }[] = [
   { days: 3,   xp: 50,   message: '¡3 días seguidos! Vas bien.' },
-  { days: 7,   xp: 200,  badge: 'racha-fuego', message: '¡Una semana! Insignia de Racha de Fuego desbloqueada.' },
+  { days: 7,   xp: 200,  message: '¡Una semana seguida! Sigue así.' },
   { days: 14,  xp: 500,  message: '¡Dos semanas! Eres constante.' },
   { days: 30,  xp: 1000, message: '¡Un mes completo! Extraordinario.' },
-  { days: 100, xp: 5000, badge: 'racha-legendaria', message: '¡100 días! Eres una leyenda.' },
+  { days: 100, xp: 5000, message: '¡100 días! Eres una leyenda.' },
 ]
 
 export async function POST() {
@@ -52,23 +53,23 @@ export async function POST() {
     const reward = STREAK_REWARDS.find(r => r.days === newRacha)
     const bonusXP = reward?.xp ?? 0
 
-    // Update user
-    await db`
+    // Update user (condicional: dos check-ins simultáneos no suman dos veces)
+    const updated = await db`
       UPDATE users SET racha = ${newRacha}, last_active = ${today}, xp = xp + ${bonusXP}
-      WHERE id = ${userId}`
-
-    // Award badge if applicable
-    if (reward?.badge) {
-      await db`
-        INSERT INTO badges (user_id, badge_id) VALUES (${userId}, ${reward.badge})
-        ON CONFLICT (user_id, badge_id) DO NOTHING`
+      WHERE id = ${userId} AND (last_active IS NULL OR last_active <> ${today}::date)
+      RETURNING racha`
+    if (updated.length === 0) {
+      return NextResponse.json({ racha: dbUser.racha, isNewDay: false })
     }
+
+    const badges = await checkBadges(userId)
 
     return NextResponse.json({
       racha: newRacha,
       isNewDay: true,
       bonusXP,
-      reward: reward ? { xp: reward.xp, message: reward.message, badge: reward.badge } : null,
+      reward: reward ? { xp: reward.xp, message: reward.message } : null,
+      badges,
       wasActive: wasActiveYesterday,
     })
   } catch (err) {

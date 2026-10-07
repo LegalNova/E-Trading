@@ -6,7 +6,7 @@ function LegalPage({ title, updated, children }: { title: string; updated: strin
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <Link href="/" style={{ fontSize: 12, color: 'var(--muted)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6, marginBottom: 32 }}>← Volver a E-Trading</Link>
         <div style={{ fontSize: 10, color: 'var(--green)', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', marginBottom: 8 }}>Documento legal</div>
-        <h1 style={{ fontFamily: 'var(--serif)', fontSize: 36, fontWeight: 800, letterSpacing: '-.03em', marginBottom: 8 }}>{title}</h1>
+        <h1 style={{ fontFamily: 'var(--serif)', fontSize: 36, fontWeight: 700, letterSpacing: '-.03em', marginBottom: 8 }}>{title}</h1>
         <p style={{ fontSize: 12, color: 'var(--muted)', marginBottom: 40 }}>Última actualización: {updated}</p>
         <div style={{ fontSize: 14, lineHeight: 1.8, color: 'var(--muted)' }}>{children}</div>
         <div style={{ marginTop: 48, paddingTop: 24, borderTop: '.5px solid var(--border)', fontSize: 12, color: 'var(--muted2)', display: 'flex', gap: 16, flexWrap: 'wrap' }}>
@@ -33,8 +33,8 @@ export default function TerminosPage() {
   return (
     <LegalPage title="Términos y Condiciones" updated="6 de abril de 2026">
 
-      <div style={{ background: 'rgba(239,83,80,.08)', border: '.5px solid rgba(239,83,80,.25)', borderRadius: 12, padding: '14px 18px', marginBottom: 28 }}>
-        <strong style={{ color: '#EF5350' }}>⚠️ Aviso importante:</strong>
+      <div style={{ background: 'color-mix(in srgb, var(--red) 8%, transparent)', border: '.5px solid color-mix(in srgb, var(--red) 25%, transparent)', borderRadius: 6, padding: '14px 18px', marginBottom: 28 }}>
+        <strong style={{ color: 'var(--red)' }}>⚠️ Aviso importante:</strong>
         <p style={{ marginTop: 6 }}>
           E-Trading es una plataforma educativa con simulador virtual. <strong>NO somos un servicio de inversión regulado, ni un bróker, ni un asesor financiero.</strong> Todo el contenido es educativo. El dinero en la plataforma es virtual. Invertir dinero real conlleva riesgo de pérdida.
         </p>

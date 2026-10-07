@@ -1,78 +1,62 @@
 'use client'
-import { useEffect, useState, useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
-export interface Position {
-  id: string
+export interface PortfolioPosition {
   symbol: string
+  name: string
+  category: string | null
+  currency: string
   shares: number
-  avg_price: number
-  opened_at: string
+  avgPrice: number
+  price: number
+  changePct: number
+  valueEur: number
+  costEur: number
+  pnlEur: number
+  pnlPct: number
 }
 
-export interface Trade {
+export interface PortfolioTrade {
   id: string
   type: 'buy' | 'sell'
   symbol: string
+  name: string
   shares: number
   price: number
-  total: number
-  executed_at: string
+  currency: string
+  totalEur: number
+  pnlEur: number | null
+  executedAt: string
 }
 
 export interface PortfolioData {
+  total: number
   cash: number
-  positions: Position[]
-  trades: Trade[]
+  invested: number
+  pnlEur: number
+  pnlPct: number
+  todayEur: number
+  todayPct: number
+  allocation: { label: string; valueEur: number; pct: number; color: string }[]
+  positions: PortfolioPosition[]
+  history: { date: string; value: number }[]
+  trades: PortfolioTrade[]
 }
 
-type RawPosition = {
-  id: string
-  symbol: string
-  shares: string | number
-  avg_price: string | number
-  opened_at: string
-}
-
-type RawTrade = {
-  id: string
-  type: 'buy' | 'sell'
-  symbol: string
-  shares: string | number
-  price: string | number
-  total: string | number
-  executed_at: string
-}
+let cache: PortfolioData | null = null
 
 export function usePortfolio() {
-  const [data, setData] = useState<PortfolioData | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [data, setData] = useState<PortfolioData | null>(cache)
+  const [loading, setLoading] = useState(!cache)
   const [error, setError] = useState<string | null>(null)
 
   const refetch = useCallback(async () => {
     try {
-      setLoading(true)
       const res = await fetch('/api/portfolio', { cache: 'no-store' })
-      if (!res.ok) throw new Error('Error al cargar portfolio')
-      const json = await res.json()
-      setData({
-        cash: Number(json.portfolio?.cash ?? 10000),
-        positions: (json.positions ?? []).map((p: RawPosition) => ({
-          id: p.id,
-          symbol: p.symbol,
-          shares: Number(p.shares),
-          avg_price: Number(p.avg_price),
-          opened_at: p.opened_at,
-        })),
-        trades: (json.trades ?? []).map((t: RawTrade) => ({
-          id: t.id,
-          type: t.type,
-          symbol: t.symbol,
-          shares: Number(t.shares),
-          price: Number(t.price),
-          total: Number(t.total),
-          executed_at: t.executed_at,
-        })),
-      })
+      if (!res.ok) throw new Error(res.status === 401 ? 'Inicia sesión para ver tu portafolio' : 'No se pudo cargar el portafolio')
+      const json = (await res.json()) as PortfolioData
+      cache = json
+      setData(json)
       setError(null)
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Error')

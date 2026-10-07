@@ -1,313 +1,137 @@
 'use client'
-import { useState, useEffect, useMemo } from 'react'
-import Link from 'next/link'
+import { useEffect, useMemo, useState } from 'react'
 import { ASSETS, AssetCategory } from '@/data/assets'
-import { usePrices, formatPrice } from '@/hooks/usePrices'
-import { MAIN_SYMBOLS } from '@/lib/finnhub'
+import { useQuotes } from '@/hooks/useQuotes'
+import { NavBar } from '@/components/ui/NavBar'
+import { Icon, ICONS } from '@/components/ui/Icon'
+import { AssetRow } from '@/components/market/AssetRow'
+import { card, h1, input, sectionLabel } from '@/components/ui/styles'
 
-const REAL_COUNT = MAIN_SYMBOLS.length
-
-const CATS: { key: AssetCategory | 'todos'; label: string }[] = [
-  { key: 'todos', label: 'Todos' },
-  { key: 'acciones-us', label: '🇺🇸 Acciones US' },
-  { key: 'acciones-eu', label: '🇪🇺 Europa' },
-  { key: 'cripto', label: '₿ Cripto' },
-  { key: 'etfs', label: '📦 ETFs' },
-  { key: 'forex', label: '💱 Forex' },
-  { key: 'materias', label: '🛢️ Materias' },
-  { key: 'indices', label: '📊 Índices' },
+const FILTERS: { label: string; cats: AssetCategory[] | null }[] = [
+  { label: 'Todos', cats: null },
+  { label: 'Acciones', cats: ['acciones-us', 'acciones-eu'] },
+  { label: 'ETFs', cats: ['etfs'] },
+  { label: 'Cripto', cats: ['cripto'] },
+  { label: 'Forex', cats: ['forex'] },
+  { label: 'Materias primas', cats: ['materias'] },
+  { label: 'Índices', cats: ['indices'] },
 ]
 
-function MiniSparkline({ up }: { up: boolean }) {
-  // Generate points only on client to avoid hydration mismatch from Math.random()
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => setMounted(true), [])
-  const pts = useMemo(() => {
-    if (!mounted) return []
-    const arr: number[] = []
-    let v = 50
-    for (let i = 0; i < 20; i++) {
-      v = Math.max(10, Math.min(90, v + (Math.random() - (up ? 0.44 : 0.56)) * 12))
-      arr.push(v)
-    }
-    return arr
-  }, [up, mounted])
-  if (!pts.length) return <div style={{ width: 80, height: 32 }} />
-  const w = 80, h = 32
-  const min = Math.min(...pts), max = Math.max(...pts)
-  const range = max - min || 1
-  const points = pts.map((v, i) => `${(i / (pts.length - 1)) * w},${h - ((v - min) / range) * h}`).join(' ')
-  const color = up ? '#00D47A' : '#EF5350'
-  return (
-    <svg viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="none" style={{ width: 80, height: 32 }}>
-      <polyline points={points} fill="none" stroke={color} strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" opacity="0.85" />
-    </svg>
-  )
+type Sort = 'name' | 'up' | 'down'
+const SORT_LABEL: Record<Sort, string> = { name: 'Nombre', up: 'Mayor subida', down: 'Mayor bajada' }
+const NEXT_SORT: Record<Sort, Sort> = { name: 'up', up: 'down', down: 'name' }
+
+/** ¿Está abierta la bolsa de Nueva York? (lun-vie 9:30-16:00 hora de NY) */
+function usMarketOpen(now = new Date()): boolean {
+  const parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(now)
+  const get = (t: string) => parts.find(p => p.type === t)?.value ?? ''
+  const wd = get('weekday')
+  const mins = Number(get('hour')) * 60 + Number(get('minute'))
+  return !['Sat', 'Sun'].includes(wd) && mins >= 570 && mins < 960
 }
 
 export default function MercadoPage() {
-  const { prices } = usePrices()
-  const [cat, setCat] = useState<AssetCategory | 'todos'>('todos')
-  const [search, setSearch] = useState('')
+  const { quotes, loaded } = useQuotes()
+  const [query, setQuery] = useState('')
+  const [filter, setFilter] = useState('Todos')
+  const [sort, setSort] = useState<Sort>('name')
+  const [favs, setFavs] = useState<string[]>([])
+  const [now, setNow] = useState<Date | null>(null)
 
-  const filtered = useMemo(() => {
-    let list = ASSETS
-    if (cat !== 'todos') list = list.filter(a => a.category === cat)
-    if (search.trim()) {
-      const q = search.toLowerCase()
-      list = list.filter(a => a.symbol.toLowerCase().includes(q) || a.name.toLowerCase().includes(q))
-    }
-    return list
-  }, [cat, search])
+  useEffect(() => {
+    fetch('/api/favorites').then(r => (r.ok ? r.json() : { symbols: [] })).then(d => setFavs(d.symbols ?? [])).catch(() => {})
+    setNow(new Date())
+    const t = setInterval(() => setNow(new Date()), 30_000)
+    return () => clearInterval(t)
+  }, [])
 
-  // Top movers: 6 assets with highest absolute changePct
-  const topMovers = useMemo(() => {
-    return [...ASSETS]
-      .filter(a => prices[a.symbol])
-      .sort((a, b) => Math.abs(prices[b.symbol]?.changePct ?? 0) - Math.abs(prices[a.symbol]?.changePct ?? 0))
-      .slice(0, 8)
-  }, [prices])
+  const list = useMemo(() => {
+    const cats = FILTERS.find(f => f.label === filter)?.cats
+    const q = query.trim().toLowerCase()
+    const out = ASSETS.filter(a => (!cats || cats.includes(a.category)) && (!q || (a.name + ' ' + a.symbol).toLowerCase().includes(q)))
+    if (sort === 'name') return [...out].sort((a, b) => a.name.localeCompare(b.name, 'es'))
+    const chg = (s: string) => quotes[s]?.changePercent ?? 0
+    return [...out].sort((a, b) => (sort === 'up' ? chg(b.symbol) - chg(a.symbol) : chg(a.symbol) - chg(b.symbol)))
+  }, [filter, query, sort, quotes])
+
+  const favAssets = ASSETS.filter(a => favs.includes(a.symbol))
+  const showFavs = favAssets.length > 0 && !query && filter === 'Todos'
+  const open = now ? usMarketOpen(now) : null
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', background: 'var(--bg)' }}>
-      {/* Search bar */}
-      <div style={{ padding: '20px 20px 0', flexShrink: 0 }}>
-        <div style={{ position: 'relative', marginBottom: 16 }}>
-          <span style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', fontSize: 16, pointerEvents: 'none' }}>🔍</span>
+    <div className="et-page" style={{ paddingBottom: 24 }}>
+      <NavBar title="Mercado" />
+      <div style={{ padding: '4px 16px 0', display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <h1 style={h1}>Mercado</h1>
+        <label style={{ position: 'relative', display: 'block' }}>
+          <Icon d={ICONS.search} size={18} color="var(--text-tertiary)" style={{ position: 'absolute', left: 12, top: 13 }} />
           <input
-            value={search}
-            onChange={e => setSearch(e.target.value)}
-            placeholder="Buscar activos..."
-            style={{
-              width: '100%',
-              background: 'var(--bg2)',
-              border: '.5px solid var(--border2)',
-              borderRadius: 14,
-              padding: '13px 16px 13px 44px',
-              color: 'var(--white)',
-              fontFamily: 'var(--sans)',
-              fontSize: 15,
-              outline: 'none',
-              boxSizing: 'border-box',
-            }}
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+            placeholder="Busca Apple, Bitcoin, oro…"
+            aria-label="Buscar activos"
+            type="search"
+            style={{ ...input, paddingLeft: 38 }}
           />
-        </div>
-
-        {/* Stats line */}
-        <div style={{
-          display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap',
-          fontSize: 12, color: 'var(--muted)', marginBottom: 14,
-        }}>
-          <span>{ASSETS.length} activos</span>
-          <span style={{ opacity: .4 }}>·</span>
-          <span>{filtered.length} mostrando</span>
-          <span style={{ opacity: .4 }}>·</span>
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-            <span style={{
-              width: 6, height: 6, borderRadius: '50%',
-              background: 'var(--green)', display: 'inline-block',
-              boxShadow: '0 0 6px rgba(0,212,122,.6)',
-            }} />
-            {REAL_COUNT} con precios reales
-          </span>
-        </div>
-
-        {/* Category chips */}
-        <div style={{ display: 'flex', gap: 8, overflowX: 'auto', paddingBottom: 16, scrollbarWidth: 'none' }}>
-          {CATS.map(c => (
-            <button
-              key={c.key}
-              onClick={() => setCat(c.key)}
-              style={{
-                padding: '7px 16px',
-                borderRadius: 100,
-                whiteSpace: 'nowrap',
-                border: 'none',
-                background: cat === c.key ? 'var(--green)' : 'var(--bg2)',
-                color: cat === c.key ? 'var(--bg)' : 'var(--muted)',
-                fontSize: 13,
-                fontWeight: 700,
-                cursor: 'pointer',
-                transition: 'background .15s, color .15s',
-              }}
-            >
-              {c.label}
-            </button>
-          ))}
+        </label>
+        <div className="no-scrollbar" style={{ display: 'flex', gap: 6, overflowX: 'auto', margin: '0 -16px', padding: '0 16px' }}>
+          {FILTERS.map(f => {
+            const on = f.label === filter
+            return (
+              <button
+                key={f.label}
+                onClick={() => setFilter(f.label)}
+                aria-pressed={on}
+                style={{
+                  flex: 'none', height: 32, padding: '0 12px', borderRadius: 4, cursor: 'pointer', whiteSpace: 'nowrap', font: '500 13px var(--font)',
+                  border: `1px solid ${on ? 'var(--text-primary)' : 'var(--border)'}`, background: on ? 'var(--text-primary)' : 'transparent',
+                  color: on ? 'var(--bg)' : 'var(--text-secondary)',
+                }}
+              >
+                {f.label}
+              </button>
+            )
+          })}
         </div>
       </div>
 
-      {/* Scrollable content */}
-      <div style={{ flex: 1, overflowY: 'auto' }}>
+      {showFavs && (
+        <div style={{ padding: '24px 16px 0', display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <span style={sectionLabel}>Favoritos</span>
+          <div style={card}>
+            {favAssets.map((a, i) => <AssetRow key={a.symbol} asset={a} q={quotes[a.symbol]} last={i === favAssets.length - 1} />)}
+          </div>
+        </div>
+      )}
 
-        {/* Top movers horizontal scroll — only when not filtering */}
-        {cat === 'todos' && !search.trim() && topMovers.length > 0 && (
-          <div style={{ padding: '4px 20px 20px' }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--muted)', marginBottom: 12, textTransform: 'uppercase', letterSpacing: '.06em' }}>
-              Más activos hoy
-            </div>
-            <div style={{ display: 'flex', gap: 10, overflowX: 'auto', scrollbarWidth: 'none', paddingBottom: 4 }}>
-              {topMovers.map(asset => {
-                const pd = prices[asset.symbol]
-                if (!pd) return null
-                const up = pd.changePct >= 0
-                return (
-                  <Link
-                    key={asset.symbol}
-                    href={`/mercado/${asset.symbol.toLowerCase()}`}
-                    style={{ textDecoration: 'none', flexShrink: 0 }}
-                  >
-                    <div
-                      style={{
-                        width: 120,
-                        background: 'var(--bg1)',
-                        border: '.5px solid var(--border2)',
-                        borderRadius: 16,
-                        padding: '14px 12px',
-                        cursor: 'pointer',
-                        transition: 'border-color .15s, transform .15s',
-                      }}
-                      onMouseEnter={e => {
-                        e.currentTarget.style.borderColor = up ? 'rgba(0,212,122,.4)' : 'rgba(239,83,80,.4)'
-                        e.currentTarget.style.transform = 'translateY(-2px)'
-                      }}
-                      onMouseLeave={e => {
-                        e.currentTarget.style.borderColor = 'var(--border2)'
-                        e.currentTarget.style.transform = 'translateY(0)'
-                      }}
-                    >
-                      {/* Icon */}
-                      <div style={{
-                        width: 36, height: 36, borderRadius: 10, background: 'var(--bg2)',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        fontWeight: 800, fontSize: 11, color: 'var(--green)', marginBottom: 8,
-                      }}>
-                        {asset.flag ?? asset.symbol.slice(0, 3)}
-                      </div>
-                      {/* Symbol */}
-                      <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--white)', marginBottom: 2 }}>{asset.symbol}</div>
-                      {/* Change badge */}
-                      <div style={{
-                        display: 'inline-block',
-                        fontSize: 11, fontWeight: 700,
-                        color: up ? 'var(--green)' : 'var(--red)',
-                        background: up ? 'rgba(0,212,122,.1)' : 'rgba(239,83,80,.1)',
-                        padding: '2px 6px', borderRadius: 6, marginBottom: 6,
-                      }}>
-                        {up ? '+' : ''}{pd.changePct.toFixed(2)}%
-                      </div>
-                      {/* Price */}
-                      <div style={{ fontFamily: 'var(--serif)', fontSize: 13, fontWeight: 700, color: 'var(--white)' }}>
-                        {formatPrice(pd.price, asset.symbol)}
-                      </div>
-                    </div>
-                  </Link>
-                )
-              })}
-            </div>
+      <div style={{ padding: '24px 16px 0', display: 'flex', flexDirection: 'column', gap: 8 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <span style={sectionLabel}>{list.length} {list.length === 1 ? 'activo' : 'activos'}</span>
+          <button
+            onClick={() => setSort(NEXT_SORT[sort])}
+            disabled={!loaded && sort === 'name'}
+            style={{ height: 32, padding: '0 4px', border: 'none', background: 'none', color: 'var(--blue)', font: '500 13px var(--font)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 4 }}
+          >
+            Ordenar: {SORT_LABEL[sort]}
+            <Icon d={ICONS.sort} size={14} />
+          </button>
+        </div>
+        {list.length === 0 ? (
+          <div style={{ ...card, padding: '32px 20px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, textAlign: 'center' }}>
+            <Icon d={ICONS.search} size={40} color="var(--text-tertiary)" stroke={1} />
+            <span style={{ font: '400 15px var(--font)', color: 'var(--text-secondary)' }}>No hay activos con ese nombre.</span>
+          </div>
+        ) : (
+          <div style={card}>
+            {list.map((a, i) => <AssetRow key={a.symbol} asset={a} q={quotes[a.symbol]} last={i === list.length - 1} />)}
           </div>
         )}
-
-        {/* Main list */}
-        <div style={{ padding: '0 0 20px' }}>
-          {cat === 'todos' && !search.trim() && (
-            <div style={{ padding: '0 20px 10px', fontSize: 13, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '.06em' }}>
-              Todos los activos
-            </div>
-          )}
-
-          {filtered.map((asset, idx) => {
-            const pd = prices[asset.symbol]
-            if (!pd) return null
-            const up = pd.changePct >= 0
-            return (
-              <Link
-                key={asset.symbol}
-                href={`/mercado/${asset.symbol.toLowerCase()}`}
-                style={{ textDecoration: 'none', display: 'block' }}
-              >
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    padding: '12px 20px',
-                    borderBottom: idx < filtered.length - 1 ? '.5px solid rgba(255,255,255,.05)' : 'none',
-                    transition: 'background .15s',
-                    cursor: 'pointer',
-                    gap: 12,
-                  }}
-                  onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg3)' }}
-                  onMouseLeave={e => { e.currentTarget.style.background = 'transparent' }}
-                >
-                  {/* Left: icon + name */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, flex: 1, minWidth: 0 }}>
-                    <div style={{
-                      width: 40, height: 40, borderRadius: 12, background: 'var(--bg2)',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontWeight: 800, fontSize: 11, color: 'var(--green)', flexShrink: 0,
-                      letterSpacing: '-.02em',
-                    }}>
-                      {asset.flag ?? asset.symbol.slice(0, 3)}
-                    </div>
-                    <div style={{ minWidth: 0 }}>
-                      <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--white)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                        {asset.name}
-                      </div>
-                      <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 1 }}>{asset.symbol}</div>
-                    </div>
-                  </div>
-
-                  {/* Center: sparkline */}
-                  <div style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
-                    <MiniSparkline up={up} />
-                  </div>
-
-                  {/* Right: price + change */}
-                  <div style={{ textAlign: 'right', flexShrink: 0, minWidth: 90 }}>
-                    <div style={{
-                      fontFamily: 'var(--serif)',
-                      fontSize: 15,
-                      fontWeight: 700,
-                      color: pd.direction === 'up' ? 'var(--green)' : pd.direction === 'down' ? 'var(--red)' : 'var(--white)',
-                      transition: 'color .3s',
-                      marginBottom: 3,
-                    }}>
-                      {formatPrice(pd.price, asset.symbol)}
-                      {pd.source === 'simulated' && (
-                        <span style={{
-                          fontSize: 8, fontWeight: 700, letterSpacing: '.08em',
-                          padding: '1px 4px', borderRadius: 3,
-                          background: 'var(--bg3)', color: 'var(--muted)',
-                          marginLeft: 4, verticalAlign: 'middle',
-                          fontFamily: 'var(--sans)',
-                        }}>SIM</span>
-                      )}
-                    </div>
-                    <div style={{
-                      display: 'inline-block',
-                      fontSize: 11,
-                      fontWeight: 700,
-                      color: up ? 'var(--green)' : 'var(--red)',
-                      background: up ? 'rgba(0,212,122,.1)' : 'rgba(239,83,80,.1)',
-                      padding: '2px 7px',
-                      borderRadius: 6,
-                    }}>
-                      {up ? '+' : ''}{pd.changePct.toFixed(2)}%
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            )
-          })}
-
-          {filtered.length === 0 && (
-            <div style={{ textAlign: 'center', padding: '60px 0', color: 'var(--muted)' }}>
-              <div style={{ fontSize: 36, marginBottom: 12 }}>🔍</div>
-              <div style={{ fontFamily: 'var(--serif)', fontSize: 18, fontWeight: 700 }}>Sin resultados</div>
-              <div style={{ fontSize: 13, marginTop: 6 }}>Prueba con otro ticker o categoría</div>
-            </div>
-          )}
-        </div>
+        {open !== null && (
+          <span style={{ display: 'flex', alignItems: 'center', gap: 6, justifyContent: 'center', paddingTop: 8, font: '400 12px var(--font)', color: 'var(--text-secondary)', textAlign: 'center' }}>
+            <i style={{ width: 6, height: 6, background: open ? 'var(--green)' : 'var(--text-tertiary)', display: 'block', flex: 'none' }} />
+            Bolsa de EE. UU. {open ? 'abierta' : 'cerrada'} · Cripto 24 h · Actualizado a las {now?.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })}
+          </span>
+        )}
       </div>
     </div>
   )

@@ -104,17 +104,17 @@ export default function RetoPage() {
       <div style={{ maxWidth: 720, margin: '0 auto', padding: '28px 24px', overflowY: 'auto' }}>
         <Link href="/retos" style={{ fontSize: 12, color: 'var(--muted)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 4, marginBottom: 20 }}>← Volver a Retos</Link>
 
-        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 16, padding: 28, marginBottom: 20 }}>
+        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 6, padding: 28, marginBottom: 20 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
-            <div style={{ width: 48, height: 48, borderRadius: 12, background: 'var(--bg2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--serif)', fontSize: 20, fontWeight: 800, color: 'var(--green)' }}>
+            <div style={{ width: 48, height: 48, borderRadius: 6, background: 'var(--bg2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--serif)', fontSize: 20, fontWeight: 700, color: 'var(--green)' }}>
               {reto.numero}
             </div>
             <div>
               <div style={{ display: 'flex', gap: 8, marginBottom: 6 }}>
-                <span style={{ fontSize: 10, fontWeight: 600, padding: '2px 8px', borderRadius: 100, background: `${TIPO_COLOR[reto.tipo]}20`, color: TIPO_COLOR[reto.tipo], border: `.5px solid ${TIPO_COLOR[reto.tipo]}40` }}>{reto.tipo}</span>
-                <span style={{ fontSize: 10, fontWeight: 600, padding: '2px 8px', borderRadius: 100, background: 'var(--muted3)', color: 'var(--muted)', border: '.5px solid var(--border2)' }}>Fase {reto.fase}</span>
+                <span style={{ fontSize: 10, fontWeight: 600, padding: '2px 8px', borderRadius: 4, background: `${TIPO_COLOR[reto.tipo]}20`, color: TIPO_COLOR[reto.tipo], border: `.5px solid ${TIPO_COLOR[reto.tipo]}40` }}>{reto.tipo}</span>
+                <span style={{ fontSize: 10, fontWeight: 600, padding: '2px 8px', borderRadius: 4, background: 'var(--muted3)', color: 'var(--muted)', border: '.5px solid var(--border2)' }}>Fase {reto.fase}</span>
               </div>
-              <div style={{ fontFamily: 'var(--serif)', fontSize: 22, fontWeight: 800 }}>{reto.titulo}</div>
+              <div style={{ fontFamily: 'var(--serif)', fontSize: 22, fontWeight: 700 }}>{reto.titulo}</div>
             </div>
           </div>
 
@@ -126,14 +126,14 @@ export default function RetoPage() {
               { lbl: 'Duración estimada', val: `${reto.duracion} min` },
               { lbl: 'Tipo', val: reto.tipo },
             ].map(s => (
-              <div key={s.lbl} style={{ background: 'var(--bg2)', borderRadius: 10, padding: '10px 14px' }}>
+              <div key={s.lbl} style={{ background: 'var(--bg2)', borderRadius: 6, padding: '10px 14px' }}>
                 <div style={{ fontSize: 10, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '.06em', fontWeight: 600, marginBottom: 4 }}>{s.lbl}</div>
                 <div style={{ fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 700, color: s.color ?? 'var(--white)' }}>{s.val}</div>
               </div>
             ))}
           </div>
 
-          <div style={{ background: 'var(--bg2)', borderRadius: 12, padding: 16, marginBottom: 24 }}>
+          <div style={{ background: 'var(--bg2)', borderRadius: 6, padding: 16, marginBottom: 24 }}>
             <div style={{ fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700, marginBottom: 10 }}>📋 Este reto incluye</div>
             {[
               '5 preguntas de opción múltiple sobre el tema',
@@ -146,7 +146,7 @@ export default function RetoPage() {
             ))}
           </div>
 
-          <button onClick={() => setStep('quiz')} style={{ width: '100%', padding: '14px', background: 'var(--green)', color: 'var(--bg)', border: 'none', borderRadius: 12, fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 700, cursor: 'pointer' }}>
+          <button onClick={() => setStep('quiz')} style={{ width: '100%', padding: '14px', background: 'var(--green)', color: 'var(--bg)', border: 'none', borderRadius: 6, fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 700, cursor: 'pointer' }}>
             Empezar el reto →
           </button>
         </div>
@@ -167,8 +167,8 @@ export default function RetoPage() {
           <div style={{ height: '100%', width: `${progress}%`, background: 'var(--green)', borderRadius: 2, transition: 'width .4s' }} />
         </div>
 
-        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 16, padding: 28 }}>
-          <div style={{ fontFamily: 'var(--serif)', fontSize: 20, fontWeight: 800, marginBottom: 24, lineHeight: 1.3 }}>
+        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 6, padding: 28 }}>
+          <div style={{ fontFamily: 'var(--serif)', fontSize: 20, fontWeight: 700, marginBottom: 24, lineHeight: 1.3 }}>
             {q.pregunta}
           </div>
 
@@ -176,14 +176,14 @@ export default function RetoPage() {
             {q.opciones.map((op, idx) => {
               let bg = 'var(--bg2)', border = 'var(--border2)', color = 'var(--white)'
               if (showExpl) {
-                if (idx === q.correcta) { bg = 'rgba(0,212,122,.15)'; border = 'var(--green)'; color = 'var(--green)' }
-                else if (idx === selected && idx !== q.correcta) { bg = 'rgba(239,83,80,.12)'; border = 'var(--red)'; color = 'var(--red)' }
+                if (idx === q.correcta) { bg = 'color-mix(in srgb, var(--green) 15%, transparent)'; border = 'var(--green)'; color = 'var(--green)' }
+                else if (idx === selected && idx !== q.correcta) { bg = 'color-mix(in srgb, var(--red) 12%, transparent)'; border = 'var(--red)'; color = 'var(--red)' }
                 else { color = 'var(--muted)' }
               } else if (selected === idx) {
                 bg = 'var(--gfaint)'; border = 'var(--green)'
               }
               return (
-                <div key={idx} onClick={() => handleAnswer(idx)} style={{ background: bg, border: `.5px solid ${border}`, borderRadius: 12, padding: '14px 18px', cursor: showExpl ? 'default' : 'pointer', display: 'flex', alignItems: 'center', gap: 12, transition: '.15s', color }}>
+                <div key={idx} onClick={() => handleAnswer(idx)} style={{ background: bg, border: `.5px solid ${border}`, borderRadius: 6, padding: '14px 18px', cursor: showExpl ? 'default' : 'pointer', display: 'flex', alignItems: 'center', gap: 12, transition: '.15s', color }}>
                   <div style={{ width: 28, height: 28, borderRadius: '50%', background: 'var(--bg3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--serif)', fontWeight: 700, fontSize: 12, flexShrink: 0 }}>
                     {String.fromCharCode(65 + idx)}
                   </div>
@@ -197,13 +197,13 @@ export default function RetoPage() {
 
           {showExpl && (
             <>
-              <div style={{ background: isCorrect ? 'rgba(0,212,122,.08)' : 'rgba(239,83,80,.08)', border: `.5px solid ${isCorrect ? 'rgba(0,212,122,.3)' : 'rgba(239,83,80,.3)'}`, borderRadius: 12, padding: 16, marginBottom: 16 }}>
+              <div style={{ background: isCorrect ? 'color-mix(in srgb, var(--green) 8%, transparent)' : 'color-mix(in srgb, var(--red) 8%, transparent)', border: `.5px solid ${isCorrect ? 'color-mix(in srgb, var(--green) 30%, transparent)' : 'color-mix(in srgb, var(--red) 30%, transparent)'}`, borderRadius: 6, padding: 16, marginBottom: 16 }}>
                 <div style={{ fontSize: 13, fontWeight: 700, color: isCorrect ? 'var(--green)' : 'var(--red)', marginBottom: 6 }}>
                   {isCorrect ? '✅ ¡Correcto!' : '❌ Incorrecto'}
                 </div>
                 <div style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.6 }}>{q.explicacion}</div>
               </div>
-              <button onClick={handleNext} style={{ width: '100%', padding: 13, background: 'var(--green)', color: 'var(--bg)', border: 'none', borderRadius: 10, fontFamily: 'var(--serif)', fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>
+              <button onClick={handleNext} style={{ width: '100%', padding: 13, background: 'var(--green)', color: 'var(--bg)', border: 'none', borderRadius: 6, fontFamily: 'var(--serif)', fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>
                 {currentQ < quiz.length - 1 ? 'Siguiente pregunta →' : 'Ver resultados →'}
               </button>
             </>
@@ -218,13 +218,13 @@ export default function RetoPage() {
   return (
     <div style={{ maxWidth: 600, margin: '0 auto', padding: '28px 24px', textAlign: 'center' }}>
       {celebrating && (
-        <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', fontFamily: 'var(--serif)', fontSize: 48, fontWeight: 800, color: 'var(--green)', animation: 'xpFly .8s ease forwards', zIndex: 999, pointerEvents: 'none' }}>
+        <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', fontFamily: 'var(--serif)', fontSize: 48, fontWeight: 700, color: 'var(--green)', animation: 'xpFly .8s ease forwards', zIndex: 999, pointerEvents: 'none' }}>
           +{reto.xp} XP ✨
         </div>
       )}
 
       <div style={{ fontSize: 64, marginBottom: 16 }}>{passed ? '🎉' : '💪'}</div>
-      <div style={{ fontFamily: 'var(--serif)', fontSize: 28, fontWeight: 800, marginBottom: 8 }}>
+      <div style={{ fontFamily: 'var(--serif)', fontSize: 28, fontWeight: 700, marginBottom: 8 }}>
         {passed ? '¡Reto completado!' : 'Sigue practicando'}
       </div>
       <div style={{ fontSize: 14, color: 'var(--muted)', marginBottom: 28 }}>
@@ -232,21 +232,21 @@ export default function RetoPage() {
       </div>
 
       {/* Score */}
-      <div style={{ background: 'var(--bg1)', border: `.5px solid ${passed ? 'rgba(0,212,122,.3)' : 'var(--border2)'}`, borderRadius: 16, padding: 24, marginBottom: 20 }}>
-        <div style={{ fontFamily: 'var(--serif)', fontSize: 48, fontWeight: 800, color: passed ? 'var(--green)' : 'var(--amber)', marginBottom: 4 }}>
+      <div style={{ background: 'var(--bg1)', border: `.5px solid ${passed ? 'color-mix(in srgb, var(--green) 30%, transparent)' : 'var(--border2)'}`, borderRadius: 6, padding: 24, marginBottom: 20 }}>
+        <div style={{ fontFamily: 'var(--serif)', fontSize: 48, fontWeight: 700, color: passed ? 'var(--green)' : 'var(--amber)', marginBottom: 4 }}>
           {finalScore}/{quiz.length}
         </div>
         <div style={{ fontSize: 14, color: 'var(--muted)' }}>{passed ? `Has ganado +${reto.xp} XP` : 'Necesitas 3/5 para pasar'}</div>
 
         {passed && (
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginTop: 20 }}>
-            <div style={{ background: 'var(--gfaint)', border: '.5px solid rgba(0,212,122,.2)', borderRadius: 10, padding: 14 }}>
+            <div style={{ background: 'var(--gfaint)', border: '.5px solid color-mix(in srgb, var(--green) 20%, transparent)', borderRadius: 6, padding: 14 }}>
               <div style={{ fontSize: 10, color: 'var(--green)', fontWeight: 700, marginBottom: 4 }}>XP GANADOS</div>
-              <div style={{ fontFamily: 'var(--serif)', fontSize: 22, fontWeight: 800, color: 'var(--green)' }}>+{reto.xp}</div>
+              <div style={{ fontFamily: 'var(--serif)', fontSize: 22, fontWeight: 700, color: 'var(--green)' }}>+{reto.xp}</div>
             </div>
-            <div style={{ background: 'var(--bg2)', borderRadius: 10, padding: 14 }}>
+            <div style={{ background: 'var(--bg2)', borderRadius: 6, padding: 14 }}>
               <div style={{ fontSize: 10, color: 'var(--muted)', fontWeight: 700, marginBottom: 4 }}>RACHA</div>
-              <div style={{ fontFamily: 'var(--serif)', fontSize: 22, fontWeight: 800 }}>🔥 +1 día</div>
+              <div style={{ fontFamily: 'var(--serif)', fontSize: 22, fontWeight: 700 }}>🔥 +1 día</div>
             </div>
           </div>
         )}
@@ -254,11 +254,11 @@ export default function RetoPage() {
 
       <div style={{ display: 'flex', gap: 10 }}>
         {!passed && (
-          <button onClick={() => { setStep('quiz'); setCurrentQ(0); setAnswers([]); setSelected(null); setShowExpl(false) }} style={{ flex: 1, padding: 13, background: 'var(--bg2)', border: '.5px solid var(--border2)', color: 'var(--white)', borderRadius: 10, fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
+          <button onClick={() => { setStep('quiz'); setCurrentQ(0); setAnswers([]); setSelected(null); setShowExpl(false) }} style={{ flex: 1, padding: 13, background: 'var(--bg2)', border: '.5px solid var(--border2)', color: 'var(--white)', borderRadius: 6, fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
             Repetir reto
           </button>
         )}
-        <button onClick={() => router.push('/retos')} style={{ flex: 1, padding: 13, background: 'var(--green)', color: 'var(--bg)', border: 'none', borderRadius: 10, fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
+        <button onClick={() => router.push('/retos')} style={{ flex: 1, padding: 13, background: 'var(--green)', color: 'var(--bg)', border: 'none', borderRadius: 6, fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
           {passed ? 'Siguiente reto →' : 'Volver a retos'}
         </button>
       </div>

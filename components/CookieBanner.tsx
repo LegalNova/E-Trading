@@ -37,7 +37,7 @@ export default function CookieBanner() {
   return (
     <div style={{
       position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 9000,
-      background: 'rgba(7,9,10,.97)', backdropFilter: 'blur(20px)',
+      background: 'color-mix(in srgb, var(--bg) 97%, transparent)', backdropFilter: 'blur(20px)',
       borderTop: '.5px solid var(--border2)',
       padding: expanded ? '24px' : '16px 24px',
       animation: 'slideUp .4s ease-out',
@@ -56,19 +56,19 @@ export default function CookieBanner() {
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', flexShrink: 0 }}>
               <button
                 onClick={() => setExpanded(true)}
-                style={{ padding: '9px 16px', background: 'transparent', border: '.5px solid var(--border2)', borderRadius: 9, fontSize: 12, color: 'var(--muted)', cursor: 'pointer' }}
+                style={{ padding: '9px 16px', background: 'transparent', border: '.5px solid var(--border2)', borderRadius: 6, fontSize: 12, color: 'var(--muted)', cursor: 'pointer' }}
               >
                 Configurar
               </button>
               <button
                 onClick={() => accept('essential')}
-                style={{ padding: '9px 16px', background: 'transparent', border: '.5px solid var(--border2)', borderRadius: 9, fontSize: 12, color: 'var(--white)', cursor: 'pointer' }}
+                style={{ padding: '9px 16px', background: 'transparent', border: '1px solid var(--border-strong)', borderRadius: 4, fontSize: 13, fontWeight: 600, color: 'var(--text-primary)', cursor: 'pointer' }}
               >
                 Solo esenciales
               </button>
               <button
                 onClick={() => accept('all')}
-                style={{ padding: '9px 20px', background: 'var(--green)', border: 'none', borderRadius: 9, fontSize: 12, fontWeight: 700, color: 'var(--bg)', cursor: 'pointer' }}
+                style={{ padding: '9px 16px', background: 'transparent', border: '1px solid var(--border-strong)', borderRadius: 4, fontSize: 13, fontWeight: 600, color: 'var(--text-primary)', cursor: 'pointer' }}
               >
                 Aceptar todas
               </button>
@@ -111,13 +111,13 @@ export default function CookieBanner() {
             </div>
 
             <div style={{ display: 'flex', gap: 10, justifyContent: 'flex-end', flexWrap: 'wrap' }}>
-              <button onClick={() => accept('essential')} style={{ padding: '9px 18px', background: 'transparent', border: '.5px solid var(--border2)', borderRadius: 9, fontSize: 12, color: 'var(--muted)', cursor: 'pointer' }}>
+              <button onClick={() => accept('essential')} style={{ padding: '9px 16px', background: 'transparent', border: '1px solid var(--border-strong)', borderRadius: 4, fontSize: 13, fontWeight: 600, color: 'var(--text-primary)', cursor: 'pointer' }}>
                 Solo esenciales
               </button>
-              <button onClick={saveCustom} style={{ padding: '9px 18px', background: 'transparent', border: '.5px solid var(--green)', borderRadius: 9, fontSize: 12, color: 'var(--green)', cursor: 'pointer', fontWeight: 600 }}>
+              <button onClick={saveCustom} style={{ padding: '9px 18px', background: 'transparent', border: '.5px solid var(--green)', borderRadius: 6, fontSize: 12, color: 'var(--green)', cursor: 'pointer', fontWeight: 600 }}>
                 Guardar preferencias
               </button>
-              <button onClick={() => accept('all')} style={{ padding: '9px 22px', background: 'var(--green)', border: 'none', borderRadius: 9, fontSize: 12, fontWeight: 700, color: 'var(--bg)', cursor: 'pointer' }}>
+              <button onClick={() => accept('all')} style={{ padding: '9px 16px', background: 'transparent', border: '1px solid var(--border-strong)', borderRadius: 4, fontSize: 13, fontWeight: 600, color: 'var(--text-primary)', cursor: 'pointer' }}>
                 Aceptar todas
               </button>
             </div>
@@ -134,7 +134,7 @@ function Toggle({ label, desc, checked, disabled, onChange }: {
   label: string, desc: string, checked: boolean, disabled?: boolean, onChange: (v: boolean) => void,
 }) {
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16, padding: '12px 14px', background: 'var(--bg1)', borderRadius: 12 }}>
+    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16, padding: '12px 14px', background: 'var(--bg1)', borderRadius: 6 }}>
       <div>
         <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 2 }}>{label}</div>
         <div style={{ fontSize: 11, color: 'var(--muted)' }}>{desc}</div>
@@ -142,7 +142,7 @@ function Toggle({ label, desc, checked, disabled, onChange }: {
       <div
         onClick={() => !disabled && onChange(!checked)}
         style={{
-          width: 44, height: 24, borderRadius: 100, flexShrink: 0,
+          width: 44, height: 24, borderRadius: 4, flexShrink: 0,
           background: checked ? 'var(--green)' : 'var(--bg3)',
           position: 'relative', cursor: disabled ? 'not-allowed' : 'pointer',
           opacity: disabled ? 0.5 : 1, transition: 'background .2s',

@@ -5,7 +5,7 @@ function Stars({ rating }: { rating: number }) {
   return (
     <div style={{ display: 'flex', gap: 2 }}>
       {[1,2,3,4,5].map(i => (
-        <span key={i} style={{ fontSize: 12, color: i <= Math.round(rating) ? '#FFD700' : 'var(--border2)' }}>★</span>
+        <span key={i} style={{ fontSize: 12, color: i <= Math.round(rating) ? 'var(--gold)' : 'var(--border2)' }}>★</span>
       ))}
       <span style={{ fontSize: 11, color: 'var(--muted)', marginLeft: 4 }}>{rating.toFixed(1)}</span>
     </div>
@@ -29,7 +29,7 @@ export default function BrokersPage() {
         <div style={{ fontSize: 11, color: 'var(--green)', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', marginBottom: 8 }}>
           Cuando estés listo para invertir de verdad
         </div>
-        <h1 style={{ fontFamily: 'var(--serif)', fontSize: 32, fontWeight: 800, letterSpacing: '-.03em', marginBottom: 12 }}>
+        <h1 style={{ fontFamily: 'var(--serif)', fontSize: 32, fontWeight: 700, letterSpacing: '-.03em', marginBottom: 12 }}>
           Brókers recomendados
         </h1>
         <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.7, maxWidth: 620 }}>
@@ -39,8 +39,8 @@ export default function BrokersPage() {
         {/* Disclaimer */}
         <div style={{
           display: 'flex', alignItems: 'flex-start', gap: 10, marginTop: 16,
-          background: 'rgba(249,168,37,.06)', border: '.5px solid rgba(249,168,37,.2)',
-          borderRadius: 12, padding: '12px 16px', fontSize: 12, color: 'rgba(249,168,37,.8)',
+          background: 'color-mix(in srgb, var(--amber) 6%, transparent)', border: '.5px solid color-mix(in srgb, var(--amber) 20%, transparent)',
+          borderRadius: 6, padding: '12px 16px', fontSize: 12, color: 'color-mix(in srgb, var(--amber) 80%, transparent)',
         }}>
           <span style={{ flexShrink: 0 }}>⚠️</span>
           <div>
@@ -55,9 +55,9 @@ export default function BrokersPage() {
           <div
             key={broker.id}
             style={{
-              background: 'rgba(255,255,255,.03)',
+              background: 'color-mix(in srgb, var(--text-primary) 3%, transparent)',
               border: `.5px solid ${broker.id === 'degiro' ? `${broker.color}40` : 'var(--border2)'}`,
-              borderRadius: 20, padding: '24px', position: 'relative', overflow: 'hidden',
+              borderRadius: 6, padding: '24px', position: 'relative', overflow: 'hidden',
               transition: 'box-shadow .25s, transform .25s',
             }}
             onMouseEnter={e => {
@@ -73,7 +73,7 @@ export default function BrokersPage() {
               <div style={{
                 position: 'absolute', top: 16, right: 16,
                 background: broker.color, color: broker.id === 'degiro' ? 'var(--bg)' : 'var(--bg)',
-                fontSize: 10, fontWeight: 800, padding: '3px 10px', borderRadius: 100,
+                fontSize: 10, fontWeight: 700, padding: '3px 10px', borderRadius: 4,
               }}>
                 {broker.badge}
               </div>
@@ -82,14 +82,14 @@ export default function BrokersPage() {
             {/* Logo + name */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
               <div style={{
-                width: 44, height: 44, borderRadius: 14, background: `${broker.color}18`,
+                width: 44, height: 44, borderRadius: 6, background: `${broker.color}18`,
                 border: `.5px solid ${broker.color}40`,
                 display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22,
               }}>
                 {broker.logo}
               </div>
               <div>
-                <div style={{ fontFamily: 'var(--serif)', fontSize: 18, fontWeight: 800, color: broker.color }}>
+                <div style={{ fontFamily: 'var(--serif)', fontSize: 18, fontWeight: 700, color: broker.color }}>
                   {broker.name}
                 </div>
                 <div style={{ fontSize: 12, color: 'var(--muted)' }}>{broker.tagline}</div>
@@ -100,11 +100,11 @@ export default function BrokersPage() {
 
             {/* Stats */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, margin: '14px 0' }}>
-              <div style={{ background: 'var(--bg2)', borderRadius: 10, padding: '10px 12px' }}>
+              <div style={{ background: 'var(--bg2)', borderRadius: 6, padding: '10px 12px' }}>
                 <div style={{ fontSize: 10, color: 'var(--muted)', marginBottom: 3 }}>Comisiones</div>
                 <div style={{ fontSize: 12, fontWeight: 600, lineHeight: 1.3 }}>{broker.commission}</div>
               </div>
-              <div style={{ background: 'var(--bg2)', borderRadius: 10, padding: '10px 12px' }}>
+              <div style={{ background: 'var(--bg2)', borderRadius: 6, padding: '10px 12px' }}>
                 <div style={{ fontSize: 10, color: 'var(--muted)', marginBottom: 3 }}>Depósito mínimo</div>
                 <div style={{ fontSize: 12, fontWeight: 600 }}>{broker.minDeposit}</div>
               </div>
@@ -119,7 +119,7 @@ export default function BrokersPage() {
                   </div>
                 ))}
                 {broker.cons.slice(0, 1).map((c, i) => (
-                  <div key={i} style={{ display: 'flex', gap: 6, fontSize: 12, color: 'rgba(239,83,80,.7)' }}>
+                  <div key={i} style={{ display: 'flex', gap: 6, fontSize: 12, color: 'color-mix(in srgb, var(--red) 70%, transparent)' }}>
                     <span style={{ flexShrink: 0 }}>✗</span> {c}
                   </div>
                 ))}
@@ -138,7 +138,7 @@ export default function BrokersPage() {
                 width: '100%', padding: '12px', background: broker.id === 'degiro' ? broker.color : 'transparent',
                 color: broker.id === 'degiro' ? 'var(--bg)' : broker.color,
                 border: `.5px solid ${broker.color}60`,
-                borderRadius: 12, fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700,
+                borderRadius: 6, fontFamily: 'var(--serif)', fontSize: 14, fontWeight: 700,
                 cursor: 'pointer', letterSpacing: '-.01em',
               }}
             >
@@ -149,7 +149,7 @@ export default function BrokersPage() {
       </div>
 
       {/* Bottom disclaimer */}
-      <div style={{ marginTop: 32, padding: '16px 20px', background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 16, fontSize: 12, color: 'var(--muted)', lineHeight: 1.7 }}>
+      <div style={{ marginTop: 32, padding: '16px 20px', background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 6, fontSize: 12, color: 'var(--muted)', lineHeight: 1.7 }}>
         <strong>Aviso legal:</strong> Los enlaces a los brókers son enlaces de afiliado. E-Trading puede recibir una compensación si abres una cuenta a través de ellos. Esta compensación no influye en nuestra valoración. Invertir en mercados financieros conlleva riesgo de pérdida de capital. E-Trading es una plataforma educativa y no presta servicios de inversión regulados. Antes de invertir dinero real, asegúrate de entender los riesgos.
       </div>
     </div>

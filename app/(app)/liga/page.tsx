@@ -24,7 +24,7 @@ const BOT_NAMES = [
 ]
 
 const AVATAR_COLORS = [
-  '#00D47A', '#42A5F5', '#9945FF', '#F9A825', '#EF5350',
+  'var(--green)', 'var(--blue)', 'var(--purple)', 'var(--amber)', 'var(--red)',
   '#26C6DA', '#66BB6A', '#FFA726', '#AB47BC', '#29B6F6',
 ]
 
@@ -95,7 +95,7 @@ export default function LigaPage() {
       isMe: true,
       isBot: false,
       initials: getInitials(userName),
-      avatarColor: '#00D47A',
+      avatarColor: 'var(--green)',
       ligaNivel: userLigaNivel,
     })
 
@@ -130,28 +130,28 @@ export default function LigaPage() {
   const ligaNombre = LIGA_NAMES[(me?.ligaNivel ?? 1) - 1] ?? 'Novato'
 
   return (
-    <div style={{ padding: '24px 28px', overflowY: 'auto', flex: 1 }}>
+    <div style={{ padding: '24px 16px', maxWidth: 1040, margin: '0 auto', width: '100%' }}>
       {/* Header */}
       <div style={{ marginBottom: 20 }}>
-        <div style={{ fontFamily: 'var(--serif)', fontSize: 24, fontWeight: 800, marginBottom: 4 }}>Liga</div>
+        <div style={{ fontFamily: 'var(--serif)', fontSize: 24, fontWeight: 700, marginBottom: 4 }}>Liga</div>
         <div style={{ fontSize: 13, color: 'var(--muted)' }}>Liga {ligaNombre} · 30 participantes</div>
       </div>
 
       {/* My position card */}
       <div style={{
-        background: 'rgba(0,212,122,.06)', border: '.5px solid rgba(0,212,122,.2)',
-        borderRadius: 14, padding: 18, marginBottom: 20,
+        background: 'color-mix(in srgb, var(--green) 6%, transparent)', border: '.5px solid color-mix(in srgb, var(--green) 20%, transparent)',
+        borderRadius: 6, padding: 18, marginBottom: 20,
         display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16,
       }}>
         <div>
           <div style={{ fontSize: 11, color: 'var(--green)', fontWeight: 700, marginBottom: 6, letterSpacing: '.08em', textTransform: 'uppercase' }}>Mi posición</div>
-          <div style={{ fontFamily: 'var(--serif)', fontSize: 32, fontWeight: 800 }}>
+          <div style={{ fontFamily: 'var(--serif)', fontSize: 32, fontWeight: 700 }}>
             #{me?.pos ?? '—'}
           </div>
         </div>
         <div style={{ textAlign: 'center' }}>
           <div style={{ fontSize: 11, color: 'var(--muted)', marginBottom: 6 }}>XP esta semana</div>
-          <div style={{ fontFamily: 'var(--serif)', fontSize: 28, fontWeight: 800, color: 'var(--green)' }}>
+          <div style={{ fontFamily: 'var(--serif)', fontSize: 28, fontWeight: 700, color: 'var(--green)' }}>
             {me?.xp ?? 0}
           </div>
         </div>
@@ -195,7 +195,7 @@ export default function LigaPage() {
       </div>
 
       {activeTab === 'history' && (
-        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 14, padding: 24, textAlign: 'center' }}>
+        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 6, padding: 24, textAlign: 'center' }}>
           <div style={{ fontSize: 32, marginBottom: 12 }}>📊</div>
           <div style={{ fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 700, marginBottom: 8 }}>Histórico próximamente</div>
           <div style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.6 }}>El histórico de ligas anteriores estará disponible cuando finalice la primera semana completa.</div>
@@ -204,7 +204,7 @@ export default function LigaPage() {
 
       {/* Ranking table */}
       {activeTab === 'week' && (
-        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 14, overflow: 'hidden' }}>
+        <div style={{ background: 'var(--bg1)', border: '.5px solid var(--border2)', borderRadius: 6, overflow: 'hidden' }}>
           {loading ? (
             <div style={{ padding: 32, textAlign: 'center', color: 'var(--muted)', fontSize: 13 }}>Cargando ranking...</div>
           ) : (
@@ -220,19 +220,19 @@ export default function LigaPage() {
                     display: 'flex', alignItems: 'center', gap: 12, padding: '10px 16px',
                     borderBottom: i < ranking.length - 1 ? '.5px solid var(--border)' : 'none',
                     background: entry.isMe
-                      ? 'rgba(0,212,122,.06)'
-                      : ascending && entry.pos <= 3 ? 'rgba(255,215,0,.025)' : 'transparent',
+                      ? 'color-mix(in srgb, var(--green) 6%, transparent)'
+                      : ascending && entry.pos <= 3 ? 'color-mix(in srgb, var(--gold) 2%, transparent)' : 'transparent',
                     borderLeft: ascending
-                      ? '2px solid rgba(0,212,122,.4)'
-                      : descending ? '2px solid rgba(239,83,80,.4)'
-                      : '2px solid rgba(249,168,37,.2)',
-                    outline: entry.isMe ? '1px solid rgba(0,212,122,.2)' : 'none',
+                      ? '2px solid color-mix(in srgb, var(--green) 40%, transparent)'
+                      : descending ? '2px solid color-mix(in srgb, var(--red) 40%, transparent)'
+                      : '2px solid color-mix(in srgb, var(--amber) 20%, transparent)',
+                    outline: entry.isMe ? '1px solid color-mix(in srgb, var(--green) 20%, transparent)' : 'none',
                   }}
                 >
                   {/* Position */}
                   <div style={{
                     width: 30, textAlign: 'center', fontFamily: 'var(--serif)',
-                    fontSize: medal ? 18 : 14, fontWeight: 800,
+                    fontSize: medal ? 18 : 14, fontWeight: 700,
                     color: entry.pos === 1 ? 'var(--gold)'
                       : entry.pos === 2 ? '#C0C0C0'
                       : entry.pos === 3 ? '#CD7F32'
@@ -249,8 +249,8 @@ export default function LigaPage() {
                     width: 34, height: 34, borderRadius: '50%', flexShrink: 0,
                     background: entry.avatarColor,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontFamily: 'var(--serif)', fontSize: 12, fontWeight: 800, color: '#07090A',
-                    border: entry.isMe ? '2px solid #FFD700' : '2px solid transparent',
+                    fontFamily: 'var(--serif)', fontSize: 12, fontWeight: 700, color: 'var(--bg)',
+                    border: entry.isMe ? '2px solid var(--gold)' : '2px solid transparent',
                   }}>
                     {entry.initials}
                   </div>
@@ -267,9 +267,9 @@ export default function LigaPage() {
                       </span>
                       {entry.isMe && (
                         <span style={{
-                          fontSize: 9, fontWeight: 800, padding: '2px 6px', borderRadius: 100,
-                          background: 'rgba(255,215,0,.15)', color: '#FFD700',
-                          border: '.5px solid rgba(255,215,0,.3)', letterSpacing: '.05em',
+                          fontSize: 9, fontWeight: 700, padding: '2px 6px', borderRadius: 4,
+                          background: 'color-mix(in srgb, var(--gold) 15%, transparent)', color: 'var(--gold)',
+                          border: '.5px solid color-mix(in srgb, var(--gold) 30%, transparent)', letterSpacing: '.05em',
                         }}>
                           TÚ
                         </span>
