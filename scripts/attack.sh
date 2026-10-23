@@ -67,7 +67,7 @@ code=$(c $J2 -X POST $B/orders -d '{"symbol":"ETH","side":"SELL","type":"STOP_LO
 [ "$code" = FEATURE_LOCKED ] && ok "→ FEATURE_LOCKED" || ko "→ $code"
 
 echo "11. Admin registrándose con el email de admin (sin verificar)"
-rm -f $J2; E=jvidalalmirall@gmail.com
+c $J2 -X DELETE $B/me -o /dev/null; rm -f $J2; E=jvidalalmirall@gmail.com
 curl -s -c $J2 -b $J2 -H 'content-type: application/json' -H "$O" -X POST $B/auth/sign-up/email -d "{\"email\":\"$E\",\"password\":\"prueba1234\",\"name\":\"\"}" -o /dev/null
 adm=$(c $J2 $B/session | python3 -c "import sys,json; print(json.load(sys.stdin).get('isAdmin'))"); code=$(c $J2 $B/admin/metrics -o /dev/null -w "%{http_code}")
 [ "$adm" = False ] && [ "$code" = 403 ] && ok "no es admin (403)" || ko "isAdmin=$adm admin=$code"
