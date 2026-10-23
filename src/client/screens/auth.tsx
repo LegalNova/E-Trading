@@ -5,12 +5,16 @@ import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
 import { api, ApiFailure, type Session } from '../api'
+import { useSession } from '../hooks'
 import { TopBar } from '../ui/kit'
 import { Lumi } from '../ui/lumi'
 
 function GoogleButton({ onDone }: { onDone: (s: Session) => void }) {
   const t = useTranslations('auth')
+  const { data: session } = useSession()
   const m = useMutation({ mutationFn: api.signInWithGoogle, onSuccess: onDone })
+  // Solo cuando Google está configurado en el servidor
+  if (!session?.googleEnabled) return null
   return (
     <button className="btn btn-secondary" onClick={() => m.mutate()} disabled={m.isPending}>
       <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
@@ -22,6 +26,12 @@ function GoogleButton({ onDone }: { onDone: (s: Session) => void }) {
       {t('google')}
     </button>
   )
+}
+
+function OrEmail() {
+  const t = useTranslations('auth')
+  const { data } = useSession()
+  return data?.googleEnabled ? <div className="t-cap text-center">{t('orEmail')}</div> : null
 }
 
 function useAfterAuth() {
@@ -65,7 +75,7 @@ export function SignUp() {
       >
         <h1 className="t-large">{t('signUpTitle')}</h1>
         <GoogleButton onDone={done} />
-        <div className="t-cap text-center">{t('orEmail')}</div>
+        <OrEmail />
         <div className="field">
           <label htmlFor="f-email">Email</label>
           <input id="f-email" className="input" type="email" autoComplete="email" required value={email} onChange={e => setEmail(e.target.value)} aria-invalid={err?.code === 'VALIDATION_ERROR' || err?.code === 'EMAIL_IN_USE'} />
@@ -109,7 +119,7 @@ export function SignIn() {
       >
         <h1 className="t-large">{t('signInTitle')}</h1>
         <GoogleButton onDone={done} />
-        <div className="t-cap text-center">{t('orEmail')}</div>
+        <OrEmail />
         <div className="field">
           <label htmlFor="f-email">Email</label>
           <input id="f-email" className="input" type="email" autoComplete="email" required value={email} onChange={e => setEmail(e.target.value)} aria-invalid={m.isError} />
@@ -125,7 +135,6 @@ export function SignIn() {
         <button className="btn btn-primary" disabled={m.isPending}>
           {t('signIn')}
         </button>
-        <div className="banner banner-info">{t('demoNote')}</div>
         <p className="t-foot m-0 text-center">
           {t('noAccount')}{' '}
           <Link href="/registro" className="link">
@@ -139,39 +148,21 @@ export function SignIn() {
 
 export function Forgot() {
   const t = useTranslations('auth')
-  const [email, setEmail] = useState('')
-  const m = useMutation({ mutationFn: () => api.forgotPassword(email.trim()) })
   return (
     <>
       <TopBar back="/entrar" />
-      <form
-        className="pad"
-        onSubmit={e => {
-          e.preventDefault()
-          m.mutate()
-        }}
-      >
+      <div className="pad">
         <h1 className="t-large">{t('forgotTitle')}</h1>
-        {m.isSuccess ? (
-          <div className="card flex items-center gap-3">
-            <Lumi mood="HAPPY" size={40} />
-            <span className="t-foot" style={{ color: 'var(--ink)' }}>
-              {t('forgotSent')}
-            </span>
-          </div>
-        ) : (
-          <>
-            <p className="t-foot m-0">{t('forgotSub')}</p>
-            <div className="field">
-              <label htmlFor="f-email">Email</label>
-              <input id="f-email" className="input" type="email" required value={email} onChange={e => setEmail(e.target.value)} />
-            </div>
-            <button className="btn btn-primary" disabled={m.isPending}>
-              {t('sendLink')}
-            </button>
-          </>
-        )}
-      </form>
+        <div className="card flex items-center gap-3">
+          <Lumi mood="CALM" size={40} />
+          <span className="t-foot" style={{ color: 'var(--ink)' }}>
+            {t('forgotSent')}
+          </span>
+        </div>
+        <Link href="/#contacto" className="btn btn-secondary">
+          {t('contact')}
+        </Link>
+      </div>
     </>
   )
 }

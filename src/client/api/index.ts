@@ -1,5 +1,5 @@
-// Punto único de acceso a datos. En la etapa 3 se cambia por la versión HTTP.
-import { mockApi } from './mock'
+// Punto único de acceso a datos: la API real del servidor (etapa 3)
+import { httpApi } from './http'
 
-export const api = mockApi
+export const api = httpApi
 export * from './types'

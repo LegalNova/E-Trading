@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import { LESSON } from '@/client/api/mock/catalog'
+import { LESSON } from '@/server/content/catalog'
 import { Quiz } from '@/client/screens/quiz'
 import { PageSkeleton } from '@/client/ui/kit'
 

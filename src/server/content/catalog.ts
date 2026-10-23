@@ -1,46 +1,7 @@
-// Catálogo de datos de EJEMPLO para la etapa 2 (frontend con datos simulados).
-// En la etapa 3 todo esto sale de la base de datos y de los proveedores de mercado.
-// El contenido de las lecciones es provisional: el temario real se decide en la etapa 5.
-import type { AssetTypeT, FeatureT, Mood, QuestionT } from '@/shared/contract'
-import type { ExchangeCode } from '@/shared/market-hours'
-
-// ── Activos ──────────────────────────────────────────────
-export interface MockAsset {
-  symbol: string
-  name: string
-  type: AssetTypeT
-  exchange: string
-  hours: ExchangeCode
-  currency: 'EUR' | 'USD'
-  base: number
-  vol: number // volatilidad diaria aproximada (%)
-  delayedMinutes: number
-  description: string
-}
-
-export const ASSETS: MockAsset[] = [
-  { symbol: 'AAPL', name: 'Apple', type: 'STOCK', exchange: 'NASDAQ', hours: 'NASDAQ', currency: 'USD', base: 333.63, vol: 1.6, delayedMinutes: 0, description: 'Diseña iPhone, Mac y servicios como App Store o Apple Music.' },
-  { symbol: 'MSFT', name: 'Microsoft', type: 'STOCK', exchange: 'NASDAQ', hours: 'NASDAQ', currency: 'USD', base: 529.3, vol: 1.4, delayedMinutes: 0, description: 'Software, la nube Azure y Office.' },
-  { symbol: 'NVDA', name: 'NVIDIA', type: 'STOCK', exchange: 'NASDAQ', hours: 'NASDAQ', currency: 'USD', base: 239.24, vol: 2.8, delayedMinutes: 0, description: 'Chips gráficos usados para videojuegos e inteligencia artificial.' },
-  { symbol: 'TSLA', name: 'Tesla', type: 'STOCK', exchange: 'NASDAQ', hours: 'NASDAQ', currency: 'USD', base: 380.68, vol: 3.4, delayedMinutes: 0, description: 'Coches eléctricos, baterías y energía solar.' },
-  { symbol: 'AMZN', name: 'Amazon', type: 'STOCK', exchange: 'NASDAQ', hours: 'NASDAQ', currency: 'USD', base: 256.29, vol: 1.9, delayedMinutes: 0, description: 'Comercio electrónico y la nube AWS.' },
-  { symbol: 'GOOGL', name: 'Alphabet', type: 'STOCK', exchange: 'NASDAQ', hours: 'NASDAQ', currency: 'USD', base: 247.1, vol: 1.8, delayedMinutes: 0, description: 'Google, YouTube y Android.' },
-  { symbol: 'META', name: 'Meta', type: 'STOCK', exchange: 'NASDAQ', hours: 'NASDAQ', currency: 'USD', base: 712.4, vol: 2.2, delayedMinutes: 0, description: 'Facebook, Instagram y WhatsApp.' },
-  { symbol: 'SAN', name: 'Banco Santander', type: 'STOCK', exchange: 'BME', hours: 'BME', currency: 'EUR', base: 8.93, vol: 1.5, delayedMinutes: 15, description: 'Uno de los mayores bancos de Europa.' },
-  { symbol: 'ITX', name: 'Inditex', type: 'STOCK', exchange: 'BME', hours: 'BME', currency: 'EUR', base: 52.18, vol: 1.3, delayedMinutes: 15, description: 'Zara, Massimo Dutti, Pull&Bear y más.' },
-  { symbol: 'BBVA', name: 'BBVA', type: 'STOCK', exchange: 'BME', hours: 'BME', currency: 'EUR', base: 16.42, vol: 1.6, delayedMinutes: 15, description: 'Banco español con fuerte presencia en México.' },
-  { symbol: 'SPY', name: 'S&P 500 ETF', type: 'ETF', exchange: 'NYSE', hours: 'NYSE', currency: 'USD', base: 779.09, vol: 0.9, delayedMinutes: 0, description: 'Un fondo que reúne las 500 mayores empresas de EE. UU.' },
-  { symbol: 'QQQ', name: 'Nasdaq 100 ETF', type: 'ETF', exchange: 'NASDAQ', hours: 'NASDAQ', currency: 'USD', base: 759.66, vol: 1.2, delayedMinutes: 0, description: 'Las 100 mayores empresas no financieras del Nasdaq.' },
-  { symbol: 'VWCE', name: 'Vanguard FTSE All-World', type: 'ETF', exchange: 'XETRA', hours: 'XETRA', currency: 'EUR', base: 141.06, vol: 0.8, delayedMinutes: 15, description: 'Miles de empresas de todo el mundo en un solo fondo.' },
-  { symbol: 'BTC', name: 'Bitcoin', type: 'CRYPTO', exchange: 'Cripto', hours: 'CRYPTO', currency: 'EUR', base: 74230, vol: 3.2, delayedMinutes: 0, description: 'La primera criptomoneda. Muy volátil.' },
-  { symbol: 'ETH', name: 'Ethereum', type: 'CRYPTO', exchange: 'Cripto', hours: 'CRYPTO', currency: 'EUR', base: 2285.4, vol: 4.1, delayedMinutes: 0, description: 'Red para aplicaciones y contratos inteligentes.' },
-  { symbol: 'SOL', name: 'Solana', type: 'CRYPTO', exchange: 'Cripto', hours: 'CRYPTO', currency: 'EUR', base: 152.3, vol: 5.2, delayedMinutes: 0, description: 'Cadena de bloques rápida y de bajo coste.' },
-  { symbol: 'SPX', name: 'S&P 500', type: 'INDEX', exchange: 'Índice', hours: 'INDEX_US', currency: 'USD', base: 7790.5, vol: 0.9, delayedMinutes: 15, description: 'Índice de las 500 mayores empresas de EE. UU.' },
-  { symbol: 'IBEX', name: 'IBEX 35', type: 'INDEX', exchange: 'Índice', hours: 'INDEX_ES', currency: 'EUR', base: 15210, vol: 1.0, delayedMinutes: 15, description: 'Las 35 empresas más negociadas de la bolsa española.' },
-  { symbol: 'EURUSD', name: 'EUR/USD', type: 'FX', exchange: 'Divisa', hours: 'FX', currency: 'USD', base: 1.1269, vol: 0.4, delayedMinutes: 0, description: 'Cuántos dólares vale un euro.' },
-  { symbol: 'GBPUSD', name: 'GBP/USD', type: 'FX', exchange: 'Divisa', hours: 'FX', currency: 'USD', base: 1.3312, vol: 0.5, delayedMinutes: 0, description: 'Cuántos dólares vale una libra.' },
-]
-export const ASSET = Object.fromEntries(ASSETS.map(a => [a.symbol, a])) as Record<string, MockAsset>
+import 'server-only'
+// Contenido del curso (D-016: vive en el repo). SOLO en el servidor: incluye las soluciones.
+// El temario es provisional: el definitivo se prepara con Joan en la etapa 5.
+import type { FeatureT, Mood, QuestionT } from '@/shared/contract'
 
 // ── Curso «Trading desde cero» ───────────────────────────
 type Step =
@@ -49,7 +10,7 @@ type Step =
   | { kind: 'CHART'; prompt: string; caption: string; candles: [number, number, number, number][]; solution: number; ok: string; ko: string }
   | { kind: 'SIM'; title: string; body: string; task: string }
 
-export interface MockLesson {
+export interface ContentLesson {
   id: string
   title: string
   minutes: number
@@ -58,7 +19,7 @@ export interface MockLesson {
   quizId: string
   isUnitReview?: boolean
 }
-export interface MockUnit {
+export interface ContentUnit {
   id: string
   order: number
   title: string
@@ -66,14 +27,14 @@ export interface MockUnit {
   premiumOnly: boolean
   freeLessonIds?: string[]
   unlocksFeature?: FeatureT
-  lessons: MockLesson[]
+  lessons: ContentLesson[]
 }
 
 const soon = (title: string): Step[] => [
   { kind: 'TEXT', title, body: 'Esta lección está en preparación. En la versión final tendrá su explicación, ejemplos con datos reales y práctica en el Mercado.' },
 ]
 
-export const UNITS: MockUnit[] = [
+export const UNITS: ContentUnit[] = [
   {
     id: 'u1', order: 1, title: 'Primeros pasos', description: 'Qué es invertir, la bolsa y el interés compuesto', premiumOnly: false,
     lessons: [
@@ -135,15 +96,15 @@ export const UNITS: MockUnit[] = [
   { id: 'u6', order: 6, title: 'Cripto y otros mercados', description: 'Volatilidad, custodia y divisas', premiumOnly: true, lessons: [] },
 ]
 
-export const LESSON = Object.fromEntries(UNITS.flatMap(u => u.lessons.map(l => [l.id, { ...l, unit: u }]))) as Record<string, MockLesson & { unit: MockUnit }>
+export const LESSON = Object.fromEntries(UNITS.flatMap(u => u.lessons.map(l => [l.id, { ...l, unit: u }]))) as Record<string, ContentLesson & { unit: ContentUnit }>
 
 // ── Preguntas (con solución: en la etapa 3 solo existirá en el servidor) ──
-export interface MockQuestion extends QuestionT {
+export interface ContentQuestion extends QuestionT {
   solution: number | number[] | string
   explanation: string
 }
 
-const generic = (topic: string): MockQuestion[] => [
+const generic = (topic: string): ContentQuestion[] => [
   { id: `${topic}-1`, type: 'TRUE_FALSE', prompt: 'Invertir siempre implica algún riesgo.', options: ['Verdadero', 'Falso'], solution: 0, explanation: 'Toda inversión puede bajar. Por eso se aprende a gestionar el riesgo.' },
   { id: `${topic}-2`, type: 'SINGLE', prompt: '¿Qué es diversificar?', options: ['Poner todo en una empresa', 'Repartir el dinero entre distintos activos', 'Vender en cuanto algo baja'], solution: 1, explanation: 'Repartir reduce el impacto de que una sola inversión salga mal.' },
   { id: `${topic}-3`, type: 'SINGLE', prompt: 'Si una acción cae un 50 %, ¿cuánto tiene que subir para volver al precio inicial?', options: ['50 %', '100 %', '150 %'], solution: 1, explanation: 'De 100 a 50 hay que doblar: +100 %.' },
@@ -151,7 +112,7 @@ const generic = (topic: string): MockQuestion[] => [
 
 const TREND_DOWN = [100, 103, 98, 101, 94, 97, 90, 92, 86, 88, 82, 84, 78]
 
-export const QUIZZES: Record<string, MockQuestion[]> = {
+export const QUIZZES: Record<string, ContentQuestion[]> = {
   'q-u2l3': [
     { id: 'u2l3-1', type: 'SINGLE', prompt: '¿Qué indica una vela con cuerpo muy pequeño y mechas largas?', options: ['Una subida fuerte', 'Una bajada fuerte', 'Indecisión entre compradores y vendedores', 'Que el mercado está cerrado'], solution: 2, explanation: 'Ni compradores ni vendedores ganaron el periodo.' },
     { id: 'u2l3-2', type: 'CHART_TREND', prompt: '¿Qué tendencia tiene BTC en este periodo?', options: ['Alcista', 'Bajista', 'Lateral'], chart: TREND_DOWN, solution: 1, explanation: 'Máximos y mínimos cada vez más bajos: tendencia bajista.' },
@@ -177,7 +138,7 @@ export const QUIZZES: Record<string, MockQuestion[]> = {
   'q-u3l3': generic('u3l3'),
 }
 
-export const PLACEMENT: MockQuestion[] = [
+export const PLACEMENT: ContentQuestion[] = [
   { id: 'p1', type: 'SINGLE', prompt: '¿Qué es una acción?', options: ['Un préstamo a una empresa', 'Una pequeña parte de una empresa', 'Un depósito en el banco', 'No lo sé'], solution: 1, explanation: '' },
   { id: 'p2', type: 'SINGLE', prompt: '¿Qué es un ETF?', options: ['Un fondo que cotiza en bolsa y reúne muchas empresas', 'Una criptomoneda', 'Un tipo de cuenta bancaria', 'No lo sé'], solution: 0, explanation: '' },
   { id: 'p3', type: 'SINGLE', prompt: 'Si una acción cae un 50 %, ¿cuánto tiene que subir para recuperar el precio inicial?', options: ['50 %', '100 %', '150 %', 'No lo sé'], solution: 1, explanation: '' },
@@ -189,8 +150,8 @@ export const PLACEMENT: MockQuestion[] = [
 ]
 
 // ── Logros (32) ──────────────────────────────────────────
-export interface MockAchievement { code: string; title: string; description: string; icon: string; category: 'LEARNING' | 'TRADING' | 'STREAK'; target: number; gems: number; xp: number }
-export const ACHIEVEMENTS: MockAchievement[] = [
+export interface ContentAchievement { code: string; title: string; description: string; icon: string; category: 'LEARNING' | 'TRADING' | 'STREAK'; target: number; gems: number; xp: number }
+export const ACHIEVEMENTS: ContentAchievement[] = [
   { code: 'FIRST_LESSON', title: 'Primera lección', description: 'Completa tu primera lección', icon: '1', category: 'LEARNING', target: 1, gems: 20, xp: 10 },
   { code: 'LESSONS_5', title: 'Cinco lecciones', description: 'Completa 5 lecciones', icon: '5', category: 'LEARNING', target: 5, gems: 20, xp: 20 },
   { code: 'LESSONS_20', title: 'Veinte lecciones', description: 'Completa 20 lecciones', icon: '20', category: 'LEARNING', target: 20, gems: 40, xp: 50 },
@@ -254,6 +215,5 @@ export const LUMI: Record<string, { mood: Mood; lines: string[] }> = {
   PORTFOLIO_ANALYSIS: { mood: 'THINKING', lines: ['Tus operaciones grandes suelen ser los lunes. ¿Repasamos «Psicología del inversor»?'] },
 }
 
-// ── Liga (miembros de ejemplo para ver la pantalla) ──────
-export const LEAGUE_NAMES = ['Marc R.', 'Aina P.', 'Hugo M.', 'Sara L.', 'Pau G.', 'Nora V.', 'Iker T.', 'Lucía F.', 'Dani O.', 'Martina C.', 'Jan B.', 'Alba S.', 'Leo D.', 'Clara M.', 'Pol N.', 'Irene H.', 'Bruno A.', 'Julia E.', 'Àlex V.', 'Carla R.', 'Gerard P.', 'Ona F.', 'Biel S.', 'Emma T.', 'Nil G.', 'Laia C.', 'Mateo J.', 'Paula Z.', 'Arnau K.']
+// ── Liga: sin jugadores de ejemplo (D-019) ──────────────
 export const DIVISIONS = ['Novato', 'Aprendiz', 'Analista', 'Estratega', 'Experto']

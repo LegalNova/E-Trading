@@ -121,18 +121,16 @@
     "haveAccount": "Ja tens compte?",
     "noAccount": "No tens compte?",
     "forgot": "Has oblidat la contrasenya?",
-    "demoNote": "Versió de prova: amb qualsevol email i una contrasenya de 8 caràcters entres en un compte d'exemple amb dades.",
     "forgotTitle": "Nova contrasenya",
-    "forgotSub": "T'enviem un enllaç per triar una contrasenya nova. Caduca en 1 hora.",
-    "sendLink": "Enviar enllaç",
-    "forgotSent": "Si hi ha un compte amb aquest email, rebràs un enllaç en uns minuts.",
+    "forgotSent": "Encara no enviem emails: la recuperació de la contrasenya arribarà amb el domini propi. Mentrestant, escriu-nos des de Contacte a la pàgina d'inici i t'ajudarem.",
     "errors": {
       "INVALID_CREDENTIALS": "Email o contrasenya incorrectes.",
       "EMAIL_IN_USE": "Ja hi ha un compte amb aquest email.",
       "VALIDATION_ERROR": "Escriu un email vàlid.",
       "ACCOUNT_BLOCKED": "Aquest compte està bloquejat. Escriu-nos si creus que és un error.",
       "RATE_LIMITED": "Massa intents. Prova-ho d'aquí a un minut."
-    }
+    },
+    "contact": "Anar a Contacte"
   },
   "onboarding": {
     "nameTitle": "Com et dius?",

@@ -1,0 +1,175 @@
+import 'server-only'
+// Clases, quiz, test de nivel y repaso de fallos (docs/02 §2, docs/07 §3–4)
+import type { AnswerResultT, CoursePathT, LessonStepT, LessonT, PathUnitT, PlacementFinishT, QuestionT, QuizFinishT, QuizStartT, StepCheckT } from '@/shared/contract'
+import type { User } from '@/generated/prisma/client'
+import { LESSON, PLACEMENT, QUIZZES, UNITS, type ContentQuestion } from '../content/catalog'
+import { addXp, bump, bumpGoal, endFx, fail, LIVES_MAX, livesOf, lumi, markActive, withCtx, type Ctx, type Tx } from './core'
+
+const ALL_Q: Record<string, ContentQuestion> = Object.fromEntries([...Object.values(QUIZZES).flat(), ...PLACEMENT].map(q => [q.id, q]))
+const publicQ = (q: ContentQuestion): QuestionT => ({ id: q.id, type: q.type, prompt: q.prompt, options: q.options, chart: q.chart })
+
+function isCorrect(q: ContentQuestion, a: unknown): boolean {
+  if (q.type === 'CHART_POINT') return typeof a === 'number' && Math.abs(a - (q.solution as number)) <= 1
+  if (q.type === 'FILL_BLANK') return String(a).trim().toLowerCase() === String(q.solution).toLowerCase()
+  if (q.type === 'MULTIPLE') return Array.isArray(a) && [...a].sort().join() === [...(q.solution as number[])].sort().join()
+  if (q.type === 'ORDER') return Array.isArray(a) && a.join() === (q.solution as number[]).join()
+  return a === q.solution
+}
+
+export async function pathOf(tx: Tx, user: User): Promise<CoursePathT> {
+  const rows = await tx.lessonProgress.findMany({ where: { userId: user.id } })
+  const done = new Map(rows.map(r => [r.lessonId, r]))
+  const premium = user.plan === 'PREMIUM'
+  let found = false
+  let currentUnitId = UNITS[0].id
+  const units: PathUnitT[] = UNITS.map(u => {
+    const lessons = u.lessons.map(l => {
+      const p = done.get(l.id)
+      const requiresPremium = u.premiumOnly && !premium && !(u.freeLessonIds ?? []).includes(l.id)
+      let status: 'LOCKED' | 'AVAILABLE' | 'COMPLETED' = 'LOCKED'
+      if (p) status = 'COMPLETED'
+      else if (!requiresPremium && !found) {
+        status = 'AVAILABLE'
+        found = true
+        currentUnitId = u.id
+      }
+      return { id: l.id, title: l.title, status, stars: p?.stars ?? 0, minutes: l.minutes, xp: l.xp, isUnitReview: !!l.isUnitReview, requiresPremium }
+    })
+    const n = lessons.filter(l => l.status === 'COMPLETED').length
+    return { id: u.id, order: u.order, title: u.title, description: u.description, progressPct: u.lessons.length ? Math.round((n / u.lessons.length) * 100) : 0, premiumOnly: u.premiumOnly, unlocksFeature: u.unlocksFeature, lessons }
+  })
+  return { courseId: 'trading-desde-cero', title: 'Trading desde cero', currentUnitId, units }
+}
+
+export async function lesson(user: User, tx: Tx, id: string): Promise<LessonT> {
+  const l = LESSON[id] ?? fail(404, 'NOT_FOUND', 'Lección no encontrada')
+  const st = (await pathOf(tx, user)).units.flatMap(u => u.lessons).find(x => x.id === id)!
+  if (st.requiresPremium) fail(403, 'FEATURE_LOCKED', 'Esta lección es de Premium')
+  const steps: LessonStepT[] = l.steps.map((s, i): LessonStepT => {
+    const sid = `${id}-s${i}`
+    if (s.kind === 'TEXT') return { id: sid, type: 'TEXT', title: s.title, body: s.body, companionTip: s.tip }
+    if (s.kind === 'IMAGE') return { id: sid, type: 'IMAGE', title: s.title, body: s.body, image: s.image, companionTip: s.tip }
+    if (s.kind === 'CHART') return { id: sid, type: 'INTERACTIVE_CHART', prompt: s.prompt, caption: s.caption, candles: s.candles }
+    return { id: sid, type: 'SIMULATOR_TASK', title: s.title, body: s.body, task: s.task }
+  })
+  steps.push({ id: `${id}-quiz`, type: 'QUIZ', quizId: l.quizId, title: 'Hora del quiz', body: `${(QUIZZES[l.quizId] ?? []).length} preguntas para comprobar lo que has aprendido. Cada fallo cuesta una vida.` })
+  return { id, title: l.title, unitTitle: l.unit.title, minutes: l.minutes, xp: l.xp, steps }
+}
+
+export function checkStep(lessonId: string, stepId: string, idx: number): StepCheckT {
+  const s = LESSON[lessonId]?.steps[Number(stepId.split('-s')[1])]
+  if (!s || s.kind !== 'CHART') return fail(404, 'NOT_FOUND', 'Paso no encontrado')
+  const correct = idx === s.solution
+  return { correct, explanation: correct ? s.ok : s.ko }
+}
+
+export const quizStart = (id: string) =>
+  withCtx(async (c): Promise<QuizStartT> => {
+    let mode: 'LESSON' | 'PLACEMENT' | 'REVIEW' = 'LESSON'
+    let qs: ContentQuestion[]
+    if (id === 'placement') {
+      mode = 'PLACEMENT'
+      qs = PLACEMENT
+    } else if (id === 'review') {
+      mode = 'REVIEW'
+      const m = await c.tx.mistake.findMany({ where: { userId: c.user.id }, orderBy: { createdAt: 'asc' }, take: 8 })
+      qs = m.map(x => ALL_Q[x.questionId]).filter(Boolean)
+      if (!qs.length) fail(404, 'NOT_FOUND', 'No tienes fallos que repasar')
+    } else {
+      const l = LESSON[id] ?? fail(404, 'NOT_FOUND', 'Lección no encontrada')
+      await lesson(c.user, c.tx, id) // comprueba el acceso por plan
+      if (livesOf(c.user, c.g).current <= 0) fail(409, 'NO_LIVES', 'Te has quedado sin vidas')
+      qs = QUIZZES[l.quizId] ?? []
+    }
+    const at = await c.tx.quizAttempt.create({ data: { userId: c.user.id, mode, lessonId: mode === 'LESSON' ? id : null, questionIds: qs.map(q => q.id) } })
+    return { attemptId: at.id, lessonId: at.lessonId, isPlacement: mode === 'PLACEMENT', questions: qs.map(publicQ), lives: livesOf(c.user, c.g) }
+  })
+
+async function attemptOf(c: Ctx, id: string) {
+  const at = await c.tx.quizAttempt.findUnique({ where: { id }, include: { answers: true } })
+  if (!at || at.userId !== c.user.id) fail(404, 'NOT_FOUND', 'Intento no encontrado')
+  return at!
+}
+
+export const answer = (attemptId: string, questionId: string, value: unknown, elapsedMs: number) =>
+  withCtx(async (c): Promise<AnswerResultT> => {
+    const at = await attemptOf(c, attemptId)
+    if (at.finishedAt) fail(409, 'CONFLICT', 'El quiz ya ha terminado')
+    if (!at.questionIds.includes(questionId)) fail(404, 'NOT_FOUND', 'Pregunta no encontrada')
+    if (at.answers.some(a => a.questionId === questionId)) fail(409, 'CONFLICT', 'Pregunta ya respondida')
+    const premium = c.user.plan === 'PREMIUM'
+    if (at.mode === 'LESSON' && !premium && c.g.lives <= 0) fail(409, 'NO_LIVES', 'Te has quedado sin vidas')
+    const q = ALL_Q[questionId]
+    const correct = isCorrect(q, value)
+    await c.tx.quizAnswer.create({ data: { attemptId, questionId, correct, elapsedMs: Math.max(0, Math.min(600_000, Math.round(elapsedMs) || 0)) } })
+    if (!correct && at.mode === 'LESSON' && !premium) {
+      if (c.g.lives >= LIVES_MAX) c.g.livesUpdatedAt = new Date()
+      c.g.lives = Math.max(0, c.g.lives - 1)
+    }
+    if (at.mode !== 'PLACEMENT') {
+      if (!correct) await c.tx.mistake.upsert({ where: { userId_questionId: { userId: c.user.id, questionId } }, create: { userId: c.user.id, questionId }, update: {} })
+      if (correct && at.mode === 'REVIEW') {
+        await c.tx.mistake.deleteMany({ where: { userId: c.user.id, questionId } })
+        bump(c, 'reviewed')
+      }
+    }
+    return { correct, correctAnswer: q.solution, explanation: q.explanation, livesLeft: at.mode === 'LESSON' && !premium ? c.g.lives : null, xpGained: correct && at.mode !== 'PLACEMENT' ? 10 : 0 }
+  })
+
+export const quizFinish = (attemptId: string) =>
+  withCtx(async (c): Promise<QuizFinishT> => {
+    const at = await attemptOf(c, attemptId)
+    if (at.finishedAt && at.result) return at.result as unknown as QuizFinishT // idempotente
+    if (at.mode === 'PLACEMENT') fail(400, 'VALIDATION_ERROR', 'Usa el final del test de nivel')
+    const correct = at.answers.filter(a => a.correct).length
+    const total = at.questionIds.length
+    const ratio = total ? correct / total : 0
+    const perfect = correct === total && total > 0
+    const stars = at.mode === 'REVIEW' ? 0 : perfect ? 3 : ratio >= 0.8 ? 2 : ratio >= 0.6 ? 1 : 0
+    const durationMs = Date.now() - at.startedAt.getTime()
+    const avgMs = at.answers.reduce((t, a) => t + a.elapsedMs, 0) / Math.max(1, at.answers.length)
+    const l = at.lessonId ? LESSON[at.lessonId] : null
+    const prev = at.lessonId ? await c.tx.lessonProgress.findUnique({ where: { userId_lessonId: { userId: c.user.id, lessonId: at.lessonId } } }) : null
+    const lessonXp = l && stars > 0 && !prev ? l.xp : 0
+    const base = correct * 10 + lessonXp
+    const perfectBonus = perfect ? Math.round(correct * 10 * 0.5) : 0
+    const speedBonus = avgMs < 15_000 && correct > 0 ? Math.round(base * 0.1) : 0
+    addXp(c, base + perfectBonus + speedBonus)
+    const extendedToday = await markActive(c)
+    if (at.lessonId && stars > 0) {
+      await c.tx.lessonProgress.upsert({
+        where: { userId_lessonId: { userId: c.user.id, lessonId: at.lessonId } },
+        create: { userId: c.user.id, lessonId: at.lessonId, stars },
+        update: { stars: Math.max(stars, prev?.stars ?? 0), skipped: false },
+      })
+      if (!prev) {
+        await bumpGoal(c, 'lesson')
+        if (at.lessonId === 'u3l3' && c.user.plan !== 'PREMIUM') c.fx.features = ['LIMIT', 'STOP_LOSS', 'TAKE_PROFIT']
+      }
+    }
+    if (perfect && at.mode === 'LESSON') {
+      bump(c, 'perfect')
+      if (durationMs < 60_000) bump(c, 'fastPerfect')
+      await bumpGoal(c, 'perfect')
+    }
+    c.fx.companion = perfect ? lumi(c, 'QUIZ_PERFECT') : stars > 0 ? lumi(c, 'LESSON_COMPLETED', { concepto: l?.unit.title.toLowerCase() ?? 'inversión' }) : lumi(c, 'QUIZ_WRONG')
+    const eff = await endFx(c)
+    const out: QuizFinishT = { ...eff, correct, total, stars, durationMs, xpBreakdown: { base, perfectBonus, speedBonus, total: base + perfectBonus + speedBonus }, streak: { days: c.g.streak, extendedToday } }
+    await c.tx.quizAttempt.update({ where: { id: at.id }, data: { finishedAt: new Date(), result: JSON.parse(JSON.stringify(out)) } })
+    return out
+  })
+
+export const placementFinish = (attemptId: string) =>
+  withCtx(async (c): Promise<PlacementFinishT> => {
+    const at = await attemptOf(c, attemptId)
+    if (at.mode !== 'PLACEMENT') fail(400, 'VALIDATION_ERROR', 'No es un test de nivel')
+    const correct = at.answers.filter(a => a.correct).length
+    const total = at.questionIds.length
+    const skip = correct >= 5
+    c.g.placementDone = true
+    if (skip)
+      await c.tx.lessonProgress.createMany({ data: UNITS[0].lessons.map(l => ({ userId: c.user.id, lessonId: l.id, stars: 0, skipped: true })), skipDuplicates: true })
+    await c.tx.quizAttempt.update({ where: { id: at.id }, data: { finishedAt: new Date() } })
+    const start = skip ? UNITS[1] : UNITS[0]
+    return { correct, total, startUnitId: start.id, startUnitTitle: start.title, skippedUnitTitles: skip ? [UNITS[0].title] : [] }
+  })

@@ -6,7 +6,6 @@ import { useState } from 'react'
 import { Link } from '@/i18n/navigation'
 import { num } from '@/shared/format'
 import { api } from '../api'
-import { ACHIEVEMENTS, QUIZZES, UNITS } from '../api/mock/catalog'
 import { useLang } from '../hooks'
 import { useGuard } from '../shell'
 import { LineChart } from '../ui/charts'
@@ -82,19 +81,21 @@ function Metrics() {
 function Content() {
   const t = useTranslations('admin')
   const [sel, setSel] = useState('q-u2l3')
-  const qs = QUIZZES[sel] ?? []
+  const { data } = useQuery({ queryKey: ['admin-content'], queryFn: api.adminContent })
+  if (!data) return <PageSkeleton />
+  const qs = data.quizzes[sel] ?? []
   return (
     <div className="grid gap-3 lg:grid-cols-[280px_1fr]">
       <div className="card flex flex-col gap-1">
         <b className="mb-1">Trading desde cero</b>
-        {UNITS.map(u => (
+        {data.units.map(u => (
           <div key={u.id} className="flex flex-col">
             <span className="t-foot font-bold" style={{ color: 'var(--ink)' }}>
               {u.order} · {u.title}
             </span>
             {u.lessons.map(l => (
               <button key={l.id} className="t-foot rounded-lg px-2 py-1 text-left" style={sel === l.quizId ? { background: 'var(--fill)', color: 'var(--ink)' } : undefined} onClick={() => setSel(l.quizId)}>
-                {l.title} · {(QUIZZES[l.quizId] ?? []).length} {t('questions')}
+                {l.title} · {(data.quizzes[l.quizId] ?? []).length} {t('questions')}
               </button>
             ))}
           </div>
@@ -119,7 +120,7 @@ function Content() {
             <span className="t-cap">{q.explanation}</span>
           </div>
         ))}
-        <p className="t-cap m-0">{t('achievementsCount', { n: ACHIEVEMENTS.length })}</p>
+        <p className="t-cap m-0">{t('achievementsCount', { n: data.achievements })}</p>
       </div>
     </div>
   )

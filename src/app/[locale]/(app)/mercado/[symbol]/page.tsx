@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import { ASSETS } from '@/client/api/mock/catalog'
+import { CATALOG as ASSETS } from '@/server/market/catalog'
 import { Asset } from '@/client/screens/market'
 import { PageSkeleton } from '@/client/ui/kit'
 

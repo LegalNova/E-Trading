@@ -1,5 +1,4 @@
-// Interfaz única de acceso a datos. En la etapa 2 la implementa `mock/`,
-// en la etapa 3 una versión HTTP que llama a /api/** con el mismo contrato.
+// Interfaz única de acceso a datos. La implementa `http.ts` contra /api/** con el contrato de docs/07.
 import type {
   AchievementT, AnswerResultT, AssetDetailT, AssetItemT, AssetTypeT, BillingPlanT, BillingStatusT, CandleT, CoursePathT,
   GenderT, HomeT, LeagueT, LessonT, LivesT, MeT, NotificationT, OrderPreviewT, OrderResultT, OrderSideT, OrderT, OrderTypeT,
@@ -12,7 +11,7 @@ export class ApiFailure extends Error {
   }
 }
 
-export interface Session { signedIn: boolean; email: string | null; onboardingStep: number | null; isAdmin: boolean }
+export interface Session { signedIn: boolean; email: string | null; onboardingStep: number | null; isAdmin: boolean; googleEnabled?: boolean }
 
 export interface OnboardingDraft {
   name: string
@@ -53,6 +52,8 @@ export interface AdminMetrics {
   providers: { name: string; status: 'OK' | 'DEGRADED' | 'DOWN'; latencyMs: number | null; note: string }[]
 }
 export interface AdminUser { id: string; name: string; email: string; plan: 'FREE' | 'PREMIUM'; createdAt: string; lastActive: string; blocked: boolean; xp: number }
+export interface AdminQuestion { id: string; type: string; prompt: string; options: string[]; solution: number | number[] | string; explanation: string }
+export interface AdminContent { units: { id: string; order: number; title: string; lessons: { id: string; title: string; quizId: string }[] }[]; quizzes: Record<string, AdminQuestion[]>; achievements: number }
 export interface AuditEntry { id: string; actor: string; action: string; entity: string; createdAt: string }
 
 export interface ContactInput { name: string; email: string; reason: 'SCHOOL' | 'PRESS' | 'SUPPORT' | 'OTHER'; message: string }
@@ -132,4 +133,5 @@ export interface Api {
   adminMetrics(range: '7d' | '30d' | '90d'): Promise<AdminMetrics>
   adminUsers(q?: string): Promise<AdminUser[]>
   adminAudit(): Promise<AuditEntry[]>
+  adminContent(): Promise<AdminContent>
 }

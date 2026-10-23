@@ -5,6 +5,7 @@ import 'server-only'
 // - Con el mercado abierto el precio se refresca si tiene más de REFRESH_OPEN_MS.
 import type { AssetDetailT, AssetItemT, CandleT } from '@/shared/contract'
 import { isOpen, nextClose, nextOpen, type ExchangeCode } from '@/shared/market-hours'
+import { after } from 'next/server'
 import { Prisma } from '@/generated/prisma/client'
 import { db } from '../db'
 import { CATALOG } from './catalog'
@@ -59,18 +60,31 @@ async function refresh(rows: AssetRow[]) {
   )
 }
 
-/** Activos con su cotización, refrescando antes los que estén viejos */
+/** Más viejo que esto con el mercado abierto: se espera al proveedor en vez de servirlo */
+const MAX_SERVE_OLD_MS = 2 * 60_000
+
+/**
+ * Activos con su cotización. Si una cotización está algo vieja se sirve la guardada y se
+ * actualiza en segundo plano (respuesta instantánea); solo se espera si falta o es muy vieja.
+ */
 export async function loadAssets(symbols?: string[]): Promise<AssetRow[]> {
   const where = { enabled: true, ...(symbols ? { symbol: { in: symbols } } : {}) }
-  let rows = await db.asset.findMany({ where, include: { quote: true }, orderBy: { sortOrder: 'asc' } })
+  const rows = await db.asset.findMany({ where, include: { quote: true }, orderBy: { sortOrder: 'asc' } })
   const now = Date.now()
   const old = rows.filter(a => needsRefresh(a, now))
-  if (old.length) {
-    refreshing ??= refresh(old).finally(() => (refreshing = null))
-    await refreshing
-    rows = await db.asset.findMany({ where, include: { quote: true }, orderBy: { sortOrder: 'asc' } })
+  if (!old.length) return rows
+  const blocking = old.some(a => !a.quote || (isOpen(a.hours as ExchangeCode, new Date(now)) && now - a.quote.updatedAt.getTime() > MAX_SERVE_OLD_MS))
+  const run = () => (refreshing ??= refresh(old).finally(() => (refreshing = null)))
+  if (!blocking) {
+    try {
+      after(run) // después de responder (Vercel mantiene viva la función hasta que acaba)
+    } catch {
+      void run() // fuera de una petición (scripts)
+    }
+    return rows
   }
-  return rows
+  await run()
+  return db.asset.findMany({ where, include: { quote: true }, orderBy: { sortOrder: 'asc' } })
 }
 
 const fmt = (_sym: string, type: string, v: number) => (type === 'FX' ? v.toFixed(5) : v.toFixed(v >= 1000 ? 2 : 4))

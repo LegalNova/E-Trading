@@ -121,18 +121,16 @@
     "haveAccount": "¿Ya tienes cuenta?",
     "noAccount": "¿No tienes cuenta?",
     "forgot": "¿Has olvidado la contraseña?",
-    "demoNote": "Versión de prueba: con cualquier email y una contraseña de 8 caracteres entras en una cuenta de ejemplo con datos.",
     "forgotTitle": "Nueva contraseña",
-    "forgotSub": "Te enviamos un enlace para elegir una contraseña nueva. Caduca en 1 hora.",
-    "sendLink": "Enviar enlace",
-    "forgotSent": "Si hay una cuenta con ese email, te llegará un enlace en unos minutos.",
+    "forgotSent": "Aún no enviamos emails: la recuperación de contraseña llegará con el dominio propio. Mientras, escríbenos desde Contacto en la página de inicio y te ayudamos.",
     "errors": {
       "INVALID_CREDENTIALS": "Email o contraseña incorrectos.",
       "EMAIL_IN_USE": "Ya hay una cuenta con este email.",
       "VALIDATION_ERROR": "Escribe un email válido.",
       "ACCOUNT_BLOCKED": "Esta cuenta está bloqueada. Escríbenos si crees que es un error.",
       "RATE_LIMITED": "Demasiados intentos. Prueba en un minuto."
-    }
+    },
+    "contact": "Ir a Contacto"
   },
   "onboarding": {
     "nameTitle": "¿Cómo te llamas?",

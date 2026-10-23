@@ -121,18 +121,16 @@
     "haveAccount": "Already have an account?",
     "noAccount": "Don't have an account?",
     "forgot": "Forgot your password?",
-    "demoNote": "Test version: any email and an 8-character password sign you into a sample account with data.",
     "forgotTitle": "New password",
-    "forgotSub": "We'll send you a link to choose a new password. It expires in 1 hour.",
-    "sendLink": "Send link",
-    "forgotSent": "If there's an account with that email, you'll get a link in a few minutes.",
+    "forgotSent": "We don't send emails yet: password recovery will arrive with our own domain. Meanwhile, write to us from Contact on the home page and we'll help.",
     "errors": {
       "INVALID_CREDENTIALS": "Wrong email or password.",
       "EMAIL_IN_USE": "There's already an account with this email.",
       "VALIDATION_ERROR": "Enter a valid email.",
       "ACCOUNT_BLOCKED": "This account is blocked. Write to us if you think it's a mistake.",
       "RATE_LIMITED": "Too many attempts. Try again in a minute."
-    }
+    },
+    "contact": "Go to Contact"
   },
   "onboarding": {
     "nameTitle": "What's your name?",
