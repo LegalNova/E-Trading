@@ -1,14 +1,11 @@
 # Tablero de tareas
 
-> Actualizado: 2026-10-23 · Etapa actual: **2 · Frontend con datos simulados**
+> Actualizado: 2026-10-23 · Etapa actual: **3 · Núcleo real** · App: https://e-trading-app.vercel.app
 
 ## En curso
-- [ ] **E2** · Revisión de la preview por Joan (rama `v2`)
+- [ ] **E3** · Google OAuth (pendiente de credenciales) · tarea cada minuto (pendiente de cron-job.org)
 
 ## Por hacer
-- [ ] **E3** · Prueba de fuentes de mercado (tabla de activos: tiempo real / con retraso / fuera)
-- [ ] **E3** · Prisma + Neon (ramas dev/preview/test), esquema completo y seed
-- [ ] **E3** · Acceso, onboarding, mercado, órdenes y cartera reales
 
 ## Bloqueado / depende de Joan
 - [ ] **D-005** · Elegir dominio (e-trading.com está en venta; e-trading.app y etradingapp.com libres)
@@ -16,6 +13,10 @@
 - [ ] **E3** · Cuenta gratuita en cron-job.org
 
 ## Hecho
+- [x] **E3** · Prueba de fuentes de mercado (`03-mercado.md` §2 bis) y precios reales de los 20 activos
+- [x] **E3** · Prisma 7 + Neon (esquemas `v2` y `v2_dev`), 25 tablas y carga del catálogo
+- [x] **E3** · Cuentas reales (Better Auth), onboarding, clases, quiz, mercado, órdenes, cartera, logros, liga y admin en el servidor
+- [x] **E3** · Proyecto propio en Vercel: https://e-trading-app.vercel.app
 - [x] **E2** · Next.js 16 + TypeScript estricto + Tailwind 4 + next-intl (es/ca/en) en la rama `v2`
 - [x] **E2** · Sistema de diseño 3a (claro/oscuro), componentes base y Lumi con 7 estados
 - [x] **E2** · Datos simulados con la misma interfaz que la API real (`src/client/api`)

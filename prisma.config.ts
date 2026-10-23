@@ -5,7 +5,8 @@ import { defineConfig } from 'prisma/config'
 
 config({ path: '.env.local', quiet: true })
 
-export const DB_SCHEMA = 'v2'
+/** Producción y previews: «v2». En local, .env.local pone DB_SCHEMA=v2_dev para no mezclar datos. */
+export const DB_SCHEMA = process.env.DB_SCHEMA ?? 'v2'
 const base = process.env.DATABASE_URL_UNPOOLED ?? process.env.DATABASE_URL ?? ''
 const url = base ? `${base}${base.includes('?') ? '&' : '?'}schema=${DB_SCHEMA}` : ''
 

@@ -5,7 +5,7 @@ import { PrismaClient } from '../src/generated/prisma/client'
 import { CATALOG } from '../src/server/market/catalog'
 
 config({ path: '.env.local', quiet: true })
-const db = new PrismaClient({ adapter: new PrismaNeon({ connectionString: process.env.DATABASE_URL }, { schema: 'v2' }) })
+const db = new PrismaClient({ adapter: new PrismaNeon({ connectionString: process.env.DATABASE_URL }, { schema: process.env.DB_SCHEMA ?? 'v2' }) })
 
 async function main() {
   for (const [i, a] of CATALOG.entries()) {
