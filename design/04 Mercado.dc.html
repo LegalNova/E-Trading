@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><meta name="design_doc_mode" content="canvas"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><style>body{margin:0;background:#E8E8ED;font-family:'Manrope',sans-serif;color:#1D1D1F}a{color:#0071E3;text-decoration:none}a:hover{color:#0058B0}</style></helmet>
+<section data-screen-label="04 Mercado" style="padding:48px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:6px;max-width:900px">
+<div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0071E3">Capa 7 · Mercado · simulador con dinero virtual</div>
+<div style="font-size:28px;font-weight:800;letter-spacing:-.02em">Activos, ficha, órdenes, riesgo y cartera</div>
+<div style="font-size:14px;line-height:1.55;color:#6E6E73">Todos los precios vienen del servidor. Ejecución siempre al precio del servidor. Dinero en Decimal.</div>
+</div>
+<div style="display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap">
+
+<div style="display:flex;flex-direction:column;gap:12px;width:360px" data-screen-label="04.1 Mercado lista">
+<div style="font-size:12px;font-weight:700">04.1 · Mercado</div>
+<div style="width:360px;height:760px;border-radius:40px;background:#F5F5F7;border:1px solid #D2D2D7;overflow:hidden;display:flex;flex-direction:column;font-variant-numeric:tabular-nums">
+<div style="height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:14px;font-weight:700"><span>9:41</span><span style="font-size:12px">100 %</span></div>
+<div style="flex:1;overflow:hidden;padding:4px 16px 12px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding:0 4px"><span style="font-size:28px;font-weight:800;letter-spacing:-.03em">Mercado</span><span style="font-size:13px;font-weight:700;color:#6E6E73">Disponible 4.210,80 €</span></div>
+<div style="height:42px;border-radius:12px;background:#E8E8ED;display:flex;align-items:center;gap:8px;padding:0 12px;font-size:15px;color:#8E8E93"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8E8E93" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>Buscar acción, cripto, índice…</div>
+<div style="display:flex;gap:6px;font-size:13px;font-weight:700">
+<span style="padding:8px 12px;border-radius:999px;background:#1D1D1F;color:#fff">Seguimiento</span><span style="padding:8px 12px;border-radius:999px;background:#fff">Acciones</span><span style="padding:8px 12px;border-radius:999px;background:#fff">Cripto</span><span style="padding:8px 12px;border-radius:999px;background:#fff">Índices</span><span style="padding:8px 12px;border-radius:999px;background:#fff">Divisas</span>
+</div>
+<div style="background:#fff;border-radius:18px;display:flex;flex-direction:column">
+<div style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid #F0F0F2"><span style="width:36px;height:36px;border-radius:10px;background:#1D1D1F;color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">AAPL</span><div style="flex:1;display:flex;flex-direction:column"><span style="font-size:15px;font-weight:700">Apple</span><span style="font-size:12px;color:#6E6E73">NASDAQ · abierto</span></div><svg width="56" height="22" viewBox="0 0 56 22"><path d="M0 18 L10 14 L20 16 L30 9 L40 11 L56 4" fill="none" stroke="#248A3D" stroke-width="1.6"></path></svg><div style="display:flex;flex-direction:column;align-items:flex-end;width:74px"><span style="font-size:15px;font-weight:700">212,44 $</span><span style="font-size:12px;font-weight:700;color:#248A3D">▲ 0,84 %</span></div></div>
+<div style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid #F0F0F2"><span style="width:36px;height:36px;border-radius:10px;background:#E8E8ED;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">BTC</span><div style="flex:1;display:flex;flex-direction:column"><span style="font-size:15px;font-weight:700">Bitcoin</span><span style="font-size:12px;color:#6E6E73">Cripto · 24/7</span></div><svg width="56" height="22" viewBox="0 0 56 22"><path d="M0 4 L10 8 L20 6 L30 13 L40 11 L56 18" fill="none" stroke="#D70015" stroke-width="1.6"></path></svg><div style="display:flex;flex-direction:column;align-items:flex-end;width:74px"><span style="font-size:15px;font-weight:700">61.204 €</span><span style="font-size:12px;font-weight:700;color:#D70015">▼ 1,12 %</span></div></div>
+<div style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid #F0F0F2"><span style="width:36px;height:36px;border-radius:10px;background:#E8E8ED;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">IBEX</span><div style="flex:1;display:flex;flex-direction:column"><span style="font-size:15px;font-weight:700">IBEX 35</span><span style="font-size:12px;color:#6E6E73">Índice · cerrado</span></div><svg width="56" height="22" viewBox="0 0 56 22"><path d="M0 14 L10 12 L20 15 L30 10 L40 9 L56 8" fill="none" stroke="#248A3D" stroke-width="1.6"></path></svg><div style="display:flex;flex-direction:column;align-items:flex-end;width:74px"><span style="font-size:15px;font-weight:700">11.842</span><span style="font-size:12px;font-weight:700;color:#248A3D">▲ 0,31 %</span></div></div>
+<div style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid #F0F0F2"><span style="width:36px;height:36px;border-radius:10px;background:#E8E8ED;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">EUR</span><div style="flex:1;display:flex;flex-direction:column"><span style="font-size:15px;font-weight:700">EUR/USD</span><span style="font-size:12px;color:#6E6E73">Divisa · abierto</span></div><svg width="56" height="22" viewBox="0 0 56 22"><path d="M0 10 L10 12 L20 10 L30 11 L40 13 L56 12" fill="none" stroke="#D70015" stroke-width="1.6"></path></svg><div style="display:flex;flex-direction:column;align-items:flex-end;width:74px"><span style="font-size:15px;font-weight:700">1,0842</span><span style="font-size:12px;font-weight:700;color:#D70015">▼ 0,05 %</span></div></div>
+<div style="display:flex;align-items:center;gap:12px;padding:14px 16px"><span style="width:36px;height:36px;border-radius:10px;background:#E8E8ED;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">NVDA</span><div style="flex:1;display:flex;flex-direction:column"><span style="font-size:15px;font-weight:700">NVIDIA</span><span style="font-size:12px;color:#6E6E73">NASDAQ · abierto</span></div><svg width="56" height="22" viewBox="0 0 56 22"><path d="M0 19 L10 16 L20 17 L30 10 L40 7 L56 3" fill="none" stroke="#248A3D" stroke-width="1.6"></path></svg><div style="display:flex;flex-direction:column;align-items:flex-end;width:74px"><span style="font-size:15px;font-weight:700">131,08 $</span><span style="font-size:12px;font-weight:700;color:#248A3D">▲ 2,40 %</span></div></div>
+</div>
+<div style="background:#FFF6E5;border-radius:12px;padding:10px 12px;font-size:12px;color:#8A5300">Precios de hace 2 min. Reconectando con el proveedor…</div>
+</div>
+<div style="flex:none;height:78px;background:#fff;border-top:1px solid #E5E5EA;display:grid;grid-template-columns:repeat(5,1fr);padding-top:10px;box-sizing:border-box;font-size:10px;font-weight:700;color:#8E8E93">
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"></path></svg>Inicio</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 5h6a3 3 0 013 3v12a2 2 0 00-2-2H3zM21 5h-6a3 3 0 00-3 3v12a2 2 0 012-2h7z"></path></svg>Clases</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#0071E3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18l6-6 4 3 8-9"></path></svg>Mercado</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 01-10 0zM12 14v4M8 20h8M7 6H4a3 3 0 003 4M17 6h3a3 3 0 01-3 4"></path></svg>Liga</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg>Perfil</div>
+</div>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">GET /api/market/assets?type=STOCK|ETF|INDEX|CRYPTO|FX&amp;q= → [{ symbol, name, type, exchange, isOpen, price, currency, changePct, sparkline[] }]<br>GET /api/watchlist · POST/DELETE /api/watchlist/:symbol<br>Si caché caducada y proveedor caído → { stale: true, asOf } (banner ámbar).<br>portfolio.cashAvailable en cabecera.</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;width:360px" data-screen-label="04.2 Ficha de activo">
+<div style="font-size:12px;font-weight:700">04.2 · Ficha de activo</div>
+<div style="width:360px;height:760px;border-radius:40px;background:#FFFFFF;border:1px solid #D2D2D7;overflow:hidden;display:flex;flex-direction:column;font-variant-numeric:tabular-nums">
+<div style="height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:14px;font-weight:700"><span>9:41</span><span style="font-size:12px">100 %</span></div>
+<div style="flex:1;overflow:hidden;padding:4px 20px 0;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:22px;color:#0071E3">‹</span><div style="display:flex;gap:14px;font-size:13px;font-weight:700;color:#0071E3"><span>☆ Seguir</span><span>Alerta</span></div></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;font-weight:700;color:#6E6E73">AAPL · NASDAQ · Abierto hasta 22:00</span><span style="font-size:24px;font-weight:800">Apple</span><span style="font-size:36px;font-weight:800;letter-spacing:-.03em">212,44 $</span><span style="font-size:14px;font-weight:700;color:#248A3D">▲ +1,77 $ (0,84 %) hoy</span><span style="font-size:12px;color:#6E6E73">≈ 196,10 € · en vivo</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center"><div style="display:flex;gap:4px;background:#F5F5F7;border-radius:999px;padding:3px;font-size:12px;font-weight:700"><span style="padding:5px 10px;border-radius:999px">Línea</span><span style="padding:5px 10px;border-radius:999px;background:#fff">Velas</span></div></div>
+<div style="height:200px;display:flex;align-items:center;justify-content:space-between;padding:0 4px">
+<div style="display:flex;flex-direction:column;align-items:center;margin-top:60px"><div style="width:1.5px;height:10px;background:#D70015"></div><div style="width:10px;height:30px;background:#D70015"></div><div style="width:1.5px;height:8px;background:#D70015"></div></div>
+<div style="display:flex;flex-direction:column;align-items:center;margin-top:80px"><div style="width:1.5px;height:8px;background:#D70015"></div><div style="width:10px;height:22px;background:#D70015"></div><div style="width:1.5px;height:12px;background:#D70015"></div></div>
+<div style="display:flex;flex-direction:column;align-items:center;margin-top:70px"><div style="width:1.5px;height:12px;background:#248A3D"></div><div style="width:10px;height:26px;background:#248A3D"></div><div style="width:1.5px;height:6px;background:#248A3D"></div></div>
+<div style="display:flex;flex-direction:column;align-items:center;margin-top:30px"><div style="width:1.5px;height:10px;background:#248A3D"></div><div style="width:10px;height:40px;background:#248A3D"></div><div style="width:1.5px;height:10px;background:#248A3D"></div></div>
+<div style="display:flex;flex-direction:column;align-items:center;margin-top:20px"><div style="width:1.5px;height:8px;background:#D70015"></div><div style="width:10px;height:18px;background:#D70015"></div><div style="width:1.5px;height:14px;background:#D70015"></div></div>
+<div style="display:flex;flex-direction:column;align-items:center;margin-top:-10px"><div style="width:1.5px;height:12px;background:#248A3D"></div><div style="width:10px;height:44px;background:#248A3D"></div><div style="width:1.5px;height:6px;background:#248A3D"></div></div>
+<div style="display:flex;flex-direction:column;align-items:center;margin-top:-50px"><div style="width:1.5px;height:8px;background:#248A3D"></div><div style="width:10px;height:30px;background:#248A3D"></div><div style="width:1.5px;height:10px;background:#248A3D"></div></div>
+<div style="display:flex;flex-direction:column;align-items:center;margin-top:-70px"><div style="width:1.5px;height:10px;background:#D70015"></div><div style="width:10px;height:16px;background:#D70015"></div><div style="width:1.5px;height:8px;background:#D70015"></div></div>
+<div style="display:flex;flex-direction:column;align-items:center;margin-top:-90px"><div style="width:1.5px;height:6px;background:#248A3D"></div><div style="width:10px;height:34px;background:#248A3D"></div><div style="width:1.5px;height:8px;background:#248A3D"></div></div>
+</div>
+<div style="display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:#6E6E73"><span>1m</span><span>5m</span><span>1h</span><span style="color:#1D1D1F;background:#F5F5F7;padding:3px 10px;border-radius:999px">1d</span><span>1w</span></div>
+<div style="background:#F5F5F7;border-radius:16px;padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:13px">
+<div style="display:flex;flex-direction:column"><span style="color:#6E6E73">Tu posición</span><span style="font-weight:800">8 acciones</span></div>
+<div style="display:flex;flex-direction:column"><span style="color:#6E6E73">Rentabilidad</span><span style="font-weight:800;color:#248A3D">▲ +62,40 € (4,1 %)</span></div>
+<div style="display:flex;flex-direction:column"><span style="color:#6E6E73">Precio medio</span><span style="font-weight:800">204,64 $</span></div>
+<div style="display:flex;flex-direction:column"><span style="color:#6E6E73">Peso en cartera</span><span style="font-weight:800">15 %</span></div>
+</div>
+</div>
+<div style="flex:none;padding:12px 20px 30px;display:grid;grid-template-columns:1fr 1fr;gap:10px;border-top:1px solid #F0F0F2">
+<span style="height:50px;border-radius:999px;background:#F5F5F7;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">Vender</span>
+<span style="height:50px;border-radius:999px;background:#0071E3;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">Comprar</span>
+</div>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">GET /api/market/assets/:symbol → { symbol, name, exchange, currency, isOpen, opensAt, closesAt, price, change, changePct, priceInUserCurrency }<br>GET .../candles?interval=1m|5m|1h|1d|1w → OHLC[] (Redis, TTL corto)<br>GET /api/market/stream?symbols= (SSE) → { symbol, price, ts }<br>GET /api/portfolio/positions/:symbol → { qty, avgPrice, unrealizedPnl, pnlPct, weightPct } | null</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;width:360px" data-screen-label="04.3 Nueva orden">
+<div style="font-size:12px;font-weight:700">04.3 · Comprar · orden</div>
+<div style="width:360px;height:760px;border-radius:40px;background:#F5F5F7;border:1px solid #D2D2D7;overflow:hidden;display:flex;flex-direction:column;font-variant-numeric:tabular-nums">
+<div style="height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:14px;font-weight:700"><span>9:41</span><span style="font-size:12px">100 %</span></div>
+<div style="flex:1;overflow:hidden;padding:4px 18px 0;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:22px;color:#8E8E93">×</span><span style="font-size:16px;font-weight:800">Comprar AAPL</span><span style="width:20px"></span></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;background:#E8E8ED;border-radius:12px;padding:3px;font-size:12px;font-weight:700;text-align:center">
+<span style="padding:8px 0;border-radius:9px;background:#fff">Mercado</span><span style="padding:8px 0">Límite</span><span style="padding:8px 0;color:#8E8E93">Stop 🔒</span><span style="padding:8px 0;color:#8E8E93">TP 🔒</span>
+</div>
+<div style="background:#fff;border-radius:18px;padding:18px;display:flex;flex-direction:column;align-items:center;gap:6px">
+<div style="display:flex;gap:4px;background:#F5F5F7;border-radius:999px;padding:3px;font-size:12px;font-weight:700"><span style="padding:5px 12px;border-radius:999px;background:#1D1D1F;color:#fff">Importe €</span><span style="padding:5px 12px">Acciones</span></div>
+<span style="font-size:44px;font-weight:800;letter-spacing:-.03em;padding-top:6px">1.500 €</span>
+<span style="font-size:13px;color:#6E6E73">≈ 7,65 acciones a 196,10 €</span>
+</div>
+<div style="background:#fff;border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;gap:9px;font-size:14px">
+<div style="display:flex;justify-content:space-between"><span style="color:#6E6E73">Precio estimado</span><span style="font-weight:700">196,10 €</span></div>
+<div style="display:flex;justify-content:space-between"><span style="color:#6E6E73">Comisión simulada</span><span style="font-weight:700">1,50 €</span></div>
+<div style="display:flex;justify-content:space-between"><span style="color:#6E6E73">Disponible tras la orden</span><span style="font-weight:700">2.709,30 €</span></div>
+<div style="display:flex;justify-content:space-between"><span style="color:#6E6E73">Peso en cartera</span><span style="font-weight:800;color:#D70015">29 %</span></div>
+</div>
+<div style="background:#fff;border-radius:14px;padding:12px 14px;font-size:13px;line-height:1.45;color:#3A3A3C;display:flex;gap:10px;align-items:center"><svg width="16" height="18" viewBox="0 0 14 16" fill="none" stroke="#6E6E73" stroke-width="2" style="flex:none"><rect x="1" y="7" width="12" height="8" rx="2"></rect><path d="M4 7V5a3 3 0 016 0v2"></path></svg>Stop loss y take profit se desbloquean con la lección «Gestión del riesgo» o con Premium.</div>
+</div>
+<div style="flex:none;padding:12px 18px 30px">
+<span style="height:52px;border-radius:999px;background:#0071E3;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">Revisar orden</span>
+</div>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">POST /api/orders/preview { symbol, side: BUY|SELL, type: MARKET|LIMIT|STOP_LOSS|TAKE_PROFIT, amount|qty, limitPrice? } → { estPrice, qty, fee, cashAfter, weightPct, risk: { flagged, reason, thresholdPct } , allowedTypes[] }<br>Tipos bloqueados: { locked, unlockBy: LESSON:id|PREMIUM }. Solo largos (shorts desactivados).</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;width:360px" data-screen-label="04.4 Aviso de riesgo">
+<div style="font-size:12px;font-weight:700">04.4 · Lumi avisa: operación arriesgada</div>
+<div style="width:360px;height:760px;border-radius:40px;background:#8E8E93;border:1px solid #D2D2D7;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;font-variant-numeric:tabular-nums">
+<div style="background:#fff;border-radius:28px 28px 0 0;padding:14px 22px 30px;display:flex;flex-direction:column;gap:16px">
+<div style="width:40px;height:5px;border-radius:3px;background:#D2D2D7;align-self:center"></div>
+<div style="display:flex;gap:14px;align-items:center">
+<svg width="64" height="64" viewBox="0 0 48 48" style="flex:none"><rect x="4" y="6" width="40" height="38" rx="16" fill="#0071E3"></rect><path d="M12 15l8 3M36 15l-8 3" stroke="#fff" stroke-width="2.4" stroke-linecap="round"></path><circle cx="17" cy="23" r="5" fill="#fff"></circle><circle cx="31" cy="23" r="5" fill="#fff"></circle><circle cx="17" cy="23" r="2.4" fill="#1D1D1F"></circle><circle cx="31" cy="23" r="2.4" fill="#1D1D1F"></circle><circle cx="24" cy="34" r="3" fill="none" stroke="#fff" stroke-width="2.4"></circle></svg>
+<span style="font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2">Espera, Laura. Es mucho en una sola acción.</span>
+</div>
+<div style="font-size:15px;line-height:1.55;color:#3A3A3C">Con esta compra, Apple sería el 29 % de tu cartera. Si cae un 10 %, perderías unos 150 €. Repartir entre varios activos reduce ese golpe.</div>
+<div style="background:#F5F5F7;border-radius:14px;padding:12px 14px;font-size:13px;display:flex;justify-content:space-between"><span style="color:#6E6E73">Tu límite recomendado</span><span style="font-weight:800">20 % por activo</span></div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<span style="height:50px;border-radius:999px;background:#0071E3;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">Bajar a 800 €</span>
+<span style="height:50px;border-radius:999px;background:#F5F5F7;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">Comprar igualmente</span>
+<span style="height:36px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#0071E3">¿Qué es diversificar? · Clase de 3 min</span>
+</div>
+</div>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">Se muestra si preview.risk.flagged. Mensaje: GET /api/companion/message?context=RISKY_TRADE&amp;symbol&amp;pct → { text, mood: WORRIED, suggestedAmount }<br>Lumi explica, nunca dice «compra/vende X». Confirmar igualmente → POST /api/orders { …, riskAcknowledged: true } (se guarda para estadísticas).</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;width:360px" data-screen-label="04.5 Orden ejecutada">
+<div style="font-size:12px;font-weight:700">04.5 · Orden ejecutada / pendiente</div>
+<div style="width:360px;height:760px;border-radius:40px;background:#FFFFFF;border:1px solid #D2D2D7;overflow:hidden;display:flex;flex-direction:column;padding:0 22px 30px;box-sizing:border-box;font-variant-numeric:tabular-nums">
+<div style="height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:700"><span>9:41</span><span style="font-size:12px">100 %</span></div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:16px">
+<div style="width:64px;height:64px;border-radius:50%;background:#248A3D;color:#fff;font-size:30px;display:flex;align-items:center;justify-content:center">✓</div>
+<div style="font-size:28px;font-weight:800;letter-spacing:-.03em">Compra hecha</div>
+<div style="background:#F5F5F7;border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;font-size:14px">
+<div style="display:flex;justify-content:space-between"><span style="color:#6E6E73">Activo</span><span style="font-weight:700">AAPL · 4,08 acciones</span></div>
+<div style="display:flex;justify-content:space-between"><span style="color:#6E6E73">Precio de ejecución</span><span style="font-weight:700">196,12 €</span></div>
+<div style="display:flex;justify-content:space-between"><span style="color:#6E6E73">Total con comisión</span><span style="font-weight:700">801,50 €</span></div>
+<div style="display:flex;justify-content:space-between"><span style="color:#6E6E73">Hora</span><span style="font-weight:700">19 oct · 15:42:08</span></div>
+</div>
+<div style="background:#E8F1FC;border-radius:14px;padding:12px 14px;font-size:13px;font-weight:700;color:#0071E3">+15 XP · Objetivo «Haz 2 operaciones» cumplido</div>
+<div style="height:1px;background:#E5E5EA"></div>
+<div style="font-size:13px;font-weight:800;color:#6E6E73">Variante fuera de horario</div>
+<div style="background:#FFF6E5;border-radius:14px;padding:12px 14px;font-size:13px;line-height:1.45;color:#8A5300">El mercado está cerrado. Tu orden se ejecutará al abrir, el lunes a las 15:30, al precio de ese momento.</div>
+</div>
+<span style="height:52px;border-radius:999px;background:#0071E3;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">Ver mi cartera</span>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">POST /api/orders (Idempotency-Key) → { order{ id, status: FILLED|PENDING|REJECTED, fillPrice, qty, fee, filledAt, executesAt? }, xp, goalsCompleted[] }<br>Transacción con SELECT … FOR UPDATE sobre Portfolio. 422 INSUFFICIENT_FUNDS · 409 MARKET_CLOSED→PENDING · 422 FEATURE_LOCKED.</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;width:360px" data-screen-label="04.6 Cartera">
+<div style="font-size:12px;font-weight:700">04.6 · Cartera</div>
+<div style="width:360px;height:760px;border-radius:40px;background:#F5F5F7;border:1px solid #D2D2D7;overflow:hidden;display:flex;flex-direction:column;font-variant-numeric:tabular-nums">
+<div style="height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:14px;font-weight:700"><span>9:41</span><span style="font-size:12px">100 %</span></div>
+<div style="flex:1;overflow:hidden;padding:4px 16px 12px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:0 4px"><span style="font-size:28px;font-weight:800;letter-spacing:-.03em">Cartera</span><span style="font-size:13px;font-weight:700;color:#0071E3">Historial</span></div>
+<div style="background:#fff;border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:4px">
+<span style="font-size:12px;font-weight:700;color:#6E6E73">Valor total</span>
+<span style="font-size:32px;font-weight:800;letter-spacing:-.03em">10.482,35 €</span>
+<div style="display:flex;gap:12px;font-size:13px;font-weight:700"><span style="color:#248A3D">▲ +38,10 € hoy</span><span style="color:#248A3D">▲ +4,82 % total</span></div>
+<svg style="margin-top:6px" width="100%" height="60" viewBox="0 0 300 60" preserveAspectRatio="none"><path d="M0 50 C30 46 50 52 80 40 S130 34 160 28 S220 24 250 14 S290 10 300 6" fill="none" stroke="#248A3D" stroke-width="2"></path></svg>
+<div style="display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:#6E6E73"><span>1S</span><span style="color:#1D1D1F;background:#F5F5F7;padding:2px 8px;border-radius:999px">1M</span><span>3M</span><span>Todo</span></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+<div style="background:#fff;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:700;color:#6E6E73">Efectivo</span><span style="font-size:16px;font-weight:800">3.409,30 €</span></div>
+<div style="background:#fff;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:700;color:#6E6E73">P&amp;L realizado</span><span style="font-size:16px;font-weight:800;color:#248A3D">+121,80 €</span></div>
+</div>
+<div style="background:#fff;border-radius:18px;display:flex;flex-direction:column">
+<div style="display:flex;justify-content:space-between;padding:12px 16px 4px;font-size:13px;font-weight:800"><span>Posiciones · 4</span><span style="color:#6E6E73;font-weight:700">No realizado +255,05 €</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #F0F0F2"><div style="flex:1;display:flex;flex-direction:column"><span style="font-size:15px;font-weight:700">AAPL</span><span style="font-size:12px;color:#6E6E73">12,08 acc · 23 %</span></div><div style="display:flex;flex-direction:column;align-items:flex-end"><span style="font-size:15px;font-weight:700">2.369,00 €</span><span style="font-size:12px;font-weight:700;color:#248A3D">▲ +4,1 %</span></div></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #F0F0F2"><div style="flex:1;display:flex;flex-direction:column"><span style="font-size:15px;font-weight:700">BTC</span><span style="font-size:12px;color:#6E6E73">0,031 · 18 %</span></div><div style="display:flex;flex-direction:column;align-items:flex-end"><span style="font-size:15px;font-weight:700">1.897,32 €</span><span style="font-size:12px;font-weight:700;color:#D70015">▼ −2,3 %</span></div></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #F0F0F2"><div style="flex:1;display:flex;flex-direction:column"><span style="font-size:15px;font-weight:700">VWCE</span><span style="font-size:12px;color:#6E6E73">14 acc · 15 %</span></div><div style="display:flex;flex-direction:column;align-items:flex-end"><span style="font-size:15px;font-weight:700">1.606,73 €</span><span style="font-size:12px;font-weight:700;color:#248A3D">▲ +6,0 %</span></div></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 16px"><div style="flex:1;display:flex;flex-direction:column"><span style="font-size:15px;font-weight:700">NVDA</span><span style="font-size:12px;color:#6E6E73">10 acc · 12 %</span></div><div style="display:flex;flex-direction:column;align-items:flex-end"><span style="font-size:15px;font-weight:700">1.200,00 €</span><span style="font-size:12px;font-weight:700;color:#248A3D">▲ +9,8 %</span></div></div>
+</div>
+</div>
+<div style="flex:none;height:78px;background:#fff;border-top:1px solid #E5E5EA;display:grid;grid-template-columns:repeat(5,1fr);padding-top:10px;box-sizing:border-box;font-size:10px;font-weight:700;color:#8E8E93">
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"></path></svg>Inicio</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 5h6a3 3 0 013 3v12a2 2 0 00-2-2H3zM21 5h-6a3 3 0 00-3 3v12a2 2 0 012-2h7z"></path></svg>Clases</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#0071E3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18l6-6 4 3 8-9"></path></svg>Mercado</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 01-10 0zM12 14v4M8 20h8M7 6H4a3 3 0 003 4M17 6h3a3 3 0 01-3 4"></path></svg>Liga</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg>Perfil</div>
+</div>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">GET /api/portfolio → { totalValue, cash, dayChange, dayChangePct, totalReturnPct, realizedPnl, unrealizedPnl, positions[{ symbol, qty, avgPrice, marketValue, pnlPct, weightPct }] }<br>GET /api/portfolio/history?range=1W|1M|3M|ALL → snapshots diarios (cron).<br>Se accede desde Mercado (segmento) o Inicio.</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;width:360px" data-screen-label="04.7 Historial y órdenes pendientes">
+<div style="font-size:12px;font-weight:700">04.7 · Órdenes e historial</div>
+<div style="width:360px;height:760px;border-radius:40px;background:#F5F5F7;border:1px solid #D2D2D7;overflow:hidden;display:flex;flex-direction:column;font-variant-numeric:tabular-nums">
+<div style="height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:14px;font-weight:700"><span>9:41</span><span style="font-size:12px">100 %</span></div>
+<div style="flex:1;overflow:hidden;padding:4px 16px 12px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:center;gap:12px"><span style="font-size:22px;color:#0071E3">‹</span><span style="font-size:22px;font-weight:800">Órdenes</span></div>
+<span style="font-size:13px;font-weight:800;color:#6E6E73;padding:0 4px">Pendientes · 2</span>
+<div style="background:#fff;border-radius:18px;display:flex;flex-direction:column">
+<div style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid #F0F0F2"><div style="flex:1;display:flex;flex-direction:column"><span style="font-size:15px;font-weight:700">Límite · Comprar ETH</span><span style="font-size:12px;color:#6E6E73">500 € si baja a 2.300 €</span></div><span style="font-size:13px;font-weight:700;color:#D70015">Cancelar</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:14px 16px"><div style="flex:1;display:flex;flex-direction:column"><span style="font-size:15px;font-weight:700">Stop loss · AAPL</span><span style="font-size:12px;color:#6E6E73">Vender todo si baja a 185 $</span></div><span style="font-size:13px;font-weight:700;color:#D70015">Cancelar</span></div>
+</div>
+<span style="font-size:13px;font-weight:800;color:#6E6E73;padding:0 4px">Historial</span>
+<div style="background:#fff;border-radius:18px;display:flex;flex-direction:column">
+<div style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid #F0F0F2"><div style="flex:1;display:flex;flex-direction:column"><span style="font-size:15px;font-weight:700">Compra · AAPL</span><span style="font-size:12px;color:#6E6E73">Hoy 15:42 · 4,08 a 196,12 €</span></div><span style="font-size:15px;font-weight:700">−801,50 €</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid #F0F0F2"><div style="flex:1;display:flex;flex-direction:column"><span style="font-size:15px;font-weight:700">Venta · TSLA</span><span style="font-size:12px;color:#6E6E73">17 oct · resultado <span style="color:#248A3D;font-weight:700">▲ +84,20 €</span></span></div><span style="font-size:15px;font-weight:700">+1.284,20 €</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid #F0F0F2"><div style="flex:1;display:flex;flex-direction:column"><span style="font-size:15px;font-weight:700">Take profit · NVDA</span><span style="font-size:12px;color:#6E6E73">15 oct · ejecutada</span></div><span style="font-size:15px;font-weight:700">+640,00 €</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:14px 16px"><div style="flex:1;display:flex;flex-direction:column"><span style="font-size:15px;font-weight:700">Compra · BTC</span><span style="font-size:12px;color:#6E6E73">12 oct · rechazada: saldo insuficiente</span></div><span style="font-size:15px;font-weight:700;color:#8E8E93">0,00 €</span></div>
+</div>
+<div style="background:#fff;border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;gap:10px">
+<span style="font-size:15px;font-weight:800">Alertas de precio</span>
+<div style="display:flex;justify-content:space-between;font-size:14px"><span>BTC por debajo de 58.000 €</span><span style="width:40px;height:24px;border-radius:12px;background:#248A3D;position:relative"><span style="position:absolute;right:2px;top:2px;width:20px;height:20px;border-radius:50%;background:#fff"></span></span></div>
+</div>
+</div>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">GET /api/orders?status=PENDING · DELETE /api/orders/:id (cancelar)<br>GET /api/trades?cursor= → [{ side, type, symbol, qty, price, fee, total, realizedPnl?, status, createdAt, rejectReason? }]<br>GET/POST/PATCH/DELETE /api/alerts { symbol, condition: ABOVE|BELOW, price, active }<br>Cron: ejecuta límite/stop/TP y dispara alertas → notificación.</div>
+</div>
+
+</div>
+</section>
+</x-dc>
+</body>
+</html>

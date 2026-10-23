@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><meta name="design_doc_mode" content="canvas"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><style>body{margin:0;background:#E8E8ED;font-family:'Manrope',sans-serif;color:#1D1D1F}a{color:#0071E3;text-decoration:none}a:hover{color:#0058B0}</style></helmet>
+<section data-screen-label="07 Admin" style="padding:48px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:6px;max-width:900px">
+<div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0071E3">Capa 11 · Panel de administración (escritorio, rol ADMIN)</div>
+<div style="font-size:28px;font-weight:800;letter-spacing:-.02em">Métricas, contenido, usuarios, ajustes y auditoría</div>
+<div style="font-size:14px;line-height:1.55;color:#6E6E73">Ruta /admin protegida por middleware. Cada acción de escritura crea un AuditLog.</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:40px">
+
+<div style="display:flex;flex-direction:column;gap:12px;width:1280px" data-screen-label="07.1 Admin métricas">
+<div style="font-size:12px;font-weight:700">07.1 · Métricas</div>
+<div style="width:1280px;height:720px;background:#F5F5F7;border:1px solid #D2D2D7;border-radius:14px;overflow:hidden;display:grid;grid-template-columns:220px 1fr;font-variant-numeric:tabular-nums">
+<div style="background:#fff;border-right:1px solid #E5E5EA;padding:20px 14px;display:flex;flex-direction:column;gap:4px;font-size:14px;font-weight:600">
+<div style="display:flex;align-items:center;gap:8px;padding:0 8px 18px"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M3 21V15H9V9H15V3H21V21Z" fill="#1D1D1F" stroke="#1D1D1F" stroke-width="1.6" stroke-linejoin="round"></path></svg><span style="font-weight:800">Admin</span></div>
+<span style="padding:9px 10px;border-radius:9px;background:#E8F1FC;color:#0071E3">Métricas</span><span style="padding:9px 10px">Contenido</span><span style="padding:9px 10px">Personaje</span><span style="padding:9px 10px">Activos</span><span style="padding:9px 10px">Usuarios</span><span style="padding:9px 10px">Ligas</span><span style="padding:9px 10px">Ajustes</span><span style="padding:9px 10px">Auditoría</span>
+</div>
+<div style="padding:28px 32px;display:flex;flex-direction:column;gap:18px">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:24px;font-weight:800">Métricas</span><div style="display:flex;gap:4px;background:#E8E8ED;border-radius:10px;padding:3px;font-size:13px;font-weight:700"><span style="padding:6px 12px">7 d</span><span style="padding:6px 12px;border-radius:8px;background:#fff">30 d</span><span style="padding:6px 12px">90 d</span></div></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+<div style="background:#fff;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:700;color:#6E6E73">Usuarios activos (DAU / MAU)</span><span style="font-size:28px;font-weight:800">— / —</span></div>
+<div style="background:#fff;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:700;color:#6E6E73">Retención D7</span><span style="font-size:28px;font-weight:800">— %</span></div>
+<div style="background:#fff;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:700;color:#6E6E73">Conversión a Premium</span><span style="font-size:28px;font-weight:800">— %</span></div>
+<div style="background:#fff;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:700;color:#6E6E73">Operaciones simuladas</span><span style="font-size:28px;font-weight:800">—</span></div>
+</div>
+<div style="display:grid;grid-template-columns:2fr 1fr;gap:12px;flex:1">
+<div style="background:#fff;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px"><span style="font-size:14px;font-weight:800">Usuarios activos por día</span><div style="flex:1;border-radius:10px;background:#F5F5F7;display:flex;align-items:center;justify-content:center;font-size:13px;color:#8E8E93">Gráfico de líneas · datos de GET /api/admin/metrics/series</div></div>
+<div style="background:#fff;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:12px"><span style="font-size:14px;font-weight:800">Embudo</span>
+<div style="display:flex;flex-direction:column;gap:8px;font-size:13px"><div style="display:flex;justify-content:space-between"><span>Registro</span><span style="font-weight:700">—</span></div><div style="display:flex;justify-content:space-between"><span>Onboarding completo</span><span style="font-weight:700">—</span></div><div style="display:flex;justify-content:space-between"><span>Primera lección</span><span style="font-weight:700">—</span></div><div style="display:flex;justify-content:space-between"><span>Primera operación</span><span style="font-weight:700">—</span></div><div style="display:flex;justify-content:space-between"><span>Premium</span><span style="font-weight:700">—</span></div></div>
+<div style="height:1px;background:#E5E5EA"></div>
+<span style="font-size:14px;font-weight:800">Proveedor de datos</span>
+<div style="display:flex;justify-content:space-between;font-size:13px"><span>Twelve Data</span><span style="font-weight:700;color:#248A3D">OK · 120 ms</span></div>
+<div style="display:flex;justify-content:space-between;font-size:13px"><span>CoinGecko</span><span style="font-weight:700;color:#8A5300">Degradado · caché</span></div>
+</div>
+</div>
+</div>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">GET /api/admin/metrics?range=7d|30d|90d → { dau, mau, retentionD7, premiumConversion, simulatedTrades, funnel{…} } · GET /api/admin/metrics/series · GET /api/admin/providers/health. Los «—» son valores reales de BD; nunca mock en producción.</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;width:1280px" data-screen-label="07.2 Admin contenido">
+<div style="font-size:12px;font-weight:700">07.2 · Contenido · editor de quiz</div>
+<div style="width:1280px;height:720px;background:#F5F5F7;border:1px solid #D2D2D7;border-radius:14px;overflow:hidden;display:grid;grid-template-columns:220px 300px 1fr">
+<div style="background:#fff;border-right:1px solid #E5E5EA;padding:20px 14px;display:flex;flex-direction:column;gap:4px;font-size:14px;font-weight:600">
+<div style="display:flex;align-items:center;gap:8px;padding:0 8px 18px"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M3 21V15H9V9H15V3H21V21Z" fill="#1D1D1F" stroke="#1D1D1F" stroke-width="1.6" stroke-linejoin="round"></path></svg><span style="font-weight:800">Admin</span></div>
+<span style="padding:9px 10px">Métricas</span><span style="padding:9px 10px;border-radius:9px;background:#E8F1FC;color:#0071E3">Contenido</span><span style="padding:9px 10px">Personaje</span><span style="padding:9px 10px">Activos</span><span style="padding:9px 10px">Usuarios</span><span style="padding:9px 10px">Ligas</span><span style="padding:9px 10px">Ajustes</span><span style="padding:9px 10px">Auditoría</span>
+</div>
+<div style="border-right:1px solid #E5E5EA;padding:20px 14px;display:flex;flex-direction:column;gap:6px;font-size:13px">
+<span style="font-size:15px;font-weight:800;padding:0 6px 8px">Curso · Trading desde cero</span>
+<span style="font-weight:800;color:#6E6E73;padding:6px">Unidad 1 · Primeros pasos</span>
+<span style="font-weight:800;padding:6px">Unidad 2 · Leer un gráfico</span>
+<span style="padding:7px 12px">Qué es un gráfico de precios</span><span style="padding:7px 12px">Tendencias</span><span style="padding:7px 12px;border-radius:8px;background:#fff;font-weight:700">Velas japonesas</span><span style="padding:7px 22px;color:#0071E3;font-weight:700">· Quiz (6 preguntas)</span><span style="padding:7px 12px">Soportes y resistencias</span>
+<span style="font-weight:800;color:#6E6E73;padding:6px">Unidad 3 · Gestión del riesgo</span>
+<span style="padding:7px 6px;color:#0071E3;font-weight:700">+ Nueva unidad</span>
+</div>
+<div style="padding:24px 28px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:20px;font-weight:800">Pregunta 2 de 6</span><div style="display:flex;gap:8px;font-size:13px;font-weight:700"><span style="padding:8px 14px;border-radius:999px;background:#fff;border:1px solid #D2D2D7">Vista previa</span><span style="padding:8px 14px;border-radius:999px;background:#0071E3;color:#fff">Publicar</span></div></div>
+<div style="display:flex;gap:6px;font-size:12px;font-weight:700"><span style="padding:6px 10px;border-radius:999px;background:#1D1D1F;color:#fff">ES</span><span style="padding:6px 10px;border-radius:999px;background:#fff">CA · falta</span><span style="padding:6px 10px;border-radius:999px;background:#fff">EN</span></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;color:#6E6E73">Tipo</span><div style="height:42px;border-radius:10px;background:#fff;border:1px solid #D2D2D7;display:flex;align-items:center;justify-content:space-between;padding:0 12px;font-size:14px">Opción única<span>⌄</span></div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;color:#6E6E73">XP</span><div style="height:42px;border-radius:10px;background:#fff;border:1px solid #D2D2D7;display:flex;align-items:center;padding:0 12px;font-size:14px">10</div></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;color:#6E6E73">Enunciado</span><div style="min-height:52px;border-radius:10px;background:#fff;border:1px solid #D2D2D7;padding:12px;font-size:14px;box-sizing:border-box">¿Qué indica una vela con cuerpo muy pequeño y mechas largas?</div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;color:#6E6E73">Opciones (marca la correcta)</span>
+<div style="display:flex;flex-direction:column;gap:6px;font-size:14px">
+<div style="height:42px;border-radius:10px;background:#fff;border:1px solid #D2D2D7;display:flex;align-items:center;gap:10px;padding:0 12px"><span style="width:16px;height:16px;border-radius:50%;border:1.5px solid #AEAEB2;box-sizing:border-box"></span>Una subida fuerte</div>
+<div style="height:42px;border-radius:10px;background:#fff;border:1px solid #D2D2D7;display:flex;align-items:center;gap:10px;padding:0 12px"><span style="width:16px;height:16px;border-radius:50%;border:1.5px solid #AEAEB2;box-sizing:border-box"></span>Una bajada fuerte</div>
+<div style="height:42px;border-radius:10px;background:#E9F6EC;border:1.5px solid #248A3D;display:flex;align-items:center;gap:10px;padding:0 12px"><span style="width:16px;height:16px;border-radius:50%;border:5px solid #248A3D;box-sizing:border-box"></span>Indecisión entre compradores y vendedores</div>
+<div style="height:42px;border-radius:10px;background:#fff;border:1px solid #D2D2D7;display:flex;align-items:center;gap:10px;padding:0 12px"><span style="width:16px;height:16px;border-radius:50%;border:1.5px solid #AEAEB2;box-sizing:border-box"></span>Que el mercado está cerrado</div>
+</div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;color:#6E6E73">Explicación tras responder</span><div style="min-height:48px;border-radius:10px;background:#fff;border:1px solid #D2D2D7;padding:12px;font-size:14px;box-sizing:border-box">Ni compradores ni vendedores ganaron el día.</div></div>
+</div>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">CRUD /api/admin/courses · /units · /lessons · /lessons/:id/steps · /quizzes · /questions (con translations[locale]). Estados DRAFT|PUBLISHED. Lesson.unlocksFeature?: STOP_LOSS|TAKE_PROFIT|LIMIT. Igual para /api/admin/companion-templates (07.3 «Personaje»).</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;width:1280px" data-screen-label="07.3 Admin usuarios y ajustes">
+<div style="font-size:12px;font-weight:700">07.3 · Usuarios · Ajustes globales · Auditoría</div>
+<div style="width:1280px;height:720px;background:#F5F5F7;border:1px solid #D2D2D7;border-radius:14px;overflow:hidden;display:grid;grid-template-columns:220px 1fr 380px;font-variant-numeric:tabular-nums">
+<div style="background:#fff;border-right:1px solid #E5E5EA;padding:20px 14px;display:flex;flex-direction:column;gap:4px;font-size:14px;font-weight:600">
+<div style="display:flex;align-items:center;gap:8px;padding:0 8px 18px"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M3 21V15H9V9H15V3H21V21Z" fill="#1D1D1F" stroke="#1D1D1F" stroke-width="1.6" stroke-linejoin="round"></path></svg><span style="font-weight:800">Admin</span></div>
+<span style="padding:9px 10px">Métricas</span><span style="padding:9px 10px">Contenido</span><span style="padding:9px 10px">Personaje</span><span style="padding:9px 10px">Activos</span><span style="padding:9px 10px;border-radius:9px;background:#E8F1FC;color:#0071E3">Usuarios</span><span style="padding:9px 10px">Ligas</span><span style="padding:9px 10px">Ajustes</span><span style="padding:9px 10px">Auditoría</span>
+</div>
+<div style="padding:24px 28px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:22px;font-weight:800">Usuarios</span><div style="width:280px;height:38px;border-radius:10px;background:#fff;border:1px solid #D2D2D7;display:flex;align-items:center;padding:0 12px;font-size:13px;color:#8E8E93">Buscar por email o nombre</div></div>
+<div style="background:#fff;border-radius:14px;display:flex;flex-direction:column;font-size:13px">
+<div style="display:grid;grid-template-columns:1.6fr .8fr .6fr .8fr .8fr 1.2fr;padding:12px 16px;font-weight:700;color:#6E6E73;border-bottom:1px solid #F0F0F2"><span>Usuario</span><span>Plan</span><span>Nivel</span><span>Cartera</span><span>Estado</span><span style="text-align:right">Acciones</span></div>
+<div style="display:grid;grid-template-columns:1.6fr .8fr .6fr .8fr .8fr 1.2fr;padding:12px 16px;align-items:center;border-bottom:1px solid #F0F0F2"><span style="font-weight:700">laura@email.com</span><span>Premium</span><span>2</span><span>10.482 €</span><span style="color:#248A3D;font-weight:700">Activa</span><span style="text-align:right;color:#0071E3;font-weight:700">Ver · Reiniciar cartera · Bloquear</span></div>
+<div style="display:grid;grid-template-columns:1.6fr .8fr .6fr .8fr .8fr 1.2fr;padding:12px 16px;align-items:center;border-bottom:1px solid #F0F0F2"><span style="font-weight:700">marc@email.com</span><span>Free</span><span>5</span><span>12.904 €</span><span style="color:#248A3D;font-weight:700">Activa</span><span style="text-align:right;color:#0071E3;font-weight:700">Ver · Reiniciar cartera · Bloquear</span></div>
+<div style="display:grid;grid-template-columns:1.6fr .8fr .6fr .8fr .8fr 1.2fr;padding:12px 16px;align-items:center"><span style="font-weight:700">spam@email.com</span><span>Free</span><span>1</span><span>10.000 €</span><span style="color:#D70015;font-weight:700">Bloqueada</span><span style="text-align:right;color:#0071E3;font-weight:700">Ver · Desbloquear</span></div>
+</div>
+<span style="font-size:15px;font-weight:800;padding-top:6px">Auditoría reciente</span>
+<div style="background:#fff;border-radius:14px;display:flex;flex-direction:column;font-size:13px">
+<div style="display:grid;grid-template-columns:140px 160px 1fr;padding:10px 16px;border-bottom:1px solid #F0F0F2"><span style="color:#6E6E73">19 oct 15:02</span><span style="font-weight:700">ana@etrading</span><span>Settings.riskThresholdPct 25 → 20</span></div>
+<div style="display:grid;grid-template-columns:140px 160px 1fr;padding:10px 16px;border-bottom:1px solid #F0F0F2"><span style="color:#6E6E73">19 oct 11:40</span><span style="font-weight:700">ana@etrading</span><span>Bloqueó a spam@email.com · motivo: abuso</span></div>
+<div style="display:grid;grid-template-columns:140px 160px 1fr;padding:10px 16px"><span style="color:#6E6E73">18 oct 18:21</span><span style="font-weight:700">pol@etrading</span><span>Publicó lección «Velas japonesas»</span></div>
+</div>
+</div>
+<div style="background:#fff;border-left:1px solid #E5E5EA;padding:24px;display:flex;flex-direction:column;gap:12px">
+<span style="font-size:18px;font-weight:800">Ajustes globales</span>
+<div style="display:flex;flex-direction:column;font-size:13px">
+<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #F0F0F2"><span>Saldo inicial Free</span><span style="font-weight:700">10.000 €</span></div>
+<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #F0F0F2"><span>Saldo inicial Premium</span><span style="font-weight:700">50.000 €</span></div>
+<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #F0F0F2"><span>Comisión simulada</span><span style="font-weight:700">0,1 % · mín. 1 €</span></div>
+<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #F0F0F2"><span>Umbral de riesgo por activo</span><span style="font-weight:700">20 %</span></div>
+<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #F0F0F2"><span>Vidas máx. / regeneración</span><span style="font-weight:700">5 · 1 cada 4 h</span></div>
+<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #F0F0F2"><span>Curva de niveles</span><span style="font-weight:700">base 500 · ×1,4</span></div>
+<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #F0F0F2"><span>Reinicios de cartera / año</span><span style="font-weight:700">3</span></div>
+<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #F0F0F2"><span>Recordatorios máx. / día</span><span style="font-weight:700">2</span></div>
+<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #F0F0F2"><span>Edad mínima</span><span style="font-weight:700">14</span></div>
+<div style="display:flex;justify-content:space-between;padding:10px 0"><span>Días de prueba Premium</span><span style="font-weight:700">7</span></div>
+</div>
+<span style="align-self:flex-start;padding:10px 18px;border-radius:999px;background:#0071E3;color:#fff;font-size:14px;font-weight:700">Guardar cambios</span>
+</div>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">GET /api/admin/users?q&amp;cursor · GET /api/admin/users/:id · POST .../block { reason } · POST .../unblock · POST .../portfolio/reset<br>GET/PATCH /api/admin/settings (tabla Settings clave-valor tipada con Zod) · CRUD /api/admin/assets { symbol, type, provider, enabled }<br>GET /api/admin/audit?cursor → AuditLog { actorId, action, entity, entityId, before, after, createdAt }</div>
+</div>
+
+</div>
+</section>
+</x-dc>
+</body>
+</html>

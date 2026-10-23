@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><meta name="design_doc_mode" content="canvas"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><style>body{margin:0;background:#E8E8ED;font-family:'Manrope',sans-serif;color:#1D1D1F}a{color:#0071E3;text-decoration:none}a:hover{color:#0058B0}</style></helmet>
+<section data-screen-label="02 Acceso" style="padding:48px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:6px;max-width:900px">
+<div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0071E3">Capa 2 · Pasarela de log in</div>
+<div style="font-size:28px;font-weight:800;letter-spacing:-.02em">Registro, entrada, verificación y recuperación</div>
+</div>
+<div style="display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap">
+
+<div style="display:flex;flex-direction:column;gap:12px;width:360px" data-screen-label="02.1 Bienvenida">
+<div style="font-size:12px;font-weight:700">02.1 · Bienvenida</div>
+<div style="width:360px;height:760px;border-radius:40px;background:#F5F5F7;border:1px solid #D2D2D7;overflow:hidden;display:flex;flex-direction:column;padding:0 24px 40px;box-sizing:border-box">
+<div style="height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:700"><span>9:41</span><span style="font-size:12px">100 %</span></div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;text-align:center">
+<svg width="120" height="120" viewBox="0 0 48 48"><rect x="4" y="6" width="40" height="38" rx="16" fill="#0071E3"></rect><circle cx="17" cy="22" r="5" fill="#fff"></circle><circle cx="31" cy="22" r="5" fill="#fff"></circle><circle cx="18" cy="23" r="2.4" fill="#1D1D1F"></circle><circle cx="32" cy="23" r="2.4" fill="#1D1D1F"></circle><path d="M18 32q6 5 12 0" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"></path></svg>
+<div style="font-size:30px;font-weight:800;letter-spacing:-.03em;line-height:1.1">Hola, soy Lumi.<br>Vamos a aprender juntos.</div>
+<div style="font-size:15px;line-height:1.5;color:#6E6E73">Cinco minutos al día. Dinero virtual, precios reales.</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<span style="height:52px;border-radius:999px;background:#0071E3;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">Crear cuenta</span>
+<span style="height:52px;border-radius:999px;background:#fff;border:1px solid #D2D2D7;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">Ya tengo cuenta</span>
+</div>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">Sin API. Idioma inicial = idioma del dispositivo (es/ca/en).</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;width:360px" data-screen-label="02.2 Registro">
+<div style="font-size:12px;font-weight:700">02.2 · Crear cuenta</div>
+<div style="width:360px;height:760px;border-radius:40px;background:#F5F5F7;border:1px solid #D2D2D7;overflow:hidden;display:flex;flex-direction:column;padding:0 24px 32px;box-sizing:border-box">
+<div style="height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:700"><span>9:41</span><span style="font-size:12px">100 %</span></div>
+<div style="padding:16px 0 24px;font-size:20px;color:#0071E3">‹</div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-size:28px;font-weight:800;letter-spacing:-.03em">Crea tu cuenta</div>
+<span style="height:50px;border-radius:999px;background:#1D1D1F;color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700">Continuar con Apple</span>
+<span style="height:50px;border-radius:999px;background:#fff;border:1px solid #D2D2D7;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700">Continuar con Google</span>
+<div style="display:flex;align-items:center;gap:10px;font-size:12px;color:#8E8E93"><span style="flex:1;height:1px;background:#D2D2D7"></span>o con email<span style="flex:1;height:1px;background:#D2D2D7"></span></div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:700">Email</span><div style="height:48px;border-radius:12px;background:#fff;border:1px solid #D2D2D7;display:flex;align-items:center;padding:0 14px;font-size:15px">laura@email.com</div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:700">Contraseña</span><div style="height:48px;border-radius:12px;background:#fff;border:1.5px solid #D70015;display:flex;align-items:center;justify-content:space-between;padding:0 14px;font-size:15px">••••••<span style="font-size:13px;color:#6E6E73">Ver</span></div><span style="font-size:12px;color:#D70015">Mínimo 8 caracteres y un número.</span></div>
+<div style="font-size:12px;line-height:1.5;color:#6E6E73">Al continuar aceptas los <span style="color:#0071E3">Términos</span> y la <span style="color:#0071E3">Política de privacidad</span>.</div>
+</div>
+<div style="flex:1"></div>
+<span style="height:52px;border-radius:999px;background:#0071E3;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">Crear cuenta</span>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">POST /api/auth/register { email, password, locale } → 201 + envía email de verificación.<br>OAuth: Apple, Google.<br>Errores: 409 EMAIL_IN_USE · 422 WEAK_PASSWORD. Rol por defecto USER.</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;width:360px" data-screen-label="02.3 Entrar">
+<div style="font-size:12px;font-weight:700">02.3 · Entrar</div>
+<div style="width:360px;height:760px;border-radius:40px;background:#F5F5F7;border:1px solid #D2D2D7;overflow:hidden;display:flex;flex-direction:column;padding:0 24px 32px;box-sizing:border-box">
+<div style="height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:700"><span>9:41</span><span style="font-size:12px">100 %</span></div>
+<div style="padding:16px 0 24px;font-size:20px;color:#0071E3">‹</div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-size:28px;font-weight:800;letter-spacing:-.03em">Hola de nuevo</div>
+<span style="height:50px;border-radius:999px;background:#1D1D1F;color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700">Continuar con Apple</span>
+<span style="height:50px;border-radius:999px;background:#fff;border:1px solid #D2D2D7;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700">Continuar con Google</span>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:700">Email</span><div style="height:48px;border-radius:12px;background:#fff;border:1px solid #D2D2D7;display:flex;align-items:center;padding:0 14px;font-size:15px">laura@email.com</div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:700">Contraseña</span><div style="height:48px;border-radius:12px;background:#fff;border:1px solid #D2D2D7;display:flex;align-items:center;padding:0 14px;font-size:15px">••••••••••</div></div>
+<span style="font-size:14px;font-weight:700;color:#0071E3">¿Has olvidado la contraseña?</span>
+<div style="background:#FDECEE;border-radius:12px;padding:12px 14px;font-size:13px;color:#D70015">Email o contraseña incorrectos.</div>
+</div>
+<div style="flex:1"></div>
+<span style="height:52px;border-radius:999px;background:#0071E3;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">Entrar</span>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">POST /api/auth/login → sesión.<br>401 INVALID_CREDENTIALS (mensaje genérico) · 423 ACCOUNT_BLOCKED · 429 tras 5 intentos.<br>Tras entrar: si onboarding incompleto → paso pendiente (GET /api/onboarding).</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;width:360px" data-screen-label="02.4 Verifica email">
+<div style="font-size:12px;font-weight:700">02.4 · Verifica tu email</div>
+<div style="width:360px;height:760px;border-radius:40px;background:#F5F5F7;border:1px solid #D2D2D7;overflow:hidden;display:flex;flex-direction:column;padding:0 24px 32px;box-sizing:border-box">
+<div style="height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:700"><span>9:41</span><span style="font-size:12px">100 %</span></div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:16px">
+<div style="width:64px;height:64px;border-radius:20px;background:#E8F1FC;display:flex;align-items:center;justify-content:center"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0071E3" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="M4 7l8 6 8-6"></path></svg></div>
+<div style="font-size:28px;font-weight:800;letter-spacing:-.03em">Revisa tu correo</div>
+<div style="font-size:15px;line-height:1.5;color:#6E6E73">Hemos enviado un enlace a <b style="color:#1D1D1F">laura@email.com</b>. Ábrelo para activar tu cuenta.</div>
+<span style="font-size:14px;font-weight:700;color:#0071E3">Reenviar enlace (disponible en 0:42)</span>
+<span style="font-size:14px;font-weight:700;color:#0071E3">Cambiar email</span>
+</div>
+<span style="height:52px;border-radius:999px;background:#fff;border:1px solid #D2D2D7;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">Abrir app de correo</span>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">POST /api/auth/verify/resend (cooldown 60 s).<br>GET /api/auth/verify?token= → marca emailVerified. Token un solo uso, 24 h.<br>Sin verificar: puede hacer onboarding y clases; no puede operar en Mercado ni pagar.</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;width:360px" data-screen-label="02.5 Recuperar contraseña">
+<div style="font-size:12px;font-weight:700">02.5 · Recuperar contraseña</div>
+<div style="width:360px;height:760px;border-radius:40px;background:#F5F5F7;border:1px solid #D2D2D7;overflow:hidden;display:flex;flex-direction:column;padding:0 24px 32px;box-sizing:border-box">
+<div style="height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:700"><span>9:41</span><span style="font-size:12px">100 %</span></div>
+<div style="padding:16px 0 24px;font-size:20px;color:#0071E3">‹</div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-size:28px;font-weight:800;letter-spacing:-.03em">Nueva contraseña</div>
+<div style="font-size:15px;line-height:1.5;color:#6E6E73">Paso 1: te enviamos un enlace. Paso 2 (desde el enlace): elige la nueva.</div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:700">Email</span><div style="height:48px;border-radius:12px;background:#fff;border:1px solid #D2D2D7;display:flex;align-items:center;padding:0 14px;font-size:15px">laura@email.com</div></div>
+<span style="height:50px;border-radius:999px;background:#0071E3;color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700">Enviar enlace</span>
+<div style="height:1px;background:#E5E5EA;margin:8px 0"></div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:700">Nueva contraseña</span><div style="height:48px;border-radius:12px;background:#fff;border:1px solid #D2D2D7;display:flex;align-items:center;padding:0 14px;font-size:15px">••••••••••</div></div>
+<div style="background:#FFF6E5;border-radius:12px;padding:12px 14px;font-size:13px;color:#8A5300">Este enlace ha caducado. Pide uno nuevo.</div>
+</div>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">POST /api/auth/password/forgot { email } → siempre 200 (no revela si existe).<br>POST /api/auth/password/reset { token, password }. Token un solo uso, caduca 1 h → 410 TOKEN_EXPIRED.</div>
+</div>
+
+</div>
+</section>
+
+<section data-screen-label="02 Onboarding" style="padding:0 48px 48px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:6px;max-width:900px">
+<div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0071E3">Capa 2 · Onboarding por pasos</div>
+<div style="font-size:28px;font-weight:800;letter-spacing:-.02em">Siete pasos, guardados uno a uno</div>
+<div style="font-size:14px;line-height:1.55;color:#6E6E73">Cada paso hace PUT /api/onboarding/:step. Si sale de la app, vuelve al paso pendiente.</div>
+</div>
+<div style="display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap">
+
+<div style="display:flex;flex-direction:column;gap:12px;width:360px" data-screen-label="02.6 Onboarding nombre y fecha">
+<div style="font-size:12px;font-weight:700">02.6 · Paso 1 · Nombre y fecha</div>
+<div style="width:360px;height:760px;border-radius:40px;background:#F5F5F7;border:1px solid #D2D2D7;overflow:hidden;display:flex;flex-direction:column;padding:0 24px 32px;box-sizing:border-box">
+<div style="height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:700"><span>9:41</span><span style="font-size:12px">100 %</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 0 28px"><span style="font-size:20px;color:#0071E3">‹</span><div style="flex:1;height:6px;border-radius:3px;background:#E5E5EA"><div style="width:14%;height:6px;border-radius:3px;background:#0071E3"></div></div><span style="font-size:12px;font-weight:700;color:#6E6E73">1/7</span></div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:26px;font-weight:800;letter-spacing:-.03em">¿Cómo te llamas?</div>
+<div style="height:50px;border-radius:12px;background:#fff;border:1.5px solid #0071E3;display:flex;align-items:center;padding:0 14px;font-size:16px">Laura</div>
+<div style="font-size:26px;font-weight:800;letter-spacing:-.03em;padding-top:12px">¿Cuándo naciste?</div>
+<div style="display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:8px"><div style="height:50px;border-radius:12px;background:#fff;border:1px solid #D2D2D7;display:flex;align-items:center;justify-content:center;font-size:16px">14</div><div style="height:50px;border-radius:12px;background:#fff;border:1px solid #D2D2D7;display:flex;align-items:center;justify-content:center;font-size:16px">marzo</div><div style="height:50px;border-radius:12px;background:#fff;border:1px solid #D2D2D7;display:flex;align-items:center;justify-content:center;font-size:16px">2004</div></div>
+<div style="font-size:13px;line-height:1.5;color:#6E6E73">Lo usamos para adaptar el contenido y por motivos legales. No se muestra a nadie.</div>
+</div>
+<div style="flex:1"></div>
+<span style="height:52px;border-radius:999px;background:#0071E3;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">Continuar</span>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">PUT /api/onboarding/profile { name, birthDate, timezone }.<br>Si edad &lt; Settings.minAge → 403 UNDER_MIN_AGE (pantalla de bloqueo).<br>Si &lt; 18 → flag requiresGuardianConsent (ver 02.12).</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;width:360px" data-screen-label="02.7 Onboarding experiencia">
+<div style="font-size:12px;font-weight:700">02.7 · Paso 2 · Experiencia</div>
+<div style="width:360px;height:760px;border-radius:40px;background:#F5F5F7;border:1px solid #D2D2D7;overflow:hidden;display:flex;flex-direction:column;padding:0 24px 32px;box-sizing:border-box">
+<div style="height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:700"><span>9:41</span><span style="font-size:12px">100 %</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 0 28px"><span style="font-size:20px;color:#0071E3">‹</span><div style="flex:1;height:6px;border-radius:3px;background:#E5E5EA"><div style="width:28%;height:6px;border-radius:3px;background:#0071E3"></div></div><span style="font-size:12px;font-weight:700;color:#6E6E73">2/7</span></div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="font-size:26px;font-weight:800;letter-spacing:-.03em;padding-bottom:6px">¿Has invertido alguna vez?</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;font-weight:700">Nunca</span><span style="font-size:13px;color:#6E6E73">Empiezo de cero</span></div>
+<div style="background:#E8F1FC;border:1.5px solid #0071E3;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;font-weight:700">Un poco</span><span style="font-size:13px;color:#6E6E73">He leído o probado alguna app</span></div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;font-weight:700">Bastante</span><span style="font-size:13px;color:#6E6E73">Ya he operado con dinero real</span></div>
+</div>
+<div style="flex:1"></div>
+<span style="height:52px;border-radius:999px;background:#0071E3;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">Continuar</span>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">PUT /api/onboarding/experience { level: NONE|SOME|EXPERIENCED }</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;width:360px" data-screen-label="02.8 Onboarding objetivos">
+<div style="font-size:12px;font-weight:700">02.8 · Paso 3 · Objetivos y meta diaria</div>
+<div style="width:360px;height:760px;border-radius:40px;background:#F5F5F7;border:1px solid #D2D2D7;overflow:hidden;display:flex;flex-direction:column;padding:0 24px 32px;box-sizing:border-box">
+<div style="height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:700"><span>9:41</span><span style="font-size:12px">100 %</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 0 28px"><span style="font-size:20px;color:#0071E3">‹</span><div style="flex:1;height:6px;border-radius:3px;background:#E5E5EA"><div style="width:43%;height:6px;border-radius:3px;background:#0071E3"></div></div><span style="font-size:12px;font-weight:700;color:#6E6E73">3/7</span></div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="font-size:26px;font-weight:800;letter-spacing:-.03em">¿Qué quieres conseguir?</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<span style="padding:10px 14px;border-radius:999px;background:#1D1D1F;color:#fff;font-size:14px;font-weight:700">Entender la bolsa</span><span style="padding:10px 14px;border-radius:999px;background:#fff;border:1px solid #D2D2D7;font-size:14px;font-weight:700">Ahorrar mejor</span><span style="padding:10px 14px;border-radius:999px;background:#1D1D1F;color:#fff;font-size:14px;font-weight:700">Cripto</span><span style="padding:10px 14px;border-radius:999px;background:#fff;border:1px solid #D2D2D7;font-size:14px;font-weight:700">Análisis técnico</span><span style="padding:10px 14px;border-radius:999px;background:#fff;border:1px solid #D2D2D7;font-size:14px;font-weight:700">Por curiosidad</span>
+</div>
+<div style="font-size:20px;font-weight:800;letter-spacing:-.02em;padding-top:14px">Meta diaria</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:14px;padding:12px 6px;text-align:center;display:flex;flex-direction:column;gap:2px"><span style="font-size:17px;font-weight:800">5</span><span style="font-size:11px;color:#6E6E73">min</span></div>
+<div style="background:#E8F1FC;border:1.5px solid #0071E3;border-radius:14px;padding:12px 6px;text-align:center;display:flex;flex-direction:column;gap:2px"><span style="font-size:17px;font-weight:800">10</span><span style="font-size:11px;color:#6E6E73">min</span></div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:14px;padding:12px 6px;text-align:center;display:flex;flex-direction:column;gap:2px"><span style="font-size:17px;font-weight:800">15</span><span style="font-size:11px;color:#6E6E73">min</span></div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:14px;padding:12px 6px;text-align:center;display:flex;flex-direction:column;gap:2px"><span style="font-size:17px;font-weight:800">20</span><span style="font-size:11px;color:#6E6E73">min</span></div>
+</div>
+</div>
+<div style="flex:1"></div>
+<span style="height:52px;border-radius:999px;background:#0071E3;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">Continuar</span>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">PUT /api/onboarding/goals { goals: string[], dailyGoalMinutes: 5|10|15|20 }</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;width:360px" data-screen-label="02.9 Test de nivel">
+<div style="font-size:12px;font-weight:700">02.9 · Paso 4 · Test de nivel</div>
+<div style="width:360px;height:760px;border-radius:40px;background:#F5F5F7;border:1px solid #D2D2D7;overflow:hidden;display:flex;flex-direction:column;padding:0 24px 32px;box-sizing:border-box">
+<div style="height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:700"><span>9:41</span><span style="font-size:12px">100 %</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 0 20px"><span style="font-size:20px;color:#0071E3">‹</span><div style="flex:1;height:6px;border-radius:3px;background:#E5E5EA"><div style="width:57%;height:6px;border-radius:3px;background:#0071E3"></div></div><span style="font-size:12px;font-weight:700;color:#6E6E73">4/7</span></div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<span style="font-size:13px;font-weight:700;color:#6E6E73">Pregunta 3 de 8 · puedes saltarla</span>
+<div style="font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.25">Si una acción cae un 50 %, ¿cuánto tiene que subir para recuperar el precio inicial?</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:14px;padding:16px;font-size:16px;font-weight:600">50 %</div>
+<div style="background:#E8F1FC;border:1.5px solid #0071E3;border-radius:14px;padding:16px;font-size:16px;font-weight:600">100 %</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:14px;padding:16px;font-size:16px;font-weight:600">150 %</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:14px;padding:16px;font-size:16px;font-weight:600">No lo sé</div>
+</div>
+<div style="flex:1"></div>
+<span style="height:52px;border-radius:999px;background:#0071E3;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">Comprobar</span>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">Quiz especial isPlacement=true. Sin vidas, sin feedback de acierto.<br>POST /api/quiz/placement/start → { attemptId, questions[] sin respuestas }<br>POST /api/quiz/attempts/:id/answer · POST .../finish</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;width:360px" data-screen-label="02.10 Resultado test">
+<div style="font-size:12px;font-weight:700">02.10 · Resultado del test</div>
+<div style="width:360px;height:760px;border-radius:40px;background:#F5F5F7;border:1px solid #D2D2D7;overflow:hidden;display:flex;flex-direction:column;padding:0 24px 32px;box-sizing:border-box">
+<div style="height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:700"><span>9:41</span><span style="font-size:12px">100 %</span></div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:18px">
+<svg width="88" height="88" viewBox="0 0 48 48"><rect x="4" y="6" width="40" height="38" rx="16" fill="#0071E3"></rect><path d="M12 22q5-5 10 0M26 22q5-5 10 0" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"></path><path d="M16 30q8 8 16 0" fill="#fff"></path></svg>
+<div style="font-size:28px;font-weight:800;letter-spacing:-.03em;line-height:1.15">Empiezas en la Unidad 2</div>
+<div style="font-size:15px;line-height:1.5;color:#6E6E73">Acertaste 6 de 8. Te saltas «Primeros pasos». Puedes repasarla cuando quieras.</div>
+<div style="background:#fff;border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;font-size:14px"><span>Unidad 1 · Primeros pasos</span><span style="font-weight:700;color:#248A3D">Superada</span></div>
+<div style="display:flex;justify-content:space-between;font-size:14px"><span>Unidad 2 · Leer un gráfico</span><span style="font-weight:700;color:#0071E3">Empiezas aquí</span></div>
+</div>
+</div>
+<span style="height:52px;border-radius:999px;background:#0071E3;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">Continuar</span>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">.../finish → { correct, total, startUnitId, skippedUnitIds[], initialLevel }. Marca lecciones saltadas como COMPLETED(skipped=true).</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;width:360px" data-screen-label="02.11 Elige personaje">
+<div style="font-size:12px;font-weight:700">02.11 · Paso 5 · Tu compañero</div>
+<div style="width:360px;height:760px;border-radius:40px;background:#F5F5F7;border:1px solid #D2D2D7;overflow:hidden;display:flex;flex-direction:column;padding:0 24px 32px;box-sizing:border-box">
+<div style="height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:700"><span>9:41</span><span style="font-size:12px">100 %</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 0 24px"><span style="font-size:20px;color:#0071E3">‹</span><div style="flex:1;height:6px;border-radius:3px;background:#E5E5EA"><div style="width:71%;height:6px;border-radius:3px;background:#0071E3"></div></div><span style="font-size:12px;font-weight:700;color:#6E6E73">5/7</span></div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:26px;font-weight:800;letter-spacing:-.03em">Elige el aspecto de Lumi</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<div style="background:#E8F1FC;border:1.5px solid #0071E3;border-radius:18px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:8px"><svg width="64" height="64" viewBox="0 0 48 48"><rect x="4" y="6" width="40" height="38" rx="16" fill="#0071E3"></rect><circle cx="17" cy="22" r="5" fill="#fff"></circle><circle cx="31" cy="22" r="5" fill="#fff"></circle><circle cx="18" cy="23" r="2.4" fill="#1D1D1F"></circle><circle cx="32" cy="23" r="2.4" fill="#1D1D1F"></circle><path d="M18 32q6 5 12 0" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"></path></svg><span style="font-size:13px;font-weight:700">Azul</span></div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:18px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:8px"><svg width="64" height="64" viewBox="0 0 48 48"><rect x="4" y="6" width="40" height="38" rx="16" fill="#1D1D1F"></rect><circle cx="17" cy="22" r="5" fill="#fff"></circle><circle cx="31" cy="22" r="5" fill="#fff"></circle><circle cx="18" cy="23" r="2.4" fill="#1D1D1F"></circle><circle cx="32" cy="23" r="2.4" fill="#1D1D1F"></circle><path d="M18 32q6 5 12 0" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"></path></svg><span style="font-size:13px;font-weight:700">Grafito</span></div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:18px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:8px"><svg width="64" height="64" viewBox="0 0 48 48"><rect x="4" y="6" width="40" height="38" rx="16" fill="#AEAEB2"></rect><circle cx="17" cy="22" r="5" fill="#fff"></circle><circle cx="31" cy="22" r="5" fill="#fff"></circle><circle cx="18" cy="23" r="2.4" fill="#1D1D1F"></circle><circle cx="32" cy="23" r="2.4" fill="#1D1D1F"></circle><path d="M18 32q6 5 12 0" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"></path></svg><span style="font-size:13px;font-weight:700">Plata</span></div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:18px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.55"><svg width="64" height="64" viewBox="0 0 48 48"><rect x="4" y="6" width="40" height="38" rx="16" fill="#64D2FF"></rect><circle cx="17" cy="22" r="5" fill="#fff"></circle><circle cx="31" cy="22" r="5" fill="#fff"></circle><circle cx="18" cy="23" r="2.4" fill="#1D1D1F"></circle><circle cx="32" cy="23" r="2.4" fill="#1D1D1F"></circle><path d="M18 32q6 5 12 0" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"></path></svg><span style="font-size:13px;font-weight:700">Hielo · Nivel 5</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:700">Nombre (opcional)</span><div style="height:48px;border-radius:12px;background:#fff;border:1px solid #D2D2D7;display:flex;align-items:center;padding:0 14px;font-size:15px">Lumi</div></div>
+</div>
+<div style="flex:1"></div>
+<span style="height:52px;border-radius:999px;background:#0071E3;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">Continuar</span>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">GET /api/companion/skins → [{ id, name, color, unlocked, unlockRule }]<br>PUT /api/onboarding/companion { skinId, name }</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;width:360px" data-screen-label="02.12 Saldo inicial y aviso legal">
+<div style="font-size:12px;font-weight:700">02.12 · Pasos 6–7 · Saldo y aviso legal</div>
+<div style="width:360px;height:760px;border-radius:40px;background:#F5F5F7;border:1px solid #D2D2D7;overflow:hidden;display:flex;flex-direction:column;padding:0 24px 32px;box-sizing:border-box">
+<div style="height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:700"><span>9:41</span><span style="font-size:12px">100 %</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 0 24px"><span style="font-size:20px;color:#0071E3">‹</span><div style="flex:1;height:6px;border-radius:3px;background:#E5E5EA"><div style="width:100%;height:6px;border-radius:3px;background:#0071E3"></div></div><span style="font-size:12px;font-weight:700;color:#6E6E73">7/7</span></div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-size:26px;font-weight:800;letter-spacing:-.03em">Tu saldo virtual</div>
+<div style="background:#1D1D1F;color:#fff;border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;color:#A1A1A6">Para practicar</span><span style="font-size:36px;font-weight:800;letter-spacing:-.03em">10.000,00 €</span><span style="font-size:13px;color:#2997FF">Con Premium: 50.000,00 €</span></div>
+<div style="background:#fff;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px;font-size:14px;line-height:1.5">
+<span style="font-weight:800">Antes de empezar</span>
+<span style="color:#3A3A3C">E-Trading es una app educativa. Nunca se opera con dinero real, no se conecta a ningún broker y no ofrece recomendaciones de inversión.</span>
+<div style="display:flex;gap:10px;align-items:center"><span style="width:22px;height:22px;border-radius:6px;background:#0071E3;color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;flex:none">✓</span><span style="font-weight:600">Lo entiendo y acepto</span></div>
+</div>
+</div>
+<div style="flex:1"></div>
+<span style="height:52px;border-radius:999px;background:#0071E3;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">Empezar</span>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">PUT /api/onboarding/disclaimer { accepted: true, version } → guarda DisclaimerAcceptance.<br>POST /api/onboarding/complete → crea Portfolio con Settings.initialBalance (o premiumInitialBalance), Companion, Streak.</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;width:360px" data-screen-label="02.13 Consentimiento tutor">
+<div style="font-size:12px;font-weight:700">02.13 · Menor de edad · Consentimiento</div>
+<div style="width:360px;height:760px;border-radius:40px;background:#F5F5F7;border:1px solid #D2D2D7;overflow:hidden;display:flex;flex-direction:column;padding:0 24px 32px;box-sizing:border-box">
+<div style="height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:700"><span>9:41</span><span style="font-size:12px">100 %</span></div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:14px">
+<div style="font-size:26px;font-weight:800;letter-spacing:-.03em;line-height:1.15">Para activar Premium necesitamos a un adulto</div>
+<div style="font-size:15px;line-height:1.5;color:#6E6E73">Puedes usar E-Trading gratis. Para pagar Premium, tu madre, padre o tutor debe confirmarlo por email.</div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:700">Email del adulto</span><div style="height:48px;border-radius:12px;background:#fff;border:1px solid #D2D2D7;display:flex;align-items:center;padding:0 14px;font-size:15px">madre@email.com</div></div>
+<div style="background:#fff;border-radius:14px;padding:12px 14px;font-size:13px;display:flex;justify-content:space-between"><span>Estado</span><span style="font-weight:700;color:#8A5300">Pendiente de confirmar</span></div>
+</div>
+<span style="height:52px;border-radius:999px;background:#0071E3;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">Enviar solicitud</span>
+</div>
+<div style="background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:14px;font:12px/1.6 'JetBrains Mono',monospace;color:#3A3A3C">POST /api/guardian-consent { guardianEmail } → email con enlace.<br>GET /api/guardian-consent/confirm?token= → status CONFIRMED.<br>Checkout Premium bloqueado (403 GUARDIAN_CONSENT_REQUIRED) hasta CONFIRMED. Estados: NONE|PENDING|CONFIRMED|REJECTED.</div>
+</div>
+
+</div>
+</section>
+</x-dc>
+</body>
+</html>

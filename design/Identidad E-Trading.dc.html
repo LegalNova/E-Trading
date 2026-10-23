@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet"><style>body{margin:0;background:#efeeea;font-family:system-ui,sans-serif;color:#1a1a1a}a{color:#1a1a1a}a:hover{color:#555}.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 12px}.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}.dv-tname{font:600 13px/1.2 system-ui,sans-serif;color:#1a1a1a}.dv-opts{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 system-ui,sans-serif;color:rgba(0,0,0,.55)}.dv-card{max-width:100%;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}.dv-next{margin:22px 0 0;font:12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.5)}</style></helmet>
+<section class="dv-turn" id="t3">
+<div class="dv-thd"><a class="dv-tid" href="#t3">3</a><span class="dv-tname">Paleta revisada sobre <a class="dv-oid" href="#2a">2a</a> · azules, negros, blancos y grises</span></div>
+<div class="dv-opts">
+<div class="dv-opt" id="3a">
+<div class="dv-olabel"><a class="dv-oid" href="#3a">3a</a><span style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:#0071E3;color:#fff;border-radius:5px">Elegida</span>Bancal · negro, blanco, grises y un único azul · Manrope</div>
+<div class="dv-card" style="width:1200px;font-family:'Manrope',sans-serif;color:#1d1d1f;background:#f5f5f7">
+
+<div style="padding:44px 48px 32px;display:grid;grid-template-columns:1.1fr 1fr;gap:48px;border-bottom:1px solid #e5e5ea">
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1d1d1f">Color · revisión</div>
+<div style="font-size:34px;font-weight:800;letter-spacing:-.025em;line-height:1.1;text-wrap:pretty">Menos color, más contraste. Las cifras mandan.</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;font-size:14px;line-height:1.6;color:#6e6e73;text-wrap:pretty">
+<p style="margin:0">Paleta inspirada en la sobriedad de Apple: casi todo es blanco, gris claro y negro tinta. Un único azul marca la acción principal, el progreso y los enlaces.</p><p style="margin:0">El verde y el rojo quedan solo para subidas y bajadas, así la marca nunca se confunde con «ganancias». El modo oscuro parte del negro puro con superficies grises escalonadas, como en iOS.</p>
+</div>
+</div>
+
+<div style="padding:32px 48px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;border-bottom:1px solid #e5e5ea">
+<div style="background:#ffffff;border:1px solid #e5e5ea;border-radius:8px;height:150px;display:flex;align-items:center;justify-content:center;gap:12px;color:#1d1d1f">
+<svg width="40" height="40" viewBox="0 0 24 24"><path d="M3 21V15H9V9H15V3H21V21Z" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path></svg>
+<div style="display:flex;align-items:center;font-size:32px;font-weight:800;letter-spacing:-.03em;color:#1d1d1f">E<span style="width:8px;height:8px;border-radius:50%;background:#0071e3;margin:8px 3px 0"></span>Trading</div>
+</div>
+<div style="background:#000000;border-radius:8px;height:150px;display:flex;align-items:center;justify-content:center;gap:12px;color:#F5F5F7">
+<svg width="40" height="40" viewBox="0 0 24 24"><path d="M3 21V15H9V9H15V3H21V21Z" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path></svg>
+<div style="display:flex;align-items:center;font-size:32px;font-weight:800;letter-spacing:-.03em;color:#f5f5f7">E<span style="width:8px;height:8px;border-radius:50%;background:#2997ff;margin:8px 3px 0"></span>Trading</div>
+</div>
+<div style="background:#ffffff;border:1px solid #e5e5ea;border-radius:8px;height:150px;display:flex;align-items:center;justify-content:center;gap:28px;color:#1d1d1f">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px"><svg width="40" height="40" viewBox="0 0 24 24"><path d="M3 21V15H9V9H15V3H21V21Z" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path></svg><div style="font-size:18px;font-weight:800;letter-spacing:-.02em">E-Trading</div></div>
+<span style="font-size:11px;font-weight:600;color:#6e6e73">Apilado · monocromo</span>
+</div>
+</div>
+
+<div style="padding:32px 48px;display:grid;grid-template-columns:auto 1fr;gap:48px;border-bottom:1px solid #e5e5ea;align-items:center">
+<div style="display:flex;gap:22px;align-items:flex-end">
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+<div style="width:96px;height:96px;border-radius:22px;background:#FFFFFF;border:1px solid #D2D2D7;box-sizing:border-box;position:relative;overflow:hidden">
+<div style="position:absolute;left:16px;top:16px;width:18px;height:18px;border-radius:50%;background:#0071e3"></div>
+<svg style="position:absolute;right:0;bottom:0" width="78" height="78" viewBox="0 0 24 24"><path d="M2 24V16H9V9.5H16V3H24V24Z" fill="#1d1d1f" stroke="#1d1d1f" stroke-width="1.4" stroke-linejoin="round"></path><path d="M9 24V16H2" fill="none"></path></svg>
+</div>
+<span style="font-size:11px;font-weight:600;color:#6e6e73">iOS · claro</span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+<div style="width:96px;height:96px;border-radius:22px;background:#1d1d1f;position:relative;overflow:hidden">
+<div style="position:absolute;left:16px;top:16px;width:18px;height:18px;border-radius:50%;background:#2997ff"></div>
+<svg style="position:absolute;right:0;bottom:0" width="78" height="78" viewBox="0 0 24 24"><path d="M2 24V16H9V9.5H16V3H24V24Z" fill="#ffffff" stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round"></path></svg>
+</div>
+<span style="font-size:11px;font-weight:600;color:#6e6e73">iOS · oscuro</span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+<div style="width:96px;height:96px;border-radius:50%;background:#FFFFFF;border:1px solid #D2D2D7;box-sizing:border-box;position:relative;overflow:hidden">
+<div style="position:absolute;left:22px;top:22px;width:15px;height:15px;border-radius:50%;background:#0071e3"></div>
+<svg style="position:absolute;right:6px;bottom:6px" width="68" height="68" viewBox="0 0 24 24"><path d="M2 24V16H9V9.5H16V3H24V24Z" fill="#1d1d1f" stroke="#1d1d1f" stroke-width="1.4" stroke-linejoin="round"></path></svg>
+</div>
+<span style="font-size:11px;font-weight:600;color:#6e6e73">Android adaptativo</span>
+</div>
+<div style="display:flex;gap:12px;align-items:flex-end">
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px"><div style="width:32px;height:32px;border-radius:7px;background:#1d1d1f;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M3 21V15H9V9H15V3H21V21Z" fill="#ffffff" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round"></path></svg></div><span style="font-size:11px;font-weight:600;color:#6e6e73">32</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px"><div style="width:16px;height:16px;border-radius:4px;background:#1d1d1f;display:flex;align-items:center;justify-content:center"><svg width="11" height="11" viewBox="0 0 24 24"><path d="M3 21V15H9V9H15V3H21V21Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"></path></svg></div><span style="font-size:11px;font-weight:600;color:#6e6e73">16</span></div>
+</div>
+</div>
+<p style="margin:0;font-size:14px;line-height:1.6;color:#6e6e73;max-width:420px;text-wrap:pretty">El icono de la app no repite el logo. Los bancales salen del borde, como un paisaje, y el punto azul es el único acento de color. En los favicons se usa solo el símbolo, porque los detalles se pierden por debajo de 32 px.</p>
+</div>
+
+<div style="padding:32px 48px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;border-bottom:1px solid #e5e5ea">
+<div style="display:flex;flex-direction:column;gap:18px">
+<div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6e6e73">Color · claro / oscuro</div>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;font-size:11px;line-height:1.4;font-weight:600;font-variant-numeric:tabular-nums"><div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;overflow:hidden;display:grid;grid-template-rows:1fr 1fr;border:1px solid #E5E5EA"><div style="background:#1D1D1F"></div><div style="background:#F5F5F7"></div></div>--text-primary<span style="color:#6E6E73;font-weight:500">Tinta · #1D1D1F / #F5F5F7</span></div><div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;overflow:hidden;display:grid;grid-template-rows:1fr 1fr;border:1px solid #E5E5EA"><div style="background:#0071E3"></div><div style="background:#2997FF"></div></div>--brand<span style="color:#6E6E73;font-weight:500">Azul · #0071E3 / #2997FF</span></div><div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;overflow:hidden;display:grid;grid-template-rows:1fr 1fr;border:1px solid #E5E5EA"><div style="background:#F5F5F7"></div><div style="background:#000000"></div></div>--bg<span style="color:#6E6E73;font-weight:500">Fondo · #F5F5F7 / #000000</span></div><div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;overflow:hidden;display:grid;grid-template-rows:1fr 1fr;border:1px solid #E5E5EA"><div style="background:#248A3D"></div><div style="background:#30D158"></div></div>--up<span style="color:#6E6E73;font-weight:500">Subida · #248A3D / #30D158</span></div><div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;overflow:hidden;display:grid;grid-template-rows:1fr 1fr;border:1px solid #E5E5EA"><div style="background:#D70015"></div><div style="background:#FF453A"></div></div>--down<span style="color:#6E6E73;font-weight:500">Bajada · #D70015 / #FF453A</span></div></div>
+<div style="display:flex;flex-direction:column;gap:6px;font-size:11px;font-weight:600;color:#6e6e73">Neutros · 12 pasos, grises neutros
+<div style="display:grid;grid-template-columns:repeat(12,1fr);height:26px;border-radius:6px;overflow:hidden"><div style="background:#FFFFFF"></div><div style="background:#F5F5F7"></div><div style="background:#E8E8ED"></div><div style="background:#D2D2D7"></div><div style="background:#C7C7CC"></div><div style="background:#AEAEB2"></div><div style="background:#8E8E93"></div><div style="background:#6E6E73"></div><div style="background:#48484A"></div><div style="background:#3A3A3C"></div><div style="background:#1D1D1F"></div><div style="background:#000000"></div></div>
+</div>
+<div style="display:flex;gap:28px;font-size:11px;font-weight:600;color:#6e6e73">
+<div style="display:flex;flex-direction:column;gap:6px">Rarezas<div style="display:flex;gap:6px"><div style="width:24px;height:24px;border-radius:50%;background:#C7C7CC"></div><div style="width:24px;height:24px;border-radius:50%;background:#8E8E93"></div><div style="width:24px;height:24px;border-radius:50%;background:#0071E3"></div><div style="width:24px;height:24px;border-radius:50%;background:#1D1D1F"></div></div></div>
+<div style="display:flex;flex-direction:column;gap:6px">Gráficos (apto daltonismo)<div style="display:flex;gap:6px"><div style="width:24px;height:24px;border-radius:4px;background:#0071E3"></div><div style="width:24px;height:24px;border-radius:4px;background:#1D1D1F"></div><div style="width:24px;height:24px;border-radius:4px;background:#64D2FF"></div><div style="width:24px;height:24px;border-radius:4px;background:#8E8E93"></div><div style="width:24px;height:24px;border-radius:4px;background:#5E5CE6"></div><div style="width:24px;height:24px;border-radius:4px;background:#C7C7CC"></div></div></div>
+</div>
+<p style="margin:0;font-size:13px;line-height:1.55;color:#6e6e73;text-wrap:pretty">Un solo color de acción y ningún verde de marca. Toda variación lleva ▲▼ y signo, así que nunca dependen solo del color.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6e6e73">Tipografía · Manrope</div>
+<div style="display:flex;flex-direction:column;gap:12px;font-variant-numeric:tabular-nums">
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-size:40px;font-weight:800;letter-spacing:-.035em;line-height:1">10.482,35 €</span><span style="font-size:11px;font-weight:600;color:#6e6e73">Cifra grande 40/44 · 800</span></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-size:28px;font-weight:700;letter-spacing:-.025em;line-height:1.2">Practica hoy. Invierte mañana.</span><span style="font-size:11px;font-weight:600;color:#6e6e73;white-space:nowrap">Title 1 28/34 · 700</span></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-size:17px;font-weight:700;line-height:1.3">Tu siguiente clase</span><span style="font-size:11px;font-weight:600;color:#6e6e73">Headline 17/22 · 700</span></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-size:15px;line-height:1.5;color:#3a3a3c">Diversificar es repartir tu dinero para que una caída no lo arrastre todo.</span><span style="font-size:11px;font-weight:600;color:#6e6e73;white-space:nowrap">Body 15/22 · 400</span></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-size:13px;font-weight:600;color:#248a3d">▲ +0,22 % · 333,63 $ · ≈ 296,05 €</span><span style="font-size:11px;font-weight:600;color:#6e6e73">Footnote 13/18 · 600</span></div>
+</div>
+<p style="margin:0;font-size:13px;line-height:1.55;color:#6e6e73;text-wrap:pretty">Una sola familia variable. Las cifras usan <i>tabular-nums</i>, así los precios no bailan al actualizarse y siguen leyéndose como texto, no como código.</p>
+</div>
+</div>
+
+<div style="padding:36px 48px 44px;display:flex;gap:28px;justify-content:center;align-items:flex-start">
+
+<div style="width:360px;background:#f5f5f7;border:1px solid #e5e5ea;border-radius:28px;overflow:hidden;font-variant-numeric:tabular-nums;box-shadow:0 1px 2px rgba(0,0,0,.06)">
+<div style="padding:22px 20px 8px;display:flex;justify-content:space-between;align-items:center">
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;color:#6e6e73">Buenos días</span><span style="font-size:24px;font-weight:800;letter-spacing:-.02em">Hola, Laura</span></div>
+<span style="font-size:11px;font-weight:700;color:#0071e3;background:#e8f1fc;padding:5px 9px;border-radius:999px">Pro · quedan 4 días</span>
+</div>
+<div style="padding:12px 16px;display:flex;flex-direction:column;gap:12px">
+<div style="background:#1d1d1f;border-radius:18px;padding:18px;color:#f5f5f7;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;font-weight:600;color:#a1a1a6">Nivel 2</span><span style="font-size:20px;font-weight:800;letter-spacing:-.01em">Aficionada</span></div>
+<span style="font-size:20px;font-weight:800;color:#2997ff">860 XP</span>
+</div>
+<div style="height:8px;background:#3a3a3c;border-radius:999px"><div style="width:72%;height:8px;background:#2997ff;border-radius:999px"></div></div>
+<div style="display:flex;justify-content:space-between;align-items:center">
+<span style="font-size:12px;font-weight:600;color:#a1a1a6">Racha de 6 días</span>
+<div style="display:flex;gap:5px;font-size:10px;font-weight:700">
+<span style="width:22px;height:22px;border-radius:50%;background:#2997ff;color:#1d1d1f;display:flex;align-items:center;justify-content:center">L</span><span style="width:22px;height:22px;border-radius:50%;background:#2997ff;color:#1d1d1f;display:flex;align-items:center;justify-content:center">M</span><span style="width:22px;height:22px;border-radius:50%;background:#2997ff;color:#1d1d1f;display:flex;align-items:center;justify-content:center">X</span><span style="width:22px;height:22px;border-radius:50%;background:#2997ff;color:#1d1d1f;display:flex;align-items:center;justify-content:center">J</span><span style="width:22px;height:22px;border-radius:50%;background:#2997ff;color:#1d1d1f;display:flex;align-items:center;justify-content:center">V</span><span style="width:22px;height:22px;border-radius:50%;background:#2997ff;color:#1d1d1f;display:flex;align-items:center;justify-content:center">S</span><span style="width:22px;height:22px;border-radius:50%;border:1.5px dashed #636366;color:#a1a1a6;display:flex;align-items:center;justify-content:center;box-sizing:border-box">D</span>
+</div>
+</div>
+</div>
+<div style="background:#ffffff;border:1px solid #e5e5ea;border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:4px">
+<span style="font-size:12px;font-weight:600;color:#6e6e73">Valor del portafolio</span>
+<span style="font-size:30px;font-weight:800;letter-spacing:-.03em">10.482,35 €</span>
+<span style="font-size:13px;font-weight:700;color:#248a3d">▲ +38,10 € hoy · ▲ +4,82 % total</span>
+<svg style="margin-top:8px" width="100%" height="64" viewBox="0 0 300 80" preserveAspectRatio="none"><path d="M0 60 C30 55 45 62 70 48 S120 40 150 34 S210 30 240 18 S290 14 300 10 L300 80 L0 80Z" fill="#248a3d" fill-opacity=".08"></path><path d="M0 60 C30 55 45 62 70 48 S120 40 150 34 S210 30 240 18 S290 14 300 10" fill="none" stroke="#248a3d" stroke-width="2"></path></svg>
+<div style="display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:#6e6e73;padding-top:4px"><span>1D</span><span>1S</span><span style="color:#1d1d1f;background:#e8e8ed;padding:2px 8px;border-radius:999px">1M</span><span>3M</span><span>1A</span><span>Todo</span></div>
+</div>
+<div style="background:#ffffff;border:1px solid #e5e5ea;border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:10px">
+<span style="font-size:15px;font-weight:700">Objetivos de hoy</span>
+<div style="display:flex;align-items:center;gap:10px;font-size:14px"><span style="width:20px;height:20px;border-radius:50%;background:#1d1d1f;color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center">✓</span><span style="color:#6e6e73;text-decoration:line-through">Completa una clase</span></div>
+<div style="display:flex;align-items:center;gap:10px;font-size:14px"><span style="width:20px;height:20px;border-radius:50%;border:1.5px solid #c7c7cc;box-sizing:border-box"></span>Haz 2 operaciones<span style="margin-left:auto;font-size:12px;font-weight:700;color:#6e6e73">1/2</span></div>
+<div style="display:flex;align-items:center;gap:10px;font-size:14px"><span style="width:20px;height:20px;border-radius:50%;border:1.5px solid #c7c7cc;box-sizing:border-box"></span>Pregunta a la profesora IA</div>
+</div>
+<div style="background:#e8e8ed;border-radius:18px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center">
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;font-weight:600;color:#0071e3">Liga Analista · zona de ascenso</span><span style="font-size:17px;font-weight:800">4.º de 30</span></div>
+<span style="font-size:13px;font-weight:700;color:#0071e3">4 d 7 h</span>
+</div>
+<div style="font-size:11px;color:#6e6e73;text-align:center;padding:2px 0">Simulación educativa · No es asesoramiento financiero</div>
+</div>
+<div style="border-top:1px solid #e5e5ea;background:#ffffff;padding:10px 12px 18px;display:grid;grid-template-columns:repeat(5,1fr);font-size:11px;font-weight:700;color:#6e6e73;text-align:center">
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#1d1d1f"><span style="width:22px;height:22px;border-radius:7px;background:#1d1d1f"></span>Inicio</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:22px;height:22px;border-radius:7px;border:1.5px solid #aeaeb2;box-sizing:border-box"></span>Mercado</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:22px;height:22px;border-radius:7px;border:1.5px solid #aeaeb2;box-sizing:border-box"></span>Aprender</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:22px;height:22px;border-radius:7px;border:1.5px solid #aeaeb2;box-sizing:border-box"></span>IA</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:22px;height:22px;border-radius:7px;border:1.5px solid #aeaeb2;box-sizing:border-box"></span>Más</div>
+</div>
+</div>
+
+<div style="width:360px;background:#000000;border-radius:28px;overflow:hidden;font-variant-numeric:tabular-nums;color:#f5f5f7">
+<div style="padding:22px 20px 8px;display:flex;justify-content:space-between;align-items:center">
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;color:#98989d">Buenos días</span><span style="font-size:24px;font-weight:800;letter-spacing:-.02em">Hola, Laura</span></div>
+<span style="font-size:11px;font-weight:700;color:#2997ff;background:#0f2a47;padding:5px 9px;border-radius:999px">Pro · quedan 4 días</span>
+</div>
+<div style="padding:12px 16px;display:flex;flex-direction:column;gap:12px">
+<div style="background:#1c1c1e;border:1px solid #2c2c2e;border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;font-weight:600;color:#98989d">Nivel 2</span><span style="font-size:20px;font-weight:800;letter-spacing:-.01em">Aficionada</span></div>
+<span style="font-size:20px;font-weight:800;color:#2997ff">860 XP</span>
+</div>
+<div style="height:8px;background:#2c2c2e;border-radius:999px"><div style="width:72%;height:8px;background:#2997ff;border-radius:999px"></div></div>
+<div style="display:flex;justify-content:space-between;align-items:center">
+<span style="font-size:12px;font-weight:600;color:#98989d">Racha de 6 días</span>
+<div style="display:flex;gap:5px;font-size:10px;font-weight:700">
+<span style="width:22px;height:22px;border-radius:50%;background:#2997ff;color:#000000;display:flex;align-items:center;justify-content:center">L</span><span style="width:22px;height:22px;border-radius:50%;background:#2997ff;color:#000000;display:flex;align-items:center;justify-content:center">M</span><span style="width:22px;height:22px;border-radius:50%;background:#2997ff;color:#000000;display:flex;align-items:center;justify-content:center">X</span><span style="width:22px;height:22px;border-radius:50%;background:#2997ff;color:#000000;display:flex;align-items:center;justify-content:center">J</span><span style="width:22px;height:22px;border-radius:50%;background:#2997ff;color:#000000;display:flex;align-items:center;justify-content:center">V</span><span style="width:22px;height:22px;border-radius:50%;background:#2997ff;color:#000000;display:flex;align-items:center;justify-content:center">S</span><span style="width:22px;height:22px;border-radius:50%;border:1.5px dashed #48484a;color:#98989d;display:flex;align-items:center;justify-content:center;box-sizing:border-box">D</span>
+</div>
+</div>
+</div>
+<div style="background:#1c1c1e;border:1px solid #38383a;border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:4px">
+<span style="font-size:12px;font-weight:600;color:#98989d">Valor del portafolio</span>
+<span style="font-size:30px;font-weight:800;letter-spacing:-.03em">10.482,35 €</span>
+<span style="font-size:13px;font-weight:700;color:#30d158">▲ +38,10 € hoy · ▲ +4,82 % total</span>
+<svg style="margin-top:8px" width="100%" height="64" viewBox="0 0 300 80" preserveAspectRatio="none"><path d="M0 60 C30 55 45 62 70 48 S120 40 150 34 S210 30 240 18 S290 14 300 10 L300 80 L0 80Z" fill="#30d158" fill-opacity=".1"></path><path d="M0 60 C30 55 45 62 70 48 S120 40 150 34 S210 30 240 18 S290 14 300 10" fill="none" stroke="#30d158" stroke-width="2"></path></svg>
+<div style="display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:#8e8e93;padding-top:4px"><span>1D</span><span>1S</span><span style="color:#f5f5f7;background:#2c2c2e;padding:2px 8px;border-radius:999px">1M</span><span>3M</span><span>1A</span><span>Todo</span></div>
+</div>
+<div style="background:#1c1c1e;border:1px solid #38383a;border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:10px">
+<span style="font-size:15px;font-weight:700">Objetivos de hoy</span>
+<div style="display:flex;align-items:center;gap:10px;font-size:14px"><span style="width:20px;height:20px;border-radius:50%;background:#2997ff;color:#000000;font-size:11px;display:flex;align-items:center;justify-content:center">✓</span><span style="color:#98989d;text-decoration:line-through">Completa una clase</span></div>
+<div style="display:flex;align-items:center;gap:10px;font-size:14px"><span style="width:20px;height:20px;border-radius:50%;border:1.5px solid #48484a;box-sizing:border-box"></span>Haz 2 operaciones<span style="margin-left:auto;font-size:12px;font-weight:700;color:#98989d">1/2</span></div>
+<div style="display:flex;align-items:center;gap:10px;font-size:14px"><span style="width:20px;height:20px;border-radius:50%;border:1.5px solid #48484a;box-sizing:border-box"></span>Pregunta a la profesora IA</div>
+</div>
+<div style="background:#1c1c1e;border:1px solid #38383a;border-radius:18px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center">
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;font-weight:600;color:#2997ff">Liga Analista · zona de ascenso</span><span style="font-size:17px;font-weight:800">4.º de 30</span></div>
+<span style="font-size:13px;font-weight:700;color:#2997ff">4 d 7 h</span>
+</div>
+<div style="font-size:11px;color:#8e8e93;text-align:center;padding:2px 0">Simulación educativa · No es asesoramiento financiero</div>
+</div>
+<div style="border-top:1px solid #38383a;background:#161618;padding:10px 12px 18px;display:grid;grid-template-columns:repeat(5,1fr);font-size:11px;font-weight:700;color:#8e8e93;text-align:center">
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#2997ff"><span style="width:22px;height:22px;border-radius:7px;background:#2997ff"></span>Inicio</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:22px;height:22px;border-radius:7px;border:1.5px solid #48484a;box-sizing:border-box"></span>Mercado</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:22px;height:22px;border-radius:7px;border:1.5px solid #48484a;box-sizing:border-box"></span>Aprender</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:22px;height:22px;border-radius:7px;border:1.5px solid #48484a;box-sizing:border-box"></span>IA</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:22px;height:22px;border-radius:7px;border:1.5px solid #48484a;box-sizing:border-box"></span>Más</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<p class="dv-next">Siguiente: «desarrolla el manual de marca y los tokens con <a class="dv-oid" href="#3a">3a</a>» · «diseña Mercado y la ficha de activo con <a class="dv-oid" href="#3a">3a</a>» · «prueba el icono en negro en ambos modos»</p>
+</section>
+<section class="dv-turn" id="t2">
+<div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">Versión definitiva · símbolo de <a class="dv-oid" href="#1a">1a</a>, paleta de <a class="dv-oid" href="#1a">1a</a> + <a class="dv-oid" href="#1c">1c</a> en tintes naturales</span></div>
+<div class="dv-opts">
+<div class="dv-opt" id="2a">
+<div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a>Bancal · verde bosque + añil + ocre sobre papel · Manrope con cifras tabulares</div>
+<div class="dv-card" style="width:1200px;font-family:'Manrope',sans-serif;color:#1c2420;background:#f6f3ec">
+
+<div style="padding:44px 48px 32px;display:grid;grid-template-columns:1.1fr 1fr;gap:48px;border-bottom:1px solid #e2dbcd">
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1f5a45">Estilo · Bancal</div>
+<div style="font-size:34px;font-weight:800;letter-spacing:-.025em;line-height:1.1;text-wrap:pretty">Crecer como se cultiva un bancal: escalón a escalón, con paciencia.</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;font-size:14px;line-height:1.6;color:#59625b;text-wrap:pretty">
+<p style="margin:0">El símbolo de <a href="#1a" style="color:#1f5a45">1a</a> se suaviza con esquinas redondeadas y pasa a leerse como terrazas de cultivo. Es crecimiento ganado con constancia, no un gráfico de especulación.</p>
+<p style="margin:0">Los colores salen de tintes naturales. El verde bosque es la marca y el añil se usa para el aprendizaje y la IA. El ocre marca el XP y la racha, y el fondo es color papel. Las cifras pasan de la fuente monoespaciada a Manrope con números tabulares, para que todo el sistema use la misma letra.</p>
+</div>
+</div>
+
+<div style="padding:32px 48px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;border-bottom:1px solid #e2dbcd">
+<div style="background:#fffdf8;border:1px solid #e2dbcd;border-radius:8px;height:150px;display:flex;align-items:center;justify-content:center;gap:12px;color:#1f5a45">
+<svg width="40" height="40" viewBox="0 0 24 24"><path d="M3 21V15H9V9H15V3H21V21Z" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path></svg>
+<div style="display:flex;align-items:center;font-size:32px;font-weight:800;letter-spacing:-.03em;color:#1c2420">E<span style="width:8px;height:8px;border-radius:50%;background:#b07a2a;margin:8px 3px 0"></span>Trading</div>
+</div>
+<div style="background:#111613;border-radius:8px;height:150px;display:flex;align-items:center;justify-content:center;gap:12px;color:#5fb592">
+<svg width="40" height="40" viewBox="0 0 24 24"><path d="M3 21V15H9V9H15V3H21V21Z" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path></svg>
+<div style="display:flex;align-items:center;font-size:32px;font-weight:800;letter-spacing:-.03em;color:#eef0ea">E<span style="width:8px;height:8px;border-radius:50%;background:#d9a653;margin:8px 3px 0"></span>Trading</div>
+</div>
+<div style="background:#fffdf8;border:1px solid #e2dbcd;border-radius:8px;height:150px;display:flex;align-items:center;justify-content:center;gap:28px;color:#1c2420">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px"><svg width="40" height="40" viewBox="0 0 24 24"><path d="M3 21V15H9V9H15V3H21V21Z" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path></svg><div style="font-size:18px;font-weight:800;letter-spacing:-.02em">E-Trading</div></div>
+<span style="font-size:11px;font-weight:600;color:#6e756d">Apilado · monocromo</span>
+</div>
+</div>
+
+<div style="padding:32px 48px;display:grid;grid-template-columns:auto 1fr;gap:48px;border-bottom:1px solid #e2dbcd;align-items:center">
+<div style="display:flex;gap:22px;align-items:flex-end">
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+<div style="width:96px;height:96px;border-radius:22px;background:#efe6d3;position:relative;overflow:hidden">
+<div style="position:absolute;left:16px;top:16px;width:18px;height:18px;border-radius:50%;background:#343f86"></div>
+<svg style="position:absolute;right:0;bottom:0" width="78" height="78" viewBox="0 0 24 24"><path d="M2 24V16H9V9.5H16V3H24V24Z" fill="#1f5a45" stroke="#1f5a45" stroke-width="1.4" stroke-linejoin="round"></path><path d="M9 24V16H2" fill="none"></path></svg>
+</div>
+<span style="font-size:11px;font-weight:600;color:#6e756d">iOS · claro</span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+<div style="width:96px;height:96px;border-radius:22px;background:#1f5a45;position:relative;overflow:hidden">
+<div style="position:absolute;left:16px;top:16px;width:18px;height:18px;border-radius:50%;background:#d9a653"></div>
+<svg style="position:absolute;right:0;bottom:0" width="78" height="78" viewBox="0 0 24 24"><path d="M2 24V16H9V9.5H16V3H24V24Z" fill="#efe6d3" stroke="#efe6d3" stroke-width="1.4" stroke-linejoin="round"></path></svg>
+</div>
+<span style="font-size:11px;font-weight:600;color:#6e756d">iOS · oscuro</span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+<div style="width:96px;height:96px;border-radius:50%;background:#efe6d3;position:relative;overflow:hidden">
+<div style="position:absolute;left:22px;top:22px;width:15px;height:15px;border-radius:50%;background:#343f86"></div>
+<svg style="position:absolute;right:6px;bottom:6px" width="68" height="68" viewBox="0 0 24 24"><path d="M2 24V16H9V9.5H16V3H24V24Z" fill="#1f5a45" stroke="#1f5a45" stroke-width="1.4" stroke-linejoin="round"></path></svg>
+</div>
+<span style="font-size:11px;font-weight:600;color:#6e756d">Android adaptativo</span>
+</div>
+<div style="display:flex;gap:12px;align-items:flex-end">
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px"><div style="width:32px;height:32px;border-radius:7px;background:#1f5a45;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M3 21V15H9V9H15V3H21V21Z" fill="#efe6d3" stroke="#efe6d3" stroke-width="1.8" stroke-linejoin="round"></path></svg></div><span style="font-size:11px;font-weight:600;color:#6e756d">32</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px"><div style="width:16px;height:16px;border-radius:4px;background:#1f5a45;display:flex;align-items:center;justify-content:center"><svg width="11" height="11" viewBox="0 0 24 24"><path d="M3 21V15H9V9H15V3H21V21Z" fill="#efe6d3" stroke="#efe6d3" stroke-width="2" stroke-linejoin="round"></path></svg></div><span style="font-size:11px;font-weight:600;color:#6e756d">16</span></div>
+</div>
+</div>
+<p style="margin:0;font-size:14px;line-height:1.6;color:#59625b;max-width:420px;text-wrap:pretty">El icono de la app no repite el logo. Los bancales salen del borde, como un paisaje, y el sol añil (u ocre en oscuro) añade calma y un punto de luz. En los favicons se usa solo el símbolo, porque los detalles se pierden por debajo de 32 px.</p>
+</div>
+
+<div style="padding:32px 48px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;border-bottom:1px solid #e2dbcd">
+<div style="display:flex;flex-direction:column;gap:18px">
+<div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#59625b">Color · claro / oscuro</div>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;font-size:11px;line-height:1.4;font-weight:600;font-variant-numeric:tabular-nums">
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;overflow:hidden;display:grid;grid-template-rows:1fr 1fr"><div style="background:#1f5a45"></div><div style="background:#5fb592"></div></div>--brand<span style="color:#6e756d;font-weight:500">Bosque · #1F5A45 / #5FB592</span></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;overflow:hidden;display:grid;grid-template-rows:1fr 1fr"><div style="background:#343f86"></div><div style="background:#9aa3e8"></div></div>--info<span style="color:#6e756d;font-weight:500">Añil · #343F86 / #9AA3E8</span></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;overflow:hidden;display:grid;grid-template-rows:1fr 1fr"><div style="background:#b07a2a"></div><div style="background:#d9a653"></div></div>--accent<span style="color:#6e756d;font-weight:500">Ocre · #B07A2A / #D9A653</span></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;overflow:hidden;display:grid;grid-template-rows:1fr 1fr"><div style="background:#4f7f1e"></div><div style="background:#9bcb5f"></div></div>--up<span style="color:#6e756d;font-weight:500">Hoja · #4F7F1E / #9BCB5F</span></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;overflow:hidden;display:grid;grid-template-rows:1fr 1fr"><div style="background:#b2442f"></div><div style="background:#e77a63"></div></div>--down<span style="color:#6e756d;font-weight:500">Arcilla · #B2442F / #E77A63</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;font-size:11px;font-weight:600;color:#6e756d">Neutros · 12 pasos, tinte cálido de papel
+<div style="display:grid;grid-template-columns:repeat(12,1fr);height:26px;border-radius:6px;overflow:hidden"><div style="background:oklch(.99 .008 85)"></div><div style="background:oklch(.966 .011 85)"></div><div style="background:oklch(.935 .014 85)"></div><div style="background:oklch(.9 .016 85)"></div><div style="background:oklch(.86 .017 85)"></div><div style="background:oklch(.8 .017 90)"></div><div style="background:oklch(.71 .016 100)"></div><div style="background:oklch(.6 .014 120)"></div><div style="background:oklch(.49 .013 140)"></div><div style="background:oklch(.37 .012 150)"></div><div style="background:oklch(.25 .011 155)"></div><div style="background:oklch(.17 .01 155)"></div></div>
+</div>
+<div style="display:flex;gap:28px;font-size:11px;font-weight:600;color:#6e756d">
+<div style="display:flex;flex-direction:column;gap:6px">Rarezas<div style="display:flex;gap:6px"><div style="width:24px;height:24px;border-radius:50%;background:#8f9488"></div><div style="width:24px;height:24px;border-radius:50%;background:#3d6f8f"></div><div style="width:24px;height:24px;border-radius:50%;background:#343f86"></div><div style="width:24px;height:24px;border-radius:50%;background:#b07a2a"></div></div></div>
+<div style="display:flex;flex-direction:column;gap:6px">Gráficos (apto daltonismo)<div style="display:flex;gap:6px"><div style="width:24px;height:24px;border-radius:4px;background:#1f5a45"></div><div style="width:24px;height:24px;border-radius:4px;background:#343f86"></div><div style="width:24px;height:24px;border-radius:4px;background:#d9a653"></div><div style="width:24px;height:24px;border-radius:4px;background:#8fb8c9"></div><div style="width:24px;height:24px;border-radius:4px;background:#a15a7a"></div><div style="width:24px;height:24px;border-radius:4px;background:#c7bfae"></div></div></div>
+</div>
+<p style="margin:0;font-size:13px;line-height:1.55;color:#59625b;text-wrap:pretty">La marca tira a azul y la subida es un verde hoja amarillento. Además, toda variación lleva ▲▼ y signo, así que nunca dependen solo del color.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#59625b">Tipografía · Manrope</div>
+<div style="display:flex;flex-direction:column;gap:12px;font-variant-numeric:tabular-nums">
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-size:40px;font-weight:800;letter-spacing:-.035em;line-height:1">10.482,35 €</span><span style="font-size:11px;font-weight:600;color:#6e756d">Cifra grande 40/44 · 800</span></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-size:28px;font-weight:700;letter-spacing:-.025em;line-height:1.2">Practica hoy. Invierte mañana.</span><span style="font-size:11px;font-weight:600;color:#6e756d;white-space:nowrap">Title 1 28/34 · 700</span></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-size:17px;font-weight:700;line-height:1.3">Tu siguiente clase</span><span style="font-size:11px;font-weight:600;color:#6e756d">Headline 17/22 · 700</span></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-size:15px;line-height:1.5;color:#3b443e">Diversificar es repartir tu dinero para que una caída no lo arrastre todo.</span><span style="font-size:11px;font-weight:600;color:#6e756d;white-space:nowrap">Body 15/22 · 400</span></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-size:13px;font-weight:600;color:#4f7f1e">▲ +0,22 % · 333,63 $ · ≈ 296,05 €</span><span style="font-size:11px;font-weight:600;color:#6e756d">Footnote 13/18 · 600</span></div>
+</div>
+<p style="margin:0;font-size:13px;line-height:1.55;color:#59625b;text-wrap:pretty">Una sola familia variable. Las cifras usan <i>tabular-nums</i>, así los precios no bailan al actualizarse y siguen leyéndose como texto, no como código.</p>
+</div>
+</div>
+
+<div style="padding:36px 48px 44px;display:flex;gap:28px;justify-content:center;align-items:flex-start">
+
+<div style="width:360px;background:#f6f3ec;border:1px solid #e2dbcd;border-radius:28px;overflow:hidden;font-variant-numeric:tabular-nums;box-shadow:0 1px 2px rgba(60,50,30,.06)">
+<div style="padding:22px 20px 8px;display:flex;justify-content:space-between;align-items:center">
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;color:#59625b">Buenos días</span><span style="font-size:24px;font-weight:800;letter-spacing:-.02em">Hola, Laura</span></div>
+<span style="font-size:11px;font-weight:700;color:#343f86;background:#e4e4f0;padding:5px 9px;border-radius:999px">Pro · quedan 4 días</span>
+</div>
+<div style="padding:12px 16px;display:flex;flex-direction:column;gap:12px">
+<div style="background:#1f5a45;border-radius:18px;padding:18px;color:#f6f3ec;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;font-weight:600;color:#c9dcd2">Nivel 2</span><span style="font-size:20px;font-weight:800;letter-spacing:-.01em">Aficionada</span></div>
+<span style="font-size:20px;font-weight:800;color:#e9c079">860 XP</span>
+</div>
+<div style="height:8px;background:#2f6d57;border-radius:999px"><div style="width:72%;height:8px;background:#e9c079;border-radius:999px"></div></div>
+<div style="display:flex;justify-content:space-between;align-items:center">
+<span style="font-size:12px;font-weight:600;color:#c9dcd2">Racha de 6 días</span>
+<div style="display:flex;gap:5px;font-size:10px;font-weight:700">
+<span style="width:22px;height:22px;border-radius:50%;background:#e9c079;color:#1f5a45;display:flex;align-items:center;justify-content:center">L</span><span style="width:22px;height:22px;border-radius:50%;background:#e9c079;color:#1f5a45;display:flex;align-items:center;justify-content:center">M</span><span style="width:22px;height:22px;border-radius:50%;background:#e9c079;color:#1f5a45;display:flex;align-items:center;justify-content:center">X</span><span style="width:22px;height:22px;border-radius:50%;background:#e9c079;color:#1f5a45;display:flex;align-items:center;justify-content:center">J</span><span style="width:22px;height:22px;border-radius:50%;background:#e9c079;color:#1f5a45;display:flex;align-items:center;justify-content:center">V</span><span style="width:22px;height:22px;border-radius:50%;background:#e9c079;color:#1f5a45;display:flex;align-items:center;justify-content:center">S</span><span style="width:22px;height:22px;border-radius:50%;border:1.5px dashed #6f9a87;color:#c9dcd2;display:flex;align-items:center;justify-content:center;box-sizing:border-box">D</span>
+</div>
+</div>
+</div>
+<div style="background:#fffdf8;border:1px solid #e2dbcd;border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:4px">
+<span style="font-size:12px;font-weight:600;color:#59625b">Valor del portafolio</span>
+<span style="font-size:30px;font-weight:800;letter-spacing:-.03em">10.482,35 €</span>
+<span style="font-size:13px;font-weight:700;color:#4f7f1e">▲ +38,10 € hoy · ▲ +4,82 % total</span>
+<svg style="margin-top:8px" width="100%" height="64" viewBox="0 0 300 80" preserveAspectRatio="none"><path d="M0 60 C30 55 45 62 70 48 S120 40 150 34 S210 30 240 18 S290 14 300 10 L300 80 L0 80Z" fill="#4f7f1e" fill-opacity=".08"></path><path d="M0 60 C30 55 45 62 70 48 S120 40 150 34 S210 30 240 18 S290 14 300 10" fill="none" stroke="#4f7f1e" stroke-width="2"></path></svg>
+<div style="display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:#6e756d;padding-top:4px"><span>1D</span><span>1S</span><span style="color:#1c2420;background:#efeae0;padding:2px 8px;border-radius:999px">1M</span><span>3M</span><span>1A</span><span>Todo</span></div>
+</div>
+<div style="background:#fffdf8;border:1px solid #e2dbcd;border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:10px">
+<span style="font-size:15px;font-weight:700">Objetivos de hoy</span>
+<div style="display:flex;align-items:center;gap:10px;font-size:14px"><span style="width:20px;height:20px;border-radius:50%;background:#1f5a45;color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center">✓</span><span style="color:#59625b;text-decoration:line-through">Completa una clase</span></div>
+<div style="display:flex;align-items:center;gap:10px;font-size:14px"><span style="width:20px;height:20px;border-radius:50%;border:1.5px solid #c7bfae;box-sizing:border-box"></span>Haz 2 operaciones<span style="margin-left:auto;font-size:12px;font-weight:700;color:#6e756d">1/2</span></div>
+<div style="display:flex;align-items:center;gap:10px;font-size:14px"><span style="width:20px;height:20px;border-radius:50%;border:1.5px solid #c7bfae;box-sizing:border-box"></span>Pregunta a la profesora IA</div>
+</div>
+<div style="background:#e9e9f3;border-radius:18px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center">
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;font-weight:600;color:#343f86">Liga Analista · zona de ascenso</span><span style="font-size:17px;font-weight:800">4.º de 30</span></div>
+<span style="font-size:13px;font-weight:700;color:#343f86">4 d 7 h</span>
+</div>
+<div style="font-size:11px;color:#6e756d;text-align:center;padding:2px 0">Simulación educativa · No es asesoramiento financiero</div>
+</div>
+<div style="border-top:1px solid #e2dbcd;background:#fffdf8;padding:10px 12px 18px;display:grid;grid-template-columns:repeat(5,1fr);font-size:11px;font-weight:700;color:#6e756d;text-align:center">
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#1f5a45"><span style="width:22px;height:22px;border-radius:7px;background:#1f5a45"></span>Inicio</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:22px;height:22px;border-radius:7px;border:1.5px solid #a7a395;box-sizing:border-box"></span>Mercado</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:22px;height:22px;border-radius:7px;border:1.5px solid #a7a395;box-sizing:border-box"></span>Aprender</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:22px;height:22px;border-radius:7px;border:1.5px solid #a7a395;box-sizing:border-box"></span>IA</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:22px;height:22px;border-radius:7px;border:1.5px solid #a7a395;box-sizing:border-box"></span>Más</div>
+</div>
+</div>
+
+<div style="width:360px;background:#111613;border-radius:28px;overflow:hidden;font-variant-numeric:tabular-nums;color:#eef0ea">
+<div style="padding:22px 20px 8px;display:flex;justify-content:space-between;align-items:center">
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;color:#a7afa6">Buenos días</span><span style="font-size:24px;font-weight:800;letter-spacing:-.02em">Hola, Laura</span></div>
+<span style="font-size:11px;font-weight:700;color:#c3c8f3;background:#252a4a;padding:5px 9px;border-radius:999px">Pro · quedan 4 días</span>
+</div>
+<div style="padding:12px 16px;display:flex;flex-direction:column;gap:12px">
+<div style="background:#182c24;border:1px solid #24402f;border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;font-weight:600;color:#8fbfa8">Nivel 2</span><span style="font-size:20px;font-weight:800;letter-spacing:-.01em">Aficionada</span></div>
+<span style="font-size:20px;font-weight:800;color:#d9a653">860 XP</span>
+</div>
+<div style="height:8px;background:#24402f;border-radius:999px"><div style="width:72%;height:8px;background:#d9a653;border-radius:999px"></div></div>
+<div style="display:flex;justify-content:space-between;align-items:center">
+<span style="font-size:12px;font-weight:600;color:#8fbfa8">Racha de 6 días</span>
+<div style="display:flex;gap:5px;font-size:10px;font-weight:700">
+<span style="width:22px;height:22px;border-radius:50%;background:#d9a653;color:#111613;display:flex;align-items:center;justify-content:center">L</span><span style="width:22px;height:22px;border-radius:50%;background:#d9a653;color:#111613;display:flex;align-items:center;justify-content:center">M</span><span style="width:22px;height:22px;border-radius:50%;background:#d9a653;color:#111613;display:flex;align-items:center;justify-content:center">X</span><span style="width:22px;height:22px;border-radius:50%;background:#d9a653;color:#111613;display:flex;align-items:center;justify-content:center">J</span><span style="width:22px;height:22px;border-radius:50%;background:#d9a653;color:#111613;display:flex;align-items:center;justify-content:center">V</span><span style="width:22px;height:22px;border-radius:50%;background:#d9a653;color:#111613;display:flex;align-items:center;justify-content:center">S</span><span style="width:22px;height:22px;border-radius:50%;border:1.5px dashed #4d6b5c;color:#8fbfa8;display:flex;align-items:center;justify-content:center;box-sizing:border-box">D</span>
+</div>
+</div>
+</div>
+<div style="background:#181e1a;border:1px solid #2c342e;border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:4px">
+<span style="font-size:12px;font-weight:600;color:#a7afa6">Valor del portafolio</span>
+<span style="font-size:30px;font-weight:800;letter-spacing:-.03em">10.482,35 €</span>
+<span style="font-size:13px;font-weight:700;color:#9bcb5f">▲ +38,10 € hoy · ▲ +4,82 % total</span>
+<svg style="margin-top:8px" width="100%" height="64" viewBox="0 0 300 80" preserveAspectRatio="none"><path d="M0 60 C30 55 45 62 70 48 S120 40 150 34 S210 30 240 18 S290 14 300 10 L300 80 L0 80Z" fill="#9bcb5f" fill-opacity=".1"></path><path d="M0 60 C30 55 45 62 70 48 S120 40 150 34 S210 30 240 18 S290 14 300 10" fill="none" stroke="#9bcb5f" stroke-width="2"></path></svg>
+<div style="display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:#8a9389;padding-top:4px"><span>1D</span><span>1S</span><span style="color:#eef0ea;background:#2a312b;padding:2px 8px;border-radius:999px">1M</span><span>3M</span><span>1A</span><span>Todo</span></div>
+</div>
+<div style="background:#181e1a;border:1px solid #2c342e;border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:10px">
+<span style="font-size:15px;font-weight:700">Objetivos de hoy</span>
+<div style="display:flex;align-items:center;gap:10px;font-size:14px"><span style="width:20px;height:20px;border-radius:50%;background:#5fb592;color:#0d1a14;font-size:11px;display:flex;align-items:center;justify-content:center">✓</span><span style="color:#a7afa6;text-decoration:line-through">Completa una clase</span></div>
+<div style="display:flex;align-items:center;gap:10px;font-size:14px"><span style="width:20px;height:20px;border-radius:50%;border:1.5px solid #4a544b;box-sizing:border-box"></span>Haz 2 operaciones<span style="margin-left:auto;font-size:12px;font-weight:700;color:#a7afa6">1/2</span></div>
+<div style="display:flex;align-items:center;gap:10px;font-size:14px"><span style="width:20px;height:20px;border-radius:50%;border:1.5px solid #4a544b;box-sizing:border-box"></span>Pregunta a la profesora IA</div>
+</div>
+<div style="background:#1c1f35;border:1px solid #2b2f50;border-radius:18px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center">
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;font-weight:600;color:#aab1ee">Liga Analista · zona de ascenso</span><span style="font-size:17px;font-weight:800">4.º de 30</span></div>
+<span style="font-size:13px;font-weight:700;color:#aab1ee">4 d 7 h</span>
+</div>
+<div style="font-size:11px;color:#8a9389;text-align:center;padding:2px 0">Simulación educativa · No es asesoramiento financiero</div>
+</div>
+<div style="border-top:1px solid #2c342e;background:#151a17;padding:10px 12px 18px;display:grid;grid-template-columns:repeat(5,1fr);font-size:11px;font-weight:700;color:#8a9389;text-align:center">
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#5fb592"><span style="width:22px;height:22px;border-radius:7px;background:#5fb592"></span>Inicio</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:22px;height:22px;border-radius:7px;border:1.5px solid #4a544b;box-sizing:border-box"></span>Mercado</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:22px;height:22px;border-radius:7px;border:1.5px solid #4a544b;box-sizing:border-box"></span>Aprender</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:22px;height:22px;border-radius:7px;border:1.5px solid #4a544b;box-sizing:border-box"></span>IA</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:22px;height:22px;border-radius:7px;border:1.5px solid #4a544b;box-sizing:border-box"></span>Más</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<p class="dv-next">Siguiente: «desarrolla el manual de marca y los tokens a partir de <a class="dv-oid" href="#2a">2a</a>» · «prueba el icono con un sol ocre también en claro» · «diseña Mercado y la ficha de activo con <a class="dv-oid" href="#2a">2a</a>»</p>
+</section>
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Tres direcciones de identidad · nombre E-Trading elevado</span></div>
+<p style="margin:0 0 24px;max-width:760px;font:13px/1.55 system-ui,sans-serif;color:rgba(0,0,0,.6);text-wrap:pretty">Supuestos: se mantiene el nombre, radios pequeños (2–6 px), verde y rojo reservados para subidas y bajadas, gamificación protagonista en Inicio. Cada dirección incluye símbolo, logotipo, icono de app, paleta, tipografía y una muestra de Inicio en claro y oscuro con los datos de Laura.</p>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Escalón · esmeralda profundo · Manrope + JetBrains Mono</div>
+<div class="dv-card" style="width:940px;font-family:'Manrope',sans-serif;color:#14201c">
+<div style="padding:32px 36px 24px;display:flex;flex-direction:column;gap:6px;border-bottom:1px solid #e3e8e5">
+<div style="font:600 11px/1 'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#0b5d4b">Concepto 1a · Escalón</div>
+<div style="font-size:26px;font-weight:800;letter-spacing:-.02em">Se aprende peldaño a peldaño</div>
+<p style="margin:0;max-width:640px;font-size:14px;line-height:1.55;color:#4a5a54;text-wrap:pretty">Una escalera maciza de tres peldaños: progreso gradual y una base sólida. El esmeralda profundo se lee como solvencia, no como «ganancia», porque las subidas usan un verde más claro y amarillento.</p>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr auto;gap:16px;padding:24px 36px">
+<div style="background:#f6f8f7;border:1px solid #e3e8e5;border-radius:6px;height:120px;display:flex;align-items:center;justify-content:center;gap:12px;color:#0b5d4b">
+<svg width="36" height="36" viewBox="0 0 24 24"><path d="M3 21V15H9V9H15V3H21V21Z" fill="currentColor"></path></svg>
+<div style="display:flex;align-items:center;gap:3px;font-size:30px;font-weight:800;letter-spacing:-.03em;color:#14201c">E<span style="width:7px;height:7px;background:#0b5d4b;margin:6px 2px 0"></span>Trading</div>
+</div>
+<div style="background:#0c1412;border-radius:6px;height:120px;display:flex;align-items:center;justify-content:center;gap:12px;color:#3fbf98">
+<svg width="36" height="36" viewBox="0 0 24 24"><path d="M3 21V15H9V9H15V3H21V21Z" fill="currentColor"></path></svg>
+<div style="display:flex;align-items:center;gap:3px;font-size:30px;font-weight:800;letter-spacing:-.03em;color:#eef3f1">E<span style="width:7px;height:7px;background:#3fbf98;margin:6px 2px 0"></span>Trading</div>
+</div>
+<div style="display:flex;align-items:flex-end;gap:14px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:72px;height:72px;border-radius:16px;background:#0b5d4b;display:flex;align-items:center;justify-content:center;color:#fff"><svg width="38" height="38" viewBox="0 0 24 24"><path d="M3 21V15H9V9H15V3H21V21Z" fill="currentColor"></path></svg></div><span style="font:500 10px 'JetBrains Mono',monospace;color:#6b7a74">iOS</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:32px;height:32px;border-radius:5px;background:#0b5d4b;display:flex;align-items:center;justify-content:center;color:#fff"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M3 21V15H9V9H15V3H21V21Z" fill="currentColor"></path></svg></div><span style="font:500 10px 'JetBrains Mono',monospace;color:#6b7a74">32</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:16px;height:16px;border-radius:3px;background:#0b5d4b;display:flex;align-items:center;justify-content:center;color:#fff"><svg width="11" height="11" viewBox="0 0 24 24"><path d="M3 21V15H9V9H15V3H21V21Z" fill="currentColor"></path></svg></div><span style="font:500 10px 'JetBrains Mono',monospace;color:#6b7a74">16</span></div>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:4px 36px 28px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;font:500 10px/1.3 'JetBrains Mono',monospace">
+<div style="display:flex;flex-direction:column;gap:5px"><div style="height:52px;border-radius:4px;background:#0b5d4b"></div>--brand<br>#0B5D4B</div>
+<div style="display:flex;flex-direction:column;gap:5px"><div style="height:52px;border-radius:4px;background:#b8862f"></div>--accent<br>#B8862F</div>
+<div style="display:flex;flex-direction:column;gap:5px"><div style="height:52px;border-radius:4px;background:#2f8f3a"></div>--up<br>#2F8F3A</div>
+<div style="display:flex;flex-direction:column;gap:5px"><div style="height:52px;border-radius:4px;background:#c43d3d"></div>--down<br>#C43D3D</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:5px;font:500 10px 'JetBrains Mono',monospace;color:#6b7a74">Neutros · 12 pasos, tinte verde
+<div style="display:grid;grid-template-columns:repeat(12,1fr);height:22px;border-radius:4px;overflow:hidden"><div style="background:oklch(.99 .006 165)"></div><div style="background:oklch(.97 .007 165)"></div><div style="background:oklch(.94 .008 165)"></div><div style="background:oklch(.91 .009 165)"></div><div style="background:oklch(.87 .01 165)"></div><div style="background:oklch(.81 .011 165)"></div><div style="background:oklch(.72 .012 165)"></div><div style="background:oklch(.61 .013 165)"></div><div style="background:oklch(.5 .013 165)"></div><div style="background:oklch(.38 .013 165)"></div><div style="background:oklch(.26 .012 165)"></div><div style="background:oklch(.17 .01 165)"></div></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:5px;font:500 10px 'JetBrains Mono',monospace;color:#6b7a74">Rarezas · común, rara, épica, legendaria
+<div style="display:flex;gap:6px"><div style="width:22px;height:22px;background:#8a958f;border-radius:3px"></div><div style="width:22px;height:22px;background:#3c6e9e;border-radius:3px"></div><div style="width:22px;height:22px;background:#6d4f9c;border-radius:3px"></div><div style="width:22px;height:22px;background:#b8862f;border-radius:3px"></div></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:1px solid #e3e8e5;padding-top:14px">
+<div style="font:800 34px/1 'Manrope',sans-serif;letter-spacing:-.03em">Aprende a invertir sin arriesgar.</div>
+<div style="font:500 26px/1 'JetBrains Mono',monospace;letter-spacing:-.02em">10.482,35 €</div>
+<div style="font-size:14px;line-height:1.5;color:#4a5a54">Manrope 400–800 para texto y titulares; JetBrains Mono para cifras tabulares.</div>
+</div>
+</div>
+<div style="display:flex;gap:14px">
+<div style="width:220px;background:#f6f8f7;border:1px solid #e3e8e5;border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:15px;font-weight:700">Hola, Laura</span><span style="font:600 10px 'JetBrains Mono',monospace;color:#0b5d4b;background:#e2efea;padding:3px 6px;border-radius:3px">PRO · 4 DÍAS</span></div>
+<div style="background:#fff;border:1px solid #e3e8e5;border-radius:6px;padding:12px;display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:12px;font-weight:700">Nivel 2 · Aficionada</span><span style="font:500 11px 'JetBrains Mono',monospace;color:#b8862f">860 XP</span></div>
+<div style="height:6px;background:#e3e8e5;border-radius:2px"><div style="width:72%;height:6px;background:#b8862f;border-radius:2px"></div></div>
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:11px;color:#4a5a54">Racha · 6 días</span><div style="display:flex;gap:3px"><span style="width:9px;height:9px;background:#0b5d4b"></span><span style="width:9px;height:9px;background:#0b5d4b"></span><span style="width:9px;height:9px;background:#0b5d4b"></span><span style="width:9px;height:9px;background:#0b5d4b"></span><span style="width:9px;height:9px;background:#0b5d4b"></span><span style="width:9px;height:9px;background:#0b5d4b"></span><span style="width:9px;height:9px;border:1px solid #c6d0cc;box-sizing:border-box"></span></div></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:11px;color:#4a5a54">Valor del portafolio</span><span style="font:500 22px 'JetBrains Mono',monospace;letter-spacing:-.02em">10.482,35 €</span><span style="font:500 11px 'JetBrains Mono',monospace;color:#2f8f3a">▲ +38,10 € hoy</span></div>
+<svg width="186" height="30" viewBox="0 0 110 26" preserveAspectRatio="none"><path d="M0 22 L15 18 L30 20 L45 12 L60 14 L75 8 L90 10 L110 4" fill="none" stroke="#2f8f3a" stroke-width="1.5"></path></svg>
+<div style="font-size:11px;color:#4a5a54;border-top:1px solid #e3e8e5;padding-top:8px">Liga Analista · <b style="color:#14201c">4.º de 30</b> · quedan 4 d 7 h</div>
+<div style="font-size:9px;color:#6b7a74">Simulación educativa · No es asesoramiento financiero</div>
+</div>
+<div style="width:220px;background:#0c1412;border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:12px;color:#eef3f1">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:15px;font-weight:700">Hola, Laura</span><span style="font:600 10px 'JetBrains Mono',monospace;color:#3fbf98;background:#14302a;padding:3px 6px;border-radius:3px">PRO · 4 DÍAS</span></div>
+<div style="background:#141e1b;border:1px solid #22302b;border-radius:6px;padding:12px;display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:12px;font-weight:700">Nivel 2 · Aficionada</span><span style="font:500 11px 'JetBrains Mono',monospace;color:#d9a94e">860 XP</span></div>
+<div style="height:6px;background:#22302b;border-radius:2px"><div style="width:72%;height:6px;background:#d9a94e;border-radius:2px"></div></div>
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:11px;color:#9fb0aa">Racha · 6 días</span><div style="display:flex;gap:3px"><span style="width:9px;height:9px;background:#3fbf98"></span><span style="width:9px;height:9px;background:#3fbf98"></span><span style="width:9px;height:9px;background:#3fbf98"></span><span style="width:9px;height:9px;background:#3fbf98"></span><span style="width:9px;height:9px;background:#3fbf98"></span><span style="width:9px;height:9px;background:#3fbf98"></span><span style="width:9px;height:9px;border:1px solid #3a4a44;box-sizing:border-box"></span></div></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:11px;color:#9fb0aa">Valor del portafolio</span><span style="font:500 22px 'JetBrains Mono',monospace;letter-spacing:-.02em">10.482,35 €</span><span style="font:500 11px 'JetBrains Mono',monospace;color:#5fcf6a">▲ +38,10 € hoy</span></div>
+<svg width="186" height="30" viewBox="0 0 110 26" preserveAspectRatio="none"><path d="M0 22 L15 18 L30 20 L45 12 L60 14 L75 8 L90 10 L110 4" fill="none" stroke="#5fcf6a" stroke-width="1.5"></path></svg>
+<div style="font-size:11px;color:#9fb0aa;border-top:1px solid #22302b;padding-top:8px">Liga Analista · <b style="color:#eef3f1">4.º de 30</b> · quedan 4 d 7 h</div>
+<div style="font-size:9px;color:#7f918a">Simulación educativa · No es asesoramiento financiero</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="1b">
+<div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Trazo · azul petróleo · Plus Jakarta Sans + IBM Plex Mono</div>
+<div class="dv-card" style="width:940px;font-family:'Plus Jakarta Sans',sans-serif;color:#13222a">
+<div style="padding:32px 36px 24px;display:flex;flex-direction:column;gap:6px;border-bottom:1px solid #e1e8eb">
+<div style="font:600 11px/1 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#0f4c5c">Concepto 1b · Trazo</div>
+<div style="font-size:26px;font-weight:800;letter-spacing:-.02em">La línea del mercado convertida en camino</div>
+<p style="margin:0;max-width:640px;font-size:14px;line-height:1.55;color:#4b5d66;text-wrap:pretty">Un punto de partida («estás aquí») y una curva que avanza con calma. El petróleo es el color más neutral frente a las subidas y bajadas, y tiene un aire más cálido y humano que el azul bancario.</p>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr auto;gap:16px;padding:24px 36px">
+<div style="background:#f5f8f9;border:1px solid #e1e8eb;border-radius:6px;height:120px;display:flex;align-items:center;justify-content:center;gap:12px;color:#0f4c5c">
+<svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M4 19C10 19 12 6 20.5 5" stroke="currentColor" stroke-width="2.8"></path><circle cx="4.5" cy="19" r="2.6" fill="currentColor"></circle></svg>
+<div style="display:flex;align-items:center;font-size:30px;font-weight:700;letter-spacing:-.025em;color:#13222a">e<span style="width:10px;height:3px;background:#0f4c5c;margin:4px 2px 0;border-radius:2px"></span>trading</div>
+</div>
+<div style="background:#0b1418;border-radius:6px;height:120px;display:flex;align-items:center;justify-content:center;gap:12px;color:#5ab4c4">
+<svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M4 19C10 19 12 6 20.5 5" stroke="currentColor" stroke-width="2.8"></path><circle cx="4.5" cy="19" r="2.6" fill="currentColor"></circle></svg>
+<div style="display:flex;align-items:center;font-size:30px;font-weight:700;letter-spacing:-.025em;color:#eef4f6">e<span style="width:10px;height:3px;background:#5ab4c4;margin:4px 2px 0;border-radius:2px"></span>trading</div>
+</div>
+<div style="display:flex;align-items:flex-end;gap:14px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:72px;height:72px;border-radius:16px;background:#0f4c5c;display:flex;align-items:center;justify-content:center;color:#fff"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M4 19C10 19 12 6 20.5 5" stroke="currentColor" stroke-width="2.8"></path><circle cx="4.5" cy="19" r="2.6" fill="currentColor"></circle></svg></div><span style="font:500 10px 'IBM Plex Mono',monospace;color:#6b7c84">iOS</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:32px;height:32px;border-radius:5px;background:#0f4c5c;display:flex;align-items:center;justify-content:center;color:#fff"><svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M4 19C10 19 12 6 20.5 5" stroke="currentColor" stroke-width="3.2"></path><circle cx="4.5" cy="19" r="3" fill="currentColor"></circle></svg></div><span style="font:500 10px 'IBM Plex Mono',monospace;color:#6b7c84">32</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:16px;height:16px;border-radius:3px;background:#0f4c5c;display:flex;align-items:center;justify-content:center;color:#fff"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M4 19C10 19 12 6 20.5 5" stroke="currentColor" stroke-width="4"></path><circle cx="4.5" cy="19" r="3.6" fill="currentColor"></circle></svg></div><span style="font:500 10px 'IBM Plex Mono',monospace;color:#6b7c84">16</span></div>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:4px 36px 28px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;font:500 10px/1.3 'IBM Plex Mono',monospace">
+<div style="display:flex;flex-direction:column;gap:5px"><div style="height:52px;border-radius:4px;background:#0f4c5c"></div>--brand<br>#0F4C5C</div>
+<div style="display:flex;flex-direction:column;gap:5px"><div style="height:52px;border-radius:4px;background:#e69a55"></div>--accent<br>#E69A55</div>
+<div style="display:flex;flex-direction:column;gap:5px"><div style="height:52px;border-radius:4px;background:#1f8a4c"></div>--up<br>#1F8A4C</div>
+<div style="display:flex;flex-direction:column;gap:5px"><div style="height:52px;border-radius:4px;background:#c93b3b"></div>--down<br>#C93B3B</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:5px;font:500 10px 'IBM Plex Mono',monospace;color:#6b7c84">Neutros · 12 pasos, tinte azul frío
+<div style="display:grid;grid-template-columns:repeat(12,1fr);height:22px;border-radius:4px;overflow:hidden"><div style="background:oklch(.99 .005 220)"></div><div style="background:oklch(.97 .006 220)"></div><div style="background:oklch(.94 .008 220)"></div><div style="background:oklch(.91 .009 220)"></div><div style="background:oklch(.87 .01 220)"></div><div style="background:oklch(.81 .012 220)"></div><div style="background:oklch(.72 .013 220)"></div><div style="background:oklch(.61 .014 220)"></div><div style="background:oklch(.5 .014 220)"></div><div style="background:oklch(.38 .014 220)"></div><div style="background:oklch(.26 .013 220)"></div><div style="background:oklch(.17 .011 220)"></div></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:5px;font:500 10px 'IBM Plex Mono',monospace;color:#6b7c84">Rarezas · común, rara, épica, legendaria
+<div style="display:flex;gap:6px"><div style="width:22px;height:22px;background:#8c989e;border-radius:3px"></div><div style="width:22px;height:22px;background:#3478a8;border-radius:3px"></div><div style="width:22px;height:22px;background:#7656a6;border-radius:3px"></div><div style="width:22px;height:22px;background:#c98a3a;border-radius:3px"></div></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:1px solid #e1e8eb;padding-top:14px">
+<div style="font:800 34px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:-.03em">Practica hoy. Invierte mañana.</div>
+<div style="font:500 26px/1 'IBM Plex Mono',monospace;letter-spacing:-.02em">10.482,35 €</div>
+<div style="font-size:14px;line-height:1.5;color:#4b5d66">Plus Jakarta Sans, de formas abiertas y cercanas; IBM Plex Mono, técnica pero amable, para cifras.</div>
+</div>
+</div>
+<div style="display:flex;gap:14px">
+<div style="width:220px;background:#f5f8f9;border:1px solid #e1e8eb;border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:15px;font-weight:700">Hola, Laura</span><span style="font:600 10px 'IBM Plex Mono',monospace;color:#0f4c5c;background:#dfedf0;padding:3px 6px;border-radius:3px">PRO · 4 DÍAS</span></div>
+<div style="background:#0f4c5c;border-radius:6px;padding:12px;display:flex;align-items:center;gap:12px;color:#fff">
+<svg width="46" height="46" viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" fill="none" stroke="#2c6a7a" stroke-width="4"></circle><circle cx="18" cy="18" r="15" fill="none" stroke="#e69a55" stroke-width="4" stroke-dasharray="68 95" transform="rotate(-90 18 18)"></circle><text x="18" y="22" text-anchor="middle" fill="#fff" font-size="11" font-weight="700" font-family="Plus Jakarta Sans">2</text></svg>
+<div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:12px;font-weight:700">Aficionada</span><span style="font:500 11px 'IBM Plex Mono',monospace;color:#cfe3e8">860 XP · racha 6 días</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:11px;color:#4b5d66">Valor del portafolio</span><span style="font:500 22px 'IBM Plex Mono',monospace;letter-spacing:-.02em">10.482,35 €</span><span style="font:500 11px 'IBM Plex Mono',monospace;color:#1f8a4c">▲ +38,10 € hoy</span></div>
+<svg width="186" height="30" viewBox="0 0 110 26" preserveAspectRatio="none"><path d="M0 22 L15 18 L30 20 L45 12 L60 14 L75 8 L90 10 L110 4" fill="none" stroke="#1f8a4c" stroke-width="1.5"></path></svg>
+<div style="font-size:11px;color:#4b5d66;border-top:1px solid #e1e8eb;padding-top:8px">Liga Analista · <b style="color:#13222a">4.º de 30</b> · quedan 4 d 7 h</div>
+<div style="font-size:9px;color:#6b7c84">Simulación educativa · No es asesoramiento financiero</div>
+</div>
+<div style="width:220px;background:#0b1418;border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:12px;color:#eef4f6">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:15px;font-weight:700">Hola, Laura</span><span style="font:600 10px 'IBM Plex Mono',monospace;color:#5ab4c4;background:#13303a;padding:3px 6px;border-radius:3px">PRO · 4 DÍAS</span></div>
+<div style="background:#13212a;border:1px solid #213440;border-radius:6px;padding:12px;display:flex;align-items:center;gap:12px">
+<svg width="46" height="46" viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" fill="none" stroke="#213440" stroke-width="4"></circle><circle cx="18" cy="18" r="15" fill="none" stroke="#f0ac6c" stroke-width="4" stroke-dasharray="68 95" transform="rotate(-90 18 18)"></circle><text x="18" y="22" text-anchor="middle" fill="#eef4f6" font-size="11" font-weight="700" font-family="Plus Jakarta Sans">2</text></svg>
+<div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:12px;font-weight:700">Aficionada</span><span style="font:500 11px 'IBM Plex Mono',monospace;color:#9db2ba">860 XP · racha 6 días</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:11px;color:#9db2ba">Valor del portafolio</span><span style="font:500 22px 'IBM Plex Mono',monospace;letter-spacing:-.02em">10.482,35 €</span><span style="font:500 11px 'IBM Plex Mono',monospace;color:#4fcf7e">▲ +38,10 € hoy</span></div>
+<svg width="186" height="30" viewBox="0 0 110 26" preserveAspectRatio="none"><path d="M0 22 L15 18 L30 20 L45 12 L60 14 L75 8 L90 10 L110 4" fill="none" stroke="#4fcf7e" stroke-width="1.5"></path></svg>
+<div style="font-size:11px;color:#9db2ba;border-top:1px solid #213440;padding-top:8px">Liga Analista · <b style="color:#eef4f6">4.º de 30</b> · quedan 4 d 7 h</div>
+<div style="font-size:9px;color:#7d929a">Simulación educativa · No es asesoramiento financiero</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="1c">
+<div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Base · índigo · Instrument Sans + Geist Mono</div>
+<div class="dv-card" style="width:940px;font-family:'Instrument Sans',sans-serif;color:#171a2b">
+<div style="padding:32px 36px 24px;display:flex;flex-direction:column;gap:6px;border-bottom:1px solid #e4e5ee">
+<div style="font:600 11px/1 'Geist Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#3d3fa8">Concepto 1c · Base</div>
+<div style="font-size:26px;font-weight:700;letter-spacing:-.02em">Una estructura en la que apoyarse</div>
+<p style="margin:0;max-width:640px;font-size:14px;line-height:1.55;color:#50546b;text-wrap:pretty">Una E construida con bloques sobre un eje firme: orden, método y seguridad. El índigo se aleja por completo del verde y el rojo del mercado y transmite estudio y concentración. Es la dirección más editorial.</p>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr auto;gap:16px;padding:24px 36px">
+<div style="background:#f6f6fa;border:1px solid #e4e5ee;border-radius:6px;height:120px;display:flex;align-items:center;justify-content:center;gap:12px;color:#3d3fa8">
+<svg width="34" height="34" viewBox="0 0 24 24"><path d="M3 3H21V7H8V10H17V14H8V17H21V21H3Z" fill="currentColor"></path></svg>
+<div style="font-size:26px;font-weight:600;letter-spacing:.12em;color:#171a2b">E–TRADING</div>
+</div>
+<div style="background:#0e0f1a;border-radius:6px;height:120px;display:flex;align-items:center;justify-content:center;gap:12px;color:#9a9cf0">
+<svg width="34" height="34" viewBox="0 0 24 24"><path d="M3 3H21V7H8V10H17V14H8V17H21V21H3Z" fill="currentColor"></path></svg>
+<div style="font-size:26px;font-weight:600;letter-spacing:.12em;color:#eeeef6">E–TRADING</div>
+</div>
+<div style="display:flex;align-items:flex-end;gap:14px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:72px;height:72px;border-radius:16px;background:#3d3fa8;display:flex;align-items:center;justify-content:center;color:#fff"><svg width="36" height="36" viewBox="0 0 24 24"><path d="M3 3H21V7H8V10H17V14H8V17H21V21H3Z" fill="currentColor"></path></svg></div><span style="font:500 10px 'Geist Mono',monospace;color:#6c7088">iOS</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:32px;height:32px;border-radius:5px;background:#3d3fa8;display:flex;align-items:center;justify-content:center;color:#fff"><svg width="19" height="19" viewBox="0 0 24 24"><path d="M3 3H21V7H8V10H17V14H8V17H21V21H3Z" fill="currentColor"></path></svg></div><span style="font:500 10px 'Geist Mono',monospace;color:#6c7088">32</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:16px;height:16px;border-radius:3px;background:#3d3fa8;display:flex;align-items:center;justify-content:center;color:#fff"><svg width="11" height="11" viewBox="0 0 24 24"><path d="M3 3H21V7H8V10H17V14H8V17H21V21H3Z" fill="currentColor"></path></svg></div><span style="font:500 10px 'Geist Mono',monospace;color:#6c7088">16</span></div>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:4px 36px 28px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;font:500 10px/1.3 'Geist Mono',monospace">
+<div style="display:flex;flex-direction:column;gap:5px"><div style="height:52px;border-radius:4px;background:#3d3fa8"></div>--brand<br>#3D3FA8</div>
+<div style="display:flex;flex-direction:column;gap:5px"><div style="height:52px;border-radius:4px;background:#d4b13c"></div>--accent<br>#D4B13C</div>
+<div style="display:flex;flex-direction:column;gap:5px"><div style="height:52px;border-radius:4px;background:#1e8a5a"></div>--up<br>#1E8A5A</div>
+<div style="display:flex;flex-direction:column;gap:5px"><div style="height:52px;border-radius:4px;background:#cc3f3f"></div>--down<br>#CC3F3F</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:5px;font:500 10px 'Geist Mono',monospace;color:#6c7088">Neutros · 12 pasos, tinte violeta
+<div style="display:grid;grid-template-columns:repeat(12,1fr);height:22px;border-radius:4px;overflow:hidden"><div style="background:oklch(.99 .005 280)"></div><div style="background:oklch(.97 .006 280)"></div><div style="background:oklch(.94 .008 280)"></div><div style="background:oklch(.91 .01 280)"></div><div style="background:oklch(.87 .011 280)"></div><div style="background:oklch(.81 .013 280)"></div><div style="background:oklch(.72 .014 280)"></div><div style="background:oklch(.61 .015 280)"></div><div style="background:oklch(.5 .016 280)"></div><div style="background:oklch(.38 .016 280)"></div><div style="background:oklch(.26 .015 280)"></div><div style="background:oklch(.17 .013 280)"></div></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:5px;font:500 10px 'Geist Mono',monospace;color:#6c7088">Rarezas · común, rara, épica, legendaria
+<div style="display:flex;gap:6px"><div style="width:22px;height:22px;background:#8d90a3;border-radius:3px"></div><div style="width:22px;height:22px;background:#2f7fa6;border-radius:3px"></div><div style="width:22px;height:22px;background:#8a4fb0;border-radius:3px"></div><div style="width:22px;height:22px;background:#c9a32f;border-radius:3px"></div></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:1px solid #e4e5ee;padding-top:14px">
+<div style="font:700 34px/1 'Instrument Sans',sans-serif;letter-spacing:-.025em">El mercado real, sin miedo.</div>
+<div style="font:500 26px/1 'Geist Mono',monospace;letter-spacing:-.02em">10.482,35 €</div>
+<div style="font-size:14px;line-height:1.5;color:#50546b">Instrument Sans, de proporciones editoriales y precisas; Geist Mono, neutra y moderna, para cifras.</div>
+</div>
+</div>
+<div style="display:flex;gap:14px">
+<div style="width:220px;background:#f6f6fa;border:1px solid #e4e5ee;border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:15px;font-weight:700">Hola, Laura</span><span style="font:600 10px 'Geist Mono',monospace;color:#3d3fa8;background:#e6e6f6;padding:3px 6px;border-radius:3px">PRO · 4 DÍAS</span></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
+<div style="background:#fff;border:1px solid #e4e5ee;border-radius:4px;padding:8px;display:flex;flex-direction:column;gap:2px"><span style="font:600 16px 'Geist Mono',monospace">2</span><span style="font-size:10px;color:#50546b">Nivel</span></div>
+<div style="background:#fff;border:1px solid #e4e5ee;border-radius:4px;padding:8px;display:flex;flex-direction:column;gap:2px"><span style="font:600 16px 'Geist Mono',monospace">860</span><span style="font-size:10px;color:#50546b">XP</span></div>
+<div style="background:#fff;border:1px solid #e4e5ee;border-radius:4px;padding:8px;display:flex;flex-direction:column;gap:2px"><span style="font:600 16px 'Geist Mono',monospace;color:#3d3fa8">6</span><span style="font-size:10px;color:#50546b">Racha</span></div>
+</div>
+<div style="height:4px;background:#e4e5ee"><div style="width:72%;height:4px;background:#d4b13c"></div></div>
+<div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:11px;color:#50546b">Valor del portafolio</span><span style="font:500 22px 'Geist Mono',monospace;letter-spacing:-.02em">10.482,35 €</span><span style="font:500 11px 'Geist Mono',monospace;color:#1e8a5a">▲ +38,10 € hoy</span></div>
+<svg width="186" height="30" viewBox="0 0 110 26" preserveAspectRatio="none"><path d="M0 22 L15 18 L30 20 L45 12 L60 14 L75 8 L90 10 L110 4" fill="none" stroke="#1e8a5a" stroke-width="1.5"></path></svg>
+<div style="font-size:11px;color:#50546b;border-top:1px solid #e4e5ee;padding-top:8px">Liga Analista · <b style="color:#171a2b">4.º de 30</b> · quedan 4 d 7 h</div>
+<div style="font-size:9px;color:#6c7088">Simulación educativa · No es asesoramiento financiero</div>
+</div>
+<div style="width:220px;background:#0e0f1a;border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:12px;color:#eeeef6">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:15px;font-weight:700">Hola, Laura</span><span style="font:600 10px 'Geist Mono',monospace;color:#a9abf4;background:#23254a;padding:3px 6px;border-radius:3px">PRO · 4 DÍAS</span></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
+<div style="background:#181a2b;border:1px solid #262940;border-radius:4px;padding:8px;display:flex;flex-direction:column;gap:2px"><span style="font:600 16px 'Geist Mono',monospace">2</span><span style="font-size:10px;color:#a0a3bb">Nivel</span></div>
+<div style="background:#181a2b;border:1px solid #262940;border-radius:4px;padding:8px;display:flex;flex-direction:column;gap:2px"><span style="font:600 16px 'Geist Mono',monospace">860</span><span style="font-size:10px;color:#a0a3bb">XP</span></div>
+<div style="background:#181a2b;border:1px solid #262940;border-radius:4px;padding:8px;display:flex;flex-direction:column;gap:2px"><span style="font:600 16px 'Geist Mono',monospace;color:#a9abf4">6</span><span style="font-size:10px;color:#a0a3bb">Racha</span></div>
+</div>
+<div style="height:4px;background:#262940"><div style="width:72%;height:4px;background:#e2c357"></div></div>
+<div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:11px;color:#a0a3bb">Valor del portafolio</span><span style="font:500 22px 'Geist Mono',monospace;letter-spacing:-.02em">10.482,35 €</span><span style="font:500 11px 'Geist Mono',monospace;color:#4ccf8f">▲ +38,10 € hoy</span></div>
+<svg width="186" height="30" viewBox="0 0 110 26" preserveAspectRatio="none"><path d="M0 22 L15 18 L30 20 L45 12 L60 14 L75 8 L90 10 L110 4" fill="none" stroke="#4ccf8f" stroke-width="1.5"></path></svg>
+<div style="font-size:11px;color:#a0a3bb;border-top:1px solid #262940;padding-top:8px">Liga Analista · <b style="color:#eeeef6">4.º de 30</b> · quedan 4 d 7 h</div>
+<div style="font-size:9px;color:#83869e">Simulación educativa · No es asesoramiento financiero</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Siguiente: «sigue con <a class="dv-oid" href="#1b">1b</a> y desarrolla el manual de marca» · «el símbolo de <a class="dv-oid" href="#1a">1a</a> con la paleta de <a class="dv-oid" href="#1c">1c</a>» · «explora 3 símbolos más dentro de <a class="dv-oid" href="#1a">1a</a>»</p>
+</section>
+</x-dc>
+</body>
+</html>
