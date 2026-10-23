@@ -8,6 +8,7 @@ import * as profile from '@/server/game/profile'
 import * as trading from '@/server/game/trading'
 import { requireUser } from '@/server/game/core'
 import { db } from '@/server/db'
+import { clientIp, rateLimit } from '@/server/http/ratelimit'
 
 type Handler = (req: NextRequest, p: string[], body: unknown) => Promise<unknown>
 interface Route { method: string; path: string; run: Handler }
@@ -31,7 +32,7 @@ const draft = z
 const settings = z
   .object({
     locale: z.enum(['es', 'ca', 'en']), currency: z.enum(['EUR', 'USD']), dailyGoalMinutes: z.union([z.literal(5), z.literal(10), z.literal(15), z.literal(20)]), theme: z.enum(['AUTO', 'LIGHT', 'DARK']),
-    gender: z.enum(['F', 'M', 'N']), notificationPrefs: z.record(z.string(), z.object({ inApp: z.boolean(), email: z.boolean(), push: z.boolean() })), name: z.string().max(30), companionName: z.string().max(14),
+    gender: z.enum(['F', 'M', 'N']), notificationPrefs: z.record(z.string(), z.object({ inApp: z.boolean(), email: z.boolean(), push: z.boolean() })), name: z.string().max(30), companionName: z.string().max(14), leagueVisible: z.boolean(),
   })
   .partial()
 const range = (req: NextRequest) => {
@@ -92,8 +93,8 @@ const routes: Route[] = [
   { method: 'POST', path: 'billing/cancel', run: () => profile.cancelSubscription() },
   // Público
   { method: 'GET', path: 'public/stats', run: () => profile.publicStats() },
-  { method: 'POST', path: 'waitlist', run: (r, _p, b) => profile.joinWaitlist(z.object({ email: z.string().max(200) }).parse(b).email, r.headers.get('accept-language')?.slice(0, 2) ?? 'es') },
-  { method: 'POST', path: 'contact', run: (_r, _p, b) => profile.contact(z.object({ name: z.string().max(100), email: z.string().max(200), reason: z.string().max(20), message: z.string().max(5000) }).parse(b)) },
+  { method: 'POST', path: 'waitlist', run: async (r, _p, b) => { const x = z.object({ email: z.string().max(200), website: z.string().max(200).optional() }).parse(b); if (x.website) return; await rateLimit(`waitlist:${clientIp(r)}`, 5, 600); return profile.joinWaitlist(x.email, r.headers.get('accept-language')?.slice(0, 2) ?? 'es') } },
+  { method: 'POST', path: 'contact', run: async (r, _p, b) => { const x = z.object({ name: z.string().max(100), email: z.string().max(200), reason: z.string().max(20), message: z.string().max(5000), website: z.string().max(200).optional() }).parse(b); if (x.website) return; await rateLimit(`contact:${clientIp(r)}`, 3, 600); return profile.contact(x) } },
   // Admin
   { method: 'GET', path: 'admin/metrics', run: r => admin.metrics((r.nextUrl.searchParams.get('range') ?? '30d') as '7d' | '30d' | '90d') },
   { method: 'GET', path: 'admin/users', run: r => admin.users(r.nextUrl.searchParams.get('q')?.slice(0, 100) || undefined) },
@@ -112,14 +113,32 @@ function match(method: string, parts: string[]) {
   return null
 }
 
+const MAX_BODY = 32 * 1024
+
+/** Las peticiones que cambian datos solo se aceptan desde la propia app (protección CSRF) */
+function sameOrigin(req: NextRequest) {
+  const origin = req.headers.get('origin')
+  if (!origin) return req.headers.get('sec-fetch-site') === 'same-origin'
+  try {
+    return new URL(origin).host === req.headers.get('host')
+  } catch {
+    return false
+  }
+}
+
 async function handle(req: NextRequest, ctx: RouteContext<'/api/[...path]'>) {
   const { path } = await ctx.params
   const m = match(req.method, path)
   if (!m) return Response.json({ error: { code: 'NOT_FOUND', message: 'Ruta no encontrada' } }, { status: 404 })
+  const mutating = req.method !== 'GET'
+  if (mutating && !sameOrigin(req)) return Response.json({ error: { code: 'FORBIDDEN', message: 'Origen no permitido' } }, { status: 403 })
   try {
+    // Límite general por IP (lecturas y escrituras); las escrituras, más estricto
+    await rateLimit(`${mutating ? 'w' : 'r'}:${clientIp(req)}`, mutating ? 90 : 600, 60)
     let body: unknown = undefined
     if (req.method !== 'GET' && req.method !== 'DELETE') {
       const text = await req.text()
+      if (text.length > MAX_BODY) return Response.json({ error: { code: 'VALIDATION_ERROR', message: 'Petición demasiado grande' } }, { status: 413 })
       body = text ? JSON.parse(text) : {}
     }
     const out = await m.r.run(req, m.params, body)

@@ -45,6 +45,8 @@ export async function lesson(user: User, tx: Tx, id: string): Promise<LessonT> {
   const l = LESSON[id] ?? fail(404, 'NOT_FOUND', 'Lección no encontrada')
   const st = (await pathOf(tx, user)).units.flatMap(u => u.lessons).find(x => x.id === id)!
   if (st.requiresPremium) fail(403, 'FEATURE_LOCKED', 'Esta lección es de Premium')
+  // Las lecciones se abren en orden: no se puede saltar a una bloqueada desde la URL
+  if (st.status === 'LOCKED') fail(403, 'LESSON_LOCKED', 'Termina la lección anterior para abrir esta')
   const steps: LessonStepT[] = l.steps.map((s, i): LessonStepT => {
     const sid = `${id}-s${i}`
     if (s.kind === 'TEXT') return { id: sid, type: 'TEXT', title: s.title, body: s.body, companionTip: s.tip }
@@ -68,6 +70,7 @@ export const quizStart = (id: string) =>
     let mode: 'LESSON' | 'PLACEMENT' | 'REVIEW' = 'LESSON'
     let qs: ContentQuestion[]
     if (id === 'placement') {
+      if (c.g.placementDone) fail(409, 'CONFLICT', 'El test de nivel solo se hace una vez')
       mode = 'PLACEMENT'
       qs = PLACEMENT
     } else if (id === 'review') {
@@ -95,6 +98,7 @@ export const answer = (attemptId: string, questionId: string, value: unknown, el
   withCtx(async (c): Promise<AnswerResultT> => {
     const at = await attemptOf(c, attemptId)
     if (at.finishedAt) fail(409, 'CONFLICT', 'El quiz ya ha terminado')
+    if (Date.now() - at.startedAt.getTime() > 3_600_000) fail(409, 'CONFLICT', 'Este quiz ha caducado. Empieza otro.')
     if (!at.questionIds.includes(questionId)) fail(404, 'NOT_FOUND', 'Pregunta no encontrada')
     if (at.answers.some(a => a.questionId === questionId)) fail(409, 'CONFLICT', 'Pregunta ya respondida')
     const premium = c.user.plan === 'PREMIUM'
@@ -127,13 +131,18 @@ export const quizFinish = (attemptId: string) =>
     const perfect = correct === total && total > 0
     const stars = at.mode === 'REVIEW' ? 0 : perfect ? 3 : ratio >= 0.8 ? 2 : ratio >= 0.6 ? 1 : 0
     const durationMs = Date.now() - at.startedAt.getTime()
-    const avgMs = at.answers.reduce((t, a) => t + a.elapsedMs, 0) / Math.max(1, at.answers.length)
+    // Rapidez medida con la hora del servidor (no la que envía el navegador)
+    const lastAnswer = at.answers.reduce((m, a) => Math.max(m, a.createdAt.getTime()), at.startedAt.getTime())
+    const avgMs = (lastAnswer - at.startedAt.getTime()) / Math.max(1, at.answers.length)
     const l = at.lessonId ? LESSON[at.lessonId] : null
     const prev = at.lessonId ? await c.tx.lessonProgress.findUnique({ where: { userId_lessonId: { userId: c.user.id, lessonId: at.lessonId } } }) : null
     const lessonXp = l && stars > 0 && !prev ? l.xp : 0
-    const base = correct * 10 + lessonXp
-    const perfectBonus = perfect ? Math.round(correct * 10 * 0.5) : 0
-    const speedBonus = avgMs < 15_000 && correct > 0 ? Math.round(base * 0.1) : 0
+    // Repetir el mismo quiz da XP solo 2 veces al día (no se puede «granjear» XP)
+    const repeatsToday = at.lessonId && prev ? await c.tx.quizAttempt.count({ where: { userId: c.user.id, lessonId: at.lessonId, finishedAt: { gte: new Date(Date.now() - 86_400_000) } } }) : 0
+    const farming = at.mode === 'REVIEW' ? false : repeatsToday >= 2
+    const base = farming ? 0 : correct * 10 + lessonXp
+    const perfectBonus = perfect && !farming ? Math.round(correct * 10 * 0.5) : 0
+    const speedBonus = avgMs < 15_000 && correct > 0 && !farming ? Math.round(base * 0.1) : 0
     addXp(c, base + perfectBonus + speedBonus)
     const extendedToday = await markActive(c)
     if (at.lessonId && stars > 0) {
@@ -147,7 +156,7 @@ export const quizFinish = (attemptId: string) =>
         if (at.lessonId === 'u3l3' && c.user.plan !== 'PREMIUM') c.fx.features = ['LIMIT', 'STOP_LOSS', 'TAKE_PROFIT']
       }
     }
-    if (perfect && at.mode === 'LESSON') {
+    if (perfect && at.mode === 'LESSON' && !farming) {
       bump(c, 'perfect')
       if (durationMs < 60_000) bump(c, 'fastPerfect')
       await bumpGoal(c, 'perfect')
@@ -163,6 +172,7 @@ export const placementFinish = (attemptId: string) =>
   withCtx(async (c): Promise<PlacementFinishT> => {
     const at = await attemptOf(c, attemptId)
     if (at.mode !== 'PLACEMENT') fail(400, 'VALIDATION_ERROR', 'No es un test de nivel')
+    if (c.g.placementDone || at.finishedAt) fail(409, 'CONFLICT', 'El test de nivel solo se hace una vez')
     const correct = at.answers.filter(a => a.correct).length
     const total = at.questionIds.length
     const skip = correct >= 5

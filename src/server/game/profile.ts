@@ -1,12 +1,12 @@
 import 'server-only'
 // Perfil, onboarding, Inicio, progreso, avisos, ajustes, Premium (simulado hasta Stripe) y RGPD
-import type { BillingStatusT, HomeT, LeagueT, MeT, Mood, NotificationT, SettingsT, StreakT } from '@/shared/contract'
-import { addDays, dayOf, weekOf } from '@/shared/time'
+import type { BillingStatusT, HomeT, MeT, Mood, NotificationT, SettingsT, StreakT } from '@/shared/contract'
+import { addDays, dayOf } from '@/shared/time'
 import type { User } from '@/generated/prisma/client'
 import { db } from '../db'
 import { currentUser, googleEnabled } from '../auth'
-import { ACHIEVEMENTS, DIVISIONS } from '../content/catalog'
-import { achievementList, endFx, fail, FREEZE_PRICE, GOAL_DEFS, goalsOf, levelOf, levelTitle, LIVES_MAX, livesOf, lumi, MAX_FREEZES, notify, REFILL_PRICE, START_CASH, withCtx } from './core'
+import { ACHIEVEMENTS } from '../content/catalog'
+import { achievementList, endFx, fail, FREEZE_PRICE, goalDefs, goalsOf, minutesOf, levelOf, levelTitle, LIVES_MAX, livesOf, lumi, MAX_FREEZES, notify, REFILL_PRICE, START_CASH, withCtx } from './core'
 import { pathOf } from './learning'
 import { portfolioIn, portfolioRow, priceBook, processPendingFor } from './trading'
 
@@ -54,26 +54,38 @@ export const completeOnboarding = () =>
 export function defaultSettings(u: User): SettingsT {
   const on = (email: boolean, push: boolean) => ({ inApp: true, email, push })
   return {
-    locale: (['es', 'ca', 'en'].includes(u.locale) ? u.locale : 'es') as SettingsT['locale'], currency: 'EUR', dailyGoalMinutes: 10, theme: 'AUTO', gender: u.gender,
+    locale: (['es', 'ca', 'en'].includes(u.locale) ? u.locale : 'es') as SettingsT['locale'], currency: 'EUR', dailyGoalMinutes: 10, theme: 'AUTO', gender: u.gender, leagueVisible: u.leagueVisible,
     notificationPrefs: { STREAK_RISK: on(true, true), ORDER_FILLED: on(false, true), PRICE_ALERT: on(false, true), ACHIEVEMENT: on(false, false), LEAGUE_RESULT: on(true, false), NEW_LESSON: on(false, false) },
   }
 }
-export const settingsOf = (u: User): SettingsT => ({ ...defaultSettings(u), ...((u.settings as object) ?? {}), gender: u.gender })
+export const settingsOf = (u: User): SettingsT => ({ ...defaultSettings(u), ...((u.settings as object) ?? {}), gender: u.gender, leagueVisible: u.leagueVisible })
 
 export const settings = () => withCtx(async c => settingsOf(c.user))
 
 export const updateSettings = (patch: Partial<SettingsT> & { name?: string; companionName?: string }) =>
   withCtx(async c => {
     const { name, companionName, ...rest } = patch
-    const next = { ...settingsOf(c.user), ...rest }
+    const base = settingsOf(c.user)
+    if (rest.notificationPrefs) rest.notificationPrefs = Object.fromEntries(Object.keys(base.notificationPrefs).map(k => [k, rest.notificationPrefs![k] ?? base.notificationPrefs[k]]))
+    const next = { ...base, ...rest }
     const u = await c.tx.user.update({
       where: { id: c.user.id },
-      data: { settings: next, gender: next.gender, locale: next.locale, ...(name?.trim() ? { name: name.trim().slice(0, 30) } : {}), ...(companionName?.trim() ? { companionName: companionName.trim().slice(0, 14) } : {}) },
+      data: { settings: next, gender: next.gender, locale: next.locale, leagueVisible: next.leagueVisible, ...(name?.trim() ? { name: name.trim().slice(0, 30) } : {}), ...(companionName?.trim() ? { companionName: companionName.trim().slice(0, 14) } : {}) },
     })
     return settingsOf(u)
   })
 
 // ── Inicio y perfil ──────────────────────────────────────
+/** Frase de Lumi en Inicio: celebra, avisa o anima según lo que haya pasado */
+function homeLine(c: Parameters<typeof lumi>[0] & { today: string }, todayDone: boolean) {
+  const last = c.g.lastActiveDay
+  if (todayDone) return lumi(c, 'HOME_DONE')
+  if (last && last <= addDays(c.today, -3)) return lumi(c, 'INACTIVITY')
+  if (c.g.streak === 0 && c.g.bestStreak > 1 && last === addDays(c.today, -2)) return lumi(c, 'STREAK_LOST', { dias_racha: c.g.bestStreak })
+  if (c.g.streak > 0) return lumi(c, 'HOME_STREAK')
+  return lumi(c, 'HOME_NEW')
+}
+
 export async function home(): Promise<HomeT> {
   const book = await priceBook()
   return withCtx(async c => {
@@ -90,9 +102,9 @@ export async function home(): Promise<HomeT> {
       streak: { days: c.g.streak, todayDone },
       gems: c.g.gems,
       lives: livesOf(c.user, c.g),
-      companion: lumi(c, todayDone ? 'HOME_DONE' : c.g.streak > 0 ? 'HOME_STREAK' : 'HOME_NEW'),
+      companion: homeLine(c, todayDone),
       nextLesson: next ? { id: next.l.id, title: next.l.title, unitTitle: next.u.title, unitOrder: next.u.order, minutes: next.l.minutes, progressPct: next.u.progressPct } : null,
-      dailyGoals: GOAL_DEFS.map(g => ({ id: g.id, label: g.id, progress: goals[g.id], target: g.target, xp: g.xp, done: goals[g.id] >= g.target })),
+      dailyGoals: goalDefs(minutesOf(c.user)).map(g => ({ id: g.id, label: g.id, progress: goals[g.id], target: g.target, xp: g.xp, done: goals[g.id] >= g.target })),
       portfolio: { totalValue: pf.totalValue, dayChange: pf.dayChange, dayChangePct: pf.dayChangePct, sparkline: spark.length > 1 ? spark : [Number(pf.totalValue), Number(pf.totalValue)] },
     }
   })
@@ -154,32 +166,7 @@ export const buyFreeze = async () => {
 
 export const achievements = () => withCtx(c => achievementList(c.tx, c.user.id, c.g, c.counters))
 
-// ── Liga semanal: solo personas reales (D-019) ───────────
-export const league = () =>
-  withCtx(async (c): Promise<LeagueT> => {
-    const wk = weekOf(Date.now(), c.user.timezone)
-    const states = await c.tx.gameState.findMany({ where: { OR: [{ weekKey: wk, weekXp: { gt: 0 } }, { userId: c.user.id }] }, orderBy: { weekXp: 'desc' }, take: 30, include: { user: { select: { name: true, blockedAt: true } } } })
-    const ids = states.map(s => s.userId)
-    const snaps = await c.tx.portfolioSnapshot.findMany({ where: { userId: { in: ids }, day: { gte: addDays(wk, -1) } }, orderBy: { day: 'asc' } })
-    // Rentabilidad de la semana: de la primera a la última foto real de la cartera (tope ±2 en los puntos)
-    const ret = (id: string) => {
-      const s = snaps.filter(x => x.userId === id)
-      return s.length >= 2 ? (Number(s[s.length - 1].value) / Number(s[0].value) - 1) * 100 : 0
-    }
-    const members = states
-      .filter(s => !s.user.blockedAt)
-      .map(s => {
-        const r = Math.round(ret(s.userId) * 100) / 100
-        const xp = s.userId === c.user.id ? c.g.weekXp : s.weekXp
-        const name = s.user.name || '—'
-        const short = name.includes(' ') ? `${name.split(' ')[0]} ${name.split(' ')[1][0]}.` : name
-        return { userId: s.userId, displayName: short, weeklyXp: xp, riskAdjReturnPct: r, score: xp + Math.round(Math.max(-2, Math.min(2, r)) * 100), isMe: s.userId === c.user.id }
-      })
-      .sort((a, b) => b.score - a.score)
-      .map((m, i) => ({ ...m, rank: i + 1 }))
-    const ends = new Date(addDays(wk, 7) + 'T00:00:00Z')
-    return { division: { id: 'd1', name: DIVISIONS[0], order: 1 }, divisions: DIVISIONS, endsAt: ends.toISOString(), promoteTop: 7, demoteFrom: 26, members }
-  })
+export { league } from './league'
 
 // ── Avisos ───────────────────────────────────────────────
 export const notifications = () =>
@@ -209,11 +196,18 @@ export const billingStatus = () => withCtx(async c => statusOf(c.user, await c.t
 export const checkout = (planId: string) =>
   withCtx(async c => {
     const plan = PLANS.find(p => p.id === planId) ?? fail(422, 'VALIDATION_ERROR', 'Plan no válido')
+    if (c.user.onboardingStep !== null) fail(403, 'FORBIDDEN', 'Termina el registro primero')
+    if (c.user.plan === 'PREMIUM') fail(409, 'CONFLICT', 'Ya tienes Premium')
+    // Una sola prueba gratis por cuenta
+    if (c.user.trialUsed) fail(403, 'TRIAL_USED', 'Ya usaste tu prueba gratis. El pago con tarjeta llegará pronto.')
+    // Menores de 18: hace falta el consentimiento de un adulto para contratar (02.13)
+    const age = c.user.birthDate ? (Date.now() - c.user.birthDate.getTime()) / (365.25 * DAY_MS) : null
+    if (age !== null && age < 18 && c.user.guardianConsent !== 'CONFIRMED') fail(403, 'GUARDIAN_CONSENT_REQUIRED', 'Para Premium hace falta que un adulto lo confirme')
     const trialEnds = new Date(Date.now() + plan.trialDays * DAY_MS)
     const pf = await portfolioRow(c.tx, c.user)
     if (!pf.premiumTopUp) await c.tx.portfolio.update({ where: { userId: c.user.id }, data: { cash: { increment: START_CASH.PREMIUM - START_CASH.FREE }, premiumTopUp: true } })
     const sub = await c.tx.subscription.upsert({ where: { userId: c.user.id }, create: { userId: c.user.id, status: 'TRIALING', interval: plan.interval, trialEndsAt: trialEnds, renewsAt: trialEnds }, update: { status: 'TRIALING', interval: plan.interval, trialEndsAt: trialEnds, renewsAt: trialEnds } })
-    const u = await c.tx.user.update({ where: { id: c.user.id }, data: { plan: 'PREMIUM' } })
+    const u = await c.tx.user.update({ where: { id: c.user.id }, data: { plan: 'PREMIUM', trialUsed: true } })
     c.g.lives = LIVES_MAX
     return statusOf(u, sub)
   })
@@ -243,7 +237,12 @@ export async function deleteAccount() {
   const u = await currentUser()
   if (!u) fail(401, 'UNAUTHORIZED', 'Inicia sesión para continuar')
   // Las tablas del usuario se borran en cascada; queda constancia en la auditoría (sin datos personales)
-  await db.$transaction([db.auditLog.create({ data: { actor: 'usuario', action: 'ACCOUNT_DELETED', entity: 'User', entityId: u!.id } }), db.user.delete({ where: { id: u!.id } })])
+  await db.$transaction([
+    db.leagueMember.deleteMany({ where: { userId: u!.id } }),
+    db.apiRateLimit.deleteMany({ where: { key: { contains: u!.id } } }),
+    db.auditLog.create({ data: { actor: 'usuario', action: 'ACCOUNT_DELETED', entity: 'User', entityId: u!.id } }),
+    db.user.delete({ where: { id: u!.id } }),
+  ])
 }
 
 // ── Público (landing) ────────────────────────────────────

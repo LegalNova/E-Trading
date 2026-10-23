@@ -212,6 +212,8 @@ export const LUMI: Record<string, { mood: Mood; lines: string[] }> = {
   STREAK_AT_RISK: { mood: 'WORRIED', lines: ['Tu racha de {dias} días está en peligro. Una clase de 5 minutos basta.'] },
   NO_LIVES: { mood: 'SAD', lines: ['Te has quedado sin vidas. Descansa un poco: mientras, puedes repasar o practicar en el Mercado.'] },
   INACTIVITY: { mood: 'SLEEPY', lines: ['Te echaba de menos. ¿Cinco minutos para ponernos al día?'] },
+  STREAK_LOST: { mood: 'SAD', lines: ['Se acabó la racha, pero llegaste a {dias_racha} días. Hoy empieza otra: cinco minutos bastan.'] },
+  LEVEL_UP: { mood: 'CELEBRATE', lines: ['¡Nivel {nivel}! Ahora eres «{titulo}». Lo estás haciendo muy bien, {nombre}.'] },
   PORTFOLIO_ANALYSIS: { mood: 'THINKING', lines: ['Tus operaciones grandes suelen ser los lunes. ¿Repasamos «Psicología del inversor»?'] },
 }
 

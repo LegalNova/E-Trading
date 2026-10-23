@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react'
 import { THEME_KEY } from '@/shared/theme'
 import { ApiFailure } from './api'
+import { CookieNotice } from './legal/cookie-notice'
 
 const ToastCtx = createContext<(msg: React.ReactNode, ms?: number) => void>(() => {})
 export const useToast = () => useContext(ToastCtx)
@@ -44,6 +45,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <QueryClientProvider client={client}>
       <ToastCtx.Provider value={show}>
         {children}
+        <CookieNotice />
         <div aria-live="polite" className="pointer-events-none fixed inset-x-0 z-50 flex justify-center px-3.5" style={{ top: 'max(12px, env(safe-area-inset-top))' }}>
           {toast && (
             <div role="status" className="flex w-full max-w-[440px] animate-rise items-center gap-2.5 rounded-2xl px-3.5 py-3 text-sm font-bold shadow-float" style={{ background: 'var(--ink)', color: 'var(--bg)' }}>

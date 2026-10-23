@@ -102,9 +102,10 @@
     "contactThanks": "Gracias. Te responderemos en 48 horas.",
     "contactError": "Revisa los campos: el mensaje necesita al menos 10 caracteres.",
     "legal": "E-Trading es una app educativa. No se opera con dinero real, no se conecta a ningún broker y no ofrece recomendaciones de inversión personalizadas.",
-    "privacy": "Privacidad",
-    "terms": "Términos",
-    "cookies": "Cookies"
+    "privacy": "Política de privacidad",
+    "terms": "Términos de uso",
+    "cookies": "Política de cookies",
+    "legalNotice": "Aviso legal"
   },
   "auth": {
     "signUpTitle": "Crea tu cuenta",
@@ -115,7 +116,7 @@
     "show": "Ver",
     "hide": "Ocultar",
     "passwordRule": "Mínimo 8 caracteres y un número.",
-    "acceptTerms": "Al continuar aceptas los Términos y la Política de privacidad.",
+    "acceptTerms": "Al crear la cuenta aceptas los <terms>Términos de uso</terms> y has leído la <privacy>Política de privacidad</privacy>. Debes tener al menos 14 años.",
     "signUp": "Crear cuenta",
     "signIn": "Entrar",
     "haveAccount": "¿Ya tienes cuenta?",
@@ -526,8 +527,8 @@
     "demoteZone": "Zona de descenso desde el {n}.º",
     "you": "Tú · {name}",
     "rule": "Puntos = XP de la semana + rentabilidad ajustada por riesgo. Apostarlo todo a una operación no suma más.",
-    "sample": "Versión de prueba: los demás jugadores son de ejemplo. En la app real solo verás personas reales.",
-    "pointsCol": "Puntos"
+    "pointsCol": "Puntos",
+    "joinHint": "Gana tu primera XP de la semana (una clase o una operación) y entrarás en un grupo de hasta 30 personas de tu división."
   },
   "profile": {
     "title": "Perfil",
@@ -631,7 +632,17 @@
     "pushNote": "Las notificaciones push del móvil llegarán con la versión instalable.",
     "accountSection": "Cuenta y privacidad",
     "account": "Cuenta, cartera y datos",
-    "version": "E-Trading 2.0 · versión de prueba"
+    "version": "E-Trading 2.0 · versión de prueba",
+    "privacy": "Privacidad",
+    "leagueVisible": "Aparecer en la liga con mi nombre",
+    "leagueVisibleNote": "Si lo desactivas, los demás te verán como «Jugador anónimo».",
+    "legal": "Legal",
+    "legalDocs": {
+      "aviso-legal": "Aviso legal",
+      "privacidad": "Política de privacidad",
+      "cookies": "Política de cookies",
+      "terminos": "Términos de uso"
+    }
   },
   "account": {
     "title": "Cuenta",
@@ -727,5 +738,11 @@
     "settingsNote": "En la etapa 3 estos valores se guardan en la tabla Settings y se pueden editar aquí; cada cambio queda en la auditoría.",
     "noAudit": "Sin acciones registradas todavía.",
     "backToApp": "Volver a la app"
+  },
+  "cookies": {
+    "label": "Aviso de cookies",
+    "text": "Solo usamos cookies técnicas, necesarias para que la app funcione, y las preferencias que tú eliges. Nada de publicidad ni analítica.",
+    "more": "Política de cookies",
+    "ok": "Entendido"
   }
 }

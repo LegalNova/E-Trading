@@ -102,9 +102,10 @@
     "contactThanks": "Thank you. We'll reply within 48 hours.",
     "contactError": "Please check the fields: the message needs at least 10 characters.",
     "legal": "E-Trading is an educational app. No real money is traded, it doesn't connect to any broker and it doesn't give personalised investment advice.",
-    "privacy": "Privacy",
-    "terms": "Terms",
-    "cookies": "Cookies"
+    "privacy": "Privacy policy",
+    "terms": "Terms of use",
+    "cookies": "Cookie policy",
+    "legalNotice": "Legal notice"
   },
   "auth": {
     "signUpTitle": "Create your account",
@@ -115,7 +116,7 @@
     "show": "Show",
     "hide": "Hide",
     "passwordRule": "At least 8 characters and one number.",
-    "acceptTerms": "By continuing you accept the Terms and the Privacy Policy.",
+    "acceptTerms": "By creating an account you accept the <terms>Terms of use</terms> and confirm you have read the <privacy>Privacy policy</privacy>. You must be at least 14.",
     "signUp": "Create account",
     "signIn": "Sign in",
     "haveAccount": "Already have an account?",
@@ -526,8 +527,8 @@
     "demoteZone": "Relegation zone from #{n}",
     "you": "You · {name}",
     "rule": "Points = this week's XP + risk-adjusted return. Betting everything on one trade doesn't earn you more.",
-    "sample": "Test version: the other players are samples. In the real app you'll only see real people.",
-    "pointsCol": "Points"
+    "pointsCol": "Points",
+    "joinHint": "Earn your first XP of the week (a lesson or a trade) and you will join a group of up to 30 people in your division."
   },
   "profile": {
     "title": "Profile",
@@ -631,7 +632,17 @@
     "pushNote": "Mobile push notifications will arrive with the installable version.",
     "accountSection": "Account and privacy",
     "account": "Account, portfolio and data",
-    "version": "E-Trading 2.0 · test version"
+    "version": "E-Trading 2.0 · test version",
+    "privacy": "Privacy",
+    "leagueVisible": "Show my name in the league",
+    "leagueVisibleNote": "If you turn it off, others will see you as «Anonymous player».",
+    "legal": "Legal",
+    "legalDocs": {
+      "aviso-legal": "Legal notice",
+      "privacidad": "Privacy policy",
+      "cookies": "Cookie policy",
+      "terminos": "Terms of use"
+    }
   },
   "account": {
     "title": "Account",
@@ -727,5 +738,11 @@
     "settingsNote": "In stage 3 these values are stored in the Settings table and can be edited here; every change is logged in the audit.",
     "noAudit": "No actions recorded yet.",
     "backToApp": "Back to the app"
+  },
+  "cookies": {
+    "label": "Cookie notice",
+    "text": "We only use technical cookies the app needs to work, plus the preferences you choose. No advertising or analytics.",
+    "more": "Cookie policy",
+    "ok": "Got it"
   }
 }

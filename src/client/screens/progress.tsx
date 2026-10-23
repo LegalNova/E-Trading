@@ -207,7 +207,7 @@ export function League() {
           <span key={d} title={d} className="h-1.5 flex-1 rounded-full" style={{ background: i + 1 < l.division.order ? 'var(--ink-3)' : i + 1 === l.division.order ? 'var(--brand)' : 'var(--fill)' }} />
         ))}
       </div>
-      {me && (
+      {me && me.rank > 0 && (
         <div className="card flex items-center justify-between">
           <span>
             <span className="t-cap">{t('yourPosition')}</span>
@@ -228,7 +228,7 @@ export function League() {
           <span className="w-16 text-right">{t('pointsCol')}</span>
           <span className="w-16 text-right">{t('riskAdj')}</span>
         </div>
-        {l.members.map(m => (
+        {l.members.filter(m => m.rank > 0).map(m => (
           <div key={m.userId} className="contents">
             {m.rank === l.promoteTop + 1 && <div className="li plainline t-cap up px-3.5 py-1.5 font-bold">▲ {t('promoteZone', { n: l.promoteTop })}</div>}
             {m.rank === l.demoteFrom && <div className="li plainline t-cap down px-3.5 py-1.5 font-bold">▼ {t('demoteZone', { n: l.demoteFrom })}</div>}
@@ -248,7 +248,7 @@ export function League() {
         ))}
       </div>
       <p className="t-foot m-0">{t('rule')}</p>
-      <div className="banner banner-info">{t('sample')}</div>
+      {me && me.rank === 0 && <div className="banner banner-info">{t('joinHint')}</div>}
     </div>
   )
 }

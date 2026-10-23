@@ -259,9 +259,10 @@ export function Landing() {
         <div className="mx-auto flex max-w-[1120px] flex-col gap-4 px-4 py-8 md:flex-row md:items-center">
           <p className="t-cap m-0 max-w-[620px] flex-1">{t('legal')}</p>
           <div className="t-cap flex gap-4">
-            <span>{t('privacy')}</span>
-            <span>{t('terms')}</span>
-            <span>{t('cookies')}</span>
+            <Link href="/legal/aviso-legal">{t('legalNotice')}</Link>
+            <Link href="/legal/privacidad">{t('privacy')}</Link>
+            <Link href="/legal/cookies">{t('cookies')}</Link>
+            <Link href="/legal/terminos">{t('terms')}</Link>
           </div>
           <LanguageSwitch />
         </div>

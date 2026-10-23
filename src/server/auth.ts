@@ -1,10 +1,15 @@
 import 'server-only'
-// Acceso (D-030): email + contraseña ya; Google en cuanto haya credenciales (GOOGLE_CLIENT_ID/SECRET).
-// Sesiones en nuestra base de datos, cookie httpOnly. El rol ADMIN se asigna por ADMIN_EMAILS.
+// Acceso (D-030): email + contraseña; Google en cuanto haya credenciales (GOOGLE_CLIENT_ID/SECRET).
+// Sesiones en nuestra base de datos, cookie httpOnly y Secure en producción.
+// Seguridad: el rol ADMIN solo se da a cuentas con email VERIFICADO (por Google) de ADMIN_EMAILS;
+// con email y contraseña no basta, porque aún no verificamos emails (D-035) y alguien podría
+// registrarse con el email de otra persona.
 import { betterAuth } from 'better-auth'
 import { prismaAdapter } from 'better-auth/adapters/prisma'
+import { APIError, createAuthMiddleware } from 'better-auth/api'
 import { nextCookies } from 'better-auth/next-js'
 import { headers } from 'next/headers'
+import { LEGAL_VERSION } from '@/shared/legal'
 import { db } from './db'
 
 const admins = (process.env.ADMIN_EMAILS ?? '').split(',').map(e => e.trim().toLowerCase()).filter(Boolean)
@@ -16,7 +21,7 @@ export const auth = betterAuth({
   baseURL: process.env.BETTER_AUTH_URL ?? vercelUrl,
   secret: process.env.BETTER_AUTH_SECRET,
   database: prismaAdapter(db, { provider: 'postgresql' }),
-  trustedOrigins: ['https://e-trading-app.vercel.app', 'https://e-trading-app-*-jvidalalmirall-5471s-projects.vercel.app', ...(vercelUrl ? [vercelUrl] : []), 'http://localhost:3100'],
+  trustedOrigins: ['https://e-trading-app.vercel.app', 'https://e-trading-app-*-jvidalalmirall-5471s-projects.vercel.app', ...(vercelUrl ? [vercelUrl] : []), ...(process.env.NODE_ENV !== 'production' ? ['http://localhost:3100'] : [])],
   emailAndPassword: {
     enabled: true,
     minPasswordLength: 8,
@@ -26,12 +31,34 @@ export const auth = betterAuth({
   },
   socialProviders: google ? { google } : {},
   session: { expiresIn: 60 * 60 * 24 * 30, updateAge: 60 * 60 * 24 },
-  rateLimit: { enabled: true, window: 60, max: 30, customRules: { '/sign-in/email': { window: 60, max: 5 }, '/sign-up/email': { window: 60, max: 5 } } },
+  // Guardado en BD: vale aunque Vercel reparta las peticiones entre instancias
+  rateLimit: {
+    enabled: true,
+    storage: 'database',
+    window: 60,
+    max: 60,
+    customRules: { '/sign-in/email': { window: 300, max: 10 }, '/sign-up/email': { window: 3600, max: 10 }, '/sign-in/social': { window: 60, max: 10 } },
+  },
+  advanced: { ipAddress: { ipAddressHeaders: ['x-forwarded-for', 'x-real-ip'] }, useSecureCookies: process.env.NODE_ENV === 'production' },
   telemetry: { enabled: false },
+  hooks: {
+    before: createAuthMiddleware(async ctx => {
+      if (ctx.path !== '/sign-up/email') return
+      const pw = String((ctx.body as { password?: unknown })?.password ?? '')
+      if (!/\d/.test(pw)) throw new APIError('BAD_REQUEST', { message: 'La contraseña necesita al menos un número', code: 'WEAK_PASSWORD' })
+    }),
+  },
   databaseHooks: {
     user: {
       create: {
-        before: async user => ({ data: { ...user, role: admins.includes(user.email.toLowerCase()) ? 'ADMIN' : 'USER' } }),
+        // Al crear la cuenta se acepta la versión vigente de los términos y la privacidad
+        before: async user => ({ data: { ...user, role: user.emailVerified && admins.includes(user.email.toLowerCase()) ? 'ADMIN' : 'USER', legalVersion: LEGAL_VERSION, legalAcceptedAt: new Date() } }),
+      },
+      update: {
+        // Si Google verifica más tarde el email de un admin, se le da el rol
+        after: async user => {
+          if (user.emailVerified && admins.includes(user.email.toLowerCase())) await db.user.updateMany({ where: { id: user.id, role: 'USER' }, data: { role: 'ADMIN' } })
+        },
       },
     },
   },

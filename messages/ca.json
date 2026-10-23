@@ -102,9 +102,10 @@
     "contactThanks": "Gràcies. Et respondrem en 48 hores.",
     "contactError": "Revisa els camps: el missatge necessita almenys 10 caràcters.",
     "legal": "E-Trading és una app educativa. No s'opera amb diners reals, no es connecta a cap bròquer i no ofereix recomanacions d'inversió personalitzades.",
-    "privacy": "Privadesa",
-    "terms": "Condicions",
-    "cookies": "Galetes"
+    "privacy": "Política de privadesa",
+    "terms": "Condicions d’ús",
+    "cookies": "Política de galetes",
+    "legalNotice": "Avís legal"
   },
   "auth": {
     "signUpTitle": "Crea el teu compte",
@@ -115,7 +116,7 @@
     "show": "Veure",
     "hide": "Amagar",
     "passwordRule": "Mínim 8 caràcters i un número.",
-    "acceptTerms": "En continuar acceptes les Condicions i la Política de privadesa.",
+    "acceptTerms": "En crear el compte acceptes les <terms>Condicions d’ús</terms> i has llegit la <privacy>Política de privadesa</privacy>. Has de tenir almenys 14 anys.",
     "signUp": "Crear compte",
     "signIn": "Entrar",
     "haveAccount": "Ja tens compte?",
@@ -526,8 +527,8 @@
     "demoteZone": "Zona de descens des del {n}è",
     "you": "Tu · {name}",
     "rule": "Punts = XP de la setmana + rendibilitat ajustada per risc. Apostar-ho tot a una operació no suma més.",
-    "sample": "Versió de prova: els altres jugadors són d'exemple. A l'app real només hi veuràs persones reals.",
-    "pointsCol": "Punts"
+    "pointsCol": "Punts",
+    "joinHint": "Guanya la teva primera XP de la setmana (una classe o una operació) i entraràs en un grup de fins a 30 persones de la teva divisió."
   },
   "profile": {
     "title": "Perfil",
@@ -631,7 +632,17 @@
     "pushNote": "Les notificacions push del mòbil arribaran amb la versió instal·lable.",
     "accountSection": "Compte i privadesa",
     "account": "Compte, cartera i dades",
-    "version": "E-Trading 2.0 · versió de prova"
+    "version": "E-Trading 2.0 · versió de prova",
+    "privacy": "Privadesa",
+    "leagueVisible": "Aparèixer a la lliga amb el meu nom",
+    "leagueVisibleNote": "Si ho desactives, els altres et veuran com a «Jugador anònim».",
+    "legal": "Legal",
+    "legalDocs": {
+      "aviso-legal": "Avís legal",
+      "privacidad": "Política de privadesa",
+      "cookies": "Política de galetes",
+      "terminos": "Condicions d’ús"
+    }
   },
   "account": {
     "title": "Compte",
@@ -727,5 +738,11 @@
     "settingsNote": "A l'etapa 3 aquests valors es desen a la taula Settings i es poden editar aquí; cada canvi queda a l'auditoria.",
     "noAudit": "Encara no hi ha accions registrades.",
     "backToApp": "Tornar a l'app"
+  },
+  "cookies": {
+    "label": "Avís de galetes",
+    "text": "Només fem servir galetes tècniques, necessàries perquè l’app funcioni, i les preferències que tries. Res de publicitat ni analítica.",
+    "more": "Política de galetes",
+    "ok": "Entesos"
   }
 }

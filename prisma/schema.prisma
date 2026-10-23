@@ -51,6 +51,12 @@ model User {
   companionName String    @default("Lumi")
   skinId        String    @default("azul")
   settings      Json?
+  // Legal y privacidad
+  legalVersion    String?
+  legalAcceptedAt DateTime?
+  leagueVisible   Boolean   @default(true)
+  trialUsed       Boolean   @default(false)
+  guardianConsent String    @default("NONE") // NONE | PENDING | CONFIRMED | REJECTED
 
   sessions      Session[]
   accounts      Account[]
@@ -137,6 +143,7 @@ model GameState {
   lastActiveDay  String?
   freezes        Int      @default(0)
   placementDone  Boolean  @default(false)
+  division       Int      @default(1) // 1 Novato … 5 Experto
   tradesDay      String   @default("")
   tradesToday    Int      @default(0)
   counters       Json     @default("{}")
@@ -412,7 +419,47 @@ model Subscription {
   user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
+// ── Liga semanal ─────────────────────────────────────────
+
+/// Grupo de la liga en una semana (hasta 30 personas de la misma división)
+model LeagueMember {
+  weekKey   String
+  userId    String
+  division  Int
+  groupNo   Int
+  xp        Int      @default(0) // XP de esa semana (se congela al cerrar)
+  finalRank Int?
+  outcome   String? // UP | STAY | DOWN
+  joinedAt  DateTime @default(now())
+
+  @@id([weekKey, userId])
+  @@index([weekKey, division, groupNo])
+}
+
+model LeagueWeek {
+  weekKey  String   @id
+  closedAt DateTime @default(now())
+}
+
 // ── Plataforma ───────────────────────────────────────────
+
+/// Límite de peticiones de Better Auth (guardado en BD para que valga entre instancias)
+model RateLimit {
+  id          String @id
+  key         String @unique
+  count       Int
+  lastRequest BigInt
+
+  @@map("rateLimit")
+}
+
+/// Límite de peticiones de nuestra API (ventana fija por clave)
+model ApiRateLimit {
+  key         String   @id
+  count       Int
+  windowStart DateTime
+}
+
 
 model AppSetting {
   key       String   @id

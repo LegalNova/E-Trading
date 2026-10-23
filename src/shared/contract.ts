@@ -322,6 +322,8 @@ export const Settings = z.object({
   theme: z.enum(['AUTO', 'LIGHT', 'DARK']),
   gender: Gender,
   notificationPrefs: z.record(z.string(), z.object({ inApp: z.boolean(), email: z.boolean(), push: z.boolean() })),
+  /** (+) Privacidad: mostrar el nombre en la liga o aparecer como «Jugador anónimo» */
+  leagueVisible: z.boolean(),
 })
 export const BillingPlan = z.object({
   id: z.string(),

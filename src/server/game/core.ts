@@ -4,7 +4,7 @@ import 'server-only'
 import type { AchievementT, EffectsT, FeatureT, LivesT, Mood, NotificationT } from '@/shared/contract'
 import { addDays, dayOf, weekOf } from '@/shared/time'
 import { Prisma, type GameState, type User } from '@/generated/prisma/client'
-import { db } from '../db'
+import { db, DB_SCHEMA } from '../db'
 import { currentUser } from '../auth'
 import { ACHIEVEMENTS, LEVEL_TITLES, LUMI, UNITS } from '../content/catalog'
 
@@ -68,19 +68,37 @@ export async function requireUser(): Promise<User> {
  * aplica el mantenimiento del día (racha, vidas, objetivos) y lo guarda al terminar.
  */
 export async function withCtx<T>(fn: (c: Ctx) => Promise<T>, user?: User): Promise<T> {
-  const u = user ?? (await requireUser())
+  const u0 = user ?? (await requireUser())
   return db.$transaction(
     async tx => {
-      const g = await tx.gameState.upsert({ where: { userId: u.id }, create: { userId: u.id }, update: {} })
+      await tx.gameState.upsert({ where: { userId: u0.id }, create: { userId: u0.id }, update: {} })
+      // Bloqueo de la fila del usuario: sus acciones simultáneas se ejecutan de una en una
+      // (evita gastar dos veces el mismo saldo, las mismas gemas o cobrar dos veces un logro)
+      await tx.$queryRawUnsafe(`SELECT 1 FROM "${DB_SCHEMA}"."GameState" WHERE "userId" = $1 FOR UPDATE`, u0.id)
+      const g = await tx.gameState.findUniqueOrThrow({ where: { userId: u0.id } })
+      const u = await expireTrial(tx, (await tx.user.findUnique({ where: { id: u0.id } })) ?? u0)
       const c: Ctx = { tx, user: u, g, counters: { ...((g.counters as Counters) ?? {}) }, today: dayOf(Date.now(), u.timezone), fx: { xp: 0, goals: [], ach: [], levelFrom: levelOf(g.xp).n, features: [] } }
       await rollover(c)
       const out = await fn(c)
-      const { xp, weekKey, weekXp, gems, lives, livesUpdatedAt, streak, bestStreak, lastActiveDay, freezes, placementDone, tradesDay, tradesToday } = c.g
-      await tx.gameState.update({ where: { userId: u.id }, data: { xp, weekKey, weekXp, gems, lives, livesUpdatedAt, streak, bestStreak, lastActiveDay, freezes, placementDone, tradesDay, tradesToday, counters: c.counters } })
+      if (c.g.weekXp > 0) await (await import('./league')).ensureMembership(c)
+      const { xp, weekKey, weekXp, gems, lives, livesUpdatedAt, streak, bestStreak, lastActiveDay, freezes, placementDone, tradesDay, tradesToday, division } = c.g
+      await tx.gameState.update({ where: { userId: u.id }, data: { xp, weekKey, weekXp, gems, lives, livesUpdatedAt, streak, bestStreak, lastActiveDay, freezes, placementDone, tradesDay, tradesToday, division, counters: c.counters } })
       return out
     },
     { timeout: 20_000, maxWait: 10_000 },
   )
+}
+
+/** Prueba de Premium sin pago: al terminar vuelve a Free (no hay cobro hasta conectar Stripe) */
+async function expireTrial(tx: Tx, u: User): Promise<User> {
+  if (u.plan !== 'PREMIUM') return u
+  const sub = await tx.subscription.findUnique({ where: { userId: u.id } })
+  if (sub?.status === 'TRIALING' && sub.trialEndsAt && sub.trialEndsAt.getTime() < Date.now()) {
+    await tx.subscription.update({ where: { userId: u.id }, data: { status: 'CANCELED', renewsAt: null } })
+    await tx.notification.create({ data: { userId: u.id, type: 'NEW_LESSON', title: 'Tu prueba de Premium ha terminado', body: 'Sigues con todo lo de Free. Puedes volver a Premium cuando quieras.', deepLink: '/premium' } })
+    return tx.user.update({ where: { id: u.id }, data: { plan: 'FREE' } })
+  }
+  return u
 }
 
 // ── Mantenimiento al leer: semana, racha, vidas ──────────
@@ -144,12 +162,17 @@ export async function markActive(c: Ctx): Promise<boolean> {
   return true
 }
 
-export const GOAL_DEFS = [
-  { id: 'lesson', target: 1, xp: 20 },
-  { id: 'ops', target: 2, xp: 15 },
-  { id: 'perfect', target: 1, xp: 25 },
-] as const
-export type GoalId = (typeof GOAL_DEFS)[number]['id']
+export type GoalId = 'lesson' | 'ops' | 'perfect'
+/** Objetivos del día según la meta elegida (5, 10, 15 o 20 minutos). Cumplir los tres da +10 gemas. */
+export function goalDefs(minutes: number): { id: GoalId; target: number; xp: number }[] {
+  const m = [5, 10, 15, 20].includes(minutes) ? minutes : 10
+  return [
+    { id: 'lesson', target: m >= 15 ? 2 : 1, xp: m >= 15 ? 30 : 20 },
+    { id: 'ops', target: m === 5 ? 1 : m === 20 ? 3 : 2, xp: 15 },
+    { id: 'perfect', target: m === 20 ? 2 : 1, xp: 25 },
+  ]
+}
+export const minutesOf = (u: User) => Number((u.settings as { dailyGoalMinutes?: number } | null)?.dailyGoalMinutes ?? 10)
 
 export async function goalsOf(c: Ctx) {
   return c.tx.dailyGoals.upsert({ where: { userId_day: { userId: c.user.id, day: c.today } }, create: { userId: c.user.id, day: c.today }, update: {} })
@@ -157,14 +180,15 @@ export async function goalsOf(c: Ctx) {
 
 export async function bumpGoal(c: Ctx, id: GoalId) {
   const row = await goalsOf(c)
-  const def = GOAL_DEFS.find(x => x.id === id)!
+  const defs = goalDefs(minutesOf(c.user))
+  const def = defs.find(x => x.id === id)!
   const value = Math.min(def.target, row[id] + 1)
   const rewarded = [...row.rewarded]
   if (value >= def.target && !rewarded.includes(id)) {
     rewarded.push(id)
     addXp(c, def.xp)
     c.fx.goals.push(id)
-    if (rewarded.length === GOAL_DEFS.length) {
+    if (rewarded.length === defs.length) {
       c.g.gems += 10
       bump(c, 'goalDays')
     }
@@ -239,6 +263,11 @@ export async function checkAchievements(c: Ctx) {
 export async function endFx(c: Ctx): Promise<EffectsT> {
   await checkAchievements(c)
   const to = levelOf(c.g.xp).n
+  if (to > c.fx.levelFrom) {
+    const title = levelTitle(c.user.gender, to)
+    await notify(c, 'ACHIEVEMENT', `¡Nivel ${to}: ${title}!`, 'Sigue así: cada nivel desbloquea títulos nuevos.', '/perfil')
+    c.fx.companion = lumi(c, 'LEVEL_UP', { nivel: to, titulo: title })
+  }
   return { xp: c.fx.xp, goalsCompleted: c.fx.goals, achievementsUnlocked: c.fx.ach, levelUp: to > c.fx.levelFrom ? { from: c.fx.levelFrom, to } : undefined, unlockedFeatures: c.fx.features, companion: c.fx.companion }
 }
 

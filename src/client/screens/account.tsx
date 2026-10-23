@@ -250,12 +250,33 @@ export function Settings() {
         </div>
         <p className="t-cap m-0 px-1">{t('pushNote')}</p>
 
+        <Section>{t('privacy')}</Section>
+        <div className="list">
+          <div className="li plainline">
+            <span className="flex-1">
+              {t('leagueVisible')}
+              <br />
+              <span className="t-cap">{t('leagueVisibleNote')}</span>
+            </span>
+            <Toggle label={t('leagueVisible')} checked={s.leagueVisible} onChange={v => save.mutate({ leagueVisible: v })} />
+          </div>
+        </div>
+
         <Section>{t('accountSection')}</Section>
         <div className="list">
           <Link href="/ajustes/cuenta" className="li plainline justify-between">
             <span>{t('account')}</span>
             <Icon name="chev" size={18} />
           </Link>
+        </div>
+        <Section>{t('legal')}</Section>
+        <div className="list">
+          {(['aviso-legal', 'privacidad', 'cookies', 'terminos'] as const).map(slug => (
+            <Link key={slug} href={`/legal/${slug}`} className="li plainline justify-between">
+              <span>{t(`legalDocs.${slug}`)}</span>
+              <Icon name="chev" size={18} />
+            </Link>
+          ))}
         </div>
         <p className="t-cap m-0 text-center">{t('version')}</p>
       </div>

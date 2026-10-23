@@ -86,7 +86,20 @@ export function SignUp() {
           <span className={err?.code === 'WEAK_PASSWORD' ? 'err' : 't-cap'}>{t('passwordRule')}</span>
         </div>
         {err && err.code !== 'WEAK_PASSWORD' && <p className="err m-0">{t.has(`errors.${err.code}`) ? t(`errors.${err.code}`) : err.message}</p>}
-        <p className="t-cap my-1">{t('acceptTerms')}</p>
+        <p className="t-cap my-1">
+          {t.rich('acceptTerms', {
+            terms: c => (
+              <Link href="/legal/terminos" className="font-bold underline">
+                {c}
+              </Link>
+            ),
+            privacy: c => (
+              <Link href="/legal/privacidad" className="font-bold underline">
+                {c}
+              </Link>
+            ),
+          })}
+        </p>
         <button className="btn btn-primary" disabled={m.isPending}>
           {t('signUp')}
         </button>

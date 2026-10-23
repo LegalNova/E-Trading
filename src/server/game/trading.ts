@@ -131,9 +131,11 @@ async function fill(c: Ctx, book: Book, o: Order, silent = false): Promise<Order
 export async function placeOrder(i: OrderInput, idempotencyKey?: string): Promise<OrderResultT> {
   const book = await priceBook()
   return withCtx(async c => {
-    if (idempotencyKey) {
-      const dup = await c.tx.order.findUnique({ where: { idempotencyKey } })
-      if (dup) return { xp: 0, goalsCompleted: [], achievementsUnlocked: [], unlockedFeatures: [], order: toOrderT(dup) }
+    // La clave antiduplicados va ligada al usuario: nunca devuelve la orden de otra persona
+    const key = idempotencyKey ? `${c.user.id}:${idempotencyKey}` : undefined
+    if (key) {
+      const dup = await c.tx.order.findUnique({ where: { idempotencyKey: key } })
+      if (dup && dup.userId === c.user.id) return { xp: 0, goalsCompleted: [], achievementsUnlocked: [], unlockedFeatures: [], order: toOrderT(dup) }
     }
     const px = pxOf(book, i.symbol)
     const pv = await previewIn(c, book, i)
@@ -144,6 +146,8 @@ export async function placeOrder(i: OrderInput, idempotencyKey?: string): Promis
     if (pv.error === 'INSUFFICIENT_QTY') fail(422, 'INSUFFICIENT_FUNDS', 'No tienes tantas participaciones')
     if (pv.error === 'INSUFFICIENT_FUNDS' && i.type === 'MARKET') fail(422, 'INSUFFICIENT_FUNDS', 'No tienes saldo suficiente')
     if (i.type !== 'MARKET' && !(Number(i.triggerPrice) > 0)) fail(422, 'VALIDATION_ERROR', 'Indica el precio de activación')
+    if (i.type !== 'MARKET' && Number(i.triggerPrice) > px.price * 10) fail(422, 'VALIDATION_ERROR', 'Precio de activación fuera de rango')
+    if ((await c.tx.order.count({ where: { userId: c.user.id, status: 'PENDING' } })) >= 30) fail(422, 'VALIDATION_ERROR', 'Máximo 30 órdenes pendientes')
     const firstTrade = (await c.tx.trade.count({ where: { userId: c.user.id, status: 'FILLED' } })) === 0
     if (i.followedRiskAdvice) bump(c, 'calmRisk')
     if (i.type === 'LIMIT') bump(c, 'limits')
@@ -152,7 +156,7 @@ export async function placeOrder(i: OrderInput, idempotencyKey?: string): Promis
     let o = await c.tx.order.create({
       data: {
         userId: c.user.id, symbol: i.symbol, side: i.side, type: i.type, status: 'PENDING', qty: pv.qty, amount: fix2(Number(pv.qty) * px.eur), fee: pv.fee,
-        triggerPrice: i.type === 'MARKET' ? null : Number(i.triggerPrice), riskAcknowledged: !!i.riskAcknowledged, idempotencyKey: idempotencyKey ?? null,
+        triggerPrice: i.type === 'MARKET' ? null : Number(i.triggerPrice), riskAcknowledged: !!i.riskAcknowledged, idempotencyKey: key ?? null,
       },
     })
     if (i.type === 'MARKET' && px.open) {
@@ -294,7 +298,9 @@ export const watchlist = () =>
 
 export const toggleWatch = (symbol: string) =>
   withCtx(async c => {
+    if (!(await c.tx.asset.findUnique({ where: { symbol } }))) fail(404, 'NOT_FOUND', 'Activo no encontrado')
     const key = { userId_symbol: { userId: c.user.id, symbol } }
+    if (!(await c.tx.watchItem.findUnique({ where: key })) && (await c.tx.watchItem.count({ where: { userId: c.user.id } })) >= 50) fail(422, 'VALIDATION_ERROR', 'Máximo 50 activos en seguimiento')
     if (await c.tx.watchItem.findUnique({ where: key })) await c.tx.watchItem.delete({ where: key })
     else await c.tx.watchItem.create({ data: { userId: c.user.id, symbol } })
     return (await c.tx.watchItem.findMany({ where: { userId: c.user.id }, orderBy: { createdAt: 'asc' } })).map(r => r.symbol)
