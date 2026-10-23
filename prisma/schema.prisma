@@ -1,0 +1,450 @@
+// Base de datos de E-Trading v2 (PostgreSQL en Neon, esquema "v2").
+// El dinero va en Decimal (D-021). Los contenidos (lecciones, preguntas) viven en el repo (D-016).
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ── Acceso (tablas que usa Better Auth) ──────────────────
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum Gender {
+  F
+  M
+  N
+}
+
+enum Plan {
+  FREE
+  PREMIUM
+}
+
+model User {
+  id            String    @id
+  name          String
+  email         String    @unique
+  emailVerified Boolean   @default(false)
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  // Perfil
+  role          Role      @default(USER)
+  gender        Gender    @default(N)
+  birthDate     DateTime? @db.Date
+  locale        String    @default("es")
+  timezone      String    @default("Europe/Madrid")
+  plan          Plan      @default(FREE)
+  blockedAt     DateTime?
+  blockReason   String?
+  onboarding    Json?
+  onboardingStep Int?     @default(1)
+  disclaimerAt  DateTime?
+  companionName String    @default("Lumi")
+  skinId        String    @default("azul")
+  settings      Json?
+
+  sessions      Session[]
+  accounts      Account[]
+  game          GameState?
+  portfolio     Portfolio?
+  positions     Position[]
+  orders        Order[]
+  trades        Trade[]
+  alerts        PriceAlert[]
+  watchlist     WatchItem[]
+  lessons       LessonProgress[]
+  attempts      QuizAttempt[]
+  mistakes      Mistake[]
+  achievements  UserAchievement[]
+  streakDays    StreakDay[]
+  goals         DailyGoals[]
+  notifications Notification[]
+  snapshots     PortfolioSnapshot[]
+  subscription  Subscription?
+
+  @@map("user")
+}
+
+model Session {
+  id        String   @id
+  expiresAt DateTime
+  token     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("session")
+}
+
+model Account {
+  id                    String    @id
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  @@index([userId])
+  @@map("account")
+}
+
+model Verification {
+  id         String   @id
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([identifier])
+  @@map("verification")
+}
+
+// ── Gamificación ─────────────────────────────────────────
+
+model GameState {
+  userId         String   @id
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  xp             Int      @default(0)
+  weekKey        String   @default("")
+  weekXp         Int      @default(0)
+  gems           Int      @default(50)
+  lives          Int      @default(5)
+  livesUpdatedAt DateTime @default(now())
+  streak         Int      @default(0)
+  bestStreak     Int      @default(0)
+  lastActiveDay  String?
+  freezes        Int      @default(0)
+  placementDone  Boolean  @default(false)
+  tradesDay      String   @default("")
+  tradesToday    Int      @default(0)
+  counters       Json     @default("{}")
+  updatedAt      DateTime @updatedAt
+}
+
+model StreakDay {
+  userId String
+  day    String // YYYY-MM-DD en la zona del usuario
+  status String // ACTIVE | FROZEN | MISSED
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, day])
+}
+
+model DailyGoals {
+  userId   String
+  day      String
+  lesson   Int      @default(0)
+  ops      Int      @default(0)
+  perfect  Int      @default(0)
+  rewarded String[] @default([])
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, day])
+}
+
+model LessonProgress {
+  userId      String
+  lessonId    String
+  stars       Int      @default(0)
+  skipped     Boolean  @default(false)
+  completedAt DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, lessonId])
+}
+
+model QuizAttempt {
+  id          String       @id @default(cuid())
+  userId      String
+  mode        String // LESSON | PLACEMENT | REVIEW
+  lessonId    String?
+  questionIds String[]
+  startedAt   DateTime     @default(now())
+  finishedAt  DateTime?
+  result      Json?
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  answers     QuizAnswer[]
+
+  @@index([userId, startedAt])
+}
+
+model QuizAnswer {
+  attemptId  String
+  questionId String
+  correct    Boolean
+  elapsedMs  Int
+  createdAt  DateTime    @default(now())
+  attempt    QuizAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+
+  @@id([attemptId, questionId])
+}
+
+model Mistake {
+  userId     String
+  questionId String
+  createdAt  DateTime @default(now())
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, questionId])
+}
+
+model UserAchievement {
+  userId     String
+  code       String
+  unlockedAt DateTime @default(now())
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, code])
+}
+
+model Notification {
+  id        String    @id @default(cuid())
+  userId    String
+  type      String
+  title     String
+  body      String
+  deepLink  String
+  readAt    DateTime?
+  createdAt DateTime  @default(now())
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+}
+
+// ── Mercado ──────────────────────────────────────────────
+
+enum AssetType {
+  STOCK
+  ETF
+  INDEX
+  CRYPTO
+  FX
+}
+
+model Asset {
+  symbol         String    @id
+  name           String
+  type           AssetType
+  exchange       String
+  hours          String // código de market-hours
+  currency       String // EUR | USD
+  provider       String // FINNHUB | BINANCE | YAHOO
+  providerSymbol String
+  delayedMinutes Int       @default(0)
+  enabled        Boolean   @default(true)
+  description    String    @default("")
+  sortOrder      Int       @default(0)
+  quote          Quote?
+}
+
+/// Última cotización real conocida. Nunca se inventa: si falla el proveedor se sirve esta con stale=true.
+model Quote {
+  symbol    String   @id
+  price     Decimal  @db.Decimal(20, 8)
+  prevClose Decimal  @db.Decimal(20, 8)
+  asOf      DateTime
+  source    String
+  updatedAt DateTime @updatedAt
+  asset     Asset    @relation(fields: [symbol], references: [symbol], onDelete: Cascade)
+}
+
+/// Velas guardadas (para gráficos y para no repetir llamadas al proveedor)
+model Candle {
+  symbol   String
+  interval String // 5m | 1h | 1d | 1w
+  t        DateTime
+  o        Decimal  @db.Decimal(20, 8)
+  h        Decimal  @db.Decimal(20, 8)
+  l        Decimal  @db.Decimal(20, 8)
+  c        Decimal  @db.Decimal(20, 8)
+
+  @@id([symbol, interval, t])
+}
+
+model Portfolio {
+  userId     String   @id
+  cash       Decimal  @db.Decimal(20, 2)
+  realized   Decimal  @default(0) @db.Decimal(20, 2)
+  resetsLeft Int      @default(3)
+  resetsYear Int
+  premiumTopUp Boolean @default(false)
+  updatedAt  DateTime @updatedAt
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Position {
+  userId   String
+  symbol   String
+  qty      Decimal  @db.Decimal(28, 8)
+  avgPrice Decimal  @db.Decimal(20, 8) // en EUR
+  openedAt DateTime @default(now())
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, symbol])
+}
+
+enum OrderSide {
+  BUY
+  SELL
+}
+
+enum OrderType {
+  MARKET
+  LIMIT
+  STOP_LOSS
+  TAKE_PROFIT
+}
+
+enum OrderStatus {
+  PENDING
+  FILLED
+  REJECTED
+  CANCELLED
+}
+
+model Order {
+  id               String      @id @default(cuid())
+  userId           String
+  symbol           String
+  side             OrderSide
+  type             OrderType
+  status           OrderStatus
+  qty              Decimal     @db.Decimal(28, 8)
+  amount           Decimal     @db.Decimal(20, 2)
+  triggerPrice     Decimal?    @db.Decimal(20, 8)
+  fillPrice        Decimal?    @db.Decimal(20, 8)
+  fee              Decimal     @default(0) @db.Decimal(20, 2)
+  riskAcknowledged Boolean     @default(false)
+  idempotencyKey   String?     @unique
+  createdAt        DateTime    @default(now())
+  filledAt         DateTime?
+  executesAt       DateTime?
+  user             User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([status, symbol])
+  @@index([userId, createdAt])
+}
+
+model Trade {
+  id           String    @id @default(cuid())
+  userId       String
+  orderId      String?
+  side         OrderSide
+  type         OrderType
+  symbol       String
+  qty          Decimal   @db.Decimal(28, 8)
+  price        Decimal   @db.Decimal(20, 8) // en la moneda del activo
+  fee          Decimal   @db.Decimal(20, 2)
+  total        Decimal   @db.Decimal(20, 2) // en EUR
+  realizedPnl  Decimal?  @db.Decimal(20, 2)
+  status       String // FILLED | REJECTED
+  rejectReason String?
+  createdAt    DateTime  @default(now())
+  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+}
+
+model PriceAlert {
+  id        String   @id @default(cuid())
+  userId    String
+  symbol    String
+  condition String // ABOVE | BELOW
+  price     Decimal  @db.Decimal(20, 8)
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([active, symbol])
+}
+
+model WatchItem {
+  userId    String
+  symbol    String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, symbol])
+}
+
+model PortfolioSnapshot {
+  userId String
+  day    String
+  value  Decimal @db.Decimal(20, 2)
+  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, day])
+}
+
+// ── Pagos ────────────────────────────────────────────────
+
+model Subscription {
+  userId           String    @id
+  status           String // NONE | TRIALING | ACTIVE | PAST_DUE | CANCELED
+  interval         String? // MONTH | YEAR
+  trialEndsAt      DateTime?
+  renewsAt         DateTime?
+  stripeCustomerId String?
+  stripeSubId      String?
+  updatedAt        DateTime  @updatedAt
+  user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// ── Plataforma ───────────────────────────────────────────
+
+model AppSetting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  actorId   String?
+  actor     String
+  action    String
+  entity    String
+  entityId  String?
+  before    Json?
+  after     Json?
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+model WaitlistEntry {
+  email     String   @id
+  locale    String   @default("es")
+  createdAt DateTime @default(now())
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  reason    String
+  message   String
+  createdAt DateTime @default(now())
+}

@@ -1,6 +1,6 @@
 # 03 · Mercado
 
-> Estado: **base para aprobar** (etapa 1). La tabla definitiva de activos y fuentes sale de la **prueba de fuentes** al inicio de la etapa 3.
+> Estado: **aprobado**. Tabla de fuentes confirmada con la prueba del 23-10-2026 (§2 bis).
 
 ## 1. Qué significa "replicar el mercado real"
 
@@ -27,9 +27,22 @@ Con fuentes gratuitas no se puede replicar todo: no hay libro de órdenes, ni li
 | Índices | S&P 500, IBEX 35 | A validar | Posiblemente con retraso |
 | Acciones España | SAN, ITX | A validar | Con retraso (15 min) o fuera del catálogo |
 
+### 2 bis. Resultado de la prueba de fuentes (23-10-2026)
+
+| Activos | Fuente elegida | Precio | Velas (gráficos) | Respaldo |
+|---|---|---|---|---|
+| AAPL, MSFT, NVDA, TSLA, AMZN, GOOGL, META, SPY, QQQ | **Finnhub** (plan gratis) | Tiempo real | Yahoo | Último precio guardado |
+| SAN, ITX, BBVA (BME) · VWCE (Xetra) | **Yahoo Finance** (no oficial) | 15 min de retraso | Yahoo | Último precio guardado |
+| S&P 500 · IBEX 35 | **Yahoo Finance** | S&P en tiempo real · IBEX 15 min | Yahoo | Último precio guardado |
+| BTC, ETH, SOL (en euros) | **Binance** (API pública) | Tiempo real 24/7 | Binance | Segundo servidor de Binance |
+| EUR/USD, GBP/USD | **Yahoo Finance** | Tiempo real | Yahoo | Tipo oficial del BCE (diario) |
+
+Descartado: Finnhub para Europa, índices, divisas y velas (de pago); Stooq (ya no responde).
+**Riesgo conocido:** Yahoo no tiene API oficial; puede cambiar o bloquear sin aviso. Si pasa, esos activos muestran el último precio real con el aviso «con retraso» y no se inventa nada. Cuando haya ingresos, se sustituye por un proveedor de pago (D-031).
+
 **Regla:** si en la prueba de fuentes un activo no tiene fuente real gratuita, **sale del catálogo** o se muestra con su retraso real avisado. Cuando haya ingresos, un proveedor de pago (Twelve Data u otro) cubrirá España e índices en tiempo real.
 
-**Arquitectura de datos:** cada precio se pide **una vez** al proveedor y se reparte a todos desde una caché (Redis), con la última cotización real guardada en la base de datos. Así una instancia nueva del servidor nunca muestra un precio inventado. Nunca hay una llamada al proveedor por usuario.
+**Arquitectura de datos:** cada precio se pide **una vez** al proveedor y se reparte a todos: se guarda en la tabla `Quote` (se refresca si tiene más de 20 s con el mercado abierto) y la CDN de Vercel sirve la respuesta unos segundos (D-032). Así una instancia nueva del servidor nunca muestra un precio inventado. Nunca hay una llamada al proveedor por usuario.
 
 ## 3. Horarios (hora peninsular española)
 

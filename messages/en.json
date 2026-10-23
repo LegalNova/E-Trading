@@ -50,9 +50,18 @@
     "tickerNote": "Market prices may be delayed · For information only",
     "howTitle": "How it works",
     "how": {
-      "learn": { "title": "Learn", "body": "Short lessons on stocks, candlesticks, risk and investor psychology. Each one ends with a quiz." },
-      "practice": { "title": "Practise", "body": "Buy and sell stocks, ETFs, crypto and currencies with virtual money on real prices." },
-      "compete": { "title": "Compete", "body": "Keep your streak, earn XP and move up in weekly leagues that reward well-managed risk." }
+      "learn": {
+        "title": "Learn",
+        "body": "Short lessons on stocks, candlesticks, risk and investor psychology. Each one ends with a quiz."
+      },
+      "practice": {
+        "title": "Practise",
+        "body": "Buy and sell stocks, ETFs, crypto and currencies with virtual money on real prices."
+      },
+      "compete": {
+        "title": "Compete",
+        "body": "Keep your streak, earn XP and move up in weekly leagues that reward well-managed risk."
+      }
     },
     "stats": {
       "activeUsers": "people learning",
@@ -60,8 +69,21 @@
       "simulatedTrades": "simulated trades"
     },
     "plansTitle": "Plans",
-    "freeFeatures": ["Units 1 and 2 in full", "5 lives in quizzes", "€10,000 virtual money", "Market orders", "Weekly league"],
-    "premiumFeatures": ["All lessons", "Unlimited lives", "€50,000 virtual money", "Limit, stop loss and take profit", "Lumi reviews your portfolio", "Weekly streak freeze"],
+    "freeFeatures": [
+      "Units 1 and 2 in full",
+      "5 lives in quizzes",
+      "€10,000 virtual money",
+      "Market orders",
+      "Weekly league"
+    ],
+    "premiumFeatures": [
+      "All lessons",
+      "Unlimited lives",
+      "€50,000 virtual money",
+      "Limit, stop loss and take profit",
+      "Lumi reviews your portfolio",
+      "Weekly streak freeze"
+    ],
     "trial": "7 days free",
     "perMonth": "/month · or {year}/year",
     "tryPremium": "Try Premium",
@@ -69,7 +91,12 @@
     "contactSub": "Schools, academies, press or questions. We reply within 48 hours.",
     "name": "Name",
     "reason": "Reason",
-    "reasons": { "SCHOOL": "School or academy", "PRESS": "Press", "SUPPORT": "Help with the app", "OTHER": "Other" },
+    "reasons": {
+      "SCHOOL": "School or academy",
+      "PRESS": "Press",
+      "SUPPORT": "Help with the app",
+      "OTHER": "Other"
+    },
     "message": "Message",
     "send": "Send",
     "contactThanks": "Thank you. We'll reply within 48 hours.",
@@ -111,8 +138,16 @@
     "nameTitle": "What's your name?",
     "nameLabel": "Name",
     "genderTitle": "How should we address you?",
-    "gender": { "F": "Feminine", "M": "Masculine", "N": "Neutral" },
-    "genderExample": { "F": "Aficionada", "M": "Aficionado", "N": "Con base" },
+    "gender": {
+      "F": "Feminine",
+      "M": "Masculine",
+      "N": "Neutral"
+    },
+    "genderExample": {
+      "F": "Aficionada",
+      "M": "Aficionado",
+      "N": "Con base"
+    },
     "genderNote": "We use it for level titles in Spanish and Catalan («{example}», for example). You can change it in Settings.",
     "birthTitle": "When were you born?",
     "day": "Day",
@@ -122,12 +157,27 @@
     "underAge": "E-Trading is for people aged 14 and over.",
     "expTitle": "Have you ever invested?",
     "exp": {
-      "NONE": { "title": "Never", "body": "I'm starting from scratch" },
-      "SOME": { "title": "A little", "body": "I've read about it or tried an app" },
-      "EXPERIENCED": { "title": "Quite a bit", "body": "I've traded with real money" }
+      "NONE": {
+        "title": "Never",
+        "body": "I'm starting from scratch"
+      },
+      "SOME": {
+        "title": "A little",
+        "body": "I've read about it or tried an app"
+      },
+      "EXPERIENCED": {
+        "title": "Quite a bit",
+        "body": "I've traded with real money"
+      }
     },
     "goalsTitle": "What do you want to achieve?",
-    "goalOptions": ["Understand the stock market", "Save better", "Crypto", "Technical analysis", "Just curious"],
+    "goalOptions": [
+      "Understand the stock market",
+      "Save better",
+      "Crypto",
+      "Technical analysis",
+      "Just curious"
+    ],
     "dailyGoal": "Daily goal",
     "placementHint": "Placement test · question {i} of {n} · you can skip it",
     "placementNote": "No lives here and we won't tell you if you're right: it's only to find your starting point.",
@@ -137,7 +187,12 @@
     "placementScore": "You got {correct} out of {total}.",
     "skipped": "You skip {units}. You can review it whenever you like.",
     "companionTitle": "Choose how {name} looks",
-    "skins": { "azul": "Blue", "grafito": "Graphite", "plata": "Silver", "hielo": "Ice" },
+    "skins": {
+      "azul": "Blue",
+      "grafito": "Graphite",
+      "plata": "Silver",
+      "hielo": "Ice"
+    },
     "levelN": "Level {n}",
     "companionName": "Name (optional)",
     "balanceTitle": "Your virtual balance to practise with",
@@ -279,12 +334,19 @@
     "portfolio": "Portfolio",
     "orders": "Orders",
     "loading": "Loading prices…",
-    "filter": { "WATCH": "Watchlist", "STOCK": "Stocks", "ETF": "ETFs", "CRYPTO": "Crypto", "INDEX": "Indices", "FX": "Currencies" },
+    "filter": {
+      "WATCH": "Watchlist",
+      "STOCK": "Stocks",
+      "ETF": "ETFs",
+      "CRYPTO": "Crypto",
+      "INDEX": "Indices",
+      "FX": "Currencies"
+    },
     "noResults": "No assets with that name.",
     "emptyWatch": "You're not following any asset yet. Tap ☆ Follow on any asset page.",
     "stale": "Some prices are a few minutes behind. Reconnecting to the provider…",
     "staleAsset": "Delayed price (last known). Reconnecting…",
-    "dataNote": "Spanish and European stocks delayed by 15 min. Crypto 24/7. In this test version prices are simulated from real values.",
+    "dataNote": "Real prices: US stocks and crypto live; Spanish stocks, Xetra and the IBEX delayed by 15 min. Currencies live.",
     "crypto247": "Crypto · 24/7",
     "fx": "Currency",
     "index": "Index",
@@ -305,8 +367,19 @@
     "line": "Line",
     "candles": "Candles",
     "range": "Period",
-    "ranges": { "1D": "1D", "1W": "1W", "1M": "1M", "3M": "3M", "1Y": "1Y" },
-    "pranges": { "1W": "1W", "1M": "1M", "3M": "3M", "ALL": "All" },
+    "ranges": {
+      "1D": "1D",
+      "1W": "1W",
+      "1M": "1M",
+      "3M": "3M",
+      "1Y": "1Y"
+    },
+    "pranges": {
+      "1W": "1W",
+      "1M": "1M",
+      "3M": "3M",
+      "ALL": "All"
+    },
     "yourPosition": "Your position",
     "return": "Return",
     "avgPrice": "Average price",
@@ -320,7 +393,12 @@
     "shares": "units",
     "units": "units",
     "orderType": "Order type",
-    "types": { "MARKET": "Market", "LIMIT": "Limit", "STOP_LOSS": "Stop loss", "TAKE_PROFIT": "Take profit" },
+    "types": {
+      "MARKET": "Market",
+      "LIMIT": "Limit",
+      "STOP_LOSS": "Stop loss",
+      "TAKE_PROFIT": "Take profit"
+    },
     "amountEur": "Amount in euros",
     "ofPosition": "of your position",
     "triggerPrice": "Trigger price",
@@ -338,7 +416,11 @@
     "confirmSell": "Sell now",
     "placeOrder": "Place order",
     "orderError": "Couldn't place the order",
-    "errors": { "INSUFFICIENT_FUNDS": "Not enough cash", "INSUFFICIENT_QTY": "You don't hold that many units", "MIN_AMOUNT": "The minimum is €1" },
+    "errors": {
+      "INSUFFICIENT_FUNDS": "Not enough cash",
+      "INSUFFICIENT_QTY": "You don't hold that many units",
+      "MIN_AMOUNT": "The minimum is €1"
+    },
     "riskTitle": "Risk warning",
     "riskHead": "Hold on, {name}. That's a lot in a single asset.",
     "riskBody": "With this purchase, {name} would be <b>{pct} %</b> of your portfolio. If it falls 10 %, you'd lose about <b>{loss}</b>. Spreading across several assets softens that blow.",
@@ -424,7 +506,11 @@
     "title": "Achievements",
     "count": "{n} of {total}",
     "inProgress": "In progress",
-    "cat": { "LEARNING": "Learning", "TRADING": "Trading", "STREAK": "Streak & league" },
+    "cat": {
+      "LEARNING": "Learning",
+      "TRADING": "Trading",
+      "STREAK": "Streak & league"
+    },
     "unlockedOn": "Unlocked on {date}"
   },
   "league": {
@@ -473,7 +559,14 @@
   },
   "premium": {
     "title": "Learn without limits with Premium",
-    "features": ["Every lesson and unit", "Unlimited lives in quizzes", "€50,000 virtual money to practise with", "Limit, stop loss and take profit orders", "Lumi reviews your portfolio every week", "One streak freeze every week"],
+    "features": [
+      "Every lesson and unit",
+      "Unlimited lives in quizzes",
+      "€50,000 virtual money to practise with",
+      "Limit, stop loss and take profit orders",
+      "Lumi reviews your portfolio every week",
+      "One streak freeze every week"
+    ],
     "yearly": "Yearly",
     "yearlyPrice": "{price} a year · {month}/month",
     "monthly": "Monthly",
@@ -510,17 +603,33 @@
     "save": "Save",
     "saved": "Saved",
     "gender": "Form of address",
-    "genders": { "F": "Feminine", "M": "Masculine", "N": "Neutral" },
+    "genders": {
+      "F": "Feminine",
+      "M": "Masculine",
+      "N": "Neutral"
+    },
     "preferences": "Preferences",
     "language": "Language",
-    "languages": { "es": "Castellano", "ca": "Català", "en": "English" },
+    "languages": {
+      "es": "Castellano",
+      "ca": "Català",
+      "en": "English"
+    },
     "currency": "Reference currency",
     "dailyGoal": "Daily goal",
     "theme": "Theme",
-    "themes": { "AUTO": "Automatic", "LIGHT": "Light", "DARK": "Dark" },
+    "themes": {
+      "AUTO": "Automatic",
+      "LIGHT": "Light",
+      "DARK": "Dark"
+    },
     "notifications": "Notifications",
     "inApp": "In app",
-    "notif": { "streak": "Streak reminder", "orders": "Orders and alerts", "progress": "Achievements, league and new lessons" },
+    "notif": {
+      "streak": "Streak reminder",
+      "orders": "Orders and alerts",
+      "progress": "Achievements, league and new lessons"
+    },
     "pushNote": "Mobile push notifications will arrive with the installable version.",
     "accountSection": "Account and privacy",
     "account": "Account, portfolio and data",
@@ -547,7 +656,13 @@
     "delete": "Delete my account"
   },
   "admin": {
-    "tabs": { "metrics": "Metrics", "content": "Content", "users": "Users", "settings": "Settings", "audit": "Audit" },
+    "tabs": {
+      "metrics": "Metrics",
+      "content": "Content",
+      "users": "Users",
+      "settings": "Settings",
+      "audit": "Audit"
+    },
     "range": "Period",
     "dauMau": "Active users (DAU / MAU)",
     "retention": "D7 retention",
@@ -569,7 +684,48 @@
     "active": "Active",
     "noUsers": "No users.",
     "usersNote": "Blocking, unblocking and resetting other users' portfolios arrives with the backend (stage 3).",
-    "settingsRows": [["Free starting balance", "€10,000"], ["Premium starting balance", "€50,000"], ["Simulated fee", "0.1 % · min. €1"], ["Risk threshold per asset", "20 %"], ["Max lives / regeneration", "5 · 1 every 4 h"], ["Level curve", "base 500 · ×1.4"], ["Portfolio resets / year", "3"], ["Max reminders / day", "2"], ["Minimum age", "14"], ["Premium trial days", "7"]],
+    "settingsRows": [
+      [
+        "Free starting balance",
+        "€10,000"
+      ],
+      [
+        "Premium starting balance",
+        "€50,000"
+      ],
+      [
+        "Simulated fee",
+        "0.1 % · min. €1"
+      ],
+      [
+        "Risk threshold per asset",
+        "20 %"
+      ],
+      [
+        "Max lives / regeneration",
+        "5 · 1 every 4 h"
+      ],
+      [
+        "Level curve",
+        "base 500 · ×1.4"
+      ],
+      [
+        "Portfolio resets / year",
+        "3"
+      ],
+      [
+        "Max reminders / day",
+        "2"
+      ],
+      [
+        "Minimum age",
+        "14"
+      ],
+      [
+        "Premium trial days",
+        "7"
+      ]
+    ],
     "settingsNote": "In stage 3 these values are stored in the Settings table and can be edited here; every change is logged in the audit.",
     "noAudit": "No actions recorded yet.",
     "backToApp": "Back to the app"

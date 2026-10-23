@@ -4,11 +4,11 @@ import type {
   NotificationT, OrderPreviewT, OrderT, PathUnitT, PortfolioT, QuestionT, QuizFinishT, StreakT, TradeT,
 } from '@/shared/contract'
 import { fix2, fix8 } from '@/shared/format'
-import { isOpen, nextClose, nextOpen } from '@/shared/market-hours'
+import { isOpen, nextOpen } from '@/shared/market-hours'
 import { ApiFailure, type Api, type OrderInput } from '../types'
 import { ACHIEVEMENTS, ASSET, ASSETS, DIVISIONS, LEAGUE_NAMES, LESSON, LEVEL_TITLES, LUMI, PLACEMENT, QUIZZES, UNITS, type MockQuestion } from './catalog'
 import {
-  DAY, LIFE_MS, LIVES_MAX, START_CASH, addDays, bridge, dayOf, freshState, gauss, levelOf, load, rng, sampleState, save, series, uid, weekOf,
+  DAY, LIFE_MS, LIVES_MAX, START_CASH, addDays, bridge, dayOf, freshState, gauss, levelOf, load, rng, sampleState, save, uid, weekOf,
   type Attempt, type State,
 } from './state'
 
@@ -23,9 +23,10 @@ const REFILL_PRICE = 350
 
 /** Ejecuta una operación sobre el estado y lo guarda */
 async function tx<T>(fn: (s: State) => T, ms?: number): Promise<T> {
-  await wait(ms)
+  await Promise.all([wait(ms), syncMarket()])
   const s = load()
   rollover(s)
+  applyLive(s)
   tick(s)
   const out = fn(s)
   save(s)
@@ -66,44 +67,55 @@ function rollover(s: State) {
   }
 }
 
-/** Paseo aleatorio con la volatilidad real de cada activo, solo con el mercado abierto */
-function tick(s: State) {
-  const now = Date.now()
-  const today = dayOf(now)
-  for (const a of ASSETS) {
-    const q = s.prices[a.symbol]
-    if (!q) continue
-    if (q.day !== today) {
-      q.ref = q.p
-      q.day = today
-    }
-    if (!isOpen(a.hours, new Date(now))) {
-      q.t = now
-      continue
-    }
-    const dt = Math.min((now - q.t) / 1000, 6.5 * 3600)
-    if (dt < 1) continue
-    const sigma = (a.vol / 100) * Math.sqrt(dt / 23_400)
-    q.p = Math.max(q.p * Math.exp(gauss() * sigma), a.base * 0.2)
-    q.t = now
+// ── Precios reales (etapa 3): vienen de /api/market, nunca se inventan (F1) ──
+const live = new Map<string, AssetItemT>()
+let lastSync = 0
+let syncing: Promise<void> | null = null
+const SYNC_MS = 5_000
+
+async function syncMarket() {
+  if (Date.now() - lastSync < SYNC_MS) return
+  syncing ??= fetch('/api/market/assets', { cache: 'no-store' })
+    .then(r => (r.ok ? (r.json() as Promise<AssetItemT[]>) : []))
+    .then(items => {
+      for (const it of items) live.set(it.symbol, it)
+      if (items.length) lastSync = Date.now()
+    })
+    .catch(() => undefined)
+    .finally(() => (syncing = null))
+  await syncing
+}
+
+/** Copia el último precio real en el estado (así, sin conexión, se sigue viendo el último conocido) */
+function applyLive(s: State) {
+  for (const it of live.values()) {
+    const p = Number(it.price)
+    s.prices[it.symbol] = { p, ref: p / (1 + it.changePct / 100), t: Date.parse(it.asOf), day: dayOf() }
   }
+}
+
+/** Ejecuta las órdenes pendientes y las alertas con los precios reales */
+function tick(s: State) {
   processPending(s)
 }
 
 // ── Precios ──────────────────────────────────────────────
-const eurPerUsd = (s: State) => 1 / s.prices.EURUSD.p
+const eurPerUsd = (s: State) => (s.prices.EURUSD ? 1 / s.prices.EURUSD.p : 1 / 1.12)
 const toEur = (s: State, sym: string, v: number) => (ASSET[sym].currency === 'USD' ? v * eurPerUsd(s) : v)
-const priceEur = (s: State, sym: string) => toEur(s, sym, s.prices[sym].p)
-const changePct = (s: State, sym: string) => ((s.prices[sym].p - s.prices[sym].ref) / s.prices[sym].ref) * 100
+const priceEur = (s: State, sym: string) => (s.prices[sym] ? toEur(s, sym, s.prices[sym].p) : (s.positions[sym]?.avg ?? 0))
+const changePct = (s: State, sym: string) => (s.prices[sym] ? ((s.prices[sym].p - s.prices[sym].ref) / s.prices[sym].ref) * 100 : 0)
 const fmtPrice = (sym: string, v: number) => (ASSET[sym].type === 'FX' ? v.toFixed(5) : v >= 1000 ? v.toFixed(2) : v.toFixed(4).replace(/(\.\d\d\d?)0+$/, '$1'))
 
-function item(s: State, sym: string): AssetItemT {
+function item(s: State, sym: string): AssetItemT | null {
+  const fresh = live.get(sym)
+  if (fresh && Date.now() - lastSync < 2 * 60_000) return fresh
+  // Sin conexión: último precio real guardado, marcado como «con retraso»
   const a = ASSET[sym]
   const q = s.prices[sym]
+  if (!q) return null
   return {
     symbol: sym, name: a.name, type: a.type, exchange: a.exchange, isOpen: isOpen(a.hours), price: fmtPrice(sym, q.p), currency: a.currency,
-    changePct: changePct(s, sym), sparkline: bridge(sym + q.day, 24, q.ref, q.p, (a.vol / 100) * 0.15), stale: false,
-    asOf: new Date(q.t - a.delayedMinutes * 60_000).toISOString(), delayedMinutes: a.delayedMinutes,
+    changePct: changePct(s, sym), sparkline: fresh?.sparkline ?? [q.ref, q.p], stale: true, asOf: new Date(q.t).toISOString(), delayedMinutes: a.delayedMinutes,
   }
 }
 
@@ -373,24 +385,6 @@ function portfolioOf(s: State): PortfolioT {
   return { totalValue: fix2(total), cash: fix2(s.cash), dayChange: fix2(dayChange), dayChangePct: (dayChange / (total - dayChange)) * 100, totalReturnPct: ((total - start) / start) * 100, realizedPnl: fix2(s.realized), unrealizedPnl: fix2(unreal), positions, resetsLeft: s.resetsLeft }
 }
 
-function candlesOf(s: State, sym: string, range: string): CandleT[] {
-  const a = ASSET[sym]
-  const cfg: Record<string, { n: number; step: number; volK: number }> = {
-    '1D': { n: 78, step: 5 * 60_000, volK: 0.06 }, '1W': { n: 70, step: 3_600_000 * 2.4, volK: 0.18 }, '1M': { n: 22, step: DAY, volK: 1 },
-    '3M': { n: 64, step: DAY, volK: 1 }, '1Y': { n: 52, step: 7 * DAY, volK: 2.2 },
-  }
-  const c = cfg[range] ?? cfg['1M']
-  const end = s.prices[sym].p
-  const closes = series(sym + range + s.prices[sym].day, c.n, end, (a.vol / 100) * c.volK)
-  const r = rng(sym + range)
-  const now = Date.now()
-  return closes.map((cl, i) => {
-    const o = i ? closes[i - 1] : cl / (1 + gauss(r) * (a.vol / 100) * c.volK)
-    const span = Math.abs(cl - o) + cl * (a.vol / 100) * c.volK * 0.4 * r()
-    return { t: new Date(now - (c.n - 1 - i) * c.step).toISOString(), o, h: Math.max(o, cl) + span * r() * 0.6, l: Math.min(o, cl) - span * r() * 0.6, c: cl }
-  })
-}
-
 /** Fotos diarias de la cartera: empiezan en el saldo inicial y acaban en el valor actual */
 function historyOf(s: State, range: '1W' | '1M' | '3M' | 'ALL') {
   const n = { '1W': 7, '1M': 30, '3M': 90, ALL: Math.max(7, Math.ceil((Date.now() - new Date(s.profile.memberSince).getTime()) / DAY)) }[range]
@@ -427,7 +421,10 @@ function requireUser(s: State) {
 
 // ── API ──────────────────────────────────────────────────
 export const mockApi: Api = {
-  publicTicker: () => tx(s => ['AAPL', 'BTC', 'IBEX', 'EURUSD', 'NVDA', 'ETH', 'SPX', 'SAN'].map(x => ({ symbol: x, name: ASSET[x].name, changePct: changePct(s, x), stale: false })), 60),
+  publicTicker: async () => {
+    const r = await fetch('/api/public/ticker')
+    return r.ok ? r.json() : []
+  },
   // Estadísticas públicas: siempre reales; en la simulación no hay usuarios todavía
   publicStats: () => tx(() => ({ activeUsers: 0, lessonsCompleted: 0, simulatedTrades: 0 }), 60),
 
@@ -667,19 +664,30 @@ export const mockApi: Api = {
       else if (filter.type) list = list.filter(x => ASSET[x].type === filter.type)
       const q = filter.q?.trim().toLowerCase()
       if (q) list = ASSETS.map(a => a.symbol).filter(x => x.toLowerCase().includes(q) || ASSET[x].name.toLowerCase().includes(q))
-      return list.map(x => item(s, x))
+      return list.map(x => item(s, x)).filter((x): x is AssetItemT => x !== null)
     }, 90),
 
-  asset: sym =>
-    tx((s): AssetDetailT => {
-      const a = ASSET[sym] ?? fail('NOT_FOUND', 'Activo no encontrado', 404)
-      const it = item(s, sym)
-      const q = s.prices[sym]
-      const inUser = s.settings.currency === 'EUR' ? priceEur(s, sym) : a.currency === 'USD' ? q.p : q.p * s.prices.EURUSD.p
-      return { ...it, change: fmtPrice(sym, q.p - q.ref), priceInUserCurrency: fix2(inUser), opensAt: it.isOpen ? null : nextOpen(a.hours)?.toISOString() ?? null, closesAt: nextClose(a.hours)?.toISOString() ?? null, description: a.description }
-    }, 90),
+  // Ficha: del servidor (precio, horario, descripción); la moneda del usuario sale de los ajustes locales
+  asset: async sym => {
+    const currency = load().settings.currency
+    const r = await fetch(`/api/market/assets/${sym}?currency=${currency}`)
+    if (r.status === 404) fail('NOT_FOUND', 'Activo no encontrado', 404)
+    if (!r.ok) {
+      // Sin conexión: último precio conocido
+      return tx((s): AssetDetailT => {
+        const a = ASSET[sym]
+        const it = item(s, sym) ?? fail('MARKET_UNAVAILABLE', 'Precio no disponible', 503)
+        const q = s.prices[sym]
+        return { ...it, change: fmtPrice(sym, q.p - q.ref), priceInUserCurrency: fix2(priceEur(s, sym)), opensAt: null, closesAt: null, description: a.description }
+      })
+    }
+    return (await r.json()) as AssetDetailT
+  },
 
-  candles: (sym, range) => tx(s => candlesOf(s, sym, range), 120),
+  candles: async (sym, range) => {
+    const r = await fetch(`/api/market/assets/${sym}/candles?range=${range}`)
+    return r.ok ? ((await r.json()) as CandleT[]) : []
+  },
   watchlist: () => tx(s => s.watchlist),
   toggleWatch: sym =>
     tx(s => {

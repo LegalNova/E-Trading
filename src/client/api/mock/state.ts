@@ -3,7 +3,7 @@
 // para que el frontend se pueda probar entero antes de tener backend.
 import type { GenderT, NotificationT, OrderT, PriceAlertT, SettingsT, TradeT } from '@/shared/contract'
 import type { OnboardingDraft, AuditEntry } from '../types'
-import { ASSETS, ASSET, UNITS } from './catalog'
+import { ASSET, UNITS } from './catalog'
 
 export const KEY = 'et-mock-v1'
 export const DAY = 86_400_000
@@ -120,18 +120,6 @@ export function levelOf(xp: number) {
 // ── Estado inicial ───────────────────────────────────────
 const emptyDraft = (): OnboardingDraft => ({ name: '', gender: 'N', birthDate: '', experience: 'NONE', goals: [], dailyGoalMinutes: 10, skinId: 'azul', companionName: 'Lumi', disclaimerAccepted: false })
 
-function seedPrices(now: number): State['prices'] {
-  const day = dayOf(now)
-  return Object.fromEntries(
-    ASSETS.map(a => {
-      const r = rng(a.symbol + day)
-      const chg = gauss(r) * a.vol * 0.6
-      const p = a.base
-      return [a.symbol, { p, ref: p / (1 + chg / 100), t: now, day }]
-    }),
-  )
-}
-
 function baseSettings(): SettingsT {
   return {
     locale: 'es', currency: 'EUR', dailyGoalMinutes: 10, theme: 'AUTO', gender: 'N',
@@ -177,7 +165,7 @@ export function freshState(email: string | null = null): State {
     alerts: [],
     watchlist: ['AAPL', 'BTC', 'SPY', 'IBEX', 'EURUSD'],
     resetsLeft: 3,
-    prices: seedPrices(now),
+    prices: {}, // se llena con los precios reales del servidor (nunca inventados)
     notifications: [],
     settings: baseSettings(),
     audit: [],
@@ -215,7 +203,7 @@ export function sampleState(email: string): State {
   s.cash = 4210.8
   s.realized = 121.8
   // Precio medio siempre en euros (moneda de la cartera)
-  s.positions = { AAPL: { qty: 5, avg: 284.1 }, BTC: { qty: 0.025, avg: 71800 }, VWCE: { qty: 10, avg: 133.4 }, NVDA: { qty: 7, avg: 201.5 } }
+  s.positions = { AAPL: { qty: 5, avg: 284.1 }, BTC: { qty: 0.025, avg: 71800 }, VWCE: { qty: 10, avg: 158.2 }, NVDA: { qty: 7, avg: 201.5 } }
   const t = (id: string, side: 'BUY' | 'SELL', type: TradeT['type'], symbol: string, qty: number, price: number, d: number, pnl: number | null, rejected?: string): TradeT => {
     // El total va en euros (moneda de la cartera); el precio, en la del activo
     const total = qty * price * (ASSET[symbol].currency === 'USD' ? 0.887 : 1)
