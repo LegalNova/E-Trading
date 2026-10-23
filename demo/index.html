@@ -1,0 +1,1297 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>E-Trading · Demo</title>
+<meta name="description" content="Demo interactiva de E-Trading: aprende a invertir sin arriesgar un euro. Clases cortas, quizzes, un mercado con dinero virtual, racha, liga y Lumi.">
+<meta name="theme-color" content="#F5F5F7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="E-Trading · Demo">
+<meta property="og:description" content="Demo interactiva de E-Trading: aprende a invertir sin arriesgar un euro. Clases cortas, quizzes, un mercado con dinero virtual, racha, liga y Lumi.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='2' y='2' width='44' height='44' rx='16' fill='%230071E3'/%3E%3Cpath d='M15 21q3-4 6 0M27 21q3-4 6 0M19 30q5 5 10 0' stroke='white' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>html{-webkit-text-size-adjust:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+/* Concepto: guía a la izquierda + teléfono interactivo; identidad 3a (negro, blanco, grises y un único azul) */
+:root {
+  --bg: #F5F5F7;
+  --surface: #FFFFFF;
+  --fill: #EDEDF0;
+  --border: #E5E5EA;
+  --text: #1D1D1F;
+  --text-2: #6E6E73;
+  --text-3: #AEAEB2;
+  --brand: #0071E3;
+  --brand-press: #0058B0;
+  --on-brand: #FFFFFF;
+  --up: #248A3D;
+  --down: #D70015;
+  --amber: #B25000;
+  --amber-bg: #FFF4E5;
+  --gem: #32ADE6;
+  --hero: #1D1D1F;
+  --on-hero: #F5F5F7;
+  --desk: #E8E8ED;
+  --scrim: rgba(0, 0, 0, .35);
+  --shadow: 0 10px 40px rgba(0, 0, 0, .12);
+  --font: 'Manrope', -apple-system, 'SF Pro Text', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #000000; --surface: #1C1C1E; --fill: #2C2C2E; --border: #38383A; --text: #F5F5F7; --text-2: #98989D; --text-3: #636366;
+    --brand: #2997FF; --brand-press: #0A84FF; --on-brand: #FFFFFF; --up: #30D158; --down: #FF453A; --amber: #FF9F0A; --amber-bg: #2A1E0A;
+    --gem: #64D2FF; --hero: #2C2C2E; --on-hero: #F5F5F7; --desk: #0B0B0C; --scrim: rgba(0, 0, 0, .6); --shadow: 0 10px 40px rgba(0, 0, 0, .6);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #000000; --surface: #1C1C1E; --fill: #2C2C2E; --border: #38383A; --text: #F5F5F7; --text-2: #98989D; --text-3: #636366;
+  --brand: #2997FF; --brand-press: #0A84FF; --on-brand: #FFFFFF; --up: #30D158; --down: #FF453A; --amber: #FF9F0A; --amber-bg: #2A1E0A;
+  --gem: #64D2FF; --hero: #2C2C2E; --on-hero: #F5F5F7; --desk: #0B0B0C; --scrim: rgba(0, 0, 0, .6); --shadow: 0 10px 40px rgba(0, 0, 0, .6);
+  color-scheme: dark;
+}
+/* El tema elegido dentro de la app manda sobre el del sistema */
+.app.force-light {
+  --bg: #F5F5F7; --surface: #FFFFFF; --fill: #EDEDF0; --border: #E5E5EA; --text: #1D1D1F; --text-2: #6E6E73; --text-3: #AEAEB2;
+  --brand: #0071E3; --brand-press: #0058B0; --up: #248A3D; --down: #D70015; --amber: #B25000; --amber-bg: #FFF4E5; --gem: #32ADE6;
+  --hero: #1D1D1F; --scrim: rgba(0, 0, 0, .35); color-scheme: light;
+}
+.app.force-dark {
+  --bg: #000000; --surface: #1C1C1E; --fill: #2C2C2E; --border: #38383A; --text: #F5F5F7; --text-2: #98989D; --text-3: #636366;
+  --brand: #2997FF; --brand-press: #0A84FF; --up: #30D158; --down: #FF453A; --amber: #FF9F0A; --amber-bg: #2A1E0A; --gem: #64D2FF;
+  --hero: #2C2C2E; --scrim: rgba(0, 0, 0, .6); color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--desk); color: var(--text); font-family: var(--font); -webkit-font-smoothing: antialiased;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+button, input, select { font-family: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* ── Página ─────────────────────────────────────────── */
+.page { max-width: 1120px; margin: 0 auto; padding-block: 32px; display: flex; gap: 40px; align-items: flex-start; justify-content: center; }
+.guide { width: 320px; flex: none; display: flex; flex-direction: column; gap: 22px; position: sticky; top: 32px; max-height: calc(100dvh - 64px); overflow-y: auto; scrollbar-width: none; }
+.guide::-webkit-scrollbar { display: none; }
+.guide-close, .mbar { display: none; }
+.guide h1 { margin: 0; font-size: 26px; line-height: 30px; letter-spacing: -.02em; font-weight: 800; text-wrap: balance; }
+.guide p { margin: 0; font-size: 14px; line-height: 21px; color: var(--text-2); }
+.eyebrow { font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--brand); }
+.g-block { display: flex; flex-direction: column; gap: 8px; }
+.g-label { font-size: 12px; font-weight: 700; color: var(--text-2); }
+.route { display: flex; flex-direction: column; gap: 2px; margin: 0; padding: 0; list-style: none; counter-reset: r; }
+.route li { counter-increment: r; }
+.route button { width: 100%; text-align: left; display: flex; gap: 10px; align-items: baseline; padding: 8px 10px; border: none; border-radius: 10px; background: transparent; font-size: 14px; font-weight: 600; line-height: 19px; }
+.route button::before { content: counter(r); font-size: 12px; font-weight: 800; color: var(--brand); width: 14px; flex: none; }
+.route button:hover { background: var(--surface); }
+.route small { display: block; font-weight: 500; color: var(--text-2); font-size: 12px; }
+.jump { display: flex; flex-wrap: wrap; gap: 6px; }
+.jump button { border: 1px solid var(--border); background: var(--surface); border-radius: 999px; padding: 6px 11px; font-size: 12px; font-weight: 700; }
+.jump button[aria-pressed="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
+.switch-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 13px; font-weight: 600; }
+.note { font-size: 12px; line-height: 18px; color: var(--text-2); border-top: 1px solid var(--border); padding-top: 14px; }
+
+/* ── Teléfono ───────────────────────────────────────── */
+.stage { flex: none; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.phone { height: clamp(640px, calc(100dvh - 64px), 844px); aspect-ratio: 390 / 844; border-radius: 52px; padding: 12px; background: #0B0B0C; box-shadow: var(--shadow); position: relative; }
+.app { width: 100%; height: 100%; border-radius: 41px; overflow: hidden; background: var(--bg); color: var(--text); position: relative; display: flex; flex-direction: column; font-variant-numeric: tabular-nums; }
+.status { height: 46px; flex: none; display: flex; align-items: center; justify-content: space-between; padding: 6px 30px 0; font-size: 15px; font-weight: 700; }
+.island { position: absolute; top: 11px; left: 50%; transform: translateX(-50%); width: 108px; height: 31px; background: #000; border-radius: 20px; z-index: 50; }
+.scroll { flex: 1; overflow-y: auto; overflow-x: hidden; scrollbar-width: none; }
+.scroll::-webkit-scrollbar { display: none; }
+.caption { font-size: 12px; color: var(--text-2); text-align: center; max-width: 360px; }
+
+/* ── Componentes de la app ──────────────────────────── */
+.pad { padding: 4px 16px 20px; display: flex; flex-direction: column; gap: 12px; }
+.card { background: var(--surface); border-radius: 18px; padding: 16px; }
+.row { display: flex; align-items: center; gap: 10px; }
+.between { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.t-large { font-size: 30px; line-height: 36px; font-weight: 800; letter-spacing: -.02em; margin: 0; }
+.t-title { font-size: 24px; line-height: 30px; font-weight: 800; letter-spacing: -.02em; margin: 0; text-wrap: balance; }
+.t-head { font-size: 17px; line-height: 22px; font-weight: 700; }
+.t-body { font-size: 15px; line-height: 22px; }
+.t-foot { font-size: 13px; line-height: 18px; color: var(--text-2); }
+.t-cap { font-size: 12px; line-height: 16px; color: var(--text-2); }
+.big { font-size: 40px; line-height: 44px; font-weight: 800; letter-spacing: -.02em; }
+.muted { color: var(--text-2); }
+.up { color: var(--up); } .down { color: var(--down); }
+.btn { height: 52px; border: none; border-radius: 999px; font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 0 22px; width: 100%; transition: transform .1s ease-out, opacity .15s; }
+.btn:active { transform: scale(.98); }
+.btn.primary { background: var(--brand); color: var(--on-brand); }
+.btn.success { background: var(--up); color: #fff; }
+.btn.danger { background: var(--down); color: #fff; }
+.btn.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+.btn.plain { background: transparent; color: var(--brand); height: 44px; }
+.btn.dark { background: var(--text); color: var(--bg); }
+.btn[disabled] { background: var(--fill); color: var(--text-3); cursor: not-allowed; }
+.btn.sm { height: 40px; font-size: 15px; width: auto; }
+.chip { display: inline-flex; align-items: center; gap: 5px; background: var(--surface); border: none; border-radius: 999px; padding: 6px 10px; font-size: 13px; font-weight: 800; }
+.seg { display: flex; background: var(--fill); border-radius: 999px; padding: 3px; gap: 2px; }
+.seg button { flex: 1; border: none; background: transparent; border-radius: 999px; height: 32px; font-size: 13px; font-weight: 700; color: var(--text-2); white-space: nowrap; padding: 0 10px; }
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--text); box-shadow: 0 1px 4px rgba(0, 0, 0, .12); }
+.pills { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 0 16px; }
+.pills::-webkit-scrollbar { display: none; }
+.pills button { flex: none; border: none; border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 700; background: var(--surface); color: var(--text); }
+.pills button[aria-pressed="true"] { background: var(--text); color: var(--bg); }
+.list { background: var(--surface); border-radius: 18px; overflow: hidden; }
+.li { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: none; background: none; width: 100%; text-align: left; position: relative; }
+.li + .li::before { content: ""; position: absolute; top: 0; left: 62px; right: 0; height: 1px; background: var(--border); }
+.li.plainline + .li.plainline::before { left: 14px; }
+.ava { width: 38px; height: 38px; flex: none; border-radius: 12px; background: var(--fill); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; }
+.ava.dark { background: var(--text); color: var(--bg); }
+.bar { height: 6px; border-radius: 999px; background: var(--fill); overflow: hidden; }
+.bar i { display: block; height: 100%; border-radius: 999px; background: var(--brand); transition: width .5s ease-out; }
+.hero { background: var(--hero); color: var(--on-hero); border-radius: 18px; padding: 16px; }
+.hero .bar { background: rgba(255, 255, 255, .18); }
+.nav { height: 84px; flex: none; display: grid; grid-template-columns: repeat(5, 1fr); padding: 6px 6px 26px; border-top: 1px solid var(--border); background: var(--surface); }
+.nav button { border: none; background: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-size: 10px; font-weight: 700; color: var(--text-3); }
+.nav button[aria-current="page"] { color: var(--brand); }
+.topbar { height: 44px; flex: none; display: flex; align-items: center; justify-content: space-between; padding: 0 8px; }
+.icon-btn { width: 44px; height: 44px; border: none; background: none; display: flex; align-items: center; justify-content: center; border-radius: 12px; color: var(--text); }
+.link { border: none; background: none; color: var(--brand); font-size: 15px; font-weight: 700; padding: 6px 8px; }
+.opt { width: 100%; text-align: left; border: 2px solid transparent; background: var(--surface); border-radius: 16px; padding: 14px 16px; display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 600; line-height: 20px; }
+.opt[aria-pressed="true"] { border-color: var(--brand); }
+.opt.ok { border-color: var(--up); background: color-mix(in srgb, var(--up) 10%, var(--surface)); }
+.opt.bad { border-color: var(--down); background: color-mix(in srgb, var(--down) 10%, var(--surface)); }
+.opt.dim { opacity: .5; }
+.feedback { border-radius: 18px 18px 0 0; padding: 18px 18px 22px; display: flex; flex-direction: column; gap: 10px; animation: rise .22s ease-out; }
+.feedback.ok { background: color-mix(in srgb, var(--up) 14%, var(--surface)); }
+.feedback.bad { background: color-mix(in srgb, var(--down) 12%, var(--surface)); }
+.steps { display: flex; gap: 4px; flex: 1; }
+.steps i { flex: 1; height: 6px; border-radius: 999px; background: var(--fill); }
+.steps i.on { background: var(--brand); }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 13px; font-weight: 700; }
+.input { height: 50px; border-radius: 14px; border: 1px solid var(--border); background: var(--surface); padding: 0 14px; font-size: 16px; width: 100%; }
+.check { width: 24px; height: 24px; flex: none; border-radius: 8px; border: 2px solid var(--text-3); display: flex; align-items: center; justify-content: center; color: #fff; }
+.check.on { background: var(--brand); border-color: var(--brand); }
+.toast { position: absolute; left: 14px; right: 14px; top: 54px; z-index: 60; background: var(--text); color: var(--bg); border-radius: 16px; padding: 12px 14px; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 10px; box-shadow: var(--shadow); animation: rise .2s ease-out; }
+.sheet-wrap { position: absolute; inset: 0; z-index: 40; display: flex; flex-direction: column; justify-content: flex-end; }
+.sheet-wrap .scrim { position: absolute; inset: 0; background: var(--scrim); animation: fade .2s; }
+.sheet { position: relative; background: var(--bg); border-radius: 26px 26px 0 0; padding: 10px 16px 30px; display: flex; flex-direction: column; gap: 14px; animation: rise .24s ease-out; max-height: 92%; overflow-y: auto; }
+.grabber { width: 38px; height: 5px; border-radius: 999px; background: var(--text-3); margin: 0 auto 4px; }
+.banner { background: var(--amber-bg); color: var(--amber); border-radius: 14px; padding: 10px 12px; font-size: 13px; font-weight: 600; line-height: 18px; display: flex; gap: 8px; }
+.kv { display: flex; justify-content: space-between; gap: 10px; padding: 11px 0; font-size: 15px; }
+.kv + .kv { border-top: 1px solid var(--border); }
+.kv span:first-child { color: var(--text-2); }
+.kv span:last-child { font-weight: 700; text-align: right; }
+.toggle { width: 51px; height: 31px; border-radius: 999px; border: none; background: var(--fill); position: relative; flex: none; transition: background .2s; }
+.toggle::after { content: ""; position: absolute; top: 2px; left: 2px; width: 27px; height: 27px; border-radius: 50%; background: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, .2); transition: transform .2s; }
+.toggle[aria-checked="true"] { background: var(--up); }
+.toggle[aria-checked="true"]::after { transform: translateX(20px); }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.stat { background: var(--surface); border-radius: 16px; padding: 14px; display: flex; flex-direction: column; gap: 2px; }
+.stat b { font-size: 22px; font-weight: 800; }
+.flash-up { animation: fu .8s; } .flash-down { animation: fd .8s; }
+@keyframes fu { 0% { color: var(--up); } }
+@keyframes fd { 0% { color: var(--down); } }
+@keyframes rise { from { transform: translateY(16px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes fade { from { opacity: 0; } }
+@keyframes pop { 0% { transform: scale(.6); opacity: 0; } 70% { transform: scale(1.08); } 100% { transform: scale(1); opacity: 1; } }
+.pop { animation: pop .45s ease-out both; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* ── Móvil y tablet estrecha: la app ocupa la pantalla; la guía se abre desde la barra superior ── */
+@media (max-width: 860px) {
+  body { padding-left: 0; padding-right: 0; }
+  .page { display: block; padding: 0; max-width: none; }
+  .mbar {
+    display: flex; position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; height: 52px; align-items: center; justify-content: space-between; gap: 12px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(12px, env(safe-area-inset-right, 0px)); background: var(--desk);
+  }
+  .mbar b { font-size: 16px; font-weight: 800; letter-spacing: -.01em; }
+  .mbar span { font-size: 12px; color: var(--text-2); font-weight: 600; }
+  .mbar button { border: none; border-radius: 999px; background: var(--text); color: var(--bg); padding: 8px 14px; font-size: 14px; font-weight: 800; }
+  .guide { display: none; }
+  .guide.open {
+    display: flex; position: fixed; inset: 0; z-index: 100; width: auto; max-height: none; background: var(--desk); overflow-y: auto;
+    padding: calc(16px + env(safe-area-inset-top, 0px)) max(20px, env(safe-area-inset-right, 0px)) calc(28px + env(safe-area-inset-bottom, 0px)) max(20px, env(safe-area-inset-left, 0px));
+    animation: rise .2s ease-out;
+  }
+  .guide-close { display: flex; align-self: flex-end; border: none; background: var(--text); color: var(--bg); border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 800; }
+  .stage { display: block; }
+  .phone { width: 100%; height: calc(100dvh - 52px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)); min-height: 520px; aspect-ratio: auto; border-radius: 0; padding: 0; background: transparent; box-shadow: none; }
+  .app { border-radius: 0; }
+  .island, .status, .caption { display: none; }
+  .nav { padding-bottom: max(10px, env(safe-area-inset-bottom, 0px)); height: auto; min-height: 60px; }
+  .toast { top: 12px; }
+}
+</style>
+
+<div class="mbar"><div><b>E-Trading</b> <span>· demo</span></div><button id="open-guide" aria-controls="guide" aria-expanded="false">Guía</button></div>
+<div class="page">
+  <aside class="guide" id="guide" aria-label="Guía de la demo">
+    <button class="guide-close" id="close-guide">Volver a la app</button>
+    <div class="g-block">
+      <span class="eyebrow">Demo interactiva · octubre 2026</span>
+      <h1>E-Trading: aprende a invertir sin arriesgar un euro</h1>
+      <p>Así funcionará la app: clases cortas con quiz y vidas, un mercado con dinero virtual, racha, logros y liga semanal, con Lumi acompañando cada paso. Todo es tocable.</p>
+    </div>
+    <div class="g-block">
+      <span class="g-label">Recorrido recomendado</span>
+      <ol class="route" id="route"></ol>
+    </div>
+    <div class="g-block">
+      <span class="g-label">Ir a una pantalla</span>
+      <div class="jump" id="jump"></div>
+    </div>
+    <div class="g-block">
+      <span class="g-label">Probar estados</span>
+      <div class="switch-row"><span>Proveedor de precios caído</span><button class="toggle" id="stale-toggle" role="switch" aria-checked="false" aria-label="Simular proveedor de precios caído"></button></div>
+      <div class="switch-row"><span>Usuario Premium</span><button class="toggle" id="premium-toggle" role="switch" aria-checked="false" aria-label="Simular plan Premium"></button></div>
+      <button class="btn secondary sm" id="reset-demo" style="align-self:flex-start">Empezar de nuevo</button>
+    </div>
+    <p class="note">Maqueta para enseñar el producto: los precios, nombres y cifras son de ejemplo y no se guarda nada. Simulación educativa · no es asesoramiento financiero.</p>
+  </aside>
+
+
+  <div class="stage">
+    <div class="phone">
+      <div class="island" aria-hidden="true"></div>
+      <div class="app" id="app">
+        <div class="status" aria-hidden="true"><span>9:41</span><span>100 %</span></div>
+        <div id="screen" style="flex:1;display:flex;flex-direction:column;min-height:0;position:relative"></div>
+      </div>
+    </div>
+    <p class="caption">Datos de ejemplo · Simulación educativa · No es asesoramiento financiero</p>
+  </div>
+</div>
+
+<script>
+(() => {
+/* ── Formato español ─────────────────────────────── */
+const NF = (d) => new Intl.NumberFormat('es-ES', { minimumFractionDigits: d, maximumFractionDigits: d, useGrouping: 'always' })
+const n0 = NF(0), n2 = NF(2), n4 = NF(4)
+const eur = v => (v < 0 ? '−' : '') + n2.format(Math.abs(v)) + ' €'
+const sEur = v => (v >= 0 ? '+' : '−') + n2.format(Math.abs(v)) + ' €'
+const pct = v => (v >= 0 ? '▲ +' : '▼ −') + n2.format(Math.abs(v)) + ' %'
+const USD_EUR = 0.923
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]))
+
+/* ── Activos de ejemplo ──────────────────────────── */
+const ASSETS = [
+  { s: 'AAPL', n: 'Apple', type: 'Acciones', ex: 'NASDAQ', cur: 'USD', p: 212.44, c: 0.84, open: true },
+  { s: 'NVDA', n: 'NVIDIA', type: 'Acciones', ex: 'NASDAQ', cur: 'USD', p: 131.08, c: 2.40, open: true },
+  { s: 'MSFT', n: 'Microsoft', type: 'Acciones', ex: 'NASDAQ', cur: 'USD', p: 417.20, c: 0.52, open: true },
+  { s: 'TSLA', n: 'Tesla', type: 'Acciones', ex: 'NASDAQ', cur: 'USD', p: 251.10, c: -1.35, open: true },
+  { s: 'ITX', n: 'Inditex', type: 'Acciones', ex: 'BME', cur: 'EUR', p: 52.18, c: 1.05, open: false, delayed: true },
+  { s: 'SAN', n: 'Banco Santander', type: 'Acciones', ex: 'BME', cur: 'EUR', p: 4.71, c: -0.42, open: false, delayed: true },
+  { s: 'VWCE', n: 'Vanguard FTSE All-World', type: 'ETFs', ex: 'XETRA', cur: 'EUR', p: 128.36, c: 0.22, open: false },
+  { s: 'SPY', n: 'S&P 500 ETF', type: 'ETFs', ex: 'NYSE', cur: 'USD', p: 571.30, c: 0.35, open: true },
+  { s: 'BTC', n: 'Bitcoin', type: 'Cripto', ex: 'Cripto', cur: 'EUR', p: 61204, c: -1.12, open: true, h24: true },
+  { s: 'ETH', n: 'Ethereum', type: 'Cripto', ex: 'Cripto', cur: 'EUR', p: 2380.40, c: 0.67, open: true, h24: true },
+  { s: 'IBEX', n: 'IBEX 35', type: 'Índices', ex: 'Índice', cur: 'EUR', p: 11842, c: 0.31, open: false, index: true },
+  { s: 'EURUSD', n: 'EUR/USD', type: 'Divisas', ex: 'Divisa', cur: 'USD', p: 1.0842, c: -0.05, open: true, fx: true },
+]
+const A = Object.fromEntries(ASSETS.map(a => [a.s, a]))
+const toEur = a => a.cur === 'USD' && !a.fx ? a.p * USD_EUR : a.p
+const fprice = a => a.fx ? n4.format(a.p) : a.index ? n0.format(a.p) : (a.p >= 10000 ? n0.format(a.p) : n2.format(a.p)) + (a.cur === 'USD' ? ' $' : ' €')
+
+/* Serie pseudoaleatoria estable que acaba en `end` */
+function series(seed, n, end, vol) {
+  let s = 0; for (const ch of seed) s = (s * 31 + ch.charCodeAt(0)) % 2147483647
+  let v = 100; const out = []
+  for (let i = 0; i < n; i++) { s = (s * 16807) % 2147483647; v *= 1 + (s / 2147483647 - .5) * vol; out.push(v) }
+  const k = end / out[n - 1]; return out.map(x => x * k)
+}
+function pathOf(vals, w, h, pad = 3) {
+  const mn = Math.min(...vals), mx = Math.max(...vals), k = (mx - mn) || 1
+  return vals.map((v, i) => (i ? 'L' : 'M') + (i * w / (vals.length - 1)).toFixed(1) + ' ' + (pad + (h - 2 * pad) * (1 - (v - mn) / k)).toFixed(1)).join(' ')
+}
+function spark(seed, end, up, w = 56, h = 22) {
+  return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true"><path d="${pathOf(series(seed, 24, end, .03), w, h, 2)}" fill="none" stroke="var(--${up ? 'up' : 'down'})" stroke-width="1.6"/></svg>`
+}
+
+/* ── Lumi (la cara la pinta el frontend según el estado de ánimo) ── */
+function lumi(mood = 'HAPPY', size = 44) {
+  const eyes = {
+    HAPPY: '<path d="M15 21q3-4 6 0M27 21q3-4 6 0" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/>',
+    CELEBRATE: '<path d="M18 16l1.4 3 3.2.4-2.3 2.2.6 3.2-2.9-1.6-2.9 1.6.6-3.2-2.3-2.2 3.2-.4zM30 16l1.4 3 3.2.4-2.3 2.2.6 3.2-2.9-1.6-2.9 1.6.6-3.2-2.3-2.2 3.2-.4z" fill="#fff"/>',
+    WORRIED: '<path d="M14 15l6 3M34 15l-6 3" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="18" cy="22" r="3" fill="#fff"/><circle cx="30" cy="22" r="3" fill="#fff"/>',
+    CALM: '<path d="M15 21h6M27 21h6" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>',
+    SAD: '<circle cx="18" cy="21" r="3" fill="#fff"/><circle cx="30" cy="21" r="3" fill="#fff"/><path d="M14 16l5-2M34 16l-5-2" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>',
+    SLEEPY: '<path d="M15 21q3 3 6 0M27 21q3 3 6 0" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/>',
+    THINKING: '<circle cx="18" cy="21" r="3" fill="#fff"/><circle cx="31" cy="19" r="3" fill="#fff"/>',
+  }[mood] || ''
+  const mouth = {
+    HAPPY: '<path d="M19 30q5 5 10 0" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/>',
+    CELEBRATE: '<path d="M18 29q6 8 12 0z" fill="#fff"/>',
+    WORRIED: '<path d="M19 32q5-4 10 0" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/>',
+    CALM: '<path d="M20 31h8" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>',
+    SAD: '<path d="M19 33q5-5 10 0" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/>',
+    SLEEPY: '<circle cx="24" cy="31" r="2.4" fill="#fff"/>',
+    THINKING: '<path d="M20 31q4 2 8-1" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/>',
+  }[mood] || ''
+  const skin = { azul: 'var(--brand)', grafito: '#3A3A3C', plata: '#8E8E93', hielo: '#64D2FF' }[S.skin] || 'var(--brand)'
+  return `<svg width="${size}" height="${size}" viewBox="0 0 48 48" role="img" aria-label="${esc(S.lumiName)}, ${mood.toLowerCase()}" style="flex:none"><rect x="2" y="2" width="44" height="44" rx="16" fill="${skin}"/>${eyes}${mouth}</svg>`
+}
+
+/* ── Iconos ──────────────────────────────────────── */
+const I = {
+  home: '<path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/>',
+  learn: '<path d="M4 5h6a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H4zM20 5h-6a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h6z"/>',
+  market: '<path d="M4 4v16h16M7 15l4-4 3 3 6-6"/>',
+  league: '<path d="M7 4h10v5a5 5 0 0 1-10 0zM10 20h4M12 14v6M7 6H4v2a3 3 0 0 0 3 3M17 6h3v2a3 3 0 0 1-3 3"/>',
+  user: '<path d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM4 21c1-4 4-6 8-6s7 2 8 6"/>',
+  back: '<path d="M15 5l-7 7 7 7"/>',
+  close: '<path d="M6 6l12 12M18 6 6 18"/>',
+  chev: '<path d="M9 6l6 6-6 6"/>',
+  lock: '<path d="M6 11h12v9H6zM9 11V8a3 3 0 0 1 6 0v3"/>',
+  check: '<path d="M5 12l5 5 9-10"/>',
+  star: '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.5 2.9 1-6.1L3.2 9.5l6.1-.9z"/>',
+  bell: '<path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4zM10 21h4"/>',
+  gear: '<path d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>',
+}
+const ico = (k, s = 22, extra = '') => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ${extra}>${I[k]}</svg>`
+const flame = (c = 'var(--brand)', s = 14) => `<svg width="${s}" height="${s + 2}" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 0C7 4 11 5 11 9a5 5 0 01-10 0c0-2 1-3 2-4 0 2 1 3 2 3C5 6 4 3 6 0z" fill="${c}"/></svg>`
+const gem = (s = 13) => `<svg width="${s}" height="${s}" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0l6 4-6 8-6-8z" fill="var(--gem)"/></svg>`
+const heart = (s = 13, c = 'var(--down)') => `<svg width="${s + 1}" height="${s}" viewBox="0 0 13 12" aria-hidden="true"><path d="M6.5 12L1 6.5A3.3 3.3 0 016.5 2a3.3 3.3 0 015.5 4.5z" fill="${c}"/></svg>`
+
+/* ── Estado de la demo ───────────────────────────── */
+let S
+function fresh() {
+  return {
+    screen: 'welcome', theme: 'auto', name: 'Laura', gender: 'F', birth: { d: '14', m: 'marzo', y: '2004' }, exp: 'NONE', goalsSel: ['Entender la bolsa'], meta: 10,
+    plQi: 0, plPick: null, plScore: 0, skin: 'azul', lumiName: 'Lumi', disclaimer: false,
+    premium: false, stale: false,
+    xp: 860, streak: 6, best: 14, todayDone: false, gems: 240, lives: 4, freezes: 1,
+    goals: [
+      { id: 'clase', label: 'Completa una clase', progress: 0, target: 1, xp: 20 },
+      { id: 'ops', label: 'Haz 2 operaciones', progress: 1, target: 2, xp: 15 },
+      { id: 'perfect', label: 'Quiz perfecto', progress: 0, target: 1, xp: 25 },
+    ],
+    lessons: { 1: { st: 'done', stars: 3 }, 2: { st: 'done', stars: 2 }, 3: { st: 'open', stars: 0 }, 4: { st: 'locked' }, 5: { st: 'locked' } },
+    cash: 4210.80, realized: 121.80, bonusGiven: false,
+    pos: { AAPL: { qty: 8, avg: 188.90 }, BTC: { qty: 0.031, avg: 62640 }, VWCE: { qty: 14, avg: 121.05 }, NVDA: { qty: 10, avg: 110.20 } },
+    trades: [
+      { t: 'Venta', s: 'TSLA', d: '17 oct', total: 1284.20, pnl: 84.20 },
+      { t: 'Take profit', s: 'NVDA', d: '15 oct', total: 640.00, pnl: 52.10 },
+      { t: 'Compra', s: 'BTC', d: '12 oct', total: 0, rejected: 'saldo insuficiente' },
+    ],
+    watch: ['AAPL', 'BTC', 'IBEX', 'EURUSD', 'NVDA'],
+    mFilter: 'Seguimiento', mQuery: '', asset: 'AAPL', chartMode: 'Línea', chartInt: '1d',
+    order: null, step: 0, tapped: null, qi: 0, picked: null, answers: [], quizStart: 0, result: null,
+    pTab: 'Cartera', pRange: '1M', league: 860, notifRead: false, sheet: null, toast: null, resetsLeft: 2,
+    notif: { streak: true, orders: true, weekly: false },
+  }
+}
+S = fresh()
+
+/* ── Cálculos de cartera ─────────────────────────── */
+const posValue = s => S.pos[s] ? S.pos[s].qty * toEur(A[s]) : 0
+const invested = () => Object.keys(S.pos).reduce((t, s) => t + posValue(s), 0)
+const total = () => S.cash + invested()
+const unrealized = () => Object.keys(S.pos).reduce((t, s) => t + posValue(s) - S.pos[s].qty * S.pos[s].avg, 0)
+const dayChange = () => Object.keys(S.pos).reduce((t, s) => { const v = posValue(s); return t + v - v / (1 + A[s].c / 100) }, 0)
+const fee = amt => Math.max(amt * 0.001, 1)
+
+/* ── Niveles y títulos según género ──────────────── */
+const LEVELS = [
+  { n: 1, min: 0, max: 500, t: { F: 'Principiante', M: 'Principiante', N: 'Principiante' } },
+  { n: 2, min: 500, max: 1200, t: { F: 'Aficionada', M: 'Aficionado', N: 'Con base' } },
+  { n: 3, min: 1200, max: 2180, t: { F: 'Inversora', M: 'Inversor', N: 'Con criterio' } },
+  { n: 4, min: 2180, max: 3550, t: { F: 'Analista', M: 'Analista', N: 'Analista' } },
+  { n: 5, min: 3550, max: null, t: { F: 'Experta', M: 'Experto', N: 'Con experiencia' } },
+]
+const level = (xp = S.xp) => LEVELS.slice().reverse().find(l => xp >= l.min)
+
+/* ── Navegación ──────────────────────────────────── */
+const TABS = ['home', 'path', 'market', 'league', 'profile']
+const TAB_LABEL = { home: 'Inicio', path: 'Clases', market: 'Mercado', league: 'Liga', profile: 'Perfil' }
+const TAB_ICON = { home: 'home', path: 'learn', market: 'market', league: 'league', profile: 'user' }
+const tabOf = { home: 'home', path: 'path', market: 'market', asset: 'market', portfolio: 'market', league: 'league', profile: 'profile', streak: 'profile', achievements: 'profile', notifications: 'home', settings: 'profile' }
+
+function go(screen, extra = {}) {
+  Object.assign(S, extra, { screen, sheet: null })
+  render(true)
+  syncGuide()
+}
+function toast(msg, ms = 2600) {
+  S.toast = msg; renderToast()
+  clearTimeout(toast.t); toast.t = setTimeout(() => { S.toast = null; renderToast() }, ms)
+}
+
+/* ── Piezas comunes ──────────────────────────────── */
+const nav = () => `<nav class="nav" aria-label="Pestañas">${TABS.map(t => `<button data-go="${t}" ${tabOf[S.screen] === t ? 'aria-current="page"' : ''}>${ico(TAB_ICON[t], 24)}${TAB_LABEL[t]}</button>`).join('')}</nav>`
+const top = (title = '', left = 'back', right = '') => `<div class="topbar">${left === 'back' ? `<button class="icon-btn" data-act="back" aria-label="Volver">${ico('back')}</button>` : left === 'close' ? `<button class="icon-btn" data-act="back" aria-label="Cerrar">${ico('close')}</button>` : `<span style="width:44px"></span>`}<span class="t-head" style="flex:1;text-align:center;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">${title}</span>${right || '<span style="width:44px"></span>'}</div>`
+const livesChip = () => `<button class="chip" data-act="lives" aria-label="Vidas">${heart()}${S.premium ? '∞' : S.lives}</button>`
+const disclaimer = `<p class="t-cap" style="text-align:center;margin:4px 0 0">Simulación educativa · No es asesoramiento financiero</p>`
+const backTarget = { asset: 'market', portfolio: 'market', streak: 'home', achievements: 'profile', notifications: 'home', settings: 'profile', premium: 'home', lesson: 'path', quiz: 'path', result: 'path', nolives: 'path', signup: 'welcome', login: 'welcome' }
+
+/* ── Pantallas ───────────────────────────────────── */
+const V = {}
+
+V.welcome = () => `
+  <div class="scroll"><div class="pad" style="min-height:100%;justify-content:space-between;padding-top:60px">
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px">
+      <div class="pop">${lumi('HAPPY', 112)}</div>
+      <h1 class="t-large">Hola, soy ${esc(S.lumiName)}.<br>Vamos a aprender juntos.</h1>
+      <p class="t-body muted" style="margin:0;max-width:280px">Cinco minutos al día. Dinero virtual, precios reales.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <button class="btn primary" data-go="signup">Crear cuenta</button>
+      <button class="btn plain" data-go="home" data-skip="1">Ya tengo cuenta</button>
+    </div>
+  </div></div>`
+
+V.signup = () => `
+  ${top('')}
+  <div class="scroll"><div class="pad">
+    <h1 class="t-large">Crea tu cuenta</h1>
+    <button class="btn dark" data-go="onb1"> Continuar con Apple</button>
+    <button class="btn secondary" data-go="onb1"><b style="font-size:15px">G</b> Continuar con Google</button>
+    <div class="row t-cap" style="justify-content:center">o con email</div>
+    <div class="field"><label for="f-email">Email</label><input class="input" id="f-email" value="laura@email.com" autocomplete="off"></div>
+    <div class="field"><label for="f-pass">Contraseña</label><input class="input" id="f-pass" type="password" value="contraseña1"><span class="t-cap">Mínimo 8 caracteres y un número.</span></div>
+    <p class="t-cap" style="margin:4px 0">Al continuar aceptas los <b>Términos</b> y la <b>Política de privacidad</b>.</p>
+    <button class="btn primary" data-go="onb1">Crear cuenta</button>
+  </div></div>`
+
+const onbHead = n => `<div class="topbar" style="padding-right:16px"><button class="icon-btn" data-act="back" aria-label="Atrás">${ico('back')}</button><div class="steps" role="progressbar" aria-valuemin="1" aria-valuemax="7" aria-valuenow="${n}">${[1, 2, 3, 4, 5, 6, 7].map(i => `<i class="${i <= n ? 'on' : ''}"></i>`).join('')}</div><span class="t-cap" style="width:34px;text-align:right">${n}/7</span></div>`
+const onbBack = { onb1: 'signup', onb2: 'onb1', onb3: 'onb2', placement: 'onb3', placeres: 'placement', onb5: 'placeres', onb6: 'onb5' }
+
+V.onb1 = () => `
+  ${onbHead(1)}
+  <div class="scroll"><div class="pad">
+    <h1 class="t-title">¿Cómo te llamas?</h1>
+    <input class="input" id="f-name" value="${esc(S.name)}" aria-label="Nombre">
+    <h2 class="t-head" style="margin:6px 0 0">¿Cómo quieres que te tratemos?</h2>
+    <div class="seg" role="group" aria-label="Tratamiento">${[['F', 'Femenino'], ['M', 'Masculino'], ['N', 'Neutro']].map(([k, l]) => `<button data-gender="${k}" aria-pressed="${S.gender === k}">${l}</button>`).join('')}</div>
+    <p class="t-cap" style="margin:0">Lo usamos para los títulos de nivel: «${LEVELS[1].t[S.gender]}», por ejemplo.</p>
+    <h2 class="t-head" style="margin:6px 0 0">¿Cuándo naciste?</h2>
+    <div class="grid2" style="grid-template-columns:70px 1fr 90px">
+      <input class="input" value="${S.birth.d}" aria-label="Día" inputmode="numeric">
+      <select class="input" aria-label="Mes">${['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'].map(m => `<option ${m === S.birth.m ? 'selected' : ''}>${m}</option>`).join('')}</select>
+      <input class="input" value="${S.birth.y}" aria-label="Año" inputmode="numeric">
+    </div>
+    <p class="t-cap" style="margin:0">Lo usamos para adaptar el contenido y por motivos legales. No se muestra a nadie. Si tienes menos de 18 años, un adulto tendrá que confirmar los pagos.</p>
+    <button class="btn primary" data-act="onb1-next" style="margin-top:8px">Continuar</button>
+  </div></div>`
+
+V.onb2 = () => `
+  ${onbHead(2)}
+  <div class="scroll"><div class="pad">
+    <h1 class="t-title">¿Has invertido alguna vez?</h1>
+    ${[['NONE', 'Nunca', 'Empiezo de cero'], ['SOME', 'Un poco', 'He leído o probado alguna app'], ['EXPERIENCED', 'Bastante', 'Ya he operado con dinero real']].map(([k, t, d]) => `<button class="opt" data-exp="${k}" aria-pressed="${S.exp === k}"><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span>${t}</span><span class="t-foot">${d}</span></span></button>`).join('')}
+    <button class="btn primary" data-go="onb3" style="margin-top:8px">Continuar</button>
+  </div></div>`
+
+const GOALS = ['Entender la bolsa', 'Ahorrar mejor', 'Cripto', 'Análisis técnico', 'Por curiosidad']
+V.onb3 = () => `
+  ${onbHead(3)}
+  <div class="scroll"><div class="pad">
+    <h1 class="t-title">¿Qué quieres conseguir?</h1>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">${GOALS.map(g => `<button class="chip" style="padding:10px 14px;font-size:14px;${S.goalsSel.includes(g) ? 'background:var(--brand);color:var(--on-brand)' : ''}" data-goal="${g}" aria-pressed="${S.goalsSel.includes(g)}">${g}</button>`).join('')}</div>
+    <h2 class="t-head" style="margin:8px 0 0">Meta diaria</h2>
+    <div class="grid2" style="grid-template-columns:repeat(4,1fr)">${[5, 10, 15, 20].map(m => `<button class="opt" style="flex-direction:column;gap:0;padding:12px 6px;text-align:center" data-meta="${m}" aria-pressed="${S.meta === m}"><b style="font-size:20px">${m}</b><span class="t-cap">min</span></button>`).join('')}</div>
+    <button class="btn primary" data-go="placement" data-reset-pl="1" style="margin-top:8px">Continuar</button>
+  </div></div>`
+
+const PLACEMENT = [
+  { q: 'Si una acción cae un 50 %, ¿cuánto tiene que subir para recuperar el precio inicial?', o: ['50 %', '100 %', '150 %', 'No lo sé'], c: 1 },
+  { q: '¿Qué es un ETF?', o: ['Un fondo que cotiza en bolsa y reúne muchas empresas', 'Una criptomoneda', 'Un préstamo a una empresa', 'No lo sé'], c: 0 },
+]
+V.placement = () => {
+  const Q = PLACEMENT[S.plQi]
+  return `
+  ${onbHead(4)}
+  <div class="scroll"><div class="pad">
+    <span class="t-foot">Test de nivel · pregunta ${S.plQi + 1} de ${PLACEMENT.length} · puedes saltarla</span>
+    <h1 class="t-title">${Q.q}</h1>
+    ${Q.o.map((o, i) => `<button class="opt" data-pl="${i}" aria-pressed="${S.plPick === i}">${o}</button>`).join('')}
+    <p class="t-cap" style="margin:0">Aquí no hay vidas ni te decimos si aciertas: solo sirve para saber por dónde empiezas.</p>
+    <button class="btn primary" data-act="pl-next" ${S.plPick === null ? 'disabled' : ''}>Comprobar</button>
+    <button class="btn plain" data-act="pl-skip">Saltar</button>
+  </div></div>`
+}
+V.placeres = () => `
+  <div class="scroll"><div class="pad" style="padding-top:40px;min-height:100%">
+    ${lumi('CELEBRATE', 64)}
+    <h1 class="t-large">Empiezas en la Unidad 2</h1>
+    <p class="t-body muted" style="margin:0">Acertaste ${S.plScore} de ${PLACEMENT.length}. Te saltas «Primeros pasos». Puedes repasarla cuando quieras.</p>
+    <div class="list">
+      <div class="li plainline"><span class="ava" style="background:var(--up);color:#fff">${ico('check', 18)}</span><span style="flex:1"><b>Unidad 1 · Primeros pasos</b><br><span class="t-cap">Superada</span></span></div>
+      <div class="li plainline"><span class="ava" style="background:var(--brand);color:#fff">2</span><span style="flex:1"><b>Unidad 2 · Leer un gráfico</b><br><span class="t-cap">Empiezas aquí</span></span></div>
+    </div>
+    <div style="flex:1"></div>
+    <button class="btn primary" data-go="onb5">Continuar</button>
+  </div></div>`
+
+V.onb5 = () => `
+  ${onbHead(5)}
+  <div class="scroll"><div class="pad">
+    <h1 class="t-title">Elige el aspecto de ${esc(S.lumiName)}</h1>
+    <div style="display:flex;justify-content:center;padding:8px 0">${lumi('HAPPY', 96)}</div>
+    <div class="grid2" style="grid-template-columns:repeat(4,1fr)">${[['azul', 'Azul'], ['grafito', 'Grafito'], ['plata', 'Plata'], ['hielo', 'Hielo']].map(([k, l]) => `<button class="opt" style="flex-direction:column;gap:6px;padding:10px 4px;text-align:center;font-size:12px" data-skin="${k}" aria-pressed="${S.skin === k}" ${k === 'hielo' ? 'disabled' : ''}><span style="width:30px;height:30px;border-radius:10px;background:${{ azul: 'var(--brand)', grafito: '#3A3A3C', plata: '#8E8E93', hielo: '#64D2FF' }[k]}"></span>${l}${k === 'hielo' ? '<span class="t-cap">Nivel 5</span>' : ''}</button>`).join('')}</div>
+    <div class="field"><label for="f-lumi">Nombre (opcional)</label><input class="input" id="f-lumi" value="${esc(S.lumiName)}" maxlength="14"></div>
+    <button class="btn primary" data-act="onb5-next">Continuar</button>
+  </div></div>`
+
+V.onb6 = () => `
+  ${onbHead(7)}
+  <div class="scroll"><div class="pad">
+    <div class="card" style="display:flex;flex-direction:column;gap:4px">
+      <span class="t-foot">Tu saldo virtual para practicar</span>
+      <span class="big">${S.premium ? '50.000,00 €' : '10.000,00 €'}</span>
+      <span class="t-cap">${S.premium ? 'Saldo de Premium' : 'Con Premium: 50.000,00 €'}</span>
+    </div>
+    <div class="card" style="display:flex;flex-direction:column;gap:12px">
+      <span class="t-head">Antes de empezar</span>
+      <p class="t-body muted" style="margin:0">E-Trading es una app educativa. Nunca se opera con dinero real, no se conecta a ningún broker y no ofrece recomendaciones de inversión.</p>
+      <button class="row" data-act="disclaimer" style="border:none;background:none;padding:0;text-align:left" role="checkbox" aria-checked="${S.disclaimer}"><span class="check ${S.disclaimer ? 'on' : ''}">${S.disclaimer ? ico('check', 16) : ''}</span><b>Lo entiendo y acepto</b></button>
+    </div>
+    <button class="btn primary" data-act="start" ${S.disclaimer ? '' : 'disabled'}>Empezar</button>
+  </div></div>`
+
+V.home = () => {
+  const lv = level(), done = S.goals.filter(g => g.progress >= g.target).length
+  const nextL = LESSONS.find(l => S.lessons[l.n].st === 'open')
+  const msg = S.todayDone ? `¡${S.streak} días seguidos, ${esc(S.name)}! Mañana más.` : S.streak === 6 ? `¡Seis días seguidos, ${esc(S.name)}! Una clase más y llegas a la semana.` : `Una clase de cinco minutos mantiene tu racha.`
+  const sp = series('home', 30, total(), .012)
+  return `
+  <div class="scroll"><div class="pad">
+    <div class="between" style="padding:0 2px">
+      <span class="t-title">Hola, ${esc(S.name)}</span>
+      <div class="row" style="gap:6px">
+        <button class="chip" data-go="streak" aria-label="Racha">${flame()}${S.streak}</button>
+        <button class="chip" data-act="gems" aria-label="Gemas">${gem()}${S.gems}</button>
+        ${livesChip()}
+      </div>
+    </div>
+    <div class="card row" style="gap:12px">${lumi(S.todayDone ? 'CELEBRATE' : 'HAPPY', 40)}<span class="t-foot" style="color:var(--text)">${msg}</span></div>
+    ${nextL ? `<div class="hero" style="display:flex;flex-direction:column;gap:10px">
+      <div class="between t-cap" style="color:rgba(255,255,255,.65)"><span>Siguiente clase · Unidad 2</span><span>${nextL.min} min</span></div>
+      <span style="font-size:22px;line-height:27px;font-weight:800;letter-spacing:-.01em">${nextL.t}</span>
+      <div class="row"><div class="bar" style="flex:1"><i style="width:40%;background:#fff"></i></div><button class="btn primary sm" data-act="open-lesson" data-n="${nextL.n}">Continuar</button></div>
+    </div>` : `<div class="hero" style="display:flex;flex-direction:column;gap:10px"><span class="t-cap" style="color:rgba(255,255,255,.65)">Unidad 2 completada</span><span style="font-size:22px;font-weight:800">Desbloqueado: la Unidad 3</span><button class="btn primary sm" data-go="path" style="align-self:flex-start">Ver camino</button></div>`}
+    <div class="card" style="display:flex;flex-direction:column;gap:10px">
+      <div class="between"><span class="t-head">Objetivos de hoy</span><span class="t-foot">${done} de 3</span></div>
+      ${S.goals.map(g => { const ok = g.progress >= g.target; return `<div class="between t-body"><span class="row" style="gap:8px">${ok ? `<span class="check on" style="width:20px;height:20px;border-radius:6px">${ico('check', 13)}</span>` : `<span class="check" style="width:20px;height:20px;border-radius:6px"></span>`}${g.label}</span><span class="t-foot" style="${ok ? 'color:var(--up);font-weight:700' : ''}">${ok ? '+' + g.xp + ' XP' : g.progress + '/' + g.target}</span></div>` }).join('')}
+    </div>
+    <button class="card" data-go="portfolio" style="border:none;text-align:left;display:flex;flex-direction:column;gap:6px">
+      <span class="t-foot">Tu cartera</span>
+      <div class="between"><span style="font-size:26px;font-weight:800;letter-spacing:-.02em" data-total>${eur(total())}</span><span class="t-foot ${dayChange() >= 0 ? 'up' : 'down'}" style="font-weight:700" data-daychg>${dayChange() >= 0 ? '▲' : '▼'} ${sEur(dayChange())} hoy</span></div>
+      <svg viewBox="0 0 300 50" preserveAspectRatio="none" style="width:100%;height:50px" aria-hidden="true"><path d="${pathOf(sp, 300, 50)}" fill="none" stroke="var(--up)" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>
+    </button>
+    <div class="between t-foot" style="padding:0 4px"><span>Nivel ${lv.n} · ${lv.t[S.gender]} · ${n0.format(S.xp)} XP</span><button class="link" data-go="notifications">${ico('bell', 18)}</button></div>
+  </div></div>
+  ${nav()}`
+}
+
+/* ── Clases ──────────────────────────────────────── */
+const LESSONS = [
+  { n: 1, t: 'Qué es un gráfico de precios', min: 4, xp: 25 },
+  { n: 2, t: 'Tendencias: alcista y bajista', min: 5, xp: 25 },
+  { n: 3, t: 'Velas japonesas: qué cuenta cada una', min: 5, xp: 30 },
+  { n: 4, t: 'Soportes y resistencias', min: 6, xp: 30 },
+  { n: 5, t: 'Repaso de la unidad', min: 8, xp: 50, quizOnly: true },
+]
+V.path = () => {
+  const doneN = LESSONS.filter(l => S.lessons[l.n].st === 'done').length
+  return `
+  <div class="scroll"><div class="pad">
+    <div class="hero" style="display:flex;flex-direction:column;gap:8px">
+      <span class="t-cap" style="color:rgba(255,255,255,.65)">Unidad 2 de 6</span>
+      <span style="font-size:24px;font-weight:800;letter-spacing:-.02em">Leer un gráfico</span>
+      <div class="row"><div class="bar" style="flex:1"><i style="width:${doneN / 5 * 100}%;background:#fff"></i></div><span class="t-cap" style="color:#fff;font-weight:800">${Math.round(doneN / 5 * 100)} %</span></div>
+    </div>
+    ${LESSONS.map(l => {
+      const st = S.lessons[l.n]
+      const open = st.st === 'open', done = st.st === 'done'
+      return `<button class="card row" style="border:2px solid ${open ? 'var(--brand)' : 'transparent'};text-align:left;gap:12px;${st.st === 'locked' ? 'opacity:.55' : ''}" data-act="${st.st === 'locked' ? 'locked-lesson' : 'open-lesson'}" data-n="${l.n}">
+        <span class="ava" style="border-radius:50%;${done ? 'background:var(--up);color:#fff' : open ? 'background:var(--brand);color:#fff' : ''}">${done ? ico('check', 18) : st.st === 'locked' ? ico('lock', 16) : l.n}</span>
+        <span style="flex:1;display:flex;flex-direction:column;gap:2px"><b style="font-size:15px">${l.t}</b><span class="t-cap" style="${open ? 'color:var(--brand);font-weight:700' : ''}">${done ? 'Completada · ' + '★'.repeat(st.stars) + '☆'.repeat(3 - st.stars) : open ? `Disponible · ${l.min} min · +${l.xp} XP` : l.quizOnly ? 'Bloqueada · quiz final' : 'Bloqueada'}</span></span>
+      </button>`
+    }).join('')}
+    <span class="t-head" style="margin-top:6px">Próximas unidades</span>
+    <div class="list">
+      ${[['3 · Gestión del riesgo', 'Desbloquea límite, stop loss y take profit en el Mercado', false], ['4 · Psicología del trader', 'Sesgos, miedo y FOMO', true], ['5 · Cripto sin sustos', 'Volatilidad y custodia', true], ['6 · Construye tu cartera', 'Diversificar con ETFs', true]].map(([t, d, p]) => `<div class="li plainline"><span style="flex:1"><b style="font-size:15px">${t}</b><br><span class="t-cap">${d}</span></span>${p && !S.premium ? '<span class="chip" style="background:var(--text);color:var(--bg);font-size:11px">Premium</span>' : ''}</div>`).join('')}
+    </div>
+  </div></div>
+  ${nav()}`
+}
+
+/* Velas de ejemplo (la solución vive "en el servidor": aquí, el índice 3) */
+const CANDLES = [[100, 104, 99, 103], [103, 106, 101, 102], [102, 103, 97, 98], [98, 99.5, 91, 99], [99, 104, 98.5, 103.5], [103.5, 107, 103, 106]]
+function candleChart(sel = null, correct = null) {
+  const W = 300, H = 170, lo = 89, hi = 108, y = v => 10 + (H - 20) * (1 - (v - lo) / (hi - lo))
+  return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto" role="img" aria-label="Gráfico de velas diarias de AAPL, 6 velas">${CANDLES.map(([o, h, l, c], i) => {
+    const x = 28 + i * 48, upc = c >= o, col = upc ? 'var(--up)' : 'var(--down)'
+    const ring = sel === i ? `<rect x="${x - 16}" y="4" width="32" height="${H - 8}" rx="10" fill="none" stroke="${correct === null ? 'var(--brand)' : correct ? 'var(--up)' : 'var(--down)'}" stroke-width="2"/>` : ''
+    return `<g data-candle="${i}" style="cursor:pointer">${ring}<rect x="${x - 18}" y="0" width="36" height="${H}" fill="transparent"/><line x1="${x}" x2="${x}" y1="${y(h)}" y2="${y(l)}" stroke="${col}" stroke-width="2"/><rect x="${x - 8}" y="${y(Math.max(o, c))}" width="16" height="${Math.max(3, Math.abs(y(o) - y(c)))}" rx="2" fill="${col}"/></g>`
+  }).join('')}</svg>`
+}
+const LESSON_STEPS = [
+  () => `<h1 class="t-title">Cada vela resume un periodo</h1>
+    <div class="card" style="display:flex;justify-content:center;gap:56px;padding:22px">
+      <svg width="40" height="120" viewBox="0 0 40 120" aria-label="Vela verde: sube"><line x1="20" x2="20" y1="6" y2="114" stroke="var(--up)" stroke-width="2.5"/><rect x="8" y="28" width="24" height="60" rx="3" fill="var(--up)"/></svg>
+      <svg width="40" height="120" viewBox="0 0 40 120" aria-label="Vela roja: baja"><line x1="20" x2="20" y1="10" y2="100" stroke="var(--down)" stroke-width="2.5"/><rect x="8" y="22" width="24" height="44" rx="3" fill="var(--down)"/></svg>
+    </div>
+    <div class="between t-foot" style="padding:0 60px"><span class="up" style="font-weight:700">Sube</span><span class="down" style="font-weight:700">Baja</span></div>
+    <p class="t-body" style="margin:0">El cuerpo va del precio de <b>apertura</b> al de <b>cierre</b>. Las mechas marcan el máximo y el mínimo que tocó.</p>
+    <div class="card row" style="gap:12px">${lumi('THINKING', 36)}<span class="t-foot" style="color:var(--text)">Truco: verde, cierra más arriba de lo que abrió.</span></div>`,
+  () => `<h1 class="t-title">Las mechas cuentan la pelea</h1>
+    <p class="t-body" style="margin:0">Una mecha inferior larga significa que los vendedores empujaron el precio hacia abajo durante el día, pero los compradores lo recuperaron antes del cierre.</p>
+    <p class="t-body" style="margin:0">Esa vela se llama <b>martillo</b> y a veces aparece al final de una caída.</p>
+    <div class="banner" style="background:var(--fill);color:var(--text-2)">Una vela sola nunca es una señal segura. Se lee en contexto.</div>`,
+  () => {
+    const ans = S.tapped
+    const ok = ans === 3
+    return `<h1 class="t-title">Toca la vela con la mecha inferior más larga</h1>
+    <span class="t-cap">AAPL · velas diarias · marzo 2024 (datos reales en la app final)</span>
+    <div class="card" id="candle-card">${candleChart(ans, ans === null ? null : ok)}</div>
+    ${ans === null ? '' : ok
+      ? `<div class="card" style="background:color-mix(in srgb,var(--up) 12%,var(--surface))"><b class="up">¡Bien visto!</b><p class="t-foot" style="margin:4px 0 0;color:var(--text)">Es un «martillo»: los vendedores empujaron, pero el precio se recuperó.</p></div>`
+      : `<div class="card" style="background:color-mix(in srgb,var(--down) 10%,var(--surface))"><b class="down">Casi.</b><p class="t-foot" style="margin:4px 0 0;color:var(--text)">Busca la línea fina más larga por debajo del cuerpo. Prueba otra vez.</p></div>`}`
+  },
+  () => `<h1 class="t-title">Ahora, el quiz</h1>
+    <div style="display:flex;justify-content:center;padding:12px 0">${lumi('HAPPY', 88)}</div>
+    <p class="t-body" style="margin:0">Cuatro preguntas sobre velas y tendencias. Cada fallo cuesta una vida${S.premium ? ' (con Premium, ilimitadas)' : ''}. Aprobando sumas XP y cuenta para tu racha.</p>`,
+]
+V.lesson = () => {
+  const n = S.step, last = n === LESSON_STEPS.length - 1, needTap = n === 2 && S.tapped !== 3
+  return `
+  <div class="topbar" style="padding-right:16px"><button class="icon-btn" data-go="path" aria-label="Cerrar">${ico('close')}</button><div class="steps">${LESSON_STEPS.map((_, i) => `<i class="${i <= n ? 'on' : ''}"></i>`).join('')}</div><span class="t-cap" style="width:34px;text-align:right">${n + 1}/${LESSON_STEPS.length}</span></div>
+  <div class="scroll"><div class="pad">${LESSON_STEPS[n]()}</div></div>
+  <div style="padding:10px 16px 28px">
+    <button class="btn ${n === 2 && S.tapped === 3 ? 'success' : 'primary'}" data-act="${last ? 'start-quiz' : 'lesson-next'}" ${needTap ? 'disabled' : ''}>${last ? 'Empezar el quiz' : 'Continuar'}</button>
+  </div>`
+}
+
+/* ── Quiz ────────────────────────────────────────── */
+const QUIZ = [
+  { type: 'SINGLE', q: '¿Qué indica una vela con cuerpo muy pequeño y mechas largas?', o: ['Una subida fuerte', 'Una bajada fuerte', 'Indecisión entre compradores y vendedores', 'Que el mercado está cerrado'], c: 2, e: 'Ni compradores ni vendedores ganaron el día.' },
+  { type: 'CHART_TREND', q: '¿Qué tendencia tiene BTC en este periodo?', o: ['Alcista', 'Bajista', 'Lateral'], c: 1, e: 'Máximos y mínimos cada vez más bajos: tendencia bajista.' },
+  { type: 'TRUE_FALSE', q: 'Una vela verde cierra por encima del precio al que abrió.', o: ['Verdadero', 'Falso'], c: 0, e: 'Verde = el cierre quedó por encima de la apertura.' },
+  { type: 'SINGLE', q: 'Si una acción cae un 50 %, ¿cuánto tiene que subir para volver al precio inicial?', o: ['50 %', '100 %', '150 %'], c: 1, e: 'De 100 a 50 hay que doblar: +100 %. Por eso evitar grandes caídas importa tanto.' },
+]
+V.quiz = () => {
+  const Q = QUIZ[S.qi], ans = S.picked !== null, ok = S.picked === Q.c
+  const trend = Q.type === 'CHART_TREND' ? `<div class="card"><svg viewBox="0 0 300 120" preserveAspectRatio="none" style="width:100%;height:120px" role="img" aria-label="Gráfico de BTC en descenso"><path d="${pathOf([100, 103, 98, 101, 94, 97, 90, 92, 86, 88, 82, 84, 78], 300, 120, 8)}" fill="none" stroke="var(--text)" stroke-width="2.2" vector-effect="non-scaling-stroke"/></svg></div>` : ''
+  return `
+  <div class="topbar" style="padding-right:12px"><button class="icon-btn" data-go="path" aria-label="Salir del quiz">${ico('close')}</button><div class="steps">${QUIZ.map((_, i) => `<i class="${i < S.qi || (i === S.qi && ans) ? 'on' : ''}"></i>`).join('')}</div><span class="chip" style="background:none;padding:6px 4px">${heart()}${S.premium ? '∞' : S.lives}</span></div>
+  <div class="scroll"><div class="pad">
+    <span class="t-foot">${Q.type === 'CHART_TREND' ? 'Lee el gráfico' : Q.type === 'TRUE_FALSE' ? 'Verdadero o falso' : 'Elige una respuesta'}</span>
+    <h1 class="t-title">${Q.q}</h1>
+    ${trend}
+    <div style="display:${Q.type === 'CHART_TREND' || Q.type === 'TRUE_FALSE' ? 'grid;grid-template-columns:repeat(' + Q.o.length + ',1fr);gap:8px' : 'flex;flex-direction:column;gap:10px'}">
+      ${Q.o.map((o, i) => { const cls = !ans ? '' : i === Q.c ? 'ok' : i === S.picked ? 'bad' : 'dim'; return `<button class="opt ${cls}" data-pick="${i}" ${ans ? 'disabled' : ''} style="${Q.o.length <= 3 && Q.type !== 'SINGLE' ? 'justify-content:center' : ''}">${o}</button>` }).join('')}
+    </div>
+  </div></div>
+  ${ans ? `<div class="feedback ${ok ? 'ok' : 'bad'}" aria-live="polite">
+      <b class="${ok ? 'up' : 'down'}" style="font-size:17px">${ok ? '¡Correcto!' : S.premium ? 'Casi.' : 'Casi. Pierdes una vida.'}</b>
+      <span class="t-body">${Q.e}</span>
+      <button class="btn ${ok ? 'success' : 'danger'}" data-act="quiz-next">${S.qi < QUIZ.length - 1 ? (ok ? 'Continuar' : 'Entendido') : 'Ver resultado'}</button>
+    </div>` : `<div style="padding:10px 16px 28px"><button class="btn primary" disabled>Elige una opción</button></div>`}`
+}
+
+V.result = () => {
+  const r = S.result
+  return `
+  <div class="scroll"><div class="pad" style="align-items:center;text-align:center;padding-top:36px;min-height:100%">
+    <div class="pop">${lumi(r.perfect ? 'CELEBRATE' : 'HAPPY', 84)}</div>
+    <h1 class="t-large">${r.perfect ? '¡Quiz perfecto!' : '¡Lección completada!'}</h1>
+    <div style="font-size:30px;letter-spacing:4px;color:var(--brand)" aria-label="${r.stars} de 3 estrellas">${'★'.repeat(r.stars)}<span style="color:var(--text-3)">${'★'.repeat(3 - r.stars)}</span></div>
+    <div class="grid2" style="grid-template-columns:repeat(3,1fr);width:100%">
+      <div class="stat"><b class="up" id="xp-count">+0</b><span class="t-cap">XP</span></div>
+      <div class="stat"><b>${r.correct}/${r.total}</b><span class="t-cap">aciertos</span></div>
+      <div class="stat"><b>${r.time}</b><span class="t-cap">tiempo</span></div>
+    </div>
+    <div class="banner" style="background:color-mix(in srgb,var(--brand) 12%,var(--surface));color:var(--brand);width:100%;justify-content:center">${flame()} Racha: ${S.streak} días${r.extended ? ' · ¡ampliada hoy!' : ''}${r.goals.length ? ' · Objetivo «' + r.goals.join('», «') + '» cumplido' : ''}</div>
+    ${r.levelUp ? `<div class="card pop" style="width:100%"><b>¡Subes a nivel ${r.levelUp}!</b><br><span class="t-foot">Ahora eres «${level().t[S.gender]}».</span></div>` : ''}
+    <div style="flex:1"></div>
+    <button class="btn primary" data-go="path">Continuar</button>
+    <button class="btn plain" data-go="market">Practicar en el Mercado</button>
+  </div></div>`
+}
+
+V.nolives = () => `
+  ${top('', 'close')}
+  <div class="scroll"><div class="pad" style="align-items:center;text-align:center;padding-top:10px">
+    ${lumi('SAD', 84)}
+    <h1 class="t-large">Te has quedado sin vidas</h1>
+    <p class="t-body muted" style="margin:0">Descansa un poco. Mientras, puedes repasar o practicar en el Mercado.</p>
+    <div class="row" style="justify-content:center;gap:4px">${[1, 2, 3, 4, 5].map(i => heart(20, i <= S.lives ? 'var(--down)' : 'var(--fill)')).join('')}</div>
+    <span class="t-foot">Siguiente vida en <b class="num" id="regen">3:24:10</b></span>
+    <div style="height:8px"></div>
+    <button class="btn dark" data-go="premium">Vidas ilimitadas con Premium</button>
+    <button class="btn secondary" data-act="refill" ${S.gems < 350 ? 'disabled' : ''}>Recargar por 350 gemas${S.gems < 350 ? ` · tienes ${S.gems}` : ''}</button>
+    <button class="btn plain" data-act="review">Repasar fallos (sin perder vidas)</button>
+  </div></div>`
+
+/* ── Mercado ─────────────────────────────────────── */
+const FILTERS = ['Seguimiento', 'Acciones', 'ETFs', 'Cripto', 'Índices', 'Divisas']
+const status = a => a.h24 ? 'Cripto · 24/7' : a.fx ? 'Divisa · abierto' : `${a.ex} · ${a.open ? 'abierto' : 'cerrado'}${a.delayed ? ' · 15 min de retraso' : ''}`
+const assetRow = a => `<button class="li" data-asset="${a.s}"><span class="ava ${a.s === 'AAPL' ? 'dark' : ''}">${a.s.slice(0, 4)}</span><span style="flex:1;min-width:0"><b style="font-size:15px">${a.n}</b><br><span class="t-cap">${status(a)}</span></span>${spark(a.s, a.p, a.c >= 0)}<span style="width:92px;text-align:right"><b style="font-size:15px" data-px="${a.s}">${fprice(a)}</b><br><span class="t-cap ${a.c >= 0 ? 'up' : 'down'}" style="font-weight:700" data-chg="${a.s}">${pct(a.c)}</span></span></button>`
+V.market = () => {
+  let list = S.mFilter === 'Seguimiento' ? S.watch.map(s => A[s]) : ASSETS.filter(a => a.type === S.mFilter)
+  if (S.mQuery) list = ASSETS.filter(a => (a.n + a.s).toLowerCase().includes(S.mQuery.toLowerCase()))
+  return `
+  <div class="scroll"><div class="pad">
+    <div class="between" style="padding:0 2px"><span class="t-large">Mercado</span><span class="t-foot" style="text-align:right">Disponible<br><b style="color:var(--text)">${eur(S.cash)}</b></span></div>
+    <div class="seg"><button aria-pressed="true">Activos</button><button data-go="portfolio">Cartera</button></div>
+    <input class="input" id="m-search" placeholder="Buscar acción, cripto, índice…" value="${esc(S.mQuery)}" aria-label="Buscar activos" style="background:var(--fill);border:none">
+    <div class="pills">${FILTERS.map(f => `<button data-filter="${f}" aria-pressed="${!S.mQuery && S.mFilter === f}">${f}</button>`).join('')}</div>
+    <div class="list" id="m-list">${list.length ? list.map(assetRow).join('') : '<div class="li t-foot">No hay activos con ese nombre.</div>'}</div>
+    ${S.stale ? `<div class="banner">Precios de hace 2 min. Reconectando con el proveedor…</div>` : ''}
+    <p class="t-cap" style="margin:0">Acciones españolas con 15 min de retraso. Cripto en directo 24/7.</p>
+    ${disclaimer}
+  </div></div>
+  ${nav()}`
+}
+
+V.asset = () => {
+  const a = A[S.asset], p = S.pos[a.s], w = p ? posValue(a.s) / total() * 100 : 0
+  const n = { '1m': 60, '5m': 60, '1h': 48, '1d': 60, '1w': 52 }[S.chartInt]
+  const vals = series(a.s + S.chartInt, n, a.p, S.chartInt === '1w' ? .05 : S.chartInt === '1d' ? .025 : .006)
+  let chart
+  if (S.chartMode === 'Línea') {
+    const d = pathOf(vals, 340, 170, 6)
+    chart = `<svg viewBox="0 0 340 170" preserveAspectRatio="none" style="width:100%;height:170px" role="img" aria-label="Gráfico de ${a.n}"><path d="${d} L340 170 L0 170 Z" fill="color-mix(in srgb, var(--${a.c >= 0 ? 'up' : 'down'}) 10%, transparent)"/><path d="${d}" fill="none" stroke="var(--${a.c >= 0 ? 'up' : 'down'})" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>`
+  } else {
+    const k = 24, slice = vals.slice(-k * 2), mn = Math.min(...slice) * .998, mx = Math.max(...slice) * 1.002, y = v => 6 + 158 * (1 - (v - mn) / (mx - mn))
+    let bars = ''
+    for (let i = 0; i < k; i++) { const o = slice[i * 2], c = slice[i * 2 + 1], h = Math.max(o, c) * 1.0015, l = Math.min(o, c) * .9985, x = 7 + i * 13.8, col = c >= o ? 'var(--up)' : 'var(--down)'; bars += `<line x1="${x}" x2="${x}" y1="${y(h)}" y2="${y(l)}" stroke="${col}" stroke-width="1.2"/><rect x="${x - 4}" y="${y(Math.max(o, c))}" width="8" height="${Math.max(2, Math.abs(y(o) - y(c)))}" rx="1.5" fill="${col}"/>` }
+    chart = `<svg viewBox="0 0 340 170" style="width:100%;height:170px" role="img" aria-label="Velas de ${a.n}">${bars}</svg>`
+  }
+  const chgAbs = a.p - a.p / (1 + a.c / 100)
+  return `
+  ${top('', 'back', `<div class="row" style="gap:0"><button class="link" data-act="follow">${S.watch.includes(a.s) ? '★ Siguiendo' : '☆ Seguir'}</button><button class="link" data-act="alert">Alerta</button></div>`)}
+  <div class="scroll"><div class="pad">
+    <span class="t-foot">${a.s} · ${status(a)}${a.open && !a.h24 && !a.fx ? ' hasta las 22:00' : ''}</span>
+    <h1 class="t-title" style="margin-top:-6px">${a.n}</h1>
+    <span class="big" data-px="${a.s}">${fprice(a)}</span>
+    <span class="t-body ${a.c >= 0 ? 'up' : 'down'}" style="font-weight:700;margin-top:-6px" data-chg="${a.s}">${a.c >= 0 ? '▲ +' : '▼ −'}${n2.format(Math.abs(chgAbs))} (${n2.format(Math.abs(a.c))} %) hoy</span>
+    ${a.cur === 'USD' && !a.fx ? `<span class="t-foot" style="margin-top:-8px">≈ ${eur(toEur(a))} · en vivo</span>` : ''}
+    ${S.stale ? '<div class="banner">Precio de hace 2 min (último conocido). Reconectando…</div>' : ''}
+    <div class="card" style="padding:12px 8px 8px">${chart}</div>
+    <div class="between"><div class="seg" style="width:130px">${['Línea', 'Velas'].map(m => `<button data-cmode="${m}" aria-pressed="${S.chartMode === m}">${m}</button>`).join('')}</div>
+      <div class="seg" style="flex:1;max-width:200px">${['1m', '5m', '1h', '1d', '1w'].map(m => `<button data-cint="${m}" aria-pressed="${S.chartInt === m}" style="padding:0 4px">${m}</button>`).join('')}</div></div>
+    ${p ? `<div class="card grid2" style="gap:14px">
+      <div><span class="t-cap">Tu posición</span><br><b>${n4.format(p.qty).replace(/,?0+$/, '')} ${a.type === 'Cripto' ? a.s : 'acciones'}</b></div>
+      <div><span class="t-cap">Rentabilidad</span><br><b class="${posValue(a.s) >= p.qty * p.avg ? 'up' : 'down'}">${sEur(posValue(a.s) - p.qty * p.avg)}</b></div>
+      <div><span class="t-cap">Precio medio</span><br><b>${eur(p.avg)}</b></div>
+      <div><span class="t-cap">Peso en cartera</span><br><b>${n0.format(w)} %</b></div>
+    </div>` : `<div class="card t-foot">Aún no tienes ${a.n}. Puedes empezar con poco: 50 € ya te dan una parte.</div>`}
+    ${disclaimer}
+  </div></div>
+  <div class="grid2" style="padding:10px 16px 28px;background:var(--bg)">
+    <button class="btn secondary" data-act="order" data-side="SELL" ${p ? '' : 'disabled'}>Vender</button>
+    <button class="btn primary" data-act="order" data-side="BUY">Comprar</button>
+  </div>`
+}
+
+/* Hoja de orden (04.3) */
+function preview() {
+  const o = S.order, a = A[o.sym], price = toEur(a)
+  if (o.side === 'BUY') {
+    const amt = o.amount, f = fee(amt), qty = (amt - f) / price
+    const newVal = posValue(a.s) + (amt - f), w = newVal / total() * 100
+    return { amt, f, qty, price, cashAfter: S.cash - amt, w, flagged: w > 20, insufficient: amt > S.cash }
+  }
+  const p = S.pos[a.s], qty = p.qty * o.pctSell / 100, gross = qty * price, f = fee(gross)
+  return { amt: gross - f, f, qty, price, cashAfter: S.cash + gross - f, w: (posValue(a.s) - gross) / total() * 100, flagged: false }
+}
+function orderSheet() {
+  const o = S.order, a = A[o.sym], pv = preview(), buy = o.side === 'BUY'
+  const types = [['MARKET', 'Mercado'], ['LIMIT', 'Límite'], ['STOP_LOSS', 'Stop'], ['TAKE_PROFIT', 'TP']]
+  return `<div class="sheet-wrap"><div class="scrim" data-act="close-sheet"></div><div class="sheet" role="dialog" aria-modal="true" aria-label="${buy ? 'Comprar' : 'Vender'} ${a.s}">
+    <div class="grabber"></div>
+    <div class="between"><span class="t-head">${buy ? 'Comprar' : 'Vender'} ${a.s}</span><button class="icon-btn" data-act="close-sheet" aria-label="Cerrar">${ico('close')}</button></div>
+    <div class="seg">${types.map(([k, l]) => { const locked = k !== 'MARKET' && !S.premium && S.lessons[5].st !== 'done'; return `<button data-otype="${k}" data-locked="${locked}" aria-pressed="${o.type === k}">${l}${locked ? ' 🔒' : ''}</button>` }).join('')}</div>
+    ${buy ? `<div style="text-align:center;padding:6px 0"><div class="big" style="font-size:46px;line-height:52px" id="o-amt">${n0.format(o.amount)} €</div><span class="t-foot" id="o-qty">≈ ${n2.format(pv.qty)} ${a.type === 'Cripto' ? a.s : 'acciones'} a ${eur(pv.price)}</span></div>
+      <div class="grid2" style="grid-template-columns:repeat(4,1fr)">${[100, 500, 800, 1500].map(v => `<button class="opt" style="justify-content:center;padding:10px 4px" data-amt="${v}" aria-pressed="${o.amount === v}">${n0.format(v)} €</button>`).join('')}</div>
+      <input type="range" min="10" max="${Math.max(10, Math.floor(S.cash))}" step="10" value="${o.amount}" id="o-range" aria-label="Importe en euros" style="width:100%;accent-color:var(--brand)">`
+    : `<div style="text-align:center;padding:6px 0"><div class="big" style="font-size:46px;line-height:52px">${o.pctSell} %</div><span class="t-foot">de tu posición · ${n4.format(pv.qty).replace(/,?0+$/, '')} ${a.type === 'Cripto' ? a.s : 'acciones'}</span></div>
+      <div class="grid2" style="grid-template-columns:repeat(4,1fr)">${[25, 50, 75, 100].map(v => `<button class="opt" style="justify-content:center;padding:10px 4px" data-sellpct="${v}" aria-pressed="${o.pctSell === v}">${v} %</button>`).join('')}</div>`}
+    <div class="card" id="o-preview" style="padding:4px 16px">${previewRows(pv, buy)}</div>
+    ${S.premium || S.lessons[5].st === 'done' ? '' : `<div class="row t-cap" style="gap:8px">${ico('lock', 16)}<span>Límite, stop loss y take profit se desbloquean con la lección «Gestión del riesgo» o con Premium.</span></div>`}
+    <button class="btn primary" data-act="review-order" id="o-cta" ${pv.insufficient ? 'disabled' : ''}>${pv.insufficient ? 'Saldo insuficiente' : 'Revisar orden'}</button>
+  </div></div>`
+}
+const previewRows = (pv, buy) => `
+  <div class="kv"><span>Precio estimado</span><span>${eur(pv.price)}</span></div>
+  <div class="kv"><span>Comisión simulada</span><span>${eur(pv.f)}</span></div>
+  <div class="kv"><span>${buy ? 'Disponible tras la orden' : 'Recibirás'}</span><span>${buy ? eur(pv.cashAfter) : eur(pv.amt)}</span></div>
+  <div class="kv"><span>Peso en cartera</span><span style="${pv.flagged ? 'color:var(--down)' : ''}">${n0.format(Math.max(0, pv.w))} %</span></div>`
+
+function riskSheet() {
+  const o = S.order, a = A[o.sym], pv = preview()
+  const maxAmt = Math.floor(((0.2 * total()) - posValue(a.s)) / 50) * 50
+  return `<div class="sheet-wrap"><div class="scrim"></div><div class="sheet" role="alertdialog" aria-modal="true" aria-label="Aviso de riesgo">
+    <div class="grabber"></div>
+    <div class="row" style="gap:12px;align-items:flex-start">${lumi('WORRIED', 52)}<span class="t-title" style="font-size:22px;line-height:27px">Espera, ${esc(S.name)}. Es mucho en una sola acción.</span></div>
+    <p class="t-body" style="margin:0">Con esta compra, ${a.n} sería el <b>${n0.format(pv.w)} %</b> de tu cartera. Si cae un 10 %, perderías unos <b>${n0.format(pv.amt * .1)} €</b>. Repartir entre varios activos reduce ese golpe.</p>
+    <div class="card between" style="padding:12px 14px"><span class="t-foot">Tu límite recomendado</span><b>20 % por activo</b></div>
+    ${maxAmt >= 50 ? `<button class="btn primary" data-act="lower" data-to="${maxAmt}">Bajar a ${n0.format(maxAmt)} €</button>` : `<button class="btn primary" data-go="market">Mirar otro activo</button>`}
+    <button class="btn secondary" data-act="confirm-order" data-ack="1">Comprar igualmente</button>
+    <button class="btn plain" data-act="locked-lesson" style="font-size:15px">¿Qué es diversificar? · Clase de 3 min</button>
+  </div></div>`
+}
+
+function lockSheet() {
+  return `<div class="sheet-wrap"><div class="scrim" data-act="close-sheet"></div><div class="sheet" role="dialog" aria-modal="true" aria-label="Función bloqueada">
+    <div class="grabber"></div>
+    <div class="row" style="gap:12px">${lumi('THINKING', 48)}<span class="t-head">Esta función aún está bloqueada</span></div>
+    <p class="t-body muted" style="margin:0">Las órdenes límite, stop loss y take profit se desbloquean al completar la lección «Gestión del riesgo» (Unidad 3) o con Premium. Así primero entiendes para qué sirven.</p>
+    <button class="btn primary" data-go="premium">Ver Premium</button>
+    <button class="btn plain" data-act="close-sheet">Entendido</button>
+  </div></div>`
+}
+
+V.filled = () => {
+  const f = S.filled
+  return `
+  <div class="scroll"><div class="pad" style="align-items:center;text-align:center;padding-top:30px;min-height:100%">
+    <div class="pop" style="width:72px;height:72px;border-radius:50%;background:${f.pending ? 'var(--amber)' : 'var(--up)'};color:#fff;display:flex;align-items:center;justify-content:center">${f.pending ? '<b style="font-size:30px">⏱</b>' : ico('check', 36)}</div>
+    <h1 class="t-large">${f.pending ? 'Orden pendiente' : f.side === 'BUY' ? 'Compra hecha' : 'Venta hecha'}</h1>
+    ${f.pending ? `<p class="t-body muted" style="margin:0">El mercado está cerrado. Tu orden se ejecutará al abrir, el lunes a las 9:00, al precio de ese momento.</p>` : ''}
+    <div class="card" style="width:100%;text-align:left;padding:4px 16px">
+      <div class="kv"><span>Activo</span><span>${f.sym} · ${n4.format(f.qty).replace(/,?0+$/, '')}</span></div>
+      <div class="kv"><span>${f.pending ? 'Precio estimado' : 'Precio de ejecución'}</span><span>${eur(f.price)}</span></div>
+      <div class="kv"><span>Comisión simulada</span><span>${eur(f.fee)}</span></div>
+      <div class="kv"><span>Total</span><span>${eur(f.total)}</span></div>
+      ${f.pnl != null ? `<div class="kv"><span>Resultado</span><span class="${f.pnl >= 0 ? 'up' : 'down'}">${sEur(f.pnl)}</span></div>` : ''}
+      <div class="kv"><span>Hora</span><span>${f.time}</span></div>
+    </div>
+    ${f.xp ? `<div class="banner" style="background:color-mix(in srgb,var(--brand) 12%,var(--surface));color:var(--brand);width:100%;justify-content:center">+${f.xp} XP${f.goal ? ' · Objetivo «Haz 2 operaciones» cumplido' : ''}</div>` : ''}
+    ${f.first ? `<div class="card row" style="width:100%;text-align:left;gap:12px">${lumi('HAPPY', 40)}<span class="t-foot" style="color:var(--text)">Hecho, ${esc(S.name)}. Ahora deja que se mueva: mirar el precio cada minuto no lo cambia.</span></div>` : ''}
+    <div style="flex:1"></div>
+    <button class="btn primary" data-go="portfolio">Ver mi cartera</button>
+    <button class="btn plain" data-go="market">Seguir en el Mercado</button>
+  </div></div>`
+}
+
+V.portfolio = () => {
+  const syms = Object.keys(S.pos).sort((x, y) => posValue(y) - posValue(x)), tot = total(), ret = (tot - 10000) / 10000 * 100
+  const n = { '1S': 7, '1M': 30, '3M': 90, 'Todo': 120 }[S.pRange]
+  const sp = series('pf' + S.pRange, n, tot, .01)
+  return `
+  <div class="scroll"><div class="pad">
+    <div class="between" style="padding:0 2px"><span class="t-large">Cartera</span><button class="link" data-go="market">Mercado</button></div>
+    <div class="seg">${['Cartera', 'Historial'].map(t => `<button data-ptab="${t}" aria-pressed="${S.pTab === t}">${t}</button>`).join('')}</div>
+    ${S.pTab === 'Cartera' ? `
+    <div class="card" style="display:flex;flex-direction:column;gap:4px">
+      <span class="t-foot">Valor total</span>
+      <span class="big" data-total>${eur(tot)}</span>
+      <span class="t-foot ${dayChange() >= 0 ? 'up' : 'down'}" style="font-weight:700" data-daychg>${dayChange() >= 0 ? '▲' : '▼'} ${sEur(dayChange())} hoy</span>
+      <span class="t-foot ${ret >= 0 ? 'up' : 'down'}" style="font-weight:700">${pct(ret)} total</span>
+      <svg viewBox="0 0 300 70" preserveAspectRatio="none" style="width:100%;height:70px;margin-top:6px" aria-hidden="true"><path d="${pathOf(sp, 300, 70)}" fill="none" stroke="var(--${ret >= 0 ? 'up' : 'down'})" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>
+      <div class="seg">${['1S', '1M', '3M', 'Todo'].map(r => `<button data-prange="${r}" aria-pressed="${S.pRange === r}">${r}</button>`).join('')}</div>
+    </div>
+    <div class="grid2"><div class="stat"><span class="t-cap">Efectivo</span><b style="font-size:18px">${eur(S.cash)}</b></div><div class="stat"><span class="t-cap">P&amp;L realizado</span><b style="font-size:18px" class="${S.realized >= 0 ? 'up' : 'down'}">${sEur(S.realized)}</b></div></div>
+    <div class="between"><span class="t-head">Posiciones · ${syms.length}</span><span class="t-foot">No realizado <b class="${unrealized() >= 0 ? 'up' : 'down'}">${sEur(unrealized())}</b></span></div>
+    <div class="list">${syms.length ? syms.map(s => { const a = A[s], p = S.pos[s], v = posValue(s), pl = (v / (p.qty * p.avg) - 1) * 100; return `<button class="li" data-asset="${s}"><span class="ava ${s === 'AAPL' ? 'dark' : ''}">${s.slice(0, 4)}</span><span style="flex:1"><b>${s}</b><br><span class="t-cap">${n4.format(p.qty).replace(/,?0+$/, '')} · ${n0.format(v / tot * 100)} %</span></span><span style="text-align:right"><b>${eur(v)}</b><br><span class="t-cap ${pl >= 0 ? 'up' : 'down'}" style="font-weight:700">${pct(pl)}</span></span></button>` }).join('') : '<div class="li t-foot">Aún no tienes posiciones.</div>'}</div>`
+    : `<span class="t-head">Órdenes pendientes</span>
+    <div class="list">${S.pending && S.pending.length ? S.pending.map((p, i) => `<div class="li plainline"><span style="flex:1"><b>${p.label}</b><br><span class="t-cap">${p.desc}</span></span><button class="link" data-cancel="${i}">Cancelar</button></div>`).join('') : '<div class="li plainline t-foot">No tienes órdenes pendientes.</div>'}</div>
+    <span class="t-head">Historial</span>
+    <div class="list">${S.trades.map(t => `<div class="li plainline"><span style="flex:1"><b>${t.t} · ${t.s}</b><br><span class="t-cap">${t.d}${t.rejected ? ' · rechazada: ' + t.rejected : t.pnl != null ? ' · resultado ' + sEur(t.pnl) : ''}</span></span><b class="${t.rejected ? 'muted' : t.t === 'Compra' ? '' : 'up'}">${t.t === 'Compra' ? '−' : '+'}${eur(t.total)}</b></div>`).join('')}</div>`}
+    ${disclaimer}
+  </div></div>
+  ${nav()}`
+}
+
+/* ── Progreso ────────────────────────────────────── */
+V.streak = () => {
+  // Octubre 2026 empieza en jueves: 3 huecos de septiembre (28, 29, 30)
+  const days = [28, 29, 30].map(d => ({ d, st: 'prev' }))
+  for (let d = 1; d <= 19; d++) {
+    const st = d === 19 ? (S.todayDone ? 'active' : 'today') : d >= 13 ? 'active' : d === 12 ? 'frozen' : d === 7 || d === 1 ? 'none' : 'active'
+    days.push({ d, st })
+  }
+  return `
+  ${top('Racha')}
+  <div class="scroll"><div class="pad">
+    <div class="hero between" style="padding:20px"><div><div style="font-size:60px;line-height:60px;font-weight:800">${S.streak}</div><b>días seguidos</b><br><span class="t-cap" style="color:rgba(255,255,255,.6)">Mejor racha: ${S.best} días</span></div>${flame('#2997FF', 70)}</div>
+    <div class="card">
+      <b>Octubre</b>
+      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:10px;text-align:center">
+        ${['L', 'M', 'X', 'J', 'V', 'S', 'D'].map(d => `<span class="t-cap">${d}</span>`).join('')}
+        ${days.map(x => `<span class="num" style="height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;${x.st === 'active' ? 'background:var(--brand);color:#fff' : x.st === 'frozen' ? 'border:2px dashed var(--brand);color:var(--brand)' : x.st === 'today' ? 'border:2px solid var(--text)' : x.st === 'prev' ? 'color:var(--text-3)' : 'background:var(--fill)'}">${x.d}</span>`).join('')}
+      </div>
+      <div class="row t-cap" style="gap:12px;margin-top:10px"><span>■ Activo</span><span>┅ Protector usado</span><span>□ Hoy</span></div>
+    </div>
+    <div class="card between"><div class="row" style="gap:10px">${ico('lock', 20)}<span><b>Protector de racha</b><br><span class="t-cap">Tienes ${S.freezes} · se usa solo si fallas un día</span></span></div><button class="chip" style="background:var(--fill)" data-act="buy-freeze">${gem()}200</button></div>
+    <p class="t-cap" style="margin:0">Cuenta como día activo: una lección, un quiz o una operación, según tu zona horaria (Europe/Madrid).</p>
+  </div></div>`
+}
+
+const ACH = [
+  { i: '1', t: 'Primera operación', on: true }, { i: '7', t: 'Racha de 7 días', on: () => S.streak >= 7 }, { i: '★', t: 'Quiz perfecto', on: () => S.result && S.result.perfect },
+  { i: 'SL', t: 'Primer stop loss', on: false }, { i: '3', t: 'Diversifica en 3 tipos', on: true }, { i: '+', t: 'Una semana en positivo', on: false },
+]
+V.achievements = () => {
+  const on = a => typeof a.on === 'function' ? a.on() : a.on
+  return `
+  ${top('Logros')}
+  <div class="scroll"><div class="pad">
+    <div class="between"><span class="t-large">Logros</span><span class="t-foot">${6 + ACH.filter(on).length} de 32</span></div>
+    <div class="grid2" style="grid-template-columns:repeat(3,1fr)">${ACH.map(a => `<div class="card" style="display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;padding:14px 8px;${on(a) ? '' : 'opacity:.45'}"><span style="width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:800;${on(a) ? 'background:var(--brand);color:#fff' : 'background:var(--fill);color:var(--text-2)'}">${a.i}</span><span style="font-size:12px;font-weight:700;line-height:15px">${a.t}</span></div>`).join('')}</div>
+    <div class="card" style="display:flex;flex-direction:column;gap:12px">
+      <b>En progreso</b>
+      <div><div class="between t-foot" style="color:var(--text)"><span>Diversifica en 4 tipos de activo</span><b>3/4</b></div><div class="bar" style="margin-top:6px"><i style="width:75%"></i></div></div>
+      <div><div class="between t-foot" style="color:var(--text)"><span>Completa la Unidad 2</span><b>${LESSONS.filter(l => S.lessons[l.n].st === 'done').length}/5</b></div><div class="bar" style="margin-top:6px"><i style="width:${LESSONS.filter(l => S.lessons[l.n].st === 'done').length * 20}%"></i></div></div>
+    </div>
+  </div></div>`
+}
+
+const LEAGUE = [['Marc R.', 1240, 3.1], ['Aina P.', 1105, 2.4], ['Hugo M.', 980, 1.9], ['Sara L.', 812, -0.4], ['Pau G.', 790, 0.8], ['Nora V.', 744, 1.1], ['Iker T.', 702, 0.2], ['Lucía F.', 650, -1.3], ['Dani O.', 610, 0.5]]
+V.league = () => {
+  const rows = [...LEAGUE.map(([n, xp, r]) => ({ n, xp, r })), { n: 'Tú · ' + S.name, xp: S.league, r: 1.2, me: true }].sort((x, y) => y.xp - x.xp)
+  return `
+  <div class="scroll"><div class="pad">
+    <span class="t-large">Liga Analista</span>
+    <span class="t-foot" style="margin-top:-8px">Termina en 4 d 7 h · los 7 primeros suben</span>
+    <div class="row" style="gap:4px">${['Novato', 'Aprendiz', 'Analista', 'Estratega', 'Experto'].map((d, i) => `<span style="flex:1;height:6px;border-radius:999px;background:${i < 2 ? 'var(--text-3)' : i === 2 ? 'var(--brand)' : 'var(--fill)'}" title="${d}"></span>`).join('')}</div>
+    <div class="list">
+      <div class="li plainline t-cap" style="font-weight:700"><span style="width:20px">#</span><span style="flex:1">Jugador</span><span style="width:56px;text-align:right">XP</span><span style="width:60px;text-align:right">Rent. aj.</span></div>
+      ${rows.map((r, i) => `${i === 7 ? '<div class="li plainline t-cap up" style="font-weight:700;padding:6px 14px">▲ Zona de ascenso hasta el 7.º</div>' : ''}<div class="li plainline" style="${r.me ? 'background:color-mix(in srgb,var(--brand) 12%,var(--surface))' : ''}"><b style="width:20px">${i + 1}</b><span style="flex:1;font-weight:${r.me ? 800 : 600}">${r.n}</span><span class="num" style="width:56px;text-align:right">${n0.format(r.xp)}</span><span class="num ${r.r >= 0 ? 'up' : 'down'}" style="width:60px;text-align:right;font-weight:700">${r.r >= 0 ? '+' : '−'}${n2.format(Math.abs(r.r))} %</span></div>`).join('')}
+      <div class="li plainline t-cap down" style="font-weight:700;padding:6px 14px">▼ Zona de descenso desde el 26.º</div>
+    </div>
+    <p class="t-foot" style="margin:0">Puntos = XP de la semana + rentabilidad ajustada por riesgo. Apostarlo todo a una operación no suma más.</p>
+  </div></div>
+  ${nav()}`
+}
+
+V.profile = () => {
+  const lv = level(), next = lv.max || lv.min
+  return `
+  <div class="scroll"><div class="pad">
+    <div class="between" style="padding:0 2px"><span class="t-large">Perfil</span><button class="link" data-go="settings">Ajustes</button></div>
+    <div class="card row" style="gap:14px">${lumi('HAPPY', 56)}<div><b style="font-size:18px">${esc(S.name)}</b><br><span class="t-foot">Desde septiembre 2026 · ${S.premium ? 'Premium' : 'Free'}</span></div></div>
+    <div class="card"><div class="between"><b>Nivel ${lv.n} · ${lv.t[S.gender]}</b><span class="t-foot num">${n0.format(S.xp)} / ${n0.format(next)} XP</span></div><div class="bar" style="margin-top:10px"><i style="width:${lv.max ? (S.xp - lv.min) / (lv.max - lv.min) * 100 : 100}%"></i></div></div>
+    <div class="grid2">
+      <button class="stat" data-go="streak" style="border:none;text-align:left"><b>${S.streak}</b><span class="t-cap">días de racha</span></button>
+      <div class="stat"><b>${S.gems}</b><span class="t-cap">gemas</span></div>
+      <div class="stat"><b>${12 + LESSONS.filter(l => S.lessons[l.n].st === 'done').length - 2}</b><span class="t-cap">lecciones</span></div>
+      <button class="stat" data-go="achievements" style="border:none;text-align:left"><b>${6 + ACH.filter(a => typeof a.on === 'function' ? a.on() : a.on).length}</b><span class="t-cap">logros</span></button>
+    </div>
+    <div class="card" style="padding:4px 16px">
+      <div class="kv" style="padding-top:12px"><b>Tus hábitos de trading</b><span></span></div>
+      <div class="kv"><span>Operaciones por día</span><span>1,8</span></div>
+      <div class="kv"><span>Operaciones con beneficio</span><span>58 %</span></div>
+      <div class="kv"><span>Mayor caída de la cartera</span><span class="down">−6,2 %</span></div>
+    </div>
+    <div class="card row" style="gap:12px;align-items:flex-start">${lumi('THINKING', 40)}<span class="t-foot" style="color:var(--text)">Tus operaciones grandes suelen ser los lunes. ¿Repasamos «Psicología del trader»?</span></div>
+    ${S.premium ? '' : `<button class="btn dark" data-go="premium">Probar Premium 7 días gratis</button>`}
+  </div></div>
+  ${nav()}`
+}
+
+V.notifications = () => `
+  ${top('Avisos', 'back', `<button class="link" data-act="read-all" style="font-size:14px">Marcar leídos</button>`)}
+  <div class="scroll"><div class="pad">
+    <div class="list">${[['Tu racha está en peligro', 'Te quedan 3 horas. Una clase de 5 min basta.', '21:00'], ['Orden ejecutada', 'Take profit de NVDA a 140 $.', '16:05'], ['Alerta de precio', 'BTC ha bajado de 58.000 €.', 'Ayer'], ['Has subido a Liga Analista', 'Terminaste 5.º la semana pasada.', 'Lun'], ['Logro desbloqueado', 'Quiz perfecto · +20 gemas', 'Dom'], ['Nueva lección disponible', 'Velas japonesas ya está abierta.', 'Sáb']].map(([t, b, h], i) => `<div class="li plainline" style="align-items:flex-start">${!S.notifRead && i < 2 ? '<i style="width:8px;height:8px;border-radius:50%;background:var(--brand);margin-top:6px;flex:none"></i>' : '<i style="width:8px;flex:none"></i>'}<span style="flex:1"><b style="font-size:15px">${t}</b><br><span class="t-foot">${b}</span></span><span class="t-cap">${h}</span></div>`).join('')}</div>
+  </div></div>`
+
+V.premium = () => `
+  ${top('', 'close')}
+  <div class="scroll"><div class="pad">
+    <h1 class="t-large">Aprende sin límites con Premium</h1>
+    <div class="card" style="display:flex;flex-direction:column;gap:12px">${['Todas las clases y unidades', 'Vidas ilimitadas en los quizzes', '50.000 € virtuales para practicar', 'Órdenes límite, stop loss y take profit', `${esc(S.lumiName)} analiza tu cartera cada semana`, 'Ligas Premium y un protector de racha semanal'].map(f => `<div class="row" style="gap:10px"><span class="check on" style="width:22px;height:22px;border-radius:50%">${ico('check', 13)}</span><span class="t-body">${f}</span></div>`).join('')}</div>
+    <button class="opt" data-plan="year" aria-pressed="${S.plan !== 'month'}"><span style="flex:1"><b>Anual</b><br><span class="t-foot">59,99 € al año · 5,00 €/mes</span></span><span class="chip" style="background:var(--up);color:#fff">−37 %</span></button>
+    <button class="opt" data-plan="month" aria-pressed="${S.plan === 'month'}"><span style="flex:1"><b>Mensual</b><br><span class="t-foot">7,99 € al mes</span></span></button>
+    <button class="btn primary" data-act="buy-premium">Probar 7 días gratis</button>
+    <p class="t-cap" style="text-align:center;margin:0">Después ${S.plan === 'month' ? '7,99 €/mes' : '59,99 €/año'}. Cancela cuando quieras desde Ajustes. Te avisamos 2 días antes de cobrar. En esta demo no se cobra nada.</p>
+  </div></div>`
+
+V.premiumok = () => `
+  <div class="scroll"><div class="pad" style="align-items:center;text-align:center;padding-top:50px;min-height:100%">
+    <div class="pop">${lumi('CELEBRATE', 96)}</div>
+    <h1 class="t-large">Ya eres Premium</h1>
+    <p class="t-body muted" style="margin:0">Tu prueba gratis acaba el 26 de octubre. Hemos añadido <b style="color:var(--text)">40.000 € virtuales</b> a tu cartera.</p>
+    <div style="flex:1"></div>
+    <button class="btn primary" data-go="home">Empezar</button>
+  </div></div>`
+
+V.settings = () => `
+  ${top('Ajustes')}
+  <div class="scroll"><div class="pad">
+    <span class="t-foot" style="padding-left:4px">Suscripción</span>
+    <div class="list"><div class="li plainline between"><span>Plan</span><b>${S.premium ? 'Premium anual' : 'Free'}</b></div>${S.premium ? '<div class="li plainline between"><span>Próximo cobro</span><b>26 oct 2026 · 59,99 €</b></div>' : `<button class="li plainline between" data-go="premium"><span>Mejorar a Premium</span>${ico('chev', 18)}</button>`}</div>
+    <span class="t-foot" style="padding-left:4px">Preferencias</span>
+    <div class="list">
+      <div class="li plainline between"><span>Idioma</span><span class="muted">Castellano · Català · English</span></div>
+      <div class="li plainline between"><span>Moneda de referencia</span><span class="muted">EUR</span></div>
+      <div class="li plainline between"><span>Meta diaria</span><span class="muted">${S.meta} min</span></div>
+      <div class="li plainline between"><span>Tratamiento</span><span class="muted">${{ F: 'Femenino', M: 'Masculino', N: 'Neutro' }[S.gender]}</span></div>
+      <div class="li plainline" style="flex-direction:column;align-items:stretch;gap:8px"><span>Tema</span><div class="seg">${[['auto', 'Automático'], ['light', 'Claro'], ['dark', 'Oscuro']].map(([k, l]) => `<button data-theme-set="${k}" aria-pressed="${S.theme === k}">${l}</button>`).join('')}</div></div>
+    </div>
+    <span class="t-foot" style="padding-left:4px">Notificaciones</span>
+    <div class="list">${[['streak', 'Recordatorio de racha'], ['orders', 'Órdenes y alertas'], ['weekly', 'Emails semanales']].map(([k, l]) => `<div class="li plainline between"><span>${l}</span><button class="toggle" role="switch" aria-checked="${S.notif[k]}" data-notif="${k}" aria-label="${l}"></button></div>`).join('')}</div>
+    <span class="t-foot" style="padding-left:4px">Cuenta y privacidad</span>
+    <div class="list">
+      <div class="li plainline" style="flex-direction:column;align-items:stretch;gap:8px"><b>Reiniciar cartera</b><span class="t-foot">Vuelves a ${S.premium ? '50.000' : '10.000'} € y se cierran tus posiciones. Conservas XP, racha y logros. Te quedan ${S.resetsLeft} de 3 este año.</span>${S.confirmReset ? `<div class="grid2"><button class="btn secondary sm" data-act="cancel-reset" style="width:100%">Cancelar</button><button class="btn danger sm" data-act="do-reset" style="width:100%">Reiniciar</button></div>` : `<button class="btn secondary sm" data-act="ask-reset" ${S.resetsLeft ? '' : 'disabled'}>Reiniciar</button>`}</div>
+      <div class="li plainline between"><span>Descargar mis datos</span><span class="muted">JSON</span></div>
+      <div class="li plainline between"><span>Aviso legal aceptado</span><span class="muted">v1 · 2 sep 2026</span></div>
+      <button class="li plainline" data-act="logout" style="color:var(--down);font-weight:700">Cerrar sesión</button>
+    </div>
+  </div></div>`
+
+/* ── Render ──────────────────────────────────────── */
+const $screen = document.getElementById('screen'), $app = document.getElementById('app')
+function render(scrollTop) {
+  $app.classList.toggle('force-light', S.theme === 'light')
+  $app.classList.toggle('force-dark', S.theme === 'dark')
+  const prev = $screen.querySelector('.scroll'), y = prev ? prev.scrollTop : 0
+  let html = (V[S.screen] || V.home)()
+  if (S.sheet === 'order') html += orderSheet()
+  if (S.sheet === 'risk') html += riskSheet()
+  if (S.sheet === 'lock') html += lockSheet()
+  $screen.innerHTML = html
+  const sc = $screen.querySelector('.scroll'); if (sc && !scrollTop) sc.scrollTop = y
+  renderToast()
+  if (S.screen === 'result' && S.result && !S.result.animated) animateXp()
+}
+function renderToast() {
+  let t = $app.querySelector('.toast')
+  if (!S.toast) { if (t) t.remove(); return }
+  if (!t) { t = document.createElement('div'); t.className = 'toast'; t.setAttribute('role', 'status'); $app.appendChild(t) }
+  t.innerHTML = S.toast
+}
+function animateXp() {
+  S.result.animated = true
+  const el = document.getElementById('xp-count'), to = S.result.xp, t0 = performance.now()
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
+  const step = now => { const k = reduce ? 1 : Math.min(1, (now - t0) / 900); if (el) el.textContent = '+' + Math.round(to * k); if (k < 1) requestAnimationFrame(step) }
+  requestAnimationFrame(step)
+  setTimeout(() => { if (el) el.textContent = '+' + to }, 1000) // por si la pestaña está en segundo plano
+}
+
+/* ── Lógica de acciones ──────────────────────────── */
+function completeGoal(id) {
+  const g = S.goals.find(x => x.id === id)
+  if (!g || g.progress >= g.target) return false
+  g.progress++
+  if (g.progress >= g.target) { S.xp += g.xp; S.league += g.xp; return true }
+  return false
+}
+function markActive() {
+  if (S.todayDone) return false
+  S.todayDone = true; S.streak++; if (S.streak > S.best) S.best = S.streak; return true
+}
+function finishQuiz() {
+  const correct = S.answers.filter(Boolean).length, total = QUIZ.length, perfect = correct === total
+  const secs = Math.max(40, Math.round((Date.now() - S.quizStart) / 1000))
+  const base = correct * 10, xp = base + (perfect ? Math.round(base * .5) : 0) + (secs / total < 15 ? Math.round(base * .1) : 0)
+  const before = level().n
+  S.xp += xp; S.league += xp
+  const goals = []
+  if (completeGoal('clase')) goals.push('Completa una clase')
+  if (perfect && completeGoal('perfect')) goals.push('Quiz perfecto')
+  const extended = markActive()
+  const stars = perfect ? 3 : correct / total >= .75 ? 2 : 1
+  S.lessons[3] = { st: 'done', stars }; if (S.lessons[4].st === 'locked') S.lessons[4] = { st: 'open', stars: 0 }
+  const after = level().n
+  S.result = { correct, total, perfect, stars, xp, time: Math.floor(secs / 60) + ':' + String(secs % 60).padStart(2, '0'), goals, extended, levelUp: after > before ? after : null }
+  go('result')
+}
+function executeOrder(ack) {
+  const o = S.order, a = A[o.sym], pv = preview(), now = new Date()
+  const time = now.toLocaleDateString('es-ES', { day: 'numeric', month: 'short' }) + ' · ' + now.toLocaleTimeString('es-ES')
+  if (!a.open) {
+    S.pending = S.pending || []
+    S.pending.push({ label: `Mercado · ${o.side === 'BUY' ? 'Comprar' : 'Vender'} ${a.s}`, desc: `${eur(pv.amt)} al abrir el mercado` })
+    S.filled = { pending: true, side: o.side, sym: a.s, qty: pv.qty, price: pv.price, fee: pv.f, total: o.side === 'BUY' ? pv.amt : pv.amt, time }
+    S.order = null; go('filled'); return
+  }
+  let pnl = null
+  const first = !S.firstTradeDone
+  if (o.side === 'BUY') {
+    const p = S.pos[a.s] || { qty: 0, avg: 0 }, qty = p.qty + pv.qty
+    S.pos[a.s] = { qty, avg: (p.qty * p.avg + pv.qty * pv.price) / qty }
+    S.cash -= pv.amt
+    S.trades.unshift({ t: 'Compra', s: a.s, d: 'Hoy ' + now.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' }), total: pv.amt })
+  } else {
+    const p = S.pos[a.s]; pnl = pv.qty * (pv.price - p.avg) - pv.f
+    p.qty -= pv.qty; if (p.qty < 1e-7) delete S.pos[a.s]
+    S.cash += pv.amt; S.realized += pnl
+    S.trades.unshift({ t: 'Venta', s: a.s, d: 'Hoy', total: pv.amt, pnl })
+  }
+  S.firstTradeDone = true
+  const goal = completeGoal('ops')
+  markActive()
+  S.xp += 15; S.league += 15
+  S.filled = { side: o.side, sym: a.s, qty: pv.qty, price: pv.price, fee: pv.f, total: o.side === 'BUY' ? pv.amt : pv.amt, pnl, time, xp: 15, goal, first, ack }
+  S.order = null; go('filled')
+}
+
+document.addEventListener('click', e => {
+  const t = e.target.closest('button, [data-candle], [data-act]')
+  if (!t || !document.getElementById('app').contains(t) && !t.closest('.guide')) return
+  const d = t.dataset
+  if (d.candle !== undefined && S.screen === 'lesson') { S.tapped = +d.candle; render(); return }
+  if (d.go) {
+    if (d.resetPl) { S.plQi = 0; S.plPick = null; S.plScore = 0 }
+    if (d.skip) { toast('Has entrado como Laura (datos de ejemplo)') }
+    go(d.go); return
+  }
+  if (d.gender) { S.gender = d.gender; render(); return }
+  if (d.exp) { S.exp = d.exp; render(); return }
+  if (d.goal) { S.goalsSel = S.goalsSel.includes(d.goal) ? S.goalsSel.filter(g => g !== d.goal) : [...S.goalsSel, d.goal]; render(); return }
+  if (d.meta) { S.meta = +d.meta; render(); return }
+  if (d.pl !== undefined) { S.plPick = +d.pl; render(); return }
+  if (d.skin) { S.skin = d.skin; render(); return }
+  if (d.pick !== undefined && S.picked === null) {
+    const Q = QUIZ[S.qi]; S.picked = +d.pick
+    const ok = S.picked === Q.c; S.answers[S.qi] = ok
+    if (!ok && !S.premium) S.lives = Math.max(0, S.lives - 1)
+    render(); return
+  }
+  if (d.filter) { S.mFilter = d.filter; S.mQuery = ''; render(); return }
+  if (d.asset) { go('asset', { asset: d.asset, chartInt: '1d', chartMode: 'Línea' }); return }
+  if (d.cmode) { S.chartMode = d.cmode; render(); return }
+  if (d.cint) { S.chartInt = d.cint; render(); return }
+  if (d.ptab) { S.pTab = d.ptab; render(); return }
+  if (d.prange) { S.pRange = d.prange; render(); return }
+  if (d.amt) { S.order.amount = +d.amt; render(); return }
+  if (d.sellpct) { S.order.pctSell = +d.sellpct; render(); return }
+  if (d.otype) { if (d.locked === 'true') { S.sheet = 'lock'; render(); return } S.order.type = d.otype; render(); return }
+  if (d.plan) { S.plan = d.plan; render(); return }
+  if (d.themeSet) { S.theme = d.themeSet; render(); return }
+  if (d.notif) { S.notif[d.notif] = !S.notif[d.notif]; render(); return }
+  if (d.cancel !== undefined) { S.pending.splice(+d.cancel, 1); toast('Orden cancelada'); render(); return }
+  if (d.jump) { jump(d.jump); return }
+  if (d.route) { jump(d.route); return }
+
+  switch (d.act) {
+    case 'back': go(onbBack[S.screen] || backTarget[S.screen] || 'home'); break
+    case 'onb1-next': { const v = document.getElementById('f-name').value.trim(); if (v) S.name = v; go('onb2'); break }
+    case 'pl-next': case 'pl-skip':
+      if (d.act === 'pl-next' && S.plPick === PLACEMENT[S.plQi].c) S.plScore = (S.plScore || 0) + 1
+      if (S.plQi < PLACEMENT.length - 1) { S.plQi++; S.plPick = null; render(true) } else go('placeres')
+      break
+    case 'onb5-next': { const v = document.getElementById('f-lumi').value.trim(); S.lumiName = v || 'Lumi'; go('onb6'); break }
+    case 'disclaimer': S.disclaimer = !S.disclaimer; render(); break
+    case 'start': if (S.premium && !S.bonusGiven) { S.cash += 40000; S.bonusGiven = true } go('home'); toast(`¡Bienvenida a bordo! Tienes ${S.premium ? '50.000' : '10.000'} € virtuales.`.replace('Bienvenida', S.gender === 'M' ? 'Bienvenido' : S.gender === 'N' ? 'Te damos la bienvenida' : 'Bienvenida')); break
+    case 'gems': toast(`${gem(14)} Tienes ${S.gems} gemas. Se ganan con logros y objetivos.`); break
+    case 'lives': if (S.premium) toast('Con Premium tus vidas son ilimitadas.'); else if (S.lives === 0) go('nolives'); else toast(`${heart(14)} ${S.lives} de 5 vidas · 1 nueva cada 4 h`); break
+    case 'open-lesson': if (S.lives === 0 && !S.premium) { go('nolives'); break } if (+d.n !== 3 && S.lessons[+d.n].st === 'done') { toast('En la demo, la lección para probar es «Velas japonesas».'); break } if (+d.n !== 3) { toast('En la demo, la lección para probar es «Velas japonesas».'); break } go('lesson', { step: 0, tapped: null }); break
+    case 'locked-lesson': toast('Se desbloquea al completar la lección anterior.'); break
+    case 'lesson-next': S.step++; render(true); break
+    case 'start-quiz': go('quiz', { qi: 0, picked: null, answers: [], quizStart: Date.now() }); break
+    case 'quiz-next':
+      if (S.lives === 0 && !S.premium && S.picked !== QUIZ[S.qi].c) { go('nolives'); break }
+      if (S.qi < QUIZ.length - 1) { S.qi++; S.picked = null; render(true) } else finishQuiz()
+      break
+    case 'refill': S.gems -= 350; S.lives = 5; toast('Vidas recargadas'); go('path'); break
+    case 'review': toast('Repaso de fallos: practicas sin perder vidas'); go('path'); break
+    case 'follow': S.watch = S.watch.includes(S.asset) ? S.watch.filter(s => s !== S.asset) : [...S.watch, S.asset]; toast(S.watch.includes(S.asset) ? 'Añadido a Seguimiento' : 'Quitado de Seguimiento'); render(); break
+    case 'alert': toast(`Alerta creada: te avisamos si ${A[S.asset].n} baja un 5 %`); break
+    case 'order': {
+      if (d.side === 'BUY' && S.stale) { toast('Esperando precio actualizado para operar…'); break }
+      S.order = { sym: S.asset, side: d.side, type: 'MARKET', amount: Math.min(1500, Math.floor(S.cash / 10) * 10), pctSell: 50 }
+      S.sheet = 'order'; render(); break
+    }
+    case 'close-sheet': S.sheet = S.order ? (S.sheet === 'lock' ? 'order' : null) : null; if (!S.sheet) S.order = null; render(); break
+    case 'review-order': { const pv = preview(); if (pv.flagged && S.order.side === 'BUY') { S.sheet = 'risk'; render() } else executeOrder(false); break }
+    case 'lower': S.order.amount = +d.to; S.sheet = 'order'; render(); break
+    case 'confirm-order': executeOrder(true); break
+    case 'buy-freeze': if (S.gems >= 200) { S.gems -= 200; S.freezes++; toast('Protector comprado'); render() } else toast('Necesitas 200 gemas'); break
+    case 'read-all': S.notifRead = true; render(); break
+    case 'buy-premium': setPremium(true); go('premiumok'); break
+    case 'ask-reset': S.confirmReset = true; render(); break
+    case 'cancel-reset': S.confirmReset = false; render(); break
+    case 'do-reset': S.pos = {}; S.cash = S.premium ? 50000 : 10000; S.realized = 0; S.resetsLeft--; S.confirmReset = false; toast('Cartera reiniciada. Conservas XP, racha y logros.'); render(); break
+    case 'logout': { const th = S.theme; S = fresh(); S.theme = th; go('welcome'); break }
+  }
+})
+
+document.addEventListener('input', e => {
+  if (e.target.id === 'm-search') {
+    S.mQuery = e.target.value
+    const list = S.mQuery ? ASSETS.filter(a => (a.n + a.s).toLowerCase().includes(S.mQuery.toLowerCase())) : (S.mFilter === 'Seguimiento' ? S.watch.map(s => A[s]) : ASSETS.filter(a => a.type === S.mFilter))
+    document.getElementById('m-list').innerHTML = list.length ? list.map(assetRow).join('') : '<div class="li t-foot">No hay activos con ese nombre.</div>'
+  }
+  if (e.target.id === 'o-range' && S.order) {
+    S.order.amount = +e.target.value
+    const pv = preview(), a = A[S.order.sym]
+    document.getElementById('o-amt').textContent = n0.format(S.order.amount) + ' €'
+    document.getElementById('o-qty').textContent = `≈ ${n2.format(pv.qty)} ${a.type === 'Cripto' ? a.s : 'acciones'} a ${eur(pv.price)}`
+    document.getElementById('o-preview').innerHTML = previewRows(pv, true)
+    $screen.querySelectorAll('[data-amt]').forEach(b => b.setAttribute('aria-pressed', +b.dataset.amt === S.order.amount))
+  }
+})
+
+/* ── Precios que se mueven (solo en la demo) ─────── */
+setInterval(() => {
+  if (S.stale) return
+  for (const a of ASSETS) {
+    if (!a.open) continue
+    const old = a.p, drift = (Math.random() - .5) * (a.fx ? .0004 : a.h24 ? .004 : .002)
+    a.p = Math.max(.0001, a.p * (1 + drift)); a.c += drift * 100
+    $screen.querySelectorAll(`[data-px="${a.s}"]`).forEach(el => {
+      el.textContent = fprice(a); el.classList.remove('flash-up', 'flash-down'); void el.offsetWidth; el.classList.add(a.p >= old ? 'flash-up' : 'flash-down')
+    })
+    $screen.querySelectorAll(`[data-chg="${a.s}"]`).forEach(el => {
+      if (S.screen === 'asset') { const ch = a.p - a.p / (1 + a.c / 100); el.textContent = `${a.c >= 0 ? '▲ +' : '▼ −'}${n2.format(Math.abs(ch))} (${n2.format(Math.abs(a.c))} %) hoy` } else el.textContent = pct(a.c)
+      el.classList.toggle('up', a.c >= 0); el.classList.toggle('down', a.c < 0)
+    })
+  }
+  $screen.querySelectorAll('[data-total]').forEach(el => { el.textContent = eur(total()) })
+  $screen.querySelectorAll('[data-daychg]').forEach(el => { const v = dayChange(); el.textContent = `${v >= 0 ? '▲' : '▼'} ${sEur(v)} hoy`; el.classList.toggle('up', v >= 0); el.classList.toggle('down', v < 0) })
+}, 2500)
+
+/* Cuenta atrás de vidas */
+let regen = 3 * 3600 + 24 * 60 + 10
+setInterval(() => { regen = Math.max(0, regen - 1); const el = document.getElementById('regen'); if (el) el.textContent = `${Math.floor(regen / 3600)}:${String(Math.floor(regen % 3600 / 60)).padStart(2, '0')}:${String(regen % 60).padStart(2, '0')}` }, 1000)
+
+/* ── Guía ────────────────────────────────────────── */
+const ROUTE = [
+  ['welcome', 'Crea tu cuenta', 'Onboarding de 7 pasos con test de nivel'],
+  ['lesson', 'Haz una lección', 'Velas japonesas: toca la vela correcta'],
+  ['quiz', 'Responde el quiz', 'Falla una para ver cómo se pierden vidas'],
+  ['asset', 'Compra Apple', 'Prueba 1.500 € y mira el aviso de Lumi'],
+  ['league', 'Mira tu liga', 'Tu XP sube con lo que haces'],
+  ['premium', 'Prueba Premium', 'Sin pagar nada en la demo'],
+]
+const JUMP = [['home', 'Inicio'], ['path', 'Clases'], ['market', 'Mercado'], ['portfolio', 'Cartera'], ['league', 'Liga'], ['profile', 'Perfil'], ['streak', 'Racha'], ['achievements', 'Logros'], ['notifications', 'Avisos'], ['nolives', 'Sin vidas'], ['settings', 'Ajustes']]
+function jump(k) {
+  closeGuide()
+  if (k === 'lesson') { go('lesson', { step: 0, tapped: null }); return }
+  if (k === 'quiz') { if (S.lives === 0 && !S.premium) S.lives = 4; go('quiz', { qi: 0, picked: null, answers: [], quizStart: Date.now() }); return }
+  if (k === 'asset') { go('asset', { asset: 'AAPL', chartInt: '1d', chartMode: 'Línea' }); return }
+  if (k === 'welcome') { const th = S.theme; S = fresh(); S.theme = th; syncToggles() }
+  go(k)
+}
+function syncGuide() {
+  document.querySelectorAll('[data-jump]').forEach(b => b.setAttribute('aria-pressed', b.dataset.jump === S.screen))
+}
+function syncToggles() {
+  document.getElementById('stale-toggle').setAttribute('aria-checked', S.stale)
+  document.getElementById('premium-toggle').setAttribute('aria-checked', S.premium)
+}
+function setPremium(on) {
+  S.premium = on
+  if (on && !S.bonusGiven && S.screen !== 'onb6') { S.cash += 40000; S.bonusGiven = true }
+  syncToggles()
+}
+for (const [id, jid] of [['route', 'jump']]) {
+  document.getElementById(id).innerHTML = ROUTE.map(([k, t, s]) => `<li><button data-route="${k}"><span>${t}<small>${s}</small></span></button></li>`).join('')
+  document.getElementById(jid).innerHTML = JUMP.map(([k, l]) => `<button data-jump="${k}" aria-pressed="false">${l}</button>`).join('')
+}
+document.getElementById('stale-toggle').addEventListener('click', () => { S.stale = !S.stale; syncToggles(); render(); toast(S.stale ? 'Simulando proveedor caído: verás el aviso ámbar en el Mercado' : 'Proveedor de precios restablecido') })
+document.getElementById('premium-toggle').addEventListener('click', () => { setPremium(!S.premium); render(); toast(S.premium ? 'Modo Premium: vidas ilimitadas y órdenes avanzadas' : 'Modo Free') })
+document.getElementById('reset-demo').addEventListener('click', () => { jump('welcome'); closeGuide() })
+const $guide = document.getElementById('guide'), $openG = document.getElementById('open-guide')
+function closeGuide() { $guide.classList.remove('open'); $openG.setAttribute('aria-expanded', 'false') }
+$openG.addEventListener('click', () => { $guide.classList.add('open'); $openG.setAttribute('aria-expanded', 'true'); $guide.scrollTop = 0 })
+document.getElementById('close-guide').addEventListener('click', closeGuide)
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeGuide() })
+
+render(true); syncGuide()
+})()
+</script>
+
+</body>
+</html>
