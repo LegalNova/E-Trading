@@ -26,5 +26,10 @@
 | D-020 | Tareas cada minuto con **cron-job.org** (gratis) llamando a endpoints protegidos | Vercel gratuito solo permite crons diarios | Vercel Pro ahora | ✅ | 2026-10-23 |
 | D-021 | Dinero en JSON como **texto decimal** | Precisión | Números en coma flotante | ✅ | 2026-10-23 |
 | D-022 | Se empieza con **50 gemas** | Que se pueda probar la tienda pronto | 0 | 🔁 | 2026-10-23 |
-| D-023 | Lección «Gestión del riesgo» **gratis** dentro de la unidad 3 (Premium) | Que un usuario Free pueda desbloquear las órdenes avanzadas estudiando | Unidad 3 entera de pago | ⏳ Joan | 2026-10-23 |
+| D-023 | Lección «Stop loss y take profit» **gratis** dentro de la unidad 3 «Gestión del riesgo» (Premium) | Que un usuario Free pueda desbloquear las órdenes avanzadas estudiando | Unidad 3 entera de pago | ✅ Joan | 2026-10-23 |
 | D-024 | Construir las pantallas de cada capa a medida que se termina su backend, sobre un **frontend completo con datos simulados** (etapa 2) | Ver y probar pronto sin rehacer nada | Todo el frontend al final | ✅ Joan | 2026-10-23 |
+| D-025 | En la etapa 2 los datos simulados viven **en el navegador** (localStorage) detrás de la misma interfaz `Api` que usará la versión HTTP | Probar todo sin backend; en la etapa 3 solo se cambia la implementación | Servidor de pruebas | ✅ | 2026-10-23 |
+| D-026 | La interfaz está en **es/ca/en**; el **contenido** (lecciones, preguntas, frases de Lumi, logros, títulos de nivel) sigue solo en castellano hasta la etapa 5, donde se traduce con el resto del temario | El temario aún no es definitivo | Traducir contenido provisional | ✅ | 2026-10-23 |
+| D-027 | Añadidos al contrato: `PathLesson.requiresPremium` (lección bloqueada por plan, no por orden) y `Level.xpLevelStart` (barra de nivel) | La pantalla los necesita y no se podían deducir | Calcularlos en el cliente | ✅ | 2026-10-23 |
+| D-028 | La liga ordena por **puntos** y la tabla los muestra (la XP va debajo del nombre) | Con XP en la columna principal el orden parecía incorrecto | Columna de XP como en la maqueta | ✅ | 2026-10-23 |
+| D-029 | En inglés el símbolo de moneda va delante (€10,482.35); en castellano y catalán, detrás | Convención de cada idioma | Siempre detrás | ✅ | 2026-10-23 |
