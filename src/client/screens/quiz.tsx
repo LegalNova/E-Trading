@@ -13,6 +13,7 @@ import { QuizChart } from '../ui/charts'
 import { Flame, Gem, Heart, Icon } from '../ui/icons'
 import { ErrorState, PageSkeleton, Stars, Steps, TopBar } from '../ui/kit'
 import { useGuard } from '../shell'
+import { BadgeArt } from '../ui/badge'
 import { Lumi } from '../ui/lumi'
 
 export type AnswerValue = number | number[] | string | null
@@ -274,9 +275,7 @@ export function QuizResult({ r, lessonId, review, onRetry }: { r: QuizFinishT; l
       {r.unlockedFeatures.length > 0 && <div className="card w-full text-left">{t('unlocked')}</div>}
       {r.achievementsUnlocked.map(a => (
         <div key={a.code} className="card animate-pop flex w-full items-center gap-3 text-left">
-          <span className="ava" style={{ background: 'var(--brand)', color: '#fff' }}>
-            {a.icon}
-          </span>
+          <BadgeArt code={a.code} category={a.category} unlocked size={44} label={a.title} />
           <span className="flex-1">
             <b>{a.title}</b>
             <br />

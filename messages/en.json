@@ -641,7 +641,14 @@
       "TRADING": "Trading",
       "STREAK": "Streak & league"
     },
-    "unlockedOn": "Unlocked on {date}"
+    "unlockedOn": "Unlocked on {date}",
+    "rarity": {
+      "COMMON": "Common",
+      "RARE": "Rare",
+      "EPIC": "Epic",
+      "LEGENDARY": "Legendary"
+    },
+    "rarityLegend": "Rarity"
   },
   "league": {
     "title": "{name} League",

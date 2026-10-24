@@ -14,6 +14,7 @@ import { useToast } from '../providers'
 import { CandleChart, LineChart } from '../ui/charts'
 import { Flame, Gem, Heart, Icon } from '../ui/icons'
 import { Bar, ErrorState, PageSkeleton, Sheet, Stars, Steps } from '../ui/kit'
+import { BadgeArt } from '../ui/badge'
 import { Lumi, LumiSays, stageOf } from '../ui/lumi'
 
 // ── Inicio ───────────────────────────────────────────────
@@ -140,9 +141,7 @@ export function Home() {
                 .sort((a, b) => (b.unlockedAt ?? '').localeCompare(a.unlockedAt ?? ''))
                 .slice(0, 6)
                 .map(b => (
-                  <span key={b.code} title={b.title} className="flex h-10 w-10 items-center justify-center rounded-[13px] text-[13px] font-extrabold" style={{ background: 'var(--brand)', color: '#fff' }}>
-                    {b.icon}
-                  </span>
+                  <BadgeArt key={b.code} code={b.code} category={b.category} unlocked size={44} label={b.title} />
                 ))}
             </div>
           ) : (

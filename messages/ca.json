@@ -641,7 +641,14 @@
       "TRADING": "Trading",
       "STREAK": "Ratxa i lliga"
     },
-    "unlockedOn": "Desbloquejat el {date}"
+    "unlockedOn": "Desbloquejat el {date}",
+    "rarity": {
+      "COMMON": "Comuna",
+      "RARE": "Rara",
+      "EPIC": "Èpica",
+      "LEGENDARY": "Llegendària"
+    },
+    "rarityLegend": "Raresa"
   },
   "league": {
     "title": "Lliga {name}",

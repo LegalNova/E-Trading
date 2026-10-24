@@ -15,6 +15,7 @@ import { useToast } from '../providers'
 import { Donut, LineChart, Sparkline } from '../ui/charts'
 import { Icon } from '../ui/icons'
 import { Disclaimer, ErrorState, PageSkeleton, Seg, Sheet, TopBar } from '../ui/kit'
+import { BadgeArt } from '../ui/badge'
 import { Lumi, stageOf } from '../ui/lumi'
 import { AssetBadge, AssetRow, assetHref, currencySymbol, decimalsFor, flagOf, fmtAssetPrice, Live, MarketSeg, useStatus, useUnit } from './market-ui'
 
@@ -902,9 +903,7 @@ function Filled({ r, a }: { r: OrderResultT; a: AssetDetailT }) {
       )}
       {r.achievementsUnlocked.map(x => (
         <div key={x.code} className="card flex w-full items-center gap-3 text-left">
-          <span className="ava" style={{ background: 'var(--brand)', color: '#fff' }}>
-            {x.icon}
-          </span>
+          <BadgeArt code={x.code} category={x.category} unlocked size={44} label={x.title} />
           <b className="flex-1">{x.title}</b>
           <span className="t-cap">+{x.reward.gems} 💎</span>
         </div>

@@ -641,7 +641,14 @@
       "TRADING": "Trading",
       "STREAK": "Racha y liga"
     },
-    "unlockedOn": "Desbloqueado el {date}"
+    "unlockedOn": "Desbloqueado el {date}",
+    "rarity": {
+      "COMMON": "Común",
+      "RARE": "Rara",
+      "EPIC": "Épica",
+      "LEGENDARY": "Legendaria"
+    },
+    "rarityLegend": "Rarezas"
   },
   "league": {
     "title": "Liga {name}",

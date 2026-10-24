@@ -12,6 +12,7 @@ import { useLang, useMe, useRefreshAll } from '../hooks'
 import { useToast } from '../providers'
 import { Flame, Gem, Icon, type IconName } from '../ui/icons'
 import { Bar, ErrorState, PageSkeleton, Sheet, TopBar } from '../ui/kit'
+import { BadgeArt, RARITY, rarityOf } from '../ui/badge'
 import { Lumi, LumiSays, SKINS, stageOf } from '../ui/lumi'
 
 // ── Racha (05.1) ─────────────────────────────────────────
@@ -103,11 +104,11 @@ export function Streak() {
 // ── Logros (05.2) ────────────────────────────────────────
 function Badge({ a, onClick }: { a: AchievementT; onClick: () => void }) {
   return (
-    <button className="card flex flex-col items-center gap-2 px-2 py-3.5 text-center" style={{ opacity: a.unlocked ? 1 : 0.5, color: 'inherit' }} onClick={onClick}>
-      <span className="flex h-11 w-11 items-center justify-center rounded-[14px] font-extrabold" style={a.unlocked ? { background: 'var(--brand)', color: '#fff' } : { background: 'var(--fill)', color: 'var(--ink-2)' }}>
-        {a.icon}
+    <button className="card flex flex-col items-center gap-1.5 px-2 py-3.5 text-center" style={{ color: 'inherit' }} onClick={onClick}>
+      <BadgeArt code={a.code} category={a.category} unlocked={a.unlocked} size={58} label={a.title} />
+      <span className="text-xs leading-[15px] font-bold" style={{ opacity: a.unlocked ? 1 : 0.6 }}>
+        {a.title}
       </span>
-      <span className="text-xs leading-[15px] font-bold">{a.title}</span>
     </button>
   )
 }
@@ -128,6 +129,14 @@ export function Achievements({ back = '/perfil' }: { back?: string }) {
         <div className="flex items-center justify-between">
           <span className="t-large">{t('title')}</span>
           <span className="t-foot">{t('count', { n: unlocked, total: data.length })}</span>
+        </div>
+        <div className="flex flex-wrap gap-x-3 gap-y-1 px-0.5" aria-label={t('rarityLegend')}>
+          {(['COMMON', 'RARE', 'EPIC', 'LEGENDARY'] as const).map(r => (
+            <span key={r} className="t-cap flex items-center gap-1.5">
+              <i className="h-2.5 w-2.5 rounded-full" style={{ background: RARITY[r].lo }} />
+              {t(`rarity.${r}`)} · {data.filter(a => rarityOf(a.code) === r && a.unlocked).length}/{data.filter(a => rarityOf(a.code) === r).length}
+            </span>
+          ))}
         </div>
         {inProgress.length > 0 && (
           <div className="card flex flex-col gap-3">
@@ -163,8 +172,9 @@ export function Achievements({ back = '/perfil' }: { back?: string }) {
       <Sheet open={!!open} onClose={() => setOpen(null)} label={open?.title ?? ''}>
         {open && (
           <div className="flex flex-col items-center gap-3 pb-2 text-center">
-            <span className="flex h-16 w-16 items-center justify-center rounded-[20px] text-xl font-extrabold" style={open.unlocked ? { background: 'var(--brand)', color: '#fff' } : { background: 'var(--fill)', color: 'var(--ink-2)' }}>
-              {open.icon}
+            <BadgeArt code={open.code} category={open.category} unlocked={open.unlocked} size={112} label={open.title} />
+            <span className="chip text-[12px] font-extrabold" style={{ background: RARITY[rarityOf(open.code)].lo, color: '#fff' }}>
+              {t(`rarity.${rarityOf(open.code)}`)}
             </span>
             <b className="t-title">{open.title}</b>
             <p className="t-body muted m-0">{open.description}</p>
