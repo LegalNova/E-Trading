@@ -9,12 +9,12 @@
 
 ## Bloqueado / depende de Joan
 - [ ] **D-005** · Elegir dominio (e-trading.com está en venta; e-trading.app y etradingapp.com libres)
-- [ ] **E3** · Credenciales de Google OAuth (te paso los pasos cuando toque)
 - [ ] **E3** · Cuenta gratuita en cron-job.org (opcional: órdenes cada minuto en vez de cada hora)
 - [ ] **Legal** · NIF y domicilio del titular en `src/legal/owner.ts` (los exige la LSSI)
 - [ ] **Admin** · Joan crea su cuenta en la app y Claude le da el rol con `scripts/promote-admin.ts`
 
 ## Hecho
+- [x] **E3** · Entrar con Google (Google Cloud «E-Trading», app publicada)
 - [x] **E4** · Estudio de gamificación (`docs/08`); liga real por grupos y divisiones con cierre semanal; recordatorios de racha; protector semanal Premium; objetivos según la meta diaria; Lumi para racha perdida, inactividad y subida de nivel
 - [x] **E4** · Seguridad: 14 agujeros cerrados y 15 ataques automatizados superados (`docs/10`, `scripts/attack.sh`)
 - [x] **E4** · Legal: aviso legal, privacidad, cookies y términos en es/ca/en; aceptación registrada; ajuste de privacidad en la liga (`docs/09`)
