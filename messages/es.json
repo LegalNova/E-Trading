@@ -25,7 +25,8 @@
     "profile": "Perfil",
     "notifications": "Avisos",
     "admin": "Admin",
-    "footer": "Simulación educativa. No se opera con dinero real."
+    "footer": "Simulación educativa. No se opera con dinero real.",
+    "tutor": "Pregúntale a Lumi"
   },
   "landing": {
     "navHow": "Cómo funciona",
@@ -234,7 +235,7 @@
     "unitOf": "Unidad {n} de {total}",
     "unitN": "Unidad {n}",
     "soon": "Próximamente",
-    "unlocksOrders": "Al completar «Stop loss y take profit» se desbloquean esas órdenes en el Mercado.",
+    "unlocksOrders": "Al aprobar «Dónde poner el stop loss» se desbloquean esas órdenes en el Mercado.",
     "completed": "Completada",
     "available": "Disponible · {min} min · +{xp} XP",
     "premium": "Incluida en Premium",
@@ -267,7 +268,29 @@
     "resistance": "Resistencia",
     "premiumOnly": "Esta lección es de Premium",
     "seePremium": "Ver Premium",
-    "back": "Volver a Clases"
+    "back": "Volver a Clases",
+    "keyIdea": "Idea clave",
+    "img": {
+      "compound": "Crecimiento de 100 € al mes durante 30 años",
+      "contributed": "Aportado",
+      "years": "años",
+      "drawdown": "Subida necesaria para recuperar cada caída",
+      "drawdownCap": "Caída → subida necesaria para volver al punto de partida",
+      "riskreward": "Operación con stop a 1R y objetivo a 3R",
+      "target": "Objetivo",
+      "entry": "Entrada",
+      "rrCap": "Arriesgas 1 para intentar ganar 3",
+      "anatomy": "Partes de una vela alcista",
+      "high": "Máximo (mecha superior)",
+      "close": "Cierre",
+      "body": "Cuerpo",
+      "open": "Apertura",
+      "low": "Mínimo (mecha inferior)",
+      "diversify": "Volatilidad según el número de acciones",
+      "stock": "acción",
+      "stocks": "acciones",
+      "diversifyCap": "Volatilidad anual típica: a partir de unas pocas decenas de empresas solo queda el riesgo de mercado"
+    }
   },
   "quiz": {
     "types": {
@@ -410,7 +433,7 @@
     "fee": "Comisión simulada",
     "cashAfter": "Disponible tras la orden",
     "youGet": "Recibirás",
-    "lockedNote": "Límite, stop loss y take profit se desbloquean con la lección «Stop loss y take profit» o con Premium.",
+    "lockedNote": "Límite, stop loss y take profit se desbloquean con la lección «Dónde poner el stop loss» o con Premium.",
     "closedNote": "El mercado está cerrado: la orden quedará pendiente y se ejecutará al abrir.",
     "confirmBuy": "Comprar ahora",
     "confirmSell": "Vender ahora",
@@ -431,7 +454,7 @@
     "buyAnyway": "Comprar igualmente",
     "whatDiversify": "¿Qué es diversificar? · Ver clases",
     "lockTitle": "Esta función aún está bloqueada",
-    "lockBody": "Las órdenes límite, stop loss y take profit se desbloquean al completar la lección «Stop loss y take profit» (Unidad 3, gratis) o con Premium. Así primero entiendes para qué sirven.",
+    "lockBody": "Las órdenes límite, stop loss y take profit se desbloquean al aprobar la lección «Dónde poner el stop loss» (Unidad 10 · Gestión del riesgo, gratis) o con Premium. Así primero entiendes para qué sirven.",
     "goLesson": "Ir a la lección",
     "seePremium": "Ver Premium",
     "gotIt": "Entendido",
@@ -851,5 +874,47 @@
     "noData": "Sin datos para este intervalo.",
     "hintOne": "Toca el gráfico para colocar la línea.",
     "hintTwo": "Toca dos puntos del gráfico."
+  },
+  "tutor": {
+    "title": "Pregúntale a {name}",
+    "modes": "Modo de la profesora",
+    "mode": {
+      "EXPLAIN": "Explicar",
+      "PATH": "Qué aprender",
+      "PORTFOLIO": "Mi cartera",
+      "BIASES": "Mis sesgos"
+    },
+    "modeHint": {
+      "EXPLAIN": "Pregunta cualquier concepto del curso: te lo explica con ejemplos.",
+      "PATH": "Te recomienda el siguiente paso según tu progreso.",
+      "PORTFOLIO": "Analiza tus posiciones y operaciones simuladas con lo que enseña el curso. Premium.",
+      "BIASES": "Detecta sesgos en tus preguntas y operaciones y te propone reglas. Premium."
+    },
+    "hello": "Hola, soy {name}",
+    "intro": "Tu profesora del curso. Pregúntame lo que no entiendas: respondo con el manual de E-Trading y tu progreso. No doy consejos de inversión: te enseño a decidir por ti.",
+    "suggest": {
+      "s1": "¿Qué es un ETF?",
+      "s2": "¿Cómo se lee una vela?",
+      "s3": "¿Cuánto debería arriesgar por operación?",
+      "s4": "¿Qué es el interés compuesto?"
+    },
+    "aboutLesson": "Tengo una duda sobre «{title}»: ",
+    "thinking": "{name} está buscando en el curso…",
+    "placeholder": "Escribe tu pregunta…",
+    "send": "Enviar",
+    "left": "{n} de {total} preguntas hoy",
+    "engineAi": "Respuestas con IA basadas en el curso",
+    "engineManual": "Respuestas extraídas del manual del curso",
+    "sources": "Del curso:",
+    "clear": "Borrar la conversación",
+    "cleared": "Conversación borrada",
+    "premiumMode": "Este modo analiza tu cartera y tus sesgos: es de Premium.",
+    "seePremium": "Ver Premium",
+    "limitFree": "Has usado tus 5 preguntas gratis de hoy. Con Premium tienes 100 al día y los modos de cartera y sesgos.",
+    "limitPremium": "Has llegado al límite de hoy. Mañana más.",
+    "error": "No he podido responder. Inténtalo de nuevo.",
+    "ask": "Pregúntale a {name}",
+    "askHint": "¿Dudas? Tu profesora responde con el curso",
+    "askLesson": "Preguntar a la profesora"
   }
 }

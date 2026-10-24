@@ -78,6 +78,7 @@ export const es: Record<LegalSlug, LegalDoc> = {
           'Actividad educativa: lecciones, respuestas de los cuestionarios, XP, racha, vidas, gemas, logros y posición en la liga.',
           'Simulador: órdenes, operaciones, cartera virtual y alertas de precio. Todo es dinero virtual: no tratamos datos bancarios ni de pago.',
           'Datos técnicos: dirección IP y navegador, para la seguridad, los límites de uso y el inicio de sesión.',
+          'Preguntas a Lumi (la profesora): el texto de tus preguntas, sus respuestas y el modo elegido, para mostrarte el historial y contar tu límite diario. Puedes borrar el historial cuando quieras.',
           'Comunicaciones: lo que nos envíes por el formulario de contacto y, si te apuntas, tu email en la lista de novedades.',
         ],
         p: ['No usamos herramientas de analítica ni de publicidad de terceros y no vendemos tus datos.'],
@@ -91,6 +92,7 @@ export const es: Record<LegalSlug, LegalDoc> = {
             ['Mostrar tu nombre (nombre e inicial) en la liga semanal', 'Interés legítimo en el funcionamiento del juego (6.1.f). Puedes aparecer como «Jugador anónimo» en Ajustes'],
             ['Seguridad, prevención de abusos y límites de uso', 'Interés legítimo en proteger el servicio y a los usuarios (6.1.f)'],
             ['Avisos dentro de la app (racha, órdenes, logros)', 'Ejecución del contrato (6.1.b); puedes desactivarlos en Ajustes'],
+            ['Responder a tus preguntas a Lumi con el manual del curso y tu progreso', 'Ejecución del contrato (6.1.b)'],
             ['Responder a tus mensajes de contacto', 'Tu solicitud y nuestro interés legítimo en atenderla (6.1.b y 6.1.f)'],
             ['Enviarte novedades si te apuntas a la lista', 'Tu consentimiento (6.1.a), que puedes retirar cuando quieras'],
             ['Cumplir obligaciones legales', 'Obligación legal (6.1.c)'],
@@ -109,6 +111,7 @@ export const es: Record<LegalSlug, LegalDoc> = {
         list: [
           'Cuenta, progreso y simulador: mientras tengas la cuenta. Al borrarla desde Ajustes se eliminan de inmediato; las copias de seguridad técnicas se sobrescriben en un máximo de 7 días.',
           'Registros de seguridad (por ejemplo, intentos de acceso): hasta 12 meses.',
+          'Conversaciones con Lumi: mientras tengas la cuenta o hasta que borres el historial.',
           'Mensajes de contacto: 12 meses desde la última respuesta.',
           'Lista de novedades: hasta que te des de baja.',
         ],
@@ -121,6 +124,7 @@ export const es: Record<LegalSlug, LegalDoc> = {
           rows: [
             ['Vercel Inc.', 'Alojamiento de la aplicación', 'EE. UU. · Marco de Privacidad de Datos UE-EE. UU. y cláusulas contractuales tipo'],
             ['Neon Inc. (sobre Amazon Web Services)', 'Base de datos', 'EE. UU. (us-east-1) · contrato de encargado y cláusulas contractuales tipo'],
+            ['Anthropic PBC', 'Respuestas de Lumi con IA: recibe tu pregunta, las últimas de la conversación, fragmentos del curso y un resumen de tu progreso (nivel, lecciones y, en los modos de cartera, tus operaciones simuladas). No recibe tu email', 'EE. UU. · contrato de encargado y cláusulas contractuales tipo. Según sus condiciones comerciales, no usa estos datos para entrenar sus modelos'],
             ['Google LLC', 'Inicio de sesión con Google (solo si lo usas)', 'EE. UU. · Marco de Privacidad de Datos UE-EE. UU.'],
           ],
         },

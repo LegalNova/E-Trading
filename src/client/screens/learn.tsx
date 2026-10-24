@@ -9,6 +9,7 @@ import { money, num, signedMoney } from '@/shared/format'
 import { api, ApiFailure } from '../api'
 import { useHome, useLang, useMe, usePath } from '../hooks'
 import { useGuard } from '../shell'
+import { RichText } from '../ui/rich-text'
 import { useToast } from '../providers'
 import { CandleChart, LineChart } from '../ui/charts'
 import { Flame, Gem, Heart, Icon } from '../ui/icons'
@@ -166,6 +167,23 @@ function LessonRow({ l, onLocked }: { l: PathLessonT; onLocked: (l: PathLessonT)
   )
 }
 
+/** Acceso a la profesora desde el camino de clases */
+function AskLumi() {
+  const t = useTranslations('tutor')
+  const { data: me } = useMe()
+  const name = me?.companion.name || 'Lumi'
+  return (
+    <Link href="/profesora" className="card flex items-center gap-3" style={{ color: 'var(--ink)' }}>
+      <Lumi mood="HAPPY" size={42} skin={me?.companion.skinId} label={name} />
+      <span className="min-w-0 flex-1">
+        <b className="block">{t('ask', { name })}</b>
+        <span className="t-cap">{t('askHint')}</span>
+      </span>
+      <Icon name="chev" size={18} />
+    </Link>
+  )
+}
+
 export function Path() {
   const t = useTranslations('path')
   const router = useRouter()
@@ -185,6 +203,7 @@ export function Path() {
           </Link>
         )}
       </div>
+      <AskLumi />
       {p.units.map(u => {
         const empty = u.lessons.length === 0
         const isCurrent = u.id === current.id
@@ -247,8 +266,102 @@ export function Path() {
 }
 
 // ── Lección ──────────────────────────────────────────────
+/** Ilustraciones vectoriales con los colores del tema */
+function Diagram({ kind }: { kind: string }) {
+  const t = useTranslations('lesson')
+  if (kind === 'compound') {
+    // 100 €/mes durante 30 años: aportado frente a 2 %, 5 % y 7 % (valores calculados)
+    const years = Array.from({ length: 31 }, (_, y) => y)
+    const fv = (r: number, y: number) => { let v = 0; for (let m = 0; m < y * 12; m++) v = v * (1 + r / 12) + 100; return v }
+    const max = 122_000
+    const path = (f: (y: number) => number) => years.map((y, i) => `${i ? 'L' : 'M'}${20 + y * 9.2} ${150 - (f(y) / max) * 135}`).join(' ')
+    return (
+      <div className="card">
+        <svg viewBox="0 0 310 165" className="h-auto w-full" role="img" aria-label={t('img.compound')}>
+          <line x1="20" x2="300" y1="150" y2="150" stroke="var(--line)" />
+          <path d={path(y => y * 1200)} fill="none" stroke="var(--ink-3)" strokeWidth="2" strokeDasharray="5 4" />
+          <path d={path(y => fv(0.05, y))} fill="none" stroke="var(--ink-2)" strokeWidth="2" />
+          <path d={path(y => fv(0.07, y))} fill="none" stroke="var(--brand)" strokeWidth="3" />
+          <text x="296" y="20" textAnchor="end" fontSize="11" fontWeight="700" fill="var(--brand)">7 % · 121.997 €</text>
+          <text x="296" y="72" textAnchor="end" fontSize="11" fill="var(--ink-2)">5 % · 83.226 €</text>
+          <text x="296" y="112" textAnchor="end" fontSize="11" fill="var(--ink-3)">{t('img.contributed')} · 36.000 €</text>
+          <text x="20" y="162" fontSize="10" fill="var(--ink-3)">0</text>
+          <text x="296" y="162" textAnchor="end" fontSize="10" fill="var(--ink-3)">30 {t('img.years')}</text>
+        </svg>
+      </div>
+    )
+  }
+  if (kind === 'drawdown') {
+    const rows: [number, number][] = [[10, 11.1], [20, 25], [30, 42.9], [50, 100], [75, 300]]
+    return (
+      <div className="card flex flex-col gap-2" role="img" aria-label={t('img.drawdown')}>
+        {rows.map(([d, u]) => (
+          <div key={d} className="grid grid-cols-[64px_1fr] items-center gap-2 text-[13px] font-bold tabular-nums">
+            <span className="down">−{d} %</span>
+            <span className="flex items-center gap-2">
+              <i className="block h-2.5 rounded-full" style={{ width: `${Math.min(100, Math.sqrt(u) * 5.8)}%`, background: 'var(--up)' }} />
+              <span className="up">+{u.toLocaleString('es-ES')} %</span>
+            </span>
+          </div>
+        ))}
+        <span className="t-cap">{t('img.drawdownCap')}</span>
+      </div>
+    )
+  }
+  if (kind === 'riskreward')
+    return (
+      <div className="card">
+        <svg viewBox="0 0 300 150" className="h-auto w-full" role="img" aria-label={t('img.riskreward')}>
+          <rect x="40" y="20" width="220" height="70" rx="6" fill="color-mix(in srgb, var(--up) 16%, transparent)" />
+          <rect x="40" y="90" width="220" height="30" rx="6" fill="color-mix(in srgb, var(--down) 16%, transparent)" />
+          <line x1="40" x2="260" y1="90" y2="90" stroke="var(--ink)" strokeWidth="2" />
+          <text x="48" y="40" fontSize="12" fontWeight="700" fill="var(--up)">{t('img.target')} · +3R</text>
+          <text x="48" y="86" fontSize="12" fontWeight="700" fill="var(--ink)">{t('img.entry')}</text>
+          <text x="48" y="112" fontSize="12" fontWeight="700" fill="var(--down)">Stop · −1R</text>
+          <text x="150" y="142" textAnchor="middle" fontSize="11" fill="var(--ink-3)">{t('img.rrCap')}</text>
+        </svg>
+      </div>
+    )
+  if (kind === 'anatomy')
+    return (
+      <div className="card flex items-center justify-center gap-6 p-5">
+        <svg width="70" height="150" viewBox="0 0 70 150" role="img" aria-label={t('img.anatomy')}>
+          <line x1="35" x2="35" y1="8" y2="142" stroke="var(--up)" strokeWidth="2.5" />
+          <rect x="18" y="40" width="34" height="62" rx="3" fill="var(--up)" />
+        </svg>
+        <div className="t-foot flex h-[150px] flex-col justify-between py-1 font-bold" style={{ color: 'var(--ink)' }}>
+          <span>← {t('img.high')}</span>
+          <span>← {t('img.close')}</span>
+          <span>← {t('img.body')}</span>
+          <span>← {t('img.open')}</span>
+          <span>← {t('img.low')}</span>
+        </div>
+      </div>
+    )
+  if (kind === 'diversify')
+    return (
+      <div className="card grid grid-cols-2 gap-3" role="img" aria-label={t('img.diversify')}>
+        {[{ n: 1, v: '30–35 %' }, { n: 25, v: '≈ 20 %' }, { n: 500, v: '≈ 15 %' }, { n: 3000, v: '≈ 15 %' }].map(x => (
+          <div key={x.n} className="flex flex-col gap-1">
+            <div className="flex flex-wrap gap-[3px]">
+              {Array.from({ length: Math.min(x.n, 40) }, (_, i) => (
+                <i key={i} className="block h-2 w-2 rounded-full" style={{ background: 'var(--brand)', opacity: 0.35 + (i % 3) * 0.25 }} />
+              ))}
+            </div>
+            <span className="t-cap">
+              {x.n.toLocaleString('es-ES')} {x.n === 1 ? t('img.stock') : t('img.stocks')} · <b style={{ color: 'var(--ink)' }}>{x.v}</b>
+            </span>
+          </div>
+        ))}
+        <span className="t-cap col-span-2">{t('img.diversifyCap')}</span>
+      </div>
+    )
+  return null
+}
+
 function Illustration({ kind }: { kind: string }) {
   const t = useTranslations('lesson')
+  if (['compound', 'drawdown', 'riskreward', 'anatomy', 'diversify'].includes(kind)) return <Diagram kind={kind} />
   if (kind === 'candles')
     return (
       <>
@@ -300,7 +413,15 @@ function StepView({ s, lessonId, onSolved, solved }: { s: LessonStepT; lessonId:
       return (
         <>
           <h1 className="t-title">{s.title}</h1>
-          <p className="t-body m-0 text-[17px] leading-[26px]">{s.body}</p>
+          <RichText text={s.body} />
+          {s.keyIdea && (
+            <div className="card" style={{ background: 'color-mix(in srgb, var(--brand) 9%, var(--surface))' }}>
+              <span className="t-cap font-bold" style={{ color: 'var(--brand)' }}>
+                {t('keyIdea')}
+              </span>
+              <p className="t-head m-0 mt-1">{s.keyIdea}</p>
+            </div>
+          )}
           {tip}
         </>
       )
@@ -309,7 +430,7 @@ function StepView({ s, lessonId, onSolved, solved }: { s: LessonStepT; lessonId:
         <>
           <h1 className="t-title">{s.title}</h1>
           <Illustration kind={s.image} />
-          <p className="t-body m-0 text-[17px] leading-[26px]">{s.body}</p>
+          <RichText text={s.body} />
           {tip}
         </>
       )
@@ -389,6 +510,7 @@ export function Lesson({ id }: { id: string }) {
 
 function LessonInner({ id }: { id: string }) {
   const t = useTranslations('lesson')
+  const tt = useTranslations('tutor')
   const router = useRouter()
   const { data: l, error, refetch } = useQuery({ queryKey: ['lesson', id], queryFn: () => api.lesson(id), retry: false })
   const [i, setI] = useState(0)
@@ -421,6 +543,9 @@ function LessonInner({ id }: { id: string }) {
         <span className="t-cap w-9 text-right">
           {i + 1}/{l.steps.length}
         </span>
+        <Link href={`/profesora?leccion=${l.id}`} className="icon-btn" aria-label={tt('askLesson')} title={tt('askLesson')}>
+          <Icon name="chat" size={20} />
+        </Link>
       </div>
       <div key={s.id} className="pad flex-1 animate-rise">
         {i === 0 && <span className="t-foot">{l.unitTitle} · {l.title}</span>}

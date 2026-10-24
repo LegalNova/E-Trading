@@ -1,6 +1,8 @@
 # 04 · Contenido
 
-> Estado: **método para aprobar + esqueleto para decidir juntos.** El temario detallado lo planteamos juntos al empezar la etapa 5, como acordamos.
+> Estado: **curso completo en la app (octubre 2026).** 12 unidades, 108 lecciones y 395 preguntas a partir del manual `docs/curso` (D-048 a D-051). El esqueleto de la sección 4 queda como historia.
+>
+> **Cómo añadir o cambiar una lección:** edita `src/server/content/course/uNN.ts` (pasos con `text`, `key`, `img`, `chart`, `sim`; preguntas con `single`, `tf`, `multi`, `order`, `fill`, `trend`, `point`) y ejecuta `npx tsx --conditions=react-server scripts/check-content.ts`. Si cambias el manual, regenera la base de Lumi con `npx tsx scripts/build-tutor-kb.ts`.
 
 ## 1. Cómo se escribe una lección
 

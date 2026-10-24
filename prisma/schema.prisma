@@ -76,6 +76,7 @@ model User {
   notifications Notification[]
   snapshots     PortfolioSnapshot[]
   subscription  Subscription?
+  tutorMessages TutorMessage[]
 
   @@map("user")
 }
@@ -206,6 +207,21 @@ model QuizAnswer {
   attempt    QuizAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
 
   @@id([attemptId, questionId])
+}
+
+/// Conversación con Lumi (la profesora del curso). Cuenta para el límite diario por plan.
+model TutorMessage {
+  id        String   @id @default(cuid())
+  userId    String
+  role      String   // user | assistant
+  content   String
+  mode      String   @default("EXPLAIN")
+  sources   Json?    // lecciones citadas
+  engine    String?  // AI | MANUAL (sin clave de IA: respuesta extraída del curso)
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
 }
 
 model Mistake {

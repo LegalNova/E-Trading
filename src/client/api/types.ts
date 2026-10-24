@@ -3,6 +3,9 @@ import type {
   AchievementT, AnswerResultT, AssetDetailT, AssetItemT, AssetPageT, AssetTypeT, MarketOverviewT, RegionT, BillingPlanT, BillingStatusT, CandleT, CoursePathT,
   GenderT, HomeT, LeagueT, LessonT, LivesT, MeT, NotificationT, OrderPreviewT, OrderResultT, OrderSideT, OrderT, OrderTypeT,
   PlacementFinishT, PortfolioT, PriceAlertT, QuizFinishT, QuizStartT, SettingsT, StepCheckT, StreakT, TradeT, TradingStatsT,
+  TutorAnswerT,
+  TutorHistoryT,
+  TutorModeT,
 } from '@/shared/contract'
 
 export class ApiFailure extends Error {
@@ -93,6 +96,9 @@ export interface Api {
   quizFinish(attemptId: string): Promise<QuizFinishT>
   placementFinish(attemptId: string): Promise<PlacementFinishT>
   mistakesCount(): Promise<number>
+  tutorHistory(): Promise<TutorHistoryT>
+  tutorAsk(question: string, mode: TutorModeT): Promise<TutorAnswerT>
+  tutorClear(): Promise<void>
 
   // Mercado
   assets(filter?: { type?: AssetTypeT | 'WATCH'; q?: string }): Promise<AssetItemT[]>

@@ -25,7 +25,8 @@
     "profile": "Perfil",
     "notifications": "Avisos",
     "admin": "Admin",
-    "footer": "Simulació educativa. No s'opera amb diners reals."
+    "footer": "Simulació educativa. No s'opera amb diners reals.",
+    "tutor": "Pregunta-ho a la Lumi"
   },
   "landing": {
     "navHow": "Com funciona",
@@ -234,7 +235,7 @@
     "unitOf": "Unitat {n} de {total}",
     "unitN": "Unitat {n}",
     "soon": "Aviat",
-    "unlocksOrders": "En completar «Stop loss i take profit» es desbloquegen aquestes ordres al Mercat.",
+    "unlocksOrders": "En aprovar «On posar el stop loss» es desbloquegen aquestes ordres al Mercat.",
     "completed": "Completada",
     "available": "Disponible · {min} min · +{xp} XP",
     "premium": "Inclosa a Premium",
@@ -267,7 +268,29 @@
     "resistance": "Resistència",
     "premiumOnly": "Aquesta lliçó és de Premium",
     "seePremium": "Veure Premium",
-    "back": "Tornar a Classes"
+    "back": "Tornar a Classes",
+    "keyIdea": "Idea clau",
+    "img": {
+      "compound": "Creixement de 100 € al mes durant 30 anys",
+      "contributed": "Aportat",
+      "years": "anys",
+      "drawdown": "Pujada necessària per recuperar cada caiguda",
+      "drawdownCap": "Caiguda → pujada necessària per tornar al punt de partida",
+      "riskreward": "Operació amb stop a 1R i objectiu a 3R",
+      "target": "Objectiu",
+      "entry": "Entrada",
+      "rrCap": "Arrisques 1 per intentar guanyar-ne 3",
+      "anatomy": "Parts d'una espelma alcista",
+      "high": "Màxim (metxa superior)",
+      "close": "Tancament",
+      "body": "Cos",
+      "open": "Obertura",
+      "low": "Mínim (metxa inferior)",
+      "diversify": "Volatilitat segons el nombre d'accions",
+      "stock": "acció",
+      "stocks": "accions",
+      "diversifyCap": "Volatilitat anual típica: a partir d'unes poques desenes d'empreses només queda el risc de mercat"
+    }
   },
   "quiz": {
     "types": {
@@ -410,7 +433,7 @@
     "fee": "Comissió simulada",
     "cashAfter": "Disponible després de l'ordre",
     "youGet": "Rebràs",
-    "lockedNote": "Límit, stop loss i take profit es desbloquegen amb la lliçó «Stop loss i take profit» o amb Premium.",
+    "lockedNote": "Límit, stop loss i take profit es desbloquegen amb la lliçó «On posar el stop loss» o amb Premium.",
     "closedNote": "El mercat està tancat: l'ordre quedarà pendent i s'executarà en obrir.",
     "confirmBuy": "Comprar ara",
     "confirmSell": "Vendre ara",
@@ -431,7 +454,7 @@
     "buyAnyway": "Comprar igualment",
     "whatDiversify": "Què és diversificar? · Veure classes",
     "lockTitle": "Aquesta funció encara està bloquejada",
-    "lockBody": "Les ordres límit, stop loss i take profit es desbloquegen en completar la lliçó «Stop loss i take profit» (Unitat 3, gratis) o amb Premium. Així primer entens per a què serveixen.",
+    "lockBody": "Les ordres límit, stop loss i take profit es desbloquegen en aprovar la lliçó «On posar el stop loss» (Unitat 10 · Gestió del risc, gratis) o amb Premium. Així primer entens per a què serveixen.",
     "goLesson": "Anar a la lliçó",
     "seePremium": "Veure Premium",
     "gotIt": "Entesos",
@@ -851,5 +874,47 @@
     "noData": "Sense dades per a aquest interval.",
     "hintOne": "Toca el gràfic per col·locar la línia.",
     "hintTwo": "Toca dos punts del gràfic."
+  },
+  "tutor": {
+    "title": "Pregunta-ho a {name}",
+    "modes": "Mode de la professora",
+    "mode": {
+      "EXPLAIN": "Explicar",
+      "PATH": "Què aprendre",
+      "PORTFOLIO": "La meva cartera",
+      "BIASES": "Els meus biaixos"
+    },
+    "modeHint": {
+      "EXPLAIN": "Pregunta qualsevol concepte del curs: te l’explica amb exemples.",
+      "PATH": "Et recomana el pas següent segons el teu progrés.",
+      "PORTFOLIO": "Analitza les teves posicions i operacions simulades amb el que ensenya el curs. Premium.",
+      "BIASES": "Detecta biaixos en les teves preguntes i operacions i et proposa regles. Premium."
+    },
+    "hello": "Hola, soc {name}",
+    "intro": "La teva professora del curs. Pregunta’m el que no entenguis: responc amb el manual d’E-Trading i el teu progrés. No dono consells d’inversió: t’ensenyo a decidir per tu.",
+    "suggest": {
+      "s1": "Què és un ETF?",
+      "s2": "Com es llegeix una espelma?",
+      "s3": "Quant hauria d’arriscar per operació?",
+      "s4": "Què és l’interès compost?"
+    },
+    "aboutLesson": "Tinc un dubte sobre «{title}»: ",
+    "thinking": "{name} està buscant al curs…",
+    "placeholder": "Escriu la teva pregunta…",
+    "send": "Enviar",
+    "left": "{n} de {total} preguntes avui",
+    "engineAi": "Respostes amb IA basades en el curs",
+    "engineManual": "Respostes extretes del manual del curs",
+    "sources": "Del curs:",
+    "clear": "Esborrar la conversa",
+    "cleared": "Conversa esborrada",
+    "premiumMode": "Aquest mode analitza la teva cartera i els teus biaixos: és de Premium.",
+    "seePremium": "Veure Premium",
+    "limitFree": "Has fet servir les 5 preguntes gratuïtes d’avui. Amb Premium en tens 100 al dia i els modes de cartera i biaixos.",
+    "limitPremium": "Has arribat al límit d’avui. Demà més.",
+    "error": "No he pogut respondre. Torna-ho a provar.",
+    "ask": "Pregunta-ho a {name}",
+    "askHint": "Dubtes? La teva professora respon amb el curs",
+    "askLesson": "Preguntar a la professora"
   }
 }

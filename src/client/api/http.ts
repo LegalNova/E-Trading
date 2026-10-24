@@ -75,6 +75,9 @@ export const httpApi: Api = {
   quizFinish: attemptId => post(`/quiz/attempts/${attemptId}/finish`),
   placementFinish: attemptId => post(`/quiz/attempts/${attemptId}/placement-finish`),
   mistakesCount: () => get('/quiz/mistakes/count'),
+  tutorHistory: () => get('/tutor'),
+  tutorAsk: (question, mode) => post('/tutor/ask', { question, mode }),
+  tutorClear: () => call('DELETE', '/tutor'),
 
   assets: async (filter = {}) => {
     if (filter.type === 'WATCH' && !filter.q) {

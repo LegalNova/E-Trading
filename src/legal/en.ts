@@ -57,6 +57,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
           'Learning activity: lessons, quiz answers, XP, streak, lives, gems, achievements and league position.',
           'Simulator: orders, trades, virtual portfolio and price alerts. It is all virtual money: we process no bank or payment data.',
           'Technical data: IP address and browser, for security, usage limits and sign-in.',
+          'Questions to Lumi (the tutor): the text of your questions, the answers and the mode you chose, to show your history and count your daily limit. You can delete the history at any time.',
           'Communications: what you send through the contact form and, if you sign up, your email on the news list.',
         ],
         p: ['We use no third-party analytics or advertising tools, and we do not sell your data.'],
@@ -70,6 +71,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
             ['Showing your name (first name and initial) in the weekly league', 'Legitimate interest in running the game (6.1.f). You can appear as «Anonymous player» in Settings'],
             ['Security, abuse prevention and usage limits', 'Legitimate interest in protecting the service and its users (6.1.f)'],
             ['In-app notifications (streak, orders, achievements)', 'Performance of the contract (6.1.b); you can turn them off in Settings'],
+            ['Answering your questions to Lumi with the course manual and your progress', 'Performance of the contract (6.1.b)'],
             ['Answering your contact messages', 'Your request and our legitimate interest in handling it (6.1.b and 6.1.f)'],
             ['Sending you news if you join the list', 'Your consent (6.1.a), which you can withdraw at any time'],
             ['Complying with legal obligations', 'Legal obligation (6.1.c)'],
@@ -88,6 +90,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
         list: [
           'Account, progress and simulator: while you keep your account. Deleting it in Settings removes them immediately; technical backups are overwritten within 7 days.',
           'Security logs (e.g. sign-in attempts): up to 12 months.',
+          'Conversations with Lumi: while you keep your account or until you delete the history.',
           'Contact messages: 12 months after the last reply.',
           'News list: until you unsubscribe.',
         ],
@@ -100,6 +103,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
           rows: [
             ['Vercel Inc.', 'App hosting', 'USA · EU-US Data Privacy Framework and standard contractual clauses'],
             ['Neon Inc. (on Amazon Web Services)', 'Database', 'USA (us-east-1) · processor agreement and standard contractual clauses'],
+            ['Anthropic PBC', 'AI answers from Lumi: receives your question, the latest messages of the conversation, course excerpts and a summary of your progress (level, lessons and, in the portfolio modes, your simulated trades). It does not receive your email', 'USA · processor agreement and standard contractual clauses. Under its commercial terms, it does not use this data to train its models'],
             ['Google LLC', 'Sign in with Google (only if you use it)', 'USA · EU-US Data Privacy Framework'],
           ],
         },

@@ -120,7 +120,7 @@ export const PathUnit = z.object({
 export const CoursePath = z.object({ courseId: z.string(), title: z.string(), currentUnitId: z.string(), units: z.array(PathUnit) })
 
 export const LessonStep = z.discriminatedUnion('type', [
-  z.object({ id: z.string(), type: z.literal('TEXT'), title: z.string(), body: z.string(), companionTip: z.string().optional() }),
+  z.object({ id: z.string(), type: z.literal('TEXT'), title: z.string(), body: z.string(), keyIdea: z.string().optional(), companionTip: z.string().optional() }),
   z.object({ id: z.string(), type: z.literal('IMAGE'), title: z.string(), body: z.string(), image: z.string(), companionTip: z.string().optional() }),
   z.object({ id: z.string(), type: z.literal('VIDEO'), title: z.string(), url: z.string(), companionTip: z.string().optional() }),
   z.object({
@@ -360,6 +360,14 @@ export const BillingPlan = z.object({
 })
 export const BillingStatus = z.object({ plan: Plan, status: z.enum(['NONE', 'TRIALING', 'ACTIVE', 'PAST_DUE', 'CANCELED']), renewsAt: iso.nullable(), trialEndsAt: iso.nullable(), interval: z.enum(['MONTH', 'YEAR']).nullable() })
 
+// ── Lumi, la profesora (chat con el manual del curso) ──
+export const TutorMode = z.enum(['EXPLAIN', 'PATH', 'PORTFOLIO', 'BIASES'])
+export const TutorSource = z.object({ lessonId: z.string(), title: z.string(), unit: z.string() })
+export const TutorUsage = z.object({ used: z.number(), limit: z.number() })
+export const TutorAnswer = z.object({ answer: z.string(), sources: z.array(TutorSource), engine: z.enum(['AI', 'MANUAL']), usage: TutorUsage })
+export const TutorMessage = z.object({ id: z.string(), role: z.enum(['user', 'assistant']), content: z.string(), mode: TutorMode, sources: z.array(TutorSource), createdAt: iso })
+export const TutorHistory = z.object({ messages: z.array(TutorMessage), usage: TutorUsage, premium: z.boolean(), ai: z.boolean() })
+
 export type Mood = z.infer<typeof Mood>
 export type PlanT = z.infer<typeof Plan>
 export type GenderT = z.infer<typeof Gender>
@@ -375,6 +383,10 @@ export type PathLessonT = z.infer<typeof PathLesson>
 export type PathUnitT = z.infer<typeof PathUnit>
 export type CoursePathT = z.infer<typeof CoursePath>
 export type LessonStepT = z.infer<typeof LessonStep>
+export type TutorModeT = z.infer<typeof TutorMode>
+export type TutorAnswerT = z.infer<typeof TutorAnswer>
+export type TutorHistoryT = z.infer<typeof TutorHistory>
+export type TutorMessageT = z.infer<typeof TutorMessage>
 export type LessonT = z.infer<typeof Lesson>
 export type StepCheckT = z.infer<typeof StepCheck>
 export type QuestionT = z.infer<typeof Question>

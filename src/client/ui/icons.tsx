@@ -28,6 +28,7 @@ const PATHS = {
   expand: 'M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5',
   globe: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3 12h18M12 3c2.5 2.5 3.8 5.5 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.5-3.8-9S9.5 5.5 12 3z',
   filter: 'M4 5h16l-6 8v5l-4 2v-7z',
+  chat: 'M5 5h14v10H10l-5 4z',
 } as const
 
 export type IconName = keyof typeof PATHS

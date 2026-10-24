@@ -6,6 +6,7 @@ import * as admin from '@/server/game/admin'
 import * as learning from '@/server/game/learning'
 import * as profile from '@/server/game/profile'
 import * as trading from '@/server/game/trading'
+import * as tutor from '@/server/tutor/tutor'
 import { requireUser } from '@/server/game/core'
 import { db } from '@/server/db'
 import { clientIp, rateLimit } from '@/server/http/ratelimit'
@@ -65,6 +66,10 @@ const routes: Route[] = [
   { method: 'POST', path: 'quiz/attempts/:id/finish', run: (_r, p) => learning.quizFinish(p[0]) },
   { method: 'POST', path: 'quiz/attempts/:id/placement-finish', run: (_r, p) => learning.placementFinish(p[0]) },
   { method: 'GET', path: 'quiz/mistakes/count', run: () => profile.mistakesCount() },
+  // Lumi, la profesora
+  { method: 'GET', path: 'tutor', run: async () => tutor.history(await requireUser()) },
+  { method: 'POST', path: 'tutor/ask', run: async (r, _p, b) => { const x = z.object({ question: z.string().min(1).max(600), mode: z.enum(['EXPLAIN', 'PATH', 'PORTFOLIO', 'BIASES']).default('EXPLAIN') }).parse(b); const u = await requireUser(); await rateLimit(`tutor:${u.id}`, 8, 60); return tutor.ask(u, x.question, x.mode) } },
+  { method: 'DELETE', path: 'tutor', run: async () => tutor.clearHistory(await requireUser()) },
   // Mercado y cartera
   { method: 'GET', path: 'watchlist', run: () => trading.watchlist() },
   { method: 'POST', path: 'watchlist/:symbol', run: (_r, p) => trading.toggleWatch(p[0].toUpperCase()) },

@@ -7,6 +7,7 @@ import { DAY_MS, addDays, dayOf } from '@/shared/time'
 import type { Order, Position, Trade, User } from '@/generated/prisma/client'
 import { db } from '../db'
 import { fxRates, loadAssets, normCurrency, toEur } from '../market/service'
+import { RISK_LESSON } from '../content/catalog'
 import { addXp, bump, bumpGoal, endFx, fail, lumi, markActive, notify, requireUser, RISK_PCT, START_CASH, unlockedFeatures, withCtx, type Ctx, type Tx } from './core'
 
 // ── Libro de precios (solo los activos que necesita la petición) ──
@@ -83,7 +84,7 @@ async function previewIn(c: Ctx, book: Book, i: OrderInput): Promise<OrderPrevie
   const amount = qty * px.eur
   const f = amount > 0 ? fee(amount) : 0
   const allowedTypes = ['MARKET', ...features] as OrderPreviewT['allowedTypes']
-  const locked = (['LIMIT', 'STOP_LOSS', 'TAKE_PROFIT'] as const).filter(t => !features.includes(t)).map(type => ({ type, unlockBy: 'LESSON:u3l3' }))
+  const locked = (['LIMIT', 'STOP_LOSS', 'TAKE_PROFIT'] as const).filter(t => !features.includes(t)).map(type => ({ type, unlockBy: `LESSON:${RISK_LESSON}` }))
   const weight = total > 0 ? ((i.side === 'BUY' ? current + amount : current - amount) / total) * 100 : 0
   const flagged = i.side === 'BUY' && px.type !== 'INDEX' && weight > RISK_PCT && amount > 0
   const suggested = Math.max(0, (RISK_PCT / 100) * total - current)
@@ -166,7 +167,7 @@ export async function placeOrder(i: OrderInput, idempotencyKey?: string): Promis
     }
     const px = pxOf(book, i.symbol)
     const pv = await previewIn(c, book, i)
-    if (i.type !== 'MARKET' && !pv.allowedTypes.includes(i.type)) fail(422, 'FEATURE_LOCKED', 'Completa «Stop loss y take profit» o hazte Premium')
+    if (i.type !== 'MARKET' && !pv.allowedTypes.includes(i.type)) fail(422, 'FEATURE_LOCKED', 'Aprueba la lección «Dónde poner el stop loss» (gratis) o hazte Premium')
     if (px.type === 'INDEX') fail(422, 'VALIDATION_ERROR', 'Los índices no se compran directamente')
     if (Number(pv.qty) <= 0) fail(422, 'VALIDATION_ERROR', 'Indica un importe')
     if (pv.error === 'MIN_AMOUNT') fail(422, 'VALIDATION_ERROR', 'El importe mínimo es 1 €')

@@ -6,7 +6,7 @@ import { addDays, dayOf, weekOf } from '@/shared/time'
 import { Prisma, type GameState, type User } from '@/generated/prisma/client'
 import { db, DB_SCHEMA } from '../db'
 import { currentUser } from '../auth'
-import { ACHIEVEMENTS, LEVEL_TITLES, LUMI, UNITS } from '../content/catalog'
+import { ACHIEVEMENTS, LEVEL_TITLES, LUMI, RISK_LESSON, UNITS } from '../content/catalog'
 
 export class HttpError extends Error {
   constructor(public status: number, public code: string, message: string) {
@@ -224,11 +224,11 @@ async function achievementFacts(tx: Tx, userId: string, g: GameState, counters: 
   ])
   const assets = positions.length ? await tx.asset.findMany({ where: { symbol: { in: positions.map(p => p.symbol) } }, select: { type: true } }) : []
   const done = new Set(lessons.map(l => l.lessonId))
-  const unitDone = (u: string) => UNITS.find(x => x.id === u)!.lessons.filter(l => done.has(l.id)).length
+  const unitDone = (u: string) => { const x = UNITS.find(y => y.id === u); return x && x.lessons.every(l => done.has(l.id)) ? 1 : 0 }
   const n = (k: string) => counters[k] ?? 0
   return {
-    FIRST_LESSON: done.size, LESSONS_5: done.size, LESSONS_20: done.size, QUIZ_PERFECT: n('perfect'), QUIZ_PERFECT_5: n('perfect'),
-    UNIT_1: unitDone('u1') >= 4 ? 1 : 0, UNIT_2: unitDone('u2'), UNIT_3: unitDone('u3'), PLACEMENT: g.placementDone ? 1 : 0,
+    FIRST_LESSON: done.size, LESSONS_5: done.size, LESSONS_20: done.size, LESSONS_50: done.size, QUIZ_PERFECT: n('perfect'), QUIZ_PERFECT_5: n('perfect'),
+    UNIT_1: unitDone('u1'), UNIT_2: unitDone('u8'), UNIT_3: unitDone('u10'), COURSE_DONE: UNITS.every(u => unitDone(u.id)) ? 1 : 0, PLACEMENT: g.placementDone ? 1 : 0,
     REVIEW_10: n('reviewed'), SPEED: n('fastPerfect'), FIRST_TRADE: filled, TRADES_10: filled, TRADES_50: filled,
     DIVERSIFY_3: new Set(assets.map(a => a.type)).size, DIVERSIFY_5: positions.length, FIRST_STOP: n('stops'), FIRST_TP: n('tps'),
     FIRST_LIMIT: n('limits'), WEEK_POSITIVE: n('weekPositive'), CALM_RISK: n('calmRisk'), FIRST_ALERT: Math.max(n('alerts'), alerts ? 1 : 0),
@@ -272,4 +272,4 @@ export async function endFx(c: Ctx): Promise<EffectsT> {
 }
 
 export const unlockedFeatures = async (tx: Tx, user: User): Promise<FeatureT[]> =>
-  user.plan === 'PREMIUM' || (await tx.lessonProgress.count({ where: { userId: user.id, lessonId: 'u3l3' } })) > 0 ? ['LIMIT', 'STOP_LOSS', 'TAKE_PROFIT'] : []
+  user.plan === 'PREMIUM' || (await tx.lessonProgress.count({ where: { userId: user.id, lessonId: RISK_LESSON } })) > 0 ? ['LIMIT', 'STOP_LOSS', 'TAKE_PROFIT'] : []

@@ -712,7 +712,7 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
           <span className="t-head">{t('lockTitle')}</span>
         </div>
         <p className="t-body muted m-0">{t('lockBody')}</p>
-        <Link href="/leccion/u3l3" className="btn btn-primary">
+        <Link href="/leccion/u10l3" className="btn btn-primary">
           {t('goLesson')}
         </Link>
         <Link href="/premium" className="btn btn-secondary">

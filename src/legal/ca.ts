@@ -57,6 +57,7 @@ export const ca: Record<LegalSlug, LegalDoc> = {
           'Activitat educativa: lliçons, respostes dels qüestionaris, XP, ratxa, vides, gemmes, assoliments i posició a la lliga.',
           'Simulador: ordres, operacions, cartera virtual i alertes de preu. Tot són diners virtuals: no tractem dades bancàries ni de pagament.',
           'Dades tècniques: adreça IP i navegador, per a la seguretat, els límits d’ús i l’inici de sessió.',
+          'Preguntes a la Lumi (la professora): el text de les teves preguntes, les respostes i el mode triat, per mostrar-te l’historial i comptar el teu límit diari. Pots esborrar l’historial quan vulguis.',
           'Comunicacions: el que ens enviïs pel formulari de contacte i, si t’hi apuntes, el teu email a la llista de novetats.',
         ],
         p: ['No fem servir eines d’analítica ni de publicitat de tercers i no venem les teves dades.'],
@@ -70,6 +71,7 @@ export const ca: Record<LegalSlug, LegalDoc> = {
             ['Mostrar el teu nom (nom i inicial) a la lliga setmanal', 'Interès legítim en el funcionament del joc (6.1.f). Pots aparèixer com a «Jugador anònim» a Configuració'],
             ['Seguretat, prevenció d’abusos i límits d’ús', 'Interès legítim a protegir el servei i els usuaris (6.1.f)'],
             ['Avisos dins de l’app (ratxa, ordres, assoliments)', 'Execució del contracte (6.1.b); els pots desactivar a Configuració'],
+            ['Respondre les teves preguntes a la Lumi amb el manual del curs i el teu progrés', 'Execució del contracte (6.1.b)'],
             ['Respondre els teus missatges de contacte', 'La teva sol·licitud i el nostre interès legítim a atendre-la (6.1.b i 6.1.f)'],
             ['Enviar-te novetats si t’apuntes a la llista', 'El teu consentiment (6.1.a), que pots retirar quan vulguis'],
             ['Complir obligacions legals', 'Obligació legal (6.1.c)'],
@@ -88,6 +90,7 @@ export const ca: Record<LegalSlug, LegalDoc> = {
         list: [
           'Compte, progrés i simulador: mentre tinguis el compte. En esborrar-lo des de Configuració s’eliminen de seguida; les còpies de seguretat tècniques se sobreescriuen en un màxim de 7 dies.',
           'Registres de seguretat (per exemple, intents d’accés): fins a 12 mesos.',
+          'Converses amb la Lumi: mentre tinguis el compte o fins que n’esborris l’historial.',
           'Missatges de contacte: 12 mesos des de la darrera resposta.',
           'Llista de novetats: fins que et donis de baixa.',
         ],
@@ -100,6 +103,7 @@ export const ca: Record<LegalSlug, LegalDoc> = {
           rows: [
             ['Vercel Inc.', 'Allotjament de l’aplicació', 'EUA · Marc de privadesa de dades UE-EUA i clàusules contractuals tipus'],
             ['Neon Inc. (sobre Amazon Web Services)', 'Base de dades', 'EUA (us-east-1) · contracte d’encarregat i clàusules contractuals tipus'],
+            ['Anthropic PBC', 'Respostes de la Lumi amb IA: rep la teva pregunta, les darreres de la conversa, fragments del curs i un resum del teu progrés (nivell, lliçons i, en els modes de cartera, les teves operacions simulades). No rep el teu email', 'EUA · contracte d’encarregat i clàusules contractuals tipus. Segons les seves condicions comercials, no fa servir aquestes dades per entrenar els seus models'],
             ['Google LLC', 'Inici de sessió amb Google (només si el fas servir)', 'EUA · Marc de privadesa de dades UE-EUA'],
           ],
         },

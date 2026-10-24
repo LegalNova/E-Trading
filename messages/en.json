@@ -25,7 +25,8 @@
     "profile": "Profile",
     "notifications": "Notifications",
     "admin": "Admin",
-    "footer": "Educational simulation. No real money is traded."
+    "footer": "Educational simulation. No real money is traded.",
+    "tutor": "Ask Lumi"
   },
   "landing": {
     "navHow": "How it works",
@@ -234,7 +235,7 @@
     "unitOf": "Unit {n} of {total}",
     "unitN": "Unit {n}",
     "soon": "Coming soon",
-    "unlocksOrders": "Completing «Stop loss y take profit» unlocks those orders in the Market.",
+    "unlocksOrders": "Passing «Where to place the stop loss» unlocks those orders in the Market.",
     "completed": "Completed",
     "available": "Available · {min} min · +{xp} XP",
     "premium": "Included in Premium",
@@ -267,7 +268,29 @@
     "resistance": "Resistance",
     "premiumOnly": "This lesson is Premium",
     "seePremium": "See Premium",
-    "back": "Back to Lessons"
+    "back": "Back to Lessons",
+    "keyIdea": "Key idea",
+    "img": {
+      "compound": "Growth of €100 a month over 30 years",
+      "contributed": "Contributed",
+      "years": "years",
+      "drawdown": "Rise needed to recover each fall",
+      "drawdownCap": "Fall → rise needed to get back to the start",
+      "riskreward": "Trade with a 1R stop and a 3R target",
+      "target": "Target",
+      "entry": "Entry",
+      "rrCap": "You risk 1 to try to make 3",
+      "anatomy": "Parts of a bullish candle",
+      "high": "High (upper wick)",
+      "close": "Close",
+      "body": "Body",
+      "open": "Open",
+      "low": "Low (lower wick)",
+      "diversify": "Volatility by number of stocks",
+      "stock": "stock",
+      "stocks": "stocks",
+      "diversifyCap": "Typical yearly volatility: beyond a few dozen companies only market risk remains"
+    }
   },
   "quiz": {
     "types": {
@@ -410,7 +433,7 @@
     "fee": "Simulated fee",
     "cashAfter": "Available after the order",
     "youGet": "You'll receive",
-    "lockedNote": "Limit, stop loss and take profit unlock with the «Stop loss y take profit» lesson or with Premium.",
+    "lockedNote": "Limit, stop loss and take profit unlock with the «Where to place the stop loss» lesson or with Premium.",
     "closedNote": "The market is closed: the order will stay pending and run when it opens.",
     "confirmBuy": "Buy now",
     "confirmSell": "Sell now",
@@ -431,7 +454,7 @@
     "buyAnyway": "Buy anyway",
     "whatDiversify": "What is diversifying? · See lessons",
     "lockTitle": "This feature is still locked",
-    "lockBody": "Limit, stop loss and take profit orders unlock when you complete the «Stop loss y take profit» lesson (Unit 3, free) or with Premium. That way you understand what they're for first.",
+    "lockBody": "Limit, stop loss and take profit orders unlock when you pass the «Where to place the stop loss» lesson (Unit 10 · Risk management, free) or with Premium. That way you understand what they're for first.",
     "goLesson": "Go to the lesson",
     "seePremium": "See Premium",
     "gotIt": "Got it",
@@ -851,5 +874,47 @@
     "noData": "No data for this interval.",
     "hintOne": "Tap the chart to place the line.",
     "hintTwo": "Tap two points on the chart."
+  },
+  "tutor": {
+    "title": "Ask {name}",
+    "modes": "Tutor mode",
+    "mode": {
+      "EXPLAIN": "Explain",
+      "PATH": "What to learn",
+      "PORTFOLIO": "My portfolio",
+      "BIASES": "My biases"
+    },
+    "modeHint": {
+      "EXPLAIN": "Ask about any course concept: she explains it with examples.",
+      "PATH": "Recommends your next step based on your progress.",
+      "PORTFOLIO": "Reviews your simulated positions and trades using what the course teaches. Premium.",
+      "BIASES": "Spots biases in your questions and trades and suggests rules. Premium."
+    },
+    "hello": "Hi, I’m {name}",
+    "intro": "Your course tutor. Ask me anything you don’t understand: I answer with the E-Trading manual and your progress. I don’t give investment advice: I teach you to decide for yourself.",
+    "suggest": {
+      "s1": "What is an ETF?",
+      "s2": "How do I read a candle?",
+      "s3": "How much should I risk per trade?",
+      "s4": "What is compound interest?"
+    },
+    "aboutLesson": "I have a question about «{title}»: ",
+    "thinking": "{name} is searching the course…",
+    "placeholder": "Type your question…",
+    "send": "Send",
+    "left": "{n} of {total} questions today",
+    "engineAi": "AI answers based on the course",
+    "engineManual": "Answers taken from the course manual",
+    "sources": "From the course:",
+    "clear": "Delete the conversation",
+    "cleared": "Conversation deleted",
+    "premiumMode": "This mode reviews your portfolio and biases: it’s Premium.",
+    "seePremium": "See Premium",
+    "limitFree": "You’ve used your 5 free questions today. Premium gives you 100 a day plus the portfolio and bias modes.",
+    "limitPremium": "You’ve reached today’s limit. More tomorrow.",
+    "error": "I couldn’t answer. Try again.",
+    "ask": "Ask {name}",
+    "askHint": "Questions? Your tutor answers with the course",
+    "askLesson": "Ask the tutor"
   }
 }

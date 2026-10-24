@@ -22,8 +22,8 @@ cash=$(c $J $B/portfolio | python3 -c "import sys,json; print(json.load(sys.stdi
 rm -f $T/r*.json
 
 echo "2. Abrir una lección bloqueada desde la URL"
-code=$(c $J $B/lessons/u3l3 -o /dev/null -w "%{http_code}"); [ "$code" = 403 ] && ok "u3l3 → 403" || ko "u3l3 → $code"
-code=$(c $J -X POST $B/quiz/u3l3/start -o /dev/null -w "%{http_code}"); [ "$code" = 403 ] && ok "quiz de u3l3 → 403" || ko "quiz u3l3 → $code"
+code=$(c $J $B/lessons/u9l3 -o /dev/null -w "%{http_code}"); [ "$code" = 403 ] && ok "u9l3 (premium) → 403" || ko "u9l3 → $code"
+code=$(c $J -X POST $B/quiz/u9l3/start -o /dev/null -w "%{http_code}"); [ "$code" = 403 ] && ok "quiz de u9l3 → 403" || ko "quiz u9l3 → $code"
 
 echo "3. Repetir el mismo quiz para granjear XP"
 xps=""

@@ -20,6 +20,7 @@ const TABS: { href: string; key: string; icon: IconName }[] = [
 function tabOf(path: string) {
   if (path.startsWith('/avisos')) return '/inicio'
   if (path.startsWith('/ajustes') || path.startsWith('/premium')) return '/perfil'
+  if (path.startsWith('/profesora')) return '/clases'
   return TABS.find(t => path.startsWith(t.href))?.href ?? '/inicio'
 }
 
@@ -85,6 +86,10 @@ function SideLinks() {
           {t(tab.key)}
         </Link>
       ))}
+      <Link href="/profesora" className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-bold" style={{ color: path.startsWith('/profesora') ? 'var(--brand)' : 'var(--ink-2)' }}>
+        <Icon name="chat" size={22} />
+        {t('tutor')}
+      </Link>
       <Link href="/avisos" className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-bold" style={{ color: path.startsWith('/avisos') ? 'var(--brand)' : 'var(--ink-2)' }}>
         <Icon name="bell" size={22} />
         {t('notifications')}

@@ -223,14 +223,15 @@ export const cancelSubscription = () =>
 export const exportData = () =>
   withCtx(async c => {
     const id = c.user.id
-    const [portfolio, positions, orders, trades, alerts, lessons, achievements, streak, notifications] = await Promise.all([
+    const [portfolio, positions, orders, trades, alerts, lessons, achievements, streak, notifications, tutorChat] = await Promise.all([
       c.tx.portfolio.findUnique({ where: { userId: id } }), c.tx.position.findMany({ where: { userId: id } }), c.tx.order.findMany({ where: { userId: id } }), c.tx.trade.findMany({ where: { userId: id } }),
       c.tx.priceAlert.findMany({ where: { userId: id } }), c.tx.lessonProgress.findMany({ where: { userId: id } }), c.tx.userAchievement.findMany({ where: { userId: id } }),
       c.tx.streakDay.findMany({ where: { userId: id } }), c.tx.notification.findMany({ where: { userId: id } }),
+      c.tx.tutorMessage.findMany({ where: { userId: id }, orderBy: { createdAt: 'asc' }, select: { role: true, content: true, mode: true, createdAt: true } }),
     ])
     const { name, email, createdAt, gender, birthDate, locale, timezone, plan, companionName, skinId, settings } = c.user
     const profile = { name, email, createdAt, gender, birthDate, locale, timezone, plan, companionName, skinId, settings }
-    return { exportedAt: new Date().toISOString(), profile, game: c.g, portfolio, positions, orders, trades, alerts, lessons, achievements, streak, notifications }
+    return { exportedAt: new Date().toISOString(), profile, game: c.g, portfolio, positions, orders, trades, alerts, lessons, achievements, streak, notifications, tutorChat }
   })
 
 export async function deleteAccount() {

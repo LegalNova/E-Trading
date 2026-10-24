@@ -2,7 +2,7 @@ import 'server-only'
 // Clases, quiz, test de nivel y repaso de fallos (docs/02 §2, docs/07 §3–4)
 import type { AnswerResultT, CoursePathT, LessonStepT, LessonT, PathUnitT, PlacementFinishT, QuestionT, QuizFinishT, QuizStartT, StepCheckT } from '@/shared/contract'
 import type { User } from '@/generated/prisma/client'
-import { LESSON, PLACEMENT, QUIZZES, UNITS, type ContentQuestion } from '../content/catalog'
+import { LESSON, PLACEMENT, QUIZZES, RISK_LESSON, UNITS, type ContentQuestion } from '../content/catalog'
 import { addXp, bump, bumpGoal, endFx, fail, LIVES_MAX, livesOf, lumi, markActive, withCtx, type Ctx, type Tx } from './core'
 
 const ALL_Q: Record<string, ContentQuestion> = Object.fromEntries([...Object.values(QUIZZES).flat(), ...PLACEMENT].map(q => [q.id, q]))
@@ -49,7 +49,7 @@ export async function lesson(user: User, tx: Tx, id: string): Promise<LessonT> {
   if (st.status === 'LOCKED') fail(403, 'LESSON_LOCKED', 'Termina la lección anterior para abrir esta')
   const steps: LessonStepT[] = l.steps.map((s, i): LessonStepT => {
     const sid = `${id}-s${i}`
-    if (s.kind === 'TEXT') return { id: sid, type: 'TEXT', title: s.title, body: s.body, companionTip: s.tip }
+    if (s.kind === 'TEXT') return { id: sid, type: 'TEXT', title: s.title, body: s.body, keyIdea: s.key, companionTip: s.tip }
     if (s.kind === 'IMAGE') return { id: sid, type: 'IMAGE', title: s.title, body: s.body, image: s.image, companionTip: s.tip }
     if (s.kind === 'CHART') return { id: sid, type: 'INTERACTIVE_CHART', prompt: s.prompt, caption: s.caption, candles: s.candles }
     return { id: sid, type: 'SIMULATOR_TASK', title: s.title, body: s.body, task: s.task }
@@ -138,7 +138,8 @@ export const quizFinish = (attemptId: string) =>
     const prev = at.lessonId ? await c.tx.lessonProgress.findUnique({ where: { userId_lessonId: { userId: c.user.id, lessonId: at.lessonId } } }) : null
     const lessonXp = l && stars > 0 && !prev ? l.xp : 0
     // Repetir el mismo quiz da XP solo 2 veces al día (no se puede «granjear» XP)
-    const repeatsToday = at.lessonId && prev ? await c.tx.quizAttempt.count({ where: { userId: c.user.id, lessonId: at.lessonId, finishedAt: { gte: new Date(Date.now() - 86_400_000) } } }) : 0
+    // (cuenta todos los intentos terminados, aprobados o no: suspender a propósito tampoco da XP infinita)
+    const repeatsToday = at.lessonId ? await c.tx.quizAttempt.count({ where: { userId: c.user.id, lessonId: at.lessonId, finishedAt: { gte: new Date(Date.now() - 86_400_000) } } }) : 0
     const farming = at.mode === 'REVIEW' ? false : repeatsToday >= 2
     const base = farming ? 0 : correct * 10 + lessonXp
     const perfectBonus = perfect && !farming ? Math.round(correct * 10 * 0.5) : 0
@@ -153,7 +154,7 @@ export const quizFinish = (attemptId: string) =>
       })
       if (!prev) {
         await bumpGoal(c, 'lesson')
-        if (at.lessonId === 'u3l3' && c.user.plan !== 'PREMIUM') c.fx.features = ['LIMIT', 'STOP_LOSS', 'TAKE_PROFIT']
+        if (at.lessonId === RISK_LESSON && c.user.plan !== 'PREMIUM') c.fx.features = ['LIMIT', 'STOP_LOSS', 'TAKE_PROFIT']
       }
     }
     if (perfect && at.mode === 'LESSON' && !farming) {
