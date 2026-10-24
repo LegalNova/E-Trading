@@ -178,15 +178,22 @@ export const PlacementFinish = z.object({
 })
 
 // ── Mercado ──────────────────────────────────────────────
-export const AssetType = z.enum(['STOCK', 'ETF', 'INDEX', 'CRYPTO', 'FX'])
+export const AssetType = z.enum(['STOCK', 'ETF', 'INDEX', 'CRYPTO', 'FX', 'COMMODITY'])
+export const Region = z.enum(['AMERICA', 'EUROPE', 'ASIA', 'GLOBAL'])
 export const AssetItem = z.object({
   symbol: z.string(),
+  /** (+) Símbolo corto para mostrar (SAN en vez de SAN.MC) */
+  ticker: z.string(),
   name: z.string(),
   type: AssetType,
   exchange: z.string(),
   isOpen: z.boolean(),
   price: money,
-  currency: z.enum(['EUR', 'USD']),
+  /** Moneda de cotización (USD, EUR, GBP, JPY…). GBp y USX se normalizan a GBP y USD */
+  currency: z.string(),
+  region: Region,
+  country: z.string(),
+  sector: z.string(),
   changePct: z.number(),
   sparkline: z.array(z.number()),
   stale: z.boolean(),
@@ -199,8 +206,27 @@ export const AssetDetail = AssetItem.extend({
   opensAt: iso.nullable(),
   closesAt: iso.nullable(),
   description: z.string(),
+  dayHigh: z.number().nullable(),
+  dayLow: z.number().nullable(),
+  high52: z.number().nullable(),
+  low52: z.number().nullable(),
+  volume: z.number().nullable(),
+  prevClose: z.number(),
+  indices: z.array(z.string()),
+  exchangeName: z.string(),
+  timezone: z.string(),
 })
-export const Candle = z.object({ t: iso, o: z.number(), h: z.number(), l: z.number(), c: z.number() })
+/** t: segundos UNIX (formato de los gráficos); v: volumen */
+export const Candle = z.object({ t: z.number(), o: z.number(), h: z.number(), l: z.number(), c: z.number(), v: z.number() })
+/** (+) Portada del mercado */
+export const MarketOverview = z.object({
+  indices: z.array(AssetItem),
+  gainers: z.array(AssetItem),
+  losers: z.array(AssetItem),
+  updatedAt: iso,
+})
+/** (+) Página de un listado con filtros */
+export const AssetPage = z.object({ items: z.array(AssetItem), total: z.number(), nextOffset: z.number().nullable() })
 export const OrderSide = z.enum(['BUY', 'SELL'])
 export const OrderType = z.enum(['MARKET', 'LIMIT', 'STOP_LOSS', 'TAKE_PROFIT'])
 export const OrderPreview = z.object({
@@ -357,6 +383,9 @@ export type AnswerResultT = z.infer<typeof AnswerResult>
 export type QuizFinishT = z.infer<typeof QuizFinish>
 export type PlacementFinishT = z.infer<typeof PlacementFinish>
 export type AssetTypeT = z.infer<typeof AssetType>
+export type RegionT = z.infer<typeof Region>
+export type MarketOverviewT = z.infer<typeof MarketOverview>
+export type AssetPageT = z.infer<typeof AssetPage>
 export type AssetItemT = z.infer<typeof AssetItem>
 export type AssetDetailT = z.infer<typeof AssetDetail>
 export type CandleT = z.infer<typeof Candle>

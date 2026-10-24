@@ -1,12 +1,11 @@
 import { candles } from '@/server/market/service'
+import { INTERVALS, type Interval } from '@/server/market/providers'
 import { publicJson } from '@/server/http/respond'
 
-const RANGES = ['1D', '1W', '1M', '3M', '1Y']
-
-// GET /api/market/assets/:symbol/candles?range=1M → velas reales del proveedor (nunca inventadas)
+// GET /api/market/assets/:symbol/candles?interval=1d → velas reales con volumen (nunca inventadas)
 export async function GET(req: Request, ctx: RouteContext<'/api/market/assets/[symbol]/candles'>) {
   const { symbol } = await ctx.params
-  const r = new URL(req.url).searchParams.get('range') ?? '1M'
-  const range = RANGES.includes(r) ? r : '1M'
-  return publicJson(await candles(symbol.toUpperCase(), range), range === '1D' ? 60 : 300)
+  const i = new URL(req.url).searchParams.get('interval') ?? '1d'
+  const interval: Interval = i in INTERVALS ? (i as Interval) : '1d'
+  return publicJson(await candles(decodeURIComponent(symbol), interval), ['1m', '5m'].includes(interval) ? 30 : 300)
 }

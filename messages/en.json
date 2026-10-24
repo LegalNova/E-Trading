@@ -339,7 +339,8 @@
       "ETF": "ETFs",
       "CRYPTO": "Crypto",
       "INDEX": "Indices",
-      "FX": "Currencies"
+      "FX": "Currencies",
+      "COMMODITY": "Commodities"
     },
     "noResults": "No assets with that name.",
     "emptyWatch": "You're not following any asset yet. Tap ☆ Follow on any asset page.",
@@ -482,7 +483,65 @@
     "alertDeleted": "Alert deleted",
     "noAlerts": "You have no alerts. Create them from an asset page.",
     "buyNoun": "Buy",
-    "sellNoun": "Sell"
+    "sellNoun": "Sell",
+    "searchGlobal": "Search 1,600+ assets: Apple, Santander, Toyota…",
+    "clearSearch": "Clear search",
+    "resultsCount": "{n, plural, =0 {No results} one {# result} other {# results}}",
+    "seeAllResults": "See all {n} results",
+    "region": "Region",
+    "regions": {
+      "ALL": "All",
+      "AMERICA": "Americas",
+      "EUROPE": "Europe",
+      "ASIA": "Asia-Pacific"
+    },
+    "indices": "Indices",
+    "seeAll": "See all",
+    "watchlist": "Your list",
+    "movers": "Top movers today",
+    "gainers": "Gainers",
+    "losers": "Losers",
+    "noMovers": "No moves yet today.",
+    "seeRanking": "See the full ranking →",
+    "explore": "Explore",
+    "byIndex": "Explore by index",
+    "commodity": "Commodity",
+    "contracts": "contracts",
+    "typeHint": {
+      "STOCK": "S&P 500, Europe and Asia",
+      "ETF": "Ready-made baskets",
+      "INDEX": "Each market's thermometer",
+      "CRYPTO": "Open 24/7",
+      "FX": "Currency pairs",
+      "COMMODITY": "Gold, oil, coffee…"
+    },
+    "dataNoteGlobal": "Real prices from Yahoo Finance. US, crypto and FX near real time; Europe 15 min delayed, Asia 15–20 min. Commodities: futures, 10 min delayed.",
+    "typeLabel": "Asset type",
+    "all": "All",
+    "indexLabel": "Index",
+    "countryLabel": "Country",
+    "sectorLabel": "Sector",
+    "sortLabel": "Sort",
+    "sort": {
+      "name": "Name (A-Z)",
+      "gainers": "Top gainers today",
+      "losers": "Top losers today"
+    },
+    "clearFilters": "Clear filters",
+    "loadMore": "Load more",
+    "backHome": "Back to the Market home",
+    "keyData": "Key data",
+    "prevClose": "Previous close",
+    "volume": "Volume",
+    "currencyLabel": "Currency",
+    "points": "points",
+    "exchangeLabel": "Exchange",
+    "delayLabel": "Data",
+    "realtime": "Near real time",
+    "timezoneLabel": "Exchange time",
+    "dayRange": "Day's range",
+    "range52": "52-week range",
+    "partOf": "Part of"
   },
   "streak": {
     "title": "Streak",
@@ -744,5 +803,53 @@
     "text": "We only use technical cookies the app needs to work, plus the preferences you choose. No advertising or analytics.",
     "more": "Cookie policy",
     "ok": "Got it"
+  },
+  "chart": {
+    "interval": "Interval",
+    "intervals": {
+      "1m": "1m",
+      "5m": "5m",
+      "15m": "15m",
+      "1h": "1h",
+      "1d": "1D",
+      "1w": "1W",
+      "1M": "1M"
+    },
+    "kinds": {
+      "candles": "Candles",
+      "heikin": "Heikin Ashi",
+      "bars": "Bars",
+      "line": "Line",
+      "area": "Area"
+    },
+    "indicators": "Indicators",
+    "ind": {
+      "vol": "Volume",
+      "sma20": "MA 20",
+      "sma50": "MA 50",
+      "sma200": "MA 200",
+      "ema21": "EMA 21",
+      "bb": "Bollinger Bands",
+      "rsi": "RSI (14)",
+      "macd": "MACD (12, 26, 9)"
+    },
+    "tools": "Drawing tools",
+    "tool": {
+      "cursor": "Cursor",
+      "trend": "Trend line",
+      "hline": "Horizontal line",
+      "vline": "Vertical line",
+      "rect": "Rectangle",
+      "fib": "Fibonacci retracement",
+      "measure": "Measure"
+    },
+    "deleteSel": "Delete selected drawing",
+    "clearAll": "Clear all drawings",
+    "full": "Full screen",
+    "exitFull": "Exit full screen",
+    "error": "Couldn't load the chart. Retrying…",
+    "noData": "No data for this interval.",
+    "hintOne": "Tap the chart to place the line.",
+    "hintTwo": "Tap two points on the chart."
   }
 }

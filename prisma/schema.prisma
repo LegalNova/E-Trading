@@ -248,22 +248,31 @@ enum AssetType {
   INDEX
   CRYPTO
   FX
+  COMMODITY
 }
 
 model Asset {
-  symbol         String    @id
+  symbol         String    @id // símbolo de Yahoo: AAPL, SAN.MC, 7203.T, ^GSPC, BTC-EUR, EURUSD=X, GC=F
   name           String
   type           AssetType
-  exchange       String
-  hours          String // código de market-hours
-  currency       String // EUR | USD
-  provider       String // FINNHUB | BINANCE | YAHOO
+  exchange       String // código de bolsa (US, BME, XETRA, TSE…)
+  exchangeName   String    @default("")
+  hours          String // sesión: zona horaria o 24x7 / 24x5
+  currency       String // moneda de cotización (USD, EUR, GBp, JPY…)
+  provider       String // YAHOO | FINNHUB | BINANCE
   providerSymbol String
   delayedMinutes Int       @default(0)
   enabled        Boolean   @default(true)
+  hidden         Boolean   @default(false) // tipos de cambio auxiliares
   description    String    @default("")
   sortOrder      Int       @default(0)
+  region         String    @default("GLOBAL") // AMERICA | EUROPE | ASIA | GLOBAL
+  country        String    @default("")
+  sector         String    @default("")
+  indices        String[]  @default([])
   quote          Quote?
+
+  @@index([region, type])
 }
 
 /// Última cotización real conocida. Nunca se inventa: si falla el proveedor se sirve esta con stale=true.
@@ -271,10 +280,19 @@ model Quote {
   symbol    String   @id
   price     Decimal  @db.Decimal(20, 8)
   prevClose Decimal  @db.Decimal(20, 8)
+  changePct Float    @default(0)
+  dayHigh   Float?
+  dayLow    Float?
+  high52    Float?
+  low52     Float?
+  volume    Float?
+  spark     Json? // precios del día (para la minigráfica)
   asOf      DateTime
   source    String
   updatedAt DateTime @updatedAt
   asset     Asset    @relation(fields: [symbol], references: [symbol], onDelete: Cascade)
+
+  @@index([changePct]) // mayores subidas y bajadas
 }
 
 /// Velas guardadas (para gráficos y para no repetir llamadas al proveedor)

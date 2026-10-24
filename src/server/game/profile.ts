@@ -8,7 +8,7 @@ import { currentUser, googleEnabled } from '../auth'
 import { ACHIEVEMENTS } from '../content/catalog'
 import { achievementList, endFx, fail, FREEZE_PRICE, goalDefs, goalsOf, minutesOf, levelOf, levelTitle, LIVES_MAX, livesOf, lumi, MAX_FREEZES, notify, REFILL_PRICE, START_CASH, withCtx } from './core'
 import { pathOf } from './learning'
-import { portfolioIn, portfolioRow, priceBook, processPendingFor } from './trading'
+import { portfolioIn, portfolioRow, processPendingFor, userBook } from './trading'
 
 const DAY_MS = 86_400_000
 
@@ -87,7 +87,7 @@ function homeLine(c: Parameters<typeof lumi>[0] & { today: string }, todayDone: 
 }
 
 export async function home(): Promise<HomeT> {
-  const book = await priceBook()
+  const book = await userBook()
   return withCtx(async c => {
     await processPendingFor(c, book)
     const [path, pf, goals] = await Promise.all([pathOf(c.tx, c.user), portfolioIn(c, book), goalsOf(c)])

@@ -14,7 +14,7 @@ A=$(c -X POST $B/quiz/u1l1/start | py "print(d['attemptId']); print(len(d['quest
 for q in "u1l1-1:0" "u1l1-2:1" "u1l1-3:2"; do id=${q%%:*}; a=${q##*:}; c -X POST $B/quiz/attempts/$A/answer -d "{\"questionId\":\"$id\",\"answer\":$a,\"elapsedMs\":4000}" | py "print('  ', '$id', 'correcta' if d['correct'] else 'fallo', 'vidas', d['livesLeft'])"; done
 c -X POST $B/quiz/attempts/$A/finish | py "print('FIN', d['correct'],'/',d['total'], 'estrellas', d['stars'], 'XP', d['xp'], 'racha', d['streak'], 'logros', [a['code'] for a in d['achievementsUnlocked']], 'objetivos', d['goalsCompleted'])"
 c -X POST $B/orders/preview -d '{"symbol":"AAPL","side":"BUY","type":"MARKET","amount":"500"}' | py "print('PREVIEW AAPL 500€ → qty', d['qty'], 'comisión', d['fee'], 'peso', round(d['weightPct'],1), 'riesgo', d['risk']['flagged'])"
-c -X POST $B/orders -H "idempotency-key: k-$RANDOM" -d '{"symbol":"BTC","side":"BUY","type":"MARKET","amount":"300"}' | py "print('ORDEN BTC', d['order']['status'], d['order']['fillPrice'], 'XP', d['xp'], d.get('companion',{}).get('message'))"
+c -X POST $B/orders -H "idempotency-key: k-$RANDOM" -d '{"symbol":"BTC-EUR","side":"BUY","type":"MARKET","amount":"300"}' | py "print('ORDEN BTC-EUR', d['order']['status'], d['order']['fillPrice'], 'XP', d['xp'], d.get('companion',{}).get('message'))"
 c -X POST $B/orders -d '{"symbol":"AAPL","side":"SELL","type":"STOP_LOSS","qty":"1","triggerPrice":"300"}' | py "print('STOP (bloqueado):', d)"
 c $B/portfolio | py "print('CARTERA', d['totalValue'], 'efectivo', d['cash'], [ (p['symbol'], p['qty']) for p in d['positions']])"
 c $B/league/current | py "print('LIGA', d['division']['name'], [(m['rank'], m['displayName'], m['weeklyXp']) for m in d['members']][:5])"

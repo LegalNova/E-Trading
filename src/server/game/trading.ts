@@ -5,31 +5,58 @@ import { fix2, fix8 } from '@/shared/format'
 import { isOpen, nextOpen, type ExchangeCode } from '@/shared/market-hours'
 import { DAY_MS, addDays, dayOf } from '@/shared/time'
 import type { Order, Position, Trade, User } from '@/generated/prisma/client'
-import { loadAssets } from '../market/service'
-import { addXp, bump, bumpGoal, endFx, fail, lumi, markActive, notify, RISK_PCT, START_CASH, unlockedFeatures, withCtx, type Ctx, type Tx } from './core'
+import { db } from '../db'
+import { fxRates, loadAssets, normCurrency, toEur } from '../market/service'
+import { addXp, bump, bumpGoal, endFx, fail, lumi, markActive, notify, requireUser, RISK_PCT, START_CASH, unlockedFeatures, withCtx, type Ctx, type Tx } from './core'
 
-// ── Libro de precios (una lectura por petición) ──────────
-export interface Px { symbol: string; name: string; type: string; hours: ExchangeCode; currency: string; price: number; prevClose: number; eur: number; open: boolean }
+// ── Libro de precios (solo los activos que necesita la petición) ──
+export interface Px {
+  symbol: string
+  name: string
+  type: string
+  hours: ExchangeCode
+  /** Moneda normalizada (GBp → GBP) y precio en ella */
+  currency: string
+  price: number
+  prevClose: number
+  /** Precio en euros, con el tipo de cambio real */
+  eur: number
+  open: boolean
+  /** Mercado abierto y precio reciente: solo así se ejecuta una orden a mercado (un festivo cuenta como cerrado) */
+  tradable: boolean
+}
 export type Book = Map<string, Px>
 
-export async function priceBook(): Promise<Book> {
-  const rows = await loadAssets()
-  const fx = rows.find(a => a.symbol === 'EURUSD')?.quote
-  const eurPerUsd = fx ? 1 / Number(fx.price) : null
+export async function priceBook(symbols: string[]): Promise<Book> {
+  const [rows, rates] = await Promise.all([loadAssets([...new Set(symbols)]), fxRates()])
   const book: Book = new Map()
+  const now = Date.now()
   for (const a of rows) {
     if (!a.quote) continue
-    const price = Number(a.quote.price)
-    const toEur = a.currency === 'USD' ? (eurPerUsd ? price * eurPerUsd : NaN) : price
-    if (!Number.isFinite(toEur)) continue
-    book.set(a.symbol, { symbol: a.symbol, name: a.name, type: a.type, hours: a.hours as ExchangeCode, currency: a.currency, price, prevClose: Number(a.quote.prevClose), eur: toEur, open: isOpen(a.hours as ExchangeCode) })
+    const { cur, div } = normCurrency(a.currency)
+    const eur = toEur(Number(a.quote.price), a.currency, rates)
+    if (eur === null) continue
+    const open = isOpen(a.hours, new Date(now))
+    const fresh = now - a.quote.asOf.getTime() < (a.delayedMinutes + 20) * 60_000
+    book.set(a.symbol, { symbol: a.symbol, name: a.name, type: a.type, hours: a.hours, currency: cur, price: Number(a.quote.price) / div, prevClose: Number(a.quote.prevClose) / div, eur, open, tradable: open && fresh })
   }
   return book
 }
 
+/** Precios de lo que tiene el usuario (posiciones, órdenes pendientes y alertas) más los símbolos indicados */
+export async function userBook(extra: string[] = [], userId?: string): Promise<Book> {
+  const id = userId ?? (await requireUser()).id
+  const [pos, ord, al] = await Promise.all([
+    db.position.findMany({ where: { userId: id }, select: { symbol: true } }),
+    db.order.findMany({ where: { userId: id, status: 'PENDING' }, select: { symbol: true } }),
+    db.priceAlert.findMany({ where: { userId: id, active: true }, select: { symbol: true } }),
+  ])
+  return priceBook([...extra, ...pos.map(x => x.symbol), ...ord.map(x => x.symbol), ...al.map(x => x.symbol)])
+}
+
 const pxOf = (book: Book, sym: string) => book.get(sym) ?? fail(503, 'MARKET_UNAVAILABLE', 'Precio no disponible ahora mismo')
 const fee = (amount: number) => Math.max(amount * 0.001, 1)
-const fmtPrice = (p: Px, v: number) => (p.type === 'FX' ? v.toFixed(5) : v >= 1000 ? v.toFixed(2) : v.toFixed(4))
+const fmtPrice = (p: Px, v: number) => (p.type === 'FX' ? v.toFixed(5) : v >= 1000 ? v.toFixed(2) : v >= 1 ? v.toFixed(4) : v.toFixed(6))
 const n = (d: unknown) => Number(d ?? 0)
 
 export async function portfolioRow(tx: Tx, user: User) {
@@ -73,7 +100,7 @@ async function previewIn(c: Ctx, book: Book, i: OrderInput): Promise<OrderPrevie
 }
 
 export async function preview(i: OrderInput) {
-  const book = await priceBook()
+  const book = await userBook([i.symbol])
   return withCtx(c => previewIn(c, book, i))
 }
 
@@ -129,7 +156,7 @@ async function fill(c: Ctx, book: Book, o: Order, silent = false): Promise<Order
 }
 
 export async function placeOrder(i: OrderInput, idempotencyKey?: string): Promise<OrderResultT> {
-  const book = await priceBook()
+  const book = await userBook([i.symbol])
   return withCtx(async c => {
     // La clave antiduplicados va ligada al usuario: nunca devuelve la orden de otra persona
     const key = idempotencyKey ? `${c.user.id}:${idempotencyKey}` : undefined
@@ -159,7 +186,7 @@ export async function placeOrder(i: OrderInput, idempotencyKey?: string): Promis
         triggerPrice: i.type === 'MARKET' ? null : Number(i.triggerPrice), riskAcknowledged: !!i.riskAcknowledged, idempotencyKey: key ?? null,
       },
     })
-    if (i.type === 'MARKET' && px.open) {
+    if (i.type === 'MARKET' && px.tradable) {
       o = await fill(c, book, o, true)
       c.fx.companion = firstTrade ? lumi(c, 'FIRST_TRADE') : lumi(c, 'TRADE_DONE')
     } else {
@@ -176,7 +203,7 @@ export async function processPendingFor(c: Ctx, book: Book) {
   const orders = await c.tx.order.findMany({ where: { userId: c.user.id, status: 'PENDING' }, orderBy: { createdAt: 'asc' } })
   for (const o of orders) {
     const px = book.get(o.symbol)
-    if (!px || !px.open) continue
+    if (!px || !px.tradable) continue
     const p = px.price
     const trig = o.triggerPrice ? n(o.triggerPrice) : null
     const hit = o.type === 'MARKET' || (trig !== null && ((o.type === 'LIMIT' && (o.side === 'BUY' ? p <= trig : p >= trig)) || (o.type === 'STOP_LOSS' && p <= trig) || (o.type === 'TAKE_PROFIT' && p >= trig)))
@@ -218,7 +245,7 @@ export async function portfolioIn(c: Ctx, book: Book): Promise<PortfolioT> {
 }
 
 export async function portfolio() {
-  const book = await priceBook()
+  const book = await userBook()
   return withCtx(async c => {
     await processPendingFor(c, book)
     const out = await portfolioIn(c, book)
@@ -239,7 +266,7 @@ export async function historyIn(c: Ctx, range: '1W' | '1M' | '3M' | 'ALL') {
 }
 
 export async function history(range: '1W' | '1M' | '3M' | 'ALL') {
-  const book = await priceBook()
+  const book = await userBook()
   return withCtx(async c => {
     await portfolioIn(c, book) // asegura la foto de hoy
     return historyIn(c, range)
@@ -255,7 +282,7 @@ export const cancelOrder = (id: string) =>
   })
 
 export async function resetPortfolio() {
-  const book = await priceBook()
+  const book = await userBook()
   return withCtx(async c => {
     const pf = await portfolioRow(c.tx, c.user)
     const year = new Date().getFullYear()
@@ -287,7 +314,7 @@ export const createAlert = (symbol: string, condition: 'ABOVE' | 'BELOW', price:
 
 export const deleteAlert = (id: string) => withCtx(async c => void (await c.tx.priceAlert.deleteMany({ where: { id, userId: c.user.id } })))
 
-const DEFAULT_WATCH = ['AAPL', 'BTC', 'SPY', 'IBEX', 'EURUSD']
+const DEFAULT_WATCH = ['AAPL', 'SAN.MC', 'BTC-EUR', '^GSPC', '^IBEX', 'EURUSD=X']
 export const watchlist = () =>
   withCtx(async c => {
     const rows = await c.tx.watchItem.findMany({ where: { userId: c.user.id }, orderBy: { createdAt: 'asc' } })
@@ -308,7 +335,7 @@ export const toggleWatch = (symbol: string) =>
 
 // ── Hábitos (05.4) ───────────────────────────────────────
 export async function tradingStats(): Promise<TradingStatsT> {
-  const book = await priceBook()
+  const book = await userBook()
   return withCtx(async c => {
     const filled = await c.tx.trade.findMany({ where: { userId: c.user.id, status: 'FILLED' }, select: { realizedPnl: true } })
     const sells = filled.filter(t => t.realizedPnl !== null)

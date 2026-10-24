@@ -44,6 +44,14 @@ Descartado: Finnhub para Europa, índices, divisas y velas (de pago); Stooq (ya 
 
 **Arquitectura de datos:** cada precio se pide **una vez** al proveedor y se reparte a todos: se guarda en la tabla `Quote` (se refresca si tiene más de 20 s con el mercado abierto) y la CDN de Vercel sirve la respuesta unos segundos (D-032). Así una instancia nueva del servidor nunca muestra un precio inventado. Nunca hay una llamada al proveedor por usuario.
 
+## 2 ter. Mercado global (octubre 2026)
+
+- **Universo:** 1.675 activos en `src/server/market/universe.json`, generado con `python3 -I scripts/build-universe.py` (lee las tablas de componentes de Wikipedia, verifica que cada símbolo tenga precio en Yahoo y normaliza los sectores con `scripts/sectors.py`). Después: `npx tsx prisma/seed.ts` (y `DB_SCHEMA=v2` para producción).
+- **Regiones:** América (S&P 500), Europa (Euro Stoxx 50, FTSE 100, DAX, CAC 40, IBEX 35, FTSE MIB, AEX, SMI, OMX 30, OMX C25, OBX, OMX H25, BEL 20, PSI), Asia-Pacífico (Nikkei 225, Hang Seng, Nifty 50, KOSPI 200, Straits Times, ASX 50) y Global (cripto, divisas y materias primas).
+- **Datos:** Yahoo `v7/finance/spark` en lotes de 20 (precio, cierre anterior, rangos, volumen y la curva del día) y `v8/finance/chart` para las velas (1m a 1M). Al abrir una página se sirven los datos guardados y se refrescan en segundo plano; el cron horario refresca todo el catálogo (~30 s).
+- **Retrasos:** EE. UU., cripto y divisas casi al momento; Europa 15 min; Tokio, Seúl y Sídney 20 min; resto de Asia 15 min; materias primas (futuros CME) 10 min.
+- **Pantallas:** portada por regiones (índices, tu lista, lo que más sube y baja, explorar por tipo e índice), explorador con filtros (tipo, región, índice, país, sector, orden) y desplazamiento infinito, y ficha con gráfico profesional (ver D-046), datos clave y rangos.
+
 ## 3. Horarios (hora peninsular española)
 
 | Mercado | Horario | Notas |

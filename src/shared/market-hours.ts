@@ -1,28 +1,69 @@
-// Horarios de mercado reales por bolsa (docs/03-mercado.md §3).
-// Se calculan en la zona horaria de cada bolsa, así el cambio de hora de
-// EE. UU. y Europa (que no coincide unas semanas) sale bien solo.
+// Horarios de mercado reales por bolsa (docs/03-mercado.md §3), en la zona horaria de cada una:
+// así el cambio de hora de cada país sale bien solo. Incluye las pausas de mediodía de Asia.
+// Los festivos solo están para EE. UU., España y Alemania; en el resto, el servidor no ejecuta
+// órdenes a mercado con un precio viejo, así que un festivo se comporta como mercado cerrado.
 
-export type ExchangeCode = 'NASDAQ' | 'NYSE' | 'BME' | 'XETRA' | 'CRYPTO' | 'FX' | 'INDEX_US' | 'INDEX_ES'
+export type ExchangeCode = string
 
-interface Session { tz: string; open: [number, number]; close: [number, number] }
-
-const SESSIONS: Partial<Record<ExchangeCode, Session>> = {
-  NASDAQ: { tz: 'America/New_York', open: [9, 30], close: [16, 0] },
-  NYSE: { tz: 'America/New_York', open: [9, 30], close: [16, 0] },
-  INDEX_US: { tz: 'America/New_York', open: [9, 30], close: [16, 0] },
-  BME: { tz: 'Europe/Madrid', open: [9, 0], close: [17, 30] },
-  INDEX_ES: { tz: 'Europe/Madrid', open: [9, 0], close: [17, 30] },
-  XETRA: { tz: 'Europe/Berlin', open: [9, 0], close: [17, 30] },
+interface Session {
+  tz: string
+  /** Tramos [inicio, fin] en minutos desde medianoche (hora local de la bolsa) */
+  parts: [number, number][]
 }
 
-/** Festivos (fecha local de cada bolsa). En la etapa 3 vendrán de la tabla MarketHoliday. */
-const HOLIDAYS: Partial<Record<ExchangeCode, string[]>> = {
-  NASDAQ: ['2026-11-26', '2026-12-25', '2027-01-01', '2027-01-18', '2027-02-15', '2027-03-26', '2027-05-31', '2027-06-18', '2027-07-05', '2027-09-06', '2027-11-25', '2027-12-24'],
+const m = (h: number, min = 0) => h * 60 + min
+const S = (tz: string, ...parts: [number, number][]): Session => ({ tz, parts })
+
+export const SESSIONS: Record<string, Session> = {
+  // América
+  US: S('America/New_York', [m(9, 30), m(16)]),
+  NASDAQ: S('America/New_York', [m(9, 30), m(16)]),
+  NYSE: S('America/New_York', [m(9, 30), m(16)]),
+  INDEX_US: S('America/New_York', [m(9, 30), m(16)]),
+  // Europa
+  LSE: S('Europe/London', [m(8), m(16, 30)]),
+  XETRA: S('Europe/Berlin', [m(9), m(17, 30)]),
+  EPA: S('Europe/Paris', [m(9), m(17, 30)]),
+  AMS: S('Europe/Amsterdam', [m(9), m(17, 30)]),
+  BRU: S('Europe/Brussels', [m(9), m(17, 30)]),
+  LIS: S('Europe/Lisbon', [m(8), m(16, 30)]),
+  MIL: S('Europe/Rome', [m(9), m(17, 30)]),
+  BME: S('Europe/Madrid', [m(9), m(17, 30)]),
+  INDEX_ES: S('Europe/Madrid', [m(9), m(17, 30)]),
+  SIX: S('Europe/Zurich', [m(9), m(17, 30)]),
+  STO: S('Europe/Stockholm', [m(9), m(17, 30)]),
+  CPH: S('Europe/Copenhagen', [m(9), m(17)]),
+  OSL: S('Europe/Oslo', [m(9), m(16, 20)]),
+  HEL: S('Europe/Helsinki', [m(10), m(18, 30)]),
+  DUB: S('Europe/Dublin', [m(8), m(16, 30)]),
+  VIE: S('Europe/Vienna', [m(9), m(17, 30)]),
+  // Asia-Pacífico
+  TSE: S('Asia/Tokyo', [m(9), m(11, 30)], [m(12, 30), m(15, 30)]),
+  HKEX: S('Asia/Hong_Kong', [m(9, 30), m(12)], [m(13), m(16)]),
+  NSE: S('Asia/Kolkata', [m(9, 15), m(15, 30)]),
+  KRX: S('Asia/Seoul', [m(9), m(15, 30)]),
+  SGX: S('Asia/Singapore', [m(9), m(12)], [m(13), m(17)]),
+  ASX: S('Australia/Sydney', [m(10), m(16)]),
+  TWSE: S('Asia/Taipei', [m(9), m(13, 30)]),
+  SSE: S('Asia/Shanghai', [m(9, 30), m(11, 30)], [m(13), m(15)]),
+}
+
+/** Bolsa de cada zona horaria (para los índices, que no tienen sufijo) */
+export const EXCHANGE_BY_TZ: Record<string, string> = {
+  'America/New_York': 'US', 'Europe/London': 'LSE', 'Europe/Berlin': 'XETRA', 'Europe/Paris': 'EPA', 'Europe/Amsterdam': 'AMS', 'Europe/Madrid': 'BME',
+  'Europe/Rome': 'MIL', 'Europe/Zurich': 'SIX', 'Asia/Tokyo': 'TSE', 'Asia/Hong_Kong': 'HKEX', 'Asia/Kolkata': 'NSE', 'Asia/Seoul': 'KRX',
+  'Asia/Singapore': 'SGX', 'Australia/Sydney': 'ASX', 'Asia/Taipei': 'TWSE', 'Asia/Shanghai': 'SSE',
+}
+
+/** Festivos conocidos (fecha local de cada bolsa) */
+const HOLIDAYS: Record<string, string[]> = {
+  US: ['2026-11-26', '2026-12-25', '2027-01-01', '2027-01-18', '2027-02-15', '2027-03-26', '2027-05-31', '2027-06-18', '2027-07-05', '2027-09-06', '2027-11-25', '2027-12-24'],
   BME: ['2026-12-24', '2026-12-25', '2026-12-31', '2027-01-01', '2027-03-26', '2027-03-29', '2027-12-24', '2027-12-31'],
   XETRA: ['2026-12-24', '2026-12-25', '2026-12-31', '2027-01-01', '2027-03-26', '2027-03-29', '2027-12-24', '2027-12-31'],
 }
-HOLIDAYS.NYSE = HOLIDAYS.NASDAQ
-HOLIDAYS.INDEX_US = HOLIDAYS.NASDAQ
+HOLIDAYS.NASDAQ = HOLIDAYS.US
+HOLIDAYS.NYSE = HOLIDAYS.US
+HOLIDAYS.INDEX_US = HOLIDAYS.US
 HOLIDAYS.INDEX_ES = HOLIDAYS.BME
 
 function parts(date: Date, tz: string) {
@@ -38,26 +79,34 @@ export function isOpen(exchange: ExchangeCode, now = new Date()): boolean {
     // Domingo 23:00 – viernes 23:00 (hora de Madrid)
     const { wd, mins } = parts(now, 'Europe/Madrid')
     if (wd === 'Sat') return false
-    if (wd === 'Sun') return mins >= 23 * 60
-    if (wd === 'Fri') return mins < 23 * 60
+    if (wd === 'Sun') return mins >= m(23)
+    if (wd === 'Fri') return mins < m(23)
     return true
+  }
+  if (exchange === 'CME') {
+    // Futuros: domingo 18:00 – viernes 17:00 (Nueva York), con pausa diaria de 17:00 a 18:00
+    const { wd, mins } = parts(now, 'America/New_York')
+    if (wd === 'Sat') return false
+    if (wd === 'Sun') return mins >= m(18)
+    if (wd === 'Fri') return mins < m(17)
+    return mins < m(17) || mins >= m(18)
   }
   const s = SESSIONS[exchange]
   if (!s) return false
   const { wd, ymd, mins } = parts(now, s.tz)
   if (wd === 'Sat' || wd === 'Sun') return false
   if (HOLIDAYS[exchange]?.includes(ymd)) return false
-  return mins >= s.open[0] * 60 + s.open[1] && mins < s.close[0] * 60 + s.close[1]
+  return s.parts.some(([a, b]) => mins >= a && mins < b)
 }
 
-/** Próxima apertura (para órdenes pendientes). Busca minuto a minuto en saltos de 15 min, como mucho 7 días. */
+/** Próxima apertura (para órdenes pendientes). Busca en saltos de 15 min, como mucho 8 días. */
 export function nextOpen(exchange: ExchangeCode, now = new Date()): Date | null {
   if (exchange === 'CRYPTO') return null
   if (isOpen(exchange, now)) return now
   const t = new Date(now)
   t.setSeconds(0, 0)
   t.setMinutes(Math.ceil(t.getMinutes() / 15) * 15)
-  for (let i = 0; i < 7 * 24 * 4; i++) {
+  for (let i = 0; i < 8 * 24 * 4; i++) {
     if (isOpen(exchange, t)) return t
     t.setTime(t.getTime() + 15 * 60_000)
   }
@@ -69,7 +118,7 @@ export function nextClose(exchange: ExchangeCode, now = new Date()): Date | null
   if (exchange === 'CRYPTO' || !isOpen(exchange, now)) return null
   const t = new Date(now)
   t.setSeconds(0, 0)
-  for (let i = 0; i < 7 * 24 * 4; i++) {
+  for (let i = 0; i < 8 * 24 * 4; i++) {
     t.setTime(t.getTime() + 15 * 60_000)
     if (!isOpen(exchange, t)) return t
   }

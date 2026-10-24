@@ -79,20 +79,25 @@ export const httpApi: Api = {
   assets: async (filter = {}) => {
     if (filter.type === 'WATCH' && !filter.q) {
       const w = await get<string[]>('/watchlist')
-      return w.length ? get(`/market/assets?symbols=${w.join(',')}`).then(list => (list as { symbol: string }[]).sort((a, b) => w.indexOf(a.symbol) - w.indexOf(b.symbol)) as never) : []
+      return w.length ? get(`/market/assets?symbols=${w.map(encodeURIComponent).join(',')}`) : []
     }
-    const p = new URLSearchParams()
-    if (filter.q) p.set('q', filter.q)
-    else if (filter.type && filter.type !== 'WATCH') p.set('type', filter.type)
-    return get(`/market/assets?${p}`)
+    const page = await httpApi.searchAssets({ q: filter.q, type: filter.type === 'WATCH' ? undefined : filter.type, limit: 50 })
+    return page.items
   },
   asset: async symbol => {
     const s = await httpApi.settings().catch(() => null)
-    return get(`/market/assets/${symbol}?currency=${s?.currency ?? 'EUR'}`)
+    return get(`/market/assets/${encodeURIComponent(symbol)}?currency=${s?.currency ?? 'EUR'}`)
   },
-  candles: (symbol, range) => get(`/market/assets/${symbol}/candles?range=${range}`),
+  candles: (symbol, interval) => get(`/market/assets/${encodeURIComponent(symbol)}/candles?interval=${interval}`),
+  searchAssets: f => {
+    const p = new URLSearchParams()
+    for (const [k, v] of Object.entries(f)) if (v !== undefined && v !== '') p.set(k, String(v))
+    return get(`/market/assets?${p}`)
+  },
+  marketOverview: region => get(`/market/overview?region=${region}`),
+  facets: region => get(`/market/facets${region ? `?region=${region}` : ''}`),
   watchlist: () => get('/watchlist'),
-  toggleWatch: symbol => post(`/watchlist/${symbol}`),
+  toggleWatch: symbol => post(`/watchlist/${encodeURIComponent(symbol)}`),
   previewOrder: (i: OrderInput) => post('/orders/preview', i),
   placeOrder: (i: OrderInput) => post('/orders', i, { 'idempotency-key': crypto.randomUUID() }),
   orders: () => get('/orders'),

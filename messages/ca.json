@@ -339,7 +339,8 @@
       "ETF": "ETF",
       "CRYPTO": "Cripto",
       "INDEX": "Índexs",
-      "FX": "Divises"
+      "FX": "Divises",
+      "COMMODITY": "Matèries primeres"
     },
     "noResults": "No hi ha actius amb aquest nom.",
     "emptyWatch": "Encara no segueixes cap actiu. Toca ☆ Seguir a qualsevol fitxa.",
@@ -482,7 +483,65 @@
     "alertDeleted": "Alerta esborrada",
     "noAlerts": "No tens alertes. Crea-les des de la fitxa d'un actiu.",
     "buyNoun": "Compra",
-    "sellNoun": "Venda"
+    "sellNoun": "Venda",
+    "searchGlobal": "Cerca entre 1.600+ actius: Apple, Santander, Toyota…",
+    "clearSearch": "Esborrar la cerca",
+    "resultsCount": "{n, plural, =0 {Cap resultat} one {# resultat} other {# resultats}}",
+    "seeAllResults": "Veure els {n} resultats",
+    "region": "Regió",
+    "regions": {
+      "ALL": "Tot",
+      "AMERICA": "Amèrica",
+      "EUROPE": "Europa",
+      "ASIA": "Àsia-Pacífic"
+    },
+    "indices": "Índexs",
+    "seeAll": "Veure-ho tot",
+    "watchlist": "La teva llista",
+    "movers": "El que més es mou avui",
+    "gainers": "Pugen",
+    "losers": "Baixen",
+    "noMovers": "Encara no hi ha moviments avui.",
+    "seeRanking": "Veure la classificació completa →",
+    "explore": "Explorar",
+    "byIndex": "Explorar per índex",
+    "commodity": "Matèria primera",
+    "contracts": "contractes",
+    "typeHint": {
+      "STOCK": "S&P 500, Europa i Àsia",
+      "ETF": "Cistelles llestes per invertir",
+      "INDEX": "El termòmetre de cada borsa",
+      "CRYPTO": "Obertes 24/7",
+      "FX": "Parells de divises",
+      "COMMODITY": "Or, petroli, cafè…"
+    },
+    "dataNoteGlobal": "Preus reals de Yahoo Finance. EUA, cripto i divises gairebé al moment; Europa amb 15 min de retard i Àsia amb 15–20 min. Matèries primeres: futurs amb 10 min de retard.",
+    "typeLabel": "Tipus d'actiu",
+    "all": "Tots",
+    "indexLabel": "Índex",
+    "countryLabel": "País",
+    "sectorLabel": "Sector",
+    "sortLabel": "Ordenar",
+    "sort": {
+      "name": "Nom (A-Z)",
+      "gainers": "Més pugen avui",
+      "losers": "Més baixen avui"
+    },
+    "clearFilters": "Treure filtres",
+    "loadMore": "Carregar-ne més",
+    "backHome": "Tornar a la portada del Mercat",
+    "keyData": "Dades clau",
+    "prevClose": "Tancament anterior",
+    "volume": "Volum",
+    "currencyLabel": "Moneda",
+    "points": "punts",
+    "exchangeLabel": "Borsa",
+    "delayLabel": "Dades",
+    "realtime": "Gairebé en temps real",
+    "timezoneLabel": "Hora de la borsa",
+    "dayRange": "Rang del dia",
+    "range52": "Rang de 52 setmanes",
+    "partOf": "Forma part de"
   },
   "streak": {
     "title": "Ratxa",
@@ -744,5 +803,53 @@
     "text": "Només fem servir galetes tècniques, necessàries perquè l’app funcioni, i les preferències que tries. Res de publicitat ni analítica.",
     "more": "Política de galetes",
     "ok": "Entesos"
+  },
+  "chart": {
+    "interval": "Interval",
+    "intervals": {
+      "1m": "1m",
+      "5m": "5m",
+      "15m": "15m",
+      "1h": "1h",
+      "1d": "1D",
+      "1w": "1S",
+      "1M": "1M"
+    },
+    "kinds": {
+      "candles": "Espelmes",
+      "heikin": "Heikin Ashi",
+      "bars": "Barres",
+      "line": "Línia",
+      "area": "Àrea"
+    },
+    "indicators": "Indicadors",
+    "ind": {
+      "vol": "Volum",
+      "sma20": "Mitjana 20",
+      "sma50": "Mitjana 50",
+      "sma200": "Mitjana 200",
+      "ema21": "Mitjana exp. 21",
+      "bb": "Bandes de Bollinger",
+      "rsi": "RSI (14)",
+      "macd": "MACD (12, 26, 9)"
+    },
+    "tools": "Eines de dibuix",
+    "tool": {
+      "cursor": "Cursor",
+      "trend": "Línia de tendència",
+      "hline": "Línia horitzontal",
+      "vline": "Línia vertical",
+      "rect": "Rectangle",
+      "fib": "Retrocés de Fibonacci",
+      "measure": "Mesurar"
+    },
+    "deleteSel": "Esborrar el dibuix seleccionat",
+    "clearAll": "Esborrar tots els dibuixos",
+    "full": "Pantalla completa",
+    "exitFull": "Sortir de la pantalla completa",
+    "error": "No s'ha pogut carregar el gràfic. Tornant-hi…",
+    "noData": "Sense dades per a aquest interval.",
+    "hintOne": "Toca el gràfic per col·locar la línia.",
+    "hintTwo": "Toca dos punts del gràfic."
   }
 }

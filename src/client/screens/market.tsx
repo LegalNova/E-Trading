@@ -1,92 +1,62 @@
 'use client'
-// 04 · Mercado: lista, ficha, orden, aviso de riesgo, ejecutada/pendiente, cartera, órdenes y alertas
-import { keepPreviousData, useMutation, useQuery } from '@tanstack/react-query'
+// 04 · Mercado global: portada por regiones, explorador con filtros, ficha con gráfico profesional,
+// orden, aviso de riesgo, ejecutada/pendiente, cartera, órdenes y alertas
+import { keepPreviousData, useInfiniteQuery, useMutation, useQuery } from '@tanstack/react-query'
 import { useTranslations } from 'next-intl'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
-import type { AssetDetailT, AssetItemT, AssetTypeT, OrderResultT, OrderSideT, OrderTypeT, PositionT } from '@/shared/contract'
+import type { AssetDetailT, AssetItemT, AssetTypeT, OrderResultT, OrderSideT, OrderTypeT, PositionT, RegionT } from '@/shared/contract'
 import { arrowPct, countdown, money, num, pct, qty as fmtQty, signedMoney, toNum, withSymbol } from '@/shared/format'
-import { api, ApiFailure, type CandleInterval, type OrderInput } from '../api'
+import { api, ApiFailure, type AssetFilter, type OrderInput } from '../api'
+import { ProChart } from '../chart/pro-chart'
 import { useLang, useMe, usePortfolio, useRefreshAll } from '../hooks'
 import { useToast } from '../providers'
-import { CandleChart, Donut, LineChart, Sparkline } from '../ui/charts'
+import { Donut, LineChart, Sparkline } from '../ui/charts'
 import { Icon } from '../ui/icons'
 import { Disclaimer, ErrorState, PageSkeleton, Seg, Sheet, TopBar } from '../ui/kit'
 import { Lumi } from '../ui/lumi'
+import { AssetBadge, AssetRow, assetHref, currencySymbol, decimalsFor, flagOf, fmtAssetPrice, Live, MarketSeg, useStatus, useUnit } from './market-ui'
 
-// ── Formato de precios por tipo de activo ────────────────
-export function fmtAssetPrice(a: { price: string; currency: 'EUR' | 'USD'; type: AssetTypeT }, locale: string) {
-  const v = toNum(a.price)
-  if (a.type === 'FX') return num(v, locale, 4)
-  if (a.type === 'INDEX') return num(v, locale, v >= 1000 ? 0 : 2)
-  const d = v >= 10000 ? 0 : 2
-  return withSymbol(num(v, locale, d), a.currency, locale)
-}
+export { fmtAssetPrice } from './market-ui'
 
-function useStatus() {
-  const t = useTranslations('market')
-  return (a: Pick<AssetItemT, 'type' | 'exchange' | 'isOpen' | 'delayedMinutes'>) => {
-    if (a.type === 'CRYPTO') return t('crypto247')
-    const base = `${a.type === 'FX' ? t('fx') : a.type === 'INDEX' ? t('index') : a.exchange} · ${a.isOpen ? t('open') : t('closed')}`
-    return a.delayedMinutes ? `${base} · ${t('delayed', { n: a.delayedMinutes })}` : base
-  }
-}
+type RegionSel = RegionT | 'ALL'
+const REGIONS: RegionSel[] = ['ALL', 'AMERICA', 'EUROPE', 'ASIA']
+const TYPES: AssetTypeT[] = ['STOCK', 'ETF', 'INDEX', 'CRYPTO', 'FX', 'COMMODITY']
 
-function useUnit() {
-  const t = useTranslations('market')
-  return (type: AssetTypeT, symbol: string) => (type === 'CRYPTO' ? symbol : type === 'FX' ? t('units') : type === 'ETF' ? t('shares') : t('stocks'))
-}
-
-/** Valor que parpadea en verde o rojo cuando cambia */
-function Live({ value, children, className }: { value: number; children: React.ReactNode; className?: string }) {
-  const prev = useRef(value)
-  const [flash, setFlash] = useState('')
+/** Valor que se actualiza tras una pausa al escribir */
+function useDebounced<T>(value: T, ms = 300) {
+  const [v, setV] = useState(value)
   useEffect(() => {
-    if (value !== prev.current) {
-      setFlash(value > prev.current ? 'flash-up' : 'flash-down')
-      prev.current = value
-      const id = setTimeout(() => setFlash(''), 800)
-      return () => clearTimeout(id)
-    }
-  }, [value])
-  return <span className={`${className ?? ''} ${flash}`}>{children}</span>
+    const id = setTimeout(() => setV(value), ms)
+    return () => clearTimeout(id)
+  }, [value, ms])
+  return v
 }
 
-function AssetRow({ a }: { a: AssetItemT }) {
-  const locale = useLang()
-  const status = useStatus()
-  const up = a.changePct >= 0
-  return (
-    <Link href={`/mercado/${a.symbol}`} className="li">
-      <span className="ava">{a.symbol.slice(0, 4)}</span>
-      <span className="min-w-0 flex-1">
-        <b className="block truncate text-[15px]">{a.name}</b>
-        <span className="t-cap block truncate">{status(a)}</span>
-      </span>
-      <Sparkline values={a.sparkline} up={up} />
-      <span className="w-[96px] text-right">
-        <Live value={toNum(a.price)} className="block text-[15px] font-bold">
-          {fmtAssetPrice(a, locale)}
-        </Live>
-        <span className={`t-cap font-bold ${up ? 'up' : 'down'}`}>{arrowPct(a.changePct, locale)}</span>
-      </span>
-    </Link>
-  )
+function exploreHref(f: Partial<AssetFilter>) {
+  const qs = new URLSearchParams(Object.entries(f).filter(([, v]) => v !== undefined && v !== '').map(([k, v]) => [k, String(v)]))
+  const s = qs.toString()
+  return s ? `/mercado/explorar?${s}` : '/mercado/explorar'
 }
 
-type Filter = 'WATCH' | AssetTypeT
-
+// ── Portada del Mercado ──────────────────────────────────
 export function Market() {
   const t = useTranslations('market')
   const locale = useLang()
-  const [filter, setFilter] = useState<Filter>('WATCH')
+  const [region, setRegion] = useState<RegionSel>('ALL')
+  const [movers, setMovers] = useState<'gainers' | 'losers'>('gainers')
   const [q, setQ] = useState('')
+  const dq = useDebounced(q.trim())
   const { data: pf } = usePortfolio()
-  const list = useQuery({ queryKey: ['assets', filter, q], queryFn: () => api.assets({ type: filter, q }), refetchInterval: 5_000, placeholderData: keepPreviousData })
-  const filters: Filter[] = ['WATCH', 'STOCK', 'ETF', 'CRYPTO', 'INDEX', 'FX']
-  const stale = list.data?.some(a => a.stale)
+  const overview = useQuery({ queryKey: ['overview', region], queryFn: () => api.marketOverview(region), refetchInterval: 15_000, placeholderData: keepPreviousData })
+  const watch = useQuery({ queryKey: ['assets', 'WATCH'], queryFn: () => api.assets({ type: 'WATCH' }), refetchInterval: 10_000 })
+  const facets = useQuery({ queryKey: ['facets', region], queryFn: () => api.facets(region === 'ALL' ? undefined : region), staleTime: 3_600_000 })
+  const search = useQuery({ queryKey: ['search', dq], queryFn: () => api.searchAssets({ q: dq, limit: 25 }), enabled: dq.length > 0, placeholderData: keepPreviousData })
+  const ov = overview.data
+  const stale = watch.data?.some(a => a.stale)
+
   return (
-    <div className="pad">
+    <div className="pad wide">
       <div className="flex items-end justify-between px-0.5">
         <h1 className="t-large">{t('title')}</h1>
         <span className="t-foot text-right">
@@ -98,85 +68,314 @@ export function Market() {
       <MarketSeg active="assets" />
       <div className="relative">
         <Icon name="search" size={18} className="absolute top-1/2 left-3.5 -translate-y-1/2" />
-        <input className="input pl-10" style={{ background: 'var(--fill)', border: 'none' }} placeholder={t('search')} aria-label={t('search')} value={q} onChange={e => setQ(e.target.value)} />
-      </div>
-      <div className="pills" role="group" aria-label={t('filters')}>
-        {filters.map(f => (
-          <button key={f} aria-pressed={!q && filter === f} onClick={() => (setFilter(f), setQ(''))}>
-            {t(`filter.${f}`)}
+        <input className="input pl-10" style={{ background: 'var(--fill)', border: 'none' }} placeholder={t('searchGlobal')} aria-label={t('searchGlobal')} value={q} onChange={e => setQ(e.target.value)} />
+        {q && (
+          <button className="icon-btn absolute top-1/2 right-1 -translate-y-1/2" aria-label={t('clearSearch')} onClick={() => setQ('')}>
+            <Icon name="close" size={18} />
           </button>
-        ))}
+        )}
       </div>
-      {list.isError ? (
-        <ErrorState onRetry={() => list.refetch()} />
-      ) : (
-        <div className="list">
-          {!list.data ? (
-            <div className="li t-foot">{t('loading')}</div>
-          ) : list.data.length ? (
-            list.data.map(a => <AssetRow key={a.symbol} a={a} />)
-          ) : (
-            <div className="li t-foot">{q ? t('noResults') : t('emptyWatch')}</div>
+
+      {dq ? (
+        <>
+          <span className="t-foot px-0.5">{search.data ? t('resultsCount', { n: search.data.total }) : t('loading')}</span>
+          <div className="list">
+            {search.data?.items.length ? search.data.items.map(a => <AssetRow key={a.symbol} a={a} />) : search.data && <div className="li t-foot">{t('noResults')}</div>}
+          </div>
+          {search.data && search.data.total > search.data.items.length && (
+            <Link href={exploreHref({ q: dq })} className="btn btn-secondary">
+              {t('seeAllResults', { n: search.data.total })}
+            </Link>
           )}
-        </div>
+        </>
+      ) : (
+        <>
+          <div className="pills" role="group" aria-label={t('region')}>
+            {REGIONS.map(r => (
+              <button key={r} aria-pressed={region === r} onClick={() => setRegion(r)}>
+                {t(`regions.${r}`)}
+              </button>
+            ))}
+          </div>
+
+          {/* Índices de la región */}
+          <section aria-label={t('indices')} className="flex flex-col gap-2">
+            <div className="flex items-center justify-between px-0.5">
+              <span className="t-head">{t('indices')}</span>
+              <Link href={exploreHref({ type: 'INDEX', region: region === 'ALL' ? undefined : region })} className="link text-[14px]">
+                {t('seeAll')}
+              </Link>
+            </div>
+            <div className="pills pb-1">
+              {!ov
+                ? [0, 1, 2, 3].map(i => <div key={i} className="skel h-[92px] w-[156px] flex-none rounded-2xl" />)
+                : ov.indices.map(a => <IndexCard key={a.symbol} a={a} />)}
+            </div>
+          </section>
+
+          <div className="grid gap-3 md:grid-cols-2">
+            {/* Tu lista */}
+            <section aria-label={t('watchlist')} className="flex flex-col gap-2">
+              <span className="t-head px-0.5">{t('watchlist')}</span>
+              <div className="list">
+                {!watch.data ? (
+                  <div className="li t-foot">{t('loading')}</div>
+                ) : watch.data.length ? (
+                  watch.data.map(a => <AssetRow key={a.symbol} a={a} />)
+                ) : (
+                  <div className="li t-foot">{t('emptyWatch')}</div>
+                )}
+              </div>
+            </section>
+
+            {/* Lo que más se mueve hoy */}
+            <section aria-label={t('movers')} className="flex flex-col gap-2">
+              <div className="flex items-center justify-between gap-3 px-0.5">
+                <span className="t-head">{t('movers')}</span>
+                <Seg label={t('movers')} className="w-[200px]" value={movers} onChange={setMovers} options={[{ value: 'gainers', label: t('gainers') }, { value: 'losers', label: t('losers') }]} />
+              </div>
+              <div className="list">
+                {!ov ? (
+                  <div className="li t-foot">{t('loading')}</div>
+                ) : ov[movers].length ? (
+                  ov[movers].map((a, i) => <AssetRow key={a.symbol} a={a} rank={i + 1} />)
+                ) : (
+                  <div className="li t-foot">{t('noMovers')}</div>
+                )}
+              </div>
+              <Link href={exploreHref({ type: 'STOCK', region: region === 'ALL' ? undefined : region, sort: movers })} className="link px-0.5 text-[14px]">
+                {t('seeRanking')}
+              </Link>
+            </section>
+          </div>
+
+          {/* Explorar por tipo */}
+          <section aria-label={t('explore')} className="flex flex-col gap-2">
+            <span className="t-head px-0.5">{t('explore')}</span>
+            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
+              {TYPES.map(k => (
+                <Link key={k} href={exploreHref({ type: k, region: region === 'ALL' || k === 'CRYPTO' || k === 'FX' || k === 'COMMODITY' ? undefined : region })} className="stat">
+                  <span className="text-[22px]" aria-hidden="true">
+                    {TYPE_EMOJI[k]}
+                  </span>
+                  <b className="text-[16px]">{t(`filter.${k}`)}</b>
+                  <span className="t-cap">{t(`typeHint.${k}`)}</span>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          {/* Explorar por índice */}
+          {facets.data && facets.data.indices.length > 0 && (
+            <section aria-label={t('byIndex')} className="flex flex-col gap-2">
+              <span className="t-head px-0.5">{t('byIndex')}</span>
+              <div className="flex flex-wrap gap-2">
+                {facets.data.indices.map(ix => (
+                  <Link key={ix.value} href={exploreHref({ index: ix.value })} className="chip">
+                    {ix.value} <span className="t-cap">{ix.count}</span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+        </>
       )}
       {stale && <div className="banner">{t('stale')}</div>}
-      <p className="t-cap m-0">{t('dataNote')}</p>
+      <p className="t-cap m-0">{t('dataNoteGlobal')}</p>
       <Disclaimer />
     </div>
   )
 }
 
-function MarketSeg({ active }: { active: 'assets' | 'portfolio' | 'orders' }) {
+const TYPE_EMOJI: Record<AssetTypeT, string> = { STOCK: '🏢', ETF: '🧺', INDEX: '📊', CRYPTO: '🪙', FX: '💱', COMMODITY: '🛢️' }
+
+function IndexCard({ a }: { a: AssetItemT }) {
+  const t = useTranslations('market')
+  const locale = useLang()
+  const up = a.changePct >= 0
+  return (
+    <Link href={assetHref(a.symbol)} className="card flex w-[156px] flex-none flex-col gap-0.5 p-3" style={{ color: 'var(--ink)' }}>
+      <span className="t-cap truncate">
+        {flagOf(a.country)} <span style={{ color: a.isOpen ? 'var(--up)' : undefined }}>●</span> {a.isOpen ? t('open') : t('closed')}
+      </span>
+      <b className="truncate text-[14px]">{a.name}</b>
+      <Live value={toNum(a.price)} className="text-[15px] font-bold tabular-nums">
+        {fmtAssetPrice(a, locale)}
+      </Live>
+      <span className="flex items-center justify-between gap-1">
+        <span className={`t-cap font-bold tabular-nums ${up ? 'up' : 'down'}`}>{arrowPct(a.changePct, locale)}</span>
+        <Sparkline values={a.sparkline} up={up} />
+      </span>
+    </Link>
+  )
+}
+
+// ── Explorador con filtros ───────────────────────────────
+const PAGE = 40
+
+export function Explore({ initial }: { initial: Partial<AssetFilter> }) {
   const t = useTranslations('market')
   const router = useRouter()
+  const [f, setF] = useState<AssetFilter>({ sort: 'name', ...initial })
+  const [q, setQ] = useState(initial.q ?? '')
+  const dq = useDebounced(q.trim())
+  const filter: AssetFilter = { ...f, q: dq || undefined }
+  const facets = useQuery({ queryKey: ['facets', f.region ?? 'ALL'], queryFn: () => api.facets(f.region), staleTime: 3_600_000 })
+  const list = useInfiniteQuery({
+    queryKey: ['explore', filter],
+    queryFn: ({ pageParam }) => api.searchAssets({ ...filter, offset: pageParam, limit: PAGE }),
+    initialPageParam: 0,
+    getNextPageParam: last => last.nextOffset ?? undefined,
+    placeholderData: keepPreviousData,
+    refetchInterval: 30_000,
+  })
+  const sentinel = useRef<HTMLDivElement>(null)
+  const { hasNextPage, isFetchingNextPage, fetchNextPage } = list
+  useEffect(() => {
+    const el = sentinel.current
+    if (!el || !hasNextPage) return
+    const io = new IntersectionObserver(e => e[0].isIntersecting && !isFetchingNextPage && fetchNextPage(), { rootMargin: '400px' })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [hasNextPage, isFetchingNextPage, fetchNextPage])
+
+  // La URL refleja los filtros (se puede compartir y volver atrás)
+  useEffect(() => {
+    const qs = exploreHref({ ...f, q: dq || undefined, sort: f.sort === 'name' ? undefined : f.sort })
+    window.history.replaceState(window.history.state, '', window.location.pathname + qs.slice('/mercado/explorar'.length))
+  }, [f, dq])
+
+  const set = (patch: Partial<AssetFilter>) => setF(prev => ({ ...prev, ...patch }))
+  const items = list.data?.pages.flatMap(p => p.items) ?? []
+  const total = list.data?.pages[0]?.total
+  const geo = !f.type || f.type === 'STOCK' || f.type === 'ETF' || f.type === 'INDEX'
+  const active = [f.type, f.region, f.country, f.sector, f.index].filter(Boolean).length
+
   return (
-    <Seg
-      label={t('sections')}
-      value={active}
-      onChange={v => router.push(v === 'assets' ? '/mercado' : v === 'portfolio' ? '/mercado/cartera' : '/mercado/ordenes')}
-      options={[
-        { value: 'assets', label: t('assets') },
-        { value: 'portfolio', label: t('portfolio') },
-        { value: 'orders', label: t('orders') },
-      ]}
-    />
+    <>
+      <TopBar back="/mercado" title={t('explore')} />
+      <div className="pad wide">
+        <div className="relative">
+          <Icon name="search" size={18} className="absolute top-1/2 left-3.5 -translate-y-1/2" />
+          <input className="input pl-10" style={{ background: 'var(--fill)', border: 'none' }} placeholder={t('searchGlobal')} aria-label={t('searchGlobal')} value={q} onChange={e => setQ(e.target.value)} />
+        </div>
+        <div className="pills" role="group" aria-label={t('typeLabel')}>
+          <button aria-pressed={!f.type} onClick={() => set({ type: undefined })}>
+            {t('all')}
+          </button>
+          {TYPES.map(k => (
+            <button key={k} aria-pressed={f.type === k} onClick={() => set({ type: k, ...(k === 'CRYPTO' || k === 'FX' || k === 'COMMODITY' ? { region: undefined, country: undefined, sector: undefined, index: undefined } : {}) })}>
+              {t(`filter.${k}`)}
+            </button>
+          ))}
+        </div>
+        {geo && (
+          <div className="pills" role="group" aria-label={t('region')}>
+            {REGIONS.map(r => (
+              <button key={r} aria-pressed={(f.region ?? 'ALL') === r} onClick={() => set({ region: r === 'ALL' ? undefined : r, country: undefined, index: undefined })}>
+                {t(`regions.${r}`)}
+              </button>
+            ))}
+          </div>
+        )}
+        <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
+          {geo && (
+            <>
+              <FacetSelect label={t('indexLabel')} value={f.index} onChange={v => set({ index: v })} options={facets.data?.indices} />
+              <FacetSelect label={t('countryLabel')} value={f.country} onChange={v => set({ country: v })} options={facets.data?.countries} render={v => `${flagOf(v)} ${v}`} />
+              <FacetSelect label={t('sectorLabel')} value={f.sector} onChange={v => set({ sector: v })} options={facets.data?.sectors} />
+            </>
+          )}
+          <label className="flex flex-col gap-1">
+            <span className="t-cap">{t('sortLabel')}</span>
+            <select className="input py-2.5" value={f.sort ?? 'name'} onChange={e => set({ sort: e.target.value as AssetFilter['sort'] })}>
+              <option value="name">{t('sort.name')}</option>
+              <option value="gainers">{t('sort.gainers')}</option>
+              <option value="losers">{t('sort.losers')}</option>
+            </select>
+          </label>
+        </div>
+        <div className="flex items-center justify-between px-0.5">
+          <span className="t-foot" aria-live="polite">
+            {total === undefined ? t('loading') : t('resultsCount', { n: total })}
+          </span>
+          {active > 0 && (
+            <button className="link text-[14px]" onClick={() => (setF({ sort: f.sort }), setQ(''))}>
+              {t('clearFilters')}
+            </button>
+          )}
+        </div>
+        {list.isError ? (
+          <ErrorState onRetry={() => list.refetch()} />
+        ) : (
+          <div className="list">
+            {!list.data ? (
+              <div className="li t-foot">{t('loading')}</div>
+            ) : items.length ? (
+              items.map(a => <AssetRow key={a.symbol} a={a} />)
+            ) : (
+              <div className="li t-foot">{t('noResults')}</div>
+            )}
+          </div>
+        )}
+        <div ref={sentinel} />
+        {hasNextPage && (
+          <button className="btn btn-secondary" disabled={isFetchingNextPage} onClick={() => fetchNextPage()}>
+            {isFetchingNextPage ? t('loading') : t('loadMore')}
+          </button>
+        )}
+        <button className="btn btn-plain" onClick={() => router.push('/mercado')}>
+          {t('backHome')}
+        </button>
+        <p className="t-cap m-0">{t('dataNoteGlobal')}</p>
+        <Disclaimer />
+      </div>
+    </>
+  )
+}
+
+function FacetSelect({ label, value, onChange, options, render }: { label: string; value?: string; onChange: (v: string | undefined) => void; options?: { value: string; count: number }[]; render?: (v: string) => string }) {
+  const t = useTranslations('market')
+  return (
+    <label className="flex min-w-0 flex-col gap-1">
+      <span className="t-cap">{label}</span>
+      <select className="input py-2.5" value={value ?? ''} onChange={e => onChange(e.target.value || undefined)}>
+        <option value="">{t('all')}</option>
+        {options?.map(o => (
+          <option key={o.value} value={o.value}>
+            {render ? render(o.value) : o.value} ({o.count})
+          </option>
+        ))}
+        {value && !options?.some(o => o.value === value) && <option value={value}>{value}</option>}
+      </select>
+    </label>
   )
 }
 
 // ── Ficha de activo ──────────────────────────────────────
-const RANGES: CandleInterval[] = ['1D', '1W', '1M', '3M', '1Y']
-
-function PriceChart({ a }: { a: AssetDetailT }) {
-  const t = useTranslations('market')
-  const locale = useLang()
-  const [mode, setMode] = useState<'line' | 'candles'>('line')
-  const [range, setRange] = useState<CandleInterval>('1M')
-  const { data } = useQuery({ queryKey: ['candles', a.symbol, range], queryFn: () => api.candles(a.symbol, range), refetchInterval: 30_000, placeholderData: keepPreviousData })
-  const closes = useMemo(() => data?.map(c => c.c) ?? [], [data])
-  const up = closes.length > 1 ? closes[closes.length - 1] >= closes[0] : a.changePct >= 0
-  const when = (i: number) => {
-    const d = data?.[i]
-    if (!d) return ''
-    const date = new Date(d.t)
-    return range === '1D' ? date.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit' }) : date.toLocaleDateString(locale, { day: 'numeric', month: 'short' })
-  }
+function Stat({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <>
-      <div className="card px-2 pt-3 pb-2">
-        {!data ? (
-          <div className="skel h-[170px]" />
-        ) : mode === 'line' ? (
-          <LineChart values={closes} up={up} label={t('chartLabel', { name: a.name })} format={(v, i) => `${fmtAssetPrice({ ...a, price: String(v) }, locale)} · ${when(i)}`} />
-        ) : (
-          <CandleChart candles={data.slice(-40)} label={t('candlesLabel', { name: a.name })} />
-        )}
+    <div className="flex min-w-0 flex-col gap-0.5">
+      <span className="t-cap truncate">{label}</span>
+      <b className="truncate text-[15px] tabular-nums">{children}</b>
+    </div>
+  )
+}
+
+/** Barra de rango (mínimo–máximo) con la posición del precio actual */
+function RangeBar({ low, high, value, fmt, label }: { low: number; high: number; value: number; fmt: (v: number) => string; label: string }) {
+  const p = high > low ? Math.min(1, Math.max(0, (value - low) / (high - low))) : 0.5
+  return (
+    <div className="flex flex-col gap-1">
+      <span className="t-cap">{label}</span>
+      <div className="relative h-1.5 rounded-full" style={{ background: 'var(--fill)' }} role="img" aria-label={`${label}: ${fmt(low)} – ${fmt(high)}`}>
+        <span className="absolute top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full" style={{ left: `${p * 100}%`, background: 'var(--ink)' }} />
       </div>
-      <div className="flex items-center justify-between gap-2">
-        <Seg label={t('chartType')} className="w-[140px]" value={mode} onChange={setMode} options={[{ value: 'line', label: t('line') }, { value: 'candles', label: t('candles') }]} />
-        <Seg label={t('range')} className="max-w-[230px] flex-1" value={range} onChange={setRange} options={RANGES.map(r => ({ value: r, label: t(`ranges.${r}`) }))} />
+      <div className="t-cap flex justify-between tabular-nums">
+        <span>{fmt(low)}</span>
+        <span>{fmt(high)}</span>
       </div>
-    </>
+    </div>
   )
 }
 
@@ -201,6 +400,10 @@ export function Asset({ symbol }: { symbol: string }) {
   const up = a.changePct >= 0
   const watching = watch?.includes(symbol)
   const tradable = a.type !== 'INDEX'
+  const price = toNum(a.price)
+  const dec = decimalsFor(a.type, price)
+  const fmt = (v: number) => fmtAssetPrice({ ...a, price: String(v) }, locale)
+  const compact = (v: number) => new Intl.NumberFormat(locale, { notation: 'compact', maximumFractionDigits: 2 }).format(v)
   return (
     <>
       <TopBar
@@ -216,56 +419,97 @@ export function Asset({ symbol }: { symbol: string }) {
           </div>
         }
       />
-      <div className="pad">
-        <span className="t-foot">
-          {a.symbol} · {status(a)}
-          {a.closesAt && ` · ${t('closesIn', { time: countdown(a.closesAt) })}`}
-          {a.opensAt && ` · ${t('opensIn', { time: countdown(a.opensAt) })}`}
-        </span>
-        <h1 className="t-title -mt-1.5">{a.name}</h1>
-        <Live value={toNum(a.price)} className="big">
-          {fmtAssetPrice(a, locale)}
-        </Live>
-        <span className={`t-body -mt-1.5 font-bold ${up ? 'up' : 'down'}`}>
-          {up ? '▲ +' : '▼ −'}
-          {num(Math.abs(toNum(a.change)), locale, a.type === 'FX' ? 4 : 2)} ({pct(a.changePct, locale)}) {t('today')}
-        </span>
-        {a.currency === 'USD' && a.type !== 'FX' && <span className="t-foot -mt-2">≈ {money(a.priceInUserCurrency, 'EUR', locale)}</span>}
+      <div className="pad wide">
+        <div className="flex items-center gap-3">
+          <AssetBadge a={a} size={48} />
+          <div className="min-w-0 flex-1">
+            <span className="t-foot block truncate">
+              {flagOf(a.country)} {a.ticker} · {status(a)}
+              {a.closesAt && ` · ${t('closesIn', { time: countdown(a.closesAt) })}`}
+              {a.opensAt && ` · ${t('opensIn', { time: countdown(a.opensAt) })}`}
+            </span>
+            <h1 className="t-title truncate">{a.name}</h1>
+          </div>
+        </div>
+        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
+          <Live value={price} className="big">
+            {fmtAssetPrice(a, locale)}
+          </Live>
+          <span className={`t-body font-bold tabular-nums ${up ? 'up' : 'down'}`}>
+            {up ? '▲ +' : '▼ −'}
+            {num(Math.abs(toNum(a.change)), locale, dec)} ({pct(a.changePct, locale)}) {t('today')}
+          </span>
+        </div>
+        {a.currency !== 'EUR' && a.type !== 'FX' && a.type !== 'INDEX' && <span className="t-foot -mt-2">≈ {money(a.priceInUserCurrency, 'EUR', locale)}</span>}
         {a.stale && <div className="banner">{t('staleAsset')}</div>}
-        <PriceChart a={a} />
-        {pos ? (
-          <div className="card grid grid-cols-2 gap-3.5">
-            <div>
-              <span className="t-cap">{t('yourPosition')}</span>
-              <br />
-              <b>
-                {fmtQty(pos.qty, locale)} {unit(a.type, a.symbol)}
-              </b>
+
+        <ProChart symbol={a.symbol} decimals={dec} up={up} />
+
+        <div className="grid gap-3 md:grid-cols-[1fr_1fr]">
+          <div className="card flex flex-col gap-3.5">
+            <b className="t-head">{t('keyData')}</b>
+            <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3">
+              <Stat label={t('prevClose')}>{fmt(a.prevClose)}</Stat>
+              {a.volume !== null && a.type !== 'FX' && <Stat label={t('volume')}>{compact(a.volume)}</Stat>}
+              <Stat label={t('currencyLabel')}>
+                {a.type === 'INDEX' ? t('points') : `${a.currency} (${currencySymbol(a.currency, locale)})`}
+              </Stat>
+              <Stat label={t('exchangeLabel')}>{a.type === 'CRYPTO' ? t('crypto247') : a.exchangeName}</Stat>
+              {a.country && a.type !== 'CRYPTO' && a.type !== 'FX' && <Stat label={t('countryLabel')}>{`${flagOf(a.country)} ${a.country}`}</Stat>}
+              {a.sector && <Stat label={t('sectorLabel')}>{a.sector}</Stat>}
+              <Stat label={t('delayLabel')}>{a.delayedMinutes ? t('delayed', { n: a.delayedMinutes }) : t('realtime')}</Stat>
+              <Stat label={t('timezoneLabel')}>{a.timezone.split('/').pop()?.replace('_', ' ')}</Stat>
             </div>
-            <div>
-              <span className="t-cap">{t('return')}</span>
-              <br />
-              <b className={toNum(pos.unrealizedPnl) >= 0 ? 'up' : 'down'}>
-                {signedMoney(pos.unrealizedPnl, 'EUR', locale)} ({pos.pnlPct >= 0 ? '+' : '−'}{pct(pos.pnlPct, locale, 1)})
-              </b>
-            </div>
-            <div>
-              <span className="t-cap">{t('avgPrice')}</span>
-              <br />
-              <b>{money(pos.avgPrice, 'EUR', locale)}</b>
-            </div>
-            <div>
-              <span className="t-cap">{t('weight')}</span>
-              <br />
-              <b>{num(pos.weightPct, locale, 0)} %</b>
+            {a.dayLow !== null && a.dayHigh !== null && <RangeBar label={t('dayRange')} low={a.dayLow} high={a.dayHigh} value={price} fmt={fmt} />}
+            {a.low52 !== null && a.high52 !== null && <RangeBar label={t('range52')} low={a.low52} high={a.high52} value={price} fmt={fmt} />}
+            {a.indices.length > 0 && (
+              <div className="flex flex-wrap items-center gap-1.5">
+                <span className="t-cap">{t('partOf')}</span>
+                {a.indices.map(ix => (
+                  <Link key={ix} href={exploreHref({ index: ix })} className="chip" style={{ background: 'var(--fill)' }}>
+                    {ix}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+          <div className="flex flex-col gap-3">
+            {pos ? (
+              <div className="card grid grid-cols-2 gap-3.5">
+                <div>
+                  <span className="t-cap">{t('yourPosition')}</span>
+                  <br />
+                  <b>
+                    {fmtQty(pos.qty, locale)} {unit(a.type, a.ticker)}
+                  </b>
+                </div>
+                <div>
+                  <span className="t-cap">{t('return')}</span>
+                  <br />
+                  <b className={toNum(pos.unrealizedPnl) >= 0 ? 'up' : 'down'}>
+                    {signedMoney(pos.unrealizedPnl, 'EUR', locale)} ({pos.pnlPct >= 0 ? '+' : '−'}
+                    {pct(pos.pnlPct, locale, 1)})
+                  </b>
+                </div>
+                <div>
+                  <span className="t-cap">{t('avgPrice')}</span>
+                  <br />
+                  <b>{money(pos.avgPrice, 'EUR', locale)}</b>
+                </div>
+                <div>
+                  <span className="t-cap">{t('weight')}</span>
+                  <br />
+                  <b>{num(pos.weightPct, locale, 0)} %</b>
+                </div>
+              </div>
+            ) : (
+              <div className="card t-foot">{tradable ? t('noPosition', { name: a.name }) : t('indexNote')}</div>
+            )}
+            <div className="card">
+              <b className="t-head">{t('about')}</b>
+              <p className="t-foot m-0 mt-1">{a.description}</p>
             </div>
           </div>
-        ) : (
-          <div className="card t-foot">{tradable ? t('noPosition', { name: a.name }) : t('indexNote')}</div>
-        )}
-        <div className="card">
-          <b className="t-head">{t('about')}</b>
-          <p className="t-foot m-0 mt-1">{a.description}</p>
         </div>
         <Disclaimer />
       </div>
@@ -332,10 +576,10 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
 
   return (
     <>
-      <Sheet open={sheet === 'order'} onClose={onClose} label={`${buy ? t('buy') : t('sell')} ${a.symbol}`}>
+      <Sheet open={sheet === 'order'} onClose={onClose} label={`${buy ? t('buy') : t('sell')} ${a.ticker}`}>
         <div className="flex items-center justify-between">
           <span className="t-head">
-            {buy ? t('buy') : t('sell')} {a.symbol}
+            {buy ? t('buy') : t('sell')} {a.ticker}
           </span>
           <button className="icon-btn" onClick={onClose} aria-label={tc('close')}>
             <Icon name="close" />
@@ -360,7 +604,7 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
                 <span className="text-[30px] font-extrabold">€</span>
               </div>
               <span className="t-foot">
-                ≈ {p ? fmtQty(p.qty, locale) : '—'} {unit(a.type, a.symbol)} · {fmtAssetPrice(a, locale)}
+                ≈ {p ? fmtQty(p.qty, locale) : '—'} {unit(a.type, a.ticker)} · {fmtAssetPrice(a, locale)}
               </span>
             </div>
             <div className="grid grid-cols-4 gap-2.5">
@@ -377,7 +621,7 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
             <div className="py-1.5 text-center">
               <div className="big text-[46px] leading-[52px]">{sellPct} %</div>
               <span className="t-foot">
-                {t('ofPosition')} · {fmtQty(input.qty ?? '0', locale)} {unit(a.type, a.symbol)}
+                {t('ofPosition')} · {fmtQty(input.qty ?? '0', locale)} {unit(a.type, a.ticker)}
               </span>
             </div>
             <div className="grid grid-cols-4 gap-2.5">
@@ -392,7 +636,7 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
         {type !== 'MARKET' && (
           <div className="field">
             <label htmlFor="o-trigger">
-              {t('triggerPrice')} ({a.currency === 'EUR' ? '€' : '$'})
+              {t('triggerPrice')} ({a.type === 'FX' || a.type === 'INDEX' ? a.currency : currencySymbol(a.currency, locale)})
             </label>
             <input id="o-trigger" className="input" inputMode="decimal" value={trigger} onChange={e => setTrigger(e.target.value.replace(',', '.').replace(/[^\d.]/g, ''))} />
             <span className="t-cap">{triggerHelp}</span>
@@ -503,7 +747,7 @@ function Filled({ r, a }: { r: OrderResultT; a: AssetDetailT }) {
         <div className="kv">
           <span>{t('asset')}</span>
           <span>
-            {o.symbol} · {fmtQty(o.qty, locale)} {unit(a.type, a.symbol)}
+            {o.symbol} · {fmtQty(o.qty, locale)} {unit(a.type, a.ticker)}
           </span>
         </div>
         <div className="kv">
@@ -559,6 +803,7 @@ function Filled({ r, a }: { r: OrderResultT; a: AssetDetailT }) {
 // ── Alertas de precio ────────────────────────────────────
 function AlertSheet({ open, a, onClose }: { open: boolean; a: AssetDetailT; onClose: () => void }) {
   const t = useTranslations('market')
+  const locale = useLang()
   const toast = useToast()
   const refresh = useRefreshAll()
   const [cond, setCond] = useState<'ABOVE' | 'BELOW'>('BELOW')
@@ -566,11 +811,11 @@ function AlertSheet({ open, a, onClose }: { open: boolean; a: AssetDetailT; onCl
   const m = useMutation({ mutationFn: () => api.createAlert({ symbol: a.symbol, condition: cond, price }), onSuccess: () => (refresh(), toast(t('alertCreated')), onClose()) })
   return (
     <Sheet open={open} onClose={onClose} label={t('alertTitle')}>
-      <span className="t-head">{t('alertTitle')} · {a.symbol}</span>
+      <span className="t-head">{t('alertTitle')} · {a.ticker}</span>
       <Seg label={t('alertCondition')} value={cond} onChange={setCond} options={[{ value: 'BELOW', label: t('below') }, { value: 'ABOVE', label: t('above') }]} />
       <div className="field">
         <label htmlFor="al-price">
-          {t('price')} ({a.type === 'FX' || a.type === 'INDEX' ? '' : a.currency === 'EUR' ? '€' : '$'})
+          {t('price')} ({a.type === 'FX' || a.type === 'INDEX' ? t('points') : currencySymbol(a.currency, locale)})
         </label>
         <input id="al-price" className="input" inputMode="decimal" value={price} onChange={e => setPrice(e.target.value.replace(',', '.').replace(/[^\d.]/g, ''))} />
       </div>
@@ -583,7 +828,7 @@ function AlertSheet({ open, a, onClose }: { open: boolean; a: AssetDetailT; onCl
 }
 
 // ── Cartera (04.6) ───────────────────────────────────────
-const TYPE_COLORS: Record<string, string> = { STOCK: 'var(--brand)', ETF: 'var(--up)', CRYPTO: 'var(--rare-epic)', FX: 'var(--amber)', INDEX: 'var(--ink-3)', CASH: 'var(--fill)' }
+const TYPE_COLORS: Record<string, string> = { STOCK: 'var(--brand)', ETF: 'var(--up)', CRYPTO: 'var(--rare-epic)', FX: 'var(--amber)', COMMODITY: 'var(--down)', INDEX: 'var(--ink-3)', CASH: 'var(--fill)' }
 
 export function Portfolio() {
   const t = useTranslations('market')
@@ -650,13 +895,12 @@ export function Portfolio() {
       <div className="list">
         {pf.positions.length ? (
           pf.positions.map(p => (
-            <Link key={p.symbol} href={`/mercado/${p.symbol}`} className="li">
-              <span className="ava">{p.symbol.slice(0, 4)}</span>
+            <Link key={p.symbol} href={assetHref(p.symbol)} className="li">
+              <AssetBadge a={{ ticker: p.symbol.replace(/^\^/, '').split(/[.=-]/)[0], type: p.type }} />
               <span className="min-w-0 flex-1">
-                <b>{p.symbol}</b>
-                <br />
+                <b className="block truncate">{p.name}</b>
                 <span className="t-cap">
-                  {fmtQty(p.qty, locale)} {unit(p.type, p.symbol)} · {num(p.weightPct, locale, 0)} %
+                  {fmtQty(p.qty, locale)} {unit(p.type, p.symbol.split(/[.=-]/)[0])} · {num(p.weightPct, locale, 0)} %
                 </span>
               </span>
               <span className="text-right">

@@ -1,6 +1,6 @@
 // Interfaz única de acceso a datos. La implementa `http.ts` contra /api/** con el contrato de docs/07.
 import type {
-  AchievementT, AnswerResultT, AssetDetailT, AssetItemT, AssetTypeT, BillingPlanT, BillingStatusT, CandleT, CoursePathT,
+  AchievementT, AnswerResultT, AssetDetailT, AssetItemT, AssetPageT, AssetTypeT, MarketOverviewT, RegionT, BillingPlanT, BillingStatusT, CandleT, CoursePathT,
   GenderT, HomeT, LeagueT, LessonT, LivesT, MeT, NotificationT, OrderPreviewT, OrderResultT, OrderSideT, OrderT, OrderTypeT,
   PlacementFinishT, PortfolioT, PriceAlertT, QuizFinishT, QuizStartT, SettingsT, StepCheckT, StreakT, TradeT, TradingStatsT,
 } from '@/shared/contract'
@@ -37,7 +37,9 @@ export interface OrderInput {
   followedRiskAdvice?: boolean
 }
 
-export type CandleInterval = '1D' | '1W' | '1M' | '3M' | '1Y'
+export type CandleInterval = '1m' | '5m' | '15m' | '1h' | '1d' | '1w' | '1M'
+export interface AssetFilter { q?: string; type?: AssetTypeT; region?: RegionT; country?: string; sector?: string; index?: string; sort?: 'name' | 'gainers' | 'losers'; offset?: number; limit?: number }
+export interface Facets { countries: { value: string; count: number }[]; sectors: { value: string; count: number }[]; indices: { value: string; count: number }[] }
 
 export interface PortfolioPoint { t: string; v: number }
 
@@ -95,7 +97,10 @@ export interface Api {
   // Mercado
   assets(filter?: { type?: AssetTypeT | 'WATCH'; q?: string }): Promise<AssetItemT[]>
   asset(symbol: string): Promise<AssetDetailT>
-  candles(symbol: string, range: CandleInterval): Promise<CandleT[]>
+  candles(symbol: string, interval: CandleInterval): Promise<CandleT[]>
+  searchAssets(f: AssetFilter): Promise<AssetPageT>
+  marketOverview(region: RegionT | 'ALL'): Promise<MarketOverviewT>
+  facets(region?: RegionT): Promise<Facets>
   watchlist(): Promise<string[]>
   toggleWatch(symbol: string): Promise<string[]>
   previewOrder(input: OrderInput): Promise<OrderPreviewT>

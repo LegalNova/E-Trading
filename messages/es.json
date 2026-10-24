@@ -339,7 +339,8 @@
       "ETF": "ETFs",
       "CRYPTO": "Cripto",
       "INDEX": "Índices",
-      "FX": "Divisas"
+      "FX": "Divisas",
+      "COMMODITY": "Materias primas"
     },
     "noResults": "No hay activos con ese nombre.",
     "emptyWatch": "Aún no sigues ningún activo. Toca ☆ Seguir en cualquier ficha.",
@@ -482,7 +483,65 @@
     "alertDeleted": "Alerta borrada",
     "noAlerts": "No tienes alertas. Créalas desde la ficha de un activo.",
     "buyNoun": "Compra",
-    "sellNoun": "Venta"
+    "sellNoun": "Venta",
+    "searchGlobal": "Buscar entre 1.600+ activos: Apple, Santander, Toyota…",
+    "clearSearch": "Borrar búsqueda",
+    "resultsCount": "{n, plural, =0 {Sin resultados} one {# resultado} other {# resultados}}",
+    "seeAllResults": "Ver los {n} resultados",
+    "region": "Región",
+    "regions": {
+      "ALL": "Todo",
+      "AMERICA": "América",
+      "EUROPE": "Europa",
+      "ASIA": "Asia-Pacífico"
+    },
+    "indices": "Índices",
+    "seeAll": "Ver todos",
+    "watchlist": "Tu lista",
+    "movers": "Lo que más se mueve hoy",
+    "gainers": "Suben",
+    "losers": "Bajan",
+    "noMovers": "Aún no hay movimientos hoy.",
+    "seeRanking": "Ver la clasificación completa →",
+    "explore": "Explorar",
+    "byIndex": "Explorar por índice",
+    "commodity": "Materia prima",
+    "contracts": "contratos",
+    "typeHint": {
+      "STOCK": "S&P 500, Europa y Asia",
+      "ETF": "Cestas listas para invertir",
+      "INDEX": "El termómetro de cada bolsa",
+      "CRYPTO": "Abiertas 24/7",
+      "FX": "Pares de divisas",
+      "COMMODITY": "Oro, petróleo, café…"
+    },
+    "dataNoteGlobal": "Precios reales de Yahoo Finance. EE. UU., cripto y divisas casi al momento; Europa con 15 min de retraso y Asia con 15–20 min. Materias primas: futuros con 10 min de retraso.",
+    "typeLabel": "Tipo de activo",
+    "all": "Todos",
+    "indexLabel": "Índice",
+    "countryLabel": "País",
+    "sectorLabel": "Sector",
+    "sortLabel": "Ordenar",
+    "sort": {
+      "name": "Nombre (A-Z)",
+      "gainers": "Más suben hoy",
+      "losers": "Más bajan hoy"
+    },
+    "clearFilters": "Quitar filtros",
+    "loadMore": "Cargar más",
+    "backHome": "Volver a la portada del Mercado",
+    "keyData": "Datos clave",
+    "prevClose": "Cierre anterior",
+    "volume": "Volumen",
+    "currencyLabel": "Moneda",
+    "points": "puntos",
+    "exchangeLabel": "Bolsa",
+    "delayLabel": "Datos",
+    "realtime": "Casi en tiempo real",
+    "timezoneLabel": "Hora de la bolsa",
+    "dayRange": "Rango del día",
+    "range52": "Rango de 52 semanas",
+    "partOf": "Forma parte de"
   },
   "streak": {
     "title": "Racha",
@@ -744,5 +803,53 @@
     "text": "Solo usamos cookies técnicas, necesarias para que la app funcione, y las preferencias que tú eliges. Nada de publicidad ni analítica.",
     "more": "Política de cookies",
     "ok": "Entendido"
+  },
+  "chart": {
+    "interval": "Intervalo",
+    "intervals": {
+      "1m": "1m",
+      "5m": "5m",
+      "15m": "15m",
+      "1h": "1h",
+      "1d": "1D",
+      "1w": "1S",
+      "1M": "1M"
+    },
+    "kinds": {
+      "candles": "Velas",
+      "heikin": "Heikin Ashi",
+      "bars": "Barras",
+      "line": "Línea",
+      "area": "Área"
+    },
+    "indicators": "Indicadores",
+    "ind": {
+      "vol": "Volumen",
+      "sma20": "Media 20",
+      "sma50": "Media 50",
+      "sma200": "Media 200",
+      "ema21": "Media exp. 21",
+      "bb": "Bandas de Bollinger",
+      "rsi": "RSI (14)",
+      "macd": "MACD (12, 26, 9)"
+    },
+    "tools": "Herramientas de dibujo",
+    "tool": {
+      "cursor": "Cursor",
+      "trend": "Línea de tendencia",
+      "hline": "Línea horizontal",
+      "vline": "Línea vertical",
+      "rect": "Rectángulo",
+      "fib": "Retroceso de Fibonacci",
+      "measure": "Medir"
+    },
+    "deleteSel": "Borrar el dibujo seleccionado",
+    "clearAll": "Borrar todos los dibujos",
+    "full": "Pantalla completa",
+    "exitFull": "Salir de pantalla completa",
+    "error": "No se ha podido cargar el gráfico. Reintentando…",
+    "noData": "Sin datos para este intervalo.",
+    "hintOne": "Toca el gráfico para colocar la línea.",
+    "hintTwo": "Toca dos puntos del gráfico."
   }
 }

@@ -1,7 +1,7 @@
 'use client'
 // Marco de la app: barra inferior en el móvil y columna lateral en pantallas grandes.
 // También protege las rutas: sin sesión → /entrar; onboarding a medias → /onboarding.
-import { useEffect } from 'react'
+import { Suspense, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { useSession } from './hooks'
@@ -39,9 +39,7 @@ export function useGuard(require: 'app' | 'onboarding' | 'admin' = 'app') {
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const t = useTranslations('nav')
-  const path = usePathname()
-  const active = tabOf(path)
-  const { ready, session } = useGuard('app')
+  const { ready } = useGuard('app')
 
   return (
     <div className="min-h-dvh md:flex">
@@ -49,27 +47,16 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <Link href="/inicio" className="mb-4 flex items-center gap-2.5 px-3 text-lg font-extrabold tracking-tight" style={{ color: 'var(--ink)' }}>
           <Logo size={30} /> E-Trading
         </Link>
-        {TABS.map(tab => (
-          <Link key={tab.href} href={tab.href} aria-current={active === tab.href ? 'page' : undefined} className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-bold" style={active === tab.href ? { background: 'color-mix(in srgb, var(--brand) 12%, transparent)', color: 'var(--brand)' } : { color: 'var(--ink-2)' }}>
-            <Icon name={tab.icon} size={22} />
-            {t(tab.key)}
-          </Link>
-        ))}
-        <Link href="/avisos" className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-bold" style={{ color: path.startsWith('/avisos') ? 'var(--brand)' : 'var(--ink-2)' }}>
-          <Icon name="bell" size={22} />
-          {t('notifications')}
-        </Link>
-        {session?.isAdmin && (
-          <Link href="/admin" className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-bold" style={{ color: 'var(--ink-2)' }}>
-            <Icon name="admin" size={22} />
-            {t('admin')}
-          </Link>
-        )}
+        {/* La ruta actual solo se conoce al pedir la página: el menú se resuelve aparte */}
+        <Suspense>
+          <SideLinks />
+        </Suspense>
         <p className="t-cap mt-auto px-3">{t('footer')}</p>
       </aside>
 
       <div className="flex min-h-dvh min-w-0 flex-1 flex-col">
-        <main className="mx-auto w-full max-w-[600px] flex-1 pb-[calc(76px+env(safe-area-inset-bottom))] md:pb-10 md:pt-6" style={{ paddingTop: 'max(8px, env(safe-area-inset-top))' }}>
+        {/* Las pantallas del Mercado (marcadas con .wide) usan una columna más ancha */}
+        <main className="mx-auto w-full max-w-[600px] flex-1 pb-[calc(76px+env(safe-area-inset-bottom))] has-[.wide]:max-w-[1120px] md:pt-6 md:pb-10" style={{ paddingTop: 'max(8px, env(safe-area-inset-top))' }}>
           {/* La página se pinta siempre (navegación instantánea); se oculta hasta confirmar la sesión */}
           <div hidden={!ready}>{children}</div>
           {!ready && <PageSkeleton />}
@@ -77,14 +64,53 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       </div>
 
       <nav aria-label={t('label')} className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-5 border-t px-1.5 pt-1.5 md:hidden" style={{ borderColor: 'var(--line)', background: 'color-mix(in srgb, var(--surface) 92%, transparent)', backdropFilter: 'saturate(180%) blur(20px)', WebkitBackdropFilter: 'saturate(180%) blur(20px)', paddingBottom: 'max(8px, env(safe-area-inset-bottom))' }}>
-        {TABS.map(tab => (
-          <Link key={tab.href} href={tab.href} aria-current={active === tab.href ? 'page' : undefined} className="flex flex-col items-center justify-center gap-[3px] py-1 text-[10px] font-bold" style={{ color: active === tab.href ? 'var(--brand)' : 'var(--ink-3)' }}>
-            <Icon name={tab.icon} size={24} />
-            {t(tab.key)}
-          </Link>
-        ))}
+        <Suspense>
+          <BottomLinks />
+        </Suspense>
       </nav>
     </div>
+  )
+}
+
+function SideLinks() {
+  const t = useTranslations('nav')
+  const path = usePathname()
+  const active = tabOf(path)
+  const { data: session } = useSession()
+  return (
+    <>
+      {TABS.map(tab => (
+        <Link key={tab.href} href={tab.href} aria-current={active === tab.href ? 'page' : undefined} className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-bold" style={active === tab.href ? { background: 'color-mix(in srgb, var(--brand) 12%, transparent)', color: 'var(--brand)' } : { color: 'var(--ink-2)' }}>
+          <Icon name={tab.icon} size={22} />
+          {t(tab.key)}
+        </Link>
+      ))}
+      <Link href="/avisos" className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-bold" style={{ color: path.startsWith('/avisos') ? 'var(--brand)' : 'var(--ink-2)' }}>
+        <Icon name="bell" size={22} />
+        {t('notifications')}
+      </Link>
+      {session?.isAdmin && (
+        <Link href="/admin" className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-bold" style={{ color: 'var(--ink-2)' }}>
+          <Icon name="admin" size={22} />
+          {t('admin')}
+        </Link>
+      )}
+    </>
+  )
+}
+
+function BottomLinks() {
+  const t = useTranslations('nav')
+  const active = tabOf(usePathname())
+  return (
+    <>
+      {TABS.map(tab => (
+        <Link key={tab.href} href={tab.href} aria-current={active === tab.href ? 'page' : undefined} className="flex flex-col items-center justify-center gap-[3px] py-1 text-[10px] font-bold" style={{ color: active === tab.href ? 'var(--brand)' : 'var(--ink-3)' }}>
+          <Icon name={tab.icon} size={24} />
+          {t(tab.key)}
+        </Link>
+      ))}
+    </>
   )
 }
 
