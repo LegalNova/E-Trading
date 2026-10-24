@@ -7,7 +7,7 @@ import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
 import { arrowPct, money, num } from '@/shared/format'
 import { api, ApiFailure, type ContactInput } from '../api'
-import { Icon, Logo } from '../ui/icons'
+import { Icon, Wordmark } from '../ui/icons'
 import { Lumi } from '../ui/lumi'
 
 export function LanguageSwitch() {
@@ -127,7 +127,7 @@ export function Landing() {
       <header className="sticky top-0 z-20 border-b" style={{ borderColor: 'var(--line)', background: 'color-mix(in srgb, var(--bg) 85%, transparent)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}>
         <div className="mx-auto flex h-14 max-w-[1120px] items-center gap-6 px-4">
           <Link href="/" className="flex items-center gap-2 text-[17px] font-extrabold tracking-tight" style={{ color: 'var(--ink)' }}>
-            <Logo size={28} /> E-Trading
+            <Wordmark size={21} />
           </Link>
           <nav className="hidden flex-1 gap-5 text-sm font-semibold md:flex" style={{ color: 'var(--ink-2)' }}>
             <a href="#como">{t('navHow')}</a>
@@ -257,6 +257,7 @@ export function Landing() {
 
       <footer className="border-t" style={{ borderColor: 'var(--line)' }}>
         <div className="mx-auto flex max-w-[1120px] flex-col gap-4 px-4 py-8 md:flex-row md:items-center">
+          <Wordmark size={17} />
           <p className="t-cap m-0 max-w-[620px] flex-1">{t('legal')}</p>
           <div className="t-cap flex gap-4">
             <Link href="/legal/aviso-legal">{t('legalNotice')}</Link>

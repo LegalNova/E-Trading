@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { Suspense } from 'react'
 import { Link } from '@/i18n/navigation'
 import { LEGAL, LEGAL_SLUGS, type LegalSlug } from '@/legal'
-import { Logo } from '@/client/ui/icons'
+import { Wordmark } from '@/client/ui/icons'
 
 type P = PageProps<'/[locale]/legal/[doc]'>
 
@@ -26,7 +26,7 @@ async function Doc({ params }: { params: P['params'] }) {
     <article className="mx-auto max-w-[760px] px-4 py-8">
       <nav className="mb-8 flex flex-wrap items-center gap-x-4 gap-y-2" aria-label="Legal">
         <Link href="/" className="mr-2 flex items-center gap-2 font-extrabold" style={{ color: 'var(--ink)' }}>
-          <Logo size={26} /> E-Trading
+          <Wordmark size={19} />
         </Link>
         {LEGAL_SLUGS.map(s => (
           <Link key={s} href={`/legal/${s}`} className="t-foot font-semibold" aria-current={s === doc ? 'page' : undefined} style={s === doc ? { color: 'var(--brand)' } : undefined}>

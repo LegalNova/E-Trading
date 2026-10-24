@@ -64,12 +64,25 @@ export function Heart({ size = 13, color = 'var(--down)' }: { size?: number; col
   )
 }
 
-/** Logotipo: el cuadrado redondeado de Lumi con una línea de precio */
-export function Logo({ size = 28 }: { size?: number }) {
+/** Símbolo de marca «Bancal»: terrazas que suben escalón a escalón (Identidad 3a). Toma el color del texto. */
+export function Logo({ size = 28, className }: { size?: number; className?: string }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 48 48" aria-hidden="true" style={{ flex: 'none' }}>
-      <rect x="2" y="2" width="44" height="44" rx="14" fill="var(--brand)" />
-      <path d="M12 31l8-8 6 5 10-11" stroke="#fff" strokeWidth="3.4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" className={className} style={{ flex: 'none' }}>
+      <path d="M3 21V15H9V9H15V3H21V21Z" fill="currentColor" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
     </svg>
+  )
+}
+
+/** Logotipo completo: símbolo + «E·Trading» con el punto azul como único acento */
+export function Wordmark({ size = 22, symbol = true, className }: { size?: number; symbol?: boolean; className?: string }) {
+  return (
+    <span className={`inline-flex items-center font-extrabold ${className ?? ''}`} style={{ gap: size * 0.38, fontSize: size, letterSpacing: '-0.03em', color: 'var(--ink)', lineHeight: 1 }} aria-label="E-Trading" role="img">
+      {symbol && <Logo size={size * 1.15} />}
+      <span className="inline-flex items-center" aria-hidden="true">
+        E
+        <span style={{ width: size * 0.25, height: size * 0.25, borderRadius: '50%', background: 'var(--brand)', margin: `${size * 0.25}px ${size * 0.09}px 0` }} />
+        Trading
+      </span>
+    </span>
   )
 }

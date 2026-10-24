@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
 import { api, ApiFailure, type Session } from '../api'
 import { useSession } from '../hooks'
+import { Wordmark } from '../ui/icons'
 import { TopBar } from '../ui/kit'
 import { Lumi } from '../ui/lumi'
 
@@ -65,7 +66,7 @@ export function SignUp() {
   const err = m.error instanceof ApiFailure ? m.error : null
   return (
     <>
-      <TopBar back="/" />
+      <TopBar back="/" title={<Wordmark size={18} />} />
       <form
         className="pad"
         onSubmit={e => {
@@ -122,7 +123,7 @@ export function SignIn() {
   const m = useMutation({ mutationFn: () => api.signIn(email.trim(), pass), onSuccess: done })
   return (
     <>
-      <TopBar back="/" />
+      <TopBar back="/" title={<Wordmark size={18} />} />
       <form
         className="pad"
         onSubmit={e => {

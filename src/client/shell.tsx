@@ -5,7 +5,7 @@ import { Suspense, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { useSession } from './hooks'
-import { Icon, Logo, type IconName } from './ui/icons'
+import { Icon, Wordmark, type IconName } from './ui/icons'
 import { PageSkeleton } from './ui/kit'
 
 const TABS: { href: string; key: string; icon: IconName }[] = [
@@ -45,7 +45,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     <div className="min-h-dvh md:flex">
       <aside className="sticky top-0 hidden h-dvh w-60 flex-none flex-col gap-1 border-r px-3 py-5 md:flex" style={{ borderColor: 'var(--line)', background: 'var(--surface)' }}>
         <Link href="/inicio" className="mb-4 flex items-center gap-2.5 px-3 text-lg font-extrabold tracking-tight" style={{ color: 'var(--ink)' }}>
-          <Logo size={30} /> E-Trading
+          <Wordmark size={21} />
         </Link>
         {/* La ruta actual solo se conoce al pedir la página: el menú se resuelve aparte */}
         <Suspense>
