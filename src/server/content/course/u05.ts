@@ -1,9 +1,9 @@
 import 'server-only'
-// Unidad 5 · Análisis fundamental (docs/curso/05). Premium. Ejemplo inventado: «Panadería Global».
+// Unidad 5 · Análisis fundamental (docs/curso/05). Acceso por plan: src/shared/plans.ts Ejemplo inventado: «Panadería Global».
 import { fill, key, lesson, multi, order, sim, single, text, tf, unit } from '../dsl'
 
 export default unit({
-  id: 'u5', order: 5, title: 'Análisis fundamental', description: 'Cuentas, ratios, ventajas competitivas y valoración', premiumOnly: true,
+  id: 'u5', order: 5, title: 'Análisis fundamental', description: 'Cuentas, ratios, ventajas competitivas y valoración',
   lessons: [
     lesson('u5l1', 'Precio y valor no son lo mismo', [
       text('Dos formas de mirar', '**Fundamental:** estudia el negocio para estimar cuánto **vale** y compararlo con su **precio**. Responde a *qué* comprar.\n\n**Técnico:** estudia el gráfico para anticipar movimientos. Intenta responder a *cuándo*.'),

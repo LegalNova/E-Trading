@@ -79,12 +79,12 @@ function useThemeKey() {
 
 const ts = (t: number) => t as UTCTimestamp
 
-export function ProChart({ symbol, decimals, up }: { symbol: string; decimals: number; up: boolean }) {
+export function ProChart({ symbol, decimals, up, live }: { symbol: string; decimals: number; up: boolean; /** Precio actual (se refresca cada pocos segundos): mueve la última vela */ live?: number }) {
   const t = useTranslations('chart')
   const locale = useLang()
   const themeKey = useThemeKey()
   const [interval, setInterval_] = useState<ChartInterval>(() => store.get('et-chart-interval', '1d'))
-  const [kind, setKind] = useState<ChartKind>(() => store.get('et-chart-kind', 'candles'))
+  const [kind, setKind] = useState<ChartKind>(() => store.get('et-chart-kind2', 'line'))
   const [inds, setInds] = useState<IndicatorId[]>(() => store.get('et-chart-inds', ['vol']))
   const [tool, setTool] = useState<Tool>('cursor')
   const [drawings, setDrawings] = useState<Drawing[]>(() => store.get(`et-draw:${symbol}`, []))
@@ -98,6 +98,8 @@ export function ProChart({ symbol, decimals, up }: { symbol: string; decimals: n
   const box = useRef<HTMLDivElement>(null)
   const chartRef = useRef<IChartApi | null>(null)
   const mainRef = useRef<ISeriesApi<SeriesType> | null>(null)
+  /** Zoom y desplazamiento del usuario: se conservan cuando llegan velas nuevas o cambia el tipo de gráfico */
+  const viewRef = useRef<{ key: string; from: number; to: number } | null>(null)
 
   const { data: candles, isLoading, isError } = useQuery({
     queryKey: ['candles', symbol, interval],
@@ -108,7 +110,7 @@ export function ProChart({ symbol, decimals, up }: { symbol: string; decimals: n
   const shown = useMemo(() => (candles && kind === 'heikin' ? heikinAshi(candles) : (candles ?? [])), [candles, kind])
 
   useEffect(() => store.set('et-chart-interval', interval), [interval])
-  useEffect(() => store.set('et-chart-kind', kind), [kind])
+  useEffect(() => store.set('et-chart-kind2', kind), [kind])
   useEffect(() => store.set('et-chart-inds', inds), [inds])
   useEffect(() => store.set(`et-draw:${symbol}`, drawings), [drawings, symbol])
 
@@ -133,18 +135,20 @@ export function ProChart({ symbol, decimals, up }: { symbol: string; decimals: n
     chartRef.current = chart
     const data = shown.map(c => ({ time: ts(c.t), open: c.o, high: c.h, low: c.l, close: c.c }))
     let main: ISeriesApi<SeriesType>
+    // Precisión del eje según el precio (las memecoins necesitan 8 decimales o más)
+    const priceFormat = { type: 'price' as const, precision: decimals, minMove: 10 ** -decimals }
     if (kind === 'line') {
-      main = chart.addSeries(LineSeries, { color: up ? upC : downC, lineWidth: 2 })
+      main = chart.addSeries(LineSeries, { color: up ? upC : downC, lineWidth: 2, priceFormat })
       main.setData(shown.map(c => ({ time: ts(c.t), value: c.c })))
     } else if (kind === 'area') {
       const col = up ? upC : downC
-      main = chart.addSeries(AreaSeries, { lineColor: col, topColor: alpha(col, 0.28), bottomColor: 'transparent', lineWidth: 2 })
+      main = chart.addSeries(AreaSeries, { lineColor: col, topColor: alpha(col, 0.28), bottomColor: 'transparent', lineWidth: 2, priceFormat })
       main.setData(shown.map(c => ({ time: ts(c.t), value: c.c })))
     } else if (kind === 'bars') {
-      main = chart.addSeries(BarSeries, { upColor: upC, downColor: downC })
+      main = chart.addSeries(BarSeries, { upColor: upC, downColor: downC, priceFormat })
       main.setData(data)
     } else {
-      main = chart.addSeries(CandlestickSeries, { upColor: upC, downColor: downC, wickUpColor: upC, wickDownColor: downC, borderVisible: false })
+      main = chart.addSeries(CandlestickSeries, { upColor: upC, downColor: downC, wickUpColor: upC, wickDownColor: downC, borderVisible: false, priceFormat })
       main.setData(data)
     }
     mainRef.current = main
@@ -192,9 +196,14 @@ export function ProChart({ symbol, decimals, up }: { symbol: string; decimals: n
       panes.slice(1).forEach(p => p.setHeight(Math.round(total * 0.2)))
     }
 
-    // Últimos ~120 periodos a la vista
+    // Últimos ~120 periodos a la vista (o lo que el usuario estaba mirando)
     const n = shown.length
-    chart.timeScale().setVisibleLogicalRange({ from: Math.max(0, n - (intraday ? 160 : 120)), to: n + 5 })
+    const viewKey = `${symbol}:${interval}`
+    const saved = viewRef.current?.key === viewKey ? viewRef.current : null
+    chart.timeScale().setVisibleLogicalRange(saved ? { from: saved.from, to: saved.to } : { from: Math.max(0, n - (intraday ? 160 : 120)), to: n + 5 })
+    chart.timeScale().subscribeVisibleLogicalRangeChange(r => {
+      if (r) viewRef.current = { key: viewKey, from: r.from, to: r.to }
+    })
 
     const last = shown[n - 1]
     const prevC = shown[n - 2]?.c ?? last.o
@@ -223,7 +232,20 @@ export function ProChart({ symbol, decimals, up }: { symbol: string; decimals: n
       mainRef.current = null
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [shown, kind, inds, themeKey, interval, full])
+  }, [shown, kind, inds, themeKey, interval, full, decimals])
+
+  // ── Precio en directo: la última vela se mueve con cada cotización (sin rehacer el gráfico) ──
+  useEffect(() => {
+    const main = mainRef.current
+    const last = shown[shown.length - 1]
+    if (!main || !last || !live || kind === 'heikin' || Math.abs(live / last.c - 1) > 0.2) return
+    try {
+      if (kind === 'line' || kind === 'area') main.update({ time: ts(last.t), value: live })
+      else main.update({ time: ts(last.t), open: last.o, high: Math.max(last.h, live), low: Math.min(last.l, live), close: live })
+    } catch {
+      // el gráfico se está rehaciendo: la siguiente cotización lo pondrá al día
+    }
+  }, [live, shown, kind])
 
   // ── Coordenadas de los dibujos (por tiempo y precio, valen en cualquier intervalo) ──
   const xOf = useCallback(
@@ -327,7 +349,7 @@ export function ProChart({ symbol, decimals, up }: { symbol: string; decimals: n
         {txt}
       </text>
     )
-    if (d.kind === 'hline' && y1 !== null)
+    if (d.kind === 'hline' && y1 !== null && Number.isFinite(y1))
       return (
         <g key={d.id}>
           <line x1={0} x2={plotW} y1={y1} y2={y1} {...common} strokeDasharray="6 4" />
@@ -335,14 +357,14 @@ export function ProChart({ symbol, decimals, up }: { symbol: string; decimals: n
           {label(plotW - 4, y1 - 4, fmtP(d.a.p), 'end')}
         </g>
       )
-    if (d.kind === 'vline' && x1 !== null)
+    if (d.kind === 'vline' && x1 !== null && Number.isFinite(x1))
       return (
         <g key={d.id}>
           <line x1={x1} x2={x1} y1={0} y2={paneH} {...common} strokeDasharray="6 4" />
           <line x1={x1} x2={x1} y1={0} y2={paneH} stroke="transparent" strokeWidth={12} style={common.style} onPointerDown={common.onPointerDown} />
         </g>
       )
-    if (x1 === null || y1 === null || x2 === null || y2 === null) return null
+    if (x1 === null || y1 === null || x2 === null || y2 === null || ![x1, y1, x2, y2].every(Number.isFinite)) return null
     if (d.kind === 'trend')
       return (
         <g key={d.id}>
@@ -397,18 +419,25 @@ export function ProChart({ symbol, decimals, up }: { symbol: string; decimals: n
 
   return (
     <div className={full ? 'fixed inset-0 z-50 flex flex-col p-2 md:p-4' : 'card flex flex-col gap-2 px-2 pt-2 pb-2'} style={full ? { background: 'var(--bg)' } : undefined}>
-      {/* Barra superior: intervalos, tipo, indicadores, pantalla completa */}
-      <div className="no-scrollbar flex items-center gap-1 overflow-x-auto">
-        <div className="seg flex-none" role="group" aria-label={t('interval')}>
+      {/* Barra superior: intervalos (fila entera en el móvil); debajo, velas o línea, más tipos, indicadores y pantalla completa */}
+      <div className="flex flex-wrap items-center gap-1.5">
+        <div className="seg w-full md:w-auto md:flex-none" role="group" aria-label={t('interval')}>
           {INTERVALS.map(i => (
-            <button key={i} aria-pressed={interval === i} onClick={() => setInterval_(i)} className="px-2.5">
+            <button key={i} aria-pressed={interval === i} onClick={() => setInterval_(i)} className="px-1.5 md:px-2.5">
               {t(`intervals.${i}`)}
             </button>
           ))}
         </div>
+        <div className="seg flex-none" role="group" aria-label={t('kind')}>
+          {(['line', 'candles'] as const).map(k => (
+            <button key={k} aria-pressed={kind === k} onClick={() => setKind(k)} className="px-2.5">
+              {t(`kinds.${k}`)}
+            </button>
+          ))}
+        </div>
         <div className="relative flex-none">
-          <button className="chip h-8" style={{ background: 'var(--fill)' }} onClick={() => setMenu(menu === 'kind' ? null : 'kind')} aria-expanded={menu === 'kind'}>
-            <Icon name="chart" size={16} /> {t(`kinds.${kind}`)}
+          <button className="chip h-8" style={{ background: kind !== 'candles' && kind !== 'line' ? 'var(--brand)' : 'var(--fill)', color: kind !== 'candles' && kind !== 'line' ? 'var(--on-brand)' : undefined }} onClick={() => setMenu(menu === 'kind' ? null : 'kind')} aria-expanded={menu === 'kind'} aria-label={t('moreKinds')}>
+            <Icon name="chart" size={16} /> {kind !== 'candles' && kind !== 'line' ? t(`kinds.${kind}`) : '…'}
           </button>
           {menu === 'kind' && (
             <div className="card absolute left-0 z-20 mt-1 flex w-44 flex-col p-1 shadow-float">
@@ -422,11 +451,11 @@ export function ProChart({ symbol, decimals, up }: { symbol: string; decimals: n
         </div>
         <div className="relative flex-none">
           <button className="chip h-8" style={{ background: 'var(--fill)' }} onClick={() => setMenu(menu === 'ind' ? null : 'ind')} aria-expanded={menu === 'ind'}>
-            ƒx {t('indicators')}
+            ƒx <span className="hidden min-[400px]:inline">{t('indicators')}</span>
             {inds.length > 0 && <span className="t-cap">· {inds.length}</span>}
           </button>
           {menu === 'ind' && (
-            <div className="card absolute left-0 z-20 mt-1 flex w-60 flex-col p-1 shadow-float">
+            <div className="card absolute right-0 z-20 mt-1 flex w-60 flex-col p-1 shadow-float md:left-0 md:right-auto">
               {INDICATORS.map(id => (
                 <button key={id} className="flex items-center gap-2 rounded-lg px-3 py-2 text-left text-sm font-semibold" onClick={() => toggleInd(id)} aria-pressed={inds.includes(id)}>
                   <span className={`check ${inds.includes(id) ? 'on' : ''}`} style={{ width: 18, height: 18, borderRadius: 5 }}>
@@ -453,8 +482,8 @@ export function ProChart({ symbol, decimals, up }: { symbol: string; decimals: n
           <span>L {fmtP(legend.l)}</span>
           <span>C {fmtP(legend.c)}</span>
           <span className={upLegend ? 'up font-bold' : 'down font-bold'}>
-            {upLegend ? '+' : ''}
-            {legend.chg >= 0 ? '+' : ''}{legend.chg.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} %
+            {legend.chg >= 0 ? '+' : ''}
+            {legend.chg.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} %
           </span>
           {legend.v > 0 && <span>Vol {new Intl.NumberFormat(locale, { notation: 'compact' }).format(legend.v)}</span>}
         </div>

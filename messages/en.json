@@ -87,7 +87,7 @@
     ],
     "trial": "7 days free",
     "perMonth": "/month · or {year}/year",
-    "tryPremium": "Try Premium",
+    "tryPremium": "See plans",
     "contactTitle": "Contact",
     "contactSub": "Schools, academies, press or questions. We reply within 48 hours.",
     "name": "Name",
@@ -196,7 +196,7 @@
     "levelN": "Level {n}",
     "companionName": "Name (optional)",
     "balanceTitle": "Your virtual balance to practise with",
-    "balancePremium": "With Premium: {amount}",
+    "balancePremium": "With Plus or Max: {amount}",
     "beforeStart": "Before you start",
     "disclaimer": "E-Trading is an educational app. No real money is ever traded, it doesn't connect to any broker and it doesn't give investment advice.",
     "accept": "I understand and accept",
@@ -220,14 +220,23 @@
     "allDone": "You've finished every lesson available!",
     "freeDone": "You've finished the free lessons",
     "seePath": "See path",
-    "seePremium": "See Premium",
+    "seePremium": "See plans",
     "goalsTitle": "Today's goals",
     "goalsCount": "{done} of {total}",
     "allGoals": "All three done! +10 gems.",
     "portfolio": "Your portfolio",
     "today": "today",
     "portfolioChart": "Your portfolio over time",
-    "level": "Level {n} · {title} · {xp} XP"
+    "level": "Level {n} · {title} · {xp} XP",
+    "badgesTitle": "Your badges",
+    "badgesCount": "{n} of {total} earned",
+    "badgesAll": "See all",
+    "badgesEmpty": "You don’t have any yet: finish your first lesson to earn one.",
+    "quick": "Quick access",
+    "qLearn": "Lessons",
+    "qMarket": "Market",
+    "qBadges": "Badges",
+    "qLumi": "Ask Lumi"
   },
   "path": {
     "title": "Lessons",
@@ -238,15 +247,34 @@
     "unlocksOrders": "Passing «Where to place the stop loss» unlocks those orders in the Market.",
     "completed": "Completed",
     "available": "Available · {min} min · +{xp} XP",
-    "premium": "Included in Premium",
+    "premium": "Included in a paid plan",
     "lockedReview": "Locked · end-of-unit quiz",
     "locked": "Locked",
     "lockedTitle": "Not available yet",
     "lockedBody": "Lessons open in order. Finish the previous one and this one unlocks by itself.",
-    "premiumTitle": "This lesson is Premium",
-    "premiumBody": "Premium gives you every lesson, unlimited lives and advanced orders. Try it free for 7 days.",
-    "seePremium": "See Premium",
-    "ok": "Got it"
+    "premiumTitle": "This lesson is in a paid plan",
+    "premiumBody": "Plus or Max gives you more lessons, unlimited lives and more help from Lumi. Try it free for 7 days.",
+    "seePremium": "See plans",
+    "ok": "Got it",
+    "inPlus": "Included in Plus",
+    "inMax": "Included in Max",
+    "sideUnit": "Extra",
+    "unitProgress": "{pct}% done",
+    "access": {
+      "PARTIAL_PLUS": "Partly Plus",
+      "PARTIAL_MAX": "Partly Plus and Max",
+      "MAX": "Max"
+    },
+    "plusTitle": "This lesson is in the Plus plan",
+    "plusBody": "Plus gives you units 4 and 5 in full, the first 5 lessons of every unit, unlimited lives and more questions to Lumi.",
+    "maxTitle": "This lesson is in the Max plan",
+    "maxBody": "Max gives you the whole course, every Lumi mode and 100 questions a day.",
+    "timeLeft": "{n} lessons left: about {h} h {m} min in total.",
+    "daysAtPace": "At your pace of {pace} min a day, you’ll finish in about {days} days",
+    "paceOption": "{m} min/day: {days} days",
+    "summary": "You’ve done {done} of {total} lessons",
+    "continueNext": "Next: {title}",
+    "continueBtn": "Continue"
   },
   "lesson": {
     "close": "Close lesson",
@@ -266,8 +294,8 @@
     "supportImg": "Support below and resistance above; the price bounces between them",
     "support": "Support",
     "resistance": "Resistance",
-    "premiumOnly": "This lesson is Premium",
-    "seePremium": "See Premium",
+    "premiumOnly": "This lesson is in a paid plan",
+    "seePremium": "See plans",
     "back": "Back to Lessons",
     "keyIdea": "Key idea",
     "img": {
@@ -338,7 +366,7 @@
     "noLivesTitle": "You're out of lives",
     "noLivesBody": "Take a break. Meanwhile, you can review mistakes or practise in the Market.",
     "nextLife": "Next life in",
-    "unlimited": "Unlimited lives with Premium",
+    "unlimited": "Unlimited lives with Plus or Max",
     "refill": "Refill for 350 gems · you have {have}",
     "refilled": "Lives refilled",
     "reviewMistakes": "Review {n} mistakes (no lives lost)",
@@ -366,7 +394,7 @@
       "COMMODITY": "Commodities"
     },
     "noResults": "No assets with that name.",
-    "emptyWatch": "You're not following any asset yet. Tap ☆ Follow on any asset page.",
+    "emptyWatch": "You’re not following any asset yet. Search for one or tap «All».",
     "stale": "Some prices are a few minutes behind. Reconnecting to the provider…",
     "staleAsset": "Delayed price (last known). Reconnecting…",
     "dataNote": "Real prices: US stocks and crypto live; Spanish stocks, Xetra and the IBEX delayed by 15 min. Currencies live.",
@@ -433,7 +461,7 @@
     "fee": "Simulated fee",
     "cashAfter": "Available after the order",
     "youGet": "You'll receive",
-    "lockedNote": "Limit, stop loss and take profit unlock with the «Where to place the stop loss» lesson or with Premium.",
+    "lockedNote": "Limit, stop loss and take profit unlock with the «Where to place the stop loss» lesson or with the Max plan.",
     "closedNote": "The market is closed: the order will stay pending and run when it opens.",
     "confirmBuy": "Buy now",
     "confirmSell": "Sell now",
@@ -442,7 +470,9 @@
     "errors": {
       "INSUFFICIENT_FUNDS": "Not enough cash",
       "INSUFFICIENT_QTY": "You don't hold that many units",
-      "MIN_AMOUNT": "The minimum is €1"
+      "MIN_AMOUNT": "The minimum is €1",
+      "BAD_STOP": "The stop loss must be below the price",
+      "BAD_TAKE_PROFIT": "The take profit must be above the price"
     },
     "riskTitle": "Risk warning",
     "riskHead": "Hold on, {name}. That's a lot in a single asset.",
@@ -454,9 +484,9 @@
     "buyAnyway": "Buy anyway",
     "whatDiversify": "What is diversifying? · See lessons",
     "lockTitle": "This feature is still locked",
-    "lockBody": "Limit, stop loss and take profit orders unlock when you pass the «Where to place the stop loss» lesson (Unit 10 · Risk management, free) or with Premium. That way you understand what they're for first.",
+    "lockBody": "Limit, stop loss and take profit orders unlock when you pass the «Where to place the stop loss» lesson (Unit 10 · Risk management, free) or with the Max plan. That way you understand what they're for first.",
     "goLesson": "Go to the lesson",
-    "seePremium": "See Premium",
+    "seePremium": "See plans",
     "gotIt": "Got it",
     "pendingTitle": "Order pending",
     "boughtTitle": "Purchase done",
@@ -507,7 +537,7 @@
     "noAlerts": "You have no alerts. Create them from an asset page.",
     "buyNoun": "Buy",
     "sellNoun": "Sell",
-    "searchGlobal": "Search 1,600+ assets: Apple, Santander, Toyota…",
+    "searchGlobal": "Search almost 4,000 assets: Apple, Santander, Bitcoin, gold…",
     "clearSearch": "Clear search",
     "resultsCount": "{n, plural, =0 {No results} one {# result} other {# results}}",
     "seeAllResults": "See all {n} results",
@@ -531,12 +561,12 @@
     "commodity": "Commodity",
     "contracts": "contracts",
     "typeHint": {
-      "STOCK": "S&P 500, Europe and Asia",
-      "ETF": "Ready-made baskets",
+      "STOCK": "3,600: US, Europe, Asia and Latin America",
+      "ETF": "174 baskets: indices, sectors, bonds, gold…",
       "INDEX": "Each market's thermometer",
       "CRYPTO": "Open 24/7",
       "FX": "Currency pairs",
-      "COMMODITY": "Gold, oil, coffee…"
+      "COMMODITY": "Gold, silver, platinum, oil, coffee…"
     },
     "dataNoteGlobal": "Real prices from Yahoo Finance. US, crypto and FX near real time; Europe 15 min delayed, Asia 15–20 min. Commodities: futures, 10 min delayed.",
     "typeLabel": "Asset type",
@@ -548,7 +578,8 @@
     "sort": {
       "name": "Name (A-Z)",
       "gainers": "Top gainers today",
-      "losers": "Top losers today"
+      "losers": "Top losers today",
+      "popular": "Best known"
     },
     "clearFilters": "Clear filters",
     "loadMore": "Load more",
@@ -564,7 +595,25 @@
     "timezoneLabel": "Exchange time",
     "dayRange": "Day's range",
     "range52": "52-week range",
-    "partOf": "Part of"
+    "partOf": "Part of",
+    "coachTitle": "{name} checks your order",
+    "coachLesson": "Review the lesson",
+    "sellBy": "Sell by",
+    "sellPct": "Percentage",
+    "sellAmount": "Amount",
+    "ofValue": "of {value}",
+    "exitsTitle": "Automatic exits",
+    "addStop": "Stop loss",
+    "addTp": "Take profit",
+    "lossAtStop": "If it triggers, you’d lose about {amount}",
+    "gainAtTarget": "If it’s reached, you’d gain about {amount}",
+    "exitsNote": "They’re created when the buy fills. If one triggers, the other is cancelled.",
+    "categoryLabel": "Category",
+    "exitOfBuy": "exit of your buy",
+    "favorites": "Favourites",
+    "everything": "All",
+    "favHint": "Tap ☆ Follow on any asset to keep it here.",
+    "seeEverything": "See the whole market"
   },
   "streak": {
     "title": "Streak",
@@ -584,7 +633,7 @@
     "rule": "A day counts as active with a lesson, a quiz or a trade, in your time zone ({tz}). You have {gems} gems."
   },
   "achievements": {
-    "title": "Achievements",
+    "title": "Badges",
     "count": "{n} of {total}",
     "inProgress": "In progress",
     "cat": {
@@ -621,16 +670,16 @@
     "streakDays": "day streak",
     "gems": "gems",
     "lessons": "lessons",
-    "achievementsN": "achievements",
+    "achievementsN": "badges",
     "habits": "Your trading habits",
     "tradesPerDay": "Trades per day",
     "winRate": "Profitable trades",
     "drawdown": "Largest portfolio drop",
     "streak": "Streak",
-    "achievements": "Achievements",
+    "achievements": "Badges",
     "notifications": "Notifications",
     "portfolio": "Portfolio",
-    "tryPremium": "Try Premium free for 7 days"
+    "tryPremium": "Try free for 7 days"
   },
   "notifications": {
     "title": "Notifications",
@@ -639,33 +688,45 @@
     "empty": "No notifications. We'll let you know when something important happens."
   },
   "premium": {
-    "title": "Learn without limits with Premium",
-    "features": [
-      "Every lesson and unit",
-      "Unlimited lives in quizzes",
-      "€50,000 virtual money to practise with",
-      "Limit, stop loss and take profit orders",
-      "Lumi reviews your portfolio every week",
-      "One streak freeze every week"
-    ],
+    "title": "Choose how you learn",
     "yearly": "Yearly",
     "yearlyPrice": "{price} a year · {month}/month",
     "monthly": "Monthly",
     "monthlyPrice": "{price} a month",
-    "tryFree": "Try {days} days free",
+    "tryFree": "Try {plan} free for {days} days",
     "after": "Then {price}{per}. Cancel any time in Settings. We'll remind you 2 days before charging.",
     "perYear": "/year",
     "perMonth": "/month",
     "demoNote": "Test version: nothing is charged. Real payments with Stripe arrive in stage 7.",
     "confirming": "Confirming payment…",
     "failed": "The payment couldn't be completed. You haven't been charged.",
-    "welcome": "You're Premium now",
+    "welcome": "You have {plan} now",
     "trialEnds": "Your free trial ends on {date}. We've added <b>{amount} of virtual money</b> to your portfolio.",
     "start": "Start",
-    "youArePremium": "You have Premium",
     "trialUntil": "Free trial until {date}.",
     "active": "Your subscription is active.",
-    "manage": "Manage in Settings"
+    "manage": "Manage in Settings",
+    "choosePlan": "Plan",
+    "plusPitch": "Plus: the middle plan. Units 4 and 5 in full and the first 5 lessons of every unit.",
+    "maxPitch": "Max: the whole course and all of Lumi, no limits.",
+    "plusFeatures": [
+      "Units 1 to 5 in full",
+      "The first 5 lessons of every unit",
+      "Unlimited lives in quizzes",
+      "€50,000 virtual money to practise with",
+      "30 questions a day to Lumi and the «My portfolio» mode"
+    ],
+    "maxFeatures": [
+      "All 13 units, no exceptions",
+      "Unlimited lives in quizzes",
+      "€50,000 virtual money to practise with",
+      "Limit, stop loss and take profit from day one",
+      "100 questions a day to Lumi and every mode, including «My biases»",
+      "One streak freeze every week"
+    ],
+    "youAre": "You’re on the {plan} plan.",
+    "upgradeTitle": "Upgrade to Max",
+    "upgradeCta": "Upgrade to Max"
   },
   "settings": {
     "title": "Settings",
@@ -676,9 +737,9 @@
     "trialEnds": "Trial ends",
     "nextCharge": "Next charge",
     "cancel": "Cancel subscription",
-    "cancelConfirm": "Are you sure you want to cancel Premium?",
+    "cancelConfirm": "Are you sure you want to cancel your plan?",
     "cancelled": "Subscription cancelled",
-    "upgrade": "Upgrade to Premium",
+    "upgrade": "See plans",
     "profile": "Profile",
     "name": "Name",
     "save": "Save",
@@ -757,7 +818,7 @@
     "range": "Period",
     "dauMau": "Active users (DAU / MAU)",
     "retention": "D7 retention",
-    "conversion": "Premium conversion",
+    "conversion": "Paid plan conversion",
     "trades": "Simulated trades",
     "activeByDay": "Active users per day",
     "funnel": "Funnel",
@@ -873,7 +934,9 @@
     "error": "Couldn't load the chart. Retrying…",
     "noData": "No data for this interval.",
     "hintOne": "Tap the chart to place the line.",
-    "hintTwo": "Tap two points on the chart."
+    "hintTwo": "Tap two points on the chart.",
+    "kind": "Chart type",
+    "moreKinds": "More chart types"
   },
   "tutor": {
     "title": "Ask {name}",
@@ -887,8 +950,8 @@
     "modeHint": {
       "EXPLAIN": "Ask about any course concept: she explains it with examples.",
       "PATH": "Recommends your next step based on your progress.",
-      "PORTFOLIO": "Reviews your simulated positions and trades using what the course teaches. Premium.",
-      "BIASES": "Spots biases in your questions and trades and suggests rules. Premium."
+      "PORTFOLIO": "Reviews your simulated positions and trades using what the course teaches. Plus or Max.",
+      "BIASES": "Spots biases in your questions and trades and suggests rules. Plus or Max."
     },
     "hello": "Hi, I’m {name}",
     "intro": "Your course tutor. Ask me anything you don’t understand: I answer with the E-Trading manual and your progress. I don’t give investment advice: I teach you to decide for yourself.",
@@ -903,18 +966,51 @@
     "placeholder": "Type your question…",
     "send": "Send",
     "left": "{n} of {total} questions today",
-    "engineAi": "AI answers based on the course",
-    "engineManual": "Answers taken from the course manual",
     "sources": "From the course:",
     "clear": "Delete the conversation",
     "cleared": "Conversation deleted",
-    "premiumMode": "This mode reviews your portfolio and biases: it’s Premium.",
-    "seePremium": "See Premium",
-    "limitFree": "You’ve used your 5 free questions today. Premium gives you 100 a day plus the portfolio and bias modes.",
+    "premiumMode": "This mode is in Plus («My portfolio») or Max («My biases»).",
+    "seePremium": "See plans",
+    "limitFree": "You’ve used your 5 free questions today. Plus gives you 30 a day and Max 100 plus every mode.",
     "limitPremium": "You’ve reached today’s limit. More tomorrow.",
     "error": "I couldn’t answer. Try again.",
     "ask": "Ask {name}",
     "askHint": "Questions? Your tutor answers with the course",
-    "askLesson": "Ask the tutor"
+    "askLesson": "Ask the tutor",
+    "engineLumi": "Lumi answers from the course, no external AI"
+  },
+  "lumi": {
+    "title": "Your {name}",
+    "stage": "Glow level {n} of 5 · {name}",
+    "stages": {
+      "1": "One spark",
+      "2": "Two sparks",
+      "3": "Three sparks",
+      "4": "Four sparks",
+      "5": "Full glow"
+    },
+    "story": "Lumi is a jelly cube that keeps you company in E-Trading. It explains what you don’t understand, warns you before a bad trade and reminds you of your plan when the market gets nervous. The more you learn, the more it glows: little bubbles of light appear inside.",
+    "growTitle": "It glows with you",
+    "fromLevel": "Level {n}",
+    "next": "At level {n} it becomes «{name}».",
+    "max": "Lumi is glowing at full power. Well done.",
+    "colorTitle": "Colour",
+    "moodsTitle": "How it expresses itself",
+    "moods": {
+      "HAPPY": "Happy",
+      "CELEBRATE": "Celebrating",
+      "THINKING": "Thinking",
+      "WORRIED": "Warning you",
+      "CALM": "Calm",
+      "SLEEPY": "Misses you"
+    },
+    "skins": {
+      "azul": "Blue",
+      "grafito": "Graphite",
+      "plata": "Silver",
+      "hielo": "Ice"
+    },
+    "saved": "Colour saved",
+    "error": "Couldn’t save"
   }
 }

@@ -34,9 +34,9 @@ export interface ContentUnit {
   order: number
   title: string
   description: string
-  premiumOnly: boolean
-  freeLessonIds?: string[]
   unlocksFeature?: FeatureT
+  /** Unidad paralela (Vocabulario): se puede hacer en cualquier momento, sin esperar al camino principal */
+  side?: boolean
   lessons: ContentLesson[]
 }
 

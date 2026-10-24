@@ -195,8 +195,8 @@ function Flow({ initialStep, initialDraft }: { initialStep: number; initialDraft
             })}
           </div>
           <h2 className="t-head m-0 mt-2">{t('dailyGoal')}</h2>
-          <div className="grid grid-cols-4 gap-2.5">
-            {([5, 10, 15, 20] as const).map(m => (
+          <div className="grid grid-cols-5 gap-2">
+            {([5, 10, 15, 20, 30] as const).map(m => (
               <button key={m} className="opt flex-col gap-0 px-1.5 py-3 text-center" aria-pressed={d.dailyGoalMinutes === m} onClick={() => set({ dailyGoalMinutes: m })}>
                 <b className="text-xl">{m}</b>
                 <span className="t-cap">min</span>
@@ -241,7 +241,7 @@ function Flow({ initialStep, initialDraft }: { initialStep: number; initialDraft
               const locked = s.unlockLevel > 1
               return (
                 <button key={s.id} className="opt flex-col gap-1.5 px-1 py-2.5 text-center text-xs" aria-pressed={d.skinId === s.id} disabled={locked} onClick={() => set({ skinId: s.id })} style={locked ? { opacity: 0.55 } : undefined}>
-                  <span className="h-[30px] w-[30px] rounded-[10px]" style={{ background: s.color }} />
+                  <Lumi mood="HAPPY" size={34} skin={s.id} stage={1} animated={false} />
                   {t(`skins.${s.id}`)}
                   {locked && <span className="t-cap">{t('levelN', { n: s.unlockLevel })}</span>}
                 </button>

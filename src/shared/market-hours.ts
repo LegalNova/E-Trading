@@ -20,6 +20,11 @@ export const SESSIONS: Record<string, Session> = {
   NASDAQ: S('America/New_York', [m(9, 30), m(16)]),
   NYSE: S('America/New_York', [m(9, 30), m(16)]),
   INDEX_US: S('America/New_York', [m(9, 30), m(16)]),
+  TSX: S('America/Toronto', [m(9, 30), m(16)]),
+  B3: S('America/Sao_Paulo', [m(10), m(17, 55)]),
+  BMV: S('America/Mexico_City', [m(8, 30), m(15)]),
+  BCBA: S('America/Argentina/Buenos_Aires', [m(11), m(17)]),
+  BCS: S('America/Santiago', [m(9, 30), m(16)]),
   // Europa
   LSE: S('Europe/London', [m(8), m(16, 30)]),
   XETRA: S('Europe/Berlin', [m(9), m(17, 30)]),
@@ -37,6 +42,8 @@ export const SESSIONS: Record<string, Session> = {
   HEL: S('Europe/Helsinki', [m(10), m(18, 30)]),
   DUB: S('Europe/Dublin', [m(8), m(16, 30)]),
   VIE: S('Europe/Vienna', [m(9), m(17, 30)]),
+  WSE: S('Europe/Warsaw', [m(9), m(17)]),
+  BIST: S('Europe/Istanbul', [m(10), m(18)]),
   // Asia-Pacífico
   TSE: S('Asia/Tokyo', [m(9), m(11, 30)], [m(12, 30), m(15, 30)]),
   HKEX: S('Asia/Hong_Kong', [m(9, 30), m(12)], [m(13), m(16)]),
@@ -46,6 +53,11 @@ export const SESSIONS: Record<string, Session> = {
   ASX: S('Australia/Sydney', [m(10), m(16)]),
   TWSE: S('Asia/Taipei', [m(9), m(13, 30)]),
   SSE: S('Asia/Shanghai', [m(9, 30), m(11, 30)], [m(13), m(15)]),
+  SZSE: S('Asia/Shanghai', [m(9, 30), m(11, 30)], [m(13), m(15)]),
+  IDX: S('Asia/Jakarta', [m(9), m(12)], [m(13, 30), m(15, 50)]),
+  BURSA: S('Asia/Kuala_Lumpur', [m(9), m(12, 30)], [m(14, 30), m(17)]),
+  SET: S('Asia/Bangkok', [m(10), m(12, 30)], [m(14, 30), m(16, 30)]),
+  NZX: S('Pacific/Auckland', [m(10), m(16, 45)]),
 }
 
 /** Bolsa de cada zona horaria (para los índices, que no tienen sufijo) */
@@ -53,6 +65,10 @@ export const EXCHANGE_BY_TZ: Record<string, string> = {
   'America/New_York': 'US', 'Europe/London': 'LSE', 'Europe/Berlin': 'XETRA', 'Europe/Paris': 'EPA', 'Europe/Amsterdam': 'AMS', 'Europe/Madrid': 'BME',
   'Europe/Rome': 'MIL', 'Europe/Zurich': 'SIX', 'Asia/Tokyo': 'TSE', 'Asia/Hong_Kong': 'HKEX', 'Asia/Kolkata': 'NSE', 'Asia/Seoul': 'KRX',
   'Asia/Singapore': 'SGX', 'Australia/Sydney': 'ASX', 'Asia/Taipei': 'TWSE', 'Asia/Shanghai': 'SSE',
+  'America/Chicago': 'US', 'America/Toronto': 'TSX', 'America/Sao_Paulo': 'B3', 'America/Mexico_City': 'BMV', 'America/Argentina/Buenos_Aires': 'BCBA',
+  'America/Santiago': 'BCS', 'Europe/Stockholm': 'STO', 'Europe/Copenhagen': 'CPH', 'Europe/Oslo': 'OSL', 'Europe/Helsinki': 'HEL', 'Europe/Brussels': 'BRU',
+  'Europe/Lisbon': 'LIS', 'Europe/Vienna': 'VIE', 'Europe/Dublin': 'DUB', 'Europe/Warsaw': 'WSE', 'Europe/Istanbul': 'BIST', 'Asia/Jakarta': 'IDX',
+  'Asia/Kuala_Lumpur': 'BURSA', 'Asia/Bangkok': 'SET', 'Pacific/Auckland': 'NZX',
 }
 
 /** Festivos conocidos (fecha local de cada bolsa) */

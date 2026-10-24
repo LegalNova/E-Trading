@@ -19,7 +19,7 @@ export const fail = (status: number, code: string, message: string): never => {
 
 export const LIVES_MAX = 5
 export const LIFE_MS = 4 * 3_600_000
-export const START_CASH = { FREE: 10_000, PREMIUM: 50_000 } as const
+export const START_CASH = { FREE: 10_000, PLUS: 50_000, PREMIUM: 50_000 } as const
 export const RISK_PCT = 20
 export const FREEZE_PRICE = 200
 export const REFILL_PRICE = 350
@@ -91,11 +91,11 @@ export async function withCtx<T>(fn: (c: Ctx) => Promise<T>, user?: User): Promi
 
 /** Prueba de Premium sin pago: al terminar vuelve a Free (no hay cobro hasta conectar Stripe) */
 async function expireTrial(tx: Tx, u: User): Promise<User> {
-  if (u.plan !== 'PREMIUM') return u
+  if (u.plan === 'FREE') return u
   const sub = await tx.subscription.findUnique({ where: { userId: u.id } })
   if (sub?.status === 'TRIALING' && sub.trialEndsAt && sub.trialEndsAt.getTime() < Date.now()) {
     await tx.subscription.update({ where: { userId: u.id }, data: { status: 'CANCELED', renewsAt: null } })
-    await tx.notification.create({ data: { userId: u.id, type: 'NEW_LESSON', title: 'Tu prueba de Premium ha terminado', body: 'Sigues con todo lo de Free. Puedes volver a Premium cuando quieras.', deepLink: '/premium' } })
+    await tx.notification.create({ data: { userId: u.id, type: 'NEW_LESSON', title: 'Tu prueba ha terminado', body: 'Sigues con todo lo de Free. Puedes volver a Plus o Max cuando quieras.', deepLink: '/premium' } })
     return tx.user.update({ where: { id: u.id }, data: { plan: 'FREE' } })
   }
   return u
@@ -163,13 +163,13 @@ export async function markActive(c: Ctx): Promise<boolean> {
 }
 
 export type GoalId = 'lesson' | 'ops' | 'perfect'
-/** Objetivos del día según la meta elegida (5, 10, 15 o 20 minutos). Cumplir los tres da +10 gemas. */
+/** Objetivos del día según la meta elegida (5, 10, 15, 20 o 30 minutos). Cumplir los tres da +10 gemas. */
 export function goalDefs(minutes: number): { id: GoalId; target: number; xp: number }[] {
-  const m = [5, 10, 15, 20].includes(minutes) ? minutes : 10
+  const m = [5, 10, 15, 20, 30].includes(minutes) ? minutes : 10
   return [
-    { id: 'lesson', target: m >= 15 ? 2 : 1, xp: m >= 15 ? 30 : 20 },
-    { id: 'ops', target: m === 5 ? 1 : m === 20 ? 3 : 2, xp: 15 },
-    { id: 'perfect', target: m === 20 ? 2 : 1, xp: 25 },
+    { id: 'lesson', target: m >= 30 ? 4 : m >= 15 ? 2 : 1, xp: m >= 15 ? 30 : 20 },
+    { id: 'ops', target: m === 5 ? 1 : m >= 20 ? 3 : 2, xp: 15 },
+    { id: 'perfect', target: m >= 30 ? 3 : m === 20 ? 2 : 1, xp: 25 },
   ]
 }
 export const minutesOf = (u: User) => Number((u.settings as { dailyGoalMinutes?: number } | null)?.dailyGoalMinutes ?? 10)
@@ -198,7 +198,7 @@ export async function bumpGoal(c: Ctx, id: GoalId) {
 
 // ── Vidas ────────────────────────────────────────────────
 export function livesOf(user: User, g: GameState): LivesT {
-  if (user.plan === 'PREMIUM') return { current: LIVES_MAX, max: LIVES_MAX, nextRegenAt: null, regenHours: 4 }
+  if (user.plan !== 'FREE') return { current: LIVES_MAX, max: LIVES_MAX, nextRegenAt: null, regenHours: 4 }
   return { current: g.lives, max: LIVES_MAX, nextRegenAt: g.lives < LIVES_MAX ? new Date(g.livesUpdatedAt.getTime() + LIFE_MS).toISOString() : null, regenHours: 4 }
 }
 
@@ -254,7 +254,7 @@ export async function checkAchievements(c: Ctx) {
     await c.tx.userAchievement.create({ data: { userId: c.user.id, code: a.code } })
     c.g.gems += a.reward.gems
     addXp(c, a.reward.xp)
-    await notify(c, 'ACHIEVEMENT', `Logro: ${a.title}`, `+${a.reward.gems} gemas y +${a.reward.xp} XP.`, '/perfil/logros')
+    await notify(c, 'ACHIEVEMENT', `Insignia: ${a.title}`, `+${a.reward.gems} gemas y +${a.reward.xp} XP.`, '/insignias')
     c.fx.ach.push({ ...a, unlocked: true, unlockedAt: new Date().toISOString(), progress: a.target })
   }
 }

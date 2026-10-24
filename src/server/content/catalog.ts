@@ -2,7 +2,7 @@ import 'server-only'
 // Contenido del curso (D-016: vive en el repo). SOLO en el servidor: incluye las soluciones.
 import type { Mood } from '@/shared/contract'
 
-// ── Curso «De cero a inversor» (docs/curso): 12 unidades, una por módulo del manual ──
+// ── Curso «De cero a inversor» (docs/curso): 12 unidades (una por módulo del manual) + Vocabulario ──
 import { QUIZZES as Q, single, tf, trend, type ContentLesson, type ContentQuestion, type ContentUnit } from './dsl'
 import u01 from './course/u01'
 import u02 from './course/u02'
@@ -16,11 +16,16 @@ import u09 from './course/u09'
 import u10 from './course/u10'
 import u11 from './course/u11'
 import u12 from './course/u12'
+import u13 from './course/u13'
 
 export type { ContentLesson, ContentQuestion, ContentUnit }
-export const UNITS: ContentUnit[] = [u01, u02, u03, u04, u05, u06, u07, u08, u09, u10, u11, u12]
+export const UNITS: ContentUnit[] = [u01, u02, u03, u04, u05, u06, u07, u08, u09, u10, u11, u12, u13]
 export const QUIZZES = Q
 export const LESSON = Object.fromEntries(UNITS.flatMap(u => u.lessons.map(l => [l.id, { ...l, unit: u }]))) as Record<string, ContentLesson & { unit: ContentUnit }>
+/** Minutos estimados del curso: pasos de cada lección + unos 25 s por pregunta de quiz */
+export const SECONDS_PER_QUESTION = 25
+export const lessonMinutes = (l: ContentLesson) => l.minutes + ((QUIZZES[l.quizId]?.length ?? 0) * SECONDS_PER_QUESTION) / 60
+export const courseMinutes = () => Math.round(UNITS.flatMap(u => u.lessons).reduce((a, l) => a + lessonMinutes(l), 0))
 /** Lección cuyo aprobado desbloquea las órdenes límite, stop loss y take profit */
 export const RISK_LESSON = 'u10l3'
 

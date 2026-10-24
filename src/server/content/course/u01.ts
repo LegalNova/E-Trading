@@ -3,7 +3,7 @@ import 'server-only'
 import { fill, img, key, lesson, multi, order, single, text, tf, unit } from '../dsl'
 
 export default unit({
-  id: 'u1', order: 1, title: 'El dinero y por qué invertir', description: 'Inflación, interés compuesto y si estás listo para invertir', premiumOnly: false,
+  id: 'u1', order: 1, title: 'El dinero y por qué invertir', description: 'Inflación, interés compuesto y si estás listo para invertir',
   lessons: [
     lesson('u1l1', 'Tu dinero pierde valor cada día', [
       text('Qué es la inflación', 'La inflación es la subida general de los precios. Si el pan, la luz y el alquiler suben de media un 3 % en un año, la inflación ha sido del 3 %.\n\nEn España la mide el INE con el IPC. En 2025 fue del **2,7 %** de media.'),

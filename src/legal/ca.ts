@@ -57,7 +57,7 @@ export const ca: Record<LegalSlug, LegalDoc> = {
           'Activitat educativa: lliçons, respostes dels qüestionaris, XP, ratxa, vides, gemmes, assoliments i posició a la lliga.',
           'Simulador: ordres, operacions, cartera virtual i alertes de preu. Tot són diners virtuals: no tractem dades bancàries ni de pagament.',
           'Dades tècniques: adreça IP i navegador, per a la seguretat, els límits d’ús i l’inici de sessió.',
-          'Preguntes a la Lumi (la professora): el text de les teves preguntes, les respostes i el mode triat, per mostrar-te l’historial i comptar el teu límit diari. Pots esborrar l’historial quan vulguis.',
+          'Preguntes a la Lumi (la professora): el text de les teves preguntes, les respostes i el mode triat, per mostrar-te l’historial i comptar el teu límit diari. La Lumi funciona als nostres propis servidors: les teves preguntes no s’envien a cap servei d’intel·ligència artificial de tercers. Pots esborrar l’historial quan vulguis.',
           'Comunicacions: el que ens enviïs pel formulari de contacte i, si t’hi apuntes, el teu email a la llista de novetats.',
         ],
         p: ['No fem servir eines d’analítica ni de publicitat de tercers i no venem les teves dades.'],
@@ -103,7 +103,6 @@ export const ca: Record<LegalSlug, LegalDoc> = {
           rows: [
             ['Vercel Inc.', 'Allotjament de l’aplicació', 'EUA · Marc de privadesa de dades UE-EUA i clàusules contractuals tipus'],
             ['Neon Inc. (sobre Amazon Web Services)', 'Base de dades', 'EUA (us-east-1) · contracte d’encarregat i clàusules contractuals tipus'],
-            ['Anthropic PBC', 'Respostes de la Lumi amb IA: rep la teva pregunta, les darreres de la conversa, fragments del curs i un resum del teu progrés (nivell, lliçons i, en els modes de cartera, les teves operacions simulades). No rep el teu email', 'EUA · contracte d’encarregat i clàusules contractuals tipus. Segons les seves condicions comercials, no fa servir aquestes dades per entrenar els seus models'],
             ['Google LLC', 'Inici de sessió amb Google (només si el fas servir)', 'EUA · Marc de privadesa de dades UE-EUA'],
           ],
         },

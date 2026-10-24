@@ -1,9 +1,9 @@
 import 'server-only'
-// Unidad 6 · La economía que mueve los mercados (docs/curso/06). Premium.
+// Unidad 6 · La economía que mueve los mercados (docs/curso/06). Acceso por plan: src/shared/plans.ts
 import { fill, key, lesson, multi, order, sim, single, text, tf, unit } from '../dsl'
 
 export default unit({
-  id: 'u6', order: 6, title: 'La economía y los mercados', description: 'Tipos de interés, inflación, ciclo y datos económicos', premiumOnly: true,
+  id: 'u6', order: 6, title: 'La economía y los mercados', description: 'Tipos de interés, inflación, ciclo y datos económicos',
   lessons: [
     lesson('u6l1', 'Bancos centrales y tipos de interés', [
       text('Quién fija el precio del dinero', '• **BCE:** zona euro, objetivo de inflación del 2 %.\n• **Reserva Federal:** EE. UU., precios estables y máximo empleo.\n\nEn junio de 2026 el BCE subió la facilidad de depósito al **2,25 %**.'),

@@ -15,25 +15,27 @@ type Handler = (req: NextRequest, p: string[], body: unknown) => Promise<unknown
 interface Route { method: string; path: string; run: Handler }
 
 const order = z.object({
-  symbol: z.string().max(12),
+  symbol: z.string().max(24),
   side: z.enum(['BUY', 'SELL']),
   type: z.enum(['MARKET', 'LIMIT', 'STOP_LOSS', 'TAKE_PROFIT']),
   amount: z.string().regex(/^\d+(\.\d+)?$/).optional(),
   qty: z.string().regex(/^\d+(\.\d+)?$/).optional(),
   triggerPrice: z.string().regex(/^\d+(\.\d+)?$/).optional(),
+  stopLoss: z.string().regex(/^\d+(\.\d+)?$/).optional(),
+  takeProfit: z.string().regex(/^\d+(\.\d+)?$/).optional(),
   riskAcknowledged: z.boolean().optional(),
   followedRiskAdvice: z.boolean().optional(),
 })
 const draft = z
   .object({
     name: z.string().max(30), gender: z.enum(['F', 'M', 'N']), birthDate: z.string().max(10), experience: z.enum(['NONE', 'SOME', 'EXPERIENCED']), goals: z.array(z.string().max(40)).max(10),
-    dailyGoalMinutes: z.union([z.literal(5), z.literal(10), z.literal(15), z.literal(20)]), skinId: z.enum(['azul', 'grafito', 'plata', 'hielo']), companionName: z.string().max(14), disclaimerAccepted: z.boolean(),
+    dailyGoalMinutes: z.union([z.literal(5), z.literal(10), z.literal(15), z.literal(20), z.literal(30)]), skinId: z.enum(['azul', 'grafito', 'plata', 'hielo']), companionName: z.string().max(14), disclaimerAccepted: z.boolean(),
   })
   .partial()
 const settings = z
   .object({
-    locale: z.enum(['es', 'ca', 'en']), currency: z.enum(['EUR', 'USD']), dailyGoalMinutes: z.union([z.literal(5), z.literal(10), z.literal(15), z.literal(20)]), theme: z.enum(['AUTO', 'LIGHT', 'DARK']),
-    gender: z.enum(['F', 'M', 'N']), notificationPrefs: z.record(z.string(), z.object({ inApp: z.boolean(), email: z.boolean(), push: z.boolean() })), name: z.string().max(30), companionName: z.string().max(14), leagueVisible: z.boolean(),
+    locale: z.enum(['es', 'ca', 'en']), currency: z.enum(['EUR', 'USD']), dailyGoalMinutes: z.union([z.literal(5), z.literal(10), z.literal(15), z.literal(20), z.literal(30)]), theme: z.enum(['AUTO', 'LIGHT', 'DARK']),
+    gender: z.enum(['F', 'M', 'N']), notificationPrefs: z.record(z.string(), z.object({ inApp: z.boolean(), email: z.boolean(), push: z.boolean() })), name: z.string().max(30), companionName: z.string().max(14), skinId: z.enum(['azul', 'grafito', 'plata', 'hielo']), leagueVisible: z.boolean(),
   })
   .partial()
 const range = (req: NextRequest) => {
@@ -82,7 +84,7 @@ const routes: Route[] = [
   { method: 'GET', path: 'portfolio/history', run: r => trading.history(range(r)) },
   { method: 'POST', path: 'portfolio/reset', run: () => trading.resetPortfolio() },
   { method: 'GET', path: 'alerts', run: () => trading.alerts() },
-  { method: 'POST', path: 'alerts', run: (_r, _p, b) => { const x = z.object({ symbol: z.string().max(12), condition: z.enum(['ABOVE', 'BELOW']), price: z.string().regex(/^\d+(\.\d+)?$/) }).parse(b); return trading.createAlert(x.symbol, x.condition, x.price) } },
+  { method: 'POST', path: 'alerts', run: (_r, _p, b) => { const x = z.object({ symbol: z.string().max(24), condition: z.enum(['ABOVE', 'BELOW']), price: z.string().regex(/^\d+(\.\d+)?$/) }).parse(b); return trading.createAlert(x.symbol, x.condition, x.price) } },
   { method: 'DELETE', path: 'alerts/:id', run: (_r, p) => trading.deleteAlert(p[0]) },
   // Progreso
   { method: 'GET', path: 'streak', run: () => profile.streak() },

@@ -57,7 +57,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
           'Learning activity: lessons, quiz answers, XP, streak, lives, gems, achievements and league position.',
           'Simulator: orders, trades, virtual portfolio and price alerts. It is all virtual money: we process no bank or payment data.',
           'Technical data: IP address and browser, for security, usage limits and sign-in.',
-          'Questions to Lumi (the tutor): the text of your questions, the answers and the mode you chose, to show your history and count your daily limit. You can delete the history at any time.',
+          'Questions to Lumi (the tutor): the text of your questions, the answers and the mode you chose, to show your history and count your daily limit. Lumi runs on our own servers: your questions are not sent to any third-party AI service. You can delete the history at any time.',
           'Communications: what you send through the contact form and, if you sign up, your email on the news list.',
         ],
         p: ['We use no third-party analytics or advertising tools, and we do not sell your data.'],
@@ -103,7 +103,6 @@ export const en: Record<LegalSlug, LegalDoc> = {
           rows: [
             ['Vercel Inc.', 'App hosting', 'USA · EU-US Data Privacy Framework and standard contractual clauses'],
             ['Neon Inc. (on Amazon Web Services)', 'Database', 'USA (us-east-1) · processor agreement and standard contractual clauses'],
-            ['Anthropic PBC', 'AI answers from Lumi: receives your question, the latest messages of the conversation, course excerpts and a summary of your progress (level, lessons and, in the portfolio modes, your simulated trades). It does not receive your email', 'USA · processor agreement and standard contractual clauses. Under its commercial terms, it does not use this data to train its models'],
             ['Google LLC', 'Sign in with Google (only if you use it)', 'USA · EU-US Data Privacy Framework'],
           ],
         },

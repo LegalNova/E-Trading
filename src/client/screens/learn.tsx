@@ -4,7 +4,7 @@ import { useMutation, useQuery } from '@tanstack/react-query'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
-import type { LessonStepT, PathLessonT } from '@/shared/contract'
+import type { CoursePathT, LessonStepT, PathLessonT } from '@/shared/contract'
 import { money, num, signedMoney } from '@/shared/format'
 import { api, ApiFailure } from '../api'
 import { useHome, useLang, useMe, usePath } from '../hooks'
@@ -14,7 +14,7 @@ import { useToast } from '../providers'
 import { CandleChart, LineChart } from '../ui/charts'
 import { Flame, Gem, Heart, Icon } from '../ui/icons'
 import { Bar, ErrorState, PageSkeleton, Sheet, Stars, Steps } from '../ui/kit'
-import { Lumi, LumiSays } from '../ui/lumi'
+import { Lumi, LumiSays, stageOf } from '../ui/lumi'
 
 // ── Inicio ───────────────────────────────────────────────
 export function Home() {
@@ -24,10 +24,11 @@ export function Home() {
   const toast = useToast()
   const { data: h, isError, refetch } = useHome()
   const { data: me } = useMe()
+  const { data: badges } = useQuery({ queryKey: ['achievements'], queryFn: api.achievements })
   if (isError) return <ErrorState onRetry={refetch} />
   if (!h || !me) return <PageSkeleton />
   const done = h.dailyGoals.filter(g => g.done).length
-  const premium = me.plan === 'PREMIUM'
+  const premium = me.plan !== 'FREE'
   const dayUp = Number(h.portfolio.dayChange) >= 0
   return (
     <div className="pad">
@@ -52,7 +53,7 @@ export function Home() {
         </div>
       </div>
 
-      <LumiSays mood={h.companion.mood} message={h.companion.message} skin={me.companion.skinId} />
+      <LumiSays mood={h.companion.mood} message={h.companion.message} skin={me.companion.skinId} stage={stageOf(me.level.n)} />
 
       {h.nextLesson ? (
         <div className="hero flex flex-col gap-2.5">
@@ -61,12 +62,10 @@ export function Home() {
             <span>{h.nextLesson.minutes} min</span>
           </div>
           <span className="text-[22px] leading-[27px] font-extrabold tracking-[-0.01em]">{h.nextLesson.title}</span>
-          <div className="flex items-center gap-2.5">
-            <Bar pct={h.nextLesson.progressPct} color="#fff" label={t('unitProgress')} />
-            <Link href={`/leccion/${h.nextLesson.id}`} className="btn btn-primary btn-sm">
-              {t('continue')}
-            </Link>
-          </div>
+          <Bar pct={h.nextLesson.progressPct} color="#fff" label={t('unitProgress')} />
+          <Link href={`/leccion/${h.nextLesson.id}`} className="btn" style={{ background: '#fff', color: 'var(--brand)' }}>
+            {t('continue')}
+          </Link>
         </div>
       ) : (
         <div className="hero flex flex-col gap-2.5">
@@ -76,6 +75,25 @@ export function Home() {
           </Link>
         </div>
       )}
+
+      {/* Accesos rápidos: lo principal de la app a un toque */}
+      <nav aria-label={t('quick')} className="grid grid-cols-2 gap-2.5">
+        {(
+          [
+            ['/clases', '📚', t('qLearn')],
+            ['/mercado', '📈', t('qMarket')],
+            ['/insignias', '🏅', t('qBadges')],
+            ['/profesora', '💬', t('qLumi')],
+          ] as const
+        ).map(([href, emoji, label]) => (
+          <Link key={href} href={href} className="card flex items-center gap-2.5 px-3.5 py-3" style={{ color: 'var(--ink)' }}>
+            <span className="text-[22px]" aria-hidden="true">
+              {emoji}
+            </span>
+            <b className="text-[15px] leading-tight">{label}</b>
+          </Link>
+        ))}
+      </nav>
 
       <div className="card flex flex-col gap-2.5">
         <div className="flex justify-between">
@@ -109,6 +127,31 @@ export function Home() {
         <LineChart values={h.portfolio.sparkline} up={dayUp} height={50} fill={false} label={t('portfolioChart')} />
       </Link>
 
+      {badges && (
+        <Link href="/insignias" className="card flex flex-col gap-2.5" style={{ color: 'var(--ink)' }}>
+          <div className="flex items-center justify-between">
+            <span className="t-head">{t('badgesTitle')}</span>
+            <span className="link text-[14px]">{t('badgesAll')}</span>
+          </div>
+          {badges.some(b => b.unlocked) ? (
+            <div className="flex flex-wrap gap-2">
+              {badges
+                .filter(b => b.unlocked)
+                .sort((a, b) => (b.unlockedAt ?? '').localeCompare(a.unlockedAt ?? ''))
+                .slice(0, 6)
+                .map(b => (
+                  <span key={b.code} title={b.title} className="flex h-10 w-10 items-center justify-center rounded-[13px] text-[13px] font-extrabold" style={{ background: 'var(--brand)', color: '#fff' }}>
+                    {b.icon}
+                  </span>
+                ))}
+            </div>
+          ) : (
+            <span className="t-foot">{t('badgesEmpty')}</span>
+          )}
+          <span className="t-cap">{t('badgesCount', { n: badges.filter(b => b.unlocked).length, total: badges.length })}</span>
+        </Link>
+      )}
+
       <div className="t-foot flex items-center justify-between px-1">
         <Link href="/perfil" style={{ color: 'inherit' }}>
           {t('level', { n: me.level.n, title: me.level.title, xp: num(me.level.xp, locale, 0) })}
@@ -138,7 +181,7 @@ function LessonRow({ l, onLocked }: { l: PathLessonT; onLocked: (l: PathLessonT)
           ) : open ? (
             t('available', { min: l.minutes, xp: l.xp })
           ) : l.requiresPremium ? (
-            t('premium')
+            t(l.requiredPlan === 'PLUS' ? 'inPlus' : 'inMax')
           ) : l.isUnitReview ? (
             t('lockedReview')
           ) : (
@@ -148,7 +191,7 @@ function LessonRow({ l, onLocked }: { l: PathLessonT; onLocked: (l: PathLessonT)
       </span>
       {l.requiresPremium && (
         <span className="chip text-[11px]" style={{ background: 'var(--ink)', color: 'var(--bg)' }}>
-          Premium
+          {l.requiredPlan === 'PLUS' ? 'Plus' : 'Max'}
         </span>
       )}
     </>
@@ -167,6 +210,35 @@ function LessonRow({ l, onLocked }: { l: PathLessonT; onLocked: (l: PathLessonT)
   )
 }
 
+/** Resumen de arriba: cuánto llevas, cuánto falta a tu ritmo y un botón para seguir donde lo dejaste */
+function Summary({ path }: { path: CoursePathT }) {
+  const t = useTranslations('path')
+  const all = path.units.flatMap(u => u.lessons)
+  const done = all.filter(l => l.status === 'COMPLETED').length
+  const left = all.filter(l => l.status !== 'COMPLETED').reduce((a, l) => a + l.minutes, 0)
+  const next = path.units.find(u => u.id === path.currentUnitId)?.lessons.find(l => l.status === 'AVAILABLE') ?? all.find(l => l.status === 'AVAILABLE')
+  return (
+    <div className="card flex flex-col gap-2.5">
+      <div className="flex items-baseline justify-between gap-2">
+        <b className="t-head">{t('summary', { done, total: all.length })}</b>
+        <span className="t-foot">{all.length ? Math.round((done / all.length) * 100) : 0} %</span>
+      </div>
+      <Bar pct={all.length ? (done / all.length) * 100 : 0} />
+      {left > 0 && <span className="t-cap">{t('daysAtPace', { days: Math.ceil(left / path.dailyGoalMinutes), pace: path.dailyGoalMinutes })}</span>}
+      {next && (
+        <>
+          <span className="t-foot" style={{ color: 'var(--ink)' }}>
+            {t('continueNext', { title: next.title })}
+          </span>
+          <Link href={`/leccion/${next.id}`} className="btn btn-primary">
+            {t('continueBtn')}
+          </Link>
+        </>
+      )}
+    </div>
+  )
+}
+
 /** Acceso a la profesora desde el camino de clases */
 function AskLumi() {
   const t = useTranslations('tutor')
@@ -174,7 +246,7 @@ function AskLumi() {
   const name = me?.companion.name || 'Lumi'
   return (
     <Link href="/profesora" className="card flex items-center gap-3" style={{ color: 'var(--ink)' }}>
-      <Lumi mood="HAPPY" size={42} skin={me?.companion.skinId} label={name} />
+      <Lumi mood="HAPPY" size={42} skin={me?.companion.skinId} stage={stageOf(me?.level.n ?? 1)} label={name} />
       <span className="min-w-0 flex-1">
         <b className="block">{t('ask', { name })}</b>
         <span className="t-cap">{t('askHint')}</span>
@@ -190,6 +262,7 @@ export function Path() {
   const { data: p, isError, refetch } = usePath()
   const { data: mistakes = 0 } = useQuery({ queryKey: ['mistakes'], queryFn: api.mistakesCount })
   const [locked, setLocked] = useState<PathLessonT | null>(null)
+  const [openUnits, setOpenUnits] = useState<Set<string>>(new Set())
   if (isError) return <ErrorState onRetry={refetch} />
   if (!p) return <PageSkeleton />
   const current = p.units.find(u => u.id === p.currentUnitId) ?? p.units[0]
@@ -203,10 +276,11 @@ export function Path() {
           </Link>
         )}
       </div>
-      <AskLumi />
+      <Summary path={p} />
       {p.units.map(u => {
         const empty = u.lessons.length === 0
         const isCurrent = u.id === current.id
+        const expanded = isCurrent || openUnits.has(u.id)
         return (
           <section key={u.id} className="flex flex-col gap-3" aria-labelledby={`unit-${u.id}`}>
             {isCurrent ? (
@@ -228,30 +302,49 @@ export function Path() {
                 </div>
               </div>
             ) : (
-              <div className="mt-2 flex items-end justify-between gap-2 px-1">
-                <span>
+              <button
+                className="card flex items-center justify-between gap-3 text-left"
+                aria-expanded={expanded}
+                aria-controls={`lessons-${u.id}`}
+                onClick={() => setOpenUnits(prev => { const n = new Set(prev); if (n.has(u.id)) n.delete(u.id); else n.add(u.id); return n })}
+              >
+                <span className="min-w-0 flex-1">
                   <b id={`unit-${u.id}`} className="t-head">
-                    {t('unitN', { n: u.order })} · {u.title}
+                    {u.side ? t('sideUnit') : t('unitN', { n: u.order })} · {u.title}
                   </b>
                   <br />
-                  <span className="t-cap">{empty ? t('soon') : u.description}</span>
+                  <span className="t-cap line-clamp-2">{empty ? t('soon') : u.description}</span>
+                  <span className="mt-1.5 flex items-center gap-2">
+                    <Bar pct={u.progressPct} />
+                    <span className="t-cap flex-none font-bold">{u.progressPct} %</span>
+                  </span>
                 </span>
-                {u.premiumOnly && <span className="chip text-[11px]" style={{ background: 'var(--fill)' }}>Premium</span>}
+                {u.access !== 'FREE' && (
+                  <span className="chip flex-none text-[11px]" style={{ background: 'var(--fill)' }}>
+                    {t(`access.${u.access}`)}
+                  </span>
+                )}
+                <Icon name="chev" size={16} className={expanded ? 'rotate-90' : ''} />
+              </button>
+            )}
+            {expanded && (
+              <div id={`lessons-${u.id}`} className="flex flex-col gap-3">
+                {u.unlocksFeature && <div className="banner banner-info">{t('unlocksOrders')}</div>}
+                {u.lessons.map(l => (
+                  <LessonRow key={l.id} l={l} onLocked={setLocked} />
+                ))}
               </div>
             )}
-            {u.unlocksFeature && <div className="banner banner-info">{t('unlocksOrders')}</div>}
-            {u.lessons.map(l => (
-              <LessonRow key={l.id} l={l} onLocked={setLocked} />
-            ))}
           </section>
         )
       })}
+      <AskLumi />
       <Sheet open={!!locked} onClose={() => setLocked(null)} label={t('lockedTitle')}>
         <div className="flex items-center gap-3">
           <Lumi mood="THINKING" size={48} />
-          <span className="t-head">{locked?.requiresPremium ? t('premiumTitle') : t('lockedTitle')}</span>
+          <span className="t-head">{locked?.requiresPremium ? t(locked.requiredPlan === 'PLUS' ? 'plusTitle' : 'maxTitle') : t('lockedTitle')}</span>
         </div>
-        <p className="t-body muted m-0">{locked?.requiresPremium ? t('premiumBody') : t('lockedBody')}</p>
+        <p className="t-body muted m-0">{locked?.requiresPremium ? t(locked.requiredPlan === 'PLUS' ? 'plusBody' : 'maxBody') : t('lockedBody')}</p>
         {locked?.requiresPremium && (
           <button className="btn btn-primary" onClick={() => router.push('/premium')}>
             {t('seePremium')}

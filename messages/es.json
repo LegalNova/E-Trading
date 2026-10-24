@@ -87,7 +87,7 @@
     ],
     "trial": "7 días gratis",
     "perMonth": "/mes · o {year}/año",
-    "tryPremium": "Probar Premium",
+    "tryPremium": "Ver planes",
     "contactTitle": "Contacto",
     "contactSub": "Colegios, academias, prensa o dudas. Te respondemos en 48 horas.",
     "name": "Nombre",
@@ -196,7 +196,7 @@
     "levelN": "Nivel {n}",
     "companionName": "Nombre (opcional)",
     "balanceTitle": "Tu saldo virtual para practicar",
-    "balancePremium": "Con Premium: {amount}",
+    "balancePremium": "Con Plus o Max: {amount}",
     "beforeStart": "Antes de empezar",
     "disclaimer": "E-Trading es una app educativa. Nunca se opera con dinero real, no se conecta a ningún broker y no ofrece recomendaciones de inversión.",
     "accept": "Lo entiendo y acepto",
@@ -220,14 +220,23 @@
     "allDone": "¡Has terminado todas las clases disponibles!",
     "freeDone": "Has terminado las clases gratuitas",
     "seePath": "Ver camino",
-    "seePremium": "Ver Premium",
+    "seePremium": "Ver planes",
     "goalsTitle": "Objetivos de hoy",
     "goalsCount": "{done} de {total}",
     "allGoals": "¡Los tres cumplidos! +10 gemas.",
     "portfolio": "Tu cartera",
     "today": "hoy",
     "portfolioChart": "Evolución de tu cartera",
-    "level": "Nivel {n} · {title} · {xp} XP"
+    "level": "Nivel {n} · {title} · {xp} XP",
+    "badgesTitle": "Tus insignias",
+    "badgesCount": "{n} de {total} conseguidas",
+    "badgesAll": "Ver todas",
+    "badgesEmpty": "Aún no tienes ninguna: termina tu primera clase para ganar la primera.",
+    "quick": "Accesos rápidos",
+    "qLearn": "Clases",
+    "qMarket": "Mercado",
+    "qBadges": "Insignias",
+    "qLumi": "Pregunta a Lumi"
   },
   "path": {
     "title": "Clases",
@@ -238,15 +247,34 @@
     "unlocksOrders": "Al aprobar «Dónde poner el stop loss» se desbloquean esas órdenes en el Mercado.",
     "completed": "Completada",
     "available": "Disponible · {min} min · +{xp} XP",
-    "premium": "Incluida en Premium",
+    "premium": "Incluida en un plan de pago",
     "lockedReview": "Bloqueada · quiz final de la unidad",
     "locked": "Bloqueada",
     "lockedTitle": "Aún no está disponible",
     "lockedBody": "Las lecciones se abren en orden. Termina la anterior y esta se desbloquea sola.",
-    "premiumTitle": "Esta lección es de Premium",
-    "premiumBody": "Con Premium tienes todas las clases, vidas ilimitadas y órdenes avanzadas. Puedes probarlo 7 días gratis.",
-    "seePremium": "Ver Premium",
-    "ok": "Entendido"
+    "premiumTitle": "Esta lección está en un plan de pago",
+    "premiumBody": "Con Plus o Max tienes más clases, vidas ilimitadas y más ayuda de Lumi. Puedes probarlo 7 días gratis.",
+    "seePremium": "Ver planes",
+    "ok": "Entendido",
+    "inPlus": "Incluida en el plan Plus",
+    "inMax": "Incluida en el plan Max",
+    "sideUnit": "Extra",
+    "unitProgress": "{pct} % hecho",
+    "access": {
+      "PARTIAL_PLUS": "Parte en Plus",
+      "PARTIAL_MAX": "Parte en Plus y Max",
+      "MAX": "Max"
+    },
+    "plusTitle": "Esta lección está en el plan Plus",
+    "plusBody": "Con Plus tienes completas las unidades 4 y 5, las 5 primeras lecciones de cada unidad, vidas ilimitadas y más preguntas a Lumi.",
+    "maxTitle": "Esta lección está en el plan Max",
+    "maxBody": "Con Max tienes todo el curso, todos los modos de Lumi y 100 preguntas al día.",
+    "timeLeft": "Te quedan {n} lecciones: unas {h} h {m} min en total.",
+    "daysAtPace": "A tu ritmo de {pace} min al día, acabarás en unos {days} días",
+    "paceOption": "{m} min/día: {days} días",
+    "summary": "Llevas {done} de {total} lecciones",
+    "continueNext": "Siguiente: {title}",
+    "continueBtn": "Continuar"
   },
   "lesson": {
     "close": "Cerrar la lección",
@@ -266,8 +294,8 @@
     "supportImg": "Soporte abajo y resistencia arriba; el precio rebota entre ambas",
     "support": "Soporte",
     "resistance": "Resistencia",
-    "premiumOnly": "Esta lección es de Premium",
-    "seePremium": "Ver Premium",
+    "premiumOnly": "Esta lección está en un plan de pago",
+    "seePremium": "Ver planes",
     "back": "Volver a Clases",
     "keyIdea": "Idea clave",
     "img": {
@@ -338,7 +366,7 @@
     "noLivesTitle": "Te has quedado sin vidas",
     "noLivesBody": "Descansa un poco. Mientras, puedes repasar fallos o practicar en el Mercado.",
     "nextLife": "Siguiente vida en",
-    "unlimited": "Vidas ilimitadas con Premium",
+    "unlimited": "Vidas ilimitadas con Plus o Max",
     "refill": "Recargar por 350 gemas · tienes {have}",
     "refilled": "Vidas recargadas",
     "reviewMistakes": "Repasar {n} fallos (sin perder vidas)",
@@ -366,7 +394,7 @@
       "COMMODITY": "Materias primas"
     },
     "noResults": "No hay activos con ese nombre.",
-    "emptyWatch": "Aún no sigues ningún activo. Toca ☆ Seguir en cualquier ficha.",
+    "emptyWatch": "Aún no sigues ningún activo. Busca uno o pulsa «Todo».",
     "stale": "Algunos precios tienen unos minutos de retraso. Reconectando con el proveedor…",
     "staleAsset": "Precio con retraso (último conocido). Reconectando…",
     "dataNote": "Precios reales: acciones de EE. UU. y cripto al momento; bolsa española, Xetra e IBEX con 15 min de retraso. Divisas en directo.",
@@ -433,7 +461,7 @@
     "fee": "Comisión simulada",
     "cashAfter": "Disponible tras la orden",
     "youGet": "Recibirás",
-    "lockedNote": "Límite, stop loss y take profit se desbloquean con la lección «Dónde poner el stop loss» o con Premium.",
+    "lockedNote": "Límite, stop loss y take profit se desbloquean con la lección «Dónde poner el stop loss» o con el plan Max.",
     "closedNote": "El mercado está cerrado: la orden quedará pendiente y se ejecutará al abrir.",
     "confirmBuy": "Comprar ahora",
     "confirmSell": "Vender ahora",
@@ -442,7 +470,9 @@
     "errors": {
       "INSUFFICIENT_FUNDS": "Saldo insuficiente",
       "INSUFFICIENT_QTY": "No tienes tantas participaciones",
-      "MIN_AMOUNT": "El mínimo es 1 €"
+      "MIN_AMOUNT": "El mínimo es 1 €",
+      "BAD_STOP": "El stop loss debe estar por debajo del precio",
+      "BAD_TAKE_PROFIT": "El take profit debe estar por encima del precio"
     },
     "riskTitle": "Aviso de riesgo",
     "riskHead": "Espera, {name}. Es mucho en un solo activo.",
@@ -454,9 +484,9 @@
     "buyAnyway": "Comprar igualmente",
     "whatDiversify": "¿Qué es diversificar? · Ver clases",
     "lockTitle": "Esta función aún está bloqueada",
-    "lockBody": "Las órdenes límite, stop loss y take profit se desbloquean al aprobar la lección «Dónde poner el stop loss» (Unidad 10 · Gestión del riesgo, gratis) o con Premium. Así primero entiendes para qué sirven.",
+    "lockBody": "Las órdenes límite, stop loss y take profit se desbloquean al aprobar la lección «Dónde poner el stop loss» (Unidad 10 · Gestión del riesgo, gratis) o con el plan Max. Así primero entiendes para qué sirven.",
     "goLesson": "Ir a la lección",
-    "seePremium": "Ver Premium",
+    "seePremium": "Ver planes",
     "gotIt": "Entendido",
     "pendingTitle": "Orden pendiente",
     "boughtTitle": "Compra hecha",
@@ -507,7 +537,7 @@
     "noAlerts": "No tienes alertas. Créalas desde la ficha de un activo.",
     "buyNoun": "Compra",
     "sellNoun": "Venta",
-    "searchGlobal": "Buscar entre 1.600+ activos: Apple, Santander, Toyota…",
+    "searchGlobal": "Busca entre casi 4.000 activos: Apple, Santander, Bitcoin, oro…",
     "clearSearch": "Borrar búsqueda",
     "resultsCount": "{n, plural, =0 {Sin resultados} one {# resultado} other {# resultados}}",
     "seeAllResults": "Ver los {n} resultados",
@@ -531,12 +561,12 @@
     "commodity": "Materia prima",
     "contracts": "contratos",
     "typeHint": {
-      "STOCK": "S&P 500, Europa y Asia",
-      "ETF": "Cestas listas para invertir",
+      "STOCK": "3.600: EE. UU., Europa, Asia y Latinoamérica",
+      "ETF": "174 cestas: índices, sectores, bonos, oro…",
       "INDEX": "El termómetro de cada bolsa",
       "CRYPTO": "Abiertas 24/7",
       "FX": "Pares de divisas",
-      "COMMODITY": "Oro, petróleo, café…"
+      "COMMODITY": "Oro, plata, platino, petróleo, café…"
     },
     "dataNoteGlobal": "Precios reales de Yahoo Finance. EE. UU., cripto y divisas casi al momento; Europa con 15 min de retraso y Asia con 15–20 min. Materias primas: futuros con 10 min de retraso.",
     "typeLabel": "Tipo de activo",
@@ -548,7 +578,8 @@
     "sort": {
       "name": "Nombre (A-Z)",
       "gainers": "Más suben hoy",
-      "losers": "Más bajan hoy"
+      "losers": "Más bajan hoy",
+      "popular": "Más conocidos"
     },
     "clearFilters": "Quitar filtros",
     "loadMore": "Cargar más",
@@ -564,7 +595,25 @@
     "timezoneLabel": "Hora de la bolsa",
     "dayRange": "Rango del día",
     "range52": "Rango de 52 semanas",
-    "partOf": "Forma parte de"
+    "partOf": "Forma parte de",
+    "coachTitle": "{name} revisa tu orden",
+    "coachLesson": "Repasar la lección",
+    "sellBy": "Vender por",
+    "sellPct": "Porcentaje",
+    "sellAmount": "Importe",
+    "ofValue": "de {value}",
+    "exitsTitle": "Salidas automáticas",
+    "addStop": "Stop loss",
+    "addTp": "Take profit",
+    "lossAtStop": "Si salta, perderías unos {amount}",
+    "gainAtTarget": "Si llega, ganarías unos {amount}",
+    "exitsNote": "Se crean al ejecutarse la compra. Si salta una, la otra se cancela sola.",
+    "categoryLabel": "Categoría",
+    "exitOfBuy": "salida de tu compra",
+    "favorites": "Favoritos",
+    "everything": "Todo",
+    "favHint": "Pulsa ☆ Seguir en cualquier activo para tenerlo aquí.",
+    "seeEverything": "Ver todo el mercado"
   },
   "streak": {
     "title": "Racha",
@@ -584,7 +633,7 @@
     "rule": "Cuenta como día activo una lección, un quiz o una operación, según tu zona horaria ({tz}). Tienes {gems} gemas."
   },
   "achievements": {
-    "title": "Logros",
+    "title": "Insignias",
     "count": "{n} de {total}",
     "inProgress": "En progreso",
     "cat": {
@@ -621,16 +670,16 @@
     "streakDays": "días de racha",
     "gems": "gemas",
     "lessons": "lecciones",
-    "achievementsN": "logros",
+    "achievementsN": "insignias",
     "habits": "Tus hábitos de trading",
     "tradesPerDay": "Operaciones por día",
     "winRate": "Operaciones con beneficio",
     "drawdown": "Mayor caída de la cartera",
     "streak": "Racha",
-    "achievements": "Logros",
+    "achievements": "Insignias",
     "notifications": "Avisos",
     "portfolio": "Cartera",
-    "tryPremium": "Probar Premium 7 días gratis"
+    "tryPremium": "Probar 7 días gratis"
   },
   "notifications": {
     "title": "Avisos",
@@ -639,33 +688,45 @@
     "empty": "No tienes avisos. Te escribiremos cuando pase algo importante."
   },
   "premium": {
-    "title": "Aprende sin límites con Premium",
-    "features": [
-      "Todas las clases y unidades",
-      "Vidas ilimitadas en los quizzes",
-      "50.000 € virtuales para practicar",
-      "Órdenes límite, stop loss y take profit",
-      "Lumi analiza tu cartera cada semana",
-      "Un protector de racha cada semana"
-    ],
+    "title": "Elige cómo aprender",
     "yearly": "Anual",
     "yearlyPrice": "{price} al año · {month}/mes",
     "monthly": "Mensual",
     "monthlyPrice": "{price} al mes",
-    "tryFree": "Probar {days} días gratis",
+    "tryFree": "Probar {plan} {days} días gratis",
     "after": "Después {price}{per}. Cancela cuando quieras desde Ajustes. Te avisamos 2 días antes de cobrar.",
     "perYear": "/año",
     "perMonth": "/mes",
     "demoNote": "Versión de prueba: no se cobra nada. El pago real con Stripe llega en la etapa 7.",
     "confirming": "Confirmando el pago…",
     "failed": "No se pudo completar el pago. No se te ha cobrado nada.",
-    "welcome": "Ya eres Premium",
+    "welcome": "Ya tienes {plan}",
     "trialEnds": "Tu prueba gratis acaba el {date}. Hemos añadido <b>{amount} virtuales</b> a tu cartera.",
     "start": "Empezar",
-    "youArePremium": "Tienes Premium",
     "trialUntil": "Prueba gratis hasta el {date}.",
     "active": "Tu suscripción está activa.",
-    "manage": "Gestionar en Ajustes"
+    "manage": "Gestionar en Ajustes",
+    "choosePlan": "Plan",
+    "plusPitch": "Plus: el plan intermedio. Unidades 4 y 5 completas y las 5 primeras lecciones de cada unidad.",
+    "maxPitch": "Max: todo el curso y todo Lumi, sin límites.",
+    "plusFeatures": [
+      "Unidades 1 a 5 completas",
+      "Las 5 primeras lecciones de cada unidad",
+      "Vidas ilimitadas en los quizzes",
+      "50.000 € virtuales para practicar",
+      "30 preguntas al día a Lumi y el modo «Mi cartera»"
+    ],
+    "maxFeatures": [
+      "Las 13 unidades completas, sin excepciones",
+      "Vidas ilimitadas en los quizzes",
+      "50.000 € virtuales para practicar",
+      "Límite, stop loss y take profit desde el primer día",
+      "100 preguntas al día a Lumi y todos sus modos, también «Mis sesgos»",
+      "Un protector de racha cada semana"
+    ],
+    "youAre": "Tienes el plan {plan}.",
+    "upgradeTitle": "Pásate a Max",
+    "upgradeCta": "Pasar a Max"
   },
   "settings": {
     "title": "Ajustes",
@@ -676,9 +737,9 @@
     "trialEnds": "Fin de la prueba",
     "nextCharge": "Próximo cobro",
     "cancel": "Cancelar suscripción",
-    "cancelConfirm": "¿Seguro que quieres cancelar Premium?",
+    "cancelConfirm": "¿Seguro que quieres cancelar tu plan?",
     "cancelled": "Suscripción cancelada",
-    "upgrade": "Mejorar a Premium",
+    "upgrade": "Ver planes",
     "profile": "Perfil",
     "name": "Nombre",
     "save": "Guardar",
@@ -757,7 +818,7 @@
     "range": "Periodo",
     "dauMau": "Usuarios activos (DAU / MAU)",
     "retention": "Retención D7",
-    "conversion": "Conversión a Premium",
+    "conversion": "Conversión a planes de pago",
     "trades": "Operaciones simuladas",
     "activeByDay": "Usuarios activos por día",
     "funnel": "Embudo",
@@ -781,7 +842,7 @@
         "10.000 €"
       ],
       [
-        "Saldo inicial Premium",
+        "Saldo inicial de pago",
         "50.000 €"
       ],
       [
@@ -813,7 +874,7 @@
         "14"
       ],
       [
-        "Días de prueba Premium",
+        "Días de prueba",
         "7"
       ]
     ],
@@ -873,7 +934,9 @@
     "error": "No se ha podido cargar el gráfico. Reintentando…",
     "noData": "Sin datos para este intervalo.",
     "hintOne": "Toca el gráfico para colocar la línea.",
-    "hintTwo": "Toca dos puntos del gráfico."
+    "hintTwo": "Toca dos puntos del gráfico.",
+    "kind": "Tipo de gráfico",
+    "moreKinds": "Más tipos de gráfico"
   },
   "tutor": {
     "title": "Pregúntale a {name}",
@@ -887,8 +950,8 @@
     "modeHint": {
       "EXPLAIN": "Pregunta cualquier concepto del curso: te lo explica con ejemplos.",
       "PATH": "Te recomienda el siguiente paso según tu progreso.",
-      "PORTFOLIO": "Analiza tus posiciones y operaciones simuladas con lo que enseña el curso. Premium.",
-      "BIASES": "Detecta sesgos en tus preguntas y operaciones y te propone reglas. Premium."
+      "PORTFOLIO": "Analiza tus posiciones y operaciones simuladas con lo que enseña el curso. Plus o Max.",
+      "BIASES": "Detecta sesgos en tus preguntas y operaciones y te propone reglas. Plus o Max."
     },
     "hello": "Hola, soy {name}",
     "intro": "Tu profesora del curso. Pregúntame lo que no entiendas: respondo con el manual de E-Trading y tu progreso. No doy consejos de inversión: te enseño a decidir por ti.",
@@ -903,18 +966,51 @@
     "placeholder": "Escribe tu pregunta…",
     "send": "Enviar",
     "left": "{n} de {total} preguntas hoy",
-    "engineAi": "Respuestas con IA basadas en el curso",
-    "engineManual": "Respuestas extraídas del manual del curso",
     "sources": "Del curso:",
     "clear": "Borrar la conversación",
     "cleared": "Conversación borrada",
-    "premiumMode": "Este modo analiza tu cartera y tus sesgos: es de Premium.",
-    "seePremium": "Ver Premium",
-    "limitFree": "Has usado tus 5 preguntas gratis de hoy. Con Premium tienes 100 al día y los modos de cartera y sesgos.",
+    "premiumMode": "Este modo es de Plus («Mi cartera») o Max («Mis sesgos»).",
+    "seePremium": "Ver planes",
+    "limitFree": "Has usado tus 5 preguntas gratis de hoy. Con Plus tienes 30 al día y con Max, 100 y todos los modos.",
     "limitPremium": "Has llegado al límite de hoy. Mañana más.",
     "error": "No he podido responder. Inténtalo de nuevo.",
     "ask": "Pregúntale a {name}",
     "askHint": "¿Dudas? Tu profesora responde con el curso",
-    "askLesson": "Preguntar a la profesora"
+    "askLesson": "Preguntar a la profesora",
+    "engineLumi": "Lumi responde con el curso, sin IA externa"
+  },
+  "lumi": {
+    "title": "Tu {name}",
+    "stage": "Nivel de brillo {n} de 5 · {name}",
+    "stages": {
+      "1": "Una chispa",
+      "2": "Dos chispas",
+      "3": "Tres chispas",
+      "4": "Cuatro chispas",
+      "5": "Brillo total"
+    },
+    "story": "Lumi es un cubo de gelatina que te acompaña en E-Trading. Te explica lo que no entiendes, te avisa antes de una mala operación y te recuerda tu plan cuando el mercado se pone nervioso. Cuanto más aprendes, más brilla: le van saliendo burbujitas de luz dentro.",
+    "growTitle": "Brilla contigo",
+    "fromLevel": "Nivel {n}",
+    "next": "En el nivel {n} pasará a «{name}».",
+    "max": "Lumi brilla al máximo. Enhorabuena.",
+    "colorTitle": "Color",
+    "moodsTitle": "Cómo se expresa",
+    "moods": {
+      "HAPPY": "Contenta",
+      "CELEBRATE": "Celebra",
+      "THINKING": "Pensando",
+      "WORRIED": "Te avisa",
+      "CALM": "Tranquila",
+      "SLEEPY": "Te echa de menos"
+    },
+    "skins": {
+      "azul": "Azul",
+      "grafito": "Grafito",
+      "plata": "Plata",
+      "hielo": "Hielo"
+    },
+    "saved": "Color guardado",
+    "error": "No se ha podido guardar"
   }
 }

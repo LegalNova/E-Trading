@@ -1,9 +1,9 @@
 import 'server-only'
-// Unidad 11 · Psicología del inversor (docs/curso/11). Premium.
+// Unidad 11 · Psicología del inversor (docs/curso/11). Acceso por plan: src/shared/plans.ts
 import { fill, key, lesson, multi, order, sim, single, text, tf, unit } from '../dsl'
 
 export default unit({
-  id: 'u11', order: 11, title: 'Psicología del inversor', description: 'Sesgos, emociones y reglas para protegerte de ti mismo', premiumOnly: true,
+  id: 'u11', order: 11, title: 'Psicología del inversor', description: 'Sesgos, emociones y reglas para protegerte de ti mismo',
   lessons: [
     lesson('u11l1', 'Tu cerebro no está hecho para invertir', [
       text('Los dos sistemas', 'Daniel Kahneman (Nobel de Economía):\n\n• **Sistema 1:** rápido, intuitivo, emocional. Útil para esquivar un coche.\n• **Sistema 2:** lento y analítico. Útil para calcular una esperanza.\n\nEn bolsa solemos decidir con el sistema 1: con miedo, prisa o euforia.'),

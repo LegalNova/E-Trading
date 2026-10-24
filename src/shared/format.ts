@@ -41,6 +41,8 @@ export function pct(v: number, locale = 'es', digits = 2): string {
 
 /** ▲ +0,84 % / ▼ −1,12 % */
 export function arrowPct(v: number, locale = 'es'): string {
+  // Lo que redondea a 0,00 % no sube ni baja
+  if (Math.abs(v) < 0.005) return pct(0, locale)
   return (v >= 0 ? '▲ +' : '▼ ' + MINUS) + pct(v, locale)
 }
 
@@ -87,3 +89,11 @@ export function clock(untilIso: string, now = Date.now()): string {
 export const fix2 = (n: number) => (Math.round(n * 100) / 100).toFixed(2)
 /** Redondeo a 8 decimales como texto (para cantidades) */
 export const fix8 = (n: number) => (Math.round(n * 1e8) / 1e8).toFixed(8)
+/** Precio con decimales suficientes para tres cifras significativas aunque valga 0,000004 (memecoins); 4 si vale 1 o más */
+export const fixPrice = (n: number) => {
+  const a = Math.abs(n)
+  if (!a) return '0'
+  if (a >= 1000) return n.toFixed(2)
+  if (a >= 1) return n.toFixed(4)
+  return n.toFixed(Math.min(12, Math.max(6, 2 - Math.floor(Math.log10(a)))))
+}

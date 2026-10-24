@@ -23,8 +23,10 @@ enum Gender {
   N
 }
 
+/// FREE · PLUS (plan intermedio) · PREMIUM (se muestra como «Max», acceso completo; D-053)
 enum Plan {
   FREE
+  PLUS
   PREMIUM
 }
 
@@ -217,7 +219,7 @@ model TutorMessage {
   content   String
   mode      String   @default("EXPLAIN")
   sources   Json?    // lecciones citadas
-  engine    String?  // AI | MANUAL (sin clave de IA: respuesta extraída del curso)
+  engine    String?  // LUMI: respuesta del cerebro propio (sin IA externa)
   createdAt DateTime @default(now())
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -294,8 +296,8 @@ model Asset {
 /// Última cotización real conocida. Nunca se inventa: si falla el proveedor se sirve esta con stale=true.
 model Quote {
   symbol    String   @id
-  price     Decimal  @db.Decimal(20, 8)
-  prevClose Decimal  @db.Decimal(20, 8)
+  price     Decimal  @db.Decimal(30, 12)
+  prevClose Decimal  @db.Decimal(30, 12)
   changePct Float    @default(0)
   dayHigh   Float?
   dayLow    Float?
@@ -316,10 +318,10 @@ model Candle {
   symbol   String
   interval String // 5m | 1h | 1d | 1w
   t        DateTime
-  o        Decimal  @db.Decimal(20, 8)
-  h        Decimal  @db.Decimal(20, 8)
-  l        Decimal  @db.Decimal(20, 8)
-  c        Decimal  @db.Decimal(20, 8)
+  o        Decimal  @db.Decimal(30, 12)
+  h        Decimal  @db.Decimal(30, 12)
+  l        Decimal  @db.Decimal(30, 12)
+  c        Decimal  @db.Decimal(30, 12)
 
   @@id([symbol, interval, t])
 }
@@ -339,7 +341,7 @@ model Position {
   userId   String
   symbol   String
   qty      Decimal  @db.Decimal(28, 8)
-  avgPrice Decimal  @db.Decimal(20, 8) // en EUR
+  avgPrice Decimal  @db.Decimal(30, 12) // en EUR
   openedAt DateTime @default(now())
   user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -374,17 +376,23 @@ model Order {
   status           OrderStatus
   qty              Decimal     @db.Decimal(28, 8)
   amount           Decimal     @db.Decimal(20, 2)
-  triggerPrice     Decimal?    @db.Decimal(20, 8)
-  fillPrice        Decimal?    @db.Decimal(20, 8)
+  triggerPrice     Decimal?    @db.Decimal(30, 12)
+  fillPrice        Decimal?    @db.Decimal(30, 12)
   fee              Decimal     @default(0) @db.Decimal(20, 2)
   riskAcknowledged Boolean     @default(false)
   idempotencyKey   String?     @unique
+  /// Salidas que se crean al ejecutarse una compra (stop loss y take profit, como en un broker)
+  stopLoss         Decimal?    @db.Decimal(30, 12)
+  takeProfit       Decimal?    @db.Decimal(30, 12)
+  /// Orden de compra de la que salen este stop loss o take profit: al ejecutarse uno se cancela el otro (OCO)
+  parentId         String?
   createdAt        DateTime    @default(now())
   filledAt         DateTime?
   executesAt       DateTime?
   user             User        @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([status, symbol])
+  @@index([parentId])
   @@index([userId, createdAt])
 }
 
@@ -396,7 +404,7 @@ model Trade {
   type         OrderType
   symbol       String
   qty          Decimal   @db.Decimal(28, 8)
-  price        Decimal   @db.Decimal(20, 8) // en la moneda del activo
+  price        Decimal   @db.Decimal(30, 12) // en la moneda del activo
   fee          Decimal   @db.Decimal(20, 2)
   total        Decimal   @db.Decimal(20, 2) // en EUR
   realizedPnl  Decimal?  @db.Decimal(20, 2)
@@ -413,7 +421,7 @@ model PriceAlert {
   userId    String
   symbol    String
   condition String // ABOVE | BELOW
-  price     Decimal  @db.Decimal(20, 8)
+  price     Decimal  @db.Decimal(30, 12)
   active    Boolean  @default(true)
   createdAt DateTime @default(now())
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)

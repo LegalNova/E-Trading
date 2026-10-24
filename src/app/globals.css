@@ -256,3 +256,15 @@ button { cursor: pointer; }
 }
 @keyframes pulse { 50% { opacity: 0.5; } }
 @keyframes ticker { to { transform: translateX(-50%); } }
+
+/* ── Lumi, el cubo de gelatina: parpadea, se bambolea un poco y da un saltito al celebrar; desactivado con «reducir movimiento» ── */
+@media (prefers-reduced-motion: no-preference) {
+  .lumi-anim .lumi-eyes { animation: lumi-blink 5s infinite; transform-box: fill-box; transform-origin: center; }
+  .lumi-anim .lumi-body { animation: lumi-jelly 4s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom; }
+  .lumi-anim.lumi-celebrate .lumi-body { animation: lumi-hop 0.9s ease-in-out 3; }
+  .lumi-anim .lumi-bubble { animation: lumi-bubble 3s ease-in-out infinite; }
+}
+@keyframes lumi-blink { 0%, 94%, 100% { transform: scaleY(1) } 97% { transform: scaleY(.12) } }
+@keyframes lumi-jelly { 0%, 100% { transform: scale(1, 1) } 50% { transform: scale(1.03, .97) } }
+@keyframes lumi-hop { 0%, 100% { transform: translateY(0) scale(1, 1) } 30% { transform: translateY(0) scale(1.08, .9) } 60% { transform: translateY(-4px) scale(.95, 1.06) } }
+@keyframes lumi-bubble { 0%, 100% { opacity: .25 } 50% { opacity: .6 } }

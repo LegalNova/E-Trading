@@ -15,7 +15,8 @@ export function decimalsFor(type: AssetTypeT, v: number) {
   if (v >= 1000) return type === 'INDEX' ? 2 : 2
   if (v >= 1) return 2
   if (v >= 0.01) return 4
-  return 6
+  // Memecoins (0,000004 $): tres cifras significativas
+  return v > 0 ? Math.min(10, 2 - Math.floor(Math.log10(v))) : 6
 }
 
 /** Precio en su moneda: 333,57 $ · 1.352,00 £ · ¥3.105 · 11,51 € (índices y divisas, sin símbolo) */
@@ -46,7 +47,8 @@ export function currencySymbol(cur: string, locale: string) {
 const FLAGS: Record<string, string> = {
   'Estados Unidos': '🇺🇸', 'Reino Unido': '🇬🇧', Alemania: '🇩🇪', Francia: '🇫🇷', España: '🇪🇸', Italia: '🇮🇹', 'Países Bajos': '🇳🇱', Bélgica: '🇧🇪', Portugal: '🇵🇹',
   Suiza: '🇨🇭', Suecia: '🇸🇪', Dinamarca: '🇩🇰', Noruega: '🇳🇴', Finlandia: '🇫🇮', Irlanda: '🇮🇪', Austria: '🇦🇹', Japón: '🇯🇵', 'Hong Kong': '🇭🇰', India: '🇮🇳',
-  'Corea del Sur': '🇰🇷', Singapur: '🇸🇬', Australia: '🇦🇺', Taiwán: '🇹🇼', China: '🇨🇳',
+  'Corea del Sur': '🇰🇷', Singapur: '🇸🇬', Australia: '🇦🇺', Taiwán: '🇹🇼', China: '🇨🇳', Canadá: '🇨🇦', Brasil: '🇧🇷', México: '🇲🇽', Argentina: '🇦🇷',
+  Chile: '🇨🇱', Polonia: '🇵🇱', Turquía: '🇹🇷', Indonesia: '🇮🇩', Malasia: '🇲🇾', Tailandia: '🇹🇭', 'Nueva Zelanda': '🇳🇿', Europa: '🇪🇺',
 }
 export const flagOf = (country: string) => FLAGS[country] ?? ''
 
@@ -62,7 +64,7 @@ export function useStatus() {
 
 export function useUnit() {
   const t = useTranslations('market')
-  return (type: AssetTypeT, ticker: string) => (type === 'CRYPTO' ? ticker : type === 'FX' ? t('units') : type === 'COMMODITY' ? t('contracts') : type === 'ETF' ? t('shares') : t('stocks'))
+  return (type: AssetTypeT, ticker: string) => (type === 'CRYPTO' ? ticker : type === 'FX' || type === 'COMMODITY' ? t('units') : type === 'ETF' ? t('shares') : t('stocks'))
 }
 
 /** Valor que parpadea en verde o rojo cuando cambia */

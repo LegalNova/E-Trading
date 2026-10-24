@@ -2,8 +2,9 @@ import 'server-only'
 // Clases, quiz, test de nivel y repaso de fallos (docs/02 §2, docs/07 §3–4)
 import type { AnswerResultT, CoursePathT, LessonStepT, LessonT, PathUnitT, PlacementFinishT, QuestionT, QuizFinishT, QuizStartT, StepCheckT } from '@/shared/contract'
 import type { User } from '@/generated/prisma/client'
-import { LESSON, PLACEMENT, QUIZZES, RISK_LESSON, UNITS, type ContentQuestion } from '../content/catalog'
-import { addXp, bump, bumpGoal, endFx, fail, LIVES_MAX, livesOf, lumi, markActive, withCtx, type Ctx, type Tx } from './core'
+import { courseMinutes, lessonMinutes, LESSON, PLACEMENT, QUIZZES, RISK_LESSON, UNITS, type ContentQuestion } from '../content/catalog'
+import { canOpen, minPlan } from '@/shared/plans'
+import { addXp, bump, bumpGoal, endFx, fail, LIVES_MAX, livesOf, lumi, markActive, minutesOf, withCtx, type Ctx, type Tx } from './core'
 
 const ALL_Q: Record<string, ContentQuestion> = Object.fromEntries([...Object.values(QUIZZES).flat(), ...PLACEMENT].map(q => [q.id, q]))
 const publicQ = (q: ContentQuestion): QuestionT => ({ id: q.id, type: q.type, prompt: q.prompt, options: q.options, chart: q.chart })
@@ -19,32 +20,40 @@ function isCorrect(q: ContentQuestion, a: unknown): boolean {
 export async function pathOf(tx: Tx, user: User): Promise<CoursePathT> {
   const rows = await tx.lessonProgress.findMany({ where: { userId: user.id } })
   const done = new Map(rows.map(r => [r.lessonId, r]))
-  const premium = user.plan === 'PREMIUM'
-  let found = false
+  // Camino principal: una lección disponible cada vez. Las unidades paralelas (Vocabulario) llevan su propio orden.
+  const found = { main: false, side: new Set<string>() }
   let currentUnitId = UNITS[0].id
   const units: PathUnitT[] = UNITS.map(u => {
+    let idx = 0
     const lessons = u.lessons.map(l => {
       const p = done.get(l.id)
-      const requiresPremium = u.premiumOnly && !premium && !(u.freeLessonIds ?? []).includes(l.id)
+      const index = l.isUnitReview ? -1 : idx++
+      const requiredPlan = minPlan(u.id, index, !!l.isUnitReview)
+      const requiresPremium = !canOpen(user.plan, u.id, index, !!l.isUnitReview)
       let status: 'LOCKED' | 'AVAILABLE' | 'COMPLETED' = 'LOCKED'
       if (p) status = 'COMPLETED'
-      else if (!requiresPremium && !found) {
+      else if (!requiresPremium && (u.side ? !found.side.has(u.id) : !found.main)) {
         status = 'AVAILABLE'
-        found = true
-        currentUnitId = u.id
+        if (u.side) found.side.add(u.id)
+        else {
+          found.main = true
+          currentUnitId = u.id
+        }
       }
-      return { id: l.id, title: l.title, status, stars: p?.stars ?? 0, minutes: l.minutes, xp: l.xp, isUnitReview: !!l.isUnitReview, requiresPremium }
+      return { id: l.id, title: l.title, status, stars: p?.stars ?? 0, minutes: Math.max(1, Math.round(lessonMinutes(l))), xp: l.xp, isUnitReview: !!l.isUnitReview, requiresPremium, requiredPlan }
     })
     const n = lessons.filter(l => l.status === 'COMPLETED').length
-    return { id: u.id, order: u.order, title: u.title, description: u.description, progressPct: u.lessons.length ? Math.round((n / u.lessons.length) * 100) : 0, premiumOnly: u.premiumOnly, unlocksFeature: u.unlocksFeature, lessons }
+    const plans = new Set(lessons.map(l => l.requiredPlan))
+    const access = plans.has('PREMIUM') ? (plans.has('FREE') ? 'PARTIAL_MAX' : 'MAX') : plans.has('PLUS') ? 'PARTIAL_PLUS' : 'FREE'
+    return { id: u.id, order: u.order, title: u.title, description: u.description, progressPct: u.lessons.length ? Math.round((n / u.lessons.length) * 100) : 0, access, side: !!u.side, unlocksFeature: u.unlocksFeature, lessons }
   })
-  return { courseId: 'trading-desde-cero', title: 'Trading desde cero', currentUnitId, units }
+  return { courseId: 'de-cero-a-inversor', title: 'De cero a inversor', currentUnitId, units, minutesTotal: courseMinutes(), dailyGoalMinutes: minutesOf(user) }
 }
 
 export async function lesson(user: User, tx: Tx, id: string): Promise<LessonT> {
   const l = LESSON[id] ?? fail(404, 'NOT_FOUND', 'Lección no encontrada')
   const st = (await pathOf(tx, user)).units.flatMap(u => u.lessons).find(x => x.id === id)!
-  if (st.requiresPremium) fail(403, 'FEATURE_LOCKED', 'Esta lección es de Premium')
+  if (st.requiresPremium) fail(403, 'FEATURE_LOCKED', st.requiredPlan === 'PLUS' ? 'Esta lección está en el plan Plus' : 'Esta lección está en el plan Max')
   // Las lecciones se abren en orden: no se puede saltar a una bloqueada desde la URL
   if (st.status === 'LOCKED') fail(403, 'LESSON_LOCKED', 'Termina la lección anterior para abrir esta')
   const steps: LessonStepT[] = l.steps.map((s, i): LessonStepT => {
@@ -101,7 +110,7 @@ export const answer = (attemptId: string, questionId: string, value: unknown, el
     if (Date.now() - at.startedAt.getTime() > 3_600_000) fail(409, 'CONFLICT', 'Este quiz ha caducado. Empieza otro.')
     if (!at.questionIds.includes(questionId)) fail(404, 'NOT_FOUND', 'Pregunta no encontrada')
     if (at.answers.some(a => a.questionId === questionId)) fail(409, 'CONFLICT', 'Pregunta ya respondida')
-    const premium = c.user.plan === 'PREMIUM'
+    const premium = c.user.plan !== 'FREE' // vidas ilimitadas en Plus y Max
     if (at.mode === 'LESSON' && !premium && c.g.lives <= 0) fail(409, 'NO_LIVES', 'Te has quedado sin vidas')
     const q = ALL_Q[questionId]
     const correct = isCorrect(q, value)

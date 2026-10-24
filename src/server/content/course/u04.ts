@@ -1,9 +1,9 @@
 import 'server-only'
-// Unidad 4 · Invertir a largo plazo (docs/curso/04). Gratis 4.1–4.3; resto Premium.
+// Unidad 4 · Invertir a largo plazo (docs/curso/04). Acceso por plan: src/shared/plans.ts
 import { fill, key, lesson, multi, order, sim, single, text, tf, unit } from '../dsl'
 
 export default unit({
-  id: 'u4', order: 4, title: 'Invertir a largo plazo', description: 'Indexación, comisiones, aportaciones, cartera y tu plan', premiumOnly: true, freeLessonIds: ['u4l1', 'u4l2', 'u4l3'],
+  id: 'u4', order: 4, title: 'Invertir a largo plazo', description: 'Indexación, comisiones, aportaciones, cartera y tu plan',
   lessons: [
     lesson('u4l1', 'Gestión activa contra pasiva', [
       text('Dos filosofías', '**Activa:** un gestor elige qué comprar para intentar batir al mercado.\n\n**Pasiva (indexada):** se compra todo el índice y se mantiene, con costes mínimos.'),

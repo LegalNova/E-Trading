@@ -1,4 +1,5 @@
 import 'server-only'
+import { tierOf } from '@/shared/plans'
 // Perfil, onboarding, Inicio, progreso, avisos, ajustes, Premium (simulado hasta Stripe) y RGPD
 import type { BillingStatusT, HomeT, MeT, Mood, NotificationT, SettingsT, StreakT } from '@/shared/contract'
 import { addDays, dayOf } from '@/shared/time'
@@ -18,7 +19,7 @@ export async function session() {
   return { signedIn: !!u, email: u?.email ?? null, onboardingStep: u ? u.onboardingStep : null, isAdmin: u?.role === 'ADMIN', googleEnabled }
 }
 
-export interface Draft { name: string; gender: 'F' | 'M' | 'N'; birthDate: string; experience: 'NONE' | 'SOME' | 'EXPERIENCED'; goals: string[]; dailyGoalMinutes: 5 | 10 | 15 | 20; skinId: string; companionName: string; disclaimerAccepted: boolean }
+export interface Draft { name: string; gender: 'F' | 'M' | 'N'; birthDate: string; experience: 'NONE' | 'SOME' | 'EXPERIENCED'; goals: string[]; dailyGoalMinutes: 5 | 10 | 15 | 20 | 30; skinId: string; companionName: string; disclaimerAccepted: boolean }
 const emptyDraft = (u: User): Draft => ({ name: u.name ?? '', gender: 'N', birthDate: '', experience: 'NONE', goals: [], dailyGoalMinutes: 10, skinId: 'azul', companionName: 'Lumi', disclaimerAccepted: false })
 
 export const onboarding = () => withCtx(async c => ({ step: c.user.onboardingStep ?? 1, draft: { ...emptyDraft(c.user), ...((c.user.onboarding as object) ?? {}) } as Draft }))
@@ -62,15 +63,17 @@ export const settingsOf = (u: User): SettingsT => ({ ...defaultSettings(u), ...(
 
 export const settings = () => withCtx(async c => settingsOf(c.user))
 
-export const updateSettings = (patch: Partial<SettingsT> & { name?: string; companionName?: string }) =>
+export const updateSettings = (patch: Partial<SettingsT> & { name?: string; companionName?: string; skinId?: string }) =>
   withCtx(async c => {
-    const { name, companionName, ...rest } = patch
+    const { name, companionName, skinId, ...rest } = patch
+    // El color «hielo» se gana en el nivel 5 (también se comprueba aquí, no solo en la app)
+    if (skinId === 'hielo' && levelOf(c.g.xp).n < 5) fail(403, 'FEATURE_LOCKED', 'Este color se desbloquea en el nivel 5')
     const base = settingsOf(c.user)
     if (rest.notificationPrefs) rest.notificationPrefs = Object.fromEntries(Object.keys(base.notificationPrefs).map(k => [k, rest.notificationPrefs![k] ?? base.notificationPrefs[k]]))
     const next = { ...base, ...rest }
     const u = await c.tx.user.update({
       where: { id: c.user.id },
-      data: { settings: next, gender: next.gender, locale: next.locale, leagueVisible: next.leagueVisible, ...(name?.trim() ? { name: name.trim().slice(0, 30) } : {}), ...(companionName?.trim() ? { companionName: companionName.trim().slice(0, 14) } : {}) },
+      data: { settings: next, gender: next.gender, locale: next.locale, leagueVisible: next.leagueVisible, ...(name?.trim() ? { name: name.trim().slice(0, 30) } : {}), ...(companionName?.trim() ? { companionName: companionName.trim().slice(0, 14) } : {}), ...(skinId ? { skinId } : {}) },
     })
     return settingsOf(u)
   })
@@ -182,9 +185,12 @@ export const markRead = (ids: string[] | 'all') =>
   })
 
 // ── Premium (simulado hasta conectar Stripe en la etapa 7) ──
+// Precios provisionales (D-053): Plus es el plan intermedio y PREMIUM se muestra como «Max»
 export const PLANS = [
-  { id: 'premium-month', interval: 'MONTH' as const, price: '7.99', currency: 'EUR' as const, trialDays: 7 },
-  { id: 'premium-year', interval: 'YEAR' as const, price: '59.99', currency: 'EUR' as const, trialDays: 7 },
+  { id: 'plus-month', tier: 'PLUS' as const, interval: 'MONTH' as const, price: '3.99', currency: 'EUR' as const, trialDays: 7 },
+  { id: 'plus-year', tier: 'PLUS' as const, interval: 'YEAR' as const, price: '29.99', currency: 'EUR' as const, trialDays: 7 },
+  { id: 'premium-month', tier: 'PREMIUM' as const, interval: 'MONTH' as const, price: '7.99', currency: 'EUR' as const, trialDays: 7 },
+  { id: 'premium-year', tier: 'PREMIUM' as const, interval: 'YEAR' as const, price: '59.99', currency: 'EUR' as const, trialDays: 7 },
 ]
 
 const statusOf = (u: User, s: { status: string; renewsAt: Date | null; trialEndsAt: Date | null; interval: string | null } | null): BillingStatusT => ({
@@ -197,17 +203,20 @@ export const checkout = (planId: string) =>
   withCtx(async c => {
     const plan = PLANS.find(p => p.id === planId) ?? fail(422, 'VALIDATION_ERROR', 'Plan no válido')
     if (c.user.onboardingStep !== null) fail(403, 'FORBIDDEN', 'Termina el registro primero')
-    if (c.user.plan === 'PREMIUM') fail(409, 'CONFLICT', 'Ya tienes Premium')
+    if (tierOf(c.user.plan) >= tierOf(plan.tier)) fail(409, 'CONFLICT', 'Ya tienes este plan o uno superior')
+    const current = await c.tx.subscription.findUnique({ where: { userId: c.user.id } })
+    // Durante la prueba se puede subir de Plus a Max sin gastar otra prueba
+    const upgradingTrial = current?.status === 'TRIALING' && c.user.plan === 'PLUS'
     // Una sola prueba gratis por cuenta
-    if (c.user.trialUsed) fail(403, 'TRIAL_USED', 'Ya usaste tu prueba gratis. El pago con tarjeta llegará pronto.')
+    if (c.user.trialUsed && !upgradingTrial) fail(403, 'TRIAL_USED', 'Ya usaste tu prueba gratis. El pago con tarjeta llegará pronto.')
     // Menores de 18: hace falta el consentimiento de un adulto para contratar (02.13)
     const age = c.user.birthDate ? (Date.now() - c.user.birthDate.getTime()) / (365.25 * DAY_MS) : null
-    if (age !== null && age < 18 && c.user.guardianConsent !== 'CONFIRMED') fail(403, 'GUARDIAN_CONSENT_REQUIRED', 'Para Premium hace falta que un adulto lo confirme')
-    const trialEnds = new Date(Date.now() + plan.trialDays * DAY_MS)
+    if (age !== null && age < 18 && c.user.guardianConsent !== 'CONFIRMED') fail(403, 'GUARDIAN_CONSENT_REQUIRED', 'Para un plan de pago hace falta que un adulto lo confirme')
+    const trialEnds = upgradingTrial && current?.trialEndsAt ? current.trialEndsAt : new Date(Date.now() + plan.trialDays * DAY_MS)
     const pf = await portfolioRow(c.tx, c.user)
     if (!pf.premiumTopUp) await c.tx.portfolio.update({ where: { userId: c.user.id }, data: { cash: { increment: START_CASH.PREMIUM - START_CASH.FREE }, premiumTopUp: true } })
     const sub = await c.tx.subscription.upsert({ where: { userId: c.user.id }, create: { userId: c.user.id, status: 'TRIALING', interval: plan.interval, trialEndsAt: trialEnds, renewsAt: trialEnds }, update: { status: 'TRIALING', interval: plan.interval, trialEndsAt: trialEnds, renewsAt: trialEnds } })
-    const u = await c.tx.user.update({ where: { id: c.user.id }, data: { plan: 'PREMIUM', trialUsed: true } })
+    const u = await c.tx.user.update({ where: { id: c.user.id }, data: { plan: plan.tier, trialUsed: true } })
     c.g.lives = LIVES_MAX
     return statusOf(u, sub)
   })

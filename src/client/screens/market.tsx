@@ -5,7 +5,8 @@ import { keepPreviousData, useInfiniteQuery, useMutation, useQuery } from '@tans
 import { useTranslations } from 'next-intl'
 import { useEffect, useRef, useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
-import type { AssetDetailT, AssetItemT, AssetTypeT, OrderResultT, OrderSideT, OrderTypeT, PositionT, RegionT } from '@/shared/contract'
+import type { CoachTipT, AssetDetailT, AssetItemT, AssetTypeT, OrderResultT, OrderSideT, OrderTypeT, PositionT, RegionT } from '@/shared/contract'
+import { tickerOf } from '@/shared/ticker'
 import { arrowPct, countdown, money, num, pct, qty as fmtQty, signedMoney, toNum, withSymbol } from '@/shared/format'
 import { api, ApiFailure, type AssetFilter, type OrderInput } from '../api'
 import { ProChart } from '../chart/pro-chart'
@@ -14,7 +15,7 @@ import { useToast } from '../providers'
 import { Donut, LineChart, Sparkline } from '../ui/charts'
 import { Icon } from '../ui/icons'
 import { Disclaimer, ErrorState, PageSkeleton, Seg, Sheet, TopBar } from '../ui/kit'
-import { Lumi } from '../ui/lumi'
+import { Lumi, stageOf } from '../ui/lumi'
 import { AssetBadge, AssetRow, assetHref, currencySymbol, decimalsFor, flagOf, fmtAssetPrice, Live, MarketSeg, useStatus, useUnit } from './market-ui'
 
 export { fmtAssetPrice } from './market-ui'
@@ -40,20 +41,36 @@ function exploreHref(f: Partial<AssetFilter>) {
 }
 
 // ── Portada del Mercado ──────────────────────────────────
+// Dos pestañas: «Favoritos» (lo que sigues, lo primero al entrar) y «Todo» (categorías, índices, lo que más se mueve)
 export function Market() {
   const t = useTranslations('market')
   const locale = useLang()
+  const [tab, setTab] = useState<'fav' | 'all'>(() => {
+    try {
+      return localStorage.getItem('et-market-tab') === 'all' ? 'all' : 'fav'
+    } catch {
+      return 'fav'
+    }
+  })
   const [region, setRegion] = useState<RegionSel>('ALL')
   const [movers, setMovers] = useState<'gainers' | 'losers'>('gainers')
   const [q, setQ] = useState('')
   const dq = useDebounced(q.trim())
   const { data: pf } = usePortfolio()
-  const overview = useQuery({ queryKey: ['overview', region], queryFn: () => api.marketOverview(region), refetchInterval: 15_000, placeholderData: keepPreviousData })
+  const overview = useQuery({ queryKey: ['overview', region], queryFn: () => api.marketOverview(region), refetchInterval: 15_000, placeholderData: keepPreviousData, enabled: tab === 'all' })
   const watch = useQuery({ queryKey: ['assets', 'WATCH'], queryFn: () => api.assets({ type: 'WATCH' }), refetchInterval: 10_000 })
-  const facets = useQuery({ queryKey: ['facets', region], queryFn: () => api.facets(region === 'ALL' ? undefined : region), staleTime: 3_600_000 })
+  const facets = useQuery({ queryKey: ['facets', region], queryFn: () => api.facets(region === 'ALL' ? undefined : region), staleTime: 3_600_000, enabled: tab === 'all' })
   const search = useQuery({ queryKey: ['search', dq], queryFn: () => api.searchAssets({ q: dq, limit: 25 }), enabled: dq.length > 0, placeholderData: keepPreviousData })
   const ov = overview.data
   const stale = watch.data?.some(a => a.stale)
+  const choose = (v: 'fav' | 'all') => {
+    setTab(v)
+    try {
+      localStorage.setItem('et-market-tab', v)
+    } catch {
+      // sin almacenamiento: se recuerda solo en esta visita
+    }
+  }
 
   return (
     <div className="pad wide">
@@ -90,93 +107,98 @@ export function Market() {
         </>
       ) : (
         <>
-          <div className="pills" role="group" aria-label={t('region')}>
-            {REGIONS.map(r => (
-              <button key={r} aria-pressed={region === r} onClick={() => setRegion(r)}>
-                {t(`regions.${r}`)}
+          <Seg label={t('title')} value={tab} onChange={choose} options={[{ value: 'fav', label: `★ ${t('favorites')}` }, { value: 'all', label: t('everything') }]} />
+
+          {tab === 'fav' ? (
+            <>
+              <section aria-label={t('favorites')} className="flex min-w-0 flex-col gap-2">
+                <div className="list">
+                  {!watch.data ? (
+                    <div className="li t-foot">{t('loading')}</div>
+                  ) : watch.data.length ? (
+                    watch.data.map(a => <AssetRow key={a.symbol} a={a} />)
+                  ) : (
+                    <div className="li t-foot">{t('emptyWatch')}</div>
+                  )}
+                </div>
+                <span className="t-cap px-0.5">{t('favHint')}</span>
+              </section>
+              <button className="btn btn-secondary" onClick={() => choose('all')}>
+                {t('seeEverything')}
               </button>
-            ))}
-          </div>
-
-          {/* Índices de la región */}
-          <section aria-label={t('indices')} className="flex flex-col gap-2">
-            <div className="flex items-center justify-between px-0.5">
-              <span className="t-head">{t('indices')}</span>
-              <Link href={exploreHref({ type: 'INDEX', region: region === 'ALL' ? undefined : region })} className="link text-[14px]">
-                {t('seeAll')}
-              </Link>
-            </div>
-            <div className="pills pb-1">
-              {!ov
-                ? [0, 1, 2, 3].map(i => <div key={i} className="skel h-[92px] w-[156px] flex-none rounded-2xl" />)
-                : ov.indices.map(a => <IndexCard key={a.symbol} a={a} />)}
-            </div>
-          </section>
-
-          <div className="grid gap-3 md:grid-cols-2">
-            {/* Tu lista */}
-            <section aria-label={t('watchlist')} className="flex flex-col gap-2">
-              <span className="t-head px-0.5">{t('watchlist')}</span>
-              <div className="list">
-                {!watch.data ? (
-                  <div className="li t-foot">{t('loading')}</div>
-                ) : watch.data.length ? (
-                  watch.data.map(a => <AssetRow key={a.symbol} a={a} />)
-                ) : (
-                  <div className="li t-foot">{t('emptyWatch')}</div>
-                )}
-              </div>
-            </section>
-
-            {/* Lo que más se mueve hoy */}
-            <section aria-label={t('movers')} className="flex flex-col gap-2">
-              <div className="flex items-center justify-between gap-3 px-0.5">
-                <span className="t-head">{t('movers')}</span>
-                <Seg label={t('movers')} className="w-[200px]" value={movers} onChange={setMovers} options={[{ value: 'gainers', label: t('gainers') }, { value: 'losers', label: t('losers') }]} />
-              </div>
-              <div className="list">
-                {!ov ? (
-                  <div className="li t-foot">{t('loading')}</div>
-                ) : ov[movers].length ? (
-                  ov[movers].map((a, i) => <AssetRow key={a.symbol} a={a} rank={i + 1} />)
-                ) : (
-                  <div className="li t-foot">{t('noMovers')}</div>
-                )}
-              </div>
-              <Link href={exploreHref({ type: 'STOCK', region: region === 'ALL' ? undefined : region, sort: movers })} className="link px-0.5 text-[14px]">
-                {t('seeRanking')}
-              </Link>
-            </section>
-          </div>
-
-          {/* Explorar por tipo */}
-          <section aria-label={t('explore')} className="flex flex-col gap-2">
-            <span className="t-head px-0.5">{t('explore')}</span>
-            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
-              {TYPES.map(k => (
-                <Link key={k} href={exploreHref({ type: k, region: region === 'ALL' || k === 'CRYPTO' || k === 'FX' || k === 'COMMODITY' ? undefined : region })} className="stat">
-                  <span className="text-[22px]" aria-hidden="true">
-                    {TYPE_EMOJI[k]}
-                  </span>
-                  <b className="text-[16px]">{t(`filter.${k}`)}</b>
-                  <span className="t-cap">{t(`typeHint.${k}`)}</span>
-                </Link>
-              ))}
-            </div>
-          </section>
-
-          {/* Explorar por índice */}
-          {facets.data && facets.data.indices.length > 0 && (
-            <section aria-label={t('byIndex')} className="flex flex-col gap-2">
-              <span className="t-head px-0.5">{t('byIndex')}</span>
-              <div className="flex flex-wrap gap-2">
-                {facets.data.indices.map(ix => (
-                  <Link key={ix.value} href={exploreHref({ index: ix.value })} className="chip">
-                    {ix.value} <span className="t-cap">{ix.count}</span>
+            </>
+          ) : (
+            <>
+              {/* Qué quieres ver: las categorías primero, grandes y claras */}
+              <section aria-label={t('explore')} className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
+                {TYPES.map(k => (
+                  <Link key={k} href={exploreHref({ type: k })} className="stat" style={{ color: 'var(--ink)' }}>
+                    <span className="text-[22px]" aria-hidden="true">
+                      {TYPE_EMOJI[k]}
+                    </span>
+                    <b className="text-[16px]">{t(`filter.${k}`)}</b>
+                    <span className="t-cap">{t(`typeHint.${k}`)}</span>
                   </Link>
                 ))}
+              </section>
+
+              <div className="pills" role="group" aria-label={t('region')}>
+                {REGIONS.map(r => (
+                  <button key={r} aria-pressed={region === r} onClick={() => setRegion(r)}>
+                    {t(`regions.${r}`)}
+                  </button>
+                ))}
               </div>
-            </section>
+
+              {/* Índices de la región */}
+              <section aria-label={t('indices')} className="flex flex-col gap-2">
+                <div className="flex items-center justify-between px-0.5">
+                  <span className="t-head">{t('indices')}</span>
+                  <Link href={exploreHref({ type: 'INDEX', region: region === 'ALL' ? undefined : region })} className="link text-[14px]">
+                    {t('seeAll')}
+                  </Link>
+                </div>
+                <div className="pills pb-1">
+                  {!ov
+                    ? [0, 1, 2, 3].map(i => <div key={i} className="skel h-[92px] w-[156px] flex-none rounded-2xl" />)
+                    : ov.indices.map(a => <IndexCard key={a.symbol} a={a} />)}
+                </div>
+              </section>
+
+              {/* Lo que más se mueve hoy */}
+              <section aria-label={t('movers')} className="flex min-w-0 flex-col gap-2">
+                <div className="flex items-center justify-between gap-3 px-0.5">
+                  <span className="t-head">{t('movers')}</span>
+                  <Seg label={t('movers')} className="w-[200px]" value={movers} onChange={setMovers} options={[{ value: 'gainers', label: t('gainers') }, { value: 'losers', label: t('losers') }]} />
+                </div>
+                <div className="list">
+                  {!ov ? (
+                    <div className="li t-foot">{t('loading')}</div>
+                  ) : ov[movers].length ? (
+                    ov[movers].map((a, i) => <AssetRow key={a.symbol} a={a} rank={i + 1} />)
+                  ) : (
+                    <div className="li t-foot">{t('noMovers')}</div>
+                  )}
+                </div>
+                <Link href={exploreHref({ type: 'STOCK', region: region === 'ALL' ? undefined : region, sort: movers })} className="link px-0.5 text-[14px]">
+                  {t('seeRanking')}
+                </Link>
+              </section>
+
+              {/* Explorar por índice */}
+              {facets.data && facets.data.indices.length > 0 && (
+                <section aria-label={t('byIndex')} className="flex flex-col gap-2">
+                  <span className="t-head px-0.5">{t('byIndex')}</span>
+                  <div className="flex flex-wrap gap-2">
+                    {facets.data.indices.map(ix => (
+                      <Link key={ix.value} href={exploreHref({ index: ix.value })} className="chip">
+                        {ix.value} <span className="t-cap">{ix.count}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              )}
+            </>
           )}
         </>
       )}
@@ -220,7 +242,8 @@ export function Explore({ initial }: { initial: Partial<AssetFilter> }) {
   const [q, setQ] = useState(initial.q ?? '')
   const dq = useDebounced(q.trim())
   const filter: AssetFilter = { ...f, q: dq || undefined }
-  const facets = useQuery({ queryKey: ['facets', f.region ?? 'ALL'], queryFn: () => api.facets(f.region), staleTime: 3_600_000 })
+  const facetType = f.type === 'ETF' || f.type === 'COMMODITY' ? f.type : 'STOCK'
+  const facets = useQuery({ queryKey: ['facets', f.region ?? 'ALL', facetType], queryFn: () => api.facets(f.region, facetType), staleTime: 3_600_000 })
   const list = useInfiniteQuery({
     queryKey: ['explore', filter],
     queryFn: ({ pageParam }) => api.searchAssets({ ...filter, offset: pageParam, limit: PAGE }),
@@ -249,6 +272,8 @@ export function Explore({ initial }: { initial: Partial<AssetFilter> }) {
   const items = list.data?.pages.flatMap(p => p.items) ?? []
   const total = list.data?.pages[0]?.total
   const geo = !f.type || f.type === 'STOCK' || f.type === 'ETF' || f.type === 'INDEX'
+  const stocks = !f.type || f.type === 'STOCK'
+  const categories = f.type === 'ETF' || f.type === 'COMMODITY'
   const active = [f.type, f.region, f.country, f.sector, f.index].filter(Boolean).length
 
   return (
@@ -260,11 +285,11 @@ export function Explore({ initial }: { initial: Partial<AssetFilter> }) {
           <input className="input pl-10" style={{ background: 'var(--fill)', border: 'none' }} placeholder={t('searchGlobal')} aria-label={t('searchGlobal')} value={q} onChange={e => setQ(e.target.value)} />
         </div>
         <div className="pills" role="group" aria-label={t('typeLabel')}>
-          <button aria-pressed={!f.type} onClick={() => set({ type: undefined })}>
+          <button aria-pressed={!f.type} onClick={() => set({ type: undefined, sector: undefined })}>
             {t('all')}
           </button>
           {TYPES.map(k => (
-            <button key={k} aria-pressed={f.type === k} onClick={() => set({ type: k, ...(k === 'CRYPTO' || k === 'FX' || k === 'COMMODITY' ? { region: undefined, country: undefined, sector: undefined, index: undefined } : {}) })}>
+            <button key={k} aria-pressed={f.type === k} onClick={() => set({ type: k, sector: undefined, index: undefined, country: undefined, ...(k === 'CRYPTO' || k === 'FX' || k === 'COMMODITY' ? { region: undefined } : {}) })}>
               {t(`filter.${k}`)}
             </button>
           ))}
@@ -279,17 +304,18 @@ export function Explore({ initial }: { initial: Partial<AssetFilter> }) {
           </div>
         )}
         <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
-          {geo && (
+          {stocks && (
             <>
               <FacetSelect label={t('indexLabel')} value={f.index} onChange={v => set({ index: v })} options={facets.data?.indices} />
               <FacetSelect label={t('countryLabel')} value={f.country} onChange={v => set({ country: v })} options={facets.data?.countries} render={v => `${flagOf(v)} ${v}`} />
               <FacetSelect label={t('sectorLabel')} value={f.sector} onChange={v => set({ sector: v })} options={facets.data?.sectors} />
             </>
           )}
+          {categories && <FacetSelect label={t('categoryLabel')} value={f.sector} onChange={v => set({ sector: v })} options={facets.data?.sectors} />}
           <label className="flex flex-col gap-1">
             <span className="t-cap">{t('sortLabel')}</span>
             <select className="input py-2.5" value={f.sort ?? 'name'} onChange={e => set({ sort: e.target.value as AssetFilter['sort'] })}>
-              <option value="name">{t('sort.name')}</option>
+              <option value="name">{f.type && f.type !== 'STOCK' ? t('sort.popular') : t('sort.name')}</option>
               <option value="gainers">{t('sort.gainers')}</option>
               <option value="losers">{t('sort.losers')}</option>
             </select>
@@ -440,13 +466,13 @@ export function Asset({ symbol }: { symbol: string }) {
             {num(Math.abs(toNum(a.change)), locale, dec)} ({pct(a.changePct, locale)}) {t('today')}
           </span>
         </div>
-        {a.currency !== 'EUR' && a.type !== 'FX' && a.type !== 'INDEX' && <span className="t-foot -mt-2">≈ {money(a.priceInUserCurrency, 'EUR', locale)}</span>}
+        {a.currency !== 'EUR' && a.type !== 'FX' && a.type !== 'INDEX' && <span className="t-foot -mt-2">≈ {fmtAssetPrice({ price: a.priceInUserCurrency, currency: 'EUR', type: a.type }, locale)}</span>}
         {a.stale && <div className="banner">{t('staleAsset')}</div>}
 
-        <ProChart symbol={a.symbol} decimals={dec} up={up} />
+        <ProChart symbol={a.symbol} decimals={dec} up={up} live={price} />
 
-        <div className="grid gap-3 md:grid-cols-[1fr_1fr]">
-          <div className="card flex flex-col gap-3.5">
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+          <div className="card flex min-w-0 flex-col gap-3.5">
             <b className="t-head">{t('keyData')}</b>
             <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3">
               <Stat label={t('prevClose')}>{fmt(a.prevClose)}</Stat>
@@ -473,7 +499,7 @@ export function Asset({ symbol }: { symbol: string }) {
               </div>
             )}
           </div>
-          <div className="flex flex-col gap-3">
+          <div className="flex min-w-0 flex-col gap-3">
             {pos ? (
               <div className="card grid grid-cols-2 gap-3.5">
                 <div>
@@ -494,7 +520,7 @@ export function Asset({ symbol }: { symbol: string }) {
                 <div>
                   <span className="t-cap">{t('avgPrice')}</span>
                   <br />
-                  <b>{money(pos.avgPrice, 'EUR', locale)}</b>
+                  <b>{fmtAssetPrice({ price: pos.avgPrice, currency: 'EUR', type: a.type }, locale)}</b>
                 </div>
                 <div>
                   <span className="t-cap">{t('weight')}</span>
@@ -542,13 +568,24 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
   const [type, setType] = useState<OrderTypeT>('MARKET')
   const [amount, setAmount] = useState(() => Math.min(500, Math.max(10, Math.floor(cash / 10) * 10)))
   const [sellPct, setSellPct] = useState(100)
+  const [sellBy, setSellBy] = useState<'pct' | 'amount'>('pct')
+  const [sellAmount, setSellAmount] = useState(0)
   const [trigger, setTrigger] = useState(() => a.price)
+  // Salidas de la compra (stop loss y take profit), con valores de partida razonables: −5 % y +10 %
+  const pdec = decimalsFor(a.type, toNum(a.price))
+  const [slOn, setSlOn] = useState(false)
+  const [tpOn, setTpOn] = useState(false)
+  const [sl, setSl] = useState(() => (toNum(a.price) * 0.95).toFixed(pdec))
+  const [tp, setTp] = useState(() => (toNum(a.price) * 1.1).toFixed(pdec))
+  const posValue = toNum(position?.qty ?? '0') * toNum(a.priceInUserCurrency)
   const [sheet, setSheet] = useState<'order' | 'risk' | 'lock'>('order')
   const [followed, setFollowed] = useState(false)
 
   const input: OrderInput = buy
-    ? { symbol: a.symbol, side, type, amount: String(amount), triggerPrice: type === 'MARKET' ? undefined : trigger }
-    : { symbol: a.symbol, side, type, qty: String((toNum(position?.qty ?? '0') * sellPct) / 100), triggerPrice: type === 'MARKET' ? undefined : trigger }
+    ? { symbol: a.symbol, side, type, amount: String(amount), triggerPrice: type === 'MARKET' ? undefined : trigger, stopLoss: slOn && toNum(sl) > 0 ? sl : undefined, takeProfit: tpOn && toNum(tp) > 0 ? tp : undefined }
+    : sellBy === 'amount'
+      ? { symbol: a.symbol, side, type, amount: String(sellAmount), triggerPrice: type === 'MARKET' ? undefined : trigger }
+      : { symbol: a.symbol, side, type, qty: String((toNum(position?.qty ?? '0') * sellPct) / 100), triggerPrice: type === 'MARKET' ? undefined : trigger }
   const pv = useQuery({ queryKey: ['preview', input], queryFn: () => api.previewOrder(input), placeholderData: keepPreviousData })
   const place = useMutation({
     mutationFn: (ack: boolean) => api.placeOrder({ ...input, riskAcknowledged: ack, followedRiskAdvice: followed }),
@@ -618,19 +655,37 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
           </>
         ) : (
           <>
-            <div className="py-1.5 text-center">
-              <div className="big text-[46px] leading-[52px]">{sellPct} %</div>
-              <span className="t-foot">
-                {t('ofPosition')} · {fmtQty(input.qty ?? '0', locale)} {unit(a.type, a.ticker)}
-              </span>
-            </div>
-            <div className="grid grid-cols-4 gap-2.5">
-              {[25, 50, 75, 100].map(v => (
-                <button key={v} className="opt justify-center px-1 py-2.5" aria-pressed={sellPct === v} onClick={() => setSellPct(v)}>
-                  {v} %
-                </button>
-              ))}
-            </div>
+            <Seg label={t('sellBy')} value={sellBy} onChange={v => (setSellBy(v), setSellAmount(Math.floor(posValue / 2)))} options={[{ value: 'pct', label: t('sellPct') }, { value: 'amount', label: t('sellAmount') }]} />
+            {sellBy === 'pct' ? (
+              <>
+                <div className="py-1.5 text-center">
+                  <div className="big text-[46px] leading-[52px]">{sellPct} %</div>
+                  <span className="t-foot">
+                    {t('ofPosition')} · {fmtQty(input.qty ?? '0', locale)} {unit(a.type, a.ticker)}
+                  </span>
+                </div>
+                <div className="grid grid-cols-4 gap-2.5">
+                  {[25, 50, 75, 100].map(v => (
+                    <button key={v} className="opt justify-center px-1 py-2.5" aria-pressed={sellPct === v} onClick={() => setSellPct(v)}>
+                      {v} %
+                    </button>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <div className="py-1.5 text-center">
+                <label htmlFor="o-sell" className="sr-only">
+                  {t('amountEur')}
+                </label>
+                <div className={`flex items-baseline justify-center gap-1 ${locale === 'en' ? 'flex-row-reverse' : ''}`}>
+                  <input id="o-sell" inputMode="decimal" style={{ width: `${Math.max(2, String(sellAmount).length) + 0.6}ch` }} className="bg-transparent text-center text-[46px] leading-[52px] font-extrabold tracking-[-0.02em] outline-none" value={sellAmount} onChange={e => setSellAmount(Math.max(0, Number(e.target.value.replace(/\D/g, '')) || 0))} />
+                  <span className="text-[30px] font-extrabold">€</span>
+                </div>
+                <span className="t-foot">
+                  ≈ {p ? fmtQty(p.qty, locale) : '—'} {unit(a.type, a.ticker)} · {t('ofValue', { value: money(posValue, 'EUR', locale) })}
+                </span>
+              </div>
+            )}
           </>
         )}
         {type !== 'MARKET' && (
@@ -640,6 +695,36 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
             </label>
             <input id="o-trigger" className="input" inputMode="decimal" value={trigger} onChange={e => setTrigger(e.target.value.replace(',', '.').replace(/[^\d.]/g, ''))} />
             <span className="t-cap">{triggerHelp}</span>
+          </div>
+        )}
+        {buy && (
+          <div className="card flex flex-col gap-2.5 px-4 py-3">
+            <b className="t-foot" style={{ color: 'var(--ink)' }}>
+              {t('exitsTitle')}
+            </b>
+            {(
+              [
+                { k: 'STOP_LOSS' as const, on: slOn, setOn: setSlOn, v: sl, setV: setSl, label: t('addStop'), hint: p?.exits.lossAtStop ? t('lossAtStop', { amount: money(p.exits.lossAtStop, 'EUR', locale) }) : null },
+                { k: 'TAKE_PROFIT' as const, on: tpOn, setOn: setTpOn, v: tp, setV: setTp, label: t('addTp'), hint: p?.exits.gainAtTarget ? t('gainAtTarget', { amount: money(p.exits.gainAtTarget, 'EUR', locale) }) : null },
+              ]
+            ).map(x => (
+              <div key={x.k} className="flex flex-col gap-1.5">
+                <div className="flex items-center justify-between gap-3">
+                  <span className="text-[15px] font-semibold">
+                    {x.label}
+                    {locked(x.k) && ' 🔒'}
+                  </span>
+                  <button className="toggle" role="switch" aria-label={x.label} aria-checked={x.on} onClick={() => (locked(x.k) ? setSheet('lock') : x.setOn(!x.on))} />
+                </div>
+                {x.on && (
+                  <>
+                    <input className="input" inputMode="decimal" aria-label={x.label} value={x.v} onChange={e => x.setV(e.target.value.replace(',', '.').replace(/[^\d.]/g, ''))} />
+                    {x.hint && <span className={`t-cap ${x.k === 'STOP_LOSS' ? 'down' : 'up'}`}>{x.hint}</span>}
+                  </>
+                )}
+              </div>
+            ))}
+            <span className="t-cap">{t('exitsNote')}</span>
           </div>
         )}
         <div className="card px-4 py-1" aria-live="polite">
@@ -660,6 +745,7 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
             <span style={p?.risk.flagged ? { color: 'var(--down)' } : undefined}>{p ? `${num(p.weightPct, locale, 0)} %` : '—'}</span>
           </div>
         </div>
+        {p && p.coach.length > 0 && <CoachTips tips={p.coach} skin={me?.companion.skinId} stage={stageOf(me?.level.n ?? 1)} name={me?.companion.name} />}
         {p && p.locked.length > 0 && (
           <div className="t-cap flex items-center gap-2">
             <Icon name="lock" size={16} />
@@ -674,7 +760,7 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
 
       <Sheet open={sheet === 'risk'} onClose={() => setSheet('order')} label={t('riskTitle')} alert>
         <div className="flex items-start gap-3">
-          <Lumi mood="WORRIED" size={52} skin={me?.companion.skinId} />
+          <Lumi mood="WORRIED" size={52} skin={me?.companion.skinId} stage={stageOf(me?.level.n ?? 1)} />
           <span className="t-title text-[22px] leading-[27px]">{t('riskHead', { name: me?.name ?? '' })}</span>
         </div>
         <p className="t-body m-0">
@@ -726,6 +812,36 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
   )
 }
 
+/** Lumi revisa la orden antes de confirmar (consejos calculados en el servidor) */
+function CoachTips({ tips, skin, stage, name }: { tips: CoachTipT[]; skin?: string; stage?: number; name?: string }) {
+  const t = useTranslations('market')
+  const warn = tips.some(x => x.level === 'WARN')
+  return (
+    <div className="card flex flex-col gap-2.5" style={{ background: warn ? 'color-mix(in srgb, var(--amber) 10%, var(--surface))' : undefined }} aria-live="polite">
+      <div className="flex items-center gap-2">
+        <Lumi mood={warn ? 'WORRIED' : tips[0].level === 'OK' ? 'HAPPY' : 'THINKING'} size={40} skin={skin} stage={stage} label={name} />
+        <b className="t-foot" style={{ color: 'var(--ink)' }}>
+          {t('coachTitle', { name: name || 'Lumi' })}
+        </b>
+      </div>
+      {tips.map(x => (
+        <div key={x.code} className="flex flex-col gap-0.5">
+          <b className="text-[14px]" style={{ color: x.level === 'WARN' ? 'var(--amber)' : x.level === 'OK' ? 'var(--up)' : 'var(--ink)' }}>
+            {x.level === 'WARN' ? '⚠︎ ' : x.level === 'OK' ? '✓ ' : ''}
+            {x.title}
+          </b>
+          <span className="t-foot">{x.body}</span>
+          {x.lessonId && (
+            <Link href={`/leccion/${x.lessonId}`} className="link self-start text-[13px]">
+              {t('coachLesson')}
+            </Link>
+          )}
+        </div>
+      ))}
+    </div>
+  )
+}
+
 // ── Ejecutada / pendiente (04.5) ─────────────────────────
 function Filled({ r, a }: { r: OrderResultT; a: AssetDetailT }) {
   const t = useTranslations('market')
@@ -762,6 +878,18 @@ function Filled({ r, a }: { r: OrderResultT; a: AssetDetailT }) {
           <span>{t('totalWithFee')}</span>
           <span>{money(total, 'EUR', locale)}</span>
         </div>
+        {o.stopLoss && (
+          <div className="kv">
+            <span>{t('addStop')}</span>
+            <span className="down">{fmtAssetPrice({ ...a, price: o.stopLoss }, locale)}</span>
+          </div>
+        )}
+        {o.takeProfit && (
+          <div className="kv">
+            <span>{t('addTp')}</span>
+            <span className="up">{fmtAssetPrice({ ...a, price: o.takeProfit }, locale)}</span>
+          </div>
+        )}
         <div className="kv">
           <span>{t('time')}</span>
           <span>{when.toLocaleString(locale, { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', second: '2-digit' })}</span>
@@ -896,11 +1024,11 @@ export function Portfolio() {
         {pf.positions.length ? (
           pf.positions.map(p => (
             <Link key={p.symbol} href={assetHref(p.symbol)} className="li">
-              <AssetBadge a={{ ticker: p.symbol.replace(/^\^/, '').split(/[.=-]/)[0], type: p.type }} />
+              <AssetBadge a={{ ticker: tickerOf(p.symbol, p.type), type: p.type }} />
               <span className="min-w-0 flex-1">
                 <b className="block truncate">{p.name}</b>
                 <span className="t-cap">
-                  {fmtQty(p.qty, locale)} {unit(p.type, p.symbol.split(/[.=-]/)[0])} · {num(p.weightPct, locale, 0)} %
+                  {fmtQty(p.qty, locale)} {unit(p.type, tickerOf(p.symbol, p.type))} · {num(p.weightPct, locale, 0)} %
                 </span>
               </span>
               <span className="text-right">
@@ -952,7 +1080,8 @@ export function Orders() {
                   {t(`types.${o.type}`)} · {o.side === 'BUY' ? t('buy') : t('sell')} {o.symbol}
                 </b>
                 <br />
-                <span className="t-cap">{o.triggerPrice ? t('pendingAt', { amount: money(o.amount, 'EUR', locale), price: o.triggerPrice }) : t('pendingOpen', { amount: money(o.amount, 'EUR', locale) })}</span>
+                <span className="t-cap">{o.triggerPrice ? t('pendingAt', { amount: money(o.amount, 'EUR', locale), price: num(toNum(o.triggerPrice), locale, decimalsFor('STOCK', toNum(o.triggerPrice))) }) : t('pendingOpen', { amount: money(o.amount, 'EUR', locale) })}
+                  {o.parentId && ` · ${t('exitOfBuy')}`}</span>
               </span>
               <button className="link" onClick={() => cancel.mutate(o.id)}>
                 {t('cancel')}

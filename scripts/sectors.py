@@ -10,7 +10,7 @@ RULES = [
     ('Servicios públicos', ['utilit', 'power']),
     ('Materiales', ['material', 'mining', 'metal', 'steel', 'chemical', 'aluminum', 'fertilizer', 'basic resources']),
     ('Consumo básico', ['staples', 'beverage', 'tobacco', 'food', 'fast moving', 'consumer defensive', 'grocery', 'farming', 'household', 'personal care']),
-    ('Consumo discrecional', ['discretionary', 'consumer', 'retail', 'automo', 'auto ', 'travel', 'leisure', 'tourism', 'gambling', 'e-commerce', 'clothes', 'personal goods', 'homebuilding', 'hospitality', 'durables']),
+    ('Consumo discrecional', ['discretionary', 'cyclical', 'consumer', 'retail', 'automo', 'auto ', 'travel', 'leisure', 'tourism', 'gambling', 'e-commerce', 'clothes', 'personal goods', 'homebuilding', 'hospitality', 'durables']),
     ('Industria', ['industr', 'aerospace', 'defence', 'construct', 'engineering', 'machinery', 'shipbuilding', 'marine', 'airline', 'aviation', 'logistic', 'distribution', 'infrastructure', 'manufactur', 'capital goods', 'support services', 'services', 'commerce']),
 ]
 

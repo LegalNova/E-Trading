@@ -78,7 +78,7 @@ export const es: Record<LegalSlug, LegalDoc> = {
           'Actividad educativa: lecciones, respuestas de los cuestionarios, XP, racha, vidas, gemas, logros y posición en la liga.',
           'Simulador: órdenes, operaciones, cartera virtual y alertas de precio. Todo es dinero virtual: no tratamos datos bancarios ni de pago.',
           'Datos técnicos: dirección IP y navegador, para la seguridad, los límites de uso y el inicio de sesión.',
-          'Preguntas a Lumi (la profesora): el texto de tus preguntas, sus respuestas y el modo elegido, para mostrarte el historial y contar tu límite diario. Puedes borrar el historial cuando quieras.',
+          'Preguntas a Lumi (la profesora): el texto de tus preguntas, sus respuestas y el modo elegido, para mostrarte el historial y contar tu límite diario. Lumi funciona en nuestros propios servidores: tus preguntas no se envían a ningún servicio de inteligencia artificial de terceros. Puedes borrar el historial cuando quieras.',
           'Comunicaciones: lo que nos envíes por el formulario de contacto y, si te apuntas, tu email en la lista de novedades.',
         ],
         p: ['No usamos herramientas de analítica ni de publicidad de terceros y no vendemos tus datos.'],
@@ -124,7 +124,6 @@ export const es: Record<LegalSlug, LegalDoc> = {
           rows: [
             ['Vercel Inc.', 'Alojamiento de la aplicación', 'EE. UU. · Marco de Privacidad de Datos UE-EE. UU. y cláusulas contractuales tipo'],
             ['Neon Inc. (sobre Amazon Web Services)', 'Base de datos', 'EE. UU. (us-east-1) · contrato de encargado y cláusulas contractuales tipo'],
-            ['Anthropic PBC', 'Respuestas de Lumi con IA: recibe tu pregunta, las últimas de la conversación, fragmentos del curso y un resumen de tu progreso (nivel, lecciones y, en los modos de cartera, tus operaciones simuladas). No recibe tu email', 'EE. UU. · contrato de encargado y cláusulas contractuales tipo. Según sus condiciones comerciales, no usa estos datos para entrenar sus modelos'],
             ['Google LLC', 'Inicio de sesión con Google (solo si lo usas)', 'EE. UU. · Marco de Privacidad de Datos UE-EE. UU.'],
           ],
         },

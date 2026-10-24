@@ -379,7 +379,7 @@ function QuizInner({ id }: { id: string }) {
         <Steps total={qs.length} current={i + (reveal ? 1 : 0)} label={t('progress', { i: i + 1, n: qs.length })} />
         {lessonMode && (
           <span className="chip bg-transparent px-1" aria-label={t('livesLabel')}>
-            <Heart /> {me?.plan === 'PREMIUM' ? '∞' : livesNow}
+            <Heart /> {me?.plan !== 'FREE' ? '∞' : livesNow}
           </span>
         )}
       </div>

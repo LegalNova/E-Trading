@@ -3,7 +3,7 @@ import 'server-only'
 import { fill, img, key, lesson, multi, order, point, sim, single, text, tf, unit } from '../dsl'
 
 export default unit({
-  id: 'u3', order: 3, title: 'Riesgo y rentabilidad', description: 'Volatilidad, caídas, diversificación y lecciones de las crisis', premiumOnly: false,
+  id: 'u3', order: 3, title: 'Riesgo y rentabilidad', description: 'Volatilidad, caídas, diversificación y lecciones de las crisis',
   lessons: [
     lesson('u3l1', 'No hay rentabilidad sin riesgo', [
       text('La escalera del riesgo', 'Rentabilidad anual por encima de la inflación, 1900–2024, 35 países (UBS Yearbook 2025):\n\n• Letras del Tesoro: **0,5 %**\n• Bonos del Estado: **1,7 %**\n• Acciones: **5,2 %**'),

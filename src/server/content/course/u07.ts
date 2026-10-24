@@ -3,7 +3,7 @@ import 'server-only'
 import { chart, fill, img, key, lesson, multi, order, point, sim, single, text, tf, trend, unit } from '../dsl'
 
 export default unit({
-  id: 'u7', order: 7, title: 'Leer un gráfico', description: 'Ejes, tipos de gráfico, temporalidades, tendencia y volumen', premiumOnly: false,
+  id: 'u7', order: 7, title: 'Leer un gráfico', description: 'Ejes, tipos de gráfico, temporalidades, tendencia y volumen',
   lessons: [
     lesson('u7l1', 'Qué muestra un gráfico de precios', [
       text('Los ejes', '• **Horizontal:** el tiempo. Cada barra o vela es un periodo.\n• **Vertical:** el precio, en la moneda del activo (o en puntos si es un índice).\n• **Debajo:** el volumen negociado.'),

@@ -82,6 +82,8 @@
 
 **Curva de tipos**. Lo que pagan los bonos a distintos plazos. Invertida = los cortos pagan más que los largos. → 6.5
 
+**Day trading**. Abrir y cerrar operaciones en el mismo día. En Brasil, el 97 % de quien lo hizo más de 300 días perdió dinero. → 1.7
+
 **DCA** (*dollar-cost averaging*). Invertir la misma cantidad periódicamente, pase lo que pase. → 4.3
 
 **DCF** (descuento de flujos de caja). Método de valoración que trae al presente el dinero que generará una empresa. → 5.8
@@ -163,6 +165,16 @@
 **Heikin Ashi**. Velas promediadas que suavizan el ruido. No muestran los precios reales. → 7.2
 
 **Horizonte temporal**. Tiempo hasta que necesitarás el dinero. → 1.5
+
+**Mercado alcista / bajista** (*bull / bear market*). Periodo de subidas generalizadas / caída de más del 20 % desde un máximo. → 3.2
+
+**Promediar a la baja** (*averaging down*). Comprar más de algo que está bajando para bajar el precio medio. Solo tiene sentido si la tesis sigue intacta. → 11.5
+
+**Scalping**. Operar a muy corto plazo (segundos o minutos) buscando movimientos pequeños. Muy difícil por los costes. → 7.3
+
+**Swing trading**. Operaciones de días a semanas, normalmente en gráfico diario. → 7.3
+
+**Venganza (operar por)** (*revenge trading*). Abrir operaciones más grandes o impulsivas para recuperar una pérdida. Es uno de los errores más caros; la regla: tras tres pérdidas seguidas, parar el día. → 11.6
 
 **Índice**. Indicador que resume la evolución de un grupo de valores (S&P 500, IBEX 35…). → 2.6
 

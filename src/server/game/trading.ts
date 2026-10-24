@@ -1,13 +1,14 @@
 import 'server-only'
 // Simulador de órdenes y cartera (docs/03-mercado.md §4). Todo con el precio del servidor (F3).
 import type { OrderPreviewT, OrderResultT, OrderT, PortfolioT, PriceAlertT, TradeT, TradingStatsT } from '@/shared/contract'
-import { fix2, fix8 } from '@/shared/format'
+import { fix2, fix8, fixPrice } from '@/shared/format'
 import { isOpen, nextOpen, type ExchangeCode } from '@/shared/market-hours'
 import { DAY_MS, addDays, dayOf } from '@/shared/time'
 import type { Order, Position, Trade, User } from '@/generated/prisma/client'
 import { db } from '../db'
 import { fxRates, loadAssets, normCurrency, toEur } from '../market/service'
 import { RISK_LESSON } from '../content/catalog'
+import { coach } from '../tutor/coach'
 import { addXp, bump, bumpGoal, endFx, fail, lumi, markActive, notify, requireUser, RISK_PCT, START_CASH, unlockedFeatures, withCtx, type Ctx, type Tx } from './core'
 
 // ── Libro de precios (solo los activos que necesita la petición) ──
@@ -57,7 +58,7 @@ export async function userBook(extra: string[] = [], userId?: string): Promise<B
 
 const pxOf = (book: Book, sym: string) => book.get(sym) ?? fail(503, 'MARKET_UNAVAILABLE', 'Precio no disponible ahora mismo')
 const fee = (amount: number) => Math.max(amount * 0.001, 1)
-const fmtPrice = (p: Px, v: number) => (p.type === 'FX' ? v.toFixed(5) : v >= 1000 ? v.toFixed(2) : v >= 1 ? v.toFixed(4) : v.toFixed(6))
+const fmtPrice = (p: Px, v: number) => (p.type === 'FX' ? v.toFixed(5) : fixPrice(v))
 const n = (d: unknown) => Number(d ?? 0)
 
 export async function portfolioRow(tx: Tx, user: User) {
@@ -70,11 +71,17 @@ function posValue(book: Book, p: Position) {
 }
 
 // ── Vista previa (04.3) ──────────────────────────────────
-export interface OrderInput { symbol: string; side: 'BUY' | 'SELL'; type: 'MARKET' | 'LIMIT' | 'STOP_LOSS' | 'TAKE_PROFIT'; amount?: string; qty?: string; triggerPrice?: string; riskAcknowledged?: boolean; followedRiskAdvice?: boolean }
+export interface OrderInput { symbol: string; side: 'BUY' | 'SELL'; type: 'MARKET' | 'LIMIT' | 'STOP_LOSS' | 'TAKE_PROFIT'; amount?: string; qty?: string; triggerPrice?: string; stopLoss?: string; takeProfit?: string; riskAcknowledged?: boolean; followedRiskAdvice?: boolean }
 
 async function previewIn(c: Ctx, book: Book, i: OrderInput): Promise<OrderPreviewT> {
   const px = pxOf(book, i.symbol)
-  const [pf, positions, features] = await Promise.all([portfolioRow(c.tx, c.user), c.tx.position.findMany({ where: { userId: c.user.id } }), unlockedFeatures(c.tx, c.user)])
+  const since = new Date(Date.now() - 86_400_000)
+  const [pf, positions, features, recent, buys, stops] = await Promise.all([
+    portfolioRow(c.tx, c.user), c.tx.position.findMany({ where: { userId: c.user.id } }), unlockedFeatures(c.tx, c.user),
+    c.tx.trade.findMany({ where: { userId: c.user.id, status: 'FILLED', createdAt: { gte: since } }, select: { side: true, realizedPnl: true } }),
+    c.tx.trade.aggregate({ where: { userId: c.user.id, status: 'FILLED', side: 'BUY', createdAt: { gte: new Date(Date.now() - 30 * 86_400_000) } }, _avg: { total: true } }),
+    c.tx.order.count({ where: { userId: c.user.id, symbol: i.symbol, status: 'PENDING', type: 'STOP_LOSS' } }),
+  ])
   const cash = n(pf.cash)
   const total = cash + positions.reduce((t, p) => t + posValue(book, p), 0)
   const mine = positions.find(p => p.symbol === i.symbol)
@@ -88,15 +95,35 @@ async function previewIn(c: Ctx, book: Book, i: OrderInput): Promise<OrderPrevie
   const weight = total > 0 ? ((i.side === 'BUY' ? current + amount : current - amount) / total) * 100 : 0
   const flagged = i.side === 'BUY' && px.type !== 'INDEX' && weight > RISK_PCT && amount > 0
   const suggested = Math.max(0, (RISK_PCT / 100) * total - current)
+  // Stop loss y take profit de la compra: por debajo y por encima del precio de entrada
+  const entry = i.type === 'LIMIT' && Number(i.triggerPrice) > 0 ? Number(i.triggerPrice) : px.price
+  const sl = Number(i.stopLoss ?? 0), tp = Number(i.takeProfit ?? 0)
   let error: OrderPreviewT['error'] = null
   if (amount > 0 && amount < 1) error = 'MIN_AMOUNT'
   else if (i.side === 'BUY' && amount + f > cash) error = 'INSUFFICIENT_FUNDS'
   else if (i.side === 'SELL' && qty > held + 1e-9) error = 'INSUFFICIENT_QTY'
+  else if (i.side === 'BUY' && sl > 0 && sl >= entry) error = 'BAD_STOP'
+  else if (i.side === 'BUY' && tp > 0 && tp <= entry) error = 'BAD_TAKE_PROFIT'
+  const cashAfter = i.side === 'BUY' ? cash - amount - f : cash + amount - f
+  const cryptoNow = positions.reduce((t, p) => t + (book.get(p.symbol)?.type === 'CRYPTO' ? posValue(book, p) : 0), 0)
+  const tips = error
+    ? []
+    : coach({
+        side: i.side, type: i.type, name: px.name, assetType: px.type, dayChangePct: px.prevClose > 0 ? (px.price / px.prevClose - 1) * 100 : 0, amount, total, cashAfter,
+        position: mine ? { avgEur: n(mine.avgPrice), nowEur: px.eur, value: current } : null,
+        cryptoWeightAfter: total > 0 ? ((cryptoNow + (px.type === 'CRYPTO' ? (i.side === 'BUY' ? amount : -amount) : 0)) / total) * 100 : 0,
+        tradesToday: recent.length, losingSellsDay: recent.filter(t => t.side === 'SELL' && n(t.realizedPnl) < 0).length, avgBuy: n(buys._avg.total),
+        hasStop: stops > 0 || sl > 0, canStop: features.includes('STOP_LOSS'),
+        bigLosers: positions.filter(p => p.symbol !== i.symbol && book.get(p.symbol) && book.get(p.symbol)!.eur / n(p.avgPrice) - 1 < -0.15).length,
+      })
   return {
+    coach: tips,
     estPrice: fmtPrice(px, px.price), qty: fix8(qty), fee: fix2(f), total: fix2(i.side === 'BUY' ? amount + f : amount - f),
-    cashAfter: fix2(i.side === 'BUY' ? cash - amount - f : cash + amount - f), weightPct: Math.max(0, weight),
+    cashAfter: fix2(cashAfter), weightPct: Math.max(0, weight),
     risk: { flagged, reason: flagged ? `${px.name} sería el ${Math.round(weight)} % de tu cartera` : null, thresholdPct: RISK_PCT, suggestedAmount: flagged ? fix2(suggested) : null },
     allowedTypes, locked, error,
+    // Lo que se perdería o ganaría (en euros, sin comisiones) si salta el stop o el objetivo
+    exits: { lossAtStop: sl > 0 ? fix2(qty * px.eur * (1 - sl / entry)) : null, gainAtTarget: tp > 0 ? fix2(qty * px.eur * (tp / entry - 1)) : null },
   }
 }
 
@@ -109,6 +136,7 @@ export async function preview(i: OrderInput) {
 const toOrderT = (o: Order): OrderT => ({
   id: o.id, symbol: o.symbol, side: o.side, type: o.type, status: o.status, qty: fix8(n(o.qty)), amount: fix2(n(o.amount)), triggerPrice: o.triggerPrice ? String(n(o.triggerPrice)) : null,
   fillPrice: o.fillPrice ? String(n(o.fillPrice)) : null, fee: fix2(n(o.fee)), createdAt: o.createdAt.toISOString(), filledAt: o.filledAt?.toISOString() ?? null, executesAt: o.executesAt?.toISOString() ?? null,
+  stopLoss: o.stopLoss ? String(n(o.stopLoss)) : null, takeProfit: o.takeProfit ? String(n(o.takeProfit)) : null, parentId: o.parentId,
 })
 const toTradeT = (t: Trade): TradeT => ({
   id: t.id, side: t.side, type: t.type, symbol: t.symbol, qty: fix8(n(t.qty)), price: String(n(t.price)), fee: fix2(n(t.fee)), total: fix2(n(t.total)),
@@ -125,7 +153,7 @@ async function fill(c: Ctx, book: Book, o: Order, silent = false): Promise<Order
   const amount = qty * px.eur
   const f = fee(amount)
   const reject = async (reason: string) => {
-    await c.tx.trade.create({ data: { userId: c.user.id, orderId: o.id, side: o.side, type: o.type, symbol: o.symbol, qty: fix8(qty), price: px.price, fee: 0, total: fix2(amount), status: 'REJECTED', rejectReason: reason } })
+    await c.tx.trade.create({ data: { userId: c.user.id, orderId: o.id, side: o.side, type: o.type, symbol: o.symbol, qty: fix8(qty), price: fmtPrice(px, px.price), fee: 0, total: fix2(amount), status: 'REJECTED', rejectReason: reason } })
     return c.tx.order.update({ where: { id: o.id }, data: { status: 'REJECTED' } })
   }
   if (qty <= 0) return reject('No tienes participaciones')
@@ -134,7 +162,7 @@ async function fill(c: Ctx, book: Book, o: Order, silent = false): Promise<Order
   if (o.side === 'BUY') {
     const oldQ = n(pos?.qty)
     const avg = (oldQ * n(pos?.avgPrice) + amount) / (oldQ + qty)
-    await c.tx.position.upsert({ where: { userId_symbol: { userId: c.user.id, symbol: o.symbol } }, create: { userId: c.user.id, symbol: o.symbol, qty: fix8(qty), avgPrice: avg.toFixed(8) }, update: { qty: fix8(oldQ + qty), avgPrice: avg.toFixed(8) } })
+    await c.tx.position.upsert({ where: { userId_symbol: { userId: c.user.id, symbol: o.symbol } }, create: { userId: c.user.id, symbol: o.symbol, qty: fix8(qty), avgPrice: avg.toFixed(12) }, update: { qty: fix8(oldQ + qty), avgPrice: avg.toFixed(12) } })
     await c.tx.portfolio.update({ where: { userId: c.user.id }, data: { cash: fix2(n(pf.cash) - amount - f) } })
     if (px.type === 'CRYPTO') bump(c, 'crypto')
     if (px.type === 'ETF') bump(c, 'etf')
@@ -146,14 +174,24 @@ async function fill(c: Ctx, book: Book, o: Order, silent = false): Promise<Order
     await c.tx.portfolio.update({ where: { userId: c.user.id }, data: { cash: fix2(n(pf.cash) + amount - f), realized: fix2(n(pf.realized) + pnl) } })
   }
   const now = new Date()
-  await c.tx.trade.create({ data: { userId: c.user.id, orderId: o.id, side: o.side, type: o.type, symbol: o.symbol, qty: fix8(qty), price: px.price, fee: fix2(f), total: fix2(amount), realizedPnl: pnl === null ? null : fix2(pnl), status: 'FILLED' } })
+  await c.tx.trade.create({ data: { userId: c.user.id, orderId: o.id, side: o.side, type: o.type, symbol: o.symbol, qty: fix8(qty), price: fmtPrice(px, px.price), fee: fix2(f), total: fix2(amount), realizedPnl: pnl === null ? null : fix2(pnl), status: 'FILLED' } })
   // XP solo en las 3 primeras operaciones del día (D-017)
   if (c.g.tradesToday < 3) addXp(c, 15)
   c.g.tradesToday++
   await bumpGoal(c, 'ops')
   await markActive(c)
-  if (!silent) await notify(c, 'ORDER_FILLED', `Orden ejecutada: ${o.symbol}`, `${o.side === 'BUY' ? 'Compra' : 'Venta'} a ${fmtPrice(px, px.price)} ${px.currency === 'EUR' ? '€' : '$'}.`, '/mercado/cartera')
-  return c.tx.order.update({ where: { id: o.id }, data: { status: 'FILLED', fillPrice: px.price, filledAt: now, fee: fix2(f), qty: fix8(qty), amount: fix2(amount) } })
+  if (!silent) await notify(c, 'ORDER_FILLED', `Orden ejecutada: ${o.symbol}`, `${o.side === 'BUY' ? 'Compra' : 'Venta'} a ${fmtPrice(px, px.price)} ${px.currency}.`, '/mercado/cartera')
+  // Compra con salidas: se crean el stop loss y el take profit por la cantidad comprada
+  if (o.side === 'BUY') {
+    const exits = [['STOP_LOSS', o.stopLoss], ['TAKE_PROFIT', o.takeProfit]] as const
+    for (const [type, trig] of exits) {
+      if (!trig) continue
+      await c.tx.order.create({ data: { userId: c.user.id, symbol: o.symbol, side: 'SELL', type, status: 'PENDING', qty: fix8(qty), amount: fix2(qty * px.eur * (n(trig) / px.price)), triggerPrice: trig, parentId: o.id } })
+    }
+  }
+  // Salida de una compra: al ejecutarse una, la otra se cancela (OCO)
+  if (o.side === 'SELL' && o.parentId) await c.tx.order.updateMany({ where: { userId: c.user.id, parentId: o.parentId, status: 'PENDING', id: { not: o.id } }, data: { status: 'CANCELLED' } })
+  return c.tx.order.update({ where: { id: o.id }, data: { status: 'FILLED', fillPrice: fmtPrice(px, px.price), filledAt: now, fee: fix2(f), qty: fix8(qty), amount: fix2(amount) } })
 }
 
 export async function placeOrder(i: OrderInput, idempotencyKey?: string): Promise<OrderResultT> {
@@ -175,16 +213,23 @@ export async function placeOrder(i: OrderInput, idempotencyKey?: string): Promis
     if (pv.error === 'INSUFFICIENT_FUNDS' && i.type === 'MARKET') fail(422, 'INSUFFICIENT_FUNDS', 'No tienes saldo suficiente')
     if (i.type !== 'MARKET' && !(Number(i.triggerPrice) > 0)) fail(422, 'VALIDATION_ERROR', 'Indica el precio de activación')
     if (i.type !== 'MARKET' && Number(i.triggerPrice) > px.price * 10) fail(422, 'VALIDATION_ERROR', 'Precio de activación fuera de rango')
+    if ((i.stopLoss || i.takeProfit) && i.side !== 'BUY') fail(422, 'VALIDATION_ERROR', 'El stop loss y el take profit se añaden al comprar')
+    if (i.stopLoss && !pv.allowedTypes.includes('STOP_LOSS')) fail(422, 'FEATURE_LOCKED', 'Aprueba la lección «Dónde poner el stop loss» (gratis) o hazte Premium')
+    if (i.takeProfit && !pv.allowedTypes.includes('TAKE_PROFIT')) fail(422, 'FEATURE_LOCKED', 'Aprueba la lección «Dónde poner el stop loss» (gratis) o hazte Premium')
+    if (pv.error === 'BAD_STOP') fail(422, 'VALIDATION_ERROR', 'El stop loss tiene que estar por debajo del precio de compra')
+    if (pv.error === 'BAD_TAKE_PROFIT') fail(422, 'VALIDATION_ERROR', 'El take profit tiene que estar por encima del precio de compra')
+    if (Number(i.takeProfit) > px.price * 10) fail(422, 'VALIDATION_ERROR', 'Take profit fuera de rango')
     if ((await c.tx.order.count({ where: { userId: c.user.id, status: 'PENDING' } })) >= 30) fail(422, 'VALIDATION_ERROR', 'Máximo 30 órdenes pendientes')
     const firstTrade = (await c.tx.trade.count({ where: { userId: c.user.id, status: 'FILLED' } })) === 0
     if (i.followedRiskAdvice) bump(c, 'calmRisk')
     if (i.type === 'LIMIT') bump(c, 'limits')
-    if (i.type === 'STOP_LOSS') bump(c, 'stops')
-    if (i.type === 'TAKE_PROFIT') bump(c, 'tps')
+    if (i.type === 'STOP_LOSS' || Number(i.stopLoss) > 0) bump(c, 'stops')
+    if (i.type === 'TAKE_PROFIT' || Number(i.takeProfit) > 0) bump(c, 'tps')
     let o = await c.tx.order.create({
       data: {
         userId: c.user.id, symbol: i.symbol, side: i.side, type: i.type, status: 'PENDING', qty: pv.qty, amount: fix2(Number(pv.qty) * px.eur), fee: pv.fee,
         triggerPrice: i.type === 'MARKET' ? null : Number(i.triggerPrice), riskAcknowledged: !!i.riskAcknowledged, idempotencyKey: key ?? null,
+        stopLoss: Number(i.stopLoss) > 0 ? Number(i.stopLoss) : null, takeProfit: Number(i.takeProfit) > 0 ? Number(i.takeProfit) : null,
       },
     })
     if (i.type === 'MARKET' && px.tradable) {
@@ -236,7 +281,7 @@ export async function portfolioIn(c: Ctx, book: Book): Promise<PortfolioT> {
       const cost = n(p.qty) * n(p.avgPrice)
       const pnl = v - cost
       unreal += pnl
-      return { symbol: p.symbol, name: px?.name ?? p.symbol, type: (px?.type ?? 'STOCK') as PortfolioT['positions'][number]['type'], qty: fix8(n(p.qty)), avgPrice: fix2(n(p.avgPrice)), marketValue: fix2(v), unrealizedPnl: fix2(pnl), pnlPct: cost ? (pnl / cost) * 100 : 0, weightPct: total ? (v / total) * 100 : 0 }
+      return { symbol: p.symbol, name: px?.name ?? p.symbol, type: (px?.type ?? 'STOCK') as PortfolioT['positions'][number]['type'], qty: fix8(n(p.qty)), avgPrice: fixPrice(n(p.avgPrice)), marketValue: fix2(v), unrealizedPnl: fix2(pnl), pnlPct: cost ? (pnl / cost) * 100 : 0, weightPct: total ? (v / total) * 100 : 0 }
     })
     .sort((a, b) => Number(b.marketValue) - Number(a.marketValue))
   const start = START_CASH[c.user.plan]

@@ -8,7 +8,7 @@ const iso = z.string()
 
 // ── Comunes ──────────────────────────────────────────────
 export const Mood = z.enum(['HAPPY', 'CELEBRATE', 'WORRIED', 'CALM', 'SAD', 'SLEEPY', 'THINKING'])
-export const Plan = z.enum(['FREE', 'PREMIUM'])
+export const Plan = z.enum(['FREE', 'PLUS', 'PREMIUM'])
 export const Gender = z.enum(['F', 'M', 'N'])
 export const Feature = z.enum(['LIMIT', 'STOP_LOSS', 'TAKE_PROFIT'])
 
@@ -104,8 +104,10 @@ export const PathLesson = z.object({
   minutes: z.number(),
   xp: z.number(),
   isUnitReview: z.boolean(),
-  /** (+) Bloqueada por plan, no por orden: se abre Premium al tocarla */
+  /** (+) Bloqueada por el plan del usuario, no por orden */
   requiresPremium: z.boolean(),
+  /** Plan mínimo que la abre */
+  requiredPlan: Plan,
 })
 export const PathUnit = z.object({
   id: z.string(),
@@ -113,11 +115,14 @@ export const PathUnit = z.object({
   title: z.string(),
   description: z.string(),
   progressPct: z.number(),
-  premiumOnly: z.boolean(),
+  /** FREE: toda gratis · PARTIAL_PLUS / PARTIAL_MAX: algunas lecciones de pago · MAX: solo Max */
+  access: z.enum(['FREE', 'PARTIAL_PLUS', 'PARTIAL_MAX', 'MAX']),
+  /** Unidad paralela (se puede hacer en cualquier momento) */
+  side: z.boolean(),
   unlocksFeature: Feature.optional(),
   lessons: z.array(PathLesson),
 })
-export const CoursePath = z.object({ courseId: z.string(), title: z.string(), currentUnitId: z.string(), units: z.array(PathUnit) })
+export const CoursePath = z.object({ courseId: z.string(), title: z.string(), currentUnitId: z.string(), units: z.array(PathUnit), minutesTotal: z.number(), dailyGoalMinutes: z.number() })
 
 export const LessonStep = z.discriminatedUnion('type', [
   z.object({ id: z.string(), type: z.literal('TEXT'), title: z.string(), body: z.string(), keyIdea: z.string().optional(), companionTip: z.string().optional() }),
@@ -229,6 +234,8 @@ export const MarketOverview = z.object({
 export const AssetPage = z.object({ items: z.array(AssetItem), total: z.number(), nextOffset: z.number().nullable() })
 export const OrderSide = z.enum(['BUY', 'SELL'])
 export const OrderType = z.enum(['MARKET', 'LIMIT', 'STOP_LOSS', 'TAKE_PROFIT'])
+/** Consejo de Lumi sobre una orden (lógica propia, src/server/tutor/coach.ts) */
+export const CoachTip = z.object({ code: z.string(), level: z.enum(['OK', 'INFO', 'WARN']), title: z.string(), body: z.string(), lessonId: z.string().nullable() })
 export const OrderPreview = z.object({
   estPrice: money,
   qty: money,
@@ -239,7 +246,9 @@ export const OrderPreview = z.object({
   risk: z.object({ flagged: z.boolean(), reason: z.string().nullable(), thresholdPct: z.number(), suggestedAmount: money.nullable() }),
   allowedTypes: z.array(OrderType),
   locked: z.array(z.object({ type: OrderType, unlockBy: z.string() })),
-  error: z.enum(['INSUFFICIENT_FUNDS', 'INSUFFICIENT_QTY', 'MIN_AMOUNT']).nullable(),
+  error: z.enum(['INSUFFICIENT_FUNDS', 'INSUFFICIENT_QTY', 'MIN_AMOUNT', 'BAD_STOP', 'BAD_TAKE_PROFIT']).nullable(),
+  exits: z.object({ lossAtStop: money.nullable(), gainAtTarget: money.nullable() }),
+  coach: z.array(CoachTip),
 })
 export const Order = z.object({
   id: z.string(),
@@ -255,6 +264,9 @@ export const Order = z.object({
   createdAt: iso,
   filledAt: iso.nullable(),
   executesAt: iso.nullable(),
+  stopLoss: money.nullable(),
+  takeProfit: money.nullable(),
+  parentId: z.string().nullable(),
 })
 export const OrderResult = Effects.extend({ order: Order })
 export const Position = z.object({
@@ -344,7 +356,7 @@ export const Notification = z.object({
 export const Settings = z.object({
   locale: z.enum(['es', 'ca', 'en']),
   currency: z.enum(['EUR', 'USD']),
-  dailyGoalMinutes: z.union([z.literal(5), z.literal(10), z.literal(15), z.literal(20)]),
+  dailyGoalMinutes: z.union([z.literal(5), z.literal(10), z.literal(15), z.literal(20), z.literal(30)]),
   theme: z.enum(['AUTO', 'LIGHT', 'DARK']),
   gender: Gender,
   notificationPrefs: z.record(z.string(), z.object({ inApp: z.boolean(), email: z.boolean(), push: z.boolean() })),
@@ -353,6 +365,8 @@ export const Settings = z.object({
 })
 export const BillingPlan = z.object({
   id: z.string(),
+  /** Plan que activa: PLUS o PREMIUM («Max») */
+  tier: z.enum(['PLUS', 'PREMIUM']),
   interval: z.enum(['MONTH', 'YEAR']),
   price: money,
   currency: z.literal('EUR'),
@@ -364,9 +378,9 @@ export const BillingStatus = z.object({ plan: Plan, status: z.enum(['NONE', 'TRI
 export const TutorMode = z.enum(['EXPLAIN', 'PATH', 'PORTFOLIO', 'BIASES'])
 export const TutorSource = z.object({ lessonId: z.string(), title: z.string(), unit: z.string() })
 export const TutorUsage = z.object({ used: z.number(), limit: z.number() })
-export const TutorAnswer = z.object({ answer: z.string(), sources: z.array(TutorSource), engine: z.enum(['AI', 'MANUAL']), usage: TutorUsage })
+export const TutorAnswer = z.object({ answer: z.string(), sources: z.array(TutorSource), usage: TutorUsage })
 export const TutorMessage = z.object({ id: z.string(), role: z.enum(['user', 'assistant']), content: z.string(), mode: TutorMode, sources: z.array(TutorSource), createdAt: iso })
-export const TutorHistory = z.object({ messages: z.array(TutorMessage), usage: TutorUsage, premium: z.boolean(), ai: z.boolean() })
+export const TutorHistory = z.object({ messages: z.array(TutorMessage), usage: TutorUsage, plan: Plan })
 
 export type Mood = z.infer<typeof Mood>
 export type PlanT = z.infer<typeof Plan>
@@ -383,6 +397,7 @@ export type PathLessonT = z.infer<typeof PathLesson>
 export type PathUnitT = z.infer<typeof PathUnit>
 export type CoursePathT = z.infer<typeof CoursePath>
 export type LessonStepT = z.infer<typeof LessonStep>
+export type CoachTipT = z.infer<typeof CoachTip>
 export type TutorModeT = z.infer<typeof TutorMode>
 export type TutorAnswerT = z.infer<typeof TutorAnswer>
 export type TutorHistoryT = z.infer<typeof TutorHistory>

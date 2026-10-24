@@ -1,11 +1,10 @@
 import 'server-only'
-// Unidad 12 · Invertir de verdad desde España (docs/curso/12). Gratis 12.1–12.2 (seguridad); resto Premium.
+// Unidad 12 · Invertir de verdad desde España (docs/curso/12). Acceso por plan: src/shared/plans.ts
 // Fiscalidad estatal vigente en 2026; revisar cada enero (docs/curso/E-bibliografia §8).
 import { fill, key, lesson, multi, order, single, text, tf, unit } from '../dsl'
 
 export default unit({
-  id: 'u12', order: 12, title: 'Invertir desde España', description: 'Bróker, estafas, impuestos y el paso al dinero real', premiumOnly: true,
-  freeLessonIds: ['u12l1', 'u12l2'],
+  id: 'u12', order: 12, title: 'Invertir desde España', description: 'Bróker, estafas, impuestos y el paso al dinero real',
   lessons: [
     lesson('u12l1', 'Cómo elegir un bróker', [
       text('1. Regulación', 'Debe estar **autorizado por la CNMV** o por un supervisor de la UE con pasaporte para operar en España. Compruébalo en los registros de cnmv.es, no en la web del bróker.'),

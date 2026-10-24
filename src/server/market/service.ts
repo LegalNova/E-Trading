@@ -6,11 +6,13 @@ import 'server-only'
 import { after } from 'next/server'
 import type { AssetDetailT, AssetItemT, AssetPageT, AssetTypeT, CandleT, MarketOverviewT, RegionT } from '@/shared/contract'
 import { isOpen, nextClose, nextOpen, SESSIONS } from '@/shared/market-hours'
+import { fixPrice } from '@/shared/format'
+import { tickerOf } from '@/shared/ticker'
 import { Prisma } from '@/generated/prisma/client'
-import { db } from '../db'
+import { db, DB_SCHEMA } from '../db'
 import { ecbRates, yahooCandles, yahooQuotes, type Interval } from './providers'
 
-const REFRESH_OPEN_MS = 30_000
+const REFRESH_OPEN_MS = 15_000
 const REFRESH_CLOSED_MS = 60 * 60_000
 /** Más vieja que esto con el mercado abierto: se espera al proveedor en vez de servirla */
 const MAX_SERVE_OLD_MS = 3 * 60_000
@@ -64,17 +66,25 @@ function needsRefresh(a: AssetRow, now: number) {
   return isOpen(a.hours, new Date(now)) ? age > REFRESH_OPEN_MS : age > REFRESH_CLOSED_MS
 }
 
+/** Guarda las cotizaciones con una sola sentencia por lote (INSERT … ON CONFLICT), parametrizada */
 async function save(raws: Awaited<ReturnType<typeof yahooQuotes>>) {
-  for (let i = 0; i < raws.length; i += 25) {
-    await Promise.all(
-      raws.slice(i, i + 25).map(q => {
-        const data = {
-          price: new Prisma.Decimal(q.price), prevClose: new Prisma.Decimal(q.prevClose), changePct: q.changePct, dayHigh: q.dayHigh, dayLow: q.dayLow,
-          high52: q.high52, low52: q.low52, volume: q.volume, spark: q.spark, asOf: q.asOf, source: 'YAHOO',
-        }
-        return db.quote.upsert({ where: { symbol: q.symbol }, create: { symbol: q.symbol, ...data }, update: data }).catch(() => null)
-      }),
-    )
+  for (let i = 0; i < raws.length; i += 400) {
+    const rows = raws.slice(i, i + 400).map(q => ({
+      symbol: q.symbol, price: q.price, prevClose: q.prevClose, changePct: q.changePct, dayHigh: q.dayHigh, dayLow: q.dayLow,
+      high52: q.high52, low52: q.low52, volume: q.volume, spark: q.spark, asOf: q.asOf.toISOString(),
+    }))
+    await db
+      .$executeRawUnsafe(
+        `INSERT INTO "${DB_SCHEMA}"."Quote" ("symbol","price","prevClose","changePct","dayHigh","dayLow","high52","low52","volume","spark","asOf","source","updatedAt")
+         SELECT r.symbol, r.price, r."prevClose", r."changePct", r."dayHigh", r."dayLow", r.high52, r.low52, r.volume, r.spark, r."asOf", 'YAHOO', now()
+         FROM jsonb_to_recordset($1::jsonb) AS r(symbol text, price numeric, "prevClose" numeric, "changePct" float8, "dayHigh" float8, "dayLow" float8, high52 float8, low52 float8, volume float8, spark jsonb, "asOf" timestamptz)
+         WHERE EXISTS (SELECT 1 FROM "${DB_SCHEMA}"."Asset" a WHERE a.symbol = r.symbol)
+         ON CONFLICT ("symbol") DO UPDATE SET "price" = EXCLUDED."price", "prevClose" = EXCLUDED."prevClose", "changePct" = EXCLUDED."changePct",
+           "dayHigh" = EXCLUDED."dayHigh", "dayLow" = EXCLUDED."dayLow", "high52" = EXCLUDED."high52", "low52" = EXCLUDED."low52", "volume" = EXCLUDED."volume",
+           "spark" = EXCLUDED."spark", "asOf" = EXCLUDED."asOf", "source" = 'YAHOO', "updatedAt" = now()`,
+        JSON.stringify(rows),
+      )
+      .catch(e => console.error('market/save', e))
   }
 }
 
@@ -93,14 +103,28 @@ async function refresh(symbols: string[]) {
   await refreshing
 }
 
-/** Repaso completo del catálogo (cron horario) */
-export async function refreshAll() {
-  const all = await db.asset.findMany({ where: { enabled: true }, select: { symbol: true } })
+/** Repaso del catálogo (cron horario). Primero lo que tiene órdenes, alertas o posiciones; después lo más viejo,
+ *  hasta agotar el tiempo (la función tiene 60 s). Lo que quede se refresca al abrirlo o en el siguiente repaso. */
+export async function refreshAll(budgetMs = 38_000) {
   const t0 = Date.now()
-  const raws = await yahooQuotes(all.map(a => a.symbol), 8)
-  await save(raws)
+  const [hot, all] = await Promise.all([
+    Promise.all([
+      db.order.findMany({ where: { status: 'PENDING' }, select: { symbol: true }, distinct: ['symbol'] }),
+      db.priceAlert.findMany({ where: { active: true }, select: { symbol: true }, distinct: ['symbol'] }),
+      db.position.findMany({ select: { symbol: true }, distinct: ['symbol'] }),
+    ]).then(r => new Set(r.flat().map(x => x.symbol))),
+    db.asset.findMany({ where: { enabled: true }, select: { symbol: true, quote: { select: { updatedAt: true } } } }),
+  ])
+  const age = (a: (typeof all)[number]) => a.quote?.updatedAt.getTime() ?? 0
+  const queue = [...all.filter(a => hot.has(a.symbol)), ...all.filter(a => !hot.has(a.symbol)).sort((a, b) => age(a) - age(b))].map(a => a.symbol)
+  let updated = 0
+  for (let i = 0; i < queue.length && Date.now() - t0 < budgetMs; i += 320) {
+    const raws = await yahooQuotes(queue.slice(i, i + 320), 8)
+    await save(raws)
+    updated += raws.length
+  }
   fxCache = null
-  return { total: all.length, updated: raws.length, ms: Date.now() - t0 }
+  return { total: all.length, updated, ms: Date.now() - t0 }
 }
 
 /** Sirve lo guardado y actualiza en segundo plano; espera al proveedor solo si falta o es muy viejo. Devuelve si esperó. */
@@ -131,16 +155,9 @@ export async function loadAssets(symbols: string[]): Promise<AssetRow[]> {
 }
 
 // ── Formato para la API ──────────────────────────────────
-const fmt = (type: string, v: number) => (type === 'FX' ? v.toFixed(5) : v.toFixed(Math.abs(v) >= 1000 ? 2 : Math.abs(v) >= 1 ? 4 : 6))
+const fmt = (type: string, v: number) => (type === 'FX' ? v.toFixed(5) : fixPrice(v))
 
-/** Símbolo corto: SAN.MC → SAN, ^GSPC → GSPC, BTC-EUR → BTC, EURUSD=X → EURUSD, GC=F → GC */
-export function tickerOf(symbol: string, type: string) {
-  if (type === 'CRYPTO') return symbol.replace(/-(EUR|USD)$/, '')
-  if (type === 'FX') return symbol.replace('=X', '')
-  if (type === 'COMMODITY') return symbol.replace('=F', '')
-  if (type === 'INDEX') return symbol.replace(/^\^/, '').replace(/\..*$/, '')
-  return symbol.replace(/\.[A-Z]+$/, '')
-}
+export { tickerOf }
 
 export function toItem(a: AssetRow, now = Date.now()): AssetItemT | null {
   if (!a.quote) return null
@@ -178,6 +195,22 @@ export interface AssetFilter {
   limit?: number
 }
 
+/** Búsqueda por texto ordenada por relevancia: ticker exacto, ticker que empieza así, nombre que empieza así, y el resto */
+async function rankSearch(where: Prisma.AssetWhereInput, q: string, offset: number, limit: number) {
+  const rows = await db.asset.findMany({ where, include: { quote: true }, orderBy: [{ sortOrder: 'asc' }], take: 400 })
+  const Q = q.toUpperCase()
+  const score = (a: AssetRow) => {
+    const t = tickerOf(a.symbol, a.type).toUpperCase()
+    const n = a.name.toUpperCase()
+    if (t === Q || a.symbol.toUpperCase() === Q) return 0
+    if (t.startsWith(Q)) return 1
+    if (n.startsWith(Q)) return 2
+    if (n.split(/[\s.,()-]+/).some(w => w.startsWith(Q))) return 3
+    return 4
+  }
+  return rows.map((a, i) => ({ a, k: score(a) * 10_000 + i })).sort((x, y) => x.k - y.k).slice(offset, offset + limit).map(x => x.a)
+}
+
 /** Listado con filtros y paginación (en la BD); refresca solo la página que se devuelve */
 export async function searchAssets(f: AssetFilter): Promise<AssetPageT> {
   const limit = Math.min(Math.max(f.limit ?? 40, 1), 100)
@@ -194,8 +227,12 @@ export async function searchAssets(f: AssetFilter): Promise<AssetPageT> {
     ...(q ? { OR: [{ symbol: { contains: q, mode: 'insensitive' } }, { name: { contains: q, mode: 'insensitive' } }] } : {}),
   }
   const orderBy: Prisma.AssetOrderByWithRelationInput[] =
-    f.sort === 'gainers' ? [{ quote: { changePct: 'desc' } }] : f.sort === 'losers' ? [{ quote: { changePct: 'asc' } }] : q ? [{ sortOrder: 'asc' }] : [{ name: 'asc' }]
-  const [total, rows] = await Promise.all([db.asset.count({ where }), db.asset.findMany({ where, include: { quote: true }, orderBy, skip: offset, take: limit })])
+    // Sin búsqueda: las acciones por nombre; cripto, ETFs, índices, divisas y materias primas en el orden curado (los más conocidos primero)
+    f.sort === 'gainers' ? [{ quote: { changePct: 'desc' } }] : f.sort === 'losers' ? [{ quote: { changePct: 'asc' } }] : q || (f.type && f.type !== 'STOCK') ? [{ sortOrder: 'asc' }] : [{ name: 'asc' }]
+  const [total, rows] = await Promise.all([
+    db.asset.count({ where }),
+    q && !f.sort?.match(/gainers|losers/) ? rankSearch(where, q, offset, limit) : db.asset.findMany({ where, include: { quote: true }, orderBy, skip: offset, take: limit }),
+  ])
   const fresh = (await freshen(rows)) ? await db.asset.findMany({ where: { symbol: { in: rows.map(r => r.symbol) } }, include: { quote: true } }) : rows
   const byId = new Map(fresh.map(r => [r.symbol, r]))
   return { items: items(rows.map(r => byId.get(r.symbol) ?? r)), total, nextOffset: offset + limit < total ? offset + limit : null }
@@ -203,10 +240,10 @@ export async function searchAssets(f: AssetFilter): Promise<AssetPageT> {
 
 const OVERVIEW_INDICES: Record<RegionT | 'ALL', string[]> = {
   ALL: ['^GSPC', '^NDX', '^STOXX50E', '^IBEX', '^N225', '^HSI', 'BTC-EUR', 'GC=F'],
-  AMERICA: ['^GSPC', '^NDX', '^DJI', '^RUT', '^VIX'],
+  AMERICA: ['^GSPC', '^NDX', '^DJI', '^RUT', '^VIX', '^GSPTSE', '^BVSP', '^MXX'],
   EUROPE: ['^STOXX50E', '^STOXX', '^IBEX', '^GDAXI', '^FCHI', '^FTSE', 'FTSEMIB.MI', '^AEX', '^SSMI'],
   ASIA: ['^N225', '^HSI', '000001.SS', '^NSEI', '^KS11', '^TWII', '^STI', '^AXJO'],
-  GLOBAL: ['BTC-EUR', 'ETH-EUR', 'GC=F', 'CL=F', 'EURUSD=X', 'USDJPY=X'],
+  GLOBAL: ['BTC-EUR', 'ETH-EUR', 'GC=F', 'SI=F', 'PL=F', 'CL=F', 'EURUSD=X', 'USDJPY=X'],
 }
 
 /** Portada del mercado: índices de la región y mayores subidas y bajadas del día */
@@ -221,9 +258,9 @@ export async function overview(region: RegionT | 'ALL'): Promise<MarketOverviewT
   return { indices: idx, gainers: items(g), losers: items(l), updatedAt: (latest._max.updatedAt ?? new Date()).toISOString() }
 }
 
-/** Filtros disponibles (países, sectores e índices de una región) */
-export async function facets(region?: RegionT) {
-  const where: Prisma.AssetWhereInput = { enabled: true, hidden: false, type: 'STOCK', ...(region ? { region } : {}) }
+/** Filtros disponibles (países, sectores o categorías e índices de una región y un tipo de activo) */
+export async function facets(region?: RegionT, type: AssetTypeT = 'STOCK') {
+  const where: Prisma.AssetWhereInput = { enabled: true, hidden: false, type, ...(region ? { region } : {}) }
   const [countries, sectors, all] = await Promise.all([
     db.asset.groupBy({ by: ['country'], where, _count: { _all: true }, orderBy: { country: 'asc' } }),
     db.asset.groupBy({ by: ['sector'], where: { ...where, sector: { not: '' } }, _count: { _all: true }, orderBy: { _count: { sector: 'desc' } }, take: 30 }),
@@ -235,6 +272,30 @@ export async function facets(region?: RegionT) {
     countries: countries.map(c => ({ value: c.country, count: c._count._all })),
     sectors: sectors.map(s => ({ value: s.sector, count: s._count._all })),
     indices: [...idx.entries()].sort((a, b) => b[1] - a[1]).map(([value, count]) => ({ value, count })),
+  }
+}
+
+/** Descripción a partir de los datos reales del activo, para los que no tienen una escrita a mano */
+function describe(a: AssetRow): string {
+  const t = tickerOf(a.symbol, a.type)
+  const idx = a.indices.length ? ` Forma parte del ${a.indices.slice(0, 2).join(' y del ')}.` : ''
+  switch (a.type) {
+    case 'STOCK':
+      return `${a.name} es una empresa${a.sector ? ` del sector ${a.sector.toLowerCase()}` : ''} que cotiza en ${a.exchangeName || a.exchange}${a.country ? ` (${a.country})` : ''}.${idx} Al comprar una acción te haces dueño de una pequeña parte de la empresa: ganas si vale más y cobras dividendos si los reparte.`
+    case 'ETF':
+      return `${a.name} es un fondo cotizado (ETF)${a.sector ? ` de la categoría «${a.sector}»` : ''}. Con una sola compra inviertes en muchos activos a la vez, así que el riesgo queda más repartido que con una acción suelta. Fíjate en su comisión anual y en qué índice replica.`
+    case 'CRYPTO':
+      return `${a.name} (${t}) es una criptomoneda. Cotiza las 24 horas, todos los días, y su precio puede subir o bajar mucho en poco tiempo: caídas del 50 % o más han pasado varias veces. No la respalda ningún banco central.`
+    case 'COMMODITY':
+      return `Precio del contrato de futuros de ${a.name[0].toLowerCase() + a.name.slice(1)} en los mercados de futuros de Estados Unidos y Londres, en ${a.currency}. Las materias primas se mueven por la oferta y la demanda mundial, el clima, la geopolítica y el dólar.`
+    case 'FX': {
+      const [b, q] = [a.symbol.slice(0, 3), a.symbol.slice(3, 6)]
+      return `Tipo de cambio ${b}/${q}: cuántos ${q} cuesta 1 ${b}. El mercado de divisas abre de domingo a viernes casi sin pausa y es el más grande del mundo. Se mueve por los tipos de interés, la inflación y la economía de cada país.`
+    }
+    case 'INDEX':
+      return `${a.name} es un índice: resume en un número cómo van las empresas que lo forman${a.country && a.country !== 'Europa' ? ` (${a.country})` : ''}. No se compra directamente; para invertir en él se usan fondos indexados o ETFs que lo replican.`
+    default:
+      return ''
   }
 }
 
@@ -252,10 +313,10 @@ export async function assetDetail(symbol: string, userCurrency: 'EUR' | 'USD' = 
   return {
     ...it,
     change: fmt(a.type, price - prev),
-    priceInUserCurrency: inUser.toFixed(2),
+    priceInUserCurrency: fixPrice(inUser),
     opensAt: it.isOpen ? null : (nextOpen(a.hours)?.toISOString() ?? null),
     closesAt: nextClose(a.hours)?.toISOString() ?? null,
-    description: a.description,
+    description: a.description || describe(a),
     dayHigh: d(a.quote.dayHigh), dayLow: d(a.quote.dayLow), high52: d(a.quote.high52), low52: d(a.quote.low52), volume: a.quote.volume, prevClose: prev,
     indices: a.indices,
     exchangeName: a.exchangeName || it.exchange,

@@ -1,6 +1,7 @@
 'use client'
 // 05 · Racha, logros, liga, perfil y avisos
-import { useMutation, useQuery } from '@tanstack/react-query'
+import { PLAN_NAME } from '@/shared/plans'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
@@ -11,7 +12,7 @@ import { useLang, useMe, useRefreshAll } from '../hooks'
 import { useToast } from '../providers'
 import { Flame, Gem, Icon, type IconName } from '../ui/icons'
 import { Bar, ErrorState, PageSkeleton, Sheet, TopBar } from '../ui/kit'
-import { Lumi, LumiSays } from '../ui/lumi'
+import { Lumi, LumiSays, SKINS, stageOf } from '../ui/lumi'
 
 // ── Racha (05.1) ─────────────────────────────────────────
 export function Streak() {
@@ -111,7 +112,7 @@ function Badge({ a, onClick }: { a: AchievementT; onClick: () => void }) {
   )
 }
 
-export function Achievements() {
+export function Achievements({ back = '/perfil' }: { back?: string }) {
   const t = useTranslations('achievements')
   const locale = useLang()
   const { data, isError, refetch } = useQuery({ queryKey: ['achievements'], queryFn: api.achievements })
@@ -122,7 +123,7 @@ export function Achievements() {
   const inProgress = data.filter(a => !a.unlocked && a.progress > 0).sort((a, b) => b.progress / b.target - a.progress / a.target).slice(0, 3)
   return (
     <>
-      <TopBar back="/perfil" title={t('title')} />
+      <TopBar back={back} title={t('title')} />
       <div className="pad">
         <div className="flex items-center justify-between">
           <span className="t-large">{t('title')}</span>
@@ -266,7 +267,7 @@ export function Profile() {
   const since = new Date(me.memberSince).toLocaleDateString(locale, { month: 'long', year: 'numeric' })
   const links: { href: string; icon: IconName; label: string }[] = [
     { href: '/perfil/racha', icon: 'clock', label: t('streak') },
-    { href: '/perfil/logros', icon: 'star', label: t('achievements') },
+    { href: '/insignias', icon: 'star', label: t('achievements') },
     { href: '/avisos', icon: 'bell', label: t('notifications') },
     { href: '/mercado/cartera', icon: 'wallet', label: t('portfolio') },
     { href: '/ajustes', icon: 'gear', label: t('settings') },
@@ -279,16 +280,17 @@ export function Profile() {
           {t('settings')}
         </Link>
       </div>
-      <div className="card flex items-center gap-3.5">
-        <Lumi mood={me.companion.mood} size={56} skin={me.companion.skinId} label={me.companion.name} />
+      <Link href="/perfil/lumi" className="card flex items-center gap-3.5" style={{ color: 'inherit' }}>
+        <Lumi mood={me.companion.mood} size={56} skin={me.companion.skinId} stage={stageOf(me.level.n)} label={me.companion.name} />
         <div>
           <b className="text-lg">{me.name}</b>
           <br />
           <span className="t-foot">
-            {t('since', { date: since })} · {me.plan === 'PREMIUM' ? 'Premium' : 'Free'}
+            {t('since', { date: since })} · {PLAN_NAME[me.plan]}
           </span>
         </div>
-      </div>
+        <Icon name="chev" size={18} className="ml-auto" />
+      </Link>
       <div className="card">
         <div className="flex justify-between">
           <b>{t('level', { n: lv.n, title: lv.title })}</b>
@@ -313,7 +315,7 @@ export function Profile() {
           <b>{me.lessonsCompleted}</b>
           <span className="t-cap">{t('lessons')}</span>
         </Link>
-        <Link href="/perfil/logros" className="stat">
+        <Link href="/insignias" className="stat">
           <b>
             {me.achievementsCount}
             <span className="t-foot"> / {me.achievementsTotal}</span>
@@ -341,7 +343,7 @@ export function Profile() {
           </div>
         </div>
       )}
-      {stats?.insights.map((x, i) => <LumiSays key={i} mood="THINKING" message={x} skin={me.companion.skinId} />)}
+      {stats?.insights.map((x, i) => <LumiSays key={i} mood="THINKING" message={x} skin={me.companion.skinId} stage={stageOf(me.level.n)} />)}
       <div className="list">
         {links.map(l => (
           <Link key={l.href} href={l.href} className="li">
@@ -425,6 +427,74 @@ export function Notifications() {
             <p className="t-foot m-0">{t('empty')}</p>
           </div>
         )}
+      </div>
+    </>
+  )
+}
+
+// ── Tu Lumi: el personaje crece con tu nivel ─────────────
+export function MyLumi() {
+  const t = useTranslations('lumi')
+  const qc = useQueryClient()
+  const toast = useToast()
+  const { data: me } = useMe()
+  const save = useMutation({ mutationFn: (skinId: string) => api.updateSettings({ skinId }), onSuccess: () => (qc.invalidateQueries(), toast(t('saved'))), onError: e => toast(e instanceof ApiFailure ? e.message : t('error')) })
+  if (!me) return <PageSkeleton />
+  const stage = stageOf(me.level.n)
+  const nextAt = [2, 4, 6, 8][stage - 1]
+  const moods = ['HAPPY', 'CELEBRATE', 'THINKING', 'WORRIED', 'CALM', 'SLEEPY'] as const
+  const levels = [1, 2, 4, 6, 8]
+  return (
+    <>
+      <TopBar back="/perfil" title={t('title', { name: me.companion.name })} />
+      <div className="pad">
+        <div className="hero flex flex-col items-center gap-2 py-6 text-center">
+          <Lumi mood="HAPPY" size={160} skin={me.companion.skinId} stage={stage} label={me.companion.name} />
+          <b className="text-2xl font-extrabold tracking-[-0.02em]">{me.companion.name}</b>
+          <span className="t-cap" style={{ color: 'rgb(255 255 255 / 0.75)' }}>
+            {t('stage', { n: stage, name: t(`stages.${stage}`) })}
+          </span>
+        </div>
+        <p className="t-body m-0">{t('story')}</p>
+        <div className="card flex flex-col gap-3">
+          <b className="t-head">{t('growTitle')}</b>
+          <div className="grid grid-cols-5 gap-1">
+            {[1, 2, 3, 4, 5].map(s => (
+              <div key={s} className="flex flex-col items-center gap-1" style={{ opacity: s <= stage ? 1 : 0.35 }}>
+                <Lumi mood="HAPPY" size={44} skin={me.companion.skinId} stage={s} animated={false} label={t(`stages.${s}`)} />
+                <b className="text-[13px]">{s}</b>
+                <span className="t-cap text-center">{t('fromLevel', { n: levels[s - 1] })}</span>
+              </div>
+            ))}
+          </div>
+          <span className="t-foot">{nextAt ? t('next', { n: nextAt, name: t(`stages.${stage + 1}`) }) : t('max')}</span>
+        </div>
+        <div className="card flex flex-col gap-3">
+          <b className="t-head">{t('colorTitle')}</b>
+          <div className="grid grid-cols-4 gap-2.5">
+            {SKINS.map(s => {
+              const locked = me.level.n < s.unlockLevel
+              return (
+                <button key={s.id} className="opt flex-col gap-1 px-1 py-2.5 text-center text-xs" aria-pressed={me.companion.skinId === s.id} disabled={locked || save.isPending} onClick={() => save.mutate(s.id)}>
+                  <Lumi mood="HAPPY" size={48} skin={s.id} stage={stage} animated={false} />
+                  {t(`skins.${s.id}`)}
+                  {locked && <span className="t-cap">🔒 {t('fromLevel', { n: s.unlockLevel })}</span>}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+        <div className="card flex flex-col gap-3">
+          <b className="t-head">{t('moodsTitle')}</b>
+          <div className="grid grid-cols-3 gap-3">
+            {moods.map(m => (
+              <div key={m} className="flex flex-col items-center gap-1 text-center">
+                <Lumi mood={m} size={64} skin={me.companion.skinId} stage={stage} />
+                <span className="t-cap">{t(`moods.${m}`)}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   )

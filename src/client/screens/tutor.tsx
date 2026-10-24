@@ -5,16 +5,16 @@ import { useTranslations } from 'next-intl'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from '@/i18n/navigation'
 import type { TutorHistoryT, TutorMessageT, TutorModeT } from '@/shared/contract'
+import { tierOf, TUTOR_MODE_PLAN } from '@/shared/plans'
 import { api, ApiFailure } from '../api'
 import { useMe } from '../hooks'
 import { useToast } from '../providers'
 import { Icon } from '../ui/icons'
 import { ErrorState, PageSkeleton, TopBar } from '../ui/kit'
-import { Lumi } from '../ui/lumi'
+import { Lumi, stageOf } from '../ui/lumi'
 import { RichText } from '../ui/rich-text'
 
 const MODES: TutorModeT[] = ['EXPLAIN', 'PATH', 'PORTFOLIO', 'BIASES']
-const PREMIUM_MODES: TutorModeT[] = ['PORTFOLIO', 'BIASES']
 
 export function Tutor({ lessonTitle }: { lessonTitle?: string }) {
   const t = useTranslations('tutor')
@@ -57,11 +57,13 @@ export function Tutor({ lessonTitle }: { lessonTitle?: string }) {
   if (!hist.data) return <PageSkeleton />
   const h = hist.data
   const left = Math.max(0, h.usage.limit - h.usage.used)
+  const modeLocked = (m: TutorModeT) => tierOf(h.plan) < tierOf(TUTOR_MODE_PLAN[m])
+  const premium = h.plan === 'PREMIUM'
   const limited = left === 0
   const send = (text = q) => {
     const v = text.trim()
     if (!v || ask.isPending || limited) return
-    if (PREMIUM_MODES.includes(mode) && !h.premium) return
+    if (modeLocked(mode)) return
     ask.mutate(v)
   }
 
@@ -81,7 +83,7 @@ export function Tutor({ lessonTitle }: { lessonTitle?: string }) {
       <div className="pad flex-1">
         <div className="pills" role="group" aria-label={t('modes')}>
           {MODES.map(m => {
-            const locked = PREMIUM_MODES.includes(m) && !h.premium
+            const locked = modeLocked(m)
             return (
               <button key={m} aria-pressed={mode === m} onClick={() => setMode(m)}>
                 {t(`mode.${m}`)}
@@ -94,7 +96,7 @@ export function Tutor({ lessonTitle }: { lessonTitle?: string }) {
 
         {h.messages.length === 0 && !pending && (
           <div className="card flex flex-col items-center gap-3 py-6 text-center">
-            <Lumi mood="HAPPY" size={72} skin={me?.companion.skinId} label={name} />
+            <Lumi mood="HAPPY" size={72} skin={me?.companion.skinId} stage={stageOf(me?.level.n ?? 1)} label={name} />
             <b className="t-head">{t('hello', { name })}</b>
             <p className="t-foot m-0 max-w-[420px]">{t('intro')}</p>
             <div className="flex flex-wrap justify-center gap-2">
@@ -109,13 +111,13 @@ export function Tutor({ lessonTitle }: { lessonTitle?: string }) {
 
         <div className="flex flex-col gap-3" aria-live="polite">
           {h.messages.map(m => (
-            <Bubble key={m.id} m={m} name={name} skin={me?.companion.skinId} />
+            <Bubble key={m.id} m={m} name={name} skin={me?.companion.skinId} stage={stageOf(me?.level.n ?? 1)} />
           ))}
           {pending && (
             <>
               <Bubble m={{ id: 'p', role: 'user', content: pending, mode, sources: [], createdAt: '' }} name={name} />
               <div className="flex items-center gap-2">
-                <Lumi mood="THINKING" size={34} skin={me?.companion.skinId} label={name} />
+                <Lumi mood="THINKING" size={34} skin={me?.companion.skinId} stage={stageOf(me?.level.n ?? 1)} label={name} />
                 <span className="t-foot">{t('thinking', { name })}</span>
               </div>
             </>
@@ -123,7 +125,7 @@ export function Tutor({ lessonTitle }: { lessonTitle?: string }) {
           <div ref={end} />
         </div>
 
-        {PREMIUM_MODES.includes(mode) && !h.premium && (
+        {modeLocked(mode) && (
           <div className="card flex items-center gap-3">
             <Icon name="lock" />
             <span className="t-foot flex-1">{t('premiumMode')}</span>
@@ -134,9 +136,9 @@ export function Tutor({ lessonTitle }: { lessonTitle?: string }) {
         )}
         {limited && (
           <div className="card flex items-center gap-3">
-            <Lumi mood="SLEEPY" size={40} skin={me?.companion.skinId} label={name} />
-            <span className="t-foot flex-1">{h.premium ? t('limitPremium') : t('limitFree')}</span>
-            {!h.premium && (
+            <Lumi mood="SLEEPY" size={40} skin={me?.companion.skinId} stage={stageOf(me?.level.n ?? 1)} label={name} />
+            <span className="t-foot flex-1">{premium ? t('limitPremium') : t('limitFree')}</span>
+            {!premium && (
               <Link href="/premium" className="btn btn-primary w-auto px-4 py-2 text-[14px]">
                 {t('seePremium')}
               </Link>
@@ -173,20 +175,20 @@ export function Tutor({ lessonTitle }: { lessonTitle?: string }) {
               }
             }}
           />
-          <button type="submit" className="btn btn-primary w-auto px-4" disabled={!q.trim() || ask.isPending || limited || (PREMIUM_MODES.includes(mode) && !h.premium)} aria-label={t('send')}>
+          <button type="submit" className="btn btn-primary w-auto px-4" disabled={!q.trim() || ask.isPending || limited || modeLocked(mode)} aria-label={t('send')}>
             {t('send')}
           </button>
         </div>
         <span className="t-cap flex justify-between gap-2">
           <span>{t('left', { n: left, total: h.usage.limit })}</span>
-          <span>{h.ai ? t('engineAi') : t('engineManual')}</span>
+          <span>{t('engineLumi')}</span>
         </span>
       </form>
     </div>
   )
 }
 
-function Bubble({ m, name, skin }: { m: TutorMessageT; name: string; skin?: string }) {
+function Bubble({ m, name, skin, stage }: { m: TutorMessageT; name: string; skin?: string; stage?: number }) {
   const t = useTranslations('tutor')
   if (m.role === 'user')
     return (
@@ -196,7 +198,7 @@ function Bubble({ m, name, skin }: { m: TutorMessageT; name: string; skin?: stri
     )
   return (
     <div className="flex max-w-[95%] items-start gap-2">
-      <Lumi mood="HAPPY" size={34} skin={skin} label={name} className="mt-1 flex-none" />
+      <Lumi mood="HAPPY" size={38} skin={skin} stage={stage} label={name} className="mt-1 flex-none" />
       <div className="card flex min-w-0 flex-1 flex-col gap-2 rounded-tl-md">
         <RichText text={m.content} />
         {m.sources.length > 0 && (

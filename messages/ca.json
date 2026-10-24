@@ -87,7 +87,7 @@
     ],
     "trial": "7 dies gratis",
     "perMonth": "/mes · o {year}/any",
-    "tryPremium": "Provar Premium",
+    "tryPremium": "Veure plans",
     "contactTitle": "Contacte",
     "contactSub": "Escoles, acadèmies, premsa o dubtes. Et responem en 48 hores.",
     "name": "Nom",
@@ -196,7 +196,7 @@
     "levelN": "Nivell {n}",
     "companionName": "Nom (opcional)",
     "balanceTitle": "El teu saldo virtual per practicar",
-    "balancePremium": "Amb Premium: {amount}",
+    "balancePremium": "Amb Plus o Max: {amount}",
     "beforeStart": "Abans de començar",
     "disclaimer": "E-Trading és una app educativa. Mai s'opera amb diners reals, no es connecta a cap bròquer i no ofereix recomanacions d'inversió.",
     "accept": "Ho entenc i ho accepto",
@@ -220,14 +220,23 @@
     "allDone": "Has acabat totes les classes disponibles!",
     "freeDone": "Has acabat les classes gratuïtes",
     "seePath": "Veure el camí",
-    "seePremium": "Veure Premium",
+    "seePremium": "Veure plans",
     "goalsTitle": "Objectius d'avui",
     "goalsCount": "{done} de {total}",
     "allGoals": "Tots tres complerts! +10 gemmes.",
     "portfolio": "La teva cartera",
     "today": "avui",
     "portfolioChart": "Evolució de la teva cartera",
-    "level": "Nivell {n} · {title} · {xp} XP"
+    "level": "Nivell {n} · {title} · {xp} XP",
+    "badgesTitle": "Les teves insígnies",
+    "badgesCount": "{n} de {total} aconseguides",
+    "badgesAll": "Veure-les totes",
+    "badgesEmpty": "Encara no en tens cap: acaba la primera classe per guanyar-ne una.",
+    "quick": "Accessos ràpids",
+    "qLearn": "Classes",
+    "qMarket": "Mercat",
+    "qBadges": "Insígnies",
+    "qLumi": "Pregunta a la Lumi"
   },
   "path": {
     "title": "Classes",
@@ -238,15 +247,34 @@
     "unlocksOrders": "En aprovar «On posar el stop loss» es desbloquegen aquestes ordres al Mercat.",
     "completed": "Completada",
     "available": "Disponible · {min} min · +{xp} XP",
-    "premium": "Inclosa a Premium",
+    "premium": "Inclosa en un pla de pagament",
     "lockedReview": "Bloquejada · qüestionari final de la unitat",
     "locked": "Bloquejada",
     "lockedTitle": "Encara no està disponible",
     "lockedBody": "Les lliçons s'obren en ordre. Acaba l'anterior i aquesta es desbloqueja sola.",
-    "premiumTitle": "Aquesta lliçó és de Premium",
-    "premiumBody": "Amb Premium tens totes les classes, vides il·limitades i ordres avançades. El pots provar 7 dies gratis.",
-    "seePremium": "Veure Premium",
-    "ok": "Entesos"
+    "premiumTitle": "Aquesta lliçó és en un pla de pagament",
+    "premiumBody": "Amb Plus o Max tens més classes, vides il·limitades i més ajuda de la Lumi. El pots provar 7 dies gratis.",
+    "seePremium": "Veure plans",
+    "ok": "Entesos",
+    "inPlus": "Inclosa al pla Plus",
+    "inMax": "Inclosa al pla Max",
+    "sideUnit": "Extra",
+    "unitProgress": "{pct} % fet",
+    "access": {
+      "PARTIAL_PLUS": "Part a Plus",
+      "PARTIAL_MAX": "Part a Plus i Max",
+      "MAX": "Max"
+    },
+    "plusTitle": "Aquesta lliçó és al pla Plus",
+    "plusBody": "Amb Plus tens completes les unitats 4 i 5, les 5 primeres lliçons de cada unitat, vides il·limitades i més preguntes a la Lumi.",
+    "maxTitle": "Aquesta lliçó és al pla Max",
+    "maxBody": "Amb Max tens tot el curs, tots els modes de la Lumi i 100 preguntes al dia.",
+    "timeLeft": "Et queden {n} lliçons: unes {h} h {m} min en total.",
+    "daysAtPace": "Al teu ritme de {pace} min al dia, acabaràs en uns {days} dies",
+    "paceOption": "{m} min/dia: {days} dies",
+    "summary": "Portes {done} de {total} lliçons",
+    "continueNext": "Següent: {title}",
+    "continueBtn": "Continuar"
   },
   "lesson": {
     "close": "Tancar la lliçó",
@@ -266,8 +294,8 @@
     "supportImg": "Suport a sota i resistència a sobre; el preu rebota entre tots dos",
     "support": "Suport",
     "resistance": "Resistència",
-    "premiumOnly": "Aquesta lliçó és de Premium",
-    "seePremium": "Veure Premium",
+    "premiumOnly": "Aquesta lliçó és en un pla de pagament",
+    "seePremium": "Veure plans",
     "back": "Tornar a Classes",
     "keyIdea": "Idea clau",
     "img": {
@@ -338,7 +366,7 @@
     "noLivesTitle": "T'has quedat sense vides",
     "noLivesBody": "Descansa una mica. Mentrestant, pots repassar errors o practicar al Mercat.",
     "nextLife": "Següent vida en",
-    "unlimited": "Vides il·limitades amb Premium",
+    "unlimited": "Vides il·limitades amb Plus o Max",
     "refill": "Recarregar per 350 gemmes · en tens {have}",
     "refilled": "Vides recarregades",
     "reviewMistakes": "Repassar {n} errors (sense perdre vides)",
@@ -366,7 +394,7 @@
       "COMMODITY": "Matèries primeres"
     },
     "noResults": "No hi ha actius amb aquest nom.",
-    "emptyWatch": "Encara no segueixes cap actiu. Toca ☆ Seguir a qualsevol fitxa.",
+    "emptyWatch": "Encara no segueixes cap actiu. Cerca’n un o prem «Tot».",
     "stale": "Alguns preus tenen uns minuts de retard. Reconnectant amb el proveïdor…",
     "staleAsset": "Preu amb retard (l'últim conegut). Reconnectant…",
     "dataNote": "Preus reals: accions dels EUA i cripto al moment; borsa espanyola, Xetra i IBEX amb 15 min de retard. Divises en directe.",
@@ -433,7 +461,7 @@
     "fee": "Comissió simulada",
     "cashAfter": "Disponible després de l'ordre",
     "youGet": "Rebràs",
-    "lockedNote": "Límit, stop loss i take profit es desbloquegen amb la lliçó «On posar el stop loss» o amb Premium.",
+    "lockedNote": "Límit, stop loss i take profit es desbloquegen amb la lliçó «On posar el stop loss» o amb el pla Max.",
     "closedNote": "El mercat està tancat: l'ordre quedarà pendent i s'executarà en obrir.",
     "confirmBuy": "Comprar ara",
     "confirmSell": "Vendre ara",
@@ -442,7 +470,9 @@
     "errors": {
       "INSUFFICIENT_FUNDS": "Saldo insuficient",
       "INSUFFICIENT_QTY": "No tens tantes participacions",
-      "MIN_AMOUNT": "El mínim és 1 €"
+      "MIN_AMOUNT": "El mínim és 1 €",
+      "BAD_STOP": "El stop loss ha d’estar per sota del preu",
+      "BAD_TAKE_PROFIT": "El take profit ha d’estar per sobre del preu"
     },
     "riskTitle": "Avís de risc",
     "riskHead": "Espera, {name}. És molt en un sol actiu.",
@@ -454,9 +484,9 @@
     "buyAnyway": "Comprar igualment",
     "whatDiversify": "Què és diversificar? · Veure classes",
     "lockTitle": "Aquesta funció encara està bloquejada",
-    "lockBody": "Les ordres límit, stop loss i take profit es desbloquegen en aprovar la lliçó «On posar el stop loss» (Unitat 10 · Gestió del risc, gratis) o amb Premium. Així primer entens per a què serveixen.",
+    "lockBody": "Les ordres límit, stop loss i take profit es desbloquegen en aprovar la lliçó «On posar el stop loss» (Unitat 10 · Gestió del risc, gratis) o amb el pla Max. Així primer entens per a què serveixen.",
     "goLesson": "Anar a la lliçó",
-    "seePremium": "Veure Premium",
+    "seePremium": "Veure plans",
     "gotIt": "Entesos",
     "pendingTitle": "Ordre pendent",
     "boughtTitle": "Compra feta",
@@ -507,7 +537,7 @@
     "noAlerts": "No tens alertes. Crea-les des de la fitxa d'un actiu.",
     "buyNoun": "Compra",
     "sellNoun": "Venda",
-    "searchGlobal": "Cerca entre 1.600+ actius: Apple, Santander, Toyota…",
+    "searchGlobal": "Cerca entre gairebé 4.000 actius: Apple, Santander, Bitcoin, or…",
     "clearSearch": "Esborrar la cerca",
     "resultsCount": "{n, plural, =0 {Cap resultat} one {# resultat} other {# resultats}}",
     "seeAllResults": "Veure els {n} resultats",
@@ -531,12 +561,12 @@
     "commodity": "Matèria primera",
     "contracts": "contractes",
     "typeHint": {
-      "STOCK": "S&P 500, Europa i Àsia",
-      "ETF": "Cistelles llestes per invertir",
+      "STOCK": "3.600: EUA, Europa, Àsia i Llatinoamèrica",
+      "ETF": "174 cistelles: índexs, sectors, bons, or…",
       "INDEX": "El termòmetre de cada borsa",
       "CRYPTO": "Obertes 24/7",
       "FX": "Parells de divises",
-      "COMMODITY": "Or, petroli, cafè…"
+      "COMMODITY": "Or, plata, platí, petroli, cafè…"
     },
     "dataNoteGlobal": "Preus reals de Yahoo Finance. EUA, cripto i divises gairebé al moment; Europa amb 15 min de retard i Àsia amb 15–20 min. Matèries primeres: futurs amb 10 min de retard.",
     "typeLabel": "Tipus d'actiu",
@@ -548,7 +578,8 @@
     "sort": {
       "name": "Nom (A-Z)",
       "gainers": "Més pugen avui",
-      "losers": "Més baixen avui"
+      "losers": "Més baixen avui",
+      "popular": "Més coneguts"
     },
     "clearFilters": "Treure filtres",
     "loadMore": "Carregar-ne més",
@@ -564,7 +595,25 @@
     "timezoneLabel": "Hora de la borsa",
     "dayRange": "Rang del dia",
     "range52": "Rang de 52 setmanes",
-    "partOf": "Forma part de"
+    "partOf": "Forma part de",
+    "coachTitle": "{name} revisa la teva ordre",
+    "coachLesson": "Repassar la lliçó",
+    "sellBy": "Vendre per",
+    "sellPct": "Percentatge",
+    "sellAmount": "Import",
+    "ofValue": "de {value}",
+    "exitsTitle": "Sortides automàtiques",
+    "addStop": "Stop loss",
+    "addTp": "Take profit",
+    "lossAtStop": "Si salta, perdries uns {amount}",
+    "gainAtTarget": "Si hi arriba, guanyaries uns {amount}",
+    "exitsNote": "Es creen quan s’executa la compra. Si en salta una, l’altra es cancel·la sola.",
+    "categoryLabel": "Categoria",
+    "exitOfBuy": "sortida de la teva compra",
+    "favorites": "Preferits",
+    "everything": "Tot",
+    "favHint": "Prem ☆ Seguir en qualsevol actiu per tenir-lo aquí.",
+    "seeEverything": "Veure tot el mercat"
   },
   "streak": {
     "title": "Ratxa",
@@ -584,7 +633,7 @@
     "rule": "Compta com a dia actiu una lliçó, un qüestionari o una operació, segons la teva zona horària ({tz}). Tens {gems} gemmes."
   },
   "achievements": {
-    "title": "Assoliments",
+    "title": "Insígnies",
     "count": "{n} de {total}",
     "inProgress": "En curs",
     "cat": {
@@ -621,16 +670,16 @@
     "streakDays": "dies de ratxa",
     "gems": "gemmes",
     "lessons": "lliçons",
-    "achievementsN": "assoliments",
+    "achievementsN": "insígnies",
     "habits": "Els teus hàbits de trading",
     "tradesPerDay": "Operacions per dia",
     "winRate": "Operacions amb benefici",
     "drawdown": "Caiguda més gran de la cartera",
     "streak": "Ratxa",
-    "achievements": "Assoliments",
+    "achievements": "Insígnies",
     "notifications": "Avisos",
     "portfolio": "Cartera",
-    "tryPremium": "Provar Premium 7 dies gratis"
+    "tryPremium": "Provar 7 dies gratis"
   },
   "notifications": {
     "title": "Avisos",
@@ -639,33 +688,45 @@
     "empty": "No tens avisos. T'escriurem quan passi alguna cosa important."
   },
   "premium": {
-    "title": "Aprèn sense límits amb Premium",
-    "features": [
-      "Totes les classes i unitats",
-      "Vides il·limitades als qüestionaris",
-      "50.000 € virtuals per practicar",
-      "Ordres límit, stop loss i take profit",
-      "La Lumi analitza la teva cartera cada setmana",
-      "Un protector de ratxa cada setmana"
-    ],
+    "title": "Tria com vols aprendre",
     "yearly": "Anual",
     "yearlyPrice": "{price} l'any · {month}/mes",
     "monthly": "Mensual",
     "monthlyPrice": "{price} al mes",
-    "tryFree": "Provar {days} dies gratis",
+    "tryFree": "Provar {plan} {days} dies gratis",
     "after": "Després {price}{per}. Cancel·la quan vulguis des de Configuració. T'avisem 2 dies abans de cobrar.",
     "perYear": "/any",
     "perMonth": "/mes",
     "demoNote": "Versió de prova: no es cobra res. El pagament real amb Stripe arriba a l'etapa 7.",
     "confirming": "Confirmant el pagament…",
     "failed": "No s'ha pogut completar el pagament. No se t'ha cobrat res.",
-    "welcome": "Ja ets Premium",
+    "welcome": "Ja tens {plan}",
     "trialEnds": "La teva prova gratuïta acaba el {date}. Hem afegit <b>{amount} virtuals</b> a la teva cartera.",
     "start": "Començar",
-    "youArePremium": "Tens Premium",
     "trialUntil": "Prova gratuïta fins al {date}.",
     "active": "La teva subscripció està activa.",
-    "manage": "Gestionar a Configuració"
+    "manage": "Gestionar a Configuració",
+    "choosePlan": "Pla",
+    "plusPitch": "Plus: el pla intermedi. Unitats 4 i 5 completes i les 5 primeres lliçons de cada unitat.",
+    "maxPitch": "Max: tot el curs i tota la Lumi, sense límits.",
+    "plusFeatures": [
+      "Unitats 1 a 5 completes",
+      "Les 5 primeres lliçons de cada unitat",
+      "Vides il·limitades als qüestionaris",
+      "50.000 € virtuals per practicar",
+      "30 preguntes al dia a la Lumi i el mode «La meva cartera»"
+    ],
+    "maxFeatures": [
+      "Les 13 unitats completes, sense excepcions",
+      "Vides il·limitades als qüestionaris",
+      "50.000 € virtuals per practicar",
+      "Límit, stop loss i take profit des del primer dia",
+      "100 preguntes al dia a la Lumi i tots els seus modes, també «Els meus biaixos»",
+      "Un protector de ratxa cada setmana"
+    ],
+    "youAre": "Tens el pla {plan}.",
+    "upgradeTitle": "Passa’t a Max",
+    "upgradeCta": "Passar a Max"
   },
   "settings": {
     "title": "Configuració",
@@ -676,9 +737,9 @@
     "trialEnds": "Fi de la prova",
     "nextCharge": "Proper cobrament",
     "cancel": "Cancel·lar la subscripció",
-    "cancelConfirm": "Segur que vols cancel·lar Premium?",
+    "cancelConfirm": "Segur que vols cancel·lar el teu pla?",
     "cancelled": "Subscripció cancel·lada",
-    "upgrade": "Passar a Premium",
+    "upgrade": "Veure plans",
     "profile": "Perfil",
     "name": "Nom",
     "save": "Desar",
@@ -757,7 +818,7 @@
     "range": "Període",
     "dauMau": "Usuaris actius (DAU / MAU)",
     "retention": "Retenció D7",
-    "conversion": "Conversió a Premium",
+    "conversion": "Conversió a plans de pagament",
     "trades": "Operacions simulades",
     "activeByDay": "Usuaris actius per dia",
     "funnel": "Embut",
@@ -781,7 +842,7 @@
         "10.000 €"
       ],
       [
-        "Saldo inicial Premium",
+        "Saldo inicial de pagament",
         "50.000 €"
       ],
       [
@@ -813,7 +874,7 @@
         "14"
       ],
       [
-        "Dies de prova Premium",
+        "Dies de prova",
         "7"
       ]
     ],
@@ -873,7 +934,9 @@
     "error": "No s'ha pogut carregar el gràfic. Tornant-hi…",
     "noData": "Sense dades per a aquest interval.",
     "hintOne": "Toca el gràfic per col·locar la línia.",
-    "hintTwo": "Toca dos punts del gràfic."
+    "hintTwo": "Toca dos punts del gràfic.",
+    "kind": "Tipus de gràfic",
+    "moreKinds": "Més tipus de gràfic"
   },
   "tutor": {
     "title": "Pregunta-ho a {name}",
@@ -887,8 +950,8 @@
     "modeHint": {
       "EXPLAIN": "Pregunta qualsevol concepte del curs: te l’explica amb exemples.",
       "PATH": "Et recomana el pas següent segons el teu progrés.",
-      "PORTFOLIO": "Analitza les teves posicions i operacions simulades amb el que ensenya el curs. Premium.",
-      "BIASES": "Detecta biaixos en les teves preguntes i operacions i et proposa regles. Premium."
+      "PORTFOLIO": "Analitza les teves posicions i operacions simulades amb el que ensenya el curs. Plus o Max.",
+      "BIASES": "Detecta biaixos en les teves preguntes i operacions i et proposa regles. Plus o Max."
     },
     "hello": "Hola, soc {name}",
     "intro": "La teva professora del curs. Pregunta’m el que no entenguis: responc amb el manual d’E-Trading i el teu progrés. No dono consells d’inversió: t’ensenyo a decidir per tu.",
@@ -903,18 +966,51 @@
     "placeholder": "Escriu la teva pregunta…",
     "send": "Enviar",
     "left": "{n} de {total} preguntes avui",
-    "engineAi": "Respostes amb IA basades en el curs",
-    "engineManual": "Respostes extretes del manual del curs",
     "sources": "Del curs:",
     "clear": "Esborrar la conversa",
     "cleared": "Conversa esborrada",
-    "premiumMode": "Aquest mode analitza la teva cartera i els teus biaixos: és de Premium.",
-    "seePremium": "Veure Premium",
-    "limitFree": "Has fet servir les 5 preguntes gratuïtes d’avui. Amb Premium en tens 100 al dia i els modes de cartera i biaixos.",
+    "premiumMode": "Aquest mode és de Plus («La meva cartera») o Max («Els meus biaixos»).",
+    "seePremium": "Veure plans",
+    "limitFree": "Has fet servir les 5 preguntes gratuïtes d’avui. Amb Plus en tens 30 al dia i amb Max, 100 i tots els modes.",
     "limitPremium": "Has arribat al límit d’avui. Demà més.",
     "error": "No he pogut respondre. Torna-ho a provar.",
     "ask": "Pregunta-ho a {name}",
     "askHint": "Dubtes? La teva professora respon amb el curs",
-    "askLesson": "Preguntar a la professora"
+    "askLesson": "Preguntar a la professora",
+    "engineLumi": "La Lumi respon amb el curs, sense IA externa"
+  },
+  "lumi": {
+    "title": "La teva {name}",
+    "stage": "Nivell de brillantor {n} de 5 · {name}",
+    "stages": {
+      "1": "Una espurna",
+      "2": "Dues espurnes",
+      "3": "Tres espurnes",
+      "4": "Quatre espurnes",
+      "5": "Brillantor total"
+    },
+    "story": "La Lumi és un cub de gelatina que t’acompanya a E-Trading. T’explica el que no entens, t’avisa abans d’una mala operació i et recorda el teu pla quan el mercat es posa nerviós. Com més aprens, més brilla: li van sortint bombolletes de llum a dins.",
+    "growTitle": "Brilla amb tu",
+    "fromLevel": "Nivell {n}",
+    "next": "Al nivell {n} passarà a «{name}».",
+    "max": "La Lumi brilla al màxim. Enhorabona.",
+    "colorTitle": "Color",
+    "moodsTitle": "Com s’expressa",
+    "moods": {
+      "HAPPY": "Contenta",
+      "CELEBRATE": "Celebra",
+      "THINKING": "Pensant",
+      "WORRIED": "T’avisa",
+      "CALM": "Tranquil·la",
+      "SLEEPY": "Et troba a faltar"
+    },
+    "skins": {
+      "azul": "Blau",
+      "grafito": "Grafit",
+      "plata": "Plata",
+      "hielo": "Gel"
+    },
+    "saved": "Color desat",
+    "error": "No s’ha pogut desar"
   }
 }

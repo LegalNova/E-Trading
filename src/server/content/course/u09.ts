@@ -1,9 +1,9 @@
 import 'server-only'
-// Unidad 9 · Análisis técnico (docs/curso/09). Premium. Estadísticas de figuras: Bulkowski.
+// Unidad 9 · Análisis técnico (docs/curso/09). Acceso por plan: src/shared/plans.ts Estadísticas de figuras: Bulkowski.
 import { fill, img, key, lesson, multi, order, sim, single, text, tf, trend, unit } from '../dsl'
 
 export default unit({
-  id: 'u9', order: 9, title: 'Análisis técnico', description: 'Soportes, figuras, medias, RSI, MACD, Bollinger y Fibonacci', premiumOnly: true,
+  id: 'u9', order: 9, title: 'Análisis técnico', description: 'Soportes, figuras, medias, RSI, MACD, Bollinger y Fibonacci',
   lessons: [
     lesson('u9l1', 'Soportes y resistencias', [
       img('support', 'Qué son', '**Soporte:** zona donde las caídas se han frenado varias veces porque aparecen compradores.\n**Resistencia:** zona donde las subidas se han frenado porque aparecen vendedores.'),

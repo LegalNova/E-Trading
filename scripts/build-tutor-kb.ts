@@ -12,7 +12,7 @@ const chunks: Chunk[] = []
 
 for (const f of readdirSync(DIR).filter(f => f.endsWith('.md')).sort()) {
   const md = readFileSync(path.join(DIR, f), 'utf8')
-  const module = (md.match(/^# (.+)$/m)?.[1] ?? f).trim()
+  const moduleTitle = (md.match(/^# (.+)$/m)?.[1] ?? f).trim()
   if (f.startsWith('D-') || f.startsWith('C-')) continue // examen y ruta: no aportan para responder dudas
   if (f.startsWith('A-')) {
     // Glosario: un fragmento por término
@@ -32,7 +32,7 @@ for (const f of readdirSync(DIR).filter(f => f.endsWith('.md')).sort()) {
     let buf = ''
     const flush = () => {
       const text = buf.replace(/\n{3,}/g, '\n\n').trim()
-      if (text.length > 60) chunks.push({ id: `c${chunks.length}`, module, lesson, title, text: text.slice(0, MAX * 1.5) })
+      if (text.length > 60) chunks.push({ id: `c${chunks.length}`, module: moduleTitle, lesson, title, text: text.slice(0, MAX * 1.5) })
       buf = ''
     }
     for (const p of parts) {

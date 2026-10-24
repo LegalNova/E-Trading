@@ -3,7 +3,7 @@ import 'server-only'
 import { fill, key, lesson, multi, order, sim, single, text, tf, unit } from '../dsl'
 
 export default unit({
-  id: 'u2', order: 2, title: 'Cómo funciona el mercado', description: 'Acciones, bonos, bolsas, órdenes, índices, ETFs y cripto', premiumOnly: false,
+  id: 'u2', order: 2, title: 'Cómo funciona el mercado', description: 'Acciones, bonos, bolsas, órdenes, índices, ETFs y cripto',
   lessons: [
     lesson('u2l1', 'Qué es una acción', [
       text('Ser dueño de una parte', 'Inditex está dividida en unos 3.100 millones de acciones. Si compras una, eres dueño de una parte diminuta de sus tiendas, sus marcas y sus beneficios futuros.\n\nComo accionista puedes cobrar **dividendos** y votar en la junta.'),

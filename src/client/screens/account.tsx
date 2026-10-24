@@ -1,5 +1,6 @@
 'use client'
 // 06 · Premium, ajustes, cuenta y privacidad (RGPD)
+import { PLAN_NAME } from '@/shared/plans'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useLocale, useTranslations } from 'next-intl'
 import { useState } from 'react'
@@ -22,19 +23,18 @@ export function Premium() {
   const toast = useToast()
   const { data: plans } = useQuery({ queryKey: ['plans'], queryFn: api.billingPlans })
   const { data: status } = useQuery({ queryKey: ['billing'], queryFn: api.billingStatus })
-  const [plan, setPlan] = useState('premium-year')
+  const [tier, setTier] = useState<'PLUS' | 'PREMIUM'>('PREMIUM')
+  const [interval, setInterval_] = useState<'YEAR' | 'MONTH'>('YEAR')
   const [step, setStep] = useState<'choose' | 'confirming' | 'done'>('choose')
+  const chosen = plans?.find(p => p.tier === tier && p.interval === interval)
   const checkout = useMutation({
-    mutationFn: () => api.checkout(plan),
+    mutationFn: () => api.checkout(chosen!.id),
     onMutate: () => setStep('confirming'),
     onSuccess: () => (refresh(), setStep('done')),
     onError: e => (setStep('choose'), toast(e instanceof ApiFailure ? e.message : t('failed'))),
   })
-  const features = t.raw('features') as string[]
-  if (!plans || !status) return <PageSkeleton />
-  const year = plans.find(p => p.interval === 'YEAR')!
-  const month = plans.find(p => p.interval === 'MONTH')!
-  const chosen = plans.find(p => p.id === plan)!
+  if (!plans || !status || !chosen) return <PageSkeleton />
+  const features = (k: 'PLUS' | 'PREMIUM') => t.raw(k === 'PLUS' ? 'plusFeatures' : 'maxFeatures') as string[]
 
   if (step === 'confirming')
     return (
@@ -49,7 +49,7 @@ export function Premium() {
         <div className="animate-pop">
           <Lumi mood="CELEBRATE" size={96} />
         </div>
-        <h1 className="t-large">{t('welcome')}</h1>
+        <h1 className="t-large">{t('welcome', { plan: PLAN_NAME[tier] })}</h1>
         <p className="t-body muted m-0">
           {t.rich('trialEnds', {
             date: checkout.data?.trialEndsAt ? new Date(checkout.data.trialEndsAt).toLocaleDateString(locale, { day: 'numeric', month: 'long' }) : '',
@@ -69,9 +69,9 @@ export function Premium() {
       <>
         <TopBar close="/perfil" />
         <div className="pad">
-          <h1 className="t-large">{t('youArePremium')}</h1>
+          <h1 className="t-large">{t('youAre', { plan: 'Max' })}</h1>
           <p className="t-body muted m-0">{status.status === 'TRIALING' && status.trialEndsAt ? t('trialUntil', { date: new Date(status.trialEndsAt).toLocaleDateString(locale, { day: 'numeric', month: 'long' }) }) : t('active')}</p>
-          <FeatureList features={features} />
+          <FeatureList features={features('PREMIUM')} />
           <Link href="/ajustes" className="btn btn-secondary">
             {t('manage')}
           </Link>
@@ -79,25 +79,40 @@ export function Premium() {
       </>
     )
 
-  const monthlyFromYear = Number(year.price) / 12
+  const isPlus = status.plan === 'PLUS'
+  const year = plans.find(p => p.tier === tier && p.interval === 'YEAR')!
+  const month = plans.find(p => p.tier === tier && p.interval === 'MONTH')!
   const saving = Math.round((1 - Number(year.price) / (Number(month.price) * 12)) * 100)
   return (
     <>
       <TopBar close="/inicio" />
       <div className="pad">
-        <h1 className="t-large">{t('title')}</h1>
-        <FeatureList features={features} />
-        <button className="opt" aria-pressed={plan === year.id} onClick={() => setPlan(year.id)}>
+        <h1 className="t-large">{isPlus ? t('upgradeTitle') : t('title')}</h1>
+        {isPlus && <p className="t-body muted m-0">{t('youAre', { plan: 'Plus' })}</p>}
+        {!isPlus && (
+          <Seg
+            label={t('choosePlan')}
+            value={tier}
+            onChange={setTier}
+            options={[
+              { value: 'PLUS', label: 'Plus' },
+              { value: 'PREMIUM', label: 'Max' },
+            ]}
+          />
+        )}
+        <p className="t-foot m-0">{t(tier === 'PLUS' ? 'plusPitch' : 'maxPitch')}</p>
+        <FeatureList features={features(isPlus ? 'PREMIUM' : tier)} />
+        <button className="opt" aria-pressed={interval === 'YEAR'} onClick={() => setInterval_('YEAR')}>
           <span className="flex-1">
             <b>{t('yearly')}</b>
             <br />
-            <span className="t-foot">{t('yearlyPrice', { price: money(year.price, 'EUR', locale), month: money(monthlyFromYear, 'EUR', locale) })}</span>
+            <span className="t-foot">{t('yearlyPrice', { price: money(year.price, 'EUR', locale), month: money(Number(year.price) / 12, 'EUR', locale) })}</span>
           </span>
           <span className="chip" style={{ background: 'var(--up)', color: '#fff' }}>
             −{saving} %
           </span>
         </button>
-        <button className="opt" aria-pressed={plan === month.id} onClick={() => setPlan(month.id)}>
+        <button className="opt" aria-pressed={interval === 'MONTH'} onClick={() => setInterval_('MONTH')}>
           <span className="flex-1">
             <b>{t('monthly')}</b>
             <br />
@@ -105,7 +120,7 @@ export function Premium() {
           </span>
         </button>
         <button className="btn btn-primary" onClick={() => checkout.mutate()}>
-          {t('tryFree', { days: chosen.trialDays })}
+          {isPlus ? t('upgradeCta') : t('tryFree', { days: chosen.trialDays, plan: PLAN_NAME[tier] })}
         </button>
         <p className="t-cap m-0 text-center">{t('after', { price: money(chosen.price, 'EUR', locale), per: chosen.interval === 'YEAR' ? t('perYear') : t('perMonth') })}</p>
         <div className="banner banner-info">{t('demoNote')}</div>
@@ -173,9 +188,9 @@ export function Settings() {
         <div className="list">
           <div className="li plainline justify-between">
             <span>{t('plan')}</span>
-            <b>{me.plan === 'PREMIUM' ? `Premium · ${status.interval === 'YEAR' ? t('yearly') : t('monthly')}` : 'Free'}</b>
+            <b>{me.plan !== 'FREE' ? `${PLAN_NAME[me.plan]} · ${status.interval === 'YEAR' ? t('yearly') : t('monthly')}` : 'Free'}</b>
           </div>
-          {me.plan === 'PREMIUM' ? (
+          {me.plan !== 'FREE' ? (
             <>
               {status.renewsAt && (
                 <div className="li plainline justify-between">
@@ -225,7 +240,7 @@ export function Settings() {
           </div>
           <div className="li plainline flex-col items-stretch gap-2">
             <span>{t('dailyGoal')}</span>
-            <Seg label={t('dailyGoal')} value={String(s.dailyGoalMinutes)} onChange={m => save.mutate({ dailyGoalMinutes: Number(m) as SettingsT['dailyGoalMinutes'] })} options={['5', '10', '15', '20'].map(m => ({ value: m, label: `${m} min` }))} />
+            <Seg label={t('dailyGoal')} value={String(s.dailyGoalMinutes)} onChange={m => save.mutate({ dailyGoalMinutes: Number(m) as SettingsT['dailyGoalMinutes'] })} options={['5', '10', '15', '20', '30'].map(m => ({ value: m, label: `${m} min` }))} />
           </div>
           <div className="li plainline flex-col items-stretch gap-2">
             <span>{t('theme')}</span>
@@ -314,7 +329,7 @@ export function Account() {
   const logout = useMutation({ mutationFn: api.signOut, onSuccess: () => (qc.clear(), router.replace('/')) })
   const del = useMutation({ mutationFn: api.deleteAccount, onSuccess: () => (qc.clear(), router.replace('/')) })
   if (!me || !pf) return <PageSkeleton />
-  const start = me.plan === 'PREMIUM' ? 50000 : 10000
+  const start = me.plan !== 'FREE' ? 50000 : 10000
   const word = t('deleteWord')
   return (
     <>

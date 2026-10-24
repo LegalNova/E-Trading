@@ -1,11 +1,10 @@
 import 'server-only'
-// Unidad 8 · Velas japonesas (docs/curso/08). Gratis 8.1–8.5; resto Premium.
+// Unidad 8 · Velas japonesas (docs/curso/08). Acceso por plan: src/shared/plans.ts
 // Ejercicios con velas REALES detectadas por scripts/build-lesson-charts.py. Estadísticas: Bulkowski (thepatternsite.com).
 import { chart, fill, img, key, lesson, multi, order, sim, single, text, tf, unit } from '../dsl'
 
 export default unit({
-  id: 'u8', order: 8, title: 'Velas japonesas', description: 'Leer cada vela, los patrones principales y cuánto funcionan de verdad', premiumOnly: true,
-  freeLessonIds: ['u8l1', 'u8l2', 'u8l3', 'u8l4', 'u8l5'],
+  id: 'u8', order: 8, title: 'Velas japonesas', description: 'Leer cada vela, los patrones principales y cuánto funcionan de verdad',
   lessons: [
     lesson('u8l1', 'De Sakata a tu pantalla', [
       text('El mercado de arroz de Dojima', 'En el Japón del siglo XVIII, el arroz era moneda. En Osaka funcionaba el mercado de **Dojima**, uno de los primeros de futuros del mundo. Según la tradición, el comerciante **Munehisa Homma** estudiaba el comportamiento emocional de compradores y vendedores.'),

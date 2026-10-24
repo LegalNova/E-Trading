@@ -22,7 +22,7 @@ export interface OnboardingDraft {
   birthDate: string // YYYY-MM-DD
   experience: 'NONE' | 'SOME' | 'EXPERIENCED'
   goals: string[]
-  dailyGoalMinutes: 5 | 10 | 15 | 20
+  dailyGoalMinutes: 5 | 10 | 15 | 20 | 30
   skinId: string
   companionName: string
   disclaimerAccepted: boolean
@@ -35,6 +35,9 @@ export interface OrderInput {
   amount?: string
   qty?: string
   triggerPrice?: string
+  /** Salidas de una compra: se crean al ejecutarse */
+  stopLoss?: string
+  takeProfit?: string
   riskAcknowledged?: boolean
   /** Bajó el importe al sugerido por Lumi (logro «Sangre fría») */
   followedRiskAdvice?: boolean
@@ -56,7 +59,7 @@ export interface AdminMetrics {
   series: number[]
   providers: { name: string; status: 'OK' | 'DEGRADED' | 'DOWN'; latencyMs: number | null; note: string }[]
 }
-export interface AdminUser { id: string; name: string; email: string; plan: 'FREE' | 'PREMIUM'; createdAt: string; lastActive: string; blocked: boolean; xp: number }
+export interface AdminUser { id: string; name: string; email: string; plan: 'FREE' | 'PLUS' | 'PREMIUM'; createdAt: string; lastActive: string; blocked: boolean; xp: number }
 export interface AdminQuestion { id: string; type: string; prompt: string; options: string[]; solution: number | number[] | string; explanation: string }
 export interface AdminContent { units: { id: string; order: number; title: string; lessons: { id: string; title: string; quizId: string }[] }[]; quizzes: Record<string, AdminQuestion[]>; achievements: number }
 export interface AuditEntry { id: string; actor: string; action: string; entity: string; createdAt: string }
@@ -106,7 +109,7 @@ export interface Api {
   candles(symbol: string, interval: CandleInterval): Promise<CandleT[]>
   searchAssets(f: AssetFilter): Promise<AssetPageT>
   marketOverview(region: RegionT | 'ALL'): Promise<MarketOverviewT>
-  facets(region?: RegionT): Promise<Facets>
+  facets(region?: RegionT, type?: AssetTypeT): Promise<Facets>
   watchlist(): Promise<string[]>
   toggleWatch(symbol: string): Promise<string[]>
   previewOrder(input: OrderInput): Promise<OrderPreviewT>
@@ -132,7 +135,7 @@ export interface Api {
 
   // Ajustes y pagos
   settings(): Promise<SettingsT>
-  updateSettings(patch: Partial<SettingsT> & { name?: string; companionName?: string }): Promise<SettingsT>
+  updateSettings(patch: Partial<SettingsT> & { name?: string; companionName?: string; skinId?: string }): Promise<SettingsT>
   billingPlans(): Promise<BillingPlanT[]>
   billingStatus(): Promise<BillingStatusT>
   checkout(planId: string): Promise<BillingStatusT>

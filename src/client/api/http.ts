@@ -98,7 +98,7 @@ export const httpApi: Api = {
     return get(`/market/assets?${p}`)
   },
   marketOverview: region => get(`/market/overview?region=${region}`),
-  facets: region => get(`/market/facets${region ? `?region=${region}` : ''}`),
+  facets: (region, type) => get(`/market/facets?${new URLSearchParams({ ...(region ? { region } : {}), ...(type ? { type } : {}) })}`),
   watchlist: () => get('/watchlist'),
   toggleWatch: symbol => post(`/watchlist/${encodeURIComponent(symbol)}`),
   previewOrder: (i: OrderInput) => post('/orders/preview', i),

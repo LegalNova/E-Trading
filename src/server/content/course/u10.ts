@@ -4,8 +4,8 @@ import 'server-only'
 import { fill, img, key, lesson, multi, order, sim, single, text, tf, unit } from '../dsl'
 
 export default unit({
-  id: 'u10', order: 10, title: 'Gestión del riesgo', description: 'Tamaño de posición, stop loss, esperanza matemática y tu plan', premiumOnly: true,
-  freeLessonIds: ['u10l1', 'u10l2', 'u10l3'], unlocksFeature: 'STOP_LOSS',
+  id: 'u10', order: 10, title: 'Gestión del riesgo', description: 'Tamaño de posición, stop loss, esperanza matemática y tu plan',
+  unlocksFeature: 'STOP_LOSS',
   lessons: [
     lesson('u10l1', 'Por qué el riesgo importa más que acertar', [
       text('La pregunta del profesional', 'El principiante pregunta "¿qué compro?". El profesional, "**¿cuánto pierdo si me equivoco?**".\n\nNadie sabe si una operación saldrá bien. Lo único que controlas es cuánto arriesgas.'),
