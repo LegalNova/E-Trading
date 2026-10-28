@@ -1,0 +1,523 @@
+{
+ "unit": {
+  "title": "Choosing where to invest",
+  "description": "Safe brokers, fees, neobrokers and robo-advisers: how to compare without falling into traps",
+  "section": "Spain: taxes and scams"
+ },
+ "lessons": {
+  "u33l1": {
+   "title": "How to choose a broker",
+   "steps": [
+    {
+     "title": "First, make sure it's safe",
+     "body": "1. **Regulation:** authorised by the CNMV or by an EU supervisor with a **passport** to operate in Spain. Check on cnmv.es, not on its website.\n2. **Protection:** your securities are yours and kept separate from the broker's own assets. If anything went missing, **FOGAIN** (Spain's investor compensation scheme) covers up to **€100,000** per investor at member firms. It doesn't cover market falls."
+    },
+    {
+     "title": "Then, make sure it fits",
+     "body": "3. **Costs:** buying and selling, custody, currency exchange, inactivity.\n4. **Products:** does it have the index funds and ETFs you want?\n5. **Tax:** **Spanish** brokers withhold tax and report to Hacienda (Spain's tax authority); **foreign** ones usually don't, so you declare everything yourself and maybe Modelo 720 too. Compensation schemes in other countries may have lower limits."
+    },
+    {
+     "title": "What to take away",
+     "body": "A cheap but unauthorised broker is the most expensive of all: you could lose everything.",
+     "key": "First, make sure it's safe and authorised; then, that it's cheap.",
+     "tip": "Before looking at what a broker charges, look at who supervises it."
+    }
+   ]
+  },
+  "u33l2": {
+   "title": "A broker's fees",
+   "steps": [
+    {
+     "title": "What they charge you",
+     "body": "• **Trading:** per trade (flat, percentage or mixed).\n• **Custody:** for holding your securities, sometimes monthly or yearly.\n• **Currency exchange:** when you buy in another currency. It's usually the **biggest hidden cost**: from 0.1 % to 0.5 % or more per trade.\n• **Others:** inactivity, withdrawals, collecting dividends.\n\nAnd inside every fund or ETF, its TER."
+    },
+    {
+     "title": "Small things compound",
+     "body": "Try how the result changes over 20 or 30 years with 0.3 % more or less a year.",
+     "tip": "Always compare the total cost against the way you invest."
+    },
+    {
+     "title": "It depends on how you invest",
+     "body": "A flat €3 fee is a bargain on a €10,000 purchase (0.03 %) and outrageous on a €100 one (3 %). If you put in small amounts each month, look for low percentage fees or no minimum; for a few large purchases, a flat fee can work out better.",
+     "key": "The cheapest broker is the one that charges you the least, given the way you invest."
+    }
+   ]
+  },
+  "u33l3": {
+   "title": "Neobrokers: how they make money",
+   "steps": [
+    {
+     "title": "If it's free, who's paying?",
+     "body": "Neobrokers (apps with €0 or near-zero trading) make money in other ways:\n\n• **Payment for order flow (PFOF):** a market maker pays them to send it your orders.\n• **Spread** and **currency exchange**.\n• **Interest** on cash they don't pay you anything on.\n• **Securities lending** of your shares.\n• Premium **subscriptions**, crypto and CFDs."
+    },
+    {
+     "title": "The rules in the EU",
+     "body": "The EU's MiFIR regulation (2024) **bans payment for order flow** for retail clients. Some countries where it already existed were allowed to keep it as an exception **until 30 June 2026**.\n\nOn top of that, many apps use game design: confetti, notifications, streaks. The more you trade, the more they earn."
+    },
+    {
+     "title": "What to take away",
+     "body": "An authorised neobroker can be a good cheap option. Just be clear about how it makes money and don't let the app decide how much you trade.",
+     "key": "When something is free, ask yourself how the people giving it to you make money.",
+     "tip": "If the app nudges you to trade every day, remember your plan is a 20-year one."
+    }
+   ]
+  },
+  "u33l4": {
+   "title": "Robo-advisers and automated management",
+   "steps": [
+    {
+     "title": "What a robo-adviser is",
+     "body": "An **automated portfolio management** service: you fill in a questionnaire (the **suitability test**), it assigns you a portfolio of index funds based on your profile and takes care of investing and **rebalancing** for you.\n\nIn Spain it has to be a firm authorised by the CNMV."
+    },
+    {
+     "title": "How much it costs",
+     "body": "They usually charge a management fee plus the cost of the funds: in total, often between **0.4 % and 1 %** a year. More than doing it yourself with index funds (≈ 0.1-0.3 %), less than many active bank funds (1.5 % or more)."
+    },
+    {
+     "title": "You or the robot?",
+     "body": "Doing it yourself is cheaper if you're disciplined. A robo-adviser makes sense if it saves you from mistakes: forgetting to rebalance or panic selling. What it doesn't do is remove risk: if the market falls, your portfolio falls.",
+     "key": "A robo-adviser automates discipline, but it charges for it and doesn't remove market risk."
+    }
+   ]
+  },
+  "u33r": {
+   "title": "Unit review",
+   "steps": []
+  },
+  "s11boss": {
+   "title": "Final challenge: Spain: taxes and scams",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u33l1-1": {
+   "prompt": "Put the criteria for choosing a broker in order, from the first to the last you should look at.",
+   "options": [
+    "Protection if it goes bust",
+    "Costs",
+    "Products",
+    "Tax and convenience",
+    "Regulation"
+   ],
+   "explanation": "Safety first; price and convenience after."
+  },
+  "u33l1-2": {
+   "prompt": "What do you check before opening an account? Select all that apply.",
+   "options": [
+    "Which compensation scheme protects it",
+    "Its trading, custody and currency fees",
+    "How many followers it has on social media",
+    "That it's authorised in the CNMV registers"
+   ],
+   "explanation": "Popularity on social media says nothing about how safe it is."
+  },
+  "u33l1-3": {
+   "prompt": "What's the first thing you should check about a broker?",
+   "options": [
+    "That it has the nicest app",
+    "That it's the cheapest",
+    "That it's authorised by the CNMV or by a European supervisor with a passport"
+   ],
+   "explanation": "Without authorisation, nothing else matters."
+  },
+  "u33l1-4": {
+   "prompt": "What does FOGAIN cover?",
+   "options": [
+    "Up to €100,000 if a member firm can't return your money or securities",
+    "Everything you invest, with no limit",
+    "Losses when the stock market falls"
+   ],
+   "explanation": "It protects you against the firm failing, not against how the market performs."
+  },
+  "u33l1-5": {
+   "prompt": "A foreign broker usually withholds tax for you and sends your details to Hacienda.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Usually not: it's up to you to declare every trade, and maybe file Modelo 720."
+  },
+  "u33l1-6": {
+   "prompt": "A broker that doesn't appear in the CNMV registers offers you zero fees and a 100 % bonus on your first deposit. What do you do?",
+   "options": [
+    "Rule it out: if it isn't authorised, there's nothing to compare",
+    "Try with a small amount and, if it goes well, put in more",
+    "Grab the bonus, it's free money"
+   ],
+   "explanation": "Without authorisation, zero fees could cost you everything.",
+   "feedback": [
+    "Good: the first filter is authorisation. Fees come afterwards.",
+    "Many scams let you win at first so that you put in more.",
+    "Bonuses are the typical bait, and without authorisation you have no protection at all."
+   ]
+  },
+  "u33l1-7": {
+   "prompt": "Is it more typical of a Spanish broker or a foreign one?",
+   "options": [
+    "It may require you to file Modelo 720",
+    "Your income tax return comes almost ready-made",
+    "You have to declare every trade yourself",
+    "It withholds 19 % and sends your details to Hacienda"
+   ],
+   "explanation": "Tax convenience also counts when comparing.",
+   "right": [
+    "Spanish broker",
+    "Foreign broker"
+   ]
+  },
+  "u33l1-8": {
+   "prompt": "FOGAIN covers up to ____ € per investor.",
+   "options": [
+    "20,000",
+    "50,000",
+    "1,000,000",
+    "100,000"
+   ],
+   "explanation": "If a member firm can't return your money or securities."
+  },
+  "u33l1-9": {
+   "prompt": "Your shares and ETFs are kept separate from the broker's own assets.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "They're yours: if the broker goes bust, they should be returned to you."
+  },
+  "u33l1-10": {
+   "prompt": "Match each term with its meaning.",
+   "options": [
+    "CNMV",
+    "FOGAIN",
+    "European passport",
+    "Modelo 720"
+   ],
+   "explanation": "Four words that help you judge a broker.",
+   "right": [
+    "Scheme that pays out if a firm doesn't return what's yours",
+    "Permission to operate in Spain while being authorised in another EU country",
+    "Return declaring securities and accounts held abroad",
+    "Supervisor of investment services in Spain"
+   ]
+  },
+  "u33l2-1": {
+   "prompt": "You pay a flat €5 fee to buy €100 of an ETF. What percentage goes on the fee?",
+   "options": [],
+   "explanation": "5 ÷ 100 = 5 %. You'd have to make 5 % just to break even.",
+   "unit": "%"
+  },
+  "u33l2-2": {
+   "prompt": "You buy €2,000 of US shares and the broker charges 0.5 % for currency exchange. How many euros do you pay just to convert?",
+   "options": [],
+   "explanation": "2,000 × 0.005 = €10. And you'd pay again when you sell.",
+   "unit": "€"
+  },
+  "u33l2-3": {
+   "prompt": "A broker charges 0.2 % a year for custody. You have €20,000. How much do you pay per year?",
+   "options": [],
+   "explanation": "20,000 × 0.002 = €40 a year, whether your portfolio goes up or down.",
+   "unit": "€"
+  },
+  "u33l2-4": {
+   "prompt": "Match each fee with what it charges for.",
+   "options": [
+    "Trading",
+    "Custody",
+    "Currency exchange",
+    "Inactivity"
+   ],
+   "explanation": "Look at all of them, not just the one they advertise in big letters.",
+   "right": [
+    "Converting euros into another currency",
+    "Not trading for a while",
+    "Holding your securities",
+    "Every time you buy or sell"
+   ]
+  },
+  "u33l2-5": {
+   "prompt": "What's usually the biggest hidden cost when buying shares in another currency?",
+   "options": [
+    "Currency exchange",
+    "Custody",
+    "The app subscription"
+   ],
+   "explanation": "From 0.1 % to 0.5 % or more per trade, and sometimes it isn't on the home page."
+  },
+  "u33l2-6": {
+   "prompt": "Ana puts in €100 a month. Broker A charges a flat €3 per purchase; broker B, 0.5 % with no minimum. Which one works out cheaper for her?",
+   "options": [
+    "Both cost the same",
+    "B: it costs her €0.50 per purchase",
+    "A: €3 isn't much"
+   ],
+   "explanation": "The fee that suits you best depends on the size of your purchases.",
+   "feedback": [
+    "With €100 a month, no: €0.50 versus €3.",
+    "Exactly: €6 a year versus €36. With a one-off purchase of €10,000, though, A would win (€3 versus €50).",
+    "On €100 that's 3 %: €36 a year."
+   ]
+  },
+  "u33l2-7": {
+   "prompt": "If a broker advertises «€0 commission», investing with it costs nothing at all.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It may charge for currency exchange, the spread or custody, or make money in other ways."
+  },
+  "u33l2-8": {
+   "prompt": "Paid per trade or every year?",
+   "options": [
+    "Custody",
+    "Currency exchange",
+    "Bid-ask spread",
+    "Trading fee",
+    "A fund's TER"
+   ],
+   "explanation": "Per-trade costs punish trading a lot; annual ones punish holding something expensive.",
+   "right": [
+    "On every trade",
+    "Every year"
+   ]
+  },
+  "u33l2-9": {
+   "prompt": "Quick: where do you find the annual cost (TER) of a fund or ETF?",
+   "options": [
+    "In the KID, the key information document",
+    "On its Instagram account",
+    "In your income tax return"
+   ],
+   "explanation": "It's mandatory and standardised so you can compare."
+  },
+  "u33l2-10": {
+   "prompt": "One-off purchase of €100. Order from cheapest to most expensive.",
+   "options": [
+    "Flat €2",
+    "Flat €5",
+    "0.5 % with no minimum (€0.50)",
+    "0.1 % with no minimum (€0.10)"
+   ],
+   "explanation": "With small amounts, flat fees weigh very heavily."
+  },
+  "u33l3-1": {
+   "prompt": "What is payment for order flow (PFOF)?",
+   "options": [
+    "What a market maker pays the broker to send it your orders",
+    "A tax on trades",
+    "A fee you pay the broker"
+   ],
+   "explanation": "That's why a broker can advertise €0 trading and still make money from your orders."
+  },
+  "u33l3-2": {
+   "prompt": "In the EU, payment for order flow for retail clients is banned, with a temporary exception that ended on 30 June 2026.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It's set out in Regulation (EU) 2024/791, which amended MiFIR."
+  },
+  "u33l3-3": {
+   "prompt": "In what ways can a «commission-free» neobroker make money? Select all that apply.",
+   "options": [
+    "By lending your shares to others",
+    "By giving money away to its customers",
+    "With the interest on cash it doesn't pay you anything on",
+    "With currency exchange"
+   ],
+   "explanation": "And also with subscriptions, spreads and products like crypto or CFDs."
+  },
+  "u33l3-4": {
+   "prompt": "Pablo's app sends him notifications, confetti on every purchase and «streak» challenges. He's already trading 40 times a month. What would you suggest he think about?",
+   "options": [
+    "That the design is pushing him to trade more than his plan needs",
+    "That he should keep going: if the app rewards him, he must be doing it right",
+    "That he should switch to another app with more rewards"
+   ],
+   "explanation": "Gamification serves the broker's business, not necessarily your plan.",
+   "feedback": [
+    "Good: a long-term plan doesn't need 40 trades a month.",
+    "The app rewards trading, not winning. The more you trade, the more costs you rack up.",
+    "More rewards, more nudges to trade."
+   ]
+  },
+  "u33l3-5": {
+   "prompt": "Does the neobroker earn more if you trade a lot, or does it earn even if you don't trade?",
+   "options": [
+    "Interest on cash it doesn't pay you anything on",
+    "Monthly premium subscription",
+    "Lending out your shares",
+    "Spread on every trade",
+    "Currency exchange on every purchase"
+   ],
+   "explanation": "Knowing where its income comes from tells you what behaviour it'll encourage.",
+   "right": [
+    "Earns more if you trade a lot",
+    "Earns even if you don't trade"
+   ]
+  },
+  "u33l3-6": {
+   "prompt": "Pablo trades 40 times a month, €500 each time, and loses 0.2 % on the spread per trade. How much does it cost him a year?",
+   "options": [],
+   "explanation": "500 × 0.2 % = €1 per trade × 40 × 12 = €480 a year, even though the app says «€0 commission».",
+   "unit": "€"
+  },
+  "u33l3-7": {
+   "prompt": "If trading is free for you, the broker isn't making money from you.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It makes money in other ways: currency, spread, interest, securities lending or subscriptions."
+  },
+  "u33l3-8": {
+   "prompt": "Payment for order ____ is what a market maker pays the broker to send it your orders.",
+   "options": [
+    "volume",
+    "risk",
+    "exchange",
+    "flow"
+   ],
+   "explanation": "Often shortened to PFOF."
+  },
+  "u33l3-9": {
+   "prompt": "What should you check about a neobroker before anything else?",
+   "options": [
+    "That it has dark mode",
+    "That it's authorised and which compensation scheme protects you",
+    "That it gives you more confetti"
+   ],
+   "explanation": "It's a firm like any other: safety first."
+  },
+  "u33l3-10": {
+   "prompt": "What do you say to Lumi?",
+   "options": [
+    "Brilliant! The more you trade, the more you learn",
+    "Look at how the app makes money and whether those 8 purchases were in your plan",
+    "Turn on the crypto alerts too"
+   ],
+   "explanation": "An app can be cheap and at the same time push you to trade too much.",
+   "feedback": [
+    "More trades usually means more costs and more impulsive decisions.",
+    "Nice! «Free» is almost never free, and notifications aren't a plan.",
+    "More alerts, more temptation."
+   ],
+   "lines": [
+    "I've downloaded a really cool investing app 😍",
+    "It's all free and it sends me alerts about shares that are going up. I've made 8 purchases today!"
+   ]
+  },
+  "u33l4-1": {
+   "prompt": "Match each way of investing with its description.",
+   "options": [
+    "Robo-adviser",
+    "Doing it yourself",
+    "Active fund",
+    "Discretionary management"
+   ],
+   "explanation": "A robo-adviser is automated discretionary management and, usually, index-based.",
+   "right": [
+    "You choose and buy your own index funds",
+    "A manager picks stocks to beat the index",
+    "You hand the decisions over to an authorised firm",
+    "Automatic index fund portfolio based on a test"
+   ]
+  },
+  "u33l4-2": {
+   "prompt": "What does a robo-adviser do after your profile test?",
+   "options": [
+    "It assigns you an index fund portfolio and rebalances it for you",
+    "It recommends trendy shares",
+    "It guarantees you a return"
+   ],
+   "explanation": "It automates the allocation, the contributions and the rebalancing."
+  },
+  "u33l4-3": {
+   "prompt": "€10,000 over 30 years with the market at 7 % (an example). With a robo-adviser at 0.6 % in total you end up with about €64,306; doing it yourself at 0.2 %, about €71,968. How much does the convenience cost?",
+   "options": [],
+   "explanation": "71,968 − 64,306 = €7,662. It's only worth it if it saves you from mistakes that would cost more.",
+   "unit": "€"
+  },
+  "u33l4-4": {
+   "prompt": "A robo-adviser removes the risk of your portfolio falling.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It diversifies and rebalances, but if the market falls, your portfolio falls."
+  },
+  "u33l4-5": {
+   "prompt": "Laura has no time, never remembers to rebalance and in 2022 she sold in the middle of a crash. She's torn between a robo-adviser and building her own index portfolio. What makes more sense?",
+   "options": [
+    "An active bank fund at 1.8 %",
+    "Building it herself: it's cheaper, end of story",
+    "The robo-adviser could be worth it if it helps her avoid repeating those mistakes"
+   ],
+   "explanation": "Cost matters, but behavioural mistakes can cost even more.",
+   "feedback": [
+    "More expensive than both options and, on average, worse than its index.",
+    "Cheaper on paper, but her past mistakes cost her more than the fee would.",
+    "Good: she pays a bit more in exchange for automatic discipline. The key is not to abandon it during a crash."
+   ]
+  },
+  "u33l4-6": {
+   "prompt": "Is it an advantage of a robo-adviser or of doing it yourself?",
+   "options": [
+    "Lower total costs",
+    "You don't have to decide which funds to buy",
+    "Full control over every product",
+    "It rebalances automatically",
+    "It takes away the temptation to tinker with your portfolio"
+   ],
+   "explanation": "Convenience and discipline versus cost and control.",
+   "right": [
+    "Robo-adviser advantage",
+    "Do-it-yourself advantage"
+   ]
+  },
+  "u33l4-7": {
+   "prompt": "In Spain, a robo-adviser has to be a firm authorised by the CNMV.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Managing portfolios is a regulated investment service."
+  },
+  "u33l4-8": {
+   "prompt": "What should you look at before signing up to a robo-adviser? Select all that apply.",
+   "options": [
+    "Which funds it uses and how it rebalances",
+    "That it promises the highest return",
+    "The total cost: management plus funds",
+    "That it's authorised by the CNMV"
+   ],
+   "explanation": "Nobody serious promises returns."
+  },
+  "u33l4-9": {
+   "prompt": "The questionnaire that measures your knowledge, goals and risk tolerance before managing your money is called the ____ test.",
+   "options": [
+    "appropriateness",
+    "Turing",
+    "stress",
+    "suitability"
+   ],
+   "explanation": "The EU's MiFID rules require it for advice and portfolio management."
+  },
+  "u33l4-10": {
+   "prompt": "What do you say to Lumi?",
+   "options": [
+    "Neither, a bank fund with a manager is better",
+    "It depends: if you'll be consistent, doing it yourself is cheaper; if not, the robot helps you not slip up",
+    "Robo-adviser, always: robots don't make mistakes"
+   ],
+   "explanation": "There's no single answer: cost versus discipline.",
+   "feedback": [
+    "It's usually the most expensive option and, on average, returns less than its index.",
+    "That's it! Compare the extra cost with the mistakes it would save you from.",
+    "Robots follow rules, but the market can still fall. And they charge for the service."
+   ],
+   "lines": [
+    "Should I get a robo-adviser or do it myself? 🤖",
+    "I don't want to be glued to the stock market."
+   ]
+  }
+ }
+}

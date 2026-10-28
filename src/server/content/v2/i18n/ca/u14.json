@@ -1,0 +1,630 @@
+{
+ "unit": {
+  "title": "Divises (forex)",
+  "description": "Com es llegeixen els parells, què mou una divisa i com afecta la teva cartera",
+  "section": "Divises i matèries primeres"
+ },
+ "lessons": {
+  "u14l1": {
+   "title": "Parells de divises",
+   "steps": [
+    {
+     "title": "Base i cotitzada",
+     "body": "Un parell es llegeix així: **EUR/USD = 1,16** vol dir que **1 euro (la base) val 1,16 dòlars (la cotitzada)**.\n\n• Si puja a 1,20, l'euro s'**aprecia**: compra més dòlars.\n• Si baixa a 1,10, l'euro es **deprecia**.\n\nComprar EUR/USD és comprar euros pagant amb dòlars; vendre'l, el contrari."
+    },
+    {
+     "title": "El mercat més gran del món",
+     "body": "S'hi negocien uns **9,6 bilions de dòlars al dia** (BIS, abril del 2025). El dòlar és present en el **89 %** de les operacions; el segueixen l'euro i el ien.\n\n• **Parells principals:** EUR/USD, USD/JPY, GBP/USD, USD/CHF…\n• Obre les 24 hores de dilluns a divendres: Sydney, Tòquio, Londres i Nova York es passen el relleu."
+    },
+    {
+     "title": "Girar-lo",
+     "body": "Si EUR/USD = 1,25, aleshores un dòlar val 1 ÷ 1,25 = 0,80 €. Per passar dòlars a euros, **divideix** per EUR/USD; per passar euros a dòlars, **multiplica**.",
+     "key": "En un parell sempre compres una divisa venent l'altra: la primera és la que compres.",
+     "tip": "Una divisa mai no puja sola: puja respecte a una altra."
+    }
+   ]
+  },
+  "u14l2": {
+   "title": "Pips, lots i palanquejament",
+   "steps": [
+    {
+     "title": "Pips i lots",
+     "body": "Les divises es mouen en **pips**: la quarta xifra decimal (0,0001) en gairebé tots els parells; en els del ien, la segona (0,01).\n\nEUR/USD d'1,1600 a 1,1650 = **50 pips**.\n\nS'opera per **lots**: estàndard = 100.000 unitats de la divisa base; mini = 10.000; micro = 1.000. En EUR/USD, 1 pip amb un lot estàndard val **10 $**."
+    },
+    {
+     "title": "El palanquejament",
+     "body": "Els bròquers deixen operar amb molts més diners dels que hi poses. Amb **1:30** (el màxim per a minoristes a la UE en parells principals), 1.000 € de garantia mouen 30.000 €.\n\nUn moviment del **3,3 %** en contra es menja tota la garantia: les pèrdues es multipliquen per 30, igual que els guanys."
+    },
+    {
+     "title": "La mida surt del risc",
+     "body": "Mou el capital, el risc per operació i la distància a l'stop: la mida la decideix el que estàs disposat a perdre, no el palanquejament que t'ofereixen."
+    },
+    {
+     "title": "Advertiment de la CNMV",
+     "body": "«Els CFD són instruments complexos i estan associats a un risc elevat de perdre diners ràpidament a causa del palanquejament. Entre un 74 i un 89 % dels inversors minoristes perden diners quan negocien amb CFD.»",
+     "key": "El palanquejament no et fa millor inversor: només fa més grans els teus errors.",
+     "tip": "Que et deixin operar amb 30 vegades els teus diners no vol dir que ho hagis de fer."
+    }
+   ]
+  },
+  "u14l3": {
+   "title": "Què mou una divisa",
+   "steps": [
+    {
+     "title": "Els tipus d'interès manen",
+     "body": "Els diners busquen rendibilitat. Si la Fed paga més que el BCE, molts inversors compren dòlars per invertir als EUA i el **dòlar tendeix a apreciar-se**.\n\nNo compta només el tipus d'avui, sinó el que el mercat **espera** que facin els bancs centrals."
+    },
+    {
+     "title": "Inflació, comerç i por",
+     "body": "• **Inflació alta i persistent:** a llarg termini, la divisa perd valor.\n• **Comerç:** un país que exporta molt rep demanda de la seva divisa.\n• **Creixement:** atrau inversió.\n• **Por:** en les crisis, els diners fugen cap al dòlar, el franc suís i el ien."
+    },
+    {
+     "title": "2022: l'euro, a la paritat",
+     "body": "El 2022 la Fed va apujar els tipus abans i més de pressa que el BCE, i la guerra d'Ucraïna va colpejar més Europa. L'EUR/USD va baixar d'1,13 a menys d'1: **la paritat per primera vegada en 20 anys**.",
+     "key": "Les divises es mouen per diferències: de tipus, d'inflació, de creixement i de confiança."
+    }
+   ]
+  },
+  "u14l4": {
+   "title": "El risc de divisa a la teva cartera",
+   "steps": [
+    {
+     "title": "Dues rendibilitats en una",
+     "body": "Si compres un fons de l'S&P 500 en euros, guanyes o perds per **dues coses**: el que fan les accions (en dòlars) i el que fa el **dòlar respecte a l'euro**.\n\n**Rendibilitat en euros ≈ (1 + rendibilitat en $) × (1 + variació del dòlar) − 1.**"
+    },
+    {
+     "title": "Va passar de debò",
+     "body": "El **2025** el dòlar va perdre **més d'un 10 %** respecte a l'euro: qui tenia un fons de l'S&P 500 va veure com una bona pujada en dòlars es quedava en molt menys en euros.\n\nI al revés: el **2022** la pujada del dòlar va esmorteir per als europeus la caiguda de la borsa americana."
+    },
+    {
+     "title": "Cobrir o no cobrir",
+     "body": "Hi ha fons **amb cobertura de divisa** («EUR Hedged»): eliminen gairebé tot l'efecte del dòlar a canvi d'un petit cost. En fons d'accions a llarg termini molts inversors no es cobreixen; en bons se sol cobrir, perquè la divisa mouria més que el mateix bo.",
+     "key": "Quan inverteixes fora, també inverteixes en la seva moneda.",
+     "tip": "Mira en quina divisa és el que compres… i en quina gastaràs."
+    }
+   ]
+  },
+  "u14l5": {
+   "title": "Divises refugi",
+   "steps": [
+    {
+     "title": "On s'amaguen els diners",
+     "body": "Quan hi ha pànic, els diners corren cap a les **divises refugi**:\n\n• **Dòlar:** la moneda de reserva mundial i el mercat de bons més gran.\n• **Franc suís:** país estable, amb poc deute.\n• **Ien:** el Japó és un dels creditors més grans del món; en les crisis, els seus inversors porten els diners de tornada a casa."
+    },
+    {
+     "title": "Quan el refugi dona ensurts",
+     "body": "El **15 de gener del 2015** el Banc Nacional Suís va treure el límit d'1,20 francs per euro. En minuts, l'EUR/CHF va arribar a **0,85**: el franc es va disparar i diversos bròquers van fer fallida.\n\nL'**agost del 2024** el ien va pujar de cop quan es va desfer el *carry trade* (manllevar iens barats per invertir fora) i el Nikkei va caure un **12,4 %** en un dia."
+    },
+    {
+     "title": "Refugi no vol dir segur",
+     "body": "Una divisa refugi sol pujar quan tot cau, però es pot moure amb violència en tots dos sentits. Saber-ho serveix per entendre una crisi, no per endevinar la següent.",
+     "key": "En les crisis, els diners busquen dòlars, francs i iens."
+    }
+   ]
+  },
+  "u14r": {
+   "title": "Repàs de la unitat",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u14l1-1": {
+   "prompt": "EUR/USD = 1,16. Què vol dir?",
+   "options": [
+    "1 dòlar val 1,16 euros",
+    "1 euro val 1,16 dòlars",
+    "L'euro ha pujat un 16 % aquest any"
+   ],
+   "explanation": "La primera divisa (la base) sempre val 1; la xifra diu quantes unitats de la segona costa."
+  },
+  "u14l1-2": {
+   "prompt": "En EUR/USD, l'euro és la divisa ____ i el dòlar, la cotitzada.",
+   "options": [
+    "cotitzada",
+    "refugi",
+    "forta",
+    "base"
+   ],
+   "explanation": "La base va primer i sempre val 1 unitat."
+  },
+  "u14l1-3": {
+   "prompt": "L'EUR/USD passa d'1,10 a 1,05. Què ha passat?",
+   "options": [
+    "El dòlar s'ha depreciat",
+    "L'euro s'ha depreciat",
+    "L'euro s'ha apreciat"
+   ],
+   "explanation": "Ara un euro compra 1,05 $ en lloc d'1,10 $: val menys. Alhora, el dòlar s'ha apreciat."
+  },
+  "u14l1-4": {
+   "prompt": "EUR/USD = 1,25. Quants euros val 1 dòlar?",
+   "options": [],
+   "explanation": "1 ÷ 1,25 = 0,80 €.",
+   "unit": "€"
+  },
+  "u14l1-5": {
+   "prompt": "Tornes de Nova York amb 230 $. Si EUR/USD = 1,15, quants euros et donen en canviar-los (sense comissions)?",
+   "options": [],
+   "explanation": "230 ÷ 1,15 = 200 €. De dòlars a euros es divideix.",
+   "unit": "€"
+  },
+  "u14l1-6": {
+   "prompt": "Relaciona cada cotització amb el que vol dir.",
+   "options": [
+    "EUR/USD = 1,16",
+    "USD/JPY = 150",
+    "GBP/USD = 1,30",
+    "EUR/CHF = 0,94"
+   ],
+   "explanation": "Sempre: 1 unitat de la primera divisa = la xifra en la segona.",
+   "right": [
+    "1 $ val 150 iens",
+    "1 lliura val 1,30 $",
+    "1 € val 0,94 francs suïssos",
+    "1 € val 1,16 $"
+   ]
+  },
+  "u14l1-7": {
+   "prompt": "Gràfic real de 30 sessions d'un parell de divises principal, sense nom ni data. Què creus que va fer en les 10 següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Fixa't en el recorregut: els parells principals solen moure's menys de l'1 % en un dia, molt menys que una acció. Tot i així, ningú n'encerta la direcció de manera fiable.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u14l1-8": {
+   "prompt": "Ràpid: compres EUR/USD. Quina divisa compres?",
+   "options": [
+    "El dòlar",
+    "L'euro",
+    "Totes dues alhora"
+   ],
+   "explanation": "Compres la base (euro) i pagues amb la cotitzada (dòlar)."
+  },
+  "u14l1-9": {
+   "prompt": "El mercat de divises tanca cada dia a les 17:30, com la Borsa de Madrid.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Funciona les 24 hores de dilluns a divendres, passant de l'Àsia a Europa i Amèrica."
+  },
+  "u14l1-10": {
+   "prompt": "La Laura cobra en euros i se'n va d'Erasmus a Londres. Veu que el GBP/EUR ha passat d'1,15 a 1,20 aquest mes. Com l'afecta?",
+   "options": [
+    "Cada lliura li costa més euros: tot li surt una mica més d'un 4 % més car",
+    "No l'afecta perquè paga amb targeta",
+    "El viatge li surt més barat"
+   ],
+   "explanation": "Si puja la divisa que necessites, et costa més euros.",
+   "feedback": [
+    "Això mateix: (1,20 − 1,15) ÷ 1,15 ≈ 4,3 % més car.",
+    "La targeta converteix al tipus de canvi del dia: l'afecta igual.",
+    "Al contrari: ara cada lliura costa 1,20 € en lloc d'1,15 €."
+   ]
+  },
+  "u14l1-11": {
+   "prompt": "Quins són parells principals? Marca'ls tots.",
+   "options": [
+    "GBP/USD",
+    "USD/TRY (lira turca)",
+    "USD/JPY",
+    "EUR/USD"
+   ],
+   "explanation": "Els principals combinen el dòlar amb una altra gran divisa. L'USD/TRY és un parell exòtic: més spread i més volatilitat."
+  },
+  "u14l2-1": {
+   "prompt": "L'EUR/USD passa d'1,1600 a 1,1675. Quants pips s'ha mogut?",
+   "options": [],
+   "explanation": "1,1675 − 1,1600 = 0,0075 = 75 pips (cada pip és 0,0001).",
+   "unit": "pips"
+  },
+  "u14l2-2": {
+   "prompt": "Amb 1 lot estàndard d'EUR/USD (1 pip = 10 $), el parell es mou 40 pips a favor teu. Quant guanyes?",
+   "options": [],
+   "explanation": "40 × 10 $ = 400 $. Si es mou 40 en contra, perds el mateix.",
+   "unit": "$"
+  },
+  "u14l2-3": {
+   "prompt": "Amb un minilot d'EUR/USD (10.000 €), quant val cada pip?",
+   "options": [],
+   "explanation": "10.000 × 0,0001 = 1 $ per pip.",
+   "unit": "$"
+  },
+  "u14l2-4": {
+   "prompt": "Ràpid: quantes unitats té un lot estàndard?",
+   "options": [
+    "100.000",
+    "10.000",
+    "1.000"
+   ],
+   "explanation": "Estàndard 100.000; mini 10.000; micro 1.000."
+  },
+  "u14l2-5": {
+   "prompt": "Amb un palanquejament 1:30, quanta garantia necessites per obrir una posició de 15.000 €?",
+   "options": [],
+   "explanation": "15.000 ÷ 30 = 500 €.",
+   "unit": "€"
+  },
+  "u14l2-6": {
+   "prompt": "Amb un palanquejament 1:30, quin moviment en contra (en %) es menja tota la teva garantia?",
+   "options": [],
+   "explanation": "1 ÷ 30 ≈ 3,33 %. En divises això pot passar en poques setmanes, o en minuts amb una sorpresa.",
+   "unit": "%"
+  },
+  "u14l2-7": {
+   "prompt": "A la UE, un minorista pot operar amb CFD sobre parells de divises principals amb un palanquejament de fins a 1:30.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "És el límit que va fixar l'ESMA el 2018 (a Espanya l'aplica la CNMV). Per als parells no principals és 1:20."
+  },
+  "u14l2-8": {
+   "prompt": "Amb palanquejament només es multipliquen els guanys.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Les pèrdues es multipliquen igual: un 1 % en contra amb 1:30 és un 30 % de la teva garantia."
+  },
+  "u14l2-9": {
+   "prompt": "En Pablo obre 1 lot estàndard d'EUR/USD (100.000 €) amb 4.000 € de garantia. El parell cau 120 pips després d'una dada d'inflació. Què ha passat?",
+   "options": [
+    "No ha perdut res fins que tanqui",
+    "Ha perdut uns 1.200 $: més d'una quarta part de la seva garantia en un dia",
+    "Ha perdut 120 $, una minúcia"
+   ],
+   "explanation": "Amb palanquejament, un moviment corrent del parell es converteix en un cop enorme per als teus diners.",
+   "feedback": [
+    "La pèrdua és real encara que no tanqui; i si continua caient, el bròquer tancarà la posició.",
+    "Exacte: 120 × 10 $ = 1.200 $. Un moviment normal del parell i el seu compte ha caigut més d'un 25 %.",
+    "Cada pip val 10 $ amb un lot estàndard: són 1.200 $, una mica més de 1.000 €."
+   ]
+  },
+  "u14l2-10": {
+   "prompt": "Quines proteccions té un minorista a la UE quan opera amb CFD de divises? Marca-les totes.",
+   "options": [
+    "No poder perdre més dels diners del compte",
+    "Garantia de no perdre diners",
+    "Tancament automàtic si la garantia baixa al 50 %",
+    "Límit de palanquejament (1:30 en parells principals)"
+   ],
+   "explanation": "L'ESMA va imposar límits de palanquejament, tancament al 50 % de la garantia i protecció davant de saldo negatiu. Res no garanteix no perdre: entre un 74 i un 89 % dels minoristes perden amb CFD."
+  },
+  "u14l2-11": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Genial, així es guanya més ràpid",
+    "Millor 1:1000, que és més",
+    "Amb 1:500, un 0,2 % en contra et deixa a zero; i a la UE el màxim per a minoristes és 1:30"
+   ],
+   "explanation": "1 ÷ 500 = 0,2 %. Qui ofereix 1:500 a un minorista europeu no compleix les regles de l'ESMA: mal senyal.",
+   "feedback": [
+    "I es perd més ràpid: un 0,2 % en contra s'emporta els teus 200 €.",
+    "Més palanquejament només acosta el moment de perdre-ho tot.",
+    "Uf! Llavors qui m'ofereix 1:500 no juga amb les regles europees…"
+   ],
+   "lines": [
+    "Un tiktoker diu que amb forex i palanquejament 1:500 es pot viure d'això 🤑",
+    "Amb 200 € moc 100.000 €, no és genial?"
+   ]
+  },
+  "u14l3-1": {
+   "prompt": "Relaciona cada causa amb el seu efecte habitual en la divisa.",
+   "options": [
+    "El banc central apuja els tipus més del que s'esperava",
+    "Inflació alta durant anys",
+    "Pànic als mercats",
+    "El país exporta molt més del que importa"
+   ],
+   "explanation": "Tipus, inflació, por i comerç són els grans motors.",
+   "right": [
+    "La divisa perd valor a llarg termini",
+    "Hi ha demanda de la seva divisa",
+    "Es compren dòlars, francs i iens",
+    "La divisa tendeix a apreciar-se"
+   ]
+  },
+  "u14l3-2": {
+   "prompt": "Per què un tipus d'interès més alt sol atraure diners cap a una divisa?",
+   "options": [
+    "Perquè obliga els turistes a canviar",
+    "Perquè el banc central regala divises",
+    "Perquè els dipòsits i els bons en aquesta divisa paguen més"
+   ],
+   "explanation": "Els inversors compren la divisa per cobrar aquest interès més alt."
+  },
+  "u14l3-3": {
+   "prompt": "La Fed apuja els tipus per sorpresa i el BCE els deixa igual. D'aquí a un mes has de pagar 1.000 $ per un curs en línia dels EUA. Què és el més probable?",
+   "options": [
+    "El dòlar tendeix a apreciar-se i el curs et pot costar una mica més en euros",
+    "Res: els tipus no afecten les divises",
+    "El curs et costarà menys euros"
+   ],
+   "explanation": "Una pujada de tipus inesperada sol apreciar la divisa, tot i que res no és automàtic.",
+   "feedback": [
+    "Això és el que sol passar: més tipus atrauen diners cap al dòlar. Però no és segur: depèn del que el mercat ja esperava.",
+    "Són un dels seus motors principals.",
+    "Si el dòlar s'aprecia, cada dòlar costa més euros, no menys."
+   ]
+  },
+  "u14l3-4": {
+   "prompt": "Una divisa només la mou el tipus d'interès d'avui, no el que s'espera.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "El mercat es mou per expectatives: una pujada ja anunciada pot no moure res."
+  },
+  "u14l3-5": {
+   "prompt": "Què sol passar amb l'euro respecte al dòlar?",
+   "options": [
+    "La Fed apuja tipus més ràpid que el BCE",
+    "L'economia europea creix més del que s'esperava",
+    "Pànic mundial: tothom busca dòlars",
+    "El BCE apuja tipus i la Fed els abaixa",
+    "La inflació de la zona euro es dispara sense resposta del BCE"
+   ],
+   "explanation": "Diferència de tipus, inflació, creixement i por.",
+   "right": [
+    "Puja l'euro",
+    "Baixa l'euro"
+   ]
+  },
+  "u14l3-6": {
+   "prompt": "Entre el gener i el setembre del 2022, l'EUR/USD va passar d'1,13 a 0,96. Quant va caure l'euro respecte al dòlar (en %)?",
+   "options": [],
+   "explanation": "(0,96 − 1,13) ÷ 1,13 ≈ −15 %. Enorme per a una divisa principal.",
+   "unit": "%"
+  },
+  "u14l3-7": {
+   "prompt": "Ràpid: en una crisi global, cap a quina divisa solen fugir els diners?",
+   "options": [
+    "Dòlar",
+    "Peso argentí",
+    "Lira turca"
+   ],
+   "explanation": "El dòlar, el franc suís i el ien són les divises refugi clàssiques."
+  },
+  "u14l3-8": {
+   "prompt": "La Fed apuja tipus per sorpresa. Ordena la cadena.",
+   "options": [
+    "Els bons en dòlars passen a pagar més",
+    "Inversors de tot el món compren dòlars",
+    "El dòlar s'aprecia respecte a l'euro",
+    "La Fed anuncia una pujada inesperada"
+   ],
+   "explanation": "Així sol transmetre's una pujada de tipus a la divisa."
+  },
+  "u14l3-9": {
+   "prompt": "En Bruno llegeix sobre un país amb una inflació del 50 % el banc central del qual està abaixant els tipus. Un amic li proposa comprar-ne la moneda perquè «està baratíssima». Què pensa en Bruno?",
+   "options": [
+    "Que la inflació no afecta les divises",
+    "Que una inflació tan alta amb els tipus baixant sol enfonsar la divisa",
+    "Que és una ganga segura"
+   ],
+   "explanation": "Una inflació alta amb els tipus per sota sol depreciar la divisa.",
+   "feedback": [
+    "És un dels seus grans motors a llarg termini.",
+    "Bé: el que sembla barat pot continuar abaratint-se.",
+    "Una cosa barata es pot abaratir més: amb aquesta inflació i els tipus baixant, la divisa sol continuar perdent valor."
+   ]
+  },
+  "u14l3-10": {
+   "prompt": "Què li expliques a la Lumi?",
+   "options": [
+    "Que el mercat ja ho esperava o n'esperava més: compta la sorpresa, no la dada",
+    "Que els tipus no hi tenen res a veure",
+    "Que és un error del mercat"
+   ],
+   "explanation": "En divises, com a borsa, el preu ja incorpora el que s'espera.",
+   "feedback": [
+    "Ah! O sigui que si s'espera +0,50 i apugen +0,25, decep.",
+    "Hi tenen molt a veure, però en relació amb el que s'esperava.",
+    "No és un error: el mercat ja esperava aquesta pujada, o una de més gran."
+   ],
+   "lines": [
+    "Ahir el BCE va apujar tipus i l'euro… va baixar! 🤯",
+    "No hauria d'haver pujat?"
+   ]
+  },
+  "u14l4-1": {
+   "prompt": "Inverteixes 1.000 € quan EUR/USD = 1,00 (compres 1.000 $ en accions). Un any després valen 1.100 $ i EUR/USD = 1,10. Quants euros tens?",
+   "options": [],
+   "explanation": "1.100 ÷ 1,10 = 1.000 €. Les accions van pujar un 10 %, però el dòlar va perdre valor i es va menjar tot el guany.",
+   "unit": "€"
+  },
+  "u14l4-2": {
+   "prompt": "Les accions pugen un 15 % en dòlars i el dòlar cau un 10 % respecte a l'euro. Quina és la teva rendibilitat aproximada en euros?",
+   "options": [],
+   "explanation": "1,15 × 0,90 − 1 = 0,035 → +3,5 %.",
+   "unit": "%"
+  },
+  "u14l4-3": {
+   "prompt": "La borsa americana cau un 18 % en dòlars, però el dòlar puja un 6 % respecte a l'euro. La teva rendibilitat en euros?",
+   "options": [],
+   "explanation": "0,82 × 1,06 − 1 ≈ −0,131 → −13,1 %. Va passar una cosa semblant el 2022: el dòlar va esmorteir la caiguda.",
+   "unit": "%"
+  },
+  "u14l4-4": {
+   "prompt": "Gràfic real d'un parell de divises: 30 sessions, sense nom ni data. Si el teu fons inverteix fora, una cosa així mou la teva rendibilitat en euros. Què va fer en les 10 sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Ningú no prediu bé les divises a curt termini. Per això, qui no vol aquest risc tria un fons amb cobertura en lloc d'intentar endevinar.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u14l4-5": {
+   "prompt": "Un fons «S&P 500 EUR Hedged»…",
+   "options": [
+    "Només compra empreses europees",
+    "Garanteix no perdre diners",
+    "Elimina gairebé tot l'efecte del dòlar respecte a l'euro"
+   ],
+   "explanation": "La cobertura neutralitza la divisa, no el risc de les accions."
+  },
+  "u14l4-6": {
+   "prompt": "Si el teu fons cotitza en euros, no tens risc de divisa encara que inverteixi en accions dels EUA.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "La moneda del fons és només l'etiqueta: les empreses cotitzen i guanyen en dòlars, així que el risc hi continua sent tret que el fons el cobreixi."
+  },
+  "u14l4-7": {
+   "prompt": "Per a un inversor espanyol, té risc dòlar/euro?",
+   "options": [
+    "Lletres del Tresor espanyol",
+    "Fons S&P 500 EUR Hedged",
+    "Accions d'Apple",
+    "Fons MSCI World sense cobertura",
+    "Dipòsit en euros en un banc espanyol"
+   ],
+   "explanation": "Si l'actiu és en dòlars i no hi ha cobertura, el dòlar t'afecta.",
+   "right": [
+    "Sí",
+    "No (o gairebé gens)"
+   ]
+  },
+  "u14l4-8": {
+   "prompt": "L'Anna té un fons de l'S&P 500 sense cobertura i un horitzó de 20 anys. Llegeix que «el dòlar s'enfonsa» i ho vol vendre tot. Què faria bé?",
+   "options": [
+    "Passar-se a una sola empresa europea",
+    "Entendre que la divisa puja i baixa, i decidir amb calma si vol cobertura en el futur",
+    "Vendre ara i tornar quan el dòlar es recuperi"
+   ],
+   "explanation": "El risc de divisa es gestiona triant el fons, no perseguint titulars.",
+   "feedback": [
+    "Canviaria risc de divisa per molt més risc de concentració.",
+    "Bé: cobrir-se o no és una decisió de planificació, no una reacció a un titular.",
+    "Hauria d'encertar dues vegades (quan sortir i quan tornar) amb un moviment que ningú no prediu."
+   ]
+  },
+  "u14l4-9": {
+   "prompt": "Ràpid: el dòlar puja respecte a l'euro. Les teves accions americanes, mesurades en euros…",
+   "options": [
+    "Valen menys",
+    "Valen més",
+    "Valen igual"
+   ],
+   "explanation": "Cada dòlar es converteix en més euros."
+  },
+  "u14l4-10": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "No: el dòlar ha caigut respecte a l'euro i això resta en euros",
+    "És un error de l'app",
+    "Sí, segur que són comissions amagades"
+   ],
+   "explanation": "1,12 × 0,91 ≈ 1,02: una caiguda del dòlar d'un 9 % converteix un +12 % en un +2 %.",
+   "feedback": [
+    "Ah! Guanyo en dòlars, però cada dòlar val menys euros.",
+    "L'app fa bé el càlcul: és l'efecte de la divisa.",
+    "Les comissions d'un indexat són mínimes: la diferència ve d'una altra banda."
+   ],
+   "lines": [
+    "El meu fons de l'S&P 500 ha pujat un 12 % aquest any en dòlars…",
+    "…i a l'app diu que en euros només +2 %. M'estan robant? 😠"
+   ]
+  },
+  "u14l5-1": {
+   "prompt": "Quines es consideren divises refugi? Marca-les totes.",
+   "options": [
+    "Franc suís",
+    "Real brasiler",
+    "Ien japonès",
+    "Dòlar dels EUA"
+   ],
+   "explanation": "El real és una divisa emergent: en el pànic sol caure, no pujar."
+  },
+  "u14l5-2": {
+   "prompt": "Gràfic real d'un parell de divises (30 sessions, sense nom ni data). Va pujar o baixar en les 10 següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Fins i tot els parells més seguits del món sorprenen: es mouen per expectatives de tipus i per l'apetit de risc de cada moment.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u14l5-3": {
+   "prompt": "Un altre parell real, unes altres 30 sessions. I ara?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "El que fes el gràfic anterior no diu res d'aquest: cada període és una història diferent.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u14l5-4": {
+   "prompt": "El 15 de gener del 2015 el franc suís es va disparar quan el Banc Nacional Suís va treure el límit respecte a l'euro.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "L'EUR/CHF va passar d'1,20 a 0,85 en minuts: un terratrèmol per a una divisa principal."
+  },
+  "u14l5-5": {
+   "prompt": "Què és el carry trade amb iens?",
+   "options": [
+    "Manllevar en iens a un tipus baix per invertir on es paga més",
+    "Comprar iens per viatjar al Japó",
+    "Vendre accions japoneses"
+   ],
+   "explanation": "Funciona mentre el ien estigui tranquil; si puja de cop, tothom desfà les posicions alhora (agost del 2024)."
+  },
+  "u14l5-6": {
+   "prompt": "Per què sol pujar el ien en una crisi?",
+   "options": [
+    "Perquè els inversors japonesos repatrien els diners que tenen fora",
+    "Perquè el Japó apuja els tipus a cada crisi",
+    "Perquè el ien està respaldat per or"
+   ],
+   "explanation": "El Japó té uns estalvis enormes invertits fora: en el pànic, part d'aquests diners torna a casa."
+  },
+  "u14l5-7": {
+   "prompt": "L'EUR/CHF passa d'1,20 a 0,85 en minuts. Quant cau l'euro respecte al franc (en %)?",
+   "options": [],
+   "explanation": "(0,85 − 1,20) ÷ 1,20 ≈ −29,2 %. En una divisa principal, això gairebé no es veu mai.",
+   "unit": "%"
+  },
+  "u14l5-8": {
+   "prompt": "Relaciona cada divisa amb el seu motiu per ser refugi.",
+   "options": [
+    "Dòlar",
+    "Franc suís",
+    "Ien"
+   ],
+   "explanation": "Tres refugis, tres motius diferents.",
+   "right": [
+    "País estable amb poc deute",
+    "Moneda de reserva i mercat de bons més gran",
+    "El Japó té molts estalvis invertits fora"
+   ]
+  },
+  "u14l5-9": {
+   "prompt": "Una divisa refugi mai no es pot moure amb violència.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Es pot moure moltíssim en tots dos sentits: és un refugi relatiu, no una assegurança."
+  },
+  "u14l5-10": {
+   "prompt": "Març del 2020: les borses s'enfonsen per la COVID. La Marta ha de cobrar una factura de 5.000 $ d'un client americà i la passarà a euros. Què és més probable que faci el dòlar en aquests dies de pànic?",
+   "options": [
+    "Que s'apreciï: tothom busca dòlars",
+    "Que no es mogui",
+    "Que s'enfonsi"
+   ],
+   "explanation": "En les crisis més agudes, el dòlar sol actuar com a refugi.",
+   "feedback": [
+    "Va passar el març del 2020: el dòlar va pujar amb força respecte a gairebé totes les divises.",
+    "En un pànic mundial les divises es mouen molt.",
+    "En el pànic el món busca dòlars: el que sol passar és el contrari."
+   ]
+  }
+ }
+}

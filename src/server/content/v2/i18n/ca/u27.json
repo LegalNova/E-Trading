@@ -1,0 +1,896 @@
+{
+ "unit": {
+  "title": "Els biaixos que costen diners",
+  "description": "Les dreceres mentals que et fan comprar car, vendre barat i creure't un geni",
+  "section": "Psicologia de l'inversor"
+ },
+ "lessons": {
+  "u27l1": {
+   "title": "El teu cervell no està fet per invertir",
+   "steps": [
+    {
+     "title": "Dues maneres de pensar",
+     "body": "Daniel Kahneman, premi Nobel d'Economia:\n\n• **Sistema 1:** ràpid, intuïtiu i emocional. Perfecte per esquivar un cotxe.\n• **Sistema 2:** lent, analític i costós. Necessari per calcular una esperança matemàtica.\n\nA la borsa, les decisions importants se solen prendre amb el sistema 1: amb por, pressa o eufòria."
+    },
+    {
+     "title": "La bretxa de l'inversor",
+     "body": "Morningstar, 10 anys fins al 2025:\n\n• Els fons dels EUA van guanyar un **9,9 %** anual.\n• Els diners dels seus inversors, que entraven i sortien, un **8,7 %**: **1,2 punts menys** l'any.\n• En els fons més volàtils la bretxa va ser de −2,1 punts; en els tranquils, de −0,4.\n• En els ETF de bitcoin al comptat: inversors **−5,8 %** davant del **+8,5 %** de l'ETF."
+    },
+    {
+     "title": "El que t'emportes",
+     "body": "El producte pot ser bo. El problema és el comportament: comprar després de les pujades i vendre després de les caigudes.",
+     "key": "El cervell fuig del perill i segueix el grup: a la borsa això porta a vendre en les caigudes i comprar en les eufòries.",
+     "tip": "El risc més gran de la teva cartera sol estar assegut davant de la pantalla."
+    }
+   ]
+  },
+  "u27l2": {
+   "title": "Aversió a la pèrdua",
+   "steps": [
+    {
+     "title": "Perdre fa el doble de mal",
+     "body": "Kahneman i Tversky (teoria de les perspectives, 1979): una pèrdua de 100 € fa aproximadament **el doble** de mal del que alegra un guany de 100 €.\n\nPer això rebutgem apostes que ens convenen i evitem fer **real** una pèrdua venent, encara que l'empresa hagi empitjorat."
+    },
+    {
+     "title": "Els seus efectes",
+     "body": "• Quan perdem, ens tornem **més arriscats**: «doblo per recuperar».\n• Quan guanyem, **més conservadors**: venem ràpid per assegurar.\n• Si mirem la cartera molt sovint, la veiem més vegades en pèrdues i patim més: Benartzi i Thaler en van dir **aversió miop a la pèrdua**."
+    },
+    {
+     "title": "Com protegir-te",
+     "body": "Decideix l'stop abans d'entrar, amb calma. I fes-te la pregunta correcta: no «quant he perdut?», sinó **«si no la tingués, la compraria avui a aquest preu?»**.",
+     "key": "Perdre fa més del doble de mal del que alegra guanyar: per això ens aferrem al que perd.",
+     "tip": "Al mercat li és igual a quant vas comprar. Decideix amb el que saps avui."
+    }
+   ]
+  },
+  "u27l3": {
+   "title": "L'efecte disposició",
+   "steps": [
+    {
+     "title": "Què és",
+     "body": "La tendència a **vendre aviat el que guanya** i **mantenir massa temps el que perd**.\n\nShefrin i Statman li van posar nom el 1985. Odean (1998) el va mesurar en milers de comptes: els inversors venien molt abans les accions guanyadores que les perdedores."
+    },
+    {
+     "title": "El pitjor",
+     "body": "Les guanyadores que van vendre van continuar rendint, de mitjana, **millor** que les perdedores que van conservar.\n\nÉs just el contrari del consell clàssic: **«talla les pèrdues i deixa córrer els guanys»**. En R: tallar guanys a +0,5R i deixar córrer pèrdues fins a −2R enfonsa l'esperança de qualsevol sistema."
+    },
+    {
+     "title": "Com protegir-te",
+     "body": "Stop i pla de sortida **abans** d'entrar. Si l'operació va a favor, la sortida la decideix el pla (per exemple, la meitat a 2R i la resta amb stop dinàmic), no la por de tornar el que has guanyat.",
+     "key": "Venem el que guanya per una alegria ràpida i aguantem el que perd per no acceptar l'error.",
+     "tip": "Talla les pèrdues i deixa córrer els guanys. El teu cervell et demanarà el contrari."
+    }
+   ]
+  },
+  "u27l4": {
+   "title": "FOMO i efecte ramat",
+   "steps": [
+    {
+     "title": "La por de quedar-se fora",
+     "body": "El **FOMO** apareix quan alguna cosa puja molt i sembla que tothom guanya diners. És el motor de les bombolles: les puntcom el 1999, les criptos el 2017 i el 2021, les *meme stocks* el 2021.\n\nL'**efecte ramat** és seguir la multitud. Però quan **tothom** ja ha comprat, no queda ningú per continuar empenyent."
+    },
+    {
+     "title": "Senyals d'alarma",
+     "body": "• T'assabentes per amics o xarxes que no havien invertit mai.\n• El motiu és que «**puja molt**», no què fa l'actiu.\n• Sents **urgència**: «si no compro avui, m'ho perdo».\n• Es diu que «**aquesta vegada és diferent**»."
+    },
+    {
+     "title": "Com protegir-te",
+     "body": "• **Regla de les 48 hores:** tota compra fora del teu pla espera dos dies.\n• **Límit d'especulació** escrit al teu pla.\n• Pregunta't: **«El compraria si ningú en parlés?»**",
+     "key": "Quan tothom parla d'alguna cosa que «només puja», el risc sol ser màxim.",
+     "tip": "Si el teu perruquer et recomana una criptomoneda, potser ja és tard."
+    }
+   ]
+  },
+  "u27l5": {
+   "title": "Excés de confiança",
+   "steps": [
+    {
+     "title": "Creiem saber més del que sabem",
+     "body": "• Barber i Odean (2000): el 20 % de llars que més operava va guanyar un **11,4 %** anual davant del **17,9 %** del mercat.\n• En un altre estudi (2001), els homes operaven un **45 % més** que les dones i reduïen més la seva rendibilitat neta.\n\nLa causa principal: l'excés de confiança."
+    },
+    {
+     "title": "Sort o habilitat",
+     "body": "Unes quantes operacions guanyadores al principi són el més perillós que li pot passar a un principiant: **confon sort amb habilitat**, apuja el risc i se salta les regles.\n\nEncertar 4 de 4 llançant una moneda passa un 6,25 % de les vegades: entre molta gent, sempre hi haurà «genis»."
+    },
+    {
+     "title": "Prova-ho tu",
+     "body": "Ara intentaràs endevinar quatre gràfics reals. Sigui quin sigui el teu resultat, recorda: amb tan pocs intents, el resultat no diu gairebé res de la teva habilitat.",
+     "key": "Encertar-la dues o tres vegades no et fa expert: amb poques operacions, mana la sort.",
+     "tip": "Mesura els teus resultats al diari i compara'ls amb un índex. La teva memòria sempre et dona la raó."
+    }
+   ]
+  },
+  "u27l6": {
+   "title": "Ancoratge i confirmació",
+   "steps": [
+    {
+     "title": "Ancoratge",
+     "body": "Fixar-se en un número de referència irrellevant: «Estava a 100 € i ara a 60 €: és barata».\n\nEl preu passat no diu res del valor actual. I un parent proper: el **cost enfonsat**: «Ja he perdut 3.000 €, no puc vendre ara». El que has perdut no torna: decideix des d'avui."
+    },
+    {
+     "title": "Biaix de confirmació",
+     "body": "Un cop compres, només llegeixes les notícies positives, segueixes qui opina igual i descartes les crítiques. Quan arriben els senyals d'alarma, no els veus.\n\nAntídots: escriu **tres motius pels quals et podries equivocar** i busca expressament l'**opinió contrària**."
+    },
+    {
+     "title": "El que t'emportes",
+     "body": "Valora amb dades d'avui (beneficis, deute, negoci), no amb el preu al qual vas comprar o al qual va estar.",
+     "key": "Que una cosa hagi caigut molt no la fa barata. Que et donin la raó no et fa encertar.",
+     "tip": "Si només llegeixes qui et dona la raó, no estàs analitzant: t'estàs animant."
+    }
+   ]
+  },
+  "u27l7": {
+   "title": "Recència i supervivència",
+   "steps": [
+    {
+     "title": "Recència",
+     "body": "Donar més pes a l'últim que ha passat. Després de dos anys de pujades, creure que la borsa «sempre puja»; després d'una caiguda, que «sempre baixarà».\n\nAntídot: mirar **dades de dècades**, no de mesos. El Nikkei japonès va trigar 34 anys a recuperar el seu màxim del 1989; l'S&P 500 es va recuperar en mesos després de la covid."
+    },
+    {
+     "title": "Biaix de supervivència",
+     "body": "Veure només els que van sobreviure. Els fons que tanquen desapareixen de les estadístiques; els traders que ho perden tot no pugen vídeos.\n\nBessembinder: des del 1926, només un **4 %** de les accions dels EUA va explicar tot el guany net del mercat, i **més de la meitat** va rendir menys que les lletres del Tresor."
+    },
+    {
+     "title": "El que t'emportes",
+     "body": "Les històries d'èxit que veus són una mostra amb trampa: no veus els milers que van fer el mateix i van fracassar.",
+     "key": "El recent i el visible no són tota la història.",
+     "tip": "Abans de copiar un guanyador, pregunta quants van fer el mateix i van perdre."
+    }
+   ]
+  },
+  "u27r": {
+   "title": "Repàs de la unitat",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u27l1-1": {
+   "prompt": "Segons Morningstar, quant va guanyar de menys l'any l'inversor mitjà davant dels seus propis fons en els 10 anys fins al 2025?",
+   "options": [
+    "Res",
+    "Al voltant d'1,2 punts",
+    "Uns 10 punts"
+   ],
+   "explanation": "9,9 % dels fons davant del 8,7 % dels seus inversors, per comprar i vendre en mal moment."
+  },
+  "u27l1-2": {
+   "prompt": "Quin sistema està decidint?",
+   "options": [
+    "Calcular l'esperança del teu sistema amb el diari",
+    "Revisar el teu pla abans d'operar",
+    "Comprar perquè tothom en parla",
+    "Vendre-ho tot després de llegir un titular alarmant",
+    "Esquivar un patinet que ve de cara"
+   ],
+   "explanation": "El sistema 1 és útil per sobreviure; per invertir convé obligar-se a fer servir el 2.",
+   "right": [
+    "Sistema 1 (ràpid i emocional)",
+    "Sistema 2 (lent i analític)"
+   ]
+  },
+  "u27l1-3": {
+   "prompt": "El sistema 1 de Kahneman és lent i analític.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "És el ràpid, intuïtiu i emocional. El lent i analític és el sistema 2."
+  },
+  "u27l1-4": {
+   "prompt": "Imagina 10.000 € durant 10 anys al 9,9 % anual (el fons) o al 8,7 % (els seus inversors). Quanta diferència hi ha al final? (arrodoneix a euros)",
+   "options": [],
+   "explanation": "10.000 × 1,099¹⁰ ≈ 25.703 € davant de 10.000 × 1,087¹⁰ ≈ 23.030 €: uns 2.673 € perduts només pel comportament.",
+   "unit": "€"
+  },
+  "u27l1-5": {
+   "prompt": "Un dilluns llegeixes: «Les borses s'enfonsen un 4 %». Tens un fons indexat per d'aquí a 20 anys i el cor a mil. Què fas?",
+   "options": [
+    "Compro molt més amb tot el meu coixí",
+    "Venc ja, abans que caigui més",
+    "Respiro, rellegeixo el meu pla i avui no toco res"
+   ],
+   "explanation": "Les decisions importants, mai amb el cor a mil.",
+   "feedback": [
+    "Reaccionar amb el coixí també és decidir en calent.",
+    "És el sistema 1 al comandament. Així es fabrica la bretxa de l'inversor: vendre després de caure.",
+    "Molt bé: dones temps al sistema 2. Un mal dia no canvia un pla a 20 anys."
+   ]
+  },
+  "u27l1-6": {
+   "prompt": "En els ETF de bitcoin al comptat, què van obtenir els inversors davant del mateix ETF?",
+   "options": [
+    "Exactament el mateix",
+    "Bastant més que l'ETF",
+    "Molt menys: al voltant de −5,8 % davant de +8,5 %"
+   ],
+   "explanation": "Van comprar als pics i van vendre a les caigudes."
+  },
+  "u27l1-7": {
+   "prompt": "Ràpid: on va ser més gran la bretxa de l'inversor?",
+   "options": [
+    "En els més tranquils",
+    "En els fons més volàtils",
+    "Va ser igual en tots"
+   ],
+   "explanation": "−2,1 punts en els més volàtils davant de −0,4 en els tranquils: més ensurts, més errors."
+  },
+  "u27l1-8": {
+   "prompt": "Què sol posar el sistema 1 a decidir? Marca-les totes.",
+   "options": [
+    "La pressa",
+    "L'eufòria",
+    "Una llista de comprovació escrita",
+    "La por"
+   ],
+   "explanation": "Una llista escrita obliga a pensar a poc a poc: és una eina del sistema 2."
+  },
+  "u27l1-9": {
+   "prompt": "El problema de la bretxa no és el producte, sinó el ____ de l'inversor.",
+   "options": [
+    "bròker",
+    "país",
+    "sou",
+    "comportament"
+   ],
+   "explanation": "El mateix fons dona resultats diferents segons com hi entres i en surts."
+  },
+  "u27l1-10": {
+   "prompt": "Què li expliques a la Lumi?",
+   "options": [
+    "Probablement vas entrar i sortir en mal moment: és la bretxa de l'inversor",
+    "Segur que és una estafa",
+    "Els fons sempre menteixen en les seves dades"
+   ],
+   "explanation": "La teva rendibilitat depèn del fons i de quan hi entres i en surts.",
+   "feedback": [
+    "Ups… Vaig comprar quan estava en màxims i vaig vendre amb l'ensurt de març. Touché.",
+    "Potser no: si vas entrar després de les pujades i vas sortir en les caigudes, la diferència és teva.",
+    "Les dades de rendibilitat del fons són reals; el que canvia és quan hi vas ser dins."
+   ],
+   "lines": [
+    "El meu fons ha guanyat un 10 % l'any… però jo molt menys! 🤨",
+    "M'estan robant?"
+   ]
+  },
+  "u27l2-1": {
+   "prompt": "Segons la teoria de les perspectives, una pèrdua de 100 € fa aproximadament…",
+   "options": [
+    "El mateix mal que l'alegria de guanyar 100 €",
+    "La meitat de mal",
+    "El doble de mal del que alegra guanyar 100 €"
+   ],
+   "explanation": "Kahneman i Tversky, 1979."
+  },
+  "u27l2-2": {
+   "prompt": "T'ofereixen llançar una moneda: si surt cara guanyes 150 €, si surt creu perds 100 €. Quin és el guany esperat per tirada?",
+   "options": [],
+   "explanation": "0,5 × 150 − 0,5 × 100 = 75 − 50 = +25 €.",
+   "unit": "€"
+  },
+  "u27l2-3": {
+   "prompt": "Amb aquesta mateixa moneda (cara +150 €, creu −100 €), la majoria de la gent diu que no. Per què?",
+   "options": [
+    "Perquè les monedes estan trucades",
+    "Perquè l'aposta perd diners de mitjana",
+    "Perquè perdre 100 € fa més mal del que alegra guanyar-ne 150"
+   ],
+   "explanation": "L'aversió a la pèrdua ens fa rebutjar decisions amb esperança positiva.",
+   "feedback": [
+    "És una moneda justa: l'explicació és al nostre cap.",
+    "De mitjana guanya 25 € per tirada: els números no són el problema.",
+    "Exacte: l'aversió a la pèrdua pesa més que l'esperança positiva."
+   ]
+  },
+  "u27l2-4": {
+   "prompt": "Si una pèrdua fa el doble de mal que un guany de la mateixa mida, quant hauries de guanyar per compensar emocionalment una pèrdua de 100 €?",
+   "options": [],
+   "explanation": "100 € × 2 = 200 €: per això molts només accepten apostes amb guanys del doble.",
+   "unit": "€"
+  },
+  "u27l2-5": {
+   "prompt": "L'aversió a la pèrdua ens fa més arriscats quan anem perdent.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "És el «doblo per recuperar»: acceptem més risc per no fer real la pèrdua."
+  },
+  "u27l2-6": {
+   "prompt": "La Marta té una acció que cau un 30 %. L'empresa ha retallat previsions i ha perdut el seu client més gran. Diu: «No venc fins que recuperi». Quina pregunta s'hauria de fer?",
+   "options": [
+    "Què diuen al fòrum?",
+    "Si no la tingués, la compraria avui a aquest preu sabent el que sé?",
+    "Quant he perdut ja?"
+   ],
+   "explanation": "La decisió correcta mira al futur del negoci, no al teu preu de compra.",
+   "feedback": [
+    "Buscar ànims no canvia el negoci de l'empresa.",
+    "Molt bé: així decideix amb la informació d'avui, no amb el seu preu de compra.",
+    "Mirar el que has perdut només alimenta l'aversió a la pèrdua."
+   ]
+  },
+  "u27l2-7": {
+   "prompt": "Ràpid: quin hàbit empitjora l'aversió miop a la pèrdua?",
+   "options": [
+    "Mirar la cartera de llarg termini diverses vegades al dia",
+    "Revisar-la un cop al trimestre",
+    "Automatitzar les aportacions"
+   ],
+   "explanation": "Com més sovint la mires, més vegades la veus en vermell i més ganes tens de tocar-la."
+  },
+  "u27l2-8": {
+   "prompt": "La pregunta clau: «Si no la tinguessis, la ____ avui a aquest preu?».",
+   "options": [
+    "vendries",
+    "oblidaries",
+    "regalaries",
+    "compraries"
+   ],
+   "explanation": "Separa la decisió del teu preu de compra."
+  },
+  "u27l2-9": {
+   "prompt": "Decisió per aversió a la pèrdua o decisió amb criteri?",
+   "options": [
+    "Surto perquè ha saltat l'stop que vaig decidir abans",
+    "Rebutjo una aposta amb esperança positiva per por de perdre",
+    "Doblo la posició per recuperar abans",
+    "No venc fins que recuperi el que vaig pagar",
+    "Venc perquè el negoci ha empitjorat"
+   ],
+   "explanation": "Les decisions amb criteri miren al pla i al negoci; les altres, al dolor de perdre.",
+   "right": [
+    "Aversió a la pèrdua",
+    "Amb criteri"
+   ]
+  },
+  "u27l2-10": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Equivocar-se és normal; l'important és decidir amb el que saps avui",
+    "Compra'n més per abaixar el preu mitjà",
+    "Ben fet, aguanta fins que torni"
+   ],
+   "explanation": "Acceptar una pèrdua petita a temps forma part del joc, no és un fracàs.",
+   "feedback": [
+    "Tens raó: el mercat no sap a quant vaig comprar. Revisaré el negoci, no el meu orgull.",
+    "Fer mitjana a la baixa sense revisar el negoci és posar més diners en el mateix error.",
+    "De vegades no torna. I mentre esperes, aquests diners podrien estar en alguna cosa millor."
+   ],
+   "lines": [
+    "No penso vendre aquesta acció en pèrdues 😤",
+    "Vendre seria reconèixer que em vaig equivocar."
+   ]
+  },
+  "u27l3-1": {
+   "prompt": "Què és l'efecte disposició?",
+   "options": [
+    "Repartir els diners entre molts actius",
+    "Vendre aviat el que guanya i mantenir massa temps el que perd",
+    "Comprar sempre el que més puja"
+   ],
+   "explanation": "El va mesurar Odean el 1998 en milers de comptes."
+  },
+  "u27l3-2": {
+   "prompt": "Compres a l'últim preu amb un compte de 10.000 € i un risc màxim de l'1 %. Fixa ara l'stop, amb calma, abans que el preu es mogui.",
+   "options": [],
+   "explanation": "Decidir l'stop abans d'entrar evita que, si el preu cau, l'aversió a la pèrdua et convenci d'aguantar «fins que torni»."
+  },
+  "u27l3-3": {
+   "prompt": "Una altra compra amb 10.000 € i un 1 % de risc. Tria stop i import, i pensa: si va a favor, sortiries per por o segons el teu pla?",
+   "options": [],
+   "explanation": "Si l'operació va a favor, la sortida la decideix el pla, no les ganes d'assegurar un guany petit."
+  },
+  "u27l3-4": {
+   "prompt": "La Laura necessita 2.000 €. Té l'acció A amb un +20 % i l'acció B amb un −20 % (l'empresa B acaba de presentar mals resultats). Què fa la majoria i què tindria sentit?",
+   "options": [
+    "Vendre A perquè està en guanys",
+    "Decidir pel futur de cada negoci, no per si està en verd o en vermell",
+    "Vendre les dues i no invertir més"
+   ],
+   "explanation": "El que importa és què esperes de cada actiu, no el teu preu de compra.",
+   "feedback": [
+    "És el que fa gairebé tothom: l'efecte disposició. Es queda amb la que empitjora.",
+    "Molt bé: si B ha empitjorat i A no, el lògic pot ser just el contrari del que demana el cos.",
+    "Fugir de tot no corregeix el biaix: només el canvia per un altre."
+   ]
+  },
+  "u27l3-5": {
+   "prompt": "Segons Odean, les accions guanyadores que els inversors van vendre van rendir després pitjor que les perdedores que van conservar.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Va ser al revés: les guanyadores venudes van continuar rendint millor de mitjana."
+  },
+  "u27l3-6": {
+   "prompt": "Un sistema l'encerta el 60 % de les vegades, però per por tanques els guanys a +0,5R i deixes córrer les pèrdues fins a −2R. Quina és la teva esperança?",
+   "options": [],
+   "explanation": "0,6 × 0,5 − 0,4 × 2 = 0,3 − 0,8 = −0,5R. L'efecte disposició converteix un bon percentatge d'encert en pèrdues.",
+   "unit": "R"
+  },
+  "u27l3-7": {
+   "prompt": "És efecte disposició o és seguir el pla?",
+   "options": [
+    "Treure l'stop perquè «ja gairebé hi és»",
+    "Vendre la meitat a 2R, com diu el pla",
+    "Sortir perquè ha saltat l'stop decidit abans d'entrar",
+    "Vendre al +5 % per por de perdre-ho",
+    "Mantenir una acció al −40 % «fins que torni»"
+   ],
+   "explanation": "La diferència és en qui decideix: el pla escrit amb calma o l'emoció del moment.",
+   "right": [
+    "Efecte disposició",
+    "Seguir el pla"
+   ]
+  },
+  "u27l3-8": {
+   "prompt": "El consell clàssic: talla les pèrdues i deixa córrer els ____.",
+   "options": [
+    "comissions",
+    "notícies",
+    "pèrdues",
+    "guanys"
+   ],
+   "explanation": "L'efecte disposició fa just el contrari."
+  },
+  "u27l3-9": {
+   "prompt": "Vendre sempre el que va en verd i aguantar el que va en vermell és una bona manera de gestionar una cartera.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "És l'efecte disposició: talles el que funciona i alimentes el que no."
+  },
+  "u27l3-10": {
+   "prompt": "Què li dius a la Lumi?",
+   "options": [
+    "Sí, assegura, mai se sap",
+    "Què deia el teu pla de sortida abans d'entrar?",
+    "Compra'n més amb tot el que tinguis"
+   ],
+   "explanation": "La sortida es decideix abans d'entrar, no en veure el primer verd.",
+   "feedback": [
+    "Pot sortir bé avui, però si ho fas sempre, talles les teves millors operacions.",
+    "Mmm… Deia la meitat a 2R i la resta amb stop dinàmic. D'acord, segueixo el pla.",
+    "Passar de la por a l'eufòria en un minut tampoc és un pla."
+   ],
+   "lines": [
+    "La meva acció ha pujat un 6 %! 🎉",
+    "La venc ja, que després baixa."
+   ]
+  },
+  "u27l4-1": {
+   "prompt": "Marca els missatges que intenten activar el teu FOMO per vendre't alguna cosa o enganyar-te.",
+   "options": [
+    "Recordatori: la teva aportació periòdica de 100 € s'executarà el dia 5.",
+    "Tothom està guanyant amb aquesta acció. Fica-hi els estalvis, no t'ho pensis.",
+    "Només queden 3 places al meu grup de senyals. Aquesta vegada és diferent, no et quedis fora.",
+    "Consulta si una entitat està autoritzada abans d'invertir-hi.",
+    "🚀 Aquesta cripto ha pujat un 300 % en un mes. Demà serà tard. Entra JA!"
+   ],
+   "explanation": "Urgència, «aquesta vegada és diferent» i «tothom guanya» són els senyals clàssics del FOMO.",
+   "senders": [
+    "El teu bròker",
+    "El teu cosí",
+    "Influencer",
+    "CNMV",
+    "Grup «Lambo 2030»"
+   ]
+  },
+  "u27l4-2": {
+   "prompt": "Novembre del 2021: el bitcoin és en màxims, surt a tots els telenotícies i els teus amics que no havien invertit mai estan comprant. Què va fer després?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "El bitcoin va caure prop d'un 75 % l'any següent. El moment de màxima eufòria sol ser el de màxim risc. Recorda: en cripto es pot perdre la totalitat del que has invertit.",
+   "horizon": "l'any següent"
+  },
+  "u27l4-3": {
+   "prompt": "Aquest actiu ha pujat amb força i a les xarxes tothom en parla. Puja o baixa en les sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Ni l'eufòria a les xarxes ni les pujades anteriors et diuen què vindrà. Per això existeix la regla de les 48 hores.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u27l4-4": {
+   "prompt": "Un amic t'escriu: «Aquesta acció ha pujat un 200 % en dues setmanes. Tots els del grup hi som dins. Entra avui!». No és al teu pla. Què fas?",
+   "options": [
+    "Demano un préstec per entrar-hi fort",
+    "Compro ja, abans que pugi més",
+    "Aplico la regla de les 48 hores i em pregunto si la compraria si ningú en parlés"
+   ],
+   "explanation": "La urgència és el combustible del FOMO: treure-li pressa a la decisió és el seu antídot.",
+   "feedback": [
+    "Deute + FOMO és la recepta clàssica de les pitjors pèrdues.",
+    "Estàs comprant per FOMO: sense saber què fa l'empresa i després d'una pujada enorme.",
+    "Molt bé: si d'aquí a dos dies continua tenint sentit i cap dins el teu límit d'especulació, ho decideixes amb calma."
+   ]
+  },
+  "u27l4-5": {
+   "prompt": "Quina regla ajuda contra el FOMO?",
+   "options": [
+    "Doblar la posició si continua pujant",
+    "Comprar de seguida per no perdre's la pujada",
+    "Esperar 48 hores qualsevol compra que no sigui al teu pla"
+   ],
+   "explanation": "Dos dies són suficients perquè passi la urgència."
+  },
+  "u27l4-6": {
+   "prompt": "Quins són senyals d'alarma d'una bombolla? Marca'ls tots.",
+   "options": [
+    "L'únic motiu és que puja molt",
+    "Beneficis creixents i estables durant anys",
+    "Gent sense experiència que la recomana",
+    "«Aquesta vegada és diferent»"
+   ],
+   "explanation": "Uns beneficis estables no són senyal de bombolla: ho són l'eufòria i la falta de motius."
+  },
+  "u27l4-7": {
+   "prompt": "Quan ja tothom ha comprat alguna cosa, sol quedar-li molt recorregut a l'alça.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Si tothom ja ha comprat, no queda ningú per continuar empenyent el preu."
+  },
+  "u27l4-8": {
+   "prompt": "Ràpid: quina pregunta et protegeix de l'efecte ramat?",
+   "options": [
+    "Quant ha pujat aquesta setmana?",
+    "El compraria si ningú en parlés?",
+    "Què diuen al fòrum?"
+   ],
+   "explanation": "Separa el valor del que fa la multitud."
+  },
+  "u27l4-9": {
+   "prompt": "Relaciona cada bombolla amb la seva època.",
+   "options": [
+    "Puntcom",
+    "Borsa japonesa",
+    "Meme stocks",
+    "Criptomonedes (dues vegades)"
+   ],
+   "explanation": "Canvien els actius; el FOMO és sempre el mateix.",
+   "right": [
+    "1989",
+    "2017 i 2021",
+    "2021",
+    "1999–2000"
+   ]
+  },
+  "u27l4-10": {
+   "prompt": "Què li dius a la Lumi?",
+   "options": [
+    "Fica-hi el fons d'emergència",
+    "Espera 48 hores i pensa si la compraries si ningú en parlés",
+    "Entra ja, que vola"
+   ],
+   "explanation": "La pressa és el senyal: quan sents urgència, atura't.",
+   "feedback": [
+    "Això és l'única cosa que no es toca mai. I en cripto es pot perdre tot el que has invertit.",
+    "D'acord… Si d'aquí a dos dies continua tenint sentit, la poso dins el meu límit d'especulació. Si no, res.",
+    "Si entro per por de quedar-me fora, el més probable és que compri a prop del sostre."
+   ],
+   "lines": [
+    "Tothom a TikTok està guanyant amb una moneda nova 🐶",
+    "Si no hi entro avui, m'ho perdo."
+   ]
+  },
+  "u27l5-1": {
+   "prompt": "Ronda 1 de 4. Gràfic real, sense nom ni data. Puja o baixa en les sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Un encert o una errada solts no diuen res. Apunta-ho i continua: al final veuràs què significa el teu marcador.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u27l5-2": {
+   "prompt": "Ronda 2 de 4. Puja o baixa?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Dues rondes continuen sent una mostra minúscula, vagis com vagis.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u27l5-3": {
+   "prompt": "Ronda 3 de 4. Puja o baixa?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Si portes tres encerts, compte amb sentir-te un geni; si portes tres errades, tampoc no ets un desastre. És soroll.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u27l5-4": {
+   "prompt": "Ronda 4 de 4. Puja o baixa?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Amb quatre intents, encertar-los tots a l'atzar passa més d'una vegada de cada vint. Per saber si tens avantatge calen moltes operacions registrades.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u27l5-5": {
+   "prompt": "Si endevines a l'atzar (50 %), quina probabilitat hi ha d'encertar-ne 4 de 4?",
+   "options": [],
+   "explanation": "0,5⁴ = 0,0625 → 6,25 %. Si 1.000 persones ho intenten, unes 62 ho encertaran tot sense saber res.",
+   "unit": "%"
+  },
+  "u27l5-6": {
+   "prompt": "Segons Barber i Odean (2000), quant guanyava l'any el 20 % de llars que més operava davant del mercat?",
+   "options": [
+    "Un 25 % davant del 17,9 % del mercat",
+    "Un 11,4 % davant del 17,9 % del mercat",
+    "El mateix que el mercat"
+   ],
+   "explanation": "Operar més, per excés de confiança, els va costar més de 6 punts l'any."
+  },
+  "u27l5-7": {
+   "prompt": "Ràpid: segons Barber i Odean (2001), quant més operaven els homes que les dones?",
+   "options": [
+    "La meitat",
+    "El mateix",
+    "Un 45 % més"
+   ],
+   "explanation": "I la seva rendibilitat neta es reduïa més que la d'elles."
+  },
+  "u27l5-8": {
+   "prompt": "Guanyar les teves primeres operacions demostra que tens habilitat.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Amb poques operacions, la sort pesa moltíssim. És just quan hi ha més perill d'apujar el risc."
+  },
+  "u27l5-9": {
+   "prompt": "En Bruno ha encertat 3 operacions seguides al simulador. Vol triplicar la mida «perquè ja li ha agafat el truc». Què li passa?",
+   "options": [
+    "Excés de confiança: hauria de mantenir el mateix risc i continuar registrant",
+    "Hauria de deixar de fer servir stops",
+    "Res, tres de seguides demostren que en sap"
+   ],
+   "explanation": "Després de diversos guanys, la regla és la mateixa: el risc per operació no es toca.",
+   "feedback": [
+    "Molt bé: el risc per operació no canvia perquè vagis guanyant.",
+    "Les ratxes bones no eliminen el risc; només l'amaguen.",
+    "Tres encerts seguits a l'atzar passen una de cada vuit vegades. No demostren res."
+   ]
+  },
+  "u27l5-10": {
+   "prompt": "Què et protegeix de l'excés de confiança? Marca-les totes.",
+   "options": [
+    "Escriure tres motius pels quals et podries equivocar",
+    "Apujar el risc després de cada encert",
+    "Comparar-te amb un índex durant diversos anys",
+    "Mesurar els teus resultats en un diari"
+   ],
+   "explanation": "Apujar el risc després d'encertar és just el que fa l'excés de confiança."
+  },
+  "u27l6-1": {
+   "prompt": "Relaciona cada biaix amb la frase que el delata.",
+   "options": [
+    "Ancoratge",
+    "Cost enfonsat",
+    "Confirmació",
+    "Fal·làcia del jugador"
+   ],
+   "explanation": "Cada frase sona raonable… fins que veus el biaix que hi ha al darrere.",
+   "right": [
+    "«Només segueixo qui pensa com jo»",
+    "«Ha baixat set dies, demà puja segur»",
+    "«Ja he perdut molt, ara no puc vendre»",
+    "«Estava a 120 €, a 70 € és una ganga»"
+   ]
+  },
+  "u27l6-2": {
+   "prompt": "Relaciona cada biaix amb el seu antídot.",
+   "options": [
+    "Ancoratge",
+    "Cost enfonsat",
+    "Confirmació",
+    "Fal·làcia del jugador"
+   ],
+   "explanation": "Cada drecera mental té una pregunta que la desmunta.",
+   "right": [
+    "Decidir des d'avui, sense mirar el que has perdut",
+    "Recordar que cada dia és gairebé independent",
+    "Buscar l'opinió contrària",
+    "Valorar amb dades actuals"
+   ]
+  },
+  "u27l6-3": {
+   "prompt": "«L'acció estava a 120 € i ara a 70 €: està regalada». Quin biaix és?",
+   "options": [
+    "FOMO",
+    "Recència",
+    "Ancoratge"
+   ],
+   "explanation": "Els 120 € són una àncora: no diuen res del valor actual de l'empresa."
+  },
+  "u27l6-4": {
+   "prompt": "En Pablo va comprar a 40 €. Ara val 25 € després de mals resultats i una retallada de previsions. Diu: «No venc fins que recuperi els 40 €». Què li passa?",
+   "options": [
+    "Està ancorat als 40 € (i hi ha cost enfonsat i aversió a la pèrdua)",
+    "Hauria de comprar-ne més per abaixar el preu mitjà",
+    "Fa bé: el preu tornarà"
+   ],
+   "explanation": "El preu de compra no és informació sobre el futur.",
+   "feedback": [
+    "Exacte. S'hauria de preguntar: si avui tingués 25 € en efectiu, compraria aquesta acció sabent el que sé?",
+    "Fer mitjana a la baixa per ancoratge és posar més diners sense revisar el negoci.",
+    "Pot tornar o no; els 40 € només li importen a ell, no al mercat."
+   ]
+  },
+  "u27l6-5": {
+   "prompt": "L'Ana ha comprat una acció. Des de llavors només llegeix fòrums alcistes i silencia qui critica l'empresa. Què li recomanaries com a hàbit?",
+   "options": [
+    "Escriure tres motius pels quals es podria equivocar i llegir opinions contràries",
+    "Vendre immediatament",
+    "Continuar així, que dona bona energia"
+   ],
+   "explanation": "El biaix de confirmació es combat buscant expressament el que et porta la contrària.",
+   "feedback": [
+    "Molt bé: si els seus motius resisteixen les crítiques, millor. Si no, millor saber-ho ja.",
+    "No cal vendre: cal mirar l'altre costat.",
+    "Bona energia i males decisions: no veurà els senyals d'alarma."
+   ]
+  },
+  "u27l6-6": {
+   "prompt": "El preu al qual vas comprar una acció influeix en el que farà el mercat.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Al mercat li és igual a quant vas comprar: només t'importa a tu."
+  },
+  "u27l6-7": {
+   "prompt": "Ràpid: «Ja hi he posat 3.000 €, ara no ho puc deixar». Quin biaix és?",
+   "options": [
+    "Cost enfonsat",
+    "FOMO",
+    "Excés de confiança"
+   ],
+   "explanation": "El que has invertit no torna per continuar: decideix des d'avui."
+  },
+  "u27l6-8": {
+   "prompt": "Abans de comprar, escriu tres motius pels quals podries ____.",
+   "options": [
+    "encertar-la",
+    "estar tranquil",
+    "guanyar",
+    "equivocar-te"
+   ],
+   "explanation": "És l'antídot més senzill contra el biaix de confirmació."
+  },
+  "u27l6-9": {
+   "prompt": "Una acció cau de 100 € a 60 €. Si t'ancores als 100 € i esperes que torni, quant ha de pujar? (arrodoneix a un decimal)",
+   "options": [],
+   "explanation": "100 ÷ 60 − 1 ≈ 0,667 → +66,7 %. Res no garanteix que ho faci.",
+   "unit": "%"
+  },
+  "u27l6-10": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Barat o car depèn del que val el negoci, no de a quant va estar",
+    "Sí, a meitat de preu sempre és una ganga",
+    "Espera que caigui un altre 50 % i serà encara més barata"
+   ],
+   "explanation": "Les rebaixes de la borsa no són com les del súper: el producte també pot haver canviat.",
+   "feedback": [
+    "Cert. Primer miro beneficis, deute i per què ha caigut. El preu antic no és una etiqueta.",
+    "No a la borsa: pot haver caigut perquè el negoci val la meitat… o menys.",
+    "Això continua sent mirar només el preu, no el valor."
+   ],
+   "lines": [
+    "Aquesta acció ha caigut un 50 % 😍",
+    "És a meitat de preu, com a les rebaixes!"
+   ]
+  },
+  "u27l7-1": {
+   "prompt": "Mira només aquests dos mesos d'un gràfic real. Quina tendència hi veus? (Microsoft · tancaments cada 3 sessions · juny–agost del 2026)",
+   "options": [
+    "Alcista",
+    "Baixista",
+    "Lateral"
+   ],
+   "explanation": "Puja amb claredat. La recència ens porta a creure que continuarà així sempre; un tram de dos mesos no diu res dels pròxims anys."
+  },
+  "u27l7-2": {
+   "prompt": "Així anava el Nikkei japonès fins al novembre del 1989. Toca el punt més alt. (Nikkei 225 · tancaments mensuals · fins al 30/11/1989)",
+   "options": [],
+   "explanation": "Després d'anys de pujades, tothom creia que continuaria. El màxim de finals del 1989 va trigar 34 anys a recuperar-se."
+  },
+  "u27l7-3": {
+   "prompt": "Setembre del 1929: la borsa dels EUA fa anys que puja i «tothom» compra, molts amb diners prestats. Què va fer l'S&P 500 després?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "La caiguda va arribar a més del 80 %. El que va passar els anys anteriors no predeia el que vindria.",
+   "horizon": "els tres anys següents"
+  },
+  "u27l7-4": {
+   "prompt": "Després de dos anys de pujades fortes, la Laura creu que la borsa «sempre puja» i hi posa tots els seus estalvis. Quin biaix mostra sobretot?",
+   "options": [
+    "Cost enfonsat",
+    "Aversió a la pèrdua",
+    "Recència"
+   ],
+   "explanation": "Dona massa pes al que acaba de passar (i probablement també hi ha excés de confiança)."
+  },
+  "u27l7-5": {
+   "prompt": "Segons Bessembinder, la majoria de les accions dels EUA des del 1926 van rendir més que les lletres del Tresor.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Més de la meitat van rendir menys. Només un 4 % va explicar tot el guany net del mercat."
+  },
+  "u27l7-6": {
+   "prompt": "Veus a les xarxes deu persones que es van fer riques amb una criptomoneda petita. Quina conclusió és correcta?",
+   "options": [
+    "Comprar criptos petites és una manera segura de fer-se ric",
+    "És biaix de supervivència: no veig els que van fer el mateix i ho van perdre tot",
+    "Si deu ho van aconseguir, jo també"
+   ],
+   "explanation": "Les històries d'èxit són una mostra esbiaixada: hi falta el cementiri dels que no ho van aconseguir.",
+   "feedback": [
+    "Només veus els que van guanyar. Els milers que van perdre no ho publiquen.",
+    "Molt bé: els guanyadors visibles no diuen res de les teves probabilitats. I en cripto es pot perdre tot.",
+    "Deu guanyadors entre centenars de milers no són una probabilitat alta."
+   ]
+  },
+  "u27l7-7": {
+   "prompt": "Després d'una caiguda del 30 %, la Marta està convençuda que la borsa «ja només pot baixar» i vol vendre el seu fons indexat de llarg termini. Què li diries?",
+   "options": [
+    "Que miri dades de dècades i rellegeixi el seu pla abans de decidir",
+    "Que esperi que pugi un 30 % per tornar a comprar",
+    "Té raó: el que cau continua caient"
+   ],
+   "explanation": "L'últim que ha passat pesa massa al cap: les dades llargues ho equilibren.",
+   "feedback": [
+    "Molt bé: la història llarga inclou moltes caigudes seguides de recuperacions.",
+    "Vendre a baix i recomprar a dalt és la manera més cara d'invertir.",
+    "És recència a l'inrevés. Després de les grans caigudes del 2009 o el 2020 van arribar fortes recuperacions."
+   ]
+  },
+  "u27l7-8": {
+   "prompt": "Ràpid: què és el biaix de supervivència?",
+   "options": [
+    "Guardar un coixí d'emergència",
+    "Vendre en pànic",
+    "Fixar-se només en els que van sobreviure i oblidar els que van fracassar"
+   ],
+   "explanation": "Els fons tancats i els traders arruïnats no surten a les estadístiques ni a les xarxes."
+  },
+  "u27l7-9": {
+   "prompt": "On es pot amagar el biaix de supervivència? Marca'ls tots.",
+   "options": [
+    "Influencers que només ensenyen els seus guanys",
+    "Un índex que inclou totes les empreses del mercat",
+    "Proves d'un sistema només amb empreses que existeixen avui",
+    "Rànquings de fons que no inclouen els que van tancar"
+   ],
+   "explanation": "Un índex ampli no tria guanyadors a posteriori: compra el mercat sencer."
+  },
+  "u27l7-10": {
+   "prompt": "Recència o supervivència?",
+   "options": [
+    "«Mira quants s'han fet rics amb això»",
+    "«Després d'aquesta caiguda, ja només pot baixar»",
+    "«Els fons d'aquesta gestora sempre guanyen» (els dolents ja han tancat)",
+    "«La borsa ha pujat dos anys: sempre puja»"
+   ],
+   "explanation": "Recència: el passat recent pesa massa. Supervivència: només veus els que han quedat.",
+   "right": [
+    "Recència",
+    "Supervivència"
+   ]
+  }
+ }
+}

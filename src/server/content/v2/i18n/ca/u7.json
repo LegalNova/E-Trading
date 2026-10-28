@@ -1,0 +1,616 @@
+{
+ "unit": {
+  "title": "Índexs i referències",
+  "description": "Què mesura cada índex, com es pondera i com fer-lo servir per mesurar la teva rendibilitat",
+  "section": "Com funcionen els mercats"
+ },
+ "lessons": {
+  "u7l1": {
+   "title": "Què és un índex",
+   "steps": [
+    {
+     "title": "Una cistella de referència",
+     "body": "Un **índex** resumeix en una xifra com va un grup de valors. «La borsa espanyola ha pujat un 1 %» vol dir que l'**IBEX 35** ha pujat un 1 %.\n\nCada índex té les seves **regles**: quines empreses hi entren, quant pesa cadascuna i cada quant es revisa."
+    },
+    {
+     "title": "Per a què serveix",
+     "body": "• **Termòmetre:** com va un mercat, un país o un sector.\n• **Vara de mesurar:** comparar la teva rendibilitat o la d'un fons.\n• **Base de productes:** fons indexats i ETF que el copien.\n\nUn índex **no es compra directament**: es compra un fons o un ETF que el replica."
+    },
+    {
+     "title": "Punts, no euros",
+     "body": "Un índex es mesura en punts, no en euros. El que importa és la **variació**: si passa de 14.000 a 14.700 punts, ha pujat un 5 %.",
+     "key": "Un índex és una cistella de referència, no una cosa que es compra tal qual.",
+     "tip": "Comprar l'índex sencer és apostar per tota una economia, no per una empresa."
+    }
+   ]
+  },
+  "u7l2": {
+   "title": "S&P 500, Nasdaq, IBEX 35 i MSCI World",
+   "steps": [
+    {
+     "title": "Els grans dels EUA",
+     "body": "• **S&P 500:** unes 500 grans empreses dels EUA, ponderades per capitalització. Cobreix al voltant del 80 % del valor de la seva borsa.\n• **Nasdaq 100:** les 100 empreses no financeres més grans que cotitzen al Nasdaq; molta tecnologia.\n• **Dow Jones:** només 30 empreses i pondera per preu, un mètode antic."
+    },
+    {
+     "title": "Espanya, Europa i el món",
+     "body": "• **IBEX 35:** les 35 més líquides de la borsa espanyola.\n• **Euro Stoxx 50:** 50 grans de la zona euro. **DAX:** Alemanya.\n• **MSCI World:** empreses grans i mitjanes de **23 països desenvolupats**, unes 1.250-1.300 el 2026 (la xifra canvia amb cada revisió).\n• **MSCI ACWI:** hi afegeix els països emergents."
+    },
+    {
+     "title": "Mundial no vol dir repartit",
+     "body": "Un fons de l'MSCI World sembla «tot el món», però més de dos terços són els EUA i no inclou emergents com la Xina o l'Índia.",
+     "key": "Cada índex mesura una part del mercat: mira què hi ha a dins abans de comparar-t'hi.",
+     "tip": "Amb el nom de l'índex no n'hi ha prou: mira'n la composició per països i sectors."
+    }
+   ]
+  },
+  "u7l3": {
+   "title": "Ponderar per capitalització",
+   "steps": [
+    {
+     "title": "Pesa més la que val més",
+     "body": "**Capitalització = preu de l'acció × nombre d'accions.**\n\nEn un índex ponderat per capitalització, el pes de cada empresa és la seva capitalització dividida entre la suma de totes. Si una val 300 i l'índex sencer 1.000, pesa un **30 %**: els seus moviments mouen molt l'índex."
+    },
+    {
+     "title": "Altres mètodes",
+     "body": "• **Per preu** (Dow Jones, Nikkei 225): pesa més l'acció amb el preu unitari més alt, encara que l'empresa sigui més petita.\n• **Equiponderat:** totes pesen el mateix.\n\nLa majoria (S&P 500, IBEX 35, MSCI World) fan servir la capitalització, sovint comptant només les accions que es negocien lliurement."
+    },
+    {
+     "title": "La concentració",
+     "body": "Amb la capitalització, les guanyadores pesen cada vegada més. El 2026, unes poques tecnològiques suposen més d'un terç de l'S&P 500: comprar l'índex és, en bona part, comprar aquestes empreses.",
+     "key": "Capitalització = preu × nombre d'accions; qui val més, pesa més.",
+     "tip": "Mira les 10 posicions més grans d'un índex: et diuen què compres de debò."
+    }
+   ]
+  },
+  "u7l4": {
+   "title": "Índex de preus i de rendibilitat total",
+   "steps": [
+    {
+     "title": "Amb dividends o sense",
+     "body": "L'IBEX 35 o l'S&P 500 que surten a les notícies són **índexs de preus**: no compten els dividends.\n\nEls índexs de **rendibilitat total**, com l'**IBEX 35 amb dividends**, suposen que els dividends es reinverteixen. Mesuren el que de debò hauria guanyat un inversor."
+    },
+    {
+     "title": "La diferència es composa",
+     "body": "Un índex que puja un 5 % l'any de preu i reparteix un 2 % en dividends dona al voltant d'un 7 % si els reinverteixes.\n\nAmb 10.000 € a 30 anys: **43.219 €** sense dividends davant de **76.123 €** amb dividends. Gairebé el doble."
+    },
+    {
+     "title": "Prova-ho",
+     "body": "Posa 10.000 €, 0 € al mes i 30 anys. Compara un 5 % amb un 7 %: aquesta diferència és l'efecte de reinvertir els dividends.",
+     "tip": "Són exemples, no promeses: els índexs no pugen el mateix cada any."
+    },
+    {
+     "title": "Compte amb l'índex que «no puja»",
+     "body": "Durant molts anys, l'IBEX 35 de preus semblava no moure's des del seu màxim del 2007, mentre que l'IBEX amb dividends era molt per sobre. El Nikkei japonès va trigar fins al 2024 a superar el seu màxim de preu del 1989.",
+     "key": "Per mesurar una inversió a llarg termini, fes servir l'índex amb dividends."
+    }
+   ]
+  },
+  "u7l5": {
+   "title": "Comparar la teva rendibilitat",
+   "steps": [
+    {
+     "title": "La teva vara de mesurar",
+     "body": "No n'hi ha prou amb «he guanyat un 6 %». Compara-ho amb un **índex de referència** (*benchmark*) que s'assembli al que inverteixes: una cartera d'accions mundials, amb l'MSCI World amb dividends; una d'accions espanyoles, amb l'IBEX 35 amb dividends."
+    },
+    {
+     "title": "El que diuen les dades",
+     "body": "Batre l'índex és difícil fins i tot per als professionals. Segons l'informe **SPIVA** (tancament del 2025), un **97 %** dels fons actius d'accions europees va quedar per darrere del seu índex en 10 anys.\n\nI l'inversor mitjà guanya al voltant d'**1,2 punts menys l'any** que els seus propis fons per comprar i vendre en mal moment (Morningstar)."
+    },
+    {
+     "title": "Quant costa quedar-se enrere",
+     "body": "Posa 10.000 € a 30 anys al 7 % i compara un cost del 0,2 % amb un de l'1,8 %: quedar-se 1,6 punts per darrere cada any es nota moltíssim.",
+     "tip": "Els punts que perds cada any també es composen."
+    },
+    {
+     "title": "Compara igual amb igual",
+     "body": "Mateix període, mateixa moneda, amb dividends i després de comissions. I si hi aportes diners durant l'any, no ho comptis com a guany.",
+     "key": "Un índex semblant a la teva cartera és la teva vara de mesurar."
+    }
+   ]
+  },
+  "u7r": {
+   "title": "Repàs de la unitat",
+   "steps": []
+  },
+  "s2boss": {
+   "title": "Repte final: Com funcionen els mercats",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u7l1-1": {
+   "prompt": "Què és un índex borsari?",
+   "options": [
+    "Una empresa que cotitza a borsa",
+    "Un tipus d'interès",
+    "Una xifra que resumeix com va un grup de valors"
+   ],
+   "explanation": "És una cistella de referència amb regles sobre què hi entra i quant pesa."
+  },
+  "u7l1-2": {
+   "prompt": "Es pot comprar directament l'índex S&P 500.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Es compra un fons o un ETF que el replica."
+  },
+  "u7l1-3": {
+   "prompt": "Un índex passa de 14.000 a 14.700 punts. Quant ha pujat?",
+   "options": [],
+   "explanation": "(14.700 − 14.000) ÷ 14.000 = 0,05 → 5 %.",
+   "unit": "%"
+  },
+  "u7l1-4": {
+   "prompt": "Ràpid: un índex passa de 5.000 a 4.600 punts. Quant ha caigut, en %? (escriu-ho en positiu)",
+   "options": [],
+   "explanation": "400 ÷ 5.000 = 0,08 → ha caigut un 8 %.",
+   "unit": "%"
+  },
+  "u7l1-5": {
+   "prompt": "Relaciona cada ús de l'índex amb un exemple.",
+   "options": [
+    "Termòmetre",
+    "Vara de mesurar",
+    "Base de productes",
+    "Regles de l'índex"
+   ],
+   "explanation": "Un índex informa, serveix de referència i és la base dels fons indexats.",
+   "right": [
+    "Comparar la rendibilitat d'un fons",
+    "Què hi entra, quant pesa i quan es revisa",
+    "Fons i ETF que el copien",
+    "Saber com va un mercat avui"
+   ]
+  },
+  "u7l1-6": {
+   "prompt": "Si l'IBEX 35 és a 14.000 punts, comprar-lo costa 14.000 €.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Els punts no són euros: mesuren l'evolució des d'una base."
+  },
+  "u7l1-7": {
+   "prompt": "Què fixen les regles d'un índex? Marca-les totes.",
+   "options": [
+    "Quant pesa cadascuna",
+    "El que opini cada dia un tertulià",
+    "Cada quant es revisa",
+    "Quines empreses hi entren"
+   ],
+   "explanation": "Les regles són públiques i objectives: per això l'índex serveix de referència."
+  },
+  "u7l1-8": {
+   "prompt": "Un fons presumeix en un anunci: «Hem guanyat un 8 % aquest any!». L'índex del seu mercat ha pujat un 14 %. Què en penses?",
+   "options": [
+    "Que no es pot comparar amb res",
+    "Que ha quedat 6 punts per darrere de la seva referència",
+    "Que és un fons excel·lent"
+   ],
+   "explanation": "Una rendibilitat sola no diu si és bona: cal comparar-la amb el seu índex.",
+   "feedback": [
+    "Per a això serveixen els índexs: són la vara de mesurar.",
+    "Guanyar un 8 % sona bé, però un fons indexat d'aquest mercat hauria donat bastant més.",
+    "Només ho sembla si no ho compares amb res."
+   ]
+  },
+  "u7l1-9": {
+   "prompt": "Si un índex puja, totes les seves empreses han pujat.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "És una mitjana ponderada: unes pugen, d'altres baixen, i l'índex en resumeix el conjunt."
+  },
+  "u7l1-10": {
+   "prompt": "Un índex no es compra directament: es compra un fons o un ____ que el replica.",
+   "options": [
+    "IPC",
+    "bo",
+    "dipòsit",
+    "ETF"
+   ],
+   "explanation": "Els ETF i els fons indexats copien l'índex amb costos baixos."
+  },
+  "u7l2-1": {
+   "prompt": "Relaciona cada índex amb el que mesura.",
+   "options": [
+    "S&P 500",
+    "Nasdaq 100",
+    "IBEX 35",
+    "MSCI World",
+    "Dow Jones"
+   ],
+   "explanation": "Cada índex és una finestra diferent al mercat.",
+   "right": [
+    "Les 100 no financeres més grans del Nasdaq",
+    "30 empreses ponderades per preu",
+    "Grans i mitjanes de 23 països desenvolupats",
+    "Unes 500 grans empreses dels EUA",
+    "Les 35 més líquides d'Espanya"
+   ]
+  },
+  "u7l2-2": {
+   "prompt": "Espelmes diàries reals d'un dels índexs d'aquesta classe, sense nom ni dates. Puja o baixa en les sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Ningú no llegeix de manera fiable dues setmanes d'un índex: per això els índexs serveixen de referència, no de bola de vidre.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u7l2-3": {
+   "prompt": "Quin índex inclou també països emergents com la Xina o l'Índia?",
+   "options": [
+    "S&P 500",
+    "MSCI World",
+    "MSCI ACWI"
+   ],
+   "explanation": "L'MSCI World només inclou desenvolupats; l'ACWI hi suma els emergents."
+  },
+  "u7l2-4": {
+   "prompt": "L'MSCI World inclou tots els països del món.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Només 23 països desenvolupats: no hi ha emergents com la Xina, l'Índia o el Brasil."
+  },
+  "u7l2-5": {
+   "prompt": "Ràpid: quin índex pondera per preu?",
+   "options": [
+    "Dow Jones",
+    "S&P 500",
+    "IBEX 35"
+   ],
+   "explanation": "El Dow Jones (i el Nikkei 225) pesen cada empresa pel preu de la seva acció."
+  },
+  "u7l2-6": {
+   "prompt": "Quin índex ho reflecteix millor?",
+   "options": [
+    "Com va la borsa espanyola",
+    "Com van els països desenvolupats en conjunt",
+    "Un fons amb Apple, Nestlé, Toyota i més d'un miler d'empreses més",
+    "Com van les grans empreses dels EUA",
+    "Un fons de grans empreses espanyoles"
+   ],
+   "explanation": "Tria sempre l'índex que s'assembli al que mires.",
+   "right": [
+    "S&P 500",
+    "IBEX 35",
+    "MSCI World"
+   ]
+  },
+  "u7l2-7": {
+   "prompt": "A l'MSCI World, els EUA pesen més de dos terços.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Per això un fons «mundial» depèn molt del que faci la borsa nord-americana."
+  },
+  "u7l2-8": {
+   "prompt": "Nasdaq 100, març del 2000: la tecnologia fa anys que està disparada i tothom parla d'internet. Què va fer l'índex els anys següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Un índex molt concentrat en un sector depèn del que li passi a aquest sector, per a bé i per a mal.",
+   "horizon": "els anys següents"
+  },
+  "u7l2-9": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Només tens empreses europees",
+    "Força diversificat, però sobretot als EUA i sense emergents",
+    "Sí, tot el món per igual"
+   ],
+   "explanation": "Diversificat no vol dir repartit a parts iguals.",
+   "feedback": [
+    "Al revés: Europa pesa molt menys que els EUA.",
+    "Això mateix! Més d'un miler d'empreses, però no repartides per igual entre països.",
+    "No del tot: més de dos terços són els EUA i no hi ha emergents."
+   ],
+   "lines": [
+    "Tinc un fons de l'MSCI World, així que estic repartida per tot el planeta 🌍"
+   ]
+  },
+  "u7l2-10": {
+   "prompt": "L'MSCI World cobreix empreses grans i mitjanes de ____ països desenvolupats.",
+   "options": [
+    "50",
+    "100",
+    "195",
+    "23"
+   ],
+   "explanation": "23 països desenvolupats; per als emergents hi ha l'MSCI Emerging Markets i, tots junts, l'ACWI."
+  },
+  "u7l3-1": {
+   "prompt": "Una empresa té 2.000 milions d'accions a 15 € cadascuna. Quina és la seva capitalització, en milions d'euros?",
+   "options": [],
+   "explanation": "2.000 milions × 15 € = 30.000 milions d'€.",
+   "unit": "milions d'€"
+  },
+  "u7l3-2": {
+   "prompt": "Un índex té tres empreses: A val 600, B 300 i C 100 (milions d'€). Quant pesa A?",
+   "options": [],
+   "explanation": "600 ÷ (600 + 300 + 100) = 600 ÷ 1.000 = 60 %.",
+   "unit": "%"
+  },
+  "u7l3-3": {
+   "prompt": "En aquest índex, A puja un 10 % i B i C no es mouen. Quant puja l'índex?",
+   "options": [],
+   "explanation": "A pesa un 60 %: 0,60 × 10 % = 6 %. Per això les grans mouen l'índex.",
+   "unit": "%"
+  },
+  "u7l3-4": {
+   "prompt": "Ràpid: índex equiponderat de 4 empreses. Quant pesa cadascuna?",
+   "options": [],
+   "explanation": "100 ÷ 4 = 25 %.",
+   "unit": "%"
+  },
+  "u7l3-5": {
+   "prompt": "En un índex ponderat per preu, com el Dow Jones, què pesa més?",
+   "options": [
+    "L'acció amb el preu per acció més alt",
+    "L'empresa que val més a borsa",
+    "La que té més empleats"
+   ],
+   "explanation": "Per això és un mètode poc lògic: el preu d'una acció no diu com és de gran l'empresa."
+  },
+  "u7l3-6": {
+   "prompt": "En un índex ponderat per capitalització, una empresa que val el doble pesa el doble.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "El pes és proporcional a la capitalització."
+  },
+  "u7l3-7": {
+   "prompt": "Una acció de 500 € sempre és d'una empresa més gran que una acció de 50 €.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Depèn del nombre d'accions: el que compta és preu × nombre d'accions."
+  },
+  "u7l3-8": {
+   "prompt": "Empresa X: 100 milions d'accions a 50 €. Empresa Y: 1.000 milions a 10 €. Quina pesa més en un índex per capitalització?",
+   "options": [
+    "Y",
+    "X",
+    "Pesen igual"
+   ],
+   "explanation": "X val 5.000 milions d'€; Y, 10.000 milions. Y pesa el doble encara que la seva acció sigui més barata."
+  },
+  "u7l3-9": {
+   "prompt": "Com pondera cada índex?",
+   "options": [
+    "MSCI World",
+    "IBEX 35",
+    "Nikkei 225",
+    "S&P 500",
+    "Dow Jones"
+   ],
+   "explanation": "Gairebé tots els índexs moderns ponderen per capitalització.",
+   "right": [
+    "Per capitalització",
+    "Per preu"
+   ]
+  },
+  "u7l3-10": {
+   "prompt": "L'IBEX 35 pondera per capitalització.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Per capitalització, comptant les accions que es negocien lliurement."
+  },
+  "u7l3-11": {
+   "prompt": "La Laura compra un fons de l'S&P 500 creient que té «500 empreses a parts iguals». Què li convé fer?",
+   "options": [
+    "Donar per fet que cada empresa pesa un 0,2 %",
+    "Vendre'l perquè «està mal fet»",
+    "Mirar-ne les 10 posicions més grans"
+   ],
+   "explanation": "Entendre com pondera un índex és saber quin risc compres.",
+   "feedback": [
+    "En realitat les grans pesen moltíssim més: el seu risc depèn de poques empreses.",
+    "No està mal fet: així funciona la capitalització. Només cal entendre-ho.",
+    "Descobreix que unes poques tecnològiques pesen més d'un terç: ara sap què compra de debò."
+   ]
+  },
+  "u7l4-1": {
+   "prompt": "Un índex puja un 4 % de preu i reparteix un 3 % en dividends. Quina és la seva rendibilitat total aproximada?",
+   "options": [],
+   "explanation": "4 % + 3 % ≈ 7 %.",
+   "unit": "%"
+  },
+  "u7l4-2": {
+   "prompt": "10.000 € al 5 % anual durant 30 anys, en quant es converteixen? (arrodoneix)",
+   "options": [],
+   "explanation": "10.000 × 1,05³⁰ ≈ 43.219 €.",
+   "unit": "€"
+  },
+  "u7l4-3": {
+   "prompt": "I si al 5 % hi sumes un 2 % de dividends reinvertits (un 7 % anual durant 30 anys)? (arrodoneix)",
+   "options": [],
+   "explanation": "10.000 × 1,07³⁰ ≈ 76.123 €: gairebé el doble que sense dividends.",
+   "unit": "€"
+  },
+  "u7l4-4": {
+   "prompt": "Què mesura un índex de rendibilitat total?",
+   "options": [
+    "Només la variació del preu",
+    "Els beneficis de les empreses",
+    "El preu més els dividends reinvertits"
+   ],
+   "explanation": "És el que hauria guanyat un inversor que ho hagués reinvertit tot."
+  },
+  "u7l4-5": {
+   "prompt": "L'IBEX 35 que surt a les notícies inclou els dividends.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "És un índex de preus; a part, hi ha l'IBEX 35 amb dividends."
+  },
+  "u7l4-6": {
+   "prompt": "Nikkei 225 (Japó), novembre del 1989: l'índex fa anys que puja de manera espectacular. Què va fer els anys següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "El que va passar ho veus al gràfic. Recorda que és un índex de preus: no compta els dividends que cobrava qui el tenia.",
+   "horizon": "els anys següents"
+  },
+  "u7l4-7": {
+   "prompt": "Relaciona cada terme amb el seu significat.",
+   "options": [
+    "Índex de preus",
+    "Índex de rendibilitat total",
+    "Dividend",
+    "Fons d'acumulació"
+   ],
+   "explanation": "Per comparar bé, compara sempre «amb dividends» amb «amb dividends».",
+   "right": [
+    "Preu més dividends reinvertits",
+    "Part del benefici que es reparteix",
+    "Reinverteix els dividends per tu",
+    "Només la variació de les cotitzacions"
+   ]
+  },
+  "u7l4-8": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Aquest IBEX no compta els dividends; amb els dividends, la història canvia molt",
+    "Té raó, no dona res",
+    "És que l'IBEX està mal calculat"
+   ],
+   "explanation": "L'índex de preus només explica mitja història.",
+   "feedback": [
+    "Això mateix! L'IBEX 35 amb dividends ha estat molt per sobre del de preus.",
+    "Li falta una part: els dividends.",
+    "Està ben calculat: només mesura una altra cosa, el preu."
+   ],
+   "lines": [
+    "El meu tiet diu que durant anys l'IBEX no va pujar gens des del 2007 🤷",
+    "Aleshores la borsa espanyola no dona res?"
+   ]
+  },
+  "u7l4-9": {
+   "prompt": "A llarg termini, la diferència entre reinvertir els dividends o no fer-ho és petita.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "A 30 anys, un 5 % davant d'un 7 % és gairebé el doble de diners."
+  },
+  "u7l4-10": {
+   "prompt": "Compares la teva cartera, comptant els dividends que vas cobrar, amb l'IBEX 35 de preus. Què passa?",
+   "options": [
+    "Et compares amb avantatge: hauries de fer servir l'IBEX amb dividends",
+    "És la comparació correcta",
+    "Et compares amb desavantatge"
+   ],
+   "explanation": "Tu comptes dividends i l'índex no: semblarà que ho fas millor del que ho fas."
+  },
+  "u7l5-1": {
+   "prompt": "La teva cartera va guanyar un 6 % i el seu índex de referència un 9 %. Quants punts vas quedar per darrere?",
+   "options": [],
+   "explanation": "9 − 6 = 3 punts.",
+   "unit": "punts"
+  },
+  "u7l5-2": {
+   "prompt": "Comences l'any amb 5.000 €, no hi aportes res i l'acabes amb 5.400 €. Quina rendibilitat has tingut?",
+   "options": [],
+   "explanation": "400 ÷ 5.000 = 0,08 → 8 %.",
+   "unit": "%"
+  },
+  "u7l5-3": {
+   "prompt": "Comences amb 5.000 €, hi aportes 1.000 € durant l'any i acabes amb 6.300 €. Quant has guanyat de debò?",
+   "options": [],
+   "explanation": "6.300 − 5.000 − 1.000 = 300 €. El que hi aportes no és guany.",
+   "unit": "€"
+  },
+  "u7l5-4": {
+   "prompt": "Relaciona cada cartera amb el seu índex de referència.",
+   "options": [
+    "Accions de tot el món desenvolupat",
+    "Accions espanyoles",
+    "Grans empreses dels EUA",
+    "Tecnològiques grans del Nasdaq"
+   ],
+   "explanation": "La referència s'ha d'assemblar al que inverteixes.",
+   "right": [
+    "IBEX 35 amb dividends",
+    "S&P 500 amb dividends",
+    "Nasdaq 100 amb dividends",
+    "MSCI World amb dividends"
+   ]
+  },
+  "u7l5-5": {
+   "prompt": "En Pablo inverteix en accions espanyoles i un any guanya un 4 %, mentre que l'IBEX 35 amb dividends puja un 12 %. Està content perquè «ha guanyat». Què li diries?",
+   "options": [
+    "Que ho ha fet genial: guanyar és guanyar",
+    "Que ha quedat 8 punts per darrere de la seva referència",
+    "Que s'hauria de comparar amb un dipòsit al 2 %"
+   ],
+   "explanation": "Sense vara de mesurar no saps si ho fas bé.",
+   "feedback": [
+    "Guanyar menys que l'alternativa més senzilla també és perdre, encara que no es vegi.",
+    "Un fons indexat de l'IBEX li hauria donat tres vegades més. És un senyal per revisar el que fa.",
+    "És un altre risc: una cartera d'accions es compara amb un índex d'accions."
+   ]
+  },
+  "u7l5-6": {
+   "prompt": "La Marta tria un fons perquè va batre el seu índex l'any passat. Què li convé?",
+   "options": [
+    "Triar el que va perdre més per «comprar barat»",
+    "Invertir-ho tot: si va guanyar, guanyarà",
+    "Mirar també el seu historial a 5-10 anys i els seus costos"
+   ],
+   "explanation": "L'èxit passat no prediu el futur: mira períodes llargs i costos.",
+   "feedback": [
+    "Perdre molt un any tampoc no diu que hagi de guanyar el següent.",
+    "Segons SPIVA, molt pocs dels que baten l'índex en un període ho repeteixen en el següent.",
+    "Comprova si va ser sort d'un any o una cosa constant, i quant li costa."
+   ]
+  },
+  "u7l5-7": {
+   "prompt": "Segons SPIVA (tancament del 2025), quin percentatge de fons actius d'accions europees va quedar per darrere del seu índex en 10 anys?",
+   "options": [
+    "Al voltant del 60 %",
+    "Al voltant del 30 %",
+    "Un 97 %"
+   ],
+   "explanation": "Gairebé tots: els costos i la competència fan molt difícil batre l'índex durant anys."
+  },
+  "u7l5-8": {
+   "prompt": "Per comparar bé, cal fer servir l'índex amb dividends i la teva rendibilitat després de comissions.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Així compares el que de debò vas guanyar amb el que hauria donat l'índex."
+  },
+  "u7l5-9": {
+   "prompt": "Ràpid: la teva cartera d'accions mundials va guanyar un 10 % i l'MSCI World amb dividends un 12 %. Com ho vas fer?",
+   "options": [
+    "Millor: vas guanyar un 10 %",
+    "Igual",
+    "Pitjor, per 2 punts"
+   ],
+   "explanation": "10 − 12 = −2 punts respecte a la teva referència."
+  },
+  "u7l5-10": {
+   "prompt": "Comparar una cartera d'accions amb un dipòsit al 2 % és una bona manera de saber si la gestiones bé.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Són riscos diferents. Una cartera d'accions es compara amb un índex d'accions semblant."
+  }
+ }
+}

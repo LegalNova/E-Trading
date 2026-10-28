@@ -1,0 +1,759 @@
+{
+ "unit": {
+  "title": "Gestionar la teva cartera",
+  "description": "Rebalancejar, vigilar costos, aportar a poc a poc, mesurar bé i escriure el teu pla",
+  "section": "Construir la teva cartera"
+ },
+ "lessons": {
+  "u30l1": {
+   "title": "Rebalancejar",
+   "steps": [
+    {
+     "title": "Per què es desvia",
+     "body": "El teu pla és 60 % accions i 40 % bons. Si la borsa puja molt, en dos anys pots estar en 72/28 sense haver tocat res. Ara la teva cartera és **més arriscada** del que vas triar.\n\nRebalancejar és tornar al repartiment objectiu: vendre una mica del que més ha pujat o aportar al que s'ha quedat enrere."
+    },
+    {
+     "title": "Tres maneres",
+     "body": "1. **Per calendari:** un cop l'any, per exemple al gener.\n2. **Per llindar:** quan una part s'allunya més de 5 punts.\n3. **Amb les aportacions:** els diners nous van al que s'ha quedat curt. No vens, així que no generes impostos.\n\nAmb fons d'inversió també pots rebalancejar per **traspàs**, sense tributar."
+    },
+    {
+     "title": "L'efecte psicològic",
+     "body": "El 2009 o el març del 2020, rebalancejar obligava a comprar accions just quan hi havia més por. És una regla que et fa comprar barat i vendre car sense haver d'endevinar res.",
+     "key": "Rebalancejar és tornar al teu pla: vendre una part del que més ha pujat i comprar el que s'ha quedat enrere.",
+     "tip": "És la manera automàtica de comprar barat quan tothom ven."
+    }
+   ]
+  },
+  "u30l2": {
+   "title": "El cost de les comissions a llarg termini",
+   "steps": [
+    {
+     "title": "L'exemple",
+     "body": "Inverteixes **10.000 €** durant **30 anys** i el mercat dona un 7 % anual (exemple, no promesa):\n\n• Sense costos: **76.123 €**\n• Amb un 0,2 % (indexat): **71.968 €**\n• Amb un 1,5 % (fons actiu típic): **49.840 €**\n\nUn 1,5 % l'any s'emporta més de 26.000 €."
+    },
+    {
+     "title": "Compara tu",
+     "body": "Posa 300 € al mes durant 30 anys i compara un 0,2 % amb un 1,8 % de costos: amb un 7 % de mercat surten uns 351.900 € davant d'uns 259.100 €.",
+     "tip": "Les comissions també es componen, però en contra teu."
+    },
+    {
+     "title": "Tots els costos",
+     "body": "Despeses corrents o TER (al KID), comissió per operació, spread, custòdia, canvi de divisa i impostos. John Bogle, fundador de Vanguard, ho resumia així: «En inversió, obtens allò per què no pagues».",
+     "key": "Cada punt de comissió anual es menja una part enorme del resultat per l'interès compost.",
+     "tip": "Un 1,5 % l'any sembla poc. A 30 anys, és un terç dels teus diners."
+    }
+   ]
+  },
+  "u30l3": {
+   "title": "Invertir amb poc: 50 € al mes",
+   "steps": [
+    {
+     "title": "Poc, però aviat",
+     "body": "No cal tenir milers d'euros. Amb **50 € al mes** durant 30 anys, si el mercat donés un 7 % anual (exemple, no promesa), aportaries 18.000 € i acabaries amb uns **61.000 €**. Amb 40 anys, uns **131.000 €**.\n\nEl temps fa la major part de la feina."
+    },
+    {
+     "title": "Aportar cada mes",
+     "body": "Mou el preu amunt i avall: amb la mateixa quantitat cada mes compres més participacions quan és barat i menys quan és car.",
+     "tip": "Invertir cada mes és com pujar una escala: l'important és no aturar-se."
+    },
+    {
+     "title": "Com fer-ho barat",
+     "body": "Amb pocs diners, les comissions fixes pesen molt: 2 € per una compra de 50 € és un 4 %. Busca fons indexats sense comissió de compra o plans d'aportació sense cost, i automatitza l'aportació el dia que cobres.",
+     "key": "Començar aviat amb poc sol pesar més que començar tard amb molt."
+    }
+   ]
+  },
+  "u30l4": {
+   "title": "Mesurar bé la teva rendibilitat",
+   "steps": [
+    {
+     "title": "Simple i anualitzada",
+     "body": "**Simple:** (valor final − inicial) ÷ inicial. 2.000 € → 2.600 € és un +30 %.\n\n**Anualitzada:** el ritme mitjà per any. Un +50 % en 5 anys **no** és un 10 % anual: és un 8,4 %, perquè es compon. Fórmula: (1 + total)^(1/anys) − 1."
+    },
+    {
+     "title": "Ponderada per temps o per diners",
+     "body": "• **Per temps:** el que va fer el fons, sense importar quan hi vas posar diners. Serveix per comparar fons.\n• **Per diners:** el que vas guanyar **tu**, segons quant hi tenies a cada moment.\n\nSi hi poses molt just abans d'una caiguda, el fons pot guanyar i tu perdre."
+    },
+    {
+     "title": "Anualitzar és compondre al revés",
+     "body": "Posa 10.000 € al 8,4 % durant 5 anys: arribes a uns 15.000 €, un +50 % total.",
+     "tip": "Compara sempre en la mateixa unitat: % anual amb % anual."
+    },
+    {
+     "title": "Mesurar amb honestedat",
+     "body": "Resta comissions i impostos, compara amb un índex de referència i recorda la inflació. Una app que et diu «+40 % des de l'inici» sense dir en quants anys no et diu gairebé res.",
+     "key": "Per comparar, fes servir la rendibilitat anualitzada; per saber quant has guanyat tu, la ponderada per diners."
+    }
+   ]
+  },
+  "u30l5": {
+   "title": "La teva Declaració de Política d'Inversió",
+   "steps": [
+    {
+     "title": "Què és",
+     "body": "Un document curt que diu **què fas, per què i què faràs quan el mercat es posi lleig**. Els grans inversors institucionals en tenen una (en anglès, Investment Policy Statement). Tu també pots tenir la teva en una pàgina."
+    },
+    {
+     "title": "La plantilla",
+     "body": "1. Objectius («X € l'any Y per a Z»).\n2. Horitzó.\n3. Coixí.\n4. Repartiment.\n5. Productes i cost màxim.\n6. Aportació automàtica.\n7. Quan rebalancejo.\n8. Què faré si la borsa cau un 30 %.\n9. Què no faré mai.\n10. Límit per especular (opcional)."
+    },
+    {
+     "title": "Revisa-la bé",
+     "body": "Un cop l'any o si et canvia la vida: feina, fills, casa. **No** perquè el mercat hagi pujat o baixat. El punt 8 és el més important: decideixes avui, amb calma, el que faràs amb por.",
+     "key": "Un pla escrit en un moment de calma és el que et salva en un moment de pànic.",
+     "tip": "Escriu avui el que faràs el dia que tothom tingui por."
+    }
+   ]
+  },
+  "u30l6": {
+   "title": "Repte: la teva cartera de 10.000 €",
+   "steps": [
+    {
+     "title": "El repte",
+     "body": "Tens **10.000 €** per invertir a 20 anys (ja tens el teu coixí a part). Construeix una cartera diversificada, barata i que puguis defensar en una mala ratxa.\n\nFes servir tot el de la secció: repartiment segons l'horitzó, diversos països, pocs productes, costos baixos i una part petita per especular si vols."
+    },
+    {
+     "title": "Com es defensa una cartera",
+     "body": "Amb arguments, no amb prediccions: «tinc milers d'empreses de tot el món, un 20 % en bons per a les caigudes, un cost del 0,2 % i una regla escrita per rebalancejar». És un exercici per aprendre, no una recomanació.",
+     "key": "Una bona cartera no és la que més puja un any, sinó la que pots mantenir 20 anys."
+    }
+   ]
+  },
+  "u30r": {
+   "title": "Repàs de la unitat",
+   "steps": []
+  },
+  "s10boss": {
+   "title": "Repte final: Construir la teva cartera",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u30l1-1": {
+   "prompt": "El teu pla és 60/40 i després d'una bona ratxa estàs en 72/28. Rebalancejar és…",
+   "options": [
+    "Vendre accions o aportar a bons fins a tornar al 60/40",
+    "No tocar mai res",
+    "Comprar més accions, que van bé"
+   ],
+   "explanation": "Tornes al nivell de risc que vas triar amb calma."
+  },
+  "u30l1-2": {
+   "prompt": "Tens 10.000 €: 6.000 € en accions i 4.000 € en bons. Les accions pugen un 40 % i els bons es queden igual. Quin percentatge de la cartera són ara les accions? (arrodoneix a un decimal)",
+   "options": [],
+   "explanation": "Accions: 8.400 €. Total: 12.400 €. 8.400 ÷ 12.400 ≈ 67,7 %.",
+   "unit": "%"
+  },
+  "u30l1-3": {
+   "prompt": "Seguint el cas anterior (8.400 € en accions i 4.000 € en bons), quants euros d'accions hauries de vendre per tornar al 60 %?",
+   "options": [],
+   "explanation": "El 60 % de 12.400 € són 7.440 €. 8.400 − 7.440 = 960 €, que passen a bons.",
+   "unit": "€"
+  },
+  "u30l1-4": {
+   "prompt": "I si prefereixes no vendre: quants diners nous hauries d'aportar a bons per tornar al 60/40?",
+   "options": [],
+   "explanation": "Si 8.400 € han de ser el 60 %, el total ha de ser 14.000 €. Bons: 14.000 − 8.400 = 5.600 €. Ja en tens 4.000 €: n'aportes 1.600 €.",
+   "unit": "€"
+  },
+  "u30l1-5": {
+   "prompt": "La teva cartera ha passat a 75 % accions i 25 % renda fixa. El teu pla és 60/40. Reparteix com hauria de quedar: entre un 58 % i un 62 % en accions.",
+   "options": [
+    "Fons indexat d'accions mundials",
+    "Fons indexat d'emergents",
+    "Fons de bons globals cobert a euros",
+    "Fons monetari"
+   ],
+   "explanation": "Tornar al 60/40 retorna la cartera al risc que vas decidir. Exemple educatiu, no recomanació.",
+   "kinds": [
+    "ACCIONS",
+    "ACCIONS",
+    "RENDA FIXA",
+    "RENDA FIXA"
+   ]
+  },
+  "u30l1-6": {
+   "prompt": "Relaciona cada manera de rebalancejar amb com funciona.",
+   "options": [
+    "Per calendari",
+    "Per llindar",
+    "Amb aportacions"
+   ],
+   "explanation": "Totes tres serveixen; amb aportacions evites vendre i pagar impostos.",
+   "right": [
+    "Corregeixes si una part s'allunya més de 5 punts",
+    "Revises en una data fixa, per exemple cada gener",
+    "Els diners nous van al que s'ha quedat enrere"
+   ]
+  },
+  "u30l1-7": {
+   "prompt": "Març del 2020: la borsa ha caigut un 30 % i la teva cartera 60/40 està en 50/50. El teu pla diu «rebalancejo si em desvio més de 5 punts». Què fas?",
+   "options": [
+    "Espero a veure què diuen les notícies",
+    "Venc totes les accions abans que caiguin més",
+    "Segueixo el pla: passo diners de bons a accions fins al 60/40"
+   ],
+   "explanation": "Rebalancejar en les caigudes obliga a comprar barat. Per això és tan útil… i tan difícil sense un pla escrit.",
+   "feedback": [
+    "Les notícies en ple pànic no et donaran el terra. La teva regla ja ha decidit per tu.",
+    "Just el contrari del pla. I el 2020 el mercat va recuperar el seu màxim en uns 5 mesos.",
+    "És el que demana la teva regla. Fa por, i per això convé tenir-la escrita per endavant."
+   ]
+  },
+  "u30l1-8": {
+   "prompt": "Rebalancejar amb les aportacions noves evita pagar impostos per vendre.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Si no vens, no hi ha cap guany per declarar."
+  },
+  "u30l1-9": {
+   "prompt": "Si decideixes corregir només quan una part s'allunya més de 5 punts, rebalanceges per ____.",
+   "options": [
+    "intuïció",
+    "rumor",
+    "calendari",
+    "llindar"
+   ],
+   "explanation": "També es pot fer per calendari, un cop l'any."
+  },
+  "u30l1-10": {
+   "prompt": "Amb fons d'inversió a Espanya, com pots rebalancejar sense pagar impostos?",
+   "options": [
+    "No es pot",
+    "Mitjançant un traspàs entre fons",
+    "Venent i comprant el mateix dia"
+   ],
+   "explanation": "El traspàs entre fons no tributa fins al reemborsament final. Els ETF no tenen aquest avantatge."
+  },
+  "u30l2-1": {
+   "prompt": "10.000 € a 30 anys amb un mercat al 7 %. Sense costos acabes amb 76.123 € i amb un 1,5 % anual, amb 49.840 €. Quant s'ha emportat la comissió?",
+   "options": [],
+   "explanation": "76.123 − 49.840 = 26.283 €: més d'un terç del resultat.",
+   "unit": "€"
+  },
+  "u30l2-2": {
+   "prompt": "El mateix cas, però amb un 1,8 % de costos (rendibilitat neta del 5,2 %). Quant tindries als 30 anys? (arrodoneix)",
+   "options": [],
+   "explanation": "10.000 × 1,052³⁰ ≈ 45.759 €, davant de 71.968 € amb un 0,2 %.",
+   "unit": "€"
+  },
+  "u30l2-3": {
+   "prompt": "Aportant 300 € al mes durant 30 anys, quant separa un 0,2 % de costos d'un 1,8 %?",
+   "options": [
+    "Uns 30.000 €",
+    "Uns 9.000 €",
+    "Més de 90.000 €"
+   ],
+   "explanation": "Uns 351.900 € davant d'uns 259.100 € amb un mercat al 7 %."
+  },
+  "u30l2-4": {
+   "prompt": "Un 1 % anual de comissions gairebé no importa a 30 anys.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Per l'interès compost, cada punt anual s'emporta una part enorme del resultat final."
+  },
+  "u30l2-5": {
+   "prompt": "Quins costos has de mirar abans d'invertir? Marca'ls tots.",
+   "options": [
+    "La comissió per compra i venda",
+    "El color de l'app",
+    "El canvi de divisa",
+    "Les despeses corrents o TER del fons"
+   ],
+   "explanation": "També l'spread, la custòdia i els impostos."
+  },
+  "u30l2-6": {
+   "prompt": "El cost anual d'un fons o ETF s'anomena despeses corrents o ____.",
+   "options": [
+    "IVA",
+    "PER",
+    "IPC",
+    "TER"
+   ],
+   "explanation": "Apareix al document de dades fonamentals (KID)."
+  },
+  "u30l2-7": {
+   "prompt": "10.000 € a 30 anys amb un mercat al 7 %. Ordena de més a menys diners finals.",
+   "options": [
+    "Costos del 0,2 %",
+    "Costos de l'1,5 %",
+    "Costos de l'1,8 %",
+    "Sense costos"
+   ],
+   "explanation": "76.123 €, 71.968 €, 49.840 € i uns 45.759 €."
+  },
+  "u30l2-8": {
+   "prompt": "Ràpid: de qui és la frase «en inversió, obtens allò per què no pagues»?",
+   "options": [
+    "Isaac Newton",
+    "John Bogle",
+    "Elon Musk"
+   ],
+   "explanation": "El fundador de Vanguard i del primer fons indexat per a petits inversors (1976)."
+  },
+  "u30l2-9": {
+   "prompt": "El teu banc t'ofereix un fons amb un 1,9 % de despeses «amb un gestor estrella». L'alternativa és un indexat mundial al 0,2 %. Què en penses?",
+   "options": [
+    "Tant és, la diferència és petita",
+    "El gestor estrella compensarà la comissió",
+    "Hauria de superar l'índex en 1,7 punts l'any, cada any, per empatar"
+   ],
+   "explanation": "Una comissió alta és un handicap segur; superar l'índex, una esperança incerta.",
+   "feedback": [
+    "A 30 anys, aquesta diferència pot ser un terç dels teus diners.",
+    "Segons SPIVA, en 10 anys un 97 % dels fons d'accions europeus va quedar per darrere del seu índex. L'estrella hauria de ser excepcional… durant dècades.",
+    "Exacte: és un llistó altíssim que gairebé ningú no supera de manera sostinguda."
+   ]
+  },
+  "u30l2-10": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Compara'l amb el seu índex: si l'índex va pujar un 12 %, el fons ho va fer pitjor",
+    "Doncs millor un fons que cobri un 3 %",
+    "Sí, amb un 10 % no importa"
+   ],
+   "explanation": "Jutja un fons davant del seu índex i durant molts anys, no per un bon any.",
+   "feedback": [
+    "Això! El que importa és quant et deixa davant de l'alternativa barata, any rere any.",
+    "Cobrar més no fa pujar més. L'única cosa segura d'una comissió és que es paga.",
+    "Aquest 10 % ja és net de comissions, però sense elles hauria estat un 11,5 %. I l'any que no pugi, l'1,5 % es cobra igualment."
+   ],
+   "lines": [
+    "El meu fons cobra un 1,5 %, però aquest any ha pujat un 10 % 🚀",
+    "Així que el cost és igual, oi?"
+   ]
+  },
+  "u30l3-1": {
+   "prompt": "50 € al mes durant 30 anys amb un 7 % anual (exemple, no promesa). Amb quant acabaries aproximadament?",
+   "options": [],
+   "explanation": "Uns 60.999 €, dels quals 18.000 € són les teves aportacions i la resta, interès compost.",
+   "unit": "€"
+  },
+  "u30l3-2": {
+   "prompt": "En aquest mateix cas, quants diners hauries aportat tu en total?",
+   "options": [],
+   "explanation": "50 € × 12 mesos × 30 anys = 18.000 €. Els altres 43.000 € els genera el temps.",
+   "unit": "€"
+  },
+  "u30l3-3": {
+   "prompt": "Si en lloc de 30 anys són 40 (50 € al mes, 7 %), quant tindries aproximadament?",
+   "options": [
+    "Uns 300.000 €",
+    "Uns 70.000 €",
+    "Uns 131.000 €"
+   ],
+   "explanation": "Deu anys més aporten només 6.000 € més, però el resultat es duplica de sobres."
+  },
+  "u30l3-4": {
+   "prompt": "Inverteixes 100 € al mes i el preu passa per 10, 8, 5, 8 i 10 €. Compres 65 participacions amb 500 €. Quin és el teu preu mitjà? (dos decimals)",
+   "options": [],
+   "explanation": "500 ÷ 65 ≈ 7,69 €: per sota de 10 € encara que el preu va començar i acabar aquí.",
+   "unit": "€"
+  },
+  "u30l3-5": {
+   "prompt": "Reparteixes els teus 50 € al mes. Regles: almenys 2 productes, cap per sobre del 85 %, com a màxim un 5 % en cripto i un 10 % en una acció individual.",
+   "options": [
+    "Fons indexat mundial",
+    "Fons de bons",
+    "Bitcoin",
+    "L'acció de moda"
+   ],
+   "explanation": "La base, diversificada i barata; l'especulatiu, petit. La cripto és molt volàtil i es pot perdre la totalitat del que has invertit. Exemple, no recomanació.",
+   "kinds": [
+    "ACCIONS",
+    "BONS",
+    "CRIPTO",
+    "ACCIÓ INDIVIDUAL"
+   ]
+  },
+  "u30l3-6": {
+   "prompt": "En Pablo té 22 anys i vol esperar a tenir 5.000 € estalviats per començar a invertir «de debò». Trigarà 4 anys. Què li dius?",
+   "options": [
+    "Que pot començar ja amb una aportació petita i automàtica",
+    "Que esperi: amb poc no val la pena",
+    "Que ho posi tot en una cripto per arribar abans als 5.000 €"
+   ],
+   "explanation": "Començar amb poc crea l'hàbit i aprofita el temps, que és el que més pesa.",
+   "feedback": [
+    "Molt bé: comença l'hàbit i el temps treballa des d'avui. Ja apujarà la quantitat.",
+    "Mentre espera, els diners perden davant de la inflació i perd anys d'interès compost.",
+    "Això és apostar, no invertir: ho pot perdre tot."
+   ]
+  },
+  "u30l3-7": {
+   "prompt": "Si cada compra de 50 € et costa 2 € de comissió, perds un 4 % d'entrada.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "2 ÷ 50 = 4 %. Amb pocs diners, busca opcions sense comissió fixa per compra."
+  },
+  "u30l3-8": {
+   "prompt": "Ajuda o complica invertir amb pocs diners?",
+   "options": [
+    "Aportació automàtica el dia de cobrament",
+    "Una custòdia mínima de 30 € l'any",
+    "Una comissió fixa de 10 € per compra",
+    "Fons indexats sense import mínim",
+    "Esperar a tenir-ne molts per començar"
+   ],
+   "explanation": "Amb pocs diners, els costos fixos es mengen gran part de l'aportació.",
+   "right": [
+    "Ajuda",
+    "Complica"
+   ]
+  },
+  "u30l3-9": {
+   "prompt": "Ràpid: amb una suma gran, què va guanyar més vegades en els estudis de Vanguard?",
+   "options": [
+    "Repartir-la en 3 anys",
+    "Invertir-la de cop",
+    "Esperar una caiguda"
+   ],
+   "explanation": "Unes dues de cada tres vegades, perquè el mercat puja més vegades de les que baixa. Amb un sou, aportar cada mes és el natural."
+  },
+  "u30l3-10": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Comença amb 50 € i apuja-ho quan guanyis més: el temps fa la resta",
+    "Demana un préstec per invertir més",
+    "Tens raó, millor gastar-los"
+   ],
+   "explanation": "Amb poc i aviat s'arriba lluny. L'important és l'hàbit.",
+   "feedback": [
+    "Així es fa! El que més pesa és començar aviat i no aturar-se.",
+    "Invertir amb diners prestats converteix una caiguda en un problema seriós.",
+    "Gastar és legítim, però 50 € al mes durant dècades poden ser desenes de milers d'euros."
+   ],
+   "lines": [
+    "Només puc estalviar 50 € al mes 😔",
+    "Amb això no vaig enlloc, oi?"
+   ]
+  },
+  "u30l4-1": {
+   "prompt": "Inverteixes 2.000 € i avui valen 2.600 €. Quina és la teva rendibilitat simple?",
+   "options": [],
+   "explanation": "(2.600 − 2.000) ÷ 2.000 = 0,30 → 30 %.",
+   "unit": "%"
+  },
+  "u30l4-2": {
+   "prompt": "Una inversió guanya un 50 % en total en 5 anys. Quina és la seva rendibilitat anualitzada? (un decimal)",
+   "options": [],
+   "explanation": "1,5^(1/5) − 1 ≈ 0,084 → 8,4 % anual. No és un 10 %: l'interès es compon.",
+   "unit": "%"
+  },
+  "u30l4-3": {
+   "prompt": "Una inversió duplica el seu valor (+100 %) en 10 anys. La seva rendibilitat anualitzada és…?",
+   "options": [
+    "20 % anual",
+    "10 % anual",
+    "Un 7,2 % anual, aproximadament"
+   ],
+   "explanation": "2^(1/10) − 1 ≈ 7,2 %. Quadra amb la regla del 72: 72 ÷ 7,2 = 10 anys."
+  },
+  "u30l4-4": {
+   "prompt": "La rendibilitat que mesura el que va fer el fons, sense importar quan hi vas posar diners, és la ponderada per ____.",
+   "options": [
+    "risc",
+    "volum",
+    "diners",
+    "temps"
+   ],
+   "explanation": "És la que es fa servir per comparar fons i gestors entre si."
+  },
+  "u30l4-5": {
+   "prompt": "Relaciona cada mesura amb el seu ús.",
+   "options": [
+    "Rendibilitat simple",
+    "Rendibilitat anualitzada",
+    "Ponderada per temps",
+    "Ponderada per diners"
+   ],
+   "explanation": "Cadascuna respon a una pregunta diferent.",
+   "right": [
+    "El ritme mitjà per any",
+    "Saber quant has guanyat tu",
+    "Comparar fons entre si",
+    "Quant ha canviat el valor en total"
+   ]
+  },
+  "u30l4-6": {
+   "prompt": "La Laura hi posa 1.000 €, que pugen un 20 % (1.200 €). Llavors aporta 10.000 € més i la cartera cau un 10 %: acaba amb 10.080 €. Quants euros ha guanyat o perdut en total? (fes servir el signe menys si perd)",
+   "options": [],
+   "explanation": "Va aportar 11.000 € i té 10.080 €: −920 €. El fons, en canvi, va fer 1,2 × 0,9 = +8 %.",
+   "unit": "€"
+  },
+  "u30l4-7": {
+   "prompt": "En el cas de la Laura, el fons va guanyar un 8 % i ella va perdre diners. Totes dues coses poden ser certes alhora.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Ponderada per temps: +8 %. Ponderada per diners: negativa, perquè hi tenia gairebé tot just durant la caiguda."
+  },
+  "u30l4-8": {
+   "prompt": "Ràpid: +21 % en 2 anys. Rendibilitat anualitzada?",
+   "options": [
+    "10 %",
+    "21 %",
+    "10,5 %"
+   ],
+   "explanation": "1,21^(1/2) = 1,10 → 10 % anual. 1,1 × 1,1 = 1,21."
+  },
+  "u30l4-9": {
+   "prompt": "Una app presumeix que la teva cartera porta «+40 % des de l'inici». Vas començar fa 7 anys. Un fons indexat mundial ha donat un 7 % anual en aquest temps. Com ho valores?",
+   "options": [
+    "Genial: un 40 % és moltíssim",
+    "Ho anualitzo: 1,4^(1/7) − 1 ≈ 4,9 % anual, per sota de l'índex",
+    "Millor no mirar la rendibilitat"
+   ],
+   "explanation": "Una xifra total sense termini no diu res. Anualitza i compara amb un índex de referència.",
+   "feedback": [
+    "Sense el termini no se sap: en 7 anys, un 40 % és menys d'un 5 % anual.",
+    "Exacte. Només en anualitzar pots comparar, i aquí la comparació no surt bé.",
+    "Mesurar bé és just el que et permet decidir."
+   ]
+  },
+  "u30l4-10": {
+   "prompt": "Què has de tenir en compte per mesurar la teva rendibilitat amb honestedat? Marca-ho tot.",
+   "options": [
+    "Comparar-la amb un índex de referència",
+    "Fixar-te només en el millor any",
+    "Tenir en compte la inflació",
+    "Restar comissions i impostos"
+   ],
+   "explanation": "El millor any diu poc: importa el resultat net, a llarg termini i davant d'una alternativa."
+  },
+  "u30l5-1": {
+   "prompt": "Ordena les primeres seccions d'una Declaració de Política d'Inversió.",
+   "options": [
+    "Horitzó",
+    "Aportacions",
+    "Repartiment",
+    "Productes",
+    "Objectius",
+    "Coixí"
+   ],
+   "explanation": "Primer què i per a quan; després amb quin coixí, com repartir i amb quins productes."
+  },
+  "u30l5-2": {
+   "prompt": "La Declaració es revisa un cop l'any o quan et canvia ____, no quan canvia el mercat.",
+   "options": [
+    "la cartera",
+    "el bròker",
+    "l'humor",
+    "la vida"
+   ],
+   "explanation": "Una feina nova o un fill canvien els teus objectius; una caiguda de la borsa, no."
+  },
+  "u30l5-3": {
+   "prompt": "Quin punt de la Declaració és el que més et protegeix del pànic?",
+   "options": [
+    "Què faràs si la borsa cau un 30 %",
+    "La llista d'accions de moda",
+    "La teva predicció per a l'any que ve"
+   ],
+   "explanation": "Ho decideixes amb calma i t'ho recordes quan tothom ven."
+  },
+  "u30l5-4": {
+   "prompt": "Què hi pot anar a la secció «què no faré mai»? Marca-les totes.",
+   "options": [
+    "Comprar una cosa que no entenc",
+    "Aportar cada mes de manera automàtica",
+    "Posar més del 20 % en un sol actiu",
+    "Invertir amb diners prestats"
+   ],
+   "explanation": "Aportar cada mes forma part del pla, no és una cosa que calgui evitar."
+  },
+  "u30l5-5": {
+   "prompt": "Va a la teva Declaració o no?",
+   "options": [
+    "Aporto 200 € el dia 1 de cada mes",
+    "Rebalancejo cada gener",
+    "On serà l'IBEX al desembre",
+    "Repartiment: 70 % accions mundials i 30 % bons",
+    "L'acció que va recomanar un tiktoker"
+   ],
+   "explanation": "El pla recull regles que controles tu, no prediccions ni modes.",
+   "right": [
+    "Sí, va al pla",
+    "No hi pinta res"
+   ]
+  },
+  "u30l5-6": {
+   "prompt": "La teva Declaració diu que com a màxim un 5 % del teu patrimoni anirà a especular. Tens 18.000 €. Quin és el màxim?",
+   "options": [],
+   "explanation": "18.000 × 0,05 = 900 €, i només diners que puguis perdre sencers.",
+   "unit": "€"
+  },
+  "u30l5-7": {
+   "prompt": "Si la borsa puja molt dos anys seguits, convé reescriure la Declaració amb més accions.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Canviar el pla pel que ha fet el mercat és just el que la Declaració intenta evitar."
+  },
+  "u30l5-8": {
+   "prompt": "La Declaració d'en Bruno diu 80 % accions i 20 % bons. Després de dos anys molt bons, vol passar al 100 % accions «perquè els bons no rendeixen». Què li dius?",
+   "options": [
+    "Que ho passi tot a bons per si de cas",
+    "Que ho faci: la borsa està pujant",
+    "Que rellegeixi per què va triar el 80/20 i, si la seva vida no ha canviat, el mantingui"
+   ],
+   "explanation": "La Declaració canvia amb la teva vida, no amb el mercat.",
+   "feedback": [
+    "Canviar per por tampoc no és seguir el pla.",
+    "Apujar el risc després de les pujades és comprar eufòria. El seu pla ja tenia en compte que els bons rendeixen menys.",
+    "Molt bé: el pla existeix per no decidir amb l'emoció del moment."
+   ]
+  },
+  "u30l5-9": {
+   "prompt": "Escriure el pla amb calma serveix per no decidir en ple pànic.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "És la seva funció principal: separar la decisió del moment de por."
+  },
+  "u30l5-10": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "No venc, continuo aportant, rebalancejo si toca i rellegeixo el pla",
+    "Demano un préstec per comprar-ne més",
+    "Que ho vengui tot i torni quan es calmi"
+   ],
+   "explanation": "El punt 8 del pla existeix per a aquest moment.",
+   "feedback": [
+    "Això és tenir un pla! I en caigudes així, rebalancejar et fa comprar barat.",
+    "La teva Declaració segurament diu «mai amb diners prestats». Per alguna cosa serà.",
+    "Això no ho vas decidir amb calma: ho està decidint la por."
+   ],
+   "lines": [
+    "La borsa ha caigut un 30 % 😱 Tothom ven.",
+    "Què diu la teva Declaració de Política d'Inversió?"
+   ]
+  },
+  "u30l6-1": {
+   "prompt": "Reparteix els 10.000 €. Regles: almenys 4 productes, cap per sobre del 60 %, almenys un 15 % en bons, com a màxim un 10 % en or, un 10 % en una acció individual i un 5 % en cripto.",
+   "options": [
+    "Fons indexat MSCI World",
+    "Fons indexat d'emergents",
+    "Fons de bons globals cobert a euros",
+    "Fons monetari",
+    "Or (ETC)",
+    "Bitcoin",
+    "Una acció que t'agrada"
+   ],
+   "explanation": "Nucli diversificat i barat, coixí de bons per a les caigudes i l'especulatiu limitat. La cripto es pot perdre sencera. Exemple educatiu, no recomanació.",
+   "kinds": [
+    "ACCIONS",
+    "ACCIONS",
+    "BONS",
+    "LIQUIDITAT",
+    "OR",
+    "CRIPTO",
+    "ACCIÓ INDIVIDUAL"
+   ]
+  },
+  "u30l6-2": {
+   "prompt": "Vas reservar una part petita per especular. Vols operar l'IBEX 35 sense arriscar més de l'1 % dels teus 10.000 € (100 €). Tria l'import i col·loca l'stop.",
+   "options": [],
+   "explanation": "La part especulativa també té regles: l'stop i la mida decideixen quant pots perdre, no el mercat."
+  },
+  "u30l6-3": {
+   "prompt": "Primer any: la borsa cau un 25 % i la teva cartera un 18 %. Un amic et diu que ho venguis tot. Què fas?",
+   "options": [
+    "Ho passo tot a bitcoin per recuperar ràpid",
+    "Segueixo el pla: aporto, rebalancejo cap a accions si toca i no venc",
+    "Venc abans que caigui més"
+   ],
+   "explanation": "Els bons van esmorteir la caiguda (−18 % davant de −25 %). Ara toca el punt 8 del teu pla.",
+   "feedback": [
+    "Perseguir la recuperació amb més risc sol fer més gran el forat.",
+    "Molt bé: amb 20 anys d'horitzó, un mal any forma part del camí.",
+    "Convertir una caiguda en una pèrdua definitiva és l'error més car de la història dels mercats."
+   ]
+  },
+  "u30l6-4": {
+   "prompt": "Un company et diu: «Ven els bons i posa-ho tot a l'acció que més ha pujat aquest any». Què li contestes?",
+   "options": [
+    "Que la meva cartera té un repartiment triat per a 20 anys i no persegueixo modes",
+    "Que m'ho pensaré si puja un altre 20 %",
+    "Li faig cas: els bons no rendeixen"
+   ],
+   "explanation": "Diversificar és renunciar a encertar l'estrella de l'any a canvi de no dependre'n.",
+   "feedback": [
+    "Així es defensa una cartera: amb el pla, no amb l'últim titular.",
+    "Esperar que pugi més per entrar és el mateix error amb retard.",
+    "Els bons hi són per a les caigudes, no per guanyar més. I perseguir el que més ha pujat sol arribar tard."
+   ]
+  },
+  "u30l6-5": {
+   "prompt": "Quin argument defensa millor una cartera diversificada?",
+   "options": [
+    "«Té milers d'empreses, costos baixos i un repartiment que aguanto en una caiguda»",
+    "«Un influencer diu que pujarà»",
+    "«L'any passat va pujar més que la del meu cosí»"
+   ],
+   "explanation": "Diversificació, cost i tolerància a les caigudes: el que pots controlar."
+  },
+  "u30l6-6": {
+   "prompt": "La teva cartera: 60 % en un fons al 0,20 %, 20 % en emergents al 0,30 % i 20 % en bons al 0,15 %. Quants euros pagues l'any sobre 10.000 €?",
+   "options": [],
+   "explanation": "0,6 × 0,20 + 0,2 × 0,30 + 0,2 × 0,15 = 0,21 % → 10.000 × 0,0021 = 21 € l'any.",
+   "unit": "€"
+  },
+  "u30l6-7": {
+   "prompt": "Què hauria de tenir la teva cartera de 10.000 € a 20 anys? Marca-ho tot.",
+   "options": [
+    "Costos baixos",
+    "Una regla per rebalancejar",
+    "Una aposta forta per la moda del moment",
+    "Diversificació per empreses i països"
+   ],
+   "explanation": "L'especulatiu, si n'hi ha, petit i limitat."
+  },
+  "u30l6-8": {
+   "prompt": "Una cartera de 10.000 € necessita almenys 15 productes per estar diversificada.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Amb d'un a tres fons indexats ja tens milers d'empreses de tot el món."
+  },
+  "u30l6-9": {
+   "prompt": "Ordena els passos per posar en marxa la cartera.",
+   "options": [
+    "Triar productes barats",
+    "Automatitzar les aportacions",
+    "Rebalancejar un cop l'any",
+    "Tenir el coixí a part",
+    "Decidir el repartiment"
+   ],
+   "explanation": "Primer la base i la decisió clau; després els productes i la disciplina."
+  },
+  "u30l6-10": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Perquè la borsa sempre puja",
+    "Perquè he triat el que més pujarà",
+    "No sé si pujarà aquest any, però està diversificada, és barata i sé què faré en una caiguda"
+   ],
+   "explanation": "Una cartera es defensa amb diversificació, costos i un pla, no amb prediccions.",
+   "feedback": [
+    "A llarg termini ha pujat, però amb caigudes de fins a un 50 % pel camí.",
+    "Ningú no sap què pujarà més. Una cartera que depèn d'encertar és fràgil.",
+    "Defensa perfecta! Has parlat del que controles, no del que endevines."
+   ],
+   "lines": [
+    "A veure, defensa'm la teva cartera 🧐",
+    "Per què creus que funcionarà?"
+   ]
+  }
+ }
+}

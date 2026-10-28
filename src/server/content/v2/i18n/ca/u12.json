@@ -1,0 +1,891 @@
+{
+ "unit": {
+  "title": "Fonaments cripto",
+  "description": "Blockchain, Bitcoin, Ethereum, stablecoins, wallets i la regulació europea MiCA",
+  "section": "Criptomonedes i blockchain"
+ },
+ "lessons": {
+  "u12l1": {
+   "title": "Què és una blockchain",
+   "steps": [
+    {
+     "title": "Un llibre de comptes compartit",
+     "body": "Una **blockchain** (cadena de blocs) és un registre de transaccions que **comparteixen milers d'ordinadors** (nodes) de tot el món. Ningú no el controla tot sol.\n\nLes transaccions s'agrupen en **blocs**. Cada bloc porta una empremta (**hash**) de l'anterior: així queden encadenats."
+    },
+    {
+     "title": "Per què no es pot reescriure",
+     "body": "Si algú canvia una transacció antiga, canvia l'empremta d'aquell bloc i es trenquen tots els següents. A més, els altres nodes tenen la còpia bona i rebutgen la falsa.\n\nPer colar un canvi caldria controlar la majoria de la xarxa: en una xarxa gran com Bitcoin, caríssim."
+    },
+    {
+     "title": "El que és i el que no",
+     "body": "Una blockchain serveix per registrar qui té què **sense un intermediari**. No fa que un actiu valgui més ni el converteix en una inversió segura: les criptomonedes són molt volàtils, no les cobreix cap fons de garantia i **es pot perdre la totalitat del que s'ha invertit**.",
+     "key": "Blockchain: un registre compartit i encadenat que ningú no pot reescriure tot sol.",
+     "tip": "Que una cosa faci servir blockchain no la converteix en una bona inversió."
+    }
+   ]
+  },
+  "u12l2": {
+   "title": "Bitcoin: l'or digital",
+   "steps": [
+    {
+     "title": "La primera criptomoneda",
+     "body": "**Bitcoin** va néixer el 2009, creat per algú amb el pseudònim **Satoshi Nakamoto**. És diner digital que s'envia de persona a persona sense bancs, registrat a la seva blockchain.\n\nLa seva regla estrella: mai no hi haurà més de **21 milions** de bitcoins. Per això els seus defensors en diuen «**or digital**»."
+    },
+    {
+     "title": "El halving",
+     "body": "Els bitcoins nous neixen com a premi per a qui afegeix blocs (els miners). Cada **210.000 blocs**, uns **4 anys**, aquest premi es redueix a la meitat: és el **halving**.\n\n50 → 25 (2012) → 12,5 (2016) → 6,25 (2020) → **3,125** (2024). Després del del 2024 ja s'havia emès el 93,75 % de tots els bitcoins."
+    },
+    {
+     "title": "Escàs no vol dir segur",
+     "body": "L'escassetat està programada, però el preu depèn de quanta gent el vulgui comprar: no hi ha beneficis ni interessos al darrere. Bitcoin ha caigut més d'un 70 % diverses vegades. És un actiu molt volàtil i **es pot perdre la totalitat del que s'ha invertit**.",
+     "key": "Bitcoin: màxim de 21 milions i una emissió que es redueix a la meitat cada 4 anys, aproximadament.",
+     "tip": "Escassetat programada no vol dir preu garantit."
+    }
+   ]
+  },
+  "u12l3": {
+   "title": "Mineria i prova de treball",
+   "steps": [
+    {
+     "title": "Una competició de càlcul",
+     "body": "A Bitcoin, els **miners** agrupen transaccions en un bloc i competeixen per trobar un número que faci que l'empremta (hash) del bloc compleixi una condició. No hi ha dreceres: cal provar moltíssimes combinacions per segon.\n\nEl primer que ho aconsegueix afegeix el bloc i cobra el **premi** més les **comissions**. És la **prova de treball** (*proof of work*)."
+    },
+    {
+     "title": "Per què gasta tanta energia",
+     "body": "Aquesta competició consumeix moltíssima electricitat en màquines especialitzades. I és just el que protegeix la xarxa: per reescriure la història caldria superar el treball de tots els altres miners junts.\n\nLa **dificultat** s'ajusta cada 2.016 blocs perquè surti un bloc cada **10 minuts** de mitjana."
+    },
+    {
+     "title": "L'alternativa: prova de participació",
+     "body": "Ethereum va deixar la mineria el 2022 i va passar a la **prova de participació** (*proof of stake*): validen els qui bloquegen les seves monedes com a garantia. Consumeix més d'un 99 % menys d'energia. Però la tecnologia no canvia el risc de preu: en cripto **es pot perdre tot el que s'ha invertit**.",
+     "key": "Prova de treball: es guanya el dret d'afegir blocs gastant energia en càlculs.",
+     "tip": "L'energia de la mineria és el preu que es paga perquè ningú no pugui reescriure el registre."
+    }
+   ]
+  },
+  "u12l4": {
+   "title": "Ethereum i els contractes intel·ligents",
+   "steps": [
+    {
+     "title": "Un ordinador mundial",
+     "body": "**Ethereum** (2015) és una blockchain en què, a més d'enviar diners, s'hi poden executar programes: els **contractes intel·ligents** (*smart contracts*). La seva moneda és l'**ether (ETH)**.\n\nUn contracte intel·ligent és un «si passa això, fes allò» que s'executa sol, sense intermediari."
+    },
+    {
+     "title": "Què s'hi construeix a sobre",
+     "body": "• **Tokens:** monedes creades per altres projectes sobre Ethereum, com moltes stablecoins.\n• **DeFi:** préstecs i intercanvis sense banc.\n• **NFT:** certificats digitals de propietat.\n\nCada operació paga una comissió en ETH anomenada **gas**, que puja quan la xarxa està saturada."
+    },
+    {
+     "title": "Més possibilitats, més riscos",
+     "body": "Bitcoin fa una cosa (diner escàs); Ethereum és una plataforma. Més funcions també vol dir més maneres de fallar: un error en el codi d'un contracte el pot buidar i no hi ha ningú a qui reclamar. L'ETH és molt volàtil i **es pot perdre la totalitat del que s'ha invertit**.",
+     "key": "Ethereum afegeix a Bitcoin la possibilitat d'executar programes: els contractes intel·ligents.",
+     "tip": "En un contracte intel·ligent, el codi és la llei… també quan té un error."
+    }
+   ]
+  },
+  "u12l5": {
+   "title": "Stablecoins",
+   "steps": [
+    {
+     "title": "Cripto que no es vol moure",
+     "body": "Una **stablecoin** és un token que intenta valer sempre el mateix que una moneda, normalment **1 dòlar** (o 1 euro). Les més utilitzades són **USDT** (Tether) i **USDC** (Circle).\n\nServeixen per moure's entre criptos sense passar pel banc i per fer pagaments."
+    },
+    {
+     "title": "Com mantenen el seu valor",
+     "body": "• **Amb reserves:** l'emissor guarda diners i deute públic a curt termini per cada token. Risc: que les reserves fallin. El març del 2023, l'USDC va arribar a caure a uns 0,87 $ quan va fer fallida un banc on tenia part de les reserves.\n• **Algorítmiques:** sense reserves reals, amb un mecanisme lligat a una altra cripto. **TerraUSD (UST)** es va enfonsar el **maig del 2022** i va arrossegar LUNA gairebé fins a zero."
+    },
+    {
+     "title": "Què exigeix MiCA",
+     "body": "A la UE, el reglament **MiCA** exigeix que els emissors de stablecoins estiguin autoritzats, tinguin **reserves** suficients i separades i permetin **bescanviar** els tokens a la par. Tot i així, «estable» no vol dir «garantit»: no les cobreix el Fons de Garantia de Dipòsits i **es pot perdre el que s'ha invertit**.",
+     "key": "Una stablecoin val el que valguin les seves reserves i la confiança en el seu emissor.",
+     "tip": "Si una stablecoin et paga un 20 % «sense risc», pregunta d'on surt."
+    }
+   ]
+  },
+  "u12l6": {
+   "title": "Wallets, claus i autocustòdia",
+   "steps": [
+    {
+     "title": "Què guarda una wallet",
+     "body": "Les teves criptos no són «dins» de la wallet: són a la blockchain. La wallet guarda les **claus**:\n\n• **Adreça (clau pública):** com el teu IBAN; la pots compartir per rebre.\n• **Clau privada:** la que signa els enviaments. Qui la té, controla els diners.\n\nLa **frase llavor** (12 o 24 paraules) permet recuperar totes les teves claus."
+    },
+    {
+     "title": "Custòdia pròpia o aliena",
+     "body": "• **Custòdia aliena:** deixes les teves criptos en un exchange, que guarda les claus. És còmode, però si fa fallida o et bloqueja, depens d'ell (FTX, 2022).\n• **Autocustòdia:** tu guardes les claus (wallet de programari o de maquinari). Ningú no les pot congelar… però si perds la frase llavor, **ningú** no les pot recuperar."
+    },
+    {
+     "title": "La regla d'or",
+     "body": "La teva frase llavor, **en paper o metall, fora d'internet**, en un lloc segur. Mai en una foto, un correu o el núvol. **Ningú legítim no te la demanarà mai**: ni el suport, ni l'exchange, ni «Hisenda». Si la dones a algú, s'ho emporta tot i no hi ha marxa enrere.",
+     "key": "«Not your keys, not your coins»: qui controla les claus controla les criptos.",
+     "tip": "Qui et demana la frase llavor t'està robant."
+    }
+   ]
+  },
+  "u12l7": {
+   "title": "Exchanges i MiCA",
+   "steps": [
+    {
+     "title": "Què és un exchange",
+     "body": "Un **exchange** és una plataforma on compres i vens criptos amb euros o amb altres criptos. Gairebé sempre **custodia** les teves criptos per tu.\n\nAmb el reglament europeu **MiCA**, els proveïdors de serveis de criptoactius necessiten una **autorització** per operar a la UE."
+    },
+    {
+     "title": "Què els exigeix MiCA",
+     "body": "• **Autorització** d'un supervisor nacional (a Espanya, la CNMV), vàlida a tota la UE.\n• **Separar** les criptos dels clients de les seves.\n• Requisits de **capital**, govern i gestió de conflictes d'interès.\n• Informació clara i un sistema de **reclamacions**.\n\nSegons la CNMV, des de l'**1 de juliol de 2026** només poden operar a Espanya els proveïdors autoritzats."
+    },
+    {
+     "title": "El que MiCA no fa",
+     "body": "MiCA no evita que el preu caigui ni crea un fons de garantia per a les teves criptos. Redueix el risc que la plataforma faci servir els teus diners com no toca, però la cripto continua sent molt volàtil i **es pot perdre la totalitat del que s'ha invertit**. Abans d'obrir un compte, busca la plataforma als registres de la **CNMV** o de l'**ESMA**.",
+     "key": "MiCA exigeix autorització, separació d'actius i transparència als exchanges de la UE.",
+     "tip": "Comprova la plataforma al registre oficial, no al seu propi web."
+    }
+   ]
+  },
+  "u12r": {
+   "title": "Repàs de la unitat",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u12l1-1": {
+   "prompt": "Ordena com es registra una transacció en una blockchain.",
+   "options": [
+    "S'agrupa amb altres en un bloc",
+    "El bloc s'afegeix a la cadena i tothom actualitza la seva còpia",
+    "Els nodes comproven que tens saldo",
+    "Envies la transacció a la xarxa"
+   ],
+   "explanation": "Comprovar, agrupar, encadenar i copiar: així ningú no s'ha de refiar d'un intermediari."
+  },
+  "u12l1-2": {
+   "prompt": "Qui controla una blockchain pública com la de Bitcoin?",
+   "options": [
+    "L'empresa que la va crear",
+    "Un banc central",
+    "Ningú tot sol: milers de nodes comparteixen el registre"
+   ],
+   "explanation": "Aquest és el seu tret clau: el registre està repartit entre molts participants."
+  },
+  "u12l1-3": {
+   "prompt": "Canviar una transacció antiga en una blockchain gran és fàcil si tens un bon ordinador.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Caldria refer tots els blocs següents i superar la resta de la xarxa: un sol ordinador no pot."
+  },
+  "u12l1-4": {
+   "prompt": "Cada bloc guarda l'empremta o ____ del bloc anterior.",
+   "options": [
+    "nominal",
+    "ISIN",
+    "cupó",
+    "hash"
+   ],
+   "explanation": "El hash és una empremta digital: si canvies una sola dada, canvia completament."
+  },
+  "u12l1-5": {
+   "prompt": "Relaciona cada terme amb el seu significat.",
+   "options": [
+    "Blockchain",
+    "Bloc",
+    "Node",
+    "Hash"
+   ],
+   "explanation": "Són les quatre peces bàsiques de qualsevol cadena de blocs.",
+   "right": [
+    "Grup de transaccions",
+    "Ordinador que guarda una còpia",
+    "Empremta digital d'unes dades",
+    "Registre compartit de transaccions"
+   ]
+  },
+  "u12l1-6": {
+   "prompt": "Que un projecte faci servir blockchain garanteix que és una bona inversió.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "La tecnologia no diu res del valor de l'actiu: moltes criptos sobre blockchain han perdut gairebé tot el seu valor."
+  },
+  "u12l1-7": {
+   "prompt": "Què aconsegueix una blockchain pública? Marca-ho tot.",
+   "options": [
+    "Que sigui molt difícil reescriure el passat",
+    "Que el preu de la cripto no baixi",
+    "Que qualsevol pugui verificar les transaccions",
+    "Un registre sense un intermediari central"
+   ],
+   "explanation": "La blockchain protegeix el registre, no el preu."
+  },
+  "u12l1-8": {
+   "prompt": "Ràpid: si algú altera un bloc antic…",
+   "options": [
+    "S'actualitza a tots els nodes",
+    "Es trenca la cadena d'empremtes i la xarxa el rebutja",
+    "Ningú no se n'adona"
+   ],
+   "explanation": "El hash canvia i deixa d'encaixar amb el bloc següent."
+  },
+  "u12l1-9": {
+   "prompt": "En Pablo llegeix en un anunci: «Token X, amb tecnologia blockchain: inversió segura al 100 %». Què en pensa?",
+   "options": [
+    "Que blockchain no garanteix res del valor, i que «segur al 100 %» és un senyal d'alarma",
+    "Que ha d'invertir ja, abans que pugi",
+    "Si fa servir blockchain, és segur"
+   ],
+   "explanation": "Fer servir paraules tècniques per prometre seguretat és una tàctica habitual de les estafes.",
+   "feedback": [
+    "Molt bé: en cripto es pot perdre la totalitat del que s'ha invertit; ningú seriós no promet seguretat total.",
+    "Les presses són un altre senyal clàssic d'alarma.",
+    "Blockchain registra transaccions; no protegeix del preu ni de la possibilitat que el projecte sigui un frau."
+   ]
+  },
+  "u12l1-10": {
+   "prompt": "Ho fa una blockchain o no?",
+   "options": [
+    "Garantir que el preu pugi",
+    "Tornar-te els diners si t'equivoques d'adreça",
+    "Guardar còpies en milers de nodes",
+    "Registrar transaccions"
+   ],
+   "explanation": "El que es registra no es pot desfer: tampoc els teus errors.",
+   "right": [
+    "Sí",
+    "No"
+   ]
+  },
+  "u12l2-1": {
+   "prompt": "Quants bitcoins podran existir com a màxim?",
+   "options": [
+    "21 milions",
+    "100 milions",
+    "Il·limitats"
+   ],
+   "explanation": "Està fixat en el seu protocol: l'emissió es va frenant amb cada halving."
+  },
+  "u12l2-2": {
+   "prompt": "Cada 4 anys, aproximadament, el premi per bloc de Bitcoin es redueix a la meitat: és el ____.",
+   "options": [
+    "split",
+    "airdrop",
+    "staking",
+    "halving"
+   ],
+   "explanation": "Halving vol dir «reduir a la meitat»."
+  },
+  "u12l2-3": {
+   "prompt": "Ordena la recompensa per bloc de Bitcoin al llarg del temps.",
+   "options": [
+    "25 BTC (2012)",
+    "12,5 BTC (2016)",
+    "3,125 BTC (2024)",
+    "50 BTC (2009)",
+    "6,25 BTC (2020)"
+   ],
+   "explanation": "Cada halving divideix el premi entre dos: l'emissió es frena fins a arribar als 21 milions."
+  },
+  "u12l2-4": {
+   "prompt": "Després del halving del 2024 el premi és de 3,125 BTC per bloc. Quin serà després del halving següent?",
+   "options": [],
+   "explanation": "3,125 ÷ 2 = 1,5625 BTC per bloc.",
+   "unit": "BTC"
+  },
+  "u12l2-5": {
+   "prompt": "A Bitcoin s'afegeix un bloc cada 10 minuts de mitjana. Quants blocs surten cada dia?",
+   "options": [],
+   "explanation": "24 × 60 ÷ 10 = 144 blocs al dia.",
+   "unit": "blocs"
+  },
+  "u12l2-6": {
+   "prompt": "Aquest és el gràfic d'una de les grans criptomonedes, en espelmes diàries. Què va fer en les 10 sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "En cripto, unes poques setmanes poden portar moviments de dues xifres en qualsevol direcció: per això es parla de volatilitat extrema.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u12l2-7": {
+   "prompt": "Que el nombre de bitcoins estigui limitat garanteix que el seu preu sempre puja.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "El preu depèn de la demanda. Amb l'oferta limitada, Bitcoin ha caigut més d'un 70 % diverses vegades."
+  },
+  "u12l2-8": {
+   "prompt": "Bitcoin el va crear algú amb el pseudònim Satoshi ____.",
+   "options": [
+    "Buterin",
+    "Sharpe",
+    "Bogle",
+    "Nakamoto"
+   ],
+   "explanation": "La seva identitat real continua sense conèixer-se. Vitalik Buterin és el cocreador d'Ethereum."
+  },
+  "u12l2-9": {
+   "prompt": "Què li contestes?",
+   "options": [
+    "La seva oferta és limitada, però el preu és molt volàtil i ha caigut més d'un 70 % diverses vegades",
+    "És clar, és com l'or",
+    "No baixa perquè només hi ha 21 bitcoins"
+   ],
+   "explanation": "L'escassetat explica part de l'atractiu de Bitcoin, no la seva estabilitat.",
+   "feedback": [
+    "Això mateix! Escassetat no és estabilitat: en cripto es pot perdre la totalitat del que s'ha invertit.",
+    "Fins i tot l'or ha passat anys perdent valor, i Bitcoin ha caigut més d'un 70 % en diverses ocasions.",
+    "Són 21 milions com a màxim, no 21, i el seu preu sí que baixa."
+   ],
+   "lines": [
+    "Bitcoin és or digital, així que mai no pot baixar gaire, oi? 🪙"
+   ]
+  },
+  "u12l2-10": {
+   "prompt": "Què hi ha darrere del preu de Bitcoin?",
+   "options": [
+    "Els beneficis d'una empresa",
+    "Els interessos que paga",
+    "El que altres estiguin disposats a pagar-ne"
+   ],
+   "explanation": "No genera beneficis ni interessos: el seu preu depèn de l'adopció i de la demanda."
+  },
+  "u12l3-1": {
+   "prompt": "Ordena com es mina un bloc de Bitcoin.",
+   "options": [
+    "Prova combinacions fins que troba un hash vàlid",
+    "El bloc s'afegeix i el miner cobra el premi i les comissions",
+    "La xarxa comprova que el bloc és correcte",
+    "El miner agrupa transaccions pendents"
+   ],
+   "explanation": "Buscar la solució costa molt; comprovar-la, molt poc: aquesta asimetria és la base de la prova de treball."
+  },
+  "u12l3-2": {
+   "prompt": "Què guanyen els miners per afegir un bloc?",
+   "options": [
+    "Bitcoins nous i les comissions de les transaccions",
+    "Un sou del banc central",
+    "Accions de Bitcoin"
+   ],
+   "explanation": "Amb cada halving el premi baixa, així que les comissions pesaran cada vegada més."
+  },
+  "u12l3-3": {
+   "prompt": "La dificultat de la mineria s'ajusta perquè surti un bloc cada 10 minuts, aproximadament.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Si entren més miners, la dificultat puja; si se'n van, baixa."
+  },
+  "u12l3-4": {
+   "prompt": "La mineria de Bitcoin consumeix poca energia perquè només és programari.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Fa servir màquines especialitzades que funcionen sense parar: el seu consum elèctric és enorme."
+  },
+  "u12l3-5": {
+   "prompt": "Relaciona cada concepte amb el seu significat.",
+   "options": [
+    "Prova de treball",
+    "Prova de participació",
+    "Dificultat",
+    "Miner"
+   ],
+   "explanation": "Dues maneres de decidir qui afegeix el bloc següent: gastant energia o arriscant monedes.",
+   "right": [
+    "El que costa trobar un bloc vàlid",
+    "Qui competeix per afegir blocs",
+    "Validar deixant monedes com a garantia",
+    "Validar gastant energia en càlculs"
+   ]
+  },
+  "u12l3-6": {
+   "prompt": "Ethereum va abandonar la mineria el 2022 i va passar a la prova de ____.",
+   "options": [
+    "treball",
+    "reserva",
+    "identitat",
+    "participació"
+   ],
+   "explanation": "Proof of stake: validen els qui bloquegen ETH com a garantia."
+  },
+  "u12l3-7": {
+   "prompt": "La dificultat s'ajusta cada 2.016 blocs. A 10 minuts per bloc, cada quants dies aproximadament?",
+   "options": [],
+   "explanation": "2.016 × 10 = 20.160 minuts ÷ 1.440 minuts al dia = 14 dies.",
+   "unit": "dies"
+  },
+  "u12l3-8": {
+   "prompt": "Ràpid: què protegeix la prova de treball?",
+   "options": [
+    "Que el preu pugi",
+    "Que les comissions siguin zero",
+    "Que sigui caríssim reescriure el registre"
+   ],
+   "explanation": "Atacar la xarxa exigiria més potència de càlcul que tots els altres miners junts."
+  },
+  "u12l3-9": {
+   "prompt": "La Laura llegeix: «Mina bitcoins des del mòbil amb la nostra app i guanya 50 € al dia». Què en pensa?",
+   "options": [
+    "Que la instal·la només per provar",
+    "Que és una manera fàcil de guanyar diners",
+    "Que gairebé segur que és un engany: un mòbil no pot competir amb la mineria professional"
+   ],
+   "explanation": "Quan una promesa no encaixa amb com funciona la tecnologia, desconfia'n.",
+   "feedback": [
+    "Instal·lar aquesta mena d'apps pot exposar les teves dades o la teva cartera.",
+    "La mineria real exigeix màquines especialitzades i molta electricitat: un mòbil no hi pot competir.",
+    "Molt bé: moltes «apps de mineria» són estafes o fan servir el teu mòbil per a altres finalitats."
+   ]
+  },
+  "u12l3-10": {
+   "prompt": "Què és cert sobre la prova de treball? Marca-ho tot.",
+   "options": [
+    "Fa molt car atacar la xarxa",
+    "Els miners competeixen per resoldre un càlcul",
+    "La fa servir Ethereum des del 2022",
+    "Consumeix molta electricitat"
+   ],
+   "explanation": "Ethereum la va abandonar el 2022 per passar a la prova de participació."
+  },
+  "u12l4-1": {
+   "prompt": "Relaciona cada concepte amb el seu significat.",
+   "options": [
+    "Contracte intel·ligent",
+    "Gas",
+    "Token",
+    "ETH"
+   ],
+   "explanation": "El vocabulari bàsic per entendre què passa dins d'Ethereum.",
+   "right": [
+    "Moneda creada sobre una altra blockchain",
+    "La moneda d'Ethereum",
+    "Comissió per operar a Ethereum",
+    "Programa que s'executa sol a la blockchain"
+   ]
+  },
+  "u12l4-2": {
+   "prompt": "Relaciona cada element amb el que el defineix.",
+   "options": [
+    "Bitcoin",
+    "Ethereum",
+    "Stablecoin",
+    "NFT"
+   ],
+   "explanation": "Bitcoin i Ethereum són xarxes diferents; stablecoins i NFT són coses que s'hi construeixen a sobre.",
+   "right": [
+    "Plataforma per a contractes intel·ligents",
+    "Token que intenta valer sempre 1 dòlar o 1 euro",
+    "Certificat digital de propietat",
+    "Diner digital escàs, màxim 21 milions"
+   ]
+  },
+  "u12l4-3": {
+   "prompt": "Què afegeix Ethereum al que fa Bitcoin?",
+   "options": [
+    "Un màxim de 21 milions de monedes",
+    "La garantia d'un banc central",
+    "Executar programes (contractes intel·ligents) a la blockchain"
+   ],
+   "explanation": "Per això sobre Ethereum s'hi construeixen tokens, DeFi i NFT."
+  },
+  "u12l4-4": {
+   "prompt": "El gas d'Ethereum és una comissió fixa que no canvia mai.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Puja quan la xarxa està saturada i baixa quan hi ha poca demanda."
+  },
+  "u12l4-5": {
+   "prompt": "Si un contracte intel·ligent té un error de programació, algú el pot aprofitar i buidar-ne els diners.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Ha passat moltes vegades, i en una blockchain no hi ha cap banc a qui reclamar."
+  },
+  "u12l4-6": {
+   "prompt": "És un ús habitual d'Ethereum?",
+   "options": [
+    "Crear tokens",
+    "Protegir les teves criptos com el Fons de Garantia de Dipòsits",
+    "NFT",
+    "Préstecs sense banc (DeFi)",
+    "Garantir un 10 % anual"
+   ],
+   "explanation": "Ethereum permet moltes coses, però cap no garanteix rendibilitats ni protegeix els teus diners com un dipòsit.",
+   "right": [
+    "Sí",
+    "No"
+   ]
+  },
+  "u12l4-7": {
+   "prompt": "Un web et demana connectar la teva cartera d'Ethereum i signar un contracte per «reclamar tokens gratis». Què fas?",
+   "options": [
+    "Signo: és gratis",
+    "Signo amb la meva cartera principal per rebre'n més",
+    "No signo res que no entengui i comprovo el projecte pels seus canals oficials"
+   ],
+   "explanation": "Amb contractes intel·ligents, una signatura pot autoritzar moviments de tot el teu saldo.",
+   "feedback": [
+    "Signar un contracte que no entens pot donar permís per buidar la teva cartera.",
+    "Si és una trampa, perdràs tot el que hi hagi en aquesta cartera.",
+    "Molt bé: moltes estafes fan servir signatures de contractes intel·ligents per robar."
+   ]
+  },
+  "u12l4-8": {
+   "prompt": "Ràpid: en quina moneda es paga el gas d'Ethereum?",
+   "options": [
+    "BTC",
+    "Euros",
+    "ETH"
+   ],
+   "explanation": "Cada operació a Ethereum paga la seva comissió en ether."
+  },
+  "u12l4-9": {
+   "prompt": "Els programes que s'executen sols a Ethereum es diuen contractes ____.",
+   "options": [
+    "de futurs",
+    "de dipòsit",
+    "per diferències",
+    "intel·ligents"
+   ],
+   "explanation": "Smart contracts: s'executen quan es compleixen les seves condicions, sense intermediari."
+  },
+  "u12l4-10": {
+   "prompt": "Enviar uns tokens costa 0,0005 ETH de gas i l'ETH val 2.000 €. Quant pagues de comissió?",
+   "options": [],
+   "explanation": "0,0005 × 2.000 = 1 €. Si la xarxa se satura, pot costar força més.",
+   "unit": "€"
+  },
+  "u12l5-1": {
+   "prompt": "Què intenta una stablecoin?",
+   "options": [
+    "Valer sempre el mateix que una moneda, com 1 dòlar",
+    "Pujar més que Bitcoin",
+    "Pagar un dividend"
+   ],
+   "explanation": "El seu objectiu és l'estabilitat respecte d'una moneda, no la revaloració."
+  },
+  "u12l5-2": {
+   "prompt": "Relaciona cada cas o concepte amb el seu significat.",
+   "options": [
+    "TerraUSD (UST), maig del 2022",
+    "USDC, març del 2023",
+    "Reserves",
+    "Bescanvi a la par"
+   ],
+   "explanation": "Dos episodis reals que mostren els dos riscos: sense reserves i amb reserves amb problemes.",
+   "right": [
+    "Va caure a uns 0,87 $ per la fallida d'un banc",
+    "Canviar 1 token per 1 dòlar o 1 euro",
+    "Diners i deute que avalen cada token",
+    "Stablecoin algorítmica que es va enfonsar"
+   ]
+  },
+  "u12l5-3": {
+   "prompt": "Una stablecoin està coberta pel Fons de Garantia de Dipòsits, com un compte bancari.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "El FGD cobreix dipòsits en bancs, no criptoactius."
+  },
+  "u12l5-4": {
+   "prompt": "Una stablecoin algorítmica no té reserves reals que l'avalin.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Depèn d'un mecanisme amb una altra cripto; si la confiança es trenca, es pot enfonsar en espiral."
+  },
+  "u12l5-5": {
+   "prompt": "Maig del 2022. En Bruno té els seus estalvis en UST perquè una plataforma li paga gairebé un 20 % anual «per ser estable». L'UST comença a valer 0,95 $. Què aprenem del que va passar?",
+   "options": [
+    "Que les stablecoins sempre tornen a 1 $",
+    "Que era una oportunitat per comprar-ne més",
+    "Que un rendiment altíssim «estable» amagava un risc enorme"
+   ],
+   "explanation": "Un rendiment alt i suposadament sense risc sol amagar un risc que no es veu.",
+   "feedback": [
+    "Algunes es recuperen; l'UST no. «Estable» és un objectiu, no una garantia.",
+    "En pocs dies l'UST es va enfonsar molt per sota d'1 $ i no es va recuperar mai: qui en va comprar més ho va perdre.",
+    "Exacte: l'UST va perdre la paritat i LUNA va caure gairebé fins a zero en dies. Molta gent ho va perdre gairebé tot."
+   ]
+  },
+  "u12l5-6": {
+   "prompt": "Què exigeix MiCA als emissors de stablecoins a la UE? Marca-ho tot.",
+   "options": [
+    "Tenir reserves suficients",
+    "Garantir una rendibilitat anual",
+    "Permetre bescanviar els tokens",
+    "Estar autoritzats"
+   ],
+   "explanation": "MiCA busca que el token estigui avalat i es pugui bescanviar, no que rendeixi res."
+  },
+  "u12l5-7": {
+   "prompt": "Amb reserves o algorítmica?",
+   "options": [
+    "Se sosté amb una altra criptomoneda i un algorisme",
+    "USDC",
+    "TerraUSD (UST)",
+    "Guarda dòlars i lletres del Tresor per cada token"
+   ],
+   "explanation": "Les de reserves depenen que l'aval existeixi; les algorítmiques, de la confiança en el mecanisme.",
+   "right": [
+    "Amb reserves",
+    "Algorítmica"
+   ]
+  },
+  "u12l5-8": {
+   "prompt": "«Estable» vol dir que és impossible perdre diners amb una stablecoin.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "L'UST es va enfonsar el 2022 i fins i tot l'USDC va perdre la paritat uns dies el 2023."
+  },
+  "u12l5-9": {
+   "prompt": "El març del 2023, la stablecoin ____ va caure a uns 0,87 $ per la fallida d'un banc on tenia reserves.",
+   "options": [
+    "UST",
+    "ETH",
+    "BTC",
+    "USDC"
+   ],
+   "explanation": "Va recuperar la paritat en pocs dies, quan es va assegurar l'accés a aquestes reserves."
+  },
+  "u12l5-10": {
+   "prompt": "Quin risc principal té una stablecoin amb reserves?",
+   "options": [
+    "Que el seu preu pugi massa",
+    "Que pagui massa interessos",
+    "Que les reserves no existeixin, no estiguin disponibles o perdin valor"
+   ],
+   "explanation": "Per això MiCA exigeix reserves suficients, separades i auditables."
+  },
+  "u12l6-1": {
+   "prompt": "Ordena els passos per crear una wallet d'autocustòdia de manera segura.",
+   "options": [
+    "Generar-la i anotar la frase llavor en paper",
+    "Guardar el paper en un lloc segur fora d'internet",
+    "Enviar una quantitat petita de prova abans de moure'n més",
+    "Descarregar la wallet des del seu web oficial"
+   ],
+   "explanation": "Origen fiable, còpia de la frase fora d'internet i una prova petita abans d'arriscar més."
+  },
+  "u12l6-2": {
+   "prompt": "Marca els missatges que són una estafa.",
+   "options": [
+    "Et torno el doble si m'envies 0,1 ETH a aquesta adreça 😉",
+    "La teva wallet ha estat compromesa. Verifica les teves 24 paraules en aquest enllaç per protegir-la.",
+    "He vist el teu problema al fòrum. Passa'm la teva frase llavor i et recupero els fons.",
+    "Recorda: no comparteixis mai la teva frase llavor amb ningú.",
+    "Nou inici de sessió des d'un altre dispositiu. Si no has estat tu, revisa el teu compte des de l'app."
+   ],
+   "explanation": "Ningú legítim no demana la frase llavor, i «et torno el doble» és un clàssic. Els avisos que t'envien a la teva pròpia app sense demanar dades són normals.",
+   "senders": [
+    "Amic d'Instagram",
+    "Suport «Ledger»",
+    "@CriptoAjuda",
+    "App de la teva wallet",
+    "App del teu exchange"
+   ]
+  },
+  "u12l6-3": {
+   "prompt": "Què permet recuperar la teva frase llavor?",
+   "options": [
+    "Totes les claus i les criptos de la teva wallet",
+    "Només la contrasenya de l'exchange",
+    "Res, és decorativa"
+   ],
+   "explanation": "Per això qui la tingui es pot quedar amb tot."
+  },
+  "u12l6-4": {
+   "prompt": "On és més segur guardar la teva frase llavor?",
+   "options": [
+    "En paper o metall, en un lloc segur fora d'internet",
+    "En un correu que t'envies a tu mateix",
+    "En una foto del mòbil"
+   ],
+   "explanation": "Tot el que està connectat a internet pot ser robat o filtrat."
+  },
+  "u12l6-5": {
+   "prompt": "Pots compartir la teva adreça pública perquè t'enviïn criptos.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "És com donar el teu IBAN: serveix per rebre, no per treure."
+  },
+  "u12l6-6": {
+   "prompt": "Si perds la frase llavor d'una wallet d'autocustòdia, el suport te la pot recuperar.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Ningú no pot: és el preu de no dependre de ningú."
+  },
+  "u12l6-7": {
+   "prompt": "Autocustòdia o custòdia en un exchange?",
+   "options": [
+    "Si perds la frase llavor, ho perds tot",
+    "Et poden bloquejar el compte",
+    "Tu controles les claus privades",
+    "Si la plataforma fa fallida, pots perdre l'accés"
+   ],
+   "explanation": "Cada opció canvia un risc per un altre: el de la plataforma o el dels teus propis errors.",
+   "right": [
+    "Autocustòdia",
+    "Custòdia en exchange"
+   ]
+  },
+  "u12l6-8": {
+   "prompt": "L'Ana té criptos en autocustòdia. Li escriu per Telegram algú del «suport tècnic»: hi ha un error i ha de validar la seva frase llavor en un formulari. Què fa?",
+   "options": [
+    "Omple el formulari ràpidament per no perdre res",
+    "Li envia només la meitat de les paraules",
+    "Ignora el missatge: cap suport legítim no demana la frase llavor"
+   ],
+   "explanation": "La frase llavor no es comparteix mai, amb ningú, per cap canal.",
+   "feedback": [
+    "Acaba de lliurar els seus diners: amb la frase llavor, l'estafador els buida en minuts.",
+    "No se'n comparteix cap part, i qui la demana insistirà fins a aconseguir la resta.",
+    "Molt bé: és una de les estafes més comunes en cripto."
+   ]
+  },
+  "u12l6-9": {
+   "prompt": "Ràpid: qui controla les teves criptos?",
+   "options": [
+    "Qui tingui la clau privada",
+    "La CNMV",
+    "Qui tingui la teva adreça pública"
+   ],
+   "explanation": "La clau privada signa els enviaments: qui la té, mana."
+  },
+  "u12l6-10": {
+   "prompt": "Relaciona cada element amb la seva funció.",
+   "options": [
+    "Adreça pública",
+    "Clau privada",
+    "Frase llavor",
+    "Wallet de maquinari"
+   ],
+   "explanation": "Saber què fa cada peça et diu quina pots compartir (només l'adreça) i quina mai.",
+   "right": [
+    "Signar enviaments",
+    "Recuperar totes les teves claus",
+    "Guardar les claus en un aparell sense connexió",
+    "Rebre criptos, com un IBAN"
+   ]
+  },
+  "u12l7-1": {
+   "prompt": "Què exigeix MiCA a un exchange que opera a la UE? Marca-ho tot.",
+   "options": [
+    "Separar les criptos dels clients de les pròpies",
+    "Un sistema de reclamacions",
+    "Garantir que el preu no baixi",
+    "Autorització d'un supervisor"
+   ],
+   "explanation": "MiCA regula la plataforma, no el preu de les criptos."
+  },
+  "u12l7-2": {
+   "prompt": "On comproves si un exchange està autoritzat? Marca-ho tot.",
+   "options": [
+    "El web del mateix exchange",
+    "El que digui un influencer",
+    "Registre de l'ESMA",
+    "Registres de la CNMV"
+   ],
+   "explanation": "Només serveixen els registres oficials: qualsevol pot posar un segell fals al seu web."
+  },
+  "u12l7-3": {
+   "prompt": "Segons la CNMV, des de l'1 de juliol de 2026, qui pot prestar serveis de criptoactius a Espanya?",
+   "options": [
+    "Qualsevol amb un web",
+    "Només els proveïdors autoritzats segons MiCA",
+    "Només els bancs espanyols"
+   ],
+   "explanation": "Aquell dia es va acabar el període transitori a Espanya."
+  },
+  "u12l7-4": {
+   "prompt": "MiCA crea un fons de garantia que et torna els diners si la teva cripto baixa de preu.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "No existeix aquest fons: les caigudes de preu són risc teu."
+  },
+  "u12l7-5": {
+   "prompt": "Una autorització MiCA concedida en un altre país de la UE permet operar a Espanya.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Funciona com un passaport europeu: una autorització val a tota la UE."
+  },
+  "u12l7-6": {
+   "prompt": "La Marta troba un exchange amb comissions molt baixes i un bo de benvinguda, però no apareix als registres de la CNMV ni de l'ESMA. Què fa?",
+   "options": [
+    "Busca un proveïdor autoritzat, encara que cobri una mica més",
+    "Hi diposita poca cosa per provar",
+    "El fa servir: les comissions són el més important"
+   ],
+   "explanation": "Igual que amb un bròquer: primer qui el vigila, després quant cobra.",
+   "feedback": [
+    "Molt bé: primer que sigui segur i estigui supervisat; després, que sigui barat.",
+    "Amb una plataforma no autoritzada, encara que sigui poc, ho pots perdre i no tenir ningú a qui reclamar.",
+    "Sense autorització, ningú no supervisa si guarda les teves criptos separades ni com les fa servir."
+   ]
+  },
+  "u12l7-7": {
+   "prompt": "Relaciona cada sigla amb el seu significat.",
+   "options": [
+    "MiCA",
+    "CASP",
+    "ESMA",
+    "CNMV"
+   ],
+   "explanation": "Les sigles que veuràs en qualsevol avís sobre plataformes cripto a Europa.",
+   "right": [
+    "Supervisor europeu dels mercats",
+    "Supervisor espanyol dels mercats",
+    "Proveïdor de serveis de criptoactius",
+    "Reglament europeu de criptoactius"
+   ]
+  },
+  "u12l7-8": {
+   "prompt": "Ràpid: què és el primer que mires d'un exchange?",
+   "options": [
+    "Que regali un bo de benvinguda",
+    "Que tingui moltes criptos per triar",
+    "Que estigui autoritzat"
+   ],
+   "explanation": "L'autorització va abans que el catàleg i els regals."
+  },
+  "u12l7-9": {
+   "prompt": "El reglament europeu que regula els proveïdors de criptoactius es diu ____.",
+   "options": [
+    "UCITS",
+    "SPIVA",
+    "MiFID",
+    "MiCA"
+   ],
+   "explanation": "Markets in Crypto-Assets. MiFID regula els serveis d'inversió tradicionals."
+  },
+  "u12l7-10": {
+   "prompt": "MiCA et protegeix d'això o no?",
+   "options": [
+    "Una caiguda del 70 % del preu",
+    "Que perdis la frase llavor en autocustòdia",
+    "Que la plataforma no informi dels seus riscos",
+    "Que l'exchange barregi les teves criptos amb les seves"
+   ],
+   "explanation": "MiCA regula les empreses; ni el preu ni els teus propis errors entren en la seva protecció.",
+   "right": [
+    "Et protegeix o ho redueix",
+    "No et protegeix"
+   ]
+  }
+ }
+}

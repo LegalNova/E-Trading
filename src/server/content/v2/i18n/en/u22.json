@@ -1,0 +1,794 @@
+{
+ "unit": {
+  "title": "Indicators",
+  "description": "Moving averages, RSI, MACD, Bollinger, ATR, Fibonacci, OBV and VWAP, and their limits",
+  "section": "Technical analysis"
+ },
+ "lessons": {
+  "u22l1": {
+   "title": "Moving averages",
+   "steps": [
+    {
+     "title": "Simple and exponential",
+     "body": "• **Simple moving average (SMA):** the average of the last N closes. The 50 SMA adds up the last 50 closes and divides by 50.\n• **Exponential moving average (EMA):** gives more weight to recent closes, so it reacts sooner.\n\nIn E-Trading you can switch on the 20, 50 and 200 SMAs and the 21 EMA."
+    },
+    {
+     "title": "How they’re used",
+     "body": "• **Filter:** price above the 200 SMA = long-term uptrend; below it, downtrend.\n• **Dynamic support:** in trends, the price often bounces off the 20 or 50 SMA.\n• **Slope:** a rising average = uptrend; a flat one = sideways."
+    },
+    {
+     "title": "They’re always late",
+     "body": "An average sums up the past: it confirms the trend with a delay and, in sideways markets, gives lots of false signals («whipsaws»), each with its own commission and *spread*.",
+     "key": "A moving average smooths the price and shows the trend, always with a delay.",
+     "tip": "Averages don’t predict: they confirm, late, what’s already happening."
+    }
+   ]
+  },
+  "u22l2": {
+   "title": "Golden cross and death cross",
+   "steps": [
+    {
+     "title": "The two crosses",
+     "body": "• **Golden cross:** the 50 SMA crosses **above** the 200 SMA. Bullish signal.\n• **Death cross:** the 50 SMA crosses **below** the 200 SMA. Bearish signal.\n\nThey’re easy to spot and make the news, but they’re built from two slow averages: they arrive **very late**."
+    },
+    {
+     "title": "A real example",
+     "body": "In 2020, the S&P 500 bottomed on **23 March**. The death cross came **a week later**, on 30 March, when the worst was already over. Anyone who sold on that signal did so very close to the low."
+    },
+    {
+     "title": "The evidence",
+     "body": "Brock, Lakonishok and LeBaron (1992) found that simple moving-average rules seemed to work on the Dow Jones from 1897 to 1986. Correcting for data-snooping bias, Sullivan, Timmermann and White (1999) weakened those results considerably, and their predictive power on indices fell or disappeared after 1986.",
+     "key": "Crosses confirm late: they’re more useful as a risk filter than for winning trade by trade.",
+     "tip": "A cross is a late snapshot of what has already happened."
+    }
+   ]
+  },
+  "u22l3": {
+   "title": "The RSI",
+   "steps": [
+    {
+     "title": "What it is",
+     "body": "The **RSI** (Wilder, 1978) compares the strength of the gains with that of the losses over the last **14** periods. It runs from **0 to 100**.\n\n• Above **70**: «overbought» (it has risen a lot, without a break).\n• Below **30**: «oversold»."
+    },
+    {
+     "title": "The most common mistake",
+     "body": "Selling because the RSI goes above 70. In a strong uptrend, the RSI can stay at 70–80 for **weeks** while the price keeps rising.\n\nMore sensible uses:\n• **Regime:** in uptrends it moves between 40 and 80; in downtrends, between 20 and 60.\n• **Oversold within an uptrend:** a possible area of interest, with a stop."
+    },
+    {
+     "title": "Divergences",
+     "body": "If the price makes a **higher high** and the RSI a **lower high**, there’s a **bearish divergence**: the rise is losing steam. They can last a long time before the price turns, so they’re never enough on their own.",
+     "key": "A high RSI doesn’t mean «it’s going to fall»: it means «it has risen a lot».",
+     "tip": "Overbought and rising can go hand in hand for a long time."
+    }
+   ]
+  },
+  "u22l4": {
+   "title": "The MACD",
+   "steps": [
+    {
+     "title": "How it’s built",
+     "body": "Created by Gerald Appel, the MACD (12, 26, 9) has three parts:\n\n• **MACD line:** 12 EMA − 26 EMA.\n• **Signal line:** 9 EMA of the MACD line.\n• **Histogram:** the difference between the two."
+    },
+    {
+     "title": "How to read it",
+     "body": "• MACD **crosses above** the signal line: bullish momentum is increasing.\n• MACD **above zero**: the short average is above the long one (uptrend).\n• **Shrinking histogram:** momentum is slowing.\n• It also has **divergences**, like the RSI."
+    },
+    {
+     "title": "Its big flaw",
+     "body": "It’s made from averages, so it inherits their problems: it **arrives late** and gives false signals in sideways markets.",
+     "key": "The MACD measures the trend’s momentum.",
+     "tip": "A MACD crossing upwards says «momentum is improving», not «buy»."
+    }
+   ]
+  },
+  "u22l5": {
+   "title": "Bollinger Bands and ATR",
+   "steps": [
+    {
+     "title": "Bollinger Bands (20, 2)",
+     "body": "Created by John Bollinger: a **20-period average** in the middle and two bands **2 standard deviations** away.\n\n• **When they narrow:** low volatility; it often comes before a strong move (*squeeze*), without saying which way.\n• In strong trends, the price can **walk** along the upper band: touching it isn’t a reason to sell.\n• In sideways markets, touches of the outer bands tend to head back towards the average."
+    },
+    {
+     "title": "The ATR",
+     "body": "The **ATR** (*Average True Range*), also by Wilder, measures how much the price moves on average in each period, usually over 14.\n\nA day’s **true range** is the largest of: high − low, |high − previous close| or |low − previous close|. That way it also counts gaps. It doesn’t tell you the direction: only how much it moves."
+    },
+    {
+     "title": "Using the ATR for your stop",
+     "body": "A stop that’s too close gets hit by pure noise. With €10,000 and 1 % risk, try a stop at 2 % and another at 8 %: the position goes from €5,000 to €1,250. The more volatile the asset, the further away the stop and the smaller the amount.",
+     "tip": "Volatility sets the stop distance; your maximum risk sets the size."
+    }
+   ]
+  },
+  "u22l6": {
+   "title": "Fibonacci without the magic",
+   "steps": [
+    {
+     "title": "What it is",
+     "body": "After a strong move, the price often **gives back part of it** before carrying on. The Fibonacci retracement marks **23.6 %, 38.2 %, 50 %, 61.8 % and 78.6 %** of the move. They come from the sequence 1, 1, 2, 3, 5, 8, 13…, whose ratio tends towards 1.618.\n\nThe 50 % level isn’t Fibonacci, but it’s included because it’s widely used."
+    },
+    {
+     "title": "How it’s calculated",
+     "body": "A rise from €100 to €200 (a €100 move):\n\n• 38.2 % retracement → 200 − 38.2 = **€161.80**.\n• 50 % → **€150**.\n• 61.8 % → **€138.20**.\n\nIn an uptrend, many people look for buying zones between 38.2 and 61.8 %, especially if they line up with support or an average."
+    },
+    {
+     "title": "Scepticism",
+     "body": "There’s no solid proof that these levels work better than other percentages. With five levels so close together, the price almost always «respects» one of them, and it’s easy to see that in hindsight. It may work partly because lots of people place orders there.",
+     "key": "Fibonacci organises retracement zones; it doesn’t predict.",
+     "tip": "Draw five lines and the price will always touch one. It’s not magic, it’s statistics."
+    }
+   ]
+  },
+  "u22l7": {
+   "title": "Advanced volume: OBV and VWAP",
+   "steps": [
+    {
+     "title": "OBV: cumulative volume",
+     "body": "**OBV** (*On-Balance Volume*), popularised by Joseph Granville in 1963, is a running total:\n\n• If the day closes **up**, it adds that day’s volume.\n• If it closes **down**, it subtracts it.\n\nIts absolute value doesn’t matter: what you look at is its **direction**. If the price rises and OBV does too, volume is backing the move; if the price rises and OBV falls, there’s a divergence."
+    },
+    {
+     "title": "VWAP: the weighted average price",
+     "body": "**VWAP** (*Volume-Weighted Average Price*) is the session’s average price weighted by volume: sum of (price × volume) ÷ total volume. It resets every day.\n\nBig investors use it as an **execution benchmark**: buying below the day’s VWAP means you bought better than average."
+    },
+    {
+     "title": "The same limits",
+     "body": "Both depend on reliable volume data: in forex and crypto, the data are partial. And, like every indicator, they describe what has already happened.",
+     "key": "OBV checks whether volume is backing the move; VWAP shows the average price traded.",
+     "tip": "Volume is the footprint of the people behind the price; these indicators put it in order."
+    }
+   ]
+  },
+  "u22r": {
+   "title": "Unit review",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u22l1-1": {
+   "prompt": "Last 5 closes: 10, 12, 11, 13 and €14. What’s the 5-session simple moving average?",
+   "options": [],
+   "explanation": "(10 + 12 + 11 + 13 + 14) ÷ 5 = 60 ÷ 5 = €12.",
+   "unit": "€"
+  },
+  "u22l1-2": {
+   "prompt": "Closes: 10, 12, 11, 13 and €14. Tomorrow it closes at €15 and the €10 drops out of the window. What’s the new 5-session simple moving average?",
+   "options": [],
+   "explanation": "(12 + 11 + 13 + 14 + 15) ÷ 5 = 65 ÷ 5 = €13. The average «moves» because the new figure comes in and the oldest one drops out.",
+   "unit": "€"
+  },
+  "u22l1-3": {
+   "prompt": "A 9-session EMA uses a weight of 2 ÷ (9 + 1) = 0.2. If yesterday’s EMA was €100 and today’s close is €110, what is it today?",
+   "options": [],
+   "explanation": "100 + 0.2 × (110 − 100) = €102. It covers a fifth of the distance in a single day: that’s why it reacts sooner than a long simple average.",
+   "unit": "€"
+  },
+  "u22l1-4": {
+   "prompt": "Match each use of averages with its rule.",
+   "options": [
+    "Trend filter",
+    "Dynamic support",
+    "Slope",
+    "Exponential average"
+   ],
+   "explanation": "Averages help you see the trend and its strength, not guess the next move.",
+   "right": [
+    "Rising average, uptrend",
+    "More weight on recent closes",
+    "Bounces off the 20 or 50 SMA",
+    "Price above or below the 200 SMA"
+   ]
+  },
+  "u22l1-5": {
+   "prompt": "If you drew an average over these closes, which way would it point? (Microsoft · closes every 3 sessions · July–September 2026)",
+   "options": [
+    "Up",
+    "Down",
+    "Sideways"
+   ],
+   "explanation": "The closes rise steadily: any average would climb behind the price, with a delay."
+  },
+  "u22l1-6": {
+   "prompt": "And over these? What slope would the average have? (NVIDIA · closes every 3 sessions · December 2025 – February 2026)",
+   "options": [
+    "Up",
+    "Down",
+    "Sideways"
+   ],
+   "explanation": "The price goes back and forth: the average would be almost flat and the price would cross it several times. That’s where whipsaws come from."
+  },
+  "u22l1-7": {
+   "prompt": "Picture the 20-session average over these candles. Does the price go up or down over the next 10?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "An average describes the past with a delay: it doesn’t tell you what will happen over the next 10 sessions.",
+   "horizon": "the next 10 sessions"
+  },
+  "u22l1-8": {
+   "prompt": "What’s the main flaw of moving averages?",
+   "options": [
+    "They only work in crypto",
+    "They’re very hard to calculate",
+    "They arrive late and give false signals in sideways markets"
+   ],
+   "explanation": "Because they sum up the past, they always lag behind the price. In sideways markets, the price crosses them again and again."
+  },
+  "u22l1-9": {
+   "prompt": "The exponential average reacts sooner than the simple one over the same period.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It gives more weight to recent closes."
+  },
+  "u22l1-10": {
+   "prompt": "Using the filter rule: long-term uptrend or downtrend?",
+   "options": [
+    "Price €9.80, 200 SMA at €9.10",
+    "Price €310, 200 SMA at €340",
+    "Price €45, 200 SMA at €52",
+    "Price €120, 200 SMA at €100"
+   ],
+   "explanation": "Price above the 200 SMA: long-term uptrend. Below: downtrend. It’s a filter, not a prediction.",
+   "right": [
+    "Long-term uptrend",
+    "Long-term downtrend"
+   ]
+  },
+  "u22l2-1": {
+   "prompt": "A golden cross is when the 50 SMA crosses above the 200 SMA.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "The death cross is the opposite: the 50 SMA crosses below."
+  },
+  "u22l2-2": {
+   "prompt": "In 2020, the S&P 500’s death cross came before the market low.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It came on 30 March, a week after the low on 23 March."
+  },
+  "u22l2-3": {
+   "prompt": "Sullivan, Timmermann and White strengthened the results of moving-average rules.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "The opposite: by correcting for data-snooping bias, they weakened them considerably."
+  },
+  "u22l2-4": {
+   "prompt": "In a sideways market, moving-average crosses tend to give lots of false signals.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Without a trend, the averages tangle together and every cross is a whipsaw with its own cost."
+  },
+  "u22l2-5": {
+   "prompt": "S&P 500, 8 September 2008: almost a year after its October 2007 high, the index is still below it. What do you think happened over the following months?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "The 200 SMA doesn’t predict bottoms or tops: it only tells you whether the long-term trend is up or down. According to the evidence, its usefulness lies in reducing exposure during big downtrends, with false signals along the way.",
+   "horizon": "the following months"
+  },
+  "u22l2-6": {
+   "prompt": "Another real chart, no name. Up or down over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Over 10 sessions, a cross of slow averages has almost nothing to say: it’s designed for trends lasting months.",
+   "horizon": "the next 10 sessions"
+  },
+  "u22l2-7": {
+   "prompt": "Bruno reads the headline «Death cross on the index!». He’s investing for 20 years in an index fund and wants to sell everything. What do you tell him?",
+   "options": [
+    "That it’s a late signal and his 20-year plan doesn’t depend on a cross",
+    "To buy twice as much with a loan",
+    "To sell now: the name says it all"
+   ],
+   "explanation": "Crosses are trend-following tools, not alarms for a long-term plan.",
+   "feedback": [
+    "Exactly: for a long-term investor, changing plans because of a headline usually turns out expensive.",
+    "Borrowing to bet against a signal isn’t a plan either.",
+    "The name is scary, but the signal comes late: in 2020 it appeared a week after the low."
+   ]
+  },
+  "u22l2-8": {
+   "prompt": "According to the evidence, what has the 200 SMA proved most useful for?",
+   "options": [
+    "Winning on every trade",
+    "Predicting the exact price",
+    "As a risk filter in big downtrends"
+   ],
+   "explanation": "It keeps you in during big trends and out of many big falls, with whipsaws along the way."
+  },
+  "u22l2-9": {
+   "prompt": "Match each term with its meaning.",
+   "options": [
+    "Golden cross",
+    "Death cross",
+    "Whipsaw",
+    "Risk filter"
+   ],
+   "explanation": "The names are dramatic; sensible use is much more boring.",
+   "right": [
+    "50 SMA below the 200 SMA",
+    "False signal in a sideways market",
+    "Reducing exposure in downtrends",
+    "50 SMA above the 200 SMA"
+   ]
+  },
+  "u22l2-10": {
+   "prompt": "In stretches like this, crosses fail a lot. What trend does it have? (Apple · closes every 3 sessions · September–November 2024)",
+   "options": [
+    "Uptrend",
+    "Downtrend",
+    "Sideways"
+   ],
+   "explanation": "In a sideways market, the averages flatten and cross again and again: it’s whipsaw territory."
+  },
+  "u22l3-1": {
+   "prompt": "A share’s RSI has been above 75 for three weeks and the price keeps rising. What’s the most sensible thing to think?",
+   "options": [
+    "That in strong trends the RSI can stay high for a long time",
+    "That the RSI is broken",
+    "That you have to short it right now"
+   ],
+   "explanation": "Overbought isn’t a sell signal on its own. Lots of beginners lose money selling something that won’t stop rising."
+  },
+  "u22l3-2": {
+   "prompt": "Which zone is the RSI in?",
+   "options": [
+    "RSI 55",
+    "RSI 38",
+    "RSI 24",
+    "RSI 82",
+    "RSI 71"
+   ],
+   "explanation": "The classic thresholds are 70 and 30. Being in a zone describes the recent past, not the future.",
+   "right": [
+    "Overbought (above 70)",
+    "Neutral zone",
+    "Oversold (below 30)"
+   ]
+  },
+  "u22l3-3": {
+   "prompt": "Price makes a higher high and the RSI a lower high. What is it?",
+   "options": [
+    "Golden cross",
+    "Double bottom",
+    "Bearish divergence"
+   ],
+   "explanation": "The rise is losing steam, but the divergence can last a long time before the price turns."
+  },
+  "u22l3-4": {
+   "prompt": "The standard RSI uses ____ periods.",
+   "options": [
+    "7",
+    "200",
+    "50",
+    "14"
+   ],
+   "explanation": "It’s the value Wilder proposed in 1978."
+  },
+  "u22l3-5": {
+   "prompt": "In such sustained rises, the RSI usually spends a long time in the upper zone. What trend does this stretch have? (NVIDIA · closes every 3 sessions · March–May 2026)",
+   "options": [
+    "Uptrend",
+    "Downtrend",
+    "Sideways"
+   ],
+   "explanation": "Higher highs and higher lows. Selling just because the RSI was high would have meant fighting the trend."
+  },
+  "u22l3-6": {
+   "prompt": "No RSI, no name: up or down over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Even if you saw the RSI overbought or oversold, it would only tell you how much the price has moved, not where it will go.",
+   "horizon": "the next 10 sessions"
+  },
+  "u22l3-7": {
+   "prompt": "Another real chart. Up or down over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "An oscillator sums up recent momentum; the next stretch may carry on or turn.",
+   "horizon": "the next 10 sessions"
+  },
+  "u22l3-8": {
+   "prompt": "In uptrends, the RSI usually moves between 40 and 80.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "In downtrends, between 20 and 60. That’s why it works as a regime filter."
+  },
+  "u22l3-9": {
+   "prompt": "A share in a long-term uptrend pulls back and its RSI drops to 32. Ana thinks: «oversold = guaranteed bounce». How do you put her right?",
+   "options": [
+    "That with the RSI at 32 you have to sell",
+    "That she’s right: it’s a safe buy",
+    "That it may be an area of interest, but with no certainty and always with a stop"
+   ],
+   "explanation": "Oversold in an uptrend is a reasonable clue; never a certainty.",
+   "feedback": [
+    "There’s no such rule: a low RSI in an uptrend is usually read the other way round.",
+    "Nothing is certain: the RSI can keep falling if the pullback drags on.",
+    "Exactly: within an uptrend, oversold is a clue, not a guarantee."
+   ]
+  },
+  "u22l3-10": {
+   "prompt": "Quick: what range does the RSI move in?",
+   "options": [
+    "From 0 to 14",
+    "From 0 to 100",
+    "From −1 to 1"
+   ],
+   "explanation": "It runs from 0 to 100; 14 is the usual number of periods."
+  },
+  "u22l3-11": {
+   "prompt": "What do you tell them?",
+   "options": [
+    "It means it has risen a lot and fast; it doesn’t say whether or when it will fall",
+    "The RSI only works in crypto",
+    "Yes, as soon as it goes above 70 it falls"
+   ],
+   "explanation": "Overbought means «it has risen a lot», not «it’s going to fall».",
+   "feedback": [
+    "Exactly! Overbought describes the recent past, not the future.",
+    "It’s calculated the same way for any asset; the problem is reading it as a prediction.",
+    "In strong trends, the RSI can spend weeks above 70 while the price keeps rising."
+   ],
+   "lines": [
+    "My share’s RSI is at 78 😱",
+    "It’s overbought! Does that mean it’s going to fall?"
+   ]
+  },
+  "u22l4-1": {
+   "prompt": "The MACD line is the 12 EMA minus the ____ EMA.",
+   "options": [
+    "9",
+    "200",
+    "50",
+    "26"
+   ],
+   "explanation": "That’s why it’s written MACD (12, 26, 9)."
+  },
+  "u22l4-2": {
+   "prompt": "The MACD signal line is a ____-period EMA of the MACD line.",
+   "options": [
+    "12",
+    "14",
+    "26",
+    "9"
+   ],
+   "explanation": "It’s the third number in MACD (12, 26, 9)."
+  },
+  "u22l4-3": {
+   "prompt": "The 12 EMA is at €105 and the 26 EMA at €101. What’s the value of the MACD line?",
+   "options": [],
+   "explanation": "105 − 101 = 4. It’s positive: the short average is above the long one.",
+   "unit": "€"
+  },
+  "u22l4-4": {
+   "prompt": "The MACD line is at 4 and the signal line at 3.2. What’s the value of the histogram?",
+   "options": [],
+   "explanation": "4 − 3.2 = 0.8. If it shrinks over the next few days, momentum is slowing.",
+   "unit": "points"
+  },
+  "u22l4-5": {
+   "prompt": "Match each MACD reading with its meaning.",
+   "options": [
+    "MACD crosses above the signal line",
+    "MACD above zero",
+    "Shrinking histogram",
+    "Price rises and MACD falls"
+   ],
+   "explanation": "The MACD talks about momentum, not future prices.",
+   "right": [
+    "Short average above the long one",
+    "Momentum is slowing",
+    "Bearish divergence",
+    "Bullish momentum is increasing"
+   ]
+  },
+  "u22l4-6": {
+   "prompt": "In stretches like this, the short average usually runs above the long one. What trend is it? (Amazon · closes every 3 sessions · March–May 2026)",
+   "options": [
+    "Uptrend",
+    "Downtrend",
+    "Sideways"
+   ],
+   "explanation": "With higher highs and higher lows, the 12 EMA tends to sit above the 26 EMA: positive MACD, with a delay."
+  },
+  "u22l4-7": {
+   "prompt": "No indicators in sight. Up or down over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "The MACD sums up what the averages have already done: it confirms momentum with a delay; it doesn’t anticipate the next sessions.",
+   "horizon": "the next 10 sessions"
+  },
+  "u22l4-8": {
+   "prompt": "Another real chart. Up or down over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "A MACD cross can arrive just as the move runs out of steam: that’s the price of the delay.",
+   "horizon": "the next 10 sessions"
+  },
+  "u22l4-9": {
+   "prompt": "What does the MACD have in common with moving averages?",
+   "options": [
+    "It arrives late and fails in sideways markets",
+    "It predicts the future",
+    "It measures volume"
+   ],
+   "explanation": "It’s built from exponential averages, so it inherits their delay."
+  },
+  "u22l4-10": {
+   "prompt": "If the MACD is below zero, the 12 EMA is below the 26 EMA.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "MACD = 12 EMA − 26 EMA: if it’s negative, the short one is below."
+  },
+  "u22l5-1": {
+   "prompt": "20-session average: €50. Standard deviation: €2. Where is the upper Bollinger Band (20, 2)?",
+   "options": [],
+   "explanation": "50 + 2 × 2 = €54. The lower one would be at €46.",
+   "unit": "€"
+  },
+  "u22l5-2": {
+   "prompt": "Yesterday it closed at €98. Today, a high of €105 and a low of €101. What’s today’s true range?",
+   "options": [],
+   "explanation": "High − low = 4; |105 − 98| = 7; |101 − 98| = 3. The largest is €7: the opening gap counts.",
+   "unit": "€"
+  },
+  "u22l5-3": {
+   "prompt": "A share’s ATR is €2. You buy at €50 and set the stop 2 ATR from the entry. At what price does the stop go?",
+   "options": [],
+   "explanation": "50 − 2 × 2 = €46.",
+   "unit": "€"
+  },
+  "u22l5-4": {
+   "prompt": "You buy at €50 with the stop at €46. Your portfolio is €10,000 and you risk 1 % at most. How many shares can you buy?",
+   "options": [],
+   "explanation": "1 % of 10,000 = €100 of risk. 100 ÷ 4 = 25 shares, about €1,250 invested.",
+   "unit": "shares"
+  },
+  "u22l5-5": {
+   "prompt": "Place the stop below the recent low, leaving room for the asset’s normal volatility.",
+   "options": [],
+   "explanation": "A stop right at the low gets hit by any wick. Below it and with some room (for example, part of the ATR), it only triggers if the idea really fails."
+  },
+  "u22l5-6": {
+   "prompt": "This asset moves a lot. You have €10,000 and risk 1 % at most. Set the stop with some room and adjust the amount.",
+   "options": [],
+   "explanation": "More volatility = stop further away = smaller amount for the same risk. You decide the risk in euros; the market decides the distance."
+  },
+  "u22l5-7": {
+   "prompt": "The Bollinger Bands narrow sharply. What does that usually indicate?",
+   "options": [
+    "That the price is going to fall",
+    "That the price is going to rise",
+    "Low volatility, which often comes before a strong move in either direction"
+   ],
+   "explanation": "The squeeze warns that a move may be coming, not which way."
+  },
+  "u22l5-8": {
+   "prompt": "If the price touches the upper Bollinger Band, you should sell.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "In strong trends, the price can walk along the upper band for days."
+  },
+  "u22l5-9": {
+   "prompt": "Quick: what does the ATR measure?",
+   "options": [
+    "How much the price moves on average",
+    "Volume",
+    "The direction of the trend"
+   ],
+   "explanation": "It measures volatility: how much, not which way."
+  },
+  "u22l5-10": {
+   "prompt": "Bruno always sets his stop 0.5 % from the entry, whatever the asset. On a crypto that moves 4 % a day, it gets hit almost every time. What should he change?",
+   "options": [
+    "Nothing: it’s bad luck",
+    "Adapt the stop distance to volatility (for example, with the ATR) and reduce the size",
+    "Remove the stop"
+   ],
+   "explanation": "The stop distance depends on volatility; the size, on how much you want to risk.",
+   "feedback": [
+    "It isn’t luck: a stop inside the daily noise is almost certain to get hit.",
+    "Exactly: a stop further away and a smaller amount, so the risk in euros stays the same.",
+    "Without a stop, a single bad trade can cost a huge amount."
+   ]
+  },
+  "u22l6-1": {
+   "prompt": "A share rises from €100 to €200. At what price is the 61.8 % retracement?",
+   "options": [],
+   "explanation": "200 − 0.618 × 100 = €138.20.",
+   "unit": "€"
+  },
+  "u22l6-2": {
+   "prompt": "A share rises from €40 to €60. Where is the 50 % retracement?",
+   "options": [],
+   "explanation": "60 − 0.5 × 20 = €50.",
+   "unit": "€"
+  },
+  "u22l6-3": {
+   "prompt": "A share rises from €10 to €30. Where is the 38.2 % retracement?",
+   "options": [],
+   "explanation": "30 − 0.382 × 20 = 30 − 7.64 = €22.36.",
+   "unit": "€"
+  },
+  "u22l6-4": {
+   "prompt": "There’s solid proof that Fibonacci levels predict turning points better than other percentages.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "There’s no rigorous evidence that they’re special."
+  },
+  "u22l6-5": {
+   "prompt": "The 50 % level doesn’t come from the Fibonacci sequence.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It’s included because it’s widely used, not because of Fibonacci."
+  },
+  "u22l6-6": {
+   "prompt": "A retracement in a rise is drawn from the starting low. Tap it (Apple · closes every 3 sessions · March–May 2026)",
+   "options": [],
+   "explanation": "Here the low is the first close: the levels are spread out from there to the high."
+  },
+  "u22l6-7": {
+   "prompt": "In this rise, tap the high of the move: that’s where the retracement would be measured from (Microsoft · closes every 3 sessions · June–August 2026)",
+   "options": [],
+   "explanation": "The high came before the end and the price was already pulling back. That pullback would be measured as a percentage of the whole rise."
+  },
+  "u22l6-8": {
+   "prompt": "Which levels does the Fibonacci retracement mark? Select all that apply.",
+   "options": [
+    "61.8 %",
+    "78.6 %",
+    "90 %",
+    "23.6 %",
+    "38.2 %"
+   ],
+   "explanation": "Also 50 %, which isn’t Fibonacci but is widely used. 90 % isn’t part of the tool."
+  },
+  "u22l6-9": {
+   "prompt": "Laura draws Fibonacci on a past chart and sees that the price bounced right at 61.8 %. She concludes that «Fibonacci never fails». What do you tell her?",
+   "options": [
+    "That with five levels it’s easy to find one that «worked»; the honest thing is to test it on lots of cases",
+    "That she’s right: there’s the proof",
+    "That she’d be better off using 90 %"
+   ],
+   "explanation": "Hits spotted in hindsight are misleading: Fibonacci organises zones; it doesn’t predict.",
+   "feedback": [
+    "Exactly: the eye finds patterns in hindsight. That’s why it’s used as a zone, not as a prediction.",
+    "One case seen in hindsight proves nothing: with five levels, one almost always gets touched.",
+    "Changing the number doesn’t fix the problem: it’s just looking in hindsight for whatever fits."
+   ]
+  },
+  "u22l6-10": {
+   "prompt": "The ratio of the Fibonacci sequence tends towards the golden ratio, approximately ____.",
+   "options": [
+    "3.14",
+    "2.718",
+    "1.414",
+    "1.618"
+   ],
+   "explanation": "The golden ratio is 1.618…; 3.14 is pi, 2.718 is e and 1.414 is the square root of 2."
+  },
+  "u22l7-1": {
+   "prompt": "OBV starts at 0. Day 1: up on 1,000 shares. Day 2: down on 800. Day 3: up on 1,500. What’s the OBV?",
+   "options": [],
+   "explanation": "0 + 1,000 − 800 + 1,500 = 1,700.",
+   "unit": "shares"
+  },
+  "u22l7-2": {
+   "prompt": "You buy 100 shares at €10 and another 300 at €12. What volume-weighted average price did you pay?",
+   "options": [],
+   "explanation": "(100 × 10 + 300 × 12) ÷ 400 = 4,600 ÷ 400 = €11.50. It’s the same idea as VWAP.",
+   "unit": "€"
+  },
+  "u22l7-3": {
+   "prompt": "In one session, 2,000 shares trade at €20 and another 2,000 at €22. What’s the VWAP?",
+   "options": [],
+   "explanation": "(2,000 × 20 + 2,000 × 22) ÷ 4,000 = 84,000 ÷ 4,000 = €21.",
+   "unit": "€"
+  },
+  "u22l7-4": {
+   "prompt": "Match each indicator with what it measures.",
+   "options": [
+    "OBV",
+    "VWAP",
+    "ATR",
+    "RSI"
+   ],
+   "explanation": "Each indicator answers a different question: volume, average price, volatility or momentum.",
+   "right": [
+    "The session’s average price weighted by volume",
+    "Strength of gains versus losses",
+    "How much the price moves on average",
+    "Cumulative volume depending on whether the day rises or falls"
+   ]
+  },
+  "u22l7-5": {
+   "prompt": "Is volume backing the move or is there a divergence?",
+   "options": [
+    "Price falling and OBV falling",
+    "Price falling and OBV rising",
+    "Price at highs and OBV falling",
+    "Price at highs and OBV at highs"
+   ],
+   "explanation": "If OBV and the price move in the same direction, volume is backing the move. If they split, there’s a divergence: a clue, not a sufficient signal.",
+   "right": [
+    "Backing the move",
+    "Divergence"
+   ]
+  },
+  "u22l7-6": {
+   "prompt": "What matters about OBV?",
+   "options": [
+    "Its exact value",
+    "That it’s positive",
+    "Its direction and whether it’s backing the price"
+   ],
+   "explanation": "The level depends on the day you start counting; what’s useful is the direction."
+  },
+  "u22l7-7": {
+   "prompt": "On an intraday chart, VWAP resets every session.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It’s each day’s weighted average price: when the session starts, it’s recalculated from scratch."
+  },
+  "u22l7-8": {
+   "prompt": "Without seeing volume or OBV, up or down over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "OBV and VWAP put in order what has already happened with volume. They help you judge whether a move has people behind it, not guess the next sessions.",
+   "horizon": "the next 10 sessions"
+  },
+  "u22l7-9": {
+   "prompt": "Another real chart. Up or down over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "A volume divergence can take a long time to show up in the price, or never show up at all.",
+   "horizon": "the next 10 sessions"
+  },
+  "u22l7-10": {
+   "prompt": "Quick: on a day that closes down, OBV…",
+   "options": [
+    "Doesn’t change",
+    "Subtracts the day’s volume",
+    "Adds the day’s volume"
+   ],
+   "explanation": "It rises on up days and falls on down days."
+  }
+ }
+}

@@ -7,6 +7,8 @@ import { Prisma, type GameState, type User } from '@/generated/prisma/client'
 import { db, DB_SCHEMA } from '../db'
 import { currentUser } from '../auth'
 import { ACHIEVEMENTS, LEVEL_TITLES, LUMI, RISK_LESSON, UNITS } from '../content/catalog'
+import { achievementT } from '../content/translate'
+import { currentLocale } from '../locale'
 
 export class HttpError extends Error {
   constructor(public status: number, public code: string, message: string) {
@@ -245,8 +247,9 @@ async function achievementFacts(tx: Tx, userId: string, g: GameState, counters: 
 export async function achievementList(tx: Tx, userId: string, g: GameState, counters: Counters): Promise<AchievementT[]> {
   const [facts, unlocked] = await Promise.all([achievementFacts(tx, userId, g, counters), tx.userAchievement.findMany({ where: { userId } })])
   const at = new Map(unlocked.map(u => [u.code, u.unlockedAt.toISOString()]))
+  const loc = currentLocale()
   return ACHIEVEMENTS.map(a => ({
-    id: a.code, code: a.code, title: a.title, description: a.description, icon: a.icon, category: a.category,
+    id: a.code, code: a.code, title: achievementT(loc, a.code)?.title ?? a.title, description: achievementT(loc, a.code)?.description ?? a.description, icon: a.icon, category: a.category,
     unlocked: at.has(a.code), unlockedAt: at.get(a.code), progress: at.has(a.code) ? a.target : Math.min(a.target, facts[a.code] ?? 0), target: a.target, reward: { gems: a.gems, xp: a.xp },
   }))
 }

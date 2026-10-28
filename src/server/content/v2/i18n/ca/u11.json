@@ -1,0 +1,607 @@
+{
+ "unit": {
+  "title": "Altres actius",
+  "description": "SOCIMI, derivats, CFD, plans de pensions i on guardar els diners a curt termini",
+  "section": "Productes d'inversió"
+ },
+ "lessons": {
+  "u11l1": {
+   "title": "Immobles en borsa: SOCIMI i REIT",
+   "steps": [
+    {
+     "title": "Immobles sense comprar un pis",
+     "body": "Una **SOCIMI** (a Espanya) o un **REIT** (als EUA i altres països) és una empresa cotitzada que té immobles en lloguer: oficines, centres comercials, naus logístiques, habitatges…\n\nCompres les seves accions en borsa com qualsevol altra i passes a ser propietari d'una part d'aquests edificis."
+    },
+    {
+     "title": "Les regles del joc",
+     "body": "A canvi de pagar molt poc impost de societats, han de **repartir la major part del benefici**: una SOCIMI, com a mínim el **80 %** del que surt dels lloguers; un REIT dels EUA, com a mínim el **90 %** del seu benefici fiscal.\n\nPer això solen pagar dividends alts."
+    },
+    {
+     "title": "Avantatges i riscos",
+     "body": "Avantatges: diversifiques en molts immobles amb pocs diners i pots vendre en segons. Riscos: cotitzen i **poden caure com la borsa**, pateixen amb les pujades de tipus (s'endeuten i competeixen amb els bons) i depenen del seu sector, com les oficines després de la pandèmia.",
+     "key": "Una SOCIMI és totxo que cotitza: diversificat i líquid, però amb la volatilitat de la borsa.",
+     "tip": "Comprar un pis no és l'única manera d'invertir en immobles."
+    }
+   ]
+  },
+  "u11l2": {
+   "title": "Futurs i opcions en una lliçó",
+   "steps": [
+    {
+     "title": "Futurs",
+     "body": "Un **futur** és un contracte per comprar o vendre alguna cosa en una **data futura** a un **preu pactat avui**. Totes dues parts estan **obligades** a complir-lo.\n\nServeix per cobrir-se (un pagès fixa avui el preu del seu blat) o per especular. Només diposites una **garantia**, una fracció del valor: això és **palanquejament**."
+    },
+    {
+     "title": "Opcions",
+     "body": "Una **opció** dona el **dret, però no l'obligació**, de comprar (**call**) o vendre (**put**) a un preu pactat (**strike**) fins a una data. Per aquest dret pagues una **prima**.\n\nSi no et convé, la deixes caducar i perds la prima. Qui la ven cobra la prima i assumeix l'obligació."
+    },
+    {
+     "title": "Per què no són per començar",
+     "body": "Són **derivats**: el seu valor depèn d'un altre actiu. Amb palanquejament, un moviment petit es converteix en un guany o una pèrdua grans, i en alguns casos (vendre opcions, futurs) pots perdre més del que hi has posat.",
+     "key": "Futur = obligació a un preu pactat. Opció = dret a canvi d'una prima.",
+     "tip": "Si no saps explicar quant pots perdre en el pitjor cas, no operis amb derivats."
+    }
+   ]
+  },
+  "u11l3": {
+   "title": "CFD: per què la majoria hi perd",
+   "steps": [
+    {
+     "title": "Què és un CFD",
+     "body": "Un **CFD** (contracte per diferències) és un contracte amb el teu bròquer per cobrar o pagar la **diferència de preu** d'un actiu entre que obres i tanques. No compres l'actiu: apostes a si puja o baixa.\n\nS'opera **amb palanquejament**: poses una garantia i mous una posició molt més gran. I pagues **finançament** cada nit que la mantens oberta."
+    },
+    {
+     "title": "Els números del palanquejament",
+     "body": "Amb 1.000 € i un palanquejament de 20 a 1, mous **20.000 €**. Si l'actiu baixa un 5 %, perds 1.000 €: **tota la teva garantia**.\n\nA la UE, el màxim per a minoristes és de 30 a 1 en divises principals, 20 a 1 en índexs principals i or, 5 a 1 en accions i **2 a 1 en cripto**."
+    },
+    {
+     "title": "L'avís obligatori de la CNMV",
+     "body": "«Els CFD són instruments complexos i comporten un risc elevat de perdre diners ràpidament a causa del palanquejament. **Entre un 74 i un 89 % dels inversors minoristes perden diners quan negocien amb CFD.**» Cada bròquer ha de mostrar, a més, el seu propi percentatge.",
+     "key": "El palanquejament multiplica els guanys i, sobretot, les pèrdues: la majoria de minoristes perden diners amb CFD.",
+     "tip": "Si un anunci de CFD amaga l'avís de risc, desconfia'n el doble."
+    }
+   ]
+  },
+  "u11l4": {
+   "title": "Plans de pensions",
+   "steps": [
+    {
+     "title": "Desgrava avui, tributa demà",
+     "body": "El que aportes a un **pla de pensions** redueix la teva base imposable de l'IRPF: fins a **1.500 € l'any** en un pla individual, ampliable amb aportacions de l'empresa (plans d'ocupació) fins a **10.000 €** en total.\n\nSi el teu tipus marginal és del 30 %, aportar 1.500 € t'estalvia **450 €** d'IRPF aquell any."
+    },
+    {
+     "title": "La lletra petita",
+     "body": "• En rescatar-lo, **tot** (aportacions i guanys) tributa com a **rendiment del treball**, al teu tipus marginal d'aquell moment.\n• **Liquiditat limitada:** només es rescata a la jubilació o en casos concrets (atur de llarga durada, malaltia greu, incapacitat, dependència), o les aportacions amb més de **10 anys** d'antiguitat.\n• Molts plans bancaris cobren comissions altes."
+    },
+    {
+     "title": "Quan té sentit",
+     "body": "Compensa sobretot si el teu tipus marginal avui és **alt**, esperes que sigui **més baix** quan et jubilis i no necessitaràs aquests diners. Per a algú que comença a treballar amb un sou baix, l'avantatge és petit.",
+     "key": "El pla de pensions ajorna impostos i bloqueja els diners: útil si avui pagues molt d'IRPF.",
+     "tip": "El que no t'estalvia un pla de pensions són les comissions: mira-te-les."
+    }
+   ]
+  },
+  "u11l5": {
+   "title": "Dipòsits, comptes remunerats i monetaris",
+   "steps": [
+    {
+     "title": "Tres llocs per al curt termini",
+     "body": "• **Compte remunerat:** paga interessos i pots treure els diners quan vulguis. Compte amb els límits: de vegades només remunera fins a una certa quantitat o durant uns mesos.\n• **Dipòsit a termini:** immobilitzes els diners un temps a un tipus fix.\n• **Fons monetari:** inverteix en deute a molt curt termini i d'alta qualitat. La seva rendibilitat segueix els tipus del BCE."
+    },
+    {
+     "title": "Què protegeix cadascun",
+     "body": "Comptes i dipòsits estan coberts pel **Fons de Garantia de Dipòsits** fins a **100.000 €** per titular i entitat.\n\nEl monetari **no** té aquest fons, però el seu patrimoni és dels partícips i està separat de la gestora; el seu risc és molt baix, no nul. I, com a fons, es pot **traspassar** sense tributar."
+    },
+    {
+     "title": "Per a què serveixen",
+     "body": "Per al **coixí d'emergència** i els diners que necessitaràs d'aquí a uns mesos o pocs anys. Compara sempre la **TAE** i les condicions. Cap dels tres no és per al llarg termini: després d'impostos i inflació, amb prou feines guanyen poder adquisitiu.",
+     "key": "Curt termini: liquiditat i seguretat abans que rendibilitat.",
+     "tip": "Un coixí no hi és per rendir: hi és per ser-hi quan el necessitis."
+    }
+   ]
+  },
+  "u11r": {
+   "title": "Repàs de la unitat",
+   "steps": []
+  },
+  "s3boss": {
+   "title": "Repte final: Productes d'inversió",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u11l1-1": {
+   "prompt": "Què és una SOCIMI?",
+   "options": [
+    "Una hipoteca per a inversors",
+    "Una empresa cotitzada que inverteix en immobles en lloguer",
+    "Un fons garantit per l'Estat"
+   ],
+   "explanation": "És la versió espanyola dels REIT: immobles en lloguer dins d'una empresa que cotitza."
+  },
+  "u11l1-2": {
+   "prompt": "Relaciona cada concepte amb el seu significat.",
+   "options": [
+    "SOCIMI",
+    "REIT",
+    "Dividend obligatori",
+    "Liquiditat"
+   ],
+   "explanation": "Immobles, regles de repartiment i l'avantatge de poder vendre quan vulguis.",
+   "right": [
+    "Repartiment de la major part del benefici",
+    "Poder vendre en segons en borsa",
+    "El seu equivalent als EUA",
+    "Immobiliària cotitzada espanyola"
+   ]
+  },
+  "u11l1-3": {
+   "prompt": "Una SOCIMI obté 10 milions de benefici per lloguers. Quin mínim ha de repartir com a dividend?",
+   "options": [],
+   "explanation": "Com a mínim el 80 %: 10 × 0,8 = 8 milions.",
+   "unit": "milions d'€"
+  },
+  "u11l1-4": {
+   "prompt": "Una SOCIMI cotitza a 10 € i reparteix 0,45 € l'any. Quina és la seva rendibilitat per dividend?",
+   "options": [],
+   "explanation": "0,45 ÷ 10 = 4,5 %.",
+   "unit": "%"
+  },
+  "u11l1-5": {
+   "prompt": "Les SOCIMI no poden baixar gaire de preu perquè tenen edificis al darrere.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Cotitzen en borsa: en una crisi o amb pujades de tipus poden caure força, com altres accions."
+  },
+  "u11l1-6": {
+   "prompt": "Amb una SOCIMI pots invertir en immobles amb molts menys diners que comprant un pis.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "N'hi ha prou de comprar unes quantes accions en borsa."
+  },
+  "u11l1-7": {
+   "prompt": "Pis propi per llogar o SOCIMI?",
+   "options": [
+    "Pots vendre en segons",
+    "Tu busques llogater i arregles la caldera",
+    "El seu preu canvia cada dia en borsa",
+    "Necessites desenes de milers d'euros d'entrada",
+    "Diversifiques en molts immobles"
+   ],
+   "explanation": "La SOCIMI dona liquiditat i diversificació; el pis propi, control total, però molts diners concentrats i feina.",
+   "right": [
+    "Pis propi",
+    "SOCIMI"
+   ]
+  },
+  "u11l1-8": {
+   "prompt": "Els tipus d'interès pugen amb força i les SOCIMI cauen un 25 %. En Bruno, que en té algunes, s'espanta. Què ha de tenir en compte?",
+   "options": [
+    "Que l'Estat li tornarà la pèrdua",
+    "Que les immobiliàries cotitzades són sensibles als tipus i que això forma part del seu risc",
+    "Que això no hauria de passar amb immobles"
+   ],
+   "explanation": "Conèixer per endavant els riscos d'un actiu ajuda a no reaccionar en calent quan apareixen.",
+   "feedback": [
+    "Ningú no garanteix el preu d'una acció.",
+    "Molt bé: si ho sabia quan va comprar, pot decidir segons el seu pla i no segons l'ensurt.",
+    "Passa: s'endeuten per comprar i, amb tipus alts, finançar-se costa més i els bons competeixen amb els seus dividends."
+   ]
+  },
+  "u11l1-9": {
+   "prompt": "Ràpid: quina part del benefici per lloguers ha de repartir com a mínim una SOCIMI?",
+   "options": [
+    "80 %",
+    "10 %",
+    "100 %"
+   ],
+   "explanation": "És una de les condicions del seu règim fiscal especial."
+  },
+  "u11l1-10": {
+   "prompt": "Quins riscos té invertir en una SOCIMI? Marca'ls tots.",
+   "options": [
+    "Que la perjudiquin les pujades de tipus",
+    "Que el seu sector vagi malament (per exemple, oficines buides)",
+    "Haver de buscar llogater tu mateix",
+    "Que el seu preu caigui amb la borsa"
+   ],
+   "explanation": "La gestió dels immobles la fa la SOCIMI; tu assumeixes els riscos de mercat, de tipus i del sector."
+  },
+  "u11l2-1": {
+   "prompt": "Relaciona cada terme amb la seva definició.",
+   "options": [
+    "Futur",
+    "Call",
+    "Put",
+    "Prima"
+   ],
+   "explanation": "La diferència clau: el futur obliga; l'opció comprada només dona un dret.",
+   "right": [
+    "Dret a vendre a un preu pactat",
+    "El que pagues per una opció",
+    "Dret a comprar a un preu pactat",
+    "Obligació de comprar o vendre en una data a un preu pactat"
+   ]
+  },
+  "u11l2-2": {
+   "prompt": "Una opció dona el ____, però no l'obligació, de comprar o vendre.",
+   "options": [
+    "deure",
+    "cupó",
+    "dividend",
+    "dret"
+   ],
+   "explanation": "Per això qui la compra paga una prima: té la llibertat de no fer-la servir."
+  },
+  "u11l2-3": {
+   "prompt": "Una opció de compra es diu ____.",
+   "options": [
+    "swap",
+    "strike",
+    "put",
+    "call"
+   ],
+   "explanation": "La put és l'opció de venda; l'strike, el preu pactat."
+  },
+  "u11l2-4": {
+   "prompt": "Compres una call amb un strike de 100 € i pagues una prima de 5 €. Al venciment l'acció val 112 €. Quant guanyes per acció?",
+   "options": [],
+   "explanation": "Compres a 100 € una cosa que val 112 €: 12 € − 5 € de prima = 7 €.",
+   "unit": "€"
+  },
+  "u11l2-5": {
+   "prompt": "Amb la mateixa call (strike 100 €, prima 5 €), al venciment l'acció val 95 €. Quant perds per acció?",
+   "options": [],
+   "explanation": "No t'interessa comprar a 100 € una cosa que val 95 €: no l'exerceixes i perds la prima, 5 €.",
+   "unit": "€"
+  },
+  "u11l2-6": {
+   "prompt": "Un pagès tem que el preu del blat baixi abans de la collita. Quin ús dels futurs té sentit per a ell?",
+   "options": [
+    "Vendre avui futurs per fixar el preu al qual vendrà el seu blat",
+    "No fer res: els futurs només serveixen per especular",
+    "Comprar futurs de blat per guanyar més si puja"
+   ],
+   "explanation": "Els derivats poden reduir un risc que ja tens (cobertura) o crear-ne un de nou (especulació).",
+   "feedback": [
+    "Molt bé: és una cobertura. Si el preu baixa, el futur compensa; si puja, renuncia a aquest guany.",
+    "Van néixer precisament per cobrir riscos com el seu.",
+    "Així duplica la seva aposta que el blat puja, just el contrari de cobrir-se."
+   ]
+  },
+  "u11l2-7": {
+   "prompt": "La Marta veu a les xarxes algú que «guanya milers al mes venent opcions» i vol provar-ho amb els seus estalvis. Què ha de tenir en compte?",
+   "options": [
+    "Que vendre opcions és cobrar primes fàcils sense risc",
+    "Que venent opcions pot perdre molt més del que cobra, i que primer ho ha d'entendre sense diners reals",
+    "Que si surt a les xarxes és que està comprovat"
+   ],
+   "explanation": "Qui ven una opció cobra poc i assumeix un risc que pot ser enorme.",
+   "feedback": [
+    "Cobres primes petites moltes vegades… fins que un moviment fort et fa perdre molt més del que has ingressat.",
+    "Molt bé: vendre una call sense tenir l'acció té, en teoria, una pèrdua il·limitada.",
+    "Les xarxes ensenyen els guanys, poques vegades les pèrdues."
+   ]
+  },
+  "u11l2-8": {
+   "prompt": "Amb una opció comprada, el màxim que pots perdre és la prima.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Si no et convé exercir-la, la deixes caducar: perds el que vas pagar i res més."
+  },
+  "u11l2-9": {
+   "prompt": "Ràpid: quin tipus d'opció et dona dret a vendre?",
+   "options": [
+    "Put",
+    "Call",
+    "Futur"
+   ],
+   "explanation": "Put = vendre; call = comprar."
+  },
+  "u11l2-10": {
+   "prompt": "Té una obligació o només un dret?",
+   "options": [
+    "Venedor d'una opció, si el comprador l'exerceix",
+    "Comprador d'una put",
+    "Comprador d'una call",
+    "Comprador d'un futur",
+    "Venedor d'un futur"
+   ],
+   "explanation": "En un futur, totes dues parts s'obliguen; en una opció, el comprador té el dret i el venedor, l'obligació.",
+   "right": [
+    "Obligació",
+    "Dret"
+   ]
+  },
+  "u11l3-1": {
+   "prompt": "Poses 1.000 € de garantia amb un palanquejament de 20 a 1. Quina posició mous?",
+   "options": [],
+   "explanation": "1.000 × 20 = 20.000 €.",
+   "unit": "€"
+  },
+  "u11l3-2": {
+   "prompt": "Amb aquesta posició de 20.000 €, l'actiu cau un 2 %. Quant perds?",
+   "options": [],
+   "explanation": "20.000 × 2 % = 400 €: un 40 % de la teva garantia per un moviment del 2 %.",
+   "unit": "€"
+  },
+  "u11l3-3": {
+   "prompt": "Amb un palanquejament de 20 a 1, quina caiguda de l'actiu s'endú tota la teva garantia?",
+   "options": [],
+   "explanation": "100 % ÷ 20 = 5 %. Un moviment normal d'unes quantes setmanes la pot esborrar.",
+   "unit": "%"
+  },
+  "u11l3-4": {
+   "prompt": "Segons l'avís obligatori de la CNMV, entre un 74 i un 89 % dels inversors minoristes perden diners amb CFD.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "És la dada de la intervenció de l'ESMA del 2018, que cada bròquer ha de mostrar al costat del seu propi percentatge."
+  },
+  "u11l3-5": {
+   "prompt": "Amb un CFD sobre una acció ets propietari d'aquesta acció.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Només tens un contracte amb el bròquer per la diferència de preu: sense propietat ni vot."
+  },
+  "u11l3-6": {
+   "prompt": "A la UE, un minorista pot operar CFD de cripto amb un palanquejament de 100 a 1.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "El màxim per a minoristes en cripto és de 2 a 1."
+  },
+  "u11l3-7": {
+   "prompt": "Marca els missatges que són senyal de perill o d'estafa.",
+   "options": [
+    "«Llista d'advertiments sobre entitats no autoritzades.»",
+    "«Soc el teu gestor personal. Diposita 250 € i t'opero amb palanquejament 1:500.»",
+    "«Copia les meves operacions amb CFD: 95 % d'encerts garantit.»",
+    "«Multiplica x50 els teus diners amb CFD d'or. Sense risc. Places limitades.»",
+    "«Avís: entre un 74 i un 89 % dels inversors minoristes perden diners amb CFD.»"
+   ],
+   "explanation": "Rendibilitat «sense risc», palanquejaments prohibits per a minoristes a la UE, «gestors» que t'escriuen i encerts garantits són senyals clàssics d'entitat pirata.",
+   "senders": [
+    "Web de la CNMV",
+    "+357 9…",
+    "Canal «VIP Trading»",
+    "Anunci a les xarxes",
+    "El teu bròquer"
+   ]
+  },
+  "u11l3-8": {
+   "prompt": "Per què la majoria de minoristes perden diners amb CFD?",
+   "options": [
+    "El palanquejament converteix moviments petits en pèrdues grans, i a més hi ha costos cada nit",
+    "Perquè només es poden operar de matinada",
+    "Perquè els CFD estan prohibits"
+   ],
+   "explanation": "Palanquejament, costos de finançament i decisions en calent: una combinació que castiga sobretot el principiant."
+  },
+  "u11l3-9": {
+   "prompt": "Ràpid: palanquejament de 10 a 1 i l'actiu cau un 3 %. Quina part de la teva garantia perds?",
+   "options": [
+    "30 %",
+    "10 %",
+    "3 %"
+   ],
+   "explanation": "10 × 3 % = 30 % de la garantia."
+  },
+  "u11l3-10": {
+   "prompt": "En Pablo va obrir un CFD amb palanquejament i va perdent. El bròquer l'avisa que la seva garantia ha baixat a la meitat del que s'exigeix. Què passa si continua caient?",
+   "options": [
+    "El bròquer li torna els diners perduts",
+    "El bròquer tanca la posició i no pot perdre més del que té al compte",
+    "Res, el bròquer espera que es recuperi"
+   ],
+   "explanation": "Les normes europees limiten el dany (tancament al 50 % i sense saldo negatiu), però no eviten perdre el que s'ha dipositat.",
+   "feedback": [
+    "Ningú no torna les pèrdues d'un CFD.",
+    "Exacte: hi ha tancament automàtic i protecció davant del saldo negatiu per als minoristes, però la pèrdua ja és seva.",
+    "No: a la UE, quan la garantia baixa al 50 % del que s'exigeix, el bròquer tanca la posició i la pèrdua es fa real."
+   ]
+  },
+  "u11l4-1": {
+   "prompt": "El teu tipus marginal de l'IRPF és del 30 % i aportes 1.500 € al teu pla individual. Quant d'IRPF t'estalvies aquell any?",
+   "options": [],
+   "explanation": "1.500 × 30 % = 450 €.",
+   "unit": "€"
+  },
+  "u11l4-2": {
+   "prompt": "Amb un tipus marginal del 19 %, quant t'estalvies aportant 1.500 €?",
+   "options": [],
+   "explanation": "1.500 × 19 % = 285 €. Com més baix és el teu tipus, més petit és l'avantatge.",
+   "unit": "€"
+  },
+  "u11l4-3": {
+   "prompt": "Com tributa el rescat d'un pla de pensions?",
+   "options": [
+    "A la base de l'estalvi, només pel guany",
+    "No tributa",
+    "Com a rendiment del treball, al teu tipus marginal, per tot el que rescates"
+   ],
+   "explanation": "Com que les aportacions van desgravar en entrar, en sortir tributa tot."
+  },
+  "u11l4-4": {
+   "prompt": "Quin és el límit general d'aportació a un pla de pensions individual?",
+   "options": [
+    "10.000 € l'any",
+    "No hi ha límit",
+    "1.500 € l'any"
+   ],
+   "explanation": "Es pot arribar a 10.000 € en total només sumant-hi aportacions a plans d'empresa."
+  },
+  "u11l4-5": {
+   "prompt": "Quan pots rescatar un pla de pensions? Marca-ho tot.",
+   "options": [
+    "Les aportacions amb més de 10 anys d'antiguitat",
+    "Quan vulguis per anar-te'n de vacances",
+    "Per atur de llarga durada",
+    "Quan et jubilis"
+   ],
+   "explanation": "Fora d'aquests supòsits, els diners estan bloquejats."
+  },
+  "u11l4-6": {
+   "prompt": "L'Ana té 23 anys, cobra poc i el seu tipus marginal és baix. El banc li ofereix un pla amb un 1,5 % de comissió anual «per desgravar». Què ha de tenir en compte?",
+   "options": [
+    "Que l'avantatge depèn del seu tipus marginal, de les comissions i que no necessiti els diners",
+    "Que en rescatar-lo no pagarà impostos",
+    "Que desgravar sempre compensa"
+   ],
+   "explanation": "Un pla de pensions no és bo ni dolent en general: depèn del teu tipus marginal, dels seus costos i del teu horitzó.",
+   "feedback": [
+    "Molt bé: compensa més amb tipus alts avui, comissions baixes i diners que no necessitaràs.",
+    "En pagarà: tot el que rescati tributa com a rendiment del treball.",
+    "Amb un tipus baix l'avantatge fiscal és petit, i els diners queden bloquejats dècades pagant un 1,5 % l'any."
+   ]
+  },
+  "u11l4-7": {
+   "prompt": "Quan rescates un pla de pensions només pagues impostos pels guanys, no pel que vas aportar.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Tributa tot, aportacions i guanys, perquè les aportacions ja van desgravar."
+  },
+  "u11l4-8": {
+   "prompt": "Les aportacions a un pla de pensions redueixen la base imposable de l'IRPF.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Amb el límit de 1.500 € l'any en un pla individual."
+  },
+  "u11l4-9": {
+   "prompt": "Ordena la vida d'un pla de pensions.",
+   "options": [
+    "Els diners s'inverteixen durant anys sense tributar",
+    "Arriba la jubilació o un altre supòsit de rescat",
+    "Rescates i tributa com a rendiment del treball",
+    "Aportes i redueixes el teu IRPF aquell any"
+   ],
+   "explanation": "Desgraves en entrar, els diners creixen sense tributar i pagues en sortir."
+  },
+  "u11l4-10": {
+   "prompt": "Avantatge o inconvenient del pla de pensions?",
+   "options": [
+    "En rescatar-lo tributa tot com a rendiment del treball",
+    "Els guanys no tributen mentre continua invertit",
+    "Comissions altes en molts plans bancaris",
+    "Redueix l'IRPF de l'any en què aportes",
+    "Diners bloquejats durant anys"
+   ],
+   "explanation": "Sospesa les dues columnes abans de decidir; la balança depèn de la teva situació.",
+   "right": [
+    "Avantatge",
+    "Inconvenient"
+   ]
+  },
+  "u11l5-1": {
+   "prompt": "Relaciona cada producte amb el seu tret.",
+   "options": [
+    "Compte remunerat",
+    "Dipòsit a termini",
+    "Fons monetari",
+    "FGD"
+   ],
+   "explanation": "Tres productes per al curt termini i la xarxa de seguretat que en cobreix dos.",
+   "right": [
+    "Diners immobilitzats a un tipus fix",
+    "Cobreix fins a 100.000 € per titular i entitat",
+    "Deute a molt curt termini; es pot traspassar",
+    "Diners disponibles quan vulguis"
+   ]
+  },
+  "u11l5-2": {
+   "prompt": "Tens 6.000 € en un compte al 2 % TAE durant un any. Quant guanyes d'interès brut?",
+   "options": [],
+   "explanation": "6.000 × 2 % = 120 € bruts (després se'n reté un 19 %).",
+   "unit": "€"
+  },
+  "u11l5-3": {
+   "prompt": "Un compte paga un 3 % TAE, però només pels primers 5.000 €; la resta, un 0 %. Tens 8.000 €. Interès brut en un any?",
+   "options": [],
+   "explanation": "5.000 × 3 % = 150 €; els altres 3.000 € no rendeixen res. Sobre 8.000 €, un 1,875 %.",
+   "unit": "€"
+  },
+  "u11l5-4": {
+   "prompt": "Un dipòsit paga un 2,5 % i la inflació és del 2,7 %. Rendibilitat real aproximada abans d'impostos?",
+   "options": [],
+   "explanation": "2,5 − 2,7 = −0,2 %: ni tan sols manté el poder adquisitiu.",
+   "unit": "%"
+  },
+  "u11l5-5": {
+   "prompt": "Quin d'aquests productes NO està cobert pel Fons de Garantia de Dipòsits?",
+   "options": [
+    "Dipòsit a termini",
+    "Fons monetari",
+    "Compte remunerat"
+   ],
+   "explanation": "El FGD cobreix dipòsits; el monetari és un fons d'inversió, amb el patrimoni separat de la gestora."
+  },
+  "u11l5-6": {
+   "prompt": "Cobert pel FGD?",
+   "options": [
+    "Dipòsit a 12 mesos",
+    "Accions d'un banc",
+    "Fons monetari",
+    "Compte corrent",
+    "Compte remunerat"
+   ],
+   "explanation": "El FGD cobreix els diners dipositats en bancs, no les inversions en fons ni en accions.",
+   "right": [
+    "Sí, fins a 100.000 €",
+    "No"
+   ]
+  },
+  "u11l5-7": {
+   "prompt": "En Bruno vol un coixí d'emergència de 6.000 €. Dubta entre un dipòsit a 3 anys amb penalització per cancel·lar-lo, un compte remunerat sense permanència i un ETF d'accions. Què encaixa millor amb un coixí?",
+   "options": [
+    "L'ETF d'accions, que rendeix més a llarg termini",
+    "El compte remunerat sense permanència",
+    "El dipòsit a 3 anys, que paga una mica més"
+   ],
+   "explanation": "Un coixí ha d'estar disponible i no dependre de la borsa.",
+   "feedback": [
+    "En una crisi pot caure un 30 % just quan més el necessiti.",
+    "Molt bé: disponible a l'instant, cobert pel FGD i amb una mica d'interès.",
+    "Si sorgeix una emergència, cancel·lar-lo li costarà la penalització."
+   ]
+  },
+  "u11l5-8": {
+   "prompt": "Ràpid: què mesura la TAE?",
+   "options": [
+    "La comissió del banc",
+    "La rendibilitat anual comparable d'un producte",
+    "La inflació de l'any"
+   ],
+   "explanation": "Permet comparar productes amb terminis i pagaments diferents."
+  },
+  "u11l5-9": {
+   "prompt": "A Espanya, un fons monetari es pot traspassar a un altre fons sense tributar.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "És un fons d'inversió, així que té el règim de traspassos."
+  },
+  "u11l5-10": {
+   "prompt": "Un fons monetari no pot perdre diners mai.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "El seu risc és molt baix, no nul: inverteix en deute que, en casos extrems, pot baixar de preu o no pagar-se."
+  }
+ }
+}

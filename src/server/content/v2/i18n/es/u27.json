@@ -1,0 +1,896 @@
+{
+ "unit": {
+  "title": "Los sesgos que cuestan dinero",
+  "description": "Los atajos mentales que te hacen comprar caro, vender barato y creerte un genio",
+  "section": "Psicología del inversor"
+ },
+ "lessons": {
+  "u27l1": {
+   "title": "Tu cerebro no está hecho para invertir",
+   "steps": [
+    {
+     "title": "Dos formas de pensar",
+     "body": "Daniel Kahneman, premio Nobel de Economía:\n\n• **Sistema 1:** rápido, intuitivo y emocional. Perfecto para esquivar un coche.\n• **Sistema 2:** lento, analítico y costoso. Necesario para calcular una esperanza matemática.\n\nEn bolsa, las decisiones importantes se suelen tomar con el sistema 1: con miedo, prisa o euforia."
+    },
+    {
+     "title": "La brecha del inversor",
+     "body": "Morningstar, 10 años hasta 2025:\n\n• Los fondos de EE. UU. ganaron un **9,9 %** anual.\n• El dinero de sus inversores, que entraba y salía, un **8,7 %**: **1,2 puntos menos** al año.\n• En los fondos más volátiles la brecha fue de −2,1 puntos; en los tranquilos, de −0,4.\n• En los ETF de bitcoin al contado: inversores **−5,8 %** frente a **+8,5 %** del ETF."
+    },
+    {
+     "title": "Lo que te llevas",
+     "body": "El producto puede ser bueno. El problema es el comportamiento: comprar tras las subidas y vender tras las caídas.",
+     "key": "El cerebro huye del peligro y sigue al grupo: en bolsa eso lleva a vender en las caídas y comprar en las euforias.",
+     "tip": "El mayor riesgo de tu cartera suele estar sentado delante de la pantalla."
+    }
+   ]
+  },
+  "u27l2": {
+   "title": "Aversión a la pérdida",
+   "steps": [
+    {
+     "title": "Perder duele el doble",
+     "body": "Kahneman y Tversky (teoría prospectiva, 1979): una pérdida de 100 € duele aproximadamente **el doble** de lo que alegra una ganancia de 100 €.\n\nPor eso rechazamos apuestas que nos convienen y evitamos hacer **realidad** una pérdida vendiendo, aunque la empresa haya empeorado."
+    },
+    {
+     "title": "Sus efectos",
+     "body": "• Cuando perdemos, nos volvemos **más arriesgados**: «doblo para recuperar».\n• Cuando ganamos, **más conservadores**: vendemos rápido para asegurar.\n• Si miramos la cartera muy a menudo, la vemos más veces en pérdidas y sufrimos más: Benartzi y Thaler lo llamaron **aversión miope a la pérdida**."
+    },
+    {
+     "title": "Cómo protegerte",
+     "body": "Decide el stop antes de entrar, en calma. Y hazte la pregunta correcta: no «¿cuánto he perdido?», sino **«si no la tuviera, ¿la compraría hoy a este precio?»**.",
+     "key": "Perder duele más del doble de lo que alegra ganar: por eso nos aferramos a lo que pierde.",
+     "tip": "Al mercado le da igual a cuánto compraste. Decide con lo que sabes hoy."
+    }
+   ]
+  },
+  "u27l3": {
+   "title": "El efecto disposición",
+   "steps": [
+    {
+     "title": "Qué es",
+     "body": "La tendencia a **vender pronto lo que gana** y **mantener demasiado lo que pierde**.\n\nShefrin y Statman le pusieron nombre en 1985. Odean (1998) lo midió en miles de cuentas: los inversores vendían mucho antes las acciones ganadoras que las perdedoras."
+    },
+    {
+     "title": "Lo peor",
+     "body": "Las ganadoras que vendieron siguieron rindiendo, de media, **mejor** que las perdedoras que conservaron.\n\nEs justo lo contrario del consejo clásico: **«corta las pérdidas y deja correr las ganancias»**. En R: cortar ganancias en +0,5R y dejar correr pérdidas hasta −2R hunde la esperanza de cualquier sistema."
+    },
+    {
+     "title": "Cómo protegerte",
+     "body": "Stop y plan de salida **antes** de entrar. Si la operación va a favor, la salida la decide el plan (por ejemplo, mitad en 2R y el resto con stop dinámico), no el miedo a devolver lo ganado.",
+     "key": "Vendemos lo que gana por alegría rápida y aguantamos lo que pierde por no aceptar el error.",
+     "tip": "Corta las pérdidas y deja correr las ganancias. Tu cerebro te pedirá lo contrario."
+    }
+   ]
+  },
+  "u27l4": {
+   "title": "FOMO y efecto rebaño",
+   "steps": [
+    {
+     "title": "El miedo a quedarse fuera",
+     "body": "El **FOMO** aparece cuando algo sube mucho y todo el mundo parece ganar dinero. Es el motor de las burbujas: las puntocom en 1999, las criptos en 2017 y 2021, las *meme stocks* en 2021.\n\nEl **efecto rebaño** es seguir a la multitud. Pero cuando **todos** ya han comprado, no queda nadie para seguir empujando."
+    },
+    {
+     "title": "Señales de alarma",
+     "body": "• Te enteras por amigos o redes que nunca habían invertido.\n• La razón es «**sube mucho**», no qué hace el activo.\n• Sientes **urgencia**: «si no compro hoy, me lo pierdo».\n• Se dice que «**esta vez es diferente**»."
+    },
+    {
+     "title": "Cómo protegerte",
+     "body": "• **Regla de las 48 horas:** toda compra fuera de tu plan espera dos días.\n• **Límite de especulación** escrito en tu plan.\n• Pregúntate: **«¿Lo compraría si nadie hablara de ello?»**",
+     "key": "Cuando todo el mundo habla de algo que «solo sube», el riesgo suele ser máximo.",
+     "tip": "Si tu peluquero te recomienda una criptomoneda, quizá ya es tarde."
+    }
+   ]
+  },
+  "u27l5": {
+   "title": "Exceso de confianza",
+   "steps": [
+    {
+     "title": "Creemos saber más de lo que sabemos",
+     "body": "• Barber y Odean (2000): el 20 % de hogares que más operaba ganó un **11,4 %** anual frente al **17,9 %** del mercado.\n• En otro estudio (2001), los hombres operaban un **45 % más** que las mujeres y reducían más su rentabilidad neta.\n\nLa causa principal: el exceso de confianza."
+    },
+    {
+     "title": "Suerte o habilidad",
+     "body": "Unas cuantas operaciones ganadoras al principio son lo más peligroso que le puede pasar a un principiante: **confunde suerte con habilidad**, sube el riesgo y se salta las reglas.\n\nAcertar 4 de 4 lanzando una moneda pasa un 6,25 % de las veces: entre mucha gente, siempre habrá «genios»."
+    },
+    {
+     "title": "Pruébalo tú",
+     "body": "Ahora vas a intentar adivinar cuatro gráficos reales. Sea cual sea tu resultado, recuerda: con tan pocos intentos, el resultado dice casi nada de tu habilidad.",
+     "key": "Acertar dos o tres veces no te hace experto: con pocas operaciones, manda la suerte.",
+     "tip": "Mide tus resultados en el diario y compáralos con un índice. Tu memoria siempre te da la razón."
+    }
+   ]
+  },
+  "u27l6": {
+   "title": "Anclaje y confirmación",
+   "steps": [
+    {
+     "title": "Anclaje",
+     "body": "Fijarse en un número de referencia irrelevante: «Estaba a 100 € y ahora a 60 €: está barata».\n\nEl precio pasado no dice nada del valor actual. Y un pariente cercano: el **coste hundido**: «Ya he perdido 3.000 €, no puedo vender ahora». Lo perdido no vuelve: decide desde hoy."
+    },
+    {
+     "title": "Sesgo de confirmación",
+     "body": "Una vez compras, lees solo las noticias positivas, sigues a quien opina igual y descartas las críticas. Cuando llegan las señales de alarma, no las ves.\n\nAntídotos: escribe **tres motivos por los que podrías equivocarte** y busca a propósito la **opinión contraria**."
+    },
+    {
+     "title": "Lo que te llevas",
+     "body": "Valora con datos de hoy (beneficios, deuda, negocio), no con el precio al que compraste o al que estuvo.",
+     "key": "Que algo haya caído mucho no lo hace barato. Que te den la razón no te hace acertar.",
+     "tip": "Si solo lees a quien te da la razón, no estás analizando: te estás animando."
+    }
+   ]
+  },
+  "u27l7": {
+   "title": "Recencia y supervivencia",
+   "steps": [
+    {
+     "title": "Recencia",
+     "body": "Dar más peso a lo último que ha pasado. Tras dos años de subidas, creer que la bolsa «siempre sube»; tras una caída, que «siempre bajará».\n\nAntídoto: mirar **datos de décadas**, no de meses. El Nikkei japonés tardó 34 años en recuperar su máximo de 1989; el S&P 500 se recuperó en meses tras el covid."
+    },
+    {
+     "title": "Sesgo de supervivencia",
+     "body": "Ver solo a los que sobrevivieron. Los fondos que cierran desaparecen de las estadísticas; los traders que lo pierden todo no suben vídeos.\n\nBessembinder: desde 1926, solo un **4 %** de las acciones de EE. UU. explicó toda la ganancia neta del mercado, y **más de la mitad** rindió menos que las letras del Tesoro."
+    },
+    {
+     "title": "Lo que te llevas",
+     "body": "Las historias de éxito que ves son una muestra con trampa: no ves a los miles que hicieron lo mismo y fracasaron.",
+     "key": "Lo reciente y lo visible no son toda la historia.",
+     "tip": "Antes de copiar a un ganador, pregunta cuántos hicieron lo mismo y perdieron."
+    }
+   ]
+  },
+  "u27r": {
+   "title": "Repaso de la unidad",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u27l1-1": {
+   "prompt": "Según Morningstar, ¿cuánto ganó de menos al año el inversor medio frente a sus propios fondos en los 10 años hasta 2025?",
+   "options": [
+    "Nada",
+    "Alrededor de 1,2 puntos",
+    "Unos 10 puntos"
+   ],
+   "explanation": "9,9 % de los fondos frente a 8,7 % de sus inversores, por comprar y vender en mal momento."
+  },
+  "u27l1-2": {
+   "prompt": "¿Qué sistema está decidiendo?",
+   "options": [
+    "Calcular la esperanza de tu sistema con el diario",
+    "Revisar tu plan antes de operar",
+    "Comprar porque todo el mundo habla de ello",
+    "Vender todo tras leer un titular alarmante",
+    "Esquivar un patinete que viene de frente"
+   ],
+   "explanation": "El sistema 1 es útil para sobrevivir; para invertir conviene obligarse a usar el 2.",
+   "right": [
+    "Sistema 1 (rápido y emocional)",
+    "Sistema 2 (lento y analítico)"
+   ]
+  },
+  "u27l1-3": {
+   "prompt": "El sistema 1 de Kahneman es lento y analítico.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Es el rápido, intuitivo y emocional. El lento y analítico es el sistema 2."
+  },
+  "u27l1-4": {
+   "prompt": "Imagina 10.000 € durante 10 años al 9,9 % anual (el fondo) o al 8,7 % (sus inversores). ¿Cuánta diferencia hay al final? (redondea a euros)",
+   "options": [],
+   "explanation": "10.000 × 1,099¹⁰ ≈ 25.703 € frente a 10.000 × 1,087¹⁰ ≈ 23.030 €: unos 2.673 € perdidos solo por el comportamiento.",
+   "unit": "€"
+  },
+  "u27l1-5": {
+   "prompt": "Un lunes lees: «Las bolsas se desploman un 4 %». Tienes un fondo indexado para dentro de 20 años y el corazón a mil. ¿Qué haces?",
+   "options": [
+    "Compro mucho más con todo mi colchón",
+    "Vendo ya, antes de que caiga más",
+    "Respiro, releo mi plan y no toco nada hoy"
+   ],
+   "explanation": "Las decisiones importantes, nunca con el corazón a mil.",
+   "feedback": [
+    "Reaccionar con el colchón también es decidir en caliente.",
+    "Es el sistema 1 al mando. Así se fabrica la brecha del inversor: vender después de caer.",
+    "Bien: le das tiempo al sistema 2. Un día malo no cambia un plan a 20 años."
+   ]
+  },
+  "u27l1-6": {
+   "prompt": "En los ETF de bitcoin al contado, ¿qué obtuvieron los inversores frente al propio ETF?",
+   "options": [
+    "Exactamente lo mismo",
+    "Bastante más que el ETF",
+    "Mucho menos: alrededor de −5,8 % frente a +8,5 %"
+   ],
+   "explanation": "Compraron en los picos y vendieron en las caídas."
+  },
+  "u27l1-7": {
+   "prompt": "Rápido: ¿dónde fue mayor la brecha del inversor?",
+   "options": [
+    "En los más tranquilos",
+    "En los fondos más volátiles",
+    "Fue igual en todos"
+   ],
+   "explanation": "−2,1 puntos en los más volátiles frente a −0,4 en los tranquilos: más sustos, más errores."
+  },
+  "u27l1-8": {
+   "prompt": "¿Qué suele poner al sistema 1 a decidir? Marca todas.",
+   "options": [
+    "La prisa",
+    "La euforia",
+    "Una lista de comprobación escrita",
+    "El miedo"
+   ],
+   "explanation": "Una lista escrita obliga a pensar despacio: es una herramienta del sistema 2."
+  },
+  "u27l1-9": {
+   "prompt": "El problema de la brecha no es el producto, sino el ____ del inversor.",
+   "options": [
+    "bróker",
+    "país",
+    "sueldo",
+    "comportamiento"
+   ],
+   "explanation": "El mismo fondo da resultados distintos según cómo entras y sales."
+  },
+  "u27l1-10": {
+   "prompt": "¿Qué le explicas a Lumi?",
+   "options": [
+    "Probablemente entraste y saliste en mal momento: es la brecha del inversor",
+    "Seguro que es una estafa",
+    "Los fondos siempre mienten en sus datos"
+   ],
+   "explanation": "Tu rentabilidad depende del fondo y de cuándo entras y sales.",
+   "feedback": [
+    "Ups… Compré cuando estaba en máximos y vendí en el susto de marzo. Touché.",
+    "Puede que no: si entraste tras las subidas y saliste en las caídas, la diferencia es tuya.",
+    "Los datos de rentabilidad del fondo son reales; lo que cambia es cuándo estuviste dentro."
+   ],
+   "lines": [
+    "Mi fondo ha ganado un 10 % al año… ¡pero yo mucho menos! 🤨",
+    "¿Me están robando?"
+   ]
+  },
+  "u27l2-1": {
+   "prompt": "Según la teoría prospectiva, una pérdida de 100 € duele aproximadamente…",
+   "options": [
+    "Lo mismo que alegra ganar 100 €",
+    "La mitad",
+    "El doble de lo que alegra ganar 100 €"
+   ],
+   "explanation": "Kahneman y Tversky, 1979."
+  },
+  "u27l2-2": {
+   "prompt": "Te ofrecen lanzar una moneda: si sale cara ganas 150 €, si sale cruz pierdes 100 €. ¿Cuál es la ganancia esperada por tirada?",
+   "options": [],
+   "explanation": "0,5 × 150 − 0,5 × 100 = 75 − 50 = +25 €.",
+   "unit": "€"
+  },
+  "u27l2-3": {
+   "prompt": "Con esa misma moneda (cara +150 €, cruz −100 €), la mayoría de la gente dice que no. ¿Por qué?",
+   "options": [
+    "Porque las monedas están trucadas",
+    "Porque la apuesta pierde dinero de media",
+    "Porque perder 100 € duele más que lo que alegra ganar 150 €"
+   ],
+   "explanation": "La aversión a la pérdida nos hace rechazar decisiones con esperanza positiva.",
+   "feedback": [
+    "Es una moneda justa: la explicación está en nuestra cabeza.",
+    "De media gana 25 € por tirada: las cuentas no son el problema.",
+    "Exacto: la aversión a la pérdida pesa más que la esperanza positiva."
+   ]
+  },
+  "u27l2-4": {
+   "prompt": "Si una pérdida duele el doble que una ganancia del mismo tamaño, ¿cuánto tendrías que ganar para compensar emocionalmente una pérdida de 100 €?",
+   "options": [],
+   "explanation": "100 € × 2 = 200 €: por eso muchos solo aceptan apuestas con ganancias del doble.",
+   "unit": "€"
+  },
+  "u27l2-5": {
+   "prompt": "La aversión a la pérdida nos hace más arriesgados cuando vamos perdiendo.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Es el «doblo para recuperar»: aceptamos más riesgo para no hacer realidad la pérdida."
+  },
+  "u27l2-6": {
+   "prompt": "Marta tiene una acción que cae un 30 %. La empresa ha recortado previsiones y perdido su mayor cliente. Dice: «No vendo hasta recuperar». ¿Qué pregunta debería hacerse?",
+   "options": [
+    "¿Qué dicen en el foro?",
+    "Si no la tuviera, ¿la compraría hoy a este precio sabiendo lo que sé?",
+    "¿Cuánto he perdido ya?"
+   ],
+   "explanation": "La decisión correcta mira al futuro del negocio, no a tu precio de compra.",
+   "feedback": [
+    "Buscar ánimos no cambia el negocio de la empresa.",
+    "Bien: así decide con la información de hoy, no con su precio de compra.",
+    "Mirar lo perdido solo alimenta la aversión a la pérdida."
+   ]
+  },
+  "u27l2-7": {
+   "prompt": "Rápido: ¿qué hábito empeora la aversión miope a la pérdida?",
+   "options": [
+    "Mirar la cartera de largo plazo varias veces al día",
+    "Revisarla una vez al trimestre",
+    "Automatizar las aportaciones"
+   ],
+   "explanation": "Cuanto más a menudo miras, más veces la ves en rojo y más ganas tienes de tocarla."
+  },
+  "u27l2-8": {
+   "prompt": "La pregunta clave: «Si no la tuviera, ¿la ____ hoy a este precio?».",
+   "options": [
+    "vendería",
+    "olvidaría",
+    "regalaría",
+    "compraría"
+   ],
+   "explanation": "Separa la decisión de tu precio de compra."
+  },
+  "u27l2-9": {
+   "prompt": "¿Decisión por aversión a la pérdida o decisión con criterio?",
+   "options": [
+    "Salgo porque saltó el stop que decidí antes",
+    "Rechazo una apuesta con esperanza positiva por miedo a perder",
+    "Doblo la posición para recuperar antes",
+    "No vendo hasta recuperar lo que pagué",
+    "Vendo porque el negocio ha empeorado"
+   ],
+   "explanation": "Las decisiones con criterio miran al plan y al negocio; las otras, al dolor de perder.",
+   "right": [
+    "Aversión a la pérdida",
+    "Con criterio"
+   ]
+  },
+  "u27l2-10": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Equivocarse es normal; lo importante es decidir con lo que sabes hoy",
+    "Compra más para bajar el precio medio",
+    "Bien hecho, aguanta hasta que vuelva"
+   ],
+   "explanation": "Aceptar una pérdida pequeña a tiempo es parte del juego, no un fracaso.",
+   "feedback": [
+    "Tienes razón: el mercado no sabe a cuánto compré. Voy a revisar el negocio, no mi orgullo.",
+    "Promediar a la baja sin revisar el negocio es meter más dinero en el mismo error.",
+    "A veces no vuelve. Y mientras esperas, ese dinero podría estar en algo mejor."
+   ],
+   "lines": [
+    "No pienso vender esa acción en pérdidas 😤",
+    "Vender sería reconocer que me equivoqué."
+   ]
+  },
+  "u27l3-1": {
+   "prompt": "¿Qué es el efecto disposición?",
+   "options": [
+    "Repartir el dinero entre muchos activos",
+    "Vender pronto lo que gana y mantener demasiado lo que pierde",
+    "Comprar siempre lo que más sube"
+   ],
+   "explanation": "Lo midió Odean en 1998 en miles de cuentas."
+  },
+  "u27l3-2": {
+   "prompt": "Compras al último precio con una cuenta de 10.000 € y un riesgo máximo del 1 %. Fija ahora el stop, en calma, antes de que el precio se mueva.",
+   "options": [],
+   "explanation": "Decidir el stop antes de entrar evita que, si el precio cae, la aversión a la pérdida te convenza de aguantar «hasta que vuelva»."
+  },
+  "u27l3-3": {
+   "prompt": "Otra compra con 10.000 € y un 1 % de riesgo. Elige stop e importe, y piensa: si va a favor, ¿saldrías por miedo o según tu plan?",
+   "options": [],
+   "explanation": "Si la operación va a favor, la salida la decide el plan, no las ganas de asegurar una ganancia pequeña."
+  },
+  "u27l3-4": {
+   "prompt": "Laura necesita 2.000 €. Tiene la acción A con un +20 % y la acción B con un −20 % (la empresa B acaba de presentar malos resultados). ¿Qué hace la mayoría y qué tendría sentido?",
+   "options": [
+    "Vender A porque está en ganancias",
+    "Decidir por el futuro de cada negocio, no por si está en verde o en rojo",
+    "Vender las dos y no invertir más"
+   ],
+   "explanation": "Lo que importa es qué esperas de cada activo, no tu precio de compra.",
+   "feedback": [
+    "Es lo que hace casi todo el mundo: el efecto disposición. Se queda con la que empeora.",
+    "Bien: si B ha empeorado y A no, lo lógico puede ser justo lo contrario de lo que pide el cuerpo.",
+    "Huir de todo no corrige el sesgo: solo lo cambia por otro."
+   ]
+  },
+  "u27l3-5": {
+   "prompt": "Según Odean, las acciones ganadoras que los inversores vendieron rindieron después peor que las perdedoras que conservaron.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Fue al revés: las ganadoras vendidas siguieron rindiendo mejor de media."
+  },
+  "u27l3-6": {
+   "prompt": "Un sistema acierta el 60 %, pero por miedo cierras las ganancias en +0,5R y dejas correr las pérdidas hasta −2R. ¿Cuál es tu esperanza?",
+   "options": [],
+   "explanation": "0,6 × 0,5 − 0,4 × 2 = 0,3 − 0,8 = −0,5R. El efecto disposición convierte un buen acierto en pérdidas.",
+   "unit": "R"
+  },
+  "u27l3-7": {
+   "prompt": "¿Es efecto disposición o es seguir el plan?",
+   "options": [
+    "Quitar el stop porque «ya casi está»",
+    "Vender la mitad en 2R, como dice el plan",
+    "Salir porque saltó el stop decidido antes de entrar",
+    "Vender al +5 % por miedo a perderlo",
+    "Mantener una acción al −40 % «hasta que vuelva»"
+   ],
+   "explanation": "La diferencia está en quién decide: el plan escrito en calma o la emoción del momento.",
+   "right": [
+    "Efecto disposición",
+    "Seguir el plan"
+   ]
+  },
+  "u27l3-8": {
+   "prompt": "El consejo clásico: corta las pérdidas y deja correr las ____.",
+   "options": [
+    "comisiones",
+    "noticias",
+    "pérdidas",
+    "ganancias"
+   ],
+   "explanation": "El efecto disposición hace justo lo contrario."
+  },
+  "u27l3-9": {
+   "prompt": "Vender siempre lo que va en verde y aguantar lo que va en rojo es una buena forma de gestionar una cartera.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Es el efecto disposición: cortas lo que funciona y alimentas lo que no."
+  },
+  "u27l3-10": {
+   "prompt": "¿Qué le dices a Lumi?",
+   "options": [
+    "Sí, asegura, nunca se sabe",
+    "¿Qué decía tu plan de salida antes de entrar?",
+    "Compra más con todo lo que tengas"
+   ],
+   "explanation": "La salida se decide antes de entrar, no al ver el primer verde.",
+   "feedback": [
+    "Puede salir bien hoy, pero si lo haces siempre, cortas tus mejores operaciones.",
+    "Mmm… Decía mitad en 2R y el resto con stop dinámico. Vale, sigo el plan.",
+    "Pasar del miedo a la euforia en un minuto tampoco es un plan."
+   ],
+   "lines": [
+    "¡Mi acción ha subido un 6 %! 🎉",
+    "La vendo ya, que luego baja."
+   ]
+  },
+  "u27l4-1": {
+   "prompt": "Marca los mensajes que intentan activar tu FOMO para venderte algo o engañarte.",
+   "options": [
+    "Recordatorio: tu aportación periódica de 100 € se ejecutará el día 5.",
+    "Todo el mundo está ganando con esta acción. Mete los ahorros, no lo pienses.",
+    "Solo quedan 3 plazas en mi grupo de señales. Esta vez es diferente, no te quedes fuera.",
+    "Consulta si una entidad está autorizada antes de invertir con ella.",
+    "🚀 Esta cripto ha subido un 300 % en un mes. Mañana será tarde. ¡Entra YA!"
+   ],
+   "explanation": "Urgencia, «esta vez es diferente» y «todo el mundo gana» son las señales clásicas del FOMO.",
+   "senders": [
+    "Tu bróker",
+    "Tu primo",
+    "Influencer",
+    "CNMV",
+    "Grupo «Lambo 2030»"
+   ]
+  },
+  "u27l4-2": {
+   "prompt": "Noviembre de 2021: bitcoin está en máximos, sale en todos los telediarios y tus amigos que nunca habían invertido están comprando. ¿Qué hizo después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Bitcoin cayó cerca de un 75 % en el año siguiente. El momento de máxima euforia suele ser el de máximo riesgo. Recuerda: en cripto puede perderse la totalidad de lo invertido.",
+   "horizon": "el año siguiente"
+  },
+  "u27l4-3": {
+   "prompt": "Este activo ha subido con fuerza y en redes todo el mundo habla de él. ¿Sube o baja en las sesiones siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Ni la euforia en redes ni las subidas anteriores te dicen qué viene. Por eso existe la regla de las 48 horas.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u27l4-4": {
+   "prompt": "Un amigo te escribe: «Esta acción ha subido un 200 % en dos semanas. Todos en el grupo están dentro. ¡Entra hoy!». No está en tu plan. ¿Qué haces?",
+   "options": [
+    "Pido un préstamo para entrar fuerte",
+    "Compro ya, antes de que suba más",
+    "Aplico la regla de las 48 horas y me pregunto si la compraría si nadie hablara de ella"
+   ],
+   "explanation": "La urgencia es el combustible del FOMO: quitarle tiempo a la decisión es su antídoto.",
+   "feedback": [
+    "Deuda + FOMO es la receta clásica de las peores pérdidas.",
+    "Estás comprando por FOMO: sin saber qué hace la empresa y después de una subida enorme.",
+    "Bien: si en dos días sigue teniendo sentido y cabe en tu límite de especulación, lo decides con calma."
+   ]
+  },
+  "u27l4-5": {
+   "prompt": "¿Qué regla ayuda contra el FOMO?",
+   "options": [
+    "Doblar la posición si sigue subiendo",
+    "Comprar enseguida para no perder la subida",
+    "Esperar 48 horas cualquier compra que no esté en tu plan"
+   ],
+   "explanation": "Dos días bastan para que se pase la urgencia."
+  },
+  "u27l4-6": {
+   "prompt": "¿Cuáles son señales de alarma de una burbuja? Marca todas.",
+   "options": [
+    "La única razón es que sube mucho",
+    "Beneficios crecientes y estables durante años",
+    "Gente sin experiencia recomendándolo",
+    "«Esta vez es diferente»"
+   ],
+   "explanation": "Unos beneficios estables no son señal de burbuja: lo son la euforia y la falta de motivos."
+  },
+  "u27l4-7": {
+   "prompt": "Cuando ya todo el mundo ha comprado algo, suele quedarle mucho recorrido al alza.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Si todos han comprado ya, no queda nadie para seguir empujando el precio."
+  },
+  "u27l4-8": {
+   "prompt": "Rápido: ¿qué pregunta te protege del efecto rebaño?",
+   "options": [
+    "¿Cuánto ha subido esta semana?",
+    "¿Lo compraría si nadie hablara de ello?",
+    "¿Qué dicen en el foro?"
+   ],
+   "explanation": "Separa el valor de lo que hace la multitud."
+  },
+  "u27l4-9": {
+   "prompt": "Empareja cada burbuja con su época.",
+   "options": [
+    "Puntocom",
+    "Bolsa japonesa",
+    "Meme stocks",
+    "Criptomonedas (dos veces)"
+   ],
+   "explanation": "Cambian los activos; el FOMO es siempre el mismo.",
+   "right": [
+    "1989",
+    "2017 y 2021",
+    "2021",
+    "1999–2000"
+   ]
+  },
+  "u27l4-10": {
+   "prompt": "¿Qué le dices a Lumi?",
+   "options": [
+    "Mete los ahorros de emergencia",
+    "Espera 48 horas y piensa si la comprarías si nadie hablara de ella",
+    "Entra ya, que vuela"
+   ],
+   "explanation": "La prisa es la señal: cuando sientes urgencia, para.",
+   "feedback": [
+    "Eso es lo único que nunca se toca. Y en cripto se puede perder todo lo invertido.",
+    "Vale… Si sigue teniendo sentido en dos días, la meto en mi límite de especulación. Si no, nada.",
+    "Si entro por miedo a quedarme fuera, lo más probable es que compre cerca del techo."
+   ],
+   "lines": [
+    "Todo el mundo en TikTok está ganando con una moneda nueva 🐶",
+    "Si no entro hoy, me lo pierdo."
+   ]
+  },
+  "u27l5-1": {
+   "prompt": "Ronda 1 de 4. Gráfico real, sin nombre ni fecha. ¿Sube o baja en las sesiones siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Un acierto o un fallo suelto no dice nada. Apúntalo y sigue: al final verás qué significa tu marcador.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u27l5-2": {
+   "prompt": "Ronda 2 de 4. ¿Sube o baja?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Dos rondas siguen siendo una muestra minúscula, vayas como vayas.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u27l5-3": {
+   "prompt": "Ronda 3 de 4. ¿Sube o baja?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Si llevas tres aciertos, cuidado con sentirte un genio; si llevas tres fallos, tampoco eres un desastre. Es ruido.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u27l5-4": {
+   "prompt": "Ronda 4 de 4. ¿Sube o baja?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Con cuatro intentos, acertarlos todos al azar pasa más de una vez de cada veinte. Para saber si tienes ventaja hacen falta muchas operaciones registradas.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u27l5-5": {
+   "prompt": "Si adivinas al azar (50 %), ¿qué probabilidad hay de acertar 4 de 4?",
+   "options": [],
+   "explanation": "0,5⁴ = 0,0625 → 6,25 %. Si 1.000 personas lo intentan, unas 62 acertarán todo sin saber nada.",
+   "unit": "%"
+  },
+  "u27l5-6": {
+   "prompt": "Según Barber y Odean (2000), ¿cuánto ganaba al año el 20 % de hogares que más operaba frente al mercado?",
+   "options": [
+    "Un 25 % frente a un 17,9 % del mercado",
+    "Un 11,4 % frente a un 17,9 % del mercado",
+    "Lo mismo que el mercado"
+   ],
+   "explanation": "Operar más, por exceso de confianza, les costó más de 6 puntos al año."
+  },
+  "u27l5-7": {
+   "prompt": "Rápido: según Barber y Odean (2001), ¿cuánto más operaban los hombres que las mujeres?",
+   "options": [
+    "La mitad",
+    "Lo mismo",
+    "Un 45 % más"
+   ],
+   "explanation": "Y su rentabilidad neta se reducía más que la de ellas."
+  },
+  "u27l5-8": {
+   "prompt": "Ganar tus primeras operaciones demuestra que tienes habilidad.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Con pocas operaciones, la suerte pesa muchísimo. Es justo cuando más peligro hay de subir el riesgo."
+  },
+  "u27l5-9": {
+   "prompt": "Bruno ha acertado 3 operaciones seguidas en el simulador. Quiere triplicar el tamaño «porque ya le ha pillado el truco». ¿Qué le pasa?",
+   "options": [
+    "Exceso de confianza: debería mantener el mismo riesgo y seguir registrando",
+    "Debería dejar de usar stops",
+    "Nada, tres seguidas prueban que sabe"
+   ],
+   "explanation": "Tras varias ganancias, la regla es la misma: el riesgo por operación no se toca.",
+   "feedback": [
+    "Bien: el riesgo por operación no cambia porque vayas ganando.",
+    "Las rachas buenas no eliminan el riesgo; solo lo esconden.",
+    "Tres aciertos seguidos al azar pasan una de cada ocho veces. No prueban nada."
+   ]
+  },
+  "u27l5-10": {
+   "prompt": "¿Qué te protege del exceso de confianza? Marca todas.",
+   "options": [
+    "Escribir tres motivos por los que podrías equivocarte",
+    "Subir el riesgo después de cada acierto",
+    "Compararte con un índice durante varios años",
+    "Medir tus resultados en un diario"
+   ],
+   "explanation": "Subir el riesgo tras acertar es justo lo que hace el exceso de confianza."
+  },
+  "u27l6-1": {
+   "prompt": "Empareja cada sesgo con la frase que lo delata.",
+   "options": [
+    "Anclaje",
+    "Coste hundido",
+    "Confirmación",
+    "Falacia del jugador"
+   ],
+   "explanation": "Cada frase suena razonable… hasta que ves el sesgo detrás.",
+   "right": [
+    "«Solo sigo a quien piensa como yo»",
+    "«Ha bajado siete días, mañana sube seguro»",
+    "«Ya he perdido mucho, no puedo vender ahora»",
+    "«Estaba a 120 €, a 70 € es un chollo»"
+   ]
+  },
+  "u27l6-2": {
+   "prompt": "Empareja cada sesgo con su antídoto.",
+   "options": [
+    "Anclaje",
+    "Coste hundido",
+    "Confirmación",
+    "Falacia del jugador"
+   ],
+   "explanation": "Cada atajo mental tiene una pregunta que lo desmonta.",
+   "right": [
+    "Decidir desde hoy, sin mirar lo perdido",
+    "Recordar que cada día es casi independiente",
+    "Buscar la opinión contraria",
+    "Valorar con datos actuales"
+   ]
+  },
+  "u27l6-3": {
+   "prompt": "«La acción estaba a 120 € y ahora a 70 €: está tirada de precio». ¿Qué sesgo es?",
+   "options": [
+    "FOMO",
+    "Recencia",
+    "Anclaje"
+   ],
+   "explanation": "El 120 € es un ancla: no dice nada del valor actual de la empresa."
+  },
+  "u27l6-4": {
+   "prompt": "Pablo compró a 40 €. Ahora vale 25 € tras malos resultados y un recorte de previsiones. Dice: «No vendo hasta recuperar los 40 €». ¿Qué le pasa?",
+   "options": [
+    "Está anclado en los 40 € (y hay coste hundido y aversión a la pérdida)",
+    "Debería comprar más para bajar el precio medio",
+    "Hace bien: el precio volverá"
+   ],
+   "explanation": "El precio de compra no es información sobre el futuro.",
+   "feedback": [
+    "Exacto. Debería preguntarse: si hoy tuviera 25 € en efectivo, ¿compraría esta acción sabiendo lo que sé?",
+    "Promediar a la baja por anclaje es meter más dinero sin revisar el negocio.",
+    "Puede volver o no; los 40 € solo le importan a él, no al mercado."
+   ]
+  },
+  "u27l6-5": {
+   "prompt": "Ana ha comprado una acción. Desde entonces solo lee foros alcistas y silencia a quien critica la empresa. ¿Qué le recomendarías como hábito?",
+   "options": [
+    "Escribir tres motivos por los que podría equivocarse y leer opiniones contrarias",
+    "Vender inmediatamente",
+    "Seguir así, que da buena energía"
+   ],
+   "explanation": "El sesgo de confirmación se combate buscando a propósito lo que te lleva la contraria.",
+   "feedback": [
+    "Bien: si sus motivos resisten las críticas, mejor. Si no, mejor saberlo ya.",
+    "No hace falta vender: hace falta mirar el otro lado.",
+    "Buena energía y malas decisiones: no verá las señales de alarma."
+   ]
+  },
+  "u27l6-6": {
+   "prompt": "El precio al que compraste una acción influye en lo que hará el mercado.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Al mercado le da igual a cuánto compraste: solo te importa a ti."
+  },
+  "u27l6-7": {
+   "prompt": "Rápido: «Ya he metido 3.000 € en esto, no puedo dejarlo ahora». ¿Qué sesgo es?",
+   "options": [
+    "Coste hundido",
+    "FOMO",
+    "Exceso de confianza"
+   ],
+   "explanation": "Lo invertido no vuelve por seguir: decide desde hoy."
+  },
+  "u27l6-8": {
+   "prompt": "Antes de comprar, escribe tres motivos por los que podrías estar ____.",
+   "options": [
+    "acertando",
+    "tranquilo",
+    "ganando",
+    "equivocado"
+   ],
+   "explanation": "Es el antídoto más sencillo contra el sesgo de confirmación."
+  },
+  "u27l6-9": {
+   "prompt": "Una acción cae de 100 € a 60 €. Si te anclas en los 100 € y esperas a que vuelva, ¿cuánto tiene que subir? (redondea a un decimal)",
+   "options": [],
+   "explanation": "100 ÷ 60 − 1 ≈ 0,667 → +66,7 %. Nada garantiza que lo haga.",
+   "unit": "%"
+  },
+  "u27l6-10": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Barato o caro depende de lo que vale el negocio, no de a cuánto estuvo",
+    "Sí, a mitad de precio siempre es una ganga",
+    "Espera a que caiga otro 50 % y será aún más barata"
+   ],
+   "explanation": "Las rebajas de la bolsa no son como las del súper: el producto también puede haber cambiado.",
+   "feedback": [
+    "Cierto. Primero miro beneficios, deuda y por qué ha caído. El precio antiguo no es una etiqueta.",
+    "No en bolsa: puede haber caído porque el negocio vale la mitad… o menos.",
+    "Eso sigue siendo mirar solo el precio, no el valor."
+   ],
+   "lines": [
+    "Esta acción ha caído un 50 % 😍",
+    "¡Está a mitad de precio, como en rebajas!"
+   ]
+  },
+  "u27l7-1": {
+   "prompt": "Mira solo estos dos meses de un gráfico real. ¿Qué tendencia ves? (Microsoft · cierres cada 3 sesiones · junio–agosto de 2026)",
+   "options": [
+    "Alcista",
+    "Bajista",
+    "Lateral"
+   ],
+   "explanation": "Sube con claridad. La recencia nos lleva a creer que seguirá así siempre; un tramo de dos meses no dice nada de los próximos años."
+  },
+  "u27l7-2": {
+   "prompt": "Así iba el Nikkei japonés hasta noviembre de 1989. Toca el punto más alto. (Nikkei 225 · cierres mensuales · hasta el 30/11/1989)",
+   "options": [],
+   "explanation": "Tras años de subidas, todos creían que seguiría. El máximo de finales de 1989 tardó 34 años en recuperarse."
+  },
+  "u27l7-3": {
+   "prompt": "Septiembre de 1929: la bolsa de EE. UU. lleva años subiendo y «todo el mundo» compra, muchos con dinero prestado. ¿Qué hizo el S&P 500 después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "La caída llegó a más del 80 %. Lo que pasó en los años anteriores no predecía lo que vendría.",
+   "horizon": "los tres años siguientes"
+  },
+  "u27l7-4": {
+   "prompt": "Tras dos años de subidas fuertes, Laura cree que la bolsa «siempre sube» y mete todos sus ahorros. ¿Qué sesgo muestra sobre todo?",
+   "options": [
+    "Coste hundido",
+    "Aversión a la pérdida",
+    "Recencia"
+   ],
+   "explanation": "Da demasiado peso a lo que acaba de pasar (y probablemente hay también exceso de confianza)."
+  },
+  "u27l7-5": {
+   "prompt": "Según Bessembinder, la mayoría de las acciones de EE. UU. desde 1926 rindió más que las letras del Tesoro.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Más de la mitad rindió menos. Solo un 4 % explicó toda la ganancia neta del mercado."
+  },
+  "u27l7-6": {
+   "prompt": "Ves en redes a diez personas que se hicieron ricas con una criptomoneda pequeña. ¿Qué conclusión es correcta?",
+   "options": [
+    "Comprar criptos pequeñas es una forma segura de hacerse rico",
+    "Es sesgo de supervivencia: no veo a los que hicieron lo mismo y lo perdieron todo",
+    "Si diez lo consiguieron, yo también"
+   ],
+   "explanation": "Las historias de éxito son una muestra sesgada: falta el cementerio de los que no lo lograron.",
+   "feedback": [
+    "Solo ves a los que ganaron. Los miles que perdieron no lo publican.",
+    "Bien: los ganadores visibles no dicen nada de tus probabilidades. Y en cripto puede perderse todo.",
+    "Diez ganadores entre cientos de miles no son una probabilidad alta."
+   ]
+  },
+  "u27l7-7": {
+   "prompt": "Tras una caída del 30 %, Marta está convencida de que la bolsa «ya solo puede bajar» y quiere vender su fondo indexado de largo plazo. ¿Qué le dirías?",
+   "options": [
+    "Que mire datos de décadas y relea su plan antes de decidir",
+    "Que espere a que suba un 30 % para volver a comprar",
+    "Tiene razón: lo que cae, sigue cayendo"
+   ],
+   "explanation": "Lo último que ha pasado pesa demasiado en la cabeza: los datos largos lo equilibran.",
+   "feedback": [
+    "Bien: la historia larga incluye muchas caídas seguidas de recuperaciones.",
+    "Vender abajo y recomprar arriba es la forma más cara de invertir.",
+    "Es recencia al revés. Tras las grandes caídas de 2009 o 2020 llegaron fuertes recuperaciones."
+   ]
+  },
+  "u27l7-8": {
+   "prompt": "Rápido: ¿qué es el sesgo de supervivencia?",
+   "options": [
+    "Guardar un colchón de emergencia",
+    "Vender en pánico",
+    "Fijarse solo en los que sobrevivieron y olvidar a los que fracasaron"
+   ],
+   "explanation": "Los fondos cerrados y los traders arruinados no salen en las estadísticas ni en las redes."
+  },
+  "u27l7-9": {
+   "prompt": "¿Dónde puede esconderse el sesgo de supervivencia? Marca todos.",
+   "options": [
+    "Influencers que solo enseñan sus ganancias",
+    "Un índice que incluye a todas las empresas del mercado",
+    "Pruebas de un sistema solo con empresas que existen hoy",
+    "Rankings de fondos que no incluyen los que cerraron"
+   ],
+   "explanation": "Un índice amplio no elige ganadores a posteriori: compra el mercado entero."
+  },
+  "u27l7-10": {
+   "prompt": "¿Recencia o supervivencia?",
+   "options": [
+    "«Mira cuántos se han hecho ricos con esto»",
+    "«Tras esta caída, ya solo puede bajar»",
+    "«Los fondos de esta gestora siempre ganan» (los malos ya cerraron)",
+    "«La bolsa ha subido dos años: siempre sube»"
+   ],
+   "explanation": "Recencia: el pasado reciente pesa demasiado. Supervivencia: solo ves a los que quedaron.",
+   "right": [
+    "Recencia",
+    "Supervivencia"
+   ]
+  }
+ }
+}

@@ -1,5 +1,6 @@
 // API de la app (docs/07-contrato-api.md). Las rutas de mercado y de acceso tienen su propio archivo.
 import type { NextRequest } from 'next/server'
+import { withLocale } from '@/server/locale'
 import { z } from 'zod'
 import { HttpError } from '@/server/game/core'
 import * as admin from '@/server/game/admin'
@@ -148,7 +149,8 @@ async function handle(req: NextRequest, ctx: RouteContext<'/api/[...path]'>) {
       if (text.length > MAX_BODY) return Response.json({ error: { code: 'VALIDATION_ERROR', message: 'Petición demasiado grande' } }, { status: 413 })
       body = text ? JSON.parse(text) : {}
     }
-    const out = await m.r.run(req, m.params, body)
+    // Los textos del curso y del motor salen en el idioma de la pantalla del móvil
+    const out = await withLocale(req.headers.get('x-locale'), () => m.r.run(req, m.params, body))
     return out === undefined ? new Response(null, { status: 204 }) : Response.json(out, { headers: { 'Cache-Control': 'no-store' } })
   } catch (e) {
     if (e instanceof HttpError) return Response.json({ error: { code: e.code, message: e.message } }, { status: e.status })

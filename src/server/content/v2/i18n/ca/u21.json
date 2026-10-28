@@ -1,0 +1,778 @@
+{
+ "unit": {
+  "title": "Suports, resistències i figures",
+  "description": "Zones de preu, línies de tendència, figures chartistes i ruptures falses",
+  "section": "Anàlisi tècnica"
+ },
+ "lessons": {
+  "u21l1": {
+   "title": "Suports i resistències",
+   "steps": [
+    {
+     "title": "Què són",
+     "body": "• **Suport:** zona on les caigudes s’han frenat diverses vegades perquè hi apareixen compradors.\n• **Resistència:** zona on les pujades s’han frenat perquè hi apareixen venedors.\n\nSón la memòria del mercat: qui va comprar a 50 € i ho va veure caure a 40 € voldrà «sortir sense perdre» si torna a 50 €. Els nombres rodons i els màxims històrics també atrauen ordres."
+    },
+    {
+     "title": "Com traçar-los",
+     "body": "1. Millor en diari o setmanal.\n2. Busca zones on el preu hagi girat almenys **2–3 vegades**.\n3. Traça una **zona** (un rectangle estret), no una línia al cèntim.\n4. Més tocs i més volum = més rellevant.\n5. Els nivells antics i llunyans pesen menys."
+    },
+    {
+     "title": "Per a què serveixen",
+     "body": "Et diuen on pot aparèixer compra o venda i, sobretot, on la teva idea deixa de valer: l’stop va a l’altra banda del suport i l’objectiu, abans de la resistència.",
+     "key": "Un suport és on abans van aparèixer compradors; una resistència, on van aparèixer venedors.",
+     "tip": "Traça’ls com a zones, no com a línies al mil·límetre."
+    }
+   ]
+  },
+  "u21l2": {
+   "title": "El canvi de rol",
+   "steps": [
+    {
+     "title": "El canvi de paper",
+     "body": "Quan el preu trenca amb claredat una resistència, aquella zona sol convertir-se en **suport**. I a l’inrevés: un suport trencat sol tornar-se **resistència**.\n\nQui va vendre a la resistència i va veure pujar el preu voldrà recomprar si hi torna; qui va comprar al suport trencat voldrà sortir «sense perdre»."
+    },
+    {
+     "title": "La tornada al nivell",
+     "body": "Després d’una ruptura, el preu sovint torna a **provar** el nivell abans de continuar. Bulkowski en diu *throwback* si la ruptura va ser a l’alça i *pullback* si va ser a la baixa.\n\nEn l’espatlla-cap-espatlla, per exemple, el preu torna a la clavicular el **68 %** de les vegades."
+    },
+    {
+     "title": "Com es fa servir",
+     "body": "Si una resistència trencada aguanta com a suport a la tornada, la ruptura guanya credibilitat. Si el preu torna a entrar a dins amb claredat, la ruptura era falsa i la idea ha fallat.",
+     "key": "Un suport trencat sol tornar-se resistència, i una resistència trencada, suport.",
+     "tip": "El que abans era sostre pot ser el nou terra."
+    }
+   ]
+  },
+  "u21l3": {
+   "title": "Línies de tendència i canals",
+   "steps": [
+    {
+     "title": "Com es traça",
+     "body": "• **Alcista:** uneix almenys **dos mínims creixents**; un tercer toc la confirma.\n• **Baixista:** uneix almenys dos **màxims decreixents**.\n• No la forcis: si ha de travessar diverses espelmes per encaixar, no és bona."
+    },
+    {
+     "title": "Canals i pendent",
+     "body": "Una paral·lela pels màxims d’una tendència alcista forma un **canal**: la part baixa fa de suport i l’alta, de resistència.\n\nLes línies molt verticals es trenquen aviat; les d’uns 30–45 graus solen aguantar més. En gràfics de diversos anys, fes servir escala logarítmica."
+    },
+    {
+     "title": "Trencar la línia",
+     "body": "Trencar una línia de tendència **no** és per si sol un canvi de tendència: pot començar un lateral. Combina-ho amb l’estructura de màxims i mínims.",
+     "key": "Una línia alcista uneix mínims creixents; mentre es respecti, la tendència continua.",
+     "tip": "Si has de forçar la línia perquè toqui els punts, la línia és al teu cap."
+    }
+   ]
+  },
+  "u21l4": {
+   "title": "Espatlla-cap-espatlla",
+   "steps": [
+    {
+     "title": "La figura",
+     "body": "Després d’una **pujada**, tres màxims: el central (el **cap**) més alt que els laterals (les **espatlles**), d’alçada semblant.\n\nLa **línia clavicular** uneix els mínims entre els pics. La figura **es confirma** quan el preu **tanca per sota** de la clavicular. L’**ECE invertit** és la versió alcista, després d’una caiguda."
+    },
+    {
+     "title": "L’objectiu",
+     "body": "Objectiu clàssic: la distància del cap a la clavicular, projectada cap avall des de la ruptura.\n\nExemple: cap a 120 €, clavicular a 100 €. Alçada 20 € → objectiu 80 €. Bulkowski en proposa un de més prudent, amb la meitat de l’alçada → 90 €."
+    },
+    {
+     "title": "El que diuen les dades (Bulkowski)",
+     "body": "• Caiguda mitjana després de la ruptura: **16 %**.\n• Fracassa (no cau ni un 5 %): **19 %**.\n• Torna a la clavicular: **68 %**.\n• Arriba a l’objectiu clàssic: només el **51 %**.",
+     "key": "Sense ruptura de la clavicular, no hi ha figura.",
+     "tip": "Un ECE sense ruptura és només una muntanya amb una forma bonica."
+    }
+   ]
+  },
+  "u21l5": {
+   "title": "Dobles sostres i dobles terres",
+   "steps": [
+    {
+     "title": "M i W",
+     "body": "• **Doble sostre (M):** dos màxims a una alçada semblant, separats per una vall. Es confirma en **trencar el mínim de la vall**.\n• **Doble terra (W):** dos mínims semblants. Es confirma en **superar el màxim intermedi**.\n\nObjectiu clàssic: l’alçada de la figura, projectada des de la ruptura."
+    },
+    {
+     "title": "El gran error",
+     "body": "Dir «doble sostre» a qualsevol parell de màxims **abans** de la ruptura. Molts dobles sostres «en formació» acaben sent simples pauses abans de nous màxims.\n\nSense ruptura de la vall, només tens dos pics."
+    },
+    {
+     "title": "Un exemple",
+     "body": "Doble terra amb mínims a 40 € i màxim intermedi a 50 €. Alçada: 10 €. En superar els 50 € amb un tancament, l’objectiu clàssic és 60 €. Si després torna a tancar clarament per sota de 50 €, la ruptura ha fallat.",
+     "key": "Sense ruptura no hi ha figura.",
+     "tip": "Dos pics no són un doble sostre fins que la vall es trenca."
+    }
+   ]
+  },
+  "u21l6": {
+   "title": "Triangles, banderes i rectangles",
+   "steps": [
+    {
+     "title": "Triangles",
+     "body": "• **Simètric:** màxims més baixos i mínims més alts que convergeixen. Pot trencar cap a qualsevol banda.\n• **Ascendent:** sostre horitzontal i mínims creixents. Sol trencar a l’alça.\n• **Descendent:** terra horitzontal i màxims decreixents. Sol trencar a la baixa.\n\nEl volum sol baixar mentre es forma i pujar a la ruptura."
+    },
+    {
+     "title": "Banderes i rectangles",
+     "body": "• **Bandera:** després d’un moviment fort i ràpid (el **pal**), uns quants dies en un petit rectangle inclinat contra la tendència. Dura **menys de 3 setmanes**. Si és un petit triangle, és una **banderola**.\n• **Rectangle:** rang lateral entre un suport i una resistència clars; la ruptura amb volum sol marcar la direcció."
+    },
+    {
+     "title": "Les dades de les banderes (Bulkowski)",
+     "body": "En mercat alcista, trenquen a l’alça el **60 %** de les vegades; el moviment mitjà després de la ruptura ronda el **9 %**, i **fracassen** (no avancen ni un 5 %) en un **44–45 %** dels casos, aproximadament.",
+     "key": "Les figures de continuació són el mercat agafant aire, tot i que de vegades gira.",
+     "tip": "Una bandera és una pausa per respirar, però gairebé la meitat de les vegades el corredor es queda sense aire."
+    }
+   ]
+  },
+  "u21l7": {
+   "title": "Ruptures falses",
+   "steps": [
+    {
+     "title": "Què és",
+     "body": "Una **ruptura falsa** es produeix quan el preu supera un nivell uns dies… i torna a dins. Qui va comprar la ruptura queda atrapat.\n\nPassa molt: segons Bulkowski, l’ECE fracassa el 19 % de les vegades i les banderes, al voltant del 44 %."
+    },
+    {
+     "title": "Com filtrar-les",
+     "body": "• Espera un **tancament** a l’altra banda, no només una metxa.\n• Demana **volum** superior a la mitjana a la ruptura.\n• Alguns exigeixen que el tancament superi el nivell en un **1–3 %**.\n• Mira si el nivell trencat aguanta a la tornada (canvi de paper)."
+    },
+    {
+     "title": "I si falla, l’stop",
+     "body": "Cap filtre no les elimina totes. Per això l’stop va on la ruptura deixa de tenir sentit: de tornada dins la zona, per sota de l’últim mínim rellevant. I la mida es calcula perquè aquest error costi poc.",
+     "key": "Una ruptura sense tancament ni volum és només una excursió.",
+     "tip": "Abans d’entrar en una ruptura, decideix on reconeixeràs que era falsa."
+    }
+   ]
+  },
+  "u21r": {
+   "title": "Repàs de la unitat",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u21l1-1": {
+   "prompt": "En aquest tram lateral, toca el sostre: el tancament més alt, on van aparèixer venedors (Microsoft · tancaments cada 3 sessions · agost–octubre del 2024)",
+   "options": [],
+   "explanation": "Aquella zona fa de resistència: la pujada s’hi va frenar i el preu va tornar a baixar."
+  },
+  "u21l1-2": {
+   "prompt": "Ara el terra: toca el tancament més baix, on van aparèixer compradors (NVIDIA · tancaments cada 3 sessions · desembre del 2025 – febrer del 2026)",
+   "options": [],
+   "explanation": "Aquella zona va fer de suport: la caiguda es va frenar i el preu va rebotar amb força."
+  },
+  "u21l1-3": {
+   "prompt": "Has comprat a l’últim preu. Col·loca l’stop una mica per sota del suport: el mínim recent.",
+   "options": [],
+   "explanation": "Si el preu perd el suport, la idea de compra deixa de valer. L’stop va una mica per sota, no just a sobre de la línia, perquè una metxa no el faci saltar."
+  },
+  "u21l1-4": {
+   "prompt": "Col·loca ara l’objectiu: a prop de la resistència, el màxim anterior.",
+   "options": [],
+   "explanation": "Al màxim anterior sol aparèixer venda: posar-hi l’objectiu és més realista que esperar que la travessi."
+  },
+  "u21l1-5": {
+   "prompt": "Els suports s’han de traçar com a línies exactes al cèntim.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Són zones on molta gent es posa d’acord, no un preu exacte."
+  },
+  "u21l1-6": {
+   "prompt": "Què fa més rellevant un suport? Marca-ho tot.",
+   "options": [
+    "Que sigui recent",
+    "Que ho digui un anunci a les xarxes",
+    "Que hi hagués molt de volum en aquella zona",
+    "Que el preu hi hagi girat diverses vegades"
+   ],
+   "explanation": "Més tocs, més volum i més proximitat en el temps. Els nivells antics i llunyans pesen menys."
+  },
+  "u21l1-7": {
+   "prompt": "Busca suports i resistències en aquestes 30 espelmes. Puja o baixa en les 10 sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Un suport o una resistència diuen on pot aparèixer compra o venda, no què passarà. Serveixen sobretot per saber on t’has equivocat.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u21l1-8": {
+   "prompt": "En Pablo va comprar a 50 €, l’acció va caure a 40 € i ara torna a 50 €. Molts com ell volen «recuperar el que és seu». Què sol passar en aquesta zona?",
+   "options": [
+    "Sol aparèixer venda: fa de resistència",
+    "El preu puja segur amb força",
+    "Res especial: 50 € és un preu com un altre"
+   ],
+   "explanation": "Les resistències neixen de la memòria dels participants: qui ha perdut vol sortir sense pèrdues.",
+   "feedback": [
+    "Això mateix: la memòria dels qui van comprar a dalt crea oferta en aquest nivell.",
+    "La pot trencar, però el més habitual és que costi: allà hi ha venedors esperant.",
+    "És just on molts compradors atrapats volen sortir: sol aparèixer venda."
+   ]
+  },
+  "u21l1-9": {
+   "prompt": "Ràpid: zona on les caigudes s’han frenat diverses vegades.",
+   "options": [
+    "Resistència",
+    "Clavicular",
+    "Suport"
+   ],
+   "explanation": "És un suport: allà van aparèixer compradors."
+  },
+  "u21l1-10": {
+   "prompt": "Un suport és a la zona dels 20 €. Poses l’stop un 3 % per sota. A quin preu va?",
+   "options": [],
+   "explanation": "20 × 0,97 = 19,40 €. Deixar una mica de marge evita que una simple metxa et tregui.",
+   "unit": "€"
+  },
+  "u21l2-1": {
+   "prompt": "El preu trenca amb força una resistència a 50 € i setmanes després torna a 50 €. Quin paper sol tenir ara aquest nivell?",
+   "options": [
+    "Cap",
+    "Suport",
+    "Resistència una altra vegada"
+   ],
+   "explanation": "És el canvi de paper: l’antic sostre sol fer de terra."
+  },
+  "u21l2-2": {
+   "prompt": "Un suport a 30 € va aguantar un any. Avui el preu tanca a 27 € amb molt de volum. Dies després rebota fins a 30 €. La Laura té accions i espera que «torni a pujar com abans». Què és el més probable a 30 €?",
+   "options": [
+    "Que el nivell ja no importi",
+    "Que el travessi sense problemes",
+    "Que hi trobi venda: l’antic suport pot fer de resistència"
+   ],
+   "explanation": "Un suport trencat amb volum sol convertir-se en resistència.",
+   "feedback": [
+    "Els nivells trencats solen importar encara més: molta gent els recorda.",
+    "Pot passar, però ara allà hi ha venedors: els qui van comprar al suport volen sortir sense perdre.",
+    "Aquest és el canvi de paper. No és segur, però és el que convé vigilar."
+   ]
+  },
+  "u21l2-3": {
+   "prompt": "En Bruno va comprar després de la ruptura d’una resistència a 100 €. El preu puja a 106 € i torna a 101 €. Què fa amb lògica?",
+   "options": [
+    "Compra el triple per fer mitjana",
+    "Ven en pànic: tot s’ha acabat",
+    "Vigila si els 100 € aguanten com a suport; el seu stop ja era per sota d’aquesta zona"
+   ],
+   "explanation": "La tornada al nivell trencat és normal; el que decideix és si aguanta.",
+   "feedback": [
+    "Augmentar sense pla en plena incertesa multiplica el risc.",
+    "Tornar a provar el nivell trencat és molt habitual. Si aguanta per sobre de 100 €, la ruptura continua viva.",
+    "Bé: si l’antic sostre aguanta com a terra, la idea continua; si tanca clarament a dins, la ruptura era falsa."
+   ]
+  },
+  "u21l2-4": {
+   "prompt": "Has comprat a l’últim preu. Col·loca l’stop on la idea deixa de valer: per sota de l’últim mínim rellevant.",
+   "options": [],
+   "explanation": "Per sota del mínim recent, l’estructura que justificava la compra es trenca."
+  },
+  "u21l2-5": {
+   "prompt": "Col·loca l’objectiu al màxim anterior, on abans va aparèixer venda.",
+   "options": [],
+   "explanation": "El màxim anterior és una resistència: és raonable esperar-hi venda i recollir beneficis."
+  },
+  "u21l2-6": {
+   "prompt": "Sense nom ni data. Puja o baixa en les 10 sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Que un nivell canviï de paper és habitual, no segur. Per això cada idea porta un stop a l’altra banda del nivell.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u21l2-7": {
+   "prompt": "Un altre gràfic real. Puja o baixa en les 10 sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Els nivells ajuden a decidir on entrar i on sortir si t’equivoques; no endevinen el resultat.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u21l2-8": {
+   "prompt": "Després d’una ruptura, quin paper sol tenir el nivell?",
+   "options": [
+    "Màxim anual superat amb volum",
+    "Mínim de diversos mesos perdut amb volum",
+    "Suport trencat a la baixa",
+    "Resistència trencada a l’alça"
+   ],
+   "explanation": "El que es trenca cap amunt sol passar a sostenir; el que es trenca cap avall, a frenar.",
+   "right": [
+    "Nou suport",
+    "Nova resistència"
+   ]
+  },
+  "u21l2-9": {
+   "prompt": "Després de trencar un nivell, el preu sovint el torna a provar abans de continuar.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "És molt habitual: en l’ECE, per exemple, torna a la clavicular el 68 % de les vegades."
+  },
+  "u21l2-10": {
+   "prompt": "Quan el preu trenca a l’alça i després torna al nivell trencat, Bulkowski en diu ____.",
+   "options": [
+    "pullback",
+    "squeeze",
+    "gap",
+    "throwback"
+   ],
+   "explanation": "Després d’una ruptura a la baixa, la tornada es diu pullback."
+  },
+  "u21l3-1": {
+   "prompt": "Una línia de tendència alcista uneix…",
+   "options": [
+    "Mínims creixents",
+    "Màxims decreixents",
+    "Tancaments triats a l’atzar"
+   ],
+   "explanation": "Dos mínims creixents la tracen i un tercer toc la confirma."
+  },
+  "u21l3-2": {
+   "prompt": "Fixa’t en els mínims: quina tendència marquen? (Apple · tancaments cada 3 sessions · juliol–setembre del 2025)",
+   "options": [
+    "Alcista",
+    "Baixista",
+    "Lateral"
+   ],
+   "explanation": "Cada mínim queda per sobre de l’anterior: s’hi podria traçar una línia alcista per sota."
+  },
+  "u21l3-3": {
+   "prompt": "Ara fixa’t en els màxims: quina tendència marquen? (Apple · tancaments cada 3 sessions · febrer–abril del 2025)",
+   "options": [
+    "Alcista",
+    "Baixista",
+    "Lateral"
+   ],
+   "explanation": "Els màxims són cada vegada més baixos: una línia baixista els uniria per sobre."
+  },
+  "u21l3-4": {
+   "prompt": "Per traçar la línia baixista cal el punt de partida: toca el tancament més alt (Microsoft · tancaments cada 3 sessions · desembre del 2025 – febrer del 2026)",
+   "options": [],
+   "explanation": "És el primer tancament: des d’allà, cada màxim va ser més baix. La línia baixista uniria aquest pic amb els màxims següents."
+  },
+  "u21l3-5": {
+   "prompt": "En aquesta pujada, toca el tancament més baix: l’inici de la línia alcista (NVIDIA · tancaments cada 3 sessions · març–maig del 2026)",
+   "options": [],
+   "explanation": "Des d’aquest mínim, cada caiguda es va quedar més amunt: és el primer suport de la línia."
+  },
+  "u21l3-6": {
+   "prompt": "Trencar una línia de tendència alcista vol dir sempre que comença una tendència baixista.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Pot començar un lateral. Cal mirar-ho juntament amb l’estructura de màxims i mínims."
+  },
+  "u21l3-7": {
+   "prompt": "Quina escala convé per traçar línies de tendència de diversos anys?",
+   "options": [
+    "Lineal",
+    "Logarítmica"
+   ],
+   "explanation": "En lineal, una tendència exponencial sembla que trenqui la línia quan no ho fa."
+  },
+  "u21l3-8": {
+   "prompt": "Si traces una paral·lela pels màxims d’una tendència alcista, obtens un ____.",
+   "options": [
+    "doji",
+    "buit",
+    "triangle",
+    "canal"
+   ],
+   "explanation": "Dins del canal, la part baixa fa de suport i l’alta, de resistència."
+  },
+  "u21l3-9": {
+   "prompt": "Ràpid: quants mínims creixents calen, com a mínim, per traçar una línia alcista?",
+   "options": [
+    "Dos",
+    "Un",
+    "Cinc"
+   ],
+   "explanation": "Dos la tracen; un tercer toc la confirma."
+  },
+  "u21l3-10": {
+   "prompt": "L’Ana traça una línia de tendència gairebé vertical després d’una pujada del 40 % en tres setmanes. Què li dius?",
+   "options": [
+    "Que esborri la línia i compri més",
+    "Que probablement es trencarà aviat, i que trencar-la no voldrà dir que s’hagi acabat tot",
+    "Perfecte: com més vertical, més forta"
+   ],
+   "explanation": "Pendents de 30–45 graus són més sostenibles; les verticals acaben en correccions brusques.",
+   "feedback": [
+    "Ignorar el risc d’una pujada tan vertical no és un pla.",
+    "Això mateix: una línia tan vertical es trenca fàcilment, i la ruptura pot donar pas només a un lateral.",
+    "Les línies molt verticals solen trencar-se aviat: una pujada així és difícil de sostenir."
+   ]
+  },
+  "u21l4-1": {
+   "prompt": "Ordena com es forma un espatlla-cap-espatlla.",
+   "options": [
+    "Cap, més alt",
+    "Tancament per sota de la clavicular",
+    "Espatlla esquerra",
+    "Pujada prèvia",
+    "Espatlla dreta, més baixa que el cap"
+   ],
+   "explanation": "La figura només existeix quan arriba l’últim pas: la ruptura de la clavicular."
+  },
+  "u21l4-2": {
+   "prompt": "Quan es confirma un espatlla-cap-espatlla?",
+   "options": [
+    "Quan apareix l’espatlla dreta",
+    "Quan tanca per sota de la línia clavicular",
+    "Quan es forma el cap"
+   ],
+   "explanation": "Abans de la ruptura, només és una possibilitat."
+  },
+  "u21l4-3": {
+   "prompt": "Cap a 120 € i clavicular a 100 €. Quin és l’objectiu clàssic després de la ruptura?",
+   "options": [],
+   "explanation": "Alçada: 120 − 100 = 20 €. Projectada des de 100 €: 100 − 20 = 80 €.",
+   "unit": "€"
+  },
+  "u21l4-4": {
+   "prompt": "Cap a 120 € i clavicular a 100 €. Quin és l’objectiu prudent de Bulkowski, amb la meitat de l’alçada?",
+   "options": [],
+   "explanation": "Meitat de l’alçada: 10 €. 100 − 10 = 90 €. Només el 51 % arriba a l’objectiu complet.",
+   "unit": "€"
+  },
+  "u21l4-5": {
+   "prompt": "ECE invertit: cap (el mínim) a 40 € i clavicular a 50 €. Objectiu clàssic després de trencar a l’alça?",
+   "options": [],
+   "explanation": "Alçada de 10 €, projectada cap amunt des de 50 €: 60 €.",
+   "unit": "€"
+  },
+  "u21l4-6": {
+   "prompt": "Abans de buscar espatlles, localitza el cim: toca el tancament més alt d’aquest tram (Apple · tancaments cada 3 sessions · setembre–novembre del 2024)",
+   "options": [],
+   "explanation": "En un ECE, el cap seria aquest pic. Però per parlar de figura caldrien dues espatlles més baixes i, sobretot, la ruptura de la clavicular."
+  },
+  "u21l4-7": {
+   "prompt": "Segons Bulkowski, gairebé tots els ECE arriben al seu objectiu clàssic.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Només el 51 %. Per això proposa un objectiu de la meitat de l’alçada."
+  },
+  "u21l4-8": {
+   "prompt": "Nasdaq 100, març del 2000, després d’anys de pujades fortes. Què creus que va passar després?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Les figures de gir es confirmen amb la ruptura de la seva línia clau, i això només es veu després. Al cim, encara ningú no té aquesta confirmació.",
+   "horizon": "els anys següents"
+  },
+  "u21l4-9": {
+   "prompt": "Ràpid: quina línia uneix els mínims entre el cap i les espatlles?",
+   "options": [
+    "La mitjana de 200",
+    "La de tendència alcista",
+    "La clavicular"
+   ],
+   "explanation": "La línia clavicular: la seva ruptura confirma la figura."
+  },
+  "u21l4-10": {
+   "prompt": "Una acció ha format dues espatlles i un cap, però encara no ha trencat la clavicular. En Pablo vol vendre-ho tot ja «per avançar-se». Què li dius?",
+   "options": [
+    "Que en compri més: la figura és alcista",
+    "Bé: avançar-se sempre surt a compte",
+    "Que la figura no està confirmada fins al tancament per sota de la clavicular"
+   ],
+   "explanation": "Sense ruptura no hi ha figura. Avançar-se és apostar per una cosa que encara no existeix.",
+   "feedback": [
+    "L’ECE (no invertit) és una figura baixista: aquesta idea no té sentit.",
+    "Sense ruptura, la figura no existeix: moltes acaben en nous màxims.",
+    "Això mateix: fins a la ruptura és només una possibilitat. I fins i tot confirmada, fracassa un 19 % de les vegades."
+   ]
+  },
+  "u21l5-1": {
+   "prompt": "Ràpid: forma de M.",
+   "options": [
+    "Doble sostre",
+    "Doble terra",
+    "Triangle"
+   ],
+   "explanation": "Dos màxims semblants amb una vall al mig."
+  },
+  "u21l5-2": {
+   "prompt": "Ràpid: quan es confirma un doble terra?",
+   "options": [
+    "Quan puja el volum",
+    "Quan supera el màxim intermedi",
+    "Quan marca el segon mínim"
+   ],
+   "explanation": "Fins aleshores, només són dos mínims."
+  },
+  "u21l5-3": {
+   "prompt": "Doble terra: mínims a 40 € i màxim intermedi a 50 €. Objectiu clàssic després de superar els 50 €?",
+   "options": [],
+   "explanation": "Alçada: 50 − 40 = 10 €. Projectada des de 50 €: 60 €.",
+   "unit": "€"
+  },
+  "u21l5-4": {
+   "prompt": "Doble sostre: màxims a 80 € i vall a 72 €. Objectiu clàssic després de perdre els 72 €?",
+   "options": [],
+   "explanation": "Alçada: 80 − 72 = 8 €. Projectada cap avall des de 72 €: 64 €.",
+   "unit": "€"
+  },
+  "u21l5-5": {
+   "prompt": "L’Ana veu un doble sostre «gairebé format» i ven abans que el preu trenqui el mínim intermedi. Quin error comet?",
+   "options": [
+    "Cap: s’avança a tothom",
+    "Ven massa tard",
+    "S’avança a una figura sense confirmar"
+   ],
+   "explanation": "Les figures es confirmen amb la ruptura de la seva línia clau, no amb la forma.",
+   "feedback": [
+    "S’avança a una figura que encara no existeix: moltes acaben sent pauses abans de nous màxims.",
+    "Al contrari: ven abans de tenir la confirmació.",
+    "Això mateix: sense ruptura de la vall no hi ha doble sostre, només dos pics."
+   ]
+  },
+  "u21l5-6": {
+   "prompt": "Figura confirmada o només possible?",
+   "options": [
+    "Dos màxims semblants i el preu encara per sobre de la vall",
+    "Dos mínims semblants i un tancament per sobre del màxim intermedi",
+    "Dos mínims semblants i una metxa que toca el màxim intermedi",
+    "Dos màxims semblants i un tancament per sota de la vall"
+   ],
+   "explanation": "Cal un tancament a l’altra banda de la línia clau. Una metxa no n’hi ha prou.",
+   "right": [
+    "Confirmada",
+    "Només possible"
+   ]
+  },
+  "u21l5-7": {
+   "prompt": "Toca el tancament més baix d’aquest tram: en un doble terra, seria un dels dos suports (Apple · tancaments cada 3 sessions · febrer–abril del 2025)",
+   "options": [],
+   "explanation": "Allà van aparèixer compradors i el preu va rebotar. Per parlar de doble terra caldria un segon mínim semblant i superar el màxim intermedi."
+  },
+  "u21l5-8": {
+   "prompt": "Fixa’t en els últims màxims i mínims. Puja o baixa en les 10 sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Una figura a mig formar és només una hipòtesi. Fins que no trenca la seva línia clau, pot acabar cap a qualsevol banda.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u21l5-9": {
+   "prompt": "Un altre gràfic real, sense nom. Puja o baixa en les 10 sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Buscar M i W a cada gràfic és temptador; l’ull troba formes a tot arreu. Per això s’exigeix la ruptura.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u21l5-10": {
+   "prompt": "Un doble sostre es confirma tan bon punt el preu marca el segon màxim.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Es confirma en trencar el mínim de la vall entre els dos màxims."
+  },
+  "u21l6-1": {
+   "prompt": "Relaciona cada figura amb la seva forma.",
+   "options": [
+    "Triangle ascendent",
+    "Triangle descendent",
+    "Triangle simètric",
+    "Rectangle"
+   ],
+   "explanation": "La forma diu qui pressiona: en l’ascendent, els compradors; en el descendent, els venedors.",
+   "right": [
+    "Terra horitzontal i màxims decreixents",
+    "Sostre i terra horitzontals",
+    "Màxims més baixos i mínims més alts",
+    "Sostre horitzontal i mínims creixents"
+   ]
+  },
+  "u21l6-2": {
+   "prompt": "Relaciona cada part amb la seva definició.",
+   "options": [
+    "Pal",
+    "Bandera",
+    "Banderola",
+    "Ruptura"
+   ],
+   "explanation": "Pal, pausa i ruptura: així s’explica una figura de continuació.",
+   "right": [
+    "Petit rectangle inclinat contra la tendència",
+    "Petit triangle després del pal",
+    "Sortida de la figura, millor amb volum",
+    "Moviment fort i ràpid previ"
+   ]
+  },
+  "u21l6-3": {
+   "prompt": "Cap a on sol trencar?",
+   "options": [
+    "Triangle descendent",
+    "Triangle simètric",
+    "Rectangle sense més context",
+    "Triangle ascendent"
+   ],
+   "explanation": "L’ascendent i el descendent tenen biaix; el simètric i el rectangle depenen de la ruptura.",
+   "right": [
+    "Sol trencar a l’alça",
+    "Sol trencar a la baixa",
+    "Cap a qualsevol banda"
+   ]
+  },
+  "u21l6-4": {
+   "prompt": "Un rectangle és un rang lateral. Quina tendència té aquest tram? (Microsoft · tancaments cada 3 sessions · agost–octubre del 2024)",
+   "options": [
+    "Alcista",
+    "Baixista",
+    "Lateral"
+   ],
+   "explanation": "El preu oscil·la entre un sostre i un terra i acaba gairebé on va començar: així es veu un rectangle."
+  },
+  "u21l6-5": {
+   "prompt": "Segons Bulkowski, quin percentatge de banderes fracassa (no avança ni un 5 %) en mercats alcistes?",
+   "options": [
+    "Al voltant del 5 %",
+    "Al voltant del 44 %",
+    "El 90 %"
+   ],
+   "explanation": "Són figures de recorregut curt: gairebé la meitat no arriba ni a un 5 %."
+  },
+  "u21l6-6": {
+   "prompt": "El volum sol baixar mentre es forma un triangle.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "I sol pujar a la ruptura."
+  },
+  "u21l6-7": {
+   "prompt": "Veus alguna pausa després d’un moviment fort? Puja o baixa en les 10 sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Encara que la figura fos de manual, una bandera fracassa gairebé la meitat de les vegades segons Bulkowski. La pausa no diu com acaba.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u21l6-8": {
+   "prompt": "Un altre gràfic, sense nom ni data. Puja o baixa en les 10 sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Les figures de continuació parlen de probabilitats modestes. La decisió real és quant arrisques si fallen.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u21l6-9": {
+   "prompt": "Ràpid: una «bandera» que dura dos mesos…",
+   "options": [
+    "És més aviat un rectangle o un canal",
+    "És un doji",
+    "Continua sent una bandera"
+   ],
+   "explanation": "Les banderes duren menys de 3 setmanes."
+  },
+  "u21l6-10": {
+   "prompt": "Una bandera dura normalment menys de ____ setmanes.",
+   "options": [
+    "10",
+    "26",
+    "52",
+    "3"
+   ],
+   "explanation": "Si dura més, es parla de rectangle o de canal."
+  },
+  "u21l7-1": {
+   "prompt": "Què redueix el risc d’entrar en una ruptura falsa? Marca-ho tot.",
+   "options": [
+    "Exigir que el tancament superi el nivell en un 1–3 %",
+    "Entrar amb la primera metxa que tregui el cap",
+    "Demanar volum superior a la mitjana",
+    "Esperar un tancament a l’altra banda"
+   ],
+   "explanation": "La primera metxa és justament el que atrapa la majoria en les ruptures falses."
+  },
+  "u21l7-2": {
+   "prompt": "Resistència a 100 €. Avui el preu arriba a 101,50 € durant la sessió, però tanca a 99,20 € amb poc volum. La Marta va comprar a 101 € en veure «la ruptura». Què ha passat?",
+   "options": [
+    "Ha comprat una excursió que no s’ha confirmat",
+    "Ha entrat en una ruptura confirmada",
+    "Ha fet el correcte: cal entrar abans que ningú"
+   ],
+   "explanation": "Una ruptura es confirma amb el tancament i el volum, no amb la metxa.",
+   "feedback": [
+    "Això mateix: sense tancament per sobre ni volum, la ruptura no existeix. Si no tenia stop, ara està atrapada.",
+    "No: ha tancat per sota del nivell i sense volum. Ha estat una metxa, no una ruptura.",
+    "Entrar abans de la confirmació és la manera més típica de caure en una ruptura falsa."
+   ]
+  },
+  "u21l7-3": {
+   "prompt": "Una resistència és a 50 €. Exigeixes que el tancament la superi en un 2 % per donar-la per trencada. Per sobre de quin preu ha de tancar?",
+   "options": [],
+   "explanation": "50 × 1,02 = 51 €.",
+   "unit": "€"
+  },
+  "u21l7-4": {
+   "prompt": "Has comprat després d’una ruptura. Col·loca l’stop on la ruptura deixaria de tenir sentit: per sota de l’últim mínim rellevant.",
+   "options": [],
+   "explanation": "Si el preu torna per sota del mínim recent, la ruptura ha fallat i la idea ja no val."
+  },
+  "u21l7-5": {
+   "prompt": "Un altre cas: col·loca l’stop per sota del mínim recent.",
+   "options": [],
+   "explanation": "Just per sota del mínim recent, amb una mica de marge: és allà on reconeixes l’error."
+  },
+  "u21l7-6": {
+   "prompt": "Tens 10.000 € i, si la ruptura resulta falsa, vols perdre com a màxim un 1 %. Tria l’stop i l’import.",
+   "options": [],
+   "explanation": "Primer l’stop (on falla la ruptura) i després l’import: amb 100 € de risc màxim, com més lluny és l’stop, menys accions pots comprar."
+  },
+  "u21l7-7": {
+   "prompt": "Un altre gràfic real, sense nom ni data. Puja o baixa en les 10 sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Ni tan sols les ruptures amb volum garanteixen res. El que sí que pots controlar és on surts si fallen i quant perds.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u21l7-8": {
+   "prompt": "Si el preu supera una resistència només amb la metxa i tanca per sota, la ruptura està confirmada.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Una metxa no confirma res: cal un tancament a l’altra banda, millor amb volum."
+  },
+  "u21l7-9": {
+   "prompt": "Ràpid: què confirma millor una ruptura?",
+   "options": [
+    "Un comentari en un fòrum",
+    "Una metxa a l’altra banda",
+    "Un tancament a l’altra banda amb volum alt"
+   ],
+   "explanation": "Tancament més volum: molta gent darrere del moviment."
+  },
+  "u21l7-10": {
+   "prompt": "Què li contestes?",
+   "options": [
+    "Si tanca clarament a dins i toca el teu stop, la idea ha fallat: se surt i s’aprèn",
+    "Compra’n més per abaixar el preu mitjà",
+    "Sí, aguanta el que calgui"
+   ],
+   "explanation": "Les ruptures falses formen part del joc: l’stop decideix quant costen.",
+   "feedback": [
+    "Això mateix! L’stop és per a això. Una ruptura falsa amb stop és un cost petit; sense stop, pot ser enorme.",
+    "Fer mitjana a la baixa amb una idea que ja ha fallat sol fer més gran la pèrdua.",
+    "Si la ruptura ha fallat, aguantar sense pla converteix un error petit en un de gran."
+   ],
+   "lines": [
+    "He comprat una ruptura i l’endemà el preu ha tornat dins del rang 😬",
+    "Aguanto, que segur que torna a pujar?"
+   ]
+  }
+ }
+}

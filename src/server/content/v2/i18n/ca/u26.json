@@ -1,0 +1,541 @@
+{
+ "unit": {
+  "title": "El teu pla de trading",
+  "description": "Escriu el teu pla, porta un diari, aguanta les ratxes i fes el salt amb cap",
+  "section": "Risc, estratègies i trading"
+ },
+ "lessons": {
+  "u26l1": {
+   "title": "El pla de trading",
+   "steps": [
+    {
+     "title": "Les parts d'un pla",
+     "body": "1. **Capital:** quant hi dediques (un % petit del teu patrimoni).\n2. **Mercats i termini:** què operes i en quin gràfic.\n3. **Entrada:** regles concretes i comprovables.\n4. **Stop:** on i per què.\n5. **Mida:** 1 % de risc per operació.\n6. **Sortida:** objectiu i sortida per temps.\n7. **El que no fas.**\n8. **Límits:** quan pares.\n9. **Revisió:** cada 20 operacions."
+    },
+    {
+     "title": "Regles concretes, no desitjos",
+     "body": "«Entro quan ho vegi clar» no és una regla. Això sí:\n\n• «Preu per sobre de la mitjana de 200 sessions, retrocés a un suport i espelma de gir amb volum superior a la mitjana.»\n• «Stop sota el mínim de l'espelma de gir, a 1,5 ATR com a mínim.»\n• «Meitat a 2R; la resta amb stop sota l'últim mínim creixent. Si en 15 sessions no arriba a 1R, surto.»"
+    },
+    {
+     "title": "Els límits et protegeixen de tu mateix",
+     "body": "«No opero el dia de resultats. No faig mitjana a la baixa. No moc l'stop en contra. Si perdo un 6 % en un mes, paro fins al mes següent. Si el compte cau un 15 % des del seu màxim, redueixo el risc a la meitat i reviso el pla.»",
+     "key": "Si no està escrit, no és un pla: és una intuïció.",
+     "tip": "Escriu el pla amb calma. El necessitaràs quan no n'estiguis."
+    }
+   ]
+  },
+  "u26l2": {
+   "title": "El diari d'operacions",
+   "steps": [
+    {
+     "title": "Què cal apuntar",
+     "body": "Per a cada operació:\n\n• Data, actiu i direcció.\n• Motiu d'entrada segons el pla.\n• Entrada, stop, objectiu i quant val 1R.\n• Mida.\n• Resultat en € i en R.\n• Has seguit el pla? Si no, per què?\n• La teva emoció en entrar i en sortir.\n• Una captura del gràfic."
+    },
+    {
+     "title": "El que surt del diari",
+     "body": "• Percentatge d'encert.\n• Guany i pèrdua mitjans en R.\n• **Esperança** per operació.\n• Ratxa de pèrdues i caiguda màximes.\n• Resultat de les operacions **dins** del pla davant de les que se l'han saltat (sol ser revelador)."
+    },
+    {
+     "title": "El que t'emportes",
+     "body": "Exemple d'una línia: 12/11, compra a 4,10 €, stop 3,95 €, objectiu 4,40 €, 1R = 100 €, 666 accions. Resultat: +180 €, +1,8R. He seguit el pla: sí. Emoció: tranquil.",
+     "key": "El diari converteix les teves operacions en dades per millorar.",
+     "tip": "El teu diari t'ensenya els errors que la teva memòria prefereix oblidar."
+    }
+   ]
+  },
+  "u26l3": {
+   "title": "Ratxes de pèrdues i drawdown",
+   "steps": [
+    {
+     "title": "Les ratxes són normals",
+     "body": "Simulant 20.000 seqüències de 100 operacions:\n\n• Amb un **50 %** d'encert, la ratxa de pèrdues més llarga típica és de **6 seguides**.\n• Amb un **40 %** (com un sistema rendible que guanya 2R), de **7**, i gairebé la meitat de les vegades hi ha ratxes de **8 o més**."
+    },
+    {
+     "title": "El drawdown",
+     "body": "És la caiguda del compte des del seu màxim fins al mínim següent. Amb un 1 % de risc, 8 pèrdues seguides són un −7,7 %. Amb un 5 %, un −33,7 %.\n\nRegla del pla d'exemple: si el compte cau un 10–15 % des del seu màxim, **redueixes el risc a la meitat** i revises."
+    },
+    {
+     "title": "El que costa un drawdown",
+     "body": "Posa un 15 % de caiguda i mira quant cal guanyar per tornar al màxim. Després prova-ho amb un 35 %.",
+     "tip": "Arriscar poc fa que les ratxes siguin recuperables."
+    },
+    {
+     "title": "El que t'emportes",
+     "body": "Vuit pèrdues seguides amb un sistema guanyador no volen dir que hagi deixat de funcionar. Si canvies de sistema després de cada mala ratxa, no sabràs mai si algun funcionava.",
+     "key": "Les ratxes són estadística: arrisca poc per poder-les travessar.",
+     "tip": "Vuit errors seguits no volen dir que el pla estigui malament: volen dir que estàs en una ratxa."
+    }
+   ]
+  },
+  "u26l4": {
+   "title": "Del simulador als diners reals",
+   "steps": [
+    {
+     "title": "Les quatre fases",
+     "body": "1. **Prova històrica:** recorre el gràfic enrere i apunta 50–100 senyals amb el seu resultat.\n2. **Fora de mostra:** altres actius o un altre període, **sense canviar les regles**.\n3. **Simulador en temps real:** 2–3 mesos com a mínim.\n4. **Diners reals de mica en mica:** una fracció del capital i la meitat del risc. Només augmentes si les estadístiques s'hi assemblen."
+    },
+    {
+     "title": "Les trampes",
+     "body": "• **Sobreoptimitzar:** ajustar paràmetres fins que el passat surti perfecte.\n• **Mostra petita:** amb menys de 30–50 operacions, les estadístiques gairebé no signifiquen res.\n• **Supervivència:** provar només amb empreses que existeixen avui.\n• **Oblidar els costos** i el lliscament.\n• **Retrospectiva:** en el passat tot «es veu» clar."
+    },
+    {
+     "title": "Quan deixar-ho",
+     "body": "Si després de 100 operacions ben registrades la teva esperança després de costos és negativa o gairebé zero, no tens avantatge. No és un fracàs: és informació. Invertir a llarg termini en una cartera diversificada continua sent l'opció amb més probabilitats.",
+     "key": "Un sistema no està provat fins que funciona amb dades noves i amb prou operacions.",
+     "tip": "Al simulador s'aprèn a operar. Amb diners reals s'aprèn qui ets. Comença petit."
+    }
+   ]
+  },
+  "u26r": {
+   "title": "Repàs de la unitat",
+   "steps": []
+  },
+  "s8boss": {
+   "title": "Repte final: Risc, estratègies i trading",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u26l1-1": {
+   "prompt": "Ordena les parts d'un pla de trading.",
+   "options": [
+    "Condicions d'entrada",
+    "Límits i quan paro",
+    "Com surto",
+    "Capital dedicat",
+    "Mercats i temporalitat",
+    "Mida de la posició",
+    "On va l'stop"
+   ],
+   "explanation": "Del general (quant i què) al concret (quan entro, quant arrisco i com surto)."
+  },
+  "u26l1-2": {
+   "prompt": "Mida de la posició: risc del ____ per operació.",
+   "options": [
+    "10 %",
+    "25 %",
+    "50 %",
+    "1 %"
+   ],
+   "explanation": "Per a qui comença, un 1 % o menys."
+  },
+  "u26l1-3": {
+   "prompt": "Límit mensual del pla d'exemple: si perdo un ____ en un mes, paro fins al mes següent.",
+   "options": [
+    "1 %",
+    "30 %",
+    "60 %",
+    "6 %"
+   ],
+   "explanation": "Un topall mensual talla les espirals d'operar per venjança."
+  },
+  "u26l1-4": {
+   "prompt": "És una regla concreta o una frase vaga?",
+   "options": [
+    "Si en 15 sessions no arriba a 1R, surto",
+    "Surto quan em sembli que ja n'hi ha prou",
+    "Stop sota el mínim de l'espelma de gir, com a mínim a 1,5 ATR",
+    "Entro si rebota a la mitjana de 50 sessions amb espelma de gir i volum superior a la mitjana",
+    "Entro quan ho vegi clar"
+   ],
+   "explanation": "Una regla concreta es pot comprovar: dues persones que la llegissin farien el mateix.",
+   "right": [
+    "Regla concreta",
+    "Frase vaga"
+   ]
+  },
+  "u26l1-5": {
+   "prompt": "Què li dius a la Lumi?",
+   "options": [
+    "Perfecte, és el pla de tothom",
+    "Això és un desig; un pla diu quan entres, on és l'stop i quant arrisques",
+    "No cal pla si tens intuïció"
+   ],
+   "explanation": "Un pla són regles comprovables, no bones intencions.",
+   "feedback": [
+    "Aquest és el problema: no diu quan entro, on és l'stop ni quant arrisco.",
+    "D'acord… Entrada en suport amb espelma de gir, stop sota el mínim, 1 % de risc i sortida a 2R. Millor?",
+    "La intuïció no es pot revisar ni millorar. Un pla escrit, sí."
+   ],
+   "lines": [
+    "Ja tinc el meu pla de trading! 📝",
+    "Comprar barat i vendre car."
+   ]
+  },
+  "u26l1-6": {
+   "prompt": "Quines coses van a l'apartat «El que no faig» del pla d'exemple? Marca-les totes.",
+   "options": [
+    "No faig mitjana a la baixa",
+    "No poso mai stop",
+    "No moc l'stop en contra",
+    "No opero el dia de resultats"
+   ],
+   "explanation": "No posar stop seria saltar-se la base del pla."
+  },
+  "u26l1-7": {
+   "prompt": "El teu pla limita el risc total obert al 5 % del compte i cada operació arrisca un 1 %. Quantes operacions pots tenir obertes alhora com a màxim?",
+   "options": [],
+   "explanation": "5 % ÷ 1 % = 5 operacions obertes.",
+   "unit": "operacions"
+  },
+  "u26l1-8": {
+   "prompt": "Un bon pla de trading inclou una predicció del que farà la borsa.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Un pla són regles per actuar passi el que passi, no prediccions."
+  },
+  "u26l1-9": {
+   "prompt": "El pla d'en Pablo diu «només entro amb espelma de gir en suport». Avui veu una acció que es dispara un 8 % en una hora i no compleix cap regla. Què fa?",
+   "options": [
+    "Entra amb el doble de mida per aprofitar-la",
+    "Entra: és una ocasió única",
+    "No entra i ho apunta al diari com a temptació"
+   ],
+   "explanation": "El pla només serveix si el segueixes també quan no et ve de gust.",
+   "feedback": [
+    "Saltar-se el pla i, a més, doblar el risc: dos errors en un.",
+    "Aquesta «ocasió única» és FOMO. Si surt malament, no sabrà si el seu pla funciona o no.",
+    "Bé: respecta el pla i aprèn del que sent. Ocasions n'hi haurà moltes."
+   ]
+  },
+  "u26l1-10": {
+   "prompt": "El teu pla diu: «stop sota el mínim recent». Aplica-ho a aquesta compra en un gràfic real.",
+   "options": [],
+   "explanation": "Una regla concreta s'aplica igual en qualsevol gràfic: l'stop va just per sota del mínim recent."
+  },
+  "u26l1-11": {
+   "prompt": "Cada quant proposa el pla d'exemple revisar les estadístiques?",
+   "options": [
+    "Després de cada operació",
+    "Cada 20 operacions",
+    "Mai"
+   ],
+   "explanation": "Una sola operació no diu res; 20 ja comencen a ensenyar alguna cosa."
+  },
+  "u26l2-1": {
+   "prompt": "Relaciona cada camp del diari amb un exemple.",
+   "options": [
+    "Motiu d'entrada",
+    "Resultat en R",
+    "Emoció en entrar",
+    "He seguit el pla?"
+   ],
+   "explanation": "Cada camp respon una pregunta que després t'ajudarà a millorar.",
+   "right": [
+    "+1,8R",
+    "No: he entrat sense senyal",
+    "Amb pressa",
+    "Rebot a la mitjana de 50 amb martell"
+   ]
+  },
+  "u26l2-2": {
+   "prompt": "Relaciona cada estadística del diari amb el que et diu.",
+   "options": [
+    "Percentatge d'encert",
+    "Esperança",
+    "Ratxa màxima de pèrdues",
+    "Dins i fora del pla"
+   ],
+   "explanation": "Cap estadística tota sola no explica tota la història.",
+   "right": [
+    "Si el sistema guanya a llarg termini",
+    "Si saltar-te les regles et costa diners",
+    "Quant has d'aguantar",
+    "Quantes operacions surten bé"
+   ]
+  },
+  "u26l2-3": {
+   "prompt": "Risc per operació: 100 €. Entres a 4,10 € amb l'stop a 3,95 €. Quantes accions compres? (arrodoneix cap avall)",
+   "options": [],
+   "explanation": "Distància: 0,15 €. 100 ÷ 0,15 = 666,7 → 666 accions.",
+   "unit": "accions"
+  },
+  "u26l2-4": {
+   "prompt": "El teu diari té 20 operacions: 8 de guanyadores i 12 de perdedores. Quin és el teu percentatge d'encert?",
+   "options": [],
+   "explanation": "8 ÷ 20 = 0,4 → 40 %.",
+   "unit": "%"
+  },
+  "u26l2-5": {
+   "prompt": "En aquestes 20 operacions, les guanyadores van donar +2R de mitjana i les perdedores −1R. Quina és la teva esperança per operació?",
+   "options": [],
+   "explanation": "0,4 × 2 − 0,6 × 1 = +0,2R.",
+   "unit": "R"
+  },
+  "u26l2-6": {
+   "prompt": "Quina estadística del diari diu si el teu sistema guanya a llarg termini?",
+   "options": [
+    "El nombre d'operacions",
+    "L'esperança matemàtica",
+    "L'hora d'entrada"
+   ],
+   "explanation": "Combina l'encert amb el guany i la pèrdua mitjans."
+  },
+  "u26l2-7": {
+   "prompt": "Després de 40 operacions, el diari de la Marta mostra que les que van seguir el pla donen +0,3R de mitjana i les que se'l van saltar, −0,6R. Què fa?",
+   "options": [
+    "Canvia de sistema",
+    "Res, els números són el de menys",
+    "Se centra a no saltar-se el pla"
+   ],
+   "explanation": "Comparar dins i fora del pla sol ser el més revelador del diari.",
+   "feedback": [
+    "El seu sistema, quan el segueix, guanya. Canviar-lo seria llençar el que funciona.",
+    "Els números li estan dient exactament on perd diners.",
+    "Bé: el problema no és el sistema, són les excepcions. Aquí hi ha la seva millora."
+   ]
+  },
+  "u26l2-8": {
+   "prompt": "Per saber com et va, la teva memòria és tan fiable com un diari.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "La memòria recorda els encerts i oblida els errors: el diari, no."
+  },
+  "u26l2-9": {
+   "prompt": "Ràpid: quina columna del diari t'ajuda a detectar el FOMO?",
+   "options": [
+    "La data",
+    "L'emoció en entrar",
+    "El preu d'entrada"
+   ],
+   "explanation": "Si en entrar apuntes «pressa» o «por de perdre-m'ho», ja saps què has de buscar."
+  },
+  "u26l2-10": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Apunta només les guanyadores",
+    "Tens raó, amb la memòria n'hi ha prou",
+    "Sense diari no pots calcular la teva esperança ni veure els teus errors"
+   ],
+   "explanation": "El que no es mesura no es pot millorar.",
+   "feedback": [
+    "Llavors el teu diari diria que ets un geni… i t'arruïnaria.",
+    "La teva memòria guarda l'operació que va sortir genial i oblida les cinc petites pèrdues.",
+    "D'acord… Si en 20 operacions descobreixo que perdo quan opero amb pressa, val la pena."
+   ],
+   "lines": [
+    "Portar un diari és un rotllo 😩",
+    "Total, ja me'n recordo, de les meves operacions."
+   ]
+  },
+  "u26l3-1": {
+   "prompt": "Amb un sistema que encerta el 50 %, és estrany encadenar 6 pèrdues seguides en 100 operacions?",
+   "options": [
+    "Només passa amb sistemes dolents",
+    "Sí, gairebé impossible",
+    "No, és el més habitual"
+   ],
+   "explanation": "És la ratxa més llarga típica en 100 operacions."
+  },
+  "u26l3-2": {
+   "prompt": "Arrisques un 1 % per operació i encadenes 8 pèrdues. Quant cau el teu compte? (arrodoneix a un decimal)",
+   "options": [],
+   "explanation": "0,99⁸ ≈ 0,923 → caiguda del 7,7 %.",
+   "unit": "%"
+  },
+  "u26l3-3": {
+   "prompt": "Ara arriscant un 5 % per operació: 8 pèrdues seguides. Quant cau el compte? (arrodoneix a un decimal)",
+   "options": [],
+   "explanation": "0,95⁸ ≈ 0,663 → caiguda del 33,7 %. La mateixa ratxa, quatre vegades més mal.",
+   "unit": "%"
+  },
+  "u26l3-4": {
+   "prompt": "Relaciona el risc per operació amb la caiguda després de 8 pèrdues seguides.",
+   "options": [
+    "1 % per operació",
+    "2 % per operació",
+    "5 % per operació",
+    "10 % per operació"
+   ],
+   "explanation": "Caiguda = 1 − (1 − risc)⁸. Amb un 10 %, una ratxa normal s'emporta més de la meitat.",
+   "right": [
+    "−33,7 %",
+    "−57 %",
+    "−14,9 %",
+    "−7,7 %"
+   ]
+  },
+  "u26l3-5": {
+   "prompt": "El teu compte cau un 15 % des del seu màxim. Quant has de guanyar per tornar-hi? (arrodoneix a un decimal)",
+   "options": [],
+   "explanation": "1 ÷ 0,85 − 1 ≈ 0,176 → +17,6 %.",
+   "unit": "%"
+  },
+  "u26l3-6": {
+   "prompt": "La Laura porta 120 operacions registrades amb esperança positiva. Ara encadena 7 pèrdues seguides. Què fa?",
+   "options": [
+    "Segueix el seu pla amb el mateix risc i revisa que aplica bé les regles",
+    "Dobla el risc per recuperar abans",
+    "Canvia de sistema: aquest ja no funciona"
+   ],
+   "explanation": "Una ratxa dins del que s'espera no és motiu per abandonar un sistema amb moltes operacions al darrere.",
+   "feedback": [
+    "Bé: comprova que no s'ha saltat res i deixa que l'estadística faci la seva feina.",
+    "Si la ratxa continua, el forat es fa molt més profund.",
+    "Amb un 40 % d'encert, 7 seguides és la ratxa típica. Canviar ara és llençar un sistema que funciona."
+   ]
+  },
+  "u26l3-7": {
+   "prompt": "El compte del Bruno cau un 15 % des del seu màxim. Què diu el pla d'exemple?",
+   "options": [
+    "Doblar el risc per recuperar",
+    "Deixar de fer servir stops",
+    "Reduir el risc a la meitat i revisar el pla"
+   ],
+   "explanation": "Quan el compte cau, primer es protegeix; després s'analitza.",
+   "feedback": [
+    "És la reacció més comuna i la més perillosa.",
+    "Sense stops, la caiguda podria ser molt més gran.",
+    "Així protegeix el capital mentre analitza què està passant."
+   ]
+  },
+  "u26l3-8": {
+   "prompt": "Vuit pèrdues seguides demostren que un sistema ha deixat de funcionar.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Amb un 40 % d'encert, gairebé la meitat de les vegades apareixen ratxes de 8 o més en 100 operacions."
+  },
+  "u26l3-9": {
+   "prompt": "Ràpid: amb un 40 % d'encert, quina és la ratxa de pèrdues típica en 100 operacions?",
+   "options": [
+    "20 seguides",
+    "2 seguides",
+    "7 seguides"
+   ],
+   "explanation": "I gairebé la meitat de les vegades, 8 o més."
+  },
+  "u26l3-10": {
+   "prompt": "La caiguda del compte des del seu màxim fins al mínim següent s'anomena ____.",
+   "options": [
+    "spread",
+    "palanquejament",
+    "pay-out",
+    "drawdown"
+   ],
+   "explanation": "És la mesura que reflecteix millor el dolor real d'una estratègia."
+  },
+  "u26l4-1": {
+   "prompt": "Ordena les fases per validar un sistema.",
+   "options": [
+    "Prova fora de mostra",
+    "Diners reals en petit",
+    "Simulador en temps real",
+    "Prova històrica"
+   ],
+   "explanation": "Cada fase elimina un tipus d'autoengany abans d'arriscar diners."
+  },
+  "u26l4-2": {
+   "prompt": "Si guanyes 12 de les teves 15 primeres operacions, el teu sistema està provat.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Quinze operacions són una mostra massa petita: pot ser sort."
+  },
+  "u26l4-3": {
+   "prompt": "Ajustar els paràmetres fins que el passat surti perfecte millora els resultats futurs.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Això és sobreoptimitzar: el sistema s'adapta al soroll del passat i sol fallar després."
+  },
+  "u26l4-4": {
+   "prompt": "El Raúl ha guanyat 12 de les seves 15 primeres operacions i vol passar a arriscar un 10 % per operació «perquè el seu sistema funciona». Què li diries?",
+   "options": [
+    "Que continuï amb un 1 % i registri 50–100 operacions abans de treure conclusions",
+    "Endavant, els números parlen",
+    "Que faci servir palanquejament per aprofitar la ratxa"
+   ],
+   "explanation": "Mostra petita + risc alt és la combinació més perillosa.",
+   "feedback": [
+    "Bé: amb més mostra i l'esperança calculada després de costos sabrà si té avantatge.",
+    "Amb un 10 %, una ratxa normal de 6–8 pèrdues li faria perdre entre la meitat i dos terços del compte.",
+    "Les ratxes bones s'acaben; el palanquejament faria que la dolenta el tregués del joc."
+   ]
+  },
+  "u26l4-5": {
+   "prompt": "La Marta ha superat les tres primeres fases i farà servir diners reals. Com comença?",
+   "options": [
+    "Amb tot el capital previst i el mateix risc del simulador",
+    "Amb el doble de risc per recuperar el temps perdut",
+    "Amb una fracció petita del capital i la meitat del risc per operació"
+   ],
+   "explanation": "El pas als diners reals es fa en petit i només s'amplia amb dades.",
+   "feedback": [
+    "Les emocions reals són unes altres: millor descobrir-les amb pocs diners en joc.",
+    "No hi ha temps perdut: hi ha pressa, i la pressa és mala consellera.",
+    "Bé: si les estadístiques reals s'assemblen a les del simulador, que augmenti de mica en mica."
+   ]
+  },
+  "u26l4-6": {
+   "prompt": "Què li respons a la Lumi?",
+   "options": [
+    "Millor amb un préstec, així guanyes més",
+    "Primer més operacions registrades; després, una part petita i amb la meitat del risc",
+    "És clar, ja estàs preparada!"
+   ],
+   "explanation": "Un bon mes al simulador és un punt de partida, no una prova.",
+   "feedback": [
+    "Amb deute, una mala ratxa pot ser un problema seriós.",
+    "D'acord: 100 operacions al diari, esperança després de costos i començar amb poc.",
+    "Un mes és molt poc… i amb diners reals la por i la pressa canvien com opero."
+   ],
+   "lines": [
+    "Al simulador he guanyat un 20 % aquest mes 🏆",
+    "Ja hi puc posar els meus estalvis?"
+   ]
+  },
+  "u26l4-7": {
+   "prompt": "Relaciona cada trampa estadística amb la seva descripció.",
+   "options": [
+    "Sobreoptimització",
+    "Mostra petita",
+    "Biaix de supervivència",
+    "Biaix retrospectiu"
+   ],
+   "explanation": "Totes fan que un sistema sembli millor del que és.",
+   "right": [
+    "Treure conclusions amb 15 operacions",
+    "Provar només amb empreses que continuen existint",
+    "Veure claríssim en el passat un senyal que en directe no ho era",
+    "Ajustar paràmetres fins que el passat surti perfecte"
+   ]
+  },
+  "u26l4-8": {
+   "prompt": "Amb diners reals, les emocions solen pesar més que al simulador.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Per això es comença amb poc: per descobrir com reacciones de debò."
+  },
+  "u26l4-9": {
+   "prompt": "Començaràs amb 2.000 € reals i la meitat del teu risc habitual de l'1 %. Quant arrisques per operació?",
+   "options": [],
+   "explanation": "Meitat de l'1 % = 0,5 %. 2.000 × 0,005 = 10 €.",
+   "unit": "€"
+  },
+  "u26l4-10": {
+   "prompt": "Primera operació «en petit»: el teu compte és de 2.000 € i, com que comences, arrisques com a màxim un 0,5 %. Tria stop i import.",
+   "options": [],
+   "explanation": "Amb la meitat del risc habitual, una mala ratxa en començar amb diners reals no et treu del joc mentre comproves si les teves estadístiques s'assemblen a les del simulador."
+  },
+  "u26l4-11": {
+   "prompt": "Què canvia quan passes del simulador als diners reals? Marca-les totes.",
+   "options": [
+    "El lliscament en executar ordres",
+    "Els impostos sobre els guanys",
+    "Les matemàtiques de l'esperança",
+    "Les emocions en veure pèrdues reals"
+   ],
+   "explanation": "Les matemàtiques són les mateixes; el que canvia és com reacciones, els costos reals i Hisenda."
+  }
+ }
+}

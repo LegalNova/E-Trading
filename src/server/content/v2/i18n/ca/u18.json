@@ -1,0 +1,751 @@
+{
+ "unit": {
+  "title": "Qualitat del negoci i macro",
+  "description": "Avantatges competitius, cicle, tipus d'interès, dades macro i com analitzar una empresa",
+  "section": "Anàlisi fonamental"
+ },
+ "lessons": {
+  "u18l1": {
+   "title": "Avantatges competitius: el fossat",
+   "steps": [
+    {
+     "title": "Els cinc fossats",
+     "body": "Sense un avantatge que la protegeixi, la competència acaba menjant-se els beneficis. En Buffett en diu **fossat**:\n\n1. **Intangibles:** marques, patents, llicències.\n2. **Costos de canvi:** canviar de proveïdor costa molt.\n3. **Efecte xarxa:** més usuaris, més valor.\n4. **Avantatge en costos:** produeix més barat que ningú.\n5. **Escala eficient:** el mercat només dona per a un o dos."
+    },
+    {
+     "title": "Com es veu en els números",
+     "body": "• Marges i ROIC **alts i estables** durant 10 anys.\n• Pot **apujar preus** sense perdre clients, fins i tot amb inflació.\n• Manté o guanya **quota de mercat**."
+    },
+    {
+     "title": "Fossat no vol dir bon preu",
+     "body": "El 2000, Microsoft o Cisco cotitzaven a PER de 60-100. Qui va comprar Microsoft en el màxim del 2000 va trigar uns **16 anys** a recuperar aquell preu, tot i que el negoci va continuar sent excel·lent.",
+     "key": "Un bon negoci necessita un fossat; una bona inversió necessita, a més, un bon preu."
+    }
+   ]
+  },
+  "u18l2": {
+   "title": "Sectors cíclics i defensius",
+   "steps": [
+    {
+     "title": "El cicle econòmic",
+     "body": "1. **Recuperació:** tipus baixos, l'economia comença a créixer.\n2. **Expansió:** ocupació alta i beneficis a l'alça; pot aparèixer la inflació.\n3. **Desacceleració:** pugen els tipus i el creixement es frena.\n4. **Recessió:** cau el PIB (tècnicament, dos trimestres seguits) i puja l'atur."
+    },
+    {
+     "title": "Cíclics i defensius",
+     "body": "**Cíclics:** cotxes, luxe, viatges, indústria, materials, banca, tecnologia. Pugen més en les expansions i cauen més en les recessions.\n\n**Defensius:** alimentació, higiene, salut, elèctriques, aigua. Es consumeixen igual en temps de crisi: cauen menys i pugen menys."
+    },
+    {
+     "title": "La borsa s'avança",
+     "body": "La borsa sol caure **abans** d'una recessió i pujar **abans** que s'acabi. El març del 2009 i el març del 2020 va tocar fons quan les notícies encara eren terribles.",
+     "key": "La borsa no mira el present: mira el que espera d'aquí a 6 o 12 mesos."
+    }
+   ]
+  },
+  "u18l3": {
+   "title": "Bancs centrals i tipus d'interès",
+   "steps": [
+    {
+     "title": "El preu dels diners",
+     "body": "• **BCE:** objectiu d'inflació del **2 %** a mitjà termini.\n• **Reserva Federal:** preus estables i màxima ocupació.\n\nEl tipus de referència del BCE és la **facilitat de dipòsit**: el juny del 2026 el va apujar al **2,25 %**. Consulta el valor vigent a ecb.europa.eu, perquè canvia diverses vegades l'any."
+    },
+    {
+     "title": "Quan pugen els tipus",
+     "body": "1. Préstecs i hipoteques més cars.\n2. Es consumeix i s'inverteix menys.\n3. L'economia es refreda i la inflació baixa (amb 12-24 mesos de retard).\n4. Dipòsits i bons paguen més: més competència per a la borsa.\n5. Els beneficis futurs valen menys avui: es descompten a una taxa més alta."
+    },
+    {
+     "title": "Qui pateix més",
+     "body": "Empreses de creixement sense beneficis, empreses molt endeutades, immobiliàries i **bons llargs**. El 2022, la pujada de tipus més ràpida en dècades va fer caure el Nasdaq més d'un 30 % i els bons llargs més d'un 20 %. Els bancs, al principi, solen sortir-ne beneficiats.",
+     "key": "Quan els diners s'encareixen, el futur val menys."
+    }
+   ]
+  },
+  "u18l4": {
+   "title": "Les dades que mouen el mercat",
+   "steps": [
+    {
+     "title": "El calendari econòmic",
+     "body": "• **IPC/IPCH:** inflació. Decideix els tipus.\n• **PIB:** creixement de l'economia.\n• **Ocupació:** als EUA, les nòmines no agrícoles del primer divendres de cada mes; a Espanya, l'EPA i l'atur registrat.\n• **PMI:** enquesta mensual als gestors de compres. **Per sobre de 50 = expansió.** S'avança al PIB.\n• **Decisions de tipus** del BCE i la Fed."
+    },
+    {
+     "title": "Sorpresa davant d'expectativa",
+     "body": "Si s'espera una inflació del 3 % i surt un 3,4 %, la borsa pot caure encara que la inflació estigui baixant respecte al mes anterior.\n\nEl preu ja incorpora el que s'espera: el que el mou és la **sorpresa**."
+    },
+    {
+     "title": "De vegades, al revés",
+     "body": "Una dada d'ocupació molt forta pot fer caure la borsa: el mercat tem que el banc central mantingui els tipus alts. El que és bo per a l'economia no sempre és bo per a la borsa aquell dia.",
+     "key": "El mercat no reacciona a si la dada és bona o dolenta, sinó a si és millor o pitjor del que s'esperava."
+    }
+   ]
+  },
+  "u18l5": {
+   "title": "Empreses petites i en creixement: què cal mirar",
+   "steps": [
+    {
+     "title": "Quan no hi ha benefici",
+     "body": "Moltes empreses joves **perden diners** mentre creixen. El PER no serveix (no hi ha benefici), així que es mira:\n\n• **Creixement de vendes** i si es manté.\n• **Marge brut:** si cada venda deixa diners.\n• **Preu/vendes:** capitalització ÷ vendes.\n• **Caixa i consum de caixa:** quants mesos aguanta sense demanar més diners."
+    },
+    {
+     "title": "La pista d'enlairament",
+     "body": "**Mesos de caixa = caixa ÷ consum de caixa mensual.**\n\nAmb 120 M€ en caixa i 10 M€ de caixa cremada al mes, té **12 mesos**. Si no guanya diners abans, haurà de fer una **ampliació de capital** (que et dilueix) o endeutar-se."
+    },
+    {
+     "title": "Moltes no hi arriben",
+     "body": "Les petites es poden multiplicar… o desaparèixer. Més de la meitat de les accions dels EUA des del 1926 van rendir menys que les lletres del Tresor. I són de les que més pateixen quan pugen els tipus.",
+     "key": "En una empresa sense beneficis, la pregunta clau és si arribarà a guanyar diners abans de quedar-se sense caixa."
+    }
+   ]
+  },
+  "u18l6": {
+   "title": "Analitzar una empresa en 30 minuts",
+   "steps": [
+    {
+     "title": "La llista de 10 preguntes",
+     "body": "1. Entenc com guanya diners?\n2. Creix?\n3. És rendible (marges, ROE, ROIC)?\n4. Genera caixa?\n5. Està sana (deute)?\n6. Té fossat?\n7. Qui la dirigeix?\n8. És cara?\n9. Què pot sortir malament?\n10. Què em faria vendre?"
+    },
+    {
+     "title": "Practiquem amb Inditex (exercici 2024)",
+     "body": "• **Vendes:** 38.632 M€ (+7,5 %).\n• **Marge brut:** 57,8 %.\n• **EBITDA:** 10.728 M€ · **EBIT:** 7.554 M€.\n• **Benefici net:** 5.866 M€ (+9 %).\n• **Caixa neta:** 11.495 M€ (més caixa que deute).\n• **Dividend:** 1,68 € per acció.\n\nÉs un exemple per practicar, **no una recomanació**."
+    },
+    {
+     "title": "Senyals d'alarma",
+     "body": "• Beneficis que creixen i caixa que no.\n• Deute que creix sense beneficis.\n• Canvis d'auditor o de director financer.\n• Ampliacions de capital constants.\n• Dividends pagats amb deute.\n• Directius que venen moltes accions.",
+     "key": "Si no pots explicar en tres frases per què compres una empresa, encara no estàs preparat per comprar-la."
+    }
+   ]
+  },
+  "u18r": {
+   "title": "Repàs de la unitat",
+   "steps": []
+  },
+  "s6boss": {
+   "title": "Repte final: Anàlisi fonamental",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u18l1-1": {
+   "prompt": "Relaciona cada exemple amb el seu fossat.",
+   "options": [
+    "Una xarxa social amb milers de milions d'usuaris",
+    "El programari de gestió que fa servir tota una empresa",
+    "Una farmacèutica amb un medicament patentat",
+    "Un gran distribuïdor que compra més barat que ningú",
+    "L'únic oleoducte d'una regió"
+   ],
+   "explanation": "Els cinc fossats de Morningstar i Pat Dorsey.",
+   "right": [
+    "Costos de canvi",
+    "Intangibles",
+    "Avantatge en costos",
+    "Escala eficient",
+    "Efecte xarxa"
+   ]
+  },
+  "u18l1-2": {
+   "prompt": "Quin fossat té un sistema de pagaments que accepten gairebé totes les botigues i fan servir gairebé tots els clients?",
+   "options": [
+    "Cap",
+    "Efecte xarxa",
+    "Escala eficient"
+   ],
+   "explanation": "Com més botigues l'accepten, més clients el volen, i a l'inrevés."
+  },
+  "u18l1-3": {
+   "prompt": "Quins senyals en els números suggereixen un fossat? Marca'ls tots.",
+   "options": [
+    "Apujar preus sense perdre clients",
+    "ROIC alt durant una dècada",
+    "Pèrdues constants",
+    "Marges alts i estables durant anys"
+   ],
+   "explanation": "Les pèrdues constants indiquen just el contrari."
+  },
+  "u18l1-4": {
+   "prompt": "L'Ana analitza una cafeteria de moda amb cues a la porta que va guanyar molt l'any passat. A 50 metres n'acaben d'obrir tres més de semblants. Què en conclou sobre el seu fossat?",
+   "options": [
+    "El fossat depèn de la decoració del local",
+    "Té un fossat enorme: hi ha cues",
+    "El seu fossat és feble: és fàcil de copiar i ja la copien"
+   ],
+   "explanation": "Si un negoci guanya molt i és fàcil de copiar, la competència arribarà.",
+   "feedback": [
+    "Sense un avantatge difícil de copiar, no hi ha fossat.",
+    "La moda no és un fossat: si és fàcil de copiar, la competència arriba i es reparteix les cues.",
+    "Exacte: sense res que impedeixi als altres fer el mateix, els beneficis alts atrauen competència."
+   ]
+  },
+  "u18l1-5": {
+   "prompt": "En Bruno troba una empresa amb un fossat claríssim… que cotitza a PER 90 i creix al 10 % anual. Què té en compte?",
+   "options": [
+    "Que el seu PEG és 9: el preu ja descompta moltíssim",
+    "Que amb aquest fossat qualsevol preu està bé",
+    "Que un PER alt garanteix que continuarà pujant"
+   ],
+   "explanation": "Un bon negoci necessita, a més, un bon preu.",
+   "feedback": [
+    "Exacte: 90 ÷ 10 = 9. Un gran negoci pot ser una mala inversió si pagues de més.",
+    "Microsoft el 2000 també tenia fossat, i qui va comprar en el màxim va trigar uns 16 anys a recuperar-se.",
+    "No garanteix res; només indica expectatives molt altes."
+   ]
+  },
+  "u18l1-6": {
+   "prompt": "Una empresa sense cap avantatge competitiu pot mantenir marges molt alts durant dècades.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Els marges alts atrauen competidors; sense fossat, acaben baixant."
+  },
+  "u18l1-7": {
+   "prompt": "És fossat o no ho és?",
+   "options": [
+    "Clients que perdrien les seves dades si canvien",
+    "Una llicència exclusiva per operar un aeroport",
+    "Un producte de moda aquest estiu",
+    "Una patent de 15 anys",
+    "Un bon anunci de televisió"
+   ],
+   "explanation": "Un fossat és un avantatge difícil de copiar i que dura.",
+   "right": [
+    "És fossat",
+    "No és fossat"
+   ]
+  },
+  "u18l1-8": {
+   "prompt": "Ràpid: una app de missatgeria val més amb cada usuari nou. Quin fossat és?",
+   "options": [
+    "Efecte xarxa",
+    "Patent",
+    "Avantatge en costos"
+   ],
+   "explanation": "Cada usuari fa el producte més útil per als altres."
+  },
+  "u18l1-9": {
+   "prompt": "Microsoft va trigar uns 16 anys a recuperar el màxim del 2000. Si la inflació hagués estat del 2 % anual, quant poder de compra hauria perdut qui va recuperar just aquell preu? (en %)",
+   "options": [],
+   "explanation": "1 ÷ 1,02¹⁶ ≈ 0,728: un 27 % menys de poder de compra en 16 anys, sense comptar dividends.",
+   "unit": "%"
+  },
+  "u18l1-10": {
+   "prompt": "Què li respons a la Lumi?",
+   "options": [
+    "No, les marques mai no són fossat",
+    "Sí: si t'agrada a tu, agrada a tothom",
+    "Pot tenir fossat, però s'ha de veure en els marges i el ROIC, i a més cal mirar el preu"
+   ],
+   "explanation": "Busca el fossat en els números i no t'oblidis del preu.",
+   "feedback": [
+    "Les marques fortes poden ser un fossat molt potent.",
+    "Que t'agradi és un començament, no una anàlisi.",
+    "D'acord: que m'agradi el producte no em diu si l'acció és cara."
+   ],
+   "lines": [
+    "M'encanta aquesta marca, la faig servir cada dia 😍",
+    "Això vol dir que té fossat i que és una bona inversió?"
+   ]
+  },
+  "u18l2-1": {
+   "prompt": "Cíclic o defensiu?",
+   "options": [
+    "Elèctrica",
+    "Cadena d'hotels",
+    "Farmacèutica",
+    "Marca de luxe",
+    "Supermercat",
+    "Fabricant de cotxes"
+   ],
+   "explanation": "El que es compra igual en una crisi és defensiu; el que s'ajorna, cíclic.",
+   "right": [
+    "Cíclic",
+    "Defensiu"
+   ]
+  },
+  "u18l2-2": {
+   "prompt": "Relaciona cada fase del cicle amb el que sol passar.",
+   "options": [
+    "Recuperació",
+    "Expansió",
+    "Desacceleració",
+    "Recessió"
+   ],
+   "explanation": "I tornem a començar.",
+   "right": [
+    "Pugen els tipus i el creixement es frena",
+    "Cau el PIB i puja l'atur",
+    "Ocupació alta i beneficis a l'alça",
+    "Tipus baixos i l'economia comença a créixer"
+   ]
+  },
+  "u18l2-3": {
+   "prompt": "Primera setmana de setembre del 2008: els EUA acaben d'intervenir Fannie Mae i Freddie Mac i es parla de recessió. Què va fer el S&P 500 els mesos següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "En plena crisi financera ningú no sabia fins on arribaria el contagi a l'economia real. Els cíclics, com la banca o la indústria, eren els més exposats.",
+   "horizon": "fins al desembre del 2009"
+  },
+  "u18l2-4": {
+   "prompt": "Març del 2009: l'atur es dispara i els titulars són terribles. El S&P 500 ha caigut més d'un 50 % des del màxim. Què va fer després?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Amb notícies tan dolentes, gairebé ningú no s'atrevia a decidir res. Recorda que la borsa mira el que espera d'aquí a uns mesos, no el que passa avui.",
+   "horizon": "fins al desembre del 2010"
+  },
+  "u18l2-5": {
+   "prompt": "Què és tècnicament una recessió?",
+   "options": [
+    "Una caiguda de la borsa del 10 %",
+    "Una pujada de tipus",
+    "Dos trimestres seguits de caiguda del PIB"
+   ],
+   "explanation": "És la definició habitual."
+  },
+  "u18l2-6": {
+   "prompt": "La borsa sol tocar fons quan les dades econòmiques ja han millorat.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Sol avançar-se: el 2009 i el 2020 va tocar fons amb les notícies encara molt dolentes."
+  },
+  "u18l2-7": {
+   "prompt": "Les dades apunten a una desacceleració. En Pablo té gairebé tota la cartera en bancs, automoció i hotels. Quin risc té?",
+   "options": [
+    "Està molt concentrat en cíclics, que solen caure més si arriba una recessió",
+    "Que els sectors defensius no existeixen",
+    "Cap: aquests sectors sempre pugen"
+   ],
+   "explanation": "Repartir entre cíclics i defensius redueix la dependència del cicle.",
+   "feedback": [
+    "Exacte: no es tracta d'endevinar la recessió, sinó de no dependre d'un sol tipus de sector.",
+    "Existeixen: alimentació, salut, elèctriques…",
+    "Són justament els més sensibles al cicle: cauen més en les recessions."
+   ]
+  },
+  "u18l2-8": {
+   "prompt": "Ràpid: quin sector sol caure menys en una recessió?",
+   "options": [
+    "Alimentació",
+    "Aerolínies",
+    "Automoció"
+   ],
+   "explanation": "La gent continua comprant menjar en temps de crisi."
+  },
+  "u18l2-9": {
+   "prompt": "Quins sectors són defensius? Marca'ls tots.",
+   "options": [
+    "Alimentació",
+    "Construcció",
+    "Salut",
+    "Elèctriques"
+   ],
+   "explanation": "La construcció és molt cíclica."
+  },
+  "u18l2-10": {
+   "prompt": "En una recessió, un sector cíclic cau un 40 %. Quant ha de pujar després per tornar al seu nivell?",
+   "options": [],
+   "explanation": "1 ÷ 0,60 ≈ 1,667 → +66,7 %. Un defensiu que cau un 15 % només necessita un +17,6 %.",
+   "unit": "%"
+  },
+  "u18l3-1": {
+   "prompt": "Gener del 2022: la inflació als EUA és en màxims de gairebé 40 anys i la Fed prepara pujades de tipus. Aquest és un ETF de bons del Tresor dels EUA a més de 20 anys. Què va fer després?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Els bons llargs són molt sensibles als tipus: com més lluny són els diners que paguen, més canvia el seu valor d'avui quan el tipus es mou.",
+   "horizon": "fins a l'octubre del 2023"
+  },
+  "u18l3-2": {
+   "prompt": "Ordena el que passa quan el banc central apuja els tipus.",
+   "options": [
+    "Es consumeix i s'inverteix menys",
+    "L'economia es refreda",
+    "La inflació baixa amb retard",
+    "Els préstecs s'encareixen"
+   ],
+   "explanation": "Amb un retard de 12 a 24 mesos entre el primer pas i l'últim."
+  },
+  "u18l3-3": {
+   "prompt": "El BCE apuja els tipus més del que s'esperava. La Laura té una tecnològica jove sense beneficis, un banc i un fons de bons a 30 anys. Quina part sol patir menys a curt termini?",
+   "options": [
+    "La tecnològica sense beneficis",
+    "El fons de bons a 30 anys",
+    "El banc"
+   ],
+   "explanation": "Les pujades de tipus castiguen sobretot el que depèn del futur llunyà.",
+   "feedback": [
+    "És la més sensible: el seu valor depèn de beneficis molt llunyans.",
+    "És del que més cau quan pugen els tipus.",
+    "Exacte: al principi, els bancs solen cobrar més pels préstecs. Tot i que si l'economia es frena molt, també pateixen."
+   ]
+  },
+  "u18l3-4": {
+   "prompt": "Quin és l'objectiu d'inflació del BCE?",
+   "options": [
+    "5 %",
+    "0 %",
+    "2 % a mitjà termini"
+   ],
+   "explanation": "Per això actua quan la inflació s'allunya del 2 %."
+  },
+  "u18l3-5": {
+   "prompt": "Un bo paga 20 € l'any per sempre. Amb tipus del 2 %, val 20 ÷ 0,02 = 1.000 €. Quant valdria si els tipus pugen al 4 %?",
+   "options": [],
+   "explanation": "20 ÷ 0,04 = 500 €: els tipus es dupliquen i el preu cau a la meitat. Per això els bons més llargs van patir tant el 2022.",
+   "unit": "€"
+  },
+  "u18l3-6": {
+   "prompt": "Les pujades de tipus solen beneficiar els bons llargs que ja tens.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "El seu preu cau: els bons nous paguen més i els vells només es venen més barats."
+  },
+  "u18l3-7": {
+   "prompt": "Relaciona cada concepte amb el seu significat.",
+   "options": [
+    "QE (expansió quantitativa)",
+    "QT (contracció quantitativa)",
+    "Facilitat de dipòsit",
+    "Mandat dual de la Fed"
+   ],
+   "explanation": "A més dels tipus, els bancs centrals mouen el mercat comprant o desprenent-se de bons.",
+   "right": [
+    "El que paga el BCE als bancs per deixar-li diners",
+    "Preus estables i màxima ocupació",
+    "El banc central redueix els bons que té",
+    "El banc central compra bons per injectar diners"
+   ]
+  },
+  "u18l3-8": {
+   "prompt": "Ràpid: pugen els tipus. Quina empresa sol patir més a la borsa?",
+   "options": [
+    "Supermercat",
+    "Elèctrica sense deute",
+    "Tecnològica jove sense beneficis"
+   ],
+   "explanation": "El seu valor depèn de beneficis llunyans, que es descompten més."
+  },
+  "u18l3-9": {
+   "prompt": "El 2022 van caure alhora les accions tecnològiques i els bons llargs.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "El Nasdaq va caure més d'un 30 % i els bons llargs més d'un 20 %: la pujada de tipus va colpejar tots dos."
+  },
+  "u18l3-10": {
+   "prompt": "Què li respons a la Lumi?",
+   "options": [
+    "No té cap efecte",
+    "Sol ser favorable, però depèn de si ja s'esperava i de per què els abaixen",
+    "Sempre dolent"
+   ],
+   "explanation": "Abaixar els tipus sol afavorir la borsa i els bons, però compten la sorpresa i el motiu.",
+   "feedback": [
+    "Els tipus són el preu dels diners: afecten tot.",
+    "Ah! Si els abaixen perquè ve una crisi, potser no és tan bona notícia.",
+    "Al contrari: sol estimular l'economia i afavorir la borsa i els bons… tret que es faci per por d'una crisi."
+   ],
+   "lines": [
+    "El BCE ha abaixat els tipus 📉",
+    "Això és bo o dolent per a la borsa?"
+   ]
+  },
+  "u18l4-1": {
+   "prompt": "Relaciona cada dada amb el que mesura.",
+   "options": [
+    "IPC",
+    "PIB",
+    "PMI",
+    "EPA"
+   ],
+   "explanation": "Les dades que més es miren del calendari.",
+   "right": [
+    "L'activitat de fàbriques i serveis, per enquesta",
+    "L'ocupació i l'atur a Espanya",
+    "El creixement de l'economia",
+    "La inflació"
+   ]
+  },
+  "u18l4-2": {
+   "prompt": "Ràpid: un PMI de 46 indica…",
+   "options": [
+    "Contracció",
+    "Expansió",
+    "Res de rellevant"
+   ],
+   "explanation": "Per sota de 50, l'activitat es contrau."
+  },
+  "u18l4-3": {
+   "prompt": "Un PMI per sobre de ____ indica expansió de l'activitat.",
+   "options": [
+    "0",
+    "10",
+    "100",
+    "50"
+   ],
+   "explanation": "Per sota de 50, contracció."
+  },
+  "u18l4-4": {
+   "prompt": "S'espera una inflació del 2,8 % i surt un 3,3 %. Tens una posició gran en bons llargs. Què és el més probable aquell dia?",
+   "options": [
+    "Res, ja se sabia",
+    "Que els bons caiguin: el mercat passa a esperar tipus més alts",
+    "Que els bons pugin"
+   ],
+   "explanation": "Compta la diferència entre la dada i el que s'esperava.",
+   "feedback": [
+    "S'esperava un 2,8 %, no un 3,3 %: hi ha sorpresa.",
+    "Exacte: la sorpresa a l'alça en la inflació pressiona els preus dels bons.",
+    "Una dada pitjor del que s'esperava allunya les baixades de tipus: el normal és que caiguin."
+   ]
+  },
+  "u18l4-5": {
+   "prompt": "Divendres: la dada d'ocupació dels EUA surt moltíssim millor del que s'esperava i la borsa cau. La Marta no ho entén. Quina és l'explicació més probable?",
+   "options": [
+    "Que la borsa sempre cau els divendres",
+    "Que el mercat tem que la Fed mantingui els tipus alts més temps",
+    "Que la dada és falsa"
+   ],
+   "explanation": "El que és bo per a l'economia no sempre és bo per a la borsa aquell dia.",
+   "feedback": [
+    "No existeix cap regla així.",
+    "Exacte: bona notícia per a l'economia, dolenta per a qui esperava baixades de tipus.",
+    "La dada és real; el mercat està pensant en què farà la Fed."
+   ]
+  },
+  "u18l4-6": {
+   "prompt": "Per què se segueix tant el PMI?",
+   "options": [
+    "Perquè mesura el preu de l'or",
+    "Perquè s'avança al PIB",
+    "Perquè el publica la borsa"
+   ],
+   "explanation": "És una enquesta mensual que arriba molt abans que la dada del PIB."
+  },
+  "u18l4-7": {
+   "prompt": "El mercat esperava una dada i n'ha sortit una altra. Sorpresa positiva o negativa per a la borsa?",
+   "options": [
+    "Inflació esperada del 2,5 %; surt un 3,1 %",
+    "PMI esperat de 48; surt 51",
+    "PIB esperat del +0,5 %; surt un −0,2 %",
+    "Inflació esperada del 3 %; surt un 2,6 %"
+   ],
+   "explanation": "Menys inflació i més activitat del que s'esperava solen agradar; el contrari, no.",
+   "right": [
+    "Positiva",
+    "Negativa"
+   ]
+  },
+  "u18l4-8": {
+   "prompt": "El mercat reacciona sobretot a si la dada és bona o dolenta, no al que s'esperava.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Reacciona a la sorpresa: el que s'esperava ja és en el preu."
+  },
+  "u18l4-9": {
+   "prompt": "Quines dades solen moure més els mercats? Marca-les totes.",
+   "options": [
+    "La inflació",
+    "L'ocupació dels EUA",
+    "El nombre de visitants d'un museu",
+    "Les decisions de tipus del BCE i la Fed"
+   ],
+   "explanation": "Tipus, inflació i ocupació decideixen la política monetària."
+  },
+  "u18l4-10": {
+   "prompt": "S'esperava un PIB del +0,3 % i surt un +0,3 %. Reacció més probable?",
+   "options": [
+    "Una caiguda enorme",
+    "Una pujada enorme",
+    "Poca: ja era en el preu"
+   ],
+   "explanation": "Sense sorpresa, no hi ha gaire res a ajustar."
+  },
+  "u18l5-1": {
+   "prompt": "Una empresa té 90 M€ en caixa i en crema 7,5 M€ al mes. Quants mesos de caixa té?",
+   "options": [],
+   "explanation": "90 ÷ 7,5 = 12 mesos.",
+   "unit": "mesos"
+  },
+  "u18l5-2": {
+   "prompt": "Capitalitza 3.000 M€ i ven 200 M€ l'any. Quina és la seva ràtio preu/vendes?",
+   "options": [],
+   "explanation": "3.000 ÷ 200 = 15: pagues 15 anys de vendes, no de beneficis.",
+   "unit": "vegades"
+  },
+  "u18l5-3": {
+   "prompt": "Tens 1 milió d'accions d'una empresa que en té 100 milions (l'1 %). Fa una ampliació de capital amb 25 milions d'accions noves i no hi acudeixes. Quin percentatge tens ara?",
+   "options": [],
+   "explanation": "1 ÷ 125 = 0,8 %. La teva part s'ha reduït un 20 %.",
+   "unit": "%"
+  },
+  "u18l5-4": {
+   "prompt": "Una empresa va vendre 50 M€ l'any passat i aquest any en ven 80 M€. Quant han crescut les vendes?",
+   "options": [],
+   "explanation": "(80 − 50) ÷ 50 = 60 %.",
+   "unit": "%"
+  },
+  "u18l5-5": {
+   "prompt": "L'Ana troba una empresa petita que creix un 80 % en vendes, perd diners i té caixa per a 6 mesos. En un fòrum diuen que «es multiplicarà per 10». Què mira primer?",
+   "options": [
+    "Com es finançarà: ampliació de capital, deute o arribar a tenir beneficis a temps",
+    "El nombre de seguidors del fòrum",
+    "Res: si creix tant, anirà bé"
+   ],
+   "explanation": "Créixer sense caixa és una cursa contra rellotge.",
+   "feedback": [
+    "Exacte: amb 6 mesos de caixa, una ampliació que la dilueixi és molt probable.",
+    "La popularitat no paga nòmines.",
+    "Amb 6 mesos de caixa, el més probable a curt termini és que necessiti més diners."
+   ]
+  },
+  "u18l5-6": {
+   "prompt": "Una empresa ven cada vegada més, però el seu marge brut és del 5 % i baixant: gairebé tot el que cobra se li'n va en el que li costa vendre. Quina pinta té?",
+   "options": [
+    "Excel·lent: creix molt",
+    "Mal senyal: créixer així no l'acosta a guanyar diners",
+    "El marge és igual si les vendes pugen"
+   ],
+   "explanation": "Mira si cada venda deixa diners, no només quantes vendes hi ha.",
+   "feedback": [
+    "Créixer venent gairebé sense marge no acosta els beneficis: els allunya.",
+    "Exacte: créixer només val la pena si cada venda deixa alguna cosa.",
+    "El marge diu si créixer crea valor o en consumeix."
+   ]
+  },
+  "u18l5-7": {
+   "prompt": "Per què el PER no serveix per a una empresa que perd diners?",
+   "options": [
+    "Perquè sense benefici surt negatiu i no té sentit",
+    "Perquè està prohibit calcular-lo",
+    "Perquè sempre surt 15"
+   ],
+   "explanation": "Per això es miren vendes, marges i caixa."
+  },
+  "u18l5-8": {
+   "prompt": "Les empreses de creixement sense beneficis solen patir més quan pugen els tipus d'interès.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "El seu valor depèn de beneficis llunyans, que valen menys avui amb tipus més alts."
+  },
+  "u18l5-9": {
+   "prompt": "Ràpid: 60 M€ de caixa i 5 M€ cremats al mes. Mesos de caixa?",
+   "options": [
+    "12",
+    "30",
+    "6"
+   ],
+   "explanation": "60 ÷ 5 = 12 mesos."
+  },
+  "u18l5-10": {
+   "prompt": "Què convé mirar en una empresa jove sense beneficis? Marca tot el que sigui útil.",
+   "options": [
+    "Mesos de caixa",
+    "Quantes vegades surt a les xarxes socials",
+    "Marge brut",
+    "Creixement de vendes"
+   ],
+   "explanation": "Creixement, marge i caixa diuen si el negoci pot arribar a ser rendible."
+  },
+  "u18l6-1": {
+   "prompt": "Ordena els cinc primers passos de la llista.",
+   "options": [
+    "Creix?",
+    "Genera caixa?",
+    "Està sana?",
+    "Entenc com guanya diners?",
+    "És rendible?"
+   ],
+   "explanation": "Primer, entendre el negoci; després, els seus números."
+  },
+  "u18l6-2": {
+   "prompt": "Amb les dades d'Inditex, quin va ser el seu marge EBIT (EBIT ÷ vendes)? (un decimal)",
+   "options": [],
+   "explanation": "7.554 ÷ 38.632 ≈ 19,6 %: de cada 100 € venuts, gairebé 20 € de benefici operatiu.",
+   "unit": "%"
+  },
+  "u18l6-3": {
+   "prompt": "Inditex tenia 11.495 M€ de caixa neta. Què diu això de la seva ràtio deute net/EBITDA?",
+   "options": [
+    "Que és d'unes 10 vegades: molt preocupant",
+    "Que no se'n pot saber res",
+    "Que és negativa: té més caixa que deute"
+   ],
+   "explanation": "Amb caixa neta, la pregunta 5 («està sana?») es respon de pressa."
+  },
+  "u18l6-4": {
+   "prompt": "Quins són senyals d'alarma? Marca'ls tots.",
+   "options": [
+    "Caixa lliure en línia amb el benefici",
+    "Ampliacions de capital constants",
+    "Canvis freqüents d'auditor",
+    "Dividends pagats amb deute"
+   ],
+   "explanation": "Que la caixa acompanyi el benefici és bon senyal."
+  },
+  "u18l6-5": {
+   "prompt": "Gràfic real d'una acció de l'IBEX 35: 30 sessions sense nom ni data. Encara que haguessis fet la teva anàlisi de 30 minuts, sabries què va fer en les 10 següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Una bona anàlisi et diu si el negoci és bo i si el preu és raonable; no et diu què farà el preu d'aquí a dues setmanes.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u18l6-6": {
+   "prompt": "Preu real d'una gran tecnològica durant dos mesos. Toca el punt més alt. (Microsoft · tancaments cada 3 sessions · juny–agost del 2026)",
+   "options": [],
+   "explanation": "El màxim de dos mesos no diu si el negoci és bo: això ho respon la llista de comprovació."
+  },
+  "u18l6-7": {
+   "prompt": "Inditex va repartir un dividend d'1,68 € i el seu benefici per acció va ser d'uns 1,88 €. Quin va ser el seu payout aproximat?",
+   "options": [],
+   "explanation": "1,68 ÷ 1,88 ≈ 89 %. Incloïa 0,55 € de dividend extraordinari; amb tanta caixa neta, un payout alt és més fàcil de sostenir que amb deute.",
+   "unit": "%"
+  },
+  "u18l6-8": {
+   "prompt": "Has aplicat la llista a una empresa: creix, guanya molt, genera caixa, no té deute i té una marca forta. Però cotitza a un PER molt per sobre de la seva mitjana històrica. Què en conclous?",
+   "options": [
+    "Compra segura: és un gran negoci",
+    "És una estafa",
+    "És un gran negoci, però he de decidir si el preu deixa marge de seguretat"
+   ],
+   "explanation": "Un bon negoci necessita, a més, un bon preu.",
+   "feedback": [
+    "Un gran negoci no és el mateix que una gran inversió: el preu importa.",
+    "Res no ho indica: és un negoci sa a un preu exigent.",
+    "Exacte: la pregunta 8 («és cara?») pesa tant com les altres."
+   ]
+  },
+  "u18l6-9": {
+   "prompt": "Ràpid: quan té sentit vendre segons la teva anàlisi?",
+   "options": [
+    "Quan ho diu un fòrum",
+    "Quan el preu baixa un 3 %",
+    "Quan la tesi d'inversió es trenca"
+   ],
+   "explanation": "El preu pot baixar sense que el negoci empitjori."
+  },
+  "u18l6-10": {
+   "prompt": "Què ha de tenir una bona tesi d'inversió? Marca tot el que correspongui.",
+   "options": [
+    "Per què el preu és per sota del valor",
+    "Què et faria vendre",
+    "«Perquè està pujant molt»",
+    "Com guanya diners el negoci"
+   ],
+   "explanation": "Una tesi explica per què el negoci val més que el seu preu, i quan deixaries de creure-hi."
+  }
+ }
+}

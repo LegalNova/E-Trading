@@ -1,0 +1,773 @@
+{
+ "unit": {
+  "title": "Riesgos y realidad cripto",
+  "description": "Volatilidad, quiebras, estafas, rendimientos y cuánto pesa la cripto en una cartera",
+  "section": "Criptomonedas y blockchain"
+ },
+ "lessons": {
+  "u13l1": {
+   "title": "La volatilidad cripto",
+   "steps": [
+    {
+     "title": "Caídas del 70 % o más",
+     "body": "Bitcoin ha sufrido varias caídas de más del 70 % desde sus máximos:\n\n• **2014-2015:** más de un 80 %.\n• **2018:** más de un 80 %.\n• **2022:** más de un 75 %.\n\nRecuperar el máximo de finales de 2017 le llevó unos **3 años**; el de noviembre de 2021, más de **2 años** (marzo de 2024). Muchas otras criptos cayeron más de un 90 % y nunca volvieron."
+    },
+    {
+     "title": "Cuánto hay que subir para recuperar",
+     "body": "Pon la pérdida en el 75 %: hace falta subir un 300 % para volver al punto de partida. Prueba con un 90 %.",
+     "tip": "Por eso las caídas grandes pesan tanto: recuperarse exige multiplicar."
+    },
+    {
+     "title": "La volatilidad en números",
+     "body": "La volatilidad anual de Bitcoin ronda el **50-80 %**, frente al 15 % de un índice mundial de acciones. Un −10 % en una semana es habitual. Es un activo muy volátil, no lo cubre ningún fondo de garantía y **puede perderse la totalidad de lo invertido**.",
+     "key": "En cripto, caídas del 70 % y años de espera para recuperarse forman parte de la historia.",
+     "tip": "Que algo suba un 300 % en un año también significa que puede caer un 75 %."
+    }
+   ]
+  },
+  "u13l2": {
+   "title": "Cuando cae un exchange: FTX",
+   "steps": [
+    {
+     "title": "Qué pasó",
+     "body": "**FTX** era uno de los mayores exchanges del mundo. En **noviembre de 2022** se supo que **Alameda Research**, empresa hermana de su fundador, Sam Bankman-Fried, dependía mucho del token de FTX (FTT) y que FTX le había pasado dinero de los clientes.\n\nLos clientes corrieron a retirar, FTX **congeló las retiradas** el 8 de noviembre y se declaró en **quiebra** el 11."
+    },
+    {
+     "title": "El riesgo de contraparte",
+     "body": "Cuando dejas tus criptos en una plataforma asumes un **riesgo de contraparte**: dependes de que esa empresa sea solvente y honrada. Si mezcla tu dinero con el suyo y quiebra, pasas a ser un acreedor más en un proceso que dura años.\n\nBankman-Fried fue condenado en 2024 a **25 años** de prisión por fraude."
+    },
+    {
+     "title": "Lo que cambió",
+     "body": "MiCA exige ahora a las plataformas estar autorizadas y separar los activos de los clientes. Aun así, en cripto no hay un fondo de garantía como el de los depósitos: conviene saber quién custodia tus criptos y no concentrarlo todo en una plataforma. Y recuerda: **puede perderse la totalidad de lo invertido**.",
+     "key": "Si otro guarda tus criptos, también asumes su riesgo de quiebra o de fraude.",
+     "tip": "Un exchange enorme también puede caer en una semana."
+    }
+   ]
+  },
+  "u13l3": {
+   "title": "Memecoins, airdrops y rug pulls",
+   "steps": [
+    {
+     "title": "Memecoins",
+     "body": "Una **memecoin** es una criptomoneda nacida de un chiste o una moda (Dogecoin nació en 2013 como broma). Muchas no tienen ningún uso: su precio depende solo de la atención.\n\nCrear un token cuesta minutos y muy poco dinero. Cada día aparecen miles, y la inmensa mayoría acaba valiendo casi nada."
+    },
+    {
+     "title": "Cómo te roban",
+     "body": "• **Rug pull:** los creadores atraen dinero y desaparecen vendiendo todo o retirando la liquidez. El token SQUID (2021) se disparó y en minutos cayó a casi cero; además, los compradores no podían vender.\n• ***Pump and dump*:** un grupo infla el precio con publicidad y vende a los que llegan tarde.\n• **Falsos airdrops:** «reclama tus tokens gratis» conectando tu wallet… y firmas un permiso para vaciarla."
+    },
+    {
+     "title": "Las señales de alarma",
+     "body": "Creadores anónimos sin historial, promesas de «x100», prisa, influencers pagados, que no puedas vender, que te pidan conectar la wallet o la frase semilla. En estos tokens **puede perderse la totalidad de lo invertido** en minutos.",
+     "key": "Si el único motivo para comprar es que «va a subir», probablemente alguien quiere venderte a ti.",
+     "tip": "En una memecoin, tu dinero puede ser la salida de otro."
+    }
+   ]
+  },
+  "u13l4": {
+   "title": "Staking y DeFi: de dónde sale el rendimiento",
+   "steps": [
+    {
+     "title": "Staking",
+     "body": "En las redes de **prueba de participación** (como Ethereum), quien bloquea sus monedas para validar bloques recibe una recompensa: es el **staking**.\n\nEse rendimiento sale de **monedas nuevas** y de **comisiones** de la red, y se cobra en la misma cripto: si cae un 50 %, un pequeño rendimiento anual no lo compensa. Si el validador falla, puede perder parte (*slashing*)."
+    },
+    {
+     "title": "DeFi y préstamos cripto",
+     "body": "En **DeFi** prestas tus criptos a otros mediante contratos inteligentes: te paga quien pide prestado. Algunas plataformas centralizadas que prometían intereses altos, como Celsius, quebraron en 2022.\n\nRiesgos: fallos en el código, hackeos, plataformas que usan tu dinero y la propia caída del precio."
+    },
+    {
+     "title": "La pregunta que lo resume todo",
+     "body": "**¿Quién paga el interés y por qué?** Si nadie sabe explicarlo, el interés puede salir del dinero de los que entran después. En 2022 una plataforma pagaba casi un 20 % por depositar la stablecoin UST gracias a subsidios: cuando dejaron de bastar, todo se hundió. En cripto **puede perderse la totalidad de lo invertido**.",
+     "key": "Todo rendimiento sale de algún sitio: si no sabes de dónde, quizá el rendimiento eres tú.",
+     "tip": "Un interés alto y «sin riesgo» no existe: o hay riesgo o hay estafa."
+    }
+   ]
+  },
+  "u13l5": {
+   "title": "ETFs y ETPs de cripto",
+   "steps": [
+    {
+     "title": "Dos formas de tener cripto",
+     "body": "• **Directamente:** compras la cripto en un exchange y la guardas tú o la plataforma. Cotiza 24 horas, 7 días.\n• **A través de la bolsa:** compras un producto cotizado que sigue su precio, con tu bróker de siempre y en horario de bolsa.\n\nEn EE. UU. se aprobaron los **ETF de bitcoin al contado** en enero de 2024."
+    },
+    {
+     "title": "En Europa: ETP y ETN",
+     "body": "La norma UCITS no permite un fondo de una sola cripto, así que en Europa se venden como **ETP** o **ETN**: títulos de deuda de un emisor, normalmente **respaldados** por la cripto que guarda un custodio.\n\nRiesgos: los de la cripto (todos) más los del emisor y el custodio. Y cobran una comisión anual. Muchos ETF de EE. UU. no se pueden comprar desde la UE por no tener KID."
+    },
+    {
+     "title": "El mismo riesgo de precio",
+     "body": "El envoltorio cambia la custodia, el horario y los trámites, **no la volatilidad**: si bitcoin cae un 70 %, el ETP también. Según Morningstar, los inversores en ETF de bitcoin ganaron unos 14 puntos al año menos que el propio ETF por comprar en subidas y vender en caídas. **Puede perderse la totalidad de lo invertido**.",
+     "key": "Un ETP de cripto te ahorra guardar claves, pero no te ahorra ni un punto de volatilidad.",
+     "tip": "El envoltorio no cambia lo que hay dentro."
+    }
+   ]
+  },
+  "u13l6": {
+   "title": "Cuánta cripto en una cartera",
+   "steps": [
+    {
+     "title": "Piensa en el conjunto",
+     "body": "La pregunta no es «¿cuánto puede subir esta cripto?», sino **¿qué le pasa a toda mi cartera si cae un 75 %?**\n\nCon un 5 % en cripto, una caída del 75 % resta un **3,75 %** al total. Con un 50 %, resta un **37,5 %**. El peso decide cuánto duele."
+    },
+    {
+     "title": "Cómo se razona",
+     "body": "Quien decide tener cripto suele dejar por escrito en su plan:\n\n• Antes, el **colchón** y sin deudas caras.\n• Un **máximo**: un porcentaje pequeño que podría perder entero sin que le cambie la vida.\n• Cuándo **rebalancear**: si se pasa del máximo, vende lo que sobra.\n\nSon ejemplos de cómo se piensa, no recomendaciones personalizadas."
+    },
+    {
+     "title": "La parte que podrías perder",
+     "body": "Si la cripto se dispara, su peso crece solo y tu cartera se vuelve más arriesgada sin que hayas decidido nada. En cripto **puede perderse la totalidad de lo invertido**: el porcentaje que elijas debería ser uno que aguantarías ver en cero.",
+     "key": "El peso de la cripto en el total, no su potencial, decide cuánto te puede doler.",
+     "tip": "Escribe hoy tu máximo en cripto, antes de que una subida te convenza de lo contrario."
+    }
+   ]
+  },
+  "u13r": {
+   "title": "Repaso de la unidad",
+   "steps": []
+  },
+  "s4boss": {
+   "title": "Reto final: Criptomonedas y blockchain",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u13l1-1": {
+   "prompt": "Noviembre de 2021: Bitcoin se ha multiplicado casi por 7 desde mayo de 2020 y marca máximos históricos. Muchos dicen que «esta vez es distinto». ¿Qué hizo en el año siguiente?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Tras subidas tan fuertes, el riesgo de una caída grande también es alto. Este episodio es de los más estudiados sobre la volatilidad cripto.",
+   "horizon": "hasta diciembre de 2022"
+  },
+  "u13l1-2": {
+   "prompt": "Una de las grandes criptomonedas, en velas diarias. ¿Qué hizo en las 10 sesiones siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "En cripto son frecuentes los movimientos del 10-15 % en dos semanas, en cualquier dirección.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u13l1-3": {
+   "prompt": "Otra gran criptomoneda, en velas diarias. ¿Sube o baja en las 10 sesiones siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Adivinar el próximo movimiento de un activo tan volátil se parece mucho a lanzar una moneda al aire.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u13l1-4": {
+   "prompt": "Bitcoin cae un 75 % desde su máximo. ¿Cuánto tiene que subir después para recuperarlo?",
+   "options": [],
+   "explanation": "Si 100 pasa a 25, para volver a 100 hay que multiplicar por 4: una subida del 300 %.",
+   "unit": "%"
+  },
+  "u13l1-5": {
+   "prompt": "Inviertes 2.000 € en una criptomoneda y cae un 84 %, como Bitcoin en 2018. ¿Cuánto te queda?",
+   "options": [],
+   "explanation": "2.000 × 0,16 = 320 €.",
+   "unit": "€"
+  },
+  "u13l1-6": {
+   "prompt": "Una criptomoneda cae un 90 %. ¿Cuánto tiene que subir para volver a su máximo?",
+   "options": [],
+   "explanation": "De 100 a 10: para volver a 100 hay que multiplicar por 10, una subida del 900 %.",
+   "unit": "%"
+  },
+  "u13l1-7": {
+   "prompt": "Rápido: ¿volatilidad anual típica de Bitcoin?",
+   "options": [
+    "50-80 %",
+    "2 %",
+    "15 %"
+   ],
+   "explanation": "Frente al 15 % de un índice mundial de acciones."
+  },
+  "u13l1-8": {
+   "prompt": "Laura compró bitcoin en un máximo y va perdiendo un 60 %. Lee en redes que «siempre se recupera». ¿Qué piensa?",
+   "options": [
+    "Que no sabe si se recuperará ni cuándo, y decide según su plan y lo que puede permitirse perder",
+    "Que debe pedir un préstamo para comprar más y promediar",
+    "Que se recuperará seguro, como siempre"
+   ],
+   "explanation": "Ante una caída fuerte, lo que ayuda es el plan decidido en calma, no las frases de las redes.",
+   "feedback": [
+    "Bien: en cripto puede perderse la totalidad de lo invertido; por eso el tamaño de la posición se decide antes.",
+    "Endeudarse para un activo que puede seguir cayendo puede convertir una pérdida en un problema serio.",
+    "Bitcoin se ha recuperado en el pasado tras años; muchas otras criptos no lo han hecho nunca. El pasado no garantiza nada."
+   ]
+  },
+  "u13l1-9": {
+   "prompt": "Tras la caída de 2022, Bitcoin tardó más de 2 años en recuperar su máximo de noviembre de 2021.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Lo superó en marzo de 2024. Muchas otras criptos de aquella época nunca han vuelto a sus máximos."
+  },
+  "u13l1-10": {
+   "prompt": "Ordena de menor a mayor volatilidad típica.",
+   "options": [
+    "Bonos del Estado",
+    "Bitcoin",
+    "Índice mundial de acciones",
+    "Letras del Tesoro"
+   ],
+   "explanation": "Menos del 1 %, un 4-7 %, en torno al 15 % y un 50-80 % anual."
+  },
+  "u13l2-1": {
+   "prompt": "Ordena lo que pasó con FTX en noviembre de 2022.",
+   "options": [
+    "FTX congela las retiradas",
+    "FTX se declara en quiebra",
+    "Los clientes retiran en masa",
+    "Se publica que Alameda, su empresa hermana, depende mucho del token FTT"
+   ],
+   "explanation": "Todo ocurrió en unos diez días: la confianza tardó años en construirse y días en romperse."
+  },
+  "u13l2-2": {
+   "prompt": "¿Qué es el riesgo de contraparte?",
+   "options": [
+    "El riesgo de que baje el precio",
+    "El riesgo de que quien guarda o te debe tu dinero no pueda o no quiera devolverlo",
+    "El riesgo de equivocarte de dirección al enviar"
+   ],
+   "explanation": "No depende del activo, sino de la empresa en la que confías."
+  },
+  "u13l2-3": {
+   "prompt": "Si dejas tus criptos en un exchange que quiebra, un fondo de garantía te devuelve hasta 100.000 €.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Ese fondo existe para los depósitos bancarios; para las criptos no hay nada equivalente."
+  },
+  "u13l2-4": {
+   "prompt": "FTX usó dinero de sus clientes en Alameda Research, una empresa vinculada a su fundador.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Esa mezcla del dinero de los clientes con el de la empresa fue la clave del fraude."
+  },
+  "u13l2-5": {
+   "prompt": "Bruno tiene todas sus criptos en un exchange que paga un 8 % por dejarlas allí. Lee rumores de problemas y ve que las retiradas tardan días. ¿Qué haría alguien que ha aprendido de FTX?",
+   "options": [
+    "Comprobar si está autorizado y cómo custodia los activos, y no tenerlo todo en un solo sitio",
+    "Depositar más para aprovechar el 8 %",
+    "Esperar: es un exchange grande, no puede caer"
+   ],
+   "explanation": "Retiradas lentas y rendimientos llamativos son señales a vigilar en cualquier plataforma.",
+   "feedback": [
+    "Bien: conocer a tu contraparte y no concentrar la custodia reduce el golpe si algo falla.",
+    "Si la plataforma tiene problemas, ese 8 % no sirve de nada.",
+    "FTX también era enorme y cayó en una semana."
+   ]
+  },
+  "u13l2-6": {
+   "prompt": "Ana tiene 1.000 € en cripto en un exchange autorizado bajo MiCA y 9.000 € en un fondo indexado. Un amigo le dice que, por lo de FTX, «todos los exchanges son estafas». ¿Qué responde?",
+   "options": [
+    "Que el riesgo de contraparte existe, pero se reduce con plataformas autorizadas, activos separados y sin concentrarlo todo",
+    "Que con MiCA el riesgo es cero",
+    "Que tiene razón y lo vende todo"
+   ],
+   "explanation": "Entre «todo es una estafa» y «no hay riesgo» está lo útil: medir y limitar el riesgo.",
+   "feedback": [
+    "Bien: no elimina el riesgo, pero lo acota. Y sabe que esos 1.000 € podría perderlos.",
+    "MiCA reduce riesgos, no los elimina, y no protege del precio.",
+    "Que una plataforma cometiera fraude no significa que todas lo hagan; lo útil es saber qué riesgo asumes."
+   ]
+  },
+  "u13l2-7": {
+   "prompt": "Empareja cada caso con lo que enseña.",
+   "options": [
+    "FTX (2022)",
+    "Mt. Gox (2014)",
+    "Terra/LUNA (2022)",
+    "MiCA"
+   ],
+   "explanation": "Tres golpes reales y la respuesta regulatoria europea.",
+   "right": [
+    "Un exchange puede perder las criptos de sus clientes",
+    "Una stablecoin puede hundirse",
+    "Exige autorización y separar los activos",
+    "Un exchange puede usar mal el dinero de sus clientes"
+   ]
+  },
+  "u13l2-8": {
+   "prompt": "Rápido: ¿en qué año quebró FTX?",
+   "options": [
+    "2017",
+    "2008",
+    "2022"
+   ],
+   "explanation": "En noviembre de 2022."
+  },
+  "u13l2-9": {
+   "prompt": "Si otro guarda tu dinero, asumes un riesgo de ____.",
+   "options": [
+    "divisa",
+    "inflación",
+    "duración",
+    "contraparte"
+   ],
+   "explanation": "Es el riesgo de que la otra parte no cumpla."
+  },
+  "u13l2-10": {
+   "prompt": "¿Qué reduce el riesgo de contraparte en cripto? Marca todo.",
+   "options": [
+    "No concentrarlo todo en una sola plataforma",
+    "Elegir la que más rentabilidad promete por depositar",
+    "Que separen tus activos de los suyos",
+    "Usar plataformas autorizadas"
+   ],
+   "explanation": "Una rentabilidad alta por depositar suele indicar que la plataforma presta o arriesga tu dinero."
+  },
+  "u13l3-1": {
+   "prompt": "Marca los mensajes que son estafa o una señal clara de rug pull.",
+   "options": [
+    "Felicidades, tienes 2.000 $ en tokens gratis. Conecta tu wallet y firma para reclamarlos.",
+    "He leído la guía de la CNMV sobre criptoactivos, ¿la comentamos?",
+    "Recordatorio: las criptomonedas son muy volátiles y puedes perder todo lo invertido.",
+    "🚀 $LAMBO va a hacer x100 esta noche. Compra YA antes de que lo listen en los grandes exchanges.",
+    "No es consejo financiero 😉 pero yo he metido todo en esta moneda que lancé ayer."
+   ],
+   "explanation": "Prisa, promesas de x100, regalos que piden firmar y un creador que promociona su propia moneda son señales clásicas.",
+   "senders": [
+    "Web de «airdrop»",
+    "Amiga",
+    "Tu exchange autorizado",
+    "Grupo de Telegram",
+    "Influencer"
+   ]
+  },
+  "u13l3-2": {
+   "prompt": "¿Qué son señales de alarma en un token nuevo? Marca todas.",
+   "options": [
+    "Promesas de multiplicar x100",
+    "Que su código esté publicado y auditado",
+    "Que no te deje vender después de comprar",
+    "Creadores anónimos sin historial"
+   ],
+   "explanation": "Una auditoría publicada no garantiza nada, pero su ausencia sí es una alarma."
+  },
+  "u13l3-3": {
+   "prompt": "Empareja cada trampa con su definición.",
+   "options": [
+    "Rug pull",
+    "Pump and dump",
+    "Falso airdrop",
+    "Honeypot"
+   ],
+   "explanation": "Cuatro trampas distintas con el mismo final: tu dinero acaba en el bolsillo de otro.",
+   "right": [
+    "Inflar el precio y vender a los que llegan tarde",
+    "Token que te deja comprar, pero no vender",
+    "«Tokens gratis» que vacían tu wallet",
+    "Los creadores se llevan el dinero y desaparecen"
+   ]
+  },
+  "u13l3-4": {
+   "prompt": "Pablo ve un token nuevo que ha subido un 2.000 % en dos días. En un grupo todos dicen que aún queda mucho. ¿Qué hace?",
+   "options": [
+    "Pide un préstamo para entrar con más",
+    "No entra: no sabe qué es, quién está detrás ni si podrá vender",
+    "Entra con sus ahorros: aún está a tiempo"
+   ],
+   "explanation": "Comprar solo porque algo ha subido mucho es el motor de los pump and dump.",
+   "feedback": [
+    "Podría acabar debiendo dinero por algo que ya no vale nada.",
+    "Bien: si el único argumento es que sube, el riesgo de perderlo todo es enorme.",
+    "Llega cuando los primeros ya quieren vender: es justo el perfil de víctima de un pump and dump."
+   ]
+  },
+  "u13l3-5": {
+   "prompt": "A Laura le aparecen en la wallet unos tokens que no compró, y una web le ofrece cambiarlos por dinero si firma una autorización. ¿Qué hace?",
+   "options": [
+    "No toca esos tokens ni firma nada",
+    "Los vende en cualquier web que se lo permita",
+    "Firma: son gratis"
+   ],
+   "explanation": "Lo gratis en cripto a menudo cuesta todo lo que tienes en la wallet.",
+   "feedback": [
+    "Bien: los tokens que no has pedido son un cebo habitual para que firmes un permiso malicioso.",
+    "La web que «te deja venderlos» suele ser la trampa.",
+    "La firma puede dar permiso para mover todos sus tokens: así funcionan muchos falsos airdrops."
+   ]
+  },
+  "u13l3-6": {
+   "prompt": "¿Qué es un rug pull?",
+   "options": [
+    "Un tipo de minería",
+    "Que los creadores de un proyecto se lleven el dinero y lo abandonen",
+    "Una caída normal del mercado"
+   ],
+   "explanation": "En inglés, «tirar de la alfombra»: los inversores se quedan sin suelo de golpe."
+  },
+  "u13l3-7": {
+   "prompt": "Crear un token nuevo es caro y difícil, por eso los que existen suelen ser serios.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Se crea en minutos y con muy poco dinero: por eso aparecen miles cada día."
+  },
+  "u13l3-8": {
+   "prompt": "Si un token no te deja vender después de comprarlo, es una señal clara de estafa.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Es un honeypot: el dinero solo puede entrar."
+  },
+  "u13l3-9": {
+   "prompt": "Dogecoin nació en 2013 como…",
+   "options": [
+    "Una stablecoin",
+    "Una broma",
+    "La moneda de un banco central"
+   ],
+   "explanation": "Es la memecoin más conocida: su precio depende sobre todo de la atención que recibe."
+  },
+  "u13l3-10": {
+   "prompt": "Inflar el precio con publicidad para vender a los que llegan tarde se llama pump and ____.",
+   "options": [
+    "pull",
+    "stake",
+    "mint",
+    "dump"
+   ],
+   "explanation": "Pump (inflar) and dump (soltar): los que llegan tarde compran lo que venden los organizadores."
+  },
+  "u13l4-1": {
+   "prompt": "Una plataforma ofrece un 25 % anual «garantizado» por depositar tu stablecoin. ¿Qué preguntas primero?",
+   "options": [
+    "¿Puedo invitar a amigos para ganar más?",
+    "¿Cuánto puedo depositar como máximo?",
+    "¿Quién paga ese interés y con qué dinero?"
+   ],
+   "explanation": "Antes del «cuánto», el «de dónde»: es lo que separa un rendimiento real de una trampa.",
+   "feedback": [
+    "Ganar por traer a otros es una señal típica de esquema piramidal.",
+    "Primero hay que saber de dónde sale el 25 %; si no se puede explicar, puede salir del dinero de los que entran después.",
+    "Bien: es la pregunta clave. Un depósito bancario paga mucho menos porque ese es el precio del dinero con poco riesgo."
+   ]
+  },
+  "u13l4-2": {
+   "prompt": "Ana hace staking de una cripto que le paga un 3 % anual en esa misma cripto. En un año, su precio cae un 40 %. ¿Cómo le ha ido?",
+   "options": [
+    "Pierde: el rendimiento del staking no compensa una caída del 40 %",
+    "Igual: el staking la protege de las caídas",
+    "Bien: ha cobrado el staking"
+   ],
+   "explanation": "Un rendimiento pequeño no compensa la volatilidad de lo que tienes debajo.",
+   "feedback": [
+    "Exacto: el staking no protege del precio.",
+    "No protege: solo añade más unidades de una moneda que ha bajado.",
+    "El rendimiento se cobra en la misma cripto: si cae un 40 %, pierde mucho más de lo que gana con el staking."
+   ]
+  },
+  "u13l4-3": {
+   "prompt": "Haces staking con 1.000 € en una cripto que rinde un 3 % anual en esa misma cripto. En un año su precio cae un 40 %. ¿Cuánto vale tu posición? (redondea)",
+   "options": [],
+   "explanation": "1.000 × 1,03 × 0,60 = 618 €. El 3 % no compensa el −40 %.",
+   "unit": "€"
+  },
+  "u13l4-4": {
+   "prompt": "¿De dónde sale el rendimiento del staking?",
+   "options": [
+    "De monedas nuevas y de las comisiones de la red",
+    "De un banco central",
+    "De un fondo de garantía"
+   ],
+   "explanation": "Es la recompensa que paga la red por validar bloques."
+  },
+  "u13l4-5": {
+   "prompt": "En un préstamo DeFi, el interés que cobras lo paga quien pide prestado.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Por eso el riesgo también depende de las garantías de quien pide y del código del contrato."
+  },
+  "u13l4-6": {
+   "prompt": "Un rendimiento muy alto en cripto indica que la plataforma es muy rentable y segura.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Normalmente indica más riesgo: Celsius quebró en 2022 y el UST se hundió tras pagar casi un 20 %."
+  },
+  "u13l4-7": {
+   "prompt": "Empareja cada fuente de rendimiento con quién lo paga.",
+   "options": [
+    "Staking",
+    "Préstamo DeFi",
+    "Esquema Ponzi",
+    "Depósito bancario"
+   ],
+   "explanation": "Si no puedes rellenar esta columna para un producto, no sabes de dónde sale lo que te pagan.",
+   "right": [
+    "El dinero de los nuevos que entran",
+    "El banco, que presta ese dinero a otros",
+    "Quien pide prestado",
+    "La red, con monedas nuevas y comisiones"
+   ]
+  },
+  "u13l4-8": {
+   "prompt": "¿Qué riesgos tiene poner tus criptos en DeFi? Marca todos.",
+   "options": [
+    "Caída del precio de la cripto",
+    "Que el Banco de España te multe por usarlo",
+    "Hackeos de la plataforma",
+    "Fallos en el código del contrato"
+   ],
+   "explanation": "Los riesgos de DeFi son técnicos y de mercado; no hay red de seguridad si algo falla."
+  },
+  "u13l4-9": {
+   "prompt": "La pregunta clave ante cualquier rendimiento: ¿quién ____ el interés?",
+   "options": [
+    "cobra",
+    "decide",
+    "publica",
+    "paga"
+   ],
+   "explanation": "Si nadie puede explicar quién paga y por qué, desconfía."
+  },
+  "u13l4-10": {
+   "prompt": "¿Rendimiento explicable o señal de alarma?",
+   "options": [
+    "«Rentabilidad garantizada» en una plataforma no autorizada",
+    "Ganas más por cada amigo que traes",
+    "Recompensa de staking en una red de prueba de participación",
+    "Interés de un préstamo con garantía",
+    "«30 % mensual sin riesgo»"
+   ],
+   "explanation": "Explicable no significa sin riesgo, pero lo inexplicable casi siempre acaba mal.",
+   "right": [
+    "Se puede explicar",
+    "Señal de alarma"
+   ]
+  },
+  "u13l5-1": {
+   "prompt": "Empareja cada forma de exposición con su rasgo.",
+   "options": [
+    "Cripto en autocustodia",
+    "Cripto en un exchange",
+    "ETP de bitcoin en Europa",
+    "ETF de bitcoin al contado de EE. UU."
+   ],
+   "explanation": "Cuatro caminos hacia el mismo activo, con distintos riesgos de custodia.",
+   "right": [
+    "Título cotizado respaldado por bitcoin",
+    "Aprobados en enero de 2024",
+    "La plataforma custodia por ti",
+    "Tú guardas las claves"
+   ]
+  },
+  "u13l5-2": {
+   "prompt": "¿Comprar la cripto directamente o un ETP en bolsa?",
+   "options": [
+    "Lo compras con tu bróker de siempre",
+    "Cobra una comisión anual de gestión",
+    "Riesgo del emisor del producto",
+    "Cotiza 24 horas, 7 días",
+    "Si pierdes la frase semilla, lo pierdes"
+   ],
+   "explanation": "Cambias el riesgo de custodia propia por el del emisor y el custodio, y sumas una comisión.",
+   "right": [
+    "Directamente",
+    "ETP en bolsa"
+   ]
+  },
+  "u13l5-3": {
+   "prompt": "¿Por qué en Europa no hay ETF UCITS de una sola criptomoneda?",
+   "options": [
+    "Porque nadie los quiere",
+    "Porque la norma UCITS exige diversificación y no lo permite",
+    "Porque las criptos están prohibidas en Europa"
+   ],
+   "explanation": "Por eso los productos de una sola cripto se emiten como ETP o ETN."
+  },
+  "u13l5-4": {
+   "prompt": "Un ETP de bitcoin cae mucho menos que el bitcoin porque cotiza en una bolsa regulada.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Sigue al bitcoin: si cae un 70 %, el ETP también, más o menos lo mismo."
+  },
+  "u13l5-5": {
+   "prompt": "Pablo quiere exposición a bitcoin, pero le da miedo perder las claves. ¿Qué opción tiene en cuenta y qué riesgo le queda?",
+   "options": [
+    "Un ETP, que elimina todos los riesgos",
+    "Un «fondo garantizado de bitcoin» que le ofrecen por teléfono",
+    "Un ETP respaldado en bolsa: no gestiona claves, pero mantiene toda la volatilidad y suma el riesgo del emisor"
+   ],
+   "explanation": "Cada forma de tener cripto cambia qué riesgo asumes, pero ninguna quita el de precio.",
+   "feedback": [
+    "Elimina el de perder tus claves, no el de que bitcoin caiga un 70 %.",
+    "Desconfía de cualquier «garantía» sobre cripto, y más si te llaman sin pedirlo.",
+    "Bien: cambia el riesgo de custodia propia por el del emisor y el custodio, y el precio se mueve igual."
+   ]
+  },
+  "u13l5-6": {
+   "prompt": "Bruno compra un ETP de bitcoin cuando ha subido un 50 % en un mes y lo vende asustado tras una caída del 30 %. ¿Qué le ha pasado?",
+   "options": [
+    "La brecha de comportamiento: comprar en euforia y vender en pánico",
+    "Que debería haberlo comprado directamente",
+    "Ha tenido mala suerte con el producto"
+   ],
+   "explanation": "En activos tan volátiles, el mayor riesgo suele ser nuestro propio comportamiento.",
+   "feedback": [
+    "Exacto: Morningstar calcula que los inversores en ETF de bitcoin perdieron unos 14 puntos al año frente al propio ETF por esto.",
+    "El envoltorio no habría evitado la caída ni su reacción.",
+    "El producto ha seguido al bitcoin; el problema ha sido cuándo compró y cuándo vendió."
+   ]
+  },
+  "u13l5-7": {
+   "prompt": "Rápido: ¿cuándo se aprobaron los ETF de bitcoin al contado en EE. UU.?",
+   "options": [
+    "Enero de 2009",
+    "Enero de 2024",
+    "Nunca"
+   ],
+   "explanation": "Empezaron a cotizar en enero de 2024."
+  },
+  "u13l5-8": {
+   "prompt": "Muchos ETF de cripto de EE. UU. no se pueden comprar desde la UE porque no tienen documento KID.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Sin KID, no se pueden comercializar a minoristas en la UE."
+  },
+  "u13l5-9": {
+   "prompt": "En Europa, los productos cotizados que siguen a una sola cripto suelen ser ETP o ____.",
+   "options": [
+    "REIT",
+    "TIPS",
+    "UCITS",
+    "ETN"
+   ],
+   "explanation": "Exchange Traded Notes: títulos de deuda del emisor, normalmente respaldados por la cripto."
+  },
+  "u13l5-10": {
+   "prompt": "¿Qué riesgos tiene un ETP de bitcoin respaldado? Marca todos.",
+   "options": [
+    "El riesgo del emisor y del custodio",
+    "La comisión anual",
+    "Olvidar tu propia frase semilla",
+    "La volatilidad del bitcoin"
+   ],
+   "explanation": "Las claves las guarda el custodio, no tú."
+  },
+  "u13l6-1": {
+   "prompt": "Reparte una cartera de ejemplo de 10.000 € a 20 años. El plan escrito dice: cripto como máximo un 5 % en total, al menos un 20 % en bonos y ningún activo por encima del 60 %.",
+   "options": [
+    "Fondo indexado mundial de acciones",
+    "Fondo de bonos de calidad",
+    "Bitcoin (ETP)",
+    "Ethereum (ETP)",
+    "Fondo monetario"
+   ],
+   "explanation": "Las reglas las fija cada uno en su plan; aquí sirven para practicar. Fíjate en que el límite de cripto es la suma de bitcoin y ethereum.",
+   "kinds": [
+    "ACCIONES",
+    "BONOS",
+    "CRIPTO",
+    "CRIPTO",
+    "LIQUIDEZ"
+   ]
+  },
+  "u13l6-2": {
+   "prompt": "Tienes 10.000 € con un 5 % en cripto. La cripto cae un 75 % y el resto no se mueve. ¿Cuánto pierde tu cartera en total?",
+   "options": [],
+   "explanation": "500 × 75 % = 375 €: un 3,75 % del total.",
+   "unit": "€"
+  },
+  "u13l6-3": {
+   "prompt": "Ahora con un 40 % en cripto (4.000 de 10.000 €). Cae un 75 % y el resto no se mueve. ¿Qué porcentaje pierde la cartera?",
+   "options": [],
+   "explanation": "4.000 × 75 % = 3.000 € → un 30 % de 10.000 €.",
+   "unit": "%"
+  },
+  "u13l6-4": {
+   "prompt": "Cartera de 10.000 €: 9.500 € en fondos y 500 € en cripto. La cripto se triplica y los fondos no se mueven. ¿Qué peso tiene ahora la cripto? (un decimal)",
+   "options": [],
+   "explanation": "500 × 3 = 1.500 €; total, 11.000 €; 1.500 ÷ 11.000 ≈ 13,6 %. Ha pasado del 5 % al 13,6 % sin que decidas nada.",
+   "unit": "%"
+  },
+  "u13l6-5": {
+   "prompt": "Siguiendo con esa cartera: Marta tenía escrito «cripto como máximo un 5 %» y ahora está en el 13,6 % tras la subida. ¿Qué hace según su plan?",
+   "options": [
+    "Mete más dinero en cripto porque va bien",
+    "Nada: si sube, que siga subiendo",
+    "Rebalancea: vende cripto hasta volver al 5 % y lleva el resto a sus fondos"
+   ],
+   "explanation": "Rebalancear es seguir el plan escrito en calma, no el estado de ánimo del mercado.",
+   "feedback": [
+    "Así decide con la euforia y aumenta un riesgo que ya superaba su límite.",
+    "Su cartera es ahora bastante más arriesgada de lo que decidió con calma.",
+    "Bien: cumple su plan, asegura parte de la subida y vuelve al riesgo que eligió."
+   ]
+  },
+  "u13l6-6": {
+   "prompt": "Pablo tiene 22 años, no tiene colchón de emergencia y debe 2.000 € de la tarjeta. Quiere meter 3.000 € en cripto «porque es joven y puede arriesgar». ¿Qué tiene en cuenta?",
+   "options": [
+    "Que pida un préstamo para meter más",
+    "Que antes van el colchón y quitarse la deuda cara; luego, si decide tener cripto, una parte que pueda perder",
+    "Que siendo joven, cuanto más arriesgue, mejor"
+   ],
+   "explanation": "La edad da tiempo, pero no sustituye a la base: colchón y sin deudas caras.",
+   "feedback": [
+    "Endeudarse para cripto multiplica el riesgo de acabar peor que al empezar.",
+    "Bien: el orden importa. La deuda de tarjeta cuesta un interés alto seguro; la cripto puede perderse entera.",
+    "Sin colchón y con deuda cara, una caída fuerte le puede obligar a vender en el peor momento o a endeudarse más."
+   ]
+  },
+  "u13l6-7": {
+   "prompt": "Ordena los pasos antes de tener cripto en una cartera.",
+   "options": [
+    "Plan escrito con un máximo para cripto",
+    "Rebalancear si se pasa del máximo",
+    "Sin deudas caras",
+    "Colchón de emergencia"
+   ],
+   "explanation": "Primero la base; después, reglas escritas; y por último, cumplirlas cuando el mercado se mueva."
+  },
+  "u13l6-8": {
+   "prompt": "Rápido: un 10 % de la cartera en cripto y la cripto cae un 50 %. ¿Cuánto pierde la cartera?",
+   "options": [],
+   "explanation": "10 % × 50 % = un 5 % del total.",
+   "unit": "%"
+  },
+  "u13l6-9": {
+   "prompt": "El peso de la cripto en una cartera puede subir solo, sin que compres más.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Si se revaloriza más que el resto, su porcentaje crece: por eso se rebalancea."
+  },
+  "u13l6-10": {
+   "prompt": "¿Qué le dices?",
+   "options": [
+    "Porque solo ves a los que ganaron, no a los que lo perdieron todo",
+    "Hazlo: si a él le salió bien, a ti también",
+    "Porque la cripto siempre baja"
+   ],
+   "explanation": "Las historias de éxito que circulan son una muestra sesgada: las pérdidas no se publican.",
+   "feedback": [
+    "¡Eso! Es el sesgo de supervivencia: quien lo perdió todo no suele contarlo en redes.",
+    "Que a uno le saliera bien no dice nada de las probabilidades.",
+    "Tampoco: puede subir mucho. El problema es no poder permitirte que caiga a cero."
+   ],
+   "lines": [
+    "He leído que alguien metió todo en cripto y se hizo rico 🤑",
+    "¿Por qué no hacer lo mismo?"
+   ]
+  }
+ }
+}

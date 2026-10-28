@@ -1,0 +1,616 @@
+{
+ "unit": {
+  "title": "Índices y referencias",
+  "description": "Qué mide cada índice, cómo se pondera y cómo usarlo para medir tu rentabilidad",
+  "section": "Cómo funcionan los mercados"
+ },
+ "lessons": {
+  "u7l1": {
+   "title": "Qué es un índice",
+   "steps": [
+    {
+     "title": "Una cesta de referencia",
+     "body": "Un **índice** resume en una cifra cómo va un grupo de valores. «La bolsa española ha subido un 1 %» significa que el **IBEX 35** ha subido un 1 %.\n\nCada índice tiene sus **reglas**: qué empresas entran, cuánto pesa cada una y cada cuánto se revisa."
+    },
+    {
+     "title": "Para qué sirve",
+     "body": "• **Termómetro:** cómo va un mercado, un país o un sector.\n• **Vara de medir:** comparar tu rentabilidad o la de un fondo.\n• **Base de productos:** fondos indexados y ETFs que lo copian.\n\nUn índice **no se compra directamente**: se compra un fondo o ETF que lo replica."
+    },
+    {
+     "title": "Puntos, no euros",
+     "body": "Un índice se mide en puntos, no en euros. Lo que importa es la **variación**: si pasa de 14.000 a 14.700 puntos, ha subido un 5 %.",
+     "key": "Un índice es una cesta de referencia, no algo que se compra tal cual.",
+     "tip": "Comprar el índice entero es apostar por toda una economía, no por una empresa."
+    }
+   ]
+  },
+  "u7l2": {
+   "title": "S&P 500, Nasdaq, IBEX 35 y MSCI World",
+   "steps": [
+    {
+     "title": "Los grandes de EE. UU.",
+     "body": "• **S&P 500:** unas 500 grandes empresas de EE. UU., ponderadas por capitalización. Cubre en torno al 80 % del valor de su bolsa.\n• **Nasdaq 100:** las 100 mayores empresas no financieras que cotizan en el Nasdaq; mucha tecnología.\n• **Dow Jones:** solo 30 empresas y pondera por precio, un método antiguo."
+    },
+    {
+     "title": "España, Europa y el mundo",
+     "body": "• **IBEX 35:** las 35 más líquidas de la bolsa española.\n• **Euro Stoxx 50:** 50 grandes de la zona euro. **DAX:** Alemania.\n• **MSCI World:** grandes y medianas empresas de **23 países desarrollados**, unas 1.250-1.300 en 2026 (la cifra cambia con cada revisión).\n• **MSCI ACWI:** añade los países emergentes."
+    },
+    {
+     "title": "Mundial no significa repartido",
+     "body": "Un fondo del MSCI World parece «todo el mundo», pero más de dos tercios es EE. UU. y no incluye emergentes como China o India.",
+     "key": "Cada índice mide una parte del mercado: mira qué hay dentro antes de compararte con él.",
+     "tip": "El nombre del índice no basta: mira su composición por países y sectores."
+    }
+   ]
+  },
+  "u7l3": {
+   "title": "Ponderar por capitalización",
+   "steps": [
+    {
+     "title": "Pesa más la que más vale",
+     "body": "**Capitalización = precio de la acción × número de acciones.**\n\nEn un índice ponderado por capitalización, el peso de cada empresa es su capitalización entre la suma de todas. Si una vale 300 y el índice entero 1.000, pesa un **30 %**: sus movimientos mueven mucho el índice."
+    },
+    {
+     "title": "Otros métodos",
+     "body": "• **Por precio** (Dow Jones, Nikkei 225): pesa más la acción con el precio unitario más alto, aunque la empresa sea más pequeña.\n• **Equiponderado:** todas pesan lo mismo.\n\nLa mayoría (S&P 500, IBEX 35, MSCI World) usan capitalización, a menudo contando solo las acciones que se negocian libremente."
+    },
+    {
+     "title": "La concentración",
+     "body": "Con capitalización, las ganadoras pesan cada vez más. En 2026, unas pocas tecnológicas suponen más de un tercio del S&P 500: comprar el índice es, en buena parte, comprar esas empresas.",
+     "key": "Capitalización = precio × número de acciones; quien más vale, más pesa.",
+     "tip": "Mira las 10 mayores posiciones de un índice: te dicen qué compras de verdad."
+    }
+   ]
+  },
+  "u7l4": {
+   "title": "Índice de precios y de rentabilidad total",
+   "steps": [
+    {
+     "title": "Con o sin dividendos",
+     "body": "El IBEX 35 o el S&P 500 que salen en las noticias son **índices de precios**: no cuentan los dividendos.\n\nLos índices de **rentabilidad total**, como el **IBEX 35 con dividendos**, suponen que los dividendos se reinvierten. Miden lo que de verdad habría ganado un inversor."
+    },
+    {
+     "title": "La diferencia se compone",
+     "body": "Un índice que sube un 5 % al año de precio y reparte un 2 % en dividendos da alrededor de un 7 % si los reinviertes.\n\nCon 10.000 € a 30 años: **43.219 €** sin dividendos frente a **76.123 €** con ellos. Casi el doble."
+    },
+    {
+     "title": "Pruébalo",
+     "body": "Pon 10.000 €, 0 € al mes y 30 años. Compara un 5 % con un 7 %: esa diferencia es el efecto de reinvertir los dividendos.",
+     "tip": "Son ejemplos, no promesas: los índices no suben lo mismo cada año."
+    },
+    {
+     "title": "Cuidado con el índice que «no sube»",
+     "body": "Durante muchos años, el IBEX 35 de precios parecía no moverse desde su máximo de 2007, mientras el IBEX con dividendos estaba muy por encima. El Nikkei japonés tardó hasta 2024 en superar su máximo de precio de 1989.",
+     "key": "Para medir una inversión a largo plazo, usa el índice con dividendos."
+    }
+   ]
+  },
+  "u7l5": {
+   "title": "Comparar tu rentabilidad",
+   "steps": [
+    {
+     "title": "Tu vara de medir",
+     "body": "No basta con «he ganado un 6 %». Compáralo con un **índice de referencia** (*benchmark*) que se parezca a lo que inviertes: una cartera de acciones mundiales, con el MSCI World con dividendos; una de acciones españolas, con el IBEX 35 con dividendos."
+    },
+    {
+     "title": "Lo que dicen los datos",
+     "body": "Batir al índice es difícil incluso para profesionales. Según el informe **SPIVA** (cierre de 2025), un **97 %** de los fondos activos de acciones europeas quedó por detrás de su índice en 10 años.\n\nY el inversor medio gana alrededor de **1,2 puntos al año menos** que sus propios fondos por comprar y vender en mal momento (Morningstar)."
+    },
+    {
+     "title": "Cuánto cuesta quedarse atrás",
+     "body": "Pon 10.000 € a 30 años al 7 % y compara un coste del 0,2 % con uno del 1,8 %: quedarse 1,6 puntos por detrás cada año se nota muchísimo.",
+     "tip": "Los puntos que pierdes cada año también se componen."
+    },
+    {
+     "title": "Compara igual con igual",
+     "body": "Mismo periodo, misma moneda, con dividendos y después de comisiones. Y si aportas dinero durante el año, no lo cuentes como ganancia.",
+     "key": "Un índice parecido a tu cartera es tu vara de medir."
+    }
+   ]
+  },
+  "u7r": {
+   "title": "Repaso de la unidad",
+   "steps": []
+  },
+  "s2boss": {
+   "title": "Reto final: Cómo funcionan los mercados",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u7l1-1": {
+   "prompt": "¿Qué es un índice bursátil?",
+   "options": [
+    "Una empresa que cotiza en bolsa",
+    "Un tipo de interés",
+    "Una cifra que resume cómo va un grupo de valores"
+   ],
+   "explanation": "Es una cesta de referencia con reglas sobre qué entra y cuánto pesa."
+  },
+  "u7l1-2": {
+   "prompt": "Se puede comprar directamente el índice S&P 500.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Se compra un fondo o ETF que lo replica."
+  },
+  "u7l1-3": {
+   "prompt": "Un índice pasa de 14.000 a 14.700 puntos. ¿Cuánto ha subido?",
+   "options": [],
+   "explanation": "(14.700 − 14.000) ÷ 14.000 = 0,05 → 5 %.",
+   "unit": "%"
+  },
+  "u7l1-4": {
+   "prompt": "Rápido: un índice pasa de 5.000 a 4.600 puntos. ¿Cuánto ha caído, en %? (escríbelo en positivo)",
+   "options": [],
+   "explanation": "400 ÷ 5.000 = 0,08 → ha caído un 8 %.",
+   "unit": "%"
+  },
+  "u7l1-5": {
+   "prompt": "Empareja cada uso del índice con un ejemplo.",
+   "options": [
+    "Termómetro",
+    "Vara de medir",
+    "Base de productos",
+    "Reglas del índice"
+   ],
+   "explanation": "Un índice informa, sirve de referencia y es la base de los fondos indexados.",
+   "right": [
+    "Comparar la rentabilidad de un fondo",
+    "Qué entra, cuánto pesa y cuándo se revisa",
+    "Fondos y ETFs que lo copian",
+    "Saber cómo va un mercado hoy"
+   ]
+  },
+  "u7l1-6": {
+   "prompt": "Si el IBEX 35 está en 14.000 puntos, comprarlo cuesta 14.000 €.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Los puntos no son euros: miden la evolución desde una base."
+  },
+  "u7l1-7": {
+   "prompt": "¿Qué fijan las reglas de un índice? Marca todas.",
+   "options": [
+    "Cuánto pesa cada una",
+    "Lo que opine cada día un tertuliano",
+    "Cada cuánto se revisa",
+    "Qué empresas entran"
+   ],
+   "explanation": "Las reglas son públicas y objetivas: por eso el índice sirve de referencia."
+  },
+  "u7l1-8": {
+   "prompt": "Un fondo presume en un anuncio: «¡Hemos ganado un 8 % este año!». El índice de su mercado ha subido un 14 %. ¿Qué piensas?",
+   "options": [
+    "Que no se puede comparar con nada",
+    "Que ha quedado 6 puntos por detrás de su referencia",
+    "Que es un fondo excelente"
+   ],
+   "explanation": "Una rentabilidad sola no dice si es buena: hay que compararla con su índice.",
+   "feedback": [
+    "Para eso sirven los índices: son la vara de medir.",
+    "Ganar un 8 % suena bien, pero un fondo indexado de ese mercado habría dado bastante más.",
+    "Solo lo parece si no lo comparas con nada."
+   ]
+  },
+  "u7l1-9": {
+   "prompt": "Si un índice sube, todas sus empresas han subido.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Es una media ponderada: unas suben, otras bajan, y el índice resume el conjunto."
+  },
+  "u7l1-10": {
+   "prompt": "Un índice no se compra directamente: se compra un fondo o un ____ que lo replica.",
+   "options": [
+    "IPC",
+    "bono",
+    "depósito",
+    "ETF"
+   ],
+   "explanation": "Los ETFs y fondos indexados copian el índice con costes bajos."
+  },
+  "u7l2-1": {
+   "prompt": "Empareja cada índice con lo que mide.",
+   "options": [
+    "S&P 500",
+    "Nasdaq 100",
+    "IBEX 35",
+    "MSCI World",
+    "Dow Jones"
+   ],
+   "explanation": "Cada índice es una ventana distinta al mercado.",
+   "right": [
+    "Las 100 mayores no financieras del Nasdaq",
+    "30 empresas ponderadas por precio",
+    "Grandes y medianas de 23 países desarrollados",
+    "Unas 500 grandes empresas de EE. UU.",
+    "Las 35 más líquidas de España"
+   ]
+  },
+  "u7l2-2": {
+   "prompt": "Velas diarias reales de uno de los índices de esta clase, sin nombre ni fechas. ¿Sube o baja en las sesiones siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Nadie lee de forma fiable dos semanas de un índice: por eso los índices sirven de referencia, no de bola de cristal.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u7l2-3": {
+   "prompt": "¿Qué índice incluye también países emergentes como China o India?",
+   "options": [
+    "S&P 500",
+    "MSCI World",
+    "MSCI ACWI"
+   ],
+   "explanation": "El MSCI World solo incluye desarrollados; el ACWI suma los emergentes."
+  },
+  "u7l2-4": {
+   "prompt": "El MSCI World incluye todos los países del mundo.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Solo 23 países desarrollados: no hay emergentes como China, India o Brasil."
+  },
+  "u7l2-5": {
+   "prompt": "Rápido: ¿qué índice pondera por precio?",
+   "options": [
+    "Dow Jones",
+    "S&P 500",
+    "IBEX 35"
+   ],
+   "explanation": "El Dow Jones (y el Nikkei 225) pesan cada empresa por el precio de su acción."
+  },
+  "u7l2-6": {
+   "prompt": "¿Qué índice lo refleja mejor?",
+   "options": [
+    "Cómo va la bolsa española",
+    "Cómo van los países desarrollados en conjunto",
+    "Un fondo con Apple, Nestlé, Toyota y otras más de mil empresas",
+    "Cómo van las grandes empresas de EE. UU.",
+    "Un fondo de grandes empresas españolas"
+   ],
+   "explanation": "Elige siempre el índice que se parezca a lo que miras.",
+   "right": [
+    "S&P 500",
+    "IBEX 35",
+    "MSCI World"
+   ]
+  },
+  "u7l2-7": {
+   "prompt": "En el MSCI World, EE. UU. pesa más de dos tercios.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Por eso un fondo «mundial» depende mucho de lo que haga la bolsa estadounidense."
+  },
+  "u7l2-8": {
+   "prompt": "Nasdaq 100, marzo de 2000: la tecnología lleva años disparada y todo el mundo habla de internet. ¿Qué hizo el índice en los años siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Un índice muy concentrado en un sector depende de lo que le pase a ese sector, para bien y para mal.",
+   "horizon": "los años siguientes"
+  },
+  "u7l2-9": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Solo tienes empresas europeas",
+    "Bastante diversificado, pero sobre todo en EE. UU. y sin emergentes",
+    "Sí, todo el mundo por igual"
+   ],
+   "explanation": "Diversificado no significa repartido a partes iguales.",
+   "feedback": [
+    "Al revés: Europa pesa mucho menos que EE. UU.",
+    "¡Eso! Más de mil empresas, pero no repartidas por igual entre países.",
+    "No del todo: más de dos tercios es EE. UU. y no hay emergentes."
+   ],
+   "lines": [
+    "Tengo un fondo del MSCI World, así que estoy repartido por todo el planeta 🌍"
+   ]
+  },
+  "u7l2-10": {
+   "prompt": "El MSCI World cubre grandes y medianas empresas de ____ países desarrollados.",
+   "options": [
+    "50",
+    "100",
+    "195",
+    "23"
+   ],
+   "explanation": "23 países desarrollados; para los emergentes existe el MSCI Emerging Markets y, juntos, el ACWI."
+  },
+  "u7l3-1": {
+   "prompt": "Una empresa tiene 2.000 millones de acciones a 15 € cada una. ¿Cuál es su capitalización, en millones de euros?",
+   "options": [],
+   "explanation": "2.000 millones × 15 € = 30.000 millones de €.",
+   "unit": "millones de €"
+  },
+  "u7l3-2": {
+   "prompt": "Un índice tiene tres empresas: A vale 600, B 300 y C 100 (millones de €). ¿Cuánto pesa A?",
+   "options": [],
+   "explanation": "600 ÷ (600 + 300 + 100) = 600 ÷ 1.000 = 60 %.",
+   "unit": "%"
+  },
+  "u7l3-3": {
+   "prompt": "En ese índice, A sube un 10 % y B y C no se mueven. ¿Cuánto sube el índice?",
+   "options": [],
+   "explanation": "A pesa un 60 %: 0,60 × 10 % = 6 %. Por eso las grandes mueven el índice.",
+   "unit": "%"
+  },
+  "u7l3-4": {
+   "prompt": "Rápido: índice equiponderado de 4 empresas. ¿Cuánto pesa cada una?",
+   "options": [],
+   "explanation": "100 ÷ 4 = 25 %.",
+   "unit": "%"
+  },
+  "u7l3-5": {
+   "prompt": "En un índice ponderado por precio, como el Dow Jones, ¿qué pesa más?",
+   "options": [
+    "La acción con el precio por acción más alto",
+    "La empresa que más vale en bolsa",
+    "La que tiene más empleados"
+   ],
+   "explanation": "Por eso es un método poco lógico: el precio de una acción no dice lo grande que es la empresa."
+  },
+  "u7l3-6": {
+   "prompt": "En un índice ponderado por capitalización, una empresa que vale el doble pesa el doble.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "El peso es proporcional a la capitalización."
+  },
+  "u7l3-7": {
+   "prompt": "Una acción de 500 € siempre es de una empresa más grande que una acción de 50 €.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Depende del número de acciones: lo que cuenta es precio × número de acciones."
+  },
+  "u7l3-8": {
+   "prompt": "Empresa X: 100 millones de acciones a 50 €. Empresa Y: 1.000 millones a 10 €. ¿Cuál pesa más en un índice por capitalización?",
+   "options": [
+    "Y",
+    "X",
+    "Pesan igual"
+   ],
+   "explanation": "X vale 5.000 millones de €; Y, 10.000 millones. Y pesa el doble aunque su acción sea más barata."
+  },
+  "u7l3-9": {
+   "prompt": "¿Cómo pondera cada índice?",
+   "options": [
+    "MSCI World",
+    "IBEX 35",
+    "Nikkei 225",
+    "S&P 500",
+    "Dow Jones"
+   ],
+   "explanation": "Casi todos los índices modernos ponderan por capitalización.",
+   "right": [
+    "Por capitalización",
+    "Por precio"
+   ]
+  },
+  "u7l3-10": {
+   "prompt": "El IBEX 35 pondera por capitalización.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Por capitalización, contando las acciones que se negocian libremente."
+  },
+  "u7l3-11": {
+   "prompt": "Laura compra un fondo del S&P 500 creyendo que tiene «500 empresas a partes iguales». ¿Qué le conviene hacer?",
+   "options": [
+    "Dar por hecho que cada empresa pesa un 0,2 %",
+    "Venderlo porque «está mal hecho»",
+    "Mirar sus 10 mayores posiciones"
+   ],
+   "explanation": "Entender cómo pondera un índice es saber qué riesgo compras.",
+   "feedback": [
+    "En realidad las grandes pesan muchísimo más: su riesgo depende de pocas empresas.",
+    "No está mal hecho: así funciona la capitalización. Solo hay que entenderlo.",
+    "Descubre que unas pocas tecnológicas pesan más de un tercio: ahora sabe lo que compra de verdad."
+   ]
+  },
+  "u7l4-1": {
+   "prompt": "Un índice sube un 4 % de precio y reparte un 3 % en dividendos. ¿Cuál es su rentabilidad total aproximada?",
+   "options": [],
+   "explanation": "4 % + 3 % ≈ 7 %.",
+   "unit": "%"
+  },
+  "u7l4-2": {
+   "prompt": "10.000 € al 5 % anual durante 30 años, ¿en cuánto se convierten? (redondea)",
+   "options": [],
+   "explanation": "10.000 × 1,05³⁰ ≈ 43.219 €.",
+   "unit": "€"
+  },
+  "u7l4-3": {
+   "prompt": "¿Y si al 5 % le sumas un 2 % de dividendos reinvertidos (un 7 % anual durante 30 años)? (redondea)",
+   "options": [],
+   "explanation": "10.000 × 1,07³⁰ ≈ 76.123 €: casi el doble que sin dividendos.",
+   "unit": "€"
+  },
+  "u7l4-4": {
+   "prompt": "¿Qué mide un índice de rentabilidad total?",
+   "options": [
+    "Solo la variación del precio",
+    "Los beneficios de las empresas",
+    "El precio más los dividendos reinvertidos"
+   ],
+   "explanation": "Es lo que habría ganado un inversor que reinvirtiera todo."
+  },
+  "u7l4-5": {
+   "prompt": "El IBEX 35 que sale en las noticias incluye los dividendos.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Es un índice de precios; existe aparte el IBEX 35 con dividendos."
+  },
+  "u7l4-6": {
+   "prompt": "Nikkei 225 (Japón), noviembre de 1989: el índice lleva años de subidas espectaculares. ¿Qué hizo en los años siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Lo que pasó lo ves en el gráfico. Recuerda que es un índice de precios: no cuenta los dividendos que cobraba quien lo tenía.",
+   "horizon": "los años siguientes"
+  },
+  "u7l4-7": {
+   "prompt": "Empareja cada término con su significado.",
+   "options": [
+    "Índice de precios",
+    "Índice de rentabilidad total",
+    "Dividendo",
+    "Fondo de acumulación"
+   ],
+   "explanation": "Para comparar bien, compara siempre «con dividendos» con «con dividendos».",
+   "right": [
+    "Precio más dividendos reinvertidos",
+    "Parte del beneficio que se reparte",
+    "Reinvierte los dividendos por ti",
+    "Solo la variación de las cotizaciones"
+   ]
+  },
+  "u7l4-8": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Ese IBEX no cuenta los dividendos; con ellos, la historia cambia mucho",
+    "Tiene razón, no da nada",
+    "Es que el IBEX está mal calculado"
+   ],
+   "explanation": "El índice de precios cuenta solo media historia.",
+   "feedback": [
+    "¡Eso! El IBEX 35 con dividendos ha estado muy por encima del de precios.",
+    "Le falta una parte: los dividendos.",
+    "Está bien calculado: solo mide otra cosa, el precio."
+   ],
+   "lines": [
+    "Mi tío dice que durante años el IBEX no subió nada desde 2007 🤷",
+    "¿Entonces la bolsa española no da nada?"
+   ]
+  },
+  "u7l4-9": {
+   "prompt": "A largo plazo, la diferencia entre reinvertir los dividendos o no es pequeña.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "A 30 años, un 5 % frente a un 7 % es casi el doble de dinero."
+  },
+  "u7l4-10": {
+   "prompt": "Comparas tu cartera, contando los dividendos que cobraste, con el IBEX 35 de precios. ¿Qué pasa?",
+   "options": [
+    "Te comparas con ventaja: deberías usar el IBEX con dividendos",
+    "Es la comparación correcta",
+    "Te comparas con desventaja"
+   ],
+   "explanation": "Tú cuentas dividendos y el índice no: parecerá que lo haces mejor de lo que lo haces."
+  },
+  "u7l5-1": {
+   "prompt": "Tu cartera ganó un 6 % y su índice de referencia un 9 %. ¿Cuántos puntos quedaste por detrás?",
+   "options": [],
+   "explanation": "9 − 6 = 3 puntos.",
+   "unit": "puntos"
+  },
+  "u7l5-2": {
+   "prompt": "Empiezas el año con 5.000 €, no aportas nada y lo acabas con 5.400 €. ¿Qué rentabilidad has tenido?",
+   "options": [],
+   "explanation": "400 ÷ 5.000 = 0,08 → 8 %.",
+   "unit": "%"
+  },
+  "u7l5-3": {
+   "prompt": "Empiezas con 5.000 €, aportas 1.000 € durante el año y acabas con 6.300 €. ¿Cuánto has ganado de verdad?",
+   "options": [],
+   "explanation": "6.300 − 5.000 − 1.000 = 300 €. Lo que aportas no es ganancia.",
+   "unit": "€"
+  },
+  "u7l5-4": {
+   "prompt": "Empareja cada cartera con su índice de referencia.",
+   "options": [
+    "Acciones de todo el mundo desarrollado",
+    "Acciones españolas",
+    "Grandes empresas de EE. UU.",
+    "Tecnológicas grandes del Nasdaq"
+   ],
+   "explanation": "La referencia tiene que parecerse a lo que inviertes.",
+   "right": [
+    "IBEX 35 con dividendos",
+    "S&P 500 con dividendos",
+    "Nasdaq 100 con dividendos",
+    "MSCI World con dividendos"
+   ]
+  },
+  "u7l5-5": {
+   "prompt": "Pablo invierte en acciones españolas y un año gana un 4 %, mientras el IBEX 35 con dividendos sube un 12 %. Está contento porque «ha ganado». ¿Qué le dirías?",
+   "options": [
+    "Que lo ha hecho genial: ganar es ganar",
+    "Que ha quedado 8 puntos por detrás de su referencia",
+    "Que debería compararse con un depósito al 2 %"
+   ],
+   "explanation": "Sin vara de medir no sabes si lo haces bien.",
+   "feedback": [
+    "Ganar menos que la alternativa más sencilla también es perder, aunque no se vea.",
+    "Un fondo indexado del IBEX le habría dado tres veces más. Es una señal para revisar lo que hace.",
+    "Es otro riesgo: una cartera de acciones se compara con un índice de acciones."
+   ]
+  },
+  "u7l5-6": {
+   "prompt": "Marta elige un fondo porque batió a su índice el año pasado. ¿Qué le conviene?",
+   "options": [
+    "Elegir el que más perdió para «comprar barato»",
+    "Invertir todo: si ganó, ganará",
+    "Mirar también su historial a 5-10 años y sus costes"
+   ],
+   "explanation": "El éxito pasado no predice el futuro: mira periodos largos y costes.",
+   "feedback": [
+    "Perder mucho un año tampoco dice que vaya a ganar el siguiente.",
+    "Según SPIVA, muy pocos de los que baten al índice un periodo lo repiten el siguiente.",
+    "Comprueba si fue suerte de un año o algo constante, y cuánto le cuesta."
+   ]
+  },
+  "u7l5-7": {
+   "prompt": "Según SPIVA (cierre de 2025), ¿qué porcentaje de fondos activos de acciones europeas quedó por detrás de su índice en 10 años?",
+   "options": [
+    "Alrededor del 60 %",
+    "Alrededor del 30 %",
+    "Un 97 %"
+   ],
+   "explanation": "Casi todos: los costes y la competencia hacen muy difícil batir al índice durante años."
+  },
+  "u7l5-8": {
+   "prompt": "Para comparar bien, hay que usar el índice con dividendos y tu rentabilidad después de comisiones.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Así comparas lo que de verdad ganaste con lo que habría dado el índice."
+  },
+  "u7l5-9": {
+   "prompt": "Rápido: tu cartera de acciones mundiales ganó un 10 % y el MSCI World con dividendos un 12 %. ¿Cómo lo hiciste?",
+   "options": [
+    "Mejor: ganaste un 10 %",
+    "Igual",
+    "Peor, por 2 puntos"
+   ],
+   "explanation": "10 − 12 = −2 puntos frente a tu referencia."
+  },
+  "u7l5-10": {
+   "prompt": "Comparar una cartera de acciones con un depósito al 2 % es una buena forma de saber si la gestionas bien.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Son riesgos distintos. Una cartera de acciones se compara con un índice de acciones parecido."
+  }
+ }
+}

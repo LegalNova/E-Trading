@@ -1,0 +1,728 @@
+{
+ "unit": {
+  "title": "Reading a chart",
+  "description": "Axes, chart types, timeframes, scales, trend and volume",
+  "section": "Technical analysis"
+ },
+ "lessons": {
+  "u19l1": {
+   "title": "What a price chart shows",
+   "steps": [
+    {
+     "title": "The axes",
+     "body": "• **Horizontal axis:** time. Each point, bar or candle is one period (a minute, a day, a week…).\n• **Vertical axis:** the price, usually on the right, in the asset's currency or in points if it's an index.\n• **Underneath:** the **volume**, how much was traded in each period."
+    },
+    {
+     "title": "Four prices per period",
+     "body": "For each period, four figures are recorded (**OHLC**):\n\n• **Open:** the first price.\n• **High** and **low**.\n• **Close:** the last one, and the most important.\n\nIn E-Trading, when you run your finger over a candle you see its four prices, the change and the volume."
+    },
+    {
+     "title": "A record, not a prediction",
+     "body": "A chart is the exact record of what buyers and sellers agreed on at each moment. It doesn't tell you what will happen: technical analysis works with probabilities, never certainties.",
+     "key": "A chart tells you what happened, not what's going to happen.",
+     "tip": "Reading it properly is already an advantage: lots of people only check whether it's green or red."
+    }
+   ]
+  },
+  "u19l2": {
+   "title": "Line, bars and candlesticks",
+   "steps": [
+    {
+     "title": "Five ways to see the price",
+     "body": "• **Line:** joins up the closes. The trend without the noise.\n• **Area:** the line with the space below filled in, as in lots of apps.\n• **Bars (OHLC):** from low to high, with a little tick on the left (open) and another on the right (close).\n• **Candlesticks:** the same, with a coloured body. It's the standard.\n• **Heikin Ashi:** averaged candles that smooth out the noise."
+    },
+    {
+     "prompt": "With candlesticks you can see each day's battle. Tap the longest green candle",
+     "ok": "It opened near the low and closed near the high: buyers were in charge the whole session. On a line chart you'd just see a higher point.",
+     "ko": "Look for the tallest green body, with hardly any thin lines above or below."
+    },
+    {
+     "title": "Be careful with Heikin Ashi",
+     "body": "Its opens and closes are calculated from averages: **they're not real prices**. It's useful for seeing the trend, never for deciding what price to enter at or where to put a stop.",
+     "key": "The line sums up; candlesticks tell the story of each period's battle.",
+     "tip": "To see where it's heading, use the line. To see who's winning each day, use candlesticks."
+    }
+   ]
+  },
+  "u19l3": {
+   "title": "Timeframes",
+   "steps": [
+    {
+     "title": "Same asset, different stories",
+     "body": "Each candle can be a minute, an hour, a day, a week or a month:\n\n• **1–15 min:** *scalping* and *day trading*.\n• **1 hour:** trades lasting a few days.\n• **Daily:** weeks to months.\n• **Weekly and monthly:** long term.\n\nThe daily chart can show a rise while the 5-minute chart shows a fall. Both are true."
+    },
+    {
+     "title": "Noise and signal",
+     "body": "The shorter the timeframe, the more **noise**: random moves that mean nothing. Signals fail more often and every trade pays a commission and the *spread*.\n\nA study of people who *day traded* Brazilian index futures between 2013 and 2015 found that **97 %** of those who kept at it for more than 300 days lost money."
+    },
+    {
+     "title": "The triple screen",
+     "body": "Alexander Elder's method:\n1. **Weekly:** decides the direction.\n2. **Daily:** looks for the moment.\n3. **Hourly:** fine-tunes the entry and the stop.",
+     "key": "Choose the timeframe to suit your horizon, and always look at the longer one before the shorter one.",
+     "tip": "Before you look at the five-minute candle, check where the weekly one is."
+    }
+   ]
+  },
+  "u19l4": {
+   "title": "Linear and logarithmic scale",
+   "steps": [
+    {
+     "title": "Euros or percentages",
+     "body": "• **Linear:** each centimetre is worth the same number of euros. From 10 to €20 takes up the same space as from 100 to €110.\n• **Logarithmic:** each centimetre is worth the same percentage. From 10 to €20 (+100 %) takes up the same space as from 100 to €200 (+100 %)."
+    },
+    {
+     "title": "Why it matters",
+     "body": "On a 50-year linear chart of the S&P 500, the 1987 crash looks insignificant and the 2020 one huge. On a log scale you can see that 1987 was a fall of more than 30 % in a few days, comparable to 2020.\n\nWith assets that have multiplied many times over (bitcoin, big tech companies), a linear scale is **misleading**."
+    },
+    {
+     "title": "Percentages aren't symmetrical",
+     "body": "Move the fall: if something drops 50 %, it needs to rise 100 % to get back. The logarithmic scale respects those proportions; the linear one doesn't.",
+     "tip": "For several years, use a logarithmic scale. For days or weeks, it hardly makes any difference."
+    }
+   ]
+  },
+  "u19l5": {
+   "title": "Trends: highs and lows",
+   "steps": [
+    {
+     "title": "How to spot one",
+     "body": "• **Uptrend:** higher highs and higher lows.\n• **Downtrend:** lower highs and lower lows.\n• **Sideways:** the price bounces between a ceiling and a floor with no clear direction.\n\nCharles Dow put it into words in the late nineteenth century: prices move in trends, which stay in force until there are clear signs of a change."
+    },
+    {
+     "title": "When it's called into question",
+     "body": "An uptrend starts to wobble when the price **fails to beat the last high** and then **breaks below the last low**: the first lower low appears.\n\nPullbacks of 5–10 % are normal within a healthy rise."
+    },
+    {
+     "title": "Momentum is real",
+     "body": "Trends lasting 3–12 months have tended to persist in shares, bonds, currencies and commodities (Jegadeesh and Titman, 1993; Moskowitz, Ooi and Pedersen, 2012). Profiting from it after costs and sharp reversals is another story.",
+     "key": "Uptrend = higher highs and lows; downtrend = lower ones.",
+     "tip": "The trend is your friend… until it stops making higher highs."
+    }
+   ]
+  },
+  "u19l6": {
+   "title": "Volume",
+   "steps": [
+    {
+     "title": "What it is",
+     "body": "**Volume** is the number of shares, contracts or coins that change hands in a period. It's shown as bars under the chart, green if the candle went up and red if it went down.\n\nThe price tells you what's happening; volume, how many people are behind it."
+    },
+    {
+     "title": "How to read it",
+     "body": "• Rises on high volume: conviction.\n• Rises on shrinking volume: possible exhaustion.\n• Falls on low volume: a calm pullback.\n• Breaks a level on high volume: a more reliable breakout.\n• Breaks on low volume: risk of a **false breakout**."
+    },
+    {
+     "title": "Spikes and limits",
+     "body": "Volume spikes come with news, expiries, panic or euphoria; after a sharp fall, they sometimes mark **capitulation**. Watch out: in forex there's no centralised volume, and in crypto it's spread across lots of platforms.",
+     "key": "A move with lots of volume has lots of people behind it; without volume it may be an illusion.",
+     "tip": "The price tells you what's happening. Volume tells you how many people believe it."
+    }
+   ]
+  },
+  "u19r": {
+   "title": "Unit review",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u19l1-1": {
+   "prompt": "Match each part of the chart with what it shows.",
+   "options": [
+    "Horizontal axis",
+    "Vertical axis",
+    "Bars at the bottom",
+    "Each candle"
+   ],
+   "explanation": "Time runs from left to right, price goes up the side and volume sits underneath. Each candle sums up one period: a minute, a day or a week.",
+   "right": [
+    "The price",
+    "What happened in one period",
+    "The volume traded",
+    "Time"
+   ]
+  },
+  "u19l1-2": {
+   "prompt": "Which price in each period is considered the most important?",
+   "options": [
+    "The high",
+    "The close",
+    "The open"
+   ],
+   "explanation": "The close is the price buyers and sellers settled on at the end of the period. Almost all indicators are calculated using closes."
+  },
+  "u19l1-3": {
+   "prompt": "Tap the highest close on this chart (Microsoft · closes every 3 sessions · June–August 2026)",
+   "options": [],
+   "explanation": "The high came before the end and then the price pulled back a little. The highest point doesn't have to be the last one."
+  },
+  "u19l1-4": {
+   "prompt": "Now tap the lowest close (Apple · closes every 3 sessions · February–April 2025)",
+   "options": [],
+   "explanation": "The low isn't at the end: after touching it, the price bounced. Finding the extremes is the first step in reading a chart."
+  },
+  "u19l1-5": {
+   "prompt": "In English, the four prices of each period are summed up as ____.",
+   "options": [
+    "RSI",
+    "CPI",
+    "ETF",
+    "OHLC"
+   ],
+   "explanation": "Open, high, low, close."
+  },
+  "u19l1-6": {
+   "prompt": "A share closed at €50 yesterday and at €53 today. How much has it changed on the day?",
+   "options": [],
+   "explanation": "(53 − 50) ÷ 50 = 0.06 → +6 %. The daily change is calculated between one close and the previous one.",
+   "unit": "%"
+  },
+  "u19l1-7": {
+   "prompt": "If a chart has been rising for three months, it's certain to rise tomorrow too.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "A chart records the past. The trend may or may not continue: we're talking probabilities, never certainties."
+  },
+  "u19l1-8": {
+   "prompt": "First go: 30 real daily candles, with no name or date. What do you think the price did over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Looking at a chart alone, nobody knows for sure. This exercise is about noticing the difference between reading the past and guessing the future.",
+   "horizon": "the next 10 sessions"
+  },
+  "u19l1-9": {
+   "prompt": "Quick: which axis shows time?",
+   "options": [
+    "Neither: it's in the legend",
+    "The vertical one",
+    "The horizontal one"
+   ],
+   "explanation": "Time moves from left to right; price goes up the side."
+  },
+  "u19l1-10": {
+   "prompt": "You run your finger over a candle on the E-Trading chart. What data do you see? Tick all that apply.",
+   "options": [
+    "The close",
+    "Tomorrow's price",
+    "The high and the low",
+    "The open"
+   ],
+   "explanation": "You see the period's four prices, plus the change and the volume. Nobody knows tomorrow's price."
+  },
+  "u19l2-1": {
+   "prompt": "Match each chart type with what it shows.",
+   "options": [
+    "Line",
+    "Bars",
+    "Candlesticks",
+    "Heikin Ashi"
+   ],
+   "explanation": "Line and area charts summarise; bars and candlesticks have all four prices; Heikin Ashi smooths things out at the cost of not showing real prices.",
+   "right": [
+    "From low to high, with little ticks for the open and close",
+    "A coloured body between the open and the close",
+    "Averaged candles, no real prices",
+    "Just the closes joined up"
+   ]
+  },
+  "u19l2-2": {
+   "prompt": "Which chart doesn't show the real opening and closing prices?",
+   "options": [
+    "Heikin Ashi",
+    "Bars",
+    "Candlesticks"
+   ],
+   "explanation": "Heikin Ashi calculates each candle from averages to smooth out the noise: its opens and closes aren't traded prices."
+  },
+  "u19l2-3": {
+   "prompt": "Tap the candle with the biggest green body.",
+   "options": [],
+   "explanation": "That huge body tells you buyers dominated the session from start to finish. A line chart would only show you a higher close. (Apple · daily candles · April 2025)"
+  },
+  "u19l2-4": {
+   "prompt": "On a bar chart, the little tick on the left marks the close.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "The one on the left is the open; the one on the right, the close."
+  },
+  "u19l2-5": {
+   "prompt": "Which chart would you use for each of these?",
+   "options": [
+    "Finding out whether higher prices were rejected today",
+    "Showing how much a fund has risen over 5 years",
+    "Placing a stop below yesterday's low",
+    "Reading each day's open and close",
+    "Seeing an index's 10-year trend"
+   ],
+   "explanation": "The line sums up the trend; candlesticks and bars have the four prices for each period, which are what you need to trade.",
+   "right": [
+    "Line or area",
+    "Candlesticks or bars"
+   ]
+  },
+  "u19l2-6": {
+   "prompt": "On a line chart, you can see the direction at a glance. What's the trend? (Microsoft · closes every 3 sessions · December 2025 – February 2026)",
+   "options": [
+    "Uptrend",
+    "Downtrend",
+    "Sideways"
+   ],
+   "explanation": "Each bounce stops below the previous one and the closes keep getting lower."
+  },
+  "u19l2-7": {
+   "prompt": "The chart that smooths out noise using averages is called ____.",
+   "options": [
+    "Marubozu",
+    "Doji",
+    "Fibonacci",
+    "Heikin Ashi"
+   ],
+   "explanation": "Heikin Ashi is for seeing the trend; marubozu and doji are types of candle, and Fibonacci is a retracement tool."
+  },
+  "u19l2-8": {
+   "prompt": "Pablo is looking at a Heikin Ashi chart, sees that the last candle closed at €102 and places a sell order at exactly that price. What do you tell him?",
+   "options": [
+    "Well done: that's the candle's close",
+    "To wait for the Heikin Ashi to turn green",
+    "To check the real prices on candlesticks or bars before setting the order"
+   ],
+   "explanation": "Each chart type has its use: Heikin Ashi for the trend, candlesticks or bars for real prices.",
+   "feedback": [
+    "That €102 is a calculated average, not a traded price: his order may not be filled where he thinks.",
+    "The colour helps you see the trend, but its prices still aren't real.",
+    "That's it: Heikin Ashi is for the trend; for trading prices, look at candlesticks, bars or a line."
+   ]
+  },
+  "u19l2-9": {
+   "prompt": "Quick: which chart is the standard on almost every platform?",
+   "options": [
+    "Point and figure",
+    "Japanese candlesticks",
+    "Area"
+   ],
+   "explanation": "Candlesticks show all four prices in an easy-to-read way."
+  },
+  "u19l2-10": {
+   "prompt": "What do you reply to Lumi?",
+   "options": [
+    "To see the long-term picture, a line is enough; candlesticks are for seeing inside each session",
+    "No, the line tells you everything",
+    "Yes: you can't invest without candlesticks"
+   ],
+   "explanation": "Each chart answers a question: the line, where it's heading; candlesticks, who won each period.",
+   "feedback": [
+    "That's it! To look at a fund over years, a line works fine. To trade, you need all four prices.",
+    "The line only joins the closes: you don't see highs, lows or what happened during each day.",
+    "You can invest very well while barely looking at the chart. Candlesticks are useful, not compulsory."
+   ],
+   "lines": [
+    "My investing app only shows me a line 📈",
+    "Am I missing something?"
+   ]
+  },
+  "u19l3-1": {
+   "prompt": "Rank from most noise to least noise.",
+   "options": [
+    "Daily",
+    "Weekly",
+    "1 hour",
+    "5 minutes",
+    "Monthly"
+   ],
+   "explanation": "The shorter the timeframe, the more random, meaningless moves."
+  },
+  "u19l3-2": {
+   "prompt": "Which timeframe suits each person?",
+   "options": [
+    "Pablo does scalping",
+    "Laura checks her index fund every quarter",
+    "Marta holds positions for a few weeks",
+    "Ana is investing for her retirement",
+    "Bruno opens and closes trades on the same day"
+   ],
+   "explanation": "You choose the timeframe according to your horizon: if you're investing for years, you don't need minute candles.",
+   "right": [
+    "Minutes or hours",
+    "Daily",
+    "Weekly or monthly"
+   ]
+  },
+  "u19l3-3": {
+   "prompt": "These closes cover about eight weeks. What trend do you see? (Microsoft · closes every 3 sessions · June–August 2026)",
+   "options": [
+    "Uptrend",
+    "Downtrend",
+    "Sideways"
+   ],
+   "explanation": "On this scale, highs and lows are rising. Within those weeks there were down days that would look dramatic on a 5-minute chart."
+  },
+  "u19l3-4": {
+   "prompt": "Daily chart of 30 sessions, with no name or date. Up or down over the next 10?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Ten sessions is a short horizon, and noise weighs heavily on it. Notice how much it moved and ask yourself whether you'd have held on.",
+   "horizon": "the next 10 sessions"
+  },
+  "u19l3-5": {
+   "prompt": "Different asset, same challenge. Up or down over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "The asset changes, the idea doesn't: in the short term, nobody gets it right reliably just by looking at candles.",
+   "horizon": "the next 10 sessions"
+  },
+  "u19l3-6": {
+   "prompt": "In the triple screen method, what is the longest timeframe for?",
+   "options": [
+    "Choosing the broker",
+    "Fine-tuning the entry",
+    "Deciding the direction"
+   ],
+   "explanation": "The longest one sets the direction: if the weekly is in an uptrend, you only look for buys. The shortest fine-tunes the entry and the stop."
+  },
+  "u19l3-7": {
+   "prompt": "The shorter the timeframe, the more reliable the signals.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "The opposite: on minute charts noise dominates, signals fail more often and costs add up."
+  },
+  "u19l3-8": {
+   "prompt": "On the weekly chart, a share has been making higher highs and lows for a year. On the 5-minute chart, it's been falling all morning. Marta, who invests for several years at a time, panics. What do you tell her?",
+   "options": [
+    "To buy more to take advantage of the fall",
+    "To look at the timeframe that fits her horizon",
+    "To sell now: the trend has changed"
+   ],
+   "explanation": "Each horizon has its timeframe. Mixing them up leads to impulsive decisions.",
+   "feedback": [
+    "Neither selling nor buying because of one morning: deciding off the 5-minute chart is using the wrong tool.",
+    "Good: for years, the weekly chart is what counts. The morning's fall may just be noise.",
+    "One morning on a 5-minute chart doesn't break a year-long trend: for her horizon, it's noise."
+   ]
+  },
+  "u19l3-9": {
+   "prompt": "Quick: a long-term investor should mainly look at…",
+   "options": [
+    "Weekly and monthly charts",
+    "1-minute candles",
+    "Just the day's news"
+   ],
+   "explanation": "Their horizon is years, not minutes."
+  },
+  "u19l3-10": {
+   "prompt": "A day trader makes 5 trades a day and pays €2 in commission on each. How much do they pay in a month of 20 sessions?",
+   "options": [],
+   "explanation": "5 × 2 × 20 = €200, not counting the spread. On short timeframes, costs add up very quickly.",
+   "unit": "€"
+  },
+  "u19l4-1": {
+   "prompt": "A share has gone from €1 to €300 in 15 years. Which scale do you use to study its history?",
+   "options": [
+    "Logarithmic",
+    "It doesn't matter",
+    "Linear"
+   ],
+   "explanation": "On a linear scale, the early years would look like a flat line even if there were 100 % rises. The logarithmic scale shows percentages properly."
+  },
+  "u19l4-2": {
+   "prompt": "On a linear scale, rising from 10 to €20 takes up the same space as rising from 100 to €200.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "That's what happens on a logarithmic scale. On a linear one, 100 to €200 takes up ten times more space than 10 to €20."
+  },
+  "u19l4-3": {
+   "prompt": "A share goes from €20 to €30. By what percentage has it risen?",
+   "options": [],
+   "explanation": "(30 − 20) ÷ 20 = 0.5 → +50 %.",
+   "unit": "%"
+  },
+  "u19l4-4": {
+   "prompt": "Another share goes from €200 to €210. By what percentage has it risen?",
+   "options": [],
+   "explanation": "€10 on €200 = +5 %. On a linear scale, this €10 jump takes up the same space as the one from 20 to €30; on a log scale, it looks ten times smaller.",
+   "unit": "%"
+  },
+  "u19l4-5": {
+   "prompt": "Which scale would you choose?",
+   "options": [
+    "The S&P 500 since 1950",
+    "A share over the last 3 weeks",
+    "A tech company that has multiplied 50 times over",
+    "Bitcoin since 2013",
+    "An index during a single session"
+   ],
+   "explanation": "For long periods or assets that have multiplied many times over, logarithmic. Over short stretches, euros and percentages move almost in step.",
+   "right": [
+    "Logarithmic",
+    "Makes almost no difference"
+   ]
+  },
+  "u19l4-6": {
+   "prompt": "If an asset falls 50 %, it needs to rise 100 % to get back to where it started.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "From 100 to 50 is −50 %; from 50 to 100 is +100 %. That's why you need to think in percentages, not euros."
+  },
+  "u19l4-7": {
+   "prompt": "S&P 500, late September 1929: weekly closes have been rising for almost two years. What do you think happened next?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "With moves this big, the scale decides what you see: on a hundred-year linear chart, any early stretch looks like a flat line. To compare eras, look at percentages.",
+   "horizon": "the following three years"
+  },
+  "u19l4-8": {
+   "prompt": "On a logarithmic scale, the same vertical distance represents the same ____.",
+   "options": [
+    "volume",
+    "number of days",
+    "number of euros",
+    "percentage"
+   ],
+   "explanation": "That's why it's good for comparing eras with very different prices."
+  },
+  "u19l4-9": {
+   "prompt": "When you're looking at just a few weeks, the scale barely changes the chart.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Over short stretches the moves are small, and euros and percentages move almost in step."
+  },
+  "u19l4-10": {
+   "prompt": "What do you reply?",
+   "options": [
+    "The chart must be wrong",
+    "It's the linear scale: at low prices, huge percentage moves take up very little space. On a log scale you'd see them",
+    "No, nothing used to happen back then"
+   ],
+   "explanation": "Over long periods, a linear scale hides the early moves. A logarithmic scale puts them in proportion.",
+   "feedback": [
+    "The chart is fine; what's misleading is using a linear scale for so many years.",
+    "That's it! On a log scale, +100 % takes up the same space in 2014 as in 2024.",
+    "Loads happened, with falls of more than 80 %. On a linear scale, because prices were low, you can't see it."
+   ],
+   "lines": [
+    "I've seen a bitcoin chart going back to 2013 👀",
+    "Until 2017 it's a flat line and then everything happens at the end.",
+    "Did it not move before that?"
+   ]
+  },
+  "u19l5-1": {
+   "prompt": "What's the trend on this chart? (NVIDIA · closes every 3 sessions · March–May 2026)",
+   "options": [
+    "Uptrend",
+    "Downtrend",
+    "Sideways"
+   ],
+   "explanation": "Each dip stays above the previous one and each rise beats the previous high."
+  },
+  "u19l5-2": {
+   "prompt": "And this one? (NVIDIA · closes every 3 sessions · February–April 2025)",
+   "options": [
+    "Uptrend",
+    "Downtrend",
+    "Sideways"
+   ],
+   "explanation": "The bounces don't reach the previous highs and the lows keep getting lower."
+  },
+  "u19l5-3": {
+   "prompt": "And this one? (Apple · closes every 3 sessions · September–November 2024)",
+   "options": [
+    "Uptrend",
+    "Downtrend",
+    "Sideways"
+   ],
+   "explanation": "The price goes up and down between a ceiling and a floor; at the end it's almost where it started."
+  },
+  "u19l5-4": {
+   "prompt": "In this sideways trend, tap the floor of the range: the lowest close (Apple · closes every 3 sessions · September–November 2024)",
+   "options": [],
+   "explanation": "That's where buyers showed up. If the price comes back to that area, lots of people will be watching it."
+  },
+  "u19l5-5": {
+   "prompt": "Highs at 50, 54 and €58; lows at 45, 48 and €52. What trend is it?",
+   "options": [
+    "Downtrend",
+    "Sideways",
+    "Uptrend"
+   ],
+   "explanation": "Rising highs and lows: that's the definition of an uptrend."
+  },
+  "u19l5-6": {
+   "prompt": "Classify each sequence of highs and lows.",
+   "options": [
+    "Highs 80, 76, 71 · lows 74, 70, 65",
+    "Highs 40, 40, 41 · lows 35, 36, 35",
+    "Highs 12, 11, 10 · lows 10, 9, 8",
+    "Highs 20, 22, 25 · lows 18, 19, 21",
+    "Highs 100, 104, 109 · lows 95, 99, 102"
+   ],
+   "explanation": "If both rise, it's an uptrend; if both fall, a downtrend; if they repeat, sideways.",
+   "right": [
+    "Uptrend",
+    "Downtrend",
+    "Sideways"
+   ]
+  },
+  "u19l5-7": {
+   "prompt": "A share rises for months. It makes a high at €60, falls to €54, bounces only as far as €58 and then falls to €52. What has happened?",
+   "options": [
+    "The uptrend has been called into question",
+    "It's definitely going to fall 50 %",
+    "Nothing: the uptrend continues"
+   ],
+   "explanation": "According to Dow theory, an uptrend is called into question when it fails to beat the last high and breaks below the last low.",
+   "feedback": [
+    "Exactly: a lower high and a lower low. It doesn't tell you how far it will fall, but it's no longer a clean rise.",
+    "A broken structure doesn't tell you how far it will fall: it could turn sideways.",
+    "It fails to beat the high (58 < 60) and breaks the low (52 < 54): the uptrend structure is broken."
+   ]
+  },
+  "u19l5-8": {
+   "prompt": "Look at the structure of these 30 daily candles. Up or down over the next 10?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Momentum is a statistical tendency over months, not a promise for next week. The structure helps you know where you'd be proved wrong.",
+   "horizon": "the next 10 sessions"
+  },
+  "u19l5-9": {
+   "prompt": "A 7 % pullback within an uptrend means the trend is over.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Pullbacks of 5–10 % are normal in healthy rises. What matters is whether the structure of highs and lows breaks."
+  },
+  "u19l5-10": {
+   "prompt": "Which idea from technical analysis has the most academic support?",
+   "options": [
+    "That Fibonacci levels predict turning points",
+    "That trends lasting 3–12 months tend to persist (momentum)",
+    "That every green candle signals another one"
+   ],
+   "explanation": "Momentum shows up in shares, bonds, currencies and commodities, with data going back more than a century. Even so, it's hard to profit from after costs."
+  },
+  "u19l6-1": {
+   "prompt": "Does the volume confirm the move or call it into question?",
+   "options": [
+    "Rises on shrinking volume",
+    "Breaks a support level on huge volume",
+    "Breaks a resistance level on very low volume",
+    "Rises on volume well above average"
+   ],
+   "explanation": "High volume = lots of people behind the move. Low or shrinking volume = little conviction.",
+   "right": [
+    "Confirms it",
+    "Calls it into question"
+   ]
+  },
+  "u19l6-2": {
+   "prompt": "The price breaks through a resistance level on volume well below average. What's the risk?",
+   "options": [
+    "That trading is suspended",
+    "That it's a false breakout",
+    "None"
+   ],
+   "explanation": "Without volume, the breakout has few people behind it and it's easier for the price to fall back inside."
+  },
+  "u19l6-3": {
+   "prompt": "Match each situation with how it's usually read.",
+   "options": [
+    "Rises on high volume",
+    "Falls on low volume",
+    "Huge spike after a sharp fall",
+    "Rises on shrinking volume"
+   ],
+   "explanation": "These are common readings, not exact rules: volume gives context, not certainties.",
+   "right": [
+    "Calm pullback",
+    "Possible capitulation",
+    "Possible exhaustion",
+    "Rise with conviction"
+   ]
+  },
+  "u19l6-4": {
+   "prompt": "Tap the candle with the most conviction: a big body and hardly any wicks.",
+   "options": [],
+   "explanation": "It opened almost at the low and closed almost at the high. If it also came on high volume, the sign of strength would be more convincing. (NVIDIA · daily candles · March–April 2026)"
+  },
+  "u19l6-5": {
+   "prompt": "In forex, the volume many charts show is only partial data.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "The currency market has no central exchange: each provider only sees part of what's traded."
+  },
+  "u19l6-6": {
+   "prompt": "Without seeing the volume you only have half the story. Up or down over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Even if you could see the volume, a single clue isn't enough to guess the short term. Volume helps you judge whether a move has people behind it.",
+   "horizon": "the next 10 sessions"
+  },
+  "u19l6-7": {
+   "prompt": "Bruno sees a share break above its high for the year, but volume that day is half the usual level. He wants to buy right now. Based on what you've learnt, what would be the most prudent thing to do?",
+   "options": [
+    "Buy as much as he can: a breakout is a breakout",
+    "Wait to see if it closes above the level with volume",
+    "Sell, because low volume guarantees a fall"
+   ],
+   "explanation": "A breakout on low volume is suspicious. Waiting for confirmation cuts down on false breakouts.",
+   "feedback": [
+    "Without volume, the breakout has few people behind it: it's the classic false breakout.",
+    "Good: a clear close on the other side with above-average volume makes the breakout more convincing.",
+    "Low volume casts doubt on the breakout, but it doesn't guarantee anything either way."
+   ]
+  },
+  "u19l6-8": {
+   "prompt": "Quick: a huge volume spike after a sharp fall can indicate…",
+   "options": [
+    "That the market is closed",
+    "Capitulation",
+    "Golden cross"
+   ],
+   "explanation": "The last sellers give up. Not always: there can be several spikes."
+  },
+  "u19l6-9": {
+   "prompt": "A move with lots of volume has lots of people behind it; one without volume may be ____.",
+   "options": [
+    "a guarantee",
+    "a divergence",
+    "a trend",
+    "an illusion"
+   ],
+   "explanation": "Volume measures how many people are backing a move."
+  },
+  "u19l6-10": {
+   "prompt": "In which cases is volume data less reliable? Tick all that apply.",
+   "options": [
+    "Indices, depending on how each provider calculates it",
+    "None: volume is always exact",
+    "Cryptocurrencies, spread across lots of platforms",
+    "Forex, with no central exchange"
+   ],
+   "explanation": "In forex there's no centralised volume, in crypto it's spread out and some of it may be artificial, and for indices it depends on the provider."
+  }
+ }
+}

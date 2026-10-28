@@ -1,0 +1,719 @@
+{
+ "unit": {
+  "title": "Fiscalidad de tus inversiones",
+  "description": "Cuánto pagas a Hacienda por invertir en España y cómo pagar lo justo legalmente",
+  "section": "España: impuestos y estafas"
+ },
+ "lessons": {
+  "u31l1": {
+   "title": "La base del ahorro y sus tramos",
+   "steps": [
+    {
+     "title": "Dónde tributan tus inversiones",
+     "body": "Intereses, dividendos y ganancias por vender acciones, fondos, ETF o cripto van a la **base del ahorro** del IRPF. Su escala (2026, territorio común):\n\n• Hasta 6.000 €: **19 %**\n• De 6.000 a 50.000 €: **21 %**\n• De 50.000 a 200.000 €: **23 %**\n• De 200.000 a 300.000 €: **27 %**\n• Más de 300.000 €: **30 %**"
+    },
+    {
+     "title": "Por tramos, no de golpe",
+     "body": "La escala es **progresiva por tramos**: cada parte paga su tipo. Con una ganancia de 8.000 €:\n\n6.000 × 19 % + 2.000 × 21 % = 1.140 + 420 = **1.560 €**.\n\nLos 2.000 € del segundo tramo pagan el 21 %; los primeros 6.000 €, siempre el 19 %."
+    },
+    {
+     "title": "Solo cuando vendes",
+     "body": "Dividendos e intereses tributan el año que los cobras (con una retención del 19 % a cuenta). Las ganancias, **solo al vender**: mientras mantienes, aunque tu cartera suba mucho, no pagas. Es el **diferimiento fiscal**. País Vasco y Navarra tienen normas propias; consulta siempre la Agencia Tributaria.",
+     "key": "Las inversiones tributan en la base del ahorro, del 19 % al 30 %, y las ganancias solo cuando vendes.",
+     "tip": "Hacienda cobra cuando vendes con ganancias, no cuando sube tu cartera."
+    }
+   ]
+  },
+  "u31l2": {
+   "title": "Ganancias, pérdidas y compensación",
+   "steps": [
+    {
+     "title": "Cómo se calcula la ganancia",
+     "body": "**Ganancia = valor de venta − valor de compra**, y los dos incluyen los gastos (comisiones).\n\nSi compraste en varias veces, se aplica **FIFO**: se consideran vendidas primero las que compraste primero.\n\nEn cripto, cambiar una moneda por otra (bitcoin por ether) también cuenta como venta."
+    },
+    {
+     "title": "Compensar pérdidas",
+     "body": "1. Las **pérdidas por ventas** se restan de las **ganancias por ventas** del mismo año.\n2. Si sobran pérdidas, se restan de los **rendimientos** (dividendos, intereses) hasta un **25 %** de estos.\n3. Lo que quede se arrastra a los **4 años siguientes**.\n\nGanas 5.000 € con unas acciones y pierdes 3.000 € con otras: tributas por 2.000 €."
+    },
+    {
+     "title": "Lo que te llevas",
+     "body": "Una pérdida bien declarada no es solo mala noticia: reduce tus impuestos este año o en los cuatro siguientes. Por eso conviene declarar también las ventas con pérdidas.",
+     "key": "Las pérdidas realizadas se compensan con las ganancias y, con límites, durante cuatro años."
+    }
+   ]
+  },
+  "u31l3": {
+   "title": "La regla de los dos meses",
+   "steps": [
+    {
+     "title": "Para qué existe",
+     "body": "Sin esta regla, alguien podría vender con pérdidas el 30 de diciembre solo para pagar menos y recomprar lo mismo el 2 de enero.\n\nEl artículo 33.5 de la Ley del IRPF lo impide: una pérdida **no se puede aplicar todavía** si compras **valores homogéneos** (los mismos) en los **dos meses anteriores o posteriores** a la venta."
+    },
+    {
+     "title": "Qué pasa con la pérdida",
+     "body": "• No se pierde: queda **aplazada** y se aplica cuando vendas los valores recomprados.\n• Para valores que **no cotizan** en mercados regulados, el plazo es de **un año**.\n• Solo afecta a las **pérdidas**: si vendes con ganancias y recompras, tributas normal."
+    },
+    {
+     "title": "Optimización legal",
+     "body": "Antes de acabar el año, algunos inversores realizan pérdidas para compensar ganancias, respetando los dos meses (por ejemplo, cambiando a un producto distinto que replique un índice parecido). Es legal, pero la fiscalidad nunca debería ser el motivo principal de una inversión.",
+     "key": "Si recompras lo mismo en dos meses, la pérdida espera."
+    }
+   ]
+  },
+  "u31l4": {
+   "title": "Traspasos de fondos sin pagar impuestos",
+   "steps": [
+    {
+     "title": "El traspaso",
+     "body": "En España puedes pasar tu dinero de un **fondo de inversión** a otro **sin pagar impuestos**, siempre que no pase por tu cuenta corriente y se haga por el procedimiento de traspaso. Se pide en la entidad de destino. Se mantienen la fecha y el precio de compra originales: pagas solo cuando reembolsas definitivamente."
+    },
+    {
+     "title": "Fondos frente a ETF",
+     "body": "• **Fondos:** traspaso sin tributar. Puedes rebalancear o cambiar de gestora sin coste fiscal.\n• **ETF:** aunque sean fondos por dentro, tributan **en cada venta** como una acción (salvo una excepción técnica muy limitada).\n\nPara quien mantiene años sin tocar, la diferencia es pequeña; para quien mueve la cartera, importa."
+    },
+    {
+     "title": "El valor de aplazar",
+     "body": "Si no pagas 950 € de impuestos hoy, esos 950 € siguen invirtiendo. Con un 7 % anual (ejemplo, no promesa), en 20 años serían unos 3.680 €. Al final pagarás impuestos, pero sobre una bola más grande.",
+     "key": "El traspaso entre fondos es como cambiar de carril sin pagar peaje."
+    }
+   ]
+  },
+  "u31l5": {
+   "title": "Dividendos y doble imposición",
+   "steps": [
+    {
+     "title": "Dos países, un dividendo",
+     "body": "Un dividendo de una empresa de EE. UU. paga primero allí: un **15 %** si has firmado el formulario **W-8BEN** con tu bróker, o un **30 %** si no. Luego tributa en España (19-30 %).\n\nPara no pagar dos veces, en tu IRPF deduces la **doble imposición internacional**: como máximo el % del convenio (15 % con EE. UU.) y nunca más de lo que pagarías en España."
+    },
+    {
+     "title": "El ejemplo",
+     "body": "Dividendo bruto de 1.000 € de EE. UU. con W-8BEN:\n\n• EE. UU. retiene 150 €.\n• En España te tocarían 190 € (19 %).\n• Deduces 150 € → pagas **40 €** más en España.\n\nTotal: 190 €, como un dividendo español. Sin W-8BEN, EE. UU. retendría 300 € y solo podrías deducir 150 €."
+    },
+    {
+     "title": "El atajo de los fondos",
+     "body": "Algunos países retienen más de lo que permite el convenio (Suiza, un 35 %) y recuperar el exceso exige trámites allí. Los **ETF y fondos europeos de acumulación** gestionan esto por dentro y no tributas hasta vender. Y recuerda: el dividendo no es gratis, el precio baja más o menos en esa cantidad.",
+     "key": "Firma el W-8BEN si cobras dividendos de EE. UU., y deduce la doble imposición en tu declaración."
+    }
+   ]
+  },
+  "u31l6": {
+   "title": "Cripto y modelos 720 y 721",
+   "steps": [
+    {
+     "title": "Cómo tributa la cripto",
+     "body": "Vender cripto por euros o **cambiarla por otra cripto** son ventas fiscales: la ganancia o pérdida va a la base del ahorro (19-30 %). Comprar y mantener no tributa.\n\nRecuerda: la cripto es muy volátil, no está protegida como un depósito y **puede perderse la totalidad de lo invertido**."
+    },
+    {
+     "title": "Modelos informativos",
+     "body": "• **Modelo 720:** si tienes en el extranjero más de **50.000 €** en cuentas, en **valores** (por ejemplo, acciones en un bróker extranjero) o en inmuebles. Se presenta de enero a marzo y, después, solo si sube más de 20.000 € o dejas de tenerlos.\n• **Modelo 721:** cripto custodiada por entidades **en el extranjero** por más de **50.000 €** a 31 de diciembre."
+    },
+    {
+     "title": "Informar no es pagar",
+     "body": "Estos modelos son **informativos**: no pagas por presentarlos. El Tribunal de Justicia de la UE anuló en 2022 las sanciones desproporcionadas del 720, pero la obligación de informar sigue.",
+     "key": "Las inversiones en el extranjero por encima de 50.000 € deben declararse, aunque no generen impuestos.",
+     "tip": "Un bróker extranjero puede ser barato, pero el papeleo con Hacienda corre de tu cuenta."
+    }
+   ]
+  },
+  "u31r": {
+   "title": "Repaso de la unidad",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u31l1-1": {
+   "prompt": "Vendes acciones con una ganancia de 8.000 €. ¿Cuánto pagas con la escala del ahorro?",
+   "options": [],
+   "explanation": "6.000 × 19 % + 2.000 × 21 % = 1.140 + 420 = 1.560 €.",
+   "unit": "€"
+  },
+  "u31l1-2": {
+   "prompt": "En la base del ahorro, los primeros 6.000 € tributan al ____ %.",
+   "options": [
+    "15",
+    "21",
+    "25",
+    "19"
+   ],
+   "explanation": "Del 6.000 € a 50.000 € se pasa al 21 %."
+  },
+  "u31l1-3": {
+   "prompt": "Ganancia de 20.000 € por la venta de un fondo. ¿Cuánto pagas?",
+   "options": [],
+   "explanation": "6.000 × 19 % + 14.000 × 21 % = 1.140 + 2.940 = 4.080 €.",
+   "unit": "€"
+  },
+  "u31l1-4": {
+   "prompt": "Vendes con una ganancia de 10.000 €. ¿Cuánto pagas?",
+   "options": [
+    "2.100 €",
+    "1.980 €",
+    "1.900 €"
+   ],
+   "explanation": "6.000 × 19 % + 4.000 × 21 % = 1.140 + 840 = 1.980 €. Solo la parte que supera 6.000 € paga el 21 %."
+  },
+  "u31l1-5": {
+   "prompt": "Empareja cada tramo de la base del ahorro con su tipo.",
+   "options": [
+    "Hasta 6.000 €",
+    "De 6.000 a 50.000 €",
+    "De 50.000 a 200.000 €",
+    "De 200.000 a 300.000 €",
+    "Más de 300.000 €"
+   ],
+   "explanation": "Escala estatal más autonómica vigente en 2026 en territorio común.",
+   "right": [
+    "23 %",
+    "27 %",
+    "30 %",
+    "19 %",
+    "21 %"
+   ]
+  },
+  "u31l1-6": {
+   "prompt": "Si ganas 7.000 € vendiendo acciones, los 7.000 € tributan al 21 %.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Solo los 1.000 € por encima de 6.000 € pagan el 21 %: 6.000 × 19 % + 1.000 × 21 % = 1.350 €."
+  },
+  "u31l1-7": {
+   "prompt": "¿En qué base del IRPF tributa cada cosa?",
+   "options": [
+    "El rescate de un plan de pensiones",
+    "Tu nómina",
+    "Ganancia al vender bitcoin",
+    "Dividendos de acciones",
+    "Intereses de un depósito",
+    "Ganancia al vender un ETF"
+   ],
+   "explanation": "El plan de pensiones tributa como rendimiento del trabajo al rescatarlo, en la base general.",
+   "right": [
+    "Base del ahorro",
+    "Base general"
+   ]
+  },
+  "u31l1-8": {
+   "prompt": "Con una ganancia de 10.000 € pagas 1.980 €. ¿Cuál es tu tipo medio? (un decimal)",
+   "options": [],
+   "explanation": "1.980 ÷ 10.000 = 0,198 → 19,8 %. El tipo medio siempre queda por debajo del tipo del último tramo.",
+   "unit": "%"
+  },
+  "u31l1-9": {
+   "prompt": "El fondo de Ana ha ganado 15.000 € este año, pero no ha vendido nada. ¿Cuánto paga por esa ganancia en la próxima declaración?",
+   "options": [
+    "3.000 € aproximadamente",
+    "El 19 % de lo que valga el fondo",
+    "Nada: solo tributará cuando venda o reembolse"
+   ],
+   "explanation": "Las ganancias latentes no tributan. Comprar y mantener también ahorra impuestos.",
+   "feedback": [
+    "Solo pagaría si vendiera o reembolsara. Mientras no venda, no hay ganancia que declarar.",
+    "Ni siquiera al vender se paga sobre todo el valor, solo sobre la ganancia.",
+    "Exacto. Ese impuesto aplazado sigue invirtiendo para ella: es el diferimiento fiscal."
+   ]
+  },
+  "u31l1-10": {
+   "prompt": "¿Qué territorios tienen su propia normativa de IRPF?",
+   "options": [
+    "Ceuta y Melilla",
+    "País Vasco y Navarra",
+    "Canarias y Baleares"
+   ],
+   "explanation": "Tienen régimen foral. En el resto (territorio común) se aplica la escala estatal más la autonómica."
+  },
+  "u31l2-1": {
+   "prompt": "Compras 100 acciones a 20 € con 10 € de comisión y las vendes a 30 € con otros 10 € de comisión. ¿Cuál es tu ganancia fiscal?",
+   "options": [],
+   "explanation": "Compra: 2.000 + 10 = 2.010 €. Venta: 3.000 − 10 = 2.990 €. Ganancia: 2.990 − 2.010 = 980 €.",
+   "unit": "€"
+  },
+  "u31l2-2": {
+   "prompt": "Compras 10 acciones a 50 € y, meses después, otras 10 a 80 €. Vendes 10 a 90 €. Con el método FIFO, ¿cuánto ganas? (sin comisiones)",
+   "options": [],
+   "explanation": "FIFO: vendes las primeras, las de 50 €. 10 × (90 − 50) = 400 €.",
+   "unit": "€"
+  },
+  "u31l2-3": {
+   "prompt": "Este año ganas 5.000 € vendiendo unas acciones y pierdes 3.000 € con otras. ¿Por cuánto tributas?",
+   "options": [
+    "Por 2.000 €",
+    "Por 5.000 €",
+    "Por 8.000 €"
+   ],
+   "explanation": "Las pérdidas se restan de las ganancias del mismo año: 5.000 − 3.000 = 2.000 €."
+  },
+  "u31l2-4": {
+   "prompt": "En el caso anterior, ¿cuánto pagas por esos 2.000 € de ganancia neta?",
+   "options": [],
+   "explanation": "2.000 × 19 % = 380 €. Sin compensar, habrías pagado por 5.000 €: 950 €.",
+   "unit": "€"
+  },
+  "u31l2-5": {
+   "prompt": "Pablo gana 4.000 € con unas acciones, pierde 6.000 € con otras y cobra 4.000 € de dividendos. ¿Qué pasa con los 2.000 € de pérdida que le sobran?",
+   "options": [
+    "Se pierden",
+    "Hacienda le devuelve 2.000 € en efectivo",
+    "Compensa 1.000 € con sus dividendos (el 25 % de 4.000 €) y arrastra 1.000 € a los 4 años siguientes"
+   ],
+   "explanation": "Las pérdidas sobrantes se compensan hasta el 25 % de dividendos e intereses y el resto se arrastra cuatro años.",
+   "feedback": [
+    "No se pierden: la ley permite aprovecharlos de dos formas.",
+    "No hay devolución de la pérdida: solo reduce lo que tributas.",
+    "Exacto: primero hasta el 25 % de los rendimientos y el resto, a los cuatro años siguientes."
+   ]
+  },
+  "u31l2-6": {
+   "prompt": "En el caso de Pablo, ¿cuántos euros de pérdida le quedan para los años siguientes?",
+   "options": [],
+   "explanation": "Le sobran 2.000 €; compensa el 25 % de 4.000 € = 1.000 € con los dividendos. Quedan 1.000 € para los próximos 4 años.",
+   "unit": "€"
+  },
+  "u31l2-7": {
+   "prompt": "Ordena cómo se aprovecha una pérdida por venta.",
+   "options": [
+    "Lo que quede, en los 4 años siguientes",
+    "Se resta de las ganancias por ventas del mismo año",
+    "Lo que sobre, de dividendos e intereses hasta un 25 %"
+   ],
+   "explanation": "Después de cuatro años, la pérdida no aprovechada caduca."
+  },
+  "u31l2-8": {
+   "prompt": "Las pérdidas que no puedas compensar se pueden aplicar en los 4 años siguientes.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Pasado ese plazo, caducan."
+  },
+  "u31l2-9": {
+   "prompt": "Si compraste en varias veces, se consideran vendidas primero las primeras que compraste: método ____.",
+   "options": [
+    "LIFO",
+    "DCA",
+    "PER",
+    "FIFO"
+   ],
+   "explanation": "First in, first out: lo primero que entra es lo primero que sale."
+  },
+  "u31l2-10": {
+   "prompt": "Cambias bitcoin por ether sin pasar por euros. Fiscalmente…",
+   "options": [
+    "Está exento por ser cripto",
+    "No pasa nada hasta que vuelvas a euros",
+    "Es una venta que puede generar ganancia o pérdida"
+   ],
+   "explanation": "Es una permuta: tributa la diferencia entre lo que te costó el bitcoin y lo que valía al cambiarlo."
+  },
+  "u31l3-1": {
+   "prompt": "¿Qué hace la regla de los dos meses?",
+   "options": [
+    "Obliga a mantener las acciones dos meses",
+    "Prohíbe vender con pérdidas en diciembre",
+    "Aplaza la pérdida si compras los mismos valores dos meses antes o después de venderlos"
+   ],
+   "explanation": "Evita vender solo para pagar menos y recomprar enseguida."
+  },
+  "u31l3-2": {
+   "prompt": "Si se aplica la regla de los dos meses, la pérdida se pierde para siempre.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Solo se aplaza: la aplicarás cuando vendas los valores que recompraste."
+  },
+  "u31l3-3": {
+   "prompt": "Laura vende un ETF con pérdidas el 10 de diciembre y vuelve a comprar el mismo ETF el 5 de enero. ¿Puede restar esa pérdida en la declaración de este año?",
+   "options": [
+    "No: queda aplazada hasta que venda el ETF recomprado",
+    "Sí, porque es un ETF y no una acción",
+    "Sí, la venta fue en diciembre"
+   ],
+   "explanation": "Dentro de los dos meses posteriores, la recompra de los mismos valores aplaza la pérdida.",
+   "feedback": [
+    "Exacto. No la pierde, pero tendrá que esperar.",
+    "La regla se aplica igual a acciones y ETF cotizados.",
+    "Recompró los mismos valores menos de dos meses después: la regla lo impide de momento."
+   ]
+  },
+  "u31l3-4": {
+   "prompt": "Bruno compró más acciones de una empresa el 15 de febrero. El 1 de marzo vende con pérdidas las que tenía de antes. ¿Qué pasa?",
+   "options": [
+    "Pierde las acciones compradas en febrero",
+    "Nada, la regla solo mira lo que compras después",
+    "La pérdida queda aplazada porque compró valores iguales dos meses antes"
+   ],
+   "explanation": "La regla mira los dos meses anteriores y los dos posteriores a la venta.",
+   "feedback": [
+    "No pierde nada: solo se retrasa el uso fiscal de la pérdida.",
+    "También cuenta lo que compraste en los dos meses anteriores a la venta.",
+    "Eso es: la ventana es de dos meses hacia atrás y hacia delante."
+   ]
+  },
+  "u31l3-5": {
+   "prompt": "¿Se aplica la regla de los dos meses?",
+   "options": [
+    "Compraste más de la misma acción un mes antes de vender con pérdidas",
+    "Vendes con ganancias y recompras al día siguiente",
+    "Vendes con pérdidas y recompras lo mismo 3 meses después",
+    "Vendes un ETF con pérdidas y recompras el mismo 3 semanas después",
+    "Vendes una acción con pérdidas y compras otra empresa distinta"
+   ],
+   "explanation": "Solo afecta a pérdidas y a valores homogéneos dentro de la ventana de dos meses.",
+   "right": [
+    "Sí, la pérdida se aplaza",
+    "No se aplica"
+   ]
+  },
+  "u31l3-6": {
+   "prompt": "Para valores que no cotizan en mercados regulados, el plazo es de un año.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Para los cotizados, dos meses; para los no cotizados, un año."
+  },
+  "u31l3-7": {
+   "prompt": "La regla se aplica si compras valores ____, es decir, los mismos que vendiste.",
+   "options": [
+    "cotizados",
+    "líquidos",
+    "extranjeros",
+    "homogéneos"
+   ],
+   "explanation": "Por ejemplo, acciones de la misma empresa o el mismo ETF."
+  },
+  "u31l3-8": {
+   "prompt": "Vendes con pérdidas el 15 de octubre. ¿Cuántos meses tienes que esperar para recomprar lo mismo sin que la pérdida se aplace? (valores cotizados)",
+   "options": [],
+   "explanation": "La ventana es de dos meses: si recompras pasado el 15 de diciembre, ya no se activa (siempre que no compraras lo mismo en los dos meses anteriores a la venta).",
+   "unit": "meses"
+  },
+  "u31l3-9": {
+   "prompt": "¿Qué es cierto sobre la regla de los dos meses? Marca todo.",
+   "options": [
+    "Solo afecta a las pérdidas",
+    "Prohíbe vender antes de dos meses desde la compra",
+    "Aplaza la pérdida, no la elimina",
+    "Está en el artículo 33.5 de la Ley del IRPF"
+   ],
+   "explanation": "Puedes vender cuando quieras; lo que cambia es cuándo puedes usar la pérdida."
+  },
+  "u31l3-10": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Es ilegal y te pueden multar por vender",
+    "Con la regla de los dos meses, esa pérdida quedaría aplazada",
+    "Genial, todo el mundo debería hacerlo"
+   ],
+   "explanation": "La regla no castiga: aplaza la pérdida hasta que vendas de verdad.",
+   "feedback": [
+    "Vender no es ilegal: simplemente no podrás usar la pérdida todavía.",
+    "¡Exacto! O esperas dos meses, o la pérdida espera a que vendas lo recomprado.",
+    "Ese truco es justo el que la ley desactiva."
+   ],
+   "lines": [
+    "Tengo un truco 😏",
+    "Vendo hoy con pérdidas para pagar menos y mañana lo recompro igual."
+   ]
+  },
+  "u31l4-1": {
+   "prompt": "Empareja cada producto con su fiscalidad.",
+   "options": [
+    "Fondo de inversión",
+    "ETF",
+    "Acción",
+    "Plan de pensiones"
+   ],
+   "explanation": "Cada vehículo tiene su propia regla fiscal.",
+   "right": [
+    "Tributa en cada venta",
+    "Tributa al vender",
+    "Desgrava al aportar y tributa como trabajo al rescatar",
+    "Se traspasa sin tributar hasta el reembolso"
+   ]
+  },
+  "u31l4-2": {
+   "prompt": "Tu fondo pasó de 10.000 € a 15.000 €. Si lo reembolsas para comprar otro, en vez de traspasar, ¿cuánto pagas de impuestos?",
+   "options": [],
+   "explanation": "Ganancia: 5.000 €. 5.000 × 19 % = 950 €. Con un traspaso, pagarías 0 € ahora.",
+   "unit": "€"
+  },
+  "u31l4-3": {
+   "prompt": "¿Cuánto pagas de impuestos al traspasar de un fondo a otro?",
+   "options": [
+    "El 19 % de la ganancia",
+    "Nada hasta que reembolses",
+    "Una tasa fija de 50 €"
+   ],
+   "explanation": "El impuesto se aplaza hasta el reembolso definitivo."
+  },
+  "u31l4-4": {
+   "prompt": "Marta tiene 20.000 € en un fondo del banco con un 1,8 % de comisiones y 6.000 € de ganancia. Quiere pasarse a un indexado al 0,2 %. ¿Cómo lo hace?",
+   "options": [
+    "Se queda en el fondo caro para no pagar impuestos",
+    "Pide un traspaso desde la entidad del fondo indexado",
+    "Reembolsa, recibe el dinero en su cuenta y compra el indexado"
+   ],
+   "explanation": "El traspaso permite dejar un fondo caro sin pagar impuestos por el camino.",
+   "feedback": [
+    "No hace falta: el traspaso existe justo para esto.",
+    "Bien: cambia de fondo sin pagar nada ahora y empieza a ahorrar comisiones.",
+    "Pagaría 6.000 × 19 % = 1.140 € sin necesidad. Le convenía el traspaso."
+   ]
+  },
+  "u31l4-5": {
+   "prompt": "Los ETF tienen el mismo régimen de traspaso sin tributar que los fondos.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "En general no: cada venta de un ETF tributa como la de una acción."
+  },
+  "u31l4-6": {
+   "prompt": "Ordena cómo funciona un traspaso entre fondos.",
+   "options": [
+    "Das la orden de traspaso en la entidad de destino",
+    "El dinero pasa de fondo a fondo sin tocar tu cuenta",
+    "Esa entidad pide el dinero a la de origen",
+    "Eliges el fondo de destino"
+   ],
+   "explanation": "Lo inicias en el destino; tú no tienes que vender nada en el origen."
+  },
+  "u31l4-7": {
+   "prompt": "Si el dinero pasa por tu cuenta corriente, ya no es un traspaso y tributa.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Sería un reembolso y una nueva compra: la ganancia tributa."
+  },
+  "u31l4-8": {
+   "prompt": "¿Puedes hacerlo sin tributar gracias al traspaso?",
+   "options": [
+    "Vender un ETF para comprar otro",
+    "Vender acciones para comprar un fondo",
+    "Cambiar de gestora de fondos",
+    "Rebalancear entre dos fondos indexados",
+    "Pasar de un fondo de bolsa a uno monetario"
+   ],
+   "explanation": "El traspaso funciona entre fondos de inversión, no con ETF ni acciones.",
+   "right": [
+    "Sí, por traspaso",
+    "No, tributa"
+   ]
+  },
+  "u31l4-9": {
+   "prompt": "Pagar el impuesto más tarde y que ese dinero siga invirtiendo se llama ____ fiscal.",
+   "options": [
+    "fraude",
+    "rescate",
+    "redondeo",
+    "diferimiento"
+   ],
+   "explanation": "Es legal y es la gran ventaja del traspaso."
+  },
+  "u31l4-10": {
+   "prompt": "Los 950 € de impuestos que no pagaste siguen invertidos 20 años al 7 % (ejemplo, no promesa). ¿En cuánto se convierten? (redondea)",
+   "options": [],
+   "explanation": "950 × 1,07²⁰ ≈ 3.676 €. Aplazar impuestos también se compone.",
+   "unit": "€"
+  },
+  "u31l5-1": {
+   "prompt": "Cobras un dividendo bruto de 1.000 € de una empresa de EE. UU. y has firmado el W-8BEN. ¿Cuántos euros retiene EE. UU.?",
+   "options": [],
+   "explanation": "1.000 × 15 % = 150 €, el máximo del convenio entre España y EE. UU.",
+   "unit": "€"
+  },
+  "u31l5-2": {
+   "prompt": "Siguiendo el caso: en España te corresponde un 19 % (190 €) y deduces los 150 € pagados en EE. UU. ¿Cuánto pagas además en España?",
+   "options": [],
+   "explanation": "190 − 150 = 40 €. En total pagas 190 €: no pagas dos veces.",
+   "unit": "€"
+  },
+  "u31l5-3": {
+   "prompt": "Si no firmas el W-8BEN, ¿cuánto suele retener EE. UU. sobre tus dividendos?",
+   "options": [
+    "Un 15 %",
+    "Un 30 %",
+    "Un 0 %"
+   ],
+   "explanation": "Y en España solo puedes deducir hasta el 15 % del convenio: el resto lo pierdes salvo que lo reclames allí."
+  },
+  "u31l5-4": {
+   "prompt": "Mismo dividendo de 1.000 € pero sin W-8BEN: EE. UU. retiene 300 €, en España te tocan 190 € y solo deduces 150 €. ¿Cuánto pagas en total entre los dos países?",
+   "options": [],
+   "explanation": "300 en EE. UU. + (190 − 150) = 40 en España = 340 €, frente a 190 € con el formulario.",
+   "unit": "€"
+  },
+  "u31l5-5": {
+   "prompt": "La deducción por doble imposición puede ser mayor que el impuesto que pagarías en España por ese dividendo.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Tiene dos límites: el % del convenio y lo que te correspondería pagar en España."
+  },
+  "u31l5-6": {
+   "prompt": "Cuando una empresa paga un dividendo, su precio suele bajar más o menos en esa cantidad.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Pasas a tener dinero en efectivo y algo menos en acciones. Y ese dinero tributa."
+  },
+  "u31l5-7": {
+   "prompt": "Empareja cada término con su significado.",
+   "options": [
+    "W-8BEN",
+    "Retención en origen",
+    "Doble imposición internacional",
+    "ETF de acumulación"
+   ],
+   "explanation": "Con estos cuatro conceptos entiendes casi toda la fiscalidad de los dividendos de fuera.",
+   "right": [
+    "Lo que cobra el país de la empresa",
+    "Deducción para no pagar dos veces",
+    "Reinvierte los dividendos sin que tributes hasta vender",
+    "Formulario para la retención reducida de EE. UU."
+   ]
+  },
+  "u31l5-8": {
+   "prompt": "Rápido: ¿qué tipo de fondo reinvierte los dividendos sin que tributes hasta vender?",
+   "options": [
+    "De acumulación",
+    "De distribución",
+    "Monetario"
+   ],
+   "explanation": "Por eso suelen ser más eficientes mientras acumulas patrimonio."
+  },
+  "u31l5-9": {
+   "prompt": "Pablo cobra dividendos de una empresa suiza. Suiza le retiene un 35 % y el convenio con España solo permite un 15 %. ¿Qué pasa con la diferencia?",
+   "options": [
+    "Para recuperar el exceso tiene que reclamarlo a Suiza con sus trámites",
+    "Se la deduce entera en España",
+    "Nada, Suiza se lo devuelve automáticamente"
+   ],
+   "explanation": "Algunos países retienen más de lo que permite el convenio. Por eso muchos prefieren fondos de acumulación.",
+   "feedback": [
+    "Exacto: el 20 % de más hay que pedírselo a la Hacienda suiza.",
+    "En España solo puede deducir hasta el 15 % del convenio.",
+    "No es automático: hay que solicitarlo."
+   ]
+  },
+  "u31l5-10": {
+   "prompt": "¿Tributa este año o no hasta que vendas?",
+   "options": [
+    "Un ETF de acumulación que reinvierte dividendos",
+    "Un fondo que sube un 20 % sin venderlo",
+    "Intereses de un depósito",
+    "Dividendo de un ETF de distribución",
+    "Dividendo cobrado de una acción"
+   ],
+   "explanation": "Lo que cobras tributa al cobrarlo; lo que sube sin vender, no.",
+   "right": [
+    "Tributa este año",
+    "No tributa hasta vender"
+   ]
+  },
+  "u31l6-1": {
+   "prompt": "Cambias 0,5 ether por solana sin pasar por euros. ¿Qué es para Hacienda?",
+   "options": [
+    "Una venta que puede generar ganancia o pérdida",
+    "Nada: solo cuenta al pasar a euros",
+    "Una donación"
+   ],
+   "explanation": "Cada permuta entre criptos tributa por la diferencia entre su coste y su valor en ese momento."
+  },
+  "u31l6-2": {
+   "prompt": "¿En qué casos tendrías que presentar el modelo 720? Marca todos.",
+   "options": [
+    "40.000 € en una cuenta de un banco extranjero",
+    "Un piso en Portugal que vale 120.000 €",
+    "55.000 € en cripto en un exchange extranjero",
+    "60.000 € en acciones en un bróker con sede en Alemania"
+   ],
+   "explanation": "La cuenta no llega a 50.000 €. La cripto en el extranjero va al modelo 721, no al 720."
+  },
+  "u31l6-3": {
+   "prompt": "El modelo 721 es para cripto custodiada en el extranjero por más de 50.000 € a 31 de diciembre.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Existe desde 2024 y, como el 720, es informativo."
+  },
+  "u31l6-4": {
+   "prompt": "Compras 0,1 bitcoin a 30.000 € el bitcoin y lo vendes a 60.000 € el bitcoin. ¿Cuánto pagas de impuestos? (sin comisiones)",
+   "options": [],
+   "explanation": "Compra: 3.000 €. Venta: 6.000 €. Ganancia: 3.000 € × 19 % = 570 €.",
+   "unit": "€"
+  },
+  "u31l6-5": {
+   "prompt": "¿Qué modelo informativo toca? (a 31 de diciembre)",
+   "options": [
+    "200.000 € en un bróker español",
+    "30.000 € en una cuenta de un banco extranjero",
+    "80.000 € en cripto en un exchange extranjero",
+    "70.000 € en acciones en un bróker extranjero",
+    "Un inmueble en Francia de 90.000 €"
+   ],
+   "explanation": "El 720 cubre cuentas, valores e inmuebles en el extranjero; el 721, la cripto custodiada fuera. Por debajo de 50.000 € por categoría, ninguno.",
+   "right": [
+    "Modelo 720",
+    "Modelo 721",
+    "Ninguno"
+   ]
+  },
+  "u31l6-6": {
+   "prompt": "Como se anularon las sanciones del modelo 720, ya no hay que presentarlo.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "El TJUE anuló en 2022 las sanciones desproporcionadas, no la obligación de informar."
+  },
+  "u31l6-7": {
+   "prompt": "¿Cuándo se presenta el modelo 720?",
+   "options": [
+    "En junio, con la renta",
+    "Cada mes",
+    "De enero a marzo"
+   ],
+   "explanation": "Del 1 de enero al 31 de marzo, sobre la situación a 31 de diciembre del año anterior."
+  },
+  "u31l6-8": {
+   "prompt": "Bruno ha hecho este año diez cambios entre criptos y nunca ha pasado a euros. Dice que no tiene nada que declarar. ¿Qué le dices?",
+   "options": [
+    "Tiene razón: sin euros no hay ganancia",
+    "Que cada cambio es una venta y debe calcular la ganancia o pérdida de cada uno",
+    "Que solo declare el que más ganó"
+   ],
+   "explanation": "En cripto, cada permuta tributa. Llevar un registro te ahorra problemas.",
+   "feedback": [
+    "Cada cambio entre criptos es una venta fiscal.",
+    "Exacto. Le conviene llevar un registro de cada operación con su fecha y su valor en euros.",
+    "Hay que declararlos todos; las pérdidas también le pueden ayudar a compensar."
+   ]
+  },
+  "u31l6-9": {
+   "prompt": "Tras presentar el 720, solo hay que volver a presentarlo si el valor sube más de 20.000 € o dejas de tener esos bienes.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Esa es la regla general para los años siguientes."
+  },
+  "u31l6-10": {
+   "prompt": "El modelo informativo para cripto custodiada en el extranjero por más de 50.000 € es el ____.",
+   "options": [
+    "720",
+    "303",
+    "100",
+    "721"
+   ],
+   "explanation": "El 720 es para cuentas, valores e inmuebles; el 100, la renta; el 303, el IVA."
+  }
+ }
+}

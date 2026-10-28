@@ -1,0 +1,649 @@
+{
+ "unit": {
+  "title": "Tu primer plan financiero",
+  "description": "Objetivos con cifra y fecha, tu plazo, tu riesgo y lo que dicen los datos del trading",
+  "section": "Fundamentos del dinero"
+ },
+ "lessons": {
+  "u4l1": {
+   "title": "Ahorrar, invertir y especular",
+   "steps": [
+    {
+     "title": "Tres cosas distintas",
+     "body": "• **Ahorrar:** apartar dinero sin arriesgarlo (cuenta, depósito, letras). Para lo cercano: el colchón y los gastos de menos de 2-3 años.\n• **Invertir:** poner dinero en lo que **produce valor** (empresas, préstamos, inmuebles). Para 5 años o más.\n• **Especular:** comprar esperando que **otro te lo compre más caro pronto**, aunque no genere nada en ese plazo."
+    },
+    {
+     "title": "De dónde sale la ganancia",
+     "body": "• Ahorro → intereses.\n• Inversión → beneficios de empresas, intereses, rentas.\n• Especulación → de otro participante que acierta menos que tú.\n\nEspecular es un juego de **suma cero** antes de costes y de **suma negativa** después. La CNMV incluye distinguir invertir de especular entre las competencias básicas de todo inversor."
+    },
+    {
+     "title": "La diferencia en una frase",
+     "body": "Aportar cada mes a un fondo mundial durante 20 años es invertir. Comprar una moneda de moda porque «todos dicen que va a subir» es especular.",
+     "key": "Se ahorra para lo cercano, se invierte para lo lejano y se especula solo con lo que puedes perder.",
+     "tip": "Si no sabes de dónde sale la ganancia, probablemente sale de tu bolsillo."
+    }
+   ]
+  },
+  "u4l2": {
+   "title": "Objetivos con fecha y cifra",
+   "steps": [
+    {
+     "title": "De deseo a objetivo",
+     "body": "Mal: «quiero tener dinero».\nBien: «quiero **30.000 €** para la entrada de un piso en **junio de 2031**, aportando **400 € al mes**».\n\nUn buen objetivo es **SMART**: específico, medible, alcanzable, relevante y con fecha."
+    },
+    {
+     "title": "La cuenta hacia atrás",
+     "body": "1. ¿Cuánto necesito?\n2. ¿Para cuándo?\n3. ¿Cuánto tengo ya?\n4. Lo que falta ÷ meses = **aportación mensual**.\n\nEjemplo: 6.000 € para un coche en 2 años, con 1.200 € ahorrados: (6.000 − 1.200) ÷ 24 = **200 € al mes**."
+    },
+    {
+     "title": "Cada objetivo, su cajón",
+     "body": "Si tienes varios objetivos, sepáralos: una cuenta o «hucha» para cada uno. Así sabes cuánto llevas de cada cosa y no te gastas el viaje en el coche.",
+     "key": "Un objetivo sin cifra ni fecha es solo un deseo.",
+     "tip": "Escríbelo y revísalo cada mes."
+    }
+   ]
+  },
+  "u4l3": {
+   "title": "Tu horizonte temporal",
+   "steps": [
+    {
+     "title": "Ponle fecha a cada euro",
+     "body": "• **Colchón:** siempre disponible → cuenta remunerada, fondo monetario.\n• **Viaje o coche (1-3 años)** → depósitos, letras.\n• **Entrada de un piso (3-7 años)** → mezcla prudente, más renta fija.\n• **Jubilación (15 años o más)** → sobre todo acciones diversificadas."
+    },
+    {
+     "title": "El riesgo baja con el tiempo",
+     "body": "En un año cualquiera, el S&P 500 ha caído aproximadamente **uno de cada cuatro años**. En periodos de 20 años, perder ha sido rarísimo.\n\nRaro no es imposible: quien compró en el máximo de 1929 o en la burbuja de 2000 esperó más de una década para recuperarse."
+    },
+    {
+     "title": "La regla del plazo",
+     "body": "No se invierte en bolsa el dinero que se necesita pronto: no porque vaya a bajar seguro, sino porque **puede** estar bajando justo cuando lo necesites.",
+     "key": "El plazo decide el riesgo que puedes asumir.",
+     "tip": "El dinero de dentro de dos años no debería estar en algo que puede caer un 30 % en un mes."
+    }
+   ]
+  },
+  "u4l4": {
+   "title": "Cuánto riesgo puedes aguantar",
+   "steps": [
+    {
+     "title": "Dos ingredientes",
+     "body": "**Capacidad de riesgo:** cuánto puedes perder **sin que cambie tu vida** (ingresos, estabilidad, colchón, cargas, plazo). Es objetiva.\n\n**Tolerancia al riesgo:** cuánto puedes ver caer tu dinero **sin vender en pánico**. Es psicológica, y casi todos la sobrestiman cuando la bolsa sube.\n\nTu perfil real es **el menor de los dos**."
+    },
+    {
+     "title": "La prueba del 40 %",
+     "body": "Inviertes 10.000 € y en seis meses valen 6.000 €. Las noticias dicen que «esto solo acaba de empezar». ¿Qué harías?\n\n• Vender todo → perfil conservador.\n• Aguantar → moderado.\n• Aportar más → decidido, si tienes capacidad.\n\nNo es teoría: la bolsa mundial cayó más de un 50 % en 2007-2009."
+    },
+    {
+     "title": "El test MiFID",
+     "body": "Al abrir cuenta en un bróker europeo, la normativa MiFID II le obliga a hacerte un test de conveniencia o idoneidad. Contéstalo con sinceridad: te protege de productos complejos que no entiendes.",
+     "key": "Tu perfil depende de cuánto puedes perder y de cómo reaccionas al perder.",
+     "tip": "Todo el mundo es valiente cuando la bolsa sube."
+    }
+   ]
+  },
+  "u4l5": {
+   "title": "La verdad sobre hacerse rico rápido",
+   "steps": [
+    {
+     "title": "Lo que dicen los datos",
+     "body": "• Brasil: el **97 %** de quienes hicieron *day trading* más de 300 días perdió dinero (Chague y otros, 2020).\n• Europa: entre el **74 % y el 89 %** de las cuentas minoristas de CFD pierde dinero (ESMA).\n• EE. UU.: los hogares que más operaban ganaban un **11,4 %** anual frente al **17,9 %** del mercado (Barber y Odean, 2000).",
+     "tip": "Aviso de la CNMV: los CFD son instrumentos complejos y están asociados a un riesgo elevado de perder dinero rápidamente debido al apalancamiento. Entre un 74 y un 89 % de los inversores minoristas pierden dinero cuando negocian con CFD."
+    },
+    {
+     "title": "Por qué pasa",
+     "body": "• Cada operación paga comisión y *spread*: operar mucho multiplica los costes.\n• Al otro lado hay profesionales y algoritmos.\n• Cortamos las ganancias pronto y dejamos correr las pérdidas.\n• El apalancamiento multiplica las pérdidas igual que las ganancias."
+    },
+    {
+     "title": "Señales de un gurú o una estafa",
+     "body": "• Promete rentabilidades altas «sin riesgo».\n• Enseña capturas de ganancias, nunca su historial completo.\n• Vende cursos, señales o «bots» con prisa («solo hoy»).\n• Te pide abrir cuenta en un bróker concreto (cobra por traerte).\n• No está registrado en la CNMV: compruébalo en su web y en su lista de **chiringuitos financieros**."
+    },
+    {
+     "title": "Cómo se gana de verdad",
+     "body": "Lo que funciona para la mayoría: aportar con regularidad, diversificar, pagar poco en comisiones, durante mucho tiempo y sin vender en pánico. Suena aburrido, y por eso pocos lo hacen.",
+     "key": "La mayoría de quien especula a corto plazo pierde; la mayoría de quien invierte con paciencia gana.",
+     "tip": "Si fuera fácil hacerse rico en una semana, nadie te lo vendería."
+    }
+   ]
+  },
+  "u4r": {
+   "title": "Repaso de la unidad",
+   "steps": []
+  },
+  "s1boss": {
+   "title": "Reto final: Fundamentos del dinero",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u4l1-1": {
+   "prompt": "Empareja cada actividad con de dónde sale su ganancia.",
+   "options": [
+    "Ahorrar",
+    "Invertir",
+    "Especular"
+   ],
+   "explanation": "La pregunta clave es siempre la misma: ¿de dónde sale la ganancia?",
+   "right": [
+    "Beneficios, intereses o rentas a largo plazo",
+    "Que otro pague más caro pronto",
+    "Intereses sin arriesgar lo que pusiste"
+   ]
+  },
+  "u4l1-2": {
+   "prompt": "¿Es ahorrar, invertir o especular?",
+   "options": [
+    "Operar cada pocos minutos con apalancamiento",
+    "Letras del Tesoro",
+    "Acciones de muchas empresas para 15 años",
+    "Depósito a 12 meses",
+    "Aportar cada mes a un fondo indexado mundial durante 20 años",
+    "Comprar una moneda de moda porque está subiendo"
+   ],
+   "explanation": "Plazo, riesgo y origen de la ganancia separan las tres cosas.",
+   "right": [
+    "Ahorrar",
+    "Invertir",
+    "Especular"
+   ]
+  },
+  "u4l1-3": {
+   "prompt": "Necesitas el dinero para un viaje dentro de un año. ¿Qué tiene más sentido?",
+   "options": [
+    "Ahorrarlo en una cuenta o depósito",
+    "Invertirlo en acciones",
+    "Especular con criptomonedas"
+   ],
+   "explanation": "A un año, el dinero no debe estar en algo que puede caer un 30 %."
+  },
+  "u4l1-4": {
+   "prompt": "¿De dónde sale la ganancia de quien invierte en una empresa a largo plazo?",
+   "options": [
+    "De otro inversor que pierde",
+    "De la suerte",
+    "De los beneficios que genera la empresa"
+   ],
+   "explanation": "Invertir es participar en lo que el activo produce: beneficios, intereses o rentas."
+  },
+  "u4l1-5": {
+   "prompt": "Especular es un juego de suma cero antes de costes.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Lo que gana uno lo pierde otro; después de comisiones e impuestos, el total es negativo."
+  },
+  "u4l1-6": {
+   "prompt": "Invertir significa que no puedes perder dinero.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Las inversiones suben y bajan, a veces mucho y durante años. Por eso se invierte a largo plazo y diversificando."
+  },
+  "u4l1-7": {
+   "prompt": "Comprar una cripto porque «todo el mundo dice que va a subir» es invertir.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Es especular: la ganancia depende de que otro pague más, no de lo que produce el activo."
+  },
+  "u4l1-8": {
+   "prompt": "Pablo tiene 12.000 €, gasta 1.200 € al mes y quiere probar suerte con 5.000 € en una moneda que «va a multiplicarse». ¿Qué hace?",
+   "options": [
+    "Aparta su colchón, invierte a largo plazo y, si quiere especular, solo con una parte pequeña que pueda perder entera",
+    "Mete los 5.000 € en la moneda",
+    "Mete los 12.000 € en la moneda para ganar más"
+   ],
+   "explanation": "Especular, si acaso, con una parte pequeña que puedas perder entera.",
+   "feedback": [
+    "Si la moneda se hunde, su vida no cambia: el plan aguanta.",
+    "Un 40 % de su dinero depende de que otro pague más caro: puede perderlo casi todo.",
+    "Sin colchón y todo en una apuesta: cualquier imprevisto o caída lo deja sin nada."
+   ]
+  },
+  "u4l1-9": {
+   "prompt": "Se ahorra para lo cercano, se invierte para lo ____ y se especula solo con lo que puedes perder.",
+   "options": [
+    "seguro",
+    "divertido",
+    "urgente",
+    "lejano"
+   ],
+   "explanation": "Cuanto más lejos está el objetivo, más tiempo hay para recuperarse de las caídas."
+  },
+  "u4l1-10": {
+   "prompt": "¿Cuáles son ejemplos de especulación? Marca todos.",
+   "options": [
+    "Comprar una moneda de moda porque sube",
+    "Usar mucho apalancamiento",
+    "Aportar cada mes a un fondo mundial durante 20 años",
+    "Operar cada pocos minutos"
+   ],
+   "explanation": "Aportar a largo plazo a un fondo diversificado es invertir."
+  },
+  "u4l2-1": {
+   "prompt": "Ordena los pasos para calcular tu aportación mensual.",
+   "options": [
+    "Ponerle fecha",
+    "Restar lo que ya tienes",
+    "Dividir lo que falta entre los meses que quedan",
+    "Decidir cuánto necesitas"
+   ],
+   "explanation": "Cifra, fecha, punto de partida y división: así un deseo se convierte en un plan mensual."
+  },
+  "u4l2-2": {
+   "prompt": "Quieres 3.000 € para un viaje dentro de 12 meses y ya tienes 600 €. ¿Cuánto tienes que apartar al mes?",
+   "options": [],
+   "explanation": "(3.000 − 600) ÷ 12 = 200 € al mes.",
+   "unit": "€"
+  },
+  "u4l2-3": {
+   "prompt": "Quieres 30.000 € de entrada para un piso en 5 años y empiezas de cero. Sin contar intereses, ¿cuánto al mes?",
+   "options": [],
+   "explanation": "30.000 ÷ 60 meses = 500 € al mes.",
+   "unit": "€"
+  },
+  "u4l2-4": {
+   "prompt": "Un objetivo SMART es específico, medible, alcanzable, relevante y tiene ____.",
+   "options": [
+    "suerte",
+    "apalancamiento",
+    "riesgo",
+    "fecha"
+   ],
+   "explanation": "Sin fecha no puedes calcular cuánto aportar cada mes."
+  },
+  "u4l2-5": {
+   "prompt": "¿Qué objetivo está bien planteado?",
+   "options": [
+    "Tener 12.000 € para un coche en 2029 aportando 250 € al mes",
+    "Ahorrar mucho",
+    "Ser rico"
+   ],
+   "explanation": "Tiene cantidad, fecha y plan: se puede medir y seguir."
+  },
+  "u4l2-6": {
+   "prompt": "¿Es solo un deseo o un objetivo medible?",
+   "options": [
+    "Viajar mucho",
+    "Tener 4.500 € de colchón en diciembre",
+    "Ahorrar más este año",
+    "Quiero ser rico",
+    "4.000 € para un máster en septiembre de 2027, con 250 € al mes"
+   ],
+   "explanation": "Cifra y fecha convierten un deseo en algo que puedes seguir mes a mes.",
+   "right": [
+    "Solo un deseo",
+    "Objetivo medible"
+   ]
+  },
+  "u4l2-7": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Perfecto, así no te agobias",
+    "Mejor no te pongas objetivos, que luego fallas",
+    "Ponle cifra y fecha: por ejemplo, 1.800 € en diciembre"
+   ],
+   "explanation": "Un objetivo medible te dice qué hacer cada mes.",
+   "feedback": [
+    "Sin cifra ni fecha, en diciembre no sabrás si lo has conseguido.",
+    "Sin objetivo es más fácil que el ahorro se quede en nada.",
+    "¡Así sí! 1.800 € en 12 meses son 150 € al mes: ya sabes qué hacer cada mes."
+   ],
+   "lines": [
+    "Mi objetivo para este año: ¡ahorrar! 💪",
+    "¿Lo he planteado bien?"
+   ]
+  },
+  "u4l2-8": {
+   "prompt": "Rápido: necesitas 2.400 € en 12 meses. ¿Cuánto al mes?",
+   "options": [
+    "200 €",
+    "100 €",
+    "240 €"
+   ],
+   "explanation": "2.400 ÷ 12 = 200 €."
+  },
+  "u4l2-9": {
+   "prompt": "Ana quiere un colchón de 3.000 €, un viaje de 1.500 € en verano y la entrada de un piso dentro de 6 años. Lo guarda todo junto en la misma cuenta. ¿Qué le conviene?",
+   "options": [
+    "Seguir con todo junto: es más sencillo",
+    "Separar cada objetivo en su propia cuenta o hucha",
+    "Ir a por un objetivo cada vez y olvidar los demás"
+   ],
+   "explanation": "Un cajón por objetivo: así el dinero de cada meta no se mezcla.",
+   "feedback": [
+    "En verano no sabrá cuánto puede gastar sin tocar el colchón o el piso.",
+    "Ve cuánto lleva de cada uno y el viaje no se come el colchón.",
+    "Mientras tanto, los otros plazos siguen corriendo."
+   ]
+  },
+  "u4l2-10": {
+   "prompt": "Si el objetivo es a 2 años, la aportación mensual es lo que falta dividido entre 24.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "2 años son 24 meses (sin contar intereses)."
+  },
+  "u4l3-1": {
+   "prompt": "Empareja cada objetivo con dónde suele tener sentido.",
+   "options": [
+    "Colchón de emergencia",
+    "Viaje dentro de un año",
+    "Entrada de un piso en 5 años",
+    "Jubilación en 35 años"
+   ],
+   "explanation": "A más plazo, más tiempo para recuperarse de las caídas.",
+   "right": [
+    "Mezcla prudente, más renta fija",
+    "Sobre todo acciones diversificadas",
+    "Depósito o letras",
+    "Cuenta remunerada"
+   ]
+  },
+  "u4l3-2": {
+   "prompt": "Necesitas la entrada de un piso dentro de 18 meses. ¿Dónde tiene más sentido?",
+   "options": [
+    "Depósitos o un fondo monetario",
+    "Criptomonedas",
+    "100 % en acciones tecnológicas"
+   ],
+   "explanation": "A 18 meses, una caída del 30 % arruinaría el plan."
+  },
+  "u4l3-3": {
+   "prompt": "Ordena de menor a mayor el riesgo que suele admitir cada objetivo.",
+   "options": [
+    "Entrada de un piso en 5 años",
+    "Jubilación en 30 años",
+    "Viaje en un año",
+    "Colchón de emergencia"
+   ],
+   "explanation": "Cuanto más lejos está el objetivo, más caídas se pueden aguantar por el camino."
+  },
+  "u4l3-4": {
+   "prompt": "En periodos de 20 años, el S&P 500 casi nunca ha dado pérdidas.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Casi nunca no es nunca: por eso también conviene diversificar por países."
+  },
+  "u4l3-5": {
+   "prompt": "Bruno tiene 8.000 € para la matrícula de un máster que paga dentro de 10 meses. Un amigo le dice que en bolsa «sacará algo más». ¿Qué hace?",
+   "options": [
+    "Lo mete en una cripto que ha subido mucho",
+    "Lo deja en un depósito o letras hasta el pago",
+    "Lo mete todo en bolsa"
+   ],
+   "explanation": "Dinero con fecha cercana: sin riesgo, aunque rinda poco.",
+   "feedback": [
+    "Caídas del 50 % en pocos meses no son raras en cripto: podría quedarse sin máster.",
+    "Gana poco, pero el día de la matrícula los 8.000 € estarán ahí.",
+    "Si la bolsa cae un 20 % justo antes, le faltarían 1.600 € para la matrícula."
+   ]
+  },
+  "u4l3-6": {
+   "prompt": "S&P 500, septiembre de 2008. Imagina que aquí tienes el dinero de la entrada de un piso que pagas en 6 meses. ¿Qué crees que hizo el índice en los meses siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Sea cual sea el resultado, el dinero que necesitas en pocos meses no debería depender de lo que haga la bolsa en ese plazo.",
+   "horizon": "los meses siguientes"
+  },
+  "u4l3-7": {
+   "prompt": "Rápido: dinero que necesitarás en 2 años. ¿En bolsa?",
+   "options": [
+    "Sí: en 2 años siempre sube",
+    "Sí, si es una sola empresa",
+    "Mejor no: puede estar cayendo justo cuando lo necesites"
+   ],
+   "explanation": "A 2 años, la bolsa puede estar en plena caída el día que necesitas el dinero."
+  },
+  "u4l3-8": {
+   "prompt": "¿Corto o largo plazo?",
+   "options": [
+    "Fianza de un alquiler dentro de 6 meses",
+    "Independencia financiera a los 50 (tienes 25)",
+    "Vacaciones del verano que viene",
+    "Jubilación",
+    "Cambiar de móvil",
+    "Ahorro para la universidad de un bebé"
+   ],
+   "explanation": "Lo que necesitas pronto, sin riesgo; lo lejano puede aguantar más altibajos.",
+   "right": [
+    "Corto plazo (menos de 3 años)",
+    "Largo plazo (más de 10 años)"
+   ]
+  },
+  "u4l3-9": {
+   "prompt": "Si el S&P 500 ha caído aproximadamente uno de cada cuatro años, ¿en cuántos años de cada 40 esperarías caídas, más o menos?",
+   "options": [],
+   "explanation": "40 ÷ 4 = 10 años. Las caídas son normales: lo que cambia con el plazo es el tiempo para recuperarse.",
+   "unit": "años"
+  },
+  "u4l3-10": {
+   "prompt": "No se invierte en bolsa el dinero que se necesita ____.",
+   "options": [
+    "en 30 años",
+    "para jubilarse",
+    "nunca",
+    "pronto"
+   ],
+   "explanation": "No porque vaya a bajar seguro, sino porque puede estar bajando justo cuando lo necesites."
+  },
+  "u4l4-1": {
+   "prompt": "¿Cuál es tu perfil de riesgo real?",
+   "options": [
+    "El menor entre capacidad y tolerancia",
+    "El mayor entre capacidad y tolerancia",
+    "El que tenga tu mejor amigo"
+   ],
+   "explanation": "Si puedes perder mucho pero no lo soportas, venderás en pánico; si lo soportas pero no puedes permitírtelo, te arriesgas demasiado."
+  },
+  "u4l4-2": {
+   "prompt": "Empareja cada concepto con su significado.",
+   "options": [
+    "Capacidad de riesgo",
+    "Tolerancia al riesgo",
+    "Test MiFID",
+    "Horizonte"
+   ],
+   "explanation": "Capacidad y horizonte son objetivos; la tolerancia es psicológica.",
+   "right": [
+    "Comprueba tu experiencia y tus conocimientos",
+    "Cuándo vas a necesitar el dinero",
+    "Cuánto aguantas ver caer sin vender",
+    "Cuánto puedes perder sin que cambie tu vida"
+   ]
+  },
+  "u4l4-3": {
+   "prompt": "Marta tiene 23 años, contrato estable, un colchón de 6 meses e invierte para dentro de 30 años en una cartera diversificada. Su cartera cae un 35 %. ¿Qué decisión encaja con su plan?",
+   "options": [
+    "Vende todo para no perder más",
+    "Mantiene el plan y sigue con sus aportaciones",
+    "Pide un préstamo para comprar más"
+   ],
+   "explanation": "Con capacidad y plazo, el plan importa más que el titular del día.",
+   "feedback": [
+    "Convierte una caída temporal en pérdida definitiva y, si luego hay rebote, se lo pierde.",
+    "Su plazo y su colchón le permiten esperar: la caída solo es pérdida real si vende.",
+    "Endeudarse para invertir multiplica el riesgo: si sigue cayendo, debe dinero y pierde."
+   ]
+  },
+  "u4l4-4": {
+   "prompt": "Una caída del 40 % en bolsa es algo teórico que no ha pasado nunca.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "La bolsa mundial cayó más del 50 % en 2007-2009 y casi un 50 % en 2000-2002."
+  },
+  "u4l4-5": {
+   "prompt": "Tus 10.000 € caen un 40 %. ¿Cuánto valen ahora?",
+   "options": [],
+   "explanation": "10.000 × (1 − 0,40) = 6.000 €.",
+   "unit": "€"
+  },
+  "u4l4-6": {
+   "prompt": "Después de caer un 40 %, ¿cuánto tiene que subir tu cartera para volver a 10.000 €? (redondea)",
+   "options": [],
+   "explanation": "De 6.000 a 10.000 € hay que ganar 4.000 €: 4.000 ÷ 6.000 ≈ 66,7 %. Las caídas grandes cuestan mucho de recuperar.",
+   "unit": "%"
+  },
+  "u4l4-7": {
+   "prompt": "¿Esto suma o resta capacidad de riesgo?",
+   "options": [
+    "Un colchón de 6 meses",
+    "Necesitar el dinero en 2 años",
+    "Hijos a tu cargo",
+    "Un sueldo estable",
+    "Deudas caras",
+    "Un horizonte de 30 años"
+   ],
+   "explanation": "La capacidad depende de tu situación objetiva: ingresos, colchón, cargas y plazo.",
+   "right": [
+    "Suma capacidad",
+    "Resta capacidad"
+   ]
+  },
+  "u4l4-8": {
+   "prompt": "¿Qué le dices a Lumi?",
+   "options": [
+    "Tu tolerancia real parece más baja de lo que crees",
+    "Invierte aún más para acostumbrarte",
+    "Entonces eres agresivo; solo ha sido un mal mes"
+   ],
+   "explanation": "La tolerancia se descubre en las caídas, no en las subidas.",
+   "feedback": [
+    "Eso: tu perfil lo marca cómo reaccionas en las caídas, no cómo te sientes cuando sube.",
+    "Más riesgo con poca tolerancia suele acabar vendiendo en pánico.",
+    "Si un 5 % te quita el sueño, ¿cómo llevarías un 40 %?"
+   ],
+   "lines": [
+    "Yo invirtiendo soy superagresivo 😎",
+    "Aunque cuando el mes pasado bajó un 5 % no pegué ojo…"
+   ]
+  },
+  "u4l4-9": {
+   "prompt": "Rápido: ¿para qué sirve el test MiFID del bróker?",
+   "options": [
+    "Para cobrarte más comisiones",
+    "Para protegerte de productos que no entiendes",
+    "Para nada"
+   ],
+   "explanation": "La normativa europea obliga a comprobar tu experiencia y tus conocimientos."
+  },
+  "u4l4-10": {
+   "prompt": "Te pones muy nervioso al ver números rojos y vas a necesitar el dinero en 3 años. Tu perfil es…",
+   "options": [
+    "Conservador",
+    "Especulador",
+    "Muy decidido"
+   ],
+   "explanation": "Baja tolerancia y plazo corto: mucha renta fija y poca bolsa."
+  },
+  "u4l5-1": {
+   "prompt": "La mayoría de quienes hacen day trading de forma continuada gana dinero.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "En Brasil, el 97 % de quienes lo hicieron más de 300 días perdió dinero."
+  },
+  "u4l5-2": {
+   "prompt": "Según la ESMA, ¿qué porcentaje de cuentas minoristas de CFD pierde dinero?",
+   "options": [
+    "20-30 %",
+    "74-89 %",
+    "Alrededor del 50 %"
+   ],
+   "explanation": "Por eso desde 2018 el apalancamiento está limitado para minoristas y los brókers tienen que mostrar el aviso."
+  },
+  "u4l5-3": {
+   "prompt": "Marca los mensajes que tienen pinta de estafa o de gurú.",
+   "options": [
+    "Recuerda: los CFD son complejos y la mayoría de cuentas minoristas pierde dinero con ellos.",
+    "He empezado a aportar 50 € al mes a un fondo indexado. Aburrido, pero ahí va 😴",
+    "Garantizamos un 5 % semanal sin riesgo. Ábrete cuenta en este bróker con mi enlace.",
+    "Dejé mi trabajo gracias al trading. Mi curso VIP, solo hoy, a 497 € 🚀",
+    "Señales de compra 100 % acertadas. Plazas limitadas: entra antes de medianoche."
+   ],
+   "explanation": "Promesas de ganancias garantizadas, prisa y enlaces a un bróker concreto son señales clásicas.",
+   "senders": [
+    "Tu bróker",
+    "Amiga",
+    "Desconocido",
+    "@TraderLibre",
+    "Grupo de Telegram"
+   ]
+  },
+  "u4l5-4": {
+   "prompt": "Los hogares que más operaban ganaban más que el mercado.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Ganaban un 11,4 % frente al 17,9 % del mercado: el exceso de confianza sale caro."
+  },
+  "u4l5-5": {
+   "prompt": "En Brasil, de quienes hicieron day trading más de 300 días, ¿cuántos perdieron dinero?",
+   "options": [
+    "El 60 %",
+    "El 97 %",
+    "El 30 %"
+   ],
+   "explanation": "Y solo un 1,1 % ganó más que el salario mínimo (Chague, De-Losso y Giovannetti, 2020)."
+  },
+  "u4l5-6": {
+   "prompt": "¿Qué son señales de estafa? Marca todas.",
+   "options": [
+    "Registro en la CNMV y documento de riesgos",
+    "Solo enseña capturas de ganancias",
+    "Prisa por decidir",
+    "Rentabilidad alta garantizada"
+   ],
+   "explanation": "Una entidad legal está registrada y explica sus riesgos y costes."
+  },
+  "u4l5-7": {
+   "prompt": "Un influencer con un coche de lujo te ofrece copiar sus operaciones por 99 € al mes: «el mes pasado gané un 40 %». ¿Qué haces?",
+   "options": [
+    "Le paso también mis claves del bróker para que opere por mí",
+    "Me suscribo: los resultados hablan solos",
+    "Busco si está registrado en la CNMV y pido su historial completo"
+   ],
+   "explanation": "Antes de pagar a nadie: registro en la CNMV, historial completo y cero prisas.",
+   "feedback": [
+    "Nunca compartas tus claves: puede vaciarte la cuenta.",
+    "Una captura de un mes bueno no dice nada de los meses malos que no enseña.",
+    "No aparece registrado y solo tiene capturas de días buenos: te ahorras 99 € al mes y probablemente mucho más."
+   ]
+  },
+  "u4l5-8": {
+   "prompt": "Según Barber y Odean, los hogares que más operaban ganaban un 11,4 % anual y el mercado un 17,9 %. ¿Cuántos puntos al año se dejaban?",
+   "options": [],
+   "explanation": "17,9 − 11,4 = 6,5 puntos al año, sobre todo por costes y exceso de confianza.",
+   "unit": "puntos"
+  },
+  "u4l5-9": {
+   "prompt": "Si alguien te promete rentabilidad alta sin riesgo, es una señal de alarma.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Rentabilidad y riesgo van juntos: lo «alto y seguro» no existe."
+  },
+  "u4l5-10": {
+   "prompt": "Lo que funciona: aportar con regularidad, diversificar, costes bajos, mucho tiempo y no vender en ____.",
+   "options": [
+    "euros",
+    "verano",
+    "Navidad",
+    "pánico"
+   ],
+   "explanation": "Vender en pánico convierte las caídas temporales en pérdidas reales."
+  }
+ }
+}

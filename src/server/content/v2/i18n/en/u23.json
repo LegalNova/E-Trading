@@ -1,0 +1,531 @@
+{
+ "unit": {
+  "title": "Putting it all together",
+  "description": "Combining signals, top-down analysis, testing rules and knowing what works",
+  "section": "Technical analysis"
+ },
+ "lessons": {
+  "u23l1": {
+   "title": "Confluence: signals that confirm each other",
+   "steps": [
+    {
+     "title": "What confluence is",
+     "body": "A single signal is a weak clue. When **different pieces** point to the same thing, the idea carries more weight:\n\n• **Trend:** highs and lows, 200 SMA.\n• **Level:** support, resistance or a key average.\n• **Signal:** a confirmed reversal candle or a breakout on volume.\n• **Volume:** more people behind the move."
+    },
+    {
+     "title": "The redundant-indicator trap",
+     "body": "RSI, stochastic and CCI measure almost the same thing: momentum. Three of them aren’t three confirmations: they’re one, repeated.\n\nBetter to use a few tools of **different types**: trend (averages), momentum (RSI or MACD), volatility (Bollinger, ATR) and volume."
+    },
+    {
+     "title": "And even so, a plan",
+     "body": "With confluence, the idea is better, not certain. Before you enter: where the stop is, where the target is and how much you’re risking. If the target isn’t at least 2 times the stop distance away, it’s not worth it.",
+     "key": "Look for agreement between different pieces, not for more indicators.",
+     "tip": "Ten indicators aren’t ten opinions: often they’re the same one, repeated."
+    }
+   ]
+  },
+  "u23l2": {
+   "title": "Multiple timeframes",
+   "steps": [
+    {
+     "title": "Top-down",
+     "body": "Analysing several timeframes stops you trading against the current:\n\n1. **Higher (weekly):** what’s the long-term trend?\n2. **Intermediate (daily):** is there a pullback or a pattern?\n3. **Lower (hourly):** where do the entry and the stop go?\n\nIt’s Alexander Elder’s triple screen method."
+    },
+    {
+     "title": "The method in 7 steps",
+     "body": "1. Weekly: trend and 200 SMA.\n2. Structure of highs and lows.\n3. Levels.\n4. Current situation: near a level or in a pattern?\n5. Signal on the daily chart.\n6. Indicators as a filter.\n7. Plan: entry, stop, target and risk."
+    },
+    {
+     "title": "When they don’t agree",
+     "body": "If the weekly is bearish and the daily gives a buy signal, that signal goes against the current: many traders ignore it or cut the size. Timeframes that don’t agree are information too.",
+     "key": "First the direction on the higher timeframe; then the timing on the lower one.",
+     "tip": "Before you look at the five-minute candle, check where the weekly one is."
+    }
+   ]
+  },
+  "u23l3": {
+   "title": "Backtesting",
+   "steps": [
+    {
+     "title": "What it is",
+     "body": "A **backtest** tests a specific rule («I buy when the price closes above the 200 SMA and sell when it closes below») on past data, to see what would have happened.\n\nThe rule is written **before** looking at the results, with entries, exits, stops and costs."
+    },
+    {
+     "title": "The traps",
+     "body": "• **Overfitting** (*data snooping*): you test so many variants that one comes out well by chance.\n• **Look-ahead bias:** using data that weren’t known yet at that moment.\n• **Survivorship bias:** testing only on companies that are still around today.\n• **Forgetting costs:** commissions, *spread* and taxes."
+    },
+    {
+     "title": "How to keep it honest",
+     "body": "Split the data: design the rule with one part (**in-sample**) and test it just once on another part you haven’t looked at (**out-of-sample**). If it only works on the first part, it was luck.",
+     "key": "A backtest tells you what would have happened, not what will happen.",
+     "tip": "Torture the data long enough and they’ll confess to anything."
+    }
+   ]
+  },
+  "u23l4": {
+   "title": "Does technical analysis work?",
+   "steps": [
+    {
+     "title": "What the evidence supports",
+     "body": "• **Momentum and trend following:** trends of 3–12 months have tended to persist in shares, bonds, currencies and commodities (Jegadeesh and Titman, 1993; Moskowitz, Ooi and Pedersen, 2012; Hurst, Ooi and Pedersen, with data going back to 1880).\n• Between 30 and 40 % of professionals surveyed consider it important in the short term."
+    },
+    {
+     "title": "What doesn’t pass the tests",
+     "body": "• Park and Irwin (2007) reviewed 95 modern studies: 56 positive, 20 negative and 19 mixed… but most had problems of method (data snooping, poorly estimated risk and costs), and the most recent ones find little or no edge in shares.\n• Candlesticks: no proven value after costs.\n• Fibonacci, Elliott waves, Gann: no rigorous evidence."
+    },
+    {
+     "title": "Why learn it anyway",
+     "body": "To set entries, exits and stops logically, understand what others are doing and spot people selling smoke and mirrors. A small edge with good risk management can be enough; a big edge without risk management ends in ruin.",
+     "key": "Trend and momentum have evidence behind them; many other ideas don’t pass the tests.",
+     "tip": "Technical analysis doesn’t tell you the future: it helps you decide where you’re wrong and how much it costs you."
+    }
+   ]
+  },
+  "u23r": {
+   "title": "Unit review",
+   "steps": []
+  },
+  "s7boss": {
+   "title": "Final challenge: Technical analysis",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u23l1-1": {
+   "prompt": "You already have the RSI on screen. Which pieces would add different information? Select all that apply.",
+   "options": [
+    "Volume on the signal",
+    "The stochastic and the CCI",
+    "A relevant support level",
+    "A confirmed reversal candle",
+    "The long-term trend (200 SMA)"
+   ],
+   "explanation": "The stochastic and the CCI measure momentum, just like the RSI: they don’t add a new opinion."
+  },
+  "u23l1-2": {
+   "prompt": "What counts as confluence in favour of a possible buy? Select all that apply.",
+   "options": [
+    "Price above the 200 SMA",
+    "High volume on the reversal candle",
+    "The pattern appearing in a viral video",
+    "A confirmed hammer on support",
+    "Liking the company"
+   ],
+   "explanation": "Trend, level, signal and volume are pieces of the chart. A video’s popularity or your fondness for the company aren’t."
+  },
+  "u23l1-3": {
+   "prompt": "Which combination is least redundant?",
+   "options": [
+    "200 SMA, RSI and volume",
+    "RSI, stochastic and CCI",
+    "20, 21 and 22-session averages"
+   ],
+   "explanation": "Trend, momentum and volume measure different things."
+  },
+  "u23l1-4": {
+   "prompt": "You enter at €50 with the stop at €48. What’s the minimum price the target should be at for a 2 to 1 reward-to-risk ratio?",
+   "options": [],
+   "explanation": "Risk: €2. Target: 2 × 2 = €4 above the entry → €54.",
+   "unit": "€"
+  },
+  "u23l1-5": {
+   "prompt": "Does it count in favour of a buy or not?",
+   "options": [
+    "A fourth momentum oscillator",
+    "A breakout on double the average volume",
+    "A bounce off support that has held three times",
+    "A very self-assured influencer",
+    "Weekly uptrend"
+   ],
+   "explanation": "Different pieces of the chart count; repeated ones and other people’s opinions don’t.",
+   "right": [
+    "Counts",
+    "Doesn’t count"
+   ]
+  },
+  "u23l1-6": {
+   "prompt": "Look for trend, levels and candles on this chart. Up or down over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Even with several signals in your favour, the outcome over 10 sessions is uncertain. Confluence improves the odds; the stop protects you when they fail.",
+   "horizon": "the next 10 sessions"
+  },
+  "u23l1-7": {
+   "prompt": "Another chart, same method. Up or down over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Always apply the same steps: that way you’ll know whether your method adds anything or whether you just remember the hits.",
+   "horizon": "the next 10 sessions"
+  },
+  "u23l1-8": {
+   "prompt": "You have confluence and enter at the last price. Place the stop where the idea stops being valid.",
+   "options": [],
+   "explanation": "Below the recent low: if the price loses it, the pieces that made you enter no longer hold."
+  },
+  "u23l1-9": {
+   "prompt": "Pablo has 9 indicators on screen: 6 say «buy» and 3 say «sell». What’s wrong?",
+   "options": [
+    "He doesn’t have enough indicators",
+    "Many of them probably measure the same thing and the vote means nothing",
+    "He has a crystal-clear signal: 6 to 3"
+   ],
+   "explanation": "Confluence comes from different pieces, not from counting indicators.",
+   "feedback": [
+    "Adding more just multiplies the chance coincidences.",
+    "Exactly: better a few tools of different types than a parliament of oscillators.",
+    "If several measure the same thing, that 6 to 3 may be 1 to 1, repeated."
+   ]
+  },
+  "u23l1-10": {
+   "prompt": "Three momentum oscillators that agree are three independent confirmations.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "They measure almost the same thing: it’s a single opinion, repeated."
+  },
+  "u23l2-1": {
+   "prompt": "Put the top-down analysis in order.",
+   "options": [
+    "Pullback or pattern on the daily",
+    "Entry and stop on the hourly chart",
+    "Trend on the weekly"
+   ],
+   "explanation": "From the general to the specific: direction, timing and entry."
+  },
+  "u23l2-2": {
+   "prompt": "Put the 7 steps of the method in order.",
+   "options": [
+    "Structure of highs and lows",
+    "Indicators as a filter",
+    "Current situation",
+    "Weekly trend and 200 SMA",
+    "Plan: entry, stop, target and risk",
+    "Signal on the daily chart",
+    "Levels"
+   ],
+   "explanation": "The plan always comes last and is never skipped."
+  },
+  "u23l2-3": {
+   "prompt": "First screen: the long-term trend. What do you see? (Microsoft · closes every 3 sessions · December 2025 – February 2026)",
+   "options": [
+    "Uptrend",
+    "Downtrend",
+    "Sideways"
+   ],
+   "explanation": "Lower highs and lower lows: against this backdrop, a buy signal on the daily would go against the current."
+  },
+  "u23l2-4": {
+   "prompt": "Weekly: lower highs and lower lows, and the price below the 200 SMA. Daily: a beautiful hammer appears. What’s the sensible thing to do?",
+   "options": [
+    "Sell everything in my portfolio",
+    "Treat it as a counter-trend signal: either ignore it or trade it smaller and with a stop",
+    "Buy big: the hammer rules"
+   ],
+   "explanation": "The higher timeframe sets the context; the lower one shouldn’t just contradict it.",
+   "feedback": [
+    "A hammer isn’t a sell signal, and a long-term portfolio doesn’t depend on one candle.",
+    "Exactly: when the timeframes don’t agree, the signal carries less weight.",
+    "The hammer goes against the long-term trend: in that context it’s a weak signal."
+   ]
+  },
+  "u23l2-5": {
+   "prompt": "Are the timeframes aligned?",
+   "options": [
+    "Weekly bearish and buy signal on the daily",
+    "Weekly bearish and downside breakout on the daily",
+    "Weekly bullish and sell signal on 5 minutes",
+    "Weekly bullish and buy signal on the daily"
+   ],
+   "explanation": "Aligned when the signal goes in the direction of the higher timeframe.",
+   "right": [
+    "Aligned",
+    "Against the current"
+   ]
+  },
+  "u23l2-6": {
+   "prompt": "First the big picture: 30 daily candles. Up or down over the next 10?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Not even looking at several timeframes lets you guess the short term. The method helps you avoid trading against the current and know where the stop goes.",
+   "horizon": "the next 10 sessions"
+  },
+  "u23l2-7": {
+   "prompt": "Another asset. Up or down over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "An orderly method cuts silly mistakes; it doesn’t remove uncertainty.",
+   "horizon": "the next 10 sessions"
+  },
+  "u23l2-8": {
+   "prompt": "In the triple screen method, what is the lower timeframe for?",
+   "options": [
+    "Choosing which asset to buy",
+    "Fine-tuning the entry and the stop",
+    "Deciding the long-term direction"
+   ],
+   "explanation": "The higher one gives the direction; the intermediate one, the timing; the lower one, the entry and the stop."
+  },
+  "u23l2-9": {
+   "prompt": "Quick: who came up with the triple screen method?",
+   "options": [
+    "John Bollinger",
+    "Charles Dow",
+    "Alexander Elder"
+   ],
+   "explanation": "Alexander Elder, in Trading for a Living."
+  },
+  "u23l2-10": {
+   "prompt": "What do you reply?",
+   "options": [
+    "The weekly first, because it sets the direction; the 15-minute chart only fine-tunes the timing",
+    "Neither: charts are useless",
+    "The 15-minute one, because it’s the most recent"
+   ],
+   "explanation": "The higher timeframe rules; the lower one fine-tunes.",
+   "feedback": [
+    "That’s it! Top-down: direction, timing and entry.",
+    "They help you organise the decision and set the stop logically, even if they don’t predict.",
+    "The most recent isn’t the most important: on 15 minutes, noise rules."
+   ],
+   "lines": [
+    "On the 15-minute chart I can see a massive rally 🚀",
+    "But on the weekly it’s in free fall 📉",
+    "Which one should I listen to?"
+   ]
+  },
+  "u23l3-1": {
+   "prompt": "You test 100 rules that don’t actually work. If each one has a 5 % chance of looking good by luck, how many do you expect to «work»?",
+   "options": [],
+   "explanation": "100 × 0.05 = 5. If you only show those 5, it’ll look like you’ve discovered something.",
+   "unit": "rules"
+  },
+  "u23l3-2": {
+   "prompt": "A rule makes an average gross profit of 0.10 % per trade. Each trade costs 0.15 % in commission and spread. What’s the net result per trade?",
+   "options": [],
+   "explanation": "0.10 − 0.15 = −0.05 %. With costs, the «edge» turns into a loss.",
+   "unit": "%"
+  },
+  "u23l3-3": {
+   "prompt": "A rule is right 40 % of the time and makes €300 when it’s right; the other 60 % of the time it loses €100. How much does it make on average per trade?",
+   "options": [],
+   "explanation": "0.4 × 300 − 0.6 × 100 = 120 − 60 = €60. You can be wrong more often than right and still make money, if the gains are bigger than the losses.",
+   "unit": "€"
+  },
+  "u23l3-4": {
+   "prompt": "Match each trap with its example.",
+   "options": [
+    "Overfitting",
+    "Look-ahead bias",
+    "Survivorship bias",
+    "Forgetting costs"
+   ],
+   "explanation": "Each trap inflates past results in a different way.",
+   "right": [
+    "Testing only on the companies in the index today",
+    "Calculating without commissions or spread",
+    "Using the day’s close to buy at that same day’s open",
+    "Testing 500 combinations of averages and keeping the best one"
+   ]
+  },
+  "u23l3-5": {
+   "prompt": "Marta tests 300 variants of a rule on data from 2015 to 2020 and keeps the one that made 40 % a year. What should she do before trusting it?",
+   "options": [
+    "Look for a variant that makes 60 %",
+    "Test it just once on data she hasn’t used (for example, from 2021 to 2024) and with costs",
+    "Use it right away with all her money"
+   ],
+   "explanation": "The out-of-sample test is what separates a rule from a fluke.",
+   "feedback": [
+    "Testing more variants makes the problem worse: more flukes disguised as discoveries.",
+    "Exactly: if it deflates out of sample, it was overfitting.",
+    "With 300 variants, the best one may be pure luck. Without an out-of-sample test, she knows nothing."
+   ]
+  },
+  "u23l3-6": {
+   "prompt": "Bruno runs a backtest from the year 2000 with the 35 companies that make up the IBEX 35 today. The results look spectacular. What’s the problem?",
+   "options": [
+    "That the year 2000 is too recent",
+    "None: they’re real companies",
+    "Survivorship bias: it leaves out the ones that dropped out of the index or disappeared"
+   ],
+   "explanation": "Choosing the data with today’s information is cheating without meaning to.",
+   "feedback": [
+    "The period isn’t the main problem: picking the companies by looking at the present is.",
+    "They’re real, but they’re the ones that survived and grew. The ones that fell or left the index aren’t there.",
+    "Exactly: testing on today’s winners inflates past results."
+   ]
+  },
+  "u23l3-7": {
+   "prompt": "What does testing a rule «out of sample» mean?",
+   "options": [
+    "Testing it on data that weren’t used to design it",
+    "Testing it only on the best years",
+    "Testing it with another broker"
+   ],
+   "explanation": "It’s the acid test: new data the rule hasn’t «seen»."
+  },
+  "u23l3-8": {
+   "prompt": "What did Sullivan, Timmermann and White (1999) do with moving-average rules?",
+   "options": [
+    "They corrected for data-snooping bias, and the results weakened considerably",
+    "They proved they were infallible",
+    "They got them banned"
+   ],
+   "explanation": "Much of what looked like an edge was partly luck."
+  },
+  "u23l3-9": {
+   "prompt": "A good backtest guarantees the rule will work in the future.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It tells you what would have happened with that data. The future may be different."
+  },
+  "u23l3-10": {
+   "prompt": "What do you ask first?",
+   "options": [
+    "Can you send me the rule?",
+    "How many variants did you test, and what happens with costs and with data you haven’t used?",
+    "When are you going all in?"
+   ],
+   "explanation": "Variants tested, costs and out-of-sample data: the three questions for any backtest.",
+   "feedback": [
+    "Before copying it, it’s worth checking whether that 80 % is real or an overfitting mirage.",
+    "Nice! Those questions knock down most spectacular backtests.",
+    "First you’d need to see whether it survives costs and new data."
+   ],
+   "lines": [
+    "I’ve run a backtest and my rule makes 80 % a year 🤑",
+    "Without commissions, mind you."
+   ]
+  },
+  "u23l4-1": {
+   "prompt": "Momentum is one of the most studied anomalies in finance, with data covering more than a century.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Hurst, Ooi and Pedersen studied it with data going back to 1880, although exploiting it after costs is hard."
+  },
+  "u23l4-2": {
+   "prompt": "According to Park and Irwin, the positive studies on technical analysis have no problems of method.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "They warn that most of them do: data snooping and difficulty estimating risk and costs."
+  },
+  "u23l4-3": {
+   "prompt": "There’s rigorous evidence that Elliott waves predict the market.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Neither Elliott waves, nor Fibonacci, nor Gann have rigorous evidence behind them."
+  },
+  "u23l4-4": {
+   "prompt": "Hurst, Ooi and Pedersen studied trend following with data going back to 1880.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "More than a century of data, with long drawdowns along the way."
+  },
+  "u23l4-5": {
+   "prompt": "Which technical analysis idea has the most academic support?",
+   "options": [
+    "Fibonacci levels",
+    "Momentum and trend following",
+    "Elliott waves"
+   ],
+   "explanation": "It’s the exception with the most evidence, across many markets and over a long time."
+  },
+  "u23l4-6": {
+   "prompt": "What does the evidence say about each tool?",
+   "options": [
+    "Trend following in many markets",
+    "Fibonacci",
+    "Candlestick patterns",
+    "Elliott waves",
+    "3–12 month momentum"
+   ],
+   "explanation": "Trend and momentum are the parts with the most support; the rest, at best, helps organise decisions.",
+   "right": [
+    "Backed by evidence",
+    "No rigorous evidence or no value after costs"
+   ]
+  },
+  "u23l4-7": {
+   "prompt": "A Telegram channel promises a technical system that «wins 95 % of trades, with no losses». What do you think, given what you’ve learnt?",
+   "options": [
+    "That I’ll try it with a little money, just in case",
+    "That it’s an impossible promise: the evidence points to small edges, if any, and always with losses",
+    "That someone has finally cracked it"
+   ],
+   "explanation": "Promises of near-perfect accuracy clash with all the available evidence.",
+   "feedback": [
+    "Trying it «with a little» still means handing money and data to someone promising the impossible.",
+    "Exactly: even what has evidence behind it, like momentum, suffers long drawdowns.",
+    "No serious study finds anything like it; 95 % with no losses is a classic sign of hype or a scam."
+   ]
+  },
+  "u23l4-8": {
+   "prompt": "Ana uses technical analysis like this: she marks where she’s wrong (stop), risks 1 % per trade and doesn’t chase «the perfect pattern». What do you think?",
+   "options": [
+    "That she uses it sensibly: as a risk management tool, not a crystal ball",
+    "That she should risk 20 % per trade to make it worthwhile",
+    "That she’s wasting her time: without the perfect pattern you can’t win"
+   ],
+   "explanation": "Used with humility and risk management, technical analysis is a useful tool.",
+   "feedback": [
+    "Exactly: the value lies in deciding where you’re wrong and how much it costs you.",
+    "With 20 % per trade, a few losses in a row would knock her out of the game.",
+    "The perfect pattern doesn’t exist; looking for it is the trap."
+   ]
+  },
+  "u23l4-9": {
+   "prompt": "What does any technical tool need to be of any use?",
+   "options": [
+    "More indicators",
+    "Leverage",
+    "Risk management"
+   ],
+   "explanation": "A big edge without risk management ends in ruin; a small one with good management can be enough."
+  },
+  "u23l4-10": {
+   "prompt": "One last test of humility: 30 real candles, no name. Up or down over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "After the whole section, the honest conclusion is the same: nobody reliably gets the short term right. What you do control is how much you risk.",
+   "horizon": "the next 10 sessions"
+  },
+  "u23l4-11": {
+   "prompt": "What do you say to Lumi?",
+   "options": [
+    "Yes, always: with practice you get everything right",
+    "No, it’s all hype",
+    "Some ideas have evidence behind them (trend, momentum), many don’t, and nothing works without risk management"
+   ],
+   "explanation": "Neither magic nor hype: some pieces work some of the time, and risk management works all the time.",
+   "feedback": [
+    "That’s not what the evidence says: many rules stop working on new data.",
+    "Not that either: trend and momentum have more than a century of evidence, even if they’re hard to exploit.",
+    "Exactly! A useful tool, not a crystal ball."
+   ],
+   "lines": [
+    "So… does technical analysis work or not? 🤔"
+   ]
+  }
+ }
+}

@@ -79,6 +79,15 @@ describe('tipos dinámicos', () => {
     expect(grade(q, [60, 30, 5]).correct).toBe(false) // no suma 100
     expect(grade(q, [80, 15, 5]).explanation).toContain('máximo por activo')
   })
+  it('cartera en otro idioma: las reglas siguen funcionando con los tipos de activo traducidos', () => {
+    const es = Q(portfolio('Reparte', [['MSCI World', 'ACCIONES'], ['Bonos UE', 'BONOS'], ['Bitcoin', 'CRIPTO']], { maxKind: { CRIPTO: 10 } }, 'Ok'))
+    const en = { ...es, options: ['MSCI World', 'EU bonds', 'Bitcoin'], meta: { kinds: ['SHARES', 'BONDS', 'CRYPTO'] }, kindsEs: es.meta!.kinds } as ContentQuestion
+    expect(grade(en, [65, 30, 5], 'en').correct).toBe(true)
+    const ko = grade(en, [50, 30, 20], 'en')
+    expect(ko.correct).toBe(false)
+    expect(ko.explanation).toContain('CRYPTO: 20 %, the maximum is 10 %')
+    expect(grade(en, [60, 30, 5], 'ca').explanation).toContain('ha de sumar 100 %')
+  })
   it('cronometrado: si se acaba el tiempo cuenta como fallo', () => {
     const q = Q(timed(tf('Rápido: ¿el IBEX es un índice?', true, 'Sí.'), 8))
     expect(q.meta?.timeLimit).toBe(8)

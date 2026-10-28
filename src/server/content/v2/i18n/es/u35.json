@@ -1,0 +1,999 @@
+{
+ "unit": {
+  "title": "Retos con datos reales",
+  "description": "Predice, marca niveles y opera con gráficos reales para ver qué pasó de verdad",
+  "section": "Laboratorio de mercado"
+ },
+ "lessons": {
+  "u35l1": {
+   "title": "¿Sube o baja? Acciones",
+   "steps": [
+    {
+     "title": "Así funciona el laboratorio",
+     "body": "Verás **30 velas diarias reales** de una acción o un índice, sin nombre ni fecha. Tu tarea: decidir si **10 sesiones después** el precio estaba más arriba o más abajo.\n\nAl responder se revela qué era, cuándo pasó y cómo siguió. Cuenta tus aciertos: al final sabrás cuánto se parece esto a lanzar una moneda."
+    },
+    {
+     "title": "Qué mirar antes de decidir",
+     "body": "• **Tendencia previa:** ¿máximos y mínimos crecientes o decrecientes?\n• **Dónde está el precio:** ¿cerca de máximos, de mínimos o en medio?\n• **Tamaño de las velas:** velas grandes = más volatilidad = más incertidumbre.\n\nNada de esto garantiza el resultado: en dos semanas, una noticia lo cambia todo.",
+     "key": "A corto plazo el precio tiene mucho de ruido: lo que sí controlas es cuánto arriesgas.",
+     "tip": "Apunta si aciertas en cada gráfico. Con pocos intentos, la suerte manda."
+    }
+   ]
+  },
+  "u35l2": {
+   "title": "¿Sube o baja? Cripto",
+   "steps": [
+    {
+     "title": "La montaña rusa cripto",
+     "body": "El bitcoin tiene una volatilidad anual del **50–80 %**, frente al ~15 % de un índice mundial de acciones. Ha caído más de un 70 % desde máximos varias veces y cotiza **24 horas, 7 días**: no hay cierre que dé un respiro.\n\nEs un activo muy volátil y no regulado como un depósito: **puede perderse la totalidad de lo invertido.**"
+    },
+    {
+     "title": "Lo que cuesta recuperarse",
+     "body": "Prueba una caída del 50 % y después una del 80 %. ¿Cuánto tiene que subir luego el precio para volver al punto de partida?",
+     "tip": "Tras perder un 80 %, hay que multiplicar por 5 (+400 %) solo para volver a empezar."
+    }
+   ]
+  },
+  "u35l3": {
+   "title": "¿Sube o baja? Divisas y oro",
+   "steps": [
+    {
+     "title": "Divisas: movimientos pequeños",
+     "body": "Un par como **EUR/USD** dice cuántos dólares vale un euro. Si pasa de 1,10 a 1,12, el euro se ha apreciado frente al dólar.\n\nLas divisas grandes se mueven poco: un 2 % en dos semanas ya es un movimiento notable. Lo que más las mueve son los **tipos de interés** y las sorpresas económicas de cada país."
+    },
+    {
+     "title": "El oro, refugio con matices",
+     "body": "El oro no paga intereses ni dividendos. Se suele buscar en las crisis y frente a la inflación, pero puede pasar años sin subir: de 1980 a 2000 perdió mucho valor real. Además cotiza en dólares, así que el tipo de cambio también cuenta.",
+     "key": "Refugio no significa que siempre suba: significa que mucha gente lo busca cuando tiene miedo.",
+     "tip": "En divisas, mira bien la escala del eje: un 1 % ya es mucho."
+    }
+   ]
+  },
+  "u35l4": {
+   "title": "Encuentra la vela",
+   "steps": [
+    {
+     "prompt": "Calienta: toca el martillo (cuerpo pequeño arriba y mecha inferior larga, después de una caída).",
+     "ok": "¡Ese es! Los vendedores empujaron el precio abajo y los compradores lo devolvieron arriba.",
+     "ko": "Busca la vela con la mecha de abajo mucho más larga que su cuerpo."
+    },
+    {
+     "title": "Chuleta de patrones",
+     "body": "• **Martillo:** mecha inferior larga tras una caída.\n• **Estrella fugaz:** mecha superior larga tras una subida.\n• **Doji:** apertura ≈ cierre.\n• **Envolvente:** un cuerpo se come el anterior, en sentido contrario.\n• **Marubozu:** cuerpo largo sin apenas mechas.\n• **Estrella de la mañana:** roja grande, pequeña y verde fuerte.",
+     "key": "Un patrón es una pista, no una orden: confírmalo con el contexto.",
+     "tip": "Antes de buscar la vela, mira de dónde viene el precio."
+    }
+   ]
+  },
+  "u35l5": {
+   "title": "Marca el soporte",
+   "steps": [
+    {
+     "title": "Suelos y techos",
+     "body": "Un **soporte** es una zona donde el precio ha dejado de caer varias veces: aparecen compradores. Una **resistencia**, donde ha dejado de subir: aparecen vendedores.\n\nSon **zonas**, no líneas exactas. Y cuando se rompen con claridad, suelen cambiar de papel: la resistencia rota pasa a ser soporte, y al revés."
+    },
+    {
+     "title": "Cómo encontrarlos",
+     "body": "Busca los mínimos y máximos que más destacan y mira si el precio ha vuelto a ellos. Cuantas más veces se respeta un nivel, más gente lo vigila. Pero muchas roturas son **falsas**: el precio cruza unos días y vuelve dentro.",
+     "key": "Un soporte es donde aparecieron compradores antes; nada asegura que vuelvan.",
+     "tip": "Dibuja zonas anchas, no líneas finas: el mercado no usa regla."
+    }
+   ]
+  },
+  "u35l6": {
+   "title": "Coloca tu stop",
+   "steps": [
+    {
+     "title": "Dónde te equivocas",
+     "body": "El **stop loss** va donde tu idea deja de tener sentido: normalmente **justo por debajo del último mínimo relevante**, con un pequeño margen para el ruido.\n\nEl **objetivo** suele ir cerca del **máximo anterior**, donde antes aparecieron vendedores. Con los dos calculas la **relación beneficio/riesgo**: muchos no entran por debajo de 2:1."
+    },
+    {
+     "title": "Primero el stop, después el tamaño",
+     "body": "Tamaño = (capital × % de riesgo) ÷ (entrada − stop).\n\nCon 10.000 € y un 1 % de riesgo arriesgas 100 €. Entrada a 50 € y stop a 47 €: 100 ÷ 3 = **33 acciones** (unos 1.650 €).",
+     "key": "No decides cuánto compras: lo decide la distancia a tu stop.",
+     "tip": "Un stop muy pegado salta con el ruido normal; uno muy lejos te obliga a comprar muy poco."
+    }
+   ]
+  },
+  "u35l7": {
+   "title": "Noticias y reacciones",
+   "steps": [
+    {
+     "title": "El precio ya lo sabía",
+     "body": "El mercado se mueve por **la sorpresa**, no por la noticia. Si todos esperan beneficios récord y llegan beneficios récord, la acción puede caer: ya estaba en el precio.\n\nY cuando tú lees el titular, miles de personas y algoritmos ya han reaccionado. Por eso operar con noticias es tan difícil."
+    },
+    {
+     "title": "Qué hacer ante un titular",
+     "body": "• Pregúntate qué **esperaba** el mercado, no si la noticia es buena o mala.\n• No operes en los primeros minutos: el precio salta y el *spread* se abre.\n• Si ya tienes una posición, que decida tu stop, no el pánico.",
+     "key": "En bolsa, una buena noticia que ya se esperaba no es noticia.",
+     "tip": "Antes de reaccionar, pregúntate: ¿esto no lo sabía ya todo el mundo?"
+    }
+   ]
+  },
+  "u35l8": {
+   "title": "Operación completa",
+   "steps": [
+    {
+     "title": "Cinco decisiones antes de entrar",
+     "body": "1. **Tesis:** por qué crees que puede subir.\n2. **Stop:** dónde te equivocas.\n3. **Objetivo:** dónde recoges.\n4. **Tamaño:** cuánto compras para arriesgar solo un 1 %.\n5. **Registro:** lo apuntas en tu diario.\n\nDespués solo queda ejecutar y no tocar el plan por impulso."
+    },
+    {
+     "title": "Medir en R",
+     "body": "Si arriesgas 100 € y ganas 250 €, has ganado **2,5R**. Si salta el stop, pierdes **1R**. Medir en R permite comparar operaciones de distinto tamaño y saber si tu sistema gana a la larga.",
+     "key": "Una buena operación es la que sigue el plan, aunque pierda.",
+     "tip": "Revisa el diario cada 20 operaciones: te enseña lo que tu memoria prefiere olvidar."
+    }
+   ]
+  },
+  "u35l9": {
+   "title": "El reto de la semana",
+   "steps": [
+    {
+     "title": "Tu cartera de la semana",
+     "body": "Este reto simula una semana con **10.000 € virtuales**. El lunes repartes la cartera con unas reglas; durante la semana llegan noticias y oportunidades; el viernes revisas.\n\nNo gana quien más sube, sino quien **cumple las reglas** y toma decisiones que podría explicar. Es una simulación educativa, no una recomendación."
+    },
+    {
+     "title": "Las reglas del reto",
+     "body": "• Ningún activo pesa más del **40 %**.\n• Al menos **4 activos**.\n• Cripto, como mucho un **10 %**: puede perderse entera.\n• Cada operación arriesga como mucho un **1 %** de la cartera.",
+     "key": "Las reglas se escriben el lunes con la cabeza fría; el resto de la semana solo se cumplen.",
+     "tip": "Si una decisión no la podrías explicar en voz alta, no la tomes."
+    }
+   ]
+  },
+  "u35r": {
+   "title": "Repaso de la unidad",
+   "steps": []
+  },
+  "s13boss": {
+   "title": "Reto final: Laboratorio de mercado",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u35l1-1": {
+   "prompt": "Mira las 30 velas. ¿El precio acabó más arriba o más abajo 10 sesiones después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "En plazos de dos semanas, el resultado depende mucho de noticias que nadie ve venir. Por eso nadie serio opera sin stop: no porque espere fallar, sino porque sabe que puede fallar.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u35l1-2": {
+   "prompt": "Otra acción, otro momento. ¿Más arriba o más abajo dentro de 10 sesiones?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Fíjate en el tamaño de las velas: cuanto más grandes, más incierto es el siguiente movimiento, en cualquier dirección. La volatilidad dice cuánto se mueve, no hacia dónde.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u35l1-3": {
+   "prompt": "Sin adivinar el futuro: ¿qué tendencia tenía este precio? (Apple · cierres cada 3 sesiones · marzo–mayo de 2026)",
+   "options": [
+    "Alcista",
+    "Bajista",
+    "Lateral"
+   ],
+   "explanation": "Máximos y mínimos cada vez más altos: de unos 249 $ a unos 309 $. Leer la tendencia pasada es fácil; saber cuánto durará, no."
+  },
+  "u35l1-4": {
+   "prompt": "Las últimas velas han sido intensas. ¿Más arriba o más abajo 10 sesiones después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Tras un movimiento fuerte, el cerebro tienta con dos ideas opuestas: «seguirá así» (sesgo de recencia) o «ya toca darse la vuelta» (falacia del jugador). Ninguna es fiable por sí sola.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u35l1-5": {
+   "prompt": "Llevas 7 aciertos de 10 en «¿Sube o baja?». ¿Qué conclusión es la más sensata?",
+   "options": [
+    "Con 10 intentos la suerte pesa mucho: necesito muchos más para saber si tengo ventaja",
+    "Ya puedo operar con dinero real",
+    "He encontrado un método infalible"
+   ],
+   "explanation": "Lanzando una moneda 10 veces, sacar 7 caras o más pasa en torno al 17 % de las veces. Hacen falta decenas o cientos de intentos para separar habilidad de suerte."
+  },
+  "u35l1-6": {
+   "prompt": "Acción europea, velas diarias. ¿Subió o bajó en las 10 sesiones siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Cuando el precio está en mitad de su rango reciente, ni siquiera hay un nivel claro que vigilar ni un sitio lógico para el stop. En esos casos, no operar también es una decisión.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u35l1-7": {
+   "prompt": "¡20 segundos! ¿Más arriba o más abajo 10 sesiones después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Has decidido con prisa, como quien opera mirando el móvil en el metro. Las decisiones rápidas tiran de intuición, y la intuición es justo donde viven los sesgos.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u35l1-8": {
+   "prompt": "¿Qué tendencia ves en este tramo? (Microsoft · cierres cada 3 sesiones · diciembre de 2025 – febrero de 2026)",
+   "options": [
+    "Alcista",
+    "Bajista",
+    "Lateral"
+   ],
+   "explanation": "Máximos y mínimos cada vez más bajos: de unos 488 $ a unos 384 $. En una tendencia bajista, «ya está barata» no es un argumento: puede abaratarse más."
+  },
+  "u35l1-9": {
+   "prompt": "Si una acción ha subido 5 días seguidos, es más probable que baje el sexto.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Es la falacia del jugador: las sesiones no «se deben» nada entre sí. Una racha no hace más probable el cambio de dirección."
+  },
+  "u35l1-10": {
+   "prompt": "Banco estadounidense, velas diarias. ¿Más arriba o más abajo 10 sesiones después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "A un banco grande lo mueven los tipos de interés, la economía y sus resultados, no solo su gráfico. Mirar únicamente las velas deja fuera media historia.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u35l1-11": {
+   "prompt": "¡Último, 20 segundos! ¿Más arriba o más abajo 10 sesiones después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Las grandes tecnológicas pueden moverse más de un 10 % en un solo día de resultados, hacia arriba o hacia abajo. Si tu operación coincide con esa fecha, el precio puede abrir con un hueco y saltarse tu stop.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u35l2-1": {
+   "prompt": "Criptomoneda, velas diarias. ¿Más arriba o más abajo 10 días después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "En cripto, 10 días son 10 sesiones completas sin pausa, fines de semana incluidos: hay más tiempo para que pase de todo. Moverse un 10 % en una semana no es raro.",
+   "horizon": "los 10 días siguientes"
+  },
+  "u35l2-2": {
+   "prompt": "Una cripto cae un 75 % desde su máximo. ¿Cuánto tiene que subir después para volver a él?",
+   "options": [],
+   "explanation": "De 100 pasa a 25. Para volver de 25 a 100 hay que multiplicar por 4: +300 %. Las caídas grandes son muy difíciles de recuperar.",
+   "unit": "%"
+  },
+  "u35l2-3": {
+   "prompt": "Otra criptomoneda. ¿Más arriba o más abajo 10 días después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Las grandes criptos suelen moverse en la misma dirección que el bitcoin, a menudo con más fuerza. Tener varias apenas reduce el riesgo: cuando cae una, suelen caer juntas.",
+   "horizon": "los 10 días siguientes"
+  },
+  "u35l2-4": {
+   "prompt": "Bruno ve que una cripto ha subido un 40 % en una semana y en redes no se habla de otra cosa. Tiene 1.000 € apartados para el alquiler del mes que viene. ¿Qué hace?",
+   "options": [
+    "Pide un préstamo para meter más",
+    "No toca el alquiler; si quiere probar, usa solo dinero que podría perder entero",
+    "Mete los 1.000 € antes de que suba más"
+   ],
+   "explanation": "El FOMO empuja a comprar después de una gran subida y con dinero que no toca. En cripto, solo dinero que puedas perder del todo.",
+   "feedback": [
+    "Deuda para comprar el activo más volátil del mercado: si cae, sigue debiendo el dinero y ya no tiene la cripto.",
+    "Bien: en cripto solo entra dinero cuya pérdida total no te cambie la vida.",
+    "Es el dinero del alquiler. Si cae un 30 % en pocos días, como ha pasado muchas veces, no puede pagar. FOMO de manual."
+   ]
+  },
+  "u35l2-5": {
+   "prompt": "Velas diarias de una cripto que ha tenido semanas movidas. ¿Más arriba o más abajo 10 días después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Que una cripto «haya caído mucho» no la hace barata: no tiene beneficios ni dividendos con los que estimar un valor. Su precio depende de lo que otros estén dispuestos a pagar mañana.",
+   "horizon": "los 10 días siguientes"
+  },
+  "u35l2-6": {
+   "prompt": "Noviembre de 2021: el bitcoin marca máximos históricos por encima de 65.000 $ y hace unas semanas se estrenó en EE. UU. el primer ETF de futuros de bitcoin. ¿Qué hizo el precio en el año siguiente?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Cuando un activo está en máximos y en todas las portadas, la sensación de seguridad es la mayor posible, pero ese optimismo ya está en el precio. Pregúntate siempre cuánto perderías si te equivocas, no solo cuánto podrías ganar.",
+   "horizon": "hasta diciembre de 2022"
+  },
+  "u35l2-7": {
+   "prompt": "¡20 segundos! ¿Más arriba o más abajo 10 días después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Con prisa y un gráfico tan nervioso, es fácil ver patrones que no existen: el cerebro busca orden incluso en el azar.",
+   "horizon": "los 10 días siguientes"
+  },
+  "u35l2-8": {
+   "prompt": "Tienes 10.000 € y arriesgas como máximo un 1 % por operación. Compras una cripto con el stop un 10 % por debajo de la entrada. ¿Cuánto puedes invertir como máximo?",
+   "options": [],
+   "explanation": "El 1 % de 10.000 € son 100 €. Si el stop está a un 10 %, 100 ÷ 0,10 = 1.000 €. Cuanto más volátil es el activo, más lejos va el stop y más pequeña es la posición.",
+   "unit": "€"
+  },
+  "u35l2-9": {
+   "prompt": "Si tu cartera tiene dos criptomonedas distintas, ya está bien diversificada.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Las grandes criptos suelen moverse juntas. Diversificar es combinar activos distintos (acciones, bonos, liquidez…), no dos fichas del mismo juego."
+  },
+  "u35l2-10": {
+   "prompt": "Vuelve la primera cripto, en otro momento. ¿Más arriba o más abajo 10 días después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "En cripto el sábado por la noche también se puede desplomar o disparar el precio. Por eso muchos dejan órdenes stop puestas en lugar de vigilar la pantalla a todas horas.",
+   "horizon": "los 10 días siguientes"
+  },
+  "u35l2-11": {
+   "prompt": "¡Rápido! Velas diarias de una cripto. ¿Más arriba o más abajo 10 días después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Decidir por corazonada es lo habitual en cripto. En un activo tan volátil, una corazonada equivocada sin stop puede costar muy cara.",
+   "horizon": "los 10 días siguientes"
+  },
+  "u35l3-1": {
+   "prompt": "El EUR/USD pasa de 1,08 a 1,12. ¿Qué ha pasado?",
+   "options": [
+    "El dólar se ha apreciado frente al euro",
+    "El euro se ha apreciado frente al dólar",
+    "Los dos han perdido el mismo valor"
+   ],
+   "explanation": "EUR/USD = dólares que cuesta un euro. Si hacen falta más dólares para comprar un euro, el euro vale más."
+  },
+  "u35l3-2": {
+   "prompt": "Par de divisas, velas diarias. ¿Más arriba o más abajo 10 sesiones después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Fíjate en la escala: en divisas, lo que parece un desplome puede ser un 1 %. Por eso en forex se ofrece tanto apalancamiento… y por eso tanta gente pierde con él.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u35l3-3": {
+   "prompt": "El EUR/USD sube de 1,10 a 1,122. ¿Cuánto ha subido, en porcentaje?",
+   "options": [],
+   "explanation": "(1,122 − 1,10) ÷ 1,10 = 0,02 → 2 %. En una divisa principal, un 2 % en pocas semanas es un movimiento grande.",
+   "unit": "%"
+  },
+  "u35l3-4": {
+   "prompt": "Metal precioso, velas diarias. ¿Subió o bajó en las 10 sesiones siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "El oro no tiene beneficios que valorar: lo mueven los tipos de interés, el dólar y el miedo. Ninguno de los tres se ve en un gráfico de 30 velas.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u35l3-5": {
+   "prompt": "Mira el tramo visible del oro hasta agosto de 2020. ¿Qué tendencia tenía? (Oro · cierres semanales · hasta el 03/08/2020)",
+   "options": [
+    "Alcista",
+    "Bajista",
+    "Lateral"
+   ],
+   "explanation": "De unos 1.200 $ a más de 2.000 $ la onza en dos años, con máximos y mínimos crecientes: una tendencia alcista de libro."
+  },
+  "u35l3-6": {
+   "prompt": "Otro par de divisas. ¿Más arriba o más abajo 10 sesiones después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "El yen se ha usado como refugio en momentos de miedo, y los tipos de Japón han estado durante años muy por debajo de los de EE. UU. Esa diferencia de tipos mueve el par más que cualquier vela.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u35l3-7": {
+   "prompt": "A medio plazo, ¿qué suele mover más una divisa principal?",
+   "options": [
+    "Lo que comentan los influencers de forex",
+    "Los tipos de interés y las sorpresas económicas de su país",
+    "Los patrones de velas de la última semana"
+   ],
+   "explanation": "Si un banco central sube tipos más de lo esperado, su moneda suele atraer dinero. Las velas reflejan esos cambios; no los causan."
+  },
+  "u35l3-8": {
+   "prompt": "¡20 segundos! Divisas, velas diarias. ¿Más arriba o más abajo 10 sesiones después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Movimientos de un 1–3 % parecen pequeños, pero con apalancamiento se convierten en ganancias o pérdidas enormes. Sin él, apenas los notarías en tu cartera.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u35l3-9": {
+   "prompt": "Otro metal, velas diarias. ¿Subió o bajó en las 10 sesiones siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "La plata se parece al oro, pero es bastante más volátil porque también tiene mucho uso industrial. Dos activos «parecidos» pueden tener riesgos muy distintos.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u35l3-10": {
+   "prompt": "Vuelve el EUR/USD, en otra época. ¿Más arriba o más abajo 10 sesiones después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Fíjate en las mechas: en divisas, un dato de empleo o de inflación de EE. UU. provoca picos en minutos. Una sola vela no cuenta toda la historia.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u35l3-11": {
+   "prompt": "Rápido: si el USD/JPY sube, ¿qué moneda se ha fortalecido?",
+   "options": [
+    "El yen",
+    "El euro",
+    "El dólar"
+   ],
+   "explanation": "USD/JPY = yenes que cuesta un dólar. Si sube, cada dólar compra más yenes: el dólar se ha fortalecido."
+  },
+  "u35l4-1": {
+   "prompt": "Toca el martillo.",
+   "options": [],
+   "explanation": "Cuerpo pequeño en la parte alta y una mecha inferior de al menos el doble del cuerpo, tras varias velas a la baja. (NVIDIA · velas diarias · junio de 2026)"
+  },
+  "u35l4-2": {
+   "prompt": "Toca la estrella fugaz.",
+   "options": [],
+   "explanation": "Mecha superior larga y cuerpo pequeño abajo, después de subir: los compradores lo intentaron y los vendedores devolvieron el precio abajo. (Microsoft · velas diarias · abril de 2026)"
+  },
+  "u35l4-3": {
+   "prompt": "Empareja cada vela con lo que cuenta.",
+   "options": [
+    "Marubozu",
+    "Doji",
+    "Martillo",
+    "Estrella fugaz"
+   ],
+   "explanation": "Cada vela resume una batalla entre compradores y vendedores: el cuerpo dice quién ganó y las mechas, hasta dónde llegó el otro bando.",
+   "right": [
+    "Empate: nadie ganó",
+    "Rechazo de los precios bajos",
+    "Rechazo de los precios altos",
+    "Un bando dominó toda la sesión"
+   ]
+  },
+  "u35l4-4": {
+   "prompt": "Toca el doji.",
+   "options": [],
+   "explanation": "Apertura y cierre casi iguales, con mechas a ambos lados: indecisión. Espera a la vela siguiente antes de sacar conclusiones. (Apple · velas diarias · agosto–septiembre de 2026)"
+  },
+  "u35l4-5": {
+   "prompt": "Toca la vela que completa la envolvente alcista.",
+   "options": [],
+   "explanation": "Una vela verde cuyo cuerpo envuelve por completo el cuerpo rojo anterior, después de una caída. (Apple · velas diarias · abril de 2025)"
+  },
+  "u35l4-6": {
+   "prompt": "¡15 segundos! Toca el martillo.",
+   "options": [],
+   "explanation": "Mecha inferior muy larga tras una caída: el mercado rechazó los precios bajos ese día. (Amazon · velas diarias · febrero de 2025)"
+  },
+  "u35l4-7": {
+   "prompt": "Toca la vela que completa la envolvente bajista.",
+   "options": [],
+   "explanation": "Una vela roja cuyo cuerpo se come el verde anterior, después de una subida. (NVIDIA · velas diarias · diciembre de 2024 – enero de 2025)"
+  },
+  "u35l4-8": {
+   "prompt": "Un martillo garantiza que el precio va a subir.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Es una pista de posible giro, no una garantía: muchos patrones fallan. Por eso se espera a la vela siguiente y se pone un stop bajo la mecha."
+  },
+  "u35l4-9": {
+   "prompt": "Toca el marubozu.",
+   "options": [],
+   "explanation": "Cuerpo verde largo, casi sin mechas: los compradores mandaron de principio a fin de la sesión. (Apple · velas diarias · junio–julio de 2026)"
+  },
+  "u35l4-10": {
+   "prompt": "Toca la tercera vela de la estrella de la mañana.",
+   "options": [],
+   "explanation": "Primero una roja grande, luego una pequeña de duda y por último una verde fuerte que cierra por encima de la mitad de la primera. (Microsoft · velas diarias · enero–febrero de 2026)"
+  },
+  "u35l4-11": {
+   "prompt": "Una vela con la misma forma que un martillo, pero que aparece después de una subida, se llama…",
+   "options": [
+    "Estrella fugaz",
+    "Hombre colgado",
+    "Doji"
+   ],
+   "explanation": "La forma es igual; lo que cambia es el contexto. Tras una caída es martillo; tras una subida, hombre colgado."
+  },
+  "u35l4-12": {
+   "prompt": "¡15 segundos! Toca la estrella fugaz.",
+   "options": [],
+   "explanation": "Mecha superior larga tras subir: los vendedores devolvieron el precio abajo antes del cierre. (Amazon · velas diarias · octubre–noviembre de 2025)"
+  },
+  "u35l5-1": {
+   "prompt": "Rango lateral. Toca el punto más bajo: el suelo que vigilan los compradores. (Apple · cierres cada 3 sesiones · septiembre–noviembre de 2024)",
+   "options": [],
+   "explanation": "Unos 222 $: el mínimo del rango marca el soporte. Si el precio vuelve ahí, mucha gente mirará si aguanta."
+  },
+  "u35l5-2": {
+   "prompt": "Ahora el techo: toca el punto más alto de este rango. (Microsoft · cierres cada 3 sesiones · agosto–octubre de 2024)",
+   "options": [],
+   "explanation": "Unos 433 $: ahí se frenaron las subidas. Es la resistencia del rango."
+  },
+  "u35l5-3": {
+   "prompt": "Una zona donde el precio ha dejado de caer varias veces se llama ____.",
+   "options": [
+    "resistencia",
+    "hueco",
+    "tendencia",
+    "soporte"
+   ],
+   "explanation": "En el soporte aparecen compradores; en la resistencia, vendedores."
+  },
+  "u35l5-4": {
+   "prompt": "Índice bursátil, velas diarias. Mira dónde está el precio respecto a sus mínimos recientes. ¿Más arriba o más abajo 10 sesiones después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Estar cerca de un soporte no garantiza un rebote: puede aguantar o romperse. Lo que sí te da es un sitio lógico para el stop si te equivocas.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u35l5-5": {
+   "prompt": "Tendencia bajista. Toca el mínimo: el nivel que los compradores tendrán que defender. (Apple · cierres cada 3 sesiones · febrero–abril de 2025)",
+   "options": [],
+   "explanation": "Unos 172 $: tras ese mínimo hubo un rebote. Un mínimo así se convierte en referencia para el futuro."
+  },
+  "u35l5-6": {
+   "prompt": "Cuando una resistencia se rompe con claridad, suele convertirse en soporte.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Es el cambio de papel: quien no compró antes lo ve como segunda oportunidad. Muchas veces el precio vuelve a «probar» el nivel antes de seguir."
+  },
+  "u35l5-7": {
+   "prompt": "¡15 segundos! Toca el punto más alto. (Microsoft · cierres cada 3 sesiones · junio–agosto de 2026)",
+   "options": [],
+   "explanation": "Unos 504 $: el último máximo de una tendencia alcista es la resistencia que el precio tendrá que superar."
+  },
+  "u35l5-8": {
+   "prompt": "Otro índice. ¿Ves algún suelo claro cerca del precio actual? Decide: ¿más arriba o más abajo 10 sesiones después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Si no hay un soporte claro cerca, el stop tendría que ir lejos y la operación tendría peor relación beneficio/riesgo. A veces lo mejor es no operar.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u35l5-9": {
+   "prompt": "Rango lateral con una vela rebelde. Toca el mínimo. (NVIDIA · cierres cada 3 sesiones · diciembre de 2025 – febrero de 2026)",
+   "options": [],
+   "explanation": "Unos 174 $: el precio perforó el rango un momento y volvió enseguida dentro. Eso es una falsa rotura, y por eso los soportes son zonas, no líneas."
+  },
+  "u35l5-10": {
+   "prompt": "El precio rompe un soporte, pasa dos días por debajo y vuelve dentro del rango. ¿Qué ha sido?",
+   "options": [
+    "Un cambio de tendencia confirmado",
+    "Una falsa rotura",
+    "Un cruce dorado"
+   ],
+   "explanation": "Muchas roturas fallan. Para filtrarlas, se mira si la rotura llega con volumen y si el precio cierra varias sesiones al otro lado."
+  },
+  "u35l5-11": {
+   "prompt": "¡20 segundos! ¿Más arriba o más abajo 10 sesiones después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Con prisa solo se miran las últimas velas. Localizar los suelos y techos anteriores te da contexto… aunque tampoco adivina el futuro.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u35l6-1": {
+   "prompt": "Antes de comprar, mira la tendencia. ¿Cuál es? (NVIDIA · cierres cada 3 sesiones · marzo–mayo de 2026)",
+   "options": [
+    "Alcista",
+    "Bajista",
+    "Lateral"
+   ],
+   "explanation": "Máximos y mínimos crecientes: de unos 168 $ a máximos de unos 236 $. Comprar a favor de la tendencia y poner el stop bajo el último mínimo es el planteamiento clásico."
+  },
+  "u35l6-2": {
+   "prompt": "Has comprado al último precio. Coloca tu stop loss donde tu idea deja de ser válida.",
+   "options": [],
+   "explanation": "Justo por debajo del último mínimo relevante (unos 408 $), con un pequeño margen. Si el precio pierde ese suelo, la tendencia que buscabas ya no está."
+  },
+  "u35l6-3": {
+   "prompt": "Ahora el objetivo: coloca tu take profit.",
+   "options": [],
+   "explanation": "Cerca del máximo anterior (unos 195 $): ahí aparecieron vendedores la última vez. Apuntar mucho más arriba es esperar algo que el precio aún no ha hecho."
+  },
+  "u35l6-4": {
+   "prompt": "Entrada a 40 €, stop a 38 € y objetivo a 46 €. ¿Cuántas veces es mayor el beneficio potencial que el riesgo?",
+   "options": [],
+   "explanation": "Riesgo: 40 − 38 = 2 €. Beneficio potencial: 46 − 40 = 6 €. 6 ÷ 2 = 3, una relación 3:1.",
+   "unit": "veces"
+  },
+  "u35l6-5": {
+   "prompt": "Coloca el stop de esta compra.",
+   "options": [],
+   "explanation": "Por debajo del mínimo reciente (unos 12,90 €). Ni pegado al precio, porque el ruido lo haría saltar, ni tan lejos que la pérdida se dispare."
+  },
+  "u35l6-6": {
+   "prompt": "Tienes 10.000 € y arriesgas un 1 %. Entras a 80 € con el stop a 76 €. ¿Cuántas acciones compras?",
+   "options": [],
+   "explanation": "El 1 % son 100 €. Distancia al stop: 4 €. 100 ÷ 4 = 25 acciones (2.000 € invertidos).",
+   "unit": "acciones"
+  },
+  "u35l6-7": {
+   "prompt": "Tienes 10.000 € y arriesgas como mucho un 1 %. Coloca el stop y elige el importe.",
+   "options": [],
+   "explanation": "Primero el stop bajo el último mínimo; después el importe, para que si salta pierdas como mucho 100 €. El resultado depende del mercado; el riesgo, de ti."
+  },
+  "u35l6-8": {
+   "prompt": "¡Rápido! En una compra, ¿dónde va el stop?",
+   "options": [
+    "Justo por encima del precio de entrada",
+    "Donde la pérdida sea un número redondo de euros",
+    "Justo por debajo del último mínimo relevante"
+   ],
+   "explanation": "El stop va donde tu idea deja de ser válida. Si estuviera por encima de la entrada, saltaría al momento."
+  },
+  "u35l6-9": {
+   "prompt": "Coloca el objetivo de esta operación.",
+   "options": [],
+   "explanation": "Cerca del máximo anterior (unos 256 $). Si el precio lo supera con fuerza, siempre puedes subir el stop y dejar correr la ganancia."
+  },
+  "u35l6-10": {
+   "prompt": "Laura compra con el stop bajo el último mínimo. El precio baja y se acerca peligrosamente al stop. ¿Qué hace?",
+   "options": [
+    "Compra más para bajar el precio medio",
+    "Lo deja donde estaba: era el punto en el que su idea fallaba",
+    "Baja el stop para darle «más aire»"
+   ],
+   "explanation": "El stop se decide con la cabeza fría, antes de entrar. Moverlo en contra por miedo a perder es uno de los errores más caros.",
+   "feedback": [
+    "Dobla la apuesta en una idea que el mercado está desmintiendo. Su riesgo ya no es el 1 %.",
+    "Bien: si salta, pierde lo previsto y pasa a la siguiente con la cuenta intacta.",
+    "Así una pérdida pequeña y prevista se convierte en una grande. Es el efecto disposición: aguantar lo que pierde."
+   ]
+  },
+  "u35l6-11": {
+   "prompt": "Otra operación: 5.000 € de capital y un riesgo máximo del 1 %.",
+   "options": [],
+   "explanation": "Con 5.000 € y un 1 %, como mucho puedes perder 50 €. El importe invertido puede ser bastante mayor que el riesgo: lo que manda es la distancia al stop."
+  },
+  "u35l7-1": {
+   "prompt": "Una empresa presenta beneficios récord y su acción cae un 8 %. ¿Cuál es la explicación más probable?",
+   "options": [
+    "Los beneficios récord siempre hacen caer la acción",
+    "Alguien se ha equivocado al publicar el precio",
+    "El mercado esperaba aún más"
+   ],
+   "explanation": "El precio ya incorpora lo esperado. Si el consenso esperaba más, un récord puede ser una decepción."
+  },
+  "u35l7-2": {
+   "prompt": "Marzo de 2020: el covid ha confinado medio mundo y el S&P 500 ha caído más de un 30 % en un mes. Los titulares hablan de la peor crisis en décadas. ¿Qué hizo el índice en los meses siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "La bolsa se mueve por lo que espera del futuro, no por los titulares de hoy. Ante noticias terribles, la pregunta clave es si lo que viene será peor o mejor de lo que el precio ya refleja.",
+   "horizon": "los meses siguientes"
+  },
+  "u35l7-3": {
+   "prompt": "Pablo lee en el móvil: «La Reserva Federal sube los tipos más de lo esperado». El índice cae un 2 % en minutos y Pablo tiene una posición abierta con su stop puesto. ¿Qué hace?",
+   "options": [
+    "Deja trabajar su plan: el stop ya marca cuánto está dispuesto a perder",
+    "Compra más porque «seguro que rebota»",
+    "Vende todo a mercado ya, antes de que caiga más"
+   ],
+   "explanation": "En los minutos tras una noticia, el precio se mueve a saltos y los costes suben. Las decisiones tomadas antes, con calma, suelen ser mejores.",
+   "feedback": [
+    "Bien: el stop se decidió con la cabeza fría. Si salta, pierde lo previsto; si no, sigue su plan.",
+    "Aumenta el riesgo en plena tormenta por una corazonada. Eso ya no es un plan.",
+    "Vende en el peor momento, con el spread abierto y el precio saltando. Si luego rebota, se queda fuera."
+   ]
+  },
+  "u35l7-4": {
+   "prompt": "20 de abril de 2020: con medio mundo confinado y los depósitos llenos, el contrato de mayo del petróleo WTI cierra a −37,63 $ por barril, en negativo por primera vez en la historia. ¿Qué hizo el precio en el año siguiente?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "El precio negativo fue un problema de un contrato concreto: quien debía recibir barriles físicos no tenía dónde guardarlos. Los titulares extremos describen el momento; no dicen qué viene después.",
+   "horizon": "los 14 meses siguientes"
+  },
+  "u35l7-5": {
+   "prompt": "Si una noticia es buena para una empresa, su acción siempre sube ese día.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Depende de lo que se esperaba: una buena noticia ya descontada puede venir con caídas."
+  },
+  "u35l7-6": {
+   "prompt": "Marta lee en un foro que una empresa «va a ser comprada seguro». La acción ya ha subido un 25 % en tres días. ¿Qué hace?",
+   "options": [
+    "Desconfía: el rumor ya está en el precio y no sabe quién lo difunde ni por qué",
+    "Se pone corta porque «seguro que es mentira»",
+    "Compra ya: si se confirma, subirá más"
+   ],
+   "explanation": "Un rumor que ya ha movido el precio ofrece poco margen y mucho riesgo. Y quien lo difunde puede tener interés en que compres.",
+   "feedback": [
+    "Bien: «compra con el rumor, vende con la noticia» existe por algo, y los foros son terreno de manipulaciones.",
+    "Otra apuesta a ciegas, ahora con pérdida potencial ilimitada si la compra se confirma.",
+    "Si el rumor ya ha subido el precio un 25 %, buena parte está descontada. Y si se desmiente, la caída puede ser brusca."
+   ]
+  },
+  "u35l7-7": {
+   "prompt": "Enero de 2022: la inflación en EE. UU. ronda el 7 % y la Reserva Federal avisa de que empezará a subir los tipos. ¿Qué hizo después un ETF de bonos del Tesoro estadounidense a más de 20 años?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Los bonos a largo plazo son muy sensibles a los tipos: su «duración» es alta. Lo difícil no es saber si la noticia es buena o mala, sino cuánto la había descontado ya el precio.",
+   "horizon": "hasta octubre de 2023"
+  },
+  "u35l7-8": {
+   "prompt": "¿Qué conviene preguntarse antes de reaccionar a un titular? Marca todas.",
+   "options": [
+    "¿Quién publica la noticia y con qué interés?",
+    "¿Cuántos «me gusta» tiene la publicación?",
+    "¿Cuánto pierdo si me equivoco?",
+    "¿Lo esperaba ya el mercado?"
+   ],
+   "explanation": "Expectativas, fuente y riesgo. La popularidad de un post no dice nada del precio… salvo que quizá ya llegas tarde."
+  },
+  "u35l7-9": {
+   "prompt": "Diciembre de 2020: Tesla entra en el S&P 500 tras subir más de un 700 % en el año, y los fondos indexados tienen que comprar sus acciones. ¿Qué hizo el precio en los dos años siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Una compra obligada y anunciada con semanas de antelación es una noticia que conoce todo el mundo: el precio suele moverse antes del día señalado. Lo de después depende de otras cosas: beneficios, tipos y expectativas.",
+   "horizon": "hasta enero de 2023"
+  },
+  "u35l7-10": {
+   "prompt": "¡Rápido! El mercado esperaba una inflación del 3 % y sale del 3,4 %. ¿Qué es más probable a corto plazo?",
+   "options": [
+    "Que no pase nada porque el dato ya se conocía",
+    "Que la bolsa suba porque la inflación es baja",
+    "Que la bolsa reaccione a la baja por la sorpresa"
+   ],
+   "explanation": "Lo que mueve es la sorpresa: un dato peor de lo esperado suele pesar aunque la inflación esté bajando respecto al mes anterior."
+  },
+  "u35l7-11": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Seguro, es una buena noticia",
+    "Esa noticia ya la sabía todo el mundo: lo que mueve el precio es la sorpresa",
+    "Mejor vendo: con las buenas noticias siempre cae"
+   ],
+   "explanation": "Lo que el mercado ya espera está en el precio. Solo la sorpresa, buena o mala, lo mueve.",
+   "feedback": [
+    "Las presentaciones se anuncian con semanas de antelación: el precio ya lo sabía antes que tú.",
+    "¡Exacto! Precio = expectativas. Si pasa lo esperado, ya estaba dentro. 🧠",
+    "Tampoco hay regla fija al revés. Depende de lo que esperaba el mercado."
+   ],
+   "lines": [
+    "¡Notición! 📱 Una gran marca de móviles presenta su nuevo modelo hoy.",
+    "Compro sus acciones ya, que van a subir, ¿no?"
+   ]
+  },
+  "u35l8-1": {
+   "prompt": "Ordena los pasos de una operación bien hecha.",
+   "options": [
+    "Apuntarla en el diario",
+    "Calcular el tamaño de la posición",
+    "Decidir dónde va el stop",
+    "Escribir la tesis",
+    "Fijar el objetivo",
+    "Enviar la orden"
+   ],
+   "explanation": "Primero la idea y dónde te equivocas; después el objetivo y el tamaño, que depende del stop; al final la orden y el registro."
+  },
+  "u35l8-2": {
+   "prompt": "Paso 2: coloca el stop de esta compra.",
+   "options": [],
+   "explanation": "Por debajo del último mínimo (unos 10.530 puntos), con un margen para el ruido. Ahí es donde tu idea deja de valer."
+  },
+  "u35l8-3": {
+   "prompt": "Paso 3, en otra operación: coloca el objetivo.",
+   "options": [],
+   "explanation": "Cerca del máximo anterior (unos 785 $), donde la última vez aparecieron vendedores."
+  },
+  "u35l8-4": {
+   "prompt": "Paso 4: tienes 10.000 € y arriesgas un 1 %. Entras a 25 € con el stop a 24 €. ¿Cuántas acciones compras?",
+   "options": [],
+   "explanation": "100 € de riesgo ÷ 1 € de distancia al stop = 100 acciones (2.500 € invertidos).",
+   "unit": "acciones"
+  },
+  "u35l8-5": {
+   "prompt": "Ejecuta la operación completa: 10.000 €, riesgo máximo del 1 %. Pon el stop bajo el mínimo y ajusta el importe.",
+   "options": [],
+   "explanation": "Un buen plan no garantiza ganar: garantiza que, si pierdes, pierdes lo previsto."
+  },
+  "u35l8-6": {
+   "prompt": "Arriesgaste 80 € y cerraste la operación ganando 200 €. ¿Cuántas R has ganado?",
+   "options": [],
+   "explanation": "200 ÷ 80 = 2,5R. Con R puedes comparar esta operación con cualquier otra, sea del tamaño que sea.",
+   "unit": "R"
+  },
+  "u35l8-7": {
+   "prompt": "Ana ha perdido tres operaciones seguidas, todas siguiendo su plan. Está enfadada y ve otra oportunidad. ¿Qué hace?",
+   "options": [
+    "Abre una operación el doble de grande para recuperar",
+    "Para por hoy y revisa el diario mañana con calma",
+    "Cambia de estrategia ya, porque «no funciona»"
+   ],
+   "explanation": "Las rachas de pérdidas son normales. La regla: tras tres pérdidas seguidas, se para el día.",
+   "feedback": [
+    "Operar por venganza: si falla, la racha mala se convierte en un agujero.",
+    "Bien: tres pérdidas seguidas es la señal para parar. Con un 1 % por operación, ha perdido menos de un 3 %.",
+    "Tres operaciones son una muestra minúscula: hasta un buen sistema encadena pérdidas."
+   ]
+  },
+  "u35l8-8": {
+   "prompt": "¿Qué debe apuntar tu diario de cada operación? Marca todas.",
+   "options": [
+    "El stop y el objetivo",
+    "Cómo te sentías",
+    "Lo que opinaba un influencer ese día",
+    "El motivo de la entrada",
+    "El resultado en R"
+   ],
+   "explanation": "Plan, resultado y emociones: con eso descubres tus errores repetidos. Lo que diga otro no explica tus decisiones."
+  },
+  "u35l8-9": {
+   "prompt": "Segunda operación: 3.000 € de capital y un riesgo máximo del 1 %.",
+   "options": [],
+   "explanation": "Con 3.000 € y un 1 %, el riesgo máximo son 30 €. Con poco capital la regla es la misma: el tamaño lo marca la distancia al stop."
+  },
+  "u35l8-10": {
+   "prompt": "Si arriesgas 100 € y salta tu stop, has perdido ____.",
+   "options": [
+    "2R",
+    "10R",
+    "0,5R",
+    "1R"
+   ],
+   "explanation": "Por definición, lo que arriesgas al entrar es 1R."
+  },
+  "u35l8-11": {
+   "prompt": "Una operación que gana dinero siempre fue una buena operación.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Si ganaste sin stop o arriesgando un 10 %, tuviste suerte con un mal plan. Juzga el proceso, no solo el resultado."
+  },
+  "u35l9-1": {
+   "prompt": "Lunes: reparte tus 10.000 € virtuales cumpliendo las reglas del reto.",
+   "options": [
+    "Fondo indexado MSCI World",
+    "ETF del IBEX 35",
+    "Fondo de bonos europeos",
+    "Oro (ETC)",
+    "Bitcoin"
+   ],
+   "explanation": "Con un máximo del 40 % por activo y al menos 4 activos, ninguna sorpresa puede hundir tu semana. Si incluyes cripto, que sea poco: puede perderse la totalidad de lo invertido.",
+   "kinds": [
+    "ACCIONES",
+    "ACCIONES",
+    "BONOS",
+    "ORO",
+    "CRIPTO"
+   ]
+  },
+  "u35l9-2": {
+   "prompt": "Martes: la bolsa cae un 3 % por un dato de inflación peor de lo esperado y tu cartera pierde 180 €. ¿Qué haces?",
+   "options": [
+    "No toco nada: la cartera está repartida y la caída entra en lo normal",
+    "Paso todo a bitcoin para recuperarlo rápido",
+    "Vendo todas las acciones para que no caiga más"
+   ],
+   "explanation": "Las caídas de varios puntos son parte del viaje. Lo que convierte una caída en pérdida es vender por pánico.",
+   "feedback": [
+    "Bien: un −1,8 % en un día malo es justo para lo que está pensada una cartera diversificada.",
+    "Rompes la regla del 10 % y concentras todo en el activo más volátil. Eso es operar por venganza.",
+    "Conviertes una caída normal en una pérdida definitiva, y te toca adivinar cuándo volver a entrar."
+   ]
+  },
+  "u35l9-3": {
+   "prompt": "Miércoles: pusiste un 10 % en bitcoin y esta semana ha subido un 25 %. Ahora pesa un 12 % de la cartera y tu regla dice 10 % como máximo. ¿Qué haces?",
+   "options": [
+    "Lo dejo: está subiendo",
+    "Compro más para aprovechar la racha",
+    "Vendo lo que sobra para volver al 10 % y lo reparto en el resto"
+   ],
+   "explanation": "Rebalancear devuelve la cartera al riesgo que elegiste con la cabeza fría.",
+   "feedback": [
+    "Incumples tu propia regla justo cuando hay más riesgo: si cae, te dolerá más de lo que pactaste contigo.",
+    "FOMO con las reglas rotas. Así una cartera prudente se convierte en una apuesta.",
+    "Rebalancear: vendes parte de lo que ha subido y vuelves al riesgo que elegiste."
+   ]
+  },
+  "u35l9-4": {
+   "prompt": "Tu cartera vale 10.250 € y el bitcoin, 1.250 €. ¿Cuántos euros de bitcoin tienes que vender para que vuelva a pesar un 10 %?",
+   "options": [],
+   "explanation": "El 10 % de 10.250 € son 1.025 €. 1.250 − 1.025 = 225 €. El dinero pasa a otros activos, así que la cartera sigue valiendo lo mismo.",
+   "unit": "€"
+  },
+  "u35l9-5": {
+   "prompt": "Jueves: ves una oportunidad en una acción. Cartera de 10.000 €, riesgo máximo del 1 %. Pon el stop y el importe.",
+   "options": [],
+   "explanation": "Con el stop bajo el último mínimo y un 1 % de riesgo, aunque salga mal pierdes como mucho 100 €. Dentro de una cartera, una operación nunca debe poder arruinarte la semana."
+  },
+  "u35l9-6": {
+   "prompt": "Jueves por la noche: tu cartera es 50 % acciones, 30 % bonos y 20 % oro. Esta semana las acciones han hecho −3 %, los bonos +1 % y el oro +4 %. ¿Cuánto ha hecho la cartera?",
+   "options": [],
+   "explanation": "0,5 × (−3) + 0,3 × 1 + 0,2 × 4 = −1,5 + 0,3 + 0,8 = −0,4 %. Las acciones cayeron un 3 %, pero la cartera solo un 0,4 %: eso es diversificar.",
+   "unit": "%"
+  },
+  "u35l9-7": {
+   "prompt": "Viernes: el índice tecnológico que sigues lleva así 30 sesiones. ¿Más arriba o más abajo 10 sesiones después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "En una cartera diversificada no necesitas acertar esto: lo que pase en dos semanas pesa poco frente a años de aportaciones.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u35l9-8": {
+   "prompt": "Si tu cartera cumple todas las reglas, es imposible que pierda dinero en una semana.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Las reglas limitan cuánto puedes perder, no evitan las pérdidas. En una semana mala, una cartera diversificada también baja."
+  },
+  "u35l9-9": {
+   "prompt": "Viernes: prepara la cartera de la semana que viene con reglas más prudentes: máximo un 35 % por activo, al menos 5 activos, como mucho un 5 % en cripto y al menos un 20 % en bonos.",
+   "options": [
+    "Fondo indexado MSCI World",
+    "Fondo indexado de EE. UU.",
+    "Fondo de bonos europeos",
+    "Letras del Tesoro",
+    "Oro (ETC)",
+    "Ethereum"
+   ],
+   "explanation": "Más activos, más renta fija y menos cripto: reglas más prudentes reducen cuánto se mueve la cartera. Es un ejercicio de reglas, no una recomendación de reparto.",
+   "kinds": [
+    "ACCIONES",
+    "ACCIONES",
+    "BONOS",
+    "BONOS",
+    "ORO",
+    "CRIPTO"
+   ]
+  },
+  "u35l9-10": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "No: tu primo ha asumido un riesgo enorme y una semana no dice quién lo ha hecho mejor",
+    "Depende de cuántos «me gusta» tenga su post",
+    "Sí: la próxima vez, todo a una cripto"
+   ],
+   "explanation": "Una semana es ruido. Se compara el resultado teniendo en cuenta el riesgo asumido, y en plazos largos.",
+   "feedback": [
+    "¡Eso! Lo que cuenta es el resultado según el riesgo y durante años, no una captura de pantalla. 😌",
+    "Los «me gusta» no pagan pérdidas. 😅 Compara riesgos, no capturas.",
+    "Una semana de +20 % puede ser un −40 % la siguiente. Copiar al que más gana es efecto rebaño."
+   ],
+   "lines": [
+    "Viernes 🎉 Mi cartera ha ganado un 1 % esta semana.",
+    "La de mi primo ha ganado un 20 % con una sola cripto. ¿He hecho el tonto?"
+   ]
+  }
+ }
+}

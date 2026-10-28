@@ -1,0 +1,714 @@
+{
+ "unit": {
+  "title": "Money and inflation",
+  "description": "What money is, why it loses value and how it grows with compound interest",
+  "section": "Money basics"
+ },
+ "lessons": {
+  "u1l1": {
+   "title": "What money is (and isn't)",
+   "steps": [
+    {
+     "title": "What money is for",
+     "body": "Money does three jobs:\n\n• **Means of payment:** you swap work for bread without having to barter.\n• **Unit of account:** you know a coffee is worth less than a bike.\n• **Store of value:** you can keep it for tomorrow… although, as we'll see, it slowly wears away."
+    },
+    {
+     "title": "Four words people mix up",
+     "body": "• **Income:** what comes in (salary, allowance, rent you collect). It's a flow: it arrives every month.\n• **Savings:** the part of your income you don't spend.\n• **Net worth:** what you own minus what you owe. It's a snapshot at one moment.\n• **Investment:** putting your savings to work so they produce more.",
+     "tip": "Earning a lot isn't the same as having a lot: what counts is what you keep."
+    },
+    {
+     "title": "The snapshot and the film",
+     "body": "Your net worth is the snapshot: €3,000 in the bank + a €6,000 car − €4,000 left on the car loan = €5,000. Your income and savings are the film: how that snapshot changes every month.",
+     "key": "Wealth is net worth, not salary: what you own minus what you owe."
+    }
+   ]
+  },
+  "u1l2": {
+   "title": "Inflation: why everything goes up",
+   "steps": [
+    {
+     "title": "What inflation is",
+     "body": "Inflation is the **general rise in prices**. If bread, electricity and rent go up by 3 % on average in a year, inflation has been 3 %.\n\nIn Spain it's measured by the INE (the national statistics office) with the **CPI**. In 2025 it averaged 2.7 %."
+    },
+    {
+     "title": "Play with inflation",
+     "body": "Move the sliders: how much will your euros buy in a few years' time?",
+     "tip": "Trick: 70 ÷ inflation = years until your money buys half as much."
+    },
+    {
+     "title": "Why prices go up",
+     "body": "They rise when there's more money or more demand than things to buy, or when producing costs more (energy in 2022). The ECB tries to keep inflation around **2 %** in the medium term by raising or cutting interest rates.",
+     "key": "With inflation, money that sits still buys a little less every year."
+    }
+   ]
+  },
+  "u1l3": {
+   "title": "The CPI and your shopping basket",
+   "steps": [
+    {
+     "title": "How it's measured",
+     "body": "Every month the INE tracks the prices of a **basket** of hundreds of goods and services (food, housing, transport, leisure…). The **CPI** is the change in that basket compared with the year before.\n\nEach item is weighted by what households spend on it on average."
+    },
+    {
+     "title": "Headline and core",
+     "body": "• **Headline CPI:** the whole basket.\n• **Core inflation:** leaves out unprocessed food and energy, which swing up and down a lot. It shows the underlying trend.\n\nIf electricity shoots up one month, headline jumps a lot but core barely moves."
+    },
+    {
+     "title": "Your personal inflation",
+     "body": "The CPI is an average. If you spend a lot on rent and transport, your inflation may be higher than the official figure; if you hardly drive, lower.",
+     "key": "The CPI is everyone's average: your inflation depends on what you spend on."
+    }
+   ]
+  },
+  "u1l4": {
+   "title": "Idle money loses value",
+   "steps": [
+    {
+     "title": "Real return",
+     "body": "To avoid losing purchasing power, your money has to earn more than inflation.\n\n**Real return ≈ return − inflation.**\n\nAn account paying 2 % with 2.7 % inflation makes you lose 0.7 % a year."
+    },
+    {
+     "title": "How much idle savings lose",
+     "body": "Put €10,000 away for 10 years with 2.5 % inflation and see how much is lost by doing nothing.",
+     "tip": "Just because the number in your account doesn't go down doesn't mean you're not losing."
+    },
+    {
+     "title": "Safe isn't the same as protected",
+     "body": "Deposits are covered up to €100,000 by the Fondo de Garantía de Depósitos (Spain's deposit guarantee scheme): you don't lose euros. But you can lose **purchasing power** if they earn less than inflation.",
+     "key": "What matters isn't how many euros you have, but what you can buy with them."
+    }
+   ]
+  },
+  "u1l5": {
+   "title": "Simple and compound interest",
+   "steps": [
+    {
+     "title": "Simple and compound",
+     "body": "**Simple:** you always earn on what you put in. €1,000 at 7 % gives €70 a year: after 30 years, €3,100.\n\n**Compound:** you earn on what you put in plus what you've already earned. That €1,000 turns into **€7,612**."
+    },
+    {
+     "title": "Try it yourself",
+     "body": "Start with €0 and add €100 a month for 30 years at 7 %: you put in €36,000 and end up with about €122,000. Try starting 10 years earlier.",
+     "tip": "These are examples, not promises: the stock market doesn't give 7 % every year."
+    },
+    {
+     "title": "Ana and Bruno",
+     "body": "Both put in €200 a month at 7 % until they're 65. Ana starts at 25 and reaches **€524,963**; Bruno starts at 35 and reaches **€243,994**. Ana puts in only €24,000 more and ends up with more than double. And watch out: it also works against you with expensive debt.",
+     "key": "Gains generate new gains: the sooner you start, the more time works for you."
+    }
+   ]
+  },
+  "u1l6": {
+   "title": "The rule of 72",
+   "steps": [
+    {
+     "title": "The trick",
+     "body": "How many years does it take your money to double? Divide **72 by the annual return**.\n\n• At 6 % → 72 ÷ 6 = **12 years**.\n• At 9 % → **8 years**.\n• At 2 % → **36 years**.\n\nIt's a very good approximation between 4 % and 12 %."
+    },
+    {
+     "title": "Check it",
+     "body": "Move the return and compare the rule of 72 with the exact calculation.",
+     "tip": "It also works the other way round: with 6 % inflation, prices double in about 12 years."
+    },
+    {
+     "title": "What it's for",
+     "body": "It lets you compare in your head. A fund that charges 2 % a year cuts your return from 7 % to 5 %: you go from doubling in ~10 years to doubling in ~14.",
+     "key": "72 ÷ return = years to double. It works for gains, inflation and debt."
+    }
+   ]
+  },
+  "u1r": {
+   "title": "Unit review",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u1l1-1": {
+   "prompt": "Match each word with its meaning.",
+   "options": [
+    "Income",
+    "Savings",
+    "Net worth",
+    "Investment"
+   ],
+   "explanation": "Income and savings are flows (every month); net worth is a snapshot at one moment.",
+   "right": [
+    "What you don't spend of what comes in",
+    "What you own minus what you owe",
+    "Putting savings to work to produce more",
+    "What comes in every month"
+   ]
+  },
+  "u1l1-2": {
+   "prompt": "You have €2,500 in the bank and a laptop worth €800, and you owe €1,200 on a loan. What's your net worth?",
+   "options": [],
+   "explanation": "2,500 + 800 − 1,200 = €2,100. Net worth subtracts what you owe.",
+   "unit": "€"
+  },
+  "u1l1-3": {
+   "prompt": "Which of these functions of money breaks down when inflation is high?",
+   "options": [
+    "Unit of account to compare a coffee and a bike",
+    "Means of payment",
+    "Store of value"
+   ],
+   "explanation": "With high inflation, money you keep buys less every year: it stops being a good store of value."
+  },
+  "u1l1-4": {
+   "prompt": "Someone who earns €4,000 a month and spends it all can have a lower net worth than someone who earns €1,500 and saves €300.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Net worth grows with what you save and invest, not with what you earn."
+  },
+  "u1l1-5": {
+   "prompt": "Is it income or net worth?",
+   "options": [
+    "The rent you collect every month",
+    "€8,000 in a fund",
+    "The extra June pay cheque",
+    "Your €1,400 salary",
+    "A flat you own"
+   ],
+   "explanation": "Income is what comes in; net worth is what you build up.",
+   "right": [
+    "Income (arrives every month)",
+    "Net worth (what you own)"
+   ]
+  },
+  "u1l1-6": {
+   "prompt": "What do you tell Lumi?",
+   "options": [
+    "I'll spend it all, I deserve it",
+    "I'll take out a loan for a pricier car",
+    "I'll set some aside every month before spending"
+   ],
+   "explanation": "A pay rise doesn't make you richer if your spending rises just as much: what makes you richer is what you set aside.",
+   "feedback": [
+    "Enjoying it is fine, but if spending swallows all of it, your net worth doesn't budge.",
+    "That way the rise goes on repayments and your net worth could fall.",
+    "That's it! Set aside €100 a month and in a year that's €1,200 more net worth."
+   ],
+   "lines": [
+    "I've just had a €300 a month pay rise 🎉",
+    "What should I do with it?"
+   ]
+  },
+  "u1l1-7": {
+   "prompt": "Net worth = what you own − what you ____.",
+   "options": [
+    "spend",
+    "save",
+    "earn",
+    "owe"
+   ],
+   "explanation": "Debts subtract: a €15,000 car with a €12,000 loan only adds €3,000 to you."
+  },
+  "u1l1-8": {
+   "prompt": "Is a salary net worth?",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It's income: a flow that comes in every month. What you build up with it is net worth."
+  },
+  "u1l1-9": {
+   "prompt": "Marta earns €1,800 and spends €1,750. Pablo earns €1,300 and spends €1,000. In 5 years, without investing anything, who'll have saved more?",
+   "options": [
+    "Both the same",
+    "Marta, because she earns more",
+    "Pablo, because he sets more aside every month"
+   ],
+   "explanation": "What builds net worth is the gap between income and spending, not the salary.",
+   "feedback": [
+    "No: what counts is the gap between what comes in and what goes out.",
+    "Marta only sets aside €50 a month: €3,000 in 5 years.",
+    "Pablo sets aside €300 a month: €18,000 in 5 years, six times more than Marta."
+   ]
+  },
+  "u1l2-1": {
+   "prompt": "With 3 % inflation for 20 years, how much will €1,000 buy in today's euros? (round it)",
+   "options": [],
+   "explanation": "1,000 ÷ 1.03²⁰ ≈ €554. Every year prices rise and the same money buys less.",
+   "unit": "€"
+  },
+  "u1l2-2": {
+   "prompt": "The ECB's inflation target is 0 %.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It's 2 % in the medium term. That's why idle money loses value even in normal years."
+  },
+  "u1l2-3": {
+   "prompt": "By the rule of 70, 2 % inflation halves purchasing power in about ____ years.",
+   "options": [
+    "70",
+    "20",
+    "10",
+    "35"
+   ],
+   "explanation": "70 ÷ 2 = 35 years."
+  },
+  "u1l2-4": {
+   "prompt": "What can push prices up? Tick all that apply.",
+   "options": [
+    "The central bank raising rates sharply",
+    "A lot of money being created very quickly",
+    "Far more demand than there are products",
+    "Energy getting more expensive"
+   ],
+   "explanation": "Raising rates is precisely how inflation is curbed: it makes credit dearer and cools demand."
+  },
+  "u1l2-5": {
+   "prompt": "Match each situation with its effect on prices.",
+   "options": [
+    "Energy prices shoot up",
+    "Everyone wants to buy at once",
+    "The ECB raises rates"
+   ],
+   "explanation": "Cost-push inflation, demand-pull inflation and the ECB's tool for curbing both.",
+   "right": [
+    "Demand goes up",
+    "Credit and demand slow down",
+    "Production costs go up"
+   ]
+  },
+  "u1l2-6": {
+   "prompt": "It's 2022: inflation in Spain hits 8 % and your account pays 0 %. You have €10,000 you won't need for 10 years. What do you do?",
+   "options": [
+    "Look into options that at least aim to beat inflation in the long run",
+    "Nothing: money in the bank is safe",
+    "Spend it all before it's worth less"
+   ],
+   "explanation": "Idle money isn't safe from inflation. Money you won't need for years should be put to work.",
+   "feedback": [
+    "Good: over 10 years, leaving it idle is the surest way to lose purchasing power.",
+    "Your €10,000 buys 8 % less in a year: about €800 of purchasing power gone.",
+    "Spending out of fear doesn't protect your future: it just swaps saving for consumption."
+   ]
+  },
+  "u1l2-7": {
+   "prompt": "Quick: 7 % inflation. In how many years does your money buy half as much (rule of 70)?",
+   "options": [
+    "5 years",
+    "10 years",
+    "20 years"
+   ],
+   "explanation": "70 ÷ 7 = 10 years."
+  },
+  "u1l2-8": {
+   "prompt": "If prices fall across the board (deflation), it's always good news for the economy.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Prolonged deflation makes people put off purchases and slows the economy; Japan suffered from it for years."
+  },
+  "u1l2-9": {
+   "prompt": "What do you explain to Lumi?",
+   "options": [
+    "That pesetas were worth more than euros",
+    "That money loses purchasing power to inflation year after year",
+    "That everything was just cheaper back then"
+   ],
+   "explanation": "Inflation building up over decades means money buys less and less.",
+   "feedback": [
+    "That's not it: €1 was worth 166.386 pesetas, but the problem is accumulated inflation.",
+    "Exactly! After decades of inflation, the same amount buys far fewer things.",
+    "Half true: what also changed was the value of money."
+   ],
+   "lines": [
+    "The supermarket is so expensive 😩",
+    "My gran says that with 100 pesetas she could buy loads of stuff."
+   ]
+  },
+  "u1l3-1": {
+   "prompt": "What does the CPI measure?",
+   "options": [
+    "How much the prices of a consumer basket change",
+    "The price of shares",
+    "What a household earns on average"
+   ],
+   "explanation": "It's a consumer price index: it compares the same basket over time."
+  },
+  "u1l3-2": {
+   "prompt": "Is it included in core inflation?",
+   "options": [
+    "A T-shirt",
+    "Fresh fruit",
+    "A haircut",
+    "Electricity",
+    "Petrol"
+   ],
+   "explanation": "Core inflation leaves out energy and unprocessed food because they're the most volatile.",
+   "right": [
+    "Yes, it counts",
+    "No, it's excluded"
+   ]
+  },
+  "u1l3-3": {
+   "prompt": "Your personal inflation can differ from the official figure.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "The CPI weights items by average spending; your basket gives each thing a different weight."
+  },
+  "u1l3-4": {
+   "prompt": "You rent, you drive everywhere, and petrol and rents have risen more than everything else. Official CPI is 3 %. What's most likely?",
+   "options": [
+    "My inflation is exactly 3 %",
+    "My personal inflation is above 3 %",
+    "My inflation is 0 %"
+   ],
+   "explanation": "If you spend more on what's rising most, your personal inflation beats the average.",
+   "feedback": [
+    "Only if your basket looks like the average one, and yours doesn't.",
+    "Yes: you spend more on what has gone up most.",
+    "The prices you pay really have gone up."
+   ]
+  },
+  "u1l3-5": {
+   "prompt": "If electricity shoots up one month, headline CPI jumps a lot, but ____ inflation barely moves.",
+   "options": [
+    "headline",
+    "negative",
+    "personal",
+    "core"
+   ],
+   "explanation": "Core inflation excludes energy to show the underlying trend."
+  },
+  "u1l3-6": {
+   "prompt": "A basket cost €200 a year ago and costs €206 today. What has the inflation of that basket been?",
+   "options": [],
+   "explanation": "(206 − 200) ÷ 200 = 0.03 → 3 %.",
+   "unit": "%"
+  },
+  "u1l3-7": {
+   "prompt": "Match each profile with the part of the basket that affects them most.",
+   "options": [
+    "Young person renting in Madrid",
+    "Delivery driver with a van",
+    "Family with three children"
+   ],
+   "explanation": "Every household has its own basket: that's why personal inflation varies.",
+   "right": [
+    "Fuel",
+    "Food",
+    "Housing"
+   ]
+  },
+  "u1l3-8": {
+   "prompt": "Core inflation includes energy.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It leaves it out precisely because it's very volatile."
+  },
+  "u1l3-9": {
+   "prompt": "What's true about the CPI? Tick all.",
+   "options": [
+    "It compares prices with the same month the year before",
+    "It measures stock market returns",
+    "Each product is weighted by average household spending",
+    "The INE publishes it every month"
+   ],
+   "explanation": "The CPI is a weighted average of consumer prices."
+  },
+  "u1l4-1": {
+   "prompt": "Your account pays 1.5 % and inflation is 2.7 %. What's your approximate real return?",
+   "options": [],
+   "explanation": "Real ≈ 1.5 − 2.7 = −1.2 %. You gain euros but lose purchasing power.",
+   "unit": "%"
+  },
+  "u1l4-2": {
+   "prompt": "If your account pays 3 % and inflation is 2 %, you gain purchasing power.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Real return ≈ 3 − 2 = +1 %."
+  },
+  "u1l4-3": {
+   "prompt": "Inflation at 2.5 %. Do you gain or lose purchasing power?",
+   "options": [
+    "Deposit at 3 %",
+    "Something earning 5 %",
+    "Cash in a drawer",
+    "Account at 0 %",
+    "Treasury bill at 2 %"
+   ],
+   "explanation": "You only gain if you earn more than inflation.",
+   "right": [
+    "Gain",
+    "Lose"
+   ]
+  },
+  "u1l4-4": {
+   "prompt": "What does the Fondo de Garantía de Depósitos (Spain's deposit guarantee scheme) protect?",
+   "options": [
+    "Your stock market investments",
+    "Up to €100,000 per person per bank if the bank goes bust",
+    "Your purchasing power against inflation"
+   ],
+   "explanation": "It protects the euros you've deposited if the bank goes bust, not against inflation or stock market falls."
+  },
+  "u1l4-5": {
+   "prompt": "You have €20,000 in an account paying 0 % and won't need it for 15 years. A friend says: «That way you don't lose anything». What do you say?",
+   "options": [
+    "That I should put it all in a single share",
+    "He's right: the balance doesn't go down",
+    "That I lose purchasing power every year"
+   ],
+   "explanation": "Money sitting still for years = lost purchasing power.",
+   "feedback": [
+    "That's going from one extreme to the other: later on you'll see why to diversify.",
+    "The balance doesn't go down, but with 2.5 % inflation that €20,000 will buy what about €13,800 buys today in 15 years.",
+    "Exactly: you don't lose euros, you lose what you can buy with them."
+   ]
+  },
+  "u1l4-6": {
+   "prompt": "Real return ≈ nominal return − ____.",
+   "options": [
+    "fees",
+    "taxes",
+    "dividends",
+    "inflation"
+   ],
+   "explanation": "It's the quick way to tell whether your money is gaining or losing purchasing power."
+  },
+  "u1l4-7": {
+   "prompt": "Quick: it earns 4 % and inflation is 3 %. Real return?",
+   "options": [
+    "+1 %",
+    "−1 %",
+    "+7 %"
+   ],
+   "explanation": "4 − 3 = +1 %."
+  },
+  "u1l4-8": {
+   "prompt": "What do you reply?",
+   "options": [
+    "Safe, yes, but inflation eats away at their value bit by bit",
+    "Better take it out in cash",
+    "Yes, nothing happens to it there"
+   ],
+   "explanation": "Nominal safety isn't real protection.",
+   "feedback": [
+    "Well spotted! Money you won't need soon can work to beat inflation.",
+    "In a drawer it loses to inflation just the same, and it can also get lost or stolen.",
+    "The euros are there, but every year they buy a bit less."
+   ],
+   "lines": [
+    "I've had €5,000 in my current account for years.",
+    "It's safe there anyway, right?"
+   ]
+  },
+  "u1l4-9": {
+   "prompt": "A guaranteed deposit can never make you lose purchasing power.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "If it earns less than inflation, you do lose it, even though the balance doesn't go down."
+  },
+  "u1l5-1": {
+   "prompt": "€1,000 at 7 % compound interest for 30 years: what does it turn into? (round it)",
+   "options": [],
+   "explanation": "1,000 × 1.07³⁰ ≈ €7,612. With simple interest it would be €3,100.",
+   "unit": "€"
+  },
+  "u1l5-2": {
+   "prompt": "Ana and Bruno each put in €200 a month at 7 %, but Ana starts 10 years earlier. At 65, Ana has…",
+   "options": [
+    "The same",
+    "25 % more",
+    "More than double"
+   ],
+   "explanation": "€524,963 versus €243,994: the early years are the ones that compound the most."
+  },
+  "u1l5-3": {
+   "prompt": "Match each case with the type of interest.",
+   "options": [
+    "You always earn on what you put in",
+    "You also earn on what you've already earned",
+    "A credit card debt that grows on itself"
+   ],
+   "explanation": "Compounding speeds up growth… including the growth of debts.",
+   "right": [
+    "Compound interest",
+    "Simple interest",
+    "Compound interest working against you"
+   ]
+  },
+  "u1l5-4": {
+   "prompt": "€10,000 at 5 % compound for 10 years: how much does it come to? (round to euros)",
+   "options": [],
+   "explanation": "10,000 × 1.05¹⁰ ≈ €16,289. With simple interest it would be €15,000.",
+   "unit": "€"
+  },
+  "u1l5-5": {
+   "prompt": "Compound interest only works in your favour.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It works against you too: a revolving credit card at 20 % doubles the debt in under 4 years."
+  },
+  "u1l5-6": {
+   "prompt": "Put in order from lowest to highest the result of €100 a month for 30 years.",
+   "options": [
+    "At 5 %",
+    "At 7 %",
+    "At 2 %",
+    "At 0 %"
+   ],
+   "explanation": "€36,000, €49,273, €83,226 and €121,997: a few points of return make a huge difference to the end result."
+  },
+  "u1l5-7": {
+   "prompt": "You're 22 and have €50 a month to invest. What do you do?",
+   "options": [
+    "Spend it: €50 won't get you anywhere",
+    "Start now with €50 and raise the amount when I can",
+    "Wait until I earn more to start with something «serious»"
+   ],
+   "explanation": "Starting early, even with a little, is what makes the most of compound interest.",
+   "feedback": [
+    "€50 a month at 7 % for 40 years comes to about €130,000, with €24,000 put in.",
+    "Good: with time on your side, starting early matters more than starting big.",
+    "Waiting is costly: the early years are the ones with the most time to compound."
+   ]
+  },
+  "u1l5-8": {
+   "prompt": "With compound interest, money grows faster the more time passes.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Each year you earn on a bigger base: the curve gets steeper over time."
+  },
+  "u1l5-9": {
+   "prompt": "What do you say?",
+   "options": [
+    "The same, time doesn't matter",
+    "A bit more, about €8,500",
+    "Almost double, about €15,000"
+   ],
+   "explanation": "Each extra decade at 7 % almost doubles the money.",
+   "feedback": [
+    "Time is exactly what matters most in compound interest.",
+    "Much more: 1,000 × 1.07⁴⁰ ≈ €14,974. The last 10 years almost double the result.",
+    "That's it! Ten more years at 7 % multiply it by almost 2 (1.07¹⁰ ≈ 1.97)."
+   ],
+   "lines": [
+    "I've seen that if I leave €1,000 at 7 %, in 30 years I'll have €7,600.",
+    "What if it's 40 years instead of 30?"
+   ]
+  },
+  "u1l6-1": {
+   "prompt": "By the rule of 72, at 6 % a year money doubles in about ____ years.",
+   "options": [
+    "6",
+    "72",
+    "20",
+    "12"
+   ],
+   "explanation": "72 ÷ 6 = 12 years."
+  },
+  "u1l6-2": {
+   "prompt": "At 9 % a year, how many years does it take money to double according to the rule of 72?",
+   "options": [],
+   "explanation": "72 ÷ 9 = 8 years.",
+   "unit": "years"
+  },
+  "u1l6-3": {
+   "prompt": "Quick: at 4 %, how many years to double?",
+   "options": [
+    "28",
+    "18",
+    "9"
+   ],
+   "explanation": "72 ÷ 4 = 18 years."
+  },
+  "u1l6-4": {
+   "prompt": "Match each return with the years it takes to double.",
+   "options": [
+    "3 %",
+    "6 %",
+    "8 %",
+    "12 %"
+   ],
+   "explanation": "Always 72 ÷ return.",
+   "right": [
+    "9 years",
+    "6 years",
+    "12 years",
+    "24 years"
+   ]
+  },
+  "u1l6-5": {
+   "prompt": "A fund promises to double your money in 2 years «risk-free». What do you think?",
+   "options": [
+    "I'll tell my family so they can invest too",
+    "I ask for details and stay suspicious",
+    "Great, I'll sign up now"
+   ],
+   "explanation": "The rule of 72 also helps you spot impossible promises.",
+   "feedback": [
+    "Before dragging anyone in, do the maths: 72 ÷ 2 = 36 % a year. Too good to be true.",
+    "Good: a «risk-free» 36 % a year doesn't exist. Later you'll see how to check whether a firm is registered with the CNMV.",
+    "Doubling in 2 years needs 36 % a year (72 ÷ 2). Nobody offers that without risk: it's a classic scam sign."
+   ]
+  },
+  "u1l6-6": {
+   "prompt": "A revolving credit card charges 24 % a year. In how many years does the debt double if you don't pay?",
+   "options": [],
+   "explanation": "72 ÷ 24 = 3 years. Compound interest also works for your creditor.",
+   "unit": "years"
+  },
+  "u1l6-7": {
+   "prompt": "The rule of 72 also works for inflation: at 3 %, prices double in about 24 years.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "72 ÷ 3 = 24 years."
+  },
+  "u1l6-8": {
+   "prompt": "To double your money in under 10 years, what return do you need?",
+   "options": [
+    "10 % a year",
+    "3 % a year",
+    "8 % a year",
+    "5 % a year"
+   ],
+   "explanation": "Under 10 years requires more than 7.2 % a year (72 ÷ 10).",
+   "right": [
+    "Enough",
+    "Not enough"
+   ]
+  },
+  "u1l6-9": {
+   "prompt": "What do you reply?",
+   "options": [
+    "Careful: it takes almost a third of your return and you take much longer to double",
+    "What matters is that the fund is well known",
+    "Yes, 2 % is nothing"
+   ],
+   "explanation": "Fees compound too: 2 % a year weighs a huge amount in the long run.",
+   "feedback": [
+    "Exactly! 72 ÷ 7 ≈ 10 years versus 72 ÷ 5 ≈ 14 years.",
+    "Being well known doesn't reduce what it costs you each year.",
+    "After the fee you're left with 5 %: you double in ~14 years instead of ~10. Four years' difference."
+   ],
+   "lines": [
+    "My fund returns 7 % but charges a 2 % fee a year.",
+    "That's not much, is it?"
+   ]
+  }
+ }
+}

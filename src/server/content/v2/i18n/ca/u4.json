@@ -1,0 +1,649 @@
+{
+ "unit": {
+  "title": "El teu primer pla financer",
+  "description": "Objectius amb xifra i data, el teu termini, el teu risc i el que diuen les dades del trading",
+  "section": "Fonaments dels diners"
+ },
+ "lessons": {
+  "u4l1": {
+   "title": "Estalviar, invertir i especular",
+   "steps": [
+    {
+     "title": "Tres coses diferents",
+     "body": "• **Estalviar:** apartar diners sense arriscar-los (compte, dipòsit, lletres). Per al que és a prop: el coixí i les despeses de menys de 2-3 anys.\n• **Invertir:** posar diners en allò que **produeix valor** (empreses, préstecs, immobles). Per a 5 anys o més.\n• **Especular:** comprar esperant que **un altre t'ho compri més car aviat**, encara que no generi res en aquest termini."
+    },
+    {
+     "title": "D'on surt el guany",
+     "body": "• Estalvi → interessos.\n• Inversió → beneficis d'empreses, interessos, rendes.\n• Especulació → d'un altre participant que encerta menys que tu.\n\nEspecular és un joc de **suma zero** abans de costos i de **suma negativa** després. La CNMV inclou distingir invertir d'especular entre les competències bàsiques de tot inversor."
+    },
+    {
+     "title": "La diferència en una frase",
+     "body": "Aportar cada mes a un fons mundial durant 20 anys és invertir. Comprar una moneda de moda perquè «tothom diu que pujarà» és especular.",
+     "key": "S'estalvia per al que és a prop, s'inverteix per al que és lluny i s'especula només amb el que pots perdre.",
+     "tip": "Si no saps d'on surt el guany, probablement surt de la teva butxaca."
+    }
+   ]
+  },
+  "u4l2": {
+   "title": "Objectius amb data i xifra",
+   "steps": [
+    {
+     "title": "De desig a objectiu",
+     "body": "Malament: «vull tenir diners».\nBé: «vull **30.000 €** per a l'entrada d'un pis el **juny del 2031**, aportant **400 € al mes**».\n\nUn bon objectiu és **SMART**: específic, mesurable, assolible, rellevant i amb data."
+    },
+    {
+     "title": "El compte enrere",
+     "body": "1. Quant necessito?\n2. Per a quan?\n3. Quant tinc ja?\n4. El que falta ÷ mesos = **aportació mensual**.\n\nExemple: 6.000 € per a un cotxe en 2 anys, amb 1.200 € estalviats: (6.000 − 1.200) ÷ 24 = **200 € al mes**."
+    },
+    {
+     "title": "Cada objectiu, el seu calaix",
+     "body": "Si tens diversos objectius, separa'ls: un compte o una «guardiola» per a cadascun. Així saps quant portes de cada cosa i no et gastes el viatge en el cotxe.",
+     "key": "Un objectiu sense xifra ni data és només un desig.",
+     "tip": "Escriu-lo i revisa'l cada mes."
+    }
+   ]
+  },
+  "u4l3": {
+   "title": "El teu horitzó temporal",
+   "steps": [
+    {
+     "title": "Posa data a cada euro",
+     "body": "• **Coixí:** sempre disponible → compte remunerat, fons monetari.\n• **Viatge o cotxe (1-3 anys)** → dipòsits, lletres.\n• **Entrada d'un pis (3-7 anys)** → combinació prudent, més renda fixa.\n• **Jubilació (15 anys o més)** → sobretot accions diversificades."
+    },
+    {
+     "title": "El risc baixa amb el temps",
+     "body": "En un any qualsevol, l'S&P 500 ha caigut aproximadament **un de cada quatre anys**. En períodes de 20 anys, perdre ha estat raríssim.\n\nRar no vol dir impossible: qui va comprar al màxim del 1929 o a la bombolla del 2000 va esperar més d'una dècada per recuperar-se."
+    },
+    {
+     "title": "La regla del termini",
+     "body": "No s'inverteixen a borsa els diners que es necessiten aviat: no perquè hagin de baixar segur, sinó perquè **poden** estar baixant just quan els necessitis.",
+     "key": "El termini decideix el risc que pots assumir.",
+     "tip": "Els diners de d'aquí a dos anys no haurien d'estar en una cosa que pot caure un 30 % en un mes."
+    }
+   ]
+  },
+  "u4l4": {
+   "title": "Quant risc pots aguantar",
+   "steps": [
+    {
+     "title": "Dos ingredients",
+     "body": "**Capacitat de risc:** quant pots perdre **sense que la teva vida canviï** (ingressos, estabilitat, coixí, càrregues, termini). És objectiva.\n\n**Tolerància al risc:** quant pots veure caure els teus diners **sense vendre en pànic**. És psicològica, i gairebé tothom la sobreestima quan la borsa puja.\n\nEl teu perfil real és **el més baix dels dos**."
+    },
+    {
+     "title": "La prova del 40 %",
+     "body": "Inverteixes 10.000 € i en sis mesos valen 6.000 €. Les notícies diuen que «això tot just acaba de començar». Què faries?\n\n• Vendre-ho tot → perfil conservador.\n• Aguantar → moderat.\n• Aportar-hi més → decidit, si en tens capacitat.\n\nNo és teoria: la borsa mundial va caure més d'un 50 % el 2007-2009."
+    },
+    {
+     "title": "El test MiFID",
+     "body": "Quan obres un compte en un bròquer europeu, la normativa MiFID II l'obliga a fer-te un test de conveniència o d'idoneïtat. Contesta'l amb sinceritat: et protegeix de productes complexos que no entens.",
+     "key": "El teu perfil depèn de quant pots perdre i de com reacciones quan perds.",
+     "tip": "Tothom és valent quan la borsa puja."
+    }
+   ]
+  },
+  "u4l5": {
+   "title": "La veritat sobre fer-se ric ràpid",
+   "steps": [
+    {
+     "title": "El que diuen les dades",
+     "body": "• Brasil: el **97 %** dels qui van fer *day trading* més de 300 dies van perdre diners (Chague i altres, 2020).\n• Europa: entre el **74 % i el 89 %** dels comptes minoristes de CFD perden diners (ESMA).\n• EUA: les llars que més operaven guanyaven un **11,4 %** anual davant del **17,9 %** del mercat (Barber i Odean, 2000).",
+     "tip": "Avís de la CNMV: els CFD són instruments complexos i estan associats a un risc elevat de perdre diners ràpidament a causa del palanquejament. Entre un 74 i un 89 % dels inversors minoristes perden diners quan negocien amb CFD."
+    },
+    {
+     "title": "Per què passa",
+     "body": "• Cada operació paga comissió i *spread*: operar molt multiplica els costos.\n• A l'altra banda hi ha professionals i algoritmes.\n• Tallem els guanys aviat i deixem córrer les pèrdues.\n• El palanquejament multiplica les pèrdues igual que els guanys."
+    },
+    {
+     "title": "Senyals d'un guru o d'una estafa",
+     "body": "• Promet rendibilitats altes «sense risc».\n• Ensenya captures de guanys, mai el seu historial complet.\n• Ven cursos, senyals o «bots» amb pressa («només avui»).\n• Et demana obrir compte en un bròquer concret (cobra per portar-t'hi).\n• No està registrat a la CNMV: comprova-ho al seu web i a la seva llista de **«xiringuitos» financers**."
+    },
+    {
+     "title": "Com es guanya de debò",
+     "body": "El que funciona per a la majoria: aportar amb regularitat, diversificar, pagar poc en comissions, durant molt de temps i sense vendre en pànic. Sona avorrit, i per això pocs ho fan.",
+     "key": "La majoria dels qui especulen a curt termini perden; la majoria dels qui inverteixen amb paciència guanyen.",
+     "tip": "Si fos fàcil fer-se ric en una setmana, ningú no t'ho vendria."
+    }
+   ]
+  },
+  "u4r": {
+   "title": "Repàs de la unitat",
+   "steps": []
+  },
+  "s1boss": {
+   "title": "Repte final: Fonaments dels diners",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u4l1-1": {
+   "prompt": "Relaciona cada activitat amb d'on surt el seu guany.",
+   "options": [
+    "Estalviar",
+    "Invertir",
+    "Especular"
+   ],
+   "explanation": "La pregunta clau és sempre la mateixa: d'on surt el guany?",
+   "right": [
+    "Beneficis, interessos o rendes a llarg termini",
+    "Que un altre pagui més car aviat",
+    "Interessos sense arriscar el que hi vas posar"
+   ]
+  },
+  "u4l1-2": {
+   "prompt": "És estalviar, invertir o especular?",
+   "options": [
+    "Operar cada pocs minuts amb palanquejament",
+    "Lletres del Tresor",
+    "Accions de moltes empreses per a 15 anys",
+    "Dipòsit a 12 mesos",
+    "Aportar cada mes a un fons indexat mundial durant 20 anys",
+    "Comprar una moneda de moda perquè està pujant"
+   ],
+   "explanation": "El termini, el risc i l'origen del guany separen les tres coses.",
+   "right": [
+    "Estalviar",
+    "Invertir",
+    "Especular"
+   ]
+  },
+  "u4l1-3": {
+   "prompt": "Necessites els diners per a un viatge d'aquí a un any. Què té més sentit?",
+   "options": [
+    "Estalviar-los en un compte o un dipòsit",
+    "Invertir-los en accions",
+    "Especular amb criptomonedes"
+   ],
+   "explanation": "A un any vista, els diners no han d'estar en una cosa que pot caure un 30 %."
+  },
+  "u4l1-4": {
+   "prompt": "D'on surt el guany de qui inverteix en una empresa a llarg termini?",
+   "options": [
+    "D'un altre inversor que perd",
+    "De la sort",
+    "Dels beneficis que genera l'empresa"
+   ],
+   "explanation": "Invertir és participar en el que produeix l'actiu: beneficis, interessos o rendes."
+  },
+  "u4l1-5": {
+   "prompt": "Especular és un joc de suma zero abans de costos.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "El que guanya un ho perd un altre; després de comissions i impostos, el total és negatiu."
+  },
+  "u4l1-6": {
+   "prompt": "Invertir vol dir que no pots perdre diners.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Les inversions pugen i baixen, de vegades molt i durant anys. Per això s'inverteix a llarg termini i diversificant."
+  },
+  "u4l1-7": {
+   "prompt": "Comprar una cripto perquè «tothom diu que pujarà» és invertir.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "És especular: el guany depèn que un altre pagui més, no del que produeix l'actiu."
+  },
+  "u4l1-8": {
+   "prompt": "El Pablo té 12.000 €, gasta 1.200 € al mes i vol provar sort amb 5.000 € en una moneda que «es multiplicarà». Què fa?",
+   "options": [
+    "Aparta el seu coixí, inverteix a llarg termini i, si vol especular, només amb una part petita que pugui perdre sencera",
+    "Posa els 5.000 € a la moneda",
+    "Posa els 12.000 € a la moneda per guanyar més"
+   ],
+   "explanation": "Especular, en tot cas, amb una part petita que puguis perdre sencera.",
+   "feedback": [
+    "Si la moneda s'enfonsa, la seva vida no canvia: el pla aguanta.",
+    "Un 40 % dels seus diners depèn que un altre pagui més car: ho pot perdre gairebé tot.",
+    "Sense coixí i tot en una aposta: qualsevol imprevist o caiguda el deixa sense res."
+   ]
+  },
+  "u4l1-9": {
+   "prompt": "S'estalvia per al que és a prop, s'inverteix per al que és ____ i s'especula només amb el que pots perdre.",
+   "options": [
+    "segur",
+    "divertit",
+    "urgent",
+    "llunyà"
+   ],
+   "explanation": "Com més lluny és l'objectiu, més temps hi ha per recuperar-se de les caigudes."
+  },
+  "u4l1-10": {
+   "prompt": "Quins són exemples d'especulació? Marca'ls tots.",
+   "options": [
+    "Comprar una moneda de moda perquè puja",
+    "Fer servir molt de palanquejament",
+    "Aportar cada mes a un fons mundial durant 20 anys",
+    "Operar cada pocs minuts"
+   ],
+   "explanation": "Aportar a llarg termini a un fons diversificat és invertir."
+  },
+  "u4l2-1": {
+   "prompt": "Ordena els passos per calcular la teva aportació mensual.",
+   "options": [
+    "Posar-hi data",
+    "Restar el que ja tens",
+    "Dividir el que falta entre els mesos que queden",
+    "Decidir quant necessites"
+   ],
+   "explanation": "Xifra, data, punt de partida i divisió: així un desig es converteix en un pla mensual."
+  },
+  "u4l2-2": {
+   "prompt": "Vols 3.000 € per a un viatge d'aquí a 12 mesos i ja en tens 600. Quant has d'apartar al mes?",
+   "options": [],
+   "explanation": "(3.000 − 600) ÷ 12 = 200 € al mes.",
+   "unit": "€"
+  },
+  "u4l2-3": {
+   "prompt": "Vols 30.000 € d'entrada per a un pis en 5 anys i comences de zero. Sense comptar interessos, quant al mes?",
+   "options": [],
+   "explanation": "30.000 ÷ 60 mesos = 500 € al mes.",
+   "unit": "€"
+  },
+  "u4l2-4": {
+   "prompt": "Un objectiu SMART és específic, mesurable, assolible, rellevant i té ____.",
+   "options": [
+    "sort",
+    "palanquejament",
+    "risc",
+    "data"
+   ],
+   "explanation": "Sense data no pots calcular quant has d'aportar cada mes."
+  },
+  "u4l2-5": {
+   "prompt": "Quin objectiu està ben plantejat?",
+   "options": [
+    "Tenir 12.000 € per a un cotxe el 2029 aportant 250 € al mes",
+    "Estalviar molt",
+    "Ser ric"
+   ],
+   "explanation": "Té quantitat, data i pla: es pot mesurar i seguir."
+  },
+  "u4l2-6": {
+   "prompt": "És només un desig o un objectiu mesurable?",
+   "options": [
+    "Viatjar molt",
+    "Tenir 4.500 € de coixí al desembre",
+    "Estalviar més aquest any",
+    "Vull ser ric",
+    "4.000 € per a un màster el setembre del 2027, amb 250 € al mes"
+   ],
+   "explanation": "La xifra i la data converteixen un desig en una cosa que pots seguir mes a mes.",
+   "right": [
+    "Només un desig",
+    "Objectiu mesurable"
+   ]
+  },
+  "u4l2-7": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Perfecte, així no t'angoixes",
+    "Millor no et posis objectius, que després falles",
+    "Posa-hi xifra i data: per exemple, 1.800 € al desembre"
+   ],
+   "explanation": "Un objectiu mesurable et diu què has de fer cada mes.",
+   "feedback": [
+    "Sense xifra ni data, al desembre no sabràs si ho has aconseguit.",
+    "Sense objectiu és més fàcil que l'estalvi es quedi en res.",
+    "Així sí! 1.800 € en 12 mesos són 150 € al mes: ja saps què has de fer cada mes."
+   ],
+   "lines": [
+    "El meu objectiu per a aquest any: estalviar! 💪",
+    "Ho he plantejat bé?"
+   ]
+  },
+  "u4l2-8": {
+   "prompt": "Ràpid: necessites 2.400 € en 12 mesos. Quant al mes?",
+   "options": [
+    "200 €",
+    "100 €",
+    "240 €"
+   ],
+   "explanation": "2.400 ÷ 12 = 200 €."
+  },
+  "u4l2-9": {
+   "prompt": "L'Ana vol un coixí de 3.000 €, un viatge de 1.500 € a l'estiu i l'entrada d'un pis d'aquí a 6 anys. Ho guarda tot junt al mateix compte. Què li convé?",
+   "options": [
+    "Continuar amb tot junt: és més senzill",
+    "Separar cada objectiu en el seu propi compte o guardiola",
+    "Anar a per un objectiu cada vegada i oblidar els altres"
+   ],
+   "explanation": "Un calaix per objectiu: així els diners de cada meta no es barregen.",
+   "feedback": [
+    "A l'estiu no sabrà quant pot gastar sense tocar el coixí o el pis.",
+    "Veu quant porta de cadascun i el viatge no es menja el coixí.",
+    "Mentrestant, els altres terminis continuen corrent."
+   ]
+  },
+  "u4l2-10": {
+   "prompt": "Si l'objectiu és a 2 anys, l'aportació mensual és el que falta dividit entre 24.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "2 anys són 24 mesos (sense comptar interessos)."
+  },
+  "u4l3-1": {
+   "prompt": "Relaciona cada objectiu amb on sol tenir sentit.",
+   "options": [
+    "Coixí d'emergència",
+    "Viatge d'aquí a un any",
+    "Entrada d'un pis en 5 anys",
+    "Jubilació en 35 anys"
+   ],
+   "explanation": "Com més termini, més temps per recuperar-se de les caigudes.",
+   "right": [
+    "Combinació prudent, més renda fixa",
+    "Sobretot accions diversificades",
+    "Dipòsit o lletres",
+    "Compte remunerat"
+   ]
+  },
+  "u4l3-2": {
+   "prompt": "Necessites l'entrada d'un pis d'aquí a 18 mesos. On té més sentit?",
+   "options": [
+    "Dipòsits o un fons monetari",
+    "Criptomonedes",
+    "100 % en accions tecnològiques"
+   ],
+   "explanation": "A 18 mesos, una caiguda del 30 % arruïnaria el pla."
+  },
+  "u4l3-3": {
+   "prompt": "Ordena de menys a més el risc que sol admetre cada objectiu.",
+   "options": [
+    "Entrada d'un pis en 5 anys",
+    "Jubilació en 30 anys",
+    "Viatge en un any",
+    "Coixí d'emergència"
+   ],
+   "explanation": "Com més lluny és l'objectiu, més caigudes es poden aguantar pel camí."
+  },
+  "u4l3-4": {
+   "prompt": "En períodes de 20 anys, l'S&P 500 gairebé mai no ha donat pèrdues.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Gairebé mai no vol dir mai: per això també convé diversificar per països."
+  },
+  "u4l3-5": {
+   "prompt": "El Bruno té 8.000 € per a la matrícula d'un màster que paga d'aquí a 10 mesos. Un amic li diu que a borsa «en traurà alguna cosa més». Què fa?",
+   "options": [
+    "Els posa en una cripto que ha pujat molt",
+    "Els deixa en un dipòsit o en lletres fins al pagament",
+    "Ho posa tot a borsa"
+   ],
+   "explanation": "Diners amb una data propera: sense risc, encara que rendeixin poc.",
+   "feedback": [
+    "Caigudes del 50 % en pocs mesos no són rares en cripto: es podria quedar sense màster.",
+    "Guanya poc, però el dia de la matrícula els 8.000 € hi seran.",
+    "Si la borsa cau un 20 % just abans, li faltarien 1.600 € per a la matrícula."
+   ]
+  },
+  "u4l3-6": {
+   "prompt": "S&P 500, setembre del 2008. Imagina que aquí tens els diners de l'entrada d'un pis que pagues en 6 mesos. Què creus que va fer l'índex els mesos següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Sigui quin sigui el resultat, els diners que necessites en pocs mesos no haurien de dependre del que faci la borsa en aquest termini.",
+   "horizon": "els mesos següents"
+  },
+  "u4l3-7": {
+   "prompt": "Ràpid: diners que necessitaràs en 2 anys. A borsa?",
+   "options": [
+    "Sí: en 2 anys sempre puja",
+    "Sí, si és una sola empresa",
+    "Millor no: pot estar caient just quan els necessitis"
+   ],
+   "explanation": "A 2 anys, la borsa pot estar en plena caiguda el dia que necessites els diners."
+  },
+  "u4l3-8": {
+   "prompt": "Curt o llarg termini?",
+   "options": [
+    "Fiança d'un lloguer d'aquí a 6 mesos",
+    "Independència financera als 50 (en tens 25)",
+    "Vacances de l'estiu que ve",
+    "Jubilació",
+    "Canviar de mòbil",
+    "Estalvi per a la universitat d'un nadó"
+   ],
+   "explanation": "El que necessites aviat, sense risc; el que és lluny pot aguantar més alts i baixos.",
+   "right": [
+    "Curt termini (menys de 3 anys)",
+    "Llarg termini (més de 10 anys)"
+   ]
+  },
+  "u4l3-9": {
+   "prompt": "Si l'S&P 500 ha caigut aproximadament un de cada quatre anys, en quants anys de cada 40 esperaries caigudes, més o menys?",
+   "options": [],
+   "explanation": "40 ÷ 4 = 10 anys. Les caigudes són normals: el que canvia amb el termini és el temps per recuperar-se.",
+   "unit": "anys"
+  },
+  "u4l3-10": {
+   "prompt": "No s'inverteixen a borsa els diners que es necessiten ____.",
+   "options": [
+    "d'aquí a 30 anys",
+    "per jubilar-se",
+    "mai",
+    "aviat"
+   ],
+   "explanation": "No perquè hagin de baixar segur, sinó perquè poden estar baixant just quan els necessitis."
+  },
+  "u4l4-1": {
+   "prompt": "Quin és el teu perfil de risc real?",
+   "options": [
+    "El més baix entre capacitat i tolerància",
+    "El més alt entre capacitat i tolerància",
+    "El que tingui el teu millor amic"
+   ],
+   "explanation": "Si pots perdre molt però no ho suportes, vendràs en pànic; si ho suportes però no t'ho pots permetre, t'arrisques massa."
+  },
+  "u4l4-2": {
+   "prompt": "Relaciona cada concepte amb el seu significat.",
+   "options": [
+    "Capacitat de risc",
+    "Tolerància al risc",
+    "Test MiFID",
+    "Horitzó"
+   ],
+   "explanation": "La capacitat i l'horitzó són objectius; la tolerància és psicològica.",
+   "right": [
+    "Comprova la teva experiència i els teus coneixements",
+    "Quan necessitaràs els diners",
+    "Quant aguantes veure caure sense vendre",
+    "Quant pots perdre sense que la teva vida canviï"
+   ]
+  },
+  "u4l4-3": {
+   "prompt": "La Marta té 23 anys, contracte estable, un coixí de 6 mesos i inverteix per a d'aquí a 30 anys en una cartera diversificada. La seva cartera cau un 35 %. Quina decisió encaixa amb el seu pla?",
+   "options": [
+    "Ho ven tot per no perdre més",
+    "Manté el pla i continua amb les seves aportacions",
+    "Demana un préstec per comprar-ne més"
+   ],
+   "explanation": "Amb capacitat i termini, el pla importa més que el titular del dia.",
+   "feedback": [
+    "Converteix una caiguda temporal en una pèrdua definitiva i, si després hi ha rebot, se'l perd.",
+    "El seu termini i el seu coixí li permeten esperar: la caiguda només és una pèrdua real si ven.",
+    "Endeutar-se per invertir multiplica el risc: si continua caient, deu diners i perd."
+   ]
+  },
+  "u4l4-4": {
+   "prompt": "Una caiguda del 40 % a borsa és una cosa teòrica que no ha passat mai.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "La borsa mundial va caure més del 50 % el 2007-2009 i gairebé un 50 % el 2000-2002."
+  },
+  "u4l4-5": {
+   "prompt": "Els teus 10.000 € cauen un 40 %. Quant valen ara?",
+   "options": [],
+   "explanation": "10.000 × (1 − 0,40) = 6.000 €.",
+   "unit": "€"
+  },
+  "u4l4-6": {
+   "prompt": "Després de caure un 40 %, quant ha de pujar la teva cartera per tornar a 10.000 €? (arrodoneix)",
+   "options": [],
+   "explanation": "De 6.000 a 10.000 € cal guanyar 4.000 €: 4.000 ÷ 6.000 ≈ 66,7 %. Les caigudes grans costen molt de recuperar.",
+   "unit": "%"
+  },
+  "u4l4-7": {
+   "prompt": "Això suma o resta capacitat de risc?",
+   "options": [
+    "Un coixí de 6 mesos",
+    "Necessitar els diners en 2 anys",
+    "Fills al teu càrrec",
+    "Un sou estable",
+    "Deutes cars",
+    "Un horitzó de 30 anys"
+   ],
+   "explanation": "La capacitat depèn de la teva situació objectiva: ingressos, coixí, càrregues i termini.",
+   "right": [
+    "Suma capacitat",
+    "Resta capacitat"
+   ]
+  },
+  "u4l4-8": {
+   "prompt": "Què li dius a la Lumi?",
+   "options": [
+    "La teva tolerància real sembla més baixa del que creus",
+    "Inverteix-hi encara més per acostumar-t'hi",
+    "Llavors ets agressiu; només ha estat un mal mes"
+   ],
+   "explanation": "La tolerància es descobreix en les caigudes, no en les pujades.",
+   "feedback": [
+    "Això: el teu perfil el marca com reacciones a les caigudes, no com et sents quan puja.",
+    "Més risc amb poca tolerància sol acabar en vendre en pànic.",
+    "Si un 5 % et treu la son, com portaries un 40 %?"
+   ],
+   "lines": [
+    "Jo, invertint, soc superagressiu 😎",
+    "Tot i que quan el mes passat va baixar un 5 % no vaig pegar ull…"
+   ]
+  },
+  "u4l4-9": {
+   "prompt": "Ràpid: per a què serveix el test MiFID del bròquer?",
+   "options": [
+    "Per cobrar-te més comissions",
+    "Per protegir-te de productes que no entens",
+    "Per a res"
+   ],
+   "explanation": "La normativa europea obliga a comprovar la teva experiència i els teus coneixements."
+  },
+  "u4l4-10": {
+   "prompt": "Et poses molt nerviós quan veus números vermells i necessitaràs els diners d'aquí a 3 anys. El teu perfil és…",
+   "options": [
+    "Conservador",
+    "Especulador",
+    "Molt decidit"
+   ],
+   "explanation": "Tolerància baixa i termini curt: molta renda fixa i poca borsa."
+  },
+  "u4l5-1": {
+   "prompt": "La majoria dels qui fan day trading de manera continuada guanyen diners.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Al Brasil, el 97 % dels qui en van fer més de 300 dies van perdre diners."
+  },
+  "u4l5-2": {
+   "prompt": "Segons l'ESMA, quin percentatge de comptes minoristes de CFD perd diners?",
+   "options": [
+    "20-30 %",
+    "74-89 %",
+    "Al voltant del 50 %"
+   ],
+   "explanation": "Per això des del 2018 el palanquejament està limitat per als minoristes i els bròquers han de mostrar l'avís."
+  },
+  "u4l5-3": {
+   "prompt": "Marca els missatges que fan pinta d'estafa o de guru.",
+   "options": [
+    "Recorda: els CFD són complexos i la majoria de comptes minoristes hi perden diners.",
+    "He començat a aportar 50 € al mes a un fons indexat. Avorrit, però endavant 😴",
+    "Garantim un 5 % setmanal sense risc. Obre't un compte en aquest bròquer amb el meu enllaç.",
+    "Vaig deixar la feina gràcies al trading. El meu curs VIP, només avui, a 497 € 🚀",
+    "Senyals de compra 100 % encertats. Places limitades: entra abans de mitjanit."
+   ],
+   "explanation": "Promeses de guanys garantits, pressa i enllaços a un bròquer concret són senyals clàssics.",
+   "senders": [
+    "El teu bròquer",
+    "Amiga",
+    "Desconegut",
+    "@TraderLibre",
+    "Grup de Telegram"
+   ]
+  },
+  "u4l5-4": {
+   "prompt": "Les llars que més operaven guanyaven més que el mercat.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Guanyaven un 11,4 % davant del 17,9 % del mercat: l'excés de confiança surt car."
+  },
+  "u4l5-5": {
+   "prompt": "Al Brasil, dels qui van fer day trading més de 300 dies, quants van perdre diners?",
+   "options": [
+    "El 60 %",
+    "El 97 %",
+    "El 30 %"
+   ],
+   "explanation": "I només un 1,1 % va guanyar més que el salari mínim (Chague, De-Losso i Giovannetti, 2020)."
+  },
+  "u4l5-6": {
+   "prompt": "Què són senyals d'estafa? Marca-les totes.",
+   "options": [
+    "Registre a la CNMV i document de riscos",
+    "Només ensenya captures de guanys",
+    "Pressa per decidir",
+    "Rendibilitat alta garantida"
+   ],
+   "explanation": "Una entitat legal està registrada i explica els seus riscos i costos."
+  },
+  "u4l5-7": {
+   "prompt": "Un influencer amb un cotxe de luxe t'ofereix copiar les seves operacions per 99 € al mes: «el mes passat vaig guanyar un 40 %». Què fas?",
+   "options": [
+    "També li passo les meves claus del bròquer perquè operi per mi",
+    "M'hi subscric: els resultats parlen sols",
+    "Busco si està registrat a la CNMV i li demano l'historial complet"
+   ],
+   "explanation": "Abans de pagar ningú: registre a la CNMV, historial complet i zero presses.",
+   "feedback": [
+    "No comparteixis mai les teves claus: et pot buidar el compte.",
+    "Una captura d'un mes bo no diu res dels mesos dolents que no ensenya.",
+    "No hi apareix registrat i només té captures de dies bons: t'estalvies 99 € al mes i probablement molt més."
+   ]
+  },
+  "u4l5-8": {
+   "prompt": "Segons Barber i Odean, les llars que més operaven guanyaven un 11,4 % anual i el mercat un 17,9 %. Quants punts l'any s'hi deixaven?",
+   "options": [],
+   "explanation": "17,9 − 11,4 = 6,5 punts l'any, sobretot per costos i excés de confiança.",
+   "unit": "punts"
+  },
+  "u4l5-9": {
+   "prompt": "Si algú et promet una rendibilitat alta sense risc, és un senyal d'alarma.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Rendibilitat i risc van junts: allò «alt i segur» no existeix."
+  },
+  "u4l5-10": {
+   "prompt": "El que funciona: aportar amb regularitat, diversificar, costos baixos, molt de temps i no vendre ____.",
+   "options": [
+    "en euros",
+    "a l'estiu",
+    "per Nadal",
+    "per pànic"
+   ],
+   "explanation": "Vendre per pànic converteix les caigudes temporals en pèrdues reals."
+  }
+ }
+}

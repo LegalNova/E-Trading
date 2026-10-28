@@ -1,0 +1,863 @@
+{
+ "unit": {
+  "title": "Accions",
+  "description": "Què compres amb una acció, com cobres dividends i quins tipus d'empreses hi ha",
+  "section": "Productes d'inversió"
+ },
+ "lessons": {
+  "u8l1": {
+   "title": "Què és una acció",
+   "steps": [
+    {
+     "title": "Ser propietari d'un trosset",
+     "body": "Una empresa es divideix en **accions**. Inditex en té uns 3.100 milions: si en compres una, ets propietari d'una part minúscula de les seves botigues, les seves marques i els seus beneficis futurs.\n\nPer això s'anomenen **renda variable**: el que guanyes no està fixat, depèn de com li vagi al negoci."
+    },
+    {
+     "title": "Per què les empreses venen accions",
+     "body": "Per aconseguir diners sense demanar préstecs. Quan **surten a borsa** (OPV, o IPO en anglès) venen part de l'empresa a inversors, que en comparteixen els beneficis i els riscos.\n\nDesprés, les accions es compren i es venen **entre inversors**: l'empresa ja no rep aquests diners."
+    },
+    {
+     "title": "D'on surt el que guanyes",
+     "body": "**Rendibilitat total = dividends + revalorització.** A llarg termini el preu segueix els beneficis; a curt, el mouen les expectatives. Si l'empresa fa fallida, l'accionista cobra l'últim i gairebé mai no recupera res.",
+     "key": "Una acció és un trosset d'un negoci: guanyes si el negoci guanya més i reparteix o creix.",
+     "tip": "Comprar una acció és comprar un negoci, no un número que puja i baixa."
+    }
+   ]
+  },
+  "u8l2": {
+   "title": "Drets de l'accionista",
+   "steps": [
+    {
+     "title": "Tres tipus de drets",
+     "body": "• **Econòmics:** cobrar dividends si se'n reparteixen i la teva part si l'empresa es ven o es liquida.\n• **Polítics:** votar a la **junta general d'accionistes** (consell, comptes, sous dels consellers…).\n• **D'informació:** rebre els comptes i la informació rellevant.\n\nI un de molt útil: el **dret de subscripció preferent** en les ampliacions."
+    },
+    {
+     "title": "El teu vot pesa el que pesen les teves accions",
+     "body": "Per regla general, **una acció = un vot**. Amb 10 accions d'un banc que en té milers de milions, el teu vot pesa poquíssim, però pots votar a distància o delegar-lo.\n\nEls grans fons sí que mouen votacions. Algunes empreses tenen accions **sense vot** o donen vot doble a qui les manté anys."
+    },
+    {
+     "title": "Informació per a tothom alhora",
+     "body": "Les cotitzades han de publicar els seus comptes i comunicar a la **CNMV** qualsevol **informació privilegiada** (resultats, compres, problemes) perquè tots els inversors la coneguin alhora.",
+     "key": "Ser accionista et dona drets econòmics, polítics i d'informació, en proporció a les teves accions.",
+     "tip": "Els comptes de qualsevol cotitzada espanyola són gratis al web de la CNMV."
+    }
+   ]
+  },
+  "u8l3": {
+   "title": "Dividends: com i quan es cobren",
+   "steps": [
+    {
+     "title": "Les dates d'un dividend",
+     "body": "1. **Anunci:** l'empresa diu quant pagarà.\n2. **Data ex-dividend:** des d'aquell dia l'acció cotitza **sense** el dret a aquest dividend.\n3. **Data de registre:** es mira qui és accionista.\n4. **Data de pagament:** els diners arriben al teu compte.\n\nPer cobrar-lo, has de tenir l'acció **abans** de la data ex-dividend."
+    },
+    {
+     "title": "Per què baixa el preu",
+     "body": "El dia ex-dividend el preu baixa més o menys el que es paga: si una acció val 20 € i reparteix 0,50 €, obrirà al voltant de 19,50 €.\n\nNo t'has fet més ric: tens 0,50 € en efectiu i 0,50 € menys en accions. I a Espanya el dividend tributa: el pagador ja **reté un 19 %**."
+    },
+    {
+     "title": "Rendibilitat per dividend",
+     "body": "**Rendibilitat per dividend = dividend anual ÷ preu.** Una acció de 30 € que paga 1,20 € l'any rendeix un 4 %. Compte: un dividend altíssim de vegades avisa que el preu ha caigut perquè s'espera una retallada.",
+     "key": "El dividend no són diners gratis: surt del valor de l'empresa.",
+     "tip": "Un dividend altíssim de vegades és una alarma, no un regal."
+    }
+   ]
+  },
+  "u8l4": {
+   "title": "Splits, contrasplits i ampliacions",
+   "steps": [
+    {
+     "title": "Split: més trossos, mateixa pizza",
+     "body": "En un **split** l'empresa divideix cada acció en diverses. Si tens 10 accions a 400 € i hi ha un split 4×1, passes a tenir **40 accions a 100 €**. Continues tenint 4.000 €.\n\nEs fa perquè l'acció sigui més manejable. Apple (4×1 el 2020) i NVIDIA (10×1 el 2024) ho van fer."
+    },
+    {
+     "title": "Contrasplit i ampliació",
+     "body": "• **Contrasplit:** al revés, s'agrupen accions. 1.000 accions a 0,20 € amb un 1×10 passen a ser 100 a 2 €. Sol fer-ho qui ha caigut molt.\n• **Ampliació de capital:** l'empresa **emet accions noves** per aconseguir diners. Si no hi acudeixes, el teu percentatge baixa: és la **dilució**."
+    },
+    {
+     "title": "El que canvia i el que no",
+     "body": "El split i el contrasplit només canvien el nombre de trossos. L'ampliació sí que canvia el pastís: entren diners nous i més propietaris. Algunes empreses espanyoles paguen el dividend en accions noves si vols (l'*scrip* o dividend flexible).",
+     "key": "Tallar la pizza en més trossos no et dona més pizza.",
+     "tip": "Si un titular diu «l'acció s'enfonsa un 75 %», mira abans si hi ha hagut un split."
+    }
+   ]
+  },
+  "u8l5": {
+   "title": "Grans, mitjanes i petites",
+   "steps": [
+    {
+     "title": "Capitalització",
+     "body": "**Capitalització = preu × nombre d'accions.** És el que val l'empresa a borsa.\n\nUna convenció habitual (en dòlars):\n• **Grans** (*large caps*): més de 10.000 milions.\n• **Mitjanes** (*mid caps*): de 2.000 a 10.000 milions.\n• **Petites** (*small caps*): de 300 a 2.000 milions.\n• Per sota, *micro caps*."
+    },
+    {
+     "title": "Risc i potencial",
+     "body": "Les **petites** poden créixer molt més (una empresa de 500 milions es pot multiplicar; una de gegant, difícilment), però són més volàtils, menys líquides (*spreads* més amples) i fan més fallida.\n\nLes **grans** són més estables i les segueixen centenars d'analistes."
+    },
+    {
+     "title": "Índexs per mida",
+     "body": "L'S&P 500 i l'IBEX 35 reuneixen grans empreses. El Russell 2000, petites dels EUA. A Espanya hi ha l'IBEX Medium Cap i l'IBEX Small Cap. Un índex mundial pondera per capitalització: hi pesen més les gegants.",
+     "key": "Més petita = més potencial, però també més volatilitat i més risc de fallida.",
+     "tip": "Que una empresa sigui petita no la fa barata ni bona: només més arriscada."
+    }
+   ]
+  },
+  "u8l6": {
+   "title": "Creixement i valor",
+   "steps": [
+    {
+     "title": "Dos estils",
+     "body": "• **Creixement** (*growth*): empreses les vendes i els beneficis de les quals creixen de pressa. Ho reinverteixen gairebé tot i gairebé no reparteixen dividend. Cotitzen **cares** respecte al que guanyen avui.\n• **Valor** (*value*): empreses madures que cotitzen **barates** respecte als seus beneficis o el seu patrimoni. Solen repartir dividend."
+    },
+    {
+     "title": "El PER d'un cop d'ull",
+     "body": "**PER = preu ÷ benefici per acció.** Quants anys de beneficis actuals pagues.\n\nUna acció de 100 € que guanya 2 € per acció té un PER de 50: el mercat espera molt creixement. Una de 40 € que en guanya 5, un PER de 8.\n\nHo veuràs a fons a la secció d'anàlisi fonamental."
+    },
+    {
+     "title": "Cap no guanya sempre",
+     "body": "Hi ha èpoques bones per a cada estil. El risc del creixement: si decep, un PER alt es desinfla de cop. El del valor: de vegades el que és barat és barat per alguna cosa (la **trampa de valor**).",
+     "key": "Creixement: pagues avui per beneficis futurs. Valor: compres beneficis actuals amb descompte.",
+     "tip": "Una gran empresa no sempre és una gran inversió: depèn del preu que paguis."
+    }
+   ]
+  },
+  "u8l7": {
+   "title": "Recompres d'accions",
+   "steps": [
+    {
+     "title": "Què és una recompra",
+     "body": "L'empresa fa servir la seva caixa per **comprar les seves pròpies accions** a borsa i, normalment, **amortitzar-les** (destruir-les). Queden menys accions, així que cadascuna representa una part més gran del negoci i del benefici.\n\nApple recompra accions des del 2012 per valor de centenars de milers de milions de dòlars."
+    },
+    {
+     "title": "Els comptes",
+     "body": "Una empresa guanya 500 milions i té 100 milions d'accions: **5 € de benefici per acció (BPA)**. Si en recompra i amortitza 10 milions, el mateix benefici es reparteix entre 90 milions: **5,56 €** per acció, un 11 % més.\n\nEl teu percentatge puja sense que hi posis ni un euro."
+    },
+    {
+     "title": "Dividend o recompra",
+     "body": "Totes dues tornen diners a l'accionista. El dividend t'arriba en efectiu i tributa aquell any; la recompra fa pujar la teva part i només tributes quan vens. Però recomprar **car** destrueix valor, i fer-ho amb deute hi afegeix risc.",
+     "key": "Una recompra reparteix el pastís entre menys propietaris.",
+     "tip": "Pregunta sempre a quin preu recompra l'empresa: comprar car no és tornar valor."
+    }
+   ]
+  },
+  "u8r": {
+   "title": "Repàs de la unitat",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u8l1-1": {
+   "prompt": "Compres una acció d'Inditex. Què ets?",
+   "options": [
+    "Copropietari d'una part minúscula de l'empresa",
+    "Client amb descompte a les seves botigues",
+    "Prestador de l'empresa"
+   ],
+   "explanation": "Una acció és una part del capital: participes dels seus beneficis i dels seus riscos. Deixar diners a l'empresa seria comprar un bo."
+  },
+  "u8l1-2": {
+   "prompt": "Relaciona cada terme amb el seu significat.",
+   "options": [
+    "Acció",
+    "OPV",
+    "Dividend",
+    "Revalorització"
+   ],
+   "explanation": "Són les quatre paraules bàsiques de la renda variable: què compres, com arriba a la borsa i d'on surt el que guanyes.",
+   "right": [
+    "Sortida a borsa venent accions",
+    "Benefici repartit en efectiu",
+    "Pujada del preu de l'acció",
+    "Part del capital d'una empresa"
+   ]
+  },
+  "u8l1-3": {
+   "prompt": "Rendibilitat total = dividends + ____.",
+   "options": [
+    "inflació",
+    "cupons",
+    "comissions",
+    "revalorització"
+   ],
+   "explanation": "Guanyes pel que reparteix l'empresa (dividends) i per la pujada del preu (revalorització). El cupó és propi dels bons."
+  },
+  "u8l1-4": {
+   "prompt": "Quan compres accions d'Inditex a borsa, aquests diners van a Inditex.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Normalment els pagues a un altre inversor que ven. L'empresa només rep diners quan emet accions noves, com en la seva sortida a borsa o en una ampliació."
+  },
+  "u8l1-5": {
+   "prompt": "Vas comprar una acció a 40 €. Avui val 46 € i aquest any has cobrat 1 € de dividend. Quina és la teva rendibilitat total?",
+   "options": [],
+   "explanation": "(46 − 40 + 1) ÷ 40 = 7 ÷ 40 = 17,5 %. Revalorització (6 €) + dividend (1 €).",
+   "unit": "%"
+  },
+  "u8l1-6": {
+   "prompt": "Ets propietari (acció) o prestador (bo)?",
+   "options": [
+    "Cobres un cupó pactat",
+    "Et tornen els diners en una data",
+    "Cobres dividends si l'empresa en reparteix",
+    "Votes a la junta",
+    "Guanyes molt si l'empresa creix molt"
+   ],
+   "explanation": "L'accionista comparteix l'èxit i el risc del negoci; el bonista cobra el que s'ha pactat si l'empresa pot pagar.",
+   "right": [
+    "Propietari: acció",
+    "Prestador: bo"
+   ]
+  },
+  "u8l1-7": {
+   "prompt": "Si una empresa fa fallida, els accionistes cobren abans que els bancs i els bonistes.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Cobren els últims, després de tots els creditors, i gairebé mai no recuperen res."
+  },
+  "u8l1-8": {
+   "prompt": "Segons Bessembinder (2018), d'unes 26.000 accions dels EUA entre el 1926 i el 2016, quina part va generar tot el guany net del mercat?",
+   "options": [
+    "Al voltant d'un 4 %",
+    "Gairebé totes",
+    "La meitat"
+   ],
+   "explanation": "Només un 4 % va explicar tot el guany net, i més de la meitat va rendir menys que les lletres del Tresor. Per això una sola acció és arriscada i convé diversificar."
+  },
+  "u8l1-9": {
+   "prompt": "A les accions també se les anomena renda variable.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "El que guanyes no està fixat per endavant: depèn de com li vagi a l'empresa."
+  },
+  "u8l1-10": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Sí: tens una part minúscula del negoci, amb els seus beneficis i els seus riscos",
+    "No, només has comprat un número que puja i baixa",
+    "Sí, i ja pots manar a l'empresa"
+   ],
+   "explanation": "Una acció és propietat real d'una part del negoci, encara que sigui minúscula.",
+   "feedback": [
+    "Això mateix! Una entre milions, però teva: si el negoci va bé ho notes, i si va malament, també.",
+    "El preu es mou cada dia, però al darrere hi ha un negoci real del qual tens una part.",
+    "Pots votar a la junta, però el teu vot pesa el que pesen les teves accions: molt poc."
+   ],
+   "lines": [
+    "M'he comprat 1 acció d'una empresa de videojocs 🎮",
+    "Això vol dir que ja soc una mica propietària?"
+   ]
+  },
+  "u8l2-1": {
+   "prompt": "Quins drets et dona ser accionista? Marca'ls tots.",
+   "options": [
+    "Cobrar dividends si se'n reparteixen",
+    "Que et tornin els diners en una data fixa",
+    "Rebre els comptes de l'empresa",
+    "Votar a la junta general"
+   ],
+   "explanation": "Que et tornin els diners en una data fixa és propi d'un bo: l'acció no té venciment."
+  },
+  "u8l2-2": {
+   "prompt": "Relaciona cada dret amb el seu tipus.",
+   "options": [
+    "Cobrar el dividend",
+    "Votar el consell d'administració",
+    "Rebre els comptes anuals",
+    "Comprar abans que ningú en una ampliació"
+   ],
+   "explanation": "Econòmics, polítics i d'informació, més la subscripció preferent per no perdre el teu percentatge.",
+   "right": [
+    "D'informació",
+    "Subscripció preferent",
+    "Polític",
+    "Econòmic"
+   ]
+  },
+  "u8l2-3": {
+   "prompt": "A la junta, quant pesa normalment el teu vot?",
+   "options": [
+    "El mateix que el d'un gran fons",
+    "Segons el que vas pagar per cada acció",
+    "Segons el nombre d'accions que tinguis"
+   ],
+   "explanation": "Per regla general, una acció = un vot. Qui té més accions, té més vots."
+  },
+  "u8l2-4": {
+   "prompt": "Una empresa petita té 4 milions d'accions i tu en tens 20.000. Quin percentatge dels vots tens?",
+   "options": [],
+   "explanation": "20.000 ÷ 4.000.000 = 0,005 → 0,5 % dels vots (si totes les accions tenen vot).",
+   "unit": "%"
+  },
+  "u8l2-5": {
+   "prompt": "Si tens poques accions, no tens dret a votar a la junta.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Tots els accionistes amb vot poden votar o delegar. Algunes empreses demanen un mínim d'accions per assistir-hi en persona, però pots votar a distància o agrupar-te amb altres accionistes."
+  },
+  "u8l2-6": {
+   "prompt": "En Pablo té 50 accions d'una cotitzada. Li arriba la convocatòria de la junta: es vota apujar molt el sou del conseller delegat. Què fa?",
+   "options": [
+    "Ven totes les seves accions en protesta",
+    "Res: amb 50 accions el seu vot no compta",
+    "Llegeix la proposta i vota o delega el vot a distància"
+   ],
+   "explanation": "Votar o delegar és la manera d'exercir el teu dret polític; les cotitzades faciliten el vot a distància.",
+   "feedback": [
+    "Ho pot fer, però renuncia a la seva part del negoci per una votació sense haver fet servir la seva veu.",
+    "El seu vot pesa poc, però compta, i si no vota, altres decideixen per ell.",
+    "Bé: és el seu dret com a propietari, i les juntes es decideixen sumant vots grans i petits."
+   ]
+  },
+  "u8l2-7": {
+   "prompt": "Les cotitzades han de comunicar a la ____ la informació privilegiada perquè tothom la conegui alhora.",
+   "options": [
+    "Agència Tributària",
+    "DGT",
+    "OCU",
+    "CNMV"
+   ],
+   "explanation": "La Comissió Nacional del Mercat de Valors supervisa la borsa espanyola i publica aquesta informació gratis."
+  },
+  "u8l2-8": {
+   "prompt": "Què és el dret de subscripció preferent?",
+   "options": [
+    "Poder comprar accions noves abans que altres en una ampliació, per no perdre el teu percentatge",
+    "Votar dues vegades a la junta",
+    "Cobrar el dividend abans que la resta d'accionistes"
+   ],
+   "explanation": "Si l'empresa emet accions noves, els accionistes actuals poden comprar primer en proporció al que tenen."
+  },
+  "u8l2-9": {
+   "prompt": "Què pot decidir la junta general d'accionistes? Marca-ho tot.",
+   "options": [
+    "Aprovar el repartiment de dividends",
+    "Fixar el preu de l'acció a borsa",
+    "Nomenar els consellers",
+    "Aprovar els comptes anuals"
+   ],
+   "explanation": "El preu el fixa el mercat amb l'oferta i la demanda, no la junta."
+  },
+  "u8l2-10": {
+   "prompt": "Una acció no té data de venciment.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "A diferència d'un bo, l'acció existeix mentre existeixi l'empresa (o fins que la vengis)."
+  },
+  "u8l3-1": {
+   "prompt": "Ordena les dates d'un dividend.",
+   "options": [
+    "Data de registre",
+    "Data de pagament",
+    "Data ex-dividend",
+    "Anunci"
+   ],
+   "explanation": "Primer s'anuncia; des de l'ex-dividend l'acció cotitza sense el dret; després es mira qui és accionista (registre) i finalment es paga."
+  },
+  "u8l3-2": {
+   "prompt": "Quin dia has de tenir l'acció, com a molt tard, per cobrar el dividend?",
+   "options": [
+    "El mateix dia de pagament",
+    "El dia abans de la data ex-dividend",
+    "La data de registre, encara que la compris aquell mateix dia"
+   ],
+   "explanation": "Si compres el dia ex-dividend o després, l'acció ja cotitza sense aquest dividend."
+  },
+  "u8l3-3": {
+   "prompt": "Una acció cotitza a 20 € i demà és la data ex-dividend d'un dividend de 0,50 €. A quin preu aproximat obrirà, si no canvia res més?",
+   "options": [],
+   "explanation": "20 − 0,50 = 19,50 €. El preu baixa més o menys el que surt de l'empresa.",
+   "unit": "€"
+  },
+  "u8l3-4": {
+   "prompt": "Una acció de 30 € paga 1,20 € de dividend l'any. Quina és la seva rendibilitat per dividend?",
+   "options": [],
+   "explanation": "1,20 ÷ 30 = 0,04 → 4 %.",
+   "unit": "%"
+  },
+  "u8l3-5": {
+   "prompt": "Tens 200 accions i cadascuna paga 0,50 € de dividend. Amb la retenció del 19 %, quant arriba al teu compte?",
+   "options": [],
+   "explanation": "200 × 0,50 = 100 € bruts; 100 − 19 = 81 € nets.",
+   "unit": "€"
+  },
+  "u8l3-6": {
+   "prompt": "Cobrar un dividend et fa més ric a l'instant.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "El preu baixa més o menys el mateix que cobres: el teu patrimoni gairebé no canvia, i a sobre aquest dividend tributa."
+  },
+  "u8l3-7": {
+   "prompt": "Aquesta és l'acció d'una elèctrica coneguda per repartir dividend amb regularitat. Què va fer en les 10 sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Que una empresa pagui dividend no en fa previsible el preu a curt termini: el dividend és una part de la rendibilitat total, no una garantia.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u8l3-8": {
+   "prompt": "En Bruno veu una acció amb un dividend del 14 % i hi vol posar tots els seus estalvis. Què fas si estàs al seu lloc?",
+   "options": [
+    "Compro ara mateix, un 14 % és una ganga",
+    "Miro per què ha caigut el preu i si el benefici cobreix el dividend",
+    "Compro just abans de la data ex-dividend, cobro i venc"
+   ],
+   "explanation": "La rendibilitat per dividend puja quan cau el preu; de vegades anticipa problemes a l'empresa.",
+   "feedback": [
+    "Si el mercat espera una retallada, el dividend pot baixar i el preu caure encara més: el 14 % era una il·lusió.",
+    "Bé: un dividend així sol ser una alarma. Si els beneficis no el cobreixen, és probable que es retalli.",
+    "El preu baixa més o menys el dividend el dia ex-dividend i a sobre pagues impostos: no hi ha diners gratis."
+   ]
+  },
+  "u8l3-9": {
+   "prompt": "Rendibilitat per dividend = dividend anual ÷ ____.",
+   "options": [
+    "benefici",
+    "capitalització",
+    "nombre d'accions",
+    "preu"
+   ],
+   "explanation": "Per això, si el preu cau, la rendibilitat per dividend «puja» encara que l'empresa no pagui més."
+  },
+  "u8l3-10": {
+   "prompt": "A Espanya, quina retenció s'aplica normalment als dividends?",
+   "options": [
+    "50 %",
+    "0 %",
+    "19 %"
+   ],
+   "explanation": "El pagador reté un 19 % a compte de l'IRPF. Després van a la base de l'estalvi, que tributa del 19 % al 30 %."
+  },
+  "u8l4-1": {
+   "prompt": "Tens 10 accions a 400 € i l'empresa fa un split 4×1. Quantes accions tens després?",
+   "options": [],
+   "explanation": "10 × 4 = 40 accions a 100 € cadascuna: continues tenint 4.000 €.",
+   "unit": "accions"
+  },
+  "u8l4-2": {
+   "prompt": "Tens 1.000 accions a 0,20 € i hi ha un contrasplit 1×10. A quin preu cotitzarà cada acció nova, si no canvia res més?",
+   "options": [],
+   "explanation": "1.000 ÷ 10 = 100 accions; 200 € ÷ 100 = 2 € per acció.",
+   "unit": "€"
+  },
+  "u8l4-3": {
+   "prompt": "Després d'un split 10×1 ets deu vegades més ric.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Tens deu vegades més accions, cadascuna a la desena part del preu: el valor total és el mateix."
+  },
+  "u8l4-4": {
+   "prompt": "Una empresa té 100 milions d'accions i tu 1 milió (l'1 %). Amplia capital amb 25 milions d'accions noves i no en compres cap. Quin percentatge tens ara?",
+   "options": [],
+   "explanation": "1 ÷ 125 = 0,008 → 0,8 %. És la dilució.",
+   "unit": "%"
+  },
+  "u8l4-5": {
+   "prompt": "Relaciona cada operació amb el que passa.",
+   "options": [
+    "Split",
+    "Contrasplit",
+    "Ampliació de capital",
+    "Dividend flexible (scrip)"
+   ],
+   "explanation": "El split i el contrasplit no canvien el valor de la teva posició; l'ampliació i l'scrip sí que canvien el nombre total d'accions de l'empresa.",
+   "right": [
+    "Accions noves i diners nous per a l'empresa",
+    "Tries cobrar en efectiu o en accions noves",
+    "Menys accions, més cares, mateix valor",
+    "Més accions, més barates, mateix valor"
+   ]
+  },
+  "u8l4-6": {
+   "prompt": "Per què sol fer un split una empresa?",
+   "options": [
+    "Per aconseguir diners nous",
+    "Perquè cada acció sigui més barata i manejable",
+    "Per pagar menys impostos"
+   ],
+   "explanation": "No hi entren diners ni canvia el valor de l'empresa: només baixa el preu de cada acció."
+  },
+  "u8l4-7": {
+   "prompt": "Què li passa al teu percentatge de l'empresa?",
+   "options": [
+    "Contrasplit 1×20",
+    "Ampliació a la qual no acudeixes",
+    "Ampliació en què compres tot el que et correspon",
+    "Split 4×1",
+    "Split 10×1"
+   ],
+   "explanation": "Només l'ampliació a la qual no acudeixes et dilueix. Si exerceixes la teva subscripció preferent, mantens el teu percentatge.",
+   "right": [
+    "No canvia",
+    "Baixa (dilució)"
+   ]
+  },
+  "u8l4-8": {
+   "prompt": "Un contrasplit sol arribar després de bones notícies per a l'empresa.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "No canvia el valor, però sol fer-lo qui ha caigut molt i cotitza a cèntims."
+  },
+  "u8l4-9": {
+   "prompt": "Ràpid: split 2×1 d'una acció de 80 €. Preu nou?",
+   "options": [
+    "160 €",
+    "80 €",
+    "40 €"
+   ],
+   "explanation": "80 ÷ 2 = 40 €, i tens el doble d'accions."
+  },
+  "u8l4-10": {
+   "prompt": "La Marta veu a la seva app que una acció seva «ha caigut un 90 % avui». En tenia 5 i ara n'hi apareixen 50. Què ha passat?",
+   "options": [
+    "L'empresa li ha regalat 45 accions",
+    "Hi ha hagut un split 10×1 i els seus diners valen el mateix",
+    "Ha perdut el 90 % dels seus diners"
+   ],
+   "explanation": "Abans d'espantar-te per una caiguda enorme, comprova si hi ha hagut un split.",
+   "feedback": [
+    "Ningú no regala res: la pizza és la mateixa, tallada en més trossos.",
+    "Exacte: de 5 a 50 accions a la desena part del preu. El valor total no canvia.",
+    "Seria així amb les mateixes accions, però ara en té deu vegades més."
+   ]
+  },
+  "u8l5-1": {
+   "prompt": "Una empresa cotitza a 50 € i té 200 milions d'accions. Quina és la seva capitalització?",
+   "options": [],
+   "explanation": "50 × 200 milions = 10.000 milions d'euros.",
+   "unit": "milions d'€"
+  },
+  "u8l5-2": {
+   "prompt": "Relaciona cada mida amb la seva capitalització aproximada (convenció en dòlars).",
+   "options": [
+    "Gran",
+    "Mitjana",
+    "Petita",
+    "Micro"
+   ],
+   "explanation": "Són intervals orientatius que fan servir índexs i gestores; no hi ha una frontera oficial única.",
+   "right": [
+    "De 2.000 a 10.000 milions",
+    "Menys de 300 milions",
+    "De 300 a 2.000 milions",
+    "Més de 10.000 milions"
+   ]
+  },
+  "u8l5-3": {
+   "prompt": "Relaciona cada índex amb el que mesura.",
+   "options": [
+    "S&P 500",
+    "Russell 2000",
+    "IBEX 35",
+    "IBEX Small Cap"
+   ],
+   "explanation": "Hi ha índexs per a cada mida: així es pot comparar com es comporten.",
+   "right": [
+    "Les 35 més líquides d'Espanya",
+    "Petites empreses espanyoles",
+    "Petites empreses dels EUA",
+    "Grans empreses dels EUA"
+   ]
+  },
+  "u8l5-4": {
+   "prompt": "Què sol tenir una empresa petita respecte a una de gegant?",
+   "options": [
+    "Més analistes que la segueixen",
+    "Més potencial de creixement i més risc",
+    "Menys volatilitat"
+   ],
+   "explanation": "Pot créixer més de pressa, però els seus preus es mouen més i fa fallida amb més freqüència."
+  },
+  "u8l5-5": {
+   "prompt": "Una acció de 2 € és d'una empresa petita i una de 500 € és d'una empresa gran.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "El preu d'una acció no diu res de la mida: cal multiplicar-lo pel nombre d'accions."
+  },
+  "u8l5-6": {
+   "prompt": "Gran o petita? Calcula la capitalització.",
+   "options": [
+    "5 € × 200 milions d'accions",
+    "300 € × 50 milions d'accions",
+    "40 € × 25 milions d'accions",
+    "20 € × 1.000 milions d'accions"
+   ],
+   "explanation": "20.000 M, 1.000 M, 15.000 M i 1.000 M. El preu tot sol no diu res.",
+   "right": [
+    "Gran (més de 10.000 M)",
+    "Petita (300–2.000 M)"
+   ]
+  },
+  "u8l5-7": {
+   "prompt": "L'Ana vol posar tots els seus estalvis en una micro cap de la qual parla un fòrum: «es pot multiplicar per 10». Què té en compte?",
+   "options": [
+    "Que si surt en un fòrum està ben analitzada",
+    "Que és molt volàtil i poc líquida, que ho pot perdre gairebé tot i que no convé jugar-s'ho tot a una carta",
+    "Que les petites sempre pugen més"
+   ],
+   "explanation": "Més potencial ve sempre amb més risc, i concentrar-ho tot en una empresa petita el multiplica.",
+   "feedback": [
+    "Els fòrums també són el lloc preferit de qui vol inflar una acció per vendre-la.",
+    "Bé: el potencial existeix, però el risc d'una sola empresa petita és enorme.",
+    "De vegades pugen més, però moltes es queden pel camí o fan fallida."
+   ]
+  },
+  "u8l5-8": {
+   "prompt": "Ràpid: com es calcula la capitalització?",
+   "options": [
+    "Preu × nombre d'accions",
+    "Benefici × preu",
+    "Vendes ÷ nombre d'accions"
+   ],
+   "explanation": "És el valor de l'empresa a borsa."
+  },
+  "u8l5-9": {
+   "prompt": "Les accions petites solen tenir spreads (forquilles) més amples que les grans.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Hi ha menys compradors i venedors, així que comprar i vendre costa més."
+  },
+  "u8l5-10": {
+   "prompt": "Què li dius?",
+   "options": [
+    "No, les petites no pugen mai",
+    "Sí, a llarg termini sempre guanyen",
+    "Poden rendir més, però amb més risc, i no és una regla fixa"
+   ],
+   "explanation": "La mida canvia el perfil de risc, però no garanteix cap resultat.",
+   "feedback": [
+    "Algunes petites es converteixen en gegants; el difícil és saber quines per endavant.",
+    "No sempre: hi ha hagut períodes de molts anys en què les grans les han guanyat amb claredat.",
+    "Això mateix! Més potencial, més ensurts i anys en què van pitjor."
+   ],
+   "lines": [
+    "Les petites pugen més que les grans, oi?",
+    "Doncs ho passo tot a small caps 🚀"
+   ]
+  },
+  "u8l6-1": {
+   "prompt": "Relaciona cada concepte amb el seu significat.",
+   "options": [
+    "Creixement",
+    "Valor",
+    "Trampa de valor",
+    "PER"
+   ],
+   "explanation": "Dos estils, una eina per mesurar-los i un parany que convé conèixer.",
+   "right": [
+    "Barata perquè el negoci va a pitjor",
+    "Preu ÷ benefici per acció",
+    "Compres beneficis actuals amb descompte",
+    "Pagues avui per beneficis futurs"
+   ]
+  },
+  "u8l6-2": {
+   "prompt": "Creixement o valor?",
+   "options": [
+    "Elèctrica madura amb un PER d'11 i dividend estable",
+    "Banc que cotitza per sota del seu valor comptable",
+    "PER de 60 per les expectatives d'un producte nou",
+    "Tecnològica jove que duplica vendes i no paga dividend",
+    "Reinverteix tot el benefici per expandir-se"
+   ],
+   "explanation": "Creixement: PER alt, poc dividend i molta reinversió. Valor: PER baix, negoci madur i dividend.",
+   "right": [
+    "Creixement",
+    "Valor"
+   ]
+  },
+  "u8l6-3": {
+   "prompt": "Una acció cotitza a 100 € i guanya 2 € per acció. Quin és el seu PER?",
+   "options": [],
+   "explanation": "100 ÷ 2 = 50: pagues 50 anys dels beneficis actuals.",
+   "unit": "vegades"
+  },
+  "u8l6-4": {
+   "prompt": "Març del 2000: el Nasdaq 100, ple de tecnològiques de creixement, s'ha multiplicat per més de 4 des de finals del 1997. Què va passar després?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Amb PER altíssims, el preu depèn que es compleixin expectatives molt exigents. És un cas clàssic per estudiar creixement i valoració.",
+   "horizon": "fins a finals del 2002"
+  },
+  "u8l6-5": {
+   "prompt": "Aquesta és l'acció d'una empresa de valor clàssica: madura, de consum, i que paga dividend des de fa dècades. Què va fer en les 10 sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Ser una empresa estable no en fa previsible el preu a curt termini: les accions de valor també pugen i baixen.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u8l6-6": {
+   "prompt": "Què és una trampa de valor?",
+   "options": [
+    "Una acció barata que continua baixant perquè el seu negoci es deteriora",
+    "Una acció de creixement molt cara",
+    "Un fons que cobra comissions ocultes"
+   ],
+   "explanation": "Un PER baix pot reflectir que els beneficis cauran: el que és barat de vegades és barat per alguna cosa."
+  },
+  "u8l6-7": {
+   "prompt": "Les accions de creixement solen repartir dividends alts.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Reinverteixen gairebé tot el benefici per continuar creixent."
+  },
+  "u8l6-8": {
+   "prompt": "PER = preu ÷ ____ per acció.",
+   "options": [
+    "vendes",
+    "deute",
+    "dividend",
+    "benefici"
+   ],
+   "explanation": "El PER mesura quants anys de beneficis actuals estàs pagant."
+  },
+  "u8l6-9": {
+   "prompt": "La Laura dubta entre una tecnològica amb un PER de 70 que creix un 40 % l'any i una asseguradora amb un PER de 9 que creix un 3 %. Quin raonament és el bo?",
+   "options": [
+    "La de PER 9 és millor perquè és barata",
+    "La de PER 70 és millor perquè creix més",
+    "Cap no és millor per si sola: depèn de si el preu reflecteix bé el seu futur"
+   ],
+   "explanation": "Ni «creix molt» ni «és barata» n'hi ha prou: cal comparar el preu amb el que l'empresa pot guanyar.",
+   "feedback": [
+    "Pot ser barata per alguna cosa: un negoci que s'estanca també decep.",
+    "Si aquest creixement ja és al preu, qualsevol decepció la pot enfonsar.",
+    "Exacte: creixement i valor són estils, no garanties. Importa el que pagues pel que reps."
+   ]
+  },
+  "u8l6-10": {
+   "prompt": "Quin estil pateix més si el creixement esperat decep?",
+   "options": [
+    "El de valor",
+    "Tots dos igual",
+    "El de creixement"
+   ],
+   "explanation": "Amb un PER alt, el preu descompta beneficis futurs; si no arriben, el PER es desinfla."
+  },
+  "u8l7-1": {
+   "prompt": "Què fa una empresa en una recompra d'accions?",
+   "options": [
+    "Deixa diners als seus accionistes",
+    "Compra les seves pròpies accions i normalment les amortitza",
+    "Emet accions noves"
+   ],
+   "explanation": "Quan les amortitza, hi ha menys accions i cadascuna val una part més gran de l'empresa."
+  },
+  "u8l7-2": {
+   "prompt": "Una empresa guanya 500 milions i té 100 milions d'accions. En recompra i amortitza 10 milions. Benefici per acció nou? (dos decimals)",
+   "options": [],
+   "explanation": "500 ÷ 90 = 5,56 €, davant dels 5 € d'abans: un 11 % més amb el mateix benefici.",
+   "unit": "€"
+  },
+  "u8l7-3": {
+   "prompt": "Tens 1.000 de les 1.000.000 d'accions d'una empresa (el 0,1 %). En recompra i amortitza 200.000. Quin percentatge tens ara?",
+   "options": [],
+   "explanation": "1.000 ÷ 800.000 = 0,00125 → 0,125 %. La teva part creix sense comprar res.",
+   "unit": "%"
+  },
+  "u8l7-4": {
+   "prompt": "Recomprar accions sempre crea valor per a l'accionista.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Si l'empresa recompra molt car o s'endeuta per fer-ho, pot destruir valor."
+  },
+  "u8l7-5": {
+   "prompt": "Dividend o recompra?",
+   "options": [
+    "Puja el benefici per acció",
+    "No pagues impostos fins que vens",
+    "Tributa l'any que el cobres",
+    "T'arriben diners al compte",
+    "Baixa el nombre d'accions"
+   ],
+   "explanation": "Totes dues tornen diners a l'accionista, però de manera diferent i amb una fiscalitat diferent.",
+   "right": [
+    "Dividend",
+    "Recompra"
+   ]
+  },
+  "u8l7-6": {
+   "prompt": "Relaciona cada ús del benefici amb el seu efecte.",
+   "options": [
+    "Dividend",
+    "Recompra",
+    "Reinversió",
+    "Pagar deute"
+   ],
+   "explanation": "Una empresa pot repartir, recomprar, reinvertir o desendeutar-se: cada opció té sentit en un moment diferent.",
+   "right": [
+    "Més fàbriques, botigues o recerca",
+    "Menys interessos i menys risc",
+    "Menys accions i més part per a cadascuna",
+    "Efectiu per a l'accionista"
+   ]
+  },
+  "u8l7-7": {
+   "prompt": "Una empresa anuncia una gran recompra pagada amb un préstec, just quan la seva acció és en màxims històrics i té un PER molt alt. Com ho valores?",
+   "options": [
+    "Genial: tota recompra és bona",
+    "Amb cautela: el preu i el deute importen",
+    "Malament: les recompres són il·legals"
+   ],
+   "explanation": "Una recompra és tan bona com el preu al qual es fa i la manera de pagar-la.",
+   "feedback": [
+    "Recomprar car i amb deute pot destruir valor: paga molt per cada acció i hi afegeix risc.",
+    "Bé: una recompra crea valor si es fa a bon preu i sense posar en risc l'empresa.",
+    "Són legals i habituals; als EUA paguen des del 2023 un impost de l'1 %."
+   ]
+  },
+  "u8l7-8": {
+   "prompt": "Quan s'amortitzen les accions recomprades, el nombre total d'accions baixa.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Per això cada acció representa més benefici."
+  },
+  "u8l7-9": {
+   "prompt": "BPA vol dir benefici per ____.",
+   "options": [
+    "actiu",
+    "accionista",
+    "any",
+    "acció"
+   ],
+   "explanation": "Benefici net ÷ nombre d'accions. Una recompra el fa pujar perquè baixa el denominador."
+  },
+  "u8l7-10": {
+   "prompt": "Per què alguns inversors prefereixen les recompres als dividends?",
+   "options": [
+    "Perquè no tributen fins que vens",
+    "Perquè les paga Hisenda",
+    "Perquè són més segures"
+   ],
+   "explanation": "El dividend tributa quan el cobres; amb la recompra, el teu guany s'acumula al preu i pagues quan vens."
+  }
+ }
+}

@@ -1,0 +1,773 @@
+{
+ "unit": {
+  "title": "Riscos i realitat cripto",
+  "description": "Volatilitat, fallides, estafes, rendiments i quant pesa la cripto en una cartera",
+  "section": "Criptomonedes i blockchain"
+ },
+ "lessons": {
+  "u13l1": {
+   "title": "La volatilitat cripto",
+   "steps": [
+    {
+     "title": "Caigudes del 70 % o més",
+     "body": "Bitcoin ha patit diverses caigudes de més del 70 % des dels seus màxims:\n\n• **2014-2015:** més d'un 80 %.\n• **2018:** més d'un 80 %.\n• **2022:** més d'un 75 %.\n\nRecuperar el màxim de finals del 2017 li va costar uns **3 anys**; el de novembre del 2021, més de **2 anys** (març del 2024). Moltes altres criptos van caure més d'un 90 % i no van tornar mai."
+    },
+    {
+     "title": "Quant ha de pujar per recuperar-se",
+     "body": "Posa la pèrdua al 75 %: cal pujar un 300 % per tornar al punt de partida. Prova-ho amb un 90 %.",
+     "tip": "Per això les caigudes grans pesen tant: recuperar-se exigeix multiplicar."
+    },
+    {
+     "title": "La volatilitat en números",
+     "body": "La volatilitat anual de Bitcoin volta el **50-80 %**, davant del 15 % d'un índex mundial d'accions. Un −10 % en una setmana és habitual. És un actiu molt volàtil, no el cobreix cap fons de garantia i **es pot perdre la totalitat del que s'ha invertit**.",
+     "key": "En cripto, caigudes del 70 % i anys d'espera per recuperar-se formen part de la història.",
+     "tip": "Que una cosa pugi un 300 % en un any també vol dir que pot caure un 75 %."
+    }
+   ]
+  },
+  "u13l2": {
+   "title": "Quan cau un exchange: FTX",
+   "steps": [
+    {
+     "title": "Què va passar",
+     "body": "**FTX** era un dels exchanges més grans del món. El **novembre del 2022** es va saber que **Alameda Research**, empresa germana del seu fundador, Sam Bankman-Fried, depenia molt del token d'FTX (FTT) i que FTX li havia passat diners dels clients.\n\nEls clients van córrer a retirar, FTX va **congelar les retirades** el 8 de novembre i es va declarar en **fallida** l'11."
+    },
+    {
+     "title": "El risc de contrapart",
+     "body": "Quan deixes les teves criptos en una plataforma assumeixes un **risc de contrapart**: depens que aquella empresa sigui solvent i honrada. Si barreja els teus diners amb els seus i fa fallida, passes a ser un creditor més en un procés que dura anys.\n\nBankman-Fried va ser condemnat el 2024 a **25 anys** de presó per frau."
+    },
+    {
+     "title": "El que ha canviat",
+     "body": "Ara MiCA exigeix a les plataformes que estiguin autoritzades i que separin els actius dels clients. Tot i així, en cripto no hi ha un fons de garantia com el dels dipòsits: convé saber qui custodia les teves criptos i no concentrar-ho tot en una plataforma. I recorda: **es pot perdre la totalitat del que s'ha invertit**.",
+     "key": "Si un altre guarda les teves criptos, també assumeixes el seu risc de fallida o de frau.",
+     "tip": "Un exchange enorme també pot caure en una setmana."
+    }
+   ]
+  },
+  "u13l3": {
+   "title": "Memecoins, airdrops i rug pulls",
+   "steps": [
+    {
+     "title": "Memecoins",
+     "body": "Una **memecoin** és una criptomoneda nascuda d'un acudit o d'una moda (Dogecoin va néixer el 2013 com a broma). Moltes no tenen cap ús: el seu preu depèn només de l'atenció.\n\nCrear un token costa minuts i molt pocs diners. Cada dia n'apareixen milers, i la immensa majoria acaba valent gairebé res."
+    },
+    {
+     "title": "Com et roben",
+     "body": "• **Rug pull:** els creadors atrauen diners i desapareixen venent-ho tot o retirant la liquiditat. El token SQUID (2021) es va disparar i en minuts va caure gairebé a zero; a més, els compradors no podien vendre.\n• ***Pump and dump*:** un grup infla el preu amb publicitat i ven als que arriben tard.\n• **Falsos airdrops:** «reclama els teus tokens gratis» connectant la teva wallet… i signes un permís per buidar-la."
+    },
+    {
+     "title": "Els senyals d'alarma",
+     "body": "Creadors anònims sense historial, promeses de «x100», pressa, influencers pagats, que no puguis vendre, que et demanin connectar la wallet o la frase llavor. En aquests tokens **es pot perdre la totalitat del que s'ha invertit** en minuts.",
+     "key": "Si l'únic motiu per comprar és que «pujarà», probablement algú et vol vendre a tu.",
+     "tip": "En una memecoin, els teus diners poden ser la sortida d'un altre."
+    }
+   ]
+  },
+  "u13l4": {
+   "title": "Staking i DeFi: d'on surt el rendiment",
+   "steps": [
+    {
+     "title": "Staking",
+     "body": "A les xarxes de **prova de participació** (com Ethereum), qui bloqueja les seves monedes per validar blocs rep una recompensa: és l'**staking**.\n\nAquest rendiment surt de **monedes noves** i de **comissions** de la xarxa, i es cobra en la mateixa cripto: si cau un 50 %, un petit rendiment anual no ho compensa. Si el validador falla, pot perdre'n una part (*slashing*)."
+    },
+    {
+     "title": "DeFi i préstecs cripto",
+     "body": "A **DeFi** prestes les teves criptos a altres mitjançant contractes intel·ligents: et paga qui demana el préstec. Algunes plataformes centralitzades que prometien interessos alts, com Celsius, van fer fallida el 2022.\n\nRiscos: errors en el codi, hackejos, plataformes que fan servir els teus diners i la mateixa caiguda del preu."
+    },
+    {
+     "title": "La pregunta que ho resumeix tot",
+     "body": "**Qui paga l'interès i per què?** Si ningú no ho sap explicar, l'interès pot sortir dels diners dels qui entren després. El 2022 una plataforma pagava gairebé un 20 % per dipositar la stablecoin UST gràcies a subvencions: quan van deixar de ser suficients, tot es va enfonsar. En cripto **es pot perdre la totalitat del que s'ha invertit**.",
+     "key": "Tot rendiment surt d'algun lloc: si no saps d'on, potser el rendiment ets tu.",
+     "tip": "Un interès alt i «sense risc» no existeix: o hi ha risc o hi ha estafa."
+    }
+   ]
+  },
+  "u13l5": {
+   "title": "ETF i ETP de cripto",
+   "steps": [
+    {
+     "title": "Dues maneres de tenir cripto",
+     "body": "• **Directament:** compres la cripto en un exchange i la guardes tu o la plataforma. Cotitza 24 hores, 7 dies.\n• **A través de la borsa:** compres un producte cotitzat que en segueix el preu, amb el teu bròquer de sempre i en horari de borsa.\n\nAls EUA es van aprovar els **ETF de bitcoin al comptat** el gener del 2024."
+    },
+    {
+     "title": "A Europa: ETP i ETN",
+     "body": "La norma UCITS no permet un fons d'una sola cripto, així que a Europa es venen com a **ETP** o **ETN**: títols de deute d'un emissor, normalment **respaldats** per la cripto que guarda un custodi.\n\nRiscos: els de la cripto (tots) més els de l'emissor i el custodi. I cobren una comissió anual. Molts ETF dels EUA no es poden comprar des de la UE perquè no tenen KID."
+    },
+    {
+     "title": "El mateix risc de preu",
+     "body": "L'embolcall canvia la custòdia, l'horari i els tràmits, **no la volatilitat**: si el bitcoin cau un 70 %, l'ETP també. Segons Morningstar, els inversors en ETF de bitcoin van guanyar uns 14 punts l'any menys que el mateix ETF per comprar en pujades i vendre en caigudes. **Es pot perdre la totalitat del que s'ha invertit**.",
+     "key": "Un ETP de cripto t'estalvia guardar claus, però no t'estalvia ni un punt de volatilitat.",
+     "tip": "L'embolcall no canvia el que hi ha a dins."
+    }
+   ]
+  },
+  "u13l6": {
+   "title": "Quanta cripto en una cartera",
+   "steps": [
+    {
+     "title": "Pensa en el conjunt",
+     "body": "La pregunta no és «quant pot pujar aquesta cripto?», sinó **què li passa a tota la meva cartera si cau un 75 %?**\n\nAmb un 5 % en cripto, una caiguda del 75 % resta un **3,75 %** al total. Amb un 50 %, resta un **37,5 %**. El pes decideix quant fa mal."
+    },
+    {
+     "title": "Com es raona",
+     "body": "Qui decideix tenir cripto sol deixar per escrit en el seu pla:\n\n• Abans, el **coixí** i cap deute car.\n• Un **màxim**: un percentatge petit que podria perdre sencer sense que li canviés la vida.\n• Quan **reequilibrar**: si passa del màxim, ven el que sobra.\n\nSón exemples de com es pensa, no recomanacions personalitzades."
+    },
+    {
+     "title": "La part que podries perdre",
+     "body": "Si la cripto es dispara, el seu pes creix sol i la teva cartera es torna més arriscada sense que hagis decidit res. En cripto **es pot perdre la totalitat del que s'ha invertit**: el percentatge que triïs hauria de ser un que aguantaries veure a zero.",
+     "key": "El pes de la cripto en el total, no el seu potencial, decideix quant et pot fer mal.",
+     "tip": "Escriu avui el teu màxim en cripto, abans que una pujada et convenci del contrari."
+    }
+   ]
+  },
+  "u13r": {
+   "title": "Repàs de la unitat",
+   "steps": []
+  },
+  "s4boss": {
+   "title": "Repte final: Criptomonedes i blockchain",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u13l1-1": {
+   "prompt": "Novembre del 2021: Bitcoin s'ha multiplicat gairebé per 7 des del maig del 2020 i marca màxims històrics. Molts diuen que «aquesta vegada és diferent». Què va fer l'any següent?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Després de pujades tan fortes, el risc d'una caiguda gran també és alt. Aquest episodi és dels més estudiats sobre la volatilitat cripto.",
+   "horizon": "fins al desembre del 2022"
+  },
+  "u13l1-2": {
+   "prompt": "Una de les grans criptomonedes, en espelmes diàries. Què va fer en les 10 sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "En cripto són freqüents els moviments del 10-15 % en dues setmanes, en qualsevol direcció.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u13l1-3": {
+   "prompt": "Una altra gran criptomoneda, en espelmes diàries. Puja o baixa en les 10 sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Endevinar el pròxim moviment d'un actiu tan volàtil s'assembla molt a llançar una moneda a l'aire.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u13l1-4": {
+   "prompt": "Bitcoin cau un 75 % des del seu màxim. Quant ha de pujar després per recuperar-lo?",
+   "options": [],
+   "explanation": "Si 100 passa a 25, per tornar a 100 cal multiplicar per 4: una pujada del 300 %.",
+   "unit": "%"
+  },
+  "u13l1-5": {
+   "prompt": "Inverteixes 2.000 € en una criptomoneda i cau un 84 %, com Bitcoin el 2018. Quant et queda?",
+   "options": [],
+   "explanation": "2.000 × 0,16 = 320 €.",
+   "unit": "€"
+  },
+  "u13l1-6": {
+   "prompt": "Una criptomoneda cau un 90 %. Quant ha de pujar per tornar al seu màxim?",
+   "options": [],
+   "explanation": "De 100 a 10: per tornar a 100 cal multiplicar per 10, una pujada del 900 %.",
+   "unit": "%"
+  },
+  "u13l1-7": {
+   "prompt": "Ràpid: volatilitat anual típica de Bitcoin?",
+   "options": [
+    "50-80 %",
+    "2 %",
+    "15 %"
+   ],
+   "explanation": "Davant del 15 % d'un índex mundial d'accions."
+  },
+  "u13l1-8": {
+   "prompt": "La Laura va comprar bitcoin en un màxim i perd un 60 %. Llegeix a les xarxes que «sempre es recupera». Què pensa?",
+   "options": [
+    "Que no sap si es recuperarà ni quan, i decideix segons el seu pla i el que es pot permetre perdre",
+    "Que ha de demanar un préstec per comprar-ne més i fer mitjana",
+    "Que es recuperarà segur, com sempre"
+   ],
+   "explanation": "Davant d'una caiguda forta, el que ajuda és el pla decidit amb calma, no les frases de les xarxes.",
+   "feedback": [
+    "Bé: en cripto es pot perdre la totalitat del que s'ha invertit; per això la mida de la posició es decideix abans.",
+    "Endeutar-se per un actiu que pot continuar caient pot convertir una pèrdua en un problema seriós.",
+    "Bitcoin s'ha recuperat en el passat al cap d'anys; moltes altres criptos no ho han fet mai. El passat no garanteix res."
+   ]
+  },
+  "u13l1-9": {
+   "prompt": "Després de la caiguda del 2022, Bitcoin va trigar més de 2 anys a recuperar el seu màxim de novembre del 2021.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "El va superar el març del 2024. Moltes altres criptos d'aquella època no han tornat mai als seus màxims."
+  },
+  "u13l1-10": {
+   "prompt": "Ordena de menor a major volatilitat típica.",
+   "options": [
+    "Bons de l'Estat",
+    "Bitcoin",
+    "Índex mundial d'accions",
+    "Lletres del Tresor"
+   ],
+   "explanation": "Menys de l'1 %, un 4-7 %, al voltant del 15 % i un 50-80 % anual."
+  },
+  "u13l2-1": {
+   "prompt": "Ordena el que va passar amb FTX el novembre del 2022.",
+   "options": [
+    "FTX congela les retirades",
+    "FTX es declara en fallida",
+    "Els clients retiren en massa",
+    "Es publica que Alameda, la seva empresa germana, depèn molt del token FTT"
+   ],
+   "explanation": "Tot va passar en uns deu dies: la confiança va trigar anys a construir-se i dies a trencar-se."
+  },
+  "u13l2-2": {
+   "prompt": "Què és el risc de contrapart?",
+   "options": [
+    "El risc que baixi el preu",
+    "El risc que qui guarda o et deu els teus diners no pugui o no vulgui tornar-los",
+    "El risc d'equivocar-te d'adreça en enviar"
+   ],
+   "explanation": "No depèn de l'actiu, sinó de l'empresa en què confies."
+  },
+  "u13l2-3": {
+   "prompt": "Si deixes les teves criptos en un exchange que fa fallida, un fons de garantia et torna fins a 100.000 €.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Aquest fons existeix per als dipòsits bancaris; per a les criptos no hi ha res equivalent."
+  },
+  "u13l2-4": {
+   "prompt": "FTX va fer servir diners dels seus clients a Alameda Research, una empresa vinculada al seu fundador.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Aquesta barreja dels diners dels clients amb els de l'empresa va ser la clau del frau."
+  },
+  "u13l2-5": {
+   "prompt": "En Bruno té totes les seves criptos en un exchange que paga un 8 % per deixar-les-hi. Llegeix rumors de problemes i veu que les retirades triguen dies. Què faria algú que ha après de FTX?",
+   "options": [
+    "Comprovar si està autoritzat i com custodia els actius, i no tenir-ho tot en un sol lloc",
+    "Dipositar-hi més per aprofitar el 8 %",
+    "Esperar: és un exchange gran, no pot caure"
+   ],
+   "explanation": "Retirades lentes i rendiments cridaners són senyals que cal vigilar en qualsevol plataforma.",
+   "feedback": [
+    "Bé: conèixer la teva contrapart i no concentrar la custòdia redueix el cop si alguna cosa falla.",
+    "Si la plataforma té problemes, aquest 8 % no serveix de res.",
+    "FTX també era enorme i va caure en una setmana."
+   ]
+  },
+  "u13l2-6": {
+   "prompt": "L'Anna té 1.000 € en cripto en un exchange autoritzat sota MiCA i 9.000 € en un fons indexat. Un amic li diu que, pel que va passar amb FTX, «tots els exchanges són estafes». Què li respon?",
+   "options": [
+    "Que el risc de contrapart existeix, però es redueix amb plataformes autoritzades, actius separats i sense concentrar-ho tot",
+    "Que amb MiCA el risc és zero",
+    "Que té raó i ho ven tot"
+   ],
+   "explanation": "Entre «tot és una estafa» i «no hi ha risc» hi ha el que és útil: mesurar i limitar el risc.",
+   "feedback": [
+    "Bé: no elimina el risc, però l'acota. I sap que aquests 1.000 € els podria perdre.",
+    "MiCA redueix riscos, no els elimina, i no protegeix del preu.",
+    "Que una plataforma cometés frau no vol dir que totes ho facin; el que és útil és saber quin risc assumeixes."
+   ]
+  },
+  "u13l2-7": {
+   "prompt": "Relaciona cada cas amb el que ensenya.",
+   "options": [
+    "FTX (2022)",
+    "Mt. Gox (2014)",
+    "Terra/LUNA (2022)",
+    "MiCA"
+   ],
+   "explanation": "Tres cops reals i la resposta reguladora europea.",
+   "right": [
+    "Un exchange pot perdre les criptos dels seus clients",
+    "Una stablecoin es pot enfonsar",
+    "Exigeix autorització i separar els actius",
+    "Un exchange pot fer un mal ús dels diners dels seus clients"
+   ]
+  },
+  "u13l2-8": {
+   "prompt": "Ràpid: en quin any va fer fallida FTX?",
+   "options": [
+    "2017",
+    "2008",
+    "2022"
+   ],
+   "explanation": "El novembre del 2022."
+  },
+  "u13l2-9": {
+   "prompt": "Si un altre guarda els teus diners, assumeixes un risc de ____.",
+   "options": [
+    "canvi de divisa",
+    "inflació",
+    "durada",
+    "contrapart"
+   ],
+   "explanation": "És el risc que l'altra part no compleixi."
+  },
+  "u13l2-10": {
+   "prompt": "Què redueix el risc de contrapart en cripto? Marca-ho tot.",
+   "options": [
+    "No concentrar-ho tot en una sola plataforma",
+    "Triar la que promet més rendibilitat per dipositar",
+    "Que separin els teus actius dels seus",
+    "Fer servir plataformes autoritzades"
+   ],
+   "explanation": "Una rendibilitat alta per dipositar sol indicar que la plataforma presta o arrisca els teus diners."
+  },
+  "u13l3-1": {
+   "prompt": "Marca els missatges que són una estafa o un senyal clar de rug pull.",
+   "options": [
+    "Felicitats, tens 2.000 $ en tokens gratis. Connecta la teva wallet i signa per reclamar-los.",
+    "He llegit la guia de la CNMV sobre criptoactius, la comentem?",
+    "Recordatori: les criptomonedes són molt volàtils i pots perdre tot el que has invertit.",
+    "🚀 $LAMBO farà x100 aquesta nit. Compra JA abans que el llistin als grans exchanges.",
+    "No és consell financer 😉 però jo ho he posat tot en aquesta moneda que vaig llançar ahir."
+   ],
+   "explanation": "Pressa, promeses de x100, regals que demanen signar i un creador que promociona la seva pròpia moneda són senyals clàssics.",
+   "senders": [
+    "Web d'«airdrop»",
+    "Amiga",
+    "El teu exchange autoritzat",
+    "Grup de Telegram",
+    "Influencer"
+   ]
+  },
+  "u13l3-2": {
+   "prompt": "Quins són senyals d'alarma en un token nou? Marca'ls tots.",
+   "options": [
+    "Promeses de multiplicar x100",
+    "Que el seu codi estigui publicat i auditat",
+    "Que no et deixi vendre després de comprar",
+    "Creadors anònims sense historial"
+   ],
+   "explanation": "Una auditoria publicada no garanteix res, però que no n'hi hagi sí que és una alarma."
+  },
+  "u13l3-3": {
+   "prompt": "Relaciona cada parany amb la seva definició.",
+   "options": [
+    "Rug pull",
+    "Pump and dump",
+    "Fals airdrop",
+    "Honeypot"
+   ],
+   "explanation": "Quatre paranys diferents amb el mateix final: els teus diners acaben a la butxaca d'un altre.",
+   "right": [
+    "Inflar el preu i vendre als que arriben tard",
+    "Token que et deixa comprar, però no vendre",
+    "«Tokens gratis» que buiden la teva wallet",
+    "Els creadors s'emporten els diners i desapareixen"
+   ]
+  },
+  "u13l3-4": {
+   "prompt": "En Pablo veu un token nou que ha pujat un 2.000 % en dos dies. En un grup tothom diu que encara li queda molt. Què fa?",
+   "options": [
+    "Demana un préstec per entrar-hi amb més",
+    "No hi entra: no sap què és, qui hi ha al darrere ni si podrà vendre",
+    "Hi entra amb els seus estalvis: encara hi és a temps"
+   ],
+   "explanation": "Comprar només perquè una cosa ha pujat molt és el motor dels pump and dump.",
+   "feedback": [
+    "Podria acabar devent diners per una cosa que ja no val res.",
+    "Bé: si l'únic argument és que puja, el risc de perdre-ho tot és enorme.",
+    "Arriba quan els primers ja volen vendre: és just el perfil de víctima d'un pump and dump."
+   ]
+  },
+  "u13l3-5": {
+   "prompt": "A la Laura li apareixen a la wallet uns tokens que no va comprar, i una web li ofereix canviar-los per diners si signa una autorització. Què fa?",
+   "options": [
+    "No toca aquests tokens ni signa res",
+    "Els ven a qualsevol web que l'hi permeti",
+    "Signa: són gratis"
+   ],
+   "explanation": "El que és gratis en cripto sovint costa tot el que tens a la wallet.",
+   "feedback": [
+    "Bé: els tokens que no has demanat són un esquer habitual perquè signis un permís maliciós.",
+    "La web que «et deixa vendre'ls» sol ser el parany.",
+    "La signatura pot donar permís per moure tots els seus tokens: així funcionen molts falsos airdrops."
+   ]
+  },
+  "u13l3-6": {
+   "prompt": "Què és un rug pull?",
+   "options": [
+    "Un tipus de mineria",
+    "Que els creadors d'un projecte s'emportin els diners i l'abandonin",
+    "Una caiguda normal del mercat"
+   ],
+   "explanation": "En anglès, «estirar la catifa»: els inversors es queden sense terra de cop."
+  },
+  "u13l3-7": {
+   "prompt": "Crear un token nou és car i difícil, per això els que existeixen solen ser seriosos.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Es crea en minuts i amb molt pocs diners: per això n'apareixen milers cada dia."
+  },
+  "u13l3-8": {
+   "prompt": "Si un token no et deixa vendre després de comprar-lo, és un senyal clar d'estafa.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "És un honeypot: els diners només hi poden entrar."
+  },
+  "u13l3-9": {
+   "prompt": "Dogecoin va néixer el 2013 com a…",
+   "options": [
+    "Una stablecoin",
+    "Una broma",
+    "La moneda d'un banc central"
+   ],
+   "explanation": "És la memecoin més coneguda: el seu preu depèn sobretot de l'atenció que rep."
+  },
+  "u13l3-10": {
+   "prompt": "Inflar el preu amb publicitat per vendre als que arriben tard s'anomena pump and ____.",
+   "options": [
+    "pull",
+    "stake",
+    "mint",
+    "dump"
+   ],
+   "explanation": "Pump (inflar) and dump (deixar anar): els que arriben tard compren el que venen els organitzadors."
+  },
+  "u13l4-1": {
+   "prompt": "Una plataforma ofereix un 25 % anual «garantit» per dipositar la teva stablecoin. Què preguntes primer?",
+   "options": [
+    "Puc convidar amics per guanyar-hi més?",
+    "Quant hi puc dipositar com a màxim?",
+    "Qui paga aquest interès i amb quins diners?"
+   ],
+   "explanation": "Abans del «quant», el «d'on»: és el que separa un rendiment real d'un parany.",
+   "feedback": [
+    "Guanyar per portar-hi altres persones és un senyal típic d'esquema piramidal.",
+    "Primer cal saber d'on surt el 25 %; si no es pot explicar, pot sortir dels diners dels qui entren després.",
+    "Bé: és la pregunta clau. Un dipòsit bancari paga molt menys perquè aquest és el preu dels diners amb poc risc."
+   ]
+  },
+  "u13l4-2": {
+   "prompt": "L'Anna fa staking d'una cripto que li paga un 3 % anual en aquesta mateixa cripto. En un any, el seu preu cau un 40 %. Com li ha anat?",
+   "options": [
+    "Perd: el rendiment de l'staking no compensa una caiguda del 40 %",
+    "Igual: l'staking la protegeix de les caigudes",
+    "Bé: ha cobrat l'staking"
+   ],
+   "explanation": "Un rendiment petit no compensa la volatilitat del que tens a sota.",
+   "feedback": [
+    "Exacte: l'staking no protegeix del preu.",
+    "No protegeix: només afegeix més unitats d'una moneda que ha baixat.",
+    "El rendiment es cobra en la mateixa cripto: si cau un 40 %, perd molt més del que guanya amb l'staking."
+   ]
+  },
+  "u13l4-3": {
+   "prompt": "Fas staking amb 1.000 € en una cripto que rendeix un 3 % anual en aquesta mateixa cripto. En un any el seu preu cau un 40 %. Quant val la teva posició? (arrodoneix)",
+   "options": [],
+   "explanation": "1.000 × 1,03 × 0,60 = 618 €. El 3 % no compensa el −40 %.",
+   "unit": "€"
+  },
+  "u13l4-4": {
+   "prompt": "D'on surt el rendiment de l'staking?",
+   "options": [
+    "De monedes noves i de les comissions de la xarxa",
+    "D'un banc central",
+    "D'un fons de garantia"
+   ],
+   "explanation": "És la recompensa que paga la xarxa per validar blocs."
+  },
+  "u13l4-5": {
+   "prompt": "En un préstec DeFi, l'interès que cobres el paga qui demana el préstec.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Per això el risc també depèn de les garanties de qui demana el préstec i del codi del contracte."
+  },
+  "u13l4-6": {
+   "prompt": "Un rendiment molt alt en cripto indica que la plataforma és molt rendible i segura.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Normalment indica més risc: Celsius va fer fallida el 2022 i l'UST es va enfonsar després de pagar gairebé un 20 %."
+  },
+  "u13l4-7": {
+   "prompt": "Relaciona cada font de rendiment amb qui la paga.",
+   "options": [
+    "Staking",
+    "Préstec DeFi",
+    "Esquema Ponzi",
+    "Dipòsit bancari"
+   ],
+   "explanation": "Si no pots omplir aquesta columna per a un producte, no saps d'on surt el que et paguen.",
+   "right": [
+    "Els diners dels nous que hi entren",
+    "El banc, que presta aquests diners a altres",
+    "Qui demana el préstec",
+    "La xarxa, amb monedes noves i comissions"
+   ]
+  },
+  "u13l4-8": {
+   "prompt": "Quins riscos té posar les teves criptos a DeFi? Marca'ls tots.",
+   "options": [
+    "Caiguda del preu de la cripto",
+    "Que el Banc d'Espanya et multi per fer-lo servir",
+    "Hackejos de la plataforma",
+    "Errors en el codi del contracte"
+   ],
+   "explanation": "Els riscos de DeFi són tècnics i de mercat; no hi ha xarxa de seguretat si alguna cosa falla."
+  },
+  "u13l4-9": {
+   "prompt": "La pregunta clau davant de qualsevol rendiment: qui ____ l'interès?",
+   "options": [
+    "cobra",
+    "decideix",
+    "publica",
+    "paga"
+   ],
+   "explanation": "Si ningú no pot explicar qui paga i per què, desconfia'n."
+  },
+  "u13l4-10": {
+   "prompt": "Rendiment explicable o senyal d'alarma?",
+   "options": [
+    "«Rendibilitat garantida» en una plataforma no autoritzada",
+    "Guanyes més per cada amic que hi portes",
+    "Recompensa d'staking en una xarxa de prova de participació",
+    "Interès d'un préstec amb garantia",
+    "«30 % mensual sense risc»"
+   ],
+   "explanation": "Explicable no vol dir sense risc, però el que és inexplicable gairebé sempre acaba malament.",
+   "right": [
+    "Es pot explicar",
+    "Senyal d'alarma"
+   ]
+  },
+  "u13l5-1": {
+   "prompt": "Relaciona cada forma d'exposició amb el seu tret.",
+   "options": [
+    "Cripto en autocustòdia",
+    "Cripto en un exchange",
+    "ETP de bitcoin a Europa",
+    "ETF de bitcoin al comptat dels EUA"
+   ],
+   "explanation": "Quatre camins cap al mateix actiu, amb riscos de custòdia diferents.",
+   "right": [
+    "Títol cotitzat respaldat per bitcoin",
+    "Aprovats el gener del 2024",
+    "La plataforma custodia per tu",
+    "Tu guardes les claus"
+   ]
+  },
+  "u13l5-2": {
+   "prompt": "Comprar la cripto directament o un ETP a borsa?",
+   "options": [
+    "El compres amb el teu bròquer de sempre",
+    "Cobra una comissió anual de gestió",
+    "Risc de l'emissor del producte",
+    "Cotitza 24 hores, 7 dies",
+    "Si perds la frase llavor, ho perds"
+   ],
+   "explanation": "Canvies el risc de custòdia pròpia pel de l'emissor i el custodi, i hi sumes una comissió.",
+   "right": [
+    "Directament",
+    "ETP a borsa"
+   ]
+  },
+  "u13l5-3": {
+   "prompt": "Per què a Europa no hi ha ETF UCITS d'una sola criptomoneda?",
+   "options": [
+    "Perquè ningú no els vol",
+    "Perquè la norma UCITS exigeix diversificació i no ho permet",
+    "Perquè les criptos estan prohibides a Europa"
+   ],
+   "explanation": "Per això els productes d'una sola cripto s'emeten com a ETP o ETN."
+  },
+  "u13l5-4": {
+   "prompt": "Un ETP de bitcoin cau molt menys que el bitcoin perquè cotitza en una borsa regulada.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Segueix el bitcoin: si cau un 70 %, l'ETP també, més o menys el mateix."
+  },
+  "u13l5-5": {
+   "prompt": "En Pablo vol exposició a bitcoin, però li fa por perdre les claus. Quina opció té en compte i quin risc li queda?",
+   "options": [
+    "Un ETP, que elimina tots els riscos",
+    "Un «fons garantit de bitcoin» que li ofereixen per telèfon",
+    "Un ETP respaldat a borsa: no gestiona claus, però manté tota la volatilitat i hi suma el risc de l'emissor"
+   ],
+   "explanation": "Cada forma de tenir cripto canvia quin risc assumeixes, però cap no elimina el de preu.",
+   "feedback": [
+    "Elimina el de perdre les teves claus, no el que el bitcoin caigui un 70 %.",
+    "Desconfia de qualsevol «garantia» sobre cripto, i més si et truquen sense haver-ho demanat.",
+    "Bé: canvia el risc de custòdia pròpia pel de l'emissor i el custodi, i el preu es mou igual."
+   ]
+  },
+  "u13l5-6": {
+   "prompt": "En Bruno compra un ETP de bitcoin quan ha pujat un 50 % en un mes i el ven espantat després d'una caiguda del 30 %. Què li ha passat?",
+   "options": [
+    "La bretxa de comportament: comprar en eufòria i vendre en pànic",
+    "Que l'hauria d'haver comprat directament",
+    "Ha tingut mala sort amb el producte"
+   ],
+   "explanation": "En actius tan volàtils, el risc més gran sol ser el nostre propi comportament.",
+   "feedback": [
+    "Exacte: Morningstar calcula que els inversors en ETF de bitcoin van perdre uns 14 punts l'any respecte al mateix ETF per això.",
+    "L'embolcall no hauria evitat la caiguda ni la seva reacció.",
+    "El producte ha seguit el bitcoin; el problema ha estat quan va comprar i quan va vendre."
+   ]
+  },
+  "u13l5-7": {
+   "prompt": "Ràpid: quan es van aprovar els ETF de bitcoin al comptat als EUA?",
+   "options": [
+    "Gener del 2009",
+    "Gener del 2024",
+    "Mai"
+   ],
+   "explanation": "Van començar a cotitzar el gener del 2024."
+  },
+  "u13l5-8": {
+   "prompt": "Molts ETF de cripto dels EUA no es poden comprar des de la UE perquè no tenen document KID.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Sense KID, no es poden comercialitzar a inversors minoristes a la UE."
+  },
+  "u13l5-9": {
+   "prompt": "A Europa, els productes cotitzats que segueixen una sola cripto solen ser ETP o ____.",
+   "options": [
+    "REIT",
+    "TIPS",
+    "UCITS",
+    "ETN"
+   ],
+   "explanation": "Exchange Traded Notes: títols de deute de l'emissor, normalment respaldats per la cripto."
+  },
+  "u13l5-10": {
+   "prompt": "Quins riscos té un ETP de bitcoin respaldat? Marca'ls tots.",
+   "options": [
+    "El risc de l'emissor i del custodi",
+    "La comissió anual",
+    "Oblidar la teva pròpia frase llavor",
+    "La volatilitat del bitcoin"
+   ],
+   "explanation": "Les claus les guarda el custodi, no tu."
+  },
+  "u13l6-1": {
+   "prompt": "Reparteix una cartera d'exemple de 10.000 € a 20 anys. El pla escrit diu: cripto com a màxim un 5 % en total, almenys un 20 % en bons i cap actiu per sobre del 60 %.",
+   "options": [
+    "Fons indexat mundial d'accions",
+    "Fons de bons de qualitat",
+    "Bitcoin (ETP)",
+    "Ethereum (ETP)",
+    "Fons monetari"
+   ],
+   "explanation": "Les regles les fixa cadascú en el seu pla; aquí serveixen per practicar. Fixa't que el límit de cripto és la suma de bitcoin i ethereum.",
+   "kinds": [
+    "ACCIONS",
+    "BONS",
+    "CRIPTO",
+    "CRIPTO",
+    "LIQUIDESA"
+   ]
+  },
+  "u13l6-2": {
+   "prompt": "Tens 10.000 € amb un 5 % en cripto. La cripto cau un 75 % i la resta no es mou. Quant perd la teva cartera en total?",
+   "options": [],
+   "explanation": "500 × 75 % = 375 €: un 3,75 % del total.",
+   "unit": "€"
+  },
+  "u13l6-3": {
+   "prompt": "Ara amb un 40 % en cripto (4.000 de 10.000 €). Cau un 75 % i la resta no es mou. Quin percentatge perd la cartera?",
+   "options": [],
+   "explanation": "4.000 × 75 % = 3.000 € → un 30 % de 10.000 €.",
+   "unit": "%"
+  },
+  "u13l6-4": {
+   "prompt": "Cartera de 10.000 €: 9.500 € en fons i 500 € en cripto. La cripto es triplica i els fons no es mouen. Quin pes té ara la cripto? (un decimal)",
+   "options": [],
+   "explanation": "500 × 3 = 1.500 €; total, 11.000 €; 1.500 ÷ 11.000 ≈ 13,6 %. Ha passat del 5 % al 13,6 % sense que decideixis res.",
+   "unit": "%"
+  },
+  "u13l6-5": {
+   "prompt": "Seguint amb aquesta cartera: la Marta tenia escrit «cripto com a màxim un 5 %» i ara és al 13,6 % després de la pujada. Què fa segons el seu pla?",
+   "options": [
+    "Hi posa més diners perquè va bé",
+    "Res: si puja, que continuï pujant",
+    "Reequilibra: ven cripto fins a tornar al 5 % i porta la resta als seus fons"
+   ],
+   "explanation": "Reequilibrar és seguir el pla escrit amb calma, no l'estat d'ànim del mercat.",
+   "feedback": [
+    "Així decideix amb l'eufòria i augmenta un risc que ja superava el seu límit.",
+    "Ara la seva cartera és força més arriscada del que va decidir amb calma.",
+    "Bé: compleix el seu pla, assegura part de la pujada i torna al risc que va triar."
+   ]
+  },
+  "u13l6-6": {
+   "prompt": "En Pablo té 22 anys, no té coixí d'emergència i deu 2.000 € de la targeta. Vol posar 3.000 € en cripto «perquè és jove i pot arriscar». Què té en compte?",
+   "options": [
+    "Que demani un préstec per posar-n'hi més",
+    "Que primer van el coixí i treure's el deute car; després, si decideix tenir cripto, una part que pugui perdre",
+    "Que, com que és jove, com més arrisqui, millor"
+   ],
+   "explanation": "L'edat dona temps, però no substitueix la base: coixí i cap deute car.",
+   "feedback": [
+    "Endeutar-se per a cripto multiplica el risc d'acabar pitjor que al principi.",
+    "Bé: l'ordre importa. El deute de la targeta costa un interès alt segur; la cripto es pot perdre sencera.",
+    "Sense coixí i amb deute car, una caiguda forta el pot obligar a vendre en el pitjor moment o a endeutar-se més."
+   ]
+  },
+  "u13l6-7": {
+   "prompt": "Ordena els passos abans de tenir cripto en una cartera.",
+   "options": [
+    "Pla escrit amb un màxim per a cripto",
+    "Reequilibrar si passa del màxim",
+    "Cap deute car",
+    "Coixí d'emergència"
+   ],
+   "explanation": "Primer la base; després, regles escrites; i finalment, complir-les quan el mercat es mogui."
+  },
+  "u13l6-8": {
+   "prompt": "Ràpid: un 10 % de la cartera en cripto i la cripto cau un 50 %. Quant perd la cartera?",
+   "options": [],
+   "explanation": "10 % × 50 % = un 5 % del total.",
+   "unit": "%"
+  },
+  "u13l6-9": {
+   "prompt": "El pes de la cripto en una cartera pot pujar sol, sense que en compris més.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Si es revaloritza més que la resta, el seu percentatge creix: per això es reequilibra."
+  },
+  "u13l6-10": {
+   "prompt": "Què li dius?",
+   "options": [
+    "Perquè només veus els que van guanyar, no els que ho van perdre tot",
+    "Fes-ho: si a ell li va sortir bé, a tu també",
+    "Perquè la cripto sempre baixa"
+   ],
+   "explanation": "Les històries d'èxit que circulen són una mostra esbiaixada: les pèrdues no es publiquen.",
+   "feedback": [
+    "Això! És el biaix de supervivència: qui ho va perdre tot no ho sol explicar a les xarxes.",
+    "Que a un li sortís bé no diu res de les probabilitats.",
+    "Tampoc: pot pujar molt. El problema és no poder permetre't que caigui a zero."
+   ],
+   "lines": [
+    "He llegit que algú ho va posar tot en cripto i es va fer ric 🤑",
+    "Per què no fer el mateix?"
+   ]
+  }
+ }
+}

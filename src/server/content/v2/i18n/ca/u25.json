@@ -1,0 +1,1099 @@
+{
+ "unit": {
+  "title": "Estratègies",
+  "description": "De comprar i mantenir al day trading: què diu l'evidència de cada estratègia",
+  "section": "Risc, estratègies i trading"
+ },
+ "lessons": {
+  "u25l1": {
+   "title": "Comprar i mantenir",
+   "steps": [
+    {
+     "title": "L'estratègia avorrida que funciona",
+     "body": "Comprar un índex ampli i barat i **mantenir-lo durant dècades**, fent aportacions amb regularitat.\n\nSegons SPIVA (tancament del 2025), el **97 %** dels fons d'accions europeus va quedar per darrere del seu índex en 10 anys. Si gairebé ningú no bat l'índex, comprar l'índex ja et posa per davant de gairebé tothom."
+    },
+    {
+     "title": "El temps juga a favor",
+     "body": "S&P 500, històric aproximat. Proporció de períodes amb guany:\n\n• 1 dia: una mica més del 50 %\n• 1 any: al voltant del 73 %\n• 10 anys: al voltant del 90 %\n• 20 anys: gairebé el 100 % des del 1926\n\nCompte: és la història dels EUA. El Japó va trigar 34 anys a recuperar el seu màxim del 1989."
+    },
+    {
+     "title": "Deixa que el temps treballi",
+     "body": "Posa 100 € al mes al 7 % (un exemple, no una promesa) i compara 10 anys amb 30.",
+     "tip": "La major part del resultat arriba en els últims anys."
+    },
+    {
+     "title": "Perdre't els millors dies",
+     "body": "J.P. Morgan: 10.000 $ a l'S&P 500 del 2005 al 2024 es van convertir en uns **71.750 $**. Qui es va perdre només els 10 millors dies va acabar amb uns **32.871 $**. I 7 d'aquests 10 dies van arribar molt a prop dels pitjors.",
+     "key": "A la borsa, el temps dins del mercat val més que encertar quan entrar-hi.",
+     "tip": "Una cartera avorrida és una cartera que funciona."
+    }
+   ]
+  },
+  "u25l2": {
+   "title": "Aportacions periòdiques (DCA)",
+   "steps": [
+    {
+     "title": "Què és",
+     "body": "Invertir **la mateixa quantitat cada mes**, passi el que passi (*dollar-cost averaging*).\n\nExemple: 100 € al mes durant 5 mesos amb el preu a 10 → 8 → 5 → 8 → 10 €. Compres 10 + 12,5 + 20 + 12,5 + 10 = **65 participacions** per 500 €. Preu mitjà: **7,69 €**, encara que va començar i acabar a 10 €."
+    },
+    {
+     "title": "I una suma gran?",
+     "body": "Vanguard: en períodes de 10 anys, invertir-ho **tot de cop** va guanyar a repartir-ho **unes dues de cada tres vegades**. Amb el MSCI World (1976–2022), al cap d'un any, el **68 %** de les vegades.\n\nEl motiu: el mercat puja més vegades de les que baixa. Però repartir-ho redueix el penediment si cau just després."
+    },
+    {
+     "title": "Aporta cada mes",
+     "body": "Prova 150 € al mes durant 20 anys amb un 6 % anual d'exemple. Compara el que has aportat amb el resultat.",
+     "tip": "El que més mou el resultat és començar aviat i no parar."
+    },
+    {
+     "title": "El que t'emportes",
+     "body": "Amb una suma gran, una solució intermèdia raonable és repartir-la en **6–12 mesos** amb aportacions automàtiques. El que no funciona és esperar «que baixi»: ningú no sap quan és el terra.",
+     "key": "De cop sol guanyar més vegades; de mica en mica redueix el penediment. L'important és començar i no parar.",
+     "tip": "Invertir cada mes és com pujar una escala: el que importa és no aturar-se."
+    }
+   ]
+  },
+  "u25l3": {
+   "title": "Value investing a l'estil Buffett",
+   "steps": [
+    {
+     "title": "Preu i valor",
+     "body": "«El preu és el que pagues; el valor és el que obtens» (Warren Buffett).\n\nL'inversor en valor estima quant **val** un negoci (beneficis, caixa, deute, avantatges competitius) i només compra si el **preu** és clarament per sota.\n\nGraham, el seu mestre, parlava del **senyor Mercat**: un soci d'humor canviant que uns dies et demana un preu absurd i d'altres et regala la seva part."
+    },
+    {
+     "title": "Marge de seguretat",
+     "body": "El valor sempre és una **estimació**. Per això es compra amb un coixí: el **marge de seguretat**.\n\nSi estimes que una acció val 19,60 € i cotitza a 15 €, el preu és un 23 % per sota de la teva estimació. Si t'equivoques una mica, encara tens marge."
+    },
+    {
+     "title": "El que no és",
+     "body": "Value no és comprar el que ha caigut molt ni el que té el PER més baix. Un PER baix pot ser un negoci en declivi: una **trampa de valor**. I l'estil pot passar anys per darrere del mercat.",
+     "key": "Comprar negocis per menys del que valen, amb marge per si t'equivoques.",
+     "tip": "Una empresa excel·lent comprada massa cara pot ser una mala inversió."
+    }
+   ]
+  },
+  "u25l4": {
+   "title": "Invertir per dividends",
+   "steps": [
+    {
+     "title": "Com funciona un dividend",
+     "body": "Quan una empresa paga 1 € de dividend, el preu de l'acció baixa aproximadament 1 € aquell dia (**data ex-dividend**). No ets més ric: tens 1 € en efectiu i 1 € menys en accions.\n\nI a Espanya aquest euro tributa a l'IRPF (del 19 % al 30 %); el pagador sol retenir-ne ja un 19 %."
+    },
+    {
+     "title": "Dues ràtios",
+     "body": "• **Rendibilitat per dividend** = dividend per acció ÷ preu. Paga 0,50 € i cotitza a 15 €: **3,3 %**.\n• ***Pay-out*** = dividend ÷ benefici per acció. Per sobre del 80–90 % de manera continuada, el dividend pot estar en perill."
+    },
+    {
+     "title": "La trampa del rendiment alt",
+     "body": "Un dividend del 12 % no sol ser una ganga: moltes vegades el preu ha caigut perquè el mercat espera una **retallada**. Comprova que el cobreixen el benefici i el flux de caixa.\n\nPer acumular patrimoni, els fons d'**acumulació** reinverteixen sense pagar impostos fins a la venda.",
+     "key": "El dividend no són diners gratis: surt del valor de l'empresa. El que importa és la rendibilitat total.",
+     "tip": "Un dividend altíssim de vegades és una alarma, no un regal."
+    }
+   ]
+  },
+  "u25l5": {
+   "title": "Seguir la tendència i el momentum",
+   "steps": [
+    {
+     "title": "La idea",
+     "body": "Comprar el que fa temps que puja i sortir quan la tendència es trenca.\n\nTé base: les tendències de **3–12 mesos** han tendit a persistir en accions, índexs, bons, divises i matèries primeres (Jegadeesh i Titman; Moskowitz, Ooi i Pedersen; Hurst, Ooi i Pedersen, amb dades des del 1880)."
+    },
+    {
+     "title": "El preu de seguir tendències",
+     "body": "• Encerta **menys de la meitat** de les vegades: moltes pèrdues petites i pocs guanys grans.\n• En mercats **laterals** dona senyals falsos una vegada i una altra.\n• Els girs bruscos l'enxampen a dins.\n\nEl seu avantatge depèn de tallar ràpid les pèrdues i deixar córrer els guanys."
+    },
+    {
+     "title": "El que t'emportes",
+     "body": "Una regla típica: comprar quan el preu supera la seva mitjana de moltes sessions, amb stop sota l'últim mínim creixent, i anar pujant l'stop a mesura que avança.",
+     "key": "El momentum és una de les anomalies més estudiades, però només funciona amb disciplina i gestió del risc.",
+     "tip": "La tendència és la teva amiga… fins que gira. Per això, stop sempre."
+    }
+   ]
+  },
+  "u25l6": {
+   "title": "Swing trading",
+   "steps": [
+    {
+     "title": "Què és",
+     "body": "Operacions de **dies a setmanes**, normalment en gràfic diari. Es busca un tram del moviment: comprar en un retrocés o un suport dins d'una tendència i sortir a prop de la resistència.\n\nNo cal mirar la pantalla tot el dia, però sí revisar el mercat cada dia."
+    },
+    {
+     "title": "Els seus riscos",
+     "body": "• **Salts de preu (gaps):** deixes posicions obertes a la nit i el cap de setmana; uns resultats o una notícia poden fer obrir el preu molt lluny del teu stop.\n• **Costos:** comissió i *spread* en cada operació.\n• **Soroll:** com més curt és el termini, més senyals falsos."
+    },
+    {
+     "title": "El que t'emportes",
+     "body": "Cada operació necessita el seu stop, el seu objectiu i la seva mida amb l'1 % de risc abans d'entrar. Millor no tenir posicions grans abans de resultats.",
+     "key": "Swing: trams de dies o setmanes, amb stop per estructura i relació benefici/risc de 2:1 o més.",
+     "tip": "En swing, el cap de setmana també compta: dimensiona pensant en els salts de preu."
+    }
+   ]
+  },
+  "u25l7": {
+   "title": "Day trading: el que diuen les dades",
+   "steps": [
+    {
+     "title": "Els estudis",
+     "body": "• **Brasil** (Chague, De-Losso i Giovannetti, 2020): dels qui van fer *day trading* en futurs de l'índex més de 300 dies, **el 97 % va perdre diners**. Només un 1,1 % va guanyar més que el salari mínim.\n• **Taiwan** (Barber, Lee, Liu i Odean): menys de l'**1 %** dels *day traders* aconsegueix guanyar de manera predictible i persistent després de comissions."
+    },
+    {
+     "title": "Per què passa",
+     "body": "• **Costos:** cada operació paga comissió i *spread*. Amb moltes operacions al dia, es mengen qualsevol avantatge petit.\n• **Competència:** a l'altra banda hi ha professionals i algoritmes amb millors dades i costos gairebé nuls.\n• **Soroll:** en gràfics de minuts, la majoria de moviments no signifiquen res."
+    },
+    {
+     "title": "El que t'emportes",
+     "body": "A les xarxes només veus captures de guanys, mai l'historial complet. I qui ven cursos guanya amb els cursos, no necessàriament operant.",
+     "key": "La gran majoria dels qui fan day trading de manera continuada perd diners.",
+     "tip": "Si algú viu d'ensenyar-te a viure del trading, pregunta't de què viu de debò."
+    }
+   ]
+  },
+  "u25l8": {
+   "title": "Palanquejament i posicions curtes",
+   "steps": [
+    {
+     "title": "Què és el palanquejament",
+     "body": "Operar amb més diners dels que tens. Amb **1:10**, amb 1.000 € controles 10.000 €:\n\n• L'actiu puja un 5 %: guanyes 500 €, un **+50 %**.\n• Baixa un 5 %: perds 500 €, un **−50 %**.\n• Baixa un 10 %: ho perds **tot**.\n\nA més, mantenir-lo obert d'un dia per l'altre paga **finançament** diari."
+    },
+    {
+     "title": "Els CFD: advertència oficial",
+     "body": "Un **CFD** replica la variació d'un actiu amb palanquejament, sense que en siguis el propietari. La CNMV obliga a mostrar aquesta advertència:\n\n«Els CFD són instruments complexos i comporten un risc elevat de perdre diners ràpidament a causa del palanquejament. Entre un 74 i un 89 % dels inversors minoristes perden diners quan negocien amb CFD.»"
+    },
+    {
+     "title": "Límits a la UE i posicions curtes",
+     "body": "Des del 2018 (ESMA): palanquejament màxim d'**1:30** en divises principals, 1:20 en índexs principals, 1:5 en accions i **1:2 en cripto**; tancament si el marge baixa del 50 %; no pots perdre més del que has dipositat.\n\n**Posar-se curt** és vendre el que no tens per recomprar-ho més barat. La pèrdua és **il·limitada**: el preu pot pujar sense sostre (GameStop, 2021)."
+    },
+    {
+     "title": "La recomanació del curs",
+     "body": "Mentre aprens: **sense palanquejament i sense posicions curtes**. Si algun dia els fas servir, amb una part petita del capital, stop sempre i la mida calculada sobre l'exposició total, no sobre el marge.",
+     "key": "El palanquejament multiplica guanys i pèrdues per igual, però les pèrdues grans et treuen del joc.",
+     "tip": "El palanquejament no et fa millor trader: només fa que els teus errors arribin abans."
+    }
+   ]
+  },
+  "u25l9": {
+   "title": "Triar la teva estratègia",
+   "steps": [
+    {
+     "title": "No n'hi ha una de millor per a tothom",
+     "body": "L'estratègia ha d'encaixar amb:\n\n• **El teu temps:** minuts al mes o hores al dia?\n• **El teu horitzó:** quan necessitaràs els diners?\n• **El teu temperament:** quina caiguda aguantaries sense vendre?\n• **Els teus coneixements:** saps llegir uns comptes o un gràfic?\n\nLa millor estratègia és la que **podràs mantenir** quan les coses vagin malament."
+    },
+    {
+     "title": "Nucli i satèl·lit",
+     "body": "Molta gent separa una **cartera principal** de llarg termini (diversificada, barata, automàtica) d'una **part petita** per especular o aprendre, amb un límit escrit que podria perdre sencer.",
+     "key": "Primer el nucli avorrit; l'emoció, si de cas, amb una part petita i limitada.",
+     "tip": "Tria l'estratègia que seguiries també en una caiguda del 30 %."
+    }
+   ]
+  },
+  "u25r": {
+   "title": "Repàs de la unitat",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u25l1-1": {
+   "prompt": "Així anava l'S&P 500 fins al març del 2009. Quina tendència hi veus? (S&P 500 · tancaments setmanals · fins al 02/03/2009)",
+   "options": [
+    "Alcista",
+    "Baixista",
+    "Lateral"
+   ],
+   "explanation": "Caiguda de més d'un 50 % des del 2007: el moment en què més gent va abandonar el «comprar i mantenir»."
+  },
+  "u25l1-2": {
+   "prompt": "Març del 2009: després de la pitjor crisi en dècades, molta gent ven per «no perdre més». Què va fer l'S&P 500 després?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Qui va aguantar (o va continuar aportant) va recuperar. Qui va vendre en el pànic va convertir una caiguda temporal en una pèrdua definitiva.",
+   "horizon": "l'any i mig següent"
+  },
+  "u25l1-3": {
+   "prompt": "Segons J.P. Morgan, 10.000 $ invertits a l'S&P 500 del 2005 al 2024 van acabar en 71.750 $; perdent-se els 10 millors dies, en 32.871 $. Quanta diferència hi ha?",
+   "options": [],
+   "explanation": "71.750 − 32.871 = 38.879 $: més de la meitat del resultat es va jugar en 10 dies.",
+   "unit": "$"
+  },
+  "u25l1-4": {
+   "prompt": "Relaciona cada termini amb la proporció històrica de períodes amb guany a l'S&P 500.",
+   "options": [
+    "1 dia",
+    "1 any",
+    "10 anys",
+    "20 anys"
+   ],
+   "explanation": "Com més termini, menys probabilitat de perdre en la història dels EUA. No és una llei física.",
+   "right": [
+    "Al voltant del 90 %",
+    "Gairebé el 100 %",
+    "Al voltant del 73 %",
+    "Una mica més del 50 %"
+   ]
+  },
+  "u25l1-5": {
+   "prompt": "Comprar i mantenir garanteix guanyar a 20 anys en qualsevol país.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "El Japó va trigar 34 anys a recuperar el seu màxim del 1989. Per això es diversifica entre països."
+  },
+  "u25l1-6": {
+   "prompt": "Desembre del 1989: la borsa japonesa és la més gran del món i fa anys que puja. Què va fer el Nikkei 225 després?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "El Nikkei va trigar 34 anys a tornar a aquell màxim. Comprar i mantenir funciona millor amb un índex mundial que amb un sol país.",
+   "horizon": "els sis anys següents"
+  },
+  "u25l1-7": {
+   "prompt": "Març del 2020: l'S&P 500 cau un 34 % en un mes per la covid. El Pablo té un fons indexat per a la seva jubilació, d'aquí a 35 anys. Què fa?",
+   "options": [
+    "Demana un préstec per comprar-ne més",
+    "Ho ven tot i espera que passi",
+    "Continua amb el seu pla i les seves aportacions"
+   ],
+   "explanation": "Comprar i mantenir obliga a aguantar les caigudes: és on es guanya o es perd l'estratègia.",
+   "feedback": [
+    "Invertir amb deute en plena crisi et pot obligar a vendre en el pitjor moment.",
+    "L'índex va recuperar el seu màxim en uns 5 mesos. El Pablo s'hauria perdut els rebots més forts.",
+    "Bé: les seves aportacions van comprar barat i en pocs mesos l'índex va tornar a màxims."
+   ]
+  },
+  "u25l1-8": {
+   "prompt": "Ràpid: segons SPIVA, quina proporció de fons d'accions europeus va quedar per darrere del seu índex en 10 anys?",
+   "options": [
+    "El 60 %",
+    "El 30 %",
+    "El 97 %"
+   ],
+   "explanation": "Tancament del 2025. I gairebé cap dels que el baten no ho repeteix."
+  },
+  "u25l1-9": {
+   "prompt": "Què necessita l'estratègia de comprar i mantenir per funcionar? Marca-les totes.",
+   "options": [
+    "Costos baixos",
+    "Vendre cada vegada que cau un 10 %",
+    "Aguantar les caigudes sense vendre",
+    "Diversificar molt (un índex ampli)"
+   ],
+   "explanation": "Vendre a cada caiguda és just el contrari: et fa perdre els rebots."
+  },
+  "u25l1-10": {
+   "prompt": "Què li respons a la Lumi?",
+   "options": [
+    "Millor busca l'acció que més pugi aquest any",
+    "Avorrit no vol dir dolent: és l'estratègia amb més evidència a llarg termini",
+    "Tens raó, avorrit és dolent"
+   ],
+   "explanation": "L'emoció no paga: el que paga és estar invertit, diversificat i amb costos baixos durant anys.",
+   "feedback": [
+    "Això és apostar: la majoria d'accions individuals rendeixen menys que l'índex.",
+    "D'acord, d'acord. L'avorrit per als diners de llarg termini, i l'emoció, amb una part petita.",
+    "Doncs segons SPIVA, el 97 % dels fons actius europeus rendeix menys que l'índex en 10 anys…"
+   ],
+   "lines": [
+    "Comprar i mantenir és cosa d'avis 👴",
+    "Jo prefereixo alguna cosa amb emoció."
+   ]
+  },
+  "u25l2-1": {
+   "prompt": "Inverteixes 100 € al mes i el preu passa per 10, 8, 5, 8 i 10 €. Quantes participacions tens en total?",
+   "options": [],
+   "explanation": "100 ÷ 10 + 100 ÷ 8 + 100 ÷ 5 + 100 ÷ 8 + 100 ÷ 10 = 10 + 12,5 + 20 + 12,5 + 10 = 65.",
+   "unit": "participacions"
+  },
+  "u25l2-2": {
+   "prompt": "Amb aquestes 65 participacions per 500 €, quin és el teu preu mitjà de compra? (arrodoneix a dos decimals)",
+   "options": [],
+   "explanation": "500 ÷ 65 ≈ 7,69 €. Com que acaba a 10 €, guanyes un 30 % sense que el preu hagi pujat.",
+   "unit": "€"
+  },
+  "u25l2-3": {
+   "prompt": "Setembre del 2008. Comences a aportar 200 € al mes a un fons de l'S&P 500. Què va fer l'índex els mesos següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Amb aportacions periòdiques, quan el preu cau compres més participacions amb els mateixos diners: les caigudes treballen a favor teu si no pares.",
+   "horizon": "els mesos següents"
+  },
+  "u25l2-4": {
+   "prompt": "Juliol del 2012: l'IBEX 35 fa anys que està en crisi i gairebé ningú no vol invertir a Espanya. Si aportaves cada mes, què va passar després?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Qui aportava cada mes va comprar moltes participacions barates en el pitjor moment de la crisi. El DCA no obliga a endevinar el terra.",
+   "horizon": "l'any i mig següent"
+  },
+  "u25l2-5": {
+   "prompt": "L'Ana hereta 30.000 € per invertir a llarg termini. Sap per experiència que si ho inverteix tot i cau un 20 % el mes següent, ho vendria tot pels nervis. Quina opció encaixa millor amb el que sap d'ella mateixa?",
+   "options": [
+    "Repartir-ho en 6–12 mesos amb aportacions automàtiques",
+    "Esperar que la borsa baixi",
+    "Invertir-ho tot avui"
+   ],
+   "explanation": "La millor estratègia és la que podràs mantenir. Esperar «el moment» sol ser la pitjor.",
+   "feedback": [
+    "Bona solució intermèdia: entra al mercat sense la por de fer-ho tot el pitjor dia.",
+    "Ningú no sap quan baixarà: mentre espera, el mercat pot pujar un 30 %.",
+    "Estadísticament guanya unes 2 de cada 3 vegades, però l'Ana ja sap que abandonaria en una caiguda, i això seria el pitjor."
+   ]
+  },
+  "u25l2-6": {
+   "prompt": "Segons Vanguard, invertir una suma gran de cop va guanyar a repartir-la unes dues de cada tres vegades.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Perquè el mercat puja més vegades de les que baixa: esperar sol sortir car."
+  },
+  "u25l2-7": {
+   "prompt": "Per què invertir de cop guanya més vegades que repartir?",
+   "options": [
+    "Perquè les comissions són més baixes",
+    "Perquè els bancs ho prefereixen",
+    "Perquè el mercat puja més vegades de les que baixa"
+   ],
+   "explanation": "Cada mes que esperes, els diners que queden per invertir no són al mercat."
+  },
+  "u25l2-8": {
+   "prompt": "És un avantatge de les aportacions periòdiques o d'invertir de cop?",
+   "options": [
+    "Automatitza la disciplina",
+    "Tots els diners treballen des del primer dia",
+    "Encaixa amb cobrar un sou cada mes",
+    "Redueix el penediment si cau just després",
+    "Històricament guanya més vegades"
+   ],
+   "explanation": "Totes dues són vàlides: el que no funciona és intentar endevinar el moment.",
+   "right": [
+    "Aportacions periòdiques",
+    "De cop"
+   ]
+  },
+  "u25l2-9": {
+   "prompt": "Les aportacions periòdiques garanteixen comprar al preu mínim.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Compres a preus variats: el teu preu mitjà és raonable, però no el mínim."
+  },
+  "u25l2-10": {
+   "prompt": "Invertir la mateixa quantitat cada mes, passi el que passi, s'anomena ____.",
+   "options": [
+    "rebalanceig",
+    "market timing",
+    "palanquejament",
+    "DCA"
+   ],
+   "explanation": "Dollar-cost averaging: aportacions periòdiques."
+  },
+  "u25l3-1": {
+   "prompt": "Estimes que una acció val 20 € i cotitza a 15 €. Quin marge de seguretat tens respecte al teu valor estimat?",
+   "options": [],
+   "explanation": "(20 − 15) ÷ 20 = 0,25 → 25 %.",
+   "unit": "%"
+  },
+  "u25l3-2": {
+   "prompt": "Estimes que una empresa val 40 € per acció i exigeixes un marge de seguretat del 30 %. Quin preu màxim pagaries?",
+   "options": [],
+   "explanation": "40 × (1 − 0,30) = 28 €.",
+   "unit": "€"
+  },
+  "u25l3-3": {
+   "prompt": "Qui és el «senyor Mercat» de Graham?",
+   "options": [
+    "Un índex de valoració",
+    "El president de la borsa",
+    "Un soci d'humor canviant que cada dia t'ofereix un preu diferent"
+   ],
+   "explanation": "No li has de fer cas: pots aprofitar els seus dies de pànic i no comprar-li en els seus dies d'eufòria."
+  },
+  "u25l3-4": {
+   "prompt": "Per un pànic general, una empresa amb beneficis estables, poc deute i clients fidels cau un 30 % en un mes sense que el seu negoci hagi canviat. Com ho veu un inversor en valor?",
+   "options": [
+    "Ven: si cau, alguna cosa dolenta passa",
+    "Revisa si el negoci continua igual i si ara hi ha marge de seguretat",
+    "Compra amb tots els seus diners sense mirar res"
+   ],
+   "explanation": "L'inversor en valor separa el preu (que canvia cada dia) del valor del negoci (que canvia a poc a poc).",
+   "feedback": [
+    "Això és deixar que el senyor Mercat decideixi per tu, just el seu dia de pànic.",
+    "Bé: si el valor no ha canviat i el preu sí, hi pot haver una oportunitat. Primer es comprova.",
+    "Sense anàlisi ni diversificació no és value investing: és apostar."
+   ]
+  },
+  "u25l3-5": {
+   "prompt": "El Bruno troba una acció amb PER 4. Les vendes cauen des de fa 5 anys, el deute no para de pujar i el sector està desapareixent. Què és?",
+   "options": [
+    "Una empresa de creixement",
+    "Una ganga segura pel seu PER baix",
+    "Probablement una trampa de valor"
+   ],
+   "explanation": "Amb una ràtio baixa no n'hi ha prou: cal mirar si el negoci es manté.",
+   "feedback": [
+    "Les seves vendes cauen: és el contrari.",
+    "El PER baix reflecteix que el mercat espera que els beneficis continuïn caient.",
+    "Exacte: barat no és el mateix que infravalorat. El negoci s'està encongint."
+   ]
+  },
+  "u25l3-6": {
+   "prompt": "Relaciona cada concepte amb el seu significat.",
+   "options": [
+    "Valor intrínsec",
+    "Marge de seguretat",
+    "Senyor Mercat",
+    "Fossat (moat)"
+   ],
+   "explanation": "Són les peces bàsiques de la inversió en valor de Graham i Buffett.",
+   "right": [
+    "L'humor canviant dels preus",
+    "Avantatge que protegeix el negoci de la competència",
+    "Coixí entre aquest valor i el preu",
+    "El que estimes que val el negoci"
+   ]
+  },
+  "u25l3-7": {
+   "prompt": "Un PER baix vol dir sempre que l'acció és barata.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Pot ser una empresa en declivi o amb un benefici puntual inflat. Compara-la amb el sector i amb el seu creixement."
+  },
+  "u25l3-8": {
+   "prompt": "L'estil value bat el mercat cada any.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Ha tingut períodes llargs, de més d'una dècada, per darrere del mercat. Exigeix molta paciència."
+  },
+  "u25l3-9": {
+   "prompt": "Buffett: «El preu és el que pagues; el ____ és el que obtens».",
+   "options": [
+    "dividend",
+    "risc",
+    "benefici",
+    "valor"
+   ],
+   "explanation": "Preu i valor no són el mateix: el value investing viu d'aquesta diferència."
+  },
+  "u25l3-10": {
+   "prompt": "Quins senyals apunten a una possible trampa de valor? Marca'ls tots.",
+   "options": [
+    "Un sector que està desapareixent",
+    "Beneficis estables i un ROIC alt",
+    "Deute que no para de créixer",
+    "Vendes que cauen any rere any"
+   ],
+   "explanation": "Beneficis estables i alta rendibilitat sobre el capital són senyals de qualitat, no de trampa."
+  },
+  "u25l3-11": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Sí, com més cau, millor",
+    "Value és comprar el que més puja",
+    "El que importa és quant val el negoci, no a quant va estar"
+   ],
+   "explanation": "Value compara preu amb valor, no el preu d'avui amb el d'ahir.",
+   "feedback": [
+    "Això és ancoratge: que abans valgués 100 € no diu res del que val avui.",
+    "Això s'assembla més al momentum, una altra estratègia diferent.",
+    "Ah, d'acord: primer estimo el valor, i només si el preu és força per sota, hi ha marge."
+   ],
+   "lines": [
+    "Value investing és comprar el que més ha caigut, oi? 📉",
+    "Aquesta acció estava a 100 € i ara a 40 €: ganga!"
+   ]
+  },
+  "u25l4-1": {
+   "prompt": "Una acció cotitza a 15 € i paga 0,50 € de dividend l'any. Quina és la seva rendibilitat per dividend? (arrodoneix a un decimal)",
+   "options": [],
+   "explanation": "0,50 ÷ 15 ≈ 0,033 → 3,3 %.",
+   "unit": "%"
+  },
+  "u25l4-2": {
+   "prompt": "Una empresa guanya 2 € per acció i paga 1,80 € de dividend. Quin és el seu pay-out?",
+   "options": [],
+   "explanation": "1,80 ÷ 2 = 0,9 → 90 %: reparteix gairebé tot el que guanya. Si els beneficis baixen, el dividend perilla.",
+   "unit": "%"
+  },
+  "u25l4-3": {
+   "prompt": "Cobres 1.000 € bruts de dividends d'empreses espanyoles i et retenen un 19 %. Quant t'arriba al compte?",
+   "options": [],
+   "explanation": "1.000 × (1 − 0,19) = 810 €. Després, a la declaració, s'ajusta al teu tram.",
+   "unit": "€"
+  },
+  "u25l4-4": {
+   "prompt": "Marca els missatges que són una estafa o una trampa evident.",
+   "options": [
+    "Fons exclusiu: 1 % de dividend cada mes assegurat, sense risc. Transfereix avui a aquest compte.",
+    "Viu de dividends amb només 1.000 € 💸 Uneix-te al meu grup de pagament i et dic quins.",
+    "L'empresa de la qual tens accions pagarà un dividend de 0,40 € per acció. Data ex-dividend: el dia 12.",
+    "Recorda: els dividends es declaren com a rendiments del capital mobiliari a l'IRPF.",
+    "🔥 Acció que paga un 15 % de dividend GARANTIT. Només avui, places limitades."
+   ],
+   "explanation": "Promeses de dividends garantits, urgència i «viure de rendes amb 1.000 €» són senyals de frau. Cap acció no garanteix el seu dividend.",
+   "senders": [
+    "Desconegut",
+    "Influencer",
+    "El teu bròquer",
+    "Agència Tributària",
+    "Canal «Rendes VIP»"
+   ]
+  },
+  "u25l4-5": {
+   "prompt": "Quan una empresa paga un dividend, el preu de la seva acció sol baixar aproximadament en aquesta quantitat.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Els diners surten de l'empresa: el teu patrimoni total no canvia per cobrar-lo."
+  },
+  "u25l4-6": {
+   "prompt": "Una acció ofereix un dividend del 13 %. Què hauries de comprovar primer?",
+   "options": [
+    "Quants seguidors té a les xarxes",
+    "Res: un 13 % sempre és una ganga",
+    "Si el benefici i la caixa cobreixen el dividend, i per què ha caigut tant el preu"
+   ],
+   "explanation": "Un rendiment així sol indicar que el mercat espera una retallada."
+  },
+  "u25l4-7": {
+   "prompt": "És propi d'un fons d'acumulació o de distribució?",
+   "options": [
+    "Et paga els dividends al compte",
+    "No pagues impostos fins que vens",
+    "Útil si necessites rendes periòdiques",
+    "Reinverteix els dividends automàticament"
+   ],
+   "explanation": "En la fase d'acumular patrimoni, els d'acumulació solen ser més eficients fiscalment.",
+   "right": [
+    "Acumulació",
+    "Distribució"
+   ]
+  },
+  "u25l4-8": {
+   "prompt": "Ràpid: un pay-out del 95 % durant anys, què pot indicar?",
+   "options": [
+    "Que l'empresa creix molt de pressa",
+    "Que el dividend està garantit",
+    "Que el dividend pot estar en perill"
+   ],
+   "explanation": "Reparteix gairebé tot el que guanya: poc marge si els beneficis cauen."
+  },
+  "u25l4-9": {
+   "prompt": "El Bruno busca rendes. Dubta entre una empresa amb un dividend del 12 %, beneficis en caiguda i deute creixent, i una altra amb un 3 % cobert de sobres pel benefici. Quin és el criteri més prudent?",
+   "options": [
+    "Triar segons la que més ha pujat aquest mes",
+    "Mirar la sostenibilitat del dividend, no només la mida",
+    "La del 12 %: cobra quatre vegades més"
+   ],
+   "explanation": "L'important és la rendibilitat total i que el dividend sigui sostenible.",
+   "feedback": [
+    "Això no diu res de si el dividend és sostenible.",
+    "Bé: un dividend cobert i estable val més que un d'alt en perill.",
+    "Si retalla el dividend i l'acció cau, el Bruno perd rendes i capital alhora."
+   ]
+  },
+  "u25l4-10": {
+   "prompt": "El dia en què l'acció comença a cotitzar sense dret al dividend s'anomena data ____.",
+   "options": [
+    "de pagament",
+    "de valor",
+    "d'emissió",
+    "ex-dividend"
+   ],
+   "explanation": "Aquell dia el preu baixa aproximadament el que es paga de dividend."
+  },
+  "u25l5-1": {
+   "prompt": "Quina tendència veus en aquest gràfic real? (Apple · tancaments cada 3 sessions · març–maig del 2026)",
+   "options": [
+    "Alcista",
+    "Baixista",
+    "Lateral"
+   ],
+   "explanation": "Màxims i mínims cada cop més alts: és el terreny del seguidor de tendències."
+  },
+  "u25l5-2": {
+   "prompt": "I en aquest altre? (NVIDIA · tancaments cada 3 sessions · febrer–abril del 2025)",
+   "options": [
+    "Alcista",
+    "Baixista",
+    "Lateral"
+   ],
+   "explanation": "Màxims i mínims cada cop més baixos: un seguidor de tendències en compres es quedaria fora."
+  },
+  "u25l5-3": {
+   "prompt": "Últim gràfic. Quina tendència hi ha? (Microsoft · tancaments cada 3 sessions · juliol–setembre del 2025)",
+   "options": [
+    "Alcista",
+    "Baixista",
+    "Lateral"
+   ],
+   "explanation": "Sense direcció clara: aquí les estratègies de tendència pateixen senyals falsos."
+  },
+  "u25l5-4": {
+   "prompt": "Aquest actiu venia pujant. Com a seguidor de tendències, què creus que va fer les sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Que una tendència persisteixi més vegades de les que gira no vol dir que ho faci sempre: per això l'stop.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u25l5-5": {
+   "prompt": "Un altre gràfic real d'un índex. Puja o baixa després?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "L'avantatge del momentum és estadístic, sobre moltes operacions. En un cas solt, pot passar qualsevol cosa.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u25l5-6": {
+   "prompt": "En quin termini han tendit a persistir les tendències segons els estudis de momentum?",
+   "options": [
+    "D'1 a 5 minuts",
+    "De 3 a 12 mesos",
+    "De 20 a 30 anys"
+   ],
+   "explanation": "És l'horitzó de la majoria d'estudis, en molts mercats i des de fa més d'un segle."
+  },
+  "u25l5-7": {
+   "prompt": "Les estratègies de tendència solen encertar la majoria de les seves operacions.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Solen encertar menys de la meitat: guanyen perquè els seus encerts són molt més grans que els seus errors."
+  },
+  "u25l5-8": {
+   "prompt": "Un sistema de tendència encerta el 35 %, guanya 3R de mitjana i perd 1R. Quina és la seva esperança?",
+   "options": [],
+   "explanation": "0,35 × 3 − 0,65 × 1 = 1,05 − 0,65 = +0,4R, abans de costos.",
+   "unit": "R"
+  },
+  "u25l5-9": {
+   "prompt": "Ràpid: on pateix més un seguidor de tendències?",
+   "options": [
+    "En un mercat lateral",
+    "En una tendència llarga",
+    "En un mercat que puja a poc a poc"
+   ],
+   "explanation": "Sense direcció clara, entra i surt una vegada i una altra amb petites pèrdues."
+  },
+  "u25l5-10": {
+   "prompt": "Ordena els passos d'una regla senzilla de seguiment de tendència.",
+   "options": [
+    "Entrar quan es compleix el senyal de la teva regla",
+    "Calcular la mida amb l'1 % de risc",
+    "Posar l'stop sota l'últim mínim creixent",
+    "Pujar l'stop a mesura que avança la tendència",
+    "Comprovar que hi ha tendència alcista (màxims i mínims creixents)"
+   ],
+   "explanation": "Sense l'stop i la mida, cap regla de tendència no sobreviu als seus girs."
+  },
+  "u25l6-1": {
+   "prompt": "Operació de swing: tens 10.000 € i arrisques com a màxim un 1 %. Tria stop i import.",
+   "options": [],
+   "explanation": "Stop sota el mínim recent i mida calculada amb aquest stop. La resta la decideix el mercat."
+  },
+  "u25l6-2": {
+   "prompt": "Una altra operació, ara amb un compte de 5.000 €. Mateix límit: 1 % com a màxim.",
+   "options": [],
+   "explanation": "Si el preu va en contra, l'stop limita la pèrdua al que havies previst. Per això es decideix abans d'entrar."
+  },
+  "u25l6-3": {
+   "prompt": "Swing en un índex. Col·loca l'stop d'aquesta compra.",
+   "options": [],
+   "explanation": "Per sota del mínim recent: si es perd, el retrocés s'ha convertit en una altra cosa."
+  },
+  "u25l6-4": {
+   "prompt": "Ara col·loca l'objectiu d'aquesta compra.",
+   "options": [],
+   "explanation": "A prop del màxim anterior, on sol aparèixer venda. Compara-ho amb la distància a l'stop."
+  },
+  "u25l6-5": {
+   "prompt": "Un swing trader busca rangs i tendències. Què hi veus? (NVIDIA · tancaments cada 3 sessions · desembre del 2025 – febrer del 2026)",
+   "options": [
+    "Alcista",
+    "Baixista",
+    "Lateral"
+   ],
+   "explanation": "En un lateral, el swing trader compra a prop del terra del rang i ven a prop del sostre, amb stop sota el terra."
+  },
+  "u25l6-6": {
+   "prompt": "En un rang, l'objectiu d'una compra sol anar a prop del sostre. Toca el punt més alt. (Apple · tancaments cada 3 sessions · setembre–novembre del 2024)",
+   "options": [],
+   "explanation": "El sostre del rang és on altres vegades va aparèixer la venda."
+  },
+  "u25l6-7": {
+   "prompt": "Relaciona cada estil amb el seu termini típic.",
+   "options": [
+    "Day trading",
+    "Swing trading",
+    "Seguiment de tendència",
+    "Comprar i mantenir"
+   ],
+   "explanation": "Com més curt és el termini, més soroll i més costos per cada euro guanyat.",
+   "right": [
+    "De dies a setmanes",
+    "De mesos",
+    "Anys o dècades",
+    "Minuts o hores; tanca el mateix dia"
+   ]
+  },
+  "u25l6-8": {
+   "prompt": "Quin risc té el swing trading que no té el day trading?",
+   "options": [
+    "Que no hi ha comissions",
+    "Els salts de preu entre una sessió i la següent",
+    "Que no es fan servir stops"
+   ],
+   "explanation": "Com que deixes posicions obertes a la nit, el preu pot obrir lluny del teu stop."
+  },
+  "u25l6-9": {
+   "prompt": "El swing trading es fa normalment en gràfics d'1 minut.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Se sol fer servir el gràfic diari: operacions de dies a setmanes."
+  },
+  "u25l6-10": {
+   "prompt": "Swing: entres a 30 €, stop a 28,50 € i objectiu a 34,50 €. Si arriba a l'objectiu, quantes R guanyes?",
+   "options": [],
+   "explanation": "Risc: 1,50 €. Benefici: 4,50 €. 4,50 ÷ 1,50 = 3R.",
+   "unit": "R"
+  },
+  "u25l7-1": {
+   "prompt": "Segons l'estudi del Brasil, la majoria dels qui van fer day trading més de 300 dies va guanyar diners.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "El 97 % va perdre diners (Chague, De-Losso i Giovannetti, 2020)."
+  },
+  "u25l7-2": {
+   "prompt": "En aquest estudi del Brasil, quin percentatge va guanyar més que el salari mínim?",
+   "options": [
+    "Al voltant del 50 %",
+    "Al voltant de l'1 %",
+    "Al voltant del 25 %"
+   ],
+   "explanation": "Un 1,1 %: fins i tot entre els pocs que guanyaven, gairebé cap no guanyava prou per viure'n."
+  },
+  "u25l7-3": {
+   "prompt": "A Taiwan, menys de l'1 % dels day traders aconsegueix guanyar de manera predictible després de comissions.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Barber, Lee, Liu i Odean, amb dades de la borsa de Taiwan del 1992 al 2006."
+  },
+  "u25l7-4": {
+   "prompt": "Dels qui van fer day trading més de 300 dies al Brasil, el ____ va perdre diners.",
+   "options": [
+    "50 %",
+    "70 %",
+    "30 %",
+    "97 %"
+   ],
+   "explanation": "Chague, De-Losso i Giovannetti (2020)."
+  },
+  "u25l7-5": {
+   "prompt": "Fas 4 operacions al dia i cadascuna et costa 5 € entre comissió i spread. En 250 dies de mercat, quant pagues en costos?",
+   "options": [],
+   "explanation": "4 × 5 × 250 = 5.000 €: abans de guanyar res, ja has de recuperar això.",
+   "unit": "€"
+  },
+  "u25l7-6": {
+   "prompt": "Per què perd la majoria de day traders? Marca-les totes.",
+   "options": [
+    "La competència de professionals i algoritmes",
+    "Que està prohibit a Espanya",
+    "El soroll dels gràfics de minuts",
+    "Els costos d'operar tant"
+   ],
+   "explanation": "No està prohibit: simplement, els números juguen en contra."
+  },
+  "u25l7-7": {
+   "prompt": "Un influencer ensenya captures de 3.000 € guanyats en un dia i ven un curs de 500 € per «viure del trading». Què fas?",
+   "options": [
+    "Li demano l'historial complet i verificat, i recordo els estudis",
+    "Li copio les operacions amb diners prestats",
+    "Compro el curs, les captures ho demostren"
+   ],
+   "explanation": "Les captures de guanys no proven res: compta l'historial complet, amb costos.",
+   "feedback": [
+    "Bé: el més normal és que no el tingui. I les dades diuen que el 97 % dels persistents perd.",
+    "Perds els diners i, a més, deus el préstec.",
+    "Una captura no és un historial: no hi veus les pèrdues ni quant guanya amb els cursos."
+   ]
+  },
+  "u25l7-8": {
+   "prompt": "Dada real o mite?",
+   "options": [
+    "Com més operacions, més pesen els costos",
+    "Les captures a les xarxes mostren l'historial complet",
+    "A Taiwan, menys de l'1 % guanya de manera persistent després de comissions",
+    "El 97 % dels qui van fer day trading més de 300 dies al Brasil va perdre",
+    "Amb 500 € i un bon curs es pot viure del trading"
+   ],
+   "explanation": "Les dades surten d'estudis amb milions d'operacions; els mites, de captures soltes.",
+   "right": [
+    "Dada real",
+    "Mite"
+   ]
+  },
+  "u25l7-9": {
+   "prompt": "Ràpid: què converteix un avantatge petit en pèrdua quan operes molt?",
+   "options": [
+    "Els costos",
+    "Els dividends",
+    "La inflació"
+   ],
+   "explanation": "Comissió i spread en cada operació: com més operacions, més pesen."
+  },
+  "u25l7-10": {
+   "prompt": "Què li dius a la Lumi?",
+   "options": [
+    "Endavant, tens talent!",
+    "Demana un préstec per tenir més capital",
+    "Tres dies no proven res; els estudis diuen que gairebé tothom perd"
+   ],
+   "explanation": "Abans d'arriscar el teu sustent, mira l'evidència i les teves pròpies estadístiques amb moltes operacions.",
+   "feedback": [
+    "Tres dies són una mostra ridícula… i les dades diuen que gairebé tots els qui ho intenten seriosament perden.",
+    "Això converteix una mala idea en una de pitjor: pèrdues i deutes.",
+    "D'acord, millor continuo aprenent, registro 100 operacions al simulador i mantinc la feina."
+   ],
+   "lines": [
+    "Estic pensant a deixar la feina per fer day trading 🚀",
+    "He guanyat 3 dies seguits amb el simulador."
+   ]
+  },
+  "u25l8-1": {
+   "prompt": "Amb palanquejament 1:10 poses 1.000 € de marge. L'actiu puja un 5 %. Quant guanyes?",
+   "options": [],
+   "explanation": "Controles 10.000 €: 10.000 × 5 % = 500 €, un 50 % dels teus diners. Si hagués baixat un 5 %, perdries el mateix.",
+   "unit": "€"
+  },
+  "u25l8-2": {
+   "prompt": "Amb palanquejament 1:30, quin moviment en contra s'emporta tot el marge de la posició? (arrodoneix a un decimal)",
+   "options": [],
+   "explanation": "100 % ÷ 30 ≈ 3,3 %: un moviment normal d'un parell de dies.",
+   "unit": "%"
+  },
+  "u25l8-3": {
+   "prompt": "Amb palanquejament 1:5, quina caiguda de l'actiu s'emporta tot el teu marge?",
+   "options": [],
+   "explanation": "100 % ÷ 5 = 20 %.",
+   "unit": "%"
+  },
+  "u25l8-4": {
+   "prompt": "Segons l'advertència oficial, entre un 74 i un 89 % dels inversors minoristes perden diners amb CFD.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "És el rang que els bròquers de la UE han de mostrar; cadascun publica, a més, el seu propi percentatge."
+  },
+  "u25l8-5": {
+   "prompt": "A la UE, un client minorista pot perdre més del que ha dipositat quan opera amb CFD.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Des del 2018 hi ha protecció davant del saldo negatiu: no pots perdre més del que has dipositat."
+  },
+  "u25l8-6": {
+   "prompt": "La Laura vol obrir un CFD sobre un índex amb 1.000 € i el palanquejament màxim «perquè doni més de si». No ha fet servir mai un stop. Què li diries com a concepte?",
+   "options": [
+    "Primer aprendre sense palanquejament; si algun dia el fa servir, poc, amb stop i calculant sobre l'exposició total",
+    "Millor posar-se curta, que és més segur",
+    "Endavant, així guanya més ràpid"
+   ],
+   "explanation": "Primer el mètode i la gestió del risc; el palanquejament, si de cas, molt després.",
+   "feedback": [
+    "Bé: el palanquejament només amplifica el que ja fas. Sense mètode, amplifica els errors.",
+    "Al revés: en curt la pèrdua potencial és il·limitada.",
+    "Amb 1:20, una caiguda del 5 % de l'índex s'emporta tot el seu marge. Pot passar en una setmana."
+   ]
+  },
+  "u25l8-7": {
+   "prompt": "Per què la pèrdua d'una posició curta és potencialment il·limitada?",
+   "options": [
+    "Perquè el bròquer no permet stops",
+    "Perquè el preu pot pujar sense límit",
+    "Perquè les posicions curtes no paguen comissió"
+   ],
+   "explanation": "Si compres, el màxim que perds és el que has invertit; en curt, cada euro que puja el preu és pèrdua."
+  },
+  "u25l8-8": {
+   "prompt": "Relaciona cada producte amb el palanquejament màxim per a minoristes en CFD a la UE.",
+   "options": [
+    "Divises principals",
+    "Índexs principals",
+    "Accions individuals",
+    "Criptomonedes"
+   ],
+   "explanation": "Com més volàtil és l'actiu, menor és el palanquejament permès (ESMA, 2018).",
+   "right": [
+    "1:20",
+    "1:2",
+    "1:5",
+    "1:30"
+   ]
+  },
+  "u25l8-9": {
+   "prompt": "El palanquejament multiplica els guanys però no les pèrdues.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Multiplica tots dos per igual."
+  },
+  "u25l8-10": {
+   "prompt": "Quan una pujada violenta obliga els qui estan curts a recomprar alhora, es produeix un ____.",
+   "options": [
+    "margin call",
+    "dividend",
+    "split",
+    "short squeeze"
+   ],
+   "explanation": "Com amb GameStop el 2021: els curts recomprant empenyen encara més el preu."
+  },
+  "u25l9-1": {
+   "prompt": "Relaciona cada personatge amb l'estratègia que encaixa més amb el que explica de si mateix.",
+   "options": [
+    "Marta: 30 minuts al mes i odia mirar la borsa",
+    "Pablo: li encanta llegir comptes d'empreses",
+    "Ana: revisa gràfics cada dia i segueix regles",
+    "Bruno: horitzó de 40 anys i vol una cosa simple"
+   ],
+   "explanation": "Són exemples educatius d'encaix entre temps, gustos i estratègia, no recomanacions.",
+   "right": [
+    "Value investing amb estudi de negocis",
+    "Swing trading amb pla i diari",
+    "Comprar i mantenir un índex mundial",
+    "Aportacions automàtiques a un fons indexat"
+   ]
+  },
+  "u25l9-2": {
+   "prompt": "El Bruno treballa 10 hores al dia i només pot mirar el mòbil a les pauses. Vol començar amb day trading. Què li encaixa millor com a concepte?",
+   "options": [
+    "Day trading amb palanquejament per compensar el poc temps",
+    "Day trading a les pauses",
+    "Una estratègia que no depengui de mirar el mercat, com aportar cada mes a un fons indexat"
+   ],
+   "explanation": "L'estratègia ha de cabre en la teva vida real.",
+   "feedback": [
+    "Encara pitjor: més risc amb menys atenció.",
+    "Sense poder mirar la pantalla, cada operació queda a mercè del soroll. I la majoria perd fins i tot dedicant-s'hi a temps complet.",
+    "Bé: encaixa amb el seu temps i no l'obliga a decidir amb pressa entre reunió i reunió."
+   ]
+  },
+  "u25l9-3": {
+   "prompt": "L'Ana es posa molt nerviosa amb els números vermells i el 2022 ho va vendre tot després d'una caiguda del 15 %. Ara vol tornar a invertir. Què té més sentit?",
+   "options": [
+    "Una cartera 100 % d'accions de creixement",
+    "No invertir mai",
+    "Una barreja amb més bons i liquiditat i aportacions automàtiques, amb el seu pla per escrit"
+   ],
+   "explanation": "El temperament importa tant com la rendibilitat esperada.",
+   "feedback": [
+    "Amb la seva reacció a les caigudes, és probable que torni a vendre en el pitjor moment.",
+    "La inflació continuarà restant poder de compra als seus diners aturats.",
+    "Bé: una cartera que pugui aguantar li donarà millor resultat que una d'«òptima» que abandoni."
+   ]
+  },
+  "u25l9-4": {
+   "prompt": "Què li contestes?",
+   "options": [
+    "La que més va pujar l'any passat",
+    "El day trading, que és la més ràpida",
+    "La que encaixi amb el meu temps, el meu horitzó i el que aguanto sense vendre"
+   ],
+   "explanation": "No hi ha una estratègia millor per a tothom: hi ha la que tu pots mantenir.",
+   "feedback": [
+    "Això és biaix de recència: el que va anar millor un any rarament ho repeteix l'any següent.",
+    "Ràpida sí… i les dades diuen que gairebé tothom perd.",
+    "Això mateix! Una bona estratègia que abandones a la primera caiguda rendeix menys que una de senzilla que mantens."
+   ],
+   "lines": [
+    "D'acord, però digues-me ja quina és la millor estratègia 😅",
+    "La que més guanyi."
+   ]
+  },
+  "u25l9-5": {
+   "prompt": "Què fa l'estructura de «nucli i satèl·lit»?",
+   "options": [
+    "Ho inverteix tot en una sola acció",
+    "Fa servir palanquejament al nucli",
+    "Separa una cartera principal de llarg termini d'una part petita per especular"
+   ],
+   "explanation": "El satèl·lit té un límit escrit: el que podries perdre sencer sense que et canviés la vida."
+  },
+  "u25l9-6": {
+   "prompt": "Quant de temps exigeix cada estratègia?",
+   "options": [
+    "Analitzar a fons els comptes d'empreses",
+    "Rebalancejar un cop l'any",
+    "Aportacions automàtiques a un fons indexat",
+    "Day trading"
+   ],
+   "explanation": "Si no tens temps, tria alguna cosa que funcioni sense tu.",
+   "right": [
+    "Molt de temps cada dia",
+    "Poc temps"
+   ]
+  },
+  "u25l9-7": {
+   "prompt": "La millor estratègia per a tu és la que més rendibilitat va donar l'any passat.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "El rendiment d'un any no prediu el següent; importa que encaixi amb tu i que tingui evidència al darrere."
+  },
+  "u25l9-8": {
+   "prompt": "Ràpid: quina estratègia té més evidència a llarg termini per a la majoria de la gent?",
+   "options": [
+    "Day trading",
+    "Comprar i mantenir una cartera diversificada i barata",
+    "Seguir consells de les xarxes"
+   ],
+   "explanation": "Ho diuen SPIVA, Bogle, Sharpe i un segle de dades."
+  },
+  "u25l9-9": {
+   "prompt": "Ordena els passos per triar la teva estratègia.",
+   "options": [
+    "Veure quant de temps hi pots dedicar",
+    "Decidir quina caiguda aguantaries sense vendre",
+    "Escriure les teves regles",
+    "Definir objectiu i horitzó",
+    "Provar-la al simulador"
+   ],
+   "explanation": "Primer conèixer-te; després escriure el pla; al final, provar-lo sense diners reals."
+  },
+  "u25l9-10": {
+   "prompt": "Quines preguntes et fas abans de triar estratègia? Marca-les totes.",
+   "options": [
+    "Quant de temps hi puc dedicar?",
+    "Quina és la que més ha pujat aquest mes?",
+    "Quina caiguda aguantaria sense vendre?",
+    "Quan necessitaré aquests diners?"
+   ],
+   "explanation": "El que més ha pujat aquest mes no et diu quina estratègia podràs mantenir."
+  }
+ }
+}

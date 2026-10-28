@@ -1,0 +1,630 @@
+{
+ "unit": {
+  "title": "Currencies (forex)",
+  "description": "How to read currency pairs, what moves a currency and how it affects your portfolio",
+  "section": "Currencies and commodities"
+ },
+ "lessons": {
+  "u14l1": {
+   "title": "Currency pairs",
+   "steps": [
+    {
+     "title": "Base and quote",
+     "body": "A pair reads like this: **EUR/USD = 1.16** means **1 euro (the base) is worth 1.16 dollars (the quote)**.\n\n• If it rises to 1.20, the euro **appreciates**: it buys more dollars.\n• If it falls to 1.10, the euro **depreciates**.\n\nBuying EUR/USD means buying euros and paying with dollars; selling it, the opposite."
+    },
+    {
+     "title": "The biggest market in the world",
+     "body": "About **9.6 trillion dollars a day** change hands (BIS, April 2025). The dollar is on one side of **89 %** of trades; the euro and the yen come next.\n\n• **Major pairs:** EUR/USD, USD/JPY, GBP/USD, USD/CHF…\n• It's open 24 hours a day, Monday to Friday: Sydney, Tokyo, London and New York pass the baton."
+    },
+    {
+     "title": "Flipping it round",
+     "body": "If EUR/USD = 1.25, then one dollar is worth 1 ÷ 1.25 = €0.80. To turn dollars into euros, **divide** by EUR/USD; to turn euros into dollars, **multiply**.",
+     "key": "In a pair you always buy one currency by selling the other: the first one is the one you're buying.",
+     "tip": "A currency never rises on its own: it rises against another one."
+    }
+   ]
+  },
+  "u14l2": {
+   "title": "Pips, lots and leverage",
+   "steps": [
+    {
+     "title": "Pips and lots",
+     "body": "Currencies move in **pips**: the fourth decimal place (0.0001) in almost all pairs; in yen pairs, the second (0.01).\n\nEUR/USD from 1.1600 to 1.1650 = **50 pips**.\n\nYou trade in **lots**: standard = 100,000 units of the base currency; mini = 10,000; micro = 1,000. In EUR/USD, 1 pip on a standard lot is worth **$10**."
+    },
+    {
+     "title": "Leverage",
+     "body": "Brokers let you trade with far more money than you put in. With **1:30** (the maximum for retail clients in the EU on major pairs), €1,000 of margin controls €30,000.\n\nA **3.3 %** move against you wipes out all the margin: losses are multiplied by 30, just like gains."
+    },
+    {
+     "title": "Size comes from risk",
+     "body": "Adjust the capital, the risk per trade and the distance to the stop: your position size is set by what you're willing to lose, not by the leverage you're offered."
+    },
+    {
+     "title": "CNMV warning",
+     "body": "\"CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. Between 74 and 89 % of retail investor accounts lose money when trading CFDs.\"",
+     "key": "Leverage doesn't make you a better investor: it just makes your mistakes bigger.",
+     "tip": "Being allowed to trade with 30 times your money doesn't mean you should."
+    }
+   ]
+  },
+  "u14l3": {
+   "title": "What moves a currency",
+   "steps": [
+    {
+     "title": "Interest rates rule",
+     "body": "Money goes where the returns are. If the Fed pays more than the ECB, many investors buy dollars to invest in the US and the **dollar tends to appreciate**.\n\nIt's not just today's rate that counts, but what the market **expects** central banks to do."
+    },
+    {
+     "title": "Inflation, trade and fear",
+     "body": "• **High, persistent inflation:** in the long run, the currency loses value.\n• **Trade:** a country that exports a lot gets demand for its currency.\n• **Growth:** attracts investment.\n• **Fear:** in a crisis, money flees to the dollar, the Swiss franc and the yen."
+    },
+    {
+     "title": "2022: the euro hits parity",
+     "body": "In 2022 the Fed raised rates earlier and faster than the ECB, and the war in Ukraine hit Europe harder. EUR/USD fell from 1.13 to below 1: **parity for the first time in 20 years**.",
+     "key": "Currencies move on differences: in interest rates, inflation, growth and confidence."
+    }
+   ]
+  },
+  "u14l4": {
+   "title": "Currency risk in your portfolio",
+   "steps": [
+    {
+     "title": "Two returns in one",
+     "body": "If you buy an S&P 500 fund in euros, you gain or lose because of **two things**: what the shares do (in dollars) and what the **dollar does against the euro**.\n\n**Return in euros ≈ (1 + return in $) × (1 + change in the dollar) − 1.**"
+    },
+    {
+     "title": "It really happened",
+     "body": "In **2025** the dollar lost **more than 10 %** against the euro: anyone with an S&P 500 fund saw a good rise in dollars shrink to much less in euros.\n\nAnd the other way round: in **2022** the dollar's rise cushioned the fall in the US stock market for Europeans."
+    },
+    {
+     "title": "To hedge or not to hedge",
+     "body": "There are **currency-hedged** funds (\"EUR Hedged\"): they remove almost all of the dollar's effect for a small cost. With long-term equity funds many investors don't hedge; with bonds it's common to hedge, because the currency would move more than the bond itself.",
+     "key": "When you invest abroad, you also invest in that country's currency.",
+     "tip": "Check what currency the thing you're buying is in… and which one you'll be spending in."
+    }
+   ]
+  },
+  "u14l5": {
+   "title": "Safe-haven currencies",
+   "steps": [
+    {
+     "title": "Where money hides",
+     "body": "When panic hits, money rushes to **safe-haven currencies**:\n\n• **Dollar:** the world's reserve currency and the biggest bond market.\n• **Swiss franc:** a stable country with little debt.\n• **Yen:** Japan is one of the world's biggest creditors; in a crisis, its investors bring their money back home."
+    },
+    {
+     "title": "When the safe haven gives you a scare",
+     "body": "On **15 January 2015** the Swiss National Bank scrapped its cap of 1.20 francs per euro. Within minutes, EUR/CHF hit **0.85**: the franc soared and several brokers went bust.\n\nIn **August 2024** the yen jumped suddenly as the *carry trade* (borrowing cheap yen to invest abroad) unwound, and the Nikkei fell **12.4 %** in a day."
+    },
+    {
+     "title": "Safe haven doesn't mean safe",
+     "body": "A safe-haven currency tends to rise when everything else falls, but it can move violently in both directions. Knowing this helps you understand a crisis, not predict the next one.",
+     "key": "In a crisis, money looks for dollars, francs and yen."
+    }
+   ]
+  },
+  "u14r": {
+   "title": "Unit review",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u14l1-1": {
+   "prompt": "EUR/USD = 1.16. What does it mean?",
+   "options": [
+    "1 dollar is worth 1.16 euros",
+    "1 euro is worth 1.16 dollars",
+    "The euro has risen 16 % this year"
+   ],
+   "explanation": "The first currency (the base) is always worth 1; the figure tells you how many units of the second it costs."
+  },
+  "u14l1-2": {
+   "prompt": "In EUR/USD, the euro is the ____ currency and the dollar is the quote currency.",
+   "options": [
+    "quote",
+    "safe-haven",
+    "strong",
+    "base"
+   ],
+   "explanation": "The base comes first and is always worth 1 unit."
+  },
+  "u14l1-3": {
+   "prompt": "EUR/USD goes from 1.10 to 1.05. What has happened?",
+   "options": [
+    "The dollar has depreciated",
+    "The euro has depreciated",
+    "The euro has appreciated"
+   ],
+   "explanation": "One euro now buys $1.05 instead of $1.10: it's worth less. At the same time, the dollar has appreciated."
+  },
+  "u14l1-4": {
+   "prompt": "EUR/USD = 1.25. How many euros is 1 dollar worth?",
+   "options": [],
+   "explanation": "1 ÷ 1.25 = €0.80.",
+   "unit": "€"
+  },
+  "u14l1-5": {
+   "prompt": "You come back from New York with $230. If EUR/USD = 1.15, how many euros do you get when you change them (no fees)?",
+   "options": [],
+   "explanation": "230 ÷ 1.15 = €200. From dollars to euros, you divide.",
+   "unit": "€"
+  },
+  "u14l1-6": {
+   "prompt": "Match each quote with what it means.",
+   "options": [
+    "EUR/USD = 1.16",
+    "USD/JPY = 150",
+    "GBP/USD = 1.30",
+    "EUR/CHF = 0.94"
+   ],
+   "explanation": "Always: 1 unit of the first currency = the figure in the second.",
+   "right": [
+    "$1 is worth 150 yen",
+    "£1 is worth $1.30",
+    "€1 is worth 0.94 Swiss francs",
+    "€1 is worth $1.16"
+   ]
+  },
+  "u14l1-7": {
+   "prompt": "Real chart of 30 sessions of a major currency pair, with no name or date. What do you think it did over the next 10?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Look at the range: major pairs usually move less than 1 % in a day, much less than a share. Even so, nobody reliably gets their direction right.",
+   "horizon": "the next 10 sessions"
+  },
+  "u14l1-8": {
+   "prompt": "Quick: you buy EUR/USD. Which currency are you buying?",
+   "options": [
+    "The dollar",
+    "The euro",
+    "Both at once"
+   ],
+   "explanation": "You buy the base (euro) and pay with the quote (dollar)."
+  },
+  "u14l1-9": {
+   "prompt": "The currency market closes every day at 17:30, like the Madrid Stock Exchange.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It runs 24 hours a day, Monday to Friday, moving from Asia to Europe and the Americas."
+  },
+  "u14l1-10": {
+   "prompt": "Laura is paid in euros and is going to London on Erasmus. She sees that GBP/EUR has gone from 1.15 to 1.20 this month. How does it affect her?",
+   "options": [
+    "Each pound costs her more euros: everything is just over 4 % more expensive for her",
+    "It doesn't affect her because she pays by card",
+    "Her trip works out cheaper"
+   ],
+   "explanation": "If the currency you need goes up, it costs you more euros.",
+   "feedback": [
+    "That's it: (1.20 − 1.15) ÷ 1.15 ≈ 4.3 % more expensive.",
+    "The card converts at the day's exchange rate: it affects her just the same.",
+    "The other way round: each pound now costs €1.20 instead of €1.15."
+   ]
+  },
+  "u14l1-11": {
+   "prompt": "Which are major pairs? Select all that apply.",
+   "options": [
+    "GBP/USD",
+    "USD/TRY (Turkish lira)",
+    "USD/JPY",
+    "EUR/USD"
+   ],
+   "explanation": "The majors pair the dollar with another big currency. USD/TRY is an exotic pair: wider spreads and more volatility."
+  },
+  "u14l2-1": {
+   "prompt": "EUR/USD goes from 1.1600 to 1.1675. How many pips has it moved?",
+   "options": [],
+   "explanation": "1.1675 − 1.1600 = 0.0075 = 75 pips (each pip is 0.0001).",
+   "unit": "pips"
+  },
+  "u14l2-2": {
+   "prompt": "With 1 standard lot of EUR/USD (1 pip = $10), the pair moves 40 pips in your favour. How much do you make?",
+   "options": [],
+   "explanation": "40 × $10 = $400. If it moves 40 against you, you lose the same.",
+   "unit": "$"
+  },
+  "u14l2-3": {
+   "prompt": "With a mini lot of EUR/USD (€10,000), how much is each pip worth?",
+   "options": [],
+   "explanation": "10,000 × 0.0001 = $1 per pip.",
+   "unit": "$"
+  },
+  "u14l2-4": {
+   "prompt": "Quick: how many units are in a standard lot?",
+   "options": [
+    "100,000",
+    "10,000",
+    "1,000"
+   ],
+   "explanation": "Standard 100,000; mini 10,000; micro 1,000."
+  },
+  "u14l2-5": {
+   "prompt": "With 1:30 leverage, how much margin do you need to open a €15,000 position?",
+   "options": [],
+   "explanation": "15,000 ÷ 30 = €500.",
+   "unit": "€"
+  },
+  "u14l2-6": {
+   "prompt": "With 1:30 leverage, what move against you (in %) wipes out all your margin?",
+   "options": [],
+   "explanation": "1 ÷ 30 ≈ 3.33 %. In currencies that can happen in a few weeks, or in minutes after a surprise.",
+   "unit": "%"
+  },
+  "u14l2-7": {
+   "prompt": "In the EU, a retail client can trade CFDs on major currency pairs with leverage of up to 1:30.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "That's the limit ESMA set in 2018 (in Spain the CNMV applies it). For non-major pairs it's 1:20."
+  },
+  "u14l2-8": {
+   "prompt": "With leverage, only gains are multiplied.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Losses are multiplied just the same: a 1 % move against you at 1:30 is 30 % of your margin."
+  },
+  "u14l2-9": {
+   "prompt": "Pablo opens 1 standard lot of EUR/USD (€100,000) with €4,000 of margin. The pair falls 120 pips after an inflation figure. What has happened?",
+   "options": [
+    "He hasn't lost anything until he closes",
+    "He's lost about $1,200: more than a quarter of his margin in a day",
+    "He's lost $120, a trifle"
+   ],
+   "explanation": "With leverage, an ordinary move in the pair turns into a huge blow to your money.",
+   "feedback": [
+    "The loss is real even if he doesn't close; and if it keeps falling, the broker will close the position.",
+    "Exactly: 120 × $10 = $1,200. A normal move in the pair and his account is down more than 25 %.",
+    "Each pip is worth $10 on a standard lot: that's $1,200, a bit more than €1,000."
+   ]
+  },
+  "u14l2-10": {
+   "prompt": "What protections does a retail client in the EU have when trading currency CFDs? Select all that apply.",
+   "options": [
+    "Not being able to lose more than the money in the account",
+    "A guarantee of not losing money",
+    "Automatic close-out if margin drops to 50 %",
+    "A leverage limit (1:30 on major pairs)"
+   ],
+   "explanation": "ESMA imposed leverage limits, close-out at 50 % of margin and negative balance protection. Nothing guarantees you won't lose: between 74 and 89 % of retail clients lose money on CFDs."
+  },
+  "u14l2-11": {
+   "prompt": "What do you say to Lumi?",
+   "options": [
+    "Great, that way you make money faster",
+    "Even better 1:1000, that's more",
+    "With 1:500, a 0.2 % move against you wipes you out; and in the EU the maximum for retail clients is 1:30"
+   ],
+   "explanation": "1 ÷ 500 = 0.2 %. Anyone offering 1:500 to a European retail client isn't following ESMA's rules: a bad sign.",
+   "feedback": [
+    "And you lose it faster: a 0.2 % move against you takes your €200.",
+    "More leverage only brings the moment you lose everything closer.",
+    "Phew! So whoever's offering me 1:500 isn't playing by European rules…"
+   ],
+   "lines": [
+    "A TikToker says you can make a living from forex with 1:500 leverage 🤑",
+    "With €200 I control €100,000, isn't that great?"
+   ]
+  },
+  "u14l3-1": {
+   "prompt": "Match each cause with its usual effect on the currency.",
+   "options": [
+    "The central bank raises rates more than expected",
+    "High inflation for years",
+    "Market panic",
+    "The country exports much more than it imports"
+   ],
+   "explanation": "Rates, inflation, fear and trade are the big drivers.",
+   "right": [
+    "The currency loses value in the long run",
+    "There's demand for its currency",
+    "People buy dollars, francs and yen",
+    "The currency tends to appreciate"
+   ]
+  },
+  "u14l3-2": {
+   "prompt": "Why does a higher interest rate usually attract money to a currency?",
+   "options": [
+    "Because it forces tourists to change money",
+    "Because the central bank gives currency away",
+    "Because deposits and bonds in that currency pay more"
+   ],
+   "explanation": "Investors buy the currency to earn that higher interest."
+  },
+  "u14l3-3": {
+   "prompt": "The Fed raises rates by surprise and the ECB leaves them unchanged. In a month you have to pay $1,000 for an online course from the US. What's most likely?",
+   "options": [
+    "The dollar tends to appreciate and the course may cost you a bit more in euros",
+    "Nothing: rates don't affect currencies",
+    "The course will cost you fewer euros"
+   ],
+   "explanation": "An unexpected rate rise usually makes the currency appreciate, although nothing is automatic.",
+   "feedback": [
+    "That's what usually happens: higher rates attract money to the dollar. It's not certain, though: it depends on what the market was already expecting.",
+    "They're one of the main drivers.",
+    "If the dollar appreciates, each dollar costs more euros, not fewer."
+   ]
+  },
+  "u14l3-4": {
+   "prompt": "A currency is moved only by today's interest rate, not by what's expected.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "The market moves on expectations: a rate rise that's already been announced may not move anything."
+  },
+  "u14l3-5": {
+   "prompt": "What usually happens to the euro against the dollar?",
+   "options": [
+    "The Fed raises rates faster than the ECB",
+    "The European economy grows more than expected",
+    "Global panic: everyone wants dollars",
+    "The ECB raises rates and the Fed cuts them",
+    "Eurozone inflation soars with no response from the ECB"
+   ],
+   "explanation": "Rate differences, inflation, growth and fear.",
+   "right": [
+    "Euro rises",
+    "Euro falls"
+   ]
+  },
+  "u14l3-6": {
+   "prompt": "Between January and September 2022, EUR/USD went from 1.13 to 0.96. How much did the euro fall against the dollar (in %)?",
+   "options": [],
+   "explanation": "(0.96 − 1.13) ÷ 1.13 ≈ −15 %. Huge for a major currency.",
+   "unit": "%"
+  },
+  "u14l3-7": {
+   "prompt": "Quick: in a global crisis, which currency does money usually flee to?",
+   "options": [
+    "Dollar",
+    "Argentine peso",
+    "Turkish lira"
+   ],
+   "explanation": "The dollar, the Swiss franc and the yen are the classic safe-haven currencies."
+  },
+  "u14l3-8": {
+   "prompt": "The Fed raises rates by surprise. Put the chain in order.",
+   "options": [
+    "Dollar bonds start paying more",
+    "Investors around the world buy dollars",
+    "The dollar appreciates against the euro",
+    "The Fed announces an unexpected rise"
+   ],
+   "explanation": "That's how a rate rise typically feeds through to the currency."
+  },
+  "u14l3-9": {
+   "prompt": "Bruno reads about a country with 50 % inflation whose central bank is cutting rates. A friend suggests buying its currency because \"it's dirt cheap\". What does Bruno think?",
+   "options": [
+    "That inflation doesn't affect currencies",
+    "That such high inflation with falling rates usually sinks the currency",
+    "That it's a sure bargain"
+   ],
+   "explanation": "High inflation with rates below it usually makes a currency depreciate.",
+   "feedback": [
+    "It's one of the big long-term drivers.",
+    "Good: what looks cheap can keep getting cheaper.",
+    "Cheap can get cheaper: with that inflation and falling rates, the currency usually keeps losing value."
+   ]
+  },
+  "u14l3-10": {
+   "prompt": "What do you explain to Lumi?",
+   "options": [
+    "That the market already expected it, or expected more: it's the surprise that counts, not the figure",
+    "That rates have nothing to do with it",
+    "That it's a market mistake"
+   ],
+   "explanation": "In currencies, as in stocks, the price already reflects what's expected.",
+   "feedback": [
+    "Oh! So if +0.50 is expected and they raise by +0.25, it's a disappointment.",
+    "They have a lot to do with it, but relative to what was expected.",
+    "It's not a mistake: the market was already expecting that rise, or a bigger one."
+   ],
+   "lines": [
+    "Yesterday the ECB raised rates and the euro… fell! 🤯",
+    "Shouldn't it have gone up?"
+   ]
+  },
+  "u14l4-1": {
+   "prompt": "You invest €1,000 when EUR/USD = 1.00 (you buy $1,000 of shares). A year later they're worth $1,100 and EUR/USD = 1.10. How many euros do you have?",
+   "options": [],
+   "explanation": "1,100 ÷ 1.10 = €1,000. The shares rose 10 %, but the dollar lost value and wiped out the whole gain.",
+   "unit": "€"
+  },
+  "u14l4-2": {
+   "prompt": "Shares rise 15 % in dollars and the dollar falls 10 % against the euro. What's your approximate return in euros?",
+   "options": [],
+   "explanation": "1.15 × 0.90 − 1 = 0.035 → +3.5 %.",
+   "unit": "%"
+  },
+  "u14l4-3": {
+   "prompt": "The US stock market falls 18 % in dollars, but the dollar rises 6 % against the euro. Your return in euros?",
+   "options": [],
+   "explanation": "0.82 × 1.06 − 1 ≈ −0.131 → −13.1 %. Something like this happened in 2022: the dollar cushioned the fall.",
+   "unit": "%"
+  },
+  "u14l4-4": {
+   "prompt": "Real chart of a currency pair: 30 sessions, no name or date. If your fund invests abroad, something like this moves your return in euros. What did it do over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Nobody predicts currencies well in the short term. That's why people who don't want that risk choose a hedged fund instead of trying to guess.",
+   "horizon": "the next 10 sessions"
+  },
+  "u14l4-5": {
+   "prompt": "An \"S&P 500 EUR Hedged\" fund…",
+   "options": [
+    "Only buys European companies",
+    "Guarantees you won't lose money",
+    "Removes almost all of the dollar's effect against the euro"
+   ],
+   "explanation": "The hedge neutralises the currency, not the risk of the shares."
+  },
+  "u14l4-6": {
+   "prompt": "If your fund is priced in euros, you have no currency risk even if it invests in US shares.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "The fund's currency is just a label: the companies are listed and earn in dollars, so the risk is still there unless the fund hedges it."
+  },
+  "u14l4-7": {
+   "prompt": "For a Spanish investor, does it carry dollar/euro risk?",
+   "options": [
+    "Spanish Treasury bills",
+    "S&P 500 EUR Hedged fund",
+    "Apple shares",
+    "Unhedged MSCI World fund",
+    "Euro deposit at a Spanish bank"
+   ],
+   "explanation": "If the asset is in dollars and there's no hedge, the dollar affects you.",
+   "right": [
+    "Yes",
+    "No (or hardly any)"
+   ]
+  },
+  "u14l4-8": {
+   "prompt": "Ana has an unhedged S&P 500 fund and a 20-year horizon. She reads that \"the dollar is collapsing\" and wants to sell everything. What would be the smart move?",
+   "options": [
+    "Switch to a single European company",
+    "Understand that currencies go up and down, and calmly decide whether she wants hedging in future",
+    "Sell now and get back in when the dollar recovers"
+   ],
+   "explanation": "Currency risk is managed by choosing the fund, not by chasing headlines.",
+   "feedback": [
+    "She'd be swapping currency risk for much more concentration risk.",
+    "Good: hedging or not is a planning decision, not a reaction to a headline.",
+    "She'd have to get it right twice (when to get out and when to get back in) with a move nobody can predict."
+   ]
+  },
+  "u14l4-9": {
+   "prompt": "Quick: the dollar rises against the euro. Your US shares, measured in euros…",
+   "options": [
+    "Are worth less",
+    "Are worth more",
+    "Are worth the same"
+   ],
+   "explanation": "Each dollar converts into more euros."
+  },
+  "u14l4-10": {
+   "prompt": "What do you say to Lumi?",
+   "options": [
+    "No: the dollar has fallen against the euro and that takes a bite out of it in euros",
+    "It's a bug in the app",
+    "Yes, it must be hidden fees"
+   ],
+   "explanation": "1.12 × 0.91 ≈ 1.02: a 9 % fall in the dollar turns +12 % into +2 %.",
+   "feedback": [
+    "Oh! I'm making money in dollars, but each dollar is worth fewer euros.",
+    "The app is doing the maths right: it's the currency effect.",
+    "Fees on an index fund are tiny: the difference comes from something else."
+   ],
+   "lines": [
+    "My S&P 500 fund is up 12 % this year in dollars…",
+    "…and the app says only +2 % in euros. Am I being robbed? 😠"
+   ]
+  },
+  "u14l5-1": {
+   "prompt": "Which are considered safe-haven currencies? Select all that apply.",
+   "options": [
+    "Swiss franc",
+    "Brazilian real",
+    "Japanese yen",
+    "US dollar"
+   ],
+   "explanation": "The real is an emerging-market currency: in a panic it usually falls, not rises."
+  },
+  "u14l5-2": {
+   "prompt": "Real chart of a currency pair (30 sessions, no name or date). Did it go up or down over the next 10?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Even the most-watched pairs in the world surprise people: they move on rate expectations and on the risk appetite of the moment.",
+   "horizon": "the next 10 sessions"
+  },
+  "u14l5-3": {
+   "prompt": "Another real pair, another 30 sessions. What about now?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Whatever the previous chart did says nothing about this one: each period is a different story.",
+   "horizon": "the next 10 sessions"
+  },
+  "u14l5-4": {
+   "prompt": "On 15 January 2015 the Swiss franc soared when the Swiss National Bank scrapped its cap against the euro.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "EUR/CHF went from 1.20 to 0.85 in minutes: an earthquake for a major currency."
+  },
+  "u14l5-5": {
+   "prompt": "What is the yen carry trade?",
+   "options": [
+    "Borrowing in yen at a low rate to invest where rates are higher",
+    "Buying yen to travel to Japan",
+    "Selling Japanese shares"
+   ],
+   "explanation": "It works as long as the yen stays calm; if it jumps suddenly, everyone unwinds at once (August 2024)."
+  },
+  "u14l5-6": {
+   "prompt": "Why does the yen usually rise in a crisis?",
+   "options": [
+    "Because Japanese investors bring home the money they have abroad",
+    "Because Japan raises rates in every crisis",
+    "Because the yen is backed by gold"
+   ],
+   "explanation": "Japan has huge savings invested abroad: in a panic, some of that money comes home."
+  },
+  "u14l5-7": {
+   "prompt": "EUR/CHF goes from 1.20 to 0.85 in minutes. How much does the euro fall against the franc (in %)?",
+   "options": [],
+   "explanation": "(0.85 − 1.20) ÷ 1.20 ≈ −29.2 %. In a major currency, you almost never see that.",
+   "unit": "%"
+  },
+  "u14l5-8": {
+   "prompt": "Match each currency with the reason it's a safe haven.",
+   "options": [
+    "Dollar",
+    "Swiss franc",
+    "Yen"
+   ],
+   "explanation": "Three safe havens, three different reasons.",
+   "right": [
+    "A stable country with little debt",
+    "Reserve currency and the biggest bond market",
+    "Japan has huge savings invested abroad"
+   ]
+  },
+  "u14l5-9": {
+   "prompt": "A safe-haven currency can never move violently.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It can move a huge amount in both directions: it's a relative safe haven, not insurance."
+  },
+  "u14l5-10": {
+   "prompt": "March 2020: stock markets crash because of COVID. Marta is due to be paid a $5,000 invoice by a US client and will convert it into euros. What is the dollar most likely to do in those days of panic?",
+   "options": [
+    "Appreciate: everyone wants dollars",
+    "Not move",
+    "Collapse"
+   ],
+   "explanation": "In the most acute crises, the dollar usually acts as a safe haven.",
+   "feedback": [
+    "That's what happened in March 2020: the dollar rose sharply against almost every currency.",
+    "In a global panic, currencies move a lot.",
+    "In a panic the world wants dollars: the opposite is what usually happens."
+   ]
+  }
+ }
+}

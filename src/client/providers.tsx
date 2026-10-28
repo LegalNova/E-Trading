@@ -1,6 +1,7 @@
 'use client'
 // Proveedores globales: datos (TanStack Query), avisos tipo toast y tema.
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { useLocale } from 'next-intl'
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react'
 import { THEME_KEY } from '@/shared/theme'
 import { ApiFailure } from './api'
@@ -32,6 +33,14 @@ export function Providers({ children }: { children: React.ReactNode }) {
         },
       }),
   )
+  // Al cambiar de idioma, el curso y las insignias vuelven a pedirse ya traducidos
+  const locale = useLocale()
+  const lastLocale = useRef(locale)
+  useEffect(() => {
+    if (lastLocale.current === locale) return
+    lastLocale.current = locale
+    void client.invalidateQueries()
+  }, [locale, client])
   const [toast, setToast] = useState<React.ReactNode>(null)
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined)
   const show = useCallback((msg: React.ReactNode, ms = 2600) => {

@@ -1,0 +1,541 @@
+{
+ "unit": {
+  "title": "Tu plan de trading",
+  "description": "Escribe tu plan, lleva un diario, aguanta las rachas y da el salto con cabeza",
+  "section": "Riesgo, estrategias y trading"
+ },
+ "lessons": {
+  "u26l1": {
+   "title": "El plan de trading",
+   "steps": [
+    {
+     "title": "Las partes de un plan",
+     "body": "1. **Capital:** cuánto dedicas (un % pequeño de tu patrimonio).\n2. **Mercados y plazo:** qué operas y en qué gráfico.\n3. **Entrada:** reglas concretas y comprobables.\n4. **Stop:** dónde y por qué.\n5. **Tamaño:** 1 % de riesgo por operación.\n6. **Salida:** objetivo y salida por tiempo.\n7. **Lo que no haces.**\n8. **Límites:** cuándo paras.\n9. **Revisión:** cada 20 operaciones."
+    },
+    {
+     "title": "Reglas concretas, no deseos",
+     "body": "«Entro cuando lo vea claro» no es una regla. Esto sí:\n\n• «Precio sobre la media de 200 sesiones, retroceso a un soporte y vela de giro con volumen superior a la media.»\n• «Stop bajo el mínimo de la vela de giro, a 1,5 ATR como mínimo.»\n• «Mitad en 2R; el resto con stop bajo el último mínimo creciente. Si en 15 sesiones no llega a 1R, salgo.»"
+    },
+    {
+     "title": "Los límites te protegen de ti",
+     "body": "«No opero el día de resultados. No promedio a la baja. No muevo el stop en contra. Si pierdo un 6 % en un mes, paro hasta el mes siguiente. Si la cuenta cae un 15 % desde su máximo, reduzco el riesgo a la mitad y reviso el plan.»",
+     "key": "Si no está escrito, no es un plan: es una intuición.",
+     "tip": "Escribe el plan en calma. Lo vas a necesitar cuando no lo estés."
+    }
+   ]
+  },
+  "u26l2": {
+   "title": "El diario de operaciones",
+   "steps": [
+    {
+     "title": "Qué apuntar",
+     "body": "Para cada operación:\n\n• Fecha, activo y dirección.\n• Motivo de entrada según el plan.\n• Entrada, stop, objetivo y cuánto vale 1R.\n• Tamaño.\n• Resultado en € y en R.\n• ¿Seguiste el plan? Si no, ¿por qué?\n• Tu emoción al entrar y al salir.\n• Una captura del gráfico."
+    },
+    {
+     "title": "Lo que sale del diario",
+     "body": "• Porcentaje de acierto.\n• Ganancia y pérdida media en R.\n• **Esperanza** por operación.\n• Racha de pérdidas y caída máximas.\n• Resultado de las operaciones **dentro** del plan frente a las que lo saltaron (suele ser revelador)."
+    },
+    {
+     "title": "Lo que te llevas",
+     "body": "Ejemplo de una línea: 12/11, compra a 4,10 €, stop 3,95 €, objetivo 4,40 €, 1R = 100 €, 666 acciones. Resultado: +180 €, +1,8R. Seguí el plan: sí. Emoción: tranquilo.",
+     "key": "El diario convierte tus operaciones en datos para mejorar.",
+     "tip": "Tu diario te enseña los errores que tu memoria prefiere olvidar."
+    }
+   ]
+  },
+  "u26l3": {
+   "title": "Rachas de pérdidas y drawdown",
+   "steps": [
+    {
+     "title": "Las rachas son normales",
+     "body": "Simulando 20.000 secuencias de 100 operaciones:\n\n• Con un **50 %** de acierto, la racha de pérdidas más larga típica es de **6 seguidas**.\n• Con un **40 %** (como un sistema rentable que gana 2R), de **7**, y casi la mitad de las veces hay rachas de **8 o más**."
+    },
+    {
+     "title": "El drawdown",
+     "body": "Es la caída de la cuenta desde su máximo hasta el mínimo siguiente. Con un 1 % de riesgo, 8 pérdidas seguidas son un −7,7 %. Con un 5 %, un −33,7 %.\n\nRegla del plan de ejemplo: si la cuenta cae un 10–15 % desde su máximo, **reduces el riesgo a la mitad** y revisas."
+    },
+    {
+     "title": "Lo que cuesta un drawdown",
+     "body": "Pon un 15 % de caída y mira cuánto hay que ganar para volver al máximo. Luego prueba con un 35 %.",
+     "tip": "Arriesgar poco hace que las rachas sean recuperables."
+    },
+    {
+     "title": "Lo que te llevas",
+     "body": "Ocho pérdidas seguidas con un sistema ganador no significan que haya dejado de funcionar. Si cambias de sistema tras cada racha mala, nunca sabrás si alguno funcionaba.",
+     "key": "Las rachas son estadística: arriesga poco para poder atravesarlas.",
+     "tip": "Ocho fallos seguidos no significan que el plan esté mal: significan que estás en una racha."
+    }
+   ]
+  },
+  "u26l4": {
+   "title": "Del simulador al dinero real",
+   "steps": [
+    {
+     "title": "Las cuatro fases",
+     "body": "1. **Prueba histórica:** recorre el gráfico hacia atrás y apunta 50–100 señales con su resultado.\n2. **Fuera de muestra:** otros activos u otro periodo, **sin cambiar las reglas**.\n3. **Simulador en tiempo real:** 2–3 meses como mínimo.\n4. **Dinero real poco a poco:** una fracción del capital y la mitad del riesgo. Aumentas solo si las estadísticas se parecen."
+    },
+    {
+     "title": "Las trampas",
+     "body": "• **Sobreoptimizar:** ajustar parámetros hasta que el pasado salga perfecto.\n• **Muestra pequeña:** con menos de 30–50 operaciones, las estadísticas casi no significan nada.\n• **Supervivencia:** probar solo con empresas que existen hoy.\n• **Olvidar costes** y deslizamiento.\n• **Retrospectiva:** en el pasado todo «se ve» claro."
+    },
+    {
+     "title": "Cuándo dejarlo",
+     "body": "Si tras 100 operaciones bien registradas tu esperanza después de costes es negativa o casi cero, no tienes ventaja. No es un fracaso: es información. Invertir a largo plazo en una cartera diversificada sigue siendo la opción con más probabilidades.",
+     "key": "Un sistema no está probado hasta que funciona en datos nuevos y con suficientes operaciones.",
+     "tip": "En el simulador se aprende a operar. En el dinero real se aprende quién eres. Empieza pequeño."
+    }
+   ]
+  },
+  "u26r": {
+   "title": "Repaso de la unidad",
+   "steps": []
+  },
+  "s8boss": {
+   "title": "Reto final: Riesgo, estrategias y trading",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u26l1-1": {
+   "prompt": "Ordena las partes de un plan de trading.",
+   "options": [
+    "Condiciones de entrada",
+    "Límites y cuándo paro",
+    "Cómo salgo",
+    "Capital dedicado",
+    "Mercados y temporalidad",
+    "Tamaño de la posición",
+    "Dónde va el stop"
+   ],
+   "explanation": "De lo general (cuánto y qué) a lo concreto (cuándo entro, cuánto arriesgo y cómo salgo)."
+  },
+  "u26l1-2": {
+   "prompt": "Tamaño de la posición: riesgo del ____ por operación.",
+   "options": [
+    "10 %",
+    "25 %",
+    "50 %",
+    "1 %"
+   ],
+   "explanation": "Para quien empieza, un 1 % o menos."
+  },
+  "u26l1-3": {
+   "prompt": "Límite mensual del plan de ejemplo: si pierdo un ____ en un mes, paro hasta el mes siguiente.",
+   "options": [
+    "1 %",
+    "30 %",
+    "60 %",
+    "6 %"
+   ],
+   "explanation": "Un tope mensual corta las espirales de operar por venganza."
+  },
+  "u26l1-4": {
+   "prompt": "¿Es una regla concreta o una frase vaga?",
+   "options": [
+    "Si en 15 sesiones no llega a 1R, salgo",
+    "Salgo cuando me parezca suficiente",
+    "Stop bajo el mínimo de la vela de giro, como mínimo a 1,5 ATR",
+    "Entro si rebota en la media de 50 sesiones con vela de giro y volumen superior a la media",
+    "Entro cuando lo vea claro"
+   ],
+   "explanation": "Una regla concreta se puede comprobar: dos personas leyéndola harían lo mismo.",
+   "right": [
+    "Regla concreta",
+    "Frase vaga"
+   ]
+  },
+  "u26l1-5": {
+   "prompt": "¿Qué le dices a Lumi?",
+   "options": [
+    "Perfecto, es el plan de todo el mundo",
+    "Eso es un deseo; un plan dice cuándo entras, dónde está el stop y cuánto arriesgas",
+    "No hace falta plan si tienes intuición"
+   ],
+   "explanation": "Un plan son reglas comprobables, no buenas intenciones.",
+   "feedback": [
+    "Ese es el problema: no dice cuándo entro, dónde está el stop ni cuánto arriesgo.",
+    "Vale… Entrada en soporte con vela de giro, stop bajo el mínimo, 1 % de riesgo y salida en 2R. ¿Mejor?",
+    "La intuición no se puede revisar ni mejorar. Un plan escrito, sí."
+   ],
+   "lines": [
+    "¡Ya tengo mi plan de trading! 📝",
+    "Comprar barato y vender caro."
+   ]
+  },
+  "u26l1-6": {
+   "prompt": "¿Qué cosas van en el apartado «Lo que no hago» del plan de ejemplo? Marca todas.",
+   "options": [
+    "No promedio a la baja",
+    "No pongo nunca stop",
+    "No muevo el stop en contra",
+    "No opero el día de resultados"
+   ],
+   "explanation": "No poner stop sería saltarse la base del plan."
+  },
+  "u26l1-7": {
+   "prompt": "Tu plan limita el riesgo total abierto al 5 % de la cuenta y cada operación arriesga un 1 %. ¿Cuántas operaciones puedes tener abiertas a la vez como máximo?",
+   "options": [],
+   "explanation": "5 % ÷ 1 % = 5 operaciones abiertas.",
+   "unit": "operaciones"
+  },
+  "u26l1-8": {
+   "prompt": "Un buen plan de trading incluye una predicción de lo que hará la bolsa.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Un plan son reglas para actuar pase lo que pase, no predicciones."
+  },
+  "u26l1-9": {
+   "prompt": "El plan de Pablo dice «solo entro con vela de giro en soporte». Hoy ve una acción que se dispara un 8 % en una hora y no cumple ninguna regla. ¿Qué hace?",
+   "options": [
+    "Entra con el doble de tamaño para aprovecharla",
+    "Entra: es una ocasión única",
+    "No entra y lo anota en el diario como tentación"
+   ],
+   "explanation": "El plan solo sirve si lo sigues también cuando no te apetece.",
+   "feedback": [
+    "Saltarse el plan y además doblar el riesgo: dos errores en uno.",
+    "Esa «ocasión única» es FOMO. Si sale mal, no sabrá si su plan funciona o no.",
+    "Bien: respeta el plan y aprende de lo que siente. Ocasiones habrá muchas."
+   ]
+  },
+  "u26l1-10": {
+   "prompt": "Tu plan dice: «stop bajo el mínimo reciente». Aplícalo a esta compra en un gráfico real.",
+   "options": [],
+   "explanation": "Una regla concreta se aplica igual en cualquier gráfico: el stop va justo por debajo del mínimo reciente."
+  },
+  "u26l1-11": {
+   "prompt": "¿Cada cuánto propone el plan de ejemplo revisar las estadísticas?",
+   "options": [
+    "Después de cada operación",
+    "Cada 20 operaciones",
+    "Nunca"
+   ],
+   "explanation": "Una sola operación no dice nada; 20 empiezan a enseñar algo."
+  },
+  "u26l2-1": {
+   "prompt": "Empareja cada campo del diario con un ejemplo.",
+   "options": [
+    "Motivo de entrada",
+    "Resultado en R",
+    "Emoción al entrar",
+    "¿Seguí el plan?"
+   ],
+   "explanation": "Cada campo responde a una pregunta que luego te ayudará a mejorar.",
+   "right": [
+    "+1,8R",
+    "No: entré sin señal",
+    "Con prisa",
+    "Rebote en la media de 50 con martillo"
+   ]
+  },
+  "u26l2-2": {
+   "prompt": "Empareja cada estadística del diario con lo que te dice.",
+   "options": [
+    "Porcentaje de acierto",
+    "Esperanza",
+    "Racha máxima de pérdidas",
+    "Dentro y fuera del plan"
+   ],
+   "explanation": "Ninguna estadística sola cuenta toda la historia.",
+   "right": [
+    "Si el sistema gana a largo plazo",
+    "Si saltarte las reglas te cuesta dinero",
+    "Cuánto tienes que aguantar",
+    "Cuántas operaciones salen bien"
+   ]
+  },
+  "u26l2-3": {
+   "prompt": "Riesgo por operación: 100 €. Entras a 4,10 € con el stop en 3,95 €. ¿Cuántas acciones compras? (redondea hacia abajo)",
+   "options": [],
+   "explanation": "Distancia: 0,15 €. 100 ÷ 0,15 = 666,7 → 666 acciones.",
+   "unit": "acciones"
+  },
+  "u26l2-4": {
+   "prompt": "Tu diario tiene 20 operaciones: 8 ganadoras y 12 perdedoras. ¿Cuál es tu porcentaje de acierto?",
+   "options": [],
+   "explanation": "8 ÷ 20 = 0,4 → 40 %.",
+   "unit": "%"
+  },
+  "u26l2-5": {
+   "prompt": "En esas 20 operaciones, las ganadoras dieron +2R de media y las perdedoras −1R. ¿Cuál es tu esperanza por operación?",
+   "options": [],
+   "explanation": "0,4 × 2 − 0,6 × 1 = +0,2R.",
+   "unit": "R"
+  },
+  "u26l2-6": {
+   "prompt": "¿Qué estadística del diario dice si tu sistema gana a largo plazo?",
+   "options": [
+    "El número de operaciones",
+    "La esperanza matemática",
+    "La hora de entrada"
+   ],
+   "explanation": "Combina el acierto con la ganancia y la pérdida media."
+  },
+  "u26l2-7": {
+   "prompt": "Tras 40 operaciones, el diario de Marta muestra que las que siguieron el plan dan +0,3R de media y las que lo saltaron, −0,6R. ¿Qué hace?",
+   "options": [
+    "Cambia de sistema",
+    "Nada, los números son lo de menos",
+    "Se centra en no saltarse el plan"
+   ],
+   "explanation": "Comparar dentro y fuera del plan suele ser lo más revelador del diario.",
+   "feedback": [
+    "Su sistema, cuando lo sigue, gana. Cambiarlo tiraría lo que funciona.",
+    "Los números le están diciendo exactamente dónde pierde dinero.",
+    "Bien: el problema no es el sistema, son las excepciones. Ahí está su mejora."
+   ]
+  },
+  "u26l2-8": {
+   "prompt": "Para saber cómo te va, tu memoria es tan fiable como un diario.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "La memoria recuerda los aciertos y olvida los errores: el diario no."
+  },
+  "u26l2-9": {
+   "prompt": "Rápido: ¿qué columna del diario te ayuda a detectar el FOMO?",
+   "options": [
+    "La fecha",
+    "La emoción al entrar",
+    "El precio de entrada"
+   ],
+   "explanation": "Si al entrar apuntas «prisa» o «miedo a perdérmelo», ya sabes qué buscar."
+  },
+  "u26l2-10": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Apunta solo las ganadoras",
+    "Tienes razón, con la memoria basta",
+    "Sin diario no puedes calcular tu esperanza ni ver tus errores"
+   ],
+   "explanation": "Lo que no se mide no se puede mejorar.",
+   "feedback": [
+    "Entonces tu diario diría que eres un genio… y te arruinaría.",
+    "Tu memoria guarda la operación que salió genial y olvida las cinco pequeñas pérdidas.",
+    "Vale… Si en 20 operaciones descubro que pierdo cuando opero con prisa, merece la pena."
+   ],
+   "lines": [
+    "Llevar un diario es un rollo 😩",
+    "Total, ya me acuerdo de mis operaciones."
+   ]
+  },
+  "u26l3-1": {
+   "prompt": "Con un sistema que acierta el 50 %, ¿es raro encadenar 6 pérdidas seguidas en 100 operaciones?",
+   "options": [
+    "Solo pasa con sistemas malos",
+    "Sí, casi imposible",
+    "No, es lo habitual"
+   ],
+   "explanation": "Es la racha más larga típica en 100 operaciones."
+  },
+  "u26l3-2": {
+   "prompt": "Arriesgas un 1 % por operación y encadenas 8 pérdidas. ¿Cuánto cae tu cuenta? (redondea a un decimal)",
+   "options": [],
+   "explanation": "0,99⁸ ≈ 0,923 → caída del 7,7 %.",
+   "unit": "%"
+  },
+  "u26l3-3": {
+   "prompt": "Ahora arriesgando un 5 % por operación: 8 pérdidas seguidas. ¿Cuánto cae la cuenta? (redondea a un decimal)",
+   "options": [],
+   "explanation": "0,95⁸ ≈ 0,663 → caída del 33,7 %. La misma racha, cuatro veces más daño.",
+   "unit": "%"
+  },
+  "u26l3-4": {
+   "prompt": "Empareja el riesgo por operación con la caída tras 8 pérdidas seguidas.",
+   "options": [
+    "1 % por operación",
+    "2 % por operación",
+    "5 % por operación",
+    "10 % por operación"
+   ],
+   "explanation": "Caída = 1 − (1 − riesgo)⁸. Con un 10 %, una racha normal se lleva más de la mitad.",
+   "right": [
+    "−33,7 %",
+    "−57 %",
+    "−14,9 %",
+    "−7,7 %"
+   ]
+  },
+  "u26l3-5": {
+   "prompt": "Tu cuenta cae un 15 % desde su máximo. ¿Cuánto tienes que ganar para volver a él? (redondea a un decimal)",
+   "options": [],
+   "explanation": "1 ÷ 0,85 − 1 ≈ 0,176 → +17,6 %.",
+   "unit": "%"
+  },
+  "u26l3-6": {
+   "prompt": "Laura lleva 120 operaciones registradas con esperanza positiva. Ahora encadena 7 pérdidas seguidas. ¿Qué hace?",
+   "options": [
+    "Sigue su plan con el mismo riesgo y revisa que está aplicando bien las reglas",
+    "Dobla el riesgo para recuperar antes",
+    "Cambia de sistema: este ya no funciona"
+   ],
+   "explanation": "Una racha dentro de lo esperado no es motivo para abandonar un sistema con muchas operaciones detrás.",
+   "feedback": [
+    "Bien: comprueba que no se ha saltado nada y deja que la estadística haga su trabajo.",
+    "Si la racha sigue, el agujero se hace mucho más hondo.",
+    "Con un 40 % de acierto, 7 seguidas es la racha típica. Cambiar ahora es tirar un sistema que funciona."
+   ]
+  },
+  "u26l3-7": {
+   "prompt": "La cuenta de Bruno cae un 15 % desde su máximo. ¿Qué dice el plan de ejemplo?",
+   "options": [
+    "Doblar el riesgo para recuperar",
+    "Dejar de usar stops",
+    "Reducir el riesgo a la mitad y revisar el plan"
+   ],
+   "explanation": "Cuando la cuenta cae, primero se protege; después se analiza.",
+   "feedback": [
+    "Es la reacción más común y la más peligrosa.",
+    "Sin stops, la caída podría ser mucho mayor.",
+    "Así protege el capital mientras analiza qué está pasando."
+   ]
+  },
+  "u26l3-8": {
+   "prompt": "Ocho pérdidas seguidas demuestran que un sistema ha dejado de funcionar.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Con un 40 % de acierto, casi la mitad de las veces aparecen rachas de 8 o más en 100 operaciones."
+  },
+  "u26l3-9": {
+   "prompt": "Rápido: con un 40 % de acierto, ¿cuál es la racha de pérdidas típica en 100 operaciones?",
+   "options": [
+    "20 seguidas",
+    "2 seguidas",
+    "7 seguidas"
+   ],
+   "explanation": "Y casi la mitad de las veces, 8 o más."
+  },
+  "u26l3-10": {
+   "prompt": "La caída de la cuenta desde su máximo hasta el mínimo siguiente se llama ____.",
+   "options": [
+    "spread",
+    "apalancamiento",
+    "pay-out",
+    "drawdown"
+   ],
+   "explanation": "Es la medida que mejor refleja el dolor real de una estrategia."
+  },
+  "u26l4-1": {
+   "prompt": "Ordena las fases para validar un sistema.",
+   "options": [
+    "Prueba fuera de muestra",
+    "Dinero real en pequeño",
+    "Simulador en tiempo real",
+    "Prueba histórica"
+   ],
+   "explanation": "Cada fase elimina un tipo de autoengaño antes de arriesgar dinero."
+  },
+  "u26l4-2": {
+   "prompt": "Si ganas 12 de tus 15 primeras operaciones, tu sistema está probado.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Quince operaciones son una muestra demasiado pequeña: pueden ser suerte."
+  },
+  "u26l4-3": {
+   "prompt": "Ajustar los parámetros hasta que el pasado salga perfecto mejora los resultados futuros.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Eso es sobreoptimizar: el sistema se adapta al ruido del pasado y suele fallar después."
+  },
+  "u26l4-4": {
+   "prompt": "Raúl ha ganado 12 de sus 15 primeras operaciones y quiere pasar a arriesgar un 10 % por operación «porque su sistema funciona». ¿Qué le dirías?",
+   "options": [
+    "Que siga con un 1 % y registre 50–100 operaciones antes de sacar conclusiones",
+    "Adelante, los números hablan",
+    "Que use apalancamiento para aprovechar la racha"
+   ],
+   "explanation": "Muestra pequeña + riesgo alto es la combinación más peligrosa.",
+   "feedback": [
+    "Bien: con más muestra y la esperanza calculada después de costes sabrá si tiene ventaja.",
+    "Con un 10 %, una racha normal de 6–8 pérdidas le haría perder entre la mitad y dos tercios de la cuenta.",
+    "Las rachas buenas se acaban; el apalancamiento haría que la mala le saque del juego."
+   ]
+  },
+  "u26l4-5": {
+   "prompt": "Marta ha superado las tres primeras fases y va a usar dinero real. ¿Cómo empieza?",
+   "options": [
+    "Con todo el capital previsto y el mismo riesgo del simulador",
+    "Con el doble de riesgo para recuperar el tiempo perdido",
+    "Con una fracción pequeña del capital y la mitad del riesgo por operación"
+   ],
+   "explanation": "El paso al dinero real se da en pequeño y se amplía solo con datos.",
+   "feedback": [
+    "Las emociones reales son otras: mejor descubrirlas con poco dinero en juego.",
+    "No hay tiempo perdido: hay prisa, y la prisa es mala consejera.",
+    "Bien: si las estadísticas reales se parecen a las del simulador, aumenta poco a poco."
+   ]
+  },
+  "u26l4-6": {
+   "prompt": "¿Qué le respondes a Lumi?",
+   "options": [
+    "Mejor con un préstamo, así ganas más",
+    "Primero más operaciones registradas; luego, una parte pequeña y con la mitad del riesgo",
+    "¡Claro, ya estás preparada!"
+   ],
+   "explanation": "Un buen mes en el simulador es un punto de partida, no una prueba.",
+   "feedback": [
+    "Con deuda, una racha mala puede ser un problema serio.",
+    "Vale: 100 operaciones en el diario, esperanza tras costes y empezar con poco.",
+    "Un mes es muy poco… y con dinero real el miedo y la prisa cambian cómo opero."
+   ],
+   "lines": [
+    "En el simulador he ganado un 20 % este mes 🏆",
+    "¿Ya puedo meter mis ahorros?"
+   ]
+  },
+  "u26l4-7": {
+   "prompt": "Empareja cada trampa estadística con su descripción.",
+   "options": [
+    "Sobreoptimización",
+    "Muestra pequeña",
+    "Sesgo de supervivencia",
+    "Sesgo retrospectivo"
+   ],
+   "explanation": "Todas hacen que un sistema parezca mejor de lo que es.",
+   "right": [
+    "Sacar conclusiones con 15 operaciones",
+    "Probar solo con empresas que siguen existiendo",
+    "Ver clarísima en el pasado una señal que en directo no lo era",
+    "Ajustar parámetros hasta que el pasado salga perfecto"
+   ]
+  },
+  "u26l4-8": {
+   "prompt": "Con dinero real, las emociones suelen pesar más que en el simulador.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Por eso se empieza con poco: para descubrir cómo reaccionas de verdad."
+  },
+  "u26l4-9": {
+   "prompt": "Vas a empezar con 2.000 € reales y la mitad de tu riesgo habitual del 1 %. ¿Cuánto arriesgas por operación?",
+   "options": [],
+   "explanation": "Mitad del 1 % = 0,5 %. 2.000 × 0,005 = 10 €.",
+   "unit": "€"
+  },
+  "u26l4-10": {
+   "prompt": "Primera operación «en pequeño»: tu cuenta es de 2.000 € y, como empiezas, arriesgas como máximo un 0,5 %. Elige stop e importe.",
+   "options": [],
+   "explanation": "Con la mitad del riesgo habitual, una racha mala al empezar con dinero real no te saca del juego mientras compruebas si tus estadísticas se parecen a las del simulador."
+  },
+  "u26l4-11": {
+   "prompt": "¿Qué cambia al pasar del simulador al dinero real? Marca todas.",
+   "options": [
+    "El deslizamiento al ejecutar órdenes",
+    "Los impuestos sobre las ganancias",
+    "Las matemáticas de la esperanza",
+    "Las emociones al ver pérdidas reales"
+   ],
+   "explanation": "Las matemáticas son las mismas; lo que cambia es cómo reaccionas, los costes reales y Hacienda."
+  }
+ }
+}

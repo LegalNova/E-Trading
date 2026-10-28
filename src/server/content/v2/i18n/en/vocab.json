@@ -1,0 +1,1276 @@
+{
+ "unit": {
+  "title": "Investor vocabulary",
+  "description": "The words of the market, from «inflation» to «W-8BEN», so you can understand any news story"
+ },
+ "lessons": {
+  "vocabl1": {
+   "title": "Money and saving",
+   "steps": [
+    {
+     "title": "Six basic words",
+     "body": "• **Inflation:** a general rise in prices.\n• **CPI:** the index that measures inflation (in Spain it's called the IPC and is published by the INE).\n• **Compound interest:** earning interest on your interest.\n• **Real return:** return minus inflation.\n• **Emergency fund:** 3 to 6 months of expenses kept risk-free.\n• **Time horizon:** when you'll need the money."
+    },
+    {
+     "title": "Remember",
+     "body": "With these six words you already understand why it makes sense to invest money you won't need any time soon.",
+     "key": "Inflation shrinks money that sits idle; compound interest makes it grow over time.",
+     "tip": "Review one word a day: in a month you'll sound like an investor."
+    }
+   ]
+  },
+  "vocabl2": {
+   "title": "Inside the stock market",
+   "steps": [
+    {
+     "title": "Market words",
+     "body": "• **Share:** a small piece of a company.\n• **Dividend:** part of the profits paid out to shareholders.\n• **Market capitalisation:** price × number of shares.\n• **Index:** tracks a group of companies (IBEX 35, S&P 500).\n• **IPO:** a company's debut on the stock market.\n• **Broker:** the firm that takes your orders to the market and holds your securities."
+    },
+    {
+     "title": "Buying and selling",
+     "body": "• **Bid / ask:** the best buying price and the best selling price.\n• **Spread** (bid-ask spread): the difference between the two.\n• **Liquidity:** how easily you can buy or sell without moving the price.\n• **Market order:** executes straight away, at the best price available.\n• **Limit order:** only executes at your price or better.",
+     "tip": "The spread is a hidden cost: the less liquid the asset, the wider it gets."
+    }
+   ]
+  },
+  "vocabl3": {
+   "title": "Funds, ETFs and bonds",
+   "steps": [
+    {
+     "title": "Funds and ETFs",
+     "body": "• **Investment fund:** money from lots of people managed together.\n• **ETF:** a fund that trades on the stock exchange, almost always index-tracking.\n• **Index fund:** tracks an index at low cost.\n• **TER:** the fund's annual cost.\n• **Accumulating / distributing:** reinvests the dividends or pays them out.\n• **KID:** a mandatory summary of risks and costs."
+    },
+    {
+     "title": "Bonds",
+     "body": "• **Bond:** a loan to a government or a company.\n• **Coupon:** the interest it pays.\n• **Maturity:** when you get your money back.\n• **Duration:** how much its price moves if interest rates change.\n• **High yield:** lower-quality bonds that pay more.",
+     "tip": "Before buying a fund, look up its TER in the KID."
+    }
+   ]
+  },
+  "vocabl4": {
+   "title": "Risk and portfolio",
+   "steps": [
+    {
+     "title": "Measuring risk",
+     "body": "• **Volatility:** how much a price moves.\n• **Drawdown:** the biggest fall from a peak.\n• **Correlation:** whether two assets move together (from −1 to +1).\n• **Specific risk:** the risk of one particular company.\n• **Market risk:** the risk that affects almost all of them."
+    },
+    {
+     "title": "Managing your portfolio",
+     "body": "• **Diversify:** spread your money across lots of assets.\n• **Asset allocation:** how much goes into shares, bonds and cash.\n• **Rebalance:** go back to the allocation you chose.\n• **Leverage:** trading with more money than you have.\n• **Going short:** selling what you don't own to buy it back cheaper.",
+     "tip": "Whenever you hear «leveraged», think: «losses get multiplied too»."
+    }
+   ]
+  },
+  "vocabl5": {
+   "title": "Charts and candles",
+   "steps": [
+    {
+     "title": "Reading a chart",
+     "body": "• **OHLC:** open, high, low and close.\n• **Trend:** up, down or sideways.\n• **Support / resistance:** zones where the price stopped falling / rising.\n• **Volume:** how much was traded.\n• **Gap:** a jump between one close and the next open."
+    },
+    {
+     "title": "Candles",
+     "body": "• **Body:** from the open to the close. **Wick:** out to the high and the low.\n• **Doji:** open and close almost equal.\n• **Hammer:** long lower wick after a fall.\n• **Shooting star:** long upper wick after a rise.\n• **Engulfing:** one body swallows the previous one.\n• **Marubozu:** long body with no wicks.",
+     "tip": "When you see an odd candle, first ask yourself where the price is coming from."
+    }
+   ]
+  },
+  "vocabl6": {
+   "title": "Technical indicators",
+   "steps": [
+    {
+     "title": "The most widely used",
+     "body": "• **Moving average (SMA / EMA):** the average of the latest prices.\n• **Golden cross:** the 50-day average crosses above the 200-day.\n• **RSI:** strength from 0 to 100; above 70, overbought.\n• **MACD:** momentum measured with two exponential averages.\n• **Bollinger Bands:** volatility around an average.\n• **ATR:** the average range of the candles.\n• **Fibonacci:** typical retracement levels."
+    },
+    {
+     "title": "Remember",
+     "body": "Many indicators measure the same thing under different names: one for trend, one for momentum and volume are all you need.",
+     "key": "Indicators confirm; they don't predict.",
+     "tip": "Overbought doesn't mean «it's going to fall»."
+    }
+   ]
+  },
+  "vocabl7": {
+   "title": "Trading and risk management",
+   "steps": [
+    {
+     "title": "Trader talk",
+     "body": "• **Stop loss:** sells if the price falls to your level.\n• **Take profit:** sells when the price reaches your target.\n• **Position size:** how many shares you buy, based on your stop.\n• **R:** what you risk on a trade.\n• **Expectancy:** what each trade makes on average."
+    },
+    {
+     "title": "Test before you risk",
+     "body": "• **Backtesting:** testing a system on past data.\n• **Overfitting:** tuning it so closely to the past that it fails in the future.\n• **Paper trading:** trading in a simulator with no real money.\n• **Trading journal:** a record of every trade.\n• **Scalping, day trading, swing:** seconds, one day, or days to weeks.",
+     "tip": "If you don't know how much you're risking (1R), you're not trading: you're gambling."
+    }
+   ]
+  },
+  "vocabl8": {
+   "title": "Biases that cost money",
+   "steps": [
+    {
+     "title": "When your brain decides for you",
+     "body": "• **Loss aversion:** losing hurts twice as much as winning feels good.\n• **Disposition effect:** selling winners too soon and holding on to losers.\n• **FOMO:** fear of missing out on a rally.\n• **Herd behaviour:** doing what most people are doing.\n• **Overconfidence:** thinking you know more than you do."
+    },
+    {
+     "title": "More dangerous shortcuts",
+     "body": "• **Confirmation bias:** only reading what proves you right.\n• **Anchoring:** fixating on a past price («it used to be 100»).\n• **Recency bias:** believing whatever happened last will keep happening.\n• **Sunk cost:** carrying on because you've already lost a lot.\n• **Gambler's fallacy:** «it's fallen 6 days in a row, it's bound to rise tomorrow».\n• **Revenge trading:** trading bigger to win back a loss.",
+     "tip": "After three losses in a row, switch off the screen."
+    }
+   ]
+  },
+  "vocabl9": {
+   "title": "Companies and valuation",
+   "steps": [
+    {
+     "title": "A company's numbers",
+     "body": "• **EPS:** earnings per share.\n• **P/E:** price ÷ EPS; how many years of earnings you're paying for.\n• **PEG:** P/E ÷ earnings growth.\n• **EBITDA:** earnings before interest, taxes, depreciation and amortisation.\n• **Free cash flow:** the cash the business generates minus what it invests."
+    },
+    {
+     "title": "Quality and price",
+     "body": "• **ROE / ROIC:** return on equity / on invested capital.\n• **Moat:** a lasting competitive advantage.\n• **Margin of safety:** estimated value minus price.\n• **CAPE:** the market's P/E using average earnings over 10 years.",
+     "tip": "A low P/E isn't cheap if the company is doing badly; a high one isn't expensive if it's growing fast."
+    }
+   ]
+  },
+  "vocabl10": {
+   "title": "Investing from Spain",
+   "steps": [
+    {
+     "title": "Tax",
+     "body": "• **Savings base:** the part of IRPF (Spanish income tax) where your investments are taxed (from 19 % to 30 %).\n• **Traspaso (fund switch):** moving money between investment funds without paying tax.\n• **Two-month rule:** if you buy the same thing back within two months, the loss has to wait.\n• **Modelo 720 / 721:** Spanish tax forms for declaring assets or crypto held abroad worth more than €50,000.\n• **W-8BEN:** cuts the US withholding tax on dividends to 15 %."
+    },
+    {
+     "title": "Protection",
+     "body": "• **CNMV:** Spain's financial markets regulator.\n• **Chiringuito:** Spanish slang for a firm offering investments without authorisation.\n• **FOGAIN:** Spain's investor compensation fund; it covers up to €100,000 per investor if your investment firm can't give you back what's yours.\n• **MiCA:** the EU regulation on crypto-assets.",
+     "tip": "If someone contacts you out of the blue, check them on cnmv.es before anything else."
+    }
+   ]
+  },
+  "vocabr": {
+   "title": "Unit review",
+   "steps": []
+  }
+ },
+ "questions": {
+  "vocabl1-1": {
+   "prompt": "Match each word with its definition.",
+   "options": [
+    "Inflation",
+    "CPI",
+    "Compound interest",
+    "Real return"
+   ],
+   "explanation": "They're the four pieces of the puzzle: prices go up (inflation, measured by the CPI) and your money has to grow faster (real return), which compound interest helps you achieve.",
+   "right": [
+    "Earning interest on your interest",
+    "Return minus inflation",
+    "The index that measures inflation in Spain",
+    "A general rise in prices"
+   ]
+  },
+  "vocabl1-2": {
+   "prompt": "Keeping 3 to 6 months of expenses somewhere risk-free is what your ____ fund is for.",
+   "options": [
+    "investment",
+    "growth",
+    "retirement",
+    "emergency"
+   ],
+   "explanation": "Your emergency fund comes first: that way you won't have to sell your investments at a bad time because of something unexpected."
+  },
+  "vocabl1-3": {
+   "prompt": "Does it work for you or against you as a saver?",
+   "options": [
+    "High inflation",
+    "High fees",
+    "Starting to invest early",
+    "Compound interest",
+    "Positive real return"
+   ],
+   "explanation": "Inflation and fees take something away every year; compound interest and time add up.",
+   "right": [
+    "Works for you",
+    "Works against you"
+   ]
+  },
+  "vocabl1-4": {
+   "prompt": "What do you say?",
+   "options": [
+    "No: it's when you'll need the money",
+    "Close: it's how much money you have",
+    "It's the term of a loan"
+   ],
+   "explanation": "Your time horizon decides how much risk you can take: the further away it is, the more time you have to recover from falls.",
+   "feedback": [
+    "Bingo! Money you'll need in 6 months isn't invested the same way as money for 20 years from now. 🎯",
+    "That would be your net worth. The horizon is about time, not amount.",
+    "Cold, very cold. It's your timeframe, not the bank's. 🥶"
+   ],
+   "lines": [
+    "Lumi's dictionary, entry «time horizon»: what you see out of the bus window 🚌",
+    "Nailed it, right?"
+   ]
+  },
+  "vocabl1-5": {
+   "prompt": "Real return ≈ return − ____.",
+   "options": [
+    "fees",
+    "dividends",
+    "taxes",
+    "inflation"
+   ],
+   "explanation": "It's the quick way to tell whether your money is gaining or losing purchasing power."
+  },
+  "vocabl1-6": {
+   "prompt": "Your savings account pays 3 % and inflation is 2 %. What's your approximate real return?",
+   "options": [],
+   "explanation": "3 − 2 = 1 %. You're gaining purchasing power, if only a little.",
+   "unit": "%"
+  },
+  "vocabl1-7": {
+   "prompt": "Compound interest also works against you when you're in debt.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "A debt that charges interest on interest grows faster and faster: that's why revolving credit card debt is so dangerous."
+  },
+  "vocabl1-8": {
+   "prompt": "Which word describes «what you own minus what you owe»?",
+   "options": [
+    "Savings",
+    "Income",
+    "Net worth"
+   ],
+   "explanation": "Income is what comes in; savings, what you don't spend; net worth, the snapshot of what's really yours."
+  },
+  "vocabl1-9": {
+   "prompt": "Quick: who publishes the CPI in Spain?",
+   "options": [
+    "The INE",
+    "The ECB",
+    "The CNMV"
+   ],
+   "explanation": "The INE (Spain's National Statistics Institute), every month. The ECB keeps an eye on inflation in the euro area and the CNMV supervises the markets."
+  },
+  "vocabl1-10": {
+   "prompt": "Match each situation with its word.",
+   "options": [
+    "A loaf of bread goes from €1 to €1.10",
+    "Your interest earns more interest",
+    "You'll need the money in 15 years"
+   ],
+   "explanation": "Putting a face to words with everyday examples is the best way not to forget them.",
+   "right": [
+    "Compound interest",
+    "Inflation",
+    "Time horizon"
+   ]
+  },
+  "vocabl2-1": {
+   "prompt": "Share price × number of shares = market ____.",
+   "options": [
+    "liquidity",
+    "return",
+    "dividend",
+    "capitalisation"
+   ],
+   "explanation": "It's what the company is worth on the stock market at that moment."
+  },
+  "vocabl2-2": {
+   "prompt": "The difference between the best buying price and the best selling price is called the ____.",
+   "options": [
+    "gap",
+    "margin",
+    "coupon",
+    "spread"
+   ],
+   "explanation": "Also called the bid-ask spread: you pay a bit of it every time you buy and sell."
+  },
+  "vocabl2-3": {
+   "prompt": "An IPO is…",
+   "options": [
+    "A type of government bond",
+    "An urgent sell order",
+    "A company's stock market debut"
+   ],
+   "explanation": "Initial public offering: the company (or its owners) sells shares to new investors and it starts trading on the stock market."
+  },
+  "vocabl2-4": {
+   "prompt": "How do you clear it up?",
+   "options": [
+    "Bid is selling and ask is buying",
+    "Bid: the most someone will pay right now; ask: the least someone will sell for",
+    "They're the same thing with different names"
+   ],
+   "explanation": "You buy at the ask and sell at the bid: that's why, if you buy and sell instantly, you lose the spread.",
+   "feedback": [
+    "It's the other way round: the bid is the buyers' price and the ask, the sellers'.",
+    "That's it! And between the two sits the spread, the invisible fee. 🕵️",
+    "If they were the same there'd be no spread… and no business for anyone. 😅"
+   ],
+   "lines": [
+    "Someone told me a «bid» is something you do on eBay 🛒",
+    "And the «ask» is when I ask a question, right?"
+   ]
+  },
+  "vocabl2-5": {
+   "prompt": "Which order guarantees the price but not the execution?",
+   "options": [
+    "Limit",
+    "Market",
+    "Neither"
+   ],
+   "explanation": "A limit order only executes at your price or better: if the market doesn't get there, it doesn't execute."
+  },
+  "vocabl2-6": {
+   "prompt": "Match each word with its example.",
+   "options": [
+    "Index",
+    "Dividend",
+    "Broker",
+    "IPO"
+   ],
+   "explanation": "Index, dividend, broker and IPO come up in almost every stock market news story.",
+   "right": [
+    "Takes your order to the market",
+    "A company starts trading on the stock market",
+    "€0.50 per share paid out by the company",
+    "IBEX 35"
+   ]
+  },
+  "vocabl2-7": {
+   "prompt": "A market order guarantees you the exact price you saw on screen.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It guarantees execution, not price: if the price moves or there's little liquidity, you may pay a bit more."
+  },
+  "vocabl2-8": {
+   "prompt": "Put in order what happens when you buy a share.",
+   "options": [
+    "The broker sends it to the market",
+    "The shares are held in your name",
+    "It's matched with a sell order",
+    "You place the order in the broker's app"
+   ],
+   "explanation": "Your order goes to the order book, gets matched with someone who's selling, and the broker holds the shares separately from its own assets."
+  },
+  "vocabl2-9": {
+   "prompt": "A very liquid asset can be bought and sold in large amounts without moving the price much.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "The big shares in the S&P 500 or the IBEX are very liquid: tiny spreads and lots of volume."
+  },
+  "vocabl2-10": {
+   "prompt": "The spread tends to be wider on illiquid assets.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "With few buyers and sellers, the gap between what some will pay and what others are asking widens."
+  },
+  "vocabl3-1": {
+   "prompt": "Match each product with its definition.",
+   "options": [
+    "Investment fund",
+    "ETF",
+    "Index fund",
+    "Bond"
+   ],
+   "explanation": "Funds and ETFs spread your money across lots of assets; a bond is a loan that pays you back with interest.",
+   "right": [
+    "Tracks an index at low cost",
+    "A loan to a government or a company",
+    "A fund that trades on the stock exchange like a share",
+    "Money from lots of people managed together"
+   ]
+  },
+  "vocabl3-2": {
+   "prompt": "The annual cost of a fund or ETF is called…",
+   "options": [
+    "KID",
+    "TER",
+    "Coupon"
+   ],
+   "explanation": "TER, or ongoing charges (OCF). It's one of the few things you can control when you choose."
+  },
+  "vocabl3-3": {
+   "prompt": "Is it a fund word or a bond word?",
+   "options": [
+    "Coupon",
+    "Maturity",
+    "Accumulating",
+    "Index-tracking",
+    "TER",
+    "Duration"
+   ],
+   "explanation": "Coupon, maturity and duration belong to the world of loans; TER, accumulating and index-tracking, to the world of funds.",
+   "right": [
+    "Funds and ETFs",
+    "Bonds"
+   ]
+  },
+  "vocabl3-4": {
+   "prompt": "____ funds reinvest their dividends instead of paying them out.",
+   "options": [
+    "Distributing",
+    "Fixed-income",
+    "Guaranteed",
+    "Accumulating"
+   ],
+   "explanation": "Distributing funds pay them out; accumulating funds reinvest them, and in Spain you don't pay tax until you sell."
+  },
+  "vocabl3-5": {
+   "prompt": "How do you clear it up?",
+   "options": [
+    "It's a fund designed for children",
+    "It's the document with the product's risks and costs",
+    "It's the name of the fund manager"
+   ],
+   "explanation": "The KID sums up in a few pages what the product is, its risk, its costs and its scenarios.",
+   "feedback": [
+    "Funny, but no: it's the Key Information Document. 😄",
+    "Exactly! A few mandatory pages. Reading it saves you nasty surprises. 📄",
+    "No: the KID is a document, not a person."
+   ],
+   "lines": [
+    "Lumi explains: the KID is the fund's little kid 👶",
+    "It comes with every fund, but nobody reads it."
+   ]
+  },
+  "vocabl3-6": {
+   "prompt": "A high-yield bond is safer than an AAA-rated one.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It pays more precisely because it's riskier: its issuer is more likely not to pay the money back."
+  },
+  "vocabl3-7": {
+   "prompt": "What does a bond's duration measure?",
+   "options": [
+    "How much its price moves if interest rates change",
+    "The interest it pays each year",
+    "How many years since it was issued"
+   ],
+   "explanation": "With a duration of 7, if rates rise by one point, the price falls by around 7 %."
+  },
+  "vocabl3-8": {
+   "prompt": "Match each bond word with its meaning.",
+   "options": [
+    "Coupon",
+    "Maturity",
+    "High yield"
+   ],
+   "explanation": "Three words you'll see on any bond factsheet.",
+   "right": [
+    "When you get your money back",
+    "The interest it pays",
+    "Pays more because it's riskier"
+   ]
+  },
+  "vocabl3-9": {
+   "prompt": "The ETFs a retail investor can buy in the EU comply with the ____ rules.",
+   "options": [
+    "MiCA",
+    "IRPF",
+    "FOGAIN",
+    "UCITS"
+   ],
+   "explanation": "UCITS is the EU's rulebook for funds. MiCA regulates crypto, and FOGAIN is Spain's investor compensation fund."
+  },
+  "vocabl3-10": {
+   "prompt": "A distributing fund pays its dividends out to its investors.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It pays them to you regularly, and they're taxed in the year you receive them."
+  },
+  "vocabl4-1": {
+   "prompt": "The biggest fall from a peak to the low that follows is called the ____.",
+   "options": [
+    "volatility",
+    "rebalancing",
+    "spread",
+    "drawdown"
+   ],
+   "explanation": "Volatility tells you how much something moves; drawdown, how much it hurts."
+  },
+  "vocabl4-2": {
+   "prompt": "Match each word with what it measures or does.",
+   "options": [
+    "Volatility",
+    "Correlation",
+    "Diversify",
+    "Rebalance"
+   ],
+   "explanation": "The first two measure things; the last two are things you do with your portfolio.",
+   "right": [
+    "Spread your money across lots of assets",
+    "Go back to the allocation you chose",
+    "Whether two assets move together",
+    "How much a price moves"
+   ]
+  },
+  "vocabl4-3": {
+   "prompt": "Your portfolio falls from €10,000 to €7,000 from its peak. What percentage is the drawdown?",
+   "options": [],
+   "explanation": "(10,000 − 7,000) ÷ 10,000 = 0.30 → 30 %. And to recover it, you need a 43 % rise.",
+   "unit": "%"
+  },
+  "vocabl4-4": {
+   "prompt": "What do you say?",
+   "options": [
+    "It's a type of diversification",
+    "It multiplies gains and losses alike",
+    "Yes, it multiplies your gains, end of story"
+   ],
+   "explanation": "Leverage amplifies in both directions: at 10 times, every 1 % move in the asset is 10 % of your money.",
+   "feedback": [
+    "No: diversifying spreads risk; leverage concentrates it.",
+    "That's it! Borrowed muscle can crush you too. 😬",
+    "And losses, Lumi. With 10x leverage, a 10 % fall wipes out all your money."
+   ],
+   "lines": [
+    "Word of the day: «leverage» 💪",
+    "It's when the broker lends you some muscle to lift more money. All upside, right?"
+   ]
+  },
+  "vocabl4-5": {
+   "prompt": "A correlation of −1 means two assets always move in opposite directions.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "+1 would be always together; 0, no relationship."
+  },
+  "vocabl4-6": {
+   "prompt": "Selling something you don't own to buy it back cheaper is going ____.",
+   "options": [
+    "long",
+    "liquid",
+    "passive",
+    "short"
+   ],
+   "explanation": "Its potential loss is unlimited: the price can rise with no ceiling."
+  },
+  "vocabl4-7": {
+   "prompt": "Which of these words are used to measure risk? Select all that apply.",
+   "options": [
+    "Dividend",
+    "Standard deviation",
+    "Coupon",
+    "Volatility",
+    "Drawdown"
+   ],
+   "explanation": "Volatility, drawdown and standard deviation measure how much something can move or fall. Dividends and coupons are what you get paid."
+  },
+  "vocabl4-8": {
+   "prompt": "Which risk does NOT go away even if you hold hundreds of different shares?",
+   "options": [
+    "The risk of a single company going bust",
+    "Each company's specific risk",
+    "Market risk"
+   ],
+   "explanation": "Diversifying removes almost all specific risk. Market risk hits every company at once: you can only soften it by combining other kinds of assets."
+  },
+  "vocabl4-9": {
+   "prompt": "Asset allocation means choosing which specific share to buy.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It means deciding how much goes into shares, bonds, cash and other assets. Picking the specific share is something else."
+  },
+  "vocabl4-10": {
+   "prompt": "15 seconds! Match each risk.",
+   "options": [
+    "Specific risk",
+    "Market risk"
+   ],
+   "explanation": "Specific risk can be diversified away; market risk can't.",
+   "right": [
+    "Affects almost all companies",
+    "Affects a single company"
+   ]
+  },
+  "vocabl5-1": {
+   "prompt": "Match each candle with its description.",
+   "options": [
+    "Doji",
+    "Hammer",
+    "Shooting star",
+    "Marubozu"
+   ],
+   "explanation": "Four basic candles: a draw, rejection from below, rejection from above and total dominance.",
+   "right": [
+    "Long lower wick after a fall",
+    "Long body with no wicks",
+    "Long upper wick after a rise",
+    "Open and close almost equal"
+   ]
+  },
+  "vocabl5-2": {
+   "prompt": "Put the letters of OHLC in order.",
+   "options": [
+    "High",
+    "Low",
+    "Close",
+    "Open"
+   ],
+   "explanation": "Open, high, low, close: that's how any candle is summed up."
+  },
+  "vocabl5-3": {
+   "prompt": "The price jump between one close and the next open is called a…",
+   "options": [
+    "Doji",
+    "Spread",
+    "Gap"
+   ],
+   "explanation": "A gap. It usually appears after news released while the market was closed."
+  },
+  "vocabl5-4": {
+   "prompt": "Is it about a single candle or the whole chart?",
+   "options": [
+    "Trend",
+    "Support",
+    "Resistance",
+    "Doji",
+    "Wick",
+    "Body"
+   ],
+   "explanation": "Body, wick and doji describe a candle; trend, support and resistance need lots of them.",
+   "right": [
+    "One candle",
+    "The whole chart"
+   ]
+  },
+  "vocabl5-5": {
+   "prompt": "What do you explain to her?",
+   "options": [
+    "Relax: it's a candle with a long lower wick that appears after a rise",
+    "It's the same as a hammer, wherever it shows up",
+    "It's a doji with lots of volume"
+   ],
+   "explanation": "With candles, context changes the name: the same shape is a hammer after a fall and a hanging man after a rise.",
+   "feedback": [
+    "Phew! OK. So it's a hammer in the wrong place. 😅",
+    "The shape is the same, but the name changes with the context: after a fall it's a hammer; after a rise, a hanging man.",
+    "No: a doji has its open and close almost equal; a hanging man, a long lower wick."
+   ],
+   "lines": [
+    "I've seen a «hanging man» on the chart 😱",
+    "Should I call someone?"
+   ]
+  },
+  "vocabl5-6": {
+   "prompt": "The thin line of a candle that reaches the high or the low is called the ____.",
+   "options": [
+    "body",
+    "trend",
+    "gap",
+    "wick"
+   ],
+   "explanation": "It's also called the shadow."
+  },
+  "vocabl5-7": {
+   "prompt": "A candle whose body completely swallows the previous one's, in the opposite direction, is called…",
+   "options": [
+    "Engulfing",
+    "Spinning top",
+    "Harami"
+   ],
+   "explanation": "The harami is exactly the opposite: the second, small candle fits inside the first."
+  },
+  "vocabl5-8": {
+   "prompt": "The close is the most important price of a candle.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It's the price at which buyers and sellers left the scoreboard at the end of the period."
+  },
+  "vocabl5-9": {
+   "prompt": "An area where the price has stopped rising several times is called ____.",
+   "options": [
+    "a wick",
+    "volume",
+    "support",
+    "resistance"
+   ],
+   "explanation": "That's where sellers show up. Where it stops falling: support."
+  },
+  "vocabl5-10": {
+   "prompt": "What does volume measure?",
+   "options": [
+    "How much the price rose",
+    "The distance between the wicks",
+    "How much was traded in a period"
+   ],
+   "explanation": "A move on high volume has more people behind it than one on low volume."
+  },
+  "vocabl6-1": {
+   "prompt": "The strength indicator that goes from 0 to 100 is called the ____.",
+   "options": [
+    "MACD",
+    "ATR",
+    "P/E",
+    "RSI"
+   ],
+   "explanation": "Relative Strength Index. Above 70, overbought; below 30, oversold."
+  },
+  "vocabl6-2": {
+   "prompt": "Match each indicator with what it measures.",
+   "options": [
+    "Moving average",
+    "ATR",
+    "Bollinger Bands",
+    "MACD"
+   ],
+   "explanation": "Each indicator looks at something different: where the price is heading, how much it moves or how strongly.",
+   "right": [
+    "The average range of the candles",
+    "Momentum measured with two exponential averages",
+    "Volatility around an average",
+    "The average of the latest prices"
+   ]
+  },
+  "vocabl6-3": {
+   "prompt": "An RSI above 70 means the price is definitely going to fall.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It signals overbought conditions, not a sell order: in strong trends, the RSI can stay above 70 for weeks."
+  },
+  "vocabl6-4": {
+   "prompt": "The 50-session average crosses above the 200-session one. What's it called?",
+   "options": [
+    "Divergence",
+    "Golden cross",
+    "Death cross"
+   ],
+   "explanation": "Golden cross: a classic bullish signal, although it comes late and gives false alarms."
+  },
+  "vocabl6-5": {
+   "prompt": "Does it measure trend, momentum or volatility?",
+   "options": [
+    "RSI",
+    "ATR",
+    "MACD",
+    "200-day moving average",
+    "Bollinger Bands"
+   ],
+   "explanation": "Moving averages for trend, RSI and MACD for momentum, ATR and Bollinger for volatility.",
+   "right": [
+    "Trend",
+    "Momentum",
+    "Volatility"
+   ]
+  },
+  "vocabl6-6": {
+   "prompt": "What do you explain to her?",
+   "options": [
+    "It's a volume indicator",
+    "Its numbers give typical retracement levels: 38.2 %, 50 %, 61.8 %…",
+    "It predicts the exact price for the next day"
+   ],
+   "explanation": "Fibonacci retracements (23.6 %, 38.2 %, 50 %, 61.8 % and 78.6 %) flag zones where a move might stall. They're reference points, not prophecies.",
+   "feedback": [
+    "No: Fibonacci marks the retracement levels of a move, not volume.",
+    "And free of charge! But careful: lots of people watching them doesn't make them magic. ✨",
+    "If only. 😅 It just marks zones that lots of people are watching."
+   ],
+   "lines": [
+    "Fibonacci was an Italian mathematician, right? 🇮🇹",
+    "What's he doing on my chart? Do I owe him royalties?"
+   ]
+  },
+  "vocabl6-7": {
+   "prompt": "Whatever has risen most lately tends to keep rising for a while: that's the ____ effect.",
+   "options": [
+    "rebalancing",
+    "gap",
+    "anchoring",
+    "momentum"
+   ],
+   "explanation": "It's one of the technical ideas with the most backing from historical data."
+  },
+  "vocabl6-8": {
+   "prompt": "The exponential moving average gives more weight to recent prices than the simple one.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "That's why the EMA reacts to changes sooner, although it also gives more false signals."
+  },
+  "vocabl6-9": {
+   "prompt": "If the 50-day average crosses below the 200-day, it's a ____ cross.",
+   "options": [
+    "life",
+    "luck",
+    "dusk",
+    "death"
+   ],
+   "explanation": "Death cross: a classic bearish signal, also with lots of false alarms."
+  },
+  "vocabl6-10": {
+   "prompt": "Bollinger Bands narrow when there's little volatility.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "The bands sit two standard deviations away from the average: if the price barely moves, they squeeze together."
+  },
+  "vocabl7-1": {
+   "prompt": "Match each term with what it does.",
+   "options": [
+    "Stop loss",
+    "Take profit",
+    "Position size",
+    "Trading journal"
+   ],
+   "explanation": "The four pieces of any sensible trade: the bad exit, the good exit, how much, and all in writing.",
+   "right": [
+    "Sells when the price reaches your target",
+    "How many shares you buy, based on your stop",
+    "A record of every trade",
+    "Sells if the price falls to your level"
+   ]
+  },
+  "vocabl7-2": {
+   "prompt": "Testing a system on past data is called ____.",
+   "options": [
+    "paper trading",
+    "scalping",
+    "rebalancing",
+    "backtesting"
+   ],
+   "explanation": "Essential before using real money, although the past doesn't guarantee the future."
+  },
+  "vocabl7-3": {
+   "prompt": "You risk €50 on a trade and make €150. How many R have you made?",
+   "options": [],
+   "explanation": "150 ÷ 50 = 3R.",
+   "unit": "R"
+  },
+  "vocabl7-4": {
+   "prompt": "Tuning a system until the past looks perfect, only for it to fail in the future, is…",
+   "options": [
+    "Indexing",
+    "Overfitting",
+    "Diversifying"
+   ],
+   "explanation": "Also called curve fitting: the system learns the noise of the past instead of a useful rule."
+  },
+  "vocabl7-5": {
+   "prompt": "Trading in a simulator with no real money is called ____ trading.",
+   "options": [
+    "day",
+    "copy",
+    "swing",
+    "paper"
+   ],
+   "explanation": "Paper trading: exactly what you're doing on E-Trading."
+  },
+  "vocabl7-6": {
+   "prompt": "How long does each trading style last?",
+   "options": [
+    "Day trading",
+    "Scalping",
+    "Swing trading"
+   ],
+   "explanation": "The shorter the timeframe, the more costs weigh and the harder it is to win.",
+   "right": [
+    "Seconds or minutes",
+    "Within the same day",
+    "Days or weeks"
+   ]
+  },
+  "vocabl7-7": {
+   "prompt": "How do you clear it up?",
+   "options": [
+    "It's the percentage of trades you get right",
+    "It's the return a trading course promises you",
+    "It's what each trade makes on average, counting wins and losses"
+   ],
+   "explanation": "Expectancy = (win rate × average win) − (loss rate × average loss).",
+   "feedback": [
+    "Not quite: you can be right 70 % of the time and still lose money if your losses are much bigger than your wins.",
+    "Be wary of those promises. 🚩 Expectancy is calculated from your trades, not theirs.",
+    "That's it! And if it's negative, the more trades you make, the more you lose. 📉"
+   ],
+   "lines": [
+    "Expectancy is how much I expect from the day when I wake up in the morning ☀️",
+    "Isn't it?"
+   ]
+  },
+  "vocabl7-8": {
+   "prompt": "You're right 40 % of the time, winning 2R, and wrong 60 % of the time, losing 1R. What's your expectancy per trade?",
+   "options": [],
+   "explanation": "(0.4 × 2) − (0.6 × 1) = 0.8 − 0.6 = 0.2R. You're right less than half the time and you still come out ahead in the long run.",
+   "unit": "R"
+  },
+  "vocabl7-9": {
+   "prompt": "Put in order what you do on every trade.",
+   "options": [
+    "Work out the position size",
+    "Send the order",
+    "Log it in your journal",
+    "Decide where the stop goes"
+   ],
+   "explanation": "Stop first, then size: the size depends on the distance to the stop."
+  },
+  "vocabl7-10": {
+   "prompt": "If you don't know how much you're risking on a trade…",
+   "options": [
+    "You're diversifying",
+    "You're backtesting",
+    "You're gambling, not trading"
+   ],
+   "explanation": "Without a defined 1R, there's no way to keep your losses under control."
+  },
+  "vocabl8-1": {
+   "prompt": "«It was €120 and now it's €70: it's a steal.» Which bias is this?",
+   "options": [
+    "FOMO",
+    "Anchoring",
+    "Recency bias"
+   ],
+   "explanation": "The past price says nothing about today's value: the company may be worth much less now than it was then."
+  },
+  "vocabl8-2": {
+   "prompt": "Match each bias with the phrase that gives it away.",
+   "options": [
+    "FOMO",
+    "Sunk cost",
+    "Gambler's fallacy",
+    "Herd behaviour"
+   ],
+   "explanation": "Recognising the phrase in your head is the first step to putting the brakes on the bias.",
+   "right": [
+    "«It's fallen 6 days: it's bound to rise tomorrow»",
+    "«If everyone's buying it, it must be good»",
+    "«I've already lost so much that I'm not selling now»",
+    "«Everyone's making money except me: I'm buying now!»"
+   ]
+  },
+  "vocabl8-3": {
+   "prompt": "According to loss aversion, losing hurts roughly twice as much as winning the same amount feels good.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "That's why it's so hard to sell at a loss and accept that you were wrong."
+  },
+  "vocabl8-4": {
+   "prompt": "What do you tell her?",
+   "options": [
+    "It's overconfidence, but done well",
+    "Yes: it's the double-up-after-a-loss strategy",
+    "No, Lumi: that's called revenge trading"
+   ],
+   "explanation": "Revenge trading is one of the most expensive mistakes. The rule: after three losses in a row, you stop for the day.",
+   "feedback": [
+    "There's a bit of overconfidence in there, but above all it's revenge. And it's not done well. 😅",
+    "Doubling up after a loss is the fastest way to empty an account. It's not a strategy, it's revenge.",
+    "OK, OK… I'll switch off the screen and look at my journal tomorrow. 🫣"
+   ],
+   "lines": [
+    "Yesterday I lost 3 trades in a row 😤",
+    "Today I'm opening one three times as big to win it all back. That's called strategy, right?"
+   ]
+  },
+  "vocabl8-5": {
+   "prompt": "Selling winners too soon and holding on to losers is…",
+   "options": [
+    "Recency bias",
+    "Anchoring",
+    "The disposition effect"
+   ],
+   "explanation": "That's how you cut your profits short and let your losses run: exactly the opposite of what you should do."
+  },
+  "vocabl8-6": {
+   "prompt": "Is it a bias or good practice?",
+   "options": [
+    "Buying because everyone else is",
+    "Believing that whatever happened last will keep happening forever",
+    "Writing down your rules before trading",
+    "Only reading forums that think like you",
+    "Stopping after three losses in a row"
+   ],
+   "explanation": "Biases can't be eliminated: you rein them in with rules written down before you trade.",
+   "right": [
+    "Bias",
+    "Good practice"
+   ]
+  },
+  "vocabl8-7": {
+   "prompt": "Pablo has spent a month reading that a stock «is about to explode». He only follows accounts that agree. What should he do?",
+   "options": [
+    "Deliberately look for the opposite view before deciding",
+    "Buy more: if everyone says so, it must be true",
+    "Block anyone who disagrees so he doesn't get nervous"
+   ],
+   "explanation": "Confirmation bias makes you look only for what proves you right. You fight it by reading people who think the opposite.",
+   "feedback": [
+    "Good: it's the antidote to confirmation bias. If the idea survives the criticism, all the better.",
+    "Herd behaviour and confirmation bias at once: an expensive combo.",
+    "That way his information bubble is perfect… and his analysis worthless. 🫧"
+   ]
+  },
+  "vocabl8-8": {
+   "prompt": "«It's been rising for three months: it'll keep going forever.» Which bias is this?",
+   "options": [
+    "Sunk cost",
+    "Recency bias",
+    "Loss aversion"
+   ],
+   "explanation": "Giving too much weight to whatever happened most recently. Markets change direction without warning."
+  },
+  "vocabl8-9": {
+   "prompt": "Believing you know more than you do and trading all day long is a sign of ____.",
+   "options": [
+    "prudence",
+    "liquidity",
+    "optimism",
+    "overconfidence"
+   ],
+   "explanation": "Overconfidence leads you to trade too much, and every trade has costs."
+  },
+  "vocabl8-10": {
+   "prompt": "Putting a name to a bias makes it go away for good.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It helps you spot it, but it doesn't eliminate it: that's why you need written rules."
+  },
+  "vocabl9-1": {
+   "prompt": "Match each acronym with its meaning.",
+   "options": [
+    "EPS",
+    "P/E",
+    "PEG",
+    "ROE"
+   ],
+   "explanation": "Acronyms look scary, but each one is a simple division.",
+   "right": [
+    "P/E ÷ growth",
+    "Return on equity",
+    "Price ÷ earnings per share",
+    "Earnings per share"
+   ]
+  },
+  "vocabl9-2": {
+   "prompt": "A share trades at €60 and its earnings per share are €4. What's its P/E?",
+   "options": [],
+   "explanation": "60 ÷ 4 = 15: you're paying for 15 years of current earnings.",
+   "unit": "times"
+  },
+  "vocabl9-3": {
+   "prompt": "A lasting competitive advantage that protects profits is known as a ____.",
+   "options": [
+    "wall",
+    "margin",
+    "gap",
+    "moat"
+   ],
+   "explanation": "A term made popular by Warren Buffett: a brand, a network or costs that competitors can't copy."
+  },
+  "vocabl9-4": {
+   "prompt": "What do you explain to her?",
+   "options": [
+    "Earnings before interest, taxes, depreciation and amortisation",
+    "The profit left at the end, after everything",
+    "The company's debt"
+   ],
+   "explanation": "EBITDA is useful for comparing businesses, but it doesn't subtract interest, taxes or investment: it isn't the money the company actually keeps.",
+   "feedback": [
+    "Expecto beneficium! 🧙 Useful, but careful: it isn't cash or net profit.",
+    "That's net profit. EBITDA comes before several things are taken off.",
+    "No: debt is separate. That's what net debt is for."
+   ],
+   "lines": [
+    "EBITDA sounds like a Harry Potter spell 🪄",
+    "What is it really?"
+   ]
+  },
+  "vocabl9-5": {
+   "prompt": "Does it measure how expensive the share is or how good the business is?",
+   "options": [
+    "Operating margin",
+    "ROIC",
+    "CAPE",
+    "P/E",
+    "ROE",
+    "EV/EBITDA"
+   ],
+   "explanation": "Valuation ratios compare price with earnings; quality ratios compare earnings with what's been invested or with sales.",
+   "right": [
+    "How expensive or cheap it is",
+    "How good the business is"
+   ]
+  },
+  "vocabl9-6": {
+   "prompt": "Price is what you pay; ____ is what you get.",
+   "options": [
+    "profit",
+    "dividend",
+    "risk",
+    "value"
+   ],
+   "explanation": "One of the key ideas of value investing: buying with a margin of safety between the two."
+  },
+  "vocabl9-7": {
+   "prompt": "A company has a P/E of 20 and its earnings grow 10 % a year. What's its PEG?",
+   "options": [],
+   "explanation": "20 ÷ 10 = 2. A PEG of around 1 is usually considered reasonable; 2 suggests you're paying quite a lot for that growth.",
+   "unit": "times"
+  },
+  "vocabl9-8": {
+   "prompt": "A low P/E always means the share is cheap.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It might be cheap… or it might be a company whose earnings are about to fall. You have to look at why it's low."
+  },
+  "vocabl9-9": {
+   "prompt": "The CAPE is…",
+   "options": [
+    "The market's P/E using average earnings over 10 years",
+    "A company's P/E this year",
+    "An index's average dividend"
+   ],
+   "explanation": "It's also known as the Shiller P/E. Very high readings have been linked to lower future returns."
+  },
+  "vocabl9-10": {
+   "prompt": "The cash the business generates minus what it invests is ____ cash flow.",
+   "options": [
+    "gross",
+    "net",
+    "accounting",
+    "free"
+   ],
+   "explanation": "If profits never turn into cash, be suspicious."
+  },
+  "vocabl10-1": {
+   "prompt": "In Spain, moving money from one investment fund to another without paying tax is called a ____.",
+   "options": [
+    "refund",
+    "swap",
+    "redemption",
+    "transfer"
+   ],
+   "explanation": "It's known as a «traspaso», an advantage of investment funds. ETFs don't get this treatment: every sale is taxed."
+  },
+  "vocabl10-2": {
+   "prompt": "Match each acronym with what it is.",
+   "options": [
+    "CNMV",
+    "FOGAIN",
+    "MiCA",
+    "W-8BEN"
+   ],
+   "explanation": "Four acronyms that protect your money or save you tax.",
+   "right": [
+    "The EU regulation on crypto-assets",
+    "Cuts the US withholding tax on dividends to 15 %",
+    "Covers up to €100,000 if your investment firm fails",
+    "Spain's financial markets regulator"
+   ]
+  },
+  "vocabl10-3": {
+   "prompt": "A firm that offers investments without authorisation is a…",
+   "options": [
+    "«Chiringuito financiero»",
+    "Low-cost broker",
+    "Neobank"
+   ],
+   "explanation": "The CNMV publishes a warnings list of the chiringuitos it has detected."
+  },
+  "vocabl10-4": {
+   "prompt": "Which form do you declare it on?",
+   "options": [
+    "Crypto on a foreign platform worth more than €50,000",
+    "A bank account in Germany with more than €50,000",
+    "Bitcoin held in custody outside Spain worth more than €50,000",
+    "Shares at a foreign broker worth more than €50,000"
+   ],
+   "explanation": "Form 720 is for accounts, securities and property abroad; form 721, for crypto held in custody outside Spain.",
+   "right": [
+    "Modelo 720",
+    "Modelo 721"
+   ]
+  },
+  "vocabl10-5": {
+   "prompt": "What do you say to her?",
+   "options": [
+    "First of all, look them up on the CNMV website",
+    "If they have lots of followers, they must be trustworthy",
+    "I'll only send them half my ID, just in case"
+   ],
+   "explanation": "Guaranteed returns and contact through social media are classic signs of a chiringuito. Always check the CNMV register.",
+   "feedback": [
+    "OK… they're on the warnings list. Phew. 🙈 Smells like a chiringuito.",
+    "Followers can be bought. What can't be bought is authorisation from the CNMV.",
+    "Not half, not a quarter. 😅 Check with the CNMV first."
+   ],
+   "lines": [
+    "«Inversiones Golden Lambo» messaged me on Instagram 🏎️",
+    "They're promising a guaranteed 5 % a week. Should I send them my ID?"
+   ]
+  },
+  "vocabl10-6": {
+   "prompt": "Gains on your shares are taxed every year even if you don't sell them.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Gains are only taxed when you sell. Dividends, on the other hand, are taxed in the year you receive them."
+  },
+  "vocabl10-7": {
+   "prompt": "Gains on your investments are taxed in the ____ base of IRPF.",
+   "options": [
+    "wealth",
+    "consumption",
+    "employment",
+    "savings"
+   ],
+   "explanation": "From 19 % to 30 %, depending on the bracket."
+  },
+  "vocabl10-8": {
+   "prompt": "You sell some shares at a loss and buy the same ones back the following month. What happens to the loss?",
+   "options": [
+    "You can't use it yet: the two-month rule prevents it",
+    "You offset it as usual",
+    "It disappears for good"
+   ],
+   "explanation": "It isn't lost: it's deferred until you sell the shares you bought back."
+  },
+  "vocabl10-9": {
+   "prompt": "If your bank goes bust, Spain's Deposit Guarantee Fund covers up to ____ € per person and per bank.",
+   "options": [
+    "20,000",
+    "50,000",
+    "1,000,000",
+    "100,000"
+   ],
+   "explanation": "Up to €100,000 per account holder and per bank. FOGAIN covers something else: securities held at investment firms."
+  },
+  "vocabl10-10": {
+   "prompt": "An ETF can be transferred to another fund without paying tax, just like an investment fund.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "As a general rule, no: the tax-free transfer regime is for investment funds. Selling an ETF is taxed like selling a share."
+  }
+ }
+}

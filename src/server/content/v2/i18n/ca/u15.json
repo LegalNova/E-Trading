@@ -1,0 +1,607 @@
+{
+ "unit": {
+  "title": "Matèries primeres",
+  "description": "Or, petroli, metalls i productes agrícoles: què els mou i com s'hi inverteix",
+  "section": "Divises i matèries primeres"
+ },
+ "lessons": {
+  "u15l1": {
+   "title": "L'or",
+   "steps": [
+    {
+     "title": "Per què es compra or",
+     "body": "L'or **no paga interessos ni dividends**. Es compra com a **refugi**: en crisis, davant de la inflació o quan es desconfia de les monedes. Els bancs centrals també l'acumulen com a reserva.\n\nCom que no rendeix res, quan els **tipus d'interès reals** (descomptada la inflació) pugen, tenir or «costa» més i sol patir."
+    },
+    {
+     "title": "Brilla… a estones",
+     "body": "• **1980:** màxim d'uns 850 $ l'unça. No el va tornar a superar fins al **2008**, i pel camí va perdre molt valor real.\n• **2020:** rècord per sobre de 2.000 $ en plena pandèmia.\n• **2025:** va superar per primera vegada els **4.000 $**.\n\nPot passar dècades sense guanyar a la inflació."
+    },
+    {
+     "title": "Per a què serveix en una cartera",
+     "body": "Una part petita pot ajudar a diversificar perquè de vegades puja quan la borsa cau. Però no genera rendes: la seva rendibilitat depèn només del que un altre pagui demà.",
+     "key": "L'or protegeix de vegades, però no produeix res.",
+     "tip": "Un refugi que pot passar 20 anys sense pujar també és un risc."
+    }
+   ]
+  },
+  "u15l2": {
+   "title": "El petroli i l'OPEP",
+   "steps": [
+    {
+     "title": "Brent i WTI",
+     "body": "Hi ha dos preus de referència:\n\n• **Brent:** cru del mar del Nord, referència a Europa.\n• **WTI:** cru de Texas que es lliura a Cushing (Oklahoma), referència als EUA.\n\nCotitzen en **dòlars per barril** (uns 159 litres). Per això a Espanya també l'afecta el dòlar."
+    },
+    {
+     "title": "Què el mou",
+     "body": "• **Demanda:** creixement mundial, sobretot dels EUA i la Xina.\n• **Oferta:** l'**OPEP** (fundada el 1960) i, des del 2016, l'**OPEP+**, amb Rússia i altres productors, pacten quotes de producció.\n• **Geopolítica:** guerres, sancions, estrets com el d'Ormuz.\n• **Inventaris:** quant cru hi ha emmagatzemat."
+    },
+    {
+     "title": "Tres ensurts històrics",
+     "body": "• **1973:** l'embargament de l'OPEP va quadruplicar el preu.\n• **2008:** el WTI va fregar els **147 $** al juliol… i al desembre era per sota de 40 $.\n• **20 d'abril del 2020:** amb el món confinat, el contracte de maig del WTI va tancar a **−37,63 $**: el venedor pagava perquè se l'enduguessin.",
+     "key": "El petroli es mou per oferta, demanda i geopolítica, i ho pot fer amb violència."
+    }
+   ]
+  },
+  "u15l3": {
+   "title": "Metalls industrials i productes agrícoles",
+   "steps": [
+    {
+     "title": "Metalls que mesuren l'economia",
+     "body": "• **Coure:** cables, construcció, cotxes elèctrics. L'anomenen **«doctor Coure»** perquè el seu preu sol anticipar com va l'economia.\n• **Alumini, níquel, liti:** indústria i bateries.\n• **Plata:** meitat joia, meitat indústria: gairebé el **60 %** de la seva demanda el 2024 va ser industrial (electrònica, plaques solars)."
+    },
+    {
+     "title": "Agrícoles: mana el clima",
+     "body": "El blat, el blat de moro, el cafè, el cacau o el sucre depenen de **collites, clima i guerres**:\n\n• **2022:** la invasió d'Ucraïna va portar el blat de Chicago a màxims de 14 anys. Rússia i Ucraïna sumaven prop del 30 % de les exportacions mundials.\n• **2024:** les males collites de l'Àfrica occidental van fer pujar el cacau un **178 %** en un any."
+    },
+    {
+     "title": "Molt més volàtils",
+     "body": "Els productes agrícoles poden duplicar-se o enfonsar-se per una sequera o una glaçada. A més, es negocien amb futurs, així que invertir-hi no és tan senzill com «comprar cafè».",
+     "key": "Metalls industrials: termòmetre de l'economia. Agrícoles: clima i collites."
+    }
+   ]
+  },
+  "u15l4": {
+   "title": "Com s'inverteix en matèries primeres",
+   "steps": [
+    {
+     "title": "Quatre camins",
+     "body": "• **Físic:** monedes o lingots. Tens el metall, però l'has de guardar i es compra i es ven amb marge.\n• **ETC** (*exchange traded commodity*): cotitza com un ETF; tècnicament és un títol de deute. Els d'or solen estar **respaldats per metall físic**.\n• **Futurs:** contractes per comprar o vendre en una data. Palanquejats i complexos.\n• **Accions** de mineres o petrolieres."
+    },
+    {
+     "title": "Una empresa no és la matèria primera",
+     "body": "Una minera d'or guanya més quan puja l'or, però té **costos, deute i directius**: sol moure's més que el metall, cap amunt i cap avall. Una petroliera reparteix dividends; el barril, no.\n\nEls ETC sobre petroli o productes agrícoles fan servir **futurs**, i això té un cost amagat que veuràs a la propera classe."
+    },
+    {
+     "title": "Abans de comprar",
+     "body": "A Espanya, els ETC tributen quan els vens, com els ETF: no permeten traspassos sense pagar impostos. Llegeix el document de dades fonamentals i mira si el producte és **físic** o replica amb **futurs**.",
+     "key": "No és el mateix invertir en or que en una minera d'or."
+    }
+   ]
+  },
+  "u15l5": {
+   "title": "Contango i backwardation",
+   "steps": [
+    {
+     "title": "La corba de futurs",
+     "body": "Un futur fixa avui el preu d'un barril que es lliura més endavant, i cada mes té el seu preu:\n\n• **Contango:** els futurs llunyans són **més cars** que els propers. Passa quan sobra cru: emmagatzemar-lo costa.\n• **Backwardation:** els llunyans són **més barats**. Passa quan hi ha escassetat i tothom el vol ja."
+    },
+    {
+     "title": "El cost de renovar",
+     "body": "Un fons de petroli no vol rebre barrils: abans que venci el contracte, **ven el proper i compra el següent**.\n\nEn contango ven barat i compra car: amb els mateixos diners té **menys barrils** cada mes. Encara que el cru no es mogui, el fons perd."
+    },
+    {
+     "title": "El cas del 2020",
+     "body": "L'abril del 2020 sobrava tant cru que el contracte de maig del WTI va arribar a **−37,63 $**, mentre que els següents valien molt més. L'ETF de petroli més gran dels EUA (USO) **va perdre al voltant d'un 68 % el 2020**, quan el WTI al comptat va caure al voltant d'un **20 %**.",
+     "key": "En contango, un fons de futurs pot perdre encara que el cru pugi.",
+     "tip": "Abans de comprar un producte de matèries primeres, mira com replica."
+    },
+    {
+     "title": "El que costa recuperar-se",
+     "body": "Posa una caiguda del 68 %: veuràs que cal pujar més d'un 200 % per tornar al punt de partida."
+    }
+   ]
+  },
+  "u15r": {
+   "title": "Repàs de la unitat",
+   "steps": []
+  },
+  "s5boss": {
+   "title": "Repte final: Divises i matèries primeres",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u15l1-1": {
+   "prompt": "Mira l'or des del 2018 fins a l'estiu del 2020. Quina tendència hi veus? (Or · tancaments setmanals · fins al 03/08/2020)",
+   "options": [
+    "Alcista",
+    "Baixista",
+    "Lateral"
+   ],
+   "explanation": "D'uns 1.200 $ a més de 2.000 $: la por, els tipus baixos i la pandèmia van empènyer cap al refugi."
+  },
+  "u15l1-2": {
+   "prompt": "Toca el punt més baix de l'or en aquest període. (Or · tancaments setmanals · fins al 03/08/2020)",
+   "options": [],
+   "explanation": "El mínim va ser a finals del 2018, al voltant de 1.190 $. Des d'allà va pujar al voltant d'un 70 % fins a l'agost del 2020."
+  },
+  "u15l1-3": {
+   "prompt": "Agost del 2020: l'or acaba de marcar un rècord per sobre de 2.000 $ en plena pandèmia. Què va fer els mesos següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Aquell estiu ningú no sabia quan arribarien les vacunes ni què farien els tipus d'interès reals, que són dels factors que més pesen en l'or.",
+   "horizon": "fins al desembre del 2021"
+  },
+  "u15l1-4": {
+   "prompt": "Què genera l'or cada any al seu propietari?",
+   "options": [
+    "Un cupó fix",
+    "Dividends de les mines",
+    "Res: ni interessos ni dividends"
+   ],
+   "explanation": "Només guanyes si un altre paga més demà. Per això no es pot valorar amb un PER."
+  },
+  "u15l1-5": {
+   "prompt": "L'or va marcar un màxim el 1980 que no va tornar a superar fins al 2008.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Uns 850 $ l'unça el 1980. Comptant la inflació, qui va comprar en el màxim va perdre moltíssim poder de compra."
+  },
+  "u15l1-6": {
+   "prompt": "Gràfic real d'una matèria primera: 30 sessions sense nom ni data. Què va fer en les 10 següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Que un actiu sigui «refugi» no el fa previsible a curt termini: també té setmanes molt volàtils.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u15l1-7": {
+   "prompt": "Què sol afavorir l'or? Marca-ho tot.",
+   "options": [
+    "Baixades dels tipus d'interès reals",
+    "Tipus reals molt alts i pujant",
+    "Compres dels bancs centrals",
+    "Por als mercats"
+   ],
+   "explanation": "Amb tipus reals alts, un bo que paga competeix amb avantatge davant d'un actiu que no paga res."
+  },
+  "u15l1-8": {
+   "prompt": "L'or va passar d'uns 850 $ el 1980 a uns 2.000 $ el 2020. Quant va pujar en total (en %)?",
+   "options": [],
+   "explanation": "(2.000 − 850) ÷ 850 ≈ 135 % en 40 anys: poc més d'un 2 % anual, per sota de la inflació dels EUA en aquest període.",
+   "unit": "%"
+  },
+  "u15l1-9": {
+   "prompt": "Ràpid: què sol passar-li a l'or quan pugen molt els tipus reals?",
+   "options": [
+    "Sol patir",
+    "Sempre puja",
+    "Paga més dividend"
+   ],
+   "explanation": "Tenir un actiu sense rendes surt més car davant d'un bo que paga més."
+  },
+  "u15l1-10": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Té raó, és el refugi perfecte",
+    "L'or pot passar dècades sense pujar; com a molt, una part petita per diversificar",
+    "L'or paga bons dividends"
+   ],
+   "explanation": "Cap actiu «no baixa mai». L'or diversifica, però també té ratxes molt llargues sense pujar.",
+   "feedback": [
+    "Compte: va trigar 28 anys a recuperar el seu màxim del 1980.",
+    "D'acord: no és una guardiola màgica, és una peça més de la cartera.",
+    "No paga res: només guanyes si puja el preu."
+   ],
+   "lines": [
+    "El meu oncle diu que l'or «no baixa mai» i que ho posi tot allà 🪙"
+   ]
+  },
+  "u15l2-1": {
+   "prompt": "Així es va moure el WTI des de mitjan 2019 fins a l'abril del 2020. Quina tendència hi veus? (Petroli WTI · tancaments setmanals · fins al 20/04/2020)",
+   "options": [
+    "Alcista",
+    "Baixista",
+    "Lateral"
+   ],
+   "explanation": "De més de 50 $ a menys de 20 $ en tancament setmanal: la pandèmia va enfonsar la demanda just quan l'Aràbia Saudita i Rússia es barallaven per la quota de mercat."
+  },
+  "u15l2-2": {
+   "prompt": "Toca el punt més baix d'aquest període (tancaments setmanals). (Petroli WTI · tancaments setmanals · fins al 20/04/2020)",
+   "options": [],
+   "explanation": "La setmana del 20 d'abril del 2020 va tancar a uns 17 $. El −37,63 $ no apareix en tancaments setmanals: va ser un sol dia i un sol contracte, el de maig, just abans de vèncer."
+  },
+  "u15l2-3": {
+   "prompt": "20 d'abril del 2020: el WTI acaba de tocar preus negatius. Les carreteres són buides i gairebé no queda on emmagatzemar cru. Què va fer el petroli després?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "En aquell moment gairebé ningú no s'atrevia a fer previsions: tot depenia de quan s'acabarien els confinaments i de les retallades de l'OPEP+.",
+   "horizon": "fins al juny del 2021"
+  },
+  "u15l2-4": {
+   "prompt": "Març del 2022: esclata la guerra a Ucraïna i el Brent es dispara. En Pablo vol comprar ja accions de petrolieres «perquè això només pot pujar». Què li dius?",
+   "options": [
+    "Que vengui tot el que tingui a borsa",
+    "Que en compri tant com pugui",
+    "Que el preu ja reflecteix la notícia i pot girar-se ràpid: que no decideixi per titulars"
+   ],
+   "explanation": "Les matèries primeres reaccionen molt ràpid a la geopolítica: quan llegeixes el titular, el preu ja ha saltat.",
+   "feedback": [
+    "Una notícia no justifica desfer tota una cartera.",
+    "Entrar en ple pic per eufòria és molt arriscat: el cru també baixa amb violència (2008).",
+    "Bé: després del pic de març del 2022, el cru va baixar amb força els mesos següents."
+   ]
+  },
+  "u15l2-5": {
+   "prompt": "Què és l'OPEP+?",
+   "options": [
+    "Una petroliera estatal saudita",
+    "L'OPEP més altres productors com Rússia, que pacten quotes de producció",
+    "Un índex de preus del petroli"
+   ],
+   "explanation": "Des del 2016 coordina la producció d'una vintena de països."
+  },
+  "u15l2-6": {
+   "prompt": "Relaciona cada fet amb el seu efecte habitual en el cru.",
+   "options": [
+    "L'OPEP+ retalla la producció",
+    "Recessió mundial",
+    "Inventaris plens i sense lloc per emmagatzemar",
+    "Conflicte en una zona productora"
+   ],
+   "explanation": "Oferta, demanda, emmagatzematge i geopolítica.",
+   "right": [
+    "Tendeix a baixar",
+    "Puja per por a un tall de subministrament",
+    "Pressió baixista extrema",
+    "Tendeix a pujar"
+   ]
+  },
+  "u15l2-7": {
+   "prompt": "El 20 d'abril del 2020, el contracte de maig del WTI va tancar a −37,63 $: el venedor pagava al comprador.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Qui tenia contractes a punt de vèncer no tenia on guardar el cru i va pagar per desfer-se'n."
+  },
+  "u15l2-8": {
+   "prompt": "El Brent i el WTI cotitzen en dòlars per ____.",
+   "options": [
+    "tona",
+    "litre",
+    "unça",
+    "barril"
+   ],
+   "explanation": "Un barril són uns 159 litres."
+  },
+  "u15l2-9": {
+   "prompt": "Un barril té uns 159 litres. Si el Brent cotitza a 80 $ i EUR/USD = 1,16, quant costa un litre de cru en euros? (arrodoneix als cèntims)",
+   "options": [],
+   "explanation": "80 ÷ 1,16 ≈ 68,97 € per barril; 68,97 ÷ 159 ≈ 0,43 € per litre. La resta del preu de la gasolina són refinació, transport, marges i impostos.",
+   "unit": "€"
+  },
+  "u15l2-10": {
+   "prompt": "Per què un euro fort abarateix el petroli per a Espanya?",
+   "options": [
+    "Perquè el cru es paga en dòlars",
+    "Perquè l'OPEP cobra en euros",
+    "Perquè Espanya produeix molt petroli"
+   ],
+   "explanation": "Amb més dòlars per euro, el mateix barril costa menys euros."
+  },
+  "u15l3-1": {
+   "prompt": "Relaciona cada matèria primera amb el que més la mou.",
+   "options": [
+    "Coure",
+    "Cacau",
+    "Blat",
+    "Plata"
+   ],
+   "explanation": "Cada matèria primera té el seu motor principal.",
+   "right": [
+    "Les collites de l'Àfrica occidental",
+    "Collites i conflictes en grans exportadors",
+    "La indústria i la demanda com a refugi",
+    "El cicle econòmic i la construcció"
+   ]
+  },
+  "u15l3-2": {
+   "prompt": "Metall industrial o producte agrícola?",
+   "options": [
+    "Cafè",
+    "Blat de moro",
+    "Níquel",
+    "Sucre",
+    "Alumini",
+    "Coure"
+   ],
+   "explanation": "Els metalls depenen de la indústria; els productes agrícoles, del camp i del clima.",
+   "right": [
+    "Metall industrial",
+    "Agrícola"
+   ]
+  },
+  "u15l3-3": {
+   "prompt": "Per què al coure l'anomenen «doctor Coure»?",
+   "options": [
+    "Perquè el regula un organisme mèdic",
+    "Perquè es fa servir molt als hospitals",
+    "Perquè el seu preu sol anticipar com va l'economia"
+   ],
+   "explanation": "És a gairebé tot el que es construeix i es fabrica: si l'economia s'accelera o es frena, es nota en el seu preu."
+  },
+  "u15l3-4": {
+   "prompt": "Gràfic real d'un metall (30 sessions, sense nom ni data). Què va fer en les 10 següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Els metalls amb ús industrial i d'inversió es mouen per dues forces alhora, l'economia i la por. Això els fa molt volàtils.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u15l3-5": {
+   "prompt": "Un altre metall real, unes altres 30 sessions. Puja o baixa?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Un moviment fort en un sentit no anticipa el següent: alguns metalls es mouen un 10 % en poques setmanes, en qualsevol direcció.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u15l3-6": {
+   "prompt": "Més de la meitat de la demanda de plata és industrial.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "El 2024, gairebé un 60 %: electrònica, plaques solars… Per això la plata sol patir més que l'or quan l'economia es frena."
+  },
+  "u15l3-7": {
+   "prompt": "El cacau va tancar el 2023 a uns 4.200 $ per tona i va pujar un 178 % el 2024. A quant va tancar el 2024 aproximadament?",
+   "options": [],
+   "explanation": "4.200 × 2,78 ≈ 11.676 $. En realitat va tancar el 2024 al voltant d'11.675 $ la tona.",
+   "unit": "$"
+  },
+  "u15l3-8": {
+   "prompt": "Una glaçada al Brasil amenaça la collita de cafè. La Marta té una cafeteria a València. Què és el més probable?",
+   "options": [
+    "Que el cafè en gra s'encareixi i li pugin els costos",
+    "Que el cafè en gra s'abarateixi",
+    "Que no l'afecti perquè compra a un proveïdor espanyol"
+   ],
+   "explanation": "En els productes agrícoles, el clima d'un gran productor mou el preu mundial.",
+   "feedback": [
+    "Això: menys oferta, preu més alt. El 2024 la sequera al Brasil va portar l'aràbica a rècords.",
+    "Una mala collita redueix l'oferta: el normal és el contrari.",
+    "El Brasil és el primer productor del món: el preu mundial acaba arribant al seu proveïdor."
+   ]
+  },
+  "u15l3-9": {
+   "prompt": "Ràpid: quina guerra va disparar el preu del blat el 2022?",
+   "options": [
+    "Cap, va ser una plaga",
+    "La guerra comercial entre els EUA i la Xina",
+    "La invasió russa d'Ucraïna"
+   ],
+   "explanation": "Rússia i Ucraïna sumaven prop del 30 % de les exportacions mundials de blat."
+  },
+  "u15l3-10": {
+   "prompt": "Què pot fer pujar el preu d'una matèria primera agrícola? Marca-ho tot.",
+   "options": [
+    "Una guerra que bloqueja ports",
+    "Una collita rècord",
+    "Plagues o malalties als conreus",
+    "Una sequera en un gran productor"
+   ],
+   "explanation": "Una collita rècord augmenta l'oferta i sol fer baixar el preu."
+  },
+  "u15l4-1": {
+   "prompt": "Relaciona cada manera d'invertir amb la seva característica.",
+   "options": [
+    "Lingots i monedes",
+    "ETC d'or físic",
+    "Futurs",
+    "Accions d'una minera"
+   ],
+   "explanation": "Quatre camins amb riscos molt diferents.",
+   "right": [
+    "Contracte amb venciment i palanquejament",
+    "Depenen del metall i de la gestió de l'empresa",
+    "Cotitza a borsa i està respaldat per metall",
+    "Tens el metall, però l'has de guardar"
+   ]
+  },
+  "u15l4-2": {
+   "prompt": "Què és un ETC?",
+   "options": [
+    "Un producte cotitzat que replica una matèria primera",
+    "Un fons d'empreses tecnològiques",
+    "Un compte d'estalvi en or del banc"
+   ],
+   "explanation": "Cotitza a borsa com un ETF, però segueix una matèria primera."
+  },
+  "u15l4-3": {
+   "prompt": "Una acció d'una minera d'or es mou exactament igual que l'or.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Sol moure's més, en tots dos sentits, perquè té costos fixos i deute."
+  },
+  "u15l4-4": {
+   "prompt": "Una minera produeix or a un cost de 1.500 $ l'unça i el ven a 2.000 $. Si l'or puja un 10 %, quant puja el seu marge per unça (en %)?",
+   "options": [],
+   "explanation": "Marge abans: 500 $. Amb l'or a 2.200 $: 700 $. (700 − 500) ÷ 500 = +40 %. Per això les mineres amplifiquen el que fa el metall… també quan baixa.",
+   "unit": "%"
+  },
+  "u15l4-5": {
+   "prompt": "Et dona exposició directa al preu o a través d'una empresa?",
+   "options": [
+    "Futur sobre el WTI",
+    "Accions d'una petroliera",
+    "Accions d'una minera de coure",
+    "Lingot d'or",
+    "ETC d'or físic"
+   ],
+   "explanation": "Amb una empresa també compres la seva gestió, el seu deute i els seus costos.",
+   "right": [
+    "Directa a la matèria primera",
+    "Indirecta (a través d'una empresa)"
+   ]
+  },
+  "u15l4-6": {
+   "prompt": "Els ETC d'or físic solen tenir lingots guardats en una cambra cuirassada per respaldar el producte.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Per això segueixen l'or molt de prop, menys la seva petita comissió anual."
+  },
+  "u15l4-7": {
+   "prompt": "En Bruno vol «invertir en petroli». Vol entendre bé el que compra i no fer servir palanquejament. Quina opció descarta primer?",
+   "options": [
+    "Un fons d'accions del sector energètic",
+    "Un ETC sobre futurs del WTI",
+    "Futurs del WTI palanquejats des d'una app"
+   ],
+   "explanation": "Els futurs palanquejats no són per començar: es pot perdre molt de pressa.",
+   "feedback": [
+    "És la més fàcil d'entendre, tot i que no segueix exactament el barril.",
+    "No és la primera que cal descartar, però té costos de renovar futurs: els ha d'entendre abans.",
+    "Això mateix: el palanquejament i els venciments són just el que vol evitar."
+   ]
+  },
+  "u15l4-8": {
+   "prompt": "Ràpid: quina opció t'obliga a guardar el metall tu mateix?",
+   "options": [
+    "Lingots i monedes",
+    "Accions mineres",
+    "ETC"
+   ],
+   "explanation": "Necessites una caixa forta o pagar un servei de custòdia."
+  },
+  "u15l4-9": {
+   "prompt": "Quins inconvenients té l'or en lingots? Marca'ls tots.",
+   "options": [
+    "La diferència entre el preu de compra i el de venda pot ser gran",
+    "Vendre'l ràpid pot costar més",
+    "Paga un cupó anual",
+    "L'has de guardar i assegurar"
+   ],
+   "explanation": "L'or no paga res; i comprar-lo i vendre'l en físic té costos."
+  },
+  "u15l4-10": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Això són CFD o futurs palanquejats: un 10 % en contra ho perd tot, i prometre guanys és mal senyal",
+    "Millor 1:100, que és més",
+    "Apunta-t'hi ja!"
+   ],
+   "explanation": "Amb 1:10, un 10 % en contra et deixa a zero. Els CFD són instruments complexos i estan associats a un risc elevat de perdre diners ràpidament a causa del palanquejament. Entre un 74 i un 89 % dels inversors minoristes perden diners quan negocien amb CFD.",
+   "feedback": [
+    "D'acord, millor que entengui què és un ETC abans de tocar res palanquejat.",
+    "Més palanquejament, més ràpid a zero.",
+    "Amb 1:10, un 10 % en contra ho perd tot. I prometre un 300 % és un senyal d'alarma."
+   ],
+   "lines": [
+    "He vist un anunci: «Opera amb petroli a 1:10 i guanya un 300 % aquest mes» 🛢️"
+   ]
+  },
+  "u15l5-1": {
+   "prompt": "El futur de juny val 25 $ i el de juliol, 28 $. La corba està en…",
+   "options": [
+    "Equilibri",
+    "Backwardation",
+    "Contango"
+   ],
+   "explanation": "Llunyans més cars que propers = contango."
+  },
+  "u15l5-2": {
+   "prompt": "Un fons té 1.000 $ en el futur de maig, que val 20 $. En renovar, el ven a 20 $ i compra el de juny, que val 25 $. Quants barrils controla ara?",
+   "options": [],
+   "explanation": "Abans: 1.000 ÷ 20 = 50 barrils. Després: 1.000 ÷ 25 = 40. En contango, cada renovació et deixa amb menys.",
+   "unit": "barrils"
+  },
+  "u15l5-3": {
+   "prompt": "Seguint el cas anterior: el futur de juny arriba al venciment valent 20 $, perquè el cru no s'ha mogut. Quant val ara el fons?",
+   "options": [],
+   "explanation": "40 barrils × 20 $ = 800 $: un −20 % sense que el cru hagi baixat. És el cost del contango.",
+   "unit": "$"
+  },
+  "u15l5-4": {
+   "prompt": "Toca el punt més alt del WTI en aquest període (tancaments setmanals). (Petroli WTI · tancaments setmanals · fins al 20/04/2020)",
+   "options": [],
+   "explanation": "Uns 63 $ el gener del 2020. Tres mesos després tancava setmanes per sota de 20 $, i el contracte de maig va arribar a cotitzar en negatiu."
+  },
+  "u15l5-5": {
+   "prompt": "Gràfic real del petroli: 30 sessions sense data. Què va fer el cru en les 10 següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Encara que encertessis la direcció del barril, un fons de futurs en contango podria guanyar força menys, o fins i tot perdre.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u15l5-6": {
+   "prompt": "Un fons de futurs de petroli sempre segueix exactament el preu del barril que surt a les notícies.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "El de les notícies és el contracte proper; el fons renova contractes i paga (o cobra) la diferència de la corba."
+  },
+  "u15l5-7": {
+   "prompt": "Relaciona cada terme amb la seva definició.",
+   "options": [
+    "Contango",
+    "Backwardation",
+    "Preu al comptat",
+    "Renovació (roll)"
+   ],
+   "explanation": "Amb aquestes quatre paraules ja entens per què un fons de petroli no segueix el barril.",
+   "right": [
+    "Preu per a lliurament immediat",
+    "Vendre el contracte proper i comprar el següent",
+    "Els futurs llunyans costen menys que els propers",
+    "Els futurs llunyans costen més que els propers"
+   ]
+  },
+  "u15l5-8": {
+   "prompt": "Abril del 2020. L'Anna veu el cru pels terres i compra un fons de futurs de petroli «per quan es recuperi». Quin risc no ha mirat?",
+   "options": [
+    "El cost de renovar futurs en contango",
+    "Cap: si el cru puja, ella guanya el mateix",
+    "Que el fons cotitzi en dòlars"
+   ],
+   "explanation": "En matèries primeres, el producte importa tant com la direcció del preu.",
+   "feedback": [
+    "Exacte: el 2020 l'USO va perdre prop d'un 68 % mentre el WTI al comptat queia al voltant d'un 20 %.",
+    "Amb un contango tan fort, cada renovació li fa perdre barrils: encara que el cru es recuperi, el fons pot quedar-se molt enrere.",
+    "És un risc, però petit comparat amb el contango d'aquell moment."
+   ]
+  },
+  "u15l5-9": {
+   "prompt": "Ràpid: en backwardation, renovar futurs…",
+   "options": [
+    "Sol sumar rendibilitat",
+    "Sempre resta",
+    "No té cap efecte"
+   ],
+   "explanation": "Vens el proper car i compres el llunyà barat: amb els mateixos diners tens més barrils."
+  },
+  "u15l5-10": {
+   "prompt": "Un fons perd un 68 %. Quant ha de pujar després per tornar al punt de partida?",
+   "options": [],
+   "explanation": "1 ÷ 0,32 = 3,125 → cal un +212,5 %. Les caigudes grans costen moltíssim de recuperar.",
+   "unit": "%"
+  }
+ }
+}

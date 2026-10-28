@@ -1,0 +1,788 @@
+{
+ "unit": {
+  "title": "Estafes i com detectar-les",
+  "description": "Entitats pirata, Ponzi, pump and dump, phishing, finfluencers i què fer si t'estafen",
+  "section": "Espanya: impostos i estafes"
+ },
+ "lessons": {
+  "u32l1": {
+   "title": "Entitats financeres pirata",
+   "steps": [
+    {
+     "title": "Què és un «chiringuito»",
+     "body": "Una entitat que ofereix serveis d'inversió **sense autorització** (en castellà en diuen «chiringuito financiero»). Solen tenir webs molt professionals, noms en anglès i «assessors» molt simpàtics.\n\nLa CNMV publica cada any centenars d'**advertiments** sobre entitats no autoritzades."
+    },
+    {
+     "title": "Els senyals d'alarma",
+     "body": "1. Et contacten **sense que ho hagis demanat**.\n2. Prometen rendibilitats **altes i garantides**.\n3. Et posen **pressa**.\n4. Et demanen que instal·lis un programa d'**accés remot** (AnyDesk, TeamViewer).\n5. Demanen transferències a altres països o en cripto.\n6. Veus que el teu saldo creix, però **no el pots retirar** sense pagar abans «impostos» o «comissions»."
+    },
+    {
+     "title": "Comprova-ho sempre",
+     "body": "Abans d'invertir, busca l'entitat a **cnmv.es**: als registres d'entitats autoritzades i a la llista d'advertiments. No et refiïs mai del que digui el seu propi web.",
+     "key": "Si et contacten sense demanar-ho per oferir-te rendibilitats altes i segures, és gairebé segur una estafa.",
+     "tip": "Ningú que conegui una manera segura de guanyar un 20 % al mes et trucaria per explicar-te-la."
+    }
+   ]
+  },
+  "u32l2": {
+   "title": "Esquemes Ponzi i piramidals",
+   "steps": [
+    {
+     "title": "Com funcionen",
+     "body": "Un **esquema Ponzi** paga els primers inversors amb els diners dels nous. No hi ha cap negoci real al darrere, o és mínim. Mentre entren diners nous, tot sembla anar de meravella.\n\nUn **esquema piramidal** fa el mateix, però guanyes sobretot per **reclutar** altres persones.\n\nQuan deixen d'entrar diners, s'enfonsa."
+    },
+    {
+     "title": "Casos reals",
+     "body": "• **Charles Ponzi**, Boston, 1920: prometia un 50 % en 45 dies.\n• **Bernard Madoff**, descobert el 2008: va enganyar durant dècades fins i tot inversors professionals.\n• **Fórum Filatélico i Afinsa**, Espanya, 2006: centenars de milers d'afectats per un negoci de segells."
+    },
+    {
+     "title": "Rendibilitats impossibles",
+     "body": "Un 1 % diari sembla poc, però compost és multiplicar els teus diners per 37 en un any. Un 10 % mensual és més del 200 % anual. Res de legal dona això de manera estable.",
+     "key": "Si els comptes no surten amb interès compost, no és un negoci: és una estafa."
+    }
+   ]
+  },
+  "u32l3": {
+   "title": "Pump and dump i grups de senyals",
+   "steps": [
+    {
+     "title": "Com funciona",
+     "body": "**Pump and dump** («inflar i deixar anar»):\n\n1. Els organitzadors compren en silenci un actiu petit (una cripto o una acció amb poc volum).\n2. L'anuncien com «el senyal» a Telegram, WhatsApp o les xarxes.\n3. Els membres compren i el preu es dispara.\n4. Els organitzadors venen a dalt de tot.\n5. El preu s'enfonsa i els últims perden."
+    },
+    {
+     "title": "Per què és un parany",
+     "body": "És **manipulació de mercat**, prohibida a les borses i, amb el reglament europeu MiCA, també en cripto. I els grups de «senyals VIP» que cobren una quota solen guanyar amb la teva quota i amb la teva compra, no amb els seus encerts.",
+     "key": "Si t'avisen alhora que a milers de persones, no ets tu qui compra abans: ets qui compra car."
+    }
+   ]
+  },
+  "u32l4": {
+   "title": "Phishing i suplantació",
+   "steps": [
+    {
+     "title": "Les variants",
+     "body": "• **Phishing:** un correu electrònic que imita el teu banc, Hisenda o una empresa de missatgeria.\n• **Smishing:** el mateix per SMS.\n• **Vishing:** una trucada d'un fals empleat del banc.\n• **Spoofing:** falsifiquen el remitent o el número perquè sembli l'oficial.\n\nTotes busquen el mateix: les teves claus, els teus codis o que facis una transferència."
+    },
+    {
+     "title": "Les regles d'or",
+     "body": "• El teu banc **mai** no et demanarà claus completes ni codis SMS per telèfon, correu o missatge.\n• No cliquis enllaços de missatges inesperats: entra tu a l'app o al web.\n• Activa la **verificació en dos passos**.\n• Davant la pressa («el teu compte es bloqueja en 1 hora»), atura't i comprova."
+    },
+    {
+     "title": "Si ja hi has caigut",
+     "body": "Truca al teu banc al número oficial per bloquejar la targeta o l'operació, canvia les contrasenyes i denuncia-ho. Pots demanar ajuda al **017**, la línia gratuïta de ciberseguretat de l'INCIBE.",
+     "key": "Cap banc no et demanarà les claus ni els codis: qui te'ls demana t'està robant."
+    }
+   ]
+  },
+  "u32l5": {
+   "title": "Finfluencers i publicitat",
+   "steps": [
+    {
+     "title": "Què poden fer i què no",
+     "body": "Un influencer pot **explicar conceptes** i explicar la seva experiència. El que **no** pot fer sense autorització de la CNMV és **assessorar-te**: dir-te què has de comprar segons la teva situació.\n\nSi li paguen per parlar d'un producte, ha de deixar clar que és **publicitat**."
+    },
+    {
+     "title": "Cripto i publicitat",
+     "body": "Des del 2024 la publicitat de criptoactius a la UE la regula **MiCA**: ha de ser **clara, imparcial i no enganyosa**, identificar-se com a publicitat i avisar dels riscos. La CNMV va substituir la seva antiga circular (la 1/2022) per la 1/2024 per adaptar-s'hi. I la seva guia per a finfluencers recorda que posar «això no és assessorament» **no protegeix** si a la pràctica estàs recomanant."
+    },
+    {
+     "title": "Preguntes que t'has de fer",
+     "body": "Guanya diners si jo compro? M'ensenya les seves pèrdues o només els encerts? Em ven un curs o «senyals»? Em posa pressa? Tenir molts seguidors no vol dir saber invertir.",
+     "key": "Un influencer et pot ensenyar; si et diu què has de comprar, pregunta't qui li paga."
+    }
+   ]
+  },
+  "u32l6": {
+   "title": "Si t'han estafat",
+   "steps": [
+    {
+     "title": "Què has de fer ara mateix",
+     "body": "1. **No enviïs més diners**, encara que et prometin tornar-te els anteriors.\n2. **Avisa el teu banc** com més aviat millor: de vegades es pot aturar una transferència o bloquejar la targeta.\n3. **Guarda proves:** captures, xats, correus, justificants de pagament, webs.\n4. **Denuncia-ho** a la Policia Nacional, la Guàrdia Civil o els Mossos d'Esquadra.\n5. **Comunica-ho a la CNMV** si era una entitat pirata."
+    },
+    {
+     "title": "On reclamar",
+     "body": "• Contra una entitat **autoritzada** (bròker, banc): primer al seu servei d'atenció al client; si no et dona la raó, a la **CNMV** (inversions) o al **Banc d'Espanya** (banca i pagaments).\n• Per a dubtes de ciberseguretat: el **017** de l'INCIBE, gratuït i confidencial."
+    },
+    {
+     "title": "Compte amb la segona estafa",
+     "body": "Després d'una estafa arriben els falsos «despatxos de recuperació»: et prometen recuperar els diners a canvi d'una comissió per avançat. És la mateixa gent o una altra de semblant.",
+     "key": "Atura el dany, guarda proves i denuncia. I desconfia de qui t'ofereixi recuperar-los a canvi de diners.",
+     "tip": "Que t'estafin no és de ximples: és d'humans. Denunciar ajuda que no li passi a ningú més."
+    }
+   ]
+  },
+  "u32r": {
+   "title": "Repàs de la unitat",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u32l1-1": {
+   "prompt": "Marca tots els missatges que són d'una entitat pirata.",
+   "options": [
+    "Ja tens disponible el teu informe fiscal anual a l'app.",
+    "El teu saldo és de 14.250 €. Per retirar-lo, primer has de pagar 1.900 € d'impostos.",
+    "Per ajudar-te amb el compte necessito que instal·lis AnyDesk. Així el configuro jo per tu 😊",
+    "Hola, sóc el Daniel de Global Prime Invest. Tenim una oportunitat en divises amb un 4 % mensual garantit. En parlem avui?",
+    "Recorda: mai no et demanarem les claus per telèfon ni per missatge."
+   ],
+   "explanation": "Contacte no sol·licitat, rendibilitat garantida, accés remot i «paga per retirar»: els quatre senyals clàssics.",
+   "senders": [
+    "El teu bròker",
+    "Plataforma CryptoMax",
+    "Assessor Elite FX",
+    "+44 7700 900…",
+    "Banc"
+   ]
+  },
+  "u32l1-2": {
+   "prompt": "Ordena com comprovar una entitat abans de donar-li diners.",
+   "options": [
+    "Busca-la als registres oficials de cnmv.es",
+    "Revisa la llista d'advertiments de la CNMV",
+    "Si no està autoritzada, no hi inverteixis",
+    "Apunta el seu nom exacte i el seu web"
+   ],
+   "explanation": "Sempre al web de la CNMV, mai al de la mateixa entitat."
+  },
+  "u32l1-3": {
+   "prompt": "Què és una entitat financera pirata («chiringuito»)?",
+   "options": [
+    "Un fons amb moltes comissions",
+    "Un bròker barat",
+    "Una entitat que ofereix inversions sense autorització"
+   ],
+   "explanation": "Pot tenir un web impecable i, tot i així, no estar autoritzada."
+  },
+  "u32l1-4": {
+   "prompt": "Quins són senyals d'alarma? Marca'ls tots.",
+   "options": [
+    "No pots retirar el saldo sense pagar abans",
+    "Rendibilitat garantida molt alta",
+    "Apareix com a autoritzada als registres de cnmv.es",
+    "Et demanen que instal·lis un programa d'accés remot"
+   ],
+   "explanation": "Estar autoritzada als registres oficials és el que ha de tenir una entitat legal (encara que això no garanteix que una inversió vagi bé)."
+  },
+  "u32l1-5": {
+   "prompt": "Si una empresa té un web professional i una oficina a Londres, és una entitat legal.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Els webs es copien i les adreces s'inventen. Només els registres oficials ho confirmen."
+  },
+  "u32l1-6": {
+   "prompt": "Et truca un tal Marcos d'«Atlas Capital Partners». T'ofereix un 5 % mensual en divises, «només avui», i et demana 250 € per obrir el compte. Què fas?",
+   "options": [
+    "Penjo i busco el nom a la CNMV",
+    "Ho provo amb 250 €, que és poc",
+    "Li demano que m'enviï un contracte per correu"
+   ],
+   "explanation": "Un 5 % mensual és gairebé un 80 % l'any. Ningú seriós no ho ofereix per telèfon.",
+   "feedback": [
+    "Molt bé: contacte no demanat, rendibilitat impossible i pressa. Tres senyals de cop.",
+    "Així comencen: després arriben les trucades per «aprofitar» i aportar-ne més.",
+    "Un contracte bonic no el fa legal. Comprova l'autorització."
+   ]
+  },
+  "u32l1-7": {
+   "prompt": "Per comprovar si una entitat està autoritzada, busca al web de la ____.",
+   "options": [
+    "AEAT",
+    "OCU",
+    "DGT",
+    "CNMV"
+   ],
+   "explanation": "La Comissió Nacional del Mercat de Valors supervisa els serveis d'inversió a Espanya."
+  },
+  "u32l1-8": {
+   "prompt": "Ràpid: un «assessor» et demana que instal·lis AnyDesk per ajudar-te a invertir. Què fas?",
+   "options": [
+    "Penjo: és un senyal clàssic d'estafa",
+    "Li dono només la contrasenya del banc",
+    "L'instal·lo, així va més de pressa"
+   ],
+   "explanation": "Amb accés remot poden operar a la teva banca en línia com si fossis tu."
+  },
+  "u32l1-9": {
+   "prompt": "Si una entitat apareix a la llista d'advertiments de la CNMV, vol dir que no està autoritzada.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Aquesta llista avisa precisament d'entitats no autoritzades."
+  },
+  "u32l1-10": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Registra't, potser tens sort",
+    "No cliquis: busca la plataforma a la CNMV i desconfia del perfil",
+    "Passa-li les teves dades perquè t'ajudi"
+   ],
+   "explanation": "Contacte no demanat + rendibilitat impossible = estafa, encara que arribi amb un somriure.",
+   "feedback": [
+    "Un 3 % diari no existeix: és una estafa de manual, sovint amb un perfil fals.",
+    "Molt bé! Les «amistats» que acaben recomanant una plataforma són una estafa molt habitual.",
+    "Les teves dades són just el que busquen."
+   ],
+   "lines": [
+    "M'ha escrit per Instagram una noia molt maca 😍",
+    "Diu que guanya un 3 % diari amb una plataforma i m'ha passat l'enllaç."
+   ]
+  },
+  "u32l2-1": {
+   "prompt": "Com paga un esquema Ponzi els seus primers inversors?",
+   "options": [
+    "Amb els diners que aporten els nous",
+    "Amb préstecs de l'Estat",
+    "Amb els beneficis d'un negoci real"
+   ],
+   "explanation": "Per això necessita que hi entrin diners nous sense parar."
+  },
+  "u32l2-2": {
+   "prompt": "Un web promet un 1 % diari compost. Si fos veritat, en quant es convertirien 1.000 € en 365 dies? (arrodoneix)",
+   "options": [],
+   "explanation": "1.000 × 1,01³⁶⁵ ≈ 37.783 €. Cap inversió real no fa això: és el senyal d'un Ponzi.",
+   "unit": "€"
+  },
+  "u32l2-3": {
+   "prompt": "Un altre promet un 10 % mensual. Compost, quina rendibilitat anual seria? (arrodoneix)",
+   "options": [],
+   "explanation": "1,1¹² ≈ 3,14 → +214 % l'any. La borsa mundial ha donat de mitjana un 5,2 % real anual en 125 anys.",
+   "unit": "%"
+  },
+  "u32l2-4": {
+   "prompt": "Marca els missatges que fan pudor de Ponzi o de piràmide.",
+   "options": [
+    "Rendibilitat fixa del 2 % setmanal. Els nostres traders no perden mai.",
+    "El teu dipòsit al 2 % TAE venç el 15 de març.",
+    "Rendibilitat de l'últim any: −4 %. Les rendibilitats passades no garanteixen rendibilitats futures.",
+    "Paga 300 € d'entrada i guanya 100 € per cada amic que portis. Amb 10 amics ets al nivell or!"
+   ],
+   "explanation": "Guanyar per reclutar i rendibilitats fixes altíssimes sense explicar d'on surten són els seus senyals típics.",
+   "senders": [
+    "Inversió Segura 2.0",
+    "App d'estalvi",
+    "Fons indexat",
+    "Club Guanyadors"
+   ]
+  },
+  "u32l2-5": {
+   "prompt": "És més propi d'un Ponzi o d'un esquema piramidal?",
+   "options": [
+    "Guanyes sobretot per portar membres nous",
+    "Rendibilitat fixa altíssima sense explicar d'on surt",
+    "Hi ha nivells segons quanta gent recluta",
+    "Diuen que inverteixen els teus diners en una cosa secreta i molt rendible"
+   ],
+   "explanation": "Tots dos necessiten diners nous per pagar els antics; el que canvia és l'ham.",
+   "right": [
+    "Ponzi",
+    "Piramidal"
+   ]
+  },
+  "u32l2-6": {
+   "prompt": "Una amiga de la Laura va guanyar un 15 % en dos mesos en un «club d'inversió» i li ensenya els pagaments. Insisteix que hi entri ja. Què fa la Laura?",
+   "options": [
+    "Desconfia, pregunta d'on surt la rendibilitat i busca el club a la CNMV",
+    "Hi entra amb tots els estalvis per guanyar més de pressa",
+    "Hi entra: els pagaments són reals"
+   ],
+   "explanation": "Els pagaments als primers són l'esquer d'un Ponzi.",
+   "feedback": [
+    "Molt bé: que algú cobri no demostra res. Un Ponzi paga fins que deixen d'entrar-hi diners.",
+    "Si és un Ponzi, qui hi entra tard és qui ho perd tot.",
+    "En un Ponzi els primers sí que cobren, amb els diners dels que arriben després."
+   ]
+  },
+  "u32l2-7": {
+   "prompt": "Charles Ponzi prometia un 50 % de rendibilitat en 45 dies.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Boston, 1920. El seu nom va quedar per sempre lligat a aquest frau."
+  },
+  "u32l2-8": {
+   "prompt": "Un esquema Ponzi paga els inversors antics amb els diners dels ____.",
+   "options": [
+    "bancs",
+    "gestors",
+    "dividends",
+    "nous"
+   ],
+   "explanation": "Quan deixen d'arribar-ne de nous, el castell s'ensorra."
+  },
+  "u32l2-9": {
+   "prompt": "Què va demostrar el cas de Bernard Madoff, descobert el 2008?",
+   "options": [
+    "Que un Ponzi pot durar dècades i enganyar inversors professionals",
+    "Que els Ponzi només enganyen principiants",
+    "Que la CNMV el va destapar a Espanya"
+   ],
+   "explanation": "Donava rendibilitats sospitosament estables any rere any. El que és massa regular també és un senyal."
+  },
+  "u32l2-10": {
+   "prompt": "Fórum Filatélico i Afinsa van deixar centenars de milers d'afectats a Espanya el 2006.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Oferien rendibilitats atractives amb segells. Va passar a Espanya, no només a les pel·lícules."
+  },
+  "u32l3-1": {
+   "prompt": "Ordena les fases d'un pump and dump.",
+   "options": [
+    "Els membres compren i el preu es dispara",
+    "El preu s'enfonsa",
+    "Publiquen «el senyal» al grup",
+    "Els organitzadors compren en silenci",
+    "Els organitzadors venen a dalt de tot"
+   ],
+   "explanation": "Els organitzadors guanyen perquè entren abans i surten abans que tu."
+  },
+  "u32l3-2": {
+   "prompt": "Marca els missatges típics d'un pump and dump.",
+   "options": [
+    "Aquesta cripto de 0,002 $ farà x100 aquesta setmana. Últimes places al grup prèmium per 99 €.",
+    "Recordatori: els criptoactius són molt volàtils i pots perdre tot el que has invertit.",
+    "El BCE manté els tipus d'interès sense canvis.",
+    "ATENCIÓ: a les 20:00 anunciem la moneda. Compreu-la tots alhora i HOLD. Objectiu x10."
+   ],
+   "explanation": "Hora fixa perquè tothom compri alhora, objectius absurds i quotes prèmium: manipulació pura.",
+   "senders": [
+    "Grup Moon Gems",
+    "El teu bròker",
+    "Notícies econòmiques",
+    "🚀 Senyals VIP"
+   ]
+  },
+  "u32l3-3": {
+   "prompt": "Inflar un preu per vendre després a altres és manipulació de mercat i està prohibit.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Està prohibit als mercats de valors i, a la UE, també en cripto amb MiCA."
+  },
+  "u32l3-4": {
+   "prompt": "En Bruno paga 50 € al mes per un grup de «senyals VIP». Arriba el senyal: una cripto ha pujat un 300 % en 10 minuts. Què fa?",
+   "options": [
+    "Compra amb diners prestats per guanyar més",
+    "Compra ja, abans que pugi més",
+    "No compra: si se n'assabenta ara, és que arriba tard"
+   ],
+   "explanation": "En un pump and dump, els últims a entrar són els que perden.",
+   "feedback": [
+    "Així una manipulació es converteix en deute.",
+    "Si ja ha pujat un 300 %, els organitzadors estan venent. En Bruno seria el seu comprador.",
+    "Molt bé: en un pump, qui arriba amb el senyal és qui paga la festa. I potser li sobra la quota."
+   ]
+  },
+  "u32l3-5": {
+   "prompt": "Quins senyals delaten un grup de pump and dump? Marca'ls tots.",
+   "options": [
+    "Actius molt petits i amb poc volum",
+    "Explicacions amb dades de l'empresa i els seus riscos",
+    "Objectius tipus «x10» o «x100»",
+    "Hora fixa perquè tothom compri alhora"
+   ],
+   "explanation": "L'anàlisi seriosa explica riscos; la manipulació només promet coets."
+  },
+  "u32l3-6": {
+   "prompt": "Compres durant el pump a 0,30 € amb 500 €. El preu torna a 0,06 €. Quant et queda?",
+   "options": [],
+   "explanation": "500 ÷ 0,30 ≈ 1.667 monedes × 0,06 = 100 €. Perds un 80 %.",
+   "unit": "€"
+  },
+  "u32l3-7": {
+   "prompt": "Si un preu puja molt de pressa és perquè el projecte és bo.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Pot ser només compra coordinada. El preu puja tan de pressa com després s'enfonsa."
+  },
+  "u32l3-8": {
+   "prompt": "L'estratègia d'inflar un preu i vendre a dalt de tot es diu pump and ____.",
+   "options": [
+    "buy",
+    "pay",
+    "hold",
+    "dump"
+   ],
+   "explanation": "Pump: inflar. Dump: deixar anar."
+  },
+  "u32l3-9": {
+   "prompt": "En un pump and dump, qui sol guanyar?",
+   "options": [
+    "Els organitzadors, que han comprat abans",
+    "Els que compren amb el senyal",
+    "Tothom, si ningú no ven"
+   ],
+   "explanation": "El benefici d'uns és la pèrdua dels que arriben després."
+  },
+  "u32l3-10": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Sí! Si comprem tots, puja segur",
+    "És un pump and dump: els qui l'organitzen vendran damunt la teva compra",
+    "Apunta-t'hi però ven ràpid"
+   ],
+   "explanation": "No juguis a un joc les regles del qual les posa qui guanya.",
+   "feedback": [
+    "Puja… fins que els que l'han comprat abans venen. I llavors cau per a tots els altres.",
+    "Ben vist! Comprar «tots alhora» és la definició de manipulació.",
+    "Competir en velocitat amb qui organitza el joc és perdre gairebé segur."
+   ],
+   "lines": [
+    "En un grup de Telegram diuen que aquesta nit una cripto farà x20 🚀",
+    "Només cal que comprem tots alhora. M'hi apunto?"
+   ]
+  },
+  "u32l4-1": {
+   "prompt": "Marca els missatges que són phishing o smishing.",
+   "options": [
+    "Ja pots consultar el teu extracte mensual dins de l'app.",
+    "Tens un reemborsament de 312 €. Introdueix les dades de la targeta per cobrar-lo.",
+    "El teu paquet està retingut. Paga 1,99 € de taxes en aquest enllaç per rebre'l.",
+    "Hem detectat un accés sospitós. Verifica la teva identitat aquí en 1 hora o bloquejarem el teu compte: bit.ly/…",
+    "Has fet una compra de 23,40 € en un supermercat."
+   ],
+   "explanation": "Enllaços escurçats, presses, «paga una taxa» i «dona'ns la targeta per tornar-te diners» són senyals clàssics.",
+   "senders": [
+    "El teu bròker",
+    "Agència Tributària",
+    "Correus",
+    "BancoSeguro",
+    "El teu banc (app)"
+   ]
+  },
+  "u32l4-2": {
+   "prompt": "Què et protegeix del phishing? Marca-ho tot.",
+   "options": [
+    "Entrar sempre a l'app o al web escrivint tu l'adreça",
+    "Clicar els enllaços dels SMS per anar més de pressa",
+    "Fer servir contrasenyes diferents per a cada servei",
+    "Activar la verificació en dos passos"
+   ],
+   "explanation": "Els enllaços de missatges inesperats són la porta d'entrada més habitual."
+  },
+  "u32l4-3": {
+   "prompt": "Et truca «el teu banc»: per anul·lar una compra sospitosa necessiten el codi que t'acaba d'arribar per SMS. Què fas?",
+   "options": [
+    "Li dono només la meitat del codi",
+    "Penjo i truco jo al número oficial del banc",
+    "L'hi dono, em volen ajudar"
+   ],
+   "explanation": "Aquest codi serveix per autoritzar una operació: si el dones, autoritzes tu el robatori."
+  },
+  "u32l4-4": {
+   "prompt": "Relaciona cada tècnica amb com arriba.",
+   "options": [
+    "Phishing",
+    "Smishing",
+    "Vishing",
+    "Spoofing"
+   ],
+   "explanation": "Canvia el canal, no l'objectiu: les teves claus o els teus diners.",
+   "right": [
+    "Per SMS",
+    "Falsificant el remitent o el número",
+    "Per trucada telefònica",
+    "Per correu electrònic"
+   ]
+  },
+  "u32l4-5": {
+   "prompt": "És segur o és perillós?",
+   "options": [
+    "Fer servir la mateixa contrasenya per a tot",
+    "Activar la verificació en dos passos",
+    "Donar el codi SMS a qui et truca",
+    "Entrar al banc des de la seva app oficial",
+    "Clicar un enllaç per «desbloquejar el teu compte»"
+   ],
+   "explanation": "El que és segur és anar tu al canal oficial; el perillós, seguir el camí que et marquen.",
+   "right": [
+    "Segur",
+    "Perillós"
+   ]
+  },
+  "u32l4-6": {
+   "prompt": "Si a la pantalla apareix el número real del teu banc, segur que la trucada és del banc.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Amb l'spoofing poden falsificar el número que veus. En cas de dubte, penja i truca tu."
+  },
+  "u32l4-7": {
+   "prompt": "Ràpid: quina mesura fa que una contrasenya robada no sigui suficient per entrar?",
+   "options": [
+    "La verificació en dos passos",
+    "Una foto de perfil",
+    "Canviar el fons de pantalla"
+   ],
+   "explanation": "A més de la contrasenya, demana una cosa que només tens tu, com un codi o l'app."
+  },
+  "u32l4-8": {
+   "prompt": "Cliques un enllaç d'un SMS i hi poses la contrasenya del teu bròker. Te n'adones al moment. Què fas primer?",
+   "options": [
+    "Canviar la contrasenya des de l'app oficial i avisar el bròker o el banc",
+    "Esborrar l'SMS i oblidar-ho",
+    "Esperar a veure si passa alguna cosa"
+   ],
+   "explanation": "Actua ràpid: canvia les claus, avisa l'entitat i revisa els moviments.",
+   "feedback": [
+    "Molt bé: talles l'accés i l'entitat pot vigilar o bloquejar operacions.",
+    "Esborrar el missatge no esborra el que ja tenen.",
+    "Cada minut compta: poden entrar i moure els teus diners."
+   ]
+  },
+  "u32l4-9": {
+   "prompt": "Ordena què has de fer si has donat les teves dades bancàries a un estafador.",
+   "options": [
+    "Canviar les contrasenyes",
+    "Denunciar-ho a la Policia, la Guàrdia Civil o els Mossos",
+    "Revisar els moviments dels teus comptes",
+    "Trucar al banc al número oficial i bloquejar"
+   ],
+   "explanation": "Primer aturar el dany, després posar ordre i denunciar."
+  },
+  "u32l4-10": {
+   "prompt": "Demanar una contrasenya i, a més, un codi que només tens tu s'anomena verificació en dos ____.",
+   "options": [
+    "claus",
+    "mesos",
+    "bancs",
+    "passos"
+   ],
+   "explanation": "Amb aquesta verificació, no n'hi ha prou amb una contrasenya robada."
+  },
+  "u32l5-1": {
+   "prompt": "Què pot fer un influencer sense autorització de la CNMV?",
+   "options": [
+    "Dir-te quines accions comprar segons el teu sou i els teus estalvis",
+    "Explicar què és un ETF o l'interès compost",
+    "Gestionar els teus diners"
+   ],
+   "explanation": "Educar és lliure; l'assessorament personalitzat exigeix autorització."
+  },
+  "u32l5-2": {
+   "prompt": "Marca les publicacions que incompleixen les normes o són un parany.",
+   "options": [
+    "Avui explico què és la diversificació amb un exemple. Això no és una recomanació d'inversió.",
+    "#publi Aquesta plataforma em paga per aquest vídeo. Recorda que pots perdre diners.",
+    "Envia'm per privat el teu sou i els teus estalvis i et dic exactament què has de comprar 💸",
+    "Aquesta moneda farà x50! Link a la bio per comprar-la 🚀🚀 (no diu que li paguen per promocionar-la)"
+   ],
+   "explanation": "La promoció encoberta i l'assessorament personalitzat sense autorització són les dues línies vermelles.",
+   "senders": [
+    "@aprende.finanzas",
+    "@marta.invierte",
+    "@trader.lux",
+    "@crypto.king"
+   ]
+  },
+  "u32l5-3": {
+   "prompt": "Ho pot fer un influencer sense ser una entitat autoritzada?",
+   "options": [
+    "Explicar la seva cartera avisant dels seus conflictes d'interès",
+    "Promocionar cripto sense advertiments de risc",
+    "Anunciar un producte sense dir que és publicitat",
+    "Explicar què és un fons indexat",
+    "Dir-te què has de comprar segons la teva situació personal"
+   ],
+   "explanation": "Educació i transparència, sí. Assessorament personalitzat i publicitat encoberta, no.",
+   "right": [
+    "Sí, és legítim",
+    "No, o no així"
+   ]
+  },
+  "u32l5-4": {
+   "prompt": "Si un influencer escriu «això no és assessorament financer», ja et pot recomanar comprar qualsevol cosa sense problema.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "La guia de la CNMV per a finfluencers ho deixa clar: aquesta frase no protegeix si a la pràctica es fan recomanacions. I la publicitat de cripto ha de ser clara, no enganyosa i avisar dels riscos (MiCA)."
+  },
+  "u32l5-5": {
+   "prompt": "Un tiktoker amb un milió de seguidors ven un curs de 997 € per «viure del trading en 3 mesos» i un grup de senyals. Què en penses?",
+   "options": [
+    "El compro, 997 € no és tant si guanyo de pressa",
+    "Si té tants seguidors, deu saber què fa",
+    "Guanya diners venent el curs, no necessàriament operant"
+   ],
+   "explanation": "Quan el producte és el curs, el negoci ets tu.",
+   "feedback": [
+    "Prometre viure del trading en 3 mesos és un senyal d'alarma, no una oferta.",
+    "Els seguidors mesuren popularitat, no rendibilitat. I el seu ingrés segur és el curs, no el trading.",
+    "Exacte. Pregunta per resultats auditats i desconfia de les promeses de viure del trading."
+   ]
+  },
+  "u32l5-6": {
+   "prompt": "Quines preguntes et protegeixen davant d'un finfluencer? Marca-les totes.",
+   "options": [
+    "Mostra també les seves pèrdues?",
+    "Quants seguidors té?",
+    "Em posa pressa per comprar?",
+    "Guanya diners si jo compro?"
+   ],
+   "explanation": "El nombre de seguidors no diu res sobre si sap invertir."
+  },
+  "u32l5-7": {
+   "prompt": "Tenir molts seguidors demostra que algú sap invertir.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Mesura popularitat. A més, acostumem a veure els encerts i no les errades."
+  },
+  "u32l5-8": {
+   "prompt": "Per donar-te assessorament personalitzat, cal ____ de la CNMV.",
+   "options": [
+    "un curs",
+    "publicitat",
+    "un vídeo",
+    "autorització"
+   ],
+   "explanation": "Recomanar què comprar segons la teva situació és un servei d'inversió regulat."
+  },
+  "u32l5-9": {
+   "prompt": "Un influencer cobra 0,30 € per cada persona que es registra en una plataforma amb el seu enllaç i aconsegueix 20.000 registres. Quant guanya?",
+   "options": [],
+   "explanation": "20.000 × 0,30 = 6.000 €. Guanya encara que tu perdis: és un conflicte d'interès.",
+   "unit": "€"
+  },
+  "u32l5-10": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Comprova si li paguen o si ja la té, i no compris per pressa",
+    "Si ho diu amb tanta seguretat, compra",
+    "Compra, però només amb la meitat dels teus estalvis"
+   ],
+   "explanation": "Abans de fer cas a algú, pregunta't què guanya ell amb la teva compra.",
+   "feedback": [
+    "Molt bé! Els conflictes d'interès i la pressa són dos senyals que cal vigilar.",
+    "La seguretat ven, però no encerta més. I potser ell ja la té i li convé que en facis pujar el preu.",
+    "La meitat dels teus estalvis per un vídeo continua sent massa."
+   ],
+   "lines": [
+    "Un youtuber diu que s'ha de comprar JA aquesta acció 📈",
+    "Té 2 milions de subscriptors, així que segur que en sap."
+   ]
+  },
+  "u32l6-1": {
+   "prompt": "Ordena què has de fer si t'han estafat.",
+   "options": [
+    "Avisar el teu banc",
+    "Denunciar-ho a la Policia, la Guàrdia Civil o els Mossos",
+    "Guardar totes les proves",
+    "Deixar d'enviar diners",
+    "Comunicar-ho a la CNMV"
+   ],
+   "explanation": "Primer aturar la sagnia, després documentar i denunciar."
+  },
+  "u32l6-2": {
+   "prompt": "Després de perdre diners amb una entitat pirata, un «despatx» t'escriu: recupera els teus diners per una comissió de 1.500 € per avançat. Què és?",
+   "options": [
+    "Una estafa de recuperació",
+    "Un servei legal útil",
+    "Un tràmit de la CNMV"
+   ],
+   "explanation": "Cobren per avançat i desapareixen. Sovint són els mateixos estafadors."
+  },
+  "u32l6-3": {
+   "prompt": "Avisar el banc com més aviat millor pot servir per intentar aturar una transferència o bloquejar la targeta.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "No sempre s'aconsegueix, però com més aviat, més opcions."
+  },
+  "u32l6-4": {
+   "prompt": "Relaciona cada situació amb on has d'adreçar-te.",
+   "options": [
+    "T'ha estafat una entitat no autoritzada",
+    "Problema sense resoldre amb el teu banc",
+    "Problema sense resoldre amb un bròker autoritzat",
+    "Dubtes sobre una ciberestafa"
+   ],
+   "explanation": "Cada organisme cobreix un tipus de problema.",
+   "right": [
+    "Banc d'Espanya",
+    "El 017 de l'INCIBE",
+    "CNMV, després de reclamar a l'entitat",
+    "Policia, Guàrdia Civil o Mossos, i avís a la CNMV"
+   ]
+  },
+  "u32l6-5": {
+   "prompt": "La plataforma on vas invertir et diu que, per retirar els teus «guanys», primer has de pagar 2.000 € d'impostos. Què fas?",
+   "options": [
+    "Demano un préstec per pagar-ho",
+    "No pago res més, guardo proves i ho denuncio",
+    "Pago: així ho recupero tot"
+   ],
+   "explanation": "«Paga per retirar» és el senyal definitiu d'estafa.",
+   "feedback": [
+    "Sumaries un deute a l'estafa.",
+    "Molt bé: cap entitat legal cobra impostos per avançat per deixar-te retirar els teus diners.",
+    "És l'últim truc abans de desaparèixer: després et demanaran una altra «comissió»."
+   ]
+  },
+  "u32l6-6": {
+   "prompt": "Quines proves convé guardar? Marca-les totes.",
+   "options": [
+    "Justificants de les transferències",
+    "Res, per oblidar-ho abans",
+    "L'adreça del web i el seu nom",
+    "Captures dels xats i missatges"
+   ],
+   "explanation": "Sense proves, la denúncia i qualsevol reclamació són molt més difícils."
+  },
+  "u32l6-7": {
+   "prompt": "Si t'han estafat, millor no denunciar-ho per vergonya.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Denunciar ajuda a investigar i a avisar altres persones. Els passa a gent de totes les edats i professions."
+  },
+  "u32l6-8": {
+   "prompt": "És ajuda legítima o una segona estafa?",
+   "options": [
+    "El 017 de l'INCIBE t'orienta gratis",
+    "Reclamar al servei d'atenció al client del teu banc",
+    "La Policia, la Guàrdia Civil o els Mossos recullen la teva denúncia",
+    "Un «advocat» que et contacta ell i et demana pagar per avançat",
+    "Un web que diu que recupera cripto robada a canvi d'una comissió"
+   ],
+   "explanation": "Qui et contacta sense que ho demanis i et cobra per avançat per recuperar els teus diners és sospitós.",
+   "right": [
+    "Legítim",
+    "Segona estafa"
+   ]
+  },
+  "u32l6-9": {
+   "prompt": "Tens un problema amb un bròker autoritzat. On reclames primer?",
+   "options": [
+    "A les seves xarxes socials",
+    "Directament al jutjat",
+    "Al servei d'atenció al client del mateix bròker"
+   ],
+   "explanation": "És el primer pas obligatori; si no respon o no et dona la raó, pots anar a la CNMV."
+  },
+  "u32l6-10": {
+   "prompt": "La línia gratuïta d'ajuda en ciberseguretat de l'INCIBE és el ____.",
+   "options": [
+    "112",
+    "091",
+    "016",
+    "017"
+   ],
+   "explanation": "El 112 és el d'emergències i el 091, el de la Policia Nacional; el 016, el d'atenció a víctimes de violència de gènere."
+  }
+ }
+}

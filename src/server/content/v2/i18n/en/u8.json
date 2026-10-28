@@ -1,0 +1,863 @@
+{
+ "unit": {
+  "title": "Shares",
+  "description": "What you buy with a share, how you get dividends and what kinds of companies there are",
+  "section": "Investment products"
+ },
+ "lessons": {
+  "u8l1": {
+   "title": "What a share is",
+   "steps": [
+    {
+     "title": "Owning a tiny slice",
+     "body": "A company is divided into **shares**. Inditex has around 3,100 million: if you buy one, you own a minuscule part of its shops, its brands and its future profits.\n\nThat's why they're called **equities** (variable income): what you make isn't fixed, it depends on how the business does."
+    },
+    {
+     "title": "Why companies sell shares",
+     "body": "To raise money without taking out loans. When they **go public** (an IPO) they sell part of the company to investors, who share in its profits and its risks.\n\nAfter that, shares are bought and sold **between investors**: the company no longer receives that money."
+    },
+    {
+     "title": "Where your returns come from",
+     "body": "**Total return = dividends + capital gains.** In the long run the price follows profits; in the short run, expectations move it. If the company goes bust, shareholders get paid last and almost never get anything back.",
+     "key": "A share is a slice of a business: you make money if the business earns more and pays out or grows.",
+     "tip": "Buying a share is buying a business, not a number that goes up and down."
+    }
+   ]
+  },
+  "u8l2": {
+   "title": "Shareholder rights",
+   "steps": [
+    {
+     "title": "Three kinds of rights",
+     "body": "• **Economic:** receiving dividends if they're paid and your share if the company is sold or wound up.\n• **Voting:** voting at the **annual general meeting** (board, accounts, directors' pay…).\n• **Information:** receiving the accounts and relevant information.\n\nAnd a very useful one: **pre-emptive rights** in capital increases."
+    },
+    {
+     "title": "Your vote weighs what your shares weigh",
+     "body": "As a general rule, **one share = one vote**. With 10 shares in a bank that has billions of them, your vote counts for very little, but you can vote remotely or appoint a proxy.\n\nThe big funds really do swing votes. Some companies have **non-voting** shares or give double votes to people who hold them for years."
+    },
+    {
+     "title": "Information for everyone at once",
+     "body": "Listed companies must publish their accounts and report any **inside information** (results, acquisitions, problems) to the **CNMV** so that all investors learn about it at the same time.",
+     "key": "Being a shareholder gives you economic, voting and information rights, in proportion to your shares.",
+     "tip": "The accounts of every Spanish listed company are free on the CNMV website."
+    }
+   ]
+  },
+  "u8l3": {
+   "title": "Dividends: how and when you get paid",
+   "steps": [
+    {
+     "title": "A dividend's dates",
+     "body": "1. **Announcement:** the company says how much it'll pay.\n2. **Ex-dividend date:** from that day on, the share trades **without** the right to that dividend.\n3. **Record date:** they check who the shareholders are.\n4. **Payment date:** the money reaches your account.\n\nTo get it, you need to hold the share **before** the ex-dividend date."
+    },
+    {
+     "title": "Why the price drops",
+     "body": "On the ex-dividend date the price drops by roughly the amount paid out: if a share is worth €20 and pays €0.50, it'll open at around €19.50.\n\nYou haven't got any richer: you have €0.50 in cash and €0.50 less in shares. And in Spain dividends are taxed: the payer already **withholds 19 %**."
+    },
+    {
+     "title": "Dividend yield",
+     "body": "**Dividend yield = annual dividend ÷ price.** A €30 share that pays €1.20 a year yields 4 %. Careful: a sky-high dividend is sometimes a warning that the price has fallen because a cut is expected.",
+     "key": "A dividend isn't free money: it comes out of the company's value.",
+     "tip": "A sky-high dividend is sometimes an alarm bell, not a gift."
+    }
+   ]
+  },
+  "u8l4": {
+   "title": "Splits, reverse splits and capital increases",
+   "steps": [
+    {
+     "title": "Split: more slices, same pizza",
+     "body": "In a **split** the company divides each share into several. If you have 10 shares at €400 and there's a 4-for-1 split, you end up with **40 shares at €100**. You still have €4,000.\n\nIt's done to make the share more manageable. Apple (4-for-1 in 2020) and NVIDIA (10-for-1 in 2024) both did it."
+    },
+    {
+     "title": "Reverse split and capital increase",
+     "body": "• **Reverse split:** the other way round, shares are combined. 1,000 shares at €0.20 with a 1-for-10 become 100 at €2. It's usually done by companies whose price has fallen a lot.\n• **Capital increase:** the company **issues new shares** to raise money. If you don't take part, your percentage falls: that's **dilution**."
+    },
+    {
+     "title": "What changes and what doesn't",
+     "body": "Splits and reverse splits only change the number of slices. A capital increase does change the cake: new money and more owners come in. Some Spanish companies pay the dividend in new shares if you want (the *scrip* or flexible dividend).",
+     "key": "Cutting the pizza into more slices doesn't give you more pizza.",
+     "tip": "If a headline says «the share plunges 75 %», check first whether there's been a split."
+    }
+   ]
+  },
+  "u8l5": {
+   "title": "Large, mid and small caps",
+   "steps": [
+    {
+     "title": "Market capitalisation",
+     "body": "**Market cap = price × number of shares.** It's what the company is worth on the stock market.\n\nA common convention (in dollars):\n• **Large caps:** over 10,000 million.\n• **Mid caps:** from 2,000 to 10,000 million.\n• **Small caps:** from 300 to 2,000 million.\n• Below that, *micro caps*."
+    },
+    {
+     "title": "Risk and potential",
+     "body": "**Small caps** can grow far more (a 500 million company can multiply in value; a giant hardly can), but they're more volatile, less liquid (wider *spreads*) and go bust more often.\n\n**Large caps** are more stable and hundreds of analysts follow them."
+    },
+    {
+     "title": "Indices by size",
+     "body": "The S&P 500 and IBEX 35 bring together large companies. The Russell 2000, small US ones. In Spain there are the IBEX Medium Cap and IBEX Small Cap. A global index is cap-weighted: the giants weigh most.",
+     "key": "Smaller = more potential, but also more volatility and more risk of going bust.",
+     "tip": "Being small doesn't make a company cheap or good: just riskier."
+    }
+   ]
+  },
+  "u8l6": {
+   "title": "Growth and value",
+   "steps": [
+    {
+     "title": "Two styles",
+     "body": "• **Growth:** companies whose sales and profits are growing fast. They reinvest almost everything and pay little or no dividend. They look **expensive** relative to what they earn today.\n• **Value:** mature companies that look **cheap** relative to their profits or their net assets. They usually pay a dividend."
+    },
+    {
+     "title": "The P/E at a glance",
+     "body": "**P/E = price ÷ earnings per share.** How many years of current earnings you're paying for.\n\nA €100 share earning €2 per share has a P/E of 50: the market expects a lot of growth. A €40 one earning €5, a P/E of 8.\n\nYou'll look at it in depth in the fundamental analysis section."
+    },
+    {
+     "title": "Neither always wins",
+     "body": "Each style has its good periods. The risk with growth: if it disappoints, a high P/E deflates in one go. The risk with value: sometimes cheap is cheap for a reason (the **value trap**).",
+     "key": "Growth: you pay today for future earnings. Value: you buy current earnings at a discount.",
+     "tip": "A great company isn't always a great investment: it depends on the price you pay."
+    }
+   ]
+  },
+  "u8l7": {
+   "title": "Share buybacks",
+   "steps": [
+    {
+     "title": "What a buyback is",
+     "body": "The company uses its cash to **buy its own shares** on the market and, usually, **cancel them** (destroy them). Fewer shares are left, so each one represents a bigger slice of the business and of the profits.\n\nApple has been buying back shares since 2012, to the tune of hundreds of billions of dollars."
+    },
+    {
+     "title": "The maths",
+     "body": "A company earns 500 million and has 100 million shares: **€5 of earnings per share (EPS)**. If it buys back and cancels 10 million, the same profit is shared among 90 million: **€5.56** per share, 11 % more.\n\nYour percentage goes up without you putting in a single euro."
+    },
+    {
+     "title": "Dividend or buyback",
+     "body": "Both return money to shareholders. A dividend reaches you in cash and is taxed that year; a buyback increases your stake and you only pay tax when you sell. But buying back at a **high price** destroys value, and doing it with debt adds risk.",
+     "key": "A buyback shares the cake among fewer owners.",
+     "tip": "Always ask what price the company is buying back at: buying expensive isn't returning value."
+    }
+   ]
+  },
+  "u8r": {
+   "title": "Unit review",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u8l1-1": {
+   "prompt": "You buy an Inditex share. What are you?",
+   "options": [
+    "Co-owner of a minuscule part of the company",
+    "A customer with a discount in its shops",
+    "A lender to the company"
+   ],
+   "explanation": "A share is part of the company's capital: you share in its profits and its risks. Lending money to the company would mean buying a bond."
+  },
+  "u8l1-2": {
+   "prompt": "Match each term with its meaning.",
+   "options": [
+    "Share",
+    "IPO",
+    "Dividend",
+    "Capital gain"
+   ],
+   "explanation": "These are the four basic words of equity investing: what you buy, how it gets onto the stock market and where your returns come from.",
+   "right": [
+    "Stock market listing by selling shares",
+    "Profit paid out in cash",
+    "Rise in the share price",
+    "Part of a company's capital"
+   ]
+  },
+  "u8l1-3": {
+   "prompt": "Total return = dividends + ____.",
+   "options": [
+    "inflation",
+    "coupons",
+    "fees",
+    "capital gains"
+   ],
+   "explanation": "You make money from what the company pays out (dividends) and from the rise in price (capital gains). Coupons belong to bonds."
+  },
+  "u8l1-4": {
+   "prompt": "When you buy Inditex shares on the stock market, that money goes to Inditex.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Normally you pay another investor who's selling. The company only receives money when it issues new shares, as in its IPO or a capital increase."
+  },
+  "u8l1-5": {
+   "prompt": "You bought a share at €40. Today it's worth €46 and this year you've received €1 in dividends. What's your total return?",
+   "options": [],
+   "explanation": "(46 − 40 + 1) ÷ 40 = 7 ÷ 40 = 17.5 %. Capital gain (€6) + dividend (€1).",
+   "unit": "%"
+  },
+  "u8l1-6": {
+   "prompt": "Are you an owner (share) or a lender (bond)?",
+   "options": [
+    "You receive an agreed coupon",
+    "You get your money back on a set date",
+    "You receive dividends if the company pays them",
+    "You vote at the AGM",
+    "You make a lot if the company grows a lot"
+   ],
+   "explanation": "A shareholder shares in the business's success and risk; a bondholder gets what was agreed if the company can pay.",
+   "right": [
+    "Owner: share",
+    "Lender: bond"
+   ]
+  },
+  "u8l1-7": {
+   "prompt": "If a company goes bust, shareholders get paid before banks and bondholders.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "They get paid last, after all the creditors, and almost never get anything back."
+  },
+  "u8l1-8": {
+   "prompt": "According to Bessembinder (2018), out of some 26,000 US stocks between 1926 and 2016, what share generated all of the market's net gain?",
+   "options": [
+    "Around 4 %",
+    "Almost all of them",
+    "Half"
+   ],
+   "explanation": "Just 4 % accounted for the entire net gain, and more than half returned less than Treasury bills. That's why a single share is risky and it pays to diversify."
+  },
+  "u8l1-9": {
+   "prompt": "Shares are also known as equities, or variable income.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "What you make isn't fixed in advance: it depends on how the company does."
+  },
+  "u8l1-10": {
+   "prompt": "What do you say to Lumi?",
+   "options": [
+    "Yes: you own a minuscule part of the business, with its profits and its risks",
+    "No, you've just bought a number that goes up and down",
+    "Yes, and now you can call the shots at the company"
+   ],
+   "explanation": "A share is real ownership of part of the business, however tiny.",
+   "feedback": [
+    "That's it! One in millions, but yours: if the business does well you'll notice, and if it does badly, too.",
+    "The price moves every day, but behind it there's a real business you own part of.",
+    "You can vote at the AGM, but your vote weighs what your shares weigh: very little."
+   ],
+   "lines": [
+    "I've bought 1 share in a video game company 🎮",
+    "Does that mean I'm already a bit of an owner?"
+   ]
+  },
+  "u8l2-1": {
+   "prompt": "What rights does being a shareholder give you? Select all that apply.",
+   "options": [
+    "Receiving dividends if they're paid",
+    "Getting your money back on a fixed date",
+    "Receiving the company's accounts",
+    "Voting at the general meeting"
+   ],
+   "explanation": "Getting your money back on a fixed date is a feature of bonds: shares have no maturity."
+  },
+  "u8l2-2": {
+   "prompt": "Match each right with its type.",
+   "options": [
+    "Receiving the dividend",
+    "Voting on the board of directors",
+    "Receiving the annual accounts",
+    "Buying before anyone else in a capital increase"
+   ],
+   "explanation": "Economic, voting and information rights, plus pre-emptive rights so you don't lose your percentage.",
+   "right": [
+    "Information",
+    "Pre-emptive right",
+    "Voting",
+    "Economic"
+   ]
+  },
+  "u8l2-3": {
+   "prompt": "At the general meeting, how much does your vote normally weigh?",
+   "options": [
+    "The same as a big fund's",
+    "According to what you paid for each share",
+    "According to the number of shares you hold"
+   ],
+   "explanation": "As a general rule, one share = one vote. Whoever has more shares has more votes."
+  },
+  "u8l2-4": {
+   "prompt": "A small company has 4 million shares and you have 20,000. What percentage of the votes do you have?",
+   "options": [],
+   "explanation": "20,000 ÷ 4,000,000 = 0.005 → 0.5 % of the votes (if all shares carry voting rights).",
+   "unit": "%"
+  },
+  "u8l2-5": {
+   "prompt": "If you only have a few shares, you have no right to vote at the general meeting.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "All shareholders with voting rights can vote or appoint a proxy. Some companies require a minimum number of shares to attend in person, but you can vote remotely or group together with others."
+  },
+  "u8l2-6": {
+   "prompt": "Pablo has 50 shares in a listed company. He gets the notice of the general meeting: there's a vote on a big pay rise for the CEO. What does he do?",
+   "options": [
+    "Sells all his shares in protest",
+    "Nothing: with 50 shares his vote doesn't count",
+    "Reads the proposal and votes or appoints a proxy remotely"
+   ],
+   "explanation": "Voting or appointing a proxy is how you exercise your voting rights; listed companies make remote voting easy.",
+   "feedback": [
+    "He can, but he gives up his share of the business over one vote without having used his voice.",
+    "His vote doesn't weigh much, but it counts, and if he doesn't vote, others decide for him.",
+    "Good: it's his right as an owner, and meetings are decided by adding up big and small votes."
+   ]
+  },
+  "u8l2-7": {
+   "prompt": "Listed companies must report inside information to the ____ so that everyone learns about it at the same time.",
+   "options": [
+    "tax agency",
+    "DGT (traffic authority)",
+    "OCU (consumers' association)",
+    "CNMV"
+   ],
+   "explanation": "The Comisión Nacional del Mercado de Valores supervises the Spanish stock market and publishes that information for free."
+  },
+  "u8l2-8": {
+   "prompt": "What are pre-emptive rights?",
+   "options": [
+    "Being able to buy new shares before others in a capital increase, so you don't lose your percentage",
+    "Voting twice at the general meeting",
+    "Getting the dividend before other shareholders"
+   ],
+   "explanation": "If the company issues new shares, existing shareholders can buy first in proportion to what they hold."
+  },
+  "u8l2-9": {
+   "prompt": "What can the general meeting of shareholders decide? Select all that apply.",
+   "options": [
+    "Approving the dividend payout",
+    "Setting the share price on the stock market",
+    "Appointing the directors",
+    "Approving the annual accounts"
+   ],
+   "explanation": "The price is set by the market through supply and demand, not by the meeting."
+  },
+  "u8l2-10": {
+   "prompt": "A share has no maturity date.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Unlike a bond, a share exists for as long as the company does (or until you sell it)."
+  },
+  "u8l3-1": {
+   "prompt": "Put a dividend's dates in order.",
+   "options": [
+    "Record date",
+    "Payment date",
+    "Ex-dividend date",
+    "Announcement"
+   ],
+   "explanation": "First it's announced; from the ex-dividend date the share trades without the right; then they check who the shareholders are (record) and finally it's paid."
+  },
+  "u8l3-2": {
+   "prompt": "By what day at the latest do you need to hold the share to get the dividend?",
+   "options": [
+    "The payment date itself",
+    "The day before the ex-dividend date",
+    "The record date, even if you buy on that same day"
+   ],
+   "explanation": "If you buy on the ex-dividend date or later, the share is already trading without that dividend."
+  },
+  "u8l3-3": {
+   "prompt": "A share is trading at €20 and tomorrow is the ex-dividend date for a €0.50 dividend. Roughly what price will it open at, if nothing else changes?",
+   "options": [],
+   "explanation": "20 − 0.50 = €19.50. The price drops by roughly what leaves the company.",
+   "unit": "€"
+  },
+  "u8l3-4": {
+   "prompt": "A €30 share pays a €1.20 dividend a year. What's its dividend yield?",
+   "options": [],
+   "explanation": "1.20 ÷ 30 = 0.04 → 4 %.",
+   "unit": "%"
+  },
+  "u8l3-5": {
+   "prompt": "You have 200 shares and each pays a €0.50 dividend. With 19 % withheld, how much reaches your account?",
+   "options": [],
+   "explanation": "200 × 0.50 = €100 gross; 100 − 19 = €81 net.",
+   "unit": "€"
+  },
+  "u8l3-6": {
+   "prompt": "Receiving a dividend makes you richer instantly.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "The price drops by roughly what you receive: your wealth barely changes, and on top of that the dividend is taxed."
+  },
+  "u8l3-7": {
+   "prompt": "This is the share of a utility known for paying regular dividends. What did it do over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "A company paying a dividend doesn't make its short-term price predictable: the dividend is part of the total return, not a guarantee.",
+   "horizon": "the next 10 sessions"
+  },
+  "u8l3-8": {
+   "prompt": "Bruno sees a share with a 14 % dividend and wants to put all his savings into it. What would you do in his shoes?",
+   "options": [
+    "Buy right now, 14 % is a bargain",
+    "Look into why the price has fallen and whether profits cover the dividend",
+    "Buy just before the ex-dividend date, collect and sell"
+   ],
+   "explanation": "Dividend yield rises when the price falls; sometimes it signals problems at the company.",
+   "feedback": [
+    "If the market expects a cut, the dividend may drop and the price fall even further: the 14 % was an illusion.",
+    "Good: a dividend like that is often an alarm bell. If profits don't cover it, it'll probably be cut.",
+    "The price drops by roughly the dividend on the ex-dividend date and you pay tax on top: there's no free money."
+   ]
+  },
+  "u8l3-9": {
+   "prompt": "Dividend yield = annual dividend ÷ ____.",
+   "options": [
+    "earnings",
+    "market cap",
+    "number of shares",
+    "price"
+   ],
+   "explanation": "That's why, if the price falls, the dividend yield «rises» even though the company isn't paying any more."
+  },
+  "u8l3-10": {
+   "prompt": "In Spain, what withholding is normally applied to dividends?",
+   "options": [
+    "50 %",
+    "0 %",
+    "19 %"
+   ],
+   "explanation": "The payer withholds 19 % on account of IRPF (Spanish income tax). Dividends then go into the savings tax base, taxed at 19 % to 30 %."
+  },
+  "u8l4-1": {
+   "prompt": "You have 10 shares at €400 and the company does a 4-for-1 split. How many shares do you have afterwards?",
+   "options": [],
+   "explanation": "10 × 4 = 40 shares at €100 each: you still have €4,000.",
+   "unit": "shares"
+  },
+  "u8l4-2": {
+   "prompt": "You have 1,000 shares at €0.20 and there's a 1-for-10 reverse split. What price will each new share trade at, if nothing else changes?",
+   "options": [],
+   "explanation": "1,000 ÷ 10 = 100 shares; €200 ÷ 100 = €2 per share.",
+   "unit": "€"
+  },
+  "u8l4-3": {
+   "prompt": "After a 10-for-1 split you're ten times richer.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "You have ten times as many shares, each at a tenth of the price: the total value is the same."
+  },
+  "u8l4-4": {
+   "prompt": "A company has 100 million shares and you have 1 million (1 %). It raises capital with 25 million new shares and you don't buy any. What percentage do you have now?",
+   "options": [],
+   "explanation": "1 ÷ 125 = 0.008 → 0.8 %. That's dilution.",
+   "unit": "%"
+  },
+  "u8l4-5": {
+   "prompt": "Match each operation with what happens.",
+   "options": [
+    "Split",
+    "Reverse split",
+    "Capital increase",
+    "Flexible dividend (scrip)"
+   ],
+   "explanation": "Splits and reverse splits don't change the value of your position; capital increases and scrips do change the company's total number of shares.",
+   "right": [
+    "New shares and new money for the company",
+    "You choose to be paid in cash or in new shares",
+    "Fewer, pricier shares, same value",
+    "More, cheaper shares, same value"
+   ]
+  },
+  "u8l4-6": {
+   "prompt": "Why does a company usually do a split?",
+   "options": [
+    "To raise new money",
+    "To make each share cheaper and more manageable",
+    "To pay less tax"
+   ],
+   "explanation": "No money comes in and the company's value doesn't change: only the price of each share falls."
+  },
+  "u8l4-7": {
+   "prompt": "What happens to your percentage of the company?",
+   "options": [
+    "1-for-20 reverse split",
+    "Capital increase you don't take part in",
+    "Capital increase where you buy your full entitlement",
+    "4-for-1 split",
+    "10-for-1 split"
+   ],
+   "explanation": "Only a capital increase you don't take part in dilutes you. If you exercise your pre-emptive rights, you keep your percentage.",
+   "right": [
+    "No change",
+    "Falls (dilution)"
+   ]
+  },
+  "u8l4-8": {
+   "prompt": "A reverse split usually follows good news for the company.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It doesn't change the value, but it's usually done by companies that have fallen a lot and trade for cents."
+  },
+  "u8l4-9": {
+   "prompt": "Quick: 2-for-1 split of an €80 share. New price?",
+   "options": [
+    "€160",
+    "€80",
+    "€40"
+   ],
+   "explanation": "80 ÷ 2 = €40, and you have twice as many shares."
+  },
+  "u8l4-10": {
+   "prompt": "Marta sees in her app that one of her shares «has fallen 90 % today». She had 5 and now 50 show up. What's happened?",
+   "options": [
+    "The company has given her 45 shares",
+    "There's been a 10-for-1 split and her money is worth the same",
+    "She's lost 90 % of her money"
+   ],
+   "explanation": "Before panicking over a huge drop, check whether there's been a split.",
+   "feedback": [
+    "Nobody gives anything away: it's the same pizza, cut into more slices.",
+    "Exactly: from 5 to 50 shares at a tenth of the price. The total value doesn't change.",
+    "It would be with the same number of shares, but now she has ten times as many."
+   ]
+  },
+  "u8l5-1": {
+   "prompt": "A company trades at €50 and has 200 million shares. What's its market cap?",
+   "options": [],
+   "explanation": "50 × 200 million = €10,000 million.",
+   "unit": "million €"
+  },
+  "u8l5-2": {
+   "prompt": "Match each size with its approximate market cap (convention in dollars).",
+   "options": [
+    "Large",
+    "Mid",
+    "Small",
+    "Micro"
+   ],
+   "explanation": "These are rough ranges used by indices and fund managers; there's no single official cut-off.",
+   "right": [
+    "2,000 to 10,000 million",
+    "Under 300 million",
+    "300 to 2,000 million",
+    "Over 10,000 million"
+   ]
+  },
+  "u8l5-3": {
+   "prompt": "Match each index with what it measures.",
+   "options": [
+    "S&P 500",
+    "Russell 2000",
+    "IBEX 35",
+    "IBEX Small Cap"
+   ],
+   "explanation": "There are indices for every size: that way you can compare how they perform.",
+   "right": [
+    "Spain's 35 most liquid companies",
+    "Small Spanish companies",
+    "Small US companies",
+    "Large US companies"
+   ]
+  },
+  "u8l5-4": {
+   "prompt": "What does a small company usually have compared with a giant?",
+   "options": [
+    "More analysts following it",
+    "More growth potential and more risk",
+    "Less volatility"
+   ],
+   "explanation": "It can grow faster, but its price moves more and it goes bust more often."
+  },
+  "u8l5-5": {
+   "prompt": "A €2 share belongs to a small company and a €500 share to a large one.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "A share's price tells you nothing about size: you have to multiply it by the number of shares."
+  },
+  "u8l5-6": {
+   "prompt": "Large or small? Work out the market cap.",
+   "options": [
+    "€5 × 200 million shares",
+    "€300 × 50 million shares",
+    "€40 × 25 million shares",
+    "€20 × 1,000 million shares"
+   ],
+   "explanation": "20,000 M, 1,000 M, 15,000 M and 1,000 M. Price on its own tells you nothing.",
+   "right": [
+    "Large (over 10,000 M)",
+    "Small (300–2,000 M)"
+   ]
+  },
+  "u8l5-7": {
+   "prompt": "Ana wants to put all her savings into a micro cap a forum is talking about: «it could go up 10 times». What does she bear in mind?",
+   "options": [
+    "That if it's on a forum it's been properly analysed",
+    "That it's very volatile and illiquid, she could lose almost everything and it's unwise to bet it all on one company",
+    "That small caps always rise more"
+   ],
+   "explanation": "More potential always comes with more risk, and putting everything into one small company multiplies it.",
+   "feedback": [
+    "Forums are also the favourite hangout of people who want to pump up a share so they can sell it.",
+    "Good: the potential is real, but the risk of a single small company is enormous.",
+    "Sometimes they rise more, but many fall by the wayside or go bust."
+   ]
+  },
+  "u8l5-8": {
+   "prompt": "Quick: how is market cap calculated?",
+   "options": [
+    "Price × number of shares",
+    "Earnings × price",
+    "Sales ÷ number of shares"
+   ],
+   "explanation": "It's the company's value on the stock market."
+  },
+  "u8l5-9": {
+   "prompt": "Small-cap shares usually have wider spreads than large caps.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "There are fewer buyers and sellers, so buying and selling costs more."
+  },
+  "u8l5-10": {
+   "prompt": "What do you say?",
+   "options": [
+    "No, small caps never go up",
+    "Yes, in the long run they always win",
+    "They can return more, but with more risk, and it's not a fixed rule"
+   ],
+   "explanation": "Size changes the risk profile, but it doesn't guarantee a result.",
+   "feedback": [
+    "Some small caps become giants; the hard part is knowing which ones in advance.",
+    "Not always: there have been periods of many years in which large caps clearly beat them.",
+    "That's it! More potential, more scares and years when they do worse."
+   ],
+   "lines": [
+    "Small caps go up more than large caps, right?",
+    "So I'm moving everything into small caps 🚀"
+   ]
+  },
+  "u8l6-1": {
+   "prompt": "Match each concept with its meaning.",
+   "options": [
+    "Growth",
+    "Value",
+    "Value trap",
+    "P/E"
+   ],
+   "explanation": "Two styles, a tool to measure them and a trap worth knowing about.",
+   "right": [
+    "Cheap because the business is getting worse",
+    "Price ÷ earnings per share",
+    "You buy current earnings at a discount",
+    "You pay today for future earnings"
+   ]
+  },
+  "u8l6-2": {
+   "prompt": "Growth or value?",
+   "options": [
+    "Mature utility with a P/E of 11 and a steady dividend",
+    "Bank trading below its book value",
+    "P/E of 60 on expectations for a new product",
+    "Young tech company doubling sales and paying no dividend",
+    "Reinvests all its profit to expand"
+   ],
+   "explanation": "Growth: high P/E, little dividend and lots of reinvestment. Value: low P/E, mature business and a dividend.",
+   "right": [
+    "Growth",
+    "Value"
+   ]
+  },
+  "u8l6-3": {
+   "prompt": "A share trades at €100 and earns €2 per share. What's its P/E?",
+   "options": [],
+   "explanation": "100 ÷ 2 = 50: you're paying for 50 years of current earnings.",
+   "unit": "times"
+  },
+  "u8l6-4": {
+   "prompt": "March 2000: the Nasdaq 100, packed with growth tech stocks, has multiplied more than 4 times since the end of 1997. What happened next?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "With sky-high P/Es, the price depends on very demanding expectations being met. It's a classic case for studying growth and valuation.",
+   "horizon": "until the end of 2002"
+  },
+  "u8l6-5": {
+   "prompt": "This is the share of a classic value company: mature, consumer goods, and paying a dividend for decades. What did it do over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Being a stable company doesn't make its short-term price predictable: value shares go up and down too.",
+   "horizon": "the next 10 sessions"
+  },
+  "u8l6-6": {
+   "prompt": "What is a value trap?",
+   "options": [
+    "A cheap share that keeps falling because its business is deteriorating",
+    "A very expensive growth share",
+    "A fund that charges hidden fees"
+   ],
+   "explanation": "A low P/E may reflect that profits are about to fall: sometimes cheap is cheap for a reason."
+  },
+  "u8l6-7": {
+   "prompt": "Growth shares usually pay high dividends.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "They reinvest almost all their profit to keep growing."
+  },
+  "u8l6-8": {
+   "prompt": "P/E = price ÷ ____ per share.",
+   "options": [
+    "sales",
+    "debt",
+    "dividend",
+    "earnings"
+   ],
+   "explanation": "The P/E measures how many years of current earnings you're paying for."
+  },
+  "u8l6-9": {
+   "prompt": "Laura can't decide between a tech company with a P/E of 70 growing 40 % a year and an insurer with a P/E of 9 growing 3 %. Which reasoning is right?",
+   "options": [
+    "The P/E 9 one is better because it's cheap",
+    "The P/E 70 one is better because it grows more",
+    "Neither is better on its own: it depends on whether the price properly reflects its future"
+   ],
+   "explanation": "Neither «it grows a lot» nor «it's cheap» is enough: you have to compare the price with what the company can earn.",
+   "feedback": [
+    "It may be cheap for a reason: a stagnating business disappoints too.",
+    "If that growth is already in the price, any disappointment can sink it.",
+    "Exactly: growth and value are styles, not guarantees. What matters is what you pay for what you get."
+   ]
+  },
+  "u8l6-10": {
+   "prompt": "Which style suffers more if expected growth disappoints?",
+   "options": [
+    "Value",
+    "Both equally",
+    "Growth"
+   ],
+   "explanation": "With a high P/E, the price already reflects future earnings; if they don't arrive, the P/E deflates."
+  },
+  "u8l7-1": {
+   "prompt": "What does a company do in a share buyback?",
+   "options": [
+    "Lends money to its shareholders",
+    "Buys its own shares and usually cancels them",
+    "Issues new shares"
+   ],
+   "explanation": "When they're cancelled, there are fewer shares and each one is worth a bigger part of the company."
+  },
+  "u8l7-2": {
+   "prompt": "A company earns 500 million and has 100 million shares. It buys back and cancels 10 million. New earnings per share? (two decimal places)",
+   "options": [],
+   "explanation": "500 ÷ 90 = €5.56, versus €5 before: 11 % more with the same profit.",
+   "unit": "€"
+  },
+  "u8l7-3": {
+   "prompt": "You hold 1,000 of a company's 1,000,000 shares (0.1 %). It buys back and cancels 200,000. What percentage do you have now?",
+   "options": [],
+   "explanation": "1,000 ÷ 800,000 = 0.00125 → 0.125 %. Your stake grows without you buying anything.",
+   "unit": "%"
+  },
+  "u8l7-4": {
+   "prompt": "Buying back shares always creates value for shareholders.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "If the company buys back at a very high price or borrows to do it, it can destroy value."
+  },
+  "u8l7-5": {
+   "prompt": "Dividend or buyback?",
+   "options": [
+    "Earnings per share go up",
+    "You pay no tax until you sell",
+    "Taxed in the year you receive it",
+    "Money lands in your account",
+    "The number of shares falls"
+   ],
+   "explanation": "Both return money to shareholders, but in different ways and with different tax treatment.",
+   "right": [
+    "Dividend",
+    "Buyback"
+   ]
+  },
+  "u8l7-6": {
+   "prompt": "Match each use of profit with its effect.",
+   "options": [
+    "Dividend",
+    "Buyback",
+    "Reinvestment",
+    "Paying down debt"
+   ],
+   "explanation": "A company can pay out, buy back, reinvest or pay down debt: each option makes sense at a different moment.",
+   "right": [
+    "More factories, shops or research",
+    "Less interest and less risk",
+    "Fewer shares and a bigger slice for each",
+    "Cash for shareholders"
+   ]
+  },
+  "u8l7-7": {
+   "prompt": "A company announces a big buyback funded by a loan, right when its share is at an all-time high with a very high P/E. How do you see it?",
+   "options": [
+    "Great: every buyback is good",
+    "With caution: price and debt matter",
+    "Badly: buybacks are illegal"
+   ],
+   "explanation": "A buyback is only as good as the price it's done at and how it's paid for.",
+   "feedback": [
+    "Buying back expensively and with debt can destroy value: it pays a lot for each share and adds risk.",
+    "Good: a buyback creates value if it's done at a good price and without putting the company at risk.",
+    "They're legal and common; in the US they've been subject to a 1 % tax since 2023."
+   ]
+  },
+  "u8l7-8": {
+   "prompt": "When bought-back shares are cancelled, the total number of shares falls.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "That's why each share represents more profit."
+  },
+  "u8l7-9": {
+   "prompt": "EPS stands for earnings per ____.",
+   "options": [
+    "asset",
+    "shareholder",
+    "year",
+    "share"
+   ],
+   "explanation": "Net profit ÷ number of shares. A buyback raises it because the denominator falls."
+  },
+  "u8l7-10": {
+   "prompt": "Why do some investors prefer buybacks to dividends?",
+   "options": [
+    "Because they're not taxed until you sell",
+    "Because Hacienda (the Spanish tax office) pays for them",
+    "Because they're safer"
+   ],
+   "explanation": "A dividend is taxed when you receive it; with a buyback, your gain builds up in the price and you pay when you sell."
+  }
+ }
+}

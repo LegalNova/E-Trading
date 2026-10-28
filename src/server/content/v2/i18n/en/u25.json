@@ -1,0 +1,1099 @@
+{
+ "unit": {
+  "title": "Strategies",
+  "description": "From buy and hold to day trading: what the evidence says about each strategy",
+  "section": "Risk, strategies and trading"
+ },
+ "lessons": {
+  "u25l1": {
+   "title": "Buy and hold",
+   "steps": [
+    {
+     "title": "The boring strategy that works",
+     "body": "Buy a broad, cheap index and **hold it for decades**, adding money regularly.\n\nAccording to SPIVA (end of 2025), **97 %** of European equity funds lagged their index over 10 years. If hardly anyone beats the index, buying the index already puts you ahead of almost everyone."
+    },
+    {
+     "title": "Time is on your side",
+     "body": "S&P 500, approximate history. Share of periods with a gain:\n\n• 1 day: just over 50 %\n• 1 year: around 73 %\n• 10 years: around 90 %\n• 20 years: almost 100 % since 1926\n\nCareful: that's US history. Japan took 34 years to get back to its 1989 high."
+    },
+    {
+     "title": "Let time do the work",
+     "body": "Put in €100 a month at 7 % (an example, not a promise) and compare 10 years with 30.",
+     "tip": "Most of the result comes in the last few years."
+    },
+    {
+     "title": "Missing the best days",
+     "body": "J.P. Morgan: $10,000 in the S&P 500 from 2005 to 2024 turned into about **$71,750**. Anyone who missed just the 10 best days ended up with about **$32,871**. And 7 of those 10 days came very close to the worst ones.",
+     "key": "In the stock market, time in the market beats timing the market.",
+     "tip": "A boring portfolio is a portfolio that works."
+    }
+   ]
+  },
+  "u25l2": {
+   "title": "Regular contributions (DCA)",
+   "steps": [
+    {
+     "title": "What it is",
+     "body": "Investing **the same amount every month**, whatever happens (*dollar-cost averaging*).\n\nExample: €100 a month for 5 months with the price at 10 → 8 → 5 → 8 → €10. You buy 10 + 12.5 + 20 + 12.5 + 10 = **65 units** for €500. Average price: **€7.69**, even though it started and finished at €10."
+    },
+    {
+     "title": "What about a lump sum?",
+     "body": "Vanguard: over 10-year periods, investing **everything at once** beat spreading it out **about two times out of three**. With the MSCI World (1976–2022), after one year, **68 %** of the time.\n\nThe reason: the market goes up more often than it goes down. But spreading it out reduces regret if it falls right afterwards."
+    },
+    {
+     "title": "Invest every month",
+     "body": "Try €150 a month for 20 years at an example 6 % a year. Compare what you put in with the result.",
+     "tip": "What moves the result most is starting early and not stopping."
+    },
+    {
+     "title": "Key takeaway",
+     "body": "With a lump sum, a reasonable middle ground is to spread it over **6–12 months** with automatic contributions. What doesn't work is waiting «for it to drop»: nobody knows where the bottom is.",
+     "key": "All at once usually wins more often; bit by bit reduces regret. What matters is starting and not stopping.",
+     "tip": "Investing every month is like climbing stairs: what matters is not stopping."
+    }
+   ]
+  },
+  "u25l3": {
+   "title": "Value investing, Buffett-style",
+   "steps": [
+    {
+     "title": "Price and value",
+     "body": "«Price is what you pay; value is what you get» (Warren Buffett).\n\nA value investor estimates what a business is **worth** (profits, cash, debt, competitive advantages) and only buys if the **price** is clearly below it.\n\nGraham, his mentor, talked about **Mr Market**: a moody business partner who some days asks an absurd price and other days practically gives you his share."
+    },
+    {
+     "title": "Margin of safety",
+     "body": "Value is always an **estimate**. That's why you buy with a cushion: the **margin of safety**.\n\nIf you estimate a share is worth €19.60 and it trades at €15, the price is 23 % below your estimate. If you're a little wrong, you still have room."
+    },
+    {
+     "title": "What it isn't",
+     "body": "Value isn't buying whatever has fallen a lot or has the lowest P/E. A low P/E can be a business in decline: a **value trap**. And the style can spend years lagging the market.",
+     "key": "Buying businesses for less than they're worth, with a margin in case you're wrong.",
+     "tip": "An excellent company bought too expensively can be a bad investment."
+    }
+   ]
+  },
+  "u25l4": {
+   "title": "Dividend investing",
+   "steps": [
+    {
+     "title": "How a dividend works",
+     "body": "When a company pays a €1 dividend, the share price drops by roughly €1 that day (the **ex-dividend date**). You're no richer: you have €1 in cash and €1 less in shares.\n\nAnd in Spain that euro is taxed under IRPF (Spanish income tax) at 19 % to 30 %; the payer usually withholds 19 % up front."
+    },
+    {
+     "title": "Two ratios",
+     "body": "• **Dividend yield** = dividend per share ÷ price. It pays €0.50 and trades at €15: **3.3 %**.\n• ***Payout ratio*** = dividend ÷ earnings per share. Consistently above 80–90 %, the dividend may be at risk."
+    },
+    {
+     "title": "The high-yield trap",
+     "body": "A 12 % dividend isn't usually a bargain: often the price has fallen because the market expects a **cut**. Check that it's covered by earnings and cash flow.\n\nTo build wealth, **accumulating** funds reinvest without paying tax until you sell.",
+     "key": "A dividend isn't free money: it comes out of the company's value. What matters is total return.",
+     "tip": "A sky-high dividend is sometimes a warning, not a gift."
+    }
+   ]
+  },
+  "u25l5": {
+   "title": "Trend following and momentum",
+   "steps": [
+    {
+     "title": "The idea",
+     "body": "Buy what has been rising for a while and get out when the trend breaks.\n\nIt has backing: **3–12 month** trends have tended to persist in shares, indices, bonds, currencies and commodities (Jegadeesh and Titman; Moskowitz, Ooi and Pedersen; Hurst, Ooi and Pedersen, with data going back to 1880)."
+    },
+    {
+     "title": "The price of following trends",
+     "body": "• It's right **less than half** the time: lots of small losses and a few big gains.\n• In **sideways** markets it gives false signals again and again.\n• Sharp reversals catch it in the trade.\n\nIts edge depends on cutting losses quickly and letting gains run."
+    },
+    {
+     "title": "Key takeaway",
+     "body": "A typical rule: buy when the price rises above its long-term moving average, with a stop below the latest higher low, and raise the stop as it moves up.",
+     "key": "Momentum is one of the most studied anomalies, but it only works with discipline and risk management.",
+     "tip": "The trend is your friend… until it turns. That's why you always use a stop."
+    }
+   ]
+  },
+  "u25l6": {
+   "title": "Swing trading",
+   "steps": [
+    {
+     "title": "What it is",
+     "body": "Trades lasting **days to weeks**, usually on the daily chart. You aim to catch one leg of the move: buy on a pullback or at a support within a trend and get out near resistance.\n\nIt doesn't require watching the screen all day, but it does mean checking the market daily."
+    },
+    {
+     "title": "Its risks",
+     "body": "• **Gaps:** you hold positions overnight and over the weekend; an earnings report or a piece of news can open the price far from your stop.\n• **Costs:** commission and *spread* on every trade.\n• **Noise:** the shorter the timeframe, the more false signals."
+    },
+    {
+     "title": "Key takeaway",
+     "body": "Every trade needs its stop, its target and its size at 1 % risk before you enter. Better not to hold big positions going into earnings.",
+     "key": "Swing: legs lasting days or weeks, with a structural stop and a reward/risk ratio of 2:1 or more.",
+     "tip": "In swing trading the weekend counts too: size your positions with gaps in mind."
+    }
+   ]
+  },
+  "u25l7": {
+   "title": "Day trading: what the data says",
+   "steps": [
+    {
+     "title": "The studies",
+     "body": "• **Brazil** (Chague, De-Losso and Giovannetti, 2020): of those who *day traded* index futures for more than 300 days, **97 % lost money**. Only 1.1 % earned more than the minimum wage.\n• **Taiwan** (Barber, Lee, Liu and Odean): fewer than **1 %** of *day traders* manage to make money predictably and persistently after fees."
+    },
+    {
+     "title": "Why it happens",
+     "body": "• **Costs:** every trade pays commission and *spread*. With lots of trades a day, they eat up any small edge.\n• **Competition:** on the other side there are professionals and algorithms with better data and near-zero costs.\n• **Noise:** on minute charts, most moves mean nothing."
+    },
+    {
+     "title": "Key takeaway",
+     "body": "On social media you only see screenshots of wins, never the full track record. And people selling courses make money from the courses, not necessarily from trading.",
+     "key": "The vast majority of people who day trade consistently lose money.",
+     "tip": "If someone makes a living teaching you to make a living from trading, ask yourself what they really live on."
+    }
+   ]
+  },
+  "u25l8": {
+   "title": "Leverage and short selling",
+   "steps": [
+    {
+     "title": "What leverage is",
+     "body": "Trading with more money than you have. With **1:10**, €1,000 controls €10,000:\n\n• The asset rises 5 %: you make €500, **+50 %**.\n• It falls 5 %: you lose €500, **−50 %**.\n• It falls 10 %: you lose **everything**.\n\nOn top of that, holding it overnight costs daily **financing**."
+    },
+    {
+     "title": "CFDs: the official warning",
+     "body": "A **CFD** tracks the price changes of an asset with leverage, without you owning it. The CNMV requires brokers to show this warning:\n\n«CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. Between 74 and 89 % of retail investor accounts lose money when trading CFDs.»"
+    },
+    {
+     "title": "EU limits and shorts",
+     "body": "Since 2018 (ESMA): maximum leverage of **1:30** on major currency pairs, 1:20 on major indices, 1:5 on shares and **1:2 on crypto**; positions are closed if margin drops below 50 %; you can't lose more than you deposited.\n\n**Going short** means selling something you don't own to buy it back cheaper. The loss is **unlimited**: the price can rise with no ceiling (GameStop, 2021)."
+    },
+    {
+     "title": "The course's recommendation",
+     "body": "While you're learning: **no leverage and no shorting**. If you ever use them, do it with a small part of your capital, always with a stop, and with size calculated on the total exposure, not on the margin.",
+     "key": "Leverage multiplies gains and losses equally, but big losses take you out of the game.",
+     "tip": "Leverage doesn't make you a better trader: it just makes your mistakes arrive sooner."
+    }
+   ]
+  },
+  "u25l9": {
+   "title": "Choosing your strategy",
+   "steps": [
+    {
+     "title": "There's no single best one for everyone",
+     "body": "The strategy has to fit:\n\n• **Your time:** minutes a month or hours a day?\n• **Your horizon:** when will you need the money?\n• **Your temperament:** what fall could you take without selling?\n• **Your knowledge:** can you read a set of accounts or a chart?\n\nThe best strategy is the one **you'll be able to stick to** when things go badly."
+    },
+    {
+     "title": "Core and satellite",
+     "body": "Lots of people separate a long-term **core portfolio** (diversified, cheap, automatic) from a **small part** for speculating or learning, with a written limit they could lose entirely.",
+     "key": "The boring core first; the excitement, if any, with a small, capped part.",
+     "tip": "Choose the strategy you'd still follow during a 30 % fall."
+    }
+   ]
+  },
+  "u25r": {
+   "title": "Unit review",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u25l1-1": {
+   "prompt": "This is how the S&P 500 was doing up to March 2009. What trend do you see? (S&P 500 · weekly closes · up to 02/03/2009)",
+   "options": [
+    "Uptrend",
+    "Downtrend",
+    "Sideways"
+   ],
+   "explanation": "A fall of more than 50 % from 2007: the moment when the most people gave up on «buy and hold»."
+  },
+  "u25l1-2": {
+   "prompt": "March 2009: after the worst crisis in decades, lots of people sell «so as not to lose any more». What did the S&P 500 do next?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Those who held on (or kept investing) recovered. Those who sold in the panic turned a temporary fall into a permanent loss.",
+   "horizon": "the next year and a half"
+  },
+  "u25l1-3": {
+   "prompt": "According to J.P. Morgan, $10,000 invested in the S&P 500 from 2005 to 2024 ended up as $71,750; missing the 10 best days, as $32,871. What's the difference?",
+   "options": [],
+   "explanation": "71,750 − 32,871 = $38,879: more than half the result came down to 10 days.",
+   "unit": "$"
+  },
+  "u25l1-4": {
+   "prompt": "Match each time frame with the historical share of periods with a gain in the S&P 500.",
+   "options": [
+    "1 day",
+    "1 year",
+    "10 years",
+    "20 years"
+   ],
+   "explanation": "The longer the time frame, the lower the chance of losing in US history. It's not a law of physics.",
+   "right": [
+    "Around 90 %",
+    "Almost 100 %",
+    "Around 73 %",
+    "Just over 50 %"
+   ]
+  },
+  "u25l1-5": {
+   "prompt": "Buy and hold guarantees a gain over 20 years in any country.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Japan took 34 years to get back to its 1989 high. That's why you diversify across countries."
+  },
+  "u25l1-6": {
+   "prompt": "December 1989: the Japanese stock market is the biggest in the world and has been rising for years. What did the Nikkei 225 do next?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "The Nikkei took 34 years to get back to that high. Buy and hold works better with a global index than with a single country.",
+   "horizon": "the next six years"
+  },
+  "u25l1-7": {
+   "prompt": "March 2020: the S&P 500 falls 34 % in a month because of covid. Pablo has an index fund for his retirement, 35 years away. What does he do?",
+   "options": [
+    "Takes out a loan to buy more",
+    "Sells everything and waits for it to pass",
+    "Sticks to his plan and his contributions"
+   ],
+   "explanation": "Buy and hold means sitting through the falls: that's where the strategy is won or lost.",
+   "feedback": [
+    "Investing with debt in the middle of a crisis can force you to sell at the worst moment.",
+    "The index got back to its high in about 5 months. Pablo would have missed the strongest rebounds.",
+    "Good: his contributions bought cheap and within a few months the index was back at its highs."
+   ]
+  },
+  "u25l1-8": {
+   "prompt": "Quick one: according to SPIVA, what share of European equity funds lagged their index over 10 years?",
+   "options": [
+    "60 %",
+    "30 %",
+    "97 %"
+   ],
+   "explanation": "End of 2025. And almost none of those that beat it do it again."
+  },
+  "u25l1-9": {
+   "prompt": "What does buy and hold need to work? Select all that apply.",
+   "options": [
+    "Low costs",
+    "Selling every time it falls 10 %",
+    "Sitting through falls without selling",
+    "Plenty of diversification (a broad index)"
+   ],
+   "explanation": "Selling at every fall is exactly the opposite: it makes you miss the rebounds."
+  },
+  "u25l1-10": {
+   "prompt": "What do you reply to Lumi?",
+   "options": [
+    "Better look for the share that rises most this year",
+    "Boring isn't bad: it's the strategy with the most long-term evidence",
+    "You're right, boring is bad"
+   ],
+   "explanation": "Excitement doesn't pay: what pays is staying invested, diversified and with low costs for years.",
+   "feedback": [
+    "That's gambling: most individual shares do worse than the index.",
+    "OK, OK. Boring for long-term money, and the excitement with a small part.",
+    "Well, according to SPIVA, 97 % of European active funds do worse than the index over 10 years…"
+   ],
+   "lines": [
+    "Buy and hold is for grandparents 👴",
+    "I'd rather have something exciting."
+   ]
+  },
+  "u25l2-1": {
+   "prompt": "You invest €100 a month and the price goes through 10, 8, 5, 8 and €10. How many units do you have in total?",
+   "options": [],
+   "explanation": "100 ÷ 10 + 100 ÷ 8 + 100 ÷ 5 + 100 ÷ 8 + 100 ÷ 10 = 10 + 12.5 + 20 + 12.5 + 10 = 65.",
+   "unit": "units"
+  },
+  "u25l2-2": {
+   "prompt": "With those 65 units for €500, what's your average purchase price? (round to two decimal places)",
+   "options": [],
+   "explanation": "500 ÷ 65 ≈ €7.69. Since it ends at €10, you make 30 % without the price having risen.",
+   "unit": "€"
+  },
+  "u25l2-3": {
+   "prompt": "September 2008. You start putting €200 a month into an S&P 500 fund. What did the index do over the following months?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "With regular contributions, when the price falls you buy more units with the same money: falls work in your favour if you don't stop.",
+   "horizon": "the following months"
+  },
+  "u25l2-4": {
+   "prompt": "July 2012: the IBEX 35 has had years of crisis and hardly anyone wants to invest in Spain. If you were investing every month, what happened next?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Anyone investing every month bought lots of cheap units at the worst of the crisis. DCA doesn't require guessing the bottom.",
+   "horizon": "the next year and a half"
+  },
+  "u25l2-5": {
+   "prompt": "Ana inherits €30,000 to invest for the long term. She knows from experience that if she invests it all and it falls 20 % the next month, she'd sell everything out of nerves. Which option fits best with what she knows about herself?",
+   "options": [
+    "Spread it over 6–12 months with automatic contributions",
+    "Wait for the market to drop",
+    "Invest it all today"
+   ],
+   "explanation": "The best strategy is the one you'll be able to stick to. Waiting for «the right moment» is usually the worst.",
+   "feedback": [
+    "A good middle ground: she gets into the market without the fear of doing it all on the worst day.",
+    "Nobody knows when it'll drop: while she waits, the market could rise 30 %.",
+    "Statistically it wins about 2 times out of 3, but Ana already knows she'd bail out in a fall, and that would be the worst outcome."
+   ]
+  },
+  "u25l2-6": {
+   "prompt": "According to Vanguard, investing a lump sum all at once beat spreading it out about two times out of three.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Because the market goes up more often than it goes down: waiting usually costs you."
+  },
+  "u25l2-7": {
+   "prompt": "Why does investing all at once win more often than spreading it out?",
+   "options": [
+    "Because fees are lower",
+    "Because banks prefer it",
+    "Because the market goes up more often than it goes down"
+   ],
+   "explanation": "Every month you wait, the money still to be invested isn't in the market."
+  },
+  "u25l2-8": {
+   "prompt": "Is it an advantage of regular contributions or of investing all at once?",
+   "options": [
+    "It automates discipline",
+    "All the money works from day one",
+    "It fits with getting paid a salary every month",
+    "It reduces regret if it falls right afterwards",
+    "Historically it wins more often"
+   ],
+   "explanation": "Both are valid: what doesn't work is trying to guess the timing.",
+   "right": [
+    "Regular contributions",
+    "All at once"
+   ]
+  },
+  "u25l2-9": {
+   "prompt": "Regular contributions guarantee buying at the lowest price.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "You buy at a range of prices: your average price is reasonable, but not the lowest."
+  },
+  "u25l2-10": {
+   "prompt": "Investing the same amount every month, whatever happens, is called ____.",
+   "options": [
+    "rebalancing",
+    "market timing",
+    "leverage",
+    "DCA"
+   ],
+   "explanation": "Dollar-cost averaging: regular contributions."
+  },
+  "u25l3-1": {
+   "prompt": "You estimate a share is worth €20 and it trades at €15. What margin of safety do you have relative to your estimated value?",
+   "options": [],
+   "explanation": "(20 − 15) ÷ 20 = 0.25 → 25 %.",
+   "unit": "%"
+  },
+  "u25l3-2": {
+   "prompt": "You estimate a company is worth €40 per share and you demand a 30 % margin of safety. What's the most you'd pay?",
+   "options": [],
+   "explanation": "40 × (1 − 0.30) = €28.",
+   "unit": "€"
+  },
+  "u25l3-3": {
+   "prompt": "Who is Graham's «Mr Market»?",
+   "options": [
+    "A valuation index",
+    "The head of the stock exchange",
+    "A moody business partner who offers you a different price every day"
+   ],
+   "explanation": "You don't have to listen to him: you can take advantage of his panic days and not buy from him on his euphoric days."
+  },
+  "u25l3-4": {
+   "prompt": "Because of a general panic, a company with stable profits, little debt and loyal customers falls 30 % in a month without its business having changed. How does a value investor see it?",
+   "options": [
+    "Sells: if it's falling, something bad is going on",
+    "Checks whether the business is still the same and whether there's now a margin of safety",
+    "Buys with all their money without looking at anything"
+   ],
+   "explanation": "A value investor separates the price (which changes every day) from the value of the business (which changes slowly).",
+   "feedback": [
+    "That's letting Mr Market decide for you, right on his panic day.",
+    "Good: if the value hasn't changed but the price has, there may be an opportunity. You check first.",
+    "Without analysis or diversification it isn't value investing: it's gambling."
+   ]
+  },
+  "u25l3-5": {
+   "prompt": "Bruno finds a share with a P/E of 4. Sales have been falling for 5 years, debt keeps rising and the sector is disappearing. What is it?",
+   "options": [
+    "A growth company",
+    "A sure bargain because of its low P/E",
+    "Probably a value trap"
+   ],
+   "explanation": "A low ratio isn't enough: you have to check whether the business is holding up.",
+   "feedback": [
+    "Its sales are falling: that's the opposite.",
+    "The low P/E reflects that the market expects profits to keep falling.",
+    "Exactly: cheap isn't the same as undervalued. The business is shrinking."
+   ]
+  },
+  "u25l3-6": {
+   "prompt": "Match each concept with its meaning.",
+   "options": [
+    "Intrinsic value",
+    "Margin of safety",
+    "Mr Market",
+    "Moat"
+   ],
+   "explanation": "These are the basic building blocks of Graham and Buffett's value investing.",
+   "right": [
+    "The changing mood of prices",
+    "An advantage that protects the business from competitors",
+    "The cushion between that value and the price",
+    "What you estimate the business is worth"
+   ]
+  },
+  "u25l3-7": {
+   "prompt": "A low P/E always means the share is cheap.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It could be a company in decline or one with a one-off inflated profit. Compare it with the sector and with its growth."
+  },
+  "u25l3-8": {
+   "prompt": "The value style beats the market every year.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It has had long periods, of more than a decade, lagging the market. It takes a lot of patience."
+  },
+  "u25l3-9": {
+   "prompt": "Buffett: «Price is what you pay; ____ is what you get».",
+   "options": [
+    "dividend",
+    "risk",
+    "profit",
+    "value"
+   ],
+   "explanation": "Price and value aren't the same thing: value investing lives off that difference."
+  },
+  "u25l3-10": {
+   "prompt": "Which signs point to a possible value trap? Select all that apply.",
+   "options": [
+    "A sector that's disappearing",
+    "Stable profits and a high ROIC",
+    "Debt that keeps growing",
+    "Sales falling year after year"
+   ],
+   "explanation": "Stable profits and a high return on capital are signs of quality, not of a trap."
+  },
+  "u25l3-11": {
+   "prompt": "What do you say to Lumi?",
+   "options": [
+    "Yes, the more it falls, the better",
+    "Value is buying whatever is rising most",
+    "What matters is what the business is worth, not what it used to trade at"
+   ],
+   "explanation": "Value compares price with value, not today's price with yesterday's.",
+   "feedback": [
+    "That's anchoring: the fact that it used to be €100 says nothing about what it's worth today.",
+    "That sounds more like momentum, which is a different strategy.",
+    "Ah, OK: first I estimate the value, and only if the price is well below it is there a margin."
+   ],
+   "lines": [
+    "Value investing means buying whatever has fallen the most, right? 📉",
+    "This share was at €100 and now it's at €40: bargain!"
+   ]
+  },
+  "u25l4-1": {
+   "prompt": "A share trades at €15 and pays a €0.50 dividend a year. What's its dividend yield? (round to one decimal place)",
+   "options": [],
+   "explanation": "0.50 ÷ 15 ≈ 0.033 → 3.3 %.",
+   "unit": "%"
+  },
+  "u25l4-2": {
+   "prompt": "A company earns €2 per share and pays a €1.80 dividend. What's its payout ratio?",
+   "options": [],
+   "explanation": "1.80 ÷ 2 = 0.9 → 90 %: it pays out almost everything it earns. If profits fall, the dividend is at risk.",
+   "unit": "%"
+  },
+  "u25l4-3": {
+   "prompt": "You receive €1,000 gross in dividends from Spanish companies and 19 % is withheld. How much reaches your account?",
+   "options": [],
+   "explanation": "1,000 × (1 − 0.19) = €810. Then, in your tax return, it's adjusted to your bracket.",
+   "unit": "€"
+  },
+  "u25l4-4": {
+   "prompt": "Select the messages that are a scam or an obvious trap.",
+   "options": [
+    "Exclusive fund: 1 % dividend every month guaranteed, no risk. Transfer to this account today.",
+    "Live off dividends with just €1,000 💸 Join my paid group and I'll tell you which ones.",
+    "The company you hold shares in will pay a dividend of €0.40 per share. Ex-dividend date: the 12th.",
+    "Reminder: dividends are declared as investment income in your IRPF (Spanish income tax) return.",
+    "🔥 Share paying a GUARANTEED 15 % dividend. Today only, limited places."
+   ],
+   "explanation": "Promises of guaranteed dividends, urgency and «living off your investments with €1,000» are signs of fraud. No share guarantees its dividend.",
+   "senders": [
+    "Unknown",
+    "Influencer",
+    "Your broker",
+    "Spanish Tax Agency",
+    "«VIP Income» channel"
+   ]
+  },
+  "u25l4-5": {
+   "prompt": "When a company pays a dividend, its share price usually drops by roughly that amount.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "The money leaves the company: your total wealth doesn't change by receiving it."
+  },
+  "u25l4-6": {
+   "prompt": "A share offers a 13 % dividend. What should you check first?",
+   "options": [
+    "How many followers it has on social media",
+    "Nothing: 13 % is always a bargain",
+    "Whether earnings and cash cover the dividend, and why the price has fallen so much"
+   ],
+   "explanation": "A yield like that usually means the market expects a cut."
+  },
+  "u25l4-7": {
+   "prompt": "Is it a feature of an accumulating fund or a distributing fund?",
+   "options": [
+    "It pays the dividends into your account",
+    "You don't pay tax until you sell",
+    "Useful if you need a regular income",
+    "It reinvests dividends automatically"
+   ],
+   "explanation": "While you're building wealth, accumulating funds are usually more tax-efficient.",
+   "right": [
+    "Accumulating",
+    "Distributing"
+   ]
+  },
+  "u25l4-8": {
+   "prompt": "Quick one: what can a 95 % payout ratio over several years indicate?",
+   "options": [
+    "That the company is growing very fast",
+    "That the dividend is guaranteed",
+    "That the dividend may be at risk"
+   ],
+   "explanation": "It pays out almost everything it earns: little room if profits fall."
+  },
+  "u25l4-9": {
+   "prompt": "Bruno is looking for income. He's torn between a company with a 12 % dividend, falling profits and rising debt, and another with a 3 % dividend comfortably covered by earnings. What's the more prudent criterion?",
+   "options": [
+    "Pick whichever has risen most this month",
+    "Look at how sustainable the dividend is, not just its size",
+    "The 12 % one: it pays four times as much"
+   ],
+   "explanation": "What matters is total return and that the dividend is sustainable.",
+   "feedback": [
+    "That says nothing about whether the dividend is sustainable.",
+    "Good: a covered, stable dividend is worth more than a high one at risk.",
+    "If it cuts the dividend and the share falls, Bruno loses income and capital at the same time."
+   ]
+  },
+  "u25l4-10": {
+   "prompt": "The day a share starts trading without the right to the dividend is called the ____ date.",
+   "options": [
+    "payment",
+    "value",
+    "issue",
+    "ex-dividend"
+   ],
+   "explanation": "On that day the price drops by roughly the amount paid out as a dividend."
+  },
+  "u25l5-1": {
+   "prompt": "What trend do you see in this real chart? (Apple · closes every 3 sessions · March–May 2026)",
+   "options": [
+    "Uptrend",
+    "Downtrend",
+    "Sideways"
+   ],
+   "explanation": "Higher and higher highs and lows: this is trend-follower territory."
+  },
+  "u25l5-2": {
+   "prompt": "And in this one? (NVIDIA · closes every 3 sessions · February–April 2025)",
+   "options": [
+    "Uptrend",
+    "Downtrend",
+    "Sideways"
+   ],
+   "explanation": "Lower and lower highs and lows: a long-only trend follower would stay out."
+  },
+  "u25l5-3": {
+   "prompt": "Last chart. What trend is there? (Microsoft · closes every 3 sessions · July–September 2025)",
+   "options": [
+    "Uptrend",
+    "Downtrend",
+    "Sideways"
+   ],
+   "explanation": "No clear direction: this is where trend strategies suffer false signals."
+  },
+  "u25l5-4": {
+   "prompt": "This asset had been rising. As a trend follower, what do you think it did over the following sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "A trend persisting more often than it reverses doesn't mean it always does: that's why you use a stop.",
+   "horizon": "the next 10 sessions"
+  },
+  "u25l5-5": {
+   "prompt": "Another real chart of an index. Does it go up or down afterwards?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "The momentum edge is statistical, across many trades. In a single case, anything can happen.",
+   "horizon": "the next 10 sessions"
+  },
+  "u25l5-6": {
+   "prompt": "Over what time frame have trends tended to persist according to momentum studies?",
+   "options": [
+    "1 to 5 minutes",
+    "3 to 12 months",
+    "20 to 30 years"
+   ],
+   "explanation": "That's the horizon of most studies, across many markets and going back more than a century."
+  },
+  "u25l5-7": {
+   "prompt": "Trend strategies usually win most of their trades.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "They're usually right less than half the time: they make money because their wins are much bigger than their losses."
+  },
+  "u25l5-8": {
+   "prompt": "A trend system is right 35 % of the time, wins 3R on average and loses 1R. What's its expectancy?",
+   "options": [],
+   "explanation": "0.35 × 3 − 0.65 × 1 = 1.05 − 0.65 = +0.4R, before costs.",
+   "unit": "R"
+  },
+  "u25l5-9": {
+   "prompt": "Quick one: where does a trend follower suffer most?",
+   "options": [
+    "In a sideways market",
+    "In a long trend",
+    "In a slowly rising market"
+   ],
+   "explanation": "With no clear direction, it gets in and out again and again with small losses."
+  },
+  "u25l5-10": {
+   "prompt": "Put the steps of a simple trend-following rule in order.",
+   "options": [
+    "Enter when your rule's signal is triggered",
+    "Work out the size with 1 % risk",
+    "Put the stop below the latest higher low",
+    "Raise the stop as the trend moves on",
+    "Check there's an uptrend (higher highs and higher lows)"
+   ],
+   "explanation": "Without the stop and the size, no trend rule survives its reversals."
+  },
+  "u25l6-1": {
+   "prompt": "Swing trade: you have €10,000 and risk 1 % at most. Choose the stop and amount.",
+   "options": [],
+   "explanation": "Stop below the recent low and size calculated with that stop. The rest is up to the market."
+  },
+  "u25l6-2": {
+   "prompt": "Another trade, now with a €5,000 account. Same limit: 1 % at most.",
+   "options": [],
+   "explanation": "If the price goes against you, the stop limits the loss to what you planned. That's why you decide it before entering."
+  },
+  "u25l6-3": {
+   "prompt": "Swing trade on an index. Place the stop for this buy.",
+   "options": [],
+   "explanation": "Below the recent low: if it breaks, the pullback has turned into something else."
+  },
+  "u25l6-4": {
+   "prompt": "Now place the target for this buy.",
+   "options": [],
+   "explanation": "Near the previous high, where selling tends to show up. Compare it with the distance to the stop."
+  },
+  "u25l6-5": {
+   "prompt": "A swing trader looks for ranges and trends. What do you see here? (NVIDIA · closes every 3 sessions · December 2025 – February 2026)",
+   "options": [
+    "Uptrend",
+    "Downtrend",
+    "Sideways"
+   ],
+   "explanation": "In a sideways market, the swing trader buys near the floor of the range and sells near the ceiling, with a stop below the floor."
+  },
+  "u25l6-6": {
+   "prompt": "In a range, the target for a buy usually goes near the ceiling. Tap the highest point. (Apple · closes every 3 sessions · September–November 2024)",
+   "options": [],
+   "explanation": "The ceiling of the range is where selling showed up before."
+  },
+  "u25l6-7": {
+   "prompt": "Match each style with its typical time frame.",
+   "options": [
+    "Day trading",
+    "Swing trading",
+    "Trend following",
+    "Buy and hold"
+   ],
+   "explanation": "The shorter the time frame, the more noise and the more costs for every euro earned.",
+   "right": [
+    "Days to weeks",
+    "Months",
+    "Years or decades",
+    "Minutes or hours; closes the same day"
+   ]
+  },
+  "u25l6-8": {
+   "prompt": "What risk does swing trading have that day trading doesn't?",
+   "options": [
+    "That there are no fees",
+    "Price gaps between one session and the next",
+    "That stops aren't used"
+   ],
+   "explanation": "Because you hold positions overnight, the price can open far from your stop."
+  },
+  "u25l6-9": {
+   "prompt": "Swing trading is usually done on 1-minute charts.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It usually uses the daily chart: trades lasting days to weeks."
+  },
+  "u25l6-10": {
+   "prompt": "Swing: you enter at €30, stop at €28.50 and target at €34.50. If it reaches the target, how many R do you make?",
+   "options": [],
+   "explanation": "Risk: €1.50. Reward: €4.50. 4.50 ÷ 1.50 = 3R.",
+   "unit": "R"
+  },
+  "u25l7-1": {
+   "prompt": "According to the Brazil study, most people who day traded for more than 300 days made money.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "97 % lost money (Chague, De-Losso and Giovannetti, 2020)."
+  },
+  "u25l7-2": {
+   "prompt": "In that Brazil study, what percentage earned more than the minimum wage?",
+   "options": [
+    "Around 50 %",
+    "Around 1 %",
+    "Around 25 %"
+   ],
+   "explanation": "1.1 %: even among the few who made money, almost none made enough to live on."
+  },
+  "u25l7-3": {
+   "prompt": "In Taiwan, fewer than 1 % of day traders manage to make money predictably after fees.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Barber, Lee, Liu and Odean, with data from the Taiwan stock exchange from 1992 to 2006."
+  },
+  "u25l7-4": {
+   "prompt": "Of those who day traded for more than 300 days in Brazil, ____ lost money.",
+   "options": [
+    "50 %",
+    "70 %",
+    "30 %",
+    "97 %"
+   ],
+   "explanation": "Chague, De-Losso and Giovannetti (2020)."
+  },
+  "u25l7-5": {
+   "prompt": "You make 4 trades a day and each one costs you €5 in commission and spread. Over 250 market days, how much do you pay in costs?",
+   "options": [],
+   "explanation": "4 × 5 × 250 = €5,000: before you've made anything, you already have to win that back.",
+   "unit": "€"
+  },
+  "u25l7-6": {
+   "prompt": "Why do most day traders lose? Select all that apply.",
+   "options": [
+    "Competition from professionals and algorithms",
+    "Because it's banned in Spain",
+    "The noise on minute charts",
+    "The costs of trading so much"
+   ],
+   "explanation": "It isn't banned: the maths simply works against you."
+  },
+  "u25l7-7": {
+   "prompt": "An influencer shows screenshots of €3,000 made in one day and sells a €500 course to «make a living from trading». What do you do?",
+   "options": [
+    "Ask for their full, verified track record, and remember the studies",
+    "Copy their trades with borrowed money",
+    "Buy the course, the screenshots prove it"
+   ],
+   "explanation": "Screenshots of wins prove nothing: what counts is the full track record, including costs.",
+   "feedback": [
+    "Good: chances are they don't have one. And the data says 97 % of persistent traders lose.",
+    "You lose the money and you still owe the loan.",
+    "A screenshot isn't a track record: you don't see the losses or how much they make from courses."
+   ]
+  },
+  "u25l7-8": {
+   "prompt": "Real fact or myth?",
+   "options": [
+    "The more trades you make, the more costs weigh",
+    "Screenshots on social media show the full track record",
+    "In Taiwan, fewer than 1 % make money persistently after fees",
+    "97 % of those who day traded for more than 300 days in Brazil lost money",
+    "With €500 and a good course you can make a living from trading"
+   ],
+   "explanation": "The facts come from studies with millions of trades; the myths, from one-off screenshots.",
+   "right": [
+    "Real fact",
+    "Myth"
+   ]
+  },
+  "u25l7-9": {
+   "prompt": "Quick one: what turns a small edge into a loss when you trade a lot?",
+   "options": [
+    "Costs",
+    "Dividends",
+    "Inflation"
+   ],
+   "explanation": "Commission and spread on every trade: the more trades, the more they weigh."
+  },
+  "u25l7-10": {
+   "prompt": "What do you say to Lumi?",
+   "options": [
+    "Go for it, you're a natural!",
+    "Take out a loan to have more capital",
+    "Three days prove nothing; the studies say almost everyone loses"
+   ],
+   "explanation": "Before risking your livelihood, look at the evidence and at your own stats over many trades.",
+   "feedback": [
+    "Three days is a ridiculously small sample… and the data says almost everyone who tries it seriously loses.",
+    "That turns a bad idea into a worse one: losses and debts.",
+    "OK, I'd better keep learning, log 100 trades in the simulator and keep my job."
+   ],
+   "lines": [
+    "I'm thinking of quitting my job to day trade 🚀",
+    "I've won 3 days in a row on the simulator."
+   ]
+  },
+  "u25l8-1": {
+   "prompt": "With 1:10 leverage you put up €1,000 of margin. The asset rises 5 %. How much do you make?",
+   "options": [],
+   "explanation": "You control €10,000: 10,000 × 5 % = €500, 50 % of your money. If it had fallen 5 %, you'd lose the same.",
+   "unit": "€"
+  },
+  "u25l8-2": {
+   "prompt": "With 1:30 leverage, what move against you wipes out all the position's margin? (round to one decimal place)",
+   "options": [],
+   "explanation": "100 % ÷ 30 ≈ 3.3 %: a normal move over a couple of days.",
+   "unit": "%"
+  },
+  "u25l8-3": {
+   "prompt": "With 1:5 leverage, what fall in the asset wipes out all your margin?",
+   "options": [],
+   "explanation": "100 % ÷ 5 = 20 %.",
+   "unit": "%"
+  },
+  "u25l8-4": {
+   "prompt": "According to the official warning, between 74 and 89 % of retail investors lose money with CFDs.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "That's the range brokers in the EU must display; each one also publishes its own percentage."
+  },
+  "u25l8-5": {
+   "prompt": "In the EU, a retail client can lose more than they've deposited when trading CFDs.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Since 2018 there's been negative balance protection: you can't lose more than you deposited."
+  },
+  "u25l8-6": {
+   "prompt": "Laura wants to open a CFD on an index with €1,000 and maximum leverage «to make it go further». She's never used a stop. What would you tell her, as a concept?",
+   "options": [
+    "Learn without leverage first; if she ever uses it, a little, with a stop and calculated on the total exposure",
+    "Better to go short, it's safer",
+    "Go for it, that way she makes money faster"
+   ],
+   "explanation": "Method and risk management first; leverage, if at all, much later.",
+   "feedback": [
+    "Good: leverage only amplifies what you already do. Without a method, it amplifies the mistakes.",
+    "The opposite: when you're short the potential loss is unlimited.",
+    "At 1:20, a 5 % fall in the index wipes out all her margin. That can happen in a week."
+   ]
+  },
+  "u25l8-7": {
+   "prompt": "Why is the loss on a short position potentially unlimited?",
+   "options": [
+    "Because the broker doesn't allow stops",
+    "Because the price can rise without limit",
+    "Because shorts don't pay commission"
+   ],
+   "explanation": "If you buy, the most you can lose is what you invested; when you're short, every euro the price rises is a loss."
+  },
+  "u25l8-8": {
+   "prompt": "Match each product with the maximum CFD leverage for retail clients in the EU.",
+   "options": [
+    "Major currency pairs",
+    "Major indices",
+    "Individual shares",
+    "Cryptocurrencies"
+   ],
+   "explanation": "The more volatile the asset, the lower the leverage allowed (ESMA, 2018).",
+   "right": [
+    "1:20",
+    "1:2",
+    "1:5",
+    "1:30"
+   ]
+  },
+  "u25l8-9": {
+   "prompt": "Leverage multiplies gains but not losses.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It multiplies both equally."
+  },
+  "u25l8-10": {
+   "prompt": "When a violent rise forces those who are short to buy back all at once, it's called a ____.",
+   "options": [
+    "margin call",
+    "dividend",
+    "split",
+    "short squeeze"
+   ],
+   "explanation": "Like GameStop in 2021: shorts buying back push the price up even further."
+  },
+  "u25l9-1": {
+   "prompt": "Match each person with the strategy that best fits what they say about themselves.",
+   "options": [
+    "Marta: 30 minutes a month and hates checking the markets",
+    "Pablo: loves reading company accounts",
+    "Ana: checks charts every day and follows rules",
+    "Bruno: 40-year horizon and wants something simple"
+   ],
+   "explanation": "These are educational examples of how time, preferences and strategy fit together, not recommendations.",
+   "right": [
+    "Value investing with business research",
+    "Swing trading with a plan and a journal",
+    "Buy and hold a global index",
+    "Automatic contributions to an index fund"
+   ]
+  },
+  "u25l9-2": {
+   "prompt": "Bruno works 10 hours a day and can only check his phone on breaks. He wants to start day trading. What fits him best, as a concept?",
+   "options": [
+    "Day trading with leverage to make up for the lack of time",
+    "Day trading on his breaks",
+    "A strategy that doesn't depend on watching the market, like investing every month in an index fund"
+   ],
+   "explanation": "The strategy has to fit into your real life.",
+   "feedback": [
+    "Even worse: more risk with less attention.",
+    "Without being able to watch the screen, every trade is at the mercy of the noise. And most people lose even when doing it full-time.",
+    "Good: it fits his time and doesn't force him to make rushed decisions between meetings."
+   ]
+  },
+  "u25l9-3": {
+   "prompt": "Ana gets very nervous when she sees red and in 2022 she sold everything after a 15 % fall. Now she wants to invest again. What makes most sense?",
+   "options": [
+    "A portfolio that's 100 % growth shares",
+    "Never investing",
+    "A mix with more bonds and cash plus automatic contributions, with her plan written down"
+   ],
+   "explanation": "Temperament matters as much as expected return.",
+   "feedback": [
+    "Given how she reacts to falls, she'll probably sell at the worst moment again.",
+    "Inflation will keep eating away at the purchasing power of her idle money.",
+    "Good: a portfolio she can stick with will do better for her than an «optimal» one she abandons."
+   ]
+  },
+  "u25l9-4": {
+   "prompt": "What do you reply?",
+   "options": [
+    "Whichever went up most last year",
+    "Day trading, it's the fastest",
+    "The one that fits my time, my horizon and what I can take without selling"
+   ],
+   "explanation": "There's no single best strategy for everyone: there's the one you can stick to.",
+   "feedback": [
+    "That's recency bias: what did best one year rarely repeats it the next.",
+    "Fast, yes… and the data says almost everyone loses.",
+    "Exactly! A good strategy you abandon at the first fall does worse than a simple one you stick to."
+   ],
+   "lines": [
+    "OK, but just tell me which strategy is best 😅",
+    "The one that makes the most."
+   ]
+  },
+  "u25l9-5": {
+   "prompt": "What does the «core and satellite» structure do?",
+   "options": [
+    "Invests everything in a single share",
+    "Uses leverage in the core",
+    "Separates a long-term core portfolio from a small part for speculating"
+   ],
+   "explanation": "The satellite has a written limit: what you could lose entirely without it changing your life."
+  },
+  "u25l9-6": {
+   "prompt": "How much time does each strategy need?",
+   "options": [
+    "Analysing company accounts in depth",
+    "Rebalancing once a year",
+    "Automatic contributions to an index fund",
+    "Day trading"
+   ],
+   "explanation": "If you don't have time, choose something that works without you.",
+   "right": [
+    "Lots of time every day",
+    "Little time"
+   ]
+  },
+  "u25l9-7": {
+   "prompt": "The best strategy for you is the one with the highest return last year.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "One year's performance doesn't predict the next; what matters is that it fits you and has evidence behind it."
+  },
+  "u25l9-8": {
+   "prompt": "Quick one: which strategy has the most long-term evidence for most people?",
+   "options": [
+    "Day trading",
+    "Buying and holding a cheap, diversified portfolio",
+    "Following tips on social media"
+   ],
+   "explanation": "That's what SPIVA, Bogle, Sharpe and a century of data say."
+  },
+  "u25l9-9": {
+   "prompt": "Put the steps for choosing your strategy in order.",
+   "options": [
+    "See how much time you can dedicate",
+    "Decide what fall you could take without selling",
+    "Write down your rules",
+    "Define your goal and horizon",
+    "Test it in the simulator"
+   ],
+   "explanation": "First get to know yourself; then write the plan; finally, test it without real money."
+  },
+  "u25l9-10": {
+   "prompt": "What questions do you ask yourself before choosing a strategy? Select all that apply.",
+   "options": [
+    "How much time can I dedicate to it?",
+    "Which one has risen most this month?",
+    "What fall could I take without selling?",
+    "When will I need this money?"
+   ],
+   "explanation": "Whatever has risen most this month doesn't tell you which strategy you'll be able to stick to."
+  }
+ }
+}

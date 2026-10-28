@@ -5,6 +5,8 @@ import type { User } from '@/generated/prisma/client'
 import { courseMinutes, lessonMinutes, LESSON, PLACEMENT, QUIZZES, RISK_LESSON, UNITS, type ContentQuestion } from '../content/catalog'
 import { canOpen, minPlan } from '@/shared/plans'
 import { grade } from '../content/grading'
+import { engineT, lessonTitleT, questionT, stepsT, unitT } from '../content/translate'
+import { currentLocale } from '../locale'
 import { afterReview } from './srs'
 import { addXp, bump, bumpGoal, endFx, fail, LIVES_MAX, livesOf, lumi, markActive, minutesOf, withCtx, type Ctx, type Tx } from './core'
 
@@ -13,6 +15,7 @@ export const ALL_Q: Record<string, ContentQuestion> = Object.fromEntries([...Obj
 const publicQ = (q: ContentQuestion): QuestionT => ({ id: q.id, type: q.type, prompt: q.prompt, options: q.options, chart: q.chart, candles: q.candles, right: q.right, meta: q.meta })
 
 export async function pathOf(tx: Tx, user: User): Promise<CoursePathT> {
+  const loc = currentLocale()
   const rows = await tx.lessonProgress.findMany({ where: { userId: user.id } })
   const done = new Map(rows.map(r => [r.lessonId, r]))
   // Una lección disponible cada vez en cada «camino»: el principal (o cada sección abierta del curso v2) y cada
@@ -46,16 +49,20 @@ export async function pathOf(tx: Tx, user: User): Promise<CoursePathT> {
           }
         }
       }
-      return { id: l.id, title: l.title, status, stars: p?.stars ?? 0, minutes: Math.max(1, Math.round(lessonMinutes(l))), xp: l.xp, isUnitReview: !!l.isUnitReview, requiresPremium, requiredPlan }
+      return { id: l.id, title: lessonTitleT(loc, l.id, l.title), status, stars: p?.stars ?? 0, minutes: Math.max(1, Math.round(lessonMinutes(l))), xp: l.xp, isUnitReview: !!l.isUnitReview, requiresPremium, requiredPlan }
     })
     const n = lessons.filter(l => l.status === 'COMPLETED').length
     const plans = new Set(lessons.map(l => l.requiredPlan))
     const access = plans.has('PREMIUM') ? (plans.has('FREE') ? 'PARTIAL_MAX' : 'MAX') : plans.has('PLUS') ? 'PARTIAL_PLUS' : 'FREE'
-    const titleOf = (sid: string) => UNITS.find(x => x.section?.id === sid)?.section?.title ?? sid
-    const section = u.section ? { id: u.section.id, title: u.section.title, open: sectionOpen(u), needs: u.section.requires.filter(r => !bossDone(r)).map(titleOf) } : undefined
-    return { id: u.id, order: u.order, title: u.title, description: u.description, progressPct: u.lessons.length ? Math.round((n / u.lessons.length) * 100) : 0, access, side: !!u.side, unlocksFeature: u.unlocksFeature, section, lessons }
+    const titleOf = (sid: string) => {
+      const x = UNITS.find(y => y.section?.id === sid)
+      return (x && unitT(loc, x.id)?.section) ?? x?.section?.title ?? sid
+    }
+    const ut = unitT(loc, u.id)
+    const section = u.section ? { id: u.section.id, title: ut?.section ?? u.section.title, open: sectionOpen(u), needs: u.section.requires.filter(r => !bossDone(r)).map(titleOf) } : undefined
+    return { id: u.id, order: u.order, title: ut?.title ?? u.title, description: ut?.description ?? u.description, progressPct: u.lessons.length ? Math.round((n / u.lessons.length) * 100) : 0, access, side: !!u.side, unlocksFeature: u.unlocksFeature, section, lessons }
   })
-  return { courseId: 'de-cero-a-inversor', title: 'De cero a inversor', currentUnitId, units, minutesTotal: courseMinutes(), dailyGoalMinutes: minutesOf(user) }
+  return { courseId: 'de-cero-a-inversor', title: engineT(loc).course, currentUnitId, units, minutesTotal: courseMinutes(), dailyGoalMinutes: minutesOf(user) }
 }
 
 export async function lesson(user: User, tx: Tx, id: string): Promise<LessonT> {
@@ -64,7 +71,13 @@ export async function lesson(user: User, tx: Tx, id: string): Promise<LessonT> {
   if (st.requiresPremium) fail(403, 'FEATURE_LOCKED', st.requiredPlan === 'PLUS' ? 'Esta lección está en el plan Plus' : 'Esta lección está en el plan Max')
   // Las lecciones se abren en orden: no se puede saltar a una bloqueada desde la URL
   if (st.status === 'LOCKED') fail(403, 'LESSON_LOCKED', 'Termina la lección anterior para abrir esta')
-  const steps: LessonStepT[] = l.steps.map((s, i): LessonStepT => {
+  const loc = currentLocale()
+  const e = engineT(loc)
+  const title = lessonTitleT(loc, id, l.title)
+  const unitTitle = unitT(loc, l.unit.id)?.title ?? l.unit.title
+  // Los repasos y retos finales llevan una introducción fija del motor; el resto, la traducción de sus pasos
+  const src = l.isUnitReview || l.isBoss ? l.steps.map(s => (s.kind === 'TEXT' && loc !== 'es' ? { ...s, ...(l.isBoss ? e.boss(title) : e.review(unitTitle, l.unit.lessons.filter(x => !x.isUnitReview).map(x => lessonTitleT(loc, x.id, x.title).toLowerCase()).join(', '))) } : s)) : stepsT(loc, id, l.steps)
+  const steps: LessonStepT[] = src.map((s, i): LessonStepT => {
     const sid = `${id}-s${i}`
     if (s.kind === 'TEXT') return { id: sid, type: 'TEXT', title: s.title, body: s.body, keyIdea: s.key, companionTip: s.tip }
     if (s.kind === 'IMAGE') return { id: sid, type: 'IMAGE', title: s.title, body: s.body, image: s.image, companionTip: s.tip }
@@ -72,12 +85,14 @@ export async function lesson(user: User, tx: Tx, id: string): Promise<LessonT> {
     if (s.kind === 'CALC') return { id: sid, type: 'CALCULATOR', title: s.title, body: s.body, calc: s.calc, companionTip: s.tip }
     return { id: sid, type: 'SIMULATOR_TASK', title: s.title, body: s.body, task: s.task }
   })
-  steps.push({ id: `${id}-quiz`, type: 'QUIZ', quizId: l.quizId, title: 'Hora del quiz', body: `${(QUIZZES[l.quizId] ?? []).length} preguntas para comprobar lo que has aprendido. Cada fallo cuesta una vida.` })
-  return { id, title: l.title, unitTitle: l.unit.title, minutes: l.minutes, xp: l.xp, steps }
+  steps.push({ id: `${id}-quiz`, type: 'QUIZ', quizId: l.quizId, title: e.quizTitle, body: e.quizBody((QUIZZES[l.quizId] ?? []).length) })
+  return { id, title, unitTitle, minutes: l.minutes, xp: l.xp, steps }
 }
 
 export function checkStep(lessonId: string, stepId: string, idx: number): StepCheckT {
-  const s = LESSON[lessonId]?.steps[Number(stepId.split('-s')[1])]
+  const l = LESSON[lessonId]
+  const i = Number(stepId.split('-s')[1])
+  const s = l && stepsT(currentLocale(), lessonId, l.steps)[i]
   if (!s || s.kind !== 'CHART') return fail(404, 'NOT_FOUND', 'Paso no encontrado')
   const correct = idx === s.solution
   return { correct, explanation: correct ? s.ok : s.ko }
@@ -103,7 +118,8 @@ export const quizStart = (id: string) =>
       qs = QUIZZES[l.quizId] ?? []
     }
     const at = await c.tx.quizAttempt.create({ data: { userId: c.user.id, mode, lessonId: mode === 'LESSON' ? id : null, questionIds: qs.map(q => q.id) } })
-    return { attemptId: at.id, lessonId: at.lessonId, isPlacement: mode === 'PLACEMENT', questions: qs.map(publicQ), lives: livesOf(c.user, c.g) }
+    const loc = currentLocale()
+    return { attemptId: at.id, lessonId: at.lessonId, isPlacement: mode === 'PLACEMENT', questions: qs.map(q => publicQ(questionT(loc, q))), lives: livesOf(c.user, c.g) }
   })
 
 async function attemptOf(c: Ctx, id: string) {
@@ -122,7 +138,8 @@ export const answer = (attemptId: string, questionId: string, value: unknown, el
     const premium = c.user.plan !== 'FREE' // vidas ilimitadas en Plus y Max
     if (at.mode === 'LESSON' && !premium && c.g.lives <= 0) fail(409, 'NO_LIVES', 'Te has quedado sin vidas')
     const q = ALL_Q[questionId]
-    const g = grade(q, value)
+    const loc = currentLocale()
+    const g = grade(questionT(loc, q), value, loc)
     const correct = g.correct
     await c.tx.quizAnswer.create({ data: { attemptId, questionId, correct, elapsedMs: Math.max(0, Math.min(600_000, Math.round(elapsedMs) || 0)) } })
     if (!correct && at.mode === 'LESSON' && !premium) {

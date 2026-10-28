@@ -1,0 +1,673 @@
+{
+ "unit": {
+  "title": "Orders",
+  "description": "Market, limit, stop loss, take profit and OCO: which order to use and what it costs",
+  "section": "How markets work"
+ },
+ "lessons": {
+  "u6l1": {
+   "title": "The market order",
+   "steps": [
+    {
+     "title": "Buy now",
+     "body": "A **market order** buys or sells **immediately at the best price available** in the book: if you're buying, at the best selling price (*ask*); if you're selling, at the best buying price (*bid*).\n\nUpside: it's almost certain to execute, if there's liquidity. Downside: **you don't control the exact price**."
+    },
+    {
+     "title": "When it gets expensive",
+     "body": "• With **illiquid securities**: your order eats through several steps of the book.\n• At the **open** or right after news: prices jump.\n• With the exchange **closed**: it'll execute at the open, at whatever the price is then.\n\nWith big companies during normal hours, the difference is usually a matter of cents."
+    },
+    {
+     "title": "In the simulator",
+     "body": "When you practise, a market buy goes in at the last price. The simulator will also ask you for a **stop**: the price at which you'd get out if you're wrong. You'll look at it in depth in lesson 4 of this unit.",
+     "key": "Market order = guaranteed speed, no guaranteed price.",
+     "tip": "If the exact price matters to you, a market order isn't the one for you."
+    }
+   ]
+  },
+  "u6l2": {
+   "title": "Spread and slippage",
+   "steps": [
+    {
+     "title": "The spread",
+     "body": "The **spread** is the difference between the best selling price (*ask*) and the best buying price (*bid*). If you buy and sell straight away, you lose all of it.\n\nAs a percentage: spread ÷ price. A share at €10.00 / €10.02 has a spread of about **0.2 %**."
+    },
+    {
+     "title": "Slippage",
+     "body": "**Slippage** is the difference between the price you expected and the price you get. It happens when your order is large for the book or the price is moving very fast.\n\nSpread, slippage and fees are **trading costs**: the more you trade, the more you pay, even if the broker advertises «0 fees»."
+    },
+    {
+     "title": "How much a small cost weighs",
+     "body": "Compare 0.2 % with 1.8 % a year on €10,000 at 7 % over 30 years. Trading a lot has the same effect: every entry and exit pays its spread.",
+     "tip": "Costs are the only certain thing about an investment."
+    }
+   ]
+  },
+  "u6l3": {
+   "title": "The limit order",
+   "steps": [
+    {
+     "title": "You set the price",
+     "body": "**Buy limit:** buys only at your price **or cheaper**.\n**Sell limit:** sells only at your price **or higher**.\n\nUpside: you control the price. Risk: **it may never execute** if the price doesn't get there, or only partly execute."
+    },
+    {
+     "title": "Duration",
+     "body": "• **Day order:** if it doesn't execute, it expires at the close.\n• **Good till cancelled** (*GTC*): it stays live until it's filled or you cancel it (many brokers set a maximum, often 90 days).\n\nA buy limit above the current price executes immediately, at the best price available."
+    },
+    {
+     "title": "When to use it",
+     "body": "When the price matters to you: illiquid securities, wide spreads, the open, or if you only want to buy in a specific zone.",
+     "key": "Limit order = guaranteed price, no guaranteed execution.",
+     "tip": "Check your live orders now and then: they don't know the news has changed."
+    }
+   ]
+  },
+  "u6l4": {
+   "title": "The stop loss",
+   "steps": [
+    {
+     "title": "Your emergency exit",
+     "body": "A **stop loss** is an automatic order: if the price **falls to a certain level**, it triggers a sale. That way you limit the loss even when you're not watching.\n\nWhere? Where your idea **stops being valid**: usually just below the **last meaningful low**. If you set it too close, normal price noise will knock you out."
+    },
+    {
+     "title": "Stop market or stop limit",
+     "body": "• **Stop (market):** when the level is hit, it sells at whatever the price is. You're sure to get out, but maybe at a worse price.\n• **Stop limit:** when the level is hit, it places a limit order. You control the worst price, but if the price jumps it may not sell and keep falling."
+    },
+    {
+     "title": "Work out the size",
+     "body": "Move the distance to the stop: the further away it is, the fewer shares you can buy for the same risk."
+    },
+    {
+     "title": "Stop first, then size",
+     "body": "With €10,000 and a maximum risk of 1 % (€100), if you buy at €50 with the stop at €45, you're risking €5 per share: you can buy **20 shares** (€1,000).",
+     "key": "The stop decides where you get out; the size makes sure that loss is small.",
+     "tip": "A stop isn't a failure: it's the price of knowing when you're wrong."
+    }
+   ]
+  },
+  "u6l5": {
+   "title": "The take profit",
+   "steps": [
+    {
+     "title": "Locking in the gain",
+     "body": "A **take profit** is an automatic sell order when the price **rises to your target**. It saves you from being glued to the screen and stops greed from deciding for you.\n\nWhere? A logical place is **near the previous high**: lots of people sold there before and selling tends to show up again."
+    },
+    {
+     "title": "Risk and reward",
+     "body": "Compare what you're risking with what you could make: you buy at €50, stop at €47 (you risk €3) and target at €56 (you could make €6). The ratio is **1:2**.\n\nAt 1:2, if you get 4 out of 10 trades right, you make €24 and lose €18 per share (before costs)."
+    },
+    {
+     "title": "The price of locking it in",
+     "body": "If the price keeps rising after your target, you miss out on that rise. That's the price of having a plan.",
+     "key": "The take profit gets you out at the top; the stop, at the bottom.",
+     "tip": "Decide your target before you get in, not when you're already winning."
+    }
+   ]
+  },
+  "u6l6": {
+   "title": "Combining orders: OCO",
+   "steps": [
+    {
+     "title": "One cancels the other",
+     "body": "An **OCO** order (*one cancels the other*) pairs two exit orders: a **stop loss** below and a **take profit** above. When one executes, the other **cancels itself**.\n\nThat way your trade has a complete exit plan. Not every broker offers it."
+    },
+    {
+     "title": "The problem with gaps",
+     "body": "If a company reports bad results overnight and opens **15 % lower**, your stop at −5 % executes near −15 %: there were no prices in between. That's a **gap**.\n\nIt also happens on the way up: if it opens above your target, the take profit executes at that opening price, better than expected."
+    },
+    {
+     "title": "The trailing stop",
+     "body": "A **trailing stop** rises with the price at a fixed distance: at 8 %, if the price goes from €100 to €120, your stop rises from €92 to €110.40. It never goes down.",
+     "key": "OCO = complete exit plan; gaps are its limit.",
+     "tip": "No stop is perfect insurance: position size is your real protection."
+    }
+   ]
+  },
+  "u6r": {
+   "title": "Unit review",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u6l1-1": {
+   "prompt": "Book: best bid €15.20, best ask €15.23. You place a market buy order. What price do you get in at?",
+   "options": [
+    "€15.215",
+    "€15.23",
+    "€15.20"
+   ],
+   "explanation": "You buy at the best selling price (ask), the one the seller is asking."
+  },
+  "u6l1-2": {
+   "prompt": "In that same book (€15.20 / €15.23), if you sell at market, how much do you get per share?",
+   "options": [
+    "€15.20",
+    "€15.215",
+    "€15.23"
+   ],
+   "explanation": "You sell at the best buying price (bid), the one the buyer is paying."
+  },
+  "u6l1-3": {
+   "prompt": "A market order guarantees the exact price you buy at.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It guarantees execution, not the price: it may come out a bit worse than what you saw."
+  },
+  "u6l1-4": {
+   "prompt": "A market order is almost certain to execute if there are buyers and sellers.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "That's why it's the fastest: it accepts the best price going."
+  },
+  "u6l1-5": {
+   "prompt": "Simulate your first market buy: you have €10,000 and don't want to risk more than 1 % (€100). Set a stop below the last low and choose the amount.",
+   "options": [],
+   "explanation": "With a market order you get in at the last price. First you decide where you'd get out (the stop) and, with that distance, how much to buy so you don't risk more than €100."
+  },
+  "u6l1-6": {
+   "prompt": "You buy 40 shares at market and they execute at €25.10. How much do you pay, not counting fees?",
+   "options": [],
+   "explanation": "40 × 25.10 = €1,004.",
+   "unit": "€"
+  },
+  "u6l1-7": {
+   "prompt": "Laura wants to buy 5,000 shares in a very small company that hardly trades. She's thinking of using a market order. What's best for her?",
+   "options": [
+    "Using a limit order with her maximum price",
+    "Buying at market",
+    "Buying at market right at the open"
+   ],
+   "explanation": "With illiquid securities, a market order can turn out expensive.",
+   "feedback": [
+    "She only buys up to the price she sets; if there are no sellers at that price, she waits.",
+    "With such a thin book, her order eats through several steps and she pays far more than she saw.",
+    "At the open prices jump even more: the worst of both worlds."
+   ]
+  },
+  "u6l1-8": {
+   "prompt": "Quick: what does a market order guarantee you?",
+   "options": [
+    "That it executes",
+    "The exact price",
+    "Both"
+   ],
+   "explanation": "Speed, yes; exact price, no."
+  },
+  "u6l1-9": {
+   "prompt": "Market order: sensible or risky?",
+   "options": [
+    "Buying right at the open after bombshell news",
+    "A heavily traded ETF mid-session",
+    "Placing the order on a Saturday for Monday",
+    "10 shares of a big IBEX company mid-session",
+    "Selling a security that barely trades"
+   ],
+   "explanation": "High liquidity and normal hours: a market order works fine. Low liquidity, the open and news: better to cap the price.",
+   "right": [
+    "Sensible",
+    "Risky"
+   ]
+  },
+  "u6l1-10": {
+   "prompt": "Put in order what happens when you place a market buy order.",
+   "options": [
+    "The broker sends the order",
+    "You get the confirmation with the execution price",
+    "It's matched with the best selling price",
+    "You tap «buy at market»"
+   ],
+   "explanation": "You find out the final price at the end, not when you tap."
+  },
+  "u6l2-1": {
+   "prompt": "Quick: bid €20.10, ask €20.14. Spread in euros?",
+   "options": [],
+   "explanation": "20.14 − 20.10 = €0.04.",
+   "unit": "€"
+  },
+  "u6l2-2": {
+   "prompt": "A share is quoted at €50.00 (bid) and €50.25 (ask). What's the spread as a % of the bid price?",
+   "options": [],
+   "explanation": "0.25 ÷ 50 = 0.005 → 0.5 %.",
+   "unit": "%"
+  },
+  "u6l2-3": {
+   "prompt": "You buy 1,000 shares at €10.04 (ask) and sell them straight away at €10.02 (bid). How much do you lose?",
+   "options": [],
+   "explanation": "€0.02 × 1,000 = €20, just from the spread.",
+   "unit": "€"
+  },
+  "u6l2-4": {
+   "prompt": "You expected to buy at €30.00 and your order executed at €30.15. How much slippage per share?",
+   "options": [],
+   "explanation": "30.15 − 30.00 = €0.15 per share.",
+   "unit": "€"
+  },
+  "u6l2-5": {
+   "prompt": "What usually has the smallest spread?",
+   "options": [
+    "A big S&P 500 stock",
+    "A small BME Growth company",
+    "A little-known cryptocurrency"
+   ],
+   "explanation": "The more liquidity, the narrower the spread."
+  },
+  "u6l2-6": {
+   "prompt": "Match each cost with its definition.",
+   "options": [
+    "Spread",
+    "Slippage",
+    "Fee",
+    "Liquidity"
+   ],
+   "explanation": "The first three are costs; liquidity is what keeps them low.",
+   "right": [
+    "Difference between the expected price and the one you get",
+    "What the broker charges for trading",
+    "Being able to trade a lot without moving the price",
+    "Difference between bid and ask"
+   ]
+  },
+  "u6l2-7": {
+   "prompt": "Pablo closes 20 trades of €1,000 a month and each one costs him 0.3 % in spread and fees. How much does he pay in a year?",
+   "options": [],
+   "explanation": "0.3 % of €1,000 = €3 per trade. 3 × 20 × 12 = €720 a year.",
+   "unit": "€"
+  },
+  "u6l2-8": {
+   "prompt": "The spread is a cost even if the broker advertises «0 fees».",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "You pay it by buying at the ask and selling at the bid, whether or not the broker charges a fee."
+  },
+  "u6l2-9": {
+   "prompt": "When is there usually more slippage? Select all that apply.",
+   "options": [
+    "With large orders in illiquid securities",
+    "With a small order in a big company mid-session",
+    "In moments of panic, with the price moving very fast",
+    "At the open, after news"
+   ],
+   "explanation": "Slippage shows up when liquidity is thin or the price is racing."
+  },
+  "u6l2-10": {
+   "prompt": "Marta wants to buy €3,000 of a small company with a 1 % spread. What does she do?",
+   "options": [
+    "Buys at market and sells as soon as she's slightly up",
+    "Uses a limit order and avoids trading that stock often",
+    "Buys and sells several times a day to catch the moves"
+   ],
+   "explanation": "With high-spread securities, trading a lot is a sure way to lose money.",
+   "feedback": [
+    "She needs it to rise more than 1 % just to cover the spread.",
+    "She controls her entry price and doesn't pay that 1 % over and over.",
+    "Every round trip costs her 1 %: the spread eats up any gain."
+   ]
+  },
+  "u6l3-1": {
+   "prompt": "You want to buy, but only if the price drops to €45. Which order do you use?",
+   "options": [
+    "Take profit at €45",
+    "Market order",
+    "Buy limit at €45"
+   ],
+   "explanation": "The limit order only executes at €45 or less."
+  },
+  "u6l3-2": {
+   "prompt": "It's trading at €50. You place a buy limit at €47 and tomorrow the day's low is €47.40. What happens?",
+   "options": [
+    "You buy at €47.40",
+    "You buy at €47",
+    "It doesn't execute"
+   ],
+   "explanation": "The price didn't reach your limit: the order keeps waiting (or expires, if it was a day order)."
+  },
+  "u6l3-3": {
+   "prompt": "A sell limit at €60 can execute at €60.30.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It sells at your price or better: if someone pays more, so much the better for you."
+  },
+  "u6l3-4": {
+   "prompt": "You hold shares bought at the last price. Place a sell limit order at a level with a real chance of executing.",
+   "options": [],
+   "explanation": "Selling tends to show up near the previous high: it's a reasonable target. Much higher up, the order may never execute."
+  },
+  "u6l3-5": {
+   "prompt": "You're buying with a €5,000 portfolio and risking 2 % at most (€100). Set the stop and choose how much to invest.",
+   "options": [],
+   "explanation": "The amount comes from the stop: with a stop further away you buy less so you don't go over €100 of risk."
+  },
+  "u6l3-6": {
+   "prompt": "Ana wants 1,000 shares of an illiquid stock: the best seller is asking €8.40 but only for 100 shares, and the next ones are asking €8.90. What does she do?",
+   "options": [
+    "Buy limit at €8.45",
+    "Market buy",
+    "Buy limit at €9.50"
+   ],
+   "explanation": "A useful limit sits close to the price you actually want to pay.",
+   "feedback": [
+    "She buys whatever's there up to €8.45 and the rest waits. She doesn't pay €8.90 by surprise.",
+    "She eats through the book: 100 at €8.40 and 900 at €8.90 or more.",
+    "That doesn't limit anything: it would execute almost like a market order."
+   ]
+  },
+  "u6l3-7": {
+   "prompt": "What do you say to Lumi?",
+   "options": [
+    "Check your live orders: they stay active even if the situation changes",
+    "Limit orders never execute",
+    "Great, you bought cheap"
+   ],
+   "explanation": "Live orders work on their own: it's worth checking them.",
+   "feedback": [
+    "That's it: a good-till-cancelled order doesn't know the news has changed. Check them now and then.",
+    "They do execute when the price reaches your limit.",
+    "Maybe, but you bought without deciding to today, with new information."
+   ],
+   "lines": [
+    "A month ago I placed a «good till cancelled» buy limit and completely forgot about it 😅",
+    "Today it executed right after some terrible news!"
+   ]
+  },
+  "u6l3-8": {
+   "prompt": "Match each order with what it does.",
+   "options": [
+    "Buy limit",
+    "Sell limit",
+    "Day order",
+    "Good till cancelled"
+   ],
+   "explanation": "Limit price and duration: the two things you choose in a limit order.",
+   "right": [
+    "At your price or higher",
+    "Expires at the close",
+    "Stays live until filled or you cancel it",
+    "At your price or cheaper"
+   ]
+  },
+  "u6l3-9": {
+   "prompt": "A limit order always executes.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "If the price doesn't reach your limit, it doesn't execute."
+  },
+  "u6l3-10": {
+   "prompt": "You place a buy limit for 200 shares at €12.50 and it executes at €12.46. How much less do you pay compared with your limit?",
+   "options": [],
+   "explanation": "€0.04 × 200 = €8. A limit order buys at your price or better.",
+   "unit": "€"
+  },
+  "u6l4-1": {
+   "prompt": "You've bought at the last price. Place the stop loss where your idea stops being valid.",
+   "options": [],
+   "explanation": "Just below the last meaningful low: if it breaks that, the rise you expected is no longer on."
+  },
+  "u6l4-2": {
+   "prompt": "Another trade: place the stop loss using the same logic.",
+   "options": [],
+   "explanation": "Below the recent low, with a bit of room so day-to-day noise doesn't knock you out."
+  },
+  "u6l4-3": {
+   "prompt": "You have €10,000 and risk 1 % at most. Stop first, then the amount.",
+   "options": [],
+   "explanation": "Risk = amount × distance to the stop ÷ entry price. Once the stop is set, the amount follows."
+  },
+  "u6l4-4": {
+   "prompt": "You have €10,000 and risk 1 %. You buy at €50 with the stop at €45. How many shares can you buy?",
+   "options": [],
+   "explanation": "Maximum risk: €100. Risk per share: €5. 100 ÷ 5 = 20 shares.",
+   "unit": "shares"
+  },
+  "u6l4-5": {
+   "prompt": "You buy 80 shares at €25 with the stop at €23.50. If it's triggered, how much do you lose (before costs)?",
+   "options": [],
+   "explanation": "(25 − 23.50) × 80 = 1.50 × 80 = €120.",
+   "unit": "€"
+  },
+  "u6l4-6": {
+   "prompt": "Where does a stop loss make most sense?",
+   "options": [
+    "A few cents from the purchase price",
+    "At any old round number",
+    "Just below the last meaningful low"
+   ],
+   "explanation": "That's where your idea stops being valid; too close, and normal noise knocks you out for no reason."
+  },
+  "u6l4-7": {
+   "prompt": "A stop loss guarantees you'll never lose more than planned.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "If the price gaps below your stop at the open, it sells at the first available price, which may be worse."
+  },
+  "u6l4-8": {
+   "prompt": "Quick: you buy at €100 with the stop at €95. Risk per share?",
+   "options": [
+    "€95",
+    "€0.95",
+    "€5"
+   ],
+   "explanation": "100 − 95 = €5 per share."
+  },
+  "u6l4-9": {
+   "prompt": "Match each case with what happens.",
+   "options": [
+    "Stop market",
+    "Stop limit",
+    "Very tight stop",
+    "No stop"
+   ],
+   "explanation": "There's no perfect stop: every option has its cost.",
+   "right": [
+    "Controls the price, but may not execute",
+    "Normal noise knocks you out",
+    "You don't know how much you could lose",
+    "Sure to get out, maybe at a worse price"
+   ]
+  },
+  "u6l4-10": {
+   "prompt": "Bruno bought at €40 with the stop at €37. The price drops to €37.50 and he's thinking of lowering the stop to €33 «to give it some room». What does he do?",
+   "options": [
+    "Lowers it to €33",
+    "Removes the stop and waits for it to recover",
+    "Keeps the stop where he put it"
+   ],
+   "explanation": "The stop is decided before getting in, with a cool head, and it doesn't get moved further away afterwards.",
+   "feedback": [
+    "Now he's risking more than double what he planned: that's how big losses start.",
+    "Without a stop, the loss has no limit.",
+    "If it's triggered, he loses what he'd planned. If not, he sticks to his plan."
+   ]
+  },
+  "u6l5-1": {
+   "prompt": "You've bought at the last price. Place your target (take profit) somewhere logical.",
+   "options": [],
+   "explanation": "Near the previous high: it's where lots of people sold and selling tends to show up again."
+  },
+  "u6l5-2": {
+   "prompt": "Another trade: place the take profit.",
+   "options": [],
+   "explanation": "Near the previous high, without overdoing it: an overambitious target may never be hit."
+  },
+  "u6l5-3": {
+   "prompt": "You have €8,000 and risk 1 % at most (€80). Choose the amount and the stop.",
+   "options": [],
+   "explanation": "With a stop near the recent low, the distance is short and you can buy more without going over €80 of risk."
+  },
+  "u6l5-4": {
+   "prompt": "You buy at €50, with the stop at €47 and the target at €56. How many times the risk is the potential profit?",
+   "options": [],
+   "explanation": "You make €6 and risk €3: 6 ÷ 3 = 2. A 1:2 ratio.",
+   "unit": "times"
+  },
+  "u6l5-5": {
+   "prompt": "You risk €3 to make €6 per share. Out of 10 trades you get 4 right. What's the result per share, before costs?",
+   "options": [],
+   "explanation": "4 × 6 = €24 won; 6 × 3 = €18 lost. 24 − 18 = €6.",
+   "unit": "€"
+  },
+  "u6l5-6": {
+   "prompt": "A take profit sells automatically when the price rises to your target.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It locks in the gain without you having to watch."
+  },
+  "u6l5-7": {
+   "prompt": "With a take profit, if the price keeps rising afterwards, you also get that rise.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "You've already sold: whatever it rises afterwards isn't yours."
+  },
+  "u6l5-8": {
+   "prompt": "The take profit goes below the purchase price.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It goes above; the stop loss goes below."
+  },
+  "u6l5-9": {
+   "prompt": "Laura bought at €30 with a target of €36. Within three weeks it hits €36 and sells. A week later it's trading at €39. What does she do?",
+   "options": [
+    "Accepts she stuck to her plan and checks whether the target was reasonable",
+    "Buys back in at €39 out of frustration",
+    "Decides never to set targets again"
+   ],
+   "explanation": "A good plan doesn't catch the top: it protects what you make.",
+   "feedback": [
+    "She made 20 % by following her plan. Next time she'll set the target with the same method.",
+    "Buying out of frustration isn't a plan: it's a reaction.",
+    "Next time, without a target, she may watch the gain evaporate."
+   ]
+  },
+  "u6l5-10": {
+   "prompt": "What does a take profit do? Select all that apply.",
+   "options": [
+    "Guarantees selling at the top",
+    "Stops greed from deciding for you",
+    "Locks in the gain if the target is reached",
+    "Sells without you watching"
+   ],
+   "explanation": "Nobody always sells at the top; the take profit sells at your target."
+  },
+  "u6l6-1": {
+   "prompt": "Build your OCO. First, place the stop loss.",
+   "options": [],
+   "explanation": "Below the recent low: if it breaks that, your idea no longer holds."
+  },
+  "u6l6-2": {
+   "prompt": "Now, in the same trade, place the take profit.",
+   "options": [],
+   "explanation": "Near the previous high. With stop and target in place, the OCO cancels one when the other is triggered."
+  },
+  "u6l6-3": {
+   "prompt": "Put in order what happens with an OCO that ends at the target.",
+   "options": [
+    "You place the stop and the target as an OCO",
+    "The price rises to the target",
+    "The stop cancels itself",
+    "You buy the share",
+    "The shares are sold"
+   ],
+   "explanation": "One executes and the other disappears: you're not left with a stray order."
+  },
+  "u6l6-4": {
+   "prompt": "Pablo holds shares bought at €40 with a (market) stop at €38. After bad results overnight, the share opens at €34. Roughly what price does he sell at?",
+   "options": [
+    "At exactly €38",
+    "He doesn't sell",
+    "Around €34"
+   ],
+   "explanation": "There were no prices between €38 and €34: the stop executes at the first available price."
+  },
+  "u6l6-5": {
+   "prompt": "Bruno is going to hold some shares through the company's results day and knows there could be a gap. What does he do?",
+   "options": [
+    "Trusts that the stop will definitely protect him",
+    "Cuts the size so a 15 % gap doesn't hurt him much",
+    "Doubles the position because he has a stop"
+   ],
+   "explanation": "Against gaps, the best defence is position size.",
+   "feedback": [
+    "With a gap, the stop executes well below its level.",
+    "If it gaps, he loses more per share than planned, but on a small position.",
+    "Double the size and a stop that doesn't protect against gaps: a double blow."
+   ]
+  },
+  "u6l6-6": {
+   "prompt": "You bought at €50 with the stop at €47.50. The share gaps open at €42.50 and the stop executes there. How many euros per share do you lose beyond what you planned?",
+   "options": [],
+   "explanation": "Planned: 50 − 47.50 = €2.50. Actual: 50 − 42.50 = €7.50. Extra: €5.",
+   "unit": "€"
+  },
+  "u6l6-7": {
+   "prompt": "10 % trailing stop. The price rises from €80 to €95. Where's the stop now?",
+   "options": [],
+   "explanation": "95 × 0.90 = €85.50. The stop follows the price upwards.",
+   "unit": "€"
+  },
+  "u6l6-8": {
+   "prompt": "In an OCO, if the stop is triggered, the take profit stays active.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It cancels itself: that's why it's called «one cancels the other»."
+  },
+  "u6l6-9": {
+   "prompt": "A stop loss can execute worse than its level if there's a gap.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "With no prices in between, it sells at the first one available."
+  },
+  "u6l6-10": {
+   "prompt": "Match each term with its meaning.",
+   "options": [
+    "OCO",
+    "Gap",
+    "Trailing stop",
+    "Stop limit"
+   ],
+   "explanation": "Combined orders automate your plan, but they don't get rid of gaps.",
+   "right": [
+    "Price jump with no trades in between",
+    "Rises with the price and never falls",
+    "May not execute if the price jumps",
+    "Stop and target: one cancels the other"
+   ]
+  },
+  "u6l6-11": {
+   "prompt": "What do you say to Lumi?",
+   "options": [
+    "Exactly, you're fully protected",
+    "Almost always, but a gap can make you lose more",
+    "OCO orders are useless"
+   ],
+   "explanation": "The OCO organises your exit; position size limits the damage from the unexpected.",
+   "feedback": [
+    "With an overnight gap, the stop can execute well below that 5 %.",
+    "That's it! That's why how much money you put into each trade also matters.",
+    "They are useful: they automate your exit. They just aren't perfect insurance."
+   ],
+   "lines": [
+    "With my OCO I can't lose more than 5 % now, right? 😎"
+   ]
+  }
+ }
+}

@@ -1,0 +1,751 @@
+{
+ "unit": {
+  "title": "Calidad del negocio y macro",
+  "description": "Ventajas competitivas, ciclo, tipos de interés, datos macro y cómo analizar una empresa",
+  "section": "Análisis fundamental"
+ },
+ "lessons": {
+  "u18l1": {
+   "title": "Ventajas competitivas: el foso",
+   "steps": [
+    {
+     "title": "Los cinco fosos",
+     "body": "Sin una ventaja que la proteja, la competencia acaba comiéndose los beneficios. Buffett lo llama **foso**:\n\n1. **Intangibles:** marcas, patentes, licencias.\n2. **Costes de cambio:** cambiar de proveedor cuesta mucho.\n3. **Efecto red:** más usuarios, más valor.\n4. **Ventaja en costes:** produce más barato que nadie.\n5. **Escala eficiente:** el mercado solo da para uno o dos."
+    },
+    {
+     "title": "Cómo se ve en los números",
+     "body": "• Márgenes y ROIC **altos y estables** durante 10 años.\n• Puede **subir precios** sin perder clientes, incluso con inflación.\n• Mantiene o gana **cuota de mercado**."
+    },
+    {
+     "title": "Foso no es precio",
+     "body": "En 2000, Microsoft o Cisco cotizaban a PER de 60-100. Quien compró Microsoft en su máximo de 2000 tardó unos **16 años** en recuperar ese precio, aunque el negocio siguió siendo excelente.",
+     "key": "Un buen negocio necesita un foso; una buena inversión necesita, además, un buen precio."
+    }
+   ]
+  },
+  "u18l2": {
+   "title": "Sectores cíclicos y defensivos",
+   "steps": [
+    {
+     "title": "El ciclo económico",
+     "body": "1. **Recuperación:** tipos bajos, la economía empieza a crecer.\n2. **Expansión:** empleo alto y beneficios al alza; puede aparecer la inflación.\n3. **Desaceleración:** suben los tipos y se frena el crecimiento.\n4. **Recesión:** cae el PIB (técnicamente, dos trimestres seguidos) y sube el paro."
+    },
+    {
+     "title": "Cíclicos y defensivos",
+     "body": "**Cíclicos:** coches, lujo, viajes, industria, materiales, banca, tecnología. Suben más en las expansiones y caen más en las recesiones.\n\n**Defensivos:** alimentación, higiene, salud, eléctricas, agua. Se consumen igual en crisis: caen menos y suben menos."
+    },
+    {
+     "title": "La bolsa se adelanta",
+     "body": "La bolsa suele caer **antes** de una recesión y subir **antes** de que termine. En marzo de 2009 y en marzo de 2020 tocó fondo cuando las noticias aún eran terribles.",
+     "key": "La bolsa no mira el presente: mira lo que espera dentro de 6 o 12 meses."
+    }
+   ]
+  },
+  "u18l3": {
+   "title": "Bancos centrales y tipos de interés",
+   "steps": [
+    {
+     "title": "El precio del dinero",
+     "body": "• **BCE:** objetivo de inflación del **2 %** a medio plazo.\n• **Reserva Federal:** precios estables y máximo empleo.\n\nEl tipo de referencia del BCE es la **facilidad de depósito**: en junio de 2026 lo subió al **2,25 %**. Consulta el valor vigente en ecb.europa.eu, porque cambia varias veces al año."
+    },
+    {
+     "title": "Cuando suben los tipos",
+     "body": "1. Préstamos e hipotecas más caros.\n2. Se consume e invierte menos.\n3. La economía se enfría y la inflación baja (con 12-24 meses de retraso).\n4. Depósitos y bonos pagan más: más competencia para la bolsa.\n5. Los beneficios futuros valen menos hoy: se descuentan a una tasa más alta."
+    },
+    {
+     "title": "Quién sufre más",
+     "body": "Empresas de crecimiento sin beneficios, empresas muy endeudadas, inmobiliarias y **bonos largos**. En 2022, la subida de tipos más rápida en décadas hizo caer el Nasdaq más de un 30 % y los bonos largos más de un 20 %. Los bancos, al principio, suelen beneficiarse.",
+     "key": "Cuando el dinero se encarece, el futuro vale menos."
+    }
+   ]
+  },
+  "u18l4": {
+   "title": "Los datos que mueven el mercado",
+   "steps": [
+    {
+     "title": "El calendario económico",
+     "body": "• **IPC/IPCA:** inflación. Decide los tipos.\n• **PIB:** crecimiento de la economía.\n• **Empleo:** en EE. UU., las nóminas no agrícolas del primer viernes de cada mes; en España, la EPA y el paro registrado.\n• **PMI:** encuesta mensual a gestores de compras. **Por encima de 50 = expansión.** Se adelanta al PIB.\n• **Decisiones de tipos** del BCE y la Fed."
+    },
+    {
+     "title": "Sorpresa frente a expectativa",
+     "body": "Si se espera una inflación del 3 % y sale un 3,4 %, la bolsa puede caer aunque la inflación esté bajando respecto al mes anterior.\n\nEl precio ya incorpora lo esperado: lo que mueve es la **sorpresa**."
+    },
+    {
+     "title": "A veces, al revés",
+     "body": "Un dato de empleo muy fuerte puede hacer caer la bolsa: el mercado teme que el banco central mantenga los tipos altos. Bueno para la economía no siempre es bueno para la bolsa ese día.",
+     "key": "El mercado no reacciona a si el dato es bueno o malo, sino a si es mejor o peor de lo esperado."
+    }
+   ]
+  },
+  "u18l5": {
+   "title": "Empresas pequeñas y en crecimiento: qué mirar",
+   "steps": [
+    {
+     "title": "Cuando no hay beneficio",
+     "body": "Muchas empresas jóvenes **pierden dinero** mientras crecen. El PER no sirve (no hay beneficio), así que se mira:\n\n• **Crecimiento de ventas** y si se mantiene.\n• **Margen bruto:** si cada venta deja dinero.\n• **Precio/ventas:** capitalización ÷ ventas.\n• **Caja y consumo de caja:** cuántos meses aguanta sin pedir más dinero."
+    },
+    {
+     "title": "La pista de despegue",
+     "body": "**Meses de caja = caja ÷ consumo de caja mensual.**\n\nCon 120 M€ en caja y 10 M€ de caja quemada al mes, tiene **12 meses**. Si no gana dinero antes, tendrá que **ampliar capital** (diluyéndote) o endeudarse."
+    },
+    {
+     "title": "Muchas no llegan",
+     "body": "Las pequeñas pueden multiplicarse… o desaparecer. Más de la mitad de las acciones de EE. UU. desde 1926 rindió menos que las letras del Tesoro. Y son de las que más sufren cuando suben los tipos.",
+     "key": "En una empresa sin beneficios, la pregunta clave es si llegará a ganar dinero antes de quedarse sin caja."
+    }
+   ]
+  },
+  "u18l6": {
+   "title": "Analizar una empresa en 30 minutos",
+   "steps": [
+    {
+     "title": "La lista de 10 preguntas",
+     "body": "1. ¿Entiendo cómo gana dinero?\n2. ¿Crece?\n3. ¿Es rentable (márgenes, ROE, ROIC)?\n4. ¿Genera caja?\n5. ¿Está sana (deuda)?\n6. ¿Tiene foso?\n7. ¿Quién la dirige?\n8. ¿Está cara?\n9. ¿Qué puede salir mal?\n10. ¿Qué me haría vender?"
+    },
+    {
+     "title": "Practicamos con Inditex (ejercicio 2024)",
+     "body": "• **Ventas:** 38.632 M€ (+7,5 %).\n• **Margen bruto:** 57,8 %.\n• **EBITDA:** 10.728 M€ · **EBIT:** 7.554 M€.\n• **Beneficio neto:** 5.866 M€ (+9 %).\n• **Caja neta:** 11.495 M€ (más caja que deuda).\n• **Dividendo:** 1,68 € por acción.\n\nEs un ejemplo para practicar, **no una recomendación**."
+    },
+    {
+     "title": "Señales de alarma",
+     "body": "• Beneficios que crecen y caja que no.\n• Deuda que crece sin beneficios.\n• Cambios de auditor o de director financiero.\n• Ampliaciones de capital constantes.\n• Dividendos pagados con deuda.\n• Directivos que venden muchas acciones.",
+     "key": "Si no puedes explicar en tres frases por qué compras una empresa, aún no estás listo para comprarla."
+    }
+   ]
+  },
+  "u18r": {
+   "title": "Repaso de la unidad",
+   "steps": []
+  },
+  "s6boss": {
+   "title": "Reto final: Análisis fundamental",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u18l1-1": {
+   "prompt": "Empareja cada ejemplo con su foso.",
+   "options": [
+    "Una red social con miles de millones de usuarios",
+    "El software de gestión que usa toda una empresa",
+    "Una farmacéutica con un medicamento patentado",
+    "Un gran distribuidor que compra más barato que nadie",
+    "El único oleoducto de una región"
+   ],
+   "explanation": "Los cinco fosos de Morningstar y Pat Dorsey.",
+   "right": [
+    "Costes de cambio",
+    "Intangibles",
+    "Ventaja en costes",
+    "Escala eficiente",
+    "Efecto red"
+   ]
+  },
+  "u18l1-2": {
+   "prompt": "¿Qué foso tiene un sistema de pagos que aceptan casi todas las tiendas y usan casi todos los clientes?",
+   "options": [
+    "Ninguno",
+    "Efecto red",
+    "Escala eficiente"
+   ],
+   "explanation": "Cuantas más tiendas lo aceptan, más clientes lo quieren, y al revés."
+  },
+  "u18l1-3": {
+   "prompt": "¿Qué señales en los números sugieren un foso? Marca todas.",
+   "options": [
+    "Subir precios sin perder clientes",
+    "ROIC alto durante una década",
+    "Pérdidas constantes",
+    "Márgenes altos y estables durante años"
+   ],
+   "explanation": "Las pérdidas constantes indican justo lo contrario."
+  },
+  "u18l1-4": {
+   "prompt": "Ana analiza una cafetería de moda con colas en la puerta que ganó mucho el año pasado. A 50 metros acaban de abrir otras tres parecidas. ¿Qué concluye sobre su foso?",
+   "options": [
+    "El foso depende de la decoración del local",
+    "Tiene un foso enorme: hay colas",
+    "Su foso es débil: es fácil de copiar y ya la están copiando"
+   ],
+   "explanation": "Si un negocio gana mucho y es fácil de copiar, la competencia llegará.",
+   "feedback": [
+    "Sin una ventaja difícil de copiar, no hay foso.",
+    "La moda no es un foso: si es fácil de copiar, la competencia llega y se reparte las colas.",
+    "Eso: sin algo que impida a otros hacer lo mismo, los beneficios altos atraen competencia."
+   ]
+  },
+  "u18l1-5": {
+   "prompt": "Bruno encuentra una empresa con un foso clarísimo… que cotiza a PER 90 y crece al 10 % anual. ¿Qué tiene en cuenta?",
+   "options": [
+    "Que su PEG es 9: el precio ya descuenta muchísimo",
+    "Que con ese foso cualquier precio está bien",
+    "Que un PER alto garantiza que seguirá subiendo"
+   ],
+   "explanation": "Un buen negocio necesita, además, un buen precio.",
+   "feedback": [
+    "Eso: 90 ÷ 10 = 9. Un gran negocio puede ser una mala inversión si pagas de más.",
+    "Microsoft en 2000 también tenía foso, y quien compró en el máximo tardó unos 16 años en recuperar.",
+    "No garantiza nada; solo indica expectativas muy altas."
+   ]
+  },
+  "u18l1-6": {
+   "prompt": "Una empresa sin ninguna ventaja competitiva puede mantener márgenes muy altos durante décadas.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Los márgenes altos atraen competidores; sin foso, acaban bajando."
+  },
+  "u18l1-7": {
+   "prompt": "¿Es foso o no lo es?",
+   "options": [
+    "Clientes que perderían sus datos si se cambian",
+    "Una licencia exclusiva para operar un aeropuerto",
+    "Un producto de moda este verano",
+    "Una patente de 15 años",
+    "Un buen anuncio en televisión"
+   ],
+   "explanation": "Un foso es una ventaja difícil de copiar y que dura.",
+   "right": [
+    "Es foso",
+    "No es foso"
+   ]
+  },
+  "u18l1-8": {
+   "prompt": "Rápido: una app de mensajería vale más con cada usuario nuevo. ¿Qué foso es?",
+   "options": [
+    "Efecto red",
+    "Patente",
+    "Ventaja en costes"
+   ],
+   "explanation": "Cada usuario hace el producto más útil para los demás."
+  },
+  "u18l1-9": {
+   "prompt": "Microsoft tardó unos 16 años en recuperar su máximo de 2000. Si la inflación hubiera sido del 2 % anual, ¿cuánto poder de compra habría perdido quien recuperó justo ese precio? (en %)",
+   "options": [],
+   "explanation": "1 ÷ 1,02¹⁶ ≈ 0,728: un 27 % menos de poder de compra en 16 años, sin contar dividendos.",
+   "unit": "%"
+  },
+  "u18l1-10": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "No, las marcas nunca son foso",
+    "Sí: si te gusta a ti, le gusta a todos",
+    "Puede tener foso, pero hay que verlo en sus márgenes y su ROIC, y además mirar el precio"
+   ],
+   "explanation": "Busca el foso en los números y no olvides el precio.",
+   "feedback": [
+    "Las marcas fuertes pueden ser un foso muy potente.",
+    "Que te guste es un comienzo, no un análisis.",
+    "Vale: que me guste el producto no me dice si la acción está cara."
+   ],
+   "lines": [
+    "Me encanta esta marca, la uso cada día 😍",
+    "¿Eso significa que tiene foso y que es buena inversión?"
+   ]
+  },
+  "u18l2-1": {
+   "prompt": "¿Cíclico o defensivo?",
+   "options": [
+    "Eléctrica",
+    "Cadena de hoteles",
+    "Farmacéutica",
+    "Marca de lujo",
+    "Supermercado",
+    "Fabricante de coches"
+   ],
+   "explanation": "Lo que se compra igual en una crisis es defensivo; lo que se aplaza, cíclico.",
+   "right": [
+    "Cíclico",
+    "Defensivo"
+   ]
+  },
+  "u18l2-2": {
+   "prompt": "Empareja cada fase del ciclo con lo que suele pasar.",
+   "options": [
+    "Recuperación",
+    "Expansión",
+    "Desaceleración",
+    "Recesión"
+   ],
+   "explanation": "Y vuelta a empezar.",
+   "right": [
+    "Suben los tipos y se frena el crecimiento",
+    "Cae el PIB y sube el paro",
+    "Empleo alto y beneficios al alza",
+    "Tipos bajos y la economía empieza a crecer"
+   ]
+  },
+  "u18l2-3": {
+   "prompt": "Primera semana de septiembre de 2008: EE. UU. acaba de intervenir Fannie Mae y Freddie Mac y se habla de recesión. ¿Qué hizo el S&P 500 en los meses siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "En plena crisis financiera nadie sabía hasta dónde llegaría el contagio a la economía real. Los cíclicos, como la banca o la industria, eran los más expuestos.",
+   "horizon": "hasta diciembre de 2009"
+  },
+  "u18l2-4": {
+   "prompt": "Marzo de 2009: el paro se dispara y los titulares son terribles. El S&P 500 ha caído más de un 50 % desde su máximo. ¿Qué hizo después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Con noticias tan malas, casi nadie se atrevía a decidir nada. Recuerda que la bolsa mira lo que espera dentro de meses, no lo que pasa hoy.",
+   "horizon": "hasta diciembre de 2010"
+  },
+  "u18l2-5": {
+   "prompt": "¿Qué es técnicamente una recesión?",
+   "options": [
+    "Una caída de la bolsa del 10 %",
+    "Una subida de tipos",
+    "Dos trimestres seguidos de caída del PIB"
+   ],
+   "explanation": "Es la definición habitual."
+  },
+  "u18l2-6": {
+   "prompt": "La bolsa suele tocar fondo cuando ya han mejorado los datos económicos.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Suele adelantarse: en 2009 y en 2020 tocó fondo con las noticias todavía muy malas."
+  },
+  "u18l2-7": {
+   "prompt": "Los datos apuntan a una desaceleración. Pablo tiene casi toda su cartera en bancos, automoción y hoteles. ¿Qué riesgo tiene?",
+   "options": [
+    "Está muy concentrado en cíclicos, que suelen caer más si llega una recesión",
+    "Que los sectores defensivos no existen",
+    "Ninguno: esos sectores siempre suben"
+   ],
+   "explanation": "Repartir entre cíclicos y defensivos reduce la dependencia del ciclo.",
+   "feedback": [
+    "Eso: no se trata de adivinar la recesión, sino de no depender de un solo tipo de sector.",
+    "Existen: alimentación, salud, eléctricas…",
+    "Son justo los más sensibles al ciclo: caen más en las recesiones."
+   ]
+  },
+  "u18l2-8": {
+   "prompt": "Rápido: ¿qué sector suele caer menos en una recesión?",
+   "options": [
+    "Alimentación",
+    "Aerolíneas",
+    "Automoción"
+   ],
+   "explanation": "La gente sigue comprando comida en las crisis."
+  },
+  "u18l2-9": {
+   "prompt": "¿Qué sectores son defensivos? Marca todos.",
+   "options": [
+    "Alimentación",
+    "Construcción",
+    "Salud",
+    "Eléctricas"
+   ],
+   "explanation": "La construcción es muy cíclica."
+  },
+  "u18l2-10": {
+   "prompt": "En una recesión, un sector cíclico cae un 40 %. ¿Cuánto tiene que subir después para volver a su nivel?",
+   "options": [],
+   "explanation": "1 ÷ 0,60 ≈ 1,667 → +66,7 %. Un defensivo que cae un 15 % solo necesita un +17,6 %.",
+   "unit": "%"
+  },
+  "u18l3-1": {
+   "prompt": "Enero de 2022: la inflación en EE. UU. está en máximos de casi 40 años y la Fed prepara subidas de tipos. Este es un ETF de bonos del Tesoro de EE. UU. a más de 20 años. ¿Qué hizo después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Los bonos largos son muy sensibles a los tipos: cuanto más lejos está el dinero que pagan, más cambia su valor de hoy cuando el tipo se mueve.",
+   "horizon": "hasta octubre de 2023"
+  },
+  "u18l3-2": {
+   "prompt": "Ordena lo que pasa cuando el banco central sube los tipos.",
+   "options": [
+    "Se consume e invierte menos",
+    "La economía se enfría",
+    "La inflación baja con retraso",
+    "Los préstamos se encarecen"
+   ],
+   "explanation": "Con un retraso de 12 a 24 meses entre el primer paso y el último."
+  },
+  "u18l3-3": {
+   "prompt": "El BCE sube los tipos más de lo esperado. Laura tiene una tecnológica joven sin beneficios, un banco y un fondo de bonos a 30 años. ¿Qué parte suele sufrir menos a corto plazo?",
+   "options": [
+    "La tecnológica sin beneficios",
+    "El fondo de bonos a 30 años",
+    "El banco"
+   ],
+   "explanation": "Las subidas de tipos castigan sobre todo lo que depende del futuro lejano.",
+   "feedback": [
+    "Es la más sensible: su valor depende de beneficios muy lejanos.",
+    "Es de lo que más cae cuando suben los tipos.",
+    "Eso: al principio, los bancos suelen cobrar más por sus préstamos. Aunque si la economía se frena mucho, también sufren."
+   ]
+  },
+  "u18l3-4": {
+   "prompt": "¿Cuál es el objetivo de inflación del BCE?",
+   "options": [
+    "5 %",
+    "0 %",
+    "2 % a medio plazo"
+   ],
+   "explanation": "Por eso actúa cuando la inflación se aleja del 2 %."
+  },
+  "u18l3-5": {
+   "prompt": "Un bono paga 20 € al año para siempre. Con tipos del 2 %, vale 20 ÷ 0,02 = 1.000 €. ¿Cuánto valdría si los tipos suben al 4 %?",
+   "options": [],
+   "explanation": "20 ÷ 0,04 = 500 €: los tipos se duplican y el precio cae a la mitad. Por eso los bonos más largos sufrieron tanto en 2022.",
+   "unit": "€"
+  },
+  "u18l3-6": {
+   "prompt": "Las subidas de tipos suelen beneficiar a los bonos largos que ya tienes.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Su precio cae: los bonos nuevos pagan más y los viejos solo se venden más baratos."
+  },
+  "u18l3-7": {
+   "prompt": "Empareja cada concepto con su significado.",
+   "options": [
+    "QE (expansión cuantitativa)",
+    "QT (contracción cuantitativa)",
+    "Facilidad de depósito",
+    "Mandato dual de la Fed"
+   ],
+   "explanation": "Además de los tipos, los bancos centrales mueven el mercado comprando o soltando bonos.",
+   "right": [
+    "Lo que paga el BCE a los bancos por dejarle dinero",
+    "Precios estables y máximo empleo",
+    "El banco central reduce los bonos que tiene",
+    "El banco central compra bonos para inyectar dinero"
+   ]
+  },
+  "u18l3-8": {
+   "prompt": "Rápido: suben los tipos. ¿Qué empresa suele sufrir más en bolsa?",
+   "options": [
+    "Supermercado",
+    "Eléctrica sin deuda",
+    "Tecnológica joven sin beneficios"
+   ],
+   "explanation": "Su valor depende de beneficios lejanos, que se descuentan más."
+  },
+  "u18l3-9": {
+   "prompt": "En 2022 cayeron a la vez las acciones tecnológicas y los bonos largos.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "El Nasdaq cayó más de un 30 % y los bonos largos más de un 20 %: la subida de tipos golpeó a los dos."
+  },
+  "u18l3-10": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "No tiene ningún efecto",
+    "Suele ser favorable, pero depende de si ya se esperaba y de por qué los bajan",
+    "Siempre malo"
+   ],
+   "explanation": "Bajar los tipos suele favorecer a bolsa y bonos, pero cuentan la sorpresa y el motivo.",
+   "feedback": [
+    "Los tipos son el precio del dinero: afectan a todo.",
+    "¡Ah! Si los bajan porque viene una crisis, igual no es tan buena noticia.",
+    "Al contrario: suele estimular la economía y favorecer a bolsa y bonos… salvo que se baje por miedo a una crisis."
+   ],
+   "lines": [
+    "El BCE ha bajado los tipos 📉",
+    "¿Eso es bueno o malo para la bolsa?"
+   ]
+  },
+  "u18l4-1": {
+   "prompt": "Empareja cada dato con lo que mide.",
+   "options": [
+    "IPC",
+    "PIB",
+    "PMI",
+    "EPA"
+   ],
+   "explanation": "Los datos que más se miran en el calendario.",
+   "right": [
+    "La actividad de fábricas y servicios, por encuesta",
+    "El empleo y el paro en España",
+    "El crecimiento de la economía",
+    "La inflación"
+   ]
+  },
+  "u18l4-2": {
+   "prompt": "Rápido: un PMI de 46 indica…",
+   "options": [
+    "Contracción",
+    "Expansión",
+    "Nada relevante"
+   ],
+   "explanation": "Por debajo de 50, la actividad se contrae."
+  },
+  "u18l4-3": {
+   "prompt": "Un PMI por encima de ____ indica expansión de la actividad.",
+   "options": [
+    "0",
+    "10",
+    "100",
+    "50"
+   ],
+   "explanation": "Por debajo de 50, contracción."
+  },
+  "u18l4-4": {
+   "prompt": "Se espera una inflación del 2,8 % y sale un 3,3 %. Tienes una posición grande en bonos largos. ¿Qué es lo más probable ese día?",
+   "options": [
+    "Nada, ya se sabía",
+    "Que los bonos caigan: el mercado pasa a esperar tipos más altos",
+    "Que los bonos suban"
+   ],
+   "explanation": "Cuenta la diferencia entre el dato y lo esperado.",
+   "feedback": [
+    "Se esperaba un 2,8 %, no un 3,3 %: hay sorpresa.",
+    "Eso: la sorpresa al alza en la inflación presiona los precios de los bonos.",
+    "Un dato peor de lo esperado aleja las bajadas de tipos: lo habitual es que caigan."
+   ]
+  },
+  "u18l4-5": {
+   "prompt": "Viernes: el dato de empleo de EE. UU. sale muchísimo mejor de lo esperado y la bolsa cae. Marta no lo entiende. ¿Cuál es la explicación más probable?",
+   "options": [
+    "Que la bolsa siempre cae los viernes",
+    "Que el mercado teme que la Fed mantenga los tipos altos más tiempo",
+    "Que el dato es falso"
+   ],
+   "explanation": "Bueno para la economía no siempre es bueno para la bolsa ese día.",
+   "feedback": [
+    "No existe ninguna regla así.",
+    "Eso: buena noticia para la economía, mala para quien esperaba bajadas de tipos.",
+    "El dato es real; el mercado está pensando en qué hará la Fed."
+   ]
+  },
+  "u18l4-6": {
+   "prompt": "¿Por qué se sigue tanto el PMI?",
+   "options": [
+    "Porque mide el precio del oro",
+    "Porque se adelanta al PIB",
+    "Porque lo publica la bolsa"
+   ],
+   "explanation": "Es una encuesta mensual que llega mucho antes que el dato de PIB."
+  },
+  "u18l4-7": {
+   "prompt": "El mercado esperaba un dato y salió otro. ¿Sorpresa positiva o negativa para la bolsa?",
+   "options": [
+    "Inflación esperada del 2,5 %; sale un 3,1 %",
+    "PMI esperado de 48; sale 51",
+    "PIB esperado del +0,5 %; sale un −0,2 %",
+    "Inflación esperada del 3 %; sale un 2,6 %"
+   ],
+   "explanation": "Menos inflación y más actividad de lo esperado suelen gustar; lo contrario, no.",
+   "right": [
+    "Positiva",
+    "Negativa"
+   ]
+  },
+  "u18l4-8": {
+   "prompt": "El mercado reacciona sobre todo a si el dato es bueno o malo, no a lo que se esperaba.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Reacciona a la sorpresa: lo esperado ya está en el precio."
+  },
+  "u18l4-9": {
+   "prompt": "¿Qué datos suelen mover más los mercados? Marca todos.",
+   "options": [
+    "La inflación",
+    "El empleo de EE. UU.",
+    "El número de visitantes de un museo",
+    "Las decisiones de tipos del BCE y la Fed"
+   ],
+   "explanation": "Tipos, inflación y empleo deciden la política monetaria."
+  },
+  "u18l4-10": {
+   "prompt": "Se esperaba un PIB del +0,3 % y sale un +0,3 %. ¿Reacción más probable?",
+   "options": [
+    "Una caída enorme",
+    "Una subida enorme",
+    "Poca: ya estaba en el precio"
+   ],
+   "explanation": "Sin sorpresa, no hay mucho que ajustar."
+  },
+  "u18l5-1": {
+   "prompt": "Una empresa tiene 90 M€ en caja y quema 7,5 M€ al mes. ¿Cuántos meses de caja tiene?",
+   "options": [],
+   "explanation": "90 ÷ 7,5 = 12 meses.",
+   "unit": "meses"
+  },
+  "u18l5-2": {
+   "prompt": "Capitaliza 3.000 M€ y vende 200 M€ al año. ¿Cuál es su precio/ventas?",
+   "options": [],
+   "explanation": "3.000 ÷ 200 = 15: pagas 15 años de ventas, no de beneficios.",
+   "unit": "veces"
+  },
+  "u18l5-3": {
+   "prompt": "Tienes 1 millón de acciones de una empresa con 100 millones (el 1 %). Amplía capital con 25 millones de acciones nuevas y no acudes. ¿Qué porcentaje tienes ahora?",
+   "options": [],
+   "explanation": "1 ÷ 125 = 0,8 %. Tu parte se ha reducido un 20 %.",
+   "unit": "%"
+  },
+  "u18l5-4": {
+   "prompt": "Una empresa vendió 50 M€ el año pasado y este año vende 80 M€. ¿Cuánto han crecido sus ventas?",
+   "options": [],
+   "explanation": "(80 − 50) ÷ 50 = 60 %.",
+   "unit": "%"
+  },
+  "u18l5-5": {
+   "prompt": "Ana encuentra una empresa pequeña que crece un 80 % en ventas, pierde dinero y tiene caja para 6 meses. En un foro dicen que «va a multiplicar por 10». ¿Qué mira primero?",
+   "options": [
+    "Cómo va a financiarse: ampliación de capital, deuda o llegar a beneficios a tiempo",
+    "El número de seguidores del foro",
+    "Nada: si crece tanto, irá bien"
+   ],
+   "explanation": "Crecer sin caja es una carrera contrarreloj.",
+   "feedback": [
+    "Eso: con 6 meses de caja, una ampliación que la diluya es muy probable.",
+    "La popularidad no paga nóminas.",
+    "Con 6 meses de caja, lo más probable a corto plazo es que necesite más dinero."
+   ]
+  },
+  "u18l5-6": {
+   "prompt": "Una empresa vende cada vez más, pero su margen bruto es del 5 % y bajando: casi todo lo que cobra se le va en lo que le cuesta vender. ¿Qué pinta tiene?",
+   "options": [
+    "Excelente: crece mucho",
+    "Mala señal: crecer así no la acerca a ganar dinero",
+    "Da igual el margen si las ventas suben"
+   ],
+   "explanation": "Mira si cada venta deja dinero, no solo cuántas ventas hay.",
+   "feedback": [
+    "Crecer vendiendo casi sin margen no acerca los beneficios: los aleja.",
+    "Eso: crecer solo vale si cada venta deja algo.",
+    "El margen dice si crecer crea o consume valor."
+   ]
+  },
+  "u18l5-7": {
+   "prompt": "¿Por qué el PER no sirve para una empresa que pierde dinero?",
+   "options": [
+    "Porque sin beneficio sale negativo y no tiene sentido",
+    "Porque está prohibido calcularlo",
+    "Porque siempre sale 15"
+   ],
+   "explanation": "Por eso se miran ventas, márgenes y caja."
+  },
+  "u18l5-8": {
+   "prompt": "Las empresas de crecimiento sin beneficios suelen sufrir más cuando suben los tipos de interés.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Su valor depende de beneficios lejanos, que valen menos hoy con tipos más altos."
+  },
+  "u18l5-9": {
+   "prompt": "Rápido: 60 M€ de caja y 5 M€ quemados al mes. ¿Meses de caja?",
+   "options": [
+    "12",
+    "30",
+    "6"
+   ],
+   "explanation": "60 ÷ 5 = 12 meses."
+  },
+  "u18l5-10": {
+   "prompt": "¿Qué conviene mirar en una empresa joven sin beneficios? Marca todo lo útil.",
+   "options": [
+    "Meses de caja",
+    "Cuántas veces sale en redes sociales",
+    "Margen bruto",
+    "Crecimiento de ventas"
+   ],
+   "explanation": "Crecimiento, margen y caja dicen si el negocio puede llegar a ser rentable."
+  },
+  "u18l6-1": {
+   "prompt": "Ordena los cinco primeros pasos de la lista.",
+   "options": [
+    "¿Crece?",
+    "¿Genera caja?",
+    "¿Está sana?",
+    "¿Entiendo cómo gana dinero?",
+    "¿Es rentable?"
+   ],
+   "explanation": "Primero entender el negocio; después, sus números."
+  },
+  "u18l6-2": {
+   "prompt": "Con los datos de Inditex, ¿cuál fue su margen EBIT (EBIT ÷ ventas)? (un decimal)",
+   "options": [],
+   "explanation": "7.554 ÷ 38.632 ≈ 19,6 %: de cada 100 € vendidos, casi 20 € de beneficio operativo.",
+   "unit": "%"
+  },
+  "u18l6-3": {
+   "prompt": "Inditex tenía 11.495 M€ de caja neta. ¿Qué dice eso de su deuda neta/EBITDA?",
+   "options": [
+    "Que es de unas 10 veces: muy preocupante",
+    "Que no se puede saber nada",
+    "Que es negativa: tiene más caja que deuda"
+   ],
+   "explanation": "Con caja neta, la pregunta 5 («¿está sana?») se responde rápido."
+  },
+  "u18l6-4": {
+   "prompt": "¿Qué son señales de alarma? Marca todas.",
+   "options": [
+    "Caja libre en línea con el beneficio",
+    "Ampliaciones de capital constantes",
+    "Cambios frecuentes de auditor",
+    "Dividendos pagados con deuda"
+   ],
+   "explanation": "Que la caja acompañe al beneficio es buena señal."
+  },
+  "u18l6-5": {
+   "prompt": "Gráfico real de una acción del IBEX 35: 30 sesiones sin nombre ni fecha. Aunque hubieras hecho tu análisis de 30 minutos, ¿sabrías qué hizo en las 10 siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Un buen análisis te dice si el negocio es bueno y si su precio es razonable; no te dice qué hará el precio en dos semanas.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u18l6-6": {
+   "prompt": "Precio real de una gran tecnológica durante dos meses. Toca el punto más alto. (Microsoft · cierres cada 3 sesiones · junio–agosto de 2026)",
+   "options": [],
+   "explanation": "El máximo de dos meses no dice si el negocio es bueno: eso lo responde la lista de comprobación."
+  },
+  "u18l6-7": {
+   "prompt": "Inditex repartió un dividendo de 1,68 € y su beneficio por acción fue de unos 1,88 €. ¿Cuál fue su payout aproximado?",
+   "options": [],
+   "explanation": "1,68 ÷ 1,88 ≈ 89 %. Incluía 0,55 € de dividendo extraordinario; con tanta caja neta, un payout alto es más fácil de sostener que con deuda.",
+   "unit": "%"
+  },
+  "u18l6-8": {
+   "prompt": "Has aplicado la lista a una empresa: crece, gana mucho, genera caja, no tiene deuda y tiene una marca fuerte. Pero cotiza a un PER muy por encima de su media histórica. ¿Qué concluyes?",
+   "options": [
+    "Compra segura: es un gran negocio",
+    "Es una estafa",
+    "Es un gran negocio, pero tengo que decidir si el precio deja margen de seguridad"
+   ],
+   "explanation": "Un buen negocio necesita, además, un buen precio.",
+   "feedback": [
+    "Gran negocio no es lo mismo que gran inversión: el precio importa.",
+    "Nada lo indica: es un negocio sano a un precio exigente.",
+    "Eso: la pregunta 8 («¿está cara?») pesa tanto como las demás."
+   ]
+  },
+  "u18l6-9": {
+   "prompt": "Rápido: ¿cuándo tiene sentido vender según tu análisis?",
+   "options": [
+    "Cuando lo dice un foro",
+    "Cuando el precio baja un 3 %",
+    "Cuando la tesis de inversión se rompe"
+   ],
+   "explanation": "El precio puede bajar sin que el negocio empeore."
+  },
+  "u18l6-10": {
+   "prompt": "¿Qué debe tener una buena tesis de inversión? Marca todo lo que corresponda.",
+   "options": [
+    "Por qué el precio está por debajo del valor",
+    "Qué te haría vender",
+    "«Porque está subiendo mucho»",
+    "Cómo gana dinero el negocio"
+   ],
+   "explanation": "Una tesis explica por qué el negocio vale más que su precio, y cuándo dejarías de creerlo."
+  }
+ }
+}

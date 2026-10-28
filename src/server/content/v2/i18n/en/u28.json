@@ -1,0 +1,552 @@
+{
+ "unit": {
+  "title": "Emotions and habits",
+  "description": "Fear, greed, revenge and overtrading: rules so they don't decide for you",
+  "section": "Investor psychology"
+ },
+ "lessons": {
+  "u28l1": {
+   "title": "Fear and greed",
+   "steps": [
+    {
+     "title": "The market's emotional cycle",
+     "body": "Optimism → excitement → **euphoria** (peak risk) → anxiety → denial → fear → **panic and capitulation** (peak opportunity) → despondency → hope → optimism…\n\nInvestors tend to buy in euphoria and sell in panic: exactly the opposite of what makes sense."
+    },
+    {
+     "title": "What it looks like in real life",
+     "body": "• **Euphoria:** bitcoin in November 2021, on every news bulletin. It then fell by around 75 %.\n• **Panic:** March 2020, the S&P 500 drops 34 % in a month because of covid. Within about 5 months it was back at its high.\n\nIn both cases, the dominant emotion was pushing people to do the opposite of what worked out."
+    },
+    {
+     "title": "Your takeaway",
+     "body": "It's not about calling the top or the bottom: nobody does that reliably. It's about not letting fear or greed change a plan written while you were calm.",
+     "key": "The moment of greatest euphoria is usually the moment of greatest risk; the moment of greatest fear, the greatest opportunity.",
+     "tip": "When you feel euphoria or panic, don't decide today: reread your plan."
+    }
+   ]
+  },
+  "u28l2": {
+   "title": "Revenge trading",
+   "steps": [
+    {
+     "title": "What it is",
+     "body": "After one or more losses, anger kicks in along with the urge to **win it back now**. So you go in without a signal, double your size or skip your stop.\n\nIt's loss aversion at its most expensive: one bad afternoon turns into a bad month."
+    },
+    {
+     "title": "The ready-made rule",
+     "body": "**«After 3 losses in a row, I stop for the rest of the day.»**\n\nAnd also:\n• The risk per trade is always the same, whether you win or lose.\n• Monthly limit: if you lose 6 % in a month, you stop until the next month.\n• You note down in your journal how you were feeling."
+    },
+    {
+     "title": "Your takeaway",
+     "body": "The market owes you nothing: it doesn't know you've lost. Your next trade has the same odds as if you'd just won.",
+     "key": "After a loss, the best decision is usually to make no more decisions that day.",
+     "tip": "After three losses in a row, the best trade is switching off the screen."
+    }
+   ]
+  },
+  "u28l3": {
+   "title": "Overtrading",
+   "steps": [
+    {
+     "title": "What the data says",
+     "body": "Barber and Odean (2000) studied tens of thousands of US accounts: the 20 % of households that traded most earned **11.4 %** a year versus **17.9 %** for the market.\n\nIt's not that they picked worse: every trade pays a commission and the *spread*, and heavy trading usually comes from overconfidence and noise."
+    },
+    {
+     "title": "Noise",
+     "body": "The more you watch the market, the more moves you see that mean nothing. And each one seems to demand a decision.\n\nChecking your long-term portfolio every day increases the number of times you see it in the red and the temptation to tinker with it (myopic loss aversion)."
+    },
+    {
+     "title": "The cost of overpaying",
+     "body": "Compare 0.2 % with 1.5 % in annual costs on €10,000 over 30 years at an example 7 %.",
+     "tip": "Costs compound just like returns, but against you."
+    },
+    {
+     "title": "Your takeaway",
+     "body": "Fewer trades, better chosen, with low costs. And for the long term: automate your contributions and review your portfolio now and then, not every day.",
+     "key": "Every trade pays costs: trading a lot turns a small edge into a loss.",
+     "tip": "In investing, doing nothing is very often the most profitable move."
+    }
+   ]
+  },
+  "u28l4": {
+   "title": "Your anti-bias system",
+   "steps": [
+    {
+     "title": "Checklist before every purchase",
+     "body": "1. Is it in my plan?\n2. Can I explain the reason in three sentences, without saying «because it's going up»?\n3. Have I written down three reasons I could be wrong?\n4. Do I know where my stop is or what would make me sell?\n5. Does the size respect my limits?\n6. Am I calm, or am I in a hurry, angry or euphoric?\n7. Would I buy it if nobody were talking about it?\n\nIf any answer is «no», **don't buy today**."
+    },
+    {
+     "title": "Monthly review",
+     "body": "• Have I followed my plan? On which trades not, and why?\n• Does my return beat a comparable index?\n• Which bias have I spotted in myself this month?\n\nAnd ask Lumi in Biases mode: Lumi will play devil's advocate."
+    },
+    {
+     "title": "Your takeaway",
+     "body": "Pilots use checklists even though they know how to fly. Rules written while you're calm decide for you when you're not.",
+     "key": "You can't get rid of emotions; you can stop them deciding for you.",
+     "tip": "You don't need to be as cold as a machine. You need rules that work even when you're not."
+    }
+   ]
+  },
+  "u28r": {
+   "title": "Unit review",
+   "steps": []
+  },
+  "s9boss": {
+   "title": "Final challenge: Investor psychology",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u28l1-1": {
+   "prompt": "Put this part of the market's emotional cycle in order.",
+   "options": [
+    "Euphoria",
+    "Anxiety",
+    "Fear",
+    "Panic",
+    "Optimism"
+   ],
+   "explanation": "Peak risk is in euphoria; peak opportunity, in panic."
+  },
+  "u28l1-2": {
+   "prompt": "This is how the S&P 500 was doing during the covid crash. Tap the day of peak panic (the lowest close). (S&P 500 · daily closes · up to 25/03/2020)",
+   "options": [],
+   "explanation": "That March 2020 bottom was the worst time to sell: the index took about 5 months to get back to its high."
+  },
+  "u28l1-3": {
+   "prompt": "25 March 2020: the S&P 500 has just fallen 34 % in a month and the news talks about nothing but panic. What did it do over the following months?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Those who sold in the panic locked in the loss and missed the recovery. Fear shouts loudest right near the bottoms.",
+   "horizon": "the following months"
+  },
+  "u28l1-4": {
+   "prompt": "Real chart of a fall. What trend do you see? (Amazon · closes every 3 sessions · December 2025 – February 2026)",
+   "options": [
+    "Uptrend",
+    "Downtrend",
+    "Sideways"
+   ],
+   "explanation": "Lower highs and lower lows: this is fear territory, where most people sell without a plan."
+  },
+  "u28l1-5": {
+   "prompt": "March 2020. Your long-term index fund is down 30 % and your group of friends says «this is going to zero». What do you do?",
+   "options": [
+    "Reread my plan and keep up my contributions",
+    "Move everything into a single share that «has fallen the most»",
+    "Sell everything so I don't lose any more"
+   ],
+   "explanation": "Panic says sell; a plan written while you were calm holds you steady.",
+   "feedback": [
+    "Good: your plan already allowed for falls. Your contributions bought cheap.",
+    "Changing plan in the middle of a panic, and concentrating everything, multiplies the risk.",
+    "You're selling in the panic: the index was back at its highs within about 5 months and you miss it."
+   ]
+  },
+  "u28l1-6": {
+   "prompt": "November 2021. Everyone's talking about crypto, your friends are bragging about their gains and you feel you're «being left behind». What do you do?",
+   "options": [
+    "Stick to my speculation limit and my plan",
+    "Take out a loan to go in big",
+    "Put all my savings in before it rises further"
+   ],
+   "explanation": "Euphoria wants more; your written limits say how much at most.",
+   "feedback": [
+    "Good: if anything goes in, it's the small slice you could afford to lose entirely.",
+    "Debt at the height of euphoria: the worst possible combination.",
+    "That's greed and FOMO right at the peak. Bitcoin fell by around 75 % over the following year."
+   ]
+  },
+  "u28l1-7": {
+   "prompt": "At which stage of the cycle is the risk usually highest?",
+   "options": [
+    "In euphoria",
+    "In panic",
+    "In despondency"
+   ],
+   "explanation": "When everyone is in and nobody sees any risks, prices are usually higher than their value justifies."
+  },
+  "u28l1-8": {
+   "prompt": "Investors usually buy in panic and sell in euphoria.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "They usually do exactly the opposite: buy in euphoria and sell in panic."
+  },
+  "u28l1-9": {
+   "prompt": "Match each moment in a trade with its typical emotion.",
+   "options": [
+    "Before getting in",
+    "The trade is going against you",
+    "After a loss",
+    "After several wins"
+   ],
+   "explanation": "Knowing the emotion of each moment lets you prepare the rule in advance.",
+   "right": [
+    "Anger, the urge to win it back",
+    "Euphoria, overconfidence",
+    "Fear, denial",
+    "Haste, FOMO"
+   ]
+  },
+  "u28l1-10": {
+   "prompt": "Fear or greed?",
+   "options": [
+    "Raising your risk because «I'm on a roll»",
+    "Getting into something that's up 200 % so you don't miss out",
+    "Removing the stop because «it can't fall any further»",
+    "Selling everything after an alarming headline",
+    "Closing a small gain out of panic about giving it back"
+   ],
+   "explanation": "Both emotions push you to break your plan, in opposite directions.",
+   "right": [
+    "Fear",
+    "Greed"
+   ]
+  },
+  "u28l2-1": {
+   "prompt": "After several losses, increasing the size of your next trade helps you win it back without extra risk.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "You're raising your risk just when your decision-making is at its worst. If it goes wrong again, the hole doubles."
+  },
+  "u28l2-2": {
+   "prompt": "Ana has lost three trades in a row this morning, all within her plan. She's angry and spots another «opportunity». What does she do?",
+   "options": [
+    "Stops for the rest of the day, notes down how she feels and comes back tomorrow at normal size",
+    "Removes her stops so they don't get hit any more",
+    "Goes in at triple size to win it all back"
+   ],
+   "explanation": "The 3-loss rule exists for this exact moment.",
+   "feedback": [
+    "Good: three losses is a normal losing streak. What isn't normal is letting anger do the trading.",
+    "Without a stop, the next loss has no limit.",
+    "That's revenge trading: if it fails, she loses a month's worth in one afternoon."
+   ]
+  },
+  "u28l2-3": {
+   "prompt": "What do you tell Lumi?",
+   "options": [
+    "Switch to another asset and carry on",
+    "Stop for today: that's revenge trading",
+    "Go on, get your revenge"
+   ],
+   "explanation": "After a bad run, stopping is a professional decision, not a defeat.",
+   "feedback": [
+    "Switching assets doesn't change the mood you're deciding in.",
+    "Ugh, you're right. I'll switch off the screen, note it in my journal and come back tomorrow at 1 %.",
+    "The market doesn't know you've lost. Angry and at triple size, you'll most likely lose more."
+   ],
+   "lines": [
+    "I've lost 3 times in a row today 😡",
+    "Now I'm going all in, the market owes me."
+   ]
+  },
+  "u28l2-4": {
+   "prompt": "What do you reply?",
+   "options": [
+    "Win it back with leverage",
+    "Your size doesn't depend on what you lost yesterday: stick to your fixed risk",
+    "Good idea, you're on a roll now"
+   ],
+   "explanation": "Forcing yourself to win back losses is the quickest way to make them bigger.",
+   "feedback": [
+    "Leverage only speeds up whatever happens, and haste usually makes it bad.",
+    "OK. If my system has an edge, it recovers with time, not with haste.",
+    "Making €50 doesn't change the odds of the next trade."
+   ],
+   "lines": [
+    "Yesterday I lost €300 and today I've made back €50 😌",
+    "If I raise my size, I'll win it all back this afternoon."
+   ]
+  },
+  "u28l2-5": {
+   "prompt": "A €10,000 account. You lose three trades of €100 and, out of anger, risk €600 on the fourth, which you also lose. How much have you lost in total?",
+   "options": [],
+   "explanation": "3 × 100 + 600 = €900: 9 % of the account in one afternoon. With the stop-for-the-day rule, it would have been €300.",
+   "unit": "€"
+  },
+  "u28l2-6": {
+   "prompt": "Put in order what to do after three losses in a row.",
+   "options": [
+    "Check whether the trades followed the plan",
+    "Come back another day at normal size",
+    "Note in your journal what happened and how you felt",
+    "Switch off the screen"
+   ],
+   "explanation": "First cut it off, then record, then analyse and, finally, come back without changing your risk."
+  },
+  "u28l2-7": {
+   "prompt": "After a loss, your next trade is more likely to work out.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "That's the gambler's fallacy: each trade is almost independent of the one before."
+  },
+  "u28l2-8": {
+   "prompt": "Which signs show you're revenge trading? Select all that apply.",
+   "options": [
+    "You feel angry or rushed",
+    "You follow your plan with your usual risk",
+    "You raise your size to win it back",
+    "You go in without your signal being met"
+   ],
+   "explanation": "Following the plan with your usual risk is exactly the opposite."
+  },
+  "u28l2-9": {
+   "prompt": "Ready-made rule: after ____ losses in a row, I stop for the rest of the day.",
+   "options": [
+    "20",
+    "50",
+    "10",
+    "3"
+   ],
+   "explanation": "It's the textbook rule: it cuts off the spiral before it grows."
+  },
+  "u28l2-10": {
+   "prompt": "What do revenge trading and loss aversion have in common?",
+   "options": [
+    "They both reduce risk",
+    "They both make us take on more risk to avoid accepting a loss",
+    "They have nothing in common"
+   ],
+   "explanation": "When we're losing, we become more reckless: «I'll double up to win it back»."
+  },
+  "u28l3-1": {
+   "prompt": "You make 2 trades a week and each one costs you €6 in commission and spread. How much do you pay in a 52-week year?",
+   "options": [],
+   "explanation": "2 × 6 × 52 = €624.",
+   "unit": "€"
+  },
+  "u28l3-2": {
+   "prompt": "If your account is €5,000, what annual percentage do those €624 of costs eat up? (round to one decimal place)",
+   "options": [],
+   "explanation": "624 ÷ 5,000 ≈ 0.125 → 12.5 % a year. You'd have to earn that just to break even.",
+   "unit": "%"
+  },
+  "u28l3-3": {
+   "prompt": "According to Barber and Odean (2000), what annual return did the 20 % of households that traded most get?",
+   "options": [
+    "The same as the market",
+    "25 % versus 17.9 % for the market",
+    "11.4 % versus 17.9 % for the market"
+   ],
+   "explanation": "Trading more cost them over 6 points a year."
+  },
+  "u28l3-4": {
+   "prompt": "€10,000 over 30 years at a 7 % return: with 0 % costs you end up with about €76,123; with 1.5 % costs, about €49,840. How much do the costs set you back?",
+   "options": [],
+   "explanation": "76,123 − 49,840 = €26,283: more than a third of the final result.",
+   "unit": "€"
+  },
+  "u28l3-5": {
+   "prompt": "Bruno makes 20 trades a week because «if I don't trade, I don't win». His journal says that before costs he roughly breaks even and after costs he loses. What should he change?",
+   "options": [
+    "Cut down to the few trades that meet his plan",
+    "Switch to a more volatile asset to make more per trade",
+    "Trade even more to make up for it"
+   ],
+   "explanation": "If you break even before costs, every extra trade makes you lose.",
+   "feedback": [
+    "Good: fewer trades, better chosen, and costs stop eating up everything.",
+    "More volatility doesn't fix a system with no edge: it just makes the losses bigger.",
+    "More trades = more costs. The hole gets deeper."
+   ]
+  },
+  "u28l3-6": {
+   "prompt": "The more trades you make, the higher your returns tend to be.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Barber and Odean's data says the opposite: those who traded most earned less."
+  },
+  "u28l3-7": {
+   "prompt": "Quick: which habit helps you trade less in your long-term portfolio?",
+   "options": [
+    "Having notifications for every move",
+    "Checking it every hour",
+    "Automating contributions and reviewing it now and then"
+   ],
+   "explanation": "Fewer triggers, fewer temptations to tinker with it."
+  },
+  "u28l3-8": {
+   "prompt": "Useful decision or noise?",
+   "options": [
+    "Buying because a video says «it's going to explode today»",
+    "Switching funds every month to whichever rose most",
+    "Selling because the portfolio is down 1 % today",
+    "Rebalancing once a year according to the plan",
+    "Making the automatic monthly contribution"
+   ],
+   "explanation": "Useful decisions come from the plan; noise comes from the screen.",
+   "right": [
+    "Useful",
+    "Noise"
+   ]
+  },
+  "u28l3-9": {
+   "prompt": "Match each cost with its description.",
+   "options": [
+    "Commission",
+    "Spread",
+    "Financing",
+    "Taxes"
+   ],
+   "explanation": "They all grow with the number of trades.",
+   "right": [
+    "The difference between the buying and selling price",
+    "What you pay Hacienda (the Spanish tax authority) on your gains",
+    "The daily cost of holding a leveraged position",
+    "What the broker charges per trade"
+   ]
+  },
+  "u28l3-10": {
+   "prompt": "What do you tell Lumi?",
+   "options": [
+    "Better set up 100 alerts",
+    "Great, more information is better",
+    "Careful: more triggers usually lead to more trades and more costs"
+   ],
+   "explanation": "You don't need to see every move: you need to act only when your plan says so.",
+   "feedback": [
+    "That's pure noise.",
+    "More alerts usually bring more impulsive trades… and more costs.",
+    "You're right. I'll keep alerts only for my stops and targets, and check the rest calmly."
+   ],
+   "lines": [
+    "I've set up price alerts on 40 shares 📲",
+    "That way I won't miss a thing."
+   ]
+  },
+  "u28l4-1": {
+   "prompt": "Put your anti-bias routine for a trade in order.",
+   "options": [
+    "Every month: review your stats and compare yourself with an index",
+    "On exit: note it in your journal",
+    "On entry: set your stop and size",
+    "Before: go through the checklist",
+    "During: don't move the stop against you"
+   ],
+   "explanation": "Each moment has its rule: that way emotions can't find a way in."
+  },
+  "u28l4-2": {
+   "prompt": "Which questions are on the pre-purchase checklist? Select all that apply.",
+   "options": [
+    "How much has it gone up this week?",
+    "Is it in my plan?",
+    "Am I calm?",
+    "Do I know where my stop is?"
+   ],
+   "explanation": "How much it's gone up feeds FOMO, not the decision."
+  },
+  "u28l4-3": {
+   "prompt": "Which situations mean «I'm not buying today»? Select all that apply.",
+   "options": [
+    "I've just lost three trades and I'm angry",
+    "My plan, my stop and my limits are all met",
+    "I don't know where I'd put the stop",
+    "I can't explain the reason without saying «because it's going up»"
+   ],
+   "explanation": "If everything checks out and you're calm, the checklist lets you trade."
+  },
+  "u28l4-4": {
+   "prompt": "Lumi asks you to go through the checklist. What do you reply?",
+   "options": [
+    "Question 7: would you buy it if nobody were talking about it?",
+    "Buy half now and go through the checklist later",
+    "No need, it's crystal clear"
+   ],
+   "explanation": "The checklist only works if you go through it beforehand and in full.",
+   "feedback": [
+    "Hmm… honestly, no. So I'm not buying today.",
+    "The checklist comes before buying: afterwards it's no use.",
+    "When it's «crystal clear» and you're in a hurry is exactly when you need the checklist most."
+   ],
+   "lines": [
+    "I want to buy this share right now 🏃",
+    "Everyone's talking about it."
+   ]
+  },
+  "u28l4-5": {
+   "prompt": "What do you tell her in the monthly review?",
+   "options": [
+    "If you made money, breaking the plan doesn't matter",
+    "Review those 4 trades: what made you break it and how did they turn out?",
+    "Raise your risk next month"
+   ],
+   "explanation": "The monthly review looks at the process, not just the result.",
+   "feedback": [
+    "Winning while breaking the plan teaches you to break it. One day it'll cost you.",
+    "Good idea. Two were FOMO and one was revenge. I'll note them down as my biases of the month.",
+    "That's overconfidence after a good month."
+   ],
+   "lines": [
+    "I made 8 % this month 😎",
+    "But I broke the plan on 4 trades…"
+   ]
+  },
+  "u28l4-6": {
+   "prompt": "Match each bias with its antidote.",
+   "options": [
+    "Confirmation",
+    "Sunk cost",
+    "FOMO",
+    "Overconfidence"
+   ],
+   "explanation": "Every bias has a specific rule that keeps it in check.",
+   "right": [
+    "Decide from today, ignoring what's been lost",
+    "Track it in your journal and compare yourself with an index",
+    "The 48-hour rule",
+    "Look for the opposite view"
+   ]
+  },
+  "u28l4-7": {
+   "prompt": "Pablo goes through the checklist before buying. Everything is «yes» except number 6: he's euphoric after winning two trades. What does he do?",
+   "options": [
+    "Doesn't buy today and reviews it calmly tomorrow",
+    "Buys double because he's on a roll",
+    "Buys anyway, 6 out of 7 is pretty good"
+   ],
+   "explanation": "The checklist isn't up for negotiation: a single «no» is enough to wait.",
+   "feedback": [
+    "Good: if the trade still makes sense tomorrow, the checklist will come out 7 out of 7.",
+    "Euphoria + bigger size = textbook overconfidence.",
+    "The rule says that if any answer is «no», you don't buy today. Number 6 is there for a reason."
+   ]
+  },
+  "u28l4-8": {
+   "prompt": "If you're very experienced, you no longer need a checklist.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Pilots use one even though they know how to fly: experience doesn't remove biases."
+  },
+  "u28l4-9": {
+   "prompt": "Which monthly review question tells you whether your active management is worth it?",
+   "options": [
+    "How many trades have I made?",
+    "Does my return beat a comparable index?",
+    "How long have I spent looking at the screen?"
+   ],
+   "explanation": "If you don't beat the index over several years, buying the index would have served you better."
+  },
+  "u28l4-10": {
+   "prompt": "If any answer on the checklist is «no», ____ buy today.",
+   "options": [
+    "do",
+    "always",
+    "also",
+    "don't"
+   ],
+   "explanation": "Waiting a day hardly ever costs you; buying without going through the checklist often does."
+  }
+ }
+}

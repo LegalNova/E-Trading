@@ -4,7 +4,8 @@ import { ApiFailure, type Api, type OrderInput } from './types'
 async function call<T>(method: string, path: string, body?: unknown, headers: Record<string, string> = {}): Promise<T> {
   const r = await fetch(`/api${path}`, {
     method,
-    headers: { ...(body !== undefined ? { 'content-type': 'application/json' } : {}), ...headers },
+    // Idioma de la pantalla: el servidor devuelve las clases y sus textos en él
+    headers: { ...(body !== undefined ? { 'content-type': 'application/json' } : {}), 'x-locale': typeof document !== 'undefined' ? document.documentElement.lang : 'es', ...headers },
     body: body !== undefined ? JSON.stringify(body) : undefined,
     credentials: 'same-origin',
     cache: 'no-store',

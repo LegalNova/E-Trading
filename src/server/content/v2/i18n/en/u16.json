@@ -1,0 +1,829 @@
+{
+ "unit": {
+  "title": "Reading a company's accounts",
+  "description": "Price and value, income statement, balance sheet, cash, debt and quarterly results",
+  "section": "Fundamental analysis"
+ },
+ "lessons": {
+  "u16l1": {
+   "title": "Price and value aren't the same",
+   "steps": [
+    {
+     "title": "What you pay and what you get",
+     "body": "\"Price is what you pay; value is what you get\" (Warren Buffett).\n\n• **Fundamental analysis** studies the business (sales, profits, debt, competition) to estimate what it's **worth** and compare that with its **price**. It answers *what* to buy.\n• **Technical analysis** studies the chart and tries to answer *when*."
+    },
+    {
+     "title": "Mr Market",
+     "body": "Benjamin Graham pictured the market as a moody business partner who offers every day to buy your share or sell you his at a different price. Some days, euphoric, he asks for something crazy; on others, depressed, he practically gives it away.\n\nYou don't have to listen to him: his price is an offer, not an order."
+    },
+    {
+     "title": "Margin of safety",
+     "body": "If you estimate a share is worth €20 and you'll only buy it below €15, you have a **25 % margin of safety**: a cushion in case your estimate is wrong.",
+     "key": "An excellent company bought too expensively can be a bad investment.",
+     "tip": "Value is an estimate; that's why you need a cushion."
+    }
+   ]
+  },
+  "u16l2": {
+   "title": "The income statement",
+   "steps": [
+    {
+     "title": "From sales to profit",
+     "body": "Panadería Global (a made-up bakery company, € millions):\n\n• **Sales:** 1,000\n• − Cost of sales 600 → **gross profit 400** (40 %)\n• − Operating expenses 200 → **EBITDA 200**\n• − Depreciation and amortisation 50 → **EBIT 150** (15 %)\n• − Interest 20 → profit before tax 130\n• − Tax (25 %) 32.5 → **net profit 97.5**"
+    },
+    {
+     "title": "Margins and EPS",
+     "body": "• **Gross margin:** high (60-80 %) in software or luxury; low (20-30 %) in supermarkets.\n• **Operating margin** (EBIT ÷ sales): how efficient the business is.\n• **Net margin:** what's left for shareholders.\n\nWith 100 million shares, **EPS** (earnings per share) = 97.5 ÷ 100 = **€0.975**. The **trend** in margins matters more than any one year's figure."
+    },
+    {
+     "title": "A real case",
+     "body": "Inditex ended its 2024 financial year with **€38,632m** of sales, a **gross margin of 57.8 %** and **€5,866m** of net profit: of every €100 of sales, just over €15 was profit. It's a figure for practice, not a recommendation.",
+     "key": "Revenue is vanity, profit is sanity and cash is reality."
+    }
+   ]
+  },
+  "u16l3": {
+   "title": "The balance sheet",
+   "steps": [
+    {
+     "title": "What it owns and how it pays for it",
+     "body": "**Assets = liabilities + equity.**\n\n• **Assets:** what it owns (cash, inventory, factories, brands).\n• **Liabilities:** what it owes (banks, bonds, suppliers).\n• **Equity:** what belongs to the shareholders."
+    },
+    {
+     "title": "Panadería Global (M€)",
+     "body": "**Assets (1,000):** cash 80 · receivables and inventory 170 · ovens and shops 650 · brands 100.\n\n**Liabilities and equity (1,000):** financial debt 400 · suppliers 150 · **equity 450**.\n\n• Book value per share: 450 ÷ 100 = **€4.5**.\n• Liquidity: short-term assets (80 + 170 = 250) against short-term debts (150): they're covered."
+    },
+    {
+     "title": "A snapshot, not a film",
+     "body": "The balance sheet is a snapshot on a specific day; the income statement is the film of the whole year. You need to look at both.",
+     "key": "What a company owns is funded either by debt or by shareholders' money.",
+     "tip": "Debt doesn't sink a company in the good years: it sinks it in the bad ones."
+    }
+   ]
+  },
+  "u16l4": {
+   "title": "Cash flow",
+   "steps": [
+    {
+     "title": "The three parts",
+     "body": "1. **Operating:** the money the business generates day to day.\n2. **Investing:** ovens, shops, buying companies (*capex*).\n3. **Financing:** debt taken on or repaid, dividends and share buybacks."
+    },
+    {
+     "title": "Free cash flow",
+     "body": "**FCF = operating cash flow − capex.**\n\nPanadería Global generates €160m and invests €60m: **FCF = €100m**, €1 per share. That's what it can pay out, use to buy back shares or reduce debt without harming the business."
+    },
+    {
+     "title": "Profit isn't cash",
+     "body": "Profit counts sales you haven't been paid for yet and deducts expenses that aren't payments (like depreciation). That's why the two can drift apart. Enron, Wirecard and Gowex all reported profits that never turned into cash.",
+     "key": "Profit is an accounting opinion; cash is a fact.",
+     "tip": "If profits never reach the bank account, don't trust the profits."
+    }
+   ]
+  },
+  "u16l5": {
+   "title": "A company's debt",
+   "steps": [
+    {
+     "title": "Net debt",
+     "body": "**Net debt = financial debt − cash.**\n\nPanadería Global: 400 − 80 = **€320m**.\n\nIf cash exceeds debt, the company has **net cash**. Inditex, for example, ended its 2024 financial year with **€11,495m of net cash**."
+    },
+    {
+     "title": "How much is too much?",
+     "body": "**Net debt / EBITDA:** how many years of EBITDA it would take to pay it off.\n\n• Panadería Global: 320 ÷ 200 = **1.6 times**.\n• Under 2: comfortable. Over 4: worrying.\n\nIt depends on the sector: utilities, toll roads and property companies can carry more debt because their income is very stable."
+    },
+    {
+     "title": "Interest cover",
+     "body": "**EBIT ÷ interest** tells you how many times the business covers what it pays on its debt. Panadería Global: 150 ÷ 20 = **7.5 times**. Below 2-3, any stumble starts to pinch.",
+     "key": "Debt multiplies: good years look better and bad years, much worse."
+    }
+   ]
+  },
+  "u16l6": {
+   "title": "Quarterly results and expectations",
+   "steps": [
+    {
+     "title": "Earnings season",
+     "body": "Four times a year, listed companies publish their accounts. Beforehand, analysts publish their **forecasts**: the average is the **consensus** (sales, EPS and what they expect going forward).\n\nThe market doesn't compare with last year: it compares with **what it was expecting**."
+    },
+    {
+     "title": "Good isn't good enough",
+     "body": "On **12 March 2025**, Inditex reported a **record profit** of €5,866m (+9 %). That day the share price fell more than **7 %**: it was its slowest growth since 2020 and the market found it underwhelming.\n\nAnd the other way round: a loss-making company can rise if it loses less than expected."
+    },
+    {
+     "title": "What's coming matters more",
+     "body": "What the company forecasts for the coming quarters (its *guidance*) usually moves the price more than the quarter that has just ended. And these are days of **price gaps**: a stop can be filled well below where you planned.",
+     "key": "In the stock market, good news that was already expected isn't news."
+    }
+   ]
+  },
+  "u16l7": {
+   "title": "Reading an annual report without getting lost",
+   "steps": [
+    {
+     "title": "Where everything is",
+     "body": "An annual report can run to 300 pages. The important parts:\n\n• **Letter from the chair or CEO:** the story. Read it with a critical eye.\n• **Financial statements:** income statement, balance sheet and cash flows.\n• **Notes:** the detail (debt, lawsuits, adjustments).\n• **Auditor's report:** check it has no \"qualifications\".\n• **Risks:** what the company admits could go wrong."
+    },
+    {
+     "title": "Where to find it",
+     "body": "• Each company's **investor relations** website.\n• **CNMV:** Spanish listed companies (financial information and other relevant information).\n• **SEC EDGAR:** US companies (annual **10-K** and quarterly **10-Q**).\n\nCompare at least **5 years**: a single snapshot can mislead."
+    },
+    {
+     "title": "Watch out for \"adjusted\"",
+     "body": "Many companies highlight an **adjusted profit** that strips out \"one-off\" costs. If there are one-offs every year, they aren't one-offs. Always compare with the official profit and with cash.",
+     "key": "Read the numbers and the notes first; the story, afterwards."
+    }
+   ]
+  },
+  "u16r": {
+   "title": "Unit review",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u16l1-1": {
+   "prompt": "What does fundamental analysis try to answer?",
+   "options": [
+    "Exactly when to buy in",
+    "What to buy and whether it's expensive or cheap",
+    "Which candle comes tomorrow"
+   ],
+   "explanation": "Technical analysis tries to answer when; fundamental analysis, what and at what price."
+  },
+  "u16l1-2": {
+   "prompt": "You estimate a share is worth €40 and it's trading at €30. What margin of safety do you have on the estimated value?",
+   "options": [],
+   "explanation": "(40 − 30) ÷ 40 = 25 %.",
+   "unit": "%"
+  },
+  "u16l1-3": {
+   "prompt": "You want a 30 % margin of safety on an estimated value of €50. Below what price would you buy?",
+   "options": [],
+   "explanation": "50 × (1 − 0.30) = €35.",
+   "unit": "€"
+  },
+  "u16l1-4": {
+   "prompt": "A great company is a good investment at any price.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Anyone who bought Microsoft at its 2000 peak took about 16 years to get back to that price, even though the business stayed excellent."
+  },
+  "u16l1-5": {
+   "prompt": "Mr Market is depressed: a company you value at €20 a share is trading at €12 after a general market fall, with no change in its business. What would a value investor do?",
+   "options": [
+    "Check that the business is unchanged and, if so, recognise that the price is well below the value",
+    "Sell because it's falling",
+    "Buy with all their money without checking anything"
+   ],
+   "explanation": "Graham took advantage of the market's mood swings without getting swept along by them.",
+   "feedback": [
+    "That's it: the price has fallen, the value hasn't. Even so, double-check your estimate.",
+    "You'd be selling just when you're being offered a bargain, with no change in the business.",
+    "A margin of safety doesn't replace checking your estimate or diversifying."
+   ]
+  },
+  "u16l1-6": {
+   "prompt": "The gap between the estimated value and the price you pay is called the margin of ____.",
+   "options": [
+    "profit",
+    "manoeuvre",
+    "error",
+    "safety"
+   ],
+   "explanation": "It protects you if your estimate is wrong."
+  },
+  "u16l1-7": {
+   "prompt": "Is it about price or value?",
+   "options": [
+    "The company will generate about €100m of cash a year",
+    "It has a brand that lets it raise prices",
+    "Its market cap is €1,500m",
+    "The share closed yesterday at €15.20",
+    "It's up 8 % this week"
+   ],
+   "explanation": "You see the price on the screen; the value comes from analysing the business.",
+   "right": [
+    "Price",
+    "Value"
+   ]
+  },
+  "u16l1-8": {
+   "prompt": "A share's price and its value can be far apart for years.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "The price is set by the market's mood; the value, by what the business will generate."
+  },
+  "u16l1-9": {
+   "prompt": "What do you say to Lumi?",
+   "options": [
+    "Sure, it's already hit the floor",
+    "Buy twice as much to average down",
+    "First look at why it fell and what the business is worth: cheap isn't the same as undervalued"
+   ],
+   "explanation": "A low price is only an opportunity if it's below the value.",
+   "feedback": [
+    "Something that's fallen 60 % can fall another 60 %.",
+    "Doubling up without analysing is just betting more blindly.",
+    "OK… and what if it fell because the business is broken? Then the value fell too."
+   ],
+   "lines": [
+    "This share has fallen 60 %, it can't go any lower!",
+    "I'm buying 🤑"
+   ]
+  },
+  "u16l1-10": {
+   "prompt": "According to Graham, how should you treat \"Mr Market\"?",
+   "options": [
+    "Always do what he says",
+    "Take advantage of his mood swings without obeying him",
+    "Always ignore prices"
+   ],
+   "explanation": "His prices are an offer you can take or leave."
+  },
+  "u16l2-1": {
+   "prompt": "Put the income statement in order from top to bottom.",
+   "options": [
+    "Profit before tax",
+    "EBIT",
+    "Gross profit",
+    "Net profit",
+    "EBITDA",
+    "Sales"
+   ],
+   "explanation": "Costs, depreciation, interest and tax are deducted one by one."
+  },
+  "u16l2-2": {
+   "prompt": "EBITDA is earnings before interest, taxes, depreciation and ____.",
+   "options": [
+    "dividends",
+    "salaries",
+    "sales",
+    "amortisation"
+   ],
+   "explanation": "It measures what the business earns before how it's financed and before the wear and tear on its assets."
+  },
+  "u16l2-3": {
+   "prompt": "Sales of €500m and cost of sales of €300m. What's the gross margin?",
+   "options": [],
+   "explanation": "(500 − 300) ÷ 500 = 40 %.",
+   "unit": "%"
+  },
+  "u16l2-4": {
+   "prompt": "Net profit of €60m and 40 million shares. What's the EPS?",
+   "options": [],
+   "explanation": "60 ÷ 40 = €1.50 per share.",
+   "unit": "€"
+  },
+  "u16l2-5": {
+   "prompt": "Inditex had sales of €38,632m and earned €5,866m in its 2024 financial year. What was its net margin? (one decimal place)",
+   "options": [],
+   "explanation": "5,866 ÷ 38,632 ≈ 15.2 %.",
+   "unit": "%"
+  },
+  "u16l2-6": {
+   "prompt": "Operating margin = EBIT ÷ ____.",
+   "options": [
+    "net profit",
+    "number of shares",
+    "debt",
+    "sales"
+   ],
+   "explanation": "It measures how much operating profit each euro of sales leaves behind."
+  },
+  "u16l2-7": {
+   "prompt": "What does a gross margin that rises year after year usually indicate?",
+   "options": [
+    "Pricing power",
+    "That it's going to go bust",
+    "Definite accounting problems"
+   ],
+   "explanation": "It can raise prices or cut costs better than its rivals."
+  },
+  "u16l2-8": {
+   "prompt": "Quick: which business usually has the lowest gross margin?",
+   "options": [
+    "A supermarket",
+    "A software company",
+    "A luxury brand"
+   ],
+   "explanation": "Supermarkets 20-30 %; software or luxury 60-80 %."
+  },
+  "u16l2-9": {
+   "prompt": "This is the real price of a share over two months. What trend does it show? (Apple · closes every 3 sessions · March–May 2026)",
+   "options": [
+    "Uptrend",
+    "Downtrend",
+    "Sideways"
+   ],
+   "explanation": "In the short term, prices are driven by expectations; in the long term they tend to follow profits. The income statement tells you whether there are profits behind the rise."
+  },
+  "u16l2-10": {
+   "prompt": "A company can sell more every year and earn less.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "If costs rise faster than sales, margins shrink. That's why you read the whole statement, not just the sales."
+  },
+  "u16l3-1": {
+   "prompt": "Match each concept with its definition.",
+   "options": [
+    "Assets",
+    "Liabilities",
+    "Equity",
+    "Book value per share"
+   ],
+   "explanation": "Assets = liabilities + equity: it always balances.",
+   "right": [
+    "What the company owes",
+    "What belongs to the shareholders",
+    "Equity ÷ number of shares",
+    "What the company owns"
+   ]
+  },
+  "u16l3-2": {
+   "prompt": "Where does each item go?",
+   "options": [
+    "Bank loan",
+    "Flour in stock",
+    "Unpaid supplier invoices",
+    "Cash in the bank",
+    "Ovens and shops",
+    "Retained earnings"
+   ],
+   "explanation": "What it owns, what it owes and what belongs to the owners.",
+   "right": [
+    "Assets",
+    "Liabilities",
+    "Equity"
+   ]
+  },
+  "u16l3-3": {
+   "prompt": "Assets = liabilities + ____.",
+   "options": [
+    "EBITDA",
+    "dividends",
+    "sales",
+    "equity"
+   ],
+   "explanation": "Everything the company owns has been paid for with debt or with shareholders' money."
+  },
+  "u16l3-4": {
+   "prompt": "A company has assets of €800m and liabilities of €500m. What's its equity?",
+   "options": [],
+   "explanation": "800 − 500 = €300m.",
+   "unit": "M€"
+  },
+  "u16l3-5": {
+   "prompt": "Equity of €450m and 100 million shares. If the share trades at €15, how many times its book value are you paying?",
+   "options": [],
+   "explanation": "450 ÷ 100 = €4.5 per share; 15 ÷ 4.5 ≈ 3.33 times.",
+   "unit": "times"
+  },
+  "u16l3-6": {
+   "prompt": "Order from most to least liquid (easiest to turn into money first).",
+   "options": [
+    "Money owed by customers",
+    "Factories and machinery",
+    "Stock in the warehouse",
+    "Cash"
+   ],
+   "explanation": "Cash is already money; a factory can take years to sell."
+  },
+  "u16l3-7": {
+   "prompt": "Short-term assets of €250m and short-term debts of €300m. What does it indicate?",
+   "options": [
+    "Nothing relevant",
+    "It could struggle to pay what falls due soon",
+    "That it's very solvent"
+   ],
+   "explanation": "What falls due within the year is more than what it can turn into money within the year."
+  },
+  "u16l3-8": {
+   "prompt": "The balance sheet shows what the company earned during the year.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "That's the income statement. The balance sheet is a snapshot of what it owns and owes on a specific day."
+  },
+  "u16l3-9": {
+   "prompt": "If equity is negative, the company owes more than it owns on its books.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It's a serious sign, although sometimes it's due to large share buybacks at very profitable companies. You need to look at why."
+  },
+  "u16l3-10": {
+   "prompt": "Pablo compares two bakeries with the same profit. A has €50m of debt and €300m of equity; B, €400m of debt and €50m of equity. A crisis hits and sales fall 30 %. Which suffers more?",
+   "options": [
+    "A",
+    "Both the same: they have the same profit",
+    "B: the interest still has to be paid even if it sells less"
+   ],
+   "explanation": "Debt doesn't sink a company in the good years: it sinks it in the bad ones.",
+   "feedback": [
+    "With little debt, A can weather several bad years.",
+    "In good years, yes; in bad years, debt makes the difference.",
+    "Exactly: debt doesn't wait for the good times to come back."
+   ]
+  },
+  "u16l4-1": {
+   "prompt": "Operating cash flow of €80m and capex of €30m. What's the free cash flow?",
+   "options": [],
+   "explanation": "80 − 30 = €50m.",
+   "unit": "M€"
+  },
+  "u16l4-2": {
+   "prompt": "Free cash flow of €150m and 60 million shares. What's FCF per share?",
+   "options": [],
+   "explanation": "150 ÷ 60 = €2.50 per share.",
+   "unit": "€"
+  },
+  "u16l4-3": {
+   "prompt": "A company invoices €100m this year, but its customers have only paid €70m; it will collect the rest next year. Its expenses, all paid, come to €80m. How much cash has its business generated?",
+   "options": [],
+   "explanation": "70 − 80 = −€10m. Its income statement may show €20m of profit (100 − 80), but its cash has gone down.",
+   "unit": "M€"
+  },
+  "u16l4-4": {
+   "prompt": "Which part of the cash flow statement does it belong to?",
+   "options": [
+    "Paying dividends",
+    "Paying wages",
+    "Buying another company",
+    "Payments from customers",
+    "Buying a new oven",
+    "Repaying a loan"
+   ],
+   "explanation": "Day-to-day business, investments and how the company is financed.",
+   "right": [
+    "Operating",
+    "Investing",
+    "Financing"
+   ]
+  },
+  "u16l4-5": {
+   "prompt": "Rising profits and negative free cash flow for five years in a row. What does it indicate?",
+   "options": [
+    "A very healthy company",
+    "A red flag",
+    "Nothing important"
+   ],
+   "explanation": "The profits aren't turning into real money."
+  },
+  "u16l4-6": {
+   "prompt": "Free cash flow is easier to dress up than profit.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It's the other way round: cash is a fact; profit depends on accounting choices."
+  },
+  "u16l4-7": {
+   "prompt": "Laura is analysing a company growing sales and profits by 30 %. But the money its customers owe it has tripled and its FCF has been negative for three years. What does she do?",
+   "options": [
+    "Buys: it's growing like crazy",
+    "Looks into why it isn't getting paid and doesn't buy until she understands",
+    "Ignores cash: what matters is profit"
+   ],
+   "explanation": "When profit and cash drift apart for years, something doesn't add up.",
+   "feedback": [
+    "Growing sales without collecting the money is exactly the red flag.",
+    "Good: Gowex and Wirecard had brilliant figures that never reached the bank.",
+    "Profit is an accounting opinion; cash is a fact."
+   ]
+  },
+  "u16l4-8": {
+   "prompt": "A retail chain has negative FCF this year because it has opened 200 shops, but its operating cash flow is high and growing. How do you read it?",
+   "options": [
+    "It doesn't matter, cash isn't important",
+    "Alarm: it's about to go bust",
+    "It may be reasonable: it's investing to grow, as long as the new shops end up paying off"
+   ],
+   "explanation": "Negative FCF from heavy investment isn't the same as a business that doesn't get paid.",
+   "feedback": [
+    "It does matter, which is why you need to understand the reason.",
+    "Not necessarily: FCF is negative because it's investing in growth, not because the business isn't generating cash.",
+    "That's it: cash that never arrives isn't the same as cash that gets invested."
+   ]
+  },
+  "u16l4-9": {
+   "prompt": "FCF = operating cash flow − ____.",
+   "options": [
+    "dividends",
+    "taxes",
+    "sales",
+    "capex"
+   ],
+   "explanation": "Capex is investment in assets: ovens, shops, machines."
+  },
+  "u16l4-10": {
+   "prompt": "What can a company do with its free cash flow? Select all that apply.",
+   "options": [
+    "Reduce debt",
+    "Count it as next year's sales",
+    "Buy back shares",
+    "Pay dividends"
+   ],
+   "explanation": "FCF is money available; it isn't a sale."
+  },
+  "u16l5-1": {
+   "prompt": "Financial debt of €300m and cash of €100m. What's the net debt?",
+   "options": [],
+   "explanation": "300 − 100 = €200m.",
+   "unit": "M€"
+  },
+  "u16l5-2": {
+   "prompt": "With that net debt of €200m and EBITDA of €100m, what's net debt/EBITDA?",
+   "options": [],
+   "explanation": "200 ÷ 100 = 2 times: at the edge of comfortable.",
+   "unit": "times"
+  },
+  "u16l5-3": {
+   "prompt": "EBIT of €90m and interest of €30m. What's the interest cover?",
+   "options": [],
+   "explanation": "90 ÷ 30 = 3 times: tight. If EBIT halves, it barely covers it 1.5 times.",
+   "unit": "times"
+  },
+  "u16l5-4": {
+   "prompt": "Net debt/EBITDA of 6 times is usually considered comfortable for an industrial company.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Above 4 is usually worrying, except in sectors with very stable income."
+  },
+  "u16l5-5": {
+   "prompt": "A company with more cash than debt has negative net debt, in other words, net cash.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Like Inditex: €11,495m of net cash at the end of its 2024 financial year."
+  },
+  "u16l5-6": {
+   "prompt": "Which sector can usually carry more debt without it being worrying?",
+   "options": [
+    "Trendy restaurants",
+    "Young software companies",
+    "Utilities"
+   ],
+   "explanation": "Stable, regulated income makes it possible to service more debt with fewer scares."
+  },
+  "u16l5-7": {
+   "prompt": "Net debt of €600m and EBITDA of €200m (3 times). A crisis hits and EBITDA falls to €120m. What's the ratio now?",
+   "options": [],
+   "explanation": "600 ÷ 120 = 5 times: without borrowing a single extra euro, it goes from acceptable to worrying. That's how debt sinks companies in the bad years.",
+   "unit": "times"
+  },
+  "u16l5-8": {
+   "prompt": "Industrial company: how does its net debt/EBITDA look?",
+   "options": [
+    "Net debt 500, EBITDA 100",
+    "Net debt 900, EBITDA 150",
+    "Net cash of 50",
+    "Net debt 100, EBITDA 100",
+    "Net debt 300, EBITDA 100"
+   ],
+   "explanation": "1 time; 3 times; 6 times; negative; 5 times.",
+   "right": [
+    "Comfortable (under 2)",
+    "Keep an eye on it (2 to 4)",
+    "Worrying (over 4)"
+   ]
+  },
+  "u16l5-9": {
+   "prompt": "Quick: debt 500, cash 100, EBITDA 200. Net debt/EBITDA?",
+   "options": [
+    "2",
+    "2.5",
+    "3"
+   ],
+   "explanation": "(500 − 100) ÷ 200 = 2 times."
+  },
+  "u16l5-10": {
+   "prompt": "Marta is torn between two companies that are identical except for their debt. A: net debt/EBITDA of 0.5 and ROE of 12 %. B: net debt/EBITDA of 4.5 and ROE of 20 %. What should she bear in mind?",
+   "options": [
+    "That debt doesn't matter if the company makes money",
+    "That B is better: its ROE is higher",
+    "That B's ROE may be inflated by debt and that it will fare worse in a crisis"
+   ],
+   "explanation": "Look at ROE alongside debt: debt inflates both returns and risk.",
+   "feedback": [
+    "It's making money today; the question is what happens the year it doesn't.",
+    "Part of that ROE may come from debt, which also multiplies losses when things go wrong.",
+    "That's it: more debt, more risk. It's not a better business, just a more leveraged one."
+   ]
+  },
+  "u16l6-1": {
+   "prompt": "The consensus expected EPS of €1.20 and the company reports €1.10, 15 % more than a year ago. What's most likely in the short term?",
+   "options": [
+    "That it rises sharply: it's grown 15 %",
+    "That it doesn't move",
+    "That the share falls: it has disappointed against expectations"
+   ],
+   "explanation": "It's compared with what was expected (€1.20), not with last year."
+  },
+  "u16l6-2": {
+   "prompt": "Bruno owns shares in a tech company that reports results tomorrow. He's read they'll be \"amazing\" and wants to triple his position just beforehand. What is he missing?",
+   "options": [
+    "That tomorrow is a bank holiday",
+    "That the price already reflects what's expected and it can open with a gap in either direction",
+    "Nothing: if they're amazing, it'll go up"
+   ],
+   "explanation": "Before results, the risk is bigger than it looks: a stop doesn't protect you from a gap.",
+   "feedback": [
+    "That's not the issue: the issue is the risk of a gap.",
+    "Good: results day is no time to multiply the size of a position.",
+    "If \"amazing\" is what everyone expects, it's already in the price. And if it disappoints, the gap can be huge."
+   ]
+  },
+  "u16l6-3": {
+   "prompt": "Real chart of a big tech company: 30 sessions with no name or date. What did it do over the next 10?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Even if you knew its figures before anyone else, you wouldn't know how the market would react: it depends on what it was expecting.",
+   "horizon": "the next 10 sessions"
+  },
+  "u16l6-4": {
+   "prompt": "Another real share, another 30 sessions. Up or down?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Without knowing what the market expects, the chart alone isn't enough to tell what's coming.",
+   "horizon": "the next 10 sessions"
+  },
+  "u16l6-5": {
+   "prompt": "A company's shares can rise on the day it announces a loss.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "If it loses less than expected or raises its forecasts, the market may celebrate."
+  },
+  "u16l6-6": {
+   "prompt": "A share is at €50 before results and your stop is at €48. It opens with a −12 % gap. At roughly what price is your sale filled?",
+   "options": [],
+   "explanation": "50 × 0.88 = €44. The stop triggers at the first available price: €4 below what you planned.",
+   "unit": "€"
+  },
+  "u16l6-7": {
+   "prompt": "Match each term with its meaning.",
+   "options": [
+    "Consensus",
+    "Guidance",
+    "Positive surprise",
+    "Price gap"
+   ],
+   "explanation": "The vocabulary of earnings season.",
+   "right": [
+    "What the company forecasts for the coming quarters",
+    "A result better than expected",
+    "A jump between the close and the open with no prices in between",
+    "The average of what analysts expect"
+   ]
+  },
+  "u16l6-8": {
+   "prompt": "Quick: record profit, but below expectations. Most likely reaction?",
+   "options": [
+    "None",
+    "A rise",
+    "A fall"
+   ],
+   "explanation": "It's compared with the expectation, not with the record."
+  },
+  "u16l6-9": {
+   "prompt": "Ana reads \"Inditex posts record profit of €5,866m\" and is surprised to see the share fall more than 7 %. What's the most reasonable explanation?",
+   "options": [
+    "That the headline is false",
+    "That the stock market is always wrong",
+    "That the market expected more growth and was disappointed by the pace"
+   ],
+   "explanation": "The price reacts to the gap between what happens and what was expected.",
+   "feedback": [
+    "The profit was real; what happened is something else.",
+    "It's neither right nor wrong: it compares with what it expected.",
+    "That's it: it was its slowest growth since 2020. The record was already in the price."
+   ]
+  },
+  "u16l6-10": {
+   "prompt": "What can move a share on results day? Select all that apply.",
+   "options": [
+    "Margins compared with expectations",
+    "The colour of the presentation",
+    "The forecasts for the coming quarters",
+    "EPS compared with the consensus"
+   ],
+   "explanation": "Anything that changes what the market expects of the future."
+  },
+  "u16l7-1": {
+   "prompt": "Put the reading order we suggest in sequence: facts first, then the story.",
+   "options": [
+    "Notes on debt and adjustments",
+    "CEO's letter",
+    "Auditor's report",
+    "Income statement, balance sheet and cash flows"
+   ],
+   "explanation": "If you read the story with the numbers already in your head, you're far less likely to get carried away."
+  },
+  "u16l7-2": {
+   "prompt": "Which are red flags in an annual report? Select all that apply.",
+   "options": [
+    "The \"adjusted\" profit is very different from the official one year after year",
+    "It has changed auditor three times in four years",
+    "Free cash flow moves in line with profit",
+    "The auditor issues a qualified opinion"
+   ],
+   "explanation": "Cash moving in line with profit is a good sign."
+  },
+  "u16l7-3": {
+   "prompt": "Match each document or source with what it is.",
+   "options": [
+    "10-K",
+    "10-Q",
+    "CNMV",
+    "Notes to the accounts"
+   ],
+   "explanation": "Knowing where to look saves hours.",
+   "right": [
+    "Quarterly report of a US company",
+    "Detail on debt, lawsuits and accounting policies",
+    "Regulator where you can look up Spanish listed companies",
+    "Annual report of a US company"
+   ]
+  },
+  "u16l7-4": {
+   "prompt": "While you read the report, you look at the share price over the last two months. What trend does it show? (Apple · closes every 3 sessions · February–April 2025)",
+   "options": [
+    "Uptrend",
+    "Downtrend",
+    "Sideways"
+   ],
+   "explanation": "The chart tells you what the price has done; the report, whether the business has changed. A fall with no change in the business isn't the same as a fall because the investment case has broken."
+  },
+  "u16l7-5": {
+   "prompt": "\"Adjusted\" profit is €120m and the official figure is €70m. How many M€ of costs have been set aside as \"one-offs\"?",
+   "options": [],
+   "explanation": "120 − 70 = €50m. If that happens every year, they're normal costs.",
+   "unit": "M€"
+  },
+  "u16l7-6": {
+   "prompt": "Where do you find the official reports of a US company?",
+   "options": [
+    "At the CNMV",
+    "On SEC EDGAR",
+    "In the BOE (Spain's official gazette)"
+   ],
+   "explanation": "10-K reports (annual) and 10-Q reports (quarterly)."
+  },
+  "u16l7-7": {
+   "prompt": "To see a company's trend, last year's report is enough.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Compare at least 5 years: a single year can be inflated or depressed by a one-off."
+  },
+  "u16l7-8": {
+   "prompt": "Pablo reads the CEO's letter: \"A historic year, exceptional growth, a bright future\". In the notes he finds that debt has doubled and that adjusted profit has been stripping out \"one-off costs\" for three years. What does he do?",
+   "options": [
+    "Buys because the CEO is excited",
+    "Trusts the letter: the CEO knows the company better",
+    "Gives more weight to the notes and the cash than to the story"
+   ],
+   "explanation": "Read the numbers and the notes first; the story, afterwards.",
+   "feedback": [
+    "Enthusiasm doesn't pay off debt.",
+    "The letter is the story; the notes are the facts. And they don't match.",
+    "Good: the numbers in the notes don't come with adjectives."
+   ]
+  },
+  "u16l7-9": {
+   "prompt": "Quick: which part of the report gives an opinion on whether the accounts are reliable?",
+   "options": [
+    "The cover",
+    "The CEO's letter",
+    "The auditor's report"
+   ],
+   "explanation": "The auditor reviews the accounts and says whether they give a true and fair view."
+  },
+  "u16l7-10": {
+   "prompt": "If you only have 10 minutes with an annual report, what do you look at? Pick the three most useful.",
+   "options": [
+    "Free cash flow",
+    "Net debt",
+    "The photos of the shops",
+    "How sales and profit have developed"
+   ],
+   "explanation": "Growth, cash and debt: the essentials in little time."
+  }
+ }
+}

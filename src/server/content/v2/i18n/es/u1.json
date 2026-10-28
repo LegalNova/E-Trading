@@ -1,0 +1,714 @@
+{
+ "unit": {
+  "title": "El dinero y la inflación",
+  "description": "Qué es el dinero, por qué pierde valor y cómo crece con el interés compuesto",
+  "section": "Fundamentos del dinero"
+ },
+ "lessons": {
+  "u1l1": {
+   "title": "Qué es el dinero (y qué no)",
+   "steps": [
+    {
+     "title": "Para qué sirve el dinero",
+     "body": "El dinero hace tres trabajos:\n\n• **Medio de pago:** cambias trabajo por pan sin tener que hacer trueque.\n• **Unidad de cuenta:** sabes que un café vale menos que una bici.\n• **Depósito de valor:** puedes guardarlo para mañana… aunque, como veremos, se va desgastando."
+    },
+    {
+     "title": "Cuatro palabras que se confunden",
+     "body": "• **Renta:** lo que te entra (sueldo, paga, alquiler cobrado). Es un flujo: llega cada mes.\n• **Ahorro:** la parte de la renta que no gastas.\n• **Patrimonio:** lo que tienes menos lo que debes. Es una foto en un momento.\n• **Inversión:** poner el ahorro a trabajar para que produzca más.",
+     "tip": "Ganar mucho no es lo mismo que tener mucho: lo que cuenta es lo que te queda."
+    },
+    {
+     "title": "La foto y la película",
+     "body": "Tu patrimonio es la foto: 3.000 € en la cuenta + un coche de 6.000 € − 4.000 € del préstamo del coche = 5.000 €. Tu renta y tu ahorro son la película: cómo cambia esa foto cada mes.",
+     "key": "Riqueza es patrimonio, no sueldo: lo que tienes menos lo que debes."
+    }
+   ]
+  },
+  "u1l2": {
+   "title": "La inflación: por qué todo sube",
+   "steps": [
+    {
+     "title": "Qué es la inflación",
+     "body": "La inflación es la **subida general de los precios**. Si el pan, la luz y el alquiler suben de media un 3 % en un año, la inflación ha sido del 3 %.\n\nEn España la mide el INE con el **IPC**. En 2025 fue del 2,7 % de media."
+    },
+    {
+     "title": "Juega con la inflación",
+     "body": "Mueve los deslizadores: ¿cuánto pueden comprar tus euros dentro de unos años?",
+     "tip": "Truco: 70 ÷ inflación = años hasta que tu dinero compra la mitad."
+    },
+    {
+     "title": "Por qué suben los precios",
+     "body": "Suben cuando hay más dinero o más demanda que cosas que comprar, o cuando producir cuesta más (la energía en 2022). El BCE intenta que la inflación ronde el **2 %** a medio plazo subiendo o bajando los tipos de interés.",
+     "key": "Con inflación, el dinero quieto compra cada año un poco menos."
+    }
+   ]
+  },
+  "u1l3": {
+   "title": "El IPC y tu cesta de la compra",
+   "steps": [
+    {
+     "title": "Cómo se mide",
+     "body": "El INE mide cada mes los precios de una **cesta** de cientos de productos y servicios (comida, vivienda, transporte, ocio…). El **IPC** es la variación de esa cesta respecto al año anterior.\n\nCada cosa pesa según lo que gastan de media los hogares."
+    },
+    {
+     "title": "General y subyacente",
+     "body": "• **IPC general:** toda la cesta.\n• **Inflación subyacente:** quita los alimentos no elaborados y la energía, que suben y bajan mucho. Sirve para ver la tendencia de fondo.\n\nSi la luz se dispara un mes, el general sube mucho pero la subyacente apenas."
+    },
+    {
+     "title": "Tu inflación personal",
+     "body": "El IPC es una media. Si gastas mucho en alquiler y transporte, tu inflación puede ser mayor que la oficial; si casi no conduces, menor.",
+     "key": "El IPC es la media de todos: tu inflación depende de en qué gastas tú."
+    }
+   ]
+  },
+  "u1l4": {
+   "title": "El dinero parado pierde valor",
+   "steps": [
+    {
+     "title": "Rentabilidad real",
+     "body": "Para no perder poder de compra, tu dinero tiene que rendir más que la inflación.\n\n**Rentabilidad real ≈ rentabilidad − inflación.**\n\nUna cuenta al 2 % con un 2,7 % de inflación te hace perder un 0,7 % al año."
+    },
+    {
+     "title": "Cuánto pierde un ahorro quieto",
+     "body": "Pon 10.000 € a 10 años con un 2,5 % de inflación y mira cuánto se pierde sin hacer nada.",
+     "tip": "Que el número de tu cuenta no baje no significa que no estés perdiendo."
+    },
+    {
+     "title": "Seguro no es lo mismo que protegido",
+     "body": "Los depósitos están cubiertos hasta 100.000 € por el Fondo de Garantía de Depósitos: no pierdes euros. Pero sí puedes perder **poder de compra** si rinden menos que la inflación.",
+     "key": "Lo importante no es cuántos euros tienes, sino qué puedes comprar con ellos."
+    }
+   ]
+  },
+  "u1l5": {
+   "title": "Interés simple e interés compuesto",
+   "steps": [
+    {
+     "title": "Simple y compuesto",
+     "body": "**Simple:** cobras siempre sobre lo que pusiste. 1.000 € al 7 % dan 70 € al año: en 30 años, 3.100 €.\n\n**Compuesto:** ganas sobre lo que pusiste más lo ya ganado. Esos 1.000 € se convierten en **7.612 €**."
+    },
+    {
+     "title": "Pruébalo tú",
+     "body": "Pon 0 € iniciales y 100 € al mes durante 30 años al 7 %: aportas 36.000 € y acabas con unos 122.000 €. Prueba a empezar 10 años antes.",
+     "tip": "Son ejemplos, no promesas: la bolsa no da un 7 % cada año."
+    },
+    {
+     "title": "Ana y Bruno",
+     "body": "Los dos aportan 200 € al mes al 7 % hasta los 65. Ana empieza a los 25 y llega a **524.963 €**; Bruno empieza a los 35 y llega a **243.994 €**. Ana aporta solo 24.000 € más y acaba con más del doble. Y ojo: también funciona en tu contra con las deudas caras.",
+     "key": "Las ganancias generan nuevas ganancias: cuanto antes empiezas, más trabaja el tiempo por ti."
+    }
+   ]
+  },
+  "u1l6": {
+   "title": "La regla del 72",
+   "steps": [
+    {
+     "title": "El truco",
+     "body": "¿En cuántos años se duplica tu dinero? Divide **72 entre la rentabilidad anual**.\n\n• Al 6 % → 72 ÷ 6 = **12 años**.\n• Al 9 % → **8 años**.\n• Al 2 % → **36 años**.\n\nEs una aproximación muy buena entre el 4 % y el 12 %."
+    },
+    {
+     "title": "Compruébalo",
+     "body": "Mueve la rentabilidad y compara la regla del 72 con el cálculo exacto.",
+     "tip": "También funciona al revés: con un 6 % de inflación, los precios se duplican en unos 12 años."
+    },
+    {
+     "title": "Para qué sirve",
+     "body": "Te permite comparar de cabeza. Un fondo que cobra un 2 % al año reduce tu rentabilidad del 7 % al 5 %: pasas de duplicar en ~10 años a duplicar en ~14.",
+     "key": "72 ÷ rentabilidad = años para duplicar. Sirve para ganancias, inflación y deudas."
+    }
+   ]
+  },
+  "u1r": {
+   "title": "Repaso de la unidad",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u1l1-1": {
+   "prompt": "Empareja cada palabra con su significado.",
+   "options": [
+    "Renta",
+    "Ahorro",
+    "Patrimonio",
+    "Inversión"
+   ],
+   "explanation": "Renta y ahorro son flujos (cada mes); el patrimonio es una foto en un momento.",
+   "right": [
+    "Lo que no gastas de lo que te entra",
+    "Lo que tienes menos lo que debes",
+    "Poner el ahorro a producir más",
+    "Lo que te entra cada mes"
+   ]
+  },
+  "u1l1-2": {
+   "prompt": "Tienes 2.500 € en el banco y un portátil que vale 800 €, y debes 1.200 € de un préstamo. ¿Cuál es tu patrimonio?",
+   "options": [],
+   "explanation": "2.500 + 800 − 1.200 = 2.100 €. El patrimonio resta lo que debes.",
+   "unit": "€"
+  },
+  "u1l1-3": {
+   "prompt": "¿Cuál de estas funciones del dinero falla cuando hay mucha inflación?",
+   "options": [
+    "Unidad de cuenta para comparar un café y una bici",
+    "Medio de pago",
+    "Depósito de valor"
+   ],
+   "explanation": "Con inflación alta, el dinero guardado compra menos cada año: deja de ser buen depósito de valor."
+  },
+  "u1l1-4": {
+   "prompt": "Alguien que gana 4.000 € al mes y lo gasta todo puede tener menos patrimonio que alguien que gana 1.500 € y ahorra 300 €.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "El patrimonio crece con lo que ahorras e inviertes, no con lo que ganas."
+  },
+  "u1l1-5": {
+   "prompt": "¿Es renta o es patrimonio?",
+   "options": [
+    "El alquiler que cobras cada mes",
+    "8.000 € en un fondo",
+    "La paga extra de junio",
+    "Tu nómina de 1.400 €",
+    "Un piso que es tuyo"
+   ],
+   "explanation": "La renta es lo que entra; el patrimonio, lo que acumulas.",
+   "right": [
+    "Renta (llega cada mes)",
+    "Patrimonio (lo que tienes)"
+   ]
+  },
+  "u1l1-6": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Me lo gasto todo, me lo merezco",
+    "Pido un préstamo para un coche más caro",
+    "Aparto una parte cada mes antes de gastar"
+   ],
+   "explanation": "Subir el sueldo no te hace más rico si sube igual el gasto: lo que te enriquece es lo que apartas.",
+   "feedback": [
+    "Disfrutar está bien, pero si todo sube el gasto, tu patrimonio no se mueve.",
+    "Así el aumento se va en cuotas y tu patrimonio puede bajar.",
+    "¡Eso es! Si apartas 100 € al mes, en un año son 1.200 € más de patrimonio."
+   ],
+   "lines": [
+    "Me acaban de subir el sueldo 300 € al mes 🎉",
+    "¿Qué hago con ellos?"
+   ]
+  },
+  "u1l1-7": {
+   "prompt": "Patrimonio = lo que tienes − lo que ____.",
+   "options": [
+    "gastas",
+    "ahorras",
+    "ganas",
+    "debes"
+   ],
+   "explanation": "Las deudas restan: un coche de 15.000 € con 12.000 € de préstamo solo te aporta 3.000 €."
+  },
+  "u1l1-8": {
+   "prompt": "¿Una nómina es patrimonio?",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Es renta: un flujo que entra cada mes. Lo que acumulas con ella es patrimonio."
+  },
+  "u1l1-9": {
+   "prompt": "Marta cobra 1.800 € y gasta 1.750 €. Pablo cobra 1.300 € y gasta 1.000 €. Dentro de 5 años, sin invertir nada, ¿quién tendrá más ahorrado?",
+   "options": [
+    "Los dos igual",
+    "Marta, porque gana más",
+    "Pablo, porque aparta más cada mes"
+   ],
+   "explanation": "Lo que construye patrimonio es la diferencia entre ingresos y gastos, no el sueldo.",
+   "feedback": [
+    "No: lo que cuenta es la diferencia entre lo que entra y lo que sale.",
+    "Marta solo aparta 50 € al mes: 3.000 € en 5 años.",
+    "Pablo aparta 300 € al mes: 18.000 € en 5 años, seis veces más que Marta."
+   ]
+  },
+  "u1l2-1": {
+   "prompt": "Con una inflación del 3 % durante 20 años, ¿cuánto podrán comprar 1.000 € en euros de hoy? (redondea)",
+   "options": [],
+   "explanation": "1.000 ÷ 1,03²⁰ ≈ 554 €. Cada año los precios suben y el mismo dinero compra menos.",
+   "unit": "€"
+  },
+  "u1l2-2": {
+   "prompt": "El objetivo de inflación del BCE es el 0 %.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Es el 2 % a medio plazo. Por eso el dinero parado pierde valor incluso en años normales."
+  },
+  "u1l2-3": {
+   "prompt": "Con la regla del 70, una inflación del 2 % reduce a la mitad el poder de compra en unos ____ años.",
+   "options": [
+    "70",
+    "20",
+    "10",
+    "35"
+   ],
+   "explanation": "70 ÷ 2 = 35 años."
+  },
+  "u1l2-4": {
+   "prompt": "¿Qué puede hacer subir los precios? Marca todas las que correspondan.",
+   "options": [
+    "Que el banco central suba mucho los tipos",
+    "Que se cree mucho dinero muy deprisa",
+    "Que haya mucha más demanda que productos",
+    "Que se encarezca la energía"
+   ],
+   "explanation": "Subir los tipos sirve justo para frenar la inflación: encarece el crédito y enfría la demanda."
+  },
+  "u1l2-5": {
+   "prompt": "Empareja cada situación con su efecto en los precios.",
+   "options": [
+    "La energía se dispara",
+    "Todos quieren comprar a la vez",
+    "El BCE sube los tipos"
+   ],
+   "explanation": "Inflación de costes, inflación de demanda y la herramienta del BCE para frenarlas.",
+   "right": [
+    "Sube la demanda",
+    "Se frena el crédito y la demanda",
+    "Suben los costes de producir"
+   ]
+  },
+  "u1l2-6": {
+   "prompt": "Es 2022: la inflación en España llega al 8 % y tu cuenta paga un 0 %. Tienes 10.000 € que no necesitas en 10 años. ¿Qué haces?",
+   "options": [
+    "Estudio opciones que al menos busquen superar la inflación a largo plazo",
+    "Nada: el dinero en el banco está seguro",
+    "Lo gasto todo antes de que valga menos"
+   ],
+   "explanation": "El dinero parado no está a salvo de la inflación. Para lo que no necesitas en años, conviene que trabaje.",
+   "feedback": [
+    "Bien: a 10 años, dejarlo quieto es la forma más segura de perder poder de compra.",
+    "Tus 10.000 € compran un 8 % menos en un año: unos 800 € de poder de compra perdidos.",
+    "Gastar por miedo no protege tu futuro: solo cambia ahorro por consumo."
+   ]
+  },
+  "u1l2-7": {
+   "prompt": "Rápido: inflación del 7 %. ¿En cuántos años tu dinero compra la mitad (regla del 70)?",
+   "options": [
+    "5 años",
+    "10 años",
+    "20 años"
+   ],
+   "explanation": "70 ÷ 7 = 10 años."
+  },
+  "u1l2-8": {
+   "prompt": "Si los precios bajan de forma general (deflación), es siempre buena noticia para la economía.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "La deflación prolongada hace que la gente aplace compras y frena la economía; Japón lo sufrió durante años."
+  },
+  "u1l2-9": {
+   "prompt": "¿Qué le explicas a Lumi?",
+   "options": [
+    "Que las pesetas valían más que los euros",
+    "Que el dinero pierde poder de compra con la inflación año tras año",
+    "Que antes todo era más barato y ya"
+   ],
+   "explanation": "La inflación acumulada durante décadas hace que el dinero compre cada vez menos.",
+   "feedback": [
+    "No es eso: 1 € equivalía a 166,386 pesetas, pero el problema es la inflación acumulada.",
+    "¡Exacto! Con décadas de inflación, la misma cantidad compra muchas menos cosas.",
+    "Es verdad a medias: lo que cambió también fue el valor del dinero."
+   ],
+   "lines": [
+    "El súper está carísimo 😩",
+    "Mi abuela dice que con 100 pesetas compraba un montón de cosas."
+   ]
+  },
+  "u1l3-1": {
+   "prompt": "¿Qué mide el IPC?",
+   "options": [
+    "Cuánto cambian los precios de una cesta de consumo",
+    "El precio de las acciones",
+    "Lo que gana de media un hogar"
+   ],
+   "explanation": "Es un índice de precios de consumo: compara la misma cesta en el tiempo."
+  },
+  "u1l3-2": {
+   "prompt": "¿Entra en la inflación subyacente?",
+   "options": [
+    "Una camiseta",
+    "La fruta fresca",
+    "Un corte de pelo",
+    "La electricidad",
+    "La gasolina"
+   ],
+   "explanation": "La subyacente quita la energía y los alimentos no elaborados porque son los más volátiles.",
+   "right": [
+    "Sí, cuenta",
+    "No, se excluye"
+   ]
+  },
+  "u1l3-3": {
+   "prompt": "Tu inflación personal puede ser distinta a la oficial.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "El IPC pondera según el gasto medio; tu cesta tiene otro peso en cada cosa."
+  },
+  "u1l3-4": {
+   "prompt": "Alquilas, vas en coche a todas partes y la gasolina y los alquileres han subido más que el resto. El IPC oficial es del 3 %. ¿Qué es más probable?",
+   "options": [
+    "Mi inflación es justo del 3 %",
+    "Mi inflación personal es mayor del 3 %",
+    "Mi inflación es 0 %"
+   ],
+   "explanation": "Si gastas más en lo que más sube, tu inflación personal supera a la media.",
+   "feedback": [
+    "Solo si tu cesta se parece a la media, y la tuya no.",
+    "Sí: gastas más en lo que más ha subido.",
+    "Los precios que pagas sí han subido."
+   ]
+  },
+  "u1l3-5": {
+   "prompt": "Si un mes la luz se dispara, el IPC general sube mucho, pero la inflación ____ apenas se mueve.",
+   "options": [
+    "general",
+    "negativa",
+    "personal",
+    "subyacente"
+   ],
+   "explanation": "La subyacente excluye la energía para ver la tendencia de fondo."
+  },
+  "u1l3-6": {
+   "prompt": "Una cesta costaba 200 € hace un año y hoy cuesta 206 €. ¿Cuál ha sido la inflación de esa cesta?",
+   "options": [],
+   "explanation": "(206 − 200) ÷ 200 = 0,03 → 3 %.",
+   "unit": "%"
+  },
+  "u1l3-7": {
+   "prompt": "Empareja cada perfil con la parte de la cesta que más le afecta.",
+   "options": [
+    "Joven que alquila en Madrid",
+    "Repartidor con furgoneta",
+    "Familia con tres hijos"
+   ],
+   "explanation": "Cada hogar tiene su cesta: por eso la inflación personal varía.",
+   "right": [
+    "Carburantes",
+    "Alimentación",
+    "Vivienda"
+   ]
+  },
+  "u1l3-8": {
+   "prompt": "La inflación subyacente incluye la energía.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "La quita precisamente porque es muy volátil."
+  },
+  "u1l3-9": {
+   "prompt": "¿Qué es cierto sobre el IPC? Marca todas.",
+   "options": [
+    "Compara precios con el mismo mes del año anterior",
+    "Mide la rentabilidad de la bolsa",
+    "Cada producto pesa según el gasto medio de los hogares",
+    "Lo publica el INE cada mes"
+   ],
+   "explanation": "El IPC es una media ponderada de precios de consumo."
+  },
+  "u1l4-1": {
+   "prompt": "Tu cuenta paga un 1,5 % y la inflación es del 2,7 %. ¿Cuál es tu rentabilidad real aproximada?",
+   "options": [],
+   "explanation": "Real ≈ 1,5 − 2,7 = −1,2 %. Ganas euros, pero pierdes poder de compra.",
+   "unit": "%"
+  },
+  "u1l4-2": {
+   "prompt": "Si tu cuenta paga un 3 % y la inflación es del 2 %, ganas poder de compra.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Rentabilidad real ≈ 3 − 2 = +1 %."
+  },
+  "u1l4-3": {
+   "prompt": "Inflación del 2,5 %. ¿Ganas o pierdes poder de compra?",
+   "options": [
+    "Depósito al 3 %",
+    "Algo que rinde un 5 %",
+    "Dinero en un cajón",
+    "Cuenta al 0 %",
+    "Letra del Tesoro al 2 %"
+   ],
+   "explanation": "Solo ganas si rindes más que la inflación.",
+   "right": [
+    "Ganas",
+    "Pierdes"
+   ]
+  },
+  "u1l4-4": {
+   "prompt": "¿Qué protege el Fondo de Garantía de Depósitos?",
+   "options": [
+    "Tus inversiones en bolsa",
+    "Hasta 100.000 € por persona y entidad si el banco quiebra",
+    "Tu poder de compra frente a la inflación"
+   ],
+   "explanation": "Protege los euros depositados si quiebra el banco, no frente a la inflación ni frente a caídas de la bolsa."
+  },
+  "u1l4-5": {
+   "prompt": "Tienes 20.000 € en una cuenta al 0 % y no los necesitarás en 15 años. Un amigo dice: «Así no pierdes nada». ¿Qué le dices?",
+   "options": [
+    "Que debería meterlo todo en una sola acción",
+    "Tiene razón: el saldo no baja",
+    "Que pierdo poder de compra cada año"
+   ],
+   "explanation": "Dinero quieto durante años = poder de compra perdido.",
+   "feedback": [
+    "Eso es pasar de un extremo a otro: más adelante verás por qué diversificar.",
+    "El saldo no baja, pero con un 2,5 % de inflación esos 20.000 € comprarán como unos 13.800 € de hoy en 15 años.",
+    "Exacto: no pierdes euros, pierdes lo que puedes comprar con ellos."
+   ]
+  },
+  "u1l4-6": {
+   "prompt": "Rentabilidad real ≈ rentabilidad nominal − ____.",
+   "options": [
+    "comisiones",
+    "impuestos",
+    "dividendos",
+    "inflación"
+   ],
+   "explanation": "Es la forma rápida de saber si tu dinero gana o pierde poder de compra."
+  },
+  "u1l4-7": {
+   "prompt": "Rápido: rinde un 4 % e inflación del 3 %. ¿Rentabilidad real?",
+   "options": [
+    "+1 %",
+    "−1 %",
+    "+7 %"
+   ],
+   "explanation": "4 − 3 = +1 %."
+  },
+  "u1l4-8": {
+   "prompt": "¿Qué le contestas?",
+   "options": [
+    "Seguros sí, pero la inflación se come su valor poco a poco",
+    "Mejor sácalos en efectivo",
+    "Sí, ahí no pasa nada"
+   ],
+   "explanation": "Seguridad nominal no es protección real.",
+   "feedback": [
+    "¡Bien visto! Lo que no necesites pronto puede trabajar para ganarle a la inflación.",
+    "En un cajón pierden igual con la inflación y además se pueden perder o robar.",
+    "Los euros están, pero cada año compran un poco menos."
+   ],
+   "lines": [
+    "Tengo 5.000 € en la cuenta corriente desde hace años.",
+    "Total, ahí están seguros, ¿no?"
+   ]
+  },
+  "u1l4-9": {
+   "prompt": "Un depósito garantizado nunca puede hacerte perder poder de compra.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Si rinde menos que la inflación, sí lo pierdes, aunque el saldo no baje."
+  },
+  "u1l5-1": {
+   "prompt": "1.000 € al 7 % de interés compuesto durante 30 años, ¿en cuánto se convierten? (redondea)",
+   "options": [],
+   "explanation": "1.000 × 1,07³⁰ ≈ 7.612 €. Con interés simple serían 3.100 €.",
+   "unit": "€"
+  },
+  "u1l5-2": {
+   "prompt": "Ana y Bruno aportan 200 € al mes al 7 %, pero Ana empieza 10 años antes. A los 65, Ana tiene…",
+   "options": [
+    "Lo mismo",
+    "Un 25 % más",
+    "Más del doble"
+   ],
+   "explanation": "524.963 € frente a 243.994 €: los primeros años son los que más se componen."
+  },
+  "u1l5-3": {
+   "prompt": "Empareja cada caso con el tipo de interés.",
+   "options": [
+    "Cobras siempre sobre lo que pusiste",
+    "Ganas también sobre lo ya ganado",
+    "Una deuda de tarjeta que crece sobre sí misma"
+   ],
+   "explanation": "El compuesto acelera el crecimiento… también el de las deudas.",
+   "right": [
+    "Interés compuesto",
+    "Interés simple",
+    "Interés compuesto en tu contra"
+   ]
+  },
+  "u1l5-4": {
+   "prompt": "10.000 € al 5 % compuesto durante 10 años, ¿cuánto suman? (redondea a euros)",
+   "options": [],
+   "explanation": "10.000 × 1,05¹⁰ ≈ 16.289 €. Con simple serían 15.000 €.",
+   "unit": "€"
+  },
+  "u1l5-5": {
+   "prompt": "El interés compuesto solo funciona a tu favor.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "También en tu contra: una tarjeta revolving al 20 % duplica la deuda en menos de 4 años."
+  },
+  "u1l5-6": {
+   "prompt": "Ordena de menos a más el resultado de 100 € al mes durante 30 años.",
+   "options": [
+    "Al 5 %",
+    "Al 7 %",
+    "Al 2 %",
+    "Al 0 %"
+   ],
+   "explanation": "36.000 €, 49.273 €, 83.226 € y 121.997 €: unos pocos puntos de rentabilidad cambian muchísimo el final."
+  },
+  "u1l5-7": {
+   "prompt": "Tienes 22 años y 50 € al mes para invertir. ¿Qué haces?",
+   "options": [
+    "Lo gasto: 50 € no dan para nada",
+    "Empiezo ya con 50 € y subo la aportación cuando pueda",
+    "Espero a ganar más para empezar con algo «serio»"
+   ],
+   "explanation": "Empezar pronto, aunque sea con poco, es lo que más aprovecha el interés compuesto.",
+   "feedback": [
+    "50 € al mes al 7 % durante 40 años son unos 130.000 €, con 24.000 € aportados.",
+    "Bien: con el tiempo de tu lado, empezar pronto pesa más que empezar con mucho.",
+    "Esperar cuesta caro: los primeros años son los que más tiempo tienen para componerse."
+   ]
+  },
+  "u1l5-8": {
+   "prompt": "Con interés compuesto, el dinero crece más deprisa cuanto más tiempo pasa.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Cada año ganas sobre una base más grande: la curva se empina con el tiempo."
+  },
+  "u1l5-9": {
+   "prompt": "¿Qué le dices?",
+   "options": [
+    "Lo mismo, el tiempo no importa",
+    "Un poco más, unos 8.500 €",
+    "Casi el doble, unos 15.000 €"
+   ],
+   "explanation": "Cada década extra al 7 % casi duplica el dinero.",
+   "feedback": [
+    "El tiempo es justo lo que más importa en el interés compuesto.",
+    "Mucho más: 1.000 × 1,07⁴⁰ ≈ 14.974 €. Los últimos 10 años casi duplican el resultado.",
+    "¡Eso! Diez años más al 7 % multiplican por casi 2 (1,07¹⁰ ≈ 1,97)."
+   ],
+   "lines": [
+    "He visto que si dejo 1.000 € al 7 %, en 30 años tengo 7.600 €.",
+    "¿Y si en vez de 30 son 40 años?"
+   ]
+  },
+  "u1l6-1": {
+   "prompt": "Según la regla del 72, al 6 % anual el dinero se duplica en unos ____ años.",
+   "options": [
+    "6",
+    "72",
+    "20",
+    "12"
+   ],
+   "explanation": "72 ÷ 6 = 12 años."
+  },
+  "u1l6-2": {
+   "prompt": "Al 9 % anual, ¿en cuántos años se duplica el dinero según la regla del 72?",
+   "options": [],
+   "explanation": "72 ÷ 9 = 8 años.",
+   "unit": "años"
+  },
+  "u1l6-3": {
+   "prompt": "Rápido: al 4 %, ¿cuántos años para duplicar?",
+   "options": [
+    "28",
+    "18",
+    "9"
+   ],
+   "explanation": "72 ÷ 4 = 18 años."
+  },
+  "u1l6-4": {
+   "prompt": "Empareja cada rentabilidad con los años para duplicar.",
+   "options": [
+    "3 %",
+    "6 %",
+    "8 %",
+    "12 %"
+   ],
+   "explanation": "Siempre 72 ÷ rentabilidad.",
+   "right": [
+    "9 años",
+    "6 años",
+    "12 años",
+    "24 años"
+   ]
+  },
+  "u1l6-5": {
+   "prompt": "Un fondo te promete duplicar tu dinero en 2 años «sin riesgo». ¿Qué piensas?",
+   "options": [
+    "Lo comento con mi familia para que inviertan también",
+    "Pido detalles y desconfío",
+    "Genial, firmo ya"
+   ],
+   "explanation": "La regla del 72 también sirve para detectar promesas imposibles.",
+   "feedback": [
+    "Antes de arrastrar a nadie, haz la cuenta: 72 ÷ 2 = 36 % anual. Demasiado bueno para ser verdad.",
+    "Bien: un 36 % anual «sin riesgo» no existe. Más adelante verás cómo comprobar si una entidad está registrada en la CNMV.",
+    "Duplicar en 2 años exige un 36 % anual (72 ÷ 2). Nadie lo da sin riesgo: es una señal típica de estafa."
+   ]
+  },
+  "u1l6-6": {
+   "prompt": "Una tarjeta revolving cobra un 24 % anual. ¿En cuántos años se duplica la deuda si no pagas?",
+   "options": [],
+   "explanation": "72 ÷ 24 = 3 años. El interés compuesto también trabaja para tu acreedor.",
+   "unit": "años"
+  },
+  "u1l6-7": {
+   "prompt": "La regla del 72 también sirve para la inflación: al 3 %, los precios se duplican en unos 24 años.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "72 ÷ 3 = 24 años."
+  },
+  "u1l6-8": {
+   "prompt": "Para duplicar tu dinero en menos de 10 años, ¿qué rentabilidad necesitas?",
+   "options": [
+    "10 % anual",
+    "3 % anual",
+    "8 % anual",
+    "5 % anual"
+   ],
+   "explanation": "Menos de 10 años exige más de un 7,2 % anual (72 ÷ 10).",
+   "right": [
+    "Basta",
+    "No basta"
+   ]
+  },
+  "u1l6-9": {
+   "prompt": "¿Qué le contestas?",
+   "options": [
+    "Ojo: te quita casi un tercio de la rentabilidad y tardas bastante más en duplicar",
+    "Lo importante es que el fondo sea famoso",
+    "Sí, un 2 % no es nada"
+   ],
+   "explanation": "Las comisiones también se componen: un 2 % anual pesa muchísimo a largo plazo.",
+   "feedback": [
+    "¡Exacto! 72 ÷ 7 ≈ 10 años frente a 72 ÷ 5 ≈ 14 años.",
+    "Que sea conocido no reduce lo que te cuesta cada año.",
+    "Con comisión te queda un 5 %: duplicas en ~14 años en vez de ~10. Cuatro años de diferencia."
+   ],
+   "lines": [
+    "Mi fondo da un 7 % pero cobra un 2 % de comisión al año.",
+    "Eso es poco, ¿no?"
+   ]
+  }
+ }
+}

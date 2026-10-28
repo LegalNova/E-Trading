@@ -1,0 +1,867 @@
+{
+ "unit": {
+  "title": "Japanese candlesticks",
+  "description": "Reading each candle, the main patterns and how well they really work",
+  "section": "Technical analysis"
+ },
+ "lessons": {
+  "u20l1": {
+   "title": "Anatomy of a candle",
+   "steps": [
+    {
+     "title": "From rice to your screen",
+     "body": "Candlesticks were born in the **Dojima** rice market (Osaka, eighteenth century); tradition credits the merchant Munehisa Homma with them. They reached the West with **Steve Nison**'s book in 1991 and today they're the default chart on almost every platform."
+    },
+    {
+     "title": "The parts",
+     "body": "• **Body:** between the open and the close.\n• **Upper wick:** from the body to the **high**.\n• **Lower wick:** from the body to the **low**.\n\n**Green:** closes above the open. **Red:** closes below it. In China, Japan and Korea the colours are usually the other way round: check the legend."
+    },
+    {
+     "title": "An example with numbers",
+     "body": "Candle with O = 100, H = 108, L = 97, C = 106: it's green (106 > 100), its body measures 6 (from 100 to 106), the upper wick 2 (from 106 to 108), the lower wick 3 (from 97 to 100) and the total range 11.",
+     "key": "The body runs from the open to the close; the wicks reach the high and the low.",
+     "tip": "Green: the close is at the top. Red: the close is at the bottom."
+    }
+   ]
+  },
+  "u20l2": {
+   "title": "Body and wicks: the battle",
+   "steps": [
+    {
+     "title": "The body: conviction",
+     "body": "• **Long green body:** buyers dominated from start to finish.\n• **Long red body:** sellers dominated.\n• **Small body:** indecision.\n\n«Long» is always relative to the previous candles: €2 is a lot for a quiet share and nothing for a crypto."
+    },
+    {
+     "title": "The wicks: rejection",
+     "body": "• **Long upper wick:** the price went up, but sellers pushed it back down. Rejection of higher prices.\n• **Long lower wick:** it fell, but buyers pushed it back up. Rejection of lower prices."
+    },
+    {
+     "prompt": "Tap the candle that tells this story: «sellers sank it and buyers pushed it back almost to the top»",
+     "ok": "That long lower wick is the rejection of lower prices. After several falls, this is what a hammer looks like.",
+     "ko": "Look for the longest thin line below a small body."
+    },
+    {
+     "title": "Location is everything",
+     "body": "The same candle means different things depending on where it appears: after a long fall and at a support level it can signal that sellers are exhausted; in the middle of a range, almost nothing.",
+     "key": "A big body is conviction; a long wick is a rejection.",
+     "tip": "Don't read a candle on its own: ask yourself where the price has come from."
+    }
+   ]
+  },
+  "u20l3": {
+   "title": "Doji, spinning top and marubozu",
+   "steps": [
+    {
+     "title": "Marubozu: strength",
+     "body": "A long body with little or no wick (*marubozu* means «shaven head» in Japanese).\n\n• **Bullish:** opens at the low and closes at the high.\n• **Bearish:** opens at the high and closes at the low.\n\nIt usually signals that the strength will continue, especially at the start of a move or when a level breaks."
+    },
+    {
+     "title": "Spinning top and doji: doubt and a draw",
+     "body": "• **Spinning top:** small body with similar wicks above and below. Indecision.\n• **Doji:** open and close almost the same; the body is just a line.\n\nTypes of doji: **standard** (cross), **long-legged**, **dragonfly** (T shape, long lower wick) and **gravestone** (upside-down T, long upper wick)."
+    },
+    {
+     "prompt": "Tap the doji: the candle where the open and close almost match",
+     "ok": "Almost no body and wicks on both sides: neither buyers nor sellers won that session.",
+     "ko": "Look for the candle whose body is almost just a line."
+    },
+    {
+     "title": "What the data says",
+     "body": "According to Bulkowski, the dragonfly doji acts as a reversal only **half the time**: like tossing a coin. A doji is a signal to pay attention, not to act.",
+     "key": "Marubozu means strength; spinning top, doubt; doji, a draw.",
+     "tip": "A doji doesn't say «it's going to reverse». It says «nobody knows what to do». Wait for the next candle."
+    }
+   ]
+  },
+  "u20l4": {
+   "title": "Hammer and shooting star",
+   "steps": [
+    {
+     "title": "The rule and the four names",
+     "body": "A **small** body at one end, a wick at least **2–3 times** the size of the body and little wick on the other side. The name depends on where it appears:\n\n• Long lower wick after a **fall**: **hammer**.\n• The same, after a **rise**: **hanging man**.\n• Long upper wick after a **fall**: **inverted hammer**.\n• The same, after a **rise**: **shooting star**."
+    },
+    {
+     "prompt": "After the rise, tap the shooting star",
+     "ok": "Small body at the bottom and a long upper wick: buyers had a go and sellers pushed it back down.",
+     "ko": "Look for the longest upper wick after several rising candles."
+    },
+    {
+     "title": "What the data says (Bulkowski)",
+     "body": "• Hammer: reverses upwards **60 %** of the time (rank 65 of 103).\n• Hanging man: keeps rising **59 %** of the time! (rank 87).\n• Shooting star: reverses downwards **59 %** of the time (rank 55).\n\nHe himself describes them as «not far from random».",
+     "key": "The same shape changes its name depending on whether it comes after a rise or a fall.",
+     "tip": "A hammer is only a hammer after a fall. And even then, without context it's barely better than a coin."
+    }
+   ]
+  },
+  "u20l5": {
+   "title": "Engulfing and harami",
+   "steps": [
+    {
+     "title": "Engulfing patterns",
+     "body": "**Bullish:** after a fall, a red candle followed by a green one that opens below the previous close and **closes above its open**. Its body swallows the red one.\n\n**Bearish:** after a rise, a green candle followed by a red one whose body engulfs the green one."
+    },
+    {
+     "title": "Harami, piercing pattern and dark cloud cover",
+     "body": "• **Harami** («pregnant»): a long candle followed by a small one **inside** its body. The momentum stalls.\n• **Piercing pattern:** after a fall, a green candle that closes **above the midpoint** of the previous red body.\n• **Dark cloud cover:** after a rise, a red candle that closes **below the midpoint** of the green one."
+    },
+    {
+     "prompt": "Tap the green candle that engulfs the previous red one",
+     "ok": "Its body completely swallows the previous day's red one: buyers won back everything that was lost and more.",
+     "ko": "Look for a huge green candle straight after a red one."
+    },
+    {
+     "title": "The data paradox",
+     "body": "Bulkowski: the bullish engulfing reverses **63 %** of the time (rank 84 of 103); the bearish one, **79 %**, but it ranks only **91** because the move that follows is usually small. Dark cloud cover reverses **60 %** of the time (rank 22).",
+     "key": "Getting the direction right isn't enough: the size of the move has to make up for the risk.",
+     "tip": "An engulfing pattern often reverses, but sometimes not by much."
+    }
+   ]
+  },
+  "u20l6": {
+   "title": "Stars, soldiers and crows",
+   "steps": [
+    {
+     "title": "Morning star and evening star",
+     "body": "**Morning** (bullish reversal): after a fall, a long red candle, a small candle that gaps down (the «star») and a long green candle that closes at least **halfway** up the body of the first.\n\n**Evening** (bearish reversal): the same in reverse, after a rise. If the middle one is a doji, they're called doji stars."
+    },
+    {
+     "title": "Soldiers and crows",
+     "body": "• **Three white soldiers:** three long green candles in a row, each closing higher and near its high.\n• **Three black crows:** three long red candles after a rise, each closing near its low and making new lows."
+    },
+    {
+     "prompt": "Tap the third candle of the morning star: the green one that confirms it",
+     "ok": "Long red candle, small candle of doubt and long green candle that wins back ground: a morning star.",
+     "ko": "Look for the sequence big red → small candle → big green, and tap the green one."
+    },
+    {
+     "title": "The best numbers (Bulkowski)",
+     "body": "• Morning star: reverses **78 %** of the time (rank 12 of 103).\n• Evening star: **72 %** (rank **4**).\n• Three white soldiers: **82 %** (rank 32).\n• Three black crows: **78 %** (rank **3**).\n\nBetter than single candles, but much less common.",
+     "key": "Three candles tell the story better than one.",
+     "tip": "That's why they're more reliable… and rarer."
+    }
+   ]
+  },
+  "u20l7": {
+   "title": "Context is everything",
+   "steps": [
+    {
+     "title": "The four filters",
+     "body": "1. **Prior trend:** a reversal pattern needs something to reverse.\n2. **Level:** support, resistance, a key moving average, or the year's low or high.\n3. **Volume:** the higher it is above average, the more credible.\n4. **Confirmation:** the next candle closes in the expected direction.\n\nAnd daily or weekly charts are better than minute charts."
+    },
+    {
+     "prompt": "Tap the hammer and then look at the next two candles",
+     "ok": "That's the hammer. The next candle closed above its high (confirmation)… and the one after fell sharply. Confirmation reduces mistakes; it doesn't eliminate them.",
+     "ko": "Look for the longest lower wick after the fall."
+    },
+    {
+     "title": "What the research says",
+     "body": "• **Marshall, Young and Rose** tested 28 patterns on Dow Jones shares (1992–2002): they added no value. A study in Japan (1975–2004), the birthplace of candlesticks, reached the same conclusion.\n• Bulkowski measures without commissions or *spreads*.\n• If you test a hundred patterns, some will seem to work by pure chance (*data snooping*)."
+    },
+    {
+     "title": "So what are they good for?",
+     "body": "For reading the market (rejection, conviction, indecision), for putting your stop in a logical place and for not being fooled by people selling patterns «with a 90 % success rate».",
+     "key": "Candlesticks are a language, not a crystal ball.",
+     "tip": "The candle is the sentence; the context is the whole book."
+    }
+   ]
+  },
+  "u20r": {
+   "title": "Unit review",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u20l1-1": {
+   "prompt": "On a green candle, match each point with its price.",
+   "options": [
+    "Top of the body",
+    "Bottom of the body",
+    "Tip of the upper wick",
+    "Tip of the lower wick"
+   ],
+   "explanation": "On a green candle the open is at the bottom and the close at the top; on a red one, the other way round. The wicks always reach the high and the low.",
+   "right": [
+    "The high",
+    "The low",
+    "The open",
+    "The close"
+   ]
+  },
+  "u20l1-2": {
+   "prompt": "Candle with an open of 40, high of 44, low of 39 and close of 43. What colour is it?",
+   "options": [
+    "Green",
+    "Red"
+   ],
+   "explanation": "It closes (43) above the open (40): it's bullish, green."
+  },
+  "u20l1-3": {
+   "prompt": "Candle with an open of 40, high of 44, low of 39 and close of 43. How big is the body?",
+   "options": [],
+   "explanation": "From the open at 40 to the close at 43: 3 points.",
+   "unit": "points"
+  },
+  "u20l1-4": {
+   "prompt": "Green candle with an open of 40, high of 44, low of 39 and close of 43. How long is its lower wick?",
+   "options": [],
+   "explanation": "From the open (40), which is the bottom of the body, to the low (39): 1 point.",
+   "unit": "points"
+  },
+  "u20l1-5": {
+   "prompt": "Red candle with an open of 62, high of 63, low of 55 and close of 57. How big is its body?",
+   "options": [],
+   "explanation": "From 62 to 57: 5 points. On a red candle, the open is at the top and the close at the bottom.",
+   "unit": "points"
+  },
+  "u20l1-6": {
+   "prompt": "On a red candle, the open is at the ____ of the body.",
+   "options": [
+    "bottom",
+    "middle",
+    "outer edge",
+    "top"
+   ],
+   "explanation": "If it closes below the open, the open ends up at the top and the close at the bottom."
+  },
+  "u20l1-7": {
+   "prompt": "Tap the candle with the longest lower wick.",
+   "options": [],
+   "explanation": "The price fell a long way during that session, but recovered before the close. That thin line is the path down to the low. (Amazon · daily candles · February 2025)"
+  },
+  "u20l1-8": {
+   "prompt": "Put the prices of a green candle with wicks in order from lowest to highest.",
+   "options": [
+    "Open",
+    "Close",
+    "High",
+    "Low"
+   ],
+   "explanation": "Low ≤ open < close ≤ high. On a red candle, the open and close swap places."
+  },
+  "u20l1-9": {
+   "prompt": "On every platform in the world, green means the price went up.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "In China, Japan and Korea the colours are usually the other way round: red for up and green for down."
+  },
+  "u20l1-10": {
+   "prompt": "The book that brought Japanese candlesticks to the West in 1991 was written by Steve ____.",
+   "options": [
+    "Elder",
+    "Wilder",
+    "Dow",
+    "Nison"
+   ],
+   "explanation": "Steve Nison published Japanese Candlestick Charting Techniques in 1991."
+  },
+  "u20l2-1": {
+   "prompt": "What does a very long upper wick indicate?",
+   "options": [
+    "Rejection of higher prices",
+    "That there was no trading",
+    "That buyers dominated the whole period"
+   ],
+   "explanation": "The price got up there, but sellers pushed it back down before the close."
+  },
+  "u20l2-2": {
+   "prompt": "Who won the session?",
+   "options": [
+    "Long red candle closing at the low",
+    "Opens at 50, falls to 44 and closes at 50.5",
+    "Opens at 30, rises to 34 and closes at 29",
+    "Long green candle, almost no wicks",
+    "Tiny body with equal wicks"
+   ],
+   "explanation": "What matters is where it closes relative to the open and how much body it leaves. The wicks tell you about the failed attempts.",
+   "right": [
+    "Buyers",
+    "Sellers",
+    "A draw"
+   ]
+  },
+  "u20l2-3": {
+   "prompt": "Tap the candle where sellers won most clearly: the biggest red body.",
+   "options": [],
+   "explanation": "It opened high and closed almost at the low, with hardly any wicks: sellers were in charge the whole session. (NVIDIA · daily candles · December 2024 – January 2025)"
+  },
+  "u20l2-4": {
+   "prompt": "Now look for rejection of higher prices: tap the candle with the longest upper wick.",
+   "options": [],
+   "explanation": "Buyers drove the price a long way up, but the session closed well below that high. (Microsoft · daily candles · April 2026)"
+  },
+  "u20l2-5": {
+   "prompt": "A candle opens at 50, drops to 44 and closes at 50.5. How far did it fall from the open, in percentage terms?",
+   "options": [],
+   "explanation": "(50 − 44) ÷ 50 = 0.12 → −12 %. And even so it closed above the open: buyers won the battle.",
+   "unit": "%"
+  },
+  "u20l2-6": {
+   "prompt": "A candle with a €2 body is always a big candle.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It depends on the asset and the previous candles: €2 is huge on a €20 share and almost nothing on a €500 one."
+  },
+  "u20l2-7": {
+   "prompt": "Read the last few candles as a battle. Up or down over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Knowing who won each session doesn't tell you who'll win the next one. Candles describe; they don't predict.",
+   "horizon": "the next 10 sessions"
+  },
+  "u20l2-8": {
+   "prompt": "You see a candle with a very long lower wick in the middle of a sideways range, with no prior trend. Laura says it's a crystal-clear buy signal. What do you tell her?",
+   "options": [
+    "That location matters: in the middle of a range, that candle says little",
+    "That it's a sell signal",
+    "That she's right: long wick, safe buy"
+   ],
+   "explanation": "A candle has to be read in context: where the price has come from and where it is now.",
+   "feedback": [
+    "Exactly: the same candle after a long fall and at a support level would tell a different story.",
+    "The lower wick is a rejection of lower prices: it's not a sell signal, but here it's not a buy signal either.",
+    "In the middle of a range, with no trend to reverse, that wick means very little."
+   ]
+  },
+  "u20l2-9": {
+   "prompt": "Quick: a very small body means…",
+   "options": [
+    "Buying strength",
+    "Indecision",
+    "A certain fall"
+   ],
+   "explanation": "Neither buyers nor sellers won clearly."
+  },
+  "u20l2-10": {
+   "prompt": "How do you explain to Lumi what happened?",
+   "options": [
+    "The candle has a long upper wick: higher prices were rejected",
+    "It was a great day for buyers",
+    "It's a bug in the app"
+   ],
+   "explanation": "The high tells you how far buyers got; the close, who won.",
+   "feedback": [
+    "That's it! Buyers got a long way, but sellers won the end of the battle.",
+    "Mid-morning, yes, but by the close sellers had pushed the price back down. Look at the close, not the high.",
+    "There's no bug: going up and coming back down is very normal, and the candle records it with the wick."
+   ],
+   "lines": [
+    "My share went up 5 % this morning 🚀",
+    "But it closed almost at the opening price 😕"
+   ]
+  },
+  "u20l3-1": {
+   "prompt": "Match each candle with the story it tells.",
+   "options": [
+    "Bullish marubozu",
+    "Spinning top",
+    "Doji",
+    "Bearish marubozu"
+   ],
+   "explanation": "The size of the body tells you about conviction; the wicks, about each side's attempts.",
+   "right": [
+    "Indecision with movement in both directions",
+    "A draw: open and close almost the same",
+    "Sellers were in charge the whole session",
+    "Buyers were in charge the whole session"
+   ]
+  },
+  "u20l3-2": {
+   "prompt": "Match each doji with its shape.",
+   "options": [
+    "Dragonfly doji",
+    "Gravestone doji",
+    "Long-legged doji",
+    "Standard doji"
+   ],
+   "explanation": "In the dragonfly, buyers pushed the price right back to the top; in the gravestone, sellers pushed it back down.",
+   "right": [
+    "Upside-down T: long upper wick",
+    "Very long wicks on both sides",
+    "A cross with similar wicks",
+    "T shape: long lower wick, no upper wick"
+   ]
+  },
+  "u20l3-3": {
+   "prompt": "Tap the doji on this chart.",
+   "options": [],
+   "explanation": "Open and close almost identical: the body is just a line. A draw in that session. (NVIDIA · daily candles · September 2026)"
+  },
+  "u20l3-4": {
+   "prompt": "Tap the marubozu: the green candle with a big body and almost no wicks.",
+   "options": [],
+   "explanation": "It opened practically at the low and closed at the high: buyers controlled the whole session. (Microsoft · daily candles · May–June 2026)"
+  },
+  "u20l3-5": {
+   "prompt": "Quick: open 25.10 and close 25.11, with wicks on both sides. Which candle is it?",
+   "options": [
+    "Marubozu",
+    "Doji",
+    "Hammer"
+   ],
+   "explanation": "Open and close almost the same: a doji."
+  },
+  "u20l3-6": {
+   "prompt": "A bullish marubozu opens at the high and closes at the low.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "The other way round: it opens at the low and closes at the high."
+  },
+  "u20l3-7": {
+   "prompt": "According to Bulkowski, the dragonfly doji calls the reversal correctly 9 times out of 10.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Only half the time, like a coin. That's why it's a signal to pay attention, not to act."
+  },
+  "u20l3-8": {
+   "prompt": "The doji shaped like an upside-down T, with a long upper wick, is called a ____ doji.",
+   "options": [
+    "dragonfly",
+    "hammer",
+    "marubozu",
+    "gravestone"
+   ],
+   "explanation": "Buyers pushed the price up, but sellers pushed it right back down to the bottom."
+  },
+  "u20l3-9": {
+   "prompt": "After three weeks of rises, a doji appears. Ana wants to sell everything because «the doji signals the reversal». What do you tell her?",
+   "options": [
+    "To sell everything now",
+    "To buy more: the doji is bullish",
+    "To wait for the next candle to see who wins"
+   ],
+   "explanation": "A doji calls for attention and confirmation, not an immediate decision.",
+   "feedback": [
+    "A doji only signals a draw. After a long rise it deserves attention, but without confirmation it's little better than a coin toss.",
+    "A doji has no direction: it's indecision.",
+    "Good: if the next candle closes sharply lower, the doji becomes more significant; if not, it was just a pause."
+   ]
+  },
+  "u20l3-10": {
+   "prompt": "Strength or indecision?",
+   "options": [
+    "Doji",
+    "Long-legged doji",
+    "Spinning top",
+    "Marubozu",
+    "Long body with tiny wicks"
+   ],
+   "explanation": "Big body with no wicks = strength. Small or non-existent body = doubt or a draw.",
+   "right": [
+    "Strength",
+    "Indecision"
+   ]
+  },
+  "u20l4-1": {
+   "prompt": "After the fall, tap the hammer.",
+   "options": [],
+   "explanation": "Small body at the top and a very long lower wick after several red candles: sellers pushed down and buyers pushed the price back up. (NVIDIA · daily candles · June 2026)"
+  },
+  "u20l4-2": {
+   "prompt": "After the rise, tap the shooting star.",
+   "options": [],
+   "explanation": "Upper wick several times bigger than the body: the attempt to go higher was rejected. (Amazon · daily candles · October–November 2025)"
+  },
+  "u20l4-3": {
+   "prompt": "Name each candle based on its shape and its context.",
+   "options": [
+    "Small body at the top and long lower wick at a several-week low",
+    "Long upper wick after a fall",
+    "Long lower wick after a rise",
+    "Long lower wick after a fall",
+    "Long upper wick after a rise"
+   ],
+   "explanation": "First the shape (where the long wick is) and then the context (where the price has come from).",
+   "right": [
+    "Hammer",
+    "Hanging man",
+    "Shooting star",
+    "Inverted hammer"
+   ]
+  },
+  "u20l4-4": {
+   "prompt": "Where does the logical stop go if you buy after a confirmed hammer?",
+   "options": [
+    "You don't need a stop",
+    "Just below the hammer's low",
+    "Just above its high"
+   ],
+   "explanation": "If the price breaks below the low of the wick, the idea that lower prices were rejected has failed."
+  },
+  "u20l4-5": {
+   "prompt": "A hammer has a high of €52 and a low of €47. You buy at €52 after confirmation and put your stop at €46.50. How much are you risking per share?",
+   "options": [],
+   "explanation": "52 − 46.50 = €5.50 per share. The stop goes a little below the wick so it isn't triggered by a mere wick.",
+   "unit": "€"
+  },
+  "u20l4-6": {
+   "prompt": "According to Bulkowski, after a hanging man the price keeps rising more often than it reverses.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Upward continuation 59 % of the time: the opposite of what classic theory says."
+  },
+  "u20l4-7": {
+   "prompt": "Look at the wicks on the last few candles. Up or down over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Hammers and shooting stars reverse around 60 % of the time according to Bulkowski: slightly better than a coin, a long way from a certainty.",
+   "horizon": "the next 10 sessions"
+  },
+  "u20l4-8": {
+   "prompt": "You see a textbook hammer on a daily chart, after two weeks of falls and near the low for the year. Based on what you've learnt, what do you do?",
+   "options": [
+    "I wait for confirmation and, if I go in, I put the stop below the wick",
+    "I ignore it: candlesticks are useless",
+    "I buy now with everything I've got"
+   ],
+   "explanation": "A hammer is a clue, not an order: confirmation, a stop and a cautious position size.",
+   "feedback": [
+    "Good: confirmation (a close above the hammer's high) and a stop where the idea no longer holds.",
+    "Candlesticks don't predict on their own, but they give you context and a logical place for the stop.",
+    "Even in good conditions it often fails: going all in without a stop turns a 60 % chance into roulette."
+   ]
+  },
+  "u20l4-9": {
+   "prompt": "Quick: long upper wick after a rise.",
+   "options": [
+    "Marubozu",
+    "Shooting star",
+    "Hammer"
+   ],
+   "explanation": "Small body at the bottom and a long upper wick after a rise: shooting star."
+  },
+  "u20l4-10": {
+   "prompt": "According to Bulkowski, what improves the hammer's results?",
+   "options": [
+    "Appearing in the middle of a range",
+    "Having a red body",
+    "Appearing near the low for the year"
+   ],
+   "explanation": "It works better in the lower third of the yearly range, and ones with a green body do better."
+  },
+  "u20l5-1": {
+   "prompt": "After the rise, tap the red candle that engulfs the previous green one.",
+   "options": [],
+   "explanation": "The red body swallows the previous green one: sellers wipe out everything gained in the previous session. (Apple · daily candles · August–September 2026)"
+  },
+  "u20l5-2": {
+   "prompt": "Tap the bullish engulfing pattern on this chart.",
+   "options": [],
+   "explanation": "A green candle whose body completely covers the previous red one's, after several weak sessions. (NVIDIA · daily candles · July 2026)"
+  },
+  "u20l5-3": {
+   "prompt": "In a harami, the second candle…",
+   "options": [
+    "Sits inside the first one's body",
+    "Has no wicks",
+    "Engulfs the first one's body"
+   ],
+   "explanation": "It's the opposite of an engulfing pattern: a small candle inside the big one shows the momentum is stalling."
+  },
+  "u20l5-4": {
+   "prompt": "Match each two-candle pattern with its story.",
+   "options": [
+    "Bullish engulfing",
+    "Harami",
+    "Dark cloud cover",
+    "Piercing pattern"
+   ],
+   "explanation": "Engulfing is a full counter-attack; the piercing pattern and dark cloud cover, a partial one; the harami, a pause.",
+   "right": [
+    "Small candle inside the big one: the momentum stalls",
+    "After a rise, sellers wipe out more than half a green candle",
+    "After a fall, buyers win back more than half a red candle",
+    "Buyers win back all of yesterday's losses and more"
+   ]
+  },
+  "u20l5-5": {
+   "prompt": "The bearish engulfing reverses 79 % of the time, but ranks only 91 of 103 for performance. Why?",
+   "options": [
+    "Because it only works in crypto",
+    "Because the move that follows is usually small",
+    "Because it's very rare"
+   ],
+   "explanation": "It often gets the direction right, but the move is short. It's also very common (rank 11)."
+  },
+  "u20l5-6": {
+   "prompt": "Candle 1, red: opens at €30 and closes at €27. Candle 2, green: opens at €26.50. Above what price does it need to close to be a bullish engulfing?",
+   "options": [],
+   "explanation": "It has to close above the red candle's open (€30), so that its body covers the whole red one.",
+   "unit": "€"
+  },
+  "u20l5-7": {
+   "prompt": "In dark cloud cover, the red candle closes below the ____ of the previous green body.",
+   "options": [
+    "open",
+    "top",
+    "wick",
+    "midpoint"
+   ],
+   "explanation": "If it engulfed it completely, it would be a bearish engulfing."
+  },
+  "u20l5-8": {
+   "prompt": "Patterns with gaps between candles mean the same in crypto as in shares.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Crypto trades 24/7 and forex almost non-stop: there are hardly any gaps between candles, so these patterns form differently or lose their meaning."
+  },
+  "u20l5-9": {
+   "prompt": "Quick: a green candle whose body swallows the previous red body, after a fall.",
+   "options": [
+    "Harami",
+    "Bullish engulfing",
+    "Shooting star"
+   ],
+   "explanation": "It's the bullish engulfing."
+  },
+  "u20l5-10": {
+   "prompt": "Marta finds a textbook bearish engulfing. She knows it reverses 79 % of the time and wants to bet big. What has she forgotten to check?",
+   "options": [
+    "The colour of the previous candle",
+    "Nothing: 79 % is almost certain",
+    "How far it could fall compared with what she loses if it fails"
+   ],
+   "explanation": "Getting the direction right isn't enough: you have to compare the expected move with the risk.",
+   "feedback": [
+    "She already knows: green. The important question is how much she gains if she's right and how much she loses if it fails.",
+    "It often gets the direction right, but if the move is small and the stop is big, she can lose money while being right.",
+    "Exactly: with a small average move, the reward/risk ratio may not be worth it."
+   ]
+  },
+  "u20l6-1": {
+   "prompt": "Put the candles of a morning star in order.",
+   "options": [
+    "Small candle that gaps down",
+    "Long red candle after a fall",
+    "Long green candle that closes above the midpoint of the first"
+   ],
+   "explanation": "Sellers dominate, then hesitate, and finally buyers take control."
+  },
+  "u20l6-2": {
+   "prompt": "Tap the candle that completes the morning star.",
+   "options": [],
+   "explanation": "After a long red candle and a small candle of doubt, this long green one completes the pattern. (Amazon · daily candles · July–August 2025)"
+  },
+  "u20l6-3": {
+   "prompt": "Match each pattern with its signal.",
+   "options": [
+    "Morning star",
+    "Evening star",
+    "Three white soldiers",
+    "Three black crows"
+   ],
+   "explanation": "The names come from the Japanese tradition of the rice merchants.",
+   "right": [
+    "Bearish reversal after a rise",
+    "Sellers advancing steadily after a rise",
+    "Buyers advancing steadily",
+    "Bullish reversal after a fall"
+   ]
+  },
+  "u20l6-4": {
+   "prompt": "Match each pattern with its performance rank according to Bulkowski (out of 103).",
+   "options": [
+    "Three black crows",
+    "Evening star",
+    "Morning star",
+    "Hammer"
+   ],
+   "explanation": "Three-candle patterns are among the best; many famous single candles sit mid-table or lower.",
+   "right": [
+    "Rank 4",
+    "Rank 65",
+    "Rank 12",
+    "Rank 3"
+   ]
+  },
+  "u20l6-5": {
+   "prompt": "If three-candle patterns have better numbers, why don't they solve everything?",
+   "options": [
+    "Because they don't come up very often",
+    "Because they only exist in Japan",
+    "Because they don't have a name"
+   ],
+   "explanation": "They're uncommon, and Bulkowski measures without commissions or spreads."
+  },
+  "u20l6-6": {
+   "prompt": "According to Bulkowski, three white soldiers that appear as a bounce within a downtrend usually give way to the fall continuing.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Context rules: in an underlying downtrend, that bounce usually stays just that."
+  },
+  "u20l6-7": {
+   "prompt": "Look for three-candle patterns at the end of this chart. Up or down over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Even if you found a textbook morning star, Bulkowski measures a 78 % reversal rate: more than one in five fails.",
+   "horizon": "the next 10 sessions"
+  },
+  "u20l6-8": {
+   "prompt": "If the middle candle of an evening star is a doji, the pattern is called an evening ____ star.",
+   "options": [
+    "shooting",
+    "hammer",
+    "marubozu",
+    "doji"
+   ],
+   "explanation": "Bulkowski gives it a 71 % bearish reversal rate (rank 30)."
+  },
+  "u20l6-9": {
+   "prompt": "Quick: three long red candles after a rise, each making new lows.",
+   "options": [
+    "Three black crows",
+    "Harami",
+    "Three white soldiers"
+   ],
+   "explanation": "It's three black crows: a bearish reversal 78 % of the time according to Bulkowski."
+  },
+  "u20l6-10": {
+   "prompt": "What do you tell them?",
+   "options": [
+    "Yes, at 82 % there's no risk",
+    "It's one of the best patterns, but it fails almost one time in five and you need to look at the context",
+    "Candlesticks are useless, forget it"
+   ],
+   "explanation": "The best patterns improve the odds; they don't turn them into certainties.",
+   "feedback": [
+    "An 18 % failure rate is almost one in five. And Bulkowski measures without commissions or spreads.",
+    "Exactly! And if it appears as a bounce within a downtrend, it usually fails.",
+    "They're useful for reading the market and placing stops logically; what they don't do is guarantee anything."
+   ],
+   "lines": [
+    "I've found three white soldiers on a share 🪖🪖🪖",
+    "Bulkowski says 82 %. It's almost a sure thing!"
+   ]
+  },
+  "u20l7-1": {
+   "prompt": "What are the four filters that give a candlestick pattern value? Tick all that apply.",
+   "options": [
+    "Volume",
+    "The chart being a 1-minute chart",
+    "A relevant level",
+    "Prior trend",
+    "Confirmation"
+   ],
+   "explanation": "Without them, the pattern is little more than noise. And on minute charts, noise rules."
+  },
+  "u20l7-2": {
+   "prompt": "Challenge: look only at the candles and decide. Up or down over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Keep track of your hits in these challenges: with enough attempts you'll see that, using candles alone, they're about the same as tossing a coin.",
+   "horizon": "the next 10 sessions"
+  },
+  "u20l7-3": {
+   "prompt": "Different asset, another go. Up or down over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Every chart has its own story, but none comes with the answer written on it. What you do control is how much you risk.",
+   "horizon": "the next 10 sessions"
+  },
+  "u20l7-4": {
+   "prompt": "And one more. Up or down over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Three attempts are far too few to draw conclusions: that's why serious studies use thousands of cases.",
+   "horizon": "the next 10 sessions"
+  },
+  "u20l7-5": {
+   "prompt": "If a pattern gets the direction right 60 % of the time, it's bound to be profitable.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It depends on the size of the move when it's right, what you lose when it's wrong, and costs."
+  },
+  "u20l7-6": {
+   "prompt": "Marshall, Young and Rose concluded that 28 candlestick patterns added no value on Dow Jones shares.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "And a study of the Japanese market (1975–2004) came to the same conclusion."
+  },
+  "u20l7-7": {
+   "prompt": "You see a shooting star on a crypto's 5-minute chart, in the middle of a range and on low volume. How many filters does it meet?",
+   "options": [
+    "None",
+    "All four",
+    "Only volume"
+   ],
+   "explanation": "There's no prior trend, no relevant level, volume is low and there's no confirmation. On top of that, on a 5-minute chart noise rules."
+  },
+  "u20l7-8": {
+   "prompt": "What is data-snooping bias?",
+   "options": [
+    "Looking at data in real time",
+    "Using candlesticks instead of lines",
+    "Testing lots of patterns until one seems to work by pure chance"
+   ],
+   "explanation": "Run enough tests and chance will always hand you some «discovery»."
+  },
+  "u20l7-9": {
+   "prompt": "A share in a year-long uptrend pulls back 12 % to its 200-session moving average, which coincides with an old high. It forms a hammer on high volume and the next day closes above it. Bruno sees all four filters. What's the sensible thing to do?",
+   "options": [
+    "Never go in: candlesticks don't work",
+    "Go in without a stop: with four out of four it can't fail",
+    "If he goes in, a stop below the hammer's low and a small position"
+   ],
+   "explanation": "Context improves the odds; the stop and the position size protect you when it still goes wrong.",
+   "feedback": [
+    "Candles on their own add little, but with context they're a reasonable clue for someone trading with a plan.",
+    "It can still fail. Without a stop, one failure can cost far more than expected.",
+    "Exactly: four out of four improves the odds, and risk management protects him when it fails."
+   ]
+  },
+  "u20l7-10": {
+   "prompt": "A candlestick pattern on a daily chart is more meaningful than on a 1-minute chart.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "On short timeframes, noise dominates."
+  },
+  "u20l7-11": {
+   "prompt": "What do you reply to Lumi?",
+   "options": [
+    "It depends on how many followers they have",
+    "90 % is amazing",
+    "I'm sceptical: no serious study shows anything like that, and costs eat up a big chunk of it"
+   ],
+   "explanation": "Be wary of any spectacular success rate: the evidence says otherwise.",
+   "feedback": [
+    "Having lots of followers doesn't make a figure true.",
+    "The best patterns Bulkowski measures reverse around 70–80 % of the time, before costs. A 90 % claim is a red flag.",
+    "Well spotted! Many famous candles sit at 50–60 %, and academic studies find no value once costs are taken into account."
+   ],
+   "lines": [
+    "An influencer is selling a candlestick course «with a 90 % success rate» 💸",
+    "What do you think?"
+   ]
+  }
+ }
+}

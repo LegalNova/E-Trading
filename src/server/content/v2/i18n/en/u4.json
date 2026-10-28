@@ -1,0 +1,649 @@
+{
+ "unit": {
+  "title": "Your first financial plan",
+  "description": "Goals with an amount and a date, your time horizon, your risk and what the trading data says",
+  "section": "Money basics"
+ },
+ "lessons": {
+  "u4l1": {
+   "title": "Saving, investing and speculating",
+   "steps": [
+    {
+     "title": "Three different things",
+     "body": "• **Saving:** setting money aside without putting it at risk (account, deposit, Treasury bills). For things that are close: your cushion and expenses less than 2-3 years away.\n• **Investing:** putting money into things that **produce value** (companies, loans, property). For 5 years or more.\n• **Speculating:** buying in the hope that **someone else will buy it from you for more soon**, even if it produces nothing in that time."
+    },
+    {
+     "title": "Where the gain comes from",
+     "body": "• Saving → interest.\n• Investing → company profits, interest, rent.\n• Speculating → from another participant who gets it right less often than you.\n\nSpeculating is a **zero-sum** game before costs and a **negative-sum** game after them. The CNMV (Spain's market regulator) lists telling investing apart from speculating among every investor's basic skills."
+    },
+    {
+     "title": "The difference in one sentence",
+     "body": "Paying into a global fund every month for 20 years is investing. Buying a trendy coin because «everyone says it's going to go up» is speculating.",
+     "key": "Save for what's near, invest for what's far off and only speculate with what you can afford to lose.",
+     "tip": "If you don't know where the gain comes from, it probably comes out of your pocket."
+    }
+   ]
+  },
+  "u4l2": {
+   "title": "Goals with a date and an amount",
+   "steps": [
+    {
+     "title": "From wish to goal",
+     "body": "Bad: «I want to have money».\nGood: «I want **€30,000** for a deposit on a flat by **June 2031**, putting in **€400 a month**».\n\nA good goal is **SMART**: specific, measurable, achievable, relevant and time-bound."
+    },
+    {
+     "title": "Working backwards",
+     "body": "1. How much do I need?\n2. By when?\n3. How much do I already have?\n4. What's missing ÷ months = **monthly contribution**.\n\nExample: €6,000 for a car in 2 years, with €1,200 saved: (6,000 − 1,200) ÷ 24 = **€200 a month**."
+    },
+    {
+     "title": "One pot per goal",
+     "body": "If you have several goals, keep them apart: an account or «savings pot» for each one. That way you know how far along you are with each, and you don't spend the trip money on the car.",
+     "key": "A goal without an amount or a date is just a wish.",
+     "tip": "Write it down and review it every month."
+    }
+   ]
+  },
+  "u4l3": {
+   "title": "Your time horizon",
+   "steps": [
+    {
+     "title": "Put a date on every euro",
+     "body": "• **Cushion:** always available → interest-paying account, money market fund.\n• **Trip or car (1-3 years)** → deposits, Treasury bills.\n• **Deposit on a flat (3-7 years)** → a cautious mix, more bonds.\n• **Retirement (15 years or more)** → mostly diversified shares."
+    },
+    {
+     "title": "Risk falls over time",
+     "body": "In any given year, the S&P 500 has fallen roughly **one year in four**. Over 20-year periods, losing has been extremely rare.\n\nRare isn't impossible: anyone who bought at the 1929 peak or in the 2000 bubble waited more than a decade to recover."
+    },
+    {
+     "title": "The time-horizon rule",
+     "body": "Money you'll need soon doesn't go into the stock market: not because it's sure to fall, but because it **could** be falling just when you need it.",
+     "key": "Your time horizon decides how much risk you can take.",
+     "tip": "Money for two years from now shouldn't be in something that can drop 30 % in a month."
+    }
+   ]
+  },
+  "u4l4": {
+   "title": "How much risk you can handle",
+   "steps": [
+    {
+     "title": "Two ingredients",
+     "body": "**Risk capacity:** how much you can lose **without it changing your life** (income, stability, cushion, dependants, time horizon). It's objective.\n\n**Risk tolerance:** how far you can watch your money fall **without panic selling**. It's psychological, and almost everyone overestimates it when the market is rising.\n\nYour real profile is **the lower of the two**."
+    },
+    {
+     "title": "The 40 % test",
+     "body": "You invest €10,000 and six months later it's worth €6,000. The news says «this is only just getting started». What would you do?\n\n• Sell everything → cautious profile.\n• Hold on → moderate.\n• Put more in → bold, if you have the capacity.\n\nIt's not theory: global stock markets fell more than 50 % in 2007-2009."
+    },
+    {
+     "title": "The MiFID test",
+     "body": "When you open an account with a European broker, the MiFID II rules require them to give you an appropriateness or suitability test. Answer it honestly: it protects you from complex products you don't understand.",
+     "key": "Your profile depends on how much you can lose and how you react when you lose.",
+     "tip": "Everyone's brave when the market is going up."
+    }
+   ]
+  },
+  "u4l5": {
+   "title": "The truth about getting rich quick",
+   "steps": [
+    {
+     "title": "What the data says",
+     "body": "• Brazil: **97 %** of people who *day traded* for more than 300 days lost money (Chague et al., 2020).\n• Europe: between **74 % and 89 %** of retail CFD accounts lose money (ESMA).\n• US: the households that traded most earned **11.4 %** a year versus the market's **17.9 %** (Barber and Odean, 2000).",
+     "tip": "CNMV warning: CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. Between 74 and 89 % of retail investors lose money when trading CFDs."
+    },
+    {
+     "title": "Why it happens",
+     "body": "• Every trade pays a commission and the *spread*: trading a lot multiplies the costs.\n• On the other side are professionals and algorithms.\n• We cut our winners early and let our losers run.\n• Leverage multiplies losses just as it does gains."
+    },
+    {
+     "title": "Signs of a guru or a scam",
+     "body": "• Promises high returns «with no risk».\n• Shows screenshots of gains, never their full track record.\n• Sells courses, signals or «bots» with urgency («today only»).\n• Asks you to open an account with a specific broker (they get paid for bringing you in).\n• Isn't registered with the CNMV: check on its website and on its list of **unauthorised firms («chiringuitos financieros»)**."
+    },
+    {
+     "title": "How people really make money",
+     "body": "What works for most people: investing regularly, diversifying, paying low fees, over a long time and without panic selling. It sounds boring, which is why few people do it.",
+     "key": "Most short-term speculators lose; most patient investors win.",
+     "tip": "If getting rich in a week were easy, nobody would be selling it to you."
+    }
+   ]
+  },
+  "u4r": {
+   "title": "Unit review",
+   "steps": []
+  },
+  "s1boss": {
+   "title": "Final challenge: Money basics",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u4l1-1": {
+   "prompt": "Match each activity with where its gain comes from.",
+   "options": [
+    "Saving",
+    "Investing",
+    "Speculating"
+   ],
+   "explanation": "The key question is always the same: where does the gain come from?",
+   "right": [
+    "Profits, interest or rent over the long term",
+    "Someone else paying more soon",
+    "Interest without risking what you put in"
+   ]
+  },
+  "u4l1-2": {
+   "prompt": "Is it saving, investing or speculating?",
+   "options": [
+    "Trading every few minutes with leverage",
+    "Treasury bills",
+    "Shares in many companies for 15 years",
+    "12-month deposit",
+    "Paying into a global index fund every month for 20 years",
+    "Buying a trendy coin because it's going up"
+   ],
+   "explanation": "Time horizon, risk and where the gain comes from set the three apart.",
+   "right": [
+    "Saving",
+    "Investing",
+    "Speculating"
+   ]
+  },
+  "u4l1-3": {
+   "prompt": "You need the money for a trip in a year's time. What makes most sense?",
+   "options": [
+    "Saving it in an account or deposit",
+    "Investing it in shares",
+    "Speculating with cryptocurrencies"
+   ],
+   "explanation": "With a one-year horizon, the money shouldn't be in something that can drop 30 %."
+  },
+  "u4l1-4": {
+   "prompt": "Where does the gain come from for someone who invests in a company for the long term?",
+   "options": [
+    "From another investor who loses",
+    "From luck",
+    "From the profits the company makes"
+   ],
+   "explanation": "Investing means sharing in what the asset produces: profits, interest or rent."
+  },
+  "u4l1-5": {
+   "prompt": "Speculating is a zero-sum game before costs.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "What one person wins, another loses; after fees and taxes, the total is negative."
+  },
+  "u4l1-6": {
+   "prompt": "Investing means you can't lose money.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Investments go up and down, sometimes a lot and for years. That's why you invest for the long term and diversify."
+  },
+  "u4l1-7": {
+   "prompt": "Buying a crypto because «everyone says it's going to go up» is investing.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It's speculating: the gain depends on someone else paying more, not on what the asset produces."
+  },
+  "u4l1-8": {
+   "prompt": "Pablo has €12,000, spends €1,200 a month and wants to try his luck with €5,000 in a coin that's «going to multiply». What does he do?",
+   "options": [
+    "Sets his cushion aside, invests for the long term and, if he wants to speculate, uses only a small amount he could lose entirely",
+    "Puts the €5,000 into the coin",
+    "Puts all €12,000 into the coin to make more"
+   ],
+   "explanation": "Speculate, if at all, with a small amount you could lose entirely.",
+   "feedback": [
+    "If the coin crashes, his life doesn't change: the plan holds.",
+    "40 % of his money depends on someone else paying more: he could lose almost all of it.",
+    "No cushion and everything on one bet: any surprise or fall leaves him with nothing."
+   ]
+  },
+  "u4l1-9": {
+   "prompt": "Save for what's near, invest for what's ____ and only speculate with what you can afford to lose.",
+   "options": [
+    "safe",
+    "fun",
+    "urgent",
+    "far off"
+   ],
+   "explanation": "The further away the goal, the more time there is to recover from falls."
+  },
+  "u4l1-10": {
+   "prompt": "Which are examples of speculating? Tick all.",
+   "options": [
+    "Buying a trendy coin because it's going up",
+    "Using a lot of leverage",
+    "Paying into a global fund every month for 20 years",
+    "Trading every few minutes"
+   ],
+   "explanation": "Paying into a diversified fund for the long term is investing."
+  },
+  "u4l2-1": {
+   "prompt": "Put the steps for working out your monthly contribution in order.",
+   "options": [
+    "Set a date",
+    "Subtract what you already have",
+    "Divide what's missing by the months left",
+    "Decide how much you need"
+   ],
+   "explanation": "Amount, date, starting point and division: that's how a wish becomes a monthly plan."
+  },
+  "u4l2-2": {
+   "prompt": "You want €3,000 for a trip in 12 months and already have €600. How much do you need to set aside each month?",
+   "options": [],
+   "explanation": "(3,000 − 600) ÷ 12 = €200 a month.",
+   "unit": "€"
+  },
+  "u4l2-3": {
+   "prompt": "You want €30,000 for a deposit on a flat in 5 years and you're starting from zero. Ignoring interest, how much a month?",
+   "options": [],
+   "explanation": "30,000 ÷ 60 months = €500 a month.",
+   "unit": "€"
+  },
+  "u4l2-4": {
+   "prompt": "A SMART goal is specific, measurable, achievable, relevant and has a ____.",
+   "options": [
+    "lucky break",
+    "leveraged bet",
+    "high risk",
+    "deadline"
+   ],
+   "explanation": "Without a deadline you can't work out how much to put in each month."
+  },
+  "u4l2-5": {
+   "prompt": "Which goal is well framed?",
+   "options": [
+    "Having €12,000 for a car in 2029 by putting in €250 a month",
+    "Saving a lot",
+    "Being rich"
+   ],
+   "explanation": "It has an amount, a date and a plan: it can be measured and tracked."
+  },
+  "u4l2-6": {
+   "prompt": "Is it just a wish or a measurable goal?",
+   "options": [
+    "Travelling a lot",
+    "Having a €4,500 cushion by December",
+    "Saving more this year",
+    "I want to be rich",
+    "€4,000 for a master's in September 2027, with €250 a month"
+   ],
+   "explanation": "An amount and a date turn a wish into something you can track month by month.",
+   "right": [
+    "Just a wish",
+    "Measurable goal"
+   ]
+  },
+  "u4l2-7": {
+   "prompt": "What do you tell Lumi?",
+   "options": [
+    "Perfect, that way you won't stress",
+    "Better not to set goals, you'll only fail",
+    "Give it an amount and a date: for example, €1,800 by December"
+   ],
+   "explanation": "A measurable goal tells you what to do each month.",
+   "feedback": [
+    "Without an amount or a date, in December you won't know whether you've done it.",
+    "Without a goal it's easier for your savings to come to nothing.",
+    "That's more like it! €1,800 in 12 months is €150 a month: now you know what to do each month."
+   ],
+   "lines": [
+    "My goal for this year: save! 💪",
+    "Have I framed it well?"
+   ]
+  },
+  "u4l2-8": {
+   "prompt": "Quick: you need €2,400 in 12 months. How much a month?",
+   "options": [
+    "€200",
+    "€100",
+    "€240"
+   ],
+   "explanation": "2,400 ÷ 12 = €200."
+  },
+  "u4l2-9": {
+   "prompt": "Ana wants a €3,000 cushion, a €1,500 trip in the summer and a deposit on a flat in 6 years. She keeps it all together in the same account. What should she do?",
+   "options": [
+    "Keep it all together: it's simpler",
+    "Put each goal in its own account or savings pot",
+    "Go for one goal at a time and forget the rest"
+   ],
+   "explanation": "One pot per goal: that way the money for each target doesn't get mixed up.",
+   "feedback": [
+    "In the summer she won't know how much she can spend without touching the cushion or the flat money.",
+    "She can see how far along she is with each, and the trip doesn't eat into the cushion.",
+    "Meanwhile, the clock keeps ticking on the other goals."
+   ]
+  },
+  "u4l2-10": {
+   "prompt": "If the goal is 2 years away, the monthly contribution is what's missing divided by 24.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "2 years is 24 months (ignoring interest)."
+  },
+  "u4l3-1": {
+   "prompt": "Match each goal with where it usually makes sense.",
+   "options": [
+    "Emergency cushion",
+    "Trip in a year's time",
+    "Deposit on a flat in 5 years",
+    "Retirement in 35 years"
+   ],
+   "explanation": "The longer the horizon, the more time to recover from falls.",
+   "right": [
+    "A cautious mix, more bonds",
+    "Mostly diversified shares",
+    "Deposit or Treasury bills",
+    "Interest-paying account"
+   ]
+  },
+  "u4l3-2": {
+   "prompt": "You need a deposit for a flat in 18 months. Where does it make most sense?",
+   "options": [
+    "Deposits or a money market fund",
+    "Cryptocurrencies",
+    "100 % in tech shares"
+   ],
+   "explanation": "With 18 months to go, a 30 % fall would wreck the plan."
+  },
+  "u4l3-3": {
+   "prompt": "Put in order from least to most the risk each goal can usually take.",
+   "options": [
+    "Deposit on a flat in 5 years",
+    "Retirement in 30 years",
+    "Trip in a year",
+    "Emergency cushion"
+   ],
+   "explanation": "The further away the goal, the more falls you can ride out along the way."
+  },
+  "u4l3-4": {
+   "prompt": "Over 20-year periods, the S&P 500 has almost never made a loss.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Almost never isn't never: that's why it's also worth diversifying across countries."
+  },
+  "u4l3-5": {
+   "prompt": "Bruno has €8,000 for the fees of a master's he pays in 10 months. A friend tells him he'll «get a bit more» in the stock market. What does he do?",
+   "options": [
+    "Puts it into a crypto that has gone up a lot",
+    "Leaves it in a deposit or Treasury bills until he pays",
+    "Puts it all in the stock market"
+   ],
+   "explanation": "Money with a close date: no risk, even if it earns little.",
+   "feedback": [
+    "Falls of 50 % in a few months aren't unusual in crypto: he could end up without his master's.",
+    "He earns little, but on the day the fees are due the €8,000 will be there.",
+    "If the market drops 20 % just before, he'd be €1,600 short for the fees."
+   ]
+  },
+  "u4l3-6": {
+   "prompt": "S&P 500, September 2008. Imagine this is where you've got the money for a deposit on a flat you pay in 6 months. What do you think the index did in the following months?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Whatever the outcome, money you need in a few months shouldn't depend on what the stock market does in that time.",
+   "horizon": "the following months"
+  },
+  "u4l3-7": {
+   "prompt": "Quick: money you'll need in 2 years. In the stock market?",
+   "options": [
+    "Yes: over 2 years it always goes up",
+    "Yes, if it's a single company",
+    "Better not: it could be falling just when you need it"
+   ],
+   "explanation": "Over 2 years, the market could be in the middle of a fall on the day you need the money."
+  },
+  "u4l3-8": {
+   "prompt": "Short or long term?",
+   "options": [
+    "Rental deposit in 6 months",
+    "Financial independence at 50 (you're 25)",
+    "Next summer's holiday",
+    "Retirement",
+    "A new phone",
+    "Saving for a baby's university"
+   ],
+   "explanation": "What you need soon, without risk; what's far off can ride out more ups and downs.",
+   "right": [
+    "Short term (under 3 years)",
+    "Long term (over 10 years)"
+   ]
+  },
+  "u4l3-9": {
+   "prompt": "If the S&P 500 has fallen roughly one year in four, in about how many years out of 40 would you expect falls?",
+   "options": [],
+   "explanation": "40 ÷ 4 = 10 years. Falls are normal: what changes with the time horizon is the time to recover.",
+   "unit": "years"
+  },
+  "u4l3-10": {
+   "prompt": "Money you'll need ____ doesn't go into the stock market.",
+   "options": [
+    "in 30 years",
+    "for retirement",
+    "never",
+    "soon"
+   ],
+   "explanation": "Not because it's sure to fall, but because it could be falling just when you need it."
+  },
+  "u4l4-1": {
+   "prompt": "What's your real risk profile?",
+   "options": [
+    "The lower of capacity and tolerance",
+    "The higher of capacity and tolerance",
+    "Whatever your best friend's is"
+   ],
+   "explanation": "If you can lose a lot but can't stomach it, you'll panic sell; if you can stomach it but can't afford it, you're taking too much risk."
+  },
+  "u4l4-2": {
+   "prompt": "Match each concept with its meaning.",
+   "options": [
+    "Risk capacity",
+    "Risk tolerance",
+    "MiFID test",
+    "Time horizon"
+   ],
+   "explanation": "Capacity and horizon are objective; tolerance is psychological.",
+   "right": [
+    "Checks your experience and knowledge",
+    "When you'll need the money",
+    "How far you can watch it fall without selling",
+    "How much you can lose without it changing your life"
+   ]
+  },
+  "u4l4-3": {
+   "prompt": "Marta is 23, has a stable job, a 6-month cushion and invests for 30 years from now in a diversified portfolio. Her portfolio drops 35 %. Which decision fits her plan?",
+   "options": [
+    "Sells everything so as not to lose more",
+    "Sticks to the plan and keeps up her contributions",
+    "Takes out a loan to buy more"
+   ],
+   "explanation": "With capacity and time on her side, the plan matters more than the day's headline.",
+   "feedback": [
+    "She turns a temporary fall into a permanent loss and, if there's a rebound later, she misses it.",
+    "Her time horizon and her cushion let her wait: the fall is only a real loss if she sells.",
+    "Borrowing to invest multiplies the risk: if it keeps falling, she owes money and loses."
+   ]
+  },
+  "u4l4-4": {
+   "prompt": "A 40 % stock market fall is a theoretical thing that has never happened.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Global stock markets fell more than 50 % in 2007-2009 and almost 50 % in 2000-2002."
+  },
+  "u4l4-5": {
+   "prompt": "Your €10,000 drops 40 %. What's it worth now?",
+   "options": [],
+   "explanation": "10,000 × (1 − 0.40) = €6,000.",
+   "unit": "€"
+  },
+  "u4l4-6": {
+   "prompt": "After a 40 % fall, how much does your portfolio need to rise to get back to €10,000? (round it)",
+   "options": [],
+   "explanation": "From 6,000 to €10,000 you need to gain €4,000: 4,000 ÷ 6,000 ≈ 66.7 %. Big falls take a lot to recover from.",
+   "unit": "%"
+  },
+  "u4l4-7": {
+   "prompt": "Does this add to or take away from your risk capacity?",
+   "options": [
+    "A 6-month cushion",
+    "Needing the money in 2 years",
+    "Children who depend on you",
+    "A stable salary",
+    "Expensive debt",
+    "A 30-year time horizon"
+   ],
+   "explanation": "Capacity depends on your objective situation: income, cushion, dependants and time horizon.",
+   "right": [
+    "Adds capacity",
+    "Takes away capacity"
+   ]
+  },
+  "u4l4-8": {
+   "prompt": "What do you say to Lumi?",
+   "options": [
+    "Your real tolerance seems lower than you think",
+    "Invest even more to get used to it",
+    "Then you're aggressive; it was just a bad month"
+   ],
+   "explanation": "You discover your tolerance in the falls, not the rises.",
+   "feedback": [
+    "That's it: your profile is set by how you react to falls, not how you feel when it's rising.",
+    "More risk with low tolerance usually ends in panic selling.",
+    "If 5 % keeps you up at night, how would you handle 40 %?"
+   ],
+   "lines": [
+    "When it comes to investing, I'm super aggressive 😎",
+    "Although when it dropped 5 % last month I didn't sleep a wink…"
+   ]
+  },
+  "u4l4-9": {
+   "prompt": "Quick: what's the broker's MiFID test for?",
+   "options": [
+    "To charge you more fees",
+    "To protect you from products you don't understand",
+    "Nothing"
+   ],
+   "explanation": "European rules require your experience and knowledge to be checked."
+  },
+  "u4l4-10": {
+   "prompt": "You get very nervous when you see red numbers and you'll need the money in 3 years. Your profile is…",
+   "options": [
+    "Cautious",
+    "Speculator",
+    "Very bold"
+   ],
+   "explanation": "Low tolerance and a short horizon: lots of bonds and few shares."
+  },
+  "u4l5-1": {
+   "prompt": "Most people who day trade over a long period make money.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "In Brazil, 97 % of those who did it for more than 300 days lost money."
+  },
+  "u4l5-2": {
+   "prompt": "According to ESMA, what percentage of retail CFD accounts lose money?",
+   "options": [
+    "20-30 %",
+    "74-89 %",
+    "Around 50 %"
+   ],
+   "explanation": "That's why since 2018 leverage has been capped for retail clients and brokers must show the warning."
+  },
+  "u4l5-3": {
+   "prompt": "Tick the messages that look like a scam or a guru.",
+   "options": [
+    "Remember: CFDs are complex and most retail accounts lose money on them.",
+    "I've started putting €50 a month into an index fund. Boring, but here goes 😴",
+    "We guarantee 5 % a week with no risk. Open an account with this broker using my link.",
+    "I quit my job thanks to trading. My VIP course, today only, €497 🚀",
+    "100 % accurate buy signals. Limited places: join before midnight."
+   ],
+   "explanation": "Promises of guaranteed gains, pressure to hurry and links to a specific broker are classic signs.",
+   "senders": [
+    "Your broker",
+    "Friend",
+    "Unknown",
+    "@TraderLibre",
+    "Telegram group"
+   ]
+  },
+  "u4l5-4": {
+   "prompt": "The households that traded most earned more than the market.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "They earned 11.4 % versus the market's 17.9 %: overconfidence is costly."
+  },
+  "u4l5-5": {
+   "prompt": "In Brazil, of those who day traded for more than 300 days, how many lost money?",
+   "options": [
+    "60 %",
+    "97 %",
+    "30 %"
+   ],
+   "explanation": "And only 1.1 % earned more than the minimum wage (Chague, De-Losso and Giovannetti, 2020)."
+  },
+  "u4l5-6": {
+   "prompt": "What are signs of a scam? Tick all.",
+   "options": [
+    "Registered with the CNMV, with a risk document",
+    "Only shows screenshots of gains",
+    "Pressure to decide fast",
+    "Guaranteed high returns"
+   ],
+   "explanation": "A legitimate firm is registered and explains its risks and costs."
+  },
+  "u4l5-7": {
+   "prompt": "An influencer with a luxury car offers to let you copy his trades for €99 a month: «last month I made 40 %». What do you do?",
+   "options": [
+    "I also give him my broker login so he can trade for me",
+    "I sign up: the results speak for themselves",
+    "I check whether he's registered with the CNMV and ask for his full track record"
+   ],
+   "explanation": "Before paying anyone: CNMV registration, full track record and no rushing.",
+   "feedback": [
+    "Never share your login details: he could empty your account.",
+    "A screenshot of one good month says nothing about the bad months he doesn't show.",
+    "He isn't registered and only has screenshots of good days: you save €99 a month and probably a lot more."
+   ]
+  },
+  "u4l5-8": {
+   "prompt": "According to Barber and Odean, the households that traded most earned 11.4 % a year and the market 17.9 %. How many points a year were they giving up?",
+   "options": [],
+   "explanation": "17.9 − 11.4 = 6.5 points a year, mostly due to costs and overconfidence.",
+   "unit": "points"
+  },
+  "u4l5-9": {
+   "prompt": "If someone promises you high returns with no risk, it's a warning sign.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Return and risk go together: «high and safe» doesn't exist."
+  },
+  "u4l5-10": {
+   "prompt": "What works: investing regularly, diversifying, low costs, lots of time and no ____ selling.",
+   "options": [
+    "euro",
+    "summer",
+    "Christmas",
+    "panic"
+   ],
+   "explanation": "Panic selling turns temporary falls into real losses."
+  }
+ }
+}

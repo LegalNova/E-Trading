@@ -1,0 +1,890 @@
+{
+ "unit": {
+  "title": "Inside the stock exchange",
+  "description": "What a stock exchange is, who trades on it, how prices are set and how the Spanish one works",
+  "section": "How markets work"
+ },
+ "lessons": {
+  "u5l1": {
+   "title": "What a stock exchange is",
+   "steps": [
+    {
+     "title": "An organised market",
+     "body": "A **stock exchange** is a regulated market where securities are bought and sold: shares, bonds, ETFs. It brings together people who want to buy and people who want to sell, with the same rules for everyone and public prices.\n\nIn Spain it's run by **BME** (Bolsas y Mercados Españoles), part of the Swiss SIX group, and supervised by the **CNMV** (Spain's securities regulator)."
+    },
+    {
+     "title": "What it's for",
+     "body": "• **For companies:** raising money to grow by selling shares or bonds.\n• **For investors:** owning a piece of companies and being able to **sell whenever they want** (liquidity).\n• **For everyone:** a public, transparent price for every security at every moment."
+    },
+    {
+     "title": "You don't go to the exchange",
+     "body": "You buy through an authorised **broker**, who takes your order to the market. And when you buy, someone sells: day to day, the exchange doesn't sell you anything, it just matches orders.",
+     "key": "The exchange is the meeting point; the broker is the way in.",
+     "tip": "Every time you buy, someone sells. Ask yourself what they know that you don't."
+    }
+   ]
+  },
+  "u5l2": {
+   "title": "Who buys and who sells",
+   "steps": [
+    {
+     "title": "The participants",
+     "body": "• **Retail investors:** individuals like you.\n• **Institutional investors:** investment funds, pension plans, insurers. They move huge amounts.\n• **Market makers:** they always quote a buying price and a selling price and earn the difference.\n• **High-frequency traders:** algorithms that trade in microseconds.\n• **Central banks and governments**, in bonds and currencies."
+    },
+    {
+     "title": "Why it matters",
+     "body": "On the other side of your order there are usually professionals with more information, better tools and almost zero costs. That's why trying to beat them in the short term is so hard.\n\nIn the long term, though, you're not competing with them: you share in what companies earn."
+    },
+    {
+     "title": "Your edge",
+     "body": "A retail investor doesn't have to report every quarter, can wait for years and can keep costs very low. That's their edge, not speed.",
+     "key": "The stock market is full of professionals: your edge is time and low costs.",
+     "tip": "Don't try to outrun an algorithm: you don't need to."
+    }
+   ]
+  },
+  "u5l3": {
+   "title": "Supply, demand and price",
+   "steps": [
+    {
+     "title": "The order book",
+     "body": "Every security has a book with two columns:\n\n• **Buyers (*bid*):** the best one pays **€10.02** for 500 shares.\n• **Sellers (*ask*):** the best one asks **€10.04** for 300 shares; the next, **€10.05** for 800.\n\nThe difference between the best *bid* and the best *ask* is the **spread**."
+    },
+    {
+     "title": "How the price moves",
+     "body": "If more buyers in a hurry turn up than sellers, they «eat up» the 300 shares at €10.04 and the price climbs to the next step, €10.05. If more sellers turn up, it falls.\n\nNews, company results or an economic data release change what people are willing to pay."
+    },
+    {
+     "title": "Auctions",
+     "body": "The Madrid Stock Exchange opens and closes with an **auction**: from 8:30 to 9:00 and from 17:30 to 17:35 orders build up and a single price is set that matches the largest volume.",
+     "key": "The price is the latest deal between whoever pays most and whoever asks least.",
+     "tip": "The price isn't what a company is worth: it's what someone has just paid."
+    }
+   ]
+  },
+  "u5l4": {
+   "title": "Trading hours and sessions",
+   "steps": [
+    {
+     "title": "When each exchange opens (Spanish mainland time)",
+     "body": "• **Madrid, Frankfurt, Paris:** from 9:00 to 17:30.\n• **London:** from 8:00 to 16:30 local time = from 9:00 to 17:30 in Spain.\n• **New York (NYSE, Nasdaq):** from 9:30 to 16:00 local time = from **15:30 to 22:00** in Spain.\n• **Tokyo:** opens in the middle of the night in Spain and takes a lunch break (Tokyo time)."
+    },
+    {
+     "title": "Markets that never close",
+     "body": "• **Crypto:** 24 hours, 7 days, bank holidays included.\n• **Currencies:** 24 hours, from Sunday night to Friday night.\n\nWatch out for the **clock change:** the US and Europe don't change on the same day, so for a few weeks a year New York opens at **14:30** Spanish time."
+    },
+    {
+     "title": "Outside trading hours",
+     "body": "If you place an order while the exchange is closed, it waits for the open. And whatever happens overnight (results, news) can make the price open far from the previous close: that's a **gap**.",
+     "key": "Before you trade, check whether the market is open.",
+     "tip": "Just because the app lets you tap «buy» doesn't mean the market is open."
+    }
+   ]
+  },
+  "u5l5": {
+   "title": "Broker, account and custody",
+   "steps": [
+    {
+     "title": "What a broker does",
+     "body": "The **broker** receives your order, takes it to the market and charges you fees. In Spain it must be authorised by the **CNMV** or by the regulator of another EU country with a «European passport».\n\nCheck on the CNMV website before opening an account."
+    },
+    {
+     "title": "Settlement and custody",
+     "body": "Once matched, the trade **settles**: the money goes to the seller and the shares to you. In Europe it takes two business days (**T+2**); in the US, one (T+1) since 2024.\n\nIn Spain the central register is **Iberclear**. The **custodian** holds your securities **in your name**, kept separate from the broker's own assets."
+    },
+    {
+     "title": "What if it goes bust?",
+     "body": "Your shares are still yours. If anything were missing, in Spain the **FOGAIN** (Spain's investor guarantee fund) steps in, up to **€100,000** per investor. With a broker from another EU country, that country's fund covers you, and it may cover less (the EU minimum is €20,000).",
+     "key": "The broker is your way in; your securities are held in your name.",
+     "tip": "FOGAIN doesn't cover you if your shares fall: only if the firm can't give you back what's yours."
+    }
+   ]
+  },
+  "u5l6": {
+   "title": "Primary and secondary markets: IPOs",
+   "steps": [
+    {
+     "title": "Two markets",
+     "body": "• **Primary market:** new securities are **issued** and the issuer receives the money. For example, a stock market listing with new shares or a capital increase.\n• **Secondary market:** investors buy and sell securities that already exist among themselves. It's the everyday stock market: the company **gets nothing**."
+    },
+    {
+     "title": "Going public",
+     "body": "There are two ways, often combined:\n\n• **OPS (public subscription offer, in Spanish terms):** new shares are created; the money goes to the company.\n• **OPV (public sale offer):** the current owners sell some of their shares; the money goes to them.\n\nInternationally it's all called an IPO. Beforehand, the CNMV approves a **prospectus** with the information and the risks."
+    },
+    {
+     "title": "Beware the hype",
+     "body": "Listings arrive with lots of publicity, but the price is set by whoever's selling, and they know the company better than you do. Many end up trading below their offer price.",
+     "key": "Primary: the money goes to the issuer. Secondary: it goes to another investor.",
+     "tip": "If everyone's talking about an IPO, ask yourself who's in a hurry to sell."
+    }
+   ]
+  },
+  "u5l7": {
+   "title": "The Spanish stock market: the IBEX and the continuous market",
+   "steps": [
+    {
+     "title": "The continuous market",
+     "body": "Spain's four stock exchanges (Madrid, Barcelona, Bilbao and Valencia) are linked in one electronic system, the **SIBE** or **continuous market**: over a hundred companies trade from 9:00 to 17:30 with a single order book per security.\n\nIt's run by **BME**, part of the Swiss SIX group since 2020."
+    },
+    {
+     "title": "The IBEX 35",
+     "body": "It brings together the **35 most liquid companies** on the continuous market, weighted by market capitalisation (counting only freely traded shares). A technical committee reviews it twice a year, in June and December: some companies come in and others drop out.\n\nIts base was **3,000 points** at the end of 1989."
+    },
+    {
+     "title": "Other segments",
+     "body": "• **BME Growth:** small, expanding companies, with fewer requirements and more risk (formerly MAB).\n• **Latibex:** Latin American companies trading in euros.\n• **Fixed income:** bonds and bills.",
+     "key": "The IBEX 35 is the shop window; the continuous market is the whole shop.",
+     "tip": "Not being in the IBEX doesn't make it a bad company: it just means it's traded less."
+    }
+   ]
+  },
+  "u5r": {
+   "title": "Unit review",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u5l1-1": {
+   "prompt": "What is a stock exchange?",
+   "options": [
+    "A regulated market where buy and sell orders for securities are matched",
+    "A bank that looks after your savings",
+    "A company that sells you its own shares every day"
+   ],
+   "explanation": "The exchange matches orders: it brings buyers and sellers together with public rules and prices."
+  },
+  "u5l1-2": {
+   "prompt": "What is the stock exchange for? Select all that apply.",
+   "options": [
+    "Letting investors sell whenever they want",
+    "Guaranteeing that shares go up",
+    "Giving a public price for every security",
+    "Helping companies raise funding"
+   ],
+   "explanation": "The exchange guarantees nothing about the price: it just makes buying and selling possible."
+  },
+  "u5l1-3": {
+   "prompt": "When you buy a share on the stock market, you're normally buying it from another investor, not from the company.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "The company only receives money when it issues new shares (a listing or a capital increase)."
+  },
+  "u5l1-4": {
+   "prompt": "Match each name with its role.",
+   "options": [
+    "BME",
+    "CNMV",
+    "Broker",
+    "Listed company"
+   ],
+   "explanation": "Market, regulator, intermediary and company: four different roles.",
+   "right": [
+    "Supervises the securities markets in Spain",
+    "Its shares are bought and sold on the exchange",
+    "Takes your order to the market",
+    "Runs the Spanish stock exchange"
+   ]
+  },
+  "u5l1-5": {
+   "prompt": "Being able to sell your shares whenever you want is called ____.",
+   "options": [
+    "return",
+    "inflation",
+    "solvency",
+    "liquidity"
+   ],
+   "explanation": "Liquidity is one of the stock market's big advantages over, say, a flat."
+  },
+  "u5l1-6": {
+   "prompt": "The stock exchange guarantees shares a minimum price.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "The price can fall as far as people's appetite to buy falls. Nobody guarantees it."
+  },
+  "u5l1-7": {
+   "prompt": "Laura wants to buy shares in a Spanish company and a stranger messages her on Instagram: «I'll buy them for you straight from the stock exchange, just send me a Bizum». What does she do?",
+   "options": [
+    "Uses a broker authorised by the CNMV",
+    "Goes to the Madrid Stock Exchange building to buy them",
+    "Sends him the Bizum"
+   ],
+   "explanation": "You access the stock market through an authorised intermediary, never through messages from strangers.",
+   "feedback": [
+    "The shares are held in her name, with a supervised intermediary.",
+    "The exchange doesn't deal with individuals: you always trade through an intermediary.",
+    "Most likely that money never comes back: nobody buys shares via Bizum."
+   ]
+  },
+  "u5l1-8": {
+   "prompt": "What do you say to Lumi?",
+   "options": [
+    "You give it to the CNMV",
+    "Usually not: you pay another investor who's selling",
+    "Yes, always"
+   ],
+   "explanation": "In the everyday market, investors buy and sell shares among themselves.",
+   "feedback": [
+    "The CNMV supervises; it doesn't receive your money.",
+    "Exactly! The company only receives money when it issues new shares.",
+    "Only in a listing or a capital increase. Day to day, the money goes to another investor."
+   ],
+   "lines": [
+    "If I buy an Inditex share, am I giving the money to Inditex? 🤔"
+   ]
+  },
+  "u5l1-9": {
+   "prompt": "Quick: who supervises the securities markets in Spain?",
+   "options": [
+    "The CNMV",
+    "The INE",
+    "The tax agency"
+   ],
+   "explanation": "The Comisión Nacional del Mercado de Valores, Spain's securities regulator."
+  },
+  "u5l1-10": {
+   "prompt": "A stock exchange applies the same rules and public prices to all participants.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "That's why it's an organised, transparent market."
+  },
+  "u5l2-1": {
+   "prompt": "Match each participant with what they do.",
+   "options": [
+    "Retail investor",
+    "Institutional investor",
+    "Market maker",
+    "High-frequency trader"
+   ],
+   "explanation": "Each participant has different goals and tools.",
+   "right": [
+    "Quotes a buying and a selling price at the same time",
+    "Algorithms that trade in microseconds",
+    "Pension fund or insurer",
+    "Individual investing their own money"
+   ]
+  },
+  "u5l2-2": {
+   "prompt": "How does a market maker make money?",
+   "options": [
+    "From company dividends",
+    "By charging the CNMV a fee",
+    "From the difference between its buying and selling prices"
+   ],
+   "explanation": "It buys a little cheaper than it sells: that difference is its margin."
+  },
+  "u5l2-3": {
+   "prompt": "Retail or institutional?",
+   "options": [
+    "A workplace pension fund",
+    "An insurer",
+    "An index fund manager",
+    "Ana, who invests €100 a month",
+    "Pablo on his broker's app"
+   ],
+   "explanation": "Institutional investors invest the money of thousands of people.",
+   "right": [
+    "Retail",
+    "Institutional"
+   ]
+  },
+  "u5l2-4": {
+   "prompt": "Bruno sees a share drop 8 % within minutes of a results release and wants to «beat the algorithms on speed» by buying and selling all afternoon. What does he do?",
+   "options": [
+    "Trades all afternoon on every headline",
+    "Puts all his money into one quick trade",
+    "Remembers he's up against faster machines and doesn't trade on impulse"
+   ],
+   "explanation": "In the short term, the retail investor plays at a disadvantage.",
+   "feedback": [
+    "He's late to every move: the algorithms reacted in microseconds.",
+    "Huge risk on a bet against the fastest players in the market.",
+    "He saves himself fees, spreads and stress in a race he can't win."
+   ]
+  },
+  "u5l2-5": {
+   "prompt": "Institutional investors, such as funds and insurers, move far more money than an individual.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "They manage the money of thousands of people: their orders are enormous."
+  },
+  "u5l2-6": {
+   "prompt": "Quick: who trades in microseconds?",
+   "options": [
+    "Pension funds",
+    "Retail investors",
+    "High-frequency algorithms"
+   ],
+   "explanation": "They're programs that buy and sell at speeds no human could match."
+  },
+  "u5l2-7": {
+   "prompt": "A retail investor competes on equal terms with professionals in information and speed.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Professionals have more data, better tools and almost zero costs."
+  },
+  "u5l2-8": {
+   "prompt": "What advantages does a retail investor have in the long term? Select all that apply.",
+   "options": [
+    "Doesn't need to make money every quarter",
+    "Gets information before anyone else",
+    "Can keep costs very low",
+    "Can wait for years without answering to anyone"
+   ],
+   "explanation": "Information and speed aren't on their side; patience and costs are."
+  },
+  "u5l2-9": {
+   "prompt": "Every time you buy a share, another investor ____ it.",
+   "options": [
+    "gives away",
+    "rents out",
+    "lends",
+    "sells"
+   ],
+   "explanation": "Every purchase has a sale on the other side."
+  },
+  "u5l2-10": {
+   "prompt": "What do you say to Lumi?",
+   "options": [
+    "You have to trade faster than them",
+    "Exactly, better not even try",
+    "In the short term they're hard to beat; in the long term you're not competing with them"
+   ],
+   "explanation": "Retail investors don't win on speed, but on time and low costs.",
+   "feedback": [
+    "They trade in microseconds: that race is already lost.",
+    "Not really: you don't need to beat them on speed to invest well for the long term.",
+    "Well spotted! Investing for the long term means sharing in what companies earn."
+   ],
+   "lines": [
+    "I've read that funds and algorithms dominate the stock market 😰",
+    "So us regular people don't count for anything?"
+   ]
+  },
+  "u5l3-1": {
+   "prompt": "The best buying price is €20.10 and the best selling price €20.14. If you buy right now, what price do you pay?",
+   "options": [
+    "€20.12",
+    "€20.14",
+    "€20.10"
+   ],
+   "explanation": "You buy at the best selling price (ask): it's what the seller is asking."
+  },
+  "u5l3-2": {
+   "prompt": "Quick: in that book (€20.10 / €20.14), how big is the spread?",
+   "options": [],
+   "explanation": "20.14 − 20.10 = €0.04.",
+   "unit": "€"
+  },
+  "u5l3-3": {
+   "prompt": "Simulate your purchase: you want 600 shares right now. The book has 300 at €10.04 and 800 at €10.05. How much do you pay in total?",
+   "options": [],
+   "explanation": "300 × 10.04 = €3,012 and 300 × 10.05 = €3,015. Total: €6,027.",
+   "unit": "€"
+  },
+  "u5l3-4": {
+   "prompt": "In that purchase of 600 shares for €6,027, what's your average price per share?",
+   "options": [],
+   "explanation": "6,027 ÷ 600 = €10.045: a bit more than the best price because you ate through two steps.",
+   "unit": "€"
+  },
+  "u5l3-5": {
+   "prompt": "Put in order what happens when lots of buyers arrive in a hurry.",
+   "options": [
+    "The shares at €10.04 run out",
+    "The next purchases are matched at €10.05",
+    "The last traded price goes up",
+    "Lots of market buy orders arrive"
+   ],
+   "explanation": "That's how the price rises: demand eats through supply step by step."
+  },
+  "u5l3-6": {
+   "prompt": "Put a Madrid Stock Exchange session in order.",
+   "options": [
+    "Closing auction (17:30-17:35)",
+    "The closing price is published",
+    "Market open (9:00-17:30)",
+    "Opening auction (8:30-9:00)"
+   ],
+   "explanation": "Two auctions frame the continuous session."
+  },
+  "u5l3-7": {
+   "prompt": "If more sellers than buyers turn up, the price tends to fall.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Sellers in a hurry accept lower and lower prices from the buy side of the book."
+  },
+  "u5l3-8": {
+   "prompt": "What can move a share's price? Select all that apply.",
+   "options": [
+    "An economic data release",
+    "More sellers turning up than buyers",
+    "The colour of its logo",
+    "The company's results"
+   ],
+   "explanation": "Anything that changes what people are willing to pay moves the price."
+  },
+  "u5l3-9": {
+   "prompt": "Ana wants to sell 2,000 shares in a small company right now. On the buy side of the book there are 300 at €5.00, 500 at €4.90 and 1,200 at €4.70. What does she do?",
+   "options": [
+    "Places a limit order at €5.00 and sells bit by bit",
+    "Sells all 2,000 at market",
+    "Sells at market and places more orders at the same time"
+   ],
+   "explanation": "With illiquid securities, a large market order moves the price against you.",
+   "feedback": [
+    "She sells what's there at her price and the rest waits: she doesn't give it away out of impatience.",
+    "She eats through the book: she gets €9,590, an average of about €4.80 versus the best price of €5.00.",
+    "More selling pressure on a thin book: the price falls even further."
+   ]
+  },
+  "u5l3-10": {
+   "prompt": "A share's price is what the company is really worth.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It's the latest deal between a buyer and a seller; what the company is worth is another matter."
+  },
+  "u5l4-1": {
+   "prompt": "Match each market with its hours (Spanish mainland time).",
+   "options": [
+    "Madrid Stock Exchange",
+    "New York",
+    "Crypto",
+    "Currencies"
+   ],
+   "explanation": "Each market has its own hours; crypto never closes.",
+   "right": [
+    "24 hours, 7 days",
+    "Sunday night to Friday night",
+    "From 15:30 to 22:00",
+    "From 9:00 to 17:30"
+   ]
+  },
+  "u5l4-2": {
+   "prompt": "Quick: on a normal Wednesday at 16:00 (Spanish mainland time), what's open? Select all that apply.",
+   "options": [
+    "New York Stock Exchange",
+    "Crypto",
+    "Tokyo Stock Exchange",
+    "Madrid Stock Exchange"
+   ],
+   "explanation": "At 16:00 Madrid and New York overlap; Tokyo closed hours ago and crypto never closes."
+  },
+  "u5l4-3": {
+   "prompt": "Quick: Saturday at 12:00. What can you buy instantly?",
+   "options": [
+    "Apple shares in New York",
+    "Bitcoin",
+    "IBEX 35 shares"
+   ],
+   "explanation": "Stock exchanges close at the weekend; crypto trades 24/7."
+  },
+  "u5l4-4": {
+   "prompt": "What time does the New York Stock Exchange normally open in Spanish mainland time?",
+   "options": [
+    "15:30",
+    "9:00",
+    "22:00"
+   ],
+   "explanation": "From 9:30 to 16:00 in New York = from 15:30 to 22:00 in Spain."
+  },
+  "u5l4-5": {
+   "prompt": "How many hours does the Madrid Stock Exchange session last, from 9:00 to 17:30?",
+   "options": [],
+   "explanation": "From 9:00 to 17:30 is 8 and a half hours: 8.5.",
+   "unit": "hours"
+  },
+  "u5l4-6": {
+   "prompt": "Because of the clock change, for a few weeks a year New York opens at 14:30 Spanish time.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "The US and Europe don't put their clocks forward or back on the same day."
+  },
+  "u5l4-7": {
+   "prompt": "It's 23:00. A US company has just reported very strong results and Pablo places a market buy order. What's most likely to happen?",
+   "options": [
+    "It cancels itself because it's night-time",
+    "It executes right now at the last closing price",
+    "It executes at the open, maybe at a much higher price than the close"
+   ],
+   "explanation": "With the market closed, a market order executes at the open, at whatever the price is.",
+   "feedback": [
+    "Normally it stays pending until the open.",
+    "The exchange is closed: there's nobody in the book to match it with during normal hours.",
+    "If the share gaps up at the open, he pays quite a bit more than he saw on screen."
+   ]
+  },
+  "u5l4-8": {
+   "prompt": "On a Tuesday at 10:00 (Spanish mainland time), open or closed?",
+   "options": [
+    "New York Stock Exchange",
+    "Bitcoin",
+    "Frankfurt Stock Exchange",
+    "Tokyo Stock Exchange",
+    "London Stock Exchange",
+    "Madrid Stock Exchange"
+   ],
+   "explanation": "At 10:00 in Spain, New York hasn't opened yet and it's already night in Tokyo.",
+   "right": [
+    "Open",
+    "Closed"
+   ]
+  },
+  "u5l4-9": {
+   "prompt": "If you place an order while the exchange is closed, it executes at the last closing price.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It waits for the open and executes at whatever the price is then."
+  },
+  "u5l4-10": {
+   "prompt": "When a share opens far from the previous close because of overnight news, it's called a ____.",
+   "options": [
+    "dividend",
+    "stock split",
+    "spread",
+    "gap"
+   ],
+   "explanation": "A gap is a jump in price with no trades in between."
+  },
+  "u5l5-1": {
+   "prompt": "What does a broker do?",
+   "options": [
+    "Decides which companies get listed",
+    "Guarantees that your investments go up",
+    "Receives your order and takes it to the market"
+   ],
+   "explanation": "It's the intermediary between you and the market."
+  },
+  "u5l5-2": {
+   "prompt": "If your broker goes bust, your shares are lost with it.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "They're in your name and kept separate from the broker's own assets."
+  },
+  "u5l5-3": {
+   "prompt": "FOGAIN compensates you if your shares fall on the stock market.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It only covers the firm being unable to give you back your money or securities. Market falls are your own risk."
+  },
+  "u5l5-4": {
+   "prompt": "Quick: up to how much does FOGAIN cover per investor?",
+   "options": [
+    "€100,000",
+    "€20,000",
+    "There's no limit"
+   ],
+   "explanation": "Up to €100,000 per investor, if the Spanish firm can't give you back what's yours."
+  },
+  "u5l5-5": {
+   "prompt": "Put the journey of your buy order in order.",
+   "options": [
+    "The shares are registered in your name",
+    "It's matched with a seller",
+    "It settles in two business days",
+    "You place the order in the app",
+    "The broker takes it to the market"
+   ],
+   "explanation": "From the app to the register: that's how the shares become yours."
+  },
+  "u5l5-6": {
+   "prompt": "Marta sees an ad for a broker offering «0 fees and a welcome bonus». It doesn't appear in the CNMV registers and has no European passport. What does she do?",
+   "options": [
+    "Opens an account: zero fees can't be beaten",
+    "Pays in just €500 to try it out",
+    "Looks for another, authorised broker"
+   ],
+   "explanation": "Without authorisation there's no supervision and no guarantee fund.",
+   "feedback": [
+    "If it's a scam outfit, she could lose everything she pays in, with no regulator to turn to.",
+    "If it isn't authorised, she can lose that €500 too. And they usually ask for more later.",
+    "Her securities will be held by a supervised firm."
+   ]
+  },
+  "u5l5-7": {
+   "prompt": "Match each name with its function.",
+   "options": [
+    "Broker",
+    "Iberclear",
+    "Custodian",
+    "FOGAIN"
+   ],
+   "explanation": "Each piece protects one part of the process.",
+   "right": [
+    "Central securities register in Spain",
+    "Holds your securities in your name",
+    "Investor guarantee fund in Spain",
+    "Takes your order to the market"
+   ]
+  },
+  "u5l5-8": {
+   "prompt": "In Europe, a share purchase settles in ____ business days.",
+   "options": [
+    "zero",
+    "thirty",
+    "five",
+    "two"
+   ],
+   "explanation": "T+2: the trade date plus two business days."
+  },
+  "u5l5-9": {
+   "prompt": "Before opening an account, it's worth checking that the broker is authorised by the CNMV or another EU regulator.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It's the first check: if it doesn't appear, it isn't an authorised firm."
+  },
+  "u5l5-10": {
+   "prompt": "Pablo has €60,000 with a broker based in another EU country and assumes he's covered by Spain's FOGAIN. What does he do?",
+   "options": [
+    "Nothing: all guarantee funds are the same",
+    "Checks which guarantee fund applies to him and how much it covers",
+    "Takes it all out and keeps it at home"
+   ],
+   "explanation": "The protection depends on the firm's country: check before opening an account.",
+   "feedback": [
+    "They aren't: the EU minimum is €20,000 and each country sets its own.",
+    "He finds out he's covered by the broker's home-country fund, with a different limit: now he knows where he stands.",
+    "At home there's no protection at all, and he also loses purchasing power."
+   ]
+  },
+  "u5l6-1": {
+   "prompt": "Match each term with what it means.",
+   "options": [
+    "OPS",
+    "OPV",
+    "Secondary market",
+    "Prospectus"
+   ],
+   "explanation": "Knowing who receives the money is the key to telling them apart.",
+   "right": [
+    "The owners sell; the money goes to them",
+    "Investors buying and selling among themselves",
+    "Information and risks approved by the CNMV",
+    "New shares; the money goes to the company"
+   ]
+  },
+  "u5l6-2": {
+   "prompt": "Primary or secondary market?",
+   "options": [
+    "A listing with newly issued shares",
+    "You sell your shares to another investor",
+    "You buy a government bond that's already trading",
+    "A company raises capital with new shares",
+    "You buy 10 Iberdrola shares from your app",
+    "The Treasury issues bills at auction"
+   ],
+   "explanation": "If the issuer receives new money, it's primary; if something that already exists changes hands, it's secondary.",
+   "right": [
+    "Primary",
+    "Secondary"
+   ]
+  },
+  "u5l6-3": {
+   "prompt": "Today you buy Inditex shares on the stock market. Who gets your money?",
+   "options": [
+    "The investor selling them to you",
+    "Inditex",
+    "The CNMV"
+   ],
+   "explanation": "It's the secondary market: Inditex gets nothing from that purchase."
+  },
+  "u5l6-4": {
+   "prompt": "In a pure OPV, the company receives no new money: the selling shareholders do.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "If the company wants new money, it has to issue shares (OPS)."
+  },
+  "u5l6-5": {
+   "prompt": "A listing with lots of publicity is guaranteed to go up.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Publicity doesn't change what the company is worth; many end up below their offer price."
+  },
+  "u5l6-6": {
+   "prompt": "Which document should you read before taking part in a listing?",
+   "options": [
+    "Comments on social media",
+    "An influencer's summary",
+    "The prospectus approved by the CNMV"
+   ],
+   "explanation": "The prospectus explains the business, the accounts and the risks."
+  },
+  "u5l6-7": {
+   "prompt": "Everyone's talking about a fashion company's listing and Bruno wants to put all his savings in on day one. What does he do?",
+   "options": [
+    "Puts all his savings in",
+    "Takes out a loan to buy more",
+    "Reads the prospectus and, if he invests, keeps it to a small part"
+   ],
+   "explanation": "An IPO is just another investment, not a once-in-a-lifetime opportunity.",
+   "feedback": [
+    "If the share falls 30 % in the first few months, he's left with no safety net and with losses.",
+    "Debt for a bet on a company that's only just started trading: double the risk.",
+    "If the debut goes badly, his plan doesn't fall apart."
+   ]
+  },
+  "u5l6-8": {
+   "prompt": "When an already listed company issues new shares to raise money, it carries out a capital ____.",
+   "options": [
+    "reduction",
+    "liquidation",
+    "auction",
+    "increase"
+   ],
+   "explanation": "A capital increase is the primary market even though the company is already listed."
+  },
+  "u5l6-9": {
+   "prompt": "Put the steps of a stock market listing in order.",
+   "options": [
+    "The CNMV approves the prospectus",
+    "Investors apply for shares at the set price",
+    "First day of trading on the secondary market",
+    "The company decides to go public"
+   ],
+   "explanation": "After the debut, the shares are traded between investors."
+  },
+  "u5l6-10": {
+   "prompt": "What do you say to Lumi?",
+   "options": [
+    "Not necessarily: sometimes the owners use it to sell at a high price",
+    "If it goes public, it's guaranteed to go up",
+    "Yes, only the best ones go public"
+   ],
+   "explanation": "In an IPO, the seller picks the moment, and usually picks a good one for themselves.",
+   "feedback": [
+    "Exactly! The seller knows the company better than you do. Read the prospectus before deciding.",
+    "Nothing guarantees it'll go up: many end up below their offer price.",
+    "The ones that list are those that want money or whose owners want to sell: it isn't necessarily a good sign."
+   ],
+   "lines": [
+    "If a company goes public, it must be doing brilliantly, right? 🚀"
+   ]
+  },
+  "u5l7-1": {
+   "prompt": "Match each name with what it is.",
+   "options": [
+    "IBEX 35",
+    "Continuous market",
+    "BME Growth",
+    "Latibex"
+   ],
+   "explanation": "The Spanish stock market has several segments with different rules and risks.",
+   "right": [
+    "Electronic system linking the four exchanges",
+    "Small, expanding companies",
+    "Latin American companies in euros",
+    "The 35 most liquid companies"
+   ]
+  },
+  "u5l7-2": {
+   "prompt": "How often is the IBEX 35 line-up reviewed in the ordinary course?",
+   "options": [
+    "Twice a year",
+    "Every day",
+    "Never: it's always the same companies"
+   ],
+   "explanation": "In June and December a technical committee decides what comes in and what goes out."
+  },
+  "u5l7-3": {
+   "prompt": "IBEX 35, July 2012: debt crisis, soaring risk premium and a bailout of the Spanish banks. What do you think the index did over the following year and a half?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "The worst headlines are when the market is hardest to predict: that's why it's worth having a plan that doesn't rely on guessing.",
+   "horizon": "the following year and a half"
+  },
+  "u5l7-4": {
+   "prompt": "The IBEX 35 includes every company listed on the Spanish stock market.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Only the 35 most liquid; there are over a hundred on the continuous market."
+  },
+  "u5l7-5": {
+   "prompt": "A company can be dropped from the IBEX 35 at a review.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "If it's no longer among the most liquid, the committee can remove it."
+  },
+  "u5l7-6": {
+   "prompt": "Which segment does each company fit into?",
+   "options": [
+    "A small tech start-up looking to grow",
+    "A Brazilian company that wants to trade in euros",
+    "A small, expanding family business",
+    "A big, heavily traded Spanish bank",
+    "A large utility with millions of shares traded a day"
+   ],
+   "explanation": "Size, liquidity and origin decide the segment.",
+   "right": [
+    "Continuous market (IBEX)",
+    "BME Growth",
+    "Latibex"
+   ]
+  },
+  "u5l7-7": {
+   "prompt": "The IBEX 35 started from a base of ____ points at the end of 1989.",
+   "options": [
+    "100",
+    "1,000",
+    "35",
+    "3,000"
+   ],
+   "explanation": "That base is the yardstick for how much it has risen or fallen."
+  },
+  "u5l7-8": {
+   "prompt": "Pablo wants to put almost all his savings into a BME Growth company because «it could multiply». What does he bear in mind?",
+   "options": [
+    "That they tend to be smaller, less liquid and riskier",
+    "That BME Growth guarantees the investment",
+    "That it's as liquid as an IBEX company"
+   ],
+   "explanation": "Small company: more potential, but also more risk and less liquidity.",
+   "feedback": [
+    "If he invests, he does it with a small part, knowing it may be hard to sell.",
+    "No segment of the stock market guarantees anything.",
+    "No: with low volume, selling quickly may force him to cut the price a lot."
+   ]
+  },
+  "u5l7-9": {
+   "prompt": "How does the IBEX 35 weight its companies?",
+   "options": [
+    "By market capitalisation, counting freely traded shares",
+    "They all weigh the same",
+    "By number of employees"
+   ],
+   "explanation": "The biggest companies by market value carry more weight in the index."
+  }
+ }
+}

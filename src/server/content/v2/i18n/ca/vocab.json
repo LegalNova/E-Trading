@@ -1,0 +1,1276 @@
+{
+ "unit": {
+  "title": "Vocabulari de l'inversor",
+  "description": "Les paraules del mercat, d'«inflació» a «W-8BEN», per entendre qualsevol notícia"
+ },
+ "lessons": {
+  "vocabl1": {
+   "title": "Els diners i l'estalvi",
+   "steps": [
+    {
+     "title": "Sis paraules bàsiques",
+     "body": "• **Inflació:** pujada general dels preus.\n• **IPC:** l'índex que mesura la inflació a Espanya (el publica l'INE).\n• **Interès compost:** guanyar interessos sobre els interessos.\n• **Rendibilitat real:** rendibilitat menys inflació.\n• **Fons d'emergència:** de 3 a 6 mesos de despeses sense risc.\n• **Horitzó temporal:** quan necessitaràs els diners."
+    },
+    {
+     "title": "Per recordar",
+     "body": "Amb aquestes sis paraules ja entens per què convé invertir el que no necessitaràs aviat.",
+     "key": "La inflació encongeix els diners aturats; l'interès compost els fa créixer amb el temps.",
+     "tip": "Repassa una paraula al dia: d'aquí a un mes parlaràs com un inversor."
+    }
+   ]
+  },
+  "vocabl2": {
+   "title": "La borsa per dins",
+   "steps": [
+    {
+     "title": "Les paraules del mercat",
+     "body": "• **Acció:** una part d'una empresa.\n• **Dividend:** part del benefici que es reparteix entre els accionistes.\n• **Capitalització:** preu × nombre d'accions.\n• **Índex:** resumeix un grup d'empreses (IBEX 35, S&P 500).\n• **OPV:** sortida a borsa.\n• **Bròker:** qui porta les teves ordres al mercat i custodia els teus valors."
+    },
+    {
+     "title": "Comprar i vendre",
+     "body": "• **Bid / ask:** millor preu de compra i millor preu de venda.\n• **Spread** (forquilla): la diferència entre tots dos.\n• **Liquiditat:** facilitat per comprar o vendre sense moure el preu.\n• **Ordre a mercat:** s'executa ara mateix, al millor preu disponible.\n• **Ordre limitada:** només s'executa al teu preu o a un de millor.",
+     "tip": "L'spread és un cost amagat: com menys líquid és l'actiu, més gran."
+    }
+   ]
+  },
+  "vocabl3": {
+   "title": "Fons, ETF i bons",
+   "steps": [
+    {
+     "title": "Fons i ETF",
+     "body": "• **Fons d'inversió:** diners de molta gent gestionats en comú.\n• **ETF:** fons que cotitza a borsa, gairebé sempre indexat.\n• **Fons indexat:** copia un índex amb costos baixos.\n• **TER:** cost anual del fons.\n• **Acumulació / distribució:** reinverteix o reparteix els dividends.\n• **KID:** resum obligatori de riscos i costos."
+    },
+    {
+     "title": "Bons",
+     "body": "• **Bo:** un préstec a un estat o a una empresa.\n• **Cupó:** l'interès que paga.\n• **Venciment:** quan et tornen els diners.\n• **Durada:** quant es mou el seu preu si canvien els tipus.\n• **High yield:** bons de pitjor qualitat que paguen més.",
+     "tip": "Abans de comprar un fons, busca'n el TER al KID."
+    }
+   ]
+  },
+  "vocabl4": {
+   "title": "Risc i cartera",
+   "steps": [
+    {
+     "title": "Mesurar el risc",
+     "body": "• **Volatilitat:** quant es mou un preu.\n• **Drawdown:** la caiguda més gran des d'un màxim.\n• **Correlació:** si dos actius es mouen junts (de −1 a +1).\n• **Risc específic:** el d'una empresa concreta.\n• **Risc de mercat:** el que afecta gairebé totes les empreses."
+    },
+    {
+     "title": "Gestionar la cartera",
+     "body": "• **Diversificar:** repartir entre molts actius.\n• **Assignació d'actius:** quant en accions, en bons i en liquiditat.\n• **Reequilibrar:** tornar al repartiment triat.\n• **Palanquejament:** operar amb més diners dels que tens.\n• **Posar-se curt:** vendre el que no tens per tornar-ho a comprar més barat.",
+     "tip": "Quan sentis «palanquejat», pensa: «les pèrdues també es multipliquen»."
+    }
+   ]
+  },
+  "vocabl5": {
+   "title": "Gràfics i espelmes",
+   "steps": [
+    {
+     "title": "Llegir un gràfic",
+     "body": "• **OHLC:** obertura, màxim, mínim i tancament.\n• **Tendència:** alcista, baixista o lateral.\n• **Suport / resistència:** zones on el preu va deixar de caure / de pujar.\n• **Volum:** quant s'ha negociat.\n• **Gap (buit):** salt entre un tancament i l'obertura següent."
+    },
+    {
+     "title": "Les espelmes",
+     "body": "• **Cos:** de l'obertura al tancament. **Metxa:** fins al màxim i el mínim.\n• **Doji:** obertura i tancament gairebé iguals.\n• **Martell:** metxa inferior llarga després d'una caiguda.\n• **Estrella fugaç:** metxa superior llarga després d'una pujada.\n• **Envolvent:** un cos es menja l'anterior.\n• **Marubozu:** cos llarg sense metxes.",
+     "tip": "Davant d'una espelma estranya, pregunta't primer d'on ve el preu."
+    }
+   ]
+  },
+  "vocabl6": {
+   "title": "Indicadors tècnics",
+   "steps": [
+    {
+     "title": "Els més utilitzats",
+     "body": "• **Mitjana mòbil (SMA / EMA):** mitjana dels últims preus.\n• **Creu daurada:** la mitjana de 50 creua per sobre de la de 200.\n• **RSI:** força de 0 a 100; per sobre de 70, sobrecompra.\n• **MACD:** impuls amb dues mitjanes exponencials.\n• **Bandes de Bollinger:** volatilitat al voltant d'una mitjana.\n• **ATR:** rang mitjà de les espelmes.\n• **Fibonacci:** nivells típics de retrocés."
+    },
+    {
+     "title": "Per recordar",
+     "body": "Molts indicadors mesuren el mateix amb un nom diferent: n'hi ha prou amb un de tendència, un d'impuls i el volum.",
+     "key": "Els indicadors confirmen; no prediuen.",
+     "tip": "Sobrecompra no vol dir «caurà»."
+    }
+   ]
+  },
+  "vocabl7": {
+   "title": "Trading i gestió del risc",
+   "steps": [
+    {
+     "title": "Les paraules del trader",
+     "body": "• **Stop loss:** ven si el preu cau fins al teu nivell.\n• **Take profit:** ven quan arriba al teu objectiu.\n• **Mida de la posició:** quantes accions compres segons el teu stop.\n• **R:** el que arrisques en una operació.\n• **Esperança matemàtica:** el que guanya de mitjana cada operació."
+    },
+    {
+     "title": "Provar abans d'arriscar",
+     "body": "• **Backtesting:** provar un sistema amb dades del passat.\n• **Sobreoptimització:** ajustar-lo tant al passat que falla en el futur.\n• **Paper trading:** operar en un simulador sense diners reals.\n• **Diari de trading:** registre de cada operació.\n• **Scalping, day trading, swing:** de segons, d'un dia o de dies a setmanes.",
+     "tip": "Si no saps quant arrisques (1R), no estàs operant: estàs apostant."
+    }
+   ]
+  },
+  "vocabl8": {
+   "title": "Els biaixos que costen diners",
+   "steps": [
+    {
+     "title": "Quan el cervell decideix per tu",
+     "body": "• **Aversió a la pèrdua:** perdre fa el doble de mal del que alegra guanyar.\n• **Efecte disposició:** vendre aviat el que guanya i aguantar el que perd.\n• **FOMO:** por de quedar-se fora d'una pujada.\n• **Efecte ramat:** fer el que fa la majoria.\n• **Excés de confiança:** creure que en saps més del que en saps."
+    },
+    {
+     "title": "Més dreceres perilloses",
+     "body": "• **Confirmació:** llegir només el que et dona la raó.\n• **Ancoratge:** fixar-te en un preu passat («era a 100»).\n• **Recència:** creure que el que ha passat últimament continuarà passant.\n• **Cost enfonsat:** continuar perquè ja has perdut molt.\n• **Fal·làcia del jugador:** «ha baixat 6 dies, demà segur que puja».\n• **Venjança:** operar més gros per recuperar una pèrdua.",
+     "tip": "Després de tres pèrdues seguides, apaga la pantalla."
+    }
+   ]
+  },
+  "vocabl9": {
+   "title": "Empreses i valoració",
+   "steps": [
+    {
+     "title": "Els números d'una empresa",
+     "body": "• **BPA:** benefici per acció.\n• **PER:** preu ÷ BPA; quants anys de benefici pagues.\n• **PEG:** PER ÷ creixement del benefici.\n• **EBITDA:** benefici abans d'interessos, impostos, depreciacions i amortitzacions.\n• **Flux de caixa lliure:** la caixa que genera menys el que inverteix."
+    },
+    {
+     "title": "Qualitat i preu",
+     "body": "• **ROE / ROIC:** rendibilitat dels fons propis / del capital invertit.\n• **Fossat:** avantatge competitiu durador.\n• **Marge de seguretat:** valor estimat menys preu.\n• **CAPE:** PER del mercat amb beneficis mitjans de 10 anys.",
+     "tip": "Un PER baix no és barat si l'empresa va malament; un d'alt no és car si creix molt."
+    }
+   ]
+  },
+  "vocabl10": {
+   "title": "Invertir des d'Espanya",
+   "steps": [
+    {
+     "title": "Impostos",
+     "body": "• **Base de l'estalvi:** la part de l'IRPF on tributen les teves inversions (del 19 % al 30 %).\n• **Traspàs:** moure diners entre fons sense pagar impostos.\n• **Regla dels dos mesos:** si recompres el mateix en dos mesos, la pèrdua s'espera.\n• **Model 720 / 721:** declarar béns o cripto a l'estranger de més de 50.000 €.\n• **W-8BEN:** abaixa al 15 % la retenció dels EUA sobre els dividends."
+    },
+    {
+     "title": "Protecció",
+     "body": "• **CNMV:** el supervisor dels mercats a Espanya.\n• **Xiringuito:** entitat que ofereix inversions sense autorització.\n• **FOGAIN:** cobreix fins a 100.000 € per inversor si la teva entitat d'inversió no et pot retornar el que és teu.\n• **MiCA:** el reglament europeu de criptoactius.",
+     "tip": "Si et contacten sense que ho hagis demanat, comprova-ho a cnmv.es abans de res."
+    }
+   ]
+  },
+  "vocabr": {
+   "title": "Repàs de la unitat",
+   "steps": []
+  }
+ },
+ "questions": {
+  "vocabl1-1": {
+   "prompt": "Relaciona cada paraula amb la seva definició.",
+   "options": [
+    "Inflació",
+    "IPC",
+    "Interès compost",
+    "Rendibilitat real"
+   ],
+   "explanation": "Són les quatre peces del trencaclosques: els preus pugen (inflació, mesurada amb l'IPC) i els teus diners han de créixer més (rendibilitat real), cosa que l'interès compost ajuda a aconseguir.",
+   "right": [
+    "Guanyar interessos sobre els interessos",
+    "Rendibilitat menys inflació",
+    "L'índex que mesura la inflació a Espanya",
+    "Pujada general dels preus"
+   ]
+  },
+  "vocabl1-2": {
+   "prompt": "Guardar de 3 a 6 mesos de despeses sense risc és tenir un fons ____.",
+   "options": [
+    "d'inversió",
+    "de rendibilitat",
+    "de jubilació",
+    "d'emergència"
+   ],
+   "explanation": "El fons d'emergència va primer: així no hauràs de vendre les teves inversions en un mal moment per un imprevist."
+  },
+  "vocabl1-3": {
+   "prompt": "Juga a favor teu o en contra teu com a estalviador?",
+   "options": [
+    "Inflació alta",
+    "Comissions altes",
+    "Començar a invertir aviat",
+    "Interès compost",
+    "Rendibilitat real positiva"
+   ],
+   "explanation": "La inflació i les comissions resten cada any; l'interès compost i el temps sumen.",
+   "right": [
+    "A favor teu",
+    "En contra teu"
+   ]
+  },
+  "vocabl1-4": {
+   "prompt": "Què li contestes?",
+   "options": [
+    "No: és quan necessitaràs els diners",
+    "Gairebé: és quants diners tens",
+    "És el termini d'un préstec"
+   ],
+   "explanation": "L'horitzó temporal decideix quant risc pots assumir: com més lluny, més temps per recuperar-te de les caigudes.",
+   "feedback": [
+    "Bingo! Els diners per d'aquí a 6 mesos no s'inverteixen igual que els d'aquí a 20 anys. 🎯",
+    "Això seria el teu patrimoni. L'horitzó va de temps, no de quantitat.",
+    "Fred, fred. És el teu termini, no el del banc. 🥶"
+   ],
+   "lines": [
+    "Diccionari Lumi, entrada «horitzó temporal»: el que veus per la finestreta de l'autobús 🚌",
+    "A que l'he clavat?"
+   ]
+  },
+  "vocabl1-5": {
+   "prompt": "Rendibilitat real ≈ rendibilitat − ____.",
+   "options": [
+    "comissions",
+    "dividends",
+    "impostos",
+    "inflació"
+   ],
+   "explanation": "És la manera ràpida de saber si els teus diners guanyen o perden poder adquisitiu."
+  },
+  "vocabl1-6": {
+   "prompt": "El teu dipòsit paga un 3 % i la inflació és del 2 %. Quina és la teva rendibilitat real aproximada?",
+   "options": [],
+   "explanation": "3 − 2 = 1 %. Guanyes poder adquisitiu, encara que poc.",
+   "unit": "%"
+  },
+  "vocabl1-7": {
+   "prompt": "L'interès compost també funciona en contra teu quan tens deutes.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Un deute que genera interessos sobre interessos creix cada vegada més de pressa: per això les targetes revolving són tan perilloses."
+  },
+  "vocabl1-8": {
+   "prompt": "Quina paraula descriu «el que tens menys el que deus»?",
+   "options": [
+    "Estalvi",
+    "Renda",
+    "Patrimoni"
+   ],
+   "explanation": "La renda és el que t'entra; l'estalvi, el que no gastes; el patrimoni, la foto del que és teu de debò."
+  },
+  "vocabl1-9": {
+   "prompt": "Ràpid: qui publica l'IPC a Espanya?",
+   "options": [
+    "L'INE",
+    "El BCE",
+    "La CNMV"
+   ],
+   "explanation": "L'Institut Nacional d'Estadística, cada mes. El BCE vigila la inflació de l'euro i la CNMV supervisa els mercats."
+  },
+  "vocabl1-10": {
+   "prompt": "Relaciona cada situació amb la seva paraula.",
+   "options": [
+    "La barra de pa passa d'1 € a 1,10 €",
+    "Els teus interessos generen més interessos",
+    "Necessitaràs els diners d'aquí a 15 anys"
+   ],
+   "explanation": "Posar cara a les paraules amb exemples quotidians és la millor manera de no oblidar-les.",
+   "right": [
+    "Interès compost",
+    "Inflació",
+    "Horitzó temporal"
+   ]
+  },
+  "vocabl2-1": {
+   "prompt": "Preu de l'acció × nombre d'accions = ____ borsària.",
+   "options": [
+    "liquiditat",
+    "rendibilitat",
+    "dividend",
+    "capitalització"
+   ],
+   "explanation": "És el que val l'empresa a la borsa en aquell moment."
+  },
+  "vocabl2-2": {
+   "prompt": "La diferència entre el millor preu de compra i el de venda s'anomena ____.",
+   "options": [
+    "gap",
+    "marge",
+    "cupó",
+    "spread"
+   ],
+   "explanation": "També s'anomena forquilla: en pagues una mica cada vegada que compres i vens."
+  },
+  "vocabl2-3": {
+   "prompt": "Una OPV és…",
+   "options": [
+    "Un tipus de bo públic",
+    "Una ordre de venda urgent",
+    "La sortida a borsa d'una empresa"
+   ],
+   "explanation": "Oferta pública de venda: l'empresa (o els seus propietaris) ven accions a nous inversors i comença a cotitzar."
+  },
+  "vocabl2-4": {
+   "prompt": "Què li aclareixes?",
+   "options": [
+    "Bid és vendre i ask és comprar",
+    "Bid: el màxim que algú paga ara; ask: el mínim pel qual algú ven",
+    "Són el mateix amb noms diferents"
+   ],
+   "explanation": "Compres a l'ask i vens al bid: per això, si compres i vens a l'instant, perds l'spread.",
+   "feedback": [
+    "Al revés: el bid és el preu dels compradors i l'ask, el dels venedors.",
+    "Això mateix! I entre tots dos hi ha l'spread, la comissió invisible. 🕵️",
+    "Si fossin iguals no hi hauria spread… ni negoci per a ningú. 😅"
+   ],
+   "lines": [
+    "M'han dit que el «bid» és una puja d'eBay 🛒",
+    "I l'«ask», el que pregunto jo, oi?"
+   ]
+  },
+  "vocabl2-5": {
+   "prompt": "Quina ordre garanteix el preu però no l'execució?",
+   "options": [
+    "Limitada",
+    "A mercat",
+    "Cap de les dues"
+   ],
+   "explanation": "La limitada només s'executa al teu preu o a un de millor: si el mercat no hi arriba, no s'executa."
+  },
+  "vocabl2-6": {
+   "prompt": "Relaciona cada paraula amb el seu exemple.",
+   "options": [
+    "Índex",
+    "Dividend",
+    "Bròker",
+    "OPV"
+   ],
+   "explanation": "Índex, dividend, bròker i OPV apareixen en gairebé qualsevol notícia de borsa.",
+   "right": [
+    "Qui porta la teva ordre al mercat",
+    "Una empresa comença a cotitzar",
+    "0,50 € per acció que reparteix l'empresa",
+    "IBEX 35"
+   ]
+  },
+  "vocabl2-7": {
+   "prompt": "Una ordre a mercat t'assegura el preu exacte que has vist a la pantalla.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "T'assegura l'execució, no el preu: si el preu es mou o hi ha poca liquiditat, pots comprar una mica més car."
+  },
+  "vocabl2-8": {
+   "prompt": "Ordena el que passa quan compres una acció.",
+   "options": [
+    "El bròker l'envia al mercat",
+    "Les accions queden custodiades a nom teu",
+    "Es creua amb una ordre de venda",
+    "Dones l'ordre a l'app del bròker"
+   ],
+   "explanation": "La teva ordre viatja al llibre d'ordres, es creua amb algú que ven i el bròker guarda les accions separades del seu propi patrimoni."
+  },
+  "vocabl2-9": {
+   "prompt": "Un actiu molt líquid es pot comprar i vendre en grans quantitats sense moure gaire el preu.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Les grans accions de l'S&P 500 o de l'IBEX són molt líquides: spreads minúsculs i molt de volum."
+  },
+  "vocabl2-10": {
+   "prompt": "L'spread sol ser més gran en els actius poc líquids.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Amb pocs compradors i venedors, la distància entre el que uns paguen i el que altres demanen s'eixampla."
+  },
+  "vocabl3-1": {
+   "prompt": "Relaciona cada producte amb la seva definició.",
+   "options": [
+    "Fons d'inversió",
+    "ETF",
+    "Fons indexat",
+    "Bo"
+   ],
+   "explanation": "Els fons i els ETF reparteixen els teus diners entre molts actius; un bo és un préstec que et torna interessos.",
+   "right": [
+    "Copia un índex amb costos baixos",
+    "Un préstec a un estat o a una empresa",
+    "Fons que cotitza a borsa com una acció",
+    "Diners de molta gent gestionats en comú"
+   ]
+  },
+  "vocabl3-2": {
+   "prompt": "El cost anual d'un fons o d'un ETF s'anomena…",
+   "options": [
+    "KID",
+    "TER",
+    "Cupó"
+   ],
+   "explanation": "TER o despeses corrents. És de les poques coses que pots controlar quan tries."
+  },
+  "vocabl3-3": {
+   "prompt": "És una paraula de fons o de bons?",
+   "options": [
+    "Cupó",
+    "Venciment",
+    "Acumulació",
+    "Indexat",
+    "TER",
+    "Durada"
+   ],
+   "explanation": "Cupó, venciment i durada són del món dels préstecs; TER, acumulació i indexat, del dels fons.",
+   "right": [
+    "Fons i ETF",
+    "Bons"
+   ]
+  },
+  "vocabl3-4": {
+   "prompt": "Un fons ____ reinverteix els dividends en lloc de repartir-los.",
+   "options": [
+    "de distribució",
+    "de renda fixa",
+    "de garantia",
+    "d'acumulació"
+   ],
+   "explanation": "El de distribució els reparteix; el d'acumulació els reinverteix i no tributes fins que vens."
+  },
+  "vocabl3-5": {
+   "prompt": "Què li aclareixes?",
+   "options": [
+    "És un fons pensat per a menors",
+    "És el document amb els riscos i els costos del producte",
+    "És el nom del gestor del fons"
+   ],
+   "explanation": "El KID resumeix en poques pàgines què és el producte, el seu risc, els seus costos i els seus escenaris.",
+   "feedback": [
+    "Té gràcia, però no: és el document de dades fonamentals. 😄",
+    "Exacte! Unes quantes pàgines obligatòries. Llegir-lo estalvia ensurts. 📄",
+    "No: el KID és un document, no una persona."
+   ],
+   "lines": [
+    "La Lumi explica: el KID és el fill petit del fons 👶",
+    "Ve amb tots els fons, però ningú no el llegeix."
+   ]
+  },
+  "vocabl3-6": {
+   "prompt": "Un bo high yield és més segur que un amb qualificació AAA.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Paga més precisament perquè és més arriscat: el seu emissor té més probabilitats de no tornar els diners."
+  },
+  "vocabl3-7": {
+   "prompt": "Què mesura la durada d'un bo?",
+   "options": [
+    "Quant es mou el seu preu si canvien els tipus",
+    "L'interès que paga cada any",
+    "Els anys que fa que es va emetre"
+   ],
+   "explanation": "Amb una durada de 7, si els tipus pugen un punt, el preu cau al voltant d'un 7 %."
+  },
+  "vocabl3-8": {
+   "prompt": "Relaciona cada paraula del bo amb el seu significat.",
+   "options": [
+    "Cupó",
+    "Venciment",
+    "High yield"
+   ],
+   "explanation": "Tres paraules que veuràs en qualsevol fitxa d'un bo.",
+   "right": [
+    "Quan et tornen els diners",
+    "L'interès que paga",
+    "Paga més perquè és més arriscat"
+   ]
+  },
+  "vocabl3-9": {
+   "prompt": "Els ETF que pot comprar un inversor minorista a la UE compleixen la normativa ____.",
+   "options": [
+    "MiCA",
+    "IRPF",
+    "FOGAIN",
+    "UCITS"
+   ],
+   "explanation": "UCITS és la normativa europea de fons. MiCA regula les criptos i el FOGAIN és el fons de garantia d'inversions."
+  },
+  "vocabl3-10": {
+   "prompt": "Un fons de distribució reparteix els dividends entre els seus partícips.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Te'ls paga periòdicament i tributen l'any en què els cobres."
+  },
+  "vocabl4-1": {
+   "prompt": "La caiguda més gran des d'un màxim fins al mínim posterior s'anomena ____.",
+   "options": [
+    "volatilitat",
+    "reequilibri",
+    "spread",
+    "drawdown"
+   ],
+   "explanation": "La volatilitat diu quant es mou; el drawdown, quant fa mal."
+  },
+  "vocabl4-2": {
+   "prompt": "Relaciona cada paraula amb el que mesura o fa.",
+   "options": [
+    "Volatilitat",
+    "Correlació",
+    "Diversificar",
+    "Reequilibrar"
+   ],
+   "explanation": "Les dues primeres mesuren; les dues últimes són coses que fas amb la teva cartera.",
+   "right": [
+    "Repartir entre molts actius",
+    "Tornar al repartiment triat",
+    "Si dos actius es mouen junts",
+    "Quant es mou un preu"
+   ]
+  },
+  "vocabl4-3": {
+   "prompt": "La teva cartera cau de 10.000 € a 7.000 € des del seu màxim. De quin percentatge és el drawdown?",
+   "options": [],
+   "explanation": "(10.000 − 7.000) ÷ 10.000 = 0,30 → 30 %. I per recuperar-lo cal pujar un 43 %.",
+   "unit": "%"
+  },
+  "vocabl4-4": {
+   "prompt": "Què li respons?",
+   "options": [
+    "És un tipus de diversificació",
+    "Multiplica els guanys i les pèrdues per igual",
+    "Sí, multiplica els guanys i prou"
+   ],
+   "explanation": "El palanquejament amplifica en les dues direccions: amb 10 vegades, cada 1 % de l'actiu és un 10 % dels teus diners.",
+   "feedback": [
+    "No: diversificar reparteix el risc; palanquejar-se el concentra.",
+    "Això! El múscul prestat també et pot aixafar. 😬",
+    "I les pèrdues, Lumi. Amb un palanquejament de 10 vegades, una caiguda del 10 % s'endú tots els teus diners."
+   ],
+   "lines": [
+    "Paraula del dia: «palanquejament» 💪",
+    "És quan el bròker et deixa múscul per aixecar més diners. Tot són avantatges, oi?"
+   ]
+  },
+  "vocabl4-5": {
+   "prompt": "Una correlació de −1 vol dir que dos actius es mouen sempre en sentit contrari.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "+1 seria sempre junts; 0, sense relació."
+  },
+  "vocabl4-6": {
+   "prompt": "Vendre una cosa que no tens per tornar-la a comprar més barata és posar-se ____.",
+   "options": [
+    "llarg",
+    "líquid",
+    "indexat",
+    "curt"
+   ],
+   "explanation": "La pèrdua potencial és il·limitada: el preu pot pujar sense sostre."
+  },
+  "vocabl4-7": {
+   "prompt": "Quines d'aquestes paraules serveixen per mesurar el risc? Marca-les totes.",
+   "options": [
+    "Dividend",
+    "Desviació típica",
+    "Cupó",
+    "Volatilitat",
+    "Drawdown"
+   ],
+   "explanation": "La volatilitat, el drawdown i la desviació típica mesuren quant es pot moure o caure una cosa. El dividend i el cupó són el que cobres."
+  },
+  "vocabl4-8": {
+   "prompt": "Quin risc NO desapareix encara que tinguis centenars d'accions diferents?",
+   "options": [
+    "El risc que una sola empresa faci fallida",
+    "El risc específic de cada empresa",
+    "El risc de mercat"
+   ],
+   "explanation": "Diversificar elimina gairebé tot el risc específic. El de mercat afecta totes les empreses alhora: només se suavitza combinant-hi altres actius."
+  },
+  "vocabl4-9": {
+   "prompt": "L'assignació d'actius consisteix a triar quina acció concreta compres.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "És decidir quant va a accions, a bons, a liquiditat i a altres actius. Triar l'acció concreta és una altra cosa."
+  },
+  "vocabl4-10": {
+   "prompt": "15 segons! Relaciona cada risc.",
+   "options": [
+    "Risc específic",
+    "Risc de mercat"
+   ],
+   "explanation": "L'específic es diversifica; el de mercat, no.",
+   "right": [
+    "Afecta gairebé totes les empreses",
+    "Afecta una sola empresa"
+   ]
+  },
+  "vocabl5-1": {
+   "prompt": "Relaciona cada espelma amb la seva descripció.",
+   "options": [
+    "Doji",
+    "Martell",
+    "Estrella fugaç",
+    "Marubozu"
+   ],
+   "explanation": "Quatre espelmes bàsiques: empat, rebuig a baix, rebuig a dalt i domini total.",
+   "right": [
+    "Metxa inferior llarga després d'una caiguda",
+    "Cos llarg sense metxes",
+    "Metxa superior llarga després d'una pujada",
+    "Obertura i tancament gairebé iguals"
+   ]
+  },
+  "vocabl5-2": {
+   "prompt": "Ordena les lletres d'OHLC.",
+   "options": [
+    "Màxim",
+    "Mínim",
+    "Tancament",
+    "Obertura"
+   ],
+   "explanation": "Open, high, low, close (obertura, màxim, mínim, tancament): així es resumeix qualsevol espelma."
+  },
+  "vocabl5-3": {
+   "prompt": "El salt de preu entre un tancament i l'obertura següent és un…",
+   "options": [
+    "Doji",
+    "Spread",
+    "Gap"
+   ],
+   "explanation": "Gap o buit. Sol aparèixer després de notícies publicades amb el mercat tancat."
+  },
+  "vocabl5-4": {
+   "prompt": "Parla d'una sola espelma o del gràfic sencer?",
+   "options": [
+    "Tendència",
+    "Suport",
+    "Resistència",
+    "Doji",
+    "Metxa",
+    "Cos"
+   ],
+   "explanation": "El cos, la metxa i el doji descriuen una espelma; la tendència, el suport i la resistència en necessiten moltes.",
+   "right": [
+    "Una espelma",
+    "El gràfic sencer"
+   ]
+  },
+  "vocabl5-5": {
+   "prompt": "Què li expliques?",
+   "options": [
+    "Tranquil·la: és una espelma amb una metxa inferior llarga que apareix després d'una pujada",
+    "És el mateix que un martell, surti on surti",
+    "És un doji amb molt de volum"
+   ],
+   "explanation": "En les espelmes, el context canvia el nom: la mateixa forma és un martell després d'una caiguda i un home penjat després d'una pujada.",
+   "feedback": [
+    "Uf! D'acord. Un martell en mal lloc, vaja. 😅",
+    "La forma és igual, però el nom canvia amb el context: després d'una caiguda és un martell; després d'una pujada, un home penjat.",
+    "No: el doji té l'obertura i el tancament gairebé iguals; l'home penjat, una metxa inferior llarga."
+   ],
+   "lines": [
+    "He vist un «home penjat» al gràfic 😱",
+    "Truco a algú?"
+   ]
+  },
+  "vocabl5-6": {
+   "prompt": "La línia fina d'una espelma que arriba al màxim o al mínim s'anomena ____.",
+   "options": [
+    "cos",
+    "tendència",
+    "gap",
+    "metxa"
+   ],
+   "explanation": "També s'anomena ombra."
+  },
+  "vocabl5-7": {
+   "prompt": "Una espelma el cos de la qual es menja del tot el de l'anterior, en sentit contrari, és una…",
+   "options": [
+    "Envolvent",
+    "Baldufa",
+    "Harami"
+   ],
+   "explanation": "El harami és just el contrari: la segona espelma, petita, cap dins de la primera."
+  },
+  "vocabl5-8": {
+   "prompt": "El tancament és el preu més important d'una espelma.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "És el preu en què compradors i venedors van deixar el marcador al final del període."
+  },
+  "vocabl5-9": {
+   "prompt": "La zona on el preu ha deixat de pujar diverses vegades s'anomena ____.",
+   "options": [
+    "metxa",
+    "volum",
+    "suport",
+    "resistència"
+   ],
+   "explanation": "Aquí apareixen venedors. On deixa de caure, suport."
+  },
+  "vocabl5-10": {
+   "prompt": "Què mesura el volum?",
+   "options": [
+    "Quant ha pujat el preu",
+    "La distància entre les metxes",
+    "Quant s'ha negociat en un període"
+   ],
+   "explanation": "Un moviment amb molt de volum té més gent al darrere que un amb poc."
+  },
+  "vocabl6-1": {
+   "prompt": "L'indicador de força que va de 0 a 100 s'anomena ____.",
+   "options": [
+    "MACD",
+    "ATR",
+    "PER",
+    "RSI"
+   ],
+   "explanation": "Relative Strength Index (índex de força relativa). Per sobre de 70, sobrecompra; per sota de 30, sobrevenda."
+  },
+  "vocabl6-2": {
+   "prompt": "Relaciona cada indicador amb el que mesura.",
+   "options": [
+    "Mitjana mòbil",
+    "ATR",
+    "Bandes de Bollinger",
+    "MACD"
+   ],
+   "explanation": "Cada indicador mira una cosa diferent: cap on va el preu, quant es mou o amb quina força.",
+   "right": [
+    "El rang mitjà de les espelmes",
+    "L'impuls amb dues mitjanes exponencials",
+    "La volatilitat al voltant d'una mitjana",
+    "La mitjana dels últims preus"
+   ]
+  },
+  "vocabl6-3": {
+   "prompt": "Un RSI per sobre de 70 vol dir que el preu segur que caurà.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Indica sobrecompra, no una ordre de venda: en tendències fortes, l'RSI pot passar setmanes per sobre de 70."
+  },
+  "vocabl6-4": {
+   "prompt": "La mitjana de 50 sessions creua per sobre de la de 200. Com s'anomena?",
+   "options": [
+    "Divergència",
+    "Creu daurada",
+    "Creu de la mort"
+   ],
+   "explanation": "Creu daurada: senyal alcista clàssic, tot i que arriba tard i dona falses alarmes."
+  },
+  "vocabl6-5": {
+   "prompt": "Mesura tendència, impuls o volatilitat?",
+   "options": [
+    "RSI",
+    "ATR",
+    "MACD",
+    "Mitjana mòbil de 200",
+    "Bandes de Bollinger"
+   ],
+   "explanation": "Mitjanes per a la tendència; RSI i MACD per a l'impuls; ATR i Bollinger per a la volatilitat.",
+   "right": [
+    "Tendència",
+    "Impuls",
+    "Volatilitat"
+   ]
+  },
+  "vocabl6-6": {
+   "prompt": "Què li expliques?",
+   "options": [
+    "És un indicador de volum",
+    "Els seus números donen nivells típics de retrocés: 38,2 %, 50 %, 61,8 %…",
+    "Prediu el preu exacte de l'endemà"
+   ],
+   "explanation": "Els retrocessos de Fibonacci (23,6 %, 38,2 %, 50 %, 61,8 % i 78,6 %) assenyalen zones on un moviment es pot aturar. Són referències, no profecies.",
+   "feedback": [
+    "No: Fibonacci marca nivells de retrocés d'un moviment, no el volum.",
+    "I de franc! Però compte: que molta gent els miri no els fa màgics. ✨",
+    "Tant de bo. 😅 Només marca zones que vigila molta gent."
+   ],
+   "lines": [
+    "Fibonacci era un matemàtic italià, oi? 🇮🇹",
+    "Què hi pinta, al meu gràfic? Li he de pagar drets d'autor?"
+   ]
+  },
+  "vocabl6-7": {
+   "prompt": "El que més ha pujat últimament tendeix a continuar pujant un temps: és el ____.",
+   "options": [
+    "reequilibri",
+    "gap",
+    "ancoratge",
+    "momentum"
+   ],
+   "explanation": "És una de les idees tècniques amb més suport en dades històriques."
+  },
+  "vocabl6-8": {
+   "prompt": "La mitjana mòbil exponencial dona més pes als preus recents que la simple.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Per això l'EMA reacciona abans als canvis, tot i que també dona més senyals falsos."
+  },
+  "vocabl6-9": {
+   "prompt": "Si la mitjana de 50 creua per sota de la de 200, és la creu de la ____.",
+   "options": [
+    "vida",
+    "sort",
+    "tarda",
+    "mort"
+   ],
+   "explanation": "Creu de la mort: senyal baixista clàssic, també amb moltes falses alarmes."
+  },
+  "vocabl6-10": {
+   "prompt": "Les bandes de Bollinger s'estrenyen quan hi ha poca volatilitat.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Les bandes se separen dues desviacions típiques de la mitjana: si el preu es mou poc, s'ajunten."
+  },
+  "vocabl7-1": {
+   "prompt": "Relaciona cada terme amb la seva funció.",
+   "options": [
+    "Stop loss",
+    "Take profit",
+    "Mida de la posició",
+    "Diari de trading"
+   ],
+   "explanation": "Les quatre peces de qualsevol operació amb cap: sortida dolenta, sortida bona, quant i per escrit.",
+   "right": [
+    "Ven quan arriba al teu objectiu",
+    "Quantes accions compres segons el teu stop",
+    "Registre de cada operació",
+    "Ven si el preu cau fins al teu nivell"
+   ]
+  },
+  "vocabl7-2": {
+   "prompt": "Provar un sistema amb dades del passat s'anomena ____.",
+   "options": [
+    "paper trading",
+    "scalping",
+    "reequilibri",
+    "backtesting"
+   ],
+   "explanation": "Imprescindible abans de fer servir diners reals, encara que el passat no garanteix el futur."
+  },
+  "vocabl7-3": {
+   "prompt": "Arrisques 50 € en una operació i en guanyes 150. Quantes R has guanyat?",
+   "options": [],
+   "explanation": "150 ÷ 50 = 3R.",
+   "unit": "R"
+  },
+  "vocabl7-4": {
+   "prompt": "Ajustar un sistema fins que el passat surt perfecte, i que després falli en el futur, és…",
+   "options": [
+    "Indexar",
+    "Sobreoptimitzar",
+    "Diversificar"
+   ],
+   "explanation": "En anglès, overfitting: el sistema aprèn el soroll del passat en lloc d'una regla útil."
+  },
+  "vocabl7-5": {
+   "prompt": "Operar en un simulador sense diners reals s'anomena ____ trading.",
+   "options": [
+    "day",
+    "copy",
+    "swing",
+    "paper"
+   ],
+   "explanation": "Paper trading: just el que fas a E-Trading."
+  },
+  "vocabl7-6": {
+   "prompt": "Quant dura cada estil d'operar?",
+   "options": [
+    "Day trading",
+    "Scalping",
+    "Swing trading"
+   ],
+   "explanation": "Com més curt és el termini, més pesen els costos i més difícil és guanyar.",
+   "right": [
+    "Segons o minuts",
+    "Dins del mateix dia",
+    "Dies o setmanes"
+   ]
+  },
+  "vocabl7-7": {
+   "prompt": "Què li aclareixes?",
+   "options": [
+    "És el percentatge d'operacions que encertes",
+    "És la rendibilitat que promet un curs de trading",
+    "És el que guanya de mitjana cada operació, comptant encerts i errors"
+   ],
+   "explanation": "Esperança = (% d'encert × guany mitjà) − (% d'error × pèrdua mitjana).",
+   "feedback": [
+    "No exactament: pots encertar el 70 % de les vegades i perdre diners si les teves pèrdues són molt més grans que els teus guanys.",
+    "Desconfia d'aquestes promeses. 🚩 L'esperança es calcula amb les teves operacions, no amb les seves.",
+    "Això! I si és negativa, com més operacions facis, més perds. 📉"
+   ],
+   "lines": [
+    "L'esperança matemàtica és el que espero guanyar quan em llevo al matí ☀️",
+    "No?"
+   ]
+  },
+  "vocabl7-8": {
+   "prompt": "Encertes el 40 % de les vegades guanyant 2R i falles el 60 % perdent 1R. Quina és la teva esperança per operació?",
+   "options": [],
+   "explanation": "(0,4 × 2) − (0,6 × 1) = 0,8 − 0,6 = 0,2R. Encertes menys de la meitat de les vegades i, tot i així, guanyes a la llarga.",
+   "unit": "R"
+  },
+  "vocabl7-9": {
+   "prompt": "Ordena el que es fa en cada operació.",
+   "options": [
+    "Calcular la mida de la posició",
+    "Enviar l'ordre",
+    "Apuntar-la al diari",
+    "Decidir on va l'stop"
+   ],
+   "explanation": "Primer l'stop, després la mida: la mida depèn de la distància a l'stop."
+  },
+  "vocabl7-10": {
+   "prompt": "Si no saps quant arrisques en una operació…",
+   "options": [
+    "Estàs diversificant",
+    "Estàs fent backtesting",
+    "Estàs apostant, no operant"
+   ],
+   "explanation": "Sense un 1R definit no hi ha manera de controlar les pèrdues."
+  },
+  "vocabl8-1": {
+   "prompt": "«Era a 120 € i ara és a 70 €: està regalada.» Quin biaix és?",
+   "options": [
+    "FOMO",
+    "Ancoratge",
+    "Recència"
+   ],
+   "explanation": "El preu passat no diu res del valor actual: avui l'empresa pot valer molt menys que llavors."
+  },
+  "vocabl8-2": {
+   "prompt": "Relaciona cada biaix amb la frase que el delata.",
+   "options": [
+    "FOMO",
+    "Cost enfonsat",
+    "Fal·làcia del jugador",
+    "Efecte ramat"
+   ],
+   "explanation": "Reconèixer la frase al teu cap és el primer pas per frenar el biaix.",
+   "right": [
+    "«Ha baixat 6 dies: demà segur que puja»",
+    "«Si tothom el compra, deu ser bo»",
+    "«Ja he perdut tant que ara no el vendré»",
+    "«Tothom guanya menys jo: compro ja!»"
+   ]
+  },
+  "vocabl8-3": {
+   "prompt": "Segons l'aversió a la pèrdua, perdre fa més o menys el doble de mal del que alegra guanyar el mateix.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Per això costa tant vendre amb pèrdues i acceptar que t'has equivocat."
+  },
+  "vocabl8-4": {
+   "prompt": "Què li dius?",
+   "options": [
+    "És excés de confiança, però ben fet",
+    "Sí: és l'estratègia de doblar després de perdre",
+    "No, Lumi: això es diu operar per venjança"
+   ],
+   "explanation": "Operar per venjança és un dels errors més cars. La regla: després de tres pèrdues seguides, es para el dia.",
+   "feedback": [
+    "Una mica d'excés de confiança sí que n'hi ha, però sobretot és venjança. I ben fet no ho està. 😅",
+    "Doblar després de perdre és la manera més ràpida de buidar un compte. No és estratègia, és venjança.",
+    "D'acord, d'acord… Apago la pantalla i demà miro el diari. 🫣"
+   ],
+   "lines": [
+    "Ahir vaig perdre 3 operacions seguides 😤",
+    "Avui n'obriré una el triple de grossa per recuperar-ho tot. Això es diu estratègia, oi?"
+   ]
+  },
+  "vocabl8-5": {
+   "prompt": "Vendre aviat el que guanya i aguantar el que perd és…",
+   "options": [
+    "La recència",
+    "L'ancoratge",
+    "L'efecte disposició"
+   ],
+   "explanation": "Així es tallen els guanys i es deixen córrer les pèrdues: just al revés del que convé."
+  },
+  "vocabl8-6": {
+   "prompt": "És un biaix o una bona pràctica?",
+   "options": [
+    "Comprar perquè ho fa tothom",
+    "Creure que el que ha passat últimament continuarà passant sempre",
+    "Escriure les teves regles abans d'operar",
+    "Llegir només fòrums que pensen com tu",
+    "Parar després de tres pèrdues seguides"
+   ],
+   "explanation": "Els biaixos no s'eliminen: es frenen amb regles escrites abans d'operar.",
+   "right": [
+    "Biaix",
+    "Bona pràctica"
+   ]
+  },
+  "vocabl8-7": {
+   "prompt": "En Pablo fa un mes que llegeix que una acció «petarà». Només segueix comptes que opinen el mateix. Què hauria de fer?",
+   "options": [
+    "Buscar expressament l'opinió contrària abans de decidir",
+    "Comprar-ne més: si tothom ho diu, deu ser veritat",
+    "Bloquejar qui opini diferent per no posar-se nerviós"
+   ],
+   "explanation": "El biaix de confirmació et fa buscar només el que et dona la raó. Es combat llegint qui pensa el contrari.",
+   "feedback": [
+    "Molt bé: és l'antídot del biaix de confirmació. Si la idea aguanta les crítiques, millor.",
+    "Ramat i confirmació alhora: un combo car.",
+    "Així la seva bombolla informativa és perfecta… i la seva anàlisi, nul·la. 🫧"
+   ]
+  },
+  "vocabl8-8": {
+   "prompt": "«Fa tres mesos que puja: continuarà així sempre.» Quin biaix és?",
+   "options": [
+    "Cost enfonsat",
+    "Recència",
+    "Aversió a la pèrdua"
+   ],
+   "explanation": "Donar massa pes al que ha passat últimament. Els mercats canvien de rumb sense avisar."
+  },
+  "vocabl8-9": {
+   "prompt": "Creure que en saps més del que en saps i operar a totes hores és excés de ____.",
+   "options": [
+    "prudència",
+    "liquiditat",
+    "optimisme",
+    "confiança"
+   ],
+   "explanation": "L'excés de confiança porta a operar massa, i cada operació té costos."
+  },
+  "vocabl8-10": {
+   "prompt": "Posar nom a un biaix fa que desaparegui per sempre.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Ajuda a detectar-lo, però no l'elimina: per això calen regles escrites."
+  },
+  "vocabl9-1": {
+   "prompt": "Relaciona cada sigla amb el seu significat.",
+   "options": [
+    "BPA",
+    "PER",
+    "PEG",
+    "ROE"
+   ],
+   "explanation": "Les sigles fan por, però cadascuna és una divisió senzilla.",
+   "right": [
+    "PER ÷ creixement",
+    "Rendibilitat dels fons propis",
+    "Preu ÷ benefici per acció",
+    "Benefici per acció"
+   ]
+  },
+  "vocabl9-2": {
+   "prompt": "Una acció cotitza a 60 € i el seu benefici per acció és de 4 €. Quin és el seu PER?",
+   "options": [],
+   "explanation": "60 ÷ 4 = 15: pagues 15 anys dels beneficis actuals.",
+   "unit": "vegades"
+  },
+  "vocabl9-3": {
+   "prompt": "Un avantatge competitiu durador que protegeix els beneficis es coneix com a ____.",
+   "options": [
+    "mur",
+    "marge",
+    "gap",
+    "fossat"
+   ],
+   "explanation": "Moat, en anglès: una marca, una xarxa o uns costos que la competència no pot copiar."
+  },
+  "vocabl9-4": {
+   "prompt": "Què li expliques?",
+   "options": [
+    "El benefici abans d'interessos, impostos, depreciacions i amortitzacions",
+    "El benefici que queda al final, després de tot",
+    "El deute de l'empresa"
+   ],
+   "explanation": "L'EBITDA serveix per comparar negocis, però no descompta interessos, impostos ni inversions: no són els diners que li queden a l'empresa.",
+   "feedback": [
+    "Expecto beneficium! 🧙 Útil, però compte: no és caixa ni benefici net.",
+    "Aquest és el benefici net. L'EBITDA va abans de restar-hi diverses coses.",
+    "No: el deute va a part. Per a això hi ha el deute net."
+   ],
+   "lines": [
+    "L'EBITDA sona a encanteri de Harry Potter 🪄",
+    "Què és en realitat?"
+   ]
+  },
+  "vocabl9-5": {
+   "prompt": "Mesura com de cara és l'acció o com de bo és el negoci?",
+   "options": [
+    "Marge operatiu",
+    "ROIC",
+    "CAPE",
+    "PER",
+    "ROE",
+    "EV/EBITDA"
+   ],
+   "explanation": "Les ràtios de valoració comparen el preu amb els beneficis; les de qualitat, els beneficis amb el que s'ha invertit o amb les vendes.",
+   "right": [
+    "Com de cara o barata és",
+    "Com de bo és el negoci"
+   ]
+  },
+  "vocabl9-6": {
+   "prompt": "El preu és el que pagues; el ____ és el que obtens.",
+   "options": [
+    "benefici",
+    "dividend",
+    "risc",
+    "valor"
+   ],
+   "explanation": "Una de les idees clau del value investing: comprar amb un marge de seguretat entre tots dos."
+  },
+  "vocabl9-7": {
+   "prompt": "Una empresa té un PER de 20 i el seu benefici creix un 10 % l'any. Quin és el seu PEG?",
+   "options": [],
+   "explanation": "20 ÷ 10 = 2. Un PEG proper a 1 se sol considerar raonable; 2 suggereix que pagues força per aquest creixement.",
+   "unit": "vegades"
+  },
+  "vocabl9-8": {
+   "prompt": "Un PER baix sempre vol dir que l'acció és barata.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Pot ser barata… o ser una empresa els beneficis de la qual cauran. Cal mirar per què és baix."
+  },
+  "vocabl9-9": {
+   "prompt": "El CAPE és…",
+   "options": [
+    "El PER del mercat amb beneficis mitjans de 10 anys",
+    "El PER d'una empresa aquest any",
+    "El dividend mitjà d'un índex"
+   ],
+   "explanation": "També s'anomena PER de Shiller. Un CAPE molt alt s'ha associat a rendibilitats futures més baixes."
+  },
+  "vocabl9-10": {
+   "prompt": "La caixa que genera el negoci menys el que inverteix és el flux de caixa ____.",
+   "options": [
+    "brut",
+    "net",
+    "comptable",
+    "lliure"
+   ],
+   "explanation": "Si els beneficis no s'acaben convertint mai en caixa, desconfia."
+  },
+  "vocabl10-1": {
+   "prompt": "Moure diners d'un fons a un altre sense pagar impostos s'anomena ____.",
+   "options": [
+    "reemborsament",
+    "bescanvi",
+    "rescat",
+    "traspàs"
+   ],
+   "explanation": "És un avantatge dels fons d'inversió. Els ETF no tenen aquest règim: cada venda tributa."
+  },
+  "vocabl10-2": {
+   "prompt": "Relaciona cada sigla amb el que és.",
+   "options": [
+    "CNMV",
+    "FOGAIN",
+    "MiCA",
+    "W-8BEN"
+   ],
+   "explanation": "Quatre sigles que protegeixen els teus diners o t'estalvien impostos.",
+   "right": [
+    "El reglament europeu de criptoactius",
+    "Abaixa al 15 % la retenció dels EUA sobre els dividends",
+    "Cobreix fins a 100.000 € si falla la teva entitat d'inversió",
+    "El supervisor dels mercats a Espanya"
+   ]
+  },
+  "vocabl10-3": {
+   "prompt": "Una entitat que ofereix inversions sense autorització és un…",
+   "options": [
+    "Xiringuito financer",
+    "Bròker low cost",
+    "Neobanc"
+   ],
+   "explanation": "La CNMV publica una llista d'advertiments amb els xiringuitos detectats."
+  },
+  "vocabl10-4": {
+   "prompt": "En quin model es declara?",
+   "options": [
+    "Criptomonedes en una plataforma estrangera per més de 50.000 €",
+    "Un compte bancari a Alemanya amb més de 50.000 €",
+    "Bitcoins custodiats fora d'Espanya per més de 50.000 €",
+    "Accions en un bròker estranger per més de 50.000 €"
+   ],
+   "explanation": "El 720 és per a comptes, valors i immobles a l'estranger; el 721, per a criptomonedes custodiades fora d'Espanya.",
+   "right": [
+    "Model 720",
+    "Model 721"
+   ]
+  },
+  "vocabl10-5": {
+   "prompt": "Què li contestes?",
+   "options": [
+    "Abans de res, busca'ls al web de la CNMV",
+    "Si tenen molts seguidors, deuen ser de fiar",
+    "Els passo només la meitat del DNI, per si de cas"
+   ],
+   "explanation": "Rendibilitat garantida i contacte per xarxes són senyals clàssics de xiringuito. Comprova sempre el registre de la CNMV.",
+   "feedback": [
+    "D'acord… surten a la llista d'advertiments. Sort. 🙈 Fa olor de xiringuito.",
+    "Els seguidors es compren. El que no es compra és una autorització de la CNMV.",
+    "Ni la meitat ni un quart. 😅 Primer, comprovar-ho a la CNMV."
+   ],
+   "lines": [
+    "M'ha escrit «Inversiones Golden Lambo» per Instagram 🏎️",
+    "Prometen un 5 % setmanal garantit. Els passo el meu DNI?"
+   ]
+  },
+  "vocabl10-6": {
+   "prompt": "Els guanys de les teves accions tributen cada any encara que no les venguis.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Els guanys només tributen quan vens. Els dividends, en canvi, tributen l'any en què els cobres."
+  },
+  "vocabl10-7": {
+   "prompt": "Els guanys de les teves inversions tributen a la base ____ de l'IRPF.",
+   "options": [
+    "del patrimoni",
+    "del consum",
+    "del treball",
+    "de l'estalvi"
+   ],
+   "explanation": "Del 19 % al 30 %, segons el tram."
+  },
+  "vocabl10-8": {
+   "prompt": "Vens unes accions amb pèrdues i recompres les mateixes el mes següent. Què passa amb la pèrdua?",
+   "options": [
+    "Encara no la pots aplicar: ho impedeix la regla dels dos mesos",
+    "La compenses igual que sempre",
+    "Desapareix per sempre"
+   ],
+   "explanation": "No es perd: s'ajorna fins que vens les accions recomprades."
+  },
+  "vocabl10-9": {
+   "prompt": "Si el teu banc fa fallida, el Fons de Garantia de Dipòsits cobreix fins a ____ € per persona i entitat.",
+   "options": [
+    "20.000",
+    "50.000",
+    "1.000.000",
+    "100.000"
+   ],
+   "explanation": "Fins a 100.000 € per titular i entitat. El FOGAIN cobreix una altra cosa: els valors en entitats d'inversió."
+  },
+  "vocabl10-10": {
+   "prompt": "Un ETF es pot traspassar a un altre fons sense tributar, igual que un fons d'inversió.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Amb caràcter general, no: el règim de traspassos és dels fons d'inversió. Vendre un ETF tributa com vendre una acció."
+  }
+ }
+}

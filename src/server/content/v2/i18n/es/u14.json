@@ -1,0 +1,630 @@
+{
+ "unit": {
+  "title": "Divisas (forex)",
+  "description": "Cómo se leen los pares, qué mueve una divisa y cómo afecta a tu cartera",
+  "section": "Divisas y materias primas"
+ },
+ "lessons": {
+  "u14l1": {
+   "title": "Pares de divisas",
+   "steps": [
+    {
+     "title": "Base y cotizada",
+     "body": "Un par se lee así: **EUR/USD = 1,16** significa que **1 euro (la base) vale 1,16 dólares (la cotizada)**.\n\n• Si sube a 1,20, el euro se **aprecia**: compra más dólares.\n• Si baja a 1,10, el euro se **deprecia**.\n\nComprar EUR/USD es comprar euros pagando con dólares; venderlo, lo contrario."
+    },
+    {
+     "title": "El mercado más grande del mundo",
+     "body": "Se negocian unos **9,6 billones de dólares al día** (BIS, abril de 2025). El dólar está en el **89 %** de las operaciones; le siguen el euro y el yen.\n\n• **Pares mayores:** EUR/USD, USD/JPY, GBP/USD, USD/CHF…\n• Abre las 24 horas de lunes a viernes: Sídney, Tokio, Londres y Nueva York se pasan el testigo."
+    },
+    {
+     "title": "Darle la vuelta",
+     "body": "Si EUR/USD = 1,25, entonces un dólar vale 1 ÷ 1,25 = 0,80 €. Para pasar dólares a euros, **divide** por EUR/USD; para pasar euros a dólares, **multiplica**.",
+     "key": "En un par siempre compras una divisa vendiendo la otra: la primera es la que compras.",
+     "tip": "Una divisa nunca sube sola: sube frente a otra."
+    }
+   ]
+  },
+  "u14l2": {
+   "title": "Pips, lotes y apalancamiento",
+   "steps": [
+    {
+     "title": "Pips y lotes",
+     "body": "Las divisas se mueven en **pips**: la cuarta cifra decimal (0,0001) en casi todos los pares; en los del yen, la segunda (0,01).\n\nEUR/USD de 1,1600 a 1,1650 = **50 pips**.\n\nSe opera por **lotes**: estándar = 100.000 unidades de la divisa base; mini = 10.000; micro = 1.000. En EUR/USD, 1 pip con un lote estándar vale **10 $**."
+    },
+    {
+     "title": "El apalancamiento",
+     "body": "Los brókers dejan operar con mucho más dinero del que pones. Con **1:30** (el máximo para minoristas en la UE en pares mayores), 1.000 € de garantía mueven 30.000 €.\n\nUn movimiento del **3,3 %** en contra se come toda la garantía: las pérdidas se multiplican por 30, igual que las ganancias."
+    },
+    {
+     "title": "El tamaño sale del riesgo",
+     "body": "Mueve el capital, el riesgo por operación y la distancia al stop: el tamaño lo decide lo que estás dispuesto a perder, no el apalancamiento que te ofrecen."
+    },
+    {
+     "title": "Advertencia de la CNMV",
+     "body": "«Los CFD son instrumentos complejos y están asociados a un riesgo elevado de perder dinero rápidamente debido al apalancamiento. Entre un 74 y un 89 % de los inversores minoristas pierden dinero cuando negocian con CFD.»",
+     "key": "El apalancamiento no te hace mejor inversor: solo hace más grandes tus errores.",
+     "tip": "Que te dejen operar con 30 veces tu dinero no significa que debas."
+    }
+   ]
+  },
+  "u14l3": {
+   "title": "Qué mueve una divisa",
+   "steps": [
+    {
+     "title": "Los tipos de interés mandan",
+     "body": "El dinero busca rentabilidad. Si la Fed paga más que el BCE, muchos inversores compran dólares para invertir en EE. UU. y el **dólar tiende a apreciarse**.\n\nNo cuenta solo el tipo de hoy, sino lo que el mercado **espera** que hagan los bancos centrales."
+    },
+    {
+     "title": "Inflación, comercio y miedo",
+     "body": "• **Inflación alta y persistente:** a largo plazo, la divisa pierde valor.\n• **Comercio:** un país que exporta mucho recibe demanda de su divisa.\n• **Crecimiento:** atrae inversión.\n• **Miedo:** en crisis, el dinero huye a dólar, franco suizo y yen."
+    },
+    {
+     "title": "2022: el euro, a la paridad",
+     "body": "En 2022 la Fed subió los tipos antes y más deprisa que el BCE, y la guerra de Ucrania golpeó más a Europa. EUR/USD bajó de 1,13 a menos de 1: **la paridad por primera vez en 20 años**.",
+     "key": "Las divisas se mueven por diferencias: de tipos, de inflación, de crecimiento y de confianza."
+    }
+   ]
+  },
+  "u14l4": {
+   "title": "El riesgo divisa en tu cartera",
+   "steps": [
+    {
+     "title": "Dos rentabilidades en una",
+     "body": "Si compras un fondo del S&P 500 en euros, ganas o pierdes por **dos cosas**: lo que hacen las acciones (en dólares) y lo que hace el **dólar frente al euro**.\n\n**Rentabilidad en euros ≈ (1 + rentabilidad en $) × (1 + variación del dólar) − 1.**"
+    },
+    {
+     "title": "Pasó de verdad",
+     "body": "En **2025** el dólar perdió **más de un 10 %** frente al euro: quien tenía un fondo del S&P 500 vio cómo una buena subida en dólares se quedaba en mucho menos en euros.\n\nY al revés: en **2022** la subida del dólar amortiguó para los europeos la caída de la bolsa americana."
+    },
+    {
+     "title": "Cubrir o no cubrir",
+     "body": "Hay fondos **con cobertura de divisa** («EUR Hedged»): quitan casi todo el efecto del dólar a cambio de un pequeño coste. En fondos de acciones a largo plazo muchos inversores no cubren; en bonos se suele cubrir, porque la divisa movería más que el propio bono.",
+     "key": "Cuando inviertes fuera, también inviertes en su moneda.",
+     "tip": "Mira en qué divisa está lo que compras… y en cuál vas a gastar."
+    }
+   ]
+  },
+  "u14l5": {
+   "title": "Divisas refugio",
+   "steps": [
+    {
+     "title": "Dónde se esconde el dinero",
+     "body": "Cuando hay pánico, el dinero corre hacia las **divisas refugio**:\n\n• **Dólar:** la moneda de reserva mundial y el mayor mercado de bonos.\n• **Franco suizo:** país estable, con poca deuda.\n• **Yen:** Japón es uno de los mayores acreedores del mundo; en las crisis, sus inversores traen su dinero de vuelta a casa."
+    },
+    {
+     "title": "Cuando el refugio da sustos",
+     "body": "El **15 de enero de 2015** el Banco Nacional Suizo quitó el tope de 1,20 francos por euro. En minutos, EUR/CHF llegó a **0,85**: el franco se disparó y varios brókers quebraron.\n\nEn **agosto de 2024** el yen subió de golpe al deshacerse el *carry trade* (pedir yenes baratos para invertir fuera) y el Nikkei cayó un **12,4 %** en un día."
+    },
+    {
+     "title": "Refugio no es lo mismo que seguro",
+     "body": "Una divisa refugio suele subir cuando todo cae, pero puede moverse con violencia en ambos sentidos. Saberlo sirve para entender una crisis, no para adivinar la siguiente.",
+     "key": "En las crisis, el dinero busca dólares, francos y yenes."
+    }
+   ]
+  },
+  "u14r": {
+   "title": "Repaso de la unidad",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u14l1-1": {
+   "prompt": "EUR/USD = 1,16. ¿Qué significa?",
+   "options": [
+    "1 dólar vale 1,16 euros",
+    "1 euro vale 1,16 dólares",
+    "El euro ha subido un 16 % este año"
+   ],
+   "explanation": "La primera divisa (la base) siempre vale 1; la cifra dice cuántas unidades de la segunda cuesta."
+  },
+  "u14l1-2": {
+   "prompt": "En EUR/USD, el euro es la divisa ____ y el dólar la cotizada.",
+   "options": [
+    "cotizada",
+    "refugio",
+    "fuerte",
+    "base"
+   ],
+   "explanation": "La base va primero y siempre vale 1 unidad."
+  },
+  "u14l1-3": {
+   "prompt": "EUR/USD pasa de 1,10 a 1,05. ¿Qué ha pasado?",
+   "options": [
+    "El dólar se ha depreciado",
+    "El euro se ha depreciado",
+    "El euro se ha apreciado"
+   ],
+   "explanation": "Un euro compra ahora 1,05 $ en vez de 1,10 $: vale menos. A la vez, el dólar se ha apreciado."
+  },
+  "u14l1-4": {
+   "prompt": "EUR/USD = 1,25. ¿Cuántos euros vale 1 dólar?",
+   "options": [],
+   "explanation": "1 ÷ 1,25 = 0,80 €.",
+   "unit": "€"
+  },
+  "u14l1-5": {
+   "prompt": "Vuelves de Nueva York con 230 $. Si EUR/USD = 1,15, ¿cuántos euros te dan al cambiarlos (sin comisiones)?",
+   "options": [],
+   "explanation": "230 ÷ 1,15 = 200 €. De dólares a euros se divide.",
+   "unit": "€"
+  },
+  "u14l1-6": {
+   "prompt": "Empareja cada cotización con lo que significa.",
+   "options": [
+    "EUR/USD = 1,16",
+    "USD/JPY = 150",
+    "GBP/USD = 1,30",
+    "EUR/CHF = 0,94"
+   ],
+   "explanation": "Siempre: 1 unidad de la primera divisa = la cifra en la segunda.",
+   "right": [
+    "1 $ vale 150 yenes",
+    "1 libra vale 1,30 $",
+    "1 € vale 0,94 francos suizos",
+    "1 € vale 1,16 $"
+   ]
+  },
+  "u14l1-7": {
+   "prompt": "Gráfico real de 30 sesiones de un par de divisas mayor, sin nombre ni fecha. ¿Qué crees que hizo en las 10 siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Fíjate en el recorrido: los pares mayores suelen moverse menos del 1 % en un día, mucho menos que una acción. Aun así, nadie acierta su dirección de forma fiable.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u14l1-8": {
+   "prompt": "Rápido: compras EUR/USD. ¿Qué divisa compras?",
+   "options": [
+    "El dólar",
+    "El euro",
+    "Las dos a la vez"
+   ],
+   "explanation": "Compras la base (euro) y pagas con la cotizada (dólar)."
+  },
+  "u14l1-9": {
+   "prompt": "El mercado de divisas cierra cada día a las 17:30, como la Bolsa de Madrid.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Funciona las 24 horas de lunes a viernes, pasando de Asia a Europa y América."
+  },
+  "u14l1-10": {
+   "prompt": "Laura cobra en euros y se va de Erasmus a Londres. Ve que GBP/EUR ha pasado de 1,15 a 1,20 este mes. ¿Cómo le afecta?",
+   "options": [
+    "Cada libra le cuesta más euros: todo se le encarece algo más de un 4 %",
+    "No le afecta porque paga con tarjeta",
+    "Le sale más barato el viaje"
+   ],
+   "explanation": "Si sube la divisa que necesitas, te cuesta más euros.",
+   "feedback": [
+    "Eso es: (1,20 − 1,15) ÷ 1,15 ≈ 4,3 % más caro.",
+    "La tarjeta convierte al tipo de cambio del día: le afecta igual.",
+    "Al revés: cada libra cuesta ahora 1,20 € en lugar de 1,15 €."
+   ]
+  },
+  "u14l1-11": {
+   "prompt": "¿Cuáles son pares mayores? Marca todos.",
+   "options": [
+    "GBP/USD",
+    "USD/TRY (lira turca)",
+    "USD/JPY",
+    "EUR/USD"
+   ],
+   "explanation": "Los mayores combinan el dólar con otra gran divisa. USD/TRY es un par exótico: más spread y más volatilidad."
+  },
+  "u14l2-1": {
+   "prompt": "EUR/USD pasa de 1,1600 a 1,1675. ¿Cuántos pips se ha movido?",
+   "options": [],
+   "explanation": "1,1675 − 1,1600 = 0,0075 = 75 pips (cada pip es 0,0001).",
+   "unit": "pips"
+  },
+  "u14l2-2": {
+   "prompt": "Con 1 lote estándar de EUR/USD (1 pip = 10 $), el par se mueve 40 pips a tu favor. ¿Cuánto ganas?",
+   "options": [],
+   "explanation": "40 × 10 $ = 400 $. Si se mueve 40 en contra, pierdes lo mismo.",
+   "unit": "$"
+  },
+  "u14l2-3": {
+   "prompt": "Con un mini lote de EUR/USD (10.000 €), ¿cuánto vale cada pip?",
+   "options": [],
+   "explanation": "10.000 × 0,0001 = 1 $ por pip.",
+   "unit": "$"
+  },
+  "u14l2-4": {
+   "prompt": "Rápido: ¿cuántas unidades tiene un lote estándar?",
+   "options": [
+    "100.000",
+    "10.000",
+    "1.000"
+   ],
+   "explanation": "Estándar 100.000; mini 10.000; micro 1.000."
+  },
+  "u14l2-5": {
+   "prompt": "Con apalancamiento 1:30, ¿cuánta garantía necesitas para abrir una posición de 15.000 €?",
+   "options": [],
+   "explanation": "15.000 ÷ 30 = 500 €.",
+   "unit": "€"
+  },
+  "u14l2-6": {
+   "prompt": "Con apalancamiento 1:30, ¿qué movimiento en contra (en %) se come toda tu garantía?",
+   "options": [],
+   "explanation": "1 ÷ 30 ≈ 3,33 %. En divisas eso puede pasar en pocas semanas, o en minutos con una sorpresa.",
+   "unit": "%"
+  },
+  "u14l2-7": {
+   "prompt": "En la UE, un minorista puede operar CFD sobre pares de divisas mayores con un apalancamiento de hasta 1:30.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Es el límite que fijó ESMA en 2018 (en España lo aplica la CNMV). Para pares no mayores es 1:20."
+  },
+  "u14l2-8": {
+   "prompt": "Con apalancamiento solo se multiplican las ganancias.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Se multiplican igual las pérdidas: un 1 % en contra con 1:30 es un 30 % de tu garantía."
+  },
+  "u14l2-9": {
+   "prompt": "Pablo abre 1 lote estándar de EUR/USD (100.000 €) con 4.000 € de garantía. El par cae 120 pips tras un dato de inflación. ¿Qué ha pasado?",
+   "options": [
+    "No ha perdido nada hasta que cierre",
+    "Ha perdido unos 1.200 $: más de una cuarta parte de su garantía en un día",
+    "Ha perdido 120 $, una minucia"
+   ],
+   "explanation": "Con apalancamiento, un movimiento corriente del par se convierte en un golpe enorme para tu dinero.",
+   "feedback": [
+    "La pérdida es real aunque no cierres; y si sigue cayendo, el bróker cerrará la posición.",
+    "Exacto: 120 × 10 $ = 1.200 $. Un movimiento normal del par y su cuenta ha caído más de un 25 %.",
+    "Cada pip vale 10 $ con un lote estándar: son 1.200 $, algo más de 1.000 €."
+   ]
+  },
+  "u14l2-10": {
+   "prompt": "¿Qué protecciones tiene un minorista en la UE al operar CFD de divisas? Marca todas.",
+   "options": [
+    "No poder perder más del dinero de la cuenta",
+    "Garantía de no perder dinero",
+    "Cierre automático si la garantía baja al 50 %",
+    "Límite de apalancamiento (1:30 en pares mayores)"
+   ],
+   "explanation": "ESMA impuso límites de apalancamiento, cierre al 50 % de la garantía y protección frente a saldo negativo. Nada garantiza no perder: entre un 74 y un 89 % de los minoristas pierde con CFD."
+  },
+  "u14l2-11": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Genial, así se gana más rápido",
+    "Mejor 1:1000, que es más",
+    "Con 1:500, un 0,2 % en contra te deja a cero; y en la UE el máximo para minoristas es 1:30"
+   ],
+   "explanation": "1 ÷ 500 = 0,2 %. Quien ofrece 1:500 a un minorista europeo no cumple las reglas de ESMA: mala señal.",
+   "feedback": [
+    "Y se pierde más rápido: un 0,2 % en contra se lleva tus 200 €.",
+    "Más apalancamiento solo acerca el momento de perderlo todo.",
+    "¡Uf! Entonces quien me ofrece 1:500 no está jugando con las reglas europeas…"
+   ],
+   "lines": [
+    "Un tiktoker dice que con forex y apalancamiento 1:500 se vive de esto 🤑",
+    "Con 200 € muevo 100.000 €, ¿no es genial?"
+   ]
+  },
+  "u14l3-1": {
+   "prompt": "Empareja cada causa con su efecto habitual en la divisa.",
+   "options": [
+    "El banco central sube los tipos más de lo esperado",
+    "Inflación alta durante años",
+    "Pánico en los mercados",
+    "El país exporta mucho más de lo que importa"
+   ],
+   "explanation": "Tipos, inflación, miedo y comercio son los grandes motores.",
+   "right": [
+    "La divisa pierde valor a largo plazo",
+    "Hay demanda de su divisa",
+    "Se compran dólares, francos y yenes",
+    "La divisa tiende a apreciarse"
+   ]
+  },
+  "u14l3-2": {
+   "prompt": "¿Por qué un tipo de interés más alto suele atraer dinero a una divisa?",
+   "options": [
+    "Porque obliga a los turistas a cambiar",
+    "Porque el banco central regala divisas",
+    "Porque los depósitos y bonos en esa divisa pagan más"
+   ],
+   "explanation": "Los inversores compran la divisa para cobrar ese interés mayor."
+  },
+  "u14l3-3": {
+   "prompt": "La Fed sube los tipos por sorpresa y el BCE los deja igual. Dentro de un mes tienes que pagar 1.000 $ por un curso online de EE. UU. ¿Qué es lo más probable?",
+   "options": [
+    "El dólar tiende a apreciarse y el curso te puede costar algo más en euros",
+    "Nada: los tipos no afectan a las divisas",
+    "El curso te costará menos euros"
+   ],
+   "explanation": "Una subida de tipos inesperada suele apreciar la divisa, aunque nada es automático.",
+   "feedback": [
+    "Eso es lo habitual: más tipos atraen dinero al dólar. Aunque no es seguro: depende de lo que ya esperaba el mercado.",
+    "Son uno de sus principales motores.",
+    "Si el dólar se aprecia, cada dólar cuesta más euros, no menos."
+   ]
+  },
+  "u14l3-4": {
+   "prompt": "A una divisa la mueve solo el tipo de interés de hoy, no lo que se espera.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "El mercado se mueve por expectativas: una subida ya anunciada puede no mover nada."
+  },
+  "u14l3-5": {
+   "prompt": "¿Qué suele pasar con el euro frente al dólar?",
+   "options": [
+    "La Fed sube tipos más rápido que el BCE",
+    "La economía europea crece más de lo esperado",
+    "Pánico mundial: todos buscan dólares",
+    "El BCE sube tipos y la Fed los baja",
+    "La inflación de la zona euro se dispara sin respuesta del BCE"
+   ],
+   "explanation": "Diferencia de tipos, inflación, crecimiento y miedo.",
+   "right": [
+    "Sube el euro",
+    "Baja el euro"
+   ]
+  },
+  "u14l3-6": {
+   "prompt": "Entre enero y septiembre de 2022, EUR/USD pasó de 1,13 a 0,96. ¿Cuánto cayó el euro frente al dólar (en %)?",
+   "options": [],
+   "explanation": "(0,96 − 1,13) ÷ 1,13 ≈ −15 %. Enorme para una divisa mayor.",
+   "unit": "%"
+  },
+  "u14l3-7": {
+   "prompt": "Rápido: en una crisis global, ¿hacia qué divisa suele huir el dinero?",
+   "options": [
+    "Dólar",
+    "Peso argentino",
+    "Lira turca"
+   ],
+   "explanation": "Dólar, franco suizo y yen son las divisas refugio clásicas."
+  },
+  "u14l3-8": {
+   "prompt": "La Fed sube tipos por sorpresa. Ordena la cadena.",
+   "options": [
+    "Los bonos en dólares pasan a pagar más",
+    "Inversores de todo el mundo compran dólares",
+    "El dólar se aprecia frente al euro",
+    "La Fed anuncia una subida inesperada"
+   ],
+   "explanation": "Así suele transmitirse una subida de tipos a la divisa."
+  },
+  "u14l3-9": {
+   "prompt": "Bruno lee sobre un país con una inflación del 50 % cuyo banco central está bajando los tipos. Un amigo le propone comprar su moneda porque «está baratísima». ¿Qué piensa Bruno?",
+   "options": [
+    "Que la inflación no afecta a las divisas",
+    "Que una inflación tan alta con tipos bajando suele hundir la divisa",
+    "Que es una ganga segura"
+   ],
+   "explanation": "Inflación alta con tipos por debajo de ella suele depreciar la divisa.",
+   "feedback": [
+    "Es uno de sus grandes motores a largo plazo.",
+    "Bien: lo que parece barato puede seguir abaratándose.",
+    "Barata puede abaratarse más: con esa inflación y tipos bajando, la divisa suele seguir perdiendo valor."
+   ]
+  },
+  "u14l3-10": {
+   "prompt": "¿Qué le explicas a Lumi?",
+   "options": [
+    "Que el mercado ya lo esperaba o esperaba más: cuenta la sorpresa, no el dato",
+    "Que los tipos no tienen nada que ver",
+    "Que es un error del mercado"
+   ],
+   "explanation": "En divisas, como en bolsa, el precio ya incorpora lo esperado.",
+   "feedback": [
+    "¡Ah! O sea que si se espera +0,50 y suben +0,25, decepciona.",
+    "Tienen mucho que ver, pero frente a lo esperado.",
+    "No es un error: el mercado ya esperaba esa subida, o una mayor."
+   ],
+   "lines": [
+    "Ayer el BCE subió tipos y el euro… ¡bajó! 🤯",
+    "¿No tendría que haber subido?"
+   ]
+  },
+  "u14l4-1": {
+   "prompt": "Inviertes 1.000 € cuando EUR/USD = 1,00 (compras 1.000 $ en acciones). Un año después valen 1.100 $ y EUR/USD = 1,10. ¿Cuántos euros tienes?",
+   "options": [],
+   "explanation": "1.100 ÷ 1,10 = 1.000 €. Las acciones subieron un 10 %, pero el dólar perdió valor y se comió toda la ganancia.",
+   "unit": "€"
+  },
+  "u14l4-2": {
+   "prompt": "Las acciones suben un 15 % en dólares y el dólar cae un 10 % frente al euro. ¿Cuál es tu rentabilidad aproximada en euros?",
+   "options": [],
+   "explanation": "1,15 × 0,90 − 1 = 0,035 → +3,5 %.",
+   "unit": "%"
+  },
+  "u14l4-3": {
+   "prompt": "La bolsa americana cae un 18 % en dólares, pero el dólar sube un 6 % frente al euro. ¿Tu rentabilidad en euros?",
+   "options": [],
+   "explanation": "0,82 × 1,06 − 1 ≈ −0,131 → −13,1 %. Algo así pasó en 2022: el dólar amortiguó la caída.",
+   "unit": "%"
+  },
+  "u14l4-4": {
+   "prompt": "Gráfico real de un par de divisas: 30 sesiones, sin nombre ni fecha. Si tu fondo invierte fuera, algo así mueve tu rentabilidad en euros. ¿Qué hizo en las 10 sesiones siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Nadie predice bien las divisas a corto plazo. Por eso, quien no quiere ese riesgo elige un fondo con cobertura en lugar de intentar adivinar.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u14l4-5": {
+   "prompt": "Un fondo «S&P 500 EUR Hedged»…",
+   "options": [
+    "Solo compra empresas europeas",
+    "Garantiza no perder dinero",
+    "Elimina casi todo el efecto del dólar frente al euro"
+   ],
+   "explanation": "La cobertura neutraliza la divisa, no el riesgo de las acciones."
+  },
+  "u14l4-6": {
+   "prompt": "Si tu fondo cotiza en euros, no tienes riesgo de divisa aunque invierta en acciones de EE. UU.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "La moneda del fondo es solo la etiqueta: las empresas cotizan y ganan en dólares, así que el riesgo sigue ahí salvo que el fondo lo cubra."
+  },
+  "u14l4-7": {
+   "prompt": "Para un inversor español, ¿tiene riesgo dólar/euro?",
+   "options": [
+    "Letras del Tesoro español",
+    "Fondo S&P 500 EUR Hedged",
+    "Acciones de Apple",
+    "Fondo MSCI World sin cobertura",
+    "Depósito en euros en un banco español"
+   ],
+   "explanation": "Si el activo está en dólares y no hay cobertura, el dólar te afecta.",
+   "right": [
+    "Sí",
+    "No (o casi nada)"
+   ]
+  },
+  "u14l4-8": {
+   "prompt": "Ana tiene un fondo del S&P 500 sin cobertura y un horizonte de 20 años. Lee que «el dólar se hunde» y quiere venderlo todo. ¿Qué haría bien?",
+   "options": [
+    "Pasarse a una sola empresa europea",
+    "Entender que la divisa sube y baja, y decidir con calma si quiere cobertura en el futuro",
+    "Vender ya y volver cuando el dólar se recupere"
+   ],
+   "explanation": "El riesgo divisa se gestiona eligiendo el fondo, no persiguiendo titulares.",
+   "feedback": [
+    "Cambiaría riesgo de divisa por mucho más riesgo de concentración.",
+    "Bien: cubrir o no es una decisión de planificación, no una reacción a un titular.",
+    "Tendría que acertar dos veces (cuándo salir y cuándo volver) con un movimiento que nadie predice."
+   ]
+  },
+  "u14l4-9": {
+   "prompt": "Rápido: el dólar sube frente al euro. Tus acciones americanas, medidas en euros…",
+   "options": [
+    "Valen menos",
+    "Valen más",
+    "Valen igual"
+   ],
+   "explanation": "Cada dólar se convierte en más euros."
+  },
+  "u14l4-10": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "No: el dólar ha caído frente al euro y eso resta en euros",
+    "Es un error de la app",
+    "Sí, seguro que son comisiones ocultas"
+   ],
+   "explanation": "1,12 × 0,91 ≈ 1,02: una caída del dólar de un 9 % convierte un +12 % en un +2 %.",
+   "feedback": [
+    "¡Ah! Gano en dólares, pero cada dólar vale menos euros.",
+    "La app hace bien la cuenta: es el efecto de la divisa.",
+    "Las comisiones de un indexado son mínimas: la diferencia viene de otra cosa."
+   ],
+   "lines": [
+    "Mi fondo del S&P 500 ha subido un 12 % este año en dólares…",
+    "…y en la app pone que en euros solo +2 %. ¿Me están robando? 😠"
+   ]
+  },
+  "u14l5-1": {
+   "prompt": "¿Cuáles se consideran divisas refugio? Marca todas.",
+   "options": [
+    "Franco suizo",
+    "Real brasileño",
+    "Yen japonés",
+    "Dólar estadounidense"
+   ],
+   "explanation": "El real es una divisa emergente: en el pánico suele caer, no subir."
+  },
+  "u14l5-2": {
+   "prompt": "Gráfico real de un par de divisas (30 sesiones, sin nombre ni fecha). ¿Subió o bajó en las 10 siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Hasta los pares más seguidos del mundo sorprenden: se mueven por expectativas de tipos y por el apetito de riesgo de cada momento.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u14l5-3": {
+   "prompt": "Otro par real, otras 30 sesiones. ¿Y ahora?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Lo que hiciera el gráfico anterior no dice nada de este: cada periodo es una historia distinta.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u14l5-4": {
+   "prompt": "El 15 de enero de 2015 el franco suizo se disparó cuando el Banco Nacional Suizo quitó el tope frente al euro.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "EUR/CHF pasó de 1,20 a 0,85 en minutos: un terremoto para una divisa mayor."
+  },
+  "u14l5-5": {
+   "prompt": "¿Qué es el carry trade con yenes?",
+   "options": [
+    "Pedir prestado en yenes a tipo bajo para invertir donde se paga más",
+    "Comprar yenes para viajar a Japón",
+    "Vender acciones japonesas"
+   ],
+   "explanation": "Funciona mientras el yen esté tranquilo; si sube de golpe, todos deshacen a la vez (agosto de 2024)."
+  },
+  "u14l5-6": {
+   "prompt": "¿Por qué suele subir el yen en una crisis?",
+   "options": [
+    "Porque los inversores japoneses repatrían el dinero que tienen fuera",
+    "Porque Japón sube los tipos en cada crisis",
+    "Porque el yen está respaldado por oro"
+   ],
+   "explanation": "Japón tiene enormes ahorros invertidos fuera: en el pánico, parte de ese dinero vuelve a casa."
+  },
+  "u14l5-7": {
+   "prompt": "EUR/CHF pasa de 1,20 a 0,85 en minutos. ¿Cuánto cae el euro frente al franco (en %)?",
+   "options": [],
+   "explanation": "(0,85 − 1,20) ÷ 1,20 ≈ −29,2 %. En una divisa mayor, eso no se ve casi nunca.",
+   "unit": "%"
+  },
+  "u14l5-8": {
+   "prompt": "Empareja cada divisa con su motivo para ser refugio.",
+   "options": [
+    "Dólar",
+    "Franco suizo",
+    "Yen"
+   ],
+   "explanation": "Tres refugios, tres motivos distintos.",
+   "right": [
+    "País estable con poca deuda",
+    "Moneda de reserva y mayor mercado de bonos",
+    "Japón tiene muchos ahorros invertidos fuera"
+   ]
+  },
+  "u14l5-9": {
+   "prompt": "Una divisa refugio nunca puede moverse con violencia.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Puede moverse muchísimo en ambos sentidos: es un refugio relativo, no un seguro."
+  },
+  "u14l5-10": {
+   "prompt": "Marzo de 2020: las bolsas se hunden por la COVID. Marta tiene que cobrar una factura de 5.000 $ de un cliente americano y la pasará a euros. ¿Qué es más probable que haga el dólar en esos días de pánico?",
+   "options": [
+    "Que se aprecie: todo el mundo busca dólares",
+    "Que no se mueva",
+    "Que se hunda"
+   ],
+   "explanation": "En las crisis más agudas, el dólar suele actuar como refugio.",
+   "feedback": [
+    "Eso pasó en marzo de 2020: el dólar subió con fuerza frente a casi todas las divisas.",
+    "En un pánico mundial las divisas se mueven mucho.",
+    "En el pánico el mundo busca dólares: lo habitual es lo contrario."
+   ]
+  }
+ }
+}

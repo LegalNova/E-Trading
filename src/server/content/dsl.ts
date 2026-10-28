@@ -34,6 +34,8 @@ export interface ContentQuestion extends QuestionT {
   tol?: number
   range?: [number, number]
   rules?: PortfolioRules
+  /** Tipos de activo en español cuando meta.kinds está traducido (las reglas usan estos) */
+  kindsEs?: string[]
   /** Solo en el servidor: lo que pasó después (se revela al responder) */
   hidden?: { candles?: Ohlc[]; closes?: number[]; caption: string; changePct?: number; minPct?: number }
 }

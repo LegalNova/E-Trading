@@ -1,0 +1,673 @@
+{
+ "unit": {
+  "title": "Las órdenes",
+  "description": "A mercado, limitada, stop loss, take profit y OCO: qué orden usar y qué cuesta",
+  "section": "Cómo funcionan los mercados"
+ },
+ "lessons": {
+  "u6l1": {
+   "title": "La orden a mercado",
+   "steps": [
+    {
+     "title": "Compra ya",
+     "body": "Una **orden a mercado** compra o vende **inmediatamente al mejor precio disponible** del libro: si compras, al mejor precio de venta (*ask*); si vendes, al mejor de compra (*bid*).\n\nVentaja: se ejecuta casi seguro, si hay liquidez. Inconveniente: **no controlas el precio exacto**."
+    },
+    {
+     "title": "Cuándo sale cara",
+     "body": "• En **valores poco líquidos**: tu orden se come varios escalones del libro.\n• En la **apertura** o justo tras una noticia: los precios saltan.\n• Con la bolsa **cerrada**: se ejecutará en la apertura, al precio que haya entonces.\n\nEn acciones grandes y en horario normal, la diferencia suele ser de céntimos."
+    },
+    {
+     "title": "En el simulador",
+     "body": "Cuando practiques, la compra a mercado entra al último precio. El simulador te pedirá también un **stop**: el precio al que saldrías si te equivocas. Lo verás a fondo en la clase 4 de esta unidad.",
+     "key": "A mercado = rapidez garantizada, precio no garantizado.",
+     "tip": "Si te importa el precio exacto, la orden a mercado no es la tuya."
+    }
+   ]
+  },
+  "u6l2": {
+   "title": "Horquilla, spread y deslizamiento",
+   "steps": [
+    {
+     "title": "El spread",
+     "body": "La **horquilla** o **spread** es la diferencia entre el mejor precio de venta (*ask*) y el de compra (*bid*). Si compras y vendes al momento, la pierdes entera.\n\nEn porcentaje: spread ÷ precio. Una acción a 10,00 € / 10,02 € tiene un spread de unos **0,2 %**."
+    },
+    {
+     "title": "El deslizamiento",
+     "body": "El **deslizamiento** (*slippage*) es la diferencia entre el precio que esperabas y el que obtienes. Pasa cuando tu orden es grande para el libro o el precio se mueve muy rápido.\n\nSpread, deslizamiento y comisiones son **costes de operar**: cuanto más operas, más pagas, aunque el bróker anuncie «0 comisiones»."
+    },
+    {
+     "title": "Cuánto pesa un coste pequeño",
+     "body": "Compara un 0,2 % frente a un 1,8 % anual con 10.000 € al 7 % durante 30 años. Operar mucho tiene el mismo efecto: cada entrada y salida paga su spread.",
+     "tip": "Los costes son lo único seguro de una inversión."
+    }
+   ]
+  },
+  "u6l3": {
+   "title": "La orden limitada",
+   "steps": [
+    {
+     "title": "Tú pones el precio",
+     "body": "**Limitada de compra:** compra solo a tu precio **o más barato**.\n**Limitada de venta:** vende solo a tu precio **o más caro**.\n\nVentaja: controlas el precio. Riesgo: **puede no ejecutarse nunca** si el precio no llega, o ejecutarse solo en parte."
+    },
+    {
+     "title": "Validez",
+     "body": "• **Del día:** si no se ejecuta, caduca al cierre.\n• **Hasta cancelar** (*GTC*): sigue viva hasta que se cumpla o la canceles (muchos brókers fijan un máximo, a menudo de 90 días).\n\nUna limitada de compra por encima del precio actual se ejecuta al momento, al mejor precio disponible."
+    },
+    {
+     "title": "Cuándo usarla",
+     "body": "Cuando el precio te importa: valores poco líquidos, horquillas amplias, aperturas o si solo quieres comprar en una zona concreta.",
+     "key": "Limitada = precio garantizado, ejecución no garantizada.",
+     "tip": "Revisa de vez en cuando tus órdenes vivas: no saben que han cambiado las noticias."
+    }
+   ]
+  },
+  "u6l4": {
+   "title": "El stop loss",
+   "steps": [
+    {
+     "title": "Tu salida de emergencia",
+     "body": "Un **stop loss** es una orden automática: si el precio **cae hasta un nivel**, lanza una venta. Así limitas la pérdida aunque no estés mirando.\n\n¿Dónde? Donde tu idea **deja de ser válida**: normalmente, un poco por debajo del **último mínimo relevante**. Si lo pones demasiado cerca, el ruido normal del precio te saca."
+    },
+    {
+     "title": "Stop a mercado o limitado",
+     "body": "• **Stop (a mercado):** al tocar el nivel, vende al precio que haya. Sales seguro, pero quizá peor.\n• **Stop limitado:** al tocar el nivel, lanza una limitada. Controlas el peor precio, pero si el precio salta puede no venderse y seguir cayendo."
+    },
+    {
+     "title": "Calcula el tamaño",
+     "body": "Mueve la distancia al stop: cuanto más lejos está, menos acciones puedes comprar con el mismo riesgo."
+    },
+    {
+     "title": "Primero el stop, luego el tamaño",
+     "body": "Con 10.000 € y un riesgo máximo del 1 % (100 €), si compras a 50 € con el stop a 45 €, arriesgas 5 € por acción: puedes comprar **20 acciones** (1.000 €).",
+     "key": "El stop decide dónde sales; el tamaño, que esa pérdida sea pequeña.",
+     "tip": "Un stop no es un fracaso: es el precio de saber cuándo te has equivocado."
+    }
+   ]
+  },
+  "u6l5": {
+   "title": "El take profit",
+   "steps": [
+    {
+     "title": "Asegurar la ganancia",
+     "body": "Un **take profit** es una orden de venta automática cuando el precio **sube hasta tu objetivo**. Te evita estar pegado a la pantalla y que la avaricia decida por ti.\n\n¿Dónde? Un sitio lógico es **cerca del máximo anterior**: ahí muchos vendieron antes y suele volver a aparecer venta."
+    },
+    {
+     "title": "Riesgo y beneficio",
+     "body": "Compara lo que arriesgas con lo que puedes ganar: compras a 50 €, stop a 47 € (arriesgas 3 €) y objetivo a 56 € (puedes ganar 6 €). La relación es **1:2**.\n\nCon 1:2, si aciertas 4 de cada 10 operaciones, ganas 24 € y pierdes 18 € por acción (antes de costes)."
+    },
+    {
+     "title": "El precio de asegurar",
+     "body": "Si el precio sigue subiendo después de tu objetivo, esa subida te la pierdes. Es el precio de tener un plan.",
+     "key": "El take profit sale por arriba; el stop, por abajo.",
+     "tip": "Decide el objetivo antes de entrar, no cuando ya vas ganando."
+    }
+   ]
+  },
+  "u6l6": {
+   "title": "Combinar órdenes: OCO",
+   "steps": [
+    {
+     "title": "Una cancela a la otra",
+     "body": "Una orden **OCO** (*one cancels the other*) junta dos órdenes de salida: un **stop loss** por debajo y un **take profit** por encima. Cuando se ejecuta una, la otra **se cancela sola**.\n\nAsí tu operación tiene un plan completo de salida. No todos los brókers la ofrecen."
+    },
+    {
+     "title": "El problema de los huecos",
+     "body": "Si una empresa da malos resultados por la noche y abre un **15 % más abajo**, tu stop al −5 % se ejecuta cerca del −15 %: no hubo precios intermedios. Es un **hueco** (*gap*).\n\nTambién pasa al alza: si abre por encima de tu objetivo, el take profit se ejecuta a ese precio de apertura, mejor que el previsto."
+    },
+    {
+     "title": "El stop dinámico",
+     "body": "El **stop dinámico** (*trailing stop*) sube con el precio a una distancia fija: con un 8 %, si el precio pasa de 100 € a 120 €, tu stop sube de 92 € a 110,40 €. Nunca baja.",
+     "key": "OCO = plan completo de salida; los huecos son su límite.",
+     "tip": "Ningún stop es un seguro perfecto: el tamaño de la posición es tu verdadera protección."
+    }
+   ]
+  },
+  "u6r": {
+   "title": "Repaso de la unidad",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u6l1-1": {
+   "prompt": "Libro: mejor compra 15,20 €, mejor venta 15,23 €. Das una orden de compra a mercado. ¿A qué precio entras?",
+   "options": [
+    "15,215 €",
+    "15,23 €",
+    "15,20 €"
+   ],
+   "explanation": "Compras al mejor precio de venta (ask), el que pide quien vende."
+  },
+  "u6l1-2": {
+   "prompt": "En ese mismo libro (15,20 € / 15,23 €), si vendes a mercado, ¿cuánto cobras por acción?",
+   "options": [
+    "15,20 €",
+    "15,215 €",
+    "15,23 €"
+   ],
+   "explanation": "Vendes al mejor precio de compra (bid), el que paga quien compra."
+  },
+  "u6l1-3": {
+   "prompt": "Una orden a mercado garantiza el precio exacto al que compras.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Garantiza que se ejecute, no el precio: puede salir algo peor de lo que veías."
+  },
+  "u6l1-4": {
+   "prompt": "Una orden a mercado se ejecuta casi seguro si hay compradores y vendedores.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Por eso es la más rápida: acepta el mejor precio que haya."
+  },
+  "u6l1-5": {
+   "prompt": "Simula tu primera compra a mercado: tienes 10.000 € y no quieres arriesgar más de un 1 % (100 €). Coloca un stop por debajo del último mínimo y elige el importe.",
+   "options": [],
+   "explanation": "Con una orden a mercado entras al último precio. Primero decides dónde saldrías (el stop) y, con esa distancia, cuánto comprar para no arriesgar más de 100 €."
+  },
+  "u6l1-6": {
+   "prompt": "Compras 40 acciones a mercado y se ejecutan a 25,10 €. ¿Cuánto pagas, sin contar comisiones?",
+   "options": [],
+   "explanation": "40 × 25,10 = 1.004 €.",
+   "unit": "€"
+  },
+  "u6l1-7": {
+   "prompt": "Laura quiere comprar 5.000 acciones de una empresa muy pequeña que casi no se negocia. Piensa usar una orden a mercado. ¿Qué le conviene?",
+   "options": [
+    "Usar una orden limitada con su precio máximo",
+    "Comprar a mercado",
+    "Comprar a mercado justo en la apertura"
+   ],
+   "explanation": "En valores poco líquidos, la orden a mercado puede salir cara.",
+   "feedback": [
+    "Compra solo hasta el precio que fija; si no hay vendedores a ese precio, espera.",
+    "Con un libro tan fino, su orden se come varios escalones y paga mucho más de lo que veía.",
+    "En la apertura los precios saltan más: lo peor de los dos mundos."
+   ]
+  },
+  "u6l1-8": {
+   "prompt": "Rápido: ¿qué te asegura una orden a mercado?",
+   "options": [
+    "Que se ejecute",
+    "El precio exacto",
+    "Las dos cosas"
+   ],
+   "explanation": "Rapidez sí; precio exacto, no."
+  },
+  "u6l1-9": {
+   "prompt": "¿Orden a mercado razonable o arriesgada?",
+   "options": [
+    "Comprar justo en la apertura tras una noticia bomba",
+    "Un ETF muy negociado a mitad de sesión",
+    "Dar la orden un sábado para el lunes",
+    "10 acciones de una gran empresa del IBEX a media sesión",
+    "Vender un valor que apenas se negocia"
+   ],
+   "explanation": "Liquidez alta y horario normal: a mercado funciona bien. Poca liquidez, aperturas y noticias: mejor limitar el precio.",
+   "right": [
+    "Razonable",
+    "Arriesgada"
+   ]
+  },
+  "u6l1-10": {
+   "prompt": "Ordena lo que pasa al dar una orden de compra a mercado.",
+   "options": [
+    "El bróker envía la orden",
+    "Recibes la confirmación con el precio de ejecución",
+    "Se cruza con el mejor precio de venta",
+    "Pulsas «comprar a mercado»"
+   ],
+   "explanation": "El precio final lo sabes al final, no al pulsar."
+  },
+  "u6l2-1": {
+   "prompt": "Rápido: bid 20,10 €, ask 20,14 €. ¿Spread en euros?",
+   "options": [],
+   "explanation": "20,14 − 20,10 = 0,04 €.",
+   "unit": "€"
+  },
+  "u6l2-2": {
+   "prompt": "Una acción cotiza a 50,00 € (compra) y 50,25 € (venta). ¿Qué spread es, en % del precio de compra?",
+   "options": [],
+   "explanation": "0,25 ÷ 50 = 0,005 → 0,5 %.",
+   "unit": "%"
+  },
+  "u6l2-3": {
+   "prompt": "Compras 1.000 acciones a 10,04 € (ask) y las vendes al momento a 10,02 € (bid). ¿Cuánto pierdes?",
+   "options": [],
+   "explanation": "0,02 € × 1.000 = 20 €, solo por el spread.",
+   "unit": "€"
+  },
+  "u6l2-4": {
+   "prompt": "Esperabas comprar a 30,00 € y tu orden se ejecutó a 30,15 €. ¿Cuánto deslizamiento por acción?",
+   "options": [],
+   "explanation": "30,15 − 30,00 = 0,15 € por acción.",
+   "unit": "€"
+  },
+  "u6l2-5": {
+   "prompt": "¿Qué suele tener el spread más pequeño?",
+   "options": [
+    "Una acción grande del S&P 500",
+    "Una empresa pequeña de BME Growth",
+    "Una criptomoneda poco conocida"
+   ],
+   "explanation": "Cuanta más liquidez, más estrecha es la horquilla."
+  },
+  "u6l2-6": {
+   "prompt": "Empareja cada coste con su definición.",
+   "options": [
+    "Spread",
+    "Deslizamiento",
+    "Comisión",
+    "Liquidez"
+   ],
+   "explanation": "Los tres primeros son costes; la liquidez es lo que los mantiene bajos.",
+   "right": [
+    "Diferencia entre el precio esperado y el obtenido",
+    "Lo que cobra el bróker por operar",
+    "Poder operar mucho sin mover el precio",
+    "Diferencia entre bid y ask"
+   ]
+  },
+  "u6l2-7": {
+   "prompt": "Pablo cierra 20 operaciones al mes de 1.000 € y cada una le cuesta un 0,3 % entre spread y comisiones. ¿Cuánto paga en un año?",
+   "options": [],
+   "explanation": "0,3 % de 1.000 € = 3 € por operación. 3 × 20 × 12 = 720 € al año.",
+   "unit": "€"
+  },
+  "u6l2-8": {
+   "prompt": "El spread es un coste aunque el bróker anuncie «0 comisiones».",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Lo pagas al comprar al ask y vender al bid, cobre o no comisión el bróker."
+  },
+  "u6l2-9": {
+   "prompt": "¿Cuándo suele haber más deslizamiento? Marca todas.",
+   "options": [
+    "Con órdenes grandes en valores poco líquidos",
+    "Con una orden pequeña en una gran empresa a media sesión",
+    "En momentos de pánico, con el precio moviéndose muy rápido",
+    "En la apertura, tras una noticia"
+   ],
+   "explanation": "El deslizamiento aparece cuando falta liquidez o el precio corre."
+  },
+  "u6l2-10": {
+   "prompt": "Marta quiere comprar 3.000 € de una empresa pequeña con un spread de un 1 %. ¿Qué hace?",
+   "options": [
+    "Compra a mercado y vende en cuanto gane un poco",
+    "Usa una orden limitada y evita operar con frecuencia ese valor",
+    "Compra y vende varias veces al día para aprovechar los movimientos"
+   ],
+   "explanation": "En valores con spread alto, operar mucho es perder dinero seguro.",
+   "feedback": [
+    "Necesita que suba más de un 1 % solo para empatar el spread.",
+    "Controla el precio de entrada y no paga el 1 % una y otra vez.",
+    "Cada vuelta le cuesta un 1 %: el spread se come cualquier ganancia."
+   ]
+  },
+  "u6l3-1": {
+   "prompt": "Quieres comprar, pero solo si el precio baja a 45 €. ¿Qué orden usas?",
+   "options": [
+    "Take profit a 45 €",
+    "A mercado",
+    "Limitada de compra a 45 €"
+   ],
+   "explanation": "La limitada solo se ejecuta a 45 € o menos."
+  },
+  "u6l3-2": {
+   "prompt": "Cotiza a 50 €. Pones una limitada de compra a 47 € y mañana el mínimo del día es 47,40 €. ¿Qué pasa?",
+   "options": [
+    "Compras a 47,40 €",
+    "Compras a 47 €",
+    "No se ejecuta"
+   ],
+   "explanation": "El precio no llegó a tu límite: la orden sigue esperando (o caduca, si era del día)."
+  },
+  "u6l3-3": {
+   "prompt": "Una limitada de venta a 60 € puede ejecutarse a 60,30 €.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Vende a tu precio o mejor: si alguien paga más, mejor para ti."
+  },
+  "u6l3-4": {
+   "prompt": "Tienes acciones compradas al último precio. Coloca una orden limitada de venta en un nivel con opciones reales de ejecutarse.",
+   "options": [],
+   "explanation": "Cerca del máximo anterior suele aparecer venta: es un objetivo razonable. Mucho más arriba, la orden puede no ejecutarse nunca."
+  },
+  "u6l3-5": {
+   "prompt": "Compras con una cartera de 5.000 € y arriesgas como mucho un 2 % (100 €). Coloca el stop y elige cuánto invertir.",
+   "options": [],
+   "explanation": "El importe sale del stop: con un stop más lejano compras menos para no pasar de 100 € de riesgo."
+  },
+  "u6l3-6": {
+   "prompt": "Ana quiere 1.000 acciones de un valor poco líquido: el mejor vendedor pide 8,40 € pero solo por 100 acciones, y los siguientes piden 8,90 €. ¿Qué hace?",
+   "options": [
+    "Limitada de compra a 8,45 €",
+    "Compra a mercado",
+    "Limitada de compra a 9,50 €"
+   ],
+   "explanation": "Un límite útil está cerca del precio que de verdad quieres pagar.",
+   "feedback": [
+    "Compra lo que haya hasta 8,45 € y el resto espera. No paga 8,90 € por sorpresa.",
+    "Se come el libro: 100 a 8,40 € y 900 a 8,90 € o más.",
+    "Eso no limita nada: se ejecutaría casi como a mercado."
+   ]
+  },
+  "u6l3-7": {
+   "prompt": "¿Qué le dices a Lumi?",
+   "options": [
+    "Revisa tus órdenes vivas: siguen activas aunque cambie la situación",
+    "Las limitadas nunca se ejecutan",
+    "Genial, has comprado barato"
+   ],
+   "explanation": "Las órdenes vivas trabajan solas: conviene revisarlas.",
+   "feedback": [
+    "Eso: una orden hasta cancelar no sabe que han cambiado las noticias. Revísalas de vez en cuando.",
+    "Sí se ejecutan cuando el precio llega a tu límite.",
+    "Quizá, pero has comprado sin decidirlo hoy, con información nueva."
+   ],
+   "lines": [
+    "Puse una limitada de compra «hasta cancelar» hace un mes y ni me acordaba 😅",
+    "¡Hoy se ha ejecutado justo después de una noticia malísima!"
+   ]
+  },
+  "u6l3-8": {
+   "prompt": "Empareja cada orden con lo que hace.",
+   "options": [
+    "Limitada de compra",
+    "Limitada de venta",
+    "Validez del día",
+    "Hasta cancelar"
+   ],
+   "explanation": "Precio límite y validez: las dos cosas que eliges en una limitada.",
+   "right": [
+    "A tu precio o más caro",
+    "Caduca al cierre",
+    "Sigue viva hasta que se cumpla o la canceles",
+    "A tu precio o más barato"
+   ]
+  },
+  "u6l3-9": {
+   "prompt": "Una orden limitada siempre se ejecuta.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Si el precio no llega a tu límite, no se ejecuta."
+  },
+  "u6l3-10": {
+   "prompt": "Pones una limitada de compra de 200 acciones a 12,50 € y se ejecuta a 12,46 €. ¿Cuánto pagas de menos frente a tu límite?",
+   "options": [],
+   "explanation": "0,04 € × 200 = 8 €. La limitada compra a tu precio o mejor.",
+   "unit": "€"
+  },
+  "u6l4-1": {
+   "prompt": "Has comprado al último precio. Coloca el stop loss donde tu idea deja de ser válida.",
+   "options": [],
+   "explanation": "Un poco por debajo del último mínimo relevante: si lo pierde, la subida que esperabas ya no se cumple."
+  },
+  "u6l4-2": {
+   "prompt": "Otra operación: coloca el stop loss con la misma lógica.",
+   "options": [],
+   "explanation": "Por debajo del mínimo reciente, con algo de margen para que el ruido diario no te saque."
+  },
+  "u6l4-3": {
+   "prompt": "Tienes 10.000 € y arriesgas como mucho un 1 %. Primero el stop, después el importe.",
+   "options": [],
+   "explanation": "Riesgo = importe × distancia al stop ÷ precio de entrada. Con el stop decidido, el importe sale solo."
+  },
+  "u6l4-4": {
+   "prompt": "Tienes 10.000 € y arriesgas el 1 %. Compras a 50 € con el stop a 45 €. ¿Cuántas acciones puedes comprar?",
+   "options": [],
+   "explanation": "Riesgo máximo: 100 €. Riesgo por acción: 5 €. 100 ÷ 5 = 20 acciones.",
+   "unit": "acciones"
+  },
+  "u6l4-5": {
+   "prompt": "Compras 80 acciones a 25 € con el stop a 23,50 €. Si salta, ¿cuánto pierdes (sin costes)?",
+   "options": [],
+   "explanation": "(25 − 23,50) × 80 = 1,50 × 80 = 120 €.",
+   "unit": "€"
+  },
+  "u6l4-6": {
+   "prompt": "¿Dónde tiene más lógica un stop loss?",
+   "options": [
+    "A unos céntimos del precio de compra",
+    "En un número redondo cualquiera",
+    "Un poco por debajo del último mínimo relevante"
+   ],
+   "explanation": "Ahí tu idea deja de ser válida; muy cerca, el ruido normal te saca sin motivo."
+  },
+  "u6l4-7": {
+   "prompt": "Un stop loss garantiza que nunca perderás más de lo previsto.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Si el precio abre con un hueco por debajo de tu stop, se vende al primer precio disponible, que puede ser peor."
+  },
+  "u6l4-8": {
+   "prompt": "Rápido: compras a 100 € con el stop a 95 €. ¿Riesgo por acción?",
+   "options": [
+    "95 €",
+    "0,95 €",
+    "5 €"
+   ],
+   "explanation": "100 − 95 = 5 € por acción."
+  },
+  "u6l4-9": {
+   "prompt": "Empareja cada caso con lo que pasa.",
+   "options": [
+    "Stop a mercado",
+    "Stop limitado",
+    "Stop muy ajustado",
+    "Sin stop"
+   ],
+   "explanation": "No hay stop perfecto: cada opción tiene su coste.",
+   "right": [
+    "Controla el precio, pero puede no ejecutarse",
+    "El ruido normal te saca",
+    "No sabes cuánto puedes perder",
+    "Sale seguro, quizá a peor precio"
+   ]
+  },
+  "u6l4-10": {
+   "prompt": "Bruno compró a 40 € con el stop a 37 €. El precio baja a 37,50 € y piensa en bajar el stop a 33 € «para darle aire». ¿Qué hace?",
+   "options": [
+    "Lo baja a 33 €",
+    "Quita el stop y espera a que se recupere",
+    "Mantiene el stop donde lo puso"
+   ],
+   "explanation": "El stop se decide antes de entrar, con la cabeza fría, y no se aleja después.",
+   "feedback": [
+    "Ahora arriesga más del doble de lo planeado: así empiezan las grandes pérdidas.",
+    "Sin stop, la pérdida no tiene límite.",
+    "Si salta, pierde lo que había previsto. Si no, sigue su plan."
+   ]
+  },
+  "u6l5-1": {
+   "prompt": "Has comprado al último precio. Coloca tu objetivo (take profit) en un sitio lógico.",
+   "options": [],
+   "explanation": "Cerca del máximo anterior: es donde muchos vendieron y suele aparecer venta otra vez."
+  },
+  "u6l5-2": {
+   "prompt": "Otra operación: coloca el take profit.",
+   "options": [],
+   "explanation": "Cerca del máximo anterior, sin pasarte: un objetivo demasiado ambicioso puede no tocarse nunca."
+  },
+  "u6l5-3": {
+   "prompt": "Tienes 8.000 € y arriesgas como mucho un 1 % (80 €). Elige el importe y el stop.",
+   "options": [],
+   "explanation": "Con un stop cerca del mínimo reciente, la distancia es corta y puedes comprar más sin pasar de 80 € de riesgo."
+  },
+  "u6l5-4": {
+   "prompt": "Compras a 50 €, con el stop a 47 € y el objetivo a 56 €. ¿Cuántas veces el riesgo es el beneficio posible?",
+   "options": [],
+   "explanation": "Ganas 6 € y arriesgas 3 €: 6 ÷ 3 = 2. Relación 1:2.",
+   "unit": "veces"
+  },
+  "u6l5-5": {
+   "prompt": "Arriesgas 3 € para ganar 6 € por acción. En 10 operaciones aciertas 4. ¿Cuál es el resultado por acción, antes de costes?",
+   "options": [],
+   "explanation": "4 × 6 = 24 € ganados; 6 × 3 = 18 € perdidos. 24 − 18 = 6 €.",
+   "unit": "€"
+  },
+  "u6l5-6": {
+   "prompt": "Un take profit vende automáticamente cuando el precio sube hasta tu objetivo.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Asegura la ganancia sin que tengas que estar mirando."
+  },
+  "u6l5-7": {
+   "prompt": "Con un take profit, si el precio sigue subiendo después, también ganas esa subida.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Ya has vendido: lo que suba después no es tuyo."
+  },
+  "u6l5-8": {
+   "prompt": "El take profit se coloca por debajo del precio de compra.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Va por encima; por debajo va el stop loss."
+  },
+  "u6l5-9": {
+   "prompt": "Laura compró a 30 € con el objetivo en 36 €. En tres semanas llega a 36 € y se vende. Una semana después cotiza a 39 €. ¿Qué hace?",
+   "options": [
+    "Acepta que cumplió su plan y revisa si el objetivo era razonable",
+    "Vuelve a comprar a 39 € por rabia",
+    "Decide no volver a poner objetivos nunca"
+   ],
+   "explanation": "Un buen plan no acierta el máximo: protege lo que ganas.",
+   "feedback": [
+    "Ganó un 20 % siguiendo su plan. La próxima vez decidirá el objetivo con el mismo método.",
+    "Comprar por rabia no es un plan: es una reacción.",
+    "La próxima vez, sin objetivo, puede ver cómo la ganancia se evapora."
+   ]
+  },
+  "u6l5-10": {
+   "prompt": "¿Qué hace un take profit? Marca todas.",
+   "options": [
+    "Garantiza vender en el máximo",
+    "Evita que la avaricia decida por ti",
+    "Asegura la ganancia si se llega al objetivo",
+    "Vende sin que estés mirando"
+   ],
+   "explanation": "Nadie vende siempre en el máximo; el take profit vende en tu objetivo."
+  },
+  "u6l6-1": {
+   "prompt": "Monta tu OCO. Primero, coloca el stop loss.",
+   "options": [],
+   "explanation": "Por debajo del mínimo reciente: si lo pierde, tu idea ya no vale."
+  },
+  "u6l6-2": {
+   "prompt": "Ahora, en la misma operación, coloca el take profit.",
+   "options": [],
+   "explanation": "Cerca del máximo anterior. Con stop y objetivo puestos, la OCO cancela uno cuando salta el otro."
+  },
+  "u6l6-3": {
+   "prompt": "Ordena lo que pasa con una OCO que acaba en el objetivo.",
+   "options": [
+    "Colocas el stop y el objetivo como OCO",
+    "El precio sube hasta el objetivo",
+    "El stop se cancela solo",
+    "Compras la acción",
+    "Se venden las acciones"
+   ],
+   "explanation": "Una se ejecuta y la otra desaparece: no te quedas con una orden suelta."
+  },
+  "u6l6-4": {
+   "prompt": "Pablo tiene acciones compradas a 40 € con un stop (a mercado) en 38 €. Tras malos resultados por la noche, la acción abre a 34 €. ¿A qué precio vende, aproximadamente?",
+   "options": [
+    "A 38 € exactos",
+    "No vende",
+    "Alrededor de 34 €"
+   ],
+   "explanation": "No hubo precios entre 38 y 34 €: el stop se ejecuta al primer precio disponible."
+  },
+  "u6l6-5": {
+   "prompt": "Bruno va a mantener unas acciones el día que la empresa presenta resultados y sabe que puede haber un hueco. ¿Qué hace?",
+   "options": [
+    "Confía en que el stop le protege seguro",
+    "Reduce el tamaño para que un hueco del 15 % no le haga mucho daño",
+    "Duplica la posición porque tiene stop"
+   ],
+   "explanation": "Contra los huecos, la mejor defensa es el tamaño de la posición.",
+   "feedback": [
+    "Con un hueco, el stop se ejecuta muy por debajo de su nivel.",
+    "Si abre con hueco, pierde más de lo previsto por acción, pero sobre una posición pequeña.",
+    "Doble tamaño y un stop que no protege de los huecos: doble golpe."
+   ]
+  },
+  "u6l6-6": {
+   "prompt": "Compraste a 50 € con el stop a 47,50 €. La acción abre con un hueco a 42,50 € y el stop se ejecuta ahí. ¿Cuántos euros por acción pierdes de más respecto a lo previsto?",
+   "options": [],
+   "explanation": "Previsto: 50 − 47,50 = 2,50 €. Real: 50 − 42,50 = 7,50 €. De más: 5 €.",
+   "unit": "€"
+  },
+  "u6l6-7": {
+   "prompt": "Stop dinámico del 10 %. El precio sube de 80 € a 95 €. ¿Dónde está ahora el stop?",
+   "options": [],
+   "explanation": "95 × 0,90 = 85,50 €. El stop sigue al precio hacia arriba.",
+   "unit": "€"
+  },
+  "u6l6-8": {
+   "prompt": "En una OCO, si salta el stop, el take profit sigue activo.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Se cancela solo: por eso se llama «una cancela a la otra»."
+  },
+  "u6l6-9": {
+   "prompt": "Un stop loss puede ejecutarse peor que su nivel si hay un hueco.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Sin precios intermedios, se vende al primero disponible."
+  },
+  "u6l6-10": {
+   "prompt": "Empareja cada término con su significado.",
+   "options": [
+    "OCO",
+    "Hueco",
+    "Stop dinámico",
+    "Stop limitado"
+   ],
+   "explanation": "Las órdenes combinadas automatizan tu plan, pero no eliminan los huecos.",
+   "right": [
+    "Salto de precio sin cotizaciones intermedias",
+    "Sube con el precio y nunca baja",
+    "Puede no ejecutarse si el precio salta",
+    "Stop y objetivo: uno cancela al otro"
+   ]
+  },
+  "u6l6-11": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Exacto, estás totalmente protegido",
+    "Casi siempre, pero un hueco puede hacerte perder más",
+    "La OCO no sirve para nada"
+   ],
+   "explanation": "La OCO organiza la salida; el tamaño de la posición limita el daño de lo imprevisto.",
+   "feedback": [
+    "Con un hueco por la noche, el stop puede ejecutarse muy por debajo de ese 5 %.",
+    "¡Eso! Por eso también cuenta cuánto dinero pones en cada operación.",
+    "Sí sirve: automatiza tu salida. Solo que no es un seguro perfecto."
+   ],
+   "lines": [
+    "Con mi OCO ya no puedo perder más del 5 %, ¿verdad? 😎"
+   ]
+  }
+ }
+}

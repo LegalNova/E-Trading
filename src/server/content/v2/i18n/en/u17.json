@@ -1,0 +1,678 @@
+{
+ "unit": {
+  "title": "Ratios and valuation",
+  "description": "P/E, PEG, EV/EBITDA, ROE, dividends, DCF and CAPE with real numbers",
+  "section": "Fundamental analysis"
+ },
+ "lessons": {
+  "u17l1": {
+   "title": "The P/E ratio",
+   "steps": [
+    {
+     "title": "What the P/E is",
+     "body": "**P/E = price ÷ EPS** (or market cap ÷ net profit).\n\nPanadería Global trades at €15 and its EPS is €0.975: **P/E = 15.4**. You're paying 15.4 times one year's earnings.\n\nIts inverse is the **earnings yield**: 1 ÷ 15.4 = **6.5 %**, which you can compare with what a bond pays."
+    },
+    {
+     "title": "How to read it",
+     "body": "• The market's historical average is around **15-17**.\n• **A low P/E doesn't mean cheap:** it could be a company in decline or one with a one-off inflated profit (from selling a building).\n• **A high P/E doesn't mean expensive:** the company may be growing very fast.\n• Compare it with its own **history** and its **sector**: a bank on a P/E of 8 and a software company on 35 can both be «fairly priced»."
+    },
+    {
+     "title": "Trailing and forward",
+     "body": "Using last year's earnings gives you the trailing P/E; using forecast earnings gives you the **forward P/E**. If earnings are set to grow a lot, the forward P/E will be lower.",
+     "key": "A P/E of 10 can be expensive and one of 30 cheap: it depends on what the company is going to earn."
+    }
+   ]
+  },
+  "u17l2": {
+   "title": "PEG, EV/EBITDA and price-to-book",
+   "steps": [
+    {
+     "title": "PEG: the P/E with growth",
+     "body": "**PEG = P/E ÷ expected annual EPS growth (in %).**\n\nPanadería Global: P/E of 15.4, growing at 8 % → PEG = **1.9**.\n\n• Close to 1: reasonable.\n• Above 2: expensive for its growth.\n\nTwo companies on a P/E of 20: if one grows at 20 % (PEG 1) and the other at 5 % (PEG 4), the first is cheaper."
+    },
+    {
+     "title": "EV/EBITDA: debt included",
+     "body": "**EV (enterprise value) = market cap + net debt.** It's what it would cost to buy the whole company, debts included.\n\nPanadería Global: (1,500 + 320) ÷ 200 = **9.1**.\n\nIt lets you compare companies with different levels of debt, something the P/E can't see."
+    },
+    {
+     "title": "P/B: for banks and insurers",
+     "body": "**P/B = price ÷ book value per share.** Panadería Global: 15 ÷ 4.5 = **3.3**.\n\nIt's used mainly for banks and insurers, whose balance sheets are full of financial assets. For a software company, which is valued for its ideas rather than its assets, it tells you very little.",
+     "key": "Choose the ratio to suit the type of company."
+    }
+   ]
+  },
+  "u17l3": {
+   "title": "ROE and ROIC: is it a good business?",
+   "steps": [
+    {
+     "title": "ROE: the shareholder's return",
+     "body": "**ROE = net profit ÷ shareholders' equity.**\n\nPanadería Global: 97.5 ÷ 450 = **21.7 %**. For every €100 belonging to shareholders, it earns almost €22 a year.\n\nAn ROE above **15 %**, sustained over time, is very good."
+    },
+    {
+     "title": "ROIC: the business's return",
+     "body": "**ROIC = EBIT × (1 − tax) ÷ (equity + net debt).**\n\nPanadería Global: 150 × 0.75 = 112.5; and 112.5 ÷ (450 + 320) = **14.6 %**.\n\nIt has to beat the **cost of capital** (≈ 8-10 %); otherwise the company grows while destroying value."
+    },
+    {
+     "title": "The ROE trick",
+     "body": "With lots of debt, equity is small and ROE shoots up. ROIC includes debt, which makes it harder to inflate. The best businesses earn a lot on little capital and can **reinvest** at those rates for years.",
+     "key": "Look for businesses that turn every euro invested into much more than a euro, year after year."
+    }
+   ]
+  },
+  "u17l4": {
+   "title": "Dividend yield and payout ratio",
+   "steps": [
+    {
+     "title": "Two ratios",
+     "body": "• **Dividend yield** = dividend per share ÷ price. Panadería Global pays €0.50 and trades at €15: **3.3 %**.\n• **Payout ratio** = dividend ÷ EPS. 0.50 ÷ 0.975 = **51 %**: it pays out half and reinvests the other half."
+    },
+    {
+     "title": "When a dividend is at risk",
+     "body": "• **Payout ratio above 80-90 %** year after year, and even more so above 100 %: it's paying out more than it earns.\n• **Dividend bigger than free cash flow:** it's being paid with debt.\n• **Sky-high yield** (10 %, 12 %…): often it's because the price has collapsed and the market expects a cut."
+    },
+    {
+     "title": "A dividend isn't a gift",
+     "body": "When a company pays €1 per share, the share usually falls by around €1 that day: the money moves from the company to your pocket, and Hacienda (the Spanish tax authority) takes its cut. What counts is the **total return**.",
+     "key": "A sustainable dividend comes out of cash, not out of debt."
+    }
+   ]
+  },
+  "u17l5": {
+   "title": "Discounted cash flow (DCF) without fear",
+   "steps": [
+    {
+     "title": "Bringing the future to today",
+     "body": "A euro in 10 years' time is worth less than a euro today, because today you could invest it.\n\n**Value today = future cash flow ÷ (1 + rate)^years**\n\nAt a rate of 9 %, €100 in a year's time is worth 100 ÷ 1.09 = **€91.74** today."
+    },
+    {
+     "title": "Panadería Global's DCF",
+     "body": "FCF of €1 per share, growing 6 % a year for 10 years and then 2 % forever. Discount rate: 9 %.\n\n• Cash flows for years 1-10, discounted: ≈ **€8.6**\n• Terminal value (Gordon formula): year 11 FCF ÷ (9 % − 2 %) ≈ €26.1; brought back to today: ≈ **€11.0**\n• **Value ≈ €19.6.** It trades at €15: a 23 % margin."
+    },
+    {
+     "title": "The lesson of DCF",
+     "body": "Tweak the assumptions slightly:\n\n• A 10 % rate: about **€17**.\n• 4 % growth: about **€16.9**.\n• Both at once: about **€14.7**, already below the price.\n\nA DCF is a tool for **thinking** («what growth is the price assuming?»), not for producing an exact figure.",
+     "key": "If tweaking the assumptions slightly makes the value collapse, tread carefully."
+    }
+   ]
+  },
+  "u17l6": {
+   "title": "The CAPE and market valuation",
+   "steps": [
+    {
+     "title": "The P/E of the whole market",
+     "body": "The **CAPE** (or Shiller P/E) divides the price of an index by the **average earnings of the last 10 years**, adjusted for inflation. Because it uses 10 years, it smooths out the ups and downs of the economic cycle."
+    },
+    {
+     "title": "The S&P 500 figures",
+     "body": "• Average since 1871: about **17**.\n• Peak: **44** in December 1999, just before the dot-com bubble burst.\n• October 2026: around **41**, among the highest levels in history."
+    },
+    {
+     "title": "What it tells you and what it doesn't",
+     "body": "**Yes:** historically, a high CAPE has been linked to **lower returns over the following 10 years**.\n**No:** it doesn't tell you **when** the market will fall; it can stay expensive for years.\n\nOther regions trade at noticeably cheaper valuations: another argument for diversifying across countries.",
+     "key": "The CAPE is for adjusting your expectations, not for guessing next month."
+    }
+   ]
+  },
+  "u17r": {
+   "title": "Unit review",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u17l1-1": {
+   "prompt": "A share trades at €30 and its EPS is €2. What is its P/E?",
+   "options": [],
+   "explanation": "30 ÷ 2 = 15: you're paying 15 years of current earnings.",
+   "unit": "times"
+  },
+  "u17l1-2": {
+   "prompt": "A company has a market cap of €4,000m and earns €250m a year. What is its P/E?",
+   "options": [],
+   "explanation": "4,000 ÷ 250 = 16. It makes no difference whether you work it out per share or for the whole company.",
+   "unit": "times"
+  },
+  "u17l1-3": {
+   "prompt": "A share has a P/E of 20. What is its earnings yield?",
+   "options": [],
+   "explanation": "1 ÷ 20 = 5 %.",
+   "unit": "%"
+  },
+  "u17l1-4": {
+   "prompt": "P/E = price ÷ ____.",
+   "options": [
+    "dividend",
+    "debt",
+    "sales",
+    "EPS"
+   ],
+   "explanation": "The share price divided by earnings per share."
+  },
+  "u17l1-5": {
+   "prompt": "If EPS doubles and the price doesn't move, the P/E drops to ____ of what it was.",
+   "options": [
+    "a quarter",
+    "a tenth",
+    "a third",
+    "half"
+   ],
+   "explanation": "The same price divided by twice the earnings gives half the P/E."
+  },
+  "u17l1-6": {
+   "prompt": "A low P/E always means the share is cheap.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It may reflect a company in decline or a one-off inflated profit."
+  },
+  "u17l1-7": {
+   "prompt": "One year, a company sells its headquarters and its profit triples. Its P/E falls from 18 to 6. What has happened?",
+   "options": [
+    "The P/E is distorted by a one-off profit",
+    "It has become a bargain",
+    "Its business has improved a lot"
+   ],
+   "explanation": "That profit won't happen again: you need to look at recurring earnings."
+  },
+  "u17l1-8": {
+   "prompt": "A share at €60 has EPS of €3 this year, and EPS of €4 is expected next year. What is its forward P/E?",
+   "options": [],
+   "explanation": "60 ÷ 4 = 15. The trailing P/E is 60 ÷ 3 = 20.",
+   "unit": "times"
+  },
+  "u17l1-9": {
+   "prompt": "Quick: price €45, EPS €3. P/E?",
+   "options": [
+    "18",
+    "12",
+    "15"
+   ],
+   "explanation": "45 ÷ 3 = 15."
+  },
+  "u17l1-10": {
+   "prompt": "What do you reply to Lumi?",
+   "options": [
+    "Buy it now before it gets away",
+    "Look into why it's so low: a one-off profit, a business in decline or huge debt",
+    "A low P/E is always better"
+   ],
+   "explanation": "A very low P/E is a question, not an answer.",
+   "feedback": [
+    "Hold on: almost nothing has a P/E of 4 without a reason, and you need to find out what it is.",
+    "OK, I'll do my research before falling in love with the number.",
+    "Not always: sometimes it's the market's way of saying «this profit won't last»."
+   ],
+   "lines": [
+    "I've found a share with a P/E of 4 😍",
+    "It's a steal!"
+   ]
+  },
+  "u17l2-1": {
+   "prompt": "Match each company with the ratio most often used to analyse it.",
+   "options": [
+    "A bank",
+    "A tech company growing at 25 %",
+    "An industrial company with lots of debt",
+    "A mature, stable company"
+   ],
+   "explanation": "Each ratio sheds light on something different.",
+   "right": [
+    "PEG",
+    "EV/EBITDA",
+    "P/E",
+    "Price / book value"
+   ]
+  },
+  "u17l2-2": {
+   "prompt": "P/E of 30 and expected EPS growth of 15 % a year. What is its PEG?",
+   "options": [],
+   "explanation": "30 ÷ 15 = 2: expensive for its growth.",
+   "unit": "times"
+  },
+  "u17l2-3": {
+   "prompt": "Market cap of €2,000m, net debt of €600m and EBITDA of €260m. What is its EV/EBITDA?",
+   "options": [],
+   "explanation": "(2,000 + 600) ÷ 260 = 10.",
+   "unit": "times"
+  },
+  "u17l2-4": {
+   "prompt": "A bank trades at €6 and its book value per share is €7.5. What is its P/B?",
+   "options": [],
+   "explanation": "6 ÷ 7.5 = 0.8: it trades below its book value.",
+   "unit": "times"
+  },
+  "u17l2-5": {
+   "prompt": "Two companies on a P/E of 20. A grows 20 % a year and B 5 %. Which is cheaper according to the PEG?",
+   "options": [
+    "A (PEG 1)",
+    "B (PEG 4)",
+    "Both the same"
+   ],
+   "explanation": "The PEG relates the price to growth."
+  },
+  "u17l2-6": {
+   "prompt": "Why is EV/EBITDA useful for comparing companies with different levels of debt?",
+   "options": [
+    "Because it adds net debt to the company's value",
+    "Because it only looks at the dividend",
+    "Because it ignores debt"
+   ],
+   "explanation": "When you buy a whole company, you take on its debts too."
+  },
+  "u17l2-7": {
+   "prompt": "Two companies with the same P/E can have very different EV/EBITDA ratios.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "If one has lots of debt, its EV is much larger than its market cap."
+  },
+  "u17l2-8": {
+   "prompt": "A and B each have a market cap of €1,000m and EBITDA of €100m. A has no debt; B has €800m of net debt. A friend says they «cost the same». What do you tell them?",
+   "options": [
+    "That B is cheaper because it has debt",
+    "That they're right: the market caps are the same",
+    "That B is more expensive: EV/EBITDA of 18 versus 10"
+   ],
+   "explanation": "Enterprise value looks at the whole company, debt included.",
+   "feedback": [
+    "Debt is something you owe, not a gift.",
+    "Market cap doesn't include debt: buy B and you also take on €800m that has to be paid back.",
+    "Exactly: (1,000 + 800) ÷ 100 = 18, versus 1,000 ÷ 100 = 10."
+   ]
+  },
+  "u17l2-9": {
+   "prompt": "Quick: P/E of 12 and 12 % growth. PEG?",
+   "options": [
+    "2",
+    "1",
+    "0.5"
+   ],
+   "explanation": "12 ÷ 12 = 1."
+  },
+  "u17l2-10": {
+   "prompt": "According to the PEG, reasonable or expensive for its growth?",
+   "options": [
+    "P/E 40, growing at 10 %",
+    "P/E 10, growing at 12 %",
+    "P/E 24, growing at 8 %",
+    "P/E 15, growing at 15 %"
+   ],
+   "explanation": "PEGs of 1; 4; 0.83; and 3.",
+   "right": [
+    "Reasonable (PEG of 1 or less)",
+    "Expensive (PEG of 2 or more)"
+   ]
+  },
+  "u17l3-1": {
+   "prompt": "Net profit of €50m and shareholders' equity of €250m. What is the ROE?",
+   "options": [],
+   "explanation": "50 ÷ 250 = 20 %.",
+   "unit": "%"
+  },
+  "u17l3-2": {
+   "prompt": "EBIT of €200m, 25 % tax, equity of €600m and net debt of €400m. What is the ROIC?",
+   "options": [],
+   "explanation": "200 × 0.75 = 150; 150 ÷ (600 + 400) = 15 %.",
+   "unit": "%"
+  },
+  "u17l3-3": {
+   "prompt": "A company earns €40m on equity of €400m (ROE of 10 %). It buys back shares with borrowed money: its equity drops to €200m and, because of the interest, its profit drops to €36m. What is its new ROE?",
+   "options": [],
+   "explanation": "36 ÷ 200 = 18 %. ROE almost doubles without the business getting any better: it's the effect of the debt.",
+   "unit": "%"
+  },
+  "u17l3-4": {
+   "prompt": "An ROIC of 5 % with a 9 % cost of capital creates value.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "If ROIC doesn't beat the cost of capital, every euro reinvested destroys value."
+  },
+  "u17l3-5": {
+   "prompt": "A very high ROE can be the result of the company having lots of debt.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "With little equity, any profit looks like a huge return."
+  },
+  "u17l3-6": {
+   "prompt": "Why is ROIC more reliable than ROE for judging the business?",
+   "options": [
+    "Because the tax authority calculates it",
+    "Because it includes debt in the capital",
+    "Because it always comes out higher"
+   ],
+   "explanation": "ROE shoots up if the company takes on debt; ROIC, not so much."
+  },
+  "u17l3-7": {
+   "prompt": "Quick: what sustained ROE is considered very good?",
+   "options": [
+    "Around 3 %",
+    "Over 15 %",
+    "Negative"
+   ],
+   "explanation": "As long as it doesn't come from excessive borrowing."
+  },
+  "u17l3-8": {
+   "prompt": "Cost of capital: 9 %. Rank these from best to worst business by ROIC.",
+   "options": [
+    "ROIC of 15 %",
+    "ROIC of 9 %",
+    "ROIC of 4 %",
+    "ROIC of 30 %"
+   ],
+   "explanation": "Above 9 % it creates value; at 9 %, it neither creates nor destroys it; below that, it destroys it."
+  },
+  "u17l3-9": {
+   "prompt": "Laura is comparing two companies. A: ROE of 25 % with net debt/EBITDA of 5. B: ROE of 18 %, no debt and an ROIC of 18 %. Which looks like the better business?",
+   "options": [
+    "A: its ROE is higher",
+    "B: it earns a lot on all its capital without relying on debt",
+    "There's no way to tell"
+   ],
+   "explanation": "Look at ROE alongside ROIC and debt.",
+   "feedback": [
+    "With that much debt, the ROE may come from leverage more than from the business.",
+    "Exactly: an 18 % ROIC with no debt is a quality business.",
+    "With ROE, ROIC and debt you can already get a pretty good idea."
+   ]
+  },
+  "u17l3-10": {
+   "prompt": "A company with a 20 % ROIC reinvests all its profit at that rate for 10 years. By how much does its capital multiply? (one decimal place)",
+   "options": [],
+   "explanation": "1.20¹⁰ ≈ 6.19. That's the idea behind «compounding machines»: an example, not a promise.",
+   "unit": "times"
+  },
+  "u17l4-1": {
+   "prompt": "A share trades at €40 and pays a dividend of €1.60 a year. What is its dividend yield?",
+   "options": [],
+   "explanation": "1.60 ÷ 40 = 4 %.",
+   "unit": "%"
+  },
+  "u17l4-2": {
+   "prompt": "EPS of €2 and a dividend of €1.50. What is the payout ratio?",
+   "options": [],
+   "explanation": "1.50 ÷ 2 = 75 %: it pays out three quarters of what it earns.",
+   "unit": "%"
+  },
+  "u17l4-3": {
+   "prompt": "Inditex proposed a dividend of €1.68 per share for its 2024 financial year. If the share traded at €48, what would its dividend yield be?",
+   "options": [],
+   "explanation": "1.68 ÷ 48 = 3.5 %. It's a calculation using an example price, not a recommendation.",
+   "unit": "%"
+  },
+  "u17l4-4": {
+   "prompt": "Tick the messages that are signs of a scam or deception involving dividends.",
+   "options": [
+    "The AGM approves a dividend of €0.50 per share, to be paid on 2 July.",
+    "I'll pay you a 3 % monthly «dividend» if you transfer your money to this account.",
+    "Live off dividends with €1,000: my course shows you how for €499.",
+    "🔥 Share with a 25 % ANNUAL dividend, GUARANTEED. Today only, limited places.",
+    "You've received €12.40 in dividends, net of withholding tax."
+   ],
+   "explanation": "Guaranteed returns, monthly «dividends» outside any regulated market and promises that you can live off your investments with €1,000 are classic signs of deception. At 4 %, €1,000 gives you about €40 a year.",
+   "senders": [
+    "Listed company's website",
+    "Stranger on WhatsApp",
+    "Influencer",
+    "Telegram channel",
+    "Your broker"
+   ]
+  },
+  "u17l4-5": {
+   "prompt": "A company offers a 12 % dividend yield and its share price has fallen 50 % this year. What does that usually indicate?",
+   "options": [
+    "That the market expects a dividend cut",
+    "That it's a sure-fire bargain",
+    "That the company is doing very well"
+   ],
+   "explanation": "The yield has gone up because the price has collapsed, not because they're paying more."
+  },
+  "u17l4-6": {
+   "prompt": "A payout ratio of 110 % for three years in a row is sustainable.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It's paying out more than it earns: it's dipping into cash or borrowing, and sooner or later it will have to cut."
+  },
+  "u17l4-7": {
+   "prompt": "Bruno is comparing two shares by their dividend. A: 3.5 % yield, 50 % payout ratio and free cash flow that covers the dividend twice over. B: 9 % yield, 130 % payout ratio and rising debt. Which makes more sense?",
+   "options": [
+    "It doesn't matter: dividends are guaranteed",
+    "Go for B: it pays almost three times as much",
+    "Go for A: its dividend is covered by earnings and cash"
+   ],
+   "explanation": "Before looking at how much it pays, look at where the money comes from.",
+   "feedback": [
+    "No share dividend is guaranteed.",
+    "It pays out more than it earns and borrows to do it: that 9 % could vanish overnight.",
+    "Exactly: a smaller but sustainable dividend is usually worth more than a high one that's at risk."
+   ]
+  },
+  "u17l4-8": {
+   "prompt": "Quick: price €20, dividend €1. Dividend yield?",
+   "options": [
+    "2 %",
+    "20 %",
+    "5 %"
+   ],
+   "explanation": "1 ÷ 20 = 5 %."
+  },
+  "u17l4-9": {
+   "prompt": "A share is worth €30 and pays a dividend of €0.90. With no other news, at roughly what price does it usually open on the ex-dividend date?",
+   "options": [],
+   "explanation": "30 − 0.90 = €29.10. The dividend comes out of the company's value.",
+   "unit": "€"
+  },
+  "u17l4-10": {
+   "prompt": "Payout ratio = dividend per share ÷ ____.",
+   "options": [
+    "price",
+    "debt",
+    "sales",
+    "EPS"
+   ],
+   "explanation": "How much of the earnings is paid out."
+  },
+  "u17l5-1": {
+   "prompt": "At a 10 % rate, how much is €110 that you'll receive in a year's time worth today?",
+   "options": [],
+   "explanation": "110 ÷ 1.10 = €100.",
+   "unit": "€"
+  },
+  "u17l5-2": {
+   "prompt": "At an 8 % rate, how much is €1,000 that you'll receive in 5 years' time worth today?",
+   "options": [],
+   "explanation": "1.08⁵ ≈ 1.4693; 1,000 ÷ 1.4693 ≈ €680.58.",
+   "unit": "€"
+  },
+  "u17l5-3": {
+   "prompt": "Terminal value with the Gordon formula: next year's FCF is €2, the discount rate is 9 % and perpetual growth is 2 %. What is it worth?",
+   "options": [],
+   "explanation": "2 ÷ (0.09 − 0.02) = 2 ÷ 0.07 ≈ €28.57.",
+   "unit": "€"
+  },
+  "u17l5-4": {
+   "prompt": "Your DCF says a share is worth €25 and it trades at €20. What margin of safety do you have on the value?",
+   "options": [],
+   "explanation": "(25 − 20) ÷ 25 = 20 %.",
+   "unit": "%"
+  },
+  "u17l5-5": {
+   "prompt": "In a DCF, if you raise the discount rate, the estimated value…",
+   "options": [
+    "Falls",
+    "Doesn't change",
+    "Rises"
+   ],
+   "explanation": "Future money is worth less today if you demand a higher return."
+  },
+  "u17l5-6": {
+   "prompt": "What is a DCF mainly for?",
+   "options": [
+    "Getting the exact value of a company",
+    "Knowing when the share price will go up",
+    "Thinking about what growth the price is assuming"
+   ],
+   "explanation": "Small changes in the assumptions change the result a lot."
+  },
+  "u17l5-7": {
+   "prompt": "In the Panadería Global example, raising the rate to 10 % and cutting growth to 4 % leaves the value below the €15 price.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "About €14.7: two reasonable tweaks eat up the whole margin of safety."
+  },
+  "u17l5-8": {
+   "prompt": "Pablo does a DCF: a company trading at €60 is «worth» €120. To get there he assumed 25 % annual growth for 10 years and a 6 % rate. What should he do?",
+   "options": [
+    "Go all in: it's worth double",
+    "Try more cautious assumptions and see how much the value changes",
+    "Post it on a forum"
+   ],
+   "explanation": "A DCF is only as good as its assumptions.",
+   "feedback": [
+    "His result depends on very optimistic assumptions: with more cautious ones, the «double» could disappear.",
+    "Good: if the value collapses with reasonable growth and a reasonable rate, the margin was an illusion.",
+    "Before convincing anyone else, convince yourself with cautious assumptions."
+   ]
+  },
+  "u17l5-9": {
+   "prompt": "A euro in 10 years' time is worth more than a euro today.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It's worth less: today you could invest it and have it growing for 10 years."
+  },
+  "u17l5-10": {
+   "prompt": "Put the steps of a simplified DCF in order.",
+   "options": [
+    "Discount each cash flow back to today at your rate",
+    "Calculate the terminal value and discount it",
+    "Add it all up and compare it with the price",
+    "Estimate free cash flow for the coming years"
+   ],
+   "explanation": "Future, discounting, terminal value and comparison."
+  },
+  "u17l5-11": {
+   "prompt": "What do you reply to Lumi?",
+   "options": [
+    "Better to think in terms of a range and demand a good margin of safety",
+    "DCFs are useless",
+    "Perfect! If it trades at €47.31, it's cheap"
+   ],
+   "explanation": "A DCF gives you a rough range, not an exact figure.",
+   "feedback": [
+    "You're right: I move the rate by one point and get €40. Phew!",
+    "They're useful, for thinking. Not for giving you decimals.",
+    "One cent isn't a margin: your figure could be several euros out either way."
+   ],
+   "lines": [
+    "My DCF says this share is worth exactly €47.32 🤓"
+   ]
+  },
+  "u17l6-1": {
+   "prompt": "Look at the Nasdaq 100 from late 1997 to March 2000. What trend do you see? (Nasdaq 100 · weekly closes · up to 06/03/2000)",
+   "options": [
+    "Uptrend",
+    "Downtrend",
+    "Sideways"
+   ],
+   "explanation": "A huge rise: valuations reached levels never seen before."
+  },
+  "u17l6-2": {
+   "prompt": "March 2000: the S&P 500 CAPE has just hit its record (44, in December 1999) and the Nasdaq 100 has been soaring for years. What did the Nasdaq 100 do next?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "An extreme valuation tells you future returns will probably be low, but not when or by how much the price will move.",
+   "horizon": "until December 2002"
+  },
+  "u17l6-3": {
+   "prompt": "November 1989: the Japanese stock market is trading at record valuations after a decade of euphoria. What did the Nikkei 225 do in the following years?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "As with the US CAPE, a very high valuation doesn't set a date: it only shifts the odds of what comes next.",
+   "horizon": "until November 1995"
+  },
+  "u17l6-4": {
+   "prompt": "The CAPE divides the price by the average real earnings of the last ____ years.",
+   "options": [
+    "1",
+    "30",
+    "5",
+    "10"
+   ],
+   "explanation": "Ten years smooth out the economic cycle."
+  },
+  "u17l6-5": {
+   "prompt": "What has the historical average of the S&P 500 CAPE been since 1871?",
+   "options": [
+    "About 17",
+    "About 5",
+    "About 41"
+   ],
+   "explanation": "In October 2026 it was around 41, well above that average."
+  },
+  "u17l6-6": {
+   "prompt": "A very high CAPE tells you exactly when the market will fall.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It can stay expensive for years; what it has been linked to is lower returns over 10 years."
+  },
+  "u17l6-7": {
+   "prompt": "Historically, a high CAPE has been linked to lower returns over the following 10 years.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Paying a high price leaves less room for gains afterwards."
+  },
+  "u17l6-8": {
+   "prompt": "An index stands at 4,100 points and the average of its real earnings over 10 years is 100 points. What is its CAPE?",
+   "options": [],
+   "explanation": "4,100 ÷ 100 = 41.",
+   "unit": "times"
+  },
+  "u17l6-9": {
+   "prompt": "With a CAPE of 41, what is the implied earnings yield (its inverse)?",
+   "options": [],
+   "explanation": "1 ÷ 41 ≈ 2.44 %. With a CAPE of 17 it would be ≈ 5.9 %: paying more leaves a lower expected return.",
+   "unit": "%"
+  },
+  "u17l6-10": {
+   "prompt": "October 2026: the S&P 500 CAPE is around 41. Marta invests every month in a global index fund with a 25-year horizon. She reads that «the market is wildly expensive» and wants to sell everything. What would you tell her?",
+   "options": [
+    "To buy more with borrowed money",
+    "To sell everything and wait for the crash",
+    "That a high CAPE suggests more modest expectations, not a crash date, and that she should calmly review her allocation and how she's diversified across countries"
+   ],
+   "explanation": "The CAPE is for adjusting expectations and diversifying, not for jumping in and out of the market.",
+   "feedback": [
+    "Borrowing in an expensive market piles risk on top of risk.",
+    "The CAPE doesn't say when: she'd have to get both the exit and the re-entry right.",
+    "Good: a global fund already includes cheaper regions, and her plan runs for 25 years."
+   ]
+  },
+  "u17l6-11": {
+   "prompt": "Quick: what was the S&P 500's highest ever CAPE?",
+   "options": [
+    "17 (1871)",
+    "25 (2008)",
+    "44 (1999)"
+   ],
+   "explanation": "December 1999, just before the dot-com bubble burst."
+  }
+ }
+}

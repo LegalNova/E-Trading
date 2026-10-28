@@ -1,0 +1,531 @@
+{
+ "unit": {
+  "title": "Juntarlo todo",
+  "description": "Combinar señales, analizar de arriba abajo, probar reglas y saber qué funciona",
+  "section": "Análisis técnico"
+ },
+ "lessons": {
+  "u23l1": {
+   "title": "Confluencia: señales que se confirman",
+   "steps": [
+    {
+     "title": "Qué es la confluencia",
+     "body": "Una señal sola es una pista débil. Cuando **piezas distintas** apuntan a lo mismo, la idea gana peso:\n\n• **Tendencia:** máximos y mínimos, SMA 200.\n• **Nivel:** soporte, resistencia o media importante.\n• **Señal:** vela de giro confirmada o rotura con volumen.\n• **Volumen:** más gente detrás."
+    },
+    {
+     "title": "La trampa de los indicadores redundantes",
+     "body": "RSI, estocástico y CCI miden casi lo mismo: el impulso. Tres no son tres confirmaciones: son una repetida.\n\nMejor pocas herramientas de **tipos distintos**: tendencia (medias), impulso (RSI o MACD), volatilidad (Bollinger, ATR) y volumen."
+    },
+    {
+     "title": "Y aun así, un plan",
+     "body": "Con confluencia, la idea es mejor, no segura. Antes de entrar: dónde está el stop, dónde el objetivo y cuánto arriesgas. Si el objetivo no está al menos a 2 veces la distancia del stop, no merece la pena.",
+     "key": "Busca coincidencias de piezas distintas, no más indicadores.",
+     "tip": "Diez indicadores no son diez opiniones: a menudo son la misma, repetida."
+    }
+   ]
+  },
+  "u23l2": {
+   "title": "Varias temporalidades",
+   "steps": [
+    {
+     "title": "De arriba abajo",
+     "body": "Analizar en varias temporalidades evita operar contra la corriente:\n\n1. **Mayor (semanal):** ¿cuál es la tendencia de fondo?\n2. **Intermedia (diaria):** ¿hay un retroceso o una figura?\n3. **Menor (horas):** ¿dónde van la entrada y el stop?\n\nEs el método de las tres pantallas de Alexander Elder."
+    },
+    {
+     "title": "El método en 7 pasos",
+     "body": "1. Semanal: tendencia y SMA 200.\n2. Estructura de máximos y mínimos.\n3. Niveles.\n4. Situación actual: ¿cerca de un nivel o en una figura?\n5. Señal en diario.\n6. Indicadores como filtro.\n7. Plan: entrada, stop, objetivo y riesgo."
+    },
+    {
+     "title": "Cuando no coinciden",
+     "body": "Si el semanal es bajista y el diario da una señal de compra, esa señal va contra la corriente: muchos la ignoran o reducen el tamaño. Que las temporalidades no coincidan también es información.",
+     "key": "Primero la dirección en la temporalidad mayor; después, el momento en la menor.",
+     "tip": "Antes de mirar la vela de cinco minutos, mira dónde está la de la semana."
+    }
+   ]
+  },
+  "u23l3": {
+   "title": "El backtesting",
+   "steps": [
+    {
+     "title": "Qué es",
+     "body": "Un **backtest** prueba una regla concreta («compro cuando el precio cierra por encima de la SMA 200 y vendo cuando cierra por debajo») sobre datos pasados, para ver qué habría pasado.\n\nLa regla se escribe **antes** de mirar los resultados, con entradas, salidas, stops y costes."
+    },
+    {
+     "title": "Las trampas",
+     "body": "• **Sobreajuste** (*data snooping*): pruebas tantas variantes que alguna sale bien por casualidad.\n• **Sesgo de anticipación:** usar datos que en ese momento aún no se conocían.\n• **Sesgo de supervivencia:** probar solo con empresas que hoy siguen vivas.\n• **Olvidar los costes:** comisiones, *spread* e impuestos."
+    },
+    {
+     "title": "Cómo hacerlo honesto",
+     "body": "Separa los datos: diseña la regla con una parte (**dentro de la muestra**) y pruébala una sola vez con otra que no hayas mirado (**fuera de la muestra**). Si solo funciona en la primera, era casualidad.",
+     "key": "Un backtest dice lo que habría pasado, no lo que pasará.",
+     "tip": "Si torturas los datos lo suficiente, acaban confesando cualquier cosa."
+    }
+   ]
+  },
+  "u23l4": {
+   "title": "¿Funciona el análisis técnico?",
+   "steps": [
+    {
+     "title": "Lo que tiene respaldo",
+     "body": "• **Momentum y seguimiento de tendencia:** las tendencias de 3–12 meses han tendido a persistir en acciones, bonos, divisas y materias primas (Jegadeesh y Titman, 1993; Moskowitz, Ooi y Pedersen, 2012; Hurst, Ooi y Pedersen, con datos desde 1880).\n• Entre un 30 y un 40 % de los profesionales encuestados lo considera importante a corto plazo."
+    },
+    {
+     "title": "Lo que no supera las pruebas",
+     "body": "• Park e Irwin (2007) revisaron 95 estudios modernos: 56 positivos, 20 negativos y 19 mixtos… pero la mayoría con problemas de método (búsqueda de datos, riesgo y costes mal estimados), y los más recientes encuentran poca o ninguna ventaja en acciones.\n• Velas: sin valor demostrado tras costes.\n• Fibonacci, ondas de Elliott, Gann: sin evidencia rigurosa."
+    },
+    {
+     "title": "Por qué aprenderlo igualmente",
+     "body": "Para poner entradas, salidas y stops con lógica, entender lo que hacen otros y detectar a los vendedores de humo. Una ventaja pequeña con buena gestión del riesgo puede bastar; una ventaja grande sin gestión del riesgo acaba en ruina.",
+     "key": "Tendencia y momentum tienen respaldo; muchas otras ideas no superan las pruebas.",
+     "tip": "El análisis técnico no te dice el futuro: te ayuda a decidir dónde te equivocas y cuánto te cuesta."
+    }
+   ]
+  },
+  "u23r": {
+   "title": "Repaso de la unidad",
+   "steps": []
+  },
+  "s7boss": {
+   "title": "Reto final: Análisis técnico",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u23l1-1": {
+   "prompt": "Ya tienes el RSI en pantalla. ¿Qué piezas añadirían información distinta? Marca todas.",
+   "options": [
+    "El volumen en la señal",
+    "El estocástico y el CCI",
+    "Un soporte relevante",
+    "Una vela de giro confirmada",
+    "La tendencia de fondo (SMA 200)"
+   ],
+   "explanation": "El estocástico y el CCI miden impulso, igual que el RSI: no aportan una opinión nueva."
+  },
+  "u23l1-2": {
+   "prompt": "¿Qué cuenta como confluencia a favor de una posible compra? Marca todas.",
+   "options": [
+    "Precio por encima de la SMA 200",
+    "Volumen alto en la vela de giro",
+    "Que el patrón salga en un vídeo viral",
+    "Martillo confirmado sobre un soporte",
+    "Que te guste la empresa"
+   ],
+   "explanation": "Tendencia, nivel, señal y volumen son piezas del gráfico. La popularidad de un vídeo o tu simpatía por la empresa no lo son."
+  },
+  "u23l1-3": {
+   "prompt": "¿Qué combinación es menos redundante?",
+   "options": [
+    "SMA 200, RSI y volumen",
+    "RSI, estocástico y CCI",
+    "Medias de 20, 21 y 22 sesiones"
+   ],
+   "explanation": "Tendencia, impulso y volumen miden cosas distintas."
+  },
+  "u23l1-4": {
+   "prompt": "Entras a 50 € con el stop en 48 €. ¿A qué precio, como mínimo, debería estar el objetivo para una relación beneficio/riesgo de 2 a 1?",
+   "options": [],
+   "explanation": "Riesgo: 2 €. Objetivo: 2 × 2 = 4 € por encima de la entrada → 54 €.",
+   "unit": "€"
+  },
+  "u23l1-5": {
+   "prompt": "¿Suma a favor de una compra o no suma?",
+   "options": [
+    "Un cuarto oscilador de impulso",
+    "Rotura con el doble del volumen medio",
+    "Rebote en un soporte que ha aguantado tres veces",
+    "Un influencer muy seguro de sí mismo",
+    "Tendencia semanal alcista"
+   ],
+   "explanation": "Suman las piezas distintas del gráfico; no suman las repetidas ni las opiniones ajenas.",
+   "right": [
+    "Suma",
+    "No suma"
+   ]
+  },
+  "u23l1-6": {
+   "prompt": "Busca tendencia, niveles y velas en este gráfico. ¿Sube o baja en las 10 sesiones siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Incluso con varias señales a favor, el resultado de 10 sesiones es incierto. La confluencia mejora las probabilidades; el stop protege cuando fallan.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u23l1-7": {
+   "prompt": "Otro gráfico, mismo método. ¿Sube o baja en las 10 sesiones siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Aplica siempre los mismos pasos: así sabrás si tu método aporta algo o si solo recuerdas los aciertos.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u23l1-8": {
+   "prompt": "Tienes confluencia y entras al último precio. Coloca el stop donde la idea deja de valer.",
+   "options": [],
+   "explanation": "Por debajo del mínimo reciente: si el precio lo pierde, las piezas que te hicieron entrar ya no valen."
+  },
+  "u23l1-9": {
+   "prompt": "Pablo tiene 9 indicadores en pantalla: 6 dicen «compra» y 3 «venta». ¿Qué le pasa?",
+   "options": [
+    "Que le faltan indicadores",
+    "Que probablemente muchos miden lo mismo y la votación no significa nada",
+    "Que tiene una señal clarísima: 6 contra 3"
+   ],
+   "explanation": "La confluencia viene de piezas distintas, no de contar indicadores.",
+   "feedback": [
+    "Añadir más solo multiplica las coincidencias por casualidad.",
+    "Eso: mejor pocas herramientas de tipos distintos que un parlamento de osciladores.",
+    "Si varios miden lo mismo, ese 6 contra 3 puede ser 1 contra 1 repetido."
+   ]
+  },
+  "u23l1-10": {
+   "prompt": "Tres osciladores de impulso que coinciden son tres confirmaciones independientes.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Miden casi lo mismo: es una sola opinión repetida."
+  },
+  "u23l2-1": {
+   "prompt": "Ordena el análisis de arriba abajo.",
+   "options": [
+    "Retroceso o figura en el diario",
+    "Entrada y stop en el gráfico de horas",
+    "Tendencia en el semanal"
+   ],
+   "explanation": "De lo general a lo concreto: dirección, momento y entrada."
+  },
+  "u23l2-2": {
+   "prompt": "Ordena los 7 pasos del método.",
+   "options": [
+    "Estructura de máximos y mínimos",
+    "Indicadores como filtro",
+    "Situación actual",
+    "Tendencia semanal y SMA 200",
+    "Plan: entrada, stop, objetivo y riesgo",
+    "Señal en diario",
+    "Niveles"
+   ],
+   "explanation": "El plan siempre va al final y nunca se salta."
+  },
+  "u23l2-3": {
+   "prompt": "Primera pantalla: la tendencia de fondo. ¿Qué ves? (Microsoft · cierres cada 3 sesiones · diciembre de 2025 – febrero de 2026)",
+   "options": [
+    "Alcista",
+    "Bajista",
+    "Lateral"
+   ],
+   "explanation": "Máximos y mínimos decrecientes: con este fondo, una señal de compra en diario iría contra la corriente."
+  },
+  "u23l2-4": {
+   "prompt": "Semanal: máximos y mínimos decrecientes y precio por debajo de la SMA 200. Diario: aparece un martillo precioso. ¿Qué haces con lógica?",
+   "options": [
+    "Vendo todo lo que tengo en cartera",
+    "La trato como una señal contra la corriente: o la ignoro o la opero más pequeña y con stop",
+    "Compro fuerte: el martillo manda"
+   ],
+   "explanation": "La temporalidad mayor pone el contexto; la menor no debería contradecirla sin más.",
+   "feedback": [
+    "Un martillo no es una señal de venta, y una cartera a largo plazo no depende de una vela.",
+    "Eso: cuando las temporalidades no coinciden, la señal pesa menos.",
+    "El martillo va contra la tendencia de fondo: en ese contexto es una señal débil."
+   ]
+  },
+  "u23l2-5": {
+   "prompt": "¿Las temporalidades están alineadas?",
+   "options": [
+    "Semanal bajista y señal de compra en diario",
+    "Semanal bajista y rotura a la baja en diario",
+    "Semanal alcista y señal de venta en 5 minutos",
+    "Semanal alcista y señal de compra en diario"
+   ],
+   "explanation": "Alineadas cuando la señal va en la dirección de la temporalidad mayor.",
+   "right": [
+    "Alineadas",
+    "Contra la corriente"
+   ]
+  },
+  "u23l2-6": {
+   "prompt": "Primero la vista grande: 30 velas diarias. ¿Sube o baja en las 10 siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Ni mirando varias temporalidades se adivina el corto plazo. El método sirve para no operar contra la corriente y para saber dónde va el stop.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u23l2-7": {
+   "prompt": "Otro activo. ¿Sube o baja en las 10 sesiones siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Un método ordenado reduce errores tontos; no elimina la incertidumbre.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u23l2-8": {
+   "prompt": "En el método de las tres pantallas, ¿para qué sirve la temporalidad menor?",
+   "options": [
+    "Para elegir qué activo comprar",
+    "Para afinar la entrada y el stop",
+    "Para decidir la dirección de fondo"
+   ],
+   "explanation": "La mayor da la dirección; la intermedia, el momento; la menor, la entrada y el stop."
+  },
+  "u23l2-9": {
+   "prompt": "Rápido: ¿quién propuso el método de las tres pantallas?",
+   "options": [
+    "John Bollinger",
+    "Charles Dow",
+    "Alexander Elder"
+   ],
+   "explanation": "Alexander Elder, en Trading for a Living."
+  },
+  "u23l2-10": {
+   "prompt": "¿Qué le contestas?",
+   "options": [
+    "Primero al semanal, que marca la dirección; el de 15 minutos solo afina el momento",
+    "A ninguno: los gráficos no sirven",
+    "Al de 15 minutos, que es el más reciente"
+   ],
+   "explanation": "La temporalidad mayor manda; la menor afina.",
+   "feedback": [
+    "¡Eso! De arriba abajo: dirección, momento y entrada.",
+    "Sirven para ordenar la decisión y poner el stop con lógica, aunque no predigan.",
+    "Lo más reciente no es lo más importante: en 15 minutos manda el ruido."
+   ],
+   "lines": [
+    "En el gráfico de 15 minutos veo una subida brutal 🚀",
+    "Pero en el semanal está en plena caída 📉",
+    "¿A cuál hago caso?"
+   ]
+  },
+  "u23l3-1": {
+   "prompt": "Pruebas 100 reglas que en realidad no funcionan. Si cada una tiene un 5 % de probabilidad de parecer buena por casualidad, ¿cuántas esperas que «funcionen»?",
+   "options": [],
+   "explanation": "100 × 0,05 = 5. Si solo enseñas esas 5, parecerá que has descubierto algo.",
+   "unit": "reglas"
+  },
+  "u23l3-2": {
+   "prompt": "Una regla gana de media un 0,10 % bruto por operación. Cada operación cuesta un 0,15 % entre comisión y spread. ¿Cuál es el resultado neto por operación?",
+   "options": [],
+   "explanation": "0,10 − 0,15 = −0,05 %. Con costes, la «ventaja» se convierte en pérdida.",
+   "unit": "%"
+  },
+  "u23l3-3": {
+   "prompt": "Una regla acierta el 40 % de las veces y gana 300 € cuando acierta; el 60 % restante pierde 100 €. ¿Cuánto gana de media por operación?",
+   "options": [],
+   "explanation": "0,4 × 300 − 0,6 × 100 = 120 − 60 = 60 €. Se puede fallar más de lo que se acierta y ganar, si las ganancias son mayores que las pérdidas.",
+   "unit": "€"
+  },
+  "u23l3-4": {
+   "prompt": "Empareja cada trampa con su ejemplo.",
+   "options": [
+    "Sobreajuste",
+    "Sesgo de anticipación",
+    "Sesgo de supervivencia",
+    "Olvidar los costes"
+   ],
+   "explanation": "Cada trampa infla los resultados del pasado de una forma distinta.",
+   "right": [
+    "Probar solo con las empresas que hoy están en el índice",
+    "Calcular sin comisiones ni spread",
+    "Usar el cierre del día para comprar en la apertura de ese mismo día",
+    "Probar 500 combinaciones de medias y quedarte con la mejor"
+   ]
+  },
+  "u23l3-5": {
+   "prompt": "Marta prueba 300 variantes de una regla con datos de 2015 a 2020 y se queda con la que ganó un 40 % anual. ¿Qué debería hacer antes de fiarse?",
+   "options": [
+    "Buscar una variante que gane un 60 %",
+    "Probarla una sola vez con datos que no haya usado (por ejemplo, de 2021 a 2024) y con costes",
+    "Usarla ya con todo su dinero"
+   ],
+   "explanation": "La prueba fuera de la muestra es la que separa una regla de una casualidad.",
+   "feedback": [
+    "Probar más variantes agrava el problema: más casualidades disfrazadas de descubrimiento.",
+    "Eso: si fuera de la muestra se desinfla, era sobreajuste.",
+    "Con 300 variantes, la mejor puede ser pura casualidad. Sin una prueba fuera de la muestra, no sabe nada."
+   ]
+  },
+  "u23l3-6": {
+   "prompt": "Bruno hace un backtest desde el año 2000 con las 35 empresas que hoy forman el IBEX 35. Sale espectacular. ¿Cuál es el problema?",
+   "options": [
+    "Que el año 2000 queda demasiado cerca",
+    "Ninguno: son empresas reales",
+    "Sesgo de supervivencia: deja fuera a las que salieron del índice o desaparecieron"
+   ],
+   "explanation": "Elegir los datos con información de hoy es hacer trampa sin querer.",
+   "feedback": [
+    "El periodo no es el problema principal: lo es elegir las empresas mirando el presente.",
+    "Son reales, pero son las que sobrevivieron y crecieron. Las que cayeron o salieron del índice no están.",
+    "Eso: probar con los ganadores de hoy infla los resultados del pasado."
+   ]
+  },
+  "u23l3-7": {
+   "prompt": "¿Qué es probar una regla «fuera de la muestra»?",
+   "options": [
+    "Probarla con datos que no se usaron para diseñarla",
+    "Probarla solo con los mejores años",
+    "Probarla en otro bróker"
+   ],
+   "explanation": "Es la prueba de fuego: datos nuevos que la regla no ha «visto»."
+  },
+  "u23l3-8": {
+   "prompt": "¿Qué hicieron Sullivan, Timmermann y White (1999) con las reglas de medias móviles?",
+   "options": [
+    "Corrigieron el sesgo de búsqueda de datos, y los resultados se debilitaron mucho",
+    "Demostraron que eran infalibles",
+    "Consiguieron que se prohibieran"
+   ],
+   "explanation": "Mucho de lo que parecía ventaja era en parte casualidad."
+  },
+  "u23l3-9": {
+   "prompt": "Un buen backtest garantiza que la regla funcionará en el futuro.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Dice lo que habría pasado con esos datos. El futuro puede ser distinto."
+  },
+  "u23l3-10": {
+   "prompt": "¿Qué le preguntas primero?",
+   "options": [
+    "¿Me pasas la regla?",
+    "¿Cuántas variantes probaste, y qué pasa con costes y con datos que no hayas usado?",
+    "¿Cuándo empiezas a operar con todo?"
+   ],
+   "explanation": "Variantes probadas, costes y datos fuera de la muestra: las tres preguntas de cualquier backtest.",
+   "feedback": [
+    "Antes de copiarla, conviene comprobar si ese 80 % es real o un espejismo del sobreajuste.",
+    "¡Bien! Esas preguntas tumban la mayoría de backtests espectaculares.",
+    "Primero habría que ver si sobrevive a los costes y a datos nuevos."
+   ],
+   "lines": [
+    "He hecho un backtest y mi regla gana un 80 % al año 🤑",
+    "Sin comisiones, eso sí."
+   ]
+  },
+  "u23l4-1": {
+   "prompt": "El momentum es una de las anomalías más estudiadas de las finanzas, con datos de más de un siglo.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Hurst, Ooi y Pedersen lo estudiaron con datos desde 1880, aunque aprovecharlo tras costes es difícil."
+  },
+  "u23l4-2": {
+   "prompt": "Según Park e Irwin, los estudios positivos sobre análisis técnico no tienen problemas de método.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Advierten de que la mayoría sí los tiene: búsqueda de datos y dificultad para estimar el riesgo y los costes."
+  },
+  "u23l4-3": {
+   "prompt": "Hay evidencia rigurosa de que las ondas de Elliott predicen el mercado.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Ni las ondas de Elliott, ni Fibonacci, ni Gann tienen evidencia rigurosa."
+  },
+  "u23l4-4": {
+   "prompt": "Hurst, Ooi y Pedersen estudiaron el seguimiento de tendencia con datos desde 1880.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Más de un siglo de datos, con caídas largas por el camino."
+  },
+  "u23l4-5": {
+   "prompt": "¿Qué idea del análisis técnico tiene más respaldo académico?",
+   "options": [
+    "Los niveles de Fibonacci",
+    "El momentum y el seguimiento de tendencia",
+    "Las ondas de Elliott"
+   ],
+   "explanation": "Es la excepción con más evidencia, en muchos mercados y durante mucho tiempo."
+  },
+  "u23l4-6": {
+   "prompt": "¿Qué dice la evidencia de cada herramienta?",
+   "options": [
+    "Seguimiento de tendencia en muchos mercados",
+    "Fibonacci",
+    "Patrones de velas",
+    "Ondas de Elliott",
+    "Momentum de 3–12 meses"
+   ],
+   "explanation": "La tendencia y el momentum son la parte con más respaldo; el resto, como mucho, ayuda a organizar decisiones.",
+   "right": [
+    "Con respaldo",
+    "Sin evidencia rigurosa o sin valor tras costes"
+   ]
+  },
+  "u23l4-7": {
+   "prompt": "Un canal de Telegram promete un sistema técnico que «gana el 95 % de las operaciones, sin pérdidas». ¿Qué piensas con lo aprendido?",
+   "options": [
+    "Que lo pruebo con poco dinero, por si acaso",
+    "Que es una promesa imposible: la evidencia habla de ventajas pequeñas, si las hay, y siempre con pérdidas",
+    "Que por fin alguien lo ha descubierto"
+   ],
+   "explanation": "Las promesas de acierto casi perfecto chocan con toda la evidencia disponible.",
+   "feedback": [
+    "Probar «con poco» sigue siendo darle dinero y datos a quien promete lo imposible.",
+    "Eso: hasta lo que tiene respaldo, como el momentum, sufre caídas largas.",
+    "Ningún estudio serio encuentra algo parecido; un 95 % sin pérdidas es una señal clásica de humo o de estafa."
+   ]
+  },
+  "u23l4-8": {
+   "prompt": "Ana usa el análisis técnico así: marca dónde se equivoca (stop), arriesga un 1 % por operación y no persigue «el patrón perfecto». ¿Qué opinas?",
+   "options": [
+    "Que lo usa de forma sensata: como herramienta para gestionar el riesgo, no como bola de cristal",
+    "Que debería arriesgar un 20 % por operación para que valga la pena",
+    "Que pierde el tiempo: sin el patrón perfecto no se gana"
+   ],
+   "explanation": "Usado con humildad y gestión del riesgo, el análisis técnico es una herramienta útil.",
+   "feedback": [
+    "Eso: el valor está en decidir dónde te equivocas y cuánto te cuesta.",
+    "Con un 20 % por operación, unas pocas pérdidas seguidas la sacan del juego.",
+    "No existe el patrón perfecto; buscarlo es la trampa."
+   ]
+  },
+  "u23l4-9": {
+   "prompt": "¿Qué necesita cualquier herramienta técnica para servir de algo?",
+   "options": [
+    "Más indicadores",
+    "Apalancamiento",
+    "Gestión del riesgo"
+   ],
+   "explanation": "Una ventaja grande sin gestión del riesgo acaba en ruina; una pequeña con buena gestión puede bastar."
+  },
+  "u23l4-10": {
+   "prompt": "Última prueba de humildad: 30 velas reales, sin nombre. ¿Sube o baja en las 10 sesiones siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Después de toda la sección, la conclusión honesta es la misma: nadie acierta el corto plazo de forma fiable. Lo que sí controlas es cuánto arriesgas.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u23l4-11": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Sí, siempre: con práctica se acierta todo",
+    "No, es todo humo",
+    "Algunas ideas tienen respaldo (tendencia, momentum), muchas no, y nada funciona sin gestión del riesgo"
+   ],
+   "explanation": "Ni magia ni humo: algunas piezas funcionan a veces, y la gestión del riesgo funciona siempre.",
+   "feedback": [
+    "La evidencia no dice eso: muchas reglas dejan de funcionar con datos nuevos.",
+    "Tampoco: tendencia y momentum tienen más de un siglo de evidencia, aunque sean difíciles de aprovechar.",
+    "¡Exacto! Herramienta útil, no bola de cristal."
+   ],
+   "lines": [
+    "Entonces… ¿el análisis técnico funciona o no? 🤔"
+   ]
+  }
+ }
+}

@@ -1,0 +1,728 @@
+{
+ "unit": {
+  "title": "Bonds and fixed income",
+  "description": "How a bond works, its yield, the effect of interest rates and the risk of default",
+  "section": "Investment products"
+ },
+ "lessons": {
+  "u9l1": {
+   "title": "What a bond is",
+   "steps": [
+    {
+     "title": "Lending instead of owning",
+     "body": "With a **bond** you lend money to a government or a company. In return you get:\n\n• A **coupon:** regular interest (for example, 3 % of the face value each year).\n• The **face value** at **maturity:** you get back what you lent on the agreed date.\n\nThat's why it's called **fixed income**: what you'll be paid is agreed from the start."
+    },
+    {
+     "title": "Who issues them",
+     "body": "• **Governments:** in Spain, the Treasury issues **bills** (letras, up to 12 months), **bonds** (bonos, 2 to 5 years) and **obligations** (obligaciones, over 5).\n• **Companies:** corporate bonds, which usually pay more because they're riskier.\n\nIf a company goes bust, bondholders get paid **before** shareholders."
+    },
+    {
+     "title": "Fixed, but not frozen",
+     "body": "The coupon is fixed, but the bond's **price** changes every day on the market. If you hold it to maturity, you get what was agreed (if the issuer pays). If you sell it earlier, you can make or lose money.",
+     "key": "A bond is a loan: you earn interest and get your money back at maturity, as long as the issuer can pay.",
+     "tip": "Share = being an owner. Bond = being a lender."
+    }
+   ]
+  },
+  "u9l2": {
+   "title": "Coupon, price and YTM",
+   "steps": [
+    {
+     "title": "The price changes, the coupon doesn't",
+     "body": "Bonds are quoted as a **% of face value**. A €1,000 bond «at 96» costs €960; «at 104», €1,040.\n\nIf you buy below 100, on top of the coupon you gain the difference at maturity; if you buy above it, you lose it."
+    },
+    {
+     "title": "Three kinds of yield",
+     "body": "• **Coupon:** on the face value. €40 on €1,000 = 4 %.\n• **Current yield:** coupon ÷ price. €40 ÷ €960 = 4.17 %.\n• **YTM** (yield to maturity): what you really earn if you hold it to the end, counting coupons and the price difference. It's the one to use for comparisons."
+    },
+    {
+     "title": "A one-year example",
+     "body": "A €1,000 bond with a 4 % coupon matures in one year and you buy it at €960. You'll receive €40 in coupon + €1,000 of face value: you make €80 on €960, a **YTM of 8.33 %**. And to know whether you're gaining purchasing power, subtract inflation.",
+     "key": "YTM is what a bond returns if you hold it to maturity and the issuer pays.",
+     "tip": "Compare bonds by their YTM, not by their coupon."
+    }
+   ]
+  },
+  "u9l3": {
+   "title": "When rates go up, bonds go down",
+   "steps": [
+    {
+     "title": "The seesaw",
+     "body": "**When interest rates rise, the price of existing bonds falls**, and vice versa.\n\nYou hold a 2 % bond and rates go up: new bonds pay 4 %. Nobody will pay you the same for your 2 % bond: to sell it you'll have to cut the price until it yields something close to the new ones."
+    },
+    {
+     "title": "Duration",
+     "body": "**Duration** measures how much the price moves when rates change:\n\n**Price change ≈ − duration × change in rates.**\n\nWith a duration of 7, if rates rise 1 point, the bond falls roughly 7 %. The longer the term, the higher the duration and the greater the sensitivity."
+    },
+    {
+     "title": "2022, the year bonds fell",
+     "body": "Inflation sent rates soaring in 2022 and long bonds suffered stock-market-style falls: many long-term bond indices dropped more than 20 %. If you hold the bond to maturity you get what was agreed; the problem comes if you need to sell it earlier.",
+     "key": "Rates up, bonds down; the longer the bond, the harder the hit.",
+     "tip": "Bonds and rates sit on opposite ends of a seesaw."
+    }
+   ]
+  },
+  "u9l4": {
+   "title": "Credit ratings and default risk",
+   "steps": [
+    {
+     "title": "Issuers' grades",
+     "body": "Credit rating agencies (**S&P, Moody's and Fitch**) grade the ability of governments and companies to pay:\n\n• **AAA:** top quality.\n• **AA, A, BBB:** investment grade.\n• **BB, B, CCC…:** speculative, *high yield* or **junk bonds**.\n• **D:** default.\n\nThe dividing line is **BBB−**."
+    },
+    {
+     "title": "More risk, bigger coupon",
+     "body": "Anyone lending to a lower-rated borrower demands more interest. The gap compared with a very safe bond is called the **risk premium**; in Spain, it's the gap with the 10-year German bond.\n\nA very high coupon isn't a gift: it's the price of the risk of not getting paid."
+    },
+    {
+     "title": "When they don't pay",
+     "body": "In 2012, Greece's private creditors accepted a haircut of more than half the face value of their bonds. A bankrupt company may pay back almost nothing. That's why you diversify in fixed income too.",
+     "key": "The rating measures default risk: the worse the rating, the bigger the coupon and the higher the risk of losing.",
+     "tip": "If a bond pays far more than the rest, ask yourself what the market is afraid of."
+    }
+   ]
+  },
+  "u9l5": {
+   "title": "Treasury bills and deposits",
+   "steps": [
+    {
+     "title": "Treasury bills",
+     "body": "Government debt at **3, 6, 9 or 12 months**. You can buy them from **€1,000** at the Spanish Treasury's auctions, directly or through your bank or broker.\n\nThey don't pay a coupon: they're bought **at a discount**. You pay, say, €980 and at maturity you receive €1,000. Those €20 are your interest."
+    },
+    {
+     "title": "Fixed-term deposits",
+     "body": "You leave your money in a bank for a set term at an agreed rate (the **APR**). They're covered by the **Fondo de Garantía de Depósitos** (Spain's deposit guarantee scheme) up to **€100,000 per holder and per bank**. If you withdraw early, there may be a penalty.\n\nBills don't have that scheme: their guarantee is the government itself."
+    },
+    {
+     "title": "How to compare",
+     "body": "Always compare the **annual** return (APR or YTM) after fees. Interest from both is taxed in the savings income band (from 19 %). Neither will make you rich: they're for money you'll need soon.",
+     "key": "Bills and deposits: low risk and low return, for the short term.",
+     "tip": "Above €100,000 in one bank, spread it across several banks."
+    }
+   ]
+  },
+  "u9l6": {
+   "title": "Inflation-linked bonds",
+   "steps": [
+    {
+     "title": "How they work",
+     "body": "An inflation-linked bond adjusts its **face value** for inflation. If inflation is 3 %, your €1,000 face value becomes €1,030 and the coupon is calculated on that figure.\n\nThe Spanish Treasury issues them linked to **eurozone** inflation (excluding tobacco); in the US they're called **TIPS**."
+    },
+    {
+     "title": "When they protect you and when they don't",
+     "body": "• They **protect** your purchasing power if you hold them to maturity: you earn an agreed **real** return.\n• They **don't protect** you from rate rises: in 2022, with high inflation, many fell in price because real rates went up.\n• If inflation turns out **low**, they return less than a regular bond."
+    },
+    {
+     "title": "Breakeven inflation",
+     "body": "If a regular bond yields 3 % and an inflation-linked one yields 1 % real, the market expects inflation of about **2 %**. If it ends up higher, the linked bond wins; if lower, the regular one wins.",
+     "key": "They protect against unexpected inflation if you hold them to the end, not against everything.",
+     "tip": "No asset protects against everything: each one covers a specific risk."
+    }
+   ]
+  },
+  "u9r": {
+   "title": "Unit review",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u9l1-1": {
+   "prompt": "What do you get when you buy a bond?",
+   "options": [
+    "Regular interest and your money back at maturity",
+    "A share of the company and voting rights",
+    "A dividend decided by the shareholders' meeting"
+   ],
+   "explanation": "A bond is a loan: a coupon while it lasts and the face value at the end."
+  },
+  "u9l1-2": {
+   "prompt": "You buy a bond with a face value of €1,000 and a 3 % annual coupon. How much coupon do you receive each year?",
+   "options": [],
+   "explanation": "1,000 × 3 % = €30 a year, whatever happens to its market price.",
+   "unit": "€"
+  },
+  "u9l1-3": {
+   "prompt": "That bond matures in 5 years and you hold it to the end. How much do you receive in total, counting coupons and repayment?",
+   "options": [],
+   "explanation": "5 × 30 = €150 in coupons + €1,000 of face value = €1,150, if the issuer pays.",
+   "unit": "€"
+  },
+  "u9l1-4": {
+   "prompt": "Match each Spanish Treasury security to its term.",
+   "options": [
+    "Bill (letra)",
+    "Bond (bono)",
+    "Obligation (obligación)"
+   ],
+   "explanation": "All three are government debt; what changes is the term.",
+   "right": [
+    "2 to 5 years",
+    "Over 5 years",
+    "Up to 12 months"
+   ]
+  },
+  "u9l1-5": {
+   "prompt": "If a company goes bust, bondholders get paid before shareholders.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Creditors get paid first; shareholders, last."
+  },
+  "u9l1-6": {
+   "prompt": "Being called fixed income means its market price never changes.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "The coupon is fixed; the bond's price moves every day with interest rates and with confidence in the issuer."
+  },
+  "u9l1-7": {
+   "prompt": "Bond or share?",
+   "options": [
+    "Pays an agreed coupon",
+    "Makes you a part-owner",
+    "Its return depends on profits",
+    "Has a maturity date",
+    "You get paid first if there's a bankruptcy"
+   ],
+   "explanation": "A bondholder lends and gets what was agreed; a shareholder is an owner and shares in the success and the risk.",
+   "right": [
+    "Bond",
+    "Share"
+   ]
+  },
+  "u9l1-8": {
+   "prompt": "The regular interest a bond pays is called the ____.",
+   "options": [
+    "dividend",
+    "face value",
+    "maturity",
+    "coupon"
+   ],
+   "explanation": "The name comes from old paper bonds, which had cut-out coupons you handed in to collect each payment."
+  },
+  "u9l1-9": {
+   "prompt": "Quick: what is a bond's face value?",
+   "options": [
+    "The annual interest",
+    "Its price today",
+    "What you get back at maturity"
+   ],
+   "explanation": "It's the amount lent, which the issuer promises to pay back."
+  },
+  "u9l1-10": {
+   "prompt": "What do you tell her?",
+   "options": [
+    "They give predictable income and usually cushion stock-market falls",
+    "You can't possibly lose money on them",
+    "They're useless, only shares make money"
+   ],
+   "explanation": "Bonds bring income and stability, although no protection works every time.",
+   "feedback": [
+    "That's it! Though not always: in 2022 they fell at the same time as shares.",
+    "If the issuer doesn't pay, or if you sell after they've dropped, you can lose money.",
+    "Shares tend to return more over the long run, but bonds give predictable income and usually cushion falls."
+   ],
+   "lines": [
+    "My grandad says bonds are «for old people» 👴",
+    "What are they for in a portfolio?"
+   ]
+  },
+  "u9l2-1": {
+   "prompt": "A bond with a face value of €1,000 is quoted «at 96». How much do you pay for it?",
+   "options": [],
+   "explanation": "96 % of €1,000 = €960.",
+   "unit": "€"
+  },
+  "u9l2-2": {
+   "prompt": "A €1,000 bond with a 5 % coupon matures in one year. You buy it at €1,000. What is its YTM?",
+   "options": [],
+   "explanation": "You receive €50 and get back what you paid: 50 ÷ 1,000 = 5 %. If you buy at 100, the YTM equals the coupon.",
+   "unit": "%"
+  },
+  "u9l2-3": {
+   "prompt": "A €1,000 bond with a 4 % coupon matures in one year. You buy it at €960. What is its YTM? (two decimal places)",
+   "options": [],
+   "explanation": "(€40 coupon + €40 difference) ÷ €960 = 8.33 %.",
+   "unit": "%"
+  },
+  "u9l2-4": {
+   "prompt": "A €1,000 bond with a 5 % coupon matures in one year. You buy it at €1,050. How much do you make in total at maturity?",
+   "options": [],
+   "explanation": "€50 coupon − €50 you lose by receiving €1,000 for something you paid €1,050 for = €0. A YTM of 0 %, even though the coupon is 5 %.",
+   "unit": "€"
+  },
+  "u9l2-5": {
+   "prompt": "If you buy a bond below its face value, its YTM is ____ its coupon.",
+   "options": [
+    "lower than",
+    "equal to",
+    "always half",
+    "higher than"
+   ],
+   "explanation": "On top of the coupon, at maturity you get more than you paid."
+  },
+  "u9l2-6": {
+   "prompt": "Which yield do you use to compare two bonds with different prices and terms?",
+   "options": [
+    "The face value",
+    "The YTM",
+    "The coupon"
+   ],
+   "explanation": "YTM sums up coupons and the price difference to maturity in a single number."
+  },
+  "u9l2-7": {
+   "prompt": "Match each concept to what it measures.",
+   "options": [
+    "Coupon",
+    "Current yield",
+    "YTM",
+    "Price «at 104»"
+   ],
+   "explanation": "Coupon, current yield and YTM only match if you buy at exactly 100.",
+   "right": [
+    "Everything you earn up to maturity",
+    "104 % of face value",
+    "Coupon ÷ purchase price",
+    "Annual interest on face value"
+   ]
+  },
+  "u9l2-8": {
+   "prompt": "You're offered two bonds from the same issuer, both maturing in one year: A, 6 % coupon at 103; B, 2 % coupon at 99. Which returns more to maturity?",
+   "options": [
+    "They return exactly the same",
+    "B, because its YTM is slightly higher",
+    "A, because its coupon is three times bigger"
+   ],
+   "explanation": "The coupon is misleading: YTM rules, because it includes what you gain or lose on the price.",
+   "feedback": [
+    "They're close, but B returns a little more: you have to do the maths.",
+    "Exactly: (20 + 10) ÷ 990 ≈ 3.03 %, versus 2.91 % for A.",
+    "It pays €60, but loses €30 at maturity: (60 − 30) ÷ 1,030 ≈ 2.91 %."
+   ]
+  },
+  "u9l2-9": {
+   "prompt": "The return you get if you hold the bond to the end is called the ____.",
+   "options": [
+    "APR",
+    "P/E",
+    "TER",
+    "YTM"
+   ],
+   "explanation": "Yield to maturity: in Spanish, TIR (tasa interna de rentabilidad)."
+  },
+  "u9l2-10": {
+   "prompt": "A bond has a YTM of 3 % and inflation is 2 %. What is its approximate real return?",
+   "options": [],
+   "explanation": "3 − 2 = 1 %. YTM is nominal: subtract inflation to see whether you're gaining purchasing power.",
+   "unit": "%"
+  },
+  "u9l2-11": {
+   "prompt": "A bond with a 7 % coupon always returns more than one with a 3 % coupon.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It depends on the price you buy it at: YTM is what counts."
+  },
+  "u9l3-1": {
+   "prompt": "January 2022: US inflation is at a nearly 40-year high and the Federal Reserve is expected to raise rates. This is an ETF of US Treasury bonds with over 20 years to maturity. What did it do next?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Very long-term bonds have high duration: their price is very sensitive to rate changes, in both directions.",
+   "horizon": "until October 2023"
+  },
+  "u9l3-2": {
+   "prompt": "The central bank raises rates. What happens to the price of bonds already issued?",
+   "options": [
+    "It falls",
+    "It doesn't change",
+    "It rises"
+   ],
+   "explanation": "New ones pay more, so the old ones only sell if they're cheaper."
+  },
+  "u9l3-3": {
+   "prompt": "A bond has a duration of 7 and rates rise 1 point. Roughly how much does its price fall?",
+   "options": [],
+   "explanation": "7 × 1 = a fall of about 7 %.",
+   "unit": "%"
+  },
+  "u9l3-4": {
+   "prompt": "You have €10,000 in bonds with a duration of 6 and rates rise 2 points. Roughly how many euros do you lose?",
+   "options": [],
+   "explanation": "6 × 2 = 12 % → 10,000 × 12 % = €1,200.",
+   "unit": "€"
+  },
+  "u9l3-5": {
+   "prompt": "A bond with a duration of 8, and rates fall 1.5 points. Roughly how much does its price rise?",
+   "options": [],
+   "explanation": "8 × 1.5 = a 12 % rise: the seesaw works upwards too.",
+   "unit": "%"
+  },
+  "u9l3-6": {
+   "prompt": "Order from least to most sensitive to interest rates.",
+   "options": [
+    "3-year bond",
+    "10-year obligation",
+    "30-year obligation",
+    "6-month bill"
+   ],
+   "explanation": "The longer the term, the higher the duration: the 30-year one moves the most."
+  },
+  "u9l3-7": {
+   "prompt": "In 2021 you bought a 10-year obligation with a 1 % coupon. In 2023 new ones pay 3.5 % and yours is quoted at 82. You don't need the money. What are your options?",
+   "options": [
+    "Hold it to maturity and get what was agreed",
+    "Sell it now so you don't lose any more",
+    "Wait for the central bank to cut rates to zero tomorrow"
+   ],
+   "explanation": "Falls caused by rate rises only become a loss if you sell before maturity (or if the issuer doesn't pay).",
+   "feedback": [
+    "If the issuer pays, at maturity you get 100 % of face value and the fall disappears, even though your return (1 %) stays below that of the new ones.",
+    "You'd be selling at 82: you'd turn an 18 % drop into a real loss.",
+    "Nobody controls rates: you can't build your plan on guessing them."
+   ]
+  },
+  "u9l3-8": {
+   "prompt": "If you hold a bond to maturity and the issuer pays, a rate rise doesn't make you lose the face value.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "At maturity you get 100 %; what you lose is the chance to have earned more interest."
+  },
+  "u9l3-9": {
+   "prompt": "Quick: rates down, bond prices…",
+   "options": [
+    "Down",
+    "Up",
+    "Unchanged"
+   ],
+   "explanation": "If rates fall, old bonds with higher coupons are worth more."
+  },
+  "u9l3-10": {
+   "prompt": "Match each situation to what usually happens.",
+   "options": [
+    "Rates go up",
+    "Rates go down",
+    "Bond with higher duration",
+    "Holding to maturity"
+   ],
+   "explanation": "It's the seesaw rule, plus the role of duration and term.",
+   "right": [
+    "Bond prices rise",
+    "More sensitive to rates",
+    "You get what was agreed if the issuer pays",
+    "Bond prices fall"
+   ]
+  },
+  "u9l4-1": {
+   "prompt": "Match each rating to its meaning.",
+   "options": [
+    "AAA",
+    "BBB−",
+    "BB",
+    "D"
+   ],
+   "explanation": "Above BBB− is investment grade; below it, speculative.",
+   "right": [
+    "Speculative (high yield)",
+    "Default",
+    "Lowest rung of investment grade",
+    "Top quality"
+   ]
+  },
+  "u9l4-2": {
+   "prompt": "Order from best to worst rating.",
+   "options": [
+    "AA",
+    "BBB",
+    "A",
+    "BB",
+    "D",
+    "AAA"
+   ],
+   "explanation": "Quality drops through the letters from AAA down to D (default)."
+  },
+  "u9l4-3": {
+   "prompt": "Why does a high-yield bond pay more interest?",
+   "options": [
+    "Because the issuer is more generous",
+    "Because it matures sooner",
+    "Because the risk of default is higher"
+   ],
+   "explanation": "Anyone lending to a riskier issuer demands more interest in return."
+  },
+  "u9l4-4": {
+   "prompt": "Investment grade or speculative?",
+   "options": [
+    "BB+",
+    "CCC",
+    "BBB−",
+    "AA+",
+    "A"
+   ],
+   "explanation": "The dividing line is BBB−: below it, high yield begins.",
+   "right": [
+    "Investment grade",
+    "Speculative (junk bond)"
+   ]
+  },
+  "u9l4-5": {
+   "prompt": "A friend shows you a bond from a CCC-rated company paying 14 % and says it's «like a deposit, but better». What do you tell them?",
+   "options": [
+    "That they're right: the coupon is fixed",
+    "That they should put all their savings in it to lock in the 14 %",
+    "That the 14 % is the price of a high risk of not getting paid, nothing like a deposit"
+   ],
+   "explanation": "High interest in fixed income almost always means a high risk of default.",
+   "feedback": [
+    "The coupon is only fixed if the company can pay it; at CCC, the risk of default is very high.",
+    "Putting everything into one CCC-rated issuer means taking on a huge risk.",
+    "Exactly: a deposit is covered by Spain's deposit guarantee scheme up to €100,000; a junk bond may pay back almost nothing."
+   ]
+  },
+  "u9l4-6": {
+   "prompt": "In 2012 Greece's private creditors agreed to lose more than half the face value of their bonds.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It was one of the biggest sovereign debt restructurings in history: even a European government may not pay what it agreed."
+  },
+  "u9l4-7": {
+   "prompt": "The difference between what the Spanish 10-year bond pays and the German one is called the ____.",
+   "options": [
+    "inflation",
+    "accrued coupon",
+    "YTM",
+    "risk premium"
+   ],
+   "explanation": "It measures how much more the market demands for lending to Spain than to Germany."
+  },
+  "u9l4-8": {
+   "prompt": "Which organisations rate the debt of governments and companies? Select all.",
+   "options": [
+    "Moody's",
+    "The CNMV",
+    "Fitch",
+    "S&P"
+   ],
+   "explanation": "The CNMV supervises the markets in Spain, but it doesn't rate issuers."
+  },
+  "u9l4-9": {
+   "prompt": "For the same term, a German bond pays 2.5 % and a Spanish one 3.2 %. What is the risk premium in basis points? (1 point = 100 bp)",
+   "options": [],
+   "explanation": "3.2 − 2.5 = 0.7 points = 70 basis points.",
+   "unit": "bp"
+  },
+  "u9l4-10": {
+   "prompt": "Quick: what does a D rating mean?",
+   "options": [
+    "Default",
+    "Very safe",
+    "Not rated"
+   ],
+   "explanation": "D is the rating for an issuer that has already failed to pay."
+  },
+  "u9l5-1": {
+   "prompt": "You buy a 12-month bill for €980 and at maturity you receive €1,000. What return do you get? (two decimal places)",
+   "options": [],
+   "explanation": "20 ÷ 980 = 2.04 %.",
+   "unit": "%"
+  },
+  "u9l5-2": {
+   "prompt": "A €10,000 deposit at 2.5 % APR for one year. With 19 % withheld in tax, how much do you make net?",
+   "options": [],
+   "explanation": "10,000 × 2.5 % = €250 gross; 250 × 0.81 = €202.50 net.",
+   "unit": "€"
+  },
+  "u9l5-3": {
+   "prompt": "You have €130,000 in a deposit at a single bank. If the bank goes bust, how much falls outside the deposit guarantee scheme (FGD)?",
+   "options": [],
+   "explanation": "It covers up to €100,000 per holder and per bank: 130,000 − 100,000 = €30,000 uncovered.",
+   "unit": "€"
+  },
+  "u9l5-4": {
+   "prompt": "Match each product to its feature.",
+   "options": [
+    "Treasury bill",
+    "Fixed-term deposit",
+    "Current account",
+    "Government obligation"
+   ],
+   "explanation": "Each product fits a different term and use.",
+   "right": [
+    "Covered by the FGD up to €100,000",
+    "Term of over 5 years",
+    "Money available instantly",
+    "Bought at a discount"
+   ]
+  },
+  "u9l5-5": {
+   "prompt": "What terms does the Spanish Treasury issue bills at?",
+   "options": [
+    "1, 2 and 5 years",
+    "3, 6, 9 and 12 months",
+    "10 and 30 years"
+   ],
+   "explanation": "Bills are always one year or less."
+  },
+  "u9l5-6": {
+   "prompt": "Treasury bills pay a coupon every quarter.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "They're bought at a discount: the difference between what you pay and the €1,000 you receive is the interest."
+  },
+  "u9l5-7": {
+   "prompt": "Which time horizon does each product suit best?",
+   "options": [
+    "Global equity index fund",
+    "Money market fund",
+    "Monthly contribution to a global ETF",
+    "6-month bill",
+    "12-month deposit"
+   ],
+   "explanation": "For the short term, safety comes first; over decades, long-term returns matter more than the ups and downs.",
+   "right": [
+    "Money I'll need in under 1 year",
+    "Money for 20 years from now"
+   ]
+  },
+  "u9l5-8": {
+   "prompt": "Laura has €15,000 for the deposit on a flat she'll buy in 10 months. What makes most sense?",
+   "options": [
+    "Leave it in an account paying 0 %",
+    "A bill or a deposit with a term that matches the date",
+    "Put it into shares so it grows more"
+   ],
+   "explanation": "The term decides: money with a date coming up soon shouldn't depend on the stock market.",
+   "feedback": [
+    "It's safe, but she's giving up interest at almost no risk.",
+    "Good: low risk, and the money is available when she needs it.",
+    "In 10 months the market could fall 20 % right when she needs the money."
+   ]
+  },
+  "u9l5-9": {
+   "prompt": "The FGD covers up to €100,000 per holder and per bank.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "If you have more at the same bank, the excess isn't covered."
+  },
+  "u9l5-10": {
+   "prompt": "Spanish Treasury bills can be bought from ____ €.",
+   "options": [
+    "10,000",
+    "50",
+    "100",
+    "1,000"
+   ],
+   "explanation": "It's the minimum amount at Treasury auctions."
+  },
+  "u9l6-1": {
+   "prompt": "An inflation-linked bond with a face value of €1,000. This year inflation is 3 %. What is the new face value?",
+   "options": [],
+   "explanation": "1,000 × 1.03 = €1,030.",
+   "unit": "€"
+  },
+  "u9l6-2": {
+   "prompt": "That bond pays a 1 % real coupon on the adjusted face value of €1,030. How much do you receive this year? (two decimal places)",
+   "options": [],
+   "explanation": "1,030 × 1 % = €10.30.",
+   "unit": "€"
+  },
+  "u9l6-3": {
+   "prompt": "A regular bond yields 3.2 % and an inflation-linked one with the same term yields 1.0 % real. What average inflation is the market pricing in?",
+   "options": [],
+   "explanation": "3.2 − 1.0 = 2.2 %: that's breakeven inflation.",
+   "unit": "%"
+  },
+  "u9l6-4": {
+   "prompt": "When does the inflation-linked bond beat the regular one?",
+   "options": [
+    "If inflation is zero",
+    "Always",
+    "If inflation ends up higher than the market expected"
+   ],
+   "explanation": "If inflation beats breakeven, the face-value adjustment more than makes up for its lower coupon."
+  },
+  "u9l6-5": {
+   "prompt": "An inflation-linked bond can't fall in price.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "If real rates rise, its price falls like any bond's; in 2022 many did."
+  },
+  "u9l6-6": {
+   "prompt": "Spanish Treasury inflation-linked bonds are adjusted using eurozone inflation.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "They use the eurozone harmonised index of consumer prices excluding tobacco, not the Spanish CPI."
+  },
+  "u9l6-7": {
+   "prompt": "In 2021 Marta buys an inflation-linked bond fund «to protect herself». In 2022 inflation shoots up… and the fund falls. What happened?",
+   "options": [
+    "Inflation lowers the price of all linked bonds",
+    "Real rates went up and that outweighed the inflation adjustment",
+    "The fund is a scam"
+   ],
+   "explanation": "A fund buys and sells bonds before maturity, so its value does suffer when rates rise.",
+   "feedback": [
+    "Quite the opposite, the inflation adjustment helps them; what hurt them was the rate rise.",
+    "Exactly: they protect purchasing power to maturity, but their price moves with rates.",
+    "No: inflation-linked bonds also fall in price when real rates rise."
+   ]
+  },
+  "u9l6-8": {
+   "prompt": "An inflation-linked bond held to maturity: does it protect you or not?",
+   "options": [
+    "Loss of purchasing power",
+    "The issuer defaulting",
+    "A rate rise if you have to sell early",
+    "Higher inflation than expected"
+   ],
+   "explanation": "It covers inflation risk; not rate risk if you sell early, nor credit risk.",
+   "right": [
+    "Protects",
+    "Doesn't protect"
+   ]
+  },
+  "u9l6-9": {
+   "prompt": "In the US, inflation-linked bonds are called ____.",
+   "options": [
+    "ETFs",
+    "REITs",
+    "CFDs",
+    "TIPS"
+   ],
+   "explanation": "Treasury Inflation-Protected Securities."
+  },
+  "u9l6-10": {
+   "prompt": "What do you tell her?",
+   "options": [
+    "They protect against unexpected inflation if you hold them to the end, but their price moves too",
+    "Yes, from everything",
+    "No, they don't protect from anything"
+   ],
+   "explanation": "Each asset covers a specific risk; none covers them all.",
+   "feedback": [
+    "Nice! They cover a specific risk, not all of them.",
+    "They protect against inflation, not against rate rises or a default.",
+    "They do protect purchasing power if you hold them to maturity."
+   ],
+   "lines": [
+    "Inflation scares me 😱",
+    "With inflation-linked bonds am I protected from everything?"
+   ]
+  }
+ }
+}

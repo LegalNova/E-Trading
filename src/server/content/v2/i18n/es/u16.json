@@ -1,0 +1,829 @@
+{
+ "unit": {
+  "title": "Leer las cuentas de una empresa",
+  "description": "Precio y valor, cuenta de resultados, balance, caja, deuda y resultados trimestrales",
+  "section": "Análisis fundamental"
+ },
+ "lessons": {
+  "u16l1": {
+   "title": "Precio y valor no son lo mismo",
+   "steps": [
+    {
+     "title": "Lo que pagas y lo que obtienes",
+     "body": "«El precio es lo que pagas; el valor es lo que obtienes» (Warren Buffett).\n\n• El **análisis fundamental** estudia el negocio (ventas, beneficios, deuda, competencia) para estimar cuánto **vale** y compararlo con su **precio**. Responde a *qué* comprar.\n• El **técnico** estudia el gráfico e intenta responder a *cuándo*."
+    },
+    {
+     "title": "El señor Mercado",
+     "body": "Benjamin Graham imaginaba al mercado como un socio de humor cambiante que cada día te ofrece comprarte o venderte su parte a un precio distinto. Unos días, eufórico, pide una locura; otros, deprimido, te la regala.\n\nNo tienes que hacerle caso: su precio es una oferta, no una orden."
+    },
+    {
+     "title": "Margen de seguridad",
+     "body": "Si estimas que una acción vale 20 € y solo la compras por debajo de 15 €, tienes un **25 % de margen de seguridad**: un colchón por si te has equivocado al estimar.",
+     "key": "Una empresa excelente comprada demasiado cara puede ser una mala inversión.",
+     "tip": "El valor es una estimación; por eso necesitas colchón."
+    }
+   ]
+  },
+  "u16l2": {
+   "title": "La cuenta de resultados",
+   "steps": [
+    {
+     "title": "De las ventas al beneficio",
+     "body": "Panadería Global (empresa inventada, millones de €):\n\n• **Ventas:** 1.000\n• − Coste de ventas 600 → **margen bruto 400** (40 %)\n• − Gastos operativos 200 → **EBITDA 200**\n• − Amortizaciones 50 → **EBIT 150** (15 %)\n• − Intereses 20 → antes de impuestos 130\n• − Impuestos (25 %) 32,5 → **beneficio neto 97,5**"
+    },
+    {
+     "title": "Márgenes y BPA",
+     "body": "• **Margen bruto:** alto (60-80 %) en software o lujo; bajo (20-30 %) en supermercados.\n• **Margen operativo** (EBIT ÷ ventas): eficiencia del negocio.\n• **Margen neto:** lo que queda para el accionista.\n\nCon 100 millones de acciones, el **BPA** = 97,5 ÷ 100 = **0,975 €**. La **tendencia** de los márgenes importa más que la cifra de un año."
+    },
+    {
+     "title": "Un caso real",
+     "body": "Inditex cerró su ejercicio 2024 con **38.632 M€** de ventas, un **margen bruto del 57,8 %** y **5.866 M€** de beneficio neto: de cada 100 € vendidos, algo más de 15 € fueron beneficio. Es un dato para practicar, no una recomendación.",
+     "key": "Las ventas son la vanidad, el beneficio es la cordura y la caja es la realidad."
+    }
+   ]
+  },
+  "u16l3": {
+   "title": "El balance",
+   "steps": [
+    {
+     "title": "Lo que tiene y cómo lo paga",
+     "body": "**Activo = pasivo + patrimonio neto.**\n\n• **Activo:** lo que tiene (caja, existencias, fábricas, marcas).\n• **Pasivo:** lo que debe (bancos, bonos, proveedores).\n• **Patrimonio neto:** lo que es de los accionistas."
+    },
+    {
+     "title": "Panadería Global (M€)",
+     "body": "**Activo (1.000):** caja 80 · clientes y existencias 170 · hornos y tiendas 650 · marcas 100.\n\n**Pasivo y patrimonio (1.000):** deuda financiera 400 · proveedores 150 · **patrimonio neto 450**.\n\n• Valor contable por acción: 450 ÷ 100 = **4,5 €**.\n• Liquidez: activos a corto (80 + 170 = 250) frente a deudas a corto (150): las cubre."
+    },
+    {
+     "title": "Foto, no película",
+     "body": "El balance es una foto en un día concreto; la cuenta de resultados es la película del año. Hay que mirar las dos.",
+     "key": "Lo que la empresa tiene se financia con deuda o con dinero de los accionistas.",
+     "tip": "La deuda no hunde a una empresa en los años buenos: la hunde en los malos."
+    }
+   ]
+  },
+  "u16l4": {
+   "title": "El flujo de caja",
+   "steps": [
+    {
+     "title": "Las tres partes",
+     "body": "1. **Operativo:** el dinero que genera el negocio en el día a día.\n2. **De inversión:** hornos, tiendas, compras de empresas (*capex*).\n3. **De financiación:** deuda que pide o devuelve, dividendos y recompras de acciones."
+    },
+    {
+     "title": "Flujo de caja libre",
+     "body": "**FCF = flujo operativo − capex.**\n\nPanadería Global genera 160 M€ e invierte 60 M€: **FCF = 100 M€**, 1 € por acción. Es lo que puede repartir, usar para recomprar acciones o reducir deuda sin dañar el negocio."
+    },
+    {
+     "title": "Beneficio no es caja",
+     "body": "El beneficio cuenta ventas que aún no has cobrado y resta gastos que no son pagos (como las amortizaciones). Por eso pueden separarse. Enron, Wirecard o Gowex mostraban beneficios que no se convertían en caja.",
+     "key": "El beneficio es una opinión contable; la caja es un hecho.",
+     "tip": "Si los beneficios nunca llegan a la caja, desconfía de los beneficios."
+    }
+   ]
+  },
+  "u16l5": {
+   "title": "La deuda de una empresa",
+   "steps": [
+    {
+     "title": "Deuda neta",
+     "body": "**Deuda neta = deuda financiera − caja.**\n\nPanadería Global: 400 − 80 = **320 M€**.\n\nSi la caja supera la deuda, la empresa tiene **caja neta**. Inditex, por ejemplo, cerró su ejercicio 2024 con **11.495 M€ de caja neta**."
+    },
+    {
+     "title": "¿Cuánto es demasiado?",
+     "body": "**Deuda neta / EBITDA:** cuántos años de EBITDA harían falta para pagarla.\n\n• Panadería Global: 320 ÷ 200 = **1,6 veces**.\n• Menos de 2: cómodo. Más de 4: preocupante.\n\nDepende del sector: eléctricas, autopistas e inmobiliarias soportan más deuda porque sus ingresos son muy estables."
+    },
+    {
+     "title": "La cobertura de intereses",
+     "body": "**EBIT ÷ intereses** dice cuántas veces cubre el negocio lo que paga por su deuda. Panadería Global: 150 ÷ 20 = **7,5 veces**. Por debajo de 2-3, cualquier tropiezo aprieta.",
+     "key": "La deuda multiplica: los años buenos parecen mejores y los malos, mucho peores."
+    }
+   ]
+  },
+  "u16l6": {
+   "title": "Resultados trimestrales y expectativas",
+   "steps": [
+    {
+     "title": "La temporada de resultados",
+     "body": "Cuatro veces al año, las cotizadas publican sus cuentas. Antes, los analistas publican sus **previsiones**: la media es el **consenso** (ventas, BPA y lo que esperan para el futuro).\n\nEl mercado no compara con el año pasado: compara con **lo que esperaba**."
+    },
+    {
+     "title": "Bueno no es suficiente",
+     "body": "El **12 de marzo de 2025**, Inditex presentó un **beneficio récord** de 5.866 M€ (+9 %). Ese día la acción cayó más de un **7 %**: era su menor crecimiento desde 2020 y al mercado le supo a poco.\n\nY al revés: una empresa con pérdidas puede subir si pierde menos de lo esperado."
+    },
+    {
+     "title": "Lo que viene pesa más",
+     "body": "Lo que la empresa prevé para los próximos trimestres (su *guidance*) suele mover más el precio que el trimestre que acaba de cerrar. Y son días de **huecos de precio**: un stop puede ejecutarse muy por debajo de lo previsto.",
+     "key": "En bolsa, una buena noticia que ya se esperaba no es noticia."
+    }
+   ]
+  },
+  "u16l7": {
+   "title": "Leer un informe anual sin perderte",
+   "steps": [
+    {
+     "title": "Dónde está cada cosa",
+     "body": "Un informe anual puede tener 300 páginas. Lo importante:\n\n• **Carta del presidente o del CEO:** el relato. Léela con espíritu crítico.\n• **Estados financieros:** cuenta de resultados, balance y flujos de caja.\n• **Notas:** el detalle (deuda, litigios, ajustes).\n• **Informe del auditor:** que no tenga «salvedades».\n• **Riesgos:** lo que la empresa reconoce que puede salir mal."
+    },
+    {
+     "title": "Dónde encontrarlo",
+     "body": "• Web de **relación con inversores** de cada empresa.\n• **CNMV:** cotizadas españolas (información financiera y otra información relevante).\n• **SEC EDGAR:** empresas de EE. UU. (**10-K** anual y **10-Q** trimestral).\n\nCompara al menos **5 años**: una foto suelta engaña."
+    },
+    {
+     "title": "Cuidado con lo «ajustado»",
+     "body": "Muchas empresas destacan un **beneficio ajustado** que quita gastos «extraordinarios». Si cada año hay extraordinarios, no lo son. Compara siempre con el beneficio oficial y con la caja.",
+     "key": "Lee primero los números y las notas; el relato, después."
+    }
+   ]
+  },
+  "u16r": {
+   "title": "Repaso de la unidad",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u16l1-1": {
+   "prompt": "¿Qué intenta responder el análisis fundamental?",
+   "options": [
+    "Cuándo entrar exactamente",
+    "Qué comprar y si está caro o barato",
+    "Qué vela viene mañana"
+   ],
+   "explanation": "El técnico intenta responder a cuándo; el fundamental, a qué y a qué precio."
+  },
+  "u16l1-2": {
+   "prompt": "Estimas que una acción vale 40 € y cotiza a 30 €. ¿Qué margen de seguridad tienes sobre el valor estimado?",
+   "options": [],
+   "explanation": "(40 − 30) ÷ 40 = 25 %.",
+   "unit": "%"
+  },
+  "u16l1-3": {
+   "prompt": "Quieres un margen de seguridad del 30 % sobre un valor estimado de 50 €. ¿Por debajo de qué precio comprarías?",
+   "options": [],
+   "explanation": "50 × (1 − 0,30) = 35 €.",
+   "unit": "€"
+  },
+  "u16l1-4": {
+   "prompt": "Una gran empresa es una buena inversión a cualquier precio.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Quien compró Microsoft en su máximo de 2000 tardó unos 16 años en recuperar ese precio, aunque el negocio siguió siendo excelente."
+  },
+  "u16l1-5": {
+   "prompt": "El señor Mercado está deprimido: una empresa que estimas en 20 € por acción cotiza a 12 € tras una caída general de la bolsa, sin que su negocio haya cambiado. ¿Qué haría un inversor de valor?",
+   "options": [
+    "Comprobar que el negocio sigue igual y, si es así, ver que el precio está muy por debajo del valor",
+    "Vender porque baja",
+    "Comprar con todo su dinero sin revisar nada"
+   ],
+   "explanation": "Graham aprovechaba los cambios de humor del mercado sin dejarse arrastrar por ellos.",
+   "feedback": [
+    "Eso: el precio ha bajado, el valor no. Y aun así, revisa bien tu estimación.",
+    "Venderías justo cuando te ofrecen una ganga, sin que el negocio haya cambiado.",
+    "El margen de seguridad no sustituye a revisar tu estimación ni a diversificar."
+   ]
+  },
+  "u16l1-6": {
+   "prompt": "La diferencia entre el valor estimado y el precio que pagas se llama margen de ____.",
+   "options": [
+    "beneficio",
+    "maniobra",
+    "error",
+    "seguridad"
+   ],
+   "explanation": "Te protege si te equivocas en la estimación."
+  },
+  "u16l1-7": {
+   "prompt": "¿Habla de precio o de valor?",
+   "options": [
+    "La empresa generará unos 100 M€ de caja al año",
+    "Tiene una marca que le permite subir precios",
+    "Capitaliza 1.500 M€ en bolsa",
+    "La acción cerró ayer a 15,20 €",
+    "Ha subido un 8 % esta semana"
+   ],
+   "explanation": "El precio lo ves en la pantalla; el valor sale de analizar el negocio.",
+   "right": [
+    "Precio",
+    "Valor"
+   ]
+  },
+  "u16l1-8": {
+   "prompt": "El precio de una acción y su valor pueden estar muy separados durante años.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "El precio lo fija el ánimo del mercado; el valor, lo que generará el negocio."
+  },
+  "u16l1-9": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Claro, ya está en el suelo",
+    "Compra el doble para promediar",
+    "Primero mira por qué ha caído y cuánto vale el negocio: barato no es lo mismo que infravalorado"
+   ],
+   "explanation": "Un precio bajo solo es oportunidad si está por debajo del valor.",
+   "feedback": [
+    "Lo que ha caído un 60 % puede caer otro 60 %.",
+    "Doblar sin analizar es apostar más a ciegas.",
+    "Vale… ¿y si cayó porque el negocio se ha roto? Entonces el valor también bajó."
+   ],
+   "lines": [
+    "Esta acción ha caído un 60 %, ¡ya no puede bajar más!",
+    "Voy a comprar 🤑"
+   ]
+  },
+  "u16l1-10": {
+   "prompt": "Según Graham, ¿cómo hay que tratar al «señor Mercado»?",
+   "options": [
+    "Hacer siempre lo que dice",
+    "Aprovechar sus cambios de humor sin obedecerle",
+    "Ignorar siempre los precios"
+   ],
+   "explanation": "Sus precios son una oferta que puedes aceptar o no."
+  },
+  "u16l2-1": {
+   "prompt": "Ordena la cuenta de resultados de arriba abajo.",
+   "options": [
+    "Beneficio antes de impuestos",
+    "EBIT",
+    "Margen bruto",
+    "Beneficio neto",
+    "EBITDA",
+    "Ventas"
+   ],
+   "explanation": "Se van restando costes, amortizaciones, intereses e impuestos."
+  },
+  "u16l2-2": {
+   "prompt": "EBITDA es el beneficio antes de intereses, impuestos, depreciaciones y ____.",
+   "options": [
+    "dividendos",
+    "salarios",
+    "ventas",
+    "amortizaciones"
+   ],
+   "explanation": "Mide lo que gana el negocio antes de cómo se financia y del desgaste de sus activos."
+  },
+  "u16l2-3": {
+   "prompt": "Ventas de 500 M€ y coste de ventas de 300 M€. ¿Cuál es el margen bruto?",
+   "options": [],
+   "explanation": "(500 − 300) ÷ 500 = 40 %.",
+   "unit": "%"
+  },
+  "u16l2-4": {
+   "prompt": "Beneficio neto de 60 M€ y 40 millones de acciones. ¿Cuál es el BPA?",
+   "options": [],
+   "explanation": "60 ÷ 40 = 1,50 € por acción.",
+   "unit": "€"
+  },
+  "u16l2-5": {
+   "prompt": "Inditex vendió 38.632 M€ y ganó 5.866 M€ en su ejercicio 2024. ¿Cuál fue su margen neto? (un decimal)",
+   "options": [],
+   "explanation": "5.866 ÷ 38.632 ≈ 15,2 %.",
+   "unit": "%"
+  },
+  "u16l2-6": {
+   "prompt": "Margen operativo = EBIT ÷ ____.",
+   "options": [
+    "beneficio neto",
+    "número de acciones",
+    "deuda",
+    "ventas"
+   ],
+   "explanation": "Mide cuánto beneficio operativo deja cada euro vendido."
+  },
+  "u16l2-7": {
+   "prompt": "¿Qué suele indicar un margen bruto que sube año tras año?",
+   "options": [
+    "Poder para fijar precios",
+    "Que va a quebrar",
+    "Problemas contables seguros"
+   ],
+   "explanation": "Puede subir precios o abaratar costes mejor que sus rivales."
+  },
+  "u16l2-8": {
+   "prompt": "Rápido: ¿qué negocio suele tener el margen bruto más bajo?",
+   "options": [
+    "Un supermercado",
+    "Una empresa de software",
+    "Una marca de lujo"
+   ],
+   "explanation": "Supermercados 20-30 %; software o lujo 60-80 %."
+  },
+  "u16l2-9": {
+   "prompt": "Este es el precio real de una acción durante dos meses. ¿Qué tendencia tiene? (Apple · cierres cada 3 sesiones · marzo–mayo de 2026)",
+   "options": [
+    "Alcista",
+    "Bajista",
+    "Lateral"
+   ],
+   "explanation": "A corto plazo el precio lo mueven las expectativas; a largo plazo suele seguir a los beneficios. La cuenta de resultados te dice si hay beneficios detrás de la subida."
+  },
+  "u16l2-10": {
+   "prompt": "Una empresa puede vender más cada año y ganar menos.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Si los costes suben más que las ventas, los márgenes se encogen. Por eso se lee toda la cuenta, no solo las ventas."
+  },
+  "u16l3-1": {
+   "prompt": "Empareja cada concepto con su definición.",
+   "options": [
+    "Activo",
+    "Pasivo",
+    "Patrimonio neto",
+    "Valor contable por acción"
+   ],
+   "explanation": "Activo = pasivo + patrimonio neto: siempre cuadra.",
+   "right": [
+    "Lo que la empresa debe",
+    "Lo que es de los accionistas",
+    "Patrimonio neto ÷ número de acciones",
+    "Lo que la empresa tiene"
+   ]
+  },
+  "u16l3-2": {
+   "prompt": "¿Dónde va cada partida?",
+   "options": [
+    "Préstamo bancario",
+    "Existencias de harina",
+    "Facturas pendientes con proveedores",
+    "Caja en el banco",
+    "Hornos y tiendas",
+    "Beneficios no repartidos"
+   ],
+   "explanation": "Lo que tiene, lo que debe y lo que es de los socios.",
+   "right": [
+    "Activo",
+    "Pasivo",
+    "Patrimonio neto"
+   ]
+  },
+  "u16l3-3": {
+   "prompt": "Activo = pasivo + ____.",
+   "options": [
+    "EBITDA",
+    "dividendos",
+    "ventas",
+    "patrimonio neto"
+   ],
+   "explanation": "Todo lo que tiene la empresa se ha pagado con deuda o con dinero de los accionistas."
+  },
+  "u16l3-4": {
+   "prompt": "Una empresa tiene un activo de 800 M€ y un pasivo de 500 M€. ¿Cuál es su patrimonio neto?",
+   "options": [],
+   "explanation": "800 − 500 = 300 M€.",
+   "unit": "M€"
+  },
+  "u16l3-5": {
+   "prompt": "Patrimonio neto de 450 M€ y 100 millones de acciones. Si la acción cotiza a 15 €, ¿cuántas veces su valor contable estás pagando?",
+   "options": [],
+   "explanation": "450 ÷ 100 = 4,5 € por acción; 15 ÷ 4,5 ≈ 3,33 veces.",
+   "unit": "veces"
+  },
+  "u16l3-6": {
+   "prompt": "Ordena de más a menos líquido (lo más fácil de convertir en dinero primero).",
+   "options": [
+    "Cobros pendientes de clientes",
+    "Fábricas y maquinaria",
+    "Existencias en el almacén",
+    "Caja"
+   ],
+   "explanation": "La caja ya es dinero; una fábrica puede tardar años en venderse."
+  },
+  "u16l3-7": {
+   "prompt": "Activos a corto de 250 M€ y deudas a corto de 300 M€. ¿Qué indica?",
+   "options": [
+    "Nada relevante",
+    "Podría tener problemas para pagar lo que vence pronto",
+    "Que es muy solvente"
+   ],
+   "explanation": "Lo que vence en el año supera a lo que puede convertir en dinero en el año."
+  },
+  "u16l3-8": {
+   "prompt": "El balance muestra lo que ha ganado la empresa durante el año.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Eso es la cuenta de resultados. El balance es una foto de lo que tiene y debe en un día concreto."
+  },
+  "u16l3-9": {
+   "prompt": "Si el patrimonio neto es negativo, la empresa debe más de lo que tiene en libros.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Es una señal seria, aunque a veces se debe a grandes recompras de acciones en empresas muy rentables. Hay que mirar por qué."
+  },
+  "u16l3-10": {
+   "prompt": "Pablo compara dos panaderías con el mismo beneficio. La A tiene 50 M€ de deuda y 300 M€ de patrimonio; la B, 400 M€ de deuda y 50 M€ de patrimonio. Llega una crisis y las ventas caen un 30 %. ¿Cuál sufre más?",
+   "options": [
+    "La A",
+    "Igual, tienen el mismo beneficio",
+    "La B: los intereses siguen ahí aunque venda menos"
+   ],
+   "explanation": "La deuda no hunde a una empresa en los años buenos: la hunde en los malos.",
+   "feedback": [
+    "Con poca deuda, la A puede aguantar varios años malos.",
+    "En los años buenos sí; en los malos, la deuda marca la diferencia.",
+    "Exacto: la deuda no espera a que vuelvan los buenos tiempos."
+   ]
+  },
+  "u16l4-1": {
+   "prompt": "Flujo operativo de 80 M€ y capex de 30 M€. ¿Cuál es el flujo de caja libre?",
+   "options": [],
+   "explanation": "80 − 30 = 50 M€.",
+   "unit": "M€"
+  },
+  "u16l4-2": {
+   "prompt": "Flujo de caja libre de 150 M€ y 60 millones de acciones. ¿Cuál es el FCF por acción?",
+   "options": [],
+   "explanation": "150 ÷ 60 = 2,50 € por acción.",
+   "unit": "€"
+  },
+  "u16l4-3": {
+   "prompt": "Una empresa factura 100 M€ este año, pero sus clientes solo le han pagado 70 M€; el resto lo cobrará el año que viene. Sus gastos, todos pagados, son 80 M€. ¿Cuánta caja ha generado su actividad?",
+   "options": [],
+   "explanation": "70 − 80 = −10 M€. Su cuenta de resultados puede mostrar 20 M€ de beneficio (100 − 80), pero la caja ha bajado.",
+   "unit": "M€"
+  },
+  "u16l4-4": {
+   "prompt": "¿A qué parte del flujo de caja pertenece?",
+   "options": [
+    "Pago de dividendos",
+    "Pago de nóminas",
+    "Comprar otra empresa",
+    "Cobros de clientes",
+    "Compra de un horno nuevo",
+    "Devolver un préstamo"
+   ],
+   "explanation": "Día a día, inversiones y cómo se financia la empresa.",
+   "right": [
+    "Operativo",
+    "Inversión",
+    "Financiación"
+   ]
+  },
+  "u16l4-5": {
+   "prompt": "Beneficios crecientes y flujo de caja libre negativo durante cinco años seguidos. ¿Qué indica?",
+   "options": [
+    "Una empresa muy sana",
+    "Una señal de alarma",
+    "Nada importante"
+   ],
+   "explanation": "Los beneficios no se están convirtiendo en dinero real."
+  },
+  "u16l4-6": {
+   "prompt": "El flujo de caja libre es más fácil de maquillar que el beneficio.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Es al revés: la caja es un hecho; el beneficio depende de criterios contables."
+  },
+  "u16l4-7": {
+   "prompt": "Laura analiza una empresa que crece un 30 % en ventas y beneficios. Pero lo que le deben sus clientes se ha triplicado y su FCF lleva tres años en negativo. ¿Qué hace?",
+   "options": [
+    "Compra: crece muchísimo",
+    "Investiga por qué no cobra y no compra hasta entenderlo",
+    "Ignora la caja: lo importante es el beneficio"
+   ],
+   "explanation": "Cuando beneficio y caja se separan durante años, algo no cuadra.",
+   "feedback": [
+    "Crecer en ventas sin cobrarlas es justo la señal de alarma.",
+    "Bien: Gowex o Wirecard tenían cifras brillantes que no llegaban a la caja.",
+    "El beneficio es una opinión contable; la caja es un hecho."
+   ]
+  },
+  "u16l4-8": {
+   "prompt": "Una cadena de tiendas tiene FCF negativo este año porque ha abierto 200 tiendas, pero su flujo operativo es alto y creciente. ¿Cómo lo interpretas?",
+   "options": [
+    "Da igual, la caja no importa",
+    "Alarma: está a punto de quebrar",
+    "Puede ser razonable: invierte para crecer, siempre que las tiendas nuevas acaben rindiendo"
+   ],
+   "explanation": "Un FCF negativo por invertir mucho no es lo mismo que un negocio que no cobra.",
+   "feedback": [
+    "Importa, por eso hay que entender el porqué.",
+    "No necesariamente: el FCF es negativo por invertir en crecer, no porque el negocio no genere caja.",
+    "Eso: no es lo mismo caja que no llega que caja que se invierte."
+   ]
+  },
+  "u16l4-9": {
+   "prompt": "FCF = flujo operativo − ____.",
+   "options": [
+    "dividendos",
+    "impuestos",
+    "ventas",
+    "capex"
+   ],
+   "explanation": "El capex es la inversión en activos: hornos, tiendas, máquinas."
+  },
+  "u16l4-10": {
+   "prompt": "¿Qué puede hacer una empresa con su flujo de caja libre? Marca todas.",
+   "options": [
+    "Reducir deuda",
+    "Contarlo como ventas del año siguiente",
+    "Recomprar acciones",
+    "Pagar dividendos"
+   ],
+   "explanation": "El FCF es dinero disponible; no es una venta."
+  },
+  "u16l5-1": {
+   "prompt": "Deuda financiera de 300 M€ y caja de 100 M€. ¿Cuál es la deuda neta?",
+   "options": [],
+   "explanation": "300 − 100 = 200 M€.",
+   "unit": "M€"
+  },
+  "u16l5-2": {
+   "prompt": "Con esa deuda neta de 200 M€ y un EBITDA de 100 M€, ¿cuánto vale deuda neta/EBITDA?",
+   "options": [],
+   "explanation": "200 ÷ 100 = 2 veces: en el límite de lo cómodo.",
+   "unit": "veces"
+  },
+  "u16l5-3": {
+   "prompt": "EBIT de 90 M€ e intereses de 30 M€. ¿Cuál es la cobertura de intereses?",
+   "options": [],
+   "explanation": "90 ÷ 30 = 3 veces: justa. Si el EBIT cae a la mitad, apenas cubre 1,5 veces.",
+   "unit": "veces"
+  },
+  "u16l5-4": {
+   "prompt": "Una deuda neta/EBITDA de 6 veces suele considerarse cómoda en una empresa industrial.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Por encima de 4 suele ser preocupante, salvo sectores con ingresos muy estables."
+  },
+  "u16l5-5": {
+   "prompt": "Una empresa con más caja que deuda tiene deuda neta negativa, es decir, caja neta.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Como Inditex: 11.495 M€ de caja neta al cierre de su ejercicio 2024."
+  },
+  "u16l5-6": {
+   "prompt": "¿Qué sector suele soportar más deuda sin que sea preocupante?",
+   "options": [
+    "Restaurantes de moda",
+    "Software joven",
+    "Eléctricas"
+   ],
+   "explanation": "Ingresos estables y regulados permiten pagar más deuda con menos sustos."
+  },
+  "u16l5-7": {
+   "prompt": "Deuda neta de 600 M€ y EBITDA de 200 M€ (3 veces). Llega una crisis y el EBITDA cae a 120 M€. ¿Cuánto vale ahora el ratio?",
+   "options": [],
+   "explanation": "600 ÷ 120 = 5 veces: sin pedir un euro más, pasa de aceptable a preocupante. Así hunde la deuda en los años malos.",
+   "unit": "veces"
+  },
+  "u16l5-8": {
+   "prompt": "Empresa industrial: ¿cómo está su deuda neta/EBITDA?",
+   "options": [
+    "Deuda neta 500, EBITDA 100",
+    "Deuda neta 900, EBITDA 150",
+    "Caja neta de 50",
+    "Deuda neta 100, EBITDA 100",
+    "Deuda neta 300, EBITDA 100"
+   ],
+   "explanation": "1 vez; 3 veces; 6 veces; negativa; 5 veces.",
+   "right": [
+    "Cómoda (menos de 2)",
+    "Vigilar (de 2 a 4)",
+    "Preocupante (más de 4)"
+   ]
+  },
+  "u16l5-9": {
+   "prompt": "Rápido: deuda 500, caja 100, EBITDA 200. ¿Deuda neta/EBITDA?",
+   "options": [
+    "2",
+    "2,5",
+    "3"
+   ],
+   "explanation": "(500 − 100) ÷ 200 = 2 veces."
+  },
+  "u16l5-10": {
+   "prompt": "Marta duda entre dos empresas iguales en todo salvo la deuda. A: deuda neta/EBITDA de 0,5 y ROE del 12 %. B: deuda neta/EBITDA de 4,5 y ROE del 20 %. ¿Qué debería tener en cuenta?",
+   "options": [
+    "Que la deuda da igual si la empresa gana dinero",
+    "Que B es mejor: su ROE es mayor",
+    "Que el ROE de B puede estar inflado por la deuda y que en una crisis lo pasará peor"
+   ],
+   "explanation": "Mira el ROE junto a la deuda: la deuda infla la rentabilidad y el riesgo.",
+   "feedback": [
+    "Hoy gana; la pregunta es qué pasa el año que no gane.",
+    "Parte de ese ROE puede venir de la deuda, que también multiplica las pérdidas cuando las cosas van mal.",
+    "Eso: más deuda, más riesgo. No es mejor negocio, solo más apalancado."
+   ]
+  },
+  "u16l6-1": {
+   "prompt": "El consenso esperaba un BPA de 1,20 € y la empresa presenta 1,10 €, un 15 % más que hace un año. ¿Qué es más probable a corto plazo?",
+   "options": [
+    "Que suba con fuerza: ha crecido un 15 %",
+    "Que no se mueva",
+    "Que la acción caiga: ha decepcionado frente a lo esperado"
+   ],
+   "explanation": "Se compara con lo esperado (1,20 €), no con el año pasado."
+  },
+  "u16l6-2": {
+   "prompt": "Bruno tiene acciones de una tecnológica que presenta resultados mañana. Ha leído que «serán buenísimos» y quiere triplicar su posición justo antes. ¿Qué se le escapa?",
+   "options": [
+    "Que mañana es festivo",
+    "Que el precio ya descuenta lo esperado y que puede abrir con un hueco en cualquier dirección",
+    "Nada: si son buenísimos, sube"
+   ],
+   "explanation": "Antes de resultados, el riesgo es mayor de lo que parece: el stop no te protege de un hueco.",
+   "feedback": [
+    "No es el problema: el problema es el riesgo del hueco.",
+    "Bien: el día de resultados no es momento de multiplicar el tamaño de una posición.",
+    "Si «buenísimos» es lo que todos esperan, ya está en el precio. Y si decepciona, el hueco puede ser enorme."
+   ]
+  },
+  "u16l6-3": {
+   "prompt": "Gráfico real de una gran tecnológica: 30 sesiones sin nombre ni fecha. ¿Qué hizo en las 10 siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Aunque conocieras sus cifras antes que nadie, no sabrías cómo reaccionaría el mercado: depende de lo que esperaba.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u16l6-4": {
+   "prompt": "Otra acción real, otras 30 sesiones. ¿Sube o baja?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Sin conocer lo que espera el mercado, el gráfico solo no basta para saber qué viene.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u16l6-5": {
+   "prompt": "Una empresa puede subir en bolsa el día que anuncia pérdidas.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Si pierde menos de lo esperado o mejora sus previsiones, el mercado puede celebrarlo."
+  },
+  "u16l6-6": {
+   "prompt": "Una acción vale 50 € antes de resultados y tu stop está en 48 €. Abre con un hueco del −12 %. ¿A qué precio aproximado se ejecuta tu venta?",
+   "options": [],
+   "explanation": "50 × 0,88 = 44 €. El stop salta al primer precio disponible: 4 € por debajo de lo previsto.",
+   "unit": "€"
+  },
+  "u16l6-7": {
+   "prompt": "Empareja cada término con su significado.",
+   "options": [
+    "Consenso",
+    "Guidance",
+    "Sorpresa positiva",
+    "Hueco de precio"
+   ],
+   "explanation": "El vocabulario de la temporada de resultados.",
+   "right": [
+    "Lo que la empresa prevé para los próximos trimestres",
+    "Resultado mejor de lo esperado",
+    "Salto entre el cierre y la apertura sin precios intermedios",
+    "Media de lo que esperan los analistas"
+   ]
+  },
+  "u16l6-8": {
+   "prompt": "Rápido: beneficio récord, pero por debajo de lo esperado. ¿Reacción más probable?",
+   "options": [
+    "Ninguna",
+    "Subida",
+    "Caída"
+   ],
+   "explanation": "Se compara con la expectativa, no con el récord."
+  },
+  "u16l6-9": {
+   "prompt": "Ana lee «Inditex gana un récord de 5.866 M€» y ve, sorprendida, que la acción cae más de un 7 %. ¿Qué explicación es más razonable?",
+   "options": [
+    "Que el titular es falso",
+    "Que la bolsa se equivoca siempre",
+    "Que el mercado esperaba más crecimiento y le decepcionó el ritmo"
+   ],
+   "explanation": "El precio reacciona a la diferencia entre lo que pasa y lo esperado.",
+   "feedback": [
+    "El beneficio fue real; lo que pasó es otra cosa.",
+    "No se equivoca ni acierta: compara con lo que esperaba.",
+    "Eso: fue su menor crecimiento desde 2020. El récord ya estaba en el precio."
+   ]
+  },
+  "u16l6-10": {
+   "prompt": "¿Qué puede mover una acción el día de resultados? Marca todas.",
+   "options": [
+    "Los márgenes frente a lo esperado",
+    "El color de la presentación",
+    "Las previsiones para los próximos trimestres",
+    "El BPA frente al consenso"
+   ],
+   "explanation": "Todo lo que cambia lo que el mercado espera del futuro."
+  },
+  "u16l7-1": {
+   "prompt": "Ordena la lectura que te proponemos: primero hechos, luego relato.",
+   "options": [
+    "Notas sobre deuda y ajustes",
+    "Carta del CEO",
+    "Informe del auditor",
+    "Cuenta de resultados, balance y flujos de caja"
+   ],
+   "explanation": "Si lees el relato con los números ya en la cabeza, te dejas llevar mucho menos."
+  },
+  "u16l7-2": {
+   "prompt": "¿Qué son señales de alarma en un informe anual? Marca todas.",
+   "options": [
+    "El beneficio «ajustado» es muy distinto del oficial año tras año",
+    "Ha cambiado tres veces de auditor en cuatro años",
+    "El flujo de caja libre acompaña al beneficio",
+    "El auditor emite su opinión con salvedades"
+   ],
+   "explanation": "Que la caja acompañe al beneficio es buena señal."
+  },
+  "u16l7-3": {
+   "prompt": "Empareja cada documento o fuente con lo que es.",
+   "options": [
+    "10-K",
+    "10-Q",
+    "CNMV",
+    "Notas de la memoria"
+   ],
+   "explanation": "Saber dónde buscar ahorra horas.",
+   "right": [
+    "Informe trimestral de una empresa de EE. UU.",
+    "Detalle de deuda, litigios y criterios contables",
+    "Supervisor donde consultar a las cotizadas españolas",
+    "Informe anual de una empresa de EE. UU."
+   ]
+  },
+  "u16l7-4": {
+   "prompt": "Mientras lees el informe, miras el precio de la acción en los últimos dos meses. ¿Qué tendencia tiene? (Apple · cierres cada 3 sesiones · febrero–abril de 2025)",
+   "options": [
+    "Alcista",
+    "Bajista",
+    "Lateral"
+   ],
+   "explanation": "El gráfico dice qué ha hecho el precio; el informe, si el negocio ha cambiado. No es lo mismo una caída sin cambios en el negocio que una caída porque la tesis se ha roto."
+  },
+  "u16l7-5": {
+   "prompt": "El beneficio «ajustado» es de 120 M€ y el oficial, de 70 M€. ¿Cuántos M€ de gastos se han apartado como «extraordinarios»?",
+   "options": [],
+   "explanation": "120 − 70 = 50 M€. Si eso se repite cada año, son gastos normales.",
+   "unit": "M€"
+  },
+  "u16l7-6": {
+   "prompt": "¿Dónde encuentras los informes oficiales de una empresa de EE. UU.?",
+   "options": [
+    "En la CNMV",
+    "En SEC EDGAR",
+    "En el BOE"
+   ],
+   "explanation": "Informes 10-K (anuales) y 10-Q (trimestrales)."
+  },
+  "u16l7-7": {
+   "prompt": "Para ver la tendencia de una empresa basta con el informe del último año.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Compara al menos 5 años: un año suelto puede estar inflado o hundido por algo puntual."
+  },
+  "u16l7-8": {
+   "prompt": "Pablo lee la carta del CEO: «Año histórico, crecimiento excepcional, futuro brillante». En las notas descubre que la deuda se ha duplicado y que el beneficio ajustado lleva tres años quitando «costes extraordinarios». ¿Qué hace?",
+   "options": [
+    "Compra porque el CEO está ilusionado",
+    "Se fía de la carta: el CEO conoce mejor la empresa",
+    "Da más peso a las notas y a la caja que al relato"
+   ],
+   "explanation": "Lee primero los números y las notas; el relato, después.",
+   "feedback": [
+    "El entusiasmo no paga la deuda.",
+    "La carta es el relato; las notas son los hechos. Y no cuadran.",
+    "Bien: los números de las notas no llevan adjetivos."
+   ]
+  },
+  "u16l7-9": {
+   "prompt": "Rápido: ¿qué parte del informe opina sobre si las cuentas son fiables?",
+   "options": [
+    "La portada",
+    "La carta del CEO",
+    "El informe del auditor"
+   ],
+   "explanation": "El auditor revisa las cuentas y dice si reflejan la imagen fiel."
+  },
+  "u16l7-10": {
+   "prompt": "Si solo tienes 10 minutos con un informe anual, ¿qué miras? Marca las tres más útiles.",
+   "options": [
+    "El flujo de caja libre",
+    "La deuda neta",
+    "Las fotos de las tiendas",
+    "La evolución de ventas y beneficio"
+   ],
+   "explanation": "Crecimiento, caja y deuda: lo esencial en poco tiempo."
+  }
+ }
+}
