@@ -1,0 +1,3584 @@
+{
+ "types": {
+  "TE": "Test (una correcta)",
+  "VF": "Verdadero o falso",
+  "MU": "Varias correctas",
+  "OR": "Ordenar pasos",
+  "EM": "Emparejar conceptos",
+  "HU": "Rellenar huecos",
+  "LG": "Leer un gráfico real",
+  "PG": "Marcar un punto en el gráfico",
+  "SB": "¿Sube o baja? (histórico real)",
+  "ST": "Colocar stop loss / take profit",
+  "SI": "Simulación de compra/venta",
+  "ES": "Escenario con decisión",
+  "CA": "Calculadora interactiva",
+  "CT": "Construir una cartera",
+  "DE": "Detectar la estafa",
+  "CH": "Conversación con Lumi",
+  "CR": "Reto cronometrado",
+  "RP": "Repaso espaciado de errores"
+ },
+ "sections": [
+  {
+   "id": "s1",
+   "title": "Fundamentos del dinero",
+   "requires": [],
+   "units": [
+    {
+     "id": "u1",
+     "title": "El dinero y la inflación",
+     "lessons": [
+      {
+       "id": "u1l1",
+       "title": "Qué es el dinero (y qué no)",
+       "goal": "Distinguir dinero, ahorro, renta y patrimonio",
+       "types": [
+        "TE",
+        "VF",
+        "EM",
+        "CH"
+       ],
+       "difficulty": 1,
+       "requires": null
+      },
+      {
+       "id": "u1l2",
+       "title": "La inflación: por qué todo sube",
+       "goal": "Explicar la inflación y su efecto en el poder de compra",
+       "types": [
+        "TE",
+        "CA",
+        "ES"
+       ],
+       "difficulty": 1,
+       "requires": "u1l1"
+      },
+      {
+       "id": "u1l3",
+       "title": "El IPC y tu cesta de la compra",
+       "goal": "Leer el IPC del INE y entender que tu inflación personal puede ser otra",
+       "types": [
+        "LG",
+        "TE",
+        "HU"
+       ],
+       "difficulty": 1,
+       "requires": "u1l2"
+      },
+      {
+       "id": "u1l4",
+       "title": "El dinero parado pierde valor",
+       "goal": "Calcular cuánto pierde un ahorro sin rentabilidad en 10 años",
+       "types": [
+        "CA",
+        "VF",
+        "ES"
+       ],
+       "difficulty": 1,
+       "requires": "u1l3"
+      },
+      {
+       "id": "u1l5",
+       "title": "Interés simple e interés compuesto",
+       "goal": "Diferenciar ambos y ver el efecto bola de nieve",
+       "types": [
+        "CA",
+        "TE",
+        "OR"
+       ],
+       "difficulty": 1,
+       "requires": "u1l4"
+      },
+      {
+       "id": "u1l6",
+       "title": "La regla del 72",
+       "goal": "Estimar en cuántos años se duplica el dinero",
+       "types": [
+        "CA",
+        "CR",
+        "HU"
+       ],
+       "difficulty": 1,
+       "requires": "u1l5"
+      },
+      {
+       "id": "u1r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 1,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u2",
+     "title": "Presupuesto y ahorro",
+     "lessons": [
+      {
+       "id": "u2l1",
+       "title": "Tu presupuesto en 10 minutos",
+       "goal": "Clasificar ingresos y gastos fijos y variables",
+       "types": [
+        "EM",
+        "TE",
+        "CT"
+       ],
+       "difficulty": 1,
+       "requires": null
+      },
+      {
+       "id": "u2l2",
+       "title": "La regla 50/30/20",
+       "goal": "Repartir un sueldo con un método sencillo",
+       "types": [
+        "CA",
+        "CT",
+        "VF"
+       ],
+       "difficulty": 1,
+       "requires": "u2l1"
+      },
+      {
+       "id": "u2l3",
+       "title": "Gastos hormiga y suscripciones",
+       "goal": "Detectar gastos pequeños que suman mucho al año",
+       "types": [
+        "CA",
+        "CR",
+        "VF"
+       ],
+       "difficulty": 1,
+       "requires": "u2l2"
+      },
+      {
+       "id": "u2l4",
+       "title": "El fondo de emergencia",
+       "goal": "Calcular un colchón de 3 a 6 meses y dónde guardarlo",
+       "types": [
+        "CA",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 1,
+       "requires": "u2l3"
+      },
+      {
+       "id": "u2l5",
+       "title": "Págate primero a ti",
+       "goal": "Automatizar el ahorro antes de gastar",
+       "types": [
+        "OR",
+        "VF",
+        "CH"
+       ],
+       "difficulty": 1,
+       "requires": "u2l4"
+      },
+      {
+       "id": "u2r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 1,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u3",
+     "title": "Deudas y crédito",
+     "lessons": [
+      {
+       "id": "u3l1",
+       "title": "TIN, TAE y el coste real de un préstamo",
+       "goal": "Comparar préstamos por la TAE, no por la cuota",
+       "types": [
+        "CA",
+        "TE",
+        "HU"
+       ],
+       "difficulty": 2,
+       "requires": null
+      },
+      {
+       "id": "u3l2",
+       "title": "Deuda buena y deuda mala",
+       "goal": "Distinguir deuda que crea valor de la que lo destruye",
+       "types": [
+        "EM",
+        "ES",
+        "VF"
+       ],
+       "difficulty": 1,
+       "requires": "u3l1"
+      },
+      {
+       "id": "u3l3",
+       "title": "Tarjetas revolving y minicréditos",
+       "goal": "Reconocer las deudas más caras y cómo salir de ellas",
+       "types": [
+        "CA",
+        "DE",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": "u3l2"
+      },
+      {
+       "id": "u3l4",
+       "title": "Bola de nieve o avalancha",
+       "goal": "Elegir un método para pagar varias deudas",
+       "types": [
+        "OR",
+        "CA",
+        "ES"
+       ],
+       "difficulty": 2,
+       "requires": "u3l3"
+      },
+      {
+       "id": "u3l5",
+       "title": "Invertir o amortizar",
+       "goal": "Decidir entre pagar deuda o invertir según el tipo de interés",
+       "types": [
+        "ES",
+        "CA",
+        "VF"
+       ],
+       "difficulty": 2,
+       "requires": "u3l4"
+      },
+      {
+       "id": "u3r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 2,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u4",
+     "title": "Tu primer plan financiero",
+     "lessons": [
+      {
+       "id": "u4l1",
+       "title": "Ahorrar, invertir y especular",
+       "goal": "Distinguir las tres cosas por plazo, riesgo y objetivo",
+       "types": [
+        "EM",
+        "TE",
+        "VF"
+       ],
+       "difficulty": 1,
+       "requires": null
+      },
+      {
+       "id": "u4l2",
+       "title": "Objetivos con fecha y cifra",
+       "goal": "Convertir un deseo en un objetivo medible",
+       "types": [
+        "OR",
+        "HU",
+        "CH"
+       ],
+       "difficulty": 1,
+       "requires": "u4l1"
+      },
+      {
+       "id": "u4l3",
+       "title": "Tu horizonte temporal",
+       "goal": "Relacionar plazo con el tipo de inversión adecuada",
+       "types": [
+        "EM",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 1,
+       "requires": "u4l2"
+      },
+      {
+       "id": "u4l4",
+       "title": "Cuánto riesgo puedes aguantar",
+       "goal": "Separar capacidad y tolerancia al riesgo",
+       "types": [
+        "ES",
+        "TE",
+        "CH"
+       ],
+       "difficulty": 2,
+       "requires": "u4l3"
+      },
+      {
+       "id": "u4l5",
+       "title": "La verdad sobre hacerse rico rápido",
+       "goal": "Conocer los datos reales de los traders minoristas",
+       "types": [
+        "VF",
+        "TE",
+        "DE"
+       ],
+       "difficulty": 2,
+       "requires": "u4l4"
+      },
+      {
+       "id": "u4r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 2,
+       "review": true
+      }
+     ]
+    }
+   ],
+   "boss": {
+    "id": "s1boss",
+    "title": "Reto final: Fundamentos del dinero",
+    "types": [
+     "CR",
+     "ES",
+     "SB",
+     "mezcla"
+    ],
+    "passPct": 80
+   }
+  },
+  {
+   "id": "s2",
+   "title": "Cómo funcionan los mercados",
+   "requires": [
+    "s1"
+   ],
+   "units": [
+    {
+     "id": "u5",
+     "title": "La bolsa por dentro",
+     "lessons": [
+      {
+       "id": "u5l1",
+       "title": "Qué es una bolsa",
+       "goal": "Explicar para qué sirve un mercado de valores",
+       "types": [
+        "TE",
+        "VF",
+        "CH"
+       ],
+       "difficulty": 1,
+       "requires": null
+      },
+      {
+       "id": "u5l2",
+       "title": "Quién compra y quién vende",
+       "goal": "Conocer a minoristas, institucionales y creadores de mercado",
+       "types": [
+        "EM",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 2,
+       "requires": "u5l1"
+      },
+      {
+       "id": "u5l3",
+       "title": "Oferta, demanda y precio",
+       "goal": "Ver cómo se forma un precio en el libro de órdenes",
+       "types": [
+        "SI",
+        "TE",
+        "OR"
+       ],
+       "difficulty": 2,
+       "requires": "u5l2"
+      },
+      {
+       "id": "u5l4",
+       "title": "Horarios y sesiones",
+       "goal": "Saber cuándo abre cada mercado (Madrid, Nueva York, cripto 24/7)",
+       "types": [
+        "EM",
+        "CR",
+        "TE"
+       ],
+       "difficulty": 1,
+       "requires": "u5l3"
+      },
+      {
+       "id": "u5l5",
+       "title": "Bróker, cuenta y custodia",
+       "goal": "Entender qué hace un bróker y el Fondo de Garantía de Inversiones",
+       "types": [
+        "TE",
+        "VF",
+        "ES"
+       ],
+       "difficulty": 2,
+       "requires": "u5l4"
+      },
+      {
+       "id": "u5l6",
+       "title": "Mercado primario y secundario: las OPV",
+       "goal": "Distinguir la salida a bolsa del día a día",
+       "types": [
+        "TE",
+        "EM",
+        "VF"
+       ],
+       "difficulty": 2,
+       "requires": "u5l5"
+      },
+      {
+       "id": "u5l7",
+       "title": "La bolsa española: IBEX y mercado continuo",
+       "goal": "Conocer cómo funciona BME y sus segmentos",
+       "types": [
+        "TE",
+        "LG",
+        "EM"
+       ],
+       "difficulty": 2,
+       "requires": "u5l6"
+      },
+      {
+       "id": "u5r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 2,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u6",
+     "title": "Las órdenes",
+     "lessons": [
+      {
+       "id": "u6l1",
+       "title": "La orden a mercado",
+       "goal": "Comprar y vender al precio actual y entender cuándo se ejecuta",
+       "types": [
+        "SI",
+        "TE",
+        "VF"
+       ],
+       "difficulty": 2,
+       "requires": null
+      },
+      {
+       "id": "u6l2",
+       "title": "Horquilla, spread y deslizamiento",
+       "goal": "Ver los costes ocultos al operar",
+       "types": [
+        "LG",
+        "CA",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": "u6l1"
+      },
+      {
+       "id": "u6l3",
+       "title": "La orden limitada",
+       "goal": "Fijar el precio máximo de compra o mínimo de venta",
+       "types": [
+        "SI",
+        "ST",
+        "ES"
+       ],
+       "difficulty": 2,
+       "requires": "u6l2"
+      },
+      {
+       "id": "u6l4",
+       "title": "El stop loss",
+       "goal": "Limitar pérdidas con una orden automática",
+       "types": [
+        "ST",
+        "SI",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": "u6l3"
+      },
+      {
+       "id": "u6l5",
+       "title": "El take profit",
+       "goal": "Asegurar beneficios con un objetivo de salida",
+       "types": [
+        "ST",
+        "SI",
+        "VF"
+       ],
+       "difficulty": 2,
+       "requires": "u6l4"
+      },
+      {
+       "id": "u6l6",
+       "title": "Combinar órdenes: OCO",
+       "goal": "Usar stop y objetivo a la vez y saber qué pasa con los huecos",
+       "types": [
+        "ST",
+        "ES",
+        "OR"
+       ],
+       "difficulty": 3,
+       "requires": "u6l5"
+      },
+      {
+       "id": "u6r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 3,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u7",
+     "title": "Índices y referencias",
+     "lessons": [
+      {
+       "id": "u7l1",
+       "title": "Qué es un índice",
+       "goal": "Entender un índice como cesta de referencia",
+       "types": [
+        "TE",
+        "VF",
+        "EM"
+       ],
+       "difficulty": 1,
+       "requires": null
+      },
+      {
+       "id": "u7l2",
+       "title": "S&P 500, Nasdaq, IBEX 35 y MSCI World",
+       "goal": "Reconocer los índices principales y qué miden",
+       "types": [
+        "EM",
+        "LG",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": "u7l1"
+      },
+      {
+       "id": "u7l3",
+       "title": "Ponderar por capitalización",
+       "goal": "Calcular por qué unas empresas pesan más que otras",
+       "types": [
+        "CA",
+        "TE",
+        "VF"
+       ],
+       "difficulty": 2,
+       "requires": "u7l2"
+      },
+      {
+       "id": "u7l4",
+       "title": "Índice de precios y de rentabilidad total",
+       "goal": "Ver el efecto de los dividendos en el largo plazo",
+       "types": [
+        "LG",
+        "CA",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": "u7l3"
+      },
+      {
+       "id": "u7l5",
+       "title": "Comparar tu rentabilidad",
+       "goal": "Usar un índice como vara de medir",
+       "types": [
+        "CA",
+        "ES",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": "u7l4"
+      },
+      {
+       "id": "u7r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 2,
+       "review": true
+      }
+     ]
+    }
+   ],
+   "boss": {
+    "id": "s2boss",
+    "title": "Reto final: Cómo funcionan los mercados",
+    "types": [
+     "CR",
+     "ES",
+     "SB",
+     "mezcla"
+    ],
+    "passPct": 80
+   }
+  },
+  {
+   "id": "s3",
+   "title": "Productos de inversión",
+   "requires": [
+    "s2"
+   ],
+   "units": [
+    {
+     "id": "u8",
+     "title": "Acciones",
+     "lessons": [
+      {
+       "id": "u8l1",
+       "title": "Qué es una acción",
+       "goal": "Entender que una acción es una parte de una empresa",
+       "types": [
+        "TE",
+        "VF",
+        "CH"
+       ],
+       "difficulty": 1,
+       "requires": null
+      },
+      {
+       "id": "u8l2",
+       "title": "Derechos del accionista",
+       "goal": "Conocer voto, dividendo e información",
+       "types": [
+        "MU",
+        "TE",
+        "EM"
+       ],
+       "difficulty": 2,
+       "requires": "u8l1"
+      },
+      {
+       "id": "u8l3",
+       "title": "Dividendos: cómo y cuándo se cobran",
+       "goal": "Entender fecha ex-dividendo y por qué el precio baja",
+       "types": [
+        "LG",
+        "TE",
+        "CA"
+       ],
+       "difficulty": 2,
+       "requires": "u8l2"
+      },
+      {
+       "id": "u8l4",
+       "title": "Splits, contrasplits y ampliaciones",
+       "goal": "Saber por qué cambia el número de acciones",
+       "types": [
+        "CA",
+        "VF",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": "u8l3"
+      },
+      {
+       "id": "u8l5",
+       "title": "Grandes, medianas y pequeñas",
+       "goal": "Comparar riesgo y potencial según el tamaño",
+       "types": [
+        "EM",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 2,
+       "requires": "u8l4"
+      },
+      {
+       "id": "u8l6",
+       "title": "Crecimiento y valor",
+       "goal": "Distinguir dos estilos de empresas",
+       "types": [
+        "EM",
+        "LG",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": "u8l5"
+      },
+      {
+       "id": "u8l7",
+       "title": "Recompras de acciones",
+       "goal": "Ver cómo devuelven dinero las empresas además del dividendo",
+       "types": [
+        "TE",
+        "CA",
+        "VF"
+       ],
+       "difficulty": 3,
+       "requires": "u8l6"
+      },
+      {
+       "id": "u8r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 3,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u9",
+     "title": "Bonos y renta fija",
+     "lessons": [
+      {
+       "id": "u9l1",
+       "title": "Qué es un bono",
+       "goal": "Entender un bono como préstamo con cupón y vencimiento",
+       "types": [
+        "TE",
+        "VF",
+        "CH"
+       ],
+       "difficulty": 1,
+       "requires": null
+      },
+      {
+       "id": "u9l2",
+       "title": "Cupón, precio y TIR",
+       "goal": "Calcular la rentabilidad real de un bono",
+       "types": [
+        "CA",
+        "TE",
+        "HU"
+       ],
+       "difficulty": 3,
+       "requires": "u9l1"
+      },
+      {
+       "id": "u9l3",
+       "title": "Si suben los tipos, bajan los bonos",
+       "goal": "Entender la relación inversa y la duración",
+       "types": [
+        "SB",
+        "CA",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u9l2"
+      },
+      {
+       "id": "u9l4",
+       "title": "Rating y riesgo de impago",
+       "goal": "Leer calificaciones y entender el bono basura",
+       "types": [
+        "EM",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 2,
+       "requires": "u9l3"
+      },
+      {
+       "id": "u9l5",
+       "title": "Letras del Tesoro y depósitos",
+       "goal": "Comparar productos de ahorro seguros en España",
+       "types": [
+        "CA",
+        "EM",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": "u9l4"
+      },
+      {
+       "id": "u9l6",
+       "title": "Bonos ligados a la inflación",
+       "goal": "Saber cuándo protegen y cuándo no",
+       "types": [
+        "TE",
+        "VF",
+        "ES"
+       ],
+       "difficulty": 3,
+       "requires": "u9l5"
+      },
+      {
+       "id": "u9r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 3,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u10",
+     "title": "Fondos y ETFs",
+     "lessons": [
+      {
+       "id": "u10l1",
+       "title": "Qué es un fondo de inversión",
+       "goal": "Entender la inversión colectiva y la gestora",
+       "types": [
+        "TE",
+        "VF",
+        "EM"
+       ],
+       "difficulty": 1,
+       "requires": null
+      },
+      {
+       "id": "u10l2",
+       "title": "Qué es un ETF",
+       "goal": "Comparar ETF y fondo tradicional",
+       "types": [
+        "EM",
+        "LG",
+        "CH"
+       ],
+       "difficulty": 2,
+       "requires": "u10l1"
+      },
+      {
+       "id": "u10l3",
+       "title": "Comisiones: el TER y los costes ocultos",
+       "goal": "Calcular cuánto cuesta un 1 % al año en 30 años",
+       "types": [
+        "CA",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 2,
+       "requires": "u10l2"
+      },
+      {
+       "id": "u10l4",
+       "title": "Gestión activa contra indexada",
+       "goal": "Conocer los datos SPIVA y qué significan",
+       "types": [
+        "LG",
+        "TE",
+        "VF"
+       ],
+       "difficulty": 2,
+       "requires": "u10l3"
+      },
+      {
+       "id": "u10l5",
+       "title": "Acumulación o distribución",
+       "goal": "Elegir entre reinvertir o cobrar dividendos",
+       "types": [
+        "EM",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 2,
+       "requires": "u10l4"
+      },
+      {
+       "id": "u10l6",
+       "title": "Réplica física y sintética",
+       "goal": "Entender cómo replica un ETF su índice",
+       "types": [
+        "TE",
+        "VF",
+        "MU"
+       ],
+       "difficulty": 3,
+       "requires": "u10l5"
+      },
+      {
+       "id": "u10l7",
+       "title": "Leer la ficha de un fondo (KID)",
+       "goal": "Encontrar riesgo, costes y política en un documento real",
+       "types": [
+        "LG",
+        "MU",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": "u10l6"
+      },
+      {
+       "id": "u10r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 3,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u11",
+     "title": "Otros activos",
+     "lessons": [
+      {
+       "id": "u11l1",
+       "title": "Inmobiliario en bolsa: SOCIMIs y REITs",
+       "goal": "Invertir en inmuebles sin comprar un piso",
+       "types": [
+        "TE",
+        "EM",
+        "VF"
+       ],
+       "difficulty": 2,
+       "requires": null
+      },
+      {
+       "id": "u11l2",
+       "title": "Futuros y opciones en una lección",
+       "goal": "Saber qué son sin operar con ellos",
+       "types": [
+        "EM",
+        "HU",
+        "ES"
+       ],
+       "difficulty": 3,
+       "requires": "u11l1"
+      },
+      {
+       "id": "u11l3",
+       "title": "CFD: por qué la mayoría pierde",
+       "goal": "Leer el aviso obligatorio de riesgo de los CFD",
+       "types": [
+        "CA",
+        "VF",
+        "DE"
+       ],
+       "difficulty": 3,
+       "requires": "u11l2"
+      },
+      {
+       "id": "u11l4",
+       "title": "Planes de pensiones",
+       "goal": "Conocer sus ventajas fiscales y sus límites en España",
+       "types": [
+        "TE",
+        "CA",
+        "ES"
+       ],
+       "difficulty": 2,
+       "requires": "u11l3"
+      },
+      {
+       "id": "u11l5",
+       "title": "Depósitos, cuentas remuneradas y monetarios",
+       "goal": "Comparar dónde guardar el dinero a corto plazo",
+       "types": [
+        "EM",
+        "CA",
+        "TE"
+       ],
+       "difficulty": 1,
+       "requires": "u11l4"
+      },
+      {
+       "id": "u11r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 3,
+       "review": true
+      }
+     ]
+    }
+   ],
+   "boss": {
+    "id": "s3boss",
+    "title": "Reto final: Productos de inversión",
+    "types": [
+     "CR",
+     "ES",
+     "SB",
+     "mezcla"
+    ],
+    "passPct": 80
+   }
+  },
+  {
+   "id": "s4",
+   "title": "Criptomonedas y blockchain",
+   "requires": [
+    "s2"
+   ],
+   "units": [
+    {
+     "id": "u12",
+     "title": "Fundamentos cripto",
+     "lessons": [
+      {
+       "id": "u12l1",
+       "title": "Qué es una blockchain",
+       "goal": "Entender un registro compartido que no se puede reescribir",
+       "types": [
+        "OR",
+        "TE",
+        "VF"
+       ],
+       "difficulty": 2,
+       "requires": null
+      },
+      {
+       "id": "u12l2",
+       "title": "Bitcoin: el oro digital",
+       "goal": "Conocer el límite de 21 millones y el halving",
+       "types": [
+        "TE",
+        "HU",
+        "LG"
+       ],
+       "difficulty": 2,
+       "requires": "u12l1"
+      },
+      {
+       "id": "u12l3",
+       "title": "Minería y prueba de trabajo",
+       "goal": "Entender cómo se validan los bloques y por qué consume energía",
+       "types": [
+        "OR",
+        "TE",
+        "VF"
+       ],
+       "difficulty": 3,
+       "requires": "u12l2"
+      },
+      {
+       "id": "u12l4",
+       "title": "Ethereum y los contratos inteligentes",
+       "goal": "Entender qué añade Ethereum a Bitcoin",
+       "types": [
+        "EM",
+        "TE",
+        "VF"
+       ],
+       "difficulty": 2,
+       "requires": "u12l3"
+      },
+      {
+       "id": "u12l5",
+       "title": "Stablecoins",
+       "goal": "Saber cómo mantienen su valor y su riesgo",
+       "types": [
+        "TE",
+        "ES",
+        "VF"
+       ],
+       "difficulty": 3,
+       "requires": "u12l4"
+      },
+      {
+       "id": "u12l6",
+       "title": "Wallets, claves y autocustodia",
+       "goal": "Proteger una frase semilla y entender el riesgo de custodia",
+       "types": [
+        "OR",
+        "DE",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": "u12l5"
+      },
+      {
+       "id": "u12l7",
+       "title": "Exchanges y MiCA",
+       "goal": "Saber qué exige la regulación europea a un exchange",
+       "types": [
+        "TE",
+        "MU",
+        "VF"
+       ],
+       "difficulty": 3,
+       "requires": "u12l6"
+      },
+      {
+       "id": "u12r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 3,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u13",
+     "title": "Riesgos y realidad cripto",
+     "lessons": [
+      {
+       "id": "u13l1",
+       "title": "La volatilidad cripto",
+       "goal": "Ver caídas reales del 70 % y cuánto tardaron en recuperarse",
+       "types": [
+        "LG",
+        "SB",
+        "CA"
+       ],
+       "difficulty": 3,
+       "requires": null
+      },
+      {
+       "id": "u13l2",
+       "title": "Cuando cae un exchange: FTX",
+       "goal": "Entender el riesgo de contraparte",
+       "types": [
+        "ES",
+        "TE",
+        "VF"
+       ],
+       "difficulty": 3,
+       "requires": "u13l1"
+      },
+      {
+       "id": "u13l3",
+       "title": "Memecoins, airdrops y rug pulls",
+       "goal": "Reconocer proyectos diseñados para robar",
+       "types": [
+        "DE",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 3,
+       "requires": "u13l2"
+      },
+      {
+       "id": "u13l4",
+       "title": "Staking y DeFi: de dónde sale el rendimiento",
+       "goal": "Preguntar siempre quién paga el interés",
+       "types": [
+        "ES",
+        "TE",
+        "VF"
+       ],
+       "difficulty": 4,
+       "requires": "u13l3"
+      },
+      {
+       "id": "u13l5",
+       "title": "ETFs y ETPs de cripto",
+       "goal": "Comparar comprar cripto directamente o a través de un ETF/ETP",
+       "types": [
+        "EM",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 3,
+       "requires": "u13l4"
+      },
+      {
+       "id": "u13l6",
+       "title": "Cuánta cripto en una cartera",
+       "goal": "Pensar el peso de la cripto en el conjunto",
+       "types": [
+        "CT",
+        "ES",
+        "CA"
+       ],
+       "difficulty": 3,
+       "requires": "u13l5"
+      },
+      {
+       "id": "u13r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 4,
+       "review": true
+      }
+     ]
+    }
+   ],
+   "boss": {
+    "id": "s4boss",
+    "title": "Reto final: Criptomonedas y blockchain",
+    "types": [
+     "CR",
+     "ES",
+     "SB",
+     "mezcla"
+    ],
+    "passPct": 80
+   }
+  },
+  {
+   "id": "s5",
+   "title": "Divisas y materias primas",
+   "requires": [
+    "s3"
+   ],
+   "units": [
+    {
+     "id": "u14",
+     "title": "Divisas (forex)",
+     "lessons": [
+      {
+       "id": "u14l1",
+       "title": "Pares de divisas",
+       "goal": "Leer EUR/USD y saber qué divisa compras",
+       "types": [
+        "TE",
+        "HU",
+        "LG"
+       ],
+       "difficulty": 2,
+       "requires": null
+      },
+      {
+       "id": "u14l2",
+       "title": "Pips, lotes y apalancamiento",
+       "goal": "Calcular cuánto mueve un pip y por qué el forex es arriesgado",
+       "types": [
+        "CA",
+        "TE",
+        "VF"
+       ],
+       "difficulty": 4,
+       "requires": "u14l1"
+      },
+      {
+       "id": "u14l3",
+       "title": "Qué mueve una divisa",
+       "goal": "Relacionar tipos de interés, inflación y comercio",
+       "types": [
+        "ES",
+        "EM",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u14l2"
+      },
+      {
+       "id": "u14l4",
+       "title": "El riesgo divisa en tu cartera",
+       "goal": "Ver cómo afecta el dólar a un fondo del S&P 500",
+       "types": [
+        "CA",
+        "SB",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u14l3"
+      },
+      {
+       "id": "u14l5",
+       "title": "Divisas refugio",
+       "goal": "Conocer el franco suizo, el yen y el dólar en crisis",
+       "types": [
+        "TE",
+        "LG",
+        "VF"
+       ],
+       "difficulty": 3,
+       "requires": "u14l4"
+      },
+      {
+       "id": "u14r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 4,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u15",
+     "title": "Materias primas",
+     "lessons": [
+      {
+       "id": "u15l1",
+       "title": "El oro",
+       "goal": "Entender cuándo y por qué se usa como refugio",
+       "types": [
+        "LG",
+        "SB",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": null
+      },
+      {
+       "id": "u15l2",
+       "title": "El petróleo y la OPEP",
+       "goal": "Ver qué mueve el precio del crudo",
+       "types": [
+        "ES",
+        "LG",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u15l1"
+      },
+      {
+       "id": "u15l3",
+       "title": "Metales industriales y agrícolas",
+       "goal": "Relacionar cobre, trigo y café con la economía y el clima",
+       "types": [
+        "EM",
+        "TE",
+        "SB"
+       ],
+       "difficulty": 3,
+       "requires": "u15l2"
+      },
+      {
+       "id": "u15l4",
+       "title": "Cómo se invierte en materias primas",
+       "goal": "Comparar ETC, futuros y acciones mineras",
+       "types": [
+        "EM",
+        "TE",
+        "VF"
+       ],
+       "difficulty": 3,
+       "requires": "u15l3"
+      },
+      {
+       "id": "u15l5",
+       "title": "Contango y backwardation",
+       "goal": "Saber por qué un ETF de petróleo puede perder aunque el crudo suba",
+       "types": [
+        "CA",
+        "TE",
+        "LG"
+       ],
+       "difficulty": 4,
+       "requires": "u15l4"
+      },
+      {
+       "id": "u15r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 4,
+       "review": true
+      }
+     ]
+    }
+   ],
+   "boss": {
+    "id": "s5boss",
+    "title": "Reto final: Divisas y materias primas",
+    "types": [
+     "CR",
+     "ES",
+     "SB",
+     "mezcla"
+    ],
+    "passPct": 80
+   }
+  },
+  {
+   "id": "s6",
+   "title": "Análisis fundamental",
+   "requires": [
+    "s3"
+   ],
+   "units": [
+    {
+     "id": "u16",
+     "title": "Leer las cuentas de una empresa",
+     "lessons": [
+      {
+       "id": "u16l1",
+       "title": "Precio y valor no son lo mismo",
+       "goal": "Separar lo que pagas de lo que vale",
+       "types": [
+        "TE",
+        "VF",
+        "ES"
+       ],
+       "difficulty": 2,
+       "requires": null
+      },
+      {
+       "id": "u16l2",
+       "title": "La cuenta de resultados",
+       "goal": "Leer ventas, márgenes y beneficio",
+       "types": [
+        "LG",
+        "HU",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u16l1"
+      },
+      {
+       "id": "u16l3",
+       "title": "El balance",
+       "goal": "Entender activo, pasivo y patrimonio",
+       "types": [
+        "EM",
+        "OR",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u16l2"
+      },
+      {
+       "id": "u16l4",
+       "title": "El flujo de caja",
+       "goal": "Distinguir beneficio de caja",
+       "types": [
+        "CA",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 3,
+       "requires": "u16l3"
+      },
+      {
+       "id": "u16l5",
+       "title": "La deuda de una empresa",
+       "goal": "Medir si una empresa debe demasiado",
+       "types": [
+        "CA",
+        "TE",
+        "VF"
+       ],
+       "difficulty": 3,
+       "requires": "u16l4"
+      },
+      {
+       "id": "u16l6",
+       "title": "Resultados trimestrales y expectativas",
+       "goal": "Entender por qué una acción cae con buenos resultados",
+       "types": [
+        "SB",
+        "ES",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u16l5"
+      },
+      {
+       "id": "u16l7",
+       "title": "Leer un informe anual sin perderte",
+       "goal": "Encontrar lo importante en un informe real",
+       "types": [
+        "LG",
+        "MU",
+        "OR"
+       ],
+       "difficulty": 4,
+       "requires": "u16l6"
+      },
+      {
+       "id": "u16r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 4,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u17",
+     "title": "Ratios y valoración",
+     "lessons": [
+      {
+       "id": "u17l1",
+       "title": "El PER",
+       "goal": "Calcular e interpretar el PER",
+       "types": [
+        "CA",
+        "TE",
+        "HU"
+       ],
+       "difficulty": 3,
+       "requires": null
+      },
+      {
+       "id": "u17l2",
+       "title": "PEG, EV/EBITDA y precio/valor contable",
+       "goal": "Elegir el ratio según el tipo de empresa",
+       "types": [
+        "EM",
+        "CA",
+        "TE"
+       ],
+       "difficulty": 4,
+       "requires": "u17l1"
+      },
+      {
+       "id": "u17l3",
+       "title": "ROE y ROIC: ¿es un buen negocio?",
+       "goal": "Medir la rentabilidad del capital",
+       "types": [
+        "CA",
+        "TE",
+        "VF"
+       ],
+       "difficulty": 4,
+       "requires": "u17l2"
+      },
+      {
+       "id": "u17l4",
+       "title": "Rentabilidad por dividendo y payout",
+       "goal": "Detectar dividendos insostenibles",
+       "types": [
+        "CA",
+        "DE",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u17l3"
+      },
+      {
+       "id": "u17l5",
+       "title": "Descontar flujos (DCF) sin miedo",
+       "goal": "Entender un DCF simplificado y su sensibilidad",
+       "types": [
+        "CA",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 5,
+       "requires": "u17l4"
+      },
+      {
+       "id": "u17l6",
+       "title": "El CAPE y la valoración del mercado",
+       "goal": "Saber qué dice y qué no dice el CAPE",
+       "types": [
+        "LG",
+        "TE",
+        "VF"
+       ],
+       "difficulty": 4,
+       "requires": "u17l5"
+      },
+      {
+       "id": "u17r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 5,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u18",
+     "title": "Calidad del negocio y macro",
+     "lessons": [
+      {
+       "id": "u18l1",
+       "title": "Ventajas competitivas: el foso",
+       "goal": "Reconocer marcas, redes y costes de cambio",
+       "types": [
+        "EM",
+        "ES",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": null
+      },
+      {
+       "id": "u18l2",
+       "title": "Sectores cíclicos y defensivos",
+       "goal": "Clasificar sectores según el ciclo",
+       "types": [
+        "EM",
+        "SB",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u18l1"
+      },
+      {
+       "id": "u18l3",
+       "title": "Bancos centrales y tipos de interés",
+       "goal": "Ver cómo afectan a bolsa y bonos",
+       "types": [
+        "ES",
+        "SB",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u18l2"
+      },
+      {
+       "id": "u18l4",
+       "title": "Los datos que mueven el mercado",
+       "goal": "Conocer IPC, empleo, PIB y PMI",
+       "types": [
+        "EM",
+        "ES",
+        "CR"
+       ],
+       "difficulty": 3,
+       "requires": "u18l3"
+      },
+      {
+       "id": "u18l5",
+       "title": "Empresas pequeñas y en crecimiento: qué mirar",
+       "goal": "Valorar empresas sin beneficios todavía",
+       "types": [
+        "ES",
+        "TE",
+        "CA"
+       ],
+       "difficulty": 4,
+       "requires": "u18l4"
+      },
+      {
+       "id": "u18l6",
+       "title": "Analizar una empresa en 30 minutos",
+       "goal": "Seguir una lista de comprobación con una empresa real",
+       "types": [
+        "OR",
+        "LG",
+        "MU"
+       ],
+       "difficulty": 4,
+       "requires": "u18l5"
+      },
+      {
+       "id": "u18r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 4,
+       "review": true
+      }
+     ]
+    }
+   ],
+   "boss": {
+    "id": "s6boss",
+    "title": "Reto final: Análisis fundamental",
+    "types": [
+     "CR",
+     "ES",
+     "SB",
+     "mezcla"
+    ],
+    "passPct": 80
+   }
+  },
+  {
+   "id": "s7",
+   "title": "Análisis técnico",
+   "requires": [
+    "s2"
+   ],
+   "units": [
+    {
+     "id": "u19",
+     "title": "Leer un gráfico",
+     "lessons": [
+      {
+       "id": "u19l1",
+       "title": "Qué muestra un gráfico de precios",
+       "goal": "Leer ejes, precio y tiempo",
+       "types": [
+        "LG",
+        "PG",
+        "TE"
+       ],
+       "difficulty": 1,
+       "requires": null
+      },
+      {
+       "id": "u19l2",
+       "title": "Línea, barras y velas",
+       "goal": "Elegir el tipo de gráfico adecuado",
+       "types": [
+        "EM",
+        "LG",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": "u19l1"
+      },
+      {
+       "id": "u19l3",
+       "title": "Temporalidades",
+       "goal": "Ver cómo cambia la historia en 5 minutos o en un año",
+       "types": [
+        "LG",
+        "SB",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": "u19l2"
+      },
+      {
+       "id": "u19l4",
+       "title": "Escala lineal y logarítmica",
+       "goal": "Saber cuándo usar escala log",
+       "types": [
+        "LG",
+        "TE",
+        "VF"
+       ],
+       "difficulty": 3,
+       "requires": "u19l3"
+      },
+      {
+       "id": "u19l5",
+       "title": "Tendencias: máximos y mínimos",
+       "goal": "Identificar tendencia alcista, bajista y lateral",
+       "types": [
+        "LG",
+        "PG",
+        "SB"
+       ],
+       "difficulty": 2,
+       "requires": "u19l4"
+      },
+      {
+       "id": "u19l6",
+       "title": "El volumen",
+       "goal": "Usar el volumen para confirmar movimientos",
+       "types": [
+        "LG",
+        "TE",
+        "SB"
+       ],
+       "difficulty": 3,
+       "requires": "u19l5"
+      },
+      {
+       "id": "u19r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 3,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u20",
+     "title": "Velas japonesas",
+     "lessons": [
+      {
+       "id": "u20l1",
+       "title": "Anatomía de una vela",
+       "goal": "Leer apertura, cierre, máximo y mínimo",
+       "types": [
+        "LG",
+        "HU",
+        "PG"
+       ],
+       "difficulty": 2,
+       "requires": null
+      },
+      {
+       "id": "u20l2",
+       "title": "Cuerpo y mechas: la batalla",
+       "goal": "Interpretar quién ganó la sesión",
+       "types": [
+        "LG",
+        "TE",
+        "SB"
+       ],
+       "difficulty": 2,
+       "requires": "u20l1"
+      },
+      {
+       "id": "u20l3",
+       "title": "Doji, peonza y marubozu",
+       "goal": "Reconocer indecisión y fuerza",
+       "types": [
+        "LG",
+        "EM",
+        "CR"
+       ],
+       "difficulty": 3,
+       "requires": "u20l2"
+      },
+      {
+       "id": "u20l4",
+       "title": "Martillo y estrella fugaz",
+       "goal": "Reconocer velas de posible giro",
+       "types": [
+        "LG",
+        "PG",
+        "SB"
+       ],
+       "difficulty": 3,
+       "requires": "u20l3"
+      },
+      {
+       "id": "u20l5",
+       "title": "Envolventes y harami",
+       "goal": "Reconocer patrones de dos velas",
+       "types": [
+        "LG",
+        "PG",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u20l4"
+      },
+      {
+       "id": "u20l6",
+       "title": "Estrellas, soldados y cuervos",
+       "goal": "Reconocer patrones de tres velas",
+       "types": [
+        "LG",
+        "EM",
+        "SB"
+       ],
+       "difficulty": 3,
+       "requires": "u20l5"
+      },
+      {
+       "id": "u20l7",
+       "title": "El contexto lo es todo",
+       "goal": "Saber cuándo una vela importa y la evidencia real",
+       "types": [
+        "SB",
+        "VF",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u20l6"
+      },
+      {
+       "id": "u20r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 3,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u21",
+     "title": "Soportes, resistencias y figuras",
+     "lessons": [
+      {
+       "id": "u21l1",
+       "title": "Soportes y resistencias",
+       "goal": "Marcar zonas de precio en un gráfico real",
+       "types": [
+        "PG",
+        "LG",
+        "SB"
+       ],
+       "difficulty": 3,
+       "requires": null
+      },
+      {
+       "id": "u21l2",
+       "title": "El cambio de rol",
+       "goal": "Ver cómo un soporte roto se vuelve resistencia",
+       "types": [
+        "SB",
+        "ES",
+        "PG"
+       ],
+       "difficulty": 3,
+       "requires": "u21l1"
+      },
+      {
+       "id": "u21l3",
+       "title": "Líneas de tendencia y canales",
+       "goal": "Trazar tendencias y canales",
+       "types": [
+        "PG",
+        "LG",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u21l2"
+      },
+      {
+       "id": "u21l4",
+       "title": "Hombro-cabeza-hombro",
+       "goal": "Reconocer una figura de giro",
+       "types": [
+        "LG",
+        "PG",
+        "SB"
+       ],
+       "difficulty": 4,
+       "requires": "u21l3"
+      },
+      {
+       "id": "u21l5",
+       "title": "Dobles techos y suelos",
+       "goal": "Reconocer techos y suelos dobles",
+       "types": [
+        "LG",
+        "SB",
+        "CR"
+       ],
+       "difficulty": 4,
+       "requires": "u21l4"
+      },
+      {
+       "id": "u21l6",
+       "title": "Triángulos, banderas y rectángulos",
+       "goal": "Reconocer figuras de continuación",
+       "types": [
+        "LG",
+        "EM",
+        "SB"
+       ],
+       "difficulty": 4,
+       "requires": "u21l5"
+      },
+      {
+       "id": "u21l7",
+       "title": "Rupturas falsas",
+       "goal": "Evitar entrar en una ruptura que no se confirma",
+       "types": [
+        "SB",
+        "ES",
+        "ST"
+       ],
+       "difficulty": 4,
+       "requires": "u21l6"
+      },
+      {
+       "id": "u21r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 4,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u22",
+     "title": "Indicadores",
+     "lessons": [
+      {
+       "id": "u22l1",
+       "title": "Medias móviles",
+       "goal": "Calcular y leer una media simple y exponencial",
+       "types": [
+        "CA",
+        "LG",
+        "SB"
+       ],
+       "difficulty": 3,
+       "requires": null
+      },
+      {
+       "id": "u22l2",
+       "title": "Cruce dorado y cruce de la muerte",
+       "goal": "Saber qué señalan y sus limitaciones",
+       "types": [
+        "LG",
+        "SB",
+        "VF"
+       ],
+       "difficulty": 3,
+       "requires": "u22l1"
+      },
+      {
+       "id": "u22l3",
+       "title": "El RSI",
+       "goal": "Leer sobrecompra, sobreventa y divergencias",
+       "types": [
+        "LG",
+        "SB",
+        "TE"
+       ],
+       "difficulty": 4,
+       "requires": "u22l2"
+      },
+      {
+       "id": "u22l4",
+       "title": "El MACD",
+       "goal": "Leer cruces e histograma",
+       "types": [
+        "LG",
+        "SB",
+        "HU"
+       ],
+       "difficulty": 4,
+       "requires": "u22l3"
+      },
+      {
+       "id": "u22l5",
+       "title": "Bandas de Bollinger y ATR",
+       "goal": "Medir la volatilidad en un gráfico",
+       "types": [
+        "LG",
+        "CA",
+        "ST"
+       ],
+       "difficulty": 4,
+       "requires": "u22l4"
+      },
+      {
+       "id": "u22l6",
+       "title": "Fibonacci sin magia",
+       "goal": "Usar retrocesos como zonas, no como predicciones",
+       "types": [
+        "PG",
+        "LG",
+        "VF"
+       ],
+       "difficulty": 4,
+       "requires": "u22l5"
+      },
+      {
+       "id": "u22l7",
+       "title": "Volumen avanzado: OBV y VWAP",
+       "goal": "Usar el volumen acumulado y el precio medio ponderado",
+       "types": [
+        "LG",
+        "CA",
+        "SB"
+       ],
+       "difficulty": 4,
+       "requires": "u22l6"
+      },
+      {
+       "id": "u22r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 4,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u23",
+     "title": "Juntarlo todo",
+     "lessons": [
+      {
+       "id": "u23l1",
+       "title": "Confluencia: señales que se confirman",
+       "goal": "Combinar tendencia, nivel y volumen",
+       "types": [
+        "LG",
+        "SB",
+        "MU"
+       ],
+       "difficulty": 4,
+       "requires": null
+      },
+      {
+       "id": "u23l2",
+       "title": "Varias temporalidades",
+       "goal": "Analizar de arriba abajo",
+       "types": [
+        "LG",
+        "OR",
+        "SB"
+       ],
+       "difficulty": 4,
+       "requires": "u23l1"
+      },
+      {
+       "id": "u23l3",
+       "title": "El backtesting",
+       "goal": "Probar una regla con datos pasados y sus trampas",
+       "types": [
+        "CA",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 4,
+       "requires": "u23l2"
+      },
+      {
+       "id": "u23l4",
+       "title": "¿Funciona el análisis técnico?",
+       "goal": "Conocer la evidencia académica a favor y en contra",
+       "types": [
+        "VF",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 3,
+       "requires": "u23l3"
+      },
+      {
+       "id": "u23r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 4,
+       "review": true
+      }
+     ]
+    }
+   ],
+   "boss": {
+    "id": "s7boss",
+    "title": "Reto final: Análisis técnico",
+    "types": [
+     "CR",
+     "ES",
+     "SB",
+     "mezcla"
+    ],
+    "passPct": 80
+   }
+  },
+  {
+   "id": "s8",
+   "title": "Riesgo, estrategias y trading",
+   "requires": [
+    "s7"
+   ],
+   "units": [
+    {
+     "id": "u24",
+     "title": "Gestión del riesgo",
+     "lessons": [
+      {
+       "id": "u24l1",
+       "title": "Por qué el riesgo importa más que acertar",
+       "goal": "Ver que se puede ganar acertando menos de la mitad",
+       "types": [
+        "CA",
+        "SB",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": null
+      },
+      {
+       "id": "u24l2",
+       "title": "Las matemáticas de las pérdidas",
+       "goal": "Calcular cuánto hay que ganar para recuperar una caída",
+       "types": [
+        "CA",
+        "CR",
+        "VF"
+       ],
+       "difficulty": 2,
+       "requires": "u24l1"
+      },
+      {
+       "id": "u24l3",
+       "title": "La regla del 1 %",
+       "goal": "Arriesgar poco por operación",
+       "types": [
+        "CA",
+        "ES",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u24l2"
+      },
+      {
+       "id": "u24l4",
+       "title": "El tamaño de la posición",
+       "goal": "Calcular cuántas acciones comprar según el stop",
+       "types": [
+        "CA",
+        "ST",
+        "SI"
+       ],
+       "difficulty": 4,
+       "requires": "u24l3"
+      },
+      {
+       "id": "u24l5",
+       "title": "Dónde poner el stop loss",
+       "goal": "Colocar el stop por estructura o por volatilidad",
+       "types": [
+        "ST",
+        "LG",
+        "ES"
+       ],
+       "difficulty": 4,
+       "requires": "u24l4"
+      },
+      {
+       "id": "u24l6",
+       "title": "Pensar en R: riesgo y beneficio",
+       "goal": "Medir operaciones en múltiplos de riesgo",
+       "types": [
+        "CA",
+        "ST",
+        "TE"
+       ],
+       "difficulty": 4,
+       "requires": "u24l5"
+      },
+      {
+       "id": "u24l7",
+       "title": "La esperanza matemática",
+       "goal": "Calcular si un sistema gana a largo plazo",
+       "types": [
+        "CA",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 4,
+       "requires": "u24l6"
+      },
+      {
+       "id": "u24r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 4,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u25",
+     "title": "Estrategias",
+     "lessons": [
+      {
+       "id": "u25l1",
+       "title": "Comprar y mantener",
+       "goal": "Conocer la estrategia con más evidencia a largo plazo",
+       "types": [
+        "LG",
+        "CA",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": null
+      },
+      {
+       "id": "u25l2",
+       "title": "Aportaciones periódicas (DCA)",
+       "goal": "Comparar DCA con invertir de golpe",
+       "types": [
+        "CA",
+        "SB",
+        "ES"
+       ],
+       "difficulty": 2,
+       "requires": "u25l1"
+      },
+      {
+       "id": "u25l3",
+       "title": "Value investing al estilo Buffett",
+       "goal": "Conocer la inversión en valor y el margen de seguridad",
+       "types": [
+        "ES",
+        "CA",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u25l2"
+      },
+      {
+       "id": "u25l4",
+       "title": "Invertir por dividendos",
+       "goal": "Ver ventajas y trampas de vivir de dividendos",
+       "types": [
+        "CA",
+        "DE",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u25l3"
+      },
+      {
+       "id": "u25l5",
+       "title": "Seguir la tendencia y el momentum",
+       "goal": "Entender estrategias de tendencia",
+       "types": [
+        "LG",
+        "SB",
+        "TE"
+       ],
+       "difficulty": 4,
+       "requires": "u25l4"
+      },
+      {
+       "id": "u25l6",
+       "title": "Swing trading",
+       "goal": "Entender operaciones de días o semanas",
+       "types": [
+        "LG",
+        "ST",
+        "SI"
+       ],
+       "difficulty": 4,
+       "requires": "u25l5"
+      },
+      {
+       "id": "u25l7",
+       "title": "Day trading: lo que dicen los datos",
+       "goal": "Conocer los estudios sobre day traders",
+       "types": [
+        "VF",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 4,
+       "requires": "u25l6"
+      },
+      {
+       "id": "u25l8",
+       "title": "Apalancamiento y cortos",
+       "goal": "Ver cómo multiplican pérdidas y ganancias",
+       "types": [
+        "CA",
+        "ES",
+        "VF"
+       ],
+       "difficulty": 5,
+       "requires": "u25l7"
+      },
+      {
+       "id": "u25l9",
+       "title": "Elegir tu estrategia",
+       "goal": "Relacionar estrategia, tiempo y personalidad",
+       "types": [
+        "ES",
+        "CH",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u25l8"
+      },
+      {
+       "id": "u25r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 5,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u26",
+     "title": "Tu plan de trading",
+     "lessons": [
+      {
+       "id": "u26l1",
+       "title": "El plan de trading",
+       "goal": "Escribir reglas de entrada, salida y riesgo",
+       "types": [
+        "OR",
+        "HU",
+        "CH"
+       ],
+       "difficulty": 4,
+       "requires": null
+      },
+      {
+       "id": "u26l2",
+       "title": "El diario de operaciones",
+       "goal": "Registrar operaciones para aprender",
+       "types": [
+        "EM",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 3,
+       "requires": "u26l1"
+      },
+      {
+       "id": "u26l3",
+       "title": "Rachas de pérdidas y drawdown",
+       "goal": "Calcular rachas probables y no abandonar el plan",
+       "types": [
+        "CA",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 4,
+       "requires": "u26l2"
+      },
+      {
+       "id": "u26l4",
+       "title": "Del simulador al dinero real",
+       "goal": "Saber qué cambia con dinero de verdad",
+       "types": [
+        "ES",
+        "VF",
+        "CH"
+       ],
+       "difficulty": 3,
+       "requires": "u26l3"
+      },
+      {
+       "id": "u26r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 4,
+       "review": true
+      }
+     ]
+    }
+   ],
+   "boss": {
+    "id": "s8boss",
+    "title": "Reto final: Riesgo, estrategias y trading",
+    "types": [
+     "CR",
+     "ES",
+     "SB",
+     "mezcla"
+    ],
+    "passPct": 80
+   }
+  },
+  {
+   "id": "s9",
+   "title": "Psicología del inversor",
+   "requires": [
+    "s2"
+   ],
+   "units": [
+    {
+     "id": "u27",
+     "title": "Los sesgos que cuestan dinero",
+     "lessons": [
+      {
+       "id": "u27l1",
+       "title": "Tu cerebro no está hecho para invertir",
+       "goal": "Entender los dos sistemas de pensamiento",
+       "types": [
+        "TE",
+        "ES",
+        "CH"
+       ],
+       "difficulty": 2,
+       "requires": null
+      },
+      {
+       "id": "u27l2",
+       "title": "Aversión a la pérdida",
+       "goal": "Ver por qué duele más perder que ganar",
+       "types": [
+        "ES",
+        "CA",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": "u27l1"
+      },
+      {
+       "id": "u27l3",
+       "title": "El efecto disposición",
+       "goal": "Detectar que vendes lo que gana y aguantas lo que pierde",
+       "types": [
+        "ES",
+        "SI",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u27l2"
+      },
+      {
+       "id": "u27l4",
+       "title": "FOMO y efecto rebaño",
+       "goal": "Reconocer la presión de comprar lo que sube",
+       "types": [
+        "ES",
+        "SB",
+        "DE"
+       ],
+       "difficulty": 2,
+       "requires": "u27l3"
+      },
+      {
+       "id": "u27l5",
+       "title": "Exceso de confianza",
+       "goal": "Comprobar que acertar dos veces no te hace experto",
+       "types": [
+        "SB",
+        "CR",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u27l4"
+      },
+      {
+       "id": "u27l6",
+       "title": "Anclaje y confirmación",
+       "goal": "Detectar que te aferras a un precio o una idea",
+       "types": [
+        "ES",
+        "TE",
+        "EM"
+       ],
+       "difficulty": 3,
+       "requires": "u27l5"
+      },
+      {
+       "id": "u27l7",
+       "title": "Recencia y supervivencia",
+       "goal": "Entender por qué el pasado reciente engaña",
+       "types": [
+        "ES",
+        "LG",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u27l6"
+      },
+      {
+       "id": "u27r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 3,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u28",
+     "title": "Emociones y hábitos",
+     "lessons": [
+      {
+       "id": "u28l1",
+       "title": "Miedo y avaricia",
+       "goal": "Reconocer las emociones del ciclo de mercado",
+       "types": [
+        "LG",
+        "ES",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": null
+      },
+      {
+       "id": "u28l2",
+       "title": "Operar por venganza",
+       "goal": "Parar después de una pérdida",
+       "types": [
+        "ES",
+        "CH",
+        "VF"
+       ],
+       "difficulty": 3,
+       "requires": "u28l1"
+      },
+      {
+       "id": "u28l3",
+       "title": "Operar demasiado",
+       "goal": "Ver cómo las comisiones y el ruido destruyen rentabilidad",
+       "types": [
+        "CA",
+        "ES",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u28l2"
+      },
+      {
+       "id": "u28l4",
+       "title": "Tu sistema anti-sesgos",
+       "goal": "Crear reglas escritas antes de operar",
+       "types": [
+        "OR",
+        "CH",
+        "MU"
+       ],
+       "difficulty": 3,
+       "requires": "u28l3"
+      },
+      {
+       "id": "u28r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 3,
+       "review": true
+      }
+     ]
+    }
+   ],
+   "boss": {
+    "id": "s9boss",
+    "title": "Reto final: Psicología del inversor",
+    "types": [
+     "CR",
+     "ES",
+     "SB",
+     "mezcla"
+    ],
+    "passPct": 80
+   }
+  },
+  {
+   "id": "s10",
+   "title": "Construir tu cartera",
+   "requires": [
+    "s3",
+    "s9"
+   ],
+   "units": [
+    {
+     "id": "u29",
+     "title": "Diversificación",
+     "lessons": [
+      {
+       "id": "u29l1",
+       "title": "Diversificar: lo único gratis en finanzas",
+       "goal": "Ver cómo baja el riesgo al combinar activos",
+       "types": [
+        "CT",
+        "CA",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": null
+      },
+      {
+       "id": "u29l2",
+       "title": "La correlación",
+       "goal": "Entender por qué unos activos protegen a otros",
+       "types": [
+        "LG",
+        "EM",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u29l1"
+      },
+      {
+       "id": "u29l3",
+       "title": "Tu reparto de activos",
+       "goal": "Elegir el peso de acciones y bonos según tu horizonte",
+       "types": [
+        "CT",
+        "ES",
+        "CA"
+       ],
+       "difficulty": 3,
+       "requires": "u29l2"
+      },
+      {
+       "id": "u29l4",
+       "title": "Diversificar por países y divisas",
+       "goal": "Evitar el sesgo de invertir solo en casa",
+       "types": [
+        "CT",
+        "TE",
+        "VF"
+       ],
+       "difficulty": 3,
+       "requires": "u29l3"
+      },
+      {
+       "id": "u29l5",
+       "title": "Carteras sencillas con indexados",
+       "goal": "Conocer carteras de 1, 2 y 3 fondos",
+       "types": [
+        "CT",
+        "EM",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u29l4"
+      },
+      {
+       "id": "u29l6",
+       "title": "Factores: tamaño, valor, calidad y momentum",
+       "goal": "Saber qué son los factores y su evidencia",
+       "types": [
+        "EM",
+        "LG",
+        "TE"
+       ],
+       "difficulty": 4,
+       "requires": "u29l5"
+      },
+      {
+       "id": "u29l7",
+       "title": "Inversión sostenible (ESG)",
+       "goal": "Entender qué mide el ESG y sus límites",
+       "types": [
+        "TE",
+        "VF",
+        "ES"
+       ],
+       "difficulty": 3,
+       "requires": "u29l6"
+      },
+      {
+       "id": "u29r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 4,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u30",
+     "title": "Gestionar tu cartera",
+     "lessons": [
+      {
+       "id": "u30l1",
+       "title": "Rebalancear",
+       "goal": "Volver al reparto objetivo y cuándo hacerlo",
+       "types": [
+        "CT",
+        "CA",
+        "ES"
+       ],
+       "difficulty": 3,
+       "requires": null
+      },
+      {
+       "id": "u30l2",
+       "title": "El coste de las comisiones a largo plazo",
+       "goal": "Comparar el resultado de 0,2 % y 1,8 % en 30 años",
+       "types": [
+        "CA",
+        "TE",
+        "VF"
+       ],
+       "difficulty": 2,
+       "requires": "u30l1"
+      },
+      {
+       "id": "u30l3",
+       "title": "Invertir con poco: 50 € al mes",
+       "goal": "Ver que se puede empezar con poco y el efecto del tiempo",
+       "types": [
+        "CA",
+        "CT",
+        "ES"
+       ],
+       "difficulty": 2,
+       "requires": "u30l2"
+      },
+      {
+       "id": "u30l4",
+       "title": "Medir tu rentabilidad bien",
+       "goal": "Distinguir rentabilidad simple, anualizada y ponderada",
+       "types": [
+        "CA",
+        "TE",
+        "HU"
+       ],
+       "difficulty": 4,
+       "requires": "u30l3"
+      },
+      {
+       "id": "u30l5",
+       "title": "Tu Declaración de Política de Inversión",
+       "goal": "Escribir tu plan por escrito",
+       "types": [
+        "OR",
+        "CH",
+        "HU"
+       ],
+       "difficulty": 3,
+       "requires": "u30l4"
+      },
+      {
+       "id": "u30l6",
+       "title": "Reto: tu cartera de 10.000 €",
+       "goal": "Construir y defender una cartera diversificada",
+       "types": [
+        "CT",
+        "SI",
+        "ES"
+       ],
+       "difficulty": 3,
+       "requires": "u30l5"
+      },
+      {
+       "id": "u30r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 4,
+       "review": true
+      }
+     ]
+    }
+   ],
+   "boss": {
+    "id": "s10boss",
+    "title": "Reto final: Construir tu cartera",
+    "types": [
+     "CR",
+     "ES",
+     "SB",
+     "mezcla"
+    ],
+    "passPct": 80
+   }
+  },
+  {
+   "id": "s11",
+   "title": "España: impuestos y estafas",
+   "requires": [
+    "s3"
+   ],
+   "units": [
+    {
+     "id": "u31",
+     "title": "Fiscalidad de tus inversiones",
+     "lessons": [
+      {
+       "id": "u31l1",
+       "title": "La base del ahorro y sus tramos",
+       "goal": "Saber cuánto tributa una ganancia en España",
+       "types": [
+        "CA",
+        "TE",
+        "HU"
+       ],
+       "difficulty": 3,
+       "requires": null
+      },
+      {
+       "id": "u31l2",
+       "title": "Ganancias, pérdidas y compensación",
+       "goal": "Compensar pérdidas con ganancias",
+       "types": [
+        "CA",
+        "ES",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u31l1"
+      },
+      {
+       "id": "u31l3",
+       "title": "La regla de los dos meses",
+       "goal": "Evitar perder la compensación al recomprar",
+       "types": [
+        "ES",
+        "VF",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u31l2"
+      },
+      {
+       "id": "u31l4",
+       "title": "Traspasos de fondos sin pagar impuestos",
+       "goal": "Entender la ventaja fiscal de los fondos frente a los ETFs",
+       "types": [
+        "EM",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 3,
+       "requires": "u31l3"
+      },
+      {
+       "id": "u31l5",
+       "title": "Dividendos y doble imposición",
+       "goal": "Recuperar retenciones en origen",
+       "types": [
+        "CA",
+        "TE",
+        "VF"
+       ],
+       "difficulty": 4,
+       "requires": "u31l4"
+      },
+      {
+       "id": "u31l6",
+       "title": "Cripto y modelos 720 y 721",
+       "goal": "Conocer las obligaciones de informar",
+       "types": [
+        "TE",
+        "MU",
+        "VF"
+       ],
+       "difficulty": 4,
+       "requires": "u31l5"
+      },
+      {
+       "id": "u31r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 4,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u32",
+     "title": "Estafas y cómo detectarlas",
+     "lessons": [
+      {
+       "id": "u32l1",
+       "title": "Chiringuitos financieros",
+       "goal": "Consultar la lista de la CNMV antes de invertir",
+       "types": [
+        "DE",
+        "OR",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": null
+      },
+      {
+       "id": "u32l2",
+       "title": "Esquemas Ponzi y piramidales",
+       "goal": "Reconocer rentabilidades imposibles",
+       "types": [
+        "DE",
+        "ES",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": "u32l1"
+      },
+      {
+       "id": "u32l3",
+       "title": "Pump and dump y grupos de señales",
+       "goal": "Detectar manipulación en Telegram y redes",
+       "types": [
+        "DE",
+        "ES",
+        "VF"
+       ],
+       "difficulty": 3,
+       "requires": "u32l2"
+      },
+      {
+       "id": "u32l4",
+       "title": "Phishing y suplantación",
+       "goal": "Proteger tus cuentas y claves",
+       "types": [
+        "DE",
+        "MU",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": "u32l3"
+      },
+      {
+       "id": "u32l5",
+       "title": "Finfluencers y publicidad",
+       "goal": "Saber qué puede y qué no puede decir un influencer",
+       "types": [
+        "DE",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 2,
+       "requires": "u32l4"
+      },
+      {
+       "id": "u32l6",
+       "title": "Si te han estafado",
+       "goal": "Saber qué hacer y dónde reclamar",
+       "types": [
+        "OR",
+        "TE",
+        "VF"
+       ],
+       "difficulty": 2,
+       "requires": "u32l5"
+      },
+      {
+       "id": "u32r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 3,
+       "review": true
+      }
+     ]
+    },
+    {
+     "id": "u33",
+     "title": "Elegir dónde invertir",
+     "lessons": [
+      {
+       "id": "u33l1",
+       "title": "Cómo elegir un bróker",
+       "goal": "Comprobar regulación, garantías y costes",
+       "types": [
+        "OR",
+        "MU",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": null
+      },
+      {
+       "id": "u33l2",
+       "title": "Las comisiones de un bróker",
+       "goal": "Comparar compraventa, custodia y cambio de divisa",
+       "types": [
+        "CA",
+        "EM",
+        "TE"
+       ],
+       "difficulty": 2,
+       "requires": "u33l1"
+      },
+      {
+       "id": "u33l3",
+       "title": "Neobrókers: cómo ganan dinero",
+       "goal": "Entender el pago por flujo de órdenes y otros ingresos",
+       "types": [
+        "TE",
+        "ES",
+        "VF"
+       ],
+       "difficulty": 3,
+       "requires": "u33l2"
+      },
+      {
+       "id": "u33l4",
+       "title": "Robo-advisors y gestión automatizada",
+       "goal": "Comparar gestión automatizada con hacerlo tú",
+       "types": [
+        "EM",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 2,
+       "requires": "u33l3"
+      },
+      {
+       "id": "u33r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 3,
+       "review": true
+      }
+     ]
+    }
+   ],
+   "boss": {
+    "id": "s11boss",
+    "title": "Reto final: España: impuestos y estafas",
+    "types": [
+     "CR",
+     "ES",
+     "SB",
+     "mezcla"
+    ],
+    "passPct": 80
+   }
+  },
+  {
+   "id": "s12",
+   "title": "Historia de crisis y burbujas",
+   "requires": [
+    "s9"
+   ],
+   "units": [
+    {
+     "id": "u34",
+     "title": "Burbujas y crisis",
+     "lessons": [
+      {
+       "id": "u34l1",
+       "title": "Tulipanes y la Compañía de los Mares del Sur",
+       "goal": "Reconocer el patrón eterno de las burbujas",
+       "types": [
+        "OR",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 2,
+       "requires": null
+      },
+      {
+       "id": "u34l2",
+       "title": "El crack de 1929",
+       "goal": "Ver cuánto tardó en recuperarse el mercado",
+       "types": [
+        "LG",
+        "SB",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u34l1"
+      },
+      {
+       "id": "u34l3",
+       "title": "La burbuja puntocom",
+       "goal": "Ver qué pasó con el Nasdaq de 2000 a 2015",
+       "types": [
+        "LG",
+        "SB",
+        "ES"
+       ],
+       "difficulty": 3,
+       "requires": "u34l2"
+      },
+      {
+       "id": "u34l4",
+       "title": "La crisis de 2008",
+       "goal": "Entender las hipotecas subprime y la caída de Lehman",
+       "types": [
+        "OR",
+        "ES",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u34l3"
+      },
+      {
+       "id": "u34l5",
+       "title": "Japón 1989: treinta años para recuperar",
+       "goal": "Ver que los índices también pueden tardar décadas",
+       "types": [
+        "LG",
+        "SB",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u34l4"
+      },
+      {
+       "id": "u34l6",
+       "title": "España: burbuja inmobiliaria y prima de riesgo",
+       "goal": "Conocer la crisis de 2010-2012 en España",
+       "types": [
+        "LG",
+        "TE",
+        "ES"
+       ],
+       "difficulty": 3,
+       "requires": "u34l5"
+      },
+      {
+       "id": "u34l7",
+       "title": "El crash del COVID en 2020",
+       "goal": "Ver la caída y recuperación más rápidas",
+       "types": [
+        "SB",
+        "LG",
+        "ES"
+       ],
+       "difficulty": 3,
+       "requires": "u34l6"
+      },
+      {
+       "id": "u34l8",
+       "title": "Cripto 2022: Terra y FTX",
+       "goal": "Aprender del colapso de 2022",
+       "types": [
+        "ES",
+        "DE",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u34l7"
+      },
+      {
+       "id": "u34l9",
+       "title": "Qué tienen en común todas las crisis",
+       "goal": "Extraer reglas para la siguiente",
+       "types": [
+        "MU",
+        "CH",
+        "ES"
+       ],
+       "difficulty": 3,
+       "requires": "u34l8"
+      },
+      {
+       "id": "u34r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 3,
+       "review": true
+      }
+     ]
+    }
+   ],
+   "boss": {
+    "id": "s12boss",
+    "title": "Reto final: Historia de crisis y burbujas",
+    "types": [
+     "CR",
+     "ES",
+     "SB",
+     "mezcla"
+    ],
+    "passPct": 80
+   }
+  },
+  {
+   "id": "s13",
+   "title": "Laboratorio de mercado",
+   "requires": [
+    "s7",
+    "s8"
+   ],
+   "units": [
+    {
+     "id": "u35",
+     "title": "Retos con datos reales",
+     "lessons": [
+      {
+       "id": "u35l1",
+       "title": "¿Sube o baja? Acciones",
+       "goal": "Predecir con histórico real y ver qué pasó",
+       "types": [
+        "SB",
+        "LG",
+        "CR"
+       ],
+       "difficulty": 3,
+       "requires": null
+      },
+      {
+       "id": "u35l2",
+       "title": "¿Sube o baja? Cripto",
+       "goal": "Comprobar lo difícil que es predecir la cripto",
+       "types": [
+        "SB",
+        "CA",
+        "ES"
+       ],
+       "difficulty": 3,
+       "requires": "u35l1"
+      },
+      {
+       "id": "u35l3",
+       "title": "¿Sube o baja? Divisas y oro",
+       "goal": "Predecir activos refugio con histórico real",
+       "types": [
+        "SB",
+        "LG",
+        "TE"
+       ],
+       "difficulty": 3,
+       "requires": "u35l2"
+      },
+      {
+       "id": "u35l4",
+       "title": "Encuentra la vela",
+       "goal": "Localizar patrones de velas en gráficos reales",
+       "types": [
+        "PG",
+        "LG",
+        "CR"
+       ],
+       "difficulty": 3,
+       "requires": "u35l3"
+      },
+      {
+       "id": "u35l5",
+       "title": "Marca el soporte",
+       "goal": "Encontrar niveles en gráficos reales",
+       "types": [
+        "PG",
+        "SB",
+        "CR"
+       ],
+       "difficulty": 3,
+       "requires": "u35l4"
+      },
+      {
+       "id": "u35l6",
+       "title": "Coloca tu stop",
+       "goal": "Colocar stop y objetivo en un gráfico real",
+       "types": [
+        "ST",
+        "LG",
+        "SI"
+       ],
+       "difficulty": 4,
+       "requires": "u35l5"
+      },
+      {
+       "id": "u35l7",
+       "title": "Noticias y reacciones",
+       "goal": "Decidir ante una noticia real y ver la reacción del mercado",
+       "types": [
+        "ES",
+        "SB",
+        "TE"
+       ],
+       "difficulty": 4,
+       "requires": "u35l6"
+      },
+      {
+       "id": "u35l8",
+       "title": "Operación completa",
+       "goal": "Planificar, ejecutar y revisar una operación simulada",
+       "types": [
+        "SI",
+        "ST",
+        "OR"
+       ],
+       "difficulty": 4,
+       "requires": "u35l7"
+      },
+      {
+       "id": "u35l9",
+       "title": "El reto de la semana",
+       "goal": "Gestionar una cartera virtual durante una semana",
+       "types": [
+        "CT",
+        "SI",
+        "ES"
+       ],
+       "difficulty": 4,
+       "requires": "u35l8"
+      },
+      {
+       "id": "u35r",
+       "title": "Repaso de la unidad",
+       "goal": "Repasar con repetición espaciada los errores de la unidad",
+       "types": [
+        "RP",
+        "CR"
+       ],
+       "difficulty": 4,
+       "review": true
+      }
+     ]
+    }
+   ],
+   "boss": {
+    "id": "s13boss",
+    "title": "Reto final: Laboratorio de mercado",
+    "types": [
+     "CR",
+     "ES",
+     "SB",
+     "mezcla"
+    ],
+    "passPct": 80
+   }
+  }
+ ],
+ "side": {
+  "id": "vocab",
+  "title": "Vocabulario del inversor",
+  "side": true,
+  "lessons": [
+   {
+    "id": "vocabl1",
+    "title": "El dinero y el ahorro",
+    "goal": "Repasar palabras clave del ahorro",
+    "types": [
+     "EM",
+     "HU",
+     "CR"
+    ],
+    "difficulty": 1
+   },
+   {
+    "id": "vocabl2",
+    "title": "La bolsa por dentro",
+    "goal": "Repasar palabras clave de los mercados",
+    "types": [
+     "HU",
+     "TE",
+     "VF"
+    ],
+    "difficulty": 1
+   },
+   {
+    "id": "vocabl3",
+    "title": "Fondos, ETFs y bonos",
+    "goal": "Repasar palabras de productos",
+    "types": [
+     "EM",
+     "CR",
+     "TE"
+    ],
+    "difficulty": 2
+   },
+   {
+    "id": "vocabl4",
+    "title": "Riesgo y cartera",
+    "goal": "Repasar palabras de riesgo",
+    "types": [
+     "HU",
+     "EM",
+     "VF"
+    ],
+    "difficulty": 2
+   },
+   {
+    "id": "vocabl5",
+    "title": "Gráficos y velas",
+    "goal": "Repasar palabras de gráficos",
+    "types": [
+     "EM",
+     "TE",
+     "CR"
+    ],
+    "difficulty": 2
+   },
+   {
+    "id": "vocabl6",
+    "title": "Indicadores técnicos",
+    "goal": "Repasar palabras de indicadores",
+    "types": [
+     "HU",
+     "VF",
+     "CR"
+    ],
+    "difficulty": 3
+   },
+   {
+    "id": "vocabl7",
+    "title": "Trading y gestión del riesgo",
+    "goal": "Repasar palabras de trading",
+    "types": [
+     "EM",
+     "HU",
+     "TE"
+    ],
+    "difficulty": 3
+   },
+   {
+    "id": "vocabl8",
+    "title": "Los sesgos que cuestan dinero",
+    "goal": "Repasar los nombres de los sesgos",
+    "types": [
+     "TE",
+     "CR",
+     "VF"
+    ],
+    "difficulty": 2
+   },
+   {
+    "id": "vocabl9",
+    "title": "Empresas y valoración",
+    "goal": "Repasar palabras de análisis fundamental",
+    "types": [
+     "EM",
+     "HU",
+     "CR"
+    ],
+    "difficulty": 3
+   },
+   {
+    "id": "vocabl10",
+    "title": "Invertir desde España",
+    "goal": "Repasar palabras de impuestos y regulación",
+    "types": [
+     "HU",
+     "TE",
+     "CR"
+    ],
+    "difficulty": 2
+   }
+  ]
+ },
+ "totals": {
+  "lessons": 225,
+  "unitReviews": 35,
+  "sectionBosses": 13,
+  "units": 36,
+  "sections": 13
+ }
+}
