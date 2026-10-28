@@ -141,8 +141,8 @@ export const refillLives = () =>
     return livesOf(c.user, c.g)
   })
 
-// Solo cuentan los fallos de preguntas que siguen en el curso (si se retira una pregunta, su fallo deja de contar)
-export const mistakesCount = () => withCtx(c => c.tx.mistake.count({ where: { userId: c.user.id, questionId: { in: Object.keys(ALL_Q) } } }))
+// Fallos que toca repasar hoy (repaso espaciado), solo de preguntas que siguen en el curso
+export const mistakesCount = () => withCtx(c => c.tx.mistake.count({ where: { userId: c.user.id, questionId: { in: Object.keys(ALL_Q) }, dueAt: { lte: new Date() } } }))
 export const path = () => withCtx(c => pathOf(c.tx, c.user))
 
 // ── Racha y logros ───────────────────────────────────────

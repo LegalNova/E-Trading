@@ -5,6 +5,7 @@ import type { User } from '@/generated/prisma/client'
 import { courseMinutes, lessonMinutes, LESSON, PLACEMENT, QUIZZES, RISK_LESSON, UNITS, type ContentQuestion } from '../content/catalog'
 import { canOpen, minPlan } from '@/shared/plans'
 import { grade } from '../content/grading'
+import { afterReview } from './srs'
 import { addXp, bump, bumpGoal, endFx, fail, LIVES_MAX, livesOf, lumi, markActive, minutesOf, withCtx, type Ctx, type Tx } from './core'
 
 export const ALL_Q: Record<string, ContentQuestion> = Object.fromEntries([...Object.values(QUIZZES).flat(), ...PLACEMENT].map(q => [q.id, q]))
@@ -92,9 +93,9 @@ export const quizStart = (id: string) =>
       qs = PLACEMENT
     } else if (id === 'review') {
       mode = 'REVIEW'
-      const m = await c.tx.mistake.findMany({ where: { userId: c.user.id, questionId: { in: Object.keys(ALL_Q) } }, orderBy: { createdAt: 'asc' }, take: 8 })
+      const m = await c.tx.mistake.findMany({ where: { userId: c.user.id, questionId: { in: Object.keys(ALL_Q) }, dueAt: { lte: new Date() } }, orderBy: { dueAt: 'asc' }, take: 8 })
       qs = m.map(x => ALL_Q[x.questionId]).filter(Boolean)
-      if (!qs.length) fail(404, 'NOT_FOUND', 'No tienes fallos que repasar')
+      if (!qs.length) fail(404, 'NOT_FOUND', 'Hoy no te toca repasar nada: vuelve mañana')
     } else {
       const l = LESSON[id] ?? fail(404, 'NOT_FOUND', 'Lección no encontrada')
       await lesson(c.user, c.tx, id) // comprueba el acceso por plan
@@ -132,11 +133,15 @@ export const answer = (attemptId: string, questionId: string, value: unknown, el
       // Contadores de las insignias de ejercicios (cálculo, estafas, simulación, velas, «¿sube o baja?»)
       if (correct) bump(c, `ok_${q.type}`)
       if (q.type === 'UP_DOWN') bump(c, 'updown')
-      if (!correct) await c.tx.mistake.upsert({ where: { userId_questionId: { userId: c.user.id, questionId } }, create: { userId: c.user.id, questionId }, update: {} })
-      if (correct && at.mode === 'REVIEW') {
-        await c.tx.mistake.deleteMany({ where: { userId: c.user.id, questionId } })
-        bump(c, 'reviewed')
-      }
+      const key = { userId_questionId: { userId: c.user.id, questionId } }
+      if (at.mode === 'REVIEW') {
+        // Repaso espaciado: cada acierto lo aplaza (1, 3, 7 y 16 días) y el último lo da por dominado
+        const m = await c.tx.mistake.findUnique({ where: key })
+        const step = afterReview(m?.box ?? 0, correct)
+        if (step.done) await c.tx.mistake.deleteMany({ where: { userId: c.user.id, questionId } })
+        else await c.tx.mistake.upsert({ where: key, create: { userId: c.user.id, questionId, box: step.box, dueAt: step.dueAt }, update: { box: step.box, dueAt: step.dueAt } })
+        if (correct) bump(c, 'reviewed')
+      } else if (!correct) await c.tx.mistake.upsert({ where: key, create: { userId: c.user.id, questionId }, update: { box: 0, dueAt: new Date() } })
     }
     return { correct, correctAnswer: q.solution, explanation: g.explanation, reveal: g.reveal, livesLeft: at.mode === 'LESSON' && !premium ? c.g.lives : null, xpGained: correct && at.mode !== 'PLACEMENT' ? 10 : 0 }
   })

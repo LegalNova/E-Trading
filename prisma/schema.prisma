@@ -226,13 +226,17 @@ model TutorMessage {
   @@index([userId, createdAt])
 }
 
+/// Repaso espaciado de los fallos: `box` 0-4 y cuándo toca volver a preguntarlo (docs/curso-v2/01-investigacion.md §2)
 model Mistake {
   userId     String
   questionId String
+  box        Int      @default(0)
+  dueAt      DateTime @default(now())
   createdAt  DateTime @default(now())
   user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@id([userId, questionId])
+  @@index([userId, dueAt])
 }
 
 model UserAchievement {

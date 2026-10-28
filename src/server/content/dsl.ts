@@ -72,6 +72,8 @@ interface ChartFixture {
 }
 const FIX = CHARTS as unknown as Record<string, ChartFixture>
 const fixture = (id: string) => FIX[id] ?? (() => { throw new Error(`Falta el gráfico ${id}: ejecuta scripts/build-lesson-charts.py`) })()
+/** Pie del gráfico tal como se ve: en los momentos históricos solo llega hasta el corte (el resto se revela al responder) */
+const visibleCaption = (f: ChartFixture) => (f.cutDate ? `${f.caption.split(' · ').slice(0, 2).join(' · ')} · hasta el ${f.cutDate}` : f.caption)
 
 // ── Pasos ────────────────────────────────────────────────
 export const text = (title: string, body: string, tip?: string): Step => ({ kind: 'TEXT', title, body, tip })
@@ -143,12 +145,12 @@ export const fill = (prompt: string, answer: string, distractors: string[], expl
 const TRENDS = ['Alcista', 'Bajista', 'Lateral'] as const
 export const trend = (prompt: string, fixtureId: string, answer: (typeof TRENDS)[number], explanation: string): Q => {
   const f = fixture(fixtureId)
-  return { type: 'CHART_TREND', prompt: `${prompt} (${f.caption})`, options: [...TRENDS], chart: f.closes!, solution: TRENDS.indexOf(answer), explanation }
+  return { type: 'CHART_TREND', prompt: `${prompt} (${visibleCaption(f)})`, options: [...TRENDS], chart: f.closes!, solution: TRENDS.indexOf(answer), explanation }
 }
 export const point = (prompt: string, fixtureId: string, which: 'max' | 'min', explanation: string): Q => {
   const c = fixture(fixtureId).closes!
   const v = which === 'max' ? Math.max(...c) : Math.min(...c)
-  return { type: 'CHART_POINT', prompt: `${prompt} (${fixture(fixtureId).caption})`, options: [], chart: c, solution: c.indexOf(v), explanation }
+  return { type: 'CHART_POINT', prompt: `${prompt} (${visibleCaption(fixture(fixtureId))})`, options: [], chart: c, solution: c.indexOf(v), explanation }
 }
 
 // ── Tipos dinámicos (docs/curso-v2/03-ejercicios.md) ─────

@@ -311,5 +311,41 @@ def main():
     print('Guardado', os.path.relpath(OUT), len(out), 'gráficos')
 
 
+def append_trends(per_kind=8):
+    """Añade gráficos de tendencia nuevos sin tocar los existentes (las clases ya usan sus ids)"""
+    out = json.load(open(OUT))
+    data = {}
+    for sym, name in ASSETS:
+        try:
+            data[sym] = (name, get(sym))
+        except Exception as e:  # noqa: BLE001
+            print(f'⚠️  {sym}: {e}')
+        time.sleep(0.4)
+    used = {(v['symbol'], v['from']) for v in out.values()}
+    for kind in ('up', 'down', 'flat'):
+        n = len([k for k in out if k.startswith(f'trend-{kind}-')])
+        per_asset = {}
+        for sym, (name, rows) in data.items():
+            closes = rows[::3]
+            for s0 in range(len(closes) - 15, 0, -5):
+                if n >= per_kind or per_asset.get(sym, 0) >= 1:
+                    break
+                seg = [x[4] for x in closes[s0:s0 + 14]]
+                sl = slope(seg); rel = (max(seg) - min(seg)) / (sum(seg) / len(seg))
+                ok = (kind == 'up' and sl > 0.012 and seg[-1] > seg[0] * 1.08) or (kind == 'down' and sl < -0.012 and seg[-1] < seg[0] * 0.92) or \
+                     (kind == 'flat' and abs(sl) < 0.0012 and 0.05 < rel < 0.12 and abs(seg[-1] / seg[0] - 1) < 0.025 and abs(seg[7] / seg[0] - 1) < 0.06)
+                sub = closes[s0:s0 + 14]
+                if not ok or (sym, day(sub[0][0])) in used:
+                    continue
+                n += 1
+                per_asset[sym] = per_asset.get(sym, 0) + 1
+                fid = f'trend-{kind}-{n}'
+                out[fid] = {'id': fid, 'symbol': sym, 'name': name, 'from': day(sub[0][0]), 'to': day(sub[-1][0]),
+                            'caption': f'{name} · cierres cada 3 sesiones · {span(sub[0][0], sub[-1][0])}', 'closes': [r2(v) for v in seg]}
+        print(f'trend-{kind}: {n} en total')
+    json.dump(out, open(OUT, 'w'), ensure_ascii=False, indent=1)
+
+
 if __name__ == '__main__':
-    main()
+    import sys
+    append_trends() if '--append-trends' in sys.argv else main()
