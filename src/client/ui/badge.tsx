@@ -34,6 +34,13 @@ const G = {
   checks: 'M4 6l2 2 3-3M4 13l2 2 3-3M12 7h8M12 14h8M4 20h16',
   chevrons: 'M6 13l6-6 6 6M6 19l6-6 6 6',
   podium: 'M9 21V10h6v11M3 21v-7h6M15 21v-5h6M3 21h18M12 3l.9 1.8 2 .3-1.5 1.4.4 2L12 7.6l-1.8.9.4-2-1.5-1.4 2-.3z',
+  trophy: 'M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 21h8M9 17h6',
+  updown: 'M7 4v16M3 8l4-4 4 4M17 20V4M13 16l4 4 4-4',
+  calc: 'M6 3h12v18H6zM9 7h6M9 12h.01M12 12h.01M15 12h.01M9 16h.01M12 16h.01M15 16h.01',
+  shieldx: 'M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6zM9.5 9.5l5 5M14.5 9.5l-5 5',
+  scale: 'M12 4v16M5 20h14M5 8l-3 6h6zM19 8l-3 6h6zM5 8h14',
+  hourglass: 'M7 3h10M7 21h10M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9',
+  flask: 'M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3M7.5 15h9',
 } as const
 
 /** Dibujo, rareza y cifra de cada insignia */
@@ -72,6 +79,15 @@ export const BADGES: Record<string, { g: keyof typeof G; rarity: Rarity; n?: str
   GOALS_7: { g: 'checks', rarity: 'EPIC', n: '7' },
   LEAGUE_UP: { g: 'chevrons', rarity: 'RARE' },
   LEAGUE_TOP3: { g: 'podium', rarity: 'EPIC' },
+  BOSS_1: { g: 'trophy', rarity: 'RARE' },
+  BOSS_5: { g: 'trophy', rarity: 'EPIC', n: '5' },
+  UPDOWN_10: { g: 'updown', rarity: 'COMMON', n: '10' },
+  CALC_20: { g: 'calc', rarity: 'RARE', n: '20' },
+  SCAM_5: { g: 'shieldx', rarity: 'RARE', n: '5' },
+  SIM_5: { g: 'scale', rarity: 'EPIC', n: '5' },
+  CANDLE_10: { g: 'candles', rarity: 'RARE', n: '10' },
+  HISTORY: { g: 'hourglass', rarity: 'EPIC' },
+  LAB: { g: 'flask', rarity: 'LEGENDARY' },
 }
 
 /** Colores de cada rareza: claro (arriba), oscuro (abajo) y borde */

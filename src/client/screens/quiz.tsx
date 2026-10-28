@@ -15,8 +15,11 @@ import { ErrorState, PageSkeleton, Stars, Steps, TopBar } from '../ui/kit'
 import { useGuard } from '../shell'
 import { BadgeArt } from '../ui/badge'
 import { Lumi } from '../ui/lumi'
+import { DYNAMIC, DynamicExercise, isAnswered } from './exercises'
 
 export type AnswerValue = number | number[] | string | null
+/** Respuesta cuando se acaba el tiempo de un reto cronometrado */
+const TIMEOUT = '__timeout__'
 
 const optClass = (reveal: AnswerResultT | null, isCorrect: boolean, isPicked: boolean) => (!reveal ? '' : isCorrect ? 'ok' : isPicked ? 'bad' : 'dim')
 
@@ -25,6 +28,8 @@ export function QuestionView({ q, value, onChange, reveal }: { q: QuestionT; val
   const t = useTranslations('quiz')
   const sol = reveal?.correctAnswer
   const locked = !!reveal
+
+  if (DYNAMIC.has(q.type)) return <DynamicExercise q={q} value={value} onChange={onChange} reveal={reveal} />
 
   if (q.type === 'CHART_POINT') {
     return (
@@ -123,7 +128,7 @@ export function QuestionView({ q, value, onChange, reveal }: { q: QuestionT; val
   )
 }
 
-const hasAnswer = (v: AnswerValue) => (Array.isArray(v) ? v.length > 0 : v !== null && v !== '')
+const hasAnswer = (q: QuestionT, v: AnswerValue) => isAnswered(q, v)
 
 /** Texto de ayuda encima del enunciado según el tipo */
 export function useTypeHint() {
@@ -326,13 +331,27 @@ function QuizInner({ id }: { id: string }) {
   }, [i, run])
 
   const answer = useMutation({
-    mutationFn: () => api.answer(start.data!.attemptId, start.data!.questions[i].id, value as number | number[] | string, Date.now() - shownAt.current),
+    mutationFn: (v: AnswerValue) => api.answer(start.data!.attemptId, start.data!.questions[i].id, v as number | number[] | string, Date.now() - shownAt.current),
     onSuccess: r => {
       setReveal(r)
       if (r.livesLeft !== null) setLives(r.livesLeft)
     },
   })
   const finish = useMutation({ mutationFn: () => api.quizFinish(start.data!.attemptId), onSuccess: refresh })
+
+  // Retos cronometrados: cuenta atrás; al llegar a 0 se responde solo (cuenta como fallo)
+  const limit = start.data?.questions[i]?.meta?.timeLimit
+  const [left, setLeft] = useState<number | null>(null)
+  useEffect(() => {
+    if (!limit || reveal) return
+    const t0 = Date.now()
+    const id = setInterval(() => setLeft(Math.max(0, limit - Math.floor((Date.now() - t0) / 1000))), 250)
+    return () => clearInterval(id)
+  }, [limit, i, run, reveal])
+  const { mutate: send, isPending: sending } = answer
+  useEffect(() => {
+    if (limit && left === 0 && !reveal && !sending) send(TIMEOUT)
+  }, [left, limit, reveal, sending, send])
 
   const reset = () => {
     setI(0)
@@ -366,6 +385,7 @@ function QuizInner({ id }: { id: string }) {
       setI(i + 1)
       setValue(null)
       setReveal(null)
+      setLeft(null)
     }
   }
 
@@ -383,8 +403,15 @@ function QuizInner({ id }: { id: string }) {
         )}
       </div>
       <div className="pad flex-1">
-        <span className="t-foot">{id === 'review' ? t('reviewHint') : hint(q)}</span>
-        {q.type !== 'FILL_BLANK' && <h1 className="t-title">{q.prompt}</h1>}
+        <span className="t-foot flex items-center justify-between gap-2">
+          {id === 'review' ? t('reviewHint') : hint(q)}
+          {limit && !reveal && (
+            <b className="chip tabular-nums" style={{ background: (left ?? limit) <= 3 ? 'var(--down)' : 'var(--fill)', color: (left ?? limit) <= 3 ? '#fff' : undefined }} aria-live="polite">
+              ⏱ {left ?? limit} s
+            </b>
+          )}
+        </span>
+        {q.type === 'SCENARIO' ? <p className="t-body card m-0 text-[17px] leading-7">{q.prompt}</p> : q.type !== 'FILL_BLANK' && <h1 className="t-title">{q.prompt}</h1>}
         <QuestionView key={q.id} q={q} value={value} onChange={setValue} reveal={reveal} />
       </div>
       <div className="sticky bottom-0" style={{ background: 'var(--bg)' }}>
@@ -393,15 +420,15 @@ function QuizInner({ id }: { id: string }) {
             <b className={reveal.correct ? 'up' : 'down'} style={{ fontSize: 17 }}>
               {reveal.correct ? t('correct') : reveal.livesLeft !== null ? t('wrongLife') : t('wrong')}
             </b>
-            <span className="t-body">{reveal.explanation}</span>
+            <span className="t-body whitespace-pre-line">{reveal.explanation}</span>
             <button className={`btn ${reveal.correct ? 'btn-success' : 'btn-danger'}`} onClick={next} disabled={finish.isPending} autoFocus>
               {isLast ? t('seeResult') : reveal.correct ? t('continue') : t('gotIt')}
             </button>
           </div>
         ) : (
           <div className="px-4 pt-2.5" style={{ paddingBottom: 'max(24px, env(safe-area-inset-bottom))' }}>
-            <button className="btn btn-primary" disabled={!hasAnswer(value) || answer.isPending} onClick={() => answer.mutate()}>
-              {hasAnswer(value) ? t('check') : t('pick')}
+            <button className="btn btn-primary" disabled={!hasAnswer(q, value) || answer.isPending} onClick={() => answer.mutate(value)}>
+              {hasAnswer(q, value) ? t('check') : t('pick')}
             </button>
           </div>
         )}

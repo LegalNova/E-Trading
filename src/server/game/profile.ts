@@ -8,7 +8,7 @@ import { db } from '../db'
 import { currentUser, googleEnabled } from '../auth'
 import { ACHIEVEMENTS } from '../content/catalog'
 import { achievementList, endFx, fail, FREEZE_PRICE, goalDefs, goalsOf, minutesOf, levelOf, levelTitle, LIVES_MAX, livesOf, lumi, MAX_FREEZES, notify, REFILL_PRICE, START_CASH, withCtx } from './core'
-import { pathOf } from './learning'
+import { ALL_Q, pathOf } from './learning'
 import { portfolioIn, portfolioRow, processPendingFor, userBook } from './trading'
 
 const DAY_MS = 86_400_000
@@ -141,7 +141,8 @@ export const refillLives = () =>
     return livesOf(c.user, c.g)
   })
 
-export const mistakesCount = () => withCtx(c => c.tx.mistake.count({ where: { userId: c.user.id } }))
+// Solo cuentan los fallos de preguntas que siguen en el curso (si se retira una pregunta, su fallo deja de contar)
+export const mistakesCount = () => withCtx(c => c.tx.mistake.count({ where: { userId: c.user.id, questionId: { in: Object.keys(ALL_Q) } } }))
 export const path = () => withCtx(c => pathOf(c.tx, c.user))
 
 // ── Racha y logros ───────────────────────────────────────

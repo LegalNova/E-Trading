@@ -15,6 +15,7 @@ import { CandleChart, LineChart } from '../ui/charts'
 import { Flame, Gem, Heart, Icon } from '../ui/icons'
 import { Bar, ErrorState, PageSkeleton, Sheet, Stars, Steps } from '../ui/kit'
 import { BadgeArt } from '../ui/badge'
+import { Calculator } from '../ui/calculator'
 import { Lumi, LumiSays, stageOf } from '../ui/lumi'
 
 // ── Inicio ───────────────────────────────────────────────
@@ -212,7 +213,8 @@ function LessonRow({ l, onLocked }: { l: PathLessonT; onLocked: (l: PathLessonT)
 /** Resumen de arriba: cuánto llevas, cuánto falta a tu ritmo y un botón para seguir donde lo dejaste */
 function Summary({ path }: { path: CoursePathT }) {
   const t = useTranslations('path')
-  const all = path.units.flatMap(u => u.lessons)
+  // Clases de contenido (sin repasos ni retos finales)
+  const all = path.units.flatMap(u => u.lessons).filter(l => !l.isUnitReview && !l.id.endsWith('boss'))
   const done = all.filter(l => l.status === 'COMPLETED').length
   const left = all.filter(l => l.status !== 'COMPLETED').reduce((a, l) => a + l.minutes, 0)
   const next = path.units.find(u => u.id === path.currentUnitId)?.lessons.find(l => l.status === 'AVAILABLE') ?? all.find(l => l.status === 'AVAILABLE')
@@ -276,12 +278,23 @@ export function Path() {
         )}
       </div>
       <Summary path={p} />
-      {p.units.map(u => {
+      {p.units.map((u, ui) => {
         const empty = u.lessons.length === 0
+        const newSection = u.section && u.section.id !== p.units[ui - 1]?.section?.id
         const isCurrent = u.id === current.id
         const expanded = isCurrent || openUnits.has(u.id)
         return (
           <section key={u.id} className="flex flex-col gap-3" aria-labelledby={`unit-${u.id}`}>
+            {newSection && u.section && (
+              <div className="mt-3 flex items-center gap-2 px-1">
+                <span className="t-cap font-extrabold tracking-wide uppercase" style={{ color: u.section.open ? 'var(--brand)' : 'var(--ink-3)' }}>
+                  {!u.section.open && '🔒 '}
+                  {u.section.title}
+                </span>
+                <span className="h-px flex-1" style={{ background: 'var(--line)' }} />
+              </div>
+            )}
+            {newSection && u.section && !u.section.open && <span className="t-cap -mt-2 px-1">{t('sectionNeeds', { needs: u.section.needs.join(', ') })}</span>}
             {isCurrent ? (
               <div className="hero flex flex-col gap-2">
                 <span className="t-cap" style={{ color: 'rgb(255 255 255 / 0.65)' }}>
@@ -523,6 +536,15 @@ function StepView({ s, lessonId, onSolved, solved }: { s: LessonStepT; lessonId:
           <h1 className="t-title">{s.title}</h1>
           <Illustration kind={s.image} />
           <RichText text={s.body} />
+          {tip}
+        </>
+      )
+    case 'CALCULATOR':
+      return (
+        <>
+          <h1 className="t-title">{s.title}</h1>
+          <RichText text={s.body} />
+          <Calculator kind={s.calc} />
           {tip}
         </>
       )

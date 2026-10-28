@@ -15,7 +15,43 @@ ASSETS = [
     ('AAPL', 'Apple'), ('MSFT', 'Microsoft'), ('NVDA', 'NVIDIA'), ('AMZN', 'Amazon'), ('KO', 'Coca-Cola'),
     ('SAN.MC', 'Banco Santander'), ('ITX.MC', 'Inditex'), ('IBE.MC', 'Iberdrola'), ('BBVA.MC', 'BBVA'),
     ('^GSPC', 'S&P 500'), ('^IBEX', 'IBEX 35'), ('^GDAXI', 'DAX'), ('BTC-EUR', 'Bitcoin'), ('EURUSD=X', 'EUR/USD'), ('GC=F', 'Oro'),
+    ('TSLA', 'Tesla'), ('GOOGL', 'Alphabet'), ('META', 'Meta'), ('JPM', 'JPMorgan'), ('XOM', 'ExxonMobil'), ('ETH-EUR', 'Ethereum'),
+    ('REP.MC', 'Repsol'), ('TEF.MC', 'Telefónica'), ('^NDX', 'Nasdaq 100'), ('CL=F', 'Petróleo WTI'), ('SI=F', 'Plata'), ('USDJPY=X', 'USD/JPY'),
 ]
+
+# Momentos históricos (velas semanales o mensuales): visible hasta «cut», se revela hasta «end»
+HISTORY = [
+    # id, símbolo, nombre, intervalo, desde, corte, hasta, pregunta de contexto
+    ('hist-crash-1929', '^GSPC', 'S&P 500', '1wk', '1928-01-01', '1929-10-01', '1932-12-01'),
+    ('hist-dotcom', '^NDX', 'Nasdaq 100', '1wk', '1998-01-01', '2000-03-06', '2002-12-30'),
+    ('hist-2008', '^GSPC', 'S&P 500', '1wk', '2006-01-01', '2008-09-08', '2009-12-28'),
+    ('hist-2009-bottom', '^GSPC', 'S&P 500', '1wk', '2007-06-01', '2009-03-02', '2010-12-27'),
+    ('hist-japan-1989', '^N225', 'Nikkei 225', '1mo', '1985-01-01', '1989-12-01', '1995-12-01'),
+    ('hist-ibex-2012', '^IBEX', 'IBEX 35', '1wk', '2010-01-01', '2012-07-23', '2013-12-30'),
+    ('hist-covid', '^GSPC', 'S&P 500', '1d', '2019-11-01', '2020-03-23', '2020-08-31'),
+    ('hist-btc-2021', 'BTC-USD', 'Bitcoin', '1wk', '2020-06-01', '2021-11-08', '2022-12-26'),
+    ('hist-gold-2020', 'GC=F', 'Oro', '1wk', '2018-06-01', '2020-08-03', '2021-12-27'),
+    ('hist-oil-2020', 'CL=F', 'Petróleo WTI', '1wk', '2019-06-01', '2020-04-20', '2021-06-28'),
+    ('hist-rates-2022', 'TLT', 'Bonos del Tesoro a 20+ años (ETF)', '1wk', '2020-06-01', '2022-01-03', '2023-10-23'),
+    ('hist-tsla-2020', 'TSLA', 'Tesla', '1wk', '2019-01-01', '2020-12-21', '2023-01-02'),
+]
+
+
+def get_range(sym, interval, start, end):
+    q = urllib.parse.quote(sym, safe='')
+    p1 = int(datetime.datetime.strptime(start, '%Y-%m-%d').timestamp())
+    p2 = int(datetime.datetime.strptime(end, '%Y-%m-%d').timestamp()) + 86400 * 31
+    for host in ('query1', 'query2'):
+        try:
+            url = f'https://{host}.finance.yahoo.com/v8/finance/chart/{q}?period1={p1}&period2={p2}&interval={interval}'
+            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=25) as r:
+                d = json.load(r)['chart']['result'][0]
+            t = d['timestamp']
+            o, h, l, c = (d['indicators']['quote'][0][k] for k in ('open', 'high', 'low', 'close'))
+            return [(t[i], o[i], h[i], l[i], c[i]) for i in range(len(t)) if None not in (o[i], h[i], l[i], c[i])]
+        except Exception as e:  # noqa: BLE001
+            err = e
+    raise err
 
 
 def get(sym):
@@ -207,6 +243,70 @@ def main():
                     n += 1
                     break
         print(f'trend-{kind}: {n} ejemplos')
+    # «¿Sube o baja?»: 30 velas visibles y 10 ocultas con un movimiento claro (equilibrado entre subidas y bajadas)
+    nud = 0
+    for sym, (name, rows) in data.items():
+        thr = 0.08 if '-EUR' in sym else 0.012 if '=X' in sym else 0.05
+        got = {'UP': 0, 'DOWN': 0}
+        for e in range(len(rows) - 11, 60, -23):
+            vis, fut = rows[e - 30:e], rows[e:e + 10]
+            ch = fut[-1][4] / vis[-1][4] - 1
+            way = 'UP' if ch > thr else 'DOWN' if ch < -thr else None
+            if not way or got[way] >= 2:
+                continue
+            got[way] += 1
+            nud += 1
+            fid = f'ud-{nud}'
+            out[fid] = {'id': fid, 'symbol': sym, 'name': name, 'from': day(vis[0][0]), 'to': day(fut[-1][0]),
+                        'caption': f'{name} · velas diarias · {span(vis[0][0], fut[-1][0])}',
+                        'candles': [[r2(x[1]), r2(x[2]), r2(x[3]), r2(x[4])] for x in vis],
+                        'future': [[r2(x[1]), r2(x[2]), r2(x[3]), r2(x[4])] for x in fut], 'outcome': way, 'changePct': round(ch * 100, 1)}
+            if got['UP'] >= 2 and got['DOWN'] >= 2:
+                break
+    print(f'sube o baja: {nud} ejemplos')
+    # Niveles: tendencia alcista con un mínimo reciente claro (para el stop) y un máximo previo (para el objetivo); 15 velas de futuro
+    nl = 0
+    for sym, (name, rows) in data.items():
+        k = 0
+        for e in range(len(rows) - 16, 60, -31):
+            vis, fut = rows[e - 30:e], rows[e:e + 15]
+            entry = vis[-1][4]
+            low_i = min(range(18, 28), key=lambda j: vis[j][3])
+            swing = vis[low_i][3]
+            res = max(x[2] for x in vis[:18])
+            atr = sum(rng(x) for x in vis[-14:]) / 14
+            # mínimo reciente por debajo de la entrada (entre 1 y 4 ATR) y un máximo anterior por encima (≥ 2 ATR)
+            if not (entry - 4 * atr < swing < entry - atr and res > entry + 2 * atr and vis[-1][4] > vis[0][4]):
+                continue
+            nl += 1; k += 1
+            fid = f'lvl-{nl}'
+            out[fid] = {'id': fid, 'symbol': sym, 'name': name, 'from': day(vis[0][0]), 'to': day(fut[-1][0]),
+                        'caption': f'{name} · velas diarias · {span(vis[0][0], fut[-1][0])}',
+                        'candles': [[r2(x[1]), r2(x[2]), r2(x[3]), r2(x[4])] for x in vis],
+                        'future': [[r2(x[1]), r2(x[2]), r2(x[3]), r2(x[4])] for x in fut],
+                        'entry': r2(entry), 'support': r2(swing), 'resistance': r2(res), 'atr': r2(atr)}
+            if k >= 2:
+                break
+    print(f'niveles: {nl} ejemplos')
+    # Momentos históricos
+    for fid, sym, name, iv, a, cut, b in HISTORY:
+        try:
+            rows = get_range(sym, iv, a, b)
+        except Exception as e:  # noqa: BLE001
+            print(f'⚠️  {fid}: {e}'); continue
+        tc = datetime.datetime.strptime(cut, '%Y-%m-%d').timestamp()
+        tb = datetime.datetime.strptime(b, '%Y-%m-%d').timestamp() + 86400 * 7
+        vis = [x for x in rows if x[0] <= tc + 86400 * 3]
+        fut = [x for x in rows if tc + 86400 * 3 < x[0] <= tb]
+        # como mucho 80 puntos visibles y 80 de futuro
+        sv, sf = max(1, len(vis) // 80 + (len(vis) % 80 > 0)), max(1, len(fut) // 80 + (len(fut) % 80 > 0))
+        per = {'1d': 'cierres diarios', '1wk': 'cierres semanales', '1mo': 'cierres mensuales'}[iv]
+        out[fid] = {'id': fid, 'symbol': sym, 'name': name, 'from': day(vis[0][0]), 'to': day(fut[-1][0]),
+                    'caption': f'{name} · {per} · {span(vis[0][0], fut[-1][0])}', 'cutDate': day(vis[-1][0]),
+                    'closes': [r2(x[4]) for x in vis[::sv]], 'futureCloses': [r2(x[4]) for x in fut[::sf]],
+                    'changePct': round((fut[-1][4] / vis[-1][4] - 1) * 100, 1), 'minPct': round((min(x[3] for x in fut) / vis[-1][4] - 1) * 100, 1)}
+        print(f'{fid}: visible {len(out[fid]["closes"])} · futuro {len(out[fid]["futureCloses"])} · {out[fid]["changePct"]} %')
+        time.sleep(0.4)
     json.dump(out, open(OUT, 'w'), ensure_ascii=False, indent=1)
     print('Guardado', os.path.relpath(OUT), len(out), 'gráficos')
 

@@ -2,32 +2,25 @@ import 'server-only'
 // Contenido del curso (D-016: vive en el repo). SOLO en el servidor: incluye las soluciones.
 import type { Mood } from '@/shared/contract'
 
-// ── Curso «De cero a inversor» (docs/curso): 12 unidades (una por módulo del manual) + Vocabulario ──
+// ── Curso «De cero a inversor» (docs/curso-v2): secciones → unidades → clases, con retos finales ──
 import { QUIZZES as Q, single, tf, trend, type ContentLesson, type ContentQuestion, type ContentUnit } from './dsl'
-import u01 from './course/u01'
-import u02 from './course/u02'
-import u03 from './course/u03'
-import u04 from './course/u04'
-import u05 from './course/u05'
-import u06 from './course/u06'
-import u07 from './course/u07'
-import u08 from './course/u08'
-import u09 from './course/u09'
-import u10 from './course/u10'
-import u11 from './course/u11'
-import u12 from './course/u12'
-import u13 from './course/u13'
+import { V2_UNITS } from './v2'
+import { LEGACY_TO_V2 } from './v2/legacy-map'
 
 export type { ContentLesson, ContentQuestion, ContentUnit }
-export const UNITS: ContentUnit[] = [u01, u02, u03, u04, u05, u06, u07, u08, u09, u10, u11, u12, u13]
+// Curso v2 (docs/curso-v2): 13 secciones, 225 clases y el vocabulario aparte
+export const UNITS: ContentUnit[] = V2_UNITS
 export const QUIZZES = Q
 export const LESSON = Object.fromEntries(UNITS.flatMap(u => u.lessons.map(l => [l.id, { ...l, unit: u }]))) as Record<string, ContentLesson & { unit: ContentUnit }>
 /** Minutos estimados del curso: pasos de cada lección + unos 25 s por pregunta de quiz */
 export const SECONDS_PER_QUESTION = 25
 export const lessonMinutes = (l: ContentLesson) => l.minutes + ((QUIZZES[l.quizId]?.length ?? 0) * SECONDS_PER_QUESTION) / 60
 export const courseMinutes = () => Math.round(UNITS.flatMap(u => u.lessons).reduce((a, l) => a + lessonMinutes(l), 0))
+const V2 = UNITS.some(u => u.section)
 /** Lección cuyo aprobado desbloquea las órdenes límite, stop loss y take profit */
-export const RISK_LESSON = 'u10l3'
+export const RISK_LESSON = V2 ? 'u6l4' : 'u10l3'
+/** Enlace a una lección escrito con los ids del curso anterior (avisos de Lumi): en el curso v2, su equivalente */
+export const lessonRef = (id: string | null) => (id && V2 ? (LEGACY_TO_V2[id] ?? id) : id)
 
 // Test de nivel: 8 preguntas de las unidades 1 y 2. Con 5 o más aciertos se salta la unidad 1.
 const P = [
@@ -42,7 +35,7 @@ const P = [
 ]
 export const PLACEMENT: ContentQuestion[] = P.map((q, i) => ({ ...q, id: `p${i + 1}` }))
 
-// ── Logros (34) ──────────────────────────────────────────
+// ── Insignias (43) ──────────────────────────────────────────
 export interface ContentAchievement { code: string; title: string; description: string; icon: string; category: 'LEARNING' | 'TRADING' | 'STREAK'; target: number; gems: number; xp: number }
 export const ACHIEVEMENTS: ContentAchievement[] = [
   { code: 'FIRST_LESSON', title: 'Primera lección', description: 'Completa tu primera lección', icon: '1', category: 'LEARNING', target: 1, gems: 20, xp: 10 },
@@ -54,7 +47,16 @@ export const ACHIEVEMENTS: ContentAchievement[] = [
   { code: 'UNIT_1', title: 'Primeros pasos', description: 'Completa la unidad «El dinero y por qué invertir»', icon: 'U1', category: 'LEARNING', target: 1, gems: 30, xp: 30 },
   { code: 'UNIT_2', title: 'Lector de velas', description: 'Completa la unidad «Velas japonesas»', icon: 'U8', category: 'LEARNING', target: 1, gems: 40, xp: 40 },
   { code: 'UNIT_3', title: 'Gestor de riesgo', description: 'Completa la unidad «Gestión del riesgo»', icon: 'U10', category: 'LEARNING', target: 1, gems: 40, xp: 40 },
-  { code: 'COURSE_DONE', title: 'Inversor autónomo', description: 'Completa las 12 unidades del curso', icon: '★', category: 'LEARNING', target: 1, gems: 200, xp: 200 },
+  { code: 'COURSE_DONE', title: 'Inversor autónomo', description: 'Completa todas las unidades del curso', icon: '★', category: 'LEARNING', target: 1, gems: 200, xp: 200 },
+  { code: 'BOSS_1', title: 'Reto superado', description: 'Supera tu primer reto final de sección', icon: 'R', category: 'LEARNING', target: 1, gems: 40, xp: 40 },
+  { code: 'BOSS_5', title: 'Cinco secciones', description: 'Supera 5 retos finales de sección', icon: 'R5', category: 'LEARNING', target: 5, gems: 100, xp: 80 },
+  { code: 'UPDOWN_10', title: 'Humildad ante el mercado', description: 'Responde 10 retos «¿Sube o baja?» con datos reales', icon: '↕', category: 'LEARNING', target: 10, gems: 30, xp: 20 },
+  { code: 'CALC_20', title: 'Calculadora humana', description: 'Acierta 20 ejercicios de cálculo', icon: '=', category: 'LEARNING', target: 20, gems: 40, xp: 30 },
+  { code: 'SCAM_5', title: 'Detector de estafas', description: 'Detecta todas las estafas en 5 ejercicios', icon: '!', category: 'LEARNING', target: 5, gems: 40, xp: 30 },
+  { code: 'SIM_5', title: 'Riesgo bajo control', description: 'Dimensiona bien 5 operaciones simuladas en las clases', icon: '%', category: 'LEARNING', target: 5, gems: 50, xp: 40 },
+  { code: 'CANDLE_10', title: 'Cazavelas', description: 'Encuentra 10 patrones de velas en gráficos reales', icon: 'V', category: 'LEARNING', target: 10, gems: 30, xp: 20 },
+  { code: 'HISTORY', title: 'Historiador', description: 'Completa la unidad «Burbujas y crisis»', icon: 'H', category: 'LEARNING', target: 1, gems: 50, xp: 40 },
+  { code: 'LAB', title: 'Laboratorio', description: 'Completa la unidad «Retos con datos reales»', icon: 'L', category: 'LEARNING', target: 1, gems: 60, xp: 50 },
   { code: 'PLACEMENT', title: 'Punto de partida', description: 'Haz el test de nivel', icon: '?', category: 'LEARNING', target: 1, gems: 10, xp: 10 },
   { code: 'REVIEW_10', title: 'Aprender de los fallos', description: 'Repasa 10 preguntas falladas', icon: '↺', category: 'LEARNING', target: 10, gems: 20, xp: 20 },
   { code: 'SPEED', title: 'Rápido y certero', description: 'Termina un quiz perfecto en menos de 1 minuto', icon: '⚡', category: 'LEARNING', target: 1, gems: 20, xp: 20 },

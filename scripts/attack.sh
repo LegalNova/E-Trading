@@ -22,14 +22,15 @@ cash=$(c $J $B/portfolio | python3 -c "import sys,json; print(json.load(sys.stdi
 rm -f $T/r*.json
 
 echo "2. Abrir una lección bloqueada desde la URL"
-code=$(c $J $B/lessons/u9l3 -o /dev/null -w "%{http_code}"); [ "$code" = 403 ] && ok "u9l3 (premium) → 403" || ko "u9l3 → $code"
-code=$(c $J -X POST $B/quiz/u9l3/start -o /dev/null -w "%{http_code}"); [ "$code" = 403 ] && ok "quiz de u9l3 → 403" || ko "quiz u9l3 → $code"
+code=$(c $J $B/lessons/u9l5 -o /dev/null -w "%{http_code}"); [ "$code" = 403 ] && ok "u9l5 (de pago) → 403" || ko "u9l5 → $code"
+code=$(c $J -X POST $B/quiz/u9l5/start -o /dev/null -w "%{http_code}"); [ "$code" = 403 ] && ok "quiz de u9l5 → 403" || ko "quiz u9l5 → $code"
 
 echo "3. Repetir el mismo quiz para granjear XP"
 xps=""
 for i in 1 2 3 4; do
   A=$(c $J -X POST $B/quiz/u1l1/start | python3 -c "import sys,json; print(json.load(sys.stdin).get('attemptId',''))")
-  for q in "u1l1-1:0" "u1l1-2:1" "u1l1-3:1"; do c $J -X POST $B/quiz/attempts/$A/answer -d "{\"questionId\":\"${q%%:*}\",\"answer\":${q##*:},\"elapsedMs\":1}" -o /dev/null; done
+  # Respuestas correctas conocidas de la clase u1l1 (verdadero/falso y rellenar huecos): no gastan vidas
+  for q in 'u1l1-4:0' 'u1l1-8:1' 'u1l1-7:"debes"'; do c $J -X POST $B/quiz/attempts/$A/answer -d "{\"questionId\":\"${q%%:*}\",\"answer\":${q#*:},\"elapsedMs\":1}" -o /dev/null; done
   xps="$xps $(c $J -X POST $B/quiz/attempts/$A/finish | python3 -c "import sys,json; print(json.load(sys.stdin)['xpBreakdown']['total'])")"
 done
 last=$(echo $xps | awk '{print $NF}'); [ "$last" = 0 ] && ok "XP por intento:$xps (a partir del 3.º, 0)" || ko "XP por intento:$xps"

@@ -45,7 +45,7 @@ async function brainContext(user: User, mode: TutorModeT, lastQuestion: string):
     mode === 'PORTFOLIO' ? db.order.findMany({ where: { userId: user.id, status: 'PENDING', type: 'STOP_LOSS' }, select: { symbol: true } }) : Promise.resolve([]),
   ])
   const doneIds = new Set(done.map(d => d.lessonId))
-  const next = Object.values(LESSON).find(l => !doneIds.has(l.id) && !l.isUnitReview && !l.unit.side)
+  const next = Object.values(LESSON).find(l => !doneIds.has(l.id) && !l.isUnitReview && !l.isBoss && !l.unit.side)
   return {
     name: user.name || 'tú', mode, lastQuestion, mistakes, streak: g?.streak ?? 0,
     doneLessons: doneIds.size, totalLessons: Object.keys(LESSON).length,

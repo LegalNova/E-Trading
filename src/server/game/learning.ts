@@ -4,40 +4,45 @@ import type { AnswerResultT, CoursePathT, LessonStepT, LessonT, PathUnitT, Place
 import type { User } from '@/generated/prisma/client'
 import { courseMinutes, lessonMinutes, LESSON, PLACEMENT, QUIZZES, RISK_LESSON, UNITS, type ContentQuestion } from '../content/catalog'
 import { canOpen, minPlan } from '@/shared/plans'
+import { grade } from '../content/grading'
 import { addXp, bump, bumpGoal, endFx, fail, LIVES_MAX, livesOf, lumi, markActive, minutesOf, withCtx, type Ctx, type Tx } from './core'
 
-const ALL_Q: Record<string, ContentQuestion> = Object.fromEntries([...Object.values(QUIZZES).flat(), ...PLACEMENT].map(q => [q.id, q]))
-const publicQ = (q: ContentQuestion): QuestionT => ({ id: q.id, type: q.type, prompt: q.prompt, options: q.options, chart: q.chart })
-
-function isCorrect(q: ContentQuestion, a: unknown): boolean {
-  if (q.type === 'CHART_POINT') return typeof a === 'number' && Math.abs(a - (q.solution as number)) <= 1
-  if (q.type === 'FILL_BLANK') return String(a).trim().toLowerCase() === String(q.solution).toLowerCase()
-  if (q.type === 'MULTIPLE') return Array.isArray(a) && [...a].sort().join() === [...(q.solution as number[])].sort().join()
-  if (q.type === 'ORDER') return Array.isArray(a) && a.join() === (q.solution as number[]).join()
-  return a === q.solution
-}
+export const ALL_Q: Record<string, ContentQuestion> = Object.fromEntries([...Object.values(QUIZZES).flat(), ...PLACEMENT].map(q => [q.id, q]))
+/** Lo que ve el alumno: nunca la solución, las consecuencias ni el futuro del gráfico */
+const publicQ = (q: ContentQuestion): QuestionT => ({ id: q.id, type: q.type, prompt: q.prompt, options: q.options, chart: q.chart, candles: q.candles, right: q.right, meta: q.meta })
 
 export async function pathOf(tx: Tx, user: User): Promise<CoursePathT> {
   const rows = await tx.lessonProgress.findMany({ where: { userId: user.id } })
   const done = new Map(rows.map(r => [r.lessonId, r]))
-  // Camino principal: una lección disponible cada vez. Las unidades paralelas (Vocabulario) llevan su propio orden.
-  const found = { main: false, side: new Set<string>() }
+  // Una lección disponible cada vez en cada «camino»: el principal (o cada sección abierta del curso v2) y cada
+  // unidad paralela (Vocabulario). Una sección se abre al aprobar el reto final de las secciones que necesita.
+  const found = { main: false, side: new Set<string>(), sections: new Set<string>() }
+  const bossDone = (sid: string) => done.has(`${sid}boss`)
+  const sectionOpen = (u: (typeof UNITS)[number]) => !u.section || u.section.requires.every(bossDone)
   let currentUnitId = UNITS[0].id
+  let currentSet = false
   const units: PathUnitT[] = UNITS.map(u => {
     let idx = 0
     const lessons = u.lessons.map(l => {
       const p = done.get(l.id)
       const index = l.isUnitReview ? -1 : idx++
-      const requiredPlan = minPlan(u.id, index, !!l.isUnitReview)
-      const requiresPremium = !canOpen(user.plan, u.id, index, !!l.isUnitReview)
+      // El reto final de sección está abierto en todos los planes (si no, el plan gratis no podría avanzar de sección)
+      const requiredPlan = l.isBoss ? 'FREE' : minPlan(u.id, index, !!l.isUnitReview, l.id)
+      const requiresPremium = !l.isBoss && !canOpen(user.plan, u.id, index, !!l.isUnitReview, l.id)
       let status: 'LOCKED' | 'AVAILABLE' | 'COMPLETED' = 'LOCKED'
+      const sec = u.section?.id
+      const free = u.side ? !found.side.has(u.id) : sec ? sectionOpen(u) && !found.sections.has(sec) : !found.main
       if (p) status = 'COMPLETED'
-      else if (!requiresPremium && (u.side ? !found.side.has(u.id) : !found.main)) {
+      else if (!requiresPremium && free) {
         status = 'AVAILABLE'
         if (u.side) found.side.add(u.id)
         else {
-          found.main = true
-          currentUnitId = u.id
+          if (sec) found.sections.add(sec)
+          else found.main = true
+          if (!currentSet) {
+            currentUnitId = u.id
+            currentSet = true
+          }
         }
       }
       return { id: l.id, title: l.title, status, stars: p?.stars ?? 0, minutes: Math.max(1, Math.round(lessonMinutes(l))), xp: l.xp, isUnitReview: !!l.isUnitReview, requiresPremium, requiredPlan }
@@ -45,7 +50,9 @@ export async function pathOf(tx: Tx, user: User): Promise<CoursePathT> {
     const n = lessons.filter(l => l.status === 'COMPLETED').length
     const plans = new Set(lessons.map(l => l.requiredPlan))
     const access = plans.has('PREMIUM') ? (plans.has('FREE') ? 'PARTIAL_MAX' : 'MAX') : plans.has('PLUS') ? 'PARTIAL_PLUS' : 'FREE'
-    return { id: u.id, order: u.order, title: u.title, description: u.description, progressPct: u.lessons.length ? Math.round((n / u.lessons.length) * 100) : 0, access, side: !!u.side, unlocksFeature: u.unlocksFeature, lessons }
+    const titleOf = (sid: string) => UNITS.find(x => x.section?.id === sid)?.section?.title ?? sid
+    const section = u.section ? { id: u.section.id, title: u.section.title, open: sectionOpen(u), needs: u.section.requires.filter(r => !bossDone(r)).map(titleOf) } : undefined
+    return { id: u.id, order: u.order, title: u.title, description: u.description, progressPct: u.lessons.length ? Math.round((n / u.lessons.length) * 100) : 0, access, side: !!u.side, unlocksFeature: u.unlocksFeature, section, lessons }
   })
   return { courseId: 'de-cero-a-inversor', title: 'De cero a inversor', currentUnitId, units, minutesTotal: courseMinutes(), dailyGoalMinutes: minutesOf(user) }
 }
@@ -61,6 +68,7 @@ export async function lesson(user: User, tx: Tx, id: string): Promise<LessonT> {
     if (s.kind === 'TEXT') return { id: sid, type: 'TEXT', title: s.title, body: s.body, keyIdea: s.key, companionTip: s.tip }
     if (s.kind === 'IMAGE') return { id: sid, type: 'IMAGE', title: s.title, body: s.body, image: s.image, companionTip: s.tip }
     if (s.kind === 'CHART') return { id: sid, type: 'INTERACTIVE_CHART', prompt: s.prompt, caption: s.caption, candles: s.candles }
+    if (s.kind === 'CALC') return { id: sid, type: 'CALCULATOR', title: s.title, body: s.body, calc: s.calc, companionTip: s.tip }
     return { id: sid, type: 'SIMULATOR_TASK', title: s.title, body: s.body, task: s.task }
   })
   steps.push({ id: `${id}-quiz`, type: 'QUIZ', quizId: l.quizId, title: 'Hora del quiz', body: `${(QUIZZES[l.quizId] ?? []).length} preguntas para comprobar lo que has aprendido. Cada fallo cuesta una vida.` })
@@ -84,7 +92,7 @@ export const quizStart = (id: string) =>
       qs = PLACEMENT
     } else if (id === 'review') {
       mode = 'REVIEW'
-      const m = await c.tx.mistake.findMany({ where: { userId: c.user.id }, orderBy: { createdAt: 'asc' }, take: 8 })
+      const m = await c.tx.mistake.findMany({ where: { userId: c.user.id, questionId: { in: Object.keys(ALL_Q) } }, orderBy: { createdAt: 'asc' }, take: 8 })
       qs = m.map(x => ALL_Q[x.questionId]).filter(Boolean)
       if (!qs.length) fail(404, 'NOT_FOUND', 'No tienes fallos que repasar')
     } else {
@@ -113,20 +121,24 @@ export const answer = (attemptId: string, questionId: string, value: unknown, el
     const premium = c.user.plan !== 'FREE' // vidas ilimitadas en Plus y Max
     if (at.mode === 'LESSON' && !premium && c.g.lives <= 0) fail(409, 'NO_LIVES', 'Te has quedado sin vidas')
     const q = ALL_Q[questionId]
-    const correct = isCorrect(q, value)
+    const g = grade(q, value)
+    const correct = g.correct
     await c.tx.quizAnswer.create({ data: { attemptId, questionId, correct, elapsedMs: Math.max(0, Math.min(600_000, Math.round(elapsedMs) || 0)) } })
     if (!correct && at.mode === 'LESSON' && !premium) {
       if (c.g.lives >= LIVES_MAX) c.g.livesUpdatedAt = new Date()
       c.g.lives = Math.max(0, c.g.lives - 1)
     }
     if (at.mode !== 'PLACEMENT') {
+      // Contadores de las insignias de ejercicios (cálculo, estafas, simulación, velas, «¿sube o baja?»)
+      if (correct) bump(c, `ok_${q.type}`)
+      if (q.type === 'UP_DOWN') bump(c, 'updown')
       if (!correct) await c.tx.mistake.upsert({ where: { userId_questionId: { userId: c.user.id, questionId } }, create: { userId: c.user.id, questionId }, update: {} })
       if (correct && at.mode === 'REVIEW') {
         await c.tx.mistake.deleteMany({ where: { userId: c.user.id, questionId } })
         bump(c, 'reviewed')
       }
     }
-    return { correct, correctAnswer: q.solution, explanation: q.explanation, livesLeft: at.mode === 'LESSON' && !premium ? c.g.lives : null, xpGained: correct && at.mode !== 'PLACEMENT' ? 10 : 0 }
+    return { correct, correctAnswer: q.solution, explanation: g.explanation, reveal: g.reveal, livesLeft: at.mode === 'LESSON' && !premium ? c.g.lives : null, xpGained: correct && at.mode !== 'PLACEMENT' ? 10 : 0 }
   })
 
 export const quizFinish = (attemptId: string) =>
@@ -138,12 +150,14 @@ export const quizFinish = (attemptId: string) =>
     const total = at.questionIds.length
     const ratio = total ? correct / total : 0
     const perfect = correct === total && total > 0
-    const stars = at.mode === 'REVIEW' ? 0 : perfect ? 3 : ratio >= 0.8 ? 2 : ratio >= 0.6 ? 1 : 0
+    const l = at.lessonId ? LESSON[at.lessonId] : null
+    // Se aprueba con el 60 %; el reto final de sección exige su propio mínimo (80 %)
+    const passMin = (l?.passPct ?? 60) / 100
+    const stars = at.mode === 'REVIEW' ? 0 : perfect ? 3 : ratio >= Math.max(0.8, passMin) ? 2 : ratio >= passMin ? 1 : 0
     const durationMs = Date.now() - at.startedAt.getTime()
     // Rapidez medida con la hora del servidor (no la que envía el navegador)
     const lastAnswer = at.answers.reduce((m, a) => Math.max(m, a.createdAt.getTime()), at.startedAt.getTime())
     const avgMs = (lastAnswer - at.startedAt.getTime()) / Math.max(1, at.answers.length)
-    const l = at.lessonId ? LESSON[at.lessonId] : null
     const prev = at.lessonId ? await c.tx.lessonProgress.findUnique({ where: { userId_lessonId: { userId: c.user.id, lessonId: at.lessonId } } }) : null
     const lessonXp = l && stars > 0 && !prev ? l.xp : 0
     // Repetir el mismo quiz da XP solo 2 veces al día (no se puede «granjear» XP)

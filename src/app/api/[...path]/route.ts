@@ -64,7 +64,7 @@ const routes: Route[] = [
   { method: 'GET', path: 'lessons/:id', run: async (_r, p) => { const u = await requireUser(); return learning.lesson(u, db, p[0]) } },
   { method: 'POST', path: 'lessons/:id/steps/:step/check', run: async (_r, p, b) => { await requireUser(); return learning.checkStep(p[0], p[1], z.object({ candleIndex: z.number().int() }).parse(b).candleIndex) } },
   { method: 'POST', path: 'quiz/:id/start', run: (_r, p) => learning.quizStart(p[0]) },
-  { method: 'POST', path: 'quiz/attempts/:id/answer', run: (_r, p, b) => { const x = z.object({ questionId: z.string().max(40), answer: z.union([z.number(), z.array(z.number()).max(10), z.string().max(60)]), elapsedMs: z.number() }).parse(b); return learning.answer(p[0], x.questionId, x.answer, x.elapsedMs) } },
+  { method: 'POST', path: 'quiz/attempts/:id/answer', run: (_r, p, b) => { const x = z.object({ questionId: z.string().max(40), answer: z.union([z.number(), z.array(z.number()).max(12), z.string().max(60)]), elapsedMs: z.number() }).parse(b); return learning.answer(p[0], x.questionId, x.answer, x.elapsedMs) } },
   { method: 'POST', path: 'quiz/attempts/:id/finish', run: (_r, p) => learning.quizFinish(p[0]) },
   { method: 'POST', path: 'quiz/attempts/:id/placement-finish', run: (_r, p) => learning.placementFinish(p[0]) },
   { method: 'GET', path: 'quiz/mistakes/count', run: () => profile.mistakesCount() },

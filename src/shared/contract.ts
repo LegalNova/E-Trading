@@ -120,6 +120,8 @@ export const PathUnit = z.object({
   /** Unidad paralela (se puede hacer en cualquier momento) */
   side: z.boolean(),
   unlocksFeature: Feature.optional(),
+  /** Sección (curso v2): abierta o no y, si no, qué retos finales faltan */
+  section: z.object({ id: z.string(), title: z.string(), open: z.boolean(), needs: z.array(z.string()) }).optional(),
   lessons: z.array(PathLesson),
 })
 export const CoursePath = z.object({ courseId: z.string(), title: z.string(), currentUnitId: z.string(), units: z.array(PathUnit), minutesTotal: z.number(), dailyGoalMinutes: z.number() })
@@ -137,6 +139,8 @@ export const LessonStep = z.discriminatedUnion('type', [
     companionTip: z.string().optional(),
   }),
   z.object({ id: z.string(), type: z.literal('SIMULATOR_TASK'), title: z.string(), body: z.string(), task: z.string() }),
+  /** Calculadora interactiva (deslizadores) dentro de la teoría */
+  z.object({ id: z.string(), type: z.literal('CALCULATOR'), title: z.string(), body: z.string(), calc: z.enum(['compound', 'inflation', 'rule72', 'position', 'recovery', 'fees', 'dca', 'budget', 'loan']), companionTip: z.string().optional() }),
   z.object({ id: z.string(), type: z.literal('QUIZ'), quizId: z.string(), title: z.string(), body: z.string() }),
 ])
 export const Lesson = z.object({
@@ -150,13 +154,37 @@ export const Lesson = z.object({
 export const StepCheck = z.object({ correct: z.boolean(), explanation: z.string() })
 
 // ── Quiz ─────────────────────────────────────────────────
-export const QuestionType = z.enum(['SINGLE', 'MULTIPLE', 'TRUE_FALSE', 'ORDER', 'FILL_BLANK', 'CHART_POINT', 'CHART_TREND'])
+export const QuestionType = z.enum([
+  'SINGLE', 'MULTIPLE', 'TRUE_FALSE', 'ORDER', 'FILL_BLANK', 'CHART_POINT', 'CHART_TREND',
+  // Tipos dinámicos (docs/curso-v2/03-ejercicios.md)
+  'MATCH', 'BUCKETS', 'CHART_CANDLE', 'UP_DOWN', 'PLACE_LEVEL', 'SIM_TRADE', 'SCENARIO', 'NUMBER', 'PORTFOLIO', 'SPOT', 'CHAT',
+])
+const Ohlc = z.tuple([z.number(), z.number(), z.number(), z.number()])
 export const Question = z.object({
   id: z.string(),
   type: QuestionType,
   prompt: z.string(),
   options: z.array(z.string()),
   chart: z.array(z.number()).optional(),
+  /** Velas reales (apertura, máximo, mínimo, cierre) sin el futuro: se revela al responder */
+  candles: z.array(Ohlc).optional(),
+  /** Columna derecha de «emparejar» o grupos de «clasificar» */
+  right: z.array(z.string()).optional(),
+  /** Datos públicos del ejercicio (nunca la solución): precio de entrada, saldo, unidad, mensajes de Lumi, segundos… */
+  meta: z
+    .object({
+      entry: z.number().optional(),
+      level: z.enum(['STOP', 'TAKE']).optional(),
+      cash: z.number().optional(),
+      maxRiskPct: z.number().optional(),
+      unit: z.string().optional(),
+      kinds: z.array(z.string()).optional(),
+      lines: z.array(z.string()).optional(),
+      senders: z.array(z.string()).optional(),
+      horizon: z.string().optional(),
+      timeLimit: z.number().optional(),
+    })
+    .optional(),
 })
 export const QuizStart = z.object({ attemptId: z.string(), lessonId: z.string().nullable(), isPlacement: z.boolean(), questions: z.array(Question), lives: Lives })
 export const AnswerResult = z.object({
@@ -165,6 +193,16 @@ export const AnswerResult = z.object({
   explanation: z.string(),
   livesLeft: z.number().nullable(),
   xpGained: z.number(),
+  /** Lo que pasó de verdad (ejercicios con gráfico real): velas siguientes, activo y fechas, resultado */
+  reveal: z
+    .object({
+      candles: z.array(Ohlc).optional(),
+      closes: z.array(z.number()).optional(),
+      caption: z.string().optional(),
+      outcome: z.string().optional(),
+      levels: z.object({ entry: z.number().optional(), stop: z.number().optional(), take: z.number().optional(), exit: z.number().optional() }).optional(),
+    })
+    .optional(),
 })
 export const QuizFinish = Effects.extend({
   correct: z.number(),

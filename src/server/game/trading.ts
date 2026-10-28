@@ -7,7 +7,7 @@ import { DAY_MS, addDays, dayOf } from '@/shared/time'
 import type { Order, Position, Trade, User } from '@/generated/prisma/client'
 import { db } from '../db'
 import { fxRates, loadAssets, normCurrency, toEur } from '../market/service'
-import { RISK_LESSON } from '../content/catalog'
+import { LESSON, lessonRef, RISK_LESSON } from '../content/catalog'
 import { coach } from '../tutor/coach'
 import { addXp, bump, bumpGoal, endFx, fail, lumi, markActive, notify, requireUser, RISK_PCT, START_CASH, unlockedFeatures, withCtx, type Ctx, type Tx } from './core'
 
@@ -117,7 +117,7 @@ async function previewIn(c: Ctx, book: Book, i: OrderInput): Promise<OrderPrevie
         bigLosers: positions.filter(p => p.symbol !== i.symbol && book.get(p.symbol) && book.get(p.symbol)!.eur / n(p.avgPrice) - 1 < -0.15).length,
       })
   return {
-    coach: tips,
+    coach: tips.map(t => ({ ...t, lessonId: lessonRef(t.lessonId) })),
     estPrice: fmtPrice(px, px.price), qty: fix8(qty), fee: fix2(f), total: fix2(i.side === 'BUY' ? amount + f : amount - f),
     cashAfter: fix2(cashAfter), weightPct: Math.max(0, weight),
     risk: { flagged, reason: flagged ? `${px.name} sería el ${Math.round(weight)} % de tu cartera` : null, thresholdPct: RISK_PCT, suggestedAmount: flagged ? fix2(suggested) : null },
@@ -205,7 +205,7 @@ export async function placeOrder(i: OrderInput, idempotencyKey?: string): Promis
     }
     const px = pxOf(book, i.symbol)
     const pv = await previewIn(c, book, i)
-    if (i.type !== 'MARKET' && !pv.allowedTypes.includes(i.type)) fail(422, 'FEATURE_LOCKED', 'Aprueba la lección «Dónde poner el stop loss» (gratis) o hazte Premium')
+    if (i.type !== 'MARKET' && !pv.allowedTypes.includes(i.type)) fail(422, 'FEATURE_LOCKED', `Aprueba la lección «${LESSON[RISK_LESSON]?.title ?? 'El stop loss'}» (gratis) o hazte Premium`)
     if (px.type === 'INDEX') fail(422, 'VALIDATION_ERROR', 'Los índices no se compran directamente')
     if (Number(pv.qty) <= 0) fail(422, 'VALIDATION_ERROR', 'Indica un importe')
     if (pv.error === 'MIN_AMOUNT') fail(422, 'VALIDATION_ERROR', 'El importe mínimo es 1 €')
@@ -214,8 +214,8 @@ export async function placeOrder(i: OrderInput, idempotencyKey?: string): Promis
     if (i.type !== 'MARKET' && !(Number(i.triggerPrice) > 0)) fail(422, 'VALIDATION_ERROR', 'Indica el precio de activación')
     if (i.type !== 'MARKET' && Number(i.triggerPrice) > px.price * 10) fail(422, 'VALIDATION_ERROR', 'Precio de activación fuera de rango')
     if ((i.stopLoss || i.takeProfit) && i.side !== 'BUY') fail(422, 'VALIDATION_ERROR', 'El stop loss y el take profit se añaden al comprar')
-    if (i.stopLoss && !pv.allowedTypes.includes('STOP_LOSS')) fail(422, 'FEATURE_LOCKED', 'Aprueba la lección «Dónde poner el stop loss» (gratis) o hazte Premium')
-    if (i.takeProfit && !pv.allowedTypes.includes('TAKE_PROFIT')) fail(422, 'FEATURE_LOCKED', 'Aprueba la lección «Dónde poner el stop loss» (gratis) o hazte Premium')
+    if (i.stopLoss && !pv.allowedTypes.includes('STOP_LOSS')) fail(422, 'FEATURE_LOCKED', `Aprueba la lección «${LESSON[RISK_LESSON]?.title ?? 'El stop loss'}» (gratis) o hazte Premium`)
+    if (i.takeProfit && !pv.allowedTypes.includes('TAKE_PROFIT')) fail(422, 'FEATURE_LOCKED', `Aprueba la lección «${LESSON[RISK_LESSON]?.title ?? 'El stop loss'}» (gratis) o hazte Premium`)
     if (pv.error === 'BAD_STOP') fail(422, 'VALIDATION_ERROR', 'El stop loss tiene que estar por debajo del precio de compra')
     if (pv.error === 'BAD_TAKE_PROFIT') fail(422, 'VALIDATION_ERROR', 'El take profit tiene que estar por encima del precio de compra')
     if (Number(i.takeProfit) > px.price * 10) fail(422, 'VALIDATION_ERROR', 'Take profit fuera de rango')

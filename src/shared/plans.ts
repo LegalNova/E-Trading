@@ -10,17 +10,20 @@ export const isPaid = (p: PlanId) => p !== 'FREE'
 
 const FULL_UNITS: Record<PlanId, string[]> = { FREE: ['u1', 'u2', 'u3'], PLUS: ['u1', 'u2', 'u3', 'u4', 'u5'], PREMIUM: [] }
 const FIRST_LESSONS: Record<PlanId, number> = { FREE: 3, PLUS: 5, PREMIUM: Infinity }
+/** Siempre gratis: la clase del stop loss, que desbloquea las órdenes límite, stop y take profit del Mercado (curso v2) */
+const ALWAYS_FREE = new Set(['u6l4'])
 
 /** ¿Puede este plan abrir la lección? `index` es la posición dentro de la unidad (0, 1, 2…); los repasos piden la unidad entera. */
-export function canOpen(plan: PlanId, unitId: string, index: number, isReview: boolean): boolean {
+export function canOpen(plan: PlanId, unitId: string, index: number, isReview: boolean, lessonId?: string): boolean {
   if (plan === 'PREMIUM') return true
+  if (lessonId && ALWAYS_FREE.has(lessonId)) return true
   if (FULL_UNITS[plan].includes(unitId)) return true
   return !isReview && index < FIRST_LESSONS[plan]
 }
 
 /** Plan mínimo que abre la lección (para el candado y el texto «Incluido en Plus») */
-export function minPlan(unitId: string, index: number, isReview: boolean): PlanId {
-  return canOpen('FREE', unitId, index, isReview) ? 'FREE' : canOpen('PLUS', unitId, index, isReview) ? 'PLUS' : 'PREMIUM'
+export function minPlan(unitId: string, index: number, isReview: boolean, lessonId?: string): PlanId {
+  return canOpen('FREE', unitId, index, isReview, lessonId) ? 'FREE' : canOpen('PLUS', unitId, index, isReview, lessonId) ? 'PLUS' : 'PREMIUM'
 }
 
 /** Lumi: preguntas al día y modos por plan */
