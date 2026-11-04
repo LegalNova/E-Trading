@@ -9,16 +9,43 @@
    "title": "Preu i valor no són el mateix",
    "steps": [
     {
-     "title": "El que pagues i el que obtens",
-     "body": "«El preu és el que pagues; el valor és el que obtens» (Warren Buffett).\n\n• L'**anàlisi fonamental** estudia el negoci (vendes, beneficis, deute, competència) per estimar quant **val** i comparar-ho amb el seu **preu**. Respon a *què* comprar.\n• L'**anàlisi tècnica** estudia el gràfic i intenta respondre a *quan*."
+     "texts": [
+      "El que pagues i el que obtens",
+      "Una empresa guanya **2 €** per acció l'any i tu decideixes quant pagues per ella. Quants anys de beneficis trigues a recuperar el preu?",
+      "Pagues 40 € per l'acció i els seus beneficis creixen un 5 % l'any. En quants anys els beneficis sumen el que vas pagar?",
+      "En uns 5 anys",
+      "En uns 15 anys",
+      "En uns 40 anys",
+      "Sumant els seus beneficis, que creixen un 5 % l'any, trigues **15 anys** a reunir 40 €.",
+      "Sense tocar el creixement, busca el preu més alt amb què la recuperes en 10 anys.",
+      "A **25 €** la recuperes en 10 anys; a 80 €, en 23. **El preu és el que pagues i el valor, el que obtens**: la mateixa empresa pot ser una bona compra a un preu i una mala compra a un altre.",
+      "Pagues tant que trigaries dècades a recuperar-ho.",
+      "Créixer així molts anys seguits? Molt poques empreses ho aconsegueixen.",
+      "Això sí que és un preu raonable pel que guanya!",
+      "Mou el preu i mira quants anys trigues"
+     ]
     },
     {
-     "title": "El senyor Mercat",
-     "body": "Benjamin Graham s'imaginava el mercat com un soci d'humor canviant que cada dia t'ofereix comprar-te o vendre't la seva part a un preu diferent. Alguns dies, eufòric, demana una bogeria; d'altres, deprimit, te la regala.\n\nNo li has de fer cas: el seu preu és una oferta, no una ordre."
+     "texts": [
+      "El senyor Mercat",
+      "Senyor Mercat",
+      "Benjamin Graham imaginava el mercat com un soci d'humor canviant que cada dia t'ofereix un preu.",
+      "Avui estic eufòric! Et compro la teva part per 40 €. Demà, qui sap.",
+      "Una setmana després, sense que el negoci hagi canviat gens…",
+      "Tot va fatal. Et venc la meva part per 12 €. Corre!",
+      "Calcules que l'empresa val uns 20 € per acció. Què fas?",
+      "Vendre: si ell està espantat, alguna cosa passarà",
+      "Vendries barat just quan el negoci no ha canviat.",
+      "Comprovar que el negoci segueix igual i, si és així, comprar",
+      "Això: el preu ha baixat, el valor no. El seu preu és una oferta, no una ordre.",
+      "Comprar amb tots els teus diners sense revisar res",
+      "Bon instint, però revisa la teva estimació i no ho posis tot.",
+      "A 12 €, una cosa que val 20 €: un **40 %** de marge de seguretat."
+     ]
     },
     {
      "title": "Marge de seguretat",
-     "body": "Si estimes que una acció val 20 € i només la compres per sota de 15 €, tens un **25 % de marge de seguretat**: un coixí per si t'has equivocat en l'estimació.",
+     "body": "«El preu és el que pagues; el valor és el que obtens» (Warren Buffett).\n\nL'**anàlisi fonamental** estudia el negoci (vendes, beneficis, deute, competència) per estimar quant **val**: respon a *què* comprar. La **tècnica** estudia el gràfic i intenta respondre a *quan*.\n\nSi estimes que una acció val 20 € i només la compres per sota de 15 €, tens un **25 % de marge de seguretat**: un coixí per si t'has equivocat en l'estimació.",
      "key": "Una empresa excel·lent comprada massa cara pot ser una mala inversió.",
      "tip": "El valor és una estimació; per això necessites coixí."
     }
@@ -28,16 +55,53 @@
    "title": "El compte de resultats",
    "steps": [
     {
-     "title": "De les vendes al benefici",
-     "body": "Panadería Global (empresa inventada, milions d'€):\n\n• **Vendes:** 1.000\n• − Cost de vendes 600 → **marge brut 400** (40 %)\n• − Despeses operatives 200 → **EBITDA 200**\n• − Amortitzacions 50 → **EBIT 150** (15 %)\n• − Interessos 20 → abans d'impostos 130\n• − Impostos (25 %) 32,5 → **benefici net 97,5**"
+     "texts": [
+      "De les vendes al benefici",
+      "Panadería Global és una empresa inventada (xifres en **milions d'euros**). Cada partida és un ingrés, una despesa o cap de les dues coses?",
+      "Benefici abans d'impostos",
+      "Ingrés",
+      "Despesa",
+      "Ni una cosa ni l'altra",
+      "Vendes de pa i brioixeria",
+      "És el primer del compte: les vendes.",
+      "Farina, mantega i altres (cost de vendes)",
+      "En restar-ho queda el **marge brut**: 400, un 40 %.",
+      "Sous, lloguers i llum (despeses operatives)",
+      "En restar-los queda l'**EBITDA**: 200.",
+      "Un préstec nou del banc",
+      "Demanar prestat no és guanyar: és deute, i va al balanç.",
+      "Desgast dels forns (amortització)",
+      "No és un pagament d'aquest any, però els forns es desgasten. Queda l'**EBIT**: 150, un 15 %.",
+      "Interessos del deute",
+      "Després de pagar-los queden 130 abans d'impostos.",
+      "Col·loca les sis partides.",
+      "Es van restant costos: marge brut, EBITDA, EBIT i **130 abans d'impostos**. Després de pagar un 25 % queden **97,5 M€** de benefici net: amb 100 milions d'accions, un BPA de 0,975 €.",
+      "Pista: aquests diners s'han guanyat o només s'han demanat?",
+      "Molt bé! Mira com baixa la xifra de sota.",
+      "Ingrés, despesa o cap de les dues? Col·loca cada partida"
+     ]
+    },
+    {
+     "texts": [
+      "Més vendes, més benefici?",
+      "Carla",
+      "La meva empresa preferida ha venut molt més aquest any. Compro!",
+      "Però els seus costos han pujat més de pressa que les vendes.",
+      "Què mires abans de comprar?",
+      "Res: si ven més, guanya més",
+      "No sempre: si els costos pugen més, el **marge** s'encongeix.",
+      "Els marges i com evolucionen",
+      "Això! La **tendència** dels marges importa més que la xifra d'un any.",
+      "Només el benefici d'aquest any",
+      "Millor, però un any solt enganya. Mira'n uns quants.",
+      "Un cas real: Inditex va vendre 38.632 M€ en el seu exercici 2024.",
+      "Marge brut del 57,8 % i 5.866 M€ de benefici: més de 15 € per cada 100.",
+      "És una dada per practicar, no una recomanació."
+     ]
     },
     {
      "title": "Marges i BPA",
-     "body": "• **Marge brut:** alt (60-80 %) en programari o luxe; baix (20-30 %) en supermercats.\n• **Marge operatiu** (EBIT ÷ vendes): eficiència del negoci.\n• **Marge net:** el que queda per a l'accionista.\n\nAmb 100 milions d'accions, el **BPA** = 97,5 ÷ 100 = **0,975 €**. La **tendència** dels marges importa més que la xifra d'un any."
-    },
-    {
-     "title": "Un cas real",
-     "body": "Inditex va tancar el seu exercici 2024 amb **38.632 M€** de vendes, un **marge brut del 57,8 %** i **5.866 M€** de benefici net: de cada 100 € venuts, una mica més de 15 € van ser benefici. És una dada per practicar, no una recomanació.",
+     "body": "• **Marge brut:** alt (60-80 %) en programari o luxe; baix (20-30 %) en supermercats.\n• **Marge operatiu** (EBIT ÷ vendes): l'eficiència del negoci.\n• **Marge net:** el que queda per a l'accionista.\n• **BPA:** benefici net ÷ nombre d'accions.",
      "key": "Les vendes són la vanitat, el benefici és el seny i la caixa és la realitat."
     }
    ]
@@ -46,18 +110,52 @@
    "title": "El balanç",
    "steps": [
     {
-     "title": "El que té i com ho paga",
-     "body": "**Actiu = passiu + patrimoni net.**\n\n• **Actiu:** el que té (caixa, existències, fàbriques, marques).\n• **Passiu:** el que deu (bancs, bons, proveïdors).\n• **Patrimoni net:** el que és dels accionistes."
+     "texts": [
+      "El que té i el que deu",
+      "El balanç de Panadería Global, en **milions d'euros**. Col·loca cada partida: és una cosa que **té** o una cosa que **deu**?",
+      "Patrimoni net",
+      "El que té (actiu)",
+      "El que deu (passiu)",
+      "Caixa al banc",
+      "Els diners són el més líquid que té.",
+      "Forns i botigues",
+      "Són seus i li serveixen per produir i vendre.",
+      "Préstecs de bancs i bons",
+      "És el seu deute financer: s'ha de tornar amb interessos.",
+      "El que li deuen els clients i la farina del magatzem",
+      "Cobraments pendents i existències: actius que aviat seran diners.",
+      "Factures pendents amb proveïdors",
+      "El que encara no ha pagat també és deute.",
+      "La marca «Panadería Global»",
+      "Una marca reconeguda també és un actiu.",
+      "Col·loca les sis partides i descobreix el patrimoni net.",
+      "**Actiu = passiu + patrimoni net**: 1.000 = 550 + 450. Amb 100 milions d'accions, el valor comptable és de **4,5 €** per acció.",
+      "Pista: el que encara no has pagat també és deute.",
+      "Vas bé! El de sota és el que queda per als accionistes.",
+      "Ho té o ho deu? Col·loca cada partida"
+     ]
     },
     {
-     "title": "Panadería Global (M€)",
-     "body": "**Actiu (1.000):** caixa 80 · clients i existències 170 · forns i botigues 650 · marques 100.\n\n**Passiu i patrimoni (1.000):** deute financer 400 · proveïdors 150 · **patrimoni net 450**.\n\n• Valor comptable per acció: 450 ÷ 100 = **4,5 €**.\n• Liquiditat: actius a curt termini (80 + 170 = 250) davant de deutes a curt termini (150): els cobreix."
+     "texts": [
+      "Dues fleques i una crisi",
+      "Sofía",
+      "Dues fleques guanyen el mateix. L'A deu 50 M€ i té 300 M€ de patrimoni. La B deu 400 M€ i en té 50 M€.",
+      "Si guanyen el mateix, m'és igual quina compro, oi?",
+      "Arriba una crisi i les vendes de totes dues cauen un 30 %.",
+      "Quina pateix més?",
+      "L'A",
+      "Amb tan poc deute, l'A pot aguantar uns quants anys dolents.",
+      "La B: els interessos continuen allà encara que vengui menys",
+      "Exacte: el deute no espera que tornin els bons temps.",
+      "Totes dues igual: guanyaven el mateix",
+      "En els anys bons, sí. En els dolents, el deute marca la diferència.",
+      "El deute no enfonsa una empresa en els anys bons, sinó en els dolents."
+     ]
     },
     {
      "title": "Foto, no pel·lícula",
-     "body": "El balanç és una foto en un dia concret; el compte de resultats és la pel·lícula de l'any. Cal mirar-los tots dos.",
-     "key": "El que té l'empresa es finança amb deute o amb diners dels accionistes.",
-     "tip": "El deute no enfonsa una empresa en els anys bons: l'enfonsa en els dolents."
+     "body": "El balanç és una **foto** en un dia concret; el compte de resultats és la **pel·lícula** de l'any. Cal mirar-los tots dos.\n\nLiquiditat de Panadería Global: actius a curt termini (80 + 170 = **250**) davant de deutes a curt termini (**150**): els cobreix.",
+     "key": "El que té l'empresa es finança amb deute o amb diners dels accionistes."
     }
    ]
   },
@@ -65,18 +163,51 @@
    "title": "El flux de caixa",
    "steps": [
     {
-     "title": "Les tres parts",
-     "body": "1. **Operatiu:** els diners que genera el negoci en el dia a dia.\n2. **D'inversió:** forns, botigues, compres d'empreses (*capex*).\n3. **De finançament:** deute que demana o retorna, dividends i recompres d'accions."
+     "texts": [
+      "Benefici no és caixa",
+      "Un any d'Obrador Luna, una altra empresa inventada (en **milions d'euros**): ha venut 100, però no ho ha cobrat tot. Què mou de debò la seva caixa?",
+      "Caixa de l'any",
+      "Entra caixa",
+      "Surt caixa",
+      "No mou caixa",
+      "Vendes ja cobrades",
+      "Diners que ja són al banc.",
+      "Vendes que cobrarà l'any que ve",
+      "Compten en el benefici d'aquest any, però els diners encara no han arribat.",
+      "Sous, farina i lloguer, ja pagats",
+      "Despesa i pagament alhora: surt caixa.",
+      "Amortització dels forns",
+      "Resta en el benefici, però no és un pagament.",
+      "Compra d'un forn nou",
+      "És inversió (*capex*): surt caixa, encara que no sigui una despesa de l'any.",
+      "Col·loca les cinc partides.",
+      "El seu compte de resultats diu **+10** de benefici (100 − 80 − 10), però la seva caixa, **−30**. El benefici és una opinió comptable; **la caixa és un fet**.",
+      "Pista: han entrat o han sortit diners del banc aquest any?",
+      "Ho veus? Vendre no és el mateix que cobrar.",
+      "Entra caixa, en surt o no es mou? Col·loca cada partida"
+     ]
     },
     {
-     "title": "Flux de caixa lliure",
-     "body": "**FCF = flux operatiu − capex.**\n\nPanadería Global genera 160 M€ i n'inverteix 60: **FCF = 100 M€**, 1 € per acció. És el que pot repartir, fer servir per recomprar accions o reduir deute sense perjudicar el negoci."
+     "texts": [
+      "Una empresa que creix… sense cobrar",
+      "Marina",
+      "Aquesta empresa creix un 30 % en vendes i en beneficis. És una màquina!",
+      "Però el que li deuen els clients s'ha triplicat, i el seu flux de caixa lliure fa tres anys que és negatiu.",
+      "Què fas?",
+      "Compro: creix moltíssim",
+      "Créixer en vendes sense cobrar-les és justament el senyal d'alarma.",
+      "Investigo per què no cobra abans de comprar",
+      "Bé. Gowex i Wirecard tenien xifres brillants que no arribaven a la caixa.",
+      "Compro poc, per si de cas",
+      "Si les xifres no són reals, aquest poc també es perd.",
+      "Enron, Wirecard i Gowex mostraven beneficis que no es convertien en caixa.",
+      "Si els beneficis no arriben mai a la caixa, desconfia dels beneficis."
+     ]
     },
     {
-     "title": "Benefici no és caixa",
-     "body": "El benefici compta vendes que encara no has cobrat i resta despeses que no són pagaments (com les amortitzacions). Per això es poden separar. Enron, Wirecard o Gowex mostraven beneficis que no es convertien en caixa.",
-     "key": "El benefici és una opinió comptable; la caixa és un fet.",
-     "tip": "Si els beneficis no arriben mai a la caixa, desconfia dels beneficis."
+     "title": "Les tres parts de la caixa",
+     "body": "1. **Operativa:** els diners que genera el negoci en el dia a dia.\n2. **D'inversió:** forns, botigues, compres d'empreses (*capex*).\n3. **De finançament:** deute que demana o retorna, dividends i recompres d'accions.\n\n**FCF = flux operatiu − capex.** Panadería Global genera 160 M€ i n'inverteix 60 M€: **FCF de 100 M€**, 1 € per acció. És el que pot repartir, fer servir per recomprar accions o reduir deute sense perjudicar el negoci.",
+     "key": "El benefici és una opinió comptable; la caixa és un fet."
     }
    ]
   },
@@ -84,16 +215,50 @@
    "title": "El deute d'una empresa",
    "steps": [
     {
-     "title": "Deute net",
-     "body": "**Deute net = deute financer − caixa.**\n\nPanadería Global: 400 − 80 = **320 M€**.\n\nSi la caixa supera el deute, l'empresa té **caixa neta**. Inditex, per exemple, va tancar el seu exercici 2024 amb **11.495 M€ de caixa neta**."
+     "texts": [
+      "El deute net",
+      "Per saber quant deu de debò Panadería Global, al seu deute financer se li resta la caixa. Xifres en **milions d'euros**.",
+      "Deute net",
+      "Deute financer",
+      "Caixa",
+      "No compta",
+      "Préstec bancari",
+      "Deute amb interessos: compta.",
+      "Diners al banc",
+      "Podria fer-los servir per tornar deute: es resta.",
+      "Factures pendents amb proveïdors",
+      "És deute comercial, del dia a dia: el deute net només mira el financer.",
+      "Bons emesos",
+      "També és deute financer: s'ha de tornar amb interessos.",
+      "Forns i botigues",
+      "És el que té, no és deute ni caixa.",
+      "Col·loca les cinc partides i calcula el seu deute net.",
+      "**Deute net = deute financer − caixa**: 400 − 80 = **320 M€**. Amb un EBITDA de 200, són **1,6 vegades**: còmode, per sota de 2.",
+      "Pista: només compta el deute que paga interessos.",
+      "Molt bé! La caixa resta: la podria fer servir per pagar.",
+      "Deute, caixa o no compta? Col·loca cada partida"
+     ]
+    },
+    {
+     "texts": [
+      "Arriba la crisi",
+      "Jorge",
+      "La meva empresa deu 600 M€ nets i guanya 200 M€ d'EBITDA. Tres vegades: acceptable.",
+      "Arriba una crisi. L'EBITDA cau a 120 M€; el deute es manté igual.",
+      "Què li passa a la seva ràtio deute net/EBITDA?",
+      "Es queda en 3: no ha demanat més",
+      "El deute no canvia, però l'EBITDA sí: 600 ÷ 120 = **5 vegades**.",
+      "Puja a 5: d'acceptable a preocupant",
+      "Això! Sense demanar ni un euro més, el deute pesa molt més.",
+      "Baixa, perquè guanya menys",
+      "Al revés: amb menys EBITDA, trigaria més anys a pagar-lo.",
+      "I els interessos s'han de pagar igualment…",
+      "Per això el deute enfonsa les empreses en els anys dolents."
+     ]
     },
     {
      "title": "Quant és massa?",
-     "body": "**Deute net / EBITDA:** quants anys d'EBITDA caldrien per pagar-lo.\n\n• Panadería Global: 320 ÷ 200 = **1,6 vegades**.\n• Menys de 2: còmode. Més de 4: preocupant.\n\nDepèn del sector: elèctriques, autopistes i immobiliàries suporten més deute perquè els seus ingressos són molt estables."
-    },
-    {
-     "title": "La cobertura d'interessos",
-     "body": "**EBIT ÷ interessos** diu quantes vegades cobreix el negoci el que paga pel seu deute. Panadería Global: 150 ÷ 20 = **7,5 vegades**. Per sota de 2-3, qualsevol entrebanc estreny.",
+     "body": "**Deute net / EBITDA:** menys de 2, còmode; més de 4, preocupant. Depèn del sector: elèctriques, autopistes i immobiliàries suporten més deute perquè els seus ingressos són molt estables.\n\n**Cobertura d'interessos** (EBIT ÷ interessos): Panadería Global, 150 ÷ 20 = **7,5 vegades**. Per sota de 2-3, qualsevol entrebanc ofega.\n\nSi la caixa supera el deute, hi ha **caixa neta**: Inditex va tancar el seu exercici 2024 amb 11.495 M€.",
      "key": "El deute multiplica: els anys bons semblen millors i els dolents, molt pitjors."
     }
    ]
@@ -102,16 +267,50 @@
    "title": "Resultats trimestrals i expectatives",
    "steps": [
     {
-     "title": "La temporada de resultats",
-     "body": "Quatre vegades l'any, les cotitzades publiquen els seus comptes. Abans, els analistes publiquen les seves **previsions**: la mitjana és el **consens** (vendes, BPA i el que esperen per al futur).\n\nEl mercat no compara amb l'any passat: compara amb **el que esperava**."
+     "texts": [
+      "Un rècord que no va agradar",
+      "Nora",
+      "12 de març del 2025. Inditex presenta resultats.",
+      "Benefici rècord: 5.866 M€, un 9 % més! Segur que l'acció puja.",
+      "Què creus que va fer l'acció aquell dia?",
+      "Va pujar amb força: és un rècord",
+      "Va caure més d'un **7 %**: era el seu creixement més baix des del 2020.",
+      "Va caure: el mercat esperava més",
+      "Això! Va caure més d'un 7 %: al mercat li va saber a poc.",
+      "No es va moure",
+      "Es va moure, i molt: més d'un 7 % a la baixa.",
+      "El mercat no compara amb l'any passat: compara amb **el que esperava**.",
+      "Aquesta mitjana del que esperen els analistes s'anomena **consens**."
+     ]
     },
     {
-     "title": "Bo no és suficient",
-     "body": "El **12 de març del 2025**, Inditex va presentar un **benefici rècord** de 5.866 M€ (+9 %). Aquell dia l'acció va caure més d'un **7 %**: era el seu creixement més baix des del 2020 i al mercat li va saber a poc.\n\nI al revés: una empresa amb pèrdues pot pujar si perd menys del que s'esperava."
+     "texts": [
+      "Sorpresa o decepció",
+      "Dia de resultats: el que importa és la **diferència amb el que s'esperava**. Què sol fer l'acció en cada cas?",
+      "Sol pujar",
+      "Sol baixar",
+      "BPA d'1,10 € quan el consens esperava 1,20 €",
+      "Es compara amb el que s'esperava, no amb l'any passat.",
+      "Perd diners, però molts menys del que s'esperava",
+      "Una sorpresa positiva es pot celebrar encara que hi hagi pèrdues.",
+      "Benefici rècord, però per sota del consens",
+      "Com Inditex el 2025: el rècord ja era al preu.",
+      "Millora les previsions per a la resta de l'any",
+      "El que ha de venir sol pesar més que el trimestre tancat.",
+      "Compleix en el trimestre, però rebaixa la seva guidance",
+      "Rebaixar el que preveu per als pròxims trimestres sol pesar molt.",
+      "Marges millors del que s'esperava",
+      "Tot el que millora el que s'espera del futur empeny a l'alça.",
+      "Classifica els sis resultats.",
+      "El preu reacciona a la **diferència entre el que passa i el que s'esperava**. I el que l'empresa preveu, la seva *guidance*, sol pesar més que el trimestre que acaba de tancar.",
+      "Pista: no miris si és bo, sinó si és millor del que s'esperava.",
+      "Molt bé! El que s'espera ja és al preu.",
+      "Puja o baixa? Classifica cada resultat"
+     ]
     },
     {
-     "title": "El que ve pesa més",
-     "body": "El que l'empresa preveu per als pròxims trimestres (la seva *guidance*) sol moure més el preu que el trimestre que acaba de tancar. I són dies de **buits de preu**: un stop es pot executar molt per sota del que estava previst.",
+     "title": "Dies de buits",
+     "body": "Quatre vegades l'any les cotitzades publiquen els seus comptes. Abans, els analistes publiquen les seves previsions (vendes, BPA i el que esperen per al futur): la seva mitjana és el **consens**.\n\nSón dies de **buits de preu**: l'acció pot obrir molt lluny del tancament anterior, i un stop salta al primer preu disponible, potser molt per sota del que estava previst.",
      "key": "A borsa, una bona notícia que ja s'esperava no és notícia."
     }
    ]
@@ -120,16 +319,50 @@
    "title": "Llegir un informe anual sense perdre't",
    "steps": [
     {
+     "texts": [
+      "Senyals en un informe anual",
+      "Un informe anual pot tenir 300 pàgines. Aquestes coses es veuen ràpid: són **senyal d'alarma** o **bon senyal**?",
+      "Senyal d'alarma",
+      "Bon senyal",
+      "L'auditor dona la seva opinió amb excepcions",
+      "L'auditor no està tranquil amb alguna cosa dels comptes.",
+      "El flux de caixa lliure acompanya el benefici",
+      "Els beneficis es converteixen en diners de debò.",
+      "Tres auditors diferents en quatre anys",
+      "Canviar tant d'auditor pot amagar desacords.",
+      "Informe de l'auditor sense excepcions",
+      "Diu que els comptes reflecteixen la imatge fidel.",
+      "Benefici «ajustat» molt diferent de l'oficial, any rere any",
+      "Si cada any hi ha «extraordinaris», no són extraordinaris.",
+      "Vendes i benefici que creixen cinc anys seguits",
+      "Una tendència llarga diu més que una foto solta.",
+      "Classifica els sis senyals.",
+      "L'**auditor** diu si els comptes són fiables i la **caixa**, si el benefici és real. I compara com a mínim 5 anys: una foto solta enganya.",
+      "Pista: els números quadren, o algú els està maquillant?",
+      "Molt bé! Ja llegeixes un informe com un analista.",
+      "Alarma o bon senyal? Classifica cadascun"
+     ]
+    },
+    {
+     "texts": [
+      "La carta del CEO",
+      "CEO",
+      "Any històric! Creixement excepcional i un futur brillant.",
+      "A les notes: el deute s'ha duplicat i el benefici «ajustat» fa tres anys que treu costos «extraordinaris».",
+      "A què dones més pes?",
+      "A la carta: ningú no coneix millor l'empresa",
+      "La carta és el relat; les notes són els fets. I no quadren.",
+      "A les notes i a la caixa",
+      "Bé: els números de les notes no porten adjectius.",
+      "A totes dues per igual",
+      "Quan no quadren, manen els fets: notes i caixa.",
+      "Compara sempre el benefici ajustat amb l'oficial i amb la caixa.",
+      "L'entusiasme no paga el deute."
+     ]
+    },
+    {
      "title": "On és cada cosa",
-     "body": "Un informe anual pot tenir 300 pàgines. El que és important:\n\n• **Carta del president o del CEO:** el relat. Llegeix-la amb esperit crític.\n• **Estats financers:** compte de resultats, balanç i fluxos de caixa.\n• **Notes:** el detall (deute, litigis, ajustos).\n• **Informe de l'auditor:** que no tingui «excepcions».\n• **Riscos:** el que l'empresa reconeix que pot sortir malament."
-    },
-    {
-     "title": "On trobar-lo",
-     "body": "• Web de **relació amb inversors** de cada empresa.\n• **CNMV:** cotitzades espanyoles (informació financera i altra informació rellevant).\n• **SEC EDGAR:** empreses dels EUA (**10-K** anual i **10-Q** trimestral).\n\nCompara almenys **5 anys**: una foto solta enganya."
-    },
-    {
-     "title": "Compte amb l'«ajustat»",
-     "body": "Moltes empreses destaquen un **benefici ajustat** que treu despeses «extraordinàries». Si cada any hi ha extraordinaris, no ho són. Compara sempre amb el benefici oficial i amb la caixa.",
+     "body": "El que és important: **estats financers** (resultats, balanç i fluxos de caixa), **notes** (deute, litigis, ajustos), **informe de l'auditor** (que no tingui «excepcions»), **riscos** i la carta del president o del CEO, que és el relat.\n\nOn: el web de **relació amb inversors**, la **CNMV** (cotitzades espanyoles) i **SEC EDGAR** (EUA: **10-K** anual i **10-Q** trimestral). Compara com a mínim **5 anys**.",
      "key": "Llegeix primer els números i les notes; el relat, després."
     }
    ]
@@ -161,28 +394,6 @@
    "explanation": "50 × (1 − 0,30) = 35 €.",
    "unit": "€"
   },
-  "u16l1-4": {
-   "prompt": "Una gran empresa és una bona inversió a qualsevol preu.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Qui va comprar Microsoft en el seu màxim del 2000 va trigar uns 16 anys a recuperar aquell preu, tot i que el negoci va continuar sent excel·lent."
-  },
-  "u16l1-5": {
-   "prompt": "El senyor Mercat està deprimit: una empresa que estimes en 20 € per acció cotitza a 12 € després d'una caiguda general de la borsa, sense que el seu negoci hagi canviat. Què faria un inversor de valor?",
-   "options": [
-    "Comprovar que el negoci continua igual i, si és així, veure que el preu és molt per sota del valor",
-    "Vendre perquè baixa",
-    "Comprar amb tots els seus diners sense revisar res"
-   ],
-   "explanation": "Graham aprofitava els canvis d'humor del mercat sense deixar-se arrossegar per ells.",
-   "feedback": [
-    "Això: el preu ha baixat, el valor no. I tot i així, revisa bé la teva estimació.",
-    "Vendries just quan t'ofereixen una ganga, sense que el negoci hagi canviat.",
-    "El marge de seguretat no substitueix revisar la teva estimació ni diversificar."
-   ]
-  },
   "u16l1-6": {
    "prompt": "La diferència entre el valor estimat i el preu que pagues s'anomena marge de ____.",
    "options": [
@@ -208,14 +419,6 @@
     "Valor"
    ]
   },
-  "u16l1-8": {
-   "prompt": "El preu d'una acció i el seu valor poden estar molt separats durant anys.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "El preu el fixa l'estat d'ànim del mercat; el valor, el que generarà el negoci."
-  },
   "u16l1-9": {
    "prompt": "Què li contestes a la Lumi?",
    "options": [
@@ -233,15 +436,6 @@
     "Aquesta acció ha caigut un 60 %, ja no pot baixar més!",
     "En compraré 🤑"
    ]
-  },
-  "u16l1-10": {
-   "prompt": "Segons Graham, com s'ha de tractar el «senyor Mercat»?",
-   "options": [
-    "Fer sempre el que diu",
-    "Aprofitar els seus canvis d'humor sense obeir-lo",
-    "Ignorar sempre els preus"
-   ],
-   "explanation": "Els seus preus són una oferta que pots acceptar o no."
   },
   "u16l2-1": {
    "prompt": "Ordena el compte de resultats de dalt a baix.",
@@ -293,24 +487,6 @@
    ],
    "explanation": "Mesura quant benefici operatiu deixa cada euro venut."
   },
-  "u16l2-7": {
-   "prompt": "Què sol indicar un marge brut que puja any rere any?",
-   "options": [
-    "Poder per fixar preus",
-    "Que farà fallida",
-    "Problemes comptables segurs"
-   ],
-   "explanation": "Pot apujar preus o abaratir costos millor que els seus rivals."
-  },
-  "u16l2-8": {
-   "prompt": "Ràpid: quin negoci sol tenir el marge brut més baix?",
-   "options": [
-    "Un supermercat",
-    "Una empresa de programari",
-    "Una marca de luxe"
-   ],
-   "explanation": "Supermercats 20-30 %; programari o luxe 60-80 %."
-  },
   "u16l2-9": {
    "prompt": "Aquest és el preu real d'una acció durant dos mesos. Quina tendència té? (Apple · tancaments cada 3 sessions · març–maig del 2026)",
    "options": [
@@ -319,14 +495,6 @@
     "Lateral"
    ],
    "explanation": "A curt termini el preu el mouen les expectatives; a llarg termini sol seguir els beneficis. El compte de resultats et diu si hi ha beneficis darrere de la pujada."
-  },
-  "u16l2-10": {
-   "prompt": "Una empresa pot vendre més cada any i guanyar menys.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Si els costos pugen més que les vendes, els marges s'encongeixen. Per això es llegeix tot el compte, no només les vendes."
   },
   "u16l3-1": {
    "prompt": "Relaciona cada concepte amb la seva definició.",
@@ -343,33 +511,6 @@
     "Patrimoni net ÷ nombre d'accions",
     "El que l'empresa té"
    ]
-  },
-  "u16l3-2": {
-   "prompt": "On va cada partida?",
-   "options": [
-    "Préstec bancari",
-    "Existències de farina",
-    "Factures pendents amb proveïdors",
-    "Caixa al banc",
-    "Forns i botigues",
-    "Beneficis no repartits"
-   ],
-   "explanation": "El que té, el que deu i el que és dels socis.",
-   "right": [
-    "Actiu",
-    "Passiu",
-    "Patrimoni net"
-   ]
-  },
-  "u16l3-3": {
-   "prompt": "Actiu = passiu + ____.",
-   "options": [
-    "EBITDA",
-    "dividends",
-    "vendes",
-    "patrimoni net"
-   ],
-   "explanation": "Tot el que té l'empresa s'ha pagat amb deute o amb diners dels accionistes."
   },
   "u16l3-4": {
    "prompt": "Una empresa té un actiu de 800 M€ i un passiu de 500 M€. Quin és el seu patrimoni net?",
@@ -402,14 +543,6 @@
    ],
    "explanation": "El que venç durant l'any supera el que pot convertir en diners durant l'any."
   },
-  "u16l3-8": {
-   "prompt": "El balanç mostra el que ha guanyat l'empresa durant l'any.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Això és el compte de resultats. El balanç és una foto del que té i deu en un dia concret."
-  },
   "u16l3-9": {
    "prompt": "Si el patrimoni net és negatiu, l'empresa deu més del que té en llibres.",
    "options": [
@@ -417,20 +550,6 @@
     "Fals"
    ],
    "explanation": "És un senyal seriós, tot i que de vegades es deu a grans recompres d'accions en empreses molt rendibles. Cal mirar per què."
-  },
-  "u16l3-10": {
-   "prompt": "En Pablo compara dues fleques amb el mateix benefici. L'A té 50 M€ de deute i 300 M€ de patrimoni; la B, 400 M€ de deute i 50 M€ de patrimoni. Arriba una crisi i les vendes cauen un 30 %. Quina pateix més?",
-   "options": [
-    "L'A",
-    "Igual, tenen el mateix benefici",
-    "La B: els interessos hi continuen sent encara que vengui menys"
-   ],
-   "explanation": "El deute no enfonsa una empresa en els anys bons: l'enfonsa en els dolents.",
-   "feedback": [
-    "Amb poc deute, l'A pot aguantar diversos anys dolents.",
-    "En els anys bons sí; en els dolents, el deute marca la diferència.",
-    "Exacte: el deute no espera que tornin els bons temps."
-   ]
   },
   "u16l4-1": {
    "prompt": "Flux operatiu de 80 M€ i capex de 30 M€. Quin és el flux de caixa lliure?",
@@ -443,12 +562,6 @@
    "options": [],
    "explanation": "150 ÷ 60 = 2,50 € per acció.",
    "unit": "€"
-  },
-  "u16l4-3": {
-   "prompt": "Una empresa factura 100 M€ aquest any, però els seus clients només li han pagat 70 M€; la resta la cobrarà l'any vinent. Les seves despeses, totes pagades, són 80 M€. Quanta caixa ha generat la seva activitat?",
-   "options": [],
-   "explanation": "70 − 80 = −10 M€. El seu compte de resultats pot mostrar 20 M€ de benefici (100 − 80), però la caixa ha baixat.",
-   "unit": "M€"
   },
   "u16l4-4": {
    "prompt": "A quina part del flux de caixa pertany?",
@@ -476,28 +589,6 @@
    ],
    "explanation": "Els beneficis no s'estan convertint en diners reals."
   },
-  "u16l4-6": {
-   "prompt": "El flux de caixa lliure és més fàcil de maquillar que el benefici.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "És al revés: la caixa és un fet; el benefici depèn de criteris comptables."
-  },
-  "u16l4-7": {
-   "prompt": "La Laura analitza una empresa que creix un 30 % en vendes i beneficis. Però el que li deuen els clients s'ha triplicat i el seu FCF fa tres anys que és negatiu. Què fa?",
-   "options": [
-    "Compra: creix moltíssim",
-    "Investiga per què no cobra i no compra fins que ho entengui",
-    "Ignora la caixa: el que importa és el benefici"
-   ],
-   "explanation": "Quan benefici i caixa se separen durant anys, alguna cosa no quadra.",
-   "feedback": [
-    "Créixer en vendes sense cobrar-les és just el senyal d'alarma.",
-    "Bé: Gowex o Wirecard tenien xifres brillants que no arribaven a la caixa.",
-    "El benefici és una opinió comptable; la caixa és un fet."
-   ]
-  },
   "u16l4-8": {
    "prompt": "Una cadena de botigues té FCF negatiu aquest any perquè ha obert 200 botigues, però el seu flux operatiu és alt i creixent. Com ho interpretes?",
    "options": [
@@ -511,16 +602,6 @@
     "No necessàriament: l'FCF és negatiu per invertir en créixer, no perquè el negoci no generi caixa.",
     "Això: no és el mateix caixa que no arriba que caixa que s'inverteix."
    ]
-  },
-  "u16l4-9": {
-   "prompt": "FCF = flux operatiu − ____.",
-   "options": [
-    "dividends",
-    "impostos",
-    "vendes",
-    "capex"
-   ],
-   "explanation": "El capex és la inversió en actius: forns, botigues, màquines."
   },
   "u16l4-10": {
    "prompt": "Què pot fer una empresa amb el seu flux de caixa lliure? Marca-ho tot.",
@@ -550,22 +631,6 @@
    "explanation": "90 ÷ 30 = 3 vegades: justa. Si l'EBIT cau a la meitat, a penes cobreix 1,5 vegades.",
    "unit": "vegades"
   },
-  "u16l5-4": {
-   "prompt": "Una ràtio deute net/EBITDA de 6 vegades se sol considerar còmoda en una empresa industrial.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Per sobre de 4 sol ser preocupant, excepte en sectors amb ingressos molt estables."
-  },
-  "u16l5-5": {
-   "prompt": "Una empresa amb més caixa que deute té un deute net negatiu, és a dir, caixa neta.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Com Inditex: 11.495 M€ de caixa neta al tancament del seu exercici 2024."
-  },
   "u16l5-6": {
    "prompt": "Quin sector sol suportar més deute sense que sigui preocupant?",
    "options": [
@@ -574,12 +639,6 @@
     "Elèctriques"
    ],
    "explanation": "Uns ingressos estables i regulats permeten pagar més deute amb menys ensurts."
-  },
-  "u16l5-7": {
-   "prompt": "Deute net de 600 M€ i EBITDA de 200 M€ (3 vegades). Arriba una crisi i l'EBITDA cau a 120 M€. Quant val ara la ràtio?",
-   "options": [],
-   "explanation": "600 ÷ 120 = 5 vegades: sense demanar ni un euro més, passa d'acceptable a preocupant. Així enfonsa el deute en els anys dolents.",
-   "unit": "vegades"
   },
   "u16l5-8": {
    "prompt": "Empresa industrial: com està la seva ràtio deute net/EBITDA?",
@@ -597,15 +656,6 @@
     "Preocupant (més de 4)"
    ]
   },
-  "u16l5-9": {
-   "prompt": "Ràpid: deute 500, caixa 100, EBITDA 200. Deute net/EBITDA?",
-   "options": [
-    "2",
-    "2,5",
-    "3"
-   ],
-   "explanation": "(500 − 100) ÷ 200 = 2 vegades."
-  },
   "u16l5-10": {
    "prompt": "La Marta dubta entre dues empreses iguals en tot excepte en el deute. A: deute net/EBITDA de 0,5 i ROE del 12 %. B: deute net/EBITDA de 4,5 i ROE del 20 %. Què hauria de tenir en compte?",
    "options": [
@@ -619,15 +669,6 @@
     "Part d'aquest ROE pot venir del deute, que també multiplica les pèrdues quan les coses van malament.",
     "Això: més deute, més risc. No és un negoci millor, només més palanquejat."
    ]
-  },
-  "u16l6-1": {
-   "prompt": "El consens esperava un BPA d'1,20 € i l'empresa presenta 1,10 €, un 15 % més que fa un any. Què és més probable a curt termini?",
-   "options": [
-    "Que pugi amb força: ha crescut un 15 %",
-    "Que no es mogui",
-    "Que l'acció caigui: ha decebut respecte al que s'esperava"
-   ],
-   "explanation": "Es compara amb el que s'esperava (1,20 €), no amb l'any passat."
   },
   "u16l6-2": {
    "prompt": "En Bruno té accions d'una tecnològica que presenta resultats demà. Ha llegit que «seran boníssims» i vol triplicar la seva posició just abans. Què se li escapa?",
@@ -661,14 +702,6 @@
    "explanation": "Sense saber què espera el mercat, el gràfic sol no n'hi ha prou per saber què ve.",
    "horizon": "les 10 sessions següents"
   },
-  "u16l6-5": {
-   "prompt": "Una empresa pot pujar a borsa el dia que anuncia pèrdues.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Si perd menys del que s'esperava o millora les seves previsions, el mercat ho pot celebrar."
-  },
   "u16l6-6": {
    "prompt": "Una acció val 50 € abans dels resultats i el teu stop és a 48 €. Obre amb un buit del −12 %. A quin preu aproximat s'executa la teva venda?",
    "options": [],
@@ -691,29 +724,6 @@
     "Mitjana del que esperen els analistes"
    ]
   },
-  "u16l6-8": {
-   "prompt": "Ràpid: benefici rècord, però per sota del que s'esperava. Reacció més probable?",
-   "options": [
-    "Cap",
-    "Pujada",
-    "Caiguda"
-   ],
-   "explanation": "Es compara amb l'expectativa, no amb el rècord."
-  },
-  "u16l6-9": {
-   "prompt": "L'Anna llegeix «Inditex guanya un rècord de 5.866 M€» i veu, sorpresa, que l'acció cau més d'un 7 %. Quina explicació és més raonable?",
-   "options": [
-    "Que el titular és fals",
-    "Que la borsa s'equivoca sempre",
-    "Que el mercat esperava més creixement i el ritme el va decebre"
-   ],
-   "explanation": "El preu reacciona a la diferència entre el que passa i el que s'esperava.",
-   "feedback": [
-    "El benefici va ser real; el que va passar és una altra cosa.",
-    "No s'equivoca ni l'encerta: compara amb el que esperava.",
-    "Això: va ser el seu creixement més baix des del 2020. El rècord ja era al preu."
-   ]
-  },
   "u16l6-10": {
    "prompt": "Què pot moure una acció el dia de resultats? Marca-ho tot.",
    "options": [
@@ -733,16 +743,6 @@
     "Compte de resultats, balanç i fluxos de caixa"
    ],
    "explanation": "Si llegeixes el relat amb els números ja al cap, et deixes endur molt menys."
-  },
-  "u16l7-2": {
-   "prompt": "Quins són senyals d'alarma en un informe anual? Marca'ls tots.",
-   "options": [
-    "El benefici «ajustat» és molt diferent de l'oficial any rere any",
-    "Ha canviat tres vegades d'auditor en quatre anys",
-    "El flux de caixa lliure acompanya el benefici",
-    "L'auditor emet la seva opinió amb excepcions"
-   ],
-   "explanation": "Que la caixa acompanyi el benefici és bon senyal."
   },
   "u16l7-3": {
    "prompt": "Relaciona cada document o font amb el que és.",
@@ -783,37 +783,6 @@
     "Al BOE"
    ],
    "explanation": "Informes 10-K (anuals) i 10-Q (trimestrals)."
-  },
-  "u16l7-7": {
-   "prompt": "Per veure la tendència d'una empresa n'hi ha prou amb l'informe de l'últim any.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Compara almenys 5 anys: un any solt pot estar inflat o enfonsat per alguna cosa puntual."
-  },
-  "u16l7-8": {
-   "prompt": "En Pablo llegeix la carta del CEO: «Any històric, creixement excepcional, futur brillant». A les notes descobreix que el deute s'ha duplicat i que el benefici ajustat fa tres anys que treu «costos extraordinaris». Què fa?",
-   "options": [
-    "Compra perquè el CEO està il·lusionat",
-    "Es refia de la carta: el CEO coneix millor l'empresa",
-    "Dona més pes a les notes i a la caixa que al relat"
-   ],
-   "explanation": "Llegeix primer els números i les notes; el relat, després.",
-   "feedback": [
-    "L'entusiasme no paga el deute.",
-    "La carta és el relat; les notes són els fets. I no quadren.",
-    "Bé: els números de les notes no porten adjectius."
-   ]
-  },
-  "u16l7-9": {
-   "prompt": "Ràpid: quina part de l'informe opina sobre si els comptes són fiables?",
-   "options": [
-    "La portada",
-    "La carta del CEO",
-    "L'informe de l'auditor"
-   ],
-   "explanation": "L'auditor revisa els comptes i diu si reflecteixen la imatge fidel."
   },
   "u16l7-10": {
    "prompt": "Si només tens 10 minuts amb un informe anual, què mires? Marca les tres coses més útils.",
