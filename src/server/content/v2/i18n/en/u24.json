@@ -9,21 +9,43 @@
    "title": "Why risk matters more than being right",
    "steps": [
     {
+     "texts": [
+      "Ten losses in a row",
+      "You have **€10,000**, and even with a good system you sometimes get **10 losses in a row**. How much do you risk on each trade?",
+      "You risk 10 % on each and lose 10 in a row. What do you have left?",
+      "Nothing: 10 × 10 % = 100 %",
+      "A bit over a third",
+      "Almost all of it",
+      "Each loss applies to what's left: you end up with **€3,487**, 34.9 %. To get back you'd need to gain **187 %**.",
+      "Find the risk that leaves you at least €9,000 after 10 losses.",
+      "At **1 %**, ten losses are a bad month (you keep 90.4 %); at 10 %, they're the end. **What you control is how much you risk**, not whether you're right.",
+      "That's more like it: ten losses in a row and you're still in the game.",
+      "At this risk, a normal losing streak takes a big chunk of the account.",
+      "Better, but a bad streak still hurts a lot.",
+      "Lower the risk per trade and watch the account"
+     ]
+    },
+    {
+     "texts": [
+      "Being right a lot isn't enough",
+      "Pablo",
+      "Laura",
+      "I get 60 % of my trades right.",
+      "Well, I only get 40 %.",
+      "Pablo wins €50 when he's right and loses €150 when he's wrong. Laura wins €300 and loses €100.",
+      "After 10 trades, who's doing better?",
+      "Pablo: he's right more often",
+      "Pablo: 6 × 50 − 4 × 150 = **−€300**. Being right a lot doesn't save him.",
+      "Laura: her wins are worth more than her losses",
+      "Laura: 4 × 300 − 6 × 100 = **+€600**. She's wrong more often, but loses little.",
+      "It's a tie",
+      "No: what matters is how much you win and lose on each one, not just how many you get right.",
+      "You don't control whether you're right. You control **how much you lose** when you're wrong."
+     ]
+    },
+    {
      "title": "The professional's question",
-     "body": "Beginners ask «what should I buy?» and «will it go up?». Professionals ask: **«how much do I lose if I'm wrong?»**.\n\nNobody knows whether a specific trade will work out. The only thing you control 100 % is **how much you risk** on each one."
-    },
-    {
-     "title": "Ten losses in a row",
-     "body": "It happens even with a good system. What you have left depending on what you risk per trade:\n\n• 1 %: you keep **90.4 %** (you recover with +10.6 %)\n• 2 %: 81.7 % (+22.4 %)\n• 5 %: 59.9 % (+67 %)\n• 10 %: **34.9 %** (+187 %)\n\nAt 1 %, ten losses are a bad month. At 10 %, they're the end."
-    },
-    {
-     "title": "What it takes to get back",
-     "body": "Move the loss and see how much you'd need to gain afterwards to be back where you started.",
-     "tip": "Big losses aren't fixed by a gain of the same size."
-    },
-    {
-     "title": "Survive first",
-     "body": "You can be right 60 % of the time and go broke, or be right 40 % of the time and make money. The difference is how much you win when you're right and how much you lose when you're wrong.",
+     "body": "Beginners ask «what should I buy?» and «will it go up?». Professionals ask: **«how much do I lose if I'm wrong?»**.\n\nNobody knows whether a specific trade will work out. You can be right 60 % of the time and go broke, or be right 40 % of the time and make money: the difference is how much you win when you're right and how much you lose when you're wrong.",
      "key": "A trader's first goal is to survive, so that their edge, if they have one, can play out.",
      "tip": "You don't control whether you're right. You control how much you lose when you're wrong."
     }
@@ -33,17 +55,44 @@
    "title": "The maths of losses",
    "steps": [
     {
-     "title": "Losses and gains aren't symmetrical",
-     "body": "**Rise needed = 1 ÷ (1 − fall) − 1**\n\n• Lose 10 % → you need +11.1 %\n• Lose 20 % → +25 %\n• Lose 30 % → +42.9 %\n• Lose 50 % → **+100 %**\n• Lose 75 % → +300 %\n• Lose 90 % → **+900 %**"
+     "texts": [
+      "Live through the dot-com bubble",
+      "Real data: the Nasdaq 100 week by week from December 1998. You invest **€10,000** and can sell whenever you like.",
+      "If your investment halves, how much does it need to rise afterwards to get back?",
+      "50 %",
+      "100 %: it has to double",
+      "25 %",
+      "From €10,000 to €5,000: to get back to €10,000 you have to **double** your money. You lose half and then have to double.",
+      "Make it to the end, whether you sell or not.",
+      "From the March 2000 high to the 2002 low, the index fell **82.6 %**: getting back required a **475 %** rise. It didn't regain that high until November 2015.",
+      "The end. Can you see why avoiding big falls matters so much?",
+      "At −50 %, getting back to your €10,000 takes +100 %.",
+      "At −20 %, you already need +25 % to get back.",
+      "Your €10,000 is already worth more than double! Staying in?",
+      "Hit «Start». You can sell whenever you like"
+     ]
     },
     {
-     "title": "Play with the fall",
-     "body": "Raise the loss bit by bit: up to 20 % the difference is barely noticeable; from 50 % onwards it shoots up.",
-     "tip": "A share that falls 90 % has to multiply by ten to get back."
+     "texts": [
+      "Up 30, down 30",
+      "Ana",
+      "Bruno",
+      "My fund rose 30 % and then fell 30 %. I'm back where I started, right?",
+      "Mine rose 10 % and fell 5 %. Less exciting.",
+      "Who ends up better off?",
+      "Ana: hers rose more",
+      "Ana: 1.3 × 0.7 = 0.91. **She loses 9 %** despite the big rise.",
+      "Bruno: his fell less",
+      "Bruno: 1.1 × 0.95 = 1.045. **He gains 4.5 %**: small falls are easy to recover from.",
+      "They're even",
+      "No: with percentages, falls weigh more than rises of the same size.",
+      "Wow. So the key is not to fall too far.",
+      "That's it: avoiding big falls is usually worth more than chasing big rises."
+     ]
     },
     {
-     "title": "Averages are misleading",
-     "body": "+50 % one year and −50 % the next isn't a 0 % average: €100 → €150 → €75. You've lost 25 %.\n\nAnd with 1:5 leverage, a 20 % fall in the asset wipes out 100 % of your money.",
+     "title": "What it takes to get back",
+     "body": "**Rise needed = 1 ÷ (1 − fall) − 1**\n\n• Lose 10 % → you need +11.1 %\n• Lose 20 % → +25 %\n• Lose 30 % → +42.9 %\n• Lose 50 % → **+100 %**\n• Lose 75 % → +300 %\n• Lose 90 % → **+900 %**\n\nAnd averages are misleading: +50 % and −50 % is €100 → €150 → €75. With 1:5 leverage, a 20 % fall in the asset wipes out all your money.",
      "key": "Avoiding big losses matters more than chasing big gains.",
      "tip": "Losing 50 % means you need to gain 100 %. Protect what you have first."
     }
@@ -53,13 +102,37 @@
    "title": "The 1 % rule",
    "steps": [
     {
-     "title": "What the rule says",
-     "body": "If your stop is hit, you lose no more than **1 % of your capital**.\n\nWith €10,000, 1 % is **€100**. That doesn't mean investing €100: it means that, if you're wrong, you lose €100 at most.\n\n**Size = (capital × % risk) ÷ (entry − stop)**"
+     "texts": [
+      "Risking isn't investing",
+      "An account of **€10,000**. The 1 % rule: if the stop is hit, you lose **€100** at most.",
+      "Does that mean you can only invest €100?",
+      "Yes: €100 and not a euro more",
+      "No: what you invest depends on where the stop goes",
+      "No: you can invest whatever you like, with no stop",
+      "With the stop at 2 %, you can invest **€5,000** and, if it's hit, you lose €100. Risk isn't the same as the amount invested.",
+      "With the risk at 1 %, find the stop that puts the position at €2,000.",
+      "**Size = risk ÷ distance to the stop.** Stop close, you buy more; stop far, you buy less. The maximum loss is always the same.",
+      "More than 2 % per trade is a lot, especially when you're starting out.",
+      "With the stop that close, you're putting in the whole account. Sure?",
+      "Stop far away: you buy little, but risk the same.",
+      "Keep the 1 % and move the stop"
+     ]
     },
     {
-     "title": "Try the rule",
-     "body": "Leave the risk at 1 % and change the distance to the stop: watch how the amount invested changes while the maximum loss stays the same.",
-     "tip": "Stop close: you buy more. Stop far: you buy less. You risk the same."
+     "texts": [
+      "«I'm absolutely sure»",
+      "Bruno",
+      "I've got €8,000 and this trade is a sure thing. I'm risking 10 %.",
+      "What do you recommend?",
+      "Go for it: if he's sure, there's no risk",
+      "If it fails, he loses **€800** in one go. His confidence changes nothing.",
+      "Stick to 1 %: €80 of risk, like any other trade",
+      "That's it! Nobody knows which trade will work out: the risk is the same on all of them.",
+      "Risk 10 %, but with no stop",
+      "Without a stop, the loss has no limit. Even worse.",
+      "And what if it really does work out?",
+      "He'll make a bit less. But he'll still be in the game when another one fails."
+     ]
     },
     {
      "title": "Limits that add up",
@@ -73,17 +146,41 @@
    "title": "Position size",
    "steps": [
     {
-     "title": "Step by step",
-     "body": "1. Capital: **€10,000**. 1 % risk = **€100**.\n2. Entry **€50**, stop **€47**: a distance of **€3** per share.\n3. Size: 100 ÷ 3 = **33 shares** (about €1,650).\n\nIf the stop is hit you lose 33 × 3 = €99: 1 % of the account, even though you've invested 16.5 %."
+     "texts": [
+      "Work out your size",
+      "An account of **€10,000** and **1 %** risk (€100). You buy at **€50** and the stop is 6 % below, at **€47**.",
+      "How many shares can you buy?",
+      "About 100",
+      "About 33",
+      "About 10",
+      "You risk €3 per share: 100 ÷ 3 = **33 shares**, about €1,650. If the stop is hit, you lose €99.",
+      "Move the stop out to 10 % without changing the risk. How many shares now?",
+      "With the stop at 10 % you only buy **20 shares**: the more volatile asset needs a wider stop and, therefore, **fewer shares**. The risk stays at €100.",
+      "The risk stays at 1 %: only move the stop.",
+      "Stop further away, fewer shares. Same risk.",
+      "Stop closer, more shares… and more likely to get hit by noise.",
+      "See how many shares you buy, then move the stop further away"
+     ]
     },
     {
-     "title": "Work out your size",
-     "body": "Enter €10,000, 1 % risk, an entry at €50 and the stop 6 % away (about €3). Then move the stop out to 10 % and watch the size drop.",
-     "tip": "The more volatile asset needs a wider stop and, therefore, fewer shares."
+     "texts": [
+      "Marta's stop",
+      "Marta",
+      "Marta has €10,000. She wants to buy at €20, and the recent low is at €18.50.",
+      "If I put the stop at €19.90, I can buy 1,000 shares!",
+      "What do you tell her?",
+      "Great: a big size with little risk",
+      "A single day's noise moves more than 10 cents: it'll get hit for no reason.",
+      "Put the stop below €18.50 and work out the size from that distance",
+      "That's it! With a distance of just over €1.50: about 60 shares.",
+      "Buy the 1,000 with no stop",
+      "That's €20,000 with a €10,000 account, and no limit on the loss.",
+      "The chart sets the stop; the size adapts to it, **never the other way round**."
+     ]
     },
     {
      "title": "Key takeaway",
-     "body": "With a stop €1 away you could buy 100 shares; with one €10 away, only 10. Both trades risk €100. That way every trade carries the same weight, whatever the asset.",
+     "body": "With a stop €1 away you could buy 100 shares; with one €10 away, only 10. Both trades risk €100. That way every trade carries the same weight, whatever the asset.\n\n**Size = (capital × % risk) ÷ (entry − stop)**",
      "key": "You don't decide how much you buy: the distance to your stop does.",
      "tip": "Always round down: better to risk €99 than €102."
     }
@@ -93,16 +190,40 @@
    "title": "Where to put the stop loss",
    "steps": [
     {
-     "title": "Three methods",
-     "body": "1. **Structural:** on the other side of a level. If you buy at a support, below the support or below the low of the reversal candle.\n2. **Volatility-based:** 2–3 times the **ATR** (the average range of the last 14 candles), so the noise doesn't knock you out.\n3. **Time-based:** if, say, after 10 sessions it hasn't done what you expected, you get out."
+     "texts": [
+      "A stop with room",
+      "Real Tesla candles: you buy at the last price. **Support** is 4 % below and the price moves 3.5 % a day on average (its ATR).",
+      "Where does the stop go on this trade?",
+      "Right at support",
+      "Below support, with room for noise",
+      "Where losing would hurt",
+      "Right at support, any wick triggers it. With some room (for example, part of the ATR), it only gets hit if the idea really fails.",
+      "Put the stop below support with some room and the target no more than 8 % away.",
+      "The stop goes **where your idea stops being valid**, with room for noise. Hugging support, a mere wick knocks you out just before the rise.",
+      "Nice! With some room, the noise didn't knock you out.",
+      "Stopped out by a hair. Did it have room below support?",
+      "That stop is hugging support, or above it.",
+      "Place the stop and the target, and see what happened"
+     ]
     },
     {
-     "title": "Common mistakes",
-     "body": "• Stop too close: the noise knocks you out.\n• On obvious round numbers (€50.00): that's where everyone else's are.\n• **Moving it further away** as the price gets close: a small loss turns into a big one.\n• Not setting one «because it'll bounce back».\n\nAnd watch out: with a price gap, the stop fills worse than planned."
+     "texts": [
+      "Nerves at 40 cents",
+      "You bought at €50 with the stop at €47. Today the price drops to €47.40.",
+      "Ugh… it's about to be hit.",
+      "What do you do?",
+      "Lower the stop to €44 to give it more room",
+      "You've just **doubled** your risk. That's how a small loss turns into a big one.",
+      "Leave it where it is",
+      "Good: you decided it calmly. If it's hit, you lose **1R** and stay in the game.",
+      "Remove the stop: it'll bounce back",
+      "Without a stop there's no limit on the loss. Sometimes it doesn't bounce back.",
+      "You never move a stop further away against you. In your favour, you can raise it."
+     ]
     },
     {
-     "title": "The golden rule",
-     "body": "If the trade goes your way, you can raise the stop: to the entry price or below the latest higher low. But you never move it further away against you.",
+     "title": "Three methods and their mistakes",
+     "body": "1. **Structural:** on the other side of a level, or below the low of the reversal candle.\n2. **Volatility-based:** 2–3 times the **ATR** (the average range of the last 14 candles).\n3. **Time-based:** if, say, after 10 sessions it hasn't done what you expected, you get out.\n\nCommon mistakes: setting it too close, on obvious round numbers (€50.00), moving it further away as the price gets close, or not setting one. And with a price gap, it fills worse than planned. If the trade goes your way, you can raise it to the entry price or below the latest higher low.",
      "key": "The stop goes where your idea stops being valid, not where losing starts to hurt.",
      "tip": "The stop isn't where it hurts: it's where your idea dies."
     }
@@ -112,16 +233,48 @@
    "title": "Thinking in R: risk and reward",
    "steps": [
     {
+     "texts": [
+      "Measure in R",
+      "Real ethereum candles: you buy at the last price. The distance to your stop is **1R**, what you're risking.",
+      "With the target the same distance away as the stop, what's at stake?",
+      "Win 1R or lose 1R",
+      "Win 3R or lose 1R",
+      "Nothing",
+      "At **1:1**, you need to be right more than half the time to make money. That's why many traders won't enter below **2:1**.",
+      "Put the target at least 2R away and see what happens.",
+      "Result in R = what you made ÷ what you risked: risking 3 % and making 9 % is **+3R**. That way you can compare trades of **any size**.",
+      "Target hit! Look at the ratio: that's how many R you've made.",
+      "Stopped out: −1R. No more, no less than planned.",
+      "Still below 2:1. Raise the target or bring the stop closer.",
+      "Place the target and see what happened"
+     ]
+    },
+    {
+     "texts": [
+      "Does it meet 2:1?",
+      "Before entering, compare the distance to the **target** with the distance to the **stop**.",
+      "Meets it (2:1 or more)",
+      "Doesn't meet it",
+      "Entry €100, stop €95, target €115",
+      "You risk €5 to make €15: 3:1.",
+      "Entry €40, stop €38, target €42",
+      "You risk €2 to make €2: 1:1.",
+      "Entry €10, stop €9, target €12",
+      "You risk €1 to make €2: exactly 2:1.",
+      "Entry €60, stop €54, target €66",
+      "You risk €6 to make €6: 1:1.",
+      "Entry €25, stop €24, target €25.50",
+      "You risk €1 to make €0.50: twice the risk, not twice the reward.",
+      "Sort all five trades.",
+      "**Reward/risk** = distance to the target ÷ distance to the stop. Many traders won't enter below **2:1**.",
+      "Subtract: entry minus stop, and target minus entry. Which is bigger?",
+      "Nice! Now you can see it at a glance.",
+      "Does it meet 2:1? Sort each trade"
+     ]
+    },
+    {
      "title": "What R is",
-     "body": "**1R** is what you risk on a trade: distance to the stop × number of shares. If you risk €100:\n\n• Stop hit: **−1R**.\n• You win €250: **+2.5R**.\n• You exit early losing €40: **−0.4R**.\n\nMeasuring in R lets you compare trades of any size."
-    },
-    {
-     "title": "Reward/risk",
-     "body": "Before entering, compare the distance to the **target** with the distance to the **stop**.\n\nEntry €50, stop €47 (€3 risk), target €59 (€9 reward): a **3:1** ratio.\n\nMany traders won't enter below **2:1**."
-    },
-    {
-     "title": "Key takeaway",
-     "body": "If you risk €100 and win €300, you've made 3R. If you risk €50 and win €150, that's also 3R: both trades were equally good.",
+     "body": "**1R** is what you risk on a trade: distance to the stop × number of shares. If you risk €100:\n\n• Stop hit: **−1R**.\n• You win €250: **+2.5R**.\n• You exit early losing €40: **−0.4R**.\n\nIf you risk €100 and win €300, you've made 3R. If you risk €50 and win €150, that's also 3R: both were equally good.",
      "key": "A trade is measured in multiples of what you risked.",
      "tip": "Don't count euros: count R."
     }
@@ -131,16 +284,47 @@
    "title": "Expectancy",
    "steps": [
     {
-     "title": "The formula",
-     "body": "**Expectancy (in R) = (win rate × average win) − (loss rate × average loss)**\n\n• A: 40 % win rate, wins 2R → 0.4 × 2 − 0.6 × 1 = **+0.2R** ✓\n• B: 60 %, wins 0.5R → 0.6 × 0.5 − 0.4 × 1 = **−0.1R** ✗\n• C: 30 %, wins 3R → **+0.2R** ✓\n• D: 50 %, wins 1R → **0** (negative after costs) ✗"
+     "texts": [
+      "Right half the time, and winning",
+      "1,000 people trade on a coin toss: heads, they win **€200**; tails, they lose **€100**. They pay €2 in commission each time.",
+      "They're only right half the time. After 100 trades, how many end up ahead?",
+      "Half",
+      "Practically all of them",
+      "Hardly anyone",
+      "On average, each trade is worth 0.5 × 200 − 0.5 × 100 − 2 = **+€48**. After 100, none of the 1,000 ends up losing.",
+      "Get to 100 trades each.",
+      "**Expectancy = win rate × average win − loss rate × average loss.** Here, +€48 per trade: after 100, the average result is around €4,800.",
+      "With few trades, luck still counts for a lot.",
+      "With an edge and lots of trades, luck stops calling the shots.",
+      "Raise the number of trades"
+     ]
+    },
+    {
+     "texts": [
+      "Does it win or lose in the long run?",
+      "Each system tells you its win rate, how much it wins when it's right and how much it loses when it's wrong. Which ones have positive expectancy?",
+      "Positive expectancy",
+      "Zero or negative",
+      "A: right 40 % of the time, wins 2R and loses 1R",
+      "0.4 × 2 − 0.6 × 1 = +0.2R. It's wrong more often than right, but it wins.",
+      "B: right 60 % of the time, wins 0.5R and loses 1R",
+      "0.6 × 0.5 − 0.4 × 1 = −0.1R. Right a lot, and still losing.",
+      "C: right 30 % of the time, wins 3R and loses 1R",
+      "0.3 × 3 − 0.7 × 1 = +0.2R.",
+      "D: right 50 % of the time, wins 1R and loses 1R",
+      "Expectancy 0: after costs, it loses.",
+      "E: right 90 % of the time, wins 0.1R and loses 2R",
+      "0.9 × 0.1 − 0.1 × 2 = −0.11R. Its few losses are huge.",
+      "Sort all five systems.",
+      "The win rate alone tells you nothing: you have to combine it with **how much you win and how much you lose**. System B is right 60 % of the time and loses money.",
+      "Careful: a high win rate isn't enough if the losses are big.",
+      "Nice! Always look at both sides of the sum.",
+      "Win or lose in the long run? Sort each system"
+     ]
     },
     {
      "title": "Costs",
-     "body": "Every trade pays commission, *spread* and, if there's leverage, financing.\n\nIf your expectancy is +0.1R and costs are 0.15R per trade, your real system **loses**. The more trades you make, the more they weigh."
-    },
-    {
-     "title": "How much you could make",
-     "body": "With +0.2R, 1 % risk and 100 trades a year you'd get about 20R: close to 20 % a year, with losing streaks along the way. It's just an example, not a promise: an edge like that is already very good and hard to keep.",
+     "body": "Every trade pays commission, *spread* and, if there's leverage, financing. If your expectancy is +0.1R and costs are 0.15R per trade, your real system **loses**. The more trades you make, the more they weigh.\n\nWith +0.2R, 1 % risk and 100 trades a year you'd get about 20R: close to 20 % a year, with losing streaks along the way. It's just an example, not a promise.",
      "key": "A system makes money if, on average, each trade wins more than it loses, counting both wins and losses.",
      "tip": "You don't need to be right often: you need your wins to be worth more than your losses."
     }
@@ -179,49 +363,11 @@
    "explanation": "Getting a single prediction right or wrong says little. What decides your long-term result is how much you risk on each attempt.",
    "horizon": "the next 10 sessions"
   },
-  "u24l1-4": {
-   "prompt": "Match the risk per trade with what you have left after 10 losses in a row.",
-   "options": [
-    "1 % per trade",
-    "2 % per trade",
-    "5 % per trade",
-    "10 % per trade"
-   ],
-   "explanation": "Each loss applies to what's left: 0.99¹⁰ ≈ 90.4 % and 0.9¹⁰ ≈ 34.9 %.",
-   "right": [
-    "You keep 81.7 %",
-    "You keep 59.9 %",
-    "You keep 34.9 %",
-    "You keep 90.4 %"
-   ]
-  },
   "u24l1-5": {
    "prompt": "You risk 2 % per trade and take 10 losses in a row. What percentage of the account do you have left? (round to one decimal place)",
    "options": [],
    "explanation": "0.98¹⁰ ≈ 0.817 → you keep 81.7 %. To get back you'd need to gain 22.4 %.",
    "unit": "%"
-  },
-  "u24l1-6": {
-   "prompt": "Pablo is right on 60 % of his trades, but he wins €50 when he's right and loses €150 when he's wrong. Laura is right only 40 % of the time, but wins €300 and loses €100. After 10 trades, who's doing better?",
-   "options": [
-    "Laura, because her wins are worth more than her losses",
-    "It's a draw, both are right half the time on average",
-    "Pablo, because he's right more often"
-   ],
-   "explanation": "The result depends on your win rate and also on how much you win and lose each time.",
-   "feedback": [
-    "Laura: 4 × 300 − 6 × 100 = +€600. She's wrong more often, but her losses are small.",
-    "No: what matters is the size of each win and each loss, not just how many there are.",
-    "Pablo: 6 × 50 − 4 × 150 = −€300. Being right a lot doesn't save him."
-   ]
-  },
-  "u24l1-7": {
-   "prompt": "You can make money while being right on fewer than half of your trades.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "Yes, if what you win when you're right is quite a bit more than what you lose when you're wrong. You'll see it with expectancy."
   },
   "u24l1-8": {
    "prompt": "Do you control it or not?",
@@ -238,46 +384,11 @@
     "I don't control it"
    ]
   },
-  "u24l1-9": {
-   "prompt": "Quick one: you risk 10 % per trade and lose 10 in a row. How much do you have left?",
-   "options": [
-    "About two thirds",
-    "Around 35 %",
-    "90 %"
-   ],
-   "explanation": "0.9¹⁰ ≈ 34.9 %: you'd need to gain 187 % to get back."
-  },
-  "u24l1-10": {
-   "prompt": "What do you say to Lumi?",
-   "options": [
-    "Better make it 50 %, so you recover sooner",
-    "If you're right a lot, that's perfect",
-    "What matters is how much you lose when you're wrong"
-   ],
-   "explanation": "Surviving bad streaks comes first: the risk per trade has to be small.",
-   "feedback": [
-    "That speeds up ruin: two misses and you're left with 25 %.",
-    "Until the bad streak comes: at 20 % per trade, four misses in a row leave you with 41 %.",
-    "Exactly! No method is always right, and with that much risk a normal losing streak takes me out of the game."
-   ],
-   "lines": [
-    "I've got a method that's right loads of the time 😎",
-    "So I put 20 % of the account into every trade."
-   ]
-  },
   "u24l2-1": {
    "prompt": "Your portfolio falls 20 %. How much does it have to rise to get back to where it started?",
    "options": [],
    "explanation": "1 ÷ (1 − 0.20) − 1 = 1 ÷ 0.8 − 1 = 0.25 → +25 %.",
    "unit": "%"
-  },
-  "u24l2-2": {
-   "prompt": "If you lose 50 %, gaining 50 % is enough to recover.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "You need 100 %: you go from €100 to €50, and to get back to €100 you have to double it."
   },
   "u24l2-3": {
    "prompt": "A share falls 40 %. What rise does it need to recover its price? (round to one decimal place)",
@@ -317,29 +428,6 @@
    ],
    "explanation": "They need +11.1 %, +42.9 %, +100 % and +300 %."
   },
-  "u24l2-7": {
-   "prompt": "Ana's fund rises 30 % and then falls 30 %. Bruno's rises 10 % and then falls 5 %. Who ends up better off?",
-   "options": [
-    "Bruno, because he fell less",
-    "They both end up the same",
-    "Ana, because she rose more"
-   ],
-   "explanation": "Avoiding big falls is usually worth more than chasing big rises.",
-   "feedback": [
-    "Bruno: 1.1 × 0.95 = 1.045 → he gains 4.5 %. Small falls are easy to recover.",
-    "No: with percentages, falls weigh more than rises of the same size.",
-    "Ana: 1.3 × 0.7 = 0.91 → she loses 9 % despite the big rise."
-   ]
-  },
-  "u24l2-8": {
-   "prompt": "March 2000: the Nasdaq 100 has been rising non-stop for years. What did it do next?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "After a fall of nearly 78 %, an index needs to rise more than 350 % to get back: the Nasdaq took about 15 years to regain that high.",
-   "horizon": "the next two and a half years"
-  },
   "u24l2-9": {
    "prompt": "With 1:5 leverage, a ____ fall in the asset wipes out all your money.",
    "options": [
@@ -349,24 +437,6 @@
     "20 %"
    ],
    "explanation": "5 × 20 % = 100 %: leverage speeds up big losses."
-  },
-  "u24l2-10": {
-   "prompt": "Quick one: you lose 75 %. How much do you need to gain to recover?",
-   "options": [
-    "+75 %",
-    "+300 %",
-    "+150 %"
-   ],
-   "explanation": "1 ÷ 0.25 − 1 = 3 → +300 %."
-  },
-  "u24l3-1": {
-   "prompt": "You have €10,000 and follow the 1 % rule. What does it mean?",
-   "options": [
-    "That you can only invest €100",
-    "That you expect to make 1 % per trade",
-    "That if the stop is hit you lose €100 at most"
-   ],
-   "explanation": "The rule caps the loss if you're wrong, not the amount invested."
   },
   "u24l3-2": {
    "prompt": "Your simulated portfolio is worth €5,000. With the 1 % rule, what's the most you can lose on one trade?",
@@ -386,14 +456,6 @@
    "explanation": "50 × 80 = €4,000; 4,000 ÷ 20,000 = 20 %. You invest 20 % but only risk 1 %.",
    "unit": "%"
   },
-  "u24l3-5": {
-   "prompt": "Risk per trade and amount invested are the same thing.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "Risk is what you lose if the stop is hit; the amount invested can be much bigger."
-  },
   "u24l3-6": {
    "prompt": "You have €10,000. Does it follow the 1 % rule?",
    "options": [
@@ -409,20 +471,6 @@
     "No, it doesn't"
    ]
   },
-  "u24l3-7": {
-   "prompt": "Bruno has €8,000 and is «absolutely sure» about a trade. He wants to risk 10 % on it. What would you recommend, as a concept?",
-   "options": [
-    "Risk the 10 % but with no stop",
-    "Stick to 1 %: €80 of risk, like any other trade",
-    "Go for it: if he's sure, there's no risk"
-   ],
-   "explanation": "Risk per trade doesn't depend on how convinced you are: it's always the same.",
-   "feedback": [
-    "With no stop the loss has no limit: that's even worse.",
-    "Good: the risk is the same on every trade, because nobody knows which one will work out.",
-    "Feeling sure changes nothing: if it fails, he loses €800 in one go."
-   ]
-  },
   "u24l3-8": {
    "prompt": "Which risk limits does the course suggest for beginners? Select all that apply.",
    "options": [
@@ -433,15 +481,6 @@
    ],
    "explanation": "Leverage isn't part of the rule: while you're learning, better without it."
   },
-  "u24l3-9": {
-   "prompt": "Quick one: how much do professionals usually risk per trade?",
-   "options": [
-    "Between 10 % and 20 %",
-    "Between 0.5 % and 2 %",
-    "As much as they can"
-   ],
-   "explanation": "And for beginners, 1 % or less."
-  },
   "u24l3-10": {
    "prompt": "First you decide where the ____ goes; then, how many shares you buy.",
    "options": [
@@ -451,24 +490,6 @@
     "stop"
    ],
    "explanation": "Size comes from the distance to the stop, never the other way round."
-  },
-  "u24l3-11": {
-   "prompt": "What do you explain to Lumi?",
-   "options": [
-    "You can invest more: what you can't do is lose more than €100 if the stop is hit",
-    "The rule only works with big accounts",
-    "Yes, only €100 per trade"
-   ],
-   "explanation": "The 1 % caps the loss, not the investment.",
-   "feedback": [
-    "Ahh! So with the stop €3 below the entry, I buy 33 shares and risk €99.",
-    "It works the same with €1,000 or €100,000: it's always a percentage.",
-    "That mixes up risk with investment: you can invest quite a lot more."
-   ],
-   "lines": [
-    "With the 1 % rule and €10,000, can I only buy €100 of shares? 🤔",
-    "I'll never make anything like that..."
-   ]
   },
   "u24l4-1": {
    "prompt": "Capital €10,000, risk 1 %, entry €50, stop €47. How many shares do you buy? (round down)",
@@ -513,57 +534,10 @@
     "100 shares"
    ]
   },
-  "u24l4-7": {
-   "prompt": "Quick one: you risk €200 and the distance to the stop is €4. How many shares?",
-   "options": [],
-   "explanation": "200 ÷ 4 = 50.",
-   "unit": "shares"
-  },
-  "u24l4-8": {
-   "prompt": "If you move the stop further away, to risk the same you have to buy…",
-   "options": [
-    "More shares",
-    "The same number of shares",
-    "Fewer shares"
-   ],
-   "explanation": "More distance per share = fewer shares for the same maximum loss."
-  },
-  "u24l4-9": {
-   "prompt": "With a closer stop you can buy more shares while risking the same amount.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "But a stop that's too close can knock you out with the price's normal noise."
-  },
-  "u24l4-10": {
-   "prompt": "Marta has €10,000 and wants to buy a share at €20. The recent low is at €18.50, but she puts the stop at €19.90 so she can buy 1,000 shares. What happens?",
-   "options": [
-    "Great: lots of size with little risk",
-    "Better to put the stop below €18.50 and work out the size with that distance",
-    "Better with no stop and the 1,000 shares"
-   ],
-   "explanation": "The stop goes where the chart says; the size adapts to it, never the other way round.",
-   "feedback": [
-    "A normal day's noise moves more than 10 cents: the stop will most likely be hit for no reason.",
-    "Good: with a little over €1.50 of distance and €100 of risk, about 60 shares.",
-    "That's a €20,000 position with a €10,000 account: impossible without leverage and without a loss limit."
-   ]
-  },
   "u24l5-1": {
    "prompt": "You buy at the last price after a bounce. Place the stop where the idea stops being valid.",
    "options": [],
    "explanation": "Below the last relevant low: if the price breaks it, the bounce has failed."
-  },
-  "u24l5-2": {
-   "prompt": "Another real chart. Place a structural stop for this buy.",
-   "options": [],
-   "explanation": "Below the recent low, with a small margin for normal noise."
-  },
-  "u24l5-3": {
-   "prompt": "A Spanish share. Place the stop with logic, not where it hurts.",
-   "options": [],
-   "explanation": "The level that invalidates the idea is the recent low: the stop goes just below it."
   },
   "u24l5-4": {
    "prompt": "Before placing a stop, read the context. What trend do you see? (Coca-Cola · closes every 3 sessions · December 2025 – February 2026)",
@@ -578,20 +552,6 @@
    "prompt": "In a sideways market, the stop on a buy at the bottom of the range goes below the range low. Tap that low. (Apple · closes every 3 sessions · September–November 2024)",
    "options": [],
    "explanation": "If the price breaks the floor of the range, the bounce idea no longer holds."
-  },
-  "u24l5-6": {
-   "prompt": "You bought at €50 with the stop at €47. The price drops to €47.40 and you get nervous. What do you do?",
-   "options": [
-    "I remove the stop, it'll bounce back",
-    "I leave the stop where it is",
-    "I lower the stop to €44 to give it more room"
-   ],
-   "explanation": "You never move a stop further away against you: you only bring it closer in your favour.",
-   "feedback": [
-    "With no stop there's no limit to the loss. Sometimes it doesn't bounce back.",
-    "Good: you decided it calmly. If it's hit, you lose 1R and stay in the game.",
-    "You've just doubled your risk: that's how a small loss turns into a big one."
-   ]
   },
   "u24l5-7": {
    "prompt": "You buy at €50. The ATR is €2 and you put the stop 2 ATR away. What price does the stop go at?",
@@ -608,14 +568,6 @@
     "ATR"
    ],
    "explanation": "Average True Range, created by J. Welles Wilder in 1978."
-  },
-  "u24l5-9": {
-   "prompt": "A stop loss always guarantees the exact exit price.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "If the price gaps down at the open, it fills at the first available price, which may be worse."
   },
   "u24l5-10": {
    "prompt": "Which are common stop mistakes? Select all that apply.",
@@ -678,48 +630,11 @@
    "options": [],
    "explanation": "Near the previous high: that's where many people sold before and it can stall the rise."
   },
-  "u24l6-6": {
-   "prompt": "Another real chart. Where would you put the target for this buy?",
-   "options": [],
-   "explanation": "The previous high is a logical reference for the target. Compare that distance with the distance to the stop to find your reward/risk ratio."
-  },
   "u24l6-7": {
    "prompt": "You enter at €50 with the stop at €47. You want an exact 2:1 ratio. Where do you put the target?",
    "options": [],
    "explanation": "Risk: €3. Reward: 2 × 3 = €6. 50 + 6 = €56.",
    "unit": "€"
-  },
-  "u24l6-8": {
-   "prompt": "Does the trade meet a 2:1 minimum?",
-   "options": [
-    "Risk €1, target €1.50 away",
-    "Risk €3, target €9 away",
-    "Risk €5, target €5 away",
-    "Risk €2, target €6 away",
-    "Risk €4, target €8 away"
-   ],
-   "explanation": "Divide the distance to the target by the distance to the stop.",
-   "right": [
-    "Meets it (2:1 or more)",
-    "Doesn't meet it"
-   ]
-  },
-  "u24l6-9": {
-   "prompt": "If the stop is hit, the result of the trade is −1R.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "By definition: 1R is what you were risking down to the stop."
-  },
-  "u24l6-10": {
-   "prompt": "What's the point of measuring trades in R?",
-   "options": [
-    "To pay less in commission",
-    "To compare trades of different sizes",
-    "To be right more often"
-   ],
-   "explanation": "A trade with €50 of risk and another with €200 are easy to compare in R."
   },
   "u24l7-1": {
    "prompt": "You're right 45 % of the time, win 2R on average and lose 1R. What's your expectancy per trade?",
@@ -756,43 +671,11 @@
     "Expectancy: 0. After commission and spread, it loses."
    ]
   },
-  "u24l7-5": {
-   "prompt": "A system that's right only 30 % of the time can be profitable.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "If it wins 3R on average and loses 1R: 0.3 × 3 − 0.7 × 1 = +0.2R."
-  },
-  "u24l7-6": {
-   "prompt": "With 1R losses, does it have positive expectancy before costs?",
-   "options": [
-    "Right 55 % of the time, wins 0.8R",
-    "Right 60 % of the time, wins 1R",
-    "Right 25 % of the time, wins 4R",
-    "Right 35 % of the time, wins 2R",
-    "Right 50 % of the time, wins 1R"
-   ],
-   "explanation": "0.35 × 2 − 0.65 = +0.05R; 0.55 × 0.8 − 0.45 = −0.01R; 0.25 × 4 − 0.75 = +0.25R; 0.5 − 0.5 = 0; 0.6 − 0.4 = +0.2R.",
-   "right": [
-    "Positive",
-    "Zero or negative"
-   ]
-  },
   "u24l7-7": {
    "prompt": "Your system has an expectancy of +0.2R, you risk 1 % per trade and make 100 trades a year. What expected gain does that give, as a theoretical example?",
    "options": [],
    "explanation": "100 × 0.2R = 20R; with 1R = 1 % of the account, about 20 %. It's an expectation, not a promise: there will be bad streaks.",
    "unit": "%"
-  },
-  "u24l7-8": {
-   "prompt": "Quick one: your expectancy is +0.1R and costs are 0.15R per trade. What happens?",
-   "options": [
-    "You make 0.25R",
-    "You break even at 0",
-    "You lose 0.05R per trade"
-   ],
-   "explanation": "0.1 − 0.15 = −0.05R: costs eat up the edge."
   },
   "u24l7-9": {
    "prompt": "Expectancy = (win rate × average win) − (loss rate × ____).",
@@ -803,24 +686,6 @@
     "average loss"
    ],
    "explanation": "Each loss subtracts what you lose on average when you're wrong."
-  },
-  "u24l7-10": {
-   "prompt": "What do you say to Lumi?",
-   "options": [
-    "Let's work out the expectancy before celebrating",
-    "Raise the risk to 10 % to make the most of it",
-    "Congratulations, with 90 % you can't lose!"
-   ],
-   "explanation": "Being right a lot is no use if the few losses take more than the wins bring in.",
-   "feedback": [
-    "OK: 0.09 − 0.20 = −0.11R. It's right a lot, but its losses are huge.",
-    "With negative expectancy, more risk only speeds up the losses.",
-    "Let's do the maths: 0.9 × 0.1 − 0.1 × 2 = −0.11R. I lose on every trade on average… 😳"
-   ],
-   "lines": [
-    "I've found a system that's right 90 % of the time! 🤩",
-    "It wins 0.1R when it's right and loses 2R when it's wrong."
-   ]
   }
  }
 }

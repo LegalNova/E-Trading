@@ -9,16 +9,50 @@
    "title": "Confluència: senyals que es confirmen",
    "steps": [
     {
-     "title": "Què és la confluència",
-     "body": "Un senyal sol és una pista feble. Quan **peces diferents** apunten al mateix, la idea guanya pes:\n\n• **Tendència:** màxims i mínims, SMA 200.\n• **Nivell:** suport, resistència o mitjana important.\n• **Senyal:** espelma de gir confirmada o ruptura amb volum.\n• **Volum:** més gent al darrere."
+     "texts": [
+      "Suma o es repeteix?",
+      "Penses comprar i ja tens l’**RSI** a la pantalla. Què et dona informació nova?",
+      "Peça diferent: suma",
+      "Repetida o opinió: no suma",
+      "La tendència setmanal és alcista",
+      "La tendència és una peça diferent de l’impuls.",
+      "Rebot en un suport que ha aguantat tres vegades",
+      "Un nivell rellevant és una altra peça del gràfic.",
+      "L’estocàstic també és en sobrevenda",
+      "Mesura l’impuls, com l’RSI: és la mateixa opinió repetida.",
+      "Ruptura amb el doble del volum mitjà",
+      "El volum diu si hi ha gent darrere del moviment.",
+      "El CCI també ho confirma",
+      "Un altre oscil·lador d’impuls: no aporta res de nou.",
+      "Un influencer molt segur de si mateix",
+      "L’opinió d’un altre no és una peça del gràfic.",
+      "Classifica les sis peces.",
+      "La **confluència** ve de peces **diferents**: tendència, nivell, senyal i volum. Tres oscil·ladors d’impuls no són tres confirmacions: són una de repetida.",
+      "Pista: RSI, estocàstic i CCI mesuren gairebé el mateix.",
+      "Molt bé! Poques peces, però de tipus diferents.",
+      "Suma o es repeteix? Classifica cada peça"
+     ]
     },
     {
-     "title": "El parany dels indicadors redundants",
-     "body": "RSI, estocàstic i CCI mesuren gairebé el mateix: l’impuls. Tres no són tres confirmacions: són una de repetida.\n\nMillor poques eines de **tipus diferents**: tendència (mitjanes), impuls (RSI o MACD), volatilitat (Bollinger, ATR) i volum."
+     "texts": [
+      "I tot i així, un pla",
+      "Espelmes reals d’ethereum: tens confluència i compres a l’últim preu. El **suport** queda una mica més d’un 3 % per sota.",
+      "Amb l’stop sota el suport, on hauria de ser l’objectiu perquè l’operació valgui la pena?",
+      "A la mateixa distància que l’stop, però cap amunt",
+      "Almenys al doble de distància que l’stop",
+      "Amb tanta confluència, no cal objectiu",
+      "Si l’objectiu no és, com a mínim, a **2 vegades** la distància de l’stop, no val la pena: la confluència millora la idea, no l’assegura.",
+      "Stop sota el suport i objectiu almenys al doble de distància. Després mira què va passar.",
+      "Amb confluència, la idea és **millor, no segura**. Abans d’entrar: on va l’stop, on va l’objectiu (almenys **2 a 1**) i quant arrisques.",
+      "Objectiu! Amb un 2 a 1, pots fallar sovint i continuar guanyant.",
+      "Ha saltat l’stop. Era per sota del suport?",
+      "L’objectiu encara no és al doble de distància que l’stop.",
+      "Col·loca l’stop i l’objectiu, i mira què va passar"
+     ]
     },
     {
-     "title": "I tot i així, un pla",
-     "body": "Amb confluència, la idea és millor, no segura. Abans d’entrar: on és l’stop, on és l’objectiu i quant arrisques. Si l’objectiu no és almenys a 2 vegades la distància de l’stop, no val la pena.",
+     "title": "Peces de tipus diferents",
+     "body": "Millor poques eines de **tipus diferents**:\n\n• **Tendència:** màxims i mínims, mitjanes, SMA 200.\n• **Impuls:** RSI o MACD (amb un n’hi ha prou).\n• **Volatilitat:** Bollinger, ATR.\n• **Volum:** més gent al darrere.\n\nI un **senyal** sobre un **nivell**: espelma de gir confirmada o ruptura amb volum.",
      "key": "Busca coincidències de peces diferents, no més indicadors.",
      "tip": "Deu indicadors no són deu opinions: sovint són la mateixa, repetida."
     }
@@ -28,16 +62,50 @@
    "title": "Diverses temporalitats",
    "steps": [
     {
-     "title": "De dalt a baix",
-     "body": "Analitzar en diverses temporalitats evita operar contra corrent:\n\n1. **Major (setmanal):** quina és la tendència de fons?\n2. **Intermèdia (diària):** hi ha un retrocés o una figura?\n3. **Menor (hores):** on van l’entrada i l’stop?\n\nÉs el mètode de les tres pantalles d’Alexander Elder."
+     "texts": [
+      "A quin faig cas?",
+      "Leo",
+      "Al gràfic de 15 minuts veig una pujada brutal.",
+      "Però al setmanal és en plena caiguda. A quin faig cas?",
+      "Què li contestes?",
+      "Al de 15 minuts: és el més recent",
+      "El més recent no és el més important: en 15 minuts mana el soroll.",
+      "Primer al setmanal: marca la direcció",
+      "Això mateix! De dalt a baix: **direcció**, **moment** i **entrada**.",
+      "A cap: els gràfics no serveixen",
+      "Serveixen per ordenar la decisió i posar l’stop amb lògica.",
+      "Contra el setmanal, el senyal pesa menys: millor ignorar-lo o operar-lo amb una mida més petita."
+     ]
+    },
+    {
+     "texts": [
+      "Les tres pantalles",
+      "El mètode d’**Alexander Elder** mira tres temporalitats, de la major a la menor. Quina pregunta respon cadascuna?",
+      "Setmanal: la direcció",
+      "Diària: el moment",
+      "Hores: l’entrada",
+      "Quina és la tendència de fons?",
+      "La temporalitat major posa el context.",
+      "El preu és per sobre de la SMA 200?",
+      "És el filtre de la tendència de fons.",
+      "Hi ha un retrocés o una figura?",
+      "La diària diu si és bon moment dins d’aquesta tendència.",
+      "Ha aparegut un senyal de gir?",
+      "El senyal es busca en diari.",
+      "On va exactament l’stop?",
+      "La temporalitat menor afina l’stop.",
+      "A quin preu entro?",
+      "I també l’entrada.",
+      "Col·loca les sis preguntes.",
+      "Primer la **direcció** en la temporalitat major; després, el **moment** en la intermèdia, i l’**entrada i l’stop** en la menor.",
+      "Pista: del general al concret.",
+      "Molt bé! Així no operes contra corrent.",
+      "Quina pantalla respon cada pregunta?"
+     ]
     },
     {
      "title": "El mètode en 7 passos",
-     "body": "1. Setmanal: tendència i SMA 200.\n2. Estructura de màxims i mínims.\n3. Nivells.\n4. Situació actual: a prop d’un nivell o en una figura?\n5. Senyal en diari.\n6. Indicadors com a filtre.\n7. Pla: entrada, stop, objectiu i risc."
-    },
-    {
-     "title": "Quan no coincideixen",
-     "body": "Si el setmanal és baixista i el diari dona un senyal de compra, aquest senyal va contra corrent: molts l’ignoren o redueixen la mida. Que les temporalitats no coincideixin també és informació.",
+     "body": "1. Setmanal: tendència i SMA 200.\n2. Estructura de màxims i mínims.\n3. Nivells.\n4. Situació actual: a prop d’un nivell o en una figura?\n5. Senyal en diari.\n6. Indicadors com a filtre.\n7. Pla: entrada, stop, objectiu i risc.\n\nQue les temporalitats no coincideixin també és informació.",
      "key": "Primer la direcció en la temporalitat major; després, el moment en la menor.",
      "tip": "Abans de mirar l’espelma de cinc minuts, mira on és la de la setmana."
     }
@@ -47,16 +115,41 @@
    "title": "El backtesting",
    "steps": [
     {
-     "title": "Què és",
-     "body": "Un **backtest** prova una regla concreta («compro quan el preu tanca per sobre de la SMA 200 i venc quan tanca per sota») sobre dades passades, per veure què hauria passat.\n\nLa regla s’escriu **abans** de mirar els resultats, amb entrades, sortides, stops i costos."
+     "texts": [
+      "Mil regles que no funcionen",
+      "Imagina que proves **1.000 regles** sense cap avantatge. Cadascuna és com algú que opera a cara o creu pagant comissió.",
+      "Després de 100 operacions, quant haurà guanyat la millor de les 1.000?",
+      "Gairebé res: és una moneda",
+      "Moltíssim: sembla un descobriment",
+      "El mateix que la mitjana",
+      "La millor guanya **2.700 €** per pura sort, mentre que la mitjana perd 109 €.",
+      "Apuja fins a 300 operacions: la millor deixa de semblar bona?",
+      "Amb 1.000 regles sense avantatge, la millor **sempre** sembla un descobriment. És el **sobreajust**: si tries la guanyadora mirant el passat, tries sort.",
+      "La millor ja en guanya milers… llançant una moneda.",
+      "Mira la mitjana: les comissions van restant a gairebé tothom.",
+      "Mou les operacions i mira la millor de totes"
+     ]
     },
     {
-     "title": "Els paranys",
-     "body": "• **Sobreajust** (*data snooping*): proves tantes variants que alguna surt bé per casualitat.\n• **Biaix d’anticipació:** fer servir dades que en aquell moment encara no es coneixien.\n• **Biaix de supervivència:** provar només amb empreses que avui continuen vives.\n• **Oblidar els costos:** comissions, *spread* i impostos."
+     "texts": [
+      "El 40 % de la Marta",
+      "Marta",
+      "He provat 300 variants de la meva regla amb dades del 2015 al 2020.",
+      "La millor va guanyar un 40 % anual. La poso en marxa!",
+      "Què hauria de fer abans?",
+      "Fer-la servir ja amb tots els seus diners",
+      "Amb 300 variants, la millor pot ser pura casualitat.",
+      "Provar-la una sola vegada amb dades que no hagi fet servir, i amb costos",
+      "Això mateix! **Fora de la mostra**: si es desinfla, era sobreajust.",
+      "Buscar una variant que guanyi un 60 %",
+      "Més variants, més casualitats disfressades de descobriment.",
+      "Amb quines dades la provo?",
+      "Per exemple, del 2021 al 2024. I amb comissions i *spread*."
+     ]
     },
     {
-     "title": "Com fer-ho honest",
-     "body": "Separa les dades: dissenya la regla amb una part (**dins de la mostra**) i prova-la una sola vegada amb una altra que no hagis mirat (**fora de la mostra**). Si només funciona en la primera, era casualitat.",
+     "title": "Els paranys del backtest",
+     "body": "• **Sobreajust:** proves tantes variants que alguna surt bé per casualitat.\n• **Biaix d’anticipació:** fer servir dades que en aquell moment encara no es coneixien.\n• **Biaix de supervivència:** provar només amb empreses que avui continuen vives.\n• **Oblidar els costos:** comissions, *spread* i impostos.\n\nLa regla s’escriu **abans** de mirar els resultats. Es dissenya amb una part de les dades (**dins de la mostra**) i es prova una sola vegada amb una altra (**fora de la mostra**).",
      "key": "Un backtest diu el que hauria passat, no el que passarà.",
      "tip": "Si tortures prou les dades, acaben confessant qualsevol cosa."
     }
@@ -66,16 +159,49 @@
    "title": "Funciona l’anàlisi tècnica?",
    "steps": [
     {
-     "title": "El que té suport empíric",
-     "body": "• **Momentum i seguiment de tendència:** les tendències de 3–12 mesos han tendit a persistir en accions, bons, divises i matèries primeres (Jegadeesh i Titman, 1993; Moskowitz, Ooi i Pedersen, 2012; Hurst, Ooi i Pedersen, amb dades des del 1880).\n• Entre un 30 i un 40 % dels professionals enquestats la consideren important a curt termini."
+     "texts": [
+      "Operar sense avantatge",
+      "**1.000 persones** sense cap avantatge operen a cara o creu i paguen **2 €** de comissió cada vegada. Així es veu operar quan l’anàlisi no aporta res.",
+      "Després de 200 operacions cadascú, com acaba la majoria?",
+      "La meitat guanya i la meitat perd: és una moneda",
+      "La majoria perd: les comissions inclinen la moneda",
+      "Gairebé tots guanyen si operen molt",
+      "Cada operació costa 2 €: després de 200, el resultat mitjà ronda els **−400 €** i acaba perdent el **59 %**.",
+      "Arriba a 200 operacions cadascú.",
+      "Sense avantatge, el resultat mitjà és just **el que pagues en costos**. Uns quants guanyen molt per sort, no per saber.",
+      "Cada operació resta 2 € de mitjana. Es nota, oi?",
+      "Alguns guanyen molt: no per saber, sinó per sort.",
+      "Apuja el nombre d’operacions"
+     ]
     },
     {
-     "title": "El que no supera les proves",
-     "body": "• Park i Irwin (2007) van revisar 95 estudis moderns: 56 positius, 20 negatius i 19 mixtos… però la majoria amb problemes de mètode (cerca de dades, risc i costos mal estimats), i els més recents troben poc o cap avantatge en accions.\n• Espelmes: sense valor demostrat després de costos.\n• Fibonacci, ones d’Elliott, Gann: sense evidència rigorosa."
+     "texts": [
+      "Què diu l’evidència?",
+      "Aleshores, quines parts de l’anàlisi tècnica superen les proves serioses?",
+      "Amb suport empíric",
+      "Sense evidència rigorosa o sense valor després de costos",
+      "Momentum de 3–12 mesos",
+      "Jegadeesh i Titman (1993): les tendències de 3–12 mesos han tendit a persistir.",
+      "Seguiment de tendència en molts mercats",
+      "Hurst, Ooi i Pedersen ho van estudiar amb dades des del 1880.",
+      "Patrons d’espelmes",
+      "Sense valor demostrat després de costos.",
+      "Nivells de Fibonacci",
+      "Sense evidència rigorosa.",
+      "Ones d’Elliott",
+      "Sense evidència rigorosa.",
+      "Gann",
+      "Sense evidència rigorosa.",
+      "Classifica les sis eines.",
+      "La **tendència** i el **momentum** són la part amb més suport empíric, en accions, bons, divises i matèries primeres, tot i que aprofitar-los després de costos és difícil.",
+      "Pista: el que té suport empíric parla de tendències, no de formes ni de números màgics.",
+      "Bé. Poca cosa té suport empíric, i saber-ho ja és molt.",
+      "Classifica cada eina"
+     ]
     },
     {
      "title": "Per què aprendre-la igualment",
-     "body": "Per posar entrades, sortides i stops amb lògica, entendre el que fan els altres i detectar els venedors de fum. Un avantatge petit amb una bona gestió del risc pot ser suficient; un avantatge gran sense gestió del risc acaba en ruïna.",
+     "body": "Park i Irwin (2007) van revisar 95 estudis moderns: 56 positius, 20 negatius i 19 mixtos… però la majoria amb problemes de mètode, i els més recents troben poc o cap avantatge en accions. Tot i així, entre un 30 i un 40 % dels professionals enquestats la consideren important a curt termini.\n\nServeix per posar entrades, sortides i stops amb lògica, entendre el que fan els altres i detectar els venedors de fum. Un avantatge petit amb una bona gestió del risc pot ser suficient; un de gran sense gestió del risc acaba en ruïna.",
      "key": "Tendència i momentum tenen suport empíric; moltes altres idees no superen les proves.",
      "tip": "L’anàlisi tècnica no et diu el futur: t’ajuda a decidir on t’equivoques i quant et costa."
     }
@@ -91,17 +217,6 @@
   }
  },
  "questions": {
-  "u23l1-1": {
-   "prompt": "Ja tens l’RSI a la pantalla. Quines peces hi afegirien informació diferent? Marca-les totes.",
-   "options": [
-    "El volum en el senyal",
-    "L’estocàstic i el CCI",
-    "Un suport rellevant",
-    "Una espelma de gir confirmada",
-    "La tendència de fons (SMA 200)"
-   ],
-   "explanation": "L’estocàstic i el CCI mesuren impuls, igual que l’RSI: no aporten una opinió nova."
-  },
   "u23l1-2": {
    "prompt": "Què compta com a confluència a favor d’una possible compra? Marca-les totes.",
    "options": [
@@ -128,21 +243,6 @@
    "explanation": "Risc: 2 €. Objectiu: 2 × 2 = 4 € per sobre de l’entrada → 54 €.",
    "unit": "€"
   },
-  "u23l1-5": {
-   "prompt": "Suma a favor d’una compra o no hi suma?",
-   "options": [
-    "Un quart oscil·lador d’impuls",
-    "Ruptura amb el doble del volum mitjà",
-    "Rebot en un suport que ha aguantat tres vegades",
-    "Un influencer molt segur de si mateix",
-    "Tendència setmanal alcista"
-   ],
-   "explanation": "Sumen les peces diferents del gràfic; no sumen les repetides ni les opinions alienes.",
-   "right": [
-    "Suma",
-    "No suma"
-   ]
-  },
   "u23l1-6": {
    "prompt": "Busca tendència, nivells i espelmes en aquest gràfic. Puja o baixa en les 10 sessions següents?",
    "options": [
@@ -150,15 +250,6 @@
     "Baixa"
    ],
    "explanation": "Fins i tot amb diversos senyals a favor, el resultat de 10 sessions és incert. La confluència millora les probabilitats; l’stop protegeix quan fallen.",
-   "horizon": "les 10 sessions següents"
-  },
-  "u23l1-7": {
-   "prompt": "Un altre gràfic, mateix mètode. Puja o baixa en les 10 sessions següents?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Aplica sempre els mateixos passos: així sabràs si el teu mètode aporta alguna cosa o si només recordes els encerts.",
    "horizon": "les 10 sessions següents"
   },
   "u23l1-8": {
@@ -179,14 +270,6 @@
     "Això mateix: millor poques eines de tipus diferents que un parlament d’oscil·ladors.",
     "Si diversos mesuren el mateix, aquest 6 contra 3 pot ser un 1 contra 1 repetit."
    ]
-  },
-  "u23l1-10": {
-   "prompt": "Tres oscil·ladors d’impuls que coincideixen són tres confirmacions independents.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Mesuren gairebé el mateix: és una sola opinió repetida."
   },
   "u23l2-1": {
    "prompt": "Ordena l’anàlisi de dalt a baix.",
@@ -256,52 +339,6 @@
    "explanation": "Ni mirant diverses temporalitats s’endevina el curt termini. El mètode serveix per no operar contra corrent i per saber on va l’stop.",
    "horizon": "les 10 sessions següents"
   },
-  "u23l2-7": {
-   "prompt": "Un altre actiu. Puja o baixa en les 10 sessions següents?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Un mètode ordenat redueix errors tontos; no elimina la incertesa.",
-   "horizon": "les 10 sessions següents"
-  },
-  "u23l2-8": {
-   "prompt": "En el mètode de les tres pantalles, per a què serveix la temporalitat menor?",
-   "options": [
-    "Per triar quin actiu comprar",
-    "Per afinar l’entrada i l’stop",
-    "Per decidir la direcció de fons"
-   ],
-   "explanation": "La major dona la direcció; la intermèdia, el moment; la menor, l’entrada i l’stop."
-  },
-  "u23l2-9": {
-   "prompt": "Ràpid: qui va proposar el mètode de les tres pantalles?",
-   "options": [
-    "John Bollinger",
-    "Charles Dow",
-    "Alexander Elder"
-   ],
-   "explanation": "Alexander Elder, a Trading for a Living."
-  },
-  "u23l2-10": {
-   "prompt": "Què li contestes?",
-   "options": [
-    "Primer al setmanal, que marca la direcció; el de 15 minuts només afina el moment",
-    "A cap: els gràfics no serveixen",
-    "Al de 15 minuts, que és el més recent"
-   ],
-   "explanation": "La temporalitat major mana; la menor afina.",
-   "feedback": [
-    "Això mateix! De dalt a baix: direcció, moment i entrada.",
-    "Serveixen per ordenar la decisió i posar l’stop amb lògica, encara que no prediguin.",
-    "El més recent no és el més important: en 15 minuts mana el soroll."
-   ],
-   "lines": [
-    "Al gràfic de 15 minuts veig una pujada brutal 🚀",
-    "Però al setmanal està en plena caiguda 📉",
-    "A quin faig cas?"
-   ]
-  },
   "u23l3-1": {
    "prompt": "Proves 100 regles que en realitat no funcionen. Si cadascuna té un 5 % de probabilitat de semblar bona per casualitat, quantes esperes que «funcionin»?",
    "options": [],
@@ -336,20 +373,6 @@
     "Provar 500 combinacions de mitjanes i quedar-te amb la millor"
    ]
   },
-  "u23l3-5": {
-   "prompt": "La Marta prova 300 variants d’una regla amb dades del 2015 al 2020 i es queda amb la que va guanyar un 40 % anual. Què hauria de fer abans de refiar-se’n?",
-   "options": [
-    "Buscar una variant que guanyi un 60 %",
-    "Provar-la una sola vegada amb dades que no hagi fet servir (per exemple, del 2021 al 2024) i amb costos",
-    "Fer-la servir ja amb tots els seus diners"
-   ],
-   "explanation": "La prova fora de la mostra és la que separa una regla d’una casualitat.",
-   "feedback": [
-    "Provar més variants agreuja el problema: més casualitats disfressades de descobriment.",
-    "Això mateix: si fora de la mostra es desinfla, era sobreajust.",
-    "Amb 300 variants, la millor pot ser pura casualitat. Sense una prova fora de la mostra, no sap res."
-   ]
-  },
   "u23l3-6": {
    "prompt": "En Bruno fa un backtest des de l’any 2000 amb les 35 empreses que avui formen l’IBEX 35. Surt espectacular. Quin és el problema?",
    "options": [
@@ -364,15 +387,6 @@
     "Això mateix: provar amb els guanyadors d’avui infla els resultats del passat."
    ]
   },
-  "u23l3-7": {
-   "prompt": "Què vol dir provar una regla «fora de la mostra»?",
-   "options": [
-    "Provar-la amb dades que no es van fer servir per dissenyar-la",
-    "Provar-la només amb els millors anys",
-    "Provar-la en un altre bròker"
-   ],
-   "explanation": "És la prova de foc: dades noves que la regla no ha «vist»."
-  },
   "u23l3-8": {
    "prompt": "Què van fer Sullivan, Timmermann i White (1999) amb les regles de mitjanes mòbils?",
    "options": [
@@ -382,40 +396,6 @@
    ],
    "explanation": "Molt del que semblava avantatge era en part casualitat."
   },
-  "u23l3-9": {
-   "prompt": "Un bon backtest garanteix que la regla funcionarà en el futur.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Diu el que hauria passat amb aquelles dades. El futur pot ser diferent."
-  },
-  "u23l3-10": {
-   "prompt": "Què li preguntes primer?",
-   "options": [
-    "Em passes la regla?",
-    "Quantes variants vas provar, i què passa amb costos i amb dades que no hagis fet servir?",
-    "Quan comences a operar-hi amb tot?"
-   ],
-   "explanation": "Variants provades, costos i dades fora de la mostra: les tres preguntes de qualsevol backtest.",
-   "feedback": [
-    "Abans de copiar-la, convé comprovar si aquest 80 % és real o un miratge del sobreajust.",
-    "Molt bé! Aquestes preguntes tomben la majoria de backtests espectaculars.",
-    "Primer caldria veure si sobreviu als costos i a dades noves."
-   ],
-   "lines": [
-    "He fet un backtest i la meva regla guanya un 80 % l’any 🤑",
-    "Sense comissions, això sí."
-   ]
-  },
-  "u23l4-1": {
-   "prompt": "El momentum és una de les anomalies més estudiades de les finances, amb dades de més d’un segle.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Hurst, Ooi i Pedersen el van estudiar amb dades des del 1880, tot i que aprofitar-lo després de costos és difícil."
-  },
   "u23l4-2": {
    "prompt": "Segons Park i Irwin, els estudis positius sobre anàlisi tècnica no tenen problemes de mètode.",
    "options": [
@@ -423,22 +403,6 @@
     "Fals"
    ],
    "explanation": "Adverteixen que la majoria sí que en tenen: cerca de dades i dificultat per estimar el risc i els costos."
-  },
-  "u23l4-3": {
-   "prompt": "Hi ha evidència rigorosa que les ones d’Elliott prediuen el mercat.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Ni les ones d’Elliott, ni Fibonacci, ni Gann tenen evidència rigorosa."
-  },
-  "u23l4-4": {
-   "prompt": "Hurst, Ooi i Pedersen van estudiar el seguiment de tendència amb dades des del 1880.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Més d’un segle de dades, amb caigudes llargues pel camí."
   },
   "u23l4-5": {
    "prompt": "Quina idea de l’anàlisi tècnica té més suport acadèmic?",
@@ -448,21 +412,6 @@
     "Les ones d’Elliott"
    ],
    "explanation": "És l’excepció amb més evidència, en molts mercats i durant molt de temps."
-  },
-  "u23l4-6": {
-   "prompt": "Què diu l’evidència de cada eina?",
-   "options": [
-    "Seguiment de tendència en molts mercats",
-    "Fibonacci",
-    "Patrons d’espelmes",
-    "Ones d’Elliott",
-    "Momentum de 3–12 mesos"
-   ],
-   "explanation": "La tendència i el momentum són la part amb més suport; la resta, com a molt, ajuda a organitzar decisions.",
-   "right": [
-    "Amb suport empíric",
-    "Sense evidència rigorosa o sense valor després de costos"
-   ]
   },
   "u23l4-7": {
    "prompt": "Un canal de Telegram promet un sistema tècnic que «guanya el 95 % de les operacions, sense pèrdues». Què en penses, amb el que has après?",
@@ -509,23 +458,6 @@
    ],
    "explanation": "Després de tota la secció, la conclusió honesta és la mateixa: ningú no encerta el curt termini de manera fiable. El que sí que controles és quant arrisques.",
    "horizon": "les 10 sessions següents"
-  },
-  "u23l4-11": {
-   "prompt": "Què li contestes, a la Lumi?",
-   "options": [
-    "Sí, sempre: amb pràctica s’encerta tot",
-    "No, és tot fum",
-    "Algunes idees tenen suport empíric (tendència, momentum), moltes no, i res no funciona sense gestió del risc"
-   ],
-   "explanation": "Ni màgia ni fum: algunes peces funcionen de vegades, i la gestió del risc funciona sempre.",
-   "feedback": [
-    "L’evidència no diu això: moltes regles deixen de funcionar amb dades noves.",
-    "Tampoc: tendència i momentum tenen més d’un segle d’evidència, tot i que siguin difícils d’aprofitar.",
-    "Exacte! Eina útil, no bola de vidre."
-   ],
-   "lines": [
-    "Aleshores… l’anàlisi tècnica funciona o no? 🤔"
-   ]
   }
  }
 }

@@ -9,8 +9,36 @@
    "title": "Up or down? Stocks",
    "steps": [
     {
-     "title": "How the lab works",
-     "body": "You'll see **30 real daily candles** from a stock or an index, with no name or date. Your job: decide whether, **10 sessions later**, the price was higher or lower.\n\nOnce you answer, you'll find out what it was, when it happened and what came next. Keep score: by the end you'll know how much this resembles flipping a coin."
+     "texts": [
+      "Up or down?",
+      "30 real daily candles from a stock. Decide whether, **10 sessions later**, the price was higher or lower, and see what happened.",
+      "If you flipped a coin instead of looking at the chart, how many out of 10 would you get right, on average?",
+      "None",
+      "About 5",
+      "All 10",
+      "Guessing at random gets **half** right, on average. To know whether you're doing better than a coin, you need lots of attempts.",
+      "Play all five rounds.",
+      "In the short term, price has a lot of **noise**: in two weeks, one piece of news can change everything. **What you do control is how much you risk.**",
+      "Well done! Skill or luck? With five attempts, there's no way to tell.",
+      "Done. Was it easier or harder than you expected?",
+      "Look at the trend, where the price is and the size of the candles"
+     ]
+    },
+    {
+     "texts": [
+      "Seven out of ten",
+      "Leo",
+      "I got 7 out of 10 right on «up or down?»!",
+      "I've found my method. Tomorrow I'm putting my savings in.",
+      "What do you tell him?",
+      "Go for it! 7 out of 10 is a foolproof method",
+      "Flipping a coin, you get 7 out of 10 or more 17 % of the time.",
+      "With 10 attempts, luck rules: you need many more",
+      "That's it. You need dozens or hundreds of attempts to tell skill from luck.",
+      "Try it with half your savings first",
+      "Less risk, but the same 10-attempt test: it still tells you nothing.",
+      "And beware the gambler's fallacy: no session is ever «due»."
+     ]
     },
     {
      "title": "What to look at before deciding",
@@ -24,13 +52,35 @@
    "title": "Up or down? Crypto",
    "steps": [
     {
-     "title": "The crypto rollercoaster",
-     "body": "Bitcoin has an annual volatility of **50–80 %**, compared with ~15 % for a global stock index. It has fallen more than 70 % from its highs several times, and it trades **24 hours a day, 7 days a week**: there's no market close to give you a breather.\n\nIt's a highly volatile asset and it isn't regulated like a bank deposit: **you can lose everything you put in.**"
+     "texts": [
+      "Up or down? Crypto",
+      "Real daily candles from bitcoin and ethereum: **10 days later**, higher or lower? Crypto never closes: it trades **24 hours a day, 7 days a week**.",
+      "Play all four rounds.",
+      "Bitcoin has an annual volatility of **50–80 %**, compared with ~15 % for a global stock index, and it has fallen more than 70 % from its highs several times. It isn't regulated like a deposit: **you can lose everything you've invested**.",
+      "All four moved more than 8 % in just 10 days.",
+      "Look at the size of the candles before deciding"
+     ]
+    },
+    {
+     "texts": [
+      "More volatile, smaller size",
+      "You have **€10,000** and risk **1 %** per trade at most: €100. On a calm stock the stop can go at 3 %, but in crypto the noise forces you to move it further away.",
+      "If you move the stop from 3 % to 10 % while risking the same, how much can you buy?",
+      "More",
+      "The same",
+      "Quite a bit less",
+      "The same €100 of risk: with the stop at 3 %, about €3,333; at 10 %, only **€1,000**.",
+      "Set the stop at 10 %, typical for a crypto, with 1 % risk.",
+      "**The more volatile the asset, the further away the stop and the smaller the position.** That way, even if it's hit, you lose the same.",
+      "With that much risk, ten losses in a row leave your account badly dented.",
+      "Stop far away, small position. That way one bad day won't sink you.",
+      "Move the stop distance"
+     ]
     },
     {
      "title": "What it takes to recover",
-     "body": "Try a 50 % drop and then an 80 % one. How much does the price then have to rise to get back to where it started?",
-     "tip": "After losing 80 %, you have to multiply by 5 (+400 %) just to break even."
+     "body": "• If it falls **50 %**, it has to rise **+100 %** to get back to where it started.\n• If it falls **80 %**, **+400 %**: multiply by 5.\n\nBitcoin has fallen more than 70 % from its highs several times.",
+     "key": "Big falls are very hard to recover from: in crypto, only use money you could afford to lose entirely."
     }
    ]
   },
@@ -38,12 +88,34 @@
    "title": "Up or down? Currencies and gold",
    "steps": [
     {
-     "title": "Currencies: small moves",
-     "body": "A pair like **EUR/USD** tells you how many dollars one euro is worth. If it goes from 1.10 to 1.12, the euro has appreciated against the dollar.\n\nMajor currencies don't move much: 2 % in two weeks is already a notable move. What moves them most is **interest rates** and each country's economic surprises."
+     "texts": [
+      "Gold in dollars, gains in euros",
+      "Gold is **priced in dollars**. If you buy from Spain, two things count: what gold does and what the dollar does against the euro.",
+      "dollar",
+      "Gold rises 10 % in dollars, but the dollar falls 10 % against the euro. What do you make in euros?",
+      "10 %",
+      "More or less nothing",
+      "20 %",
+      "1.10 × 0.90 = 0.99: **−1 %**. What gold gains, the currency eats up.",
+      "Find a case where gold rises in dollars and you lose in euros.",
+      "In euros, both the asset **and the currency** count. And what moves currencies most is **interest rates** and each country's economic surprises.",
+      "In euros, you lose. Look at what the dollar did.",
+      "Move gold and the dollar"
+     ]
+    },
+    {
+     "texts": [
+      "Up or down? Currencies and metals",
+      "Real daily candles from currencies, gold and silver: **10 sessions later**, higher or lower? Check the scale carefully.",
+      "Play all five rounds.",
+      "Major currencies don't move much: **2 % in two weeks is already a lot**. Metals move quite a bit more: gold is driven by interest rates, the dollar and fear, and none of that shows up in 30 candles.",
+      "Currencies: less than 2 %. Gold and silver: more than 9 %.",
+      "Check the axis scale before deciding"
+     ]
     },
     {
      "title": "Gold, a safe haven with caveats",
-     "body": "Gold pays no interest or dividends. People tend to turn to it in crises and against inflation, but it can go years without rising: from 1980 to 2000 it lost a lot of value in real terms. It's also priced in dollars, so the exchange rate matters too.",
+     "body": "A pair like **EUR/USD** tells you how many dollars one euro is worth: if it goes from 1.10 to 1.12, the euro has appreciated against the dollar.\n\nGold pays no interest or dividends. People tend to turn to it in crises and against inflation, but it can go years without rising: from 1980 to 2000 it lost a lot of value in real terms.",
      "key": "Safe haven doesn't mean it always goes up: it means lots of people buy it when they're scared.",
      "tip": "With currencies, check the axis scale carefully: 1 % is already a lot."
     }
@@ -58,6 +130,38 @@
      "ko": "Look for the candle whose lower wick is much longer than its body."
     },
     {
+     "prompt": "Now tap the candle that completes the bearish engulfing: a red body that swallows the previous green one, after a rise.",
+     "ok": "That's it! Sellers wiped out the whole of the previous day in one go.",
+     "ko": "Look for a red candle whose body completely covers the green body before it."
+    },
+    {
+     "texts": [
+      "What does each candle tell you?",
+      "Each pattern suggests something **depending on where it appears**. Does it point to a possible upward reversal, a downward one or indecision?",
+      "Possible upward reversal",
+      "Possible downward reversal",
+      "Indecision",
+      "Hammer after a fall",
+      "Long lower wick: buyers rejected the low prices.",
+      "Shooting star after a rise",
+      "Long upper wick: sellers pushed the price back down.",
+      "Doji: open almost equal to close",
+      "Nobody won the session. Wait for the next candle.",
+      "Bullish engulfing after a fall",
+      "A green body swallows the previous red one.",
+      "The shape of a hammer, but after a rise",
+      "That's the hanging man: same shape, different context.",
+      "Morning star: big red, small one, strong green",
+      "Three candles that say buyers are taking charge.",
+      "Bearish engulfing after a rise",
+      "A red body swallows the previous green one.",
+      "Sort the seven patterns.",
+      "**A pattern is a clue, not an order**: many fail. It's confirmed by the context and the next candle, and always with a stop.",
+      "First look at where the price is coming from: was it rising or falling?",
+      "Sort each pattern"
+     ]
+    },
+    {
      "title": "Pattern cheat sheet",
      "body": "• **Hammer:** long lower wick after a fall.\n• **Shooting star:** long upper wick after a rise.\n• **Doji:** open ≈ close.\n• **Engulfing:** one body swallows the previous one, in the opposite direction.\n• **Marubozu:** long body with hardly any wicks.\n• **Morning star:** a big red, a small one and a strong green.",
      "key": "A pattern is a clue, not an order: confirm it with the context.",
@@ -69,8 +173,33 @@
    "title": "Mark the support",
    "steps": [
     {
-     "title": "Floors and ceilings",
-     "body": "A **support** is an area where the price has stopped falling several times: buyers step in. A **resistance** is where it has stopped rising: sellers step in.\n\nThey're **zones**, not exact lines. And when they break clearly, they often swap roles: broken resistance becomes support, and vice versa."
+     "texts": [
+      "Trade with the support",
+      "Real candles: the price has a **support** 3 % below your entry and a **resistance** 6 % above. Place your stop and your target.",
+      "Put the stop below the support and the target near the resistance. Then see what happened.",
+      "A **support** is an area where the price has stopped falling several times (buyers step in); a **resistance** is where it has stopped rising. **They give your stop and target a logical place**, though nothing guarantees they'll hold.",
+      "Your stop is above the support: noise could trigger it.",
+      "Target hit! This time the support held.",
+      "Find the floor on the chart and put the stop below it"
+     ]
+    },
+    {
+     "texts": [
+      "Support broken?",
+      "Nuria",
+      "My share has been bouncing off the same floor for months.",
+      "Today it closed just a hair below. Support broken! I'm selling everything.",
+      "What do you tell her?",
+      "Yes, sell before it crashes",
+      "Maybe. But many breakouts are false: they cross for a few days and come back.",
+      "Wait and see if it closes several sessions below, with volume",
+      "Good. That filters out lots of false breakouts.",
+      "Buy more: it's cheaper now",
+      "If the support really breaks, «cheaper» can get a lot cheaper.",
+      "Two days later, the price is back inside the range.",
+      "A **false breakout**. That's why supports are **zones**, not lines.",
+      "And if they really break, they swap roles: broken resistance becomes support."
+     ]
     },
     {
      "title": "How to find them",
@@ -84,8 +213,32 @@
    "title": "Place your stop",
    "steps": [
     {
-     "title": "Where you're wrong",
-     "body": "Your **stop loss** goes where your idea stops making sense: usually **just below the last significant low**, with a small margin for noise.\n\nYour **target** usually goes near the **previous high**, where sellers showed up before. With both, you work out the **reward-to-risk ratio**: many traders won't enter below 2:1."
+     "texts": [
+      "Place your stop",
+      "Real candles: you've bought at the last price and the last significant low is **1.6 %** below. Where do you put the stop and the target?",
+      "Stop below the low, with some margin, and a target at least twice as far. Then see what happened.",
+      "The stop goes **where your idea stops making sense**: just below the last significant low, with a margin for noise. The target, near the previous high: many traders won't enter below **2:1**.",
+      "The stop was hit. Was it too close to the low?",
+      "Target hit! The stop with some margin rode out the noise.",
+      "Your target isn't even twice your risk. Is it worth it?",
+      "Place the stop and the target"
+     ]
+    },
+    {
+     "texts": [
+      "The price is closing in on the stop",
+      "Laura",
+      "I bought with my stop below the last low. And now the price is falling…",
+      "It's about to touch it. Should I lower it a bit to give it some room?",
+      "What do you tell her?",
+      "Yes, lower it: it's bound to bounce",
+      "That's how a small, planned loss turns into a big one. It's the disposition effect.",
+      "Leave it: that was the point where your idea stopped working",
+      "That's it. If it's hit, you lose what you planned and move on to the next one.",
+      "Buy more to lower your average price",
+      "You're doubling down on an idea the market is proving wrong.",
+      "You decide the stop in cold blood, before entering. Never move it against you."
+     ]
     },
     {
      "title": "Stop first, then size",
@@ -99,8 +252,44 @@
    "title": "News and reactions",
    "steps": [
     {
-     "title": "The price already knew",
-     "body": "The market moves on **surprise**, not on news. If everyone expects record profits and record profits arrive, the share price can fall: it was already priced in.\n\nAnd by the time you read the headline, thousands of people and algorithms have already reacted. That's why trading the news is so hard."
+     "texts": [
+      "Record profits",
+      "Marta",
+      "My company has just reported record profits!",
+      "And its share price drops 8 %. What kind of joke is this?",
+      "What happened?",
+      "The market expected even more",
+      "That's it. The price already included what was expected, and a record can still disappoint.",
+      "Someone made a mistake publishing the price",
+      "There's no mistake: the market compares it with what it expected.",
+      "Records always make the share price fall",
+      "There's no fixed rule: it depends on what the market expected.",
+      "By the time you read the headline, thousands of people and algorithms have already reacted."
+     ]
+    },
+    {
+     "texts": [
+      "News or surprise?",
+      "Prices move on **surprise**, not on news. Did the market already know this, or does it catch it off guard?",
+      "Already priced in",
+      "Surprise: it could move the price",
+      "Record profits, just what analysts expected",
+      "If what was expected happens, it was already in the price.",
+      "The central bank raises rates more than expected",
+      "The unexpected is what moves the price.",
+      "The launch of the new phone, announced weeks ago",
+      "Everyone knew about it before you did.",
+      "Inflation at 3.4 % when 3 % was expected",
+      "A worse-than-expected figure tends to weigh on prices in the short term.",
+      "A company joins an index, announced weeks earlier",
+      "Forced, pre-announced buying tends to move the price before the day itself.",
+      "An accounting fraud comes to light out of the blue",
+      "Nobody saw it coming: the price adjusts in one go.",
+      "Sort the six headlines.",
+      "**On the stock market, good news that was already expected isn't news.** Before reacting, ask yourself what the market expected.",
+      "Ask yourself: did everyone already know this?",
+      "Sort each headline"
+     ]
     },
     {
      "title": "What to do when a headline hits",
@@ -114,12 +303,35 @@
    "title": "Full trade",
    "steps": [
     {
-     "title": "Five decisions before you enter",
-     "body": "1. **Thesis:** why you think it could rise.\n2. **Stop:** where you're wrong.\n3. **Target:** where you take profits.\n4. **Size:** how much you buy so you only risk 1 %.\n5. **Record:** you log it in your journal.\n\nAfter that, all that's left is to execute and not tinker with the plan on impulse."
+     "texts": [
+      "Stop and target",
+      "Real candles: your thesis is that the price bounces off its support, **7.5 %** below your entry. Place the **stop** and the **target**, and see what happened.",
+      "Put the stop below the support and see what happened.",
+      "This time the stop was hit, but without it, 15 sessions later, you'd have been down 21.8 %. **A good plan doesn't guarantee a win: it guarantees that, if you lose, you lose what you planned.**",
+      "The stop was hit. It hurts, but it's exactly what you'd decided to risk.",
+      "Your stop is above the support.",
+      "Find the support and put the stop below it"
+     ]
     },
     {
-     "title": "Measuring in R",
-     "body": "If you risk €100 and make €250, you've made **2.5R**. If your stop is hit, you lose **1R**. Measuring in R lets you compare trades of different sizes and know whether your system wins in the long run.",
+     "texts": [
+      "The size",
+      "A **€10,000** account and **1 %** risk (€100), with the stop **8 %** below your entry. How much do you buy?",
+      "With the stop at 8 % and 1 % risk, if the stop is hit, how much do you lose?",
+      "€100",
+      "€800",
+      "Everything you invested",
+      "You only buy **€1,250** (100 ÷ 8 %). If it's hit, you lose 8 % of that: **€100, or 1R**.",
+      "Set the stop at 8 % with 1 % risk.",
+      "**You don't decide how much to buy: the distance to your stop does.** What you risk when you enter is **1R**: if you risk €100 and make €250, you've made 2.5R.",
+      "€1,250: if the stop is hit, you lose exactly €100.",
+      "With more than 2 % per trade, a losing streak really hurts.",
+      "Move the stop distance"
+     ]
+    },
+    {
+     "title": "Five decisions before you enter",
+     "body": "1. **Thesis:** why you think it could rise.\n2. **Stop:** where you're wrong.\n3. **Target:** where you take profits.\n4. **Size:** how much you buy so you only risk 1 %.\n5. **Record:** you log it in your journal.\n\nMeasuring in **R** lets you compare trades of different sizes and know whether your system wins in the long run.",
      "key": "A good trade is one that follows the plan, even if it loses.",
      "tip": "Review your journal every 20 trades: it shows you what your memory would rather forget."
     }
@@ -129,12 +341,49 @@
    "title": "Challenge of the week",
    "steps": [
     {
-     "title": "Your portfolio for the week",
-     "body": "This challenge simulates a week with **10,000 virtual €**. On Monday you allocate your portfolio following a set of rules; during the week news and opportunities come up; on Friday you review.\n\nThe winner isn't whoever gains the most, but whoever **sticks to the rules** and makes decisions they could explain. It's an educational simulation, not a recommendation."
+     "texts": [
+      "Does it follow the rules?",
+      "Challenge rules, with €10,000 in virtual money: no asset above **40 %**, at least **4 assets**, crypto **10 %** at most and each trade risks **1 %** at most. Does it follow the rules or break one?",
+      "Follows the rules",
+      "Breaks a rule",
+      "MSCI World 40 %, bonds 30 %, gold 20 %, bitcoin 10 %",
+      "Four assets, none above 40 % and crypto stays at 10 %.",
+      "Bitcoin at 15 % of the portfolio",
+      "You could lose all of your crypto: 10 % at most.",
+      "Only three assets, in equal parts",
+      "You need at least 4.",
+      "A trade that risks €80",
+      "1 % of €10,000 is €100: €80 is within the limit.",
+      "The IBEX 35 ETF at 45 %",
+      "No asset can go above 40 %.",
+      "A trade that risks €300",
+      "That's 3 % of the portfolio: three times the limit.",
+      "Check the six cases.",
+      "With a maximum of 40 % per asset and at least 4 assets, **no surprise can sink your week**. And keep crypto small: you could lose all of it.",
+      "Go over the four rules: weight, number of assets, crypto and risk.",
+      "Follows the rules or breaks one?"
+     ]
     },
     {
-     "title": "The challenge rules",
-     "body": "• No asset weighs more than **40 %**.\n• At least **4 assets**.\n• Crypto, **10 %** at most: you could lose all of it.\n• Each trade risks at most **1 %** of the portfolio.",
+     "texts": [
+      "Tuesday: the market falls",
+      "Álex",
+      "Tuesday. A worse-than-expected inflation figure comes out and the market falls 3 %.",
+      "Your portfolio loses €180: −1.8 %.",
+      "Did you see? I'm selling everything before it drops further.",
+      "What about you?",
+      "I sell all my shares so they don't fall any further",
+      "You turn a normal fall into a loss, and then you'll have to guess when to get back in.",
+      "I don't touch anything: the portfolio is spread out and the fall is normal",
+      "That's it. −1.8 % on a bad day is exactly what it's built for.",
+      "I move everything into bitcoin to win it back fast",
+      "You break the 10 % rule and you're revenge trading.",
+      "The market fell 3 %; your portfolio, only 1.8 %. That's diversification."
+     ]
+    },
+    {
+     "title": "Your week",
+     "body": "The winner isn't whoever gains the most, but whoever **sticks to the rules** and makes decisions they could explain. On Monday you allocate, during the week news and opportunities come up, and on Friday you review.\n\nIt's an educational simulation with **€10,000 in virtual money**, not a recommendation.",
      "key": "The rules are written on Monday with a cool head; for the rest of the week, you just follow them.",
      "tip": "If you couldn't explain a decision out loud, don't make it."
     }
@@ -186,15 +435,6 @@
    "explanation": "After a strong move, your brain is tempted by two opposite ideas: «it'll keep going» (recency bias) or «it's due to turn» (gambler's fallacy). Neither is reliable on its own.",
    "horizon": "the next 10 sessions"
   },
-  "u35l1-5": {
-   "prompt": "You've got 7 out of 10 right in «Up or down?». What's the most sensible conclusion?",
-   "options": [
-    "With 10 attempts luck plays a big part: I need many more to know whether I have an edge",
-    "I'm ready to trade with real money",
-    "I've found a foolproof method"
-   ],
-   "explanation": "If you flip a coin 10 times, getting 7 or more heads happens around 17 % of the time. It takes dozens or hundreds of attempts to separate skill from luck."
-  },
   "u35l1-6": {
    "prompt": "European stock, daily candles. Did it go up or down over the next 10 sessions?",
    "options": [
@@ -202,15 +442,6 @@
     "Down"
    ],
    "explanation": "When the price is in the middle of its recent range, there isn't even a clear level to watch or a logical place for a stop. In those cases, not trading is also a decision.",
-   "horizon": "the next 10 sessions"
-  },
-  "u35l1-7": {
-   "prompt": "20 seconds! Higher or lower 10 sessions later?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "You decided in a rush, like someone trading on their phone on the Tube. Quick decisions rely on intuition, and intuition is exactly where biases live.",
    "horizon": "the next 10 sessions"
   },
   "u35l1-8": {
@@ -229,33 +460,6 @@
     "False"
    ],
    "explanation": "That's the gambler's fallacy: sessions don't «owe» each other anything. A streak doesn't make a change of direction more likely."
-  },
-  "u35l1-10": {
-   "prompt": "US bank, daily candles. Higher or lower 10 sessions later?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "A big bank is moved by interest rates, the economy and its results, not just its chart. Looking only at the candles leaves out half the story.",
-   "horizon": "the next 10 sessions"
-  },
-  "u35l1-11": {
-   "prompt": "Last one, 20 seconds! Higher or lower 10 sessions later?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "Big tech stocks can move more than 10 % in a single earnings day, up or down. If your trade coincides with that date, the price can gap at the open and jump right past your stop.",
-   "horizon": "the next 10 sessions"
-  },
-  "u35l2-1": {
-   "prompt": "Cryptocurrency, daily candles. Higher or lower 10 days later?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "In crypto, 10 days means 10 full sessions with no break, weekends included: there's more time for anything to happen. Moving 10 % in a week isn't unusual.",
-   "horizon": "the next 10 days"
   },
   "u35l2-2": {
    "prompt": "A crypto falls 75 % from its high. How much does it then have to rise to get back there?",
@@ -286,15 +490,6 @@
     "It's his rent money. If it drops 30 % in a few days, as it has many times, he can't pay. Textbook FOMO."
    ]
   },
-  "u35l2-5": {
-   "prompt": "Daily candles of a crypto that's had some hectic weeks. Higher or lower 10 days later?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "A crypto «having fallen a lot» doesn't make it cheap: it has no earnings or dividends to estimate a value from. Its price depends on what others are willing to pay tomorrow.",
-   "horizon": "the next 10 days"
-  },
   "u35l2-6": {
    "prompt": "November 2021: bitcoin hits all-time highs above $65,000, and a few weeks earlier the first bitcoin futures ETF launched in the US. What did the price do over the following year?",
    "options": [
@@ -303,21 +498,6 @@
    ],
    "explanation": "When an asset is at its highs and on every front page, the feeling of safety is at its peak, but that optimism is already in the price. Always ask yourself how much you'd lose if you're wrong, not just how much you could make.",
    "horizon": "the period up to December 2022"
-  },
-  "u35l2-7": {
-   "prompt": "20 seconds! Higher or lower 10 days later?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "In a rush and with such a jumpy chart, it's easy to see patterns that don't exist: your brain looks for order even in randomness.",
-   "horizon": "the next 10 days"
-  },
-  "u35l2-8": {
-   "prompt": "You have €10,000 and risk at most 1 % per trade. You buy a crypto with your stop 10 % below the entry. What's the most you can invest?",
-   "options": [],
-   "explanation": "1 % of €10,000 is €100. If the stop is 10 % away, 100 ÷ 0.10 = €1,000. The more volatile the asset, the further away the stop goes and the smaller the position.",
-   "unit": "€"
   },
   "u35l2-9": {
    "prompt": "If your portfolio holds two different cryptocurrencies, it's already well diversified.",
@@ -334,15 +514,6 @@
     "Down"
    ],
    "explanation": "In crypto, the price can crash or soar on a Saturday night too. That's why many people leave stop orders in place instead of watching the screen around the clock.",
-   "horizon": "the next 10 days"
-  },
-  "u35l2-11": {
-   "prompt": "Quick! Daily candles of a crypto. Higher or lower 10 days later?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "Deciding on a hunch is the norm in crypto. In such a volatile asset, a wrong hunch without a stop can cost you dearly.",
    "horizon": "the next 10 days"
   },
   "u35l3-1": {
@@ -405,42 +576,6 @@
    ],
    "explanation": "If a central bank raises rates more than expected, its currency tends to attract money. Candles reflect those changes; they don't cause them."
   },
-  "u35l3-8": {
-   "prompt": "20 seconds! Currencies, daily candles. Higher or lower 10 sessions later?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "Moves of 1–3 % look small, but with leverage they turn into huge gains or losses. Without it, you'd barely notice them in your portfolio.",
-   "horizon": "the next 10 sessions"
-  },
-  "u35l3-9": {
-   "prompt": "Another metal, daily candles. Did it go up or down over the next 10 sessions?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "Silver is similar to gold, but quite a bit more volatile because it also has a lot of industrial uses. Two «similar» assets can carry very different risks.",
-   "horizon": "the next 10 sessions"
-  },
-  "u35l3-10": {
-   "prompt": "EUR/USD is back, from a different period. Higher or lower 10 sessions later?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "Look at the wicks: in currencies, a US jobs or inflation figure causes spikes within minutes. A single candle doesn't tell the whole story.",
-   "horizon": "the next 10 sessions"
-  },
-  "u35l3-11": {
-   "prompt": "Quick: if USD/JPY rises, which currency has strengthened?",
-   "options": [
-    "The yen",
-    "The euro",
-    "The dollar"
-   ],
-   "explanation": "USD/JPY = how many yen one dollar costs. If it rises, each dollar buys more yen: the dollar has strengthened."
-  },
   "u35l4-1": {
    "prompt": "Tap the hammer.",
    "options": [],
@@ -477,16 +612,6 @@
    "options": [],
    "explanation": "A green candle whose body completely engulfs the previous red body, after a fall. (Apple · daily candles · April 2025)"
   },
-  "u35l4-6": {
-   "prompt": "15 seconds! Tap the hammer.",
-   "options": [],
-   "explanation": "A very long lower wick after a fall: the market rejected lower prices that day. (Amazon · daily candles · February 2025)"
-  },
-  "u35l4-7": {
-   "prompt": "Tap the candle that completes the bearish engulfing.",
-   "options": [],
-   "explanation": "A red candle whose body swallows the previous green one, after a rise. (NVIDIA · daily candles · December 2024 – January 2025)"
-  },
   "u35l4-8": {
    "prompt": "A hammer guarantees that the price is going to rise.",
    "options": [
@@ -504,20 +629,6 @@
    "prompt": "Tap the third candle of the morning star.",
    "options": [],
    "explanation": "First a big red one, then a small one showing doubt, and finally a strong green one that closes above the midpoint of the first. (Microsoft · daily candles · January–February 2026)"
-  },
-  "u35l4-11": {
-   "prompt": "A candle with the same shape as a hammer, but that appears after a rise, is called…",
-   "options": [
-    "Shooting star",
-    "Hanging man",
-    "Doji"
-   ],
-   "explanation": "The shape is the same; what changes is the context. After a fall it's a hammer; after a rise, a hanging man."
-  },
-  "u35l4-12": {
-   "prompt": "15 seconds! Tap the shooting star.",
-   "options": [],
-   "explanation": "A long upper wick after a rise: sellers pushed the price back down before the close. (Amazon · daily candles · October–November 2025)"
   },
   "u35l5-1": {
    "prompt": "Sideways range. Tap the lowest point: the floor buyers are watching. (Apple · closes every 3 sessions · September–November 2024)",
@@ -553,19 +664,6 @@
    "options": [],
    "explanation": "About $172: after that low there was a bounce. A low like that becomes a reference point for the future."
   },
-  "u35l5-6": {
-   "prompt": "When a resistance breaks clearly, it often becomes support.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "That's the role reversal: anyone who didn't buy before sees it as a second chance. Often the price comes back to «test» the level before moving on."
-  },
-  "u35l5-7": {
-   "prompt": "15 seconds! Tap the highest point. (Microsoft · closes every 3 sessions · June–August 2026)",
-   "options": [],
-   "explanation": "About $504: the last high in an uptrend is the resistance the price will have to break through."
-  },
   "u35l5-8": {
    "prompt": "Another index. Can you see a clear floor near the current price? Decide: higher or lower 10 sessions later?",
    "options": [
@@ -579,24 +677,6 @@
    "prompt": "Sideways range with one rebel candle. Tap the low. (NVIDIA · closes every 3 sessions · December 2025 – February 2026)",
    "options": [],
    "explanation": "About $174: the price broke below the range for a moment and quickly came back inside. That's a false breakout, and it's why supports are zones, not lines."
-  },
-  "u35l5-10": {
-   "prompt": "The price breaks a support, spends two days below it and comes back inside the range. What was it?",
-   "options": [
-    "A confirmed change of trend",
-    "A false breakout",
-    "A golden cross"
-   ],
-   "explanation": "Many breakouts fail. To filter them, check whether the breakout comes with volume and whether the price closes several sessions on the other side."
-  },
-  "u35l5-11": {
-   "prompt": "20 seconds! Higher or lower 10 sessions later?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "When you're in a rush, you only look at the last few candles. Finding the previous floors and ceilings gives you context… although it can't predict the future either.",
-   "horizon": "the next 10 sessions"
   },
   "u35l6-1": {
    "prompt": "Before buying, check the trend. What is it? (NVIDIA · closes every 3 sessions · March–May 2026)",
@@ -617,12 +697,6 @@
    "options": [],
    "explanation": "Near the previous high (about $195): that's where sellers showed up last time. Aiming much higher means hoping for something the price hasn't done yet."
   },
-  "u35l6-4": {
-   "prompt": "Entry at €40, stop at €38 and target at €46. How many times bigger is the potential reward than the risk?",
-   "options": [],
-   "explanation": "Risk: 40 − 38 = €2. Potential reward: 46 − 40 = €6. 6 ÷ 2 = 3, a 3:1 ratio.",
-   "unit": "times"
-  },
   "u35l6-5": {
    "prompt": "Place the stop for this purchase.",
    "options": [],
@@ -639,47 +713,10 @@
    "options": [],
    "explanation": "First the stop below the last low; then the amount, so that if it's hit you lose €100 at most. The outcome depends on the market; the risk depends on you."
   },
-  "u35l6-8": {
-   "prompt": "Quick! When buying, where does the stop go?",
-   "options": [
-    "Just above the entry price",
-    "Where the loss is a round number of euros",
-    "Just below the last significant low"
-   ],
-   "explanation": "The stop goes where your idea stops being valid. If it were above the entry, it would be triggered straight away."
-  },
   "u35l6-9": {
    "prompt": "Place the target for this trade.",
    "options": [],
    "explanation": "Near the previous high (about $256). If the price breaks through it strongly, you can always raise your stop and let the profit run."
-  },
-  "u35l6-10": {
-   "prompt": "Laura buys with her stop below the last low. The price falls and gets dangerously close to the stop. What does she do?",
-   "options": [
-    "Buys more to lower her average price",
-    "Leaves it where it was: that was the point where her idea failed",
-    "Lowers the stop to give it «more room»"
-   ],
-   "explanation": "The stop is decided with a cool head, before entering. Moving it against you out of fear of losing is one of the most expensive mistakes.",
-   "feedback": [
-    "She's doubling down on an idea the market is proving wrong. Her risk is no longer 1 %.",
-    "Good: if it's hit, she loses what she planned and moves on to the next one with her account intact.",
-    "That's how a small, planned loss turns into a big one. It's the disposition effect: holding on to losers."
-   ]
-  },
-  "u35l6-11": {
-   "prompt": "Another trade: €5,000 of capital and a maximum risk of 1 %.",
-   "options": [],
-   "explanation": "With €5,000 and 1 %, you can lose €50 at most. The amount invested can be much bigger than the risk: what matters is the distance to the stop."
-  },
-  "u35l7-1": {
-   "prompt": "A company reports record profits and its share price falls 8 %. What's the most likely explanation?",
-   "options": [
-    "Record profits always make the share price fall",
-    "Someone made a mistake publishing the price",
-    "The market expected even more"
-   ],
-   "explanation": "The price already reflects what's expected. If the consensus expected more, a record can be a disappointment."
   },
   "u35l7-2": {
    "prompt": "March 2020: Covid has put half the world in lockdown and the S&P 500 has fallen more than 30 % in a month. The headlines talk about the worst crisis in decades. What did the index do over the following months?",
@@ -712,14 +749,6 @@
    ],
    "explanation": "The negative price was a problem with one specific contract: those who were due to take delivery of physical barrels had nowhere to store them. Extreme headlines describe the moment; they don't tell you what comes next.",
    "horizon": "the next 14 months"
-  },
-  "u35l7-5": {
-   "prompt": "If a piece of news is good for a company, its share price always rises that day.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "It depends on what was expected: good news that's already priced in can come with falls."
   },
   "u35l7-6": {
    "prompt": "Marta reads on a forum that a company is «definitely going to be taken over». The share price has already risen 25 % in three days. What does she do?",
@@ -763,33 +792,6 @@
    "explanation": "A forced purchase announced weeks in advance is news everyone knows: the price usually moves before the big day. What happens afterwards depends on other things: earnings, interest rates and expectations.",
    "horizon": "the period up to January 2023"
   },
-  "u35l7-10": {
-   "prompt": "Quick! The market expected 3 % inflation and it comes in at 3.4 %. What's most likely in the short term?",
-   "options": [
-    "Nothing happens because the figure was already known",
-    "The stock market rises because inflation is low",
-    "The stock market reacts downwards because of the surprise"
-   ],
-   "explanation": "What moves the market is the surprise: a worse-than-expected figure usually weighs on prices even if inflation is falling compared with the previous month."
-  },
-  "u35l7-11": {
-   "prompt": "What do you say to Lumi?",
-   "options": [
-    "Definitely, it's good news",
-    "Everyone already knew that news: what moves the price is surprise",
-    "I'd rather sell: good news always makes it fall"
-   ],
-   "explanation": "Whatever the market already expects is in the price. Only surprise, good or bad, moves it.",
-   "feedback": [
-    "Launches are announced weeks in advance: the price knew before you did.",
-    "Exactly! Price = expectations. If what was expected happens, it was already baked in. 🧠",
-    "There's no fixed rule the other way round either. It depends on what the market expected."
-   ],
-   "lines": [
-    "Big news! 📱 A major phone brand is unveiling its new model today.",
-    "I'm buying its shares right now, they're going to go up, right?"
-   ]
-  },
   "u35l8-1": {
    "prompt": "Put the steps of a well-executed trade in order.",
    "options": [
@@ -811,12 +813,6 @@
    "prompt": "Step 3, in a different trade: place the target.",
    "options": [],
    "explanation": "Near the previous high (about $785), where sellers showed up last time."
-  },
-  "u35l8-4": {
-   "prompt": "Step 4: you have €10,000 and risk 1 %. You enter at €25 with your stop at €24. How many shares do you buy?",
-   "options": [],
-   "explanation": "€100 of risk ÷ €1 of distance to the stop = 100 shares (€2,500 invested).",
-   "unit": "shares"
   },
   "u35l8-5": {
    "prompt": "Carry out the full trade: €10,000, maximum risk of 1 %. Place the stop below the low and adjust the amount.",
@@ -859,24 +855,6 @@
    "options": [],
    "explanation": "With €3,000 and 1 %, the maximum risk is €30. With little capital the rule is the same: the size is set by the distance to the stop."
   },
-  "u35l8-10": {
-   "prompt": "If you risk €100 and your stop is hit, you've lost ____.",
-   "options": [
-    "2R",
-    "10R",
-    "0.5R",
-    "1R"
-   ],
-   "explanation": "By definition, what you risk when you enter is 1R."
-  },
-  "u35l8-11": {
-   "prompt": "A trade that makes money was always a good trade.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "If you won without a stop or by risking 10 %, you got lucky with a bad plan. Judge the process, not just the result."
-  },
   "u35l9-1": {
    "prompt": "Monday: allocate your 10,000 virtual € following the challenge rules.",
    "options": [
@@ -893,20 +871,6 @@
     "BONDS",
     "GOLD",
     "CRYPTO"
-   ]
-  },
-  "u35l9-2": {
-   "prompt": "Tuesday: the stock market falls 3 % on a worse-than-expected inflation figure and your portfolio loses €180. What do you do?",
-   "options": [
-    "I don't touch anything: the portfolio is spread out and the fall is within normal range",
-    "I move everything into bitcoin to win it back quickly",
-    "I sell all my shares so it doesn't fall any further"
-   ],
-   "explanation": "Falls of a few percentage points are part of the journey. What turns a fall into a loss is panic selling.",
-   "feedback": [
-    "Good: −1.8 % on a bad day is exactly what a diversified portfolio is designed for.",
-    "You break the 10 % rule and put everything into the most volatile asset. That's revenge trading.",
-    "You turn a normal fall into a permanent loss, and now you have to guess when to get back in."
    ]
   },
   "u35l9-3": {
@@ -949,14 +913,6 @@
    "explanation": "In a diversified portfolio you don't need to get this right: what happens over two weeks counts for little compared with years of contributions.",
    "horizon": "the next 10 sessions"
   },
-  "u35l9-8": {
-   "prompt": "If your portfolio follows all the rules, it can't possibly lose money in a week.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "Rules limit how much you can lose; they don't prevent losses. In a bad week, a diversified portfolio goes down too."
-  },
   "u35l9-9": {
    "prompt": "Friday: set up next week's portfolio with more prudent rules: 35 % maximum per asset, at least 5 assets, 5 % at most in crypto and at least 20 % in bonds.",
    "options": [
@@ -975,24 +931,6 @@
     "BONDS",
     "GOLD",
     "CRYPTO"
-   ]
-  },
-  "u35l9-10": {
-   "prompt": "What do you say to Lumi?",
-   "options": [
-    "No: your cousin took on a huge risk, and one week doesn't tell you who did better",
-    "Depends how many «likes» his post gets",
-    "Yes: next time, everything into one crypto"
-   ],
-   "explanation": "One week is noise. You compare results taking into account the risk taken, and over long periods.",
-   "feedback": [
-    "That's it! What counts is the result relative to the risk, over years, not a screenshot. 😌",
-    "«Likes» don't pay for losses. 😅 Compare risks, not screenshots.",
-    "A +20 % week can be followed by a −40 % one. Copying whoever makes the most is herd behaviour."
-   ],
-   "lines": [
-    "Friday 🎉 My portfolio made 1 % this week.",
-    "My cousin's made 20 % with a single crypto. Have I been an idiot?"
    ]
   }
  }

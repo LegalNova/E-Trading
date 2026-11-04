@@ -9,16 +9,53 @@
    "title": "Com triar un bròker",
    "steps": [
     {
-     "title": "Primer, que sigui segur",
-     "body": "1. **Regulació:** autoritzat per la CNMV o per un supervisor de la UE amb **passaport** per operar a Espanya. Comprova-ho a cnmv.es, no al seu web.\n2. **Protecció:** els teus valors són teus i estan separats del patrimoni del bròker. Si faltés alguna cosa, el **FOGAIN** cobreix fins a **100.000 €** per inversor a les entitats adherides. No cobreix les caigudes del mercat."
+     "texts": [
+      "Un bròquer amb regal",
+      "Pablo",
+      "He trobat un bròquer amb comissions zero i et dupliquen el primer ingrés!",
+      "L'he buscat a la CNMV i no hi surt. Però el web és superprofessional.",
+      "Què li dius?",
+      "Aprofita el bonus, són diners gratis",
+      "Els bonus són l'esquer típic. Sense autorització, no tens cap protecció.",
+      "Descarta'l: sense autorització, no hi ha res a comparar",
+      "Això! El primer filtre és l'autorització. Les comissions venen després.",
+      "Prova-ho amb poc i, si va bé, hi poses més",
+      "Moltes estafes et deixen guanyar al principi perquè hi posis més.",
+      "Un bròquer barat però no autoritzat és el més car: ho pots perdre tot."
+     ]
     },
     {
-     "title": "Després, que t'encaixi",
-     "body": "3. **Costos:** compravenda, custòdia, canvi de divisa, inactivitat.\n4. **Productes:** té els fons indexats i els ETF que vols?\n5. **Fiscalitat:** els bròkers **espanyols** retenen i informen Hisenda; els **estrangers** normalment no, així que ho declares tu tot i potser el model 720. Els fons de garantia d'altres països poden tenir límits més baixos."
+     "texts": [
+      "Seguretat, costos o Hisenda?",
+      "Abans d'obrir un compte, mira tres coses. A quina pertany cadascuna?",
+      "Seguretat",
+      "Costos",
+      "Fiscalitat",
+      "Autoritzat per la CNMV o amb passaport europeu",
+      "Comprova-ho a cnmv.es, no al seu web.",
+      "Els teus valors, separats del patrimoni del bròquer",
+      "Són teus: si el bròquer fa fallida, te'ls haurien de tornar.",
+      "El FOGAIN cobreix fins a 100.000 € per inversor",
+      "Cobreix si una entitat adherida no et torna el que és teu. No cobreix les caigudes del mercat.",
+      "Comissió de custòdia",
+      "El que et cobren per guardar els teus valors.",
+      "Canvi de divisa en comprar en dòlars",
+      "Sol ser el cost més amagat.",
+      "Comissió per inactivitat",
+      "Alguns cobren si passes mesos sense operar.",
+      "Reté el 19 % i informa Hisenda",
+      "Ho fan els bròquers espanyols: la declaració surt gairebé feta.",
+      "Ho has de declarar tot tu i potser el model 720",
+      "Passa amb molts bròquers estrangers.",
+      "Col·loca els vuit criteris.",
+      "**Primer, la seguretat**: autoritzat i amb protecció. Després, costos i comoditat fiscal, i compte: els fons de garantia d'altres països poden tenir límits més baixos.",
+      "Això et protegeix, et costa diners o és cosa d'Hisenda?",
+      "Col·loca cada criteri"
+     ]
     },
     {
-     "title": "El que t'emportes",
-     "body": "Un bròker barat però no autoritzat és el més car de tots: ho pots perdre tot.",
+     "title": "L'ordre per triar",
+     "body": "1. **Regulació:** CNMV o supervisor de la UE amb passaport.\n2. **Protecció:** valors separats i fons de garantia (FOGAIN, fins a 100.000 €).\n3. **Costos:** compravenda, custòdia, divisa, inactivitat.\n4. **Productes:** té els fons indexats i els ETF que vols?\n5. **Fiscalitat:** un bròquer espanyol reté i informa; amb un d'estranger, ho declares tu tot.",
      "key": "Primer, que sigui segur i estigui autoritzat; després, que sigui barat.",
      "tip": "Abans de mirar quant cobra un bròker, mira qui el vigila."
     }
@@ -28,17 +65,48 @@
    "title": "Les comissions d'un bròker",
    "steps": [
     {
+     "texts": [
+      "Barata o cara?",
+      "Una comissió pesa diferent segons quant compris. S'endú **menys de l'1 %** de la compra o **un 1 % o més**?",
+      "Menys de l'1 %",
+      "Un 1 % o més",
+      "3 € fixos en una compra de 10.000 €",
+      "Un 0,03 %: una ganga.",
+      "3 € fixos en una compra de 100 €",
+      "Un 3 %: hauries de guanyar un 3 % només per quedar-te igual.",
+      "0,5 % sense mínim en una compra de 100 € (0,50 €)",
+      "Un 0,5 %. Amb pocs diners, la comissió percentual sense mínim sol guanyar.",
+      "5 € fixos en una compra de 100 €",
+      "Un 5 %: cal guanyar un 5 % només per recuperar la comissió.",
+      "2 € fixos en una compra de 1.000 €",
+      "Un 0,2 %.",
+      "0,1 % amb un mínim de 5 € en una compra de 200 €",
+      "Mana el mínim: 5 € sobre 200 € són un 2,5 %.",
+      "Classifica les sis compres.",
+      "3 € fixos són una ganga en 10.000 € (**0,03 %**) i una barbaritat en 100 € (**3 %**). Per aportar poc cada mes, busca costos **percentuals baixos o sense mínim**; per a compres grans i poc freqüents, una comissió fixa pot sortir més a compte.",
+      "Pista: 1 € per cada 100 € és un 1 %.",
+      "Compara la comissió amb el que compres"
+     ]
+    },
+    {
+     "texts": [
+      "El que és petit es capitalitza",
+      "L'Ana aporta **100 € al mes** durant 30 anys, amb un mercat del 7 % anual (exemple). Amb uns costos totals del 0,2 % l'any… o una mica més.",
+      "Pagar un 0,3 % més l'any durant 30 anys, quant li costa a l'Ana?",
+      "Uns 60 €",
+      "Uns 6.000 €",
+      "Uns 60.000 €",
+      "**6.020 €** menys: 106.703 € davant de 112.722 €. Poc cada any, molt amb l'interès compost.",
+      "Posa un cost de l'1,5 %, com el de molts fons actius de banc.",
+      "Amb un 1,5 % l'any, els costos s'enduen **23.630 €**, més d'una cinquena part. Mira **tots** els costos: compravenda, custòdia, divisa, inactivitat i el TER de cada fons.",
+      "Una cinquena part de tot, en comissions. Sense fer res!",
+      "Amb pocs anys gairebé no es nota. Puja els anys.",
+      "Puja el cost i mira quant s'endú"
+     ]
+    },
+    {
      "title": "Què et cobren",
-     "body": "• **Compravenda:** per cada operació (fixa, percentual o mixta).\n• **Custòdia:** per guardar els teus valors, de vegades mensual o anual.\n• **Canvi de divisa:** quan compres en una altra moneda. Sol ser el **cost ocult més alt**: del 0,1 % al 0,5 % o més per operació.\n• **Altres:** inactivitat, retirada, cobrament de dividends.\n\nI dins de cada fons o ETF, el seu TER."
-    },
-    {
-     "title": "El que és petit es capitalitza",
-     "body": "Prova com canvia el resultat a 20 o 30 anys amb un 0,3 % més o menys l'any.",
-     "tip": "Compara sempre el cost total amb la teva manera d'invertir."
-    },
-    {
-     "title": "Depèn de com inverteixes",
-     "body": "Una comissió fixa de 3 € és una ganga en una compra de 10.000 € (0,03 %) i una barbaritat en una de 100 € (3 %). Per aportar poc cada mes busca costos percentuals baixos o sense mínim; per a compres grans i poc freqüents, una comissió fixa pot sortir més a compte.",
+     "body": "• **Compravenda:** per cada operació (fixa, percentual o mixta).\n• **Custòdia:** per guardar els teus valors, de vegades mensual o anual.\n• **Canvi de divisa:** quan compres en una altra moneda. Sol ser el **cost ocult més alt**: del 0,1 % al 0,5 % o més per operació.\n• **Altres:** inactivitat, retirada, cobrament de dividends.\n\nI dins de cada fons o ETF, el seu **TER**.",
      "key": "El bròker més barat és el que menys et cobra a tu, amb la teva manera d'invertir."
     }
    ]
@@ -47,18 +115,60 @@
    "title": "Neobròkers: com guanyen diners",
    "steps": [
     {
-     "title": "Si és gratis, qui paga?",
-     "body": "Els neobròkers (apps amb compravenda a 0 € o gairebé) guanyen diners d'altres maneres:\n\n• **Pagament per flux d'ordres (PFOF):** un intermediari els paga per enviar-li les teves ordres.\n• **Spread** i **canvi de divisa**.\n• **Interessos** de l'efectiu que no et remuneren.\n• **Préstec de valors** de les teves accions.\n• **Subscripcions** prèmium, cripto i CFD."
+     "texts": [
+      "«0 € de comissió»",
+      "La teva app no cobra comissió. Però compres al millor preu de **venda** i vens al millor de **compra**: mira aquest llibre d'ordres d'exemple.",
+      "Compres 100 accions i les vens a l'instant. Què hi perds?",
+      "Res: la comissió és 0 €",
+      "La diferència entre el preu de compra i el de venda",
+      "Sempre un 5 %",
+      "Compres a 10,00 i només podries vendre a 9,98: l'**spread**, un **0,2 %**, es queda pel camí.",
+      "Fes una compra gran: busca una mida amb què el teu preu mitjà pugi més d'un 0,1 %.",
+      "L'**spread** és un cost encara que l'app digui «0 €», i en ordres grans s'hi suma el **lliscament**. A més, un intermediari pot pagar el bròquer perquè li enviï les teves ordres: és el **pagament per flux d'ordres** (PFOF).",
+      "La teva ordre es menja diversos preus del llibre: pagues més de mitjana.",
+      "Mira la diferència entre comprar i vendre"
+     ]
     },
     {
-     "title": "Les normes a la UE",
-     "body": "El reglament europeu MiFIR (2024) **prohibeix el pagament per flux d'ordres** als clients minoristes. Alguns països on ja existia el van poder mantenir com a excepció **fins al 30 de juny de 2026**.\n\nA més, moltes apps fan servir disseny de joc: confeti, notificacions, ratxes. Com més operes, més guanyen."
+     "texts": [
+      "Com guanya diners?",
+      "Un neobròker «sense comissions» guanya diners d'altres maneres. Quines creixen **com més operes**?",
+      "Guanya més si operes molt",
+      "Guanya encara que no operis",
+      "Spread en cada compravenda",
+      "Cada operació deixa una mica pel camí.",
+      "Canvi de divisa en comprar en dòlars",
+      "Cobra en cada compra en una altra moneda.",
+      "Pagament per flux d'ordres (PFOF)",
+      "Un intermediari li paga per cada ordre que li envia.",
+      "Interessos de l'efectiu que no et remunera",
+      "Els teus diners aturats li donen rendiment a ell.",
+      "Préstec de les teves accions a altres",
+      "Cobra per prestar-les, operis o no.",
+      "Subscripció prèmium mensual",
+      "La pagues cada mes, operis o no.",
+      "Classifica les sis fonts d'ingressos.",
+      "Saber d'on surten els seus ingressos et diu **quin comportament et voldrà fomentar**. El reglament europeu MiFIR (2024) **prohibeix el PFOF** als minoristes, amb una excepció en alguns països fins al 30 de juny de 2026.",
+      "Pregunta-t'ho: només cobra quan prems «comprar»?",
+      "Col·loca cada font d'ingressos"
+     ]
     },
     {
-     "title": "El que t'emportes",
-     "body": "Un neobròker autoritzat pot ser una bona opció barata. Només has de tenir clar com guanya diners i no deixar que l'app decideixi quant operes.",
-     "key": "Quan una cosa és gratis, pregunta't com guanya diners qui te la dona.",
-     "tip": "Si l'app t'anima a operar cada dia, recorda que el teu pla és a 20 anys."
+     "texts": [
+      "Confeti a cada compra",
+      "Pablo",
+      "Mira la meva app: confeti a cada compra i una ratxa de 12 dies operant.",
+      "Aquest mes ja porto 40 operacions d'uns 500 €. I tot gratis!",
+      "Què li dius?",
+      "Continua així! Si l'app et premia, ho fas bé",
+      "L'app premia que operis, no que guanyis. Com més operes, més guanya ella.",
+      "El disseny t'empeny a operar més del que necessita el teu pla",
+      "Això. Un pla a 20 anys no necessita 40 operacions al mes.",
+      "Canvia't a una altra app amb més premis",
+      "Més premis, més empentes per operar.",
+      "Amb un 0,2 % d'spread, són **480 € l'any**, encara que digui «0 € de comissió».",
+      "Un neobròker autoritzat pot ser una bona opció. Això sí, no deixis que decideixi quant operes."
+     ]
     }
    ]
   },
@@ -66,16 +176,40 @@
    "title": "Robo-advisors i gestió automatitzada",
    "steps": [
     {
+     "texts": [
+      "Quant costa la comoditat?",
+      "**10.000 €** a 30 anys amb un mercat del 7 % anual (exemple). Fer-ho tu amb indexats costa un **0,2 %** l'any; un robo-advisor, entre gestió i fons, un **0,6 %**.",
+      "A 30 anys, quant et costa el robo-advisor comparat amb fer-ho tu?",
+      "Uns 700 €",
+      "Uns 7.700 €",
+      "Uns 30.000 €",
+      "**7.662 €**: 71.968 € davant de 64.306 €. Només val la pena si t'evita errors que costarien més.",
+      "Ara posa-hi el cost de molts fons actius de banc: un 1,5 %.",
+      "Un robo-advisor sol costar entre un **0,4 % i un 1 %** l'any en total: més que fer-ho tu (≈ 0,1-0,3 %) i menys que molts fons actius (1,5 % o més). Amb un 1,5 %, se'n van **22.128 €**, gairebé un terç.",
+      "Gairebé un terç de tot se'n va en costos.",
+      "Mou el cost i mira la diferència"
+     ]
+    },
+    {
+     "texts": [
+      "La Laura i la caiguda del 2022",
+      "Laura",
+      "No tinc temps i mai no me'n recordo de reequilibrar.",
+      "I el 2022 vaig vendre en plena caiguda. Encara me'n penedeixo.",
+      "Agafo un robo-advisor o munto jo la meva cartera indexada?",
+      "Què li dius?",
+      "Munta-la tu: és més barat i prou",
+      "Més barat sobre el paper. Però els seus errors li van costar més que la comissió.",
+      "El robo-advisor et pot sortir a compte si t'evita aquests errors",
+      "Bé: paga una mica més per tenir disciplina automàtica. La clau: no abandonar-lo en una caiguda.",
+      "Millor un fons actiu del banc a l'1,8 %",
+      "Més car que les dues opcions i, de mitjana, pitjor que el seu índex.",
+      "Compte: un robo-advisor **no elimina el risc**. Si el mercat cau, la teva cartera cau."
+     ]
+    },
+    {
      "title": "Què és un robo-advisor",
-     "body": "Un servei de **gestió automatitzada**: respons un qüestionari (el **test d'idoneïtat**), t'assigna una cartera de fons indexats segons el teu perfil i s'encarrega d'aportar i **reequilibrar** per tu.\n\nA Espanya ha de ser una entitat autoritzada per la CNMV."
-    },
-    {
-     "title": "Quant costa",
-     "body": "Solen cobrar una comissió de gestió més el cost dels fons: en total, sovint entre un **0,4 % i un 1 %** anual. Més que fer-ho tu amb indexats (≈ 0,1-0,3 %), menys que molts fons actius de banc (1,5 % o més)."
-    },
-    {
-     "title": "Tu o el robot?",
-     "body": "Fer-ho tu és més barat si tens disciplina. El robo-advisor té sentit si t'estalvia errors: oblidar-te de reequilibrar o vendre en pànic. El que no fa és eliminar el risc: si el mercat cau, la teva cartera cau.",
+     "body": "Un servei de **gestió automatitzada**: respons un qüestionari (el **test d'idoneïtat**), t'assigna una cartera de fons indexats segons el teu perfil i s'encarrega d'aportar i **reequilibrar** per tu.\n\nA Espanya ha de ser una entitat **autoritzada per la CNMV**.",
      "key": "Un robo-advisor automatitza la disciplina, però cobra per fer-ho i no elimina el risc de mercat."
     }
    ]
@@ -111,15 +245,6 @@
    ],
    "explanation": "La popularitat a les xarxes no diu res sobre la seva seguretat."
   },
-  "u33l1-3": {
-   "prompt": "Què és el primer que has de comprovar d'un bròker?",
-   "options": [
-    "Que tingui l'app més bonica",
-    "Que sigui el més barat",
-    "Que estigui autoritzat per la CNMV o per un supervisor europeu amb passaport"
-   ],
-   "explanation": "Sense autorització, tota la resta no importa."
-  },
   "u33l1-4": {
    "prompt": "Què cobreix el FOGAIN?",
    "options": [
@@ -128,28 +253,6 @@
     "Les pèrdues quan cau la borsa"
    ],
    "explanation": "Protegeix davant de fallades de l'entitat, no davant de l'evolució del mercat."
-  },
-  "u33l1-5": {
-   "prompt": "Un bròker estranger sol retenir impostos per tu i enviar les teves dades a Hisenda.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Normalment no: et toca declarar totes les operacions, i potser presentar el model 720."
-  },
-  "u33l1-6": {
-   "prompt": "Un bròker que no apareix als registres de la CNMV t'ofereix comissions zero i un bo del 100 % del teu primer ingrés. Què fas?",
-   "options": [
-    "El descarto: si no està autoritzat, no hi ha res a comparar",
-    "Ho provo amb poc i, si va bé, hi poso més",
-    "Aprofito el bo, són diners gratis"
-   ],
-   "explanation": "Sense autorització, una comissió zero t'ho pot costar tot.",
-   "feedback": [
-    "Molt bé: el primer filtre és l'autorització. Les comissions vénen després.",
-    "Moltes estafes et deixen guanyar al principi perquè hi posis més.",
-    "Els bons són l'esquer típic, i sense autorització no tens cap protecció."
-   ]
   },
   "u33l1-7": {
    "prompt": "És més típic d'un bròker espanyol o d'un bròker estranger?",
@@ -175,14 +278,6 @@
    ],
    "explanation": "Si una entitat adherida no et pot tornar els diners o els valors."
   },
-  "u33l1-9": {
-   "prompt": "Les teves accions i ETF estan separats del patrimoni del bròker.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Són teus: si el bròker fa fallida, te'ls haurien de tornar."
-  },
   "u33l1-10": {
    "prompt": "Relaciona cada terme amb el seu significat.",
    "options": [
@@ -198,12 +293,6 @@
     "Declaració de valors i comptes a l'estranger",
     "Supervisor dels serveis d'inversió a Espanya"
    ]
-  },
-  "u33l2-1": {
-   "prompt": "Pagues 5 € de comissió fixa per comprar 100 € d'un ETF. Quin percentatge se'n va en comissió?",
-   "options": [],
-   "explanation": "5 ÷ 100 = 5 %. Hauries de guanyar un 5 % només per quedar-te igual.",
-   "unit": "%"
   },
   "u33l2-2": {
    "prompt": "Compres 2.000 € d'accions dels EUA i el bròker cobra un 0,5 % pel canvi de divisa. Quants euros pagues només per canviar?",
@@ -256,14 +345,6 @@
     "Sobre 100 € són un 3 %: 36 € l'any."
    ]
   },
-  "u33l2-7": {
-   "prompt": "Si un bròker anuncia «0 € de comissió», invertir-hi no té cap cost.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Pot cobrar pel canvi de divisa, l'spread, la custòdia o guanyar per altres vies."
-  },
   "u33l2-8": {
    "prompt": "Es paga per operació o cada any?",
    "options": [
@@ -279,25 +360,6 @@
     "Cada any"
    ]
   },
-  "u33l2-9": {
-   "prompt": "Ràpid: on trobes el cost anual (TER) d'un fons o ETF?",
-   "options": [
-    "Al KID, el document de dades fonamentals",
-    "Al seu compte d'Instagram",
-    "A la teva declaració de la renda"
-   ],
-   "explanation": "És obligatori i està estandarditzat perquè es pugui comparar."
-  },
-  "u33l2-10": {
-   "prompt": "Compra única de 100 €. Ordena de més barat a més car.",
-   "options": [
-    "2 € fixos",
-    "5 € fixos",
-    "0,5 % sense mínim (0,50 €)",
-    "0,1 % sense mínim (0,10 €)"
-   ],
-   "explanation": "Amb imports petits, les comissions fixes pesen moltíssim."
-  },
   "u33l3-1": {
    "prompt": "Què és el pagament per flux d'ordres (PFOF)?",
    "options": [
@@ -306,14 +368,6 @@
     "Una comissió que pagues tu al bròker"
    ],
    "explanation": "Per això un bròker pot anunciar compravenda a 0 € i, tot i així, guanyar amb les teves ordres."
-  },
-  "u33l3-2": {
-   "prompt": "A la UE, el pagament per flux d'ordres als clients minoristes està prohibit, amb una excepció temporal que va acabar el 30 de juny de 2026.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Ho estableix el Reglament (UE) 2024/791, que va reformar el MiFIR."
   },
   "u33l3-3": {
    "prompt": "De quines maneres pot guanyar diners un neobròker «sense comissions»? Marca-les totes.",
@@ -324,49 +378,6 @@
     "Amb el canvi de divisa"
    ],
    "explanation": "I també amb subscripcions, spreads i productes com cripto o CFD."
-  },
-  "u33l3-4": {
-   "prompt": "L'app d'en Pablo li envia notificacions, confeti a cada compra i reptes de «ratxa». Ja opera 40 vegades al mes. Què li recomanes que pensi?",
-   "options": [
-    "Que el disseny l'empeny a operar més del que necessita el seu pla",
-    "Que continuï: si l'app el premia, deu estar fent-ho bé",
-    "Que canviï a una altra app amb més premis"
-   ],
-   "explanation": "La gamificació serveix el negoci del bròker, no necessàriament el teu pla.",
-   "feedback": [
-    "Molt bé: un pla a llarg termini no necessita 40 operacions al mes.",
-    "L'app premia que operis, no que guanyis. Com més operes, més costos acumules.",
-    "Més premis, més empentes per operar."
-   ]
-  },
-  "u33l3-5": {
-   "prompt": "El neobròker guanya més si operes molt o guanya encara que no operis?",
-   "options": [
-    "Interessos de l'efectiu que no et remunera",
-    "Subscripció prèmium mensual",
-    "Préstec de les teves accions",
-    "Spread a cada compravenda",
-    "Canvi de divisa a cada compra"
-   ],
-   "explanation": "Saber d'on vénen els seus ingressos et diu quin comportament t'intentarà fomentar.",
-   "right": [
-    "Guanya més si operes molt",
-    "Guanya encara que no operis"
-   ]
-  },
-  "u33l3-6": {
-   "prompt": "En Pablo opera 40 vegades al mes, 500 € cada vegada, i perd un 0,2 % en spread per operació. Quant li costa l'any?",
-   "options": [],
-   "explanation": "500 × 0,2 % = 1 € per operació × 40 × 12 = 480 € l'any, encara que l'app digui «0 € de comissió».",
-   "unit": "€"
-  },
-  "u33l3-7": {
-   "prompt": "Si operar és gratis per a tu, el bròker no guanya diners amb tu.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Guanya per altres vies: divisa, spread, interessos, préstec de valors o subscripcions."
   },
   "u33l3-8": {
    "prompt": "El pagament per ____ d'ordres és el que un intermediari paga al bròker per enviar-li les teves ordres.",
@@ -430,34 +441,6 @@
    ],
    "explanation": "Automatitza el repartiment, les aportacions i el reequilibri."
   },
-  "u33l4-3": {
-   "prompt": "10.000 € a 30 anys amb un mercat al 7 % (exemple). Amb un robo-advisor al 0,6 % total et queden uns 64.306 €; fent-ho tu al 0,2 %, uns 71.968 €. Quant costa la comoditat?",
-   "options": [],
-   "explanation": "71.968 − 64.306 = 7.662 €. Només val la pena si t'evita errors que costarien més.",
-   "unit": "€"
-  },
-  "u33l4-4": {
-   "prompt": "Un robo-advisor elimina el risc que la teva cartera caigui.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Reparteix i reequilibra, però si el mercat cau, la teva cartera cau."
-  },
-  "u33l4-5": {
-   "prompt": "La Laura no té temps, mai no se'n recorda de reequilibrar i el 2022 va vendre en plena caiguda. Dubta entre un robo-advisor i muntar ella mateixa la seva cartera indexada. Què té més sentit?",
-   "options": [
-    "Un fons actiu del banc a l'1,8 %",
-    "Muntar-la ella: és més barat i prou",
-    "El robo-advisor li pot sortir a compte si l'ajuda a no repetir aquests errors"
-   ],
-   "explanation": "El cost importa, però els errors de comportament poden costar encara més.",
-   "feedback": [
-    "Més car que les dues opcions i, de mitjana, pitjor que el seu índex.",
-    "Més barat sobre el paper, però els seus errors passats li van sortir més cars que la comissió.",
-    "Molt bé: paga una mica més a canvi de disciplina automàtica. La clau és que no l'abandoni en una caiguda."
-   ]
-  },
   "u33l4-6": {
    "prompt": "És un avantatge del robo-advisor o de fer-ho tu?",
    "options": [
@@ -472,14 +455,6 @@
     "Avantatge del robo-advisor",
     "Avantatge de fer-ho tu"
    ]
-  },
-  "u33l4-7": {
-   "prompt": "A Espanya, un robo-advisor ha de ser una entitat autoritzada per la CNMV.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Gestionar carteres és un servei d'inversió regulat."
   },
   "u33l4-8": {
    "prompt": "Què hauries de mirar abans de contractar un robo-advisor? Marca-ho tot.",

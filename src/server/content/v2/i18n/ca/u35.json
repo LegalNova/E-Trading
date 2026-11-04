@@ -9,8 +9,36 @@
    "title": "Puja o baixa? Accions",
    "steps": [
     {
-     "title": "Així funciona el laboratori",
-     "body": "Veuràs **30 espelmes diàries reals** d'una acció o d'un índex, sense nom ni data. La teva feina: decidir si **10 sessions després** el preu era més amunt o més avall.\n\nQuan responguis, es revelarà què era, quan va passar i com va continuar. Compta els encerts: al final sabràs quant s'assembla això a llançar una moneda."
+     "texts": [
+      "Puja o baixa?",
+      "30 espelmes diàries reals d'una acció. Decideix si **10 sessions després** el preu era més amunt o més avall, i mira què va passar.",
+      "Si llancessis una moneda en lloc de mirar el gràfic, quantes n'encertaries de cada 10, de mitjana?",
+      "Cap",
+      "Unes 5",
+      "Les 10",
+      "A l'atzar s'encerta **la meitat**, de mitjana. Per saber si ho fas millor que una moneda, calen molts intents.",
+      "Juga les cinc rondes.",
+      "A curt termini el preu té molt de **soroll**: en dues setmanes, una notícia ho canvia tot. **El que sí que controles és quant arrisques.**",
+      "Molt bé! Habilitat o sort? Amb cinc intents, és impossible saber-ho.",
+      "Fet. Ha estat més fàcil o més difícil del que et pensaves?",
+      "Mira la tendència, on és el preu i la mida de les espelmes"
+     ]
+    },
+    {
+     "texts": [
+      "Set de deu",
+      "Leo",
+      "N'he encertat 7 de 10 al «puja o baixa?»!",
+      "He trobat el meu mètode. Demà hi poso els estalvis.",
+      "Què li dius?",
+      "Endavant! 7 de 10 és un mètode infal·lible",
+      "Llançant una moneda, 7 de 10 o més surt un 17 % de les vegades.",
+      "Amb 10 intents mana la sort: en necessites molts més",
+      "Això. Calen desenes o centenars d'intents per separar l'habilitat de la sort.",
+      "Prova primer amb la meitat dels teus estalvis",
+      "Menys risc, però la mateixa prova de 10 intents: encara no diu res.",
+      "I compte amb la fal·làcia del jugador: les sessions no «deuen» res."
+     ]
     },
     {
      "title": "Què has de mirar abans de decidir",
@@ -24,13 +52,35 @@
    "title": "Puja o baixa? Cripto",
    "steps": [
     {
-     "title": "La muntanya russa cripto",
-     "body": "El bitcoin té una volatilitat anual del **50–80 %**, davant del ~15 % d'un índex mundial d'accions. Ha caigut més d'un 70 % des de màxims diverses vegades i cotitza **24 hores, 7 dies**: no hi ha cap tancament que doni un respir.\n\nÉs un actiu molt volàtil i no està regulat com un dipòsit: **es pot perdre la totalitat del que s'ha invertit.**"
+     "texts": [
+      "Puja o baixa? Cripto",
+      "Espelmes diàries reals de bitcoin i ethereum: **10 dies després**, més amunt o més avall? En cripto no hi ha tancament: cotitza **24 hores, 7 dies**.",
+      "Juga les quatre rondes.",
+      "El bitcoin té una volatilitat anual del **50–80 %**, davant del ~15 % d'un índex mundial d'accions, i ha caigut més d'un 70 % des de màxims diverses vegades. No està regulat com un dipòsit: **es pot perdre la totalitat del que s'ha invertit**.",
+      "Totes quatre es van moure més d'un 8 % en només 10 dies.",
+      "Mira la mida de les espelmes abans de decidir"
+     ]
+    },
+    {
+     "texts": [
+      "Més volàtil, més petita",
+      "Tens **10.000 €** i arrisques com a màxim un **1 %** per operació: 100 €. En una acció tranquil·la l'stop pot anar a un 3 %, però en cripto el soroll obliga a allunyar-lo.",
+      "Si allunyes l'stop del 3 % al 10 % arriscant el mateix, quant pots comprar?",
+      "Més",
+      "El mateix",
+      "Força menys",
+      "Els mateixos 100 € de risc: amb l'stop al 3 %, uns 3.333 €; al 10 %, només **1.000 €**.",
+      "Posa l'stop al 10 %, típic d'una cripto, amb un 1 % de risc.",
+      "**Com més volàtil és l'actiu, més lluny va l'stop i més petita és la posició.** Així, encara que salti, perds el mateix.",
+      "Amb tant de risc, deu errors seguits deixen el compte molt tocat.",
+      "Stop lluny, posició petita. Així un mal dia no t'enfonsa.",
+      "Mou la distància de l'stop"
+     ]
     },
     {
      "title": "El que costa recuperar-se",
-     "body": "Prova una caiguda del 50 % i després una del 80 %. Quant ha de pujar després el preu per tornar al punt de partida?",
-     "tip": "Després de perdre un 80 %, cal multiplicar per 5 (+400 %) només per tornar a començar."
+     "body": "• Si cau un **50 %**, ha de pujar un **+100 %** per tornar al punt de partida.\n• Si cau un **80 %**, un **+400 %**: multiplicar per 5.\n\nEl bitcoin ha caigut més d'un 70 % des de màxims diverses vegades.",
+     "key": "Les caigudes grans són molt difícils de recuperar: en cripto, només diners que podries perdre sencers."
     }
    ]
   },
@@ -38,12 +88,34 @@
    "title": "Puja o baixa? Divises i or",
    "steps": [
     {
-     "title": "Divises: moviments petits",
-     "body": "Un parell com l'**EUR/USD** diu quants dòlars val un euro. Si passa d'1,10 a 1,12, l'euro s'ha apreciat davant del dòlar.\n\nLes divises grans es mouen poc: un 2 % en dues setmanes ja és un moviment notable. El que més les mou són els **tipus d'interès** i les sorpreses econòmiques de cada país."
+     "texts": [
+      "Or en dòlars, guanys en euros",
+      "L'or **cotitza en dòlars**. Si compres des d'Espanya, compten dues coses: el que fa l'or i el que fa el dòlar davant de l'euro.",
+      "dòlar",
+      "L'or puja un 10 % en dòlars, però el dòlar cau un 10 % davant de l'euro. Què guanyes en euros?",
+      "Un 10 %",
+      "Més o menys res",
+      "Un 20 %",
+      "1,10 × 0,90 = 0,99: **un −1 %**. El que guanya l'or se'l menja la divisa.",
+      "Busca un cas en què l'or pugi en dòlars i tu perdis en euros.",
+      "En euros compten l'actiu **i la divisa**. I el que més mou les divises són els **tipus d'interès** i les sorpreses econòmiques de cada país.",
+      "En euros, perds. Mira què ha fet el dòlar.",
+      "Mou l'or i el dòlar"
+     ]
+    },
+    {
+     "texts": [
+      "Puja o baixa? Divises i metalls",
+      "Espelmes diàries reals de divises, or i plata: **10 sessions després**, més amunt o més avall? Mira bé l'escala.",
+      "Juga les cinc rondes.",
+      "Les divises grans es mouen poc: **un 2 % en dues setmanes ja és molt**. Els metalls, força més: l'or el mouen els tipus, el dòlar i la por, i res d'això es veu en 30 espelmes.",
+      "Divises: menys d'un 2 %. Or i plata: més d'un 9 %.",
+      "Fixa't en l'escala de l'eix abans de decidir"
+     ]
     },
     {
      "title": "L'or, refugi amb matisos",
-     "body": "L'or no paga interessos ni dividends. Se sol buscar en les crisis i davant la inflació, però pot passar anys sense pujar: del 1980 al 2000 va perdre molt valor real. A més, cotitza en dòlars, així que el tipus de canvi també compta.",
+     "body": "Un parell com l'**EUR/USD** diu quants dòlars val un euro: si passa d'1,10 a 1,12, l'euro s'ha apreciat davant del dòlar.\n\nL'or no paga interessos ni dividends. Se sol buscar en les crisis i davant la inflació, però pot passar anys sense pujar: del 1980 al 2000 va perdre molt valor real.",
      "key": "Refugi no vol dir que sempre pugi: vol dir que molta gent el busca quan té por.",
      "tip": "En divises, fixa't bé en l'escala de l'eix: un 1 % ja és molt."
     }
@@ -58,6 +130,38 @@
      "ko": "Busca l'espelma amb la metxa de baix molt més llarga que el cos."
     },
     {
+     "prompt": "Ara toca l'espelma que completa l'envolvent baixista: un cos vermell que es menja el verd anterior, després d'una pujada.",
+     "ok": "És aquesta! Els venedors van esborrar de cop tot el que s'havia guanyat el dia anterior.",
+     "ko": "Busca una espelma vermella amb un cos que cobreixi del tot el cos verd anterior."
+    },
+    {
+     "texts": [
+      "Què explica cada espelma?",
+      "Cada patró suggereix alguna cosa **segons on apareix**. Apunta a un possible gir a l'alça, a la baixa o a indecisió?",
+      "Possible gir a l'alça",
+      "Possible gir a la baixa",
+      "Indecisió",
+      "Martell després d'una caiguda",
+      "Metxa inferior llarga: els compradors van rebutjar els preus baixos.",
+      "Estrella fugaç després d'una pujada",
+      "Metxa superior llarga: els venedors van tornar el preu avall.",
+      "Doji: obertura gairebé igual al tancament",
+      "Ningú no va guanyar la sessió. Espera l'espelma següent.",
+      "Envolvent alcista després d'una caiguda",
+      "Un cos verd es menja el vermell anterior.",
+      "La forma d'un martell, però després d'una pujada",
+      "És l'home penjat: la forma és igual; el context, no.",
+      "Estrella del matí: vermella grossa, petita i verda forta",
+      "Tres espelmes que expliquen que els compradors prenen el comandament.",
+      "Envolvent baixista després d'una pujada",
+      "Un cos vermell es menja el verd anterior.",
+      "Classifica els set patrons.",
+      "**Un patró és una pista, no una ordre**: molts fallen. Es confirma amb el context i l'espelma següent, i sempre amb un stop.",
+      "Primer mira d'on ve el preu: pujava o baixava?",
+      "Classifica cada patró"
+     ]
+    },
+    {
      "title": "Xuleta de patrons",
      "body": "• **Martell:** metxa inferior llarga després d'una caiguda.\n• **Estrella fugaç:** metxa superior llarga després d'una pujada.\n• **Doji:** obertura ≈ tancament.\n• **Envolvent:** un cos es menja l'anterior, en sentit contrari.\n• **Marubozu:** cos llarg gairebé sense metxes.\n• **Estrella del matí:** vermella grossa, petita i verda forta.",
      "key": "Un patró és una pista, no una ordre: confirma'l amb el context.",
@@ -69,8 +173,33 @@
    "title": "Marca el suport",
    "steps": [
     {
-     "title": "Terres i sostres",
-     "body": "Un **suport** és una zona on el preu ha deixat de caure diverses vegades: hi apareixen compradors. Una **resistència**, on ha deixat de pujar: hi apareixen venedors.\n\nSón **zones**, no línies exactes. I quan es trenquen amb claredat, solen canviar de paper: la resistència trencada passa a ser suport, i a l'inrevés."
+     "texts": [
+      "Opera amb el suport",
+      "Espelmes reals: el preu té un **suport** un 3 % per sota de la teva entrada i una **resistència** un 6 % per sobre. Col·loca el teu stop i el teu objectiu.",
+      "Posa l'stop per sota del suport i l'objectiu a prop de la resistència. Després, mira què va passar.",
+      "Un **suport** és una zona on el preu ha deixat de caure diverses vegades (hi apareixen compradors); una **resistència**, on ha deixat de pujar. **Donen un lloc lògic a l'stop i a l'objectiu**, encara que res no assegura que es respectin.",
+      "El teu stop és per sobre del suport: el soroll el pot fer saltar.",
+      "Objectiu! Aquesta vegada el suport va aguantar.",
+      "Busca el terra al gràfic i posa l'stop a sota"
+     ]
+    },
+    {
+     "texts": [
+      "Suport trencat?",
+      "Nuria",
+      "La meva acció fa mesos que rebota al mateix terra.",
+      "Avui ha tancat una mica per sota. Suport trencat! Ho venc tot.",
+      "Què li dius?",
+      "Sí, ven abans que s'enfonsi",
+      "Pot ser. Però moltes ruptures són falses: creuen uns dies i tornen.",
+      "Espera a veure si tanca diverses sessions per sota, amb volum",
+      "Bé. Així es filtren moltes ruptures falses.",
+      "Compra'n més: ara és més barata",
+      "Si el suport es trenca de debò, «més barata» es pot abaratir molt més.",
+      "Dos dies després, el preu torna dins del rang.",
+      "Una **ruptura falsa**. Per això els suports són **zones**, no línies.",
+      "I si es trenquen de debò, canvien de paper: la resistència trencada passa a ser suport."
+     ]
     },
     {
      "title": "Com trobar-los",
@@ -84,8 +213,32 @@
    "title": "Col·loca el teu stop",
    "steps": [
     {
-     "title": "On t'equivoques",
-     "body": "L'**stop loss** va on la teva idea deixa de tenir sentit: normalment **just per sota de l'últim mínim rellevant**, amb un petit marge per al soroll.\n\nL'**objectiu** sol anar a prop del **màxim anterior**, on abans van aparèixer venedors. Amb tots dos calcules la **relació benefici/risc**: molts no entren per sota de 2:1."
+     "texts": [
+      "Col·loca el teu stop",
+      "Espelmes reals: has comprat a l'últim preu i l'últim mínim rellevant és **un 1,6 %** per sota. On poses l'stop i l'objectiu?",
+      "Stop per sota del mínim, amb marge, i un objectiu d'almenys el doble. Després, mira què va passar.",
+      "L'stop va **on la teva idea deixa de tenir sentit**: just per sota de l'últim mínim rellevant, amb marge per al soroll. L'objectiu, a prop del màxim anterior: molts no entren per sota de **2:1**.",
+      "Ha saltat l'stop. Era massa enganxat al mínim?",
+      "Objectiu! L'stop amb marge va aguantar el soroll.",
+      "El teu objectiu no arriba al doble del risc. Compensa?",
+      "Col·loca l'stop i l'objectiu"
+     ]
+    },
+    {
+     "texts": [
+      "El preu s'acosta a l'stop",
+      "Laura",
+      "Vaig comprar amb l'stop sota l'últim mínim. I ara el preu baixa…",
+      "Està a punt de tocar-lo. El baixo una mica per donar-li aire?",
+      "Què li dius?",
+      "Sí, baixa'l: segur que rebota",
+      "Així una pèrdua petita i prevista es fa gran. És l'efecte disposició.",
+      "Deixa'l: era el punt en què la teva idea fallava",
+      "Això. Si salta, perds el que tenies previst i passes a la següent.",
+      "Compra'n més per baixar el preu mitjà",
+      "Dobles l'aposta en una idea que el mercat desmenteix.",
+      "L'stop es decideix en fred, abans d'entrar. No el moguis mai en contra."
+     ]
     },
     {
      "title": "Primer l'stop, després la mida",
@@ -99,8 +252,44 @@
    "title": "Notícies i reaccions",
    "steps": [
     {
-     "title": "El preu ja ho sabia",
-     "body": "El mercat es mou per **la sorpresa**, no per la notícia. Si tothom espera beneficis rècord i arriben beneficis rècord, l'acció pot caure: ja era al preu.\n\nI quan tu llegeixes el titular, milers de persones i algoritmes ja han reaccionat. Per això operar amb notícies és tan difícil."
+     "texts": [
+      "Beneficis rècord",
+      "Marta",
+      "La meva empresa ha presentat beneficis rècord!",
+      "I la seva acció cau un 8 %. De què va això?",
+      "Què ha passat?",
+      "El mercat esperava encara més",
+      "Això. El preu ja incloïa el que s'esperava, i un rècord també pot decebre.",
+      "Algú s'ha equivocat en publicar el preu",
+      "No hi ha cap error: el mercat ho compara amb el que esperava.",
+      "Els rècords sempre fan caure l'acció",
+      "No hi ha cap regla fixa: depèn del que esperava el mercat.",
+      "Quan tu llegeixes el titular, milers de persones i algoritmes ja han reaccionat."
+     ]
+    },
+    {
+     "texts": [
+      "Notícia o sorpresa?",
+      "El preu es mou per **la sorpresa**, no per la notícia. Això ja ho sabia el mercat o l'agafa per sorpresa?",
+      "Ja era al preu",
+      "Sorpresa: pot moure el preu",
+      "Beneficis rècord, just el que esperaven els analistes",
+      "Si passa el que s'esperava, ja era dins del preu.",
+      "El banc central apuja els tipus més del que s'esperava",
+      "El que és inesperat és el que mou el preu.",
+      "La presentació del nou mòbil, anunciada fa setmanes",
+      "Tothom la coneixia abans que tu.",
+      "Inflació del 3,4 % quan s'esperava un 3 %",
+      "Una dada pitjor del que s'esperava sol pesar a curt termini.",
+      "Una empresa entra en un índex, anunciat setmanes abans",
+      "Una compra obligada i anunciada se sol notar abans del dia assenyalat.",
+      "Es descobreix per sorpresa un frau comptable",
+      "Ningú no ho esperava: el preu s'ajusta de cop.",
+      "Classifica els sis titulars.",
+      "**A la borsa, una bona notícia que ja s'esperava no és notícia.** Abans de reaccionar, pregunta't què esperava el mercat.",
+      "Pregunta-t'ho: això ja ho sabia tothom?",
+      "Classifica cada titular"
+     ]
     },
     {
      "title": "Què fer davant d'un titular",
@@ -114,12 +303,35 @@
    "title": "Operació completa",
    "steps": [
     {
-     "title": "Cinc decisions abans d'entrar",
-     "body": "1. **Tesi:** per què creus que pot pujar.\n2. **Stop:** on t'equivoques.\n3. **Objectiu:** on reculls guanys.\n4. **Mida:** quant compres per arriscar només un 1 %.\n5. **Registre:** l'apuntes al diari.\n\nDesprés només queda executar i no tocar el pla per impuls."
+     "texts": [
+      "Stop i objectiu",
+      "Espelmes reals: la teva tesi és que el preu rebota al seu suport, un **7,5 %** per sota de l'entrada. Col·loca l'**stop** i l'**objectiu**, i mira què va passar.",
+      "Posa l'stop per sota del suport i mira què va passar.",
+      "Aquesta vegada va saltar l'stop, però sense ell, 15 sessions després, anaves perdent un 21,8 %. **Un bon pla no garanteix guanyar: garanteix que, si perds, perds el que tenies previst.**",
+      "Ha saltat l'stop. Fa mal, però és just el que havies decidit arriscar.",
+      "El teu stop és per sobre del suport.",
+      "Busca el suport i posa l'stop a sota"
+     ]
     },
     {
-     "title": "Mesurar en R",
-     "body": "Si arrisques 100 € i en guanyes 250, has guanyat **2,5R**. Si salta l'stop, perds **1R**. Mesurar en R permet comparar operacions de mida diferent i saber si el teu sistema guanya a la llarga.",
+     "texts": [
+      "La mida",
+      "Compte de **10.000 €** i un risc de l'**1 %** (100 €), amb l'stop un **8 %** per sota de l'entrada. Quant compres?",
+      "Amb l'stop al 8 % i un 1 % de risc, si salta l'stop, quant perds?",
+      "100 €",
+      "800 €",
+      "Tot el que has invertit",
+      "Només compres **1.250 €** (100 ÷ 8 %). Si salta, perds el 8 % d'això: **100 €, és a dir, 1R**.",
+      "Posa l'stop al 8 % amb un 1 % de risc.",
+      "**No decideixes quant compres: ho decideix la distància al teu stop.** El que arrisques en entrar és **1R**: si arrisques 100 € i en guanyes 250, has guanyat 2,5R.",
+      "1.250 €: si salta l'stop, perds just 100 €.",
+      "Amb més d'un 2 % per operació, una mala ratxa fa molt de mal.",
+      "Mou la distància de l'stop"
+     ]
+    },
+    {
+     "title": "Cinc decisions abans d'entrar",
+     "body": "1. **Tesi:** per què creus que pot pujar.\n2. **Stop:** on t'equivoques.\n3. **Objectiu:** on reculls guanys.\n4. **Mida:** quant compres per arriscar només un 1 %.\n5. **Registre:** l'apuntes al diari.\n\nMesurar en **R** permet comparar operacions de mida diferent i saber si el teu sistema guanya a la llarga.",
      "key": "Una bona operació és la que segueix el pla, encara que perdi.",
      "tip": "Revisa el diari cada 20 operacions: t'ensenya el que la memòria prefereix oblidar."
     }
@@ -129,12 +341,49 @@
    "title": "El repte de la setmana",
    "steps": [
     {
-     "title": "La teva cartera de la setmana",
-     "body": "Aquest repte simula una setmana amb **10.000 € virtuals**. Dilluns reparteixes la cartera seguint unes regles; durant la setmana arriben notícies i oportunitats; divendres fas balanç.\n\nNo guanya qui més puja, sinó qui **compleix les regles** i pren decisions que podria explicar. És una simulació educativa, no una recomanació."
+     "texts": [
+      "Compleix les regles?",
+      "Regles del repte, amb 10.000 € virtuals: cap actiu no passa del **40 %**, com a mínim **4 actius**, cripto com a màxim un **10 %** i cada operació arrisca com a màxim un **1 %**. Compleix o trenca una regla?",
+      "Compleix",
+      "Trenca una regla",
+      "MSCI World 40 %, bons 30 %, or 20 %, bitcoin 10 %",
+      "Quatre actius, cap no passa del 40 % i la cripto es queda en el 10 %.",
+      "Bitcoin al 15 % de la cartera",
+      "La cripto es pot perdre sencera: com a màxim, un 10 %.",
+      "Només tres actius, a parts iguals",
+      "En calen com a mínim 4.",
+      "Una operació que arrisca 80 €",
+      "L'1 % de 10.000 € són 100 €: 80 € és dins del límit.",
+      "L'ETF de l'IBEX 35 al 45 %",
+      "Cap actiu no pot passar del 40 %.",
+      "Una operació que arrisca 300 €",
+      "És un 3 % de la cartera: el triple del permès.",
+      "Revisa els sis casos.",
+      "Amb un màxim del 40 % per actiu i com a mínim 4 actius, **cap sorpresa no pot enfonsar la teva setmana**. I la cripto, poca: es pot perdre sencera.",
+      "Repassa les quatre regles: pes, nombre d'actius, cripto i risc.",
+      "Compleix o trenca una regla?"
+     ]
     },
     {
-     "title": "Les regles del repte",
-     "body": "• Cap actiu no pesa més del **40 %**.\n• Com a mínim **4 actius**.\n• Cripto, com a màxim un **10 %**: es pot perdre sencera.\n• Cada operació arrisca com a màxim un **1 %** de la cartera.",
+     "texts": [
+      "Dimarts: la borsa cau",
+      "Álex",
+      "Dimarts. Surt una dada d'inflació pitjor del que s'esperava i la borsa cau un 3 %.",
+      "La teva cartera perd 180 €: un −1,8 %.",
+      "Ho has vist? Jo ho venc tot abans que caigui més.",
+      "I tu, què fas?",
+      "Venc totes les accions perquè no caiguin més",
+      "Converteixes una caiguda normal en pèrdua, i després hauràs d'endevinar quan tornar-hi.",
+      "No toco res: la cartera està repartida i la caiguda és normal",
+      "Això. Un −1,8 % en un mal dia és just allò per al que està pensada.",
+      "Ho passo tot a bitcoin per recuperar-ho ràpid",
+      "Trenques la regla del 10 % i operes per venjança.",
+      "La borsa va caure un 3 %; la teva cartera, només un 1,8 %. Això és diversificar."
+     ]
+    },
+    {
+     "title": "La teva setmana",
+     "body": "No guanya qui més puja, sinó qui **compleix les regles** i pren decisions que podria explicar. Dilluns reparteixes, durant la setmana arriben notícies i oportunitats, i divendres fas balanç.\n\nÉs una simulació educativa amb **10.000 € virtuals**, no una recomanació.",
      "key": "Les regles s'escriuen dilluns amb el cap fred; la resta de la setmana només es compleixen.",
      "tip": "Si no podries explicar una decisió en veu alta, no la prenguis."
     }
@@ -186,15 +435,6 @@
    "explanation": "Després d'un moviment fort, el cervell et tempta amb dues idees oposades: «continuarà així» (biaix de recència) o «ja toca que es giri» (fal·làcia del jugador). Cap no és fiable per si sola.",
    "horizon": "les 10 sessions següents"
   },
-  "u35l1-5": {
-   "prompt": "Portes 7 encerts de 10 a «Puja o baixa?». Quina conclusió és la més assenyada?",
-   "options": [
-    "Amb 10 intents la sort pesa molt: en necessito molts més per saber si tinc avantatge",
-    "Ja puc operar amb diners reals",
-    "He trobat un mètode infal·lible"
-   ],
-   "explanation": "Si llances una moneda 10 vegades, treure 7 cares o més passa al voltant del 17 % de les vegades. Calen desenes o centenars d'intents per separar l'habilitat de la sort."
-  },
   "u35l1-6": {
    "prompt": "Acció europea, espelmes diàries. Va pujar o baixar en les 10 sessions següents?",
    "options": [
@@ -202,15 +442,6 @@
     "Baixa"
    ],
    "explanation": "Quan el preu és al mig del seu rang recent, no hi ha ni tan sols un nivell clar per vigilar ni un lloc lògic per a l'stop. En aquests casos, no operar també és una decisió.",
-   "horizon": "les 10 sessions següents"
-  },
-  "u35l1-7": {
-   "prompt": "20 segons! Més amunt o més avall 10 sessions després?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Has decidit amb pressa, com qui opera mirant el mòbil al metro. Les decisions ràpides tiren d'intuïció, i la intuïció és justament on viuen els biaixos.",
    "horizon": "les 10 sessions següents"
   },
   "u35l1-8": {
@@ -229,33 +460,6 @@
     "Fals"
    ],
    "explanation": "És la fal·làcia del jugador: les sessions no «es deuen» res entre si. Una ratxa no fa més probable el canvi de direcció."
-  },
-  "u35l1-10": {
-   "prompt": "Banc nord-americà, espelmes diàries. Més amunt o més avall 10 sessions després?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Un banc gran el mouen els tipus d'interès, l'economia i els seus resultats, no només el gràfic. Mirar únicament les espelmes deixa fora mitja història.",
-   "horizon": "les 10 sessions següents"
-  },
-  "u35l1-11": {
-   "prompt": "L'últim, 20 segons! Més amunt o més avall 10 sessions després?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Les grans tecnològiques es poden moure més d'un 10 % en un sol dia de resultats, amunt o avall. Si la teva operació coincideix amb aquesta data, el preu pot obrir amb un buit i saltar-se el teu stop.",
-   "horizon": "les 10 sessions següents"
-  },
-  "u35l2-1": {
-   "prompt": "Criptomoneda, espelmes diàries. Més amunt o més avall 10 dies després?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "En cripto, 10 dies són 10 sessions completes sense pausa, caps de setmana inclosos: hi ha més temps perquè passi de tot. Moure's un 10 % en una setmana no és estrany.",
-   "horizon": "els 10 dies següents"
   },
   "u35l2-2": {
    "prompt": "Una cripto cau un 75 % des del seu màxim. Quant ha de pujar després per tornar-hi?",
@@ -286,15 +490,6 @@
     "Són els diners del lloguer. Si cau un 30 % en pocs dies, com ha passat moltes vegades, no podrà pagar. FOMO de manual."
    ]
   },
-  "u35l2-5": {
-   "prompt": "Espelmes diàries d'una cripto que ha tingut setmanes mogudes. Més amunt o més avall 10 dies després?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Que una cripto «hagi caigut molt» no la fa barata: no té beneficis ni dividends amb què estimar-ne el valor. El seu preu depèn del que altres estiguin disposats a pagar demà.",
-   "horizon": "els 10 dies següents"
-  },
   "u35l2-6": {
    "prompt": "Novembre del 2021: el bitcoin marca màxims històrics per sobre de 65.000 $ i fa unes setmanes es va estrenar als EUA el primer ETF de futurs de bitcoin. Què va fer el preu l'any següent?",
    "options": [
@@ -303,21 +498,6 @@
    ],
    "explanation": "Quan un actiu és en màxims i a totes les portades, la sensació de seguretat és la més gran possible, però aquest optimisme ja és al preu. Pregunta't sempre quant perdries si t'equivoques, no només quant podries guanyar.",
    "horizon": "el període fins al desembre del 2022"
-  },
-  "u35l2-7": {
-   "prompt": "20 segons! Més amunt o més avall 10 dies després?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Amb pressa i un gràfic tan nerviós, és fàcil veure patrons que no existeixen: el cervell busca ordre fins i tot en l'atzar.",
-   "horizon": "els 10 dies següents"
-  },
-  "u35l2-8": {
-   "prompt": "Tens 10.000 € i arrisques com a màxim un 1 % per operació. Compres una cripto amb l'stop un 10 % per sota de l'entrada. Quant hi pots invertir com a màxim?",
-   "options": [],
-   "explanation": "L'1 % de 10.000 € són 100 €. Si l'stop és a un 10 %, 100 ÷ 0,10 = 1.000 €. Com més volàtil és l'actiu, més lluny va l'stop i més petita és la posició.",
-   "unit": "€"
   },
   "u35l2-9": {
    "prompt": "Si la teva cartera té dues criptomonedes diferents, ja està ben diversificada.",
@@ -334,15 +514,6 @@
     "Baixa"
    ],
    "explanation": "En cripto, el preu també es pot enfonsar o disparar dissabte a la nit. Per això molts deixen ordres stop posades en lloc de vigilar la pantalla a totes hores.",
-   "horizon": "els 10 dies següents"
-  },
-  "u35l2-11": {
-   "prompt": "Ràpid! Espelmes diàries d'una cripto. Més amunt o més avall 10 dies després?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Decidir per intuïció és l'habitual en cripto. En un actiu tan volàtil, un pressentiment equivocat sense stop pot sortir molt cara.",
    "horizon": "els 10 dies següents"
   },
   "u35l3-1": {
@@ -405,42 +576,6 @@
    ],
    "explanation": "Si un banc central apuja els tipus més del que s'esperava, la seva moneda sol atreure diners. Les espelmes reflecteixen aquests canvis; no els causen."
   },
-  "u35l3-8": {
-   "prompt": "20 segons! Divises, espelmes diàries. Més amunt o més avall 10 sessions després?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Moviments d'un 1–3 % semblen petits, però amb palanquejament es converteixen en guanys o pèrdues enormes. Sense, a penes els notaries a la cartera.",
-   "horizon": "les 10 sessions següents"
-  },
-  "u35l3-9": {
-   "prompt": "Un altre metall, espelmes diàries. Va pujar o baixar en les 10 sessions següents?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "La plata s'assembla a l'or, però és força més volàtil perquè també té molt d'ús industrial. Dos actius «semblants» poden tenir riscos molt diferents.",
-   "horizon": "les 10 sessions següents"
-  },
-  "u35l3-10": {
-   "prompt": "Torna l'EUR/USD, en una altra època. Més amunt o més avall 10 sessions després?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Fixa't en les metxes: en divises, una dada d'ocupació o d'inflació dels EUA provoca pics en minuts. Una sola espelma no explica tota la història.",
-   "horizon": "les 10 sessions següents"
-  },
-  "u35l3-11": {
-   "prompt": "Ràpid: si l'USD/JPY puja, quina moneda s'ha enfortit?",
-   "options": [
-    "El ien",
-    "L'euro",
-    "El dòlar"
-   ],
-   "explanation": "USD/JPY = iens que costa un dòlar. Si puja, cada dòlar compra més iens: el dòlar s'ha enfortit."
-  },
   "u35l4-1": {
    "prompt": "Toca el martell.",
    "options": [],
@@ -477,16 +612,6 @@
    "options": [],
    "explanation": "Una espelma verda el cos de la qual embolcalla del tot el cos vermell anterior, després d'una caiguda. (Apple · espelmes diàries · abril del 2025)"
   },
-  "u35l4-6": {
-   "prompt": "15 segons! Toca el martell.",
-   "options": [],
-   "explanation": "Metxa inferior molt llarga després d'una caiguda: aquell dia el mercat va rebutjar els preus baixos. (Amazon · espelmes diàries · febrer del 2025)"
-  },
-  "u35l4-7": {
-   "prompt": "Toca l'espelma que completa l'envolvent baixista.",
-   "options": [],
-   "explanation": "Una espelma vermella el cos de la qual es menja el verd anterior, després d'una pujada. (NVIDIA · espelmes diàries · desembre del 2024 – gener del 2025)"
-  },
   "u35l4-8": {
    "prompt": "Un martell garanteix que el preu pujarà.",
    "options": [
@@ -504,20 +629,6 @@
    "prompt": "Toca la tercera espelma de l'estrella del matí.",
    "options": [],
    "explanation": "Primer una vermella grossa, després una de petita de dubte i, finalment, una verda forta que tanca per sobre de la meitat de la primera. (Microsoft · espelmes diàries · gener–febrer del 2026)"
-  },
-  "u35l4-11": {
-   "prompt": "Una espelma amb la mateixa forma que un martell, però que apareix després d'una pujada, s'anomena…",
-   "options": [
-    "Estrella fugaç",
-    "Home penjat",
-    "Doji"
-   ],
-   "explanation": "La forma és igual; el que canvia és el context. Després d'una caiguda és un martell; després d'una pujada, un home penjat."
-  },
-  "u35l4-12": {
-   "prompt": "15 segons! Toca l'estrella fugaç.",
-   "options": [],
-   "explanation": "Metxa superior llarga després de pujar: els venedors van tornar el preu avall abans del tancament. (Amazon · espelmes diàries · octubre–novembre del 2025)"
   },
   "u35l5-1": {
    "prompt": "Rang lateral. Toca el punt més baix: el terra que vigilen els compradors. (Apple · tancaments cada 3 sessions · setembre–novembre del 2024)",
@@ -553,19 +664,6 @@
    "options": [],
    "explanation": "Uns 172 $: després d'aquest mínim hi va haver un rebot. Un mínim així es converteix en una referència per al futur."
   },
-  "u35l5-6": {
-   "prompt": "Quan una resistència es trenca amb claredat, sol convertir-se en suport.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "És el canvi de paper: qui no va comprar abans ho veu com una segona oportunitat. Moltes vegades el preu torna a «provar» el nivell abans de continuar."
-  },
-  "u35l5-7": {
-   "prompt": "15 segons! Toca el punt més alt. (Microsoft · tancaments cada 3 sessions · juny–agost del 2026)",
-   "options": [],
-   "explanation": "Uns 504 $: l'últim màxim d'una tendència alcista és la resistència que el preu haurà de superar."
-  },
   "u35l5-8": {
    "prompt": "Un altre índex. Veus cap terra clar a prop del preu actual? Decideix: més amunt o més avall 10 sessions després?",
    "options": [
@@ -579,24 +677,6 @@
    "prompt": "Rang lateral amb una espelma rebel. Toca el mínim. (NVIDIA · tancaments cada 3 sessions · desembre del 2025 – febrer del 2026)",
    "options": [],
    "explanation": "Uns 174 $: el preu va perforar el rang un moment i va tornar a dins de seguida. Això és una falsa ruptura, i per això els suports són zones, no línies."
-  },
-  "u35l5-10": {
-   "prompt": "El preu trenca un suport, passa dos dies per sota i torna a dins del rang. Què ha estat?",
-   "options": [
-    "Un canvi de tendència confirmat",
-    "Una falsa ruptura",
-    "Una creu daurada"
-   ],
-   "explanation": "Moltes ruptures fallen. Per filtrar-les, es mira si la ruptura arriba amb volum i si el preu tanca diverses sessions a l'altre costat."
-  },
-  "u35l5-11": {
-   "prompt": "20 segons! Més amunt o més avall 10 sessions després?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Amb pressa només es miren les últimes espelmes. Localitzar els terres i els sostres anteriors et dona context… tot i que tampoc no endevina el futur.",
-   "horizon": "les 10 sessions següents"
   },
   "u35l6-1": {
    "prompt": "Abans de comprar, mira la tendència. Quina és? (NVIDIA · tancaments cada 3 sessions · març–maig del 2026)",
@@ -617,12 +697,6 @@
    "options": [],
    "explanation": "A prop del màxim anterior (uns 195 $): aquí van aparèixer venedors l'última vegada. Apuntar molt més amunt és esperar una cosa que el preu encara no ha fet."
   },
-  "u35l6-4": {
-   "prompt": "Entrada a 40 €, stop a 38 € i objectiu a 46 €. Quantes vegades és més gran el benefici potencial que el risc?",
-   "options": [],
-   "explanation": "Risc: 40 − 38 = 2 €. Benefici potencial: 46 − 40 = 6 €. 6 ÷ 2 = 3, una relació 3:1.",
-   "unit": "vegades"
-  },
   "u35l6-5": {
    "prompt": "Col·loca l'stop d'aquesta compra.",
    "options": [],
@@ -639,47 +713,10 @@
    "options": [],
    "explanation": "Primer l'stop sota l'últim mínim; després l'import, perquè si salta perdis com a màxim 100 €. El resultat depèn del mercat; el risc, de tu."
   },
-  "u35l6-8": {
-   "prompt": "Ràpid! En una compra, on va l'stop?",
-   "options": [
-    "Just per sobre del preu d'entrada",
-    "On la pèrdua sigui un nombre rodó d'euros",
-    "Just per sota de l'últim mínim rellevant"
-   ],
-   "explanation": "L'stop va on la teva idea deixa de ser vàlida. Si fos per sobre de l'entrada, saltaria de seguida."
-  },
   "u35l6-9": {
    "prompt": "Col·loca l'objectiu d'aquesta operació.",
    "options": [],
    "explanation": "A prop del màxim anterior (uns 256 $). Si el preu el supera amb força, sempre pots pujar l'stop i deixar córrer el guany."
-  },
-  "u35l6-10": {
-   "prompt": "La Laura compra amb l'stop sota l'últim mínim. El preu baixa i s'acosta perillosament a l'stop. Què fa?",
-   "options": [
-    "Compra més per abaixar el preu mitjà",
-    "El deixa on era: era el punt en què la seva idea fallava",
-    "Abaixa l'stop per donar-li «més aire»"
-   ],
-   "explanation": "L'stop es decideix amb el cap fred, abans d'entrar. Moure'l en contra per por de perdre és un dels errors més cars.",
-   "feedback": [
-    "Dobla l'aposta en una idea que el mercat està desmentint. El seu risc ja no és l'1 %.",
-    "Molt bé: si salta, perd el que tenia previst i passa a la següent amb el compte intacte.",
-    "Així una pèrdua petita i prevista es converteix en una de grossa. És l'efecte disposició: aguantar el que perd."
-   ]
-  },
-  "u35l6-11": {
-   "prompt": "Una altra operació: 5.000 € de capital i un risc màxim de l'1 %.",
-   "options": [],
-   "explanation": "Amb 5.000 € i un 1 %, com a màxim pots perdre 50 €. L'import invertit pot ser força més gran que el risc: el que mana és la distància a l'stop."
-  },
-  "u35l7-1": {
-   "prompt": "Una empresa presenta beneficis rècord i la seva acció cau un 8 %. Quina és l'explicació més probable?",
-   "options": [
-    "Els beneficis rècord sempre fan caure l'acció",
-    "Algú s'ha equivocat en publicar el preu",
-    "El mercat n'esperava encara més"
-   ],
-   "explanation": "El preu ja incorpora el que s'espera. Si el consens n'esperava més, un rècord pot ser una decepció."
   },
   "u35l7-2": {
    "prompt": "Març del 2020: la covid ha confinat mig món i l'S&P 500 ha caigut més d'un 30 % en un mes. Els titulars parlen de la pitjor crisi en dècades. Què va fer l'índex els mesos següents?",
@@ -712,14 +749,6 @@
    ],
    "explanation": "El preu negatiu va ser un problema d'un contracte concret: qui havia de rebre barrils físics no tenia on guardar-los. Els titulars extrems descriuen el moment; no diuen què ve després.",
    "horizon": "els 14 mesos següents"
-  },
-  "u35l7-5": {
-   "prompt": "Si una notícia és bona per a una empresa, la seva acció sempre puja aquell dia.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Depèn del que s'esperava: una bona notícia ja descomptada pot venir acompanyada de caigudes."
   },
   "u35l7-6": {
    "prompt": "La Marta llegeix en un fòrum que una empresa «segur que la compraran». L'acció ja ha pujat un 25 % en tres dies. Què fa?",
@@ -763,33 +792,6 @@
    "explanation": "Una compra obligada i anunciada amb setmanes d'antelació és una notícia que coneix tothom: el preu se sol moure abans del dia assenyalat. El que passa després depèn d'altres coses: beneficis, tipus i expectatives.",
    "horizon": "el període fins al gener del 2023"
   },
-  "u35l7-10": {
-   "prompt": "Ràpid! El mercat esperava una inflació del 3 % i surt del 3,4 %. Què és més probable a curt termini?",
-   "options": [
-    "Que no passi res perquè la dada ja es coneixia",
-    "Que la borsa pugi perquè la inflació és baixa",
-    "Que la borsa reaccioni a la baixa per la sorpresa"
-   ],
-   "explanation": "El que mou és la sorpresa: una dada pitjor del que s'esperava sol pesar encara que la inflació estigui baixant respecte al mes anterior."
-  },
-  "u35l7-11": {
-   "prompt": "Què li contestes a la Lumi?",
-   "options": [
-    "Segur, és una bona notícia",
-    "Aquesta notícia ja la sabia tothom: el que mou el preu és la sorpresa",
-    "Millor venc: amb les bones notícies sempre cau"
-   ],
-   "explanation": "El que el mercat ja espera és al preu. Només la sorpresa, bona o dolenta, el mou.",
-   "feedback": [
-    "Les presentacions s'anuncien amb setmanes d'antelació: el preu ja ho sabia abans que tu.",
-    "Exacte! Preu = expectatives. Si passa el que s'esperava, ja hi era a dins. 🧠",
-    "Tampoc no hi ha cap regla fixa al revés. Depèn del que esperava el mercat."
-   ],
-   "lines": [
-    "Notícia bomba! 📱 Una gran marca de mòbils presenta avui el seu nou model.",
-    "Compro les seves accions ja, que pujaran, oi?"
-   ]
-  },
   "u35l8-1": {
    "prompt": "Ordena els passos d'una operació ben feta.",
    "options": [
@@ -811,12 +813,6 @@
    "prompt": "Pas 3, en una altra operació: col·loca l'objectiu.",
    "options": [],
    "explanation": "A prop del màxim anterior (uns 785 $), on l'última vegada van aparèixer venedors."
-  },
-  "u35l8-4": {
-   "prompt": "Pas 4: tens 10.000 € i arrisques un 1 %. Entres a 25 € amb l'stop a 24 €. Quantes accions compres?",
-   "options": [],
-   "explanation": "100 € de risc ÷ 1 € de distància a l'stop = 100 accions (2.500 € invertits).",
-   "unit": "accions"
   },
   "u35l8-5": {
    "prompt": "Executa l'operació completa: 10.000 €, risc màxim de l'1 %. Posa l'stop sota el mínim i ajusta l'import.",
@@ -859,24 +855,6 @@
    "options": [],
    "explanation": "Amb 3.000 € i un 1 %, el risc màxim són 30 €. Amb poc capital la regla és la mateixa: la mida la marca la distància a l'stop."
   },
-  "u35l8-10": {
-   "prompt": "Si arrisques 100 € i salta el teu stop, has perdut ____.",
-   "options": [
-    "2R",
-    "10R",
-    "0,5R",
-    "1R"
-   ],
-   "explanation": "Per definició, el que arrisques en entrar és 1R."
-  },
-  "u35l8-11": {
-   "prompt": "Una operació que guanya diners sempre ha estat una bona operació.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Si vas guanyar sense stop o arriscant un 10 %, vas tenir sort amb un mal pla. Jutja el procés, no només el resultat."
-  },
   "u35l9-1": {
    "prompt": "Dilluns: reparteix els teus 10.000 € virtuals complint les regles del repte.",
    "options": [
@@ -893,20 +871,6 @@
     "BONS",
     "OR",
     "CRIPTO"
-   ]
-  },
-  "u35l9-2": {
-   "prompt": "Dimarts: la borsa cau un 3 % per una dada d'inflació pitjor del que s'esperava i la teva cartera perd 180 €. Què fas?",
-   "options": [
-    "No toco res: la cartera està repartida i la caiguda entra dins del que és normal",
-    "Ho passo tot a bitcoin per recuperar-ho ràpid",
-    "Venc totes les accions perquè no caigui més"
-   ],
-   "explanation": "Les caigudes de diversos punts formen part del viatge. El que converteix una caiguda en pèrdua és vendre per pànic.",
-   "feedback": [
-    "Molt bé: un −1,8 % en un mal dia és justament allò per a què està pensada una cartera diversificada.",
-    "Trenques la regla del 10 % i ho concentres tot en l'actiu més volàtil. Això és operar per venjança.",
-    "Converteixes una caiguda normal en una pèrdua definitiva, i ara has d'endevinar quan tornar a entrar."
    ]
   },
   "u35l9-3": {
@@ -949,14 +913,6 @@
    "explanation": "En una cartera diversificada no cal que encertis això: el que passi en dues setmanes pesa poc al costat d'anys d'aportacions.",
    "horizon": "les 10 sessions següents"
   },
-  "u35l9-8": {
-   "prompt": "Si la teva cartera compleix totes les regles, és impossible que perdi diners en una setmana.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Les regles limiten quant pots perdre, no eviten les pèrdues. En una setmana dolenta, una cartera diversificada també baixa."
-  },
   "u35l9-9": {
    "prompt": "Divendres: prepara la cartera de la setmana que ve amb regles més prudents: màxim un 35 % per actiu, com a mínim 5 actius, com a màxim un 5 % en cripto i com a mínim un 20 % en bons.",
    "options": [
@@ -975,24 +931,6 @@
     "BONS",
     "OR",
     "CRIPTO"
-   ]
-  },
-  "u35l9-10": {
-   "prompt": "Què li contestes a la Lumi?",
-   "options": [
-    "No: el teu cosí ha assumit un risc enorme i una setmana no diu qui ho ha fet millor",
-    "Depèn de quants «m'agrada» tingui la seva publicació",
-    "Sí: la pròxima vegada, tot a una cripto"
-   ],
-   "explanation": "Una setmana és soroll. El resultat es compara tenint en compte el risc assumit, i en terminis llargs.",
-   "feedback": [
-    "Això! El que compta és el resultat segons el risc i durant anys, no una captura de pantalla. 😌",
-    "Els «m'agrada» no paguen pèrdues. 😅 Compara riscos, no captures.",
-    "Una setmana de +20 % pot ser un −40 % la següent. Copiar el que més guanya és efecte ramat."
-   ],
-   "lines": [
-    "Divendres 🎉 La meva cartera ha guanyat un 1 % aquesta setmana.",
-    "La del meu cosí ha guanyat un 20 % amb una sola cripto. He fet el ximple?"
    ]
   }
  }
