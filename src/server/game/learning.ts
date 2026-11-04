@@ -13,12 +13,18 @@ import { addXp, bump, bumpGoal, endFx, fail, LIVES_MAX, livesOf, lumi, markActiv
 
 export const ALL_Q: Record<string, ContentQuestion> = Object.fromEntries([...Object.values(QUIZZES).flat(), ...PLACEMENT].map(q => [q.id, q]))
 /** Lo que ve el alumno: nunca la solución, las consecuencias ni el futuro del gráfico */
+/**
+ * Sin emojis en lo que se enseña (quedan poco profesionales). Se quitan al enviar y no en el contenido: el orden en
+ * que se barajan las opciones depende del texto original, y las traducciones van por posición.
+ */
+const EMOJI = /\s?[\u2190-\u21ff\u2300-\u23ff\u2460-\u27bf\u2b00-\u2bff\u{1F000}-\u{1FAFF}\ufe0f\u200d]+/gu
+const clean = (t: string) => t.replace(EMOJI, '').trim()
 /** «(redondea…)» sobra cuando la cifra se elige entre opciones */
 const ROUND_NOTE = /\s*\((?:redondea|arrodoneix|round)[^)]*\)/gi
 const publicQ = (q: ContentQuestion): QuestionT => ({
-  id: q.id, type: q.type, prompt: q.type === 'NUMBER' ? q.prompt.replace(ROUND_NOTE, '') : q.prompt, options: q.options, chart: q.chart, candles: q.candles, right: q.right,
+  id: q.id, type: q.type, prompt: clean(q.type === 'NUMBER' ? q.prompt.replace(ROUND_NOTE, '') : q.prompt), options: q.options.map(clean), chart: q.chart, candles: q.candles, right: q.right?.map(clean),
   // Las de cifra se responden tocando una opción (una de ellas es la buena, como en un test)
-  meta: q.type === 'NUMBER' ? { ...q.meta, choices: numChoices(q.id, q.solution as number, q.tol ?? 0.01) } : q.meta,
+  meta: q.type === 'NUMBER' ? { ...q.meta, choices: numChoices(q.id, q.solution as number, q.tol ?? 0.01) } : q.meta && { ...q.meta, lines: q.meta.lines?.map(clean), senders: q.meta.senders?.map(clean) },
 })
 
 export async function pathOf(tx: Tx, user: User): Promise<CoursePathT> {
@@ -148,7 +154,10 @@ export const answer = (attemptId: string, questionId: string, value: unknown, el
     if (at.mode === 'LESSON' && !premium && c.g.lives <= 0) fail(409, 'NO_LIVES', 'Te has quedado sin vidas')
     const q = ALL_Q[questionId]
     const loc = currentLocale()
-    const g = grade(questionT(loc, q), value, loc)
+    const tq = questionT(loc, q)
+    // «Completa el hueco» llega con el texto que se vio (sin emojis): se corrige con la opción original
+    const v = tq.type === 'FILL_BLANK' && typeof value === 'string' ? (tq.options.find(o => clean(o) === value) ?? value) : value
+    const g = grade(tq, v, loc)
     const correct = g.correct
     await c.tx.quizAnswer.create({ data: { attemptId, questionId, correct, elapsedMs: Math.max(0, Math.min(600_000, Math.round(elapsedMs) || 0)) } })
     if (!correct && at.mode === 'LESSON' && !premium) {
@@ -169,7 +178,7 @@ export const answer = (attemptId: string, questionId: string, value: unknown, el
         if (correct) bump(c, 'reviewed')
       } else if (!correct) await c.tx.mistake.upsert({ where: key, create: { userId: c.user.id, questionId }, update: { box: 0, dueAt: new Date() } })
     }
-    return { correct, correctAnswer: q.solution, explanation: g.explanation, reveal: g.reveal, livesLeft: at.mode === 'LESSON' && !premium ? c.g.lives : null, xpGained: correct && at.mode !== 'PLACEMENT' ? 10 : 0 }
+    return { correct, correctAnswer: typeof q.solution === 'string' ? clean(q.solution) : q.solution, explanation: clean(g.explanation), reveal: g.reveal, livesLeft: at.mode === 'LESSON' && !premium ? c.g.lives : null, xpGained: correct && at.mode !== 'PLACEMENT' ? 10 : 0 }
   })
 
 export const quizFinish = (attemptId: string) =>

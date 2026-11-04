@@ -100,14 +100,28 @@ export const calc = (kind: Calc, title: string, body: string, tip?: string): Ste
 const stepMinutes = (s: Step) => (s.kind === 'PLAY' ? (s.play.mode === 'MISSION' ? 2 : 1.5) : s.kind === 'STORY' ? 1.2 : 0.67)
 /** «metric op value» → condición; p. ej. when('itemsPct', '<=', 50) */
 export const when = (metric: string, op: CmpT['op'], value: number): CmpT => ({ metric, op, value })
-type SeriesWidget = Extract<WidgetT, { series: unknown }>
-/** Las piezas con datos reales se escriben con el id de la serie de charts.json (nunca precios inventados) */
-type WidgetIn = Exclude<WidgetT, SeriesWidget> | (SeriesWidget extends infer S ? (S extends unknown ? Omit<S, 'series'> & { series: string } : never) : never)
+// Las piezas con datos reales se escriben con el id de charts.json y aquí se rellenan (nunca precios inventados):
+// `series` (serie con fechas, o cartera con varios activos), `chart` (velas de un nivel) y `rounds` (velas de «¿sube o baja?»)
+type Real = 'series' | 'chart' | 'rounds'
+type In<W> = W extends { series: unknown } ? Omit<W, 'series'> & { series: string } : W extends { chart: unknown } ? Omit<W, 'chart'> & { chart: string } : W extends { rounds: unknown } ? Omit<W, 'rounds'> & { rounds: string[] } : W
+type WidgetIn = In<WidgetT>
+type Raw = { caption: string; dates?: string[]; closes?: number[]; assets?: { key: string; name: string; closes: number[] }[]; candles?: Ohlc[]; future?: Ohlc[]; entry?: number }
+const candlesOf = (id: string) => {
+  const f = fixture(id) as unknown as Raw
+  if (!f.candles || !f.future) throw new Error(`${id} no tiene velas y futuro`)
+  return { caption: f.caption, candles: f.candles, future: f.future, ...(f.entry !== undefined ? { entry: f.entry } : {}) }
+}
 const withSeries = (w: WidgetIn): WidgetT => {
-  if (typeof (w as { series?: unknown }).series !== 'string') return w as WidgetT
-  const f = fixture((w as { series: string }).series) as unknown as { caption: string; dates?: string[]; closes?: number[] }
-  if (!f.dates || !f.closes) throw new Error(`La serie ${(w as { series: string }).series} no tiene fechas y cierres`)
-  return { ...w, series: { caption: f.caption, dates: f.dates, closes: f.closes } } as WidgetT
+  const x = w as WidgetIn & Partial<Record<Real, unknown>>
+  if (typeof x.series === 'string') {
+    const f = fixture(x.series) as unknown as Raw
+    if (f.assets && f.dates) return { ...w, series: { caption: f.caption, dates: f.dates, assets: f.assets.map(a => ({ key: a.key, name: a.name, closes: a.closes })) } } as WidgetT
+    if (!f.dates || !f.closes) throw new Error(`La serie ${x.series} no tiene fechas y cierres`)
+    return { ...w, series: { caption: f.caption, dates: f.dates, closes: f.closes } } as WidgetT
+  }
+  if (typeof x.chart === 'string') return { ...w, chart: candlesOf(x.chart) } as WidgetT
+  if (Array.isArray(x.rounds)) return { ...w, rounds: (x.rounds as string[]).map(candlesOf) } as WidgetT
+  return w as WidgetT
 }
 interface PlayIn {
   title: string

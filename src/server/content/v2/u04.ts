@@ -13,23 +13,23 @@ export default unit({
           kind: 'sort',
           bins: [{ label: 'Ahorrar' }, { label: 'Invertir' }, { label: 'Especular' }],
           cards: [
-            { emoji: '🏖️', label: 'Cuenta remunerada para el viaje del verano', bin: 0, why: 'Lo necesitas pronto y sin riesgo: ahorrar.' },
-            { emoji: '🌍', label: 'Aportar cada mes a un fondo indexado mundial durante 20 años', bin: 1, why: 'Compras un trocito de miles de empresas que generan beneficios: invertir.' },
-            { emoji: '🚀', label: 'Una moneda nueva porque en TikTok dicen que «va a explotar»', bin: 2, why: 'No produce nada: solo esperas que otro pague más. Especular.' },
-            { emoji: '🏛️', label: 'Letras del Tesoro para la entrada del piso, dentro de un año', bin: 0, why: 'Plazo corto y sin riesgo de caídas: ahorrar.' },
-            { emoji: '📉', label: 'CFD apalancados para ganar en una semana', bin: 2, why: 'Apuestas a corto plazo y multiplicadas: especulación pura.' },
-            { emoji: '🏢', label: 'Acciones de muchas empresas para dentro de 15 años', bin: 1, why: 'Beneficios de empresas, diversificado y a largo plazo: invertir.' },
+            { icon: 'plane', label: 'Cuenta remunerada para el viaje del verano', bin: 0, why: 'Lo necesitas pronto y sin riesgo: ahorrar.' },
+            { icon: 'globe', label: 'Aportar cada mes a un fondo indexado mundial durante 20 años', bin: 1, why: 'Compras un trocito de miles de empresas que generan beneficios: invertir.' },
+            { icon: 'rocket', label: 'Una moneda nueva porque en TikTok dicen que «va a explotar»', bin: 2, why: 'No produce nada: solo esperas que otro pague más. Especular.' },
+            { icon: 'bank', label: 'Letras del Tesoro para la entrada del piso, dentro de un año', bin: 0, why: 'Plazo corto y sin riesgo de caídas: ahorrar.' },
+            { icon: 'down', label: 'CFD apalancados para ganar en una semana', bin: 2, why: 'Apuestas a corto plazo y multiplicadas: especulación pura.' },
+            { icon: 'company', label: 'Acciones de muchas empresas para dentro de 15 años', bin: 1, why: 'Beneficios de empresas, diversificado y a largo plazo: invertir.' },
           ],
         },
         goal: { text: 'Clasifica los seis casos.', when: [when('done', '==', 6)] },
         insight: 'Pregúntate **de dónde sale la ganancia**: del interés (ahorro), de lo que produce lo que compras (inversión) o del bolsillo de otro que acierta menos que tú (especulación).',
         lumi: [
           { when: when('wrong', '>=', 2), say: 'Pista: ¿eso produce algo, o solo esperas que suba?', mood: 'THINKING' },
-          { say: 'Clasifica cada caso 👇', mood: 'HAPPY' },
+          { say: 'Clasifica cada caso', mood: 'HAPPY' },
         ],
       }),
-      story('La moneda de moda', [{ id: 'nico', name: 'Nico', emoji: '😎' }], [
-        say('nico', '¡Mete 5.000 € en esta moneda! Ha subido un 300 % este mes y todo el mundo está entrando 🚀'),
+      story('La moneda de moda', [{ id: 'nico', name: 'Nico' }], [
+        say('nico', '¡Mete 5.000 € en esta moneda! Ha subido un 300 % este mes y todo el mundo está entrando'),
         note('Tienes 12.000 € ahorrados y gastas 1.200 € al mes.'),
         choose('¿Qué haces?', [
           opt('Meto los 5.000 €: no quiero quedarme fuera', 'bad', say('lumi', 'Eso es **FOMO**, el miedo a quedarte fuera. Comprar porque ya ha subido mucho es especular… con casi la mitad de tus ahorros.')),
@@ -52,8 +52,8 @@ export default unit({
     ], { source: '1.2', minutes: 6, retire: [1, 4, 5, 7] }),
 
     lesson('u4l2', 'Objetivos con fecha y cifra', [
-      story('«Quiero ahorrar más»', [{ id: 'sara', name: 'Sara', emoji: '👩' }], [
-        say('sara', 'Este año me propongo… ¡ahorrar más! 💪'),
+      story('«Quiero ahorrar más»', [{ id: 'sara', name: 'Sara' }], [
+        say('sara', 'Este año me propongo… ¡ahorrar más!'),
         choose('¿Qué le falta a ese objetivo?', [
           opt('Nada, es un objetivo perfecto', 'bad', say('lumi', '«Ahorrar más» no se puede medir: ¿cuánto? ¿Para cuándo? ¿Para qué? Así es imposible saber si lo cumples.')),
           opt('Una cifra, una fecha y un para qué', 'good', say('lumi', '¡Eso es! Un buen objetivo es **SMART**: específico, medible, alcanzable, relevante y con fecha.')),
@@ -68,9 +68,9 @@ export default unit({
         widget: {
           kind: 'goalplan', available: 250, maxMonths: 24,
           goals: [
-            { emoji: '✈️', label: 'Viaje en verano', amount: 900, months: 6 },
-            { emoji: '💻', label: 'Portátil nuevo', amount: 1200, months: 8 },
-            { emoji: '🚗', label: 'Carné de conducir', amount: 1000, months: 10 },
+            { icon: 'plane', label: 'Viaje en verano', amount: 900, months: 6 },
+            { icon: 'laptop', label: 'Portátil nuevo', amount: 1200, months: 8 },
+            { icon: 'car', label: 'Carné de conducir', amount: 1000, months: 10 },
           ],
         },
         predict: {
@@ -84,7 +84,7 @@ export default unit({
         lumi: [
           { when: when('slack', '<', -100), say: 'Así no cuadra: le faltan más de 100 € al mes.', mood: 'WORRIED' },
           { when: when('slack', '<', 0), say: '¡Casi! Un poco más de plazo en algo y cabe.', mood: 'THINKING' },
-          { say: 'Alarga el plazo de lo que menos prisa corre 👇', mood: 'HAPPY' },
+          { say: 'Alarga el plazo de lo que menos prisa corre', mood: 'HAPPY' },
         ],
       }),
     ], [
@@ -116,10 +116,10 @@ export default unit({
         lumi: [
           { when: when('years', '<=', 2), say: 'A corto plazo la bolsa es una montaña rusa: casi cualquier cosa puede pasar.', mood: 'WORRIED' },
           { when: when('years', '>=', 10), say: 'Mira el peor caso: aún hay periodos largos en pérdidas (los que empezaron en 2000).', mood: 'THINKING' },
-          { say: 'Sigue alargando la espera 👇', mood: 'HAPPY' },
+          { say: 'Sigue alargando la espera', mood: 'HAPPY' },
         ],
       }),
-      key('Ponle fecha a cada euro', '• **Colchón:** siempre disponible → cuenta remunerada, fondo monetario.\n• **Viaje o coche (1-3 años)** → depósitos, letras.\n• **Entrada de un piso (3-7 años)** → mezcla prudente, más renta fija.\n• **Jubilación (15 años o más)** → sobre todo acciones diversificadas.', 'No se invierte en bolsa el dinero que se necesita pronto: puede estar bajando justo cuando lo necesites.'),
+      key('Ponle fecha a cada euro', '• **Colchón:** siempre disponible cuenta remunerada, fondo monetario.\n• **Viaje o coche (1-3 años)** depósitos, letras.\n• **Entrada de un piso (3-7 años)** mezcla prudente, más renta fija.\n• **Jubilación (15 años o más)** sobre todo acciones diversificadas.', 'No se invierte en bolsa el dinero que se necesita pronto: puede estar bajando justo cuando lo necesites.'),
     ], [
       match('Empareja cada objetivo con dónde suele tener sentido.', [['Colchón de emergencia', 'Cuenta remunerada'], ['Viaje dentro de un año', 'Depósito o letras'], ['Entrada de un piso en 5 años', 'Mezcla prudente, más renta fija'], ['Jubilación en 35 años', 'Sobre todo acciones diversificadas']], 'A más plazo, más tiempo para recuperarse de las caídas.'),
       single('Necesitas la entrada de un piso dentro de 18 meses. ¿Dónde tiene más sentido?', ['100 % en acciones tecnológicas', 'Depósitos o un fondo monetario', 'Criptomonedas'], 1, 'A 18 meses, una caída del 30 % arruinaría el plan.'),
@@ -145,7 +145,7 @@ export default unit({
           { when: when('drop', '<=', -45), say: 'Tu inversión ha perdido casi la mitad. Las noticias dicen que esto no ha hecho más que empezar. ¿Aguantas?', mood: 'WORRIED' },
           { when: when('drop', '<=', -20), say: 'Un 20 % abajo… ¿cómo te sientes?', mood: 'WORRIED' },
           { when: when('drop', '>', 5), say: '¡Ya está por encima! Esto es fácil… ¿no?', mood: 'HAPPY' },
-          { say: 'Dale a empezar. Puedes vender cuando quieras 👇', mood: 'HAPPY' },
+          { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
         ],
       }),
       key('Capacidad y tolerancia', '**Capacidad de riesgo:** cuánto puedes perder **sin que cambie tu vida** (ingresos, colchón, cargas, plazo). Es objetiva.\n\n**Tolerancia al riesgo:** cuánto puedes ver caer tu dinero **sin vender en pánico**. Es psicológica, y casi todos la sobrestiman cuando la bolsa sube.\n\nTu perfil real es **el menor de los dos**.', 'Todo el mundo es valiente cuando la bolsa sube.', 'Al abrir cuenta en un bróker europeo te harán un test MiFID: contéstalo con sinceridad, te protege de productos que no entiendes.'),
@@ -177,12 +177,12 @@ export default unit({
         insight: 'Los datos reales son peores: entre el **74 % y el 89 %** de las cuentas minoristas de CFD pierden dinero (ESMA), y en Brasil el **97 %** de quienes hicieron *day trading* más de 300 días perdió. Lo que funciona: aportar con regularidad, diversificar, pocas comisiones y mucho tiempo.',
         lumi: [
           { when: when('trades', '>=', 100), say: 'Fíjate en la media: cada vez más en rojo. Nadie es peor que nadie: son las comisiones.', mood: 'WORRIED' },
-          { say: 'Sube las operaciones de cada uno 👇', mood: 'HAPPY' },
+          { say: 'Sube las operaciones de cada uno', mood: 'HAPPY' },
         ],
       }),
-      story('El gurú de Instagram', [{ id: 'guru', name: '@MillonarioA22', emoji: '🕶️' }], [
-        say('guru', 'Hace un año era camarero. Hoy gano **5.000 € al mes** haciendo trading desde la playa 🏝️'),
-        say('guru', 'Copia mis operaciones por solo **99 € al mes**. ¡Quedan 10 plazas! Abre cuenta en este bróker con mi enlace 👇'),
+      story('El gurú de Instagram', [{ id: 'guru', name: '@MillonarioA22' }], [
+        say('guru', 'Hace un año era camarero. Hoy gano **5.000 € al mes** haciendo trading desde la playa'),
+        say('guru', 'Copia mis operaciones por solo **99 € al mes**. ¡Quedan 10 plazas! Abre cuenta en este bróker con mi enlace'),
         choose('¿Cuántas señales de alarma ves?', [
           opt('Ninguna: si gana tanto, sabrá lo que hace', 'bad', say('lumi', 'Si ganara 5.000 € al mes operando, ¿para qué necesitaría venderte nada? Gana con **tu** cuota y con la comisión del bróker.')),
           opt('Varias: promesas, prisas, la cuota y el enlace al bróker', 'good', say('lumi', '¡Todas! Promete mucho sin enseñar su historial completo, mete prisa («10 plazas»), vende suscripciones y cobra por llevarte a un bróker.')),

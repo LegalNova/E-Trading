@@ -6,7 +6,7 @@ export default unit({
   id: 'u3', order: 3, title: 'Deudas y crédito', description: 'Cuánto cuesta de verdad una deuda, cuáles evitar y cómo salir de ellas',
   lessons: [
     lesson('u3l1', 'TIN, TAE y el coste real de un préstamo', [
-      story('«Solo 149 € al mes»', [{ id: 'vendedor', name: 'Vendedor', emoji: '🧑‍💼' }], [
+      story('«Solo 149 € al mes»', [{ id: 'vendedor', name: 'Vendedor' }], [
         say('vendedor', 'Este coche te lo llevas hoy por **solo 149 € al mes**. ¿Firmamos?'),
         choose('¿Qué preguntas antes de firmar?', [
           opt('¿Dónde firmo? 149 € me cuadra', 'bad', say('lumi', 'La cuota sola no dice nada. ¿Durante cuántos meses? ¿Con qué interés? ¿Cuánto pagas en total?')),
@@ -31,7 +31,7 @@ export default unit({
         lumi: [
           { when: when('months', '>=', 84), say: 'Cuota pequeñita… ¡pero mira cuánto devuelves en total!', mood: 'WORRIED' },
           { when: when('tae', '>', 8), say: '¿Ves que la TAE es mayor que el TIN? Es la comisión.', mood: 'THINKING' },
-          { say: 'Mueve el plazo y mira la cuota y el total 👇', mood: 'HAPPY' },
+          { say: 'Mueve el plazo y mira la cuota y el total', mood: 'HAPPY' },
         ],
       }),
       key('TIN y TAE', '• **TIN:** el interés «puro» que te cobran por el dinero prestado.\n• **TAE:** suma las **comisiones** obligatorias y tiene en cuenta cada cuánto pagas. Es el coste real en un año.\n\nA 3 años, un préstamo al 6 % TIN con un 3 % de comisión sale más caro que otro al 7,5 % TIN sin comisión: **TAE del 8,36 % frente al 7,76 %**.', 'Para comparar préstamos, mira la TAE, no el TIN ni la cuota.'),
@@ -56,29 +56,29 @@ export default unit({
           kind: 'sort',
           bins: [{ label: 'Puede tener sentido' }, { label: 'Mejor evitarla' }],
           cards: [
-            { emoji: '🏡', label: 'Hipoteca con cuota asumible y colchón hecho', bin: 0, why: 'El piso dura décadas y el interés suele ser bajo… siempre que puedas pagar la cuota.' },
-            { emoji: '📱', label: 'Móvil último modelo con la tarjeta revolving', bin: 1, why: 'Se queda viejo antes de pagarlo, y una revolving puede pasar del 20 % TAE.' },
-            { emoji: '🎓', label: 'Préstamo barato para una formación que sube tu sueldo', bin: 0, why: 'Si de verdad mejora tus ingresos, la deuda se paga sola.' },
-            { emoji: '🏖️', label: 'Vacaciones a 24 plazos', bin: 1, why: 'El viaje dura una semana; la deuda, dos años.' },
-            { emoji: '🚗', label: 'Coche sencillo que necesitas para trabajar, al 6 % TAE', bin: 0, why: 'Si sin coche no puedes trabajar, puede tener sentido… sin pasarte de coche.' },
-            { emoji: '💸', label: 'Minicrédito para llegar a fin de mes', bin: 1, why: 'Sus TAE pueden superar el 2.000 %: tapa un agujero abriendo otro más grande.' },
+            { icon: 'home', label: 'Hipoteca con cuota asumible y colchón hecho', bin: 0, why: 'El piso dura décadas y el interés suele ser bajo… siempre que puedas pagar la cuota.' },
+            { icon: 'phone', label: 'Móvil último modelo con la tarjeta revolving', bin: 1, why: 'Se queda viejo antes de pagarlo, y una revolving puede pasar del 20 % TAE.' },
+            { icon: 'study', label: 'Préstamo barato para una formación que sube tu sueldo', bin: 0, why: 'Si de verdad mejora tus ingresos, la deuda se paga sola.' },
+            { icon: 'plane', label: 'Vacaciones a 24 plazos', bin: 1, why: 'El viaje dura una semana; la deuda, dos años.' },
+            { icon: 'car', label: 'Coche sencillo que necesitas para trabajar, al 6 % TAE', bin: 0, why: 'Si sin coche no puedes trabajar, puede tener sentido… sin pasarte de coche.' },
+            { icon: 'cash', label: 'Minicrédito para llegar a fin de mes', bin: 1, why: 'Sus TAE pueden superar el 2.000 %: tapa un agujero abriendo otro más grande.' },
           ],
         },
         goal: { text: 'Clasifica las seis deudas.', when: [when('done', '==', 6)] },
         insight: '**Tres preguntas antes de firmar:** ¿durará más que la deuda? ¿Cuál es la TAE (por encima del 7-8 %, es cara)? ¿Podría pagarla si mis ingresos bajaran? Las cuotas de todas tus deudas no deberían pasar del **30-35 %** de tus ingresos.',
         lumi: [
           { when: when('wrong', '>=', 2), say: 'Pregúntate: ¿esto me durará más de lo que tardo en pagarlo?', mood: 'THINKING' },
-          { say: 'Clasifica cada deuda 👇', mood: 'HAPPY' },
+          { say: 'Clasifica cada deuda', mood: 'HAPPY' },
         ],
       }),
-      story('Japón a plazos', [{ id: 'marta', name: 'Marta', emoji: '👩‍💼' }], [
-        say('marta', '¡Me voy a Japón! El viaje cuesta 3.000 € y me lo financian a 24 meses al 18 % TAE. ¡Me lo merezco! 🗾'),
+      story('Japón a plazos', [{ id: 'marta', name: 'Marta' }], [
+        say('marta', '¡Me voy a Japón! El viaje cuesta 3.000 € y me lo financian a 24 meses al 18 % TAE. ¡Me lo merezco!'),
         choose('¿Qué le dices?', [
           opt('¡Genial, aprovecha!', 'bad', say('lumi', 'A ese interés pagará **más de 500 €** de intereses, y seguirá pagando el viaje más de un año después de volver.')),
           opt('¿Y si lo ahorras unos meses y vas el año que viene?', 'good', say('lumi', '¡Buena idea! Con 250 € al mes lo tiene en un año, **sin intereses**, y disfruta igual del viaje.')),
           opt('Pídelo con la revolving, que es más cómodo', 'bad', say('lumi', 'Peor aún: la cuota pequeña de la revolving puede alargar la deuda durante años.')),
         ]),
-        say('marta', 'Vale… ¡pero el año que viene me voy sí o sí! 😄'),
+        say('marta', 'Vale… ¡pero el año que viene me voy sí o sí!'),
       ]),
     ], [
       buckets('¿Esta deuda suele crear o destruir valor?', ['Suele crear valor', 'Suele destruir valor'], [['Hipoteca asumible al 3 %', 0], ['Vacaciones pagadas con la revolving', 1], ['Préstamo barato para una FP que sube tu sueldo', 0], ['Cena de cumpleaños aplazada con la tarjeta al 20 %', 1], ['Móvil de 1.200 € a 24 meses con intereses', 1]], 'La pregunta clave: ¿lo que compras dura o rinde más que lo que cuesta la deuda?'),
@@ -109,11 +109,11 @@ export default unit({
           { when: when('months', '>=', 999), say: '¡Con esa cuota no pagas ni los intereses! La deuda no baja nunca.', mood: 'SAD' },
           { when: when('months', '>=', 100), say: 'Años y años pagando… y los intereses se comen casi toda la cuota.', mood: 'WORRIED' },
           { when: when('months', '<=', 36), say: '¡Así sí! Cuanto más subes la cuota, menos intereses regalas.', mood: 'HAPPY' },
-          { say: 'Sube la cuota y mira cuánto te ahorras 👇', mood: 'THINKING' },
+          { say: 'Sube la cuota y mira cuánto te ahorras', mood: 'THINKING' },
         ],
       }),
-      story('300 € en 10 minutos', [{ id: 'sms', name: 'SMS', emoji: '📩' }], [
-        say('sms', '¡Hola! 💰 Te prestamos **300 € en 10 minutos**, sin papeleos. Solo devuelves 390 € en 30 días. Pídelo ya 👉'),
+      story('300 € en 10 minutos', [{ id: 'sms', name: 'SMS' }], [
+        say('sms', '¡Hola! Te prestamos **300 € en 10 minutos**, sin papeleos. Solo devuelves 390 € en 30 días. Pídelo ya'),
         choose('Te falta dinero para el alquiler. ¿Qué haces?', [
           opt('Lo pido, son solo 90 € más', 'bad', say('lumi', '90 € por 300 € en un mes es una **TAE de más del 2.300 %**. Y si no lo devuelves a tiempo, las penalizaciones lo hacen crecer.')),
           opt('Hablo con el casero o con mi familia y reviso gastos', 'good', say('lumi', 'Bien: negociar un retraso o pedir ayuda sale muchísimo más barato que un minicrédito.')),
@@ -141,10 +141,10 @@ export default unit({
         widget: {
           kind: 'debts', extra: 100, maxExtra: 400,
           debts: [
-            { emoji: '💳', name: 'Tarjeta revolving', balance: 1200, rate: 22, min: 40 },
-            { emoji: '📱', name: 'Móvil a plazos', balance: 400, rate: 9, min: 40 },
-            { emoji: '🚗', name: 'Préstamo del coche', balance: 5000, rate: 8, min: 150 },
-            { emoji: '🎓', name: 'Préstamo del máster', balance: 2500, rate: 5, min: 60 },
+            { icon: 'card', name: 'Tarjeta revolving', balance: 1200, rate: 22, min: 40 },
+            { icon: 'phone', name: 'Móvil a plazos', balance: 400, rate: 9, min: 40 },
+            { icon: 'car', name: 'Préstamo del coche', balance: 5000, rate: 8, min: 150 },
+            { icon: 'study', name: 'Préstamo del máster', balance: 2500, rate: 5, min: 60 },
           ],
         },
         predict: {
@@ -158,7 +158,7 @@ export default unit({
         lumi: [
           { when: when('method', '==', 0), say: 'Con la bola de nieve, Pablo se quita una deuda en pocos meses. ¡Eso motiva! Ahora prueba la avalancha.', mood: 'HAPPY' },
           { when: when('extra', '>=', 300), say: '¡Con más extra, mira cuántos meses te quitas de encima!', mood: 'CELEBRATE' },
-          { say: 'Compara los intereses de los dos métodos 👇', mood: 'THINKING' },
+          { say: 'Compara los intereses de los dos métodos', mood: 'THINKING' },
         ],
       }),
       key('Lo que no funciona', 'Repartir lo que sobra sin criterio, o pedir otra deuda cara para pagar las anteriores.\n\nY un truco: cuando cancelas una deuda, **su cuota se suma a la siguiente**. Por eso el plan va cada vez más deprisa, como una bola que crece.', 'Mínimos a todas; el resto, a una sola. Así se sale de las deudas.'),
@@ -176,7 +176,7 @@ export default unit({
     ], { minutes: 6, retire: [4, 7, 8] }),
 
     lesson('u3l5', 'Invertir o amortizar', [
-      story('La paga extra de Bruno', [{ id: 'bruno', name: 'Bruno', emoji: '🧑‍💻' }], [
+      story('La paga extra de Bruno', [{ id: 'bruno', name: 'Bruno' }], [
         say('bruno', 'Me han dado una paga extra de **3.000 €**. Tengo un préstamo del coche al 9 % y quería empezar a invertir. ¿Qué hago primero?'),
         choose('¿Qué le dices?', [
           opt('Invierte: la bolsa da más a largo plazo', 'ok', say('lumi', 'Puede que sí… o puede que no: la bolsa no garantiza nada. Amortizar el préstamo es **un 9 % seguro**.')),
@@ -184,7 +184,7 @@ export default unit({
           opt('Guárdalo en la cuenta y ya verás', 'bad', say('lumi', 'En la cuenta a casi un 0 % mientras pagas un 9 % de intereses: pierdes por los dos lados.')),
         ]),
         say('bruno', '¿Y si fuera mi hipoteca al 2 %?'),
-        say('lumi', 'Ahí la cosa cambia. Vamos a ordenarlo 👇'),
+        say('lumi', 'Ahí la cosa cambia. Vamos a ordenarlo'),
       ]),
       play({
         title: '¿Colchón, amortizar o invertir?',
@@ -193,18 +193,18 @@ export default unit({
           kind: 'sort',
           bins: [{ label: 'Primero, el colchón' }, { label: 'Amortiza' }, { label: 'Invertir puede tener sentido' }],
           cards: [
-            { emoji: '💳', label: 'Revolving al 21 %, con colchón hecho', bin: 1, why: 'Amortizarla es un 21 % seguro: ninguna inversión garantiza eso.' },
-            { emoji: '🆘', label: 'Una deuda al 8 % y ningún ahorro para imprevistos', bin: 0, why: 'Si vacías la cuenta y llega una avería, acabarás pidiendo prestado otra vez, y más caro.' },
-            { emoji: '🏡', label: 'Hipoteca fija al 2 %, colchón de 6 meses y 20 años por delante', bin: 2, why: 'Con una deuda tan barata y el colchón hecho, puedes compaginar amortizar e invertir a largo plazo.' },
-            { emoji: '🚗', label: 'Préstamo del coche al 9 %, con colchón hecho', bin: 1, why: 'Por encima del 7-8 %, amortizar casi siempre gana.' },
-            { emoji: '👨‍👩‍👧', label: 'Préstamo de tu familia al 0 %, con colchón hecho', bin: 2, why: 'Amortizar al 0 % no te da ninguna rentabilidad (aunque deber a la familia también pesa).' },
+            { icon: 'card', label: 'Revolving al 21 %, con colchón hecho', bin: 1, why: 'Amortizarla es un 21 % seguro: ninguna inversión garantiza eso.' },
+            { icon: 'warning', label: 'Una deuda al 8 % y ningún ahorro para imprevistos', bin: 0, why: 'Si vacías la cuenta y llega una avería, acabarás pidiendo prestado otra vez, y más caro.' },
+            { icon: 'home', label: 'Hipoteca fija al 2 %, colchón de 6 meses y 20 años por delante', bin: 2, why: 'Con una deuda tan barata y el colchón hecho, puedes compaginar amortizar e invertir a largo plazo.' },
+            { icon: 'car', label: 'Préstamo del coche al 9 %, con colchón hecho', bin: 1, why: 'Por encima del 7-8 %, amortizar casi siempre gana.' },
+            { icon: 'family', label: 'Préstamo de tu familia al 0 %, con colchón hecho', bin: 2, why: 'Amortizar al 0 % no te da ninguna rentabilidad (aunque deber a la familia también pesa).' },
           ],
         },
         goal: { text: 'Decide qué haría Bruno en cada caso.', when: [when('done', '==', 5)] },
-        insight: '**Por orden:** colchón → deudas caras (más del 7-8 %) → invertir a largo plazo, y amortizar las baratas si te da tranquilidad. Antes de amortizar una hipoteca, mira si cobra comisión por hacerlo.',
+        insight: '**Por orden:** colchón deudas caras (más del 7-8 %) invertir a largo plazo, y amortizar las baratas si te da tranquilidad. Antes de amortizar una hipoteca, mira si cobra comisión por hacerlo.',
         lumi: [
           { when: when('wrong', '>=', 2), say: 'Pregúntate primero: ¿tiene colchón? Luego mira el interés de la deuda.', mood: 'THINKING' },
-          { say: '¿Qué haría Bruno en cada caso? 👇', mood: 'HAPPY' },
+          { say: '¿Qué haría Bruno en cada caso?', mood: 'HAPPY' },
         ],
       }),
     ], [

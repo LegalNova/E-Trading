@@ -9,8 +9,12 @@ export type CmpT = z.infer<typeof Cmp>
 /** Caras de Lumi que se usan en las clases */
 export const LumiMood = z.enum(['HAPPY', 'CELEBRATE', 'WORRIED', 'CALM', 'SAD', 'THINKING'])
 
-const Item = z.object({ emoji: z.string(), name: z.string(), price: z.number() })
+const Item = z.object({ icon: z.string(), name: z.string(), price: z.number() })
 const Series = z.object({ caption: z.string(), dates: z.array(z.string()), closes: z.array(z.number()) })
+const Mix = z.object({ caption: z.string(), dates: z.array(z.string()), assets: z.array(z.object({ key: z.string(), name: z.string(), closes: z.array(z.number()) })) })
+const Ohlc = z.tuple([z.number(), z.number(), z.number(), z.number()])
+/** Velas reales de charts.json: las visibles, las que vienen después y el precio de entrada (si lo hay) */
+const Candles = z.object({ caption: z.string(), candles: z.array(Ohlc), future: z.array(Ohlc), entry: z.number().optional() })
 
 export const Widget = z.discriminatedUnion('kind', [
   /** Cesta de la compra que encoge con la inflación */
@@ -30,35 +34,59 @@ export const Widget = z.discriminatedUnion('kind', [
   /** Clasificar tarjetas con respuesta al momento (con importes, suma por grupo) */
   z.object({
     kind: z.literal('sort'), bins: z.array(z.object({ label: z.string(), sign: z.number().optional() })),
-    cards: z.array(z.object({ emoji: z.string(), label: z.string(), value: z.number().optional(), bin: z.number(), why: z.string() })),
+    cards: z.array(z.object({ icon: z.string(), label: z.string(), value: z.number().optional(), bin: z.number(), why: z.string() })),
     sumLabel: z.string().optional(),
   }),
   /** Reparte el sueldo entre gastos y mira cómo queda frente a 50/30/20 */
   z.object({
     kind: z.literal('budget'), salary: z.number(), groups: z.array(z.string()), targets: z.array(z.number()),
-    cats: z.array(z.object({ emoji: z.string(), label: z.string(), group: z.number(), amount: z.number(), min: z.number(), max: z.number() })),
+    cats: z.array(z.object({ icon: z.string(), label: z.string(), group: z.number(), amount: z.number(), min: z.number(), max: z.number() })),
   }),
   /** Gastos hormiga: enciende y apaga pequeños gastos y mira lo que suman */
-  z.object({ kind: z.literal('leaks'), items: z.array(z.object({ emoji: z.string(), name: z.string(), amount: z.number(), per: z.enum(['day', 'week', 'month']), on: z.boolean() })), rate: z.number(), years: z.number() }),
+  z.object({ kind: z.literal('leaks'), items: z.array(z.object({ icon: z.string(), name: z.string(), amount: z.number(), per: z.enum(['day', 'week', 'month']), on: z.boolean() })), rate: z.number(), years: z.number() }),
   /** Un año con imprevistos: ¿te alcanza el colchón o acabas pidiendo prestado? */
   z.object({
     kind: z.literal('emergency'), salary: z.number(), spend: z.number(), start: z.number(), maxSave: z.number(), loanRate: z.number(),
-    events: z.array(z.object({ month: z.number(), emoji: z.string(), text: z.string(), cost: z.number() })),
+    events: z.array(z.object({ month: z.number(), icon: z.string(), text: z.string(), cost: z.number() })),
   }),
   /** Préstamo: cuota, intereses y TAE */
   z.object({ kind: z.literal('loan'), amount: z.number(), tin: z.number(), months: z.number(), fee: z.number(), maxAmount: z.number(), maxTin: z.number(), maxMonths: z.number() }),
   /** Tarjeta revolving: cuánto tardas en pagarla según la cuota */
   z.object({ kind: z.literal('revolving'), debt: z.number(), apr: z.number(), payment: z.number(), minPayment: z.number(), maxPayment: z.number() }),
   /** Varias deudas: bola de nieve o avalancha */
-  z.object({ kind: z.literal('debts'), debts: z.array(z.object({ emoji: z.string(), name: z.string(), balance: z.number(), rate: z.number(), min: z.number() })), extra: z.number(), maxExtra: z.number() }),
+  z.object({ kind: z.literal('debts'), debts: z.array(z.object({ icon: z.string(), name: z.string(), balance: z.number(), rate: z.number(), min: z.number() })), extra: z.number(), maxExtra: z.number() }),
   /** Objetivos con cifra y fecha: cuánto hay que apartar al mes */
-  z.object({ kind: z.literal('goalplan'), available: z.number(), maxMonths: z.number(), goals: z.array(z.object({ emoji: z.string(), label: z.string(), amount: z.number(), months: z.number() })) }),
+  z.object({ kind: z.literal('goalplan'), available: z.number(), maxMonths: z.number(), goals: z.array(z.object({ icon: z.string(), label: z.string(), amount: z.number(), months: z.number() })) }),
   /** Datos reales: con cuántos años nunca se perdió dinero en el S&P 500 */
   z.object({ kind: z.literal('horizon'), series: Series, years: z.number(), maxYears: z.number() }),
   /** Datos reales: vive una crisis con tu dinero y decide si vendes */
   z.object({ kind: z.literal('crash'), series: Series, amount: z.number() }),
   /** Simulación (matemática, no datos de mercado): 1.000 personas que apuestan a cara o cruz pagando comisión */
   z.object({ kind: z.literal('coinflip'), traders: z.number(), trades: z.number(), maxTrades: z.number(), fee: z.number(), stake: z.number(), win: z.number() }),
+  /** Datos reales: reparte una cartera entre varios activos y mira cómo le fue (rentabilidad total) */
+  z.object({ kind: z.literal('mix'), series: Mix, weights: z.array(z.number()), amount: z.number(), rebalance: z.boolean().optional() }),
+  /** Comisiones a largo plazo: el mismo ahorro con un fondo barato y otro caro */
+  z.object({ kind: z.literal('fees'), amount: z.number(), monthly: z.number(), gross: z.number(), feeA: z.number(), feeB: z.number(), years: z.number(), maxFee: z.number(), maxYears: z.number() }),
+  /** Precio de un bono cuando cambian los tipos */
+  z.object({ kind: z.literal('bond'), face: z.number(), coupon: z.number(), years: z.number(), rate: z.number(), maxRate: z.number(), maxYears: z.number() }),
+  /** Invertir fuera del euro: la rentabilidad del activo y la de la divisa */
+  z.object({ kind: z.literal('fx'), amount: z.number(), asset: z.number(), fx: z.number(), maxAsset: z.number(), maxFx: z.number(), currency: z.string() }),
+  /** Apalancamiento: un pequeño movimiento del precio, multiplicado */
+  z.object({ kind: z.literal('leverage'), margin: z.number(), lev: z.number(), move: z.number(), maxLev: z.number(), maxMove: z.number() }),
+  /** Tamaño de la posición: cuánto comprar para arriesgar solo un % de la cuenta */
+  z.object({ kind: z.literal('position'), account: z.number(), riskPct: z.number(), stopPct: z.number(), entry: z.number(), maxRisk: z.number(), maxStop: z.number() }),
+  /** Datos reales: coloca stop y objetivo sobre velas reales y mira qué toca primero */
+  z.object({ kind: z.literal('orders'), chart: Candles, stopPct: z.number(), takePct: z.number(), maxPct: z.number() }),
+  /** Impuestos de la base del ahorro en España (tramos de 2025) y compensar pérdidas */
+  z.object({ kind: z.literal('taxes'), gain: z.number(), loss: z.number(), maxGain: z.number() }),
+  /** Datos reales: todo de golpe o poco a poco, según el mes en que empiezas */
+  z.object({ kind: z.literal('dca'), series: Series, total: z.number(), spread: z.number(), window: z.number(), start: z.number() }),
+  /** Datos reales: ¿sube o baja? en varias rondas, y se revela lo que pasó */
+  z.object({ kind: z.literal('guess'), rounds: z.array(Candles) }),
+  /** Libro de órdenes de ejemplo: el precio medio de una compra grande y el deslizamiento */
+  z.object({ kind: z.literal('book'), bids: z.array(z.object({ price: z.number(), size: z.number() })), asks: z.array(z.object({ price: z.number(), size: z.number() })), size: z.number(), maxSize: z.number() }),
+  /** Valoración: PER, PEG y años para recuperar el precio con los beneficios */
+  z.object({ kind: z.literal('valuation'), price: z.number(), eps: z.number(), growth: z.number(), maxPrice: z.number(), maxGrowth: z.number() }),
 ])
 export type WidgetT = z.infer<typeof Widget>
 export type WidgetKind = WidgetT['kind']
@@ -94,8 +122,8 @@ export const StoryStep = z.object({
   id: z.string(),
   type: z.literal('STORY'),
   title: z.string(),
-  /** Personajes (además de «lumi» y «me», que siempre existen) */
-  cast: z.array(z.object({ id: z.string(), name: z.string(), emoji: z.string() })),
+  /** Personajes (además de «lumi» y «me», que siempre existen); se dibujan con sus iniciales */
+  cast: z.array(z.object({ id: z.string(), name: z.string() })),
   beats: z.array(Beat),
 })
 export type StoryStepT = z.infer<typeof StoryStep>
@@ -114,7 +142,7 @@ export function holds(c: CmpT, m: Record<string, number>): boolean {
 }
 
 /** Campos que no son texto para traducir (el resto de cadenas de un PLAY o STORY sí lo son, en este orden) */
-export const NOT_TEXT = new Set(['id', 'type', 'mode', 'kind', 'emoji', 'who', 'tone', 'per', 'metric', 'op', 'mood', 'dates', 'caption', 'lines', 'controls'])
+export const NOT_TEXT = new Set(['id', 'type', 'mode', 'kind', 'icon', 'who', 'tone', 'per', 'metric', 'op', 'mood', 'dates', 'candles', 'future', 'closes', 'key', 'caption', 'lines', 'controls'])
 
 /** Recorre las cadenas traducibles de un paso en orden fijo; `map` puede sustituirlas */
 export function walkTexts<T>(x: T, map: (s: string) => string, key = ''): T {

@@ -1,6 +1,7 @@
 // Validación del contenido (pura): soluciones de cada tipo de ejercicio, ids únicos, dependencias y reglas del curso v2.
 // La usan scripts/check-content.ts (curso entero) y scripts/check-units.ts (unidades sueltas mientras se escriben).
 import type { ContentQuestion, ContentUnit, Step } from './dsl'
+import { GLYPHS } from '@/shared/glyphs'
 
 export interface Report {
   errors: string[]
@@ -157,6 +158,18 @@ const METRICS: Record<string, string[]> = {
   horizon: ['years', 'windows', 'lossPct', 'worst', 'best'],
   crash: ['played', 'sold', 'drop', 'final', 'hold', 'soldDrop'],
   coinflip: ['trades', 'losersPct', 'avg', 'best'],
+  mix: ['totalPct', 'maxDD', 'final', 'w0', 'w1', 'w2', 'w3'],
+  fees: ['feeB', 'years', 'finalA', 'finalB', 'lost', 'lostPct'],
+  bond: ['rate', 'years', 'price', 'change'],
+  fx: ['asset', 'fx', 'eurPct'],
+  leverage: ['lev', 'move', 'pnlPct', 'wiped', 'exposure'],
+  position: ['riskPct', 'stopPct', 'size', 'posPct', 'riskEur', 'after10'],
+  orders: ['stopPct', 'takePct', 'rr', 'played', 'hit', 'pnlPct'],
+  taxes: ['gain', 'loss', 'base', 'tax', 'effPct', 'marginal'],
+  dca: ['start', 'lumpFinal', 'dcaFinal', 'lumpWins', 'diffPct'],
+  guess: ['done', 'right', 'rounds'],
+  book: ['size', 'avg', 'slippagePct', 'spreadPct'],
+  valuation: ['price', 'growth', 'per', 'peg', 'yieldPct', 'payback'],
 }
 function checkPlay(id: string, p: Extract<Step, { kind: 'PLAY' }>['play']): string[] {
   const e: string[] = []
@@ -167,6 +180,8 @@ function checkPlay(id: string, p: Extract<Step, { kind: 'PLAY' }>['play']): stri
   if (!p.lumi.some(l => !l.when)) e.push(`${id}: Lumi necesita una frase sin condición (la de por defecto)`)
   if (p.lumi.findIndex(l => !l.when) !== p.lumi.length - 1) e.push(`${id}: la frase de Lumi sin condición tiene que ir la última`)
   if (p.mode === 'MISSION' && !p.goal) e.push(`${id}: una misión necesita un reto`)
+  // Iconos del catálogo (nada de emojis en la interfaz)
+  JSON.stringify(p.widget, (k, x) => (k === 'icon' && typeof x === 'string' && !(GLYPHS as readonly string[]).includes(x) && e.push(`${id}: icono «${x}» no existe (src/shared/glyphs.ts)`), x))
   if (p.widget.kind === 'sort' && p.widget.cards.some(c => c.bin < 0 || c.bin >= (p.widget as { bins: unknown[] }).bins.length)) e.push(`${id}: tarjeta con grupo fuera de rango`)
   return e
 }

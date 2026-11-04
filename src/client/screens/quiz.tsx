@@ -429,7 +429,7 @@ function QuizInner({ id }: { id: string }) {
         <Steps total={qs.length} current={i + (reveal ? 1 : 0)} label={t('progress', { i: i + 1, n: qs.length })} />
         {streak >= 2 && (
           <span key={streak} className="chip animate-pop px-2" style={{ background: 'color-mix(in srgb, var(--amber) 22%, var(--surface))' }} aria-label={t('streak', { n: streak })}>
-            🔥 {streak}
+            <Flame size={14} /> {streak}
           </span>
         )}
         {lessonMode && (
@@ -456,7 +456,7 @@ function QuizInner({ id }: { id: string }) {
         {reveal ? (
           <div className={`feedback ${reveal.correct ? 'ok' : 'bad'}`} aria-live="polite">
             <b className={`${reveal.correct ? 'up animate-pop' : 'down'} inline-block self-start`} style={{ fontSize: 17 }}>
-              {reveal.correct ? (streak >= 2 ? t('correctStreak', { n: streak }) : t('correct')) : reveal.livesLeft !== null ? t('wrongLife') : t('wrong')}
+              {reveal.correct ? (streak >= 2 ? <span className="inline-flex items-center gap-1.5">{t('correctStreak', { n: streak })} <Flame size={16} /></span> : t('correct')) : reveal.livesLeft !== null ? t('wrongLife') : t('wrong')}
             </b>
             {auto && <i className="block h-1 origin-left rounded-full" style={{ background: 'var(--up)', animation: `drain ${AUTO_MS}ms linear forwards` }} aria-hidden />}
             <span className="t-body whitespace-pre-line">{reveal.explanation}</span>

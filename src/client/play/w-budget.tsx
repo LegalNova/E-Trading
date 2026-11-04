@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 import type { WidgetT } from '@/shared/play'
 import { Toggle } from '../ui/kit'
+import { Glyph, GlyphTile } from './glyph'
 import { Big, Row, Slide, useFmt, useMetrics } from './kit'
 
 type W<K extends WidgetT['kind']> = { w: Extract<WidgetT, { kind: K }>; onMetrics: (m: Record<string, number>) => void }
@@ -25,7 +26,7 @@ export function Sort({ w, onMetrics }: W<'sort'>) {
     <div className="flex flex-col gap-3">
       {card ? (
         <div key={i} className="card flex animate-pop flex-col items-center gap-1 py-5 text-center">
-          <span className="text-[44px] leading-none">{card.emoji}</span>
+          <GlyphTile name={card.icon} size={64} />
           <b className="t-head">{card.label}</b>
           {card.value !== undefined && <span className="t-body tabular-nums">{f.eur(card.value)}</span>}
           <span className="t-cap">
@@ -40,7 +41,7 @@ export function Sort({ w, onMetrics }: W<'sort'>) {
       {last && (
         <div key={`f${i}`} className="animate-rise rounded-2xl px-3.5 py-2.5" style={{ background: `color-mix(in srgb, var(--${last.ok ? 'up' : 'down'}) 11%, var(--surface))` }} aria-live="polite">
           <b className={last.ok ? 'up' : 'down'}>
-            {last.c.emoji} {last.ok ? t('right') : t('notQuite', { bin: w.bins[last.c.bin].label })}
+            {last.ok ? t('right') : t('notQuite', { bin: w.bins[last.c.bin].label })}
           </b>
           <p className="t-foot m-0 mt-0.5" style={{ color: 'var(--ink)' }}>
             {last.c.why}
@@ -67,7 +68,7 @@ export function Sort({ w, onMetrics }: W<'sort'>) {
       {w.sumLabel && i > 0 && <Big label={w.sumLabel} value={f.eur(net)} tone={net >= 0 ? 'up' : 'down'} small />}
       {!card && (
         <button className="btn btn-plain" onClick={() => setPicks([])}>
-          {t('again')}
+          <Glyph name="repeat" size={16} /> {t('again')}
         </button>
       )}
     </div>
@@ -116,7 +117,7 @@ export function Budget({ w, onMetrics }: W<'budget'>) {
       </div>
       {left < 0 && <p className="t-foot down m-0 font-bold">{t('overspend', { n: f.eur(-left) })}</p>}
       {w.cats.map((c, k) => (
-        <Slide key={c.label} label={`${c.emoji} ${c.label}`} value={amt[k]} min={c.min} max={c.max} step={10} show={f.eur(amt[k])} color={COL[c.group]} onChange={v => setAmt(a => a.map((x, j) => (j === k ? v : x)))} />
+        <Slide key={c.label} label={<span className="inline-flex items-center gap-1.5"><Glyph name={c.icon} size={16} />{c.label}</span>} value={amt[k]} min={c.min} max={c.max} step={10} show={f.eur(amt[k])} color={COL[c.group]} onChange={v => setAmt(a => a.map((x, j) => (j === k ? v : x)))} />
       ))}
     </div>
   )
@@ -142,7 +143,7 @@ export function Leaks({ w, onMetrics }: W<'leaks'>) {
       <div className="card flex flex-col divide-y" style={{ borderColor: 'var(--line)' }}>
         {w.items.map((it, k) => (
           <div key={it.name} className="flex items-center gap-3 py-2">
-            <span className="text-[26px]">{it.emoji}</span>
+            <GlyphTile name={it.icon} size={40} muted={!on[k]} />
             <span className="flex flex-1 flex-col">
               <b className="t-body">{it.name}</b>
               <span className="t-cap">
@@ -205,7 +206,7 @@ export function Emergency({ w, onMetrics }: W<'emergency'>) {
             const seen = k < month
             return (
               <div key={k} className="flex aspect-square flex-col items-center justify-center rounded-xl text-center transition-all" style={{ background: !seen ? 'var(--surface-2)' : s.hit ? `color-mix(in srgb, var(--${s.paid ? 'up' : 'down'}) 18%, var(--surface))` : 'color-mix(in srgb, var(--brand) 8%, var(--surface))', outline: k === month - 1 ? '2px solid var(--ink)' : undefined }}>
-                <span className="text-[18px] leading-none">{seen && s.hit ? s.hit.emoji : seen ? '·' : ''}</span>
+                {seen && s.hit ? <Glyph name={s.hit.icon} size={18} /> : <span className="text-[18px] leading-none">{seen ? '·' : ''}</span>}
                 <span className="t-cap">{t('monthShort', { n: k + 1 })}</span>
               </div>
             )
@@ -213,7 +214,7 @@ export function Emergency({ w, onMetrics }: W<'emergency'>) {
         </div>
         {month > 0 && sim[month - 1].hit && (
           <p key={month} className="t-foot m-0 animate-rise" style={{ color: 'var(--ink)' }}>
-            {sim[month - 1].hit!.emoji} {sim[month - 1].hit!.text} (<b>{f.eur(sim[month - 1].hit!.cost)}</b>) · {sim[month - 1].paid ? t('paidFund') : t('paidCard')}
+            {sim[month - 1].hit!.text} (<b>{f.eur(sim[month - 1].hit!.cost)}</b>) · {sim[month - 1].paid ? t('paidFund') : t('paidCard')}
           </p>
         )}
       </div>
@@ -223,7 +224,7 @@ export function Emergency({ w, onMetrics }: W<'emergency'>) {
       </Row>
       <Slide label={t('saveMonthly')} value={save} min={0} max={w.maxSave} step={10} show={f.eur(save)} onChange={v => (setSave(v), setMonth(0))} />
       <button className="btn btn-primary" disabled={month > 0 && !done} onClick={() => setMonth(1)}>
-        {done ? t('replayYear') : t('playYear')}
+        <Glyph name={done ? 'repeat' : 'calendar'} size={18} /> {done ? t('replayYear') : t('playYear')}
       </button>
     </div>
   )
@@ -243,7 +244,7 @@ export function GoalPlan({ w, onMetrics }: W<'goalplan'>) {
       {w.goals.map((g, k) => (
         <div key={g.label} className="card flex flex-col gap-2">
           <div className="flex items-center gap-2">
-            <span className="text-[26px]">{g.emoji}</span>
+            <GlyphTile name={g.icon} size={40} />
             <span className="flex flex-1 flex-col">
               <b className="t-body">{g.label}</b>
               <span className="t-cap">{f.eur(g.amount)}</span>

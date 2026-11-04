@@ -31,8 +31,8 @@
       "Quant té de debò?",
       "Això és el que té i el que deu en Pablo. Col·loca cada cosa: **suma** o **resta**?",
       "Patrimoni d'en Pablo",
-      "El que té ➕",
-      "El que deu ➖",
+      "El que té",
+      "El que deu",
       "Estalvis al compte",
       "Els diners estalviats són seus: sumen.",
       "El seu cotxe (el que val avui)",
@@ -47,7 +47,7 @@
       "**Patrimoni = el que tens − el que deus.** El d'en Pablo: 9.500 − 4.300 = **5.200 €**. És una foto; la seva renda i el seu estalvi són la pel·lícula que la va canviant.",
       "Compte amb els deutes: encara que no els vegis, resten.",
       "Vas bé! Mira com canvia el càlcul de sota.",
-      "Toca **suma** o **resta** per a cada cosa 👇"
+      "Toca **suma** o **resta** per a cada cosa"
      ]
     },
     {
@@ -73,7 +73,7 @@
       "Això mateix! Es diu **inflació**. Un 3 % l'any sembla poc… fins que passen 20 anys.",
       "Perquè l'euro val menys que la pesseta",
       "El canvi va ser de 166,386 pessetes per euro: aquest no és el problema. El que pesa és tot el que han pujat els preus des d'aleshores.",
-      "Doncs a veure si tu ho entens millor que jo 😄",
+      "Doncs a veure si tu ho entens millor que jo",
       "Vegem-ho amb el teu propi cistell de la compra."
      ]
     },
@@ -87,7 +87,7 @@
       "Pasta",
       "Ous",
       "Pollastre",
-      "Formatge",
+      "Peix",
       "Oli",
       "Cafè",
       "Amb un 3 % d'inflació l'any, què t'emportaràs amb aquests mateixos 50 € d'aquí a 20 anys?",
@@ -100,7 +100,7 @@
       "Uf! Amb això no omples ni un terç del cistell. Així es viu una inflació alta.",
       "Ho veus? Els bitllets són els mateixos 50 €, però compren molt menys.",
       "Ara apuja la inflació: què passa amb un 7 %?",
-      "Arrossega els anys i mira què passa amb el teu cistell 👇"
+      "Arrossega els anys i mira què passa amb el teu cistell"
      ]
     },
     {
@@ -151,7 +151,7 @@
       "Classifica les sis coses.",
       "Si la llum es dispara un mes, l'IPC general salta, però la **subjacent** gairebé no es mou. Per això els bancs centrals s'hi fixen tant: mostra la tendència de fons.",
       "Pista: el que depèn del temps o del petroli, fora.",
-      "Entra o s'exclou? Classifica cada cosa 👇"
+      "Entra o s'exclou? Classifica cada cosa"
      ]
     },
     {
@@ -177,7 +177,7 @@
       "**Rendibilitat real ≈ rendibilitat − inflació.** Només guanyes poder de compra si els teus diners rendeixen més del que pugen els preus.",
       "Ui! Així els teus diners s'encongeixen rapidíssim.",
       "Continua en vermell: els euros creixen menys que els preus.",
-      "Apuja el que paga el compte fins que la línia deixi de baixar 👇"
+      "Apuja el que paga el compte fins que la línia deixi de baixar"
      ]
     },
     {
@@ -214,7 +214,7 @@
       "El compost **accelera**: els últims anys creixen molt més que els primers. Per això el temps pesa tant com la rendibilitat.",
       "Rendibilitats tan altes no són normals: amb un 7 % ja vas molt bé a llarg termini.",
       "Mira el final de la corba verda: es dispara!",
-      "Mou els anys: fixa't com se separen les línies 👇"
+      "Mou els anys: fixa't com se separen les línies"
      ]
     },
     {
@@ -231,7 +231,7 @@
       "Endarrereix en Bruno fins que l'Ana tingui el triple que ell.",
       "Cada any que esperes costa molt més del que sembla: els primers euros són els que tenen més temps per créixer amb l'interès compost.",
       "Si comença als 45, en Bruno ja no atrapa l'Ana encara que aporti el mateix cada mes.",
-      "Si comencen alhora, acaben igual. Ara endarrereix en Bruno 👇",
+      "Si comencen alhora, acaben igual. Ara endarrereix en Bruno",
       "Cada any de retard obre més la bretxa. Fins on arriba?"
      ]
     },
@@ -258,7 +258,7 @@
       "**72 ÷ rendibilitat = anys per duplicar.** I al revés: 72 ÷ anys = la rendibilitat que necessites.",
       "Això també val per als deutes: una targeta al 24 % duplica el que deus en 3 anys.",
       "Al 2 %, 36 anys per duplicar! És just el que sol pujar la inflació…",
-      "Mou la rendibilitat i mira com creix la torre de bitllets 👇"
+      "Mou la rendibilitat i mira com creix la torre de bitllets"
      ]
     },
     {
@@ -449,7 +449,7 @@
   "u1l3-6": {
    "prompt": "Un cistell costava 200 € fa un any i avui costa 206 €. Quina ha estat la inflació d'aquest cistell?",
    "options": [],
-   "explanation": "(206 − 200) ÷ 200 = 0,03 → 3 %.",
+   "explanation": "(206 − 200) ÷ 200 = 0,03 3 %.",
    "unit": "%"
   },
   "u1l3-7": {

@@ -26,7 +26,7 @@ export function useMetrics(m: Record<string, number>, onMetrics: (m: Record<stri
   }, [key])
 }
 
-export function Slide({ label, value, min, max, step, show, onChange, color = 'var(--brand)' }: { label: string; value: number; min: number; max: number; step: number; show: string; onChange: (v: number) => void; color?: string }) {
+export function Slide({ label, value, min, max, step, show, onChange, color = 'var(--brand)' }: { label: React.ReactNode; value: number; min: number; max: number; step: number; show: string; onChange: (v: number) => void; color?: string }) {
   const pct = ((value - min) / (max - min || 1)) * 100
   return (
     <label className="flex flex-col gap-1.5">

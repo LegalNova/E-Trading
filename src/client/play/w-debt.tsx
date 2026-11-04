@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import type { WidgetT } from '@/shared/play'
 import { Seg } from '../ui/kit'
+import { Glyph, GlyphTile } from './glyph'
 import { Big, Lines, Row, Slide, useFmt, useMetrics } from './kit'
 import { payDebts, payment, tae } from './math'
 
@@ -103,11 +104,11 @@ export function Debts({ w, onMetrics }: W<'debts'>) {
   useMetrics({ method: method === 'snowball' ? 0 : 1, extra, months: p.months, interest: Math.round(p.interest), saved: Math.round(o.interest - p.interest), firstPaid: p.order[0]?.at ?? 0 }, onMetrics)
   return (
     <div className="flex flex-col gap-3">
-      <Seg label={t('method')} value={method} onChange={setMethod} options={[{ value: 'snowball', label: t('snowball') }, { value: 'avalanche', label: t('avalanche') }]} />
+      <Seg label={t('method')} value={method} onChange={setMethod} options={[{ value: 'snowball', label: <span className="inline-flex items-center gap-1.5"><Glyph name="snowflake" size={15} />{t('snowball')}</span> }, { value: 'avalanche', label: <span className="inline-flex items-center gap-1.5"><Glyph name="mountain" size={15} />{t('avalanche')}</span> }]} />
       <div className="card flex flex-col gap-2">
         {w.debts.map(d => (
           <div key={d.name} className="flex items-center gap-2">
-            <span className="text-[22px]">{d.emoji}</span>
+            <GlyphTile name={d.icon} size={36} color="var(--down)" />
             <span className="flex flex-1 flex-col">
               <b className="t-foot" style={{ color: 'var(--ink)' }}>
                 {d.name}
@@ -124,7 +125,7 @@ export function Debts({ w, onMetrics }: W<'debts'>) {
         <div className="flex gap-1 pt-1">
           {p.order.map((x, k) => (
             <span key={x.name} className="t-cap animate-pop rounded-full px-2 py-0.5" style={{ background: 'color-mix(in srgb, var(--up) 14%, var(--surface))', animationDelay: `${k * 80}ms` }}>
-              {k + 1}. {x.emoji}
+              {k + 1}. {x.name}
             </span>
           ))}
         </div>

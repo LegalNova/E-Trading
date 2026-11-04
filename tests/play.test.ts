@@ -1,7 +1,7 @@
 // Clases interactivas: las cuentas de las piezas coinciden con las cifras que citan las clases, y las condiciones
 // de retos y Lumi y el recorrido de textos para traducir funcionan
 import { describe, expect, it } from 'vitest'
-import { growthPath, payDebts, payment, tae } from '@/client/play/math'
+import { bondPrice, dcaCompare, fillBuy, firstHit, growthPath, maxDrawdown, mixPath, payDebts, payment, savingsTax, tae } from '@/client/play/math'
 import { holds, walkTexts } from '@/shared/play'
 
 describe('cuentas de las piezas', () => {
@@ -25,9 +25,9 @@ describe('cuentas de las piezas', () => {
   })
   it('avalancha paga menos intereses que bola de nieve; la bola de nieve liquida antes la primera deuda', () => {
     const d = [
-      { emoji: '💳', name: 'Tarjeta', balance: 1200, rate: 22, min: 40 },
-      { emoji: '📱', name: 'Móvil', balance: 400, rate: 9, min: 40 },
-      { emoji: '🚗', name: 'Coche', balance: 5000, rate: 8, min: 150 },
+      { icon: 'card', name: 'Tarjeta', balance: 1200, rate: 22, min: 40 },
+      { icon: 'phone', name: 'Móvil', balance: 400, rate: 9, min: 40 },
+      { icon: 'car', name: 'Coche', balance: 5000, rate: 8, min: 150 },
     ]
     const ava = payDebts(d, 100, 'avalanche')
     const snow = payDebts(d, 100, 'snowball')
@@ -43,13 +43,13 @@ describe('retos y textos', () => {
     expect(holds({ metric: 'years', op: '==', value: 10 }, { years: 9 })).toBe(false)
     expect(holds({ metric: 'nada', op: '>', value: 0 }, {})).toBe(false)
   })
-  it('walkTexts recorre solo las frases (no ids, emojis ni condiciones) y en orden fijo', () => {
-    const step = { title: 'Hola', lumi: [{ say: 'Bien', when: { metric: 'done', op: '==', value: 3 }, mood: 'HAPPY' }], widget: { kind: 'sort', cards: [{ emoji: '🏠', label: 'Alquiler', bin: 0, why: 'Fijo' }] } }
+  it('walkTexts recorre solo las frases (no ids, iconos ni condiciones) y en orden fijo', () => {
+    const step = { title: 'Hola', lumi: [{ say: 'Bien', when: { metric: 'done', op: '==', value: 3 }, mood: 'HAPPY' }], widget: { kind: 'sort', cards: [{ icon: 'home', label: 'Alquiler', bin: 0, why: 'Fijo' }] } }
     const seen: string[] = []
     walkTexts(step, s => (seen.push(s), s))
     expect(seen).toEqual(['Hola', 'Bien', 'Alquiler', 'Fijo'])
     const up = walkTexts(step, s => s.toUpperCase())
-    expect(up.widget.cards[0]).toEqual({ emoji: '🏠', label: 'ALQUILER', bin: 0, why: 'FIJO' })
+    expect(up.widget.cards[0]).toEqual({ icon: 'home', label: 'ALQUILER', bin: 0, why: 'FIJO' })
     expect(up.lumi[0].when.metric).toBe('done')
   })
 })
@@ -66,5 +66,43 @@ describe('preguntas de cifra con opciones', () => {
       for (const x of c) if (x !== sol) expect(Math.abs(x - sol)).toBeGreaterThan(band)
       expect(numChoices(id, sol, tol)).toEqual(c)
     }
+  })
+})
+
+describe('cuentas de las piezas nuevas', () => {
+  it('bono: si el tipo de mercado es igual al cupón vale su nominal; si sube, baja', () => {
+    expect(bondPrice(1000, 3, 10, 3)).toBeCloseTo(1000, 6)
+    expect(bondPrice(1000, 3, 10, 5)).toBeLessThan(1000)
+    expect(bondPrice(1000, 3, 10, 1)).toBeGreaterThan(1000)
+    // Más años hasta el vencimiento, más sensible a los tipos
+    expect(1000 - bondPrice(1000, 3, 20, 5)).toBeGreaterThan(1000 - bondPrice(1000, 3, 2, 5))
+  })
+  it('base del ahorro 2025: 19 % hasta 6.000 €, 21 % hasta 50.000 €…', () => {
+    expect(savingsTax(6000).tax).toBeCloseTo(1140, 6)
+    expect(savingsTax(10000).tax).toBeCloseTo(1140 + 840, 6)
+    expect(savingsTax(10000).marginal).toBe(21)
+    expect(savingsTax(0)).toEqual({ tax: 0, parts: [], marginal: 0 })
+  })
+  it('libro de órdenes: una compra grande paga un precio medio peor que el mejor precio', () => {
+    const asks = [{ price: 10, size: 100 }, { price: 10.1, size: 100 }, { price: 10.3, size: 200 }]
+    expect(fillBuy(asks, 100).slippagePct).toBe(0)
+    const r = fillBuy(asks, 300)
+    expect(r.avg).toBeCloseTo((1000 + 1010 + 1030) / 300, 6)
+    expect(r.slippagePct).toBeGreaterThan(0)
+  })
+  it('stop y objetivo: gana el que se toca primero (en la misma vela, el stop)', () => {
+    const fut: [number, number, number, number][] = [[100, 101, 99, 100], [100, 106, 99.5, 105], [105, 105, 94, 95]]
+    expect(firstHit(fut, 95, 105)).toEqual({ hit: 2, at: 1 })
+    expect(firstHit(fut, 99.5, 120)).toEqual({ hit: 1, at: 0 })
+    expect(firstHit(fut, 90, 120).hit).toBe(0)
+  })
+  it('cartera y caída máxima; todo de golpe frente a poco a poco', () => {
+    const a = { closes: [100, 50, 100] }
+    const b = { closes: [100, 100, 100] }
+    expect(mixPath([a, b], [50, 50], 1000)).toEqual([1000, 750, 1000])
+    expect(maxDrawdown([1000, 750, 1000])).toBeCloseTo(-25, 6)
+    const r = dcaCompare([100, 50, 100, 100], 0, 1200, 2, 3)
+    expect(r.lump).toBeCloseTo(1200, 6)
+    expect(r.dca).toBeGreaterThan(r.lump) // comprar barato en la caída
   })
 })

@@ -4,6 +4,7 @@
 import { useTranslations } from 'next-intl'
 import { useEffect, useMemo, useState } from 'react'
 import type { WidgetT } from '@/shared/play'
+import { Glyph } from './glyph'
 import { Big, Lines, Row, Slide, rng, useFmt, useMetrics } from './kit'
 
 type W<K extends WidgetT['kind']> = { w: Extract<WidgetT, { kind: K }>; onMetrics: (m: Record<string, number>) => void }
@@ -68,7 +69,8 @@ export function Crash({ w, onMetrics }: W<'crash'>) {
   const [soldAt, setSoldAt] = useState<number | null>(null)
   useEffect(() => {
     if (!run || i >= c.length - 1) return
-    const id = setTimeout(() => setI(x => x + 1), 70)
+    // Unos 20 segundos para toda la serie, sea de 200 o de 1.300 puntos
+    const id = setTimeout(() => setI(x => Math.min(c.length - 1, x + Math.max(1, Math.round(c.length / 300)))), Math.max(25, 20000 / c.length))
     return () => clearTimeout(id)
   }, [run, i, c.length])
   const done = i >= c.length - 1
@@ -108,13 +110,13 @@ export function Crash({ w, onMetrics }: W<'crash'>) {
         <div className="card animate-pop flex flex-col gap-1" style={{ background: 'color-mix(in srgb, var(--brand) 9%, var(--surface))' }}>
           <b>{soldAt !== null ? t('crashSold', { at: w.series.dates[soldAt], cash: f.eur(mine), hold: f.eur(val(i)) }) : t('crashHeld', { end: f.eur(mine), date: w.series.dates[i] })}</b>
           <button className="btn btn-plain" onClick={() => (setI(0), setSoldAt(null), setRun(false))}>
-            {t('again')}
+            <Glyph name="repeat" size={16} /> {t('again')}
           </button>
         </div>
       ) : (
         <div className="flex gap-2">
           <button className="btn btn-secondary" onClick={() => setRun(r => !r)}>
-            {run ? t('pause') : i ? t('resume') : t('startCrash')}
+            <Glyph name={run ? 'timer' : 'chart'} size={18} /> {run ? t('pause') : i ? t('resume') : t('startCrash')}
           </button>
           <button className="btn btn-danger" disabled={!i || soldAt !== null} onClick={() => setSoldAt(i)}>
             {t('sellAll')}

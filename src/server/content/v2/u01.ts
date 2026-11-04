@@ -7,7 +7,7 @@ export default unit({
   id: 'u1', order: 1, title: 'El dinero y la inflación', description: 'Qué es el dinero, por qué pierde valor y cómo crece con el interés compuesto',
   lessons: [
     lesson('u1l1', 'Qué es el dinero (y qué no)', [
-      story('Dos sueldos, dos finales', [{ id: 'marta', name: 'Marta', emoji: '👩‍💼' }, { id: 'pablo', name: 'Pablo', emoji: '🧑‍🔧' }], [
+      story('Dos sueldos, dos finales', [{ id: 'marta', name: 'Marta' }, { id: 'pablo', name: 'Pablo' }], [
         note('Marta cobra 1.800 € al mes. Pablo, 1.300 €.'),
         say('marta', 'Este mes me he comprado unas zapatillas, he cenado fuera tres veces… ¡y aún me sobran 50 €!'),
         say('pablo', 'Yo cocino en casa casi siempre. Me sobran 300 € y los aparto.'),
@@ -23,13 +23,13 @@ export default unit({
         intro: 'Esto es lo que tiene y lo que debe Pablo. Coloca cada cosa: ¿**suma** o **resta**?',
         widget: {
           kind: 'sort', sumLabel: 'Patrimonio de Pablo',
-          bins: [{ label: 'Lo que tiene ➕', sign: 1 }, { label: 'Lo que debe ➖', sign: -1 }],
+          bins: [{ label: 'Lo que tiene', sign: 1 }, { label: 'Lo que debe', sign: -1 }],
           cards: [
-            { emoji: '🏦', label: 'Ahorros en la cuenta', value: 3000, bin: 0, why: 'El dinero ahorrado es suyo: suma.' },
-            { emoji: '🚗', label: 'Su coche (lo que vale hoy)', value: 6000, bin: 0, why: 'Lo que tienes cuenta por lo que vale hoy, no por lo que costó.' },
-            { emoji: '📄', label: 'Lo que queda del préstamo del coche', value: 4000, bin: 1, why: 'Una deuda resta: el coche todavía no es del todo suyo.' },
-            { emoji: '💻', label: 'Su portátil', value: 500, bin: 0, why: 'Un objeto de valor suma, aunque cada año valga un poco menos.' },
-            { emoji: '💳', label: 'Lo pendiente de la tarjeta', value: 300, bin: 1, why: 'Lo que debes de la tarjeta resta, aunque no lo veas.' },
+            { icon: 'bank', label: 'Ahorros en la cuenta', value: 3000, bin: 0, why: 'El dinero ahorrado es suyo: suma.' },
+            { icon: 'car', label: 'Su coche (lo que vale hoy)', value: 6000, bin: 0, why: 'Lo que tienes cuenta por lo que vale hoy, no por lo que costó.' },
+            { icon: 'document', label: 'Lo que queda del préstamo del coche', value: 4000, bin: 1, why: 'Una deuda resta: el coche todavía no es del todo suyo.' },
+            { icon: 'laptop', label: 'Su portátil', value: 500, bin: 0, why: 'Un objeto de valor suma, aunque cada año valga un poco menos.' },
+            { icon: 'card', label: 'Lo pendiente de la tarjeta', value: 300, bin: 1, why: 'Lo que debes de la tarjeta resta, aunque no lo veas.' },
           ],
         },
         goal: { text: 'Coloca todo y descubre el patrimonio de Pablo.', when: [when('done', '==', 5)] },
@@ -37,7 +37,7 @@ export default unit({
         lumi: [
           { when: when('wrong', '>=', 2), say: 'Ojo con las deudas: aunque no las veas, restan.', mood: 'THINKING' },
           { when: when('done', '>=', 3), say: '¡Vas bien! Mira cómo cambia la cuenta de abajo.', mood: 'HAPPY' },
-          { say: 'Toca **suma** o **resta** para cada cosa 👇', mood: 'HAPPY' },
+          { say: 'Toca **suma** o **resta** para cada cosa', mood: 'HAPPY' },
         ],
       }),
       key('Para qué sirve el dinero', 'El dinero hace tres trabajos:\n\n• **Medio de pago:** cambias trabajo por pan sin hacer trueque.\n• **Unidad de cuenta:** sabes que un café vale menos que una bici.\n• **Depósito de valor:** puedes guardarlo para mañana… aunque, como verás en la próxima clase, se va desgastando.', 'Riqueza es patrimonio, no sueldo: lo que tienes menos lo que debes.'),
@@ -54,7 +54,7 @@ export default unit({
     ], { source: '1.1', minutes: 6, retire: [5, 7, 8] }),
 
     lesson('u1l2', 'La inflación: por qué todo sube', [
-      story('Las 100 pesetas de la abuela', [{ id: 'abuela', name: 'Abuela Carmen', emoji: '👵' }], [
+      story('Las 100 pesetas de la abuela', [{ id: 'abuela', name: 'Abuela Carmen' }], [
         say('abuela', 'Cuando yo tenía tu edad, con 100 pesetas volvía del mercado con la cesta llena.'),
         say('abuela', 'Hoy 100 pesetas serían 60 céntimos. ¡No te dan ni para una barra de pan!'),
         choose('¿Por qué crees que pasa esto?', [
@@ -62,7 +62,7 @@ export default unit({
           opt('Porque los precios suben un poco cada año y se va acumulando', 'good', say('lumi', '¡Eso es! Se llama **inflación**. Un 3 % al año parece poco… hasta que pasan 20 años.')),
           opt('Porque el euro vale menos que la peseta', 'ok', say('lumi', 'El cambio fue de 166,386 pesetas por euro: eso no es el problema. Lo que pesa es todo lo que han subido los precios desde entonces.')),
         ]),
-        say('abuela', 'Pues a ver si tú lo entiendes mejor que yo 😄'),
+        say('abuela', 'Pues a ver si tú lo entiendes mejor que yo'),
         say('lumi', 'Vamos a verlo con tu propia cesta de la compra.'),
       ]),
       play({
@@ -71,9 +71,9 @@ export default unit({
         widget: {
           kind: 'basket', money: 50, rate: 3, years: 0, maxYears: 30, maxRate: 10,
           items: [
-            { emoji: '🥖', name: 'Pan', price: 2.5 }, { emoji: '🥛', name: 'Leche', price: 6 }, { emoji: '🍎', name: 'Fruta', price: 8 },
-            { emoji: '🍝', name: 'Pasta', price: 4 }, { emoji: '🥚', name: 'Huevos', price: 3.5 }, { emoji: '🍗', name: 'Pollo', price: 7 },
-            { emoji: '🧀', name: 'Queso', price: 9 }, { emoji: '🫒', name: 'Aceite', price: 9 }, { emoji: '☕', name: 'Café', price: 1 },
+            { icon: 'bread', name: 'Pan', price: 2.5 }, { icon: 'milk', name: 'Leche', price: 6 }, { icon: 'apple', name: 'Fruta', price: 8 },
+            { icon: 'pasta', name: 'Pasta', price: 4 }, { icon: 'egg', name: 'Huevos', price: 3.5 }, { icon: 'chicken', name: 'Pollo', price: 7 },
+            { icon: 'fish', name: 'Pescado', price: 9 }, { icon: 'oil', name: 'Aceite', price: 9 }, { icon: 'coffee', name: 'Café', price: 1 },
           ],
         },
         predict: {
@@ -88,7 +88,7 @@ export default unit({
           { when: when('itemsPct', '<', 35), say: '¡Uf! Con eso no llenas ni un tercio de la cesta. Así se vive una inflación alta.', mood: 'WORRIED' },
           { when: when('itemsPct', '<=', 60), say: '¿Lo ves? Los billetes son los mismos 50 €, pero compran mucho menos.', mood: 'THINKING' },
           { when: when('years', '>', 0), say: 'Ahora sube la inflación: ¿qué pasa con un 7 %?', mood: 'HAPPY' },
-          { say: 'Arrastra los años y mira qué pasa con tu cesta 👇', mood: 'HAPPY' },
+          { say: 'Arrastra los años y mira qué pasa con tu cesta', mood: 'HAPPY' },
         ],
       }),
       key('Por qué suben los precios', 'Suben cuando hay más dinero o más demanda que cosas que comprar, o cuando producir cuesta más (la energía en 2022). En España la mide el INE con el **IPC**: en 2025 fue del 2,7 % de media.\n\nEl BCE intenta que ronde el **2 %** subiendo o bajando los tipos de interés.', 'Con inflación, el dinero quieto compra cada año un poco menos.'),
@@ -103,7 +103,7 @@ export default unit({
     ], { source: '1.1', minutes: 6 }),
 
     lesson('u1l3', 'El IPC y tu cesta de la compra', [
-      story('¿Por qué yo lo noto más?', [{ id: 'leo', name: 'Leo', emoji: '🧑' }, { id: 'sara', name: 'Sara', emoji: '👩' }], [
+      story('¿Por qué yo lo noto más?', [{ id: 'leo', name: 'Leo' }, { id: 'sara', name: 'Sara' }], [
         say('leo', 'Dicen que la inflación es del 3 %, pero yo noto que todo me sube muchísimo más.'),
         say('sara', 'Pues yo casi ni lo noto…'),
         note('Leo alquila un piso y va en coche a todas partes. Sara vive con su familia y va en bici.'),
@@ -120,19 +120,19 @@ export default unit({
           kind: 'sort',
           bins: [{ label: 'Cuenta en la subyacente' }, { label: 'Se excluye: muy volátil' }],
           cards: [
-            { emoji: '⚡', label: 'La factura de la luz', bin: 1, why: 'Es energía: puede dispararse un mes y bajar al siguiente.' },
-            { emoji: '👕', label: 'Una camiseta', bin: 0, why: 'La ropa cambia de precio poco a poco: cuenta en la subyacente.' },
-            { emoji: '🍓', label: 'Fresas frescas', bin: 1, why: 'Los alimentos sin elaborar dependen del tiempo y de las cosechas: se excluyen.' },
-            { emoji: '💇', label: 'Un corte de pelo', bin: 0, why: 'Los servicios cambian despacio: son la tendencia de fondo.' },
-            { emoji: '⛽', label: 'Llenar el depósito', bin: 1, why: 'Los carburantes son energía: muy volátiles.' },
-            { emoji: '🍝', label: 'Un paquete de pasta', bin: 0, why: 'Es un alimento elaborado: se queda en la subyacente.' },
+            { icon: 'power', label: 'La factura de la luz', bin: 1, why: 'Es energía: puede dispararse un mes y bajar al siguiente.' },
+            { icon: 'clothes', label: 'Una camiseta', bin: 0, why: 'La ropa cambia de precio poco a poco: cuenta en la subyacente.' },
+            { icon: 'cherry', label: 'Fresas frescas', bin: 1, why: 'Los alimentos sin elaborar dependen del tiempo y de las cosechas: se excluyen.' },
+            { icon: 'haircut', label: 'Un corte de pelo', bin: 0, why: 'Los servicios cambian despacio: son la tendencia de fondo.' },
+            { icon: 'fuel', label: 'Llenar el depósito', bin: 1, why: 'Los carburantes son energía: muy volátiles.' },
+            { icon: 'pasta', label: 'Un paquete de pasta', bin: 0, why: 'Es un alimento elaborado: se queda en la subyacente.' },
           ],
         },
         goal: { text: 'Clasifica las seis cosas.', when: [when('done', '==', 6)] },
         insight: 'Si la luz se dispara un mes, el IPC general salta, pero la **subyacente** apenas se mueve. Por eso los bancos centrales la miran tanto: enseña la tendencia de fondo.',
         lumi: [
           { when: when('wrong', '>=', 2), say: 'Pista: lo que depende del tiempo o del petróleo, fuera.', mood: 'THINKING' },
-          { say: '¿Entra o se excluye? Clasifica cada cosa 👇', mood: 'HAPPY' },
+          { say: '¿Entra o se excluye? Clasifica cada cosa', mood: 'HAPPY' },
         ],
       }),
       key('Cómo se mide', 'Cada mes, el INE anota los precios de una **cesta** de cientos de productos y servicios: comida, vivienda, transporte, ocio… El **IPC** es lo que ha cambiado esa cesta respecto al mismo mes del año anterior.\n\nCada cosa pesa según lo que gastan de media los hogares.', 'El IPC es la media de todos: tu inflación depende de en qué gastas tú.'),
@@ -164,10 +164,10 @@ export default unit({
         lumi: [
           { when: when('real', '<', -2), say: '¡Uy! Así tu dinero se encoge rapidísimo.', mood: 'WORRIED' },
           { when: when('real', '<', 0), say: 'Sigue en rojo: los euros crecen menos que los precios.', mood: 'THINKING' },
-          { say: 'Sube lo que paga la cuenta hasta que la línea deje de bajar 👇', mood: 'HAPPY' },
+          { say: 'Sube lo que paga la cuenta hasta que la línea deje de bajar', mood: 'HAPPY' },
         ],
       }),
-      story('«Ahí están seguros»', [{ id: 'tio', name: 'Tío Javi', emoji: '🧔' }], [
+      story('«Ahí están seguros»', [{ id: 'tio', name: 'Tío Javi' }], [
         say('tio', 'Yo tengo 20.000 € en la cuenta desde hace años. Al 0 %, pero ahí no pierdo nada.'),
         choose('¿Qué le contestas?', [
           opt('Tienes razón, el saldo no baja', 'bad', say('lumi', 'El saldo no baja, pero con un 2,5 % de inflación, en 15 años esos 20.000 € comprarán lo que hoy unos **13.800 €**.')),
@@ -205,7 +205,7 @@ export default unit({
         lumi: [
           { when: when('rate', '>=', 11), say: 'Rentabilidades tan altas no son normales: con un 7 % ya vas muy bien a largo plazo.', mood: 'THINKING' },
           { when: when('years', '>=', 35), say: 'Mira el final de la curva verde: ¡se dispara!', mood: 'HAPPY' },
-          { say: 'Mueve los años: fíjate en cómo se separan las líneas 👇', mood: 'HAPPY' },
+          { say: 'Mueve los años: fíjate en cómo se separan las líneas', mood: 'HAPPY' },
         ],
       }),
       play({
@@ -222,7 +222,7 @@ export default unit({
         insight: 'Cada año que esperas cuesta mucho más de lo que parece: los primeros euros son los que más tiempo tienen para componerse.',
         lumi: [
           { when: when('delay', '>=', 20), say: 'Empezando a los 45, Bruno ya no alcanza a Ana aunque aporte lo mismo cada mes.', mood: 'WORRIED' },
-          { when: when('delay', '<=', 0), say: 'Si empiezan a la vez, acaban igual. Ahora retrasa a Bruno 👇', mood: 'HAPPY' },
+          { when: when('delay', '<=', 0), say: 'Si empiezan a la vez, acaban igual. Ahora retrasa a Bruno', mood: 'HAPPY' },
           { say: 'Cada año de retraso abre más la brecha. ¿Hasta dónde llega?', mood: 'THINKING' },
         ],
       }),
@@ -255,10 +255,10 @@ export default unit({
         lumi: [
           { when: when('rate', '>=', 18), say: 'Esto también vale para las deudas: una tarjeta al 24 % duplica lo que debes en 3 años.', mood: 'WORRIED' },
           { when: when('rate', '<=', 2), say: 'Al 2 %, ¡36 años para duplicar! Es justo lo que suele subir la inflación…', mood: 'THINKING' },
-          { say: 'Mueve la rentabilidad y mira cómo crece la torre de billetes 👇', mood: 'HAPPY' },
+          { say: 'Mueve la rentabilidad y mira cómo crece la torre de billetes', mood: 'HAPPY' },
         ],
       }),
-      story('Una oferta increíble', [{ id: 'nico', name: 'Nico', emoji: '😎' }], [
+      story('Una oferta increíble', [{ id: 'nico', name: 'Nico' }], [
         say('nico', 'He encontrado un fondo que **duplica tu dinero en 2 años** y sin riesgo. ¿Te apuntas? Solo quedan plazas hoy.'),
         choose('Usa la regla del 72. ¿Qué piensas?', [
           opt('¡Me apunto! Suena genial', 'bad', say('lumi', 'Duplicar en 2 años es un **36 % al año** (72 ÷ 2). Nadie puede garantizar eso «sin riesgo»: tiene toda la pinta de estafa.')),

@@ -4,6 +4,7 @@
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import type { WidgetT } from '@/shared/play'
+import { GlyphTile } from './glyph'
 import { Bars, Big, Lines, Row, Slide, useFmt, useMetrics } from './kit'
 import { growthPath } from './math'
 
@@ -35,9 +36,7 @@ export function Basket({ w, onMetrics }: W<'basket'>) {
         <div className="grid grid-cols-3 gap-2">
           {can.map(x => (
             <div key={x.name} className="flex flex-col items-center rounded-2xl py-2 transition-all" style={{ background: x.ok ? 'color-mix(in srgb, var(--up) 10%, var(--surface))' : 'var(--surface-2)', opacity: x.ok ? 1 : 0.4 }}>
-              <span className="text-[30px] leading-none" style={{ filter: x.ok ? undefined : 'grayscale(1)' }}>
-                {x.emoji}
-              </span>
+              <GlyphTile name={x.icon} size={40} color="var(--up)" muted={!x.ok} />
               <span className="t-cap mt-1 text-center">{x.name}</span>
               <b className="t-cap tabular-nums" style={{ color: x.ok ? 'var(--ink)' : 'var(--down)', textDecoration: x.ok ? undefined : 'line-through' }}>
                 {f.eur(x.p, x.p < 10 ? 2 : 0)}
@@ -145,14 +144,13 @@ export function Doubling({ w, onMetrics }: W<'doubling'>) {
     <div className="flex flex-col gap-3">
       <div className="card flex flex-col gap-2">
         <span className="t-cap">{t('in40', { amount: f.eur(w.amount) })}</span>
-        <div className="flex flex-wrap items-end gap-1.5">
-          {Array.from({ length: Math.min(times, 8) + 1 }, (_, i) => (
-            <div key={i} className="flex flex-col items-center gap-0.5 animate-pop">
-              <span className="leading-none" style={{ fontSize: 16 + i * 4 }}>
-                💶
-              </span>
-              <b className="t-cap tabular-nums">{f.eur(w.amount * 2 ** i)}</b>
-              <span className="t-cap">{i ? t('yearN', { n: Math.round(years * i) }) : t('today')}</span>
+        {/* Cada barra es una duplicación: crece en altura y en intensidad */}
+        <div className="flex h-[150px] items-end gap-1.5">
+          {Array.from({ length: Math.min(times, 7) + 1 }, (_, i) => i).map((i, _, all) => (
+            <div key={i} className="flex min-w-0 flex-1 animate-pop flex-col items-center justify-end gap-1" style={{ animationDelay: `${i * 40}ms` }}>
+              <b className="t-cap whitespace-nowrap tabular-nums">{f.eur(w.amount * 2 ** i)}</b>
+              <div className="w-full rounded-t-lg" style={{ height: `${18 + (i / Math.max(1, all.length - 1)) * 82}px`, background: `color-mix(in srgb, var(--up) ${35 + i * 9}%, var(--surface))`, transition: 'height .25s' }} />
+              <span className="t-cap whitespace-nowrap">{i ? t('yearN', { n: Math.round(years * i) }) : t('today')}</span>
             </div>
           ))}
         </div>

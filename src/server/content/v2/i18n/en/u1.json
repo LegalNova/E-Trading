@@ -31,8 +31,8 @@
       "How much does he really have?",
       "This is what Pablo owns and what he owes. Place each item: does it **add** or **subtract**?",
       "Pablo's net worth",
-      "What he owns ➕",
-      "What he owes ➖",
+      "What he owns",
+      "What he owes",
       "Savings in the bank",
       "The money he's saved is his: it adds.",
       "His car (what it's worth today)",
@@ -47,7 +47,7 @@
       "**Net worth = what you own − what you owe.** Pablo's: 9,500 − 4,300 = **€5,200**. It's a snapshot; his income and savings are the film that keeps changing it.",
       "Watch out for debts: even if you can't see them, they subtract.",
       "You're doing well! Watch how the sum below changes.",
-      "Tap **add** or **subtract** for each item 👇"
+      "Tap **add** or **subtract** for each item"
      ]
     },
     {
@@ -73,7 +73,7 @@
       "That's it! It's called **inflation**. 3 % a year sounds like nothing… until 20 years go by.",
       "Because the euro is worth less than the peseta",
       "The exchange rate was 166.386 pesetas to the euro: that's not the problem. What matters is how much prices have risen since then.",
-      "Well, let's see if you understand it better than I do 😄",
+      "Well, let's see if you understand it better than I do",
       "Let's look at it with your own shopping basket."
      ]
     },
@@ -87,7 +87,7 @@
       "Pasta",
       "Eggs",
       "Chicken",
-      "Cheese",
+      "Fish",
       "Olive oil",
       "Coffee",
       "With 3 % inflation a year, what will those same €50 get you in 20 years' time?",
@@ -100,7 +100,7 @@
       "Oof! That doesn't even fill a third of the basket. That's what high inflation feels like.",
       "See? The notes are the same €50, but they buy much less.",
       "Now turn the inflation up: what happens at 7 %?",
-      "Drag the years and see what happens to your basket 👇"
+      "Drag the years and see what happens to your basket"
      ]
     },
     {
@@ -151,7 +151,7 @@
       "Sort all six items.",
       "If electricity shoots up one month, headline CPI jumps, but **core** barely moves. That's why central banks watch it so closely: it shows the underlying trend.",
       "Hint: anything that depends on the weather or on oil is out.",
-      "In or out? Sort each item 👇"
+      "In or out? Sort each item"
      ]
     },
     {
@@ -177,7 +177,7 @@
       "**Real return ≈ return − inflation.** You only gain purchasing power if your money earns more than prices go up.",
       "Yikes! Your money shrinks really fast like this.",
       "Still in the red: your euros are growing more slowly than prices.",
-      "Raise what the account pays until the line stops falling 👇"
+      "Raise what the account pays until the line stops falling"
      ]
     },
     {
@@ -214,7 +214,7 @@
       "Compounding **speeds up**: the last years grow much more than the first ones. That's why time matters as much as the return.",
       "Returns that high aren't normal: 7 % is already very good over the long term.",
       "Look at the end of the green curve: it shoots up!",
-      "Move the years: watch how the lines pull apart 👇"
+      "Move the years: watch how the lines pull apart"
      ]
     },
     {
@@ -231,7 +231,7 @@
       "Delay Bruno until Ana has three times as much as him.",
       "Every year you wait costs far more than it seems: your first euros are the ones with the most time to compound.",
       "Starting at 45, Bruno can't catch up with Ana even if he puts in the same each month.",
-      "If they start at the same time, they end up the same. Now delay Bruno 👇",
+      "If they start at the same time, they end up the same. Now delay Bruno",
       "Every year of delay widens the gap. How far does it go?"
      ]
     },
@@ -258,7 +258,7 @@
       "**72 ÷ return = years to double.** And the other way round: 72 ÷ years = the return you need.",
       "This works for debt too: a card at 24 % doubles what you owe in 3 years.",
       "At 2 %, 36 years to double! That's about what inflation usually runs at…",
-      "Move the return and watch the stack of notes grow 👇"
+      "Move the return and watch the stack of notes grow"
      ]
     },
     {
@@ -449,7 +449,7 @@
   "u1l3-6": {
    "prompt": "A basket cost €200 a year ago and costs €206 today. What has the inflation of that basket been?",
    "options": [],
-   "explanation": "(206 − 200) ÷ 200 = 0.03 → 3 %.",
+   "explanation": "(206 − 200) ÷ 200 = 0.03 3 %.",
    "unit": "%"
   },
   "u1l3-7": {

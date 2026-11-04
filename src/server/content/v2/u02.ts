@@ -6,8 +6,8 @@ export default unit({
   id: 'u2', order: 2, title: 'Presupuesto y ahorro', description: 'Saber en qué se va tu dinero, repartir el sueldo y montar tu colchón',
   lessons: [
     lesson('u2l1', 'Tu presupuesto en 10 minutos', [
-      story('¿Dónde se ha ido mi sueldo?', [{ id: 'laura', name: 'Laura', emoji: '👩‍🎨' }], [
-        say('laura', 'Otra vez a final de mes casi a cero. ¡Pero si cobro 1.400 €! 😩'),
+      story('¿Dónde se ha ido mi sueldo?', [{ id: 'laura', name: 'Laura' }], [
+        say('laura', 'Otra vez a final de mes casi a cero. ¡Pero si cobro 1.400 €!'),
         say('laura', 'No sé ni en qué me lo gasto.'),
         choose('¿Qué le aconsejas primero?', [
           opt('Que deje de salir y no se compre nada más', 'ok', say('lumi', 'Recortar a ciegas suele durar poco. Primero hay que saber **en qué** se va el dinero.')),
@@ -23,21 +23,21 @@ export default unit({
           kind: 'sort',
           bins: [{ label: 'Fijo' }, { label: 'Variable' }],
           cards: [
-            { emoji: '🏠', label: 'Alquiler', value: 450, bin: 0, why: 'Es igual cada mes: solo se recorta cambiando de piso o compartiendo.' },
-            { emoji: '🍕', label: 'Comida a domicilio', value: 160, bin: 1, why: 'Cambia cada mes y depende de ella: variable.' },
-            { emoji: '📱', label: 'Tarifa del móvil', value: 20, bin: 0, why: 'El mismo importe cada mes. Se recorta una vez, cambiando de tarifa.' },
-            { emoji: '👗', label: 'Ropa', value: 150, bin: 1, why: 'Variable: unos meses mucho, otros nada.' },
-            { emoji: '🚇', label: 'Abono de transporte', value: 20, bin: 0, why: 'Fijo: lo paga igual cada mes.' },
-            { emoji: '🎉', label: 'Salidas y ocio', value: 280, bin: 1, why: 'Variable, y suele ser donde más margen hay.' },
-            { emoji: '🛒', label: 'Supermercado', value: 270, bin: 1, why: 'Cambia cada mes según lo que compra: variable.' },
-            { emoji: '🎬', label: 'Dos plataformas de series', value: 22, bin: 0, why: 'Se cobran solas cada mes: fijas (y fáciles de olvidar).' },
+            { icon: 'home', label: 'Alquiler', value: 450, bin: 0, why: 'Es igual cada mes: solo se recorta cambiando de piso o compartiendo.' },
+            { icon: 'pizza', label: 'Comida a domicilio', value: 160, bin: 1, why: 'Cambia cada mes y depende de ella: variable.' },
+            { icon: 'phone', label: 'Tarifa del móvil', value: 20, bin: 0, why: 'El mismo importe cada mes. Se recorta una vez, cambiando de tarifa.' },
+            { icon: 'clothes', label: 'Ropa', value: 150, bin: 1, why: 'Variable: unos meses mucho, otros nada.' },
+            { icon: 'train', label: 'Abono de transporte', value: 20, bin: 0, why: 'Fijo: lo paga igual cada mes.' },
+            { icon: 'ticket', label: 'Salidas y ocio', value: 280, bin: 1, why: 'Variable, y suele ser donde más margen hay.' },
+            { icon: 'cart', label: 'Supermercado', value: 270, bin: 1, why: 'Cambia cada mes según lo que compra: variable.' },
+            { icon: 'movie', label: 'Dos plataformas de series', value: 22, bin: 0, why: 'Se cobran solas cada mes: fijas (y fáciles de olvidar).' },
           ],
         },
         goal: { text: 'Clasifica todos sus gastos.', when: [when('done', '==', 8)] },
         insight: 'Laura gasta **1.372 €**: 512 € fijos y 860 € variables. De sus 1.400 € le quedan 28 €. Ahí está el problema… y también el margen: los fijos se recortan una vez; los variables, cada día.',
         lumi: [
           { when: when('wrong', '>=', 2), say: 'Pista: ¿lo paga igual cada mes? Entonces es fijo.', mood: 'THINKING' },
-          { say: '¿Fijo o variable? Elige para cada gasto 👇', mood: 'HAPPY' },
+          { say: '¿Fijo o variable? Elige para cada gasto', mood: 'HAPPY' },
         ],
       }),
       key('La cuenta que importa', 'Ingresos − gastos = lo que te queda. Si cobras 1.400 € y gastas 1.250 €, tu capacidad de ahorro es de 150 € al mes: un 10,7 %.', 'Si no sabes en qué se va tu dinero, no puedes decidir a dónde va.', 'Revisa tu presupuesto una vez al mes: con diez minutos basta.'),
@@ -61,13 +61,13 @@ export default unit({
         widget: {
           kind: 'budget', salary: 1400, groups: ['Necesidades', 'Deseos', 'Ahorro'], targets: [50, 30, 20],
           cats: [
-            { emoji: '🏠', label: 'Alquiler', group: 0, amount: 450, min: 350, max: 700 },
-            { emoji: '🛒', label: 'Supermercado', group: 0, amount: 270, min: 180, max: 350 },
-            { emoji: '🚇', label: 'Transporte', group: 0, amount: 20, min: 20, max: 120 },
-            { emoji: '💡', label: 'Luz, agua e internet', group: 0, amount: 60, min: 40, max: 100 },
-            { emoji: '🎉', label: 'Salidas y ocio', group: 1, amount: 280, min: 0, max: 400 },
-            { emoji: '🍕', label: 'Comida a domicilio', group: 1, amount: 160, min: 0, max: 250 },
-            { emoji: '👗', label: 'Ropa', group: 1, amount: 150, min: 0, max: 250 },
+            { icon: 'home', label: 'Alquiler', group: 0, amount: 450, min: 350, max: 700 },
+            { icon: 'cart', label: 'Supermercado', group: 0, amount: 270, min: 180, max: 350 },
+            { icon: 'train', label: 'Transporte', group: 0, amount: 20, min: 20, max: 120 },
+            { icon: 'power', label: 'Luz, agua e internet', group: 0, amount: 60, min: 40, max: 100 },
+            { icon: 'ticket', label: 'Salidas y ocio', group: 1, amount: 280, min: 0, max: 400 },
+            { icon: 'pizza', label: 'Comida a domicilio', group: 1, amount: 160, min: 0, max: 250 },
+            { icon: 'clothes', label: 'Ropa', group: 1, amount: 150, min: 0, max: 250 },
           ],
         },
         predict: {
@@ -82,7 +82,7 @@ export default unit({
           { when: when('left', '<', 0), say: '¡Cuidado! Así gasta más de lo que cobra.', mood: 'WORRIED' },
           { when: when('savePct', '>=', 15), say: '¡Casi! Un empujoncito más y llega al 20 %.', mood: 'HAPPY' },
           { when: when('wantsPct', '<=', 30), say: 'Los deseos ya están en su sitio. ¿Se puede ahorrar algo en el súper o en el alquiler?', mood: 'THINKING' },
-          { say: 'Empieza por lo que más margen tiene: los deseos 👇', mood: 'HAPPY' },
+          { say: 'Empieza por lo que más margen tiene: los deseos', mood: 'HAPPY' },
         ],
       }),
       key('Cuando no cuadra', 'La regla la popularizó la senadora estadounidense Elizabeth Warren. En ciudades caras, solo el alquiler puede llevarse el 40 % del sueldo. Entonces ajustas, pero **siempre con un porcentaje de ahorro reservado**, aunque empiece en un 5 %.', 'Lo importante no son los números exactos: es que el ahorro tenga su parte fija.'),
@@ -106,12 +106,12 @@ export default unit({
         widget: {
           kind: 'leaks', rate: 7, years: 10,
           items: [
-            { emoji: '☕', name: 'Café para llevar', amount: 1.8, per: 'day', on: true },
-            { emoji: '🥤', name: 'Refresco de la máquina', amount: 1.5, per: 'day', on: true },
-            { emoji: '🛵', name: 'Gastos de envío', amount: 4, per: 'week', on: true },
-            { emoji: '🎬', name: 'Tercera plataforma de series', amount: 12, per: 'month', on: true },
-            { emoji: '🏋️', name: 'Gimnasio al que no vas', amount: 35, per: 'month', on: true },
-            { emoji: '🎮', name: 'Recargas del juego', amount: 10, per: 'week', on: true },
+            { icon: 'coffee', name: 'Café para llevar', amount: 1.8, per: 'day', on: true },
+            { icon: 'soda', name: 'Refresco de la máquina', amount: 1.5, per: 'day', on: true },
+            { icon: 'bike', name: 'Gastos de envío', amount: 4, per: 'week', on: true },
+            { icon: 'movie', name: 'Tercera plataforma de series', amount: 12, per: 'month', on: true },
+            { icon: 'gym', name: 'Gimnasio al que no vas', amount: 35, per: 'month', on: true },
+            { icon: 'game', name: 'Recargas del juego', amount: 10, per: 'week', on: true },
           ],
         },
         predict: {
@@ -124,8 +124,8 @@ export default unit({
         insight: 'No se trata de no gastar nunca, sino de gastar en lo que **de verdad** te importa. Lo que recortas, invertido durante años, crece con el interés compuesto (7 % es un ejemplo, no una promesa).',
         lumi: [
           { when: when('on', '==', 0), say: '¡Todo fuera! No hace falta ser tan duro: quédate con lo que de verdad disfrutas.', mood: 'THINKING' },
-          { when: when('cut', '>', 0), say: 'Cada interruptor que apagas es dinero para ti 👀 Mira la cifra de abajo.', mood: 'HAPPY' },
-          { say: 'Apaga lo que podrías quitarte sin echarlo de menos 👇', mood: 'HAPPY' },
+          { when: when('cut', '>', 0), say: 'Cada interruptor que apagas es dinero para ti Mira la cifra de abajo.', mood: 'HAPPY' },
+          { say: 'Apaga lo que podrías quitarte sin echarlo de menos', mood: 'HAPPY' },
         ],
       }),
       key('Las suscripciones', 'Streaming, música, gimnasio, apps, nube… Se cobran solas y por eso se olvidan. Cuatro suscripciones de 12 € son 48 € al mes: **576 € al año**.\n\nRevisa el extracto y pregúntate de cada una: ¿la he usado este mes? Muchas pruebas gratis pasan a ser de pago si no las cancelas.', 'Lo pequeño y repetido se hace grande: revisa tus cargos una vez al mes.'),
@@ -149,9 +149,9 @@ export default unit({
         widget: {
           kind: 'emergency', salary: 1400, spend: 1200, start: 0, maxSave: 200, loanRate: 22,
           events: [
-            { month: 3, emoji: '📱', text: 'Se le rompe el móvil', cost: 250 },
-            { month: 7, emoji: '🦷', text: 'Visita urgente al dentista', cost: 400 },
-            { month: 10, emoji: '🚗', text: 'Avería del coche', cost: 600 },
+            { month: 3, icon: 'phone', text: 'Se le rompe el móvil', cost: 250 },
+            { month: 7, icon: 'doctor', text: 'Visita urgente al dentista', cost: 400 },
+            { month: 10, icon: 'car', text: 'Avería del coche', cost: 600 },
           ],
         },
         predict: {
@@ -165,7 +165,7 @@ export default unit({
         lumi: [
           { when: when('debt', '>', 0), say: '¡Ay! El imprevisto ha ido a la tarjeta… y ahora cobra intereses. Prueba a apartar más.', mood: 'WORRIED' },
           { when: when('save', '>', 0), say: 'Ahora dale a «Vivir el año» y mira qué pasa.', mood: 'HAPPY' },
-          { say: 'Elige cuánto aparta Laura cada mes y dale a «Vivir el año» 👇', mood: 'HAPPY' },
+          { say: 'Elige cuánto aparta Laura cada mes y dale a «Vivir el año»', mood: 'HAPPY' },
         ],
       }),
       key('Dónde guardarlo', 'Tiene que estar **disponible y sin riesgo**: cuenta remunerada, depósito que puedas cancelar sin perder lo que pusiste o Letras del Tesoro para una parte.\n\nLos depósitos están cubiertos por el **Fondo de Garantía de Depósitos hasta 100.000 €** por titular y entidad. **En bolsa, no:** las crisis traen a la vez despidos y caídas.', 'Un colchón a medias ya te salva de muchos sustos: empieza por un mes de gastos.'),
@@ -183,10 +183,10 @@ export default unit({
     ], { source: '1.4', minutes: 6, retire: [4, 5, 6] }),
 
     lesson('u2l5', 'Págate primero a ti', [
-      story('El experimento de Pablo', [{ id: 'pablo', name: 'Pablo', emoji: '🧑‍🔧' }], [
+      story('El experimento de Pablo', [{ id: 'pablo', name: 'Pablo' }], [
         say('pablo', 'Este mes voy a ahorrar **lo que sobre** a final de mes. ¡Seguro que algo queda!'),
         note('Día 30…'),
-        say('pablo', 'Pues… han sobrado 12 €. No sé cómo, pero siempre se va todo 🤷'),
+        say('pablo', 'Pues… han sobrado 12 €. No sé cómo, pero siempre se va todo'),
         choose('¿Qué le propones para el mes que viene?', [
           opt('Que lo intente otra vez con más fuerza de voluntad', 'bad', say('lumi', 'La fuerza de voluntad se agota. El gasto se estira hasta llenar el sueldo: casi nunca «sobra».')),
           opt('Que programe una transferencia de 150 € el día que cobra', 'good', say('lumi', '¡Eso es **pagarte primero a ti**! El ahorro sale solo el día de cobro y gastas lo que queda.')),
@@ -204,7 +204,7 @@ export default unit({
         lumi: [
           { when: when('monthly', '>', 200), say: 'Así es fácil… ¡pero el reto es con 200 € al mes como mucho!', mood: 'THINKING' },
           { when: when('years', '>=', 20), say: 'Fíjate en cuánto pone el tiempo frente a lo que pones tú.', mood: 'HAPPY' },
-          { say: 'Mueve los años y lo que aparta al mes 👇', mood: 'HAPPY' },
+          { say: 'Mueve los años y lo que aparta al mes', mood: 'HAPPY' },
         ],
       }),
       key('Automatízalo', '1. Abre una cuenta separada para el ahorro.\n2. Programa una **transferencia periódica** para el día después de cobrar.\n3. Empieza con un porcentaje que no duela (5-10 %) y súbelo con cada aumento de sueldo.', 'Primero ahorras; luego gastas lo que queda.', 'Lo que no ves en la cuenta de gastos no lo echas de menos.'),

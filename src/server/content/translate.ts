@@ -48,8 +48,7 @@ export function stepsT(loc: Loc, lessonId: string, steps: Step[]): Step[] {
       const next = (es: string) => nb(x.texts![k++] ?? es)
       if (s.kind === 'STORY') return { ...s, story: walkTexts(s.story, next) }
       const play = walkTexts(s.play, next)
-      const w = play.widget
-      return { ...s, play: 'series' in w ? { ...play, widget: { ...w, series: { ...w.series, caption: captionT(loc, w.series.caption) } } } : play }
+      return { ...s, play: { ...play, widget: captionsT(loc, play.widget) } }
     }
     return s
   })
@@ -85,9 +84,16 @@ const MONTHS: Record<'ca' | 'en', string[]> = {
   en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
 }
 const WORDS: Record<'ca' | 'en', [RegExp, string][]> = {
-  ca: [[/velas diarias/g, 'espelmes diàries'], [/cierres cada 3 sesiones/g, 'tancaments cada 3 sessions'], [/cierres diarios/g, 'tancaments diaris'], [/cierres semanales/g, 'tancaments setmanals'], [/cierres mensuales/g, 'tancaments mensuals'], [/hasta el/g, 'fins al'], [/Oro/g, 'Or'], [/Plata/g, 'Plata'], [/Petróleo/g, 'Petroli'], [/Bonos del Tesoro a 20\+ años \(ETF\)/g, 'Bons del Tresor a 20+ anys (ETF)']],
-  en: [[/velas diarias/g, 'daily candles'], [/cierres cada 3 sesiones/g, 'closes every 3 sessions'], [/cierres diarios/g, 'daily closes'], [/cierres semanales/g, 'weekly closes'], [/cierres mensuales/g, 'monthly closes'], [/hasta el/g, 'up to'], [/Oro/g, 'Gold'], [/Plata/g, 'Silver'], [/Petróleo WTI/g, 'WTI crude oil'], [/Bonos del Tesoro a 20\+ años \(ETF\)/g, '20+ year US Treasury bonds (ETF)']],
+  ca: [[/Rentabilidad total en dólares \(dividendos y cupones incluidos\)/g, 'Rendibilitat total en dòlars (dividends i cupons inclosos)'], [/sin dividendos/g, 'sense dividends'], [/dólares por onza/g, 'dòlars per unça'], [/dólares por barril/g, 'dòlars per barril'], [/dólares por euro/g, 'dòlars per euro'], [/en dólares/g, 'en dòlars'], [/Euro\/dólar/g, 'Euro/dòlar'], [/ a (\d{4}-\d{2})/g, ' a $1'], [/velas diarias/g, 'espelmes diàries'], [/cierres cada 3 sesiones/g, 'tancaments cada 3 sessions'], [/cierres diarios/g, 'tancaments diaris'], [/cierres semanales/g, 'tancaments setmanals'], [/cierres mensuales/g, 'tancaments mensuals'], [/hasta el/g, 'fins al'], [/Oro/g, 'Or'], [/Plata/g, 'Plata'], [/Petróleo/g, 'Petroli'], [/Bonos del Tesoro a 20\+ años \(ETF\)/g, 'Bons del Tresor a 20+ anys (ETF)']],
+  en: [[/Rentabilidad total en dólares \(dividendos y cupones incluidos\)/g, 'Total return in dollars (dividends and coupons included)'], [/sin dividendos/g, 'excluding dividends'], [/en dólares por onza/g, 'in dollars per ounce'], [/en dólares por barril/g, 'in dollars per barrel'], [/dólares por euro/g, 'dollars per euro'], [/en dólares/g, 'in dollars'], [/Euro\/dólar/g, 'Euro/dollar'], [/ a (\d{4}-\d{2})/g, ' to $1'], [/velas diarias/g, 'daily candles'], [/cierres cada 3 sesiones/g, 'closes every 3 sessions'], [/cierres diarios/g, 'daily closes'], [/cierres semanales/g, 'weekly closes'], [/cierres mensuales/g, 'monthly closes'], [/hasta el/g, 'up to'], [/Oro/g, 'Gold'], [/Plata/g, 'Silver'], [/Petróleo WTI/g, 'WTI crude oil'], [/Bonos del Tesoro a 20\+ años \(ETF\)/g, '20+ year US Treasury bonds (ETF)']],
 }
+/** Traduce los pies de gráfico que haya dentro de una pieza (series, carteras, velas, rondas) */
+function captionsT<T>(loc: Loc, x: T): T {
+  if (Array.isArray(x)) return x.map(v => captionsT(loc, v)) as T
+  if (x && typeof x === 'object') return Object.fromEntries(Object.entries(x).map(([k, v]) => [k, k === 'caption' && typeof v === 'string' ? captionT(loc, v) : k === 'closes' || k === 'candles' || k === 'future' || k === 'dates' ? v : captionsT(loc, v)])) as T
+  return x
+}
+
 export function captionT(loc: Loc, caption: string): string {
   if (loc === 'es') return caption
   let c = caption

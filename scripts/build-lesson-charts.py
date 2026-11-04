@@ -350,7 +350,53 @@ SERIES = [
     # id, símbolo, nombre, intervalo, desde, hasta, formato de fecha, descripción
     ('series-sp500-monthly', '^GSPC', 'S&P 500', '1mo', '1950-01-01', '2025-12-01', '%Y-%m', 'cierres mensuales, sin dividendos'),
     ('series-crash-2008', '^GSPC', 'S&P 500', '1wk', '2007-10-01', '2013-06-30', '%d/%m/%Y', 'cierres semanales, sin dividendos'),
+    ('series-crash-1929', '^GSPC', 'S&P 500', '1wk', '1929-01-01', '1954-12-31', '%d/%m/%Y', 'cierres semanales, sin dividendos'),
+    ('series-dotcom', '^NDX', 'Nasdaq 100', '1wk', '1999-01-01', '2016-12-31', '%d/%m/%Y', 'cierres semanales, sin dividendos'),
+    ('series-japan', '^N225', 'Nikkei 225', '1mo', '1985-01-01', '2025-12-01', '%Y-%m', 'cierres mensuales, sin dividendos'),
+    ('series-covid', '^GSPC', 'S&P 500', '1d', '2020-01-02', '2020-12-31', '%d/%m/%Y', 'cierres diarios, sin dividendos'),
+    ('series-btc', 'BTC-USD', 'Bitcoin', '1wk', '2021-01-01', '2024-12-31', '%d/%m/%Y', 'cierres semanales, en dólares'),
+    ('series-ibex', '^IBEX', 'IBEX 35', '1mo', '2007-01-01', '2025-12-01', '%Y-%m', 'cierres mensuales, sin dividendos'),
+    ('series-gold', 'GC=F', 'Oro', '1mo', '2000-01-01', '2025-12-01', '%Y-%m', 'cierres mensuales, en dólares por onza'),
+    ('series-eurusd', 'EURUSD=X', 'Euro/dólar', '1mo', '2004-01-01', '2025-12-01', '%Y-%m', 'cierres mensuales, dólares por euro'),
+    ('series-oil', 'CL=F', 'Petróleo WTI', '1wk', '2019-06-01', '2022-12-31', '%d/%m/%Y', 'cierres semanales, en dólares por barril'),
+    ('series-tsla', 'TSLA', 'Tesla', '1wk', '2019-01-01', '2024-12-31', '%d/%m/%Y', 'cierres semanales, en dólares'),
 ]
+
+# Carteras: varios activos con las mismas fechas, rentabilidad total (con dividendos y cupones reinvertidos)
+MIXES = [
+    ('mix-classic', '2008-01-01', '2025-12-01', [('stocks', 'SPY', 'Acciones de EE. UU. (S&P 500)'), ('bonds', 'AGG', 'Bonos de EE. UU.'), ('gold', 'GLD', 'Oro')]),
+    ('mix-crypto', '2015-01-01', '2025-12-01', [('stocks', 'SPY', 'Acciones de EE. UU. (S&P 500)'), ('bonds', 'AGG', 'Bonos de EE. UU.'), ('bitcoin', 'BTC-USD', 'Bitcoin')]),
+]
+
+
+def get_adj(sym, start, end):
+    """Cierres mensuales ajustados (dividendos incluidos) por mes AAAA-MM"""
+    q = urllib.parse.quote(sym, safe='')
+    p1 = int(datetime.datetime.strptime(start, '%Y-%m-%d').timestamp())
+    p2 = int(datetime.datetime.strptime(end, '%Y-%m-%d').timestamp()) + 86400 * 31
+    url = f'https://query1.finance.yahoo.com/v8/finance/chart/{q}?period1={p1}&period2={p2}&interval=1mo'
+    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=25) as r:
+        d = json.load(r)['chart']['result'][0]
+    adj = (d['indicators'].get('adjclose') or [{}])[0].get('adjclose') or d['indicators']['quote'][0]['close']
+    return {datetime.datetime.utcfromtimestamp(t).strftime('%Y-%m'): v for t, v in zip(d['timestamp'], adj) if v is not None}
+
+
+def append_mixes():
+    out = json.load(open(OUT))
+    for fid, start, end, assets in MIXES:
+        if fid in out:
+            print(f'{fid}: ya existe'); continue
+        data = {}
+        for key, sym, name in assets:
+            data[key] = get_adj(sym, start, end)
+            time.sleep(0.5)
+        months = sorted(set.intersection(*[set(v) for v in data.values()]))
+        out[fid] = {'id': fid, 'from': months[0], 'to': months[-1],
+                    'caption': f'Rentabilidad total en dólares (dividendos y cupones incluidos) · {months[0]} a {months[-1]}',
+                    'dates': months,
+                    'assets': [{'key': key, 'symbol': sym, 'name': name, 'closes': [r2(data[key][m]) for m in months]} for key, sym, name in assets]}
+        print(fid, len(months), [a[1] for a in assets])
+    json.dump(out, open(OUT, 'w'), ensure_ascii=False, indent=1)
 
 
 def append_series():
@@ -370,4 +416,4 @@ def append_series():
 
 if __name__ == '__main__':
     import sys
-    append_series() if '--append-series' in sys.argv else append_trends() if '--append-trends' in sys.argv else main()
+    (append_series(), append_mixes()) if '--append-series' in sys.argv else append_trends() if '--append-trends' in sys.argv else main()
