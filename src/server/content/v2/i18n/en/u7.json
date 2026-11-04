@@ -9,12 +9,47 @@
    "title": "What an index is",
    "steps": [
     {
-     "title": "A reference basket",
-     "body": "An **index** sums up in one figure how a group of securities is doing. «The Spanish stock market is up 1 %» means the **IBEX 35** is up 1 %.\n\nEvery index has its own **rules**: which companies get in, how much each one weighs and how often it's reviewed."
+     "texts": [
+      "The fund that made 8 %",
+      "Marta",
+      "My fund made 8 % this year! That's brilliant, right?",
+      "That year, the index for its market rose 14 %.",
+      "What do you tell Marta?",
+      "Congratulations: 8 % is great",
+      "Sounds good… but copying the index would have given her 14 %.",
+      "It came in 6 points behind its index",
+      "Exactly. That's what an index is for: it's the **yardstick**.",
+      "It depends how much money she put in",
+      "The amount doesn't change the percentage: 8 % versus 14 %.",
+      "So how do I buy that index?",
+      "You can't buy it as such: you buy a **fund or ETF** that tracks it."
+     ]
     },
     {
-     "title": "What it's for",
-     "body": "• **Thermometer:** how a market, a country or a sector is doing.\n• **Yardstick:** comparing your returns, or a fund's.\n• **Basis for products:** index funds and ETFs that copy it.\n\nYou **can't buy an index directly**: you buy a fund or ETF that tracks it."
+     "texts": [
+      "What's an index for?",
+      "An **index** sums up in one figure how a group of securities is doing. It's used for three things.",
+      "Thermometer",
+      "Yardstick",
+      "Basis for products",
+      "«The Spanish stock market is up 1 % today»",
+      "That's the IBEX 35: it tells you how the market is doing.",
+      "A fund compares its performance with the IBEX 35",
+      "The index is the benchmark for knowing whether the fund did well.",
+      "An ETF that copies the S&P 500",
+      "ETFs and index funds track it at low cost.",
+      "Finding out how the banking sector is doing today",
+      "There are country and sector indices: more specific thermometers.",
+      "Checking whether your portfolio did well",
+      "Compare it with an index that resembles what you hold.",
+      "An index fund to pay into every month",
+      "The index fund copies the index: that's how you «buy» it.",
+      "Sort the six uses.",
+      "An index is a **thermometer**, a **yardstick** and a **basis for products**. Each one has its own rules: which companies get in, how much each one weighs and how often it's reviewed.",
+      "Hint: does it inform, help you compare, or get bought as a fund?",
+      "One figure with lots of different jobs.",
+      "Tap each case: what's the index used for?"
+     ]
     },
     {
      "title": "Points, not euros",
@@ -28,18 +63,50 @@
    "title": "S&P 500, Nasdaq, IBEX 35 and MSCI World",
    "steps": [
     {
-     "title": "The big US ones",
-     "body": "• **S&P 500:** around 500 large US companies, weighted by market capitalisation. It covers roughly 80 % of the value of the US stock market.\n• **Nasdaq 100:** the 100 largest non-financial companies listed on the Nasdaq; lots of tech.\n• **Dow Jones:** just 30 companies, weighted by price, an old-fashioned method."
+     "texts": [
+      "Is it in the MSCI World?",
+      "The **MSCI World** brings together large and mid-sized companies from **23 developed countries**. Which of these are in it?",
+      "It's in",
+      "Out: emerging country",
+      "Apple (US)",
+      "The US is developed and makes up over two thirds of the index.",
+      "Nestlé (Switzerland)",
+      "Switzerland is a developed country: it's in.",
+      "Toyota (Japan)",
+      "Japan is developed: it's in.",
+      "A big Chinese company",
+      "China is emerging: it's in the **MSCI ACWI**, not the World.",
+      "A big Indian tech company",
+      "India is emerging: it's out of the MSCI World.",
+      "Inditex (Spain)",
+      "Spain is a developed country: Inditex is in.",
+      "Sort the six companies.",
+      "«Global» doesn't mean spread out: **over two thirds is the US** and there are no emerging markets like China or India. To add them, there's the **MSCI ACWI**.",
+      "Hint: China, India and Brazil are emerging countries.",
+      "Over a thousand companies, but not from every country.",
+      "Tap each company: in or out?"
+     ]
     },
     {
-     "title": "Spain, Europe and the world",
-     "body": "• **IBEX 35:** the 35 most liquid companies on the Spanish stock market.\n• **Euro Stoxx 50:** 50 big companies from the eurozone. **DAX:** Germany.\n• **MSCI World:** large and mid-sized companies from **23 developed countries**, around 1,250-1,300 in 2026 (the figure changes with each review).\n• **MSCI ACWI:** adds the emerging markets."
+     "texts": [
+      "Spread across the planet",
+      "Leo",
+      "I've got an MSCI World fund: I'm spread across the whole planet.",
+      "What do you tell Leo?",
+      "Yes: every country equally",
+      "No: over two thirds is the US and there are no emerging markets.",
+      "Very diversified, but mostly in the US",
+      "Exactly. Over a thousand companies, but not spread out evenly.",
+      "It mainly depends on Europe",
+      "Europe weighs much less: what moves it most is the US.",
+      "So how do I know what's inside each index?",
+      "Look at its breakdown by country and sector. The name isn't enough."
+     ]
     },
     {
-     "title": "Global doesn't mean spread out",
-     "body": "An MSCI World fund looks like «the whole world», but more than two thirds of it is the US and it doesn't include emerging markets such as China or India.",
-     "key": "Each index measures one part of the market: look at what's inside before comparing yourself with it.",
-     "tip": "The index name isn't enough: look at its breakdown by country and sector."
+     "title": "The big indices",
+     "body": "• **S&P 500:** around 500 large US companies, weighted by market capitalisation; it covers roughly 80 % of the value of the US stock market.\n• **Nasdaq 100:** the 100 largest non-financial companies on the Nasdaq; lots of tech.\n• **Dow Jones:** just 30 companies; weighted by price.\n• **Euro Stoxx 50:** 50 big eurozone companies. **DAX:** Germany.\n• **MSCI World:** around 1,250-1,300 companies in 2026; the figure changes with each review.",
+     "key": "Each index measures one part of the market: look at what's inside before comparing yourself with it."
     }
    ]
   },
@@ -47,12 +114,47 @@
    "title": "Weighting by market cap",
    "steps": [
     {
-     "title": "The most valuable weighs most",
-     "body": "**Market capitalisation = share price × number of shares.**\n\nIn a cap-weighted index, each company's weight is its market cap divided by the total of all of them. If one is worth 300 and the whole index 1,000, it weighs **30 %**: its moves shift the index a lot."
+     "texts": [
+      "The three-company index",
+      "Sara",
+      "An index with three companies. A is worth 600 million; B, 300; C, 100.",
+      "Tomorrow A rises 10 % and the others don't move. How much does the index rise?",
+      "If it's cap-weighted, how much does it rise?",
+      "10 %, the same as A",
+      "A weighs 600 out of 1,000, **60 %**: the index rises 6 %.",
+      "6 %: A weighs 60 %",
+      "Exactly. The more it's worth, the more it weighs: 0.60 × 10 % = 6 %.",
+      "3.3 %: the average of the three",
+      "That would be if they weighed the same. By market cap, A weighs 60 %: 6 %.",
+      "So the big ones call the shots.",
+      "**Market cap = price × number of shares.** The most valuable one weighs most."
+     ]
     },
     {
-     "title": "Other methods",
-     "body": "• **Price-weighted** (Dow Jones, Nikkei 225): the share with the highest unit price weighs most, even if the company is smaller.\n• **Equal-weighted:** they all weigh the same.\n\nMost (S&P 500, IBEX 35, MSCI World) use market cap, often counting only freely traded shares."
+     "texts": [
+      "How is each index weighted?",
+      "Almost all modern indices weight each company by what it's **worth on the market**. Some don't.",
+      "By market cap",
+      "By price",
+      "All equal",
+      "S&P 500",
+      "By market cap: the biggest weigh most.",
+      "Dow Jones",
+      "By share price: an old-fashioned method.",
+      "IBEX 35",
+      "By market cap, counting only freely traded shares.",
+      "Nikkei 225",
+      "Also by price, like the Dow Jones.",
+      "MSCI World",
+      "By market cap: that's why the US weighs so much.",
+      "An equal-weighted index",
+      "They all weigh the same, big or small.",
+      "Sort the six indices.",
+      "In a **price-weighted** index, the share with the highest unit price weighs most, even if the company is smaller. That's why almost all of them use **market cap**.",
+      "Hint: only the Dow Jones and the Nikkei 225 go by price.",
+      "A share's price doesn't tell you how big the company is.",
+      "Tap each index: how is it weighted?"
+     ]
     },
     {
      "title": "Concentration",
@@ -66,21 +168,36 @@
    "title": "Price index and total return index",
    "steps": [
     {
-     "title": "With or without dividends",
-     "body": "The IBEX 35 or S&P 500 you see in the news are **price indices**: they don't count dividends.\n\n**Total return** indices, such as the **IBEX 35 with dividends**, assume dividends are reinvested. They measure what an investor would really have made."
+     "texts": [
+      "With or without dividends",
+      "The indices in the news are **price indices**: they don't count dividends. This one's price rises 5 % a year and it pays out another 2 % in dividends.",
+      "Over 30 years, how much difference does reinvesting that 2 % in dividends make?",
+      "Almost none: 2 % is small",
+      "Some: 10 % more",
+      "Almost double the money",
+      "At 5 %, €10,000 becomes **€43,219**. At 7 %, **€76,123**. Try it.",
+      "Raise the return to 7 %: price plus reinvested dividends.",
+      "**Total return** indices, such as the IBEX 35 with dividends, assume they're reinvested: **over 30 years, almost double**. These are examples, not promises: indices don't rise by the same amount every year.",
+      "That's reinvesting dividends: look at the difference.",
+      "Stretch the years: the difference compounds.",
+      "Raise the return from 5 % to 7 %"
+     ]
     },
     {
-     "title": "The difference compounds",
-     "body": "An index whose price rises 5 % a year and pays out 2 % in dividends gives around 7 % if you reinvest them.\n\nWith €10,000 over 30 years: **€43,219** without dividends versus **€76,123** with them. Almost double."
+     "texts": [
+      "The IBEX that «didn't go up»",
+      "Real data: **€10,000** in the IBEX 35 at the end of 2006. It's the **price** index, without dividends. Hit «Start».",
+      "Make it to the end, whether you sell or not.",
+      "On monthly closes, the IBEX price index didn't beat its 2007 high **until September 2025**, and €10,000 was €12,287 at the end of 2025. But it doesn't count dividends: **the IBEX 35 with dividends has been well above it**.",
+      "You've sold. Watch what happens next…",
+      "Down by more than half. And that's without dividends.",
+      "Down 20 %… and this index doesn't count dividends.",
+      "Hit «Start». You can sell whenever you like"
+     ]
     },
     {
-     "title": "Try it",
-     "body": "Enter €10,000, €0 a month and 30 years. Compare 5 % with 7 %: that difference is the effect of reinvesting dividends.",
-     "tip": "These are examples, not promises: indices don't rise by the same amount every year."
-    },
-    {
-     "title": "Beware the index that «doesn't go up»",
-     "body": "For many years, the IBEX 35 price index seemed stuck below its 2007 high, while the IBEX with dividends was well above it. Japan's Nikkei took until 2024 to beat its 1989 price high.",
+     "title": "Compare like with like",
+     "body": "If you count the dividends you receive, compare yourself with the index **with dividends**. If not, it'll look like you're doing better than you are.\n\nAn **accumulating fund** reinvests the dividends for you.",
      "key": "To measure a long-term investment, use the index with dividends."
     }
    ]
@@ -89,22 +206,63 @@
    "title": "Comparing your returns",
    "steps": [
     {
-     "title": "Your yardstick",
-     "body": "«I made 6 %» isn't enough. Compare it with a **benchmark** index that resembles what you invest in: a global equity portfolio with the MSCI World with dividends; a Spanish equity portfolio with the IBEX 35 with dividends."
+     "texts": [
+      "«I made money»",
+      "Pablo",
+      "This year my portfolio of Spanish shares made 4 %. Nice!",
+      "That year, the IBEX 35 with dividends rose 12 %.",
+      "What do you tell Pablo?",
+      "Great: a gain is a gain",
+      "Making less than the simplest alternative is also losing.",
+      "He came in 8 points behind his benchmark",
+      "Exactly. An IBEX index fund would have given him three times as much.",
+      "Compare himself with a deposit at 2 %",
+      "That's a different risk: shares get compared with a share index.",
+      "Oh… so how do I compare myself properly?",
+      "Same period, same currency, with dividends and after fees."
+     ]
     },
     {
-     "title": "What the data says",
-     "body": "Beating the index is hard even for professionals. According to the **SPIVA** report (end of 2025), **97 %** of active European equity funds lagged their index over 10 years.\n\nAnd the average investor earns around **1.2 points a year less** than their own funds by buying and selling at the wrong time (Morningstar)."
+     "texts": [
+      "Which index do you compare yourself with?",
+      "Your **benchmark** index has to resemble what you invest in. And always with dividends.",
+      "MSCI World",
+      "IBEX 35",
+      "S&P 500",
+      "A portfolio of shares from across the developed world",
+      "Large and mid-sized companies from 23 developed countries: the MSCI World.",
+      "Shares in Santander, Iberdrola and Inditex",
+      "Big Spanish companies: the IBEX 35 with dividends.",
+      "A fund of large US companies",
+      "Around 500 large US companies: the S&P 500 with dividends.",
+      "A fund with Apple, Nestlé, Toyota and over a thousand companies",
+      "Lots of developed countries at once: the MSCI World.",
+      "A fund of large Spanish companies",
+      "The Spanish stock market: the IBEX 35 with dividends.",
+      "Shares in Apple, Microsoft and Amazon",
+      "Big US companies: the S&P 500 with dividends.",
+      "Find the benchmark for the six portfolios.",
+      "The benchmark has to **resemble your portfolio**: global with the MSCI World, Spanish with the IBEX 35 and US with the S&P 500, always **with dividends**.",
+      "Hint: look at which country the companies are from.",
+      "Comparing yourself with something unlike your portfolio tells you nothing.",
+      "Tap each portfolio: which index do you compare it with?"
+     ]
     },
     {
-     "title": "What falling behind costs",
-     "body": "Enter €10,000 over 30 years at 7 % and compare a 0.2 % cost with a 1.8 % one: falling 1.6 points behind every year makes a huge difference.",
-     "tip": "The points you lose each year compound too."
-    },
-    {
-     "title": "Compare like with like",
-     "body": "Same period, same currency, with dividends and after fees. And if you pay money in during the year, don't count it as a gain.",
-     "key": "An index similar to your portfolio is your yardstick."
+     "texts": [
+      "Falling behind compounds too",
+      "Two funds in the same market return 7 % gross. One costs 0.2 % a year; the other, 1.8 %: **1.6 points behind** every year.",
+      "With €10,000 over 30 years, how much of the result do those 1.6 points eat up?",
+      "1.6 %, not much",
+      "Just over a third",
+      "Almost all of it",
+      "The cheap one ends up at **€71,968** and the expensive one at **€45,759**: €26,209 lost, 36 %.",
+      "Take the timeframe to 30 years.",
+      "Beating the index is hard even for professionals: according to SPIVA (end of 2025), **97 %** of active European equity funds lagged it over 10 years. And the average investor earns **1.2 points a year less** than their funds by buying and selling at the wrong time (Morningstar).",
+      "Over a third, just from falling behind every year.",
+      "Keep going: the points you lose compound too.",
+      "Stretch the years and watch the difference"
+     ]
     }
    ]
   },
@@ -127,14 +285,6 @@
    ],
    "explanation": "It's a reference basket with rules about what gets in and how much it weighs."
   },
-  "u7l1-2": {
-   "prompt": "You can buy the S&P 500 index directly.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "You buy a fund or ETF that tracks it."
-  },
   "u7l1-3": {
    "prompt": "An index goes from 14,000 to 14,700 points. How much has it risen?",
    "options": [],
@@ -146,22 +296,6 @@
    "options": [],
    "explanation": "400 ÷ 5,000 = 0.08 → it has fallen 8 %.",
    "unit": "%"
-  },
-  "u7l1-5": {
-   "prompt": "Match each use of an index with an example.",
-   "options": [
-    "Thermometer",
-    "Yardstick",
-    "Basis for products",
-    "Index rules"
-   ],
-   "explanation": "An index informs, serves as a benchmark and is the basis of index funds.",
-   "right": [
-    "Comparing a fund's returns",
-    "What gets in, how much it weighs and when it's reviewed",
-    "Funds and ETFs that copy it",
-    "Knowing how a market is doing today"
-   ]
   },
   "u7l1-6": {
    "prompt": "If the IBEX 35 is at 14,000 points, buying it costs €14,000.",
@@ -180,28 +314,6 @@
     "Which companies get in"
    ],
    "explanation": "The rules are public and objective: that's why the index works as a benchmark."
-  },
-  "u7l1-8": {
-   "prompt": "A fund boasts in an ad: «We made 8 % this year!». The index for its market rose 14 %. What do you think?",
-   "options": [
-    "That it can't be compared with anything",
-    "That it lagged its benchmark by 6 points",
-    "That it's an excellent fund"
-   ],
-   "explanation": "A return on its own doesn't tell you if it's good: you have to compare it with its index.",
-   "feedback": [
-    "That's what indices are for: they're the yardstick.",
-    "Making 8 % sounds good, but an index fund for that market would have made quite a bit more.",
-    "It only looks that way if you don't compare it with anything."
-   ]
-  },
-  "u7l1-9": {
-   "prompt": "If an index rises, all its companies have risen.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "It's a weighted average: some rise, others fall, and the index sums up the whole."
   },
   "u7l1-10": {
    "prompt": "You can't buy an index directly: you buy a fund or an ____ that tracks it.",
@@ -249,23 +361,6 @@
    ],
    "explanation": "The MSCI World only includes developed countries; the ACWI adds emerging markets."
   },
-  "u7l2-4": {
-   "prompt": "The MSCI World includes every country in the world.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "Only 23 developed countries: there are no emerging markets such as China, India or Brazil."
-  },
-  "u7l2-5": {
-   "prompt": "Quick: which index is price-weighted?",
-   "options": [
-    "Dow Jones",
-    "S&P 500",
-    "IBEX 35"
-   ],
-   "explanation": "The Dow Jones (and the Nikkei 225) weight each company by its share price."
-  },
   "u7l2-6": {
    "prompt": "Which index reflects it best?",
    "options": [
@@ -282,14 +377,6 @@
     "MSCI World"
    ]
   },
-  "u7l2-7": {
-   "prompt": "In the MSCI World, the US makes up more than two thirds.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "That's why a «global» fund depends heavily on what the US stock market does."
-  },
   "u7l2-8": {
    "prompt": "Nasdaq 100, March 2000: tech has been soaring for years and everyone's talking about the internet. What did the index do over the following years?",
    "options": [
@@ -298,23 +385,6 @@
    ],
    "explanation": "An index heavily concentrated in one sector depends on what happens to that sector, for better and for worse.",
    "horizon": "the following years"
-  },
-  "u7l2-9": {
-   "prompt": "What do you say to Lumi?",
-   "options": [
-    "You only have European companies",
-    "Quite diversified, but mostly in the US and with no emerging markets",
-    "Yes, the whole world equally"
-   ],
-   "explanation": "Diversified doesn't mean split into equal parts.",
-   "feedback": [
-    "The other way round: Europe weighs much less than the US.",
-    "That's it! Over a thousand companies, but not evenly spread across countries.",
-    "Not quite: more than two thirds is the US and there are no emerging markets."
-   ],
-   "lines": [
-    "I've got an MSCI World fund, so I'm spread across the whole planet 🌍"
-   ]
   },
   "u7l2-10": {
    "prompt": "The MSCI World covers large and mid-sized companies from ____ developed countries.",
@@ -332,18 +402,6 @@
    "explanation": "2,000 million × €15 = €30,000 million.",
    "unit": "million €"
   },
-  "u7l3-2": {
-   "prompt": "An index has three companies: A is worth 600, B 300 and C 100 (€ million). How much does A weigh?",
-   "options": [],
-   "explanation": "600 ÷ (600 + 300 + 100) = 600 ÷ 1,000 = 60 %.",
-   "unit": "%"
-  },
-  "u7l3-3": {
-   "prompt": "In that index, A rises 10 % and B and C don't move. How much does the index rise?",
-   "options": [],
-   "explanation": "A weighs 60 %: 0.60 × 10 % = 6 %. That's why the big ones move the index.",
-   "unit": "%"
-  },
   "u7l3-4": {
    "prompt": "Quick: an equal-weighted index of 4 companies. How much does each one weigh?",
    "options": [],
@@ -358,14 +416,6 @@
     "The one with the most employees"
    ],
    "explanation": "That's why it's not a very logical method: a share's price doesn't tell you how big the company is."
-  },
-  "u7l3-6": {
-   "prompt": "In a cap-weighted index, a company worth twice as much weighs twice as much.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "The weight is proportional to market cap."
   },
   "u7l3-7": {
    "prompt": "A €500 share always belongs to a bigger company than a €50 share.",
@@ -383,29 +433,6 @@
     "They weigh the same"
    ],
    "explanation": "X is worth €5,000 million; Y, €10,000 million. Y weighs twice as much even though its share is cheaper."
-  },
-  "u7l3-9": {
-   "prompt": "How is each index weighted?",
-   "options": [
-    "MSCI World",
-    "IBEX 35",
-    "Nikkei 225",
-    "S&P 500",
-    "Dow Jones"
-   ],
-   "explanation": "Almost all modern indices are weighted by market cap.",
-   "right": [
-    "By market cap",
-    "By price"
-   ]
-  },
-  "u7l3-10": {
-   "prompt": "The IBEX 35 is weighted by market capitalisation.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "By market cap, counting freely traded shares."
   },
   "u7l3-11": {
    "prompt": "Laura buys an S&P 500 fund thinking it has «500 companies in equal parts». What should she do?",
@@ -427,18 +454,6 @@
    "explanation": "4 % + 3 % ≈ 7 %.",
    "unit": "%"
   },
-  "u7l4-2": {
-   "prompt": "€10,000 at 5 % a year for 30 years: what does it grow into? (round it)",
-   "options": [],
-   "explanation": "10,000 × 1.05³⁰ ≈ €43,219.",
-   "unit": "€"
-  },
-  "u7l4-3": {
-   "prompt": "And if you add 2 % of reinvested dividends to that 5 % (7 % a year for 30 years)? (round it)",
-   "options": [],
-   "explanation": "10,000 × 1.07³⁰ ≈ €76,123: almost double the figure without dividends.",
-   "unit": "€"
-  },
   "u7l4-4": {
    "prompt": "What does a total return index measure?",
    "options": [
@@ -447,14 +462,6 @@
     "The price plus reinvested dividends"
    ],
    "explanation": "It's what an investor who reinvested everything would have made."
-  },
-  "u7l4-5": {
-   "prompt": "The IBEX 35 you see in the news includes dividends.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "It's a price index; there's a separate IBEX 35 with dividends."
   },
   "u7l4-6": {
    "prompt": "Nikkei 225 (Japan), November 1989: the index has had years of spectacular gains. What did it do over the following years?",
@@ -499,14 +506,6 @@
     "So the Spanish stock market doesn't pay anything?"
    ]
   },
-  "u7l4-9": {
-   "prompt": "In the long run, the difference between reinvesting dividends or not is small.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "Over 30 years, 5 % versus 7 % is almost double the money."
-  },
   "u7l4-10": {
    "prompt": "You compare your portfolio, counting the dividends you received, with the IBEX 35 price index. What happens?",
    "options": [
@@ -534,36 +533,6 @@
    "explanation": "6,300 − 5,000 − 1,000 = €300. What you pay in isn't a gain.",
    "unit": "€"
   },
-  "u7l5-4": {
-   "prompt": "Match each portfolio with its benchmark.",
-   "options": [
-    "Shares from across the developed world",
-    "Spanish shares",
-    "Large US companies",
-    "Big Nasdaq tech companies"
-   ],
-   "explanation": "The benchmark has to resemble what you invest in.",
-   "right": [
-    "IBEX 35 with dividends",
-    "S&P 500 with dividends",
-    "Nasdaq 100 with dividends",
-    "MSCI World with dividends"
-   ]
-  },
-  "u7l5-5": {
-   "prompt": "Pablo invests in Spanish shares and one year makes 4 %, while the IBEX 35 with dividends rises 12 %. He's happy because «he made money». What would you tell him?",
-   "options": [
-    "That he did brilliantly: a gain is a gain",
-    "That he lagged his benchmark by 8 points",
-    "That he should compare himself with a deposit at 2 %"
-   ],
-   "explanation": "Without a yardstick you don't know if you're doing well.",
-   "feedback": [
-    "Making less than the simplest alternative is also losing, even if you can't see it.",
-    "An IBEX index fund would have made him three times as much. It's a sign to review what he's doing.",
-    "That's a different risk: an equity portfolio is compared with an equity index."
-   ]
-  },
   "u7l5-6": {
    "prompt": "Marta picks a fund because it beat its index last year. What should she do?",
    "options": [
@@ -586,23 +555,6 @@
     "97 %"
    ],
    "explanation": "Almost all of them: costs and competition make beating the index for years very hard."
-  },
-  "u7l5-8": {
-   "prompt": "To compare properly, you need to use the index with dividends and your return after fees.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "That way you compare what you really made with what the index would have given you."
-  },
-  "u7l5-9": {
-   "prompt": "Quick: your global equity portfolio made 10 % and the MSCI World with dividends 12 %. How did you do?",
-   "options": [
-    "Better: you made 10 %",
-    "The same",
-    "Worse, by 2 points"
-   ],
-   "explanation": "10 − 12 = −2 points against your benchmark."
   },
   "u7l5-10": {
    "prompt": "Comparing an equity portfolio with a deposit at 2 % is a good way to tell whether you're managing it well.",

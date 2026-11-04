@@ -9,17 +9,51 @@
    "title": "Diversifying: the only free thing in finance",
    "steps": [
     {
-     "title": "Two kinds of risk",
-     "body": "• **Specific risk:** what happens to one particular company (fraud, a failed product, bankruptcy). It's **eliminated** by diversifying.\n• **Market risk:** what hits them all at once (a recession, a pandemic). It doesn't go away with more shares: it's only softened by combining them with bonds or cash."
+     "texts": [
+      "All your eggs in one basket",
+      "Bruno",
+      "I've put my €3,000 into a single company. It's going to be the next big tech giant!",
+      "I know it well: I've read everything there is about it.",
+      "What do you tell him?",
+      "Perfect: if you know it, there's no risk",
+      "Knowing it doesn't protect it from fraud, a failed product or bankruptcy.",
+      "Spread it out: across lots of companies, one bankruptcy barely shows",
+      "That's it! If a company is 0.1 % of your money, its disaster hardly shows.",
+      "Buy one more, then you've got two",
+      "Better than one, but two companies is still very few.",
+      "A single company can fall **90 %**. To recover, you'd need **+900 %**.",
+      "Phew. And if I spread it out, is there no risk at all?",
+      "There are two kinds of risk. Let's separate them."
+     ]
     },
     {
-     "title": "Why concentrating hurts",
-     "body": "Take a 90 % fall: that's what can happen to a single company. To get back to where you started you need +900 %. In an index of thousands of companies, one bankruptcy barely registers.",
-     "tip": "Avoiding big losses matters more than chasing big gains."
+     "texts": [
+      "One company or all of them?",
+      "**Specific** risk hits one particular company. **Market** risk hits them all at once. Which is which?",
+      "Specific: one company",
+      "Market: all of them",
+      "Accounting fraud at a company",
+      "It only happens to one: in an index of thousands of companies, it barely shows.",
+      "A global recession",
+      "It hits almost every company at once: more shares don't dilute it.",
+      "A company's flagship product flops",
+      "A problem for that company, not for the whole economy.",
+      "A pandemic that shuts down the economy",
+      "It affects the whole market: spreading across more shares doesn't avoid it.",
+      "A long strike at a company's factory",
+      "It only slows that company down: its competitors keep selling.",
+      "The central bank suddenly raises interest rates",
+      "It changes the price of money for every company at once.",
+      "Sort the six scares.",
+      "Diversifying **removes specific risk**: one bankruptcy weighs little among thousands of companies. **Market risk** doesn't go away with more shares; it's only softened by mixing in bonds or cash.",
+      "Ask yourself: does it happen to one company or to the whole economy?",
+      "Nicely sorted! Now for the only free lunch.",
+      "Sort each scare"
+     ]
     },
     {
      "title": "The free lunch",
-     "body": "A single share moves 30-35 % a year; 20-30 shares from different sectors, around 20 %; a global index, 15 %. Harry Markowitz, Nobel Prize in Economics, called this **the only free lunch**: less risk without giving up expected return.",
+     "body": "A single share moves 30-35 % a year; 20-30 shares from different sectors, around 20 %; a global index, 15 %.\n\nHarry Markowitz, Nobel Prize in Economics, called this **the only free lunch**: less risk without giving up expected return.",
      "key": "With lots of companies, the disasters of some are offset by the successes of others.",
      "tip": "Don't put all your eggs in one basket, or all your baskets on the same lorry."
     }
@@ -29,18 +63,46 @@
    "title": "Correlation",
    "steps": [
     {
-     "title": "What it measures",
-     "body": "**Correlation** tells you whether two assets move together. It ranges from **+1** (always the same way) to **−1** (always the opposite way). **0** means there's no relationship.\n\n• S&P 500 and Euro Stoxx 50: high (0.7-0.9).\n• Two big cryptos: very high.\n• Shares and high-quality bonds: low or negative in many crises.\n• Shares and gold: low and variable."
+     "texts": [
+      "Shares, bonds and gold since 2008",
+      "Real data from 2008 to 2025. You have **€10,000**, all in US shares. Mix them with bonds and gold and look at the worst fall.",
+      "US shares (S&P 500)",
+      "US bonds",
+      "Gold",
+      "Between January 2008 and February 2009, shares fell 45 %. What did bonds do?",
+      "They fell even further",
+      "They gained a little",
+      "They fell just as much",
+      "US bonds **gained 2 %** while shares lost 45 %. They didn't move together.",
+      "Find a mix whose worst fall is half at most (−23 %) and that still gains more than 300 %.",
+      "Shares, bonds and gold had their worst runs in different years (2009, 2022 and 2015). Mixing them cuts the worst fall from **−46 %** to around **−20 %**: that's combining assets with **low correlation**.",
+      "All in shares: look at the hole in 2008 and 2009.",
+      "Half the scare! And look how much you still make.",
+      "Lower the shares and split the rest between bonds and gold"
+     ]
     },
     {
-     "title": "The crisis trap",
-     "body": "In a panic, almost all risky assets fall together: **correlations rise**. That's why what usually protects you is high-quality bonds and cash.\n\nBut not always: the relationship changes with inflation and interest rates."
+     "texts": [
+      "Three funds, one portfolio",
+      "Marta",
+      "I've got three funds: MSCI World, S&P 500 and Nasdaq 100. Super diversified, right?",
+      "What do you tell her?",
+      "Yes: they're three different indices",
+      "Three names, almost the same portfolio: the US and big tech show up in all of them.",
+      "They overlap a lot: they'll move almost the same",
+      "Exactly: their correlation is very high. One global fund would do almost the same job.",
+      "You need more funds: ten would be better",
+      "More funds buying the same things don't reduce the risk.",
+      "OK. So what protects me when everything falls?",
+      "In a panic, almost everything risky falls at once: **correlations rise**.",
+      "High-quality bonds and cash usually protect you.",
+      "But not always: in 2022, shares −18 % and bonds −13 %."
+     ]
     },
     {
-     "title": "Your takeaway",
-     "body": "Three funds tracking the MSCI World, the S&P 500 and the Nasdaq 100 have different names but move almost the same. A share fund and a high-quality bond fund don't.",
-     "key": "Combining assets that don't move the same way smooths out your portfolio, although no protection works every time.",
-     "tip": "Truly diversifying means owning things that don't all sink on the same day."
+     "title": "How it's measured",
+     "body": "**Correlation** tells you whether two assets move together. It ranges from **+1** (always the same way) to **−1** (always the opposite way). **0** means there's no relationship.\n\n• S&P 500 and Euro Stoxx 50: high (0.7-0.9).\n• Two big cryptos: very high.\n• Shares and high-quality bonds: low or negative in many crises.\n• Shares and gold: low and variable.",
+     "key": "Truly diversifying means owning things that don't all sink on the same day."
     }
    ]
   },
@@ -48,21 +110,46 @@
    "title": "Your asset allocation",
    "steps": [
     {
-     "title": "The most important decision",
-     "body": "Classic studies (Brinson and others) show that the **split between shares, bonds and cash** explains most of how a diversified portfolio swings. Far more than which particular fund you pick.\n\nGolden rule: money you need soon shouldn't be in the stock market."
+     "texts": [
+      "Choose your allocation",
+      "Real data from 2008 to 2025. You start with **€10,000**, all in bonds. Raise the shares and see how far the portfolio fell at its worst.",
+      "US shares (S&P 500)",
+      "US bonds",
+      "Gold",
+      "With everything in shares since 2008, how far did the portfolio fall at its worst?",
+      "10 %",
+      "Almost half",
+      "All of it",
+      "**46 %** between 2008 and 2009, dividends included. With 60 % in shares and 40 % in bonds, 27 %.",
+      "Put at least 60 % in shares without the worst fall going beyond 30 %.",
+      "Your **split between shares, bonds and cash** decides how far your portfolio can fall. Here, with the rest in bonds: 40 % in shares, −21 %; 60 %, −27 %; 80 %, −37 %; 100 %, −46 %.",
+      "Almost half, gone. Could you hold on without selling?",
+      "You're over 30 %: lower the shares a little.",
+      "Very calm… but look how little it grows.",
+      "More growth, with falls you can still stomach.",
+      "Raise the shares little by little"
+     ]
+    },
+    {
+     "texts": [
+      "The deposit for the flat",
+      "Pablo",
+      "I've got €15,000 for the deposit on a flat. I'm buying in 2 years.",
+      "It's all in the stock market, because in the long run it goes up.",
+      "What do you tell him?",
+      "Well done: in the long run it always goes up",
+      "In 2 years there's no «long run». A 30 % fall would leave him without a deposit.",
+      "Move it to something low-risk, like a fixed-term savings account or a money market fund",
+      "That's it! Money you'll need soon shouldn't depend on the stock market.",
+      "Leave half in the market, in case it goes up",
+      "Less risk, but that half can still fall just before he buys.",
+      "What about retirement? I've got 35 years to go.",
+      "That's where plenty of shares make sense: there's time to recover from the falls."
+     ]
     },
     {
      "title": "Example allocations",
-     "body": "• Conservative: 20-40 % shares (possible fall: −10 to −20 %).\n• Moderate: 50-60 % (−20 to −30 %).\n• Bold: 70-90 % (−30 to −45 %).\n• 100 % shares: −50 % or more.\n\nThese are educational examples, not recommendations."
-    },
-    {
-     "title": "How much could you stomach?",
-     "body": "Try a 30 % fall and a 50 % fall and see how much it would need to rise afterwards. Choose your allocation with the fall you could stand without selling in mind.",
-     "tip": "The right mix is the one that lets you sleep through a 30 % fall."
-    },
-    {
-     "title": "Adjusting over time",
-     "body": "The closer your goal, the fewer shares: that's what «lifecycle» funds do. An old rule of thumb is «100 minus your age» in shares; today many people use 110 or 120 minus their age. They're guidelines, not rules.",
+     "body": "Classic studies (Brinson and others): this split explains most of how a diversified portfolio swings.\n\n• Conservative: 20-40 % shares (possible fall: −10 to −20 %).\n• Moderate: 50-60 % (−20 to −30 %).\n• Bold: 70-90 % (−30 to −45 %).\n• 100 % shares: −50 % or more.\n\nThe closer your goal, the fewer shares. An old rule of thumb is «100 minus your age» in shares; today many people use 110 or 120 minus their age. These are educational examples, not recommendations.",
      "key": "A long horizon allows more shares; a short horizon calls for more bonds and cash."
     }
    ]
@@ -71,16 +158,37 @@
    "title": "Diversifying across countries and currencies",
    "steps": [
     {
+     "texts": [
+      "Japan, 1989",
+      "It's December 1984 and the Japanese stock market just keeps rising. You invest **€10,000** in its index, the Nikkei. **Real data**, month by month. You can sell whenever you like.",
+      "It runs until 2025, whether you sell or not.",
+      "In 1989, Japan was the biggest stock market in the world. From its peak it fell **80 %** and took **34 years** to get back there. Betting everything on one country, whichever it is, is concentrating.",
+      "You've sold. Look at what comes next…",
+      "Almost twenty years later, below what you put in. Are you staying?",
+      "You've tripled your money! Who wouldn't want to be here?",
+      "Hit Start. You can sell whenever you like"
+     ]
+    },
+    {
+     "texts": [
+      "The second risk: currency",
+      "You buy **€1,000** worth of shares in a US company. Your result in euros depends on the shares… and on the **dollar**.",
+      "dollar",
+      "The shares don't move all year, but the dollar falls 10 % against the euro. What happens to you?",
+      "Nothing: the shares haven't moved",
+      "You lose about 10 %",
+      "You gain about 10 %",
+      "Your shares are worth the same in dollars, but each dollar gets you fewer euros: **−10 %** without the shares moving.",
+      "Find a case where the shares rise and you still lose money in euros.",
+      "Outside the euro there's **a second risk: currency**. With long-term shares it's usually accepted; with **bonds**, which move little, people usually pick funds **hedged to euros**.",
+      "The dollar is eating your gain.",
+      "Shares and dollar both in your favour: double the joy… and double the risk.",
+      "Move the shares and the dollar"
+     ]
+    },
+    {
      "title": "Home bias",
-     "body": "We tend to invest in what we know: **home bias**. But Spain is **less than 1 %** of the global stock market, and the US is around 60-70 % of the developed-markets index.\n\nJapan was the world's largest stock market in 1989 and took 34 years to get back to that peak."
-    },
-    {
-     "title": "Currency risk",
-     "body": "If you buy shares in dollars, your result in euros also depends on the exchange rate. If the dollar falls 10 % against the euro, you lose around 10 % even if the shares don't move.\n\nWith long-term shares, people usually accept that risk. With **bonds**, since they move so little, people usually choose **euro-hedged** funds."
-    },
-    {
-     "title": "Your takeaway",
-     "body": "A global index spreads across dozens of countries and currencies: if one region has a bad decade, you don't bear the whole cost.",
+     "body": "We tend to invest in what we know: **home bias**. But Spain is **less than 1 %** of the global stock market, and the US is around 60-70 % of the developed-markets index.\n\nA global index spreads across dozens of countries and currencies: if one region has a bad decade, you don't bear the whole cost.",
      "key": "Diversifying across countries reduces the risk of picking «the Japan of the next 30 years»."
     }
    ]
@@ -89,16 +197,48 @@
    "title": "Simple index fund portfolios",
    "steps": [
     {
+     "texts": [
+      "Just the S&P 500?",
+      "Laura",
+      "Online, everyone puts everything in the S&P 500. Should I just do that and be done?",
+      "What do you tell her?",
+      "Yes: the US always rises the most",
+      "Not always: in 2000-2009 US shares returned almost nothing while other regions rose.",
+      "Better a global index: it already includes the US",
+      "That's it! And it covers you if the US has a bad decade, like 2000-2009.",
+      "No: the US will never rise again",
+      "Nobody knows. It's not about predicting, it's about not depending on one country.",
+      "And how many funds do I need to be well diversified?",
+      "One can be enough: a global index holds thousands of companies from dozens of countries."
+     ]
+    },
+    {
+     "texts": [
+      "What you need and what you don't",
+      "A simple index portfolio has **one, two or three funds**. What does it really need?",
+      "Needed",
+      "Not needed",
+      "Deciding the split between shares and bonds",
+      "It's the decision that matters most for how your portfolio moves.",
+      "Holding 20 different funds",
+      "With one to three index funds you already own thousands of companies.",
+      "Low-cost funds",
+      "What you don't pay in fees stays invested for you.",
+      "Switching every year to the fund that rose most",
+      "One year's winners rarely repeat: you turn up late to every trend.",
+      "An automatic contribution every month",
+      "Consistency does more than timing the market.",
+      "Checking the market every day",
+      "It only adds stress: reviewing once a year is enough.",
+      "Sort the six ideas.",
+      "What you do need: **allocation, low costs and consistency**. Not lots of funds, not chasing the year's winner, not checking the market daily.",
+      "Does this cut risk or cost, or does it just make work?",
+      "Sort each idea"
+     ]
+    },
+    {
      "title": "One, two or three products",
-     "body": "• **One product:** a global fund or ETF (MSCI ACWI or FTSE All-World), with thousands of companies from developed and emerging markets.\n• **Two:** global shares + high-quality global bonds hedged to euros.\n• **Three:** developed markets (MSCI World) + emerging markets (10-12 %, roughly their global weight) + bonds."
-    },
-    {
-     "title": "Why not just the S&P 500?",
-     "body": "The US has been the best-performing market of the last century, but in 2000-2009 its shares returned almost nothing while other regions rose. The global index already contains the US and also covers you against its bad decade."
-    },
-    {
-     "title": "What you don't need",
-     "body": "Not 20 funds, not switching every year to whichever rose most, not checking the market every day. These portfolios are examples to understand how they're built, not personalised recommendations.",
+     "body": "• **One product:** a global fund or ETF (MSCI ACWI or FTSE All-World), with thousands of companies from developed and emerging markets.\n• **Two:** global shares + high-quality global bonds hedged to euros.\n• **Three:** developed markets (MSCI World) + emerging markets (10-12 %, roughly their global weight) + bonds.\n\nThese are examples to understand how they're built, not personalised recommendations.",
      "key": "With one to three index funds you can own thousands of companies from all over the world.",
      "tip": "A boring portfolio is a portfolio that works."
     }
@@ -108,16 +248,50 @@
    "title": "Factors: size, value, quality and momentum",
    "steps": [
     {
-     "title": "What a factor is",
-     "body": "A **factor** is a characteristic that, on average and over long periods, has been linked to returns different from the market's:\n\n• **Size:** small companies.\n• **Value:** cheap relative to their earnings or book value.\n• **Quality:** highly profitable, with little debt and stable earnings.\n• **Momentum:** whatever has risen most in recent months."
+     "texts": [
+      "Which factor is it?",
+      "A **factor** is a trait that, on average and over decades, has been linked to different returns. **Size** is easy: small companies. Sort the other three.",
+      "Value",
+      "Quality",
+      "Momentum",
+      "Low P/E and trades below its book value",
+      "Cheap compared with what it earns and what it owns: value factor.",
+      "Highly profitable and almost debt-free",
+      "High profitability and a healthy balance sheet: quality factor.",
+      "Up 60 % over the last year",
+      "What's risen most in recent months: momentum.",
+      "Trades cheaply compared with the profits it makes each year",
+      "A low price for what it earns: value.",
+      "High margins and steady profits for years",
+      "A solid, steady business: quality.",
+      "Among the biggest risers of the last six months",
+      "Buying what's been rising: momentum.",
+      "Sort the six companies.",
+      "Size, value, quality and momentum are **portfolio tilts**. Eugene Fama and Kenneth French documented the size and value premiums in the 90s, but they're **averages over decades**, not a guarantee.",
+      "Value looks at the price; quality, at the business; momentum, at what's risen.",
+      "Sort each company"
+     ]
     },
     {
-     "title": "The evidence and its limits",
-     "body": "Eugene Fama and Kenneth French documented the size and value premiums in the 90s. But premiums are **averages over decades**: value did worse than the market for much of 2007-2020.\n\nFactor funds («smart beta») usually charge more than a whole-market index fund."
+     "texts": [
+      "Pablo's value fund",
+      "Pablo",
+      "I read that the value factor beat the market over the last century. I put everything into a value fund.",
+      "Three years on, I'm 15 % behind the index.",
+      "What do you tell him?",
+      "Switch to the factor that's done best",
+      "Hopping from factor to factor is chasing the past: you buy high and sell low.",
+      "It can lag for many years: decide whether you can stick with it",
+      "That's it. If you can't, a whole-market index is a better fit.",
+      "Take out a loan and buy more, it'll bounce back",
+      "With borrowed money, a few bad years can force you to sell at the worst moment.",
+      "Value did worse than the market for much of **2007-2020**.",
+      "And factor funds («smart beta») usually charge more than an index fund."
+     ]
     },
     {
      "title": "Your takeaway",
-     "body": "A factor isn't a shortcut: it can spend more than a decade behind the index, and you have to stick with it to collect the premium, if it comes.",
+     "body": "A factor isn't a shortcut: it can spend more than a decade behind the index, and you have to stick with it to collect the premium, if it comes. And once lots of investors know about a factor, its premium can shrink.",
      "key": "Factors are a way of tilting your portfolio, not a guarantee of beating the market."
     }
    ]
@@ -126,18 +300,71 @@
    "title": "Sustainable investing (ESG)",
    "steps": [
     {
-     "title": "What ESG measures",
-     "body": "**ESG** stands for three areas:\n\n• **E, environmental:** emissions, energy, waste.\n• **S, social:** working conditions, customers, community.\n• **G, governance:** board independence, executive pay, transparency.\n\nAn ESG fund can **exclude** sectors (tobacco, weapons) or pick the best in each sector."
+     "texts": [
+      "E, S or G?",
+      "**ESG** stands for three areas: **environmental**, **social** and **governance**. Which one does each topic belong to?",
+      "Environmental (E)",
+      "Social (S)",
+      "Governance (G)",
+      "A factory's CO₂ emissions",
+      "Emissions, energy and waste: environmental.",
+      "Workplace accidents",
+      "Working conditions: social.",
+      "Independent board members",
+      "Who keeps management in check: governance.",
+      "Water and waste management",
+      "Impact on the environment: environmental.",
+      "Huge bonuses for top management",
+      "Executive pay: governance.",
+      "Customer data protection",
+      "How it treats its customers: social.",
+      "Sort the six topics.",
+      "ESG measures how a company handles certain **environmental, social and governance risks**. An ESG fund can **exclude** sectors (tobacco, weapons) or pick the best companies in each sector, and it doesn't guarantee higher or lower returns.",
+      "E: the planet. S: people. G: who's in charge and how.",
+      "Sort each topic"
+     ]
     },
     {
-     "title": "The European label",
-     "body": "The SFDR regulation classifies funds:\n\n• **Article 6:** no sustainability objective.\n• **Article 8:** promotes environmental or social characteristics.\n• **Article 9:** has sustainable investment as its objective.\n\nSince 2025, ESMA has required any fund with ESG terms in its name to invest at least 80 % in assets that meet those characteristics."
+     "texts": [
+      "The «Green Future» fund",
+      "Marta",
+      "Look at this ad: «Green Future». Forests, wind turbines… I'm in!",
+      "Although its biggest holdings include oil companies. Weird, right?",
+      "What do you tell her?",
+      "If it's called green, it must be green",
+      "The name and the ad aren't enough: what counts is what's inside.",
+      "Check its documents, its SFDR classification and its holdings",
+      "Nice! That's how you tell a sustainable fund from a case of **greenwashing**.",
+      "Forget sustainable investing: it's all lies",
+      "There are serious funds. The problem is not checking.",
+      "Not even ESG rating agencies agree.",
+      "An MIT study (2022) found an average correlation of only **0.54** between their scores."
+     ]
     },
     {
-     "title": "Its limits",
-     "body": "ESG rating agencies often disagree: an MIT study (2022) found an average correlation of only 0.54 between their scores. And there's **greenwashing**: selling something as sustainable when it isn't really.",
-     "key": "ESG measures how a company manages certain risks; it doesn't guarantee higher or lower returns.",
-     "tip": "Read what's inside the fund, not just the name."
+     "texts": [
+      "The European label",
+      "The EU's **SFDR** regulation sorts funds into three articles. Put each fund in its place.",
+      "Article 6",
+      "Article 8",
+      "Article 9",
+      "Equity fund with no sustainability goal at all",
+      "Article 6: it promises nothing environmental or social.",
+      "Fund whose objective is sustainable investment",
+      "Article 9: sustainability is its objective.",
+      "Fund that promotes environmental characteristics",
+      "Article 8: it promotes them, but they aren't its objective.",
+      "Classic index fund that doesn't mention sustainability",
+      "Article 6: no sustainability goal.",
+      "Fund whose objective is to cut emissions measurably",
+      "Article 9: its objective is sustainable investment.",
+      "Fund that promotes social characteristics, such as good working conditions",
+      "Article 8: it promotes them, but doesn't pursue a sustainable objective.",
+      "Place the six funds.",
+      "Since 2025, ESMA has required any fund with ESG terms in its name to invest **at least 80 %** in assets that meet those characteristics. Read **what's inside**, not just the name.",
+      "6: nothing. 8: promotes it. 9: it's the objective.",
+      "Place each fund"
+     ]
     }
    ]
   },
@@ -161,22 +388,6 @@
    "options": [],
    "explanation": "10,000 ÷ 20 = €500 per share. With a single share, that bankruptcy would have wiped out the whole €10,000.",
    "unit": "€"
-  },
-  "u29l1-3": {
-   "prompt": "Specific risk or market risk?",
-   "options": [
-    "A global recession",
-    "A pandemic that shuts down the economy",
-    "A sharp interest rate rise by the central bank",
-    "Accounting fraud at a company",
-    "A long strike at a company's factory",
-    "A flagship product that flops"
-   ],
-   "explanation": "What affects one company gets diluted in an index; what affects the whole economy doesn't.",
-   "right": [
-    "Specific (one company)",
-    "Market (all of them)"
-   ]
   },
   "u29l1-4": {
    "prompt": "Practice exercise (not a recommendation): split €10,000 across these shares. Rules: at least 6 companies, none above 20 % and no sector above 30 %.",
@@ -202,15 +413,6 @@
     "TECH"
    ]
   },
-  "u29l1-5": {
-   "prompt": "Quick: typical annual volatility of a global share index…",
-   "options": [
-    "35 %",
-    "70 %",
-    "15 %"
-   ],
-   "explanation": "A single share is around 25-35 %, and a small or young one can go above 40 %."
-  },
   "u29l1-6": {
    "prompt": "What is NOT diversifying? Select all that apply.",
    "options": [
@@ -220,14 +422,6 @@
     "Owning 10 funds that all buy the same 50 tech companies"
    ],
    "explanation": "Different names aren't different assets: cryptos tend to fall together and overlapping funds buy the same things."
-  },
-  "u29l1-7": {
-   "prompt": "Spain makes up more than 10 % of the global stock market.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "It's less than 1 %. Investing only in Spain is concentrating, even if you own 35 companies."
   },
   "u29l1-8": {
    "prompt": "Pablo has 80 % of his savings in shares of the company he works for: «I know it better than anyone». What do you tell him?",
@@ -343,32 +537,6 @@
     "Three names, almost the same portfolio: the US weighs heavily in all three and the big tech companies repeat."
    ]
   },
-  "u29l2-7": {
-   "prompt": "In 2022, shares and bonds fell at the same time.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "Inflation and rapid rate rises hit both: no protection works every time."
-  },
-  "u29l2-8": {
-   "prompt": "In a market panic, correlations between risky assets usually rise.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "Almost everything risky falls at once: that's why cash and high-quality bonds are what usually protect you."
-  },
-  "u29l2-9": {
-   "prompt": "A correlation of ____ means two assets always move in opposite directions.",
-   "options": [
-    "0",
-    "0.5",
-    "+1",
-    "−1"
-   ],
-   "explanation": "It's the opposite extreme: when one goes up, the other goes down."
-  },
   "u29l2-10": {
    "prompt": "In most stock market panics, what has protected a portfolio best?",
    "options": [
@@ -425,28 +593,6 @@
     "CASH"
    ]
   },
-  "u29l3-5": {
-   "prompt": "Pablo needs €15,000 for a deposit on a flat in 2 years and has it 100 % in the stock market. What's the most sensible thing to do?",
-   "options": [
-    "Put more into the stock market to get there sooner",
-    "Move that money into something low-risk, like a fixed-term deposit or a money market fund",
-    "Leave it all in the stock market: in the long run it goes up"
-   ],
-   "explanation": "Your horizon rules: money you need in less than 3-5 years shouldn't be in shares.",
-   "feedback": [
-    "More risk with such a short timeframe increases the chance of falling short.",
-    "Good: money with a near date shouldn't depend on the stock market.",
-    "Over 2 years there is no «long run». A 30 % fall just before buying would leave him without a deposit."
-   ]
-  },
-  "u29l3-6": {
-   "prompt": "The closer your goal gets, the more shares you should hold.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "The other way round: with little time you can't wait for a fall to recover, so you reduce the share portion."
-  },
   "u29l3-7": {
    "prompt": "An old rule of thumb says: put «100 minus your ____» in shares.",
    "options": [
@@ -462,15 +608,6 @@
    "options": [],
    "explanation": "110 − 30 = 80 % in shares. It's a guideline: your tolerance for falls matters too.",
    "unit": "%"
-  },
-  "u29l3-9": {
-   "prompt": "Quick: a portfolio of 80 % shares and 20 % bonds has a profile that is…",
-   "options": [
-    "Bold",
-    "Risk-free",
-    "Conservative"
-   ],
-   "explanation": "In a severe crisis it could fall between 30 % and 45 %."
   },
   "u29l3-10": {
    "prompt": "What do you tell Lumi?",
@@ -498,14 +635,6 @@
     "Less than 1 %"
    ],
    "explanation": "That's why a Spain-only portfolio is very concentrated, even with 35 companies."
-  },
-  "u29l4-2": {
-   "prompt": "Japan was the world's largest stock market in 1989 and took 34 years to get back to its peak.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "A single country can stagnate for decades. Diversifying across countries protects you from that."
   },
   "u29l4-3": {
    "prompt": "You own a US share that's worth $100 all year. The euro goes from 1.00 to 1.10 dollars. How many euros is it worth now? (round it)",
@@ -544,29 +673,6 @@
     "Knowing the brands doesn't stop the whole country from having a bad decade.",
     "Moving from one country to another is still concentrating."
    ]
-  },
-  "u29l4-6": {
-   "prompt": "Does it carry currency risk for someone who lives in euros?",
-   "options": [
-    "A euro deposit at a Spanish bank",
-    "Unhedged US Treasury bonds",
-    "A global bond fund hedged to euros",
-    "Japanese shares bought in yen",
-    "An unhedged US share fund"
-   ],
-   "explanation": "Anything priced or valued in another currency changes value in euros even if its price doesn't move. Hedging reduces that effect.",
-   "right": [
-    "Yes, it depends on the exchange rate",
-    "No, or hardly any"
-   ]
-  },
-  "u29l4-7": {
-   "prompt": "A «euro-hedged» fund reduces the effect of currency moves.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "It uses derivatives to cancel out almost all of the currency's movement. It comes at a small cost."
   },
   "u29l4-8": {
    "prompt": "The tendency to invest mainly in your own country is called ____ bias.",
@@ -640,24 +746,6 @@
    "explanation": "0.7 × 0.20 + 0.1 × 0.25 + 0.2 × 0.10 = 0.14 + 0.025 + 0.02 = 0.185 %.",
    "unit": "%"
   },
-  "u29l5-5": {
-   "prompt": "US shares have been the best region in every decade.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "In 2000-2009 they returned close to zero while other regions rose."
-  },
-  "u29l5-6": {
-   "prompt": "What do you NOT need for a good index portfolio? Select all that apply.",
-   "options": [
-    "Low costs",
-    "Switching every year to the fund that rose most",
-    "Checking the market every day",
-    "Owning 20 different funds"
-   ],
-   "explanation": "What you do need: diversification, low costs and consistency."
-  },
   "u29l5-7": {
    "prompt": "Every January, Laura switches to the fund that rose most the year before. What's most likely to happen?",
    "options": [
@@ -681,33 +769,6 @@
     "Decide the split between shares and bonds"
    ],
    "explanation": "First the split (the key decision), then the products and then the discipline."
-  },
-  "u29l5-9": {
-   "prompt": "Quick: in a three-fund portfolio, roughly how much weight do emerging markets get?",
-   "options": [
-    "10-12 %",
-    "1 %",
-    "50 %"
-   ],
-   "explanation": "That's roughly their weight in the global market."
-  },
-  "u29l5-10": {
-   "prompt": "What do you reply?",
-   "options": [
-    "Because the S&P 500 is an active fund",
-    "Because the world already includes the US and covers you if it has a bad decade",
-    "Because the US is never going to rise again"
-   ],
-   "explanation": "A global index diversifies across countries; the S&P 500 doesn't.",
-   "feedback": [
-    "No: it's an index. The problem is concentration in one country.",
-    "That's it! Like in 2000-2009: the US returned almost nothing while other regions rose.",
-    "Nobody knows. The point isn't to predict, it's not to depend on a single country."
-   ],
-   "lines": [
-    "So why don't I just put everything in the S&P 500 and be done?",
-    "It's what everyone on the internet does 🤷"
-   ]
   },
   "u29l6-1": {
    "prompt": "Match each factor with the companies it looks for.",
@@ -752,31 +813,6 @@
    ],
    "explanation": "Their three-factor model (market, size and value) is the basis of this approach."
   },
-  "u29l6-5": {
-   "prompt": "Which factor does each company fit?",
-   "options": [
-    "Low P/E and trades below its book value",
-    "High margins and stable earnings for years",
-    "Up 60 % over the last year",
-    "Small market cap, little known",
-    "Very high return on equity and almost no debt"
-   ],
-   "explanation": "Each factor looks at a different characteristic of the company.",
-   "right": [
-    "Size",
-    "Value",
-    "Quality",
-    "Momentum"
-   ]
-  },
-  "u29l6-6": {
-   "prompt": "Factor premiums have paid off in every decade.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "Value, for example, did worse than the market for much of 2007-2020."
-  },
   "u29l6-7": {
    "prompt": "The strategy that buys whatever has risen most recently is called ____.",
    "options": [
@@ -786,29 +822,6 @@
     "momentum"
    ],
    "explanation": "It relies on trends tending to continue for a while, although they sometimes reverse suddenly."
-  },
-  "u29l6-8": {
-   "prompt": "Quick: a factor fund («smart beta») usually charges…",
-   "options": [
-    "More than a whole-market index fund",
-    "Less than a whole-market index fund",
-    "Nothing"
-   ],
-   "explanation": "The extra rules and the turnover cost money."
-  },
-  "u29l6-9": {
-   "prompt": "Pablo reads that the value factor beat the market over the last century and puts 100 % into a value fund. Three years later he's 15 % behind the index. What's the most consistent thing to do?",
-   "options": [
-    "Understand that it can lag for many years and decide whether he can stick with it",
-    "Sell it and switch to whichever factor did best",
-    "Take out a loan to buy more"
-   ],
-   "explanation": "A factor premium, if it comes, is collected over decades, not three years.",
-   "feedback": [
-    "Good: a factor demands long-term patience. If you can't stick with it, a whole-market index is better.",
-    "Jumping from factor to factor is chasing the past: it tends to buy high and sell low.",
-    "With borrowed money, a few bad years could force you to sell at the worst moment."
-   ]
   },
   "u29l6-10": {
    "prompt": "What are the limits of factors? Select all that apply.",
@@ -843,45 +856,6 @@
    ],
    "explanation": "Article 8 funds only «promote» environmental or social characteristics."
   },
-  "u29l7-3": {
-   "prompt": "Two ESG rating agencies almost always give a company the same score.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "They use different methods: an MIT study (2022) found an average correlation of only 0.54 between their scores."
-  },
-  "u29l7-4": {
-   "prompt": "Is it an E, S or G issue?",
-   "options": [
-    "Workplace accidents",
-    "Huge bonuses for management",
-    "Water and waste management",
-    "A factory's CO₂ emissions",
-    "Customer data protection",
-    "Independent board members"
-   ],
-   "explanation": "Each area looks at a different kind of company risk.",
-   "right": [
-    "Environmental",
-    "Social",
-    "Governance"
-   ]
-  },
-  "u29l7-5": {
-   "prompt": "Marta sees an ad for a «Green Future» fund with forests and wind turbines. When she looks at its portfolio, oil companies are among the largest holdings. What does she do?",
-   "options": [
-    "Signs up: if it's called green, it must be green",
-    "Writes off all sustainable investing as a lie",
-    "Checks its documents, its SFDR classification and its top holdings"
-   ],
-   "explanation": "Before trusting a label, look at what the fund buys and how it's classified.",
-   "feedback": [
-    "The name and the ad aren't enough: what counts is what's inside.",
-    "There are serious funds out there: the problem is not checking.",
-    "Good: that's how she tells a sustainable fund apart from a case of greenwashing."
-   ]
-  },
   "u29l7-6": {
    "prompt": "What can be signs of greenwashing? Select all that apply.",
    "options": [
@@ -891,14 +865,6 @@
     "Lots of green marketing and little concrete information"
    ],
    "explanation": "Transparency (method, exclusions, holdings) is the opposite of greenwashing."
-  },
-  "u29l7-7": {
-   "prompt": "An ESG fund guarantees a higher return than a traditional one.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "There's no guarantee either way: it depends on what it buys and what it costs."
   },
   "u29l7-8": {
    "prompt": "Presenting something as sustainable when it isn't really is called ____.",

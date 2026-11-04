@@ -9,16 +9,65 @@
    "title": "The savings base and its bands",
    "steps": [
     {
-     "title": "Where your investments are taxed",
-     "body": "Interest, dividends and gains from selling shares, funds, ETFs or crypto go into the **savings base** of IRPF (Spanish income tax). Its scale (2026, common territory):\n\n• Up to €6,000: **19 %**\n• From 6,000 to €50,000: **21 %**\n• From 50,000 to €200,000: **23 %**\n• From 200,000 to €300,000: **27 %**\n• Over €300,000: **30 %**"
+     "texts": [
+      "Band by band, not all at once",
+      "You sell at a profit. The gain goes into the **savings base** of IRPF (Spanish income tax), which is taxed **in bands**: each slice at its own rate.",
+      "You make €8,000 selling shares. How is it taxed?",
+      "All €8,000 at 21 %",
+      "The first €6,000 at 19 % and the rest at 21 %",
+      "Nothing up to €50,000",
+      "€6,000 × 19 % + €2,000 × 21 % = **€1,560**. The first €6,000 always pay 19 %.",
+      "Find the gain at which the last euro starts paying 23 %.",
+      "Moving up a band **only makes the part above the limit more expensive**. With a €50,500 gain, the last euro pays 23 %, but your average rate is 20.8 %.",
+      "That 23 % only applies to whatever is above €50,000.",
+      "The first €6,000 still pay 19 %.",
+      "Raise the gain and watch the bands"
+     ]
     },
     {
-     "title": "Band by band, not all at once",
-     "body": "The scale is **progressive by bands**: each slice pays its own rate. With a gain of €8,000:\n\n6,000 × 19 % + 2,000 × 21 % = 1,140 + 420 = **€1,560**.\n\nThe €2,000 in the second band pay 21 %; the first €6,000 always pay 19 %."
+     "texts": [
+      "Ana's fund",
+      "Ana",
+      "My fund has made €15,000 this year! I haven't sold anything.",
+      "I'm going to pay a fortune on my tax return, aren't I?",
+      "How much does Ana pay on that gain?",
+      "About €3,000, on the savings scale",
+      "She'd only pay if she sold. Without selling, there's no gain to declare.",
+      "Nothing until she sells or redeems",
+      "Exactly! That deferred tax keeps investing for her: **tax deferral**.",
+      "19 % of the fund's whole value",
+      "Even when you sell, you don't pay on everything: only on the gain.",
+      "What about dividends and interest?",
+      "Those are taxed in the year you receive them, with 19 % withheld upfront."
+     ]
     },
     {
-     "title": "Only when you sell",
-     "body": "Dividends and interest are taxed in the year you receive them (with 19 % withheld upfront). Gains, **only when you sell**: while you hold, even if your portfolio rises a lot, you don't pay. That's **tax deferral**. The Basque Country and Navarre have their own rules; always check with the Agencia Tributaria (Spain's tax agency).",
+     "texts": [
+      "Savings or general?",
+      "IRPF has two bases. Where does each kind of income go?",
+      "Savings base",
+      "General base",
+      "Dividends from shares",
+      "Income from your savings: savings base.",
+      "Interest from a deposit",
+      "Also income from capital: savings base.",
+      "Gain from selling an ETF",
+      "A gain from a sale: savings base.",
+      "Your salary",
+      "Income from work: general base.",
+      "Cashing in a pension plan",
+      "When you cash it in, it's taxed as income from work.",
+      "Gain from selling bitcoin",
+      "Crypto sold at a gain: savings base.",
+      "Sort the six kinds of income.",
+      "Interest, dividends and gains from selling shares, funds, ETFs or crypto go into the **savings base**. Your salary and cashing in a pension plan go into the **general** one.",
+      "Does it come from your work or from your savings?",
+      "Sort each kind of income"
+     ]
+    },
+    {
+     "title": "The savings scale (2026)",
+     "body": "• Up to €6,000: **19 %**\n• €6,000 to €50,000: **21 %**\n• €50,000 to €200,000: **23 %**\n• €200,000 to €300,000: **27 %**\n• Over €300,000: **30 %**\n\nThis is the common-territory scale. The Basque Country and Navarre have their own rules; always check with the Agencia Tributaria (Spain's tax agency).",
      "key": "Investments are taxed in the savings base, from 19 % to 30 %, and gains only when you sell.",
      "tip": "Hacienda gets paid when you sell at a profit, not when your portfolio goes up."
     }
@@ -28,17 +77,60 @@
    "title": "Gains, losses and offsetting",
    "steps": [
     {
-     "title": "How the gain is calculated",
-     "body": "**Gain = sale value − purchase value**, and both include costs (fees).\n\nIf you bought in several goes, **FIFO** applies: the shares you bought first are treated as the ones you sell first.\n\nIn crypto, swapping one coin for another (bitcoin for ether) also counts as a sale."
+     "texts": [
+      "Losses count too",
+      "This year you make **€5,000** selling some shares and lose **€3,000** on others.",
+      "How much are you taxed on?",
+      "On €5,000: losses don't count",
+      "On €2,000",
+      "On €8,000",
+      "Losses on sales **are subtracted** from gains on sales in the same year: €5,000 − €3,000 = €2,000.",
+      "Now you make €8,000. How big a loss do you need for all of it to be taxed at 19 %?",
+      "A declared loss **lowers your taxes**: with an €8,000 gain, a €2,000 loss leaves the base at €6,000, all at 19 %. That's why it's worth declaring sales at a loss too.",
+      "Base at zero: this year you pay nothing on your sales.",
+      "Part of your gain already pays 21 %.",
+      "Move the gain and the loss"
+     ]
     },
     {
-     "title": "Offsetting losses",
-     "body": "1. **Losses on sales** are subtracted from **gains on sales** in the same year.\n2. If there are losses left over, they're subtracted from **income** (dividends, interest) up to **25 %** of it.\n3. Whatever remains is carried forward to the **next 4 years**.\n\nYou make €5,000 on some shares and lose €3,000 on others: you're taxed on €2,000."
+     "texts": [
+      "Is it a sale for Hacienda?",
+      "Only what you **sell or swap** is taxed. Does this create a gain or a loss this year?",
+      "Yes: it's a sale",
+      "Not taxed yet",
+      "You sell shares at a profit",
+      "Gain = sale value − purchase value, fees included.",
+      "You swap bitcoin for ether without going through euros",
+      "It's an exchange: it counts as a sale.",
+      "You sell an ETF at a loss",
+      "A realised loss: you can use it to offset gains.",
+      "You buy more shares",
+      "Buying isn't taxed.",
+      "Your fund rises 20 % and you don't sell",
+      "Unrealised gain: not taxed until you sell.",
+      "You move euros from your bank to your broker",
+      "Moving your own money isn't earning anything.",
+      "Sort the six moves.",
+      "**Gain = sale − purchase**, including the fees on both. If you bought in several goes, **FIFO** applies: the ones you bought first are sold first.",
+      "Has something left your portfolio in exchange for something else?",
+      "Sort each move"
+     ]
     },
     {
-     "title": "What to take away",
-     "body": "A properly declared loss isn't just bad news: it lowers your taxes this year or in the next four. That's why it's worth declaring sales at a loss too.",
-     "key": "Realised losses are offset against gains and, within limits, over four years."
+     "texts": [
+      "The leftover loss",
+      "Pablo",
+      "This year I made €4,000 on some shares and lost €6,000 on others.",
+      "I also got €4,000 in dividends. Is the leftover €2,000 of loss just wasted?",
+      "What do you tell him?",
+      "Yes, it's wasted",
+      "No: the law lets him use it in two ways.",
+      "Part comes off the dividends and the rest off the following years",
+      "Exactly: up to **25 %** of the dividends; the rest, over **4 years**.",
+      "Hacienda gives him €2,000 back in cash",
+      "There's no refund: the loss only reduces what he's taxed on.",
+      "After those 4 years, any loss you haven't used expires."
+     ]
     }
    ]
   },
@@ -46,16 +138,49 @@
    "title": "The two-month rule",
    "steps": [
     {
-     "title": "Why it exists",
-     "body": "Without this rule, someone could sell at a loss on 30 December just to pay less and buy the same thing back on 2 January.\n\nArticle 33.5 of the IRPF Act prevents this: a loss **can't be used yet** if you buy **homogeneous securities** (the same ones) in the **two months before or after** the sale."
+     "texts": [
+      "The December trick",
+      "Leo",
+      "I've got a trick: on 30 December I sell at a loss so I pay less.",
+      "And on 2 January I buy the same thing back. Sorted.",
+      "Does it work?",
+      "Yes: the sale was in December",
+      "He's buying the same thing back within two months: the law stops that.",
+      "No: the loss is deferred until he sells what he bought back",
+      "Exactly. He doesn't lose it, but he'll have to wait.",
+      "No: it's illegal and he'll be fined",
+      "Selling isn't illegal. He just can't use the loss yet.",
+      "It's the **two-month rule**: article 33.5 of the IRPF Act.",
+      "Look two months **before and after** the sale. If it isn't listed, one year."
+     ]
     },
     {
-     "title": "What happens to the loss",
-     "body": "• It isn't lost: it's **deferred** and applied when you sell the securities you bought back.\n• For securities that **aren't listed** on regulated markets, the period is **one year**.\n• It only affects **losses**: if you sell at a profit and buy back, you're taxed as normal."
+     "texts": [
+      "Does the rule apply?",
+      "A loss has to wait if you buy **homogeneous securities** (the same ones) in the two months before or after the sale.",
+      "Loss deferred",
+      "Doesn't apply",
+      "You sell an ETF at a loss and buy the same one back 3 weeks later",
+      "Within the two months after.",
+      "You sell at a loss and buy the same thing back 3 months later",
+      "Outside the window: the loss counts now.",
+      "You bought more of the same share a month before selling at a loss",
+      "The window looks backwards too.",
+      "You sell at a profit and buy back the next day",
+      "It only affects losses: you're taxed as normal.",
+      "You sell a share at a loss and buy one from a different company",
+      "They aren't homogeneous securities.",
+      "You sell unlisted shares at a loss and buy back 6 months later",
+      "For unlisted securities, the period is one year.",
+      "Decide all six cases.",
+      "The rule **doesn't punish: it defers**. It only affects losses, and the loss is applied when you sell the securities you bought back.",
+      "Two questions: is it a loss? Are you buying the same thing back inside the window?",
+      "Decide each case"
+     ]
     },
     {
      "title": "Legal optimisation",
-     "body": "Before the year ends, some investors realise losses to offset gains, respecting the two months (for example, switching to a different product that tracks a similar index). It's legal, but tax should never be the main reason for an investment.",
+     "body": "Before the year ends, some investors realise losses to offset gains, respecting the two months (for example, switching to a different product that tracks a similar index).\n\nIt's legal, but tax should never be the main reason for an investment.",
      "key": "If you buy the same thing back within two months, the loss has to wait."
     }
    ]
@@ -64,17 +189,60 @@
    "title": "Fund transfers without paying tax",
    "steps": [
     {
-     "title": "The transfer (traspaso)",
-     "body": "In Spain you can move your money from one **investment fund** to another **without paying tax**, as long as it doesn't go through your current account and it's done through the transfer procedure. You request it at the destination provider. The original purchase date and price are kept: you only pay when you finally redeem."
+     "texts": [
+      "From the pricey fund to the cheap one",
+      "Marta",
+      "I've got €20,000 in a bank fund that charges 1.8 %. I'm €6,000 up.",
+      "I want to switch to an index fund at 0.2 %. How do I do it?",
+      "What do you tell her?",
+      "Redeem and buy the index fund with the money",
+      "She'd pay €6,000 × 19 % = **€1,140** for no reason.",
+      "Request a transfer from the index fund's provider",
+      "That's it! She switches funds without paying anything now.",
+      "Stay in the expensive one to avoid tax",
+      "No need: the transfer exists for exactly this.",
+      "In a **transfer** (a Spanish «traspaso»), the money goes from fund to fund without passing through your account.",
+      "You keep the original purchase date and price. You only pay when you actually redeem."
+     ]
     },
     {
-     "title": "Funds vs ETFs",
-     "body": "• **Funds:** tax-free transfers. You can rebalance or switch fund manager at no tax cost.\n• **ETFs:** even though they're funds inside, they're taxed **on every sale** like a share (except for one very limited technical exception).\n\nFor someone who holds for years without touching anything, the difference is small; for someone who moves their portfolio around, it matters."
+     "texts": [
+      "Without paying tax?",
+      "Transfers work between **investment funds**. Can you do this without paying tax now?",
+      "Yes, by transfer",
+      "No, it's taxed",
+      "Rebalancing between two index funds",
+      "Fund to fund: transfer.",
+      "Selling an ETF to buy another",
+      "Even though they're funds inside, ETFs are taxed on every sale.",
+      "Switching fund manager",
+      "You request it at the new manager and it isn't taxed.",
+      "Selling shares to buy a fund",
+      "Selling shares is always taxed.",
+      "Moving from an equity fund to a money market fund",
+      "Both are funds: transfer.",
+      "Redeeming to your account and buying another fund",
+      "If the money passes through your account, it's no longer a transfer.",
+      "Sort the six moves.",
+      "**Funds:** tax-free transfers. **ETFs:** taxed on every sale, like a share (except for one very limited technical exception). If you hold for years without touching anything, the difference is small; if you move your portfolio around, it matters.",
+      "Is it fund to fund, without passing through your account?",
+      "Sort each move"
+     ]
     },
     {
-     "title": "The value of deferring",
-     "body": "If you don't pay €950 of tax today, that €950 keeps investing. At 7 % a year (an example, not a promise), in 20 years it would be about €3,680. You'll pay tax in the end, but on a bigger snowball.",
-     "key": "A transfer between funds is like changing lanes without paying a toll."
+     "texts": [
+      "The value of deferring",
+      "If you transfer instead of redeeming, the **€950** of tax you don't pay today stays invested (7 % a year, an example, not a promise).",
+      "What does that €950 grow into over 20 years?",
+      "About €1,900",
+      "About €3,700",
+      "About €19,000",
+      "At 7 %, money roughly doubles every 10 years: twice in 20. That's **€3,676**.",
+      "Take it to 20 years.",
+      "Deferring tax **compounds** too. You'll pay in the end, but on a bigger snowball: a transfer is like changing lanes without paying a toll.",
+      "Almost four times as much! Without lifting a finger.",
+      "Drag the years"
+     ]
     }
    ]
   },
@@ -82,16 +250,47 @@
    "title": "Dividends and double taxation",
    "steps": [
     {
-     "title": "Two countries, one dividend",
-     "body": "A dividend from a US company is taxed there first: **15 %** if you've signed the **W-8BEN** form with your broker, or **30 %** if you haven't. Then it's taxed in Spain (19-30 %).\n\nTo avoid paying twice, in your IRPF return you deduct **international double taxation**: at most the treaty % (15 % with the US) and never more than you'd pay in Spain."
+     "texts": [
+      "The W-8BEN form",
+      "Your broker",
+      "You're going to receive dividends from US companies. Do you want to sign the W-8BEN form?",
+      "What do you do?",
+      "Sign it",
+      "Good: the US will withhold **15 %**, the treaty maximum.",
+      "Skip it, more paperwork",
+      "Without it, the US withholds **30 %**, and here you can only deduct 15 %.",
+      "I'll sign it next year",
+      "Meanwhile, every dividend loses 30 % at source.",
+      "And then I pay again in Spain?",
+      "It's taxed in Spain (19-30 %), but you deduct what you paid there: that's relief for **international double taxation**.",
+      "At most the treaty %, and never more than you'd pay here."
+     ]
     },
     {
-     "title": "The example",
-     "body": "Gross dividend of €1,000 from the US with W-8BEN:\n\n• The US withholds €150.\n• In Spain you'd owe €190 (19 %).\n• You deduct €150 → you pay **€40** more in Spain.\n\nTotal: €190, just like a Spanish dividend. Without the W-8BEN, the US would withhold €300 and you could only deduct €150."
+     "texts": [
+      "This year or when you sell?",
+      "What you **receive** is taxed when you receive it. What **rises without being sold** isn't. When is each one taxed?",
+      "Taxed this year",
+      "Not until you sell",
+      "Dividend received from a share",
+      "You receive it: taxed this year.",
+      "An accumulating ETF that reinvests dividends",
+      "It reinvests inside: you're not taxed until you sell.",
+      "Interest from a deposit",
+      "You receive the interest: it's taxed this year.",
+      "A fund that rises 20 % without you selling",
+      "Unrealised gain: nothing until you sell.",
+      "Dividend from a distributing ETF",
+      "It pays it out to you: taxed when you receive it.",
+      "Sort all five.",
+      "**European accumulating ETFs and funds** reinvest dividends inside and you aren't taxed until you sell. And a dividend isn't free money: the price drops by roughly that amount.",
+      "Does the money land in your account or stay inside?",
+      "Sort each case"
+     ]
     },
     {
-     "title": "The fund shortcut",
-     "body": "Some countries withhold more than the treaty allows (Switzerland, 35 %) and getting the excess back means paperwork over there. **European accumulating ETFs and funds** handle this internally and you aren't taxed until you sell. And remember: a dividend isn't free money, the price drops by roughly that amount.",
+     "title": "When they withhold too much",
+     "body": "Some countries withhold more than the treaty allows: Switzerland, **35 %**. Getting the excess back means paperwork over there.\n\nEuropean accumulating ETFs and funds handle this internally.",
      "key": "Sign the W-8BEN if you receive US dividends, and deduct double taxation in your tax return."
     }
    ]
@@ -100,16 +299,50 @@
    "title": "Crypto and Modelos 720 and 721",
    "steps": [
     {
-     "title": "How crypto is taxed",
-     "body": "Selling crypto for euros or **swapping it for another crypto** are taxable sales: the gain or loss goes into the savings base (19-30 %). Buying and holding isn't taxed.\n\nRemember: crypto is very volatile, it isn't protected like a deposit and **you can lose everything you've invested**."
+     "texts": [
+      "Which form applies?",
+      "If you hold **more than €50,000** abroad, Hacienda wants to know. Which form applies on 31 December?",
+      "Modelo 720",
+      "Modelo 721",
+      "Neither",
+      "€70,000 in shares with a foreign broker",
+      "Securities abroad worth more than €50,000: Modelo 720.",
+      "€80,000 in crypto on a foreign exchange",
+      "Crypto held abroad worth more than €50,000: Modelo 721.",
+      "€200,000 with a Spanish broker",
+      "It's in Spain: these forms are for what you hold abroad.",
+      "€30,000 in an account at a foreign bank",
+      "It doesn't reach €50,000.",
+      "A €90,000 flat in France",
+      "The 720 also covers property abroad.",
+      "€20,000 in crypto on a foreign exchange",
+      "It doesn't reach €50,000.",
+      "Sort the six cases.",
+      "The **720** covers accounts, securities and property abroad; the **721**, crypto held abroad. They're **information returns**: filing them doesn't cost you any tax.",
+      "First: is it outside Spain? Then: is it over €50,000?",
+      "Sort each case"
+     ]
     },
     {
-     "title": "Information returns",
-     "body": "• **Modelo 720** (Spanish foreign assets return): if you hold more than **€50,000** abroad in accounts, in **securities** (for example, shares with a foreign broker) or in property. It's filed from January to March and, after that, only if the value rises by more than €20,000 or you no longer hold them.\n• **Modelo 721:** crypto held in custody by providers **abroad** worth more than **€50,000** on 31 December."
+     "texts": [
+      "Ten swaps, zero euros",
+      "Bruno",
+      "This year I've made ten swaps between cryptos. I've never cashed out into euros.",
+      "So I've got nothing to declare, right?",
+      "What do you tell him?",
+      "Of course: no euros, no gain",
+      "Every swap between cryptos is a sale for Hacienda.",
+      "Every swap is a sale: work out the gain or loss on each one",
+      "Exactly. Keep a record of the date and the euro value of every trade.",
+      "Declare only the one that made the most",
+      "You have to declare them all. And losses help you offset, too.",
+      "Buying and holding isn't taxed. Selling or swapping is: from 19 % to 30 %.",
+      "And remember: crypto **can be lost entirely**. It isn't protected like a deposit."
+     ]
     },
     {
      "title": "Reporting isn't paying",
-     "body": "These returns are **for information only**: you don't pay anything for filing them. In 2022 the Court of Justice of the EU struck down the disproportionate penalties of the 720, but the obligation to report remains.",
+     "body": "• **Modelo 720** (Spanish foreign assets return): from January to March. After that, only if the value rises by more than €20,000 or you no longer hold those assets.\n• **Modelo 721:** crypto held abroad worth more than €50,000 on 31 December.\n\nIn 2022 the Court of Justice of the EU struck down the disproportionate penalties of the 720, but **the obligation to report remains**.",
      "key": "Investments abroad above €50,000 must be declared, even if they don't generate any tax.",
      "tip": "A foreign broker can be cheap, but the paperwork with Hacienda is on you."
     }
@@ -126,16 +359,6 @@
    "options": [],
    "explanation": "6,000 × 19 % + 2,000 × 21 % = 1,140 + 420 = €1,560.",
    "unit": "€"
-  },
-  "u31l1-2": {
-   "prompt": "In the savings base, the first €6,000 are taxed at ____ %.",
-   "options": [
-    "15",
-    "21",
-    "25",
-    "19"
-   ],
-   "explanation": "From €6,000 to €50,000 the rate goes up to 21 %."
   },
   "u31l1-3": {
    "prompt": "A gain of €20,000 from selling a fund. How much do you pay?",
@@ -170,49 +393,11 @@
     "21 %"
    ]
   },
-  "u31l1-6": {
-   "prompt": "If you make €7,000 selling shares, the whole €7,000 is taxed at 21 %.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "Only the €1,000 above €6,000 pays 21 %: 6,000 × 19 % + 1,000 × 21 % = €1,350."
-  },
-  "u31l1-7": {
-   "prompt": "Which IRPF base is each one taxed in?",
-   "options": [
-    "Cashing out a pension plan",
-    "Your salary",
-    "Gain from selling bitcoin",
-    "Dividends from shares",
-    "Interest on a deposit",
-    "Gain from selling an ETF"
-   ],
-   "explanation": "A pension plan is taxed as employment income when you cash it out, in the general base.",
-   "right": [
-    "Savings base",
-    "General base"
-   ]
-  },
   "u31l1-8": {
    "prompt": "With a gain of €10,000 you pay €1,980. What's your average rate? (one decimal place)",
    "options": [],
    "explanation": "1,980 ÷ 10,000 = 0.198 → 19.8 %. The average rate is always below the rate of the top band.",
    "unit": "%"
-  },
-  "u31l1-9": {
-   "prompt": "Ana's fund has gained €15,000 this year, but she hasn't sold anything. How much does she pay on that gain in her next tax return?",
-   "options": [
-    "Roughly €3,000",
-    "19 % of whatever the fund is worth",
-    "Nothing: she'll only be taxed when she sells or redeems"
-   ],
-   "explanation": "Unrealised gains aren't taxed. Buying and holding saves tax too.",
-   "feedback": [
-    "She'd only pay if she sold or redeemed. As long as she doesn't sell, there's no gain to declare.",
-    "Even when you sell, you don't pay on the whole value, only on the gain.",
-    "Exactly. That deferred tax keeps investing for her: that's tax deferral."
-   ]
   },
   "u31l1-10": {
    "prompt": "Which regions have their own IRPF rules?",
@@ -235,39 +420,10 @@
    "explanation": "FIFO: you sell the first ones, the €50 ones. 10 × (90 − 50) = €400.",
    "unit": "€"
   },
-  "u31l2-3": {
-   "prompt": "This year you make €5,000 selling some shares and lose €3,000 on others. What amount are you taxed on?",
-   "options": [
-    "On €2,000",
-    "On €5,000",
-    "On €8,000"
-   ],
-   "explanation": "Losses are subtracted from gains in the same year: 5,000 − 3,000 = €2,000."
-  },
   "u31l2-4": {
    "prompt": "In the previous case, how much do you pay on that €2,000 net gain?",
    "options": [],
    "explanation": "2,000 × 19 % = €380. Without offsetting, you'd have paid on €5,000: €950.",
-   "unit": "€"
-  },
-  "u31l2-5": {
-   "prompt": "Pablo makes €4,000 on some shares, loses €6,000 on others and receives €4,000 in dividends. What happens to the €2,000 of losses he has left over?",
-   "options": [
-    "They're lost",
-    "Hacienda pays him back €2,000 in cash",
-    "He offsets €1,000 against his dividends (25 % of €4,000) and carries €1,000 forward to the next 4 years"
-   ],
-   "explanation": "Leftover losses are offset against up to 25 % of dividends and interest, and the rest is carried forward for four years.",
-   "feedback": [
-    "They aren't lost: the law lets you use them in two ways.",
-    "There's no refund for the loss: it only reduces what you're taxed on.",
-    "Exactly: first up to 25 % of investment income, and the rest over the next four years."
-   ]
-  },
-  "u31l2-6": {
-   "prompt": "In Pablo's case, how many euros of losses does he have left for the following years?",
-   "options": [],
-   "explanation": "He has €2,000 left over; he offsets 25 % of €4,000 = €1,000 against his dividends. That leaves €1,000 for the next 4 years.",
    "unit": "€"
   },
   "u31l2-7": {
@@ -279,14 +435,6 @@
    ],
    "explanation": "After four years, any unused loss expires."
   },
-  "u31l2-8": {
-   "prompt": "Losses you can't offset can be applied over the next 4 years.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "After that period, they expire."
-  },
   "u31l2-9": {
    "prompt": "If you bought in several goes, the first ones you bought are treated as sold first: the ____ method.",
    "options": [
@@ -297,15 +445,6 @@
    ],
    "explanation": "First in, first out: what comes in first is what goes out first."
   },
-  "u31l2-10": {
-   "prompt": "You swap bitcoin for ether without going through euros. For tax purposes…",
-   "options": [
-    "It's exempt because it's crypto",
-    "Nothing happens until you go back to euros",
-    "It's a sale that can produce a gain or a loss"
-   ],
-   "explanation": "It's an exchange: you're taxed on the difference between what the bitcoin cost you and what it was worth when you swapped it."
-  },
   "u31l3-1": {
    "prompt": "What does the two-month rule do?",
    "options": [
@@ -314,28 +453,6 @@
     "It defers the loss if you buy the same securities two months before or after selling them"
    ],
    "explanation": "It stops people selling just to pay less and then buying straight back."
-  },
-  "u31l3-2": {
-   "prompt": "If the two-month rule applies, the loss is lost forever.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "It's only deferred: you'll apply it when you sell the securities you bought back."
-  },
-  "u31l3-3": {
-   "prompt": "Laura sells an ETF at a loss on 10 December and buys the same ETF again on 5 January. Can she deduct that loss in this year's tax return?",
-   "options": [
-    "No: it's deferred until she sells the ETF she bought back",
-    "Yes, because it's an ETF and not a share",
-    "Yes, the sale was in December"
-   ],
-   "explanation": "Within the following two months, buying back the same securities defers the loss.",
-   "feedback": [
-    "Exactly. She doesn't lose it, but she'll have to wait.",
-    "The rule applies the same way to shares and listed ETFs.",
-    "She bought the same securities back less than two months later: the rule blocks it for now."
-   ]
   },
   "u31l3-4": {
    "prompt": "Bruno bought more shares in a company on 15 February. On 1 March he sells the ones he already had at a loss. What happens?",
@@ -350,29 +467,6 @@
     "What you bought in the two months before the sale counts too.",
     "That's it: the window runs two months backwards and forwards."
    ]
-  },
-  "u31l3-5": {
-   "prompt": "Does the two-month rule apply?",
-   "options": [
-    "You bought more of the same share a month before selling at a loss",
-    "You sell at a profit and buy back the next day",
-    "You sell at a loss and buy the same thing back 3 months later",
-    "You sell an ETF at a loss and buy the same one back 3 weeks later",
-    "You sell a share at a loss and buy a different company"
-   ],
-   "explanation": "It only affects losses and homogeneous securities within the two-month window.",
-   "right": [
-    "Yes, the loss is deferred",
-    "It doesn't apply"
-   ]
-  },
-  "u31l3-6": {
-   "prompt": "For securities that aren't listed on regulated markets, the period is one year.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "For listed ones, two months; for unlisted ones, one year."
   },
   "u31l3-7": {
    "prompt": "The rule applies if you buy ____ securities, that is, the same ones you sold.",
@@ -399,24 +493,6 @@
     "It's in Article 33.5 of the IRPF Act"
    ],
    "explanation": "You can sell whenever you like; what changes is when you can use the loss."
-  },
-  "u31l3-10": {
-   "prompt": "What do you say to Lumi?",
-   "options": [
-    "It's illegal and you can be fined for selling",
-    "With the two-month rule, that loss would be deferred",
-    "Brilliant, everyone should do it"
-   ],
-   "explanation": "The rule doesn't punish you: it defers the loss until you really sell.",
-   "feedback": [
-    "Selling isn't illegal: you just won't be able to use the loss yet.",
-    "Exactly! Either you wait two months, or the loss waits until you sell what you bought back.",
-    "That trick is exactly what the law switches off."
-   ],
-   "lines": [
-    "I've got a trick 😏",
-    "I sell today at a loss to pay less tax and buy the exact same thing back tomorrow."
-   ]
   },
   "u31l4-1": {
    "prompt": "Match each product with how it's taxed.",
@@ -449,28 +525,6 @@
    ],
    "explanation": "The tax is deferred until you finally redeem."
   },
-  "u31l4-4": {
-   "prompt": "Marta has €20,000 in a bank fund with 1.8 % in fees and a €6,000 gain. She wants to switch to an index fund at 0.2 %. How does she do it?",
-   "options": [
-    "She stays in the expensive fund to avoid paying tax",
-    "She requests a transfer from the index fund's provider",
-    "She redeems, gets the money in her account and buys the index fund"
-   ],
-   "explanation": "A transfer lets you leave an expensive fund without paying tax along the way.",
-   "feedback": [
-    "No need: transfers exist precisely for this.",
-    "Good: she switches funds without paying anything now and starts saving on fees.",
-    "She'd pay 6,000 × 19 % = €1,140 for nothing. A transfer was the better move."
-   ]
-  },
-  "u31l4-5": {
-   "prompt": "ETFs have the same tax-free transfer regime as funds.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "Generally not: every sale of an ETF is taxed like the sale of a share."
-  },
   "u31l4-6": {
    "prompt": "Put in order how a transfer between funds works.",
    "options": [
@@ -481,29 +535,6 @@
    ],
    "explanation": "You start it at the destination; you don't have to sell anything at the origin."
   },
-  "u31l4-7": {
-   "prompt": "If the money goes through your current account, it's no longer a transfer and it's taxed.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "It would be a redemption plus a new purchase: the gain is taxed."
-  },
-  "u31l4-8": {
-   "prompt": "Can you do it tax-free thanks to a transfer?",
-   "options": [
-    "Selling an ETF to buy another",
-    "Selling shares to buy a fund",
-    "Switching fund manager",
-    "Rebalancing between two index funds",
-    "Moving from an equity fund to a money market fund"
-   ],
-   "explanation": "Transfers work between investment funds, not with ETFs or shares.",
-   "right": [
-    "Yes, by transfer",
-    "No, it's taxed"
-   ]
-  },
   "u31l4-9": {
    "prompt": "Paying the tax later so that money keeps investing is called tax ____.",
    "options": [
@@ -513,12 +544,6 @@
     "deferral"
    ],
    "explanation": "It's legal and it's the big advantage of transfers."
-  },
-  "u31l4-10": {
-   "prompt": "The €950 of tax you didn't pay stays invested for 20 years at 7 % (an example, not a promise). What does it grow into? (round it)",
-   "options": [],
-   "explanation": "950 × 1.07²⁰ ≈ €3,676. Deferring tax compounds too.",
-   "unit": "€"
   },
   "u31l5-1": {
    "prompt": "You receive a gross dividend of €1,000 from a US company and you've signed the W-8BEN. How many euros does the US withhold?",
@@ -541,28 +566,6 @@
    ],
    "explanation": "And in Spain you can only deduct up to the treaty's 15 %: you lose the rest unless you claim it back over there."
   },
-  "u31l5-4": {
-   "prompt": "Same €1,000 dividend but without the W-8BEN: the US withholds €300, in Spain you owe €190 and you can only deduct €150. How much do you pay in total across both countries?",
-   "options": [],
-   "explanation": "300 in the US + (190 − 150) = 40 in Spain = €340, versus €190 with the form.",
-   "unit": "€"
-  },
-  "u31l5-5": {
-   "prompt": "The double taxation deduction can be bigger than the tax you'd pay in Spain on that dividend.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "It has two limits: the treaty % and what you'd have to pay in Spain."
-  },
-  "u31l5-6": {
-   "prompt": "When a company pays a dividend, its share price usually drops by roughly that amount.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "You end up with cash and a bit less in shares. And that cash is taxed."
-  },
   "u31l5-7": {
    "prompt": "Match each term with its meaning.",
    "options": [
@@ -579,15 +582,6 @@
     "Form for the reduced US withholding rate"
    ]
   },
-  "u31l5-8": {
-   "prompt": "Quick: which type of fund reinvests dividends without you being taxed until you sell?",
-   "options": [
-    "Accumulating",
-    "Distributing",
-    "Money market"
-   ],
-   "explanation": "That's why they're usually more efficient while you're building wealth."
-  },
   "u31l5-9": {
    "prompt": "Pablo receives dividends from a Swiss company. Switzerland withholds 35 % and the treaty with Spain only allows 15 %. What happens to the difference?",
    "options": [
@@ -600,21 +594,6 @@
     "Exactly: the extra 20 % has to be claimed from the Swiss tax authority.",
     "In Spain he can only deduct up to the treaty's 15 %.",
     "It isn't automatic: you have to apply for it."
-   ]
-  },
-  "u31l5-10": {
-   "prompt": "Taxed this year, or not until you sell?",
-   "options": [
-    "An accumulating ETF that reinvests dividends",
-    "A fund that rises 20 % without you selling it",
-    "Interest on a deposit",
-    "Dividend from a distributing ETF",
-    "Dividend received from a share"
-   ],
-   "explanation": "What you receive is taxed when you receive it; what rises without being sold isn't.",
-   "right": [
-    "Taxed this year",
-    "Not taxed until you sell"
    ]
   },
   "u31l6-1": {
@@ -650,30 +629,6 @@
    "explanation": "Purchase: €3,000. Sale: €6,000. Gain: €3,000 × 19 % = €570.",
    "unit": "€"
   },
-  "u31l6-5": {
-   "prompt": "Which information return applies? (on 31 December)",
-   "options": [
-    "€200,000 with a Spanish broker",
-    "€30,000 in an account at a foreign bank",
-    "€80,000 in crypto on a foreign exchange",
-    "€70,000 in shares with a foreign broker",
-    "A property in France worth €90,000"
-   ],
-   "explanation": "The 720 covers accounts, securities and property abroad; the 721, crypto held in custody abroad. Below €50,000 per category, neither.",
-   "right": [
-    "Modelo 720",
-    "Modelo 721",
-    "Neither"
-   ]
-  },
-  "u31l6-6": {
-   "prompt": "Since the Modelo 720 penalties were struck down, you no longer have to file it.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "In 2022 the CJEU struck down the disproportionate penalties, not the obligation to report."
-  },
   "u31l6-7": {
    "prompt": "When is Modelo 720 filed?",
    "options": [
@@ -682,28 +637,6 @@
     "From January to March"
    ],
    "explanation": "From 1 January to 31 March, based on your situation on 31 December of the previous year."
-  },
-  "u31l6-8": {
-   "prompt": "This year Bruno has made ten swaps between cryptos and has never cashed out to euros. He says he has nothing to declare. What do you tell him?",
-   "options": [
-    "He's right: no euros, no gain",
-    "That every swap is a sale and he has to work out the gain or loss on each one",
-    "That he should only declare the one he made the most on"
-   ],
-   "explanation": "In crypto, every swap is taxed. Keeping a record saves you headaches.",
-   "feedback": [
-    "Every swap between cryptos is a taxable sale.",
-    "Exactly. He should keep a record of every trade with its date and its value in euros.",
-    "He has to declare them all; his losses can also help him offset."
-   ]
-  },
-  "u31l6-9": {
-   "prompt": "After filing the 720, you only need to file it again if the value rises by more than €20,000 or you no longer hold those assets.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "That's the general rule for the following years."
   },
   "u31l6-10": {
    "prompt": "The information return for crypto held in custody abroad worth more than €50,000 is Modelo ____.",

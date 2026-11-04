@@ -9,18 +9,51 @@
    "title": "Què és una borsa",
    "steps": [
     {
-     "title": "Un mercat organitzat",
-     "body": "Una **borsa** és un mercat regulat on es compren i es venen valors: accions, bons, ETF. Posa en contacte qui vol comprar amb qui vol vendre, amb les mateixes regles per a tothom i preus públics.\n\nA Espanya la gestiona **BME** (Bolsas y Mercados Españoles), del grup suís SIX, i la supervisa la **CNMV**."
+     "texts": [
+      "A qui li compres?",
+      "Laura",
+      "Vull comprar accions d'Inditex. Les compro a Inditex, oi?",
+      "A qui li compra les accions la Laura?",
+      "A Inditex, que n'és la propietària",
+      "En el dia a dia, no. Inditex només rep diners quan emet accions noves.",
+      "A un altre inversor que vol vendre",
+      "Exacte! La borsa posa en contacte qui compra amb qui ven.",
+      "A la borsa, que té accions guardades",
+      "La borsa no té accions: només encreua ordres de compra i de venda.",
+      "I com arribo jo a la borsa?",
+      "Amb un **bròquer** autoritzat: ell porta la teva ordre al mercat.",
+      "Cada vegada que compres, algú ven. Què deu saber ell que tu no saps?"
+     ]
     },
     {
-     "title": "Per a què serveix",
-     "body": "• **A les empreses:** aconseguir diners per créixer, venent accions o bons.\n• **Als inversors:** participar en empreses i poder **vendre quan vulguin** (liquiditat).\n• **A tothom:** un preu públic i transparent de cada valor en cada moment."
+     "texts": [
+      "Per a què serveix una borsa?",
+      "Una **borsa** és un mercat regulat on es compren i es venen accions, bons i ETF. Què fa i què no?",
+      "Ho fa la borsa",
+      "Això no ho fa",
+      "Que una empresa aconsegueixi diners per créixer",
+      "Venent accions o bons a inversors, sense demanar cap préstec.",
+      "Que puguis vendre les teves accions quan vulguis",
+      "És la **liquiditat**: la borsa reuneix compradors i venedors cada dia.",
+      "Garantir que les accions pugin",
+      "La borsa no promet res sobre el preu: només fa possible comprar i vendre.",
+      "Donar un preu públic de cada valor",
+      "Tothom veu el mateix preu, en cada moment.",
+      "Assegurar un preu mínim a les accions",
+      "El preu pot caure tant com caiguin les ganes de comprar.",
+      "Aplicar les mateixes regles a tothom",
+      "És un mercat organitzat: regles iguals i preus públics per a tothom.",
+      "Classifica les sis targetes.",
+      "Una borsa **posa en contacte qui compra amb qui ven**, amb regles iguals i preus públics. Serveix a les empreses i als inversors, però no garanteix res sobre el preu.",
+      "Pista: la borsa organitza el mercat, però no promet guanys.",
+      "Vas molt bé! Ja gairebé ho tens.",
+      "Toca cada targeta: ho fa la borsa o no?"
+     ]
     },
     {
-     "title": "Tu no vas a la borsa",
-     "body": "Compres a través d'un **bròquer** autoritzat, que porta la teva ordre al mercat. I quan compres, algú ven: en el dia a dia la borsa no et ven res, només encreua les ordres.",
-     "key": "La borsa és el punt de trobada; el bròquer, la porta d'entrada.",
-     "tip": "Cada vegada que compres, algú ven. Pregunta't què sap ell que tu no saps."
+     "title": "Qui és qui",
+     "body": "A Espanya la borsa la gestiona **BME** (Bolsas y Mercados Españoles), del grup suís SIX, i la supervisa la **CNMV**.\n\nTu no vas a la borsa: compres a través d'un **bròquer** autoritzat, que porta la teva ordre al mercat.",
+     "key": "La borsa és el punt de trobada; el bròquer, la porta d'entrada."
     }
    ]
   },
@@ -28,12 +61,46 @@
    "title": "Qui compra i qui ven",
    "steps": [
     {
-     "title": "Els participants",
-     "body": "• **Minoristes:** particulars com tu.\n• **Institucionals:** fons d'inversió, plans de pensions, asseguradores. Mouen grans quantitats.\n• **Creadors de mercat** (*market makers*): sempre posen un preu de compra i un altre de venda i guanyen amb la diferència.\n• **Alta freqüència:** algorismes que operen en microsegons.\n• **Bancs centrals i governs**, en bons i divises."
+     "texts": [
+      "Qui hi ha a l'altra banda?",
+      "Quan compres una acció, algú te la ven. Qui pot ser? Classifica'ls tots.",
+      "Particular (minorista)",
+      "Professional",
+      "Un estudiant que inverteix 50 € al mes des de la seva app",
+      "És un **minorista**: un particular que inverteix els seus propis diners.",
+      "Un pla de pensions",
+      "És un **institucional**: mou els diners de milers de persones.",
+      "Un algorisme que opera en microsegons",
+      "És **alta freqüència**: compra i ven a velocitats impossibles per a una persona.",
+      "Algú que sempre posa un preu de compra i un altre de venda",
+      "És un **creador de mercat**: guanya amb la diferència entre els dos preus.",
+      "Un banc central que compra bons",
+      "Els bancs centrals i els governs operen en bons i divises.",
+      "La teva tia, que compra una mica d'un fons cada mes",
+      "Una altra minorista: inverteix els seus diners, en quantitats petites.",
+      "Classifica els sis participants.",
+      "A l'altra banda de la teva ordre sol haver-hi **professionals** amb més informació, millors eines i costos gairebé nuls. Per això és tan difícil guanyar-los a curt termini.",
+      "Pista: si mou els diners de molta gent o és una màquina, és professional.",
+      "Mira quants tipus de professionals hi ha al mercat.",
+      "Toca cada targeta: particular o professional?"
+     ]
     },
     {
-     "title": "Per què és important",
-     "body": "A l'altra banda de la teva ordre sol haver-hi professionals amb més informació, millors eines i costos gairebé nuls. Per això és tan difícil intentar guanyar-los a curt termini.\n\nA llarg termini, en canvi, no competeixes amb ells: participes del que guanyen les empreses."
+     "texts": [
+      "Guanyar-los en velocitat",
+      "Bruno",
+      "Una acció ha caigut un 8 % en pocs minuts després de presentar resultats.",
+      "Compraré i vendré tota la tarda per guanyar els algorismes!",
+      "Què li dius a en Bruno?",
+      "Endavant: si és ràpid, guanyarà",
+      "Els algorismes han reaccionat en microsegons. En Bruno sempre arribarà tard.",
+      "El seu avantatge no és la velocitat, és el temps",
+      "Exacte! Pot esperar anys i mantenir uns costos molt baixos.",
+      "Que ho faci, però amb pocs diners",
+      "Perd menys, però continua en una cursa que no pot guanyar.",
+      "Llavors els particulars no hi pintem res?",
+      "A llarg termini no hi competeixes: participes del que guanyen les empreses."
+     ]
     },
     {
      "title": "El teu avantatge",
@@ -47,12 +114,37 @@
    "title": "Oferta, demanda i preu",
    "steps": [
     {
-     "title": "El llibre d'ordres",
-     "body": "Cada valor té un llibre amb dues columnes:\n\n• **Compradors (*bid*):** el millor paga **10,02 €** per 500 accions.\n• **Venedors (*ask*):** el millor demana **10,04 €** per 300 accions; el següent, **10,05 €** per 800.\n\nLa diferència entre el millor *bid* i el millor *ask* és la **forquilla** o *spread*."
+     "texts": [
+      "El llibre d'ordres",
+      "A l'esquerra, qui vol **comprar** (*bid*); a la dreta, qui vol **vendre** (*ask*). Si compres ara mateix, compres al millor preu de venda.",
+      "Vols comprar **600 accions** ara mateix. A quin preu mitjà et surten?",
+      "A 10,04 €, el millor preu de venda",
+      "Una mica més cares que 10,04 €",
+      "A 10,02 €, el millor preu de compra",
+      "Només n'hi ha 300 a 10,04 €: les altres 300 surten a 10,05 €. Pagues 6.027 €, una mitjana de **10,045 €**.",
+      "Compra'n tantes que el teu preu mitjà s'allunyi més d'un 0,1 % del millor preu.",
+      "La diferència entre el millor *bid* i el millor *ask* és la **forquilla** o *spread*. Si arriben més compradors amb pressa, **es mengen l'oferta graó a graó** i el preu puja.",
+      "La teva pròpia compra ha empès el preu cap amunt. Així es mou.",
+      "S'han acabat les de 10,04 €: les següents surten més cares.",
+      "Mou quantes accions compres de cop"
+     ]
     },
     {
-     "title": "Com es mou el preu",
-     "body": "Si arriben més compradors amb pressa que venedors, «es mengen» les 300 accions de 10,04 € i el preu puja al graó següent, 10,05 €. Si arriben més venedors, baixa.\n\nLes notícies, els resultats o una dada econòmica canvien el que la gent està disposada a pagar."
+     "texts": [
+      "Resultats per sorpresa",
+      "Leo",
+      "Són les 10:00. L'empresa d'en Leo publica uns resultats molt millors del que s'esperava.",
+      "Al llibre, el millor venedor demanava 10,04 €. I ara què?",
+      "Què creus que passa amb el preu?",
+      "Puja: els compradors es mengen l'oferta",
+      "Exacte. S'esgoten les de 10,04 €, s'encreua a 10,05 €… i puja.",
+      "Res: el preu el fixa l'empresa",
+      "L'empresa no fixa el preu: és l'últim acord entre un comprador i un venedor.",
+      "Només depèn del que valgui l'empresa",
+      "A llarg termini, sí que importa. Avui mana qui té més pressa per comprar.",
+      "Llavors, el preu és el que val l'empresa?",
+      "No: és el que algú **acaba de pagar**. El mouen les notícies, els resultats i les dades."
+     ]
     },
     {
      "title": "Les subhastes",
@@ -66,16 +158,52 @@
    "title": "Horaris i sessions",
    "steps": [
     {
-     "title": "Quan obre cada borsa (hora peninsular)",
-     "body": "• **Madrid, Frankfurt, París:** de 9:00 a 17:30.\n• **Londres:** de 8:00 a 16:30 allà = de 9:00 a 17:30 a Espanya.\n• **Nova York (NYSE, Nasdaq):** de 9:30 a 16:00 allà = de **15:30 a 22:00** a Espanya.\n• **Tòquio:** obre de matinada a Espanya i fa una pausa al migdia (hora de Tòquio)."
+     "texts": [
+      "Dijous, 20:00 a Espanya",
+      "Cada mercat té el seu horari. És dijous i són les **20:00** (hora peninsular). Què és obert?",
+      "Obert",
+      "Tancat",
+      "Borsa de Madrid",
+      "Obre de 9:00 a 17:30: fa hores que ha tancat.",
+      "Borsa de Nova York",
+      "De 9:30 a 16:00 allà: de **15:30 a 22:00** a Espanya.",
+      "Borsa de Londres",
+      "De 8:00 a 16:30 allà: de 9:00 a 17:30 a Espanya.",
+      "Bitcoin",
+      "Les criptomonedes cotitzen 24 hores, 7 dies, també els festius.",
+      "L'euro davant del dòlar",
+      "Les divises cotitzen 24 hores, de diumenge a la nit a divendres a la nit.",
+      "Borsa de Tòquio",
+      "Obre de matinada a Espanya.",
+      "Borsa de Frankfurt",
+      "Com Madrid i París: de 9:00 a 17:30.",
+      "Classifica els set mercats.",
+      "**Madrid, de 9:00 a 17:30; Nova York, de 15:30 a 22:00** a Espanya. Les criptomonedes no tanquen mai i les divises, només el cap de setmana.",
+      "Pista: Nova York obre a la tarda a Espanya i tanca a les 22:00.",
+      "A aquesta hora, gairebé tot Europa ja ha tancat.",
+      "Toca cada mercat: obert o tancat?"
+     ]
     },
     {
-     "title": "Mercats que no tanquen",
-     "body": "• **Criptomonedes:** 24 hores, 7 dies, també festius.\n• **Divises:** 24 hores, de diumenge a la nit a divendres a la nit.\n\nCompte amb el **canvi d'hora:** els EUA i Europa no canvien el mateix dia, així que unes quantes setmanes l'any Nova York obre a les **14:30** a Espanya."
+     "texts": [
+      "Una ordre a les 23:00",
+      "Pablo",
+      "Són les 23:00 a Espanya. Nova York ha tancat fa una hora.",
+      "Una empresa dels EUA acaba de presentar uns resultats boníssims! Compro ara mateix a mercat.",
+      "Què li passarà a l'ordre d'en Pablo?",
+      "S'executa ara mateix, al preu de tancament",
+      "Amb la borsa tancada no hi ha amb qui encreuar-la: espera l'obertura.",
+      "Espera l'obertura i pot sortir molt més cara",
+      "Exacte. Si obre amb un **buit** (*gap*) a l'alça, paga molt més del que veu.",
+      "Es cancel·la sola perquè és de nit",
+      "Normalment queda pendent fins a l'obertura, al preu que hi hagi.",
+      "Un buit?",
+      "Un salt de preu entre el tancament i l'obertura, sense preus intermedis."
+     ]
     },
     {
-     "title": "Fora d'horari",
-     "body": "Si dones una ordre amb la borsa tancada, espera a l'obertura. I el que passi a la nit (resultats, notícies) pot fer que el preu obri molt lluny del tancament anterior: és un **buit** (*gap*).",
+     "title": "Compte amb el rellotge",
+     "body": "Pel **canvi d'hora**, els EUA i Europa no canvien el rellotge el mateix dia: unes quantes setmanes l'any Nova York obre a les **14:30** a Espanya.\n\nTòquio obre de matinada a Espanya i fa una pausa al migdia (hora de Tòquio).",
      "key": "Abans d'operar, mira si el mercat és obert.",
      "tip": "Que l'app et deixi prémer «comprar» no vol dir que el mercat sigui obert."
     }
@@ -85,18 +213,50 @@
    "title": "Bròquer, compte i custòdia",
    "steps": [
     {
-     "title": "Què fa un bròquer",
-     "body": "El **bròquer** rep la teva ordre, la porta al mercat i et cobra comissions. A Espanya ha d'estar autoritzat per la **CNMV** o pel supervisor d'un altre país de la UE amb «passaport europeu».\n\nComprova-ho al web de la CNMV abans d'obrir-hi un compte."
+     "texts": [
+      "Zero comissions i un bo",
+      "Marta",
+      "Mira aquest bròquer: 0 comissions i bo de benvinguda.",
+      "No surt als registres de la CNMV ni té passaport europeu. Importa?",
+      "Què li dius a la Marta?",
+      "Que obri un compte: zero comissions és imbatible",
+      "Si és un xiringuito, ho pot perdre tot, sense cap supervisor a qui acudir.",
+      "Que busqui un bròquer autoritzat",
+      "Exacte. Autoritzat per la CNMV o per un altre supervisor de la UE.",
+      "Que provi només amb 500 €",
+      "També pot perdre aquests 500 €. I després en solen demanar més.",
+      "I què fa exactament un bròquer?",
+      "Rep la teva ordre, la porta al mercat i et cobra comissions."
+     ]
+    },
+    {
+     "texts": [
+      "I si alguna cosa surt malament?",
+      "Després de comprar, les teves accions queden **registrades a nom teu**, separades del patrimoni del bròquer. Què et protegeix i què no?",
+      "Estàs protegit",
+      "És risc teu",
+      "El teu bròquer fa fallida, però les teves accions són a nom teu",
+      "El **custodi** les guarda separades del patrimoni del bròquer: continuen sent teves.",
+      "Un bròquer espanyol fa fallida i falta part del que és teu",
+      "Hi actua el **FOGAIN**, fins a 100.000 € per inversor.",
+      "Les teves accions cauen un 30 % a borsa",
+      "El FOGAIN no cobreix les caigudes del mercat: són risc teu.",
+      "Un xiringuito sense registre desapareix amb els teus diners",
+      "Sense autorització no hi ha supervisor ni fons de garantia.",
+      "L'empresa on vas invertir fa fallida",
+      "És el risc de la teva inversió, no del bròquer: ningú no t'ho retorna.",
+      "Classifica els cinc casos.",
+      "Els teus valors es guarden **a nom teu**. El **FOGAIN** cobreix fins a 100.000 € si l'entitat no et pot retornar el que és teu, **no si la borsa baixa**.",
+      "Pista: el fons de garantia et protegeix de l'entitat, no del mercat.",
+      "Fixa't: el que faci la borsa amb els teus diners és cosa teva.",
+      "Et protegeix o és risc teu? Toca cada cas"
+     ]
     },
     {
      "title": "Liquidació i custòdia",
-     "body": "Després de l'encreuament, l'operació es **liquida**: els diners van al venedor i les accions a tu. A Europa triga dos dies hàbils (**T+2**); als EUA, un (T+1) des del 2024.\n\nA Espanya el registre central és **Iberclear**. El **custodi** guarda els teus valors **a nom teu**, separats del patrimoni del bròquer."
-    },
-    {
-     "title": "I si fa fallida?",
-     "body": "Les teves accions continuen sent teves. Si faltés alguna cosa, a Espanya actua el **FOGAIN** (Fons General de Garantia d'Inversions), fins a **100.000 €** per inversor. Amb un bròquer d'un altre país de la UE et cobreix el fons d'aquell país, que pot ser menor (el mínim europeu és de 20.000 €).",
+     "body": "Després de l'encreuament, l'operació es **liquida**: els diners van al venedor i les accions a tu. A Europa triga dos dies hàbils (**T+2**); als EUA, un (T+1) des del 2024. A Espanya el registre central és **Iberclear**.\n\nAmb un bròquer d'un altre país de la UE et cobreix el fons d'aquell país, que pot ser menor (el mínim europeu és de 20.000 €).",
      "key": "El bròquer és la teva porta d'entrada; els teus valors es guarden a nom teu.",
-     "tip": "El FOGAIN no et cobreix si les teves accions baixen: només si l'entitat no et pot retornar el que és teu."
+     "tip": "Comprova al web de la CNMV que el bròquer està autoritzat abans d'obrir-hi un compte."
     }
    ]
   },
@@ -104,18 +264,67 @@
    "title": "Mercat primari i secundari: les OPV",
    "steps": [
     {
-     "title": "Dos mercats",
-     "body": "• **Mercat primari:** s'**emeten** valors nous i l'emissor rep els diners. Per exemple, una sortida a borsa amb accions noves o una ampliació de capital.\n• **Mercat secundari:** els inversors es compren i es venen valors que ja existeixen. És la borsa del dia a dia: l'empresa **no rep res**."
+     "texts": [
+      "Qui rep els teus diners?",
+      "Al **mercat primari** s'emeten valors nous. Al **secundari**, els inversors es compren i es venen els que ja existeixen.",
+      "L'emissor (primari)",
+      "Un altre inversor (secundari)",
+      "Una empresa amplia capital amb accions noves",
+      "Emet accions noves: els diners van a l'empresa.",
+      "Compres 10 accions d'Iberdrola des de l'app",
+      "Les compres a un altre inversor: Iberdrola no rep res.",
+      "Una sortida a borsa amb accions de nova emissió",
+      "Accions noves: els diners entren a l'empresa.",
+      "Vens les teves accions a un altre inversor",
+      "Canvia de mans una cosa que ja existeix.",
+      "El Tresor emet lletres en subhasta",
+      "Valors nous: els diners van a l'Estat, que és l'emissor.",
+      "Compres un bo de l'Estat que ja cotitza",
+      "Ja existia: el compres a un altre inversor.",
+      "Classifica les sis operacions.",
+      "**Primari:** s'emeten valors nous i els diners van a l'emissor. **Secundari:** canvien de mans els que ja existeixen i l'empresa no rep res.",
+      "Pregunta't: qui emet el valor rep diners nous?",
+      "La borsa del dia a dia és gairebé tota mercat secundari.",
+      "Toca cada operació: primari o secundari?"
+     ]
     },
     {
-     "title": "Sortir a borsa",
-     "body": "Hi ha dues maneres, sovint combinades:\n\n• **OPS (oferta pública de subscripció):** es creen accions noves; els diners van a l'empresa.\n• **OPV (oferta pública de venda):** els propietaris actuals venen part de les seves accions; els diners van a ells.\n\nEn anglès se'n diu IPO. Abans, la CNMV aprova un **fullet** amb la informació i els riscos."
+     "texts": [
+      "La sortida a borsa de moda",
+      "Bruno",
+      "Tothom parla de la sortida a borsa d'una marca de roba.",
+      "Si surt a borsa és perquè va de meravella, no? Hi fico tots els meus estalvis!",
+      "Què li aconselles?",
+      "Que ho posi tot: és una oportunitat única",
+      "Si cau un 30 % els primers mesos, es queda sense coixí i amb pèrdues.",
+      "Que llegeixi el fullet i, si inverteix, que sigui amb una part petita",
+      "Exacte. El **fullet**, aprovat per la CNMV, explica el negoci i els riscos.",
+      "Que esperi a veure què diuen a les xarxes",
+      "Les xarxes no coneixen l'empresa. El fullet, sí.",
+      "El preu el fixa qui ven, i coneix l'empresa millor que tu.",
+      "Moltes sortides a borsa acaben cotitzant per sota del preu de sortida."
+     ]
     },
     {
-     "title": "Compte amb el bombo",
-     "body": "Les sortides a borsa arriben amb molta publicitat, però el preu el fixa qui ven, que coneix l'empresa millor que tu. Moltes acaben cotitzant per sota del preu de sortida.",
-     "key": "Primari: els diners van a l'emissor. Secundari: van a un altre inversor.",
-     "tip": "Si tothom parla d'una OPV, pregunta't qui té pressa per vendre."
+     "texts": [
+      "OPS o OPV?",
+      "Per sortir a borsa hi ha dues maneres, sovint combinades. La clau: **qui es queda els diners?**",
+      "OPS: van a l'empresa",
+      "OPV: van als propietaris que venen",
+      "Es creen accions noves per obrir fàbriques",
+      "Oferta pública de **subscripció**: accions noves, diners per a l'empresa.",
+      "La fundadora ven part de les seves accions",
+      "Oferta pública de **venda**: ven una cosa que ja existeix i els diners són per a ella.",
+      "Un fons que va entrar fa anys ven la seva part",
+      "Els propietaris actuals venen: l'empresa no rep res.",
+      "L'empresa emet accions per pagar el seu deute",
+      "Emet accions noves: els diners van a l'empresa.",
+      "Classifica els quatre casos.",
+      "**OPS:** accions noves i diners per a l'empresa. **OPV:** els propietaris venen i els diners van a ells. En anglès, una sortida a borsa es diu IPO.",
+      "Si no es creen accions noves, l'empresa no cobra.",
+      "Abans d'una sortida a borsa, mira qui ven i per què.",
+      "Toca cada cas: OPS o OPV?"
+     ]
     }
    ]
   },
@@ -123,16 +332,48 @@
    "title": "La borsa espanyola: IBEX i mercat continu",
    "steps": [
     {
-     "title": "El mercat continu",
-     "body": "Les quatre borses espanyoles (Madrid, Barcelona, Bilbao i València) estan unides en un sistema electrònic, el **SIBE** o **mercat continu**: més d'un centenar d'empreses hi cotitzen de 9:00 a 17:30 amb un únic llibre d'ordres per valor.\n\nEl gestiona **BME**, del grup suís SIX des del 2020."
+     "texts": [
+      "On cotitza?",
+      "Més d'un centenar d'empreses cotitzen al **mercat continu**, però no totes al mateix aparador.",
+      "IBEX 35",
+      "BME Growth",
+      "Latibex",
+      "Una gran elèctrica amb milions d'accions negociades cada dia",
+      "És entre les 35 més líquides: entra a l'IBEX.",
+      "Una startup tecnològica petita que vol créixer",
+      "**BME Growth**: empreses petites en expansió, amb menys requisits i més risc.",
+      "Una empresa mexicana que vol cotitzar en euros",
+      "**Latibex** reuneix empreses llatinoamericanes que cotitzen en euros.",
+      "Un gran banc espanyol molt negociat",
+      "Molta liquiditat: és de les 35 que formen l'IBEX.",
+      "Una empresa familiar petita en expansió",
+      "Petita i en expansió: encaixa a BME Growth (abans, MAB).",
+      "Col·loca les cinc empreses.",
+      "L'**IBEX 35** és l'aparador; el mercat continu, la botiga sencera. **BME Growth** té empreses petites i més risc, i **Latibex**, llatinoamericanes.",
+      "Pista: l'IBEX va per liquiditat; BME Growth, per mida petita.",
+      "La mida, la liquiditat i l'origen decideixen el segment.",
+      "Toca cada empresa: on cotitza?"
+     ]
     },
     {
-     "title": "L'IBEX 35",
-     "body": "Reuneix les **35 empreses més líquides** del mercat continu, ponderades per capitalització (comptant només les accions que es negocien lliurement). Un comitè tècnic el revisa dues vegades l'any, al juny i al desembre: unes entren i d'altres en surten.\n\nLa seva base va ser de **3.000 punts** a finals del 1989."
+     "texts": [
+      "Fora de l'IBEX",
+      "Pablo",
+      "L'empresa de la qual tinc accions ha sortit de l'IBEX 35. Va fatal?",
+      "Què li dius a en Pablo?",
+      "Sí: a l'IBEX només hi ha les millors",
+      "Hi ha les 35 **més líquides**, no les millors.",
+      "No necessàriament: ara es negocia menys que d'altres",
+      "Exacte. No ser a l'IBEX no vol dir ser una mala empresa.",
+      "Ja no cotitza a borsa",
+      "Continua cotitzant al mercat continu, amb més d'un centenar d'empreses.",
+      "I qui ho decideix, això?",
+      "Un comitè tècnic, dues vegades l'any: al juny i al desembre."
+     ]
     },
     {
-     "title": "Altres segments",
-     "body": "• **BME Growth:** empreses petites en expansió, amb menys requisits i més risc (abans, MAB).\n• **Latibex:** empreses llatinoamericanes que cotitzen en euros.\n• **Renda fixa:** bons i lletres.",
+     "title": "L'IBEX 35 i el mercat continu",
+     "body": "El **mercat continu** (SIBE) uneix en un sistema electrònic les borses de Madrid, Barcelona, Bilbao i València, amb un únic llibre d'ordres per valor. El gestiona **BME**, del grup suís SIX des del 2020.\n\nL'**IBEX 35** pondera per capitalització, comptant només les accions que es negocien lliurement. La seva base va ser de **3.000 punts** a finals del 1989.",
      "key": "L'IBEX 35 és l'aparador; el mercat continu, la botiga sencera.",
      "tip": "No ser a l'IBEX no vol dir ser una mala empresa: només que es negocia menys."
     }
@@ -152,24 +393,6 @@
     "Una empresa que et ven les seves pròpies accions cada dia"
    ],
    "explanation": "La borsa encreua ordres: posa en contacte compradors i venedors amb regles i preus públics."
-  },
-  "u5l1-2": {
-   "prompt": "Per a què serveix la borsa? Marca-les totes.",
-   "options": [
-    "Que els inversors puguin vendre quan vulguin",
-    "Garantir que les accions pugin",
-    "Donar un preu públic de cada valor",
-    "Que les empreses aconsegueixin finançament"
-   ],
-   "explanation": "La borsa no garanteix res sobre el preu: només fa possible comprar i vendre."
-  },
-  "u5l1-3": {
-   "prompt": "Quan compres una acció a borsa, normalment la compres a un altre inversor, no a l'empresa.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "L'empresa només rep diners quan emet accions noves (sortida a borsa o ampliació)."
   },
   "u5l1-4": {
    "prompt": "Relaciona cada nom amb el seu paper.",
@@ -197,14 +420,6 @@
    ],
    "explanation": "La liquiditat és un dels grans avantatges de la borsa davant, per exemple, d'un pis."
   },
-  "u5l1-6": {
-   "prompt": "La borsa garanteix un preu mínim a les accions.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "El preu pot caure tant com caiguin les ganes de comprar. Ningú no el garanteix."
-  },
   "u5l1-7": {
    "prompt": "La Laura vol comprar accions d'una empresa espanyola i un desconegut li escriu per Instagram: «Te les compro jo directament a la borsa, fes-me un Bizum». Què fa?",
    "options": [
@@ -217,23 +432,6 @@
     "Les accions queden a nom seu, amb un intermediari supervisat.",
     "La Borsa no atén particulars: sempre s'hi opera a través d'un intermediari.",
     "El més probable és que aquests diners no tornin: ningú no compra a borsa per Bizum."
-   ]
-  },
-  "u5l1-8": {
-   "prompt": "Què li contestes a la Lumi?",
-   "options": [
-    "Els dones a la CNMV",
-    "Normalment no: els pagues a un altre inversor que ven",
-    "Sí, sempre"
-   ],
-   "explanation": "En el mercat del dia a dia, els inversors es compren i es venen accions entre ells.",
-   "feedback": [
-    "La CNMV supervisa; no rep els teus diners.",
-    "Això mateix! L'empresa només rep diners quan emet accions noves.",
-    "Només en una sortida a borsa o una ampliació. En el dia a dia, els diners van a un altre inversor."
-   ],
-   "lines": [
-    "Si compro una acció d'Inditex, li dono els diners a Inditex? 🤔"
    ]
   },
   "u5l1-9": {
@@ -293,37 +491,6 @@
     "Institucional"
    ]
   },
-  "u5l2-4": {
-   "prompt": "En Bruno veu que una acció cau un 8 % en minuts després d'uns resultats i vol «guanyar en velocitat» els algorismes comprant i venent durant la tarda. Què fa?",
-   "options": [
-    "Opera tota la tarda a cop de notícia",
-    "Posa tots els seus diners en una sola operació ràpida",
-    "Recorda que competeix amb màquines més ràpides i no opera per impuls"
-   ],
-   "explanation": "A curt termini, el minorista juga en desavantatge.",
-   "feedback": [
-    "Arriba tard a cada moviment: els algorismes han reaccionat en microsegons.",
-    "Risc enorme en una aposta contra els participants més ràpids del mercat.",
-    "S'estalvia comissions, spreads i nervis en una cursa que no pot guanyar."
-   ]
-  },
-  "u5l2-5": {
-   "prompt": "Els inversors institucionals, com fons i asseguradores, mouen molts més diners que un particular.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Gestionen els diners de milers de persones: les seves ordres són enormes."
-  },
-  "u5l2-6": {
-   "prompt": "Ràpid: qui opera en microsegons?",
-   "options": [
-    "Els fons de pensions",
-    "Els minoristes",
-    "Els algorismes d'alta freqüència"
-   ],
-   "explanation": "Són programes que compren i venen a velocitats impossibles per a una persona."
-  },
   "u5l2-7": {
    "prompt": "Un minorista competeix en igualtat d'informació i velocitat amb els professionals.",
    "options": [
@@ -352,24 +519,6 @@
    ],
    "explanation": "Tota compra té una venda a l'altra banda."
   },
-  "u5l2-10": {
-   "prompt": "Què li contestes a la Lumi?",
-   "options": [
-    "Cal operar més ràpid que ells",
-    "Exacte, millor ni intentar-ho",
-    "A curt termini és difícil guanyar-los; a llarg termini no competeixes amb ells"
-   ],
-   "explanation": "El minorista no guanya per velocitat, sinó per temps i costos baixos.",
-   "feedback": [
-    "Ells operen en microsegons: aquesta cursa està perduda.",
-    "Tampoc: no cal guanyar-los en velocitat per invertir bé a llarg termini.",
-    "Ben vist! Invertir a llarg termini és participar del que guanyen les empreses."
-   ],
-   "lines": [
-    "He llegit que els fons i els algorismes dominen la borsa 😰",
-    "Aleshores els particulars no hi pintem res?"
-   ]
-  },
   "u5l3-1": {
    "prompt": "El millor preu de compra és 20,10 € i el de venda, 20,14 €. Si compres ara mateix, a quin preu compres?",
    "options": [
@@ -378,18 +527,6 @@
     "20,10 €"
    ],
    "explanation": "Compres al millor preu de venda (ask): és el que demana qui ven."
-  },
-  "u5l3-2": {
-   "prompt": "Ràpid: en aquest llibre (20,10 € / 20,14 €), de quant és l'spread?",
-   "options": [],
-   "explanation": "20,14 − 20,10 = 0,04 €.",
-   "unit": "€"
-  },
-  "u5l3-3": {
-   "prompt": "Simula la teva compra: vols 600 accions ara mateix. Al llibre n'hi ha 300 a 10,04 € i 800 a 10,05 €. Quant pagues en total?",
-   "options": [],
-   "explanation": "300 × 10,04 = 3.012 € i 300 × 10,05 = 3.015 €. Total: 6.027 €.",
-   "unit": "€"
   },
   "u5l3-4": {
    "prompt": "En aquesta compra de 600 accions per 6.027 €, quin és el teu preu mitjà per acció?",
@@ -417,14 +554,6 @@
    ],
    "explanation": "Dues subhastes emmarquen la sessió contínua."
   },
-  "u5l3-7": {
-   "prompt": "Si arriben més venedors que compradors, el preu tendeix a baixar.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Els venedors amb pressa accepten preus cada vegada més baixos del llibre de compra."
-  },
   "u5l3-8": {
    "prompt": "Què pot moure el preu d'una acció? Marca-ho tot.",
    "options": [
@@ -449,14 +578,6 @@
     "Més pressió venedora sobre un llibre petit: el preu cau encara més."
    ]
   },
-  "u5l3-10": {
-   "prompt": "El preu d'una acció és el que val de debò l'empresa.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "És l'últim acord entre un comprador i un venedor; el valor de l'empresa és una altra cosa."
-  },
   "u5l4-1": {
    "prompt": "Relaciona cada mercat amb el seu horari (hora peninsular).",
    "options": [
@@ -472,25 +593,6 @@
     "De 15:30 a 22:00",
     "De 9:00 a 17:30"
    ]
-  },
-  "u5l4-2": {
-   "prompt": "Ràpid: un dimecres normal a les 16:00 (hora peninsular), què és obert? Marca-ho tot.",
-   "options": [
-    "Borsa de Nova York",
-    "Criptomonedes",
-    "Borsa de Tòquio",
-    "Borsa de Madrid"
-   ],
-   "explanation": "A les 16:00 coincideixen Madrid i Nova York; Tòquio ha tancat fa hores i les cripto no tanquen mai."
-  },
-  "u5l4-3": {
-   "prompt": "Ràpid: dissabte a les 12:00. Què pots comprar a l'instant?",
-   "options": [
-    "Accions d'Apple a Nova York",
-    "Bitcoin",
-    "Accions de l'IBEX 35"
-   ],
-   "explanation": "El cap de setmana les borses tanquen; les criptomonedes cotitzen 24/7."
   },
   "u5l4-4": {
    "prompt": "A quina hora obre normalment la borsa de Nova York en hora peninsular espanyola?",
@@ -515,20 +617,6 @@
    ],
    "explanation": "Els EUA i Europa no avancen ni endarrereixen el rellotge el mateix dia."
   },
-  "u5l4-7": {
-   "prompt": "Són les 23:00. Una empresa dels EUA acaba de publicar uns resultats molt bons i en Pablo posa una ordre de compra a mercat. Què és el més probable?",
-   "options": [
-    "Es cancel·la sola perquè és de nit",
-    "S'executa ara mateix a l'últim preu de tancament",
-    "S'executa a l'obertura, potser a un preu molt més alt que el tancament"
-   ],
-   "explanation": "Amb el mercat tancat, una ordre a mercat s'executa a l'obertura, al preu que hi hagi.",
-   "feedback": [
-    "Normalment queda pendent fins a l'obertura.",
-    "La borsa és tancada: no hi ha ningú al llibre amb qui encreuar-la en horari normal.",
-    "Si l'acció obre amb un buit a l'alça, paga bastant més del que veia a la pantalla."
-   ]
-  },
   "u5l4-8": {
    "prompt": "Un dimarts a les 10:00 (hora peninsular), obert o tancat?",
    "options": [
@@ -544,14 +632,6 @@
     "Obert",
     "Tancat"
    ]
-  },
-  "u5l4-9": {
-   "prompt": "Si dones una ordre amb la borsa tancada, s'executa a l'últim preu de tancament.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Espera a l'obertura i s'executa al preu que hi hagi llavors."
   },
   "u5l4-10": {
    "prompt": "Quan una acció obre molt lluny del tancament anterior per notícies de la nit, es produeix un ____.",
@@ -572,22 +652,6 @@
    ],
    "explanation": "És l'intermediari entre tu i el mercat."
   },
-  "u5l5-2": {
-   "prompt": "Si el teu bròquer fa fallida, les teves accions es perden amb ell.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Són a nom teu i separades del seu patrimoni."
-  },
-  "u5l5-3": {
-   "prompt": "El FOGAIN et compensa si les teves accions cauen a borsa.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Només cobreix que l'entitat no et pugui retornar els teus diners o els teus valors. Les caigudes de la borsa són risc teu."
-  },
   "u5l5-4": {
    "prompt": "Ràpid: fins a quant cobreix el FOGAIN per inversor?",
    "options": [
@@ -607,20 +671,6 @@
     "El bròquer la porta al mercat"
    ],
    "explanation": "De l'app al registre: així les accions arriben a ser teves."
-  },
-  "u5l5-6": {
-   "prompt": "La Marta veu un anunci d'un bròquer amb «0 comissions i bo de benvinguda». No apareix als registres de la CNMV ni té passaport europeu. Què fa?",
-   "options": [
-    "Obre un compte: zero comissions és imbatible",
-    "Hi ingressa només 500 € per provar",
-    "Busca un altre bròquer autoritzat"
-   ],
-   "explanation": "Sense autorització no hi ha supervisió ni fons de garantia.",
-   "feedback": [
-    "Si és una entitat pirata, pot perdre tot el que hi ingressi, sense cap supervisor on acudir.",
-    "Si no està autoritzat, també pot perdre aquests 500 €. I després solen demanar-ne més.",
-    "Els seus valors quedaran custodiats per una entitat supervisada."
-   ]
   },
   "u5l5-7": {
    "prompt": "Relaciona cada nom amb la seva funció.",
@@ -647,14 +697,6 @@
     "dos"
    ],
    "explanation": "T+2: el dia de l'operació més dos dies hàbils."
-  },
-  "u5l5-9": {
-   "prompt": "Abans d'obrir un compte convé comprovar que el bròquer està autoritzat per la CNMV o per un altre supervisor de la UE.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "És la primera comprovació: si no hi apareix, no és una entitat autoritzada."
   },
   "u5l5-10": {
    "prompt": "En Pablo té 60.000 € en un bròquer amb seu en un altre país de la UE i dona per fet que el cobreix el FOGAIN espanyol. Què fa?",
@@ -686,22 +728,6 @@
     "Accions noves; els diners van a l'empresa"
    ]
   },
-  "u5l6-2": {
-   "prompt": "Mercat primari o secundari?",
-   "options": [
-    "Sortida a borsa amb accions de nova emissió",
-    "Vens les teves accions a un altre inversor",
-    "Compres un bo de l'Estat que ja cotitza",
-    "Una empresa amplia capital amb accions noves",
-    "Compres 10 accions d'Iberdrola des de la teva app",
-    "El Tresor emet lletres en subhasta"
-   ],
-   "explanation": "Si l'emissor rep diners nous, és primari; si canvia de mans el que ja existeix, secundari.",
-   "right": [
-    "Primari",
-    "Secundari"
-   ]
-  },
   "u5l6-3": {
    "prompt": "Avui compres accions d'Inditex a borsa. Qui rep els teus diners?",
    "options": [
@@ -719,14 +745,6 @@
    ],
    "explanation": "Si l'empresa vol diners nous, ha d'emetre accions (OPS)."
   },
-  "u5l6-5": {
-   "prompt": "Que una sortida a borsa tingui molta publicitat garanteix que pujarà.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "La publicitat no canvia el que val l'empresa; moltes acaben per sota del preu de sortida."
-  },
   "u5l6-6": {
    "prompt": "Quin document hauries de llegir abans d'acudir a una sortida a borsa?",
    "options": [
@@ -735,20 +753,6 @@
     "El fullet aprovat per la CNMV"
    ],
    "explanation": "El fullet explica el negoci, els comptes i els riscos."
-  },
-  "u5l6-7": {
-   "prompt": "Tothom parla de la sortida a borsa d'una empresa de moda i en Bruno hi vol posar tots els seus estalvis el primer dia. Què fa?",
-   "options": [
-    "Hi posa tots els seus estalvis",
-    "Demana un préstec per comprar-ne més",
-    "Llegeix el fullet i, si inverteix, que sigui una part petita"
-   ],
-   "explanation": "Una OPV és una inversió més, no una oportunitat única.",
-   "feedback": [
-    "Si l'acció cau un 30 % els primers mesos, es queda sense matalàs i amb pèrdues.",
-    "Deute per a una aposta en una empresa que acaba de començar a cotitzar: doble risc.",
-    "Si l'estrena surt malament, el seu pla no es trenca."
-   ]
   },
   "u5l6-8": {
    "prompt": "Quan una empresa que ja cotitza emet accions noves per aconseguir diners, fa una ____ de capital.",
@@ -769,23 +773,6 @@
     "L'empresa decideix sortir a borsa"
    ],
    "explanation": "Després de l'estrena, les accions passen a negociar-se entre inversors."
-  },
-  "u5l6-10": {
-   "prompt": "Què li contestes a la Lumi?",
-   "options": [
-    "No necessàriament: de vegades els propietaris n'aprofiten per vendre car",
-    "Si surt a borsa, està garantit que puja",
-    "Sí, només hi surten les millors"
-   ],
-   "explanation": "En una OPV, qui ven tria el moment, i sol triar-ne un de bo per a ell.",
-   "feedback": [
-    "Això mateix! Qui ven coneix l'empresa millor que tu. Llegeix el fullet abans de decidir.",
-    "Res no garanteix que pugi: moltes acaben per sota del preu de sortida.",
-    "Hi surten les que volen diners o els propietaris de les quals volen vendre: no ha de ser per força bon senyal."
-   ],
-   "lines": [
-    "Si una empresa surt a borsa, és perquè va genial, oi? 🚀"
-   ]
   },
   "u5l7-1": {
    "prompt": "Relaciona cada nom amb el que és.",
@@ -820,38 +807,6 @@
    ],
    "explanation": "Amb els pitjors titulars és quan més difícil resulta preveure el mercat: per això convé un pla que no depengui d'endevinar-lo.",
    "horizon": "l'any i mig següent"
-  },
-  "u5l7-4": {
-   "prompt": "L'IBEX 35 inclou totes les empreses que cotitzen a la borsa espanyola.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Només les 35 més líquides; al mercat continu n'hi ha més d'un centenar."
-  },
-  "u5l7-5": {
-   "prompt": "Una empresa pot sortir de l'IBEX 35 en una revisió.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Si deixa de ser entre les més líquides, el comitè la pot treure."
-  },
-  "u5l7-6": {
-   "prompt": "En quin segment encaixa cada empresa?",
-   "options": [
-    "Una startup tecnològica petita que vol créixer",
-    "Una empresa brasilera que vol cotitzar en euros",
-    "Una empresa familiar petita en expansió",
-    "Un gran banc espanyol molt negociat",
-    "Una elèctrica gran amb milions d'accions negociades cada dia"
-   ],
-   "explanation": "La mida, la liquiditat i l'origen decideixen el segment.",
-   "right": [
-    "Mercat continu (IBEX)",
-    "BME Growth",
-    "Latibex"
-   ]
   },
   "u5l7-7": {
    "prompt": "L'IBEX 35 va començar amb una base de ____ punts a finals del 1989.",

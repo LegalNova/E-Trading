@@ -32,9 +32,25 @@ export function lessonTitleT(loc: Loc, lessonId: string, fallback: string) {
 }
 
 /** Pasos de teoría traducidos (si falta la traducción de alguno, queda en español) */
+/** ¿La traducción guardada corresponde a estos pasos? (si la clase se ha rehecho y aún no se ha retraducido, no) */
+function fits(steps: Step[], t: StepText[]) {
+  if (t.length !== steps.length) return false
+  return steps.every((s, i) => {
+    const x = t[i]
+    if (s.kind === 'PLAY' || s.kind === 'STORY') {
+      let n = 0
+      walkTexts(s.kind === 'PLAY' ? s.play : s.story, v => (n++, v))
+      return x.texts?.length === n
+    }
+    if (s.kind === 'CHART') return !x.texts && x.prompt !== undefined
+    return !x.texts && x.body !== undefined
+  })
+}
+
 export function stepsT(loc: Loc, lessonId: string, steps: Step[]): Step[] {
   const t = of(loc)?.l[lessonId]?.steps
-  if (!t?.length) return steps
+  // Sin traducción, o una de antes de rehacer la clase: mejor en castellano que con textos que no encajan
+  if (!t?.length || !fits(steps, t)) return steps
   return steps.map((s, i) => {
     const x = t[i]
     if (!x) return s

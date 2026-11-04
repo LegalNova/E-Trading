@@ -9,18 +9,44 @@
    "title": "Your brain isn't built for investing",
    "steps": [
     {
-     "title": "Two ways of thinking",
-     "body": "Daniel Kahneman, Nobel Prize in Economics:\n\n• **System 1:** fast, intuitive and emotional. Perfect for dodging a car.\n• **System 2:** slow, analytical and effortful. Needed to work out an expected value.\n\nIn the stock market, big decisions tend to be made with system 1: in fear, in a hurry or in euphoria."
+     "texts": [
+      "Four years on a rollercoaster",
+      "December 2020. You put **€10,000** into bitcoin and watch it week by week, with real data. You can sell whenever you like.",
+      "Go all the way to the end, whether you sell or not.",
+      "Buying after rises and selling after falls creates the **investor gap**. In spot bitcoin ETFs, investors got **−5.8 %** versus **+8.5 %** for the ETF itself.",
+      "You've sold. Was that your plan deciding, or your gut?",
+      "Almost half gone. Your brain is screaming: «Sell now!».",
+      "Way above what you put in! Your brain is screaming: «Put more in!».",
+      "Hit start. You can sell whenever you like"
+     ]
+    },
+    {
+     "texts": [
+      "Who's deciding?",
+      "Daniel Kahneman, Nobel Prize in Economics: we have a **system 1**, fast and emotional, and a **system 2**, slow and analytical. Which one is deciding?",
+      "System 1: fast and emotional",
+      "System 2: slow and analytical",
+      "Selling everything after reading a scary headline",
+      "Fear and haste: system 1 in charge.",
+      "Working out your system's expectancy from your journal",
+      "Doing the maths calmly is system 2's job.",
+      "Buying because everyone's talking about it",
+      "Following the crowd is a quick system 1 shortcut.",
+      "Rereading your plan before trading",
+      "A written checklist forces you to think slowly.",
+      "Dodging a scooter coming straight at you",
+      "Here system 1 saves you: it's fast and automatic.",
+      "Sort the five decisions.",
+      "System 1 is perfect for dodging a car. For investing, **force yourself to use system 2**: fear, haste and euphoria make bad decisions.",
+      "Hint: is there emotion and haste, or calm and numbers?",
+      "System 1 or system 2? Sort each decision"
+     ]
     },
     {
      "title": "The investor gap",
-     "body": "Morningstar, 10 years to 2025:\n\n• US funds returned **9.9 %** a year.\n• Their investors' money, flowing in and out, returned **8.7 %**: **1.2 points less** a year.\n• In the most volatile funds the gap was −2.1 points; in the calm ones, −0.4.\n• In spot bitcoin ETFs: investors **−5.8 %** versus **+8.5 %** for the ETF."
-    },
-    {
-     "title": "Your takeaway",
-     "body": "The product can be good. The problem is behaviour: buying after the rises and selling after the falls.",
-     "key": "The brain runs from danger and follows the crowd: in the market, that means selling in the falls and buying in the euphoria.",
-     "tip": "The biggest risk to your portfolio is usually the person sitting in front of the screen."
+     "body": "Morningstar, 10 years to 2025: US funds returned **9.9 %** a year; their investors' money, flowing in and out, returned **8.7 %**: 1.2 points less a year.\n\nIn the most volatile funds, the gap was −2.1 points; in the calm ones, −0.4.",
+     "key": "The product may be good; the problem is behaviour: buying after rises and selling after falls.",
+     "tip": "The biggest risk in your portfolio is usually sitting in front of the screen."
     }
    ]
   },
@@ -28,17 +54,42 @@
    "title": "Loss aversion",
    "steps": [
     {
-     "title": "Losing hurts twice as much",
-     "body": "Kahneman and Tversky (prospect theory, 1979): a loss of €100 hurts roughly **twice as much** as a gain of €100 feels good.\n\nThat's why we turn down bets that are in our favour and avoid **locking in** a loss by selling, even when the company has got worse."
+     "texts": [
+      "Heads or tails with Dani",
+      "Dani",
+      "Here's a game: I toss a coin.",
+      "If it's heads, I give you **€150**. If it's tails, you give me **€100**.",
+      "Are you in?",
+      "No: losing €100 would hurt too much",
+      "That's what almost everyone does… even though on average you'd win €25.",
+      "Yes: on average I win €25 per toss",
+      "Well spotted! 0.5 × 150 − 0.5 × 100 = **+€25**.",
+      "Only if I toss the coin",
+      "The coin is fair: the problem is in our heads.",
+      "Kahneman and Tversky (1979): losing hurts **twice as much** as winning feels good.",
+      "That's why we turn down bets that are good for us."
+     ]
     },
     {
-     "title": "Its effects",
-     "body": "• When we're losing, we become **more reckless**: «I'll double up to win it back».\n• When we're winning, **more cautious**: we sell quickly to lock it in.\n• If we check our portfolio very often, we see it in the red more times and suffer more: Benartzi and Thaler called this **myopic loss aversion**."
+     "texts": [
+      "And if you play lots of times",
+      "1,000 people take Dani's game: heads **+€150**, tails **−€100**. What happens if they keep playing?",
+      "If each one plays 100 times, how many end up losing?",
+      "Half, same as with one toss",
+      "Hardly anyone",
+      "Almost everyone",
+      "Only **2 %** end up losing, and on average they win about €2,488. With positive expectancy, repeating works in your favour.",
+      "Raise the tosses until 5 in 100 or fewer lose.",
+      "**Loss aversion** makes us turn down decisions that are good for us. And watching every toss, or your portfolio every day, makes you see more losses: that's **myopic loss aversion**.",
+      "Hardly anyone loses! Turning it down out of fear was costly.",
+      "With a single toss, half lose: that's what's scary.",
+      "Raise how many times each person plays"
+     ]
     },
     {
      "title": "How to protect yourself",
-     "body": "Set your stop before you get in, while you're calm. And ask yourself the right question: not «how much have I lost?», but **«if I didn't own it, would I buy it today at this price?»**.",
-     "key": "Losing hurts more than twice as much as winning feels good: that's why we cling on to losers.",
+     "body": "When we're losing, we get **riskier** («I'll double up to win it back»); when we're winning, **more cautious**.\n\nSet your stop before you get in, while you're calm. And ask yourself the right question: not «how much have I lost?», but **«if I didn't own it, would I buy it today at this price?»**.",
+     "key": "Losing hurts twice as much as winning feels good: that's why we cling on to losers.",
      "tip": "The market doesn't care what you paid. Decide based on what you know today."
     }
    ]
@@ -47,12 +98,37 @@
    "title": "The disposition effect",
    "steps": [
     {
-     "title": "What it is",
-     "body": "The tendency to **sell winners too early** and **hold on to losers too long**.\n\nShefrin and Statman named it in 1985. Odean (1998) measured it across thousands of accounts: investors sold their winning shares much sooner than their losing ones."
+     "texts": [
+      "Laura needs €2,000",
+      "Laura",
+      "I need €2,000 and I own two stocks.",
+      "A is at **+20 %**. B is at **−20 %** and has just reported bad results.",
+      "Which one should she sell?",
+      "A, which is in the green",
+      "That's the **disposition effect**: selling the one doing well and keeping the one getting worse.",
+      "Whichever has the worse outlook, green or red",
+      "That's it! If B has got worse and A hasn't, maybe it's time to sell B.",
+      "Both, and stop investing",
+      "Running away from everything doesn't fix the bias: it just swaps it for another.",
+      "Odean (1998): the winners that were sold went on to perform **better** than the losers that were kept."
+     ]
     },
     {
-     "title": "The worst part",
-     "body": "The winners they sold went on to perform **better**, on average, than the losers they kept.\n\nIt's the exact opposite of the classic advice: **«cut your losses and let your profits run»**. In R terms: taking profits at +0.5R and letting losses run to −2R wrecks the expectancy of any system."
+     "texts": [
+      "Let your profits run",
+      "Real candles. This trader puts the stop far away and the target very close: cutting profits short and letting losses run. Fix it.",
+      "You're right 60 % of the time, but you close wins at +0.5R and let losses run to −2R. Do you make or lose money?",
+      "Make: you're right more than half the time",
+      "Lose: each miss wipes out four wins",
+      "Break even",
+      "0.6 × 0.5 − 0.4 × 2 = **−0.5R** per trade. The disposition effect sinks a good win rate.",
+      "Put the target at least twice as far away as the stop and see what happened.",
+      "**Cut your losses and let your profits run**: the exit is decided before you get in, not when you see the first bit of green.",
+      "Target hit! You let the profit run.",
+      "The stop was hit: a loss decided in advance. That's how you cut it.",
+      "Your target is closer than your stop: you win little when you're right.",
+      "Place the stop and the target, and see what happened"
+     ]
     },
     {
      "title": "How to protect yourself",
@@ -66,18 +142,39 @@
    "title": "FOMO and herd behaviour",
    "steps": [
     {
-     "title": "The fear of missing out",
-     "body": "**FOMO** kicks in when something shoots up and everyone seems to be making money. It's the engine of bubbles: dotcoms in 1999, crypto in 2017 and 2021, *meme stocks* in 2021.\n\n**Herd behaviour** is following the crowd. But once **everyone** has already bought, there's nobody left to keep pushing the price up."
+     "texts": [
+      "Live through the dotcom fever",
+      "December 1998. The internet is going to change everything and your friends only talk about tech stocks. You put **€10,000** into the Nasdaq 100, with real data.",
+      "Go all the way to the end, whether you sell or not.",
+      "It rose **156 %** in 15 months; then it fell **83 %** from the peak and didn't get back there until 2015. **When everyone's talking about something that «only goes up», the risk is usually at its highest.**",
+      "You've sold. See what happens next…",
+      "From euphoria to collapse. And nobody warned you about the top.",
+      "More than double! Now everyone wants in.",
+      "Hit start. You can sell whenever you like"
+     ]
+    },
+    {
+     "texts": [
+      "«Get in today!»",
+      "Álex",
+      "This share has gone up **200 %** in two weeks.",
+      "Everyone in the group is in. Get in today or you'll miss out!",
+      "It's not in your plan. What do you do?",
+      "Buy now, before it goes up even more",
+      "That's **FOMO**: buying without knowing what the company does, after a huge rise.",
+      "Wait 48 hours and ask myself if I'd buy it if nobody were talking about it",
+      "That's it! If it still makes sense in two days, you decide calmly.",
+      "Take out a loan to go in big",
+      "Debt plus FOMO: the classic recipe for the worst losses.",
+      "When **everyone** has already bought, there's nobody left to keep pushing it up.",
+      "Urgency is FOMO's fuel. Take away the time pressure and it fizzles out."
+     ]
     },
     {
      "title": "Warning signs",
-     "body": "• You hear about it from friends or social media accounts that had never invested before.\n• The reason is «**it's going up a lot**», not what the asset actually does.\n• You feel **urgency**: «if I don't buy today, I'll miss it».\n• People say «**this time it's different**»."
-    },
-    {
-     "title": "How to protect yourself",
-     "body": "• **The 48-hour rule:** any purchase outside your plan waits two days.\n• A **speculation limit** written into your plan.\n• Ask yourself: **«Would I buy it if nobody were talking about it?»**",
+     "body": "• You hear about it from friends or social media accounts that had never invested before.\n• The reason is «**it's going up a lot**», not what the asset actually does.\n• You feel **urgency**: «if I don't buy today, I'll miss it».\n• People say «**this time it's different**».\n\nAntidotes: the **48-hour rule** and a **speculation limit** written into your plan.",
      "key": "When everyone's talking about something that «only goes up», the risk is usually at its highest.",
-     "tip": "If your hairdresser recommends a cryptocurrency, it might already be too late."
+     "tip": "If your hairdresser recommends a cryptocurrency, it may already be too late."
     }
    ]
   },
@@ -85,16 +182,37 @@
    "title": "Overconfidence",
    "steps": [
     {
-     "title": "We think we know more than we do",
-     "body": "• Barber and Odean (2000): the 20 % of households that traded most earned **11.4 %** a year versus **17.9 %** for the market.\n• In another study (2001), men traded **45 % more** than women and cut their net returns by more.\n\nThe main cause: overconfidence."
+     "texts": [
+      "Got a good eye?",
+      "Four real charts, with no name or date. Up or down? Keep count of how many you get right.",
+      "Play all four rounds.",
+      "With 4 tries, getting them all right by chance happens **more than once in twenty**. To know if you have an edge you need **lots of logged trades**.",
+      "Three right… feeling like a genius already? Careful.",
+      "Done. With 4 tries, your score says next to nothing.",
+      "One hit or miss on its own means nothing. Keep going.",
+      "Look at the chart: up or down?"
+     ]
+    },
+    {
+     "texts": [
+      "The one who trades most",
+      "Marcos",
+      "Carla",
+      "I've made 40 trades this month. I know the market inside out.",
+      "I've made 2. The rest is my automatic contribution.",
+      "In the long run, who usually earns more?",
+      "Marcos: the more he trades, the more he earns",
+      "Barber and Odean (2000): the households that traded most earned **11.4 %** a year.",
+      "Carla: trading a lot tends to be costly",
+      "That's it! The heaviest traders: **11.4 %** a year. The market: **17.9 %**.",
+      "Same: it all comes down to luck",
+      "No: the heaviest traders earned 11.4 %; the market, 17.9 %.",
+      "The main cause: **overconfidence**. We think we know more than we do."
+     ]
     },
     {
      "title": "Luck or skill",
-     "body": "A few winning trades early on are the most dangerous thing that can happen to a beginner: they **mistake luck for skill**, raise their risk and break their own rules.\n\nCalling 4 out of 4 coin tosses happens 6.25 % of the time: among lots of people, there will always be some «geniuses»."
-    },
-    {
-     "title": "Try it yourself",
-     "body": "Now you're going to try to guess four real charts. Whatever your score, remember: with so few attempts, the result says almost nothing about your skill.",
+     "body": "A few early wins are the most dangerous thing for a beginner: they **mistake luck for skill**, raise their risk and break their own rules.\n\nAmong lots of people, there will always be some «geniuses» by pure luck.",
      "key": "Getting it right two or three times doesn't make you an expert: with few trades, luck is in charge.",
      "tip": "Track your results in your journal and compare them with an index. Your memory always says you were right."
     }
@@ -104,16 +222,50 @@
    "title": "Anchoring and confirmation",
    "steps": [
     {
-     "title": "Anchoring",
-     "body": "Fixating on an irrelevant reference number: «It was at €100 and now it's at €60: it's cheap».\n\nThe past price says nothing about today's value. And a close relative: the **sunk cost**: «I've already lost €3,000, I can't sell now». What's lost won't come back: decide from today."
+     "texts": [
+      "Until he gets his €40 back",
+      "Pablo",
+      "I bought at **€40**. After some bad results, it's now worth **€25**.",
+      "I'm not selling until I'm back at €40. I've already lost too much.",
+      "What's happening to Pablo?",
+      "Nothing: the price will come back",
+      "It may or may not. The €40 only matters to him, not to the market.",
+      "He's anchored to his purchase price",
+      "Exactly! It's **anchoring**, with a bit of sunk cost and loss aversion.",
+      "He should buy more to bring down his average price",
+      "Averaging down because of an anchor means putting in more money without reviewing the business.",
+      "The question: with €25 in cash, would he buy this share today, knowing what he knows?",
+      "Honestly… no."
+     ]
     },
     {
-     "title": "Confirmation bias",
-     "body": "Once you buy, you only read the good news, follow people who agree with you and dismiss the criticism. When the warning signs arrive, you don't see them.\n\nAntidotes: write down **three reasons you could be wrong** and deliberately look for the **opposite view**."
+     "texts": [
+      "Which bias is talking?",
+      "Each sentence sounds reasonable… until you see the bias behind it. Which one is it?",
+      "Anchoring",
+      "Sunk cost",
+      "Confirmation",
+      "«It was at €120; at €70 it's a steal»",
+      "The €120 is an anchor: it says nothing about today's value.",
+      "«I've already lost €3,000, I can't sell now»",
+      "What's lost doesn't come back by holding on: decide from today.",
+      "«I only follow people who think like me»",
+      "That way you won't see the warning signs when they come.",
+      "«It's down 50 %: it's half price»",
+      "It may have fallen because the business is worth half… or less.",
+      "«I've put so much into it that I'm not giving up now»",
+      "The time and money already spent don't change what makes sense today.",
+      "«I mute anyone who criticises the company»",
+      "You only read what agrees with you: that's confirmation.",
+      "Label the six sentences.",
+      "The past price says nothing about value, **what's lost doesn't come back** and people agreeing with you doesn't make you right. Antidote: write down **three reasons you could be wrong**.",
+      "Hint: is it looking at a price, at what's already lost, or only at like-minded opinions?",
+      "Anchoring, sunk cost or confirmation?"
+     ]
     },
     {
      "title": "Your takeaway",
-     "body": "Value things with today's data (earnings, debt, business), not with the price you paid or the price it used to be.",
+     "body": "Value things with today's data (earnings, debt, business), not with the price you paid or the price it used to be. And deliberately look for the **opposite view**.",
      "key": "Falling a lot doesn't make something cheap. People agreeing with you doesn't make you right.",
      "tip": "If you only read people who agree with you, you're not analysing: you're cheering yourself on."
     }
@@ -123,18 +275,34 @@
    "title": "Recency and survivorship",
    "steps": [
     {
-     "title": "Recency",
-     "body": "Giving too much weight to whatever happened last. After two years of rises, believing the market «always goes up»; after a fall, that it «will always go down».\n\nAntidote: look at **decades of data**, not months. Japan's Nikkei took 34 years to get back to its 1989 peak; the S&P 500 recovered within months after covid."
+     "texts": [
+      "Live through 1929",
+      "January 1929. The US stock market has been rising for years and «everyone» is buying. You put **€10,000** into the S&P 500, with real data.",
+      "Go all the way to the end, whether you sell or not.",
+      "From the September 1929 peak it fell **86 %** and didn't get back there until 1954, not counting dividends. **What just happened doesn't predict what's next**: look at decades of data, not months.",
+      "You've sold. See how long it took to come back…",
+      "More than half gone. And in 1929 everyone thought it would keep rising.",
+      "It just keeps going up. Will it always be like this?",
+      "Hit start. You can sell whenever you like"
+     ]
     },
     {
-     "title": "Survivorship bias",
-     "body": "Only seeing the ones that survived. Funds that close vanish from the statistics; traders who lose everything don't post videos.\n\nBessembinder: since 1926, just **4 %** of US shares accounted for the market's entire net gain, and **more than half** returned less than Treasury bills."
-    },
-    {
-     "title": "Your takeaway",
-     "body": "The success stories you see are a rigged sample: you don't see the thousands who did the same thing and failed.",
-     "key": "What's recent and what's visible aren't the whole story.",
-     "tip": "Before copying a winner, ask how many people did the same thing and lost."
+     "texts": [
+      "Ten get-rich stories",
+      "Iván",
+      "Look: ten people who got rich with a small crypto.",
+      "If they could, so can I.",
+      "Which conclusion is right?",
+      "It's a sure way to get rich",
+      "You only see the ones who won. The thousands who lost don't post about it.",
+      "I can't see the ones who did the same and lost everything",
+      "That's **survivorship bias**! And in crypto you can lose everything you put in.",
+      "The best thing is to copy whoever made the most",
+      "You're copying a survivor without knowing how many fell along the way.",
+      "A fact from Bessembinder, using US shares since 1926:",
+      "Just **4 %** of them accounted for the market's entire net gain.",
+      "And **more than half** returned less than Treasury bills."
+     ]
     }
    ]
   },
@@ -152,29 +320,6 @@
     "About 10 points"
    ],
    "explanation": "9.9 % for the funds versus 8.7 % for their investors, from buying and selling at the wrong time."
-  },
-  "u27l1-2": {
-   "prompt": "Which system is making the decision?",
-   "options": [
-    "Working out your system's expectancy from your journal",
-    "Reviewing your plan before trading",
-    "Buying because everyone's talking about it",
-    "Selling everything after reading an alarming headline",
-    "Dodging an e-scooter coming straight at you"
-   ],
-   "explanation": "System 1 is useful for survival; for investing, it pays to force yourself to use system 2.",
-   "right": [
-    "System 1 (fast and emotional)",
-    "System 2 (slow and analytical)"
-   ]
-  },
-  "u27l1-3": {
-   "prompt": "Kahneman's system 1 is slow and analytical.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "It's the fast, intuitive and emotional one. The slow, analytical one is system 2."
   },
   "u27l1-4": {
    "prompt": "Picture €10,000 over 10 years at 9.9 % a year (the fund) or at 8.7 % (its investors). How big is the difference at the end? (round to the nearest euro)",
@@ -204,15 +349,6 @@
     "Much less: around −5.8 % versus +8.5 %"
    ],
    "explanation": "They bought at the peaks and sold in the dips."
-  },
-  "u27l1-7": {
-   "prompt": "Quick: where was the investor gap biggest?",
-   "options": [
-    "In the calmest ones",
-    "In the most volatile funds",
-    "It was the same across all of them"
-   ],
-   "explanation": "−2.1 points in the most volatile versus −0.4 in the calm ones: more scares, more mistakes."
   },
   "u27l1-8": {
    "prompt": "What tends to put system 1 in charge? Select all that apply.",
@@ -261,39 +397,11 @@
    ],
    "explanation": "Kahneman and Tversky, 1979."
   },
-  "u27l2-2": {
-   "prompt": "You're offered a coin toss: heads you win €150, tails you lose €100. What's the expected gain per toss?",
-   "options": [],
-   "explanation": "0.5 × 150 − 0.5 × 100 = 75 − 50 = +€25.",
-   "unit": "€"
-  },
-  "u27l2-3": {
-   "prompt": "With that same coin (heads +€150, tails −€100), most people say no. Why?",
-   "options": [
-    "Because coins are rigged",
-    "Because the bet loses money on average",
-    "Because losing €100 hurts more than winning €150 feels good"
-   ],
-   "explanation": "Loss aversion makes us turn down decisions with a positive expected value.",
-   "feedback": [
-    "It's a fair coin: the explanation is in our heads.",
-    "On average it wins €25 per toss: the maths isn't the problem.",
-    "Exactly: loss aversion outweighs the positive expected value."
-   ]
-  },
   "u27l2-4": {
    "prompt": "If a loss hurts twice as much as a gain of the same size, how much would you need to win to emotionally make up for a loss of €100?",
    "options": [],
    "explanation": "€100 × 2 = €200: that's why many people only accept bets where the gain is double.",
    "unit": "€"
-  },
-  "u27l2-5": {
-   "prompt": "Loss aversion makes us more reckless when we're losing.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "It's the «double up to win it back» move: we take on more risk to avoid locking in the loss."
   },
   "u27l2-6": {
    "prompt": "Marta has a share that's down 30 %. The company has cut its forecasts and lost its biggest customer. She says: «I'm not selling until I'm back to even». What question should she ask herself?",
@@ -308,15 +416,6 @@
     "Good: that way she decides with today's information, not her purchase price.",
     "Focusing on what's been lost only feeds loss aversion."
    ]
-  },
-  "u27l2-7": {
-   "prompt": "Quick: which habit makes myopic loss aversion worse?",
-   "options": [
-    "Checking your long-term portfolio several times a day",
-    "Reviewing it once a quarter",
-    "Automating your contributions"
-   ],
-   "explanation": "The more often you look, the more often you see red and the more you want to tinker with it."
   },
   "u27l2-8": {
    "prompt": "The key question: «If I didn't own it, would I ____ it today at this price?».",
@@ -375,33 +474,6 @@
    "options": [],
    "explanation": "Setting the stop before you get in stops loss aversion from convincing you to hold on «until it comes back» if the price falls."
   },
-  "u27l3-3": {
-   "prompt": "Another purchase with €10,000 and 1 % risk. Choose your stop and amount, and think: if it goes your way, would you exit out of fear or according to your plan?",
-   "options": [],
-   "explanation": "If the trade goes your way, the plan decides the exit, not the urge to lock in a small gain."
-  },
-  "u27l3-4": {
-   "prompt": "Laura needs €2,000. She has share A up +20 % and share B down −20 % (company B has just reported poor results). What do most people do, and what would make sense?",
-   "options": [
-    "Sell A because it's in profit",
-    "Decide based on each business's future, not on whether it's green or red",
-    "Sell both and stop investing"
-   ],
-   "explanation": "What matters is what you expect from each asset, not your purchase price.",
-   "feedback": [
-    "That's what almost everyone does: the disposition effect. She keeps the one that's getting worse.",
-    "Good: if B has got worse and A hasn't, the logical move may be the exact opposite of what your gut says.",
-    "Running away from everything doesn't fix the bias: it just swaps it for another one."
-   ]
-  },
-  "u27l3-5": {
-   "prompt": "According to Odean, the winning shares investors sold went on to do worse than the losing ones they kept.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "It was the other way round: the winners they sold kept performing better on average."
-  },
   "u27l3-6": {
    "prompt": "A system is right 60 % of the time, but out of fear you close winners at +0.5R and let losers run to −2R. What's your expectancy?",
    "options": [],
@@ -432,14 +504,6 @@
     "profits"
    ],
    "explanation": "The disposition effect does the exact opposite."
-  },
-  "u27l3-9": {
-   "prompt": "Always selling what's in the green and holding what's in the red is a good way to manage a portfolio.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "That's the disposition effect: you cut what's working and feed what isn't."
   },
   "u27l3-10": {
    "prompt": "What do you tell Lumi?",
@@ -495,29 +559,6 @@
    "explanation": "Neither the hype on social media nor the earlier rises tell you what's coming. That's why the 48-hour rule exists.",
    "horizon": "the next 10 sessions"
   },
-  "u27l4-4": {
-   "prompt": "A friend messages you: «This share is up 200 % in two weeks. Everyone in the group is in. Get in today!». It's not in your plan. What do you do?",
-   "options": [
-    "Take out a loan to go in big",
-    "Buy now, before it rises further",
-    "Apply the 48-hour rule and ask myself whether I'd buy it if nobody were talking about it"
-   ],
-   "explanation": "Urgency is FOMO's fuel: taking the time pressure off the decision is the antidote.",
-   "feedback": [
-    "Debt + FOMO is the classic recipe for the worst losses.",
-    "You're buying out of FOMO: without knowing what the company does and after a huge rise.",
-    "Good: if it still makes sense in two days and fits within your speculation limit, you decide calmly."
-   ]
-  },
-  "u27l4-5": {
-   "prompt": "Which rule helps against FOMO?",
-   "options": [
-    "Double your position if it keeps rising",
-    "Buy straight away so you don't miss the rise",
-    "Wait 48 hours on any purchase that isn't in your plan"
-   ],
-   "explanation": "Two days is enough for the urgency to pass."
-  },
   "u27l4-6": {
    "prompt": "Which are warning signs of a bubble? Select all that apply.",
    "options": [
@@ -527,23 +568,6 @@
     "«This time it's different»"
    ],
    "explanation": "Steady earnings aren't a sign of a bubble: euphoria and a lack of reasons are."
-  },
-  "u27l4-7": {
-   "prompt": "Once everyone has already bought something, it usually has plenty of room left to rise.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "If everyone has already bought, there's nobody left to keep pushing the price up."
-  },
-  "u27l4-8": {
-   "prompt": "Quick: which question protects you from herd behaviour?",
-   "options": [
-    "How much has it gone up this week?",
-    "Would I buy it if nobody were talking about it?",
-    "What are they saying on the forum?"
-   ],
-   "explanation": "It separates value from what the crowd is doing."
   },
   "u27l4-9": {
    "prompt": "Match each bubble with its era.",
@@ -579,56 +603,11 @@
     "If I don't get in today, I'll miss out."
    ]
   },
-  "u27l5-1": {
-   "prompt": "Round 1 of 4. Real chart, no name or date. Does it go up or down over the following sessions?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "One right or wrong answer on its own means nothing. Note it down and carry on: at the end you'll see what your score means.",
-   "horizon": "the next 10 sessions"
-  },
-  "u27l5-2": {
-   "prompt": "Round 2 of 4. Up or down?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "Two rounds is still a tiny sample, however you're doing.",
-   "horizon": "the next 10 sessions"
-  },
-  "u27l5-3": {
-   "prompt": "Round 3 of 4. Up or down?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "If you've got three right, careful not to feel like a genius; if you've got three wrong, you're not a disaster either. It's noise.",
-   "horizon": "the next 10 sessions"
-  },
-  "u27l5-4": {
-   "prompt": "Round 4 of 4. Up or down?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "With four attempts, getting them all right by chance happens more than once in twenty. To know whether you have an edge, you need lots of recorded trades.",
-   "horizon": "the next 10 sessions"
-  },
   "u27l5-5": {
    "prompt": "If you guess at random (50 %), what's the probability of getting 4 out of 4 right?",
    "options": [],
    "explanation": "0.5⁴ = 0.0625 → 6.25 %. If 1,000 people try, about 62 will get them all right without knowing anything.",
    "unit": "%"
-  },
-  "u27l5-6": {
-   "prompt": "According to Barber and Odean (2000), how much a year did the 20 % of households that traded most earn compared with the market?",
-   "options": [
-    "25 % versus 17.9 % for the market",
-    "11.4 % versus 17.9 % for the market",
-    "The same as the market"
-   ],
-   "explanation": "Trading more, out of overconfidence, cost them over 6 points a year."
   },
   "u27l5-7": {
    "prompt": "Quick: according to Barber and Odean (2001), how much more did men trade than women?",
@@ -671,22 +650,6 @@
    ],
    "explanation": "Raising your risk after a win is exactly what overconfidence does."
   },
-  "u27l6-1": {
-   "prompt": "Match each bias with the phrase that gives it away.",
-   "options": [
-    "Anchoring",
-    "Sunk cost",
-    "Confirmation",
-    "Gambler's fallacy"
-   ],
-   "explanation": "Each phrase sounds reasonable… until you spot the bias behind it.",
-   "right": [
-    "«I only follow people who think like me»",
-    "«It's fallen seven days in a row, it's bound to go up tomorrow»",
-    "«I've already lost so much, I can't sell now»",
-    "«It was at €120, at €70 it's a steal»"
-   ]
-  },
   "u27l6-2": {
    "prompt": "Match each bias with its antidote.",
    "options": [
@@ -712,20 +675,6 @@
    ],
    "explanation": "The €120 is an anchor: it says nothing about the company's current value."
   },
-  "u27l6-4": {
-   "prompt": "Pablo bought at €40. Now it's worth €25 after poor results and a forecast cut. He says: «I'm not selling until it's back at €40». What's going on?",
-   "options": [
-    "He's anchored to the €40 (with a side of sunk cost and loss aversion)",
-    "He should buy more to bring his average price down",
-    "He's right: the price will come back"
-   ],
-   "explanation": "The price you paid isn't information about the future.",
-   "feedback": [
-    "Exactly. He should ask himself: if I had €25 in cash today, would I buy this share knowing what I know?",
-    "Averaging down because of an anchor is putting in more money without reviewing the business.",
-    "It might come back or it might not; the €40 only matters to him, not to the market."
-   ]
-  },
   "u27l6-5": {
    "prompt": "Ana has bought a share. Since then she only reads bullish forums and mutes anyone who criticises the company. What habit would you recommend?",
    "options": [
@@ -739,23 +688,6 @@
     "She doesn't need to sell: she needs to look at the other side.",
     "Good vibes and bad decisions: she won't see the warning signs."
    ]
-  },
-  "u27l6-6": {
-   "prompt": "The price you paid for a share affects what the market will do.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "The market doesn't care what you paid: it only matters to you."
-  },
-  "u27l6-7": {
-   "prompt": "Quick: «I've already put €3,000 into this, I can't quit now». Which bias is this?",
-   "options": [
-    "Sunk cost",
-    "FOMO",
-    "Overconfidence"
-   ],
-   "explanation": "What you've invested won't come back by carrying on: decide from today."
   },
   "u27l6-8": {
    "prompt": "Before buying, write down three reasons you could be ____.",
@@ -805,15 +737,6 @@
    "options": [],
    "explanation": "After years of rises, everyone thought it would carry on. The late-1989 peak took 34 years to get back to."
   },
-  "u27l7-3": {
-   "prompt": "September 1929: the US stock market has been rising for years and «everyone» is buying, many with borrowed money. What did the S&P 500 do next?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "The fall reached over 80 %. What had happened in the previous years didn't predict what was coming.",
-   "horizon": "the next three years"
-  },
   "u27l7-4": {
    "prompt": "After two years of strong rises, Laura believes the market «always goes up» and puts all her savings in. Which bias is she mainly showing?",
    "options": [
@@ -822,28 +745,6 @@
     "Recency"
    ],
    "explanation": "She's giving too much weight to what has just happened (and there's probably some overconfidence too)."
-  },
-  "u27l7-5": {
-   "prompt": "According to Bessembinder, most US shares since 1926 returned more than Treasury bills.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "More than half returned less. Just 4 % accounted for the market's entire net gain."
-  },
-  "u27l7-6": {
-   "prompt": "You see ten people on social media who got rich from a small cryptocurrency. Which conclusion is correct?",
-   "options": [
-    "Buying small cryptos is a safe way to get rich",
-    "It's survivorship bias: I don't see the people who did the same and lost everything",
-    "If ten of them managed it, so can I"
-   ],
-   "explanation": "Success stories are a biased sample: the graveyard of those who didn't make it is missing.",
-   "feedback": [
-    "You only see the ones who won. The thousands who lost don't post about it.",
-    "Good: visible winners say nothing about your odds. And with crypto you can lose everything.",
-    "Ten winners among hundreds of thousands isn't a high probability."
-   ]
   },
   "u27l7-7": {
    "prompt": "After a 30 % fall, Marta is convinced the market «can only go down now» and wants to sell her long-term index fund. What would you tell her?",
@@ -858,15 +759,6 @@
     "Selling low and buying back high is the most expensive way to invest.",
     "That's recency in reverse. The big falls of 2009 and 2020 were followed by strong recoveries."
    ]
-  },
-  "u27l7-8": {
-   "prompt": "Quick: what is survivorship bias?",
-   "options": [
-    "Keeping an emergency fund",
-    "Panic selling",
-    "Only looking at those who survived and forgetting those who failed"
-   ],
-   "explanation": "Closed funds and wiped-out traders don't show up in the statistics or on social media."
   },
   "u27l7-9": {
    "prompt": "Where can survivorship bias be hiding? Select all that apply.",

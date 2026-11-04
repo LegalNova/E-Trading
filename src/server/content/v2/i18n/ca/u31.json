@@ -9,16 +9,65 @@
    "title": "La base de l'estalvi i els seus trams",
    "steps": [
     {
-     "title": "On tributen les teves inversions",
-     "body": "Interessos, dividends i guanys per vendre accions, fons, ETF o cripto van a la **base de l'estalvi** de l'IRPF. La seva escala (2026, territori comú):\n\n• Fins a 6.000 €: **19 %**\n• De 6.000 a 50.000 €: **21 %**\n• De 50.000 a 200.000 €: **23 %**\n• De 200.000 a 300.000 €: **27 %**\n• Més de 300.000 €: **30 %**"
+     "texts": [
+      "Per trams, no tot de cop",
+      "Vens amb guanys. El guany va a la **base de l'estalvi** de l'IRPF, que tributa **per trams**: cada part, al seu tipus.",
+      "Guanyes 8.000 € venent accions. Com tributen?",
+      "Els 8.000 € al 21 %",
+      "Els primers 6.000 € al 19 % i la resta al 21 %",
+      "Res fins als 50.000 €",
+      "6.000 × 19 % + 2.000 × 21 % = **1.560 €**. Els primers 6.000 € paguen sempre el 19 %.",
+      "Busca a partir de quin guany l'últim euro paga un 23 %.",
+      "Pujar de tram **només encareix el que passa del límit**. Amb 50.500 € de guany, l'últim euro paga un 23 %, però el teu tipus mitjà és del 20,8 %.",
+      "Aquest 23 % només s'aplica al que passa de 50.000 €.",
+      "Els primers 6.000 € continuen pagant un 19 %.",
+      "Apuja el guany i mira els trams"
+     ]
     },
     {
-     "title": "Per trams, no tot de cop",
-     "body": "L'escala és **progressiva per trams**: cada part paga el seu tipus. Amb un guany de 8.000 €:\n\n6.000 × 19 % + 2.000 × 21 % = 1.140 + 420 = **1.560 €**.\n\nEls 2.000 € del segon tram paguen el 21 %; els primers 6.000 €, sempre el 19 %."
+     "texts": [
+      "El fons de l'Ana",
+      "Ana",
+      "El meu fons ha guanyat 15.000 € aquest any! No he venut res.",
+      "Em tocarà pagar un dineral a la declaració de la renda, oi?",
+      "Quant paga l'Ana per aquest guany?",
+      "Uns 3.000 €, per l'escala de l'estalvi",
+      "Només pagaria si vengués. Sense vendre, no hi ha guany per declarar.",
+      "Res fins que vengui o reemborsi",
+      "Exacte! Aquest impost ajornat continua invertint per a ella: **diferiment fiscal**.",
+      "El 19 % de tot el que val el fons",
+      "Ni tan sols en vendre es paga per tot: només pel guany.",
+      "I els dividends i els interessos?",
+      "Aquests tributen l'any que els cobres, amb una retenció del 19 % a compte."
+     ]
     },
     {
-     "title": "Només quan vens",
-     "body": "Els dividends i els interessos tributen l'any que els cobres (amb una retenció del 19 % a compte). Els guanys, **només quan vens**: mentre mantens, encara que la teva cartera pugi molt, no pagues. És el **diferiment fiscal**. El País Basc i Navarra tenen normes pròpies; consulta sempre l'Agència Tributària.",
+     "texts": [
+      "Estalvi o general?",
+      "L'IRPF té dues bases. On va cada ingrés?",
+      "Base de l'estalvi",
+      "Base general",
+      "Dividends d'accions",
+      "Rendiment dels teus estalvis: base de l'estalvi.",
+      "Interessos d'un dipòsit",
+      "També és rendiment del capital: base de l'estalvi.",
+      "Guany en vendre un ETF",
+      "Guany per una venda: base de l'estalvi.",
+      "La teva nòmina",
+      "Rendiment del treball: base general.",
+      "El rescat d'un pla de pensions",
+      "Quan el rescates, tributa com a rendiment del treball.",
+      "Guany en vendre bitcoin",
+      "Cripto venuda amb guany: base de l'estalvi.",
+      "Classifica els sis ingressos.",
+      "Interessos, dividends i guanys per vendre accions, fons, ETF o cripto van a la **base de l'estalvi**. La nòmina i el rescat d'un pla de pensions, a la **general**.",
+      "Ve de la teva feina o dels teus estalvis?",
+      "Classifica cada ingrés"
+     ]
+    },
+    {
+     "title": "L'escala de l'estalvi (2026)",
+     "body": "• Fins a 6.000 €: **19 %**\n• De 6.000 a 50.000 €: **21 %**\n• De 50.000 a 200.000 €: **23 %**\n• De 200.000 a 300.000 €: **27 %**\n• Més de 300.000 €: **30 %**\n\nÉs l'escala del territori comú. El País Basc i Navarra tenen normes pròpies; consulta sempre l'Agència Tributària.",
      "key": "Les inversions tributen a la base de l'estalvi, del 19 % al 30 %, i els guanys només quan vens.",
      "tip": "Hisenda cobra quan vens amb guanys, no quan la teva cartera puja."
     }
@@ -28,17 +77,60 @@
    "title": "Guanys, pèrdues i compensació",
    "steps": [
     {
-     "title": "Com es calcula el guany",
-     "body": "**Guany = valor de venda − valor de compra**, i tots dos inclouen les despeses (comissions).\n\nSi vas comprar en diverses vegades, s'aplica el **FIFO**: es consideren venudes primer les que vas comprar primer.\n\nEn cripto, canviar una moneda per una altra (bitcoin per ether) també compta com a venda."
+     "texts": [
+      "Les pèrdues també compten",
+      "Aquest any guanyes **5.000 €** venent unes accions i en perds **3.000 €** amb unes altres.",
+      "Per quant tributes?",
+      "Per 5.000 €: les pèrdues no compten",
+      "Per 2.000 €",
+      "Per 8.000 €",
+      "Les pèrdues per vendes **es resten** dels guanys per vendes del mateix any: 5.000 − 3.000 = 2.000 €.",
+      "Ara guanyes 8.000 €. Quanta pèrdua cal perquè tot tributi al 19 %?",
+      "Una pèrdua declarada **et rebaixa els impostos**: amb 8.000 € de guany, 2.000 € de pèrdua deixen la base en 6.000 €, tota al 19 %. Per això convé declarar també les vendes amb pèrdues.",
+      "Base a zero: aquest any no pagues res per les teves vendes.",
+      "Part del teu guany ja paga un 21 %.",
+      "Mou el guany i la pèrdua"
+     ]
     },
     {
-     "title": "Compensar pèrdues",
-     "body": "1. Les **pèrdues per vendes** es resten dels **guanys per vendes** del mateix any.\n2. Si sobren pèrdues, es resten dels **rendiments** (dividends, interessos) fins a un **25 %** d'aquests.\n3. El que quedi es trasllada als **4 anys següents**.\n\nGuanyes 5.000 € amb unes accions i en perds 3.000 € amb unes altres: tributes per 2.000 €."
+     "texts": [
+      "És una venda per a Hisenda?",
+      "Només tributa el que **vens o canvies**. Això genera un guany o una pèrdua aquest any?",
+      "Sí: és una venda",
+      "Encara no tributa",
+      "Vens accions amb benefici",
+      "Guany = valor de venda − valor de compra, amb les comissions incloses.",
+      "Canvies bitcoin per ether sense passar per euros",
+      "És una permuta: compta com a venda.",
+      "Vens un ETF amb pèrdues",
+      "Una pèrdua realitzada: et serveix per compensar.",
+      "Compres més accions",
+      "Comprar no tributa.",
+      "El teu fons puja un 20 % i no vens",
+      "Guany latent: no tributa fins que vens.",
+      "Passes euros del banc al bròker",
+      "Moure els teus diners no és guanyar res.",
+      "Classifica els sis moviments.",
+      "**Guany = venda − compra**, amb les comissions de totes dues. Si vas comprar en diverses vegades, s'aplica el **FIFO**: es venen primer les que vas comprar primer.",
+      "Ha sortit alguna cosa de la teva cartera a canvi d'una altra?",
+      "Classifica cada moviment"
+     ]
     },
     {
-     "title": "El que t'emportes",
-     "body": "Una pèrdua ben declarada no és només una mala notícia: et rebaixa els impostos aquest any o en els quatre següents. Per això convé declarar també les vendes amb pèrdues.",
-     "key": "Les pèrdues realitzades es compensen amb els guanys i, amb límits, durant quatre anys."
+     "texts": [
+      "La pèrdua que sobra",
+      "Pablo",
+      "Aquest any he guanyat 4.000 € amb unes accions i n'he perdut 6.000 € amb unes altres.",
+      "També he cobrat 4.000 € de dividends. Els 2.000 € de pèrdua que sobren es perden?",
+      "Què li dius?",
+      "Sí, es perden",
+      "No: la llei permet aprofitar-los de dues maneres.",
+      "Una part es resta dels dividends i la resta, dels anys següents",
+      "Exacte: fins al **25 %** dels dividends; la resta, en **4 anys**.",
+      "Hisenda li torna 2.000 € en efectiu",
+      "No hi ha devolució: la pèrdua només redueix el que tributes.",
+      "Passats aquests 4 anys, la pèrdua que no hagis aprofitat caduca."
+     ]
     }
    ]
   },
@@ -46,16 +138,49 @@
    "title": "La regla dels dos mesos",
    "steps": [
     {
-     "title": "Per a què serveix",
-     "body": "Sense aquesta regla, algú podria vendre amb pèrdues el 30 de desembre només per pagar menys i tornar a comprar el mateix el 2 de gener.\n\nL'article 33.5 de la Llei de l'IRPF ho impedeix: una pèrdua **no es pot aplicar encara** si compres **valors homogenis** (els mateixos) en els **dos mesos anteriors o posteriors** a la venda."
+     "texts": [
+      "El truc de desembre",
+      "Leo",
+      "Tinc un truc: el 30 de desembre venc amb pèrdues i així pago menys.",
+      "I el 2 de gener torno a comprar el mateix. Llestos.",
+      "Funciona?",
+      "Sí: la venda va ser al desembre",
+      "Torna a comprar el mateix abans de dos mesos: la llei ho impedeix.",
+      "No: la pèrdua queda ajornada fins que vengui el que ha tornat a comprar",
+      "Exacte. No la perd, però haurà d'esperar.",
+      "No: és il·legal i el multaran",
+      "Vendre no és il·legal. El que passa és que encara no pot fer servir la pèrdua.",
+      "És la **regla dels dos mesos**: article 33.5 de la Llei de l'IRPF.",
+      "Mira dos mesos **abans i després** de vendre. Si no cotitza, un any."
+     ]
     },
     {
-     "title": "Què passa amb la pèrdua",
-     "body": "• No es perd: queda **ajornada** i s'aplica quan vens els valors que has tornat a comprar.\n• Per als valors que **no cotitzen** en mercats regulats, el termini és d'**un any**.\n• Només afecta les **pèrdues**: si vens amb guanys i tornes a comprar, tributes amb normalitat."
+     "texts": [
+      "S'aplica la regla?",
+      "Una pèrdua s'ha d'esperar si compres **valors homogenis** (els mateixos) en els dos mesos anteriors o posteriors a la venda.",
+      "La pèrdua s'ajorna",
+      "No s'aplica",
+      "Vens un ETF amb pèrdues i tornes a comprar el mateix 3 setmanes després",
+      "Dins dels dos mesos posteriors.",
+      "Vens amb pèrdues i tornes a comprar el mateix 3 mesos després",
+      "Fora de la finestra: la pèrdua compta ja.",
+      "Vas comprar més de la mateixa acció un mes abans de vendre amb pèrdues",
+      "La finestra també mira enrere.",
+      "Vens amb guanys i tornes a comprar l'endemà",
+      "Només afecta les pèrdues: tributes amb normalitat.",
+      "Vens una acció amb pèrdues i en compres una d'una altra empresa",
+      "No són valors homogenis.",
+      "Vens amb pèrdues accions que no cotitzen i en tornes a comprar al cap de 6 mesos",
+      "Per als valors no cotitzats, el termini és d'un any.",
+      "Decideix els sis casos.",
+      "La regla **no castiga: ajorna**. Només afecta les pèrdues, i la pèrdua s'aplica quan vens els valors que has tornat a comprar.",
+      "Dues preguntes: és una pèrdua? Tornes a comprar el mateix dins de la finestra?",
+      "Decideix cada cas"
+     ]
     },
     {
      "title": "Optimització legal",
-     "body": "Abans d'acabar l'any, alguns inversors realitzen pèrdues per compensar guanys, respectant els dos mesos (per exemple, canviant a un producte diferent que repliqui un índex semblant). És legal, però la fiscalitat no hauria de ser mai el motiu principal d'una inversió.",
+     "body": "Abans d'acabar l'any, alguns inversors realitzen pèrdues per compensar guanys, respectant els dos mesos (per exemple, canviant a un producte diferent que repliqui un índex semblant).\n\nÉs legal, però la fiscalitat no hauria de ser mai el motiu principal d'una inversió.",
      "key": "Si tornes a comprar el mateix en dos mesos, la pèrdua s'espera."
     }
    ]
@@ -64,17 +189,60 @@
    "title": "Traspassos de fons sense pagar impostos",
    "steps": [
     {
-     "title": "El traspàs",
-     "body": "A Espanya pots passar els teus diners d'un **fons d'inversió** a un altre **sense pagar impostos**, sempre que no passin pel teu compte corrent i es faci pel procediment de traspàs. Es demana a l'entitat de destinació. Es mantenen la data i el preu de compra originals: pagues només quan reemborses definitivament."
+     "texts": [
+      "Del fons car al barat",
+      "Marta",
+      "Tinc 20.000 € en un fons del banc que cobra un 1,8 %. Hi porto 6.000 € de guany.",
+      "Em vull passar a un indexat al 0,2 %. Com ho faig?",
+      "Què li dius?",
+      "Reemborsa i compra l'indexat amb els diners",
+      "Pagaria 6.000 × 19 % = **1.140 €** sense cap necessitat.",
+      "Demana un traspàs des de l'entitat de l'indexat",
+      "Això! Canvia de fons sense pagar res ara.",
+      "Queda't al car per no pagar impostos",
+      "No cal: el traspàs existeix justament per a això.",
+      "En un **traspàs**, els diners van de fons a fons sense passar pel teu compte.",
+      "Mantens la data i el preu de compra. Pagues només quan reemborses de debò."
+     ]
     },
     {
-     "title": "Fons davant d'ETF",
-     "body": "• **Fons:** traspàs sense tributar. Pots reequilibrar o canviar de gestora sense cost fiscal.\n• **ETF:** encara que per dins siguin fons, tributen **a cada venda** com una acció (llevat d'una excepció tècnica molt limitada).\n\nPer a qui manté anys sense tocar res, la diferència és petita; per a qui mou la cartera, importa."
+     "texts": [
+      "Sense pagar impostos?",
+      "El traspàs funciona entre **fons d'inversió**. Pots fer això sense tributar ara?",
+      "Sí, per traspàs",
+      "No, tributa",
+      "Rebalancejar entre dos fons indexats",
+      "De fons a fons: traspàs.",
+      "Vendre un ETF per comprar-ne un altre",
+      "Encara que per dins siguin fons, els ETF tributen a cada venda.",
+      "Canviar de gestora de fons",
+      "Es demana a la gestora de destinació i no tributa.",
+      "Vendre accions per comprar un fons",
+      "Vendre accions sempre tributa.",
+      "Passar d'un fons de borsa a un de monetari",
+      "Tots dos són fons: traspàs.",
+      "Reemborsar al teu compte i comprar un altre fons",
+      "Si els diners passen pel teu compte, ja no és un traspàs.",
+      "Classifica els sis moviments.",
+      "**Fons:** traspàs sense tributar. **ETF:** tributen a cada venda, com una acció (llevat d'una excepció tècnica molt limitada). Si mantens anys sense tocar res, la diferència és petita; si mous la cartera, importa.",
+      "És de fons a fons i sense passar pel teu compte?",
+      "Classifica cada moviment"
+     ]
     },
     {
-     "title": "El valor d'ajornar",
-     "body": "Si avui no pagues 950 € d'impostos, aquests 950 € continuen invertits. Amb un 7 % anual (exemple, no promesa), en 20 anys serien uns 3.680 €. Al final pagaràs impostos, però sobre una bola més grossa.",
-     "key": "El traspàs entre fons és com canviar de carril sense pagar peatge."
+     "texts": [
+      "El valor d'ajornar",
+      "Si traspasses en lloc de reemborsar, els **950 €** d'impostos que no pagues avui continuen invertits (7 % anual, exemple, no promesa).",
+      "En quant es converteixen aquests 950 € en 20 anys?",
+      "En uns 1.900 €",
+      "En uns 3.700 €",
+      "En uns 19.000 €",
+      "Al 7 %, els diners es dupliquen més o menys cada 10 anys: dues vegades en 20. Són **3.676 €**.",
+      "Porta'ls a 20 anys.",
+      "Ajornar impostos també **es compon**. Al final pagaràs, però sobre una bola més grossa: el traspàs és com canviar de carril sense pagar peatge.",
+      "Gairebé quatre vegades més! I sense fer res.",
+      "Arrossega els anys"
+     ]
     }
    ]
   },
@@ -82,16 +250,47 @@
    "title": "Dividends i doble imposició",
    "steps": [
     {
-     "title": "Dos països, un dividend",
-     "body": "Un dividend d'una empresa dels EUA paga primer allà: un **15 %** si has signat el formulari **W-8BEN** amb el teu bròker, o un **30 %** si no. Després tributa a Espanya (19-30 %).\n\nPer no pagar dues vegades, a l'IRPF dedueixes la **doble imposició internacional**: com a màxim el % del conveni (15 % amb els EUA) i mai més del que pagaries a Espanya."
+     "texts": [
+      "El formulari W-8BEN",
+      "El teu bròker",
+      "Cobraràs dividends d'empreses dels EUA. Vols signar el formulari W-8BEN?",
+      "Què fas?",
+      "El signo",
+      "Bé: els EUA et retindran un **15 %**, el màxim del conveni.",
+      "Passo, més paperassa",
+      "Sense el formulari, els EUA retenen un **30 %**, i aquí només en dedueixes el 15 %.",
+      "Ja el signaré l'any que ve",
+      "Mentrestant, cada dividend perd un 30 % en origen.",
+      "I després torno a pagar a Espanya?",
+      "Tributa a Espanya (19-30 %), però dedueixes el que has pagat allà: la **doble imposició internacional**.",
+      "Com a màxim el % del conveni, i mai més del que pagaries aquí."
+     ]
     },
     {
-     "title": "L'exemple",
-     "body": "Dividend brut de 1.000 € dels EUA amb W-8BEN:\n\n• Els EUA retenen 150 €.\n• A Espanya et tocarien 190 € (19 %).\n• Dedueixes 150 € → pagues **40 €** més a Espanya.\n\nTotal: 190 €, com un dividend espanyol. Sense W-8BEN, els EUA retindrien 300 € i només podries deduir-ne 150 €."
+     "texts": [
+      "Aquest any o en vendre?",
+      "El que **cobres** tributa quan ho cobres. El que **puja sense vendre**, no. Quan tributa cada cosa?",
+      "Tributa aquest any",
+      "No fins que vens",
+      "Dividend cobrat d'una acció",
+      "El cobres: tributa aquest any.",
+      "Un ETF d'acumulació que reinverteix els dividends",
+      "Reinverteix per dins: no tributes fins que vens.",
+      "Interessos d'un dipòsit",
+      "Els cobres: tributen aquest any.",
+      "Un fons que puja un 20 % sense vendre'l",
+      "Guany latent: fins que vens, res.",
+      "Dividend d'un ETF de distribució",
+      "Te'l paga: tributa quan el cobres.",
+      "Classifica els cinc casos.",
+      "Els **ETF i fons europeus d'acumulació** reinverteixen els dividends per dins i no tributes fins que vens. I el dividend no és gratis: el preu baixa més o menys en aquesta quantitat.",
+      "T'arriben els diners al compte o es queden dins?",
+      "Classifica cada cas"
+     ]
     },
     {
-     "title": "La drecera dels fons",
-     "body": "Alguns països retenen més del que permet el conveni (Suïssa, un 35 %) i recuperar l'excés exigeix tràmits allà. Els **ETF i fons europeus d'acumulació** ho gestionen per dins i no tributes fins que vens. I recorda: el dividend no és gratis, el preu baixa més o menys en aquesta quantitat.",
+     "title": "Quan et retenen de més",
+     "body": "Alguns països retenen més del que permet el conveni: Suïssa, un **35 %**. Recuperar l'excés exigeix tràmits allà.\n\nEls ETF i fons europeus d'acumulació ho gestionen per dins.",
      "key": "Signa el W-8BEN si cobres dividends dels EUA, i dedueix la doble imposició a la teva declaració."
     }
    ]
@@ -100,16 +299,50 @@
    "title": "Cripto i models 720 i 721",
    "steps": [
     {
-     "title": "Com tributa la cripto",
-     "body": "Vendre cripto per euros o **canviar-la per una altra cripto** són vendes fiscals: el guany o la pèrdua va a la base de l'estalvi (19-30 %). Comprar i mantenir no tributa.\n\nRecorda: la cripto és molt volàtil, no està protegida com un dipòsit i **pots perdre la totalitat del que has invertit**."
+     "texts": [
+      "Quin model toca?",
+      "Si tens a l'estranger **més de 50.000 €**, Hisenda ho vol saber. Quin model toca a 31 de desembre?",
+      "Model 720",
+      "Model 721",
+      "Cap",
+      "70.000 € en accions en un bròker estranger",
+      "Valors a l'estranger per més de 50.000 €: model 720.",
+      "80.000 € en cripto en un exchange estranger",
+      "Cripto custodiada fora per més de 50.000 €: model 721.",
+      "200.000 € en un bròker espanyol",
+      "És a Espanya: aquests models són per al que tens fora.",
+      "30.000 € en un compte d'un banc estranger",
+      "No arriba a 50.000 €.",
+      "Un pis a França de 90.000 €",
+      "El 720 també cobreix immobles a l'estranger.",
+      "20.000 € en cripto en un exchange estranger",
+      "No arriba a 50.000 €.",
+      "Classifica els sis casos.",
+      "El **720** cobreix comptes, valors i immobles a l'estranger; el **721**, la cripto custodiada fora. Són **informatius**: presentar-los no et costa impostos.",
+      "Primer: és fora d'Espanya? Després: passa de 50.000 €?",
+      "Classifica cada cas"
+     ]
     },
     {
-     "title": "Models informatius",
-     "body": "• **Model 720:** si tens a l'estranger més de **50.000 €** en comptes, en **valors** (per exemple, accions en un bròker estranger) o en immobles. Es presenta de gener a març i, després, només si puja més de 20.000 € o deixes de tenir-los.\n• **Model 721:** cripto custodiada per entitats **a l'estranger** per més de **50.000 €** a 31 de desembre."
+     "texts": [
+      "Deu canvis, zero euros",
+      "Bruno",
+      "Aquest any he fet deu canvis entre criptos. Mai no he passat a euros.",
+      "Així que no tinc res a declarar, oi?",
+      "Què li dius?",
+      "És clar: sense euros no hi ha guany",
+      "Cada canvi entre criptos és una venda per a Hisenda.",
+      "Cada canvi és una venda: calcula el guany o la pèrdua de cadascun",
+      "Exacte. Porta un registre amb la data i el valor en euros de cada operació.",
+      "Declara només el que més ha guanyat",
+      "Cal declarar-los tots. I les pèrdues també t'ajuden a compensar.",
+      "Comprar i mantenir no tributa. Vendre o canviar, sí: del 19 % al 30 %.",
+      "I recorda: la cripto **es pot perdre sencera**. No està protegida com un dipòsit."
+     ]
     },
     {
      "title": "Informar no és pagar",
-     "body": "Aquests models són **informatius**: no pagues per presentar-los. El Tribunal de Justícia de la UE va anul·lar el 2022 les sancions desproporcionades del 720, però l'obligació d'informar continua.",
+     "body": "• **Model 720:** de gener a març. Després, només si el valor puja més de 20.000 € o deixes de tenir aquests béns.\n• **Model 721:** cripto custodiada a l'estranger per més de 50.000 € a 31 de desembre.\n\nEl Tribunal de Justícia de la UE va anul·lar el 2022 les sancions desproporcionades del 720, però **l'obligació d'informar continua**.",
      "key": "Les inversions a l'estranger per sobre de 50.000 € s'han de declarar, encara que no generin impostos.",
      "tip": "Un bròker estranger pot ser barat, però la paperassa amb Hisenda va a càrrec teu."
     }
@@ -126,16 +359,6 @@
    "options": [],
    "explanation": "6.000 × 19 % + 2.000 × 21 % = 1.140 + 420 = 1.560 €.",
    "unit": "€"
-  },
-  "u31l1-2": {
-   "prompt": "A la base de l'estalvi, els primers 6.000 € tributen al ____ %.",
-   "options": [
-    "15",
-    "21",
-    "25",
-    "19"
-   ],
-   "explanation": "De 6.000 € a 50.000 € es passa al 21 %."
   },
   "u31l1-3": {
    "prompt": "Guany de 20.000 € per la venda d'un fons. Quant pagues?",
@@ -170,49 +393,11 @@
     "21 %"
    ]
   },
-  "u31l1-6": {
-   "prompt": "Si guanyes 7.000 € venent accions, els 7.000 € tributen al 21 %.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Només els 1.000 € per sobre de 6.000 € paguen el 21 %: 6.000 × 19 % + 1.000 × 21 % = 1.350 €."
-  },
-  "u31l1-7": {
-   "prompt": "A quina base de l'IRPF tributa cada cosa?",
-   "options": [
-    "El rescat d'un pla de pensions",
-    "La teva nòmina",
-    "Guany en vendre bitcoin",
-    "Dividends d'accions",
-    "Interessos d'un dipòsit",
-    "Guany en vendre un ETF"
-   ],
-   "explanation": "El pla de pensions tributa com a rendiment del treball quan el rescates, a la base general.",
-   "right": [
-    "Base de l'estalvi",
-    "Base general"
-   ]
-  },
   "u31l1-8": {
    "prompt": "Amb un guany de 10.000 € pagues 1.980 €. Quin és el teu tipus mitjà? (un decimal)",
    "options": [],
    "explanation": "1.980 ÷ 10.000 = 0,198 → 19,8 %. El tipus mitjà sempre queda per sota del tipus de l'últim tram.",
    "unit": "%"
-  },
-  "u31l1-9": {
-   "prompt": "El fons de l'Anna ha guanyat 15.000 € aquest any, però no ha venut res. Quant paga per aquest guany a la pròxima declaració?",
-   "options": [
-    "3.000 € aproximadament",
-    "El 19 % del que valgui el fons",
-    "Res: només tributarà quan vengui o reemborsi"
-   ],
-   "explanation": "Els guanys latents no tributen. Comprar i mantenir també estalvia impostos.",
-   "feedback": [
-    "Només pagaria si vengués o reemborsés. Mentre no vengui, no hi ha cap guany per declarar.",
-    "Ni tan sols quan vens es paga sobre tot el valor, només sobre el guany.",
-    "Exacte. Aquest impost ajornat continua invertint per a ella: és el diferiment fiscal."
-   ]
   },
   "u31l1-10": {
    "prompt": "Quins territoris tenen una normativa d'IRPF pròpia?",
@@ -235,39 +420,10 @@
    "explanation": "FIFO: vens les primeres, les de 50 €. 10 × (90 − 50) = 400 €.",
    "unit": "€"
   },
-  "u31l2-3": {
-   "prompt": "Aquest any guanyes 5.000 € venent unes accions i en perds 3.000 € amb unes altres. Per quant tributes?",
-   "options": [
-    "Per 2.000 €",
-    "Per 5.000 €",
-    "Per 8.000 €"
-   ],
-   "explanation": "Les pèrdues es resten dels guanys del mateix any: 5.000 − 3.000 = 2.000 €."
-  },
   "u31l2-4": {
    "prompt": "En el cas anterior, quant pagues per aquests 2.000 € de guany net?",
    "options": [],
    "explanation": "2.000 × 19 % = 380 €. Sense compensar, hauries pagat per 5.000 €: 950 €.",
-   "unit": "€"
-  },
-  "u31l2-5": {
-   "prompt": "En Pablo guanya 4.000 € amb unes accions, en perd 6.000 € amb unes altres i cobra 4.000 € de dividends. Què passa amb els 2.000 € de pèrdua que li sobren?",
-   "options": [
-    "Es perden",
-    "Hisenda li torna 2.000 € en efectiu",
-    "En compensa 1.000 € amb els dividends (el 25 % de 4.000 €) i trasllada 1.000 € als 4 anys següents"
-   ],
-   "explanation": "Les pèrdues sobrants es compensen fins al 25 % dels dividends i interessos, i la resta es trasllada quatre anys.",
-   "feedback": [
-    "No es perden: la llei permet aprofitar-les de dues maneres.",
-    "No hi ha devolució de la pèrdua: només redueix el que tributes.",
-    "Exacte: primer fins al 25 % dels rendiments i la resta, als quatre anys següents."
-   ]
-  },
-  "u31l2-6": {
-   "prompt": "En el cas d'en Pablo, quants euros de pèrdua li queden per als anys següents?",
-   "options": [],
-   "explanation": "Li sobren 2.000 €; compensa el 25 % de 4.000 € = 1.000 € amb els dividends. En queden 1.000 € per als pròxims 4 anys.",
    "unit": "€"
   },
   "u31l2-7": {
@@ -279,14 +435,6 @@
    ],
    "explanation": "Passats quatre anys, la pèrdua no aprofitada caduca."
   },
-  "u31l2-8": {
-   "prompt": "Les pèrdues que no puguis compensar es poden aplicar en els 4 anys següents.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Passat aquest termini, caduquen."
-  },
   "u31l2-9": {
    "prompt": "Si vas comprar en diverses vegades, es consideren venudes primer les primeres que vas comprar: mètode ____.",
    "options": [
@@ -297,15 +445,6 @@
    ],
    "explanation": "First in, first out: el primer que entra és el primer que surt."
   },
-  "u31l2-10": {
-   "prompt": "Canvies bitcoin per ether sense passar per euros. Fiscalment…",
-   "options": [
-    "Està exempt perquè és cripto",
-    "No passa res fins que tornis a euros",
-    "És una venda que pot generar guany o pèrdua"
-   ],
-   "explanation": "És una permuta: tributa la diferència entre el que et va costar el bitcoin i el que valia quan el vas canviar."
-  },
   "u31l3-1": {
    "prompt": "Què fa la regla dels dos mesos?",
    "options": [
@@ -314,28 +453,6 @@
     "Ajorna la pèrdua si compres els mateixos valors dos mesos abans o després de vendre'ls"
    ],
    "explanation": "Evita que algú vengui només per pagar menys i torni a comprar de seguida."
-  },
-  "u31l3-2": {
-   "prompt": "Si s'aplica la regla dels dos mesos, la pèrdua es perd per sempre.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Només s'ajorna: l'aplicaràs quan venguis els valors que vas tornar a comprar."
-  },
-  "u31l3-3": {
-   "prompt": "La Laura ven un ETF amb pèrdues el 10 de desembre i torna a comprar el mateix ETF el 5 de gener. Pot restar aquesta pèrdua a la declaració d'aquest any?",
-   "options": [
-    "No: queda ajornada fins que vengui l'ETF que ha tornat a comprar",
-    "Sí, perquè és un ETF i no una acció",
-    "Sí, la venda va ser al desembre"
-   ],
-   "explanation": "Dins dels dos mesos posteriors, tornar a comprar els mateixos valors ajorna la pèrdua.",
-   "feedback": [
-    "Exacte. No la perd, però haurà d'esperar.",
-    "La regla s'aplica igual a accions i a ETF cotitzats.",
-    "Va tornar a comprar els mateixos valors menys de dos mesos després: la regla ho impedeix de moment."
-   ]
   },
   "u31l3-4": {
    "prompt": "En Bruno va comprar més accions d'una empresa el 15 de febrer. L'1 de març ven amb pèrdues les que ja tenia. Què passa?",
@@ -350,29 +467,6 @@
     "També compta el que vas comprar en els dos mesos anteriors a la venda.",
     "Això mateix: la finestra és de dos mesos enrere i endavant."
    ]
-  },
-  "u31l3-5": {
-   "prompt": "S'aplica la regla dels dos mesos?",
-   "options": [
-    "Vas comprar més de la mateixa acció un mes abans de vendre amb pèrdues",
-    "Vens amb guanys i tornes a comprar l'endemà",
-    "Vens amb pèrdues i tornes a comprar el mateix 3 mesos després",
-    "Vens un ETF amb pèrdues i tornes a comprar el mateix 3 setmanes després",
-    "Vens una acció amb pèrdues i compres una altra empresa diferent"
-   ],
-   "explanation": "Només afecta les pèrdues i els valors homogenis dins de la finestra de dos mesos.",
-   "right": [
-    "Sí, la pèrdua s'ajorna",
-    "No s'aplica"
-   ]
-  },
-  "u31l3-6": {
-   "prompt": "Per als valors que no cotitzen en mercats regulats, el termini és d'un any.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Per als cotitzats, dos mesos; per als no cotitzats, un any."
   },
   "u31l3-7": {
    "prompt": "La regla s'aplica si compres valors ____, és a dir, els mateixos que vas vendre.",
@@ -399,24 +493,6 @@
     "És a l'article 33.5 de la Llei de l'IRPF"
    ],
    "explanation": "Pots vendre quan vulguis; el que canvia és quan pots fer servir la pèrdua."
-  },
-  "u31l3-10": {
-   "prompt": "Què li contestes a la Lumi?",
-   "options": [
-    "És il·legal i et poden multar per vendre",
-    "Amb la regla dels dos mesos, aquesta pèrdua quedaria ajornada",
-    "Genial, tothom ho hauria de fer"
-   ],
-   "explanation": "La regla no castiga: ajorna la pèrdua fins que vens de debò.",
-   "feedback": [
-    "Vendre no és il·legal: simplement encara no podràs fer servir la pèrdua.",
-    "Exacte! O esperes dos mesos, o la pèrdua espera que venguis el que has tornat a comprar.",
-    "Aquest truc és just el que la llei desactiva."
-   ],
-   "lines": [
-    "Tinc un truc 😏",
-    "Avui venc amb pèrdues per pagar menys i demà torno a comprar el mateix."
-   ]
   },
   "u31l4-1": {
    "prompt": "Relaciona cada producte amb la seva fiscalitat.",
@@ -449,28 +525,6 @@
    ],
    "explanation": "L'impost s'ajorna fins al reemborsament definitiu."
   },
-  "u31l4-4": {
-   "prompt": "La Marta té 20.000 € en un fons del banc amb un 1,8 % de comissions i 6.000 € de guany. Vol passar-se a un indexat al 0,2 %. Com ho fa?",
-   "options": [
-    "Es queda al fons car per no pagar impostos",
-    "Demana un traspàs des de l'entitat del fons indexat",
-    "Reemborsa, rep els diners al compte i compra l'indexat"
-   ],
-   "explanation": "El traspàs permet deixar un fons car sense pagar impostos pel camí.",
-   "feedback": [
-    "No cal: el traspàs existeix justament per a això.",
-    "Molt bé: canvia de fons sense pagar res ara i comença a estalviar comissions.",
-    "Pagaria 6.000 × 19 % = 1.140 € sense necessitat. Li convenia el traspàs."
-   ]
-  },
-  "u31l4-5": {
-   "prompt": "Els ETF tenen el mateix règim de traspàs sense tributar que els fons.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "En general, no: cada venda d'un ETF tributa com la d'una acció."
-  },
   "u31l4-6": {
    "prompt": "Ordena com funciona un traspàs entre fons.",
    "options": [
@@ -481,29 +535,6 @@
    ],
    "explanation": "L'inicies a la destinació; tu no has de vendre res a l'origen."
   },
-  "u31l4-7": {
-   "prompt": "Si els diners passen pel teu compte corrent, ja no és un traspàs i tributa.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Seria un reemborsament i una compra nova: el guany tributa."
-  },
-  "u31l4-8": {
-   "prompt": "Ho pots fer sense tributar gràcies al traspàs?",
-   "options": [
-    "Vendre un ETF per comprar-ne un altre",
-    "Vendre accions per comprar un fons",
-    "Canviar de gestora de fons",
-    "Reequilibrar entre dos fons indexats",
-    "Passar d'un fons de borsa a un de monetari"
-   ],
-   "explanation": "El traspàs funciona entre fons d'inversió, no amb ETF ni accions.",
-   "right": [
-    "Sí, per traspàs",
-    "No, tributa"
-   ]
-  },
   "u31l4-9": {
    "prompt": "Pagar l'impost més tard i que aquests diners continuïn invertint s'anomena ____ fiscal.",
    "options": [
@@ -513,12 +544,6 @@
     "diferiment"
    ],
    "explanation": "És legal i és el gran avantatge del traspàs."
-  },
-  "u31l4-10": {
-   "prompt": "Els 950 € d'impostos que no vas pagar continuen invertits 20 anys al 7 % (exemple, no promesa). En quant es converteixen? (arrodoneix)",
-   "options": [],
-   "explanation": "950 × 1,07²⁰ ≈ 3.676 €. Ajornar impostos també es capitalitza.",
-   "unit": "€"
   },
   "u31l5-1": {
    "prompt": "Cobres un dividend brut de 1.000 € d'una empresa dels EUA i has signat el W-8BEN. Quants euros retenen els EUA?",
@@ -541,28 +566,6 @@
    ],
    "explanation": "I a Espanya només pots deduir fins al 15 % del conveni: la resta la perds, llevat que la reclamis allà."
   },
-  "u31l5-4": {
-   "prompt": "Mateix dividend de 1.000 € però sense W-8BEN: els EUA retenen 300 €, a Espanya et toquen 190 € i només en dedueixes 150 €. Quant pagues en total entre els dos països?",
-   "options": [],
-   "explanation": "300 als EUA + (190 − 150) = 40 a Espanya = 340 €, davant de 190 € amb el formulari.",
-   "unit": "€"
-  },
-  "u31l5-5": {
-   "prompt": "La deducció per doble imposició pot ser més gran que l'impost que pagaries a Espanya per aquest dividend.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Té dos límits: el % del conveni i el que et correspondria pagar a Espanya."
-  },
-  "u31l5-6": {
-   "prompt": "Quan una empresa paga un dividend, el seu preu sol baixar més o menys en aquesta quantitat.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Passes a tenir diners en efectiu i una mica menys en accions. I aquests diners tributen."
-  },
   "u31l5-7": {
    "prompt": "Relaciona cada terme amb el seu significat.",
    "options": [
@@ -579,15 +582,6 @@
     "Formulari per a la retenció reduïda dels EUA"
    ]
   },
-  "u31l5-8": {
-   "prompt": "Ràpid: quin tipus de fons reinverteix els dividends sense que tributis fins que vens?",
-   "options": [
-    "D'acumulació",
-    "De distribució",
-    "Monetari"
-   ],
-   "explanation": "Per això solen ser més eficients mentre acumules patrimoni."
-  },
   "u31l5-9": {
    "prompt": "En Pablo cobra dividends d'una empresa suïssa. Suïssa li reté un 35 % i el conveni amb Espanya només en permet un 15 %. Què passa amb la diferència?",
    "options": [
@@ -600,21 +594,6 @@
     "Exacte: el 20 % de més s'ha de demanar a l'Hisenda suïssa.",
     "A Espanya només pot deduir fins al 15 % del conveni.",
     "No és automàtic: s'ha de sol·licitar."
-   ]
-  },
-  "u31l5-10": {
-   "prompt": "Tributa aquest any o no fins que vens?",
-   "options": [
-    "Un ETF d'acumulació que reinverteix dividends",
-    "Un fons que puja un 20 % sense vendre'l",
-    "Interessos d'un dipòsit",
-    "Dividend d'un ETF de distribució",
-    "Dividend cobrat d'una acció"
-   ],
-   "explanation": "El que cobres tributa quan ho cobres; el que puja sense vendre, no.",
-   "right": [
-    "Tributa aquest any",
-    "No tributa fins que vens"
    ]
   },
   "u31l6-1": {
@@ -650,30 +629,6 @@
    "explanation": "Compra: 3.000 €. Venda: 6.000 €. Guany: 3.000 € × 19 % = 570 €.",
    "unit": "€"
   },
-  "u31l6-5": {
-   "prompt": "Quin model informatiu toca? (a 31 de desembre)",
-   "options": [
-    "200.000 € en un bròker espanyol",
-    "30.000 € en un compte d'un banc estranger",
-    "80.000 € en cripto en un exchange estranger",
-    "70.000 € en accions en un bròker estranger",
-    "Un immoble a França de 90.000 €"
-   ],
-   "explanation": "El 720 cobreix comptes, valors i immobles a l'estranger; el 721, la cripto custodiada fora. Per sota de 50.000 € per categoria, cap.",
-   "right": [
-    "Model 720",
-    "Model 721",
-    "Cap"
-   ]
-  },
-  "u31l6-6": {
-   "prompt": "Com que es van anul·lar les sancions del model 720, ja no s'ha de presentar.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "El TJUE va anul·lar el 2022 les sancions desproporcionades, no l'obligació d'informar."
-  },
   "u31l6-7": {
    "prompt": "Quan es presenta el model 720?",
    "options": [
@@ -682,28 +637,6 @@
     "De gener a març"
    ],
    "explanation": "De l'1 de gener al 31 de març, sobre la situació a 31 de desembre de l'any anterior."
-  },
-  "u31l6-8": {
-   "prompt": "En Bruno ha fet aquest any deu canvis entre criptos i mai no ha passat a euros. Diu que no té res per declarar. Què li dius?",
-   "options": [
-    "Té raó: sense euros no hi ha guany",
-    "Que cada canvi és una venda i ha de calcular el guany o la pèrdua de cadascun",
-    "Que només declari el que més li va fer guanyar"
-   ],
-   "explanation": "En cripto, cada permuta tributa. Portar un registre t'estalvia problemes.",
-   "feedback": [
-    "Cada canvi entre criptos és una venda fiscal.",
-    "Exacte. Li convé portar un registre de cada operació amb la data i el valor en euros.",
-    "Cal declarar-los tots; les pèrdues també el poden ajudar a compensar."
-   ]
-  },
-  "u31l6-9": {
-   "prompt": "Després de presentar el 720, només cal tornar-lo a presentar si el valor puja més de 20.000 € o deixes de tenir aquests béns.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Aquesta és la regla general per als anys següents."
   },
   "u31l6-10": {
    "prompt": "El model informatiu per a cripto custodiada a l'estranger per més de 50.000 € és el ____.",

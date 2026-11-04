@@ -9,18 +9,49 @@
    "title": "The trading plan",
    "steps": [
     {
-     "title": "The parts of a plan",
-     "body": "1. **Capital:** how much you set aside (a small % of your wealth).\n2. **Markets and timeframe:** what you trade and on which chart.\n3. **Entry:** specific, testable rules.\n4. **Stop:** where and why.\n5. **Size:** 1 % risk per trade.\n6. **Exit:** target and time-based exit.\n7. **What you don't do.**\n8. **Limits:** when you stop.\n9. **Review:** every 20 trades."
+     "texts": [
+      "Rule or wish?",
+      "A plan says how much time you put in, what you trade, when you enter, where the stop goes, how much you risk, how you exit and when you stop. Do these sentences work?",
+      "Concrete rule",
+      "Vague phrase",
+      "I enter if it bounces off the 50-session average with a reversal candle and above-average volume",
+      "It can be checked: two people reading it would do the same thing.",
+      "I enter when it looks clear",
+      "What's «clear»? It'll mean something different every day.",
+      "Stop below the low of the reversal candle, at least 1.5 ATR away",
+      "It says exactly where the stop goes and why.",
+      "I get out when it feels like enough",
+      "The emotion of the moment will decide, not the plan.",
+      "If it hasn't reached 1R within 15 sessions, I get out",
+      "A time-based exit, measurable and not up for debate.",
+      "Sort the five sentences.",
+      "A concrete rule can be checked: **two people reading it would do the same thing**. If it isn't written like that, it isn't a plan: it's a hunch.",
+      "Hint: could you check afterwards whether you followed it?",
+      "Rule or wish? Sort each sentence"
+     ]
     },
     {
-     "title": "Specific rules, not wishes",
-     "body": "«I'll get in when it looks clear» isn't a rule. This is:\n\n• «Price above the 200-session moving average, pullback to a support and a reversal candle with above-average volume.»\n• «Stop below the low of the reversal candle, at least 1.5 ATR away.»\n• «Half off at 2R; the rest with a stop below the latest higher low. If it hasn't reached 1R within 15 sessions, I get out.»"
+     "texts": [
+      "Up 8 % in an hour",
+      "Pablo",
+      "My plan says: I only enter on a reversal candle at a support.",
+      "A share shoots up 8 % in an hour. It doesn't meet any of his rules.",
+      "It's getting away from me! Do I get in?",
+      "What do you tell Pablo?",
+      "Get in: it's a once-in-a-lifetime chance",
+      "That's FOMO. And if it goes wrong, he won't know whether his plan works.",
+      "Don't get in, and log it in your journal as a temptation",
+      "That's it! There'll be plenty of chances. A plan only works if you follow it.",
+      "Get in with a little, just in case",
+      "A little or a lot, it's still breaking the plan.",
+      "Write the plan when you're calm. You'll need it when you're not."
+     ]
     },
     {
      "title": "Limits protect you from yourself",
-     "body": "«I don't trade on earnings day. I don't average down. I don't move the stop against me. If I lose 6 % in a month, I stop until the next month. If the account falls 15 % from its peak, I halve my risk and review the plan.»",
+     "body": "«I don't trade on earnings day. I don't average down. I don't move the stop against me. If I lose 6 % in a month, I stop until the next month. If the account falls 15 % from its peak, I halve my risk and review the plan.»\n\nAnd every 20 trades, a review of the stats.",
      "key": "If it isn't written down, it isn't a plan: it's a hunch.",
-     "tip": "Write the plan when you're calm. You'll need it when you're not."
+     "tip": "Size of each trade: 1 % risk or less while you're learning."
     }
    ]
   },
@@ -28,17 +59,48 @@
    "title": "The trading journal",
    "steps": [
     {
-     "title": "What to write down",
-     "body": "For each trade:\n\n• Date, asset and direction.\n• Reason for entry according to the plan.\n• Entry, stop, target and what 1R is worth.\n• Size.\n• Result in € and in R.\n• Did you follow the plan? If not, why?\n• How you felt going in and coming out.\n• A screenshot of the chart."
+     "texts": [
+      "What Marta's journal said",
+      "Marta",
+      "I've got 40 trades logged in my journal.",
+      "The ones that followed the plan: **+0.3R** on average. The ones where I broke it: **−0.6R**.",
+      "What should Marta change?",
+      "Her system: it doesn't work",
+      "When she follows it, she wins. Changing it would throw away what works.",
+      "Stop breaking the plan",
+      "Exactly! The problem is the exceptions. That's where she can improve.",
+      "Drop the journal, it stresses her out",
+      "Without the journal, she'd never have found out.",
+      "My memory told me the exceptions were my best trades…",
+      "Your memory keeps the wins and forgets the mistakes. The journal doesn't."
+     ]
     },
     {
-     "title": "What you get from the journal",
-     "body": "• Win rate.\n• Average win and loss in R.\n• **Expectancy** per trade.\n• Longest losing streak and maximum drawdown.\n• Results of trades **within** the plan versus those that broke it (usually an eye-opener)."
+     "texts": [
+      "Go through your journal",
+      "On each line of the journal you note the reason, the entry, the stop, the size, the result in R and how you felt. Did you follow the plan?",
+      "Followed the plan",
+      "Broke the plan",
+      "I entered at the support on a reversal candle, as the plan says",
+      "Entry reason as per the plan: that way you can measure whether the system works.",
+      "I rushed in: «it was getting away from me»",
+      "Rushing in is the fingerprint of FOMO. Note down the emotion.",
+      "I moved the stop against me «to give it room»",
+      "Moving the stop against you turns a small loss into a big one.",
+      "I sold half at 2R, as the plan said",
+      "The exit was decided before getting in.",
+      "I doubled my size after two losses",
+      "Size is always the same, win or lose.",
+      "Check the five trades.",
+      "Comparing trades **inside and outside the plan** is usually the most revealing part of a journal: it tells you whether breaking the rules costs you money.",
+      "Hint: did the plan decide, or the emotion of the moment?",
+      "Inside or outside the plan? Check each line"
+     ]
     },
     {
-     "title": "Key takeaway",
-     "body": "Example entry: 12/11, buy at €4.10, stop €3.95, target €4.40, 1R = €100, 666 shares. Result: +€180, +1.8R. Followed the plan: yes. Feeling: calm.",
-     "key": "The journal turns your trades into data you can improve with.",
+     "title": "A journal entry",
+     "body": "12/11, buy at €4.10, stop €3.95, target €4.40, 1R = €100, 666 shares. Result: +€180, +1.8R. Followed the plan: yes. Emotion: calm.\n\nFrom this you get your win rate, average win and loss in R, **expectancy** and streaks.",
+     "key": "A journal turns your trades into data you can improve with.",
      "tip": "Your journal shows you the mistakes your memory would rather forget."
     }
    ]
@@ -47,23 +109,43 @@
    "title": "Losing streaks and drawdown",
    "steps": [
     {
-     "title": "Streaks are normal",
-     "body": "Simulating 20,000 sequences of 100 trades:\n\n• With a **50 %** win rate, the typical longest losing streak is **6 in a row**.\n• With **40 %** (like a profitable system that wins 2R), it's **7**, and almost half the time there are streaks of **8 or more**."
+     "texts": [
+      "Ten losses in a row",
+      "Streaks are normal: with a 40 % win rate, almost half the time there are **8 or more losses in a row** in 100 trades. How much can your account take?",
+      "You risk 5 % per trade. After 10 losses in a row, how much is left of your €10,000?",
+      "About €9,500",
+      "About €6,000",
+      "Nothing: you lose it all",
+      "You're left with **€5,987**: each loss is 5 % of what's left. At 1 %, you'd have €9,044.",
+      "Find the risk at which, after 10 losses, you still have more than €9,000.",
+      "At **1 %**, 8 losses in a row are −7.7 %; at 5 %, −33.7 %. **Risk little so you can ride out the streaks.**",
+      "This way a bad streak won't knock you out of the game.",
+      "At this risk, a normal streak takes a big bite.",
+      "Lower the risk per trade"
+     ]
+    },
+    {
+     "texts": [
+      "Seven losses in a row",
+      "Laura",
+      "I've got 120 trades in my journal, with positive expectancy.",
+      "And now I'm on **7 losses in a row**. My system doesn't work any more.",
+      "What should Laura do?",
+      "Switch systems",
+      "With a 40 % win rate, 7 in a row is the typical streak over 100 trades.",
+      "Stick to the plan and check she's applying the rules properly",
+      "Nice! If she hasn't broken any rules, she should let the statistics do their work.",
+      "Double the risk to win it back faster",
+      "If the streak goes on, the hole gets much deeper.",
+      "Winning 50 % of the time, the typical streak over 100 trades is **6** in a row.",
+      "If I switch after every bad streak, I'll never know if any of them worked."
+     ]
     },
     {
      "title": "Drawdown",
-     "body": "It's the fall in the account from its peak to the next low. At 1 % risk, 8 losses in a row are −7.7 %. At 5 %, −33.7 %.\n\nRule in the example plan: if the account falls 10–15 % from its peak, you **halve your risk** and review."
-    },
-    {
-     "title": "What a drawdown costs",
-     "body": "Set a 15 % fall and see how much you need to gain to get back to the peak. Then try 35 %.",
-     "tip": "Risking little makes streaks recoverable."
-    },
-    {
-     "title": "Key takeaway",
-     "body": "Eight losses in a row with a winning system don't mean it has stopped working. If you switch systems after every bad streak, you'll never know whether any of them worked.",
-     "key": "Streaks are statistics: risk little so you can get through them.",
-     "tip": "Eight misses in a row don't mean the plan is wrong: they mean you're in a streak."
+     "body": "It's the fall in the account from its peak to the next low. Climbing back is harder than falling: after −15 % you need to gain **17.6 %**; after −35 %, almost **54 %**.\n\nRule in the example plan: if the account falls 10–15 % from its peak, you **halve your risk** and review.",
+     "key": "Streaks are just statistics: risk little so you can ride them out.",
+     "tip": "Eight misses in a row don't mean the plan is wrong: they mean you're on a losing streak."
     }
    ]
   },
@@ -71,18 +153,43 @@
    "title": "From the simulator to real money",
    "steps": [
     {
+     "texts": [
+      "Talent or luck?",
+      "1,000 people trade **with no edge at all**: every trade is a coin toss. They start with 15 trades each.",
+      "Nobody has an edge. After 15 trades, will anyone look like a genius?",
+      "No: with no edge, nobody stands out",
+      "Yes: someone will have a spectacular result",
+      "They'll all end up the same",
+      "The luckiest one makes **€1,100**: 13 out of 15 right, tossing a coin.",
+      "Go up to 100 trades each and see how many lose.",
+      "With **15 trades**, luck looks a lot like talent. You need **50–100 logged trades**, and to look at expectancy after costs.",
+      "With more trades, luck evens out: close to half lose.",
+      "Look at the best one: looks like a genius, and was just lucky.",
+      "Increase each person's trades"
+     ]
+    },
+    {
+     "texts": [
+      "12 out of 15",
+      "Raúl",
+      "I've won 12 of my first 15 trades!",
+      "I'm going to risk 10 % on each one. My system works.",
+      "What do you tell Raúl?",
+      "Go for it: the numbers speak for themselves",
+      "At 10 %, 6–8 losses in a row wipe out between half and two thirds of the account.",
+      "Stay at 1 % and log 50–100 trades",
+      "That's it! With a bigger sample and costs included, he'll know if he has an edge.",
+      "Move to real money right now, all in",
+      "Real money teaches you who you are. Start small.",
+      "Tweaking the system until the past looks perfect doesn't work either: that's **over-optimising**.",
+      "OK: more trades, same rules and small risk."
+     ]
+    },
+    {
      "title": "The four phases",
-     "body": "1. **Backtest:** go back through the chart and record 50–100 signals with their results.\n2. **Out-of-sample:** other assets or another period, **without changing the rules**.\n3. **Real-time simulator:** 2–3 months at least.\n4. **Real money, bit by bit:** a fraction of your capital and half the risk. You only scale up if the stats look similar."
-    },
-    {
-     "title": "The traps",
-     "body": "• **Over-optimising:** tweaking parameters until the past looks perfect.\n• **Small sample:** with fewer than 30–50 trades, the stats mean almost nothing.\n• **Survivorship:** testing only on companies that exist today.\n• **Forgetting costs** and slippage.\n• **Hindsight:** in the past everything «looks» clear."
-    },
-    {
-     "title": "When to call it a day",
-     "body": "If after 100 well-logged trades your expectancy after costs is negative or close to zero, you don't have an edge. It's not a failure: it's information. Investing for the long term in a diversified portfolio is still the option with the best odds.",
+     "body": "1. **Backtest:** 50–100 signals with their results.\n2. **Out-of-sample:** other assets or another period, without changing the rules.\n3. **Real-time simulator:** 2–3 months at least.\n4. **Real money, bit by bit:** a fraction of your capital and half the risk.\n\nIf after 100 trades your expectancy after costs is negative or close to zero, you don't have an edge. It's not a failure: it's information.",
      "key": "A system isn't proven until it works on new data and with enough trades.",
-     "tip": "In the simulator you learn to trade. With real money you learn who you are. Start small."
+     "tip": "The simulator teaches you to trade. Real money teaches you who you are. Start small."
     }
    ]
   },
@@ -109,16 +216,6 @@
    ],
    "explanation": "From the general (how much and what) to the specific (when I enter, how much I risk and how I exit)."
   },
-  "u26l1-2": {
-   "prompt": "Position size: ____ risk per trade.",
-   "options": [
-    "10 %",
-    "25 %",
-    "50 %",
-    "1 %"
-   ],
-   "explanation": "For beginners, 1 % or less."
-  },
   "u26l1-3": {
    "prompt": "Monthly limit in the example plan: if I lose ____ in a month, I stop until the next month.",
    "options": [
@@ -128,21 +225,6 @@
     "6 %"
    ],
    "explanation": "A monthly cap cuts off revenge-trading spirals."
-  },
-  "u26l1-4": {
-   "prompt": "Is it a specific rule or a vague phrase?",
-   "options": [
-    "If it hasn't reached 1R within 15 sessions, I get out",
-    "I get out when it feels like enough",
-    "Stop below the low of the reversal candle, at least 1.5 ATR away",
-    "I enter if it bounces off the 50-session moving average with a reversal candle and above-average volume",
-    "I'll get in when it looks clear"
-   ],
-   "explanation": "A specific rule can be checked: two people reading it would do the same thing.",
-   "right": [
-    "Specific rule",
-    "Vague phrase"
-   ]
   },
   "u26l1-5": {
    "prompt": "What do you say to Lumi?",
@@ -177,28 +259,6 @@
    "options": [],
    "explanation": "5 % ÷ 1 % = 5 open trades.",
    "unit": "trades"
-  },
-  "u26l1-8": {
-   "prompt": "A good trading plan includes a prediction of what the market will do.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "A plan is a set of rules for acting whatever happens, not predictions."
-  },
-  "u26l1-9": {
-   "prompt": "Pablo's plan says «I only enter on a reversal candle at a support». Today he sees a share shoot up 8 % in an hour that doesn't meet any of his rules. What does he do?",
-   "options": [
-    "Gets in with double the size to make the most of it",
-    "Gets in: it's a once-in-a-lifetime chance",
-    "Doesn't get in and logs it in the journal as a temptation"
-   ],
-   "explanation": "A plan only works if you follow it even when you don't feel like it.",
-   "feedback": [
-    "Breaking the plan and doubling the risk too: two mistakes in one.",
-    "That «once-in-a-lifetime chance» is FOMO. If it goes wrong, he won't know whether his plan works or not.",
-    "Good: he sticks to the plan and learns from what he feels. There'll be plenty of chances."
-   ]
   },
   "u26l1-10": {
    "prompt": "Your plan says: «stop below the recent low». Apply it to this buy on a real chart.",
@@ -273,37 +333,6 @@
    ],
    "explanation": "It combines your win rate with your average win and loss."
   },
-  "u26l2-7": {
-   "prompt": "After 40 trades, Marta's journal shows that the trades that followed the plan average +0.3R and those that broke it, −0.6R. What does she do?",
-   "options": [
-    "Switches systems",
-    "Nothing, the numbers don't really matter",
-    "Focuses on not breaking the plan"
-   ],
-   "explanation": "Comparing within and outside the plan is usually the most revealing part of the journal.",
-   "feedback": [
-    "Her system makes money when she follows it. Changing it would throw away what works.",
-    "The numbers are telling her exactly where she's losing money.",
-    "Good: the problem isn't the system, it's the exceptions. That's where she can improve."
-   ]
-  },
-  "u26l2-8": {
-   "prompt": "To know how you're doing, your memory is as reliable as a journal.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "Memory remembers the wins and forgets the mistakes: the journal doesn't."
-  },
-  "u26l2-9": {
-   "prompt": "Quick one: which journal column helps you spot FOMO?",
-   "options": [
-    "The date",
-    "Your feeling going in",
-    "The entry price"
-   ],
-   "explanation": "If you write down «rushed» or «afraid of missing out» when going in, you know what to look for."
-  },
   "u26l2-10": {
    "prompt": "What do you reply to Lumi?",
    "options": [
@@ -337,12 +366,6 @@
    "explanation": "0.99⁸ ≈ 0.923 → a 7.7 % fall.",
    "unit": "%"
   },
-  "u26l3-3": {
-   "prompt": "Now risking 5 % per trade: 8 losses in a row. How much does the account fall? (round to one decimal place)",
-   "options": [],
-   "explanation": "0.95⁸ ≈ 0.663 → a 33.7 % fall. The same streak, four times the damage.",
-   "unit": "%"
-  },
   "u26l3-4": {
    "prompt": "Match the risk per trade with the fall after 8 losses in a row.",
    "options": [
@@ -365,20 +388,6 @@
    "explanation": "1 ÷ 0.85 − 1 ≈ 0.176 → +17.6 %.",
    "unit": "%"
   },
-  "u26l3-6": {
-   "prompt": "Laura has 120 logged trades with positive expectancy. Now she's had 7 losses in a row. What does she do?",
-   "options": [
-    "Sticks to her plan with the same risk and checks she's applying the rules properly",
-    "Doubles her risk to recover sooner",
-    "Switches systems: this one doesn't work any more"
-   ],
-   "explanation": "A streak within what's expected is no reason to abandon a system with lots of trades behind it.",
-   "feedback": [
-    "Good: she checks she hasn't skipped anything and lets the statistics do their job.",
-    "If the streak continues, the hole gets much deeper.",
-    "With a 40 % win rate, 7 in a row is the typical streak. Switching now means throwing away a system that works."
-   ]
-  },
   "u26l3-7": {
    "prompt": "Bruno's account falls 15 % from its peak. What does the example plan say?",
    "options": [
@@ -392,23 +401,6 @@
     "Without stops, the fall could be much bigger.",
     "That way he protects his capital while he works out what's going on."
    ]
-  },
-  "u26l3-8": {
-   "prompt": "Eight losses in a row prove a system has stopped working.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "With a 40 % win rate, almost half the time there are streaks of 8 or more in 100 trades."
-  },
-  "u26l3-9": {
-   "prompt": "Quick one: with a 40 % win rate, what's the typical losing streak in 100 trades?",
-   "options": [
-    "20 in a row",
-    "2 in a row",
-    "7 in a row"
-   ],
-   "explanation": "And almost half the time, 8 or more."
   },
   "u26l3-10": {
    "prompt": "The fall in the account from its peak to the next low is called ____.",
@@ -429,36 +421,6 @@
     "Backtest"
    ],
    "explanation": "Each phase removes a type of self-deception before you risk money."
-  },
-  "u26l4-2": {
-   "prompt": "If you win 12 of your first 15 trades, your system is proven.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "Fifteen trades is far too small a sample: it could be luck."
-  },
-  "u26l4-3": {
-   "prompt": "Tweaking parameters until the past looks perfect improves future results.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "That's over-optimising: the system adapts to the noise of the past and usually fails afterwards."
-  },
-  "u26l4-4": {
-   "prompt": "Raúl has won 12 of his first 15 trades and wants to move up to risking 10 % per trade «because his system works». What would you tell him?",
-   "options": [
-    "Stick with 1 % and log 50–100 trades before drawing conclusions",
-    "Go for it, the numbers speak for themselves",
-    "Use leverage to make the most of the streak"
-   ],
-   "explanation": "Small sample + high risk is the most dangerous combination.",
-   "feedback": [
-    "Good: with a bigger sample and his expectancy worked out after costs, he'll know whether he has an edge.",
-    "At 10 %, a normal streak of 6–8 losses would cost him between half and two thirds of the account.",
-    "Good streaks end; leverage would make the bad one take him out of the game."
-   ]
   },
   "u26l4-5": {
    "prompt": "Marta has passed the first three phases and is going to use real money. How does she start?",
@@ -507,14 +469,6 @@
     "Seeing a signal in the past as crystal clear when it wasn't in real time",
     "Tweaking parameters until the past looks perfect"
    ]
-  },
-  "u26l4-8": {
-   "prompt": "With real money, emotions usually weigh more than in the simulator.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "That's why you start small: to find out how you really react."
   },
   "u26l4-9": {
    "prompt": "You're going to start with €2,000 of real money and half your usual 1 % risk. How much do you risk per trade?",

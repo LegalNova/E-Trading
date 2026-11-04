@@ -9,16 +9,50 @@
    "title": "What a blockchain is",
    "steps": [
     {
-     "title": "A shared ledger",
-     "body": "A **blockchain** is a record of transactions **shared by thousands of computers** (nodes) all over the world. Nobody controls it on their own.\n\nTransactions are grouped into **blocks**. Each block carries a fingerprint (**hash**) of the previous one: that's how they're chained together."
+     "texts": [
+      "The flatshare accounts",
+      "Leo",
+      "Irene",
+      "Four flatmates keep a list of shared expenses. Each of them keeps a copy of the list.",
+      "Well, my copy says I paid for the March shopping.",
+      "The other three copies say I paid for it.",
+      "Which list counts?",
+      "Leo's: it's his copy",
+      "A single copy doesn't get the final say. If it doesn't match the others, it's rejected.",
+      "The one that matches most of the copies",
+      "That's a **blockchain**! Thousands of computers with the same copy of the record.",
+      "Let a notary decide",
+      "That would work, but the whole point is not needing a middleman.",
+      "To sneak a change through you'd need to control most of the network. On Bitcoin, that's hugely expensive."
+     ]
+    },
+    {
+     "texts": [
+      "Does a blockchain do that?",
+      "A **blockchain** is a record of transactions shared by thousands of computers (**nodes**). What does it do, and what doesn't it?",
+      "Yes, it does",
+      "No, it doesn't",
+      "Record who sends what to whom",
+      "That's its job: a record of transactions.",
+      "Guarantee the price goes up",
+      "A blockchain protects the record, not the price.",
+      "Keep copies on thousands of computers",
+      "Each node keeps a copy: nobody controls it on their own.",
+      "Give you your money back if you send it to the wrong address",
+      "What's recorded can't be undone: your mistakes included.",
+      "Let anyone verify the transactions",
+      "On a public blockchain, the record is there for everyone to see.",
+      "Protect you like a deposit guarantee scheme",
+      "No guarantee scheme covers cryptocurrencies.",
+      "Sort all six cards.",
+      "A blockchain records who owns what **without a middleman**. It doesn't make an asset worth more: cryptos are very volatile and **you can lose everything you invest**.",
+      "Hint: it protects the record, not your money.",
+      "Sort each card"
+     ]
     },
     {
      "title": "Why it can't be rewritten",
-     "body": "If someone changes an old transaction, that block's fingerprint changes and every block after it breaks. On top of that, the other nodes have the correct copy and reject the fake one.\n\nTo sneak a change through you'd need to control most of the network: on a big network like Bitcoin, that's hugely expensive."
-    },
-    {
-     "title": "What it is and what it isn't",
-     "body": "A blockchain is a way to record who owns what **without a middleman**. It doesn't make an asset worth more or turn it into a safe investment: cryptocurrencies are very volatile, no guarantee scheme covers them and **you can lose everything you invest**.",
+     "body": "Transactions are grouped into **blocks**. Each block carries a fingerprint (**hash**) of the previous one: that's how they're chained together.\n\nIf someone changes an old transaction, that block's fingerprint changes and every block after it breaks. On top of that, the other nodes have the correct copy and reject the fake one.",
      "key": "Blockchain: a shared, chained record that nobody can rewrite on their own.",
      "tip": "Using blockchain doesn't make something a good investment."
     }
@@ -28,16 +62,36 @@
    "title": "Bitcoin: digital gold",
    "steps": [
     {
-     "title": "The first cryptocurrency",
-     "body": "**Bitcoin** was born in 2009, created by someone using the pseudonym **Satoshi Nakamoto**. It's digital money sent from person to person without banks, recorded on its blockchain.\n\nIts headline rule: there will never be more than **21 million** bitcoins. That's why its fans call it «**digital gold**»."
+     "texts": [
+      "Live through bitcoin from 2021 to 2025",
+      "December 2020: you invest **€1,000** in bitcoin and live through it week by week, with **real data** (in dollars, ignoring the exchange rate). You can sell whenever you like.",
+      "Get to the end, whether you sell or not.",
+      "In 2021 it nearly doubled in value; from that peak it fell **75 %** by November 2022, and then recovered. That's **extreme volatility**: the past guarantees nothing and you can lose everything you invest.",
+      "You've sold. See what happens next…",
+      "Down more than 40 %. Can you hold on?",
+      "Way up… but what if it turns now?",
+      "Hit start. You can sell whenever you like"
+     ]
+    },
+    {
+     "texts": [
+      "«Digital gold»",
+      "Nico",
+      "Bitcoin is digital gold: there'll never be more than 21 million.",
+      "So it can't drop much, right?",
+      "What do you tell him?",
+      "Of course: it's scarce, like gold",
+      "Scarce isn't the same as stable: you've just seen a 75 % fall.",
+      "Its supply is limited, but its price depends on demand",
+      "That's it! There are no profits or interest behind it: it's worth what others will pay.",
+      "It only drops when there's a halving",
+      "No: the halving slows down issuance, but the price moves with demand.",
+      "Bitcoin has fallen more than 70 % several times."
+     ]
     },
     {
      "title": "The halving",
-     "body": "New bitcoins are created as a reward for whoever adds blocks (the miners). Every **210,000 blocks**, about **4 years**, that reward is cut in half: that's the **halving**.\n\n50 → 25 (2012) → 12.5 (2016) → 6.25 (2020) → **3.125** (2024). After the 2024 halving, 93.75 % of all bitcoins had already been issued."
-    },
-    {
-     "title": "Scarce isn't the same as safe",
-     "body": "The scarcity is programmed in, but the price depends on how many people want to buy it: there are no profits or interest behind it. Bitcoin has fallen more than 70 % several times. It's a very volatile asset and **you can lose everything you invest**.",
+     "body": "Bitcoin was born in 2009, created by someone using the pseudonym **Satoshi Nakamoto**. New bitcoins are created as a reward for whoever adds blocks (the miners). Every **210,000 blocks**, about **4 years**, that reward is cut in half: that's the **halving**.\n\n50 → 25 (2012) → 12.5 (2016) → 6.25 (2020) → **3.125** (2024). After the 2024 halving, 93.75 % of all bitcoins had already been issued.",
      "key": "Bitcoin: a maximum of 21 million, with new issuance halving roughly every 4 years.",
      "tip": "Programmed scarcity doesn't mean a guaranteed price."
     }
@@ -47,16 +101,48 @@
    "title": "Mining and proof of work",
    "steps": [
     {
+     "texts": [
+      "Work or stake?",
+      "Two ways to decide who adds the next block: **spending energy** on calculations or **putting coins at risk** as collateral. Which is which?",
+      "Proof of work",
+      "Proof of stake",
+      "Bitcoin",
+      "Miners compete by spending energy on calculations.",
+      "Ethereum, since 2022",
+      "It dropped mining in 2022: people who lock up ETH do the validating.",
+      "Validated by people who lock up their coins as collateral",
+      "That's proof of stake.",
+      "Specialised machines trying combinations non-stop",
+      "You have to hit a valid hash: there are no shortcuts.",
+      "Uses over 99 % less energy",
+      "It doesn't need a computing race.",
+      "Attacking it takes more power than all the miners combined",
+      "The energy spent is what protects the record.",
+      "Sort all six cards.",
+      "Bitcoin uses **proof of work**: it burns a lot of energy, and that makes attacking it hugely expensive. In 2022 Ethereum switched to **proof of stake**.",
+      "Hint: does it burn electricity or put coins at risk?",
+      "Sort each card"
+     ]
+    },
+    {
+     "texts": [
+      "Mine from your phone",
+      "Laura",
+      "Look at this ad: «Mine bitcoins from your phone and earn €50 a day».",
+      "Shall I download the app?",
+      "What do you tell her?",
+      "Yes, it's easy money",
+      "Real mining uses specialised machines and loads of electricity. A phone can't compete.",
+      "It's almost certainly a scam: a phone can't compete",
+      "Nice! Lots of «mining apps» are scams or use your phone for other things.",
+      "Install it just to try it out",
+      "These apps can expose your data or your wallet. Better not.",
+      "When a promise doesn't fit with how the technology works, be suspicious."
+     ]
+    },
+    {
      "title": "A computing race",
-     "body": "In Bitcoin, **miners** group transactions into a block and race to find a number that makes the block's fingerprint (hash) meet a condition. There are no shortcuts: you have to try a huge number of combinations every second.\n\nThe first to do it adds the block and collects the **reward** plus the **fees**. This is **proof of work**."
-    },
-    {
-     "title": "Why it uses so much energy",
-     "body": "That race burns through vast amounts of electricity on specialised machines. And that's exactly what protects the network: to rewrite history you'd have to outdo the work of all the other miners combined.\n\nThe **difficulty** adjusts every 2,016 blocks so that a block is found every **10 minutes** on average."
-    },
-    {
-     "title": "The alternative: proof of stake",
-     "body": "Ethereum dropped mining in 2022 and moved to **proof of stake**: transactions are validated by people who lock up their coins as collateral. It uses over 99 % less energy. But the technology doesn't change the price risk: in crypto **you can lose everything you invest**.",
+     "body": "**Miners** group transactions into a block and race to find a number that makes its hash meet a condition. The first one collects the **reward** plus the **fees**. Finding the solution costs a lot; checking it, very little.\n\nThe **difficulty** adjusts every 2,016 blocks so that a block is found every **10 minutes** on average. And the technology doesn't change the price risk: in crypto **you can lose everything you invest**.",
      "key": "Proof of work: you earn the right to add blocks by spending energy on calculations.",
      "tip": "The energy used in mining is the price of making the record impossible to rewrite."
     }
@@ -66,18 +152,50 @@
    "title": "Ethereum and smart contracts",
    "steps": [
     {
-     "title": "A world computer",
-     "body": "**Ethereum** (2015) is a blockchain where, as well as sending money, you can run programs: **smart contracts**. Its currency is **ether (ETH)**.\n\nA smart contract is an «if this happens, do that» that runs on its own, with no middleman."
+     "texts": [
+      "Bitcoin or Ethereum?",
+      "**Ethereum** (2015) is a blockchain that, as well as sending money, runs programs; its currency is **ether (ETH)**. Is it Bitcoin or Ethereum?",
+      "Bitcoin",
+      "Ethereum",
+      "There'll never be more than 21 million",
+      "It's Bitcoin's headline rule.",
+      "Runs smart contracts",
+      "Programs that run on their own, with no middleman.",
+      "Lending and trading without a bank (DeFi)",
+      "They're built with smart contracts on Ethereum.",
+      "People call it «digital gold»",
+      "Because of its programmed scarcity.",
+      "Every transaction pays «gas», which goes up when the network is congested",
+      "Gas is paid in ether (ETH).",
+      "Digital certificates of ownership (NFTs)",
+      "Another thing built on top of Ethereum, like many tokens.",
+      "Sort all six cards.",
+      "Bitcoin does one thing: **scarce money**. Ethereum is a **platform**: its smart contracts are an «if this happens, do that» that runs on its own.",
+      "Hint: Bitcoin is money; Ethereum, a platform for programs.",
+      "Sort each card"
+     ]
     },
     {
-     "title": "What's built on top",
-     "body": "• **Tokens:** coins created by other projects on Ethereum, like many stablecoins.\n• **DeFi:** lending and trading without a bank.\n• **NFTs:** digital certificates of ownership.\n\nEvery transaction pays a fee in ETH called **gas**, which goes up when the network is congested."
+     "texts": [
+      "Free tokens",
+      "Unknown website",
+      "Congratulations! You've got 500 free tokens waiting for you.",
+      "Connect your wallet and sign this contract to claim them.",
+      "What do you do?",
+      "I sign: it's free",
+      "Signing a contract you don't understand can give permission to empty your wallet.",
+      "I don't sign anything I don't understand, and I check the project through its official channels",
+      "Nice! Lots of scams use smart contract signatures to steal.",
+      "I sign with my main wallet, to get more",
+      "If it's a trap, you'll lose everything in that wallet.",
+      "In a smart contract, code is law… even when it has a bug."
+     ]
     },
     {
      "title": "More possibilities, more risks",
-     "body": "Bitcoin does one thing (scarce money); Ethereum is a platform. More features also mean more ways to fail: a bug in a contract's code can let someone drain it, and there's nobody to complain to. ETH is very volatile and **you can lose everything you invest**.",
+     "body": "More features also mean more ways to fail: a bug in a contract's code can let someone drain it, and on a blockchain there's nobody to complain to.\n\nETH is very volatile and **you can lose everything you invest**.",
      "key": "Ethereum adds to Bitcoin the ability to run programs: smart contracts.",
-     "tip": "In a smart contract, code is law… even when it has a bug."
+     "tip": "With smart contracts, a single signature can authorise moving your entire balance."
     }
    ]
   },
@@ -85,16 +203,48 @@
    "title": "Stablecoins",
    "steps": [
     {
-     "title": "Crypto that doesn't want to move",
-     "body": "A **stablecoin** is a token that tries to always be worth the same as a currency, usually **1 dollar** (or 1 euro). The most widely used are **USDT** (Tether) and **USDC** (Circle).\n\nThey're used to move between cryptos without going through a bank and to make payments."
+     "texts": [
+      "The «stable» 20 %",
+      "Bruno",
+      "May 2022. Bruno has his savings in UST, a stablecoin that tries to always be worth 1 dollar.",
+      "A platform pays me nearly 20 % a year to keep them there. And it's stable!",
+      "Suddenly, UST starts trading at $0.95.",
+      "Is it time to buy more?",
+      "What do you tell him?",
+      "Yes: buy more, it'll go back to $1",
+      "Within days, UST sank far below $1. It never recovered.",
+      "That «risk-free» 20 % was hiding a huge risk",
+      "That's it: UST lost its peg and LUNA fell almost to zero within days.",
+      "Sit tight: they always go back to $1",
+      "Some do; UST didn't. «Stable» is a goal, not a guarantee.",
+      "Lots of people lost almost everything. High returns «with no risk» don't exist."
+     ]
     },
     {
-     "title": "How they hold their value",
-     "body": "• **Reserve-backed:** the issuer holds cash and short-term government debt for every token. Risk: the reserves failing. In March 2023, USDC fell to around 0.87 $ when a bank holding part of its reserves collapsed.\n• **Algorithmic:** no real reserves, just a mechanism tied to another crypto. **TerraUSD (UST)** collapsed in **May 2022** and dragged LUNA almost to zero."
+     "texts": [
+      "Reserve-backed or algorithmic?",
+      "A **stablecoin** tries to always be worth the same as a currency, usually **1 dollar**, and there are two ways of trying. Which is which?",
+      "Reserve-backed",
+      "Algorithmic",
+      "Holds dollars and Treasury bills for every token",
+      "Its value depends on those reserves existing and being available.",
+      "Propped up by another crypto and an algorithm",
+      "No real reserves: if confidence breaks, it can spiral down.",
+      "TerraUSD (UST), May 2022",
+      "It collapsed and dragged LUNA almost to zero.",
+      "USDC, March 2023: drops to around $0.87",
+      "A bank holding part of its reserves went bust. It got its peg back within a few days.",
+      "USDT (Tether)",
+      "Like USDC, it backs its tokens with reserves.",
+      "Sort all five cards.",
+      "Reserve-backed ones depend on **the backing existing** and being available; algorithmic ones, only on **confidence** in the mechanism.",
+      "Hint: is there real money behind it, or just a mechanism?",
+      "Sort each card"
+     ]
     },
     {
      "title": "What MiCA requires",
-     "body": "In the EU, the **MiCA** regulation requires stablecoin issuers to be authorised, hold sufficient, segregated **reserves** and let you **redeem** tokens at par. Even so, «stable» doesn't mean «guaranteed»: they're not covered by the deposit guarantee scheme and **you can lose what you invest**.",
+     "body": "Stablecoins are used to move between cryptos without going through a bank and to make payments. The most widely used are **USDT** (Tether) and **USDC** (Circle).\n\nIn the EU, the **MiCA** regulation requires their issuers to be authorised, hold sufficient, segregated **reserves** and let you **redeem** tokens at par. Even so, «stable» doesn't mean «guaranteed»: they're not covered by the deposit guarantee scheme and **you can lose what you invest**.",
      "key": "A stablecoin is worth what its reserves are worth, plus trust in its issuer.",
      "tip": "If a stablecoin pays you 20 % «with no risk», ask where that money comes from."
     }
@@ -104,18 +254,51 @@
    "title": "Wallets, keys and self-custody",
    "steps": [
     {
-     "title": "What a wallet holds",
-     "body": "Your crypto isn't «inside» your wallet: it's on the blockchain. The wallet holds the **keys**:\n\n• **Address (public key):** like your IBAN; you can share it to receive funds.\n• **Private key:** the one that signs transfers. Whoever has it controls the money.\n\nThe **seed phrase** (12 or 24 words) lets you recover all your keys."
+     "texts": [
+      "Can you show it?",
+      "Your crypto is on the blockchain; your **wallet** holds the **keys**. What can you show without a problem, and what never?",
+      "No problem",
+      "Never",
+      "Your public address, so people can pay you",
+      "It's like your IBAN: it's for receiving, not for taking money out.",
+      "Your private key",
+      "It signs transfers: whoever has it controls the money.",
+      "Your seed phrase, to «tech support»",
+      "No legitimate party will ever ask you for it.",
+      "A photo of your seed phrase, saved in the cloud",
+      "Anything connected to the internet can be stolen or leaked.",
+      "The record of a transaction, to prove a payment",
+      "On a public blockchain, transactions are there for everyone to see.",
+      "Your seed phrase, to a friend to keep safe for you",
+      "Whoever has it can take everything, with no going back.",
+      "Sort all six cards.",
+      "Your **address** is shared like an IBAN. Your **private key** and **seed phrase** (12 or 24 words that recover all your keys), never: whoever has them controls your crypto.",
+      "Hint: is it for receiving, or for moving your money?",
+      "Sort each card"
+     ]
+    },
+    {
+     "texts": [
+      "«Tech support»",
+      "Tech support",
+      "Ana keeps her crypto in self-custody. She gets a message on Telegram.",
+      "Hi, Ana. We've detected a fault in your wallet.",
+      "To protect your funds, validate your seed phrase on this form. It's urgent.",
+      "What does Ana do?",
+      "Fill in the form quickly, so she doesn't lose anything",
+      "She's just handed over her money: with the phrase, they empty her wallet in minutes.",
+      "Ignore the message: no legitimate support team asks for your seed phrase",
+      "Nice! It's one of the most common scams in crypto.",
+      "Send only half the words",
+      "No part of it gets shared. And whoever's asking will keep pushing until they have the rest.",
+      "Anyone asking for your seed phrase is robbing you."
+     ]
     },
     {
      "title": "Your own custody or someone else's",
-     "body": "• **Third-party custody:** you leave your crypto on an exchange, which holds the keys. Convenient, but if it goes bust or freezes your account, you're at its mercy (FTX, 2022).\n• **Self-custody:** you hold the keys (software or hardware wallet). Nobody can freeze them… but if you lose your seed phrase, **nobody** can recover them."
-    },
-    {
-     "title": "The golden rule",
-     "body": "Your seed phrase goes **on paper or metal, offline**, somewhere safe. Never in a photo, an email or the cloud. **No legitimate party will ever ask you for it**: not support, not the exchange, not «Hacienda» (the Spanish tax authority). If you give it to someone, they take everything and there's no going back.",
+     "body": "• **On an exchange:** it holds the keys. Convenient, but if it goes bust or freezes your account, you're at its mercy (FTX, 2022).\n• **Self-custody:** you hold the keys, in a software or hardware wallet. Nobody can freeze them… but if you lose your seed phrase, **nobody** can recover them.\n\nYour seed phrase goes **on paper or metal, offline**, somewhere safe. Never in a photo, an email or the cloud.",
      "key": "«Not your keys, not your coins»: whoever controls the keys controls the crypto.",
-     "tip": "Anyone asking for your seed phrase is robbing you."
+     "tip": "No legitimate party will ever ask for your seed phrase: not support, not the exchange, not «Hacienda» (the Spanish tax authority)."
     }
    ]
   },
@@ -123,16 +306,48 @@
    "title": "Exchanges and MiCA",
    "steps": [
     {
-     "title": "What an exchange is",
-     "body": "An **exchange** is a platform where you buy and sell crypto with euros or other cryptos. It almost always **holds** your crypto for you.\n\nUnder the EU's **MiCA** regulation, crypto-asset service providers need **authorisation** to operate in the EU."
+     "texts": [
+      "An exchange with a freebie",
+      "Marta",
+      "I've found an exchange with super-low fees and a welcome bonus!",
+      "The platform doesn't appear in the CNMV or ESMA registers.",
+      "What do you advise her?",
+      "Use it: fees are what matter most",
+      "Without authorisation, nobody checks whether it keeps your crypto separate or how it uses it.",
+      "Look for an authorised provider, even if it charges a bit more",
+      "Nice! First, make sure it's supervised; then, that it's cheap.",
+      "Deposit a little, to try it out",
+      "Even if it's a little, you could lose it with nobody to complain to.",
+      "Same as with a broker: first who supervises it, then how much it charges."
+     ]
+    },
+    {
+     "texts": [
+      "Does MiCA protect you?",
+      "An **exchange** is a platform for buying and selling crypto, and it almost always holds it for you; the EU's **MiCA** regulation requires it to be authorised. What does it protect you from?",
+      "Protects or reduces it",
+      "Doesn't protect it",
+      "The exchange mixing your crypto with its own",
+      "MiCA forces it to keep clients' crypto separate from its own.",
+      "A 70 % price crash",
+      "MiCA regulates companies, not crypto prices.",
+      "The platform not telling you its risks",
+      "It requires clear information and a complaints procedure.",
+      "Losing your seed phrase in self-custody",
+      "Your own mistakes aren't covered by its protection.",
+      "An unauthorised platform operating in Spain",
+      "According to the CNMV, from 1 July 2026 only authorised providers can operate.",
+      "Getting back what you lost if your crypto drops",
+      "There's no guarantee scheme for crypto prices.",
+      "Sort all six cards.",
+      "MiCA reduces the risk of **the platform** misusing your money. The price and your own mistakes are still **your risk**: you can lose everything you invest.",
+      "Hint: MiCA supervises companies, not the price.",
+      "Sort each card"
+     ]
     },
     {
      "title": "What MiCA requires of them",
-     "body": "• **Authorisation** from a national supervisor (in Spain, the CNMV), valid across the EU.\n• **Keeping** clients' crypto separate from their own.\n• **Capital**, governance and conflict-of-interest requirements.\n• Clear information and a **complaints** procedure.\n\nAccording to the CNMV, from **1 July 2026** only authorised providers can operate in Spain."
-    },
-    {
-     "title": "What MiCA doesn't do",
-     "body": "MiCA doesn't stop prices falling or create a guarantee fund for your crypto. It reduces the risk of the platform misusing your money, but crypto is still very volatile and **you can lose everything you invest**. Before opening an account, look the platform up in the **CNMV** or **ESMA** registers.",
+     "body": "• **Authorisation** from a national supervisor (in Spain, the CNMV), valid across the EU.\n• **Keeping** clients' crypto separate from their own.\n• **Capital**, governance and conflict-of-interest requirements.\n• Clear information and a **complaints** procedure.\n\nAccording to the CNMV, from **1 July 2026** only authorised providers can operate in Spain. Before opening an account, look it up in the **CNMV** or **ESMA** registers.",
      "key": "MiCA requires exchanges in the EU to be authorised, keep client assets separate and be transparent.",
      "tip": "Check the platform in the official register, not on its own website."
     }
@@ -163,14 +378,6 @@
    ],
    "explanation": "That's its key feature: the record is spread across many participants."
   },
-  "u12l1-3": {
-   "prompt": "Changing an old transaction on a big blockchain is easy if you have a good computer.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "You'd have to redo every block after it and outpace the rest of the network: a single computer can't."
-  },
   "u12l1-4": {
    "prompt": "Each block stores the fingerprint, or ____, of the previous block.",
    "options": [
@@ -197,14 +404,6 @@
     "Shared record of transactions"
    ]
   },
-  "u12l1-6": {
-   "prompt": "A project using blockchain guarantees that it's a good investment.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "The technology says nothing about the asset's value: many blockchain-based cryptos have lost almost all their value."
-  },
   "u12l1-7": {
    "prompt": "What does a public blockchain achieve? Select all.",
    "options": [
@@ -214,15 +413,6 @@
     "A record with no central middleman"
    ],
    "explanation": "A blockchain protects the record, not the price."
-  },
-  "u12l1-8": {
-   "prompt": "Quick: if someone tampers with an old block…",
-   "options": [
-    "It's updated on every node",
-    "The chain of fingerprints breaks and the network rejects it",
-    "Nobody notices"
-   ],
-   "explanation": "The hash changes and no longer fits with the next block."
   },
   "u12l1-9": {
    "prompt": "Pablo reads in an ad: «Token X, powered by blockchain technology: a 100 % safe investment». What does he think?",
@@ -236,20 +426,6 @@
     "Good: in crypto you can lose everything you invest; no serious party promises total safety.",
     "Being rushed is another classic red flag.",
     "Blockchain records transactions; it doesn't protect you from the price or from the project being a fraud."
-   ]
-  },
-  "u12l1-10": {
-   "prompt": "Does a blockchain do this or not?",
-   "options": [
-    "Guarantee the price goes up",
-    "Give you your money back if you get the address wrong",
-    "Keep copies on thousands of nodes",
-    "Record transactions"
-   ],
-   "explanation": "What's recorded can't be undone: neither can your mistakes.",
-   "right": [
-    "Yes",
-    "No"
    ]
   },
   "u12l2-1": {
@@ -303,41 +479,6 @@
    "explanation": "In crypto, a few weeks can bring double-digit moves in either direction: that's why people talk about extreme volatility.",
    "horizon": "the next 10 sessions"
   },
-  "u12l2-7": {
-   "prompt": "Because the number of bitcoins is capped, its price always goes up.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "The price depends on demand. Even with its capped supply, Bitcoin has fallen more than 70 % several times."
-  },
-  "u12l2-8": {
-   "prompt": "Bitcoin was created by someone using the pseudonym Satoshi ____.",
-   "options": [
-    "Buterin",
-    "Sharpe",
-    "Bogle",
-    "Nakamoto"
-   ],
-   "explanation": "Their real identity is still unknown. Vitalik Buterin is the co-founder of Ethereum."
-  },
-  "u12l2-9": {
-   "prompt": "What do you reply?",
-   "options": [
-    "Its supply is limited, but its price is very volatile and it's fallen more than 70 % several times",
-    "Of course, it's like gold",
-    "It can't fall because there are only 21 bitcoins"
-   ],
-   "explanation": "Scarcity explains part of Bitcoin's appeal, not its stability.",
-   "feedback": [
-    "That's it! Scarcity isn't stability: in crypto you can lose everything you invest.",
-    "Even gold has spent years losing value, and Bitcoin has fallen more than 70 % on several occasions.",
-    "It's 21 million at most, not 21, and its price does fall."
-   ],
-   "lines": [
-    "Bitcoin is digital gold, so it can never fall much, right? 🪙"
-   ]
-  },
   "u12l2-10": {
    "prompt": "What's behind Bitcoin's price?",
    "options": [
@@ -365,22 +506,6 @@
     "Shares in Bitcoin"
    ],
    "explanation": "With each halving the reward drops, so fees will matter more and more."
-  },
-  "u12l3-3": {
-   "prompt": "Mining difficulty adjusts so that a block is found roughly every 10 minutes.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "If more miners join, the difficulty goes up; if they leave, it goes down."
-  },
-  "u12l3-4": {
-   "prompt": "Bitcoin mining uses little energy because it's just software.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "It uses specialised machines running non-stop: their electricity consumption is huge."
   },
   "u12l3-5": {
    "prompt": "Match each concept to its meaning.",
@@ -413,29 +538,6 @@
    "options": [],
    "explanation": "2,016 × 10 = 20,160 minutes ÷ 1,440 minutes a day = 14 days.",
    "unit": "days"
-  },
-  "u12l3-8": {
-   "prompt": "Quick: what does proof of work protect?",
-   "options": [
-    "The price going up",
-    "Fees being zero",
-    "Making it hugely expensive to rewrite the record"
-   ],
-   "explanation": "Attacking the network would take more computing power than all the other miners combined."
-  },
-  "u12l3-9": {
-   "prompt": "Laura reads: «Mine bitcoins from your phone with our app and earn €50 a day». What does she think?",
-   "options": [
-    "That she'll install it just to try",
-    "That it's an easy way to make money",
-    "That it's almost certainly a con: a phone can't compete with professional mining"
-   ],
-   "explanation": "When a promise doesn't fit how the technology works, be suspicious.",
-   "feedback": [
-    "Installing apps like this can expose your data or your wallet.",
-    "Real mining needs specialised machines and lots of electricity: a phone can't compete.",
-    "Good: many «mining apps» are scams or use your phone for other purposes."
-   ]
   },
   "u12l3-10": {
    "prompt": "What's true about proof of work? Select all.",
@@ -488,22 +590,6 @@
    ],
    "explanation": "That's why tokens, DeFi and NFTs are built on Ethereum."
   },
-  "u12l4-4": {
-   "prompt": "Ethereum gas is a fixed fee that never changes.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "It goes up when the network is congested and down when demand is low."
-  },
-  "u12l4-5": {
-   "prompt": "If a smart contract has a coding bug, someone can exploit it and drain its funds.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "It has happened many times, and on a blockchain there's no bank to complain to."
-  },
   "u12l4-6": {
    "prompt": "Is it a common use of Ethereum?",
    "options": [
@@ -518,29 +604,6 @@
     "Yes",
     "No"
    ]
-  },
-  "u12l4-7": {
-   "prompt": "A website asks you to connect your Ethereum wallet and sign a contract to «claim free tokens». What do you do?",
-   "options": [
-    "Sign: it's free",
-    "Sign with my main wallet to get more",
-    "Not sign anything I don't understand and check the project through its official channels"
-   ],
-   "explanation": "With smart contracts, one signature can authorise moving your entire balance.",
-   "feedback": [
-    "Signing a contract you don't understand can give permission to empty your wallet.",
-    "If it's a trap, you'll lose everything in that wallet.",
-    "Good: many scams use smart contract signatures to steal."
-   ]
-  },
-  "u12l4-8": {
-   "prompt": "Quick: what currency is Ethereum gas paid in?",
-   "options": [
-    "BTC",
-    "Euros",
-    "ETH"
-   ],
-   "explanation": "Every transaction on Ethereum pays its fee in ether."
   },
   "u12l4-9": {
    "prompt": "Programs that run by themselves on Ethereum are called ____ contracts.",
@@ -583,14 +646,6 @@
     "Algorithmic stablecoin that collapsed"
    ]
   },
-  "u12l5-3": {
-   "prompt": "A stablecoin is covered by the deposit guarantee scheme, like a bank account.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "Spain's deposit guarantee scheme (FGD) covers bank deposits, not crypto-assets."
-  },
   "u12l5-4": {
    "prompt": "An algorithmic stablecoin has no real reserves backing it.",
    "options": [
@@ -598,20 +653,6 @@
     "False"
    ],
    "explanation": "It relies on a mechanism involving another crypto; if confidence breaks, it can spiral down."
-  },
-  "u12l5-5": {
-   "prompt": "May 2022. Bruno has his savings in UST because a platform pays him almost 20 % a year «for being stable». UST starts trading at 0.95 $. What do we learn from what happened?",
-   "options": [
-    "That stablecoins always go back to 1 $",
-    "That it was a chance to buy more",
-    "That a sky-high «stable» return was hiding a huge risk"
-   ],
-   "explanation": "A high return that's supposedly risk-free usually hides a risk you can't see.",
-   "feedback": [
-    "Some recover; UST didn't. «Stable» is a goal, not a guarantee.",
-    "Within days UST sank far below 1 $ and never recovered: anyone who bought more lost it.",
-    "Exactly: UST lost its peg and LUNA fell almost to zero in days. Lots of people lost almost everything."
-   ]
   },
   "u12l5-6": {
    "prompt": "What does MiCA require of stablecoin issuers in the EU? Select all.",
@@ -622,28 +663,6 @@
     "Being authorised"
    ],
    "explanation": "MiCA aims to make sure the token is backed and redeemable, not that it earns anything."
-  },
-  "u12l5-7": {
-   "prompt": "Reserve-backed or algorithmic?",
-   "options": [
-    "Held up by another cryptocurrency and an algorithm",
-    "USDC",
-    "TerraUSD (UST)",
-    "Holds dollars and Treasury bills for every token"
-   ],
-   "explanation": "Reserve-backed ones depend on the backing actually existing; algorithmic ones, on trust in the mechanism.",
-   "right": [
-    "Reserve-backed",
-    "Algorithmic"
-   ]
-  },
-  "u12l5-8": {
-   "prompt": "«Stable» means it's impossible to lose money with a stablecoin.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "UST collapsed in 2022 and even USDC lost its peg for a few days in 2023."
   },
   "u12l5-9": {
    "prompt": "In March 2023, the stablecoin ____ fell to around 0.87 $ when a bank holding its reserves collapsed.",
@@ -710,22 +729,6 @@
    ],
    "explanation": "Anything connected to the internet can be stolen or leaked."
   },
-  "u12l6-5": {
-   "prompt": "You can share your public address so people can send you crypto.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "It's like giving out your IBAN: it's for receiving, not withdrawing."
-  },
-  "u12l6-6": {
-   "prompt": "If you lose the seed phrase for a self-custody wallet, support can recover it for you.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "Nobody can: that's the price of not depending on anyone."
-  },
   "u12l6-7": {
    "prompt": "Self-custody or custody on an exchange?",
    "options": [
@@ -739,29 +742,6 @@
     "Self-custody",
     "Exchange custody"
    ]
-  },
-  "u12l6-8": {
-   "prompt": "Ana keeps her crypto in self-custody. Someone from «technical support» messages her on Telegram: there's a fault and she needs to validate her seed phrase on a form. What does she do?",
-   "options": [
-    "Fills in the form quickly so she doesn't lose anything",
-    "Sends them only half the words",
-    "Ignores the message: no legitimate support team asks for your seed phrase"
-   ],
-   "explanation": "Your seed phrase is never shared, with anyone, through any channel.",
-   "feedback": [
-    "She's just handed over her money: with the seed phrase, the scammer empties the wallet in minutes.",
-    "No part of the phrase is ever shared, and whoever is asking will keep pushing until they get the rest.",
-    "Good: it's one of the most common scams in crypto."
-   ]
-  },
-  "u12l6-9": {
-   "prompt": "Quick: who controls your crypto?",
-   "options": [
-    "Whoever has the private key",
-    "The CNMV",
-    "Whoever has your public address"
-   ],
-   "explanation": "The private key signs transfers: whoever has it is in charge."
   },
   "u12l6-10": {
    "prompt": "Match each item to its function.",
@@ -808,14 +788,6 @@
    ],
    "explanation": "That day the transition period in Spain came to an end."
   },
-  "u12l7-4": {
-   "prompt": "MiCA creates a guarantee fund that pays you back if your crypto falls in price.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "There's no such fund: price falls are your risk."
-  },
   "u12l7-5": {
    "prompt": "A MiCA authorisation granted in another EU country allows a provider to operate in Spain.",
    "options": [
@@ -823,20 +795,6 @@
     "False"
    ],
    "explanation": "It works like a European passport: one authorisation is valid across the EU."
-  },
-  "u12l7-6": {
-   "prompt": "Marta finds an exchange with very low fees and a welcome bonus, but it doesn't appear in the CNMV or ESMA registers. What does she do?",
-   "options": [
-    "Looks for an authorised provider, even if it charges a bit more",
-    "Deposits a little to try it out",
-    "Uses it: fees are what matter most"
-   ],
-   "explanation": "Just like with a broker: first who supervises it, then how much it charges.",
-   "feedback": [
-    "Good: first make sure it's safe and supervised; then that it's cheap.",
-    "With an unauthorised platform, even a small amount can be lost with nobody to complain to.",
-    "Without authorisation, nobody checks whether it keeps your crypto separate or how it uses it."
-   ]
   },
   "u12l7-7": {
    "prompt": "Match each acronym to its meaning.",
@@ -854,15 +812,6 @@
     "EU crypto-asset regulation"
    ]
   },
-  "u12l7-8": {
-   "prompt": "Quick: what's the first thing you check about an exchange?",
-   "options": [
-    "That it gives you a welcome bonus",
-    "That it has lots of cryptos to choose from",
-    "That it's authorised"
-   ],
-   "explanation": "Authorisation comes before the catalogue and the freebies."
-  },
   "u12l7-9": {
    "prompt": "The EU regulation governing crypto-asset providers is called ____.",
    "options": [
@@ -872,20 +821,6 @@
     "MiCA"
    ],
    "explanation": "Markets in Crypto-Assets. MiFID regulates traditional investment services."
-  },
-  "u12l7-10": {
-   "prompt": "Does MiCA protect you from this or not?",
-   "options": [
-    "A 70 % price crash",
-    "Losing your seed phrase in self-custody",
-    "The platform not disclosing its risks",
-    "The exchange mixing your crypto with its own"
-   ],
-   "explanation": "MiCA regulates companies; neither the price nor your own mistakes fall under its protection.",
-   "right": [
-    "Protects or reduces it",
-    "Doesn't protect"
-   ]
   }
  }
 }
