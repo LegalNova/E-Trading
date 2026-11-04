@@ -23,7 +23,7 @@ function WidgetView({ w, onMetrics }: { w: WidgetT; onMetrics: OnM }) {
 }
 
 /** Segundos tras los que se puede seguir sin cumplir el reto (para no atascar a nadie) */
-const SKIP_AFTER = 40
+const SKIP_AFTER = 25
 
 export function PlayView({ s, done, onDone }: { s: PlayStepT; done: boolean; onDone: () => void }) {
   const t = useTranslations('play')
@@ -72,10 +72,9 @@ export function PlayView({ s, done, onDone }: { s: PlayStepT; done: boolean; onD
               return (
                 <button
                   key={o}
-                  aria-disabled={guess !== null}
+                  aria-pressed={picked}
                   onClick={() => guess === null && setGuess(k)}
-                  className="btn btn-secondary h-auto justify-start py-2.5 text-left"
-                  style={guess !== null ? { opacity: picked || right ? 1 : 0.5, outline: right ? '2px solid var(--up)' : picked ? '2px solid var(--down)' : undefined } : undefined}
+                  className={`opt ${guess === null ? '' : right ? 'ok' : picked ? 'bad' : 'dim'}`}
                 >
                   {inline(o)}
                 </button>
@@ -136,6 +135,7 @@ export function StoryView({ s, done, onDone }: { s: StoryStepT; done: boolean; o
   const [k, setK] = useState(0) // siguiente beat de la historia principal
   const [queue, setQueue] = useState<Line[]>([]) // consecuencias pendientes de la última elección
   const [run, setRun] = useState(0) // para volver a empezar
+  const [fast, setFast] = useState(false) // un toque en el chat lo adelanta hasta la próxima elección
   const end = useRef<HTMLDivElement>(null)
   const cast = useMemo(() => Object.fromEntries(s.cast.map(c => [c.id, c])), [s.cast])
   const beat: BeatT | undefined = s.beats[k]
@@ -144,14 +144,14 @@ export function StoryView({ s, done, onDone }: { s: StoryStepT; done: boolean; o
   useEffect(() => {
     if (waiting || finished) return
     const next = queue.length ? queue[0] : (beat as Line)
-    const delay = shown.length ? Math.min(1400, 450 + ('text' in next ? next.text.length : next.note.length) * 12) : 200
+    const delay = !shown.length ? 120 : fast ? 60 : Math.min(900, 260 + ('text' in next ? next.text.length : next.note.length) * 7)
     const id = setTimeout(() => {
       setShown(x => [...x, next])
       if (queue.length) setQueue(q => q.slice(1))
       else setK(x => x + 1)
     }, delay)
     return () => clearTimeout(id)
-  }, [waiting, finished, queue, beat, shown.length, run])
+  }, [waiting, finished, queue, beat, shown.length, run, fast])
   useEffect(() => {
     if (finished && !done) onDone()
   }, [finished, done, onDone])
@@ -159,23 +159,24 @@ export function StoryView({ s, done, onDone }: { s: StoryStepT; done: boolean; o
     end.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
   }, [shown.length, waiting])
   const pick = (o: Extract<BeatT, { choice: unknown }>['choice']['options'][number]) => {
+    setFast(false)
     setShown(x => [...x, { who: 'me', text: o.text, tone: o.tone }])
     setQueue(o.then.map(b => ('note' in b ? b : { ...b })))
     setK(x => x + 1)
   }
-  const restart = () => (setShown([]), setK(0), setQueue([]), setRun(r => r + 1))
+  const restart = () => (setShown([]), setK(0), setQueue([]), setFast(false), setRun(r => r + 1))
   return (
     <div className="flex flex-col gap-3">
       <h1 className="t-title m-0">{s.title}</h1>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2" onClick={() => !waiting && !finished && setFast(true)}>
         {shown.map((l, i) =>
           'note' in l ? (
             <p key={i} className="t-cap m-0 animate-rise py-1 text-center italic">
               {l.note}
             </p>
           ) : l.who === 'me' ? (
-            <div key={i} className="flex animate-rise justify-end">
-              <div className="max-w-[82%] rounded-[18px] rounded-br-md px-3.5 py-2" style={{ background: 'var(--brand)', color: 'var(--on-brand)' }}>
+            <div key={i} className="flex animate-pop justify-end">
+              <div className="max-w-[82%] rounded-[18px] rounded-br-md px-3.5 py-2" style={{ background: 'var(--brand)', color: 'var(--on-brand)', boxShadow: l.tone ? `0 0 0 3px ${l.tone === 'good' ? 'var(--up)' : l.tone === 'bad' ? 'var(--down)' : 'var(--amber)'}` : undefined }}>
                 {inline(l.text)}
               </div>
             </div>
@@ -190,8 +191,9 @@ export function StoryView({ s, done, onDone }: { s: StoryStepT; done: boolean; o
           ),
         )}
         {!waiting && !finished && (
-          <span className="t-cap animate-pulse pl-10" aria-hidden>
-            •••
+          <span className="t-cap flex items-center justify-between pl-10" aria-hidden>
+            <span className="animate-pulse">•••</span>
+            {!fast && <span>{t('tapFaster')}</span>}
           </span>
         )}
       </div>
@@ -199,7 +201,7 @@ export function StoryView({ s, done, onDone }: { s: StoryStepT; done: boolean; o
         <div className="card flex animate-pop flex-col gap-1.5" style={{ outline: '2px solid var(--brand)' }}>
           <b className="t-head">{inline(beat.choice.prompt)}</b>
           {beat.choice.options.map(o => (
-            <button key={o.text} className="btn btn-secondary h-auto justify-start py-2.5 text-left" onClick={() => pick(o)}>
+            <button key={o.text} className="opt" onClick={() => pick(o)}>
               {inline(o.text)}
             </button>
           ))}

@@ -32,7 +32,7 @@ export function DynamicExercise({ q, value, onChange, reveal }: { q: QuestionT; 
   const { data: me } = useMe()
   const locked = !!reveal
   const sol = reveal?.correctAnswer
-  const fmt = (v: number) => v.toLocaleString(locale, { maximumFractionDigits: v >= 100 ? 2 : 4 })
+  const fmt = (v: number) => v.toLocaleString(locale, { maximumFractionDigits: v >= 100 ? 2 : 4, useGrouping: 'always' } as Intl.NumberFormatOptions)
   const eur = (v: number) => `${v.toLocaleString(locale, { maximumFractionDigits: 0 })} €`
   const [active, setActive] = useState<number | null>(null)
 
@@ -207,17 +207,19 @@ export function DynamicExercise({ q, value, onChange, reveal }: { q: QuestionT; 
     }
 
     case 'NUMBER': {
-      // Acepta coma o punto decimal y puntos de miles (1.250,5 → 1250.5)
-      const parse = (raw: string) => {
-        const clean = raw.replace(/\s/g, '')
-        const n = Number(locale === 'en' ? clean.replace(/,/g, '') : clean.replace(/\./g, '').replace(',', '.'))
-        onChange(clean === '' || !Number.isFinite(n) ? null : n)
-      }
+      // Se responde tocando una de las cifras: nadie tiene que salir de la app a hacer cuentas
+      const unit = q.meta?.unit ?? ''
+      const show = (v: number) => (unit === '€' ? (locale === 'en' ? `€${fmt(v)}` : `${fmt(v)} €`) : unit ? `${fmt(v)} ${unit}` : fmt(v))
+      const choices = q.meta?.choices ?? []
+      // La buena es la más cercana a la solución (la corrección acepta un pequeño margen)
+      const best = typeof sol === 'number' ? choices.reduce((b, c) => (Math.abs(c - sol) < Math.abs(b - sol) ? c : b), choices[0]) : null
       return (
-        <div className="card flex items-center gap-2" style={reveal ? { outline: `2px solid ${reveal.correct ? 'var(--up)' : 'var(--down)'}` } : undefined}>
-          <input className="min-w-0 flex-1 bg-transparent text-[28px] font-extrabold tabular-nums outline-none" inputMode="decimal" placeholder="0" disabled={locked} onChange={e => parse(e.target.value)} aria-label={q.prompt} />
-          {q.meta?.unit && <b className="text-[22px]">{q.meta.unit}</b>}
-          {reveal && !reveal.correct && <span className="t-foot">{t('rightNumber', { n: fmt(sol as number) })}</span>}
+        <div className="grid grid-cols-2 gap-2.5">
+          {choices.map(c => (
+            <button key={c} className={`opt justify-center text-[19px] font-extrabold tabular-nums ${optClass(reveal, c === best, value === c)}`} aria-pressed={value === c} disabled={locked} onClick={() => onChange(c)}>
+              {show(c)}
+            </button>
+          ))}
         </div>
       )
     }

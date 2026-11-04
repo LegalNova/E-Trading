@@ -338,7 +338,7 @@
       "PLACE_LEVEL": "Col·loca el nivell al gràfic real",
       "SIM_TRADE": "Simula l’operació amb dades reals",
       "SCENARIO": "Què fas?",
-      "NUMBER": "Calcula",
+      "NUMBER": "Tria la xifra",
       "PORTFOLIO": "Construeix la cartera",
       "SPOT": "Detecta l’estafa",
       "CHAT": "Respon a la Lumi"
@@ -366,7 +366,7 @@
     "hits": "encerts",
     "time": "temps",
     "xpBreakdown": "Base {base} · perfecte +{perfect} · rapidesa +{speed}",
-    "streak": "Ratxa: {n} dies",
+    "streak": "{n} encerts seguits",
     "extended": "ampliada avui!",
     "goalDone": "Objectiu «{goal}» complert",
     "levelUp": "Puges al nivell {n}!",
@@ -405,7 +405,9 @@
     "rightNumber": "Era {n}",
     "total": "Total",
     "scam": "Estafa",
-    "spotHint": "Marca tots els missatges que siguin estafa."
+    "spotHint": "Marca tots els missatges que siguin estafa.",
+    "correctStreak": "Correcte! 🔥 {n} seguides",
+    "tapToAnswer": "Toca la teva resposta"
   },
   "market": {
     "title": "Mercat",
@@ -1208,6 +1210,7 @@
     "cheer1": "Ho tens! Mira el que acabes de descobrir 👇",
     "cheer2": "Bravo! Això és just el que volia que veiessis.",
     "cheer3": "Repte superat! Ja ho entens millor que molta gent.",
-    "cheer4": "Això mateix! Ara ho has vist amb els teus propis ulls."
+    "cheer4": "Això mateix! Ara ho has vist amb els teus propis ulls.",
+    "tapFaster": "Toca per anar més de pressa"
   }
 }

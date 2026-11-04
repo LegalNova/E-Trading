@@ -338,7 +338,7 @@
       "PLACE_LEVEL": "Place the level on the real chart",
       "SIM_TRADE": "Simulate the trade with real data",
       "SCENARIO": "What do you do?",
-      "NUMBER": "Calculate",
+      "NUMBER": "Pick the number",
       "PORTFOLIO": "Build the portfolio",
       "SPOT": "Spot the scam",
       "CHAT": "Reply to Lumi"
@@ -366,7 +366,7 @@
     "hits": "correct",
     "time": "time",
     "xpBreakdown": "Base {base} · perfect +{perfect} · speed +{speed}",
-    "streak": "Streak: {n} days",
+    "streak": "{n} in a row",
     "extended": "extended today!",
     "goalDone": "Goal «{goal}» done",
     "levelUp": "You reached level {n}!",
@@ -405,7 +405,9 @@
     "rightNumber": "It was {n}",
     "total": "Total",
     "scam": "Scam",
-    "spotHint": "Mark every message that is a scam."
+    "spotHint": "Mark every message that is a scam.",
+    "correctStreak": "Correct! 🔥 {n} in a row",
+    "tapToAnswer": "Tap your answer"
   },
   "market": {
     "title": "Market",
@@ -1208,6 +1210,7 @@
     "cheer1": "You’ve got it! Look what you just discovered 👇",
     "cheer2": "Well done! That’s exactly what I wanted you to see.",
     "cheer3": "Challenge beaten! You get it better than most people now.",
-    "cheer4": "That’s it! Now you’ve seen it with your own eyes."
+    "cheer4": "That’s it! Now you’ve seen it with your own eyes.",
+    "tapFaster": "Tap to speed up"
   }
 }

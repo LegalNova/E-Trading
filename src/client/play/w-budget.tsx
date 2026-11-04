@@ -13,6 +13,8 @@ export function Sort({ w, onMetrics }: W<'sort'>) {
   const t = useTranslations('play')
   const f = useFmt()
   const [picks, setPicks] = useState<number[]>([])
+  // El grupo que tocas destella: verde si acierta, rojo si no
+  const flash = picks.length ? { k: picks[picks.length - 1], ok: picks[picks.length - 1] === w.cards[picks.length - 1].bin } : null
   const i = picks.length
   const card = w.cards[i]
   const last = i > 0 ? { c: w.cards[i - 1], ok: picks[i - 1] === w.cards[i - 1].bin } : null
@@ -49,7 +51,13 @@ export function Sort({ w, onMetrics }: W<'sort'>) {
         {w.bins.map((b, k) => {
           const sum = picks.reduce((s, p, j) => s + (p === k && w.cards[j].bin === k ? (w.cards[j].value ?? 0) : 0), 0)
           return (
-            <button key={b.label} className="btn btn-secondary flex h-auto min-h-[64px] flex-col gap-0.5 py-2" disabled={!card} onClick={() => setPicks([...picks, k])}>
+            <button
+              key={flash?.k === k ? `${b.label}-${picks.length}` : b.label}
+              className={`btn btn-secondary flex h-auto min-h-[64px] flex-col gap-0.5 py-2 ${flash?.k === k ? (flash.ok ? 'animate-glow' : 'animate-shake') : ''}`}
+              style={flash?.k === k ? { borderColor: flash.ok ? 'var(--up)' : 'var(--down)', background: `color-mix(in srgb, var(--${flash.ok ? 'up' : 'down'}) 12%, var(--surface))` } : undefined}
+              disabled={!card}
+              onClick={() => setPicks([...picks, k])}
+            >
               <span className="text-[14px] leading-tight">{b.label}</span>
               {w.cards.some(c => c.value !== undefined) && <span className="t-cap tabular-nums">{f.eur(sum)}</span>}
             </button>

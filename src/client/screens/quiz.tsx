@@ -2,7 +2,7 @@
 // 03.5–03.8 · Quiz (7 tipos de pregunta), resultado y sin vidas. También el test de nivel.
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { useTranslations } from 'next-intl'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useEffectEvent, useRef, useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
 import type { AnswerResultT, QuestionT, QuizFinishT } from '@/shared/contract'
 import { clock, num } from '@/shared/format'
@@ -129,6 +129,16 @@ export function QuestionView({ q, value, onChange, reveal }: { q: QuestionT; val
 }
 
 const hasAnswer = (q: QuestionT, v: AnswerValue) => isAnswered(q, v)
+
+// Ritmo «pum, pum, pum»: tocar ya es responder, y al acertar se pasa sola a la siguiente
+/** Se comprueban solas al tocar una opción */
+const INSTANT = new Set(['SINGLE', 'TRUE_FALSE', 'CHART_TREND', 'CHART_POINT', 'FILL_BLANK', 'NUMBER', 'UP_DOWN', 'CHART_CANDLE', 'SCENARIO', 'CHAT'])
+/** Se comprueban solas al completarlas */
+const ON_COMPLETE = new Set(['MATCH', 'BUCKETS', 'ORDER'])
+/** Al acertar pasan solas a la siguiente (las que no enseñan después un gráfico real o una consecuencia que leer) */
+const AUTO_NEXT = new Set(['SINGLE', 'TRUE_FALSE', 'CHART_TREND', 'CHART_POINT', 'FILL_BLANK', 'NUMBER', 'MULTIPLE', 'MATCH', 'BUCKETS', 'ORDER', 'SPOT'])
+const AUTO_MS = 1300
+const complete = (q: QuestionT, v: AnswerValue) => (q.type === 'ORDER' ? Array.isArray(v) && v.length === q.options.length : isAnswered(q, v))
 
 /** Texto de ayuda encima del enunciado según el tipo */
 export function useTypeHint() {
@@ -325,6 +335,8 @@ function QuizInner({ id }: { id: string }) {
   const [reveal, setReveal] = useState<AnswerResultT | null>(null)
   const [lives, setLives] = useState<number | null>(null)
   const [out, setOut] = useState(false)
+  /** Aciertos seguidos: la racha del quiz */
+  const [streak, setStreak] = useState(0)
   const shownAt = useRef(0)
   useEffect(() => {
     shownAt.current = Date.now()
@@ -334,6 +346,7 @@ function QuizInner({ id }: { id: string }) {
     mutationFn: (v: AnswerValue) => api.answer(start.data!.attemptId, start.data!.questions[i].id, v as number | number[] | string, Date.now() - shownAt.current),
     onSuccess: r => {
       setReveal(r)
+      setStreak(n => (r.correct ? n + 1 : 0))
       if (r.livesLeft !== null) setLives(r.livesLeft)
     },
   })
@@ -353,7 +366,34 @@ function QuizInner({ id }: { id: string }) {
     if (limit && left === 0 && !reveal && !sending) send(TIMEOUT)
   }, [left, limit, reveal, sending, send])
 
+  // Al acertar, la siguiente llega sola (se puede adelantar tocando «Continuar»)
+  const cur = start.data?.questions[i]
+  const auto = !!reveal && reveal.correct && !!cur && AUTO_NEXT.has(cur.type) && !reveal.reveal
+  const goOn = useEffectEvent(() => next())
+  useEffect(() => {
+    if (!auto) return
+    const id = setTimeout(goOn, AUTO_MS)
+    return () => clearTimeout(id)
+  }, [auto, i])
+
+  const isLast = !!start.data && i === start.data.questions.length - 1
+  function next() {
+    if (reveal && !reveal.correct && reveal.livesLeft === 0 && !isLast) {
+      refresh()
+      setOut(true)
+      return
+    }
+    if (isLast) finish.mutate()
+    else {
+      setI(i + 1)
+      setValue(null)
+      setReveal(null)
+      setLeft(null)
+    }
+  }
+
   const reset = () => {
+    setStreak(0)
     setI(0)
     setValue(null)
     setReveal(null)
@@ -371,22 +411,13 @@ function QuizInner({ id }: { id: string }) {
 
   const qs = start.data.questions
   const q = qs[i]
-  const isLast = i === qs.length - 1
   const livesNow = lives ?? start.data.lives.current
   const lessonMode = id !== 'review'
-  const next = () => {
-    if (reveal && !reveal.correct && reveal.livesLeft === 0 && !isLast) {
-      refresh()
-      setOut(true)
-      return
-    }
-    if (isLast) finish.mutate()
-    else {
-      setI(i + 1)
-      setValue(null)
-      setReveal(null)
-      setLeft(null)
-    }
+  // Tocar una opción ya responde (o completar el ejercicio, en emparejar, clasificar y ordenar)
+  const pick = (v: AnswerValue) => {
+    if (reveal || answer.isPending) return
+    setValue(v)
+    if ((INSTANT.has(q.type) && hasAnswer(q, v)) || (ON_COMPLETE.has(q.type) && complete(q, v))) answer.mutate(v)
   }
 
   return (
@@ -396,6 +427,11 @@ function QuizInner({ id }: { id: string }) {
           <Icon name="close" />
         </button>
         <Steps total={qs.length} current={i + (reveal ? 1 : 0)} label={t('progress', { i: i + 1, n: qs.length })} />
+        {streak >= 2 && (
+          <span key={streak} className="chip animate-pop px-2" style={{ background: 'color-mix(in srgb, var(--amber) 22%, var(--surface))' }} aria-label={t('streak', { n: streak })}>
+            🔥 {streak}
+          </span>
+        )}
         {lessonMode && (
           <span className="chip bg-transparent px-1" aria-label={t('livesLabel')}>
             <Heart /> {me?.plan !== 'FREE' ? '∞' : livesNow}
@@ -412,14 +448,17 @@ function QuizInner({ id }: { id: string }) {
           )}
         </span>
         {q.type === 'SCENARIO' ? <p className="t-body card m-0 text-[17px] leading-7">{q.prompt}</p> : q.type !== 'FILL_BLANK' && <h1 className="t-title">{q.prompt}</h1>}
-        <QuestionView key={q.id} q={q} value={value} onChange={setValue} reveal={reveal} />
+        <div key={`${q.id}-${reveal ? (reveal.correct ? 'ok' : 'ko') : 'q'}`} className={reveal && !reveal.correct ? 'animate-shake' : undefined}>
+          <QuestionView key={q.id} q={q} value={value} onChange={pick} reveal={reveal} />
+        </div>
       </div>
       <div className="sticky bottom-0" style={{ background: 'var(--bg)' }}>
         {reveal ? (
           <div className={`feedback ${reveal.correct ? 'ok' : 'bad'}`} aria-live="polite">
-            <b className={reveal.correct ? 'up' : 'down'} style={{ fontSize: 17 }}>
-              {reveal.correct ? t('correct') : reveal.livesLeft !== null ? t('wrongLife') : t('wrong')}
+            <b className={`${reveal.correct ? 'up animate-pop' : 'down'} inline-block self-start`} style={{ fontSize: 17 }}>
+              {reveal.correct ? (streak >= 2 ? t('correctStreak', { n: streak }) : t('correct')) : reveal.livesLeft !== null ? t('wrongLife') : t('wrong')}
             </b>
+            {auto && <i className="block h-1 origin-left rounded-full" style={{ background: 'var(--up)', animation: `drain ${AUTO_MS}ms linear forwards` }} aria-hidden />}
             <span className="t-body whitespace-pre-line">{reveal.explanation}</span>
             <button className={`btn ${reveal.correct ? 'btn-success' : 'btn-danger'}`} onClick={next} disabled={finish.isPending} autoFocus>
               {isLast ? t('seeResult') : reveal.correct ? t('continue') : t('gotIt')}
@@ -427,9 +466,13 @@ function QuizInner({ id }: { id: string }) {
           </div>
         ) : (
           <div className="px-4 pt-2.5" style={{ paddingBottom: 'max(24px, env(safe-area-inset-bottom))' }}>
-            <button className="btn btn-primary" disabled={!hasAnswer(q, value) || answer.isPending} onClick={() => answer.mutate(value)}>
-              {hasAnswer(q, value) ? t('check') : t('pick')}
-            </button>
+            {INSTANT.has(q.type) || ON_COMPLETE.has(q.type) ? (
+              <p className="t-foot m-0 flex h-[52px] items-center justify-center text-center">{answer.isPending ? '…' : t('tapToAnswer')}</p>
+            ) : (
+              <button className="btn btn-primary" disabled={!hasAnswer(q, value) || answer.isPending} onClick={() => answer.mutate(value)}>
+                {hasAnswer(q, value) ? t('check') : t('pick')}
+              </button>
+            )}
           </div>
         )}
       </div>

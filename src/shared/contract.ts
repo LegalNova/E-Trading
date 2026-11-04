@@ -187,6 +187,8 @@ export const Question = z.object({
       senders: z.array(z.string()).optional(),
       horizon: z.string().optional(),
       timeLimit: z.number().optional(),
+      /** Preguntas de cifra: opciones para tocar (una es la buena), nunca hay que escribir ni hacer cuentas a mano */
+      choices: z.array(z.number()).optional(),
     })
     .optional(),
 })

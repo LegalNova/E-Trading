@@ -53,3 +53,18 @@ describe('retos y textos', () => {
     expect(up.lumi[0].when.metric).toBe('done')
   })
 })
+
+describe('preguntas de cifra con opciones', () => {
+  it('4 opciones distintas, una es la buena, ninguna dentro del margen y siempre las mismas', async () => {
+    const { numChoices } = await import('@/server/content/choices')
+    for (const [id, sol, tol] of [['a', 2100, 0.01], ['b', 7612, 0.02], ['c', -1.2, 0.05], ['d', 3, 0.01], ['e', -0.02, 0.01], ['f', 17.5, 0.01]] as const) {
+      const c = numChoices(id, sol, tol)
+      expect(c).toHaveLength(4)
+      expect(new Set(c).size).toBe(4)
+      expect(c).toContain(sol)
+      const band = Math.max(Math.abs(sol) * tol, 0.005)
+      for (const x of c) if (x !== sol) expect(Math.abs(x - sol)).toBeGreaterThan(band)
+      expect(numChoices(id, sol, tol)).toEqual(c)
+    }
+  })
+})

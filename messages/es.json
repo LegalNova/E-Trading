@@ -338,7 +338,7 @@
       "PLACE_LEVEL": "Coloca el nivel en el gráfico real",
       "SIM_TRADE": "Simula la operación con datos reales",
       "SCENARIO": "¿Qué haces?",
-      "NUMBER": "Calcula",
+      "NUMBER": "Elige la cifra",
       "PORTFOLIO": "Construye la cartera",
       "SPOT": "Detecta la estafa",
       "CHAT": "Responde a Lumi"
@@ -366,7 +366,7 @@
     "hits": "aciertos",
     "time": "tiempo",
     "xpBreakdown": "Base {base} · quiz perfecto +{perfect} · rapidez +{speed}",
-    "streak": "Racha: {n} días",
+    "streak": "{n} aciertos seguidos",
     "extended": "¡ampliada hoy!",
     "goalDone": "Objetivo «{goal}» cumplido",
     "levelUp": "¡Subes a nivel {n}!",
@@ -405,7 +405,9 @@
     "rightNumber": "Era {n}",
     "total": "Total",
     "scam": "Estafa",
-    "spotHint": "Marca todos los mensajes que sean estafa."
+    "spotHint": "Marca todos los mensajes que sean estafa.",
+    "correctStreak": "¡Correcto! 🔥 {n} seguidas",
+    "tapToAnswer": "Toca tu respuesta"
   },
   "market": {
     "title": "Mercado",
@@ -1208,6 +1210,7 @@
     "cheer1": "¡Lo tienes! Mira lo que acabas de descubrir 👇",
     "cheer2": "¡Bravo! Eso es justo lo que quería que vieras.",
     "cheer3": "¡Reto superado! Ya lo entiendes mejor que mucha gente.",
-    "cheer4": "¡Eso es! Ahora lo has visto con tus propios ojos."
+    "cheer4": "¡Eso es! Ahora lo has visto con tus propios ojos.",
+    "tapFaster": "Toca para ir más rápido"
   }
 }

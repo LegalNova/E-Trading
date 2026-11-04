@@ -5,6 +5,7 @@ import type { User } from '@/generated/prisma/client'
 import { courseMinutes, lessonMinutes, LESSON, PLACEMENT, QUIZZES, RISK_LESSON, UNITS, type ContentQuestion } from '../content/catalog'
 import { canOpen, minPlan } from '@/shared/plans'
 import { grade } from '../content/grading'
+import { numChoices } from '../content/choices'
 import { engineT, lessonTitleT, questionT, stepsT, unitT } from '../content/translate'
 import { currentLocale } from '../locale'
 import { afterReview } from './srs'
@@ -12,7 +13,13 @@ import { addXp, bump, bumpGoal, endFx, fail, LIVES_MAX, livesOf, lumi, markActiv
 
 export const ALL_Q: Record<string, ContentQuestion> = Object.fromEntries([...Object.values(QUIZZES).flat(), ...PLACEMENT].map(q => [q.id, q]))
 /** Lo que ve el alumno: nunca la solución, las consecuencias ni el futuro del gráfico */
-const publicQ = (q: ContentQuestion): QuestionT => ({ id: q.id, type: q.type, prompt: q.prompt, options: q.options, chart: q.chart, candles: q.candles, right: q.right, meta: q.meta })
+/** «(redondea…)» sobra cuando la cifra se elige entre opciones */
+const ROUND_NOTE = /\s*\((?:redondea|arrodoneix|round)[^)]*\)/gi
+const publicQ = (q: ContentQuestion): QuestionT => ({
+  id: q.id, type: q.type, prompt: q.type === 'NUMBER' ? q.prompt.replace(ROUND_NOTE, '') : q.prompt, options: q.options, chart: q.chart, candles: q.candles, right: q.right,
+  // Las de cifra se responden tocando una opción (una de ellas es la buena, como en un test)
+  meta: q.type === 'NUMBER' ? { ...q.meta, choices: numChoices(q.id, q.solution as number, q.tol ?? 0.01) } : q.meta,
+})
 
 export async function pathOf(tx: Tx, user: User): Promise<CoursePathT> {
   const loc = currentLocale()
