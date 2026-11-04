@@ -10,8 +10,9 @@ export type CmpT = z.infer<typeof Cmp>
 export const LumiMood = z.enum(['HAPPY', 'CELEBRATE', 'WORRIED', 'CALM', 'SAD', 'THINKING'])
 
 const Item = z.object({ icon: z.string(), name: z.string(), price: z.number() })
-const Series = z.object({ caption: z.string(), dates: z.array(z.string()), closes: z.array(z.number()) })
-const Mix = z.object({ caption: z.string(), dates: z.array(z.string()), assets: z.array(z.object({ key: z.string(), name: z.string(), closes: z.array(z.number()) })) })
+/** `usd`: la serie va en dólares; la pieza avisa de que no cuenta el cambio euro/dólar */
+const Series = z.object({ caption: z.string(), dates: z.array(z.string()), closes: z.array(z.number()), usd: z.boolean().optional() })
+const Mix = z.object({ caption: z.string(), usd: z.boolean().optional(), dates: z.array(z.string()), assets: z.array(z.object({ key: z.string(), name: z.string(), closes: z.array(z.number()) })) })
 const Ohlc = z.tuple([z.number(), z.number(), z.number(), z.number()])
 /** Velas reales de charts.json: las visibles, las que vienen después y el precio de entrada (si lo hay) */
 const Candles = z.object({ caption: z.string(), candles: z.array(Ohlc), future: z.array(Ohlc), entry: z.number().optional() })
@@ -67,8 +68,8 @@ export const Widget = z.discriminatedUnion('kind', [
   z.object({ kind: z.literal('mix'), series: Mix, weights: z.array(z.number()), amount: z.number(), rebalance: z.boolean().optional() }),
   /** Comisiones a largo plazo: el mismo ahorro con un fondo barato y otro caro */
   z.object({ kind: z.literal('fees'), amount: z.number(), monthly: z.number(), gross: z.number(), feeA: z.number(), feeB: z.number(), years: z.number(), maxFee: z.number(), maxYears: z.number() }),
-  /** Precio de un bono cuando cambian los tipos */
-  z.object({ kind: z.literal('bond'), face: z.number(), coupon: z.number(), years: z.number(), rate: z.number(), maxRate: z.number(), maxYears: z.number() }),
+  /** Precio de un bono cuando cambian los tipos (`head` sustituye la cabecera: sirve también para descontar un cobro futuro) */
+  z.object({ kind: z.literal('bond'), head: z.string().optional(), face: z.number(), coupon: z.number(), years: z.number(), rate: z.number(), maxRate: z.number(), maxYears: z.number() }),
   /** Invertir fuera del euro: la rentabilidad del activo y la de la divisa */
   z.object({ kind: z.literal('fx'), amount: z.number(), asset: z.number(), fx: z.number(), maxAsset: z.number(), maxFx: z.number(), currency: z.string() }),
   /** Apalancamiento: un pequeño movimiento del precio, multiplicado */
@@ -142,7 +143,7 @@ export function holds(c: CmpT, m: Record<string, number>): boolean {
 }
 
 /** Campos que no son texto para traducir (el resto de cadenas de un PLAY o STORY sí lo son, en este orden) */
-export const NOT_TEXT = new Set(['id', 'type', 'mode', 'kind', 'icon', 'who', 'tone', 'per', 'metric', 'op', 'mood', 'dates', 'candles', 'future', 'closes', 'key', 'caption', 'lines', 'controls'])
+export const NOT_TEXT = new Set(['id', 'type', 'mode', 'kind', 'icon', 'who', 'tone', 'per', 'metric', 'op', 'mood', 'dates', 'candles', 'future', 'closes', 'key', 'caption', 'usd', 'lines', 'controls'])
 
 /** Recorre las cadenas traducibles de un paso en orden fijo; `map` puede sustituirlas */
 export function walkTexts<T>(x: T, map: (s: string) => string, key = ''): T {

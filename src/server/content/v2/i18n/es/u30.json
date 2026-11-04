@@ -9,17 +9,53 @@
    "title": "Rebalancear",
    "steps": [
     {
-     "title": "Por qué se desvía",
-     "body": "Tu plan es 60 % acciones y 40 % bonos. Si la bolsa sube mucho, en dos años puedes estar en 72/28 sin haber tocado nada. Tu cartera es ahora **más arriesgada** de lo que elegiste.\n\nRebalancear es volver al reparto objetivo: vender un poco de lo que más subió o aportar a lo que se quedó atrás."
+     "texts": [
+      "Un 60/40 que vuelve a su sitio",
+      "Datos reales de 2008 a 2025. Tu cartera es **60 % acciones y 40 % bonos**, y cada enero **vuelves a ese reparto**: rebalanceas.",
+      "Acciones de EE. UU. (S&P 500)",
+      "Bonos de EE. UU.",
+      "Oro",
+      "Si no la hubieras tocado nunca, ¿cuántas acciones tendría tu 60/40 en 2025?",
+      "Más o menos un 60 %",
+      "Más de un 80 %",
+      "Menos de un 40 %",
+      "Las acciones subieron mucho más que los bonos: sin tocarla, acabó con un **86 % en acciones**. Mucho más riesgo del que elegiste.",
+      "Busca un reparto rebalanceado cuya peor caída no pase del 20 %.",
+      "Rebalancear mantiene **el riesgo que elegiste**. Sin tocarlo, aquel 60/40 habría ganado más (48.150 € frente a 42.007 €), pero habría acabado con un 86 % en acciones.",
+      "Mucha bolsa: aunque rebalancees, la caída es grande.",
+      "¡Eso es! Menos acciones, caídas más pequeñas.",
+      "Mueve el reparto y mira la peor caída"
+     ]
     },
     {
-     "title": "Tres formas",
-     "body": "1. **Por calendario:** una vez al año, por ejemplo en enero.\n2. **Por umbral:** cuando una parte se aleja más de 5 puntos.\n3. **Con las aportaciones:** el dinero nuevo va a lo que se ha quedado corto. No vendes, así que no generas impuestos.\n\nCon fondos de inversión también puedes rebalancear por **traspaso**, sin tributar."
+     "texts": [
+      "¿Toca rebalancear?",
+      "Tu plan: **60 % acciones y 40 % bonos**. Corriges si una parte se aleja **más de 5 puntos**. ¿Qué haces en cada caso?",
+      "Paso de acciones a bonos",
+      "Paso de bonos a acciones",
+      "No toco nada",
+      "Tras dos años buenos estás en 72/28",
+      "12 puntos de más en acciones: vendes un poco o aportas a bonos.",
+      "Marzo de 2020: la bolsa se hunde y estás en 50/50",
+      "Da miedo, pero tu regla pide comprar acciones: compras barato.",
+      "Estás en 62/38",
+      "Solo 2 puntos: dentro de tu margen.",
+      "La bolsa se dispara y estás en 68/32",
+      "8 puntos de más: vuelves al 60/40.",
+      "Tras una caída fuerte estás en 53/47",
+      "7 puntos de menos en acciones: toca reponer.",
+      "Estás en 57/43",
+      "3 puntos: no hace falta tocar nada.",
+      "Decide los seis casos.",
+      "Rebalancear te obliga a **vender algo de lo que más subió y comprar lo que se quedó atrás**, sin adivinar nada. En las caídas da miedo; por eso conviene tener la regla escrita.",
+      "Mira cuántos puntos se aleja del 60 %: ¿más de 5?",
+      "¿Qué haces en cada caso?"
+     ]
     },
     {
-     "title": "El efecto psicológico",
-     "body": "En 2009 o en marzo de 2020, rebalancear obligaba a comprar acciones justo cuando más miedo había. Es una regla que te hace comprar barato y vender caro sin tener que adivinar nada.",
-     "key": "Rebalancear es volver a tu plan: vender algo de lo que más subió y comprar lo que se quedó atrás.",
+     "title": "Tres formas de rebalancear",
+     "body": "1. **Por calendario:** una vez al año, por ejemplo en enero.\n2. **Por umbral:** cuando una parte se aleja más de 5 puntos.\n3. **Con las aportaciones:** el dinero nuevo va a lo que se ha quedado corto. No vendes, así que no generas impuestos.\n\nCon fondos de inversión también puedes rebalancear por **traspaso**, sin tributar.",
+     "key": "Calendario, umbral o aportaciones: lo importante es tener una regla y seguirla.",
      "tip": "Es la forma automática de comprar barato cuando todos venden."
     }
    ]
@@ -28,19 +64,41 @@
    "title": "El coste de las comisiones a largo plazo",
    "steps": [
     {
-     "title": "El ejemplo",
-     "body": "Inviertes **10.000 €** durante **30 años** y el mercado da un 7 % anual (ejemplo, no promesa):\n\n• Sin costes: **76.123 €**\n• Con un 0,2 % (indexado): **71.968 €**\n• Con un 1,5 % (fondo activo típico): **49.840 €**\n\nUn 1,5 % al año se lleva más de 26.000 €."
+     "texts": [
+      "Lo que se lleva una comisión",
+      "Inviertes **10.000 €** durante 30 años y el mercado da un 7 % anual (ejemplo, no promesa). Un fondo indexado cobra un **0,2 %**; otro, un **1,5 %**.",
+      "A 30 años, ¿cuánto te cuesta elegir el fondo del 1,5 %?",
+      "Casi nada: es solo un poco más al año",
+      "Casi un tercio de lo que tendrías",
+      "Más de lo que tendrías con el barato",
+      "Con el barato acabas con **71.968 €**; con el caro, **49.840 €**. La comisión de más se lleva 22.128 €, un 31 %.",
+      "A 30 años, busca la comisión con la que pierdes más de un tercio.",
+      "Las comisiones también **se componen, pero en tu contra**. Un 1,5 % al año suena a poco; a 30 años se lleva casi un tercio de tu dinero.",
+      "¡Más de un tercio para el fondo! Y el riesgo lo corres tú.",
+      "A 10 años aún parece poco. Alarga el plazo.",
+      "Sube la comisión del fondo caro"
+     ]
     },
     {
-     "title": "Compara tú",
-     "body": "Pon 300 € al mes durante 30 años y compara un 0,2 % con un 1,8 % de costes: con un 7 % de mercado salen unos 351.900 € frente a unos 259.100 €.",
-     "tip": "Las comisiones también se componen, pero en tu contra."
+     "texts": [
+      "El gestor estrella",
+      "Tu banco",
+      "Te recomiendo nuestro fondo estrella. Gastos: **1,9 %**. El gestor es buenísimo.",
+      "La alternativa es un indexado mundial al 0,2 %…",
+      "¿Qué piensas?",
+      "El gestor estrella compensará la comisión",
+      "SPIVA: en 10 años, el 97 % de estos fondos quedó tras su índice.",
+      "Tendría que batir al índice por 1,7 puntos al año solo para empatar",
+      "Exacto: cada año, durante décadas. Casi nadie lo consigue.",
+      "Da igual, la diferencia es pequeña",
+      "A 30 años, esa diferencia puede ser un tercio de tu dinero.",
+      "Una comisión alta es un **lastre seguro**. Batir al índice, una esperanza incierta."
+     ]
     },
     {
      "title": "Todos los costes",
-     "body": "Gastos corrientes o TER (en el KID), comisión por operación, spread, custodia, cambio de divisa e impuestos. John Bogle, fundador de Vanguard, lo resumía así: «En inversión, obtienes aquello por lo que no pagas».",
-     "key": "Cada punto de comisión anual se come una parte enorme del resultado por el interés compuesto.",
-     "tip": "Un 1,5 % al año suena a poco. A 30 años, es un tercio de tu dinero."
+     "body": "Gastos corrientes o **TER** (vienen en el KID), comisión por operación, spread, custodia, cambio de divisa e impuestos.\n\nJohn Bogle, fundador de Vanguard, lo resumía así: «En inversión, obtienes aquello por lo que no pagas».",
+     "key": "Cada punto de comisión anual se come una parte enorme del resultado por el interés compuesto."
     }
    ]
   },
@@ -48,18 +106,61 @@
    "title": "Invertir con poco: 50 € al mes",
    "steps": [
     {
-     "title": "Poco, pero pronto",
-     "body": "No hace falta tener miles de euros. Con **50 € al mes** durante 30 años, si el mercado diera un 7 % anual (ejemplo, no promesa), aportarías 18.000 € y acabarías con unos **61.000 €**. Con 40 años, unos **131.000 €**.\n\nEl tiempo hace la mayor parte del trabajo."
+     "texts": [
+      "50 € al mes",
+      "No hace falta tener miles de euros. Aportas **50 € al mes** y el mercado da un 7 % anual (ejemplo, no promesa).",
+      "A 30 años, ¿con cuánto acabas?",
+      "Con lo que has puesto, 18.000 €",
+      "Con más del triple de lo que pones",
+      "Con más de un millón",
+      "Pones 18.000 € y acabas con unos **58.500 €**: más del triple. El resto lo hace el interés compuesto.",
+      "Sin subir de 50 € al mes, busca con cuántos años pasas de 100.000 €.",
+      "Con 50 € al mes, pasar de 30 a 40 años solo añade 6.000 € de tu bolsillo, pero el final salta de unos 58.500 € a **más de 123.000 €**. El **tiempo** hace la mayor parte del trabajo.",
+      "¡Seis cifras con 50 € al mes! El tiempo trabaja por ti.",
+      "Poner más ayuda… pero prueba a alargar los años.",
+      "Alarga los años y mira la curva"
+     ]
     },
     {
-     "title": "Aportar cada mes",
-     "body": "Mueve el precio arriba y abajo: con la misma cantidad cada mes compras más participaciones cuando está barato y menos cuando está caro.",
-     "tip": "Invertir cada mes es como subir una escalera: lo importante es no pararse."
+     "texts": [
+      "Esperar a tener 5.000 €",
+      "Pablo",
+      "Tengo 22 años. Quiero esperar a juntar 5.000 € para invertir «en serio».",
+      "Tardaré unos 4 años. Con poco no merece la pena, ¿no?",
+      "¿Qué le dices?",
+      "Espera: con poco no merece la pena",
+      "Mientras espera, la inflación muerde y pierde años de interés compuesto.",
+      "Empieza ya con poco y de forma automática",
+      "¡Eso! Empieza el hábito y el tiempo trabaja desde hoy.",
+      "Mételo todo en una cripto para llegar antes",
+      "Eso es apostar, no invertir: puede perderlo todo.",
+      "Y si un mes la bolsa baja, tus 50 € compran **más participaciones**.",
+      "¿Y cómo hago para que las comisiones no se lo coman?"
+     ]
     },
     {
-     "title": "Cómo hacerlo barato",
-     "body": "Con poco dinero, las comisiones fijas pesan mucho: 2 € por una compra de 50 € es un 4 %. Busca fondos indexados sin comisión de compra o planes de aportación sin coste, y automatiza la aportación el día que cobras.",
-     "key": "Empezar pronto con poco suele pesar más que empezar tarde con mucho."
+     "texts": [
+      "¿Ayuda o complica?",
+      "Con poco dinero, los **costes fijos** pesan mucho. ¿Esto te ayuda o te complica?",
+      "Ayuda",
+      "Complica",
+      "Fondos indexados sin importe mínimo",
+      "Puedes empezar con 50 € sin trabas.",
+      "Aportación automática el día que cobras",
+      "Inviertes antes de gastar, sin tener que pensarlo cada mes.",
+      "Una comisión fija de 10 € por compra",
+      "Con 50 € al mes, se lleva una quinta parte de cada aportación.",
+      "Esperar a tener mucho para empezar",
+      "Pierdes años de interés compuesto.",
+      "Una custodia mínima de 30 € al año",
+      "Con 600 € aportados al año, se come un 5 %.",
+      "Un plan de aportación periódica sin coste",
+      "Todo tu dinero se pone a trabajar.",
+      "Clasifica las seis opciones.",
+      "Con poco dinero, busca **cero comisiones fijas** y automatiza la aportación. Empezar pronto con poco suele pesar más que empezar tarde con mucho.",
+      "Pregúntate: ¿se come una parte fija de cada aportación?",
+      "Clasifica cada opción"
+     ]
     }
    ]
   },
@@ -67,21 +168,42 @@
    "title": "Medir tu rentabilidad bien",
    "steps": [
     {
-     "title": "Simple y anualizada",
-     "body": "**Simple:** (valor final − inicial) ÷ inicial. 2.000 € → 2.600 € es un +30 %.\n\n**Anualizada:** el ritmo medio por año. Un +50 % en 5 años **no** es un 10 % anual: es un 8,4 %, porque se compone. Fórmula: (1 + total)^(1/años) − 1."
+     "texts": [
+      "¿Cuánto es al año?",
+      "Un fondo convierte **10.000 € en 15.000 €** en 5 años: un +50 % en total. ¿Qué ritmo anual es eso?",
+      "+50 % en 5 años, ¿cuánto es al año?",
+      "Un 10 % al año: 50 entre 5",
+      "Algo menos del 10 % al año",
+      "Un 50 % al año",
+      "El interés se compone: al 10 % anual, 10.000 € serían **16.105 €** en 5 años. Hace falta menos.",
+      "Busca el % anual que convierte 10.000 € en unos 15.000 € en 5 años.",
+      "Un +50 % en 5 años es un **8,4 % anual**, no un 10 %: anualizar es componer al revés. Compara siempre **% anual con % anual**.",
+      "Te pasas: el interés de cada año también gana interés.",
+      "¡Justo! Ni un 10 % ni un 50 %: algo más de un 8 %.",
+      "Mueve el % anual hasta llegar a 15.000 €"
+     ]
     },
     {
-     "title": "Ponderada por tiempo o por dinero",
-     "body": "• **Por tiempo:** lo que hizo el fondo, sin importar cuándo metiste dinero. Sirve para comparar fondos.\n• **Por dinero:** lo que ganaste **tú**, según cuánto tenías en cada momento.\n\nSi metes mucho justo antes de una caída, el fondo puede ganar y tú perder."
-    },
-    {
-     "title": "Anualizar es componer al revés",
-     "body": "Pon 10.000 € al 8,4 % durante 5 años: llegas a unos 15.000 €, un +50 % total.",
-     "tip": "Compara siempre en la misma unidad: % anual con % anual."
+     "texts": [
+      "El fondo ganó; Laura, no",
+      "Laura",
+      "Laura mete 1.000 € en un fondo. Sube un 20 %: ya tiene 1.200 €.",
+      "¡Qué bien va! Le meto 10.000 € más.",
+      "Justo después, el fondo cae un 10 %. Laura tiene 10.080 €.",
+      "¿Laura ha ganado o ha perdido?",
+      "Ha ganado: el fondo sube un 8 % en total",
+      "El fondo, sí. Pero Laura puso 11.000 € y tiene 10.080 €.",
+      "Ha perdido 920 €, aunque el fondo gane un 8 %",
+      "¡Exacto! Tenía casi todo dentro justo en la caída.",
+      "Ha perdido un 10 %, como el fondo",
+      "El fondo no pierde en total: gana un 8 %. Y ella pierde 920 €.",
+      "Ponderada **por tiempo**: lo que hizo el fondo. Sirve para comparar fondos.",
+      "Ponderada **por dinero**: lo que ganaste **tú**, según cuándo metiste el dinero."
+     ]
     },
     {
      "title": "Medir con honestidad",
-     "body": "Resta comisiones e impuestos, compara con un índice de referencia y recuerda la inflación. Una app que te dice «+40 % desde el inicio» sin decir en cuántos años no te dice casi nada.",
+     "body": "Resta comisiones e impuestos, compara con un índice de referencia y recuerda la inflación.\n\nUna app que te dice «+40 % desde el inicio» sin decir en cuántos años no te dice casi nada.",
      "key": "Para comparar, usa la rentabilidad anualizada; para saber cuánto ganaste tú, la ponderada por dinero."
     }
    ]
@@ -90,16 +212,65 @@
    "title": "Tu Declaración de Política de Inversión",
    "steps": [
     {
-     "title": "Qué es",
-     "body": "Un documento corto que dice **qué haces, por qué y qué harás cuando el mercado se ponga feo**. Los grandes inversores institucionales la tienen (en inglés, Investment Policy Statement). Tú también puedes tener la tuya en una página."
+     "texts": [
+      "Tu plan, en una página",
+      "Ana",
+      "Quiero escribir mi Declaración de Política de Inversión. ¿Eso no es de grandes inversores?",
+      "Ellos la tienen. Tú puedes tener la tuya en **una página**.",
+      "Dice qué haces, por qué y qué harás cuando el mercado se ponga feo.",
+      "Punto 8: «Si la bolsa cae un 30 %, yo…»",
+      "…vendo todo y vuelvo cuando se calme",
+      "Eso no lo decides en calma: lo decide el miedo.",
+      "…no vendo, sigo aportando y rebalanceo si toca",
+      "¡Eso es un plan! Y rebalancear te hará comprar barato.",
+      "…ya veré qué dicen las noticias",
+      "En pleno pánico, las noticias no te darán el suelo. Decide hoy.",
+      "Es el punto más importante: decides hoy, con calma, lo que harás con miedo."
+     ]
+    },
+    {
+     "texts": [
+      "¿Va en tu Declaración?",
+      "Tu plan recoge **reglas que tú controlas**. ¿Qué entra y qué no pinta nada?",
+      "Va en el plan",
+      "No pinta nada",
+      "Reparto: 70 % acciones mundiales y 30 % bonos",
+      "La decisión clave, por escrito.",
+      "Aporto 200 € el día 1 de cada mes",
+      "Una regla automática que depende de ti.",
+      "La acción que recomendó un tiktoker",
+      "Una moda no es un plan.",
+      "Dónde estará el IBEX en diciembre",
+      "Nadie lo sabe: las predicciones no van en el plan.",
+      "Rebalanceo cada enero",
+      "Cuándo vuelves a tu reparto.",
+      "Nunca invertiré con dinero prestado",
+      "Va en «qué no haré nunca».",
+      "Clasifica las seis frases.",
+      "Un buen plan tiene **reglas que tú controlas**: reparto, aportaciones, rebalanceo y límites. Ni predicciones ni modas.",
+      "¿Depende de ti o del mercado?",
+      "Clasifica cada frase"
+     ]
+    },
+    {
+     "texts": [
+      "Bruno quiere más",
+      "Bruno",
+      "Mi plan dice 80 % acciones y 20 % bonos.",
+      "Pero llevo dos años buenísimos. Me paso al 100 % acciones: los bonos no rinden.",
+      "¿Qué le dices?",
+      "Hazlo: la bolsa está subiendo",
+      "Subir el riesgo después de las subidas es comprar euforia.",
+      "Relee por qué elegiste el 80/20. Si tu vida no ha cambiado, mantenlo",
+      "¡Bien! El plan existe para no decidir con la emoción del momento.",
+      "Pásalo todo a bonos, por si acaso",
+      "Cambiar por miedo tampoco es seguir el plan.",
+      "Revísalo cada año o si cambia tu vida. **Nunca** por el mercado."
+     ]
     },
     {
      "title": "La plantilla",
-     "body": "1. Objetivos («X € en el año Y para Z»).\n2. Horizonte.\n3. Colchón.\n4. Reparto.\n5. Productos y coste máximo.\n6. Aportación automática.\n7. Cuándo rebalanceo.\n8. Qué haré si la bolsa cae un 30 %.\n9. Qué no haré nunca.\n10. Límite para especular (opcional)."
-    },
-    {
-     "title": "Revísala bien",
-     "body": "Una vez al año o si cambia tu vida: trabajo, hijos, casa. **No** porque el mercado haya subido o bajado. El punto 8 es el más importante: decides hoy, con calma, lo que harás con miedo.",
+     "body": "1. Objetivos («X € en el año Y para Z»).\n2. Horizonte.\n3. Colchón.\n4. Reparto.\n5. Productos y coste máximo.\n6. Aportación automática.\n7. Cuándo rebalanceo.\n8. Qué haré si la bolsa cae un 30 %.\n9. Qué no haré nunca.\n10. Límite para especular (opcional).",
      "key": "Un plan escrito en un momento de calma es lo que te salva en un momento de pánico.",
      "tip": "Escribe hoy lo que harás el día que todo el mundo tenga miedo."
     }
@@ -150,12 +321,6 @@
    "explanation": "El 60 % de 12.400 € son 7.440 €. 8.400 − 7.440 = 960 €, que pasan a bonos.",
    "unit": "€"
   },
-  "u30l1-4": {
-   "prompt": "Y si prefieres no vender: ¿cuánto dinero nuevo tendrías que aportar a bonos para volver al 60/40?",
-   "options": [],
-   "explanation": "Si 8.400 € deben ser el 60 %, el total debe ser 14.000 €. Bonos: 14.000 − 8.400 = 5.600 €. Ya tienes 4.000 €: aportas 1.600 €.",
-   "unit": "€"
-  },
   "u30l1-5": {
    "prompt": "Tu cartera se ha ido a 75 % acciones y 25 % renta fija. Tu plan es 60/40. Reparte cómo debería quedar: entre un 58 % y un 62 % en acciones.",
    "options": [
@@ -185,28 +350,6 @@
     "Revisas en una fecha fija, por ejemplo cada enero",
     "El dinero nuevo va a lo que se ha quedado atrás"
    ]
-  },
-  "u30l1-7": {
-   "prompt": "Marzo de 2020: la bolsa ha caído un 30 % y tu cartera 60/40 está en 50/50. Tu plan dice «rebalanceo si me desvío más de 5 puntos». ¿Qué haces?",
-   "options": [
-    "Espero a ver qué dicen las noticias",
-    "Vendo todas las acciones antes de que caigan más",
-    "Sigo el plan: muevo dinero de bonos a acciones hasta el 60/40"
-   ],
-   "explanation": "Rebalancear en las caídas obliga a comprar barato. Por eso es tan útil… y tan difícil sin un plan escrito.",
-   "feedback": [
-    "Las noticias en pleno pánico no te van a dar el suelo. Tu regla ya decidió por ti.",
-    "Justo lo contrario del plan. Y en 2020 el mercado recuperó su máximo en unos 5 meses.",
-    "Es lo que pide tu regla. Da miedo, y por eso conviene tenerla escrita de antemano."
-   ]
-  },
-  "u30l1-8": {
-   "prompt": "Rebalancear con las aportaciones nuevas evita pagar impuestos por vender.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Si no vendes, no hay ganancia que declarar."
   },
   "u30l1-9": {
    "prompt": "Si decides corregir solo cuando una parte se aleja más de 5 puntos, rebalanceas por ____.",
@@ -248,14 +391,6 @@
    ],
    "explanation": "Unos 351.900 € frente a unos 259.100 € con un mercado al 7 %."
   },
-  "u30l2-4": {
-   "prompt": "Un 1 % anual de comisiones apenas importa a 30 años.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Por el interés compuesto, cada punto anual se lleva una parte enorme del resultado final."
-  },
   "u30l2-5": {
    "prompt": "¿Qué costes debes mirar antes de invertir? Marca todos.",
    "options": [
@@ -286,29 +421,6 @@
    ],
    "explanation": "76.123 €, 71.968 €, 49.840 € y unos 45.759 €."
   },
-  "u30l2-8": {
-   "prompt": "Rápido: ¿de quién es la frase «en inversión, obtienes aquello por lo que no pagas»?",
-   "options": [
-    "Isaac Newton",
-    "John Bogle",
-    "Elon Musk"
-   ],
-   "explanation": "El fundador de Vanguard y del primer fondo indexado para minoristas (1976)."
-  },
-  "u30l2-9": {
-   "prompt": "Tu banco te ofrece un fondo con un 1,9 % de gastos «con un gestor estrella». La alternativa es un indexado mundial al 0,2 %. ¿Qué piensas?",
-   "options": [
-    "Da igual, la diferencia es pequeña",
-    "El gestor estrella compensará la comisión",
-    "Necesitaría batir al índice por 1,7 puntos al año, cada año, para empatar"
-   ],
-   "explanation": "Una comisión alta es un handicap seguro; batir al índice, una esperanza incierta.",
-   "feedback": [
-    "A 30 años, esa diferencia puede ser un tercio de tu dinero.",
-    "Según SPIVA, en 10 años un 97 % de los fondos de acciones europeos quedó por detrás de su índice. La estrella tendría que ser excepcional… durante décadas.",
-    "Exacto: es un listón altísimo que casi nadie supera de forma sostenida."
-   ]
-  },
   "u30l2-10": {
    "prompt": "¿Qué le contestas a Lumi?",
    "options": [
@@ -326,27 +438,6 @@
     "Mi fondo cobra un 1,5 %, pero este año ha subido un 10 % 🚀",
     "Así que el coste da igual, ¿no?"
    ]
-  },
-  "u30l3-1": {
-   "prompt": "50 € al mes durante 30 años con un 7 % anual (ejemplo, no promesa). ¿Con cuánto acabarías aproximadamente?",
-   "options": [],
-   "explanation": "Unos 60.999 €, de los que 18.000 € son tus aportaciones y el resto, interés compuesto.",
-   "unit": "€"
-  },
-  "u30l3-2": {
-   "prompt": "En ese mismo caso, ¿cuánto dinero habrías aportado tú en total?",
-   "options": [],
-   "explanation": "50 € × 12 meses × 30 años = 18.000 €. Los otros 43.000 € los genera el tiempo.",
-   "unit": "€"
-  },
-  "u30l3-3": {
-   "prompt": "Si en vez de 30 años son 40 (50 € al mes, 7 %), ¿cuánto tendrías aproximadamente?",
-   "options": [
-    "Unos 300.000 €",
-    "Unos 70.000 €",
-    "Unos 131.000 €"
-   ],
-   "explanation": "Diez años más aportan solo 6.000 € más, pero el resultado se duplica de sobra."
   },
   "u30l3-4": {
    "prompt": "Inviertes 100 € al mes y el precio pasa por 10, 8, 5, 8 y 10 €. Compras 65 participaciones con 500 €. ¿Cuál es tu precio medio? (dos decimales)",
@@ -370,20 +461,6 @@
     "ACCIÓN SUELTA"
    ]
   },
-  "u30l3-6": {
-   "prompt": "Pablo tiene 22 años y quiere esperar a tener 5.000 € ahorrados para empezar a invertir «en serio». Tardará 4 años. ¿Qué le dices?",
-   "options": [
-    "Que puede empezar ya con una aportación pequeña y automática",
-    "Que espere: con poco no merece la pena",
-    "Que lo meta todo en una cripto para llegar antes a 5.000 €"
-   ],
-   "explanation": "Empezar con poco crea el hábito y aprovecha el tiempo, que es lo que más pesa.",
-   "feedback": [
-    "Bien: empieza el hábito y el tiempo trabaja desde hoy. Ya subirá la cantidad.",
-    "Mientras espera, el dinero pierde frente a la inflación y pierde años de interés compuesto.",
-    "Eso es apostar, no invertir: puede perderlo todo."
-   ]
-  },
   "u30l3-7": {
    "prompt": "Si cada compra de 50 € te cuesta 2 € de comisión, pierdes un 4 % de entrada.",
    "options": [
@@ -391,21 +468,6 @@
     "Falso"
    ],
    "explanation": "2 ÷ 50 = 4 %. Con poco dinero, busca opciones sin comisión fija por compra."
-  },
-  "u30l3-8": {
-   "prompt": "¿Ayuda o complica invertir con poco dinero?",
-   "options": [
-    "Aportación automática el día de cobro",
-    "Una custodia mínima de 30 € al año",
-    "Una comisión fija de 10 € por compra",
-    "Fondos indexados sin importe mínimo",
-    "Esperar a tener mucho para empezar"
-   ],
-   "explanation": "Con poco dinero, los costes fijos se comen gran parte de la aportación.",
-   "right": [
-    "Ayuda",
-    "Complica"
-   ]
   },
   "u30l3-9": {
    "prompt": "Rápido: con una suma grande, ¿qué ganó más veces en los estudios de Vanguard?",
@@ -481,29 +543,6 @@
     "Cuánto ha cambiado el valor en total"
    ]
   },
-  "u30l4-6": {
-   "prompt": "Laura mete 1.000 €, que suben un 20 % (1.200 €). Entonces aporta 10.000 € más y la cartera cae un 10 %: acaba con 10.080 €. ¿Cuántos euros ha ganado o perdido en total? (usa signo menos si pierde)",
-   "options": [],
-   "explanation": "Aportó 11.000 € y tiene 10.080 €: −920 €. El fondo, en cambio, hizo 1,2 × 0,9 = +8 %.",
-   "unit": "€"
-  },
-  "u30l4-7": {
-   "prompt": "En el caso de Laura, el fondo ganó un 8 % y ella perdió dinero. Las dos cosas pueden ser ciertas a la vez.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Ponderada por tiempo: +8 %. Ponderada por dinero: negativa, porque tenía casi todo dentro justo en la caída."
-  },
-  "u30l4-8": {
-   "prompt": "Rápido: +21 % en 2 años. ¿Rentabilidad anualizada?",
-   "options": [
-    "10 %",
-    "21 %",
-    "10,5 %"
-   ],
-   "explanation": "1,21^(1/2) = 1,10 → 10 % anual. 1,1 × 1,1 = 1,21."
-  },
   "u30l4-9": {
    "prompt": "Una app presume de que tu cartera lleva «+40 % desde el inicio». Empezaste hace 7 años. Un fondo indexado mundial ha dado un 7 % anual en ese tiempo. ¿Cómo lo valoras?",
    "options": [
@@ -569,74 +608,11 @@
    ],
    "explanation": "Aportar cada mes es parte del plan, no algo que evitar."
   },
-  "u30l5-5": {
-   "prompt": "¿Va en tu Declaración o no?",
-   "options": [
-    "Aporto 200 € el día 1 de cada mes",
-    "Rebalanceo cada enero",
-    "Dónde estará el IBEX en diciembre",
-    "Reparto: 70 % acciones mundiales y 30 % bonos",
-    "La acción que recomendó un tiktoker"
-   ],
-   "explanation": "El plan recoge reglas que tú controlas, no predicciones ni modas.",
-   "right": [
-    "Sí, va en el plan",
-    "No pinta nada"
-   ]
-  },
   "u30l5-6": {
    "prompt": "Tu Declaración dice que como máximo un 5 % de tu patrimonio irá a especular. Tienes 18.000 €. ¿Cuál es el máximo?",
    "options": [],
    "explanation": "18.000 × 0,05 = 900 €, y solo dinero que puedas perder entero.",
    "unit": "€"
-  },
-  "u30l5-7": {
-   "prompt": "Si la bolsa sube mucho dos años seguidos, conviene reescribir la Declaración con más acciones.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Cambiar el plan por lo que hizo el mercado es justo lo que la Declaración intenta evitar."
-  },
-  "u30l5-8": {
-   "prompt": "La Declaración de Bruno dice 80 % acciones y 20 % bonos. Tras dos años muy buenos, quiere pasar al 100 % acciones «porque los bonos no rinden». ¿Qué le dices?",
-   "options": [
-    "Que lo pase todo a bonos por si acaso",
-    "Que lo haga: la bolsa está subiendo",
-    "Que relea por qué eligió el 80/20 y, si su vida no ha cambiado, lo mantenga"
-   ],
-   "explanation": "La Declaración cambia con tu vida, no con el mercado.",
-   "feedback": [
-    "Cambiar por miedo tampoco es seguir el plan.",
-    "Subir el riesgo después de las subidas es comprar euforia. Su plan ya tenía en cuenta que los bonos rinden menos.",
-    "Bien: el plan existe para no decidir con la emoción del momento."
-   ]
-  },
-  "u30l5-9": {
-   "prompt": "Escribir el plan en calma sirve para no decidir en pleno pánico.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Es su función principal: separar la decisión del momento de miedo."
-  },
-  "u30l5-10": {
-   "prompt": "¿Qué le contestas a Lumi?",
-   "options": [
-    "No vendo, sigo aportando, rebalanceo si toca y releo el plan",
-    "Pido un préstamo para comprar más",
-    "Que venda todo y vuelva cuando se calme"
-   ],
-   "explanation": "El punto 8 del plan existe para este momento.",
-   "feedback": [
-    "¡Eso es tener un plan! Y en caídas así, rebalancear te hace comprar barato.",
-    "Tu Declaración seguramente dice «nunca con dinero prestado». Por algo.",
-    "Eso no lo decidiste en calma: lo está decidiendo el miedo."
-   ],
-   "lines": [
-    "La bolsa ha caído un 30 % 😱 Todo el mundo vende.",
-    "¿Qué dice tu Declaración de Política de Inversión?"
-   ]
   },
   "u30l6-1": {
    "prompt": "Reparte los 10.000 €. Reglas: al menos 4 productos, ninguno por encima del 60 %, al menos un 15 % en bonos, como máximo un 10 % en oro, un 10 % en una acción suelta y un 5 % en cripto.",

@@ -1,15 +1,38 @@
 import 'server-only'
 // Sección 9 · Unidad 28 · Emociones y hábitos (docs/curso-v2/02-curriculo.md)
 // Fuentes: docs/curso/11 (11.4, 11.6, 11.7), 04 (4.2) y 01 (1.7); clase antigua course/u11.ts.
-import { buckets, calc, chat, fill, key, lesson, match, multi, num, order, point, scenario, single, text, tf, timed, trend, unit, upDown } from '../dsl'
+import { buckets, chat, choose, fill, key, lesson, match, mission, multi, note, num, opt, order, play, point, say, scenario, single, story, tf, timed, trend, unit, upDown, when } from '../dsl'
 
 export default unit({
   id: 'u28', order: 28, title: 'Emociones y hábitos', description: 'Miedo, avaricia, venganza y exceso de operaciones: reglas para que no decidan por ti',
   lessons: [
     lesson('u28l1', 'Miedo y avaricia', [
-      text('El ciclo emocional del mercado', 'Optimismo → entusiasmo → **euforia** (máximo riesgo) → ansiedad → negación → miedo → **pánico y capitulación** (máxima oportunidad) → desesperanza → esperanza → optimismo…\n\nLos inversores tienden a comprar en la euforia y vender en el pánico: justo al revés de lo que conviene.'),
-      text('Cómo se ve en la realidad', '• **Euforia:** bitcoin en noviembre de 2021, en todos los telediarios. Después cayó cerca de un 75 %.\n• **Pánico:** marzo de 2020, el S&P 500 cae un 34 % en un mes por el covid. En unos 5 meses volvió a su máximo.\n\nEn los dos casos, la emoción dominante empujaba a hacer lo contrario de lo que salió bien.'),
-      key('Lo que te llevas', 'No se trata de adivinar el techo o el suelo: nadie lo hace de forma fiable. Se trata de no dejar que el miedo o la avaricia cambien un plan escrito en calma.', 'El momento de más euforia suele ser el de más riesgo; el de más miedo, el de más oportunidad.', 'Cuando sientas euforia o pánico, no decidas hoy: relee tu plan.'),
+      mission({
+        title: 'Vive el pánico de 2020',
+        intro: 'Enero de 2020. Tienes **10.000 €** en el S&P 500 para dentro de muchos años. Datos reales, día a día. Puedes vender cuando quieras.',
+        widget: { kind: 'crash', series: 'series-covid', amount: 10000 },
+        goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
+        insight: 'En marzo de 2020 cayó un **34 %** en un mes, y en unos 5 meses volvió a su máximo. **El momento de más miedo suele ser el de más oportunidad**, y el pánico pide justo lo contrario.',
+        lumi: [
+          { when: when('sold', '==', 1), say: 'Has vendido. Mira qué pasa después…', mood: 'THINKING' },
+          { when: when('drop', '<=', -25), say: 'Los telediarios solo hablan de pánico. ¿Aguantas?', mood: 'WORRIED' },
+          { when: when('drop', '>=', 5), say: 'Ya estás por encima de lo que pusiste.', mood: 'HAPPY' },
+          { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
+        ],
+      }),
+      story('Te estás quedando atrás', [{ id: 'sergio', name: 'Sergio' }], [
+        note('Noviembre de 2021. Bitcoin está en máximos y sale en todos los telediarios.'),
+        say('sergio', '¡Yo ya he doblado lo que metí!'),
+        say('sergio', '¿Tú aún no estás dentro? Te estás quedando atrás.'),
+        choose('¿Qué haces?', [
+          opt('Meto todos mis ahorros antes de que suba más', 'bad', say('lumi', 'Es avaricia y FOMO en pleno pico.')),
+          opt('Respeto mi plan y mi límite de especulación', 'good', say('lumi', '¡Bien! Si algo entra, es la parte pequeña que podrías perder entera.')),
+          opt('Pido un préstamo para entrar fuerte', 'bad', say('lumi', 'Deuda en plena euforia: la peor combinación posible.')),
+        ]),
+        say('lumi', 'Bitcoin cayó cerca de un **75 %** en el año siguiente.'),
+        say('lumi', 'El momento de más euforia suele ser el de **más riesgo**.'),
+      ]),
+      key('El ciclo emocional', 'Optimismo → entusiasmo → **euforia** (máximo riesgo) → ansiedad → negación → miedo → **pánico y capitulación** (máxima oportunidad) → desesperanza → esperanza…\n\nNo se trata de adivinar el techo o el suelo: nadie lo hace de forma fiable. Se trata de que el miedo o la avaricia no cambien un plan escrito en calma.', 'Los inversores tienden a comprar en la euforia y vender en el pánico: justo al revés de lo que conviene.', 'Cuando sientas euforia o pánico, no decidas hoy: relee tu plan.'),
     ], [
       order('Ordena esta parte del ciclo emocional del mercado.', ['Optimismo', 'Euforia', 'Ansiedad', 'Miedo', 'Pánico'], 'El máximo riesgo está en la euforia; la máxima oportunidad, en el pánico.'),
       point('Así iba el S&P 500 en la caída del covid. Toca el día de máximo pánico (el cierre más bajo).', 'hist-covid', 'min', 'Ese suelo de marzo de 2020 fue el peor momento para vender: el índice tardó unos 5 meses en volver a su máximo.'),
@@ -21,12 +44,39 @@ export default unit({
       timed(tf('Lo habitual es que los inversores compren en el pánico y vendan en la euforia.', false, 'Suelen hacer justo lo contrario: comprar en la euforia y vender en el pánico.'), 10),
       match('Empareja cada momento de una operación con la emoción típica.', [['Antes de entrar', 'Prisa, FOMO'], ['La operación va en contra', 'Miedo, negación'], ['Tras una pérdida', 'Rabia, ganas de recuperar'], ['Tras varias ganancias', 'Euforia, exceso de confianza']], 'Conocer la emoción de cada momento te deja preparar la regla antes.'),
       buckets('¿Es miedo o es avaricia?', ['Miedo', 'Avaricia'], [['Vender todo tras un titular alarmante', 0], ['Subir el riesgo porque «estoy en racha»', 1], ['Quitar el stop porque «no puede bajar más»', 0], ['Entrar en algo que ha subido un 200 % para no quedarte fuera', 1], ['Cerrar una ganancia pequeña por pánico a devolverla', 0]], 'Las dos emociones empujan a saltarse el plan, en direcciones opuestas.'),
-    ], { source: '11.6' }),
+    ], { source: '11.6', minutes: 6, retire: [2, 4, 5, 7] }),
 
     lesson('u28l2', 'Operar por venganza', [
-      text('Qué es', 'Después de una o varias pérdidas aparece la rabia y las ganas de **recuperarlo ya**. Entonces entras sin señal, doblas el tamaño o te saltas el stop.\n\nEs la aversión a la pérdida en su versión más cara: una mala tarde se convierte en un mal mes.'),
-      text('La regla preparada', '**«Tras 3 pérdidas seguidas, paro el resto del día.»**\n\nY además:\n• El riesgo por operación es siempre el mismo, ganes o pierdas.\n• Límite mensual: si pierdes un 6 % en un mes, paras hasta el mes siguiente.\n• Apuntas en el diario cómo te sentías.'),
-      key('Lo que te llevas', 'El mercado no te debe nada: no sabe que has perdido. La siguiente operación tiene las mismas probabilidades que si vinieras de ganar.', 'Tras una pérdida, la mejor decisión suele ser no tomar ninguna más ese día.', 'Después de tres pérdidas seguidas, la mejor operación es apagar la pantalla.'),
+      story('Tres pérdidas antes de comer', [{ id: 'ana', name: 'Ana' }], [
+        say('ana', 'Tres pérdidas seguidas esta mañana. Todas dentro de mi plan.'),
+        say('ana', 'Estoy que echo humo. Veo otra oportunidad y voy con el triple.'),
+        choose('¿Qué le dices a Ana?', [
+          opt('Venga, a por la revancha', 'bad', say('lumi', 'Es operar por **venganza**: si falla, en una tarde pierde lo de un mes.')),
+          opt('Para por hoy y vuelve mañana con el tamaño normal', 'good', say('lumi', '¡Eso! Tres pérdidas son una racha normal. Lo raro es dejar que opere la rabia.')),
+          opt('Quita los stops para que no salten más', 'bad', say('lumi', 'Sin stop, la siguiente pérdida no tiene límite.')),
+        ]),
+        say('lumi', 'El mercado no sabe que has perdido. No te debe nada.'),
+        say('ana', 'Vale. Apago la pantalla y lo apunto en el diario.'),
+      ]),
+      play({
+        title: 'Lo que pide la rabia',
+        intro: 'Cuenta de **10.000 €**. Tras tres pérdidas de **100 €**, la rabia pide arriesgar **600 €** en la siguiente.',
+        widget: { kind: 'position', account: 10000, riskPct: 6, stopPct: 5, entry: 30, maxRisk: 10, maxStop: 15 },
+        predict: {
+          prompt: 'Si esa cuarta operación también sale mal, ¿cuánto has perdido hoy en total?',
+          options: ['300 €', '600 €', '900 €'],
+          answer: 2,
+          why: '3 × 100 + 600 = **900 €**: un 9 % de la cuenta en una tarde. Parando tras la tercera, habrían sido 300 €.',
+        },
+        goal: { text: 'Vuelve al riesgo de tu plan: un 1 % por operación.', when: [when('riskPct', '==', 1)] },
+        insight: '**El riesgo por operación es siempre el mismo**, ganes o pierdas. Tras una pérdida, la siguiente operación tiene las mismas probabilidades que si vinieras de ganar.',
+        lumi: [
+          { when: when('riskPct', '<=', 1), say: 'Así, ganes o pierdas, el riesgo es siempre el mismo.', mood: 'HAPPY' },
+          { when: when('after10', '<=', 6000), say: 'Con este riesgo, 10 pérdidas seguidas se llevan un 40 % o más.', mood: 'WORRIED' },
+          { say: 'Baja el riesgo a lo que dice tu plan', mood: 'THINKING' },
+        ],
+      }),
+      key('La regla preparada', '**«Tras 3 pérdidas seguidas, paro el resto del día.»**\n\nY además:\n• El riesgo por operación es siempre el mismo.\n• Si pierdes un 6 % en un mes, paras hasta el mes siguiente.\n• Apuntas en el diario cómo te sentías.', 'Tras una pérdida, la mejor decisión suele ser no tomar ninguna más ese día.', 'Después de tres pérdidas seguidas, la mejor operación es apagar la pantalla.'),
     ], [
       tf('Después de varias pérdidas, subir el tamaño de la siguiente operación ayuda a recuperar sin más riesgo.', false, 'Subes el riesgo justo cuando peor estás decidiendo. Si vuelve a salir mal, el agujero se duplica.'),
       scenario('Ana ha perdido tres operaciones seguidas esta mañana, todas dentro de su plan. Está enfadada y ve otra «oportunidad». ¿Qué hace?', [['Entra con el triple de tamaño para recuperarlo todo', 'Es operar por venganza: si falla, en una tarde pierde lo de un mes.'], ['Para el resto del día, apunta cómo se siente y vuelve mañana con el tamaño normal', 'Bien: las tres pérdidas son una racha normal. Lo que no es normal es dejar que la rabia opere.'], ['Quita los stops para que no salten más', 'Sin stop, la siguiente pérdida no tiene límite.']], 1, 'La regla de las 3 pérdidas existe para este momento exacto.'),
@@ -38,13 +88,39 @@ export default unit({
       multi('¿Qué señales indican que estás operando por venganza? Marca todas.', ['Entras sin que se cumpla tu señal', 'Subes el tamaño para recuperar', 'Sientes rabia o prisa', 'Sigues tu plan con el riesgo habitual'], [0, 1, 2], 'Seguir el plan con el riesgo habitual es justo lo contrario.'),
       fill('Regla preparada: tras ____ pérdidas seguidas, paro el resto del día.', '3', ['10', '20', '50'], 'Es la regla del manual: corta la espiral antes de que crezca.'),
       single('¿Qué tiene en común operar por venganza con la aversión a la pérdida?', ['Las dos nos hacen asumir más riesgo para no aceptar una pérdida', 'Las dos reducen el riesgo', 'No tienen nada en común'], 0, 'Cuando perdemos, nos volvemos más arriesgados: «doblo para recuperar».'),
-    ], { source: '11.6' }),
+    ], { source: '11.6', minutes: 6, retire: [0, 1, 2, 6] }),
 
     lesson('u28l3', 'Operar demasiado', [
-      text('Lo que dicen los datos', 'Barber y Odean (2000) estudiaron decenas de miles de cuentas en EE. UU.: el 20 % de hogares que más operaba ganó un **11,4 %** anual frente al **17,9 %** del mercado.\n\nNo es que eligieran peor: es que cada operación paga comisión y *spread*, y operar mucho suele nacer del exceso de confianza y del ruido.'),
-      text('El ruido', 'Cuanto más miras el mercado, más movimientos ves que no significan nada. Y cada uno parece pedir una decisión.\n\nMirar la cartera de largo plazo a diario aumenta las veces que la ves en pérdidas y las tentaciones de tocarla (aversión miope a la pérdida).'),
-      calc('fees', 'Lo que cuesta pagar de más', 'Compara un 0,2 % con un 1,5 % de costes anuales sobre 10.000 € a 30 años con un 7 % de ejemplo.', 'Los costes se componen igual que las ganancias, pero en tu contra.'),
-      key('Lo que te llevas', 'Menos operaciones, mejor elegidas, con costes bajos. Y para el largo plazo: automatizar aportaciones y revisar la cartera de vez en cuando, no cada día.', 'Cada operación paga costes: operar mucho convierte una ventaja pequeña en pérdida.', 'En inversión, muchas veces lo más rentable es no hacer nada.'),
+      story('20 operaciones a la semana', [{ id: 'bruno', name: 'Bruno' }], [
+        say('bruno', 'Hago 20 operaciones a la semana. Si no opero, no gano.'),
+        say('bruno', 'Mi diario dice que antes de costes casi empato… y después pierdo.'),
+        choose('¿Qué debería cambiar Bruno?', [
+          opt('Operar aún más para compensar', 'bad', say('lumi', 'Más operaciones, más costes. El agujero crece.')),
+          opt('Quedarse solo con las pocas que cumplen su plan', 'good', say('lumi', '¡Eso! Menos operaciones, mejor elegidas, y los costes dejan de comérselo todo.')),
+          opt('Pasarse a algo más volátil', 'ok', say('lumi', 'Más volatilidad no da ventaja: solo agranda las pérdidas.')),
+        ]),
+        say('lumi', 'Barber y Odean: el 20 % de hogares que más operaba ganó un **11,4 %**.'),
+        say('lumi', 'El mercado, un **17,9 %** al año. Cada operación paga comisión y *spread*.'),
+      ]),
+      play({
+        title: 'Lo que cuesta pagar de más',
+        intro: 'Los mismos **10.000 €** a 30 años, con un 7 % anual de ejemplo (no una promesa). Un fondo cobra un 0,2 % al año; el otro, lo que tú elijas.',
+        widget: { kind: 'fees', amount: 10000, monthly: 0, gross: 7, feeA: 0.2, feeB: 0.2, years: 30, maxFee: 2.5, maxYears: 40 },
+        predict: {
+          prompt: 'A 30 años, ¿cuánto se lleva pagar un 1,5 % en vez de un 0,2 %?',
+          options: ['Casi nada: es poco más de un 1 %', 'Alrededor de un 5 % del resultado', 'Casi un tercio del resultado'],
+          answer: 2,
+          why: 'Con un 0,2 %, llegas a unos **71.968 €**; con un 1,5 %, a **49.840 €**. Se van 22.128 €, un 31 %.',
+        },
+        goal: { text: 'Sube el fondo caro al 1,5 % y mira los 30 años.', when: [when('feeB', '>=', 1.45), when('years', '==', 30)] },
+        insight: '**Los costes se componen igual que las ganancias, pero en tu contra.** Y operar mucho es pagar costes una y otra vez.',
+        lumi: [
+          { when: when('lostPct', '>=', 30), say: 'Casi un tercio de todo, solo en costes.', mood: 'WORRIED' },
+          { when: when('lostPct', '>=', 10), say: 'Ya se nota. Y cuantos más años, más pesa.', mood: 'THINKING' },
+          { say: 'Sube las comisiones del fondo caro', mood: 'HAPPY' },
+        ],
+      }),
+      key('Lo que te llevas', 'Cuanto más miras el mercado, más movimientos ves que no significan nada, y cada uno parece pedir una decisión.\n\nMenos operaciones, mejor elegidas, con costes bajos. Y para el largo plazo: aportaciones automáticas y revisar la cartera de vez en cuando, no cada día.', 'Cada operación paga costes: operar mucho convierte una ventaja pequeña en pérdida.', 'En inversión, muchas veces lo más rentable es no hacer nada.'),
     ], [
       num('Haces 2 operaciones a la semana y cada una te cuesta 6 € entre comisión y spread. ¿Cuánto pagas en un año de 52 semanas?', 624, '€', '2 × 6 × 52 = 624 €.'),
       num('Si tu cuenta es de 5.000 €, ¿qué porcentaje anual se comen esos 624 € de costes? (redondea a un decimal)', 12.5, '%', '624 ÷ 5.000 ≈ 0,125 → 12,5 % al año. Tendrías que ganar eso solo para quedarte igual.', 2),
@@ -56,12 +132,42 @@ export default unit({
       buckets('¿Es una decisión útil o ruido?', ['Útil', 'Ruido'], [['Rebalancear una vez al año según el plan', 0], ['Vender porque la cartera ha bajado un 1 % hoy', 1], ['Comprar porque un vídeo dice que «hoy explota»', 1], ['Hacer la aportación mensual automática', 0], ['Cambiar de fondo cada mes según el que más subió', 1]], 'Las decisiones útiles salen del plan; el ruido sale de la pantalla.'),
       match('Empareja cada coste con su descripción.', [['Comisión', 'Lo que cobra el bróker por operación'], ['Spread', 'Diferencia entre el precio de compra y el de venta'], ['Financiación', 'Coste diario de mantener una posición apalancada'], ['Impuestos', 'Lo que pagas a Hacienda por las ganancias']], 'Todos crecen con el número de operaciones.'),
       chat(['Me he instalado alertas de precio en 40 acciones 📲', 'Así no me pierdo nada.'], '¿Qué le dices a Lumi?', [['Genial, más información es mejor', 'Más alertas suelen traer más operaciones impulsivas… y más costes.'], ['Cuidado: más estímulos suelen acabar en más operaciones y más costes', 'Tienes razón. Dejo alertas solo para mis stops y objetivos, y el resto lo miro con calma.'], ['Mejor pon 100 alertas', 'Eso es ruido en estado puro.']], 1, 'No necesitas ver cada movimiento: necesitas actuar solo cuando lo dice tu plan.'),
-    ], { source: '11.4' }),
+    ], { source: '11.4', minutes: 6, retire: [2, 3, 4, 5, 6] }),
 
     lesson('u28l4', 'Tu sistema anti-sesgos', [
-      text('Lista antes de cada compra', '1. ¿Está en mi plan?\n2. ¿Puedo explicar el motivo en tres frases, sin decir «porque sube»?\n3. ¿He escrito tres motivos por los que podría equivocarme?\n4. ¿Sé dónde está mi stop o qué me haría vender?\n5. ¿El tamaño respeta mis límites?\n6. ¿Estoy tranquilo, o tengo prisa, rabia o euforia?\n7. ¿Lo compraría si nadie hablara de ello?\n\nSi alguna respuesta es «no», **no compres hoy**.'),
-      text('Revisión mensual', '• ¿He seguido mi plan? ¿En qué operaciones no y por qué?\n• ¿Mi rentabilidad bate a la de un índice comparable?\n• ¿Qué sesgo he visto en mí este mes?\n\nY pregúntale a Lumi en el modo Sesgos: te hará de abogado del diablo.'),
-      key('Lo que te llevas', 'Los pilotos usan listas de comprobación aunque sepan volar. Las reglas escritas en calma deciden por ti cuando no lo estás.', 'No puedes eliminar las emociones; puedes impedir que decidan por ti.', 'No necesitas ser frío como una máquina. Necesitas reglas que funcionen aunque no lo seas.'),
+      play({
+        title: '¿Compras hoy?',
+        intro: 'Antes de cada compra, una lista: plan, motivo en tres frases, tres motivos para equivocarte, stop, tamaño, calma y «¿lo compraría si nadie hablara de ello?».',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Hoy no compro' }, { label: 'La lista me deja' }],
+          cards: [
+            { icon: 'megaphone', label: 'No sé explicar el motivo sin decir «porque sube»', bin: 0, why: '«Porque sube» no es un motivo: es FOMO.' },
+            { icon: 'shield', label: 'No sé dónde pondría el stop', bin: 0, why: 'Sin stop decidido, no sabes cuánto arriesgas.' },
+            { icon: 'flame', label: 'Vengo de perder tres operaciones y estoy enfadado', bin: 0, why: 'Con rabia, la lista dice «hoy no».' },
+            { icon: 'verified', label: 'Está en mi plan, sé mi stop, el tamaño cumple y estoy tranquilo', bin: 1, why: 'Si todo es «sí», la lista te deja operar.' },
+            { icon: 'news', label: 'Todo el mundo habla de ella, pero sin eso no la compraría', bin: 0, why: 'Si solo la quieres porque se habla de ella, es efecto rebaño.' },
+            { icon: 'search', label: 'He escrito tres motivos para equivocarme y aun así cumple todo', bin: 1, why: 'Has mirado el otro lado y la idea resiste: adelante, con tu tamaño.' },
+          ],
+        },
+        goal: { text: 'Pasa la lista a las seis situaciones.', when: [when('done', '==', 6)] },
+        insight: 'La lista solo funciona si se pasa **antes y entera**. **Si alguna respuesta es «no», no compres hoy.**',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: basta un solo «no» para esperar.', mood: 'THINKING' },
+          { say: '¿Compras o esperas? Pasa la lista', mood: 'HAPPY' },
+        ],
+      }),
+      story('Seis de siete', [{ id: 'pablo', name: 'Pablo' }], [
+        say('pablo', 'He pasado la lista: todo «sí»… menos la pregunta de la calma.'),
+        say('pablo', 'Estoy eufórico: he ganado dos operaciones seguidas.'),
+        choose('¿Qué hace Pablo?', [
+          opt('Compra igual: 6 de 7 está muy bien', 'bad', say('lumi', 'Un solo «no» basta para esperar. Por algo está esa pregunta.')),
+          opt('Hoy no compra y mañana lo revisa con calma', 'good', say('lumi', '¡Eso! Si mañana sigue teniendo sentido, la lista dará 7 de 7.')),
+          opt('Compra el doble: está en racha', 'bad', say('lumi', 'Euforia y más tamaño: exceso de confianza de manual.')),
+        ]),
+        say('lumi', 'Los pilotos usan listas aunque sepan volar.'),
+      ]),
+      key('Revisión mensual', '• ¿He seguido mi plan? ¿En qué operaciones no, y por qué?\n• ¿Mi rentabilidad bate a la de un índice comparable?\n• ¿Qué sesgo he visto en mí este mes?\n\nY pregúntale a Lumi en el modo Sesgos: te hará de abogado del diablo.', 'No puedes eliminar las emociones; puedes impedir que decidan por ti.', 'No necesitas ser frío como una máquina. Necesitas reglas que funcionen aunque no lo seas.'),
     ], [
       order('Ordena tu rutina anti-sesgos de una operación.', ['Antes: pasar la lista de comprobación', 'Al entrar: fijar stop y tamaño', 'Durante: no tocar el stop en contra', 'Al salir: anotarla en el diario', 'Cada mes: revisar estadísticas y compararte con un índice'], 'Cada momento tiene su regla: así las emociones no encuentran hueco.'),
       multi('¿Qué preguntas están en la lista antes de comprar? Marca todas.', ['¿Está en mi plan?', '¿Sé dónde está mi stop?', '¿Estoy tranquilo?', '¿Cuánto ha subido esta semana?'], [0, 1, 2], 'Cuánto ha subido alimenta el FOMO, no la decisión.'),
@@ -73,6 +179,6 @@ export default unit({
       timed(tf('Si tienes mucha experiencia, ya no necesitas una lista de comprobación.', false, 'Los pilotos la usan aunque sepan volar: la experiencia no elimina los sesgos.'), 10),
       single('¿Qué pregunta de la revisión mensual dice si tu gestión activa compensa?', ['¿Mi rentabilidad bate a la de un índice comparable?', '¿Cuántas operaciones he hecho?', '¿Cuánto tiempo he mirado la pantalla?'], 0, 'Si en varios años no bates al índice, comprar el índice te habría ido mejor.'),
       fill('Si alguna respuesta de la lista es «no», ____ compres hoy.', 'no', ['sí', 'siempre', 'también'], 'Esperar un día casi nunca cuesta; comprar sin pasar la lista, a menudo sí.'),
-    ], { source: '11.7' }),
+    ], { source: '11.7', minutes: 6, retire: [2, 6, 7] }),
   ],
 })

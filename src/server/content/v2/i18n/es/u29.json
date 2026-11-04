@@ -9,17 +9,51 @@
    "title": "Diversificar: lo único gratis en finanzas",
    "steps": [
     {
-     "title": "Dos tipos de riesgo",
-     "body": "• **Riesgo específico:** lo que le pasa a una empresa concreta (un fraude, un producto fallido, la quiebra). Se **elimina** diversificando.\n• **Riesgo de mercado:** lo que golpea a todas a la vez (una recesión, una pandemia). No desaparece con más acciones: solo se suaviza combinando con bonos o liquidez."
+     "texts": [
+      "Todo a una carta",
+      "Bruno",
+      "He metido mis 3.000 € en una sola empresa. ¡Va a ser la próxima gran tecnológica!",
+      "La conozco bien: me he leído todo sobre ella.",
+      "¿Qué le dices?",
+      "Perfecto: si la conoces, no hay riesgo",
+      "Conocerla no la protege de un fraude, un producto fallido o una quiebra.",
+      "Reparte: entre muchas empresas, una quiebra apenas se nota",
+      "¡Eso! Si una empresa pesa un 0,1 %, su desastre casi ni se ve.",
+      "Compra otra más y así tienes dos",
+      "Mejor que una, pero dos empresas siguen siendo muy pocas.",
+      "Una sola empresa puede caer un **90 %**. Para recuperarte necesitarías un **+900 %**.",
+      "Uf. ¿Y si reparto, ya no hay ningún riesgo?",
+      "Hay dos tipos de riesgo. Vamos a separarlos."
+     ]
     },
     {
-     "title": "Por qué duele concentrar",
-     "body": "Pon una caída del 90 %: es lo que puede pasarle a una sola empresa. Para volver al punto de partida necesitas un +900 %. En un índice de miles de empresas, una quiebra apenas se nota.",
-     "tip": "Evitar las grandes pérdidas pesa más que buscar grandes ganancias."
+     "texts": [
+      "¿De una empresa o de todas?",
+      "El riesgo **específico** golpea a una empresa concreta. El **de mercado**, a todas a la vez. ¿Cuál es cada uno?",
+      "Específico: de una empresa",
+      "De mercado: de todas",
+      "Un fraude contable en una empresa",
+      "Le pasa a una sola: en un índice de miles de empresas, apenas se nota.",
+      "Una recesión mundial",
+      "Golpea a casi todas a la vez: no se diluye con más acciones.",
+      "El producto estrella de una empresa fracasa",
+      "Un problema de esa empresa, no de toda la economía.",
+      "Una pandemia que cierra la economía",
+      "Afecta a todo el mercado: repartir entre más acciones no lo evita.",
+      "Una huelga larga en la fábrica de una empresa",
+      "Solo frena a esa empresa: sus competidoras siguen vendiendo.",
+      "El banco central sube los tipos de golpe",
+      "Cambia el precio del dinero para todas las empresas a la vez.",
+      "Clasifica los seis sustos.",
+      "Diversificar **elimina el riesgo específico**: una quiebra pesa poco entre miles de empresas. El **riesgo de mercado** no desaparece con más acciones; solo se suaviza combinando con bonos o liquidez.",
+      "Pregúntate: ¿le pasa a una empresa o a toda la economía?",
+      "¡Bien separado! Ahora, el único almuerzo gratis.",
+      "Clasifica cada susto"
+     ]
     },
     {
      "title": "El almuerzo gratis",
-     "body": "Una acción suelta se mueve un 30-35 % al año; 20-30 acciones de sectores distintos, cerca del 20 %; un índice mundial, un 15 %. Harry Markowitz, Nobel de Economía, llamó a esto **el único almuerzo gratis**: menos riesgo sin renunciar a rentabilidad esperada.",
+     "body": "Una acción suelta se mueve un 30-35 % al año; 20-30 acciones de sectores distintos, cerca del 20 %; un índice mundial, un 15 %.\n\nHarry Markowitz, Nobel de Economía, llamó a esto **el único almuerzo gratis**: menos riesgo sin renunciar a rentabilidad esperada.",
      "key": "Con muchas empresas, los desastres de unas se compensan con los éxitos de otras.",
      "tip": "No pongas todos los huevos en la misma cesta, ni todas las cestas en el mismo camión."
     }
@@ -29,18 +63,46 @@
    "title": "La correlación",
    "steps": [
     {
-     "title": "Qué mide",
-     "body": "La **correlación** dice si dos activos se mueven a la vez. Va de **+1** (siempre igual) a **−1** (siempre al contrario). Un **0** significa que no hay relación.\n\n• S&P 500 y Euro Stoxx 50: alta (0,7-0,9).\n• Dos criptos grandes: muy alta.\n• Acciones y bonos de calidad: baja o negativa en muchas crisis.\n• Acciones y oro: baja y variable."
+     "texts": [
+      "Acciones, bonos y oro desde 2008",
+      "Datos reales de 2008 a 2025. Tienes **10.000 €**, todo en acciones de EE. UU. Mézclalas con bonos y oro y mira la peor caída.",
+      "Acciones de EE. UU. (S&P 500)",
+      "Bonos de EE. UU.",
+      "Oro",
+      "Entre enero de 2008 y febrero de 2009, las acciones cayeron un 45 %. ¿Qué hicieron los bonos?",
+      "Cayeron todavía más",
+      "Ganaron un poco",
+      "Cayeron lo mismo",
+      "Los bonos de EE. UU. **ganaron un 2 %** mientras las acciones perdían un 45 %. No se movieron igual.",
+      "Busca un reparto cuya peor caída sea como mucho la mitad (−23 %) y que aun así gane más de un 300 %.",
+      "Acciones, bonos y oro tuvieron su peor racha en años distintos (2009, 2022 y 2015). Mezclarlos baja la peor caída de **−46 %** a cerca de **−20 %**: eso es combinar activos con **correlación baja**.",
+      "Todo en acciones: mira el agujero de 2008 y 2009.",
+      "¡La mitad de susto! Mira cuánto ganas aun así.",
+      "Baja las acciones y reparte entre bonos y oro"
+     ]
     },
     {
-     "title": "La trampa de las crisis",
-     "body": "En un pánico, casi todos los activos de riesgo caen juntos: **las correlaciones suben**. Por eso lo que suele proteger son los bonos de calidad y la liquidez.\n\nPero no siempre: la relación cambia según la inflación y los tipos de interés."
+     "texts": [
+      "Tres fondos, una cartera",
+      "Marta",
+      "Tengo tres fondos: MSCI World, S&P 500 y Nasdaq 100. Superdiversificada, ¿no?",
+      "¿Qué le dices?",
+      "Sí: son tres índices distintos",
+      "Tres nombres, casi la misma cartera: EE. UU. y las grandes tecnológicas se repiten.",
+      "Se solapan mucho: se moverán casi igual",
+      "Exacto: su correlación es muy alta. Un fondo mundial haría casi lo mismo.",
+      "Te faltan fondos: con diez estarías mejor",
+      "Más fondos que compran lo mismo no reducen el riesgo.",
+      "Vale. ¿Y qué me protege cuando cae todo?",
+      "En un pánico, casi todo lo arriesgado cae a la vez: **las correlaciones suben**.",
+      "Suelen proteger los bonos de calidad y la liquidez.",
+      "Pero no siempre: en 2022, acciones −18 % y bonos −13 %."
+     ]
     },
     {
-     "title": "Lo que te llevas",
-     "body": "Tres fondos de MSCI World, S&P 500 y Nasdaq 100 tienen nombres distintos pero se mueven casi igual. Un fondo de acciones y uno de bonos de calidad, no.",
-     "key": "Combinar activos que no se mueven igual suaviza la cartera, aunque ninguna protección funciona siempre.",
-     "tip": "Diversificar de verdad es tener cosas que no se hundan todas el mismo día."
+     "title": "Cómo se mide",
+     "body": "La **correlación** dice si dos activos se mueven a la vez. Va de **+1** (siempre igual) a **−1** (siempre al contrario). Un **0** significa que no hay relación.\n\n• S&P 500 y Euro Stoxx 50: alta (0,7-0,9).\n• Dos criptos grandes: muy alta.\n• Acciones y bonos de calidad: baja o negativa en muchas crisis.\n• Acciones y oro: baja y variable.",
+     "key": "Diversificar de verdad es tener cosas que no se hundan todas el mismo día."
     }
    ]
   },
@@ -48,21 +110,46 @@
    "title": "Tu reparto de activos",
    "steps": [
     {
-     "title": "La decisión más importante",
-     "body": "Estudios clásicos (Brinson y otros) muestran que el **reparto entre acciones, bonos y liquidez** explica la mayor parte de cómo oscila una cartera diversificada. Mucho más que qué fondo concreto elijas.\n\nRegla de oro: el dinero que necesitas pronto no debería estar en bolsa."
+     "texts": [
+      "Elige tu reparto",
+      "Datos reales de 2008 a 2025. Empiezas con **10.000 €** todo en bonos. Sube las acciones y mira cuánto llegó a caer la cartera en lo peor.",
+      "Acciones de EE. UU. (S&P 500)",
+      "Bonos de EE. UU.",
+      "Oro",
+      "Con todo en acciones desde 2008, ¿cuánto llegó a caer la cartera en lo peor?",
+      "Un 10 %",
+      "Casi la mitad",
+      "Todo",
+      "Un **46 %** entre 2008 y 2009, con dividendos incluidos. Con 60 % en acciones y 40 % en bonos, un 27 %.",
+      "Pon al menos un 60 % en acciones sin que la peor caída pase del 30 %.",
+      "El **reparto entre acciones, bonos y liquidez** decide cuánto puede caer tu cartera. Aquí, con el resto en bonos: 40 % en acciones, −21 %; 60 %, −27 %; 80 %, −37 %; 100 %, −46 %.",
+      "Casi la mitad, evaporada. ¿Aguantarías sin vender?",
+      "Te pasas del 30 %: baja un poco las acciones.",
+      "Muy tranquilo… pero mira lo poco que crece.",
+      "Más crecimiento, con caídas que todavía se aguantan.",
+      "Sube las acciones poco a poco"
+     ]
+    },
+    {
+     "texts": [
+      "La entrada del piso",
+      "Pablo",
+      "Tengo 15.000 € para la entrada de un piso. Lo compro dentro de 2 años.",
+      "Lo tengo todo en bolsa, que a la larga sube.",
+      "¿Qué le dices?",
+      "Bien hecho: a la larga siempre sube",
+      "A 2 años no hay «larga». Una caída del 30 % le dejaría sin entrada.",
+      "Pásalo a algo de poco riesgo, como un depósito o un monetario",
+      "¡Eso! El dinero con fecha cercana no debe depender de la bolsa.",
+      "Deja la mitad en bolsa, por si sube",
+      "Menos riesgo, pero esa mitad aún puede caer justo antes de comprar.",
+      "¿Y lo de la jubilación? Me quedan 35 años.",
+      "Ahí sí caben muchas acciones: hay tiempo para recuperarse de las caídas."
+     ]
     },
     {
      "title": "Repartos de ejemplo",
-     "body": "• Conservador: 20-40 % acciones (caída posible: −10 a −20 %).\n• Moderado: 50-60 % (−20 a −30 %).\n• Decidido: 70-90 % (−30 a −45 %).\n• 100 % acciones: −50 % o más.\n\nSon ejemplos educativos, no recomendaciones."
-    },
-    {
-     "title": "¿Cuánto aguantarías?",
-     "body": "Prueba una caída del 30 % y otra del 50 % y mira cuánto haría falta subir después. Elige el reparto pensando en la caída que soportarías sin vender.",
-     "tip": "La mezcla adecuada es la que te deja dormir en una caída del 30 %."
-    },
-    {
-     "title": "Ajustar con el tiempo",
-     "body": "Cuanto más cerca está el objetivo, menos acciones: es lo que hacen los fondos «de ciclo de vida». Una referencia antigua es «100 menos tu edad» en acciones; hoy muchos usan 110 o 120 menos la edad. Son orientaciones, no reglas.",
+     "body": "Estudios clásicos (Brinson y otros): este reparto explica la mayor parte de cómo oscila una cartera diversificada.\n\n• Conservador: 20-40 % acciones (caída posible: −10 a −20 %).\n• Moderado: 50-60 % (−20 a −30 %).\n• Decidido: 70-90 % (−30 a −45 %).\n• 100 % acciones: −50 % o más.\n\nCuanto más cerca está el objetivo, menos acciones. Una referencia antigua es «100 menos tu edad» en acciones; hoy muchos usan 110 o 120 menos la edad. Son ejemplos educativos, no recomendaciones.",
      "key": "Horizonte largo permite más acciones; horizonte corto pide más bonos y liquidez."
     }
    ]
@@ -71,16 +158,37 @@
    "title": "Diversificar por países y divisas",
    "steps": [
     {
+     "texts": [
+      "Japón, 1989",
+      "Es diciembre de 1984 y la bolsa japonesa no para de subir. Inviertes **10.000 €** en su índice, el Nikkei. **Datos reales**, mes a mes. Puedes vender cuando quieras.",
+      "Llega hasta 2025, vendas o no.",
+      "En 1989, Japón era la mayor bolsa del mundo. Desde su máximo cayó un **80 %** y tardó **34 años** en recuperarlo. Jugárselo todo a un país, sea cual sea, es concentrar.",
+      "Has vendido. Mira lo que viene después…",
+      "Casi veinte años después, por debajo de lo que pusiste. ¿Sigues?",
+      "¡Has triplicado tu dinero! ¿Quién no querría estar aquí?",
+      "Dale a empezar. Puedes vender cuando quieras"
+     ]
+    },
+    {
+     "texts": [
+      "El segundo riesgo: la divisa",
+      "Compras **1.000 €** de una acción de EE. UU. Tu resultado en euros depende de la acción… y del **dólar**.",
+      "dólar",
+      "La acción no se mueve en todo el año, pero el dólar cae un 10 % frente al euro. ¿Qué te pasa a ti?",
+      "Nada: la acción no se ha movido",
+      "Pierdes cerca de un 10 %",
+      "Ganas cerca de un 10 %",
+      "Tu acción vale los mismos dólares, pero cada dólar te da menos euros: **−10 %** sin que la acción se mueva.",
+      "Busca un caso en que la acción suba y tú pierdas dinero en euros.",
+      "Fuera del euro hay **un segundo riesgo: la divisa**. En acciones a largo plazo se suele aceptar; en **bonos**, que se mueven poco, se suelen elegir fondos **cubiertos a euros**.",
+      "El dólar se está comiendo tu ganancia.",
+      "Acción y dólar a favor: doble alegría… y doble riesgo.",
+      "Mueve la acción y el dólar"
+     ]
+    },
+    {
      "title": "El sesgo de casa",
-     "body": "Tendemos a invertir en lo que conocemos: el **sesgo doméstico**. Pero España es **menos del 1 %** de la bolsa mundial, y EE. UU. alrededor del 60-70 % del índice de países desarrollados.\n\nJapón fue la mayor bolsa del mundo en 1989 y tardó 34 años en recuperar aquel máximo."
-    },
-    {
-     "title": "El riesgo de divisa",
-     "body": "Si compras acciones en dólares, tu resultado en euros depende también del cambio. Si el dólar se deprecia un 10 % frente al euro, pierdes cerca de un 10 % aunque las acciones no se muevan.\n\nEn acciones a largo plazo se suele aceptar ese riesgo. En **bonos**, como se mueven poco, se suelen elegir fondos **cubiertos a euros**."
-    },
-    {
-     "title": "Lo que te llevas",
-     "body": "Un índice mundial reparte entre decenas de países y monedas: si una región tiene una década mala, no lo pagas todo tú.",
+     "body": "Tendemos a invertir en lo que conocemos: el **sesgo doméstico**. Pero España es **menos del 1 %** de la bolsa mundial, y EE. UU., alrededor del 60-70 % del índice de países desarrollados.\n\nUn índice mundial reparte entre decenas de países y monedas: si una región tiene una década mala, no lo pagas todo tú.",
      "key": "Diversificar por países reduce el riesgo de elegir «el Japón de los próximos 30 años»."
     }
    ]
@@ -89,16 +197,48 @@
    "title": "Carteras sencillas con indexados",
    "steps": [
     {
+     "texts": [
+      "¿Solo el S&P 500?",
+      "Laura",
+      "En internet todo el mundo lo mete todo en el S&P 500. ¿Lo hago y listo?",
+      "¿Qué le dices?",
+      "Sí: EE. UU. siempre es lo que más sube",
+      "No siempre: en 2000-2009 sus acciones dieron casi cero y otras regiones subían.",
+      "Mejor un índice mundial: ya incluye EE. UU.",
+      "¡Eso! Y te cubre si EE. UU. tiene una década mala, como 2000-2009.",
+      "No: EE. UU. ya no va a subir nunca",
+      "Nadie lo sabe. No se trata de predecir, sino de no depender de un país.",
+      "¿Y cuántos fondos necesito para estar bien diversificada?",
+      "Puede bastar uno: un índice mundial tiene miles de empresas de decenas de países."
+     ]
+    },
+    {
+     "texts": [
+      "Lo que hace falta y lo que sobra",
+      "Una cartera indexada sencilla tiene **uno, dos o tres fondos**. ¿Qué necesita de verdad?",
+      "Hace falta",
+      "No hace falta",
+      "Decidir el reparto entre acciones y bonos",
+      "Es la decisión que más pesa en cómo se mueve tu cartera.",
+      "Tener 20 fondos distintos",
+      "Con uno a tres fondos indexados ya tienes miles de empresas.",
+      "Fondos con costes bajos",
+      "Lo que no pagas en comisiones se queda invirtiendo para ti.",
+      "Cambiar cada año al fondo que más subió",
+      "Los ganadores de un año rara vez repiten: llegas tarde a cada moda.",
+      "Una aportación automática cada mes",
+      "La constancia hace más que acertar el momento.",
+      "Mirar la bolsa todos los días",
+      "Solo añade nervios: basta con revisar una vez al año.",
+      "Clasifica las seis ideas.",
+      "Lo que sí hace falta: **reparto, costes bajos y constancia**. Ni muchos fondos, ni perseguir al ganador del año, ni mirar la bolsa a diario.",
+      "¿Esto reduce el riesgo o el coste, o solo da trabajo?",
+      "Clasifica cada idea"
+     ]
+    },
+    {
      "title": "Uno, dos o tres productos",
-     "body": "• **Un producto:** un fondo o ETF de todo el mundo (MSCI ACWI o FTSE All-World), con miles de empresas de países desarrollados y emergentes.\n• **Dos:** acciones mundiales + bonos globales de calidad cubiertos a euros.\n• **Tres:** países desarrollados (MSCI World) + emergentes (10-12 %, más o menos su peso en el mundo) + bonos."
-    },
-    {
-     "title": "¿Por qué no solo el S&P 500?",
-     "body": "EE. UU. ha sido el mercado que mejor ha ido del último siglo, pero en 2000-2009 sus acciones dieron casi cero mientras otras regiones subían. El índice mundial ya contiene EE. UU. y además te cubre frente a su década mala."
-    },
-    {
-     "title": "Lo que no hace falta",
-     "body": "Ni 20 fondos, ni cambiar cada año al que más subió, ni mirar la bolsa a diario. Estas carteras son ejemplos para entender cómo se construyen, no recomendaciones personalizadas.",
+     "body": "• **Un producto:** un fondo o ETF de todo el mundo (MSCI ACWI o FTSE All-World), con miles de empresas de países desarrollados y emergentes.\n• **Dos:** acciones mundiales + bonos globales de calidad cubiertos a euros.\n• **Tres:** países desarrollados (MSCI World) + emergentes (10-12 %, más o menos su peso en el mundo) + bonos.\n\nSon ejemplos para entender cómo se construyen, no recomendaciones personalizadas.",
      "key": "Con uno a tres fondos indexados puedes tener miles de empresas de todo el mundo.",
      "tip": "Una cartera aburrida es una cartera que funciona."
     }
@@ -108,16 +248,50 @@
    "title": "Factores: tamaño, valor, calidad y momentum",
    "steps": [
     {
-     "title": "Qué es un factor",
-     "body": "Un **factor** es una característica que, de media y en periodos largos, se ha asociado a rentabilidades distintas a las del mercado:\n\n• **Tamaño:** empresas pequeñas.\n• **Valor:** baratas respecto a sus beneficios o su valor en libros.\n• **Calidad:** muy rentables, con poca deuda y beneficios estables.\n• **Momentum:** lo que más ha subido en los últimos meses."
+     "texts": [
+      "¿Qué factor es?",
+      "Un **factor** es un rasgo que, de media y en décadas, se ha asociado a rentabilidades distintas. El de **tamaño** es fácil: empresas pequeñas. Clasifica los otros tres.",
+      "Valor",
+      "Calidad",
+      "Momentum",
+      "PER bajo y cotiza por debajo de su valor contable",
+      "Barata respecto a lo que gana y a lo que tiene: factor valor.",
+      "Muy rentable y casi sin deuda",
+      "Rentabilidad alta y balance sano: factor calidad.",
+      "Ha subido un 60 % en el último año",
+      "Lo que más ha subido en los últimos meses: momentum.",
+      "Cotiza barata frente a los beneficios que gana cada año",
+      "Precio bajo para lo que gana: valor.",
+      "Márgenes altos y beneficios estables durante años",
+      "Un negocio sólido y regular: calidad.",
+      "Entre las que más han subido en los últimos seis meses",
+      "Compra lo que viene subiendo: momentum.",
+      "Clasifica las seis empresas.",
+      "Tamaño, valor, calidad y momentum son **inclinaciones de la cartera**. Eugene Fama y Kenneth French documentaron en los años 90 las primas de tamaño y valor, pero son **medias de décadas**, no una garantía.",
+      "Valor mira el precio; calidad, el negocio; momentum, lo que ha subido.",
+      "Clasifica cada empresa"
+     ]
     },
     {
-     "title": "La evidencia y sus límites",
-     "body": "Eugene Fama y Kenneth French documentaron en los años 90 las primas de tamaño y valor. Pero las primas son **medias de décadas**: el valor lo hizo peor que el mercado durante buena parte de 2007-2020.\n\nLos fondos de factores («smart beta») suelen cobrar más que un indexado de todo el mercado."
+     "texts": [
+      "El fondo de valor de Pablo",
+      "Pablo",
+      "Leí que el factor valor batió al mercado en el último siglo. Metí todo en un fondo de valor.",
+      "Tres años después voy un 15 % por detrás del índice.",
+      "¿Qué le dices?",
+      "Cámbiate al factor que mejor ha ido",
+      "Saltar de factor en factor es perseguir el pasado: compras caro y vendes barato.",
+      "Puede ir por detrás muchos años: decide si lo aguantas",
+      "Eso es. Si no lo aguantas, mejor un índice de todo el mercado.",
+      "Pide un préstamo y compra más, que ya rebotará",
+      "Con dinero prestado, unos años malos te pueden obligar a vender en lo peor.",
+      "El valor lo hizo peor que el mercado durante buena parte de **2007-2020**.",
+      "Y los fondos de factores («smart beta») suelen cobrar más que un indexado."
+     ]
     },
     {
      "title": "Lo que te llevas",
-     "body": "Un factor no es un atajo: puede pasar más de una década por detrás del índice, y hay que aguantarlo para cobrar la prima, si llega.",
+     "body": "Un factor no es un atajo: puede pasar más de una década por detrás del índice, y hay que aguantarlo para cobrar la prima, si llega. Además, cuando muchos inversores conocen un factor, su prima puede reducirse.",
      "key": "Los factores son una forma de inclinar la cartera, no una garantía de ganar al mercado."
     }
    ]
@@ -126,18 +300,71 @@
    "title": "Inversión sostenible (ESG)",
    "steps": [
     {
-     "title": "Qué mide el ESG",
-     "body": "**ESG** son las siglas en inglés de tres áreas:\n\n• **E, ambiental:** emisiones, energía, residuos.\n• **S, social:** condiciones laborales, clientes, comunidad.\n• **G, gobierno corporativo:** independencia del consejo, sueldos de directivos, transparencia.\n\nUn fondo ESG puede **excluir** sectores (tabaco, armas) o elegir a las mejores de cada sector."
+     "texts": [
+      "¿E, S o G?",
+      "**ESG** son las siglas en inglés de tres áreas: **ambiental**, **social** y **gobierno corporativo**. ¿De cuál es cada tema?",
+      "Ambiental (E)",
+      "Social (S)",
+      "Gobierno (G)",
+      "Emisiones de CO₂ de una fábrica",
+      "Emisiones, energía y residuos: ambiental.",
+      "Accidentes laborales",
+      "Condiciones de trabajo: social.",
+      "Consejeros independientes",
+      "Quién controla a la dirección: gobierno corporativo.",
+      "Gestión del agua y los residuos",
+      "Impacto en el medio ambiente: ambiental.",
+      "Bonus enormes de la dirección",
+      "Sueldos de directivos: gobierno corporativo.",
+      "Protección de datos de los clientes",
+      "Cómo trata a sus clientes: social.",
+      "Clasifica los seis temas.",
+      "El ESG mide cómo gestiona una empresa ciertos **riesgos ambientales, sociales y de gobierno**. Un fondo ESG puede **excluir** sectores (tabaco, armas) o elegir a las mejores de cada sector, y no garantiza más ni menos rentabilidad.",
+      "E: el planeta. S: las personas. G: quién manda y cómo.",
+      "Clasifica cada tema"
+     ]
     },
     {
-     "title": "La etiqueta europea",
-     "body": "El reglamento SFDR clasifica los fondos:\n\n• **Artículo 6:** sin objetivo sostenible.\n• **Artículo 8:** promueve características ambientales o sociales.\n• **Artículo 9:** tiene como objetivo la inversión sostenible.\n\nDesde 2025, la ESMA exige que un fondo con términos ESG en el nombre invierta al menos un 80 % en activos que cumplan esas características."
+     "texts": [
+      "El fondo «Verde Futuro»",
+      "Marta",
+      "Mira este anuncio: «Verde Futuro». Bosques, molinos… ¡me lo quedo!",
+      "Aunque entre sus mayores posiciones hay petroleras. Raro, ¿no?",
+      "¿Qué le dices?",
+      "Si se llama verde, será verde",
+      "El nombre y el anuncio no bastan: cuenta lo que hay dentro.",
+      "Mira su documentación, su clasificación SFDR y sus posiciones",
+      "¡Bien! Así distingues un fondo sostenible de un caso de **greenwashing**.",
+      "Olvida la inversión sostenible: todo es mentira",
+      "Hay fondos serios. El problema es no comprobar.",
+      "Ni las agencias de rating ESG se ponen de acuerdo.",
+      "Un estudio del MIT (2022) halló una correlación media de solo **0,54** entre sus notas."
+     ]
     },
     {
-     "title": "Sus límites",
-     "body": "Las agencias de rating ESG a menudo no coinciden: un estudio del MIT (2022) encontró una correlación media de solo 0,54 entre sus notas. Y existe el **greenwashing**: vender como sostenible algo que no lo es tanto.",
-     "key": "El ESG mide cómo gestiona una empresa ciertos riesgos; no garantiza ni más ni menos rentabilidad.",
-     "tip": "Lee qué hay dentro del fondo, no solo el nombre."
+     "texts": [
+      "La etiqueta europea",
+      "El reglamento europeo **SFDR** clasifica los fondos en tres artículos. Coloca cada fondo en el suyo.",
+      "Artículo 6",
+      "Artículo 8",
+      "Artículo 9",
+      "Fondo de bolsa sin ningún objetivo sostenible",
+      "Artículo 6: no promete nada ambiental ni social.",
+      "Fondo que tiene como objetivo la inversión sostenible",
+      "Artículo 9: la sostenibilidad es su objetivo.",
+      "Fondo que promueve características ambientales",
+      "Artículo 8: las promueve, pero no son su objetivo.",
+      "Indexado clásico que no menciona la sostenibilidad",
+      "Artículo 6: sin objetivo sostenible.",
+      "Fondo cuyo objetivo es reducir emisiones de forma medible",
+      "Artículo 9: su objetivo es la inversión sostenible.",
+      "Fondo que promueve características sociales, como buenas condiciones laborales",
+      "Artículo 8: promueve, no persigue un objetivo sostenible.",
+      "Coloca los seis fondos.",
+      "Desde 2025, la ESMA exige que un fondo con términos ESG en el nombre invierta **al menos un 80 %** en activos que cumplan esas características. Lee **qué hay dentro**, no solo el nombre.",
+      "6: nada. 8: lo promueve. 9: es su objetivo.",
+      "Coloca cada fondo"
+     ]
     }
    ]
   },
@@ -161,22 +388,6 @@
    "options": [],
    "explanation": "10.000 ÷ 20 = 500 € por acción. Con una sola acción, esa quiebra se habría llevado los 10.000 €.",
    "unit": "€"
-  },
-  "u29l1-3": {
-   "prompt": "¿Es riesgo específico o riesgo de mercado?",
-   "options": [
-    "Una recesión mundial",
-    "Una pandemia que cierra la economía",
-    "Una subida fuerte de tipos del banco central",
-    "Un fraude contable en una empresa",
-    "Una huelga larga en la fábrica de una empresa",
-    "Un producto estrella que fracasa"
-   ],
-   "explanation": "Lo que afecta a una empresa se diluye en un índice; lo que afecta a toda la economía, no.",
-   "right": [
-    "Específico (de una empresa)",
-    "De mercado (de todas)"
-   ]
   },
   "u29l1-4": {
    "prompt": "Ejercicio de práctica (no es una recomendación): reparte 10.000 € entre estas acciones. Reglas: al menos 6 empresas, ninguna por encima del 20 % y ningún sector por encima del 30 %.",
@@ -202,15 +413,6 @@
     "TECNOLOGÍA"
    ]
   },
-  "u29l1-5": {
-   "prompt": "Rápido: volatilidad anual típica de un índice mundial de acciones…",
-   "options": [
-    "Un 35 %",
-    "Un 70 %",
-    "Un 15 %"
-   ],
-   "explanation": "Una acción suelta ronda el 25-35 % y una pequeña o joven puede pasar del 40 %."
-  },
   "u29l1-6": {
    "prompt": "¿Qué NO es diversificar? Marca todas.",
    "options": [
@@ -220,14 +422,6 @@
     "Tener 10 fondos que compran las mismas 50 tecnológicas"
    ],
    "explanation": "Nombres distintos no son activos distintos: las criptos suelen caer juntas y los fondos repetidos compran lo mismo."
-  },
-  "u29l1-7": {
-   "prompt": "España supone más del 10 % de la bolsa mundial.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Es menos del 1 %. Invertir solo en España es concentrar, aunque tengas 35 empresas."
   },
   "u29l1-8": {
    "prompt": "Pablo tiene el 80 % de sus ahorros en acciones de la empresa donde trabaja: «La conozco mejor que nadie». ¿Qué le dices?",
@@ -343,32 +537,6 @@
     "Tres nombres, casi la misma cartera: EE. UU. pesa mucho en los tres y las grandes tecnológicas se repiten."
    ]
   },
-  "u29l2-7": {
-   "prompt": "En 2022, acciones y bonos cayeron a la vez.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "La inflación y las subidas rápidas de tipos golpearon a los dos: ninguna protección funciona siempre."
-  },
-  "u29l2-8": {
-   "prompt": "En un pánico de mercado, las correlaciones entre activos de riesgo suelen subir.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Casi todo lo arriesgado cae a la vez: por eso la liquidez y los bonos de calidad son los que suelen proteger."
-  },
-  "u29l2-9": {
-   "prompt": "Una correlación de ____ significa que dos activos se mueven siempre en sentido contrario.",
-   "options": [
-    "0",
-    "0,5",
-    "+1",
-    "−1"
-   ],
-   "explanation": "Es el extremo opuesto: cuando uno sube, el otro baja."
-  },
   "u29l2-10": {
    "prompt": "En la mayoría de los pánicos bursátiles, ¿qué ha protegido mejor una cartera?",
    "options": [
@@ -425,28 +593,6 @@
     "LIQUIDEZ"
    ]
   },
-  "u29l3-5": {
-   "prompt": "Pablo necesita 15.000 € para la entrada de un piso dentro de 2 años y los tiene 100 % en bolsa. ¿Qué es lo más sensato?",
-   "options": [
-    "Meter más en bolsa para llegar antes",
-    "Pasar ese dinero a algo de poco riesgo, como un depósito o un monetario",
-    "Dejarlo todo en bolsa: a la larga sube"
-   ],
-   "explanation": "El horizonte manda: lo que necesitas en menos de 3-5 años no debería estar en acciones.",
-   "feedback": [
-    "Más riesgo con un plazo tan corto aumenta la probabilidad de no llegar.",
-    "Bien: el dinero con fecha cercana no debe depender de la bolsa.",
-    "A 2 años no hay «larga». Una caída del 30 % justo antes de comprar le dejaría sin entrada."
-   ]
-  },
-  "u29l3-6": {
-   "prompt": "Cuanto más se acerca tu objetivo, más acciones conviene tener.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Al revés: con poco tiempo no puedes esperar a que se recupere una caída, así que se reduce la parte de acciones."
-  },
   "u29l3-7": {
    "prompt": "Una referencia antigua dice: pon en acciones «100 menos tu ____».",
    "options": [
@@ -462,15 +608,6 @@
    "options": [],
    "explanation": "110 − 30 = 80 % en acciones. Es una orientación: tu tolerancia a las caídas también cuenta.",
    "unit": "%"
-  },
-  "u29l3-9": {
-   "prompt": "Rápido: una cartera 80 % acciones y 20 % bonos es de perfil…",
-   "options": [
-    "Decidido",
-    "Sin riesgo",
-    "Conservador"
-   ],
-   "explanation": "En una crisis fuerte podría caer entre un 30 % y un 45 %."
   },
   "u29l3-10": {
    "prompt": "¿Qué le dices a Lumi?",
@@ -498,14 +635,6 @@
     "Menos del 1 %"
    ],
    "explanation": "Por eso una cartera solo española concentra mucho, aunque tenga 35 empresas."
-  },
-  "u29l4-2": {
-   "prompt": "Japón fue la mayor bolsa del mundo en 1989 y tardó 34 años en recuperar su máximo.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Un solo país puede estancarse décadas. Diversificar por países protege de eso."
   },
   "u29l4-3": {
    "prompt": "Tienes una acción de EE. UU. que vale 100 $ todo el año. El euro pasa de 1,00 a 1,10 dólares. ¿Cuántos euros vale ahora? (redondea)",
@@ -544,29 +673,6 @@
     "Conocer las marcas no hace que el país entero no pueda tener una década mala.",
     "Pasar de un país a otro sigue siendo concentrar."
    ]
-  },
-  "u29l4-6": {
-   "prompt": "¿Tiene riesgo de divisa para alguien que vive en euros?",
-   "options": [
-    "Un depósito en euros en un banco español",
-    "Bonos del Tesoro de EE. UU. sin cubrir",
-    "Un fondo de bonos globales cubierto a euros",
-    "Acciones japonesas compradas en yenes",
-    "Un fondo de acciones de EE. UU. sin cubrir"
-   ],
-   "explanation": "Lo que cotiza o vale en otra moneda cambia de valor en euros aunque su precio no se mueva. La cobertura reduce ese efecto.",
-   "right": [
-    "Sí, depende del cambio",
-    "No, o casi nada"
-   ]
-  },
-  "u29l4-7": {
-   "prompt": "Un fondo «cubierto a euros» reduce el efecto de los cambios de divisa.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Usa derivados para neutralizar casi todo el movimiento de la moneda. Tiene un pequeño coste."
   },
   "u29l4-8": {
    "prompt": "La tendencia a invertir sobre todo en tu propio país se llama sesgo ____.",
@@ -640,24 +746,6 @@
    "explanation": "0,7 × 0,20 + 0,1 × 0,25 + 0,2 × 0,10 = 0,14 + 0,025 + 0,02 = 0,185 %.",
    "unit": "%"
   },
-  "u29l5-5": {
-   "prompt": "Las acciones de EE. UU. han sido la mejor región en todas las décadas.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "En 2000-2009 dieron una rentabilidad cercana a cero mientras otras regiones subían."
-  },
-  "u29l5-6": {
-   "prompt": "¿Qué NO hace falta para una buena cartera indexada? Marca todas.",
-   "options": [
-    "Costes bajos",
-    "Cambiar cada año al fondo que más subió",
-    "Mirar la bolsa todos los días",
-    "Tener 20 fondos distintos"
-   ],
-   "explanation": "Lo que sí hace falta: diversificación, costes bajos y constancia."
-  },
   "u29l5-7": {
    "prompt": "Laura cambia cada enero al fondo que más subió el año anterior. ¿Qué es lo más probable?",
    "options": [
@@ -681,33 +769,6 @@
     "Decidir el reparto entre acciones y bonos"
    ],
    "explanation": "Primero el reparto (la decisión clave), luego los productos y después la disciplina."
-  },
-  "u29l5-9": {
-   "prompt": "Rápido: en una cartera de tres fondos, ¿qué peso aproximado tienen los emergentes?",
-   "options": [
-    "Un 10-12 %",
-    "Un 1 %",
-    "Un 50 %"
-   ],
-   "explanation": "Es más o menos su peso en el mercado mundial."
-  },
-  "u29l5-10": {
-   "prompt": "¿Qué le contestas?",
-   "options": [
-    "Porque el S&P 500 es un fondo activo",
-    "Porque el mundo ya incluye EE. UU. y te cubre si tiene una década mala",
-    "Porque EE. UU. ya no va a subir nunca"
-   ],
-   "explanation": "Un índice mundial diversifica entre países; el S&P 500, no.",
-   "feedback": [
-    "No: es un índice. El problema es la concentración en un país.",
-    "¡Eso! Como en 2000-2009: EE. UU. dio casi cero mientras otras regiones subían.",
-    "Nadie lo sabe. El argumento no es predecir, es no depender de un solo país."
-   ],
-   "lines": [
-    "¿Y por qué no meto todo en el S&P 500 y listo?",
-    "Es lo que hace todo el mundo en internet 🤷"
-   ]
   },
   "u29l6-1": {
    "prompt": "Empareja cada factor con las empresas que busca.",
@@ -752,31 +813,6 @@
    ],
    "explanation": "Su modelo de tres factores (mercado, tamaño y valor) es la base de este enfoque."
   },
-  "u29l6-5": {
-   "prompt": "¿A qué factor corresponde cada empresa?",
-   "options": [
-    "PER bajo y cotiza por debajo de su valor contable",
-    "Márgenes altos y beneficios estables durante años",
-    "Ha subido un 60 % en el último año",
-    "Capitalización pequeña, poco conocida",
-    "Rentabilidad sobre el capital muy alta y casi sin deuda"
-   ],
-   "explanation": "Cada factor mira una característica distinta de la empresa.",
-   "right": [
-    "Tamaño",
-    "Valor",
-    "Calidad",
-    "Momentum"
-   ]
-  },
-  "u29l6-6": {
-   "prompt": "Las primas de factores se han cumplido en todas las décadas.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "El valor, por ejemplo, lo hizo peor que el mercado durante buena parte de 2007-2020."
-  },
   "u29l6-7": {
    "prompt": "La estrategia que compra lo que más ha subido recientemente se llama ____.",
    "options": [
@@ -786,29 +822,6 @@
     "momentum"
    ],
    "explanation": "Se apoya en que las tendencias tienden a continuar un tiempo, aunque se giran a veces de golpe."
-  },
-  "u29l6-8": {
-   "prompt": "Rápido: un fondo de factores («smart beta») suele cobrar…",
-   "options": [
-    "Más que un indexado de todo el mercado",
-    "Menos que un indexado de todo el mercado",
-    "Nada"
-   ],
-   "explanation": "Las reglas extra y la rotación cuestan dinero."
-  },
-  "u29l6-9": {
-   "prompt": "Pablo lee que el factor valor batió al mercado en el último siglo y mete el 100 % en un fondo de valor. Tres años después va un 15 % por detrás del índice. ¿Qué es lo más coherente?",
-   "options": [
-    "Entender que puede ir por detrás muchos años y decidir si lo aguanta",
-    "Venderlo y pasarse al factor que mejor fue",
-    "Pedir un préstamo para comprar más"
-   ],
-   "explanation": "La prima de un factor, si llega, se cobra en décadas, no en tres años.",
-   "feedback": [
-    "Bien: un factor exige paciencia larga. Si no lo aguantas, mejor un índice de todo el mercado.",
-    "Saltar de factor en factor es perseguir el pasado: suele comprar caro y vender barato.",
-    "Con dinero prestado, unos años malos pueden obligarte a vender en el peor momento."
-   ]
   },
   "u29l6-10": {
    "prompt": "¿Qué límites tienen los factores? Marca todos.",
@@ -843,45 +856,6 @@
    ],
    "explanation": "Los del artículo 8 solo «promueven» características ambientales o sociales."
   },
-  "u29l7-3": {
-   "prompt": "Dos agencias de rating ESG casi siempre dan la misma nota a una empresa.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Usan métodos distintos: un estudio del MIT (2022) encontró una correlación media de solo 0,54 entre sus notas."
-  },
-  "u29l7-4": {
-   "prompt": "¿Es un tema E, S o G?",
-   "options": [
-    "Accidentes laborales",
-    "Bonus enormes de la dirección",
-    "Gestión del agua y los residuos",
-    "Emisiones de CO₂ de una fábrica",
-    "Protección de datos de los clientes",
-    "Consejeros independientes"
-   ],
-   "explanation": "Cada área mira un tipo distinto de riesgo de la empresa.",
-   "right": [
-    "Ambiental",
-    "Social",
-    "Gobierno corporativo"
-   ]
-  },
-  "u29l7-5": {
-   "prompt": "Marta ve un anuncio de un fondo «Verde Futuro» con bosques y molinos. Al mirar su cartera, entre las mayores posiciones hay petroleras. ¿Qué hace?",
-   "options": [
-    "Lo contrata: si se llama verde, será verde",
-    "Descarta toda la inversión sostenible por mentirosa",
-    "Revisa su documentación, su clasificación SFDR y sus principales posiciones"
-   ],
-   "explanation": "Antes de fiarte de una etiqueta, mira qué compra el fondo y cómo se clasifica.",
-   "feedback": [
-    "El nombre y el anuncio no bastan: lo que cuenta es lo que hay dentro.",
-    "Hay fondos serios: el problema es no comprobar.",
-    "Bien: así distingue un fondo sostenible de un caso de greenwashing."
-   ]
-  },
   "u29l7-6": {
    "prompt": "¿Qué pueden ser señales de greenwashing? Marca todas.",
    "options": [
@@ -891,14 +865,6 @@
     "Mucho marketing verde y poca información concreta"
    ],
    "explanation": "La transparencia (método, exclusiones, posiciones) es lo contrario del greenwashing."
-  },
-  "u29l7-7": {
-   "prompt": "Un fondo ESG garantiza una rentabilidad mayor que uno tradicional.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "No hay garantía ni en un sentido ni en otro: depende de lo que compre y de su coste."
   },
   "u29l7-8": {
    "prompt": "Presentar como sostenible algo que no lo es tanto se llama ____.",

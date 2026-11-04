@@ -1,15 +1,47 @@
 import 'server-only'
 // Sección 9 · Unidad 27 · Los sesgos que cuestan dinero (docs/curso-v2/02-curriculo.md)
 // Fuentes: docs/curso/11 (11.1–11.5) y 03 (3.4, Bessembinder); clase antigua course/u11.ts.
-import { buckets, chat, fill, key, lesson, match, multi, num, point, scenario, simTrade, single, spot, text, tf, timed, trend, unit, upDown } from '../dsl'
+import { buckets, chat, choose, fill, key, lesson, match, mission, multi, num, opt, play, point, say, scenario, simTrade, single, spot, story, tf, timed, trend, unit, upDown, when } from '../dsl'
 
 export default unit({
   id: 'u27', order: 27, title: 'Los sesgos que cuestan dinero', description: 'Los atajos mentales que te hacen comprar caro, vender barato y creerte un genio',
   lessons: [
     lesson('u27l1', 'Tu cerebro no está hecho para invertir', [
-      text('Dos formas de pensar', 'Daniel Kahneman, premio Nobel de Economía:\n\n• **Sistema 1:** rápido, intuitivo y emocional. Perfecto para esquivar un coche.\n• **Sistema 2:** lento, analítico y costoso. Necesario para calcular una esperanza matemática.\n\nEn bolsa, las decisiones importantes se suelen tomar con el sistema 1: con miedo, prisa o euforia.'),
-      text('La brecha del inversor', 'Morningstar, 10 años hasta 2025:\n\n• Los fondos de EE. UU. ganaron un **9,9 %** anual.\n• El dinero de sus inversores, que entraba y salía, un **8,7 %**: **1,2 puntos menos** al año.\n• En los fondos más volátiles la brecha fue de −2,1 puntos; en los tranquilos, de −0,4.\n• En los ETF de bitcoin al contado: inversores **−5,8 %** frente a **+8,5 %** del ETF.'),
-      key('Lo que te llevas', 'El producto puede ser bueno. El problema es el comportamiento: comprar tras las subidas y vender tras las caídas.', 'El cerebro huye del peligro y sigue al grupo: en bolsa eso lleva a vender en las caídas y comprar en las euforias.', 'El mayor riesgo de tu cartera suele estar sentado delante de la pantalla.'),
+      mission({
+        title: 'Cuatro años de montaña rusa',
+        intro: 'Diciembre de 2020. Metes **10.000 €** en bitcoin y lo ves semana a semana, con datos reales. Puedes vender cuando quieras.',
+        widget: { kind: 'crash', series: 'series-btc', amount: 10000 },
+        goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
+        insight: 'Comprar tras las subidas y vender tras las caídas fabrica la **brecha del inversor**. En los ETF de bitcoin al contado, sus inversores obtuvieron un **−5,8 %** frente al **+8,5 %** del propio ETF.',
+        lumi: [
+          { when: when('sold', '==', 1), say: 'Has vendido. ¿Lo decidió tu plan o tu estómago?', mood: 'THINKING' },
+          { when: when('drop', '<=', -40), say: 'Casi la mitad, en rojo. Tu cerebro grita: «¡Vende ya!».', mood: 'WORRIED' },
+          { when: when('drop', '>=', 80), say: '¡Muy por encima de lo que pusiste! Tu cerebro grita: «¡Mete más!».', mood: 'HAPPY' },
+          { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
+        ],
+      }),
+      play({
+        title: '¿Quién decide?',
+        intro: 'Daniel Kahneman, Nobel de Economía: tenemos un **sistema 1**, rápido y emocional, y un **sistema 2**, lento y analítico. ¿Cuál está decidiendo?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Sistema 1: rápido y emocional' }, { label: 'Sistema 2: lento y analítico' }],
+          cards: [
+            { icon: 'news', label: 'Vender todo tras leer un titular alarmante', bin: 0, why: 'Miedo y prisa: el sistema 1 al mando.' },
+            { icon: 'search', label: 'Calcular la esperanza de tu sistema con el diario', bin: 1, why: 'Hacer cuentas con calma es trabajo del sistema 2.' },
+            { icon: 'megaphone', label: 'Comprar porque todo el mundo habla de ello', bin: 0, why: 'Seguir al grupo es un atajo rápido del sistema 1.' },
+            { icon: 'document', label: 'Releer tu plan antes de operar', bin: 1, why: 'Una lista escrita obliga a pensar despacio.' },
+            { icon: 'bike', label: 'Esquivar un patinete que viene de frente', bin: 0, why: 'Aquí el sistema 1 te salva: es rápido y automático.' },
+          ],
+        },
+        goal: { text: 'Clasifica las cinco decisiones.', when: [when('done', '==', 5)] },
+        insight: 'El sistema 1 es perfecto para esquivar un coche. Para invertir, **obligarte a usar el sistema 2**: el miedo, la prisa y la euforia deciden mal.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: ¿hay emoción y prisa, o calma y cuentas?', mood: 'THINKING' },
+          { say: '¿Sistema 1 o sistema 2? Clasifica cada decisión', mood: 'HAPPY' },
+        ],
+      }),
+      key('La brecha del inversor', 'Morningstar, 10 años hasta 2025: los fondos de EE. UU. ganaron un **9,9 %** anual; el dinero de sus inversores, que entraba y salía, un **8,7 %**: 1,2 puntos menos al año.\n\nEn los fondos más volátiles, la brecha fue de −2,1 puntos; en los tranquilos, de −0,4.', 'El producto puede ser bueno; el problema es el comportamiento: comprar tras las subidas y vender tras las caídas.', 'El mayor riesgo de tu cartera suele estar sentado delante de la pantalla.'),
     ], [
       single('Según Morningstar, ¿cuánto ganó de menos al año el inversor medio frente a sus propios fondos en los 10 años hasta 2025?', ['Nada', 'Alrededor de 1,2 puntos', 'Unos 10 puntos'], 1, '9,9 % de los fondos frente a 8,7 % de sus inversores, por comprar y vender en mal momento.'),
       buckets('¿Qué sistema está decidiendo?', ['Sistema 1 (rápido y emocional)', 'Sistema 2 (lento y analítico)'], [['Vender todo tras leer un titular alarmante', 0], ['Calcular la esperanza de tu sistema con el diario', 1], ['Comprar porque todo el mundo habla de ello', 0], ['Revisar tu plan antes de operar', 1], ['Esquivar un patinete que viene de frente', 0]], 'El sistema 1 es útil para sobrevivir; para invertir conviene obligarse a usar el 2.'),
@@ -21,12 +53,39 @@ export default unit({
       multi('¿Qué suele poner al sistema 1 a decidir? Marca todas.', ['El miedo', 'La prisa', 'La euforia', 'Una lista de comprobación escrita'], [0, 1, 2], 'Una lista escrita obliga a pensar despacio: es una herramienta del sistema 2.'),
       fill('El problema de la brecha no es el producto, sino el ____ del inversor.', 'comportamiento', ['sueldo', 'bróker', 'país'], 'El mismo fondo da resultados distintos según cómo entras y sales.'),
       chat(['Mi fondo ha ganado un 10 % al año… ¡pero yo mucho menos! 🤨', '¿Me están robando?'], '¿Qué le explicas a Lumi?', [['Seguro que es una estafa', 'Puede que no: si entraste tras las subidas y saliste en las caídas, la diferencia es tuya.'], ['Probablemente entraste y saliste en mal momento: es la brecha del inversor', 'Ups… Compré cuando estaba en máximos y vendí en el susto de marzo. Touché.'], ['Los fondos siempre mienten en sus datos', 'Los datos de rentabilidad del fondo son reales; lo que cambia es cuándo estuviste dentro.']], 1, 'Tu rentabilidad depende del fondo y de cuándo entras y sales.'),
-    ], { source: '11.1' }),
+    ], { source: '11.1', minutes: 6, retire: [1, 2, 6] }),
 
     lesson('u27l2', 'Aversión a la pérdida', [
-      text('Perder duele el doble', 'Kahneman y Tversky (teoría prospectiva, 1979): una pérdida de 100 € duele aproximadamente **el doble** de lo que alegra una ganancia de 100 €.\n\nPor eso rechazamos apuestas que nos convienen y evitamos hacer **realidad** una pérdida vendiendo, aunque la empresa haya empeorado.'),
-      text('Sus efectos', '• Cuando perdemos, nos volvemos **más arriesgados**: «doblo para recuperar».\n• Cuando ganamos, **más conservadores**: vendemos rápido para asegurar.\n• Si miramos la cartera muy a menudo, la vemos más veces en pérdidas y sufrimos más: Benartzi y Thaler lo llamaron **aversión miope a la pérdida**.'),
-      key('Cómo protegerte', 'Decide el stop antes de entrar, en calma. Y hazte la pregunta correcta: no «¿cuánto he perdido?», sino **«si no la tuviera, ¿la compraría hoy a este precio?»**.', 'Perder duele más del doble de lo que alegra ganar: por eso nos aferramos a lo que pierde.', 'Al mercado le da igual a cuánto compraste. Decide con lo que sabes hoy.'),
+      story('Cara o cruz con Dani', [{ id: 'dani', name: 'Dani' }], [
+        say('dani', 'Te propongo un juego: lanzo una moneda.'),
+        say('dani', 'Si sale cara, te doy **150 €**. Si sale cruz, me das **100 €**.'),
+        choose('¿Juegas?', [
+          opt('No: perder 100 € me dolería demasiado', 'ok', say('lumi', 'Es lo que hace casi todo el mundo… aunque de media ganarías 25 €.')),
+          opt('Sí: de media gano 25 € por tirada', 'good', say('lumi', '¡Bien visto! 0,5 × 150 − 0,5 × 100 = **+25 €**.')),
+          opt('Solo si tiro yo la moneda', 'bad', say('lumi', 'La moneda es justa: el problema está en nuestra cabeza.')),
+        ]),
+        say('lumi', 'Kahneman y Tversky (1979): perder duele **el doble** de lo que alegra ganar.'),
+        say('lumi', 'Por eso rechazamos apuestas que nos convienen.'),
+      ]),
+      play({
+        title: 'Y si juegas muchas veces',
+        intro: '1.000 personas aceptan el juego de Dani: cara **+150 €**, cruz **−100 €**. ¿Qué pasa si lo repiten?',
+        widget: { kind: 'coinflip', traders: 1000, trades: 1, maxTrades: 200, fee: 0, stake: 100, win: 1.5 },
+        predict: {
+          prompt: 'Si cada uno juega 100 veces, ¿cuántos acaban perdiendo?',
+          options: ['La mitad, como con una tirada', 'Casi nadie', 'Casi todos'],
+          answer: 1,
+          why: 'Solo un **2 %** acaba perdiendo, y de media ganan unos 2.488 €. Con esperanza positiva, repetir juega a tu favor.',
+        },
+        goal: { text: 'Sube las tiradas hasta que pierdan 5 de cada 100 o menos.', when: [when('losersPct', '<=', 5)] },
+        insight: 'La **aversión a la pérdida** nos hace rechazar decisiones que nos convienen. Y mirar cada tirada, o la cartera cada día, hace que veas más pérdidas: es la **aversión miope a la pérdida**.',
+        lumi: [
+          { when: when('losersPct', '<=', 5), say: '¡Casi nadie pierde! Rechazarla por miedo salía caro.', mood: 'CELEBRATE' },
+          { when: when('trades', '==', 1), say: 'Con una sola tirada, la mitad pierde: eso es lo que asusta.', mood: 'THINKING' },
+          { say: 'Sube las veces que juega cada uno', mood: 'HAPPY' },
+        ],
+      }),
+      key('Cómo protegerte', 'Cuando perdemos, nos volvemos **más arriesgados** («doblo para recuperar»); cuando ganamos, **más conservadores**.\n\nDecide el stop antes de entrar, en calma. Y hazte la pregunta correcta: no «¿cuánto he perdido?», sino **«si no la tuviera, ¿la compraría hoy a este precio?»**.', 'Perder duele el doble de lo que alegra ganar: por eso nos aferramos a lo que pierde.', 'Al mercado le da igual a cuánto compraste. Decide con lo que sabes hoy.'),
     ], [
       single('Según la teoría prospectiva, una pérdida de 100 € duele aproximadamente…', ['Lo mismo que alegra ganar 100 €', 'El doble de lo que alegra ganar 100 €', 'La mitad'], 1, 'Kahneman y Tversky, 1979.'),
       num('Te ofrecen lanzar una moneda: si sale cara ganas 150 €, si sale cruz pierdes 100 €. ¿Cuál es la ganancia esperada por tirada?', 25, '€', '0,5 × 150 − 0,5 × 100 = 75 − 50 = +25 €.'),
@@ -38,11 +97,38 @@ export default unit({
       fill('La pregunta clave: «Si no la tuviera, ¿la ____ hoy a este precio?».', 'compraría', ['vendería', 'regalaría', 'olvidaría'], 'Separa la decisión de tu precio de compra.'),
       buckets('¿Decisión por aversión a la pérdida o decisión con criterio?', ['Aversión a la pérdida', 'Con criterio'], [['No vendo hasta recuperar lo que pagué', 0], ['Salgo porque saltó el stop que decidí antes', 1], ['Doblo la posición para recuperar antes', 0], ['Vendo porque el negocio ha empeorado', 1], ['Rechazo una apuesta con esperanza positiva por miedo a perder', 0]], 'Las decisiones con criterio miran al plan y al negocio; las otras, al dolor de perder.'),
       chat(['No pienso vender esa acción en pérdidas 😤', 'Vender sería reconocer que me equivoqué.'], '¿Qué le contestas a Lumi?', [['Bien hecho, aguanta hasta que vuelva', 'A veces no vuelve. Y mientras esperas, ese dinero podría estar en algo mejor.'], ['Equivocarse es normal; lo importante es decidir con lo que sabes hoy', 'Tienes razón: el mercado no sabe a cuánto compré. Voy a revisar el negocio, no mi orgullo.'], ['Compra más para bajar el precio medio', 'Promediar a la baja sin revisar el negocio es meter más dinero en el mismo error.']], 1, 'Aceptar una pérdida pequeña a tiempo es parte del juego, no un fracaso.'),
-    ], { source: '11.2' }),
+    ], { source: '11.2', minutes: 6, retire: [1, 2, 4, 6] }),
 
     lesson('u27l3', 'El efecto disposición', [
-      text('Qué es', 'La tendencia a **vender pronto lo que gana** y **mantener demasiado lo que pierde**.\n\nShefrin y Statman le pusieron nombre en 1985. Odean (1998) lo midió en miles de cuentas: los inversores vendían mucho antes las acciones ganadoras que las perdedoras.'),
-      text('Lo peor', 'Las ganadoras que vendieron siguieron rindiendo, de media, **mejor** que las perdedoras que conservaron.\n\nEs justo lo contrario del consejo clásico: **«corta las pérdidas y deja correr las ganancias»**. En R: cortar ganancias en +0,5R y dejar correr pérdidas hasta −2R hunde la esperanza de cualquier sistema.'),
+      story('Laura necesita 2.000 €', [{ id: 'laura', name: 'Laura' }], [
+        say('laura', 'Necesito 2.000 € y tengo dos acciones.'),
+        say('laura', 'La A va **+20 %**. La B va **−20 %** y acaba de presentar malos resultados.'),
+        choose('¿Cuál debería vender?', [
+          opt('La A, que está en verde', 'bad', say('lumi', 'Es el **efecto disposición**: vende la que va bien y se queda la que empeora.')),
+          opt('La que peor futuro tenga, esté en verde o en rojo', 'good', say('lumi', '¡Eso! Si B ha empeorado y A no, quizá toca vender B.')),
+          opt('Las dos, y no invertir más', 'ok', say('lumi', 'Huir de todo no corrige el sesgo: solo lo cambia por otro.')),
+        ]),
+        say('lumi', 'Odean (1998): las ganadoras vendidas siguieron rindiendo **mejor** que las perdedoras conservadas.'),
+      ]),
+      mission({
+        title: 'Deja correr las ganancias',
+        intro: 'Velas reales. Este trader pone el stop lejos y el objetivo muy cerca: corta las ganancias y deja correr las pérdidas. Arréglalo.',
+        widget: { kind: 'orders', chart: 'lvl-11', stopPct: 4, takePct: 2, maxPct: 12 },
+        predict: {
+          prompt: 'Aciertas el 60 %, pero cierras las ganancias en +0,5R y dejas correr las pérdidas hasta −2R. ¿Ganas o pierdes?',
+          options: ['Ganas: aciertas más de la mitad', 'Pierdes: cada fallo borra cuatro aciertos', 'Empatas'],
+          answer: 1,
+          why: '0,6 × 0,5 − 0,4 × 2 = **−0,5R** por operación. El efecto disposición hunde un buen acierto.',
+        },
+        goal: { text: 'Pon el objetivo al menos al doble de distancia que el stop y mira qué pasó.', when: [when('rr', '>=', 2), when('played', '==', 1)] },
+        insight: '**Corta las pérdidas y deja correr las ganancias**: la salida se decide antes de entrar, no al ver el primer verde.',
+        lumi: [
+          { when: when('hit', '==', 2), say: '¡Objetivo! Dejaste correr la ganancia.', mood: 'CELEBRATE' },
+          { when: when('hit', '==', 1), say: 'Saltó el stop: una pérdida decidida de antemano. Así se corta.', mood: 'CALM' },
+          { when: when('rr', '<', 1), say: 'Tu objetivo está más cerca que tu stop: ganas poco cuando aciertas.', mood: 'WORRIED' },
+          { say: 'Coloca el stop y el objetivo, y mira qué pasó', mood: 'HAPPY' },
+        ],
+      }),
       key('Cómo protegerte', 'Stop y plan de salida **antes** de entrar. Si la operación va a favor, la salida la decide el plan (por ejemplo, mitad en 2R y el resto con stop dinámico), no el miedo a devolver lo ganado.', 'Vendemos lo que gana por alegría rápida y aguantamos lo que pierde por no aceptar el error.', 'Corta las pérdidas y deja correr las ganancias. Tu cerebro te pedirá lo contrario.'),
     ], [
       single('¿Qué es el efecto disposición?', ['Vender pronto lo que gana y mantener demasiado lo que pierde', 'Comprar siempre lo que más sube', 'Repartir el dinero entre muchos activos'], 0, 'Lo midió Odean en 1998 en miles de cuentas.'),
@@ -55,12 +141,34 @@ export default unit({
       fill('El consejo clásico: corta las pérdidas y deja correr las ____.', 'ganancias', ['comisiones', 'noticias', 'pérdidas'], 'El efecto disposición hace justo lo contrario.'),
       timed(tf('Vender siempre lo que va en verde y aguantar lo que va en rojo es una buena forma de gestionar una cartera.', false, 'Es el efecto disposición: cortas lo que funciona y alimentas lo que no.'), 10),
       chat(['¡Mi acción ha subido un 6 %! 🎉', 'La vendo ya, que luego baja.'], '¿Qué le dices a Lumi?', [['Sí, asegura, nunca se sabe', 'Puede salir bien hoy, pero si lo haces siempre, cortas tus mejores operaciones.'], ['¿Qué decía tu plan de salida antes de entrar?', 'Mmm… Decía mitad en 2R y el resto con stop dinámico. Vale, sigo el plan.'], ['Compra más con todo lo que tengas', 'Pasar del miedo a la euforia en un minuto tampoco es un plan.']], 1, 'La salida se decide antes de entrar, no al ver el primer verde.'),
-    ], { source: '11.2' }),
+    ], { source: '11.2', minutes: 6, retire: [2, 3, 4, 8] }),
 
     lesson('u27l4', 'FOMO y efecto rebaño', [
-      text('El miedo a quedarse fuera', 'El **FOMO** aparece cuando algo sube mucho y todo el mundo parece ganar dinero. Es el motor de las burbujas: las puntocom en 1999, las criptos en 2017 y 2021, las *meme stocks* en 2021.\n\nEl **efecto rebaño** es seguir a la multitud. Pero cuando **todos** ya han comprado, no queda nadie para seguir empujando.'),
-      text('Señales de alarma', '• Te enteras por amigos o redes que nunca habían invertido.\n• La razón es «**sube mucho**», no qué hace el activo.\n• Sientes **urgencia**: «si no compro hoy, me lo pierdo».\n• Se dice que «**esta vez es diferente**».'),
-      key('Cómo protegerte', '• **Regla de las 48 horas:** toda compra fuera de tu plan espera dos días.\n• **Límite de especulación** escrito en tu plan.\n• Pregúntate: **«¿Lo compraría si nadie hablara de ello?»**', 'Cuando todo el mundo habla de algo que «solo sube», el riesgo suele ser máximo.', 'Si tu peluquero te recomienda una criptomoneda, quizá ya es tarde.'),
+      mission({
+        title: 'Vive la fiebre puntocom',
+        intro: 'Diciembre de 1998. Internet lo va a cambiar todo y tus amigos solo hablan de tecnológicas. Metes **10.000 €** en el Nasdaq 100, con datos reales.',
+        widget: { kind: 'crash', series: 'series-dotcom', amount: 10000 },
+        goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
+        insight: 'Subió un **156 %** en 15 meses; luego cayó un **83 %** desde el máximo y no lo recuperó hasta 2015. **Cuando todo el mundo habla de algo que «solo sube», el riesgo suele ser máximo.**',
+        lumi: [
+          { when: when('sold', '==', 1), say: 'Has vendido. Mira qué pasa después…', mood: 'THINKING' },
+          { when: when('drop', '<=', -40), say: 'De la euforia al desplome. Y nadie avisó del techo.', mood: 'WORRIED' },
+          { when: when('drop', '>=', 100), say: '¡Más del doble! Ahora todo el mundo quiere entrar.', mood: 'HAPPY' },
+          { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
+        ],
+      }),
+      story('«¡Entra hoy!»', [{ id: 'alex', name: 'Álex' }], [
+        say('alex', 'Esta acción ha subido un **200 %** en dos semanas.'),
+        say('alex', 'Todos en el grupo están dentro. ¡Entra hoy o te lo pierdes!'),
+        choose('No está en tu plan. ¿Qué haces?', [
+          opt('Compro ya, antes de que suba más', 'bad', say('lumi', 'Eso es **FOMO**: compras sin saber qué hace la empresa, tras una subida enorme.')),
+          opt('Espero 48 horas y me pregunto si la compraría si nadie hablara de ella', 'good', say('lumi', '¡Eso! Si en dos días sigue teniendo sentido, lo decides con calma.')),
+          opt('Pido un préstamo para entrar fuerte', 'bad', say('lumi', 'Deuda y FOMO: la receta clásica de las peores pérdidas.')),
+        ]),
+        say('lumi', 'Cuando **todos** ya han comprado, no queda nadie para seguir empujando.'),
+        say('lumi', 'La urgencia es el combustible del FOMO. Quítale tiempo y se apaga.'),
+      ]),
+      key('Señales de alarma', '• Te enteras por amigos o redes que nunca habían invertido.\n• La razón es que «**sube mucho**», no qué hace el activo.\n• Sientes **urgencia**: «si no compro hoy, me lo pierdo».\n• Se dice que «**esta vez es diferente**».\n\nAntídotos: la **regla de las 48 horas** y un **límite de especulación** escrito en tu plan.', 'Cuando todo el mundo habla de algo que «solo sube», el riesgo suele ser máximo.', 'Si tu peluquero te recomienda una criptomoneda, quizá ya es tarde.'),
     ], [
       spot('Marca los mensajes que intentan activar tu FOMO para venderte algo o engañarte.', [['Grupo «Lambo 2030»', '🚀 Esta cripto ha subido un 300 % en un mes. Mañana será tarde. ¡Entra YA!', true], ['Tu bróker', 'Recordatorio: tu aportación periódica de 100 € se ejecutará el día 5.', false], ['Influencer', 'Solo quedan 3 plazas en mi grupo de señales. Esta vez es diferente, no te quedes fuera.', true], ['Tu primo', 'Todo el mundo está ganando con esta acción. Mete los ahorros, no lo pienses.', true], ['CNMV', 'Consulta si una entidad está autorizada antes de invertir con ella.', false]], 'Urgencia, «esta vez es diferente» y «todo el mundo gana» son las señales clásicas del FOMO.'),
       upDown('Noviembre de 2021: bitcoin está en máximos, sale en todos los telediarios y tus amigos que nunca habían invertido están comprando. ¿Qué hizo después?', 'hist-btc-2021', 'Bitcoin cayó cerca de un 75 % en el año siguiente. El momento de máxima euforia suele ser el de máximo riesgo. Recuerda: en cripto puede perderse la totalidad de lo invertido.', 'el año siguiente'),
@@ -72,12 +180,33 @@ export default unit({
       timed(single('Rápido: ¿qué pregunta te protege del efecto rebaño?', ['¿Cuánto ha subido esta semana?', '¿Lo compraría si nadie hablara de ello?', '¿Qué dicen en el foro?'], 1, 'Separa el valor de lo que hace la multitud.'), 12),
       match('Empareja cada burbuja con su época.', [['Puntocom', '1999–2000'], ['Bolsa japonesa', '1989'], ['Meme stocks', '2021'], ['Criptomonedas (dos veces)', '2017 y 2021']], 'Cambian los activos; el FOMO es siempre el mismo.'),
       chat(['Todo el mundo en TikTok está ganando con una moneda nueva 🐶', 'Si no entro hoy, me lo pierdo.'], '¿Qué le dices a Lumi?', [['Entra ya, que vuela', 'Si entro por miedo a quedarme fuera, lo más probable es que compre cerca del techo.'], ['Espera 48 horas y piensa si la comprarías si nadie hablara de ella', 'Vale… Si sigue teniendo sentido en dos días, la meto en mi límite de especulación. Si no, nada.'], ['Mete los ahorros de emergencia', 'Eso es lo único que nunca se toca. Y en cripto se puede perder todo lo invertido.']], 1, 'La prisa es la señal: cuando sientes urgencia, para.'),
-    ], { source: '11.3' }),
+    ], { source: '11.3', minutes: 6, retire: [3, 4, 6, 7] }),
 
     lesson('u27l5', 'Exceso de confianza', [
-      text('Creemos saber más de lo que sabemos', '• Barber y Odean (2000): el 20 % de hogares que más operaba ganó un **11,4 %** anual frente al **17,9 %** del mercado.\n• En otro estudio (2001), los hombres operaban un **45 % más** que las mujeres y reducían más su rentabilidad neta.\n\nLa causa principal: el exceso de confianza.'),
-      text('Suerte o habilidad', 'Unas cuantas operaciones ganadoras al principio son lo más peligroso que le puede pasar a un principiante: **confunde suerte con habilidad**, sube el riesgo y se salta las reglas.\n\nAcertar 4 de 4 lanzando una moneda pasa un 6,25 % de las veces: entre mucha gente, siempre habrá «genios».'),
-      key('Pruébalo tú', 'Ahora vas a intentar adivinar cuatro gráficos reales. Sea cual sea tu resultado, recuerda: con tan pocos intentos, el resultado dice casi nada de tu habilidad.', 'Acertar dos o tres veces no te hace experto: con pocas operaciones, manda la suerte.', 'Mide tus resultados en el diario y compáralos con un índice. Tu memoria siempre te da la razón.'),
+      mission({
+        title: '¿Tienes buen ojo?',
+        intro: 'Cuatro gráficos reales, sin nombre ni fecha. ¿Sube o baja? Lleva la cuenta de tus aciertos.',
+        widget: { kind: 'guess', rounds: ['ud-6', 'ud-12', 'ud-16', 'ud-18'] },
+        goal: { text: 'Juega las cuatro rondas.', when: [when('done', '==', 4)] },
+        insight: 'Con 4 intentos, acertarlos todos al azar pasa **más de una vez de cada veinte**. Para saber si tienes ventaja hacen falta **muchas operaciones registradas**.',
+        lumi: [
+          { when: when('right', '>=', 3), say: 'Tres aciertos… ¿ya te sientes un genio? Cuidado.', mood: 'THINKING' },
+          { when: when('done', '==', 4), say: 'Hecho. Con 4 intentos, tu marcador dice casi nada.', mood: 'CALM' },
+          { when: when('done', '>=', 1), say: 'Un acierto o un fallo suelto no dice nada. Sigue.', mood: 'HAPPY' },
+          { say: 'Mira el gráfico: ¿sube o baja?', mood: 'HAPPY' },
+        ],
+      }),
+      story('El que más opera', [{ id: 'marcos', name: 'Marcos' }, { id: 'carla', name: 'Carla' }], [
+        say('marcos', 'Este mes he hecho 40 operaciones. Me sé el mercado de memoria.'),
+        say('carla', 'Yo he hecho 2. Lo demás, mi aportación automática.'),
+        choose('A largo plazo, ¿quién suele ganar más?', [
+          opt('Marcos: cuanto más opera, más gana', 'bad', say('lumi', 'Barber y Odean (2000): los hogares que más operaban ganaron un **11,4 %** al año.')),
+          opt('Carla: operar mucho suele salir caro', 'good', say('lumi', '¡Eso! Los que más operaban: **11,4 %** al año. El mercado: **17,9 %**.')),
+          opt('Igual: lo que cuenta es la suerte', 'ok', say('lumi', 'No: los que más operaban ganaron un 11,4 %; el mercado, un 17,9 %.')),
+        ]),
+        say('lumi', 'La causa principal: el **exceso de confianza**. Creemos saber más de lo que sabemos.'),
+      ]),
+      key('Suerte o habilidad', 'Unas cuantas ganancias al principio son lo más peligroso para un principiante: **confunde suerte con habilidad**, sube el riesgo y se salta las reglas.\n\nEntre mucha gente, siempre habrá «genios» por pura suerte.', 'Acertar dos o tres veces no te hace experto: con pocas operaciones, manda la suerte.', 'Mide tus resultados en el diario y compáralos con un índice. Tu memoria siempre te da la razón.'),
     ], [
       upDown('Ronda 1 de 4. Gráfico real, sin nombre ni fecha. ¿Sube o baja en las sesiones siguientes?', 'ud-7', 'Un acierto o un fallo suelto no dice nada. Apúntalo y sigue: al final verás qué significa tu marcador.'),
       upDown('Ronda 2 de 4. ¿Sube o baja?', 'ud-22', 'Dos rondas siguen siendo una muestra minúscula, vayas como vayas.'),
@@ -89,12 +218,43 @@ export default unit({
       timed(tf('Ganar tus primeras operaciones demuestra que tienes habilidad.', false, 'Con pocas operaciones, la suerte pesa muchísimo. Es justo cuando más peligro hay de subir el riesgo.'), 10),
       scenario('Bruno ha acertado 3 operaciones seguidas en el simulador. Quiere triplicar el tamaño «porque ya le ha pillado el truco». ¿Qué le pasa?', [['Nada, tres seguidas prueban que sabe', 'Tres aciertos seguidos al azar pasan una de cada ocho veces. No prueban nada.'], ['Exceso de confianza: debería mantener el mismo riesgo y seguir registrando', 'Bien: el riesgo por operación no cambia porque vayas ganando.'], ['Debería dejar de usar stops', 'Las rachas buenas no eliminan el riesgo; solo lo esconden.']], 1, 'Tras varias ganancias, la regla es la misma: el riesgo por operación no se toca.'),
       multi('¿Qué te protege del exceso de confianza? Marca todas.', ['Medir tus resultados en un diario', 'Compararte con un índice durante varios años', 'Escribir tres motivos por los que podrías equivocarte', 'Subir el riesgo después de cada acierto'], [0, 1, 2], 'Subir el riesgo tras acertar es justo lo que hace el exceso de confianza.'),
-    ], { source: '11.4' }),
+    ], { source: '11.4', minutes: 6, retire: [0, 1, 2, 3, 5] }),
 
     lesson('u27l6', 'Anclaje y confirmación', [
-      text('Anclaje', 'Fijarse en un número de referencia irrelevante: «Estaba a 100 € y ahora a 60 €: está barata».\n\nEl precio pasado no dice nada del valor actual. Y un pariente cercano: el **coste hundido**: «Ya he perdido 3.000 €, no puedo vender ahora». Lo perdido no vuelve: decide desde hoy.'),
-      text('Sesgo de confirmación', 'Una vez compras, lees solo las noticias positivas, sigues a quien opina igual y descartas las críticas. Cuando llegan las señales de alarma, no las ves.\n\nAntídotos: escribe **tres motivos por los que podrías equivocarte** y busca a propósito la **opinión contraria**.'),
-      key('Lo que te llevas', 'Valora con datos de hoy (beneficios, deuda, negocio), no con el precio al que compraste o al que estuvo.', 'Que algo haya caído mucho no lo hace barato. Que te den la razón no te hace acertar.', 'Si solo lees a quien te da la razón, no estás analizando: te estás animando.'),
+      story('Hasta recuperar los 40 €', [{ id: 'pablo', name: 'Pablo' }], [
+        say('pablo', 'Compré a **40 €**. Tras unos malos resultados, ahora vale **25 €**.'),
+        say('pablo', 'No vendo hasta recuperar los 40 €. Ya he perdido demasiado.'),
+        choose('¿Qué le está pasando a Pablo?', [
+          opt('Nada: el precio volverá', 'bad', say('lumi', 'Puede volver o no. Los 40 € solo le importan a él, no al mercado.')),
+          opt('Está anclado en su precio de compra', 'good', say('lumi', '¡Exacto! Es **anclaje**, con algo de coste hundido y aversión a la pérdida.')),
+          opt('Debería comprar más para bajar el precio medio', 'bad', say('lumi', 'Promediar por anclaje es meter más dinero sin revisar el negocio.')),
+        ]),
+        say('lumi', 'La pregunta: con 25 € en efectivo, ¿compraría hoy esta acción sabiendo lo que sabe?'),
+        say('pablo', 'Sinceramente… no.'),
+      ]),
+      play({
+        title: '¿Qué sesgo habla?',
+        intro: 'Cada frase suena razonable… hasta que ves el sesgo que hay detrás. ¿Cuál es?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Anclaje' }, { label: 'Coste hundido' }, { label: 'Confirmación' }],
+          cards: [
+            { icon: 'tag', label: '«Estaba a 120 €; a 70 € es un chollo»', bin: 0, why: 'El 120 € es un ancla: no dice nada del valor actual.' },
+            { icon: 'coins', label: '«Ya he perdido 3.000 €, no puedo vender ahora»', bin: 1, why: 'Lo perdido no vuelve por seguir: decide desde hoy.' },
+            { icon: 'megaphone', label: '«Solo sigo a quien piensa como yo»', bin: 2, why: 'Así no verás las señales de alarma cuando lleguen.' },
+            { icon: 'down', label: '«Ha caído un 50 %: está a mitad de precio»', bin: 0, why: 'Puede haber caído porque el negocio vale la mitad… o menos.' },
+            { icon: 'hourglass', label: '«Le he dedicado tanto que ahora no lo dejo»', bin: 1, why: 'El tiempo y el dinero ya puestos no cambian lo que conviene hoy.' },
+            { icon: 'eye', label: '«Silencio a quien critica la empresa»', bin: 2, why: 'Solo lees lo que te da la razón: eso es confirmación.' },
+          ],
+        },
+        goal: { text: 'Pon nombre a las seis frases.', when: [when('done', '==', 6)] },
+        insight: 'El precio pasado no dice nada del valor, **lo perdido no vuelve** y que te den la razón no te hace acertar. Antídoto: escribe **tres motivos por los que podrías equivocarte**.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: ¿mira un precio, lo ya perdido o solo opiniones afines?', mood: 'THINKING' },
+          { say: '¿Anclaje, coste hundido o confirmación?', mood: 'HAPPY' },
+        ],
+      }),
+      key('Lo que te llevas', 'Valora con datos de hoy (beneficios, deuda, negocio), no con el precio al que compraste o al que estuvo. Y busca a propósito la **opinión contraria**.', 'Que algo haya caído mucho no lo hace barato. Que te den la razón no te hace acertar.', 'Si solo lees a quien te da la razón, no estás analizando: te estás animando.'),
     ], [
       match('Empareja cada sesgo con la frase que lo delata.', [['Anclaje', '«Estaba a 120 €, a 70 € es un chollo»'], ['Coste hundido', '«Ya he perdido mucho, no puedo vender ahora»'], ['Confirmación', '«Solo sigo a quien piensa como yo»'], ['Falacia del jugador', '«Ha bajado siete días, mañana sube seguro»']], 'Cada frase suena razonable… hasta que ves el sesgo detrás.'),
       match('Empareja cada sesgo con su antídoto.', [['Anclaje', 'Valorar con datos actuales'], ['Coste hundido', 'Decidir desde hoy, sin mirar lo perdido'], ['Confirmación', 'Buscar la opinión contraria'], ['Falacia del jugador', 'Recordar que cada día es casi independiente']], 'Cada atajo mental tiene una pregunta que lo desmonta.'),
@@ -106,12 +266,34 @@ export default unit({
       fill('Antes de comprar, escribe tres motivos por los que podrías estar ____.', 'equivocado', ['acertando', 'ganando', 'tranquilo'], 'Es el antídoto más sencillo contra el sesgo de confirmación.'),
       num('Una acción cae de 100 € a 60 €. Si te anclas en los 100 € y esperas a que vuelva, ¿cuánto tiene que subir? (redondea a un decimal)', 66.7, '%', '100 ÷ 60 − 1 ≈ 0,667 → +66,7 %. Nada garantiza que lo haga.', 2),
       chat(['Esta acción ha caído un 50 % 😍', '¡Está a mitad de precio, como en rebajas!'], '¿Qué le contestas a Lumi?', [['Sí, a mitad de precio siempre es una ganga', 'No en bolsa: puede haber caído porque el negocio vale la mitad… o menos.'], ['Barato o caro depende de lo que vale el negocio, no de a cuánto estuvo', 'Cierto. Primero miro beneficios, deuda y por qué ha caído. El precio antiguo no es una etiqueta.'], ['Espera a que caiga otro 50 % y será aún más barata', 'Eso sigue siendo mirar solo el precio, no el valor.']], 1, 'Las rebajas de la bolsa no son como las del súper: el producto también puede haber cambiado.'),
-    ], { source: '11.5' }),
+    ], { source: '11.5', minutes: 6, retire: [0, 3, 5, 6] }),
 
     lesson('u27l7', 'Recencia y supervivencia', [
-      text('Recencia', 'Dar más peso a lo último que ha pasado. Tras dos años de subidas, creer que la bolsa «siempre sube»; tras una caída, que «siempre bajará».\n\nAntídoto: mirar **datos de décadas**, no de meses. El Nikkei japonés tardó 34 años en recuperar su máximo de 1989; el S&P 500 se recuperó en meses tras el covid.'),
-      text('Sesgo de supervivencia', 'Ver solo a los que sobrevivieron. Los fondos que cierran desaparecen de las estadísticas; los traders que lo pierden todo no suben vídeos.\n\nBessembinder: desde 1926, solo un **4 %** de las acciones de EE. UU. explicó toda la ganancia neta del mercado, y **más de la mitad** rindió menos que las letras del Tesoro.'),
-      key('Lo que te llevas', 'Las historias de éxito que ves son una muestra con trampa: no ves a los miles que hicieron lo mismo y fracasaron.', 'Lo reciente y lo visible no son toda la historia.', 'Antes de copiar a un ganador, pregunta cuántos hicieron lo mismo y perdieron.'),
+      mission({
+        title: 'Vive 1929',
+        intro: 'Enero de 1929. La bolsa de EE. UU. lleva años subiendo y «todo el mundo» compra. Metes **10.000 €** en el S&P 500, con datos reales.',
+        widget: { kind: 'crash', series: 'series-crash-1929', amount: 10000 },
+        goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
+        insight: 'Desde el máximo de septiembre de 1929 cayó un **86 %** y no lo recuperó hasta 1954, sin contar dividendos. **Lo último que ha pasado no predice lo que viene**: mira datos de décadas, no de meses.',
+        lumi: [
+          { when: when('sold', '==', 1), say: 'Has vendido. Mira cuánto tardó en volver…', mood: 'THINKING' },
+          { when: when('drop', '<=', -60), say: 'Más de la mitad perdida. Y en 1929 todos creían que seguiría subiendo.', mood: 'SAD' },
+          { when: when('drop', '>=', 20), say: 'No para de subir. ¿Seguirá así siempre?', mood: 'HAPPY' },
+          { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
+        ],
+      }),
+      story('Diez nuevos ricos', [{ id: 'ivan', name: 'Iván' }], [
+        say('ivan', 'Mira: diez personas que se han hecho ricas con una cripto pequeña.'),
+        say('ivan', 'Si ellos pudieron, yo también.'),
+        choose('¿Qué conclusión es correcta?', [
+          opt('Es una forma segura de hacerse rico', 'bad', say('lumi', 'Solo ves a los que ganaron. Los miles que perdieron no lo publican.')),
+          opt('No veo a los que hicieron lo mismo y lo perdieron todo', 'good', say('lumi', '¡Eso es el **sesgo de supervivencia**! Y en cripto puede perderse todo lo invertido.')),
+          opt('Lo mejor es copiar al que más ganó', 'ok', say('lumi', 'Copias a un superviviente sin saber cuántos cayeron por el camino.')),
+        ]),
+        say('lumi', 'Un dato de Bessembinder, con las acciones de EE. UU. desde 1926:'),
+        say('lumi', 'Solo un **4 %** de ellas explicó toda la ganancia neta del mercado.'),
+        say('lumi', 'Y **más de la mitad** rindió menos que las letras del Tesoro.'),
+      ]),
     ], [
       trend('Mira solo estos dos meses de un gráfico real. ¿Qué tendencia ves?', 'trend-up-2', 'Alcista', 'Sube con claridad. La recencia nos lleva a creer que seguirá así siempre; un tramo de dos meses no dice nada de los próximos años.'),
       point('Así iba el Nikkei japonés hasta noviembre de 1989. Toca el punto más alto.', 'hist-japan-1989', 'max', 'Tras años de subidas, todos creían que seguiría. El máximo de finales de 1989 tardó 34 años en recuperarse.'),
@@ -123,6 +305,6 @@ export default unit({
       timed(single('Rápido: ¿qué es el sesgo de supervivencia?', ['Fijarse solo en los que sobrevivieron y olvidar a los que fracasaron', 'Guardar un colchón de emergencia', 'Vender en pánico'], 0, 'Los fondos cerrados y los traders arruinados no salen en las estadísticas ni en las redes.'), 12),
       multi('¿Dónde puede esconderse el sesgo de supervivencia? Marca todos.', ['Rankings de fondos que no incluyen los que cerraron', 'Influencers que solo enseñan sus ganancias', 'Pruebas de un sistema solo con empresas que existen hoy', 'Un índice que incluye a todas las empresas del mercado'], [0, 1, 2], 'Un índice amplio no elige ganadores a posteriori: compra el mercado entero.'),
       buckets('¿Recencia o supervivencia?', ['Recencia', 'Supervivencia'], [['«La bolsa ha subido dos años: siempre sube»', 0], ['«Mira cuántos se han hecho ricos con esto»', 1], ['«Tras esta caída, ya solo puede bajar»', 0], ['«Los fondos de esta gestora siempre ganan» (los malos ya cerraron)', 1]], 'Recencia: el pasado reciente pesa demasiado. Supervivencia: solo ves a los que quedaron.'),
-    ], { source: '11.5' }),
+    ], { source: '11.5', minutes: 6, retire: [2, 4, 5, 7] }),
   ],
 })

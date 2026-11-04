@@ -1,15 +1,45 @@
 import 'server-only'
 // Sección 8 · Unidad 26 · Tu plan de trading (docs/curso-v2/02-curriculo.md)
 // Fuentes: docs/curso/10 (10.6, 10.8, 10.9); clase antigua course/u10.ts.
-import { buckets, calc, chat, fill, key, lesson, level, match, multi, num, order, scenario, simTrade, single, text, tf, timed, unit } from '../dsl'
+import { buckets, chat, choose, fill, key, lesson, level, match, multi, note, num, opt, order, play, say, scenario, simTrade, single, story, tf, timed, unit, when } from '../dsl'
 
 export default unit({
   id: 'u26', order: 26, title: 'Tu plan de trading', description: 'Escribe tu plan, lleva un diario, aguanta las rachas y da el salto con cabeza',
   lessons: [
     lesson('u26l1', 'El plan de trading', [
-      text('Las partes de un plan', '1. **Capital:** cuánto dedicas (un % pequeño de tu patrimonio).\n2. **Mercados y plazo:** qué operas y en qué gráfico.\n3. **Entrada:** reglas concretas y comprobables.\n4. **Stop:** dónde y por qué.\n5. **Tamaño:** 1 % de riesgo por operación.\n6. **Salida:** objetivo y salida por tiempo.\n7. **Lo que no haces.**\n8. **Límites:** cuándo paras.\n9. **Revisión:** cada 20 operaciones.'),
-      text('Reglas concretas, no deseos', '«Entro cuando lo vea claro» no es una regla. Esto sí:\n\n• «Precio sobre la media de 200 sesiones, retroceso a un soporte y vela de giro con volumen superior a la media.»\n• «Stop bajo el mínimo de la vela de giro, a 1,5 ATR como mínimo.»\n• «Mitad en 2R; el resto con stop bajo el último mínimo creciente. Si en 15 sesiones no llega a 1R, salgo.»'),
-      key('Los límites te protegen de ti', '«No opero el día de resultados. No promedio a la baja. No muevo el stop en contra. Si pierdo un 6 % en un mes, paro hasta el mes siguiente. Si la cuenta cae un 15 % desde su máximo, reduzco el riesgo a la mitad y reviso el plan.»', 'Si no está escrito, no es un plan: es una intuición.', 'Escribe el plan en calma. Lo vas a necesitar cuando no lo estés.'),
+      play({
+        title: '¿Regla o deseo?',
+        intro: 'Un plan dice cuánto dedicas, qué operas, cuándo entras, dónde va el stop, cuánto arriesgas, cómo sales y cuándo paras. ¿Estas frases sirven?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Regla concreta' }, { label: 'Frase vaga' }],
+          cards: [
+            { icon: 'target', label: 'Entro si rebota en la media de 50 sesiones con vela de giro y volumen superior a la media', bin: 0, why: 'Se puede comprobar: dos personas leyéndola harían lo mismo.' },
+            { icon: 'cloud', label: 'Entro cuando lo vea claro', bin: 1, why: '¿Qué es «claro»? Cada día significará algo distinto.' },
+            { icon: 'shield', label: 'Stop bajo el mínimo de la vela de giro, como mínimo a 1,5 ATR', bin: 0, why: 'Dice exactamente dónde va el stop y por qué.' },
+            { icon: 'idea', label: 'Salgo cuando me parezca suficiente', bin: 1, why: 'Lo decidirá la emoción del momento, no el plan.' },
+            { icon: 'timer', label: 'Si en 15 sesiones no llega a 1R, salgo', bin: 0, why: 'Una salida por tiempo, medible y sin discusión.' },
+          ],
+        },
+        goal: { text: 'Clasifica las cinco frases.', when: [when('done', '==', 5)] },
+        insight: 'Una regla concreta se puede comprobar: **dos personas leyéndola harían lo mismo**. Si no está escrito así, no es un plan: es una intuición.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: ¿podrías comprobar después si la cumpliste?', mood: 'THINKING' },
+          { say: '¿Regla o deseo? Clasifica cada frase', mood: 'HAPPY' },
+        ],
+      }),
+      story('Se dispara un 8 %', [{ id: 'pablo', name: 'Pablo' }], [
+        say('pablo', 'Mi plan dice: solo entro con vela de giro en un soporte.'),
+        note('Una acción se dispara un 8 % en una hora. No cumple ninguna de sus reglas.'),
+        say('pablo', '¡Se me escapa! ¿Entro?'),
+        choose('¿Qué le dices a Pablo?', [
+          opt('Entra: es una ocasión única', 'bad', say('lumi', 'Eso es FOMO. Y si sale mal, no sabrá si su plan funciona.')),
+          opt('No entres y apúntalo en el diario como tentación', 'good', say('lumi', '¡Eso! Ocasiones habrá muchas. El plan solo sirve si lo sigues.')),
+          opt('Entra con poco, por si acaso', 'ok', say('lumi', 'Poco o mucho, sigue siendo saltarse el plan.')),
+        ]),
+        say('lumi', 'Escribe el plan en calma. Lo vas a necesitar cuando no lo estés.'),
+      ]),
+      key('Los límites te protegen de ti', '«No opero el día de resultados. No promedio a la baja. No muevo el stop en contra. Si pierdo un 6 % en un mes, paro hasta el mes siguiente. Si la cuenta cae un 15 % desde su máximo, reduzco el riesgo a la mitad y reviso el plan.»\n\nY cada 20 operaciones, revisión de estadísticas.', 'Si no está escrito, no es un plan: es una intuición.', 'Tamaño de cada operación: un 1 % de riesgo o menos mientras aprendes.'),
     ], [
       order('Ordena las partes de un plan de trading.', ['Capital dedicado', 'Mercados y temporalidad', 'Condiciones de entrada', 'Dónde va el stop', 'Tamaño de la posición', 'Cómo salgo', 'Límites y cuándo paro'], 'De lo general (cuánto y qué) a lo concreto (cuándo entro, cuánto arriesgo y cómo salgo).'),
       fill('Tamaño de la posición: riesgo del ____ por operación.', '1 %', ['10 %', '25 %', '50 %'], 'Para quien empieza, un 1 % o menos.'),
@@ -22,12 +52,42 @@ export default unit({
       scenario('El plan de Pablo dice «solo entro con vela de giro en soporte». Hoy ve una acción que se dispara un 8 % en una hora y no cumple ninguna regla. ¿Qué hace?', [['Entra: es una ocasión única', 'Esa «ocasión única» es FOMO. Si sale mal, no sabrá si su plan funciona o no.'], ['No entra y lo anota en el diario como tentación', 'Bien: respeta el plan y aprende de lo que siente. Ocasiones habrá muchas.'], ['Entra con el doble de tamaño para aprovecharla', 'Saltarse el plan y además doblar el riesgo: dos errores en uno.']], 1, 'El plan solo sirve si lo sigues también cuando no te apetece.'),
       level('Tu plan dice: «stop bajo el mínimo reciente». Aplícalo a esta compra en un gráfico real.', 'lvl-18', 'STOP', 'Una regla concreta se aplica igual en cualquier gráfico: el stop va justo por debajo del mínimo reciente.'),
       single('¿Cada cuánto propone el plan de ejemplo revisar las estadísticas?', ['Cada 20 operaciones', 'Después de cada operación', 'Nunca'], 0, 'Una sola operación no dice nada; 20 empiezan a enseñar algo.'),
-    ], { source: '10.8' }),
+    ], { source: '10.8', minutes: 6, retire: [1, 3, 7, 8] }),
 
     lesson('u26l2', 'El diario de operaciones', [
-      text('Qué apuntar', 'Para cada operación:\n\n• Fecha, activo y dirección.\n• Motivo de entrada según el plan.\n• Entrada, stop, objetivo y cuánto vale 1R.\n• Tamaño.\n• Resultado en € y en R.\n• ¿Seguiste el plan? Si no, ¿por qué?\n• Tu emoción al entrar y al salir.\n• Una captura del gráfico.'),
-      text('Lo que sale del diario', '• Porcentaje de acierto.\n• Ganancia y pérdida media en R.\n• **Esperanza** por operación.\n• Racha de pérdidas y caída máximas.\n• Resultado de las operaciones **dentro** del plan frente a las que lo saltaron (suele ser revelador).'),
-      key('Lo que te llevas', 'Ejemplo de una línea: 12/11, compra a 4,10 €, stop 3,95 €, objetivo 4,40 €, 1R = 100 €, 666 acciones. Resultado: +180 €, +1,8R. Seguí el plan: sí. Emoción: tranquilo.', 'El diario convierte tus operaciones en datos para mejorar.', 'Tu diario te enseña los errores que tu memoria prefiere olvidar.'),
+      story('Lo que dijo el diario de Marta', [{ id: 'marta', name: 'Marta' }], [
+        say('marta', 'Llevo 40 operaciones apuntadas en mi diario.'),
+        say('marta', 'Las que siguieron el plan: **+0,3R** de media. Las que me salté: **−0,6R**.'),
+        choose('¿Qué debería cambiar Marta?', [
+          opt('Su sistema: no funciona', 'bad', say('lumi', 'Cuando lo sigue, gana. Cambiarlo tiraría lo que funciona.')),
+          opt('Dejar de saltarse el plan', 'good', say('lumi', '¡Exacto! El problema son las excepciones. Ahí está su mejora.')),
+          opt('Dejar el diario, que la agobia', 'bad', say('lumi', 'Sin diario, nunca lo habría descubierto.')),
+        ]),
+        say('marta', 'Mi memoria me decía que las excepciones eran mis mejores operaciones…'),
+        say('lumi', 'Tu memoria recuerda los aciertos y olvida los errores. El diario, no.'),
+      ]),
+      play({
+        title: 'Repasa tu diario',
+        intro: 'En cada línea del diario apuntas el motivo, la entrada, el stop, el tamaño, el resultado en R y tu emoción. ¿Seguiste el plan?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Seguí el plan' }, { label: 'Me lo salté' }],
+          cards: [
+            { icon: 'target', label: 'Entré en el soporte con vela de giro, como dice el plan', bin: 0, why: 'Motivo de entrada según el plan: así se puede medir si el sistema funciona.' },
+            { icon: 'timer', label: 'Entré con prisa: «se me escapaba»', bin: 1, why: 'La prisa al entrar es la huella del FOMO. Apunta la emoción.' },
+            { icon: 'shield', label: 'Moví el stop en contra «para darle aire»', bin: 1, why: 'Mover el stop en contra convierte una pérdida pequeña en una grande.' },
+            { icon: 'flag', label: 'Vendí la mitad en 2R, como decía el plan', bin: 0, why: 'La salida estaba decidida antes de entrar.' },
+            { icon: 'flame', label: 'Doblé el tamaño tras dos pérdidas', bin: 1, why: 'El tamaño es siempre el mismo, ganes o pierdas.' },
+          ],
+        },
+        goal: { text: 'Revisa las cinco operaciones.', when: [when('done', '==', 5)] },
+        insight: 'Comparar las operaciones **dentro y fuera del plan** suele ser lo más revelador del diario: te dice si saltarte las reglas te cuesta dinero.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: ¿lo decidió el plan o la emoción del momento?', mood: 'THINKING' },
+          { say: '¿Dentro o fuera del plan? Revisa cada línea', mood: 'HAPPY' },
+        ],
+      }),
+      key('Una línea del diario', '12/11, compra a 4,10 €, stop 3,95 €, objetivo 4,40 €, 1R = 100 €, 666 acciones. Resultado: +180 €, +1,8R. Seguí el plan: sí. Emoción: tranquilo.\n\nDe ahí salen el acierto, la ganancia y pérdida media en R, la **esperanza** y las rachas.', 'El diario convierte tus operaciones en datos para mejorar.', 'Tu diario te enseña los errores que tu memoria prefiere olvidar.'),
     ], [
       match('Empareja cada campo del diario con un ejemplo.', [['Motivo de entrada', 'Rebote en la media de 50 con martillo'], ['Resultado en R', '+1,8R'], ['Emoción al entrar', 'Con prisa'], ['¿Seguí el plan?', 'No: entré sin señal']], 'Cada campo responde a una pregunta que luego te ayudará a mejorar.'),
       match('Empareja cada estadística del diario con lo que te dice.', [['Porcentaje de acierto', 'Cuántas operaciones salen bien'], ['Esperanza', 'Si el sistema gana a largo plazo'], ['Racha máxima de pérdidas', 'Cuánto tienes que aguantar'], ['Dentro y fuera del plan', 'Si saltarte las reglas te cuesta dinero']], 'Ninguna estadística sola cuenta toda la historia.'),
@@ -39,13 +99,39 @@ export default unit({
       tf('Para saber cómo te va, tu memoria es tan fiable como un diario.', false, 'La memoria recuerda los aciertos y olvida los errores: el diario no.'),
       timed(single('Rápido: ¿qué columna del diario te ayuda a detectar el FOMO?', ['La emoción al entrar', 'El precio de entrada', 'La fecha'], 0, 'Si al entrar apuntas «prisa» o «miedo a perdérmelo», ya sabes qué buscar.'), 12),
       chat(['Llevar un diario es un rollo 😩', 'Total, ya me acuerdo de mis operaciones.'], '¿Qué le contestas a Lumi?', [['Tienes razón, con la memoria basta', 'Tu memoria guarda la operación que salió genial y olvida las cinco pequeñas pérdidas.'], ['Sin diario no puedes calcular tu esperanza ni ver tus errores', 'Vale… Si en 20 operaciones descubro que pierdo cuando opero con prisa, merece la pena.'], ['Apunta solo las ganadoras', 'Entonces tu diario diría que eres un genio… y te arruinaría.']], 1, 'Lo que no se mide no se puede mejorar.'),
-    ], { source: '10.8' }),
+    ], { source: '10.8', minutes: 6, retire: [6, 7, 8] }),
 
     lesson('u26l3', 'Rachas de pérdidas y drawdown', [
-      text('Las rachas son normales', 'Simulando 20.000 secuencias de 100 operaciones:\n\n• Con un **50 %** de acierto, la racha de pérdidas más larga típica es de **6 seguidas**.\n• Con un **40 %** (como un sistema rentable que gana 2R), de **7**, y casi la mitad de las veces hay rachas de **8 o más**.'),
-      text('El drawdown', 'Es la caída de la cuenta desde su máximo hasta el mínimo siguiente. Con un 1 % de riesgo, 8 pérdidas seguidas son un −7,7 %. Con un 5 %, un −33,7 %.\n\nRegla del plan de ejemplo: si la cuenta cae un 10–15 % desde su máximo, **reduces el riesgo a la mitad** y revisas.'),
-      calc('recovery', 'Lo que cuesta un drawdown', 'Pon un 15 % de caída y mira cuánto hay que ganar para volver al máximo. Luego prueba con un 35 %.', 'Arriesgar poco hace que las rachas sean recuperables.'),
-      key('Lo que te llevas', 'Ocho pérdidas seguidas con un sistema ganador no significan que haya dejado de funcionar. Si cambias de sistema tras cada racha mala, nunca sabrás si alguno funcionaba.', 'Las rachas son estadística: arriesga poco para poder atravesarlas.', 'Ocho fallos seguidos no significan que el plan esté mal: significan que estás en una racha.'),
+      play({
+        title: 'Diez pérdidas seguidas',
+        intro: 'Las rachas son normales: con un 40 % de acierto, casi la mitad de las veces hay **8 o más pérdidas seguidas** en 100 operaciones. ¿Cuánto aguanta tu cuenta?',
+        widget: { kind: 'position', account: 10000, riskPct: 5, stopPct: 5, entry: 30, maxRisk: 10, maxStop: 15 },
+        predict: {
+          prompt: 'Arriesgas un 5 % por operación. Tras 10 pérdidas seguidas, ¿cuánto queda de tus 10.000 €?',
+          options: ['Unos 9.500 €', 'Unos 6.000 €', 'Nada: lo pierdes todo'],
+          answer: 1,
+          why: 'Quedan **5.987 €**: cada pérdida es un 5 % de lo que queda. Con un 1 %, quedarían 9.044 €.',
+        },
+        goal: { text: 'Busca el riesgo con el que, tras 10 pérdidas, aún te quedan más de 9.000 €.', when: [when('after10', '>=', 9000)] },
+        insight: 'Con un **1 %**, 8 pérdidas seguidas son un −7,7 %; con un 5 %, un −33,7 %. **Arriesga poco para poder atravesar las rachas.**',
+        lumi: [
+          { when: when('after10', '>=', 9000), say: 'Así una racha mala no te saca del juego.', mood: 'HAPPY' },
+          { when: when('riskPct', '>=', 5), say: 'Con este riesgo, una racha normal se lleva un buen trozo.', mood: 'WORRIED' },
+          { say: 'Baja el riesgo por operación', mood: 'THINKING' },
+        ],
+      }),
+      story('Siete pérdidas seguidas', [{ id: 'laura', name: 'Laura' }], [
+        say('laura', 'Tengo 120 operaciones en mi diario, con esperanza positiva.'),
+        say('laura', 'Y ahora llevo **7 pérdidas seguidas**. Mi sistema ya no funciona.'),
+        choose('¿Qué debería hacer Laura?', [
+          opt('Cambiar de sistema', 'bad', say('lumi', 'Con un 40 % de acierto, 7 seguidas es la racha típica en 100 operaciones.')),
+          opt('Seguir el plan y revisar que aplica bien las reglas', 'good', say('lumi', '¡Bien! Si no se ha saltado nada, deja que la estadística trabaje.')),
+          opt('Doblar el riesgo para recuperar antes', 'bad', say('lumi', 'Si la racha sigue, el agujero se hace mucho más hondo.')),
+        ]),
+        say('lumi', 'Acertando el 50 %, la racha típica en 100 operaciones es de **6** seguidas.'),
+        say('laura', 'Si cambio tras cada racha mala, nunca sabré si alguno funcionaba.'),
+      ]),
+      key('El drawdown', 'Es la caída de la cuenta desde su máximo hasta el mínimo siguiente. Cuesta más recuperarla que perderla: tras un −15 % hay que ganar un **17,6 %**; tras un −35 %, casi un **54 %**.\n\nRegla del plan de ejemplo: si la cuenta cae un 10–15 % desde su máximo, **reduces el riesgo a la mitad** y revisas.', 'Las rachas son estadística: arriesga poco para poder atravesarlas.', 'Ocho fallos seguidos no significan que el plan esté mal: significan que estás en una racha.'),
     ], [
       single('Con un sistema que acierta el 50 %, ¿es raro encadenar 6 pérdidas seguidas en 100 operaciones?', ['Sí, casi imposible', 'No, es lo habitual', 'Solo pasa con sistemas malos'], 1, 'Es la racha más larga típica en 100 operaciones.'),
       num('Arriesgas un 1 % por operación y encadenas 8 pérdidas. ¿Cuánto cae tu cuenta? (redondea a un decimal)', 7.7, '%', '0,99⁸ ≈ 0,923 → caída del 7,7 %.', 2),
@@ -57,12 +143,39 @@ export default unit({
       tf('Ocho pérdidas seguidas demuestran que un sistema ha dejado de funcionar.', false, 'Con un 40 % de acierto, casi la mitad de las veces aparecen rachas de 8 o más en 100 operaciones.'),
       timed(single('Rápido: con un 40 % de acierto, ¿cuál es la racha de pérdidas típica en 100 operaciones?', ['2 seguidas', '7 seguidas', '20 seguidas'], 1, 'Y casi la mitad de las veces, 8 o más.'), 12),
       fill('La caída de la cuenta desde su máximo hasta el mínimo siguiente se llama ____.', 'drawdown', ['spread', 'pay-out', 'apalancamiento'], 'Es la medida que mejor refleja el dolor real de una estrategia.'),
-    ], { source: '10.6' }),
+    ], { source: '10.6', minutes: 6, retire: [2, 5, 7, 8] }),
 
     lesson('u26l4', 'Del simulador al dinero real', [
-      text('Las cuatro fases', '1. **Prueba histórica:** recorre el gráfico hacia atrás y apunta 50–100 señales con su resultado.\n2. **Fuera de muestra:** otros activos u otro periodo, **sin cambiar las reglas**.\n3. **Simulador en tiempo real:** 2–3 meses como mínimo.\n4. **Dinero real poco a poco:** una fracción del capital y la mitad del riesgo. Aumentas solo si las estadísticas se parecen.'),
-      text('Las trampas', '• **Sobreoptimizar:** ajustar parámetros hasta que el pasado salga perfecto.\n• **Muestra pequeña:** con menos de 30–50 operaciones, las estadísticas casi no significan nada.\n• **Supervivencia:** probar solo con empresas que existen hoy.\n• **Olvidar costes** y deslizamiento.\n• **Retrospectiva:** en el pasado todo «se ve» claro.'),
-      key('Cuándo dejarlo', 'Si tras 100 operaciones bien registradas tu esperanza después de costes es negativa o casi cero, no tienes ventaja. No es un fracaso: es información. Invertir a largo plazo en una cartera diversificada sigue siendo la opción con más probabilidades.', 'Un sistema no está probado hasta que funciona en datos nuevos y con suficientes operaciones.', 'En el simulador se aprende a operar. En el dinero real se aprende quién eres. Empieza pequeño.'),
+      play({
+        title: '¿Talento o suerte?',
+        intro: '1.000 personas operan **sin ninguna ventaja**: cada operación es cara o cruz. Empiezan con 15 operaciones cada una.',
+        widget: { kind: 'coinflip', traders: 1000, trades: 15, maxTrades: 200, fee: 0, stake: 100, win: 1 },
+        predict: {
+          prompt: 'Nadie tiene ventaja. Tras 15 operaciones, ¿alguno parecerá un genio?',
+          options: ['No: sin ventaja, nadie destaca', 'Sí: alguno tendrá un resultado espectacular', 'Todos acabarán igual'],
+          answer: 1,
+          why: 'El más afortunado gana **1.100 €**: acertó 13 de 15 lanzando una moneda.',
+        },
+        goal: { text: 'Sube hasta 100 operaciones cada uno y mira cuántos pierden.', when: [when('trades', '>=', 100)] },
+        insight: 'Con **15 operaciones**, la suerte se parece mucho al talento. Hacen falta **50–100 operaciones** registradas, y mirar la esperanza después de costes.',
+        lumi: [
+          { when: when('trades', '>=', 100), say: 'Con más operaciones, la suerte se reparte: cerca de la mitad pierde.', mood: 'THINKING' },
+          { when: when('trades', '<=', 20), say: 'Mira al mejor: parece un genio, y solo ha tenido suerte.', mood: 'THINKING' },
+          { say: 'Sube las operaciones de cada uno', mood: 'HAPPY' },
+        ],
+      }),
+      story('12 de 15', [{ id: 'raul', name: 'Raúl' }], [
+        say('raul', '¡He ganado 12 de mis 15 primeras operaciones!'),
+        say('raul', 'Voy a arriesgar un 10 % en cada una. Mi sistema funciona.'),
+        choose('¿Qué le dices a Raúl?', [
+          opt('Adelante: los números hablan', 'bad', say('lumi', 'Con un 10 %, 6–8 pérdidas seguidas se llevan entre la mitad y dos tercios.')),
+          opt('Sigue con un 1 % y registra 50–100 operaciones', 'good', say('lumi', '¡Eso! Con más muestra y costes incluidos, sabrá si tiene ventaja.')),
+          opt('Pasa ya al dinero real con todo', 'bad', say('lumi', 'Con dinero real se aprende quién eres. Empieza pequeño.')),
+        ]),
+        say('lumi', 'Ajustar el sistema hasta que el pasado salga perfecto tampoco vale: es **sobreoptimizar**.'),
+        say('raul', 'Vale: más operaciones, mismas reglas y riesgo pequeño.'),
+      ]),
+      key('Las cuatro fases', '1. **Prueba histórica:** 50–100 señales con su resultado.\n2. **Fuera de muestra:** otros activos u otro periodo, sin cambiar las reglas.\n3. **Simulador en tiempo real:** 2–3 meses como mínimo.\n4. **Dinero real poco a poco:** una fracción del capital y la mitad del riesgo.\n\nSi tras 100 operaciones tu esperanza después de costes es negativa o casi cero, no tienes ventaja. No es un fracaso: es información.', 'Un sistema no está probado hasta que funciona en datos nuevos y con suficientes operaciones.', 'En el simulador se aprende a operar. En el dinero real se aprende quién eres. Empieza pequeño.'),
     ], [
       order('Ordena las fases para validar un sistema.', ['Prueba histórica', 'Prueba fuera de muestra', 'Simulador en tiempo real', 'Dinero real en pequeño'], 'Cada fase elimina un tipo de autoengaño antes de arriesgar dinero.'),
       tf('Si ganas 12 de tus 15 primeras operaciones, tu sistema está probado.', false, 'Quince operaciones son una muestra demasiado pequeña: pueden ser suerte.'),
@@ -75,6 +188,6 @@ export default unit({
       num('Vas a empezar con 2.000 € reales y la mitad de tu riesgo habitual del 1 %. ¿Cuánto arriesgas por operación?', 10, '€', 'Mitad del 1 % = 0,5 %. 2.000 × 0,005 = 10 €.'),
       simTrade('Primera operación «en pequeño»: tu cuenta es de 2.000 € y, como empiezas, arriesgas como máximo un 0,5 %. Elige stop e importe.', 'lvl-7', 'Con la mitad del riesgo habitual, una racha mala al empezar con dinero real no te saca del juego mientras compruebas si tus estadísticas se parecen a las del simulador.', { cash: 2000, maxRiskPct: 0.5 }),
       multi('¿Qué cambia al pasar del simulador al dinero real? Marca todas.', ['Las emociones al ver pérdidas reales', 'El deslizamiento al ejecutar órdenes', 'Los impuestos sobre las ganancias', 'Las matemáticas de la esperanza'], [0, 1, 2], 'Las matemáticas son las mismas; lo que cambia es cómo reaccionas, los costes reales y Hacienda.'),
-    ], { source: '10.9' }),
+    ], { source: '10.9', minutes: 6, retire: [1, 2, 3, 7] }),
   ],
 })

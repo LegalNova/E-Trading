@@ -1,14 +1,49 @@
 import 'server-only'
 // Sección 11 · Unidad 32 · Estafas y cómo detectarlas (docs/curso-v2/02-curriculo.md)
-import { buckets, chat, fill, key, lesson, match, multi, num, order, scenario, single, spot, text, tf, timed, unit } from '../dsl'
+import { buckets, chat, choose, fill, key, lesson, match, multi, note, num, opt, order, play, say, scenario, single, spot, story, tf, timed, unit, when } from '../dsl'
 
 export default unit({
   id: 'u32', order: 32, title: 'Estafas y cómo detectarlas', description: 'Chiringuitos, Ponzi, pump and dump, phishing, finfluencers y qué hacer si te estafan',
   lessons: [
     lesson('u32l1', 'Chiringuitos financieros', [
-      text('Qué es un chiringuito', 'Una entidad que ofrece servicios de inversión **sin autorización**. Suelen tener webs muy profesionales, nombres en inglés y «asesores» muy simpáticos.\n\nLa CNMV publica cada año cientos de **advertencias** sobre entidades no autorizadas.'),
-      text('Las señales de alarma', '1. Te contactan **sin que lo pidas**.\n2. Prometen rentabilidades **altas y garantizadas**.\n3. Te meten **prisa**.\n4. Te piden instalar un programa de **acceso remoto** (AnyDesk, TeamViewer).\n5. Piden transferencias a otros países o en cripto.\n6. Ves tu saldo crecer, pero **no puedes retirarlo** sin pagar antes «impuestos» o «comisiones».'),
-      key('Compruébalo siempre', 'Antes de invertir, busca la entidad en **cnmv.es**: en los registros de entidades autorizadas y en la lista de advertencias. Nunca te fíes de lo que diga su propia web.', 'Si te contactan sin pedirlo para ofrecerte rentabilidades altas y seguras, es casi seguro una estafa.', 'Nadie que conozca una forma segura de ganar un 20 % al mes te llamaría para contártela.'),
+      story('Una llamada desde Londres', [{ id: 'victor', name: 'Víctor' }], [
+        note('Suena tu móvil. Un número que empieza por +44.'),
+        say('victor', 'Hola, soy Víctor, de Vandermeer Invest, en Londres.'),
+        say('victor', 'Tenemos una oportunidad en divisas: un **4 % mensual garantizado**. Solo hasta hoy.'),
+        say('victor', 'Instale AnyDesk y le abro yo la cuenta. Así no se complica.'),
+        choose('¿Qué haces?', [
+          opt('Instalo AnyDesk, así me ayuda', 'bad', say('lumi', 'Con acceso remoto puede operar en tu banca como si fueras tú.')),
+          opt('Cuelgo y busco el nombre en cnmv.es', 'good', say('lumi', '¡Bien! Contacto no pedido, rentabilidad garantizada, prisa y acceso remoto: cuatro alarmas.')),
+          opt('Le pido que me mande la información por email', 'ok', say('lumi', 'Un PDF bonito se copia. Solo los registros de la CNMV dicen si está autorizado.')),
+        ]),
+        say('lumi', 'Si caes, verás tu saldo crecer… y no podrás retirarlo sin pagar antes.'),
+      ]),
+      play({
+        title: '¿Alarma o normal?',
+        intro: 'Ocho cosas que te pueden pasar con quien te ofrece invertir. ¿Cuáles son **señales de alarma**?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Señal de alarma' }, { label: 'Normal en una entidad seria' }],
+          cards: [
+            { icon: 'call', label: 'Te llaman sin que lo hayas pedido', bin: 0, why: 'Las entidades serias no te llaman en frío para venderte inversiones.' },
+            { icon: 'percent', label: 'Rentabilidad alta y garantizada', bin: 0, why: 'Rentabilidad y riesgo van juntos: «alto y seguro» no existe.' },
+            { icon: 'verified', label: 'Aparece en los registros de entidades autorizadas de cnmv.es', bin: 1, why: 'Es lo que debe tener una entidad legal (aunque no garantiza que la inversión vaya bien).' },
+            { icon: 'timer', label: '«Solo hasta hoy»: te meten prisa', bin: 0, why: 'La prisa es para que no compruebes nada.' },
+            { icon: 'laptop', label: 'Te piden instalar AnyDesk o TeamViewer', bin: 0, why: 'Con acceso remoto pueden operar en tu banca online como si fueras tú.' },
+            { icon: 'document', label: 'Te dan por escrito los riesgos y los costes', bin: 1, why: 'Una entidad legal tiene que explicarte riesgos y costes.' },
+            { icon: 'globe', label: 'Te piden transferir a otro país o pagar en cripto', bin: 0, why: 'Así el dinero es mucho más difícil de rastrear y de recuperar.' },
+            { icon: 'lock', label: 'Para retirar tu saldo, primero tienes que pagar «impuestos»', bin: 0, why: '«Paga para retirar» es la señal definitiva: ese saldo no existe.' },
+          ],
+        },
+        goal: { text: 'Clasifica las ocho situaciones.', when: [when('done', '==', 8)] },
+        insight: 'Un **chiringuito** ofrece inversiones **sin autorización**. Basta una de estas señales para colgar y comprobarlo en cnmv.es.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pregúntate: ¿esto lo haría tu banco de siempre?', mood: 'THINKING' },
+          { when: when('correct', '>=', 7), say: '¡Ojo de experto! A ti ya no te la cuelan.', mood: 'CELEBRATE' },
+          { say: '¿Alarma o normal? Toca el grupo', mood: 'HAPPY' },
+        ],
+      }),
+      key('Compruébalo siempre', 'Los chiringuitos suelen tener webs muy profesionales, nombres en inglés y «asesores» muy simpáticos. La CNMV publica cada año cientos de **advertencias** sobre entidades no autorizadas.\n\nAntes de invertir, busca la entidad en **cnmv.es**: en los registros de entidades autorizadas y en la lista de advertencias. Nunca te fíes de lo que diga su propia web.', 'Si te contactan sin pedirlo para ofrecerte rentabilidades altas y seguras, es casi seguro una estafa.', 'Nadie que conozca una forma segura de ganar un 20 % al mes te llamaría para contártela.'),
     ], [
       spot('Marca todos los mensajes que son de un chiringuito.', [['+44 7700 900…', 'Hola, soy Daniel de Global Prime Invest. Tenemos una oportunidad en divisas con un 4 % mensual garantizado. ¿Hablamos hoy?', true], ['Tu bróker', 'Ya tienes disponible tu informe fiscal anual en la app.', false], ['Asesor Elite FX', 'Para ayudarte con tu cuenta necesito que instales AnyDesk. Así lo configuro yo por ti 😊', true], ['Plataforma CryptoMax', 'Tu saldo es de 14.250 €. Para retirarlo, primero debes pagar 1.900 € de impuestos.', true], ['Banco', 'Recuerda: nunca te pediremos tus claves por teléfono ni por mensaje.', false]], 'Contacto no solicitado, rentabilidad garantizada, acceso remoto y «paga para retirar»: las cuatro señales clásicas.'),
       order('Ordena cómo comprobar una entidad antes de darle dinero.', ['Anota su nombre exacto y su web', 'Búscala en los registros oficiales de cnmv.es', 'Revisa la lista de advertencias de la CNMV', 'Si no está autorizada, no inviertas'], 'Siempre en la web de la CNMV, nunca en la de la propia entidad.'),
@@ -20,12 +55,40 @@ export default unit({
       timed(single('Rápido: un «asesor» te pide que instales AnyDesk para ayudarte a invertir. ¿Qué haces?', ['Lo instalo, así va más rápido', 'Cuelgo: es una señal clásica de estafa', 'Le doy solo la contraseña del banco'], 1, 'Con acceso remoto pueden operar en tu banca online como si fueras tú.'), 12),
       tf('Si una entidad aparece en la lista de advertencias de la CNMV, es que no está autorizada.', true, 'Esa lista avisa precisamente de entidades no autorizadas.'),
       chat(['Me ha escrito por Instagram una chica muy maja 😍', 'Dice que gana un 3 % diario con una plataforma y me pasa el enlace.'], '¿Qué le contestas a Lumi?', [['Regístrate, igual tienes suerte', 'Un 3 % diario no existe: es una estafa de manual, a menudo con un perfil falso.'], ['No pinches: busca la plataforma en la CNMV y desconfía del perfil', '¡Bien! Las «amistades» que acaban recomendando una plataforma son una estafa muy común.'], ['Pásale tus datos para que te ayude', 'Tus datos son justo lo que buscan.']], 1, 'Contacto no pedido + rentabilidad imposible = estafa, aunque llegue con una sonrisa.'),
-    ], { source: '12.2' }),
+    ], { source: '12.2', minutes: 6, retire: [4, 5, 7, 8] }),
 
     lesson('u32l2', 'Esquemas Ponzi y piramidales', [
-      text('Cómo funcionan', 'Un **esquema Ponzi** paga a los primeros inversores con el dinero de los nuevos. No hay negocio real detrás, o es mínimo. Mientras entra dinero nuevo, todo parece ir genial.\n\nUn **esquema piramidal** hace lo mismo, pero ganas sobre todo por **reclutar** a otros.\n\nCuando deja de entrar dinero, se hunde.'),
-      text('Casos reales', '• **Charles Ponzi**, Boston, 1920: prometía un 50 % en 45 días.\n• **Bernard Madoff**, descubierto en 2008: engañó durante décadas incluso a inversores profesionales.\n• **Fórum Filatélico y Afinsa**, España, 2006: cientos de miles de afectados por un negocio de sellos.'),
-      key('Rentabilidades imposibles', 'Un 1 % diario parece poco, pero compuesto es multiplicar tu dinero por 37 en un año. Un 10 % mensual es más del 200 % anual. Nada legal da eso de forma estable.', 'Si las cuentas no salen con interés compuesto, no es un negocio: es una estafa.'),
+      story('El club de inversión', [{ id: 'sara', name: 'Sara' }], [
+        say('sara', '¡Llevo dos meses en un club de inversión y he ganado un 15 %!'),
+        say('sara', 'Mira, aquí tienes los pagos. Y si traes a dos amigas, te dan un bonus.'),
+        choose('¿Qué haces?', [
+          opt('Entro: los pagos son reales', 'bad', say('lumi', 'En un Ponzi los primeros sí cobran… con el dinero de los nuevos.')),
+          opt('Pregunto de dónde sale la rentabilidad y lo busco en la CNMV', 'good', say('lumi', 'Bien. Que alguien cobre no prueba nada: un Ponzi paga mientras entra dinero.')),
+          opt('Entro solo para traer amigas y cobrar el bonus', 'bad', say('lumi', 'Ganar por reclutar es un **esquema piramidal**: cobras con lo que pierden tus amigas.')),
+        ]),
+        note('Seis meses después, dejan de entrar socios nuevos.'),
+        say('sara', 'No me dejan retirar nada. Dicen que es «temporal».'),
+        say('lumi', 'Sin dinero nuevo, se hunde. Les pasó a Madoff, a Fórum Filatélico y a Afinsa.'),
+      ]),
+      play({
+        title: 'Un 10 % al mes',
+        intro: 'El club promete un **10 % al mes**. Parece poco… Imagina que fuera verdad y dejas crecer **1.000 €**.',
+        widget: { kind: 'growth', initial: 1000, monthly: 0, rate: 214, years: 1, maxInitial: 1000, maxMonthly: 0, maxRate: 214, maxYears: 5, lines: ['mattress', 'compound'], controls: ['years'] },
+        predict: {
+          prompt: 'Al 10 % mensual compuesto, ¿cuánto tendrías al cabo de un año?',
+          options: ['Unos 2.200 €', 'Unos 3.140 €', 'Unos 1.100 €'],
+          answer: 1,
+          why: '1,1¹² ≈ 3,14: **unos 3.140 €**, un +214 % al año. Compuesto, crece más que 12 × 10 %.',
+        },
+        goal: { text: 'Mira en qué se convertirían esos 1.000 € en 5 años.', when: [when('years', '==', 5)] },
+        insight: 'Un **10 % al mes** es más del **200 % al año**, y un 1 % diario multiplica tu dinero por 37 en un año. **Nada legal da eso de forma estable**: si las cuentas no salen, es una estafa.',
+        lumi: [
+          { when: when('years', '>=', 5), say: 'Más de 300.000 € desde 1.000 €. ¿Quién podría pagar eso?', mood: 'THINKING' },
+          { when: when('years', '>=', 3), say: 'Más de 30.000 € en tres años. ¿Te parece realista?', mood: 'WORRIED' },
+          { say: 'Arrastra los años y mira el número', mood: 'HAPPY' },
+        ],
+      }),
+      key('Casos reales', '• **Charles Ponzi**, Boston, 1920: prometía un **50 % en 45 días**.\n• **Bernard Madoff**, descubierto en 2008: engañó durante décadas incluso a inversores profesionales.\n• **Fórum Filatélico y Afinsa**, España, 2006: cientos de miles de afectados por un negocio de sellos.\n\nUn **Ponzi** paga a los antiguos con el dinero de los nuevos; en una **pirámide** ganas sobre todo por reclutar.', 'Si las cuentas no salen con interés compuesto, no es un negocio: es una estafa.'),
     ], [
       single('¿Cómo paga un esquema Ponzi a sus primeros inversores?', ['Con los beneficios de un negocio real', 'Con el dinero que aportan los nuevos', 'Con préstamos del Estado'], 1, 'Por eso necesita que entre dinero nuevo sin parar.'),
       num('Una web promete un 1 % diario compuesto. Si fuera verdad, ¿en cuánto se convertirían 1.000 € en 365 días? (redondea)', 37783, '€', '1.000 × 1,01³⁶⁵ ≈ 37.783 €. Ninguna inversión real hace eso: es la señal de un Ponzi.', 2),
@@ -37,11 +100,45 @@ export default unit({
       fill('Un esquema Ponzi paga a los antiguos inversores con el dinero de los ____.', 'nuevos', ['bancos', 'gestores', 'dividendos'], 'Cuando dejan de llegar nuevos, el castillo se cae.'),
       single('¿Qué demostró el caso de Bernard Madoff, descubierto en 2008?', ['Que un Ponzi puede durar décadas y engañar a inversores profesionales', 'Que los Ponzi solo engañan a principiantes', 'Que la CNMV lo destapó en España'], 0, 'Daba rentabilidades sospechosamente estables año tras año. Lo demasiado regular también es una señal.'),
       tf('Fórum Filatélico y Afinsa dejaron cientos de miles de afectados en España en 2006.', true, 'Ofrecían rentabilidades atractivas con sellos. Pasó en España, no solo en las películas.'),
-    ], { source: '12.2' }),
+    ], { source: '12.2', minutes: 6, retire: [2, 5, 6, 9] }),
 
     lesson('u32l3', 'Pump and dump y grupos de señales', [
-      text('Cómo funciona', '**Pump and dump** («inflar y soltar»):\n\n1. Los organizadores compran en silencio un activo pequeño (una cripto o una acción con poco volumen).\n2. Lo anuncian como «la señal» en Telegram, WhatsApp o redes.\n3. Los miembros compran y el precio se dispara.\n4. Los organizadores venden en lo alto.\n5. El precio se hunde y los últimos pierden.'),
-      key('Por qué es una trampa', 'Es **manipulación de mercado**, prohibida en las bolsas y, con el reglamento europeo MiCA, también en cripto. Y los grupos de «señales VIP» que cobran una cuota suelen ganar con tu cuota y con tu compra, no con sus aciertos.', 'Si te avisan a la vez que a miles de personas, tú no eres el que compra antes: eres el que compra caro.'),
+      story('Señales VIP', [{ id: 'admin', name: 'Admin del grupo' }], [
+        say('admin', 'ATENCIÓN: a las 20:00 anunciamos la moneda. Compradla todos a la vez. Objetivo x10.'),
+        note('20:00. Llega la señal.'),
+        say('admin', 'La moneda es ZPX. ¡COMPRAD YA Y HOLD!'),
+        note('A las 20:10 ya ha subido un 300 %.'),
+        choose('¿Qué haces?', [
+          opt('Compro ya, antes de que suba más', 'bad', say('lumi', 'Si ya subió un 300 %, los organizadores están vendiendo. Tú serías su comprador.')),
+          opt('No compro: si me entero ahora, llego tarde', 'good', say('lumi', '¡Eso! Ellos compraron antes, en silencio. Ahora venden sobre tu compra.')),
+          opt('Compro un poco y vendo rápido', 'ok', say('lumi', 'Competir en velocidad con quien organiza el juego es perder casi seguro.')),
+        ]),
+        note('A las 20:25 el precio vuelve a donde estaba.'),
+        say('lumi', 'Inflar y soltar: **pump and dump**. Es manipulación de mercado, y está prohibida.'),
+      ]),
+      play({
+        title: '¿Pump o análisis serio?',
+        intro: 'Mensajes de grupos de inversión. ¿Huelen a **pump and dump** o a análisis serio?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Huele a pump' }, { label: 'Análisis serio' }],
+          cards: [
+            { icon: 'clock', label: 'Hora fija para que todos compren a la vez', bin: 0, why: 'Comprar todos a la vez es la definición de manipulación.' },
+            { icon: 'coins', label: 'Una moneda diminuta, con muy poco volumen', bin: 0, why: 'Con poco volumen, unas pocas compras disparan el precio.' },
+            { icon: 'document', label: 'Explica el negocio, sus datos y sus riesgos', bin: 1, why: 'El análisis serio explica riesgos; la manipulación solo promete cohetes.' },
+            { icon: 'rocket', label: 'Objetivo «x10» o «x100» esta semana', bin: 0, why: 'Objetivos absurdos para que compres con prisa.' },
+            { icon: 'ticket', label: 'Grupo premium de «señales VIP» por 99 € al mes', bin: 0, why: 'Suelen ganar con tu cuota y con tu compra, no con sus aciertos.' },
+            { icon: 'alert', label: 'Avisa de que puedes perder todo lo invertido', bin: 1, why: 'Avisar del riesgo es lo que hace quien informa en serio.' },
+          ],
+        },
+        goal: { text: 'Clasifica los seis mensajes.', when: [when('done', '==', 6)] },
+        insight: 'Los grupos de «señales VIP» suelen ganar con **tu cuota y tu compra**, no con sus aciertos. Inflar un precio es **manipulación de mercado**: prohibida en bolsa y, con el reglamento europeo MiCA, también en cripto.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: ¿te explica riesgos o solo te promete cohetes?', mood: 'THINKING' },
+          { say: 'Clasifica cada mensaje', mood: 'HAPPY' },
+        ],
+      }),
+      key('Inflar y soltar', '1. Los organizadores compran en silencio un activo pequeño (una cripto o una acción con poco volumen).\n2. Lo anuncian como «la señal» en Telegram, WhatsApp o redes.\n3. Los miembros compran y el precio se dispara.\n4. Los organizadores venden en lo alto.\n5. El precio se hunde y los últimos pierden.', 'Si te avisan a la vez que a miles de personas, tú no eres el que compra antes: eres el que compra caro.'),
     ], [
       order('Ordena las fases de un pump and dump.', ['Los organizadores compran en silencio', 'Publican «la señal» en el grupo', 'Los miembros compran y el precio se dispara', 'Los organizadores venden en lo alto', 'El precio se hunde'], 'Los organizadores ganan porque entran antes y salen antes que tú.'),
       spot('Marca los mensajes típicos de un pump and dump.', [['🚀 Señales VIP', 'ATENCIÓN: a las 20:00 anunciamos la moneda. Compradla todos a la vez y HOLD. Objetivo x10.', true], ['Grupo Moon Gems', 'Esta cripto de 0,002 $ va a x100 esta semana. Últimas plazas en el grupo premium por 99 €.', true], ['Noticias económicas', 'El BCE mantiene los tipos de interés sin cambios.', false], ['Tu bróker', 'Recordatorio: los criptoactivos son muy volátiles y puedes perder todo lo invertido.', false]], 'Hora fija para comprar todos a la vez, objetivos absurdos y cuotas premium: manipulación pura.'),
@@ -53,12 +150,45 @@ export default unit({
       fill('La estrategia de inflar un precio y venderlo en lo alto se llama pump and ____.', 'dump', ['hold', 'buy', 'pay'], 'Pump: inflar. Dump: soltar.'),
       single('En un pump and dump, ¿quién suele ganar?', ['Los organizadores, que compraron antes', 'Los que compran con la señal', 'Todos, si nadie vende'], 0, 'El beneficio de unos es la pérdida de los que llegan después.'),
       chat(['En un grupo de Telegram dicen que esta noche una cripto hace x20 🚀', 'Solo hay que comprar todos a la vez. ¿Me apunto?'], '¿Qué le contestas a Lumi?', [['¡Sí! Si compramos todos, sube seguro', 'Sube… hasta que los que la compraron antes venden. Y entonces cae para todos los demás.'], ['Es un pump and dump: los que lo organizan venderán sobre tu compra', '¡Bien visto! Comprar «todos a la vez» es la definición de manipulación.'], ['Apúntate pero vende rápido', 'Competir en velocidad con quien organiza el juego es perder casi seguro.']], 1, 'No juegues a un juego cuyas reglas pone el que gana.'),
-    ], { source: '12.2' }),
+    ], { source: '12.2', minutes: 6, retire: [2, 3, 6, 9] }),
 
     lesson('u32l4', 'Phishing y suplantación', [
-      text('Las variantes', '• **Phishing:** un email que imita a tu banco, a Hacienda o a una empresa de envíos.\n• **Smishing:** lo mismo por SMS.\n• **Vishing:** una llamada de un falso empleado del banco.\n• **Spoofing:** falsifican el remitente o el número para que parezca el oficial.\n\nTodas buscan lo mismo: tus claves, tus códigos o que hagas una transferencia.'),
-      text('Las reglas de oro', '• Tu banco **nunca** te pedirá claves completas ni códigos SMS por teléfono, email o mensaje.\n• No pinches enlaces de mensajes inesperados: entra tú en la app o en la web.\n• Activa la **verificación en dos pasos**.\n• Ante la prisa («tu cuenta se bloquea en 1 hora»), para y comprueba.'),
-      key('Si ya has caído', 'Llama a tu banco por el número oficial para bloquear la tarjeta o la operación, cambia tus contraseñas y denuncia. Puedes pedir ayuda en el **017**, la línea gratuita de ciberseguridad de INCIBE.', 'Ningún banco te pedirá tus claves ni tus códigos: quien te los pide te está robando.'),
+      story('Llamada de «tu banco»', [{ id: 'banco', name: 'Seguridad del banco' }], [
+        note('Suena el móvil. En la pantalla aparece el número de tu banco.'),
+        say('banco', 'Buenas tardes. Vemos una compra de 890 € en una tienda online. ¿La ha hecho usted?'),
+        say('me', 'No…'),
+        say('banco', 'Tranquilo, la anulamos. Le llega un código por SMS: díganoslo para cancelarla.'),
+        choose('¿Qué haces?', [
+          opt('Le digo el código', 'bad', say('lumi', 'Ese código **autoriza** una operación. Si lo das, autorizas tú el robo.')),
+          opt('Cuelgo y llamo yo al número oficial del banco', 'good', say('lumi', 'Perfecto. Tu banco nunca te pedirá claves ni códigos por teléfono.')),
+          opt('Le pido que demuestre que es del banco', 'ok', say('lumi', 'Pueden saber tu nombre y falsificar el número (spoofing). Cuelga y llama tú.')),
+        ]),
+        say('lumi', 'Esto es **vishing**. Por SMS se llama smishing; por email, phishing.'),
+      ]),
+      play({
+        title: '¿Te protege o te expone?',
+        intro: 'Siete hábitos. ¿Cuáles te **protegen** del phishing y cuáles te dejan **expuesto**?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Te protege' }, { label: 'Te expone' }],
+          cards: [
+            { icon: 'shield', label: 'Activar la verificación en dos pasos', bin: 0, why: 'Con ella, una contraseña robada no basta para entrar.' },
+            { icon: 'package', label: 'Pagar 1,99 € de «tasas» por un paquete que no esperabas', bin: 1, why: 'Un clásico del smishing: buscan los datos de tu tarjeta.' },
+            { icon: 'phone', label: 'Entrar en el banco desde su app oficial', bin: 0, why: 'Vas tú al canal oficial, en lugar de seguir el camino que te marcan.' },
+            { icon: 'key', label: 'Usar la misma contraseña en todo', bin: 1, why: 'Si roban una, abren todas tus puertas.' },
+            { icon: 'message', label: 'Pinchar un enlace para «desbloquear tu cuenta en 1 hora»', bin: 1, why: 'La prisa es el anzuelo: entra tú en la app y compruébalo.' },
+            { icon: 'lock', label: 'Una contraseña distinta para cada servicio', bin: 0, why: 'Si se filtra una, las demás siguen a salvo.' },
+            { icon: 'mail', label: 'Un email de «Hacienda» pide tu tarjeta para devolverte 312 €', bin: 1, why: 'Nadie necesita tu tarjeta para devolverte dinero.' },
+          ],
+        },
+        goal: { text: 'Clasifica los siete hábitos.', when: [when('done', '==', 7)] },
+        insight: 'Phishing (email), smishing (SMS), vishing (llamada) y spoofing (remitente o número falsos) buscan lo mismo: **tus claves, tus códigos o una transferencia**. Defiéndete yendo tú al canal oficial y con la **verificación en dos pasos**.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: ¿vas tú al banco o te lleva un enlace?', mood: 'THINKING' },
+          { say: 'Clasifica cada hábito', mood: 'HAPPY' },
+        ],
+      }),
+      key('Si ya has caído', 'Llama a tu banco por el número oficial para bloquear la tarjeta o la operación, cambia tus contraseñas, revisa tus movimientos y denuncia. Puedes pedir ayuda en el **017**, la línea gratuita de ciberseguridad de INCIBE.\n\nY ante la prisa («tu cuenta se bloquea en 1 hora»), para y comprueba.', 'Ningún banco te pedirá tus claves ni tus códigos: quien te los pide te está robando.'),
     ], [
       spot('Marca los mensajes que son phishing o smishing.', [['BancoSeguro', 'Hemos detectado un acceso sospechoso. Verifica tu identidad aquí en 1 hora o bloquearemos tu cuenta: bit.ly/…', true], ['Correos', 'Tu paquete está retenido. Paga 1,99 € de tasas en este enlace para recibirlo.', true], ['Tu banco (app)', 'Has realizado una compra de 23,40 € en un supermercado.', false], ['Agencia Tributaria', 'Tienes un reembolso de 312 €. Introduce los datos de tu tarjeta para cobrarlo.', true], ['Tu bróker', 'Ya puedes consultar tu extracto mensual dentro de la app.', false]], 'Enlaces acortados, prisas, «paga una tasa» y «danos tu tarjeta para devolverte dinero» son señales clásicas.'),
       multi('¿Qué te protege del phishing? Marca todo.', ['Activar la verificación en dos pasos', 'Entrar siempre en la app o la web escribiendo tú la dirección', 'Pinchar los enlaces de los SMS para ir más rápido', 'Usar contraseñas distintas en cada servicio'], [0, 1, 3], 'Los enlaces de mensajes inesperados son la puerta de entrada más común.'),
@@ -70,12 +200,44 @@ export default unit({
       scenario('Pinchas un enlace de un SMS y metes la contraseña de tu bróker. Al momento te das cuenta. ¿Qué haces primero?', [['Esperar a ver si pasa algo', 'Cada minuto cuenta: pueden entrar y mover tu dinero.'], ['Cambiar la contraseña desde la app oficial y avisar a tu bróker o banco', 'Bien: cortas el acceso y la entidad puede vigilar o bloquear operaciones.'], ['Borrar el SMS y olvidarlo', 'Borrar el mensaje no borra lo que ya tienen.']], 1, 'Actúa rápido: cambia claves, avisa a la entidad y revisa movimientos.'),
       order('Ordena qué hacer si has dado tus datos bancarios a un estafador.', ['Llamar al banco por su número oficial y bloquear', 'Cambiar las contraseñas', 'Revisar los movimientos de tus cuentas', 'Denunciar a la Policía o la Guardia Civil'], 'Primero cortar el daño, después ordenar y denunciar.'),
       fill('Pedir una contraseña y además un código que solo tienes tú se llama verificación en dos ____.', 'pasos', ['bancos', 'claves', 'meses'], 'Con ella, una contraseña robada no basta.'),
-    ], { source: '12.2' }),
+    ], { source: '12.2', minutes: 6, retire: [2, 4, 5, 6] }),
 
     lesson('u32l5', 'Finfluencers y publicidad', [
-      text('Qué pueden y qué no', 'Un influencer puede **explicar conceptos** y contar su experiencia. Lo que **no** puede hacer sin autorización de la CNMV es **asesorarte**: decirte qué comprar según tu situación.\n\nSi le pagan por hablar de un producto, tiene que dejar claro que es **publicidad**.'),
-      text('Cripto y publicidad', 'Desde 2024 la publicidad de criptoactivos en la UE la regula **MiCA**: tiene que ser **clara, imparcial y no engañosa**, identificarse como publicidad y avisar de los riesgos. La CNMV sustituyó su antigua circular (la 1/2022) por la 1/2024 para adaptarse. Y su guía para finfluencers recuerda que poner «esto no es asesoramiento» **no protege** si en la práctica estás recomendando.'),
-      key('Preguntas que debes hacerte', '¿Gana dinero si yo compro? ¿Me enseña sus pérdidas o solo sus aciertos? ¿Me vende un curso o «señales»? ¿Me mete prisa? Muchos seguidores no significa saber invertir.', 'Un influencer puede enseñarte; si te dice qué comprar, pregúntate quién le paga.'),
+      story('Vivir del trading en 3 meses', [{ id: 'tiktoker', name: '@vivirdeltrading' }], [
+        say('tiktoker', 'Hace un año era repartidor. Hoy vivo del trading. Un millón de seguidores lo saben.'),
+        say('tiktoker', 'Mi curso cuesta 997 €: en 3 meses vives de esto. Y en mi grupo te digo qué comprar.'),
+        say('tiktoker', 'Eso sí: esto no es asesoramiento financiero.'),
+        choose('¿Qué piensas?', [
+          opt('Con un millón de seguidores, sabrá lo que hace', 'bad', say('lumi', 'Los seguidores miden popularidad, no rentabilidad. Su ingreso seguro es el curso.')),
+          opt('Gana vendiendo el curso, no necesariamente operando', 'good', say('lumi', 'Exacto. Cuando el producto es el curso, el negocio eres tú.')),
+          opt('Le pediría que enseñe también sus pérdidas', 'ok', say('lumi', 'Buena pregunta. Y desconfía de quien promete vivir del trading en 3 meses.')),
+        ]),
+        say('lumi', 'Decir «no es asesoramiento» **no le protege** si en la práctica te recomienda.'),
+      ]),
+      play({
+        title: '¿Puede hacerlo?',
+        intro: 'Un influencer puede enseñarte mucho, pero hay **líneas rojas**. ¿Qué es legítimo y qué no?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Legítimo' }, { label: 'Línea roja' }],
+          cards: [
+            { icon: 'study', label: 'Explicar qué es un fondo indexado', bin: 0, why: 'Educar es libre: no necesita autorización.' },
+            { icon: 'person', label: 'Decirte qué comprar según tu sueldo y tus ahorros', bin: 1, why: 'Eso es asesoramiento personalizado: exige autorización de la CNMV.' },
+            { icon: 'megaphone', label: 'Anunciar una plataforma sin decir que le pagan', bin: 1, why: 'Si le pagan, tiene que dejar claro que es publicidad.' },
+            { icon: 'tag', label: '«#publi: esta plataforma me paga por este vídeo»', bin: 0, why: 'Así sí: avisa de que es publicidad.' },
+            { icon: 'bitcoin', label: 'Promocionar una cripto sin avisar de los riesgos', bin: 1, why: 'Con MiCA, la publicidad de cripto debe ser clara, no engañosa y avisar de los riesgos.' },
+            { icon: 'pie', label: 'Enseñar su cartera y avisar de sus conflictos de interés', bin: 0, why: 'Contar su experiencia con transparencia es legítimo.' },
+            { icon: 'cash', label: 'Cobrar por cada registro con su enlace, sin decirlo', bin: 1, why: 'Gana aunque tú pierdas: es un conflicto de interés oculto.' },
+          ],
+        },
+        goal: { text: 'Clasifica las siete publicaciones.', when: [when('done', '==', 7)] },
+        insight: 'Educar es libre; **asesorarte** sobre qué comprar según tu situación exige autorización de la CNMV. Y si le pagan por hablar de un producto, tiene que decir que es **publicidad**.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pregúntate: ¿me enseña o me dice qué comprar?', mood: 'THINKING' },
+          { say: '¿Legítimo o línea roja?', mood: 'HAPPY' },
+        ],
+      }),
+      key('Preguntas que debes hacerte', '¿Gana dinero si yo compro? ¿Me enseña sus pérdidas o solo sus aciertos? ¿Me vende un curso o «señales»? ¿Me mete prisa? Muchos seguidores no significa saber invertir.\n\nDesde 2024, la publicidad de cripto en la UE la regula **MiCA**: clara, imparcial, no engañosa, identificada como publicidad y con aviso de riesgos. La CNMV sustituyó su circular 1/2022 por la 1/2024 para adaptarse.', 'Un influencer puede enseñarte; si te dice qué comprar, pregúntate quién le paga.'),
     ], [
       single('¿Qué puede hacer un influencer sin autorización de la CNMV?', ['Explicar qué es un ETF o el interés compuesto', 'Decirte qué acciones comprar según tu sueldo y tus ahorros', 'Gestionar tu dinero'], 0, 'Educar es libre; el asesoramiento personalizado exige autorización.'),
       spot('Marca las publicaciones que incumplen las reglas o son una trampa.', [['@crypto.king', '¡Esta moneda va a x50! Link en bio para comprarla 🚀🚀 (no dice que le pagan por promocionarla)', true], ['@aprende.finanzas', 'Hoy explico qué es la diversificación con un ejemplo. Esto no es una recomendación de inversión.', false], ['@trader.lux', 'Mándame por privado tu sueldo y tus ahorros y te digo exactamente qué comprar 💸', true], ['@marta.invierte', '#publi Esta plataforma me paga por este vídeo. Recuerda que puedes perder dinero.', false]], 'Promoción encubierta y asesoramiento personalizado sin autorización son las dos líneas rojas.'),
@@ -87,12 +249,43 @@ export default unit({
       fill('Para darte asesoramiento personalizado, hace falta ____ de la CNMV.', 'autorización', ['un curso', 'un vídeo', 'publicidad'], 'Recomendar qué comprar según tu situación es un servicio de inversión regulado.'),
       num('Un influencer cobra 0,30 € por cada persona que se registra en una plataforma con su enlace y consigue 20.000 registros. ¿Cuánto gana?', 6000, '€', '20.000 × 0,30 = 6.000 €. Gana aunque tú pierdas: es un conflicto de interés.'),
       chat(['Un youtuber dice que hay que comprar YA esta acción 📈', 'Tiene 2 millones de suscriptores, así que fijo que sabe.'], '¿Qué le contestas a Lumi?', [['Si lo dice con tanta seguridad, compra', 'La seguridad vende, pero no acierta más. Y quizá él ya la tiene y le conviene que subas el precio.'], ['Comprueba si le pagan o si ya la tiene, y no compres por prisa', '¡Bien! Conflictos de interés y prisa son dos señales a vigilar.'], ['Compra pero solo con la mitad de tus ahorros', 'La mitad de tus ahorros por un vídeo sigue siendo demasiado.']], 1, 'Antes de hacer caso a alguien, pregúntate qué gana él con tu compra.'),
-    ], { source: '12.2' }),
+    ], { source: '12.2', minutes: 6, retire: [2, 3, 4, 6] }),
 
     lesson('u32l6', 'Si te han estafado', [
-      text('Qué hacer ya', '1. **No envíes más dinero**, aunque te prometan devolverte lo anterior.\n2. **Avisa a tu banco** cuanto antes: a veces se puede frenar una transferencia o bloquear la tarjeta.\n3. **Guarda pruebas:** capturas, chats, emails, justificantes de pago, webs.\n4. **Denuncia** a la Policía Nacional o la Guardia Civil.\n5. **Comunícalo a la CNMV** si era un chiringuito.'),
-      text('Dónde reclamar', '• Contra una entidad **autorizada** (bróker, banco): primero a su servicio de atención al cliente; si no te da la razón, a la **CNMV** (inversiones) o al **Banco de España** (banca y pagos).\n• Para dudas de ciberseguridad: el **017** de INCIBE, gratuito y confidencial.'),
-      key('Cuidado con la segunda estafa', 'Tras una estafa llegan los falsos «despachos de recuperación»: te prometen recuperar tu dinero a cambio de una comisión por adelantado. Es la misma gente u otra igual.', 'Para el daño, guarda pruebas y denuncia. Y desconfía de quien te ofrezca recuperarlo a cambio de dinero.', 'Que te estafen no es de tontos: es de humanos. Denunciar ayuda a que no le pase a otro.'),
+      story('«Paga y podrás retirar»', [{ id: 'soporte', name: 'Soporte de TradeNova' }, { id: 'despacho', name: 'Despacho de recuperación' }], [
+        say('soporte', 'Su saldo es de 14.250 €. Para retirarlo, primero debe pagar 2.000 € de impuestos.'),
+        choose('¿Qué haces?', [
+          opt('Pago: así recupero todo', 'bad', say('lumi', 'Es el último truco antes de desaparecer. Después pedirán otra «comisión».')),
+          opt('No pago nada más, guardo pruebas y aviso a mi banco', 'good', say('lumi', 'Bien. Ninguna entidad legal cobra impuestos por adelantado para dejarte retirar.')),
+          opt('Pido un préstamo para pagarlo', 'bad', say('lumi', 'Sumarías una deuda a la estafa.')),
+        ]),
+        note('Una semana después, otro mensaje.'),
+        say('despacho', 'Recuperamos su dinero estafado. Solo 1.500 € de honorarios por adelantado.'),
+        say('lumi', 'La **segunda estafa**: cobran por adelantado y desaparecen. A menudo son los mismos.'),
+      ]),
+      play({
+        title: '¿Adónde acudes?',
+        intro: 'Cada problema tiene su sitio. ¿Adónde vas **primero**?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'A tu banco o bróker' }, { label: 'Policía o Guardia Civil' }, { label: 'CNMV o Banco de España' }],
+          cards: [
+            { icon: 'card', label: 'Hace una hora hiciste una transferencia a un estafador', bin: 0, why: 'Avisar al banco cuanto antes puede frenar la transferencia o bloquear la tarjeta.' },
+            { icon: 'siren', label: 'Te ha estafado una web de inversión no autorizada', bin: 1, why: 'Denuncia con todas tus pruebas. Y avisa también a la CNMV.' },
+            { icon: 'briefcase', label: 'Tu bróker autorizado no te da la razón en una queja', bin: 2, why: 'Tras reclamar a su servicio de atención al cliente, puedes ir a la CNMV.' },
+            { icon: 'bank', label: 'Tu banco rechaza tu reclamación por una comisión', bin: 2, why: 'Tras su servicio de atención al cliente, el siguiente paso es el Banco de España.' },
+            { icon: 'alert', label: 'Ves compras raras con tu tarjeta', bin: 0, why: 'Bloquéala ya, llamando al número oficial de tu banco.' },
+            { icon: 'person', label: 'Un falso «abogado» te pide 1.500 € para recuperar tu dinero', bin: 1, why: 'Es una segunda estafa: denúnciala.' },
+          ],
+        },
+        goal: { text: 'Coloca los seis casos.', when: [when('done', '==', 6)] },
+        insight: '**Primero, corta la sangría** y avisa al banco; después, pruebas y denuncia. Con una entidad autorizada, reclama primero a ella y luego a la **CNMV** o al **Banco de España**; para ciberseguridad, el **017** de INCIBE.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: '¿Hay que frenar el dinero ya, denunciar o reclamar a una entidad?', mood: 'THINKING' },
+          { say: 'Toca adónde acudirías', mood: 'HAPPY' },
+        ],
+      }),
+      key('Qué hacer ya', '1. **No envíes más dinero**, aunque te prometan devolverte lo anterior.\n2. **Avisa a tu banco** cuanto antes: a veces se puede frenar una transferencia.\n3. **Guarda pruebas:** capturas, chats, emails, justificantes de pago, webs.\n4. **Denuncia** a la Policía Nacional o la Guardia Civil.\n5. **Comunícalo a la CNMV** si era un chiringuito.', 'Para el daño, guarda pruebas y denuncia. Y desconfía de quien te ofrezca recuperarlo a cambio de dinero.', 'Que te estafen no es de tontos: es de humanos. Denunciar ayuda a que no le pase a otro.'),
     ], [
       order('Ordena qué hacer si te han estafado.', ['Dejar de enviar dinero', 'Avisar a tu banco', 'Guardar todas las pruebas', 'Denunciar a la Policía o la Guardia Civil', 'Comunicarlo a la CNMV'], 'Primero cortar la sangría, después documentar y denunciar.'),
       single('Tras perder dinero en un chiringuito, un «despacho» te escribe: recupera tu dinero por una comisión de 1.500 € por adelantado. ¿Qué es?', ['Un servicio legal útil', 'Una estafa de recuperación', 'Un trámite de la CNMV'], 1, 'Cobran por adelantado y desaparecen. A menudo son los mismos estafadores.'),
@@ -104,6 +297,6 @@ export default unit({
       buckets('¿Es ayuda legítima o una segunda estafa?', ['Legítimo', 'Segunda estafa'], [['La Policía o la Guardia Civil recogen tu denuncia', 0], ['Un «abogado» que te contacta él y te pide pagar por adelantado', 1], ['El 017 de INCIBE te orienta gratis', 0], ['Una web que dice recuperar cripto robada a cambio de una comisión', 1], ['Reclamar al servicio de atención al cliente de tu banco', 0]], 'Quien te contacta sin pedirlo y te cobra por adelantado para recuperar tu dinero es sospechoso.'),
       single('Tienes un problema con un bróker autorizado. ¿Dónde reclamas primero?', ['Directamente en el juzgado', 'En el servicio de atención al cliente del propio bróker', 'En sus redes sociales'], 1, 'Es el primer paso obligatorio; si no responde o no te da la razón, puedes ir a la CNMV.'),
       fill('La línea gratuita de ayuda en ciberseguridad de INCIBE es el ____.', '017', ['112', '091', '016'], 'El 112 es emergencias y el 091, la Policía Nacional; el 016, atención a víctimas de violencia de género.'),
-    ], { source: '12.2' }),
+    ], { source: '12.2', minutes: 6, retire: [1, 2, 3, 4, 6] }),
   ],
 })

@@ -1,15 +1,61 @@
 import 'server-only'
 // Sección 6 · Unidad 17 · Ratios y valoración (docs/curso-v2/02-curriculo.md)
 // Ejemplo inventado del manual: «Panadería Global, S. A.» (cotiza a 15 €, BPA 0,975 €, FCF 1 € por acción).
-import { buckets, chat, fill, key, lesson, match, num, order, scenario, single, spot, text, tf, timed, trend, unit, upDown } from '../dsl'
+import { buckets, chat, choose, fill, key, lesson, match, mission, note, num, opt, order, play, say, scenario, single, spot, story, tf, timed, trend, unit, upDown, when } from '../dsl'
 
 export default unit({
   id: 'u17', order: 17, title: 'Ratios y valoración', description: 'PER, PEG, EV/EBITDA, ROE, dividendos, DCF y CAPE con números de verdad',
   lessons: [
     lesson('u17l1', 'El PER', [
-      text('Qué es el PER', '**PER = precio ÷ BPA** (o capitalización ÷ beneficio neto).\n\nPanadería Global cotiza a 15 € y su BPA es 0,975 €: **PER = 15,4**. Pagas 15,4 veces el beneficio de un año.\n\nSu inverso es la **rentabilidad por beneficio**: 1 ÷ 15,4 = **6,5 %**, comparable con lo que paga un bono.'),
-      text('Cómo leerlo', '• La media histórica del mercado ronda **15-17**.\n• **PER bajo no es barato:** puede ser una empresa en declive o con un beneficio puntual inflado (por vender un edificio).\n• **PER alto no es caro:** puede crecer muy deprisa.\n• Compara con su **historia** y su **sector**: un banco a PER 8 y un software a PER 35 pueden estar «en su precio».'),
-      key('Histórico y adelantado', 'Con el beneficio del último año es el PER histórico; con el beneficio previsto, el **PER adelantado**. Si el beneficio va a crecer mucho, el adelantado será más bajo.', 'Un PER de 10 puede ser caro y uno de 30 barato: depende de lo que vaya a ganar la empresa.'),
+      story('PER 4: ¿una ganga?', [{ id: 'hugo', name: 'Hugo' }], [
+        say('hugo', 'He encontrado una acción con PER 4. ¡Está regalada!'),
+        say('hugo', 'Pagas solo 4 años de beneficio. Le meto todos mis ahorros.'),
+        choose('¿Qué le dices?', [
+          opt('¡Corre, que se escapa!', 'bad', say('lumi', 'Casi nada tiene PER 4 sin motivo. Primero hay que saber cuál.')),
+          opt('Mira por qué es tan bajo antes de comprar', 'good', say('lumi', 'Bien. Un PER muy bajo es una **pregunta**, no una respuesta.')),
+          opt('Compra solo un poco, por si acaso', 'ok', say('lumi', 'Prudente, pero sigues sin saber qué compras.')),
+        ]),
+        say('hugo', 'Vale… Sus ventas llevan cinco años cayendo.'),
+        say('lumi', 'Ahí está: el mercado paga poco porque espera que gane **menos**.'),
+        say('lumi', 'PER bajo puede ser declive o un beneficio puntual. PER alto, quizá crecimiento.'),
+      ]),
+      play({
+        title: '¿Cuántos años de beneficio pagas?',
+        intro: 'Esta empresa gana **2 € por acción** al año. Mueve el precio de la acción y mira qué pasa con el **PER**.',
+        widget: { kind: 'valuation', price: 30, eps: 2, growth: 0, maxPrice: 80, maxGrowth: 30 },
+        predict: {
+          prompt: 'Si el beneficio no cambia y el precio pasa de 30 € a 60 €, ¿qué le pasa al PER?',
+          options: ['Se queda igual', 'Se duplica', 'Baja a la mitad'],
+          answer: 1,
+          why: 'PER = precio ÷ beneficio por acción: 60 ÷ 2 = **30**, el doble que 30 ÷ 2 = 15.',
+        },
+        goal: { text: 'Busca el precio con el que pagas 20 años de beneficio.', when: [when('per', '==', 20)] },
+        insight: '**PER = precio ÷ beneficio por acción**: los años de beneficio que pagas. Panadería Global (15 € y 0,975 € de BPA) tiene PER 15,4, y su inverso, la **rentabilidad por beneficio**, es un 6,5 %.',
+        lumi: [
+          { when: when('per', '>=', 30), say: 'Pagas 30 años de beneficio o más. ¿Crecerá para merecerlo?', mood: 'THINKING' },
+          { when: when('per', '<=', 8), say: 'PER muy bajo… ¿ganga o empresa en apuros?', mood: 'THINKING' },
+          { say: 'Mueve el precio y mira el PER', mood: 'HAPPY' },
+        ],
+      }),
+      play({
+        title: 'PER alto, ¿siempre caro?',
+        intro: 'Ahora cotiza a **60 €**: PER 30. Sin crecer, tardas 30 años en recuperar el precio con los beneficios. ¿Y si crecen?',
+        widget: { kind: 'valuation', price: 60, eps: 2, growth: 0, maxPrice: 80, maxGrowth: 30 },
+        predict: {
+          prompt: 'Si el beneficio crece un 10 % al año, ¿cuánto tardas en recuperar los 60 €?',
+          options: ['Unos 15 años', 'Unos 27 años', 'Sigue en 30 años'],
+          answer: 0,
+          why: 'Con un 10 % anual, los beneficios suman 60 € en **15 años**: la mitad de tiempo.',
+        },
+        goal: { text: 'Con el precio en 60 €, busca el crecimiento que te devuelve el precio en 15 años o menos.', when: [when('price', '==', 60), when('payback', '<=', 15)] },
+        insight: '**PER alto no es caro** si el beneficio crece deprisa, y **PER bajo no es barato** si va a menguar. Compáralo siempre con su crecimiento, su historia y su sector.',
+        lumi: [
+          { when: when('payback', '<=', 10), say: '¡Diez años o menos! Crecer rápido abarata un PER alto.', mood: 'CELEBRATE' },
+          { when: when('growth', '==', 0), say: 'Sin crecer, PER 30 son 30 años. Sube el crecimiento.', mood: 'THINKING' },
+          { say: 'Sube el crecimiento y mira los años', mood: 'HAPPY' },
+        ],
+      }),
+      key('Histórico y adelantado', 'Con el beneficio del último año es el **PER histórico**; con el previsto, el **PER adelantado**. Si el beneficio va a crecer mucho, el adelantado será más bajo.\n\nLa media del mercado ronda **15-17**. Compara con su historia y su sector: un banco a PER 8 y un software a PER 35 pueden estar «en su precio».', 'Un PER de 10 puede ser caro y uno de 30 barato: depende de lo que vaya a ganar la empresa.'),
     ], [
       num('Una acción cotiza a 30 € y su BPA es de 2 €. ¿Cuál es su PER?', 15, 'veces', '30 ÷ 2 = 15: pagas 15 años del beneficio actual.'),
       num('Una empresa capitaliza 4.000 M€ y gana 250 M€ al año. ¿Cuál es su PER?', 16, 'veces', '4.000 ÷ 250 = 16. Da igual hacerlo por acción o con la empresa entera.'),
@@ -21,11 +67,62 @@ export default unit({
       num('Una acción a 60 € tiene un BPA de 3 € este año y se espera un BPA de 4 € el próximo. ¿Cuál es su PER adelantado?', 15, 'veces', '60 ÷ 4 = 15. El histórico es 60 ÷ 3 = 20.'),
       timed(single('Rápido: precio 45 €, BPA 3 €. ¿PER?', ['12', '15', '18'], 1, '45 ÷ 3 = 15.'), 12),
       chat(['He encontrado una acción con PER 4 😍', '¡Está regalada!'], '¿Qué le contestas a Lumi?', [['Cómprala ya, que se escapa', 'Antes de nada: casi nada tiene PER 4 sin motivo, y hay que averiguar cuál.'], ['Mira por qué es tan bajo: beneficio puntual, negocio en declive o deuda enorme', 'Vale, investigo antes de enamorarme del número.'], ['Un PER bajo siempre es mejor', 'No siempre: a veces es la forma que tiene el mercado de decir «este beneficio no va a durar».']], 1, 'Un PER muy bajo es una pregunta, no una respuesta.'),
-    ], { source: '5.5' }),
+    ], { source: '5.5', minutes: 6, retire: [5, 8, 9] }),
 
     lesson('u17l2', 'PEG, EV/EBITDA y precio/valor contable', [
-      text('PEG: el PER con crecimiento', '**PEG = PER ÷ crecimiento anual esperado del BPA (en %).**\n\nPanadería Global: PER 15,4 y crece al 8 % → PEG = **1,9**.\n\n• Cerca de 1: razonable.\n• Por encima de 2: caro para su crecimiento.\n\nDos empresas con PER 20: si una crece al 20 % (PEG 1) y otra al 5 % (PEG 4), la primera es más barata.'),
-      text('EV/EBITDA: con la deuda dentro', '**EV (valor de empresa) = capitalización + deuda neta.** Es lo que costaría comprar la empresa entera, deudas incluidas.\n\nPanadería Global: (1.500 + 320) ÷ 200 = **9,1**.\n\nSirve para comparar empresas con distinta deuda, que el PER no ve.'),
+      play({
+        title: 'El PER con crecimiento',
+        intro: 'Esta acción cotiza a **PER 20**. Pero no es lo mismo pagar 20 años de beneficio por una empresa que crece poco que por una que vuela.',
+        widget: { kind: 'valuation', price: 20, eps: 1, growth: 5, maxPrice: 60, maxGrowth: 30 },
+        predict: {
+          prompt: 'Dos empresas a PER 20. A crece un 20 % al año; B, un 5 %. ¿Cuál es más barata?',
+          options: ['A, la que crece más', 'B, la que crece menos', 'Las dos igual: tienen el mismo PER'],
+          answer: 0,
+          why: 'PEG de A: 20 ÷ 20 = **1**. PEG de B: 20 ÷ 5 = **4**. A paga mucho menos por cada punto de crecimiento.',
+        },
+        goal: { text: 'Con el precio en 20 €, busca el crecimiento que deja el PEG en 1.', when: [when('price', '==', 20), when('peg', '<=', 1)] },
+        insight: '**PEG = PER ÷ crecimiento anual del beneficio.** Cerca de 1, razonable; por encima de 2, **caro para lo que crece**. Panadería Global: 15,4 ÷ 8 = 1,9.',
+        lumi: [
+          { when: when('peg', '<=', 1), say: '¡PEG de 1! El precio va en línea con lo que crece.', mood: 'CELEBRATE' },
+          { when: when('peg', '>=', 3), say: 'Pagas mucho por muy poco crecimiento.', mood: 'WORRIED' },
+          { say: 'Sube el crecimiento y mira el PEG', mood: 'HAPPY' },
+        ],
+      }),
+      story('Dos pisos al mismo precio', [{ id: 'nora', name: 'Nora' }], [
+        note('Dos pisos iguales se venden por 100.000 € cada uno.'),
+        say('nora', 'El segundo tiene una hipoteca de 80.000 € que pasaría a pagar yo.'),
+        say('nora', 'Pero cuestan lo mismo, ¿no?'),
+        choose('¿Cuál sale más caro de verdad?', [
+          opt('Los dos igual: 100.000 €', 'bad', say('lumi', 'El segundo cuesta 100.000 € más la deuda que heredas: **180.000 €**.')),
+          opt('El segundo: compras el piso y su deuda', 'good', say('lumi', 'Exacto: 180.000 € frente a 100.000 €. Con empresas pasa igual.')),
+          opt('Depende del barrio', 'ok', say('lumi', 'Aquí son iguales. La diferencia es la deuda.')),
+        ]),
+        say('lumi', 'Eso es el **valor de empresa (EV)**: capitalización más deuda neta.'),
+        say('lumi', 'Se compara con el **EBITDA**. Panadería Global: (1.500 + 320) ÷ 200 = **9,1**.'),
+      ]),
+      play({
+        title: 'Cada empresa, su ratio',
+        intro: 'Ningún ratio sirve para todo. ¿Cuál mirarías primero en cada empresa?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'PEG' }, { label: 'EV/EBITDA' }, { label: 'Precio / valor contable' }],
+          cards: [
+            { icon: 'bank', label: 'Un banco', bin: 2, why: 'Su balance está lleno de activos financieros: P/VC.' },
+            { icon: 'cpu', label: 'Una tecnológica que crece al 25 % al año', bin: 0, why: 'Lo que más pesa es cuánto crece: PEG.' },
+            { icon: 'factory', label: 'Una industrial con mucha deuda', bin: 1, why: 'EV/EBITDA mete la deuda en la cuenta; el PER no la ve.' },
+            { icon: 'shield', label: 'Una aseguradora', bin: 2, why: 'Como un banco, vale sobre todo por su balance.' },
+            { icon: 'store', label: 'Una cadena de tiendas que crece al 20 %', bin: 0, why: 'Crece deprisa: compara su PER con ese crecimiento.' },
+            { icon: 'power', label: 'Una eléctrica muy endeudada', bin: 1, why: 'Con tanta deuda, la capitalización engaña: mira el EV.' },
+            { icon: 'laptop', label: 'Una empresa de software que crece rápido', bin: 0, why: 'Vale por sus ideas, no por sus activos: el P/VC dice poco.' },
+          ],
+        },
+        goal: { text: 'Coloca las siete empresas.', when: [when('done', '==', 7)] },
+        insight: 'Cada ratio ilumina una cosa: el **PEG**, el crecimiento; el **EV/EBITDA**, la deuda; el **P/VC**, el balance. Elige el ratio según el tipo de empresa.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pregúntate: ¿qué pesa más aquí, crecer, la deuda o el balance?', mood: 'THINKING' },
+          { say: 'Elige el ratio para cada empresa', mood: 'HAPPY' },
+        ],
+      }),
       key('P/VC: para bancos y aseguradoras', '**P/VC = precio ÷ valor contable por acción.** Panadería Global: 15 ÷ 4,5 = **3,3**.\n\nSe usa sobre todo en bancos y aseguradoras, cuyo balance está lleno de activos financieros. En una empresa de software, que vale por sus ideas y no por sus activos, dice poco.', 'Elige el ratio según el tipo de empresa.'),
     ], [
       match('Empareja cada empresa con el ratio que más se suele usar para ella.', [['Un banco', 'Precio / valor contable'], ['Una tecnológica que crece al 25 %', 'PEG'], ['Una industrial con mucha deuda', 'EV/EBITDA'], ['Una empresa madura y estable', 'PER']], 'Cada ratio ilumina una cosa distinta.'),
@@ -38,12 +135,62 @@ export default unit({
       scenario('A y B capitalizan 1.000 M€ y tienen un EBITDA de 100 M€. A no tiene deuda; B tiene 800 M€ de deuda neta. Un amigo dice que «cuestan lo mismo». ¿Qué le dices?', [['Que tiene razón: capitalizan lo mismo', 'La capitalización no incluye la deuda: comprando B te quedas también con 800 M€ que devolver.'], ['Que B es más cara: EV/EBITDA de 18 frente a 10', 'Eso: (1.000 + 800) ÷ 100 = 18, frente a 1.000 ÷ 100 = 10.'], ['Que B es más barata porque tiene deuda', 'La deuda es algo que se debe, no un regalo.']], 1, 'El valor de empresa mira la empresa entera, deuda incluida.'),
       timed(single('Rápido: PER 12 y crecimiento del 12 %. ¿PEG?', ['0,5', '1', '2'], 1, '12 ÷ 12 = 1.'), 12),
       buckets('Según el PEG, ¿razonable o cara para su crecimiento?', ['Razonable (PEG de 1 o menos)', 'Cara (PEG de 2 o más)'], [['PER 15, crece al 15 %', 0], ['PER 40, crece al 10 %', 1], ['PER 10, crece al 12 %', 0], ['PER 24, crece al 8 %', 1]], 'PEG de 1; 4; 0,83; y 3.'),
-    ], { source: '5.5' }),
+    ], { source: '5.5', minutes: 6, retire: [0, 4, 8] }),
 
     lesson('u17l3', 'ROE y ROIC: ¿es un buen negocio?', [
-      text('ROE: la rentabilidad del accionista', '**ROE = beneficio neto ÷ patrimonio neto.**\n\nPanadería Global: 97,5 ÷ 450 = **21,7 %**. Por cada 100 € de los accionistas gana casi 22 € al año.\n\nUn ROE por encima del **15 %** de forma sostenida es muy bueno.'),
-      text('ROIC: la rentabilidad del negocio', '**ROIC = EBIT × (1 − impuestos) ÷ (patrimonio + deuda neta).**\n\nPanadería Global: 150 × 0,75 = 112,5; y 112,5 ÷ (450 + 320) = **14,6 %**.\n\nDebe superar el **coste del capital** (≈ 8-10 %); si no, la empresa crece destruyendo valor.'),
-      key('El truco del ROE', 'Con mucha deuda, el patrimonio es pequeño y el ROE se dispara. El ROIC incluye la deuda, por eso cuesta más inflarlo. Los mejores negocios ganan mucho con poco capital y pueden **reinvertir** a esas tasas durante años.', 'Busca negocios que conviertan cada euro invertido en mucho más de un euro, año tras año.'),
+      story('Dos puestos de limonada', [{ id: 'ana', name: 'Ana' }, { id: 'bruno', name: 'Bruno' }], [
+        note('Ana y Bruno montan el mismo puesto de limonada. Cada uno necesita 1.000 €. Sin impuestos, para simplificar.'),
+        say('ana', 'Yo pongo los 1.000 € de mi bolsillo. Gano 200 € al año.'),
+        say('bruno', 'Yo pongo 200 € y pido prestados 800 €. Tras pagar 40 € de intereses, gano 160 €.'),
+        choose('¿Quién tiene mejor negocio?', [
+          opt('Bruno: gana un 80 % sobre su dinero', 'bad', say('lumi', '**ROE** del 80 %, sí. Pero el puesto es idéntico: es la deuda.')),
+          opt('Es el mismo negocio: Bruno solo usa más deuda', 'good', say('lumi', 'Exacto. Los dos puestos ganan 200 € sobre 1.000 €: un 20 %.')),
+          opt('Ana, porque no debe nada', 'ok', say('lumi', 'Corre menos riesgo, sí. Pero el negocio es igual de bueno.')),
+        ]),
+        say('lumi', '**ROE** = beneficio ÷ dinero de los dueños. La deuda lo infla.'),
+        say('lumi', '**ROIC** mide todo el capital, deuda incluida. Cuesta mucho más inflarlo.'),
+      ]),
+      play({
+        title: '¿Crea valor o lo destruye?',
+        intro: 'El dinero tiene un coste: el **coste del capital**, unos 8-10 % al año. Aquí es del **9 %**. ¿Qué empresa crea valor al reinvertir?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Crea valor' }, { label: 'Destruye valor' }],
+          cards: [
+            { icon: 'gem', label: 'ROIC del 25 % durante años', bin: 0, why: 'Cada euro reinvertido rinde casi el triple de lo que cuesta.' },
+            { icon: 'factory', label: 'ROIC del 6 %', bin: 1, why: 'Rinde menos del 9 % que cuesta el dinero.' },
+            { icon: 'store', label: 'Panadería Global: ROIC del 14,6 %', bin: 0, why: 'Supera el coste del capital con holgura.' },
+            { icon: 'alert', label: 'ROE del 40 % gracias a mucha deuda, con ROIC del 5 %', bin: 1, why: 'El ROE brilla por la deuda; el negocio rinde poco.' },
+            { icon: 'rocket', label: 'Crece muy deprisa con un ROIC del 4 %', bin: 1, why: 'Crecer así destruye valor: cuanto más crece, peor.' },
+            { icon: 'shield', label: 'ROIC del 18 % sin deuda', bin: 0, why: 'Gana mucho sobre todo su capital sin depender de la deuda.' },
+          ],
+        },
+        goal: { text: 'Clasifica las seis empresas.', when: [when('done', '==', 6)] },
+        insight: 'Un negocio **crea valor** solo si su **ROIC supera el coste del capital**. Si no lo supera, cuanto más crece, más valor destruye.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Compara cada ROIC con el 9 %. El ROE no basta.', mood: 'THINKING' },
+          { say: '¿Rinde más de lo que cuesta el dinero?', mood: 'HAPPY' },
+        ],
+      }),
+      play({
+        title: 'Las máquinas de componer',
+        intro: 'Imagina una empresa que reinvierte **todo** su beneficio a su ROIC. Su capital es de **1.000 €**. Mira cuánto crece.',
+        widget: { kind: 'growth', initial: 1000, monthly: 0, rate: 8, years: 10, maxInitial: 10000, maxMonthly: 500, maxRate: 30, maxYears: 20, lines: ['simple', 'compound'], controls: ['rate', 'years'] },
+        predict: {
+          prompt: 'Con un ROIC del 20 % reinvertido durante 10 años, ¿por cuánto se multiplica su capital?',
+          options: ['Por 3: un 20 % durante 10 años', 'Por algo más de 6', 'Por 20'],
+          answer: 1,
+          why: 'Un 20 % sobre un capital que no para de crecer: 1,20 multiplicado 10 veces da **6,2**.',
+        },
+        goal: { text: 'En 10 años, busca el ROIC que multiplica el capital por 6 o más.', when: [when('years', '==', 10), when('multiple', '>=', 6)] },
+        insight: 'Los mejores negocios **reinvierten a ROIC altos** durante años: con un 20 %, el capital se multiplica por 6,2 en 10 años. Es un ejemplo, no una promesa.',
+        lumi: [
+          { when: when('multiple', '>=', 6), say: '¡Por más de 6! Eso es componer.', mood: 'CELEBRATE' },
+          { when: when('rate', '<=', 9), say: 'Con un ROIC así, apenas supera el coste del capital.', mood: 'THINKING' },
+          { say: 'Sube el ROIC y mira la curva', mood: 'HAPPY' },
+        ],
+      }),
+      key('ROE y ROIC de Panadería Global', '• **ROE = beneficio neto ÷ patrimonio neto.** 97,5 ÷ 450 = **21,7 %**. Sostenido por encima del **15 %**, es muy bueno.\n• **ROIC = EBIT × (1 − impuestos) ÷ (patrimonio + deuda neta).** 150 × 0,75 ÷ (450 + 320) = **14,6 %**. Debe superar el **coste del capital** (≈ 8-10 %).', 'Busca negocios que conviertan cada euro invertido en mucho más de un euro, año tras año.'),
     ], [
       num('Beneficio neto de 50 M€ y patrimonio neto de 250 M€. ¿Cuál es el ROE?', 20, '%', '50 ÷ 250 = 20 %.'),
       num('EBIT de 200 M€, impuestos del 25 %, patrimonio de 600 M€ y deuda neta de 400 M€. ¿Cuál es el ROIC?', 15, '%', '200 × 0,75 = 150; 150 ÷ (600 + 400) = 15 %.'),
@@ -55,11 +202,43 @@ export default unit({
       order('Coste del capital del 9 %. Ordena de mejor a peor negocio por su ROIC.', ['ROIC del 30 %', 'ROIC del 15 %', 'ROIC del 9 %', 'ROIC del 4 %'], 'Por encima del 9 % crea valor; en el 9 %, ni crea ni destruye; por debajo, lo destruye.'),
       scenario('Laura compara dos empresas. A: ROE del 25 % con deuda neta/EBITDA de 5. B: ROE del 18 %, sin deuda y con ROIC del 18 %. ¿Cuál parece mejor negocio?', [['A: su ROE es mayor', 'Con tanta deuda, ese ROE puede venir del apalancamiento más que del negocio.'], ['B: gana mucho sobre todo su capital sin depender de la deuda', 'Eso: un ROIC del 18 % sin deuda es un negocio de calidad.'], ['No se puede saber nada', 'Con ROE, ROIC y deuda ya puedes formarte una idea bastante buena.']], 1, 'Mira el ROE junto al ROIC y la deuda.'),
       num('Una empresa con ROIC del 20 % reinvierte todo su beneficio a esa tasa durante 10 años. ¿Por cuánto se multiplica su capital? (un decimal)', 6.2, 'veces', '1,20¹⁰ ≈ 6,19. Es la idea de las «máquinas de componer»: un ejemplo, no una promesa.', 2),
-    ], { source: '5.6' }),
+    ], { source: '5.6', minutes: 6, retire: [3, 6, 9] }),
 
     lesson('u17l4', 'Rentabilidad por dividendo y payout', [
-      text('Dos ratios', '• **Rentabilidad por dividendo** = dividendo por acción ÷ precio. Panadería Global paga 0,50 € y cotiza a 15 €: **3,3 %**.\n• **Payout** = dividendo ÷ BPA. 0,50 ÷ 0,975 = **51 %**: reparte la mitad y reinvierte la otra mitad.'),
-      text('Cuándo un dividendo está en peligro', '• **Payout por encima del 80-90 %** de forma continuada, y más aún por encima del 100 %: paga más de lo que gana.\n• **Dividendo mayor que el flujo de caja libre:** se paga con deuda.\n• **Rentabilidad altísima** (10 %, 12 %…): a menudo es porque el precio se ha hundido y el mercado espera un recorte.'),
+      story('Un 12 % de dividendo', [{ id: 'marta', name: 'Marta' }], [
+        say('marta', '¡Mira! Esta acción paga un 12 % de dividendo. Ningún depósito da eso.'),
+        say('marta', 'Eso sí, este año ha caído un 50 %.'),
+        choose('¿Qué crees que pasa?', [
+          opt('Es una ganga: cobra el 12 % y espera', 'bad', say('lumi', 'La rentabilidad ha subido porque el precio se ha hundido, no porque paguen más.')),
+          opt('El mercado espera que recorten el dividendo', 'good', say('lumi', 'Eso suele indicar. Si el precio cae a la mitad, la rentabilidad se duplica.')),
+          opt('Mira primero si gana lo que reparte', 'ok', say('lumi', 'Buena pregunta. Y el precio hundido ya es una pista.')),
+        ]),
+        say('lumi', '**Rentabilidad por dividendo** = dividendo ÷ precio. Panadería Global: 0,50 ÷ 15 = **3,3 %**.'),
+        say('lumi', '**Payout** = dividendo ÷ beneficio. Panadería Global: 0,50 ÷ 0,975 = **51 %**.'),
+      ]),
+      play({
+        title: '¿De dónde sale el dividendo?',
+        intro: 'Un dividendo alto no sirve de nada si mañana lo recortan. ¿**Sostenible** o **en peligro**?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Sostenible' }, { label: 'En peligro' }],
+          cards: [
+            { icon: 'pie', label: 'Reparte la mitad de lo que gana', bin: 0, why: 'Payout del 50 %: reparte y aún reinvierte la otra mitad.' },
+            { icon: 'alert', label: 'Payout del 110 % tres años seguidos', bin: 1, why: 'Paga más de lo que gana: tira de caja o de deuda.' },
+            { icon: 'card', label: 'Paga el dividendo con deuda nueva', bin: 1, why: 'Un dividendo sostenible sale de la caja, no de la deuda.' },
+            { icon: 'cash', label: 'Su caja libre cubre el dividendo dos veces', bin: 0, why: 'Le sobra caja para pagar y para invertir.' },
+            { icon: 'down', label: 'Rinde un 12 % porque la acción se ha hundido', bin: 1, why: 'A menudo, el mercado espera un recorte.' },
+            { icon: 'up', label: 'Payout del 40 % y beneficios creciendo', bin: 0, why: 'Tiene margen de sobra para mantenerlo, o subirlo.' },
+            { icon: 'warning', label: 'El dividendo supera su flujo de caja libre', bin: 1, why: 'Si la caja no llega, la diferencia sale de deuda.' },
+          ],
+        },
+        goal: { text: 'Clasifica los siete dividendos.', when: [when('done', '==', 7)] },
+        insight: 'Antes de mirar cuánto paga, mira **de dónde sale**. Un payout por encima del 80-90 % o un dividendo mayor que la caja libre anuncian un **recorte**.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: '¿Lo paga con lo que gana o con deuda?', mood: 'THINKING' },
+          { say: 'Clasifica cada dividendo', mood: 'HAPPY' },
+        ],
+      }),
       key('El dividendo no es un regalo', 'Cuando una empresa paga 1 € por acción, la acción suele bajar alrededor de 1 € ese día: el dinero pasa de la empresa a tu bolsillo, y Hacienda se lleva su parte. Lo que cuenta es la **rentabilidad total**.', 'Un dividendo sostenible sale de la caja, no de la deuda.'),
     ], [
       num('Una acción cotiza a 40 € y paga 1,60 € de dividendo al año. ¿Cuál es su rentabilidad por dividendo?', 4, '%', '1,60 ÷ 40 = 4 %.'),
@@ -72,12 +251,63 @@ export default unit({
       timed(single('Rápido: precio 20 €, dividendo 1 €. ¿Rentabilidad por dividendo?', ['2 %', '5 %', '20 %'], 1, '1 ÷ 20 = 5 %.'), 10),
       num('Una acción vale 30 € y paga un dividendo de 0,90 €. Sin otras noticias, ¿a qué precio aproximado suele abrir el día en que descuenta el dividendo?', 29.1, '€', '30 − 0,90 = 29,10 €. El dividendo sale del valor de la empresa.'),
       fill('Payout = dividendo por acción ÷ ____.', 'BPA', ['precio', 'ventas', 'deuda'], 'Qué parte del beneficio se reparte.'),
-    ], { source: '5.5' }),
+    ], { source: '5.5', minutes: 6, retire: [4, 5, 7] }),
 
     lesson('u17l5', 'Descontar flujos (DCF) sin miedo', [
-      text('Traer el futuro a hoy', 'Un euro dentro de 10 años vale menos que un euro hoy, porque hoy podrías invertirlo.\n\n**Valor hoy = flujo futuro ÷ (1 + tasa)^años**\n\nCon una tasa del 9 %, 100 € dentro de un año valen hoy 100 ÷ 1,09 = **91,74 €**.'),
-      text('El DCF de Panadería Global', 'FCF de 1 € por acción, que crece un 6 % durante 10 años y luego un 2 % para siempre. Tasa de descuento: 9 %.\n\n• Flujos de los años 1-10, descontados: ≈ **8,6 €**\n• Valor terminal (fórmula de Gordon): FCF del año 11 ÷ (9 % − 2 %) ≈ 26,1 €; traído a hoy: ≈ **11,0 €**\n• **Valor ≈ 19,6 €.** Cotiza a 15 €: un margen del 23 %.'),
-      key('La lección del DCF', 'Cambia un poco las hipótesis:\n\n• Tasa del 10 %: unos **17 €**.\n• Crecimiento del 4 %: unos **16,9 €**.\n• Las dos cosas a la vez: unos **14,7 €**, ya por debajo del precio.\n\nEl DCF sirve para **pensar** («¿qué crecimiento descuenta el precio?»), no para dar una cifra exacta.', 'Si cambias un poco las hipótesis y el valor se desploma, ve con cuidado.'),
+      play({
+        title: 'Traer el futuro a hoy',
+        intro: 'Una promesa: cobrarás **100 €** dentro de unos años, sin nada más por el camino. ¿Cuánto vale hoy? Depende de la **tasa** que exiges.',
+        widget: { kind: 'bond', head: 'Cuánto vale hoy un cobro de 100 € en el futuro', face: 100, coupon: 0, years: 1, rate: 9, maxRate: 15, maxYears: 30 },
+        predict: {
+          prompt: 'Con una tasa del 9 %, ¿cuánto valen hoy 100 € que cobrarás dentro de un año?',
+          options: ['Unos 109 €', 'Unos 92 €', '100 € justos'],
+          answer: 1,
+          why: '100 ÷ 1,09 = **91,74 €**: invirtiendo hoy 91,74 € al 9 %, tendrías 100 € en un año.',
+        },
+        goal: { text: 'Con la tasa al 9 %, busca a cuántos años esos 100 € valen hoy menos de la mitad.', when: [when('rate', '==', 9), when('change', '<=', -50)] },
+        insight: '**Valor hoy = flujo futuro ÷ (1 + tasa)^años.** Al 9 %, 100 € dentro de 9 años valen hoy solo 46 €: cuanto más lejos y más alta la tasa, **menos vale el futuro**.',
+        lumi: [
+          { when: when('change', '<=', -50), say: '¡Menos de la mitad! El tiempo pesa muchísimo.', mood: 'CELEBRATE' },
+          { when: when('rate', '>=', 12), say: 'Si exiges más rentabilidad, el futuro vale menos hoy.', mood: 'THINKING' },
+          { say: 'Mueve los años y mira cuánto vale hoy', mood: 'HAPPY' },
+        ],
+      }),
+      story('El DCF de Leo', [{ id: 'leo', name: 'Leo' }], [
+        say('leo', '¡He hecho el DCF de Panadería Global! Vale 19,6 € y cotiza a 15 €.'),
+        note('Leo supone: caja libre de 1 € por acción, que crece un 6 % durante 10 años y luego un 2 % para siempre. Tasa: 9 %.'),
+        say('leo', 'Un margen del 23 %. ¿Compro ya?'),
+        choose('¿Qué le dices?', [
+          opt('¡Compra! Las cuentas no mienten', 'bad', say('lumi', 'Las cuentas dependen de las hipótesis. Cámbialas un poco y verás.')),
+          opt('Prueba hipótesis algo más prudentes', 'good', say('lumi', 'Bien pensado. Toquemos la tasa y el crecimiento.')),
+          opt('Compra un poco y sigue mirando', 'ok', say('lumi', 'Prudente. Pero antes mira cuánto cambia el valor.')),
+        ]),
+        say('lumi', 'Tasa del 10 %: unos **17 €**. Crecimiento del 4 %: unos **16,9 €**.'),
+        say('lumi', 'Las dos cosas a la vez: **14,7 €**. Ya por debajo del precio.'),
+        say('lumi', 'El DCF sirve para **pensar**, no para dar una cifra exacta.'),
+      ]),
+      play({
+        title: '¿Sube o baja el valor?',
+        intro: 'Un DCF es una máquina de hipótesis. Si tocas una pieza, ¿el valor estimado **sube** o **baja**?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'El valor sube' }, { label: 'El valor baja' }],
+          cards: [
+            { icon: 'percent', label: 'Subes la tasa de descuento del 9 % al 10 %', bin: 1, why: 'Si exiges más, el dinero futuro vale menos hoy.' },
+            { icon: 'down', label: 'Bajas el crecimiento esperado', bin: 1, why: 'Menos caja futura, menos valor hoy.' },
+            { icon: 'timer', label: 'Los flujos llegan antes', bin: 0, why: 'Cuanto antes cobras, menos descuentas.' },
+            { icon: 'bank', label: 'Suben los tipos de interés del mercado', bin: 1, why: 'Con tipos más altos se exige una tasa mayor.' },
+            { icon: 'up', label: 'Subes el crecimiento perpetuo del 2 % al 3 %', bin: 0, why: 'El valor terminal divide entre (tasa − crecimiento): sube.' },
+            { icon: 'scale', label: 'Bajas la tasa del 9 % al 8 %', bin: 0, why: 'El futuro pesa más hoy.' },
+          ],
+        },
+        goal: { text: 'Coloca los seis cambios.', when: [when('done', '==', 6)] },
+        insight: 'Tasa más alta o crecimiento más bajo = **valor más bajo**. Como cada hipótesis mueve mucho el resultado, un DCF da un **rango**, no un número exacto.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Piensa: ¿el dinero futuro vale más o menos hoy?', mood: 'THINKING' },
+          { say: '¿Sube o baja el valor?', mood: 'HAPPY' },
+        ],
+      }),
+      key('Las piezas de un DCF', '1. Estima la **caja libre** de los próximos años.\n2. Descuenta cada flujo a hoy.\n3. Suma el **valor terminal** (fórmula de Gordon): caja libre del año siguiente ÷ (tasa − crecimiento perpetuo).\n4. Compáralo con el precio.\n\nPanadería Global: flujos de 10 años ≈ **8,6 €** + valor terminal (26,1 €, traído a hoy) ≈ **11,0 €** = **19,6 €**.', 'Si cambias un poco las hipótesis y el valor se desploma, ve con cuidado.'),
     ], [
       num('Con una tasa del 10 %, ¿cuánto valen hoy 110 € que cobrarás dentro de un año?', 100, '€', '110 ÷ 1,10 = 100 €.'),
       num('Con una tasa del 8 %, ¿cuánto valen hoy 1.000 € que cobrarás dentro de 5 años?', 680.58, '€', '1,08⁵ ≈ 1,4693; 1.000 ÷ 1,4693 ≈ 680,58 €.'),
@@ -90,11 +320,35 @@ export default unit({
       timed(tf('Un euro dentro de 10 años vale más que un euro hoy.', false, 'Vale menos: hoy podrías invertirlo y tenerlo creciendo 10 años.'), 10),
       order('Ordena los pasos de un DCF simplificado.', ['Estimar el flujo de caja libre de los próximos años', 'Descontar cada flujo a hoy con tu tasa', 'Calcular el valor terminal y descontarlo', 'Sumarlo todo y compararlo con el precio'], 'Futuro, descuento, valor terminal y comparación.'),
       chat(['Mi DCF dice que esta acción vale 47,32 € exactamente 🤓'], '¿Qué le contestas a Lumi?', [['¡Perfecto! Si cotiza a 47,31 €, está barata', 'Un céntimo no es margen: tu cifra puede fallar en varios euros arriba o abajo.'], ['Mejor piensa en un rango y exige un buen margen de seguridad', 'Tienes razón: muevo un punto la tasa y me sale 40 €. ¡Uf!'], ['Los DCF no sirven para nada', 'Sirven, para pensar. No para dar decimales.']], 1, 'Un DCF da un rango orientativo, no una cifra exacta.'),
-    ], { source: '5.8' }),
+    ], { source: '5.8', minutes: 6, retire: [4, 6, 8] }),
 
     lesson('u17l6', 'El CAPE y la valoración del mercado', [
-      text('El PER de todo el mercado', 'El **CAPE** (o PER de Shiller) divide el precio de un índice entre la **media de los beneficios de los últimos 10 años**, ajustados por la inflación. Al usar 10 años, suaviza los altibajos del ciclo económico.'),
-      text('Los datos del S&P 500', '• Media desde 1871: unos **17**.\n• Máximo: **44** en diciembre de 1999, justo antes del estallido de las puntocom.\n• Octubre de 2026: alrededor de **41**, de los niveles más altos de la historia.'),
+      mission({
+        title: 'Vive la burbuja puntocom',
+        intro: 'Finales de 1998. Las tecnológicas están de moda y la bolsa cotiza cada vez más cara. Inviertes **10.000 €** en el Nasdaq 100, con datos reales. Puedes vender cuando quieras.',
+        widget: { kind: 'crash', series: 'series-dotcom', amount: 10000 },
+        goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
+        insight: 'Con el CAPE del S&P 500 en su récord (44, diciembre de 1999), el Nasdaq 100 aún subió hasta marzo de 2000. Después cayó un **83 %** y no recuperó el máximo hasta 2015: **una valoración extrema no dice cuándo**, pero el riesgo era enorme.',
+        lumi: [
+          { when: when('sold', '==', 1), say: 'Has vendido. Mira qué pasa después…', mood: 'THINKING' },
+          { when: when('drop', '<=', -50), say: 'Tus 10.000 € valen menos de la mitad. ¿Aguantas?', mood: 'WORRIED' },
+          { when: when('drop', '>=', 100), say: '¡Más que duplicado! Las valoraciones ya son de récord…', mood: 'HAPPY' },
+          { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
+        ],
+      }),
+      story('«El mercado está carísimo»', [{ id: 'irene', name: 'Irene' }], [
+        note('Octubre de 2026.'),
+        say('irene', 'He leído que el CAPE del S&P 500 está en 41. ¿Eso qué es?'),
+        say('lumi', 'El precio entre la media de beneficios de **10 años**, sin inflación.'),
+        say('lumi', 'Media desde 1871: unos **17**. Récord: **44**, en diciembre de 1999.'),
+        say('irene', '¡Entonces va a caer ya! Lo vendo todo y vuelvo cuando baje.'),
+        choose('¿Qué le dices?', [
+          opt('Vende ya, antes de que caiga', 'bad', say('lumi', 'El CAPE no dice **cuándo**. Puede seguir caro durante años.')),
+          opt('Ajusta lo que esperas ganar y diversifica por países', 'good', say('lumi', 'Eso. Un CAPE alto apunta a **rentabilidades más bajas a 10 años**.')),
+          opt('No hagas nada: el CAPE no sirve', 'ok', say('lumi', 'Sí sirve: para esperar menos, no para adivinar el próximo mes.')),
+        ]),
+        say('lumi', 'Otras regiones cotizan bastante más baratas. Otro motivo para diversificar.'),
+      ]),
       key('Qué dice y qué no', '**Sí:** históricamente, un CAPE alto se ha asociado a **rentabilidades más bajas en los 10 años siguientes**.\n**No:** no dice **cuándo** caerá el mercado; puede seguir caro durante años.\n\nOtras regiones cotizan bastante más baratas: otro argumento para diversificar por países.', 'El CAPE sirve para ajustar expectativas, no para adivinar el próximo mes.'),
     ], [
       trend('Mira el Nasdaq 100 desde finales de 1997 hasta marzo de 2000. ¿Qué tendencia ves?', 'hist-dotcom', 'Alcista', 'Una subida enorme: las valoraciones llegaron a niveles nunca vistos.'),
@@ -108,6 +362,6 @@ export default unit({
       num('Con un CAPE de 41, ¿cuál es la rentabilidad por beneficio implícita (su inverso)?', 2.44, '%', '1 ÷ 41 ≈ 2,44 %. Con un CAPE de 17 sería ≈ 5,9 %: pagar más caro deja menos rentabilidad esperada.', 2),
       scenario('Octubre de 2026: el CAPE del S&P 500 ronda los 41. Marta invierte cada mes en un fondo indexado mundial con un horizonte de 25 años. Lee que «el mercado está carísimo» y quiere venderlo todo. ¿Qué le dirías?', [['Que venda todo y espere la caída', 'El CAPE no dice cuándo: tendría que acertar cuándo salir y cuándo volver.'], ['Que un CAPE alto sugiere expectativas más modestas, no una fecha de caída, y que revise con calma su reparto y su diversificación por países', 'Bien: un fondo mundial ya incluye regiones más baratas, y su plan es a 25 años.'], ['Que compre más con deuda', 'Endeudarse en un mercado caro suma riesgo sobre riesgo.']], 1, 'El CAPE sirve para ajustar expectativas y diversificar, no para entrar y salir del mercado.'),
       timed(single('Rápido: ¿cuál fue el CAPE máximo del S&P 500?', ['44 (1999)', '25 (2008)', '17 (1871)'], 0, 'Diciembre de 1999, justo antes del estallido de las puntocom.'), 12),
-    ], { source: '5.8' }),
+    ], { source: '5.8', minutes: 6, retire: [1, 5, 6, 9, 10] }),
   ],
 })

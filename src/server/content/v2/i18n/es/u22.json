@@ -9,16 +9,48 @@
    "title": "Medias móviles",
    "steps": [
     {
-     "title": "Simple y exponencial",
-     "body": "• **Media simple (SMA):** la media de los últimos N cierres. La SMA 50 suma los últimos 50 cierres y divide entre 50.\n• **Media exponencial (EMA):** da más peso a los cierres recientes, así que reacciona antes.\n\nEn E-Trading puedes activar las de 20, 50 y 200 y la exponencial de 21."
+     "texts": [
+      "Simple o exponencial",
+      "Una **media móvil** resume los últimos cierres. La simple (SMA) y la exponencial (EMA) lo hacen de forma distinta.",
+      "Media simple (SMA)",
+      "Media exponencial (EMA)",
+      "Todos los cierres de la ventana pesan igual",
+      "La SMA 50 suma los últimos 50 cierres y divide entre 50.",
+      "Da más peso a los cierres recientes",
+      "La exponencial pondera más lo último que ha pasado.",
+      "Reacciona antes cuando el precio gira",
+      "Al pesar más lo reciente, se mueve antes que la simple del mismo periodo.",
+      "La de 200 sesiones que se usa como filtro de tendencia",
+      "Precio por encima de la SMA 200: fondo alcista; por debajo, bajista.",
+      "La de 21 sesiones que puedes activar en E-Trading",
+      "En E-Trading tienes las simples de 20, 50 y 200 y la exponencial de 21.",
+      "Clasifica las cinco ideas.",
+      "La **SMA** pesa igual todos los cierres; la **EMA** pesa más los recientes y reacciona antes. Las dos van **detrás del precio**.",
+      "Pista: «exponencial» significa que lo reciente cuenta más.",
+      "¡Bien! Ahora mira qué pasa cuando no hay tendencia.",
+      "¿Simple o exponencial? Clasifica cada idea"
+     ]
+    },
+    {
+     "texts": [
+      "Los latigazos de Leo",
+      "Leo",
+      "Mi regla: compro cuando el precio cruza la media de 20 hacia arriba y vendo cuando la cruza hacia abajo.",
+      "Durante semanas, la acción va de lado.",
+      "He comprado y vendido un montón de veces. Pago comisión y *spread* en cada una… y voy perdiendo.",
+      "¿Qué le ha pasado?",
+      "Mala suerte: la regla es buena",
+      "No es suerte: en un lateral, el precio cruza la media una y otra vez.",
+      "En un lateral, la media da señales falsas",
+      "¡Eso! La media está plana y cada cruce es un **latigazo**, con su coste.",
+      "Debería usar una media aún más corta",
+      "Una media más corta cruza todavía más veces: más latigazos.",
+      "Las medias resumen el pasado: confirman la tendencia **tarde**."
+     ]
     },
     {
      "title": "Cómo se usan",
-     "body": "• **Filtro:** precio por encima de la SMA 200 = tendencia de fondo alcista; por debajo, bajista.\n• **Soporte dinámico:** en tendencias, el precio suele rebotar en la SMA 20 o 50.\n• **Pendiente:** media que sube = tendencia alcista; plana = lateral."
-    },
-    {
-     "title": "Siempre llegan tarde",
-     "body": "Una media resume el pasado: confirma la tendencia con retraso y, en laterales, da muchas señales falsas («latigazos»), cada una con su comisión y su *spread*.",
+     "body": "• **Filtro:** precio por encima de la SMA 200 = tendencia de fondo alcista; por debajo, bajista.\n• **Soporte dinámico:** en tendencias, el precio suele rebotar en la SMA 20 o 50.\n• **Pendiente:** media que sube = tendencia alcista; plana = lateral.\n\nY siempre llegan tarde: en laterales dan muchas señales falsas, cada una con su comisión y su *spread*.",
      "key": "Una media móvil suaviza el precio y muestra la tendencia, siempre con retraso.",
      "tip": "Las medias no predicen: confirman tarde lo que ya está pasando."
     }
@@ -28,16 +60,42 @@
    "title": "Cruce dorado y cruce de la muerte",
    "steps": [
     {
-     "title": "Los dos cruces",
-     "body": "• **Cruce dorado:** la SMA 50 cruza **por encima** de la SMA 200. Señal alcista.\n• **Cruce de la muerte:** la SMA 50 cruza **por debajo** de la SMA 200. Señal bajista.\n\nSon fáciles de ver y salen en las noticias, pero se hacen con dos medias lentas: llegan **muy tarde**."
+     "texts": [
+      "«¡Cruce de la muerte!»",
+      "Bruno",
+      "Titular: «¡Cruce de la muerte en el índice!». Lo vendo todo.",
+      "Bruno invierte a 20 años en un fondo indexado.",
+      "Cruce de la muerte: la media de 50 cruza **por debajo** de la de 200.",
+      "¿Qué le dices?",
+      "Que venda ya: el nombre lo dice todo",
+      "El nombre asusta, pero la señal llega tarde: se hace con dos medias lentas.",
+      "Que es una señal tardía y su plan a 20 años no depende de ella",
+      "¡Eso! Cambiar de plan por un titular suele salir caro.",
+      "Que espere al cruce dorado para decidir",
+      "El **cruce dorado** (la de 50 sobre la de 200) también llega tarde.",
+      "Vamos a ver cuándo llegó uno de verdad, en 2020."
+     ]
     },
     {
-     "title": "Un ejemplo real",
-     "body": "En 2020, el S&P 500 tocó fondo el **23 de marzo**. El cruce de la muerte llegó **una semana después**, el 30 de marzo, cuando lo peor ya había pasado. Quien vendiera por esa señal lo hizo muy cerca del mínimo."
+     "texts": [
+      "Vive marzo de 2020",
+      "Datos reales: el S&P 500 día a día. Inviertes **10.000 €** el 2 de enero de 2020 y puedes vender cuando quieras, por ejemplo con el cruce de la muerte.",
+      "El cruce de la muerte de 2020, ¿llegó antes o después del peor día?",
+      "Antes: avisó a tiempo",
+      "Después: cuando lo peor ya había pasado",
+      "El mismo día",
+      "El mínimo fue el **23 de marzo**; el cruce de la muerte, el **30 de marzo**, una semana después.",
+      "Llega hasta el final, vendas o no.",
+      "Quien vendió por el cruce lo hizo **muy cerca del mínimo**: en agosto, el índice ya había recuperado su máximo de febrero. Un cruce es una **foto tardía** de lo que ya ha pasado.",
+      "Fin del año. ¿Habría servido de algo vender con el cruce?",
+      "Has vendido. Mira qué hace el índice después…",
+      "Un 25 % abajo, y las medias lentas aún no han cruzado.",
+      "Dale a empezar. Puedes vender cuando quieras"
+     ]
     },
     {
      "title": "La evidencia",
-     "body": "Brock, Lakonishok y LeBaron (1992) vieron que reglas sencillas de medias parecían funcionar en el Dow Jones de 1897 a 1986. Corrigiendo el sesgo de búsqueda de datos, Sullivan, Timmermann y White (1999) debilitaron mucho esos resultados, y su poder predictivo en índices bajó o desapareció tras 1986.",
+     "body": "Brock, Lakonishok y LeBaron (1992) vieron que reglas sencillas de medias parecían funcionar en el Dow Jones de 1897 a 1986. Corrigiendo el sesgo de búsqueda de datos, Sullivan, Timmermann y White (1999) debilitaron mucho esos resultados, y su poder predictivo en índices bajó o desapareció tras 1986.\n\nSu uso más sensato: la SMA 200 como **filtro de riesgo** en las grandes tendencias bajistas, con latigazos por el camino.",
      "key": "Los cruces confirman tarde: sirven más como filtro de riesgo que para ganar operación a operación.",
      "tip": "Un cruce es una foto tardía de lo que ya ha pasado."
     }
@@ -47,16 +105,50 @@
    "title": "El RSI",
    "steps": [
     {
-     "title": "Qué es",
-     "body": "El **RSI** (Wilder, 1978) compara la fuerza de las subidas con la de las bajadas de los últimos **14** periodos. Va de **0 a 100**.\n\n• Por encima de **70**: «sobrecompra» (ha subido mucho y seguido).\n• Por debajo de **30**: «sobreventa»."
+     "texts": [
+      "Sobrecompra… y sigue subiendo",
+      "Sara",
+      "Mi acción tiene el RSI en 78. ¡Está sobrecomprada! Voy a venderla.",
+      "¿Qué le dices?",
+      "Bien hecho: pasado 70, cae",
+      "En tendencias fuertes, el RSI puede pasar **semanas** por encima de 70.",
+      "Que un RSI alto dice que ha subido mucho, no que vaya a caer",
+      "¡Exacto! La sobrecompra describe el pasado reciente, no el futuro.",
+      "Que espere a que pase de 90",
+      "No hay número mágico: el RSI no dice si ni cuándo caerá.",
+      "Tres semanas después, el RSI sigue por encima de 75 y el precio, subiendo.",
+      "Menos mal que no vendí…",
+      "Muchos principiantes pierden dinero vendiendo algo que no deja de subir."
+     ]
     },
     {
-     "title": "El error más común",
-     "body": "Vender porque el RSI pasa de 70. En una tendencia alcista fuerte, el RSI puede quedarse en 70–80 **semanas** mientras el precio sigue subiendo.\n\nUsos más sensatos:\n• **Régimen:** en tendencias alcistas se mueve entre 40 y 80; en bajistas, entre 20 y 60.\n• **Sobreventa dentro de una tendencia alcista:** posible zona de interés, con stop."
+     "texts": [
+      "Buena lectura o error típico",
+      "El **RSI** va de 0 a 100: por encima de 70, «sobrecompra»; por debajo de 30, «sobreventa». ¿Qué lecturas tienen sentido?",
+      "Lectura sensata",
+      "Error típico",
+      "RSI en 78: vendo, que va a caer",
+      "La sobrecompra no es una señal de venta por sí sola.",
+      "El RSI pasa meses entre 40 y 80: régimen alcista",
+      "En tendencias alcistas se mueve entre 40 y 80; en las bajistas, entre 20 y 60.",
+      "Precio con un máximo más alto y RSI con uno más bajo: la subida pierde fuerza",
+      "Es una divergencia bajista: una pista, no una orden.",
+      "RSI en 25: rebote seguro",
+      "Nada es seguro: puede seguir bajando si la caída se alarga.",
+      "Sobreventa dentro de una tendencia alcista: zona de interés, con stop",
+      "Es el uso más sensato de la sobreventa: una pista, con stop.",
+      "Divergencia bajista: vendo todo hoy mismo",
+      "Las divergencias pueden durar mucho antes de que el precio gire.",
+      "Clasifica las seis lecturas.",
+      "Un RSI alto significa **«ha subido mucho»**, no «va a caer». Sirve para leer el **régimen** y las divergencias, siempre con stop.",
+      "Pista: desconfía de las lecturas con «seguro» o «ya».",
+      "Muy bien. El RSI describe; no adivina.",
+      "¿Lectura sensata o error? Clasifica cada una"
+     ]
     },
     {
-     "title": "Divergencias",
-     "body": "Si el precio marca un **máximo más alto** y el RSI un **máximo más bajo**, hay una **divergencia bajista**: la subida pierde fuerza. Pueden durar mucho antes de que el precio gire, así que nunca bastan solas.",
+     "title": "Qué es el RSI",
+     "body": "El **RSI** (Wilder, 1978) compara la fuerza de las subidas con la de las bajadas de los últimos **14** periodos. Va de **0 a 100**.\n\n• Por encima de **70**: «sobrecompra» (ha subido mucho y seguido).\n• Por debajo de **30**: «sobreventa».\n• **Divergencia bajista:** precio con un máximo más alto y RSI con uno más bajo. Puede durar mucho antes de que el precio gire, así que nunca basta sola.",
      "key": "Un RSI alto no significa «va a caer»: significa «ha subido mucho».",
      "tip": "Sobrecompra y subida pueden convivir mucho tiempo."
     }
@@ -66,16 +158,47 @@
    "title": "El MACD",
    "steps": [
     {
+     "texts": [
+      "¿Qué dice el MACD?",
+      "El **MACD** mide el impulso con dos medias exponenciales y una línea de señal. Clasifica cada lectura.",
+      "Impulso alcista que mejora",
+      "Impulso que se frena o bajista",
+      "El MACD cruza por encima de su línea de señal",
+      "El impulso alcista aumenta.",
+      "El histograma se encoge día tras día",
+      "La distancia entre las dos líneas se reduce: el impulso se frena.",
+      "El MACD está por encima de cero",
+      "La EMA de 12 va por encima de la de 26: tendencia alcista.",
+      "El MACD está por debajo de cero",
+      "La media corta va por debajo de la larga.",
+      "El precio sube y el MACD baja",
+      "Es una divergencia bajista, como en el RSI.",
+      "Clasifica las cinco lecturas.",
+      "El MACD habla de **impulso**: cruces con la señal, posición frente a cero e histograma. Pero está hecho con medias, así que **llega tarde**.",
+      "Pista: el MACD es la media corta menos la larga.",
+      "¡Bien! Ya lees sus tres piezas.",
+      "Clasifica cada lectura"
+     ]
+    },
+    {
+     "texts": [
+      "El cruce que llegó tarde",
+      "Nico",
+      "La acción lleva semanas subiendo con fuerza.",
+      "¡El MACD acaba de cruzar al alza! Compro ya.",
+      "¿Qué riesgo corre Nico?",
+      "Ninguno: el cruce dice «compra»",
+      "El cruce dice «el impulso mejora», no «compra».",
+      "Que la señal llegue cuando el movimiento ya se agota",
+      "¡Eso! Está hecho con medias y hereda su **retraso**.",
+      "Que el MACD esté mal calculado",
+      "El cálculo está bien: el problema es que resume el pasado.",
+      "Y en laterales, como las medias, da muchas señales falsas."
+     ]
+    },
+    {
      "title": "Cómo se construye",
-     "body": "Creado por Gerald Appel, el MACD (12, 26, 9) tiene tres piezas:\n\n• **Línea MACD:** EMA de 12 − EMA de 26.\n• **Línea de señal:** EMA de 9 de la línea MACD.\n• **Histograma:** la diferencia entre las dos."
-    },
-    {
-     "title": "Cómo se lee",
-     "body": "• MACD **cruza por encima** de la señal: el impulso alcista aumenta.\n• MACD **por encima de cero**: la media corta está sobre la larga (tendencia alcista).\n• **Histograma que se encoge:** el impulso se frena.\n• También tiene **divergencias**, como el RSI."
-    },
-    {
-     "title": "Su gran defecto",
-     "body": "Está hecho con medias, así que hereda sus problemas: **llega tarde** y da señales falsas en laterales.",
+     "body": "Creado por Gerald Appel, el MACD (12, 26, 9) tiene tres piezas:\n\n• **Línea MACD:** EMA de 12 − EMA de 26.\n• **Línea de señal:** EMA de 9 de la línea MACD.\n• **Histograma:** la diferencia entre las dos.\n\nTambién tiene **divergencias**, como el RSI.",
      "key": "El MACD mide el impulso de la tendencia.",
      "tip": "Un MACD que cruza al alza dice «el impulso mejora», no «compra»."
     }
@@ -85,17 +208,42 @@
    "title": "Bandas de Bollinger y ATR",
    "steps": [
     {
-     "title": "Bandas de Bollinger (20, 2)",
-     "body": "Creadas por John Bollinger: una **media de 20** en el centro y dos bandas a **2 desviaciones típicas**.\n\n• **Se estrechan:** volatilidad baja; suele preceder a un movimiento fuerte (*squeeze*), sin decir hacia dónde.\n• En tendencias fuertes, el precio puede **caminar** por la banda superior: tocarla no es vender.\n• En laterales, los toques de los extremos suelen volver hacia la media."
+     "texts": [
+      "Un stop dentro del ruido",
+      "Velas reales de bitcoin: según su **ATR**, se mueve de media casi un **2 % al día**. Compras al último precio: ¿dónde va el stop?",
+      "Si pones el stop a un 1 %, menos de lo que se mueve en un día normal…",
+      "Aguanta: un 1 % ya es bastante",
+      "Lo más probable es que salte por puro ruido",
+      "Da igual dónde lo pongas",
+      "Un stop dentro del movimiento diario normal salta casi seguro. Aquí, cualquier stop a menos de un 2 % saltó.",
+      "Aleja el stop a unas 2 veces el ATR (un 4 %) y mira qué pasa.",
+      "La **volatilidad** decide la distancia del stop: muchos lo ponen a 2–3 veces el **ATR**. Dentro del ruido normal, salta sin motivo.",
+      "¡Objetivo! Esta vez el ruido no te ha sacado.",
+      "Saltó: ese stop estaba dentro del movimiento diario normal.",
+      "Ese stop está más cerca de lo que se mueve en un día.",
+      "Coloca el stop y dale a ver qué pasó"
+     ]
     },
     {
-     "title": "El ATR",
-     "body": "El **ATR** (*Average True Range*), también de Wilder, mide cuánto se mueve de media el precio en cada periodo, normalmente con 14.\n\nEl **rango verdadero** de un día es el mayor de: máximo − mínimo, |máximo − cierre anterior| o |mínimo − cierre anterior|. Así cuenta también los huecos. No dice la dirección: solo cuánto se mueve."
+     "texts": [
+      "Más lejos, menos importe",
+      "Cuenta de **10.000 €** y un **1 %** de riesgo: 100 €. Si el stop va más lejos, ¿qué pasa con lo que compras?",
+      "Pasas el stop del 2 % al 8 %. Para arriesgar los mismos 100 €, la posición…",
+      "Se queda igual",
+      "Baja a la cuarta parte",
+      "Se multiplica por cuatro",
+      "Con el stop al 2 %, la posición es de **5.000 €**; al 8 %, de **1.250 €**. Cuatro veces más lejos, cuatro veces menos.",
+      "Pon el stop al 8 % sin cambiar el riesgo.",
+      "Cuanto más volátil el activo, **más lejos el stop y menor el importe**. Tu riesgo en euros no cambia.",
+      "Deja el riesgo en el 1 %: lo que cambia es el stop.",
+      "Mira la barra: con el stop lejos, compras mucho menos.",
+      "Aleja el stop y mira la posición"
+     ]
     },
     {
-     "title": "El ATR para el stop",
-     "body": "Un stop demasiado cerca salta por puro ruido. Con 10.000 € y un 1 % de riesgo, prueba un stop al 2 % y otro al 8 %: la posición pasa de 5.000 € a 1.250 €. Cuanto más volátil el activo, más lejos el stop y menor el importe.",
-     "tip": "La volatilidad decide la distancia del stop; tu riesgo máximo decide el tamaño."
+     "title": "Bollinger y el ATR",
+     "body": "**Bandas de Bollinger (20, 2):** una media de 20 en el centro y dos bandas a 2 desviaciones típicas.\n• **Se estrechan:** volatilidad baja; suele preceder a un movimiento fuerte (*squeeze*), sin decir hacia dónde.\n• En tendencias fuertes, el precio puede **caminar** por la banda superior: tocarla no es vender.\n\nEl **ATR** (Wilder) mide cuánto se mueve el precio de media, normalmente en 14 periodos. Su **rango verdadero** cuenta también los huecos. No dice la dirección.",
+     "key": "La volatilidad decide la distancia del stop; tu riesgo máximo decide el tamaño."
     }
    ]
   },
@@ -103,16 +251,51 @@
    "title": "Fibonacci sin magia",
    "steps": [
     {
-     "title": "Qué es",
-     "body": "Tras un movimiento fuerte, el precio suele **retroceder una parte** antes de seguir. El retroceso de Fibonacci marca el **23,6 %, 38,2 %, 50 %, 61,8 % y 78,6 %** del movimiento. Vienen de la sucesión 1, 1, 2, 3, 5, 8, 13…, cuya proporción tiende a 1,618.\n\nEl 50 % no es de Fibonacci, pero se incluye porque se usa mucho."
+     "texts": [
+      "Los niveles de la herramienta",
+      "Tras un movimiento fuerte, el precio suele **retroceder una parte** antes de seguir. ¿Qué porcentajes marca el retroceso de Fibonacci?",
+      "Nivel de Fibonacci",
+      "Se usa, pero no es de Fibonacci",
+      "No forma parte",
+      "23,6 %",
+      "Es el primero de los niveles.",
+      "38,2 %",
+      "Muy vigilado en tendencias alcistas.",
+      "50 %",
+      "No sale de la sucesión, pero se incluye porque se usa mucho.",
+      "61,8 %",
+      "Viene de la proporción 1,618 de la sucesión.",
+      "78,6 %",
+      "El más profundo de los niveles.",
+      "90 %",
+      "No forma parte de la herramienta.",
+      "Clasifica los seis porcentajes.",
+      "Los retrocesos marcan el **23,6, 38,2, 61,8 y 78,6 %** del movimiento, y el **50 %** se añade porque se usa mucho. Salen de la sucesión 1, 1, 2, 3, 5, 8, 13…, cuya proporción tiende a 1,618.",
+      "Pista: los de Fibonacci tienen decimales «raros».",
+      "Bien. Fíjate en lo juntos que están.",
+      "Clasifica cada porcentaje"
+     ]
     },
     {
-     "title": "Cómo se calcula",
-     "body": "Subida de 100 € a 200 € (movimiento de 100 €):\n\n• Retroceso del 38,2 % → 200 − 38,2 = **161,80 €**.\n• Del 50 % → **150 €**.\n• Del 61,8 % → **138,20 €**.\n\nEn tendencia alcista, muchos buscan zonas de compra entre el 38,2 y el 61,8 %, sobre todo si coinciden con un soporte o una media."
+     "texts": [
+      "«Fibonacci nunca falla»",
+      "Laura",
+      "Mira: subió de 100 € a 200 € y rebotó justo en 138,20 €, el 61,8 %.",
+      "¡Fibonacci nunca falla!",
+      "¿Qué le dices?",
+      "Que tiene razón: ahí está la prueba",
+      "Un caso visto a posteriori no prueba nada.",
+      "Que con cinco niveles casi siempre se toca alguno",
+      "¡Eso! Habría que probarlo en muchos casos, no en uno elegido.",
+      "Que use mejor el 90 %",
+      "Cambiar de número no arregla nada: es buscar a posteriori lo que encaja.",
+      "Ahí, el 38,2 % cae en 161,80 € y el 50 %, en 150 €.",
+      "Con cinco líneas tan juntas, el precio casi siempre toca alguna."
+     ]
     },
     {
      "title": "Escepticismo",
-     "body": "No hay pruebas sólidas de que estos niveles funcionen mejor que otros porcentajes. Con cinco niveles tan juntos, el precio casi siempre «respeta» alguno, y es fácil verlo a posteriori. Puede funcionar en parte porque mucha gente pone órdenes ahí.",
+     "body": "No hay pruebas sólidas de que estos niveles funcionen mejor que otros porcentajes. Puede funcionar en parte porque mucha gente pone órdenes ahí.\n\nUso razonable: en tendencia alcista, muchos buscan zonas de compra entre el 38,2 y el 61,8 %, sobre todo si coinciden con un soporte o una media.",
      "key": "Fibonacci organiza zonas de retroceso; no predice.",
      "tip": "Si trazas cinco líneas, el precio siempre tocará alguna. No es magia, es estadística."
     }
@@ -122,16 +305,47 @@
    "title": "Volumen avanzado: OBV y VWAP",
    "steps": [
     {
-     "title": "OBV: el volumen acumulado",
-     "body": "El **OBV** (*On-Balance Volume*), popularizado por Joseph Granville en 1963, es un total acumulado:\n\n• Si el día cierra **al alza**, suma el volumen del día.\n• Si cierra **a la baja**, lo resta.\n\nSu valor absoluto no importa: se mira su **dirección**. Si el precio sube y el OBV también, el volumen acompaña; si el precio sube y el OBV baja, hay una divergencia."
+     "texts": [
+      "Construye el OBV",
+      "El **OBV** suma el volumen de los días que **cierran** al alza y resta el de los que cierran a la baja. Una semana de una acción:",
+      "Suma su volumen",
+      "Resta su volumen",
+      "Lunes: cierra por encima del viernes, con 1.000 acciones",
+      "Cierre al alza: suma 1.000.",
+      "Martes: abre con fuerza, pero cierra por debajo del lunes. 800 acciones",
+      "Solo cuenta el cierre: resta 800.",
+      "Miércoles: cierra por encima del martes, con 1.500 acciones",
+      "Cierre al alza: suma 1.500.",
+      "Jueves: cae a media sesión, pero cierra por encima del miércoles. 600 acciones",
+      "Lo que pasó durante el día no importa: cerró al alza y suma 600.",
+      "Viernes: cierra por debajo del jueves, con 1.200 acciones",
+      "Cierre a la baja: resta 1.200.",
+      "Coloca los cinco días.",
+      "OBV de la semana: 1.000 − 800 + 1.500 + 600 − 1.200 = **1.100 acciones**. Su valor no importa: importa su **dirección** frente al precio.",
+      "Fíjate solo en el cierre, no en lo que pasó durante el día.",
+      "¡Bien! Así se va acumulando, día a día.",
+      "¿Suma o resta? Mira cómo cierra cada día"
+     ]
     },
     {
-     "title": "VWAP: el precio medio ponderado",
-     "body": "El **VWAP** (*Volume-Weighted Average Price*) es el precio medio de la sesión ponderado por el volumen: suma de (precio × volumen) ÷ volumen total. Se reinicia cada día.\n\nLos grandes inversores lo usan como **referencia de ejecución**: comprar por debajo del VWAP del día es haber comprado mejor que la media."
+     "texts": [
+      "Por debajo del VWAP",
+      "Marta",
+      "Marta trabaja en un fondo. Hoy tenía que comprar muchas acciones de una empresa.",
+      "Al cerrar, mi precio medio ha quedado por debajo del VWAP del día.",
+      "¿Lo ha hecho bien?",
+      "Sí: ha comprado mejor que la media del día",
+      "¡Eso! El VWAP es el precio medio ponderado por volumen: su **referencia**.",
+      "No: tendría que haber comprado por encima",
+      "Al revés: comprar por debajo del VWAP es comprar mejor que la media.",
+      "Da igual: el VWAP solo sirve para predecir",
+      "No predice nada: sirve para medir si has ejecutado bien.",
+      "Es la suma de (precio × volumen) ÷ volumen total. Se reinicia cada día."
+     ]
     },
     {
      "title": "Los mismos límites",
-     "body": "Los dos dependen de un volumen fiable: en divisas y cripto, el dato es parcial. Y, como todo indicador, describen lo que ya ha pasado.",
+     "body": "Los dos dependen de un volumen fiable: en divisas y cripto, el dato es parcial. Y, como todo indicador, describen lo que ya ha pasado.\n\nSi el precio sube y el OBV también, el volumen acompaña; si el precio sube y el OBV baja, hay una **divergencia**: una pista, no una señal suficiente.",
      "key": "El OBV mira si el volumen acompaña; el VWAP, a qué precio medio se ha negociado.",
      "tip": "El volumen es la huella de la gente detrás del precio; estos indicadores la ordenan."
     }
@@ -204,23 +418,6 @@
    "explanation": "Una media describe el pasado con retraso: no dice qué pasará en las próximas 10 sesiones.",
    "horizon": "las 10 sesiones siguientes"
   },
-  "u22l1-8": {
-   "prompt": "¿Cuál es el principal defecto de las medias móviles?",
-   "options": [
-    "Solo funcionan en cripto",
-    "Son muy difíciles de calcular",
-    "Llegan tarde y dan señales falsas en laterales"
-   ],
-   "explanation": "Al resumir el pasado, siempre van detrás del precio. En laterales, el precio las cruza una y otra vez."
-  },
-  "u22l1-9": {
-   "prompt": "La media exponencial reacciona antes que la simple del mismo periodo.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Da más peso a los cierres recientes."
-  },
   "u22l1-10": {
    "prompt": "Según la regla del filtro, ¿tendencia de fondo alcista o bajista?",
    "options": [
@@ -235,22 +432,6 @@
     "Fondo bajista"
    ]
   },
-  "u22l2-1": {
-   "prompt": "Un cruce dorado es cuando la SMA 50 cruza por encima de la SMA 200.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "El cruce de la muerte es lo contrario: la SMA 50 cruza por debajo."
-  },
-  "u22l2-2": {
-   "prompt": "En 2020, el cruce de la muerte del S&P 500 llegó antes del mínimo del mercado.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Llegó el 30 de marzo, una semana después del mínimo del 23 de marzo."
-  },
   "u22l2-3": {
    "prompt": "Sullivan, Timmermann y White reforzaron los resultados de las reglas de medias móviles.",
    "options": [
@@ -258,14 +439,6 @@
     "Falso"
    ],
    "explanation": "Al revés: al corregir el sesgo de búsqueda de datos, los debilitaron mucho."
-  },
-  "u22l2-4": {
-   "prompt": "En un mercado lateral, los cruces de medias suelen dar muchas señales falsas.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Sin tendencia, las medias se entrelazan y cada cruce es un latigazo con su coste."
   },
   "u22l2-5": {
    "prompt": "S&P 500, 8 de septiembre de 2008: casi un año después de su máximo de octubre de 2007, el índice sigue por debajo. ¿Qué crees que pasó en los meses siguientes?",
@@ -284,20 +457,6 @@
    ],
    "explanation": "En 10 sesiones, un cruce de medias lentas apenas tiene nada que decir: está pensado para tendencias de meses.",
    "horizon": "las 10 sesiones siguientes"
-  },
-  "u22l2-7": {
-   "prompt": "Bruno lee el titular «¡Cruce de la muerte en el índice!». Invierte a 20 años en un fondo indexado y quiere venderlo todo. ¿Qué le dices?",
-   "options": [
-    "Que es una señal tardía y que su plan a 20 años no depende de un cruce",
-    "Que compre el doble con un préstamo",
-    "Que venda ya: el nombre lo dice todo"
-   ],
-   "explanation": "Los cruces son herramientas de seguimiento de tendencia, no alarmas para un plan a largo plazo.",
-   "feedback": [
-    "Eso: para un inversor a largo plazo, cambiar de plan por un titular suele salir caro.",
-    "Endeudarse para apostar contra una señal tampoco es un plan.",
-    "El nombre asusta, pero la señal llega tarde: en 2020 apareció una semana después del mínimo."
-   ]
   },
   "u22l2-8": {
    "prompt": "Según la evidencia, ¿para qué ha mostrado más utilidad la SMA 200?",
@@ -332,15 +491,6 @@
     "Lateral"
    ],
    "explanation": "En un lateral, las medias se aplanan y se cruzan una y otra vez: es el terreno de los latigazos."
-  },
-  "u22l3-1": {
-   "prompt": "El RSI de una acción lleva tres semanas por encima de 75 y el precio sigue subiendo. ¿Qué es lo más prudente pensar?",
-   "options": [
-    "Que en tendencias fuertes el RSI puede seguir alto mucho tiempo",
-    "Que el RSI está roto",
-    "Que hay que vender en corto ya"
-   ],
-   "explanation": "Sobrecompra no es una señal de venta por sí sola. Muchos principiantes pierden dinero vendiendo algo que no deja de subir."
   },
   "u22l3-2": {
    "prompt": "¿En qué zona está el RSI?",
@@ -404,55 +554,6 @@
    "explanation": "Un oscilador resume el impulso reciente; el siguiente tramo puede continuar o girar.",
    "horizon": "las 10 sesiones siguientes"
   },
-  "u22l3-8": {
-   "prompt": "En tendencias alcistas, el RSI suele moverse entre 40 y 80.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "En las bajistas, entre 20 y 60. Por eso sirve como filtro de régimen."
-  },
-  "u22l3-9": {
-   "prompt": "Una acción en tendencia alcista de fondo corrige y su RSI baja a 32. Ana piensa: «sobreventa = rebote seguro». ¿Qué le matizas?",
-   "options": [
-    "Que con el RSI en 32 hay que vender",
-    "Que tiene razón: es una compra segura",
-    "Que puede ser una zona de interés, pero sin certeza y siempre con stop"
-   ],
-   "explanation": "Sobreventa en una tendencia alcista es una pista razonable; nunca una certeza.",
-   "feedback": [
-    "No hay tal regla: un RSI bajo en una tendencia alcista suele leerse al revés.",
-    "Nada es seguro: el RSI puede seguir bajando si la corrección se alarga.",
-    "Eso: dentro de una tendencia alcista, la sobreventa es una pista, no una garantía."
-   ]
-  },
-  "u22l3-10": {
-   "prompt": "Rápido: ¿entre qué valores se mueve el RSI?",
-   "options": [
-    "De 0 a 14",
-    "De 0 a 100",
-    "De −1 a 1"
-   ],
-   "explanation": "Va de 0 a 100; 14 es el número de periodos habitual."
-  },
-  "u22l3-11": {
-   "prompt": "¿Qué le dices?",
-   "options": [
-    "Significa que ha subido mucho y deprisa; no dice si ni cuándo va a caer",
-    "El RSI solo funciona en cripto",
-    "Sí, en cuanto pasa de 70 cae"
-   ],
-   "explanation": "Sobrecompra significa «ha subido mucho», no «va a caer».",
-   "feedback": [
-    "¡Exacto! La sobrecompra describe el pasado reciente, no el futuro.",
-    "Se calcula igual en cualquier activo; el problema es leerlo como una predicción.",
-    "En tendencias fuertes, el RSI puede pasar semanas por encima de 70 mientras el precio sigue subiendo."
-   ],
-   "lines": [
-    "Mi acción tiene el RSI en 78 😱",
-    "¡Está sobrecomprada! ¿Eso significa que va a caer?"
-   ]
-  },
   "u22l4-1": {
    "prompt": "La línea MACD es la EMA de 12 menos la EMA de ____.",
    "options": [
@@ -485,22 +586,6 @@
    "explanation": "4 − 3,2 = 0,8. Si en los días siguientes se encoge, el impulso se está frenando.",
    "unit": "puntos"
   },
-  "u22l4-5": {
-   "prompt": "Empareja cada lectura del MACD con su significado.",
-   "options": [
-    "MACD cruza por encima de la señal",
-    "MACD por encima de cero",
-    "Histograma que se encoge",
-    "Precio sube y MACD baja"
-   ],
-   "explanation": "El MACD habla de impulso, no de precios futuros.",
-   "right": [
-    "Media corta por encima de la larga",
-    "El impulso se frena",
-    "Divergencia bajista",
-    "El impulso alcista aumenta"
-   ]
-  },
   "u22l4-6": {
    "prompt": "En tramos así, la media corta suele ir por encima de la larga. ¿Qué tendencia es? (Amazon · cierres cada 3 sesiones · marzo–mayo de 2026)",
    "options": [
@@ -519,32 +604,6 @@
    "explanation": "El MACD resume lo que ya hicieron las medias: confirma el impulso con retraso, no anticipa las próximas sesiones.",
    "horizon": "las 10 sesiones siguientes"
   },
-  "u22l4-8": {
-   "prompt": "Otro gráfico real. ¿Sube o baja en las 10 sesiones siguientes?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Un cruce del MACD puede llegar justo cuando el movimiento se agota: ese es el precio del retraso.",
-   "horizon": "las 10 sesiones siguientes"
-  },
-  "u22l4-9": {
-   "prompt": "¿Qué comparte el MACD con las medias móviles?",
-   "options": [
-    "Que llega tarde y falla en laterales",
-    "Que predice el futuro",
-    "Que mide el volumen"
-   ],
-   "explanation": "Está construido con medias exponenciales, así que hereda su retraso."
-  },
-  "u22l4-10": {
-   "prompt": "Si el MACD está por debajo de cero, la EMA de 12 está por debajo de la EMA de 26.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "MACD = EMA 12 − EMA 26: si es negativo, la corta está por debajo."
-  },
   "u22l5-1": {
    "prompt": "Media de 20 sesiones: 50 €. Desviación típica: 2 €. ¿Dónde está la banda superior de Bollinger (20, 2)?",
    "options": [],
@@ -562,12 +621,6 @@
    "options": [],
    "explanation": "50 − 2 × 2 = 46 €.",
    "unit": "€"
-  },
-  "u22l5-4": {
-   "prompt": "Compras a 50 € con el stop en 46 €. Tu cartera es de 10.000 € y arriesgas como mucho un 1 %. ¿Cuántas acciones puedes comprar?",
-   "options": [],
-   "explanation": "1 % de 10.000 = 100 € de riesgo. 100 ÷ 4 = 25 acciones, unos 1.250 € invertidos.",
-   "unit": "acciones"
   },
   "u22l5-5": {
    "prompt": "Coloca el stop por debajo del mínimo reciente, dejando margen para la volatilidad normal del activo.",
@@ -588,37 +641,6 @@
    ],
    "explanation": "El squeeze avisa de que puede venir un movimiento, no de hacia dónde."
   },
-  "u22l5-8": {
-   "prompt": "Si el precio toca la banda superior de Bollinger, hay que vender.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "En tendencias fuertes, el precio puede caminar por la banda superior durante días."
-  },
-  "u22l5-9": {
-   "prompt": "Rápido: ¿qué mide el ATR?",
-   "options": [
-    "Cuánto se mueve el precio de media",
-    "El volumen",
-    "La dirección de la tendencia"
-   ],
-   "explanation": "Mide volatilidad: cuánto, no hacia dónde."
-  },
-  "u22l5-10": {
-   "prompt": "Bruno pone siempre el stop a un 0,5 % de la entrada, sea cual sea el activo. En una cripto que se mueve un 4 % al día, le salta casi siempre. ¿Qué debería cambiar?",
-   "options": [
-    "Nada: es mala suerte",
-    "Adaptar la distancia del stop a la volatilidad (por ejemplo, con el ATR) y reducir el tamaño",
-    "Quitar el stop"
-   ],
-   "explanation": "La distancia del stop depende de la volatilidad; el tamaño, de cuánto quieres arriesgar.",
-   "feedback": [
-    "No es suerte: un stop dentro del ruido diario salta casi seguro.",
-    "Eso: stop más lejos y menos importe, para que el riesgo en euros siga siendo el mismo.",
-    "Sin stop, una sola mala operación puede costar muchísimo."
-   ]
-  },
   "u22l6-1": {
    "prompt": "Una acción sube de 100 € a 200 €. ¿A qué precio está el retroceso del 61,8 %?",
    "options": [],
@@ -637,14 +659,6 @@
    "explanation": "30 − 0,382 × 20 = 30 − 7,64 = 22,36 €.",
    "unit": "€"
   },
-  "u22l6-4": {
-   "prompt": "Hay pruebas sólidas de que los niveles de Fibonacci predicen los giros mejor que otros porcentajes.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "No hay evidencia rigurosa de que sean especiales."
-  },
   "u22l6-5": {
    "prompt": "El nivel del 50 % no sale de la sucesión de Fibonacci.",
    "options": [
@@ -662,47 +676,6 @@
    "prompt": "En esta subida, toca el máximo del movimiento: desde ahí se mediría el retroceso (Microsoft · cierres cada 3 sesiones · junio–agosto de 2026)",
    "options": [],
    "explanation": "El máximo llegó antes del final y el precio ya retrocedía. Ese retroceso se mediría en porcentaje de toda la subida."
-  },
-  "u22l6-8": {
-   "prompt": "¿Qué niveles marca el retroceso de Fibonacci? Marca todos.",
-   "options": [
-    "61,8 %",
-    "78,6 %",
-    "90 %",
-    "23,6 %",
-    "38,2 %"
-   ],
-   "explanation": "También el 50 %, que no es de Fibonacci pero se usa mucho. El 90 % no forma parte de la herramienta."
-  },
-  "u22l6-9": {
-   "prompt": "Laura traza Fibonacci sobre un gráfico pasado y ve que el precio rebotó justo en el 61,8 %. Concluye que «Fibonacci nunca falla». ¿Qué le dices?",
-   "options": [
-    "Que con cinco niveles es fácil encontrar uno que «funcionó»; lo honesto es probarlo en muchos casos",
-    "Que tiene razón: ahí está la prueba",
-    "Que use mejor el 90 %"
-   ],
-   "explanation": "Los aciertos vistos a posteriori engañan: Fibonacci organiza zonas, no adivina.",
-   "feedback": [
-    "Eso: el ojo encuentra patrones a posteriori. Por eso se usa como zona, no como predicción.",
-    "Un caso visto a posteriori no prueba nada: con cinco niveles, casi siempre se toca alguno.",
-    "Cambiar de número no arregla el problema: es buscar a posteriori lo que encaja."
-   ]
-  },
-  "u22l6-10": {
-   "prompt": "La proporción de la sucesión de Fibonacci tiende al número áureo, aproximadamente ____.",
-   "options": [
-    "3,14",
-    "2,718",
-    "1,414",
-    "1,618"
-   ],
-   "explanation": "El número áureo es 1,618…; 3,14 es pi, 2,718 es e y 1,414 es la raíz de 2."
-  },
-  "u22l7-1": {
-   "prompt": "El OBV empieza en 0. Día 1: sube con 1.000 acciones. Día 2: baja con 800. Día 3: sube con 1.500. ¿Cuánto vale el OBV?",
-   "options": [],
-   "explanation": "0 + 1.000 − 800 + 1.500 = 1.700.",
-   "unit": "acciones"
   },
   "u22l7-2": {
    "prompt": "Compras 100 acciones a 10 € y otras 300 a 12 €. ¿A qué precio medio ponderado por volumen has comprado?",
@@ -755,14 +728,6 @@
    ],
    "explanation": "El nivel depende del día en que empiezas a contar; lo útil es la dirección."
   },
-  "u22l7-7": {
-   "prompt": "En un gráfico intradía, el VWAP se reinicia cada sesión.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Es el precio medio ponderado de cada día: al empezar la sesión, vuelve a calcularse desde cero."
-  },
   "u22l7-8": {
    "prompt": "Sin ver el volumen ni el OBV, ¿sube o baja en las 10 sesiones siguientes?",
    "options": [
@@ -771,24 +736,6 @@
    ],
    "explanation": "El OBV y el VWAP ordenan lo que ya ha pasado con el volumen. Ayudan a valorar si un movimiento tiene gente detrás, no a adivinar las próximas sesiones.",
    "horizon": "las 10 sesiones siguientes"
-  },
-  "u22l7-9": {
-   "prompt": "Otro gráfico real. ¿Sube o baja en las 10 sesiones siguientes?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Una divergencia de volumen puede tardar mucho en notarse en el precio, o no notarse nunca.",
-   "horizon": "las 10 sesiones siguientes"
-  },
-  "u22l7-10": {
-   "prompt": "Rápido: un día que cierra a la baja, el OBV…",
-   "options": [
-    "No cambia",
-    "Resta el volumen del día",
-    "Suma el volumen del día"
-   ],
-   "explanation": "Sube con los días alcistas y baja con los bajistas."
   }
  }
 }

@@ -9,16 +9,53 @@
    "title": "Cómo elegir un bróker",
    "steps": [
     {
-     "title": "Primero, que sea seguro",
-     "body": "1. **Regulación:** autorizado por la CNMV o por un supervisor de la UE con **pasaporte** para operar en España. Compruébalo en cnmv.es, no en su web.\n2. **Protección:** tus valores son tuyos y están separados del patrimonio del bróker. Si faltara algo, el **FOGAIN** cubre hasta **100.000 €** por inversor en las entidades adheridas. No cubre las caídas del mercado."
+     "texts": [
+      "Un bróker con regalo",
+      "Pablo",
+      "¡He encontrado un bróker con comisiones cero y te duplican el primer ingreso!",
+      "Lo he buscado en la CNMV y no sale. Pero la web es superprofesional.",
+      "¿Qué le dices?",
+      "Aprovecha el bono, es dinero gratis",
+      "Los bonos son el cebo típico. Sin autorización, no tienes ninguna protección.",
+      "Descártalo: sin autorización, no hay nada que comparar",
+      "¡Eso! El primer filtro es la autorización. Las comisiones vienen después.",
+      "Prueba con poco y, si va bien, mete más",
+      "Muchas estafas dejan ganar al principio para que aportes más.",
+      "Un bróker barato pero no autorizado es el más caro: puedes perderlo todo."
+     ]
     },
     {
-     "title": "Después, que encaje",
-     "body": "3. **Costes:** compraventa, custodia, cambio de divisa, inactividad.\n4. **Productos:** ¿tiene los fondos indexados y ETF que quieres?\n5. **Fiscalidad:** los brókers **españoles** retienen e informan a Hacienda; los **extranjeros** normalmente no, así que declaras tú todo y quizá el modelo 720. Los fondos de garantía de otros países pueden tener límites más bajos."
+     "texts": [
+      "¿Seguridad, costes o Hacienda?",
+      "Antes de abrir una cuenta, mira tres cosas. ¿A cuál pertenece cada una?",
+      "Seguridad",
+      "Costes",
+      "Fiscalidad",
+      "Autorizado por la CNMV o con pasaporte europeo",
+      "Compruébalo en cnmv.es, no en su web.",
+      "Tus valores, separados del patrimonio del bróker",
+      "Son tuyos: si el bróker quiebra, deberían devolvértelos.",
+      "El FOGAIN cubre hasta 100.000 € por inversor",
+      "Cubre si una entidad adherida no te devuelve lo tuyo. No cubre las caídas del mercado.",
+      "Comisión de custodia",
+      "Lo que te cobran por guardar tus valores.",
+      "Cambio de divisa al comprar en dólares",
+      "Suele ser el coste más escondido.",
+      "Comisión por inactividad",
+      "Algunos cobran si pasas meses sin operar.",
+      "Retiene el 19 % e informa a Hacienda",
+      "Lo hacen los brókers españoles: la declaración sale casi hecha.",
+      "Te toca declarar todo y quizá el modelo 720",
+      "Pasa con muchos brókers extranjeros.",
+      "Coloca los ocho criterios.",
+      "**Primero, la seguridad**: autorizado y con protección. Después, costes y comodidad fiscal, y ojo: los fondos de garantía de otros países pueden tener límites más bajos.",
+      "¿Esto te protege, te cuesta dinero o es cosa de Hacienda?",
+      "Coloca cada criterio"
+     ]
     },
     {
-     "title": "Lo que te llevas",
-     "body": "Un bróker barato pero no autorizado es el más caro de todos: puedes perderlo todo.",
+     "title": "El orden para elegir",
+     "body": "1. **Regulación:** CNMV o supervisor de la UE con pasaporte.\n2. **Protección:** valores separados y fondo de garantía (FOGAIN, hasta 100.000 €).\n3. **Costes:** compraventa, custodia, divisa, inactividad.\n4. **Productos:** ¿tiene los fondos indexados y ETF que quieres?\n5. **Fiscalidad:** un bróker español retiene e informa; con uno extranjero declaras tú todo.",
      "key": "Primero, que sea seguro y esté autorizado; después, que sea barato.",
      "tip": "Antes de mirar cuánto cobra un bróker, mira quién lo vigila."
     }
@@ -28,17 +65,48 @@
    "title": "Las comisiones de un bróker",
    "steps": [
     {
+     "texts": [
+      "¿Barata o cara?",
+      "Una comisión pesa distinto según cuánto compres. ¿Se lleva **menos del 1 %** de la compra o **un 1 % o más**?",
+      "Menos del 1 %",
+      "Un 1 % o más",
+      "3 € fijos en una compra de 10.000 €",
+      "Un 0,03 %: una ganga.",
+      "3 € fijos en una compra de 100 €",
+      "Un 3 %: tendrías que ganar un 3 % solo para empatar.",
+      "0,5 % sin mínimo en una compra de 100 € (0,50 €)",
+      "Un 0,5 %. Con poco dinero, lo porcentual sin mínimo suele ganar.",
+      "5 € fijos en una compra de 100 €",
+      "Un 5 %: hay que ganar un 5 % solo para recuperar la comisión.",
+      "2 € fijos en una compra de 1.000 €",
+      "Un 0,2 %.",
+      "0,1 % con un mínimo de 5 € en una compra de 200 €",
+      "Manda el mínimo: 5 € sobre 200 € son un 2,5 %.",
+      "Clasifica las seis compras.",
+      "3 € fijos son una ganga en 10.000 € (**0,03 %**) y una barbaridad en 100 € (**3 %**). Para aportar poco cada mes, busca costes **porcentuales bajos o sin mínimo**; para compras grandes y pocas, una fija puede salir mejor.",
+      "Pista: 1 € por cada 100 € es un 1 %.",
+      "Compara la comisión con lo que compras"
+     ]
+    },
+    {
+     "texts": [
+      "Lo pequeño se compone",
+      "Ana aporta **100 € al mes** durante 30 años, con un mercado del 7 % anual (ejemplo). Con unos costes totales del 0,2 % al año… o algo más.",
+      "Pagar un 0,3 % más al año durante 30 años, ¿cuánto le cuesta a Ana?",
+      "Unos 60 €",
+      "Unos 6.000 €",
+      "Unos 60.000 €",
+      "**6.020 €** menos: 106.703 € frente a 112.722 €. Poco cada año, mucho compuesto.",
+      "Pon un coste del 1,5 %, como el de muchos fondos activos de banco.",
+      "Con un 1,5 % al año, los costes se llevan **23.630 €**, más de una quinta parte. Mira **todos** los costes: compraventa, custodia, divisa, inactividad y el TER de cada fondo.",
+      "Una quinta parte de todo, en comisiones. ¡Sin hacer nada!",
+      "A pocos años apenas se nota. Sube los años.",
+      "Sube el coste y mira cuánto se lleva"
+     ]
+    },
+    {
      "title": "Qué te cobran",
-     "body": "• **Compraventa:** por cada operación (fija, porcentual o mixta).\n• **Custodia:** por guardar tus valores, a veces mensual o anual.\n• **Cambio de divisa:** al comprar en otra moneda. Suele ser el **coste oculto más alto**: del 0,1 % al 0,5 % o más por operación.\n• **Otras:** inactividad, retirada, cobro de dividendos.\n\nY dentro de cada fondo o ETF, su TER."
-    },
-    {
-     "title": "Lo pequeño se compone",
-     "body": "Prueba cómo cambia el resultado a 20 o 30 años con un 0,3 % más o menos al año.",
-     "tip": "Compara siempre el coste total con tu forma de invertir."
-    },
-    {
-     "title": "Depende de cómo inviertes",
-     "body": "Una comisión fija de 3 € es una ganga en una compra de 10.000 € (0,03 %) y una barbaridad en una de 100 € (3 %). Para aportar poco cada mes busca costes porcentuales bajos o sin mínimo; para compras grandes y pocas, una comisión fija puede salir mejor.",
+     "body": "• **Compraventa:** por cada operación (fija, porcentual o mixta).\n• **Custodia:** por guardar tus valores, a veces mensual o anual.\n• **Cambio de divisa:** al comprar en otra moneda. Suele ser el **coste oculto más alto**: del 0,1 % al 0,5 % o más por operación.\n• **Otras:** inactividad, retirada, cobro de dividendos.\n\nY dentro de cada fondo o ETF, su **TER**.",
      "key": "El bróker más barato es el que menos te cobra a ti, con tu forma de invertir."
     }
    ]
@@ -47,18 +115,60 @@
    "title": "Neobrókers: cómo ganan dinero",
    "steps": [
     {
-     "title": "Si es gratis, ¿quién paga?",
-     "body": "Los neobrókers (apps con compraventa a 0 € o casi) ganan dinero de otras formas:\n\n• **Pago por flujo de órdenes (PFOF):** un intermediario les paga por enviarle tus órdenes.\n• **Spread** y **cambio de divisa**.\n• **Intereses** del efectivo que no te remuneran.\n• **Préstamo de valores** de tus acciones.\n• **Suscripciones** premium, cripto y CFD."
+     "texts": [
+      "«0 € de comisión»",
+      "Tu app no cobra comisión. Pero compras al mejor precio de **venta** y vendes al mejor de **compra**: mira este libro de órdenes de ejemplo.",
+      "Compras 100 acciones y las vendes al momento. ¿Qué pierdes?",
+      "Nada: la comisión es 0 €",
+      "La diferencia entre el precio de compra y el de venta",
+      "Siempre un 5 %",
+      "Compras a 10,00 y solo podrías vender a 9,98: el **spread**, un **0,2 %**, se queda por el camino.",
+      "Haz una compra grande: busca un tamaño con el que tu precio medio suba más de un 0,1 %.",
+      "El **spread** es un coste aunque la app diga «0 €», y en órdenes grandes se suma el **deslizamiento**. Además, un intermediario puede pagarle al bróker por enviarle tus órdenes: el **pago por flujo de órdenes** (PFOF).",
+      "Tu orden se come varios precios del libro: pagas más de media.",
+      "Mira la diferencia entre comprar y vender"
+     ]
     },
     {
-     "title": "Las reglas en la UE",
-     "body": "El reglamento europeo MiFIR (2024) **prohíbe el pago por flujo de órdenes** a clientes minoristas. Algunos países donde ya existía pudieron mantenerlo como excepción **hasta el 30 de junio de 2026**.\n\nAdemás, muchas apps usan diseño de juego: confeti, notificaciones, rachas. Cuanto más operas, más ganan."
+     "texts": [
+      "¿Cómo gana dinero?",
+      "Un neobróker «sin comisiones» gana dinero de otras formas. ¿Cuáles crecen **cuanto más operas**?",
+      "Gana más si operas mucho",
+      "Gana aunque no operes",
+      "Spread en cada compraventa",
+      "Cada operación deja un poco por el camino.",
+      "Cambio de divisa al comprar en dólares",
+      "Cobra en cada compra en otra moneda.",
+      "Pago por flujo de órdenes (PFOF)",
+      "Un intermediario le paga por cada orden que le envía.",
+      "Intereses del efectivo que no te remunera",
+      "Tu dinero parado le rinde a él.",
+      "Préstamo de tus acciones a otros",
+      "Cobra por prestarlas, operes o no.",
+      "Suscripción premium mensual",
+      "La pagas cada mes, operes o no.",
+      "Clasifica las seis fuentes de ingresos.",
+      "Saber de dónde vienen sus ingresos te dice **qué comportamiento te va a fomentar**. El reglamento europeo MiFIR (2024) **prohíbe el PFOF** a minoristas, con una excepción en algunos países hasta el 30 de junio de 2026.",
+      "Pregúntate: ¿cobra solo cuando pulsas «comprar»?",
+      "Coloca cada fuente de ingresos"
+     ]
     },
     {
-     "title": "Lo que te llevas",
-     "body": "Un neobróker autorizado puede ser una buena opción barata. Solo ten claro cómo gana dinero y no dejes que la app decida cuánto operas.",
-     "key": "Cuando algo es gratis, pregúntate cómo gana dinero quien te lo da.",
-     "tip": "Si la app te anima a operar a diario, recuerda que tu plan es a 20 años."
+     "texts": [
+      "Confeti en cada compra",
+      "Pablo",
+      "Mira mi app: confeti en cada compra y una racha de 12 días operando.",
+      "Este mes ya llevo 40 operaciones de unos 500 €. ¡Y todo gratis!",
+      "¿Qué le dices?",
+      "¡Sigue así! Si la app te premia, lo haces bien",
+      "La app premia que operes, no que ganes. Cuanto más operas, más gana ella.",
+      "El diseño te empuja a operar más de lo que necesita tu plan",
+      "Eso. Un plan a 20 años no necesita 40 operaciones al mes.",
+      "Cámbiate a otra app con más premios",
+      "Más premios, más empujones a operar.",
+      "Con un 0,2 % de spread, son **480 € al año**, aunque diga «0 € de comisión».",
+      "Un neobróker autorizado puede ser buena opción. Solo no dejes que decida cuánto operas."
+     ]
     }
    ]
   },
@@ -66,16 +176,40 @@
    "title": "Robo-advisors y gestión automatizada",
    "steps": [
     {
+     "texts": [
+      "¿Cuánto cuesta la comodidad?",
+      "**10.000 €** a 30 años con un mercado del 7 % anual (ejemplo). Hacerlo tú con indexados cuesta un **0,2 %** al año; un robo-advisor, entre gestión y fondos, un **0,6 %**.",
+      "A 30 años, ¿cuánto te cuesta el robo-advisor frente a hacerlo tú?",
+      "Unos 700 €",
+      "Unos 7.700 €",
+      "Unos 30.000 €",
+      "**7.662 €**: 71.968 € frente a 64.306 €. Merece la pena solo si te evita errores que costarían más.",
+      "Ahora pon el coste de muchos fondos activos de banco: un 1,5 %.",
+      "Un robo-advisor suele costar entre un **0,4 % y un 1 %** al año en total: más que hacerlo tú (≈ 0,1-0,3 %) y menos que muchos fondos activos (1,5 % o más). Con un 1,5 %, se van **22.128 €**, casi un tercio.",
+      "Casi un tercio de todo se va en costes.",
+      "Mueve el coste y mira la diferencia"
+     ]
+    },
+    {
+     "texts": [
+      "Laura y la caída de 2022",
+      "Laura",
+      "No tengo tiempo y nunca me acuerdo de rebalancear.",
+      "Y en 2022 vendí en plena caída. Todavía me arrepiento.",
+      "¿Me cojo un robo-advisor o monto yo mi cartera indexada?",
+      "¿Qué le dices?",
+      "Móntala tú: es más barato y punto",
+      "Más barato sobre el papel. Pero sus errores le costaron más que la comisión.",
+      "El robo-advisor puede compensarte si te evita esos errores",
+      "Bien: paga algo más por disciplina automática. Clave: no abandonarlo en una caída.",
+      "Mejor un fondo activo del banco al 1,8 %",
+      "Más caro que las dos opciones y, de media, peor que su índice.",
+      "Ojo: un robo-advisor **no elimina el riesgo**. Si cae el mercado, cae tu cartera."
+     ]
+    },
+    {
      "title": "Qué es un robo-advisor",
-     "body": "Un servicio de **gestión automatizada**: respondes un cuestionario (el **test de idoneidad**), te asigna una cartera de fondos indexados según tu perfil y se encarga de aportar y **rebalancear** por ti.\n\nEn España tiene que ser una entidad autorizada por la CNMV."
-    },
-    {
-     "title": "Cuánto cuesta",
-     "body": "Suelen cobrar una comisión de gestión más el coste de los fondos: en total, a menudo entre un **0,4 % y un 1 %** anual. Más que hacerlo tú con indexados (≈ 0,1-0,3 %), menos que muchos fondos activos de banco (1,5 % o más)."
-    },
-    {
-     "title": "¿Tú o el robot?",
-     "body": "Hacerlo tú es más barato si tienes disciplina. El robo-advisor tiene sentido si te ahorra errores: olvidar rebalancear o vender en pánico. Lo que no hace es eliminar el riesgo: si cae el mercado, cae tu cartera.",
+     "body": "Un servicio de **gestión automatizada**: respondes un cuestionario (el **test de idoneidad**), te asigna una cartera de fondos indexados según tu perfil y se encarga de aportar y **rebalancear** por ti.\n\nEn España tiene que ser una entidad **autorizada por la CNMV**.",
      "key": "Un robo-advisor automatiza la disciplina, pero cobra por ello y no elimina el riesgo de mercado."
     }
    ]
@@ -111,15 +245,6 @@
    ],
    "explanation": "La popularidad en redes no dice nada sobre su seguridad."
   },
-  "u33l1-3": {
-   "prompt": "¿Qué es lo primero que debes comprobar de un bróker?",
-   "options": [
-    "Que tenga la app más bonita",
-    "Que sea el más barato",
-    "Que esté autorizado por la CNMV o un supervisor europeo con pasaporte"
-   ],
-   "explanation": "Sin autorización, todo lo demás da igual."
-  },
   "u33l1-4": {
    "prompt": "¿Qué cubre el FOGAIN?",
    "options": [
@@ -128,28 +253,6 @@
     "Las pérdidas cuando cae la bolsa"
    ],
    "explanation": "Protege frente a fallos de la entidad, no frente a la evolución del mercado."
-  },
-  "u33l1-5": {
-   "prompt": "Un bróker extranjero suele retener impuestos por ti y enviar tus datos a Hacienda.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Normalmente no: te toca declarar todas las operaciones, y quizá presentar el modelo 720."
-  },
-  "u33l1-6": {
-   "prompt": "Un bróker que no aparece en los registros de la CNMV te ofrece comisiones cero y un bono del 100 % de tu primer ingreso. ¿Qué haces?",
-   "options": [
-    "Lo descarto: si no está autorizado, no hay nada que comparar",
-    "Pruebo con poco y si va bien meto más",
-    "Aprovecho el bono, es dinero gratis"
-   ],
-   "explanation": "Sin autorización, una comisión cero puede costarte todo.",
-   "feedback": [
-    "Bien: el primer filtro es la autorización. Las comisiones vienen después.",
-    "Muchas estafas dejan ganar al principio para que aportes más.",
-    "Los bonos son el cebo típico, y sin autorización no tienes ninguna protección."
-   ]
   },
   "u33l1-7": {
    "prompt": "¿Es más típico de un bróker español o de uno extranjero?",
@@ -175,14 +278,6 @@
    ],
    "explanation": "Si una entidad adherida no puede devolver tu dinero o tus valores."
   },
-  "u33l1-9": {
-   "prompt": "Tus acciones y ETF están separados del patrimonio del bróker.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Son tuyos: si el bróker quiebra, deberían devolvértelos."
-  },
   "u33l1-10": {
    "prompt": "Empareja cada término con su significado.",
    "options": [
@@ -198,12 +293,6 @@
     "Declaración de valores y cuentas en el extranjero",
     "Supervisor de los servicios de inversión en España"
    ]
-  },
-  "u33l2-1": {
-   "prompt": "Pagas 5 € de comisión fija por comprar 100 € de un ETF. ¿Qué porcentaje se va en comisión?",
-   "options": [],
-   "explanation": "5 ÷ 100 = 5 %. Tendrías que ganar un 5 % solo para empatar.",
-   "unit": "%"
   },
   "u33l2-2": {
    "prompt": "Compras 2.000 € de acciones de EE. UU. y el bróker cobra un 0,5 % por el cambio de divisa. ¿Cuántos euros pagas solo por cambiar?",
@@ -256,14 +345,6 @@
     "Sobre 100 € son un 3 %: 36 € al año."
    ]
   },
-  "u33l2-7": {
-   "prompt": "Si un bróker anuncia «0 € de comisión», invertir con él no tiene ningún coste.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Puede cobrar por el cambio de divisa, el spread, la custodia o ganar con otras vías."
-  },
   "u33l2-8": {
    "prompt": "¿Se paga por operación o cada año?",
    "options": [
@@ -279,25 +360,6 @@
     "Cada año"
    ]
   },
-  "u33l2-9": {
-   "prompt": "Rápido: ¿dónde encuentras el coste anual (TER) de un fondo o ETF?",
-   "options": [
-    "En el KID, el documento de datos fundamentales",
-    "En su cuenta de Instagram",
-    "En tu declaración de la renta"
-   ],
-   "explanation": "Es obligatorio y está estandarizado para poder comparar."
-  },
-  "u33l2-10": {
-   "prompt": "Compra única de 100 €. Ordena de más barato a más caro.",
-   "options": [
-    "2 € fijos",
-    "5 € fijos",
-    "0,5 % sin mínimo (0,50 €)",
-    "0,1 % sin mínimo (0,10 €)"
-   ],
-   "explanation": "Con importes pequeños, las comisiones fijas pesan muchísimo."
-  },
   "u33l3-1": {
    "prompt": "¿Qué es el pago por flujo de órdenes (PFOF)?",
    "options": [
@@ -306,14 +368,6 @@
     "Una comisión que pagas tú al bróker"
    ],
    "explanation": "Por eso un bróker puede anunciar compraventa a 0 € y aun así ganar con tus órdenes."
-  },
-  "u33l3-2": {
-   "prompt": "En la UE, el pago por flujo de órdenes a clientes minoristas está prohibido, con una excepción temporal que terminó el 30 de junio de 2026.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Lo establece el Reglamento (UE) 2024/791, que reformó MiFIR."
   },
   "u33l3-3": {
    "prompt": "¿De qué formas puede ganar dinero un neobróker «sin comisiones»? Marca todas.",
@@ -324,49 +378,6 @@
     "Con el cambio de divisa"
    ],
    "explanation": "Y también con suscripciones, spreads y productos como cripto o CFD."
-  },
-  "u33l3-4": {
-   "prompt": "La app de Pablo le manda notificaciones, confeti en cada compra y retos de «racha». Ya opera 40 veces al mes. ¿Qué le recomiendas pensar?",
-   "options": [
-    "Que el diseño le empuja a operar más de lo que necesita su plan",
-    "Que siga: si la app lo premia, lo estará haciendo bien",
-    "Que cambie a otra app con más premios"
-   ],
-   "explanation": "La gamificación sirve al negocio del bróker, no necesariamente a tu plan.",
-   "feedback": [
-    "Bien: un plan a largo plazo no necesita 40 operaciones al mes.",
-    "La app premia que operes, no que ganes. Cuanto más operas, más costes acumulas.",
-    "Más premios, más empujones a operar."
-   ]
-  },
-  "u33l3-5": {
-   "prompt": "¿El neobróker gana más si operas mucho o gana aunque no operes?",
-   "options": [
-    "Intereses del efectivo que no te remunera",
-    "Suscripción premium mensual",
-    "Préstamo de tus acciones",
-    "Spread en cada compraventa",
-    "Cambio de divisa en cada compra"
-   ],
-   "explanation": "Saber de dónde vienen sus ingresos te dice qué comportamiento te va a fomentar.",
-   "right": [
-    "Gana más si operas mucho",
-    "Gana aunque no operes"
-   ]
-  },
-  "u33l3-6": {
-   "prompt": "Pablo opera 40 veces al mes, 500 € cada vez, y pierde un 0,2 % en spread por operación. ¿Cuánto le cuesta al año?",
-   "options": [],
-   "explanation": "500 × 0,2 % = 1 € por operación × 40 × 12 = 480 € al año, aunque la app diga «0 € de comisión».",
-   "unit": "€"
-  },
-  "u33l3-7": {
-   "prompt": "Si operar es gratis para ti, el bróker no gana dinero contigo.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Gana por otras vías: divisa, spread, intereses, préstamo de valores o suscripciones."
   },
   "u33l3-8": {
    "prompt": "El pago por ____ de órdenes es lo que un intermediario paga al bróker por enviarle tus órdenes.",
@@ -430,34 +441,6 @@
    ],
    "explanation": "Automatiza el reparto, las aportaciones y el rebalanceo."
   },
-  "u33l4-3": {
-   "prompt": "10.000 € a 30 años con un mercado al 7 % (ejemplo). Con un robo-advisor al 0,6 % total te quedan unos 64.306 €; haciéndolo tú al 0,2 %, unos 71.968 €. ¿Cuánto cuesta la comodidad?",
-   "options": [],
-   "explanation": "71.968 − 64.306 = 7.662 €. Merece la pena solo si te evita errores que costarían más.",
-   "unit": "€"
-  },
-  "u33l4-4": {
-   "prompt": "Un robo-advisor elimina el riesgo de que tu cartera caiga.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Reparte y rebalancea, pero si cae el mercado, cae tu cartera."
-  },
-  "u33l4-5": {
-   "prompt": "Laura no tiene tiempo, nunca se acuerda de rebalancear y en 2022 vendió en plena caída. Duda entre un robo-advisor y montar ella su cartera indexada. ¿Qué tiene más sentido?",
-   "options": [
-    "Un fondo activo del banco al 1,8 %",
-    "Montarla ella: es más barato y punto",
-    "El robo-advisor puede compensarle si le ayuda a no repetir esos errores"
-   ],
-   "explanation": "El coste importa, pero los errores de comportamiento pueden costar aún más.",
-   "feedback": [
-    "Más caro que las dos opciones y, de media, peor que su índice.",
-    "Más barato sobre el papel, pero sus errores pasados le salieron más caros que la comisión.",
-    "Bien: paga un poco más a cambio de disciplina automática. Lo clave es que no lo abandone en una caída."
-   ]
-  },
   "u33l4-6": {
    "prompt": "¿Es ventaja del robo-advisor o de hacerlo tú?",
    "options": [
@@ -472,14 +455,6 @@
     "Ventaja del robo-advisor",
     "Ventaja de hacerlo tú"
    ]
-  },
-  "u33l4-7": {
-   "prompt": "En España, un robo-advisor tiene que ser una entidad autorizada por la CNMV.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Gestionar carteras es un servicio de inversión regulado."
   },
   "u33l4-8": {
    "prompt": "¿Qué deberías mirar antes de contratar un robo-advisor? Marca todo.",

@@ -115,9 +115,10 @@ const withSeries = (w: WidgetIn): WidgetT => {
   const x = w as WidgetIn & Partial<Record<Real, unknown>>
   if (typeof x.series === 'string') {
     const f = fixture(x.series) as unknown as Raw
-    if (f.assets && f.dates) return { ...w, series: { caption: f.caption, dates: f.dates, assets: f.assets.map(a => ({ key: a.key, name: a.name, closes: a.closes })) } } as WidgetT
+    const usd = /dólar|en dólares/.test(f.caption)
+    if (f.assets && f.dates) return { ...w, series: { caption: f.caption, usd, dates: f.dates, assets: f.assets.map(a => ({ key: a.key, name: a.name, closes: a.closes })) } } as WidgetT
     if (!f.dates || !f.closes) throw new Error(`La serie ${x.series} no tiene fechas y cierres`)
-    return { ...w, series: { caption: f.caption, dates: f.dates, closes: f.closes } } as WidgetT
+    return { ...w, series: { caption: f.caption, dates: f.dates, closes: f.closes, ...(usd ? { usd } : {}) } } as WidgetT
   }
   if (typeof x.chart === 'string') return { ...w, chart: candlesOf(x.chart) } as WidgetT
   if (Array.isArray(x.rounds)) return { ...w, rounds: (x.rounds as string[]).map(candlesOf) } as WidgetT

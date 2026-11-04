@@ -44,7 +44,10 @@ export function Mix({ w, onMetrics }: W<'mix'>) {
           height={160}
           lines={[...solo.map((v, i) => ({ values: v, color: COLORS[i], label: w.series.assets[i].name, dashed: true })), { values: path, color: 'var(--ink)', label: t('yourMix') }]}
         />
-        <span className="t-cap">{w.series.caption}</span>
+        <span className="t-cap">
+          {w.series.caption}
+          {w.series.usd && ` · ${t('usdNote')}`}
+        </span>
       </div>
       <Row>
         <Big label={t('endsWith', { amount: f.eur(w.amount) })} value={f.eur(final)} tone={final >= w.amount ? 'up' : 'down'} />
@@ -96,14 +99,15 @@ export function Bond({ w, onMetrics }: W<'bond'>) {
   const f = useFmt()
   const [rate, setRate] = useState(w.rate)
   const [years, setYears] = useState(w.years)
-  const price = bondPrice(w.face, w.coupon, years, rate)
-  const change = (price / w.face - 1) * 100
+  // Redondeado a céntimos: con el tipo igual al cupón vale exactamente el nominal (ni «−0 %» ni rojo)
+  const price = Math.round(bondPrice(w.face, w.coupon, years, rate) * 100) / 100
+  const change = Math.round((price / w.face - 1) * 1000) / 10
   useMetrics({ rate, years, price: Math.round(price), change: Math.round(change * 10) / 10 }, onMetrics)
   const curve = Array.from({ length: 21 }, (_, i) => bondPrice(w.face, w.coupon, years, (w.maxRate * i) / 20))
   return (
     <div className="flex flex-col gap-3">
       <div className="card flex flex-col gap-1">
-        <span className="t-cap">{t('bondHead', { face: f.eur(w.face), coupon: f.pct(w.coupon, 1) })}</span>
+        <span className="t-cap">{w.head ?? t('bondHead', { face: f.eur(w.face), coupon: f.pct(w.coupon, 1) })}</span>
         <Lines label={t('bondChart')} height={130} lines={[{ values: curve, color: 'var(--brand)', label: t('bondPrice') }]} marks={[{ at: (rate / w.maxRate) * 20, color: 'var(--ink)' }]} />
         <span className="t-cap flex justify-between">
           <span>0 %</span>
@@ -112,8 +116,8 @@ export function Bond({ w, onMetrics }: W<'bond'>) {
         </span>
       </div>
       <Row>
-        <Big label={t('bondPrice')} value={f.eur(price)} tone={price >= w.face ? 'up' : 'down'} />
-        <Big label={t('vsIssue')} value={`${change >= 0 ? '+' : ''}${f.pct(change)}`} tone={change >= 0 ? 'up' : 'down'} />
+        <Big label={t('bondPrice')} value={f.eur(price)} tone={change > 0 ? 'up' : change < 0 ? 'down' : undefined} />
+        <Big label={t('vsIssue')} value={`${change > 0 ? '+' : ''}${f.pct(change)}`} tone={change > 0 ? 'up' : change < 0 ? 'down' : undefined} />
       </Row>
       <Slide label={t('marketRate')} value={rate} min={0} max={w.maxRate} step={0.25} show={f.pct(rate, 2)} onChange={setRate} color="var(--down)" />
       <Slide label={t('yearsLeft')} value={years} min={1} max={w.maxYears} step={1} show={t('nYears', { n: years })} onChange={setYears} />
@@ -239,9 +243,9 @@ export function Orders({ w, onMetrics }: W<'orders'>) {
           future={shown}
           label={c.caption}
           lines={[
-            { price: entry, color: 'var(--ink-2)', label: `${t('entry')} ${f.n(entry, 2)}`, dashed: true },
-            { price: stop, color: 'var(--down)', label: `Stop ${f.n(stop, 2)}` },
-            { price: take, color: 'var(--up)', label: `${t('targetLabel')} ${f.n(take, 2)}` },
+            { price: entry, color: 'var(--ink-2)', label: `${t('entry')} ${f.price(entry)}`, dashed: true },
+            { price: stop, color: 'var(--down)', label: `Stop ${f.price(stop)}` },
+            { price: take, color: 'var(--up)', label: `${t('targetLabel')} ${f.price(take)}` },
           ]}
         />
         <span className="t-cap">{c.caption}</span>
@@ -393,11 +397,11 @@ export function Book({ w, onMetrics }: W<'book'>) {
             <div key={`b${i}`} className="relative flex justify-between rounded-md px-2 py-1 tabular-nums">
               <i className="absolute inset-y-0 right-0 rounded-md" style={{ width: `${(b ? b.size / mx : 0) * 100}%`, background: 'color-mix(in srgb, var(--up) 14%, transparent)' }} />
               <span className="relative">{b ? f.n(b.size) : ''}</span>
-              <b className="relative">{b ? f.n(b.price, 2) : ''}</b>
+              <b className="relative">{b ? f.price(b.price) : ''}</b>
             </div>,
             <div key={`a${i}`} className="relative flex justify-between rounded-md px-2 py-1 tabular-nums" style={{ outline: take ? '2px solid var(--brand)' : undefined }}>
               <i className="absolute inset-y-0 left-0 rounded-md" style={{ width: `${(a.size / mx) * 100}%`, background: 'color-mix(in srgb, var(--down) 14%, transparent)' }} />
-              <b className="relative">{f.n(a.price, 2)}</b>
+              <b className="relative">{f.price(a.price)}</b>
               <span className="relative">{take ? `${f.n(take)} / ${f.n(a.size)}` : f.n(a.size)}</span>
             </div>,
           ]
@@ -405,7 +409,7 @@ export function Book({ w, onMetrics }: W<'book'>) {
         <span className="t-cap col-span-2 mt-1">{t('bookNote')}</span>
       </div>
       <Row>
-        <Big label={t('avgPrice')} value={f.n(r.avg, 3)} />
+        <Big label={t('avgPrice')} value={f.price(r.avg, 3)} />
         <Big label={t('slippage')} value={`+${f.pct(r.slippagePct, 2)}`} tone={r.slippagePct > 0.2 ? 'down' : undefined} />
       </Row>
       <Slide label={t('buyShares')} value={size} min={10} max={w.maxSize} step={10} show={f.n(size)} onChange={setSize} />

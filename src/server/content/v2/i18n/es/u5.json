@@ -9,18 +9,51 @@
    "title": "Qué es una bolsa",
    "steps": [
     {
-     "title": "Un mercado organizado",
-     "body": "Una **bolsa** es un mercado regulado donde se compran y venden valores: acciones, bonos, ETFs. Junta a quien quiere comprar con quien quiere vender, con reglas iguales para todos y precios públicos.\n\nEn España la gestiona **BME** (Bolsas y Mercados Españoles), del grupo suizo SIX, y la supervisa la **CNMV**."
+     "texts": [
+      "¿A quién le compras?",
+      "Laura",
+      "Quiero comprar acciones de Inditex. Se las compro a Inditex, ¿no?",
+      "¿A quién le compra Laura sus acciones?",
+      "A Inditex, que es la dueña",
+      "En el día a día, no. Inditex solo recibe dinero cuando emite acciones nuevas.",
+      "A otro inversor que quiere vender",
+      "¡Eso! La bolsa junta a quien compra con quien vende.",
+      "A la bolsa, que tiene acciones guardadas",
+      "La bolsa no tiene acciones: solo cruza órdenes de compra y venta.",
+      "¿Y cómo llego yo hasta la bolsa?",
+      "Con un **bróker** autorizado: él lleva tu orden al mercado.",
+      "Cada vez que compras, alguien vende. ¿Qué sabrá él que tú no?"
+     ]
     },
     {
-     "title": "Para qué sirve",
-     "body": "• **A las empresas:** conseguir dinero para crecer, vendiendo acciones o bonos.\n• **A los inversores:** participar en empresas y poder **vender cuando quieran** (liquidez).\n• **A todos:** un precio público y transparente de cada valor en cada momento."
+     "texts": [
+      "¿Para qué sirve una bolsa?",
+      "Una **bolsa** es un mercado regulado donde se compran y venden acciones, bonos y ETFs. ¿Qué hace y qué no?",
+      "Lo hace la bolsa",
+      "Eso no lo hace",
+      "Que una empresa consiga dinero para crecer",
+      "Vendiendo acciones o bonos a inversores, sin pedir un préstamo.",
+      "Que puedas vender tus acciones cuando quieras",
+      "Es la **liquidez**: la bolsa reúne a compradores y vendedores cada día.",
+      "Garantizar que las acciones suban",
+      "La bolsa no promete nada sobre el precio: solo hace posible comprar y vender.",
+      "Dar un precio público de cada valor",
+      "Todos ven el mismo precio, en cada momento.",
+      "Asegurar un precio mínimo a las acciones",
+      "El precio puede caer tanto como caigan las ganas de comprar.",
+      "Aplicar las mismas reglas a todos",
+      "Es un mercado organizado: reglas iguales y precios públicos para todos.",
+      "Clasifica las seis tarjetas.",
+      "Una bolsa **junta a quien compra con quien vende**, con reglas iguales y precios públicos. Sirve a las empresas y a los inversores, pero no garantiza nada sobre el precio.",
+      "Pista: la bolsa organiza el mercado, pero no promete ganancias.",
+      "¡Vas muy bien! Ya casi lo tienes.",
+      "Toca cada tarjeta: ¿lo hace la bolsa o no?"
+     ]
     },
     {
-     "title": "Tú no vas a la bolsa",
-     "body": "Compras a través de un **bróker** autorizado, que lleva tu orden al mercado. Y cuando compras, alguien vende: en el día a día la bolsa no te vende nada, solo cruza las órdenes.",
-     "key": "La bolsa es el punto de encuentro; el bróker, la puerta de entrada.",
-     "tip": "Cada vez que compras, alguien vende. Pregúntate qué sabe él que tú no."
+     "title": "Quién es quién",
+     "body": "En España la bolsa la gestiona **BME** (Bolsas y Mercados Españoles), del grupo suizo SIX, y la supervisa la **CNMV**.\n\nTú no vas a la bolsa: compras a través de un **bróker** autorizado, que lleva tu orden al mercado.",
+     "key": "La bolsa es el punto de encuentro; el bróker, la puerta de entrada."
     }
    ]
   },
@@ -28,12 +61,46 @@
    "title": "Quién compra y quién vende",
    "steps": [
     {
-     "title": "Los participantes",
-     "body": "• **Minoristas:** particulares como tú.\n• **Institucionales:** fondos de inversión, planes de pensiones, aseguradoras. Mueven grandes cantidades.\n• **Creadores de mercado** (*market makers*): ponen siempre un precio de compra y otro de venta y ganan con la diferencia.\n• **Alta frecuencia:** algoritmos que operan en microsegundos.\n• **Bancos centrales y gobiernos**, en bonos y divisas."
+     "texts": [
+      "¿Quién está al otro lado?",
+      "Cuando compras una acción, alguien te la vende. ¿Quién puede ser? Clasifica a cada uno.",
+      "Particular (minorista)",
+      "Profesional",
+      "Un estudiante que invierte 50 € al mes desde su app",
+      "Es un **minorista**: un particular que invierte su propio dinero.",
+      "Un plan de pensiones",
+      "Es un **institucional**: mueve el dinero de miles de personas.",
+      "Un algoritmo que opera en microsegundos",
+      "Es **alta frecuencia**: compra y vende a velocidades imposibles para una persona.",
+      "Alguien que siempre pone un precio de compra y otro de venta",
+      "Es un **creador de mercado**: gana con la diferencia entre los dos precios.",
+      "Un banco central que compra bonos",
+      "Bancos centrales y gobiernos operan en bonos y divisas.",
+      "Tu tía, que compra un poco de un fondo cada mes",
+      "Otra minorista: invierte su dinero, en pequeñas cantidades.",
+      "Clasifica a los seis participantes.",
+      "Al otro lado de tu orden suele haber **profesionales** con más información, mejores herramientas y costes casi nulos. Por eso ganarles a corto plazo es tan difícil.",
+      "Pista: si mueve el dinero de muchos o es una máquina, es profesional.",
+      "Mira cuántos tipos de profesionales hay en el mercado.",
+      "Toca cada tarjeta: ¿particular o profesional?"
+     ]
     },
     {
-     "title": "Por qué importa",
-     "body": "Al otro lado de tu orden suele haber profesionales con más información, mejores herramientas y costes casi nulos. Por eso intentar ganarles a corto plazo es tan difícil.\n\nA largo plazo, en cambio, no compites con ellos: participas de lo que ganan las empresas."
+     "texts": [
+      "Ganarles en velocidad",
+      "Bruno",
+      "Una acción ha caído un 8 % en minutos tras sus resultados.",
+      "¡Voy a comprar y vender toda la tarde para ganarles a los algoritmos!",
+      "¿Qué le dices a Bruno?",
+      "Adelante: si es rápido, ganará",
+      "Los algoritmos reaccionaron en microsegundos. Bruno siempre llegará tarde.",
+      "Su ventaja no es la velocidad, es el tiempo",
+      "¡Eso! Puede esperar años y mantener costes muy bajos.",
+      "Que lo haga, pero con poco dinero",
+      "Pierde menos, pero sigue en una carrera que no puede ganar.",
+      "¿Entonces los particulares no pintamos nada?",
+      "A largo plazo no compites con ellos: participas de lo que ganan las empresas."
+     ]
     },
     {
      "title": "Tu ventaja",
@@ -47,12 +114,37 @@
    "title": "Oferta, demanda y precio",
    "steps": [
     {
-     "title": "El libro de órdenes",
-     "body": "Cada valor tiene un libro con dos columnas:\n\n• **Compradores (*bid*):** el mejor paga **10,02 €** por 500 acciones.\n• **Vendedores (*ask*):** el mejor pide **10,04 €** por 300 acciones; el siguiente, **10,05 €** por 800.\n\nLa diferencia entre el mejor *bid* y el mejor *ask* es la **horquilla** o *spread*."
+     "texts": [
+      "El libro de órdenes",
+      "A la izquierda, quien quiere **comprar** (*bid*); a la derecha, quien quiere **vender** (*ask*). Si compras ya, compras al mejor precio de venta.",
+      "Quieres comprar **600 acciones** ya. ¿A qué precio medio te salen?",
+      "A 10,04 €, el mejor precio de venta",
+      "Algo más caras que 10,04 €",
+      "A 10,02 €, el mejor precio de compra",
+      "Solo hay 300 a 10,04 €: las otras 300 salen a 10,05 €. Pagas 6.027 €, una media de **10,045 €**.",
+      "Compra tantas que tu precio medio se aleje más de un 0,1 % del mejor precio.",
+      "La diferencia entre el mejor *bid* y el mejor *ask* es la **horquilla** o *spread*. Si llegan más compradores con prisa, **se comen la oferta escalón a escalón** y el precio sube.",
+      "Tu propia compra ha empujado el precio hacia arriba. Así se mueve.",
+      "Se acabaron las de 10,04 €: las siguientes salen más caras.",
+      "Mueve cuántas acciones compras de golpe"
+     ]
     },
     {
-     "title": "Cómo se mueve el precio",
-     "body": "Si llegan más compradores con prisa que vendedores, se «comen» las 300 acciones de 10,04 € y el precio sube al siguiente escalón, 10,05 €. Si llegan más vendedores, baja.\n\nLas noticias, los resultados o un dato económico cambian lo que la gente está dispuesta a pagar."
+     "texts": [
+      "Resultados por sorpresa",
+      "Leo",
+      "Son las 10:00. La empresa de Leo publica resultados mucho mejores de lo esperado.",
+      "En el libro, el mejor vendedor pedía 10,04 €. ¿Y ahora qué?",
+      "¿Qué crees que pasa con el precio?",
+      "Sube: los compradores se comen la oferta",
+      "Eso. Se agotan las de 10,04 €, se cruza a 10,05 €… y sube.",
+      "Nada: el precio lo fija la empresa",
+      "La empresa no fija el precio: es el último acuerdo entre comprador y vendedor.",
+      "Depende solo de lo que valga la empresa",
+      "A largo plazo importa. Hoy manda quién tiene más prisa por comprar.",
+      "Entonces, ¿el precio es lo que vale la empresa?",
+      "No: es lo que alguien **acaba de pagar**. Lo mueven noticias, resultados y datos."
+     ]
     },
     {
      "title": "Las subastas",
@@ -66,16 +158,52 @@
    "title": "Horarios y sesiones",
    "steps": [
     {
-     "title": "Cuándo abre cada bolsa (hora peninsular)",
-     "body": "• **Madrid, Fráncfort, París:** de 9:00 a 17:30.\n• **Londres:** de 8:00 a 16:30 allí = de 9:00 a 17:30 en España.\n• **Nueva York (NYSE, Nasdaq):** de 9:30 a 16:00 allí = de **15:30 a 22:00** en España.\n• **Tokio:** abre de madrugada en España y hace una pausa a mediodía (hora de Tokio)."
+     "texts": [
+      "Jueves, 20:00 en España",
+      "Cada mercado tiene su horario. Es jueves y son las **20:00** (hora peninsular). ¿Qué está abierto?",
+      "Abierto",
+      "Cerrado",
+      "Bolsa de Madrid",
+      "Abre de 9:00 a 17:30: hace horas que cerró.",
+      "Bolsa de Nueva York",
+      "De 9:30 a 16:00 allí: de **15:30 a 22:00** en España.",
+      "Bolsa de Londres",
+      "De 8:00 a 16:30 allí: de 9:00 a 17:30 en España.",
+      "Bitcoin",
+      "Las criptomonedas cotizan 24 horas, 7 días, también festivos.",
+      "El euro frente al dólar",
+      "Las divisas cotizan 24 horas, de domingo noche a viernes noche.",
+      "Bolsa de Tokio",
+      "Abre de madrugada en España.",
+      "Bolsa de Fráncfort",
+      "Como Madrid y París: de 9:00 a 17:30.",
+      "Clasifica los siete mercados.",
+      "**Madrid, de 9:00 a 17:30; Nueva York, de 15:30 a 22:00** en España. Las criptomonedas no cierran nunca y las divisas, solo el fin de semana.",
+      "Pista: Nueva York abre por la tarde en España y cierra a las 22:00.",
+      "A esta hora, casi toda Europa ya ha cerrado.",
+      "Toca cada mercado: ¿abierto o cerrado?"
+     ]
     },
     {
-     "title": "Mercados que no cierran",
-     "body": "• **Criptomonedas:** 24 horas, 7 días, también festivos.\n• **Divisas:** 24 horas, de domingo noche a viernes noche.\n\nOjo con el **cambio de hora:** EE. UU. y Europa no cambian el mismo día, así que unas semanas al año Nueva York abre a las **14:30** en España."
+     "texts": [
+      "Una orden a las 23:00",
+      "Pablo",
+      "Son las 23:00 en España. Nueva York cerró hace una hora.",
+      "¡Una empresa de EE. UU. acaba de dar resultados buenísimos! Compro ya a mercado.",
+      "¿Qué le pasará a la orden de Pablo?",
+      "Se ejecuta ya, al precio de cierre",
+      "Con la bolsa cerrada no hay con quién cruzarla: espera a la apertura.",
+      "Espera a la apertura y puede salir mucho más cara",
+      "Eso. Si abre con un **hueco** al alza, paga mucho más de lo que ve.",
+      "Se cancela sola por ser de noche",
+      "Normalmente queda pendiente hasta la apertura, al precio que haya.",
+      "¿Un hueco?",
+      "Un salto de precio entre el cierre y la apertura, sin precios intermedios."
+     ]
     },
     {
-     "title": "Fuera de horario",
-     "body": "Si das una orden con la bolsa cerrada, espera a la apertura. Y lo que pase por la noche (resultados, noticias) puede hacer que el precio abra muy lejos del cierre anterior: es un **hueco**.",
+     "title": "Ojo con el reloj",
+     "body": "Por el **cambio de hora**, EE. UU. y Europa no cambian el reloj el mismo día: unas semanas al año Nueva York abre a las **14:30** en España.\n\nTokio abre de madrugada en España y hace una pausa a mediodía (hora de Tokio).",
      "key": "Antes de operar, mira si el mercado está abierto.",
      "tip": "Que la app te deje pulsar «comprar» no significa que el mercado esté abierto."
     }
@@ -85,18 +213,50 @@
    "title": "Bróker, cuenta y custodia",
    "steps": [
     {
-     "title": "Qué hace un bróker",
-     "body": "El **bróker** recibe tu orden, la lleva al mercado y te cobra comisiones. En España tiene que estar autorizado por la **CNMV** o por el supervisor de otro país de la UE con «pasaporte europeo».\n\nCompruébalo en la web de la CNMV antes de abrir cuenta."
+     "texts": [
+      "Cero comisiones y un bono",
+      "Marta",
+      "Mira este bróker: 0 comisiones y bono de bienvenida.",
+      "No sale en los registros de la CNMV ni tiene pasaporte europeo. ¿Importa?",
+      "¿Qué le dices a Marta?",
+      "Que abra cuenta: cero comisiones es imbatible",
+      "Si es un chiringuito, puede perderlo todo, sin supervisor al que acudir.",
+      "Que busque un bróker autorizado",
+      "Eso. Autorizado por la CNMV o por otro supervisor de la UE.",
+      "Que pruebe solo con 500 €",
+      "También puede perder esos 500 €. Y suelen pedir más después.",
+      "¿Y qué hace exactamente un bróker?",
+      "Recibe tu orden, la lleva al mercado y te cobra comisiones."
+     ]
+    },
+    {
+     "texts": [
+      "¿Y si algo sale mal?",
+      "Tras comprar, tus acciones quedan **registradas a tu nombre**, separadas del patrimonio del bróker. ¿Qué te protege y qué no?",
+      "Estás protegido",
+      "Es riesgo tuyo",
+      "Tu bróker quiebra, pero tus acciones están a tu nombre",
+      "El **custodio** las guarda separadas del patrimonio del bróker: siguen siendo tuyas.",
+      "Un bróker español quiebra y falta parte de lo tuyo",
+      "Actúa el **FOGAIN**, hasta 100.000 € por inversor.",
+      "Tus acciones caen un 30 % en bolsa",
+      "El FOGAIN no cubre las caídas del mercado: son riesgo tuyo.",
+      "Un chiringuito sin registro desaparece con tu dinero",
+      "Sin autorización no hay supervisor ni fondo de garantía.",
+      "La empresa en la que invertiste quiebra",
+      "Es el riesgo de tu inversión, no del bróker: nadie te lo devuelve.",
+      "Clasifica los cinco casos.",
+      "Tus valores se guardan **a tu nombre**. El **FOGAIN** cubre hasta 100.000 € si la entidad no puede devolverte lo tuyo, **no si la bolsa baja**.",
+      "Pista: el fondo de garantía protege de la entidad, no del mercado.",
+      "Fíjate: lo que hace la bolsa con tu dinero es cosa tuya.",
+      "¿Te protege o es riesgo tuyo? Toca cada caso"
+     ]
     },
     {
      "title": "Liquidación y custodia",
-     "body": "Tras el cruce, la operación se **liquida**: el dinero va al vendedor y las acciones a ti. En Europa tarda dos días hábiles (**T+2**); en EE. UU., uno (T+1) desde 2024.\n\nEn España el registro central es **Iberclear**. El **custodio** guarda tus valores **a tu nombre**, separados del patrimonio del bróker."
-    },
-    {
-     "title": "¿Y si quiebra?",
-     "body": "Tus acciones siguen siendo tuyas. Si faltara algo, en España actúa el **FOGAIN** (Fondo General de Garantía de Inversiones), hasta **100.000 €** por inversor. Con un bróker de otro país de la UE te cubre el fondo de ese país, que puede ser menor (el mínimo europeo es 20.000 €).",
+     "body": "Tras el cruce, la operación se **liquida**: el dinero va al vendedor y las acciones a ti. En Europa tarda dos días hábiles (**T+2**); en EE. UU., uno (T+1) desde 2024. En España el registro central es **Iberclear**.\n\nCon un bróker de otro país de la UE te cubre el fondo de ese país, que puede ser menor (el mínimo europeo es 20.000 €).",
      "key": "El bróker es tu puerta de entrada; tus valores se guardan a tu nombre.",
-     "tip": "El FOGAIN no te cubre si tus acciones bajan: solo si la entidad no puede devolverte lo tuyo."
+     "tip": "Comprueba en la web de la CNMV que el bróker está autorizado antes de abrir cuenta."
     }
    ]
   },
@@ -104,18 +264,67 @@
    "title": "Mercado primario y secundario: las OPV",
    "steps": [
     {
-     "title": "Dos mercados",
-     "body": "• **Mercado primario:** se **emiten** valores nuevos y el emisor recibe el dinero. Por ejemplo, una salida a bolsa con acciones nuevas o una ampliación de capital.\n• **Mercado secundario:** los inversores se compran y venden valores que ya existen. Es la bolsa del día a día: la empresa **no recibe nada**."
+     "texts": [
+      "¿Quién recibe tu dinero?",
+      "En el **mercado primario** se emiten valores nuevos. En el **secundario**, los inversores se compran y venden los que ya existen.",
+      "El emisor (primario)",
+      "Otro inversor (secundario)",
+      "Una empresa amplía capital con acciones nuevas",
+      "Emite acciones nuevas: el dinero va a la empresa.",
+      "Compras 10 acciones de Iberdrola desde tu app",
+      "Se las compras a otro inversor: Iberdrola no recibe nada.",
+      "Una salida a bolsa con acciones de nueva emisión",
+      "Acciones nuevas: el dinero entra en la empresa.",
+      "Vendes tus acciones a otro inversor",
+      "Cambia de manos algo que ya existe.",
+      "El Tesoro emite letras en subasta",
+      "Valores nuevos: el dinero va al Estado, que es el emisor.",
+      "Compras un bono del Estado que ya cotiza",
+      "Ya existía: se lo compras a otro inversor.",
+      "Clasifica las seis operaciones.",
+      "**Primario:** se emiten valores nuevos y el dinero va al emisor. **Secundario:** cambian de manos los que ya existen y la empresa no recibe nada.",
+      "Pregúntate: ¿recibe dinero nuevo quien emite el valor?",
+      "La bolsa del día a día es casi toda mercado secundario.",
+      "Toca cada operación: ¿primario o secundario?"
+     ]
     },
     {
-     "title": "Salir a bolsa",
-     "body": "Hay dos formas, a menudo combinadas:\n\n• **OPS (oferta pública de suscripción):** se crean acciones nuevas; el dinero va a la empresa.\n• **OPV (oferta pública de venta):** los dueños actuales venden parte de sus acciones; el dinero va a ellos.\n\nEn inglés se llama IPO. Antes, la CNMV aprueba un **folleto** con la información y los riesgos."
+     "texts": [
+      "La salida a bolsa de moda",
+      "Bruno",
+      "Todo el mundo habla de la salida a bolsa de una marca de moda.",
+      "Si sale a bolsa es porque va genial, ¿no? ¡Meto todos mis ahorros!",
+      "¿Qué le aconsejas?",
+      "Que meta todo: es una oportunidad única",
+      "Si cae un 30 % los primeros meses, se queda sin colchón y con pérdidas.",
+      "Que lea el folleto y, si invierte, con una parte pequeña",
+      "Eso. El **folleto**, aprobado por la CNMV, explica el negocio y los riesgos.",
+      "Que espere a ver qué dicen en redes",
+      "Las redes no conocen la empresa. El folleto, sí.",
+      "El precio lo fija quien vende, y conoce la empresa mejor que tú.",
+      "Muchas salidas a bolsa acaban cotizando por debajo de su precio de salida."
+     ]
     },
     {
-     "title": "Ojo con el bombo",
-     "body": "Las salidas a bolsa llegan con mucha publicidad, pero el precio lo fija quien vende, que conoce la empresa mejor que tú. Muchas acaban cotizando por debajo de su precio de salida.",
-     "key": "Primario: el dinero va al emisor. Secundario: va a otro inversor.",
-     "tip": "Si todo el mundo habla de una OPV, pregúntate quién tiene prisa por vender."
+     "texts": [
+      "¿OPS u OPV?",
+      "Para salir a bolsa hay dos formas, a menudo combinadas. La clave: **¿quién se queda el dinero?**",
+      "OPS: va a la empresa",
+      "OPV: va a los dueños que venden",
+      "Se crean acciones nuevas para abrir fábricas",
+      "Oferta pública de **suscripción**: acciones nuevas, dinero para la empresa.",
+      "La fundadora vende parte de sus acciones",
+      "Oferta pública de **venta**: vende algo que ya existe y el dinero es para ella.",
+      "Un fondo que entró hace años vende su parte",
+      "Los dueños actuales venden: la empresa no recibe nada.",
+      "La empresa emite acciones para pagar su deuda",
+      "Emite acciones nuevas: el dinero va a la empresa.",
+      "Clasifica los cuatro casos.",
+      "**OPS:** acciones nuevas y dinero para la empresa. **OPV:** los dueños venden y el dinero va a ellos. En inglés, una salida a bolsa se llama IPO.",
+      "Si no se crean acciones nuevas, la empresa no cobra.",
+      "Antes de una salida a bolsa, mira quién vende y por qué.",
+      "Toca cada caso: ¿OPS u OPV?"
+     ]
     }
    ]
   },
@@ -123,16 +332,48 @@
    "title": "La bolsa española: IBEX y mercado continuo",
    "steps": [
     {
-     "title": "El mercado continuo",
-     "body": "Las cuatro bolsas españolas (Madrid, Barcelona, Bilbao y Valencia) están unidas en un sistema electrónico, el **SIBE** o **mercado continuo**: más de un centenar de empresas cotizan de 9:00 a 17:30 con un único libro de órdenes por valor.\n\nLo gestiona **BME**, del grupo suizo SIX desde 2020."
+     "texts": [
+      "¿Dónde cotiza?",
+      "Más de un centenar de empresas cotizan en el **mercado continuo**, pero no todas en el mismo escaparate.",
+      "IBEX 35",
+      "BME Growth",
+      "Latibex",
+      "Una gran eléctrica con millones de acciones negociadas al día",
+      "Está entre las 35 más líquidas: entra en el IBEX.",
+      "Una startup tecnológica pequeña que busca crecer",
+      "**BME Growth**: empresas pequeñas en expansión, con menos requisitos y más riesgo.",
+      "Una empresa mexicana que quiere cotizar en euros",
+      "**Latibex** reúne empresas latinoamericanas que cotizan en euros.",
+      "Un gran banco español muy negociado",
+      "Mucha liquidez: es de las 35 que forman el IBEX.",
+      "Una empresa familiar pequeña en expansión",
+      "Pequeña y en expansión: encaja en BME Growth (antes, MAB).",
+      "Coloca las cinco empresas.",
+      "El **IBEX 35** es el escaparate; el mercado continuo, la tienda entera. **BME Growth** tiene empresas pequeñas y más riesgo, y **Latibex**, latinoamericanas.",
+      "Pista: el IBEX va por liquidez; BME Growth, por tamaño pequeño.",
+      "Tamaño, liquidez y origen deciden el segmento.",
+      "Toca cada empresa: ¿dónde cotiza?"
+     ]
     },
     {
-     "title": "El IBEX 35",
-     "body": "Reúne las **35 empresas más líquidas** del mercado continuo, ponderadas por capitalización (contando solo las acciones que se negocian libremente). Un comité técnico lo revisa dos veces al año, en junio y diciembre: unas entran y otras salen.\n\nSu base fueron **3.000 puntos** a finales de 1989."
+     "texts": [
+      "Fuera del IBEX",
+      "Pablo",
+      "La empresa de la que tengo acciones ha salido del IBEX 35. ¿Va fatal?",
+      "¿Qué le dices a Pablo?",
+      "Sí: en el IBEX solo están las mejores",
+      "Están las 35 **más líquidas**, no las mejores.",
+      "No necesariamente: ahora se negocia menos que otras",
+      "Eso. No estar en el IBEX no significa ser mala empresa.",
+      "Ya no cotiza en bolsa",
+      "Sigue cotizando en el mercado continuo, con más de un centenar de empresas.",
+      "¿Y quién decide eso?",
+      "Un comité técnico, dos veces al año: en junio y en diciembre."
+     ]
     },
     {
-     "title": "Otros segmentos",
-     "body": "• **BME Growth:** empresas pequeñas en expansión, con menos requisitos y más riesgo (antes, MAB).\n• **Latibex:** empresas latinoamericanas que cotizan en euros.\n• **Renta fija:** bonos y letras.",
+     "title": "El IBEX 35 y el mercado continuo",
+     "body": "El **mercado continuo** (SIBE) une en un sistema electrónico las bolsas de Madrid, Barcelona, Bilbao y Valencia, con un único libro de órdenes por valor. Lo gestiona **BME**, del grupo suizo SIX desde 2020.\n\nEl **IBEX 35** pondera por capitalización, contando solo las acciones que se negocian libremente. Su base fueron **3.000 puntos** a finales de 1989.",
      "key": "El IBEX 35 es el escaparate; el mercado continuo, la tienda entera.",
      "tip": "No estar en el IBEX no significa ser mala empresa: solo que es menos negociada."
     }
@@ -152,24 +393,6 @@
     "Una empresa que te vende sus propias acciones cada día"
    ],
    "explanation": "La bolsa cruza órdenes: junta compradores y vendedores con reglas y precios públicos."
-  },
-  "u5l1-2": {
-   "prompt": "¿Para qué sirve la bolsa? Marca todas.",
-   "options": [
-    "Que los inversores puedan vender cuando quieran",
-    "Garantizar que las acciones suban",
-    "Dar un precio público de cada valor",
-    "Que las empresas consigan financiación"
-   ],
-   "explanation": "La bolsa no garantiza nada sobre el precio: solo hace posible comprar y vender."
-  },
-  "u5l1-3": {
-   "prompt": "Cuando compras una acción en bolsa, normalmente se la compras a otro inversor, no a la empresa.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "La empresa solo recibe dinero cuando emite acciones nuevas (salida a bolsa o ampliación)."
   },
   "u5l1-4": {
    "prompt": "Empareja cada nombre con su papel.",
@@ -197,14 +420,6 @@
    ],
    "explanation": "La liquidez es una de las grandes ventajas de la bolsa frente a, por ejemplo, un piso."
   },
-  "u5l1-6": {
-   "prompt": "La bolsa garantiza un precio mínimo a las acciones.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "El precio puede caer tanto como caigan las ganas de comprar. Nadie lo garantiza."
-  },
   "u5l1-7": {
    "prompt": "Laura quiere comprar acciones de una empresa española y un desconocido le escribe por Instagram: «Te las compro yo directamente en la bolsa, hazme un Bizum». ¿Qué hace?",
    "options": [
@@ -217,23 +432,6 @@
     "Las acciones quedan a su nombre, con un intermediario supervisado.",
     "La Bolsa no atiende a particulares: se opera siempre a través de un intermediario.",
     "Lo más probable es que ese dinero no vuelva: nadie compra en bolsa por Bizum."
-   ]
-  },
-  "u5l1-8": {
-   "prompt": "¿Qué le contestas a Lumi?",
-   "options": [
-    "Se lo das a la CNMV",
-    "Normalmente no: se lo pagas a otro inversor que vende",
-    "Sí, siempre"
-   ],
-   "explanation": "En el mercado del día a día, los inversores se compran y venden acciones entre ellos.",
-   "feedback": [
-    "La CNMV supervisa; no recibe tu dinero.",
-    "¡Eso! La empresa solo recibe dinero cuando emite acciones nuevas.",
-    "Solo en una salida a bolsa o una ampliación. En el día a día, el dinero va a otro inversor."
-   ],
-   "lines": [
-    "Si compro una acción de Inditex, ¿le doy el dinero a Inditex? 🤔"
    ]
   },
   "u5l1-9": {
@@ -293,37 +491,6 @@
     "Institucional"
    ]
   },
-  "u5l2-4": {
-   "prompt": "Bruno ve que una acción cae un 8 % en minutos tras unos resultados y quiere «ganarles en velocidad» a los algoritmos comprando y vendiendo durante la tarde. ¿Qué hace?",
-   "options": [
-    "Opera toda la tarde a golpe de noticia",
-    "Pone todo su dinero en una sola operación rápida",
-    "Recuerda que compite con máquinas más rápidas y no opera por impulso"
-   ],
-   "explanation": "A corto plazo, el minorista juega en desventaja.",
-   "feedback": [
-    "Llega tarde a cada movimiento: los algoritmos reaccionaron en microsegundos.",
-    "Riesgo enorme en una apuesta contra los participantes más rápidos del mercado.",
-    "Se ahorra comisiones, spreads y nervios en una carrera que no puede ganar."
-   ]
-  },
-  "u5l2-5": {
-   "prompt": "Los inversores institucionales, como fondos y aseguradoras, mueven mucho más dinero que un particular.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Gestionan el dinero de miles de personas: sus órdenes son enormes."
-  },
-  "u5l2-6": {
-   "prompt": "Rápido: ¿quién opera en microsegundos?",
-   "options": [
-    "Los fondos de pensiones",
-    "Los minoristas",
-    "Los algoritmos de alta frecuencia"
-   ],
-   "explanation": "Son programas que compran y venden a velocidades imposibles para una persona."
-  },
   "u5l2-7": {
    "prompt": "Un minorista compite en igualdad de información y velocidad con los profesionales.",
    "options": [
@@ -352,24 +519,6 @@
    ],
    "explanation": "Toda compra tiene una venta al otro lado."
   },
-  "u5l2-10": {
-   "prompt": "¿Qué le contestas a Lumi?",
-   "options": [
-    "Hay que operar más rápido que ellos",
-    "Exacto, mejor ni lo intentes",
-    "A corto plazo es difícil ganarles; a largo plazo no compites con ellos"
-   ],
-   "explanation": "El minorista no gana por velocidad, sino por tiempo y costes bajos.",
-   "feedback": [
-    "Ellos operan en microsegundos: esa carrera está perdida.",
-    "Tampoco: no hace falta ganarles en velocidad para invertir bien a largo plazo.",
-    "¡Bien visto! Invertir a largo plazo es participar de lo que ganan las empresas."
-   ],
-   "lines": [
-    "He leído que los fondos y los algoritmos dominan la bolsa 😰",
-    "¿Entonces los particulares no pintamos nada?"
-   ]
-  },
   "u5l3-1": {
    "prompt": "El mejor precio de compra es 20,10 € y el de venta 20,14 €. Si compras ya, ¿a qué precio compras?",
    "options": [
@@ -378,18 +527,6 @@
     "20,10 €"
    ],
    "explanation": "Compras al mejor precio de venta (ask): es lo que pide quien vende."
-  },
-  "u5l3-2": {
-   "prompt": "Rápido: en ese libro (20,10 € / 20,14 €), ¿de cuánto es el spread?",
-   "options": [],
-   "explanation": "20,14 − 20,10 = 0,04 €.",
-   "unit": "€"
-  },
-  "u5l3-3": {
-   "prompt": "Simula tu compra: quieres 600 acciones ya. En el libro hay 300 a 10,04 € y 800 a 10,05 €. ¿Cuánto pagas en total?",
-   "options": [],
-   "explanation": "300 × 10,04 = 3.012 € y 300 × 10,05 = 3.015 €. Total: 6.027 €.",
-   "unit": "€"
   },
   "u5l3-4": {
    "prompt": "En esa compra de 600 acciones por 6.027 €, ¿cuál es tu precio medio por acción?",
@@ -417,14 +554,6 @@
    ],
    "explanation": "Dos subastas enmarcan la sesión continua."
   },
-  "u5l3-7": {
-   "prompt": "Si llegan más vendedores que compradores, el precio tiende a bajar.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Los vendedores con prisa aceptan precios cada vez más bajos del libro de compra."
-  },
   "u5l3-8": {
    "prompt": "¿Qué puede mover el precio de una acción? Marca todos.",
    "options": [
@@ -449,14 +578,6 @@
     "Más presión vendedora sobre un libro pequeño: el precio cae todavía más."
    ]
   },
-  "u5l3-10": {
-   "prompt": "El precio de una acción es lo que vale de verdad la empresa.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Es el último acuerdo entre un comprador y un vendedor; el valor de la empresa es otra cosa."
-  },
   "u5l4-1": {
    "prompt": "Empareja cada mercado con su horario (hora peninsular).",
    "options": [
@@ -472,25 +593,6 @@
     "De 15:30 a 22:00",
     "De 9:00 a 17:30"
    ]
-  },
-  "u5l4-2": {
-   "prompt": "Rápido: un miércoles normal a las 16:00 (hora peninsular), ¿qué está abierto? Marca todos.",
-   "options": [
-    "Bolsa de Nueva York",
-    "Criptomonedas",
-    "Bolsa de Tokio",
-    "Bolsa de Madrid"
-   ],
-   "explanation": "A las 16:00 coinciden Madrid y Nueva York; Tokio cerró hace horas y las cripto nunca cierran."
-  },
-  "u5l4-3": {
-   "prompt": "Rápido: sábado a las 12:00. ¿Qué puedes comprar al momento?",
-   "options": [
-    "Acciones de Apple en Nueva York",
-    "Bitcoin",
-    "Acciones del IBEX 35"
-   ],
-   "explanation": "El fin de semana las bolsas cierran; las criptomonedas cotizan 24/7."
   },
   "u5l4-4": {
    "prompt": "¿A qué hora abre normalmente la bolsa de Nueva York en hora peninsular española?",
@@ -515,20 +617,6 @@
    ],
    "explanation": "EE. UU. y Europa no adelantan ni retrasan el reloj el mismo día."
   },
-  "u5l4-7": {
-   "prompt": "Son las 23:00. Una empresa de EE. UU. acaba de publicar muy buenos resultados y Pablo pone una orden de compra a mercado. ¿Qué es lo más probable?",
-   "options": [
-    "Se cancela sola por ser de noche",
-    "Se ejecuta ahora mismo al último precio de cierre",
-    "Se ejecuta en la apertura, quizá a un precio mucho más alto que el cierre"
-   ],
-   "explanation": "Con el mercado cerrado, una orden a mercado se ejecuta en la apertura, al precio que haya.",
-   "feedback": [
-    "Normalmente queda pendiente hasta la apertura.",
-    "La bolsa está cerrada: no hay nadie en el libro con quien cruzar en horario normal.",
-    "Si la acción abre con un hueco al alza, paga bastante más de lo que veía en pantalla."
-   ]
-  },
   "u5l4-8": {
    "prompt": "Un martes a las 10:00 (hora peninsular), ¿abierto o cerrado?",
    "options": [
@@ -544,14 +632,6 @@
     "Abierto",
     "Cerrado"
    ]
-  },
-  "u5l4-9": {
-   "prompt": "Si das una orden con la bolsa cerrada, se ejecuta al último precio de cierre.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Espera a la apertura y se ejecuta al precio que haya entonces."
   },
   "u5l4-10": {
    "prompt": "Cuando una acción abre muy lejos del cierre anterior por noticias de la noche, se produce un ____.",
@@ -572,22 +652,6 @@
    ],
    "explanation": "Es el intermediario entre tú y el mercado."
   },
-  "u5l5-2": {
-   "prompt": "Si tu bróker quiebra, tus acciones se pierden con él.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Están a tu nombre y separadas de su patrimonio."
-  },
-  "u5l5-3": {
-   "prompt": "El FOGAIN te compensa si tus acciones caen en bolsa.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Solo cubre que la entidad no pueda devolverte tu dinero o tus valores. Las caídas de la bolsa son riesgo tuyo."
-  },
   "u5l5-4": {
    "prompt": "Rápido: ¿hasta cuánto cubre el FOGAIN por inversor?",
    "options": [
@@ -607,20 +671,6 @@
     "El bróker la lleva al mercado"
    ],
    "explanation": "De la app al registro: así llegan las acciones a ser tuyas."
-  },
-  "u5l5-6": {
-   "prompt": "Marta ve un anuncio de un bróker con «0 comisiones y bono de bienvenida». No aparece en los registros de la CNMV ni tiene pasaporte europeo. ¿Qué hace?",
-   "options": [
-    "Abre cuenta: cero comisiones es imbatible",
-    "Ingresa solo 500 € para probar",
-    "Busca otro bróker autorizado"
-   ],
-   "explanation": "Sin autorización no hay supervisión ni fondo de garantía.",
-   "feedback": [
-    "Si es un chiringuito, puede perder todo lo que ingrese, sin supervisor al que acudir.",
-    "Si no está autorizado, también puede perder esos 500 €. Y suelen pedir más después.",
-    "Sus valores quedarán custodiados por una entidad supervisada."
-   ]
   },
   "u5l5-7": {
    "prompt": "Empareja cada nombre con su función.",
@@ -647,14 +697,6 @@
     "dos"
    ],
    "explanation": "T+2: el día de la operación más dos días hábiles."
-  },
-  "u5l5-9": {
-   "prompt": "Antes de abrir cuenta conviene comprobar que el bróker está autorizado por la CNMV o por otro supervisor de la UE.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Es la primera comprobación: si no aparece, no es una entidad autorizada."
   },
   "u5l5-10": {
    "prompt": "Pablo tiene 60.000 € en un bróker con sede en otro país de la UE y da por hecho que le cubre el FOGAIN español. ¿Qué hace?",
@@ -686,22 +728,6 @@
     "Acciones nuevas; el dinero va a la empresa"
    ]
   },
-  "u5l6-2": {
-   "prompt": "¿Mercado primario o secundario?",
-   "options": [
-    "Salida a bolsa con acciones de nueva emisión",
-    "Vendes tus acciones a otro inversor",
-    "Compras un bono del Estado que ya cotiza",
-    "Una empresa amplía capital con acciones nuevas",
-    "Compras 10 acciones de Iberdrola desde tu app",
-    "El Tesoro emite letras en subasta"
-   ],
-   "explanation": "Si el emisor recibe dinero nuevo, es primario; si cambia de manos lo que ya existe, secundario.",
-   "right": [
-    "Primario",
-    "Secundario"
-   ]
-  },
   "u5l6-3": {
    "prompt": "Compras hoy acciones de Inditex en bolsa. ¿Quién recibe tu dinero?",
    "options": [
@@ -719,14 +745,6 @@
    ],
    "explanation": "Si la empresa quiere dinero nuevo, tiene que emitir acciones (OPS)."
   },
-  "u5l6-5": {
-   "prompt": "Que una salida a bolsa tenga mucha publicidad garantiza que subirá.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "La publicidad no cambia lo que vale la empresa; muchas acaban por debajo del precio de salida."
-  },
   "u5l6-6": {
    "prompt": "¿Qué documento deberías leer antes de acudir a una salida a bolsa?",
    "options": [
@@ -735,20 +753,6 @@
     "El folleto aprobado por la CNMV"
    ],
    "explanation": "El folleto explica el negocio, las cuentas y los riesgos."
-  },
-  "u5l6-7": {
-   "prompt": "Todo el mundo habla de la salida a bolsa de una empresa de moda y Bruno quiere meter todos sus ahorros el primer día. ¿Qué hace?",
-   "options": [
-    "Mete todos sus ahorros",
-    "Pide un préstamo para comprar más",
-    "Lee el folleto y, si invierte, que sea una parte pequeña"
-   ],
-   "explanation": "Una OPV es una inversión más, no una oportunidad única.",
-   "feedback": [
-    "Si la acción cae un 30 % en los primeros meses, se queda sin colchón y con pérdidas.",
-    "Deuda para una apuesta en una empresa que acaba de empezar a cotizar: doble riesgo.",
-    "Si el estreno sale mal, su plan no se rompe."
-   ]
   },
   "u5l6-8": {
    "prompt": "Cuando una empresa que ya cotiza emite acciones nuevas para conseguir dinero, hace una ____ de capital.",
@@ -769,23 +773,6 @@
     "La empresa decide salir a bolsa"
    ],
    "explanation": "Después del estreno, las acciones pasan a negociarse entre inversores."
-  },
-  "u5l6-10": {
-   "prompt": "¿Qué le contestas a Lumi?",
-   "options": [
-    "No necesariamente: a veces los dueños aprovechan para vender caro",
-    "Si sale a bolsa, está garantizado que sube",
-    "Sí, solo salen las mejores"
-   ],
-   "explanation": "En una OPV, quien vende elige el momento, y suele elegir uno bueno para él.",
-   "feedback": [
-    "¡Eso! Quien vende conoce la empresa mejor que tú. Lee el folleto antes de decidir.",
-    "Nada garantiza que suba: muchas acaban por debajo de su precio de salida.",
-    "Salen las que quieren dinero o cuyos dueños quieren vender: no tiene por qué ser buena señal."
-   ],
-   "lines": [
-    "Si una empresa sale a bolsa, es porque va genial, ¿no? 🚀"
-   ]
   },
   "u5l7-1": {
    "prompt": "Empareja cada nombre con lo que es.",
@@ -820,38 +807,6 @@
    ],
    "explanation": "Con los peores titulares es cuando más difícil resulta prever el mercado: por eso conviene un plan que no dependa de adivinarlo.",
    "horizon": "el año y medio siguiente"
-  },
-  "u5l7-4": {
-   "prompt": "El IBEX 35 incluye todas las empresas que cotizan en la bolsa española.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Solo las 35 más líquidas; en el mercado continuo hay más de un centenar."
-  },
-  "u5l7-5": {
-   "prompt": "Una empresa puede salir del IBEX 35 en una revisión.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Si deja de estar entre las más líquidas, el comité puede sacarla."
-  },
-  "u5l7-6": {
-   "prompt": "¿En qué segmento encaja cada empresa?",
-   "options": [
-    "Una startup tecnológica pequeña que busca crecer",
-    "Una empresa brasileña que quiere cotizar en euros",
-    "Una empresa familiar pequeña en expansión",
-    "Un gran banco español muy negociado",
-    "Una eléctrica grande con millones de acciones negociadas al día"
-   ],
-   "explanation": "Tamaño, liquidez y origen deciden el segmento.",
-   "right": [
-    "Mercado continuo (IBEX)",
-    "BME Growth",
-    "Latibex"
-   ]
   },
   "u5l7-7": {
    "prompt": "El IBEX 35 empezó con una base de ____ puntos a finales de 1989.",

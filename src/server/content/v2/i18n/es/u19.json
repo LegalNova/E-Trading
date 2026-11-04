@@ -9,16 +9,45 @@
    "title": "Qué muestra un gráfico de precios",
    "steps": [
     {
-     "title": "Los ejes",
-     "body": "• **Eje horizontal:** el tiempo. Cada punto, barra o vela es un periodo (un minuto, un día, una semana…).\n• **Eje vertical:** el precio, normalmente a la derecha, en la moneda del activo o en puntos si es un índice.\n• **Debajo:** el **volumen**, lo que se negoció en cada periodo."
+     "texts": [
+      "¿Qué te cuenta un gráfico?",
+      "En horizontal, el **tiempo**. En vertical, el **precio**. Debajo, el **volumen**. ¿Qué puedes saber mirándolo?",
+      "Lo dice el gráfico",
+      "No lo dice",
+      "A qué precio abrió ayer",
+      "Cada vela guarda su apertura.",
+      "El precio de mañana",
+      "Nadie lo sabe: el gráfico es un registro del pasado.",
+      "El precio más alto de la semana",
+      "Cada vela guarda su máximo y su mínimo.",
+      "Cuánto se negoció hoy",
+      "Es el volumen: las barras de abajo.",
+      "Si la empresa es un buen negocio",
+      "Eso lo dicen sus cuentas, no su gráfico.",
+      "El cierre de hace un año",
+      "El eje horizontal te lleva hacia atrás en el tiempo.",
+      "Si va a seguir subiendo",
+      "Puede seguir o no: son probabilidades, nunca certezas.",
+      "Clasifica las siete preguntas.",
+      "Un gráfico es el **registro exacto** de lo que compradores y vendedores acordaron. Cuenta lo que pasó, **no lo que va a pasar**.",
+      "¿Ya ha pasado o todavía no? Esa es la clave.",
+      "¿Lo puedes leer en el gráfico?"
+     ]
+    },
+    {
+     "texts": [
+      "Leer no es adivinar",
+      "Tres gráficos reales de 30 velas diarias. Léelos y decide: ¿**sube o baja** en las 10 sesiones siguientes?",
+      "Juega las tres rondas.",
+      "Leer el pasado es fácil; adivinar el futuro, no. El análisis técnico trabaja con **probabilidades, nunca con certezas**.",
+      "¡Tres de tres! Con tan pocas rondas, la suerte pesa mucho.",
+      "Acertar el futuro con velas es difícil para todo el mundo.",
+      "Mira las velas y elige: ¿sube o baja?"
+     ]
     },
     {
      "title": "Cuatro precios por periodo",
-     "body": "De cada periodo se guardan cuatro datos (en inglés, **OHLC**):\n\n• **Apertura** (open): el primer precio.\n• **Máximo** (high) y **mínimo** (low).\n• **Cierre** (close): el último, y el más importante.\n\nEn E-Trading, al pasar el dedo por una vela ves sus cuatro precios, la variación y el volumen."
-    },
-    {
-     "title": "Registro, no predicción",
-     "body": "Un gráfico es el registro exacto de lo que compradores y vendedores acordaron en cada momento. No dice lo que pasará: el análisis técnico trabaja con probabilidades, nunca con certezas.",
+     "body": "De cada periodo se guardan cuatro datos (en inglés, **OHLC**):\n\n• **Apertura** (open): el primer precio.\n• **Máximo** (high) y **mínimo** (low).\n• **Cierre** (close): el último, y el más importante.\n\nEn E-Trading, al pasar el dedo por una vela ves sus cuatro precios, la variación y el volumen.",
      "key": "Un gráfico cuenta lo que pasó, no lo que va a pasar.",
      "tip": "Leerlo bien ya es una ventaja: mucha gente solo mira si está en verde o en rojo."
     }
@@ -28,8 +57,22 @@
    "title": "Línea, barras y velas",
    "steps": [
     {
-     "title": "Cinco formas de ver el precio",
-     "body": "• **Línea:** une los cierres. Tendencia sin ruido.\n• **Área:** la línea con relleno, como en muchas apps.\n• **Barras (OHLC):** del mínimo al máximo, con una rayita a la izquierda (apertura) y otra a la derecha (cierre).\n• **Velas:** lo mismo, con un cuerpo de color. Es el estándar.\n• **Heikin Ashi:** velas promediadas que suavizan el ruido."
+     "texts": [
+      "Solo una línea",
+      "Hugo",
+      "Mi app de inversión solo me enseña una línea. ¿Me pierdo algo?",
+      "¿Qué le dices?",
+      "Para ver años, la línea basta; las velas enseñan cada sesión",
+      "Eso. La línea une los cierres; las velas guardan los cuatro precios.",
+      "Nada: la línea lo dice todo",
+      "Sin velas no ves máximos, mínimos ni lo que pasó dentro del día.",
+      "Sin velas no se puede invertir",
+      "Se puede invertir bien mirando poco el gráfico. Las velas son útiles, no obligatorias.",
+      "Las **barras** muestran del mínimo al máximo, con dos rayitas.",
+      "La de la izquierda es la apertura; la de la derecha, el cierre.",
+      "Las **velas** dicen lo mismo con un cuerpo de color. Son el estándar.",
+      "Vale, ¡enséñame una!"
+     ]
     },
     {
      "prompt": "En velas se ve la batalla de cada día. Toca la vela verde más larga",
@@ -37,8 +80,32 @@
      "ko": "Busca el cuerpo verde más alto, casi sin líneas finas arriba y abajo."
     },
     {
+     "texts": [
+      "¿Línea o velas?",
+      "Cada gráfico responde a una pregunta. ¿Cuál usarías para cada cosa?",
+      "Línea o área",
+      "Velas o barras",
+      "Ver cómo ha ido un fondo indexado en 10 años",
+      "Para la tendencia larga, la línea basta y se lee mejor.",
+      "Ver si hoy el precio subió y luego volvió abajo",
+      "Solo las velas y las barras guardan el máximo del día.",
+      "Saber el mínimo de ayer para poner un stop",
+      "La línea solo tiene cierres: no ves el mínimo.",
+      "Comparar dos índices durante décadas",
+      "La línea enseña la dirección sin ruido.",
+      "Leer la apertura y el cierre de cada día",
+      "Son dos de los cuatro precios de cada vela.",
+      "Enseñar cuánto ha subido tu cartera en 5 años",
+      "Para una evolución larga, la línea o el área.",
+      "Clasifica los seis usos.",
+      "La **línea** resume hacia dónde va; las **velas** cuentan quién ganó cada periodo. Para operar hacen falta los cuatro precios.",
+      "¿Te basta el cierre o necesitas lo que pasó dentro del día?",
+      "Elige el gráfico para cada cosa"
+     ]
+    },
+    {
      "title": "Cuidado con Heikin Ashi",
-     "body": "Sus aperturas y cierres se calculan con promedios: **no son precios reales**. Sirve para ver la tendencia, nunca para decidir a qué precio entrar o dónde poner un stop.",
+     "body": "Hay más formas: el **área** (la línea con relleno, como en muchas apps) y el **Heikin Ashi**, velas promediadas que suavizan el ruido.\n\nSus aperturas y cierres se calculan con promedios: **no son precios reales**. Sirve para ver la tendencia, nunca para decidir a qué precio entrar o dónde poner un stop.",
      "key": "La línea resume; las velas cuentan la batalla de cada periodo.",
      "tip": "Para ver hacia dónde va, la línea. Para ver quién gana cada día, las velas."
     }
@@ -48,18 +115,62 @@
    "title": "Temporalidades",
    "steps": [
     {
-     "title": "El mismo activo, historias distintas",
-     "body": "Cada vela puede ser un minuto, una hora, un día, una semana o un mes:\n\n• **1–15 min:** *scalping* y *day trading*.\n• **1 hora:** operaciones de pocos días.\n• **Diario:** de semanas a meses.\n• **Semanal y mensual:** largo plazo.\n\nEn diario puede verse una subida y en 5 minutos una caída. Las dos son ciertas."
+     "texts": [
+      "El gráfico de 5 minutos",
+      "Irene",
+      "Invierto a 10 años en una acción. En el gráfico semanal lleva un año subiendo.",
+      "Pero hoy, en el de 5 minutos, ¡lleva toda la mañana cayendo! ¿Vendo?",
+      "¿Qué le dices?",
+      "Mira la temporalidad de tu horizonte",
+      "Eso. A 10 años manda el semanal; la mañana es ruido.",
+      "Vende ya: la tendencia ha cambiado",
+      "Una mañana en 5 minutos no rompe la tendencia de un año.",
+      "Compra más para aprovechar la caída",
+      "Ni vender ni comprar por una mañana: es la herramienta equivocada.",
+      "Cada vela puede ser un minuto, una hora, un día, una semana o un mes.",
+      "En diario puede verse una subida y en 5 minutos, una caída. Ambas son ciertas."
+     ]
     },
     {
-     "title": "Ruido y señal",
-     "body": "Cuanto más corta la temporalidad, más **ruido**: movimientos aleatorios que no significan nada. Las señales fallan más y cada operación paga comisión y *spread*.\n\nUn estudio con quienes hicieron *day trading* en futuros del índice brasileño entre 2013 y 2015 vio que el **97 %** de los que insistieron más de 300 días perdió dinero."
+     "texts": [
+      "Operar cada pocos minutos",
+      "En minutos manda el **ruido**: las señales fallan como una moneda. Y cada operación paga comisión y *spread*.",
+      "Mil personas operan a cara o cruz pagando 5 € cada vez. Tras 300 operaciones, ¿cuántas pierden?",
+      "La mitad: es una moneda",
+      "La gran mayoría",
+      "Casi nadie",
+      "Pierde el **80 %**: la comisión inclina la moneda en su contra en cada operación.",
+      "Llega a 300 operaciones por persona y mira cuántos pierden.",
+      "Cuanto más corta la temporalidad, más operaciones y más **costes**. En un estudio de *day trading* en Brasil (2013-2015), el **97 %** de quienes insistieron más de 300 días perdió dinero.",
+      "Ocho de cada diez pierden, y nadie ha hecho nada raro.",
+      "Con una operación, mitad y mitad: es una moneda.",
+      "Sube las operaciones y mira a los que pierden"
+     ]
     },
     {
-     "title": "Las tres pantallas",
-     "body": "Método de Alexander Elder:\n1. **Semanal:** decide la dirección.\n2. **Diario:** busca el momento.\n3. **Horas:** afina la entrada y el stop.",
-     "key": "Elige la temporalidad según tu horizonte, y mira siempre la mayor antes que la menor.",
-     "tip": "Antes de mirar la vela de cinco minutos, mira dónde está la de la semana."
+     "texts": [
+      "Cada horizonte, su gráfico",
+      "La temporalidad se elige según cuánto tiempo mantienes tus inversiones. ¿Qué gráfico encaja con cada persona?",
+      "Minutos u horas",
+      "Diario",
+      "Semanal o mensual",
+      "Sara abre y cierra sus operaciones el mismo día",
+      "Para el mismo día, velas de minutos u horas.",
+      "Leo mantiene sus operaciones unas semanas",
+      "De semanas a meses, el gráfico diario.",
+      "Nora revisa su plan de pensiones una vez al año",
+      "A muchos años, semanal o mensual.",
+      "Iván hace scalping con cripto",
+      "Operaciones de segundos o minutos.",
+      "Eva busca operaciones de uno a tres meses",
+      "Meses: el diario es su gráfico.",
+      "Hugo invierte en un fondo indexado a 20 años",
+      "Las velas de minutos solo le darían sustos.",
+      "Coloca a las seis personas.",
+      "Elige la temporalidad según tu **horizonte** y mira siempre **la mayor antes que la menor**. Método de Elder: semanal para la dirección, diario para el momento y horas para afinar la entrada y el stop.",
+      "¿Cuánto tiempo mantiene cada uno su inversión?",
+      "Coloca a cada persona"
+     ]
     }
    ]
   },
@@ -67,17 +178,63 @@
    "title": "Escala lineal y logarítmica",
    "steps": [
     {
-     "title": "Euros o porcentajes",
-     "body": "• **Lineal:** cada centímetro vale los mismos euros. De 10 a 20 € ocupa lo mismo que de 100 a 110 €.\n• **Logarítmica:** cada centímetro vale el mismo porcentaje. De 10 a 20 € (+100 %) ocupa lo mismo que de 100 a 200 € (+100 %)."
+     "texts": [
+      "Bitcoin, una línea plana",
+      "Dani",
+      "He visto un gráfico de bitcoin desde 2013. Hasta 2017 es una línea plana.",
+      "¿Antes no se movía?",
+      "¿Qué le dices?",
+      "Es la escala lineal: con precios bajos, los porcentajes enormes ocupan poco",
+      "Eso. En logarítmica, un +100 % ocupa lo mismo en 2014 que en 2024.",
+      "No, antes no pasaba nada",
+      "Pasaba muchísimo, con caídas de más del 80 %. En lineal no se ve.",
+      "El gráfico estará mal hecho",
+      "Está bien hecho. Lo que engaña es la escala lineal para tantos años.",
+      "**Lineal:** cada centímetro vale los mismos euros.",
+      "**Logarítmica:** cada centímetro vale el mismo porcentaje.",
+      "En logarítmica, de 10 a 20 € ocupa lo que de 100 a 200 €."
+     ]
     },
     {
-     "title": "Por qué importa",
-     "body": "En un gráfico lineal de 50 años del S&P 500, la caída de 1987 parece insignificante y la de 2020, enorme. En logarítmica se ve que 1987 fue de más de un 30 % en pocos días, comparable a 2020.\n\nCon activos que se han multiplicado mucho (bitcoin, grandes tecnológicas), el lineal **engaña**."
+     "texts": [
+      "Bitcoin, arriba y abajo",
+      "Finales de 2020. Inviertes **10.000 €** en bitcoin. Datos reales, semana a semana. Fíjate en los porcentajes.",
+      "Si algo cae un 75 %, ¿cuánto tiene que subir después para volver a donde estaba?",
+      "Un 75 %",
+      "Un 150 %",
+      "Un 300 %",
+      "De 100 a 25 es −75 %; de 25 a 100 hay que multiplicar por 4: **+300 %**.",
+      "Llega hasta el final, vendas o no.",
+      "Bitcoin cayó un **75 %** desde su máximo de 2021 y necesitó subir un **302 %** para volver. Los porcentajes **no son simétricos**, y la escala logarítmica respeta esas proporciones; la lineal, no.",
+      "Has vendido. Mira qué pasa después…",
+      "Casi la mitad de lo que pusiste. ¿Cuánto haría falta para recuperarlo?",
+      "¡Casi el doble! Bitcoin se mueve mucho en los dos sentidos.",
+      "Dale a empezar. Puedes vender cuando quieras"
+     ]
     },
     {
-     "title": "Los porcentajes no son simétricos",
-     "body": "Mueve la caída: si algo cae un 50 %, necesita subir un 100 % para volver. La escala logarítmica respeta esas proporciones; la lineal, no.",
-     "tip": "Para varios años, escala logarítmica. Para días o semanas, apenas cambia nada."
+     "texts": [
+      "¿Qué escala elegirías?",
+      "En gráficos largos, la escala cambia lo que ves. ¿**Logarítmica** o **da casi igual**?",
+      "Logarítmica",
+      "Da casi igual",
+      "El Nasdaq 100 desde 1985",
+      "Cuatro décadas y precios muy distintos: logarítmica.",
+      "Una acción esta semana",
+      "En tramos cortos, euros y porcentajes van casi a la par.",
+      "Una cripto que se ha multiplicado por 100",
+      "En lineal, sus primeros años parecerían una línea plana.",
+      "El euro frente al dólar hoy",
+      "Un solo día: la escala apenas cambia nada.",
+      "Un fondo durante 40 años",
+      "Para comparar épocas, mira porcentajes.",
+      "Una acción en el último mes",
+      "Movimientos pequeños: casi no hay diferencia.",
+      "Clasifica los seis gráficos.",
+      "Para periodos largos o activos que se han multiplicado mucho, **logarítmica**. En tramos cortos, euros y porcentajes van casi a la par.",
+      "¿Son años y precios muy distintos, o unos pocos días?",
+      "¿Logarítmica o da igual?"
+     ]
     }
    ]
   },
@@ -85,12 +242,57 @@
    "title": "Tendencias: máximos y mínimos",
    "steps": [
     {
-     "title": "Cómo se reconoce",
-     "body": "• **Alcista:** máximos y mínimos cada vez más altos.\n• **Bajista:** máximos y mínimos cada vez más bajos.\n• **Lateral:** el precio rebota entre un techo y un suelo sin dirección clara.\n\nCharles Dow lo formuló a finales del siglo XIX: los precios se mueven en tendencias, que siguen vigentes hasta que hay señales claras de cambio."
+     "texts": [
+      "¿Sigue subiendo?",
+      "Leo",
+      "Mi acción subía: máximo en 40 €, bajó a 36 € y rebotó a 39 €.",
+      "Ahora ha caído a 35 €. ¿Sigue la tendencia alcista?",
+      "¿Qué le dices?",
+      "Se ha puesto en duda: máximo y mínimo más bajos",
+      "Exacto. No superó los 40 € y perdió los 36 €.",
+      "Sí, solo es una corrección normal",
+      "Corregir un 5-10 % es normal. Pero aquí se ha roto la estructura.",
+      "Va a caer seguro un 50 %",
+      "Romper la estructura no dice cuánto caerá. Puede pasar a lateral.",
+      "**Alcista:** máximos y mínimos cada vez más altos. **Bajista:** cada vez más bajos.",
+      "Lo formuló Charles Dow a finales del siglo XIX."
+     ]
     },
     {
-     "title": "Cuándo se pone en duda",
-     "body": "Una tendencia alcista se tambalea cuando el precio **no supera el último máximo** y después **pierde el último mínimo**: aparece el primer mínimo decreciente.\n\nLas correcciones del 5–10 % son normales dentro de una subida sana."
+     "texts": [
+      "Máximos y mínimos",
+      "Te damos los tres últimos máximos y mínimos de cada gráfico. ¿Qué tendencia es?",
+      "Alcista",
+      "Bajista",
+      "Lateral",
+      "Máximos 30, 33, 37 · mínimos 27, 30, 34",
+      "Suben los máximos y los mínimos.",
+      "Máximos 90, 85, 80 · mínimos 84, 79, 73",
+      "Bajan los dos.",
+      "Máximos 50, 51, 50 · mínimos 45, 44, 45",
+      "Se repiten: techo y suelo sin dirección.",
+      "Máximos 15, 17, 19 · mínimos 13, 14, 16",
+      "Cada caída se queda más arriba que la anterior.",
+      "Máximos 64, 60, 57 · mínimos 58, 55, 51",
+      "Los rebotes no llegan al máximo anterior.",
+      "Máximos 120, 119, 121 · mínimos 110, 111, 110",
+      "Rebota entre un techo y un suelo.",
+      "Clasifica las seis secuencias.",
+      "Si suben máximos y mínimos, **alcista**; si bajan los dos, **bajista**; si se repiten, **lateral**. Corregir un 5-10 % es normal dentro de una subida sana.",
+      "Mira primero los mínimos: ¿suben, bajan o se repiten?",
+      "Clasifica cada secuencia"
+     ]
+    },
+    {
+     "texts": [
+      "¿Sigue la tendencia?",
+      "Cuatro gráficos reales con una dirección clara. ¿Sube o baja en las 10 sesiones siguientes? ¿**Sigue** la tendencia o **gira**?",
+      "Juega las cuatro rondas.",
+      "En estas cuatro rondas, la tendencia siguió en tres y giró en una. El **momentum** existe en los datos, pero es una probabilidad, no una promesa.",
+      "Seguir la tendencia ha funcionado aquí. No siempre lo hace.",
+      "Una tendencia puede girar sin avisar.",
+      "Mira hacia dónde van las velas y decide"
+     ]
     },
     {
      "title": "El momentum existe",
@@ -104,16 +306,48 @@
    "title": "El volumen",
    "steps": [
     {
-     "title": "Qué es",
-     "body": "El **volumen** es la cantidad de acciones, contratos o monedas que cambian de manos en un periodo. Se ve en barras bajo el gráfico, verdes si la vela subió y rojas si bajó.\n\nEl precio dice qué pasa; el volumen, cuánta gente hay detrás."
+     "texts": [
+      "Rotura con poca gente",
+      "Sara",
+      "¡Mi acción acaba de superar su máximo del año! Compro ya.",
+      "¿Y el volumen de hoy?",
+      "La mitad de lo normal. ¿Importa?",
+      "¿Qué le dices?",
+      "Sí: espera a ver si cierra arriba con volumen",
+      "Bien. Con volumen alto, la rotura es mucho más creíble.",
+      "No: rotura es rotura",
+      "Sin volumen, poca gente la respalda. Es la típica **falsa rotura**.",
+      "Vende: el volumen bajo garantiza una caída",
+      "Pone en duda la rotura, pero no garantiza nada.",
+      "El **volumen** es lo que cambia de manos en cada periodo: las barras de abajo.",
+      "El precio te dice qué pasa. El volumen, cuánta gente se lo cree."
+     ]
     },
     {
-     "title": "Cómo se lee",
-     "body": "• Sube con volumen alto: convicción.\n• Sube con volumen cada vez menor: posible agotamiento.\n• Baja con volumen bajo: corrección tranquila.\n• Rompe un nivel con volumen alto: rotura más fiable.\n• Rompe con volumen bajo: riesgo de **falsa rotura**."
+     "texts": [
+      "¿Confirma o pone en duda?",
+      "El mismo movimiento de precio, con distinto volumen. ¿El volumen lo **confirma** o lo **pone en duda**?",
+      "Lo confirma",
+      "Lo pone en duda",
+      "Sube con el triple de volumen que la media",
+      "Mucha gente detrás de la subida: convicción.",
+      "Supera una resistencia con un volumen bajísimo",
+      "Poca gente detrás: riesgo de falsa rotura.",
+      "Cada día sube, pero con menos volumen",
+      "Posible agotamiento: cada vez se apunta menos gente.",
+      "Pierde un soporte con un volumen enorme",
+      "La rotura tiene mucha gente detrás: más fiable.",
+      "Marca un máximo con un volumen muy superior a la media",
+      "Volumen alto en la rotura: más creíble.",
+      "Clasifica los cinco movimientos.",
+      "Un movimiento con mucho volumen tiene a **mucha gente detrás**. Sin volumen puede ser una ilusión, como una **falsa rotura**.",
+      "¿Hay mucha gente detrás del movimiento, o poca?",
+      "¿Confirma o pone en duda?"
+     ]
     },
     {
      "title": "Picos y límites",
-     "body": "Los picos de volumen llegan con noticias, vencimientos, pánico o euforia; tras una caída fuerte, a veces marcan la **capitulación**. Ojo: en divisas no hay volumen centralizado y en cripto se reparte entre muchas plataformas.",
+     "body": "• Sube con volumen alto: convicción. Baja con volumen bajo: corrección tranquila.\n• Los picos de volumen llegan con noticias, vencimientos, pánico o euforia; tras una caída fuerte, a veces marcan la **capitulación**.\n• En divisas no hay volumen centralizado y en cripto se reparte entre muchas plataformas.",
      "key": "Un movimiento con mucho volumen tiene a mucha gente detrás; sin volumen puede ser una ilusión.",
      "tip": "El precio te dice qué pasa. El volumen, cuánta gente se lo cree."
     }
@@ -176,32 +410,6 @@
    "explanation": "(53 − 50) ÷ 50 = 0,06 → +6 %. La variación diaria se calcula entre un cierre y el anterior.",
    "unit": "%"
   },
-  "u19l1-7": {
-   "prompt": "Si un gráfico lleva tres meses subiendo, es seguro que mañana también subirá.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Un gráfico registra el pasado. La tendencia puede seguir o no: se habla de probabilidades, nunca de certezas."
-  },
-  "u19l1-8": {
-   "prompt": "Primer contacto: 30 velas diarias reales, sin nombre ni fecha. ¿Qué crees que hizo el precio en las 10 sesiones siguientes?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Mirando solo un gráfico nadie lo sabe con certeza. Este ejercicio sirve para notar la diferencia entre leer el pasado y adivinar el futuro.",
-   "horizon": "las 10 sesiones siguientes"
-  },
-  "u19l1-9": {
-   "prompt": "Rápido: ¿qué eje muestra el tiempo?",
-   "options": [
-    "Ninguno: va en la leyenda",
-    "El vertical",
-    "El horizontal"
-   ],
-   "explanation": "El tiempo avanza de izquierda a derecha; el precio va en vertical."
-  },
   "u19l1-10": {
    "prompt": "Pasas el dedo por una vela en el gráfico de E-Trading. ¿Qué datos ves? Marca todos.",
    "options": [
@@ -242,29 +450,6 @@
    "options": [],
    "explanation": "Ese cuerpo enorme dice que los compradores dominaron la sesión de principio a fin. Un gráfico de línea solo te mostraría un cierre más alto. (Apple · velas diarias · abril de 2025)"
   },
-  "u19l2-4": {
-   "prompt": "En un gráfico de barras, la rayita de la izquierda marca el cierre.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "La de la izquierda es la apertura; la de la derecha, el cierre."
-  },
-  "u19l2-5": {
-   "prompt": "¿Qué gráfico usarías para cada cosa?",
-   "options": [
-    "Saber si hoy hubo rechazo de los precios altos",
-    "Enseñar cuánto ha subido un fondo en 5 años",
-    "Poner un stop bajo el mínimo de ayer",
-    "Leer la apertura y el cierre de cada día",
-    "Ver la tendencia de 10 años de un índice"
-   ],
-   "explanation": "La línea resume la tendencia; las velas y las barras tienen los cuatro precios de cada periodo, que son los que hacen falta para operar.",
-   "right": [
-    "Línea o área",
-    "Velas o barras"
-   ]
-  },
   "u19l2-6": {
    "prompt": "En línea, la dirección se ve de un vistazo. ¿Qué tendencia tiene? (Microsoft · cierres cada 3 sesiones · diciembre de 2025 – febrero de 2026)",
    "options": [
@@ -298,33 +483,6 @@
     "Eso es: Heikin Ashi sirve para la tendencia; los precios para operar se miran en velas, barras o línea."
    ]
   },
-  "u19l2-9": {
-   "prompt": "Rápido: ¿qué gráfico es el estándar en casi todas las plataformas?",
-   "options": [
-    "Puntos y figuras",
-    "Velas japonesas",
-    "Área"
-   ],
-   "explanation": "Las velas muestran los cuatro precios de forma fácil de leer."
-  },
-  "u19l2-10": {
-   "prompt": "¿Qué le contestas a Lumi?",
-   "options": [
-    "Para ver la evolución a largo plazo, la línea basta; las velas sirven para ver cada sesión por dentro",
-    "No, la línea lo dice todo",
-    "Sí: sin velas no se puede invertir"
-   ],
-   "explanation": "Cada gráfico responde a una pregunta: la línea, hacia dónde va; las velas, quién ganó cada periodo.",
-   "feedback": [
-    "¡Eso! Para mirar un fondo a años, la línea va bien. Para operar, hacen falta los cuatro precios.",
-    "La línea solo une los cierres: no ves máximos, mínimos ni lo que pasó dentro de cada día.",
-    "Se puede invertir muy bien mirando poco el gráfico. Las velas son útiles, no obligatorias."
-   ],
-   "lines": [
-    "Mi app de inversión solo me enseña una línea 📈",
-    "¿Me estoy perdiendo algo?"
-   ]
-  },
   "u19l3-1": {
    "prompt": "Ordena de más ruido a menos ruido.",
    "options": [
@@ -335,22 +493,6 @@
     "Mensual"
    ],
    "explanation": "Cuanto más corta la temporalidad, más movimientos aleatorios sin significado."
-  },
-  "u19l3-2": {
-   "prompt": "¿Qué temporalidad encaja con cada persona?",
-   "options": [
-    "Pablo hace scalping",
-    "Laura revisa su fondo indexado cada trimestre",
-    "Marta mantiene posiciones unas semanas",
-    "Ana invierte para su jubilación",
-    "Bruno abre y cierra operaciones el mismo día"
-   ],
-   "explanation": "La temporalidad se elige según el horizonte: quien invierte a años no necesita mirar velas de minutos.",
-   "right": [
-    "Minutos u horas",
-    "Diario",
-    "Semanal o mensual"
-   ]
   },
   "u19l3-3": {
    "prompt": "Estos cierres cubren unas ocho semanas. ¿Qué tendencia ves? (Microsoft · cierres cada 3 sesiones · junio–agosto de 2026)",
@@ -388,37 +530,6 @@
    ],
    "explanation": "La mayor marca la dirección: si el semanal es alcista, solo se buscan compras. La menor afina la entrada y el stop."
   },
-  "u19l3-7": {
-   "prompt": "Cuanto más corta la temporalidad, más fiables son las señales.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Al revés: en minutos domina el ruido, las señales fallan más y los costes se acumulan."
-  },
-  "u19l3-8": {
-   "prompt": "En el gráfico semanal, una acción lleva un año con máximos y mínimos crecientes. En el de 5 minutos, lleva toda la mañana cayendo. Marta, que invierte a varios años, se asusta. ¿Qué le dices?",
-   "options": [
-    "Que compre más para aprovechar la caída",
-    "Que mire la temporalidad que encaja con su horizonte",
-    "Que venda ya: la tendencia ha cambiado"
-   ],
-   "explanation": "Cada horizonte tiene su temporalidad. Mezclarlas lleva a decisiones impulsivas.",
-   "feedback": [
-    "Ni vender ni comprar por una mañana: decidir con el gráfico de 5 minutos es usar la herramienta equivocada.",
-    "Bien: para años manda el semanal. La caída de la mañana puede ser parte del ruido.",
-    "Una mañana en 5 minutos no rompe una tendencia de un año: para su horizonte es ruido."
-   ]
-  },
-  "u19l3-9": {
-   "prompt": "Rápido: un inversor a largo plazo debería mirar sobre todo…",
-   "options": [
-    "Gráficos semanales y mensuales",
-    "Velas de 1 minuto",
-    "Solo las noticias del día"
-   ],
-   "explanation": "Su horizonte son años, no minutos."
-  },
   "u19l3-10": {
    "prompt": "Un day trader hace 5 operaciones al día y paga 2 € de comisión por cada una. ¿Cuánto paga en un mes de 20 sesiones?",
    "options": [],
@@ -454,29 +565,6 @@
    "explanation": "10 € sobre 200 € = +5 %. En lineal, este salto de 10 € ocupa lo mismo que el de 20 a 30 €; en logarítmica, se ve diez veces más pequeño.",
    "unit": "%"
   },
-  "u19l4-5": {
-   "prompt": "¿Qué escala elegirías?",
-   "options": [
-    "El S&P 500 desde 1950",
-    "Una acción en las últimas 3 semanas",
-    "Una tecnológica que se ha multiplicado por 50",
-    "Bitcoin desde 2013",
-    "Un índice durante una sola sesión"
-   ],
-   "explanation": "Para periodos largos o activos que se han multiplicado mucho, logarítmica. En tramos cortos, euros y porcentajes van casi a la par.",
-   "right": [
-    "Logarítmica",
-    "Da casi igual"
-   ]
-  },
-  "u19l4-6": {
-   "prompt": "Si un activo cae un 50 %, necesita subir un 100 % para volver al punto de partida.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "De 100 a 50 es −50 %; de 50 a 100 es +100 %. Por eso hay que pensar en porcentajes, no en euros."
-  },
   "u19l4-7": {
    "prompt": "S&P 500, finales de septiembre de 1929: los cierres semanales llevan casi dos años subiendo. ¿Qué crees que pasó después?",
    "options": [
@@ -495,33 +583,6 @@
     "porcentaje"
    ],
    "explanation": "Por eso compara bien épocas con precios muy distintos."
-  },
-  "u19l4-9": {
-   "prompt": "Para mirar unas pocas semanas, la escala apenas cambia el gráfico.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "En tramos cortos los movimientos son pequeños y euros y porcentajes van casi a la par."
-  },
-  "u19l4-10": {
-   "prompt": "¿Qué le contestas?",
-   "options": [
-    "Es que el gráfico está mal hecho",
-    "Es la escala lineal: con precios bajos, movimientos enormes en porcentaje ocupan poco. En logarítmica se verían",
-    "No, antes no pasaba nada"
-   ],
-   "explanation": "En periodos largos, la escala lineal esconde los movimientos antiguos. La logarítmica los pone en su sitio.",
-   "feedback": [
-    "El gráfico está bien; lo que engaña es usar escala lineal para tantos años.",
-    "¡Eso! En logarítmica, un +100 % ocupa lo mismo en 2014 que en 2024.",
-    "Pasaba muchísimo, con caídas de más del 80 %. En lineal, como los precios eran bajos, no se ve."
-   ],
-   "lines": [
-    "He visto un gráfico de bitcoin desde 2013 👀",
-    "Hasta 2017 es una línea plana y luego todo pasa al final.",
-    "¿Antes no se movía?"
-   ]
   },
   "u19l5-1": {
    "prompt": "¿Qué tendencia tiene este gráfico? (NVIDIA · cierres cada 3 sesiones · marzo–mayo de 2026)",
@@ -564,22 +625,6 @@
    ],
    "explanation": "Máximos y mínimos crecientes: es la definición de tendencia alcista."
   },
-  "u19l5-6": {
-   "prompt": "Clasifica cada secuencia de máximos y mínimos.",
-   "options": [
-    "Máximos 80, 76, 71 · mínimos 74, 70, 65",
-    "Máximos 40, 40, 41 · mínimos 35, 36, 35",
-    "Máximos 12, 11, 10 · mínimos 10, 9, 8",
-    "Máximos 20, 22, 25 · mínimos 18, 19, 21",
-    "Máximos 100, 104, 109 · mínimos 95, 99, 102"
-   ],
-   "explanation": "Si suben los dos, alcista; si bajan los dos, bajista; si se repiten, lateral.",
-   "right": [
-    "Alcista",
-    "Bajista",
-    "Lateral"
-   ]
-  },
   "u19l5-7": {
    "prompt": "Una acción sube durante meses. Marca un máximo en 60 €, cae a 54 €, rebota solo hasta 58 € y después cae a 52 €. ¿Qué ha pasado?",
    "options": [
@@ -602,37 +647,6 @@
    ],
    "explanation": "El momentum es una tendencia estadística sobre meses, no una promesa para la semana que viene. La estructura te ayuda a saber dónde te equivocas.",
    "horizon": "las 10 sesiones siguientes"
-  },
-  "u19l5-9": {
-   "prompt": "Una corrección del 7 % dentro de una tendencia alcista significa que la tendencia ha terminado.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Las correcciones del 5–10 % son normales en subidas sanas. Lo que importa es si se rompe la estructura de máximos y mínimos."
-  },
-  "u19l5-10": {
-   "prompt": "¿Qué idea del análisis técnico tiene más respaldo académico?",
-   "options": [
-    "Que los niveles de Fibonacci predicen los giros",
-    "Que las tendencias de 3–12 meses tienden a persistir (momentum)",
-    "Que cada vela verde anuncia otra"
-   ],
-   "explanation": "El momentum aparece en acciones, bonos, divisas y materias primas, con datos de más de un siglo. Aun así, es difícil de aprovechar tras costes."
-  },
-  "u19l6-1": {
-   "prompt": "¿El volumen confirma el movimiento o lo pone en duda?",
-   "options": [
-    "Sube con volumen cada vez menor",
-    "Rompe un soporte con un volumen enorme",
-    "Rompe una resistencia con un volumen bajísimo",
-    "Sube con volumen muy superior a la media"
-   ],
-   "explanation": "Volumen alto = mucha gente detrás del movimiento. Volumen bajo o decreciente = poca convicción.",
-   "right": [
-    "Lo confirma",
-    "Lo pone en duda"
-   ]
   },
   "u19l6-2": {
    "prompt": "El precio rompe una resistencia con un volumen muy inferior a la media. ¿Qué riesgo hay?",
@@ -664,14 +678,6 @@
    "options": [],
    "explanation": "Abrió casi en el mínimo y cerró casi en el máximo. Si además llegara con volumen alto, la señal de fuerza sería más creíble. (NVIDIA · velas diarias · marzo–abril de 2026)"
   },
-  "u19l6-5": {
-   "prompt": "En divisas, el volumen que muestran muchos gráficos es un dato parcial.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "El mercado de divisas no tiene una bolsa central: cada proveedor ve solo una parte de lo negociado."
-  },
   "u19l6-6": {
    "prompt": "Sin ver el volumen solo tienes media historia. ¿Sube o baja en las 10 sesiones siguientes?",
    "options": [
@@ -680,29 +686,6 @@
    ],
    "explanation": "Aunque vieras el volumen, una sola pista no basta para adivinar el corto plazo. El volumen sirve para valorar si un movimiento tiene gente detrás.",
    "horizon": "las 10 sesiones siguientes"
-  },
-  "u19l6-7": {
-   "prompt": "Bruno ve que una acción supera su máximo del año, pero el volumen de ese día es la mitad de lo normal. Quiere comprar ya. ¿Qué sería lo más prudente según lo aprendido?",
-   "options": [
-    "Comprar todo lo que pueda: rotura es rotura",
-    "Esperar a ver si cierra por encima con volumen",
-    "Vender, porque el volumen bajo garantiza una caída"
-   ],
-   "explanation": "Una rotura con poco volumen es sospechosa. Esperar confirmación reduce las falsas roturas.",
-   "feedback": [
-    "Sin volumen, la rotura tiene poca gente detrás: es el caso típico de falsa rotura.",
-    "Bien: un cierre claro al otro lado con volumen superior a la media hace la rotura más creíble.",
-    "El volumen bajo pone en duda la rotura, pero no garantiza nada en ningún sentido."
-   ]
-  },
-  "u19l6-8": {
-   "prompt": "Rápido: un pico de volumen enorme tras una caída fuerte puede indicar…",
-   "options": [
-    "Que el mercado está cerrado",
-    "Capitulación",
-    "Cruce dorado"
-   ],
-   "explanation": "Los últimos vendedores se rinden. No siempre: puede haber varios picos."
   },
   "u19l6-9": {
    "prompt": "Un movimiento con mucho volumen tiene a mucha gente detrás; uno sin volumen puede ser una ____.",

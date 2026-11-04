@@ -1233,7 +1233,7 @@
     "feesChart": "El mismo ahorro con dos comisiones",
     "feesNote": "Ejemplo con una rentabilidad bruta del {gross} al año antes de comisiones: no es una promesa.",
     "feesTake": "Lo que se llevan las comisiones de más",
-    "fxAsset": "Lo que sube la inversión (en {currency})",
+    "fxAsset": "Lo que sube la inversión en su moneda",
     "fxMove": "Lo que sube el {currency} frente al euro",
     "fxEur": "Lo que ganas tú, en euros",
     "gainSold": "Ganancias al vender",
@@ -1283,6 +1283,9 @@
     "taxToPay": "Impuesto a pagar",
     "valHead": "Beneficio por acción hoy: {eps}",
     "youGetEur": "Te quedan en euros",
-    "youInvest": "Inviertes"
+    "youInvest": "Inviertes",
+    "usdNote": "sin contar el cambio euro/dólar",
+    "coinHeadFree": "{n} personas hacen operaciones de {stake} a cara o cruz, sin comisiones",
+    "coinWin": "Si sale bien ganan {win}; si sale mal pierden {stake}."
   }
 }

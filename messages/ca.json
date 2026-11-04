@@ -1233,7 +1233,7 @@
     "feesChart": "El mateix estalvi amb dues comissions",
     "feesNote": "Exemple amb una rendibilitat bruta del {gross} anual abans de comissions: no és una promesa.",
     "feesTake": "El que s’emporten les comissions de més",
-    "fxAsset": "El que puja la inversió (en {currency})",
+    "fxAsset": "El que puja la inversió en la seva moneda",
     "fxMove": "El que puja el {currency} davant l’euro",
     "fxEur": "El que guanyes tu, en euros",
     "gainSold": "Guanys en vendre",
@@ -1283,6 +1283,9 @@
     "taxToPay": "Impost a pagar",
     "valHead": "Benefici per acció avui: {eps}",
     "youGetEur": "Et queden en euros",
-    "youInvest": "Inverteixes"
+    "youInvest": "Inverteixes",
+    "usdNote": "sense comptar el canvi euro/dòlar",
+    "coinHeadFree": "{n} persones fan operacions de {stake} a cara o creu, sense comissions",
+    "coinWin": "Si surt bé guanyen {win}; si surt malament perden {stake}."
   }
 }

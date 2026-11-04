@@ -180,6 +180,11 @@ function checkPlay(id: string, p: Extract<Step, { kind: 'PLAY' }>['play']): stri
   if (!p.lumi.some(l => !l.when)) e.push(`${id}: Lumi necesita una frase sin condición (la de por defecto)`)
   if (p.lumi.findIndex(l => !l.when) !== p.lumi.length - 1) e.push(`${id}: la frase de Lumi sin condición tiene que ir la última`)
   if (p.mode === 'MISSION' && !p.goal) e.push(`${id}: una misión necesita un reto`)
+  // Horizonte y aportaciones cuentan meses por posición: la serie tiene que ser mensual y sin huecos
+  if (p.widget.kind === 'horizon' || p.widget.kind === 'dca') {
+    const m = p.widget.series.dates.map(d => (/^\d{4}-\d{2}$/.test(d) ? Number(d.slice(0, 4)) * 12 + Number(d.slice(5)) : NaN))
+    if (m.some((x, i) => i > 0 && x - m[i - 1] !== 1)) e.push(`${id}: ${p.widget.kind} necesita una serie mensual sin huecos`)
+  }
   // Iconos del catálogo (nada de emojis en la interfaz)
   JSON.stringify(p.widget, (k, x) => (k === 'icon' && typeof x === 'string' && !(GLYPHS as readonly string[]).includes(x) && e.push(`${id}: icono «${x}» no existe (src/shared/glyphs.ts)`), x))
   if (p.widget.kind === 'sort' && p.widget.cards.some(c => c.bin < 0 || c.bin >= (p.widget as { bins: unknown[] }).bins.length)) e.push(`${id}: tarjeta con grupo fuera de rango`)

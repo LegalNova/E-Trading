@@ -100,7 +100,10 @@ export function Crash({ w, onMetrics }: W<'crash'>) {
           lines={[{ values: shown, color: drop < 0 ? 'var(--down)' : 'var(--up)', label: w.series.caption }]}
           marks={soldAt !== null ? [{ at: soldAt, color: 'var(--ink)' }] : undefined}
         />
-        <span className="t-cap">{w.series.caption}</span>
+        <span className="t-cap">
+          {w.series.caption}
+          {w.series.usd && ` · ${t('usdNote')}`}
+        </span>
       </div>
       <Row>
         <Big label={soldAt !== null ? t('yourCash') : t('yourInvestment')} value={f.eur(mine)} tone={mine >= w.amount ? 'up' : 'down'} />
@@ -152,7 +155,10 @@ export function Coinflip({ w, onMetrics }: W<'coinflip'>) {
   return (
     <div className="flex flex-col gap-3">
       <div className="card flex flex-col gap-2">
-        <span className="t-cap">{t('coinHead', { n: f.n(w.traders), stake: f.eur(w.stake), fee: f.eur(w.fee, 2) })}</span>
+        <span className="t-cap">
+          {w.fee > 0 ? t('coinHead', { n: f.n(w.traders), stake: f.eur(w.stake), fee: f.eur(w.fee, 2) }) : t('coinHeadFree', { n: f.n(w.traders), stake: f.eur(w.stake) })}
+          {w.win !== 1 && ` ${t('coinWin', { win: f.eur(w.stake * w.win), stake: f.eur(w.stake) })}`}
+        </span>
         <div className="flex h-[110px] items-end gap-[3px]">
           {bins.map((b, k) => {
             const mid = lo + ((k + 0.5) / B) * (best - lo)

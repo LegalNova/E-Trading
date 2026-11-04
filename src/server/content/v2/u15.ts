@@ -1,6 +1,6 @@
 import 'server-only'
 // Sección 5 · Unidad 15 · Materias primas (docs/curso-v2/02-curriculo.md)
-import { buckets, calc, chat, fill, key, lesson, match, multi, num, point, scenario, single, text, tf, timed, trend, unit, upDown } from '../dsl'
+import { buckets, chat, choose, fill, key, lesson, match, mission, multi, note, num, opt, play, point, say, scenario, single, story, tf, timed, trend, unit, upDown, when } from '../dsl'
 
 const CFD = 'Los CFD son instrumentos complejos y están asociados a un riesgo elevado de perder dinero rápidamente debido al apalancamiento. Entre un 74 y un 89 % de los inversores minoristas pierden dinero cuando negocian con CFD.'
 
@@ -8,9 +8,45 @@ export default unit({
   id: 'u15', order: 15, title: 'Materias primas', description: 'Oro, petróleo, metales y agrícolas: qué los mueve y cómo se invierte en ellos',
   lessons: [
     lesson('u15l1', 'El oro', [
-      text('Por qué se compra oro', 'El oro **no paga intereses ni dividendos**. Se compra como **refugio**: en crisis, frente a la inflación o cuando se desconfía de las monedas. Los bancos centrales también lo acumulan como reserva.\n\nComo no rinde nada, cuando los **tipos de interés reales** (descontada la inflación) suben, tener oro «cuesta» más y suele sufrir.'),
-      text('Brilla… a ratos', '• **1980:** máximo de unos 850 $ la onza. No lo volvió a superar hasta **2008**, y por el camino perdió mucho valor real.\n• **2020:** récord por encima de 2.000 $ en plena pandemia.\n• **2025:** superó por primera vez los **4.000 $**.\n\nPuede pasar décadas sin ganarle a la inflación.'),
-      key('Para qué sirve en una cartera', 'Una parte pequeña puede ayudar a diversificar porque a veces sube cuando la bolsa cae. Pero no genera rentas: su rentabilidad depende solo de lo que otro pague mañana.', 'El oro protege a veces, pero no produce nada.', 'Un refugio que puede pasar 20 años sin subir también es un riesgo.'),
+      mission({
+        title: '25 años de oro',
+        intro: 'Agosto de 2000: entras con **1.000 €** en oro. Vive 25 años mes a mes, con **datos reales**, y decide si vendes.',
+        widget: { kind: 'crash', series: 'series-gold', amount: 1000 },
+        predict: {
+          prompt: 'El oro marcó un máximo en agosto de 2011. ¿Cuánto tardó en volver a superarlo?',
+          options: ['Unos meses', 'Unos 2 años', 'Casi 9 años'],
+          answer: 2,
+          why: 'Cerró agosto de 2011 en 1.829 $ y bajó hasta 1.060 $ a finales de 2015 (**−42 %**). No volvió a superar aquel máximo hasta julio de 2020.',
+        },
+        goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
+        insight: 'Quien aguantó multiplicó su dinero por más de 15, con **casi 9 años** por debajo del máximo de 2011. El oro no paga nada: solo ganas si otro paga más mañana.',
+        lumi: [
+          { when: when('sold', '==', 1), say: 'Has vendido. Mira qué pasa después…', mood: 'THINKING' },
+          { when: when('played', '==', 1), say: 'Más de 15 veces en 25 años, con un largo bache en medio.', mood: 'CALM' },
+          { when: when('drop', '>=', 500), say: '¡Seis veces más! ¿Seguirá subiendo sin parar?', mood: 'THINKING' },
+          { when: when('drop', '>=', 100), say: 'Ya se ha duplicado. Y no te ha pagado ni un euro de intereses.', mood: 'HAPPY' },
+          { say: 'Dale a empezar: 25 años de oro, mes a mes', mood: 'HAPPY' },
+        ],
+      }),
+      play({
+        title: 'Un poco de oro en la cartera',
+        intro: 'Enero de 2008: **10.000 €** en acciones y bonos de EE. UU., rebalanceando cada año (datos reales hasta 2025). Añade algo de oro y mira la peor caída.',
+        widget: { kind: 'mix', series: 'mix-classic', weights: [60, 40, 0], amount: 10000, rebalance: true },
+        predict: {
+          prompt: 'En la crisis de 2008, mientras las acciones se hundían, ¿qué hizo el oro?',
+          options: ['Se hundió igual que las acciones', 'Aguantó: acabó casi plano', 'Se multiplicó por dos'],
+          answer: 1,
+          why: 'De enero de 2008 a febrero de 2009, las acciones cayeron un 45 % y el oro subió un 1 %.',
+        },
+        goal: { text: 'Con al menos un 10 % de oro, consigue que la peor caída no pase del −25 %.', when: [when('w2', '>=', 10), when('maxDD', '>=', -25)] },
+        insight: 'Como a veces sube cuando la bolsa cae, **un poco de oro suavizó la peor caída**: del −28 % al −22 % con un 20 %. Pero solo, el oro también llegó a caer un 43 %.',
+        lumi: [
+          { when: when('w2', '>=', 50), say: 'Mucho oro: recuerda que no paga intereses ni dividendos.', mood: 'THINKING' },
+          { when: when('maxDD', '>=', -25), say: '¡Mira cómo se suaviza la peor caída!', mood: 'HAPPY' },
+          { say: 'Sube el oro poco a poco y mira la peor caída', mood: 'HAPPY' },
+        ],
+      }),
+      key('Por qué se compra oro', 'El oro **no paga intereses ni dividendos**. Se compra como **refugio**: en crisis, frente a la inflación o cuando se desconfía de las monedas, y los bancos centrales lo acumulan como reserva. Cuando los **tipos de interés reales** (descontada la inflación) suben, tenerlo «cuesta» más y suele sufrir.\n\nSu máximo de 1980, unos 850 $ la onza, no lo superó hasta **2008**, y por el camino perdió mucho valor real. En 2020 pasó de 2.000 $ y en 2025, por primera vez, de **4.000 $**.', 'El oro protege a veces, pero no produce nada.', 'Un refugio que puede pasar 20 años sin subir también es un riesgo.'),
     ], [
       trend('Mira el oro desde 2018 hasta el verano de 2020. ¿Qué tendencia ves?', 'hist-gold-2020', 'Alcista', 'De unos 1.200 $ a más de 2.000 $: miedo, tipos bajos y pandemia empujaron al refugio.'),
       point('Toca el punto más bajo del oro en este periodo.', 'hist-gold-2020', 'min', 'El mínimo fue a finales de 2018, en torno a 1.190 $. Desde ahí subió alrededor de un 70 % hasta agosto de 2020.'),
@@ -22,12 +58,52 @@ export default unit({
       num('El oro pasó de unos 850 $ en 1980 a unos 2.000 $ en 2020. ¿Cuánto subió en total (en %)?', 135, '%', '(2.000 − 850) ÷ 850 ≈ 135 % en 40 años: poco más de un 2 % anual, por debajo de la inflación de EE. UU. en ese periodo.', 3),
       timed(single('Rápido: ¿qué suele pasarle al oro cuando suben mucho los tipos reales?', ['Suele sufrir', 'Siempre sube', 'Paga más dividendo'], 0, 'Tener un activo sin rentas sale más caro frente a un bono que paga más.'), 12),
       chat(['Mi tío dice que el oro «nunca baja» y que lo meta todo ahí 🪙'], '¿Qué le contestas a Lumi?', [['Tiene razón, es el refugio perfecto', 'Ojo: tardó 28 años en recuperar su máximo de 1980.'], ['El oro puede pasar décadas sin subir; como mucho, una parte pequeña para diversificar', 'Vale: no es una hucha mágica, es una pieza más de la cartera.'], ['El oro paga buenos dividendos', 'No paga nada: solo ganas si sube el precio.']], 1, 'Ningún activo «nunca baja». El oro diversifica, pero también tiene rachas muy largas sin subir.'),
-    ], { source: '2.8' }),
+    ], { source: '2.8', minutes: 6, retire: [2, 4, 8, 9] }),
 
     lesson('u15l2', 'El petróleo y la OPEP', [
-      text('Brent y WTI', 'Hay dos precios de referencia:\n\n• **Brent:** crudo del mar del Norte, referencia en Europa.\n• **WTI:** crudo de Texas que se entrega en Cushing (Oklahoma), referencia en EE. UU.\n\nSe cotizan en **dólares por barril** (unos 159 litros). Por eso a España también le afecta el dólar.'),
-      text('Qué lo mueve', '• **Demanda:** crecimiento mundial, sobre todo de EE. UU. y China.\n• **Oferta:** la **OPEP** (fundada en 1960) y, desde 2016, la **OPEP+**, con Rusia y otros productores, pactan cuotas de producción.\n• **Geopolítica:** guerras, sanciones, estrechos como Ormuz.\n• **Inventarios:** cuánto crudo hay almacenado.'),
-      key('Tres sustos históricos', '• **1973:** el embargo de la OPEP cuadruplicó el precio.\n• **2008:** el WTI rozó los **147 $** en julio… y en diciembre estaba por debajo de 40 $.\n• **20 de abril de 2020:** con el mundo confinado, el contrato de mayo del WTI cerró a **−37,63 $**: el vendedor pagaba por que se lo llevaran.', 'El petróleo se mueve por oferta, demanda y geopolítica, y puede hacerlo con violencia.'),
+      mission({
+        title: 'El petróleo, semana a semana',
+        intro: 'Mayo de 2019: entras con **1.000 €** en petróleo WTI, justo antes de una pandemia y una guerra. Vívelo con **datos reales** y decide si vendes.',
+        widget: { kind: 'crash', series: 'series-oil', amount: 1000 },
+        predict: {
+          prompt: 'Abril de 2020: el mundo está confinado. ¿Cuánto llegan a valer tus 1.000 €?',
+          options: ['Unos 900 €: el petróleo siempre se necesita', 'Unos 600 €', 'Menos de 350 €'],
+          answer: 2,
+          why: 'La semana del 20 de abril de 2020 cerró en 16,94 $ el barril: **−68 %**. Tus 1.000 € valían unos 317 €.',
+        },
+        goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
+        insight: 'Del −68 % de 2020 a más del doble en 2022: el crudo se mueve por **oferta, demanda y geopolítica**, y lo hace con violencia.',
+        lumi: [
+          { when: when('sold', '==', 1), say: 'Has vendido. Mira qué pasa después…', mood: 'THINKING' },
+          { when: when('drop', '<=', -50), say: 'Carreteras vacías y casi sin sitio para guardar crudo. ¿Vendes?', mood: 'WORRIED' },
+          { when: when('drop', '>=', 50), say: '¡El crudo se dispara! Hace poco nadie lo quería.', mood: 'THINKING' },
+          { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
+        ],
+      }),
+      play({
+        title: '¿Qué mueve el crudo?',
+        intro: 'El precio del petróleo depende de cuánto se pide, cuánto se produce y cuánto sobra. ¿Qué suele hacer en cada caso?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Tiende a subir' }, { label: 'Tiende a bajar' }],
+          cards: [
+            { icon: 'factory', label: 'La OPEP+ recorta su producción', bin: 0, why: 'Menos oferta con la misma demanda: el precio sube.' },
+            { icon: 'down', label: 'Recesión mundial', bin: 1, why: 'Se fabrica y se viaja menos: cae la demanda.' },
+            { icon: 'ship', label: 'Conflicto en el estrecho de Ormuz', bin: 0, why: 'Sube por miedo a que se corte el suministro.' },
+            { icon: 'database', label: 'Inventarios llenos y sin sitio para almacenar', bin: 1, why: 'Sobra crudo: presión bajista, como en abril de 2020.' },
+            { icon: 'globe', label: 'China crece más de lo esperado', bin: 0, why: 'EE. UU. y China son los que más pesan en la demanda.' },
+            { icon: 'home', label: 'Confinamiento mundial: nadie viaja', bin: 1, why: 'Lo que pasó en 2020: la demanda se hundió de golpe.' },
+          ],
+        },
+        goal: { text: 'Clasifica los seis casos.', when: [when('done', '==', 6)] },
+        insight: 'La **OPEP+** (la OPEP, nacida en 1960, más Rusia y otros desde 2016) pacta cuánto se produce; la demanda la marcan sobre todo EE. UU. y China.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: ¿hay más crudo del que se pide, o menos?', mood: 'THINKING' },
+          { when: when('done', '>=', 3), say: '¡Bien! Oferta, demanda, almacenamiento y geopolítica.', mood: 'HAPPY' },
+          { say: '¿Sube o baja el crudo? Clasifica cada caso', mood: 'HAPPY' },
+        ],
+      }),
+      key('Brent, WTI y tres sustos', '**Brent** (mar del Norte) es la referencia en Europa; **WTI** (Texas, entregado en Cushing), en EE. UU. Se cotizan en **dólares por barril** (unos 159 litros): por eso a España también le afecta el dólar.\n\n• **1973:** el embargo de la OPEP cuadruplicó el precio.\n• **2008:** el WTI rozó los **147 $** en julio… y en diciembre estaba por debajo de 40 $.\n• **20 de abril de 2020:** el contrato de mayo del WTI cerró a **−37,63 $**: el vendedor pagaba por que se lo llevaran.', 'El petróleo se mueve por oferta, demanda y geopolítica, y puede hacerlo con violencia.'),
     ], [
       trend('Así se movió el WTI desde mediados de 2019 hasta abril de 2020. ¿Qué tendencia ves?', 'hist-oil-2020', 'Bajista', 'De más de 50 $ a menos de 20 $ en cierre semanal: la pandemia hundió la demanda justo cuando Arabia Saudí y Rusia peleaban por cuota de mercado.'),
       point('Toca el punto más bajo de este periodo (cierres semanales).', 'hist-oil-2020', 'min', 'La semana del 20 de abril de 2020 cerró en unos 17 $. El −37,63 $ no aparece en cierres semanales: fue un solo día y un solo contrato, el de mayo, justo antes de vencer.'),
@@ -39,12 +115,46 @@ export default unit({
       timed(fill('El Brent y el WTI se cotizan en dólares por ____.', 'barril', ['tonelada', 'litro', 'onza'], 'Un barril son unos 159 litros.'), 12),
       num('Un barril tiene unos 159 litros. Si el Brent cotiza a 80 $ y EUR/USD = 1,16, ¿cuánto cuesta un litro de crudo en euros? (redondea a céntimos)', 0.43, '€', '80 ÷ 1,16 ≈ 68,97 € por barril; 68,97 ÷ 159 ≈ 0,43 € por litro. El resto del precio de la gasolina son refino, transporte, márgenes e impuestos.', 3),
       single('¿Por qué un euro fuerte abarata el petróleo para España?', ['Porque el crudo se paga en dólares', 'Porque España produce mucho petróleo', 'Porque la OPEP cobra en euros'], 0, 'Con más dólares por euro, el mismo barril cuesta menos euros.'),
-    ], { source: '2.8' }),
+    ], { source: '2.8', minutes: 6, retire: [0, 2, 6, 7] }),
 
     lesson('u15l3', 'Metales industriales y agrícolas', [
-      text('Metales que miden la economía', '• **Cobre:** cables, construcción, coches eléctricos. Le llaman **«doctor Cobre»** porque su precio suele anticipar cómo va la economía.\n• **Aluminio, níquel, litio:** industria y baterías.\n• **Plata:** mitad joya, mitad industria: casi el **60 %** de su demanda en 2024 fue industrial (electrónica, paneles solares).'),
-      text('Agrícolas: manda el clima', 'Trigo, maíz, café, cacao o azúcar dependen de **cosechas, clima y guerras**:\n\n• **2022:** la invasión de Ucrania llevó el trigo de Chicago a máximos de 14 años. Rusia y Ucrania sumaban cerca del 30 % de las exportaciones mundiales.\n• **2024:** las malas cosechas de África occidental hicieron subir el cacao un **178 %** en el año.'),
-      key('Mucho más volátiles', 'Los agrícolas pueden duplicarse o hundirse por una sequía o una helada. Además se negocian con futuros, así que invertir en ellos no es tan sencillo como «comprar café».', 'Metales industriales: termómetro de la economía. Agrícolas: clima y cosechas.'),
+      play({
+        title: '¿Economía o clima?',
+        intro: 'Unas materias primas se mueven con la **economía** y otras, con el **campo**. ¿De qué tipo es cada una?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Metal: lo mueve la economía' }, { label: 'Agrícola: lo mueve el clima' }],
+          cards: [
+            { icon: 'mining', label: 'Cobre', bin: 0, why: 'Cables, construcción, coches eléctricos: está en casi todo lo que se fabrica.' },
+            { icon: 'coffee', label: 'Café', bin: 1, why: 'Una helada o una sequía en Brasil bastan para dispararlo.' },
+            { icon: 'power', label: 'Litio', bin: 0, why: 'Va a las baterías: depende de la industria.' },
+            { icon: 'bread', label: 'Trigo', bin: 1, why: 'Cosechas, clima y guerras en los grandes exportadores.' },
+            { icon: 'factory', label: 'Aluminio', bin: 0, why: 'Un metal industrial: sube y baja con lo que se fabrica.' },
+            { icon: 'leaf', label: 'Cacao', bin: 1, why: 'Depende de las cosechas de África occidental.' },
+          ],
+        },
+        goal: { text: 'Clasifica las seis materias primas.', when: [when('done', '==', 6)] },
+        insight: 'Al cobre le llaman **«doctor Cobre»** porque su precio suele anticipar cómo va la economía. Los agrícolas dependen de **cosechas, clima y guerras**.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: ¿sale de una mina o de un campo?', mood: 'THINKING' },
+          { when: when('done', '>=', 3), say: '¡Bien! Cada materia prima tiene su motor.', mood: 'HAPPY' },
+          { say: '¿Metal o agrícola? Clasifica cada una', mood: 'HAPPY' },
+        ],
+      }),
+      story('El chocolate de Irene', [{ id: 'irene', name: 'Irene' }], [
+        say('irene', 'Tengo una chocolatería y mi proveedor me ha vuelto a subir el precio. ¡Es una locura!'),
+        note('2024: malas cosechas de cacao en África occidental.'),
+        choose('¿Qué crees que pasó con el cacao ese año?', [
+          opt('Subió un poco, como la inflación', 'bad', say('lumi', 'Mucho más: el cacao subió un **178 %** en 2024.')),
+          opt('Se disparó: menos cosecha, precio mucho más alto', 'good', say('lumi', '¡Eso! Subió un **178 %** en el año: casi se triplicó.')),
+          opt('Bajó, porque se vendía menos chocolate', 'bad', say('lumi', 'Al revés: con menos cosecha, el cacao subió un **178 %**.')),
+        ]),
+        say('lumi', 'En 2022, la invasión de Ucrania llevó el trigo a máximos de 14 años.'),
+        say('lumi', 'Rusia y Ucrania sumaban cerca del 30 % de las exportaciones mundiales.'),
+        say('irene', '¿Y si invierto en cacao para compensar?'),
+        say('lumi', 'Se negocia con futuros: no es tan sencillo como «comprar cacao».'),
+      ]),
+      key('Mucho más volátiles', 'La **plata** es mitad joya, mitad industria: casi el **60 %** de su demanda en 2024 fue industrial (electrónica, paneles solares). Aluminio, níquel y litio dependen de la industria y las baterías.\n\nLos agrícolas pueden duplicarse o hundirse por una sequía o una helada. Además se negocian con **futuros**, así que invertir en ellos no es tan sencillo como «comprar café».', 'Metales industriales: termómetro de la economía. Agrícolas: clima y cosechas.'),
     ], [
       match('Empareja cada materia prima con lo que más la mueve.', [['Cobre', 'El ciclo económico y la construcción'], ['Cacao', 'Las cosechas de África occidental'], ['Trigo', 'Cosechas y conflictos en grandes exportadores'], ['Plata', 'La industria y la demanda como refugio']], 'Cada materia prima tiene su motor principal.'),
       buckets('¿Metal industrial o agrícola?', ['Metal industrial', 'Agrícola'], [['Cobre', 0], ['Café', 1], ['Aluminio', 0], ['Maíz', 1], ['Níquel', 0], ['Azúcar', 1]], 'Los metales dependen de la industria; los agrícolas, del campo y del clima.'),
@@ -56,12 +166,62 @@ export default unit({
       scenario('Una helada en Brasil amenaza la cosecha de café. Marta tiene una cafetería en Valencia. ¿Qué es lo más probable?', [['Que el café en grano se abarate', 'Una mala cosecha reduce la oferta: lo normal es lo contrario.'], ['Que el café en grano se encarezca y le suban los costes', 'Eso: menos oferta, precio más alto. En 2024 la sequía en Brasil llevó el arábica a récords.'], ['Que no le afecte porque compra a un proveedor español', 'Brasil es el mayor productor del mundo: el precio mundial acaba llegando a su proveedor.']], 1, 'En agrícolas, el clima de un gran productor mueve el precio mundial.'),
       timed(single('Rápido: ¿qué guerra disparó el precio del trigo en 2022?', ['La invasión rusa de Ucrania', 'La guerra comercial entre EE. UU. y China', 'Ninguna, fue una plaga'], 0, 'Rusia y Ucrania sumaban cerca del 30 % de las exportaciones mundiales de trigo.'), 12),
       multi('¿Qué puede subir el precio de una materia prima agrícola? Marca todas.', ['Una sequía en un gran productor', 'Una guerra que bloquea puertos', 'Una cosecha récord', 'Plagas o enfermedades en los cultivos'], [0, 1, 3], 'Una cosecha récord aumenta la oferta y suele bajar el precio.'),
-    ], { source: '2.8' }),
+    ], { source: '2.8', minutes: 6, retire: [1, 2, 5, 8] }),
 
     lesson('u15l4', 'Cómo se invierte en materias primas', [
-      text('Cuatro caminos', '• **Físico:** monedas o lingotes. Tienes el metal, pero hay que guardarlo y se compra y vende con margen.\n• **ETC** (*exchange traded commodity*): cotiza como un ETF; técnicamente es un título de deuda. Los de oro suelen estar **respaldados por metal físico**.\n• **Futuros:** contratos para comprar o vender en una fecha. Apalancados y complejos.\n• **Acciones** de mineras o petroleras.'),
-      text('Una empresa no es la materia prima', 'Una minera de oro gana más cuando sube el oro, pero tiene **costes, deuda y directivos**: suele moverse más que el metal, hacia arriba y hacia abajo. Una petrolera reparte dividendos; el barril, no.\n\nLos ETC sobre petróleo o agrícolas usan **futuros**, y eso tiene un coste oculto que verás en la próxima clase.'),
-      key('Antes de comprar', 'En España, los ETC tributan al vender, como los ETF: no permiten traspasos sin pagar impuestos. Lee el documento de datos fundamentales y mira si el producto es **físico** o replica con **futuros**.', 'No es lo mismo invertir en oro que en una minera de oro.'),
+      play({
+        title: '¿Directa o a través de una empresa?',
+        intro: 'Hay cuatro caminos: metal **físico**, **ETC** (cotiza como un ETF), **futuros** y **acciones** de mineras o petroleras. ¿Cuál te da el precio directamente?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Directa al precio' }, { label: 'A través de una empresa' }],
+          cards: [
+            { icon: 'gem', label: 'Lingotes y monedas de oro', bin: 0, why: 'Tienes el metal, pero hay que guardarlo y se compra y vende con margen.' },
+            { icon: 'mining', label: 'Acciones de una minera de oro', bin: 1, why: 'Dependen del oro, pero también de sus costes, su deuda y sus directivos.' },
+            { icon: 'chart', label: 'ETC de oro físico', bin: 0, why: 'Cotiza en bolsa y está respaldado por lingotes guardados en una cámara.' },
+            { icon: 'fuel', label: 'Acciones de una petrolera', bin: 1, why: 'Reparte dividendos; el barril, no. Es otro negocio.' },
+            { icon: 'calendar', label: 'Futuro sobre el WTI', bin: 0, why: 'Contrato para comprar o vender en una fecha: apalancado y complejo.' },
+            { icon: 'factory', label: 'Acciones de una minera de cobre', bin: 1, why: 'Compras la empresa, con su gestión, sus costes y su deuda.' },
+          ],
+        },
+        goal: { text: 'Clasifica las seis formas de invertir.', when: [when('done', '==', 6)] },
+        insight: 'Con una empresa compras también su **gestión, su deuda y sus costes**: no es lo mismo invertir en oro que en una minera de oro.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: ¿compras la materia prima o un negocio?', mood: 'THINKING' },
+          { when: when('done', '>=', 3), say: '¡Bien! Cada camino tiene riesgos muy distintos.', mood: 'HAPPY' },
+          { say: '¿Directa o a través de una empresa?', mood: 'HAPPY' },
+        ],
+      }),
+      story('La minera de Dani', [{ id: 'dani', name: 'Dani' }], [
+        say('dani', 'El oro ha subido un 10 % y mi minera ha subido mucho más. ¿Cómo puede ser?'),
+        note('Su minera saca cada onza a un coste de 1.500 $ y la vende a 2.000 $.'),
+        choose('Si el oro sube un 10 %, ¿cuánto sube su margen por onza?', [
+          opt('Un 10 %, como el oro', 'bad', say('lumi', 'El coste no sube: el margen pasa de 500 $ a 700 $, un **+40 %**.')),
+          opt('Un 40 %: de 500 $ a 700 $', 'good', say('lumi', '¡Eso! Los costes fijos **amplifican** lo que hace el metal.')),
+          opt('Nada: el margen es fijo', 'bad', say('lumi', 'El coste es fijo, el margen no: pasa de 500 $ a 700 $.')),
+        ]),
+        say('dani', '¡Entonces las mineras son mejores que el oro!'),
+        say('lumi', 'Y al revés: si el oro cae un 10 %, el margen cae un 40 %.'),
+      ]),
+      play({
+        title: 'Petróleo con 1:10',
+        intro: 'Un anuncio te ofrece operar petróleo con **apalancamiento 1:10**: con **1.000 €** de garantía mueves 10.000 €. Mueve el precio del crudo.',
+        widget: { kind: 'leverage', margin: 1000, lev: 10, move: 0, maxLev: 20, maxMove: 15 },
+        predict: {
+          prompt: 'Con 1:10, ¿qué caída del crudo se lleva toda tu garantía?',
+          options: ['Un 50 %', 'Un 25 %', 'Un 10 %'],
+          answer: 2,
+          why: '1 ÷ 10 = **10 %**. Y en marzo de 2020 el WTI cayó un 29 % en una sola semana (cierres semanales).',
+        },
+        goal: { text: 'Con 1:10, busca la caída que te deja a cero.', when: [when('lev', '==', 10), when('wiped', '==', 1)] },
+        insight: '**Con 1:10, un 10 % en contra te deja a cero**, y el crudo se ha movido más que eso en una semana. Los futuros y CFD apalancados no son para empezar.',
+        lumi: [
+          { when: when('wiped', '==', 1), say: 'Garantía a cero. El crudo ha caído más que esto en una semana.', mood: 'WORRIED' },
+          { when: when('pnlPct', '>=', 50), say: 'Ganas mucho… pero el mismo movimiento al revés duele igual.', mood: 'THINKING' },
+          { say: 'Mueve el precio del crudo y mira tu garantía', mood: 'HAPPY' },
+        ],
+      }),
+      key('Antes de comprar', '• **Físico:** tienes el metal, pero hay que guardarlo y se compra y vende con margen.\n• **ETC:** cotiza como un ETF; técnicamente es un título de deuda. Los de oro suelen estar respaldados por metal físico; los de petróleo o agrícolas usan **futuros**, con un coste oculto que verás en la próxima clase.\n\nEn España, los ETC tributan al vender, como los ETF: no permiten traspasos sin pagar impuestos. Lee el documento de datos fundamentales y mira si el producto es **físico** o replica con **futuros**.', 'No es lo mismo invertir en oro que en una minera de oro.'),
     ], [
       match('Empareja cada forma de invertir con su característica.', [['Lingotes y monedas', 'Tienes el metal, pero hay que guardarlo'], ['ETC de oro físico', 'Cotiza en bolsa y está respaldado por metal'], ['Futuros', 'Contrato con vencimiento y apalancamiento'], ['Acciones de una minera', 'Dependen del metal y de la gestión de la empresa']], 'Cuatro caminos con riesgos muy distintos.'),
       single('¿Qué es un ETC?', ['Un producto cotizado que replica una materia prima', 'Un fondo de empresas tecnológicas', 'Una cuenta de ahorro en oro del banco'], 0, 'Cotiza en bolsa como un ETF, pero sigue a una materia prima.'),
@@ -73,13 +233,45 @@ export default unit({
       timed(single('Rápido: ¿qué opción te obliga a guardar el metal tú mismo?', ['Lingotes y monedas', 'ETC', 'Acciones mineras'], 0, 'Necesitas una caja fuerte o pagar un servicio de custodia.'), 10),
       multi('¿Qué inconvenientes tiene el oro en lingotes? Marca todos.', ['Hay que guardarlo y asegurarlo', 'La diferencia entre precio de compra y de venta puede ser grande', 'Paga un cupón anual', 'Venderlo rápido puede costar más'], [0, 1, 3], 'El oro no paga nada; y comprarlo y venderlo en físico tiene costes.'),
       chat(['He visto un anuncio: «Opera petróleo con 1:10 y gana un 300 % este mes» 🛢️'], '¿Qué le contestas a Lumi?', [['¡Apúntate ya!', 'Con 1:10, un 10 % en contra lo pierde todo. Y prometer un 300 % es una señal de alarma.'], ['Eso son CFD o futuros apalancados: un 10 % en contra lo pierde todo, y prometer ganancias es mala señal', 'Vale, mejor entiendo qué es un ETC antes de tocar nada apalancado.'], ['Mejor 1:100, que es más', 'Más apalancamiento, más rápido a cero.']], 1, `Con 1:10, un 10 % en contra te deja a cero. ${CFD}`),
-    ], { source: '2.8' }),
+    ], { source: '2.8', minutes: 6, retire: [2, 3, 4, 7] }),
 
     lesson('u15l5', 'Contango y backwardation', [
-      text('La curva de futuros', 'Un futuro fija hoy el precio de un barril que se entrega más adelante, y cada mes tiene su precio:\n\n• **Contango:** los futuros lejanos están **más caros** que los cercanos. Pasa cuando sobra crudo: almacenarlo cuesta.\n• **Backwardation:** los lejanos están **más baratos**. Pasa cuando hay escasez y todos lo quieren ya.'),
-      text('El coste de renovar', 'Un fondo de petróleo no quiere recibir barriles: antes de que venza el contrato, **vende el cercano y compra el siguiente**.\n\nEn contango vende barato y compra caro: con el mismo dinero tiene **menos barriles** cada mes. Aunque el crudo no se mueva, el fondo pierde.'),
-      key('El caso de 2020', 'En abril de 2020 sobraba tanto crudo que el contrato de mayo del WTI llegó a **−37,63 $**, mientras los siguientes valían mucho más. El mayor ETF de petróleo de EE. UU. (USO) **perdió alrededor de un 68 % en 2020**, cuando el WTI al contado cayó en torno a un **20 %**.', 'En contango, un fondo de futuros puede perder aunque el crudo suba.', 'Antes de comprar un producto de materias primas, mira cómo replica.'),
-      calc('recovery', 'Lo que cuesta recuperarse', 'Pon una caída del 68 %: verás que hace falta subir más de un 200 % para volver al punto de partida.'),
+      play({
+        title: 'La curva de futuros',
+        intro: 'Un futuro fija hoy el precio de un barril que se entrega más adelante, y cada mes tiene su precio. Si lo lejano está **más caro**, es **contango**; si está **más barato**, **backwardation**.',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Contango' }, { label: 'Backwardation' }],
+          cards: [
+            { icon: 'up', label: 'Junio a 25 $ y julio a 28 $', bin: 0, why: 'Los lejanos, más caros que los cercanos: contango.' },
+            { icon: 'down', label: 'Junio a 90 $ y julio a 85 $', bin: 1, why: 'Los lejanos, más baratos: backwardation.' },
+            { icon: 'database', label: 'Sobra crudo y almacenarlo cuesta', bin: 0, why: 'Quien lo guarda cobra ese coste en los futuros lejanos.' },
+            { icon: 'alert', label: 'Hay escasez: todos lo quieren ya', bin: 1, why: 'El barril de hoy vale más que el de mañana.' },
+            { icon: 'repeat', label: 'Al renovar, con el mismo dinero tienes menos barriles', bin: 0, why: 'Vendes el cercano barato y compras el siguiente caro.' },
+            { icon: 'layers', label: 'Al renovar, con el mismo dinero tienes más barriles', bin: 1, why: 'Vendes el cercano caro y compras el siguiente barato.' },
+          ],
+        },
+        goal: { text: 'Clasifica los seis casos.', when: [when('done', '==', 6)] },
+        insight: '**En contango, renovar resta**: con el mismo dinero, cada mes tienes menos barriles. En backwardation, al revés, renovar suma.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: ¿el mes lejano está más caro o más barato?', mood: 'THINKING' },
+          { when: when('done', '>=', 3), say: '¡Bien! Ahora verás por qué esto importa tanto.', mood: 'HAPPY' },
+          { say: '¿Contango o backwardation? Clasifica cada caso', mood: 'HAPPY' },
+        ],
+      }),
+      story('El fondo que perdía sin que el crudo bajara', [{ id: 'leo', name: 'Leo' }], [
+        say('leo', 'Compré un fondo de petróleo. El barril no se ha movido… y yo pierdo. ¿Por qué?'),
+        note('Un fondo no quiere recibir barriles: antes de que venza el contrato, vende el cercano y compra el siguiente.'),
+        note('El fondo de Leo tiene 1.000 $ en el futuro de mayo, a 20 $. Al renovar, compra el de junio, a 25 $.'),
+        choose('¿Cuántos barriles controla ahora el fondo?', [
+          opt('Los mismos 50', 'bad', say('lumi', 'Con 1.000 $ a 25 $ solo compra **40 barriles**, no 50.')),
+          opt('40: 1.000 ÷ 25', 'good', say('lumi', '¡Eso! En contango, cada renovación te deja con menos barriles.')),
+          opt('Más de 50', 'bad', say('lumi', 'Eso pasaría en backwardation, con el siguiente más barato.')),
+        ]),
+        say('lumi', 'Si junio vence a 20 $, el fondo vale 40 × 20 = 800 $: **−20 %**.'),
+        say('lumi', 'Y el crudo ni se ha movido. Ese es el **coste del contango**.'),
+      ]),
+      key('El caso de 2020', 'En abril de 2020 sobraba tanto crudo que el contrato de mayo del WTI llegó a **−37,63 $**, mientras los siguientes valían mucho más. El mayor ETF de petróleo de EE. UU. (USO) **perdió alrededor de un 68 % en 2020**, cuando el WTI al contado cayó en torno a un **20 %**.\n\nY tras una caída del 68 %, hace falta subir más de un 200 % para volver al punto de partida.', 'En contango, un fondo de futuros puede perder aunque el crudo suba.', 'Antes de comprar un producto de materias primas, mira cómo replica.'),
     ], [
       single('El futuro de junio vale 25 $ y el de julio 28 $. La curva está en…', ['Contango', 'Backwardation', 'Equilibrio'], 0, 'Lejanos más caros que cercanos = contango.'),
       num('Un fondo tiene 1.000 $ en el futuro de mayo, que vale 20 $. Al renovar, lo vende a 20 $ y compra el de junio, que vale 25 $. ¿Cuántos barriles controla ahora?', 40, 'barriles', 'Antes: 1.000 ÷ 20 = 50 barriles. Después: 1.000 ÷ 25 = 40. En contango, cada renovación te deja con menos.'),
@@ -91,6 +283,6 @@ export default unit({
       scenario('Abril de 2020. Ana ve el crudo por los suelos y compra un fondo de futuros de petróleo «para cuando se recupere». ¿Qué riesgo no ha mirado?', [['Ninguno: si el crudo sube, ella gana lo mismo', 'Con un contango tan fuerte, cada renovación le hace perder barriles: aunque el crudo se recupere, el fondo puede quedarse muy atrás.'], ['El coste de renovar futuros en contango', 'Exacto: en 2020 el USO perdió cerca de un 68 % mientras el WTI al contado caía en torno a un 20 %.'], ['Que el fondo cotice en dólares', 'Es un riesgo, pero pequeño comparado con el contango de aquel momento.']], 1, 'En materias primas, el producto importa tanto como la dirección del precio.'),
       timed(single('Rápido: en backwardation, renovar futuros…', ['Suele sumar rentabilidad', 'Siempre resta', 'No tiene ningún efecto'], 0, 'Vendes el cercano caro y compras el lejano barato: con el mismo dinero tienes más barriles.'), 12),
       num('Un fondo pierde un 68 %. ¿Cuánto tiene que subir después para volver al punto de partida?', 212.5, '%', '1 ÷ 0,32 = 3,125 → hace falta un +212,5 %. Las caídas grandes cuestan muchísimo de recuperar.', 2),
-    ], { source: '2.8' }),
+    ], { source: '2.8', minutes: 6, retire: [0, 1, 2, 8] }),
   ],
 })

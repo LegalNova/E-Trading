@@ -9,16 +9,58 @@
    "title": "El PER",
    "steps": [
     {
-     "title": "Qué es el PER",
-     "body": "**PER = precio ÷ BPA** (o capitalización ÷ beneficio neto).\n\nPanadería Global cotiza a 15 € y su BPA es 0,975 €: **PER = 15,4**. Pagas 15,4 veces el beneficio de un año.\n\nSu inverso es la **rentabilidad por beneficio**: 1 ÷ 15,4 = **6,5 %**, comparable con lo que paga un bono."
+     "texts": [
+      "PER 4: ¿una ganga?",
+      "Hugo",
+      "He encontrado una acción con PER 4. ¡Está regalada!",
+      "Pagas solo 4 años de beneficio. Le meto todos mis ahorros.",
+      "¿Qué le dices?",
+      "¡Corre, que se escapa!",
+      "Casi nada tiene PER 4 sin motivo. Primero hay que saber cuál.",
+      "Mira por qué es tan bajo antes de comprar",
+      "Bien. Un PER muy bajo es una **pregunta**, no una respuesta.",
+      "Compra solo un poco, por si acaso",
+      "Prudente, pero sigues sin saber qué compras.",
+      "Vale… Sus ventas llevan cinco años cayendo.",
+      "Ahí está: el mercado paga poco porque espera que gane **menos**.",
+      "PER bajo puede ser declive o un beneficio puntual. PER alto, quizá crecimiento."
+     ]
     },
     {
-     "title": "Cómo leerlo",
-     "body": "• La media histórica del mercado ronda **15-17**.\n• **PER bajo no es barato:** puede ser una empresa en declive o con un beneficio puntual inflado (por vender un edificio).\n• **PER alto no es caro:** puede crecer muy deprisa.\n• Compara con su **historia** y su **sector**: un banco a PER 8 y un software a PER 35 pueden estar «en su precio»."
+     "texts": [
+      "¿Cuántos años de beneficio pagas?",
+      "Esta empresa gana **2 € por acción** al año. Mueve el precio de la acción y mira qué pasa con el **PER**.",
+      "Si el beneficio no cambia y el precio pasa de 30 € a 60 €, ¿qué le pasa al PER?",
+      "Se queda igual",
+      "Se duplica",
+      "Baja a la mitad",
+      "PER = precio ÷ beneficio por acción: 60 ÷ 2 = **30**, el doble que 30 ÷ 2 = 15.",
+      "Busca el precio con el que pagas 20 años de beneficio.",
+      "**PER = precio ÷ beneficio por acción**: los años de beneficio que pagas. Panadería Global (15 € y 0,975 € de BPA) tiene PER 15,4, y su inverso, la **rentabilidad por beneficio**, es un 6,5 %.",
+      "Pagas 30 años de beneficio o más. ¿Crecerá para merecerlo?",
+      "PER muy bajo… ¿ganga o empresa en apuros?",
+      "Mueve el precio y mira el PER"
+     ]
+    },
+    {
+     "texts": [
+      "PER alto, ¿siempre caro?",
+      "Ahora cotiza a **60 €**: PER 30. Sin crecer, tardas 30 años en recuperar el precio con los beneficios. ¿Y si crecen?",
+      "Si el beneficio crece un 10 % al año, ¿cuánto tardas en recuperar los 60 €?",
+      "Unos 15 años",
+      "Unos 27 años",
+      "Sigue en 30 años",
+      "Con un 10 % anual, los beneficios suman 60 € en **15 años**: la mitad de tiempo.",
+      "Con el precio en 60 €, busca el crecimiento que te devuelve el precio en 15 años o menos.",
+      "**PER alto no es caro** si el beneficio crece deprisa, y **PER bajo no es barato** si va a menguar. Compáralo siempre con su crecimiento, su historia y su sector.",
+      "¡Diez años o menos! Crecer rápido abarata un PER alto.",
+      "Sin crecer, PER 30 son 30 años. Sube el crecimiento.",
+      "Sube el crecimiento y mira los años"
+     ]
     },
     {
      "title": "Histórico y adelantado",
-     "body": "Con el beneficio del último año es el PER histórico; con el beneficio previsto, el **PER adelantado**. Si el beneficio va a crecer mucho, el adelantado será más bajo.",
+     "body": "Con el beneficio del último año es el **PER histórico**; con el previsto, el **PER adelantado**. Si el beneficio va a crecer mucho, el adelantado será más bajo.\n\nLa media del mercado ronda **15-17**. Compara con su historia y su sector: un banco a PER 8 y un software a PER 35 pueden estar «en su precio».",
      "key": "Un PER de 10 puede ser caro y uno de 30 barato: depende de lo que vaya a ganar la empresa."
     }
    ]
@@ -27,12 +69,65 @@
    "title": "PEG, EV/EBITDA y precio/valor contable",
    "steps": [
     {
-     "title": "PEG: el PER con crecimiento",
-     "body": "**PEG = PER ÷ crecimiento anual esperado del BPA (en %).**\n\nPanadería Global: PER 15,4 y crece al 8 % → PEG = **1,9**.\n\n• Cerca de 1: razonable.\n• Por encima de 2: caro para su crecimiento.\n\nDos empresas con PER 20: si una crece al 20 % (PEG 1) y otra al 5 % (PEG 4), la primera es más barata."
+     "texts": [
+      "El PER con crecimiento",
+      "Esta acción cotiza a **PER 20**. Pero no es lo mismo pagar 20 años de beneficio por una empresa que crece poco que por una que vuela.",
+      "Dos empresas a PER 20. A crece un 20 % al año; B, un 5 %. ¿Cuál es más barata?",
+      "A, la que crece más",
+      "B, la que crece menos",
+      "Las dos igual: tienen el mismo PER",
+      "PEG de A: 20 ÷ 20 = **1**. PEG de B: 20 ÷ 5 = **4**. A paga mucho menos por cada punto de crecimiento.",
+      "Con el precio en 20 €, busca el crecimiento que deja el PEG en 1.",
+      "**PEG = PER ÷ crecimiento anual del beneficio.** Cerca de 1, razonable; por encima de 2, **caro para lo que crece**. Panadería Global: 15,4 ÷ 8 = 1,9.",
+      "¡PEG de 1! El precio va en línea con lo que crece.",
+      "Pagas mucho por muy poco crecimiento.",
+      "Sube el crecimiento y mira el PEG"
+     ]
     },
     {
-     "title": "EV/EBITDA: con la deuda dentro",
-     "body": "**EV (valor de empresa) = capitalización + deuda neta.** Es lo que costaría comprar la empresa entera, deudas incluidas.\n\nPanadería Global: (1.500 + 320) ÷ 200 = **9,1**.\n\nSirve para comparar empresas con distinta deuda, que el PER no ve."
+     "texts": [
+      "Dos pisos al mismo precio",
+      "Nora",
+      "Dos pisos iguales se venden por 100.000 € cada uno.",
+      "El segundo tiene una hipoteca de 80.000 € que pasaría a pagar yo.",
+      "Pero cuestan lo mismo, ¿no?",
+      "¿Cuál sale más caro de verdad?",
+      "Los dos igual: 100.000 €",
+      "El segundo cuesta 100.000 € más la deuda que heredas: **180.000 €**.",
+      "El segundo: compras el piso y su deuda",
+      "Exacto: 180.000 € frente a 100.000 €. Con empresas pasa igual.",
+      "Depende del barrio",
+      "Aquí son iguales. La diferencia es la deuda.",
+      "Eso es el **valor de empresa (EV)**: capitalización más deuda neta.",
+      "Se compara con el **EBITDA**. Panadería Global: (1.500 + 320) ÷ 200 = **9,1**."
+     ]
+    },
+    {
+     "texts": [
+      "Cada empresa, su ratio",
+      "Ningún ratio sirve para todo. ¿Cuál mirarías primero en cada empresa?",
+      "PEG",
+      "EV/EBITDA",
+      "Precio / valor contable",
+      "Un banco",
+      "Su balance está lleno de activos financieros: P/VC.",
+      "Una tecnológica que crece al 25 % al año",
+      "Lo que más pesa es cuánto crece: PEG.",
+      "Una industrial con mucha deuda",
+      "EV/EBITDA mete la deuda en la cuenta; el PER no la ve.",
+      "Una aseguradora",
+      "Como un banco, vale sobre todo por su balance.",
+      "Una cadena de tiendas que crece al 20 %",
+      "Crece deprisa: compara su PER con ese crecimiento.",
+      "Una eléctrica muy endeudada",
+      "Con tanta deuda, la capitalización engaña: mira el EV.",
+      "Una empresa de software que crece rápido",
+      "Vale por sus ideas, no por sus activos: el P/VC dice poco.",
+      "Coloca las siete empresas.",
+      "Cada ratio ilumina una cosa: el **PEG**, el crecimiento; el **EV/EBITDA**, la deuda; el **P/VC**, el balance. Elige el ratio según el tipo de empresa.",
+      "Pregúntate: ¿qué pesa más aquí, crecer, la deuda o el balance?",
+      "Elige el ratio para cada empresa"
+     ]
     },
     {
      "title": "P/VC: para bancos y aseguradoras",
@@ -45,16 +140,67 @@
    "title": "ROE y ROIC: ¿es un buen negocio?",
    "steps": [
     {
-     "title": "ROE: la rentabilidad del accionista",
-     "body": "**ROE = beneficio neto ÷ patrimonio neto.**\n\nPanadería Global: 97,5 ÷ 450 = **21,7 %**. Por cada 100 € de los accionistas gana casi 22 € al año.\n\nUn ROE por encima del **15 %** de forma sostenida es muy bueno."
+     "texts": [
+      "Dos puestos de limonada",
+      "Ana",
+      "Bruno",
+      "Ana y Bruno montan el mismo puesto de limonada. Cada uno necesita 1.000 €. Sin impuestos, para simplificar.",
+      "Yo pongo los 1.000 € de mi bolsillo. Gano 200 € al año.",
+      "Yo pongo 200 € y pido prestados 800 €. Tras pagar 40 € de intereses, gano 160 €.",
+      "¿Quién tiene mejor negocio?",
+      "Bruno: gana un 80 % sobre su dinero",
+      "**ROE** del 80 %, sí. Pero el puesto es idéntico: es la deuda.",
+      "Es el mismo negocio: Bruno solo usa más deuda",
+      "Exacto. Los dos puestos ganan 200 € sobre 1.000 €: un 20 %.",
+      "Ana, porque no debe nada",
+      "Corre menos riesgo, sí. Pero el negocio es igual de bueno.",
+      "**ROE** = beneficio ÷ dinero de los dueños. La deuda lo infla.",
+      "**ROIC** mide todo el capital, deuda incluida. Cuesta mucho más inflarlo."
+     ]
     },
     {
-     "title": "ROIC: la rentabilidad del negocio",
-     "body": "**ROIC = EBIT × (1 − impuestos) ÷ (patrimonio + deuda neta).**\n\nPanadería Global: 150 × 0,75 = 112,5; y 112,5 ÷ (450 + 320) = **14,6 %**.\n\nDebe superar el **coste del capital** (≈ 8-10 %); si no, la empresa crece destruyendo valor."
+     "texts": [
+      "¿Crea valor o lo destruye?",
+      "El dinero tiene un coste: el **coste del capital**, unos 8-10 % al año. Aquí es del **9 %**. ¿Qué empresa crea valor al reinvertir?",
+      "Crea valor",
+      "Destruye valor",
+      "ROIC del 25 % durante años",
+      "Cada euro reinvertido rinde casi el triple de lo que cuesta.",
+      "ROIC del 6 %",
+      "Rinde menos del 9 % que cuesta el dinero.",
+      "Panadería Global: ROIC del 14,6 %",
+      "Supera el coste del capital con holgura.",
+      "ROE del 40 % gracias a mucha deuda, con ROIC del 5 %",
+      "El ROE brilla por la deuda; el negocio rinde poco.",
+      "Crece muy deprisa con un ROIC del 4 %",
+      "Crecer así destruye valor: cuanto más crece, peor.",
+      "ROIC del 18 % sin deuda",
+      "Gana mucho sobre todo su capital sin depender de la deuda.",
+      "Clasifica las seis empresas.",
+      "Un negocio **crea valor** solo si su **ROIC supera el coste del capital**. Si no lo supera, cuanto más crece, más valor destruye.",
+      "Compara cada ROIC con el 9 %. El ROE no basta.",
+      "¿Rinde más de lo que cuesta el dinero?"
+     ]
     },
     {
-     "title": "El truco del ROE",
-     "body": "Con mucha deuda, el patrimonio es pequeño y el ROE se dispara. El ROIC incluye la deuda, por eso cuesta más inflarlo. Los mejores negocios ganan mucho con poco capital y pueden **reinvertir** a esas tasas durante años.",
+     "texts": [
+      "Las máquinas de componer",
+      "Imagina una empresa que reinvierte **todo** su beneficio a su ROIC. Su capital es de **1.000 €**. Mira cuánto crece.",
+      "Con un ROIC del 20 % reinvertido durante 10 años, ¿por cuánto se multiplica su capital?",
+      "Por 3: un 20 % durante 10 años",
+      "Por algo más de 6",
+      "Por 20",
+      "Un 20 % sobre un capital que no para de crecer: 1,20 multiplicado 10 veces da **6,2**.",
+      "En 10 años, busca el ROIC que multiplica el capital por 6 o más.",
+      "Los mejores negocios **reinvierten a ROIC altos** durante años: con un 20 %, el capital se multiplica por 6,2 en 10 años. Es un ejemplo, no una promesa.",
+      "¡Por más de 6! Eso es componer.",
+      "Con un ROIC así, apenas supera el coste del capital.",
+      "Sube el ROIC y mira la curva"
+     ]
+    },
+    {
+     "title": "ROE y ROIC de Panadería Global",
+     "body": "• **ROE = beneficio neto ÷ patrimonio neto.** 97,5 ÷ 450 = **21,7 %**. Sostenido por encima del **15 %**, es muy bueno.\n• **ROIC = EBIT × (1 − impuestos) ÷ (patrimonio + deuda neta).** 150 × 0,75 ÷ (450 + 320) = **14,6 %**. Debe superar el **coste del capital** (≈ 8-10 %).",
      "key": "Busca negocios que conviertan cada euro invertido en mucho más de un euro, año tras año."
     }
    ]
@@ -63,12 +209,47 @@
    "title": "Rentabilidad por dividendo y payout",
    "steps": [
     {
-     "title": "Dos ratios",
-     "body": "• **Rentabilidad por dividendo** = dividendo por acción ÷ precio. Panadería Global paga 0,50 € y cotiza a 15 €: **3,3 %**.\n• **Payout** = dividendo ÷ BPA. 0,50 ÷ 0,975 = **51 %**: reparte la mitad y reinvierte la otra mitad."
+     "texts": [
+      "Un 12 % de dividendo",
+      "Marta",
+      "¡Mira! Esta acción paga un 12 % de dividendo. Ningún depósito da eso.",
+      "Eso sí, este año ha caído un 50 %.",
+      "¿Qué crees que pasa?",
+      "Es una ganga: cobra el 12 % y espera",
+      "La rentabilidad ha subido porque el precio se ha hundido, no porque paguen más.",
+      "El mercado espera que recorten el dividendo",
+      "Eso suele indicar. Si el precio cae a la mitad, la rentabilidad se duplica.",
+      "Mira primero si gana lo que reparte",
+      "Buena pregunta. Y el precio hundido ya es una pista.",
+      "**Rentabilidad por dividendo** = dividendo ÷ precio. Panadería Global: 0,50 ÷ 15 = **3,3 %**.",
+      "**Payout** = dividendo ÷ beneficio. Panadería Global: 0,50 ÷ 0,975 = **51 %**."
+     ]
     },
     {
-     "title": "Cuándo un dividendo está en peligro",
-     "body": "• **Payout por encima del 80-90 %** de forma continuada, y más aún por encima del 100 %: paga más de lo que gana.\n• **Dividendo mayor que el flujo de caja libre:** se paga con deuda.\n• **Rentabilidad altísima** (10 %, 12 %…): a menudo es porque el precio se ha hundido y el mercado espera un recorte."
+     "texts": [
+      "¿De dónde sale el dividendo?",
+      "Un dividendo alto no sirve de nada si mañana lo recortan. ¿**Sostenible** o **en peligro**?",
+      "Sostenible",
+      "En peligro",
+      "Reparte la mitad de lo que gana",
+      "Payout del 50 %: reparte y aún reinvierte la otra mitad.",
+      "Payout del 110 % tres años seguidos",
+      "Paga más de lo que gana: tira de caja o de deuda.",
+      "Paga el dividendo con deuda nueva",
+      "Un dividendo sostenible sale de la caja, no de la deuda.",
+      "Su caja libre cubre el dividendo dos veces",
+      "Le sobra caja para pagar y para invertir.",
+      "Rinde un 12 % porque la acción se ha hundido",
+      "A menudo, el mercado espera un recorte.",
+      "Payout del 40 % y beneficios creciendo",
+      "Tiene margen de sobra para mantenerlo, o subirlo.",
+      "El dividendo supera su flujo de caja libre",
+      "Si la caja no llega, la diferencia sale de deuda.",
+      "Clasifica los siete dividendos.",
+      "Antes de mirar cuánto paga, mira **de dónde sale**. Un payout por encima del 80-90 % o un dividendo mayor que la caja libre anuncian un **recorte**.",
+      "¿Lo paga con lo que gana o con deuda?",
+      "Clasifica cada dividendo"
+     ]
     },
     {
      "title": "El dividendo no es un regalo",
@@ -81,16 +262,68 @@
    "title": "Descontar flujos (DCF) sin miedo",
    "steps": [
     {
-     "title": "Traer el futuro a hoy",
-     "body": "Un euro dentro de 10 años vale menos que un euro hoy, porque hoy podrías invertirlo.\n\n**Valor hoy = flujo futuro ÷ (1 + tasa)^años**\n\nCon una tasa del 9 %, 100 € dentro de un año valen hoy 100 ÷ 1,09 = **91,74 €**."
+     "texts": [
+      "Traer el futuro a hoy",
+      "Una promesa: cobrarás **100 €** dentro de unos años, sin nada más por el camino. ¿Cuánto vale hoy? Depende de la **tasa** que exiges.",
+      "Cuánto vale hoy un cobro de 100 € en el futuro",
+      "Con una tasa del 9 %, ¿cuánto valen hoy 100 € que cobrarás dentro de un año?",
+      "Unos 109 €",
+      "Unos 92 €",
+      "100 € justos",
+      "100 ÷ 1,09 = **91,74 €**: invirtiendo hoy 91,74 € al 9 %, tendrías 100 € en un año.",
+      "Con la tasa al 9 %, busca a cuántos años esos 100 € valen hoy menos de la mitad.",
+      "**Valor hoy = flujo futuro ÷ (1 + tasa)^años.** Al 9 %, 100 € dentro de 9 años valen hoy solo 46 €: cuanto más lejos y más alta la tasa, **menos vale el futuro**.",
+      "¡Menos de la mitad! El tiempo pesa muchísimo.",
+      "Si exiges más rentabilidad, el futuro vale menos hoy.",
+      "Mueve los años y mira cuánto vale hoy"
+     ]
     },
     {
-     "title": "El DCF de Panadería Global",
-     "body": "FCF de 1 € por acción, que crece un 6 % durante 10 años y luego un 2 % para siempre. Tasa de descuento: 9 %.\n\n• Flujos de los años 1-10, descontados: ≈ **8,6 €**\n• Valor terminal (fórmula de Gordon): FCF del año 11 ÷ (9 % − 2 %) ≈ 26,1 €; traído a hoy: ≈ **11,0 €**\n• **Valor ≈ 19,6 €.** Cotiza a 15 €: un margen del 23 %."
+     "texts": [
+      "El DCF de Leo",
+      "Leo",
+      "¡He hecho el DCF de Panadería Global! Vale 19,6 € y cotiza a 15 €.",
+      "Leo supone: caja libre de 1 € por acción, que crece un 6 % durante 10 años y luego un 2 % para siempre. Tasa: 9 %.",
+      "Un margen del 23 %. ¿Compro ya?",
+      "¿Qué le dices?",
+      "¡Compra! Las cuentas no mienten",
+      "Las cuentas dependen de las hipótesis. Cámbialas un poco y verás.",
+      "Prueba hipótesis algo más prudentes",
+      "Bien pensado. Toquemos la tasa y el crecimiento.",
+      "Compra un poco y sigue mirando",
+      "Prudente. Pero antes mira cuánto cambia el valor.",
+      "Tasa del 10 %: unos **17 €**. Crecimiento del 4 %: unos **16,9 €**.",
+      "Las dos cosas a la vez: **14,7 €**. Ya por debajo del precio.",
+      "El DCF sirve para **pensar**, no para dar una cifra exacta."
+     ]
     },
     {
-     "title": "La lección del DCF",
-     "body": "Cambia un poco las hipótesis:\n\n• Tasa del 10 %: unos **17 €**.\n• Crecimiento del 4 %: unos **16,9 €**.\n• Las dos cosas a la vez: unos **14,7 €**, ya por debajo del precio.\n\nEl DCF sirve para **pensar** («¿qué crecimiento descuenta el precio?»), no para dar una cifra exacta.",
+     "texts": [
+      "¿Sube o baja el valor?",
+      "Un DCF es una máquina de hipótesis. Si tocas una pieza, ¿el valor estimado **sube** o **baja**?",
+      "El valor sube",
+      "El valor baja",
+      "Subes la tasa de descuento del 9 % al 10 %",
+      "Si exiges más, el dinero futuro vale menos hoy.",
+      "Bajas el crecimiento esperado",
+      "Menos caja futura, menos valor hoy.",
+      "Los flujos llegan antes",
+      "Cuanto antes cobras, menos descuentas.",
+      "Suben los tipos de interés del mercado",
+      "Con tipos más altos se exige una tasa mayor.",
+      "Subes el crecimiento perpetuo del 2 % al 3 %",
+      "El valor terminal divide entre (tasa − crecimiento): sube.",
+      "Bajas la tasa del 9 % al 8 %",
+      "El futuro pesa más hoy.",
+      "Coloca los seis cambios.",
+      "Tasa más alta o crecimiento más bajo = **valor más bajo**. Como cada hipótesis mueve mucho el resultado, un DCF da un **rango**, no un número exacto.",
+      "Piensa: ¿el dinero futuro vale más o menos hoy?",
+      "¿Sube o baja el valor?"
+     ]
+    },
+    {
+     "title": "Las piezas de un DCF",
+     "body": "1. Estima la **caja libre** de los próximos años.\n2. Descuenta cada flujo a hoy.\n3. Suma el **valor terminal** (fórmula de Gordon): caja libre del año siguiente ÷ (tasa − crecimiento perpetuo).\n4. Compáralo con el precio.\n\nPanadería Global: flujos de 10 años ≈ **8,6 €** + valor terminal (26,1 €, traído a hoy) ≈ **11,0 €** = **19,6 €**.",
      "key": "Si cambias un poco las hipótesis y el valor se desploma, ve con cuidado."
     }
    ]
@@ -99,12 +332,35 @@
    "title": "El CAPE y la valoración del mercado",
    "steps": [
     {
-     "title": "El PER de todo el mercado",
-     "body": "El **CAPE** (o PER de Shiller) divide el precio de un índice entre la **media de los beneficios de los últimos 10 años**, ajustados por la inflación. Al usar 10 años, suaviza los altibajos del ciclo económico."
+     "texts": [
+      "Vive la burbuja puntocom",
+      "Finales de 1998. Las tecnológicas están de moda y la bolsa cotiza cada vez más cara. Inviertes **10.000 €** en el Nasdaq 100, con datos reales. Puedes vender cuando quieras.",
+      "Llega hasta el final, vendas o no.",
+      "Con el CAPE del S&P 500 en su récord (44, diciembre de 1999), el Nasdaq 100 aún subió hasta marzo de 2000. Después cayó un **83 %** y no recuperó el máximo hasta 2015: **una valoración extrema no dice cuándo**, pero el riesgo era enorme.",
+      "Has vendido. Mira qué pasa después…",
+      "Tus 10.000 € valen menos de la mitad. ¿Aguantas?",
+      "¡Más que duplicado! Las valoraciones ya son de récord…",
+      "Dale a empezar. Puedes vender cuando quieras"
+     ]
     },
     {
-     "title": "Los datos del S&P 500",
-     "body": "• Media desde 1871: unos **17**.\n• Máximo: **44** en diciembre de 1999, justo antes del estallido de las puntocom.\n• Octubre de 2026: alrededor de **41**, de los niveles más altos de la historia."
+     "texts": [
+      "«El mercado está carísimo»",
+      "Irene",
+      "Octubre de 2026.",
+      "He leído que el CAPE del S&P 500 está en 41. ¿Eso qué es?",
+      "El precio entre la media de beneficios de **10 años**, sin inflación.",
+      "Media desde 1871: unos **17**. Récord: **44**, en diciembre de 1999.",
+      "¡Entonces va a caer ya! Lo vendo todo y vuelvo cuando baje.",
+      "¿Qué le dices?",
+      "Vende ya, antes de que caiga",
+      "El CAPE no dice **cuándo**. Puede seguir caro durante años.",
+      "Ajusta lo que esperas ganar y diversifica por países",
+      "Eso. Un CAPE alto apunta a **rentabilidades más bajas a 10 años**.",
+      "No hagas nada: el CAPE no sirve",
+      "Sí sirve: para esperar menos, no para adivinar el próximo mes.",
+      "Otras regiones cotizan bastante más baratas. Otro motivo para diversificar."
+     ]
     },
     {
      "title": "Qué dice y qué no",
@@ -157,14 +413,6 @@
    ],
    "explanation": "El mismo precio entre el doble de beneficio da la mitad de PER."
   },
-  "u17l1-6": {
-   "prompt": "Un PER bajo siempre significa que la acción está barata.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Puede reflejar una empresa en declive o un beneficio puntual inflado."
-  },
   "u17l1-7": {
    "prompt": "Un año, una empresa vende su sede y su beneficio se triplica. Su PER cae de 18 a 6. ¿Qué ha pasado?",
    "options": [
@@ -179,49 +427,6 @@
    "options": [],
    "explanation": "60 ÷ 4 = 15. El histórico es 60 ÷ 3 = 20.",
    "unit": "veces"
-  },
-  "u17l1-9": {
-   "prompt": "Rápido: precio 45 €, BPA 3 €. ¿PER?",
-   "options": [
-    "18",
-    "12",
-    "15"
-   ],
-   "explanation": "45 ÷ 3 = 15."
-  },
-  "u17l1-10": {
-   "prompt": "¿Qué le contestas a Lumi?",
-   "options": [
-    "Cómprala ya, que se escapa",
-    "Mira por qué es tan bajo: beneficio puntual, negocio en declive o deuda enorme",
-    "Un PER bajo siempre es mejor"
-   ],
-   "explanation": "Un PER muy bajo es una pregunta, no una respuesta.",
-   "feedback": [
-    "Antes de nada: casi nada tiene PER 4 sin motivo, y hay que averiguar cuál.",
-    "Vale, investigo antes de enamorarme del número.",
-    "No siempre: a veces es la forma que tiene el mercado de decir «este beneficio no va a durar»."
-   ],
-   "lines": [
-    "He encontrado una acción con PER 4 😍",
-    "¡Está regalada!"
-   ]
-  },
-  "u17l2-1": {
-   "prompt": "Empareja cada empresa con el ratio que más se suele usar para ella.",
-   "options": [
-    "Un banco",
-    "Una tecnológica que crece al 25 %",
-    "Una industrial con mucha deuda",
-    "Una empresa madura y estable"
-   ],
-   "explanation": "Cada ratio ilumina una cosa distinta.",
-   "right": [
-    "PEG",
-    "EV/EBITDA",
-    "PER",
-    "Precio / valor contable"
-   ]
   },
   "u17l2-2": {
    "prompt": "PER de 30 y crecimiento esperado del BPA del 15 % anual. ¿Cuál es su PEG?",
@@ -240,15 +445,6 @@
    "options": [],
    "explanation": "6 ÷ 7,5 = 0,8: cotiza por debajo de su valor en libros.",
    "unit": "veces"
-  },
-  "u17l2-5": {
-   "prompt": "Dos empresas con PER 20. A crece un 20 % al año y B un 5 %. ¿Cuál es más barata según el PEG?",
-   "options": [
-    "A (PEG 1)",
-    "B (PEG 4)",
-    "Las dos igual"
-   ],
-   "explanation": "El PEG relaciona el precio con el crecimiento."
   },
   "u17l2-6": {
    "prompt": "¿Por qué el EV/EBITDA sirve para comparar empresas con distinta deuda?",
@@ -280,15 +476,6 @@
     "La capitalización no incluye la deuda: comprando B te quedas también con 800 M€ que devolver.",
     "Eso: (1.000 + 800) ÷ 100 = 18, frente a 1.000 ÷ 100 = 10."
    ]
-  },
-  "u17l2-9": {
-   "prompt": "Rápido: PER 12 y crecimiento del 12 %. ¿PEG?",
-   "options": [
-    "2",
-    "1",
-    "0,5"
-   ],
-   "explanation": "12 ÷ 12 = 1."
   },
   "u17l2-10": {
    "prompt": "Según el PEG, ¿razonable o cara para su crecimiento?",
@@ -322,14 +509,6 @@
    "explanation": "36 ÷ 200 = 18 %. El ROE casi se duplica sin que el negocio haya mejorado: es efecto de la deuda.",
    "unit": "%"
   },
-  "u17l3-4": {
-   "prompt": "Un ROIC del 5 % con un coste del capital del 9 % crea valor.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Si el ROIC no supera el coste del capital, cada euro reinvertido destruye valor."
-  },
   "u17l3-5": {
    "prompt": "Un ROE muy alto puede deberse a que la empresa tiene mucha deuda.",
    "options": [
@@ -346,15 +525,6 @@
     "Porque siempre sale más alto"
    ],
    "explanation": "El ROE se dispara si la empresa se endeuda; el ROIC, no tanto."
-  },
-  "u17l3-7": {
-   "prompt": "Rápido: ¿qué ROE sostenido se considera muy bueno?",
-   "options": [
-    "Alrededor del 3 %",
-    "Más del 15 %",
-    "Negativo"
-   ],
-   "explanation": "Siempre que no venga de un endeudamiento excesivo."
   },
   "u17l3-8": {
    "prompt": "Coste del capital del 9 %. Ordena de mejor a peor negocio por su ROIC.",
@@ -379,12 +549,6 @@
     "Eso: un ROIC del 18 % sin deuda es un negocio de calidad.",
     "Con ROE, ROIC y deuda ya puedes formarte una idea bastante buena."
    ]
-  },
-  "u17l3-10": {
-   "prompt": "Una empresa con ROIC del 20 % reinvierte todo su beneficio a esa tasa durante 10 años. ¿Por cuánto se multiplica su capital? (un decimal)",
-   "options": [],
-   "explanation": "1,20¹⁰ ≈ 6,19. Es la idea de las «máquinas de componer»: un ejemplo, no una promesa.",
-   "unit": "veces"
   },
   "u17l4-1": {
    "prompt": "Una acción cotiza a 40 € y paga 1,60 € de dividendo al año. ¿Cuál es su rentabilidad por dividendo?",
@@ -422,23 +586,6 @@
     "Tu bróker"
    ]
   },
-  "u17l4-5": {
-   "prompt": "Una empresa ofrece una rentabilidad por dividendo del 12 % y su acción ha caído un 50 % este año. ¿Qué suele indicar?",
-   "options": [
-    "Que el mercado espera un recorte del dividendo",
-    "Que es una ganga segura",
-    "Que la empresa va muy bien"
-   ],
-   "explanation": "La rentabilidad ha subido porque el precio se ha hundido, no porque paguen más."
-  },
-  "u17l4-6": {
-   "prompt": "Un payout del 110 % durante tres años seguidos es sostenible.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Paga más de lo que gana: tira de caja o de deuda, y tarde o temprano tendrá que recortar."
-  },
   "u17l4-7": {
    "prompt": "Bruno compara dos acciones por su dividendo. A: rentabilidad del 3,5 %, payout del 50 % y caja libre que cubre el dividendo dos veces. B: rentabilidad del 9 %, payout del 130 % y deuda creciendo. ¿Qué tiene más sentido?",
    "options": [
@@ -452,15 +599,6 @@
     "Paga más de lo que gana y se endeuda para hacerlo: ese 9 % puede desaparecer de golpe.",
     "Eso: un dividendo menor pero sostenible suele valer más que uno alto en peligro."
    ]
-  },
-  "u17l4-8": {
-   "prompt": "Rápido: precio 20 €, dividendo 1 €. ¿Rentabilidad por dividendo?",
-   "options": [
-    "2 %",
-    "20 %",
-    "5 %"
-   ],
-   "explanation": "1 ÷ 20 = 5 %."
   },
   "u17l4-9": {
    "prompt": "Una acción vale 30 € y paga un dividendo de 0,90 €. Sin otras noticias, ¿a qué precio aproximado suele abrir el día en que descuenta el dividendo?",
@@ -502,15 +640,6 @@
    "explanation": "(25 − 20) ÷ 25 = 20 %.",
    "unit": "%"
   },
-  "u17l5-5": {
-   "prompt": "En un DCF, si subes la tasa de descuento, el valor estimado…",
-   "options": [
-    "Baja",
-    "No cambia",
-    "Sube"
-   ],
-   "explanation": "El dinero futuro vale menos hoy si exiges más rentabilidad."
-  },
   "u17l5-6": {
    "prompt": "¿Para qué sirve sobre todo un DCF?",
    "options": [
@@ -519,14 +648,6 @@
     "Para pensar qué crecimiento descuenta el precio"
    ],
    "explanation": "Pequeños cambios en las hipótesis cambian mucho el resultado."
-  },
-  "u17l5-7": {
-   "prompt": "En el ejemplo de Panadería Global, subir la tasa al 10 % y bajar el crecimiento al 4 % deja el valor por debajo del precio de 15 €.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Unos 14,7 €: dos retoques razonables se comen todo el margen de seguridad."
   },
   "u17l5-8": {
    "prompt": "Pablo hace un DCF: una empresa que cotiza a 60 € «vale» 120 €. Para llegar ahí ha supuesto un crecimiento del 25 % anual durante 10 años y una tasa del 6 %. ¿Qué debería hacer?",
@@ -541,14 +662,6 @@
     "Bien: si con un crecimiento y una tasa razonables el valor se desploma, el margen era una ilusión.",
     "Antes de convencer a nadie, convéncete tú con hipótesis prudentes."
    ]
-  },
-  "u17l5-9": {
-   "prompt": "Un euro dentro de 10 años vale más que un euro hoy.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Vale menos: hoy podrías invertirlo y tenerlo creciendo 10 años."
   },
   "u17l5-10": {
    "prompt": "Ordena los pasos de un DCF simplificado.",
@@ -586,15 +699,6 @@
    ],
    "explanation": "Una subida enorme: las valoraciones llegaron a niveles nunca vistos."
   },
-  "u17l6-2": {
-   "prompt": "Marzo de 2000: el CAPE del S&P 500 acaba de marcar su récord (44, en diciembre de 1999) y el Nasdaq 100 lleva años disparado. ¿Qué hizo el Nasdaq 100 después?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Una valoración extrema dice que las rentabilidades futuras serán probablemente bajas, pero no dice cuándo ni cuánto se moverá el precio.",
-   "horizon": "hasta diciembre de 2002"
-  },
   "u17l6-3": {
    "prompt": "Noviembre de 1989: la bolsa japonesa cotiza a valoraciones de récord tras una década de euforia. ¿Qué hizo el Nikkei 225 en los años siguientes?",
    "options": [
@@ -623,22 +727,6 @@
    ],
    "explanation": "En octubre de 2026 rondaba los 41, muy por encima de esa media."
   },
-  "u17l6-6": {
-   "prompt": "Un CAPE muy alto indica exactamente cuándo caerá el mercado.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Puede seguir caro durante años; lo que sí se ha asociado es a rentabilidades más bajas a 10 años."
-  },
-  "u17l6-7": {
-   "prompt": "Históricamente, un CAPE alto se ha asociado a rentabilidades más bajas en los 10 años siguientes.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Pagar caro deja menos margen para ganar después."
-  },
   "u17l6-8": {
    "prompt": "Un índice cotiza a 4.100 puntos y la media de sus beneficios reales de 10 años es de 100 puntos. ¿Cuál es su CAPE?",
    "options": [],
@@ -650,29 +738,6 @@
    "options": [],
    "explanation": "1 ÷ 41 ≈ 2,44 %. Con un CAPE de 17 sería ≈ 5,9 %: pagar más caro deja menos rentabilidad esperada.",
    "unit": "%"
-  },
-  "u17l6-10": {
-   "prompt": "Octubre de 2026: el CAPE del S&P 500 ronda los 41. Marta invierte cada mes en un fondo indexado mundial con un horizonte de 25 años. Lee que «el mercado está carísimo» y quiere venderlo todo. ¿Qué le dirías?",
-   "options": [
-    "Que compre más con deuda",
-    "Que venda todo y espere la caída",
-    "Que un CAPE alto sugiere expectativas más modestas, no una fecha de caída, y que revise con calma su reparto y su diversificación por países"
-   ],
-   "explanation": "El CAPE sirve para ajustar expectativas y diversificar, no para entrar y salir del mercado.",
-   "feedback": [
-    "Endeudarse en un mercado caro suma riesgo sobre riesgo.",
-    "El CAPE no dice cuándo: tendría que acertar cuándo salir y cuándo volver.",
-    "Bien: un fondo mundial ya incluye regiones más baratas, y su plan es a 25 años."
-   ]
-  },
-  "u17l6-11": {
-   "prompt": "Rápido: ¿cuál fue el CAPE máximo del S&P 500?",
-   "options": [
-    "17 (1871)",
-    "25 (2008)",
-    "44 (1999)"
-   ],
-   "explanation": "Diciembre de 1999, justo antes del estallido de las puntocom."
   }
  }
 }

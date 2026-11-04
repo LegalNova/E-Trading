@@ -9,12 +9,51 @@
    "title": "Anatomía de una vela",
    "steps": [
     {
-     "title": "Del arroz a tu pantalla",
-     "body": "Las velas nacieron en el mercado de arroz de **Dojima** (Osaka, siglo XVIII); la tradición se las atribuye al comerciante Munehisa Homma. Llegaron a Occidente con el libro de **Steve Nison** en 1991 y hoy son el gráfico por defecto en casi todas las plataformas."
+     "texts": [
+      "Rojo es subir",
+      "Mei",
+      "Mei, una amiga de Shanghái, te enseña su app de bolsa.",
+      "Hoy mi acción está en rojo. ¡Qué bien, ha subido!",
+      "¿Qué pasa aquí?",
+      "En China el rojo suele ser subida",
+      "Eso. En China, Japón y Corea los colores suelen ir al revés.",
+      "Se ha equivocado: rojo es bajar",
+      "Aquí sí, pero en su app no. Mira siempre la leyenda.",
+      "Su app está rota",
+      "No está rota: allí el rojo suele significar subida.",
+      "Las velas nacieron en el mercado de arroz de **Dojima** (Osaka), en el siglo XVIII.",
+      "La tradición se las atribuye al comerciante Munehisa Homma.",
+      "Steve Nison las trajo a Occidente en 1991. Hoy son el gráfico por defecto."
+     ]
     },
     {
-     "title": "Las partes",
-     "body": "• **Cuerpo:** entre la apertura y el cierre.\n• **Mecha superior:** del cuerpo al **máximo**.\n• **Mecha inferior:** del cuerpo al **mínimo**.\n\n**Verde:** cierra por encima de la apertura. **Roja:** cierra por debajo. En China, Japón y Corea los colores suelen ir al revés: mira la leyenda."
+     "texts": [
+      "¿Verde o roja?",
+      "El **cuerpo** va de la apertura al cierre; las **mechas**, hasta el máximo y el mínimo. ¿De qué color es cada vela?",
+      "Verde",
+      "Roja",
+      "Abre en 100 y cierra en 106",
+      "Cierra por encima de la apertura. Cuerpo: 6.",
+      "Abre en 62 y cierra en 57",
+      "Cierra por debajo de la apertura. Cuerpo: 5.",
+      "Abre en 20, sube hasta 25 y cierra en 19",
+      "El máximo no decide el color: cierra por debajo de la apertura.",
+      "Abre en 40, baja hasta 35 y cierra en 41",
+      "Cayó mucho, pero cerró por encima de la apertura.",
+      "Abre en 75 y cierra en 80",
+      "El cierre queda arriba: verde.",
+      "Abre en 12 y cierra en 11",
+      "El cierre queda abajo: roja.",
+      "Pinta las seis velas.",
+      "**Verde:** cierra por encima de la apertura. **Roja:** por debajo. Las mechas llegan al máximo y al mínimo, pero **no deciden el color**.",
+      "Compara solo la apertura y el cierre.",
+      "¿El cierre queda arriba o abajo?"
+     ]
+    },
+    {
+     "prompt": "Ahora en un gráfico real: toca la vela verde con el cuerpo más grande, la que más subió de la apertura al cierre",
+     "ok": "Esa. Su cuerpo va de la apertura (abajo) al cierre (arriba); las líneas finas marcan el máximo y el mínimo.",
+     "ko": "Busca el rectángulo verde más alto, sin contar las líneas finas."
     },
     {
      "title": "Un ejemplo con números",
@@ -28,17 +67,52 @@
    "title": "Cuerpo y mechas: la batalla",
    "steps": [
     {
-     "title": "El cuerpo: la convicción",
-     "body": "• **Cuerpo largo verde:** los compradores dominaron de principio a fin.\n• **Cuerpo largo rojo:** dominaron los vendedores.\n• **Cuerpo pequeño:** indecisión.\n\n«Largo» siempre es relativo a las velas anteriores: 2 € es mucho en una acción tranquila y nada en una cripto."
-    },
-    {
-     "title": "Las mechas: el rechazo",
-     "body": "• **Mecha superior larga:** el precio subió, pero los vendedores lo devolvieron abajo. Rechazo de los precios altos.\n• **Mecha inferior larga:** cayó, pero los compradores lo devolvieron arriba. Rechazo de los precios bajos."
+     "texts": [
+      "Un 5 % que se esfumó",
+      "Pau",
+      "Hoy mi acción subió un 5 % por la mañana.",
+      "Pero cerró casi en el precio de apertura. ¿Qué ha pasado?",
+      "¿Cómo es su vela de hoy?",
+      "Cuerpo pequeño y mecha superior larga",
+      "Eso. Hubo **rechazo de los precios altos**: los vendedores ganaron el final.",
+      "Una verde grande: gran día para los compradores",
+      "A media mañana, sí. Pero cuenta el cierre, no el máximo.",
+      "Una vela sin mechas",
+      "Subió un 5 % y volvió: ese viaje es la mecha.",
+      "**Cuerpo largo:** convicción. **Cuerpo pequeño:** indecisión.",
+      "**Mecha larga:** un rechazo. Arriba, de los precios altos; abajo, de los bajos.",
+      "«Largo» es relativo: 2 € es mucho en una acción tranquila; en una cripto, nada."
+     ]
     },
     {
      "prompt": "Toca la vela que cuenta esta historia: «los vendedores la hundieron y los compradores la devolvieron casi arriba»",
      "ok": "Esa mecha inferior larga es el rechazo de los precios bajos. Tras varias caídas, así se ve un martillo.",
      "ko": "Busca la línea fina más larga por debajo de un cuerpo pequeño."
+    },
+    {
+     "texts": [
+      "¿Quién ganó la sesión?",
+      "Cada vela es una batalla entre compradores y vendedores. ¿Quién la ganó?",
+      "Compradores",
+      "Vendedores",
+      "Empate",
+      "Verde larga que cierra en su máximo",
+      "Mandaron de principio a fin.",
+      "Roja larga sin apenas mechas",
+      "Los vendedores dominaron toda la sesión.",
+      "Cuerpo diminuto con mechas iguales arriba y abajo",
+      "Lo intentaron los dos y nadie ganó.",
+      "Abre en 20, cae a 17 y cierra en 20,40",
+      "Cayó, pero cerró por encima de la apertura.",
+      "Abre en 80, sube a 86 y cierra en 79",
+      "Subió mucho, pero cerró por debajo de la apertura.",
+      "Abre y cierra en 45, tras moverse mucho",
+      "Mucho movimiento y ningún ganador.",
+      "Decide las seis batallas.",
+      "Lo que manda es **dónde cierra** respecto a la apertura y cuánto cuerpo deja. Las mechas cuentan los **intentos fallidos** de cada bando.",
+      "Fíjate en el cierre, no en el máximo ni en el mínimo.",
+      "¿Quién ganó cada batalla?"
+     ]
     },
     {
      "title": "La ubicación lo es todo",
@@ -52,21 +126,54 @@
    "title": "Doji, peonza y marubozu",
    "steps": [
     {
-     "title": "Marubozu: fuerza",
-     "body": "Cuerpo largo con poca o ninguna mecha (*marubozu* es «cabeza rapada» en japonés).\n\n• **Alcista:** abre en el mínimo y cierra en el máximo.\n• **Bajista:** abre en el máximo y cierra en el mínimo.\n\nSuele indicar continuación de la fuerza, sobre todo al empezar un movimiento o al romper un nivel."
-    },
-    {
-     "title": "Peonza y doji: duda y empate",
-     "body": "• **Peonza:** cuerpo pequeño con mechas parecidas arriba y abajo. Indecisión.\n• **Doji:** apertura y cierre casi iguales; el cuerpo es una raya.\n\nTipos de doji: **normal** (cruz), **de patas largas**, **libélula** (T, mecha inferior larga) y **lápida** (T invertida, mecha superior larga)."
-    },
-    {
      "prompt": "Toca el doji: la vela cuya apertura y cierre casi coinciden",
      "ok": "Cuerpo casi inexistente y mechas a los dos lados: ni compradores ni vendedores ganaron esa sesión.",
      "ko": "Busca la vela cuyo cuerpo es casi una raya."
     },
     {
-     "title": "Lo que dicen los datos",
-     "body": "Según Bulkowski, el doji libélula actúa como giro solo **la mitad de las veces**: como tirar una moneda. Un doji es una señal de atención, no de acción.",
+     "texts": [
+      "¿Fuerza o indecisión?",
+      "**Marubozu** es «cabeza rapada» en japonés: cuerpo largo y casi sin mechas. La **peonza** y el **doji**, lo contrario. Clasifícalas.",
+      "Fuerza",
+      "Indecisión",
+      "Marubozu alcista: abre en el mínimo y cierra en el máximo",
+      "Los compradores mandaron toda la sesión.",
+      "Peonza: cuerpo pequeño y mechas parecidas",
+      "Movimiento a los dos lados y nadie gana.",
+      "Marubozu bajista: abre en el máximo y cierra en el mínimo",
+      "Los vendedores mandaron toda la sesión.",
+      "Doji: apertura y cierre casi iguales",
+      "Empate: el cuerpo es una raya.",
+      "Doji de patas largas",
+      "Mucha batalla y ningún ganador.",
+      "Cuerpo largo con mechas mínimas",
+      "Convicción: suele indicar que la fuerza continúa.",
+      "Clasifica las seis velas.",
+      "**Marubozu** dice fuerza, sobre todo al empezar un movimiento o al romper un nivel. **Peonza**, duda; **doji**, empate.",
+      "Cuerpo grande, convicción. Cuerpo pequeño, duda.",
+      "¿Fuerza o indecisión?"
+     ]
+    },
+    {
+     "texts": [
+      "El doji libélula",
+      "Eva",
+      "¡Mira! Un doji libélula: forma de T, con la mecha inferior larguísima.",
+      "Eso es giro seguro, ¿no? Voy a comprar.",
+      "¿Qué le dices?",
+      "Espera a la vela siguiente",
+      "Bien. Según Bulkowski, gira solo **la mitad de las veces**.",
+      "Compra fuerte: es giro seguro",
+      "La mitad de las veces, como una moneda. No es una señal de acción.",
+      "Vende: el doji es bajista",
+      "El doji no tiene dirección. Es un empate.",
+      "Un doji no dice «va a girar». Dice «nadie sabe qué hacer».",
+      "Es una señal de **atención**, no de acción."
+     ]
+    },
+    {
+     "title": "Los cuatro doji",
+     "body": "• **Normal:** una cruz con mechas parecidas.\n• **De patas largas:** mechas muy largas a los dos lados.\n• **Libélula:** una T, con mecha inferior larga.\n• **Lápida:** una T invertida, con mecha superior larga.",
      "key": "Marubozu dice fuerza; peonza, duda; doji, empate.",
      "tip": "Un doji no dice «va a girar». Dice «nadie sabe qué hacer». Espera a la vela siguiente."
     }
@@ -76,13 +183,51 @@
    "title": "Martillo y estrella fugaz",
    "steps": [
     {
-     "title": "La regla y los cuatro nombres",
-     "body": "Cuerpo **pequeño** en un extremo, una mecha al menos **2–3 veces** el cuerpo y poca mecha al otro lado. El nombre depende de dónde aparezca:\n\n• Mecha inferior larga tras una **caída**: **martillo**.\n• La misma, tras una **subida**: **hombre colgado**.\n• Mecha superior larga tras una **caída**: **martillo invertido**.\n• La misma, tras una **subida**: **estrella fugaz**."
+     "prompt": "Tras la subida, toca la estrella fugaz: cuerpo pequeño abajo y mecha superior larga",
+     "ok": "Esa. Los compradores lo intentaron y los vendedores lo devolvieron abajo.",
+     "ko": "Busca la mecha superior más larga después de varias velas al alza."
     },
     {
-     "prompt": "Tras la subida, toca la estrella fugaz",
-     "ok": "Cuerpo pequeño abajo y mecha superior larga: los compradores lo intentaron y los vendedores lo devolvieron abajo.",
-     "ko": "Busca la mecha superior más larga después de varias velas al alza."
+     "texts": [
+      "¿Martillo?",
+      "Nora",
+      "Tras un mes subiendo, sale una vela con la mecha inferior larguísima. ¡Un martillo!",
+      "¿Cómo se llama esa vela tras una subida?",
+      "Hombre colgado",
+      "Eso. Misma forma, pero tras una subida cambia de nombre.",
+      "Martillo",
+      "Solo es martillo **tras una caída**. Aquí es hombre colgado.",
+      "Estrella fugaz",
+      "Casi: la estrella fugaz tiene la mecha larga **arriba**.",
+      "¿Y eso anuncia una caída?",
+      "En teoría. Según Bulkowski, ¡sigue al alza el **59 %** de las veces!",
+      "Él mismo describe estas velas como «no muy lejos del azar»."
+     ]
+    },
+    {
+     "texts": [
+      "Forma y contexto",
+      "Cuerpo **pequeño** en un extremo y una mecha de al menos **2-3 veces** el cuerpo. ¿Martillo, estrella fugaz o ninguna de las dos?",
+      "Martillo",
+      "Estrella fugaz",
+      "Ninguna de las dos",
+      "Mecha inferior larga tras una caída",
+      "Rechazo de los precios bajos tras caer: martillo.",
+      "Mecha superior larga tras una subida",
+      "Rechazo de los precios altos tras subir: estrella fugaz.",
+      "Mecha inferior larga tras una subida",
+      "Es un hombre colgado.",
+      "Mecha superior larga tras una caída",
+      "Es un martillo invertido.",
+      "Cuerpo pequeño arriba y mecha larga abajo, en el mínimo de varias semanas",
+      "Forma de martillo y en buen sitio.",
+      "Cuerpo pequeño abajo y mecha larga arriba, en el máximo del mes",
+      "Forma de estrella fugaz tras subir.",
+      "Pon nombre a las seis velas.",
+      "Primero la **forma** (dónde está la mecha larga) y después el **contexto** (de dónde viene el precio): la misma vela cambia de nombre.",
+      "¿Dónde está la mecha larga? ¿Venía subiendo o bajando?",
+      "Mira la forma y luego el contexto"
+     ]
     },
     {
      "title": "Lo que dicen los datos (Bulkowski)",
@@ -96,21 +241,35 @@
    "title": "Envolventes y harami",
    "steps": [
     {
-     "title": "Envolventes",
-     "body": "**Alcista:** tras una caída, una vela roja seguida de una verde que abre por debajo del cierre anterior y **cierra por encima de su apertura**. Su cuerpo se come el rojo.\n\n**Bajista:** tras una subida, una verde seguida de una roja cuyo cuerpo envuelve el verde."
-    },
-    {
-     "title": "Harami, penetrante y nube oscura",
-     "body": "• **Harami** («embarazada»): vela larga y después una pequeña **dentro** de su cuerpo. El impulso se frena.\n• **Pauta penetrante:** tras una caída, una verde que cierra **por encima de la mitad** del cuerpo rojo anterior.\n• **Nube oscura:** tras una subida, una roja que cierra **por debajo de la mitad** del verde."
-    },
-    {
-     "prompt": "Toca la vela verde que envuelve a la roja anterior",
+     "prompt": "Tras la caída, toca la vela verde que envuelve a la roja anterior",
      "ok": "Su cuerpo se come entero el rojo del día anterior: los compradores recuperaron todo lo perdido y más.",
      "ko": "Busca una vela verde enorme justo después de una roja."
     },
     {
-     "title": "La paradoja de los datos",
-     "body": "Bulkowski: la envolvente alcista gira el **63 %** (puesto 84 de 103); la bajista, el **79 %**, pero queda en el puesto **91** porque el movimiento posterior suele ser pequeño. La nube oscura gira el **60 %** (puesto 22).",
+     "prompt": "Ahora al revés: tras la subida, toca la vela roja cuyo cuerpo envuelve a la verde anterior",
+     "ok": "Su cuerpo rojo se come el verde de la víspera: los vendedores borran todo lo ganado.",
+     "ko": "Busca una roja grande justo después de una verde pequeña."
+    },
+    {
+     "texts": [
+      "Un 79 % de aciertos",
+      "Hugo",
+      "La envolvente bajista acierta la dirección el 79 % de las veces. ¡Voy con todo!",
+      "¿Qué le falta mirar?",
+      "Cuánto suele caer frente a lo que pierde si falla",
+      "Eso. Gira a menudo, pero **gira poco**: puesto 91 de 103.",
+      "Nada: un 79 % es casi seguro",
+      "Si el recorrido es pequeño y el stop grande, puedes perder acertando.",
+      "El color de la vela anterior",
+      "Ya sabe que es verde. Importa cuánto gana y cuánto arriesga.",
+      "La envolvente alcista gira el **63 %** y queda en el puesto 84.",
+      "La nube oscura gira el **60 %** y aun así queda en el puesto **22**.",
+      "Acertar la dirección no basta: el recorrido tiene que compensar el riesgo."
+     ]
+    },
+    {
+     "title": "Harami, penetrante y nube oscura",
+     "body": "• **Envolvente:** el cuerpo de la segunda vela se come el de la primera, en sentido contrario.\n• **Harami** («embarazada»): vela larga y después una pequeña **dentro** de su cuerpo. El impulso se frena.\n• **Pauta penetrante:** tras una caída, una verde que cierra **por encima de la mitad** del cuerpo rojo anterior.\n• **Nube oscura:** tras una subida, una roja que cierra **por debajo de la mitad** del verde.",
      "key": "Acertar la dirección no basta: el recorrido tiene que compensar el riesgo.",
      "tip": "Una envolvente gira a menudo, pero a veces gira poco."
     }
@@ -120,17 +279,50 @@
    "title": "Estrellas, soldados y cuervos",
    "steps": [
     {
-     "title": "Estrella de la mañana y de la tarde",
-     "body": "**Mañana** (giro alcista): tras una caída, una roja larga, una vela pequeña con hueco abajo (la «estrella») y una verde larga que cierra al menos en la **mitad** del cuerpo de la primera.\n\n**Tarde** (giro bajista): lo mismo al revés, tras una subida. Si la del medio es un doji, se llaman estrella doji."
-    },
-    {
-     "title": "Soldados y cuervos",
-     "body": "• **Tres soldados blancos:** tres verdes largas seguidas, cada una cerrando más arriba y cerca de su máximo.\n• **Tres cuervos negros:** tres rojas largas tras una subida, cada una cerrando cerca de su mínimo y con nuevos mínimos."
-    },
-    {
-     "prompt": "Toca la tercera vela de la estrella de la mañana: la verde que confirma",
+     "prompt": "Tras una roja larga y una vela pequeña de duda, toca la tercera vela de la estrella de la mañana: la verde que confirma",
      "ok": "Roja larga, vela pequeña de duda y verde larga que recupera terreno: estrella de la mañana.",
      "ko": "Busca la secuencia roja grande → vela pequeña → verde grande, y toca la verde."
+    },
+    {
+     "texts": [
+      "¿Giro alcista o bajista?",
+      "Los patrones de tres velas cuentan una historia completa. ¿Hacia dónde apunta cada uno?",
+      "Alcista",
+      "Bajista",
+      "Estrella de la mañana",
+      "Tras una caída: roja larga, vela pequeña y verde larga.",
+      "Estrella de la tarde",
+      "Lo mismo al revés, tras una subida.",
+      "Tres soldados blancos",
+      "Tres verdes largas, cada una cerrando más arriba y cerca de su máximo.",
+      "Tres cuervos negros",
+      "Tres rojas largas tras una subida, cada una con nuevos mínimos.",
+      "Estrella doji de la tarde",
+      "Una estrella de la tarde con un doji en medio.",
+      "Estrella doji de la mañana",
+      "Una estrella de la mañana con un doji en medio.",
+      "Clasifica los seis patrones.",
+      "Tres velas cuentan **mejor la historia** que una: un bando domina, después duda y al final el otro toma el control.",
+      "Mañana y soldados, al alza. Tarde y cuervos, a la baja.",
+      "¿Alcista o bajista?"
+     ]
+    },
+    {
+     "texts": [
+      "Tres soldados blancos",
+      "Leo",
+      "¡Tres soldados blancos en mi acción! Bulkowski dice 82 %. Casi seguro, ¿no?",
+      "¿Qué le dices?",
+      "Es de los mejores, pero falla casi 1 de cada 5",
+      "Eso. Y Bulkowski mide sin comisiones ni spreads.",
+      "Con un 82 % no hay riesgo",
+      "Un 18 % de fallos es casi una de cada cinco veces.",
+      "Las velas no sirven: olvídalo",
+      "Sirven para leer el mercado y poner stops con lógica. No garantizan nada.",
+      "La acción venía de meses bajando, eso sí.",
+      "Ojo: como rebote en una tendencia bajista, la bajada suele continuar.",
+      "Los mejores patrones mejoran las probabilidades. No las convierten en certezas."
+     ]
     },
     {
      "title": "Los mejores números (Bulkowski)",
@@ -144,21 +336,52 @@
    "title": "El contexto lo es todo",
    "steps": [
     {
-     "title": "Los cuatro filtros",
-     "body": "1. **Tendencia previa:** un patrón de giro necesita algo que girar.\n2. **Nivel:** soporte, resistencia, media importante o mínimo o máximo anual.\n3. **Volumen:** mayor que la media, más creíble.\n4. **Confirmación:** la vela siguiente cierra en la dirección esperada.\n\nY mejor en diario o semanal que en minutos."
-    },
-    {
      "prompt": "Toca el martillo y después fíjate en las dos velas siguientes",
      "ok": "Es el martillo. La vela siguiente cerró por encima de su máximo (confirmación)… y la otra cayó con fuerza. Confirmar reduce errores; no los elimina.",
      "ko": "Busca la mecha inferior más larga tras la caída."
     },
     {
-     "title": "Lo que dice la ciencia",
-     "body": "• **Marshall, Young y Rose** probaron 28 patrones en las acciones del Dow Jones (1992–2002): no aportaban valor. Un estudio en Japón (1975–2004), la cuna de las velas, llegó a lo mismo.\n• Bulkowski mide sin comisiones ni *spreads*.\n• Si pruebas cien patrones, alguno parecerá funcionar por casualidad (*data snooping*)."
+     "texts": [
+      "Los cuatro filtros",
+      "Has visto un martillo. ¿Qué le da más credibilidad y qué no?",
+      "Suma credibilidad",
+      "No suma",
+      "Llega tras tres meses de caída",
+      "Tendencia previa: un patrón de giro necesita algo que girar.",
+      "Aparece en mitad de un rango lateral",
+      "No hay tendencia que girar ni nivel que defender.",
+      "Aparece en el mínimo del año, sobre un soporte",
+      "Nivel relevante: mucha gente lo vigila.",
+      "Es un gráfico de 1 minuto",
+      "En minutos manda el ruido. Mejor diario o semanal.",
+      "Volumen del doble de la media",
+      "Mucha gente detrás: más creíble.",
+      "Un influencer dice que acierta el 90 %",
+      "Ningún estudio serio da algo así.",
+      "La vela siguiente cierra al alza",
+      "Confirmación: el precio va en la dirección esperada.",
+      "Volumen bajísimo",
+      "Poca gente detrás de la señal.",
+      "Clasifica las ocho pistas.",
+      "Cuatro filtros: **tendencia previa, nivel, volumen y confirmación**. Y mejor en gráfico diario o semanal que en minutos.",
+      "Piensa en tendencia, nivel, volumen y confirmación.",
+      "¿Suma o no suma?"
+     ]
+    },
+    {
+     "texts": [
+      "Solo con velas",
+      "Reto final: cuatro gráficos reales, sin contexto. ¿Sube o baja en las 10 sesiones siguientes?",
+      "Juega las cuatro rondas.",
+      "Solo con velas, los aciertos rondan los de una moneda. **Marshall, Young y Rose** probaron 28 patrones en las acciones del Dow Jones (1992–2002): no aportaban valor.",
+      "¡Cuatro de cuatro! Con tan pocas rondas, la suerte pesa mucho.",
+      "Por eso los estudios serios usan miles de casos.",
+      "Mira solo las velas y decide"
+     ]
     },
     {
      "title": "Entonces, ¿para qué sirven?",
-     "body": "Para leer el mercado (rechazo, convicción, indecisión), para poner el stop en un sitio lógico y para no dejarte engañar por quien vende patrones «con un 90 % de acierto».",
+     "body": "Un estudio en Japón (1975–2004), la cuna de las velas, llegó a lo mismo que Marshall, Young y Rose. Bulkowski mide sin comisiones ni *spreads*. Y si pruebas cien patrones, alguno parecerá funcionar por casualidad (*data snooping*).\n\nLas velas sirven para **leer** el mercado (rechazo, convicción, indecisión), para poner el **stop** en un sitio lógico y para no dejarte engañar por quien vende patrones «con un 90 % de acierto».",
      "key": "Las velas son un idioma, no una bola de cristal.",
      "tip": "La vela es la frase; el contexto, el libro entero."
     }
@@ -185,14 +408,6 @@
     "La apertura",
     "El cierre"
    ]
-  },
-  "u20l1-2": {
-   "prompt": "Vela con apertura 40, máximo 44, mínimo 39 y cierre 43. ¿De qué color es?",
-   "options": [
-    "Verde",
-    "Roja"
-   ],
-   "explanation": "Cierra (43) por encima de la apertura (40): es alcista, verde."
   },
   "u20l1-3": {
    "prompt": "Vela con apertura 40, máximo 44, mínimo 39 y cierre 43. ¿Cuánto mide el cuerpo?",
@@ -237,24 +452,6 @@
    ],
    "explanation": "Mínimo ≤ apertura < cierre ≤ máximo. En una roja, apertura y cierre se intercambian."
   },
-  "u20l1-9": {
-   "prompt": "En todas las plataformas del mundo, el verde significa que el precio subió.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "En China, Japón y Corea los colores suelen ir al revés: rojo para subir y verde para bajar."
-  },
-  "u20l1-10": {
-   "prompt": "El libro que llevó las velas japonesas a Occidente en 1991 lo escribió Steve ____.",
-   "options": [
-    "Elder",
-    "Wilder",
-    "Dow",
-    "Nison"
-   ],
-   "explanation": "Steve Nison publicó Japanese Candlestick Charting Techniques en 1991."
-  },
   "u20l2-1": {
    "prompt": "¿Qué indica una mecha superior muy larga?",
    "options": [
@@ -263,22 +460,6 @@
     "Que los compradores dominaron todo el periodo"
    ],
    "explanation": "El precio llegó arriba, pero los vendedores lo devolvieron abajo antes del cierre."
-  },
-  "u20l2-2": {
-   "prompt": "¿Quién ganó la sesión?",
-   "options": [
-    "Roja larga que cierra en el mínimo",
-    "Abre en 50, cae a 44 y cierra en 50,5",
-    "Abre en 30, sube a 34 y cierra en 29",
-    "Verde larga, casi sin mechas",
-    "Cuerpo diminuto con mechas iguales"
-   ],
-   "explanation": "Lo que manda es dónde cierra respecto a la apertura y cuánto cuerpo deja. Las mechas cuentan los intentos fallidos.",
-   "right": [
-    "Compradores",
-    "Vendedores",
-    "Empate"
-   ]
   },
   "u20l2-3": {
    "prompt": "Toca la vela donde los vendedores ganaron con más claridad: el cuerpo rojo más grande.",
@@ -295,14 +476,6 @@
    "options": [],
    "explanation": "(50 − 44) ÷ 50 = 0,12 → −12 %. Y aun así cerró por encima de la apertura: los compradores ganaron la batalla.",
    "unit": "%"
-  },
-  "u20l2-6": {
-   "prompt": "Una vela de 2 € de cuerpo siempre es una vela grande.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Depende del activo y de las velas anteriores: 2 € es enorme en una acción de 20 € y casi nada en una de 500 €."
   },
   "u20l2-7": {
    "prompt": "Lee las últimas velas como una batalla. ¿Sube o baja en las 10 sesiones siguientes?",
@@ -325,33 +498,6 @@
     "Exacto: la misma vela tras una caída larga y en un soporte contaría otra historia.",
     "La mecha inferior es rechazo de los precios bajos: no es señal de venta, pero aquí tampoco de compra.",
     "En mitad de un rango, sin tendencia que girar, esa mecha significa muy poco."
-   ]
-  },
-  "u20l2-9": {
-   "prompt": "Rápido: un cuerpo muy pequeño significa…",
-   "options": [
-    "Fuerza compradora",
-    "Indecisión",
-    "Caída segura"
-   ],
-   "explanation": "Ni compradores ni vendedores ganaron con claridad."
-  },
-  "u20l2-10": {
-   "prompt": "¿Cómo le explicas a Lumi lo que pasó?",
-   "options": [
-    "Que la vela tiene una mecha superior larga: hubo rechazo de los precios altos",
-    "Que fue un gran día para los compradores",
-    "Que es un error de la app"
-   ],
-   "explanation": "El máximo cuenta hasta dónde llegaron los compradores; el cierre, quién ganó.",
-   "feedback": [
-    "¡Eso! Los compradores llegaron lejos, pero los vendedores ganaron el final de la batalla.",
-    "A media mañana sí, pero al cierre los vendedores devolvieron el precio abajo. Mira el cierre, no el máximo.",
-    "No hay error: subir y volver es muy normal, y la vela lo registra con la mecha."
-   ],
-   "lines": [
-    "Hoy mi acción subió un 5 % durante la mañana 🚀",
-    "Pero cerró casi en el precio de apertura 😕"
    ]
   },
   "u20l3-1": {
@@ -396,31 +542,6 @@
    "options": [],
    "explanation": "Abrió prácticamente en el mínimo y cerró en el máximo: los compradores controlaron toda la sesión. (Microsoft · velas diarias · mayo–junio de 2026)"
   },
-  "u20l3-5": {
-   "prompt": "Rápido: apertura 25,10 y cierre 25,11, con mechas a los dos lados. ¿Qué vela es?",
-   "options": [
-    "Marubozu",
-    "Doji",
-    "Martillo"
-   ],
-   "explanation": "Apertura y cierre casi iguales: doji."
-  },
-  "u20l3-6": {
-   "prompt": "Un marubozu alcista abre en el máximo y cierra en el mínimo.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Al revés: abre en el mínimo y cierra en el máximo."
-  },
-  "u20l3-7": {
-   "prompt": "Según Bulkowski, el doji libélula acierta el giro 9 de cada 10 veces.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Solo la mitad de las veces, como una moneda. Por eso es una señal de atención, no de acción."
-  },
   "u20l3-8": {
    "prompt": "El doji con forma de T invertida, con una mecha superior larga, se llama doji ____.",
    "options": [
@@ -445,21 +566,6 @@
     "Bien: si la siguiente cierra con fuerza a la baja, el doji gana importancia; si no, era una pausa."
    ]
   },
-  "u20l3-10": {
-   "prompt": "¿Fuerza o indecisión?",
-   "options": [
-    "Doji",
-    "Doji de patas largas",
-    "Peonza",
-    "Marubozu",
-    "Cuerpo largo con mechas mínimas"
-   ],
-   "explanation": "Cuerpo grande sin mechas = fuerza. Cuerpo pequeño o inexistente = duda o empate.",
-   "right": [
-    "Fuerza",
-    "Indecisión"
-   ]
-  },
   "u20l4-1": {
    "prompt": "Tras la caída, toca el martillo.",
    "options": [],
@@ -469,23 +575,6 @@
    "prompt": "Tras la subida, toca la estrella fugaz.",
    "options": [],
    "explanation": "Mecha superior varias veces mayor que el cuerpo: el intento de subir fue rechazado. (Amazon · velas diarias · octubre–noviembre de 2025)"
-  },
-  "u20l4-3": {
-   "prompt": "Pon nombre a cada vela según su forma y su contexto.",
-   "options": [
-    "Cuerpo pequeño arriba y mecha inferior larga en el mínimo de varias semanas",
-    "Mecha superior larga tras una caída",
-    "Mecha inferior larga tras una subida",
-    "Mecha inferior larga tras una caída",
-    "Mecha superior larga tras una subida"
-   ],
-   "explanation": "Primero la forma (dónde está la mecha larga) y después el contexto (de dónde viene el precio).",
-   "right": [
-    "Martillo",
-    "Hombre colgado",
-    "Estrella fugaz",
-    "Martillo invertido"
-   ]
   },
   "u20l4-4": {
    "prompt": "¿Dónde va el stop lógico si compras tras un martillo confirmado?",
@@ -501,14 +590,6 @@
    "options": [],
    "explanation": "52 − 46,50 = 5,50 € por acción. El stop va un poco por debajo de la mecha para no saltar por una simple mecha.",
    "unit": "€"
-  },
-  "u20l4-6": {
-   "prompt": "Según Bulkowski, tras un hombre colgado el precio sigue subiendo más veces de las que gira.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Continuación alcista el 59 %: lo contrario de lo que dice la teoría clásica."
   },
   "u20l4-7": {
    "prompt": "Fíjate en las mechas de las últimas velas. ¿Sube o baja en las 10 sesiones siguientes?",
@@ -532,15 +613,6 @@
     "Las velas no predicen solas, pero dan contexto y un sitio lógico para el stop.",
     "Aun en buenas condiciones falla a menudo: entrar con todo y sin stop convierte un 60 % en una ruleta."
    ]
-  },
-  "u20l4-9": {
-   "prompt": "Rápido: mecha superior larga tras una subida.",
-   "options": [
-    "Marubozu",
-    "Estrella fugaz",
-    "Martillo"
-   ],
-   "explanation": "Cuerpo pequeño abajo y mecha superior larga tras subir: estrella fugaz."
   },
   "u20l4-10": {
    "prompt": "Según Bulkowski, ¿qué mejora los resultados del martillo?",
@@ -586,15 +658,6 @@
     "Los compradores recuperan todo lo de ayer y más"
    ]
   },
-  "u20l5-5": {
-   "prompt": "La envolvente bajista gira el 79 % de las veces, pero queda en el puesto 91 de 103 en rendimiento. ¿Por qué?",
-   "options": [
-    "Porque solo funciona en cripto",
-    "Porque el movimiento posterior suele ser pequeño",
-    "Porque es muy rara"
-   ],
-   "explanation": "Acierta la dirección a menudo, pero el recorrido es corto. Además es muy frecuente (puesto 11)."
-  },
   "u20l5-6": {
    "prompt": "Vela 1 roja: abre en 30 € y cierra en 27 €. Vela 2 verde: abre en 26,50 €. ¿Por encima de qué precio tiene que cerrar para ser una envolvente alcista?",
    "options": [],
@@ -611,37 +674,6 @@
    ],
    "explanation": "Si lo envolviera entero, sería una envolvente bajista."
   },
-  "u20l5-8": {
-   "prompt": "Los patrones con hueco entre velas tienen el mismo sentido en criptomonedas que en acciones.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Las cripto cotizan 24/7 y las divisas casi sin pausa: apenas hay huecos entre velas, así que estos patrones se forman de otra manera o pierden sentido."
-  },
-  "u20l5-9": {
-   "prompt": "Rápido: vela verde cuyo cuerpo se come el cuerpo rojo anterior, tras una caída.",
-   "options": [
-    "Harami",
-    "Envolvente alcista",
-    "Estrella fugaz"
-   ],
-   "explanation": "Es la envolvente alcista."
-  },
-  "u20l5-10": {
-   "prompt": "Marta encuentra una envolvente bajista de manual. Sabe que gira el 79 % de las veces y quiere apostar fuerte. ¿Qué le falta mirar?",
-   "options": [
-    "El color de la vela anterior",
-    "Nada: un 79 % es casi seguro",
-    "Cuánto puede caer frente a lo que pierde si falla"
-   ],
-   "explanation": "Acertar la dirección no basta: hay que comparar el recorrido esperado con el riesgo.",
-   "feedback": [
-    "Ya lo sabe: verde. La pregunta importante es cuánto gana si acierta y cuánto pierde si falla.",
-    "Acierta la dirección a menudo, pero si el recorrido es pequeño y el stop grande, puede perder dinero acertando.",
-    "Eso: con un recorrido medio pequeño, la relación beneficio/riesgo puede no compensar."
-   ]
-  },
   "u20l6-1": {
    "prompt": "Ordena las velas de una estrella de la mañana.",
    "options": [
@@ -655,22 +687,6 @@
    "prompt": "Toca la vela que completa la estrella de la mañana.",
    "options": [],
    "explanation": "Tras una roja larga y una vela pequeña de duda, esta verde larga cierra el patrón. (Amazon · velas diarias · julio–agosto de 2025)"
-  },
-  "u20l6-3": {
-   "prompt": "Empareja cada patrón con su señal.",
-   "options": [
-    "Estrella de la mañana",
-    "Estrella de la tarde",
-    "Tres soldados blancos",
-    "Tres cuervos negros"
-   ],
-   "explanation": "Los nombres vienen de la tradición japonesa de los comerciantes de arroz.",
-   "right": [
-    "Giro bajista tras una subida",
-    "Avance firme de los vendedores tras una subida",
-    "Avance firme de los compradores",
-    "Giro alcista tras una caída"
-   ]
   },
   "u20l6-4": {
    "prompt": "Empareja cada patrón con su puesto de rendimiento según Bulkowski (de 103).",
@@ -697,14 +713,6 @@
    ],
    "explanation": "Son poco frecuentes, y Bulkowski mide sin comisiones ni spreads."
   },
-  "u20l6-6": {
-   "prompt": "Según Bulkowski, unos tres soldados blancos que aparecen como rebote dentro de una tendencia bajista suelen dar paso a que la bajada continúe.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "El contexto manda: en una tendencia bajista de fondo, ese rebote suele quedarse en eso."
-  },
   "u20l6-7": {
    "prompt": "Busca patrones de tres velas al final de este gráfico. ¿Sube o baja en las 10 sesiones siguientes?",
    "options": [
@@ -723,33 +731,6 @@
     "doji"
    ],
    "explanation": "Bulkowski le da un 71 % de giros bajistas (puesto 30)."
-  },
-  "u20l6-9": {
-   "prompt": "Rápido: tres velas rojas largas tras una subida, cada una con nuevos mínimos.",
-   "options": [
-    "Tres cuervos negros",
-    "Harami",
-    "Tres soldados blancos"
-   ],
-   "explanation": "Son los tres cuervos negros: giro bajista el 78 % según Bulkowski."
-  },
-  "u20l6-10": {
-   "prompt": "¿Qué le dices?",
-   "options": [
-    "Sí, con un 82 % no hay riesgo",
-    "Es de los mejores patrones, pero falla casi una de cada cinco veces y hay que mirar el contexto",
-    "Las velas no sirven, olvídalo"
-   ],
-   "explanation": "Los mejores patrones mejoran las probabilidades, no las convierten en certezas.",
-   "feedback": [
-    "Un 18 % de fallos es casi una de cada cinco. Y Bulkowski mide sin comisiones ni spreads.",
-    "¡Exacto! Y si aparece como rebote dentro de una tendencia bajista, suele fallar.",
-    "Sirven para leer el mercado y poner stops con lógica; lo que no hacen es garantizar nada."
-   ],
-   "lines": [
-    "He encontrado tres soldados blancos en una acción 🪖🪖🪖",
-    "Bulkowski dice 82 %. ¡Es casi seguro!"
-   ]
   },
   "u20l7-1": {
    "prompt": "¿Cuáles son los cuatro filtros que dan valor a un patrón de velas? Marca todos.",
@@ -770,32 +751,6 @@
    ],
    "explanation": "Apunta tus aciertos en estos retos: con suficientes intentos verás que, solo con velas, rondan los de una moneda al aire.",
    "horizon": "las 10 sesiones siguientes"
-  },
-  "u20l7-3": {
-   "prompt": "Otro activo, otro intento. ¿Sube o baja en las 10 sesiones siguientes?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Cada gráfico tiene su historia, pero ninguno trae la respuesta escrita. Lo que sí controlas es cuánto arriesgas.",
-   "horizon": "las 10 sesiones siguientes"
-  },
-  "u20l7-4": {
-   "prompt": "Y uno más. ¿Sube o baja en las 10 sesiones siguientes?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Tres intentos son muy pocos para sacar conclusiones: por eso los estudios serios usan miles de casos.",
-   "horizon": "las 10 sesiones siguientes"
-  },
-  "u20l7-5": {
-   "prompt": "Si un patrón acierta la dirección el 60 % de las veces, seguro que es rentable.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Depende del recorrido cuando acierta, de lo que pierdes cuando falla y de los costes."
   },
   "u20l7-6": {
    "prompt": "Marshall, Young y Rose concluyeron que 28 patrones de velas no aportaban valor en las acciones del Dow Jones.",
@@ -836,14 +791,6 @@
     "Puede fallar igual. Sin stop, un fallo puede costar mucho más de lo previsto.",
     "Eso: cuatro de cuatro mejora las probabilidades, y la gestión del riesgo le protege cuando falla."
    ]
-  },
-  "u20l7-10": {
-   "prompt": "Un patrón de velas en un gráfico diario es más significativo que en uno de 1 minuto.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "En temporalidades cortas domina el ruido."
   },
   "u20l7-11": {
    "prompt": "¿Qué le contestas a Lumi?",

@@ -1233,7 +1233,7 @@
     "feesChart": "The same savings with two fees",
     "feesNote": "Example with a gross return of {gross} a year before fees: not a promise.",
     "feesTake": "What the extra fees take",
-    "fxAsset": "What the investment does (in {currency})",
+    "fxAsset": "What the investment does in its own currency",
     "fxMove": "What the {currency} does against the euro",
     "fxEur": "What you make, in euros",
     "gainSold": "Gains when selling",
@@ -1283,6 +1283,9 @@
     "taxToPay": "Tax to pay",
     "valHead": "Earnings per share today: {eps}",
     "youGetEur": "You end up with, in euros",
-    "youInvest": "You invest"
+    "youInvest": "You invest",
+    "usdNote": "not counting the euro/dollar exchange rate",
+    "coinHeadFree": "{n} people make {stake} heads-or-tails trades, with no fees",
+    "coinWin": "If it goes well they win {win}; if not they lose {stake}."
   }
 }

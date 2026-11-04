@@ -9,21 +9,43 @@
    "title": "Por qué el riesgo importa más que acertar",
    "steps": [
     {
+     "texts": [
+      "Diez fallos seguidos",
+      "Tienes **10.000 €**, e incluso con un buen sistema a veces llegan **10 pérdidas seguidas**. ¿Cuánto arriesgas en cada operación?",
+      "Arriesgas un 10 % en cada una y pierdes 10 seguidas. ¿Qué te queda?",
+      "Nada: 10 × 10 % = 100 %",
+      "Algo más de un tercio",
+      "Casi todo",
+      "Cada pérdida se aplica a lo que queda: te quedan **3.487 €**, un 34,9 %. Para volver necesitarías ganar un **187 %**.",
+      "Encuentra el riesgo que te deja al menos 9.000 € tras 10 fallos.",
+      "Con un **1 %**, diez pérdidas son un mal mes (te queda el 90,4 %); con un 10 %, son el final. **Lo que controlas es cuánto arriesgas**, no si aciertas.",
+      "Así sí: diez fallos seguidos y sigues en el juego.",
+      "Con este riesgo, una racha normal se lleva buena parte de la cuenta.",
+      "Mejor, pero una mala racha aún duele mucho.",
+      "Baja el riesgo por operación y mira la cuenta"
+     ]
+    },
+    {
+     "texts": [
+      "Acertar mucho no basta",
+      "Pablo",
+      "Laura",
+      "Yo acierto el 60 % de mis operaciones.",
+      "Pues yo solo el 40 %.",
+      "Pablo gana 50 € cuando acierta y pierde 150 € cuando falla. Laura gana 300 € y pierde 100 €.",
+      "Tras 10 operaciones, ¿quién va mejor?",
+      "Pablo: acierta más",
+      "Pablo: 6 × 50 − 4 × 150 = **−300 €**. Acertar mucho no le salva.",
+      "Laura: sus aciertos valen más que sus fallos",
+      "Laura: 4 × 300 − 6 × 100 = **+600 €**. Falla más, pero pierde poco.",
+      "Empatan",
+      "No: importa cuánto ganas y pierdes en cada una, no solo cuántas.",
+      "No controlas si aciertas. Controlas **cuánto pierdes** cuando fallas."
+     ]
+    },
+    {
      "title": "La pregunta del profesional",
-     "body": "El principiante pregunta «¿qué compro?» y «¿va a subir?». El profesional pregunta: **«¿cuánto pierdo si me equivoco?»**.\n\nNadie sabe si una operación concreta saldrá bien. Lo único que controlas al 100 % es **cuánto arriesgas** en cada una."
-    },
-    {
-     "title": "Diez pérdidas seguidas",
-     "body": "Pasan incluso con un buen sistema. Lo que te queda según lo que arriesgas por operación:\n\n• 1 %: te queda el **90,4 %** (recuperas con +10,6 %)\n• 2 %: 81,7 % (+22,4 %)\n• 5 %: 59,9 % (+67 %)\n• 10 %: **34,9 %** (+187 %)\n\nCon un 1 %, diez pérdidas son un mal mes. Con un 10 %, son el final."
-    },
-    {
-     "title": "Cuánto cuesta volver",
-     "body": "Mueve la pérdida y mira cuánto tendrías que ganar después para quedarte como estabas.",
-     "tip": "Las pérdidas grandes no se arreglan con una ganancia del mismo tamaño."
-    },
-    {
-     "title": "Sobrevivir primero",
-     "body": "Puedes acertar el 60 % de las veces y arruinarte, o acertar el 40 % y ganar dinero. La diferencia está en cuánto ganas cuando aciertas y cuánto pierdes cuando fallas.",
+     "body": "El principiante pregunta «¿qué compro?» y «¿va a subir?». El profesional pregunta: **«¿cuánto pierdo si me equivoco?»**.\n\nNadie sabe si una operación concreta saldrá bien. Puedes acertar el 60 % de las veces y arruinarte, o acertar el 40 % y ganar dinero: la diferencia está en cuánto ganas cuando aciertas y cuánto pierdes cuando fallas.",
      "key": "El primer objetivo de un trader es sobrevivir para que su ventaja, si la tiene, pueda actuar.",
      "tip": "No controlas si aciertas. Controlas cuánto pierdes cuando fallas."
     }
@@ -33,17 +55,44 @@
    "title": "Las matemáticas de las pérdidas",
    "steps": [
     {
-     "title": "Pérdidas y ganancias no son simétricas",
-     "body": "**Subida necesaria = 1 ÷ (1 − caída) − 1**\n\n• Pierdes 10 % → necesitas +11,1 %\n• Pierdes 20 % → +25 %\n• Pierdes 30 % → +42,9 %\n• Pierdes 50 % → **+100 %**\n• Pierdes 75 % → +300 %\n• Pierdes 90 % → **+900 %**"
+     "texts": [
+      "Vive la burbuja puntocom",
+      "Datos reales: el Nasdaq 100 semana a semana desde diciembre de 1998. Inviertes **10.000 €** y puedes vender cuando quieras.",
+      "Si tu inversión cae a la mitad, ¿cuánto tiene que subir después para volver?",
+      "Un 50 %",
+      "Un 100 %: tiene que duplicarse",
+      "Un 25 %",
+      "De 10.000 € a 5.000 €: para volver a 10.000 € tienes que **duplicar**. Pierdes la mitad y necesitas ganar el doble.",
+      "Llega hasta el final, vendas o no.",
+      "Del máximo de marzo de 2000 al mínimo de 2002, el índice cayó un **82,6 %**: para volver hacía falta subir un **475 %**. No recuperó aquel máximo hasta noviembre de 2015.",
+      "Fin. ¿Ves por qué evitar las grandes caídas importa tanto?",
+      "Con un −50 %, volver a tus 10.000 € exige un +100 %.",
+      "Un −20 %: para volver ya necesitas un +25 %.",
+      "¡Tus 10.000 € ya valen más del doble! ¿Sigues?",
+      "Dale a empezar. Puedes vender cuando quieras"
+     ]
     },
     {
-     "title": "Juega con la caída",
-     "body": "Sube la pérdida poco a poco: hasta el 20 % la diferencia apenas se nota; a partir del 50 % se dispara.",
-     "tip": "Una acción que cae un 90 % tiene que multiplicarse por diez para volver."
+     "texts": [
+      "Subir 30 y bajar 30",
+      "Ana",
+      "Bruno",
+      "Mi fondo subió un 30 % y luego cayó un 30 %. Me quedo igual, ¿no?",
+      "El mío subió un 10 % y cayó un 5 %. Menos emocionante.",
+      "¿Quién acaba mejor?",
+      "Ana: subió más",
+      "Ana: 1,3 × 0,7 = 0,91. **Pierde un 9 %** pese a la gran subida.",
+      "Bruno: cayó menos",
+      "Bruno: 1,1 × 0,95 = 1,045. **Gana un 4,5 %**: las caídas pequeñas se recuperan.",
+      "Quedan igual",
+      "No: con porcentajes, las caídas pesan más que las subidas del mismo tamaño.",
+      "Vaya. Entonces lo importante es no caer mucho.",
+      "Eso es: evitar las grandes caídas suele valer más que buscar grandes subidas."
+     ]
     },
     {
-     "title": "La media engaña",
-     "body": "+50 % un año y −50 % al siguiente no es un 0 % de media: 100 € → 150 € → 75 €. Has perdido un 25 %.\n\nY con apalancamiento 1:5, una caída del 20 % del activo se lleva el 100 % de tu dinero.",
+     "title": "Lo que cuesta volver",
+     "body": "**Subida necesaria = 1 ÷ (1 − caída) − 1**\n\n• Pierdes 10 % → necesitas +11,1 %\n• Pierdes 20 % → +25 %\n• Pierdes 30 % → +42,9 %\n• Pierdes 50 % → **+100 %**\n• Pierdes 75 % → +300 %\n• Pierdes 90 % → **+900 %**\n\nY la media engaña: +50 % y −50 % es 100 € → 150 € → 75 €. Con apalancamiento 1:5, una caída del 20 % del activo se lleva todo tu dinero.",
      "key": "Evitar las grandes pérdidas es más importante que buscar grandes ganancias.",
      "tip": "Perder el 50 % exige ganar el 100 %. Protege primero lo que tienes."
     }
@@ -53,13 +102,37 @@
    "title": "La regla del 1 %",
    "steps": [
     {
-     "title": "Qué dice la regla",
-     "body": "Si salta tu stop, no pierdes más del **1 % de tu capital**.\n\nCon 10.000 €, el 1 % son **100 €**. Eso no significa invertir 100 €: significa que, si te equivocas, pierdes como mucho 100 €.\n\n**Tamaño = (capital × % de riesgo) ÷ (entrada − stop)**"
+     "texts": [
+      "Arriesgar no es invertir",
+      "Cuenta de **10.000 €**. La regla del 1 %: si salta el stop, pierdes como mucho **100 €**.",
+      "¿Significa que solo puedes invertir 100 €?",
+      "Sí: 100 € y ni un euro más",
+      "No: lo que inviertes depende de dónde va el stop",
+      "No: puedes invertir lo que quieras, sin stop",
+      "Con el stop al 2 %, puedes invertir **5.000 €** y, si salta, pierdes 100 €. Riesgo no es lo mismo que cantidad invertida.",
+      "Con el riesgo en el 1 %, busca el stop que deja la posición en 2.000 €.",
+      "**Tamaño = riesgo ÷ distancia al stop.** Stop cerca, compras más; stop lejos, compras menos. La pérdida máxima es siempre la misma.",
+      "Más de un 2 % por operación es mucho, sobre todo al empezar.",
+      "Con el stop tan cerca, metes toda la cuenta. ¿Seguro?",
+      "Stop lejos: compras poco, pero arriesgas lo mismo.",
+      "Deja el 1 % y mueve el stop"
+     ]
     },
     {
-     "title": "Prueba la regla",
-     "body": "Deja el riesgo en el 1 % y cambia la distancia al stop: mira cómo cambia el importe invertido mientras la pérdida máxima sigue igual.",
-     "tip": "Stop cerca: compras más. Stop lejos: compras menos. Arriesgas lo mismo."
+     "texts": [
+      "«Estoy segurísimo»",
+      "Bruno",
+      "Tengo 8.000 € y esta operación es segura. Arriesgo un 10 %.",
+      "¿Qué le recomiendas?",
+      "Adelante: si está seguro, no hay riesgo",
+      "Si falla, pierde **800 €** de golpe. Su seguridad no cambia nada.",
+      "Que mantenga el 1 %: 80 € de riesgo, como en cualquier otra",
+      "¡Eso! Nadie sabe qué operación saldrá bien: el riesgo es el mismo en todas.",
+      "Que arriesgue el 10 %, pero sin stop",
+      "Sin stop, la pérdida no tiene límite. Todavía peor.",
+      "¿Y si de verdad sale bien?",
+      "Ganará algo menos. Pero seguirá en el juego cuando falle otra."
+     ]
     },
     {
      "title": "Límites que se suman",
@@ -73,17 +146,41 @@
    "title": "El tamaño de la posición",
    "steps": [
     {
-     "title": "Paso a paso",
-     "body": "1. Capital: **10.000 €**. Riesgo 1 % = **100 €**.\n2. Entrada **50 €**, stop **47 €**: distancia **3 €** por acción.\n3. Tamaño: 100 ÷ 3 = **33 acciones** (unos 1.650 €).\n\nSi salta el stop pierdes 33 × 3 = 99 €: un 1 % de la cuenta, aunque hayas invertido un 16,5 %."
+     "texts": [
+      "Calcula tu tamaño",
+      "Cuenta de **10.000 €** y riesgo del **1 %** (100 €). Compras a **50 €** y el stop está un 6 % por debajo, en **47 €**.",
+      "¿Cuántas acciones puedes comprar?",
+      "Unas 100",
+      "Unas 33",
+      "Unas 10",
+      "Arriesgas 3 € por acción: 100 ÷ 3 = **33 acciones**, unos 1.650 €. Si salta el stop, pierdes 99 €.",
+      "Aleja el stop al 10 % sin cambiar el riesgo. ¿Cuántas acciones ahora?",
+      "Con el stop al 10 % compras solo **20 acciones**: el activo más volátil necesita un stop más lejano y, por tanto, **menos acciones**. El riesgo sigue en 100 €.",
+      "El riesgo se queda en el 1 %: mueve solo el stop.",
+      "Stop más lejos, menos acciones. El riesgo, igual.",
+      "Stop más cerca, más acciones… y más fácil que salte con el ruido.",
+      "Mira cuántas acciones compras y luego aleja el stop"
+     ]
     },
     {
-     "title": "Calcula tu tamaño",
-     "body": "Pon 10.000 €, un 1 % de riesgo, entrada en 50 € y el stop a un 6 % de distancia (unos 3 €). Luego aleja el stop al 10 % y mira cómo baja el tamaño.",
-     "tip": "El activo más volátil necesita un stop más lejano y, por tanto, menos acciones."
+     "texts": [
+      "El stop de Marta",
+      "Marta",
+      "Marta tiene 10.000 €. Quiere comprar a 20 €, y el mínimo reciente está en 18,50 €.",
+      "Si pongo el stop en 19,90 €, ¡puedo comprar 1.000 acciones!",
+      "¿Qué le dices?",
+      "Genial: mucho tamaño con poco riesgo",
+      "El ruido de un día mueve más de 10 céntimos: saltará sin motivo.",
+      "Que ponga el stop bajo los 18,50 € y calcule el tamaño con esa distancia",
+      "¡Eso! Con algo más de 1,50 € de distancia: unas 60 acciones.",
+      "Que compre las 1.000 sin stop",
+      "Son 20.000 € con una cuenta de 10.000 €, y sin límite de pérdida.",
+      "El stop lo marca el gráfico; el tamaño se adapta a él, **nunca al revés**."
+     ]
     },
     {
      "title": "Lo que te llevas",
-     "body": "Con un stop a 1 € podrías comprar 100 acciones; con uno a 10 €, solo 10. Las dos operaciones arriesgan 100 €. Así cada operación pesa lo mismo, sea cual sea el activo.",
+     "body": "Con un stop a 1 € podrías comprar 100 acciones; con uno a 10 €, solo 10. Las dos operaciones arriesgan 100 €. Así cada operación pesa lo mismo, sea cual sea el activo.\n\n**Tamaño = (capital × % de riesgo) ÷ (entrada − stop)**",
      "key": "No decides cuánto compras: lo decide la distancia a tu stop.",
      "tip": "Redondea siempre hacia abajo: mejor arriesgar 99 € que 102 €."
     }
@@ -93,16 +190,40 @@
    "title": "Dónde poner el stop loss",
    "steps": [
     {
-     "title": "Tres métodos",
-     "body": "1. **Estructural:** al otro lado de un nivel. Si compras en un soporte, por debajo del soporte o del mínimo de la vela de giro.\n2. **Por volatilidad:** a 2–3 veces el **ATR** (rango medio de las últimas 14 velas), para que no te saque el ruido.\n3. **Por tiempo:** si en, por ejemplo, 10 sesiones no hace lo previsto, sales."
+     "texts": [
+      "Stop con margen",
+      "Velas reales de Tesla: compras al último precio. El **soporte** está un 4 % por debajo y el precio se mueve de media un 3,5 % al día (su ATR).",
+      "¿Dónde va el stop de esta compra?",
+      "Justo en el soporte",
+      "Por debajo del soporte, con margen para el ruido",
+      "Donde me duela perder",
+      "Justo en el soporte, cualquier mecha lo salta. Con margen (por ejemplo, una parte del ATR), solo salta si la idea falla de verdad.",
+      "Pon el stop bajo el soporte con margen y el objetivo a no más de un 8 %.",
+      "El stop va **donde tu idea deja de ser válida**, con margen para el ruido. Pegado al soporte, una simple mecha te saca justo antes de la subida.",
+      "¡Bien! Con margen, el ruido no te sacó.",
+      "Saltó por poco. ¿Tenía margen bajo el soporte?",
+      "Ese stop está pegado al soporte, o por encima.",
+      "Coloca el stop y el objetivo, y mira qué pasó"
+     ]
     },
     {
-     "title": "Errores típicos",
-     "body": "• Stop demasiado cerca: te saca el ruido.\n• En números redondos obvios (50,00 €): ahí están los de todo el mundo.\n• **Alejarlo** cuando el precio se acerca: una pérdida pequeña se vuelve grande.\n• No ponerlo «porque ya se recuperará».\n\nY ojo: con un hueco de precio, el stop se ejecuta peor de lo previsto."
+     "texts": [
+      "Nervios a 40 céntimos",
+      "Compraste a 50 € con el stop en 47 €. Hoy el precio baja a 47,40 €.",
+      "Uf… está a punto de saltar.",
+      "¿Qué haces?",
+      "Bajo el stop a 44 € para darle más espacio",
+      "Acabas de **duplicar** tu riesgo. Así una pérdida pequeña se vuelve grande.",
+      "Lo dejo donde está",
+      "Bien: lo decidiste en calma. Si salta, pierdes **1R** y sigues en el juego.",
+      "Quito el stop: ya se recuperará",
+      "Sin stop no hay límite de pérdida. A veces no se recupera.",
+      "Un stop nunca se aleja en contra. A favor, sí puedes subirlo."
+     ]
     },
     {
-     "title": "La regla de oro",
-     "body": "Si la operación va a favor, puedes subir el stop: al precio de entrada o bajo el último mínimo creciente. Pero nunca se aleja en contra.",
+     "title": "Tres métodos y sus errores",
+     "body": "1. **Estructural:** al otro lado de un nivel, o bajo el mínimo de la vela de giro.\n2. **Por volatilidad:** a 2–3 veces el **ATR** (rango medio de las últimas 14 velas).\n3. **Por tiempo:** si en, por ejemplo, 10 sesiones no hace lo previsto, sales.\n\nErrores típicos: ponerlo demasiado cerca, en números redondos obvios (50,00 €), alejarlo cuando el precio se acerca o no ponerlo. Y con un hueco de precio, se ejecuta peor de lo previsto. Si va a favor, puedes subirlo al precio de entrada o bajo el último mínimo creciente.",
      "key": "El stop va donde tu idea deja de ser válida, no donde te duele perder.",
      "tip": "El stop no es donde te duele: es donde tu idea muere."
     }
@@ -112,16 +233,48 @@
    "title": "Pensar en R: riesgo y beneficio",
    "steps": [
     {
+     "texts": [
+      "Mide en R",
+      "Velas reales de ethereum: compras al último precio. Lo que te separa del stop es **1R**, lo que arriesgas.",
+      "Con el objetivo a la misma distancia que el stop, ¿qué te juegas?",
+      "Ganar 1R o perder 1R",
+      "Ganar 3R o perder 1R",
+      "Nada",
+      "Con un **1:1**, necesitas acertar más de la mitad de las veces para ganar. Por eso muchos no entran por debajo de **2:1**.",
+      "Coloca el objetivo al menos a 2R y mira qué pasa.",
+      "Resultado en R = lo ganado ÷ lo arriesgado: arriesgando un 3 % y ganando un 9 %, son **+3R**. Así comparas operaciones de **cualquier tamaño**.",
+      "¡Objetivo! Mira la relación: esos son los R que has ganado.",
+      "Saltó el stop: −1R. Ni más ni menos de lo previsto.",
+      "Aún por debajo de 2:1. Sube el objetivo o acerca el stop.",
+      "Coloca el objetivo y mira qué pasó"
+     ]
+    },
+    {
+     "texts": [
+      "¿Cumple 2:1?",
+      "Antes de entrar, compara la distancia al **objetivo** con la distancia al **stop**.",
+      "Cumple (2:1 o más)",
+      "No cumple",
+      "Entrada 100 €, stop 95 €, objetivo 115 €",
+      "Arriesgas 5 € para ganar 15 €: 3:1.",
+      "Entrada 40 €, stop 38 €, objetivo 42 €",
+      "Arriesgas 2 € para ganar 2 €: 1:1.",
+      "Entrada 10 €, stop 9 €, objetivo 12 €",
+      "Arriesgas 1 € para ganar 2 €: justo 2:1.",
+      "Entrada 60 €, stop 54 €, objetivo 66 €",
+      "Arriesgas 6 € para ganar 6 €: 1:1.",
+      "Entrada 25 €, stop 24 €, objetivo 25,50 €",
+      "Arriesgas 1 € para ganar 0,50 €: el doble de lo que buscas.",
+      "Clasifica las cinco operaciones.",
+      "**Beneficio/riesgo** = distancia al objetivo ÷ distancia al stop. Muchos operadores no entran por debajo de **2:1**.",
+      "Resta: entrada menos stop, y objetivo menos entrada. ¿Cuál es mayor?",
+      "¡Bien! Ya lo ves de un vistazo.",
+      "¿Cumple 2:1? Clasifica cada operación"
+     ]
+    },
+    {
      "title": "Qué es R",
-     "body": "**1R** es lo que arriesgas en una operación: distancia al stop × número de acciones. Si arriesgas 100 €:\n\n• Salta el stop: **−1R**.\n• Ganas 250 €: **+2,5R**.\n• Sales antes perdiendo 40 €: **−0,4R**.\n\nMedir en R te deja comparar operaciones de cualquier tamaño."
-    },
-    {
-     "title": "Beneficio/riesgo",
-     "body": "Antes de entrar, compara la distancia al **objetivo** con la distancia al **stop**.\n\nEntrada 50 €, stop 47 € (riesgo 3 €), objetivo 59 € (beneficio 9 €): relación **3:1**.\n\nMuchos operadores no entran por debajo de **2:1**."
-    },
-    {
-     "title": "Lo que te llevas",
-     "body": "Si arriesgas 100 € y ganas 300 €, has ganado 3R. Si arriesgas 50 € y ganas 150 €, también 3R: las dos operaciones fueron igual de buenas.",
+     "body": "**1R** es lo que arriesgas en una operación: distancia al stop × número de acciones. Si arriesgas 100 €:\n\n• Salta el stop: **−1R**.\n• Ganas 250 €: **+2,5R**.\n• Sales antes perdiendo 40 €: **−0,4R**.\n\nSi arriesgas 100 € y ganas 300 €, has ganado 3R. Si arriesgas 50 € y ganas 150 €, también 3R: las dos fueron igual de buenas.",
      "key": "Una operación se mide en múltiplos de lo que arriesgaste.",
      "tip": "No cuentes euros: cuenta R."
     }
@@ -131,16 +284,47 @@
    "title": "La esperanza matemática",
    "steps": [
     {
-     "title": "La fórmula",
-     "body": "**Esperanza (en R) = (% acierto × ganancia media) − (% fallo × pérdida media)**\n\n• A: 40 % de acierto, gana 2R → 0,4 × 2 − 0,6 × 1 = **+0,2R** ✓\n• B: 60 %, gana 0,5R → 0,6 × 0,5 − 0,4 × 1 = **−0,1R** ✗\n• C: 30 %, gana 3R → **+0,2R** ✓\n• D: 50 %, gana 1R → **0** (negativo tras costes) ✗"
+     "texts": [
+      "Acertar la mitad y ganar",
+      "1.000 personas operan a cara o cruz: si sale cara ganan **200 €**; si sale cruz pierden **100 €**. Pagan 2 € de comisión cada vez.",
+      "Solo aciertan la mitad. Tras 100 operaciones, ¿cuántos acaban ganando?",
+      "La mitad",
+      "Prácticamente todos",
+      "Casi nadie",
+      "De media, cada operación vale 0,5 × 200 − 0,5 × 100 − 2 = **+48 €**. Tras 100, ninguno de los 1.000 acaba perdiendo.",
+      "Llega a 100 operaciones cada uno.",
+      "**Esperanza = % de acierto × ganancia media − % de fallo × pérdida media.** Aquí, +48 € por operación: tras 100, el resultado medio ronda los 4.800 €.",
+      "Con pocas operaciones, la suerte aún pesa mucho.",
+      "Con ventaja y muchas operaciones, la suerte deja de mandar.",
+      "Sube el número de operaciones"
+     ]
+    },
+    {
+     "texts": [
+      "¿Gana o pierde a la larga?",
+      "Cada sistema dice cuánto acierta, cuánto gana cuando acierta y cuánto pierde cuando falla. ¿Cuáles tienen esperanza positiva?",
+      "Esperanza positiva",
+      "Cero o negativa",
+      "A: acierta el 40 %, gana 2R y pierde 1R",
+      "0,4 × 2 − 0,6 × 1 = +0,2R. Falla más de lo que acierta, pero gana.",
+      "B: acierta el 60 %, gana 0,5R y pierde 1R",
+      "0,6 × 0,5 − 0,4 × 1 = −0,1R. Acierta mucho y pierde.",
+      "C: acierta el 30 %, gana 3R y pierde 1R",
+      "0,3 × 3 − 0,7 × 1 = +0,2R.",
+      "D: acierta el 50 %, gana 1R y pierde 1R",
+      "Esperanza 0: tras costes, pierde.",
+      "E: acierta el 90 %, gana 0,1R y pierde 2R",
+      "0,9 × 0,1 − 0,1 × 2 = −0,11R. Sus pocos fallos son enormes.",
+      "Clasifica los cinco sistemas.",
+      "El % de acierto solo no dice nada: hay que combinarlo con **cuánto ganas y cuánto pierdes**. El sistema B acierta el 60 % y pierde dinero.",
+      "Ojo: un acierto alto no basta si los fallos son grandes.",
+      "¡Bien! Mira siempre las dos partes de la cuenta.",
+      "¿Gana o pierde a la larga? Clasifica cada sistema"
+     ]
     },
     {
      "title": "Los costes",
-     "body": "Cada operación paga comisión, *spread* y, si hay apalancamiento, financiación.\n\nSi tu esperanza es +0,1R y los costes suponen 0,15R por operación, tu sistema real **pierde**. Cuantas más operaciones, más pesan."
-    },
-    {
-     "title": "Cuánto se puede ganar",
-     "body": "Con +0,2R, un 1 % de riesgo y 100 operaciones al año saldrían unos 20R: cerca de un 20 % anual, con rachas de pérdidas por el camino. Es solo un ejemplo, no una promesa: una ventaja así ya es muy buena y difícil de mantener.",
+     "body": "Cada operación paga comisión, *spread* y, si hay apalancamiento, financiación. Si tu esperanza es +0,1R y los costes suponen 0,15R por operación, tu sistema real **pierde**. Cuantas más operaciones, más pesan.\n\nCon +0,2R, un 1 % de riesgo y 100 operaciones al año saldrían unos 20R: cerca de un 20 % anual, con rachas de pérdidas por el camino. Es solo un ejemplo, no una promesa.",
      "key": "Un sistema gana si, de media, cada operación gana más de lo que pierde, contando aciertos y fallos.",
      "tip": "No necesitas acertar mucho: necesitas que tus aciertos valgan más que tus fallos."
     }
@@ -179,49 +363,11 @@
    "explanation": "Acertar o fallar una predicción suelta dice poco. Lo que decide tu resultado a largo plazo es cuánto arriesgas en cada intento.",
    "horizon": "las 10 sesiones siguientes"
   },
-  "u24l1-4": {
-   "prompt": "Empareja el riesgo por operación con lo que te queda tras 10 pérdidas seguidas.",
-   "options": [
-    "1 % por operación",
-    "2 % por operación",
-    "5 % por operación",
-    "10 % por operación"
-   ],
-   "explanation": "Cada pérdida se aplica sobre lo que queda: 0,99¹⁰ ≈ 90,4 % y 0,9¹⁰ ≈ 34,9 %.",
-   "right": [
-    "Te queda el 81,7 %",
-    "Te queda el 59,9 %",
-    "Te queda el 34,9 %",
-    "Te queda el 90,4 %"
-   ]
-  },
   "u24l1-5": {
    "prompt": "Arriesgas un 2 % por operación y encadenas 10 pérdidas. ¿Qué porcentaje de la cuenta te queda? (redondea a un decimal)",
    "options": [],
    "explanation": "0,98¹⁰ ≈ 0,817 → te queda el 81,7 %. Para volver necesitarías ganar un 22,4 %.",
    "unit": "%"
-  },
-  "u24l1-6": {
-   "prompt": "Pablo acierta el 60 % de sus operaciones, pero gana 50 € cuando acierta y pierde 150 € cuando falla. Laura acierta solo el 40 %, pero gana 300 € y pierde 100 €. Tras 10 operaciones, ¿quién va mejor?",
-   "options": [
-    "Laura, porque sus aciertos valen más que sus fallos",
-    "Empatan, los dos aciertan la mitad de media",
-    "Pablo, porque acierta más"
-   ],
-   "explanation": "El resultado depende del porcentaje de acierto y también de cuánto ganas y pierdes en cada caso.",
-   "feedback": [
-    "Laura: 4 × 300 − 6 × 100 = +600 €. Falla más, pero sus fallos son pequeños.",
-    "No: lo que importa es el tamaño de cada acierto y de cada fallo, no solo cuántos.",
-    "Pablo: 6 × 50 − 4 × 150 = −300 €. Acertar mucho no le salva."
-   ]
-  },
-  "u24l1-7": {
-   "prompt": "Se puede ganar dinero acertando menos de la mitad de las operaciones.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Si cuando aciertas ganas bastante más de lo que pierdes cuando fallas, sí. Lo verás con la esperanza matemática."
   },
   "u24l1-8": {
    "prompt": "¿Lo controlas tú o no?",
@@ -238,46 +384,11 @@
     "No lo controlo"
    ]
   },
-  "u24l1-9": {
-   "prompt": "Rápido: arriesgas un 10 % por operación y pierdes 10 seguidas. ¿Cuánto te queda?",
-   "options": [
-    "Unos dos tercios",
-    "Alrededor de un 35 %",
-    "Un 90 %"
-   ],
-   "explanation": "0,9¹⁰ ≈ 34,9 %: necesitarías ganar un 187 % para volver."
-  },
-  "u24l1-10": {
-   "prompt": "¿Qué le contestas a Lumi?",
-   "options": [
-    "Mejor un 50 %, así recuperas antes",
-    "Si aciertas mucho, perfecto",
-    "Lo importante es cuánto pierdes cuando fallas"
-   ],
-   "explanation": "Sobrevivir a las rachas malas es lo primero: el riesgo por operación tiene que ser pequeño.",
-   "feedback": [
-    "Eso acelera la ruina: dos fallos y te queda un 25 %.",
-    "Hasta que llegue la racha mala: con un 20 % por operación, cuatro fallos seguidos te dejan con un 41 %.",
-    "¡Eso! Ningún método acierta siempre, y con tanto riesgo una racha normal me saca del juego."
-   ],
-   "lines": [
-    "Tengo un método que acierta muchísimo 😎",
-    "Por eso meto un 20 % de la cuenta en cada operación."
-   ]
-  },
   "u24l2-1": {
    "prompt": "Tu cartera cae un 20 %. ¿Cuánto tiene que subir para volver al punto de partida?",
    "options": [],
    "explanation": "1 ÷ (1 − 0,20) − 1 = 1 ÷ 0,8 − 1 = 0,25 → +25 %.",
    "unit": "%"
-  },
-  "u24l2-2": {
-   "prompt": "Si pierdes un 50 %, te basta con ganar un 50 % para recuperarte.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Necesitas un 100 %: de 100 € pasas a 50 €, y para volver a 100 € tienes que duplicar."
   },
   "u24l2-3": {
    "prompt": "Una acción cae un 40 %. ¿Qué subida necesita para recuperar su precio? (redondea a un decimal)",
@@ -317,29 +428,6 @@
    ],
    "explanation": "Necesitan +11,1 %, +42,9 %, +100 % y +300 %."
   },
-  "u24l2-7": {
-   "prompt": "El fondo de Ana sube un 30 % y luego cae un 30 %. El de Bruno sube un 10 % y luego cae un 5 %. ¿Quién acaba mejor?",
-   "options": [
-    "Bruno, porque cayó menos",
-    "Los dos quedan igual",
-    "Ana, porque subió más"
-   ],
-   "explanation": "Evitar caídas grandes suele valer más que buscar subidas grandes.",
-   "feedback": [
-    "Bruno: 1,1 × 0,95 = 1,045 → gana un 4,5 %. Las caídas pequeñas se recuperan fácil.",
-    "No: con porcentajes, las caídas pesan más que las subidas del mismo tamaño.",
-    "Ana: 1,3 × 0,7 = 0,91 → pierde un 9 % pese a la gran subida."
-   ]
-  },
-  "u24l2-8": {
-   "prompt": "Marzo de 2000: el Nasdaq 100 lleva años subiendo sin parar. ¿Qué hizo después?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Tras una caída de cerca del 78 %, un índice necesita subir más de un 350 % para volver: el Nasdaq tardó unos 15 años en recuperar aquel máximo.",
-   "horizon": "los dos años y medio siguientes"
-  },
   "u24l2-9": {
    "prompt": "Con apalancamiento 1:5, una caída del ____ del activo se lleva todo tu dinero.",
    "options": [
@@ -349,24 +437,6 @@
     "20 %"
    ],
    "explanation": "5 × 20 % = 100 %: el apalancamiento acelera las pérdidas grandes."
-  },
-  "u24l2-10": {
-   "prompt": "Rápido: pierdes un 75 %. ¿Cuánto tienes que ganar para recuperarte?",
-   "options": [
-    "+75 %",
-    "+300 %",
-    "+150 %"
-   ],
-   "explanation": "1 ÷ 0,25 − 1 = 3 → +300 %."
-  },
-  "u24l3-1": {
-   "prompt": "Tienes 10.000 € y sigues la regla del 1 %. ¿Qué significa?",
-   "options": [
-    "Que solo puedes invertir 100 €",
-    "Que esperas ganar un 1 % por operación",
-    "Que si salta el stop pierdes como mucho 100 €"
-   ],
-   "explanation": "La regla limita la pérdida si te equivocas, no la cantidad invertida."
   },
   "u24l3-2": {
    "prompt": "Tu cartera simulada vale 5.000 €. Con la regla del 1 %, ¿cuánto puedes perder como máximo en una operación?",
@@ -386,14 +456,6 @@
    "explanation": "50 × 80 = 4.000 €; 4.000 ÷ 20.000 = 20 %. Inviertes un 20 % pero solo arriesgas un 1 %.",
    "unit": "%"
   },
-  "u24l3-5": {
-   "prompt": "Riesgo por operación y cantidad invertida son lo mismo.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "El riesgo es lo que pierdes si salta el stop; la cantidad invertida puede ser mucho mayor."
-  },
   "u24l3-6": {
    "prompt": "Tienes 10.000 €. ¿Respeta la regla del 1 %?",
    "options": [
@@ -409,20 +471,6 @@
     "No la respeta"
    ]
   },
-  "u24l3-7": {
-   "prompt": "Bruno tiene 8.000 € y está «segurísimo» de una operación. Quiere arriesgar un 10 % en ella. ¿Qué le recomiendas como concepto?",
-   "options": [
-    "Que arriesgue el 10 % pero sin stop",
-    "Que mantenga el 1 %: 80 € de riesgo, como en cualquier otra",
-    "Que lo haga: si está seguro, no hay riesgo"
-   ],
-   "explanation": "El riesgo por operación no depende de lo convencido que estés: es siempre el mismo.",
-   "feedback": [
-    "Sin stop la pérdida no tiene límite: es todavía peor.",
-    "Bien: el riesgo es el mismo en todas, porque nadie sabe qué operación saldrá bien.",
-    "La seguridad que siente no cambia nada: si falla, pierde 800 € de golpe."
-   ]
-  },
   "u24l3-8": {
    "prompt": "¿Qué límites de riesgo propone el curso para quien empieza? Marca todos.",
    "options": [
@@ -433,15 +481,6 @@
    ],
    "explanation": "El apalancamiento no forma parte de la regla: mientras aprendes, mejor sin él."
   },
-  "u24l3-9": {
-   "prompt": "Rápido: ¿cuánto suelen arriesgar los profesionales por operación?",
-   "options": [
-    "Entre el 10 % y el 20 %",
-    "Entre el 0,5 % y el 2 %",
-    "Todo lo que pueden"
-   ],
-   "explanation": "Y para quien empieza, un 1 % o menos."
-  },
   "u24l3-10": {
    "prompt": "Primero decides dónde va el ____; después, cuántas acciones compras.",
    "options": [
@@ -451,24 +490,6 @@
     "stop"
    ],
    "explanation": "El tamaño sale de la distancia al stop, nunca al revés."
-  },
-  "u24l3-11": {
-   "prompt": "¿Qué le explicas a Lumi?",
-   "options": [
-    "Puedes invertir más: lo que no puedes es perder más de 100 € si salta el stop",
-    "La regla solo sirve con cuentas grandes",
-    "Sí, solo 100 € por operación"
-   ],
-   "explanation": "El 1 % limita la pérdida, no la inversión.",
-   "feedback": [
-    "¡Ahh! Entonces, con el stop a 3 € de la entrada, compro 33 acciones y arriesgo 99 €.",
-    "Funciona igual con 1.000 € o con 100.000 €: siempre es un porcentaje.",
-    "Eso confunde riesgo con inversión: puedes invertir bastante más."
-   ],
-   "lines": [
-    "Con la regla del 1 % y 10.000 €, ¿solo puedo comprar 100 € de acciones? 🤔",
-    "Así no gano nada..."
-   ]
   },
   "u24l4-1": {
    "prompt": "Capital 10.000 €, riesgo 1 %, entrada 50 €, stop 47 €. ¿Cuántas acciones compras? (redondea hacia abajo)",
@@ -513,57 +534,10 @@
     "100 acciones"
    ]
   },
-  "u24l4-7": {
-   "prompt": "Rápido: arriesgas 200 € y la distancia al stop es de 4 €. ¿Cuántas acciones?",
-   "options": [],
-   "explanation": "200 ÷ 4 = 50.",
-   "unit": "acciones"
-  },
-  "u24l4-8": {
-   "prompt": "Si alejas el stop, para arriesgar lo mismo debes comprar…",
-   "options": [
-    "Más acciones",
-    "Las mismas acciones",
-    "Menos acciones"
-   ],
-   "explanation": "Más distancia por acción = menos acciones para la misma pérdida máxima."
-  },
-  "u24l4-9": {
-   "prompt": "Con un stop más cercano puedes comprar más acciones arriesgando la misma cantidad.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Pero un stop demasiado cerca te puede sacar con el ruido normal del precio."
-  },
-  "u24l4-10": {
-   "prompt": "Marta tiene 10.000 € y quiere comprar una acción a 20 €. El mínimo reciente está en 18,50 €, pero pone el stop en 19,90 € para poder comprar 1.000 acciones. ¿Qué pasa?",
-   "options": [
-    "Genial: mucho tamaño con poco riesgo",
-    "Mejor el stop bajo los 18,50 € y calcular el tamaño con esa distancia",
-    "Mejor sin stop y con las 1.000 acciones"
-   ],
-   "explanation": "El stop se pone donde dice el gráfico; el tamaño se adapta a él, nunca al revés.",
-   "feedback": [
-    "El ruido normal de un día mueve más de 10 céntimos: lo más probable es que salte el stop sin motivo.",
-    "Bien: con algo más de 1,50 € de distancia y 100 € de riesgo, unas 60 acciones.",
-    "Son 20.000 € de posición con una cuenta de 10.000 €: imposible sin apalancamiento y sin límite de pérdida."
-   ]
-  },
   "u24l5-1": {
    "prompt": "Compras al último precio tras un rebote. Coloca el stop donde la idea deja de ser válida.",
    "options": [],
    "explanation": "Por debajo del último mínimo relevante: si el precio lo pierde, el rebote ha fallado."
-  },
-  "u24l5-2": {
-   "prompt": "Otro gráfico real. Coloca un stop estructural para esta compra.",
-   "options": [],
-   "explanation": "Bajo el mínimo reciente, con un pequeño margen para el ruido normal."
-  },
-  "u24l5-3": {
-   "prompt": "Una acción española. Coloca el stop con lógica, no donde te duele.",
-   "options": [],
-   "explanation": "El nivel que invalida la idea es el mínimo reciente: el stop va justo por debajo."
   },
   "u24l5-4": {
    "prompt": "Antes de colocar un stop, lee el contexto. ¿Qué tendencia ves? (Coca-Cola · cierres cada 3 sesiones · diciembre de 2025 – febrero de 2026)",
@@ -578,20 +552,6 @@
    "prompt": "En un mercado lateral, el stop de una compra en la parte baja del rango va bajo el mínimo del rango. Toca ese mínimo. (Apple · cierres cada 3 sesiones · septiembre–noviembre de 2024)",
    "options": [],
    "explanation": "Si el precio pierde el suelo del rango, la idea de rebote deja de valer."
-  },
-  "u24l5-6": {
-   "prompt": "Compraste a 50 € con el stop en 47 €. El precio baja a 47,40 € y te pones nervioso. ¿Qué haces?",
-   "options": [
-    "Quito el stop, ya se recuperará",
-    "Dejo el stop donde está",
-    "Bajo el stop a 44 € para darle más espacio"
-   ],
-   "explanation": "Nunca se aleja un stop en contra: solo se acerca a favor.",
-   "feedback": [
-    "Sin stop no hay límite de pérdida. A veces no se recupera.",
-    "Bien: lo decidiste en calma. Si salta, pierdes 1R y sigues en el juego.",
-    "Acabas de duplicar tu riesgo: así es como una pérdida pequeña se convierte en grande."
-   ]
   },
   "u24l5-7": {
    "prompt": "Compras a 50 €. El ATR es de 2 € y pones el stop a 2 ATR de distancia. ¿A qué precio va el stop?",
@@ -608,14 +568,6 @@
     "ATR"
    ],
    "explanation": "Average True Range, creado por J. Welles Wilder en 1978."
-  },
-  "u24l5-9": {
-   "prompt": "Un stop loss garantiza siempre el precio exacto de salida.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Si el precio abre con un hueco por debajo, se ejecuta al primer precio disponible, que puede ser peor."
   },
   "u24l5-10": {
    "prompt": "¿Cuáles son errores típicos con el stop? Marca todos.",
@@ -678,48 +630,11 @@
    "options": [],
    "explanation": "Cerca del máximo anterior: es donde muchos vendieron antes y puede frenar la subida."
   },
-  "u24l6-6": {
-   "prompt": "Otro gráfico real. ¿Dónde pondrías el objetivo de esta compra?",
-   "options": [],
-   "explanation": "El máximo anterior es una referencia lógica para el objetivo. Compara esa distancia con la del stop para saber tu relación beneficio/riesgo."
-  },
   "u24l6-7": {
    "prompt": "Entras a 50 € con el stop en 47 €. Quieres una relación de 2:1 exacta. ¿Dónde pones el objetivo?",
    "options": [],
    "explanation": "Riesgo: 3 €. Beneficio: 2 × 3 = 6 €. 50 + 6 = 56 €.",
    "unit": "€"
-  },
-  "u24l6-8": {
-   "prompt": "¿La operación cumple un mínimo de 2:1?",
-   "options": [
-    "Riesgo 1 €, objetivo a 1,50 €",
-    "Riesgo 3 €, objetivo a 9 €",
-    "Riesgo 5 €, objetivo a 5 €",
-    "Riesgo 2 €, objetivo a 6 €",
-    "Riesgo 4 €, objetivo a 8 €"
-   ],
-   "explanation": "Divide la distancia al objetivo entre la distancia al stop.",
-   "right": [
-    "Cumple (2:1 o más)",
-    "No cumple"
-   ]
-  },
-  "u24l6-9": {
-   "prompt": "Si salta el stop, el resultado de la operación es −1R.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Por definición: 1R es lo que arriesgabas hasta el stop."
-  },
-  "u24l6-10": {
-   "prompt": "¿Para qué sirve medir las operaciones en R?",
-   "options": [
-    "Para pagar menos comisiones",
-    "Para comparar operaciones de tamaños distintos",
-    "Para acertar más veces"
-   ],
-   "explanation": "Una operación de 50 € de riesgo y otra de 200 € se comparan fácilmente en R."
   },
   "u24l7-1": {
    "prompt": "Aciertas el 45 % de las veces, ganas 2R de media y pierdes 1R. ¿Cuál es tu esperanza por operación?",
@@ -756,43 +671,11 @@
     "Esperanza: 0. Después de comisiones y spread, pierde."
    ]
   },
-  "u24l7-5": {
-   "prompt": "Un sistema que acierta solo el 30 % de las veces puede ser rentable.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Si gana 3R de media y pierde 1R: 0,3 × 3 − 0,7 × 1 = +0,2R."
-  },
-  "u24l7-6": {
-   "prompt": "Con pérdidas de 1R, ¿tiene esperanza positiva antes de costes?",
-   "options": [
-    "Acierta 55 % y gana 0,8R",
-    "Acierta 60 % y gana 1R",
-    "Acierta 25 % y gana 4R",
-    "Acierta 35 % y gana 2R",
-    "Acierta 50 % y gana 1R"
-   ],
-   "explanation": "0,35 × 2 − 0,65 = +0,05R; 0,55 × 0,8 − 0,45 = −0,01R; 0,25 × 4 − 0,75 = +0,25R; 0,5 − 0,5 = 0; 0,6 − 0,4 = +0,2R.",
-   "right": [
-    "Positiva",
-    "Cero o negativa"
-   ]
-  },
   "u24l7-7": {
    "prompt": "Tu sistema tiene una esperanza de +0,2R, arriesgas un 1 % por operación y haces 100 operaciones al año. ¿Qué ganancia esperada sale, como ejemplo teórico?",
    "options": [],
    "explanation": "100 × 0,2R = 20R; con 1R = 1 % de la cuenta, unos 20 %. Es una esperanza, no una promesa: habrá rachas malas.",
    "unit": "%"
-  },
-  "u24l7-8": {
-   "prompt": "Rápido: tu esperanza es +0,1R y los costes son 0,15R por operación. ¿Qué pasa?",
-   "options": [
-    "Ganas 0,25R",
-    "Quedas en 0",
-    "Pierdes 0,05R por operación"
-   ],
-   "explanation": "0,1 − 0,15 = −0,05R: los costes se comen la ventaja."
   },
   "u24l7-9": {
    "prompt": "Esperanza = (% de acierto × ganancia media) − (% de fallo × ____).",
@@ -803,24 +686,6 @@
     "pérdida media"
    ],
    "explanation": "Cada fallo resta lo que pierdes de media cuando fallas."
-  },
-  "u24l7-10": {
-   "prompt": "¿Qué le dices a Lumi?",
-   "options": [
-    "Calculemos la esperanza antes de celebrarlo",
-    "Sube el riesgo al 10 % para aprovecharlo",
-    "¡Enhorabuena, con un 90 % es imposible perder!"
-   ],
-   "explanation": "Acertar mucho no sirve si los pocos fallos se llevan más de lo que ganan los aciertos.",
-   "feedback": [
-    "Vale: 0,09 − 0,20 = −0,11R. Acierta mucho, pero sus fallos son enormes.",
-    "Con esperanza negativa, más riesgo solo acelera las pérdidas.",
-    "Hagamos la cuenta: 0,9 × 0,1 − 0,1 × 2 = −0,11R. Pierdo en cada operación de media… 😳"
-   ],
-   "lines": [
-    "¡He encontrado un sistema que acierta el 90 %! 🤩",
-    "Gana 0,1R cuando acierta y pierde 2R cuando falla."
-   ]
   }
  }
 }

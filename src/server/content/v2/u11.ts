@@ -1,14 +1,44 @@
 import 'server-only'
 // Sección 3 · Unidad 11 · Otros activos (docs/curso-v2/02-curriculo.md)
-import { buckets, fill, key, lesson, match, multi, num, order, scenario, single, spot, text, tf, timed, unit } from '../dsl'
+import { buckets, choose, fill, key, lesson, match, multi, note, num, opt, order, play, say, scenario, single, spot, story, tf, timed, unit, when } from '../dsl'
 
 export default unit({
   id: 'u11', order: 11, title: 'Otros activos', description: 'SOCIMIs, derivados, CFD, planes de pensiones y dónde guardar el dinero a corto plazo',
   lessons: [
     lesson('u11l1', 'Inmobiliario en bolsa: SOCIMIs y REITs', [
-      text('Inmuebles sin comprar un piso', 'Una **SOCIMI** (en España) o un **REIT** (en EE. UU. y otros países) es una empresa cotizada que tiene inmuebles en alquiler: oficinas, centros comerciales, naves logísticas, viviendas…\n\nCompras sus acciones en bolsa como cualquier otra y pasas a ser dueño de una parte de esos edificios.'),
-      text('Las reglas del juego', 'A cambio de pagar muy poco impuesto de sociedades, deben **repartir la mayor parte del beneficio**: una SOCIMI, al menos el **80 %** del que sale de los alquileres; un REIT de EE. UU., al menos el **90 %** de su beneficio fiscal.\n\nPor eso suelen pagar dividendos altos.'),
-      key('Ventajas y riesgos', 'Ventajas: diversificas en muchos inmuebles con poco dinero y puedes vender en segundos. Riesgos: cotizan y **pueden caer como la bolsa**, sufren con las subidas de tipos (se endeudan y compiten con los bonos) y dependen de su sector, como las oficinas tras la pandemia.', 'Una SOCIMI es ladrillo que cotiza: diversificado y líquido, pero con la volatilidad de la bolsa.', 'Comprar un piso no es la única forma de invertir en inmuebles.'),
+      play({
+        title: '¿Piso propio o SOCIMI?',
+        intro: 'Una **SOCIMI** (en EE. UU., un **REIT**) es una empresa cotizada con inmuebles en alquiler: oficinas, naves, viviendas… ¿Piso propio o SOCIMI?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Piso propio' }, { label: 'SOCIMI' }],
+          cards: [
+            { icon: 'cash', label: 'Necesitas decenas de miles de euros de entrada', bin: 0, why: 'Comprar un piso exige mucho dinero de golpe.' },
+            { icon: 'timer', label: 'Puedes vender en segundos', bin: 1, why: 'Cotiza en bolsa: vendes cuando quieras.' },
+            { icon: 'building', label: 'Diversificas en muchos inmuebles', bin: 1, why: 'Oficinas, naves, centros comerciales… en una sola acción.' },
+            { icon: 'repair', label: 'Tú buscas inquilino y arreglas la caldera', bin: 0, why: 'Con un piso propio, la gestión es tuya.' },
+            { icon: 'chart', label: 'Su precio cambia cada día', bin: 1, why: 'Cotiza, así que puede caer como la bolsa.' },
+            { icon: 'coins', label: 'Reparte la mayor parte del beneficio en dividendos', bin: 1, why: 'A cambio de pagar muy poco impuesto de sociedades: por eso sus dividendos suelen ser altos.' },
+          ],
+        },
+        goal: { text: 'Clasifica los seis rasgos.', when: [when('done', '==', 6)] },
+        insight: 'Con una SOCIMI compras sus acciones en bolsa y pasas a ser dueño de una parte de muchos edificios, **con poco dinero** y pudiendo vender en segundos. Lo que no te quitas es que su precio se mueva cada día.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: ¿cotiza en bolsa o lo tienes que gestionar tú?', mood: 'THINKING' },
+          { say: 'Clasifica cada rasgo', mood: 'HAPPY' },
+        ],
+      }),
+      story('¿Ladrillo que cae?', [{ id: 'bruno', name: 'Bruno' }], [
+        note('Los tipos de interés suben con fuerza y las SOCIMIs caen un 25 %.'),
+        say('bruno', '¿Cómo puede caer tanto algo que tiene edificios detrás?'),
+        choose('¿Qué le explicas?', [
+          opt('Que eso no debería pasar con inmuebles', 'bad', say('lumi', 'Pasa: se endeudan para comprar y, con tipos altos, financiarse cuesta más.')),
+          opt('Que son sensibles a los tipos: es parte de su riesgo', 'good', say('lumi', '¡Eso! Su deuda cuesta más y los bonos compiten con sus dividendos.')),
+          opt('Que venda ya, por si acaso', 'ok', say('lumi', 'Si conocía el riesgo al comprar, mejor decidir por su plan que por el susto.')),
+        ]),
+        say('lumi', 'Conocer de antemano los riesgos de un activo ayuda a no reaccionar en caliente.'),
+      ]),
+      key('Ventajas y riesgos', 'Una SOCIMI debe repartir al menos el **80 %** del beneficio que sale de los alquileres; un REIT de EE. UU., al menos el **90 %** de su beneficio fiscal.\n\nRiesgos: cotizan y **pueden caer como la bolsa**, sufren con las subidas de tipos (se endeudan y compiten con los bonos) y dependen de su sector, como las oficinas tras la pandemia.', 'Una SOCIMI es ladrillo que cotiza: diversificado y líquido, pero con la volatilidad de la bolsa.', 'Comprar un piso no es la única forma de invertir en inmuebles.'),
     ], [
       single('¿Qué es una SOCIMI?', ['Una empresa cotizada que invierte en inmuebles en alquiler', 'Una hipoteca para inversores', 'Un fondo garantizado por el Estado'], 0, 'Es la versión española de los REIT: inmuebles en alquiler dentro de una empresa que cotiza.'),
       match('Empareja cada concepto con su significado.', [['SOCIMI', 'Inmobiliaria cotizada española'], ['REIT', 'Su equivalente en EE. UU.'], ['Dividendo obligatorio', 'Reparto de la mayor parte del beneficio'], ['Liquidez', 'Poder vender en segundos en bolsa']], 'Inmuebles, reglas de reparto y la ventaja de poder vender cuando quieras.'),
@@ -20,12 +50,62 @@ export default unit({
       scenario('Los tipos de interés suben con fuerza y las SOCIMIs caen un 25 %. Bruno, que tiene algunas, se asusta. ¿Qué tiene en cuenta?', [['Que eso no debería pasar con inmuebles', 'Pasa: se endeudan para comprar y, con tipos altos, financiarse cuesta más y los bonos compiten con sus dividendos.'], ['Que las inmobiliarias cotizadas son sensibles a los tipos y que eso forma parte de su riesgo', 'Bien: si lo sabía al comprar, puede decidir según su plan y no según el susto.'], ['Que el Estado le devolverá la pérdida', 'Nadie garantiza el precio de una acción.']], 1, 'Conocer de antemano los riesgos de un activo ayuda a no reaccionar en caliente cuando aparecen.'),
       timed(single('Rápido: ¿qué parte del beneficio por alquileres debe repartir como mínimo una SOCIMI?', ['80 %', '10 %', '100 %'], 0, 'Es una de las condiciones para su régimen fiscal especial.'), 12),
       multi('¿Qué riesgos tiene invertir en una SOCIMI? Marca todos.', ['Que su precio caiga con la bolsa', 'Que le perjudiquen las subidas de tipos', 'Que su sector vaya mal (por ejemplo, oficinas vacías)', 'Tener que buscar inquilino tú mismo'], [0, 1, 2], 'La gestión de los inmuebles la hace la SOCIMI; tú asumes los riesgos de mercado, de tipos y del sector.'),
-    ]),
+    ], { minutes: 6, retire: [4, 6, 7, 8] }),
 
     lesson('u11l2', 'Futuros y opciones en una lección', [
-      text('Futuros', 'Un **futuro** es un contrato para comprar o vender algo en una **fecha futura** a un **precio pactado hoy**. Las dos partes están **obligadas** a cumplir.\n\nSirve para cubrirse (un agricultor fija hoy el precio de su trigo) o para especular. Solo depositas una **garantía**, una fracción del valor: eso es **apalancamiento**.'),
-      text('Opciones', 'Una **opción** da el **derecho, pero no la obligación**, de comprar (**call**) o vender (**put**) a un precio pactado (**strike**) hasta una fecha. Por ese derecho pagas una **prima**.\n\nSi no te conviene, la dejas caducar y pierdes la prima. Quien la vende cobra la prima y asume la obligación.'),
-      key('Por qué no son para empezar', 'Son **derivados**: su valor depende de otro activo. Con apalancamiento, un movimiento pequeño se convierte en una ganancia o una pérdida grande, y en algunos casos (vender opciones, futuros) puedes perder más de lo que pusiste.', 'Futuro = obligación a un precio pactado. Opción = derecho a cambio de una prima.', 'Si no sabes explicar cuánto puedes perder en el peor caso, no operes con derivados.'),
+      story('El trigo de Tomás', [{ id: 'tomas', name: 'Tomás' }], [
+        note('Tomás es agricultor. Recogerá su trigo dentro de seis meses.'),
+        say('tomas', 'Hoy el trigo está a buen precio. ¿Y si cuando coseche ha bajado?'),
+        choose('¿Qué puede hacer con los futuros?', [
+          opt('Vender hoy futuros y fijar el precio de su trigo', 'good', say('lumi', '¡Cubrirse! Si el precio baja, el futuro compensa; si sube, renuncia a esa ganancia.')),
+          opt('Comprar futuros de trigo para ganar si sube', 'bad', say('lumi', 'Así duplica su apuesta a que el trigo sube: lo contrario de cubrirse.')),
+          opt('Nada: los futuros solo sirven para especular', 'ok', say('lumi', 'Nacieron precisamente para cubrir riesgos como el suyo.')),
+        ]),
+        say('lumi', 'Un **futuro** obliga a ambas partes: fecha futura, precio pactado hoy.'),
+      ]),
+      play({
+        title: '¿Obligación o derecho?',
+        intro: 'Una **opción** da el derecho, pero no la obligación, de comprar (**call**) o vender (**put**) a un precio pactado, el **strike**. Por ese derecho se paga una **prima**.',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Tiene una obligación' }, { label: 'Solo tiene un derecho' }],
+          cards: [
+            { icon: 'document', label: 'Quien compra un futuro', bin: 0, why: 'En un futuro, las dos partes están obligadas a cumplir.' },
+            { icon: 'up', label: 'Quien compra una call', bin: 1, why: 'La call da derecho a comprar al strike. Si no le conviene, no la usa.' },
+            { icon: 'deal', label: 'Quien vende un futuro', bin: 0, why: 'También está obligado: el futuro obliga a las dos partes.' },
+            { icon: 'down', label: 'Quien compra una put', bin: 1, why: 'La put da derecho a vender al strike.' },
+            { icon: 'cash', label: 'Quien vende una opción y cobra la prima', bin: 0, why: 'Cobra la prima y asume la obligación si el comprador la ejerce.' },
+          ],
+        },
+        goal: { text: 'Clasifica los cinco casos.', when: [when('done', '==', 5)] },
+        insight: 'El futuro **obliga** a las dos partes. La opción da un **derecho** a quien la compra, a cambio de una prima; quien la vende asume la obligación.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: quien paga la prima es quien elige.', mood: 'THINKING' },
+          { say: 'Clasifica cada caso', mood: 'HAPPY' },
+        ],
+      }),
+      play({
+        title: 'Tu call, al vencimiento',
+        intro: 'Compras una **call** con strike de **100 €** y pagas **5 €** de prima. Al vencimiento, ¿ganas o pierdes?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Ganas' }, { label: 'Pierdes' }],
+          cards: [
+            { icon: 'up', label: 'La acción acaba a 130 €', bin: 0, why: 'Compras a 100 € algo que vale 130 €: 30 € menos 5 € de prima, ganas 25 €.' },
+            { icon: 'down', label: 'La acción acaba a 80 €', bin: 1, why: 'No te interesa comprar a 100 €: no la ejerces y pierdes la prima, 5 €.' },
+            { icon: 'chart', label: 'La acción acaba a 103 €', bin: 1, why: 'Ejerces y ganas 3 €, pero pagaste 5 € de prima: pierdes 2 €.' },
+            { icon: 'rocket', label: 'La acción acaba a 150 €', bin: 0, why: '150 − 100 − 5 = 45 € de ganancia por acción.' },
+            { icon: 'snowflake', label: 'La acción se hunde hasta 50 €', bin: 1, why: 'Aunque se hunda, solo pierdes la prima: 5 €.' },
+          ],
+        },
+        goal: { text: 'Resuelve los cinco finales.', when: [when('done', '==', 5)] },
+        insight: 'Con una opción comprada ganas si el precio supera **strike + prima** (aquí, 105 €), y lo máximo que pierdes es la **prima**. Quien te la vendió, en cambio, puede perder mucho más.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: por debajo de 105 € no recuperas la prima.', mood: 'THINKING' },
+          { say: '¿Ganas o pierdes en cada final?', mood: 'HAPPY' },
+        ],
+      }),
+      key('Por qué no son para empezar', 'Futuros y opciones son **derivados**: su valor depende de otro activo. En un futuro solo depositas una **garantía**, una fracción del valor: eso es apalancamiento.\n\nUn movimiento pequeño se convierte en una ganancia o una pérdida grande y, en algunos casos (vender opciones, futuros), puedes perder más de lo que pusiste.', 'Futuro = obligación a un precio pactado. Opción = derecho a cambio de una prima.', 'Si no sabes explicar cuánto puedes perder en el peor caso, no operes con derivados.'),
     ], [
       match('Empareja cada término con su definición.', [['Futuro', 'Obligación de comprar o vender en una fecha a un precio pactado'], ['Call', 'Derecho a comprar a un precio pactado'], ['Put', 'Derecho a vender a un precio pactado'], ['Prima', 'Lo que pagas por una opción']], 'La diferencia clave: el futuro obliga; la opción comprada solo da un derecho.'),
       fill('Una opción da el ____, pero no la obligación, de comprar o vender.', 'derecho', ['deber', 'dividendo', 'cupón'], 'Por eso quien la compra paga una prima: tiene la libertad de no usarla.'),
@@ -37,12 +117,41 @@ export default unit({
       tf('Con una opción comprada, lo máximo que puedes perder es la prima.', true, 'Si no te conviene ejercerla, la dejas caducar: pierdes lo que pagaste y nada más.'),
       timed(single('Rápido: ¿qué tipo de opción te da derecho a vender?', ['Put', 'Call', 'Futuro'], 0, 'Put = vender; call = comprar.'), 10),
       buckets('¿Tiene una obligación o solo un derecho?', ['Obligación', 'Derecho'], [['Comprador de un futuro', 0], ['Comprador de una call', 1], ['Vendedor de un futuro', 0], ['Comprador de una put', 1], ['Vendedor de una opción, si el comprador la ejerce', 0]], 'En un futuro, las dos partes se obligan; en una opción, el comprador tiene el derecho y el vendedor, la obligación.'),
-    ], { source: '2.8' }),
+    ], { source: '2.8', minutes: 6, retire: [5, 7, 8, 9] }),
 
     lesson('u11l3', 'CFD: por qué la mayoría pierde', [
-      text('Qué es un CFD', 'Un **CFD** (contrato por diferencias) es un contrato con tu bróker para cobrar o pagar la **diferencia de precio** de un activo entre que abres y cierras. No compras el activo: apuestas a si sube o baja.\n\nSe opera **con apalancamiento**: pones una garantía y mueves una posición mucho mayor. Y pagas **financiación** cada noche que la mantienes abierta.'),
-      text('Las cuentas del apalancamiento', 'Con 1.000 € y un apalancamiento de 20 a 1, mueves **20.000 €**. Si el activo baja un 5 %, pierdes 1.000 €: **toda tu garantía**.\n\nEn la UE, el máximo para minoristas es de 30 a 1 en divisas principales, 20 a 1 en índices principales y oro, 5 a 1 en acciones y **2 a 1 en cripto**.'),
-      key('El aviso obligatorio de la CNMV', '«Los CFD son instrumentos complejos y están asociados a un riesgo elevado de perder dinero rápidamente debido al apalancamiento. **Entre un 74 y un 89 % de los inversores minoristas pierden dinero cuando negocian con CFD.**» Cada bróker debe mostrar además su propio porcentaje.', 'El apalancamiento multiplica las ganancias y, sobre todo, las pérdidas: la mayoría de minoristas pierde con CFD.', 'Si un anuncio de CFD esconde el aviso de riesgo, desconfía el doble.'),
+      play({
+        title: 'Un 5 % que lo borra todo',
+        intro: 'Con un **CFD** cobras o pagas la diferencia de precio de un activo, **con apalancamiento**: pones una garantía y mueves una posición mucho mayor.',
+        widget: { kind: 'leverage', margin: 1000, lev: 1, move: 0, maxLev: 30, maxMove: 10 },
+        predict: {
+          prompt: 'Pones 1.000 € con un apalancamiento de 20 a 1. ¿Qué caída del precio se lleva toda tu garantía?',
+          options: ['Una del 50 %', 'Una del 20 %', 'Una del 5 %'],
+          answer: 2,
+          why: 'Con 20 a 1 mueves **20.000 €**, y un 5 % de 20.000 € son justo tus 1.000 €: 100 % ÷ 20 = 5 %.',
+        },
+        goal: { text: 'Con ×20, busca la caída que borra tu garantía.', when: [when('lev', '==', 20), when('wiped', '==', 1)] },
+        insight: 'El apalancamiento **multiplica** el movimiento: con ×20, un 5 % en contra se lleva el 100 % de tu garantía. Un movimiento normal de unas semanas puede borrarla.',
+        lumi: [
+          { when: when('wiped', '==', 1), say: 'Garantía perdida. Y el bróker cierra la posición.', mood: 'SAD' },
+          { when: when('pnlPct', '<=', -30), say: 'Un movimiento pequeño, un mordisco enorme.', mood: 'WORRIED' },
+          { when: when('pnlPct', '>=', 30), say: 'Multiplica las ganancias… y también las pérdidas.', mood: 'THINKING' },
+          { say: 'Sube el apalancamiento y mueve el precio', mood: 'HAPPY' },
+        ],
+      }),
+      play({
+        title: 'Por qué la mayoría pierde',
+        intro: 'Simulación: 1.000 personas operan con CFD **sin ninguna ventaja**, como a cara o cruz. Cada operación paga **5 €** entre spread y financiación.',
+        widget: { kind: 'coinflip', traders: 1000, trades: 10, maxTrades: 300, fee: 5, stake: 100, win: 1 },
+        goal: { text: 'Sube las operaciones hasta que pierdan 3 de cada 4.', when: [when('losersPct', '>=', 75)] },
+        insight: 'Sin ventaja, los costes de cada operación hacen que pierda la mayoría. En la realidad, según el aviso obligatorio de la CNMV, **entre un 74 y un 89 %** de los minoristas pierde dinero con CFD.',
+        lumi: [
+          { when: when('losersPct', '>=', 75), say: 'Tres de cada cuatro en pérdidas. Y nadie lo ha hecho peor que nadie.', mood: 'WORRIED' },
+          { when: when('trades', '>=', 100), say: 'Mira la media: cada operación le resta un poco.', mood: 'THINKING' },
+          { say: 'Sube las operaciones de cada uno', mood: 'HAPPY' },
+        ],
+      }),
+      key('Lo que exige la UE', 'Un CFD no te da el activo: es un contrato con tu bróker por la **diferencia de precio**. Y pagas **financiación** cada noche que la posición sigue abierta.\n\nApalancamiento máximo para minoristas en la UE: 30 a 1 en divisas principales, 20 a 1 en índices principales y oro, 5 a 1 en acciones y **2 a 1 en cripto**. Y cada bróker debe mostrar el aviso de la CNMV, junto a su propio porcentaje: «Los CFD son instrumentos complejos y están asociados a un riesgo elevado de perder dinero rápidamente debido al apalancamiento».', 'El apalancamiento multiplica las ganancias y, sobre todo, las pérdidas: la mayoría de minoristas pierde con CFD.', 'Si un anuncio de CFD esconde el aviso de riesgo, desconfía el doble.'),
     ], [
       num('Pones 1.000 € de garantía con un apalancamiento de 20 a 1. ¿Qué posición mueves?', 20000, '€', '1.000 × 20 = 20.000 €.'),
       num('Con esa posición de 20.000 €, el activo cae un 2 %. ¿Cuánto pierdes?', 400, '€', '20.000 × 2 % = 400 €: un 40 % de tu garantía por un movimiento del 2 %.'),
@@ -54,12 +163,41 @@ export default unit({
       single('¿Por qué la mayoría de minoristas pierde con CFD?', ['El apalancamiento convierte movimientos pequeños en pérdidas grandes, y además hay costes cada noche', 'Porque los CFD están prohibidos', 'Porque solo se pueden operar de madrugada'], 0, 'Apalancamiento, costes de financiación y decisiones en caliente: una combinación que castiga sobre todo al principiante.'),
       timed(single('Rápido: apalancamiento de 10 a 1 y el activo cae un 3 %. ¿Qué parte de tu garantía pierdes?', ['30 %', '3 %', '10 %'], 0, '10 × 3 % = 30 % de la garantía.'), 15),
       scenario('Pablo abrió un CFD con apalancamiento y va perdiendo. El bróker le avisa de que su garantía ha bajado a la mitad de lo exigido. ¿Qué pasa si sigue cayendo?', [['Nada, el bróker espera a que se recupere', 'No: en la UE, al bajar la garantía al 50 % de lo exigido, el bróker cierra la posición y la pérdida se hace real.'], ['El bróker cierra la posición y no puede perder más de lo que tiene en la cuenta', 'Exacto: hay cierre automático y protección frente a saldo negativo para minoristas, pero la pérdida ya es suya.'], ['El bróker le devuelve el dinero perdido', 'Nadie devuelve las pérdidas de un CFD.']], 1, 'Las normas europeas limitan el daño (cierre al 50 % y sin saldo negativo), pero no evitan perder lo depositado.'),
-    ], { source: '10.7' }),
+    ], { source: '10.7', minutes: 6, retire: [0, 2, 4, 8] }),
 
     lesson('u11l4', 'Planes de pensiones', [
-      text('Desgrava hoy, tributa mañana', 'Lo que aportas a un **plan de pensiones** reduce tu base imponible del IRPF: hasta **1.500 € al año** en un plan individual, ampliable con aportaciones de la empresa (planes de empleo) hasta **10.000 €** en total.\n\nSi tu tipo marginal es del 30 %, aportar 1.500 € te ahorra **450 €** de IRPF ese año.'),
-      text('La letra pequeña', '• Al rescatarlo, **todo** (aportaciones y ganancias) tributa como **rendimiento del trabajo**, a tu tipo marginal de ese momento.\n• **Liquidez limitada:** solo se rescata en la jubilación o en casos concretos (desempleo de larga duración, enfermedad grave, incapacidad, dependencia), o las aportaciones con más de **10 años** de antigüedad.\n• Muchos planes bancarios cobran comisiones altas.'),
-      key('Cuándo tiene sentido', 'Compensa sobre todo si tu tipo marginal hoy es **alto**, esperas que sea **más bajo** al jubilarte y no vas a necesitar ese dinero. Para alguien que empieza a trabajar con un sueldo bajo, la ventaja es pequeña.', 'El plan de pensiones aplaza impuestos y bloquea el dinero: útil si hoy pagas mucho IRPF.', 'Lo que no te ahorra un plan de pensiones son las comisiones: míralas.'),
+      play({
+        title: 'La letra pequeña',
+        intro: 'Lo que aportas a un **plan de pensiones** reduce tu IRPF de hoy, pero tiene letra pequeña. ¿Ventaja o inconveniente?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Ventaja' }, { label: 'Inconveniente' }],
+          cards: [
+            { icon: 'percent', label: 'Reduce tu IRPF el año en que aportas', bin: 0, why: 'Hasta 1.500 € al año en un plan individual.' },
+            { icon: 'lock', label: 'El dinero queda bloqueado durante años', bin: 1, why: 'Solo se rescata en la jubilación o en casos concretos.' },
+            { icon: 'receipt', label: 'Al rescatar, tributa todo como rendimiento del trabajo', bin: 1, why: 'Aportaciones y ganancias, a tu tipo marginal de ese momento.' },
+            { icon: 'sprout', label: 'Las ganancias no tributan mientras sigue invertido', bin: 0, why: 'El dinero crece sin pagar impuestos hasta el rescate.' },
+            { icon: 'bank', label: 'Comisiones altas en muchos planes bancarios', bin: 1, why: 'Míralas: pueden comerse la ventaja fiscal.' },
+          ],
+        },
+        goal: { text: 'Clasifica los cinco rasgos.', when: [when('done', '==', 5)] },
+        insight: 'Desgravas al entrar, el dinero crece sin tributar y **pagas al salir**. La balanza depende de tu tipo marginal, de las comisiones y de cuándo necesitarás el dinero.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: piensa en hoy, en los años de espera y en el rescate.', mood: 'THINKING' },
+          { say: 'Clasifica cada rasgo', mood: 'HAPPY' },
+        ],
+      }),
+      story('Un plan «para desgravar»', [{ id: 'ana', name: 'Ana' }], [
+        note('Ana tiene 23 años y su primer sueldo. Su tipo marginal del IRPF es bajo.'),
+        say('ana', 'El banco me ofrece un plan de pensiones «para desgravar». Cobra un 1,5 % al año.'),
+        choose('¿Qué le dices?', [
+          opt('Desgravar siempre compensa', 'bad', say('lumi', 'Con un tipo bajo, ahorra poco. Y pagaría un 1,5 % al año durante décadas.')),
+          opt('Depende de su tipo marginal, las comisiones y si necesitará el dinero', 'good', say('lumi', '¡Eso! Compensa con tipo alto hoy, comisiones bajas y dinero que no necesitarás.')),
+          opt('Al rescatarlo no pagará impuestos', 'bad', say('lumi', 'Sí pagará: todo lo rescatado tributa como rendimiento del trabajo.')),
+        ]),
+        say('lumi', 'Un plan de pensiones no es bueno ni malo en general: depende de tu situación.'),
+      ]),
+      key('Desgrava hoy, tributa mañana', 'Aportar a un plan individual reduce tu base imponible hasta **1.500 € al año** (hasta 10.000 € en total con aportaciones a planes de empresa). Con un tipo marginal del 30 %, aportar 1.500 € te ahorra **450 €** ese año.\n\nSolo se rescata en la jubilación, en casos concretos (desempleo de larga duración, enfermedad grave, incapacidad, dependencia) o las aportaciones con más de **10 años**. Compensa sobre todo si hoy tu tipo es alto y esperas que sea más bajo al jubilarte.', 'El plan de pensiones aplaza impuestos y bloquea el dinero: útil si hoy pagas mucho IRPF.', 'Lo que no te ahorra un plan de pensiones son las comisiones: míralas.'),
     ], [
       num('Tu tipo marginal del IRPF es del 30 % y aportas 1.500 € a tu plan individual. ¿Cuánto IRPF te ahorras ese año?', 450, '€', '1.500 × 30 % = 450 €.'),
       num('Con un tipo marginal del 19 %, ¿cuánto te ahorras aportando 1.500 €?', 285, '€', '1.500 × 19 % = 285 €. Cuanto menor es tu tipo, menor la ventaja.'),
@@ -71,12 +209,60 @@ export default unit({
       timed(tf('Las aportaciones a un plan de pensiones reducen la base imponible del IRPF.', true, 'Con el límite de 1.500 € al año en un plan individual.'), 10),
       order('Ordena la vida de un plan de pensiones.', ['Aportas y reduces tu IRPF ese año', 'El dinero se invierte durante años sin tributar', 'Llega la jubilación u otro supuesto de rescate', 'Rescatas y tributa como rendimiento del trabajo'], 'Desgravas al entrar, el dinero crece sin tributar y pagas al salir.'),
       buckets('¿Ventaja o inconveniente del plan de pensiones?', ['Ventaja', 'Inconveniente'], [['Reduce el IRPF del año en que aportas', 0], ['Dinero bloqueado durante años', 1], ['Al rescatar tributa todo como rendimiento del trabajo', 1], ['Las ganancias no tributan mientras sigue invertido', 0], ['Comisiones altas en muchos planes bancarios', 1]], 'Pesa las dos columnas antes de decidir; la balanza depende de tu situación.'),
-    ], { source: '12.5' }),
+    ], { source: '12.5', minutes: 6, retire: [5, 6, 7, 9] }),
 
     lesson('u11l5', 'Depósitos, cuentas remuneradas y monetarios', [
-      text('Tres sitios para el corto plazo', '• **Cuenta remunerada:** paga intereses y puedes sacar el dinero cuando quieras. Ojo a los límites: a veces solo remunera hasta cierta cantidad o unos meses.\n• **Depósito a plazo:** inmovilizas el dinero un tiempo a un tipo fijo.\n• **Fondo monetario:** invierte en deuda a muy corto plazo y de alta calidad. Su rentabilidad sigue a los tipos del BCE.'),
-      text('Qué protege a cada uno', 'Cuentas y depósitos están cubiertos por el **Fondo de Garantía de Depósitos** hasta **100.000 €** por titular y entidad.\n\nEl monetario **no** tiene ese fondo, pero su patrimonio es de los partícipes y está separado de la gestora; su riesgo es muy bajo, no nulo. Y, como fondo, se puede **traspasar** sin tributar.'),
-      key('Para qué sirven', 'Para el **colchón de emergencia** y el dinero que necesitarás en meses o pocos años. Compara siempre la **TAE** y las condiciones. Ninguno de los tres es para el largo plazo: tras impuestos e inflación, apenas ganan poder de compra.', 'Corto plazo: liquidez y seguridad antes que rentabilidad.', 'Un colchón no está para rendir: está para estar ahí cuando lo necesites.'),
+      play({
+        title: '¿Y lo que compran?',
+        intro: 'Tienes **10.000 €** en un depósito que paga un **2,5 %**. La inflación está en el **2,7 %**.',
+        widget: { kind: 'realrate', amount: 10000, nominal: 2.5, inflation: 2.7, years: 10, maxNominal: 6, maxInflation: 8 },
+        predict: {
+          prompt: '¿Ganas poder de compra con ese depósito?',
+          options: ['Sí: un 2,5 % al año', 'No: pierdes un poquito cada año', 'Depende del banco'],
+          answer: 1,
+          why: '2,5 − 2,7 ≈ **−0,2 %** al año: en 10 años tendrás 12.801 €, que comprarán lo que hoy 9.807 €.',
+        },
+        goal: { text: 'Con esa inflación, busca qué tendría que pagar para ganar un 1 % real.', when: [when('inflation', '==', 2.7), when('real', '>=', 1)] },
+        insight: 'Para ganar un 1 % real con un 2,7 % de inflación, el depósito tendría que pagar casi un **3,75 %**, y eso antes de la retención del 19 %. Estos productos son para **guardar**, no para hacerse rico.',
+        lumi: [
+          { when: when('real', '<', 0), say: 'Tu saldo sube, pero compra un poco menos cada año.', mood: 'WORRIED' },
+          { when: when('real', '<', 1), say: 'Ya no pierdes. Sigue subiendo un poco más.', mood: 'THINKING' },
+          { say: 'Sube lo que paga el depósito', mood: 'HAPPY' },
+        ],
+      }),
+      play({
+        title: '¿Lo cubre el FGD?',
+        intro: 'El **Fondo de Garantía de Depósitos** (FGD) cubre hasta **100.000 €** por titular y entidad si un banco quiebra. ¿Qué cubre?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Sí, hasta 100.000 €' }, { label: 'No' }],
+          cards: [
+            { icon: 'card', label: 'Cuenta corriente', bin: 0, why: 'Es dinero depositado en un banco.' },
+            { icon: 'lock', label: 'Depósito a 12 meses', bin: 0, why: 'Cubierto hasta 100.000 € por titular y entidad.' },
+            { icon: 'pie', label: 'Fondo monetario', bin: 1, why: 'Es un fondo de inversión: sin FGD, pero su patrimonio está separado de la gestora.' },
+            { icon: 'company', label: 'Acciones de un banco', bin: 1, why: 'Son una inversión, no un depósito.' },
+            { icon: 'piggy', label: 'Cuenta remunerada', bin: 0, why: 'Dinero depositado en un banco: cubierto.' },
+            { icon: 'bitcoin', label: 'Una stablecoin', bin: 1, why: 'El FGD cubre depósitos en bancos, no criptoactivos.' },
+          ],
+        },
+        goal: { text: 'Clasifica los seis productos.', when: [when('done', '==', 6)] },
+        insight: 'El FGD cubre el dinero **depositado en bancos**, no las inversiones. El monetario no lo tiene, pero su riesgo es muy bajo (no nulo) y, como fondo, se puede **traspasar** sin tributar.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: ¿es un depósito en un banco o una inversión?', mood: 'THINKING' },
+          { say: 'Clasifica cada producto', mood: 'HAPPY' },
+        ],
+      }),
+      story('El colchón de Bruno', [{ id: 'bruno', name: 'Bruno' }], [
+        say('bruno', 'Quiero un colchón de 6.000 € para emergencias. Dudo entre tres opciones.'),
+        note('Un depósito a 3 años con penalización por cancelar, una cuenta remunerada sin permanencia o un ETF de acciones.'),
+        choose('¿Qué encaja mejor con un colchón?', [
+          opt('El depósito a 3 años, que paga algo más', 'ok', say('lumi', 'Si surge una emergencia, cancelarlo le costará la penalización.')),
+          opt('La cuenta remunerada sin permanencia', 'good', say('lumi', '¡Bien! Disponible al momento, cubierta por el FGD y con algo de interés.')),
+          opt('El ETF de acciones, que rinde más', 'bad', say('lumi', 'En una crisis puede caer un 30 % justo cuando más lo necesite.')),
+        ]),
+        say('lumi', 'Un colchón no está para rendir: está para estar ahí cuando lo necesites.'),
+      ]),
+      key('Tres sitios para el corto plazo', '• **Cuenta remunerada:** paga intereses y sacas el dinero cuando quieras. Ojo a los límites: a veces solo remunera hasta cierta cantidad o unos meses.\n• **Depósito a plazo:** inmovilizas el dinero un tiempo a un tipo fijo.\n• **Fondo monetario:** deuda a muy corto plazo y de alta calidad; su rentabilidad sigue a los tipos del BCE.\n\nCompara siempre la **TAE** y las condiciones.', 'Corto plazo: liquidez y seguridad antes que rentabilidad.', 'Para el colchón de emergencia y lo que necesitarás en meses o pocos años, no para el largo plazo.'),
     ], [
       match('Empareja cada producto con su rasgo.', [['Cuenta remunerada', 'Dinero disponible cuando quieras'], ['Depósito a plazo', 'Dinero inmovilizado a un tipo fijo'], ['Fondo monetario', 'Deuda a muy corto plazo; se puede traspasar'], ['FGD', 'Cubre hasta 100.000 € por titular y entidad']], 'Tres productos para el corto plazo y la red de seguridad que cubre a dos de ellos.'),
       num('Tienes 6.000 € en una cuenta al 2 % TAE durante un año. ¿Cuánto ganas de interés bruto?', 120, '€', '6.000 × 2 % = 120 € brutos (después se retiene un 19 %).'),
@@ -88,6 +274,6 @@ export default unit({
       timed(single('Rápido: ¿qué mide la TAE?', ['La rentabilidad anual comparable de un producto', 'La comisión del banco', 'La inflación del año'], 0, 'Permite comparar productos con plazos y pagos distintos.'), 12),
       tf('En España, un fondo monetario se puede traspasar a otro fondo sin tributar.', true, 'Es un fondo de inversión, así que tiene el régimen de traspasos.'),
       tf('Un fondo monetario no puede perder dinero nunca.', false, 'Su riesgo es muy bajo, no nulo: invierte en deuda que, en casos extremos, puede bajar de precio o no pagarse.'),
-    ], { source: '1.4' }),
+    ], { source: '1.4', minutes: 6, retire: [3, 5, 6, 7] }),
   ],
 })

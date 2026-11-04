@@ -10,8 +10,10 @@ export function useFmt() {
   const n = (v: number, d = 0) => v.toLocaleString(locale, { maximumFractionDigits: d, minimumFractionDigits: d && Math.abs(v % 1) > 0.004 ? d : 0, useGrouping: 'always' } as Intl.NumberFormatOptions)
   // Igual que el resto de la app: «€1,250» en inglés y «1.250 €» en español y catalán
   const eur = (v: number, d = 0) => (locale === 'en' ? `${v < 0 ? '−' : ''}€${n(Math.abs(v), d)}` : `${v < 0 ? '−' : ''}${n(Math.abs(v), d)} €`)
+  /** Precios: siempre con sus decimales (10,00 · 9,98) */
+  const price = (v: number, d = 2) => v.toLocaleString(locale, { minimumFractionDigits: d, maximumFractionDigits: d, useGrouping: 'always' } as Intl.NumberFormatOptions)
   const pct = (v: number, d = 1) => `${v < 0 ? '−' : ''}${n(Math.abs(v), d)} %`
-  return { n, eur, pct, locale }
+  return { n, eur, pct, price, locale }
 }
 
 /** Avisa a la pantalla de las métricas actuales cada vez que cambian */

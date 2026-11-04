@@ -1,13 +1,45 @@
 import 'server-only'
 // Sección 2 · Unidad 7 · Índices y referencias (docs/curso-v2/02-curriculo.md)
-import { buckets, calc, chat, fill, key, lesson, match, multi, num, scenario, single, text, tf, timed, unit, upDown } from '../dsl'
+import { buckets, chat, choose, fill, key, lesson, match, mission, multi, note, num, opt, play, say, scenario, single, story, tf, timed, unit, upDown, when } from '../dsl'
 
 export default unit({
   id: 'u7', order: 7, title: 'Índices y referencias', description: 'Qué mide cada índice, cómo se pondera y cómo usarlo para medir tu rentabilidad',
   lessons: [
     lesson('u7l1', 'Qué es un índice', [
-      text('Una cesta de referencia', 'Un **índice** resume en una cifra cómo va un grupo de valores. «La bolsa española ha subido un 1 %» significa que el **IBEX 35** ha subido un 1 %.\n\nCada índice tiene sus **reglas**: qué empresas entran, cuánto pesa cada una y cada cuánto se revisa.'),
-      text('Para qué sirve', '• **Termómetro:** cómo va un mercado, un país o un sector.\n• **Vara de medir:** comparar tu rentabilidad o la de un fondo.\n• **Base de productos:** fondos indexados y ETFs que lo copian.\n\nUn índice **no se compra directamente**: se compra un fondo o ETF que lo replica.'),
+      story('El fondo que ganó un 8 %', [{ id: 'marta', name: 'Marta' }], [
+        say('marta', '¡Mi fondo ha ganado un 8 % este año! Es buenísimo, ¿no?'),
+        note('Ese año, el índice de su mercado subió un 14 %.'),
+        choose('¿Qué le dices a Marta?', [
+          opt('Enhorabuena: un 8 % es genial', 'bad', say('lumi', 'Suena bien… pero copiar el índice le habría dado un 14 %.')),
+          opt('Ha quedado 6 puntos por detrás de su índice', 'good', say('lumi', 'Eso. Para eso sirve un índice: es la **vara de medir**.')),
+          opt('Depende de cuánto dinero haya puesto', 'ok', say('lumi', 'El importe no cambia el porcentaje: 8 % frente a 14 %.')),
+        ]),
+        say('marta', '¿Y cómo compro yo ese índice?'),
+        say('lumi', 'No se compra tal cual: se compra un **fondo o ETF** que lo replica.'),
+      ]),
+      play({
+        title: '¿Para qué sirve un índice?',
+        intro: 'Un **índice** resume en una cifra cómo va un grupo de valores. Se usa para tres cosas.',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Termómetro' }, { label: 'Vara de medir' }, { label: 'Base de productos' }],
+          cards: [
+            { icon: 'news', label: '«La bolsa española sube hoy un 1 %»', bin: 0, why: 'Es el IBEX 35: dice cómo va el mercado.' },
+            { icon: 'scale', label: 'Un fondo compara su resultado con el IBEX 35', bin: 1, why: 'El índice es la referencia para saber si el fondo lo hizo bien.' },
+            { icon: 'layers', label: 'Un ETF que copia el S&P 500', bin: 2, why: 'Los ETFs y fondos indexados lo replican con costes bajos.' },
+            { icon: 'bank', label: 'Saber cómo va hoy el sector bancario', bin: 0, why: 'Hay índices de países y de sectores: termómetros más concretos.' },
+            { icon: 'pie', label: 'Comprobar si tu cartera lo hizo bien', bin: 1, why: 'Compárala con un índice que se parezca a lo que tienes.' },
+            { icon: 'piggy', label: 'Un fondo indexado para aportar cada mes', bin: 2, why: 'El fondo indexado copia el índice: así se «compra».' },
+          ],
+        },
+        goal: { text: 'Clasifica los seis usos.', when: [when('done', '==', 6)] },
+        insight: 'Un índice es **termómetro**, **vara de medir** y **base de productos**. Cada uno tiene sus reglas: qué empresas entran, cuánto pesa cada una y cada cuánto se revisa.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: ¿informa, sirve para compararse o se compra como fondo?', mood: 'THINKING' },
+          { when: when('done', '>=', 4), say: 'Una cifra con muchos trabajos distintos.', mood: 'HAPPY' },
+          { say: 'Toca cada caso: ¿para qué se usa el índice?', mood: 'HAPPY' },
+        ],
+      }),
       key('Puntos, no euros', 'Un índice se mide en puntos, no en euros. Lo que importa es la **variación**: si pasa de 14.000 a 14.700 puntos, ha subido un 5 %.', 'Un índice es una cesta de referencia, no algo que se compra tal cual.', 'Comprar el índice entero es apostar por toda una economía, no por una empresa.'),
     ], [
       single('¿Qué es un índice bursátil?', ['Una cifra que resume cómo va un grupo de valores', 'Una empresa que cotiza en bolsa', 'Un tipo de interés'], 0, 'Es una cesta de referencia con reglas sobre qué entra y cuánto pesa.'),
@@ -20,12 +52,43 @@ export default unit({
       scenario('Un fondo presume en un anuncio: «¡Hemos ganado un 8 % este año!». El índice de su mercado ha subido un 14 %. ¿Qué piensas?', [['Que ha quedado 6 puntos por detrás de su referencia', 'Ganar un 8 % suena bien, pero un fondo indexado de ese mercado habría dado bastante más.'], ['Que es un fondo excelente', 'Solo lo parece si no lo comparas con nada.'], ['Que no se puede comparar con nada', 'Para eso sirven los índices: son la vara de medir.']], 0, 'Una rentabilidad sola no dice si es buena: hay que compararla con su índice.'),
       timed(tf('Si un índice sube, todas sus empresas han subido.', false, 'Es una media ponderada: unas suben, otras bajan, y el índice resume el conjunto.'), 10),
       fill('Un índice no se compra directamente: se compra un fondo o un ____ que lo replica.', 'ETF', ['IPC', 'bono', 'depósito'], 'Los ETFs y fondos indexados copian el índice con costes bajos.'),
-    ], { source: '2.6' }),
+    ], { source: '2.6', minutes: 6, retire: [1, 4, 7, 8] }),
 
     lesson('u7l2', 'S&P 500, Nasdaq, IBEX 35 y MSCI World', [
-      text('Los grandes de EE. UU.', '• **S&P 500:** unas 500 grandes empresas de EE. UU., ponderadas por capitalización. Cubre en torno al 80 % del valor de su bolsa.\n• **Nasdaq 100:** las 100 mayores empresas no financieras que cotizan en el Nasdaq; mucha tecnología.\n• **Dow Jones:** solo 30 empresas y pondera por precio, un método antiguo.'),
-      text('España, Europa y el mundo', '• **IBEX 35:** las 35 más líquidas de la bolsa española.\n• **Euro Stoxx 50:** 50 grandes de la zona euro. **DAX:** Alemania.\n• **MSCI World:** grandes y medianas empresas de **23 países desarrollados**, unas 1.250-1.300 en 2026 (la cifra cambia con cada revisión).\n• **MSCI ACWI:** añade los países emergentes.'),
-      key('Mundial no significa repartido', 'Un fondo del MSCI World parece «todo el mundo», pero más de dos tercios es EE. UU. y no incluye emergentes como China o India.', 'Cada índice mide una parte del mercado: mira qué hay dentro antes de compararte con él.', 'El nombre del índice no basta: mira su composición por países y sectores.'),
+      play({
+        title: '¿Está en el MSCI World?',
+        intro: 'El **MSCI World** reúne grandes y medianas empresas de **23 países desarrollados**. ¿Cuáles de estas tiene dentro?',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Está dentro' }, { label: 'Fuera: país emergente' }],
+          cards: [
+            { icon: 'phone', label: 'Apple (EE. UU.)', bin: 0, why: 'EE. UU. es desarrollado y pesa más de dos tercios del índice.' },
+            { icon: 'coffee', label: 'Nestlé (Suiza)', bin: 0, why: 'Suiza es un país desarrollado: está dentro.' },
+            { icon: 'car', label: 'Toyota (Japón)', bin: 0, why: 'Japón es desarrollado: está dentro.' },
+            { icon: 'globe', label: 'Una gran empresa china', bin: 1, why: 'China es emergente: está en el **MSCI ACWI**, no en el World.' },
+            { icon: 'chip', label: 'Una gran tecnológica india', bin: 1, why: 'India es emergente: fuera del MSCI World.' },
+            { icon: 'clothes', label: 'Inditex (España)', bin: 0, why: 'España es un país desarrollado: Inditex está dentro.' },
+          ],
+        },
+        goal: { text: 'Clasifica las seis empresas.', when: [when('done', '==', 6)] },
+        insight: '«Mundial» no significa repartido: **más de dos tercios es EE. UU.** y no hay emergentes como China o India. Para sumarlos existe el **MSCI ACWI**.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: China, India o Brasil son países emergentes.', mood: 'THINKING' },
+          { when: when('done', '>=', 4), say: 'Más de mil empresas, pero no de todos los países.', mood: 'HAPPY' },
+          { say: 'Toca cada empresa: ¿dentro o fuera?', mood: 'HAPPY' },
+        ],
+      }),
+      story('Repartido por el planeta', [{ id: 'leo', name: 'Leo' }], [
+        say('leo', 'Tengo un fondo del MSCI World: estoy repartido por todo el planeta.'),
+        choose('¿Qué le dices a Leo?', [
+          opt('Sí: todos los países por igual', 'bad', say('lumi', 'No: más de dos tercios es EE. UU. y no hay emergentes.')),
+          opt('Muy diversificado, pero sobre todo en EE. UU.', 'good', say('lumi', 'Eso. Más de mil empresas, pero no repartidas por igual.')),
+          opt('Depende sobre todo de Europa', 'ok', say('lumi', 'Europa pesa mucho menos: lo que más le mueve es EE. UU.')),
+        ]),
+        say('leo', '¿Y cómo sé qué hay dentro de cada índice?'),
+        say('lumi', 'Mira su composición por países y sectores. El nombre no basta.'),
+      ]),
+      key('Los grandes índices', '• **S&P 500:** unas 500 grandes de EE. UU., ponderadas por capitalización; cubre en torno al 80 % del valor de su bolsa.\n• **Nasdaq 100:** las 100 mayores no financieras del Nasdaq; mucha tecnología.\n• **Dow Jones:** solo 30 empresas; pondera por precio.\n• **Euro Stoxx 50:** 50 grandes de la zona euro. **DAX:** Alemania.\n• **MSCI World:** unas 1.250-1.300 empresas en 2026; la cifra cambia con cada revisión.', 'Cada índice mide una parte del mercado: mira qué hay dentro antes de compararte con él.'),
     ], [
       match('Empareja cada índice con lo que mide.', [['S&P 500', 'Unas 500 grandes empresas de EE. UU.'], ['Nasdaq 100', 'Las 100 mayores no financieras del Nasdaq'], ['IBEX 35', 'Las 35 más líquidas de España'], ['MSCI World', 'Grandes y medianas de 23 países desarrollados'], ['Dow Jones', '30 empresas ponderadas por precio']], 'Cada índice es una ventana distinta al mercado.'),
       upDown('Velas diarias reales de uno de los índices de esta clase, sin nombre ni fechas. ¿Sube o baja en las sesiones siguientes?', 'ud-34', 'Nadie lee de forma fiable dos semanas de un índice: por eso los índices sirven de referencia, no de bola de cristal.'),
@@ -37,11 +100,43 @@ export default unit({
       upDown('Nasdaq 100, marzo de 2000: la tecnología lleva años disparada y todo el mundo habla de internet. ¿Qué hizo el índice en los años siguientes?', 'hist-dotcom', 'Un índice muy concentrado en un sector depende de lo que le pase a ese sector, para bien y para mal.', 'los años siguientes'),
       chat(['Tengo un fondo del MSCI World, así que estoy repartido por todo el planeta 🌍'], '¿Qué le contestas a Lumi?', [['Sí, todo el mundo por igual', 'No del todo: más de dos tercios es EE. UU. y no hay emergentes.'], ['Bastante diversificado, pero sobre todo en EE. UU. y sin emergentes', '¡Eso! Más de mil empresas, pero no repartidas por igual entre países.'], ['Solo tienes empresas europeas', 'Al revés: Europa pesa mucho menos que EE. UU.']], 1, 'Diversificado no significa repartido a partes iguales.'),
       fill('El MSCI World cubre grandes y medianas empresas de ____ países desarrollados.', '23', ['50', '100', '195'], '23 países desarrollados; para los emergentes existe el MSCI Emerging Markets y, juntos, el ACWI.'),
-    ], { source: '2.6' }),
+    ], { source: '2.6', minutes: 6, retire: [3, 4, 6, 8] }),
 
     lesson('u7l3', 'Ponderar por capitalización', [
-      text('Pesa más la que más vale', '**Capitalización = precio de la acción × número de acciones.**\n\nEn un índice ponderado por capitalización, el peso de cada empresa es su capitalización entre la suma de todas. Si una vale 300 y el índice entero 1.000, pesa un **30 %**: sus movimientos mueven mucho el índice.'),
-      text('Otros métodos', '• **Por precio** (Dow Jones, Nikkei 225): pesa más la acción con el precio unitario más alto, aunque la empresa sea más pequeña.\n• **Equiponderado:** todas pesan lo mismo.\n\nLa mayoría (S&P 500, IBEX 35, MSCI World) usan capitalización, a menudo contando solo las acciones que se negocian libremente.'),
+      story('El índice de tres empresas', [{ id: 'sara', name: 'Sara' }], [
+        note('Un índice con tres empresas. A vale 600 millones; B, 300; C, 100.'),
+        say('sara', 'Mañana A sube un 10 % y las otras no se mueven. ¿Cuánto sube el índice?'),
+        choose('Si pondera por capitalización, ¿cuánto sube?', [
+          opt('Un 10 %, lo mismo que A', 'bad', say('lumi', 'A pesa 600 de 1.000, un **60 %**: el índice sube un 6 %.')),
+          opt('Un 6 %: A pesa un 60 %', 'good', say('lumi', 'Eso. Quien más vale, más pesa: 0,60 × 10 % = 6 %.')),
+          opt('Un 3,3 %: la media de las tres', 'ok', say('lumi', 'Eso sería si pesaran igual. Por capitalización, A pesa un 60 %: un 6 %.')),
+        ]),
+        say('sara', 'O sea, que las grandes mandan.'),
+        say('lumi', '**Capitalización = precio × número de acciones.** La que más vale, más pesa.'),
+      ]),
+      play({
+        title: '¿Cómo pondera cada índice?',
+        intro: 'Casi todos los índices modernos pesan a cada empresa por lo que **vale en bolsa**. Algunos, no.',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Por capitalización' }, { label: 'Por precio' }, { label: 'Todas igual' }],
+          cards: [
+            { icon: 'chart', label: 'S&P 500', bin: 0, why: 'Por capitalización: las más grandes pesan más.' },
+            { icon: 'chart', label: 'Dow Jones', bin: 1, why: 'Por el precio de la acción: un método antiguo.' },
+            { icon: 'chart', label: 'IBEX 35', bin: 0, why: 'Por capitalización, contando solo las acciones que se negocian libremente.' },
+            { icon: 'chart', label: 'Nikkei 225', bin: 1, why: 'También por precio, como el Dow Jones.' },
+            { icon: 'chart', label: 'MSCI World', bin: 0, why: 'Por capitalización: por eso EE. UU. pesa tanto.' },
+            { icon: 'scale', label: 'Un índice equiponderado', bin: 2, why: 'Todas pesan lo mismo, sean grandes o pequeñas.' },
+          ],
+        },
+        goal: { text: 'Clasifica los seis índices.', when: [when('done', '==', 6)] },
+        insight: 'En un índice **por precio** pesa más la acción con el precio unitario más alto, aunque la empresa sea más pequeña. Por eso casi todos usan la **capitalización**.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: solo el Dow Jones y el Nikkei 225 van por precio.', mood: 'THINKING' },
+          { when: when('done', '>=', 4), say: 'El precio de una acción no dice lo grande que es la empresa.', mood: 'HAPPY' },
+          { say: 'Toca cada índice: ¿cómo pondera?', mood: 'HAPPY' },
+        ],
+      }),
       key('La concentración', 'Con capitalización, las ganadoras pesan cada vez más. En 2026, unas pocas tecnológicas suponen más de un tercio del S&P 500: comprar el índice es, en buena parte, comprar esas empresas.', 'Capitalización = precio × número de acciones; quien más vale, más pesa.', 'Mira las 10 mayores posiciones de un índice: te dicen qué compras de verdad.'),
     ], [
       num('Una empresa tiene 2.000 millones de acciones a 15 € cada una. ¿Cuál es su capitalización, en millones de euros?', 30000, 'millones de €', '2.000 millones × 15 € = 30.000 millones de €.'),
@@ -55,13 +150,41 @@ export default unit({
       buckets('¿Cómo pondera cada índice?', ['Por capitalización', 'Por precio'], [['S&P 500', 0], ['Dow Jones', 1], ['IBEX 35', 0], ['Nikkei 225', 1], ['MSCI World', 0]], 'Casi todos los índices modernos ponderan por capitalización.'),
       timed(tf('El IBEX 35 pondera por capitalización.', true, 'Por capitalización, contando las acciones que se negocian libremente.'), 10),
       scenario('Laura compra un fondo del S&P 500 creyendo que tiene «500 empresas a partes iguales». ¿Qué le conviene hacer?', [['Mirar sus 10 mayores posiciones', 'Descubre que unas pocas tecnológicas pesan más de un tercio: ahora sabe lo que compra de verdad.'], ['Dar por hecho que cada empresa pesa un 0,2 %', 'En realidad las grandes pesan muchísimo más: su riesgo depende de pocas empresas.'], ['Venderlo porque «está mal hecho»', 'No está mal hecho: así funciona la capitalización. Solo hay que entenderlo.']], 0, 'Entender cómo pondera un índice es saber qué riesgo compras.'),
-    ], { source: '2.6' }),
+    ], { source: '2.6', minutes: 6, retire: [1, 2, 5, 8, 9] }),
 
     lesson('u7l4', 'Índice de precios y de rentabilidad total', [
-      text('Con o sin dividendos', 'El IBEX 35 o el S&P 500 que salen en las noticias son **índices de precios**: no cuentan los dividendos.\n\nLos índices de **rentabilidad total**, como el **IBEX 35 con dividendos**, suponen que los dividendos se reinvierten. Miden lo que de verdad habría ganado un inversor.'),
-      text('La diferencia se compone', 'Un índice que sube un 5 % al año de precio y reparte un 2 % en dividendos da alrededor de un 7 % si los reinviertes.\n\nCon 10.000 € a 30 años: **43.219 €** sin dividendos frente a **76.123 €** con ellos. Casi el doble.'),
-      calc('compound', 'Pruébalo', 'Pon 10.000 €, 0 € al mes y 30 años. Compara un 5 % con un 7 %: esa diferencia es el efecto de reinvertir los dividendos.', 'Son ejemplos, no promesas: los índices no suben lo mismo cada año.'),
-      key('Cuidado con el índice que «no sube»', 'Durante muchos años, el IBEX 35 de precios parecía no moverse desde su máximo de 2007, mientras el IBEX con dividendos estaba muy por encima. El Nikkei japonés tardó hasta 2024 en superar su máximo de precio de 1989.', 'Para medir una inversión a largo plazo, usa el índice con dividendos.'),
+      play({
+        title: 'Con o sin dividendos',
+        intro: 'Los índices de las noticias son **de precios**: no cuentan los dividendos. Este sube un 5 % al año de precio y reparte un 2 % más en dividendos.',
+        widget: { kind: 'growth', initial: 10000, monthly: 0, rate: 5, years: 30, maxInitial: 10000, maxMonthly: 500, maxRate: 10, maxYears: 40, lines: ['compound'], controls: ['rate', 'years'] },
+        predict: {
+          prompt: 'A 30 años, ¿cuánto cambia reinvertir ese 2 % de dividendos?',
+          options: ['Casi nada: un 2 % es poco', 'Algo: un 10 % más', 'Casi el doble de dinero'],
+          answer: 2,
+          why: 'Al 5 %, 10.000 € se convierten en **43.219 €**. Al 7 %, en **76.123 €**. Pruébalo.',
+        },
+        goal: { text: 'Sube la rentabilidad al 7 %: precio más dividendos reinvertidos.', when: [when('rate', '==', 7), when('years', '==', 30)] },
+        insight: 'Los índices de **rentabilidad total**, como el IBEX 35 con dividendos, suponen que se reinvierten: **a 30 años, casi el doble**. Son ejemplos, no promesas: los índices no suben lo mismo cada año.',
+        lumi: [
+          { when: when('rate', '>=', 7), say: 'Eso es reinvertir los dividendos: mira la diferencia.', mood: 'CELEBRATE' },
+          { when: when('years', '<', 20), say: 'Alarga los años: la diferencia se compone.', mood: 'THINKING' },
+          { say: 'Sube la rentabilidad del 5 % al 7 %', mood: 'HAPPY' },
+        ],
+      }),
+      mission({
+        title: 'El IBEX que «no subía»',
+        intro: 'Datos reales: **10.000 €** en el IBEX 35 a finales de 2006. Es el índice **de precios**, sin dividendos. Dale a empezar.',
+        widget: { kind: 'crash', series: 'series-ibex', amount: 10000 },
+        goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
+        insight: 'Con cierres mensuales, el IBEX de precios no superó su máximo de 2007 **hasta septiembre de 2025**, y 10.000 € eran 12.287 € a finales de 2025. Pero no cuenta los dividendos: **el IBEX 35 con dividendos ha estado muy por encima**.',
+        lumi: [
+          { when: when('sold', '==', 1), say: 'Has vendido. Mira lo que pasa después…', mood: 'THINKING' },
+          { when: when('drop', '<=', -50), say: 'Más de la mitad abajo. Y sin contar dividendos.', mood: 'WORRIED' },
+          { when: when('drop', '<=', -20), say: 'Un 20 % abajo… y este índice no cuenta los dividendos.', mood: 'WORRIED' },
+          { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
+        ],
+      }),
+      key('Compara igual con igual', 'Si cuentas los dividendos que cobras, compárate con el índice **con dividendos**. Si no, parecerá que lo haces mejor de lo que lo haces.\n\nUn **fondo de acumulación** reinvierte los dividendos por ti.', 'Para medir una inversión a largo plazo, usa el índice con dividendos.'),
     ], [
       num('Un índice sube un 4 % de precio y reparte un 3 % en dividendos. ¿Cuál es su rentabilidad total aproximada?', 7, '%', '4 % + 3 % ≈ 7 %.'),
       num('10.000 € al 5 % anual durante 30 años, ¿en cuánto se convierten? (redondea)', 43219, '€', '10.000 × 1,05³⁰ ≈ 43.219 €.'),
@@ -73,13 +196,61 @@ export default unit({
       chat(['Mi tío dice que durante años el IBEX no subió nada desde 2007 🤷', '¿Entonces la bolsa española no da nada?'], '¿Qué le contestas a Lumi?', [['Tiene razón, no da nada', 'Le falta una parte: los dividendos.'], ['Ese IBEX no cuenta los dividendos; con ellos, la historia cambia mucho', '¡Eso! El IBEX 35 con dividendos ha estado muy por encima del de precios.'], ['Es que el IBEX está mal calculado', 'Está bien calculado: solo mide otra cosa, el precio.']], 1, 'El índice de precios cuenta solo media historia.'),
       timed(tf('A largo plazo, la diferencia entre reinvertir los dividendos o no es pequeña.', false, 'A 30 años, un 5 % frente a un 7 % es casi el doble de dinero.'), 10),
       single('Comparas tu cartera, contando los dividendos que cobraste, con el IBEX 35 de precios. ¿Qué pasa?', ['Te comparas con ventaja: deberías usar el IBEX con dividendos', 'Es la comparación correcta', 'Te comparas con desventaja'], 0, 'Tú cuentas dividendos y el índice no: parecerá que lo haces mejor de lo que lo haces.'),
-    ], { source: '2.6' }),
+    ], { source: '2.6', minutes: 6, retire: [1, 2, 4, 8] }),
 
     lesson('u7l5', 'Comparar tu rentabilidad', [
-      text('Tu vara de medir', 'No basta con «he ganado un 6 %». Compáralo con un **índice de referencia** (*benchmark*) que se parezca a lo que inviertes: una cartera de acciones mundiales, con el MSCI World con dividendos; una de acciones españolas, con el IBEX 35 con dividendos.'),
-      text('Lo que dicen los datos', 'Batir al índice es difícil incluso para profesionales. Según el informe **SPIVA** (cierre de 2025), un **97 %** de los fondos activos de acciones europeas quedó por detrás de su índice en 10 años.\n\nY el inversor medio gana alrededor de **1,2 puntos al año menos** que sus propios fondos por comprar y vender en mal momento (Morningstar).'),
-      calc('fees', 'Cuánto cuesta quedarse atrás', 'Pon 10.000 € a 30 años al 7 % y compara un coste del 0,2 % con uno del 1,8 %: quedarse 1,6 puntos por detrás cada año se nota muchísimo.', 'Los puntos que pierdes cada año también se componen.'),
-      key('Compara igual con igual', 'Mismo periodo, misma moneda, con dividendos y después de comisiones. Y si aportas dinero durante el año, no lo cuentes como ganancia.', 'Un índice parecido a tu cartera es tu vara de medir.'),
+      story('«He ganado»', [{ id: 'pablo', name: 'Pablo' }], [
+        say('pablo', 'Este año mi cartera de acciones españolas ha ganado un 4 %. ¡Bien!'),
+        note('Ese año, el IBEX 35 con dividendos subió un 12 %.'),
+        choose('¿Qué le dices a Pablo?', [
+          opt('Genial: ganar es ganar', 'bad', say('lumi', 'Ganar menos que la alternativa más sencilla también es perder.')),
+          opt('Ha quedado 8 puntos por detrás de su referencia', 'good', say('lumi', 'Eso. Un fondo indexado del IBEX le habría dado el triple.')),
+          opt('Que se compare con un depósito al 2 %', 'ok', say('lumi', 'Es otro riesgo: unas acciones se comparan con un índice de acciones.')),
+        ]),
+        say('pablo', 'Vaya… ¿y cómo me comparo bien?'),
+        say('lumi', 'Mismo periodo, misma moneda, con dividendos y después de comisiones.'),
+      ]),
+      play({
+        title: '¿Con qué índice te comparas?',
+        intro: 'Tu **índice de referencia** (*benchmark*) tiene que parecerse a lo que inviertes. Y siempre, con dividendos.',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'MSCI World' }, { label: 'IBEX 35' }, { label: 'S&P 500' }],
+          cards: [
+            { icon: 'globe', label: 'Una cartera de acciones de todo el mundo desarrollado', bin: 0, why: 'Grandes y medianas de 23 países desarrollados: el MSCI World.' },
+            { icon: 'bank', label: 'Acciones de Santander, Iberdrola e Inditex', bin: 1, why: 'Grandes empresas españolas: el IBEX 35 con dividendos.' },
+            { icon: 'company', label: 'Un fondo de grandes empresas de EE. UU.', bin: 2, why: 'Unas 500 grandes de EE. UU.: el S&P 500 con dividendos.' },
+            { icon: 'layers', label: 'Un fondo con Apple, Nestlé, Toyota y más de mil empresas', bin: 0, why: 'Muchos países desarrollados a la vez: el MSCI World.' },
+            { icon: 'building', label: 'Un fondo de grandes empresas españolas', bin: 1, why: 'La bolsa española: el IBEX 35 con dividendos.' },
+            { icon: 'chart', label: 'Acciones de Apple, Microsoft y Amazon', bin: 2, why: 'Grandes de EE. UU.: el S&P 500 con dividendos.' },
+          ],
+        },
+        goal: { text: 'Busca la referencia de las seis carteras.', when: [when('done', '==', 6)] },
+        insight: 'La referencia tiene que **parecerse a tu cartera**: mundial con el MSCI World, española con el IBEX 35 y de EE. UU. con el S&P 500, siempre **con dividendos**.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: fíjate en el país de las empresas.', mood: 'THINKING' },
+          { when: when('done', '>=', 4), say: 'Compararte con lo que no se parece no te dice nada.', mood: 'HAPPY' },
+          { say: 'Toca cada cartera: ¿con qué índice la comparas?', mood: 'HAPPY' },
+        ],
+      }),
+      play({
+        title: 'Quedarse atrás también se compone',
+        intro: 'Dos fondos del mismo mercado rinden un 7 % bruto. Uno cuesta un 0,2 % al año; el otro, un 1,8 %: **1,6 puntos por detrás** cada año.',
+        widget: { kind: 'fees', amount: 10000, monthly: 0, gross: 7, feeA: 0.2, feeB: 1.8, years: 10, maxFee: 2.5, maxYears: 40 },
+        predict: {
+          prompt: 'Con 10.000 € durante 30 años, ¿cuánto del resultado se llevan esos 1,6 puntos?',
+          options: ['Un 1,6 %, poca cosa', 'Algo más de un tercio', 'Casi todo'],
+          answer: 1,
+          why: 'El barato acaba en **71.968 €** y el caro, en **45.759 €**: se pierden 26.209 €, un 36 %.',
+        },
+        goal: { text: 'Lleva el plazo a 30 años.', when: [when('years', '==', 30), when('feeB', '>=', 1.75)] },
+        insight: 'Batir al índice es difícil incluso para profesionales: según SPIVA (cierre de 2025), un **97 %** de los fondos activos de acciones europeas quedó por detrás en 10 años. Y el inversor medio gana **1,2 puntos al año menos** que sus fondos por comprar y vender en mal momento (Morningstar).',
+        lumi: [
+          { when: when('lostPct', '>=', 30), say: 'Más de un tercio, solo por quedarse atrás cada año.', mood: 'WORRIED' },
+          { when: when('years', '>=', 20), say: 'Sigue: los puntos que pierdes también se componen.', mood: 'THINKING' },
+          { say: 'Alarga los años y mira la diferencia', mood: 'HAPPY' },
+        ],
+      }),
     ], [
       num('Tu cartera ganó un 6 % y su índice de referencia un 9 %. ¿Cuántos puntos quedaste por detrás?', 3, 'puntos', '9 − 6 = 3 puntos.'),
       num('Empiezas el año con 5.000 €, no aportas nada y lo acabas con 5.400 €. ¿Qué rentabilidad has tenido?', 8, '%', '400 ÷ 5.000 = 0,08 → 8 %.'),
@@ -91,6 +262,6 @@ export default unit({
       tf('Para comparar bien, hay que usar el índice con dividendos y tu rentabilidad después de comisiones.', true, 'Así comparas lo que de verdad ganaste con lo que habría dado el índice.'),
       timed(single('Rápido: tu cartera de acciones mundiales ganó un 10 % y el MSCI World con dividendos un 12 %. ¿Cómo lo hiciste?', ['Peor, por 2 puntos', 'Mejor: ganaste un 10 %', 'Igual'], 0, '10 − 12 = −2 puntos frente a tu referencia.'), 12),
       tf('Comparar una cartera de acciones con un depósito al 2 % es una buena forma de saber si la gestionas bien.', false, 'Son riesgos distintos. Una cartera de acciones se compara con un índice de acciones parecido.'),
-    ], { source: '4.1' }),
+    ], { source: '4.1', minutes: 6, retire: [3, 4, 7, 8] }),
   ],
 })
