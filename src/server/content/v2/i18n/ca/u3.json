@@ -9,17 +9,41 @@
    "title": "TIN, TAE i el cost real d'un préstec",
    "steps": [
     {
+     "texts": [
+      "«Només 149 € al mes»",
+      "Venedor",
+      "Aquest cotxe te l'emportes avui per **només 149 € al mes**. Signem?",
+      "Què preguntes abans de signar?",
+      "On signo? 149 € em va bé",
+      "La quota sola no diu res. Durant quants mesos? Amb quin interès? Quant pagues en total?",
+      "Quants mesos, quin interès i quant pago en total?",
+      "Perfecte! Amb aquestes xifres ja pots comparar-ho amb altres ofertes.",
+      "Me'l deixeu a 129 €?",
+      "Regatejar la quota sense mirar el termini és una trampa: te la poden abaixar allargant-la anys.",
+      "Ehh… són 96 mesos al 9,9 % TIN.",
+      "8 anys pagant: més de **14.300 €** per un cotxe d'uns 10.000 €. Segur que són «només» 149 €?"
+     ]
+    },
+    {
+     "texts": [
+      "El que costa de debò un préstec",
+      "Demanes **6.000 €**. El banc t'ofereix un 7 % TIN i un 3 % de comissió d'obertura. La **TAE** hi suma les comissions i et diu el cost real en un any.",
+      "A 4 anys, quant acabaràs tornant en total, amb la comissió?",
+      "Uns 6.420 €",
+      "Uns 7.080 €",
+      "Uns 8.000 €",
+      "Quota de 143,68 € × 48 mesos + 180 € de comissió = **7.077 €**. Els 6.000 € et costen 1.077 €.",
+      "Amb 6.000 €, troba el termini amb què el préstec et costa menys de 500 €.",
+      "Una quota baixa no és un préstec barat: sol ser un préstec **més llarg**. Per comparar, mira sempre la **TAE** i quant pagues en total.",
+      "Quota petiteta… però mira quant tornes en total!",
+      "Veus que la TAE és més alta que el TIN? És la comissió.",
+      "Mou el termini i mira la quota i el total 👇"
+     ]
+    },
+    {
      "title": "TIN i TAE",
-     "body": "• **TIN (tipus d'interès nominal):** l'interès «pur» que et cobren pels diners prestats.\n• **TAE (taxa anual equivalent):** hi suma les **comissions** obligatòries i té en compte cada quant pagues. És el cost real en un any.\n\nEn els préstecs al consum, l'entitat t'ha d'informar de la TAE. Per comparar, mira sempre la TAE."
-    },
-    {
-     "title": "Per què la TAE és més alta",
-     "body": "Si pagues cada mes, els interessos es componen: un TIN del 12 % amb pagaments mensuals equival a una **TAE del 12,68 %**.\n\nLes comissions encara l'apugen més. A 3 anys, un préstec al 6 % TIN amb un 3 % de comissió d'obertura surt més car que un altre al 7,5 % TIN sense comissió: **TAE del 8,36 % davant del 7,76 %**."
-    },
-    {
-     "title": "Mira la quota i els interessos",
-     "body": "Demana 10.000 € a 5 anys al 7 %: pagues uns 198 € al mes i uns 1.881 € d'interessos. Allarga-ho a 10 anys: la quota baixa a uns 116 €… i els interessos pugen a uns 3.933 €.",
-     "tip": "Una quota baixa no és un préstec barat: sol ser un préstec més llarg."
+     "body": "• **TIN:** l'interès «pur» que et cobren pels diners prestats.\n• **TAE:** hi suma les **comissions** obligatòries i té en compte cada quant pagues. És el cost real en un any.\n\nA 3 anys, un préstec al 6 % TIN amb un 3 % de comissió surt més car que un altre al 7,5 % TIN sense comissió: **TAE del 8,36 % davant del 7,76 %**.",
+     "key": "Per comparar préstecs, mira la TAE, no el TIN ni la quota."
     }
    ]
   },
@@ -27,18 +51,43 @@
    "title": "Deute bo i deute dolent",
    "steps": [
     {
-     "title": "No tots els deutes són iguals",
-     "body": "• **Deute que pot crear valor:** paga una cosa que dura o que et genera ingressos, a un interès raonable. Una hipoteca assumible, un préstec barat per a una formació que millora el teu sou.\n• **Deute que destrueix valor:** finança consum que s'acaba abans que el deute, a un interès alt. Vacances a terminis, el mòbil de l'últim model amb la targeta revolving."
+     "texts": [
+      "Crea valor o en destrueix?",
+      "No tots els deutes són iguals. El que **pot tenir sentit** paga una cosa que dura o que et genera ingressos, a un interès raonable. El que convé **evitar** paga una cosa que s'acaba abans que el deute, i a sobre és car.",
+      "Pot tenir sentit",
+      "Millor evitar-lo",
+      "Hipoteca amb una quota assumible i el coixí fet",
+      "El pis dura dècades i l'interès sol ser baix… sempre que puguis pagar la quota.",
+      "Mòbil de l'últim model amb la targeta revolving",
+      "Es queda antiquat abans que l'acabis de pagar, i una revolving pot passar del 20 % TAE.",
+      "Préstec barat per a una formació que t'apuja el sou",
+      "Si de debò millora els teus ingressos, el deute es paga sol.",
+      "Vacances a 24 terminis",
+      "El viatge dura una setmana; el deute, dos anys.",
+      "Cotxe senzill que necessites per treballar, al 6 % TAE",
+      "Si sense cotxe no pots treballar, pot tenir sentit… sense passar-te de cotxe.",
+      "Minicrèdit per arribar a final de mes",
+      "Les seves TAE poden superar el 2.000 %: tapa un forat obrint-ne un de més gran.",
+      "Classifica els sis deutes.",
+      "**Tres preguntes abans de signar:** durarà més que el deute? Quina és la TAE (per sobre del 7-8 %, és car)? El podria pagar si els meus ingressos baixessin? Les quotes de tots els teus deutes no haurien de passar del **30-35 %** dels teus ingressos.",
+      "Pregunta't: això em durarà més del que trigo a pagar-ho?",
+      "Classifica cada deute 👇"
+     ]
     },
     {
-     "title": "Tres preguntes abans de signar",
-     "body": "1. El que compro durarà més que el deute?\n2. Quina és la **TAE**? Per sobre del 7-8 %, és deute car.\n3. Podria pagar la quota si els meus ingressos baixessin? Se sol recomanar que les quotes de tots els teus deutes no passin del **30-35 %** dels teus ingressos."
-    },
-    {
-     "title": "Fins i tot el «bo» té risc",
-     "body": "Una hipoteca és un bon deute només si la quota és assumible i tens coixí. Un màster a crèdit només crea valor si de debò t'apuja els ingressos.",
-     "key": "Deute bo: barat i per a una cosa que dura o genera ingressos. Dolent: car i per a una cosa que es consumeix.",
-     "tip": "Si ho gaudiràs menys temps del que trigaràs a pagar-ho, pensa-t'ho dues vegades."
+     "texts": [
+      "El Japó a terminis",
+      "Marta",
+      "Me'n vaig al Japó! El viatge costa 3.000 € i me'l financen a 24 mesos al 18 % TAE. M'ho mereixo! 🗾",
+      "Què li dius?",
+      "Genial, aprofita!",
+      "Amb aquest interès pagarà **més de 500 €** d'interessos, i encara estarà pagant el viatge més d'un any després de tornar.",
+      "I si estalvies uns quants mesos i hi vas l'any que ve?",
+      "Bona idea! Amb 250 € al mes ho té en un any, **sense interessos**, i gaudeix igual del viatge.",
+      "Demana-ho amb la revolving, que és més còmode",
+      "Encara pitjor: la quota petita de la revolving pot allargar el deute durant anys.",
+      "D'acord… però l'any que ve hi vaig sí o sí! 😄"
+     ]
     }
    ]
   },
@@ -46,17 +95,36 @@
    "title": "Targetes revolving i minicrèdits",
    "steps": [
     {
-     "title": "La revolving",
-     "body": "Una targeta revolving et deixa pagar una **quota fixa petita** cada mes. Sembla còmode, però la quota gairebé només cobreix els interessos: el deute es «renova» sol.\n\nLes seves TAE solen voltar el **20 % o més**. El 2020 el Tribunal Suprem va declarar usurària una revolving amb una TAE del 26,82 %."
+     "texts": [
+      "La trampa de la quota petita",
+      "Una targeta **revolving** et deixa pagar una quota fixa petita cada mes. Sembla còmode… però la quota amb prou feines cobreix els interessos.",
+      "Deus 3.000 € al 22 % i pagues 60 € al mes. Quant trigues a pagar-ho tot?",
+      "Uns 4 anys",
+      "Més d'11 anys",
+      "No l'acabes mai",
+      "**137 mesos**: més d'11 anys, i pagues uns **5.200 € d'interessos**, gairebé el doble del que devies.",
+      "Troba la quota amb què la liquides en 2 anys o menys.",
+      "La quota petita és l'esquer: mira **quant deus i quant pagues en total**. Apuja la quota tant com puguis i, quan la liquidis, passa-la a pagament total a final de mes.",
+      "Amb aquesta quota no pagues ni els interessos! El deute no baixa mai.",
+      "Anys i anys pagant… i els interessos es mengen gairebé tota la quota.",
+      "Així sí! Com més apuges la quota, menys interessos regales.",
+      "Apuja la quota i mira quant t'estalvies 👇"
+     ]
     },
     {
-     "title": "Els números",
-     "body": "Deus 1.000 € al 24 % TIN (2 % al mes) i pagues 30 € al mes: el primer mes 20 € són interessos i només 10 € fan baixar el deute. Trigues **uns 55 mesos** i pagues **uns 1.664 €**. Amb 25 € al mes: uns 81 mesos i més de 2.000 €.\n\n**Minicrèdits:** demanar 300 € i tornar-ne 390 al cap de 30 dies equival a una TAE de més del **2.300 %**."
-    },
-    {
-     "title": "Com sortir-ne",
-     "body": "• Deixa de fer servir la targeta.\n• Apuja la quota tant com puguis.\n• Quan la liquidis, passa-la a pagament total a final de mes.\n• Si creus que l'interès és abusiu, reclama a l'entitat i, si no et respon bé, al Banc d'Espanya.",
-     "key": "La quota petita és l'esquer: mira quant deus i quant pagues en total."
+     "texts": [
+      "300 € en 10 minuts",
+      "SMS",
+      "Hola! 💰 Et prestem **300 € en 10 minuts**, sense paperassa. Només en tornes 390 € en 30 dies. Demana'ls ara 👉",
+      "Et falten diners per al lloguer. Què fas?",
+      "Els demano, només són 90 € més",
+      "90 € per 300 € en un mes és una **TAE de més del 2.300 %**. I si no els tornes a temps, les penalitzacions ho fan créixer.",
+      "Parlo amb el propietari del pis o amb la família i reviso les despeses",
+      "Bé: negociar un retard o demanar ajuda surt moltíssim més barat que un minicrèdit.",
+      "Els demano i els pago amb la targeta revolving",
+      "Tapar un deute car amb un altre de car és la manera més ràpida d'entrar en una espiral.",
+      "Regla d'or: si t'ofereixen diners **ràpids i fàcils**, solen ser **cars**. I si creus que un interès és abusiu, reclama a l'entitat i, si no et respon bé, al Banc d'Espanya."
+     ]
     }
    ]
   },
@@ -64,16 +132,29 @@
    "title": "Bola de neu o allau",
    "steps": [
     {
-     "title": "Dos mètodes",
-     "body": "Amb diversos deutes, pagues el **mínim en tots** i tot el que et sobri va a un de sol:\n\n• **Allau:** primer el de **més interès**. És el que menys interessos et costa en total.\n• **Bola de neu:** primer el de **menys saldo**. Cancel·les un deute aviat i això motiva.\n\nQuan en cancel·les un, la seva quota se suma a la del següent: per això creix com una bola."
+     "texts": [
+      "Quatre deutes, un pla",
+      "En Pablo té quatre deutes. Cada mes paga el **mínim en tots** i el que li sobra va a un de sol:\n\n• **Bola de neu:** primer el més **petit**.\n• **Allau:** primer el de **més interès**.",
+      "Targeta revolving",
+      "Mòbil a terminis",
+      "Préstec del cotxe",
+      "Préstec del màster",
+      "Amb quin mètode pagarà en Pablo menys interessos en total?",
+      "Bola de neu",
+      "Allau",
+      "Tant se val: paguen el mateix",
+      "L'**allau** ataca primer el deute més car, el que genera més interessos cada mes.",
+      "Prova els dos mètodes i queda't amb el que paga menys interessos.",
+      "Amb els números a la mà guanya l'**allau**. Però la bola de neu dona victòries ràpides (un deute menys en pocs mesos!), i un pla que compleixes val més que un de perfecte que abandones.",
+      "Amb la bola de neu, en Pablo es treu un deute de sobre en pocs mesos. Això motiva! Ara prova l'allau.",
+      "Amb més extra, mira quants mesos et treus de sobre!",
+      "Compara els interessos dels dos mètodes 👇"
+     ]
     },
     {
-     "title": "Quin triar?",
-     "body": "Amb els números a la mà, guanya l'**allau**. Però si et costa mantenir el pla, la bola de neu dona victòries ràpides, i un pla que compleixes val més que un de perfecte que abandones.\n\nEl que no funciona: repartir el que sobra sense criteri, o demanar un altre deute car per pagar els anteriors."
-    },
-    {
-     "title": "Mira el pes de l'interès",
-     "body": "Posa 3.000 € a 3 anys al 22 %: uns 1.125 € d'interessos. Ara al 6 %: uns 286 €. Aquesta diferència és el que estalvies atacant primer el car."
+     "title": "El que no funciona",
+     "body": "Repartir el que sobra sense criteri, o demanar un altre deute car per pagar els anteriors.\n\nI un truc: quan cancel·les un deute, **la seva quota se suma a la del següent**. Per això el pla va cada cop més de pressa, com una bola que creix.",
+     "key": "Mínims a tots; la resta, a un de sol. Així se surt dels deutes."
     }
    ]
   },
@@ -81,17 +162,43 @@
    "title": "Invertir o amortitzar",
    "steps": [
     {
-     "title": "La regla del tipus d'interès",
-     "body": "Amortitzar (tornar abans) un deute et dona una **rendibilitat segura igual al seu tipus d'interès**.\n\n• Deute al 20 %: amortitzar és imbatible. Cap inversió no garanteix un 20 %.\n• Deute per sobre del **7-8 %**: gairebé sempre convé amortitzar abans d'invertir.\n• Hipoteca al 2-3 %: pots compaginar amortitzar i invertir."
+     "texts": [
+      "La paga extra d'en Bruno",
+      "Bruno",
+      "M'han donat una paga extra de **3.000 €**. Tinc un préstec del cotxe al 9 % i volia començar a invertir. Què faig primer?",
+      "Què li dius?",
+      "Inverteix: la borsa dona més a llarg termini",
+      "Potser sí… o potser no: la borsa no garanteix res. Amortitzar el préstec és **un 9 % segur**.",
+      "Amortitza el préstec: és un 9 % segur",
+      "Exacte! Tornar abans un deute et dona una rendibilitat **segura igual al seu interès**. Amb un 9 %, gairebé sempre guanya amortitzar.",
+      "Deixa'ls al compte i ja veuràs",
+      "Al compte a gairebé un 0 % mentre pagues un 9 % d'interessos: hi perds per totes dues bandes.",
+      "I si fos la meva hipoteca al 2 %?",
+      "Aquí la cosa canvia. Posem-hi ordre 👇"
+     ]
     },
     {
-     "title": "El que també compta",
-     "body": "• **Segur davant d'esperat:** la borsa ha donat més d'un 3 % a llarg termini, però sense garantia i amb anys de caigudes.\n• **Primer el coixí:** no amortitzis amb els diners d'emergències.\n• **Comissions:** algunes hipoteques cobren per amortitzar abans; mira el teu contracte.\n• **Tranquil·litat:** deure menys també val alguna cosa."
-    },
-    {
-     "title": "Compara",
-     "body": "Posa 5.000 €, 0 € al mes i 10 anys al 3 %: és el que «guanya» qui amortitza una hipoteca al 3 %, sense risc. Prova-ho al 7 %: més, però sense cap garantia.",
-     "tip": "Són exemples, no promeses: la borsa no rendeix el mateix cada any."
+     "texts": [
+      "Coixí, amortitzar o invertir?",
+      "**La regla:** amortitzar un deute equival a guanyar el seu tipus d'interès sense risc. Però abans de res, el coixí per als imprevistos.",
+      "Primer, el coixí",
+      "Amortitza",
+      "Invertir pot tenir sentit",
+      "Revolving al 21 %, amb el coixí fet",
+      "Amortitzar-la és un 21 % segur: cap inversió no et garanteix això.",
+      "Un deute al 8 % i cap estalvi per a imprevistos",
+      "Si buides el compte i se t'espatlla alguna cosa, acabaràs demanant diners una altra vegada, i més cars.",
+      "Hipoteca fixa al 2 %, coixí de 6 mesos i 20 anys per endavant",
+      "Amb un deute tan barat i el coixí fet, pots compaginar amortitzar i invertir a llarg termini.",
+      "Préstec del cotxe al 9 %, amb el coixí fet",
+      "Per sobre del 7-8 %, amortitzar gairebé sempre guanya.",
+      "Préstec de la teva família al 0 %, amb el coixí fet",
+      "Amortitzar al 0 % no et dona cap rendibilitat (tot i que deure diners a la família també pesa).",
+      "Decideix què faria en Bruno en cada cas.",
+      "**Per ordre:** coixí → deutes cars (més del 7-8 %) → invertir a llarg termini, i amortitzar els barats si et dona tranquil·litat. Abans d'amortitzar una hipoteca, mira si et cobren comissió per fer-ho.",
+      "Pregunta't primer: té coixí? Després mira l'interès del deute.",
+      "Què faria en Bruno en cada cas? 👇"
+     ]
     }
    ]
   },
@@ -125,37 +232,6 @@
    "options": [],
    "explanation": "198,01 × 60 = 11.880,60 €; menys els 10.000 € prestats = uns 1.881 € d'interessos.",
    "unit": "€"
-  },
-  "u3l1-4": {
-   "prompt": "La TAE mai no pot ser més alta que el TIN.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Sol ser més alta: hi suma comissions i l'efecte de pagar interessos cada mes."
-  },
-  "u3l1-5": {
-   "prompt": "El Bruno es comprarà un cotxe i el concessionari li ofereix «una quota de només 149 € al mes». Què fa?",
-   "options": [
-    "Pregunta la TAE, el termini i el total que pagarà",
-    "Signa: 149 € al mes s'ho pot permetre",
-    "Demana que li allarguin encara més el termini per pagar menys"
-   ],
-   "explanation": "La quota sola enganya: el que compta és la TAE i el total a pagar.",
-   "feedback": [
-    "Descobreix que són 84 quotes: gairebé 12.520 € en total. Ara sí que pot comparar amb altres ofertes.",
-    "Que la quota hi càpiga no diu res del cost: pot estar pagant el cotxe gairebé dues vegades.",
-    "Quota més baixa, però més mesos pagant interessos."
-   ]
-  },
-  "u3l1-6": {
-   "prompt": "Ràpid: quina xifra inclou les comissions obligatòries?",
-   "options": [
-    "TIN",
-    "Euríbor",
-    "TAE"
-   ],
-   "explanation": "La TAE. El TIN és només l'interès; l'euríbor és un índex de referència per a préstecs variables."
   },
   "u3l1-7": {
    "prompt": "Relaciona cada terme amb el que significa.",
@@ -199,21 +275,6 @@
    ],
    "explanation": "Tornar-lo abans sense penalització redueix els interessos: és l'única cosa de la llista que l'abarateix."
   },
-  "u3l2-1": {
-   "prompt": "Aquest deute sol crear o destruir valor?",
-   "options": [
-    "Vacances pagades amb la revolving",
-    "Préstec barat per a una FP que t'apuja el sou",
-    "Mòbil de 1.200 € a 24 mesos amb interessos",
-    "Hipoteca assumible al 3 %",
-    "Sopar d'aniversari ajornat amb la targeta al 20 %"
-   ],
-   "explanation": "La pregunta clau: el que compres dura o rendeix més del que costa el deute?",
-   "right": [
-    "Sol crear valor",
-    "Sol destruir valor"
-   ]
-  },
   "u3l2-2": {
    "prompt": "Relaciona cada deute amb la seva descripció.",
    "options": [
@@ -230,14 +291,6 @@
     "Un habitatge que dura més que el deute"
    ]
   },
-  "u3l2-3": {
-   "prompt": "Tota hipoteca és un deute bo.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Només si la quota és assumible i tens coixí. Una hipoteca que no pots pagar és un problema enorme."
-  },
   "u3l2-4": {
    "prompt": "Un deute al 20 % TAE és un deute car.",
    "options": [
@@ -245,20 +298,6 @@
     "Fals"
    ],
    "explanation": "Molt per sobre del 7-8 %: cal eliminar-lo com més aviat millor."
-  },
-  "u3l2-5": {
-   "prompt": "La Marta, de 24 anys, vol anar al Japó. El viatge costa 3.000 € i li ofereixen finançar-lo a 2 anys amb una TAE del 14 %. Què fa?",
-   "options": [
-    "El paga amb la targeta revolving",
-    "El finança: així viatja ja",
-    "Estalvia 250 € al mes i viatja d'aquí a un any"
-   ],
-   "explanation": "Per als desitjos, millor estalviar abans que deure després.",
-   "feedback": [
-    "Amb una TAE al voltant del 20 % o més, el viatge li pot costar molt més i durant anys.",
-    "Pagarà el viatge durant dos anys i amb uns 430 € d'interessos: el record dura menys que el deute.",
-    "Viatja un any més tard, sense interessos i sense quotes a la tornada."
-   ]
   },
   "u3l2-6": {
    "prompt": "Cobres 1.800 € nets. Si les quotes dels teus deutes no han de passar del 35 % dels teus ingressos, quant pots pagar com a màxim al mes?",
@@ -294,7 +333,7 @@
    ]
   },
   "u3l2-9": {
-   "prompt": "El Pablo pot demanar 6.000 € al 6 % TAE per a un curs certificat amb el qual, en el seu sector, el sou sol pujar uns 300 € al mes. Té coixí. Què fa?",
+   "prompt": "En Pablo pot demanar 6.000 € al 6 % TAE per a un curs certificat amb el qual, en el seu sector, el sou sol pujar uns 300 € al mes. Té coixí. Què fa?",
    "options": [
     "El posa a la revolving per no demanar cap préstec",
     "Demana 10.000 € per donar-se algun caprici també",
@@ -311,12 +350,6 @@
    "prompt": "Deus 1.000 € en una revolving al 2 % mensual. Quants euros d'interessos pagues el primer mes?",
    "options": [],
    "explanation": "1.000 × 0,02 = 20 €.",
-   "unit": "€"
-  },
-  "u3l3-2": {
-   "prompt": "Ràpid: pagues 30 € de quota i 20 € són interessos. Quant baixa el teu deute aquell mes?",
-   "options": [],
-   "explanation": "30 − 20 = 10 €. Només un terç del que pagues redueix el deute.",
    "unit": "€"
   },
   "u3l3-3": {
@@ -378,15 +411,6 @@
    ],
    "explanation": "Pagar un deute car amb un altre encara més car només empitjora el problema."
   },
-  "u3l3-8": {
-   "prompt": "Ràpid: quin deute és més car?",
-   "options": [
-    "Hipoteca al 3 % TAE",
-    "Préstec personal al 8 % TAE",
-    "Revolving al 22 % TAE"
-   ],
-   "explanation": "La revolving: gairebé tres vegades el préstec personal i més de set vegades la hipoteca."
-  },
   "u3l3-9": {
    "prompt": "Un minicrèdit de 300 € pel qual en tornes 390 al cap de 30 dies té una TAE de més del ____.",
    "options": [
@@ -396,24 +420,6 @@
     "2.300 %"
    ],
    "explanation": "Un 30 % en un mes, compost durant un any, supera el 2.300 %."
-  },
-  "u3l3-10": {
-   "prompt": "Què li contestes a la Lumi?",
-   "options": [
-    "Sí, així no t'angoixes",
-    "Demana una altra targeta per pagar aquesta",
-    "Compte: amb aquesta quota gairebé tot són interessos"
-   ],
-   "explanation": "Una quota còmoda pot amagar un deute que dura anys.",
-   "feedback": [
-    "Amb 1.000 € al 2 % mensual, a 25 € al mes trigaries uns 81 mesos i pagaries més de 2.000 €.",
-    "Així tindries dos deutes cars en lloc d'un.",
-    "Això! Apuja la quota tant com puguis i deixa de fer-la servir fins a liquidar-la."
-   ],
-   "lines": [
-    "La meva targeta em deixa pagar només 25 € al mes del que dec 😌",
-    "Així vaig tranquil·la, oi?"
-   ]
   },
   "u3l4-1": {
    "prompt": "Mètode allau: ordena quin deute ataques primer.",
@@ -457,14 +463,8 @@
    "explanation": "1.200 × 0,22 = 264 € l'any.",
    "unit": "€"
   },
-  "u3l4-5": {
-   "prompt": "Ràpid: cancel·les la compra a terminis, que tenia una quota de 90 €. A la revolving li pagaves 150 €. Quant li pagues ara cada mes?",
-   "options": [],
-   "explanation": "150 + 90 = 240 €: la quota alliberada se suma a la del deute següent.",
-   "unit": "€"
-  },
   "u3l4-6": {
-   "prompt": "El Pablo ha provat dues vegades l'allau i ho ha deixat: el seu deute gran no s'acaba mai i es desanima. Què fa?",
+   "prompt": "En Pablo ha provat dues vegades l'allau i ho ha deixat: el seu deute gran no s'acaba mai i es desanima. Què fa?",
    "options": [
     "Demana un minicrèdit per pagar-ho tot de cop",
     "Deixa de pagar el gran durant un temps",
@@ -491,23 +491,6 @@
     "Estalvia un 6 % quan podria estalviar un 21 %."
    ]
   },
-  "u3l4-8": {
-   "prompt": "La bola de neu és sempre el mètode que menys interessos et fa pagar.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Aquest és l'allau. La bola de neu sacrifica una mica de diners a canvi de motivació."
-  },
-  "u3l4-9": {
-   "prompt": "Ràpid: a l'allau, què mires per triar?",
-   "options": [
-    "El tipus d'interès",
-    "El nom del banc",
-    "El saldo pendent"
-   ],
-   "explanation": "L'interès: primer el deute més car."
-  },
   "u3l4-10": {
    "prompt": "Què és mala idea si tens diversos deutes? Marca-les totes.",
    "options": [
@@ -518,22 +501,6 @@
    ],
    "explanation": "Pagar el mínim en tots i concentrar l'extra és justament la base dels dos mètodes."
   },
-  "u3l5-1": {
-   "prompt": "Què sol tenir més sentit?",
-   "options": [
-    "Préstec personal al 9 %",
-    "Hipoteca fixa al 2 %",
-    "Minicrèdit",
-    "Hipoteca variable al 2,5 %",
-    "Revolving al 22 %",
-    "Préstec d'un familiar al 0 %"
-   ],
-   "explanation": "Per sobre del 7-8 %, amortitzar sol guanyar; amb deute barat hi ha marge per decidir.",
-   "right": [
-    "Amortitzar primer",
-    "Es pot compaginar amb invertir"
-   ]
-  },
   "u3l5-2": {
    "prompt": "Amortitzes 3.000 € d'un préstec al 9 %. Quants interessos t'estalvies el primer any, aproximadament?",
    "options": [],
@@ -541,7 +508,7 @@
    "unit": "€"
   },
   "u3l5-3": {
-   "prompt": "El Bruno té una hipoteca fixa al 2 %, un coixí de 6 mesos i 10.000 € més estalviats que no necessitarà en 15 anys. Què fa?",
+   "prompt": "En Bruno té una hipoteca fixa al 2 %, un coixí de 6 mesos i 10.000 € més estalviats que no necessitarà en 15 anys. Què fa?",
    "options": [
     "Demana un altre préstec per invertir més",
     "Compara el 2 % segur d'amortitzar amb invertir a llarg termini i de manera diversificada, sense tocar el coixí",
@@ -567,22 +534,6 @@
     "Per sortir-hi guanyant, el fons hauria de rendir més d'un 21 % l'any.",
     "Millor que res, però manté viu un deute al 21 %."
    ]
-  },
-  "u3l5-5": {
-   "prompt": "Amortitzar un deute al 20 % equival a una rendibilitat segura del 20 %.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Cada euro que tornes deixa de costar-te un 20 % l'any."
-  },
-  "u3l5-6": {
-   "prompt": "Convé fer servir el fons d'emergència per amortitzar la hipoteca.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "El coixí és per a imprevistos; si te'l gastes, el pròxim ensurt acaba en deute car."
   },
   "u3l5-7": {
    "prompt": "Tens un deute al 4 %. Què et dona amortitzar-lo?",

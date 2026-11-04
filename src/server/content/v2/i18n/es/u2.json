@@ -9,12 +9,48 @@
    "title": "Tu presupuesto en 10 minutos",
    "steps": [
     {
-     "title": "Lo que entra y lo que sale",
-     "body": "Un presupuesto es apuntar **lo que entra** (nómina, paga, trabajos extra) y **lo que sale** cada mes. Sin él, el dinero se va sin que sepas dónde.\n\nEmpieza mirando los movimientos del banco de los últimos 3 meses: es la foto real, no la que crees."
+     "texts": [
+      "¿Dónde se ha ido mi sueldo?",
+      "Laura",
+      "Otra vez a final de mes casi a cero. ¡Pero si cobro 1.400 €! 😩",
+      "No sé ni en qué me lo gasto.",
+      "¿Qué le aconsejas primero?",
+      "Que deje de salir y no se compre nada más",
+      "Recortar a ciegas suele durar poco. Primero hay que saber **en qué** se va el dinero.",
+      "Que mire los movimientos del banco del último mes",
+      "¡Eso es! Es la foto real de sus gastos, no la que cree. Con eso puede hacer su **presupuesto**.",
+      "Que pida un adelanto de la nómina",
+      "Un adelanto solo pasa el problema al mes siguiente… y a veces con comisiones.",
+      "Laura abre la app del banco y empieza a apuntar…"
+     ]
     },
     {
-     "title": "Fijos y variables",
-     "body": "• **Gastos fijos:** casi iguales cada mes y difíciles de recortar a corto plazo: alquiler, tarifa del móvil, transporte, seguros.\n• **Gastos variables:** cambian cada mes y dependen más de ti: comida fuera, ropa, ocio, compras online.\n\nLos fijos se recortan una vez (cambiando de tarifa o renegociando); los variables, cada día."
+     "texts": [
+      "Fijo o variable",
+      "Estos son los gastos de Laura del último mes. Sepáralos: los **fijos** son casi iguales cada mes; los **variables** cambian y dependen más de ella.",
+      "Fijo",
+      "Variable",
+      "Alquiler",
+      "Es igual cada mes: solo se recorta cambiando de piso o compartiendo.",
+      "Comida a domicilio",
+      "Cambia cada mes y depende de ella: variable.",
+      "Tarifa del móvil",
+      "El mismo importe cada mes. Se recorta una vez, cambiando de tarifa.",
+      "Ropa",
+      "Variable: unos meses mucho, otros nada.",
+      "Abono de transporte",
+      "Fijo: lo paga igual cada mes.",
+      "Salidas y ocio",
+      "Variable, y suele ser donde más margen hay.",
+      "Supermercado",
+      "Cambia cada mes según lo que compra: variable.",
+      "Dos plataformas de series",
+      "Se cobran solas cada mes: fijas (y fáciles de olvidar).",
+      "Clasifica todos sus gastos.",
+      "Laura gasta **1.372 €**: 512 € fijos y 860 € variables. De sus 1.400 € le quedan 28 €. Ahí está el problema… y también el margen: los fijos se recortan una vez; los variables, cada día.",
+      "Pista: ¿lo paga igual cada mes? Entonces es fijo.",
+      "¿Fijo o variable? Elige para cada gasto 👇"
+     ]
     },
     {
      "title": "La cuenta que importa",
@@ -28,17 +64,35 @@
    "title": "La regla 50/30/20",
    "steps": [
     {
-     "title": "Un método sencillo",
-     "body": "La regla 50/30/20, popularizada por la senadora estadounidense Elizabeth Warren, reparte lo que cobras **neto**:\n\n• **50 % necesidades:** vivienda, comida básica, transporte, facturas.\n• **30 % deseos:** ocio, viajes, caprichos.\n• **20 % ahorro** y pagar deudas."
-    },
-    {
-     "title": "Pruébalo con un sueldo",
-     "body": "Mueve el sueldo neto y mira cuánto tocaría a cada bloque.",
-     "tip": "Es una guía orientativa, no una ley: adáptala a tu caso."
+     "texts": [
+      "Reparte el sueldo de Laura",
+      "La regla **50/30/20** reparte lo que cobras **neto**: el 50 % para necesidades, el 30 % para deseos y el 20 % para ahorrar o pagar deudas. Así están ahora los gastos de Laura:",
+      "Necesidades",
+      "Deseos",
+      "Ahorro",
+      "Alquiler",
+      "Supermercado",
+      "Transporte",
+      "Luz, agua e internet",
+      "Salidas y ocio",
+      "Comida a domicilio",
+      "Ropa",
+      "Con estos gastos, ¿cuánto puede ahorrar Laura cada mes?",
+      "Unos 10 €",
+      "Unos 150 €",
+      "Unos 280 €, el 20 %",
+      "Necesidades, 800 €; deseos, 590 €: le quedan **10 €**. No es que gane poco: es que todo se va en el día a día.",
+      "Ajusta los gastos para que Laura ahorre al menos el 20 %.",
+      "Con el ahorro **reservado**, el resto se reparte solo. Si la vivienda se come más del 50 %, ajusta (60/25/15 o lo que puedas), pero sin quitar nunca la parte del ahorro.",
+      "¡Cuidado! Así gasta más de lo que cobra.",
+      "¡Casi! Un empujoncito más y llega al 20 %.",
+      "Los deseos ya están en su sitio. ¿Se puede ahorrar algo en el súper o en el alquiler?",
+      "Empieza por lo que más margen tiene: los deseos 👇"
+     ]
     },
     {
      "title": "Cuando no cuadra",
-     "body": "En ciudades caras, solo el alquiler puede llevarse el 40 % del sueldo. Entonces ajustas (60/25/15 o lo que puedas), pero **siempre con un porcentaje de ahorro reservado**, aunque empiece en un 5 %.",
+     "body": "La regla la popularizó la senadora estadounidense Elizabeth Warren. En ciudades caras, solo el alquiler puede llevarse el 40 % del sueldo. Entonces ajustas, pero **siempre con un porcentaje de ahorro reservado**, aunque empiece en un 5 %.",
      "key": "Lo importante no son los números exactos: es que el ahorro tenga su parte fija."
     }
    ]
@@ -47,17 +101,31 @@
    "title": "Gastos hormiga y suscripciones",
    "steps": [
     {
-     "title": "Pequeños, pero muchos",
-     "body": "Un **gasto hormiga** es pequeño y frecuente: el café para llevar, el snack de la máquina, los gastos de envío, la recarga del juego. Uno solo no se nota; sumados, sí.\n\n• 1,80 € de café cada día laborable (20 al mes) = **432 € al año**.\n• 3 € diarios en caprichos = **1.095 € al año**."
+     "texts": [
+      "Caza tus gastos hormiga",
+      "Un **gasto hormiga** es pequeño y frecuente. Uno solo no se nota… ¿y todos juntos? Apaga los que podrías quitarte sin echarlos de menos.",
+      "Café para llevar",
+      "Refresco de la máquina",
+      "Gastos de envío",
+      "Tercera plataforma de series",
+      "Gimnasio al que no vas",
+      "Recargas del juego",
+      "Un café para llevar de 1,80 € cada día. ¿Cuánto es en un año?",
+      "Unos 65 €",
+      "Unos 650 €",
+      "Unos 1.800 €",
+      "1,80 € × 365 días = **657 €** al año. Lo pequeño, repetido, se hace grande.",
+      "Recorta al menos 1.000 € al año sin quitarlo todo.",
+      "No se trata de no gastar nunca, sino de gastar en lo que **de verdad** te importa. Lo que recortas, invertido durante años, crece con el interés compuesto (7 % es un ejemplo, no una promesa).",
+      "¡Todo fuera! No hace falta ser tan duro: quédate con lo que de verdad disfrutas.",
+      "Cada interruptor que apagas es dinero para ti 👀 Mira la cifra de abajo.",
+      "Apaga lo que podrías quitarte sin echarlo de menos 👇"
+     ]
     },
     {
      "title": "Las suscripciones",
-     "body": "Streaming, música, gimnasio, apps, nube… Se cobran solas y por eso se olvidan.\n\nCuatro suscripciones de 12 € son 48 € al mes: **576 € al año**. Revisa el extracto y pregúntate de cada una: ¿la he usado este mes?"
-    },
-    {
-     "title": "Lo que podrían llegar a ser",
-     "body": "Pon 90 € al mes (unos 3 € al día) al 7 % durante 30 años: unos 110.000 €, con 32.400 € aportados. Es un ejemplo, no una promesa.",
-     "tip": "No se trata de no gastar nunca, sino de gastar en lo que de verdad te importa."
+     "body": "Streaming, música, gimnasio, apps, nube… Se cobran solas y por eso se olvidan. Cuatro suscripciones de 12 € son 48 € al mes: **576 € al año**.\n\nRevisa el extracto y pregúntate de cada una: ¿la he usado este mes? Muchas pruebas gratis pasan a ser de pago si no las cancelas.",
+     "key": "Lo pequeño y repetido se hace grande: revisa tus cargos una vez al mes."
     }
    ]
   },
@@ -65,17 +133,28 @@
    "title": "El fondo de emergencia",
    "steps": [
     {
-     "title": "Tu colchón",
-     "body": "El fondo de emergencia es dinero apartado **solo para imprevistos**: una avería, quedarte sin trabajo, el dentista.\n\nLa regla habitual: entre **3 y 6 meses de tus gastos** (no de tu sueldo). Si eres autónomo o tu trabajo es inestable, mejor de 6 a 12."
+     "texts": [
+      "Un año con imprevistos",
+      "Laura cobra 1.400 € y gasta 1.200 € al mes. Este año le van a pasar cosas, como a todo el mundo. Decide cuánto aparta cada mes y vive el año.",
+      "Se le rompe el móvil",
+      "Visita urgente al dentista",
+      "Avería del coche",
+      "Si Laura no aparta nada, ¿qué pasa cuando llegan los imprevistos?",
+      "Nada: ya se apañará",
+      "Los paga con la tarjeta y acaba debiendo dinero con intereses",
+      "El banco se los paga gratis",
+      "Sin colchón, cada imprevisto se convierte en **deuda**, y la deuda de tarjeta cobra intereses altos.",
+      "Vive el año sin acabar debiendo nada a la tarjeta.",
+      "Ese colchón es tu **fondo de emergencia**: dinero apartado solo para imprevistos. La regla habitual: entre **3 y 6 meses de gastos** (de 6 a 12 si tu trabajo es inestable).",
+      "¡Ay! El imprevisto ha ido a la tarjeta… y ahora cobra intereses. Prueba a apartar más.",
+      "Ahora dale a «Vivir el año» y mira qué pasa.",
+      "Elige cuánto aparta Laura cada mes y dale a «Vivir el año» 👇"
+     ]
     },
     {
      "title": "Dónde guardarlo",
-     "body": "Tiene que estar **disponible y sin riesgo**: cuenta remunerada, depósito que puedas cancelar sin perder lo que pusiste o Letras del Tesoro (a 3, 6, 9 o 12 meses) para una parte.\n\nLos depósitos están cubiertos por el **Fondo de Garantía de Depósitos hasta 100.000 €** por titular y entidad. **En bolsa, no:** las crisis traen a la vez despidos y caídas."
-    },
-    {
-     "title": "Cuánto tardas en llenarlo",
-     "body": "Pon la rentabilidad a 0 % y prueba: con 200 € al mes, en 2 años juntas 4.800 €. ¿Qué aportación necesitas para tu objetivo?",
-     "tip": "Un colchón a medias ya te salva de muchos sustos: empieza por un mes de gastos."
+     "body": "Tiene que estar **disponible y sin riesgo**: cuenta remunerada, depósito que puedas cancelar sin perder lo que pusiste o Letras del Tesoro para una parte.\n\nLos depósitos están cubiertos por el **Fondo de Garantía de Depósitos hasta 100.000 €** por titular y entidad. **En bolsa, no:** las crisis traen a la vez despidos y caídas.",
+     "key": "Un colchón a medias ya te salva de muchos sustos: empieza por un mes de gastos."
     }
    ]
   },
@@ -83,16 +162,37 @@
    "title": "Págate primero a ti",
    "steps": [
     {
-     "title": "Ahorrar lo que sobra no funciona",
-     "body": "Si esperas a final de mes para ahorrar «lo que sobre», casi nunca sobra: el gasto se estira hasta llenar el sueldo.\n\n**Págate primero a ti:** el mismo día que cobras, una parte se va sola al ahorro. Gastas lo que queda, no al revés."
+     "texts": [
+      "El experimento de Pablo",
+      "Pablo",
+      "Este mes voy a ahorrar **lo que sobre** a final de mes. ¡Seguro que algo queda!",
+      "Día 30…",
+      "Pues… han sobrado 12 €. No sé cómo, pero siempre se va todo 🤷",
+      "¿Qué le propones para el mes que viene?",
+      "Que lo intente otra vez con más fuerza de voluntad",
+      "La fuerza de voluntad se agota. El gasto se estira hasta llenar el sueldo: casi nunca «sobra».",
+      "Que programe una transferencia de 150 € el día que cobra",
+      "¡Eso es **pagarte primero a ti**! El ahorro sale solo el día de cobro y gastas lo que queda.",
+      "Que guarde las monedas sueltas en una hucha",
+      "Algo es algo, pero con monedas no llega lejos. Mejor un porcentaje fijo y automático.",
+      "Un mes después…",
+      "¡He apartado 150 € y ni lo he notado! He gastado un poco menos sin darme cuenta."
+     ]
+    },
+    {
+     "texts": [
+      "Lo que hace un hábito",
+      "¿Y si Pablo mantiene esa transferencia automática durante años y la invierte? Pongamos un 5 % al año: es un ejemplo, no una promesa.",
+      "Llega a 100.000 € apartando como mucho 200 € al mes.",
+      "El ahorro automático no depende de tu fuerza de voluntad. Empieza con un 5-10 % del sueldo y súbelo con cada aumento: el tiempo hace el resto.",
+      "Así es fácil… ¡pero el reto es con 200 € al mes como mucho!",
+      "Fíjate en cuánto pone el tiempo frente a lo que pones tú.",
+      "Mueve los años y lo que aparta al mes 👇"
+     ]
     },
     {
      "title": "Automatízalo",
-     "body": "1. Abre una cuenta separada para el ahorro (mejor si es remunerada).\n2. Programa una **transferencia periódica** para el día después de cobrar.\n3. Empieza con un porcentaje que no duela (5-10 %) y súbelo con cada aumento de sueldo.\n\nLo automático no depende de tu fuerza de voluntad."
-    },
-    {
-     "title": "El orden importa",
-     "body": "Laura cobra 1.500 € el día 28 y el 29 se le transfieren 150 € al ahorro. En un año son 1.800 € sin pensarlo, y su gasto se ajusta a 1.350 €.",
+     "body": "1. Abre una cuenta separada para el ahorro.\n2. Programa una **transferencia periódica** para el día después de cobrar.\n3. Empieza con un porcentaje que no duela (5-10 %) y súbelo con cada aumento de sueldo.",
      "key": "Primero ahorras; luego gastas lo que queda.",
      "tip": "Lo que no ves en la cuenta de gastos no lo echas de menos."
     }
@@ -118,22 +218,6 @@
     "Las cenas con amigos",
     "Lo que queda a final de mes",
     "La nómina"
-   ]
-  },
-  "u2l1-2": {
-   "prompt": "¿Gasto fijo o variable?",
-   "options": [
-    "Abono de transporte",
-    "Pedidos de comida a domicilio",
-    "Ropa",
-    "Regalos",
-    "Tarifa del móvil",
-    "Cuota del gimnasio"
-   ],
-   "explanation": "Los fijos se repiten casi iguales cada mes; los variables cambian según lo que decides cada día.",
-   "right": [
-    "Fijo",
-    "Variable"
    ]
   },
   "u2l1-3": {
@@ -175,37 +259,6 @@
     "Ahorro"
    ]
   },
-  "u2l1-7": {
-   "prompt": "La tarifa mensual del móvil es un gasto variable.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Es fija: pagas lo mismo cada mes. Se recorta una vez, cambiando a una tarifa más barata."
-  },
-  "u2l1-8": {
-   "prompt": "Rápido: ¿qué es más fácil de recortar esta misma semana?",
-   "options": [
-    "Las comidas a domicilio",
-    "El seguro del coche",
-    "El alquiler"
-   ],
-   "explanation": "Los variables dependen de tus decisiones diarias; los fijos necesitan tiempo o renegociar."
-  },
-  "u2l1-9": {
-   "prompt": "Bruno llega a fin de mes sin un euro y no sabe por qué. ¿Qué hace?",
-   "options": [
-    "Pide un adelanto de nómina",
-    "Se convence de que solo necesita ganar más",
-    "Apunta todos sus gastos durante un mes"
-   ],
-   "explanation": "Antes de recortar o de buscar más ingresos, hay que saber a dónde va el dinero.",
-   "feedback": [
-    "Tapa el agujero un mes, pero el problema sigue y ahora además debe dinero.",
-    "Quizá, pero sin saber en qué gasta, un sueldo mayor suele acabar igual a fin de mes.",
-    "Descubre que 180 € se le van en pedidos y compras pequeñas: ya sabe por dónde recortar."
-   ]
-  },
   "u2l1-10": {
    "prompt": "¿Qué son ingresos? Marca todos.",
    "options": [
@@ -228,24 +281,6 @@
    "explanation": "30 % de 2.000 = 600 €.",
    "unit": "€"
   },
-  "u2l2-3": {
-   "prompt": "Clasifica cada gasto según la regla 50/30/20.",
-   "options": [
-    "Factura de la luz",
-    "Viaje en verano",
-    "Entrada de un concierto",
-    "Pagar de más una deuda",
-    "Compra básica del súper",
-    "Alquiler",
-    "Aportación al fondo de emergencia"
-   ],
-   "explanation": "Necesidad es lo que no puedes dejar de pagar; deseo, lo que eliges; y el ahorro incluye pagar deudas antes de tiempo.",
-   "right": [
-    "Necesidades (50 %)",
-    "Deseos (30 %)",
-    "Ahorro (20 %)"
-   ]
-  },
   "u2l2-4": {
    "prompt": "Reparte un sueldo de 1.500 € con la regla 50/30/20: como mucho un 50 % en necesidades y un 30 % en deseos, y al menos un 20 % de ahorro.",
    "options": [
@@ -266,14 +301,6 @@
     "Ahorro"
    ]
   },
-  "u2l2-5": {
-   "prompt": "La regla 50/30/20 se aplica sobre el sueldo bruto, antes de impuestos.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Se aplica sobre el neto: lo que de verdad llega a tu cuenta."
-  },
   "u2l2-6": {
    "prompt": "Si el alquiler ya se lleva el 45 % del sueldo, lo mejor es dejar de ahorrar hasta que cambie.",
    "options": [
@@ -292,15 +319,6 @@
    ],
    "explanation": "50 % necesidades, 30 % deseos y 20 % ahorro."
   },
-  "u2l2-8": {
-   "prompt": "Rápido: sueldo neto de 1.000 €. ¿Cuánto va a deseos?",
-   "options": [
-    "500 €",
-    "300 €",
-    "200 €"
-   ],
-   "explanation": "30 % de 1.000 = 300 €."
-  },
   "u2l2-9": {
    "prompt": "Laura cobra 1.800 € netos y sus necesidades ya suman 1.000 € (un 56 %). ¿Qué hace?",
    "options": [
@@ -315,43 +333,11 @@
     "Así el 30 % se convierte en deuda con intereses: el agujero crece cada mes."
    ]
   },
-  "u2l2-10": {
-   "prompt": "¿Qué le contestas a Lumi?",
-   "options": [
-    "Pide un préstamo para llegar a los 240 €",
-    "Empieza con 60 € y ve subiendo cuando puedas",
-    "Si no llegas al 20 %, mejor no ahorrar nada"
-   ],
-   "explanation": "La regla es una meta orientativa: empezar con poco y subir es mejor que no empezar.",
-   "feedback": [
-    "Ahorrar con dinero prestado es pagar intereses por nada.",
-    "¡Eso! 60 € al mes son 720 € al año. El hábito importa más que la cifra perfecta.",
-    "Así nunca empiezas: el hábito se crea con poco."
-   ],
-   "lines": [
-    "Cobro 1.200 € y con la 50/30/20 me tocan 240 € de ahorro.",
-    "Pero este mes solo puedo apartar 60 €… ¿no vale la pena?"
-   ]
-  },
   "u2l3-1": {
    "prompt": "Tomas un café de 1,50 € cada día laborable (20 al mes). ¿Cuánto gastas en un año?",
    "options": [],
    "explanation": "1,50 × 20 × 12 = 360 €.",
    "unit": "€"
-  },
-  "u2l3-2": {
-   "prompt": "Rápido: 2 € al día durante todo un año (365 días). ¿Cuánto es?",
-   "options": [],
-   "explanation": "2 × 365 = 730 €.",
-   "unit": "€"
-  },
-  "u2l3-3": {
-   "prompt": "Un gasto de 2 € no merece la pena vigilarlo.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Si se repite cada día, son 730 € al año. Lo que pesa es la frecuencia."
   },
   "u2l3-4": {
    "prompt": "¿Cuáles son gastos hormiga típicos? Marca todos.",
@@ -412,24 +398,6 @@
    ],
    "explanation": "12 × 4 = 48 € al mes; 48 × 12 = 576 € al año."
   },
-  "u2l3-10": {
-   "prompt": "¿Qué le contestas a Lumi?",
-   "options": [
-    "Deja de comer en la uni para siempre",
-    "Calcula cuánto es al año y decide si lo vale",
-    "Sí, eso no es nada"
-   ],
-   "explanation": "Pasar el gasto diario a cifra anual ayuda a decidir con la cabeza.",
-   "feedback": [
-    "Tampoco hace falta pasar hambre: se trata de decidir, no de castigarse.",
-    "Eso: 4 € al día son 1.460 € al año. Si lo vale para ti, adelante; si no, ya sabes de dónde sacar ahorro.",
-    "Son 1.460 € al año: bastante más que «nada»."
-   ],
-   "lines": [
-    "Me he dado cuenta de que gasto 4 € al día en la máquina de la uni 🍫",
-    "Bah, son 4 €…"
-   ]
-  },
   "u2l4-1": {
    "prompt": "Gastas 1.100 € al mes. ¿Cuánto debería tener un colchón de 6 meses?",
    "options": [],
@@ -475,29 +443,6 @@
     "Tenía dinero disponible y aun así convierte una caída temporal en pérdida real."
    ]
   },
-  "u2l4-5": {
-   "prompt": "Si eres autónomo, conviene un colchón mayor que con un contrato indefinido.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Tus ingresos son más irregulares: se suele recomendar de 6 a 12 meses de gastos."
-  },
-  "u2l4-6": {
-   "prompt": "Quieres un colchón de 4.800 € y apartas 200 € al mes. ¿Cuántos meses tardas?",
-   "options": [],
-   "explanation": "4.800 ÷ 200 = 24 meses.",
-   "unit": "meses"
-  },
-  "u2l4-7": {
-   "prompt": "Rápido: ¿qué cubre el Fondo de Garantía de Depósitos?",
-   "options": [
-    "Hasta 100.000 € por titular y entidad",
-    "Toda tu cartera de acciones",
-    "Hasta 10.000 € por persona"
-   ],
-   "explanation": "Cubre los depósitos hasta 100.000 € por titular y entidad si el banco quiebra; no cubre las caídas de la bolsa."
-  },
   "u2l4-8": {
    "prompt": "¿Cuáles son emergencias de verdad? Marca todas.",
    "options": [
@@ -542,14 +487,6 @@
    ],
    "explanation": "El ahorro sale antes que cualquier gasto: así no compite con los caprichos."
   },
-  "u2l5-2": {
-   "prompt": "Ahorrar lo que sobra a final de mes es igual de eficaz que ahorrar al principio.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "El gasto tiende a ocupar todo el dinero disponible; si el ahorro sale primero, no se lo come."
-  },
   "u2l5-3": {
    "prompt": "Apartas el 10 % de una nómina de 1.400 € cada mes. ¿Cuánto ahorras en un año (12 nóminas)?",
    "options": [],
@@ -584,32 +521,6 @@
     "El gasto sube al nivel del sueldo y el ahorro se queda igual que antes.",
     "Mejora su vida y su ahorro a la vez, sin notar ningún recorte.",
     "El aumento entero se va en una cuota durante años."
-   ]
-  },
-  "u2l5-6": {
-   "prompt": "Pagarte primero a ti significa darte un capricho nada más cobrar.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Significa apartar tu ahorro antes de gastar en nada."
-  },
-  "u2l5-7": {
-   "prompt": "¿Qué le aconsejas a Lumi?",
-   "options": [
-    "Ahorra solo los meses buenos",
-    "Programa una transferencia al ahorro para el día que cobras",
-    "Gasta menos y ya"
-   ],
-   "explanation": "Automatizar convierte el ahorro en algo que pasa solo.",
-   "feedback": [
-    "Los meses «buenos» suelen ser pocos: así el hábito no se forma nunca.",
-    "¡Bien! Si sale antes de que lo veas, no te lo gastas. Empieza con poco y súbelo.",
-    "Fácil de decir… pero si depende de la fuerza de voluntad, el día 20 vuelve a pasar."
-   ],
-   "lines": [
-    "Cada mes digo que voy a ahorrar…",
-    "Pero el día 20 ya no queda nada 😅"
    ]
   },
   "u2l5-8": {

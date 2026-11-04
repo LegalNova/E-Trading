@@ -1,6 +1,6 @@
 // Validación del contenido (pura): soluciones de cada tipo de ejercicio, ids únicos, dependencias y reglas del curso v2.
 // La usan scripts/check-content.ts (curso entero) y scripts/check-units.ts (unidades sueltas mientras se escriben).
-import type { ContentQuestion, ContentUnit } from './dsl'
+import type { ContentQuestion, ContentUnit, Step } from './dsl'
 
 export interface Report {
   errors: string[]
@@ -99,6 +99,8 @@ export function validateUnits(units: ContentUnit[], quizzes: Record<string, Cont
         const t = 'body' in s ? s.body : ''
         r.words += t.split(/\s+/).length
         if (s.kind === 'CHART' && (s.solution < 0 || s.solution >= s.candles.length)) r.errors.push(`${l.id}: vela solución fuera de rango`)
+        if (s.kind === 'PLAY') r.errors.push(...checkPlay(l.id, s.play))
+        if (s.kind === 'STORY') r.errors.push(...checkStory(l.id, s.story))
         if ('body' in s && s.body.length > 700) r.errors.push(`${l.id}: paso «${'title' in s ? s.title : ''}» demasiado largo (${s.body.length})`)
       }
       const qs = quizzes[l.quizId] ?? []
@@ -108,10 +110,14 @@ export function validateUnits(units: ContentUnit[], quizzes: Record<string, Cont
       if (!extra && qs.length) {
         const types = [...new Set(qs.map(q => q.type))].sort()
         if (v2) {
-          if (qs.length < 8 || qs.length > 15) r.errors.push(`${l.id}: ${qs.length} ejercicios (deben ser 8-15)`)
+          // Clases interactivas: ya se practica dentro de la clase, así que el quiz puede ser más corto
+          const live = l.steps.filter(s => s.kind === 'PLAY' || s.kind === 'STORY').length
+          const [minQ, maxQ, maxSteps] = live ? [5, 12, 5] : [8, 15, 4]
+          if (qs.length < minQ || qs.length > maxQ) r.errors.push(`${l.id}: ${qs.length} ejercicios (deben ser ${minQ}-${maxQ})`)
           if (types.length < 3) r.errors.push(`${l.id}: solo ${types.length} tipos de ejercicio (mínimo 3)`)
           if (!qs.some(q => DYNAMIC.has(q.type))) r.errors.push(`${l.id}: ningún ejercicio dinámico (solo test y verdadero/falso)`)
-          if (l.steps.length > 4) r.errors.push(`${l.id}: ${l.steps.length} pantallas de teoría (máximo 4)`)
+          if (l.steps.length > maxSteps) r.errors.push(`${l.id}: ${l.steps.length} pantallas de teoría (máximo ${maxSteps})`)
+          if (live && l.steps.filter(s => s.kind === 'TEXT').length > 1) r.warnings.push(`${l.id}: clase interactiva con más de una pantalla de solo texto`)
           if (types.join() === prevTypes) r.warnings.push(`${l.id}: misma mezcla de ejercicios que la clase anterior`)
           const tf = qs.filter(q => q.type === 'TRUE_FALSE' || q.type === 'SINGLE').length
           if (tf / qs.length > 0.6) r.warnings.push(`${l.id}: ${tf} de ${qs.length} son test o verdadero/falso (máx. 60 %)`)
@@ -131,4 +137,48 @@ export function validateUnits(units: ContentUnit[], quizzes: Record<string, Cont
   for (const [id, req] of sections) for (const x of req) if (!sections.has(x)) r.errors.push(`sección ${id}: requiere ${x}, que no existe`)
   r.sections = sections.size
   return r
+}
+
+/** Pieza interactiva: la predicción tiene respuesta válida, hay frase de Lumi por defecto y las métricas existen */
+const METRICS: Record<string, string[]> = {
+  basket: ['years', 'rate', 'items', 'itemsPct', 'lost'],
+  growth: ['final', 'contributed', 'gain', 'multiple', 'years', 'monthly', 'rate', 'initial', 'simpleFinal', 'mattressFinal'],
+  race: ['bAge', 'delay', 'ratio', 'aFinal', 'bFinal', 'aPut', 'bPut'],
+  doubling: ['rate', 'years', 'rule', 'doublings40'],
+  realrate: ['nominal', 'inflation', 'real', 'value', 'balance'],
+  sort: ['done', 'cards', 'correct', 'wrong', 'net'],
+  budget: ['needsPct', 'wantsPct', 'savePct', 'offTarget', 'left'],
+  leaks: ['yearly', 'cut', 'invested', 'on'],
+  emergency: ['save', 'played', 'fund', 'debt', 'covered'],
+  goalplan: ['needed', 'available', 'fits', 'slack'],
+  loan: ['amount', 'tin', 'months', 'payment', 'interest', 'total', 'tae'],
+  revolving: ['payment', 'months', 'interest', 'total'],
+  debts: ['method', 'extra', 'months', 'interest', 'saved', 'firstPaid'],
+  horizon: ['years', 'windows', 'lossPct', 'worst', 'best'],
+  crash: ['played', 'sold', 'drop', 'final', 'hold', 'soldDrop'],
+  coinflip: ['trades', 'losersPct', 'avg', 'best'],
+}
+function checkPlay(id: string, p: Extract<Step, { kind: 'PLAY' }>['play']): string[] {
+  const e: string[] = []
+  const ok = METRICS[p.widget.kind] ?? []
+  const conds = [...(p.goal?.when ?? []), ...p.lumi.flatMap(l => (l.when ? [l.when] : []))]
+  for (const c of conds) if (!ok.includes(c.metric)) e.push(`${id}: la pieza ${p.widget.kind} no tiene la métrica «${c.metric}»`)
+  if (p.predict && (p.predict.answer < 0 || p.predict.answer >= p.predict.options.length)) e.push(`${id}: predicción con respuesta fuera de rango`)
+  if (!p.lumi.some(l => !l.when)) e.push(`${id}: Lumi necesita una frase sin condición (la de por defecto)`)
+  if (p.lumi.findIndex(l => !l.when) !== p.lumi.length - 1) e.push(`${id}: la frase de Lumi sin condición tiene que ir la última`)
+  if (p.mode === 'MISSION' && !p.goal) e.push(`${id}: una misión necesita un reto`)
+  if (p.widget.kind === 'sort' && p.widget.cards.some(c => c.bin < 0 || c.bin >= (p.widget as { bins: unknown[] }).bins.length)) e.push(`${id}: tarjeta con grupo fuera de rango`)
+  return e
+}
+/** Historia: cada personaje que habla existe, y cada elección tiene una opción buena y consecuencias */
+function checkStory(id: string, s: Extract<Step, { kind: 'STORY' }>['story']): string[] {
+  const e: string[] = []
+  const who = new Set(['lumi', 'me', ...s.cast.map(c => c.id)])
+  const says = s.beats.flatMap(b => ('choice' in b ? b.choice.options.flatMap(o => o.then) : [b]))
+  for (const b of says) if ('who' in b && !who.has(b.who)) e.push(`${id}: en la historia habla «${b.who}», que no está en el reparto`)
+  for (const b of s.beats) if ('choice' in b) {
+    if (!b.choice.options.some(o => o.tone === 'good')) e.push(`${id}: elección sin ninguna opción buena`)
+    if (b.choice.options.some(o => !o.then.length)) e.push(`${id}: opción de la historia sin consecuencia`)
+  }
+  return e
 }

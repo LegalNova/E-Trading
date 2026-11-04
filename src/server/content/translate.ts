@@ -4,6 +4,7 @@ import 'server-only'
 import type { Loc } from '../locale'
 import type { ContentQuestion, Step } from './dsl'
 import type { QuestionText, StepText, UnitText } from './i18n'
+import { walkTexts } from '@/shared/play'
 import { ACHIEVEMENT_TEXTS, TEXTS } from './v2/i18n'
 
 const idx = (loc: 'ca' | 'en') => {
@@ -41,6 +42,15 @@ export function stepsT(loc: Loc, lessonId: string, steps: Step[]): Step[] {
     if (s.kind === 'TEXT') return { ...s, title: x.title ?? s.title, body: nb(x.body ?? s.body), key: x.key ?? s.key, tip: x.tip ?? s.tip }
     if (s.kind === 'CALC' || s.kind === 'IMAGE') return { ...s, title: x.title ?? s.title, body: nb(x.body ?? s.body), tip: x.tip ?? s.tip }
     if (s.kind === 'SIM') return { ...s, title: x.title ?? s.title, body: nb(x.body ?? s.body) }
+    // Piezas e historias: sus textos van en una lista, en el orden de walkTexts
+    if ((s.kind === 'PLAY' || s.kind === 'STORY') && x.texts) {
+      let k = 0
+      const next = (es: string) => nb(x.texts![k++] ?? es)
+      if (s.kind === 'STORY') return { ...s, story: walkTexts(s.story, next) }
+      const play = walkTexts(s.play, next)
+      const w = play.widget
+      return { ...s, play: 'series' in w ? { ...play, widget: { ...w, series: { ...w.series, caption: captionT(loc, w.series.caption) } } } : play }
+    }
     return s
   })
 }

@@ -9,12 +9,48 @@
    "title": "El teu pressupost en 10 minuts",
    "steps": [
     {
-     "title": "El que entra i el que surt",
-     "body": "Un pressupost és apuntar **el que entra** (nòmina, paga, feines extra) i **el que surt** cada mes. Sense ell, els diners se'n van sense que sàpigues on.\n\nComença mirant els moviments del banc dels últims 3 mesos: és la foto real, no la que et penses."
+     "texts": [
+      "On ha anat a parar el meu sou?",
+      "Laura",
+      "Una altra vegada a final de mes gairebé a zero. Però si cobro 1.400 €! 😩",
+      "No sé ni en què me'ls gasto.",
+      "Què li aconselles primer?",
+      "Que deixi de sortir i no es compri res més",
+      "Retallar a cegues sol durar poc. Primer cal saber **en què** se'n van els diners.",
+      "Que miri els moviments del banc de l'últim mes",
+      "Això mateix! És la foto real de les seves despeses, no la que ella es pensa. Amb això pot fer el seu **pressupost**.",
+      "Que demani una bestreta de la nòmina",
+      "Una bestreta només passa el problema al mes següent… i de vegades amb comissions.",
+      "La Laura obre l'app del banc i comença a apuntar…"
+     ]
     },
     {
-     "title": "Fixes i variables",
-     "body": "• **Despeses fixes:** gairebé iguals cada mes i difícils de retallar a curt termini: lloguer, tarifa del mòbil, transport, assegurances.\n• **Despeses variables:** canvien cada mes i depenen més de tu: menjar fora, roba, oci, compres en línia.\n\nLes fixes es retallen una vegada (canviant de tarifa o renegociant); les variables, cada dia."
+     "texts": [
+      "Fixa o variable",
+      "Aquestes són les despeses de la Laura de l'últim mes. Separa-les: les **fixes** són gairebé iguals cada mes; les **variables** canvien i depenen més d'ella.",
+      "Fixa",
+      "Variable",
+      "Lloguer",
+      "És igual cada mes: només es retalla canviant de pis o compartint-lo.",
+      "Menjar a domicili",
+      "Canvia cada mes i depèn d'ella: variable.",
+      "Tarifa del mòbil",
+      "El mateix import cada mes. Es retalla una vegada, canviant de tarifa.",
+      "Roba",
+      "Variable: uns mesos molt, altres res.",
+      "Abonament de transport",
+      "Fixa: el paga igual cada mes.",
+      "Sortides i oci",
+      "Variable, i sol ser on hi ha més marge.",
+      "Supermercat",
+      "Canvia cada mes segons el que compra: variable.",
+      "Dues plataformes de sèries",
+      "Es cobren soles cada mes: fixes (i fàcils d'oblidar).",
+      "Classifica totes les seves despeses.",
+      "La Laura gasta **1.372 €**: 512 € en fixes i 860 € en variables. Dels seus 1.400 € li'n queden 28 €. Aquí hi ha el problema… i també el marge: les fixes es retallen una vegada; les variables, cada dia.",
+      "Pista: la paga igual cada mes? Llavors és fixa.",
+      "Fixa o variable? Tria per a cada despesa 👇"
+     ]
     },
     {
      "title": "El compte que importa",
@@ -28,17 +64,35 @@
    "title": "La regla 50/30/20",
    "steps": [
     {
-     "title": "Un mètode senzill",
-     "body": "La regla 50/30/20, popularitzada per la senadora nord-americana Elizabeth Warren, reparteix el que cobres **net**:\n\n• **50 % necessitats:** habitatge, menjar bàsic, transport, factures.\n• **30 % desitjos:** oci, viatges, capricis.\n• **20 % estalvi** i pagar deutes."
-    },
-    {
-     "title": "Prova-ho amb un sou",
-     "body": "Mou el sou net i mira quant tocaria a cada bloc.",
-     "tip": "És una guia orientativa, no una llei: adapta-la al teu cas."
+     "texts": [
+      "Reparteix el sou de la Laura",
+      "La regla **50/30/20** reparteix el que cobres **net**: el 50 % per a necessitats, el 30 % per a desitjos i el 20 % per estalviar o pagar deutes. Així estan ara les despeses de la Laura:",
+      "Necessitats",
+      "Desitjos",
+      "Estalvi",
+      "Lloguer",
+      "Supermercat",
+      "Transport",
+      "Llum, aigua i internet",
+      "Sortides i oci",
+      "Menjar a domicili",
+      "Roba",
+      "Amb aquestes despeses, quant pot estalviar la Laura cada mes?",
+      "Uns 10 €",
+      "Uns 150 €",
+      "Uns 280 €, el 20 %",
+      "Necessitats, 800 €; desitjos, 590 €: li'n queden **10 €**. No és que guanyi poc: és que tot se'n va en el dia a dia.",
+      "Ajusta les despeses perquè la Laura estalviï almenys el 20 %.",
+      "Amb l'estalvi **reservat**, la resta es reparteix sola. Si l'habitatge es menja més del 50 %, ajusta (60/25/15 o el que puguis), però sense treure mai la part de l'estalvi.",
+      "Compte! Així gasta més del que cobra.",
+      "Gairebé! Una empenteta més i arriba al 20 %.",
+      "Els desitjos ja són al seu lloc. Es pot estalviar alguna cosa al súper o al lloguer?",
+      "Comença pel que té més marge: els desitjos 👇"
+     ]
     },
     {
      "title": "Quan no quadra",
-     "body": "A les ciutats cares, només el lloguer es pot endur el 40 % del sou. Llavors ajustes (60/25/15 o el que puguis), però **sempre amb un percentatge d'estalvi reservat**, encara que comenci en un 5 %.",
+     "body": "La regla la va popularitzar la senadora nord-americana Elizabeth Warren. A les ciutats cares, només el lloguer es pot endur el 40 % del sou. Llavors ajustes, però **sempre amb un percentatge d'estalvi reservat**, encara que comenci en un 5 %.",
      "key": "L'important no són els números exactes: és que l'estalvi tingui la seva part fixa."
     }
    ]
@@ -47,17 +101,31 @@
    "title": "Despeses formiga i subscripcions",
    "steps": [
     {
-     "title": "Petites, però moltes",
-     "body": "Una **despesa formiga** és petita i freqüent: el cafè per emportar, el snack de la màquina, les despeses d'enviament, la recàrrega del joc. Una sola no es nota; sumades, sí.\n\n• 1,80 € de cafè cada dia feiner (20 al mes) = **432 € l'any**.\n• 3 € diaris en capricis = **1.095 € l'any**."
+     "texts": [
+      "Caça les teves despeses formiga",
+      "Una **despesa formiga** és petita i freqüent. Una sola no es nota… i totes juntes? Apaga les que podries treure't sense trobar-les a faltar.",
+      "Cafè per emportar",
+      "Refresc de la màquina",
+      "Despeses d'enviament",
+      "Tercera plataforma de sèries",
+      "Gimnàs on no vas",
+      "Recàrregues del joc",
+      "Un cafè per emportar d'1,80 € cada dia. Quant és en un any?",
+      "Uns 65 €",
+      "Uns 650 €",
+      "Uns 1.800 €",
+      "1,80 € × 365 dies = **657 €** l'any. El que és petit, repetit, es fa gran.",
+      "Retalla almenys 1.000 € l'any sense treure-ho tot.",
+      "No es tracta de no gastar mai, sinó de gastar en el que **de debò** t'importa. El que retalles, invertit durant anys, creix amb l'interès compost (el 7 % és un exemple, no una promesa).",
+      "Tot fora! No cal ser tan dur: queda't amb el que de debò gaudeixes.",
+      "Cada interruptor que apagues són diners per a tu 👀 Mira la xifra de sota.",
+      "Apaga el que podries treure't sense trobar-ho a faltar 👇"
+     ]
     },
     {
      "title": "Les subscripcions",
-     "body": "Streaming, música, gimnàs, apps, núvol… Es cobren soles i per això se t'obliden.\n\nQuatre subscripcions de 12 € són 48 € al mes: **576 € l'any**. Revisa l'extracte i pregunta't de cadascuna: l'he fet servir aquest mes?"
-    },
-    {
-     "title": "El que podrien arribar a ser",
-     "body": "Posa 90 € al mes (uns 3 € al dia) al 7 % durant 30 anys: uns 110.000 €, amb 32.400 € aportats. És un exemple, no una promesa.",
-     "tip": "No es tracta de no gastar mai, sinó de gastar en el que de debò t'importa."
+     "body": "Streaming, música, gimnàs, apps, núvol… Es cobren soles i per això se t'obliden. Quatre subscripcions de 12 € són 48 € al mes: **576 € l'any**.\n\nRevisa l'extracte i pregunta't de cadascuna: l'he fet servir aquest mes? Moltes proves gratuïtes passen a ser de pagament si no les cancel·les.",
+     "key": "El que és petit i repetit es fa gran: revisa els teus càrrecs una vegada al mes."
     }
    ]
   },
@@ -65,17 +133,28 @@
    "title": "El fons d'emergència",
    "steps": [
     {
-     "title": "El teu coixí",
-     "body": "El fons d'emergència són diners apartats **només per a imprevistos**: una avaria, quedar-te sense feina, el dentista.\n\nLa regla habitual: entre **3 i 6 mesos de les teves despeses** (no del teu sou). Si ets autònom o la teva feina és inestable, millor de 6 a 12."
+     "texts": [
+      "Un any amb imprevistos",
+      "La Laura cobra 1.400 € i en gasta 1.200 € al mes. Aquest any li passaran coses, com a tothom. Decideix quant aparta cada mes i viu l'any.",
+      "Se li trenca el mòbil",
+      "Visita urgent al dentista",
+      "Avaria del cotxe",
+      "Si la Laura no aparta res, què passa quan arriben els imprevistos?",
+      "Res: ja s'espavilarà",
+      "Els paga amb la targeta i acaba devent diners amb interessos",
+      "El banc li'ls paga gratis",
+      "Sense coixí, cada imprevist es converteix en **deute**, i el deute de la targeta cobra interessos alts.",
+      "Viu l'any sense acabar devent res a la targeta.",
+      "Aquest coixí és el teu **fons d'emergència**: diners apartats només per a imprevistos. La regla habitual: entre **3 i 6 mesos de despeses** (de 6 a 12 si la teva feina és inestable).",
+      "Ai! L'imprevist ha anat a la targeta… i ara cobra interessos. Prova d'apartar-ne més.",
+      "Ara prem «Viure l'any» i mira què passa.",
+      "Tria quant aparta la Laura cada mes i prem «Viure l'any» 👇"
+     ]
     },
     {
      "title": "On guardar-lo",
-     "body": "Ha d'estar **disponible i sense risc**: compte remunerat, dipòsit que puguis cancel·lar sense perdre el que hi vas posar o Lletres del Tresor (a 3, 6, 9 o 12 mesos) per a una part.\n\nEls dipòsits estan coberts pel **Fons de Garantia de Dipòsits fins a 100.000 €** per titular i entitat. **A la borsa, no:** les crisis porten alhora acomiadaments i caigudes."
-    },
-    {
-     "title": "Quant trigues a omplir-lo",
-     "body": "Posa la rendibilitat al 0 % i prova: amb 200 € al mes, en 2 anys reuneixes 4.800 €. Quina aportació necessites per al teu objectiu?",
-     "tip": "Un coixí a mitges ja et salva de molts ensurts: comença per un mes de despeses."
+     "body": "Ha d'estar **disponible i sense risc**: compte remunerat, dipòsit que puguis cancel·lar sense perdre el que hi vas posar o Lletres del Tresor per a una part.\n\nEls dipòsits estan coberts pel **Fons de Garantia de Dipòsits fins a 100.000 €** per titular i entitat. **A la borsa, no:** les crisis porten alhora acomiadaments i caigudes.",
+     "key": "Un coixí a mitges ja et salva de molts ensurts: comença per un mes de despeses."
     }
    ]
   },
@@ -83,16 +162,37 @@
    "title": "Paga't primer a tu",
    "steps": [
     {
-     "title": "Estalviar el que sobra no funciona",
-     "body": "Si esperes a final de mes per estalviar «el que sobri», gairebé mai no sobra res: la despesa s'estira fins a omplir el sou.\n\n**Paga't primer a tu:** el mateix dia que cobres, una part se'n va sola a l'estalvi. Gastes el que queda, no a l'inrevés."
+     "texts": [
+      "L'experiment d'en Pablo",
+      "Pablo",
+      "Aquest mes estalviaré **el que sobri** a final de mes. Segur que en queda alguna cosa!",
+      "Dia 30…",
+      "Doncs… han sobrat 12 €. No sé com, però sempre se'n va tot 🤷",
+      "Què li proposes per al mes que ve?",
+      "Que ho torni a provar amb més força de voluntat",
+      "La força de voluntat s'esgota. La despesa s'estira fins a omplir el sou: gairebé mai no «sobra» res.",
+      "Que programi una transferència de 150 € el dia que cobra",
+      "Això és **pagar-te primer a tu**! L'estalvi surt sol el dia que cobres i gastes el que queda.",
+      "Que guardi les monedes soltes en una guardiola",
+      "Més val això que res, però amb monedes no arribarà gaire lluny. Millor un percentatge fix i automàtic.",
+      "Un mes després…",
+      "He apartat 150 € i ni ho he notat! He gastat una mica menys sense adonar-me'n."
+     ]
+    },
+    {
+     "texts": [
+      "El que fa un hàbit",
+      "I si en Pablo manté aquesta transferència automàtica durant anys i la inverteix? Posem un 5 % l'any: és un exemple, no una promesa.",
+      "Arriba a 100.000 € apartant com a màxim 200 € al mes.",
+      "L'estalvi automàtic no depèn de la teva força de voluntat. Comença amb un 5-10 % del sou i apuja'l amb cada augment: el temps fa la resta.",
+      "Així és fàcil… però el repte és amb 200 € al mes com a màxim!",
+      "Fixa't quant hi posa el temps al costat del que hi poses tu.",
+      "Mou els anys i el que aparta cada mes 👇"
+     ]
     },
     {
      "title": "Automatitza-ho",
-     "body": "1. Obre un compte separat per a l'estalvi (millor si és remunerat).\n2. Programa una **transferència periòdica** per al dia després de cobrar.\n3. Comença amb un percentatge que no faci mal (5-10 %) i apuja'l amb cada augment de sou.\n\nEl que és automàtic no depèn de la teva força de voluntat."
-    },
-    {
-     "title": "L'ordre importa",
-     "body": "La Laura cobra 1.500 € el dia 28 i el 29 se li transfereixen 150 € a l'estalvi. En un any són 1.800 € sense pensar-hi, i la seva despesa s'ajusta a 1.350 €.",
+     "body": "1. Obre un compte separat per a l'estalvi.\n2. Programa una **transferència periòdica** per al dia després de cobrar.\n3. Comença amb un percentatge que no faci mal (5-10 %) i apuja'l amb cada augment de sou.",
      "key": "Primer estalvies; després gastes el que queda.",
      "tip": "El que no veus al compte de despeses no ho trobes a faltar."
     }
@@ -120,22 +220,6 @@
     "La nòmina"
    ]
   },
-  "u2l1-2": {
-   "prompt": "Despesa fixa o variable?",
-   "options": [
-    "Abonament de transport",
-    "Comandes de menjar a domicili",
-    "Roba",
-    "Regals",
-    "Tarifa del mòbil",
-    "Quota del gimnàs"
-   ],
-   "explanation": "Les fixes es repeteixen gairebé iguals cada mes; les variables canvien segons el que decideixes cada dia.",
-   "right": [
-    "Fixa",
-    "Variable"
-   ]
-  },
   "u2l1-3": {
    "prompt": "Quina és la millor manera de començar un pressupost?",
    "options": [
@@ -146,7 +230,7 @@
    "explanation": "La memòria enganya: gairebé tots ens pensem que gastem menys del que gastem. L'extracte del banc és la foto real."
   },
   "u2l1-4": {
-   "prompt": "El Pablo cobra 1.300 € al mes. Les seves despeses fixes sumen 700 € i les variables 450 €. Quant li queda?",
+   "prompt": "En Pablo cobra 1.300 € al mes. Les seves despeses fixes sumen 700 € i les variables 450 €. Quant li queda?",
    "options": [],
    "explanation": "1.300 − 700 − 450 = 150 €. Aquesta és la seva capacitat d'estalvi mensual.",
    "unit": "€"
@@ -175,37 +259,6 @@
     "Estalvi"
    ]
   },
-  "u2l1-7": {
-   "prompt": "La tarifa mensual del mòbil és una despesa variable.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "És fixa: pagues el mateix cada mes. Es retalla una vegada, canviant a una tarifa més barata."
-  },
-  "u2l1-8": {
-   "prompt": "Ràpid: què és més fàcil de retallar aquesta mateixa setmana?",
-   "options": [
-    "Els menjars a domicili",
-    "L'assegurança del cotxe",
-    "El lloguer"
-   ],
-   "explanation": "Les variables depenen de les teves decisions diàries; les fixes necessiten temps o renegociar."
-  },
-  "u2l1-9": {
-   "prompt": "El Bruno arriba a final de mes sense ni un euro i no sap per què. Què fa?",
-   "options": [
-    "Demana una bestreta de la nòmina",
-    "Es convenç que només necessita guanyar més",
-    "Apunta totes les seves despeses durant un mes"
-   ],
-   "explanation": "Abans de retallar o de buscar més ingressos, cal saber on van els diners.",
-   "feedback": [
-    "Tapa el forat un mes, però el problema continua i ara, a més, deu diners.",
-    "Potser sí, però sense saber en què gasta, un sou més alt sol acabar igual a final de mes.",
-    "Descobreix que 180 € se li'n van en comandes i compres petites: ja sap per on retallar."
-   ]
-  },
   "u2l1-10": {
    "prompt": "Què són ingressos? Marca'ls tots.",
    "options": [
@@ -228,24 +281,6 @@
    "explanation": "El 30 % de 2.000 = 600 €.",
    "unit": "€"
   },
-  "u2l2-3": {
-   "prompt": "Classifica cada despesa segons la regla 50/30/20.",
-   "options": [
-    "Factura de la llum",
-    "Viatge a l'estiu",
-    "Entrada d'un concert",
-    "Pagar de més un deute",
-    "Compra bàsica del súper",
-    "Lloguer",
-    "Aportació al fons d'emergència"
-   ],
-   "explanation": "Necessitat és el que no pots deixar de pagar; desig, el que tries; i l'estalvi inclou pagar deutes abans d'hora.",
-   "right": [
-    "Necessitats (50 %)",
-    "Desitjos (30 %)",
-    "Estalvi (20 %)"
-   ]
-  },
   "u2l2-4": {
    "prompt": "Reparteix un sou de 1.500 € amb la regla 50/30/20: com a màxim un 50 % en necessitats i un 30 % en desitjos, i almenys un 20 % d'estalvi.",
    "options": [
@@ -266,14 +301,6 @@
     "Estalvi"
    ]
   },
-  "u2l2-5": {
-   "prompt": "La regla 50/30/20 s'aplica sobre el sou brut, abans d'impostos.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "S'aplica sobre el net: el que de debò arriba al teu compte."
-  },
   "u2l2-6": {
    "prompt": "Si el lloguer ja s'emporta el 45 % del sou, el millor és deixar d'estalviar fins que canviï.",
    "options": [
@@ -292,15 +319,6 @@
    ],
    "explanation": "50 % necessitats, 30 % desitjos i 20 % estalvi."
   },
-  "u2l2-8": {
-   "prompt": "Ràpid: sou net de 1.000 €. Quant va a desitjos?",
-   "options": [
-    "500 €",
-    "300 €",
-    "200 €"
-   ],
-   "explanation": "El 30 % de 1.000 = 300 €."
-  },
   "u2l2-9": {
    "prompt": "La Laura cobra 1.800 € nets i les seves necessitats ja sumen 1.000 € (un 56 %). Què fa?",
    "options": [
@@ -315,43 +333,11 @@
     "Així el 30 % es converteix en deute amb interessos: el forat creix cada mes."
    ]
   },
-  "u2l2-10": {
-   "prompt": "Què li contestes a la Lumi?",
-   "options": [
-    "Demana un préstec per arribar als 240 €",
-    "Comença amb 60 € i vés pujant quan puguis",
-    "Si no arribes al 20 %, millor no estalviar res"
-   ],
-   "explanation": "La regla és una meta orientativa: començar amb poc i anar pujant és millor que no començar.",
-   "feedback": [
-    "Estalviar amb diners prestats és pagar interessos per res.",
-    "Això! 60 € al mes són 720 € l'any. L'hàbit importa més que la xifra perfecta.",
-    "Així no comences mai: l'hàbit es crea amb poc."
-   ],
-   "lines": [
-    "Cobro 1.200 € i amb la 50/30/20 em toquen 240 € d'estalvi.",
-    "Però aquest mes només puc apartar 60 €… no val la pena?"
-   ]
-  },
   "u2l3-1": {
    "prompt": "Et prens un cafè d'1,50 € cada dia feiner (20 al mes). Quant gastes en un any?",
    "options": [],
    "explanation": "1,50 × 20 × 12 = 360 €.",
    "unit": "€"
-  },
-  "u2l3-2": {
-   "prompt": "Ràpid: 2 € al dia durant tot un any (365 dies). Quant és?",
-   "options": [],
-   "explanation": "2 × 365 = 730 €.",
-   "unit": "€"
-  },
-  "u2l3-3": {
-   "prompt": "Una despesa de 2 € no val la pena vigilar-la.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Si es repeteix cada dia, són 730 € l'any. El que pesa és la freqüència."
   },
   "u2l3-4": {
    "prompt": "Quines són despeses formiga típiques? Marca-les totes.",
@@ -412,24 +398,6 @@
    ],
    "explanation": "12 × 4 = 48 € al mes; 48 × 12 = 576 € l'any."
   },
-  "u2l3-10": {
-   "prompt": "Què li contestes a la Lumi?",
-   "options": [
-    "Deixa de menjar a la uni per sempre",
-    "Calcula quant és a l'any i decideix si val la pena",
-    "Sí, això no és res"
-   ],
-   "explanation": "Passar la despesa diària a xifra anual ajuda a decidir amb el cap.",
-   "feedback": [
-    "Tampoc cal passar gana: es tracta de decidir, no de castigar-se.",
-    "Això: 4 € al dia són 1.460 € l'any. Si per a tu val la pena, endavant; si no, ja saps d'on treure estalvi.",
-    "Són 1.460 € l'any: bastant més que «res»."
-   ],
-   "lines": [
-    "M'he adonat que gasto 4 € al dia a la màquina de la uni 🍫",
-    "Bah, són 4 €…"
-   ]
-  },
   "u2l4-1": {
    "prompt": "Gastes 1.100 € al mes. Quant hauria de tenir un coixí de 6 mesos?",
    "options": [],
@@ -462,7 +430,7 @@
    ]
   },
   "u2l4-4": {
-   "prompt": "El Pablo té 3.000 € de coixí i se li espatlla el cotxe que fa servir per treballar: 800 € d'arranjament. Què fa?",
+   "prompt": "En Pablo té 3.000 € de coixí i se li espatlla el cotxe que fa servir per treballar: 800 € d'arranjament. Què fa?",
    "options": [
     "El paga amb el coixí i el reposa de mica en mica",
     "El paga amb la targeta a terminis per no tocar el coixí",
@@ -475,29 +443,6 @@
     "Tenia diners disponibles i tot i així converteix una caiguda temporal en una pèrdua real."
    ]
   },
-  "u2l4-5": {
-   "prompt": "Si ets autònom, convé un coixí més gran que amb un contracte indefinit.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Els teus ingressos són més irregulars: se sol recomanar de 6 a 12 mesos de despeses."
-  },
-  "u2l4-6": {
-   "prompt": "Vols un coixí de 4.800 € i n'apartes 200 al mes. Quants mesos trigues?",
-   "options": [],
-   "explanation": "4.800 ÷ 200 = 24 mesos.",
-   "unit": "mesos"
-  },
-  "u2l4-7": {
-   "prompt": "Ràpid: què cobreix el Fons de Garantia de Dipòsits?",
-   "options": [
-    "Fins a 100.000 € per titular i entitat",
-    "Tota la teva cartera d'accions",
-    "Fins a 10.000 € per persona"
-   ],
-   "explanation": "Cobreix els dipòsits fins a 100.000 € per titular i entitat si el banc fa fallida; no cobreix les caigudes de la borsa."
-  },
   "u2l4-8": {
    "prompt": "Quines són emergències de debò? Marca-les totes.",
    "options": [
@@ -509,7 +454,7 @@
    "explanation": "Les rebaixes es poden planificar: no són una emergència."
   },
   "u2l4-9": {
-   "prompt": "El Bruno té 10.000 €, cap deute i gasta 1.000 € al mes. Com ho organitza?",
+   "prompt": "En Bruno té 10.000 €, cap deute i gasta 1.000 € al mes. Com ho organitza?",
    "options": [
     "Tot a borsa, que rendeix més",
     "6.000 € de coixí en un compte remunerat i 4.000 € per invertir a llarg termini",
@@ -541,14 +486,6 @@
     "Cobra la nòmina"
    ],
    "explanation": "L'estalvi surt abans que qualsevol despesa: així no competeix amb els capricis."
-  },
-  "u2l5-2": {
-   "prompt": "Estalviar el que sobra a final de mes és igual d'eficaç que estalviar a principi de mes.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "La despesa tendeix a ocupar tots els diners disponibles; si l'estalvi surt primer, no se'l menja."
   },
   "u2l5-3": {
    "prompt": "Apartes el 10 % d'una nòmina de 1.400 € cada mes. Quant estalvies en un any (12 nòmines)?",
@@ -584,32 +521,6 @@
     "La despesa puja al nivell del sou i l'estalvi es queda igual que abans.",
     "Millora la seva vida i el seu estalvi alhora, sense notar cap retallada.",
     "Tot l'augment se'n va en una quota durant anys."
-   ]
-  },
-  "u2l5-6": {
-   "prompt": "Pagar-te primer a tu vol dir donar-te un caprici tan bon punt cobres.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Vol dir apartar el teu estalvi abans de gastar en res."
-  },
-  "u2l5-7": {
-   "prompt": "Què li aconselles a la Lumi?",
-   "options": [
-    "Estalvia només els mesos bons",
-    "Programa una transferència a l'estalvi per al dia que cobres",
-    "Gasta menys i prou"
-   ],
-   "explanation": "Automatitzar converteix l'estalvi en una cosa que passa sola.",
-   "feedback": [
-    "Els mesos «bons» solen ser pocs: així l'hàbit no es forma mai.",
-    "Bé! Si surt abans que ho vegis, no t'ho gastes. Comença amb poc i ves-ho apujant.",
-    "Fàcil de dir… però si depèn de la força de voluntat, el dia 20 torna a passar."
-   ],
-   "lines": [
-    "Cada mes dic que estalviaré…",
-    "Però el dia 20 ja no queda res 😅"
    ]
   },
   "u2l5-8": {

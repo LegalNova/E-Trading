@@ -2,6 +2,7 @@
 // Lo usan tanto los datos simulados (etapa 2) como la API real (etapa 3).
 // El dinero viaja como texto decimal (D-021): "10482.35", "0.03100000".
 import { z } from 'zod'
+import { PlayStep, StoryStep } from './play'
 
 const money = z.string().regex(/^-?\d+(\.\d+)?$/)
 const iso = z.string()
@@ -142,6 +143,9 @@ export const LessonStep = z.discriminatedUnion('type', [
   /** Calculadora interactiva (deslizadores) dentro de la teoría */
   z.object({ id: z.string(), type: z.literal('CALCULATOR'), title: z.string(), body: z.string(), calc: z.enum(['compound', 'inflation', 'rule72', 'position', 'recovery', 'fees', 'dca', 'budget', 'loan']), companionTip: z.string().optional() }),
   z.object({ id: z.string(), type: z.literal('QUIZ'), quizId: z.string(), title: z.string(), body: z.string() }),
+  /** Clases interactivas: pieza para tocar y descubrir, e historia con decisiones */
+  PlayStep,
+  StoryStep,
 ])
 export const Lesson = z.object({
   id: z.string(),

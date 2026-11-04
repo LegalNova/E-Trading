@@ -346,6 +346,28 @@ def append_trends(per_kind=8):
     json.dump(out, open(OUT, 'w'), ensure_ascii=False, indent=1)
 
 
+SERIES = [
+    # id, símbolo, nombre, intervalo, desde, hasta, formato de fecha, descripción
+    ('series-sp500-monthly', '^GSPC', 'S&P 500', '1mo', '1950-01-01', '2025-12-01', '%Y-%m', 'cierres mensuales, sin dividendos'),
+    ('series-crash-2008', '^GSPC', 'S&P 500', '1wk', '2007-10-01', '2013-06-30', '%d/%m/%Y', 'cierres semanales, sin dividendos'),
+]
+
+
+def append_series():
+    """Series largas para las misiones del simulador (clases interactivas). Añade sin tocar lo existente."""
+    out = json.load(open(OUT))
+    for fid, sym, name, interval, start, end, fmt, what in SERIES:
+        if fid in out:
+            print(f'{fid}: ya existe'); continue
+        rows = [r for r in get_range(sym, interval, start, end) if r[0] <= datetime.datetime.strptime(end, '%Y-%m-%d').timestamp() + 86400 * 31]
+        out[fid] = {'id': fid, 'symbol': sym, 'name': name, 'from': day(rows[0][0]), 'to': day(rows[-1][0]),
+                    'caption': f'{name} · {what} · {span(rows[0][0], rows[-1][0])}',
+                    'dates': [datetime.datetime.utcfromtimestamp(r[0]).strftime(fmt) for r in rows], 'closes': [r2(r[4]) for r in rows]}
+        print(fid, len(rows), out[fid]['caption'])
+        time.sleep(0.5)
+    json.dump(out, open(OUT, 'w'), ensure_ascii=False, indent=1)
+
+
 if __name__ == '__main__':
     import sys
-    append_trends() if '--append-trends' in sys.argv else main()
+    append_series() if '--append-series' in sys.argv else append_trends() if '--append-trends' in sys.argv else main()

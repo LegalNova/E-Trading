@@ -1,13 +1,45 @@
 import 'server-only'
 // Sección 1 · Unidad 2 · Presupuesto y ahorro (docs/curso-v2/02-curriculo.md)
-import { buckets, calc, chat, fill, key, lesson, match, multi, num, order, portfolio, scenario, single, text, tf, timed, unit } from '../dsl'
+import { buckets, chat, choose, fill, key, lesson, match, mission, multi, note, num, opt, order, play, portfolio, say, scenario, single, story, tf, timed, unit, when } from '../dsl'
 
 export default unit({
   id: 'u2', order: 2, title: 'Presupuesto y ahorro', description: 'Saber en qué se va tu dinero, repartir el sueldo y montar tu colchón',
   lessons: [
     lesson('u2l1', 'Tu presupuesto en 10 minutos', [
-      text('Lo que entra y lo que sale', 'Un presupuesto es apuntar **lo que entra** (nómina, paga, trabajos extra) y **lo que sale** cada mes. Sin él, el dinero se va sin que sepas dónde.\n\nEmpieza mirando los movimientos del banco de los últimos 3 meses: es la foto real, no la que crees.'),
-      text('Fijos y variables', '• **Gastos fijos:** casi iguales cada mes y difíciles de recortar a corto plazo: alquiler, tarifa del móvil, transporte, seguros.\n• **Gastos variables:** cambian cada mes y dependen más de ti: comida fuera, ropa, ocio, compras online.\n\nLos fijos se recortan una vez (cambiando de tarifa o renegociando); los variables, cada día.'),
+      story('¿Dónde se ha ido mi sueldo?', [{ id: 'laura', name: 'Laura', emoji: '👩‍🎨' }], [
+        say('laura', 'Otra vez a final de mes casi a cero. ¡Pero si cobro 1.400 €! 😩'),
+        say('laura', 'No sé ni en qué me lo gasto.'),
+        choose('¿Qué le aconsejas primero?', [
+          opt('Que deje de salir y no se compre nada más', 'ok', say('lumi', 'Recortar a ciegas suele durar poco. Primero hay que saber **en qué** se va el dinero.')),
+          opt('Que mire los movimientos del banco del último mes', 'good', say('lumi', '¡Eso es! Es la foto real de sus gastos, no la que cree. Con eso puede hacer su **presupuesto**.')),
+          opt('Que pida un adelanto de la nómina', 'bad', say('lumi', 'Un adelanto solo pasa el problema al mes siguiente… y a veces con comisiones.')),
+        ]),
+        note('Laura abre la app del banco y empieza a apuntar…'),
+      ]),
+      play({
+        title: 'Fijo o variable',
+        intro: 'Estos son los gastos de Laura del último mes. Sepáralos: los **fijos** son casi iguales cada mes; los **variables** cambian y dependen más de ella.',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Fijo' }, { label: 'Variable' }],
+          cards: [
+            { emoji: '🏠', label: 'Alquiler', value: 450, bin: 0, why: 'Es igual cada mes: solo se recorta cambiando de piso o compartiendo.' },
+            { emoji: '🍕', label: 'Comida a domicilio', value: 160, bin: 1, why: 'Cambia cada mes y depende de ella: variable.' },
+            { emoji: '📱', label: 'Tarifa del móvil', value: 20, bin: 0, why: 'El mismo importe cada mes. Se recorta una vez, cambiando de tarifa.' },
+            { emoji: '👗', label: 'Ropa', value: 150, bin: 1, why: 'Variable: unos meses mucho, otros nada.' },
+            { emoji: '🚇', label: 'Abono de transporte', value: 20, bin: 0, why: 'Fijo: lo paga igual cada mes.' },
+            { emoji: '🎉', label: 'Salidas y ocio', value: 280, bin: 1, why: 'Variable, y suele ser donde más margen hay.' },
+            { emoji: '🛒', label: 'Supermercado', value: 270, bin: 1, why: 'Cambia cada mes según lo que compra: variable.' },
+            { emoji: '🎬', label: 'Dos plataformas de series', value: 22, bin: 0, why: 'Se cobran solas cada mes: fijas (y fáciles de olvidar).' },
+          ],
+        },
+        goal: { text: 'Clasifica todos sus gastos.', when: [when('done', '==', 8)] },
+        insight: 'Laura gasta **1.372 €**: 512 € fijos y 860 € variables. De sus 1.400 € le quedan 28 €. Ahí está el problema… y también el margen: los fijos se recortan una vez; los variables, cada día.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: 'Pista: ¿lo paga igual cada mes? Entonces es fijo.', mood: 'THINKING' },
+          { say: '¿Fijo o variable? Elige para cada gasto 👇', mood: 'HAPPY' },
+        ],
+      }),
       key('La cuenta que importa', 'Ingresos − gastos = lo que te queda. Si cobras 1.400 € y gastas 1.250 €, tu capacidad de ahorro es de 150 € al mes: un 10,7 %.', 'Si no sabes en qué se va tu dinero, no puedes decidir a dónde va.', 'Revisa tu presupuesto una vez al mes: con diez minutos basta.'),
     ], [
       match('Empareja cada concepto con un ejemplo.', [['Ingreso', 'La nómina'], ['Gasto fijo', 'El alquiler'], ['Gasto variable', 'Las cenas con amigos'], ['Ahorro', 'Lo que queda a final de mes']], 'Ingresos − gastos (fijos y variables) = ahorro. Es la cuenta básica de cualquier presupuesto.'),
@@ -20,12 +52,40 @@ export default unit({
       timed(single('Rápido: ¿qué es más fácil de recortar esta misma semana?', ['El alquiler', 'Las comidas a domicilio', 'El seguro del coche'], 1, 'Los variables dependen de tus decisiones diarias; los fijos necesitan tiempo o renegociar.'), 10),
       scenario('Bruno llega a fin de mes sin un euro y no sabe por qué. ¿Qué hace?', [['Apunta todos sus gastos durante un mes', 'Descubre que 180 € se le van en pedidos y compras pequeñas: ya sabe por dónde recortar.'], ['Pide un adelanto de nómina', 'Tapa el agujero un mes, pero el problema sigue y ahora además debe dinero.'], ['Se convence de que solo necesita ganar más', 'Quizá, pero sin saber en qué gasta, un sueldo mayor suele acabar igual a fin de mes.']], 0, 'Antes de recortar o de buscar más ingresos, hay que saber a dónde va el dinero.'),
       multi('¿Qué son ingresos? Marca todos.', ['La nómina', 'Lo que cobras por dar clases particulares', 'La devolución de Hacienda', 'Lo que pagas de alquiler'], [0, 1, 2], 'Ingreso es todo lo que entra; el alquiler que pagas es un gasto fijo.'),
-    ]),
+    ], { minutes: 6, retire: [1, 6, 7, 8] }),
 
     lesson('u2l2', 'La regla 50/30/20', [
-      text('Un método sencillo', 'La regla 50/30/20, popularizada por la senadora estadounidense Elizabeth Warren, reparte lo que cobras **neto**:\n\n• **50 % necesidades:** vivienda, comida básica, transporte, facturas.\n• **30 % deseos:** ocio, viajes, caprichos.\n• **20 % ahorro** y pagar deudas.'),
-      calc('budget', 'Pruébalo con un sueldo', 'Mueve el sueldo neto y mira cuánto tocaría a cada bloque.', 'Es una guía orientativa, no una ley: adáptala a tu caso.'),
-      key('Cuando no cuadra', 'En ciudades caras, solo el alquiler puede llevarse el 40 % del sueldo. Entonces ajustas (60/25/15 o lo que puedas), pero **siempre con un porcentaje de ahorro reservado**, aunque empiece en un 5 %.', 'Lo importante no son los números exactos: es que el ahorro tenga su parte fija.'),
+      play({
+        title: 'Reparte el sueldo de Laura',
+        intro: 'La regla **50/30/20** reparte lo que cobras **neto**: el 50 % para necesidades, el 30 % para deseos y el 20 % para ahorrar o pagar deudas. Así están ahora los gastos de Laura:',
+        widget: {
+          kind: 'budget', salary: 1400, groups: ['Necesidades', 'Deseos', 'Ahorro'], targets: [50, 30, 20],
+          cats: [
+            { emoji: '🏠', label: 'Alquiler', group: 0, amount: 450, min: 350, max: 700 },
+            { emoji: '🛒', label: 'Supermercado', group: 0, amount: 270, min: 180, max: 350 },
+            { emoji: '🚇', label: 'Transporte', group: 0, amount: 20, min: 20, max: 120 },
+            { emoji: '💡', label: 'Luz, agua e internet', group: 0, amount: 60, min: 40, max: 100 },
+            { emoji: '🎉', label: 'Salidas y ocio', group: 1, amount: 280, min: 0, max: 400 },
+            { emoji: '🍕', label: 'Comida a domicilio', group: 1, amount: 160, min: 0, max: 250 },
+            { emoji: '👗', label: 'Ropa', group: 1, amount: 150, min: 0, max: 250 },
+          ],
+        },
+        predict: {
+          prompt: 'Con estos gastos, ¿cuánto puede ahorrar Laura cada mes?',
+          options: ['Unos 10 €', 'Unos 150 €', 'Unos 280 €, el 20 %'],
+          answer: 0,
+          why: 'Necesidades, 800 €; deseos, 590 €: le quedan **10 €**. No es que gane poco: es que todo se va en el día a día.',
+        },
+        goal: { text: 'Ajusta los gastos para que Laura ahorre al menos el 20 %.', when: [when('savePct', '>=', 20)] },
+        insight: 'Con el ahorro **reservado**, el resto se reparte solo. Si la vivienda se come más del 50 %, ajusta (60/25/15 o lo que puedas), pero sin quitar nunca la parte del ahorro.',
+        lumi: [
+          { when: when('left', '<', 0), say: '¡Cuidado! Así gasta más de lo que cobra.', mood: 'WORRIED' },
+          { when: when('savePct', '>=', 15), say: '¡Casi! Un empujoncito más y llega al 20 %.', mood: 'HAPPY' },
+          { when: when('wantsPct', '<=', 30), say: 'Los deseos ya están en su sitio. ¿Se puede ahorrar algo en el súper o en el alquiler?', mood: 'THINKING' },
+          { say: 'Empieza por lo que más margen tiene: los deseos 👇', mood: 'HAPPY' },
+        ],
+      }),
+      key('Cuando no cuadra', 'La regla la popularizó la senadora estadounidense Elizabeth Warren. En ciudades caras, solo el alquiler puede llevarse el 40 % del sueldo. Entonces ajustas, pero **siempre con un porcentaje de ahorro reservado**, aunque empiece en un 5 %.', 'Lo importante no son los números exactos: es que el ahorro tenga su parte fija.'),
     ], [
       num('Tu sueldo neto es de 1.600 €. Según la regla 50/30/20, ¿cuánto va al ahorro?', 320, '€', '20 % de 1.600 = 320 €.'),
       num('Con un sueldo neto de 2.000 €, ¿cuánto tocaría a deseos?', 600, '€', '30 % de 2.000 = 600 €.'),
@@ -37,12 +97,38 @@ export default unit({
       timed(single('Rápido: sueldo neto de 1.000 €. ¿Cuánto va a deseos?', ['200 €', '300 €', '500 €'], 1, '30 % de 1.000 = 300 €.'), 12),
       scenario('Laura cobra 1.800 € netos y sus necesidades ya suman 1.000 € (un 56 %). ¿Qué hace?', [['Recorta un poco los deseos y mantiene el ahorro en 360 €', 'Le quedan 440 € para deseos (un 24 %): ajusta la regla a su alquiler sin renunciar al ahorro.'], ['Deja de ahorrar hasta que le suban el sueldo', 'Puede pasar mucho tiempo, y sin colchón cualquier imprevisto acaba en deuda.'], ['Paga los deseos con la tarjeta a plazos', 'Así el 30 % se convierte en deuda con intereses: el agujero crece cada mes.']], 0, 'La regla se adapta: si las necesidades pesan más, se recortan los deseos, no el ahorro.'),
       chat(['Cobro 1.200 € y con la 50/30/20 me tocan 240 € de ahorro.', 'Pero este mes solo puedo apartar 60 €… ¿no vale la pena?'], '¿Qué le contestas a Lumi?', [['Si no llegas al 20 %, mejor no ahorrar nada', 'Así nunca empiezas: el hábito se crea con poco.'], ['Empieza con 60 € y ve subiendo cuando puedas', '¡Eso! 60 € al mes son 720 € al año. El hábito importa más que la cifra perfecta.'], ['Pide un préstamo para llegar a los 240 €', 'Ahorrar con dinero prestado es pagar intereses por nada.']], 1, 'La regla es una meta orientativa: empezar con poco y subir es mejor que no empezar.'),
-    ]),
+    ], { minutes: 6, retire: [2, 4, 7, 9] }),
 
     lesson('u2l3', 'Gastos hormiga y suscripciones', [
-      text('Pequeños, pero muchos', 'Un **gasto hormiga** es pequeño y frecuente: el café para llevar, el snack de la máquina, los gastos de envío, la recarga del juego. Uno solo no se nota; sumados, sí.\n\n• 1,80 € de café cada día laborable (20 al mes) = **432 € al año**.\n• 3 € diarios en caprichos = **1.095 € al año**.'),
-      text('Las suscripciones', 'Streaming, música, gimnasio, apps, nube… Se cobran solas y por eso se olvidan.\n\nCuatro suscripciones de 12 € son 48 € al mes: **576 € al año**. Revisa el extracto y pregúntate de cada una: ¿la he usado este mes?'),
-      calc('dca', 'Lo que podrían llegar a ser', 'Pon 90 € al mes (unos 3 € al día) al 7 % durante 30 años: unos 110.000 €, con 32.400 € aportados. Es un ejemplo, no una promesa.', 'No se trata de no gastar nunca, sino de gastar en lo que de verdad te importa.'),
+      play({
+        title: 'Caza tus gastos hormiga',
+        intro: 'Un **gasto hormiga** es pequeño y frecuente. Uno solo no se nota… ¿y todos juntos? Apaga los que podrías quitarte sin echarlos de menos.',
+        widget: {
+          kind: 'leaks', rate: 7, years: 10,
+          items: [
+            { emoji: '☕', name: 'Café para llevar', amount: 1.8, per: 'day', on: true },
+            { emoji: '🥤', name: 'Refresco de la máquina', amount: 1.5, per: 'day', on: true },
+            { emoji: '🛵', name: 'Gastos de envío', amount: 4, per: 'week', on: true },
+            { emoji: '🎬', name: 'Tercera plataforma de series', amount: 12, per: 'month', on: true },
+            { emoji: '🏋️', name: 'Gimnasio al que no vas', amount: 35, per: 'month', on: true },
+            { emoji: '🎮', name: 'Recargas del juego', amount: 10, per: 'week', on: true },
+          ],
+        },
+        predict: {
+          prompt: 'Un café para llevar de 1,80 € cada día. ¿Cuánto es en un año?',
+          options: ['Unos 65 €', 'Unos 650 €', 'Unos 1.800 €'],
+          answer: 1,
+          why: '1,80 € × 365 días = **657 €** al año. Lo pequeño, repetido, se hace grande.',
+        },
+        goal: { text: 'Recorta al menos 1.000 € al año sin quitarlo todo.', when: [when('cut', '>=', 1000), when('on', '>=', 2)] },
+        insight: 'No se trata de no gastar nunca, sino de gastar en lo que **de verdad** te importa. Lo que recortas, invertido durante años, crece con el interés compuesto (7 % es un ejemplo, no una promesa).',
+        lumi: [
+          { when: when('on', '==', 0), say: '¡Todo fuera! No hace falta ser tan duro: quédate con lo que de verdad disfrutas.', mood: 'THINKING' },
+          { when: when('cut', '>', 0), say: 'Cada interruptor que apagas es dinero para ti 👀 Mira la cifra de abajo.', mood: 'HAPPY' },
+          { say: 'Apaga lo que podrías quitarte sin echarlo de menos 👇', mood: 'HAPPY' },
+        ],
+      }),
+      key('Las suscripciones', 'Streaming, música, gimnasio, apps, nube… Se cobran solas y por eso se olvidan. Cuatro suscripciones de 12 € son 48 € al mes: **576 € al año**.\n\nRevisa el extracto y pregúntate de cada una: ¿la he usado este mes? Muchas pruebas gratis pasan a ser de pago si no las cancelas.', 'Lo pequeño y repetido se hace grande: revisa tus cargos una vez al mes.'),
     ], [
       num('Tomas un café de 1,50 € cada día laborable (20 al mes). ¿Cuánto gastas en un año?', 360, '€', '1,50 × 20 × 12 = 360 €.'),
       timed(num('Rápido: 2 € al día durante todo un año (365 días). ¿Cuánto es?', 730, '€', '2 × 365 = 730 €.'), 20),
@@ -54,12 +140,35 @@ export default unit({
       timed(tf('Muchas pruebas gratuitas pasan a ser de pago automáticamente si no las cancelas.', true, 'Por eso conviene apuntar la fecha en la que termina la prueba.'), 10),
       fill('Cuatro suscripciones de 12 € al mes suman ____ € al año.', '576', ['48', '144', '480'], '12 × 4 = 48 € al mes; 48 × 12 = 576 € al año.'),
       chat(['Me he dado cuenta de que gasto 4 € al día en la máquina de la uni 🍫', 'Bah, son 4 €…'], '¿Qué le contestas a Lumi?', [['Sí, eso no es nada', 'Son 1.460 € al año: bastante más que «nada».'], ['Calcula cuánto es al año y decide si lo vale', 'Eso: 4 € al día son 1.460 € al año. Si lo vale para ti, adelante; si no, ya sabes de dónde sacar ahorro.'], ['Deja de comer en la uni para siempre', 'Tampoco hace falta pasar hambre: se trata de decidir, no de castigarse.']], 1, 'Pasar el gasto diario a cifra anual ayuda a decidir con la cabeza.'),
-    ]),
+    ], { minutes: 6, retire: [1, 2, 9] }),
 
     lesson('u2l4', 'El fondo de emergencia', [
-      text('Tu colchón', 'El fondo de emergencia es dinero apartado **solo para imprevistos**: una avería, quedarte sin trabajo, el dentista.\n\nLa regla habitual: entre **3 y 6 meses de tus gastos** (no de tu sueldo). Si eres autónomo o tu trabajo es inestable, mejor de 6 a 12.'),
-      text('Dónde guardarlo', 'Tiene que estar **disponible y sin riesgo**: cuenta remunerada, depósito que puedas cancelar sin perder lo que pusiste o Letras del Tesoro (a 3, 6, 9 o 12 meses) para una parte.\n\nLos depósitos están cubiertos por el **Fondo de Garantía de Depósitos hasta 100.000 €** por titular y entidad. **En bolsa, no:** las crisis traen a la vez despidos y caídas.'),
-      calc('dca', 'Cuánto tardas en llenarlo', 'Pon la rentabilidad a 0 % y prueba: con 200 € al mes, en 2 años juntas 4.800 €. ¿Qué aportación necesitas para tu objetivo?', 'Un colchón a medias ya te salva de muchos sustos: empieza por un mes de gastos.'),
+      mission({
+        title: 'Un año con imprevistos',
+        intro: 'Laura cobra 1.400 € y gasta 1.200 € al mes. Este año le van a pasar cosas, como a todo el mundo. Decide cuánto aparta cada mes y vive el año.',
+        widget: {
+          kind: 'emergency', salary: 1400, spend: 1200, start: 0, maxSave: 200, loanRate: 22,
+          events: [
+            { month: 3, emoji: '📱', text: 'Se le rompe el móvil', cost: 250 },
+            { month: 7, emoji: '🦷', text: 'Visita urgente al dentista', cost: 400 },
+            { month: 10, emoji: '🚗', text: 'Avería del coche', cost: 600 },
+          ],
+        },
+        predict: {
+          prompt: 'Si Laura no aparta nada, ¿qué pasa cuando llegan los imprevistos?',
+          options: ['Nada: ya se apañará', 'Los paga con la tarjeta y acaba debiendo dinero con intereses', 'El banco se los paga gratis'],
+          answer: 1,
+          why: 'Sin colchón, cada imprevisto se convierte en **deuda**, y la deuda de tarjeta cobra intereses altos.',
+        },
+        goal: { text: 'Vive el año sin acabar debiendo nada a la tarjeta.', when: [when('played', '==', 1), when('debt', '==', 0)] },
+        insight: 'Ese colchón es tu **fondo de emergencia**: dinero apartado solo para imprevistos. La regla habitual: entre **3 y 6 meses de gastos** (de 6 a 12 si tu trabajo es inestable).',
+        lumi: [
+          { when: when('debt', '>', 0), say: '¡Ay! El imprevisto ha ido a la tarjeta… y ahora cobra intereses. Prueba a apartar más.', mood: 'WORRIED' },
+          { when: when('save', '>', 0), say: 'Ahora dale a «Vivir el año» y mira qué pasa.', mood: 'HAPPY' },
+          { say: 'Elige cuánto aparta Laura cada mes y dale a «Vivir el año» 👇', mood: 'HAPPY' },
+        ],
+      }),
+      key('Dónde guardarlo', 'Tiene que estar **disponible y sin riesgo**: cuenta remunerada, depósito que puedas cancelar sin perder lo que pusiste o Letras del Tesoro para una parte.\n\nLos depósitos están cubiertos por el **Fondo de Garantía de Depósitos hasta 100.000 €** por titular y entidad. **En bolsa, no:** las crisis traen a la vez despidos y caídas.', 'Un colchón a medias ya te salva de muchos sustos: empieza por un mes de gastos.'),
     ], [
       num('Gastas 1.100 € al mes. ¿Cuánto debería tener un colchón de 6 meses?', 6600, '€', '1.100 × 6 = 6.600 €.'),
       single('¿Sobre qué se calcula el fondo de emergencia?', ['Tus gastos mensuales', 'Tu sueldo bruto', 'Lo que tienen ahorrado tus amigos'], 0, 'Lo que necesitas cubrir en una emergencia son tus gastos, no tu sueldo.'),
@@ -71,12 +180,34 @@ export default unit({
       multi('¿Cuáles son emergencias de verdad? Marca todas.', ['Quedarte sin trabajo', 'Una avería del coche que usas para trabajar', 'Las rebajas de enero', 'Una factura inesperada del dentista'], [0, 1, 3], 'Las rebajas se pueden planificar: no son una emergencia.'),
       scenario('Bruno tiene 10.000 €, ninguna deuda y gasta 1.000 € al mes. ¿Cómo lo organiza?', [['Todo en bolsa, que rinde más', 'Si llega un imprevisto en plena caída, tendrá que vender con pérdidas.'], ['6.000 € de colchón en una cuenta remunerada y 4.000 € para invertir a largo plazo', 'Tiene 6 meses cubiertos y el resto puede aguantar caídas sin agobios.'], ['Todo en la cuenta corriente al 0 %', 'Seguro, pero los 4.000 € que no necesitará en años pierden poder de compra.']], 1, 'Primero el colchón, luego invertir lo que no necesitarás en años.'),
       fill('Lo habitual es un colchón de entre 3 y ____ meses de gastos.', '6', ['1', '2', '24'], 'De 3 a 6 meses de gastos; más si tus ingresos son inestables.'),
-    ], { source: '1.4' }),
+    ], { source: '1.4', minutes: 6, retire: [4, 5, 6] }),
 
     lesson('u2l5', 'Págate primero a ti', [
-      text('Ahorrar lo que sobra no funciona', 'Si esperas a final de mes para ahorrar «lo que sobre», casi nunca sobra: el gasto se estira hasta llenar el sueldo.\n\n**Págate primero a ti:** el mismo día que cobras, una parte se va sola al ahorro. Gastas lo que queda, no al revés.'),
-      text('Automatízalo', '1. Abre una cuenta separada para el ahorro (mejor si es remunerada).\n2. Programa una **transferencia periódica** para el día después de cobrar.\n3. Empieza con un porcentaje que no duela (5-10 %) y súbelo con cada aumento de sueldo.\n\nLo automático no depende de tu fuerza de voluntad.'),
-      key('El orden importa', 'Laura cobra 1.500 € el día 28 y el 29 se le transfieren 150 € al ahorro. En un año son 1.800 € sin pensarlo, y su gasto se ajusta a 1.350 €.', 'Primero ahorras; luego gastas lo que queda.', 'Lo que no ves en la cuenta de gastos no lo echas de menos.'),
+      story('El experimento de Pablo', [{ id: 'pablo', name: 'Pablo', emoji: '🧑‍🔧' }], [
+        say('pablo', 'Este mes voy a ahorrar **lo que sobre** a final de mes. ¡Seguro que algo queda!'),
+        note('Día 30…'),
+        say('pablo', 'Pues… han sobrado 12 €. No sé cómo, pero siempre se va todo 🤷'),
+        choose('¿Qué le propones para el mes que viene?', [
+          opt('Que lo intente otra vez con más fuerza de voluntad', 'bad', say('lumi', 'La fuerza de voluntad se agota. El gasto se estira hasta llenar el sueldo: casi nunca «sobra».')),
+          opt('Que programe una transferencia de 150 € el día que cobra', 'good', say('lumi', '¡Eso es **pagarte primero a ti**! El ahorro sale solo el día de cobro y gastas lo que queda.')),
+          opt('Que guarde las monedas sueltas en una hucha', 'ok', say('lumi', 'Algo es algo, pero con monedas no llega lejos. Mejor un porcentaje fijo y automático.')),
+        ]),
+        note('Un mes después…'),
+        say('pablo', '¡He apartado 150 € y ni lo he notado! He gastado un poco menos sin darme cuenta.'),
+      ]),
+      play({
+        title: 'Lo que hace un hábito',
+        intro: '¿Y si Pablo mantiene esa transferencia automática durante años y la invierte? Pongamos un 5 % al año: es un ejemplo, no una promesa.',
+        widget: { kind: 'growth', initial: 0, monthly: 150, rate: 5, years: 10, maxInitial: 5000, maxMonthly: 500, maxRate: 8, maxYears: 40, lines: ['mattress', 'compound'], controls: ['monthly', 'years'] },
+        goal: { text: 'Llega a 100.000 € apartando como mucho 200 € al mes.', when: [when('final', '>=', 100000), when('monthly', '<=', 200)] },
+        insight: 'El ahorro automático no depende de tu fuerza de voluntad. Empieza con un 5-10 % del sueldo y súbelo con cada aumento: el tiempo hace el resto.',
+        lumi: [
+          { when: when('monthly', '>', 200), say: 'Así es fácil… ¡pero el reto es con 200 € al mes como mucho!', mood: 'THINKING' },
+          { when: when('years', '>=', 20), say: 'Fíjate en cuánto pone el tiempo frente a lo que pones tú.', mood: 'HAPPY' },
+          { say: 'Mueve los años y lo que aparta al mes 👇', mood: 'HAPPY' },
+        ],
+      }),
+      key('Automatízalo', '1. Abre una cuenta separada para el ahorro.\n2. Programa una **transferencia periódica** para el día después de cobrar.\n3. Empieza con un porcentaje que no duela (5-10 %) y súbelo con cada aumento de sueldo.', 'Primero ahorras; luego gastas lo que queda.', 'Lo que no ves en la cuenta de gastos no lo echas de menos.'),
     ], [
       order('Ordena el mes de quien se paga primero a sí mismo.', ['Cobra la nómina', 'Se ejecuta la transferencia automática al ahorro', 'Paga los gastos fijos', 'Gasta en variables lo que queda'], 'El ahorro sale antes que cualquier gasto: así no compite con los caprichos.'),
       tf('Ahorrar lo que sobra a final de mes es igual de eficaz que ahorrar al principio.', false, 'El gasto tiende a ocupar todo el dinero disponible; si el ahorro sale primero, no se lo come.'),
@@ -88,6 +219,6 @@ export default unit({
       fill('Lo que funciona es ahorrar ____ de gastar, no lo que sobra.', 'antes', ['después', 'encima', 'lejos'], 'Págate primero a ti: el ahorro sale al cobrar.'),
       single('Marta cobra 2.000 € y quiere ahorrar 300 € al mes. ¿Cuándo programa la transferencia?', ['El día después de cobrar', 'El día 30, si sobra algo', 'Cuando se acuerde'], 0, 'Justo después de cobrar, antes de que el dinero se mezcle con los gastos.'),
       num('Ana empieza ahorrando el 5 % de 1.200 € al mes y a los 6 meses lo sube al 10 %. ¿Cuánto aparta en el primer año?', 1080, '€', '60 € × 6 + 120 € × 6 = 360 + 720 = 1.080 €.'),
-    ]),
+    ], { minutes: 6, retire: [1, 5, 6] }),
   ],
 })

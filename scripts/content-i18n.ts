@@ -9,6 +9,7 @@ import path from 'node:path'
 import { QUIZZES, UNITS } from '../src/server/content/catalog'
 import { ACHIEVEMENTS } from '../src/server/content/catalog'
 import type { UnitText } from '../src/server/content/i18n'
+import { walkTexts } from '../src/shared/play'
 
 const DIR = 'src/server/content/v2/i18n'
 
@@ -22,7 +23,18 @@ function exportEs() {
     }
     for (const l of u.lessons) {
       // Los repasos y retos se generan con textos fijos del motor: solo se traduce su título
-      out.lessons[l.id] = { title: l.title, steps: l.isUnitReview || l.isBoss ? [] : l.steps.map(s => ('body' in s ? { title: s.title, body: s.body, ...(s.kind === 'TEXT' && s.key ? { key: s.key } : {}), ...('tip' in s && s.tip ? { tip: s.tip } : {}) } : s.kind === 'CHART' ? { prompt: s.prompt, ok: s.ok, ko: s.ko } : {})) }
+      const texts = (x: object) => {
+        const out: string[] = []
+        walkTexts(x, t => (out.push(t), t))
+        return out
+      }
+      out.lessons[l.id] = {
+        title: l.title,
+        steps: l.isUnitReview || l.isBoss ? [] : l.steps.map(s =>
+          s.kind === 'PLAY' ? { texts: texts(s.play) } : s.kind === 'STORY' ? { texts: texts(s.story) }
+          : 'body' in s ? { title: s.title, body: s.body, ...(s.kind === 'TEXT' && s.key ? { key: s.key } : {}), ...('tip' in s && s.tip ? { tip: s.tip } : {}) }
+          : s.kind === 'CHART' ? { prompt: s.prompt, ok: s.ok, ko: s.ko } : {}),
+      }
       if (l.isUnitReview || l.isBoss) continue
       for (const q of QUIZZES[l.quizId] ?? []) {
         out.questions[q.id] = {

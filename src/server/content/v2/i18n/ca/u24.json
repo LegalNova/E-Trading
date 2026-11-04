@@ -202,11 +202,11 @@
    "unit": "%"
   },
   "u24l1-6": {
-   "prompt": "El Pablo encerta el 60 % de les seves operacions, però guanya 50 € quan encerta i perd 150 € quan falla. La Laura només encerta el 40 %, però guanya 300 € i en perd 100. Després de 10 operacions, qui va millor?",
+   "prompt": "En Pablo encerta el 60 % de les seves operacions, però guanya 50 € quan encerta i perd 150 € quan falla. La Laura només encerta el 40 %, però guanya 300 € i en perd 100. Després de 10 operacions, qui va millor?",
    "options": [
     "La Laura, perquè els seus encerts valen més que els seus errors",
     "Empaten, tots dos encerten la meitat de mitjana",
-    "El Pablo, perquè encerta més"
+    "En Pablo, perquè encerta més"
    ],
    "explanation": "El resultat depèn del percentatge d'encert i també de quant guanyes i perds en cada cas.",
    "feedback": [
@@ -318,9 +318,9 @@
    "explanation": "Necessiten +11,1 %, +42,9 %, +100 % i +300 %."
   },
   "u24l2-7": {
-   "prompt": "El fons de l'Ana puja un 30 % i després cau un 30 %. El del Bruno puja un 10 % i després cau un 5 %. Qui acaba millor?",
+   "prompt": "El fons de l'Ana puja un 30 % i després cau un 30 %. El d'en Bruno puja un 10 % i després cau un 5 %. Qui acaba millor?",
    "options": [
-    "El Bruno, perquè va caure menys",
+    "En Bruno, perquè va caure menys",
     "Tots dos queden igual",
     "L'Ana, perquè va pujar més"
    ],
@@ -410,7 +410,7 @@
    ]
   },
   "u24l3-7": {
-   "prompt": "El Bruno té 8.000 € i està «seguríssim» d'una operació. Hi vol arriscar un 10 %. Què li recomanes com a concepte?",
+   "prompt": "En Bruno té 8.000 € i està «seguríssim» d'una operació. Hi vol arriscar un 10 %. Què li recomanes com a concepte?",
    "options": [
     "Que arrisqui el 10 % però sense stop",
     "Que mantingui l'1 %: 80 € de risc, com en qualsevol altra",

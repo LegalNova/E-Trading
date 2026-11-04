@@ -1,7 +1,9 @@
 // Texto con formato mínimo para lecciones y respuestas de Lumi: párrafos, viñetas y **negrita**
 /** Texto de las lecciones: párrafos (línea en blanco), viñetas («• » o «1. ») y **negrita** */
+/** Solo **negrita**, dentro de una frase (Lumi, retos, descubrimientos) */
+export const inline = (line: string) => line.split(/(\*\*[^*]+\*\*)/g).map((part, i) => (part.startsWith('**') && part.endsWith('**') ? <b key={i}>{part.slice(2, -2)}</b> : part))
+
 export function RichText({ text }: { text: string }) {
-  const inline = (line: string) => line.split(/(\*\*[^*]+\*\*)/g).map((part, i) => (part.startsWith('**') && part.endsWith('**') ? <b key={i}>{part.slice(2, -2)}</b> : part))
   return (
     <div className="flex flex-col gap-2.5">
       {text.split(/\n\n+/).map((block, i) => {

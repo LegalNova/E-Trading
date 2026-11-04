@@ -83,6 +83,8 @@ export async function lesson(user: User, tx: Tx, id: string): Promise<LessonT> {
     if (s.kind === 'IMAGE') return { id: sid, type: 'IMAGE', title: s.title, body: s.body, image: s.image, companionTip: s.tip }
     if (s.kind === 'CHART') return { id: sid, type: 'INTERACTIVE_CHART', prompt: s.prompt, caption: s.caption, candles: s.candles }
     if (s.kind === 'CALC') return { id: sid, type: 'CALCULATOR', title: s.title, body: s.body, calc: s.calc, companionTip: s.tip }
+    if (s.kind === 'PLAY') return { id: sid, type: 'PLAY', ...s.play }
+    if (s.kind === 'STORY') return { id: sid, type: 'STORY', ...s.story }
     return { id: sid, type: 'SIMULATOR_TASK', title: s.title, body: s.body, task: s.task }
   })
   steps.push({ id: `${id}-quiz`, type: 'QUIZ', quizId: l.quizId, title: e.quizTitle, body: e.quizBody((QUIZZES[l.quizId] ?? []).length) })

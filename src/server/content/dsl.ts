@@ -3,6 +3,7 @@ import 'server-only'
 // Cada lección: pasos de ~5 minutos + quiz. Las soluciones viven solo en el servidor.
 // Los gráficos usan DATOS REALES de charts.json (scripts/build-lesson-charts.py); nunca precios inventados.
 import type { FeatureT, QuestionT } from '@/shared/contract'
+import { walkTexts, type BeatT, type CmpT, type PlayStepT, type StoryStepT, type WidgetT } from '@/shared/play'
 import CHARTS from './charts.json'
 
 export type Illustration = 'candles' | 'trend' | 'support' | 'compound' | 'drawdown' | 'riskreward' | 'anatomy' | 'diversify'
@@ -14,6 +15,8 @@ export type Step =
   | { kind: 'IMAGE'; title: string; body: string; image: Illustration; tip?: string }
   | { kind: 'CHART'; prompt: string; caption: string; candles: [number, number, number, number][]; solution: number; ok: string; ko: string }
   | { kind: 'SIM'; title: string; body: string; task: string }
+  | { kind: 'PLAY'; play: Omit<PlayStepT, 'id' | 'type'> }
+  | { kind: 'STORY'; story: Omit<StoryStepT, 'id' | 'type'> }
 
 type Ohlc = [number, number, number, number]
 export interface PortfolioRules {
@@ -91,6 +94,41 @@ export const chart = (fixtureId: string, prompt: string, ok: string, ko: string)
 
 /** Calculadora interactiva con deslizadores (interés compuesto, inflación, tamaño de posición…) */
 export const calc = (kind: Calc, title: string, body: string, tip?: string): Step => ({ kind: 'CALC', calc: kind, title, body, tip })
+
+// ── Clases interactivas (docs/curso-v2/05-clases-interactivas.md) ──
+/** Minutos de teoría de cada pantalla: leer es rápido; jugar, decidir o cumplir una misión lleva más */
+const stepMinutes = (s: Step) => (s.kind === 'PLAY' ? (s.play.mode === 'MISSION' ? 2 : 1.5) : s.kind === 'STORY' ? 1.2 : 0.67)
+/** «metric op value» → condición; p. ej. when('itemsPct', '<=', 50) */
+export const when = (metric: string, op: CmpT['op'], value: number): CmpT => ({ metric, op, value })
+type SeriesWidget = Extract<WidgetT, { series: unknown }>
+/** Las piezas con datos reales se escriben con el id de la serie de charts.json (nunca precios inventados) */
+type WidgetIn = Exclude<WidgetT, SeriesWidget> | (SeriesWidget extends infer S ? (S extends unknown ? Omit<S, 'series'> & { series: string } : never) : never)
+const withSeries = (w: WidgetIn): WidgetT => {
+  if (typeof (w as { series?: unknown }).series !== 'string') return w as WidgetT
+  const f = fixture((w as { series: string }).series) as unknown as { caption: string; dates?: string[]; closes?: number[] }
+  if (!f.dates || !f.closes) throw new Error(`La serie ${(w as { series: string }).series} no tiene fechas y cierres`)
+  return { ...w, series: { caption: f.caption, dates: f.dates, closes: f.closes } } as WidgetT
+}
+interface PlayIn {
+  title: string
+  intro: string
+  widget: WidgetIn
+  predict?: PlayStepT['predict']
+  goal?: PlayStepT['goal']
+  insight: string
+  lumi: PlayStepT['lumi']
+}
+/** Aprender haciendo: una pieza para tocar, con predicción, reto y reacciones de Lumi */
+export const play = (o: PlayIn): Step => ({ kind: 'PLAY', play: { ...o, mode: 'EXPLORE', widget: withSeries(o.widget) } })
+/** Misión en el simulador: lo mismo, pero el reto es lo importante */
+export const mission = (o: PlayIn & { goal: PlayStepT['goal'] }): Step => ({ kind: 'PLAY', play: { ...o, mode: 'MISSION', widget: withSeries(o.widget) } })
+/** Historia con decisiones: personajes, mensajes y elecciones con consecuencias */
+export const story = (title: string, cast: StoryStepT['cast'], beats: BeatT[]): Step => ({ kind: 'STORY', story: { title, cast, beats } })
+/** Frases de la historia: say('laura', '…'), note('Tres meses después…'), choose('¿Qué haces?', [opt(…), …]) */
+export const say = (who: string, text: string) => ({ who, text })
+export const note = (text: string) => ({ note: text })
+export const opt = (text: string, tone: 'good' | 'ok' | 'bad', ...then: ({ who: string; text: string } | { note: string })[]) => ({ text, tone, then })
+export const choose = (prompt: string, options: ReturnType<typeof opt>[]) => ({ choice: { prompt, options } })
 
 // ── Preguntas ────────────────────────────────────────────
 type Q = Omit<ContentQuestion, 'id'>
@@ -234,10 +272,15 @@ export const QUIZZES: Record<string, ContentQuestion[]> = {}
 /** «10.000 €» y «7 %» nunca se parten en dos líneas: espacio que no se rompe entre la cifra y el símbolo */
 const nb = (t: string) => t.replace(/(\d) (€|%|\$)/g, '$1\u00a0$2')
 const nbQ = (q: Q): Q => ({ ...q, prompt: nb(q.prompt), options: q.options.map(nb), solution: typeof q.solution === 'string' ? nb(q.solution) : q.solution, explanation: nb(q.explanation), feedback: q.feedback?.map(nb), right: q.right?.map(nb) })
-const nbS = (s: Step): Step => ('body' in s ? { ...s, body: nb(s.body) } : s)
+const nbS = (s: Step): Step =>
+  s.kind === 'PLAY' ? { ...s, play: walkTexts(s.play, nb) } : s.kind === 'STORY' ? { ...s, story: walkTexts(s.story, nb) } : 'body' in s ? { ...s, body: nb(s.body) } : s
 
-export function lesson(id: string, title: string, steps: Step[], questions: Q[], o: { minutes?: number; xp?: number; source?: string } = {}): ContentLesson {
-  QUIZZES[`q-${id}`] = questions.map((q, i) => ({ ...nbQ(q), id: `${id}-${i + 1}` }))
+/**
+ * `retire`: posiciones (desde 0) de preguntas que ya no salen en el quiz porque la clase interactiva ya lo practica.
+ * Se quitan sin renumerar: el id de cada pregunta (traducciones, fallos guardados) depende de su posición.
+ */
+export function lesson(id: string, title: string, steps: Step[], questions: Q[], o: { minutes?: number; xp?: number; source?: string; retire?: number[] } = {}): ContentLesson {
+  QUIZZES[`q-${id}`] = questions.flatMap((q, i) => (o.retire?.includes(i) ? [] : [{ ...nbQ(q), id: `${id}-${i + 1}` }]))
   return { id, title, minutes: o.minutes ?? 5, xp: o.xp ?? 30, steps: steps.map(nbS), quizId: `q-${id}`, source: o.source }
 }
 
@@ -267,7 +310,7 @@ export function unit(u: ContentUnit): ContentUnit {
 /** Sección: une sus unidades y añade al final el reto (12 preguntas de toda la sección intercaladas; se aprueba con un 80 %) */
 export function section(id: string, title: string, requires: string[], units: ContentUnit[]): ContentUnit[] {
   // Teoría corta: unos 40 s por pantalla (el quiz suma aparte unos 25 s por ejercicio)
-  const tagged = units.map(u => ({ ...u, section: { id, title, requires }, lessons: u.lessons.map(l => (l.isUnitReview ? l : { ...l, minutes: Math.max(1, Math.round(l.steps.length * 0.67)) })) }))
+  const tagged = units.map(u => ({ ...u, section: { id, title, requires }, lessons: u.lessons.map(l => (l.isUnitReview ? l : { ...l, minutes: Math.max(1, Math.round(l.steps.reduce((m, s) => m + stepMinutes(s), 0))) })) }))
   const lists = tagged.map(u => u.lessons.filter(l => !l.isUnitReview).flatMap(l => (QUIZZES[l.quizId] ?? []).slice(-3)))
   const bid = `${id}boss`
   QUIZZES[`q-${bid}`] = interleave(lists, 12)

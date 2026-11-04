@@ -16,6 +16,7 @@ import { Flame, Gem, Heart, Icon } from '../ui/icons'
 import { Bar, ErrorState, PageSkeleton, Sheet, Stars, Steps } from '../ui/kit'
 import { BadgeArt } from '../ui/badge'
 import { Calculator } from '../ui/calculator'
+import { PlayView, StoryView } from '../play/play-step'
 import { Lumi, LumiSays, stageOf } from '../ui/lumi'
 
 // ── Inicio ───────────────────────────────────────────────
@@ -603,6 +604,10 @@ function StepView({ s, lessonId, onSolved, solved }: { s: LessonStepT; lessonId:
           </div>
         </>
       )
+    case 'PLAY':
+      return <PlayView s={s} done={solved} onDone={onSolved} />
+    case 'STORY':
+      return <StoryView s={s} done={solved} onDone={onSolved} />
     case 'QUIZ':
       return (
         <>
@@ -646,7 +651,8 @@ function LessonInner({ id }: { id: string }) {
   if (!l) return <PageSkeleton />
   const s = l.steps[i]
   const last = i === l.steps.length - 1
-  const blocked = s.type === 'INTERACTIVE_CHART' && !solved[s.id]
+  const interactive = s.type === 'INTERACTIVE_CHART' || s.type === 'PLAY' || s.type === 'STORY'
+  const blocked = interactive && !solved[s.id]
   return (
     <div className="flex min-h-[calc(100dvh-20px)] flex-col">
       <div className="topbar gap-2 pr-4">
@@ -663,7 +669,7 @@ function LessonInner({ id }: { id: string }) {
       </div>
       <div key={s.id} className="pad flex-1 animate-rise">
         {i === 0 && <span className="t-foot">{l.unitTitle} · {l.title}</span>}
-        <StepView s={s} lessonId={l.id} solved={!!solved[s.id]} onSolved={() => setSolved({ ...solved, [s.id]: true })} />
+        <StepView s={s} lessonId={l.id} solved={!!solved[s.id]} onSolved={() => setSolved(x => ({ ...x, [s.id]: true }))} />
       </div>
       <div className="sticky bottom-0 flex gap-2.5 px-4 pt-2.5" style={{ background: 'var(--bg)', paddingBottom: 'max(24px, env(safe-area-inset-bottom))' }}>
         {i > 0 && (
@@ -671,8 +677,8 @@ function LessonInner({ id }: { id: string }) {
             <Icon name="back" />
           </button>
         )}
-        <button className={`btn ${s.type === 'INTERACTIVE_CHART' && solved[s.id] ? 'btn-success' : 'btn-primary'}`} disabled={blocked} onClick={() => (last ? router.push(`/quiz/${l.id}`) : setI(i + 1))}>
-          {last ? t('startQuiz') : blocked ? t('tapCandle') : t('continue')}
+        <button className={`btn ${interactive && solved[s.id] ? 'btn-success' : 'btn-primary'}`} disabled={blocked} onClick={() => (last ? router.push(`/quiz/${l.id}`) : setI(i + 1))}>
+          {last ? t('startQuiz') : blocked ? (s.type === 'INTERACTIVE_CHART' ? t('tapCandle') : t('finishActivity')) : t('continue')}
         </button>
       </div>
     </div>
