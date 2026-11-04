@@ -9,16 +9,45 @@
    "title": "Què mostra un gràfic de preus",
    "steps": [
     {
-     "title": "Els eixos",
-     "body": "• **Eix horitzontal:** el temps. Cada punt, barra o espelma és un període (un minut, un dia, una setmana…).\n• **Eix vertical:** el preu, normalment a la dreta, en la moneda de l'actiu o en punts si és un índex.\n• **A sota:** el **volum**, el que s'ha negociat en cada període."
+     "texts": [
+      "Què t'explica un gràfic?",
+      "En horitzontal, el **temps**. En vertical, el **preu**. A sota, el **volum**. Què pots saber si el mires?",
+      "Ho diu el gràfic",
+      "No ho diu",
+      "A quin preu va obrir ahir",
+      "Cada espelma guarda la seva obertura.",
+      "El preu de demà",
+      "Ningú no ho sap: el gràfic és un registre del passat.",
+      "El preu més alt de la setmana",
+      "Cada espelma guarda el seu màxim i el seu mínim.",
+      "Quant s'ha negociat avui",
+      "És el volum: les barres de sota.",
+      "Si l'empresa és un bon negoci",
+      "Això ho diuen els seus comptes, no el seu gràfic.",
+      "El tancament de fa un any",
+      "L'eix horitzontal et porta enrere en el temps.",
+      "Si continuarà pujant",
+      "Pot continuar o no: són probabilitats, mai certeses.",
+      "Classifica les set preguntes.",
+      "Un gràfic és el **registre exacte** del que compradors i venedors van acordar. Explica el que va passar, **no el que passarà**.",
+      "Ja ha passat o encara no? Aquesta és la clau.",
+      "Ho pots llegir al gràfic?"
+     ]
+    },
+    {
+     "texts": [
+      "Llegir no és endevinar",
+      "Tres gràfics reals de 30 espelmes diàries. Llegeix-los i decideix: **puja o baixa** en les 10 sessions següents?",
+      "Juga les tres rondes.",
+      "Llegir el passat és fàcil; endevinar el futur, no. L'anàlisi tècnica treballa amb **probabilitats, mai amb certeses**.",
+      "Tres de tres! Amb tan poques rondes, la sort pesa molt.",
+      "Encertar el futur amb espelmes és difícil per a tothom.",
+      "Mira les espelmes i tria: puja o baixa?"
+     ]
     },
     {
      "title": "Quatre preus per període",
-     "body": "De cada període es desen quatre dades (en anglès, **OHLC**):\n\n• **Obertura** (open): el primer preu.\n• **Màxim** (high) i **mínim** (low).\n• **Tancament** (close): l'últim, i el més important.\n\nA E-Trading, quan passes el dit per una espelma, en veus els quatre preus, la variació i el volum."
-    },
-    {
-     "title": "Registre, no predicció",
-     "body": "Un gràfic és el registre exacte del que compradors i venedors van acordar en cada moment. No diu el que passarà: l'anàlisi tècnica treballa amb probabilitats, mai amb certeses.",
+     "body": "De cada període es desen quatre dades (en anglès, **OHLC**):\n\n• **Obertura** (open): el primer preu.\n• **Màxim** (high) i **mínim** (low).\n• **Tancament** (close): l'últim, i el més important.\n\nA E-Trading, quan passes el dit per una espelma, en veus els quatre preus, la variació i el volum.",
      "key": "Un gràfic explica el que va passar, no el que passarà.",
      "tip": "Llegir-lo bé ja és un avantatge: molta gent només mira si està en verd o en vermell."
     }
@@ -28,8 +57,22 @@
    "title": "Línia, barres i espelmes",
    "steps": [
     {
-     "title": "Cinc maneres de veure el preu",
-     "body": "• **Línia:** uneix els tancaments. Tendència sense soroll.\n• **Àrea:** la línia amb farciment, com en moltes apps.\n• **Barres (OHLC):** del mínim al màxim, amb una ratlleta a l'esquerra (obertura) i una altra a la dreta (tancament).\n• **Espelmes:** el mateix, amb un cos de color. És l'estàndard.\n• **Heikin Ashi:** espelmes mitjanes que suavitzen el soroll."
+     "texts": [
+      "Només una línia",
+      "Hugo",
+      "La meva app d'inversió només m'ensenya una línia. Em perdo alguna cosa?",
+      "Què li dius?",
+      "Per veure anys, n'hi ha prou amb la línia; les espelmes ensenyen cada sessió",
+      "Això. La línia uneix els tancaments; les espelmes guarden els quatre preus.",
+      "Res: la línia ho diu tot",
+      "Sense espelmes no veus màxims, mínims ni el que va passar durant el dia.",
+      "Sense espelmes no es pot invertir",
+      "Es pot invertir bé mirant poc el gràfic. Les espelmes són útils, no obligatòries.",
+      "Les **barres** mostren del mínim al màxim, amb dues ratlletes.",
+      "La de l'esquerra és l'obertura; la de la dreta, el tancament.",
+      "Les **espelmes** diuen el mateix amb un cos de color. Són l'estàndard.",
+      "D'acord, ensenya-me'n una!"
+     ]
     },
     {
      "prompt": "En espelmes es veu la batalla de cada dia. Toca l'espelma verda més llarga",
@@ -37,8 +80,32 @@
      "ko": "Busca el cos verd més alt, gairebé sense línies fines a dalt i a baix."
     },
     {
+     "texts": [
+      "Línia o espelmes?",
+      "Cada gràfic respon a una pregunta. Quin faries servir per a cada cosa?",
+      "Línia o àrea",
+      "Espelmes o barres",
+      "Veure com ha anat un fons indexat en 10 anys",
+      "Per a la tendència llarga, n'hi ha prou amb la línia i es llegeix millor.",
+      "Veure si avui el preu ha pujat i després ha tornat avall",
+      "Només les espelmes i les barres guarden el màxim del dia.",
+      "Saber el mínim d'ahir per posar un stop",
+      "La línia només té tancaments: no hi veus el mínim.",
+      "Comparar dos índexs durant dècades",
+      "La línia ensenya la direcció sense soroll.",
+      "Llegir l'obertura i el tancament de cada dia",
+      "Són dos dels quatre preus de cada espelma.",
+      "Ensenyar quant ha pujat la teva cartera en 5 anys",
+      "Per a una evolució llarga, la línia o l'àrea.",
+      "Classifica els sis usos.",
+      "La **línia** resumeix cap on va; les **espelmes** expliquen qui va guanyar cada període. Per operar calen els quatre preus.",
+      "En tens prou amb el tancament o necessites el que va passar durant el dia?",
+      "Tria el gràfic per a cada cosa"
+     ]
+    },
+    {
      "title": "Compte amb el Heikin Ashi",
-     "body": "Les seves obertures i tancaments es calculen amb mitjanes: **no són preus reals**. Serveix per veure la tendència, mai per decidir a quin preu entrar o on posar un stop.",
+     "body": "Hi ha més maneres: l'**àrea** (la línia amb farciment, com en moltes apps) i el **Heikin Ashi**, espelmes mitjanes que suavitzen el soroll.\n\nLes seves obertures i tancaments es calculen amb mitjanes: **no són preus reals**. Serveix per veure la tendència, mai per decidir a quin preu entrar o on posar un stop.",
      "key": "La línia resumeix; les espelmes expliquen la batalla de cada període.",
      "tip": "Per veure cap on va, la línia. Per veure qui guanya cada dia, les espelmes."
     }
@@ -48,18 +115,62 @@
    "title": "Temporalitats",
    "steps": [
     {
-     "title": "El mateix actiu, històries diferents",
-     "body": "Cada espelma pot ser un minut, una hora, un dia, una setmana o un mes:\n\n• **1–15 min:** *scalping* i *day trading*.\n• **1 hora:** operacions de pocs dies.\n• **Diari:** de setmanes a mesos.\n• **Setmanal i mensual:** llarg termini.\n\nEn diari es pot veure una pujada i en 5 minuts, una caiguda. Totes dues són certes."
+     "texts": [
+      "El gràfic de 5 minuts",
+      "Irene",
+      "Inverteixo a 10 anys en una acció. En el gràfic setmanal fa un any que puja.",
+      "Però avui, en el de 5 minuts, porta tot el matí caient! Venc?",
+      "Què li dius?",
+      "Mira la temporalitat del teu horitzó",
+      "Això. A 10 anys mana el setmanal; el matí és soroll.",
+      "Ven ara: la tendència ha canviat",
+      "Un matí en 5 minuts no trenca la tendència d'un any.",
+      "Compra'n més per aprofitar la caiguda",
+      "Ni vendre ni comprar per un matí: és l'eina equivocada.",
+      "Cada espelma pot ser un minut, una hora, un dia, una setmana o un mes.",
+      "En diari es pot veure una pujada i en 5 minuts, una caiguda. Totes dues són certes."
+     ]
     },
     {
-     "title": "Soroll i senyal",
-     "body": "Com més curta és la temporalitat, més **soroll**: moviments aleatoris que no volen dir res. Els senyals fallen més i cada operació paga comissió i *spread*.\n\nUn estudi sobre els qui van fer *day trading* amb futurs de l'índex brasiler entre el 2013 i el 2015 va trobar que el **97 %** dels que hi van insistir més de 300 dies van perdre diners."
+     "texts": [
+      "Operar cada pocs minuts",
+      "En minuts mana el **soroll**: els senyals fallen com una moneda. I cada operació paga comissió i *spread*.",
+      "Mil persones operen a cara o creu pagant 5 € cada vegada. Després de 300 operacions, quantes en perden?",
+      "La meitat: és una moneda",
+      "La gran majoria",
+      "Gairebé ningú",
+      "En perd el **80 %**: la comissió inclina la moneda en contra seva a cada operació.",
+      "Arriba a 300 operacions per persona i mira quantes en perden.",
+      "Com més curta és la temporalitat, més operacions i més **costos**. En un estudi de *day trading* al Brasil (2013-2015), el **97 %** dels qui hi van insistir més de 300 dies van perdre diners.",
+      "Vuit de cada deu perden, i ningú no ha fet res estrany.",
+      "Amb una operació, meitat i meitat: és una moneda.",
+      "Augmenta les operacions i mira els qui perden"
+     ]
     },
     {
-     "title": "Les tres pantalles",
-     "body": "Mètode d'Alexander Elder:\n1. **Setmanal:** decideix la direcció.\n2. **Diari:** busca el moment.\n3. **Hores:** afina l'entrada i l'stop.",
-     "key": "Tria la temporalitat segons el teu horitzó, i mira sempre la més gran abans que la més petita.",
-     "tip": "Abans de mirar l'espelma de cinc minuts, mira on és la de la setmana."
+     "texts": [
+      "Cada horitzó, el seu gràfic",
+      "La temporalitat es tria segons quant de temps mantens les inversions. Quin gràfic encaixa amb cada persona?",
+      "Minuts o hores",
+      "Diari",
+      "Setmanal o mensual",
+      "La Sara obre i tanca les seves operacions el mateix dia",
+      "Per al mateix dia, espelmes de minuts o d'hores.",
+      "En Leo manté les seves operacions unes quantes setmanes",
+      "De setmanes a mesos, el gràfic diari.",
+      "La Nora revisa el seu pla de pensions un cop l'any",
+      "A molts anys, setmanal o mensual.",
+      "L'Iván fa scalping amb cripto",
+      "Operacions de segons o minuts.",
+      "L'Eva busca operacions d'un a tres mesos",
+      "Mesos: el diari és el seu gràfic.",
+      "En Hugo inverteix en un fons indexat a 20 anys",
+      "Les espelmes de minuts només li donarien ensurts.",
+      "Col·loca les sis persones.",
+      "Tria la temporalitat segons el teu **horitzó** i mira sempre **la més gran abans que la més petita**. Mètode d'Elder: setmanal per a la direcció, diari per al moment i hores per afinar l'entrada i l'stop.",
+      "Quant de temps manté cadascú la seva inversió?",
+      "Col·loca cada persona"
+     ]
     }
    ]
   },
@@ -67,17 +178,63 @@
    "title": "Escala lineal i logarítmica",
    "steps": [
     {
-     "title": "Euros o percentatges",
-     "body": "• **Lineal:** cada centímetre val els mateixos euros. De 10 a 20 € ocupa el mateix que de 100 a 110 €.\n• **Logarítmica:** cada centímetre val el mateix percentatge. De 10 a 20 € (+100 %) ocupa el mateix que de 100 a 200 € (+100 %)."
+     "texts": [
+      "Bitcoin, una línia plana",
+      "Dani",
+      "He vist un gràfic de bitcoin des del 2013. Fins al 2017 és una línia plana.",
+      "Abans no es movia?",
+      "Què li dius?",
+      "És l'escala lineal: amb preus baixos, els percentatges enormes ocupen poc",
+      "Això. En logarítmica, un +100 % ocupa el mateix el 2014 que el 2024.",
+      "No, abans no passava res",
+      "Passava moltíssim, amb caigudes de més del 80 %. En lineal no es veu.",
+      "El gràfic deu estar mal fet",
+      "Està ben fet. El que enganya és l'escala lineal per a tants anys.",
+      "**Lineal:** cada centímetre val els mateixos euros.",
+      "**Logarítmica:** cada centímetre val el mateix percentatge.",
+      "En logarítmica, de 10 a 20 € ocupa el mateix que de 100 a 200 €."
+     ]
     },
     {
-     "title": "Per què importa",
-     "body": "En un gràfic lineal de 50 anys del S&P 500, la caiguda del 1987 sembla insignificant i la del 2020, enorme. En logarítmica es veu que la del 1987 va ser de més d'un 30 % en pocs dies, comparable a la del 2020.\n\nAmb actius que s'han multiplicat molt (bitcoin, grans tecnològiques), la lineal **enganya**."
+     "texts": [
+      "Bitcoin, amunt i avall",
+      "Finals del 2020. Inverteixes **10.000 €** en bitcoin. Dades reals, setmana a setmana. Fixa't en els percentatges.",
+      "Si una cosa cau un 75 %, quant ha de pujar després per tornar on era?",
+      "Un 75 %",
+      "Un 150 %",
+      "Un 300 %",
+      "De 100 a 25 és −75 %; de 25 a 100 cal multiplicar per 4: **+300 %**.",
+      "Arriba fins al final, tant si vens com si no.",
+      "Bitcoin va caure un **75 %** des del seu màxim del 2021 i va necessitar pujar un **302 %** per tornar-hi. Els percentatges **no són simètrics**, i l'escala logarítmica respecta aquestes proporcions; la lineal, no.",
+      "Has venut. Mira què passa després…",
+      "Gairebé la meitat del que hi vas posar. Quant caldria per recuperar-ho?",
+      "Gairebé el doble! Bitcoin es mou molt en tots dos sentits.",
+      "Prem «Començar». Pots vendre quan vulguis"
+     ]
     },
     {
-     "title": "Els percentatges no són simètrics",
-     "body": "Mou la caiguda: si una cosa cau un 50 %, ha de pujar un 100 % per tornar on era. L'escala logarítmica respecta aquestes proporcions; la lineal, no.",
-     "tip": "Per a diversos anys, escala logarítmica. Per a dies o setmanes, gairebé no canvia res."
+     "texts": [
+      "Quina escala triaries?",
+      "En gràfics llargs, l'escala canvia el que veus. **Logarítmica** o **gairebé tant se val**?",
+      "Logarítmica",
+      "Gairebé tant se val",
+      "El Nasdaq 100 des del 1985",
+      "Quatre dècades i preus molt diferents: logarítmica.",
+      "Una acció aquesta setmana",
+      "En trams curts, euros i percentatges van gairebé a la par.",
+      "Una cripto que s'ha multiplicat per 100",
+      "En lineal, els seus primers anys semblarien una línia plana.",
+      "L'euro davant del dòlar avui",
+      "Un sol dia: l'escala gairebé no canvia res.",
+      "Un fons durant 40 anys",
+      "Per comparar èpoques, mira percentatges.",
+      "Una acció en l'últim mes",
+      "Moviments petits: gairebé no hi ha diferència.",
+      "Classifica els sis gràfics.",
+      "Per a períodes llargs o actius que s'han multiplicat molt, **logarítmica**. En trams curts, euros i percentatges van gairebé a la par.",
+      "Són anys i preus molt diferents, o uns pocs dies?",
+      "Logarítmica o tant se val?"
+     ]
     }
    ]
   },
@@ -85,12 +242,57 @@
    "title": "Tendències: màxims i mínims",
    "steps": [
     {
-     "title": "Com es reconeix",
-     "body": "• **Alcista:** màxims i mínims cada vegada més alts.\n• **Baixista:** màxims i mínims cada vegada més baixos.\n• **Lateral:** el preu rebota entre un sostre i un terra sense una direcció clara.\n\nCharles Dow ho va formular a finals del segle XIX: els preus es mouen en tendències, que continuen vigents fins que hi ha senyals clars de canvi."
+     "texts": [
+      "Continua pujant?",
+      "Leo",
+      "La meva acció pujava: màxim a 40 €, va baixar a 36 € i va rebotar fins a 39 €.",
+      "Ara ha caigut a 35 €. Continua la tendència alcista?",
+      "Què li dius?",
+      "S'ha posat en dubte: màxim i mínim més baixos",
+      "Exacte. No va superar els 40 € i va perdre els 36 €.",
+      "Sí, només és una correcció normal",
+      "Corregir un 5-10 % és normal. Però aquí s'ha trencat l'estructura.",
+      "Segur que caurà un 50 %",
+      "Trencar l'estructura no diu quant caurà. Pot passar a lateral.",
+      "**Alcista:** màxims i mínims cada vegada més alts. **Baixista:** cada vegada més baixos.",
+      "Ho va formular Charles Dow a finals del segle XIX."
+     ]
     },
     {
-     "title": "Quan es posa en dubte",
-     "body": "Una tendència alcista trontolla quan el preu **no supera l'últim màxim** i després **perd l'últim mínim**: apareix el primer mínim decreixent.\n\nLes correccions del 5–10 % són normals dins d'una pujada sana."
+     "texts": [
+      "Màxims i mínims",
+      "Et donem els tres últims màxims i mínims de cada gràfic. Quina tendència és?",
+      "Alcista",
+      "Baixista",
+      "Lateral",
+      "Màxims 30, 33, 37 · mínims 27, 30, 34",
+      "Pugen els màxims i els mínims.",
+      "Màxims 90, 85, 80 · mínims 84, 79, 73",
+      "Baixen tots dos.",
+      "Màxims 50, 51, 50 · mínims 45, 44, 45",
+      "Es repeteixen: sostre i terra sense direcció.",
+      "Màxims 15, 17, 19 · mínims 13, 14, 16",
+      "Cada caiguda es queda més amunt que l'anterior.",
+      "Màxims 64, 60, 57 · mínims 58, 55, 51",
+      "Els rebots no arriben al màxim anterior.",
+      "Màxims 120, 119, 121 · mínims 110, 111, 110",
+      "Rebota entre un sostre i un terra.",
+      "Classifica les sis seqüències.",
+      "Si pugen màxims i mínims, **alcista**; si baixen tots dos, **baixista**; si es repeteixen, **lateral**. Corregir un 5-10 % és normal dins d'una pujada sana.",
+      "Mira primer els mínims: pugen, baixen o es repeteixen?",
+      "Classifica cada seqüència"
+     ]
+    },
+    {
+     "texts": [
+      "Continua la tendència?",
+      "Quatre gràfics reals amb una direcció clara. Puja o baixa en les 10 sessions següents? La tendència **continua** o **gira**?",
+      "Juga les quatre rondes.",
+      "En aquestes quatre rondes, la tendència va continuar en tres i va girar en una. El **momentum** existeix en les dades, però és una probabilitat, no una promesa.",
+      "Seguir la tendència ha funcionat aquí. No sempre funciona.",
+      "Una tendència pot girar sense avisar.",
+      "Mira cap on van les espelmes i decideix"
+     ]
     },
     {
      "title": "El momentum existeix",
@@ -104,16 +306,48 @@
    "title": "El volum",
    "steps": [
     {
-     "title": "Què és",
-     "body": "El **volum** és la quantitat d'accions, contractes o monedes que canvien de mans en un període. Es veu en barres sota el gràfic, verdes si l'espelma va pujar i vermelles si va baixar.\n\nEl preu diu què passa; el volum, quanta gent hi ha al darrere."
+     "texts": [
+      "Ruptura amb poca gent",
+      "Sara",
+      "La meva acció acaba de superar el seu màxim de l'any! Compro ara mateix.",
+      "I el volum d'avui?",
+      "La meitat del normal. Importa?",
+      "Què li dius?",
+      "Sí: espera a veure si tanca a dalt amb volum",
+      "Bé. Amb volum alt, la ruptura és molt més creïble.",
+      "No: una ruptura és una ruptura",
+      "Sense volum, poca gent la recolza. És la típica **falsa ruptura**.",
+      "Ven: el volum baix garanteix una caiguda",
+      "Posa en dubte la ruptura, però no garanteix res.",
+      "El **volum** és el que canvia de mans en cada període: les barres de sota.",
+      "El preu et diu què passa. El volum, quanta gent s'ho creu."
+     ]
     },
     {
-     "title": "Com es llegeix",
-     "body": "• Puja amb volum alt: convicció.\n• Puja amb volum cada vegada més baix: possible esgotament.\n• Baixa amb volum baix: correcció tranquil·la.\n• Trenca un nivell amb volum alt: ruptura més fiable.\n• Trenca amb volum baix: risc de **falsa ruptura**."
+     "texts": [
+      "Ho confirma o ho posa en dubte?",
+      "El mateix moviment de preu, amb un volum diferent. El volum el **confirma** o el **posa en dubte**?",
+      "El confirma",
+      "El posa en dubte",
+      "Puja amb el triple de volum que la mitjana",
+      "Molta gent darrere la pujada: convicció.",
+      "Supera una resistència amb un volum baixíssim",
+      "Poca gent al darrere: risc de falsa ruptura.",
+      "Cada dia puja, però amb menys volum",
+      "Possible esgotament: cada vegada s'hi apunta menys gent.",
+      "Perd un suport amb un volum enorme",
+      "La ruptura té molta gent al darrere: més fiable.",
+      "Marca un màxim amb un volum molt superior a la mitjana",
+      "Volum alt en la ruptura: més creïble.",
+      "Classifica els cinc moviments.",
+      "Un moviment amb molt de volum té **molta gent al darrere**. Sense volum pot ser una il·lusió, com una **falsa ruptura**.",
+      "Hi ha molta gent darrere el moviment, o poca?",
+      "Ho confirma o ho posa en dubte?"
+     ]
     },
     {
      "title": "Pics i límits",
-     "body": "Els pics de volum arriben amb notícies, venciments, pànic o eufòria; després d'una caiguda forta, de vegades marquen la **capitulació**. Compte: en divises no hi ha volum centralitzat i en cripto es reparteix entre moltes plataformes.",
+     "body": "• Puja amb volum alt: convicció. Baixa amb volum baix: correcció tranquil·la.\n• Els pics de volum arriben amb notícies, venciments, pànic o eufòria; després d'una caiguda forta, de vegades marquen la **capitulació**.\n• En divises no hi ha volum centralitzat i en cripto es reparteix entre moltes plataformes.",
      "key": "Un moviment amb molt de volum té molta gent al darrere; sense volum pot ser una il·lusió.",
      "tip": "El preu et diu què passa. El volum, quanta gent s'ho creu."
     }
@@ -176,32 +410,6 @@
    "explanation": "(53 − 50) ÷ 50 = 0,06 → +6 %. La variació diària es calcula entre un tancament i l'anterior.",
    "unit": "%"
   },
-  "u19l1-7": {
-   "prompt": "Si un gràfic fa tres mesos que puja, és segur que demà també pujarà.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Un gràfic registra el passat. La tendència pot continuar o no: parlem de probabilitats, mai de certeses."
-  },
-  "u19l1-8": {
-   "prompt": "Primer contacte: 30 espelmes diàries reals, sense nom ni data. Què creus que va fer el preu en les 10 sessions següents?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Mirant només un gràfic, ningú no ho sap amb certesa. Aquest exercici serveix per notar la diferència entre llegir el passat i endevinar el futur.",
-   "horizon": "les 10 sessions següents"
-  },
-  "u19l1-9": {
-   "prompt": "Ràpid: quin eix mostra el temps?",
-   "options": [
-    "Cap: va a la llegenda",
-    "El vertical",
-    "L'horitzontal"
-   ],
-   "explanation": "El temps avança d'esquerra a dreta; el preu va en vertical."
-  },
   "u19l1-10": {
    "prompt": "Passes el dit per una espelma al gràfic d'E-Trading. Quines dades hi veus? Marca-les totes.",
    "options": [
@@ -242,29 +450,6 @@
    "options": [],
    "explanation": "Aquest cos enorme diu que els compradors van dominar la sessió de principi a fi. Un gràfic de línia només et mostraria un tancament més alt. (Apple · espelmes diàries · abril del 2025)"
   },
-  "u19l2-4": {
-   "prompt": "En un gràfic de barres, la ratlleta de l'esquerra marca el tancament.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "La de l'esquerra és l'obertura; la de la dreta, el tancament."
-  },
-  "u19l2-5": {
-   "prompt": "Quin gràfic faries servir per a cada cosa?",
-   "options": [
-    "Saber si avui hi ha hagut rebuig dels preus alts",
-    "Ensenyar quant ha pujat un fons en 5 anys",
-    "Posar un stop sota el mínim d'ahir",
-    "Llegir l'obertura i el tancament de cada dia",
-    "Veure la tendència de 10 anys d'un índex"
-   ],
-   "explanation": "La línia resumeix la tendència; les espelmes i les barres tenen els quatre preus de cada període, que són els que calen per operar.",
-   "right": [
-    "Línia o àrea",
-    "Espelmes o barres"
-   ]
-  },
   "u19l2-6": {
    "prompt": "En línia, la direcció es veu d'un cop d'ull. Quina tendència té? (Microsoft · tancaments cada 3 sessions · desembre del 2025 – febrer del 2026)",
    "options": [
@@ -298,33 +483,6 @@
     "Exacte: el Heikin Ashi serveix per a la tendència; els preus per operar es miren en espelmes, barres o línia."
    ]
   },
-  "u19l2-9": {
-   "prompt": "Ràpid: quin gràfic és l'estàndard a gairebé totes les plataformes?",
-   "options": [
-    "Punts i figures",
-    "Espelmes japoneses",
-    "Àrea"
-   ],
-   "explanation": "Les espelmes mostren els quatre preus d'una manera fàcil de llegir."
-  },
-  "u19l2-10": {
-   "prompt": "Què li respons a la Lumi?",
-   "options": [
-    "Per veure l'evolució a llarg termini, n'hi ha prou amb la línia; les espelmes serveixen per veure cada sessió per dins",
-    "No, la línia ho diu tot",
-    "Sí: sense espelmes no es pot invertir"
-   ],
-   "explanation": "Cada gràfic respon a una pregunta: la línia, cap on va; les espelmes, qui va guanyar cada període.",
-   "feedback": [
-    "Exacte! Per mirar un fons a anys vista, la línia va bé. Per operar, calen els quatre preus.",
-    "La línia només uneix els tancaments: no hi veus màxims, mínims ni el que va passar dins de cada dia.",
-    "Es pot invertir molt bé mirant poc el gràfic. Les espelmes són útils, no obligatòries."
-   ],
-   "lines": [
-    "La meva app d'inversió només m'ensenya una línia 📈",
-    "M'estic perdent alguna cosa?"
-   ]
-  },
   "u19l3-1": {
    "prompt": "Ordena de més soroll a menys soroll.",
    "options": [
@@ -335,22 +493,6 @@
     "Mensual"
    ],
    "explanation": "Com més curta és la temporalitat, més moviments aleatoris sense significat."
-  },
-  "u19l3-2": {
-   "prompt": "Quina temporalitat encaixa amb cada persona?",
-   "options": [
-    "En Pablo fa scalping",
-    "La Laura revisa el seu fons indexat cada trimestre",
-    "La Marta manté posicions unes quantes setmanes",
-    "L'Ana inverteix per a la jubilació",
-    "En Bruno obre i tanca operacions el mateix dia"
-   ],
-   "explanation": "La temporalitat es tria segons l'horitzó: qui inverteix a anys vista no necessita mirar espelmes de minuts.",
-   "right": [
-    "Minuts o hores",
-    "Diari",
-    "Setmanal o mensual"
-   ]
   },
   "u19l3-3": {
    "prompt": "Aquests tancaments cobreixen unes vuit setmanes. Quina tendència hi veus? (Microsoft · tancaments cada 3 sessions · juny–agost del 2026)",
@@ -388,37 +530,6 @@
    ],
    "explanation": "La més gran marca la direcció: si el setmanal és alcista, només es busquen compres. La més petita afina l'entrada i l'stop."
   },
-  "u19l3-7": {
-   "prompt": "Com més curta és la temporalitat, més fiables són els senyals.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Al revés: en minuts domina el soroll, els senyals fallen més i els costos s'acumulen."
-  },
-  "u19l3-8": {
-   "prompt": "Al gràfic setmanal, una acció fa un any que marca màxims i mínims creixents. Al de 5 minuts, fa tot el matí que cau. La Marta, que inverteix a uns quants anys vista, s'espanta. Què li dius?",
-   "options": [
-    "Que en compri més per aprofitar la caiguda",
-    "Que miri la temporalitat que encaixa amb el seu horitzó",
-    "Que vengui ja: la tendència ha canviat"
-   ],
-   "explanation": "Cada horitzó té la seva temporalitat. Barrejar-les porta a decisions impulsives.",
-   "feedback": [
-    "Ni vendre ni comprar per un matí: decidir amb el gràfic de 5 minuts és fer servir l'eina equivocada.",
-    "Molt bé: per a anys, mana el setmanal. La caiguda del matí pot ser part del soroll.",
-    "Un matí en 5 minuts no trenca una tendència d'un any: per al seu horitzó, és soroll."
-   ]
-  },
-  "u19l3-9": {
-   "prompt": "Ràpid: un inversor a llarg termini hauria de mirar sobretot…",
-   "options": [
-    "Gràfics setmanals i mensuals",
-    "Espelmes d'1 minut",
-    "Només les notícies del dia"
-   ],
-   "explanation": "El seu horitzó són anys, no minuts."
-  },
   "u19l3-10": {
    "prompt": "Un day trader fa 5 operacions al dia i paga 2 € de comissió per cadascuna. Quant paga en un mes de 20 sessions?",
    "options": [],
@@ -454,29 +565,6 @@
    "explanation": "10 € sobre 200 € = +5 %. En lineal, aquest salt de 10 € ocupa el mateix que el de 20 a 30 €; en logarítmica, es veu deu vegades més petit.",
    "unit": "%"
   },
-  "u19l4-5": {
-   "prompt": "Quina escala triaries?",
-   "options": [
-    "El S&P 500 des del 1950",
-    "Una acció en les últimes 3 setmanes",
-    "Una tecnològica que s'ha multiplicat per 50",
-    "Bitcoin des del 2013",
-    "Un índex durant una sola sessió"
-   ],
-   "explanation": "Per a períodes llargs o actius que s'han multiplicat molt, logarítmica. En trams curts, euros i percentatges van gairebé a la par.",
-   "right": [
-    "Logarítmica",
-    "És gairebé igual"
-   ]
-  },
-  "u19l4-6": {
-   "prompt": "Si un actiu cau un 50 %, ha de pujar un 100 % per tornar al punt de partida.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "De 100 a 50 és −50 %; de 50 a 100 és +100 %. Per això cal pensar en percentatges, no en euros."
-  },
   "u19l4-7": {
    "prompt": "S&P 500, finals de setembre del 1929: els tancaments setmanals fa gairebé dos anys que pugen. Què creus que va passar després?",
    "options": [
@@ -495,33 +583,6 @@
     "percentatge"
    ],
    "explanation": "Per això compara bé èpoques amb preus molt diferents."
-  },
-  "u19l4-9": {
-   "prompt": "Per mirar unes poques setmanes, l'escala gairebé no canvia el gràfic.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "En trams curts els moviments són petits i euros i percentatges van gairebé a la par."
-  },
-  "u19l4-10": {
-   "prompt": "Què li respons?",
-   "options": [
-    "És que el gràfic està mal fet",
-    "És l'escala lineal: amb preus baixos, moviments enormes en percentatge ocupen poc. En logarítmica es veurien",
-    "No, abans no passava res"
-   ],
-   "explanation": "En períodes llargs, l'escala lineal amaga els moviments antics. La logarítmica els posa al seu lloc.",
-   "feedback": [
-    "El gràfic està bé; el que enganya és fer servir l'escala lineal per a tants anys.",
-    "Exacte! En logarítmica, un +100 % ocupa el mateix el 2014 que el 2024.",
-    "En passaven moltíssimes, amb caigudes de més del 80 %. En lineal, com que els preus eren baixos, no es veu."
-   ],
-   "lines": [
-    "He vist un gràfic de bitcoin des del 2013 👀",
-    "Fins al 2017 és una línia plana i després tot passa al final.",
-    "Abans no es movia?"
-   ]
   },
   "u19l5-1": {
    "prompt": "Quina tendència té aquest gràfic? (NVIDIA · tancaments cada 3 sessions · març–maig del 2026)",
@@ -564,22 +625,6 @@
    ],
    "explanation": "Màxims i mínims creixents: és la definició de tendència alcista."
   },
-  "u19l5-6": {
-   "prompt": "Classifica cada seqüència de màxims i mínims.",
-   "options": [
-    "Màxims 80, 76, 71 · mínims 74, 70, 65",
-    "Màxims 40, 40, 41 · mínims 35, 36, 35",
-    "Màxims 12, 11, 10 · mínims 10, 9, 8",
-    "Màxims 20, 22, 25 · mínims 18, 19, 21",
-    "Màxims 100, 104, 109 · mínims 95, 99, 102"
-   ],
-   "explanation": "Si pugen tots dos, alcista; si baixen tots dos, baixista; si es repeteixen, lateral.",
-   "right": [
-    "Alcista",
-    "Baixista",
-    "Lateral"
-   ]
-  },
   "u19l5-7": {
    "prompt": "Una acció puja durant mesos. Marca un màxim a 60 €, cau a 54 €, rebota només fins a 58 € i després cau a 52 €. Què ha passat?",
    "options": [
@@ -602,37 +647,6 @@
    ],
    "explanation": "El momentum és una tendència estadística de mesos, no una promesa per a la setmana que ve. L'estructura t'ajuda a saber on t'equivoques.",
    "horizon": "les 10 sessions següents"
-  },
-  "u19l5-9": {
-   "prompt": "Una correcció del 7 % dins d'una tendència alcista vol dir que la tendència s'ha acabat.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Les correccions del 5–10 % són normals en pujades sanes. El que importa és si es trenca l'estructura de màxims i mínims."
-  },
-  "u19l5-10": {
-   "prompt": "Quina idea de l'anàlisi tècnica té més suport acadèmic?",
-   "options": [
-    "Que els nivells de Fibonacci prediuen els girs",
-    "Que les tendències de 3–12 mesos tendeixen a persistir (momentum)",
-    "Que cada espelma verda n'anuncia una altra"
-   ],
-   "explanation": "El momentum apareix en accions, bons, divises i matèries primeres, amb dades de més d'un segle. Tot i així, és difícil d'aprofitar un cop descomptats els costos."
-  },
-  "u19l6-1": {
-   "prompt": "El volum confirma el moviment o el posa en dubte?",
-   "options": [
-    "Puja amb volum cada vegada més baix",
-    "Trenca un suport amb un volum enorme",
-    "Trenca una resistència amb un volum baixíssim",
-    "Puja amb un volum molt superior a la mitjana"
-   ],
-   "explanation": "Volum alt = molta gent darrere del moviment. Volum baix o decreixent = poca convicció.",
-   "right": [
-    "El confirma",
-    "El posa en dubte"
-   ]
   },
   "u19l6-2": {
    "prompt": "El preu trenca una resistència amb un volum molt inferior a la mitjana. Quin risc hi ha?",
@@ -664,14 +678,6 @@
    "options": [],
    "explanation": "Va obrir gairebé al mínim i va tancar gairebé al màxim. Si a més arribés amb volum alt, el senyal de força seria més creïble. (NVIDIA · espelmes diàries · març–abril del 2026)"
   },
-  "u19l6-5": {
-   "prompt": "En divises, el volum que mostren molts gràfics és una dada parcial.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "El mercat de divises no té una borsa central: cada proveïdor només veu una part del que s'ha negociat."
-  },
   "u19l6-6": {
    "prompt": "Sense veure el volum només tens mitja història. Puja o baixa en les 10 sessions següents?",
    "options": [
@@ -680,29 +686,6 @@
    ],
    "explanation": "Encara que veiessis el volum, una sola pista no n'hi ha prou per endevinar el curt termini. El volum serveix per valorar si un moviment té gent al darrere.",
    "horizon": "les 10 sessions següents"
-  },
-  "u19l6-7": {
-   "prompt": "En Bruno veu que una acció supera el màxim de l'any, però el volum d'aquell dia és la meitat del normal. Vol comprar ja. Què seria el més prudent segons el que has après?",
-   "options": [
-    "Comprar tot el que pugui: ruptura és ruptura",
-    "Esperar a veure si tanca per sobre amb volum",
-    "Vendre, perquè el volum baix garanteix una caiguda"
-   ],
-   "explanation": "Una ruptura amb poc volum és sospitosa. Esperar confirmació redueix les falses ruptures.",
-   "feedback": [
-    "Sense volum, la ruptura té poca gent al darrere: és el cas típic de falsa ruptura.",
-    "Molt bé: un tancament clar a l'altre costat amb un volum superior a la mitjana fa la ruptura més creïble.",
-    "El volum baix posa en dubte la ruptura, però no garanteix res en cap sentit."
-   ]
-  },
-  "u19l6-8": {
-   "prompt": "Ràpid: un pic de volum enorme després d'una caiguda forta pot indicar…",
-   "options": [
-    "Que el mercat està tancat",
-    "Capitulació",
-    "Creu daurada"
-   ],
-   "explanation": "Els últims venedors es rendeixen. No sempre: hi pot haver diversos pics."
   },
   "u19l6-9": {
    "prompt": "Un moviment amb molt de volum té molta gent al darrere; un sense volum pot ser una ____.",
