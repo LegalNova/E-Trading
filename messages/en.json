@@ -788,7 +788,8 @@
     "lockedTitle": "Unlock 7 days of Max for free",
     "lockedBody": "Come back {n} days in a row (you’re on {s}) or join with a friend’s invitation. You’ll also be able to subscribe directly once card payments are on.",
     "lockedCta": "Keep my streak",
-    "inviteCta": "Invite a friend"
+    "inviteCta": "Invite a friend",
+    "subscribe": "Subscribe to {plan}"
   },
   "settings": {
     "title": "Settings",
@@ -853,7 +854,11 @@
     "helpSection": "Help",
     "gift": "gift",
     "giftEnds": "Gift ends",
-    "giftMore": "Earn more months by inviting"
+    "giftMore": "Earn more months by inviting",
+    "toLight": "Light mode",
+    "toDark": "Dark mode",
+    "manageSub": "Manage subscription (card, invoices, plan)",
+    "error": "Something went wrong. Try again."
   },
   "account": {
     "title": "Account",

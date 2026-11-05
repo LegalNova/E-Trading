@@ -107,6 +107,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
             ['Vercel Inc.', 'App hosting', 'USA · EU-US Data Privacy Framework and standard contractual clauses'],
             ['Neon Inc. (on Amazon Web Services)', 'Database', 'USA (us-east-1) · processor agreement and standard contractual clauses'],
             ['Google LLC', 'Sign in with Google (only if you use it)', 'USA · EU-US Data Privacy Framework'],
+            ['Stripe Payments Europe, Ltd.', 'Billing for paid plans (only if you take one out): card, invoices and subscription. We never see your full card details', 'Ireland (EU)'],
             ['Resend Inc.', 'Account emails (confirming your email, changing your password)', 'USA · processor agreement and standard contractual clauses'],
           ],
         },

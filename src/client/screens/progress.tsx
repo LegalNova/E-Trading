@@ -14,6 +14,7 @@ import { Flame, Gem, Icon, type IconName } from '../ui/icons'
 import { Bar, ErrorState, PageSkeleton, Sheet, TopBar } from '../ui/kit'
 import { BadgeArt, RARITY, rarityOf } from '../ui/badge'
 import { MaxCard } from '../upgrade'
+import { ThemeToggle } from '../theme-toggle'
 import { Lumi, LumiSays, SKINS, stageOf } from '../ui/lumi'
 
 // ── Racha (05.1) ─────────────────────────────────────────
@@ -69,7 +70,7 @@ export function Streak() {
                   key={c.date}
                   title={c.date}
                   className="flex h-[34px] items-center justify-center rounded-[10px] text-[13px] font-bold"
-                  style={c.status === 'ACTIVE' ? { background: 'var(--brand)', color: '#fff' } : c.status === 'FROZEN' ? { border: '2px dashed var(--brand)', color: 'var(--brand)' } : c.date === today ? { border: '2px solid var(--ink)' } : c.status === 'MISSED' ? { background: 'var(--fill)', color: 'var(--ink-3)' } : { background: 'var(--fill)' }}
+                  style={c.status === 'ACTIVE' ? { background: 'var(--brand)', color: '#fff' } : c.status === 'FROZEN' ? { border: '2px dashed var(--brand)', color: 'var(--brand-ink)' } : c.date === today ? { border: '2px solid var(--ink)' } : c.status === 'MISSED' ? { background: 'var(--fill)', color: 'var(--ink-3)' } : { background: 'var(--fill)' }}
                 >
                   {Number(c.date.slice(8))}
                 </span>
@@ -287,9 +288,12 @@ export function Profile() {
     <div className="pad">
       <div className="flex items-center justify-between px-0.5">
         <h1 className="t-large">{t('title')}</h1>
-        <Link href="/ajustes" className="link">
-          {t('settings')}
-        </Link>
+        <div className="flex items-center gap-1">
+          <ThemeToggle />
+          <Link href="/ajustes" className="link">
+            {t('settings')}
+          </Link>
+        </div>
       </div>
       <Link href="/perfil/lumi" className="card flex items-center gap-3.5" style={{ color: 'inherit' }}>
         <Lumi mood={me.companion.mood} size={56} skin={me.companion.skinId} stage={stageOf(me.level.n)} label={me.companion.name} />

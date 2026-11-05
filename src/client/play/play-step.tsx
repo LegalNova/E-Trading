@@ -77,7 +77,7 @@ export function PlayView({ s, done, onDone }: { s: PlayStepT; done: boolean; onD
       <RichText text={s.intro} />
       {s.predict && (
         <div className="card flex flex-col gap-2" style={guess === null ? { outline: '2px solid var(--brand)' } : undefined}>
-          <span className="t-cap font-bold" style={{ color: 'var(--brand)' }}>
+          <span className="t-cap font-bold" style={{ color: 'var(--brand-ink)' }}>
             <Glyph name="idea" size={14} className="mr-1 inline align-[-2px]" />
             {t('predict')}
           </span>
@@ -126,7 +126,7 @@ export function PlayView({ s, done, onDone }: { s: PlayStepT; done: boolean; onD
           )}
           {(goalMet || done) && (
             <div className="card animate-pop" style={{ background: 'color-mix(in srgb, var(--brand) 10%, var(--surface))' }}>
-              <span className="t-cap font-bold" style={{ color: 'var(--brand)' }}>
+              <span className="t-cap font-bold" style={{ color: 'var(--brand-ink)' }}>
                 <Glyph name="idea" size={14} className="mr-1 inline align-[-2px]" />
                 {t('insight')}
               </span>

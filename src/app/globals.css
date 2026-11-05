@@ -1,86 +1,110 @@
 @import "tailwindcss";
 
-/* ─── Identidad 3a · tokens (claro por defecto) ───────────────
-   Negro, blanco, grises y un único azul. Verde y rojo solo para
-   subidas y bajadas. Fuente: design/README.md e Identidad 3a.     */
+/* ─── Identidad de Lumi · colores (regla 60/30/10) ───────────
+   60 % marfil (fondos y tarjetas: calidez), 30 % azul noche (texto, tarjetas destacadas
+   y elementos oscuros), 10 % mandarina (botones principales, progreso y lo que se toca).
+   Verde y rojo solo para subidas y bajadas. Lumi conserva su azul.
+   En oscuro se invierte: base azul noche, texto marfil y el mismo acento.
+   --brand rellena (con texto --on-brand encima); como color de texto sobre el fondo, --brand-ink. */
 :root {
-  --bg: #f5f5f7;
-  --surface: #ffffff;
-  --surface-2: #f2f2f7;
-  --fill: #e9e9ee;
-  --line: #e5e5ea;
-  --ink: #1d1d1f;
-  --ink-2: #6e6e73;
-  --ink-3: #aeaeb2;
-  --brand: #0071e3;
-  --brand-press: #0058b0;
-  --on-brand: #ffffff;
-  --up: #248a3d;
-  --down: #d70015;
+  --bg: #f7f3ec;
+  --surface: #fffdf8;
+  --surface-2: #f2ede4;
+  --fill: #ebe4d8;
+  --line: #e4ddd0;
+  --ink: #172033;
+  --ink-2: #5e6273;
+  --ink-3: #a3a19b;
+  --brand: #ff6a2c;
+  --brand-press: #f2581a;
+  --brand-ink: #b4400f;
+  --on-brand: #172033;
+  --lumi: #2e6ae6;
+  --up: #1f8a44;
+  --down: #d1242f;
   --amber: #b25000;
-  --amber-bg: #fff4e5;
-  --gem: #32ade6;
-  --hero: #1d1d1f;
-  --on-hero: #f5f5f7;
+  --amber-bg: #fff1e2;
+  --gem: #2b9fd9;
+  --hero: #172340;
+  --on-hero: #f7f3ec;
   --rare-common: #8e8e93;
-  --rare-rare: #0071e3;
+  --rare-rare: #2e6ae6;
   --rare-epic: #8944ab;
   --rare-legendary: #b8860b;
-  --scrim: rgb(0 0 0 / 0.35);
-  --shadow: 0 10px 40px rgb(0 0 0 / 0.12);
+  --scrim: rgb(23 32 51 / 0.4);
+  --shadow: 0 10px 40px rgb(23 32 51 / 0.12);
+  --glass: rgb(255 253 248 / 0.62);
+  --glass-line: rgb(255 255 255 / 0.7);
+  --glass-shadow: 0 12px 32px rgb(23 32 51 / 0.16), inset 0 1px 0 rgb(255 255 255 / 0.75);
   color-scheme: light;
 }
 
-/* Oscuro: negro puro con superficies grises escalonadas (como iOS) */
 :root[data-theme="dark"] {
-  --bg: #000000;
-  --surface: #1c1c1e;
-  --surface-2: #2c2c2e;
-  --fill: #2c2c2e;
-  --line: #38383a;
-  --ink: #f5f5f7;
-  --ink-2: #98989d;
-  --ink-3: #636366;
-  --brand: #2997ff;
-  --brand-press: #0a84ff;
-  --on-brand: #ffffff;
-  --up: #30d158;
-  --down: #ff453a;
-  --amber: #ff9f0a;
-  --amber-bg: #2a1e0a;
+  --bg: #0f1322;
+  --surface: #181d2e;
+  --surface-2: #212739;
+  --fill: #252b3d;
+  --line: #2c3346;
+  --ink: #f3eee6;
+  --ink-2: #a4a6b3;
+  --ink-3: #6b6f80;
+  --brand: #ff7a3d;
+  --brand-press: #ff8c55;
+  --brand-ink: #ff9d66;
+  --on-brand: #14110f;
+  --lumi: #4c8dff;
+  --up: #34c76a;
+  --down: #ff5a4f;
+  --amber: #ffa63d;
+  --amber-bg: #2d2010;
   --gem: #64d2ff;
-  --hero: #2c2c2e;
-  --on-hero: #f5f5f7;
+  --hero: #1f2a48;
+  --on-hero: #f3eee6;
   --rare-common: #98989d;
-  --rare-rare: #2997ff;
+  --rare-rare: #4c8dff;
   --rare-epic: #bf5af2;
   --rare-legendary: #ffd60a;
   --scrim: rgb(0 0 0 / 0.6);
-  --shadow: 0 10px 40px rgb(0 0 0 / 0.6);
+  --shadow: 0 10px 40px rgb(0 0 0 / 0.55);
+  --glass: rgb(24 29 46 / 0.6);
+  --glass-line: rgb(255 255 255 / 0.09);
+  --glass-shadow: 0 12px 32px rgb(0 0 0 / 0.45), inset 0 1px 0 rgb(255 255 255 / 0.08);
   color-scheme: dark;
 }
 
 /* Sin JavaScript todavía: seguir al sistema */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --bg: #000000;
-    --surface: #1c1c1e;
-    --surface-2: #2c2c2e;
-    --fill: #2c2c2e;
-    --line: #38383a;
-    --ink: #f5f5f7;
-    --ink-2: #98989d;
-    --ink-3: #636366;
-    --brand: #2997ff;
-    --brand-press: #0a84ff;
-    --up: #30d158;
-    --down: #ff453a;
-    --amber: #ff9f0a;
-    --amber-bg: #2a1e0a;
-    --gem: #64d2ff;
-    --hero: #2c2c2e;
-    --scrim: rgb(0 0 0 / 0.6);
-    color-scheme: dark;
+  --bg: #0f1322;
+  --surface: #181d2e;
+  --surface-2: #212739;
+  --fill: #252b3d;
+  --line: #2c3346;
+  --ink: #f3eee6;
+  --ink-2: #a4a6b3;
+  --ink-3: #6b6f80;
+  --brand: #ff7a3d;
+  --brand-press: #ff8c55;
+  --brand-ink: #ff9d66;
+  --on-brand: #14110f;
+  --lumi: #4c8dff;
+  --up: #34c76a;
+  --down: #ff5a4f;
+  --amber: #ffa63d;
+  --amber-bg: #2d2010;
+  --gem: #64d2ff;
+  --hero: #1f2a48;
+  --on-hero: #f3eee6;
+  --rare-common: #98989d;
+  --rare-rare: #4c8dff;
+  --rare-epic: #bf5af2;
+  --rare-legendary: #ffd60a;
+  --scrim: rgb(0 0 0 / 0.6);
+  --shadow: 0 10px 40px rgb(0 0 0 / 0.55);
+  --glass: rgb(24 29 46 / 0.6);
+  --glass-line: rgb(255 255 255 / 0.09);
+  --glass-shadow: 0 12px 32px rgb(0 0 0 / 0.45), inset 0 1px 0 rgb(255 255 255 / 0.08);
+  color-scheme: dark;
   }
 }
 
@@ -95,6 +119,8 @@
   --color-ink-3: var(--ink-3);
   --color-brand: var(--brand);
   --color-brand-press: var(--brand-press);
+  --color-brand-ink: var(--brand-ink);
+  --color-lumi: var(--lumi);
   --color-on-brand: var(--on-brand);
   --color-up: var(--up);
   --color-down: var(--down);
@@ -171,7 +197,7 @@ button { cursor: pointer; }
 
   .pad { padding: 4px 16px 24px; display: flex; flex-direction: column; gap: 12px; }
   .card { background: var(--surface); border-radius: 18px; padding: 16px; }
-  .hero { background: var(--hero); color: var(--on-hero); border-radius: 18px; padding: 16px; }
+  .hero { background: linear-gradient(155deg, var(--hero) 55%, color-mix(in srgb, var(--hero) 72%, var(--lumi))); color: var(--on-hero); border-radius: 20px; padding: 16px; box-shadow: 0 10px 28px color-mix(in srgb, var(--hero) 28%, transparent); }
   .hero .bar { background: rgb(255 255 255 / 0.18); }
 
   .btn { height: 52px; border: none; border-radius: 999px; font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 0 22px; width: 100%; transition: transform 0.1s ease-out, opacity 0.15s, background 0.15s; text-decoration: none; }
@@ -182,7 +208,7 @@ button { cursor: pointer; }
   .btn-danger { background: var(--down); color: #fff; }
   .btn-secondary { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
   .btn-secondary:active:not([disabled]) { background: color-mix(in srgb, var(--brand) 12%, var(--surface)); border-color: var(--brand); }
-  .btn-plain { background: transparent; color: var(--brand); height: 44px; }
+  .btn-plain { background: transparent; color: var(--brand-ink); height: 44px; }
   .btn-dark { background: var(--ink); color: var(--bg); }
   .btn[disabled] { background: var(--fill); color: var(--ink-3); cursor: not-allowed; border-color: transparent; }
   .btn-sm { height: 40px; font-size: 15px; width: auto; padding: 0 18px; }
@@ -217,10 +243,12 @@ button { cursor: pointer; }
   .steps > i { flex: 1; height: 6px; border-radius: 999px; background: var(--fill); transition: background 0.2s; }
   .steps > i.on { background: var(--brand); }
 
-  .topbar { height: 44px; flex: none; display: flex; align-items: center; justify-content: space-between; padding: 0 8px; }
+  .topbar { height: 44px; flex: none; display: flex; align-items: center; justify-content: space-between; padding: 0 8px; position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 74%, transparent); backdrop-filter: blur(18px) saturate(170%); -webkit-backdrop-filter: blur(18px) saturate(170%); }
+  /* Cristal («liquid glass»): barra inferior, hojas y avisos flotantes */
+  .glass { background: var(--glass); backdrop-filter: blur(22px) saturate(180%); -webkit-backdrop-filter: blur(22px) saturate(180%); border: 1px solid var(--glass-line); box-shadow: var(--glass-shadow); }
   .icon-btn { width: 44px; height: 44px; border: none; background: none; display: flex; align-items: center; justify-content: center; border-radius: 12px; color: var(--ink); flex: none; }
   .icon-btn:hover { background: var(--fill); }
-  .link { border: none; background: none; color: var(--brand); font-size: 15px; font-weight: 700; padding: 6px 8px; text-decoration: none; }
+  .link { border: none; background: none; color: var(--brand-ink); font-size: 15px; font-weight: 700; padding: 6px 8px; text-decoration: none; }
 
   .opt { width: 100%; text-align: left; border: 2px solid transparent; background: var(--surface); border-radius: 16px; padding: 14px 16px; display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 600; line-height: 20px; color: var(--ink); transition: transform 0.1s ease-out, background 0.15s, border-color 0.15s, opacity 0.2s; }
   .opt:hover:not([disabled]) { border-color: var(--line); }
@@ -246,7 +274,7 @@ button { cursor: pointer; }
   .check.on { background: var(--brand); border-color: var(--brand); }
 
   .banner { background: var(--amber-bg); color: var(--amber); border-radius: 14px; padding: 10px 12px; font-size: 13px; font-weight: 600; line-height: 18px; display: flex; gap: 8px; align-items: center; }
-  .banner-info { background: color-mix(in srgb, var(--brand) 12%, var(--surface)); color: var(--brand); }
+  .banner-info { background: color-mix(in srgb, var(--brand) 12%, var(--surface)); color: var(--brand-ink); }
 
   .kv { display: flex; justify-content: space-between; gap: 10px; padding: 11px 0; font-size: 15px; }
   .kv + .kv { border-top: 1px solid var(--line); }

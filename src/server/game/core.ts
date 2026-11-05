@@ -143,7 +143,7 @@ function inCtx<T>(fn: (c: Ctx) => Promise<T>, u0: User, readOnly: boolean, read:
 async function expireTrial(tx: Tx, u: User): Promise<User> {
   if (u.plan === 'FREE') return u
   const sub = await tx.subscription.findUnique({ where: { userId: u.id } })
-  if ((sub?.status === 'TRIALING' || sub?.status === 'GIFT') && sub.trialEndsAt && sub.trialEndsAt.getTime() < Date.now()) {
+  if ((sub?.status === 'TRIALING' || sub?.status === 'GIFT') && !(sub.status === 'TRIALING' && sub.stripeSubId) && sub.trialEndsAt && sub.trialEndsAt.getTime() < Date.now()) {
     // Solo una petición la cierra (si llegan dos a la vez, la segunda ya no encuentra nada que cerrar)
     const closed = await tx.subscription.updateMany({ where: { userId: u.id, status: sub.status }, data: { status: 'CANCELED', renewsAt: null } })
     if (!closed.count) return (await tx.user.findUnique({ where: { id: u.id } })) ?? u

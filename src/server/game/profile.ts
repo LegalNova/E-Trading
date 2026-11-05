@@ -10,6 +10,8 @@ import { db } from '../db'
 import { headers } from 'next/headers'
 import { auth, currentUser, googleEnabled, mailEnabled, realUser } from '../auth'
 import { viewAs } from '../view'
+import { checkoutUrl, portalUrl, stripeEnabled, type PlanId as StripePlanId } from '../billing/stripe'
+import { currentLocale } from '../locale'
 import { forgetMemo } from '../request'
 import { ACHIEVEMENTS } from '../content/catalog'
 import { achievementList, endFx, fail, FREEZE_PRICE, goalDefs, goalsOf, minutesOf, levelOf, levelTitle, LIVES_MAX, livesOf, lumi, MAX_FREEZES, notify, REFILL_PRICE, START_CASH, withCtx } from './core'
@@ -274,7 +276,7 @@ export async function planBadge() {
   const temporary = (sub?.status === 'TRIALING' || sub?.status === 'GIFT') && sub.trialEndsAt && sub.trialEndsAt.getTime() > Date.now()
   const daysLeft = temporary ? Math.max(1, Math.ceil((sub!.trialEndsAt!.getTime() - Date.now()) / DAY_MS)) : null
   const g = await db.gameState.findUnique({ where: { userId: u!.id }, select: { streak: true, bestStreak: true } })
-  return { plan: u!.plan, status: sub?.status ?? 'NONE', endsAt: temporary ? sub!.trialEndsAt!.toISOString() : null, daysLeft, trialUsed: u!.trialUsed, isGuest: !!u!.isAnonymous, streak: g?.streak ?? 0, trialUnlocked: trialUnlocked(g?.bestStreak ?? 0), trialStreak: TRIAL_STREAK }
+  return { plan: u!.plan, status: sub?.status ?? 'NONE', endsAt: temporary ? sub!.trialEndsAt!.toISOString() : null, daysLeft, trialUsed: u!.trialUsed, isGuest: !!u!.isAnonymous, streak: g?.streak ?? 0, trialUnlocked: trialUnlocked(g?.bestStreak ?? 0), trialStreak: TRIAL_STREAK, payments: stripeEnabled }
 }
 
 export const billingStatus = () =>
@@ -284,7 +286,43 @@ export const billingStatus = () =>
     return statusOf(c.user, await c.tx.subscription.findUnique({ where: { userId: c.user.id } }))
   })
 
-export const checkout = (planId: string) =>
+export const checkout = async (planId: string) => {
+  // Con Stripe configurado: página de pago de Stripe (con la prueba si la ha desbloqueado)
+  if (stripeEnabled) return stripeCheckout(planId)
+  return simulatedCheckout(planId)
+}
+
+async function stripeCheckout(planId: string) {
+  const plan = PLANS.find(p => p.id === planId) ?? fail(422, 'VALIDATION_ERROR', 'Plan no válido')
+  const u = await currentUser()
+  if (!u) fail(401, 'UNAUTHORIZED', 'Inicia sesión para continuar')
+  if (u!.isAnonymous) fail(403, 'GUEST_MUST_SAVE', 'Guarda tu progreso con email y contraseña para suscribirte')
+  if (u!.onboardingStep !== null) fail(403, 'FORBIDDEN', 'Termina el registro primero')
+  const age = u!.birthDate ? (Date.now() - u!.birthDate.getTime()) / (365.25 * DAY_MS) : null
+  if (age !== null && age < 18 && u!.guardianConsent !== 'CONFIRMED') fail(403, 'GUARDIAN_CONSENT_REQUIRED', 'Para un plan de pago hace falta que un adulto lo confirme')
+  const h = await headers()
+  const origin = h.get('origin') ?? `https://${h.get('host')}`
+  const locale = currentLocale()
+  const sub = await db.subscription.findUnique({ where: { userId: u!.id } })
+  // Ya tiene una suscripción de pago: se cambia de plan desde el portal de Stripe
+  if (sub?.stripeSubId && ['ACTIVE', 'TRIALING', 'PAST_DUE'].includes(sub.status)) return { url: (await portalUrl(u!, origin, locale))! }
+  const g = await db.gameState.findUnique({ where: { userId: u!.id }, select: { bestStreak: true } })
+  const trial = !u!.trialUsed && trialUnlocked(g?.bestStreak ?? 0) ? TRIAL_DAYS : null
+  return { url: await checkoutUrl(u!, plan.id as StripePlanId, { trialDays: trial, origin, locale }) }
+}
+
+/** Portal de Stripe para gestionar la suscripción (tarjeta, facturas, cambio de plan, cancelación) */
+export async function billingPortal() {
+  const u = await currentUser()
+  if (!u) fail(401, 'UNAUTHORIZED', 'Inicia sesión para continuar')
+  if (!stripeEnabled) fail(404, 'NOT_FOUND', 'El pago con tarjeta aún no está activo')
+  const h = await headers()
+  const url = await portalUrl(u!, h.get('origin') ?? `https://${h.get('host')}`, currentLocale())
+  if (!url) fail(404, 'NOT_FOUND', 'No tienes ninguna suscripción de pago')
+  return { url: url! }
+}
+
+const simulatedCheckout = (planId: string) =>
   withCtx(async c => {
     const plan = PLANS.find(p => p.id === planId) ?? fail(422, 'VALIDATION_ERROR', 'Plan no válido')
     if (c.user.isAnonymous) fail(403, 'GUEST_MUST_SAVE', 'Guarda tu progreso con email y contraseña para probar Plus o Max')
@@ -310,7 +348,15 @@ export const checkout = (planId: string) =>
     return statusOf(u, sub)
   })
 
-export const cancelSubscription = () =>
+export const cancelSubscription = async () => {
+  if (stripeEnabled) {
+    const sub = await db.subscription.findFirst({ where: { user: { id: (await currentUser())?.id ?? '' } } })
+    if (sub?.stripeSubId) return billingPortal()
+  }
+  return simulatedCancel()
+}
+
+const simulatedCancel = () =>
   withCtx(async c => {
     const sub = await c.tx.subscription.upsert({ where: { userId: c.user.id }, create: { userId: c.user.id, status: 'CANCELED' }, update: { status: 'CANCELED', renewsAt: null, trialEndsAt: null, interval: null } })
     const u = await c.tx.user.update({ where: { id: c.user.id }, data: { plan: 'FREE' } })

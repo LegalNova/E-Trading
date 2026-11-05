@@ -45,7 +45,7 @@ function Waitlist() {
           {t('join')}
         </button>
       </div>
-      <p className="t-cap m-0" role="status" style={m.isSuccess ? { color: 'var(--up)', fontWeight: 700 } : err ? { color: err.code === 'CONFLICT' ? 'var(--brand)' : 'var(--down)', fontWeight: 700 } : undefined}>
+      <p className="t-cap m-0" role="status" style={m.isSuccess ? { color: 'var(--up)', fontWeight: 700 } : err ? { color: err.code === 'CONFLICT' ? 'var(--brand-ink)' : 'var(--down)', fontWeight: 700 } : undefined}>
         {m.isSuccess ? t('joined', { email }) : err?.code === 'CONFLICT' ? t('already') : err ? t('invalidEmail') : t('waitlistNote')}
       </p>
     </form>

@@ -28,7 +28,7 @@ function Result({ rows }: { rows: [string, string, boolean?][] }) {
       {rows.map(([k, v, big]) => (
         <div key={k} className="flex items-baseline justify-between gap-2">
           <span className="t-foot">{k}</span>
-          <b className={`tabular-nums ${big ? 'text-[22px]' : ''}`} style={big ? { color: 'var(--brand)' } : undefined}>
+          <b className={`tabular-nums ${big ? 'text-[22px]' : ''}`} style={big ? { color: 'var(--brand-ink)' } : undefined}>
             {v}
           </b>
         </div>

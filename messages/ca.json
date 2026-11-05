@@ -788,7 +788,8 @@
     "lockedTitle": "Desbloqueja 7 dies de Max gratis",
     "lockedBody": "Entra {n} dies seguits (en portes {s}) o arriba amb la invitació d’un amic. També et podràs subscriure directament quan activem el pagament amb targeta.",
     "lockedCta": "Continuar la ratxa",
-    "inviteCta": "Convidar un amic"
+    "inviteCta": "Convidar un amic",
+    "subscribe": "Subscriure’m a {plan}"
   },
   "settings": {
     "title": "Configuració",
@@ -853,7 +854,11 @@
     "helpSection": "Ajuda",
     "gift": "regal",
     "giftEnds": "Fi del regal",
-    "giftMore": "Guanya més mesos convidant"
+    "giftMore": "Guanya més mesos convidant",
+    "toLight": "Mode clar",
+    "toDark": "Mode fosc",
+    "manageSub": "Gestionar la subscripció (targeta, factures, pla)",
+    "error": "Alguna cosa no ha anat bé. Torna-ho a provar."
   },
   "account": {
     "title": "Compte",

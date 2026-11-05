@@ -69,6 +69,7 @@ const routes: Route[] = [
   { method: 'POST', path: 'feedback', run: (_r, _p, b) => feedback.submitFeedback(feedback.FeedbackInput.parse(b)) },
   { method: 'POST', path: 'feedback/later', run: () => feedback.feedbackLater() },
   { method: 'GET', path: 'admin/feedback', run: () => admin.feedbackSummary() },
+  { method: 'POST', path: 'billing/portal', run: () => profile.billingPortal() },
   { method: 'GET', path: 'billing/badge', run: () => profile.planBadge() },
   { method: 'GET', path: 'account/login', run: () => profile.loginMethods() },
   { method: 'POST', path: 'account/password', run: (_r, _p, b) => { const x = z.object({ current: z.string().max(128).optional(), next: z.string().max(128) }).parse(b); return profile.setOwnPassword(x.current, x.next) } },

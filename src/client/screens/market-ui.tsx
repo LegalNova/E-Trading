@@ -44,13 +44,14 @@ export function currencySymbol(cur: string, locale: string) {
   }
 }
 
+// Código del país (sin banderas: son emojis y no se usan en la interfaz)
 const FLAGS: Record<string, string> = {
-  'Estados Unidos': '🇺🇸', 'Reino Unido': '🇬🇧', Alemania: '🇩🇪', Francia: '🇫🇷', España: '🇪🇸', Italia: '🇮🇹', 'Países Bajos': '🇳🇱', Bélgica: '🇧🇪', Portugal: '🇵🇹',
-  Suiza: '🇨🇭', Suecia: '🇸🇪', Dinamarca: '🇩🇰', Noruega: '🇳🇴', Finlandia: '🇫🇮', Irlanda: '🇮🇪', Austria: '🇦🇹', Japón: '🇯🇵', 'Hong Kong': '🇭🇰', India: '🇮🇳',
-  'Corea del Sur': '🇰🇷', Singapur: '🇸🇬', Australia: '🇦🇺', Taiwán: '🇹🇼', China: '🇨🇳', Canadá: '🇨🇦', Brasil: '🇧🇷', México: '🇲🇽', Argentina: '🇦🇷',
-  Chile: '🇨🇱', Polonia: '🇵🇱', Turquía: '🇹🇷', Indonesia: '🇮🇩', Malasia: '🇲🇾', Tailandia: '🇹🇭', 'Nueva Zelanda': '🇳🇿', Europa: '🇪🇺',
+  'Estados Unidos': 'US', 'Reino Unido': 'GB', Alemania: 'DE', Francia: 'FR', España: 'ES', Italia: 'IT', 'Países Bajos': 'NL', Bélgica: 'BE', Portugal: 'PT',
+  Suiza: 'CH', Suecia: 'SE', Dinamarca: 'DK', Noruega: 'NO', Finlandia: 'FI', Irlanda: 'IE', Austria: 'AT', Japón: 'JP', 'Hong Kong': 'HK', India: 'IN',
+  'Corea del Sur': 'KR', Singapur: 'SG', Australia: 'AU', Taiwán: 'TW', China: 'CN', Canadá: 'CA', Brasil: 'BR', México: 'MX', Argentina: 'AR',
+  Chile: 'CL', Polonia: 'PL', Turquía: 'TR', Indonesia: 'ID', Malasia: 'MY', Tailandia: 'TH', 'Nueva Zelanda': 'NZ', Europa: 'EU',
 }
-export const flagOf = (country: string) => FLAGS[country] ?? ''
+export const flagOf = (country: string) => (FLAGS[country] ? `${FLAGS[country]} ·` : '')
 
 export function useStatus() {
   const t = useTranslations('market')

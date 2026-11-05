@@ -131,7 +131,7 @@ export interface Api {
   feedbackLater(): Promise<void>
   submitFeedback(a: { nps: number; likes: string[]; blockers: string[]; pay: string; price?: string; wants: string[]; wantsOther?: string; comment?: string }): Promise<{ ok: boolean; gems: number }>
   adminFeedback(): Promise<AdminFeedback>
-  planBadge(): Promise<{ plan: 'FREE' | 'PLUS' | 'PREMIUM'; status: string; endsAt: string | null; daysLeft: number | null; trialUsed: boolean; isGuest: boolean; streak: number; trialUnlocked: boolean; trialStreak: number }>
+  planBadge(): Promise<{ plan: 'FREE' | 'PLUS' | 'PREMIUM'; status: string; endsAt: string | null; daysLeft: number | null; trialUsed: boolean; isGuest: boolean; streak: number; trialUnlocked: boolean; trialStreak: number; payments: boolean }>
   myInvites(): Promise<{ code: string; joined: number; rewarded: number; daysEarned: number; maxDays: number; days: number }>
   inviterName(code: string): Promise<{ valid: boolean; name: string | null }>
   signInGuest(): Promise<Session>
@@ -198,8 +198,9 @@ export interface Api {
   updateSettings(patch: Partial<SettingsT> & { name?: string; companionName?: string; skinId?: string }): Promise<SettingsT>
   billingPlans(): Promise<BillingPlanT[]>
   billingStatus(): Promise<BillingStatusT>
-  checkout(planId: string): Promise<BillingStatusT>
-  cancelSubscription(): Promise<BillingStatusT>
+  checkout(planId: string): Promise<BillingStatusT & { url?: string }>
+  cancelSubscription(): Promise<BillingStatusT & { url?: string }>
+  billingPortal(): Promise<{ url: string }>
   exportData(): Promise<string>
   deleteAccount(): Promise<void>
 

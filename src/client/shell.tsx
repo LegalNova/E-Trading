@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl'
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { AdminLayer } from './admin-layer'
 import { MaxSide } from './upgrade'
+import { ThemeToggle } from './theme-toggle'
 import { useSession } from './hooks'
 import { Icon, Wordmark, type IconName } from './ui/icons'
 import { PageSkeleton } from './ui/kit'
@@ -55,12 +56,15 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           <SideLinks />
         </Suspense>
         <MaxSide />
-        <p className="t-cap mt-auto px-3">{t('footer')}</p>
+        <div className="mt-auto">
+          <ThemeToggle withLabel />
+        </div>
+        <p className="t-cap px-3">{t('footer')}</p>
       </aside>
 
       <div className="flex min-h-dvh min-w-0 flex-1 flex-col">
         {/* Las pantallas del Mercado (marcadas con .wide) usan una columna más ancha */}
-        <main className="mx-auto w-full max-w-[600px] flex-1 pb-[calc(76px+env(safe-area-inset-bottom))] has-[.wide]:max-w-[1120px] md:pt-6 md:pb-10" style={{ paddingTop: 'max(8px, env(safe-area-inset-top))' }}>
+        <main className="mx-auto w-full max-w-[600px] flex-1 pb-[calc(100px+env(safe-area-inset-bottom))] has-[.wide]:max-w-[1120px] md:pt-6 md:pb-10" style={{ paddingTop: 'max(8px, env(safe-area-inset-top))' }}>
           {/* Invitado: recordatorio para guardar su progreso */}
           <Suspense>
             <GuestBar />
@@ -74,7 +78,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <Suspense>
         <AdminLayer />
       </Suspense>
-      <nav aria-label={t('label')} className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-5 border-t px-1.5 pt-1.5 md:hidden" style={{ borderColor: 'var(--line)', background: 'color-mix(in srgb, var(--surface) 92%, transparent)', backdropFilter: 'saturate(180%) blur(20px)', WebkitBackdropFilter: 'saturate(180%) blur(20px)', paddingBottom: 'max(8px, env(safe-area-inset-bottom))' }}>
+      {/* Barra inferior flotante de cristal (estilo «liquid glass») */}
+      <nav aria-label={t('label')} className="glass fixed inset-x-3 z-30 grid grid-cols-5 gap-1 rounded-[30px] p-1.5 md:hidden" style={{ bottom: 'max(10px, env(safe-area-inset-bottom))' }}>
         <Suspense>
           <BottomLinks />
         </Suspense>
@@ -91,7 +96,7 @@ function GuestBar() {
     <Link href="/guardar" className="mx-4 mb-2 flex items-center gap-2 rounded-xl px-3.5 py-2.5 text-[13px] font-bold" style={{ background: 'color-mix(in srgb, var(--brand) 12%, transparent)', color: 'var(--ink)' }}>
       <Icon name="user" size={18} />
       <span className="flex-1">{t('bar')}</span>
-      <span style={{ color: 'var(--brand)' }}>{t('barCta')}</span>
+      <span style={{ color: 'var(--brand-ink)' }}>{t('barCta')}</span>
     </Link>
   )
 }
@@ -104,16 +109,16 @@ function SideLinks() {
   return (
     <>
       {TABS.map(tab => (
-        <Link key={tab.href} href={tab.href} aria-current={active === tab.href ? 'page' : undefined} className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-bold" style={active === tab.href ? { background: 'color-mix(in srgb, var(--brand) 12%, transparent)', color: 'var(--brand)' } : { color: 'var(--ink-2)' }}>
+        <Link key={tab.href} href={tab.href} aria-current={active === tab.href ? 'page' : undefined} className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-bold" style={active === tab.href ? { background: 'color-mix(in srgb, var(--brand) 12%, transparent)', color: 'var(--brand-ink)' } : { color: 'var(--ink-2)' }}>
           <Icon name={tab.icon} size={22} />
           {t(tab.key)}
         </Link>
       ))}
-      <Link href="/profesora" className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-bold" style={{ color: path.startsWith('/profesora') ? 'var(--brand)' : 'var(--ink-2)' }}>
+      <Link href="/profesora" className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-bold" style={{ color: path.startsWith('/profesora') ? 'var(--brand-ink)' : 'var(--ink-2)' }}>
         <Icon name="chat" size={22} />
         {t('tutor')}
       </Link>
-      <Link href="/avisos" className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-bold" style={{ color: path.startsWith('/avisos') ? 'var(--brand)' : 'var(--ink-2)' }}>
+      <Link href="/avisos" className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-bold" style={{ color: path.startsWith('/avisos') ? 'var(--brand-ink)' : 'var(--ink-2)' }}>
         <Icon name="bell" size={22} />
         {t('notifications')}
       </Link>
@@ -133,8 +138,8 @@ function BottomLinks() {
   return (
     <>
       {TABS.map(tab => (
-        <Link key={tab.href} href={tab.href} aria-current={active === tab.href ? 'page' : undefined} className="flex flex-col items-center justify-center gap-[3px] py-1 text-[10px] font-bold" style={{ color: active === tab.href ? 'var(--brand)' : 'var(--ink-3)' }}>
-          <Icon name={tab.icon} size={24} />
+        <Link key={tab.href} href={tab.href} aria-current={active === tab.href ? 'page' : undefined} className="flex flex-col items-center justify-center gap-[2px] rounded-[24px] py-1.5 text-[10px] font-bold transition-[background,color,transform] duration-200 active:scale-90" style={active === tab.href ? { color: 'var(--brand-ink)', background: 'color-mix(in srgb, var(--brand) 16%, transparent)' } : { color: 'var(--ink-2)' }}>
+          <Icon name={tab.icon} size={23} />
           {t(tab.key)}
         </Link>
       ))}

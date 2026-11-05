@@ -33,7 +33,12 @@ export function Premium() {
   const checkout = useMutation({
     mutationFn: () => api.checkout(chosen!.id),
     onMutate: () => setStep('confirming'),
-    onSuccess: () => (refresh(), setStep('done')),
+    onSuccess: r => {
+      // Con Stripe: a su página de pago (vuelve a /premium?pago=ok)
+      if (r.url) return window.location.assign(r.url)
+      refresh()
+      setStep('done')
+    },
     onError: e => (setStep('choose'), toast(e instanceof ApiFailure ? e.message : t('failed'))),
   })
   if (!plans || !status || !chosen) return <PageSkeleton />
@@ -125,7 +130,7 @@ export function Premium() {
           <Link href="/guardar" className="btn btn-primary">
             {t('guestSave')}
           </Link>
-        ) : badge && !isPlus && !badge.trialUsed && !badge.trialUnlocked ? (
+        ) : badge && !isPlus && !badge.trialUsed && !badge.trialUnlocked && !badge.payments ? (
           <div className="card flex flex-col gap-2.5" style={{ border: '1.5px solid var(--brand)' }}>
             <b>{t('lockedTitle')}</b>
             <span className="t-foot">{t('lockedBody', { n: badge.trialStreak, s: Math.min(badge.streak, badge.trialStreak) })}</span>
@@ -143,7 +148,7 @@ export function Premium() {
           </div>
         ) : (
           <button className="btn btn-primary" onClick={() => checkout.mutate()}>
-            {isPlus ? t('upgradeCta') : t('tryFree', { days: chosen.trialDays, plan: PLAN_NAME[tier] })}
+            {isPlus ? t('upgradeCta') : badge?.payments && (badge.trialUsed || !badge.trialUnlocked) ? t('subscribe', { plan: PLAN_NAME[tier] }) : t('tryFree', { days: chosen.trialDays, plan: PLAN_NAME[tier] })}
           </button>
         )}
         <p className="t-cap m-0 text-center">{t('after', { price: money(chosen.price, 'EUR', locale), per: chosen.interval === 'YEAR' ? t('perYear') : t('perMonth') })}</p>
@@ -193,7 +198,16 @@ export function Settings() {
     mutationFn: (patch: Partial<SettingsT> & { name?: string; companionName?: string }) => api.updateSettings(patch),
     onSuccess: () => qc.invalidateQueries(),
   })
-  const cancel = useMutation({ mutationFn: api.cancelSubscription, onSuccess: () => (qc.invalidateQueries(), toast(t('cancelled'))) })
+  const cancel = useMutation({
+    mutationFn: api.cancelSubscription,
+    onSuccess: r => {
+      if (r.url) return window.location.assign(r.url)
+      qc.invalidateQueries()
+      toast(t('cancelled'))
+    },
+  })
+  const portal = useMutation({ mutationFn: api.billingPortal, onSuccess: r => window.location.assign(r.url), onError: e => toast(e instanceof ApiFailure ? e.message : t('error')) })
+  const { data: badge } = usePlanBadge()
   const [name, setName] = useState<string | null>(null)
   if (isError) return <ErrorState onRetry={refetch} />
   if (!s || !me || !status) return <PageSkeleton />
@@ -244,6 +258,12 @@ export function Settings() {
                   <span>{status.status === 'TRIALING' ? t('trialEnds') : t('nextCharge')}</span>
                   <b>{new Date(status.renewsAt).toLocaleDateString(locale, { day: 'numeric', month: 'short', year: 'numeric' })}</b>
                 </div>
+              )}
+              {badge?.payments && (status.status === 'ACTIVE' || status.status === 'TRIALING' || status.status === 'PAST_DUE') && (
+                <button className="li plainline justify-between" onClick={() => portal.mutate()} disabled={portal.isPending}>
+                  <span>{t('manageSub')}</span>
+                  <Icon name="chev" size={18} />
+                </button>
               )}
               <button className="li plainline justify-between" onClick={() => confirm(t('cancelConfirm')) && cancel.mutate()}>
                 <span style={{ color: 'var(--down)' }}>{t('cancel')}</span>

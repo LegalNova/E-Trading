@@ -613,7 +613,7 @@ function Lessons() {
               {head.map(([k, label], i) => (
                 <th key={label} className={`px-3 py-2 ${i ? 'text-right' : ''}`}>
                   {k ? (
-                    <button className="font-bold" style={sort === k ? { color: 'var(--brand)' } : undefined} onClick={() => setSort(k)}>
+                    <button className="font-bold" style={sort === k ? { color: 'var(--brand-ink)' } : undefined} onClick={() => setSort(k)}>
                       {label}
                     </button>
                   ) : (
@@ -709,14 +709,14 @@ export function Admin() {
           <Logo size={26} /> Admin
         </Link>
         {tabs.map(k => (
-          <button key={k} onClick={() => setTab(k)} aria-current={tab === k ? 'page' : undefined} className="flex-none rounded-xl px-3 py-2 text-left text-sm font-bold" style={tab === k ? { background: 'color-mix(in srgb, var(--brand) 12%, transparent)', color: 'var(--brand)' } : { color: 'var(--ink-2)' }}>
+          <button key={k} onClick={() => setTab(k)} aria-current={tab === k ? 'page' : undefined} className="flex-none rounded-xl px-3 py-2 text-left text-sm font-bold" style={tab === k ? { background: 'color-mix(in srgb, var(--brand) 12%, transparent)', color: 'var(--brand-ink)' } : { color: 'var(--ink-2)' }}>
             {t(`tabs.${k}`)}
           </button>
         ))}
         <Link href="/inicio" onClick={openWithData} className="btn btn-primary mt-2 hidden w-auto px-3 text-sm md:flex">
           <Icon name="chart" size={16} /> {t('openWithData')}
         </Link>
-        <Link href="/inicio" onClick={openWithData} className="flex flex-none items-center rounded-xl px-3 py-2 text-sm font-bold md:hidden" style={{ color: 'var(--brand)' }}>
+        <Link href="/inicio" onClick={openWithData} className="flex flex-none items-center rounded-xl px-3 py-2 text-sm font-bold md:hidden" style={{ color: 'var(--brand-ink)' }}>
           {t('openWithData')}
         </Link>
         <Link href="/inicio" className="t-foot mt-auto hidden items-center gap-2 px-3 md:flex">

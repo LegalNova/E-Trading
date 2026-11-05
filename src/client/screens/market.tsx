@@ -307,7 +307,7 @@ export function Explore({ initial }: { initial: Partial<AssetFilter> }) {
           {stocks && (
             <>
               <FacetSelect label={t('indexLabel')} value={f.index} onChange={v => set({ index: v })} options={facets.data?.indices} />
-              <FacetSelect label={t('countryLabel')} value={f.country} onChange={v => set({ country: v })} options={facets.data?.countries} render={v => `${flagOf(v)} ${v}`} />
+              <FacetSelect label={t('countryLabel')} value={f.country} onChange={v => set({ country: v })} options={facets.data?.countries} render={v => v} />
               <FacetSelect label={t('sectorLabel')} value={f.sector} onChange={v => set({ sector: v })} options={facets.data?.sectors} />
             </>
           )}
@@ -481,7 +481,7 @@ export function Asset({ symbol }: { symbol: string }) {
                 {a.type === 'INDEX' ? t('points') : `${a.currency} (${currencySymbol(a.currency, locale)})`}
               </Stat>
               <Stat label={t('exchangeLabel')}>{a.type === 'CRYPTO' ? t('crypto247') : a.exchangeName}</Stat>
-              {a.country && a.type !== 'CRYPTO' && a.type !== 'FX' && <Stat label={t('countryLabel')}>{`${flagOf(a.country)} ${a.country}`}</Stat>}
+              {a.country && a.type !== 'CRYPTO' && a.type !== 'FX' && <Stat label={t('countryLabel')}>{`${a.country}`}</Stat>}
               {a.sector && <Stat label={t('sectorLabel')}>{a.sector}</Stat>}
               <Stat label={t('delayLabel')}>{a.delayedMinutes ? t('delayed', { n: a.delayedMinutes }) : t('realtime')}</Stat>
               <Stat label={t('timezoneLabel')}>{a.timezone.split('/').pop()?.replace('_', ' ')}</Stat>

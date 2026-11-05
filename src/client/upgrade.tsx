@@ -59,7 +59,8 @@ export function MaxCard() {
           </span>
         )}
       </span>
-      <span className="btn btn-primary btn-sm w-auto flex-none px-3">{c.cta}</span>
+      <span className="hidden sm:flex btn btn-primary btn-sm w-auto flex-none px-3">{c.cta}</span>
+      <Icon name="chev" size={18} className="sm:hidden" />
     </Link>
   )
 }

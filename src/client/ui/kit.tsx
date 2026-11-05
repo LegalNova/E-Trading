@@ -69,7 +69,7 @@ export function Check({ on }: { on: boolean }) {
 export function Stars({ n, size = 14 }: { n: number; size?: number }) {
   return (
     <span aria-label={`${n}/3`} style={{ fontSize: size, letterSpacing: 1 }}>
-      <span style={{ color: 'var(--brand)' }}>{'★'.repeat(n)}</span>
+      <span style={{ color: 'var(--brand-ink)' }}>{'★'.repeat(n)}</span>
       <span style={{ color: 'var(--ink-3)' }}>{'★'.repeat(3 - n)}</span>
     </span>
   )

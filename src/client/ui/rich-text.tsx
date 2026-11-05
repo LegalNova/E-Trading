@@ -16,7 +16,7 @@ export function RichText({ text }: { text: string }) {
                 const m = l.match(/^(•|-|\d+\.)\s(.*)$/)!
                 return (
                   <li key={j} className="t-body flex gap-2 text-[17px] leading-[25px]">
-                    <span className="flex-none font-bold" style={{ color: 'var(--brand)', minWidth: 14 }}>
+                    <span className="flex-none font-bold" style={{ color: 'var(--brand-ink)', minWidth: 14 }}>
                       {m[1] === '•' || m[1] === '-' ? '•' : m[1]}
                     </span>
                     <span>{inline(m[2])}</span>

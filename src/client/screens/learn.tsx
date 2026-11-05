@@ -71,7 +71,7 @@ export function Home() {
           </div>
           <span className="text-[22px] leading-[27px] font-extrabold tracking-[-0.01em]">{h.nextLesson.title}</span>
           <Bar pct={h.nextLesson.progressPct} color="#fff" label={t('unitProgress')} />
-          <Link href={`/leccion/${h.nextLesson.id}`} className="btn" style={{ background: '#fff', color: 'var(--brand)' }}>
+          <Link href={`/leccion/${h.nextLesson.id}`} className="btn" style={{ background: '#fff', color: 'var(--brand-ink)' }}>
             {t('continue')}
           </Link>
         </div>
@@ -177,7 +177,7 @@ function LessonRow({ l, onLocked }: { l: PathLessonT; onLocked: (l: PathLessonT)
       </span>
       <span className="flex flex-1 flex-col gap-0.5">
         <b className="text-[15px]">{l.title}</b>
-        <span className="t-cap" style={open ? { color: 'var(--brand)', fontWeight: 700 } : undefined}>
+        <span className="t-cap" style={open ? { color: 'var(--brand-ink)', fontWeight: 700 } : undefined}>
           {done ? (
             <>
               {t('completed')} · <Stars n={l.stars} size={12} />
@@ -294,7 +294,7 @@ export function Path() {
           <section key={u.id} className="flex flex-col gap-3" aria-labelledby={`unit-${u.id}`}>
             {newSection && u.section && (
               <div className="mt-3 flex items-center gap-2 px-1">
-                <span className="t-cap font-extrabold tracking-wide uppercase" style={{ color: u.section.open ? 'var(--brand)' : 'var(--ink-3)' }}>
+                <span className="t-cap font-extrabold tracking-wide uppercase" style={{ color: u.section.open ? 'var(--brand-ink)' : 'var(--ink-3)' }}>
                   {!u.section.open && <><Icon name="lock" size={12} className="mb-0.5 inline-block align-middle" /> </>}
                   {u.section.title}
                 </span>
@@ -528,7 +528,7 @@ function StepView({ s, lessonId, onSolved, solved }: { s: LessonStepT; lessonId:
           <RichText text={s.body} />
           {s.keyIdea && (
             <div className="card" style={{ background: 'color-mix(in srgb, var(--brand) 9%, var(--surface))' }}>
-              <span className="t-cap font-bold" style={{ color: 'var(--brand)' }}>
+              <span className="t-cap font-bold" style={{ color: 'var(--brand-ink)' }}>
                 {t('keyIdea')}
               </span>
               <p className="t-head m-0 mt-1">{s.keyIdea}</p>

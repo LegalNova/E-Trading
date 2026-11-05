@@ -54,7 +54,7 @@ export function Slide({ label, value, min, max, step, show, onChange, color = 'v
 
 /** Cifra grande con su etiqueta */
 export function Big({ label, value, tone, small }: { label: string; value: string; tone?: 'up' | 'down' | 'brand'; small?: boolean }) {
-  const color = tone === 'up' ? 'var(--up)' : tone === 'down' ? 'var(--down)' : tone === 'brand' ? 'var(--brand)' : 'var(--ink)'
+  const color = tone === 'up' ? 'var(--up)' : tone === 'down' ? 'var(--down)' : tone === 'brand' ? 'var(--brand-ink)' : 'var(--ink)'
   return (
     <div className="flex min-w-0 flex-1 flex-col rounded-2xl px-3 py-2" style={{ background: 'var(--surface-2)' }}>
       <span className="t-cap truncate">{label}</span>

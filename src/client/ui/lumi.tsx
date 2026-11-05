@@ -41,7 +41,7 @@ const MOUTH: Record<Mood, React.ReactNode> = {
 }
 
 export const SKINS: { id: string; color: string; unlockLevel: number }[] = [
-  { id: 'azul', color: 'var(--brand)', unlockLevel: 1 },
+  { id: 'azul', color: 'var(--lumi)', unlockLevel: 1 },
   { id: 'grafito', color: '#3A3A3C', unlockLevel: 1 },
   { id: 'plata', color: '#8E8E93', unlockLevel: 1 },
   { id: 'hielo', color: '#64D2FF', unlockLevel: 5 },
@@ -58,7 +58,7 @@ const BUBBLES: [number, number, number][] = [
 ]
 
 export function Lumi({ mood = 'HAPPY', size = 44, skin = 'azul', stage = 1, label = 'Lumi', className, animated = true }: { mood?: Mood; size?: number; skin?: string; stage?: number; label?: string; className?: string; animated?: boolean }) {
-  const fill = SKINS.find(s => s.id === skin)?.color ?? 'var(--brand)'
+  const fill = SKINS.find(s => s.id === skin)?.color ?? 'var(--lumi)'
   const st = Math.min(5, Math.max(1, stage))
   return (
     <svg width={size} height={size} viewBox="0 0 48 48" role="img" aria-label={label} className={`lumi ${animated ? 'lumi-anim' : ''} lumi-${mood.toLowerCase()} ${className ?? ''}`} style={{ flex: 'none', overflow: 'visible' }}>

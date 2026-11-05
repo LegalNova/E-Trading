@@ -788,7 +788,8 @@
     "lockedTitle": "Desbloquea 7 días de Max gratis",
     "lockedBody": "Entra {n} días seguidos (llevas {s}) o llega con la invitación de un amigo. También podrás suscribirte directamente en cuanto activemos el pago con tarjeta.",
     "lockedCta": "Seguir mi racha",
-    "inviteCta": "Invitar a un amigo"
+    "inviteCta": "Invitar a un amigo",
+    "subscribe": "Suscribirme a {plan}"
   },
   "settings": {
     "title": "Ajustes",
@@ -853,7 +854,11 @@
     "helpSection": "Ayuda",
     "gift": "regalo",
     "giftEnds": "Fin del regalo",
-    "giftMore": "Gana más meses invitando"
+    "giftMore": "Gana más meses invitando",
+    "toLight": "Modo claro",
+    "toDark": "Modo oscuro",
+    "manageSub": "Gestionar suscripción (tarjeta, facturas, plan)",
+    "error": "Algo no ha ido bien. Prueba otra vez."
   },
   "account": {
     "title": "Cuenta",
