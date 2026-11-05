@@ -71,19 +71,12 @@
     },
     "plansTitle": "Planes",
     "freeFeatures": [
-      "Unidades 1 y 2 completas",
+      "Unidades 1 a 3 completas",
+      "Las 3 primeras clases de cada unidad",
       "5 vidas en los quizzes",
       "10.000 € virtuales",
-      "Órdenes a mercado",
-      "Liga semanal"
-    ],
-    "premiumFeatures": [
-      "Todas las clases",
-      "Vidas ilimitadas",
-      "50.000 € virtuales",
-      "Límite, stop loss y take profit",
-      "Lumi analiza tu cartera",
-      "Protector de racha semanal"
+      "Liga semanal",
+      "5 preguntas al día a Lumi"
     ],
     "trial": "7 días gratis",
     "perMonth": "/mes · o {year}/año",
@@ -1041,7 +1034,16 @@
       "conversion": "Altas / visitas",
       "empty": "Aún no has creado ningún enlace.",
       "note": "Las visitas cuentan cada vez que alguien abre el enlace; las altas, pruebas y pagos son personas distintas. El origen se guarda al terminar la bienvenida."
-    }
+    },
+    "errorsTitle": "Errores de los últimos 7 días",
+    "errorWhere": "Dónde",
+    "errorMessage": "Mensaje",
+    "errorCount": "Veces",
+    "errorUsers": "Usuarios",
+    "errorLast": "Último",
+    "errorServer": "Servidor",
+    "errorApp": "App",
+    "noErrors": "Ningún error en los últimos 7 días."
   },
   "cookies": {
     "label": "Aviso de cookies",
@@ -1406,5 +1408,11 @@
     "usdNote": "sin contar el cambio euro/dólar",
     "coinHeadFree": "{n} personas hacen operaciones de {stake} a cara o cruz, sin comisiones",
     "coinWin": "Si sale bien ganan {win}; si sale mal pierden {stake}."
+  },
+  "errorPage": {
+    "title": "Algo ha fallado",
+    "body": "Ya nos ha llegado el aviso y lo miraremos. Prueba otra vez; si sigue pasando, vuelve al inicio.",
+    "retry": "Reintentar",
+    "home": "Ir al inicio"
   }
 }

@@ -40,12 +40,13 @@ export async function metrics(range: '7d' | '30d' | '90d') {
   }
   const byDay = new Map(active.map(a => [a.day, a._count._all]))
   const quotes = await db.quote.groupBy({ by: ['source'], _max: { updatedAt: true }, _count: { _all: true } })
-  const SOURCES: Record<string, string> = { FINNHUB: 'Finnhub (acciones EE. UU.)', BINANCE: 'Binance (cripto)', YAHOO: 'Yahoo (España, Xetra, índices, divisas)', ECB: 'BCE (respaldo de divisas)' }
-  const [cohorts, money, sources] = await Promise.all([cohortTable(today), moneyFunnel(from), bySource()])
+  const SOURCES: Record<string, string> = { YAHOO: 'Yahoo Finance (todo el mercado)', ECB: 'BCE (respaldo de divisas)' }
+  const [cohorts, money, sources, errors] = await Promise.all([cohortTable(today), moneyFunnel(from), bySource(), errorList()])
   return {
     cohorts,
     money,
     sources,
+    errors,
     dau: users ? dau : null, mau: users ? mau : null, retentionD7: cohort.length ? Math.round((retained / cohort.length) * 100) : null, premiumConversion: users ? Math.round((premium / users) * 100) : null, simulatedTrades: trades,
     funnel: [
       { label: 'Registro', value: users },
@@ -93,6 +94,15 @@ async function cohortTable(today: string) {
   return [...weeks.entries()]
     .sort(([a], [b]) => b.localeCompare(a))
     .map(([week, w]) => ({ week, size: w.size, d1: pct(w.hit[0], w.due[0]), d7: pct(w.hit[1], w.due[1]), d30: pct(w.hit[2], w.due[2]) }))
+}
+
+/** Fallos de los últimos 7 días (app y servidor), agrupados por mensaje */
+async function errorList() {
+  const rows = await db.$queryRawUnsafe<{ kind: string; message: string; where: string; n: bigint; users: bigint; last: Date }[]>(
+    `SELECT name AS kind, props->>'message' AS message, MAX(COALESCE(props->>'path', props->>'route')) AS "where", COUNT(*) AS n, COUNT(DISTINCT "userId") AS users, MAX("createdAt") AS last
+     FROM "${DB_SCHEMA}"."Event" WHERE name IN ('client_error', 'server_error') AND "createdAt" >= NOW() - INTERVAL '7 days' GROUP BY 1, 2 ORDER BY n DESC LIMIT 15`,
+  )
+  return rows.map(r => ({ kind: r.kind === 'server_error' ? ('SERVER' as const) : ('APP' as const), message: r.message ?? '—', where: r.where ?? '—', count: Number(r.n), users: Number(r.users), last: r.last.toISOString() }))
 }
 
 /** Embudo de pago en el periodo: usuarios distintos en cada paso */

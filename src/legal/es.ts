@@ -33,7 +33,7 @@ export const es: Record<LegalSlug, LegalDoc> = {
       {
         h: '3. Información de mercado',
         p: [
-          'Los precios se obtienen de fuentes de terceros (Finnhub, Binance, Yahoo Finance y el Banco Central Europeo) y pueden tener retraso o errores. Se muestran solo con fines educativos y no deben usarse para tomar decisiones de inversión reales.',
+          'Los precios se obtienen de fuentes de terceros (Yahoo Finance y, como respaldo para las divisas, el Banco Central Europeo) y pueden tener retraso o errores. Se muestran solo con fines educativos y no deben usarse para tomar decisiones de inversión reales.',
           'Nada de lo que aparece en la aplicación —incluidos los mensajes de Lumi, los avisos de riesgo o las clases— es una recomendación personalizada de comprar, vender o mantener ningún instrumento financiero.',
         ],
       },
@@ -137,7 +137,7 @@ export const es: Record<LegalSlug, LegalDoc> = {
       },
       {
         h: '8. Fuentes de precios',
-        p: ['Los precios del mercado los pide nuestro servidor a Finnhub, Binance, Yahoo Finance y el Banco Central Europeo. Estas fuentes no reciben ningún dato tuyo.'],
+        p: ['Los precios del mercado los pide nuestro servidor a Yahoo Finance y, como respaldo para las divisas, al Banco Central Europeo. Estas fuentes no reciben ningún dato tuyo.'],
       },
       {
         h: '9. Tus derechos',

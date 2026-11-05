@@ -21,7 +21,7 @@ export const ca: Record<LegalSlug, LegalDoc> = {
       {
         h: '3. Informació de mercat',
         p: [
-          'Els preus s’obtenen de fonts de tercers (Finnhub, Binance, Yahoo Finance i el Banc Central Europeu) i poden tenir retard o errors. Es mostren només amb finalitats educatives i no s’han de fer servir per prendre decisions d’inversió reals.',
+          'Els preus s’obtenen de fonts de tercers (Yahoo Finance i, com a reserva per a les divises, el Banc Central Europeu) i poden tenir retard o errors. Es mostren només amb finalitats educatives i no s’han de fer servir per prendre decisions d’inversió reals.',
           'Res del que apareix a l’aplicació —incloent-hi els missatges de la Lumi, els avisos de risc o les classes— és una recomanació personalitzada de comprar, vendre o mantenir cap instrument financer.',
         ],
       },
@@ -111,7 +111,7 @@ export const ca: Record<LegalSlug, LegalDoc> = {
         },
       },
       { h: '7. Transferències internacionals', p: ['Alguns d’aquests proveïdors són als Estats Units. Les transferències s’emparen en la decisió d’adequació del Marc de privadesa de dades UE-EUA i, quan escau, en les clàusules contractuals tipus aprovades per la Comissió Europea.'] },
-      { h: '8. Fonts de preus', p: ['El nostre servidor demana els preus a Finnhub, Binance, Yahoo Finance i el Banc Central Europeu. Aquestes fonts no reben cap dada teva.'] },
+      { h: '8. Fonts de preus', p: ['El nostre servidor demana els preus a Yahoo Finance i, com a reserva per a les divises, al Banc Central Europeu. Aquestes fonts no reben cap dada teva.'] },
       {
         h: '9. Els teus drets',
         p: [

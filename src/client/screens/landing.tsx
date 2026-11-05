@@ -120,8 +120,10 @@ export function Landing() {
   const t = useTranslations('landing')
   const locale = useLocale()
   const { data: stats } = useQuery({ queryKey: ['stats'], queryFn: api.publicStats })
+  const tp = useTranslations('premium')
   const free = t.raw('freeFeatures') as string[]
-  const premium = t.raw('premiumFeatures') as string[]
+  const plus = tp.raw('plusFeatures') as string[]
+  const max = tp.raw('maxFeatures') as string[]
   return (
     <div className="min-h-dvh" style={{ background: 'var(--bg)' }}>
       <header className="sticky top-0 z-20 border-b" style={{ borderColor: 'var(--line)', background: 'color-mix(in srgb, var(--bg) 85%, transparent)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}>
@@ -210,42 +212,49 @@ export function Landing() {
 
       <section id="planes" className="mx-auto max-w-[1120px] scroll-mt-16 px-4 pb-14">
         <h2 className="t-large mb-6">{t('plansTitle')}</h2>
-        <div className="grid gap-3 md:grid-cols-2">
+        <div className="grid gap-3 md:grid-cols-3">
           <div className="card flex flex-col gap-3 p-6">
             <b className="t-head">Free</b>
             <span className="big">{money(0, 'EUR', locale).replace(/[.,]00/, '')}</span>
             {free.map(f => (
-              <span key={f} className="t-body flex items-center gap-2">
-                <Icon name="check" size={18} className="up" /> {f}
+              <span key={f} className="t-body flex items-start gap-2">
+                <Icon name="check" size={18} className="up mt-0.5 flex-none" /> {f}
               </span>
             ))}
-            <Link href="/registro" className="btn btn-secondary mt-2">
+            <Link href="/registro" className="btn btn-secondary mt-auto">
               {t('start')}
             </Link>
           </div>
-          <div className="hero flex flex-col gap-3 p-6">
-            <div className="flex items-center justify-between">
-              <b className="t-head">Premium</b>
-              <span className="chip" style={{ background: 'var(--brand)', color: 'var(--on-brand)' }}>
-                {t('trial')}
+          {(
+            [
+              ['Plus', 3.99, 29.99, plus, false],
+              ['Max', 7.99, 59.99, max, true],
+            ] as const
+          ).map(([name, month, year, feats, hero]) => (
+            <div key={name} className={`${hero ? 'hero' : 'card'} flex flex-col gap-3 p-6`}>
+              <div className="flex items-center justify-between">
+                <b className="t-head">{name}</b>
+                <span className="chip" style={{ background: 'var(--brand)', color: 'var(--on-brand)' }}>
+                  {t('trial')}
+                </span>
+              </div>
+              <span className="big">
+                {money(month, 'EUR', locale)}
+                <span className="t-foot" style={hero ? { color: 'rgb(255 255 255 / 0.6)' } : undefined}>
+                  {' '}
+                  {t('perMonth', { year: money(year, 'EUR', locale) })}
+                </span>
               </span>
+              {feats.map(f => (
+                <span key={f} className="t-body flex items-start gap-2">
+                  <Icon name="check" size={18} className={`mt-0.5 flex-none ${hero ? '' : 'up'}`} /> {f}
+                </span>
+              ))}
+              <Link href="/registro" className={`btn ${hero ? 'btn-primary' : 'btn-secondary'} mt-auto`}>
+                {t('tryPremium')}
+              </Link>
             </div>
-            <span className="big">
-              {money(7.99, 'EUR', locale)}
-              <span className="t-foot" style={{ color: 'rgb(255 255 255 / 0.6)' }}>
-                {' '}
-                {t('perMonth', { year: money(59.99, 'EUR', locale) })}
-              </span>
-            </span>
-            {premium.map(f => (
-              <span key={f} className="t-body flex items-center gap-2">
-                <Icon name="check" size={18} /> {f}
-              </span>
-            ))}
-            <Link href="/registro" className="btn btn-primary mt-2">
-              {t('tryPremium')}
-            </Link>
-          </div>
+          ))}
         </div>
       </section>
 

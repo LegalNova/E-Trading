@@ -71,19 +71,12 @@
     },
     "plansTitle": "Plans",
     "freeFeatures": [
-      "Units 1 and 2 in full",
+      "Units 1 to 3 in full",
+      "The first 3 lessons of every unit",
       "5 lives in quizzes",
-      "€10,000 virtual money",
-      "Market orders",
-      "Weekly league"
-    ],
-    "premiumFeatures": [
-      "All lessons",
-      "Unlimited lives",
-      "€50,000 virtual money",
-      "Limit, stop loss and take profit",
-      "Lumi reviews your portfolio",
-      "Weekly streak freeze"
+      "€10,000 in virtual money",
+      "Weekly league",
+      "5 questions a day to Lumi"
     ],
     "trial": "7 days free",
     "perMonth": "/month · or {year}/year",
@@ -1041,7 +1034,16 @@
       "conversion": "Sign-ups / visits",
       "empty": "You haven’t created any links yet.",
       "note": "Visits count every time someone opens the link; sign-ups, trials and payments are unique people. The source is saved when the welcome steps are finished."
-    }
+    },
+    "errorsTitle": "Errors in the last 7 days",
+    "errorWhere": "Where",
+    "errorMessage": "Message",
+    "errorCount": "Times",
+    "errorUsers": "Users",
+    "errorLast": "Last",
+    "errorServer": "Server",
+    "errorApp": "App",
+    "noErrors": "No errors in the last 7 days."
   },
   "cookies": {
     "label": "Cookie notice",
@@ -1406,5 +1408,11 @@
     "usdNote": "not counting the euro/dollar exchange rate",
     "coinHeadFree": "{n} people make {stake} heads-or-tails trades, with no fees",
     "coinWin": "If it goes well they win {win}; if not they lose {stake}."
+  },
+  "errorPage": {
+    "title": "Something went wrong",
+    "body": "We’ve been notified and will look into it. Try again; if it keeps happening, go back to the start.",
+    "retry": "Try again",
+    "home": "Go to the start"
   }
 }

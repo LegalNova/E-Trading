@@ -130,6 +130,40 @@ function Metrics() {
           <span className="t-cap">{t('noData')}</span>
         )}
       </div>
+      <div className="card flex flex-col gap-1 overflow-x-auto">
+        <b>{t('errorsTitle')}</b>
+        {m.errors.length ? (
+          <table className="t-foot w-full min-w-[560px]">
+            <thead className="t-cap text-left">
+              <tr>
+                <th>{t('errorWhere')}</th>
+                <th>{t('errorMessage')}</th>
+                <th className="text-right">{t('errorCount')}</th>
+                <th className="text-right">{t('errorUsers')}</th>
+                <th className="text-right">{t('errorLast')}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {m.errors.map((e, k) => (
+                <tr key={k} className="border-t align-top" style={{ borderColor: 'var(--line)' }}>
+                  <td className="py-1 pr-2">
+                    <span className="chip mr-1" style={{ background: e.kind === 'SERVER' ? 'var(--down)' : 'var(--amber, #f5a623)', color: '#fff' }}>
+                      {e.kind === 'SERVER' ? t('errorServer') : t('errorApp')}
+                    </span>
+                    {e.where}
+                  </td>
+                  <td className="py-1 pr-2 break-all">{e.message}</td>
+                  <td className="py-1 text-right">{e.count}</td>
+                  <td className="py-1 text-right">{e.users}</td>
+                  <td className="py-1 text-right whitespace-nowrap">{new Date(e.last).toLocaleString(locale, { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <span className="t-cap">{t('noErrors')}</span>
+        )}
+      </div>
       <div className="card">
         <b>{t('providers')}</b>
         {m.providers.map(p => (

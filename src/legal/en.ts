@@ -21,7 +21,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
       {
         h: '3. Market information',
         p: [
-          'Prices come from third-party sources (Finnhub, Binance, Yahoo Finance and the European Central Bank) and may be delayed or contain errors. They are shown for educational purposes only and must not be used for real investment decisions.',
+          'Prices come from third-party sources (Yahoo Finance and, as a backup for currencies, the European Central Bank) and may be delayed or contain errors. They are shown for educational purposes only and must not be used for real investment decisions.',
           'Nothing in the app — including Lumi’s messages, risk warnings or lessons — is a personalised recommendation to buy, sell or hold any financial instrument.',
         ],
       },
@@ -111,7 +111,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
         },
       },
       { h: '7. International transfers', p: ['Some of these providers are in the United States. Transfers rely on the adequacy decision for the EU-US Data Privacy Framework and, where applicable, on the standard contractual clauses approved by the European Commission.'] },
-      { h: '8. Price sources', p: ['Our server requests market prices from Finnhub, Binance, Yahoo Finance and the European Central Bank. These sources receive none of your data.'] },
+      { h: '8. Price sources', p: ['Our server requests market prices from Yahoo Finance and, as a backup for currencies, the European Central Bank. These sources receive none of your data.'] },
       {
         h: '9. Your rights',
         p: [

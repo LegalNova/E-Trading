@@ -71,19 +71,12 @@
     },
     "plansTitle": "Plans",
     "freeFeatures": [
-      "Unitats 1 i 2 completes",
+      "Unitats 1 a 3 completes",
+      "Les 3 primeres classes de cada unitat",
       "5 vides als qüestionaris",
       "10.000 € virtuals",
-      "Ordres a mercat",
-      "Lliga setmanal"
-    ],
-    "premiumFeatures": [
-      "Totes les classes",
-      "Vides il·limitades",
-      "50.000 € virtuals",
-      "Límit, stop loss i take profit",
-      "La Lumi analitza la teva cartera",
-      "Protector de ratxa setmanal"
+      "Lliga setmanal",
+      "5 preguntes al dia a la Lumi"
     ],
     "trial": "7 dies gratis",
     "perMonth": "/mes · o {year}/any",
@@ -1041,7 +1034,16 @@
       "conversion": "Altes / visites",
       "empty": "Encara no has creat cap enllaç.",
       "note": "Les visites compten cada vegada que algú obre l’enllaç; les altes, proves i pagaments són persones diferents. L’origen es desa en acabar la benvinguda."
-    }
+    },
+    "errorsTitle": "Errors dels últims 7 dies",
+    "errorWhere": "On",
+    "errorMessage": "Missatge",
+    "errorCount": "Vegades",
+    "errorUsers": "Usuaris",
+    "errorLast": "Últim",
+    "errorServer": "Servidor",
+    "errorApp": "App",
+    "noErrors": "Cap error en els últims 7 dies."
   },
   "cookies": {
     "label": "Avís de galetes",
@@ -1406,5 +1408,11 @@
     "usdNote": "sense comptar el canvi euro/dòlar",
     "coinHeadFree": "{n} persones fan operacions de {stake} a cara o creu, sense comissions",
     "coinWin": "Si surt bé guanyen {win}; si surt malament perden {stake}."
+  },
+  "errorPage": {
+    "title": "Alguna cosa ha fallat",
+    "body": "Ja ens ha arribat l’avís i ho mirarem. Torna-ho a provar; si continua passant, torna a l’inici.",
+    "retry": "Tornar-ho a provar",
+    "home": "Anar a l’inici"
   }
 }

@@ -4,7 +4,7 @@ import { withLocale } from '@/server/locale'
 import { z } from 'zod'
 import { HttpError } from '@/server/game/core'
 import * as admin from '@/server/game/admin'
-import { recordClientEvent } from '@/server/game/analytics'
+import { recordClientEvent, recordServerError } from '@/server/game/analytics'
 import { lens, lessonTable, type LensRange } from '@/server/game/lens'
 import { realUser } from '@/server/auth'
 import { withViewAs } from '@/server/view'
@@ -183,6 +183,7 @@ async function handle(req: NextRequest, ctx: RouteContext<'/api/[...path]'>) {
     if (e instanceof HttpError) return Response.json({ error: { code: e.code, message: e.message } }, { status: e.status })
     if (e instanceof z.ZodError || e instanceof SyntaxError) return Response.json({ error: { code: 'VALIDATION_ERROR', message: 'Datos no válidos' } }, { status: 422 })
     console.error(`API ${req.method} /${path.join('/')}`, e)
+    await recordServerError(`${req.method} /${path.join('/')}`, e)
     return Response.json({ error: { code: 'INTERNAL', message: 'Algo no ha ido bien. Prueba otra vez.' } }, { status: 500 })
   }
 }

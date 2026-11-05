@@ -61,6 +61,7 @@ export interface AdminMetrics {
   cohorts: { week: string; size: number; d1: number | null; d7: number | null; d30: number | null }[]
   money: { key: 'premium_view' | 'paywall' | 'trial_start' | 'paid' | 'cancel'; value: number }[]
   sources: { source: string; users: number; trials: number; paid: number }[]
+  errors: { kind: 'APP' | 'SERVER'; message: string; where: string; count: number; users: number; last: string }[]
 }
 export interface AdminUser { id: string; name: string; email: string; plan: 'FREE' | 'PLUS' | 'PREMIUM'; createdAt: string; lastActive: string; blocked: boolean; xp: number; source: string | null }
 export type LensRange = '7d' | '30d' | 'all'
@@ -193,5 +194,5 @@ export interface Api {
   adminCreateCampaign(name: string): Promise<{ slug: string }>
   adminDeleteCampaign(slug: string): Promise<void>
   // Analítica propia (no bloquea nada si falla)
-  trackEvent(e: { name: 'screen_view'; path: string; ref?: string } | { name: 'lesson_exit'; lessonId: string; step: number; of: number }): void
+  trackEvent(e: { name: 'client_error'; message: string; path: string; stack?: string } | { name: 'screen_view'; path: string; ref?: string } | { name: 'lesson_exit'; lessonId: string; step: number; of: number }): void
 }
