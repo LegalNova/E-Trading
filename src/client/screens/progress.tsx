@@ -262,6 +262,18 @@ export function League() {
       </div>
       <p className="t-foot m-0">{t('rule')}</p>
       {me && me.rank === 0 && <div className="banner banner-info">{t('joinHint')}</div>}
+      {/* Grupo con poca gente: invitar a amigos lo anima (y les da 7 días de Max) */}
+      {l.members.filter(m => m.rank > 0).length < 10 && (
+        <Link href="/perfil/invitar" className="card flex items-center gap-3" style={{ color: 'inherit' }}>
+          <Icon name="user" size={20} />
+          <span className="flex-1">
+            <b>{t('inviteTitle')}</b>
+            <br />
+            <span className="t-foot">{t('inviteBody')}</span>
+          </span>
+          <Icon name="chev" size={18} />
+        </Link>
+      )}
     </div>
   )
 }

@@ -14,9 +14,9 @@ export const PROMOTE_TOP = 7
 export const DEMOTE_FROM = 26
 export const PROMOTE_GEMS = 30
 
-/** Asegura que quien ha ganado XP esta semana tiene grupo en su división */
-export async function ensureMembership(c: Ctx) {
-  if (c.g.weekXp <= 0) return
+/** Asegura que quien ha ganado XP esta semana tiene grupo en su división (o quien abre la liga, aunque aún no tenga XP) */
+export async function ensureMembership(c: Ctx, evenWithoutXp = false) {
+  if (c.g.weekXp <= 0 && !evenWithoutXp) return
   const weekKey = c.g.weekKey
   const exists = await c.tx.leagueMember.findUnique({ where: { weekKey_userId: { weekKey, userId: c.user.id } } })
   if (exists) {
@@ -78,16 +78,23 @@ async function standings(tx: Tx, weekKey: string, division: number, groupNo: num
     .map((m, i) => ({ ...m, rank: i + 1 }))
 }
 
-export const league = () =>
-  withCtx(async (c): Promise<LeagueT> => {
-    const weekKey = weekOf(Date.now(), c.user.timezone)
-    const division = c.g.division
-    const me = await c.tx.leagueMember.findUnique({ where: { weekKey_userId: { weekKey, userId: c.user.id } } })
-    const rows = me ? await standings(c.tx, weekKey, me.division, me.groupNo) : []
-    const members = rows.map(m => ({ rank: m.rank, userId: m.userId, displayName: m.userId === c.user.id ? c.user.name || '—' : displayName(m.name, m.visible), weeklyXp: m.weeklyXp, riskAdjReturnPct: m.riskAdjReturnPct, score: m.score, isMe: m.userId === c.user.id }))
-    if (!me) members.push({ rank: 0, userId: c.user.id, displayName: c.user.name || '—', weeklyXp: 0, riskAdjReturnPct: 0, score: 0, isMe: true })
-    return { division: { id: `d${division}`, name: DIVISIONS[division - 1], order: division }, divisions: DIVISIONS, endsAt: new Date(addDays(weekKey, 7) + 'T00:00:00Z').toISOString(), promoteTop: PROMOTE_TOP, demoteFrom: DEMOTE_FROM, members }
-  })
+export const league = () => withCtx(leagueFor)
+
+/** Liga de la semana para el usuario del contexto (entra en su grupo si aún no estaba) */
+export async function leagueFor(c: Ctx): Promise<LeagueT> {
+  const weekKey = weekOf(Date.now(), c.user.timezone)
+  const division = c.g.division
+  // Quien abre la liga entra ya en su grupo (con 0 puntos): así todos los que se conectan se ven entre ellos
+  let me = await c.tx.leagueMember.findUnique({ where: { weekKey_userId: { weekKey, userId: c.user.id } } })
+  if (!me && c.g.weekKey === weekKey) {
+    await ensureMembership(c, true)
+    me = await c.tx.leagueMember.findUnique({ where: { weekKey_userId: { weekKey, userId: c.user.id } } })
+  }
+  const rows = me ? await standings(c.tx, weekKey, me.division, me.groupNo) : []
+  const members = rows.map(m => ({ rank: m.rank, userId: m.userId, displayName: m.userId === c.user.id ? c.user.name || '—' : displayName(m.name, m.visible), weeklyXp: m.weeklyXp, riskAdjReturnPct: m.riskAdjReturnPct, score: m.score, isMe: m.userId === c.user.id }))
+  if (!me) members.push({ rank: 0, userId: c.user.id, displayName: c.user.name || '—', weeklyXp: 0, riskAdjReturnPct: 0, score: 0, isMe: true })
+  return { division: { id: `d${division}`, name: DIVISIONS[division - 1], order: division }, divisions: DIVISIONS, endsAt: new Date(addDays(weekKey, 7) + 'T00:00:00Z').toISOString(), promoteTop: PROMOTE_TOP, demoteFrom: DEMOTE_FROM, members }
+}
 
 /** Cierra la semana indicada (idempotente: solo una vez por semana) */
 export async function closeWeek(weekKey: string) {

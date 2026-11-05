@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
-/* ─── Identidad de Lumi · colores (regla 60/30/10) ───────────
-   60 % marfil (fondos y tarjetas: calidez), 30 % azul noche (texto, tarjetas destacadas
-   y elementos oscuros), 10 % mandarina (botones principales, progreso y lo que se toca).
-   Verde y rojo solo para subidas y bajadas. Lumi conserva su azul.
-   En oscuro se invierte: base azul noche, texto marfil y el mismo acento.
-   --brand rellena (con texto --on-brand encima); como color de texto sobre el fondo, --brand-ink. */
+/* ─── Identidad de Lumi · colores ────────────────────────────
+   Claro: marfil (fondos y tarjetas) y azul noche (texto y tarjetas destacadas), con el azul de Lumi
+   como protagonista (botones, progreso, lo activo).
+   Oscuro: negro, grises y blanco (como iOS), con el mismo azul.
+   Verde y rojo solo para subidas y bajadas.
+   --brand rellena (texto --on-brand encima); como color de texto sobre el fondo, --brand-ink. */
 :root {
   --bg: #f7f3ec;
   --surface: #fffdf8;
@@ -15,11 +15,11 @@
   --ink: #172033;
   --ink-2: #5e6273;
   --ink-3: #a3a19b;
-  --brand: #ff6a2c;
-  --brand-press: #f2581a;
-  --brand-ink: #b4400f;
-  --on-brand: #172033;
-  --lumi: #2e6ae6;
+  --brand: #0071e3;
+  --brand-press: #0058b0;
+  --brand-ink: #0062c4;
+  --on-brand: #ffffff;
+  --lumi: var(--brand);
   --up: #1f8a44;
   --down: #d1242f;
   --amber: #b25000;
@@ -28,82 +28,82 @@
   --hero: #172340;
   --on-hero: #f7f3ec;
   --rare-common: #8e8e93;
-  --rare-rare: #2e6ae6;
+  --rare-rare: #0071e3;
   --rare-epic: #8944ab;
   --rare-legendary: #b8860b;
   --scrim: rgb(23 32 51 / 0.4);
   --shadow: 0 10px 40px rgb(23 32 51 / 0.12);
-  --glass: rgb(255 253 248 / 0.62);
-  --glass-line: rgb(255 255 255 / 0.7);
-  --glass-shadow: 0 12px 32px rgb(23 32 51 / 0.16), inset 0 1px 0 rgb(255 255 255 / 0.75);
+  --glass: rgb(255 253 248 / 0.68);
+  --glass-line: rgb(255 255 255 / 0.65);
+  --glass-shadow: 0 8px 30px rgb(23 32 51 / 0.12), 0 1px 2px rgb(23 32 51 / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.8);
   color-scheme: light;
 }
 
 :root[data-theme="dark"] {
-  --bg: #0f1322;
-  --surface: #181d2e;
-  --surface-2: #212739;
-  --fill: #252b3d;
-  --line: #2c3346;
-  --ink: #f3eee6;
-  --ink-2: #a4a6b3;
-  --ink-3: #6b6f80;
-  --brand: #ff7a3d;
-  --brand-press: #ff8c55;
-  --brand-ink: #ff9d66;
-  --on-brand: #14110f;
-  --lumi: #4c8dff;
-  --up: #34c76a;
-  --down: #ff5a4f;
-  --amber: #ffa63d;
-  --amber-bg: #2d2010;
+  --bg: #000000;
+  --surface: #1c1c1e;
+  --surface-2: #2c2c2e;
+  --fill: #2c2c2e;
+  --line: #38383a;
+  --ink: #f5f5f7;
+  --ink-2: #98989d;
+  --ink-3: #636366;
+  --brand: #2997ff;
+  --brand-press: #0a84ff;
+  --brand-ink: #3d9eff;
+  --on-brand: #ffffff;
+  --lumi: var(--brand);
+  --up: #30d158;
+  --down: #ff453a;
+  --amber: #ff9f0a;
+  --amber-bg: #2a1e0a;
   --gem: #64d2ff;
-  --hero: #1f2a48;
-  --on-hero: #f3eee6;
+  --hero: #1c1c1e;
+  --on-hero: #f5f5f7;
   --rare-common: #98989d;
-  --rare-rare: #4c8dff;
+  --rare-rare: #2997ff;
   --rare-epic: #bf5af2;
   --rare-legendary: #ffd60a;
   --scrim: rgb(0 0 0 / 0.6);
-  --shadow: 0 10px 40px rgb(0 0 0 / 0.55);
-  --glass: rgb(24 29 46 / 0.6);
-  --glass-line: rgb(255 255 255 / 0.09);
-  --glass-shadow: 0 12px 32px rgb(0 0 0 / 0.45), inset 0 1px 0 rgb(255 255 255 / 0.08);
+  --shadow: 0 10px 40px rgb(0 0 0 / 0.6);
+  --glass: rgb(28 28 30 / 0.66);
+  --glass-line: rgb(255 255 255 / 0.08);
+  --glass-shadow: 0 8px 30px rgb(0 0 0 / 0.5), inset 0 1px 0 rgb(255 255 255 / 0.07);
   color-scheme: dark;
 }
 
 /* Sin JavaScript todavía: seguir al sistema */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-  --bg: #0f1322;
-  --surface: #181d2e;
-  --surface-2: #212739;
-  --fill: #252b3d;
-  --line: #2c3346;
-  --ink: #f3eee6;
-  --ink-2: #a4a6b3;
-  --ink-3: #6b6f80;
-  --brand: #ff7a3d;
-  --brand-press: #ff8c55;
-  --brand-ink: #ff9d66;
-  --on-brand: #14110f;
-  --lumi: #4c8dff;
-  --up: #34c76a;
-  --down: #ff5a4f;
-  --amber: #ffa63d;
-  --amber-bg: #2d2010;
+  --bg: #000000;
+  --surface: #1c1c1e;
+  --surface-2: #2c2c2e;
+  --fill: #2c2c2e;
+  --line: #38383a;
+  --ink: #f5f5f7;
+  --ink-2: #98989d;
+  --ink-3: #636366;
+  --brand: #2997ff;
+  --brand-press: #0a84ff;
+  --brand-ink: #3d9eff;
+  --on-brand: #ffffff;
+  --lumi: var(--brand);
+  --up: #30d158;
+  --down: #ff453a;
+  --amber: #ff9f0a;
+  --amber-bg: #2a1e0a;
   --gem: #64d2ff;
-  --hero: #1f2a48;
-  --on-hero: #f3eee6;
+  --hero: #1c1c1e;
+  --on-hero: #f5f5f7;
   --rare-common: #98989d;
-  --rare-rare: #4c8dff;
+  --rare-rare: #2997ff;
   --rare-epic: #bf5af2;
   --rare-legendary: #ffd60a;
   --scrim: rgb(0 0 0 / 0.6);
-  --shadow: 0 10px 40px rgb(0 0 0 / 0.55);
-  --glass: rgb(24 29 46 / 0.6);
-  --glass-line: rgb(255 255 255 / 0.09);
-  --glass-shadow: 0 12px 32px rgb(0 0 0 / 0.45), inset 0 1px 0 rgb(255 255 255 / 0.08);
+  --shadow: 0 10px 40px rgb(0 0 0 / 0.6);
+  --glass: rgb(28 28 30 / 0.66);
+  --glass-line: rgb(255 255 255 / 0.08);
+  --glass-shadow: 0 8px 30px rgb(0 0 0 / 0.5), inset 0 1px 0 rgb(255 255 255 / 0.07);
   color-scheme: dark;
   }
 }
@@ -315,3 +315,21 @@ button { cursor: pointer; }
     padding-right: 380px;
   }
 }
+
+/* ─── Movimiento: suave y corto, como en iOS (todo se desactiva con «reducir movimiento») ─── */
+@media (prefers-reduced-motion: no-preference) {
+  /* Cambio de pantalla: aparece con un fundido corto */
+  .page-in { animation: page-in 0.24s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  /* Píldora de la pestaña activa: se desliza con un pequeño rebote */
+  .tab-pill { transition: transform 0.42s cubic-bezier(0.34, 1.36, 0.64, 1), opacity 0.2s; }
+  /* Cambiar entre claro y oscuro con transición (solo mientras dura el cambio) */
+  html.theme-anim, html.theme-anim * { transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, fill 0.35s ease !important; }
+  /* Toques: respuesta inmediata y vuelta elástica */
+  .btn, .opt, .chip, .icon-btn, .card[href], a.card { transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.15s, box-shadow 0.2s, opacity 0.15s; }
+  a.card:active, .card[href]:active { transform: scale(0.98); }
+}
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+

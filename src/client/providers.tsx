@@ -23,6 +23,9 @@ export function applyTheme(pref: ThemePref) {
     // sin almacenamiento: se aplica solo en esta visita
   }
   const root = document.documentElement
+  // Transición suave entre claro y oscuro (solo durante el cambio)
+  root.classList.add('theme-anim')
+  setTimeout(() => root.classList.remove('theme-anim'), 400)
   if (pref === 'AUTO') root.removeAttribute('data-theme')
   else root.setAttribute('data-theme', pref === 'DARK' ? 'dark' : 'light')
 }
@@ -32,7 +35,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     () =>
       new QueryClient({
         defaultOptions: {
-          queries: { staleTime: 15_000, refetchOnWindowFocus: true, retry: (n, e) => !(e instanceof ApiFailure) && n < 2 },
+          queries: { staleTime: 60_000, gcTime: 10 * 60_000, refetchOnWindowFocus: true, retry: (n, e) => !(e instanceof ApiFailure) && n < 2 },
         },
       }),
   )

@@ -70,7 +70,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <GuestBar />
           </Suspense>
           {/* La página se pinta siempre (navegación instantánea); se oculta hasta confirmar la sesión */}
-          <div hidden={!ready}>{children}</div>
+          <div hidden={!ready}>
+            <Suspense fallback={children}>
+              <PageIn>{children}</PageIn>
+            </Suspense>
+          </div>
           {!ready && <PageSkeleton />}
         </main>
       </div>
@@ -79,7 +83,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <AdminLayer />
       </Suspense>
       {/* Barra inferior flotante de cristal (estilo «liquid glass») */}
-      <nav aria-label={t('label')} className="glass fixed inset-x-3 z-30 grid grid-cols-5 gap-1 rounded-[30px] p-1.5 md:hidden" style={{ bottom: 'max(10px, env(safe-area-inset-bottom))' }}>
+      <nav aria-label={t('label')} className="glass fixed inset-x-3 z-30 rounded-[30px] p-1.5 md:hidden" style={{ bottom: 'max(10px, env(safe-area-inset-bottom))' }}>
         <Suspense>
           <BottomLinks />
         </Suspense>
@@ -135,15 +139,28 @@ function SideLinks() {
 function BottomLinks() {
   const t = useTranslations('nav')
   const active = tabOf(usePathname())
+  const i = TABS.findIndex(tab => tab.href === active)
   return (
-    <>
+    <div className="relative grid grid-cols-5">
+      {/* Píldora que se desliza hasta la pestaña activa */}
+      <span aria-hidden="true" className="tab-pill absolute inset-y-0 left-0 w-1/5 rounded-[24px]" style={{ transform: `translateX(${Math.max(0, i) * 100}%)`, opacity: i < 0 ? 0 : 1, background: 'color-mix(in srgb, var(--brand) 15%, transparent)' }} />
       {TABS.map(tab => (
-        <Link key={tab.href} href={tab.href} aria-current={active === tab.href ? 'page' : undefined} className="flex flex-col items-center justify-center gap-[2px] rounded-[24px] py-1.5 text-[10px] font-bold transition-[background,color,transform] duration-200 active:scale-90" style={active === tab.href ? { color: 'var(--brand-ink)', background: 'color-mix(in srgb, var(--brand) 16%, transparent)' } : { color: 'var(--ink-2)' }}>
+        <Link key={tab.href} href={tab.href} aria-current={active === tab.href ? 'page' : undefined} className="relative flex flex-col items-center justify-center gap-[2px] rounded-[24px] py-1.5 text-[10px] font-bold transition-[color,transform] duration-200 active:scale-90" style={{ color: active === tab.href ? 'var(--brand-ink)' : 'var(--ink-2)' }}>
           <Icon name={tab.icon} size={23} />
           {t(tab.key)}
         </Link>
       ))}
-    </>
+    </div>
+  )
+}
+
+/** Cada pantalla entra con un fundido corto */
+function PageIn({ children }: { children: React.ReactNode }) {
+  const path = usePathname()
+  return (
+    <div key={path} className="page-in">
+      {children}
+    </div>
   )
 }
 
