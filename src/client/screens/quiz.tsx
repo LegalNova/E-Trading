@@ -2,6 +2,7 @@
 // 03.5–03.8 · Quiz (7 tipos de pregunta), resultado y sin vidas. También el test de nivel.
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { useTranslations } from 'next-intl'
+import { ShareButton } from '../share'
 import { useEffect, useEffectEvent, useRef, useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
 import type { AnswerResultT, QuestionT, QuizFinishT } from '@/shared/contract'
@@ -309,6 +310,7 @@ export function QuizResult({ r, lessonId, review, onRetry }: { r: QuizFinishT; l
       <Link href="/clases" className={`btn ${passed ? 'btn-primary' : 'btn-secondary'}`}>
         {t('continue')}
       </Link>
+      {passed && lessonId && !review && <ShareButton what={{ t: 'clase', id: lessonId, s: r.stars }} />}
       <Link href="/mercado" className="btn btn-plain">
         {t('practice')}
       </Link>

@@ -15,6 +15,7 @@ import { Bar, ErrorState, PageSkeleton, Sheet, TopBar } from '../ui/kit'
 import { BadgeArt, RARITY, rarityOf } from '../ui/badge'
 import { MaxCard } from '../upgrade'
 import { ThemeToggle } from '../theme-toggle'
+import { ShareButton } from '../share'
 import { Lumi, LumiSays, SKINS, stageOf } from '../ui/lumi'
 
 // ── Racha (05.1) ─────────────────────────────────────────
@@ -54,6 +55,7 @@ export function Streak() {
           <Flame color={s.todayDone ? '#2997FF' : 'rgb(255 255 255 / 0.3)'} size={70} />
         </div>
         {!s.todayDone && <LumiSays mood={s.current > 0 ? 'WORRIED' : 'HAPPY'} message={s.current > 0 ? t('atRisk', { n: s.current }) : t('startOne')} />}
+        {s.current >= 2 && <ShareButton what={{ t: 'racha', n: s.current }} />}
         <div className="card">
           <b>{t('last5weeks')}</b>
           <div className="mt-2.5 grid grid-cols-7 gap-1.5 text-center">
@@ -180,6 +182,7 @@ export function Achievements({ back = '/perfil' }: { back?: string }) {
             </span>
             <b className="t-title">{open.title}</b>
             <p className="t-body muted m-0">{open.description}</p>
+            {open.unlocked && <ShareButton what={{ t: 'logro', id: open.code }} className="btn btn-primary" />}
             {open.unlocked ? <span className="t-foot">{t('unlockedOn', { date: new Date(open.unlockedAt!).toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' }) })}</span> : (
               <div className="flex w-full items-center gap-2.5">
                 <Bar pct={(open.progress / open.target) * 100} />
