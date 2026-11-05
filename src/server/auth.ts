@@ -50,8 +50,9 @@ export const auth = betterAuth({
     enabled: true,
     storage: 'database',
     window: 60,
-    max: 60,
-    customRules: { '/sign-in/anonymous': { window: 3600, max: 10 }, '/request-password-reset': { window: 3600, max: 5 }, '/send-verification-email': { window: 3600, max: 5 }, '/sign-in/email': { window: 300, max: 10 }, '/sign-up/email': { window: 3600, max: 10 }, '/sign-in/social': { window: 60, max: 10 } },
+    max: 300,
+    // Límites por red (IP). En una clase o un evento mucha gente comparte la misma wifi: margen para 60-80 personas por hora
+    customRules: { '/sign-in/anonymous': { window: 3600, max: 80 }, '/request-password-reset': { window: 3600, max: 5 }, '/send-verification-email': { window: 3600, max: 5 }, '/sign-in/email': { window: 300, max: 30 }, '/sign-up/email': { window: 3600, max: 60 }, '/sign-in/social': { window: 60, max: 40 } },
   },
   advanced: { ipAddress: { ipAddressHeaders: ['x-forwarded-for', 'x-real-ip'] }, useSecureCookies: process.env.NODE_ENV === 'production' },
   telemetry: { enabled: false },

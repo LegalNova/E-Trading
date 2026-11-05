@@ -175,8 +175,9 @@ async function handle(req: NextRequest, ctx: RouteContext<'/api/[...path]'>) {
   const mutating = req.method !== 'GET'
   if (mutating && !sameOrigin(req)) return Response.json({ error: { code: 'FORBIDDEN', message: 'Origen no permitido' } }, { status: 403 })
   try {
-    // Límite general por IP (lecturas y escrituras); las escrituras, más estricto
-    await rateLimit(`${mutating ? 'w' : 'r'}:${clientIp(req)}`, mutating ? 90 : 600, 60)
+    // Límite general por IP (lecturas y escrituras); las escrituras, más estricto.
+    // Holgado a propósito: en una clase o un evento decenas de personas comparten la misma wifi (misma IP)
+    await rateLimit(`${mutating ? 'w' : 'r'}:${clientIp(req)}`, mutating ? 900 : 4000, 60)
     let body: unknown = undefined
     if (req.method !== 'GET' && req.method !== 'DELETE') {
       const text = await req.text()
