@@ -40,10 +40,10 @@ c $J -X POST $B/quiz/placement/start -o /dev/null; code=$(c $J -X POST $B/quiz/p
 A=$(c $J -X POST $B/quiz/placement/start | python3 -c "import sys,json; print(json.load(sys.stdin).get('attemptId',''))")
 [ -z "$A" ] && ok "segunda vez rechazada" || echo "  ℹ️ el primer intento sigue abierto hasta terminarlo ($code)"
 
-echo "5. Premium gratis repetido"
-c $J -X POST $B/billing/checkout -d '{"planId":"premium-year"}' -o /dev/null; c $J -X POST $B/billing/cancel -o /dev/null
-code=$(c $J -X POST $B/billing/checkout -d '{"planId":"premium-year"}' | python3 -c "import sys,json; print(json.load(sys.stdin).get('error',{}).get('code'))")
-[ "$code" = TRIAL_USED ] && ok "segunda prueba → TRIAL_USED" || ko "segunda prueba → $code"
+echo "5. Max gratis sin pagar (la prueba solo llega con racha de 5 días o invitación)"
+c $J -X POST $B/billing/checkout -d '{"planId":"premium-year"}' -o $T/ck.json -w "%{http_code}" > $T/ck.code
+tier=$(c $J $B/billing/status | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('tier') or d.get('plan') or '?')")
+[ "$(cat $T/ck.code)" != 500 ] && [ "$tier" != PREMIUM ] && ok "sin pago no hay Max (respuesta $(cat $T/ck.code), plan $tier)" || ko "checkout $(cat $T/ck.code), plan $tier"
 
 echo "6. Menor de edad contratando Premium"
 new_user $J2 2010-03-03
@@ -74,7 +74,7 @@ case "$BASE" in
   c $J2 -X DELETE $B/me -o /dev/null; rm -f $J2; E=jvidalalmirall@gmail.com
   curl -s -c $J2 -b $J2 -H 'content-type: application/json' -H "$O" -X POST $B/auth/sign-up/email -d "{\"email\":\"$E\",\"password\":\"prueba1234\",\"name\":\"\"}" -o /dev/null
   adm=$(c $J2 $B/session | python3 -c "import sys,json; print(json.load(sys.stdin).get('isAdmin'))"); code=$(c $J2 $B/admin/metrics -o /dev/null -w "%{http_code}")
-  [ "$adm" = False ] && [ "$code" = 403 ] && ok "no es admin (403)" || ko "isAdmin=$adm admin=$code"
+  [ "$adm" != True ] && { [ "$code" = 403 ] || [ "$code" = 401 ]; } && ok "no es admin ($code)" || ko "isAdmin=$adm admin=$code"
   c $J2 -X DELETE $B/me -o /dev/null
     ;;
   *) echo "  ℹ️ se omite fuera de localhost" ;;

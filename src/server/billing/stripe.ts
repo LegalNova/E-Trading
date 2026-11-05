@@ -5,7 +5,7 @@ import 'server-only'
 import Stripe from 'stripe'
 import type { User } from '@/generated/prisma/client'
 import { db } from '../db'
-import { START_CASH } from '../game/core'
+import { HttpError, START_CASH } from '../game/core'
 
 const KEY = process.env.STRIPE_SECRET_KEY ?? ''
 export const stripeEnabled = /^(sk|rk)_(test|live)_[A-Za-z0-9]{20,}$/.test(KEY)
@@ -21,7 +21,10 @@ async function priceId(lookup: string) {
   if (hit && Date.now() - hit.at < 10 * 60_000) return hit.id
   const list = await stripe!.prices.list({ lookup_keys: [lookup], active: true, limit: 1 })
   const id = list.data[0]?.id
-  if (!id) throw new Error(`Stripe: falta el precio ${lookup} (ejecuta scripts/stripe-setup.ts)`)
+  if (!id) {
+    console.error(`Stripe: falta el precio ${lookup} (ejecuta scripts/stripe-setup.ts)`)
+    throw new HttpError(503, 'PAYMENTS_UNAVAILABLE', 'Los pagos se están preparando. Vuelve a intentarlo en un rato.')
+  }
   priceCache.set(lookup, { id, at: Date.now() })
   return id
 }
