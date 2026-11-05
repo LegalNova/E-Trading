@@ -104,6 +104,7 @@ export const ca: Record<LegalSlug, LegalDoc> = {
             ['Vercel Inc.', 'Allotjament de l’aplicació', 'EUA · Marc de privadesa de dades UE-EUA i clàusules contractuals tipus'],
             ['Neon Inc. (sobre Amazon Web Services)', 'Base de dades', 'EUA (us-east-1) · contracte d’encarregat i clàusules contractuals tipus'],
             ['Google LLC', 'Inici de sessió amb Google (només si el fas servir)', 'EUA · Marc de privadesa de dades UE-EUA'],
+            ['Resend Inc.', 'Enviament de correus del compte (confirmar el correu, canviar la contrasenya)', 'EUA · contracte d’encarregat i clàusules contractuals tipus'],
           ],
         },
       },

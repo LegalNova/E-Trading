@@ -2,6 +2,7 @@
 // 02.1–02.5 · Acceso. Solo Google y email por ahora (Apple más adelante, D-008).
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useTranslations } from 'next-intl'
+import { useSearchParams } from 'next/navigation'
 import { useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
 import { api, ApiFailure, type Session } from '../api'
@@ -162,21 +163,110 @@ export function SignIn() {
 
 export function Forgot() {
   const t = useTranslations('auth')
+  const { data: session } = useSession()
+  const params = useSearchParams()
+  const token = params.get('token')
+  const expired = params.get('error') === 'INVALID_TOKEN'
+  if (!session) return null
   return (
     <>
       <TopBar back="/entrar" />
       <div className="pad">
         <h1 className="t-large">{t('forgotTitle')}</h1>
-        <div className="card flex items-center gap-3">
-          <Lumi mood="CALM" size={40} />
-          <span className="t-foot" style={{ color: 'var(--ink)' }}>
-            {t('forgotSent')}
-          </span>
-        </div>
-        <Link href="/#contacto" className="btn btn-secondary">
-          {t('contact')}
-        </Link>
+        {!session.mailEnabled ? (
+          <>
+            <div className="card flex items-center gap-3">
+              <Lumi mood="CALM" size={40} />
+              <span className="t-foot" style={{ color: 'var(--ink)' }}>
+                {t('forgotSent')}
+              </span>
+            </div>
+            <Link href="/#contacto" className="btn btn-secondary">
+              {t('contact')}
+            </Link>
+          </>
+        ) : token ? (
+          <NewPassword token={token} />
+        ) : (
+          <AskLink expired={expired} />
+        )}
       </div>
     </>
+  )
+}
+
+function AskLink({ expired }: { expired: boolean }) {
+  const t = useTranslations('auth')
+  const [email, setEmail] = useState('')
+  const m = useMutation({ mutationFn: () => api.forgotPassword(email.trim()) })
+  const err = m.error instanceof ApiFailure ? m.error : null
+  if (m.isSuccess)
+    return (
+      <div className="card flex items-center gap-3">
+        <Lumi mood="HAPPY" size={40} />
+        <span className="t-foot" style={{ color: 'var(--ink)' }}>
+          {t('resetSent', { email: email.trim() })}
+        </span>
+      </div>
+    )
+  return (
+    <form
+      className="flex flex-col gap-3"
+      onSubmit={e => {
+        e.preventDefault()
+        m.mutate()
+      }}
+    >
+      {expired && <p className="err m-0">{t('resetExpired')}</p>}
+      <p className="t-foot m-0">{t('resetAsk')}</p>
+      <div className="field">
+        <label htmlFor="f-email">Email</label>
+        <input id="f-email" className="input" type="email" autoComplete="email" required value={email} onChange={e => setEmail(e.target.value)} aria-invalid={!!err} />
+      </div>
+      {err && <p className="err m-0">{t.has(`errors.${err.code}`) ? t(`errors.${err.code}`) : err.message}</p>}
+      <button className="btn btn-primary" disabled={m.isPending}>
+        {t('resetSend')}
+      </button>
+    </form>
+  )
+}
+
+function NewPassword({ token }: { token: string }) {
+  const t = useTranslations('auth')
+  const [pass, setPass] = useState('')
+  const m = useMutation({ mutationFn: () => api.resetPassword(token, pass) })
+  const err = m.error instanceof ApiFailure ? m.error : null
+  if (m.isSuccess)
+    return (
+      <>
+        <div className="card flex items-center gap-3">
+          <Lumi mood="CELEBRATE" size={40} />
+          <span className="t-foot" style={{ color: 'var(--ink)' }}>
+            {t('resetDone')}
+          </span>
+        </div>
+        <Link href="/entrar" className="btn btn-primary">
+          {t('signIn')}
+        </Link>
+      </>
+    )
+  return (
+    <form
+      className="flex flex-col gap-3"
+      onSubmit={e => {
+        e.preventDefault()
+        m.mutate()
+      }}
+    >
+      <div className="field">
+        <label htmlFor="f-pass">{t('newPassword')}</label>
+        <PasswordInput id="f-pass" value={pass} onChange={setPass} invalid={err?.code === 'WEAK_PASSWORD'} />
+        <span className={err?.code === 'WEAK_PASSWORD' ? 'err' : 't-cap'}>{t('passwordRule')}</span>
+      </div>
+      {err && err.code !== 'WEAK_PASSWORD' && <p className="err m-0">{err.code === 'INVALID_TOKEN' || err.status === 400 ? t('resetExpired') : t.has(`errors.${err.code}`) ? t(`errors.${err.code}`) : err.message}</p>}
+      <button className="btn btn-primary" disabled={m.isPending}>
+        {t('resetSave')}
+      </button>
+    </form>
   )
 }

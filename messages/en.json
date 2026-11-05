@@ -132,7 +132,14 @@
       "ACCOUNT_BLOCKED": "This account is blocked. Write to us if you think it's a mistake.",
       "RATE_LIMITED": "Too many attempts. Try again in a minute."
     },
-    "contact": "Go to Contact"
+    "contact": "Go to Contact",
+    "resetAsk": "Enter your account email and we'll send you a link to choose a new password.",
+    "resetSend": "Send link",
+    "resetSent": "If there's an account for {email}, a link is on its way. Check your spam folder too.",
+    "resetExpired": "This link has expired or was already used. Ask for a new one.",
+    "newPassword": "New password",
+    "resetSave": "Save password",
+    "resetDone": "Done. You can now sign in with your new password."
   },
   "onboarding": {
     "nameTitle": "What's your name?",

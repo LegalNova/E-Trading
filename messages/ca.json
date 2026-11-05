@@ -132,7 +132,14 @@
       "ACCOUNT_BLOCKED": "Aquest compte està bloquejat. Escriu-nos si creus que és un error.",
       "RATE_LIMITED": "Massa intents. Prova-ho d'aquí a un minut."
     },
-    "contact": "Anar a Contacte"
+    "contact": "Anar a Contacte",
+    "resetAsk": "Escriu el correu del teu compte i t'enviem un enllaç per triar una contrasenya nova.",
+    "resetSend": "Enviar l'enllaç",
+    "resetSent": "Si hi ha un compte amb {email}, t'arriba un enllaç d'aquí a uns minuts. Mira també al correu brossa.",
+    "resetExpired": "L'enllaç ha caducat o ja s'ha fet servir. Demana'n un de nou.",
+    "newPassword": "Contrasenya nova",
+    "resetSave": "Desar la contrasenya",
+    "resetDone": "Fet. Ja pots entrar amb la contrasenya nova."
   },
   "onboarding": {
     "nameTitle": "Com et dius?",
