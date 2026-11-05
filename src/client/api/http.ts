@@ -103,7 +103,7 @@ export const httpApi: Api = {
   refillLives: () => post('/me/lives/refill'),
 
   path: () => get('/courses/path'),
-  lesson: id => get(`/lessons/${id}`),
+  lesson: (id, peek) => get(`/lessons/${id}${peek ? '?peek=1' : ''}`),
   checkStep: (lessonId, stepId, candleIndex) => post(`/lessons/${lessonId}/steps/${stepId}/check`, { candleIndex }),
   quizStart: id => post(`/quiz/${id}/start`),
   answer: (attemptId, questionId, answer, elapsedMs) => post(`/quiz/attempts/${attemptId}/answer`, { questionId, answer, elapsedMs }),

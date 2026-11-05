@@ -1,12 +1,14 @@
 'use client'
 // Marco de la app: barra inferior en el móvil y columna lateral en pantallas grandes.
 // También protege las rutas: sin sesión → /entrar; onboarding a medias → /onboarding.
+import { useQueryClient } from '@tanstack/react-query'
 import { Suspense, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { AdminLayer } from './admin-layer'
 import { MaxSide } from './upgrade'
 import { ThemeToggle } from './theme-toggle'
+import { api } from './api'
 import { useSession } from './hooks'
 import { Icon, Wordmark, type IconName } from './ui/icons'
 import { PageSkeleton } from './ui/kit'
@@ -41,9 +43,26 @@ export function useGuard(require: 'app' | 'onboarding' | 'admin' = 'app') {
   return { ready: !isLoading && ok, session: data }
 }
 
+/** Cuando la app ya está pintada, carga en segundo plano lo de las otras pestañas: cambiar de pestaña es instantáneo */
+function usePrefetchTabs(ready: boolean) {
+  const qc = useQueryClient()
+  useEffect(() => {
+    if (!ready) return
+    const id = setTimeout(() => {
+      qc.prefetchQuery({ queryKey: ['path'], queryFn: api.path })
+      qc.prefetchQuery({ queryKey: ['me'], queryFn: api.me })
+      qc.prefetchQuery({ queryKey: ['league'], queryFn: api.league })
+      qc.prefetchQuery({ queryKey: ['portfolio'], queryFn: api.portfolio })
+      qc.prefetchQuery({ queryKey: ['assets', 'WATCH'], queryFn: () => api.assets({ type: 'WATCH' }) })
+    }, 900)
+    return () => clearTimeout(id)
+  }, [ready, qc])
+}
+
 export function AppShell({ children }: { children: React.ReactNode }) {
   const t = useTranslations('nav')
   const { ready } = useGuard('app')
+  usePrefetchTabs(ready)
 
   return (
     <div className="min-h-dvh md:flex">

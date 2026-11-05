@@ -39,7 +39,9 @@ export async function pathOf(tx: Tx, user: User): Promise<CoursePathT> {
   // Una lección disponible cada vez en cada «camino»: el principal (o cada sección abierta del curso v2) y cada
   // unidad paralela (Vocabulario). Una sección se abre al aprobar el reto final de las secciones que necesita.
   const found = { main: false, side: new Set<string>(), sections: new Set<string>() }
-  const bossDone = (sid: string) => done.has(`${sid}boss`)
+  // El equipo (ADMIN) tiene todo abierto: puede entrar en cualquier clase sin hacer las anteriores
+  const admin = user.role === 'ADMIN'
+  const bossDone = (sid: string) => admin || done.has(`${sid}boss`)
   const sectionOpen = (u: (typeof UNITS)[number]) => !u.section || u.section.requires.every(bossDone)
   let currentUnitId = UNITS[0].id
   let currentSet = false
@@ -55,6 +57,7 @@ export async function pathOf(tx: Tx, user: User): Promise<CoursePathT> {
       const sec = u.section?.id
       const free = u.side ? !found.side.has(u.id) : sec ? sectionOpen(u) && !found.sections.has(sec) : !found.main
       if (p) status = 'COMPLETED'
+      else if (admin) status = 'AVAILABLE'
       else if (!requiresPremium && free) {
         status = 'AVAILABLE'
         if (u.side) found.side.add(u.id)
@@ -83,14 +86,14 @@ export async function pathOf(tx: Tx, user: User): Promise<CoursePathT> {
   return { courseId: 'de-cero-a-inversor', title: engineT(loc).course, currentUnitId, units, minutesTotal: courseMinutes(), dailyGoalMinutes: minutesOf(user) }
 }
 
-export async function lesson(user: User, tx: Tx, id: string): Promise<LessonT> {
+export async function lesson(user: User, tx: Tx, id: string, peek = false): Promise<LessonT> {
   const l = LESSON[id] ?? fail(404, 'NOT_FOUND', 'Lección no encontrada')
   const st = (await pathOf(tx, user)).units.flatMap(u => u.lessons).find(x => x.id === id)!
-  if (st.requiresPremium) await trackDaily(tx, user.id, 'paywall', { lessonId: id })
+  if (st.requiresPremium && !peek) await trackDaily(tx, user.id, 'paywall', { lessonId: id })
   if (st.requiresPremium) fail(403, 'FEATURE_LOCKED', st.requiredPlan === 'PLUS' ? 'Esta lección está en el plan Plus' : 'Esta lección está en el plan Max')
   // Las lecciones se abren en orden: no se puede saltar a una bloqueada desde la URL
   if (st.status === 'LOCKED') fail(403, 'LESSON_LOCKED', 'Termina la lección anterior para abrir esta')
-  await trackLessonStart(tx, user.id, id)
+  if (!peek) await trackLessonStart(tx, user.id, id)
   const loc = currentLocale()
   const e = engineT(loc)
   const title = lessonTitleT(loc, id, l.title)

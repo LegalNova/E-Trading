@@ -131,7 +131,7 @@ export interface Api {
   feedbackLater(): Promise<void>
   submitFeedback(a: { nps: number; likes: string[]; blockers: string[]; pay: string; price?: string; wants: string[]; wantsOther?: string; comment?: string }): Promise<{ ok: boolean; gems: number }>
   adminFeedback(): Promise<AdminFeedback>
-  planBadge(): Promise<{ plan: 'FREE' | 'PLUS' | 'PREMIUM'; status: string; endsAt: string | null; daysLeft: number | null; trialUsed: boolean; isGuest: boolean; streak: number; trialUnlocked: boolean; trialStreak: number; payments: boolean }>
+  planBadge(): Promise<{ plan: 'FREE' | 'PLUS' | 'PREMIUM'; status: string; endsAt: string | null; daysLeft: number | null; trialUsed: boolean; isGuest: boolean; streak: number; trialUnlocked: boolean; trialStreak: number; payments: boolean; isAdmin: boolean }>
   myInvites(): Promise<{ code: string; joined: number; rewarded: number; daysEarned: number; maxDays: number; days: number }>
   inviterName(code: string): Promise<{ valid: boolean; name: string | null }>
   signInGuest(): Promise<Session>
@@ -152,7 +152,8 @@ export interface Api {
 
   // Clases y quiz
   path(): Promise<CoursePathT>
-  lesson(id: string): Promise<LessonT>
+  /** peek: precarga (no cuenta como «la ha empezado») */
+  lesson(id: string, peek?: boolean): Promise<LessonT>
   checkStep(lessonId: string, stepId: string, candleIndex: number): Promise<StepCheckT>
   quizStart(lessonId: string | 'placement' | 'review'): Promise<QuizStartT>
   answer(attemptId: string, questionId: string, answer: number | number[] | string, elapsedMs: number): Promise<AnswerResultT>

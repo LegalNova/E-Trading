@@ -5,7 +5,7 @@ import type { AchievementT, EffectsT, FeatureT, LivesT, Mood, NotificationT } fr
 import { addDays, dayOf, weekOf } from '@/shared/time'
 import { Prisma, type GameState, type User } from '@/generated/prisma/client'
 import { db, DB_SCHEMA } from '../db'
-import { currentUser } from '../auth'
+import { asTeam, currentUser } from '../auth'
 import { ACHIEVEMENTS, LEVEL_TITLES, LUMI, RISK_LESSON, UNITS } from '../content/catalog'
 import { achievementT } from '../content/translate'
 import { currentLocale } from '../locale'
@@ -93,6 +93,9 @@ export async function withCtx<T>(fn: (c: Ctx) => Promise<T>, user?: User): Promi
   }
 }
 
+/** Semana como número (los contadores son números): 2026-11-02 → 20261102 */
+const weekNo = (weekKey: string) => Number(weekKey.replaceAll('-', '')) || 0
+
 const lockSql = () => `SELECT 1 FROM "${DB_SCHEMA}"."GameState" WHERE "userId" = $1 FOR UPDATE`
 
 /** Antes de cambiar algo en una lectura (ejecutar órdenes, por ejemplo): bloquea y recarga el estado del usuario */
@@ -120,12 +123,16 @@ function inCtx<T>(fn: (c: Ctx) => Promise<T>, u0: User, readOnly: boolean, read:
         if (!read) await tx.$queryRawUnsafe(lockSql(), u0.id)
         g = await tx.gameState.findUniqueOrThrow({ where: { userId: u0.id } })
       }
-      const u = await expireTrial(tx, read ? u0 : ((await tx.user.findUnique({ where: { id: u0.id } })) ?? u0))
+      const u = asTeam(await expireTrial(tx, read ? u0 : ((await tx.user.findUnique({ where: { id: u0.id } })) ?? u0)))
       const c: Ctx = { tx, user: u, g, counters: { ...((g.counters as Counters) ?? {}) }, today: dayOf(Date.now(), u.timezone), fx: { xp: 0, goals: [], ach: [], levelFrom: levelOf(g.xp).n, features: [] }, locked: !read }
       const loaded = { at: g.updatedAt, state: stateOf(g, c.counters) }
       await rollover(c)
       const out = await fn(c)
-      if (c.g.weekXp > 0) await (await import('./league')).ensureMembership(c)
+      // Liga: todo el que usa la app esta semana entra en su grupo (aunque aún no tenga XP), una vez por semana
+      if (c.counters.leagueWeek !== weekNo(c.g.weekKey)) {
+        await (await import('./league')).ensureMembership(c, true)
+        c.counters.leagueWeek = weekNo(c.g.weekKey)
+      } else if (c.g.weekXp > 0) await (await import('./league')).ensureMembership(c)
       const { xp, weekKey, weekXp, gems, lives, livesUpdatedAt, streak, bestStreak, lastActiveDay, freezes, placementDone, tradesDay, tradesToday, division } = c.g
       const data = { xp, weekKey, weekXp, gems, lives, livesUpdatedAt, streak, bestStreak, lastActiveDay, freezes, placementDone, tradesDay, tradesToday, division, counters: c.counters }
       if (c.locked) await tx.gameState.update({ where: { userId: u.id }, data })

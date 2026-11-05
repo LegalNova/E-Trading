@@ -276,7 +276,7 @@ export async function planBadge() {
   const temporary = (sub?.status === 'TRIALING' || sub?.status === 'GIFT') && sub.trialEndsAt && sub.trialEndsAt.getTime() > Date.now()
   const daysLeft = temporary ? Math.max(1, Math.ceil((sub!.trialEndsAt!.getTime() - Date.now()) / DAY_MS)) : null
   const g = await db.gameState.findUnique({ where: { userId: u!.id }, select: { streak: true, bestStreak: true } })
-  return { plan: u!.plan, status: sub?.status ?? 'NONE', endsAt: temporary ? sub!.trialEndsAt!.toISOString() : null, daysLeft, trialUsed: u!.trialUsed, isGuest: !!u!.isAnonymous, streak: g?.streak ?? 0, trialUnlocked: trialUnlocked(g?.bestStreak ?? 0), trialStreak: TRIAL_STREAK, payments: stripeEnabled }
+  return { plan: u!.plan, status: sub?.status ?? 'NONE', endsAt: temporary ? sub!.trialEndsAt!.toISOString() : null, daysLeft, trialUsed: u!.trialUsed, isGuest: !!u!.isAnonymous, streak: g?.streak ?? 0, trialUnlocked: trialUnlocked(g?.bestStreak ?? 0), trialStreak: TRIAL_STREAK, payments: stripeEnabled, isAdmin: u!.role === 'ADMIN' && !viewAs() }
 }
 
 export const billingStatus = () =>

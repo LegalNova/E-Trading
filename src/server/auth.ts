@@ -94,9 +94,12 @@ export function realUser() {
     const s = await auth.api.getSession({ headers: await headers() })
     if (!s) return null
     const u = await db.user.findUnique({ where: { id: s.user.id } })
-    return u && !u.blockedAt ? u : null
+    return u && !u.blockedAt ? asTeam(u) : null
   })
 }
+
+/** El equipo (ADMIN) usa la app con todo abierto: se trata como Max (solo en memoria; su plan real no cambia) */
+export const asTeam = <T extends { role: string; plan: string }>(u: T): T => (u.role === 'ADMIN' ? { ...u, plan: 'PREMIUM' } : u)
 
 /** Usuario de la sesión actual: el real o, si un admin está «viendo como», el usuario elegido */
 export async function currentUser() {

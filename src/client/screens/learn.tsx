@@ -1,6 +1,6 @@
 'use client'
 // 03.1 Inicio · 03.2 Camino de clases · 03.3–03.4 Pasos de lección
-import { useMutation, useQuery } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useTranslations } from 'next-intl'
 import { useEffect, useRef, useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
@@ -31,6 +31,12 @@ export function Home() {
   const { data: h, isError, refetch } = useHome()
   const { data: me } = useMe()
   const { data: badges } = useQuery({ queryKey: ['achievements'], queryFn: api.achievements })
+  // La siguiente clase se precarga: al tocar «Continuar» se abre al momento
+  const qc = useQueryClient()
+  const nextId = h?.nextLesson?.id
+  useEffect(() => {
+    if (nextId) qc.prefetchQuery({ queryKey: ['lesson', nextId], queryFn: () => api.lesson(nextId, true) })
+  }, [nextId, qc])
   if (isError) return <ErrorState onRetry={refetch} />
   if (!h || !me) return <PageSkeleton />
   const done = h.dailyGoals.filter(g => g.done).length
@@ -38,9 +44,10 @@ export function Home() {
   const dayUp = Number(h.portfolio.dayChange) >= 0
   return (
     <div className="pad">
-      <div className="flex items-center justify-between gap-2 px-0.5">
-        <h1 className="t-title truncate">{t('hello', { name: h.user.name })}</h1>
+      <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-2 px-0.5">
+        <h1 className="t-title min-w-0 basis-full truncate sm:basis-auto">{t('hello', { name: h.user.name })}</h1>
         <div className="flex flex-none items-center gap-1.5">
+          <MaxPill />
           <Link href="/perfil/racha" className="chip" aria-label={t('streakLabel', { n: h.streak.days })}>
             <Flame color={h.streak.todayDone ? 'var(--brand)' : 'var(--ink-3)'} />
             {h.streak.days}
@@ -637,7 +644,8 @@ function LessonInner({ id }: { id: string }) {
   const t = useTranslations('lesson')
   const tt = useTranslations('tutor')
   const router = useRouter()
-  const { data: l, error, refetch } = useQuery({ queryKey: ['lesson', id], queryFn: () => api.lesson(id), retry: false })
+  // Se abre al momento si estaba precargada; aun así se confirma con el servidor (cuenta como empezada)
+  const { data: l, error, refetch } = useQuery({ queryKey: ['lesson', id], queryFn: () => api.lesson(id), retry: false, refetchOnMount: 'always' })
   const [i, setI] = useState(0)
   const [solved, setSolved] = useState<Record<string, boolean>>({})
   // Analítica: si sale de la clase sin llegar al quiz, hasta qué paso llegó

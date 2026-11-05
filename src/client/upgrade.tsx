@@ -17,6 +17,8 @@ function useCopy(): Copy | null {
   const t = useTranslations('upgrade')
   const { data: b } = usePlanBadge()
   if (!b) return null
+  // El equipo no ve ofertas: tiene todo abierto
+  if (b.isAdmin) return null
   const daysLeft = b.daysLeft
   if (b.plan === 'PREMIUM' && !daysLeft) return null
   const href = b.isGuest ? '/guardar' : '/premium'
@@ -28,9 +30,17 @@ function useCopy(): Copy | null {
   return { href, short: t('short'), title: t('freeTitle'), body: t('unlockedBody'), cta: t('tryCta') }
 }
 
-/** Pastilla compacta para cabeceras */
+/** Pastilla compacta para cabeceras (al equipo le dice «Admin» y lleva al panel) */
 export function MaxPill() {
   const c = useCopy()
+  const { data: b } = usePlanBadge()
+  if (b?.isAdmin)
+    return (
+      <Link href="/admin" className="chip font-extrabold" style={{ background: 'var(--ink)', color: 'var(--bg)' }}>
+        <Icon name="admin" size={14} />
+        Admin
+      </Link>
+    )
   if (!c) return null
   return (
     <Link href={c.href} className="chip font-extrabold" style={{ background: 'var(--brand)', color: 'var(--on-brand)' }}>
