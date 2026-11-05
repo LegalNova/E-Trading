@@ -71,6 +71,7 @@ model User {
   sessions      Session[]
   events        Event[]
   feedback      Feedback[]
+  pushSubs      PushSub[]
   accounts      Account[]
   game          GameState?
   portfolio     Portfolio?
@@ -578,6 +579,22 @@ model Feedback {
   createdAt DateTime @default(now())
 
   @@index([createdAt])
+  @@index([userId])
+}
+
+/// Avisos en el móvil (Web Push): una fila por navegador o móvil que los ha activado
+model PushSub {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  endpoint  String    @unique
+  p256dh    String
+  auth      String
+  ua        String?
+  fails     Int       @default(0)
+  lastOkAt  DateTime?
+  createdAt DateTime  @default(now())
+
   @@index([userId])
 }
 

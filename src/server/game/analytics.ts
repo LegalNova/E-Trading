@@ -8,7 +8,7 @@ import { db } from '../db'
 import { viewAs } from '../view'
 import type { Tx } from './core'
 
-export type EventName = 'signup' | 'premium_view' | 'paywall' | 'trial_start' | 'paid' | 'cancel' | 'share' | 'invite' | 'screen_view' | 'lesson_start' | 'lesson_exit' | 'client_error' | 'server_error' | 'guest_saved' | 'feedback'
+export type EventName = 'signup' | 'premium_view' | 'paywall' | 'trial_start' | 'paid' | 'cancel' | 'share' | 'invite' | 'screen_view' | 'lesson_start' | 'lesson_exit' | 'client_error' | 'server_error' | 'guest_saved' | 'feedback' | 'push_sent' | 'push_open'
 
 export async function track(tx: Tx, userId: string | null, name: EventName, props?: Prisma.InputJsonValue) {
   // Un admin «viendo como» otro usuario no deja rastro en sus datos
@@ -44,6 +44,7 @@ export const cleanSource = (s: unknown) => (typeof s === 'string' ? s.toLowerCas
 
 const clientEvent = z.discriminatedUnion('name', [
   z.object({ name: z.literal('screen_view'), path: z.string().startsWith('/').max(120), ref: z.string().max(60).optional() }),
+  z.object({ name: z.literal('push_open'), kind: z.string().regex(/^[a-z_]{1,20}$/) }),
   z.object({ name: z.literal('client_error'), message: z.string().max(2000), path: z.string().max(200), stack: z.string().max(4000).optional() }),
   z.object({ name: z.literal('lesson_exit'), lessonId: z.string().regex(/^[a-z0-9-]{1,24}$/), step: z.number().int().min(1).max(60), of: z.number().int().min(1).max(60) }),
 ])
@@ -64,6 +65,10 @@ export async function recordClientEvent(body: unknown) {
     if (!u) return void (await db.event.create({ data: { name: 'screen_view', props: { path, anon: true, ...extra } } }))
     if (await db.event.count({ where: { userId: u.id, name: 'screen_view', createdAt: { gte: today }, props: { path: ['path'], equals: path } } })) return
     await db.event.create({ data: { userId: u.id, name: 'screen_view', props: { path, ...extra } } })
+    return
+  }
+  if (e.name === 'push_open') {
+    if (u) await db.event.create({ data: { userId: u.id, name: 'push_open', props: { kind: e.kind } } })
     return
   }
   if (e.name === 'client_error') {

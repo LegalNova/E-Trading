@@ -21,6 +21,7 @@ import { Lumi, LumiSays, stageOf } from '../ui/lumi'
 import { GlyphTile } from '../play/glyph'
 import { MaxCard, MaxPill } from '../upgrade'
 import { FeedbackCard } from './feedback'
+import { PushCard } from '../push'
 
 // ── Inicio ───────────────────────────────────────────────
 export function Home() {
@@ -68,6 +69,7 @@ export function Home() {
 
       <LumiSays mood={h.companion.mood} message={h.companion.message} skin={me.companion.skinId} stage={stageOf(me.level.n)} />
       <FeedbackCard />
+      <PushCard />
       <MaxCard />
 
       {h.nextLesson ? (

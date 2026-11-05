@@ -860,7 +860,8 @@
     "toLight": "Modo claro",
     "toDark": "Modo oscuro",
     "manageSub": "Gestionar suscripción (tarjeta, facturas, plan)",
-    "error": "Algo no ha ido bien. Prueba otra vez."
+    "error": "Algo no ha ido bien. Prueba otra vez.",
+    "mobile": "Móvil"
   },
   "account": {
     "title": "Cuenta",
@@ -1590,5 +1591,23 @@
     "cta": "Compartir",
     "copied": "Enlace copiado",
     "text": "Mira lo que he conseguido aprendiendo a invertir con Lumi."
+  },
+  "push": {
+    "title": "Activa los avisos",
+    "body": "Te avisamos antes de perder la racha, cuando dejas una clase a medias y cuando algo se mueve en el mercado. Como mucho 3 al día.",
+    "enable": "Activar avisos",
+    "later": "Ahora no",
+    "denied": "Los avisos están bloqueados en este navegador. Puedes activarlos en sus ajustes.",
+    "error": "No se han podido activar. Prueba otra vez.",
+    "iosTitle": "Recibe avisos en tu iPhone",
+    "ios1": "Toca el botón Compartir de Safari (el cuadrado con la flecha).",
+    "ios2": "Elige «Añadir a pantalla de inicio».",
+    "ios3": "Abre Lumi desde ese icono y activa los avisos.",
+    "iosHint": "En iPhone, añade Lumi a la pantalla de inicio (Compartir, «Añadir a pantalla de inicio») y ábrela desde el icono para activar los avisos.",
+    "unsupported": "Este navegador no permite avisos.",
+    "device": "Avisos en este dispositivo",
+    "on": "Activados",
+    "off": "Desactivados",
+    "disable": "Desactivar"
   }
 }

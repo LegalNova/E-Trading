@@ -70,6 +70,9 @@ export const httpApi: Api = {
     return new Promise(() => {}) // la página se va a Google
   },
   signOut: async () => void (await post('/auth/sign-out')),
+  pushKey: () => get('/push/key'),
+  pushSubscribe: sub => post('/push/subscribe', sub),
+  pushUnsubscribe: endpoint => post('/push/unsubscribe', { endpoint }),
   feedbackStatus: () => get('/feedback'),
   feedbackLater: () => post('/feedback/later'),
   submitFeedback: a => post('/feedback', a),

@@ -8,6 +8,7 @@ import { ApiFailure } from './api'
 import { ScreenTracker } from './admin-layer'
 import { captureSource } from './attribution'
 import { ErrorReporter } from './error-reporter'
+import { PushOpenTracker } from './push'
 import { CookieNotice } from './legal/cookie-notice'
 
 const ToastCtx = createContext<(msg: React.ReactNode, ms?: number) => void>(() => {})
@@ -67,6 +68,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
           <ScreenTracker />
         </Suspense>
         <ErrorReporter />
+        <PushOpenTracker />
         <div aria-live="polite" className="pointer-events-none fixed inset-x-0 z-50 flex justify-center px-3.5" style={{ top: 'max(12px, env(safe-area-inset-top))' }}>
           {toast && (
             <div role="status" className="flex w-full max-w-[440px] animate-rise items-center gap-2.5 rounded-2xl px-3.5 py-3 text-sm font-bold shadow-float" style={{ background: 'var(--ink)', color: 'var(--bg)' }}>

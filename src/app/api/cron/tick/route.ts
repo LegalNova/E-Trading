@@ -5,6 +5,7 @@ import { cronAuthorized } from '@/server/http/cron'
 import { withCtx } from '@/server/game/core'
 import { priceBook, processPendingFor } from '@/server/game/trading'
 import { refreshAll } from '@/server/market/service'
+import { runPushRound } from '@/server/push'
 
 export const maxDuration = 60
 
@@ -25,5 +26,7 @@ export async function GET(req: Request) {
       console.error('cron/tick', u.id, e)
     }
   }
-  return Response.json({ refreshed, prices: book.size, users: users.length, processed: done, ms: Date.now() - t0 })
+  // Avisos en el móvil de esta hora (según la hora local de cada persona)
+  const pushes = await runPushRound().catch(e => ({ error: String(e).slice(0, 200) }))
+  return Response.json({ refreshed, prices: book.size, users: users.length, processed: done, pushes, ms: Date.now() - t0 })
 }

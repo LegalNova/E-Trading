@@ -860,7 +860,8 @@
     "toLight": "Light mode",
     "toDark": "Dark mode",
     "manageSub": "Manage subscription (card, invoices, plan)",
-    "error": "Something went wrong. Try again."
+    "error": "Something went wrong. Try again.",
+    "mobile": "Phone"
   },
   "account": {
     "title": "Account",
@@ -1590,5 +1591,23 @@
     "cta": "Share",
     "copied": "Link copied",
     "text": "Look what I got learning to invest with Lumi."
+  },
+  "push": {
+    "title": "Turn on notifications",
+    "body": "We’ll remind you before you lose your streak, when you leave a lesson halfway and when something moves in the market. 3 a day at most.",
+    "enable": "Turn on",
+    "later": "Not now",
+    "denied": "Notifications are blocked in this browser. You can allow them in its settings.",
+    "error": "They couldn’t be turned on. Try again.",
+    "iosTitle": "Get notifications on your iPhone",
+    "ios1": "Tap Safari’s Share button (the square with the arrow).",
+    "ios2": "Choose «Add to Home Screen».",
+    "ios3": "Open Lumi from that icon and turn on notifications.",
+    "iosHint": "On iPhone, add Lumi to your Home Screen (Share, «Add to Home Screen») and open it from the icon to turn on notifications.",
+    "unsupported": "This browser doesn’t support notifications.",
+    "device": "Notifications on this device",
+    "on": "On",
+    "off": "Off",
+    "disable": "Turn off"
   }
 }

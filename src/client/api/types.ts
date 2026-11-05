@@ -127,6 +127,9 @@ export interface Api {
   signUp(email: string, password: string): Promise<Session>
   signInWithGoogle(): Promise<Session>
   signOut(): Promise<void>
+  pushKey(): Promise<{ key: string | null }>
+  pushSubscribe(sub: { endpoint: string; keys: { p256dh: string; auth: string } }): Promise<void>
+  pushUnsubscribe(endpoint: string): Promise<void>
   feedbackStatus(): Promise<{ due: boolean; answered: boolean; gems: number }>
   feedbackLater(): Promise<void>
   submitFeedback(a: { nps: number; likes: string[]; blockers: string[]; pay: string; price?: string; wants: string[]; wantsOther?: string; comment?: string }): Promise<{ ok: boolean; gems: number }>
@@ -218,5 +221,5 @@ export interface Api {
   adminCreateCampaign(name: string): Promise<{ slug: string }>
   adminDeleteCampaign(slug: string): Promise<void>
   // Analítica propia (no bloquea nada si falla)
-  trackEvent(e: { name: 'client_error'; message: string; path: string; stack?: string } | { name: 'screen_view'; path: string; ref?: string } | { name: 'lesson_exit'; lessonId: string; step: number; of: number }): void
+  trackEvent(e: { name: 'push_open'; kind: string } | { name: 'client_error'; message: string; path: string; stack?: string } | { name: 'screen_view'; path: string; ref?: string } | { name: 'lesson_exit'; lessonId: string; step: number; of: number }): void
 }

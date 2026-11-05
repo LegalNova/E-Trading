@@ -10,6 +10,7 @@ import { realUser } from '@/server/auth'
 import { withViewAs } from '@/server/view'
 import { withRequest } from '@/server/request'
 import * as feedback from '@/server/game/feedback'
+import * as push from '@/server/push'
 import * as invites from '@/server/game/invites'
 import * as learning from '@/server/game/learning'
 import * as profile from '@/server/game/profile'
@@ -63,7 +64,11 @@ const routes: Route[] = [
   { method: 'PUT', path: 'onboarding', run: (_r, _p, b) => { const x = z.object({ step: z.number().int().min(1).max(7), patch: draft }).parse(b); return profile.saveOnboarding(x.step, x.patch) } },
   // Invitaciones: mi enlace y, sin sesión, el nombre de quien invita (para la portada)
   { method: 'GET', path: 'invite', run: async () => { const u = await requireUser(); return invites.myInvites(u.id, !!u.isAnonymous) } },
-  { method: 'GET', path: 'invite/:code', run: (_r, p) => invites.inviterName(p[0]) },
+  { method: 'GET', path: 'invite/:code', run: async (r, p) => { await rateLimit(`inv:${clientIp(r)}`, 60, 60); return invites.inviterName(p[0]) } },
+  // Avisos en el móvil
+  { method: 'GET', path: 'push/key', run: async () => ({ key: push.vapidPublicKey() }) },
+  { method: 'POST', path: 'push/subscribe', run: async (r, _p, b) => { const u = await requireUser(); const x = z.object({ endpoint: z.string().url().max(800).startsWith('https://'), keys: z.object({ p256dh: z.string().max(200), auth: z.string().max(100) }) }).parse(b); await rateLimit(`push:${u.id}`, 20, 3600); await push.saveSubscription(u.id, x, r.headers.get('user-agent')); await push.welcomePush(u) } },
+  { method: 'POST', path: 'push/unsubscribe', run: async (_r, _p, b) => { const u = await requireUser(); await push.removeSubscription(u.id, z.object({ endpoint: z.string().max(800) }).parse(b).endpoint) } },
   // Opinión de los usuarios
   { method: 'GET', path: 'feedback', run: () => feedback.feedbackStatus() },
   { method: 'POST', path: 'feedback', run: (_r, _p, b) => feedback.submitFeedback(feedback.FeedbackInput.parse(b)) },
@@ -90,7 +95,7 @@ const routes: Route[] = [
   { method: 'GET', path: 'lessons/:id', run: async (r, p) => { const u = await requireUser(); return learning.lesson(u, db, p[0], r.nextUrl.searchParams.get('peek') === '1') } },
   { method: 'POST', path: 'lessons/:id/steps/:step/check', run: async (_r, p, b) => { await requireUser(); return learning.checkStep(p[0], p[1], z.object({ candleIndex: z.number().int() }).parse(b).candleIndex) } },
   { method: 'POST', path: 'quiz/:id/start', run: (_r, p) => learning.quizStart(p[0]) },
-  { method: 'POST', path: 'quiz/attempts/:id/answer', run: (_r, p, b) => { const x = z.object({ questionId: z.string().max(40), answer: z.union([z.number(), z.array(z.number()).max(12), z.string().max(60)]), elapsedMs: z.number() }).parse(b); return learning.answer(p[0], x.questionId, x.answer, x.elapsedMs) } },
+  { method: 'POST', path: 'quiz/attempts/:id/answer', run: async (_r, p, b) => { await rateLimit(`ans:${(await requireUser()).id}`, 120, 60); const x = z.object({ questionId: z.string().max(40), answer: z.union([z.number(), z.array(z.number()).max(12), z.string().max(60)]), elapsedMs: z.number() }).parse(b); return learning.answer(p[0], x.questionId, x.answer, x.elapsedMs) } },
   { method: 'POST', path: 'quiz/attempts/:id/finish', run: (_r, p) => learning.quizFinish(p[0]) },
   { method: 'POST', path: 'quiz/attempts/:id/placement-finish', run: (_r, p) => learning.placementFinish(p[0]) },
   { method: 'GET', path: 'quiz/mistakes/count', run: () => profile.mistakesCount() },
@@ -102,7 +107,7 @@ const routes: Route[] = [
   { method: 'GET', path: 'watchlist', run: () => trading.watchlist() },
   { method: 'POST', path: 'watchlist/:symbol', run: (_r, p) => trading.toggleWatch(p[0].toUpperCase()) },
   { method: 'POST', path: 'orders/preview', run: (_r, _p, b) => trading.preview(order.parse(b)) },
-  { method: 'POST', path: 'orders', run: (r, _p, b) => trading.placeOrder(order.parse(b), r.headers.get('idempotency-key')?.slice(0, 80) || undefined) },
+  { method: 'POST', path: 'orders', run: async (r, _p, b) => { await rateLimit(`ord:${(await requireUser()).id}`, 30, 60); return trading.placeOrder(order.parse(b), r.headers.get('idempotency-key')?.slice(0, 80) || undefined) } },
   { method: 'GET', path: 'orders', run: () => trading.orders() },
   { method: 'DELETE', path: 'orders/:id', run: (_r, p) => trading.cancelOrder(p[0]) },
   { method: 'GET', path: 'trades', run: () => trading.trades() },
@@ -141,7 +146,7 @@ const routes: Route[] = [
   { method: 'POST', path: 'admin/campaigns', run: (_r, _p, b) => admin.createCampaign(z.object({ name: z.string().min(1).max(60) }).parse(b).name) },
   { method: 'DELETE', path: 'admin/campaigns/:slug', run: (_r, p) => admin.deleteCampaign(p[0]) },
   // Analítica propia: pantallas vistas y dónde se deja una clase
-  { method: 'POST', path: 'events', run: (_r, _p, b) => recordClientEvent(b) },
+  { method: 'POST', path: 'events', run: async (r, _p, b) => { await rateLimit(`ev:${clientIp(r)}`, 600, 60); return recordClientEvent(b) } },
 ]
 
 function match(method: string, parts: string[]) {

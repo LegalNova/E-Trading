@@ -126,10 +126,15 @@ export function defaultSettings(u: User): SettingsT {
   const on = (email: boolean, push: boolean) => ({ inApp: true, email, push })
   return {
     locale: (['es', 'ca', 'en'].includes(u.locale) ? u.locale : 'es') as SettingsT['locale'], currency: 'EUR', dailyGoalMinutes: 10, theme: 'AUTO', gender: u.gender, leagueVisible: u.leagueVisible,
-    notificationPrefs: { STREAK_RISK: on(true, true), ORDER_FILLED: on(false, true), PRICE_ALERT: on(false, true), ACHIEVEMENT: on(false, false), LEAGUE_RESULT: on(true, false), NEW_LESSON: on(false, false) },
+    notificationPrefs: { STREAK_RISK: on(true, true), ORDER_FILLED: on(false, true), PRICE_ALERT: on(false, true), ACHIEVEMENT: on(false, true), LEAGUE_RESULT: on(true, true), NEW_LESSON: on(false, true) },
   }
 }
-export const settingsOf = (u: User): SettingsT => ({ ...defaultSettings(u), ...((u.settings as object) ?? {}), gender: u.gender, leagueVisible: u.leagueVisible })
+export const settingsOf = (u: User): SettingsT => {
+  const base = defaultSettings(u)
+  const saved = (u.settings as (Partial<SettingsT> & { prefsTouched?: boolean }) | null) ?? {}
+  // Avisos: mientras la persona no los toque, valen los de por defecto (que pueden mejorar con el tiempo)
+  return { ...base, ...saved, notificationPrefs: saved.prefsTouched ? { ...base.notificationPrefs, ...saved.notificationPrefs } : base.notificationPrefs, gender: u.gender, leagueVisible: u.leagueVisible }
+}
 
 export const settings = () => withCtx(async c => settingsOf(c.user))
 
@@ -140,7 +145,8 @@ export const updateSettings = (patch: Partial<SettingsT> & { name?: string; comp
     if (skinId === 'hielo' && levelOf(c.g.xp).n < 5) fail(403, 'FEATURE_LOCKED', 'Este color se desbloquea en el nivel 5')
     const base = settingsOf(c.user)
     if (rest.notificationPrefs) rest.notificationPrefs = Object.fromEntries(Object.keys(base.notificationPrefs).map(k => [k, rest.notificationPrefs![k] ?? base.notificationPrefs[k]]))
-    const next = { ...base, ...rest }
+    // Si toca los avisos, se apunta: a partir de ahí se respetan tal cual (si no, valen los de por defecto)
+    const next = { ...base, ...rest, ...(rest.notificationPrefs ? { prefsTouched: true } : {}) }
     const u = await c.tx.user.update({
       where: { id: c.user.id },
       data: { settings: next, gender: next.gender, locale: next.locale, leagueVisible: next.leagueVisible, ...(name?.trim() ? { name: name.trim().slice(0, 30) } : {}), ...(companionName?.trim() ? { companionName: companionName.trim().slice(0, 14) } : {}), ...(skinId ? { skinId } : {}) },

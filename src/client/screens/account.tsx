@@ -15,6 +15,7 @@ import { Icon } from '../ui/icons'
 import { ErrorState, PageSkeleton, Section, Seg, Toggle, TopBar } from '../ui/kit'
 import { Lumi } from '../ui/lumi'
 import { usePlanBadge } from '../upgrade'
+import { PushToggle } from '../push'
 
 // ── Premium (06.1–06.2) ──────────────────────────────────
 export function Premium() {
@@ -320,17 +321,19 @@ export function Settings() {
           <div className="li plainline t-cap font-bold">
             <span className="flex-1" />
             <span className="w-[51px] text-center">{t('inApp')}</span>
-            <span className="w-[51px] text-center">Email</span>
+            <span className="w-[51px] text-center">{t('mobile')}</span>
           </div>
           {groups.map(g => (
             <div key={g.key} className="li plainline">
               <span className="flex-1">{t(`notif.${g.key}`)}</span>
               <Toggle label={`${t(`notif.${g.key}`)} · ${t('inApp')}`} checked={pref(g.types[0]).inApp} onChange={v => setPref(g.types, 'inApp', v)} />
-              <Toggle label={`${t(`notif.${g.key}`)} · Email`} checked={pref(g.types[0]).email} onChange={v => setPref(g.types, 'email', v)} />
+              <Toggle label={`${t(`notif.${g.key}`)} · ${t('mobile')}`} checked={pref(g.types[0]).push} onChange={v => setPref(g.types, 'push', v)} />
             </div>
           ))}
         </div>
-        <p className="t-cap m-0 px-1">{t('pushNote')}</p>
+        <div className="list">
+          <PushToggle />
+        </div>
 
         <Section>{t('privacy')}</Section>
         <div className="list">

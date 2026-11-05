@@ -2,6 +2,7 @@
 // ?f=story → 1080×1350 (para enviar como imagen); por defecto 1200×630 (vista previa de los enlaces)
 import { ImageResponse } from 'next/og'
 import { resolveShare } from '@/server/share'
+import { clientIp, rateLimit } from '@/server/http/ratelimit'
 
 /** Manrope (la letra de Lumi) en negrita: se descarga una vez y se guarda en memoria */
 let font: Promise<ArrayBuffer | null> | null = null
@@ -23,6 +24,12 @@ function manrope() {
 const STAR = 'M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z'
 
 export async function GET(req: Request) {
+  // Generar imágenes cuesta CPU: límite por red (las vistas previas de WhatsApp y compañía van por la caché)
+  try {
+    await rateLimit(`img:${clientIp(req)}`, 60, 60)
+  } catch {
+    return new Response('Demasiadas peticiones', { status: 429, headers: { 'Retry-After': '60' } })
+  }
   const q = new URL(req.url).searchParams
   const card = await resolveShare(q)
   if (!card) return new Response('No encontrado', { status: 404 })
