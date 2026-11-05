@@ -246,15 +246,15 @@ export const es: Record<LegalSlug, LegalDoc> = {
         h: '7. Planes de pago (Plus y Max)',
         list: [
           'Plus y Max amplían las clases, las vidas, el saldo virtual, los tipos de orden y las preguntas a Lumi. El precio y lo que incluye cada plan se muestran antes de contratar.',
-          'Hay una prueba gratuita de 7 días, una por persona. En la versión actual el pago todavía no está activo: la prueba termina sola y vuelves a Free sin coste.',
+          'Hay una prueba gratuita de 7 días, una por persona, que se desbloquea con una racha de 5 días seguidos o llegando con una invitación. En la versión actual el pago todavía no está activo: la prueba termina sola y vuelves a Free sin coste.',
           'Cuando el pago esté activo, la compra se rige por las Condiciones de contratación: precio, renovación, cancelación desde Ajustes, aviso antes de cada cobro tras la prueba y 14 días naturales para desistir.',
         ],
       },
       {
         h: '8. Invitaciones',
         list: [
-          'Cada persona tiene un enlace de invitación. Quien crea su cuenta con él recibe 14 días de Max gratis al terminar la bienvenida.',
-          'Quien invita recibe 14 días de Max cuando su amigo guarda la cuenta con email y contraseña y termina su primera clase, hasta un máximo de un año en total.',
+          'Cada persona tiene un enlace de invitación. Quien crea su cuenta con él recibe 7 días de Max gratis al terminar la bienvenida; cuentan como su prueba gratis (una por persona).',
+          'Quien invita recibe 7 días de Max cuando su amigo guarda la cuenta con email y contraseña y termina su primera clase, hasta un máximo de un año en total.',
           'El regalo no tiene valor económico, no se puede cambiar por dinero ni transferir, y se suma al Max que ya tengas.',
           'No vale invitarte a ti mismo, crear cuentas falsas ni comprar o vender invitaciones. Si pasa, podemos retirar los días regalados y aplicar el apartado 5.',
           'Podemos cambiar o terminar el programa avisando antes en la app; los días ya ganados se respetan.',
@@ -318,7 +318,7 @@ export const es: Record<LegalSlug, LegalDoc> = {
       {
         h: '4. Prueba gratuita',
         list: [
-          'La primera vez que contratas un plan de pago tienes 7 días de prueba gratuita (una vez por persona).',
+          'Puedes tener una prueba gratuita de 7 días (una vez por persona): se desbloquea con una racha de 5 días seguidos o llegando con la invitación de un amigo. También puedes contratar directamente, sin prueba.',
           'Si la cancelas antes de que termine, no se te cobra nada. Si no, al terminar se cobra el primer periodo del plan elegido.',
           'Te avisaremos dentro de la app y por email antes de que termine la prueba.',
         ],

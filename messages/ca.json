@@ -78,7 +78,7 @@
       "Lliga setmanal",
       "5 preguntes al dia a la Lumi"
     ],
-    "trial": "7 dies gratis",
+    "trial": "Prova gratis",
     "perMonth": "/mes · o {year}/any",
     "tryPremium": "Veure plans",
     "contactTitle": "Contacte",
@@ -105,7 +105,7 @@
     "guestNote": "Sense correu ni contrasenya. Si t’agrada, deses el progrés quan vulguis.",
     "invitedBy": "{name} t’ha convidat a Lumi",
     "invited": "T’han convidat a Lumi",
-    "invitedSub": "Crea el teu compte i tens 14 dies de Max gratis des del primer moment."
+    "invitedSub": "Crea el teu compte i tens 7 dies de Max gratis des del primer moment."
   },
   "auth": {
     "signUpTitle": "Crea el teu compte",
@@ -732,7 +732,7 @@
     "portfolio": "Cartera",
     "tryPremium": "Provar 7 dies gratis",
     "inviteTitle": "Convida els teus amics",
-    "inviteSub": "14 dies de Max per al teu amic i per a tu",
+    "inviteSub": "7 dies de Max per al teu amic i per a tu",
     "feedbackTitle": "Dona’ns la teva opinió",
     "feedbackSub": "Un minut per ajudar-nos a millorar Lumi"
   },
@@ -784,7 +784,11 @@
     "upgradeCta": "Passar a Max",
     "purchaseTerms": "Si continues, acceptes les <terms>Condicions de contractació</terms>: pots cancel·lar quan vulguis i tens 14 dies per desistir.",
     "guestSave": "Desa el progrés per provar-lo",
-    "giftUntil": "Max regalat fins al {date}."
+    "giftUntil": "Max regalat fins al {date}.",
+    "lockedTitle": "Desbloqueja 7 dies de Max gratis",
+    "lockedBody": "Entra {n} dies seguits (en portes {s}) o arriba amb la invitació d’un amic. També et podràs subscriure directament quan activem el pagament amb targeta.",
+    "lockedCta": "Continuar la ratxa",
+    "inviteCta": "Convidar un amic"
   },
   "settings": {
     "title": "Configuració",
@@ -1477,13 +1481,13 @@
     "headline": "Convida els teus amics i guanyeu dies de Max",
     "sub": "El teu amic té {days} dies de Max només entrar. I tu, {days} dies més per cada amic que acabi la primera classe.",
     "step1": "Comparteix el teu enllaç per WhatsApp, Instagram o on vulguis.",
-    "step2": "El teu amic entra i té 14 dies de Max gratis des del primer moment.",
-    "step3": "Quan acaba la primera classe, tu sumes 14 dies de Max.",
+    "step2": "El teu amic entra i té 7 dies de Max gratis des del primer moment.",
+    "step3": "Quan acaba la primera classe, tu sumes 7 dies de Max.",
     "yourLink": "El teu enllaç",
     "copy": "Copiar l’enllaç",
     "copied": "Copiat",
     "share": "Compartir",
-    "shareText": "Estic aprenent a invertir amb Lumi, sense arriscar diners reals. Entra amb el meu enllaç i tens 14 dies de Max gratis: {link}",
+    "shareText": "Estic aprenent a invertir amb Lumi, sense arriscar diners reals. Entra amb el meu enllaç i tens 7 dies de Max gratis: {link}",
     "joined": "Amics que s’hi han apuntat",
     "rules": "Pots guanyar fins a un any de Max ({days} dies per amic). Els teus dies arriben quan el teu amic desa el compte i acaba la primera classe. Crear comptes falsos o convidar-te a tu mateix va contra les <terms>Condicions d’ús</terms>.",
     "guest": "Per convidar els teus amics, primer desa el teu progrés amb correu i contrasenya.",
@@ -1504,7 +1508,10 @@
     "keepCta": "Veure plans",
     "plusTitle": "Passa’t a Max",
     "plusBody": "Les 13 unitats completes i tots els modes de la Lumi.",
-    "toMax": "Passar a Max"
+    "toMax": "Passar a Max",
+    "freeLockedTitle": "Ratxa de {n} dies = 7 dies de Max gratis",
+    "freeLockedBody": "Portes {s} de {n} dies seguits. No la trenquis!",
+    "unlockedBody": "Desbloquejada amb la teva ratxa! Tot el curs i vides il·limitades."
   },
   "feedback": {
     "title": "La teva opinió",

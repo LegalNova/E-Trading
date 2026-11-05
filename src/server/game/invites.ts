@@ -1,15 +1,15 @@
 import 'server-only'
 // Invitaciones: cada usuario tiene su enlace (?inv=código).
-//  · Quien llega por él recibe 14 días de Max nada más terminar la bienvenida.
-//  · Quien invita recibe 14 días más cuando su amigo guarda la cuenta y termina su primera clase
-//    (así no se ganan días con cuentas vacías). Como mucho 26 amigos premiados: un año de Max.
+//  · Quien llega por él recibe 7 días de Max nada más terminar la bienvenida: es su prueba gratis (una por persona).
+//  · Quien invita recibe 7 días más cuando su amigo guarda la cuenta y termina su primera clase
+//    (así no se ganan días con cuentas vacías). Como mucho 52 amigos premiados: un año de Max.
 import { randomInt } from 'node:crypto'
 import { db } from '../db'
 import { fail, notify, START_CASH, type Tx } from './core'
 import { track } from './analytics'
 
-export const INVITE_DAYS = 14
-export const INVITE_CAP = 26
+export const INVITE_DAYS = 7
+export const INVITE_CAP = 52
 const ALPHABET = 'abcdefghjkmnpqrstuvwxyz23456789' // sin letras que se confunden (i, l, o, 0, 1)
 const DAY_MS = 86_400_000
 
@@ -51,8 +51,9 @@ export async function linkInviter(tx: Tx, userId: string, source: string | null)
   const res = await tx.user.updateMany({ where: { id: userId, invitedById: null }, data: { invitedById: inviter.id } })
   if (!res.count) return
   await track(tx, userId, 'invite', { by: inviter.id })
-  // Regalo de bienvenida para el amigo: 14 días de Max desde ya
+  // Regalo de bienvenida para el amigo: 7 días de Max desde ya, que cuentan como su prueba gratis
   await giftMax(tx, userId, INVITE_DAYS)
+  await tx.user.update({ where: { id: userId }, data: { trialUsed: true } })
   await notify({ tx, user: { id: userId } as never }, 'ACHIEVEMENT', `Tienes ${INVITE_DAYS} días de Max`, 'Regalo por llegar con una invitación: todo el curso y vidas ilimitadas.', '/premium')
 }
 

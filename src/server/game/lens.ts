@@ -349,7 +349,7 @@ async function invitesLens(since: Date, range: LensRange, path: string): Promise
       { label: 'Visitas a la pantalla', value: v.users },
     ],
     tables: [{ title: 'Quién invita más', head: ['Usuario', 'Invitados'], rows: top.map(t => { const n = names.find(x => x.id === t.invitedById); return [n?.name || n?.email || '—', t._count._all] }) }],
-    note: 'El amigo recibe 14 días de Max al entrar; quien invita, 14 días cuando su amigo guarda la cuenta y termina su primera clase (hasta un año).',
+    note: 'El amigo recibe 7 días de Max al entrar; quien invita, 14 días cuando su amigo guarda la cuenta y termina su primera clase (hasta un año).',
   }
 }
 

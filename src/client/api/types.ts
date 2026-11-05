@@ -131,7 +131,7 @@ export interface Api {
   feedbackLater(): Promise<void>
   submitFeedback(a: { nps: number; likes: string[]; blockers: string[]; pay: string; price?: string; wants: string[]; wantsOther?: string; comment?: string }): Promise<{ ok: boolean; gems: number }>
   adminFeedback(): Promise<AdminFeedback>
-  planBadge(): Promise<{ plan: 'FREE' | 'PLUS' | 'PREMIUM'; status: string; endsAt: string | null; daysLeft: number | null; trialUsed: boolean; isGuest: boolean }>
+  planBadge(): Promise<{ plan: 'FREE' | 'PLUS' | 'PREMIUM'; status: string; endsAt: string | null; daysLeft: number | null; trialUsed: boolean; isGuest: boolean; streak: number; trialUnlocked: boolean; trialStreak: number }>
   myInvites(): Promise<{ code: string; joined: number; rewarded: number; daysEarned: number; maxDays: number; days: number }>
   inviterName(code: string): Promise<{ valid: boolean; name: string | null }>
   signInGuest(): Promise<Session>

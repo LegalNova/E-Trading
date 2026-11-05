@@ -14,11 +14,13 @@ import { applyTheme, useToast } from '../providers'
 import { Icon } from '../ui/icons'
 import { ErrorState, PageSkeleton, Section, Seg, Toggle, TopBar } from '../ui/kit'
 import { Lumi } from '../ui/lumi'
+import { usePlanBadge } from '../upgrade'
 
 // ── Premium (06.1–06.2) ──────────────────────────────────
 export function Premium() {
   const t = useTranslations('premium')
   const { data: session } = useSession()
+  const { data: badge } = usePlanBadge()
   const locale = useLang()
   const refresh = useRefreshAll()
   const toast = useToast()
@@ -123,6 +125,22 @@ export function Premium() {
           <Link href="/guardar" className="btn btn-primary">
             {t('guestSave')}
           </Link>
+        ) : badge && !isPlus && !badge.trialUsed && !badge.trialUnlocked ? (
+          <div className="card flex flex-col gap-2.5" style={{ border: '1.5px solid var(--brand)' }}>
+            <b>{t('lockedTitle')}</b>
+            <span className="t-foot">{t('lockedBody', { n: badge.trialStreak, s: Math.min(badge.streak, badge.trialStreak) })}</span>
+            <span className="block h-2 overflow-hidden rounded-full" style={{ background: 'var(--fill)' }}>
+              <span className="block h-full rounded-full" style={{ width: `${Math.min(1, badge.streak / badge.trialStreak) * 100}%`, background: 'var(--brand)' }} />
+            </span>
+            <div className="grid grid-cols-2 gap-2">
+              <Link href="/clases" className="btn btn-primary btn-sm">
+                {t('lockedCta')}
+              </Link>
+              <Link href="/perfil/invitar" className="btn btn-secondary btn-sm">
+                {t('inviteCta')}
+              </Link>
+            </div>
+          </div>
         ) : (
           <button className="btn btn-primary" onClick={() => checkout.mutate()}>
             {isPlus ? t('upgradeCta') : t('tryFree', { days: chosen.trialDays, plan: PLAN_NAME[tier] })}

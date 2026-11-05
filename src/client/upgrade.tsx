@@ -11,7 +11,9 @@ export function usePlanBadge() {
   return useQuery({ queryKey: ['plan-badge'], queryFn: api.planBadge, staleTime: 60_000 })
 }
 
-function useCopy() {
+type Copy = { href: string; short: string; title: string; body: string; cta: string; progress?: number }
+
+function useCopy(): Copy | null {
   const t = useTranslations('upgrade')
   const { data: b } = usePlanBadge()
   if (!b) return null
@@ -21,7 +23,9 @@ function useCopy() {
   if (daysLeft) return { href, short: t('daysLeft', { n: daysLeft }), title: t(b.status === 'GIFT' ? 'giftTitle' : 'trialTitle', { n: daysLeft }), body: t('keepBody'), cta: t('keepCta') }
   if (b.plan === 'PLUS') return { href, short: t('toMax'), title: t('plusTitle'), body: t('plusBody'), cta: t('toMax') }
   if (b.trialUsed) return { href, short: 'Max', title: t('freeTitleNoTrial'), body: t('freeBody'), cta: t('seePlans') }
-  return { href, short: t('short'), title: t('freeTitle'), body: t('freeBody'), cta: t('tryCta') }
+  // La prueba gratis se gana con la racha: se enseña cuánto falta
+  if (!b.trialUnlocked) return { href, short: `${Math.min(b.streak, b.trialStreak)}/${b.trialStreak}`, title: t('freeLockedTitle', { n: b.trialStreak }), body: t('freeLockedBody', { s: Math.min(b.streak, b.trialStreak), n: b.trialStreak }), cta: t('seePlans'), progress: Math.min(1, b.streak / b.trialStreak) }
+  return { href, short: t('short'), title: t('freeTitle'), body: t('unlockedBody'), cta: t('tryCta') }
 }
 
 /** Pastilla compacta para cabeceras */
@@ -49,6 +53,11 @@ export function MaxCard() {
         <b>{c.title}</b>
         <br />
         <span className="t-foot">{c.body}</span>
+        {c.progress !== undefined && (
+          <span className="mt-1.5 block h-1.5 overflow-hidden rounded-full" style={{ background: 'var(--fill)' }}>
+            <span className="block h-full rounded-full" style={{ width: `${c.progress * 100}%`, background: 'var(--brand)' }} />
+          </span>
+        )}
       </span>
       <span className="btn btn-primary btn-sm w-auto flex-none px-3">{c.cta}</span>
     </Link>

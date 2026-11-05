@@ -195,15 +195,15 @@ export const ca: Record<LegalSlug, LegalDoc> = {
         h: '7. Plans de pagament (Plus i Max)',
         list: [
           'Plus i Max amplien les classes, les vides, el saldo virtual, els tipus d’ordre i les preguntes a la Lumi. El preu i el que inclou cada pla es mostren abans de contractar.',
-          'Hi ha una prova gratuïta de 7 dies, una per persona. A la versió actual el pagament encara no està actiu: la prova s’acaba sola i tornes a Free sense cost.',
+          'Hi ha una prova gratuïta de 7 dies, una per persona, que es desbloqueja amb una ratxa de 5 dies seguits o arribant amb una invitació. A la versió actual el pagament encara no està actiu: la prova s’acaba sola i tornes a Free sense cost.',
           'Quan el pagament estigui actiu, la compra es regeix per les Condicions de contractació: preu, renovació, cancel·lació des de Configuració, avís abans de cada cobrament després de la prova i 14 dies naturals per desistir.',
         ],
       },
       {
         h: '8. Invitacions',
         list: [
-          'Cada persona té un enllaç d’invitació. Qui crea el compte amb aquest enllaç rep 14 dies de Max gratis en acabar la benvinguda.',
-          'Qui convida rep 14 dies de Max quan el seu amic desa el compte amb correu i contrasenya i acaba la primera classe, fins a un màxim d’un any en total.',
+          'Cada persona té un enllaç d’invitació. Qui crea el compte amb aquest enllaç rep 7 dies de Max gratis en acabar la benvinguda; compten com la seva prova gratuïta (una per persona).',
+          'Qui convida rep 7 dies de Max quan el seu amic desa el compte amb correu i contrasenya i acaba la primera classe, fins a un màxim d’un any en total.',
           'El regal no té valor econòmic, no es pot canviar per diners ni transferir, i se suma al Max que ja tinguis.',
           'No val convidar-te a tu mateix, crear comptes falsos ni comprar o vendre invitacions. Si passa, podem retirar els dies regalats i aplicar l’apartat 5.',
           'Podem canviar o acabar el programa avisant abans a l’app; els dies ja guanyats es respecten.',
@@ -253,7 +253,7 @@ export const ca: Record<LegalSlug, LegalDoc> = {
       {
         h: '4. Prova gratuïta',
         list: [
-          'La primera vegada que contractes un pla de pagament tens 7 dies de prova gratuïta (una vegada per persona).',
+          'Pots tenir una prova gratuïta de 7 dies (una vegada per persona): es desbloqueja amb una ratxa de 5 dies seguits o arribant amb la invitació d’un amic. També pots contractar directament, sense prova.',
           'Si la cancel·les abans que s’acabi, no se’t cobra res. Si no, en acabar es cobra el primer període del pla triat.',
           'T’avisarem dins de l’app i per correu abans que s’acabi la prova.',
         ],

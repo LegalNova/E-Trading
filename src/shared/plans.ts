@@ -26,6 +26,11 @@ export function minPlan(unitId: string, index: number, isReview: boolean, lesson
   return canOpen('FREE', unitId, index, isReview, lessonId) ? 'FREE' : canOpen('PLUS', unitId, index, isReview, lessonId) ? 'PLUS' : 'PREMIUM'
 }
 
+/** Prueba gratis de Max (7 días): se desbloquea con una racha de 5 días o llegando con una invitación. Una por persona. */
+export const TRIAL_STREAK = 5
+export const TRIAL_DAYS = 7
+export const trialUnlocked = (bestStreak: number) => bestStreak >= TRIAL_STREAK
+
 /** Lumi: preguntas al día y modos por plan */
 export const TUTOR_LIMITS: Record<PlanId, number> = { FREE: 5, PLUS: 30, PREMIUM: 100 }
 export const TUTOR_MODE_PLAN = { EXPLAIN: 'FREE', PATH: 'FREE', PORTFOLIO: 'PLUS', BIASES: 'PREMIUM' } as const satisfies Record<string, PlanId>

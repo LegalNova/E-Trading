@@ -78,7 +78,7 @@
       "Liga semanal",
       "5 preguntas al día a Lumi"
     ],
-    "trial": "7 días gratis",
+    "trial": "Prueba gratis",
     "perMonth": "/mes · o {year}/año",
     "tryPremium": "Ver planes",
     "contactTitle": "Contacto",
@@ -105,7 +105,7 @@
     "guestNote": "Sin email ni contraseña. Si te gusta, guardas tu progreso cuando quieras.",
     "invitedBy": "{name} te ha invitado a Lumi",
     "invited": "Te han invitado a Lumi",
-    "invitedSub": "Crea tu cuenta y tienes 14 días de Max gratis desde el primer momento."
+    "invitedSub": "Crea tu cuenta y tienes 7 días de Max gratis desde el primer momento."
   },
   "auth": {
     "signUpTitle": "Crea tu cuenta",
@@ -732,7 +732,7 @@
     "portfolio": "Cartera",
     "tryPremium": "Probar 7 días gratis",
     "inviteTitle": "Invita a tus amigos",
-    "inviteSub": "14 días de Max para tu amigo y para ti",
+    "inviteSub": "7 días de Max para tu amigo y para ti",
     "feedbackTitle": "Danos tu opinión",
     "feedbackSub": "Un minuto para ayudarnos a mejorar Lumi"
   },
@@ -784,7 +784,11 @@
     "upgradeCta": "Pasar a Max",
     "purchaseTerms": "Al continuar aceptas las <terms>Condiciones de contratación</terms>: puedes cancelar cuando quieras y tienes 14 días para desistir.",
     "guestSave": "Guarda tu progreso para probarlo",
-    "giftUntil": "Max regalado hasta el {date}."
+    "giftUntil": "Max regalado hasta el {date}.",
+    "lockedTitle": "Desbloquea 7 días de Max gratis",
+    "lockedBody": "Entra {n} días seguidos (llevas {s}) o llega con la invitación de un amigo. También podrás suscribirte directamente en cuanto activemos el pago con tarjeta.",
+    "lockedCta": "Seguir mi racha",
+    "inviteCta": "Invitar a un amigo"
   },
   "settings": {
     "title": "Ajustes",
@@ -1477,13 +1481,13 @@
     "headline": "Invita a tus amigos y ganad días de Max",
     "sub": "Tu amigo tiene {days} días de Max nada más entrar. Y tú, {days} días más por cada amigo que termine su primera clase.",
     "step1": "Comparte tu enlace por WhatsApp, Instagram o donde quieras.",
-    "step2": "Tu amigo entra y tiene 14 días de Max gratis desde el primer momento.",
-    "step3": "Cuando termina su primera clase, tú sumas 14 días de Max.",
+    "step2": "Tu amigo entra y tiene 7 días de Max gratis desde el primer momento.",
+    "step3": "Cuando termina su primera clase, tú sumas 7 días de Max.",
     "yourLink": "Tu enlace",
     "copy": "Copiar enlace",
     "copied": "Copiado",
     "share": "Compartir",
-    "shareText": "Estoy aprendiendo a invertir con Lumi, sin arriesgar dinero real. Entra con mi enlace y tienes 14 días de Max gratis: {link}",
+    "shareText": "Estoy aprendiendo a invertir con Lumi, sin arriesgar dinero real. Entra con mi enlace y tienes 7 días de Max gratis: {link}",
     "joined": "Amigos que se han unido",
     "rules": "Puedes ganar hasta un año de Max ({days} días por amigo). Tus días llegan cuando tu amigo guarda su cuenta y termina su primera clase. Crear cuentas falsas o invitarte a ti mismo va contra los <terms>Términos de uso</terms>.",
     "guest": "Para invitar a tus amigos primero guarda tu progreso con email y contraseña.",
@@ -1504,7 +1508,10 @@
     "keepCta": "Ver planes",
     "plusTitle": "Pásate a Max",
     "plusBody": "Las 13 unidades completas y todos los modos de Lumi.",
-    "toMax": "Pasar a Max"
+    "toMax": "Pasar a Max",
+    "freeLockedTitle": "Racha de {n} días = 7 días de Max gratis",
+    "freeLockedBody": "Llevas {s} de {n} días seguidos. ¡No la rompas!",
+    "unlockedBody": "¡Desbloqueada con tu racha! Todo el curso y vidas ilimitadas."
   },
   "feedback": {
     "title": "Tu opinión",

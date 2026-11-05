@@ -1,7 +1,7 @@
 import 'server-only'
 import { cleanSource, track, trackDaily } from './analytics'
 import { linkInviter, maybeRewardInvite } from './invites'
-import { tierOf } from '@/shared/plans'
+import { tierOf, TRIAL_DAYS, TRIAL_STREAK, trialUnlocked } from '@/shared/plans'
 // Perfil, onboarding, Inicio, progreso, avisos, ajustes, Premium (simulado hasta Stripe) y RGPD
 import type { BillingStatusT, HomeT, MeT, Mood, NotificationT, SettingsT, StreakT } from '@/shared/contract'
 import { addDays, dayOf } from '@/shared/time'
@@ -273,7 +273,8 @@ export async function planBadge() {
   const sub = await db.subscription.findUnique({ where: { userId: u!.id } })
   const temporary = (sub?.status === 'TRIALING' || sub?.status === 'GIFT') && sub.trialEndsAt && sub.trialEndsAt.getTime() > Date.now()
   const daysLeft = temporary ? Math.max(1, Math.ceil((sub!.trialEndsAt!.getTime() - Date.now()) / DAY_MS)) : null
-  return { plan: u!.plan, status: sub?.status ?? 'NONE', endsAt: temporary ? sub!.trialEndsAt!.toISOString() : null, daysLeft, trialUsed: u!.trialUsed, isGuest: !!u!.isAnonymous }
+  const g = await db.gameState.findUnique({ where: { userId: u!.id }, select: { streak: true, bestStreak: true } })
+  return { plan: u!.plan, status: sub?.status ?? 'NONE', endsAt: temporary ? sub!.trialEndsAt!.toISOString() : null, daysLeft, trialUsed: u!.trialUsed, isGuest: !!u!.isAnonymous, streak: g?.streak ?? 0, trialUnlocked: trialUnlocked(g?.bestStreak ?? 0), trialStreak: TRIAL_STREAK }
 }
 
 export const billingStatus = () =>
@@ -294,6 +295,8 @@ export const checkout = (planId: string) =>
     const upgradingTrial = current?.status === 'TRIALING' && c.user.plan === 'PLUS'
     // Una sola prueba gratis por cuenta
     if (c.user.trialUsed && !upgradingTrial) fail(403, 'TRIAL_USED', 'Ya usaste tu prueba gratis. El pago con tarjeta llegará pronto.')
+    // La prueba se gana: 5 días seguidos de racha (o llegar con una invitación, que ya la regala)
+    if (!upgradingTrial && !trialUnlocked(c.g.bestStreak)) fail(403, 'TRIAL_LOCKED', `Consigue una racha de ${TRIAL_STREAK} días seguidos para desbloquear ${TRIAL_DAYS} días de Max gratis`)
     // Menores de 18: hace falta el consentimiento de un adulto para contratar (02.13)
     const age = c.user.birthDate ? (Date.now() - c.user.birthDate.getTime()) / (365.25 * DAY_MS) : null
     if (age !== null && age < 18 && c.user.guardianConsent !== 'CONFIRMED') fail(403, 'GUARDIAN_CONSENT_REQUIRED', 'Para un plan de pago hace falta que un adulto lo confirme')

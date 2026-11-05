@@ -10,6 +10,7 @@ import { ACHIEVEMENTS, LEVEL_TITLES, LUMI, RISK_LESSON, UNITS } from '../content
 import { achievementT } from '../content/translate'
 import { currentLocale } from '../locale'
 import { viewAs } from '../view'
+import { TRIAL_DAYS, TRIAL_STREAK } from '@/shared/plans'
 import { isReadRequest } from '../request'
 
 export class HttpError extends Error {
@@ -111,11 +112,14 @@ function inCtx<T>(fn: (c: Ctx) => Promise<T>, u0: User, readOnly: boolean, read:
   return db.$transaction(
     async tx => {
       // Crear el estado si no existe sin chocar con otra petición que lo esté creando a la vez
-      if (!(await tx.gameState.findUnique({ where: { userId: u0.id }, select: { userId: true } }))) await tx.gameState.createMany({ data: [{ userId: u0.id }], skipDuplicates: true })
-      // Bloqueo de la fila del usuario: sus acciones simultáneas se ejecutan de una en una
-      // (evita gastar dos veces el mismo saldo, las mismas gemas o cobrar dos veces un logro)
-      if (!read) await tx.$queryRawUnsafe(lockSql(), u0.id)
-      const g = await tx.gameState.findUniqueOrThrow({ where: { userId: u0.id } })
+      let g = read ? await tx.gameState.findUnique({ where: { userId: u0.id } }) : null
+      if (!g) {
+        await tx.gameState.createMany({ data: [{ userId: u0.id }], skipDuplicates: true })
+        // Bloqueo de la fila del usuario: sus acciones simultáneas se ejecutan de una en una
+        // (evita gastar dos veces el mismo saldo, las mismas gemas o cobrar dos veces un logro)
+        if (!read) await tx.$queryRawUnsafe(lockSql(), u0.id)
+        g = await tx.gameState.findUniqueOrThrow({ where: { userId: u0.id } })
+      }
       const u = await expireTrial(tx, read ? u0 : ((await tx.user.findUnique({ where: { id: u0.id } })) ?? u0))
       const c: Ctx = { tx, user: u, g, counters: { ...((g.counters as Counters) ?? {}) }, today: dayOf(Date.now(), u.timezone), fx: { xp: 0, goals: [], ach: [], levelFrom: levelOf(g.xp).n, features: [] }, locked: !read }
       const loaded = { at: g.updatedAt, state: stateOf(g, c.counters) }
@@ -208,6 +212,9 @@ export async function markActive(c: Ctx): Promise<boolean> {
   g.bestStreak = Math.max(g.bestStreak, g.streak)
   g.lastActiveDay = today
   await c.tx.streakDay.upsert({ where: { userId_day: { userId: g.userId, day: today } }, create: { userId: g.userId, day: today, status: 'ACTIVE' }, update: { status: 'ACTIVE' } })
+  // Al llegar a la racha que desbloquea la prueba gratis de Max (solo la primera vez)
+  if (g.streak === TRIAL_STREAK && g.bestStreak === TRIAL_STREAK && c.user.plan === 'FREE' && !c.user.trialUsed && !c.user.isAnonymous)
+    await notify(c, 'ACHIEVEMENT', `¡${TRIAL_STREAK} días seguidos! Max gratis desbloqueado`, `Tienes ${TRIAL_DAYS} días de Max gratis para probar todo el curso. Actívalos cuando quieras.`, '/premium')
   return true
 }
 

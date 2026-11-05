@@ -195,15 +195,15 @@ export const en: Record<LegalSlug, LegalDoc> = {
         h: '7. Paid plans (Plus and Max)',
         list: [
           'Plus and Max extend lessons, lives, virtual balance, order types and questions to Lumi. The price and what each plan includes are shown before you subscribe.',
-          'There is a 7-day free trial, one per person. In the current version payments are not active yet: the trial ends by itself and you go back to Free at no cost.',
+          'There is a 7-day free trial, one per person, unlocked by a 5-day streak or by joining with an invitation. In the current version payments are not active yet: the trial ends by itself and you go back to Free at no cost.',
           'Once payments are active, purchases are governed by the Terms of purchase: price, renewal, cancellation in Settings, a reminder before the first charge after the trial and 14 calendar days to withdraw.',
         ],
       },
       {
         h: '8. Invitations',
         list: [
-          'Everyone has an invitation link. Whoever creates their account with it gets 14 days of Max for free when they finish the welcome steps.',
-          'The person who invited them gets 14 days of Max when their friend saves the account with an email and password and finishes their first lesson, up to a year in total.',
+          'Everyone has an invitation link. Whoever creates their account with it gets 7 days of Max for free when they finish the welcome steps; this counts as their free trial (one per person).',
+          'The person who invited them gets 7 days of Max when their friend saves the account with an email and password and finishes their first lesson, up to a year in total.',
           'The gift has no monetary value, cannot be exchanged for money or transferred, and is added to any Max you already have.',
           'Inviting yourself, creating fake accounts or buying or selling invitations is not allowed. If it happens, we may withdraw the gifted days and apply section 5.',
           'We may change or end the programme with prior notice in the app; days already earned are kept.',
@@ -253,7 +253,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
       {
         h: '4. Free trial',
         list: [
-          'The first time you take out a paid plan you get a 7-day free trial (once per person).',
+          'You can get one 7-day free trial (once per person): it unlocks with a 5-day streak or by joining with a friend’s invitation. You can also subscribe directly, without a trial.',
           'If you cancel before it ends, you pay nothing. Otherwise, when it ends the first period of the chosen plan is charged.',
           'We will remind you in the app and by email before the trial ends.',
         ],
