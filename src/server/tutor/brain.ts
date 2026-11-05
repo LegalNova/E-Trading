@@ -298,7 +298,7 @@ export function manualAnswer(question: string, found: Chunk[]): string {
 }
 
 const ADVICE = (name: string) =>
-  [`Eso no te lo puedo decir, ${name}: E-Trading es una simulación educativa y nadie sabe qué subirá mañana. Lo que sí puedo es enseñarte a decidirlo tú.`, 'Antes de comprar algo, comprueba:\n• ¿Entiendo cómo gana dinero?\n• ¿Está sana (deuda, caja) y tiene ventaja competitiva?\n• ¿Está cara para lo que crece?\n• ¿Encaja en mi plan y no pasa del 20 % de mi cartera?\n• ¿Sé dónde está mi stop o qué me haría vender?', 'La lista completa está en la lección «Analizar una empresa en 30 minutos». Y si lo que buscas es invertir sin elegir empresas, mira «Carteras sencillas con fondos indexados».'].join('\n\n')
+  [`Eso no te lo puedo decir, ${name}: Lumi es una simulación educativa y nadie sabe qué subirá mañana. Lo que sí puedo es enseñarte a decidirlo tú.`, 'Antes de comprar algo, comprueba:\n• ¿Entiendo cómo gana dinero?\n• ¿Está sana (deuda, caja) y tiene ventaja competitiva?\n• ¿Está cara para lo que crece?\n• ¿Encaja en mi plan y no pasa del 20 % de mi cartera?\n• ¿Sé dónde está mi stop o qué me haría vender?', 'La lista completa está en la lección «Analizar una empresa en 30 minutos». Y si lo que buscas es invertir sin elegir empresas, mira «Carteras sencillas con fondos indexados».'].join('\n\n')
 
 /** Punto de entrada: decide qué tipo de respuesta toca y la construye */
 export function think(question: string, c: BrainCtx): BrainOut {
@@ -311,7 +311,7 @@ export function think(question: string, c: BrainCtx): BrainOut {
 
   if (RE.greet.test(q) && q.split(' ').length <= 4) return { text: `¡Hola, ${c.name}! Soy Lumi. Pregúntame lo que no entiendas del curso, pídeme un cálculo (interés compuesto, tamaño de posición, impuestos…) o cambia de modo para que revise tu progreso o tu cartera.${c.nextLesson ? `\n\nPor cierto: tu siguiente lección es «${c.nextLesson.title}».` : ''}`, found: [] }
   if (RE.thanks.test(q) && q.split(' ').length <= 5) return { text: `¡A ti, ${c.name}! Si te surge otra duda, aquí estoy. Recuerda: cinco minutos al día valen más que una tarde al mes.`, found: [] }
-  if (RE.who.test(q)) return { text: 'Soy Lumi, tu profesora del curso. Sé todo lo que hay en el manual de E-Trading y puedo:\n• Explicarte cualquier concepto o palabra.\n• Hacer cálculos: interés compuesto, inflación, tamaño de posición, recuperar una pérdida, impuestos, esperanza de un sistema.\n• Decirte qué aprender después según tu progreso.\n• Revisar tu cartera y tus sesgos (según tu plan).\n\nLo que no hago: decirte qué comprar. Te enseño a decidirlo tú.', found: [] }
+  if (RE.who.test(q)) return { text: 'Soy Lumi, tu profesora del curso. Sé todo lo que hay en el manual de Lumi y puedo:\n• Explicarte cualquier concepto o palabra.\n• Hacer cálculos: interés compuesto, inflación, tamaño de posición, recuperar una pérdida, impuestos, esperanza de un sistema.\n• Decirte qué aprender después según tu progreso.\n• Revisar tu cartera y tus sesgos (según tu plan).\n\nLo que no hago: decirte qué comprar. Te enseño a decidirlo tú.', found: [] }
   if (RE.advice.test(q)) return { text: ADVICE(c.name), found: [] }
 
   // Cálculos: solo si la pregunta trae los números necesarios

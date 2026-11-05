@@ -2,6 +2,7 @@ import 'server-only'
 // Clases, quiz, test de nivel y repaso de fallos (docs/02 §2, docs/07 §3–4)
 import type { AnswerResultT, CoursePathT, LessonStepT, LessonT, PathUnitT, PlacementFinishT, QuestionT, QuizFinishT, QuizStartT, StepCheckT } from '@/shared/contract'
 import type { User } from '@/generated/prisma/client'
+import { walkTexts } from '@/shared/play'
 import { courseMinutes, lessonMinutes, LESSON, PLACEMENT, QUIZZES, RISK_LESSON, UNITS, type ContentQuestion } from '../content/catalog'
 import { canOpen, minPlan } from '@/shared/plans'
 import { grade } from '../content/grading'
@@ -9,6 +10,7 @@ import { numChoices } from '../content/choices'
 import { engineT, lessonTitleT, questionT, stepsT, unitT } from '../content/translate'
 import { currentLocale } from '../locale'
 import { afterReview } from './srs'
+import { trackDaily } from './analytics'
 import { addXp, bump, bumpGoal, endFx, fail, LIVES_MAX, livesOf, lumi, markActive, minutesOf, withCtx, type Ctx, type Tx } from './core'
 
 export const ALL_Q: Record<string, ContentQuestion> = Object.fromEntries([...Object.values(QUIZZES).flat(), ...PLACEMENT].map(q => [q.id, q]))
@@ -18,7 +20,9 @@ export const ALL_Q: Record<string, ContentQuestion> = Object.fromEntries([...Obj
  * que se barajan las opciones depende del texto original, y las traducciones van por posición.
  */
 const EMOJI = /\s?[\u2190-\u21ff\u2300-\u23ff\u2460-\u27bf\u2b00-\u2bff\u{1F000}-\u{1FAFF}\ufe0f\u200d]+/gu
-const clean = (t: string) => t.replace(EMOJI, '').trim()
+/** La app se llama Lumi: el contenido escrito antes («E-Trading») se adapta al enviarlo, sin tocar el texto original */
+const brand = (t: string) => t.replace(/d['’]E-Trading/g, 'de Lumi').replace(/E-Trading/g, 'Lumi')
+const clean = (t: string) => brand(t.replace(EMOJI, '').trim())
 /** «(redondea…)» sobra cuando la cifra se elige entre opciones */
 const ROUND_NOTE = /\s*\((?:redondea|arrodoneix|round)[^)]*\)/gi
 const publicQ = (q: ContentQuestion): QuestionT => ({
@@ -81,6 +85,7 @@ export async function pathOf(tx: Tx, user: User): Promise<CoursePathT> {
 export async function lesson(user: User, tx: Tx, id: string): Promise<LessonT> {
   const l = LESSON[id] ?? fail(404, 'NOT_FOUND', 'Lección no encontrada')
   const st = (await pathOf(tx, user)).units.flatMap(u => u.lessons).find(x => x.id === id)!
+  if (st.requiresPremium) await trackDaily(tx, user.id, 'paywall', { lessonId: id })
   if (st.requiresPremium) fail(403, 'FEATURE_LOCKED', st.requiredPlan === 'PLUS' ? 'Esta lección está en el plan Plus' : 'Esta lección está en el plan Max')
   // Las lecciones se abren en orden: no se puede saltar a una bloqueada desde la URL
   if (st.status === 'LOCKED') fail(403, 'LESSON_LOCKED', 'Termina la lección anterior para abrir esta')
@@ -101,7 +106,7 @@ export async function lesson(user: User, tx: Tx, id: string): Promise<LessonT> {
     return { id: sid, type: 'SIMULATOR_TASK', title: s.title, body: s.body, task: s.task }
   })
   steps.push({ id: `${id}-quiz`, type: 'QUIZ', quizId: l.quizId, title: e.quizTitle, body: e.quizBody((QUIZZES[l.quizId] ?? []).length) })
-  return { id, title, unitTitle, minutes: l.minutes, xp: l.xp, steps }
+  return { id, title, unitTitle, minutes: l.minutes, xp: l.xp, steps: steps.map(st => walkTexts(st, brand)) }
 }
 
 export function checkStep(lessonId: string, stepId: string, idx: number): StepCheckT {

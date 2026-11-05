@@ -58,6 +58,9 @@ export interface AdminMetrics {
   funnel: { label: string; value: number | null }[]
   series: number[]
   providers: { name: string; status: 'OK' | 'DEGRADED' | 'DOWN'; latencyMs: number | null; note: string }[]
+  cohorts: { week: string; size: number; d1: number | null; d7: number | null; d30: number | null }[]
+  money: { key: 'premium_view' | 'paywall' | 'trial_start' | 'paid' | 'cancel'; value: number }[]
+  sources: { source: string; users: number; trials: number; paid: number }[]
 }
 export interface AdminUser { id: string; name: string; email: string; plan: 'FREE' | 'PLUS' | 'PREMIUM'; createdAt: string; lastActive: string; blocked: boolean; xp: number }
 export interface AdminQuestion { id: string; type: string; prompt: string; options: string[]; solution: number | number[] | string; explanation: string }
@@ -82,7 +85,7 @@ export interface Api {
   forgotPassword(email: string): Promise<void>
   onboarding(): Promise<{ step: number; draft: OnboardingDraft }>
   saveOnboarding(step: number, patch: Partial<OnboardingDraft>): Promise<void>
-  completeOnboarding(): Promise<void>
+  completeOnboarding(source?: string): Promise<void>
 
   // Inicio y perfil
   home(): Promise<HomeT>

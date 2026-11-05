@@ -102,7 +102,7 @@
     "send": "Enviar",
     "contactThanks": "Gràcies. Et respondrem en 48 hores.",
     "contactError": "Revisa els camps: el missatge necessita almenys 10 caràcters.",
-    "legal": "E-Trading és una app educativa. No s'opera amb diners reals, no es connecta a cap bròquer i no ofereix recomanacions d'inversió personalitzades.",
+    "legal": "Lumi és una app educativa. No s'opera amb diners reals, no es connecta a cap bròquer i no ofereix recomanacions d'inversió personalitzades.",
     "privacy": "Política de privadesa",
     "terms": "Condicions d’ús",
     "cookies": "Política de galetes",
@@ -154,7 +154,7 @@
     "month": "Mes",
     "year": "Any",
     "birthNote": "Ho fem servir per adaptar el contingut i per motius legals. No es mostra a ningú. Si tens menys de 18 anys, un adult haurà de confirmar els pagaments.",
-    "underAge": "E-Trading és per a majors de 14 anys.",
+    "underAge": "Lumi és per a majors de 14 anys.",
     "expTitle": "Has invertit mai?",
     "exp": {
       "NONE": {
@@ -198,7 +198,7 @@
     "balanceTitle": "El teu saldo virtual per practicar",
     "balancePremium": "Amb Plus o Max: {amount}",
     "beforeStart": "Abans de començar",
-    "disclaimer": "E-Trading és una app educativa. Mai s'opera amb diners reals, no es connecta a cap bròquer i no ofereix recomanacions d'inversió.",
+    "disclaimer": "Lumi és una app educativa. Mai s'opera amb diners reals, no es connecta a cap bròquer i no ofereix recomanacions d'inversió.",
     "accept": "Ho entenc i ho accepto",
     "start": "Començar"
   },
@@ -817,7 +817,7 @@
     "pushNote": "Les notificacions push del mòbil arribaran amb la versió instal·lable.",
     "accountSection": "Compte i privadesa",
     "account": "Compte, cartera i dades",
-    "version": "E-Trading 2.0 · versió de prova",
+    "version": "Lumi 2.0 · versió de prova",
     "privacy": "Privadesa",
     "leagueVisible": "Aparèixer a la lliga amb el meu nom",
     "leagueVisibleNote": "Si ho desactives, els altres et veuran com a «Jugador anònim».",
@@ -922,7 +922,23 @@
     ],
     "settingsNote": "A l'etapa 3 aquests valors es desen a la taula Settings i es poden editar aquí; cada canvi queda a l'auditoria.",
     "noAudit": "Encara no hi ha accions registrades.",
-    "backToApp": "Tornar a l'app"
+    "backToApp": "Tornar a l'app",
+    "cohorts": "Retenció per setmana d'alta",
+    "week": "Setmana",
+    "signups": "Altes",
+    "money": "Embut de pagament (usuaris diferents)",
+    "sourcesTitle": "Origen dels usuaris",
+    "source": "Origen",
+    "trials": "Proves",
+    "paid": "Paguen",
+    "noData": "Encara no hi ha dades",
+    "ev": {
+      "premium_view": "Veuen els plans",
+      "paywall": "Topen amb el mur",
+      "trial_start": "Comencen la prova",
+      "paid": "Paguen",
+      "cancel": "Cancel·len"
+    }
   },
   "cookies": {
     "label": "Avís de galetes",
@@ -996,7 +1012,7 @@
       "BIASES": "Detecta biaixos en les teves preguntes i operacions i et proposa regles. Plus o Max."
     },
     "hello": "Hola, soc {name}",
-    "intro": "La teva professora del curs. Pregunta’m el que no entenguis: responc amb el manual d’E-Trading i el teu progrés. No dono consells d’inversió: t’ensenyo a decidir per tu.",
+    "intro": "La teva professora del curs. Pregunta’m el que no entenguis: responc amb el manual de Lumi i el teu progrés. No dono consells d’inversió: t’ensenyo a decidir per tu.",
     "suggest": {
       "s1": "Què és un ETF?",
       "s2": "Com es llegeix una espelma?",
@@ -1031,7 +1047,7 @@
       "4": "Quatre espurnes",
       "5": "Brillantor total"
     },
-    "story": "La Lumi és un cub de gelatina que t’acompanya a E-Trading. T’explica el que no entens, t’avisa abans d’una mala operació i et recorda el teu pla quan el mercat es posa nerviós. Com més aprens, més brilla: li van sortint bombolletes de llum a dins.",
+    "story": "La Lumi és un cub de gelatina que t’acompanya a Lumi. T’explica el que no entens, t’avisa abans d’una mala operació i et recorda el teu pla quan el mercat es posa nerviós. Com més aprens, més brilla: li van sortint bombolletes de llum a dins.",
     "growTitle": "Brilla amb tu",
     "fromLevel": "Nivell {n}",
     "next": "Al nivell {n} passarà a «{name}».",

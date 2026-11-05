@@ -1,4 +1,4 @@
-// Planes de E-Trading (D-053). En la base de datos el plan completo se llama PREMIUM y se muestra como «Max».
+// Planes de Lumi (D-053). En la base de datos el plan completo se llama PREMIUM y se muestra como «Max».
 //   Free: unidades 1–3 completas + las 3 primeras lecciones de cada unidad.
 //   Plus: además, unidades 4 y 5 completas + las 5 primeras lecciones de cada unidad.
 //   Max: todo.

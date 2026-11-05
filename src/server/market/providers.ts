@@ -25,7 +25,7 @@ export interface RawCandle {
   v: number
 }
 
-const UA = { 'user-agent': 'Mozilla/5.0 (E-Trading educational simulator)' }
+const UA = { 'user-agent': 'Mozilla/5.0 (Lumi educational simulator)' }
 const HOSTS = ['https://query1.finance.yahoo.com', 'https://query2.finance.yahoo.com']
 const ok = (n: unknown): n is number => typeof n === 'number' && Number.isFinite(n) && n > 0
 const num = (n: unknown) => (typeof n === 'number' && Number.isFinite(n) ? n : null)

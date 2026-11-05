@@ -102,7 +102,7 @@
     "send": "Send",
     "contactThanks": "Thank you. We'll reply within 48 hours.",
     "contactError": "Please check the fields: the message needs at least 10 characters.",
-    "legal": "E-Trading is an educational app. No real money is traded, it doesn't connect to any broker and it doesn't give personalised investment advice.",
+    "legal": "Lumi is an educational app. No real money is traded, it doesn't connect to any broker and it doesn't give personalised investment advice.",
     "privacy": "Privacy policy",
     "terms": "Terms of use",
     "cookies": "Cookie policy",
@@ -154,7 +154,7 @@
     "month": "Month",
     "year": "Year",
     "birthNote": "We use it to adapt the content and for legal reasons. It isn't shown to anyone. If you're under 18, an adult will need to confirm payments.",
-    "underAge": "E-Trading is for people aged 14 and over.",
+    "underAge": "Lumi is for people aged 14 and over.",
     "expTitle": "Have you ever invested?",
     "exp": {
       "NONE": {
@@ -198,7 +198,7 @@
     "balanceTitle": "Your virtual balance to practise with",
     "balancePremium": "With Plus or Max: {amount}",
     "beforeStart": "Before you start",
-    "disclaimer": "E-Trading is an educational app. No real money is ever traded, it doesn't connect to any broker and it doesn't give investment advice.",
+    "disclaimer": "Lumi is an educational app. No real money is ever traded, it doesn't connect to any broker and it doesn't give investment advice.",
     "accept": "I understand and accept",
     "start": "Start"
   },
@@ -817,7 +817,7 @@
     "pushNote": "Mobile push notifications will arrive with the installable version.",
     "accountSection": "Account and privacy",
     "account": "Account, portfolio and data",
-    "version": "E-Trading 2.0 · test version",
+    "version": "Lumi 2.0 · test version",
     "privacy": "Privacy",
     "leagueVisible": "Show my name in the league",
     "leagueVisibleNote": "If you turn it off, others will see you as «Anonymous player».",
@@ -922,7 +922,23 @@
     ],
     "settingsNote": "In stage 3 these values are stored in the Settings table and can be edited here; every change is logged in the audit.",
     "noAudit": "No actions recorded yet.",
-    "backToApp": "Back to the app"
+    "backToApp": "Back to the app",
+    "cohorts": "Retention by sign-up week",
+    "week": "Week",
+    "signups": "Sign-ups",
+    "money": "Payment funnel (unique users)",
+    "sourcesTitle": "Where users come from",
+    "source": "Source",
+    "trials": "Trials",
+    "paid": "Paying",
+    "noData": "No data yet",
+    "ev": {
+      "premium_view": "View plans",
+      "paywall": "Hit the paywall",
+      "trial_start": "Start the trial",
+      "paid": "Pay",
+      "cancel": "Cancel"
+    }
   },
   "cookies": {
     "label": "Cookie notice",
@@ -996,7 +1012,7 @@
       "BIASES": "Spots biases in your questions and trades and suggests rules. Plus or Max."
     },
     "hello": "Hi, I’m {name}",
-    "intro": "Your course tutor. Ask me anything you don’t understand: I answer with the E-Trading manual and your progress. I don’t give investment advice: I teach you to decide for yourself.",
+    "intro": "Your course tutor. Ask me anything you don’t understand: I answer with the Lumi manual and your progress. I don’t give investment advice: I teach you to decide for yourself.",
     "suggest": {
       "s1": "What is an ETF?",
       "s2": "How do I read a candle?",
@@ -1031,7 +1047,7 @@
       "4": "Four sparks",
       "5": "Full glow"
     },
-    "story": "Lumi is a jelly cube that keeps you company in E-Trading. It explains what you don’t understand, warns you before a bad trade and reminds you of your plan when the market gets nervous. The more you learn, the more it glows: little bubbles of light appear inside.",
+    "story": "Lumi is a jelly cube that keeps you company in Lumi. It explains what you don’t understand, warns you before a bad trade and reminds you of your plan when the market gets nervous. The more you learn, the more it glows: little bubbles of light appear inside.",
     "growTitle": "It glows with you",
     "fromLevel": "Level {n}",
     "next": "At level {n} it becomes «{name}».",

@@ -18,10 +18,10 @@ export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Pr
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'meta' })
   return {
-    title: { default: 'E-Trading', template: '%s · E-Trading' },
+    title: { default: 'Lumi', template: '%s · Lumi' },
     description: t('description'),
-    applicationName: 'E-Trading',
-    appleWebApp: { capable: true, title: 'E-Trading', statusBarStyle: 'default' },
+    applicationName: 'Lumi',
+    appleWebApp: { capable: true, title: 'Lumi', statusBarStyle: 'default' },
   }
 }
 

@@ -61,7 +61,7 @@ export const httpApi: Api = {
   forgotPassword: async () => undefined,
   onboarding: () => get('/onboarding'),
   saveOnboarding: (step, patch) => call('PUT', '/onboarding', { step, patch }),
-  completeOnboarding: () => post('/onboarding/complete'),
+  completeOnboarding: source => post('/onboarding/complete', source ? { source } : {}),
 
   home: () => get('/home'),
   me: () => get('/me'),

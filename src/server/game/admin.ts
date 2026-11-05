@@ -1,6 +1,6 @@
 import 'server-only'
 // Panel de administración (07). Solo ADMIN. Cifras reales de la base de datos; «null» = vacío real.
-import { addDays, dayOf } from '@/shared/time'
+import { addDays, dayOf, weekOf } from '@/shared/time'
 import { db } from '../db'
 import { ACHIEVEMENTS, QUIZZES, UNITS } from '../content/catalog'
 import { fail, requireUser } from './core'
@@ -37,7 +37,11 @@ export async function metrics(range: '7d' | '30d' | '90d') {
   const byDay = new Map(active.map(a => [a.day, a._count._all]))
   const quotes = await db.quote.groupBy({ by: ['source'], _max: { updatedAt: true }, _count: { _all: true } })
   const SOURCES: Record<string, string> = { FINNHUB: 'Finnhub (acciones EE. UU.)', BINANCE: 'Binance (cripto)', YAHOO: 'Yahoo (España, Xetra, índices, divisas)', ECB: 'BCE (respaldo de divisas)' }
+  const [cohorts, money, sources] = await Promise.all([cohortTable(today), moneyFunnel(from), bySource()])
   return {
+    cohorts,
+    money,
+    sources,
     dau: users ? dau : null, mau: users ? mau : null, retentionD7: cohort.length ? Math.round((retained / cohort.length) * 100) : null, premiumConversion: users ? Math.round((premium / users) * 100) : null, simulatedTrades: trades,
     funnel: [
       { label: 'Registro', value: users },
@@ -53,6 +57,65 @@ export async function metrics(range: '7d' | '30d' | '90d') {
       return { name, status: (age === null ? 'DOWN' : age < 10 * 60_000 ? 'OK' : 'DEGRADED') as 'OK' | 'DEGRADED' | 'DOWN', latencyMs: null, note: age === null ? (k === 'ECB' ? 'Sin uso (solo si falla Yahoo)' : 'Sin datos') : `${q!._count._all} activos · actualizado hace ${Math.round(age / 60_000)} min` }
     }),
   }
+}
+
+/** Retención por semana de registro: % de usuarios activos el día 1, entre los días 7-13 y entre los días 30-36 */
+async function cohortTable(today: string) {
+  const since = addDays(weekOf(), -7 * 7)
+  const people = await db.user.findMany({ where: { createdAt: { gte: new Date(since + 'T00:00:00Z') } }, select: { id: true, createdAt: true } })
+  const days = await db.streakDay.findMany({ where: { userId: { in: people.map(p => p.id) }, status: 'ACTIVE' }, select: { userId: true, day: true } })
+  const active = new Map<string, Set<string>>()
+  for (const d of days) (active.get(d.userId) ?? active.set(d.userId, new Set()).get(d.userId)!).add(d.day)
+  const weeks = new Map<string, { size: number; hit: [number, number, number]; due: [number, number, number] }>()
+  const span = [
+    [1, 1],
+    [7, 13],
+    [30, 36],
+  ] as const
+  for (const p of people) {
+    const start = dayOf(p.createdAt)
+    const w = weeks.get(weekOf(p.createdAt)) ?? { size: 0, hit: [0, 0, 0], due: [0, 0, 0] }
+    weeks.set(weekOf(p.createdAt), w)
+    w.size++
+    const mine = active.get(p.id)
+    span.forEach(([a, b], k) => {
+      // Solo cuenta quien ya ha tenido tiempo de llegar a ese día
+      if (addDays(start, b) > today) return
+      w.due[k]++
+      for (let n = a; n <= b; n++) if (mine?.has(addDays(start, n))) return void w.hit[k]++
+    })
+  }
+  const pct = (h: number, d: number) => (d ? Math.round((h / d) * 100) : null)
+  return [...weeks.entries()]
+    .sort(([a], [b]) => b.localeCompare(a))
+    .map(([week, w]) => ({ week, size: w.size, d1: pct(w.hit[0], w.due[0]), d7: pct(w.hit[1], w.due[1]), d30: pct(w.hit[2], w.due[2]) }))
+}
+
+/** Embudo de pago en el periodo: usuarios distintos en cada paso */
+async function moneyFunnel(from: string) {
+  const since = new Date(from + 'T00:00:00Z')
+  const count = (name: string) => db.event.groupBy({ by: ['userId'], where: { name, createdAt: { gte: since } } }).then(r => r.length)
+  const [views, walls, trials, paid, cancels] = await Promise.all(['premium_view', 'paywall', 'trial_start', 'paid', 'cancel'].map(count))
+  return [
+    { key: 'premium_view', value: views },
+    { key: 'paywall', value: walls },
+    { key: 'trial_start', value: trials },
+    { key: 'paid', value: paid },
+    { key: 'cancel', value: cancels },
+  ]
+}
+
+/** Origen de los usuarios (primer contacto) y cuántos prueban o pagan */
+async function bySource() {
+  const rows = await db.user.groupBy({ by: ['source'], _count: { _all: true }, orderBy: { _count: { id: 'desc' } }, take: 12 })
+  const of = async (name: string) => {
+    const ev = await db.event.findMany({ where: { name }, distinct: ['userId'], select: { user: { select: { source: true } } } })
+    const m = new Map<string | null, number>()
+    for (const e of ev) m.set(e.user?.source ?? null, (m.get(e.user?.source ?? null) ?? 0) + 1)
+    return m
+  }
+  const [trials, paid] = await Promise.all([of('trial_start'), of('paid')])
+  return rows.map(r => ({ source: r.source ?? '—', users: r._count._all, trials: trials.get(r.source) ?? 0, paid: paid.get(r.source) ?? 0 }))
 }
 
 export async function users(q?: string) {

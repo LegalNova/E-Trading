@@ -5,6 +5,7 @@ import { useLocale } from 'next-intl'
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react'
 import { THEME_KEY } from '@/shared/theme'
 import { ApiFailure } from './api'
+import { captureSource } from './attribution'
 import { CookieNotice } from './legal/cookie-notice'
 
 const ToastCtx = createContext<(msg: React.ReactNode, ms?: number) => void>(() => {})
@@ -36,6 +37,8 @@ export function Providers({ children }: { children: React.ReactNode }) {
   // Al cambiar de idioma, el curso y las insignias vuelven a pedirse ya traducidos
   const locale = useLocale()
   const lastLocale = useRef(locale)
+  // Origen de la visita (anuncio, creador, buscador), solo la primera vez
+  useEffect(() => captureSource(), [])
   useEffect(() => {
     if (lastLocale.current === locale) return
     lastLocale.current = locale

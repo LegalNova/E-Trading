@@ -62,6 +62,73 @@ function Metrics() {
           ))}
         </div>
       </div>
+      <div className="grid gap-3 lg:grid-cols-2">
+        <div className="card flex flex-col gap-2">
+          <b>{t('money')}</b>
+          {m.money.map(f => (
+            <div key={f.key} className="kv">
+              <span>{t(`ev.${f.key}`)}</span>
+              <span>{num(f.value, locale, 0)}</span>
+            </div>
+          ))}
+        </div>
+        <div className="card flex flex-col gap-2 overflow-x-auto">
+          <b>{t('sourcesTitle')}</b>
+          {m.sources.length ? (
+            <table className="t-foot w-full">
+              <thead className="t-cap text-left">
+                <tr>
+                  <th>{t('source')}</th>
+                  <th className="text-right">{t('signups')}</th>
+                  <th className="text-right">{t('trials')}</th>
+                  <th className="text-right">{t('paid')}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {m.sources.map(s => (
+                  <tr key={s.source}>
+                    <td>{s.source}</td>
+                    <td className="text-right">{s.users}</td>
+                    <td className="text-right">{s.trials}</td>
+                    <td className="text-right">{s.paid}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <span className="t-cap">{t('noData')}</span>
+          )}
+        </div>
+      </div>
+      <div className="card flex flex-col gap-2 overflow-x-auto">
+        <b>{t('cohorts')}</b>
+        {m.cohorts.length ? (
+          <table className="t-foot w-full">
+            <thead className="t-cap text-left">
+              <tr>
+                <th>{t('week')}</th>
+                <th className="text-right">{t('signups')}</th>
+                <th className="text-right">D1</th>
+                <th className="text-right">D7</th>
+                <th className="text-right">D30</th>
+              </tr>
+            </thead>
+            <tbody>
+              {m.cohorts.map(c => (
+                <tr key={c.week}>
+                  <td>{c.week}</td>
+                  <td className="text-right">{c.size}</td>
+                  <td className="text-right">{dash(c.d1, locale, ' %')}</td>
+                  <td className="text-right">{dash(c.d7, locale, ' %')}</td>
+                  <td className="text-right">{dash(c.d30, locale, ' %')}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <span className="t-cap">{t('noData')}</span>
+        )}
+      </div>
       <div className="card">
         <b>{t('providers')}</b>
         {m.providers.map(p => (

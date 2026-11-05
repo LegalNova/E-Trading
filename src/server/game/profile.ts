@@ -1,4 +1,5 @@
 import 'server-only'
+import { cleanSource, track, trackDaily } from './analytics'
 import { tierOf } from '@/shared/plans'
 // Perfil, onboarding, Inicio, progreso, avisos, ajustes, Premium (simulado hasta Stripe) y RGPD
 import type { BillingStatusT, HomeT, MeT, Mood, NotificationT, SettingsT, StreakT } from '@/shared/contract'
@@ -29,14 +30,14 @@ export const saveOnboarding = (step: number, patch: Partial<Draft>) =>
     if (patch.birthDate) {
       const t = Date.parse(patch.birthDate)
       if (!Number.isFinite(t)) fail(422, 'VALIDATION_ERROR', 'Fecha no válida')
-      if ((Date.now() - t) / (365.25 * DAY_MS) < 14) fail(403, 'UNDER_MIN_AGE', 'E-Trading es para mayores de 14 años')
+      if ((Date.now() - t) / (365.25 * DAY_MS) < 14) fail(403, 'UNDER_MIN_AGE', 'Lumi es para mayores de 14 años')
     }
     if (patch.name !== undefined && (patch.name.trim().length < 1 || patch.name.length > 30)) fail(422, 'VALIDATION_ERROR', 'Nombre no válido')
     const draft = { ...emptyDraft(c.user), ...((c.user.onboarding as object) ?? {}), ...patch }
     await c.tx.user.update({ where: { id: c.user.id }, data: { onboarding: draft, onboardingStep: Math.max(c.user.onboardingStep ?? 1, step + 1) } })
   })
 
-export const completeOnboarding = () =>
+export const completeOnboarding = (source?: unknown) =>
   withCtx(async c => {
     const d = { ...emptyDraft(c.user), ...((c.user.onboarding as object) ?? {}) } as Draft
     if (!d.disclaimerAccepted) fail(422, 'VALIDATION_ERROR', 'Acepta el aviso legal para continuar')
@@ -45,8 +46,11 @@ export const completeOnboarding = () =>
       data: {
         name: d.name.trim() || 'Tú', gender: d.gender, birthDate: d.birthDate ? new Date(d.birthDate) : null, companionName: d.companionName || 'Lumi', skinId: d.skinId,
         onboardingStep: null, disclaimerAt: new Date(), settings: { ...defaultSettings(c.user), gender: d.gender, dailyGoalMinutes: d.dailyGoalMinutes },
+        // Primer contacto: solo se guarda una vez
+        ...(c.user.source ? {} : { source: cleanSource(source) }),
       },
     })
+    if (c.user.onboardingStep !== null) await track(c.tx, c.user.id, 'signup', { source: c.user.source ?? cleanSource(source) })
     await portfolioRow(c.tx, c.user)
     await notify(c, 'NEW_LESSON', 'Tu primera clase te espera', '«Qué es invertir»: 4 minutos.', '/clases')
   })
@@ -198,7 +202,12 @@ const statusOf = (u: User, s: { status: string; renewsAt: Date | null; trialEnds
   plan: u.plan, status: (s?.status ?? 'NONE') as BillingStatusT['status'], renewsAt: s?.renewsAt?.toISOString() ?? null, trialEndsAt: s?.trialEndsAt?.toISOString() ?? null, interval: (s?.interval ?? null) as BillingStatusT['interval'],
 })
 
-export const billingStatus = () => withCtx(async c => statusOf(c.user, await c.tx.subscription.findUnique({ where: { userId: c.user.id } })))
+export const billingStatus = () =>
+  withCtx(async c => {
+    // La pantalla de planes pide el estado al abrirse: cuenta como «ha visto los planes» (una vez al día)
+    await trackDaily(c.tx, c.user.id, 'premium_view')
+    return statusOf(c.user, await c.tx.subscription.findUnique({ where: { userId: c.user.id } }))
+  })
 
 export const checkout = (planId: string) =>
   withCtx(async c => {
@@ -219,6 +228,7 @@ export const checkout = (planId: string) =>
     const sub = await c.tx.subscription.upsert({ where: { userId: c.user.id }, create: { userId: c.user.id, status: 'TRIALING', interval: plan.interval, trialEndsAt: trialEnds, renewsAt: trialEnds }, update: { status: 'TRIALING', interval: plan.interval, trialEndsAt: trialEnds, renewsAt: trialEnds } })
     const u = await c.tx.user.update({ where: { id: c.user.id }, data: { plan: plan.tier, trialUsed: true } })
     c.g.lives = LIVES_MAX
+    await track(c.tx, c.user.id, 'trial_start', { plan: plan.id })
     return statusOf(u, sub)
   })
 
@@ -226,6 +236,7 @@ export const cancelSubscription = () =>
   withCtx(async c => {
     const sub = await c.tx.subscription.upsert({ where: { userId: c.user.id }, create: { userId: c.user.id, status: 'CANCELED' }, update: { status: 'CANCELED', renewsAt: null, trialEndsAt: null, interval: null } })
     const u = await c.tx.user.update({ where: { id: c.user.id }, data: { plan: 'FREE' } })
+    await track(c.tx, c.user.id, 'cancel', { from: c.user.plan })
     return statusOf(u, sub)
   })
 

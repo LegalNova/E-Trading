@@ -59,8 +59,11 @@ model User {
   leagueVisible   Boolean   @default(true)
   trialUsed       Boolean   @default(false)
   guardianConsent String    @default("NONE") // NONE | PENDING | CONFIRMED | REJECTED
+  /** De dónde llegó (primer contacto: utm_source/utm_campaign o código de quien invita) */
+  source          String?
 
   sessions      Session[]
+  events        Event[]
   accounts      Account[]
   game          GameState?
   portfolio     Portfolio?
@@ -540,4 +543,17 @@ model ContactMessage {
   reason    String
   message   String
   createdAt DateTime @default(now())
+}
+
+/// Analítica propia (sin terceros ni cookies): los pasos del embudo que no se deducen de otras tablas
+model Event {
+  id        String   @id @default(cuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name      String // signup | premium_view | paywall | trial_start | paid | cancel | share | invite
+  props     Json?
+  createdAt DateTime @default(now())
+
+  @@index([name, createdAt])
+  @@index([userId, name])
 }

@@ -102,7 +102,7 @@
     "send": "Enviar",
     "contactThanks": "Gracias. Te responderemos en 48 horas.",
     "contactError": "Revisa los campos: el mensaje necesita al menos 10 caracteres.",
-    "legal": "E-Trading es una app educativa. No se opera con dinero real, no se conecta a ningún broker y no ofrece recomendaciones de inversión personalizadas.",
+    "legal": "Lumi es una app educativa. No se opera con dinero real, no se conecta a ningún broker y no ofrece recomendaciones de inversión personalizadas.",
     "privacy": "Política de privacidad",
     "terms": "Términos de uso",
     "cookies": "Política de cookies",
@@ -154,7 +154,7 @@
     "month": "Mes",
     "year": "Año",
     "birthNote": "Lo usamos para adaptar el contenido y por motivos legales. No se muestra a nadie. Si tienes menos de 18 años, un adulto tendrá que confirmar los pagos.",
-    "underAge": "E-Trading es para mayores de 14 años.",
+    "underAge": "Lumi es para mayores de 14 años.",
     "expTitle": "¿Has invertido alguna vez?",
     "exp": {
       "NONE": {
@@ -198,7 +198,7 @@
     "balanceTitle": "Tu saldo virtual para practicar",
     "balancePremium": "Con Plus o Max: {amount}",
     "beforeStart": "Antes de empezar",
-    "disclaimer": "E-Trading es una app educativa. Nunca se opera con dinero real, no se conecta a ningún broker y no ofrece recomendaciones de inversión.",
+    "disclaimer": "Lumi es una app educativa. Nunca se opera con dinero real, no se conecta a ningún broker y no ofrece recomendaciones de inversión.",
     "accept": "Lo entiendo y acepto",
     "start": "Empezar"
   },
@@ -817,7 +817,7 @@
     "pushNote": "Las notificaciones push del móvil llegarán con la versión instalable.",
     "accountSection": "Cuenta y privacidad",
     "account": "Cuenta, cartera y datos",
-    "version": "E-Trading 2.0 · versión de prueba",
+    "version": "Lumi 2.0 · versión de prueba",
     "privacy": "Privacidad",
     "leagueVisible": "Aparecer en la liga con mi nombre",
     "leagueVisibleNote": "Si lo desactivas, los demás te verán como «Jugador anónimo».",
@@ -922,7 +922,23 @@
     ],
     "settingsNote": "En la etapa 3 estos valores se guardan en la tabla Settings y se pueden editar aquí; cada cambio queda en la auditoría.",
     "noAudit": "Sin acciones registradas todavía.",
-    "backToApp": "Volver a la app"
+    "backToApp": "Volver a la app",
+    "cohorts": "Retención por semana de registro",
+    "week": "Semana",
+    "signups": "Altas",
+    "money": "Embudo de pago (usuarios distintos)",
+    "sourcesTitle": "Origen de los usuarios",
+    "source": "Origen",
+    "trials": "Pruebas",
+    "paid": "Pagan",
+    "noData": "Aún no hay datos",
+    "ev": {
+      "premium_view": "Ven los planes",
+      "paywall": "Chocan con el muro",
+      "trial_start": "Empiezan la prueba",
+      "paid": "Pagan",
+      "cancel": "Cancelan"
+    }
   },
   "cookies": {
     "label": "Aviso de cookies",
@@ -996,7 +1012,7 @@
       "BIASES": "Detecta sesgos en tus preguntas y operaciones y te propone reglas. Plus o Max."
     },
     "hello": "Hola, soy {name}",
-    "intro": "Tu profesora del curso. Pregúntame lo que no entiendas: respondo con el manual de E-Trading y tu progreso. No doy consejos de inversión: te enseño a decidir por ti.",
+    "intro": "Tu profesora del curso. Pregúntame lo que no entiendas: respondo con el manual de Lumi y tu progreso. No doy consejos de inversión: te enseño a decidir por ti.",
     "suggest": {
       "s1": "¿Qué es un ETF?",
       "s2": "¿Cómo se lee una vela?",
@@ -1031,7 +1047,7 @@
       "4": "Cuatro chispas",
       "5": "Brillo total"
     },
-    "story": "Lumi es un cubo de gelatina que te acompaña en E-Trading. Te explica lo que no entiendes, te avisa antes de una mala operación y te recuerda tu plan cuando el mercado se pone nervioso. Cuanto más aprendes, más brilla: le van saliendo burbujitas de luz dentro.",
+    "story": "Lumi es un cubo de gelatina que te acompaña en Lumi. Te explica lo que no entiendes, te avisa antes de una mala operación y te recuerda tu plan cuando el mercado se pone nervioso. Cuanto más aprendes, más brilla: le van saliendo burbujitas de luz dentro.",
     "growTitle": "Brilla contigo",
     "fromLevel": "Nivel {n}",
     "next": "En el nivel {n} pasará a «{name}».",

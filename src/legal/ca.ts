@@ -12,10 +12,10 @@ export const ca: Record<LegalSlug, LegalDoc> = {
     sections: [
       { h: '1. Titular', table: { head: ['Dada', 'Valor'], rows: [['Titular', O.name], ['NIF', O.nif], ['Domicili', O.address], ['Email de contacte', O.email], ['Lloc web', O.site]] } },
       {
-        h: '2. Què és E-Trading',
+        h: '2. Què és Lumi',
         p: [
-          'E-Trading és una aplicació educativa per aprendre a invertir amb classes, qüestionaris i un simulador de mercat amb diners virtuals.',
-          'E-Trading no és una entitat financera ni una empresa de serveis d’inversió: no rep diners dels usuaris, no executa operacions reals, no es connecta a cap bròquer i no presta assessorament en matèria d’inversió. Per això no està autoritzada ni supervisada per la Comissió Nacional del Mercat de Valors (CNMV).',
+          'Lumi és una aplicació educativa per aprendre a invertir amb classes, qüestionaris i un simulador de mercat amb diners virtuals.',
+          'Lumi no és una entitat financera ni una empresa de serveis d’inversió: no rep diners dels usuaris, no executa operacions reals, no es connecta a cap bròquer i no presta assessorament en matèria d’inversió. Per això no està autoritzada ni supervisada per la Comissió Nacional del Mercat de Valors (CNMV).',
         ],
       },
       {
@@ -29,7 +29,7 @@ export const ca: Record<LegalSlug, LegalDoc> = {
       {
         h: '5. Propietat intel·lectual',
         p: [
-          'Els textos, exercicis, disseny, logotips, la mascota Lumi i el codi d’E-Trading pertanyen al seu titular o s’utilitzen amb llicència. No es poden copiar ni distribuir sense autorització, llevat d’ús personal i no comercial.',
+          'Els textos, exercicis, disseny, logotips, la mascota Lumi i el codi de Lumi pertanyen al seu titular o s’utilitzen amb llicència. No es poden copiar ni distribuir sense autorització, llevat d’ús personal i no comercial.',
           'Les marques i noms d’empreses que apareixen al simulador pertanyen als seus titulars i se citen només per identificar els actius.',
         ],
       },
@@ -130,15 +130,15 @@ export const ca: Record<LegalSlug, LegalDoc> = {
       { h: '1. Què són', p: ['Les galetes i tecnologies semblants (com l’emmagatzematge local del navegador) són petits fitxers que un web desa al teu dispositiu per recordar informació.'] },
       {
         h: '2. Què fem servir',
-        p: ['E-Trading només fa servir galetes i emmagatzematge tècnics o de preferències que tu tries. No fem servir galetes d’analítica, de publicitat ni de tercers.'],
+        p: ['Lumi només fa servir galetes i emmagatzematge tècnics o de preferències que tu tries. No fem servir galetes d’analítica, de publicitat ni de tercers.'],
         table: {
           head: ['Nom', 'Titular', 'Per a què', 'Durada', 'Tipus'],
           rows: [
-            ['__Secure-better-auth.session_token', 'E-Trading', 'Mantenir la sessió iniciada de manera segura', '30 dies', 'Tècnica, necessària'],
-            ['better-auth.state', 'E-Trading', 'Protegir l’inici de sessió amb Google (només si el fas servir)', '10 minuts', 'Tècnica, necessària'],
-            ['NEXT_LOCALE', 'E-Trading', 'Recordar l’idioma que triïs a Configuració', '1 any', 'De preferència triada per tu'],
-            ['et-theme (emmagatzematge local)', 'E-Trading', 'Recordar el tema clar o fosc', 'Fins que l’esborris', 'De preferència triada per tu'],
-            ['et-cookies (emmagatzematge local)', 'E-Trading', 'Recordar que ja has vist l’avís de galetes', 'Fins que l’esborris', 'Tècnica'],
+            ['__Secure-better-auth.session_token', 'Lumi', 'Mantenir la sessió iniciada de manera segura', '30 dies', 'Tècnica, necessària'],
+            ['better-auth.state', 'Lumi', 'Protegir l’inici de sessió amb Google (només si el fas servir)', '10 minuts', 'Tècnica, necessària'],
+            ['NEXT_LOCALE', 'Lumi', 'Recordar l’idioma que triïs a Configuració', '1 any', 'De preferència triada per tu'],
+            ['et-theme (emmagatzematge local)', 'Lumi', 'Recordar el tema clar o fosc', 'Fins que l’esborris', 'De preferència triada per tu'],
+            ['et-cookies (emmagatzematge local)', 'Lumi', 'Recordar que ja has vist l’avís de galetes', 'Fins que l’esborris', 'Tècnica'],
           ],
         },
       },
@@ -155,9 +155,9 @@ export const ca: Record<LegalSlug, LegalDoc> = {
 
   terminos: {
     title: 'Condicions d’ús',
-    intro: `Darrera actualització: ${UPDATED}. Aquestes condicions regulen l’ús d’E-Trading. En crear un compte les acceptes.`,
+    intro: `Darrera actualització: ${UPDATED}. Aquestes condicions regulen l’ús de Lumi. En crear un compte les acceptes.`,
     sections: [
-      { h: '1. El servei', p: [`E-Trading, de ${O.name}, ofereix classes, qüestionaris, un simulador de mercat amb diners virtuals i elements de joc (XP, ratxa, vides, gemmes, assoliments i lliga) per aprendre a invertir.`] },
+      { h: '1. El servei', p: [`Lumi, de ${O.name}, ofereix classes, qüestionaris, un simulador de mercat amb diners virtuals i elements de joc (XP, ratxa, vides, gemmes, assoliments i lliga) per aprendre a invertir.`] },
       {
         h: '2. És una simulació educativa',
         list: [
@@ -195,7 +195,7 @@ export const ca: Record<LegalSlug, LegalDoc> = {
           'Quan el pagament estigui actiu: la subscripció es renovarà automàticament fins que la cancel·lis des de Configuració, t’avisarem abans de cada cobrament i, com a consumidor, tindràs 14 dies naturals per desistir des de la contractació.',
         ],
       },
-      { h: '8. Propietat intel·lectual', p: ['El contingut d’E-Trading pertany al seu titular o s’utilitza amb llicència. El pots fer servir per al teu aprenentatge personal, però no copiar-lo ni distribuir-lo sense permís.'] },
+      { h: '8. Propietat intel·lectual', p: ['El contingut de Lumi pertany al seu titular o s’utilitza amb llicència. El pots fer servir per al teu aprenentatge personal, però no copiar-lo ni distribuir-lo sense permís.'] },
       { h: '9. Responsabilitat', p: ['Posem la màxima cura en el servei, però pot tenir errors o interrupcions. No responem de decisions d’inversió reals preses a partir de l’aplicació. Res de l’anterior limita els drets que la llei et reconeix com a consumidor.'] },
       { h: '10. Canvis en el servei i en les condicions', p: ['Podem millorar o canviar funcions. Si canviem aquestes condicions de manera important t’avisarem amb antelació dins de l’aplicació.'] },
       { h: '11. Llei i conflictes', p: [`S’aplica la llei espanyola. Si tens un problema, escriu-nos primer a ${O.email} i el mirarem de resoldre. Com a consumidor també pots acudir als organismes de consum de la teva comunitat autònoma i als jutjats del teu domicili.`] },

@@ -49,7 +49,7 @@ const routes: Route[] = [
   { method: 'GET', path: 'session', run: () => profile.session() },
   { method: 'GET', path: 'onboarding', run: () => profile.onboarding() },
   { method: 'PUT', path: 'onboarding', run: (_r, _p, b) => { const x = z.object({ step: z.number().int().min(1).max(7), patch: draft }).parse(b); return profile.saveOnboarding(x.step, x.patch) } },
-  { method: 'POST', path: 'onboarding/complete', run: () => profile.completeOnboarding() },
+  { method: 'POST', path: 'onboarding/complete', run: (_r, _p, b) => profile.completeOnboarding(z.object({ source: z.string().max(80).optional() }).catch({}).parse(b ?? {}).source) },
   // Inicio y perfil
   { method: 'GET', path: 'home', run: () => profile.home() },
   { method: 'GET', path: 'me', run: () => profile.me() },

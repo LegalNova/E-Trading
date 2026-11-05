@@ -8,6 +8,7 @@ import type { GenderT, PlacementFinishT } from '@/shared/contract'
 import { money } from '@/shared/format'
 import { api, ApiFailure, type OnboardingDraft } from '../api'
 import { useGuard } from '../shell'
+import { readSource } from '../attribution'
 import { Icon } from '../ui/icons'
 import { Check, PageSkeleton, Seg, Steps } from '../ui/kit'
 import { Lumi, SKINS } from '../ui/lumi'
@@ -103,7 +104,7 @@ function Flow({ initialStep, initialDraft }: { initialStep: number; initialDraft
   const complete = useMutation({
     mutationFn: async () => {
       await api.saveOnboarding(6, { disclaimerAccepted: true })
-      await api.completeOnboarding()
+      await api.completeOnboarding(readSource())
     },
     onSuccess: async () => {
       await qc.invalidateQueries()
