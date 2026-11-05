@@ -93,6 +93,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
           'Account, progress and simulator: while you keep your account. Deleting it in Settings removes them immediately; technical backups are overwritten within 7 days.',
           'Security logs (e.g. sign-in attempts): up to 12 months.',
           'Conversations with Lumi: while you keep your account or until you delete the history.',
+          'Guest accounts («Try it without signing up») that never save their progress: deleted with all their data after 30 days without signing in.',
           'Contact messages: 12 months after the last reply.',
           'News list: until you unsubscribe.',
         ],

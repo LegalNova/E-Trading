@@ -8,7 +8,7 @@ import { db } from '../db'
 import { viewAs } from '../view'
 import type { Tx } from './core'
 
-export type EventName = 'signup' | 'premium_view' | 'paywall' | 'trial_start' | 'paid' | 'cancel' | 'share' | 'invite' | 'screen_view' | 'lesson_start' | 'lesson_exit' | 'client_error' | 'server_error'
+export type EventName = 'signup' | 'premium_view' | 'paywall' | 'trial_start' | 'paid' | 'cancel' | 'share' | 'invite' | 'screen_view' | 'lesson_start' | 'lesson_exit' | 'client_error' | 'server_error' | 'guest_saved'
 
 export async function track(tx: Tx, userId: string | null, name: EventName, props?: Prisma.InputJsonValue) {
   // Un admin «viendo como» otro usuario no deja rastro en sus datos

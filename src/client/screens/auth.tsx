@@ -3,7 +3,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
 import { api, ApiFailure, type Session } from '../api'
 import { useSession } from '../hooks'
@@ -34,6 +34,84 @@ function OrEmail() {
   const t = useTranslations('auth')
   const { data } = useSession()
   return data?.googleEnabled ? <div className="t-cap text-center">{t('orEmail')}</div> : null
+}
+
+/** «Probar sin registrarme»: entra al momento con una cuenta de invitado */
+export function GuestButton({ className = 'btn btn-plain' }: { className?: string }) {
+  const t = useTranslations('auth')
+  const done = useAfterAuth()
+  const m = useMutation({ mutationFn: api.signInGuest, onSuccess: done })
+  const err = m.error instanceof ApiFailure ? m.error : null
+  return (
+    <>
+      <button type="button" className={className} onClick={() => m.mutate()} disabled={m.isPending}>
+        {t('guest')}
+      </button>
+      {err && <p className="err m-0">{t.has(`errors.${err.code}`) ? t(`errors.${err.code}`) : err.message}</p>}
+    </>
+  )
+}
+
+/** El invitado guarda su progreso: la misma cuenta pasa a tener email y contraseña */
+export function SaveProgress() {
+  const t = useTranslations('guest')
+  const ta = useTranslations('auth')
+  const qc = useQueryClient()
+  const router = useRouter()
+  const { data: session } = useSession()
+  const [email, setEmail] = useState('')
+  const [pass, setPass] = useState('')
+  const m = useMutation({
+    mutationFn: () => api.saveGuest(email, pass),
+    onSuccess: s => {
+      qc.setQueryData(['session'], s)
+      qc.invalidateQueries()
+    },
+  })
+  const err = m.error instanceof ApiFailure ? m.error : null
+  const signedOut = session && !session.signedIn
+  useEffect(() => {
+    if (signedOut) router.replace('/registro')
+  }, [signedOut, router])
+  return (
+    <>
+      <TopBar back="/inicio" title={<Wordmark size={18} />} />
+      {m.isSuccess || (session && session.signedIn && !session.isGuest) ? (
+        <div className="pad items-center pt-10 text-center">
+          <Lumi mood="CELEBRATE" size={72} />
+          <h1 className="t-title">{t('savedTitle')}</h1>
+          <p className="t-foot">{t('savedBody')}</p>
+          <Link href="/inicio" className="btn btn-primary">
+            {t('continue')}
+          </Link>
+        </div>
+      ) : (
+        <form
+          className="pad"
+          onSubmit={e => {
+            e.preventDefault()
+            m.mutate()
+          }}
+        >
+          <h1 className="t-large">{t('saveTitle')}</h1>
+          <p className="t-foot m-0">{t('saveIntro')}</p>
+          <div className="field">
+            <label htmlFor="g-email">Email</label>
+            <input id="g-email" className="input" type="email" autoComplete="email" required value={email} onChange={e => setEmail(e.target.value)} aria-invalid={err?.code === 'VALIDATION_ERROR' || err?.code === 'EMAIL_IN_USE'} />
+          </div>
+          <div className="field">
+            <label htmlFor="g-pass">{ta('password')}</label>
+            <PasswordInput id="g-pass" value={pass} onChange={setPass} invalid={err?.code === 'WEAK_PASSWORD'} />
+            <span className={err?.code === 'WEAK_PASSWORD' ? 'err' : 't-cap'}>{ta('passwordRule')}</span>
+          </div>
+          {err && err.code !== 'WEAK_PASSWORD' && <p className="err m-0">{ta.has(`errors.${err.code}`) ? ta(`errors.${err.code}`) : err.message}</p>}
+          <button className="btn btn-primary" disabled={m.isPending}>
+            {t('save')}
+          </button>
+        </form>
+      )}
+    </>
+  )
 }
 
 function useAfterAuth() {
@@ -105,6 +183,7 @@ export function SignUp() {
         <button className="btn btn-primary" disabled={m.isPending}>
           {t('signUp')}
         </button>
+        <GuestButton />
         <p className="t-foot m-0 text-center">
           {t('haveAccount')}{' '}
           <Link href="/entrar" className="link">
@@ -150,6 +229,7 @@ export function SignIn() {
         <button className="btn btn-primary" disabled={m.isPending}>
           {t('signIn')}
         </button>
+        <GuestButton />
         <p className="t-foot m-0 text-center">
           {t('noAccount')}{' '}
           <Link href="/registro" className="link">

@@ -12,7 +12,13 @@ export const maxDuration = 60
 export async function GET(req: Request) {
   if (!cronAuthorized(req)) return Response.json({ error: { code: 'UNAUTHORIZED', message: 'No autorizado' } }, { status: 401 })
   const job = new URL(req.url).searchParams.get('job')
-  if (job === 'close') return Response.json(await closeWeek(addDays(weekOf(), -7)))
+  if (job === 'close') {
+    const league = await closeWeek(addDays(weekOf(), -7))
+    // Invitados que no han vuelto en 30 días: se borran con todo su progreso (lo dice la política de privacidad)
+    const old = new Date(Date.now() - 30 * 86_400_000)
+    const guests = await db.user.deleteMany({ where: { isAnonymous: true, createdAt: { lt: old }, sessions: { none: { updatedAt: { gte: old } } } } })
+    return Response.json({ ...league, guestsDeleted: guests.count })
+  }
   if (job === 'remind') {
     const today = dayOf()
     const atRisk = await db.gameState.findMany({ where: { streak: { gt: 0 }, lastActiveDay: { lt: today } }, include: { user: { select: { id: true, blockedAt: true, settings: true } } }, take: 5000 })

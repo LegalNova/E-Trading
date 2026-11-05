@@ -93,6 +93,7 @@ export const ca: Record<LegalSlug, LegalDoc> = {
           'Compte, progrés i simulador: mentre tinguis el compte. En esborrar-lo des de Configuració s’eliminen de seguida; les còpies de seguretat tècniques se sobreescriuen en un màxim de 7 dies.',
           'Registres de seguretat (per exemple, intents d’accés): fins a 12 mesos.',
           'Converses amb la Lumi: mentre tinguis el compte o fins que n’esborris l’historial.',
+          'Comptes de convidat («Provar sense registrar-me») que no desen el progrés: s’esborren amb totes les dades als 30 dies sense entrar.',
           'Missatges de contacte: 12 mesos des de la darrera resposta.',
           'Llista de novetats: fins que et donis de baixa.',
         ],

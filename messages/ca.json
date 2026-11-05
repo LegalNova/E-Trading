@@ -101,7 +101,8 @@
     "cookies": "Política de galetes",
     "legalNotice": "Avís legal",
     "help": "Ajuda",
-    "purchase": "Contractació"
+    "purchase": "Contractació",
+    "guestNote": "Sense correu ni contrasenya. Si t’agrada, deses el progrés quan vulguis."
   },
   "auth": {
     "signUpTitle": "Crea el teu compte",
@@ -125,7 +126,8 @@
       "EMAIL_IN_USE": "Ja hi ha un compte amb aquest email.",
       "VALIDATION_ERROR": "Escriu un email vàlid.",
       "ACCOUNT_BLOCKED": "Aquest compte està bloquejat. Escriu-nos si creus que és un error.",
-      "RATE_LIMITED": "Massa intents. Prova-ho d'aquí a un minut."
+      "RATE_LIMITED": "Massa intents. Prova-ho d'aquí a un minut.",
+      "GUEST_MUST_SAVE": "Desa el teu progrés amb correu i contrasenya per continuar."
     },
     "contact": "Anar a Contacte",
     "resetAsk": "Escriu el correu del teu compte i t'enviem un enllaç per triar una contrasenya nova.",
@@ -134,7 +136,8 @@
     "resetExpired": "L'enllaç ha caducat o ja s'ha fet servir. Demana'n un de nou.",
     "newPassword": "Contrasenya nova",
     "resetSave": "Desar la contrasenya",
-    "resetDone": "Fet. Ja pots entrar amb la contrasenya nova."
+    "resetDone": "Fet. Ja pots entrar amb la contrasenya nova.",
+    "guest": "Provar sense registrar-me"
   },
   "onboarding": {
     "nameTitle": "Com et dius?",
@@ -771,7 +774,8 @@
     "youAre": "Tens el pla {plan}.",
     "upgradeTitle": "Passa’t a Max",
     "upgradeCta": "Passar a Max",
-    "purchaseTerms": "Si continues, acceptes les <terms>Condicions de contractació</terms>: pots cancel·lar quan vulguis i tens 14 dies per desistir."
+    "purchaseTerms": "Si continues, acceptes les <terms>Condicions de contractació</terms>: pots cancel·lar quan vulguis i tens 14 dies per desistir.",
+    "guestSave": "Desa el progrés per provar-lo"
   },
   "settings": {
     "title": "Configuració",
@@ -839,7 +843,6 @@
     "title": "Compte",
     "changePassword": "Canviar la contrasenya",
     "linked": "Comptes vinculats",
-    "stage3": "Disponible quan connectem el backend (etapa 3).",
     "resetTitle": "Reiniciar la cartera",
     "resetBody": "Tornes a {amount} i es tanquen les teves posicions. Conserves XP, ratxa i assoliments. Et queden {n} de 3 aquest any.",
     "reset": "Reiniciar",
@@ -853,7 +856,15 @@
     "deleteBody": "S'esborren el teu perfil, el teu progrés i la teva cartera. No es pot desfer.",
     "deleteWord": "ESBORRAR",
     "deleteType": "Escriu {word} per confirmar",
-    "delete": "Esborrar el meu compte"
+    "delete": "Esborrar el meu compte",
+    "withPassword": "Correu i contrasenya",
+    "createPassword": "Crear una contrasenya",
+    "createPasswordNote": "El teu compte entra amb Google. Amb una contrasenya també podràs entrar amb el teu correu.",
+    "currentPassword": "Contrasenya actual",
+    "newPassword": "Contrasenya nova",
+    "savePassword": "Desar",
+    "passwordChanged": "Contrasenya canviada",
+    "passwordCreated": "Contrasenya creada: ja pots entrar amb el teu correu"
   },
   "admin": {
     "tabs": {
@@ -1414,5 +1425,17 @@
     "body": "Ja ens ha arribat l’avís i ho mirarem. Torna-ho a provar; si continua passant, torna a l’inici.",
     "retry": "Tornar-ho a provar",
     "home": "Anar a l’inici"
+  },
+  "guest": {
+    "bar": "Estàs provant sense compte. Desa el progrés per no perdre’l.",
+    "barCta": "Desar",
+    "saveTitle": "Desa el teu progrés",
+    "saveIntro": "Posa-li correu i contrasenya al teu compte i conserves tot el que has fet: classes, XP, ratxa i cartera.",
+    "save": "Desar el meu progrés",
+    "savedTitle": "Progrés desat",
+    "savedBody": "Ja pots entrar des de qualsevol dispositiu amb el teu correu i la teva contrasenya.",
+    "continue": "Continuar",
+    "accountNote": "Ara estàs sense compte: si tanques la sessió o passen 30 dies sense entrar, es perd el progrés.",
+    "logoutWarning": "Estàs provant sense compte: si surts ara, perdràs el progrés. Vols sortir igualment?"
   }
 }

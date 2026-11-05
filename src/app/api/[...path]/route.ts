@@ -58,6 +58,9 @@ const routes: Route[] = [
   { method: 'GET', path: 'session', run: () => profile.session() },
   { method: 'GET', path: 'onboarding', run: () => profile.onboarding() },
   { method: 'PUT', path: 'onboarding', run: (_r, _p, b) => { const x = z.object({ step: z.number().int().min(1).max(7), patch: draft }).parse(b); return profile.saveOnboarding(x.step, x.patch) } },
+  { method: 'GET', path: 'account/login', run: () => profile.loginMethods() },
+  { method: 'POST', path: 'account/password', run: (_r, _p, b) => { const x = z.object({ current: z.string().max(128).optional(), next: z.string().max(128) }).parse(b); return profile.setOwnPassword(x.current, x.next) } },
+  { method: 'POST', path: 'account/save', run: (_r, _p, b) => { const x = z.object({ email: z.string().max(200), password: z.string().max(128) }).parse(b); return profile.saveGuest(x.email, x.password) } },
   { method: 'POST', path: 'onboarding/complete', run: (_r, _p, b) => profile.completeOnboarding(z.object({ source: z.string().max(80).optional() }).catch({}).parse(b ?? {}).source) },
   // Inicio y perfil
   { method: 'GET', path: 'home', run: () => profile.home() },

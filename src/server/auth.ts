@@ -7,6 +7,7 @@ import { betterAuth } from 'better-auth'
 import { prismaAdapter } from 'better-auth/adapters/prisma'
 import { APIError, createAuthMiddleware } from 'better-auth/api'
 import { nextCookies } from 'better-auth/next-js'
+import { anonymous } from 'better-auth/plugins'
 import { headers } from 'next/headers'
 import { LEGAL_VERSION } from '@/shared/legal'
 import { db } from './db'
@@ -47,13 +48,13 @@ export const auth = betterAuth({
     storage: 'database',
     window: 60,
     max: 60,
-    customRules: { '/request-password-reset': { window: 3600, max: 5 }, '/send-verification-email': { window: 3600, max: 5 }, '/sign-in/email': { window: 300, max: 10 }, '/sign-up/email': { window: 3600, max: 10 }, '/sign-in/social': { window: 60, max: 10 } },
+    customRules: { '/sign-in/anonymous': { window: 3600, max: 10 }, '/request-password-reset': { window: 3600, max: 5 }, '/send-verification-email': { window: 3600, max: 5 }, '/sign-in/email': { window: 300, max: 10 }, '/sign-up/email': { window: 3600, max: 10 }, '/sign-in/social': { window: 60, max: 10 } },
   },
   advanced: { ipAddress: { ipAddressHeaders: ['x-forwarded-for', 'x-real-ip'] }, useSecureCookies: process.env.NODE_ENV === 'production' },
   telemetry: { enabled: false },
   hooks: {
     before: createAuthMiddleware(async ctx => {
-      if (ctx.path !== '/sign-up/email' && ctx.path !== '/reset-password') return
+      if (!['/sign-up/email', '/reset-password', '/change-password', '/set-password'].includes(ctx.path)) return
       const b = ctx.body as { password?: unknown; newPassword?: unknown }
       const pw = String(b?.password ?? b?.newPassword ?? '')
       if (!/\d/.test(pw)) throw new APIError('BAD_REQUEST', { message: 'La contraseña necesita al menos un número', code: 'WEAK_PASSWORD' })
@@ -73,7 +74,11 @@ export const auth = betterAuth({
       },
     },
   },
-  plugins: [nextCookies()],
+  plugins: [
+    // «Probar sin registrarme»: cuenta de invitado al momento; guarda su progreso al poner email y contraseña
+    anonymous({ generateName: () => '', emailDomainName: 'invitado.lumi.app' }),
+    nextCookies(),
+  ],
 })
 
 export const googleEnabled = !!google

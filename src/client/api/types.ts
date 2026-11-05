@@ -14,7 +14,7 @@ export class ApiFailure extends Error {
   }
 }
 
-export interface Session { signedIn: boolean; email: string | null; onboardingStep: number | null; isAdmin: boolean; googleEnabled?: boolean; mailEnabled?: boolean; viewAs?: { id: string; email: string; name: string } | null }
+export interface Session { signedIn: boolean; email: string | null; onboardingStep: number | null; isAdmin: boolean; googleEnabled?: boolean; mailEnabled?: boolean; isGuest?: boolean; viewAs?: { id: string; email: string; name: string } | null }
 
 export interface OnboardingDraft {
   name: string
@@ -116,6 +116,10 @@ export interface Api {
   signUp(email: string, password: string): Promise<Session>
   signInWithGoogle(): Promise<Session>
   signOut(): Promise<void>
+  signInGuest(): Promise<Session>
+  saveGuest(email: string, password: string): Promise<Session>
+  loginMethods(): Promise<{ hasPassword: boolean; google: boolean; isGuest: boolean }>
+  setPassword(current: string | undefined, next: string): Promise<{ ok: boolean }>
   forgotPassword(email: string): Promise<void>
   resetPassword(token: string, password: string): Promise<void>
   onboarding(): Promise<{ step: number; draft: OnboardingDraft }>

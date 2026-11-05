@@ -6,7 +6,8 @@ import type { BillingStatusT, HomeT, MeT, Mood, NotificationT, SettingsT, Streak
 import { addDays, dayOf } from '@/shared/time'
 import type { User } from '@/generated/prisma/client'
 import { db } from '../db'
-import { currentUser, googleEnabled, mailEnabled, realUser } from '../auth'
+import { headers } from 'next/headers'
+import { auth, currentUser, googleEnabled, mailEnabled, realUser } from '../auth'
 import { viewAs } from '../view'
 import { ACHIEVEMENTS } from '../content/catalog'
 import { achievementList, endFx, fail, FREEZE_PRICE, goalDefs, goalsOf, minutesOf, levelOf, levelTitle, LIVES_MAX, livesOf, lumi, MAX_FREEZES, notify, REFILL_PRICE, START_CASH, withCtx } from './core'
@@ -26,9 +27,54 @@ export async function session() {
     isAdmin: (real ?? u)?.role === 'ADMIN',
     googleEnabled,
     mailEnabled,
+    // Cuenta de invitado: aún no ha guardado su progreso con email y contraseña
+    isGuest: !!u?.isAnonymous,
     // Un admin está viendo la app como este usuario (solo lectura)
     viewAs: v && u ? { id: u.id, email: u.email, name: u.name } : null,
   }
+}
+
+/** El invitado guarda su progreso: su misma cuenta pasa a tener email y contraseña (no se pierde nada) */
+export async function saveGuest(email: string, password: string) {
+  const u = await currentUser()
+  if (!u) fail(401, 'UNAUTHORIZED', 'Inicia sesión para continuar')
+  if (!u!.isAnonymous) fail(409, 'NOT_GUEST', 'Tu cuenta ya está guardada')
+  const mail = email.trim().toLowerCase()
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail) || mail.length > 200) fail(422, 'VALIDATION_ERROR', 'Escribe un email válido')
+  if (password.length < 8 || password.length > 128 || !/\d/.test(password)) fail(422, 'WEAK_PASSWORD', 'Mínimo 8 caracteres y un número')
+  if (await db.user.findUnique({ where: { email: mail } })) fail(409, 'EMAIL_IN_USE', 'Ya hay una cuenta con este email')
+  const hash = await (await auth.$context).password.hash(password)
+  await db.$transaction([
+    db.user.update({ where: { id: u!.id }, data: { email: mail, emailVerified: false, isAnonymous: false } }),
+    db.account.create({ data: { id: crypto.randomUUID(), accountId: u!.id, providerId: 'credential', userId: u!.id, password: hash } }),
+    db.event.create({ data: { userId: u!.id, name: 'guest_saved' } }),
+  ])
+  return session()
+}
+
+/** Cómo entra la cuenta: con contraseña, con Google o las dos */
+export async function loginMethods() {
+  const u = await currentUser()
+  if (!u) fail(401, 'UNAUTHORIZED', 'Inicia sesión para continuar')
+  const acc = await db.account.findMany({ where: { userId: u!.id }, select: { providerId: true, password: true } })
+  return { hasPassword: acc.some(a => a.providerId === 'credential' && !!a.password), google: acc.some(a => a.providerId === 'google'), isGuest: !!u!.isAnonymous }
+}
+
+/** Cambiar la contraseña o, si la cuenta solo entraba con Google, crear una para entrar también con email */
+export async function setOwnPassword(current: string | undefined, next: string) {
+  const m = await loginMethods()
+  if (m.isGuest) fail(403, 'GUEST_MUST_SAVE', 'Guarda primero tu progreso con email y contraseña')
+  if (next.length < 8 || next.length > 128 || !/\d/.test(next)) fail(422, 'WEAK_PASSWORD', 'Mínimo 8 caracteres y un número')
+  const h = await headers()
+  try {
+    if (m.hasPassword) await auth.api.changePassword({ body: { currentPassword: current ?? '', newPassword: next, revokeOtherSessions: true }, headers: h })
+    else await auth.api.setPassword({ body: { newPassword: next }, headers: h })
+  } catch (e) {
+    const code = (e as { body?: { code?: string } })?.body?.code
+    if (code === 'INVALID_PASSWORD') fail(422, 'INVALID_CREDENTIALS', 'La contraseña actual no es correcta')
+    throw e
+  }
+  return { ok: true }
 }
 
 export interface Draft { name: string; gender: 'F' | 'M' | 'N'; birthDate: string; experience: 'NONE' | 'SOME' | 'EXPERIENCED'; goals: string[]; dailyGoalMinutes: 5 | 10 | 15 | 20 | 30; skinId: string; companionName: string; disclaimerAccepted: boolean }
@@ -223,6 +269,7 @@ export const billingStatus = () =>
 export const checkout = (planId: string) =>
   withCtx(async c => {
     const plan = PLANS.find(p => p.id === planId) ?? fail(422, 'VALIDATION_ERROR', 'Plan no válido')
+    if (c.user.isAnonymous) fail(403, 'GUEST_MUST_SAVE', 'Guarda tu progreso con email y contraseña para probar Plus o Max')
     if (c.user.onboardingStep !== null) fail(403, 'FORBIDDEN', 'Termina el registro primero')
     if (tierOf(c.user.plan) >= tierOf(plan.tier)) fail(409, 'CONFLICT', 'Ya tienes este plan o uno superior')
     const current = await c.tx.subscription.findUnique({ where: { userId: c.user.id } })

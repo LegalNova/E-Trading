@@ -61,6 +61,8 @@ model User {
   guardianConsent String    @default("NONE") // NONE | PENDING | CONFIRMED | REJECTED
   /** De dónde llegó (primer contacto: utm_source/utm_campaign o código de quien invita) */
   source          String?
+  /** Cuenta de invitado («Probar sin registrarme»): sin email real hasta que guarda su progreso */
+  isAnonymous     Boolean?  @default(false)
 
   sessions      Session[]
   events        Event[]

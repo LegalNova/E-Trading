@@ -9,7 +9,7 @@ import { routing } from '@/i18n/routing'
 import type { GenderT, SettingsT } from '@/shared/contract'
 import { money } from '@/shared/format'
 import { api, ApiFailure } from '../api'
-import { useLang, useMe, usePortfolio, useRefreshAll, useSettings } from '../hooks'
+import { useLang, useMe, usePortfolio, useRefreshAll, useSession, useSettings } from '../hooks'
 import { applyTheme, useToast } from '../providers'
 import { Icon } from '../ui/icons'
 import { ErrorState, PageSkeleton, Section, Seg, Toggle, TopBar } from '../ui/kit'
@@ -18,6 +18,7 @@ import { Lumi } from '../ui/lumi'
 // ── Premium (06.1–06.2) ──────────────────────────────────
 export function Premium() {
   const t = useTranslations('premium')
+  const { data: session } = useSession()
   const locale = useLang()
   const refresh = useRefreshAll()
   const toast = useToast()
@@ -119,9 +120,15 @@ export function Premium() {
             <span className="t-foot">{t('monthlyPrice', { price: money(month.price, 'EUR', locale) })}</span>
           </span>
         </button>
-        <button className="btn btn-primary" onClick={() => checkout.mutate()}>
-          {isPlus ? t('upgradeCta') : t('tryFree', { days: chosen.trialDays, plan: PLAN_NAME[tier] })}
-        </button>
+        {session?.isGuest ? (
+          <Link href="/guardar" className="btn btn-primary">
+            {t('guestSave')}
+          </Link>
+        ) : (
+          <button className="btn btn-primary" onClick={() => checkout.mutate()}>
+            {isPlus ? t('upgradeCta') : t('tryFree', { days: chosen.trialDays, plan: PLAN_NAME[tier] })}
+          </button>
+        )}
         <p className="t-cap m-0 text-center">{t('after', { price: money(chosen.price, 'EUR', locale), per: chosen.interval === 'YEAR' ? t('perYear') : t('perMonth') })}</p>
         <p className="t-cap m-0 text-center">
           {t.rich('purchaseTerms', {
@@ -315,6 +322,69 @@ export function Settings() {
   )
 }
 
+/** Cambiar la contraseña o crear una (si la cuenta solo entraba con Google) */
+function PasswordForm({ hasPassword }: { hasPassword: boolean }) {
+  const t = useTranslations('account')
+  const ta = useTranslations('auth')
+  const toast = useToast()
+  const qc = useQueryClient()
+  const [open, setOpen] = useState(false)
+  const [current, setCurrent] = useState('')
+  const [next, setNext] = useState('')
+  const m = useMutation({
+    mutationFn: () => api.setPassword(hasPassword ? current : undefined, next),
+    onSuccess: () => {
+      setOpen(false)
+      setCurrent('')
+      setNext('')
+      qc.invalidateQueries({ queryKey: ['login-methods'] })
+      toast(hasPassword ? t('passwordChanged') : t('passwordCreated'))
+    },
+  })
+  const err = m.error instanceof ApiFailure ? m.error : null
+  if (!open)
+    return (
+      <button className="li plainline flex-col items-stretch gap-0.5 text-left" onClick={() => setOpen(true)}>
+        <span className="flex items-center justify-between">
+          <span>{hasPassword ? t('changePassword') : t('createPassword')}</span>
+          <Icon name="chev" size={18} />
+        </span>
+        {!hasPassword && <span className="t-cap">{t('createPasswordNote')}</span>}
+      </button>
+    )
+  return (
+    <form
+      className="li plainline flex-col items-stretch gap-2"
+      onSubmit={e => {
+        e.preventDefault()
+        m.mutate()
+      }}
+    >
+      <b>{hasPassword ? t('changePassword') : t('createPassword')}</b>
+      {hasPassword && (
+        <div className="field">
+          <label htmlFor="pw-cur">{t('currentPassword')}</label>
+          <input id="pw-cur" className="input" type="password" autoComplete="current-password" required value={current} onChange={e => setCurrent(e.target.value)} />
+        </div>
+      )}
+      <div className="field">
+        <label htmlFor="pw-new">{t('newPassword')}</label>
+        <input id="pw-new" className="input" type="password" autoComplete="new-password" required value={next} onChange={e => setNext(e.target.value)} aria-invalid={err?.code === 'WEAK_PASSWORD'} />
+        <span className={err?.code === 'WEAK_PASSWORD' ? 'err' : 't-cap'}>{ta('passwordRule')}</span>
+      </div>
+      {err && err.code !== 'WEAK_PASSWORD' && <p className="err m-0">{ta.has(`errors.${err.code}`) ? ta(`errors.${err.code}`) : err.message}</p>}
+      <div className="grid grid-cols-2 gap-2.5">
+        <button type="button" className="btn btn-secondary btn-sm w-full" onClick={() => setOpen(false)}>
+          {t('cancel')}
+        </button>
+        <button className="btn btn-primary btn-sm w-full" disabled={m.isPending}>
+          {t('savePassword')}
+        </button>
+      </div>
+    </form>
+  )
+}
+
 // ── Cuenta, cartera y privacidad (06.4) ──────────────────
 export function Account() {
   const t = useTranslations('account')
@@ -337,14 +407,16 @@ export function Account() {
       const url = URL.createObjectURL(new Blob([json], { type: 'application/json' }))
       const a = document.createElement('a')
       a.href = url
-      a.download = 'e-trading-mis-datos.json'
+      a.download = 'lumi-mis-datos.json'
       a.click()
       URL.revokeObjectURL(url)
     },
   })
+  const { data: login } = useQuery({ queryKey: ['login-methods'], queryFn: api.loginMethods })
+  const tg = useTranslations('guest')
   const logout = useMutation({ mutationFn: api.signOut, onSuccess: () => (qc.clear(), router.replace('/')) })
   const del = useMutation({ mutationFn: api.deleteAccount, onSuccess: () => (qc.clear(), router.replace('/')) })
-  if (!me || !pf) return <PageSkeleton />
+  if (!me || !pf || !login) return <PageSkeleton />
   const start = me.plan !== 'FREE' ? 50000 : 10000
   const word = t('deleteWord')
   return (
@@ -352,18 +424,24 @@ export function Account() {
       <TopBar back="/ajustes" title={t('title')} />
       <div className="pad">
         <div className="list">
-          <div className="li plainline justify-between">
-            <span>Email</span>
-            <span className="muted truncate">{me.email}</span>
-          </div>
-          <button className="li plainline justify-between" onClick={() => toast(t('stage3'))}>
-            <span>{t('changePassword')}</span>
-            <Icon name="chev" size={18} />
-          </button>
-          <div className="li plainline justify-between">
-            <span>{t('linked')}</span>
-            <span className="muted">Google</span>
-          </div>
+          {login.isGuest ? (
+            <Link href="/guardar" className="li plainline flex-col items-stretch gap-1">
+              <b>{tg('saveTitle')}</b>
+              <span className="t-foot">{tg('accountNote')}</span>
+            </Link>
+          ) : (
+            <>
+              <div className="li plainline justify-between">
+                <span>Email</span>
+                <span className="muted truncate">{me.email}</span>
+              </div>
+              <div className="li plainline justify-between">
+                <span>{t('linked')}</span>
+                <span className="muted">{[login.hasPassword && t('withPassword'), login.google && 'Google'].filter(Boolean).join(' · ')}</span>
+              </div>
+              <PasswordForm hasPassword={login.hasPassword} />
+            </>
+          )}
         </div>
 
         <div className="list">
@@ -398,7 +476,7 @@ export function Account() {
             <span>{t('disclaimer')}</span>
             <span className="muted">v1</span>
           </div>
-          <button className="li plainline" onClick={() => logout.mutate()} style={{ color: 'var(--down)', fontWeight: 700 }}>
+          <button className="li plainline" onClick={() => (!login.isGuest || confirm(tg('logoutWarning'))) && logout.mutate()} style={{ color: 'var(--down)', fontWeight: 700 }}>
             {t('logout')}
           </button>
         </div>

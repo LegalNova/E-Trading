@@ -101,7 +101,8 @@
     "cookies": "Política de cookies",
     "legalNotice": "Aviso legal",
     "help": "Ayuda",
-    "purchase": "Contratación"
+    "purchase": "Contratación",
+    "guestNote": "Sin email ni contraseña. Si te gusta, guardas tu progreso cuando quieras."
   },
   "auth": {
     "signUpTitle": "Crea tu cuenta",
@@ -125,7 +126,8 @@
       "EMAIL_IN_USE": "Ya hay una cuenta con este email.",
       "VALIDATION_ERROR": "Escribe un email válido.",
       "ACCOUNT_BLOCKED": "Esta cuenta está bloqueada. Escríbenos si crees que es un error.",
-      "RATE_LIMITED": "Demasiados intentos. Prueba en un minuto."
+      "RATE_LIMITED": "Demasiados intentos. Prueba en un minuto.",
+      "GUEST_MUST_SAVE": "Guarda tu progreso con email y contraseña para seguir."
     },
     "contact": "Ir a Contacto",
     "resetAsk": "Escribe el email de tu cuenta y te enviamos un enlace para elegir una contraseña nueva.",
@@ -134,7 +136,8 @@
     "resetExpired": "El enlace ha caducado o ya se ha usado. Pide uno nuevo.",
     "newPassword": "Contraseña nueva",
     "resetSave": "Guardar contraseña",
-    "resetDone": "Listo. Ya puedes entrar con tu contraseña nueva."
+    "resetDone": "Listo. Ya puedes entrar con tu contraseña nueva.",
+    "guest": "Probar sin registrarme"
   },
   "onboarding": {
     "nameTitle": "¿Cómo te llamas?",
@@ -771,7 +774,8 @@
     "youAre": "Tienes el plan {plan}.",
     "upgradeTitle": "Pásate a Max",
     "upgradeCta": "Pasar a Max",
-    "purchaseTerms": "Al continuar aceptas las <terms>Condiciones de contratación</terms>: puedes cancelar cuando quieras y tienes 14 días para desistir."
+    "purchaseTerms": "Al continuar aceptas las <terms>Condiciones de contratación</terms>: puedes cancelar cuando quieras y tienes 14 días para desistir.",
+    "guestSave": "Guarda tu progreso para probarlo"
   },
   "settings": {
     "title": "Ajustes",
@@ -839,7 +843,6 @@
     "title": "Cuenta",
     "changePassword": "Cambiar contraseña",
     "linked": "Cuentas vinculadas",
-    "stage3": "Disponible cuando conectemos el backend (etapa 3).",
     "resetTitle": "Reiniciar cartera",
     "resetBody": "Vuelves a {amount} y se cierran tus posiciones. Conservas XP, racha y logros. Te quedan {n} de 3 este año.",
     "reset": "Reiniciar",
@@ -853,7 +856,15 @@
     "deleteBody": "Se borran tu perfil, tu progreso y tu cartera. No se puede deshacer.",
     "deleteWord": "BORRAR",
     "deleteType": "Escribe {word} para confirmar",
-    "delete": "Borrar mi cuenta"
+    "delete": "Borrar mi cuenta",
+    "withPassword": "Email y contraseña",
+    "createPassword": "Crear una contraseña",
+    "createPasswordNote": "Tu cuenta entra con Google. Con una contraseña podrás entrar también con tu email.",
+    "currentPassword": "Contraseña actual",
+    "newPassword": "Contraseña nueva",
+    "savePassword": "Guardar",
+    "passwordChanged": "Contraseña cambiada",
+    "passwordCreated": "Contraseña creada: ya puedes entrar con tu email"
   },
   "admin": {
     "tabs": {
@@ -1414,5 +1425,17 @@
     "body": "Ya nos ha llegado el aviso y lo miraremos. Prueba otra vez; si sigue pasando, vuelve al inicio.",
     "retry": "Reintentar",
     "home": "Ir al inicio"
+  },
+  "guest": {
+    "bar": "Estás probando sin cuenta. Guarda tu progreso para no perderlo.",
+    "barCta": "Guardar",
+    "saveTitle": "Guarda tu progreso",
+    "saveIntro": "Ponle email y contraseña a tu cuenta y conservas todo lo que has hecho: clases, XP, racha y cartera.",
+    "save": "Guardar mi progreso",
+    "savedTitle": "Progreso guardado",
+    "savedBody": "Ya puedes entrar desde cualquier dispositivo con tu email y tu contraseña.",
+    "continue": "Seguir",
+    "accountNote": "Ahora estás sin cuenta: si cierras la sesión o pasan 30 días sin entrar, se pierde tu progreso.",
+    "logoutWarning": "Estás probando sin cuenta: si sales ahora, perderás tu progreso. ¿Salir igualmente?"
   }
 }

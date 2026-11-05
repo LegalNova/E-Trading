@@ -70,6 +70,13 @@ export const httpApi: Api = {
     return new Promise(() => {}) // la página se va a Google
   },
   signOut: async () => void (await post('/auth/sign-out')),
+  signInGuest: async () => {
+    await auth('/sign-in/anonymous', {})
+    return get('/session')
+  },
+  saveGuest: (email, password) => post('/account/save', { email: email.trim(), password }),
+  loginMethods: () => get('/account/login'),
+  setPassword: (current, next) => post('/account/password', { current, next }),
   // El servidor responde igual exista o no la cuenta (no revela quién está registrado)
   forgotPassword: async email => {
     if (!/^\S+@\S+\.\S+$/.test(email)) throw new ApiFailure('VALIDATION_ERROR', 'Escribe un email válido', 422)

@@ -114,6 +114,7 @@ export const es: Record<LegalSlug, LegalDoc> = {
           'Cuenta, progreso y simulador: mientras tengas la cuenta. Al borrarla desde Ajustes se eliminan de inmediato; las copias de seguridad técnicas se sobrescriben en un máximo de 7 días.',
           'Registros de seguridad (por ejemplo, intentos de acceso): hasta 12 meses.',
           'Conversaciones con Lumi: mientras tengas la cuenta o hasta que borres el historial.',
+          'Cuentas de invitado («Probar sin registrarme») que no guardan su progreso: se borran con todos sus datos a los 30 días sin entrar.',
           'Mensajes de contacto: 12 meses desde la última respuesta.',
           'Lista de novedades: hasta que te des de baja.',
         ],

@@ -101,7 +101,8 @@
     "cookies": "Cookie policy",
     "legalNotice": "Legal notice",
     "help": "Help",
-    "purchase": "Terms of purchase"
+    "purchase": "Terms of purchase",
+    "guestNote": "No email or password. If you like it, save your progress whenever you want."
   },
   "auth": {
     "signUpTitle": "Create your account",
@@ -125,7 +126,8 @@
       "EMAIL_IN_USE": "There's already an account with this email.",
       "VALIDATION_ERROR": "Enter a valid email.",
       "ACCOUNT_BLOCKED": "This account is blocked. Write to us if you think it's a mistake.",
-      "RATE_LIMITED": "Too many attempts. Try again in a minute."
+      "RATE_LIMITED": "Too many attempts. Try again in a minute.",
+      "GUEST_MUST_SAVE": "Save your progress with an email and password to continue."
     },
     "contact": "Go to Contact",
     "resetAsk": "Enter your account email and we'll send you a link to choose a new password.",
@@ -134,7 +136,8 @@
     "resetExpired": "This link has expired or was already used. Ask for a new one.",
     "newPassword": "New password",
     "resetSave": "Save password",
-    "resetDone": "Done. You can now sign in with your new password."
+    "resetDone": "Done. You can now sign in with your new password.",
+    "guest": "Try it without signing up"
   },
   "onboarding": {
     "nameTitle": "What's your name?",
@@ -771,7 +774,8 @@
     "youAre": "You’re on the {plan} plan.",
     "upgradeTitle": "Upgrade to Max",
     "upgradeCta": "Upgrade to Max",
-    "purchaseTerms": "By continuing you accept the <terms>Terms of purchase</terms>: you can cancel at any time and you have 14 days to withdraw."
+    "purchaseTerms": "By continuing you accept the <terms>Terms of purchase</terms>: you can cancel at any time and you have 14 days to withdraw.",
+    "guestSave": "Save your progress to try it"
   },
   "settings": {
     "title": "Settings",
@@ -839,7 +843,6 @@
     "title": "Account",
     "changePassword": "Change password",
     "linked": "Linked accounts",
-    "stage3": "Available once we connect the backend (stage 3).",
     "resetTitle": "Reset portfolio",
     "resetBody": "You go back to {amount} and your positions are closed. You keep your XP, streak and achievements. {n} of 3 resets left this year.",
     "reset": "Reset",
@@ -853,7 +856,15 @@
     "deleteBody": "Your profile, progress and portfolio are deleted. This can't be undone.",
     "deleteWord": "DELETE",
     "deleteType": "Type {word} to confirm",
-    "delete": "Delete my account"
+    "delete": "Delete my account",
+    "withPassword": "Email and password",
+    "createPassword": "Create a password",
+    "createPasswordNote": "Your account signs in with Google. With a password you can also sign in with your email.",
+    "currentPassword": "Current password",
+    "newPassword": "New password",
+    "savePassword": "Save",
+    "passwordChanged": "Password changed",
+    "passwordCreated": "Password created: you can now sign in with your email"
   },
   "admin": {
     "tabs": {
@@ -1414,5 +1425,17 @@
     "body": "We’ve been notified and will look into it. Try again; if it keeps happening, go back to the start.",
     "retry": "Try again",
     "home": "Go to the start"
+  },
+  "guest": {
+    "bar": "You’re trying Lumi without an account. Save your progress so you don’t lose it.",
+    "barCta": "Save",
+    "saveTitle": "Save your progress",
+    "saveIntro": "Add an email and password to your account and keep everything you’ve done: lessons, XP, streak and portfolio.",
+    "save": "Save my progress",
+    "savedTitle": "Progress saved",
+    "savedBody": "You can now sign in from any device with your email and password.",
+    "continue": "Continue",
+    "accountNote": "You don’t have an account yet: if you sign out or don’t come back for 30 days, your progress is lost.",
+    "logoutWarning": "You’re trying Lumi without an account: if you sign out now, you’ll lose your progress. Sign out anyway?"
   }
 }

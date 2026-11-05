@@ -127,8 +127,6 @@ async function rollover(c: Ctx) {
   if (g.weekKey !== wk) {
     g.weekKey = wk
     g.weekXp = 0
-    // Max: un protector de racha cada semana (sin pasar del máximo)
-    if (c.user.plan === 'PREMIUM' && g.freezes < MAX_FREEZES) g.freezes++
   }
   if (g.tradesDay !== today) {
     g.tradesDay = today

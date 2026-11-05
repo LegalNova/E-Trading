@@ -59,6 +59,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <div className="flex min-h-dvh min-w-0 flex-1 flex-col">
         {/* Las pantallas del Mercado (marcadas con .wide) usan una columna más ancha */}
         <main className="mx-auto w-full max-w-[600px] flex-1 pb-[calc(76px+env(safe-area-inset-bottom))] has-[.wide]:max-w-[1120px] md:pt-6 md:pb-10" style={{ paddingTop: 'max(8px, env(safe-area-inset-top))' }}>
+          {/* Invitado: recordatorio para guardar su progreso */}
+          <Suspense>
+            <GuestBar />
+          </Suspense>
           {/* La página se pinta siempre (navegación instantánea); se oculta hasta confirmar la sesión */}
           <div hidden={!ready}>{children}</div>
           {!ready && <PageSkeleton />}
@@ -74,6 +78,19 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </Suspense>
       </nav>
     </div>
+  )
+}
+
+function GuestBar() {
+  const t = useTranslations('guest')
+  const { data } = useSession()
+  if (!data?.isGuest) return null
+  return (
+    <Link href="/guardar" className="mx-4 mb-2 flex items-center gap-2 rounded-xl px-3.5 py-2.5 text-[13px] font-bold" style={{ background: 'color-mix(in srgb, var(--brand) 12%, transparent)', color: 'var(--ink)' }}>
+      <Icon name="user" size={18} />
+      <span className="flex-1">{t('bar')}</span>
+      <span style={{ color: 'var(--brand)' }}>{t('barCta')}</span>
+    </Link>
   )
 }
 
