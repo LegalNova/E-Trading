@@ -4,6 +4,10 @@ import { withLocale } from '@/server/locale'
 import { z } from 'zod'
 import { HttpError } from '@/server/game/core'
 import * as admin from '@/server/game/admin'
+import { recordClientEvent } from '@/server/game/analytics'
+import { lens, lessonTable, type LensRange } from '@/server/game/lens'
+import { realUser } from '@/server/auth'
+import { withViewAs } from '@/server/view'
 import * as learning from '@/server/game/learning'
 import * as profile from '@/server/game/profile'
 import * as trading from '@/server/game/trading'
@@ -42,6 +46,11 @@ const settings = z
 const range = (req: NextRequest) => {
   const r = req.nextUrl.searchParams.get('range')
   return (['1W', '1M', '3M', 'ALL'].includes(r ?? '') ? r : '1M') as '1W' | '1M' | '3M' | 'ALL'
+}
+
+const lensRange = (req: NextRequest): LensRange => {
+  const r = req.nextUrl.searchParams.get('range')
+  return r === '7d' || r === 'all' ? r : '30d'
 }
 
 const routes: Route[] = [
@@ -108,6 +117,12 @@ const routes: Route[] = [
   { method: 'GET', path: 'admin/users', run: r => admin.users(r.nextUrl.searchParams.get('q')?.slice(0, 100) || undefined) },
   { method: 'GET', path: 'admin/audit', run: () => admin.audit() },
   { method: 'GET', path: 'admin/content', run: () => admin.content() },
+  { method: 'GET', path: 'admin/lens', run: async r => { await admin.requireAdmin(); return lens(r.nextUrl.searchParams.get('path')?.slice(0, 200) ?? '/', lensRange(r)) } },
+  { method: 'GET', path: 'admin/lessons', run: async r => { await admin.requireAdmin(); return lessonTable(lensRange(r)) } },
+  { method: 'GET', path: 'admin/users/:id', run: (_r, p) => admin.userDetail(p[0]) },
+  { method: 'POST', path: 'admin/users/:id/view-as', run: (_r, p) => admin.startViewAs(p[0]) },
+  // Analítica propia: pantallas vistas y dónde se deja una clase
+  { method: 'POST', path: 'events', run: (_r, _p, b) => recordClientEvent(b) },
 ]
 
 function match(method: string, parts: string[]) {
@@ -149,8 +164,17 @@ async function handle(req: NextRequest, ctx: RouteContext<'/api/[...path]'>) {
       if (text.length > MAX_BODY) return Response.json({ error: { code: 'VALIDATION_ERROR', message: 'Petición demasiado grande' } }, { status: 413 })
       body = text ? JSON.parse(text) : {}
     }
+    // «Ver como» (solo ADMIN): la app responde con los datos del usuario elegido y no deja cambiar nada
+    const asId = req.headers.get('x-view-as')
+    let view: { targetId: string; adminId: string } | null = null
+    if (asId) {
+      const admin = await realUser()
+      if (admin?.role !== 'ADMIN') return Response.json({ error: { code: 'FORBIDDEN', message: 'Solo para administración' } }, { status: 403 })
+      if (mutating && !path.join('/').startsWith('admin/')) return Response.json({ error: { code: 'VIEW_ONLY', message: 'Estás viendo la app como otro usuario: solo lectura.' } }, { status: 403 })
+      view = { targetId: asId.slice(0, 64), adminId: admin.id }
+    }
     // Los textos del curso y del motor salen en el idioma de la pantalla del móvil
-    const out = await withLocale(req.headers.get('x-locale'), () => m.r.run(req, m.params, body))
+    const out = await withLocale(req.headers.get('x-locale'), () => withViewAs(view, () => m.r.run(req, m.params, body)))
     return out === undefined ? new Response(null, { status: 204 }) : Response.json(out, { headers: { 'Cache-Control': 'no-store' } })
   } catch (e) {
     if (e instanceof HttpError) return Response.json({ error: { code: e.code, message: e.message } }, { status: e.status })

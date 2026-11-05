@@ -6,7 +6,8 @@ import type { BillingStatusT, HomeT, MeT, Mood, NotificationT, SettingsT, Streak
 import { addDays, dayOf } from '@/shared/time'
 import type { User } from '@/generated/prisma/client'
 import { db } from '../db'
-import { currentUser, googleEnabled, mailEnabled } from '../auth'
+import { currentUser, googleEnabled, mailEnabled, realUser } from '../auth'
+import { viewAs } from '../view'
 import { ACHIEVEMENTS } from '../content/catalog'
 import { achievementList, endFx, fail, FREEZE_PRICE, goalDefs, goalsOf, minutesOf, levelOf, levelTitle, LIVES_MAX, livesOf, lumi, MAX_FREEZES, notify, REFILL_PRICE, START_CASH, withCtx } from './core'
 import { ALL_Q, pathOf } from './learning'
@@ -16,8 +17,18 @@ const DAY_MS = 86_400_000
 
 // ── Sesión y onboarding ──────────────────────────────────
 export async function session() {
-  const u = await currentUser()
-  return { signedIn: !!u, email: u?.email ?? null, onboardingStep: u ? u.onboardingStep : null, isAdmin: u?.role === 'ADMIN', googleEnabled, mailEnabled }
+  const v = viewAs()
+  const [u, real] = await Promise.all([currentUser(), v ? realUser() : null])
+  return {
+    signedIn: !!u,
+    email: u?.email ?? null,
+    onboardingStep: u ? u.onboardingStep : null,
+    isAdmin: (real ?? u)?.role === 'ADMIN',
+    googleEnabled,
+    mailEnabled,
+    // Un admin está viendo la app como este usuario (solo lectura)
+    viewAs: v && u ? { id: u.id, email: u.email, name: u.name } : null,
+  }
 }
 
 export interface Draft { name: string; gender: 'F' | 'M' | 'N'; birthDate: string; experience: 'NONE' | 'SOME' | 'EXPERIENCED'; goals: string[]; dailyGoalMinutes: 5 | 10 | 15 | 20 | 30; skinId: string; companionName: string; disclaimerAccepted: boolean }

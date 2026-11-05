@@ -87,7 +87,7 @@ export function Tutor({ lessonTitle }: { lessonTitle?: string }) {
             return (
               <button key={m} aria-pressed={mode === m} onClick={() => setMode(m)}>
                 {t(`mode.${m}`)}
-                {locked && ' 🔒'}
+                {locked && <> <Icon name="lock" size={12} className="mb-0.5 inline-block align-middle" /></>}
               </button>
             )
           })}

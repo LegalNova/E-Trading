@@ -2,13 +2,16 @@ import 'server-only'
 // Panel de administración (07). Solo ADMIN. Cifras reales de la base de datos; «null» = vacío real.
 import { addDays, dayOf, weekOf } from '@/shared/time'
 import { db } from '../db'
-import { ACHIEVEMENTS, QUIZZES, UNITS } from '../content/catalog'
-import { fail, requireUser } from './core'
+import { ACHIEVEMENTS, LESSON, QUIZZES, UNITS } from '../content/catalog'
+import { realUser } from '../auth'
+import { fail, levelOf } from './core'
 
+/** Siempre quien ha iniciado sesión de verdad: también mientras «ve como» otro usuario */
 export async function requireAdmin() {
-  const u = await requireUser()
-  if (u.role !== 'ADMIN') fail(403, 'FORBIDDEN', 'Solo para administración')
-  return u
+  const u = await realUser()
+  if (!u) fail(401, 'UNAUTHORIZED', 'Inicia sesión para continuar')
+  if (u!.role !== 'ADMIN') fail(403, 'FORBIDDEN', 'Solo para administración')
+  return u!
 }
 
 export async function metrics(range: '7d' | '30d' | '90d') {
@@ -122,7 +125,61 @@ export async function users(q?: string) {
   await requireAdmin()
   const where = q ? { OR: [{ email: { contains: q, mode: 'insensitive' as const } }, { name: { contains: q, mode: 'insensitive' as const } }] } : {}
   const rows = await db.user.findMany({ where, orderBy: { createdAt: 'desc' }, take: 50, include: { game: { select: { xp: true, lastActiveDay: true } } } })
-  return rows.map(u => ({ id: u.id, name: u.name || '—', email: u.email, plan: u.plan, createdAt: u.createdAt.toISOString(), lastActive: u.game?.lastActiveDay ?? '—', blocked: !!u.blockedAt, xp: u.game?.xp ?? 0 }))
+  return rows.map(u => ({ id: u.id, name: u.name || '—', email: u.email, plan: u.plan, createdAt: u.createdAt.toISOString(), lastActive: u.game?.lastActiveDay ?? '—', blocked: !!u.blockedAt, xp: u.game?.xp ?? 0, source: u.source }))
+}
+
+/** Ficha completa de un usuario: perfil, progreso, operaciones y su historial de eventos */
+export async function userDetail(id: string) {
+  await requireAdmin()
+  const u = await db.user.findUnique({ where: { id }, include: { game: true, portfolio: true, subscription: true, accounts: { select: { providerId: true } } } })
+  if (!u) fail(404, 'NOT_FOUND', 'Usuario no encontrado')
+  const [lessons, lessonsDone, answers, trades, tradeCount, positions, tutor, badges, events, sessions] = await Promise.all([
+    db.lessonProgress.findMany({ where: { userId: id }, orderBy: { completedAt: 'desc' }, take: 10 }),
+    db.lessonProgress.count({ where: { userId: id, skipped: false } }),
+    db.quizAnswer.groupBy({ by: ['correct'], where: { attempt: { userId: id } }, _count: { _all: true } }),
+    db.trade.findMany({ where: { userId: id }, orderBy: { createdAt: 'desc' }, take: 10 }),
+    db.trade.count({ where: { userId: id, status: 'FILLED' } }),
+    db.position.count({ where: { userId: id } }),
+    db.tutorMessage.count({ where: { userId: id, role: 'user' } }),
+    db.userAchievement.count({ where: { userId: id } }),
+    db.event.findMany({ where: { userId: id }, orderBy: { createdAt: 'desc' }, take: 40 }),
+    db.session.findFirst({ where: { userId: id }, orderBy: { updatedAt: 'desc' }, select: { updatedAt: true } }),
+  ])
+  const right = answers.find(a => a.correct)?._count._all ?? 0
+  const total = answers.reduce((a, x) => a + x._count._all, 0)
+  const g = u!.game
+  const ob = (u!.onboarding ?? {}) as { experience?: string; goals?: string[]; dailyGoalMinutes?: number }
+  return {
+    id: u!.id,
+    name: u!.name || '—',
+    email: u!.email,
+    emailVerified: u!.emailVerified,
+    login: u!.accounts.map(a => (a.providerId === 'credential' ? 'email' : a.providerId)),
+    plan: u!.plan,
+    subscription: u!.subscription ? { status: u!.subscription.status, trialEndsAt: u!.subscription.trialEndsAt?.toISOString() ?? null } : null,
+    source: u!.source,
+    locale: u!.locale,
+    createdAt: u!.createdAt.toISOString(),
+    lastSeen: sessions?.updatedAt.toISOString() ?? null,
+    lastActive: g?.lastActiveDay ?? null,
+    blocked: !!u!.blockedAt,
+    onboarding: { done: u!.onboardingStep === null, step: u!.onboardingStep, experience: ob.experience ?? null, goals: ob.goals ?? [], minutes: ob.dailyGoalMinutes ?? null },
+    game: g ? { xp: g.xp, level: levelOf(g.xp).n, streak: g.streak, bestStreak: g.bestStreak, gems: g.gems, lives: g.lives, division: g.division, weekXp: g.weekXp } : null,
+    learning: { lessonsDone, accuracy: total ? Math.round((right / total) * 100) : null, answers: total, last: lessons.map(l => ({ id: l.lessonId, title: LESSON[l.lessonId]?.title ?? l.lessonId, skipped: l.skipped, stars: l.stars, at: l.completedAt.toISOString() })) },
+    market: { cash: u!.portfolio ? Number(u!.portfolio.cash) : null, positions, trades: tradeCount, last: trades.map(t => ({ symbol: t.symbol, side: t.side, total: Number(t.total), status: t.status, at: t.createdAt.toISOString() })) },
+    tutorQuestions: tutor,
+    badges,
+    events: events.map(e => ({ name: e.name, props: e.props, at: e.createdAt.toISOString() })),
+  }
+}
+
+/** Empieza a «ver como»: queda apuntado en la auditoría */
+export async function startViewAs(id: string) {
+  const a = await requireAdmin()
+  const u = await db.user.findUnique({ where: { id }, select: { id: true, email: true } })
+  if (!u) fail(404, 'NOT_FOUND', 'Usuario no encontrado')
+  await db.auditLog.create({ data: { actor: a.email, action: 'VIEW_AS', entity: 'User', entityId: u!.id } })
+  return { id: u!.id, email: u!.email }
 }
 
 export async function audit() {

@@ -11,6 +11,7 @@ import { headers } from 'next/headers'
 import { LEGAL_VERSION } from '@/shared/legal'
 import { db } from './db'
 import { langOf, mailEnabled, sendTemplate } from './mail'
+import { viewAs } from './view'
 
 const admins = (process.env.ADMIN_EMAILS ?? '').split(',').map(e => e.trim().toLowerCase()).filter(Boolean)
 const google = process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET ? { clientId: process.env.GOOGLE_CLIENT_ID, clientSecret: process.env.GOOGLE_CLIENT_SECRET } : null
@@ -78,10 +79,17 @@ export const auth = betterAuth({
 export const googleEnabled = !!google
 export { mailEnabled }
 
-/** Usuario de la sesión actual (o null). Lee la cookie de la petición. */
-export async function currentUser() {
+/** Quien ha iniciado sesión de verdad (o null). Lee la cookie de la petición. */
+export async function realUser() {
   const s = await auth.api.getSession({ headers: await headers() })
   if (!s) return null
   const u = await db.user.findUnique({ where: { id: s.user.id } })
   return u && !u.blockedAt ? u : null
+}
+
+/** Usuario de la sesión actual: el real o, si un admin está «viendo como», el usuario elegido */
+export async function currentUser() {
+  const v = viewAs()
+  if (v) return db.user.findUnique({ where: { id: v.targetId } })
+  return realUser()
 }

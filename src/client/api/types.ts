@@ -14,7 +14,7 @@ export class ApiFailure extends Error {
   }
 }
 
-export interface Session { signedIn: boolean; email: string | null; onboardingStep: number | null; isAdmin: boolean; googleEnabled?: boolean; mailEnabled?: boolean }
+export interface Session { signedIn: boolean; email: string | null; onboardingStep: number | null; isAdmin: boolean; googleEnabled?: boolean; mailEnabled?: boolean; viewAs?: { id: string; email: string; name: string } | null }
 
 export interface OnboardingDraft {
   name: string
@@ -62,7 +62,39 @@ export interface AdminMetrics {
   money: { key: 'premium_view' | 'paywall' | 'trial_start' | 'paid' | 'cancel'; value: number }[]
   sources: { source: string; users: number; trials: number; paid: number }[]
 }
-export interface AdminUser { id: string; name: string; email: string; plan: 'FREE' | 'PLUS' | 'PREMIUM'; createdAt: string; lastActive: string; blocked: boolean; xp: number }
+export interface AdminUser { id: string; name: string; email: string; plan: 'FREE' | 'PLUS' | 'PREMIUM'; createdAt: string; lastActive: string; blocked: boolean; xp: number; source: string | null }
+export type LensRange = '7d' | '30d' | 'all'
+type Cell = string | number | null
+export interface Lens {
+  title: string
+  kpis: { label: string; value: Cell; hint?: string }[]
+  bars?: { title: string; items: { label: string; value: number }[]; unit?: string }[]
+  tables?: { title: string; head: string[]; rows: Cell[][]; note?: string }[]
+  note?: string
+}
+export interface AdminLessonRow { id: string; unit: number; unitTitle: string; title: string; starts: number; quiz: number; done: number; skipped: number; completion: number | null }
+export interface AdminUserDetail {
+  id: string
+  name: string
+  email: string
+  emailVerified: boolean
+  login: string[]
+  plan: 'FREE' | 'PLUS' | 'PREMIUM'
+  subscription: { status: string; trialEndsAt: string | null } | null
+  source: string | null
+  locale: string
+  createdAt: string
+  lastSeen: string | null
+  lastActive: string | null
+  blocked: boolean
+  onboarding: { done: boolean; step: number | null; experience: string | null; goals: string[]; minutes: number | null }
+  game: { xp: number; level: number; streak: number; bestStreak: number; gems: number; lives: number; division: number; weekXp: number } | null
+  learning: { lessonsDone: number; accuracy: number | null; answers: number; last: { id: string; title: string; skipped: boolean; stars: number; at: string }[] }
+  market: { cash: number | null; positions: number; trades: number; last: { symbol: string; side: string; total: number; status: string; at: string }[] }
+  tutorQuestions: number
+  badges: number
+  events: { name: string; props: unknown; at: string }[]
+}
 export interface AdminQuestion { id: string; type: string; prompt: string; options: string[]; solution: number | number[] | string; explanation: string }
 export interface AdminContent { units: { id: string; order: number; title: string; lessons: { id: string; title: string; quizId: string }[] }[]; quizzes: Record<string, AdminQuestion[]>; achievements: number }
 export interface AuditEntry { id: string; actor: string; action: string; entity: string; createdAt: string }
@@ -152,4 +184,10 @@ export interface Api {
   adminUsers(q?: string): Promise<AdminUser[]>
   adminAudit(): Promise<AuditEntry[]>
   adminContent(): Promise<AdminContent>
+  adminLens(path: string, range: LensRange): Promise<Lens>
+  adminLessons(range: LensRange): Promise<AdminLessonRow[]>
+  adminUser(id: string): Promise<AdminUserDetail>
+  adminViewAs(id: string): Promise<{ id: string; email: string }>
+  // Analítica propia (no bloquea nada si falla)
+  trackEvent(e: { name: 'screen_view'; path: string } | { name: 'lesson_exit'; lessonId: string; step: number; of: number }): void
 }

@@ -9,6 +9,7 @@ import { currentUser } from '../auth'
 import { ACHIEVEMENTS, LEVEL_TITLES, LUMI, RISK_LESSON, UNITS } from '../content/catalog'
 import { achievementT } from '../content/translate'
 import { currentLocale } from '../locale'
+import { viewAs } from '../view'
 
 export class HttpError extends Error {
   constructor(public status: number, public code: string, message: string) {
@@ -65,12 +66,27 @@ export async function requireUser(): Promise<User> {
   return u!
 }
 
+/** Sale de la transacción deshaciéndola, pero con la respuesta ya calculada («ver como»: solo lectura) */
+class ReadOnlyResult {
+  constructor(readonly out: unknown) {}
+}
+
 /**
  * Ejecuta una acción del usuario en una transacción: carga (o crea) su estado de juego,
  * aplica el mantenimiento del día (racha, vidas, objetivos) y lo guarda al terminar.
  */
 export async function withCtx<T>(fn: (c: Ctx) => Promise<T>, user?: User): Promise<T> {
   const u0 = user ?? (await requireUser())
+  const readOnly = !!viewAs()
+  try {
+    return await inCtx(fn, u0, readOnly)
+  } catch (e) {
+    if (e instanceof ReadOnlyResult) return e.out as T
+    throw e
+  }
+}
+
+function inCtx<T>(fn: (c: Ctx) => Promise<T>, u0: User, readOnly: boolean): Promise<T> {
   return db.$transaction(
     async tx => {
       await tx.gameState.upsert({ where: { userId: u0.id }, create: { userId: u0.id }, update: {} })
@@ -85,6 +101,7 @@ export async function withCtx<T>(fn: (c: Ctx) => Promise<T>, user?: User): Promi
       if (c.g.weekXp > 0) await (await import('./league')).ensureMembership(c)
       const { xp, weekKey, weekXp, gems, lives, livesUpdatedAt, streak, bestStreak, lastActiveDay, freezes, placementDone, tradesDay, tradesToday, division } = c.g
       await tx.gameState.update({ where: { userId: u.id }, data: { xp, weekKey, weekXp, gems, lives, livesUpdatedAt, streak, bestStreak, lastActiveDay, freezes, placementDone, tradesDay, tradesToday, division, counters: c.counters } })
+      if (readOnly) throw new ReadOnlyResult(out)
       return out
     },
     { timeout: 20_000, maxWait: 10_000 },

@@ -4,6 +4,7 @@
 import { Suspense, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
+import { AdminLayer } from './admin-layer'
 import { useSession } from './hooks'
 import { Icon, Wordmark, type IconName } from './ui/icons'
 import { PageSkeleton } from './ui/kit'
@@ -64,6 +65,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </main>
       </div>
 
+      <Suspense>
+        <AdminLayer />
+      </Suspense>
       <nav aria-label={t('label')} className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-5 border-t px-1.5 pt-1.5 md:hidden" style={{ borderColor: 'var(--line)', background: 'color-mix(in srgb, var(--surface) 92%, transparent)', backdropFilter: 'saturate(180%) blur(20px)', WebkitBackdropFilter: 'saturate(180%) blur(20px)', paddingBottom: 'max(8px, env(safe-area-inset-bottom))' }}>
         <Suspense>
           <BottomLinks />
@@ -124,6 +128,9 @@ export function FocusShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="mx-auto flex min-h-dvh w-full max-w-[600px] flex-col" style={{ paddingTop: 'max(8px, env(safe-area-inset-top))' }}>
       {children}
+      <Suspense>
+        <AdminLayer />
+      </Suspense>
     </div>
   )
 }

@@ -1,29 +1,25 @@
 // Primer contacto: de dónde llegó el usuario (?utm_source=tiktok, ?ref=creador…).
-// Se guarda la primera vez en este navegador y se envía al terminar el onboarding.
-const KEY = 'lumi:source'
+// Se guarda solo en memoria mientras navega por la app (nada en el dispositivo, así no hace falta
+// pedir permiso de cookies) y se envía al terminar el onboarding. Con Google viaja en la URL de vuelta (?src=).
+let source: string | null = null
 
 export function captureSource() {
+  if (source) return
   try {
-    if (localStorage.getItem(KEY)) return
     const q = new URLSearchParams(location.search)
+    const src = q.get('src')
     const ref = q.get('ref')
     const utm = q.get('utm_source')
     const camp = q.get('utm_campaign')
-    let src = ref ? `ref/${ref}` : utm ? (camp ? `${utm}/${camp}` : utm) : null
-    if (!src && document.referrer) {
+    let s = src ?? (ref ? `ref/${ref}` : utm ? (camp ? `${utm}/${camp}` : utm) : null)
+    if (!s && document.referrer) {
       const host = new URL(document.referrer).hostname.replace(/^www\./, '')
-      if (host && host !== location.hostname) src = host
+      if (host && host !== location.hostname) s = host
     }
-    localStorage.setItem(KEY, (src ?? 'direct').slice(0, 80))
+    source = (s ?? 'direct').slice(0, 80)
   } catch {
-    // Sin almacenamiento (modo privado): no pasa nada
+    source = 'direct'
   }
 }
 
-export function readSource(): string | undefined {
-  try {
-    return localStorage.getItem(KEY) ?? undefined
-  } catch {
-    return undefined
-  }
-}
+export const readSource = (): string | undefined => source ?? undefined

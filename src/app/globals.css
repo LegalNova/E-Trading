@@ -280,3 +280,10 @@ button { cursor: pointer; }
 @keyframes lumi-jelly { 0%, 100% { transform: scale(1, 1) } 50% { transform: scale(1.03, .97) } }
 @keyframes lumi-hop { 0%, 100% { transform: translateY(0) scale(1, 1) } 30% { transform: translateY(0) scale(1.08, .9) } 60% { transform: translateY(-4px) scale(.95, 1.06) } }
 @keyframes lumi-bubble { 0%, 100% { opacity: .25 } 50% { opacity: .6 } }
+
+/* Capa de datos del equipo abierta: en pantallas grandes la app deja sitio al panel */
+@media (min-width: 768px) {
+  html[data-lens='open'] body {
+    padding-right: 380px;
+  }
+}

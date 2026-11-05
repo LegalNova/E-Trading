@@ -10,7 +10,7 @@ import { numChoices } from '../content/choices'
 import { engineT, lessonTitleT, questionT, stepsT, unitT } from '../content/translate'
 import { currentLocale } from '../locale'
 import { afterReview } from './srs'
-import { trackDaily } from './analytics'
+import { trackDaily, trackLessonStart } from './analytics'
 import { addXp, bump, bumpGoal, endFx, fail, LIVES_MAX, livesOf, lumi, markActive, minutesOf, withCtx, type Ctx, type Tx } from './core'
 
 export const ALL_Q: Record<string, ContentQuestion> = Object.fromEntries([...Object.values(QUIZZES).flat(), ...PLACEMENT].map(q => [q.id, q]))
@@ -89,6 +89,7 @@ export async function lesson(user: User, tx: Tx, id: string): Promise<LessonT> {
   if (st.requiresPremium) fail(403, 'FEATURE_LOCKED', st.requiredPlan === 'PLUS' ? 'Esta lección está en el plan Plus' : 'Esta lección está en el plan Max')
   // Las lecciones se abren en orden: no se puede saltar a una bloqueada desde la URL
   if (st.status === 'LOCKED') fail(403, 'LESSON_LOCKED', 'Termina la lección anterior para abrir esta')
+  await trackLessonStart(tx, user.id, id)
   const loc = currentLocale()
   const e = engineT(loc)
   const title = lessonTitleT(loc, id, l.title)

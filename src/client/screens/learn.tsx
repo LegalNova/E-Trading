@@ -2,7 +2,7 @@
 // 03.1 Inicio · 03.2 Camino de clases · 03.3–03.4 Pasos de lección
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { useTranslations } from 'next-intl'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
 import type { CoursePathT, LessonStepT, PathLessonT } from '@/shared/contract'
 import { money, num, signedMoney } from '@/shared/format'
@@ -289,7 +289,7 @@ export function Path() {
             {newSection && u.section && (
               <div className="mt-3 flex items-center gap-2 px-1">
                 <span className="t-cap font-extrabold tracking-wide uppercase" style={{ color: u.section.open ? 'var(--brand)' : 'var(--ink-3)' }}>
-                  {!u.section.open && '🔒 '}
+                  {!u.section.open && <><Icon name="lock" size={12} className="mb-0.5 inline-block align-middle" /> </>}
                   {u.section.title}
                 </span>
                 <span className="h-px flex-1" style={{ background: 'var(--line)' }} />
@@ -634,6 +634,26 @@ function LessonInner({ id }: { id: string }) {
   const { data: l, error, refetch } = useQuery({ queryKey: ['lesson', id], queryFn: () => api.lesson(id), retry: false })
   const [i, setI] = useState(0)
   const [solved, setSolved] = useState<Record<string, boolean>>({})
+  // Analítica: si sale de la clase sin llegar al quiz, hasta qué paso llegó
+  const reached = useRef(1)
+  const toQuiz = useRef(false)
+  useEffect(() => {
+    reached.current = Math.max(reached.current, i + 1)
+  }, [i])
+  useEffect(() => {
+    if (!l) return
+    let sent = false
+    const send = () => {
+      if (sent || toQuiz.current) return
+      sent = true
+      api.trackEvent({ name: 'lesson_exit', lessonId: l.id, step: reached.current, of: l.steps.length })
+    }
+    window.addEventListener('pagehide', send)
+    return () => {
+      window.removeEventListener('pagehide', send)
+      send()
+    }
+  }, [l])
   if (error instanceof ApiFailure && error.code === 'FEATURE_LOCKED')
     return (
       <div className="pad items-center pt-16 text-center">
@@ -677,7 +697,11 @@ function LessonInner({ id }: { id: string }) {
             <Icon name="back" />
           </button>
         )}
-        <button className={`btn ${interactive && solved[s.id] ? 'btn-success' : 'btn-primary'}`} disabled={blocked} onClick={() => (last ? router.push(`/quiz/${l.id}`) : setI(i + 1))}>
+        <button className={`btn ${interactive && solved[s.id] ? 'btn-success' : 'btn-primary'}`} disabled={blocked} onClick={() => {
+            if (!last) return setI(i + 1)
+            toQuiz.current = true
+            router.push(`/quiz/${l.id}`)
+          }}>
           {last ? t('startQuiz') : blocked ? (s.type === 'INTERACTIVE_CHART' ? t('tapCandle') : t('finishActivity')) : t('continue')}
         </button>
       </div>

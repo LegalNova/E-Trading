@@ -1,11 +1,24 @@
 // Implementación real de la API (etapa 3): llama a /api/** con el contrato de docs/07.
+import { readSource } from '../attribution'
 import { ApiFailure, type Api, type OrderInput } from './types'
 
+export const VIEW_AS_KEY = 'lumi:viewAs'
+
+/** Usuario que el admin está viendo en esta pestaña (solo lectura) */
+export function viewingAs(): string | null {
+  try {
+    return sessionStorage.getItem(VIEW_AS_KEY)
+  } catch {
+    return null
+  }
+}
+
 async function call<T>(method: string, path: string, body?: unknown, headers: Record<string, string> = {}): Promise<T> {
+  const as = typeof window !== 'undefined' ? viewingAs() : null
   const r = await fetch(`/api${path}`, {
     method,
     // Idioma de la pantalla: el servidor devuelve las clases y sus textos en él
-    headers: { ...(body !== undefined ? { 'content-type': 'application/json' } : {}), 'x-locale': typeof document !== 'undefined' ? document.documentElement.lang : 'es', ...headers },
+    headers: { ...(body !== undefined ? { 'content-type': 'application/json' } : {}), 'x-locale': typeof document !== 'undefined' ? document.documentElement.lang : 'es', ...(as ? { 'x-view-as': as } : {}), ...headers },
     body: body !== undefined ? JSON.stringify(body) : undefined,
     credentials: 'same-origin',
     cache: 'no-store',
@@ -52,7 +65,7 @@ export const httpApi: Api = {
     return get('/session')
   },
   signInWithGoogle: async () => {
-    const r = await auth<{ url?: string }>('/sign-in/social', { provider: 'google', callbackURL: `${location.origin}${location.pathname.split('/').slice(0, 2).join('/')}/inicio` })
+    const r = await auth<{ url?: string }>('/sign-in/social', { provider: 'google', callbackURL: `${location.origin}${location.pathname.split('/').slice(0, 2).join('/')}/inicio${readSource() ? `?src=${encodeURIComponent(readSource()!)}` : ''}` })
     if (r.url) location.href = r.url
     return new Promise(() => {}) // la página se va a Google
   },
@@ -142,4 +155,13 @@ export const httpApi: Api = {
   adminUsers: q => get(`/admin/users${q ? `?q=${encodeURIComponent(q)}` : ''}`),
   adminAudit: () => get('/admin/audit'),
   adminContent: () => get('/admin/content'),
+  adminLens: (path, range) => get(`/admin/lens?path=${encodeURIComponent(path)}&range=${range}`),
+  adminLessons: range => get(`/admin/lessons?range=${range}`),
+  adminUser: id => get(`/admin/users/${encodeURIComponent(id)}`),
+  adminViewAs: id => post(`/admin/users/${encodeURIComponent(id)}/view-as`),
+  trackEvent: e => {
+    // Mientras un admin «ve como» otro usuario no se registra nada
+    if (viewingAs()) return
+    fetch('/api/events', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(e), keepalive: true, credentials: 'same-origin' }).catch(() => {})
+  },
 }

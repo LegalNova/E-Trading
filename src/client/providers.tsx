@@ -2,9 +2,10 @@
 // Proveedores globales: datos (TanStack Query), avisos tipo toast y tema.
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { useLocale } from 'next-intl'
-import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react'
+import { createContext, Suspense, useCallback, useContext, useEffect, useRef, useState } from 'react'
 import { THEME_KEY } from '@/shared/theme'
 import { ApiFailure } from './api'
+import { ScreenTracker } from './admin-layer'
 import { captureSource } from './attribution'
 import { CookieNotice } from './legal/cookie-notice'
 
@@ -58,6 +59,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
       <ToastCtx.Provider value={show}>
         {children}
         <CookieNotice />
+        <Suspense>
+          <ScreenTracker />
+        </Suspense>
         <div aria-live="polite" className="pointer-events-none fixed inset-x-0 z-50 flex justify-center px-3.5" style={{ top: 'max(12px, env(safe-area-inset-top))' }}>
           {toast && (
             <div role="status" className="flex w-full max-w-[440px] animate-rise items-center gap-2.5 rounded-2xl px-3.5 py-3 text-sm font-bold shadow-float" style={{ background: 'var(--ink)', color: 'var(--bg)' }}>

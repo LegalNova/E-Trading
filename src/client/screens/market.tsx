@@ -627,7 +627,7 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
           {types.map(x => (
             <button key={x.k} aria-pressed={type === x.k} onClick={() => (locked(x.k) ? setSheet('lock') : setType(x.k))}>
               {x.label}
-              {locked(x.k) && ' 🔒'}
+              {locked(x.k) && <> <Icon name="lock" size={12} className="mb-0.5 inline-block align-middle" /></>}
             </button>
           ))}
         </div>
@@ -713,7 +713,7 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
                 <div className="flex items-center justify-between gap-3">
                   <span className="text-[15px] font-semibold">
                     {x.label}
-                    {locked(x.k) && ' 🔒'}
+                    {locked(x.k) && <> <Icon name="lock" size={12} className="mb-0.5 inline-block align-middle" /></>}
                   </span>
                   <button className="toggle" role="switch" aria-label={x.label} aria-checked={x.on} onClick={() => (locked(x.k) ? setSheet('lock') : x.setOn(!x.on))} />
                 </div>

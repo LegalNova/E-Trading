@@ -488,7 +488,7 @@ export function MyLumi() {
                 <button key={s.id} className="opt flex-col gap-1 px-1 py-2.5 text-center text-xs" aria-pressed={me.companion.skinId === s.id} disabled={locked || save.isPending} onClick={() => save.mutate(s.id)}>
                   <Lumi mood="HAPPY" size={48} skin={s.id} stage={stage} animated={false} />
                   {t(`skins.${s.id}`)}
-                  {locked && <span className="t-cap">🔒 {t('fromLevel', { n: s.unlockLevel })}</span>}
+                  {locked && <span className="t-cap"><Icon name="lock" size={12} className="mb-0.5 inline-block align-middle" /> {t('fromLevel', { n: s.unlockLevel })}</span>}
                 </button>
               )
             })}

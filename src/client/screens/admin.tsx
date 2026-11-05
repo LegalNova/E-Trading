@@ -1,18 +1,19 @@
 'use client'
 // 07 · Panel de administración (solo ADMIN). Muestra datos reales o «—»; nunca cifras inventadas.
-import { useQuery } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
-import { Link } from '@/i18n/navigation'
+import { Link, useRouter } from '@/i18n/navigation'
 import { num } from '@/shared/format'
-import { api } from '../api'
+import { api, type AdminLessonRow, type LensRange } from '../api'
+import { VIEW_AS_KEY } from '../api/http'
 import { useLang } from '../hooks'
 import { useGuard } from '../shell'
 import { LineChart } from '../ui/charts'
 import { Icon, Logo } from '../ui/icons'
 import { PageSkeleton, Seg } from '../ui/kit'
 
-type Tab = 'metrics' | 'content' | 'users' | 'settings' | 'audit'
+type Tab = 'metrics' | 'lessons' | 'content' | 'users' | 'settings' | 'audit'
 const dash = (v: number | null | undefined, locale: string, suffix = '') => (v === null || v === undefined ? '—' : num(v, locale, 0) + suffix)
 
 function Metrics() {
@@ -194,6 +195,11 @@ function Content() {
 }
 
 function Users() {
+  const [sel, setSel] = useState<string | null>(null)
+  return sel ? <UserDetail id={sel} onBack={() => setSel(null)} /> : <UserList onOpen={setSel} />
+}
+
+function UserList({ onOpen }: { onOpen: (id: string) => void }) {
   const t = useTranslations('admin')
   const locale = useLang()
   const [q, setQ] = useState('')
@@ -207,11 +213,12 @@ function Users() {
           <span className="flex-1">{t('plan')}</span>
           <span className="flex-1">XP</span>
           <span className="flex-1">{t('lastActive')}</span>
+          <span className="flex-1">{t('source')}</span>
           <span className="flex-1">{t('status')}</span>
         </div>
         {data?.length ? (
           data.map(u => (
-            <div key={u.id} className="li plainline min-w-[560px]">
+            <button key={u.id} className="li plainline min-w-[560px] text-left" onClick={() => onOpen(u.id)}>
               <span className="flex-[2] truncate">
                 <b>{u.name}</b>
                 <br />
@@ -220,14 +227,205 @@ function Users() {
               <span className="flex-1">{u.plan}</span>
               <span className="flex-1">{num(u.xp, locale, 0)}</span>
               <span className="flex-1">{u.lastActive}</span>
+              <span className="flex-1">{u.source ?? '—'}</span>
               <span className="flex-1">{u.blocked ? t('blocked') : t('active')}</span>
-            </div>
+            </button>
           ))
         ) : (
           <div className="li plainline t-foot">{t('noUsers')}</div>
         )}
       </div>
       <p className="t-cap m-0">{t('usersNote')}</p>
+    </div>
+  )
+}
+
+function UserDetail({ id, onBack }: { id: string; onBack: () => void }) {
+  const t = useTranslations('admin.userCard')
+  const locale = useLang()
+  const qc = useQueryClient()
+  const router = useRouter()
+  const { data: u, error } = useQuery({ queryKey: ['admin-user', id], queryFn: () => api.adminUser(id) })
+  const view = useMutation({
+    mutationFn: () => api.adminViewAs(id),
+    onSuccess: () => {
+      try {
+        sessionStorage.setItem(VIEW_AS_KEY, id)
+      } catch {
+        // sin almacenamiento no se puede «ver como»
+      }
+      qc.clear()
+      router.push('/inicio')
+    },
+  })
+  const date = (s: string | null) => (s ? new Date(s).toLocaleString(locale, { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : '—')
+  const kv = (k: string, v: React.ReactNode) => (
+    <div key={k} className="kv">
+      <span>{k}</span>
+      <span>{v ?? '—'}</span>
+    </div>
+  )
+  if (error) return <p className="err">{error.message}</p>
+  if (!u) return <PageSkeleton />
+  return (
+    <div className="flex flex-col gap-3">
+      <button className="link flex items-center gap-1 self-start text-sm" onClick={onBack}>
+        <Icon name="back" size={16} /> {t('back')}
+      </button>
+      <div className="card flex flex-wrap items-center gap-3">
+        <div className="min-w-0 flex-1">
+          <h2 className="t-title m-0">{u.name}</h2>
+          <span className="t-foot">{u.email}</span>
+          <div className="t-cap">
+            {u.plan} · {u.login.join(' + ') || '—'} · {u.emailVerified ? t('verified') : t('notVerified')} · {t('source')}: {u.source ?? '—'}
+          </div>
+        </div>
+        <button className="btn btn-primary w-auto" onClick={() => view.mutate()} disabled={view.isPending}>
+          <Icon name="user" size={18} /> {t('viewAs')}
+        </button>
+      </div>
+      <p className="t-cap m-0">{t('viewAsNote')}</p>
+      <div className="grid gap-3 lg:grid-cols-3">
+        <div className="card flex flex-col">
+          <b className="mb-1">{t('account')}</b>
+          {kv(t('createdAt'), date(u.createdAt))}
+          {kv(t('lastSeen'), date(u.lastSeen))}
+          {kv(t('lastActive'), u.lastActive)}
+          {kv(t('language'), u.locale)}
+          {kv(t('onboarding'), u.onboarding.done ? t('done') : t('step', { n: u.onboarding.step ?? 0 }))}
+          {kv(t('experience'), u.onboarding.experience)}
+          {kv(t('goals'), u.onboarding.goals.join(', ') || '—')}
+          {kv(t('minutes'), u.onboarding.minutes)}
+          {kv(t('subscription'), u.subscription ? `${u.subscription.status}${u.subscription.trialEndsAt ? ' · ' + date(u.subscription.trialEndsAt) : ''}` : '—')}
+          {kv(t('status'), u.blocked ? t('blocked') : t('active'))}
+        </div>
+        <div className="card flex flex-col">
+          <b className="mb-1">{t('game')}</b>
+          {u.game ? (
+            <>
+              {kv(t('level'), u.game.level)}
+              {kv('XP', num(u.game.xp, locale, 0))}
+              {kv(t('weekXp'), num(u.game.weekXp, locale, 0))}
+              {kv(t('streak'), `${u.game.streak} · ${t('best')} ${u.game.bestStreak}`)}
+              {kv(t('division'), u.game.division)}
+              {kv(t('gems'), u.game.gems)}
+              {kv(t('lives'), u.game.lives)}
+              {kv(t('badges'), u.badges)}
+              {kv(t('tutor'), u.tutorQuestions)}
+            </>
+          ) : (
+            <span className="t-cap">—</span>
+          )}
+        </div>
+        <div className="card flex flex-col">
+          <b className="mb-1">{t('learning')}</b>
+          {kv(t('lessonsDone'), u.learning.lessonsDone)}
+          {kv(t('accuracy'), u.learning.accuracy === null ? '—' : `${u.learning.accuracy} % · ${u.learning.answers}`)}
+          <b className="mt-3 mb-1">{t('market')}</b>
+          {kv(t('cash'), u.market.cash === null ? '—' : num(u.market.cash, locale, 2) + ' €')}
+          {kv(t('positions'), u.market.positions)}
+          {kv(t('trades'), u.market.trades)}
+        </div>
+      </div>
+      <div className="grid gap-3 lg:grid-cols-2">
+        <div className="card flex flex-col">
+          <b className="mb-1">{t('lastLessons')}</b>
+          {u.learning.last.length ? u.learning.last.map(l => kv(`${l.title}${l.skipped ? ' · ' + t('skipped') : ''}`, `${'★'.repeat(l.stars)} ${date(l.at)}`)) : <span className="t-cap">—</span>}
+        </div>
+        <div className="card flex flex-col">
+          <b className="mb-1">{t('lastTrades')}</b>
+          {u.market.last.length ? u.market.last.map((x, k) => <div key={k}>{kv(`${x.side} ${x.symbol}${x.status !== 'FILLED' ? ' · ' + x.status : ''}`, `${num(x.total, locale, 2)} € · ${date(x.at)}`)}</div>) : <span className="t-cap">—</span>}
+        </div>
+      </div>
+      <div className="card flex flex-col">
+        <b className="mb-1">{t('events')}</b>
+        {u.events.length ? (
+          u.events.map((e, k) => (
+            <div key={k} className="kv">
+              <span>
+                <b>{e.name}</b> <span className="t-cap">{e.props ? JSON.stringify(e.props).slice(0, 80) : ''}</span>
+              </span>
+              <span>{date(e.at)}</span>
+            </div>
+          ))
+        ) : (
+          <span className="t-cap">—</span>
+        )}
+      </div>
+    </div>
+  )
+}
+
+type SortKey = 'order' | 'starts' | 'done' | 'completion' | 'skipped'
+
+function Lessons() {
+  const t = useTranslations('admin.lessonsTab')
+  const [range, setRange] = useState<LensRange>('30d')
+  const [sort, setSort] = useState<SortKey>('order')
+  const [onlyData, setOnlyData] = useState(true)
+  const { data } = useQuery({ queryKey: ['admin-lessons', range], queryFn: () => api.adminLessons(range) })
+  if (!data) return <PageSkeleton />
+  const rows = data.map((r, i) => ({ ...r, order: i })).filter(r => !onlyData || r.starts || r.done || r.skipped)
+  const val = (r: AdminLessonRow & { order: number }) => (sort === 'order' ? -r.order : sort === 'completion' ? -(r.completion ?? 101) : r[sort])
+  rows.sort((a, b) => val(b) - val(a))
+  const head: [SortKey | null, string][] = [
+    ['order', t('lesson')],
+    ['starts', t('starts')],
+    [null, t('quiz')],
+    ['done', t('done')],
+    ['completion', '%'],
+    ['skipped', t('skipped')],
+  ]
+  return (
+    <div className="flex flex-col gap-3">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <h2 className="t-title">{t('title')}</h2>
+        <div className="flex items-center gap-3">
+          <label className="t-foot flex items-center gap-1.5">
+            <input type="checkbox" checked={onlyData} onChange={e => setOnlyData(e.target.checked)} /> {t('onlyData')}
+          </label>
+          <Seg label={t('title')} className="w-[200px]" value={range} onChange={setRange} options={[{ value: '7d', label: '7 d' }, { value: '30d', label: '30 d' }, { value: 'all', label: t('all') }]} />
+        </div>
+      </div>
+      <div className="card overflow-x-auto p-0">
+        <table className="t-foot w-full min-w-[640px]">
+          <thead className="t-cap text-left">
+            <tr>
+              {head.map(([k, label], i) => (
+                <th key={label} className={`px-3 py-2 ${i ? 'text-right' : ''}`}>
+                  {k ? (
+                    <button className="font-bold" style={sort === k ? { color: 'var(--brand)' } : undefined} onClick={() => setSort(k)}>
+                      {label}
+                    </button>
+                  ) : (
+                    label
+                  )}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(r => (
+              <tr key={r.id} className="border-t" style={{ borderColor: 'var(--line)' }}>
+                <td className="px-3 py-1.5">
+                  <Link href={`/leccion/${r.id}`} className="link">
+                    {r.unit} · {r.title}
+                  </Link>
+                </td>
+                <td className="px-3 text-right">{r.starts}</td>
+                <td className="px-3 text-right">{r.quiz}</td>
+                <td className="px-3 text-right">{r.done}</td>
+                <td className="px-3 text-right" style={r.completion !== null && r.completion < 50 ? { color: 'var(--down)', fontWeight: 700 } : undefined}>
+                  {r.completion === null ? '—' : `${r.completion} %`}
+                </td>
+                <td className="px-3 text-right">{r.skipped}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        {!rows.length && <p className="t-cap px-3">{t('empty')}</p>}
+      </div>
+      <p className="t-cap m-0">{t('note')}</p>
     </div>
   )
 }
@@ -276,7 +474,15 @@ export function Admin() {
   const { ready } = useGuard('admin')
   const [tab, setTab] = useState<Tab>('metrics')
   if (!ready) return <PageSkeleton />
-  const tabs: Tab[] = ['metrics', 'content', 'users', 'settings', 'audit']
+  const tabs: Tab[] = ['metrics', 'lessons', 'users', 'content', 'settings', 'audit']
+  // Abre la app con la capa de datos encendida
+  const openWithData = () => {
+    try {
+      localStorage.setItem('lumi:lens', '1')
+    } catch {
+      // sin almacenamiento: se abre con el botón «Datos»
+    }
+  }
   return (
     <div className="min-h-dvh md:flex">
       <aside className="flex flex-none gap-1 overflow-x-auto border-b p-3 md:h-dvh md:w-56 md:flex-col md:border-r md:border-b-0 md:py-5" style={{ borderColor: 'var(--line)', background: 'var(--surface)' }}>
@@ -288,11 +494,17 @@ export function Admin() {
             {t(`tabs.${k}`)}
           </button>
         ))}
+        <Link href="/inicio" onClick={openWithData} className="btn btn-primary mt-2 hidden w-auto px-3 text-sm md:flex">
+          <Icon name="chart" size={16} /> {t('openWithData')}
+        </Link>
+        <Link href="/inicio" onClick={openWithData} className="flex flex-none items-center rounded-xl px-3 py-2 text-sm font-bold md:hidden" style={{ color: 'var(--brand)' }}>
+          {t('openWithData')}
+        </Link>
         <Link href="/inicio" className="t-foot mt-auto hidden items-center gap-2 px-3 md:flex">
           <Icon name="back" size={16} /> {t('backToApp')}
         </Link>
       </aside>
-      <main className="mx-auto w-full max-w-[1100px] flex-1 p-4 md:p-8">{tab === 'metrics' ? <Metrics /> : tab === 'content' ? <Content /> : tab === 'users' ? <Users /> : tab === 'settings' ? <GlobalSettings /> : <Audit />}</main>
+      <main className="mx-auto w-full max-w-[1100px] flex-1 p-4 md:p-8">{tab === 'metrics' ? <Metrics /> : tab === 'lessons' ? <Lessons /> : tab === 'content' ? <Content /> : tab === 'users' ? <Users /> : tab === 'settings' ? <GlobalSettings /> : <Audit />}</main>
     </div>
   )
 }
