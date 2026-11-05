@@ -72,6 +72,7 @@ export interface Lens {
   tables?: { title: string; head: string[]; rows: Cell[][]; note?: string }[]
   note?: string
 }
+export interface AdminCampaign { slug: string; name: string; createdAt: string; visits: number; signups: number; trials: number; paid: number }
 export interface AdminLessonRow { id: string; unit: number; unitTitle: string; title: string; starts: number; quiz: number; done: number; skipped: number; completion: number | null }
 export interface AdminUserDetail {
   id: string
@@ -188,6 +189,9 @@ export interface Api {
   adminLessons(range: LensRange): Promise<AdminLessonRow[]>
   adminUser(id: string): Promise<AdminUserDetail>
   adminViewAs(id: string): Promise<{ id: string; email: string }>
+  adminCampaigns(): Promise<AdminCampaign[]>
+  adminCreateCampaign(name: string): Promise<{ slug: string }>
+  adminDeleteCampaign(slug: string): Promise<void>
   // Analítica propia (no bloquea nada si falla)
-  trackEvent(e: { name: 'screen_view'; path: string } | { name: 'lesson_exit'; lessonId: string; step: number; of: number }): void
+  trackEvent(e: { name: 'screen_view'; path: string; ref?: string } | { name: 'lesson_exit'; lessonId: string; step: number; of: number }): void
 }

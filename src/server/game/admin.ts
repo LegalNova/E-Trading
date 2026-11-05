@@ -1,7 +1,8 @@
 import 'server-only'
 // Panel de administración (07). Solo ADMIN. Cifras reales de la base de datos; «null» = vacío real.
 import { addDays, dayOf, weekOf } from '@/shared/time'
-import { db } from '../db'
+import { db, DB_SCHEMA } from '../db'
+import { campaignSlug } from './analytics'
 import { ACHIEVEMENTS, LESSON, QUIZZES, UNITS } from '../content/catalog'
 import { realUser } from '../auth'
 import { fail, levelOf } from './core'
@@ -192,4 +193,56 @@ export async function audit() {
 export async function content() {
   await requireAdmin()
   return { units: UNITS.map(u => ({ id: u.id, order: u.order, title: u.title, lessons: u.lessons.map(l => ({ id: l.id, title: l.title, quizId: l.quizId })) })), quizzes: QUIZZES, achievements: ACHIEVEMENTS.length }
+}
+
+// ── Enlaces de campaña ───────────────────────────────────
+// Un enlace por sitio donde se comparte la app (?ref=nombre). Se cuentan visitas, altas, pruebas y pagos de cada uno.
+interface Campaign {
+  slug: string
+  name: string
+  createdAt: string
+}
+const CAMPAIGNS_KEY = 'campaigns'
+
+async function campaignList(): Promise<Campaign[]> {
+  const row = await db.appSetting.findUnique({ where: { key: CAMPAIGNS_KEY } })
+  return (row?.value as unknown as Campaign[] | undefined) ?? []
+}
+
+export async function campaigns() {
+  await requireAdmin()
+  const list = await campaignList()
+  const sources = list.map(c => `ref/${c.slug}`)
+  const [visits, users, trials, paid] = await Promise.all([
+    db.$queryRawUnsafe<{ ref: string; n: bigint }[]>(`SELECT props->>'ref' AS ref, COUNT(*) AS n FROM "${DB_SCHEMA}"."Event" WHERE name = 'screen_view' AND props ? 'ref' GROUP BY 1`),
+    db.user.groupBy({ by: ['source'], where: { source: { in: sources }, role: 'USER' }, _count: { _all: true } }),
+    db.event.findMany({ where: { name: 'trial_start', user: { is: { source: { in: sources } } } }, distinct: ['userId'], select: { user: { select: { source: true } } } }),
+    db.event.findMany({ where: { name: 'paid', user: { is: { source: { in: sources } } } }, distinct: ['userId'], select: { user: { select: { source: true } } } }),
+  ])
+  const count = (rows: { user: { source: string | null } | null }[], s: string) => rows.filter(r => r.user?.source === s).length
+  return list.map(c => {
+    const s = `ref/${c.slug}`
+    return { ...c, visits: Number(visits.find(v => v.ref === c.slug)?.n ?? 0), signups: users.find(u => u.source === s)?._count._all ?? 0, trials: count(trials, s), paid: count(paid, s) }
+  })
+}
+
+export async function createCampaign(name: string) {
+  const a = await requireAdmin()
+  const clean = name.trim().slice(0, 60)
+  const slug = campaignSlug(clean)
+  if (!slug) fail(422, 'VALIDATION_ERROR', 'Escribe un nombre con letras o números')
+  const list = await campaignList()
+  if (list.some(c => c.slug === slug)) fail(409, 'CAMPAIGN_EXISTS', 'Ya hay un enlace con ese nombre')
+  if (list.length >= 200) fail(422, 'VALIDATION_ERROR', 'Hay demasiados enlaces: borra alguno')
+  const next = [...list, { slug, name: clean, createdAt: new Date().toISOString() }]
+  await db.appSetting.upsert({ where: { key: CAMPAIGNS_KEY }, create: { key: CAMPAIGNS_KEY, value: next as unknown as object }, update: { value: next as unknown as object } })
+  await db.auditLog.create({ data: { actor: a.email, action: 'CAMPAIGN_CREATED', entity: 'Campaign', entityId: slug } })
+  return { slug }
+}
+
+export async function deleteCampaign(slug: string) {
+  const a = await requireAdmin()
+  const next = (await campaignList()).filter(c => c.slug !== slug)
+  await db.appSetting.upsert({ where: { key: CAMPAIGNS_KEY }, create: { key: CAMPAIGNS_KEY, value: next as unknown as object }, update: { value: next as unknown as object } })
+  await db.auditLog.create({ data: { actor: a.email, action: 'CAMPAIGN_DELETED', entity: 'Campaign', entityId: slug } })
 }

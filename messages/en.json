@@ -869,7 +869,8 @@
       "users": "Users",
       "settings": "Settings",
       "audit": "Audit",
-      "lessons": "Lessons"
+      "lessons": "Lessons",
+      "campaigns": "Links"
     },
     "range": "Period",
     "dauMau": "Active users (DAU / MAU)",
@@ -1022,6 +1023,24 @@
       "skipped": "skipped",
       "lastTrades": "Latest trades",
       "events": "Event history"
+    },
+    "campaigns": {
+      "title": "Campaign links",
+      "what": "Create a different link for every place you share Lumi: your TikTok, a creator, a class group… Everyone who comes in through that link is counted here, so you know which channel brings people who stay and pay.",
+      "name": "Link name",
+      "placeholder": "For example: TikTok, Laura creator, class group",
+      "create": "Create link",
+      "copy": "Copy",
+      "copied": "Copied",
+      "delete": "Delete link",
+      "confirmDelete": "Delete the «{name}» link? People who already came in through it stay counted on their profile.",
+      "visits": "Visits",
+      "signups": "Sign-ups",
+      "trials": "Trials",
+      "paid": "Paying",
+      "conversion": "Sign-ups / visits",
+      "empty": "You haven’t created any links yet.",
+      "note": "Visits count every time someone opens the link; sign-ups, trials and payments are unique people. The source is saved when the welcome steps are finished."
     }
   },
   "cookies": {

@@ -13,7 +13,7 @@ import { LineChart } from '../ui/charts'
 import { Icon, Logo } from '../ui/icons'
 import { PageSkeleton, Seg } from '../ui/kit'
 
-type Tab = 'metrics' | 'lessons' | 'content' | 'users' | 'settings' | 'audit'
+type Tab = 'metrics' | 'lessons' | 'users' | 'campaigns' | 'content' | 'settings' | 'audit'
 const dash = (v: number | null | undefined, locale: string, suffix = '') => (v === null || v === undefined ? '—' : num(v, locale, 0) + suffix)
 
 function Metrics() {
@@ -356,6 +356,95 @@ function UserDetail({ id, onBack }: { id: string; onBack: () => void }) {
   )
 }
 
+function Campaigns() {
+  const t = useTranslations('admin.campaigns')
+  const qc = useQueryClient()
+  const [name, setName] = useState('')
+  const [copied, setCopied] = useState<string | null>(null)
+  const { data } = useQuery({ queryKey: ['admin-campaigns'], queryFn: api.adminCampaigns })
+  const create = useMutation({ mutationFn: () => api.adminCreateCampaign(name), onSuccess: () => (setName(''), qc.invalidateQueries({ queryKey: ['admin-campaigns'] })) })
+  const del = useMutation({ mutationFn: api.adminDeleteCampaign, onSuccess: () => qc.invalidateQueries({ queryKey: ['admin-campaigns'] }) })
+  const link = (slug: string) => `${typeof location !== 'undefined' ? location.origin : ''}/?ref=${slug}`
+  const copy = async (slug: string) => {
+    try {
+      await navigator.clipboard.writeText(link(slug))
+      setCopied(slug)
+      setTimeout(() => setCopied(null), 1500)
+    } catch {
+      // sin portapapeles: el enlace se ve y se puede seleccionar
+    }
+  }
+  const pct = (a: number, b: number) => (b ? `${Math.round((a / b) * 100)} %` : '—')
+  return (
+    <div className="flex flex-col gap-3">
+      <h2 className="t-title">{t('title')}</h2>
+      <p className="t-foot m-0">{t('what')}</p>
+      <form
+        className="card flex flex-wrap items-end gap-2"
+        onSubmit={e => {
+          e.preventDefault()
+          if (name.trim()) create.mutate()
+        }}
+      >
+        <div className="field min-w-[220px] flex-1">
+          <label htmlFor="c-name">{t('name')}</label>
+          <input id="c-name" className="input" value={name} onChange={e => setName(e.target.value)} placeholder={t('placeholder')} maxLength={60} />
+        </div>
+        <button className="btn btn-primary w-auto" disabled={create.isPending || !name.trim()}>
+          <Icon name="plus" size={18} /> {t('create')}
+        </button>
+        {create.error && <p className="err m-0 w-full">{create.error.message}</p>}
+      </form>
+      {!data ? (
+        <PageSkeleton />
+      ) : data.length ? (
+        data.map(c => (
+          <div key={c.slug} className="card flex flex-col gap-2">
+            <div className="flex items-center gap-2">
+              <b className="flex-1">{c.name}</b>
+              <button
+                className="icon-btn"
+                aria-label={t('delete')}
+                title={t('delete')}
+                onClick={() => {
+                  if (confirm(t('confirmDelete', { name: c.name }))) del.mutate(c.slug)
+                }}
+              >
+                <Icon name="trash" size={18} />
+              </button>
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <code className="min-w-0 flex-1 truncate rounded-lg px-2.5 py-1.5 text-[13px]" style={{ background: 'var(--fill)' }}>
+                {link(c.slug)}
+              </code>
+              <button className="btn btn-secondary w-auto py-1.5 text-sm" onClick={() => copy(c.slug)}>
+                {copied === c.slug ? t('copied') : t('copy')}
+              </button>
+            </div>
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-5">
+              {[
+                [t('visits'), c.visits],
+                [t('signups'), c.signups],
+                [t('trials'), c.trials],
+                [t('paid'), c.paid],
+                [t('conversion'), pct(c.signups, c.visits)],
+              ].map(([k, v]) => (
+                <div key={k} className="rounded-xl px-3 py-2" style={{ background: 'var(--fill)' }}>
+                  <div className="t-cap">{k}</div>
+                  <b className="text-lg tabular-nums">{v}</b>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))
+      ) : (
+        <p className="t-cap">{t('empty')}</p>
+      )}
+      <p className="t-cap m-0">{t('note')}</p>
+    </div>
+  )
+}
+
 type SortKey = 'order' | 'starts' | 'done' | 'completion' | 'skipped'
 
 function Lessons() {
@@ -474,7 +563,7 @@ export function Admin() {
   const { ready } = useGuard('admin')
   const [tab, setTab] = useState<Tab>('metrics')
   if (!ready) return <PageSkeleton />
-  const tabs: Tab[] = ['metrics', 'lessons', 'users', 'content', 'settings', 'audit']
+  const tabs: Tab[] = ['metrics', 'lessons', 'users', 'campaigns', 'content', 'settings', 'audit']
   // Abre la app con la capa de datos encendida
   const openWithData = () => {
     try {
@@ -504,7 +593,7 @@ export function Admin() {
           <Icon name="back" size={16} /> {t('backToApp')}
         </Link>
       </aside>
-      <main className="mx-auto w-full max-w-[1100px] flex-1 p-4 md:p-8">{tab === 'metrics' ? <Metrics /> : tab === 'lessons' ? <Lessons /> : tab === 'content' ? <Content /> : tab === 'users' ? <Users /> : tab === 'settings' ? <GlobalSettings /> : <Audit />}</main>
+      <main className="mx-auto w-full max-w-[1100px] flex-1 p-4 md:p-8">{tab === 'metrics' ? <Metrics /> : tab === 'lessons' ? <Lessons /> : tab === 'campaigns' ? <Campaigns /> : tab === 'content' ? <Content /> : tab === 'users' ? <Users /> : tab === 'settings' ? <GlobalSettings /> : <Audit />}</main>
     </div>
   )
 }

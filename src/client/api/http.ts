@@ -159,6 +159,9 @@ export const httpApi: Api = {
   adminLessons: range => get(`/admin/lessons?range=${range}`),
   adminUser: id => get(`/admin/users/${encodeURIComponent(id)}`),
   adminViewAs: id => post(`/admin/users/${encodeURIComponent(id)}/view-as`),
+  adminCampaigns: () => get('/admin/campaigns'),
+  adminCreateCampaign: name => post('/admin/campaigns', { name }),
+  adminDeleteCampaign: slug => call('DELETE', `/admin/campaigns/${encodeURIComponent(slug)}`),
   trackEvent: e => {
     // Mientras un admin «ve como» otro usuario no se registra nada
     if (viewingAs()) return

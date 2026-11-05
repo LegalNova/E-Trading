@@ -211,7 +211,9 @@ export function ScreenTracker() {
   const path = usePathname()
   useEffect(() => {
     if (path.startsWith('/admin')) return
-    api.trackEvent({ name: 'screen_view', path })
+    // Enlace de campaña (?ref=) por el que se ha llegado, para contar sus visitas
+    const ref = new URLSearchParams(location.search).get('ref') ?? undefined
+    api.trackEvent({ name: 'screen_view', path, ref })
   }, [path])
   return null
 }

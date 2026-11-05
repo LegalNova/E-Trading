@@ -29,11 +29,21 @@ export async function trackLessonStart(tx: Tx, userId: string, lessonId: string)
   await track(tx, userId, 'lesson_start', { lessonId })
 }
 
+/** Nombre de enlace de campaña: minúsculas, sin tildes ni espacios (Laura Creadora → laura-creadora) */
+export const campaignSlug = (s: string) =>
+  s
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 40)
+
 /** Origen limpio: minúsculas, sin caracteres raros, 60 caracteres como mucho */
 export const cleanSource = (s: unknown) => (typeof s === 'string' ? s.toLowerCase().replace(/[^a-z0-9_\-/.]/g, '').slice(0, 60) || null : null)
 
 const clientEvent = z.discriminatedUnion('name', [
-  z.object({ name: z.literal('screen_view'), path: z.string().startsWith('/').max(120) }),
+  z.object({ name: z.literal('screen_view'), path: z.string().startsWith('/').max(120), ref: z.string().max(60).optional() }),
   z.object({ name: z.literal('lesson_exit'), lessonId: z.string().regex(/^[a-z0-9-]{1,24}$/), step: z.number().int().min(1).max(60), of: z.number().int().min(1).max(60) }),
 ])
 
@@ -46,10 +56,13 @@ export async function recordClientEvent(body: unknown) {
   const today = new Date(new Date().toISOString().slice(0, 10) + 'T00:00:00Z')
   if (e.name === 'screen_view') {
     const path = e.path.toLowerCase().replace(/\/+$/, '') || '/'
+    // Enlace de campaña por el que ha llegado (si lo hay): solo el nombre del enlace, nada de la persona
+    const ref = e.ref ? campaignSlug(e.ref) : ''
+    const extra = ref ? { ref } : {}
     // Sin sesión (página de inicio, legales): se cuentan visitas, sin ningún identificador
-    if (!u) return void (await db.event.create({ data: { name: 'screen_view', props: { path, anon: true } } }))
+    if (!u) return void (await db.event.create({ data: { name: 'screen_view', props: { path, anon: true, ...extra } } }))
     if (await db.event.count({ where: { userId: u.id, name: 'screen_view', createdAt: { gte: today }, props: { path: ['path'], equals: path } } })) return
-    await db.event.create({ data: { userId: u.id, name: 'screen_view', props: { path } } })
+    await db.event.create({ data: { userId: u.id, name: 'screen_view', props: { path, ...extra } } })
     return
   }
   if (!u) return

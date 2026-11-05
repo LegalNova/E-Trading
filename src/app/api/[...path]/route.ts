@@ -121,6 +121,9 @@ const routes: Route[] = [
   { method: 'GET', path: 'admin/lessons', run: async r => { await admin.requireAdmin(); return lessonTable(lensRange(r)) } },
   { method: 'GET', path: 'admin/users/:id', run: (_r, p) => admin.userDetail(p[0]) },
   { method: 'POST', path: 'admin/users/:id/view-as', run: (_r, p) => admin.startViewAs(p[0]) },
+  { method: 'GET', path: 'admin/campaigns', run: () => admin.campaigns() },
+  { method: 'POST', path: 'admin/campaigns', run: (_r, _p, b) => admin.createCampaign(z.object({ name: z.string().min(1).max(60) }).parse(b).name) },
+  { method: 'DELETE', path: 'admin/campaigns/:slug', run: (_r, p) => admin.deleteCampaign(p[0]) },
   // Analítica propia: pantallas vistas y dónde se deja una clase
   { method: 'POST', path: 'events', run: (_r, _p, b) => recordClientEvent(b) },
 ]

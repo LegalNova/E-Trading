@@ -869,7 +869,8 @@
       "users": "Usuarios",
       "settings": "Ajustes",
       "audit": "Auditoría",
-      "lessons": "Clases"
+      "lessons": "Clases",
+      "campaigns": "Enlaces"
     },
     "range": "Periodo",
     "dauMau": "Usuarios activos (DAU / MAU)",
@@ -1022,6 +1023,24 @@
       "skipped": "saltada",
       "lastTrades": "Últimas operaciones",
       "events": "Historial de eventos"
+    },
+    "campaigns": {
+      "title": "Enlaces de campaña",
+      "what": "Crea un enlace distinto para cada sitio donde compartas Lumi: tu TikTok, un creador, un grupo de clase… Cada persona que entre por ese enlace queda contada aquí, y así sabes qué canal trae gente que se queda y paga.",
+      "name": "Nombre del enlace",
+      "placeholder": "Por ejemplo: TikTok, Laura creadora, grupo de clase",
+      "create": "Crear enlace",
+      "copy": "Copiar",
+      "copied": "Copiado",
+      "delete": "Borrar enlace",
+      "confirmDelete": "¿Borrar el enlace «{name}»? Las personas que ya entraron por él siguen contadas en su ficha.",
+      "visits": "Visitas",
+      "signups": "Altas",
+      "trials": "Pruebas",
+      "paid": "Pagan",
+      "conversion": "Altas / visitas",
+      "empty": "Aún no has creado ningún enlace.",
+      "note": "Las visitas cuentan cada vez que alguien abre el enlace; las altas, pruebas y pagos son personas distintas. El origen se guarda al terminar la bienvenida."
     }
   },
   "cookies": {

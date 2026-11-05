@@ -869,7 +869,8 @@
       "users": "Usuaris",
       "settings": "Configuració",
       "audit": "Auditoria",
-      "lessons": "Classes"
+      "lessons": "Classes",
+      "campaigns": "Enllaços"
     },
     "range": "Període",
     "dauMau": "Usuaris actius (DAU / MAU)",
@@ -1022,6 +1023,24 @@
       "skipped": "saltada",
       "lastTrades": "Últimes operacions",
       "events": "Historial d'esdeveniments"
+    },
+    "campaigns": {
+      "title": "Enllaços de campanya",
+      "what": "Crea un enllaç diferent per a cada lloc on comparteixis Lumi: el teu TikTok, un creador, un grup de classe… Cada persona que entri per aquest enllaç queda comptada aquí, i així saps quin canal porta gent que es queda i paga.",
+      "name": "Nom de l’enllaç",
+      "placeholder": "Per exemple: TikTok, Laura creadora, grup de classe",
+      "create": "Crear l’enllaç",
+      "copy": "Copiar",
+      "copied": "Copiat",
+      "delete": "Esborrar l’enllaç",
+      "confirmDelete": "Vols esborrar l’enllaç «{name}»? Les persones que ja hi van entrar continuen comptades a la seva fitxa.",
+      "visits": "Visites",
+      "signups": "Altes",
+      "trials": "Proves",
+      "paid": "Paguen",
+      "conversion": "Altes / visites",
+      "empty": "Encara no has creat cap enllaç.",
+      "note": "Les visites compten cada vegada que algú obre l’enllaç; les altes, proves i pagaments són persones diferents. L’origen es desa en acabar la benvinguda."
     }
   },
   "cookies": {
