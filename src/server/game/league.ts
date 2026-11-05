@@ -1,6 +1,7 @@
 import 'server-only'
 // Liga semanal (docs/02-gamificacion.md §Liga). Solo personas reales (D-019).
-// - Al ganar XP en una semana, la persona entra en un grupo de su división (hasta 30).
+// - Quien usa la app en una semana entra en un grupo (hasta 30). Mientras hay pocos usuarios, los grupos mezclan
+//   divisiones (si no, cada uno estaría solo en la suya); la división de cada uno sube o baja según su puesto.
 // - Puntos = XP de la semana + 100 × rentabilidad ajustada por riesgo (tope ±2 %): estudiar pesa más.
 // - Cierre (lunes): suben los 7 primeros (+30 gemas), bajan los puestos 26–30. Nadie baja de Novato ni sube de Experto.
 import type { LeagueT } from '@/shared/contract'
@@ -24,7 +25,8 @@ export async function ensureMembership(c: Ctx, evenWithoutXp = false) {
     return
   }
   const division = c.g.division
-  const groups = await c.tx.leagueMember.groupBy({ by: ['groupNo'], where: { weekKey, division }, _count: { _all: true }, orderBy: { groupNo: 'asc' } })
+  // Grupos de la semana sin separar por división: así todos los que se conectan compiten juntos
+  const groups = await c.tx.leagueMember.groupBy({ by: ['groupNo'], where: { weekKey }, _count: { _all: true }, orderBy: { groupNo: 'asc' } })
   const open = groups.find(g => g._count._all < GROUP_SIZE)
   const groupNo = open ? open.groupNo : (groups.at(-1)?.groupNo ?? 0) + 1
   // createMany + skipDuplicates: si otra petición del mismo usuario lo crea a la vez, no falla
@@ -59,8 +61,8 @@ function displayName(name: string, visible: boolean) {
 }
 
 /** Clasificación de un grupo (la usan la pantalla y el cierre semanal) */
-async function standings(tx: Tx, weekKey: string, division: number, groupNo: number) {
-  const members = await tx.leagueMember.findMany({ where: { weekKey, division, groupNo } })
+async function standings(tx: Tx, weekKey: string, groupNo: number) {
+  const members = await tx.leagueMember.findMany({ where: { weekKey, groupNo } })
   const ids = members.map(m => m.userId)
   const [users, rets] = await Promise.all([
     tx.user.findMany({ where: { id: { in: ids } }, select: { id: true, name: true, leagueVisible: true, blockedAt: true } }),
@@ -71,7 +73,7 @@ async function standings(tx: Tx, weekKey: string, division: number, groupNo: num
       const u = users.find(x => x.id === id)
       const xp = members.find(x => x.userId === id)?.xp ?? 0
       const r = rets.get(id) ?? 0
-      return { userId: id, exists: !!u, name: u?.name ?? '', visible: u?.leagueVisible ?? true, blocked: !!u?.blockedAt, weeklyXp: xp, riskAdjReturnPct: r, score: score(xp, r) }
+      return { userId: id, division: members.find(x => x.userId === id)?.division ?? 1, exists: !!u, name: u?.name ?? '', visible: u?.leagueVisible ?? true, blocked: !!u?.blockedAt, weeklyXp: xp, riskAdjReturnPct: r, score: score(xp, r) }
     })
     .filter(m => m.exists && !m.blocked)
     .sort((a, b) => b.score - a.score || b.weeklyXp - a.weeklyXp)
@@ -90,7 +92,7 @@ export async function leagueFor(c: Ctx): Promise<LeagueT> {
     await ensureMembership(c, true)
     me = await c.tx.leagueMember.findUnique({ where: { weekKey_userId: { weekKey, userId: c.user.id } } })
   }
-  const rows = me ? await standings(c.tx, weekKey, me.division, me.groupNo) : []
+  const rows = me ? await standings(c.tx, weekKey, me.groupNo) : []
   const members = rows.map(m => ({ rank: m.rank, userId: m.userId, displayName: m.userId === c.user.id ? c.user.name || '—' : displayName(m.name, m.visible), weeklyXp: m.weeklyXp, riskAdjReturnPct: m.riskAdjReturnPct, score: m.score, isMe: m.userId === c.user.id }))
   if (!me) members.push({ rank: 0, userId: c.user.id, displayName: c.user.name || '—', weeklyXp: 0, riskAdjReturnPct: 0, score: 0, isMe: true })
   return { division: { id: `d${division}`, name: DIVISIONS[division - 1], order: division }, divisions: DIVISIONS, endsAt: new Date(addDays(weekKey, 7) + 'T00:00:00Z').toISOString(), promoteTop: PROMOTE_TOP, demoteFrom: DEMOTE_FROM, members }
@@ -101,23 +103,23 @@ export async function closeWeek(weekKey: string) {
   const already = await db.leagueWeek.findUnique({ where: { weekKey } })
   if (already) return { weekKey, closed: false, groups: 0 }
   await db.leagueWeek.create({ data: { weekKey } }) // marca primero: si se ejecuta dos veces a la vez, la segunda falla
-  const groups = await db.leagueMember.groupBy({ by: ['division', 'groupNo'], where: { weekKey } })
+  const groups = await db.leagueMember.groupBy({ by: ['groupNo'], where: { weekKey } })
   for (const g of groups) {
-    const rows = await standings(db, weekKey, g.division, g.groupNo)
+    const rows = await standings(db, weekKey, g.groupNo)
     for (const m of rows) {
-      const up = m.rank <= PROMOTE_TOP && g.division < DIVISIONS.length && m.weeklyXp > 0
-      const down = m.rank >= DEMOTE_FROM && g.division > 1
+      const up = m.rank <= PROMOTE_TOP && m.division < DIVISIONS.length && m.weeklyXp > 0
+      const down = m.rank >= DEMOTE_FROM && m.division > 1
       const outcome = up ? 'UP' : down ? 'DOWN' : 'STAY'
       await db.leagueMember.update({ where: { weekKey_userId: { weekKey, userId: m.userId } }, data: { finalRank: m.rank, outcome } })
       const user = await db.user.findUnique({ where: { id: m.userId } })
       if (!user) continue
       await withCtx(async c => {
         if (up) {
-          c.g.division = g.division + 1
+          c.g.division = m.division + 1
           c.g.gems += PROMOTE_GEMS
           bump(c, 'leagueUp')
         }
-        if (down) c.g.division = g.division - 1
+        if (down) c.g.division = m.division - 1
         if (m.rank <= 3 && m.weeklyXp > 0) bump(c, 'top3')
         if (m.riskAdjReturnPct > 0) bump(c, 'weekPositive')
         const name = DIVISIONS[c.g.division - 1]
