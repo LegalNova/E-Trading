@@ -106,7 +106,9 @@
     "privacy": "Política de privadesa",
     "terms": "Condicions d’ús",
     "cookies": "Política de galetes",
-    "legalNotice": "Avís legal"
+    "legalNotice": "Avís legal",
+    "help": "Ajuda",
+    "purchase": "Contractació"
   },
   "auth": {
     "signUpTitle": "Crea el teu compte",
@@ -775,7 +777,8 @@
     ],
     "youAre": "Tens el pla {plan}.",
     "upgradeTitle": "Passa’t a Max",
-    "upgradeCta": "Passar a Max"
+    "upgradeCta": "Passar a Max",
+    "purchaseTerms": "Si continues, acceptes les <terms>Condicions de contractació</terms>: pots cancel·lar quan vulguis i tens 14 dies per desistir."
   },
   "settings": {
     "title": "Configuració",
@@ -833,8 +836,11 @@
       "aviso-legal": "Avís legal",
       "privacidad": "Política de privadesa",
       "cookies": "Política de galetes",
-      "terminos": "Condicions d’ús"
-    }
+      "terminos": "Condicions d’ús",
+      "contratacion": "Condicions de contractació"
+    },
+    "help": "Centre d’ajuda",
+    "helpSection": "Ajuda"
   },
   "account": {
     "title": "Compte",

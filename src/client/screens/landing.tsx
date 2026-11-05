@@ -259,11 +259,13 @@ export function Landing() {
         <div className="mx-auto flex max-w-[1120px] flex-col gap-4 px-4 py-8 md:flex-row md:items-center">
           <Wordmark size={17} />
           <p className="t-cap m-0 max-w-[620px] flex-1">{t('legal')}</p>
-          <div className="t-cap flex gap-4">
+          <div className="t-cap flex flex-wrap gap-x-4 gap-y-1.5">
+            <Link href="/ayuda">{t('help')}</Link>
             <Link href="/legal/aviso-legal">{t('legalNotice')}</Link>
             <Link href="/legal/privacidad">{t('privacy')}</Link>
             <Link href="/legal/cookies">{t('cookies')}</Link>
             <Link href="/legal/terminos">{t('terms')}</Link>
+            <Link href="/legal/contratacion">{t('purchase')}</Link>
           </div>
           <LanguageSwitch />
         </div>

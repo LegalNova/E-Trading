@@ -104,7 +104,7 @@ export const es: Record<LegalSlug, LegalDoc> = {
       {
         h: '4. Menores de edad',
         p: [
-          'Para registrarte debes tener al menos 14 años, la edad a partir de la cual se puede consentir el tratamiento de datos en España (LOPDGDD, art. 7). Si tienes entre 14 y 17 años puedes usar el plan gratuito; para contratar Premium hará falta que lo confirme tu madre, padre o tutor.',
+          'Para registrarte debes tener al menos 14 años, la edad a partir de la cual se puede consentir el tratamiento de datos en España (LOPDGDD, art. 7). Si tienes entre 14 y 17 años puedes usar el plan gratuito; para contratar un plan de pago (Plus o Max) hará falta que lo confirme tu madre, padre o tutor.',
           'Si sabemos que una cuenta pertenece a un menor de 14 años, la eliminaremos.',
         ],
       },
@@ -217,7 +217,7 @@ export const es: Record<LegalSlug, LegalDoc> = {
       {
         h: '3. Tu cuenta',
         list: [
-          'Debes tener al menos 14 años. Entre 14 y 17 años, para contratar Premium hace falta el consentimiento de tu madre, padre o tutor.',
+          'Debes tener al menos 14 años. Entre 14 y 17 años, para contratar un plan de pago (Plus o Max) hace falta el consentimiento de tu madre, padre o tutor.',
           'Una cuenta por persona. Cuida tu contraseña: eres responsable de lo que se haga con tu cuenta.',
           'Puedes borrar tu cuenta cuando quieras desde Ajustes.',
         ],
@@ -242,11 +242,11 @@ export const es: Record<LegalSlug, LegalDoc> = {
         p: ['Son elementos del juego, sin valor económico. No se pueden comprar con dinero, vender, transferir ni canjear por dinero o premios. Podemos ajustar su funcionamiento para mejorar el aprendizaje.'],
       },
       {
-        h: '7. Premium',
+        h: '7. Planes de pago (Plus y Max)',
         list: [
-          'Premium amplía las clases, las vidas, el saldo virtual y los tipos de orden. El precio y las condiciones se muestran antes de contratar.',
+          'Plus y Max amplían las clases, las vidas, el saldo virtual, los tipos de orden y las preguntas a Lumi. El precio y lo que incluye cada plan se muestran antes de contratar.',
           'Hay una prueba gratuita de 7 días, una por persona. En la versión actual el pago todavía no está activo: la prueba termina sola y vuelves a Free sin coste.',
-          'Cuando el pago esté activo: la suscripción se renovará automáticamente hasta que la canceles desde Ajustes, te avisaremos antes de cada cobro y, como consumidor, tendrás 14 días naturales para desistir desde la contratación.',
+          'Cuando el pago esté activo, la compra se rige por las Condiciones de contratación: precio, renovación, cancelación desde Ajustes, aviso antes de cada cobro tras la prueba y 14 días naturales para desistir.',
         ],
       },
       {
@@ -265,6 +265,102 @@ export const es: Record<LegalSlug, LegalDoc> = {
         h: '11. Ley y conflictos',
         p: [
           `Se aplica la ley española. Si tienes un problema, escríbenos primero a ${O.email} y lo intentaremos resolver. Como consumidor puedes acudir también a los organismos de consumo de tu comunidad autónoma y a los juzgados de tu domicilio.`,
+        ],
+      },
+    ],
+  },
+  contratacion: {
+    title: 'Condiciones de contratación',
+    intro: `Última actualización: ${LEGAL_UPDATED}. Se aplican cuando contratas un plan de pago (Plus o Max) y completan los Términos de uso. Cumplen el Real Decreto Legislativo 1/2007 (Ley General para la Defensa de los Consumidores y Usuarios) y la LSSI-CE. Mientras el pago no esté activo, los planes solo se pueden probar gratis y no se cobra nada.`,
+    sections: [
+      {
+        h: '1. Quién te vende',
+        table: {
+          head: ['Dato', 'Valor'],
+          rows: [
+            ['Titular', O.name],
+            ['NIF', O.nif],
+            ['Domicilio', O.address],
+            ['Email', O.email],
+          ],
+        },
+      },
+      {
+        h: '2. Qué contratas y cuánto cuesta',
+        p: ['Precios finales en euros, con todos los impuestos incluidos. No hay ningún otro cargo.'],
+        table: {
+          head: ['Plan', 'Qué incluye', 'Mensual', 'Anual'],
+          rows: [
+            ['Plus', 'Unidades 1 a 5 completas y las 5 primeras clases de cada unidad, vidas ilimitadas, 50.000 € virtuales y 30 preguntas al día a Lumi con el modo «Mi cartera».', '3,99 €/mes', '29,99 €/año'],
+            ['Max', 'Todo el curso, vidas ilimitadas, 50.000 € virtuales, órdenes avanzadas desde el primer día, 100 preguntas al día a Lumi con todos los modos y un protector de racha cada semana.', '7,99 €/mes', '59,99 €/año'],
+          ],
+        },
+      },
+      {
+        h: '3. Cómo se contrata',
+        list: [
+          'Eliges el plan y el periodo en la pantalla de planes, revisas el precio y confirmas con el botón de compra. Antes de pagar puedes corregir cualquier dato volviendo atrás.',
+          'El contrato queda celebrado al confirmar. Te enviamos la confirmación por email y puedes consultar tu plan en todo momento en Ajustes, Suscripción.',
+          'El contrato se formaliza en castellano, catalán o inglés, según el idioma de la app. Guardamos el registro de la contratación y te lo enviamos si nos lo pides.',
+        ],
+      },
+      {
+        h: '4. Prueba gratuita',
+        list: [
+          'La primera vez que contratas un plan de pago tienes 7 días de prueba gratuita (una vez por persona).',
+          'Si la cancelas antes de que termine, no se te cobra nada. Si no, al terminar se cobra el primer periodo del plan elegido.',
+          'Te avisaremos dentro de la app y por email antes de que termine la prueba.',
+        ],
+      },
+      {
+        h: '5. Pago',
+        list: [
+          'Se paga con tarjeta a través de Stripe, que procesa el pago de forma segura. Nosotros no vemos ni guardamos los datos completos de tu tarjeta.',
+          'Cada periodo se cobra por adelantado, el día en que empieza. Recibirás el justificante de cada cobro por email.',
+          'Si un cobro falla, te avisaremos y lo intentaremos de nuevo durante unos días; si no se puede cobrar, el plan vuelve a Free sin perder tu progreso.',
+        ],
+      },
+      {
+        h: '6. Renovación, cambios y cancelación',
+        list: [
+          'La suscripción se renueva automáticamente por el mismo periodo y precio hasta que la canceles.',
+          'Puedes cancelar cuando quieras en Ajustes, Suscripción, sin explicaciones. Mantienes el plan hasta el final del periodo pagado y no se te vuelve a cobrar.',
+          'Si cambiamos el precio, te avisaremos con al menos 30 días de antelación y antes de tu siguiente renovación; si no estás de acuerdo, puedes cancelar antes de que se aplique.',
+        ],
+      },
+      {
+        h: '7. Derecho de desistimiento y devoluciones',
+        list: [
+          'Como consumidor, tienes 14 días naturales desde que contratas para desistir del contrato sin dar ninguna explicación.',
+          'Además, como garantía comercial nuestra: si nos lo pides en los 14 días naturales siguientes a tu primer cobro, te devolvemos el importe completo, aunque ya hayas usado el plan.',
+          `Para hacerlo, escríbenos a ${O.email} indicando el email de tu cuenta, o usa el formulario del apartado 11. Te devolveremos el dinero en un máximo de 14 días por el mismo medio de pago, sin ningún coste para ti.`,
+        ],
+      },
+      {
+        h: '8. Menores de edad',
+        p: ['Si tienes entre 14 y 17 años, para contratar un plan de pago hace falta que tu madre, padre o tutor lo confirme. Sin esa confirmación no se puede completar la compra.'],
+      },
+      {
+        h: '9. Si algo no funciona',
+        p: [
+          'El servicio debe funcionar como se describe. Si no es así, tienes derecho a que lo arreglemos y, si no lo conseguimos en un plazo razonable, a una rebaja del precio o a terminar el contrato con la devolución correspondiente (garantía de conformidad de los contenidos y servicios digitales).',
+          'Lumi es un servicio educativo con dinero virtual: no garantiza ningún resultado económico real.',
+        ],
+      },
+      {
+        h: '10. Dudas y reclamaciones',
+        p: [
+          `Escríbenos a ${O.email}: respondemos en un máximo de 7 días y procuramos hacerlo antes. Si no quedas satisfecho, puedes acudir a los servicios de consumo de tu comunidad autónoma o a los juzgados de tu domicilio.`,
+          'Por ahora no estamos adheridos a ningún sistema de arbitraje de consumo.',
+        ],
+      },
+      {
+        h: '11. Modelo de formulario de desistimiento',
+        p: [
+          'Solo tienes que rellenarlo y enviárnoslo si quieres desistir del contrato. También vale un email con los mismos datos.',
+          `A la atención de ${O.name}, ${O.address}, ${O.email}:`,
+          'Por la presente le comunico que desisto de mi contrato del siguiente servicio: plan [Plus o Max], [mensual o anual].',
+          'Contratado el: [fecha] · Nombre: [tu nombre] · Email de la cuenta: [tu email] · Fecha: [fecha de hoy] · Firma (solo si lo envías en papel).',
         ],
       },
     ],

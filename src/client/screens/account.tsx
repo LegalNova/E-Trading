@@ -123,6 +123,15 @@ export function Premium() {
           {isPlus ? t('upgradeCta') : t('tryFree', { days: chosen.trialDays, plan: PLAN_NAME[tier] })}
         </button>
         <p className="t-cap m-0 text-center">{t('after', { price: money(chosen.price, 'EUR', locale), per: chosen.interval === 'YEAR' ? t('perYear') : t('perMonth') })}</p>
+        <p className="t-cap m-0 text-center">
+          {t.rich('purchaseTerms', {
+            terms: c => (
+              <Link href="/legal/contratacion" className="font-bold underline">
+                {c}
+              </Link>
+            ),
+          })}
+        </p>
         <div className="banner banner-info">{t('demoNote')}</div>
       </div>
     </>
@@ -284,9 +293,16 @@ export function Settings() {
             <Icon name="chev" size={18} />
           </Link>
         </div>
+        <Section>{t('helpSection')}</Section>
+        <div className="list">
+          <Link href="/ayuda" className="li plainline justify-between">
+            <span>{t('help')}</span>
+            <Icon name="chev" size={18} />
+          </Link>
+        </div>
         <Section>{t('legal')}</Section>
         <div className="list">
-          {(['aviso-legal', 'privacidad', 'cookies', 'terminos'] as const).map(slug => (
+          {(['aviso-legal', 'privacidad', 'cookies', 'terminos', 'contratacion'] as const).map(slug => (
             <Link key={slug} href={`/legal/${slug}`} className="li plainline justify-between">
               <span>{t(`legalDocs.${slug}`)}</span>
               <Icon name="chev" size={18} />

@@ -106,7 +106,9 @@
     "privacy": "Privacy policy",
     "terms": "Terms of use",
     "cookies": "Cookie policy",
-    "legalNotice": "Legal notice"
+    "legalNotice": "Legal notice",
+    "help": "Help",
+    "purchase": "Terms of purchase"
   },
   "auth": {
     "signUpTitle": "Create your account",
@@ -775,7 +777,8 @@
     ],
     "youAre": "You’re on the {plan} plan.",
     "upgradeTitle": "Upgrade to Max",
-    "upgradeCta": "Upgrade to Max"
+    "upgradeCta": "Upgrade to Max",
+    "purchaseTerms": "By continuing you accept the <terms>Terms of purchase</terms>: you can cancel at any time and you have 14 days to withdraw."
   },
   "settings": {
     "title": "Settings",
@@ -833,8 +836,11 @@
       "aviso-legal": "Legal notice",
       "privacidad": "Privacy policy",
       "cookies": "Cookie policy",
-      "terminos": "Terms of use"
-    }
+      "terminos": "Terms of use",
+      "contratacion": "Terms of purchase"
+    },
+    "help": "Help centre",
+    "helpSection": "Help"
   },
   "account": {
     "title": "Account",

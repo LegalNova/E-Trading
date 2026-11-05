@@ -3,7 +3,7 @@ import { OWNER } from './owner'
 import type { LegalDoc, LegalSlug } from './types'
 
 const O = OWNER
-const UPDATED = '24 October 2026'
+const UPDATED = '5 November 2026'
 
 export const en: Record<LegalSlug, LegalDoc> = {
   'aviso-legal': {
@@ -83,7 +83,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
       {
         h: '4. Minors',
         p: [
-          'You must be at least 14 to sign up — the age from which people can consent to data processing in Spain (LOPDGDD art. 7). If you are 14 to 17 you can use the free plan; Premium requires confirmation from a parent or guardian.',
+          'You must be at least 14 to sign up — the age from which people can consent to data processing in Spain (LOPDGDD art. 7). If you are 14 to 17 you can use the free plan; a paid plan (Plus or Max) requires confirmation from a parent or guardian.',
           'If we learn that an account belongs to someone under 14, we will delete it.',
         ],
       },
@@ -172,7 +172,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
       {
         h: '3. Your account',
         list: [
-          'You must be at least 14. From 14 to 17, Premium requires the consent of a parent or guardian.',
+          'You must be at least 14. From 14 to 17, a paid plan (Plus or Max) requires the consent of a parent or guardian.',
           'One account per person. Look after your password: you are responsible for what is done with your account.',
           'You can delete your account at any time in Settings.',
         ],
@@ -191,17 +191,113 @@ export const en: Record<LegalSlug, LegalDoc> = {
       { h: '5. Consequences', p: ['If these terms are breached we may correct progress or rewards obtained improperly, reset the virtual portfolio, or suspend or close the account. We will explain why and you will be able to respond.'] },
       { h: '6. XP, gems, lives and achievements', p: ['They are game elements with no monetary value. They cannot be bought with money, sold, transferred or exchanged for money or prizes. We may adjust how they work to improve learning.'] },
       {
-        h: '7. Premium',
+        h: '7. Paid plans (Plus and Max)',
         list: [
-          'Premium extends lessons, lives, virtual balance and order types. The price and conditions are shown before you subscribe.',
+          'Plus and Max extend lessons, lives, virtual balance, order types and questions to Lumi. The price and what each plan includes are shown before you subscribe.',
           'There is a 7-day free trial, one per person. In the current version payments are not active yet: the trial ends by itself and you go back to Free at no cost.',
-          'Once payments are active: the subscription renews automatically until you cancel it in Settings, we will notify you before each charge and, as a consumer, you will have 14 calendar days to withdraw from the date of subscription.',
+          'Once payments are active, purchases are governed by the Terms of purchase: price, renewal, cancellation in Settings, a reminder before the first charge after the trial and 14 calendar days to withdraw.',
         ],
       },
       { h: '8. Intellectual property', p: ['Lumi content belongs to its owner or is used under licence. You may use it for your personal learning, but not copy or distribute it without permission.'] },
       { h: '9. Liability', p: ['We take great care with the service, but it may have errors or interruptions. We are not liable for real investment decisions made based on the app. Nothing here limits your statutory rights as a consumer.'] },
       { h: '10. Changes to the service and the terms', p: ['We may improve or change features. If we change these terms significantly we will give you advance notice in the app.'] },
       { h: '11. Law and disputes', p: [`Spanish law applies. If you have a problem, write to us first at ${O.email} and we will try to solve it. As a consumer you may also contact the consumer bodies of your region and the courts of your place of residence.`] },
+    ],
+  },
+  contratacion: {
+    title: 'Terms of purchase',
+    intro: `Last updated: ${UPDATED}. They apply when you take out a paid plan (Plus or Max) and complement the Terms of use. They comply with Spanish Royal Legislative Decree 1/2007 (General Law for the Protection of Consumers and Users) and the LSSI-CE. While payments are not active, plans can only be tried for free and nothing is charged. The Spanish version prevails.`,
+    sections: [
+      {
+        h: '1. Who sells to you',
+        table: {
+          head: ['Item', 'Value'],
+          rows: [
+            ['Owner', O.name],
+            ['Tax ID (NIF)', O.nif],
+            ['Address', O.address],
+            ['Email', O.email],
+          ],
+        },
+      },
+      {
+        h: '2. What you buy and what it costs',
+        p: ['Final prices in euros, all taxes included. There are no other charges.'],
+        table: {
+          head: ['Plan', 'What it includes', 'Monthly', 'Yearly'],
+          rows: [
+            ['Plus', 'Units 1 to 5 in full and the first 5 lessons of every unit, unlimited lives, €50,000 in virtual money and 30 questions a day to Lumi with the «My portfolio» mode.', '€3.99/month', '€29.99/year'],
+            ['Max', 'The whole course, unlimited lives, €50,000 in virtual money, advanced orders from day one, 100 questions a day to Lumi with every mode and a streak freeze every week.', '€7.99/month', '€59.99/year'],
+          ],
+        },
+      },
+      {
+        h: '3. How to buy',
+        list: [
+          'Choose the plan and period on the plans screen, check the price and confirm with the purchase button. Before paying you can correct anything by going back.',
+          'The contract is concluded when you confirm. We send you the confirmation by email and you can check your plan at any time in Settings, Subscription.',
+          'The contract is concluded in Spanish, Catalan or English, depending on the app language. We keep a record of the purchase and send it to you on request.',
+        ],
+      },
+      {
+        h: '4. Free trial',
+        list: [
+          'The first time you take out a paid plan you get a 7-day free trial (once per person).',
+          'If you cancel before it ends, you pay nothing. Otherwise, when it ends the first period of the chosen plan is charged.',
+          'We will remind you in the app and by email before the trial ends.',
+        ],
+      },
+      {
+        h: '5. Payment',
+        list: [
+          'You pay by card through Stripe, which processes the payment securely. We never see or store your full card details.',
+          'Each period is charged in advance, on the day it starts. You will receive a receipt for each charge by email.',
+          'If a charge fails, we will tell you and retry for a few days; if it still cannot be charged, your plan goes back to Free and you keep your progress.',
+        ],
+      },
+      {
+        h: '6. Renewal, changes and cancellation',
+        list: [
+          'The subscription renews automatically for the same period and price until you cancel it.',
+          'You can cancel whenever you like in Settings, Subscription, with no explanation needed. You keep the plan until the end of the paid period and are not charged again.',
+          'If we change the price, we will tell you at least 30 days in advance and before your next renewal; if you disagree, you can cancel before it applies.',
+        ],
+      },
+      {
+        h: '7. Right of withdrawal and refunds',
+        list: [
+          'As a consumer, you have 14 calendar days from the purchase to withdraw from the contract without giving any reason.',
+          'On top of that, as our own commercial guarantee: if you ask within 14 calendar days of your first charge, we refund the full amount, even if you have already used the plan.',
+          `To do so, write to ${O.email} with your account email, or use the form in section 11. We will refund you within 14 days using the same payment method, at no cost to you.`,
+        ],
+      },
+      {
+        h: '8. Minors',
+        p: ['If you are 14 to 17, a parent or guardian has to confirm before you take out a paid plan. Without that confirmation the purchase cannot be completed.'],
+      },
+      {
+        h: '9. If something does not work',
+        p: [
+          'The service must work as described. If it does not, you are entitled to have it fixed and, if we cannot do so within a reasonable time, to a price reduction or to end the contract with the corresponding refund (conformity guarantee for digital content and services).',
+          'Lumi is an educational service with virtual money: it does not guarantee any real financial result.',
+        ],
+      },
+      {
+        h: '10. Questions and complaints',
+        p: [
+          `Write to ${O.email}: we reply within 7 days at most and try to do so sooner. If you are not satisfied, you can turn to the consumer services of your region or to the courts of your place of residence.`,
+          'We are not currently part of any consumer arbitration scheme.',
+        ],
+      },
+      {
+        h: '11. Model withdrawal form',
+        p: [
+          'Only fill it in and send it to us if you want to withdraw from the contract. An email with the same details also works.',
+          `For the attention of ${O.name}, ${O.address}, ${O.email}:`,
+          'I hereby give notice that I withdraw from my contract for the following service: [Plus or Max] plan, [monthly or yearly].',
+          'Purchased on: [date] · Name: [your name] · Account email: [your email] · Date: [today’s date] · Signature (only if sent on paper).',
+        ],
+      },
     ],
   },
 }

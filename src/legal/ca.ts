@@ -3,7 +3,7 @@ import { OWNER } from './owner'
 import type { LegalDoc, LegalSlug } from './types'
 
 const O = OWNER
-const UPDATED = '24 d’octubre de 2026'
+const UPDATED = '5 de novembre de 2026'
 
 export const ca: Record<LegalSlug, LegalDoc> = {
   'aviso-legal': {
@@ -83,7 +83,7 @@ export const ca: Record<LegalSlug, LegalDoc> = {
       {
         h: '4. Menors d’edat',
         p: [
-          'Per registrar-te has de tenir almenys 14 anys, l’edat a partir de la qual es pot consentir el tractament de dades a Espanya (LOPDGDD, art. 7). Si tens entre 14 i 17 anys pots fer servir el pla gratuït; per contractar Premium caldrà que ho confirmi la teva mare, pare o tutor.',
+          'Per registrar-te has de tenir almenys 14 anys, l’edat a partir de la qual es pot consentir el tractament de dades a Espanya (LOPDGDD, art. 7). Si tens entre 14 i 17 anys pots fer servir el pla gratuït; per contractar un pla de pagament (Plus o Max) caldrà que ho confirmi la teva mare, pare o tutor.',
           'Si sabem que un compte pertany a un menor de 14 anys, l’eliminarem.',
         ],
       },
@@ -172,7 +172,7 @@ export const ca: Record<LegalSlug, LegalDoc> = {
       {
         h: '3. El teu compte',
         list: [
-          'Has de tenir almenys 14 anys. Entre 14 i 17 anys, per contractar Premium cal el consentiment de la teva mare, pare o tutor.',
+          'Has de tenir almenys 14 anys. Entre 14 i 17 anys, per contractar un pla de pagament (Plus o Max) cal el consentiment de la teva mare, pare o tutor.',
           'Un compte per persona. Vigila la teva contrasenya: ets responsable del que es faci amb el teu compte.',
           'Pots esborrar el compte quan vulguis des de Configuració.',
         ],
@@ -191,17 +191,113 @@ export const ca: Record<LegalSlug, LegalDoc> = {
       { h: '5. Conseqüències', p: ['Si s’incompleixen aquestes condicions podem corregir el progrés o les recompenses obtingudes indegudament, reiniciar la cartera virtual, suspendre o tancar el compte. T’ho explicarem i podràs respondre.'] },
       { h: '6. XP, gemmes, vides i assoliments', p: ['Són elements del joc, sense valor econòmic. No es poden comprar amb diners, vendre, transferir ni bescanviar per diners o premis. En podem ajustar el funcionament per millorar l’aprenentatge.'] },
       {
-        h: '7. Premium',
+        h: '7. Plans de pagament (Plus i Max)',
         list: [
-          'Premium amplia les classes, les vides, el saldo virtual i els tipus d’ordre. El preu i les condicions es mostren abans de contractar.',
+          'Plus i Max amplien les classes, les vides, el saldo virtual, els tipus d’ordre i les preguntes a la Lumi. El preu i el que inclou cada pla es mostren abans de contractar.',
           'Hi ha una prova gratuïta de 7 dies, una per persona. A la versió actual el pagament encara no està actiu: la prova s’acaba sola i tornes a Free sense cost.',
-          'Quan el pagament estigui actiu: la subscripció es renovarà automàticament fins que la cancel·lis des de Configuració, t’avisarem abans de cada cobrament i, com a consumidor, tindràs 14 dies naturals per desistir des de la contractació.',
+          'Quan el pagament estigui actiu, la compra es regeix per les Condicions de contractació: preu, renovació, cancel·lació des de Configuració, avís abans de cada cobrament després de la prova i 14 dies naturals per desistir.',
         ],
       },
       { h: '8. Propietat intel·lectual', p: ['El contingut de Lumi pertany al seu titular o s’utilitza amb llicència. El pots fer servir per al teu aprenentatge personal, però no copiar-lo ni distribuir-lo sense permís.'] },
       { h: '9. Responsabilitat', p: ['Posem la màxima cura en el servei, però pot tenir errors o interrupcions. No responem de decisions d’inversió reals preses a partir de l’aplicació. Res de l’anterior limita els drets que la llei et reconeix com a consumidor.'] },
       { h: '10. Canvis en el servei i en les condicions', p: ['Podem millorar o canviar funcions. Si canviem aquestes condicions de manera important t’avisarem amb antelació dins de l’aplicació.'] },
       { h: '11. Llei i conflictes', p: [`S’aplica la llei espanyola. Si tens un problema, escriu-nos primer a ${O.email} i el mirarem de resoldre. Com a consumidor també pots acudir als organismes de consum de la teva comunitat autònoma i als jutjats del teu domicili.`] },
+    ],
+  },
+  contratacion: {
+    title: 'Condicions de contractació',
+    intro: `Darrera actualització: ${UPDATED}. S’apliquen quan contractes un pla de pagament (Plus o Max) i completen les Condicions d’ús. Compleixen el Reial decret legislatiu 1/2007 (Llei general per a la defensa dels consumidors i usuaris) i la LSSI-CE. Mentre el pagament no estigui actiu, els plans només es poden provar gratis i no es cobra res. En cas de dubte, preval la versió en castellà.`,
+    sections: [
+      {
+        h: '1. Qui et ven',
+        table: {
+          head: ['Dada', 'Valor'],
+          rows: [
+            ['Titular', O.name],
+            ['NIF', O.nif],
+            ['Domicili', O.address],
+            ['Correu', O.email],
+          ],
+        },
+      },
+      {
+        h: '2. Què contractes i quant costa',
+        p: ['Preus finals en euros, amb tots els impostos inclosos. No hi ha cap altre càrrec.'],
+        table: {
+          head: ['Pla', 'Què inclou', 'Mensual', 'Anual'],
+          rows: [
+            ['Plus', 'Unitats 1 a 5 completes i les 5 primeres classes de cada unitat, vides il·limitades, 50.000 € virtuals i 30 preguntes al dia a la Lumi amb el mode «La meva cartera».', '3,99 €/mes', '29,99 €/any'],
+            ['Max', 'Tot el curs, vides il·limitades, 50.000 € virtuals, ordres avançades des del primer dia, 100 preguntes al dia a la Lumi amb tots els modes i un protector de ratxa cada setmana.', '7,99 €/mes', '59,99 €/any'],
+          ],
+        },
+      },
+      {
+        h: '3. Com es contracta',
+        list: [
+          'Tries el pla i el període a la pantalla de plans, revises el preu i confirmes amb el botó de compra. Abans de pagar pots corregir qualsevol dada tornant enrere.',
+          'El contracte queda formalitzat en confirmar. T’enviem la confirmació per correu i pots consultar el teu pla en tot moment a Configuració, Subscripció.',
+          'El contracte es formalitza en castellà, català o anglès, segons l’idioma de l’app. Desem el registre de la contractació i te l’enviem si ens el demanes.',
+        ],
+      },
+      {
+        h: '4. Prova gratuïta',
+        list: [
+          'La primera vegada que contractes un pla de pagament tens 7 dies de prova gratuïta (una vegada per persona).',
+          'Si la cancel·les abans que s’acabi, no se’t cobra res. Si no, en acabar es cobra el primer període del pla triat.',
+          'T’avisarem dins de l’app i per correu abans que s’acabi la prova.',
+        ],
+      },
+      {
+        h: '5. Pagament',
+        list: [
+          'Es paga amb targeta a través de Stripe, que processa el pagament de manera segura. Nosaltres no veiem ni desem les dades completes de la teva targeta.',
+          'Cada període es cobra per avançat, el dia que comença. Rebràs el justificant de cada cobrament per correu.',
+          'Si un cobrament falla, t’avisarem i ho tornarem a provar durant uns dies; si no es pot cobrar, el pla torna a Free sense perdre el teu progrés.',
+        ],
+      },
+      {
+        h: '6. Renovació, canvis i cancel·lació',
+        list: [
+          'La subscripció es renova automàticament pel mateix període i preu fins que la cancel·lis.',
+          'Pots cancel·lar quan vulguis a Configuració, Subscripció, sense explicacions. Mantens el pla fins al final del període pagat i no se’t torna a cobrar.',
+          'Si canviem el preu, t’avisarem amb almenys 30 dies d’antelació i abans de la renovació següent; si no hi estàs d’acord, pots cancel·lar abans que s’apliqui.',
+        ],
+      },
+      {
+        h: '7. Dret de desistiment i devolucions',
+        list: [
+          'Com a consumidor, tens 14 dies naturals des que contractes per desistir del contracte sense donar cap explicació.',
+          'A més, com a garantia comercial nostra: si ens ho demanes en els 14 dies naturals següents al teu primer cobrament, et tornem l’import complet, encara que ja hagis fet servir el pla.',
+          `Per fer-ho, escriu-nos a ${O.email} indicant el correu del teu compte, o fes servir el formulari de l’apartat 11. Et retornarem els diners en un màxim de 14 dies pel mateix mitjà de pagament, sense cap cost per a tu.`,
+        ],
+      },
+      {
+        h: '8. Menors d’edat',
+        p: ['Si tens entre 14 i 17 anys, per contractar un pla de pagament cal que la teva mare, el teu pare o el teu tutor ho confirmi. Sense aquesta confirmació no es pot completar la compra.'],
+      },
+      {
+        h: '9. Si alguna cosa no funciona',
+        p: [
+          'El servei ha de funcionar tal com es descriu. Si no és així, tens dret que ho arreglem i, si no ho aconseguim en un termini raonable, a una rebaixa del preu o a acabar el contracte amb la devolució corresponent (garantia de conformitat dels continguts i serveis digitals).',
+          'Lumi és un servei educatiu amb diners virtuals: no garanteix cap resultat econòmic real.',
+        ],
+      },
+      {
+        h: '10. Dubtes i reclamacions',
+        p: [
+          `Escriu-nos a ${O.email}: responem en un màxim de 7 dies i procurem fer-ho abans. Si no en quedes satisfet, pots acudir als serveis de consum de la teva comunitat autònoma o als jutjats del teu domicili.`,
+          'De moment no estem adherits a cap sistema d’arbitratge de consum.',
+        ],
+      },
+      {
+        h: '11. Model de formulari de desistiment',
+        p: [
+          'Només l’has d’emplenar i enviar-nos-el si vols desistir del contracte. També val un correu amb les mateixes dades.',
+          `A l’atenció de ${O.name}, ${O.address}, ${O.email}:`,
+          'Per la present li comunico que desisteixo del meu contracte del servei següent: pla [Plus o Max], [mensual o anual].',
+          'Contractat el: [data] · Nom: [el teu nom] · Correu del compte: [el teu correu] · Data: [data d’avui] · Signatura (només si l’envies en paper).',
+        ],
+      },
     ],
   },
 }

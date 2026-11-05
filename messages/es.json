@@ -106,7 +106,9 @@
     "privacy": "Política de privacidad",
     "terms": "Términos de uso",
     "cookies": "Política de cookies",
-    "legalNotice": "Aviso legal"
+    "legalNotice": "Aviso legal",
+    "help": "Ayuda",
+    "purchase": "Contratación"
   },
   "auth": {
     "signUpTitle": "Crea tu cuenta",
@@ -775,7 +777,8 @@
     ],
     "youAre": "Tienes el plan {plan}.",
     "upgradeTitle": "Pásate a Max",
-    "upgradeCta": "Pasar a Max"
+    "upgradeCta": "Pasar a Max",
+    "purchaseTerms": "Al continuar aceptas las <terms>Condiciones de contratación</terms>: puedes cancelar cuando quieras y tienes 14 días para desistir."
   },
   "settings": {
     "title": "Ajustes",
@@ -833,8 +836,11 @@
       "aviso-legal": "Aviso legal",
       "privacidad": "Política de privacidad",
       "cookies": "Política de cookies",
-      "terminos": "Términos de uso"
-    }
+      "terminos": "Términos de uso",
+      "contratacion": "Condiciones de contratación"
+    },
+    "help": "Centro de ayuda",
+    "helpSection": "Ayuda"
   },
   "account": {
     "title": "Cuenta",

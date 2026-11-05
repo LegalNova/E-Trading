@@ -9,5 +9,5 @@ export interface LegalDoc {
   intro: string
   sections: LegalSection[]
 }
-export type LegalSlug = 'aviso-legal' | 'privacidad' | 'cookies' | 'terminos'
-export const LEGAL_SLUGS: LegalSlug[] = ['aviso-legal', 'privacidad', 'cookies', 'terminos']
+export type LegalSlug = 'aviso-legal' | 'privacidad' | 'cookies' | 'terminos' | 'contratacion'
+export const LEGAL_SLUGS: LegalSlug[] = ['aviso-legal', 'privacidad', 'cookies', 'terminos', 'contratacion']
