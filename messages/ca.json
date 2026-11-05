@@ -695,7 +695,7 @@
     "rarityLegend": "Raresa"
   },
   "league": {
-    "title": "Lliga {name}",
+    "title": "Lliga de la setmana",
     "endsIn": "Acaba en {time} · els {n} primers pugen",
     "divisions": "Divisions",
     "yourPosition": "La teva posició",
@@ -710,9 +710,10 @@
     "you": "Tu · {name}",
     "rule": "Punts = XP de la setmana + rendibilitat ajustada per risc. Apostar-ho tot a una operació no suma més.",
     "pointsCol": "Punts",
-    "joinHint": "Guanya la teva primera XP de la setmana (una classe o una operació) i entraràs en un grup de fins a 30 persones de la teva divisió.",
+    "joinHint": "Ja ets a la lliga d’aquesta setmana. Fes una classe o una operació per sumar els teus primers punts.",
     "inviteTitle": "Porta els teus amics a la lliga",
-    "inviteBody": "Amb el teu enllaç entren amb 7 dies de Max i competiu cada setmana."
+    "inviteBody": "Amb el teu enllaç entren amb 7 dies de Max i competiu cada setmana.",
+    "yourDivision": "La teva divisió: {name}"
   },
   "profile": {
     "title": "Perfil",

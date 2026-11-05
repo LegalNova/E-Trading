@@ -18,8 +18,11 @@ export const pushEnabled = PUB.length > 40 && PRIV.length > 20
 if (pushEnabled) webpush.setVapidDetails(process.env.VAPID_SUBJECT || 'https://e-trading-app.vercel.app', PUB, PRIV)
 export const vapidPublicKey = () => (pushEnabled ? PUB : null)
 
-const MAX_PER_DAY = 3
-const GAP_MS = 2 * 3_600_000
+// Insistentes pero sin agobiar: hasta 4 al día, con hora y media entre uno y otro, nunca de 22:00 a 9:00
+const MAX_PER_DAY = 4
+const GAP_MS = 90 * 60_000
+// Si aún no tiene ni cartera ni favoritos: los activos más conocidos (datos reales)
+const POPULAR = ['BTC-EUR', 'ETH-EUR', 'SOL-EUR', 'NVDA', 'TSLA', 'AAPL', 'MSFT', 'AMZN', 'META', 'ITX.MC', 'SAN.MC', 'SPY', 'GC=F']
 
 // Preferencias de Ajustes: cada aviso pertenece a uno de estos grupos
 const PREF: Record<PushKind, string> = { streak: 'STREAK_RISK', streak_last: 'STREAK_RISK', comeback: 'STREAK_RISK', unfinished: 'NEW_LESSON', review: 'NEW_LESSON', daily: 'NEW_LESSON', trial: 'NEW_LESSON', market: 'PRICE_ALERT', league: 'LEAGUE_RESULT' }
@@ -111,18 +114,20 @@ export async function candidateFor(u: User & { game: { streak: number; lastActiv
       if (left === 2 || left === 1) return { kind: 'trial', vars: { n: left }, url: '/clases' }
     }
   }
-  // 16:00 de lunes a viernes (abre Wall Street): el activo que más se mueve de los que tiene o sigue (datos reales)
-  if (hour === 16 && !['Sat', 'Sun'].includes(weekdayIn(u.timezone))) {
+  // 16:00 (abre Wall Street; el fin de semana, cripto): el activo que más se mueve de los suyos o, si no tiene, de los más conocidos
+  if (hour === 16) {
     const [pos, watch] = await Promise.all([db.position.findMany({ where: { userId: u.id }, select: { symbol: true } }), db.watchItem.findMany({ where: { userId: u.id }, select: { symbol: true } })])
-    const syms = [...new Set([...pos, ...watch].map(x => x.symbol))]
-    if (syms.length) {
+    const own = [...new Set([...pos, ...watch].map(x => x.symbol))]
+    const syms = own.length ? own : POPULAR
+    {
       const book = await priceBook(syms)
-      const best = [...book.values()].filter(p => p.prevClose > 0 && p.open).map(p => ({ p, chg: (p.price / p.prevClose - 1) * 100 })).sort((a, b) => Math.abs(b.chg) - Math.abs(a.chg))[0]
+      const best = [...book.values()].filter(p => p.prevClose > 0 && p.tradable).map(p => ({ p, chg: (p.price / p.prevClose - 1) * 100 })).sort((a, b) => Math.abs(b.chg) - Math.abs(a.chg))[0]
       if (best && Math.abs(best.chg) >= 0.5) return { kind: 'market', vars: { name: best.p.name, chg: pct(best.chg, lang) }, url: `/mercado/${encodeURIComponent(best.p.symbol)}` }
     }
   }
-  // Domingo 18:00: cómo va en la liga (se cierra el lunes)
-  if (hour === 18 && weekdayIn(u.timezone) === 'Sun') {
+  // Miércoles 17:00 (mitad de semana) y domingo 18:00 (se cierra el lunes): cómo va en la liga
+  const wd = weekdayIn(u.timezone)
+  if ((hour === 18 && wd === 'Sun') || (hour === 17 && wd === 'Wed')) {
     const { withCtx } = await import('./game/core')
     const { leagueFor } = await import('./game/league')
     const l = await withCtx(c => leagueFor(c), u)

@@ -695,7 +695,7 @@
     "rarityLegend": "Rarezas"
   },
   "league": {
-    "title": "Liga {name}",
+    "title": "Liga de la semana",
     "endsIn": "Termina en {time} · los {n} primeros suben",
     "divisions": "Divisiones",
     "yourPosition": "Tu puesto",
@@ -710,9 +710,10 @@
     "you": "Tú · {name}",
     "rule": "Puntos = XP de la semana + rentabilidad ajustada por riesgo. Apostarlo todo a una operación no suma más.",
     "pointsCol": "Puntos",
-    "joinHint": "Gana tu primera XP de la semana (una clase o una operación) y entrarás en un grupo de hasta 30 personas de tu división.",
+    "joinHint": "Ya estás en la liga de esta semana. Haz una clase o una operación para sumar tus primeros puntos.",
     "inviteTitle": "Trae a tus amigos a la liga",
-    "inviteBody": "Con tu enlace entran con 7 días de Max y competís cada semana."
+    "inviteBody": "Con tu enlace entran con 7 días de Max y competís cada semana.",
+    "yourDivision": "Tu división: {name}"
   },
   "profile": {
     "title": "Perfil",

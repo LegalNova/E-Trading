@@ -216,8 +216,11 @@ export function League() {
   const me = l.members.find(m => m.isMe)
   return (
     <div className="pad">
-      <h1 className="t-large">{t('title', { name: l.division.name })}</h1>
+      <h1 className="t-large">{t('title')}</h1>
       <span className="t-foot -mt-2">{t('endsIn', { time: countdown(l.endsAt), n: l.promoteTop })}</span>
+      <span className="t-foot font-bold" style={{ color: 'var(--ink)' }}>
+        {t('yourDivision', { name: l.division.name })}
+      </span>
       <div className="flex gap-1" aria-label={t('divisions')}>
         {l.divisions.map((d, i) => (
           <span key={d} title={d} className="h-1.5 flex-1 rounded-full" style={{ background: i + 1 < l.division.order ? 'var(--ink-3)' : i + 1 === l.division.order ? 'var(--brand)' : 'var(--fill)' }} />
@@ -252,7 +255,9 @@ export function League() {
               <b className="w-6">{m.rank}</b>
               <span className="min-w-0 flex-1 truncate" style={{ fontWeight: m.isMe ? 800 : 600 }}>
                 {m.isMe ? t('you', { name: m.displayName }) : m.displayName}
-                <span className="t-cap block font-normal">{num(m.weeklyXp, locale, 0)} XP</span>
+                <span className="t-cap block font-normal">
+                  {num(m.weeklyXp, locale, 0)} XP{m.division ? ` · ${m.division}` : ''}
+                </span>
               </span>
               <span className="w-16 text-right font-bold tabular-nums">{num(m.score, locale, 0)}</span>
               <span className={`w-16 text-right font-bold tabular-nums ${m.riskAdjReturnPct >= 0 ? 'up' : 'down'}`}>

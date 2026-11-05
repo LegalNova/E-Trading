@@ -129,9 +129,11 @@ function inCtx<T>(fn: (c: Ctx) => Promise<T>, u0: User, readOnly: boolean, read:
       await rollover(c)
       const out = await fn(c)
       // Liga: todo el que usa la app esta semana entra en su grupo (aunque aún no tenga XP), una vez por semana
-      if (c.counters.leagueWeek !== weekNo(c.g.weekKey)) {
+      // (semana de la liga = la de Madrid, la misma para todos)
+      const lw = weekNo(weekOf(Date.now()))
+      if (c.counters.leagueWeek !== lw) {
         await (await import('./league')).ensureMembership(c, true)
-        c.counters.leagueWeek = weekNo(c.g.weekKey)
+        c.counters.leagueWeek = lw
       } else if (c.g.weekXp > 0) await (await import('./league')).ensureMembership(c)
       const { xp, weekKey, weekXp, gems, lives, livesUpdatedAt, streak, bestStreak, lastActiveDay, freezes, placementDone, tradesDay, tradesToday, division } = c.g
       const data = { xp, weekKey, weekXp, gems, lives, livesUpdatedAt, streak, bestStreak, lastActiveDay, freezes, placementDone, tradesDay, tradesToday, division, counters: c.counters }

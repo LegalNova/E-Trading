@@ -695,7 +695,7 @@
     "rarityLegend": "Rarity"
   },
   "league": {
-    "title": "{name} League",
+    "title": "This week’s league",
     "endsIn": "Ends in {time} · top {n} move up",
     "divisions": "Divisions",
     "yourPosition": "Your position",
@@ -710,9 +710,10 @@
     "you": "You · {name}",
     "rule": "Points = this week's XP + risk-adjusted return. Betting everything on one trade doesn't earn you more.",
     "pointsCol": "Points",
-    "joinHint": "Earn your first XP of the week (a lesson or a trade) and you will join a group of up to 30 people in your division.",
+    "joinHint": "You’re in this week’s league. Take a lesson or make a trade to score your first points.",
     "inviteTitle": "Bring your friends into the league",
-    "inviteBody": "With your link they join with 7 days of Max and you compete every week."
+    "inviteBody": "With your link they join with 7 days of Max and you compete every week.",
+    "yourDivision": "Your division: {name}"
   },
   "profile": {
     "title": "Profile",

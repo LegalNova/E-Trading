@@ -370,6 +370,7 @@ export const LeagueMember = z.object({
   riskAdjReturnPct: z.number(),
   score: z.number(),
   isMe: z.boolean(),
+  division: z.string().optional(),
 })
 export const League = z.object({
   division: z.object({ id: z.string(), name: z.string(), order: z.number() }),
