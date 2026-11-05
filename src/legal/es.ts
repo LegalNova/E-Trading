@@ -251,19 +251,28 @@ export const es: Record<LegalSlug, LegalDoc> = {
         ],
       },
       {
-        h: '8. Propiedad intelectual',
+        h: '8. Invitaciones',
+        list: [
+          'Cada persona tiene un enlace de invitación. Si alguien crea su cuenta con él, la guarda con email y contraseña y termina su primera clase, los dos recibís 30 días de Max gratis.',
+          'Puedes ganar como mucho 12 meses en total. El regalo no tiene valor económico, no se puede cambiar por dinero ni transferir, y se suma al Max que ya tengas.',
+          'No vale invitarte a ti mismo, crear cuentas falsas ni comprar o vender invitaciones. Si pasa, podemos retirar los meses regalados y aplicar el apartado 5.',
+          'Podemos cambiar o terminar el programa avisando antes en la app; los meses ya ganados se respetan.',
+        ],
+      },
+      {
+        h: '9. Propiedad intelectual',
         p: ['El contenido de Lumi pertenece a su titular o se usa con licencia. Puedes usarlo para tu aprendizaje personal, pero no copiarlo ni distribuirlo sin permiso.'],
       },
       {
-        h: '9. Responsabilidad',
+        h: '10. Responsabilidad',
         p: ['Ponemos el máximo cuidado en el servicio, pero puede tener errores o interrupciones. No respondemos de decisiones de inversión reales tomadas a partir de la aplicación. Nada de lo anterior limita los derechos que te reconoce la ley como consumidor.'],
       },
       {
-        h: '10. Cambios en el servicio y en los términos',
+        h: '11. Cambios en el servicio y en los términos',
         p: ['Podemos mejorar o cambiar funciones. Si cambiamos estos términos de forma importante te avisaremos con antelación dentro de la aplicación.'],
       },
       {
-        h: '11. Ley y conflictos',
+        h: '12. Ley y conflictos',
         p: [
           `Se aplica la ley española. Si tienes un problema, escríbenos primero a ${O.email} y lo intentaremos resolver. Como consumidor puedes acudir también a los organismos de consumo de tu comunidad autónoma y a los juzgados de tu domicilio.`,
         ],

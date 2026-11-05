@@ -199,10 +199,19 @@ export const en: Record<LegalSlug, LegalDoc> = {
           'Once payments are active, purchases are governed by the Terms of purchase: price, renewal, cancellation in Settings, a reminder before the first charge after the trial and 14 calendar days to withdraw.',
         ],
       },
-      { h: '8. Intellectual property', p: ['Lumi content belongs to its owner or is used under licence. You may use it for your personal learning, but not copy or distribute it without permission.'] },
-      { h: '9. Liability', p: ['We take great care with the service, but it may have errors or interruptions. We are not liable for real investment decisions made based on the app. Nothing here limits your statutory rights as a consumer.'] },
-      { h: '10. Changes to the service and the terms', p: ['We may improve or change features. If we change these terms significantly we will give you advance notice in the app.'] },
-      { h: '11. Law and disputes', p: [`Spanish law applies. If you have a problem, write to us first at ${O.email} and we will try to solve it. As a consumer you may also contact the consumer bodies of your region and the courts of your place of residence.`] },
+      {
+        h: '8. Invitations',
+        list: [
+          'Everyone has an invitation link. If someone creates their account with it, saves it with an email and password and finishes their first lesson, you both get 30 days of Max for free.',
+          'You can earn up to 12 months in total. The gift has no monetary value, cannot be exchanged for money or transferred, and is added to any Max you already have.',
+          'Inviting yourself, creating fake accounts or buying or selling invitations is not allowed. If it happens, we may withdraw the gifted months and apply section 5.',
+          'We may change or end the programme with prior notice in the app; months already earned are kept.',
+        ],
+      },
+      { h: '9. Intellectual property', p: ['Lumi content belongs to its owner or is used under licence. You may use it for your personal learning, but not copy or distribute it without permission.'] },
+      { h: '10. Liability', p: ['We take great care with the service, but it may have errors or interruptions. We are not liable for real investment decisions made based on the app. Nothing here limits your statutory rights as a consumer.'] },
+      { h: '11. Changes to the service and the terms', p: ['We may improve or change features. If we change these terms significantly we will give you advance notice in the app.'] },
+      { h: '12. Law and disputes', p: [`Spanish law applies. If you have a problem, write to us first at ${O.email} and we will try to solve it. As a consumer you may also contact the consumer bodies of your region and the courts of your place of residence.`] },
     ],
   },
   contratacion: {

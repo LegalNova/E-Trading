@@ -71,7 +71,7 @@ export function Premium() {
         <TopBar close="/perfil" />
         <div className="pad">
           <h1 className="t-large">{t('youAre', { plan: 'Max' })}</h1>
-          <p className="t-body muted m-0">{status.status === 'TRIALING' && status.trialEndsAt ? t('trialUntil', { date: new Date(status.trialEndsAt).toLocaleDateString(locale, { day: 'numeric', month: 'long' }) }) : t('active')}</p>
+          <p className="t-body muted m-0">{(status.status === 'TRIALING' || status.status === 'GIFT') && status.trialEndsAt ? t(status.status === 'GIFT' ? 'giftUntil' : 'trialUntil', { date: new Date(status.trialEndsAt).toLocaleDateString(locale, { day: 'numeric', month: 'long' }) }) : t('active')}</p>
           <FeatureList features={features('PREMIUM')} />
           <Link href="/ajustes" className="btn btn-secondary">
             {t('manage')}
@@ -204,9 +204,22 @@ export function Settings() {
         <div className="list">
           <div className="li plainline justify-between">
             <span>{t('plan')}</span>
-            <b>{me.plan !== 'FREE' ? `${PLAN_NAME[me.plan]} · ${status.interval === 'YEAR' ? t('yearly') : t('monthly')}` : 'Free'}</b>
+            <b>{me.plan === 'FREE' ? 'Free' : status.status === 'GIFT' ? `${PLAN_NAME[me.plan]} · ${t('gift')}` : `${PLAN_NAME[me.plan]} · ${status.interval === 'YEAR' ? t('yearly') : t('monthly')}`}</b>
           </div>
-          {me.plan !== 'FREE' ? (
+          {me.plan !== 'FREE' && status.status === 'GIFT' ? (
+            <>
+              {status.trialEndsAt && (
+                <div className="li plainline justify-between">
+                  <span>{t('giftEnds')}</span>
+                  <b>{new Date(status.trialEndsAt).toLocaleDateString(locale, { day: 'numeric', month: 'short', year: 'numeric' })}</b>
+                </div>
+              )}
+              <Link href="/perfil/invitar" className="li plainline justify-between">
+                <span>{t('giftMore')}</span>
+                <Icon name="chev" size={18} />
+              </Link>
+            </>
+          ) : me.plan !== 'FREE' ? (
             <>
               {status.renewsAt && (
                 <div className="li plainline justify-between">

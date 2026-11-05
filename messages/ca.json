@@ -102,7 +102,10 @@
     "legalNotice": "Avís legal",
     "help": "Ajuda",
     "purchase": "Contractació",
-    "guestNote": "Sense correu ni contrasenya. Si t’agrada, deses el progrés quan vulguis."
+    "guestNote": "Sense correu ni contrasenya. Si t’agrada, deses el progrés quan vulguis.",
+    "invitedBy": "{name} t’ha convidat a Lumi",
+    "invited": "T’han convidat a Lumi",
+    "invitedSub": "Crea el teu compte i acaba la primera classe: us emporteu un mes de Max tots dos."
   },
   "auth": {
     "signUpTitle": "Crea el teu compte",
@@ -726,7 +729,9 @@
     "achievements": "Insígnies",
     "notifications": "Avisos",
     "portfolio": "Cartera",
-    "tryPremium": "Provar 7 dies gratis"
+    "tryPremium": "Provar 7 dies gratis",
+    "inviteTitle": "Convida els teus amics",
+    "inviteSub": "Un mes de Max per a tots dos"
   },
   "notifications": {
     "title": "Avisos",
@@ -775,7 +780,8 @@
     "upgradeTitle": "Passa’t a Max",
     "upgradeCta": "Passar a Max",
     "purchaseTerms": "Si continues, acceptes les <terms>Condicions de contractació</terms>: pots cancel·lar quan vulguis i tens 14 dies per desistir.",
-    "guestSave": "Desa el progrés per provar-lo"
+    "guestSave": "Desa el progrés per provar-lo",
+    "giftUntil": "Max regalat fins al {date}."
   },
   "settings": {
     "title": "Configuració",
@@ -837,7 +843,10 @@
       "contratacion": "Condicions de contractació"
     },
     "help": "Centre d’ajuda",
-    "helpSection": "Ajuda"
+    "helpSection": "Ajuda",
+    "gift": "regal",
+    "giftEnds": "Fi del regal",
+    "giftMore": "Guanya més mesos convidant"
   },
   "account": {
     "title": "Compte",
@@ -1437,5 +1446,23 @@
     "continue": "Continuar",
     "accountNote": "Ara estàs sense compte: si tanques la sessió o passen 30 dies sense entrar, es perd el progrés.",
     "logoutWarning": "Estàs provant sense compte: si surts ara, perdràs el progrés. Vols sortir igualment?"
+  },
+  "invite": {
+    "title": "Convidar amics",
+    "headline": "Convida els teus amics i us emporteu un mes de Max",
+    "sub": "{days} dies de Max per a cadascú per cada amic que s’hi apunti i acabi la primera classe.",
+    "step1": "Comparteix el teu enllaç per WhatsApp, Instagram o on vulguis.",
+    "step2": "El teu amic entra, crea el compte i acaba la primera classe.",
+    "step3": "Tots dos rebeu un mes de Max: tot el curs, sense límits.",
+    "yourLink": "El teu enllaç",
+    "copy": "Copiar l’enllaç",
+    "copied": "Copiat",
+    "share": "Compartir",
+    "shareText": "Estic aprenent a invertir amb Lumi, sense arriscar diners reals. Entra amb el meu enllaç i ens emportem un mes de Max tots dos: {link}",
+    "joined": "Amics que s’hi han apuntat",
+    "months": "Mesos de Max guanyats",
+    "rules": "Pots guanyar fins a {cap} mesos. El regal arriba quan el teu amic desa el compte i acaba la primera classe. Crear comptes falsos o convidar-te a tu mateix va contra les <terms>Condicions d’ús</terms>.",
+    "guest": "Per convidar els teus amics, primer desa el teu progrés amb correu i contrasenya.",
+    "guestCta": "Desar el meu progrés"
   }
 }

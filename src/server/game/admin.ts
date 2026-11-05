@@ -121,15 +121,22 @@ async function moneyFunnel(from: string) {
 
 /** Origen de los usuarios (primer contacto) y cuántos prueban o pagan */
 async function bySource() {
-  const rows = await db.user.groupBy({ by: ['source'], _count: { _all: true }, orderBy: { _count: { id: 'desc' } }, take: 12 })
+  // Las invitaciones de usuarios (inv/código) se agrupan en una sola fila
+  const raw = await db.user.groupBy({ by: ['source'], _count: { _all: true } })
+  const key = (s: string | null) => (s?.startsWith('inv/') ? 'invitaciones de usuarios' : s)
+  const rows = new Map<string | null, number>()
+  for (const r of raw) rows.set(key(r.source), (rows.get(key(r.source)) ?? 0) + r._count._all)
   const of = async (name: string) => {
     const ev = await db.event.findMany({ where: { name }, distinct: ['userId'], select: { user: { select: { source: true } } } })
     const m = new Map<string | null, number>()
-    for (const e of ev) m.set(e.user?.source ?? null, (m.get(e.user?.source ?? null) ?? 0) + 1)
+    for (const e of ev) m.set(key(e.user?.source ?? null), (m.get(key(e.user?.source ?? null)) ?? 0) + 1)
     return m
   }
   const [trials, paid] = await Promise.all([of('trial_start'), of('paid')])
-  return rows.map(r => ({ source: r.source ?? '—', users: r._count._all, trials: trials.get(r.source) ?? 0, paid: paid.get(r.source) ?? 0 }))
+  return [...rows.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 12)
+    .map(([s, n]) => ({ source: s ?? '—', users: n, trials: trials.get(s) ?? 0, paid: paid.get(s) ?? 0 }))
 }
 
 export async function users(q?: string) {

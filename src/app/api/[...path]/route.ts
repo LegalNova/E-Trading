@@ -8,6 +8,7 @@ import { recordClientEvent, recordServerError } from '@/server/game/analytics'
 import { lens, lessonTable, type LensRange } from '@/server/game/lens'
 import { realUser } from '@/server/auth'
 import { withViewAs } from '@/server/view'
+import * as invites from '@/server/game/invites'
 import * as learning from '@/server/game/learning'
 import * as profile from '@/server/game/profile'
 import * as trading from '@/server/game/trading'
@@ -58,6 +59,9 @@ const routes: Route[] = [
   { method: 'GET', path: 'session', run: () => profile.session() },
   { method: 'GET', path: 'onboarding', run: () => profile.onboarding() },
   { method: 'PUT', path: 'onboarding', run: (_r, _p, b) => { const x = z.object({ step: z.number().int().min(1).max(7), patch: draft }).parse(b); return profile.saveOnboarding(x.step, x.patch) } },
+  // Invitaciones: mi enlace y, sin sesión, el nombre de quien invita (para la portada)
+  { method: 'GET', path: 'invite', run: async () => { const u = await requireUser(); return invites.myInvites(u.id, !!u.isAnonymous) } },
+  { method: 'GET', path: 'invite/:code', run: (_r, p) => invites.inviterName(p[0]) },
   { method: 'GET', path: 'account/login', run: () => profile.loginMethods() },
   { method: 'POST', path: 'account/password', run: (_r, _p, b) => { const x = z.object({ current: z.string().max(128).optional(), next: z.string().max(128) }).parse(b); return profile.setOwnPassword(x.current, x.next) } },
   { method: 'POST', path: 'account/save', run: (_r, _p, b) => { const x = z.object({ email: z.string().max(200), password: z.string().max(128) }).parse(b); return profile.saveGuest(x.email, x.password) } },

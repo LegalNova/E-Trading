@@ -112,9 +112,10 @@ function inCtx<T>(fn: (c: Ctx) => Promise<T>, u0: User, readOnly: boolean): Prom
 async function expireTrial(tx: Tx, u: User): Promise<User> {
   if (u.plan === 'FREE') return u
   const sub = await tx.subscription.findUnique({ where: { userId: u.id } })
-  if (sub?.status === 'TRIALING' && sub.trialEndsAt && sub.trialEndsAt.getTime() < Date.now()) {
+  if ((sub?.status === 'TRIALING' || sub?.status === 'GIFT') && sub.trialEndsAt && sub.trialEndsAt.getTime() < Date.now()) {
     await tx.subscription.update({ where: { userId: u.id }, data: { status: 'CANCELED', renewsAt: null } })
-    await tx.notification.create({ data: { userId: u.id, type: 'NEW_LESSON', title: 'Tu prueba ha terminado', body: 'Sigues con todo lo de Free. Puedes volver a Plus o Max cuando quieras.', deepLink: '/premium' } })
+    const gift = sub.status === 'GIFT'
+    await tx.notification.create({ data: { userId: u.id, type: 'NEW_LESSON', title: gift ? 'Tu Max regalado ha terminado' : 'Tu prueba ha terminado', body: gift ? 'Sigues con todo lo de Free. Invita a más amigos para ganar otro mes, o pásate a Plus o Max.' : 'Sigues con todo lo de Free. Puedes volver a Plus o Max cuando quieras.', deepLink: gift ? '/perfil/invitar' : '/premium' } })
     return tx.user.update({ where: { id: u.id }, data: { plan: 'FREE' } })
   }
   return u

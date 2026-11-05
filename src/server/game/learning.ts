@@ -11,6 +11,7 @@ import { engineT, lessonTitleT, questionT, stepsT, unitT } from '../content/tran
 import { currentLocale } from '../locale'
 import { afterReview } from './srs'
 import { trackDaily, trackLessonStart } from './analytics'
+import { maybeRewardInvite } from './invites'
 import { addXp, bump, bumpGoal, endFx, fail, LIVES_MAX, livesOf, lumi, markActive, minutesOf, withCtx, type Ctx, type Tx } from './core'
 
 export const ALL_Q: Record<string, ContentQuestion> = Object.fromEntries([...Object.values(QUIZZES).flat(), ...PLACEMENT].map(q => [q.id, q]))
@@ -223,6 +224,8 @@ export const quizFinish = (attemptId: string) =>
       })
       if (!prev) {
         await bumpGoal(c, 'lesson')
+        // Primera clase de alguien que llegó invitado: mes de Max para los dos
+        await maybeRewardInvite(c.tx, c.user.id)
         if (at.lessonId === RISK_LESSON && c.user.plan !== 'PREMIUM') c.fx.features = ['LIMIT', 'STOP_LOSS', 'TAKE_PROFIT']
       }
     }

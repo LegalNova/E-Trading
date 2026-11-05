@@ -63,6 +63,10 @@ model User {
   source          String?
   /** Cuenta de invitado («Probar sin registrarme»): sin email real hasta que guarda su progreso */
   isAnonymous     Boolean?  @default(false)
+  /** Invitaciones: código propio (?inv=…), quién le invitó y cuándo se dio el mes de Max a los dos */
+  inviteCode       String?   @unique
+  invitedById      String?
+  inviteRewardedAt DateTime?
 
   sessions      Session[]
   events        Event[]
@@ -85,6 +89,7 @@ model User {
   subscription  Subscription?
   tutorMessages TutorMessage[]
 
+  @@index([invitedById])
   @@map("user")
 }
 
@@ -460,7 +465,7 @@ model PortfolioSnapshot {
 
 model Subscription {
   userId           String    @id
-  status           String // NONE | TRIALING | ACTIVE | PAST_DUE | CANCELED
+  status           String // NONE | TRIALING | ACTIVE | PAST_DUE | CANCELED | GIFT (Max regalado por invitar, hasta trialEndsAt)
   interval         String? // MONTH | YEAR
   trialEndsAt      DateTime?
   renewsAt         DateTime?

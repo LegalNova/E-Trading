@@ -199,10 +199,19 @@ export const ca: Record<LegalSlug, LegalDoc> = {
           'Quan el pagament estigui actiu, la compra es regeix per les Condicions de contractació: preu, renovació, cancel·lació des de Configuració, avís abans de cada cobrament després de la prova i 14 dies naturals per desistir.',
         ],
       },
-      { h: '8. Propietat intel·lectual', p: ['El contingut de Lumi pertany al seu titular o s’utilitza amb llicència. El pots fer servir per al teu aprenentatge personal, però no copiar-lo ni distribuir-lo sense permís.'] },
-      { h: '9. Responsabilitat', p: ['Posem la màxima cura en el servei, però pot tenir errors o interrupcions. No responem de decisions d’inversió reals preses a partir de l’aplicació. Res de l’anterior limita els drets que la llei et reconeix com a consumidor.'] },
-      { h: '10. Canvis en el servei i en les condicions', p: ['Podem millorar o canviar funcions. Si canviem aquestes condicions de manera important t’avisarem amb antelació dins de l’aplicació.'] },
-      { h: '11. Llei i conflictes', p: [`S’aplica la llei espanyola. Si tens un problema, escriu-nos primer a ${O.email} i el mirarem de resoldre. Com a consumidor també pots acudir als organismes de consum de la teva comunitat autònoma i als jutjats del teu domicili.`] },
+      {
+        h: '8. Invitacions',
+        list: [
+          'Cada persona té un enllaç d’invitació. Si algú crea el compte amb aquest enllaç, el desa amb correu i contrasenya i acaba la primera classe, tots dos rebeu 30 dies de Max gratis.',
+          'Pots guanyar com a màxim 12 mesos en total. El regal no té valor econòmic, no es pot canviar per diners ni transferir, i se suma al Max que ja tinguis.',
+          'No val convidar-te a tu mateix, crear comptes falsos ni comprar o vendre invitacions. Si passa, podem retirar els mesos regalats i aplicar l’apartat 5.',
+          'Podem canviar o acabar el programa avisant abans a l’app; els mesos ja guanyats es respecten.',
+        ],
+      },
+      { h: '9. Propietat intel·lectual', p: ['El contingut de Lumi pertany al seu titular o s’utilitza amb llicència. El pots fer servir per al teu aprenentatge personal, però no copiar-lo ni distribuir-lo sense permís.'] },
+      { h: '10. Responsabilitat', p: ['Posem la màxima cura en el servei, però pot tenir errors o interrupcions. No responem de decisions d’inversió reals preses a partir de l’aplicació. Res de l’anterior limita els drets que la llei et reconeix com a consumidor.'] },
+      { h: '11. Canvis en el servei i en les condicions', p: ['Podem millorar o canviar funcions. Si canviem aquestes condicions de manera important t’avisarem amb antelació dins de l’aplicació.'] },
+      { h: '12. Llei i conflictes', p: [`S’aplica la llei espanyola. Si tens un problema, escriu-nos primer a ${O.email} i el mirarem de resoldre. Com a consumidor també pots acudir als organismes de consum de la teva comunitat autònoma i als jutjats del teu domicili.`] },
     ],
   },
   contratacion: {

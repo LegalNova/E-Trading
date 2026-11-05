@@ -116,6 +116,8 @@ export interface Api {
   signUp(email: string, password: string): Promise<Session>
   signInWithGoogle(): Promise<Session>
   signOut(): Promise<void>
+  myInvites(): Promise<{ code: string; joined: number; rewarded: number; months: number; cap: number; days: number }>
+  inviterName(code: string): Promise<{ valid: boolean; name: string | null }>
   signInGuest(): Promise<Session>
   saveGuest(email: string, password: string): Promise<Session>
   loginMethods(): Promise<{ hasPassword: boolean; google: boolean; isGuest: boolean }>

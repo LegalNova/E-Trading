@@ -102,7 +102,10 @@
     "legalNotice": "Aviso legal",
     "help": "Ayuda",
     "purchase": "Contratación",
-    "guestNote": "Sin email ni contraseña. Si te gusta, guardas tu progreso cuando quieras."
+    "guestNote": "Sin email ni contraseña. Si te gusta, guardas tu progreso cuando quieras.",
+    "invitedBy": "{name} te ha invitado a Lumi",
+    "invited": "Te han invitado a Lumi",
+    "invitedSub": "Crea tu cuenta y termina tu primera clase: os lleváis un mes de Max los dos."
   },
   "auth": {
     "signUpTitle": "Crea tu cuenta",
@@ -726,7 +729,9 @@
     "achievements": "Insignias",
     "notifications": "Avisos",
     "portfolio": "Cartera",
-    "tryPremium": "Probar 7 días gratis"
+    "tryPremium": "Probar 7 días gratis",
+    "inviteTitle": "Invita a tus amigos",
+    "inviteSub": "Un mes de Max para los dos"
   },
   "notifications": {
     "title": "Avisos",
@@ -775,7 +780,8 @@
     "upgradeTitle": "Pásate a Max",
     "upgradeCta": "Pasar a Max",
     "purchaseTerms": "Al continuar aceptas las <terms>Condiciones de contratación</terms>: puedes cancelar cuando quieras y tienes 14 días para desistir.",
-    "guestSave": "Guarda tu progreso para probarlo"
+    "guestSave": "Guarda tu progreso para probarlo",
+    "giftUntil": "Max regalado hasta el {date}."
   },
   "settings": {
     "title": "Ajustes",
@@ -837,7 +843,10 @@
       "contratacion": "Condiciones de contratación"
     },
     "help": "Centro de ayuda",
-    "helpSection": "Ayuda"
+    "helpSection": "Ayuda",
+    "gift": "regalo",
+    "giftEnds": "Fin del regalo",
+    "giftMore": "Gana más meses invitando"
   },
   "account": {
     "title": "Cuenta",
@@ -1437,5 +1446,23 @@
     "continue": "Seguir",
     "accountNote": "Ahora estás sin cuenta: si cierras la sesión o pasan 30 días sin entrar, se pierde tu progreso.",
     "logoutWarning": "Estás probando sin cuenta: si sales ahora, perderás tu progreso. ¿Salir igualmente?"
+  },
+  "invite": {
+    "title": "Invitar amigos",
+    "headline": "Invita a tus amigos y os lleváis un mes de Max",
+    "sub": "{days} días de Max para cada uno por cada amigo que se una y termine su primera clase.",
+    "step1": "Comparte tu enlace por WhatsApp, Instagram o donde quieras.",
+    "step2": "Tu amigo entra, crea su cuenta y termina su primera clase.",
+    "step3": "Los dos recibís un mes de Max: todo el curso, sin límites.",
+    "yourLink": "Tu enlace",
+    "copy": "Copiar enlace",
+    "copied": "Copiado",
+    "share": "Compartir",
+    "shareText": "Estoy aprendiendo a invertir con Lumi, sin arriesgar dinero real. Entra con mi enlace y nos llevamos un mes de Max los dos: {link}",
+    "joined": "Amigos que se han unido",
+    "months": "Meses de Max ganados",
+    "rules": "Puedes ganar hasta {cap} meses. El regalo llega cuando tu amigo guarda su cuenta y termina su primera clase. Crear cuentas falsas o invitarte a ti mismo va contra los <terms>Términos de uso</terms>.",
+    "guest": "Para invitar a tus amigos primero guarda tu progreso con email y contraseña.",
+    "guestCta": "Guardar mi progreso"
   }
 }

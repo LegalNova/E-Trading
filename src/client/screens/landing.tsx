@@ -2,7 +2,7 @@
 // 01 · Landing pública
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { useLocale, useTranslations } from 'next-intl'
-import { useState } from 'react'
+import { useState, useSyncExternalStore } from 'react'
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
 import { arrowPct, money, num } from '@/shared/format'
@@ -121,6 +121,13 @@ export function Landing() {
   const t = useTranslations('landing')
   const locale = useLocale()
   const { data: stats } = useQuery({ queryKey: ['stats'], queryFn: api.publicStats })
+  // Llega con el enlace de un amigo (?inv=código): se le dice quién le invita y qué gana
+  const inv = useSyncExternalStore(
+    () => () => {},
+    () => new URLSearchParams(location.search).get('inv'),
+    () => null,
+  )
+  const { data: inviter } = useQuery({ queryKey: ['inviter', inv], queryFn: () => api.inviterName(inv!), enabled: !!inv, retry: false })
   const tp = useTranslations('premium')
   const free = t.raw('freeFeatures') as string[]
   const plus = tp.raw('plusFeatures') as string[]
@@ -150,6 +157,16 @@ export function Landing() {
 
       <section className="mx-auto grid max-w-[1120px] items-center gap-10 px-4 py-12 md:grid-cols-[1.1fr_1fr] md:py-20">
         <div className="flex flex-col items-start gap-5">
+          {inviter?.valid && (
+            <div className="flex items-center gap-3 rounded-2xl px-4 py-3" style={{ background: 'color-mix(in srgb, var(--brand) 12%, transparent)' }}>
+              <Lumi mood="CELEBRATE" size={40} />
+              <span>
+                <b>{inviter.name ? t('invitedBy', { name: inviter.name }) : t('invited')}</b>
+                <br />
+                <span className="t-foot">{t('invitedSub')}</span>
+              </span>
+            </div>
+          )}
           <h1 className="m-0 text-[40px] leading-[44px] font-extrabold tracking-[-0.03em] md:text-[60px] md:leading-[62px]">{t('hero')}</h1>
           <p className="t-body m-0 max-w-[480px] text-[17px] leading-[26px]" style={{ color: 'var(--ink-2)' }}>
             {t('heroSub')}

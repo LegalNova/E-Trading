@@ -70,6 +70,8 @@ export const httpApi: Api = {
     return new Promise(() => {}) // la página se va a Google
   },
   signOut: async () => void (await post('/auth/sign-out')),
+  myInvites: () => get('/invite'),
+  inviterName: code => get(`/invite/${encodeURIComponent(code)}`),
   signInGuest: async () => {
     await auth('/sign-in/anonymous', {})
     return get('/session')

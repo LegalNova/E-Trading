@@ -102,7 +102,10 @@
     "legalNotice": "Legal notice",
     "help": "Help",
     "purchase": "Terms of purchase",
-    "guestNote": "No email or password. If you like it, save your progress whenever you want."
+    "guestNote": "No email or password. If you like it, save your progress whenever you want.",
+    "invitedBy": "{name} has invited you to Lumi",
+    "invited": "You’ve been invited to Lumi",
+    "invitedSub": "Create your account and finish your first lesson: you both get a month of Max."
   },
   "auth": {
     "signUpTitle": "Create your account",
@@ -726,7 +729,9 @@
     "achievements": "Badges",
     "notifications": "Notifications",
     "portfolio": "Portfolio",
-    "tryPremium": "Try free for 7 days"
+    "tryPremium": "Try free for 7 days",
+    "inviteTitle": "Invite your friends",
+    "inviteSub": "A month of Max for both of you"
   },
   "notifications": {
     "title": "Notifications",
@@ -775,7 +780,8 @@
     "upgradeTitle": "Upgrade to Max",
     "upgradeCta": "Upgrade to Max",
     "purchaseTerms": "By continuing you accept the <terms>Terms of purchase</terms>: you can cancel at any time and you have 14 days to withdraw.",
-    "guestSave": "Save your progress to try it"
+    "guestSave": "Save your progress to try it",
+    "giftUntil": "Max gifted until {date}."
   },
   "settings": {
     "title": "Settings",
@@ -837,7 +843,10 @@
       "contratacion": "Terms of purchase"
     },
     "help": "Help centre",
-    "helpSection": "Help"
+    "helpSection": "Help",
+    "gift": "gift",
+    "giftEnds": "Gift ends",
+    "giftMore": "Earn more months by inviting"
   },
   "account": {
     "title": "Account",
@@ -1437,5 +1446,23 @@
     "continue": "Continue",
     "accountNote": "You don’t have an account yet: if you sign out or don’t come back for 30 days, your progress is lost.",
     "logoutWarning": "You’re trying Lumi without an account: if you sign out now, you’ll lose your progress. Sign out anyway?"
+  },
+  "invite": {
+    "title": "Invite friends",
+    "headline": "Invite your friends and you both get a month of Max",
+    "sub": "{days} days of Max each for every friend who joins and finishes their first lesson.",
+    "step1": "Share your link on WhatsApp, Instagram or wherever you like.",
+    "step2": "Your friend comes in, creates an account and finishes their first lesson.",
+    "step3": "You both get a month of Max: the whole course, no limits.",
+    "yourLink": "Your link",
+    "copy": "Copy link",
+    "copied": "Copied",
+    "share": "Share",
+    "shareText": "I’m learning to invest with Lumi, without risking real money. Join with my link and we both get a month of Max: {link}",
+    "joined": "Friends who joined",
+    "months": "Months of Max earned",
+    "rules": "You can earn up to {cap} months. The gift arrives when your friend saves their account and finishes their first lesson. Creating fake accounts or inviting yourself goes against the <terms>Terms of use</terms>.",
+    "guest": "To invite your friends, first save your progress with an email and password.",
+    "guestCta": "Save my progress"
   }
 }

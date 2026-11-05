@@ -8,10 +8,11 @@ export function captureSource() {
   try {
     const q = new URLSearchParams(location.search)
     const src = q.get('src')
+    const inv = q.get('inv')
     const ref = q.get('ref')
     const utm = q.get('utm_source')
     const camp = q.get('utm_campaign')
-    let s = src ?? (ref ? `ref/${ref}` : utm ? (camp ? `${utm}/${camp}` : utm) : null)
+    let s = src ?? (inv ? `inv/${inv}` : ref ? `ref/${ref}` : utm ? (camp ? `${utm}/${camp}` : utm) : null)
     if (!s && document.referrer) {
       const host = new URL(document.referrer).hostname.replace(/^www\./, '')
       if (host && host !== location.hostname) s = host

@@ -416,7 +416,7 @@ export const BillingPlan = z.object({
   currency: z.literal('EUR'),
   trialDays: z.number(),
 })
-export const BillingStatus = z.object({ plan: Plan, status: z.enum(['NONE', 'TRIALING', 'ACTIVE', 'PAST_DUE', 'CANCELED']), renewsAt: iso.nullable(), trialEndsAt: iso.nullable(), interval: z.enum(['MONTH', 'YEAR']).nullable() })
+export const BillingStatus = z.object({ plan: Plan, status: z.enum(['NONE', 'TRIALING', 'ACTIVE', 'PAST_DUE', 'CANCELED', 'GIFT']), renewsAt: iso.nullable(), trialEndsAt: iso.nullable(), interval: z.enum(['MONTH', 'YEAR']).nullable() })
 
 // ── Lumi, la profesora (chat con el manual del curso) ──
 export const TutorMode = z.enum(['EXPLAIN', 'PATH', 'PORTFOLIO', 'BIASES'])

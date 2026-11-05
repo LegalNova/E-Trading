@@ -331,6 +331,28 @@ async function onboardingLens(since: Date): Promise<Lens> {
   }
 }
 
+async function invitesLens(since: Date, range: LensRange, path: string): Promise<Lens> {
+  const [joined, rewarded, top, gifts, v] = await Promise.all([
+    db.user.count({ where: { invitedById: { not: null }, createdAt: { gte: since } } }),
+    db.user.count({ where: { inviteRewardedAt: { gte: since } } }),
+    db.user.groupBy({ by: ['invitedById'], where: { invitedById: { not: null }, createdAt: { gte: since } }, _count: { _all: true }, orderBy: { _count: { id: 'desc' } }, take: 8 }),
+    db.subscription.count({ where: { status: 'GIFT', trialEndsAt: { gt: new Date() } } }),
+    visitors(path, since),
+  ])
+  const names = await db.user.findMany({ where: { id: { in: top.map(t => t.invitedById!) } }, select: { id: true, name: true, email: true } })
+  return {
+    title: 'Invitaciones',
+    kpis: [
+      { label: 'Llegan invitados', value: joined, hint: RANGE_TXT[range] },
+      { label: 'Ganan el mes de Max', value: rewarded, hint: joined ? `${pct(rewarded, joined)} % de los invitados` : undefined },
+      { label: 'Con Max regalado ahora', value: gifts },
+      { label: 'Visitas a la pantalla', value: v.users },
+    ],
+    tables: [{ title: 'Quién invita más', head: ['Usuario', 'Invitados'], rows: top.map(t => { const n = names.find(x => x.id === t.invitedById); return [n?.name || n?.email || '—', t._count._all] }) }],
+    note: 'El mes de Max se da a los dos cuando el invitado guarda su cuenta y termina su primera clase (máximo 12 por persona).',
+  }
+}
+
 async function genericLens(title: string, since: Date, range: LensRange, path: string): Promise<Lens> {
   const v = await visitors(path, since)
   return { title, kpis: [{ label: 'Usuarios que la visitan', value: v.users, hint: RANGE_TXT[range] }, ...(v.anon ? [{ label: 'Visitas sin sesión', value: v.anon }] : [])] }
@@ -365,6 +387,7 @@ export async function lens(rawPath: string, range: LensRange): Promise<Lens> {
   }
   if (path === '/perfil/logros') return badgesLens(since, path)
   if (path === '/perfil/racha') return streakLens(since, path)
+  if (path === '/perfil/invitar') return invitesLens(since, range, path)
   return genericLens(TITLES[path] ?? path, since, range, path)
 }
 

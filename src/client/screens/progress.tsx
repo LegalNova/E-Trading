@@ -301,6 +301,17 @@ export function Profile() {
         </div>
         <Icon name="chev" size={18} className="ml-auto" />
       </Link>
+      <Link href="/perfil/invitar" className="card flex items-center gap-3.5" style={{ color: 'inherit', background: 'color-mix(in srgb, var(--brand) 10%, var(--surface))' }}>
+        <span className="grid h-10 w-10 flex-none place-items-center rounded-full" style={{ background: 'var(--brand)', color: 'var(--on-brand)' }}>
+          <Icon name="user" size={20} />
+        </span>
+        <span className="flex-1">
+          <b>{t('inviteTitle')}</b>
+          <br />
+          <span className="t-foot">{t('inviteSub')}</span>
+        </span>
+        <Icon name="chev" size={18} />
+      </Link>
       <div className="card">
         <div className="flex justify-between">
           <b>{t('level', { n: lv.n, title: lv.title })}</b>

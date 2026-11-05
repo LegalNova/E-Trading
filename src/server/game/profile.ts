@@ -1,5 +1,6 @@
 import 'server-only'
 import { cleanSource, track, trackDaily } from './analytics'
+import { linkInviter, maybeRewardInvite } from './invites'
 import { tierOf } from '@/shared/plans'
 // Perfil, onboarding, Inicio, progreso, avisos, ajustes, Premium (simulado hasta Stripe) y RGPD
 import type { BillingStatusT, HomeT, MeT, Mood, NotificationT, SettingsT, StreakT } from '@/shared/contract'
@@ -49,6 +50,8 @@ export async function saveGuest(email: string, password: string) {
     db.account.create({ data: { id: crypto.randomUUID(), accountId: u!.id, providerId: 'credential', userId: u!.id, password: hash } }),
     db.event.create({ data: { userId: u!.id, name: 'guest_saved' } }),
   ])
+  // Si llegó invitado y ya terminó una clase, ahora que tiene cuenta reciben los dos su mes de Max
+  await db.$transaction(tx => maybeRewardInvite(tx, u!.id))
   return session()
 }
 
@@ -108,6 +111,8 @@ export const completeOnboarding = (source?: unknown) =>
       },
     })
     if (c.user.onboardingStep !== null) await track(c.tx, c.user.id, 'signup', { source: c.user.source ?? cleanSource(source) })
+    // Llegó con el enlace de un amigo: se apunta para darles el mes de Max cuando termine su primera clase
+    await linkInviter(c.tx, c.user.id, c.user.source ?? cleanSource(source))
     await portfolioRow(c.tx, c.user)
     await notify(c, 'NEW_LESSON', 'Tu primera clase te espera', '«Qué es invertir»: 4 minutos.', '/clases')
   })
