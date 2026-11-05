@@ -5,6 +5,7 @@ import { Suspense, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { AdminLayer } from './admin-layer'
+import { MaxSide } from './upgrade'
 import { useSession } from './hooks'
 import { Icon, Wordmark, type IconName } from './ui/icons'
 import { PageSkeleton } from './ui/kit'
@@ -53,6 +54,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <Suspense>
           <SideLinks />
         </Suspense>
+        <MaxSide />
         <p className="t-cap mt-auto px-3">{t('footer')}</p>
       </aside>
 

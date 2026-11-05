@@ -73,6 +73,17 @@ export interface Lens {
   tables?: { title: string; head: string[]; rows: Cell[][]; note?: string }[]
   note?: string
 }
+export interface AdminFeedback {
+  total: number
+  nps: number | null
+  npsHist: number[]
+  likes: Record<string, number>
+  blockers: Record<string, number>
+  pay: Record<string, number>
+  price: Record<string, number>
+  wants: Record<string, number>
+  comments: { id: string; userId: string; who: string; nps: number; plan: string; daysIn: number; comment: string; wantsOther: string; at: string }[]
+}
 export interface AdminCampaign { slug: string; name: string; createdAt: string; visits: number; signups: number; trials: number; paid: number }
 export interface AdminLessonRow { id: string; unit: number; unitTitle: string; title: string; starts: number; quiz: number; done: number; skipped: number; completion: number | null }
 export interface AdminUserDetail {
@@ -116,7 +127,12 @@ export interface Api {
   signUp(email: string, password: string): Promise<Session>
   signInWithGoogle(): Promise<Session>
   signOut(): Promise<void>
-  myInvites(): Promise<{ code: string; joined: number; rewarded: number; months: number; cap: number; days: number }>
+  feedbackStatus(): Promise<{ due: boolean; answered: boolean; gems: number }>
+  feedbackLater(): Promise<void>
+  submitFeedback(a: { nps: number; likes: string[]; blockers: string[]; pay: string; price?: string; wants: string[]; wantsOther?: string; comment?: string }): Promise<{ ok: boolean; gems: number }>
+  adminFeedback(): Promise<AdminFeedback>
+  planBadge(): Promise<{ plan: 'FREE' | 'PLUS' | 'PREMIUM'; status: string; endsAt: string | null; daysLeft: number | null; trialUsed: boolean; isGuest: boolean }>
+  myInvites(): Promise<{ code: string; joined: number; rewarded: number; daysEarned: number; maxDays: number; days: number }>
   inviterName(code: string): Promise<{ valid: boolean; name: string | null }>
   signInGuest(): Promise<Session>
   saveGuest(email: string, password: string): Promise<Session>

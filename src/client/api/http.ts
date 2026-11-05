@@ -70,6 +70,11 @@ export const httpApi: Api = {
     return new Promise(() => {}) // la página se va a Google
   },
   signOut: async () => void (await post('/auth/sign-out')),
+  feedbackStatus: () => get('/feedback'),
+  feedbackLater: () => post('/feedback/later'),
+  submitFeedback: a => post('/feedback', a),
+  adminFeedback: () => get('/admin/feedback'),
+  planBadge: () => get('/billing/badge'),
   myInvites: () => get('/invite'),
   inviterName: code => get(`/invite/${encodeURIComponent(code)}`),
   signInGuest: async () => {

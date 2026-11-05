@@ -258,7 +258,9 @@ export function DynamicExercise({ q, value, onChange, reveal }: { q: QuestionT; 
             return (
               <button key={i} className={`opt flex-col items-start gap-1 text-left ${optClass(reveal, s.includes(i), on)}`} aria-pressed={on} disabled={locked} onClick={() => onChange(on ? v.filter(x => x !== i) : [...v, i])}>
                 <span className="t-cap flex w-full items-center justify-between">
-                  <span>💬 {q.meta?.senders?.[i]}</span>
+                  <span className="flex items-center gap-1">
+                    <Icon name="chat" size={14} /> {q.meta?.senders?.[i]}
+                  </span>
                   {on && <b style={{ color: 'var(--down)' }}>⚠︎ {t('scam')}</b>}
                 </span>
                 <span className="text-[15px]">{o}</span>

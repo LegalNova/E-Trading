@@ -105,7 +105,7 @@
     "guestNote": "Sense correu ni contrasenya. Si t’agrada, deses el progrés quan vulguis.",
     "invitedBy": "{name} t’ha convidat a Lumi",
     "invited": "T’han convidat a Lumi",
-    "invitedSub": "Crea el teu compte i acaba la primera classe: us emporteu un mes de Max tots dos."
+    "invitedSub": "Crea el teu compte i tens 14 dies de Max gratis des del primer moment."
   },
   "auth": {
     "signUpTitle": "Crea el teu compte",
@@ -283,7 +283,8 @@
     "summary": "Portes {done} de {total} classes",
     "continueNext": "Següent: {title}",
     "continueBtn": "Continuar",
-    "sectionNeeds": "S’obre en superar el repte final de: {needs}"
+    "sectionNeeds": "S’obre en superar el repte final de: {needs}",
+    "tryMaxFree": "Provar Max gratis"
   },
   "lesson": {
     "close": "Tancar la lliçó",
@@ -731,7 +732,9 @@
     "portfolio": "Cartera",
     "tryPremium": "Provar 7 dies gratis",
     "inviteTitle": "Convida els teus amics",
-    "inviteSub": "Un mes de Max per a tots dos"
+    "inviteSub": "14 dies de Max per al teu amic i per a tu",
+    "feedbackTitle": "Dona’ns la teva opinió",
+    "feedbackSub": "Un minut per ajudar-nos a millorar Lumi"
   },
   "notifications": {
     "title": "Avisos",
@@ -883,7 +886,8 @@
       "settings": "Configuració",
       "audit": "Auditoria",
       "lessons": "Classes",
-      "campaigns": "Enllaços"
+      "campaigns": "Enllaços",
+      "feedback": "Opinions"
     },
     "range": "Període",
     "dauMau": "Usuaris actius (DAU / MAU)",
@@ -1063,7 +1067,28 @@
     "errorLast": "Últim",
     "errorServer": "Servidor",
     "errorApp": "App",
-    "noErrors": "Cap error en els últims 7 dies."
+    "noErrors": "Cap error en els últims 7 dies.",
+    "feedbackTab": {
+      "title": "Opinions dels usuaris",
+      "what": "Als 7 dies de començar (si han fet alguna classe) la Lumi els demana l’opinió a l’Inici i amb un avís. També la poden donar quan vulguin des del Perfil.",
+      "preview": "Veure com ho veuen els usuaris",
+      "answers": "Respostes",
+      "nps": "NPS (−100 a 100)",
+      "wouldPay": "Pagarien Max ja",
+      "withComment": "Amb comentari",
+      "npsTitle": "Recomanarien Lumi? (0-10)",
+      "npsNote": "NPS = % que posa 9-10 menys % que posa 0-6. Per sobre de 0 és bo; per sobre de 30, molt bo.",
+      "likes": "El que més agrada",
+      "blockers": "El que frena",
+      "pay": "Pagarien Max a 7,99 €/mes?",
+      "price": "Preu just (dels que el volien més barat)",
+      "wants": "El que demanen",
+      "comments": "Comentaris",
+      "npsShort": "nota",
+      "day": "dia {n}",
+      "wantsOther": "Demana",
+      "empty": "Encara no hi ha comentaris."
+    }
   },
   "cookies": {
     "label": "Avís de galetes",
@@ -1449,20 +1474,102 @@
   },
   "invite": {
     "title": "Convidar amics",
-    "headline": "Convida els teus amics i us emporteu un mes de Max",
-    "sub": "{days} dies de Max per a cadascú per cada amic que s’hi apunti i acabi la primera classe.",
+    "headline": "Convida els teus amics i guanyeu dies de Max",
+    "sub": "El teu amic té {days} dies de Max només entrar. I tu, {days} dies més per cada amic que acabi la primera classe.",
     "step1": "Comparteix el teu enllaç per WhatsApp, Instagram o on vulguis.",
-    "step2": "El teu amic entra, crea el compte i acaba la primera classe.",
-    "step3": "Tots dos rebeu un mes de Max: tot el curs, sense límits.",
+    "step2": "El teu amic entra i té 14 dies de Max gratis des del primer moment.",
+    "step3": "Quan acaba la primera classe, tu sumes 14 dies de Max.",
     "yourLink": "El teu enllaç",
     "copy": "Copiar l’enllaç",
     "copied": "Copiat",
     "share": "Compartir",
-    "shareText": "Estic aprenent a invertir amb Lumi, sense arriscar diners reals. Entra amb el meu enllaç i ens emportem un mes de Max tots dos: {link}",
+    "shareText": "Estic aprenent a invertir amb Lumi, sense arriscar diners reals. Entra amb el meu enllaç i tens 14 dies de Max gratis: {link}",
     "joined": "Amics que s’hi han apuntat",
-    "months": "Mesos de Max guanyats",
-    "rules": "Pots guanyar fins a {cap} mesos. El regal arriba quan el teu amic desa el compte i acaba la primera classe. Crear comptes falsos o convidar-te a tu mateix va contra les <terms>Condicions d’ús</terms>.",
+    "rules": "Pots guanyar fins a un any de Max ({days} dies per amic). Els teus dies arriben quan el teu amic desa el compte i acaba la primera classe. Crear comptes falsos o convidar-te a tu mateix va contra les <terms>Condicions d’ús</terms>.",
     "guest": "Per convidar els teus amics, primer desa el teu progrés amb correu i contrasenya.",
-    "guestCta": "Desar el meu progrés"
+    "guestCta": "Desar el meu progrés",
+    "daysEarned": "Dies de Max guanyats"
+  },
+  "upgrade": {
+    "short": "Max gratis",
+    "daysLeft": "Max · {n} d",
+    "freeTitle": "Prova Max 7 dies gratis",
+    "freeTitleNoTrial": "Passa’t a Max",
+    "freeBody": "Tot el curs, vides il·limitades i 50.000 € virtuals.",
+    "tryCta": "Provar",
+    "seePlans": "Veure plans",
+    "trialTitle": "Et queden {n} dies de prova de Max",
+    "giftTitle": "Et queden {n} dies de Max regalat",
+    "keepBody": "Tria un pla per no perdre el curs complet.",
+    "keepCta": "Veure plans",
+    "plusTitle": "Passa’t a Max",
+    "plusBody": "Les 13 unitats completes i tots els modes de la Lumi.",
+    "toMax": "Passar a Max"
+  },
+  "feedback": {
+    "title": "La teva opinió",
+    "cardTitle": "La Lumi vol saber què et sembla",
+    "cardBody": "Sis preguntes ràpides, un minut. T’ho agraïm amb {gems} gemmes.",
+    "cardCta": "Respondre",
+    "later": "Ara no",
+    "q": {
+      "nps": "Del 0 al 10, quant li recomanaries Lumi a un amic?",
+      "likes": "Què és el que més t’ha agradat?",
+      "blockers": "Què t’ha frenat o se t’ha fet pesat?",
+      "pay": "Si Max costés {price} al mes (o {year} l’any), què faries?",
+      "price": "Quin preu al mes et semblaria just?",
+      "wants": "Què t’agradaria que tingués Lumi?",
+      "comment": "L’últim: si poguessis canviar una sola cosa, quina seria?"
+    },
+    "npsHint": "Toca un número.",
+    "npsLow": "Gens probable",
+    "npsHigh": "Segur que sí",
+    "upTo": "Tria’n fins a {n}.",
+    "likes": {
+      "interactive": "Les classes interactives",
+      "stories": "Les històries amb decisions",
+      "simulator": "El simulador amb preus reals",
+      "lumi": "Preguntar-li a la Lumi",
+      "league": "La lliga i la ratxa",
+      "free": "Aprendre sense arriscar diners"
+    },
+    "blockers": {
+      "nothing": "Res, tot bé",
+      "long": "Les classes se’m fan llargues",
+      "lost": "M’he perdut en algun concepte",
+      "limits": "Les vides i els límits",
+      "market": "El mercat és complicat",
+      "next": "No sabia què fer després",
+      "reasons": "Em falten motius per tornar cada dia"
+    },
+    "pay": {
+      "now": "El pagaria",
+      "cheaper": "El pagaria si fos més barat",
+      "gift": "Només amb un regal o descompte",
+      "never": "No pagaria per això"
+    },
+    "price": {
+      "p2": "Uns 2 € al mes",
+      "p4": "Entre 3 i 4 € al mes",
+      "p6": "Entre 5 i 6 € al mes"
+    },
+    "wants": {
+      "crypto": "Més sobre cripto",
+      "realbroker": "Fer el pas a invertir de debò",
+      "friends": "Reptes amb amics",
+      "portfolio": "Més anàlisi de la meva cartera",
+      "videos": "Vídeos curts",
+      "other": "Una altra cosa"
+    },
+    "otherPlaceholder": "Explica’ns què",
+    "commentPlaceholder": "Escriu el que vulguis (opcional)",
+    "next": "Següent",
+    "send": "Enviar",
+    "sendWithout": "Enviar sense comentari",
+    "thanksTitle": "Gràcies!",
+    "thanksGems": "Ens ajuda moltíssim. Tens {gems} gemmes més.",
+    "thanksBody": "Ens ajuda moltíssim a millorar Lumi.",
+    "done": "Tornar a l’inici",
+    "error": "No s’ha pogut enviar. Torna-ho a provar."
   }
 }

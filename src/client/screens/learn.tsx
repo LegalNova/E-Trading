@@ -18,6 +18,9 @@ import { BadgeArt } from '../ui/badge'
 import { Calculator } from '../ui/calculator'
 import { PlayView, StoryView } from '../play/play-step'
 import { Lumi, LumiSays, stageOf } from '../ui/lumi'
+import { GlyphTile } from '../play/glyph'
+import { MaxCard, MaxPill } from '../upgrade'
+import { FeedbackCard } from './feedback'
 
 // ── Inicio ───────────────────────────────────────────────
 export function Home() {
@@ -57,6 +60,8 @@ export function Home() {
       </div>
 
       <LumiSays mood={h.companion.mood} message={h.companion.message} skin={me.companion.skinId} stage={stageOf(me.level.n)} />
+      <FeedbackCard />
+      <MaxCard />
 
       {h.nextLesson ? (
         <div className="hero flex flex-col gap-2.5">
@@ -83,16 +88,14 @@ export function Home() {
       <nav aria-label={t('quick')} className="grid grid-cols-2 gap-2.5">
         {(
           [
-            ['/clases', '📚', t('qLearn')],
-            ['/mercado', '📈', t('qMarket')],
-            ['/insignias', '🏅', t('qBadges')],
-            ['/profesora', '💬', t('qLumi')],
+            ['/clases', 'book', t('qLearn')],
+            ['/mercado', 'chart', t('qMarket')],
+            ['/insignias', 'award', t('qBadges')],
+            ['/profesora', 'message', t('qLumi')],
           ] as const
-        ).map(([href, emoji, label]) => (
+        ).map(([href, glyph, label]) => (
           <Link key={href} href={href} className="card flex items-center gap-2.5 px-3.5 py-3" style={{ color: 'var(--ink)' }}>
-            <span className="text-[22px]" aria-hidden="true">
-              {emoji}
-            </span>
+            <GlyphTile name={glyph} size={34} />
             <b className="text-[15px] leading-tight">{label}</b>
           </Link>
         ))}
@@ -272,11 +275,14 @@ export function Path() {
     <div className="pad">
       <div className="flex items-center justify-between px-0.5">
         <h1 className="t-large">{t('title')}</h1>
-        {mistakes > 0 && (
-          <Link href="/quiz/review" className="link text-sm">
-            {t('review', { n: mistakes })}
-          </Link>
-        )}
+        <div className="flex items-center gap-3">
+          {mistakes > 0 && (
+            <Link href="/quiz/review" className="link text-sm">
+              {t('review', { n: mistakes })}
+            </Link>
+          )}
+          <MaxPill />
+        </div>
       </div>
       <Summary path={p} />
       {p.units.map((u, ui) => {
@@ -360,7 +366,7 @@ export function Path() {
         <p className="t-body muted m-0">{locked?.requiresPremium ? t(locked.requiredPlan === 'PLUS' ? 'plusBody' : 'maxBody') : t('lockedBody')}</p>
         {locked?.requiresPremium && (
           <button className="btn btn-primary" onClick={() => router.push('/premium')}>
-            {t('seePremium')}
+            {t('tryMaxFree')}
           </button>
         )}
         <button className="btn btn-plain" onClick={() => setLocked(null)}>

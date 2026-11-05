@@ -35,7 +35,17 @@ export async function GET(req: Request) {
     // Lunes: un protector de racha para cada Premium (máximo 2 acumulados)
     let freezes = 0
     if (new Date().getUTCDay() === 1) freezes = (await db.gameState.updateMany({ where: { freezes: { lt: MAX_FREEZES }, user: { plan: 'PREMIUM' } }, data: { freezes: { increment: 1 } } })).count
-    return Response.json({ reminders: sent, freezes })
+    // A la semana de empezar: aviso para darnos su opinión (una sola vez, si ha hecho alguna clase)
+    const from = new Date(Date.now() - 8 * 86_400_000)
+    const to = new Date(Date.now() - 7 * 86_400_000)
+    const week = await db.user.findMany({ where: { createdAt: { gte: from, lt: to }, blockedAt: null, feedback: { none: {} }, lessons: { some: {} } }, select: { id: true }, take: 5000 })
+    let asked = 0
+    for (const u of week) {
+      if (await db.notification.count({ where: { userId: u.id, deepLink: '/opinion' } })) continue
+      await notify({ tx: db, user: { id: u.id } as never }, 'NEW_LESSON', 'Lumi quiere saber qué te parece', 'Seis preguntas rápidas, un minuto. Te lo agradecemos con 50 gemas.', '/opinion')
+      asked++
+    }
+    return Response.json({ reminders: sent, freezes, feedbackAsked: asked })
   }
   return Response.json({ error: { code: 'VALIDATION_ERROR', message: 'job=close|remind' } }, { status: 422 })
 }

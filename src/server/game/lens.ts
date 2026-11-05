@@ -344,12 +344,12 @@ async function invitesLens(since: Date, range: LensRange, path: string): Promise
     title: 'Invitaciones',
     kpis: [
       { label: 'Llegan invitados', value: joined, hint: RANGE_TXT[range] },
-      { label: 'Ganan el mes de Max', value: rewarded, hint: joined ? `${pct(rewarded, joined)} % de los invitados` : undefined },
+      { label: 'Terminan su primera clase', value: rewarded, hint: joined ? `${pct(rewarded, joined)} % de los invitados` : undefined },
       { label: 'Con Max regalado ahora', value: gifts },
       { label: 'Visitas a la pantalla', value: v.users },
     ],
     tables: [{ title: 'Quién invita más', head: ['Usuario', 'Invitados'], rows: top.map(t => { const n = names.find(x => x.id === t.invitedById); return [n?.name || n?.email || '—', t._count._all] }) }],
-    note: 'El mes de Max se da a los dos cuando el invitado guarda su cuenta y termina su primera clase (máximo 12 por persona).',
+    note: 'El amigo recibe 14 días de Max al entrar; quien invita, 14 días cuando su amigo guarda la cuenta y termina su primera clase (hasta un año).',
   }
 }
 

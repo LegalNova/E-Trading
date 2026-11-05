@@ -93,15 +93,13 @@ export function Invite() {
             <b>{data.joined}</b>
           </div>
           <div className="stat">
-            <span className="t-cap">{t('months')}</span>
-            <b>
-              {data.months} / {data.cap}
-            </b>
+            <span className="t-cap">{t('daysEarned')}</span>
+            <b>{data.daysEarned}</b>
           </div>
         </div>
         <p className="t-cap m-0">
           {t.rich('rules', {
-            cap: data.cap,
+            days: data.days,
             terms: c => (
               <Link href="/legal/terminos" className="underline">
                 {c}

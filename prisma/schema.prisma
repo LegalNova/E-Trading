@@ -70,6 +70,7 @@ model User {
 
   sessions      Session[]
   events        Event[]
+  feedback      Feedback[]
   accounts      Account[]
   game          GameState?
   portfolio     Portfolio?
@@ -564,3 +565,19 @@ model Event {
   @@index([name, createdAt])
   @@index([userId, name])
 }
+
+/// Opinión de los usuarios (a la semana de empezar, o cuando quieran desde Perfil)
+model Feedback {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  nps       Int // 0-10: ¿recomendarías Lumi?
+  answers   Json // gustos, frenos, intención de pago, deseos y comentarios
+  plan      String // plan al responder
+  daysIn    Int // días desde el alta
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([userId])
+}
+

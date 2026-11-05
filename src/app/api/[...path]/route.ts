@@ -8,6 +8,7 @@ import { recordClientEvent, recordServerError } from '@/server/game/analytics'
 import { lens, lessonTable, type LensRange } from '@/server/game/lens'
 import { realUser } from '@/server/auth'
 import { withViewAs } from '@/server/view'
+import * as feedback from '@/server/game/feedback'
 import * as invites from '@/server/game/invites'
 import * as learning from '@/server/game/learning'
 import * as profile from '@/server/game/profile'
@@ -62,6 +63,12 @@ const routes: Route[] = [
   // Invitaciones: mi enlace y, sin sesión, el nombre de quien invita (para la portada)
   { method: 'GET', path: 'invite', run: async () => { const u = await requireUser(); return invites.myInvites(u.id, !!u.isAnonymous) } },
   { method: 'GET', path: 'invite/:code', run: (_r, p) => invites.inviterName(p[0]) },
+  // Opinión de los usuarios
+  { method: 'GET', path: 'feedback', run: () => feedback.feedbackStatus() },
+  { method: 'POST', path: 'feedback', run: (_r, _p, b) => feedback.submitFeedback(feedback.FeedbackInput.parse(b)) },
+  { method: 'POST', path: 'feedback/later', run: () => feedback.feedbackLater() },
+  { method: 'GET', path: 'admin/feedback', run: () => admin.feedbackSummary() },
+  { method: 'GET', path: 'billing/badge', run: () => profile.planBadge() },
   { method: 'GET', path: 'account/login', run: () => profile.loginMethods() },
   { method: 'POST', path: 'account/password', run: (_r, _p, b) => { const x = z.object({ current: z.string().max(128).optional(), next: z.string().max(128) }).parse(b); return profile.setOwnPassword(x.current, x.next) } },
   { method: 'POST', path: 'account/save', run: (_r, _p, b) => { const x = z.object({ email: z.string().max(200), password: z.string().max(128) }).parse(b); return profile.saveGuest(x.email, x.password) } },

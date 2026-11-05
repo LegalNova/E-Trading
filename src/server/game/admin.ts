@@ -263,3 +263,34 @@ export async function deleteCampaign(slug: string) {
   await db.appSetting.upsert({ where: { key: CAMPAIGNS_KEY }, create: { key: CAMPAIGNS_KEY, value: next as unknown as object }, update: { value: next as unknown as object } })
   await db.auditLog.create({ data: { actor: a.email, action: 'CAMPAIGN_DELETED', entity: 'Campaign', entityId: slug } })
 }
+
+// ── Opiniones ─────────────────────────────────────────────
+export async function feedbackSummary() {
+  await requireAdmin()
+  const rows = await db.feedback.findMany({ orderBy: { createdAt: 'desc' }, take: 500, include: { user: { select: { name: true, email: true, source: true } } } })
+  const count = (key: string) => {
+    const m = new Map<string, number>()
+    for (const r of rows) {
+      const v = (r.answers as Record<string, unknown>)[key]
+      for (const x of Array.isArray(v) ? v : v ? [v] : []) m.set(String(x), (m.get(String(x)) ?? 0) + 1)
+    }
+    return Object.fromEntries(m)
+  }
+  const promoters = rows.filter(r => r.nps >= 9).length
+  const detractors = rows.filter(r => r.nps <= 6).length
+  return {
+    total: rows.length,
+    nps: rows.length ? Math.round(((promoters - detractors) / rows.length) * 100) : null,
+    npsHist: Array.from({ length: 11 }, (_, i) => rows.filter(r => r.nps === i).length),
+    likes: count('likes'),
+    blockers: count('blockers'),
+    pay: count('pay'),
+    price: count('price'),
+    wants: count('wants'),
+    comments: rows
+      .filter(r => (r.answers as { comment?: string; wantsOther?: string }).comment || (r.answers as { wantsOther?: string }).wantsOther)
+      .slice(0, 60)
+      .map(r => ({ id: r.id, userId: r.userId, who: r.user.name || r.user.email, nps: r.nps, plan: r.plan, daysIn: r.daysIn, comment: (r.answers as { comment?: string }).comment ?? '', wantsOther: (r.answers as { wantsOther?: string }).wantsOther ?? '', at: r.createdAt.toISOString() })),
+  }
+}
+

@@ -13,6 +13,7 @@ import { useToast } from '../providers'
 import { Flame, Gem, Icon, type IconName } from '../ui/icons'
 import { Bar, ErrorState, PageSkeleton, Sheet, TopBar } from '../ui/kit'
 import { BadgeArt, RARITY, rarityOf } from '../ui/badge'
+import { MaxCard } from '../upgrade'
 import { Lumi, LumiSays, SKINS, stageOf } from '../ui/lumi'
 
 // ── Racha (05.1) ─────────────────────────────────────────
@@ -300,6 +301,18 @@ export function Profile() {
           </span>
         </div>
         <Icon name="chev" size={18} className="ml-auto" />
+      </Link>
+      <MaxCard />
+      <Link href="/opinion" className="card flex items-center gap-3.5" style={{ color: 'inherit' }}>
+        <span className="grid h-10 w-10 flex-none place-items-center rounded-full" style={{ background: 'var(--fill)' }}>
+          <Icon name="chat" size={20} />
+        </span>
+        <span className="flex-1">
+          <b>{t('feedbackTitle')}</b>
+          <br />
+          <span className="t-foot">{t('feedbackSub')}</span>
+        </span>
+        <Icon name="chev" size={18} />
       </Link>
       <Link href="/perfil/invitar" className="card flex items-center gap-3.5" style={{ color: 'inherit', background: 'color-mix(in srgb, var(--brand) 10%, var(--surface))' }}>
         <span className="grid h-10 w-10 flex-none place-items-center rounded-full" style={{ background: 'var(--brand)', color: 'var(--on-brand)' }}>

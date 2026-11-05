@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
 import { num } from '@/shared/format'
+import { FB_BLOCKERS, FB_LIKES, FB_PAY, FB_PRICE, FB_WANTS } from '@/shared/feedback'
 import { api, type AdminLessonRow, type LensRange } from '../api'
 import { VIEW_AS_KEY } from '../api/http'
 import { useLang } from '../hooks'
@@ -13,7 +14,7 @@ import { LineChart } from '../ui/charts'
 import { Icon, Logo } from '../ui/icons'
 import { PageSkeleton, Seg } from '../ui/kit'
 
-type Tab = 'metrics' | 'lessons' | 'users' | 'campaigns' | 'content' | 'settings' | 'audit'
+type Tab = 'metrics' | 'feedback' | 'lessons' | 'users' | 'campaigns' | 'content' | 'settings' | 'audit'
 const dash = (v: number | null | undefined, locale: string, suffix = '') => (v === null || v === undefined ? '—' : num(v, locale, 0) + suffix)
 
 function Metrics() {
@@ -390,6 +391,101 @@ function UserDetail({ id, onBack }: { id: string; onBack: () => void }) {
   )
 }
 
+function FeedbackTab() {
+  const t = useTranslations('admin.feedbackTab')
+  const tf = useTranslations('feedback')
+  const locale = useLang()
+  const { data: f } = useQuery({ queryKey: ['admin-feedback'], queryFn: api.adminFeedback })
+  if (!f) return <PageSkeleton />
+  const bars = (title: string, key: 'likes' | 'blockers' | 'pay' | 'price' | 'wants', ids: readonly string[]) => {
+    const max = Math.max(1, ...ids.map(id => f[key][id] ?? 0))
+    return (
+      <div className="card flex flex-col gap-1.5">
+        <b className="mb-1">{title}</b>
+        {ids.map(id => (
+          <div key={id} className="flex items-center gap-2 text-[13px]">
+            <span className="w-[45%] flex-none truncate">{tf(`${key}.${id}`)}</span>
+            <span className="h-2 flex-1 overflow-hidden rounded-full" style={{ background: 'var(--fill)' }}>
+              <span className="block h-full rounded-full" style={{ width: `${((f[key][id] ?? 0) / max) * 100}%`, background: 'var(--brand)' }} />
+            </span>
+            <b className="w-8 text-right tabular-nums">{f[key][id] ?? 0}</b>
+          </div>
+        ))}
+      </div>
+    )
+  }
+  const histMax = Math.max(1, ...f.npsHist)
+  return (
+    <div className="flex flex-col gap-3">
+      <h2 className="t-title">{t('title')}</h2>
+      <p className="t-foot m-0">{t('what')}</p>
+      <div className="flex flex-wrap items-center gap-2">
+        <Link href="/opinion" className="btn btn-secondary w-auto">
+          {t('preview')}
+        </Link>
+      </div>
+      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <div className="stat">
+          <span className="t-cap">{t('answers')}</span>
+          <b>{f.total}</b>
+        </div>
+        <div className="stat">
+          <span className="t-cap">{t('nps')}</span>
+          <b>{f.nps ?? '—'}</b>
+        </div>
+        <div className="stat">
+          <span className="t-cap">{t('wouldPay')}</span>
+          <b>{f.total ? `${Math.round(((f.pay.now ?? 0) / f.total) * 100)} %` : '—'}</b>
+        </div>
+        <div className="stat">
+          <span className="t-cap">{t('withComment')}</span>
+          <b>{f.comments.length}</b>
+        </div>
+      </div>
+      <div className="card flex flex-col gap-2">
+        <b>{t('npsTitle')}</b>
+        <div className="flex h-28 items-end gap-1.5">
+          {f.npsHist.map((n, i) => (
+            <div key={i} className="flex flex-1 flex-col items-center gap-1">
+              <span className="t-cap tabular-nums">{n || ''}</span>
+              <span className="w-full rounded-t-md" style={{ height: `${(n / histMax) * 80}px`, minHeight: 2, background: i >= 9 ? 'var(--up)' : i <= 6 ? 'var(--down)' : 'var(--amber, #f5a623)' }} />
+              <span className="t-cap">{i}</span>
+            </div>
+          ))}
+        </div>
+        <span className="t-cap">{t('npsNote')}</span>
+      </div>
+      <div className="grid gap-3 lg:grid-cols-2">
+        {bars(t('likes'), 'likes', FB_LIKES)}
+        {bars(t('blockers'), 'blockers', FB_BLOCKERS)}
+        {bars(t('pay'), 'pay', FB_PAY)}
+        {bars(t('price'), 'price', FB_PRICE)}
+        {bars(t('wants'), 'wants', FB_WANTS)}
+      </div>
+      <div className="card flex flex-col">
+        <b className="mb-1">{t('comments')}</b>
+        {f.comments.length ? (
+          f.comments.map(c => (
+            <div key={c.id} className="flex flex-col gap-0.5 border-t py-2.5 first:border-t-0" style={{ borderColor: 'var(--line)' }}>
+              <span className="t-cap">
+                {c.who} · {t('npsShort')} {c.nps} · {c.plan} · {t('day', { n: c.daysIn })} · {new Date(c.at).toLocaleDateString(locale, { day: 'numeric', month: 'short' })}
+              </span>
+              {c.comment && <span className="t-body">{c.comment}</span>}
+              {c.wantsOther && (
+                <span className="t-foot">
+                  {t('wantsOther')}: {c.wantsOther}
+                </span>
+              )}
+            </div>
+          ))
+        ) : (
+          <span className="t-cap">{t('empty')}</span>
+        )}
+      </div>
+    </div>
+  )
+}
+
 function Campaigns() {
   const t = useTranslations('admin.campaigns')
   const qc = useQueryClient()
@@ -597,7 +693,7 @@ export function Admin() {
   const { ready } = useGuard('admin')
   const [tab, setTab] = useState<Tab>('metrics')
   if (!ready) return <PageSkeleton />
-  const tabs: Tab[] = ['metrics', 'lessons', 'users', 'campaigns', 'content', 'settings', 'audit']
+  const tabs: Tab[] = ['metrics', 'feedback', 'lessons', 'users', 'campaigns', 'content', 'settings', 'audit']
   // Abre la app con la capa de datos encendida
   const openWithData = () => {
     try {
@@ -627,7 +723,7 @@ export function Admin() {
           <Icon name="back" size={16} /> {t('backToApp')}
         </Link>
       </aside>
-      <main className="mx-auto w-full max-w-[1100px] flex-1 p-4 md:p-8">{tab === 'metrics' ? <Metrics /> : tab === 'lessons' ? <Lessons /> : tab === 'campaigns' ? <Campaigns /> : tab === 'content' ? <Content /> : tab === 'users' ? <Users /> : tab === 'settings' ? <GlobalSettings /> : <Audit />}</main>
+      <main className="mx-auto w-full max-w-[1100px] flex-1 p-4 md:p-8">{tab === 'metrics' ? <Metrics /> : tab === 'feedback' ? <FeedbackTab /> : tab === 'lessons' ? <Lessons /> : tab === 'campaigns' ? <Campaigns /> : tab === 'content' ? <Content /> : tab === 'users' ? <Users /> : tab === 'settings' ? <GlobalSettings /> : <Audit />}</main>
     </div>
   )
 }

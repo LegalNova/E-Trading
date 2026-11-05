@@ -202,10 +202,11 @@ export const ca: Record<LegalSlug, LegalDoc> = {
       {
         h: '8. Invitacions',
         list: [
-          'Cada persona té un enllaç d’invitació. Si algú crea el compte amb aquest enllaç, el desa amb correu i contrasenya i acaba la primera classe, tots dos rebeu 30 dies de Max gratis.',
-          'Pots guanyar com a màxim 12 mesos en total. El regal no té valor econòmic, no es pot canviar per diners ni transferir, i se suma al Max que ja tinguis.',
-          'No val convidar-te a tu mateix, crear comptes falsos ni comprar o vendre invitacions. Si passa, podem retirar els mesos regalats i aplicar l’apartat 5.',
-          'Podem canviar o acabar el programa avisant abans a l’app; els mesos ja guanyats es respecten.',
+          'Cada persona té un enllaç d’invitació. Qui crea el compte amb aquest enllaç rep 14 dies de Max gratis en acabar la benvinguda.',
+          'Qui convida rep 14 dies de Max quan el seu amic desa el compte amb correu i contrasenya i acaba la primera classe, fins a un màxim d’un any en total.',
+          'El regal no té valor econòmic, no es pot canviar per diners ni transferir, i se suma al Max que ja tinguis.',
+          'No val convidar-te a tu mateix, crear comptes falsos ni comprar o vendre invitacions. Si passa, podem retirar els dies regalats i aplicar l’apartat 5.',
+          'Podem canviar o acabar el programa avisant abans a l’app; els dies ja guanyats es respecten.',
         ],
       },
       { h: '9. Propietat intel·lectual', p: ['El contingut de Lumi pertany al seu titular o s’utilitza amb llicència. El pots fer servir per al teu aprenentatge personal, però no copiar-lo ni distribuir-lo sense permís.'] },

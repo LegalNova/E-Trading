@@ -1,13 +1,15 @@
 import 'server-only'
-// Invitaciones (plan de 10.000 €): cada usuario tiene su enlace (?inv=código). Cuando quien llega por él
-// guarda su cuenta y termina su primera clase, los dos reciben un mes de Max. Como mucho 12 meses por persona.
+// Invitaciones: cada usuario tiene su enlace (?inv=código).
+//  · Quien llega por él recibe 14 días de Max nada más terminar la bienvenida.
+//  · Quien invita recibe 14 días más cuando su amigo guarda la cuenta y termina su primera clase
+//    (así no se ganan días con cuentas vacías). Como mucho 26 amigos premiados: un año de Max.
 import { randomInt } from 'node:crypto'
 import { db } from '../db'
 import { fail, notify, START_CASH, type Tx } from './core'
 import { track } from './analytics'
 
-export const INVITE_DAYS = 30
-export const INVITE_CAP = 12
+export const INVITE_DAYS = 14
+export const INVITE_CAP = 26
 const ALPHABET = 'abcdefghjkmnpqrstuvwxyz23456789' // sin letras que se confunden (i, l, o, 0, 1)
 const DAY_MS = 86_400_000
 
@@ -31,7 +33,7 @@ export async function myInvites(userId: string, isGuest: boolean) {
   if (isGuest) fail(403, 'GUEST_MUST_SAVE', 'Guarda tu progreso con email y contraseña para invitar')
   const code = await codeOf(userId)
   const [joined, rewarded] = await Promise.all([db.user.count({ where: { invitedById: userId } }), db.user.count({ where: { invitedById: userId, inviteRewardedAt: { not: null } } })])
-  return { code: code!, joined, rewarded, months: Math.min(rewarded, INVITE_CAP), cap: INVITE_CAP, days: INVITE_DAYS }
+  return { code: code!, joined, rewarded, daysEarned: Math.min(rewarded, INVITE_CAP) * INVITE_DAYS, maxDays: INVITE_CAP * INVITE_DAYS, days: INVITE_DAYS }
 }
 
 /** Para la portada: el nombre de pila de quien invita (si el código existe) */
@@ -47,7 +49,11 @@ export async function linkInviter(tx: Tx, userId: string, source: string | null)
   const inviter = await tx.user.findUnique({ where: { inviteCode: source.slice(4) }, select: { id: true, blockedAt: true } })
   if (!inviter || inviter.id === userId || inviter.blockedAt) return
   const res = await tx.user.updateMany({ where: { id: userId, invitedById: null }, data: { invitedById: inviter.id } })
-  if (res.count) await track(tx, userId, 'invite', { by: inviter.id })
+  if (!res.count) return
+  await track(tx, userId, 'invite', { by: inviter.id })
+  // Regalo de bienvenida para el amigo: 14 días de Max desde ya
+  await giftMax(tx, userId, INVITE_DAYS)
+  await notify({ tx, user: { id: userId } as never }, 'ACHIEVEMENT', `Tienes ${INVITE_DAYS} días de Max`, 'Regalo por llegar con una invitación: todo el curso y vidas ilimitadas.', '/premium')
 }
 
 /** Un mes de Max regalado: suma al regalo o a la prueba que ya tenga; con un pago activo, alarga el periodo */
@@ -69,7 +75,7 @@ async function giftMax(tx: Tx, userId: string, days: number) {
   if (pf && !pf.premiumTopUp) await tx.portfolio.update({ where: { userId }, data: { cash: { increment: START_CASH.PREMIUM - START_CASH.FREE }, premiumTopUp: true } })
 }
 
-/** Se llama al terminar una clase y al guardar la cuenta de invitado: si ya cumple, los dos reciben su mes */
+/** Se llama al terminar una clase y al guardar la cuenta de invitado: si ya cumple, quien invitó recibe sus días */
 export async function maybeRewardInvite(tx: Tx, userId: string) {
   const u = await tx.user.findUnique({ where: { id: userId }, select: { invitedById: true, inviteRewardedAt: true, isAnonymous: true, name: true } })
   if (!u?.invitedById || u.inviteRewardedAt || u.isAnonymous) return
@@ -78,13 +84,11 @@ export async function maybeRewardInvite(tx: Tx, userId: string) {
   const mark = await tx.user.updateMany({ where: { id: userId, inviteRewardedAt: null }, data: { inviteRewardedAt: new Date() } })
   if (!mark.count) return
   const inviter = await tx.user.findUnique({ where: { id: u.invitedById }, select: { id: true, blockedAt: true } })
-  await giftMax(tx, userId, INVITE_DAYS)
-  await notify({ tx, user: { id: userId } as never }, 'ACHIEVEMENT', 'Tienes un mes de Max', 'Por llegar con una invitación y terminar tu primera clase. ¡A por todo el curso!', '/premium')
   await track(tx, userId, 'invite', { rewarded: true })
   if (!inviter || inviter.blockedAt) return
   const already = await tx.user.count({ where: { invitedById: inviter.id, inviteRewardedAt: { not: null }, id: { not: userId } } })
   if (already >= INVITE_CAP) return
   await giftMax(tx, inviter.id, INVITE_DAYS)
   const who = u.name?.trim().split(/\s+/)[0] || 'Tu invitado'
-  await notify({ tx, user: { id: inviter.id } as never }, 'ACHIEVEMENT', 'Un mes más de Max', `${who} se ha unido gracias a ti y ha terminado su primera clase.`, '/perfil/invitar')
+  await notify({ tx, user: { id: inviter.id } as never }, 'ACHIEVEMENT', `${INVITE_DAYS} días más de Max`, `${who} se ha unido gracias a ti y ha terminado su primera clase.`, '/perfil/invitar')
 }

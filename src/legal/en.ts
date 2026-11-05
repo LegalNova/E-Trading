@@ -202,10 +202,11 @@ export const en: Record<LegalSlug, LegalDoc> = {
       {
         h: '8. Invitations',
         list: [
-          'Everyone has an invitation link. If someone creates their account with it, saves it with an email and password and finishes their first lesson, you both get 30 days of Max for free.',
-          'You can earn up to 12 months in total. The gift has no monetary value, cannot be exchanged for money or transferred, and is added to any Max you already have.',
-          'Inviting yourself, creating fake accounts or buying or selling invitations is not allowed. If it happens, we may withdraw the gifted months and apply section 5.',
-          'We may change or end the programme with prior notice in the app; months already earned are kept.',
+          'Everyone has an invitation link. Whoever creates their account with it gets 14 days of Max for free when they finish the welcome steps.',
+          'The person who invited them gets 14 days of Max when their friend saves the account with an email and password and finishes their first lesson, up to a year in total.',
+          'The gift has no monetary value, cannot be exchanged for money or transferred, and is added to any Max you already have.',
+          'Inviting yourself, creating fake accounts or buying or selling invitations is not allowed. If it happens, we may withdraw the gifted days and apply section 5.',
+          'We may change or end the programme with prior notice in the app; days already earned are kept.',
         ],
       },
       { h: '9. Intellectual property', p: ['Lumi content belongs to its owner or is used under licence. You may use it for your personal learning, but not copy or distribute it without permission.'] },

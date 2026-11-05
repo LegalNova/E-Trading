@@ -13,7 +13,8 @@ import { ProChart } from '../chart/pro-chart'
 import { useLang, useMe, usePortfolio, useRefreshAll } from '../hooks'
 import { useToast } from '../providers'
 import { Donut, LineChart, Sparkline } from '../ui/charts'
-import { Icon } from '../ui/icons'
+import { GlyphTile } from '../play/glyph'
+import { Gem, Icon } from '../ui/icons'
 import { Disclaimer, ErrorState, PageSkeleton, Seg, Sheet, TopBar } from '../ui/kit'
 import { BadgeArt } from '../ui/badge'
 import { Lumi, stageOf } from '../ui/lumi'
@@ -134,9 +135,7 @@ export function Market() {
               <section aria-label={t('explore')} className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
                 {TYPES.map(k => (
                   <Link key={k} href={exploreHref({ type: k })} className="stat" style={{ color: 'var(--ink)' }}>
-                    <span className="text-[22px]" aria-hidden="true">
-                      {TYPE_EMOJI[k]}
-                    </span>
+                    <GlyphTile name={TYPE_GLYPH[k]} size={36} />
                     <b className="text-[16px]">{t(`filter.${k}`)}</b>
                     <span className="t-cap">{t(`typeHint.${k}`)}</span>
                   </Link>
@@ -210,7 +209,7 @@ export function Market() {
   )
 }
 
-const TYPE_EMOJI: Record<AssetTypeT, string> = { STOCK: '🏢', ETF: '🧺', INDEX: '📊', CRYPTO: '🪙', FX: '💱', COMMODITY: '🛢️' }
+const TYPE_GLYPH: Record<AssetTypeT, string> = { STOCK: 'company', ETF: 'basket', INDEX: 'bars', CRYPTO: 'bitcoin', FX: 'exchange', COMMODITY: 'fuel' }
 
 function IndexCard({ a }: { a: AssetItemT }) {
   const t = useTranslations('market')
@@ -905,7 +904,9 @@ function Filled({ r, a }: { r: OrderResultT; a: AssetDetailT }) {
         <div key={x.code} className="card flex w-full items-center gap-3 text-left">
           <BadgeArt code={x.code} category={x.category} unlocked size={44} label={x.title} />
           <b className="flex-1">{x.title}</b>
-          <span className="t-cap">+{x.reward.gems} 💎</span>
+          <span className="t-cap flex items-center gap-1">
+            +{x.reward.gems} <Gem />
+          </span>
         </div>
       ))}
       {r.companion && (

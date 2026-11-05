@@ -105,7 +105,7 @@
     "guestNote": "Sin email ni contraseña. Si te gusta, guardas tu progreso cuando quieras.",
     "invitedBy": "{name} te ha invitado a Lumi",
     "invited": "Te han invitado a Lumi",
-    "invitedSub": "Crea tu cuenta y termina tu primera clase: os lleváis un mes de Max los dos."
+    "invitedSub": "Crea tu cuenta y tienes 14 días de Max gratis desde el primer momento."
   },
   "auth": {
     "signUpTitle": "Crea tu cuenta",
@@ -283,7 +283,8 @@
     "summary": "Llevas {done} de {total} clases",
     "continueNext": "Siguiente: {title}",
     "continueBtn": "Continuar",
-    "sectionNeeds": "Se abre al superar el reto final de: {needs}"
+    "sectionNeeds": "Se abre al superar el reto final de: {needs}",
+    "tryMaxFree": "Probar Max gratis"
   },
   "lesson": {
     "close": "Cerrar la lección",
@@ -731,7 +732,9 @@
     "portfolio": "Cartera",
     "tryPremium": "Probar 7 días gratis",
     "inviteTitle": "Invita a tus amigos",
-    "inviteSub": "Un mes de Max para los dos"
+    "inviteSub": "14 días de Max para tu amigo y para ti",
+    "feedbackTitle": "Danos tu opinión",
+    "feedbackSub": "Un minuto para ayudarnos a mejorar Lumi"
   },
   "notifications": {
     "title": "Avisos",
@@ -883,7 +886,8 @@
       "settings": "Ajustes",
       "audit": "Auditoría",
       "lessons": "Clases",
-      "campaigns": "Enlaces"
+      "campaigns": "Enlaces",
+      "feedback": "Opiniones"
     },
     "range": "Periodo",
     "dauMau": "Usuarios activos (DAU / MAU)",
@@ -1063,7 +1067,28 @@
     "errorLast": "Último",
     "errorServer": "Servidor",
     "errorApp": "App",
-    "noErrors": "Ningún error en los últimos 7 días."
+    "noErrors": "Ningún error en los últimos 7 días.",
+    "feedbackTab": {
+      "title": "Opiniones de los usuarios",
+      "what": "A los 7 días de empezar (si han hecho alguna clase) Lumi les pide su opinión en Inicio y con un aviso. También pueden darla cuando quieran desde Perfil.",
+      "preview": "Ver cómo lo ven los usuarios",
+      "answers": "Respuestas",
+      "nps": "NPS (−100 a 100)",
+      "wouldPay": "Pagarían Max ya",
+      "withComment": "Con comentario",
+      "npsTitle": "¿Recomendarían Lumi? (0-10)",
+      "npsNote": "NPS = % que pone 9-10 menos % que pone 0-6. Por encima de 0 es bueno; por encima de 30, muy bueno.",
+      "likes": "Lo que más gusta",
+      "blockers": "Lo que frena",
+      "pay": "¿Pagarían Max a 7,99 €/mes?",
+      "price": "Precio justo (de los que querían más barato)",
+      "wants": "Lo que piden",
+      "comments": "Comentarios",
+      "npsShort": "nota",
+      "day": "día {n}",
+      "wantsOther": "Pide",
+      "empty": "Aún no hay comentarios."
+    }
   },
   "cookies": {
     "label": "Aviso de cookies",
@@ -1449,20 +1474,102 @@
   },
   "invite": {
     "title": "Invitar amigos",
-    "headline": "Invita a tus amigos y os lleváis un mes de Max",
-    "sub": "{days} días de Max para cada uno por cada amigo que se una y termine su primera clase.",
+    "headline": "Invita a tus amigos y ganad días de Max",
+    "sub": "Tu amigo tiene {days} días de Max nada más entrar. Y tú, {days} días más por cada amigo que termine su primera clase.",
     "step1": "Comparte tu enlace por WhatsApp, Instagram o donde quieras.",
-    "step2": "Tu amigo entra, crea su cuenta y termina su primera clase.",
-    "step3": "Los dos recibís un mes de Max: todo el curso, sin límites.",
+    "step2": "Tu amigo entra y tiene 14 días de Max gratis desde el primer momento.",
+    "step3": "Cuando termina su primera clase, tú sumas 14 días de Max.",
     "yourLink": "Tu enlace",
     "copy": "Copiar enlace",
     "copied": "Copiado",
     "share": "Compartir",
-    "shareText": "Estoy aprendiendo a invertir con Lumi, sin arriesgar dinero real. Entra con mi enlace y nos llevamos un mes de Max los dos: {link}",
+    "shareText": "Estoy aprendiendo a invertir con Lumi, sin arriesgar dinero real. Entra con mi enlace y tienes 14 días de Max gratis: {link}",
     "joined": "Amigos que se han unido",
-    "months": "Meses de Max ganados",
-    "rules": "Puedes ganar hasta {cap} meses. El regalo llega cuando tu amigo guarda su cuenta y termina su primera clase. Crear cuentas falsas o invitarte a ti mismo va contra los <terms>Términos de uso</terms>.",
+    "rules": "Puedes ganar hasta un año de Max ({days} días por amigo). Tus días llegan cuando tu amigo guarda su cuenta y termina su primera clase. Crear cuentas falsas o invitarte a ti mismo va contra los <terms>Términos de uso</terms>.",
     "guest": "Para invitar a tus amigos primero guarda tu progreso con email y contraseña.",
-    "guestCta": "Guardar mi progreso"
+    "guestCta": "Guardar mi progreso",
+    "daysEarned": "Días de Max ganados"
+  },
+  "upgrade": {
+    "short": "Max gratis",
+    "daysLeft": "Max · {n} d",
+    "freeTitle": "Prueba Max 7 días gratis",
+    "freeTitleNoTrial": "Pásate a Max",
+    "freeBody": "Todo el curso, vidas ilimitadas y 50.000 € virtuales.",
+    "tryCta": "Probar",
+    "seePlans": "Ver planes",
+    "trialTitle": "Te quedan {n} días de prueba de Max",
+    "giftTitle": "Te quedan {n} días de Max regalado",
+    "keepBody": "Elige un plan para no perder el curso completo.",
+    "keepCta": "Ver planes",
+    "plusTitle": "Pásate a Max",
+    "plusBody": "Las 13 unidades completas y todos los modos de Lumi.",
+    "toMax": "Pasar a Max"
+  },
+  "feedback": {
+    "title": "Tu opinión",
+    "cardTitle": "Lumi quiere saber qué te parece",
+    "cardBody": "Seis preguntas rápidas, un minuto. Te lo agradecemos con {gems} gemas.",
+    "cardCta": "Responder",
+    "later": "Ahora no",
+    "q": {
+      "nps": "Del 0 al 10, ¿cuánto le recomendarías Lumi a un amigo?",
+      "likes": "¿Qué es lo que más te ha gustado?",
+      "blockers": "¿Qué te ha frenado o se te ha hecho pesado?",
+      "pay": "Si Max costara {price} al mes (o {year} al año), ¿qué harías?",
+      "price": "¿Qué precio al mes te parecería justo?",
+      "wants": "¿Qué te gustaría que tuviera Lumi?",
+      "comment": "Lo último: si pudieras cambiar una sola cosa, ¿cuál sería?"
+    },
+    "npsHint": "Toca un número.",
+    "npsLow": "Nada probable",
+    "npsHigh": "Seguro que sí",
+    "upTo": "Elige hasta {n}.",
+    "likes": {
+      "interactive": "Las clases interactivas",
+      "stories": "Las historias con decisiones",
+      "simulator": "El simulador con precios reales",
+      "lumi": "Preguntarle a Lumi",
+      "league": "La liga y la racha",
+      "free": "Aprender sin arriesgar dinero"
+    },
+    "blockers": {
+      "nothing": "Nada, todo bien",
+      "long": "Las clases se hacen largas",
+      "lost": "Me he perdido en algún concepto",
+      "limits": "Las vidas y los límites",
+      "market": "El mercado es complicado",
+      "next": "No sabía qué hacer después",
+      "reasons": "Me faltan motivos para volver cada día"
+    },
+    "pay": {
+      "now": "Lo pagaría",
+      "cheaper": "Lo pagaría si fuera más barato",
+      "gift": "Solo con un regalo o descuento",
+      "never": "No pagaría por esto"
+    },
+    "price": {
+      "p2": "Unos 2 € al mes",
+      "p4": "Entre 3 y 4 € al mes",
+      "p6": "Entre 5 y 6 € al mes"
+    },
+    "wants": {
+      "crypto": "Más sobre cripto",
+      "realbroker": "Dar el paso a invertir de verdad",
+      "friends": "Retos con amigos",
+      "portfolio": "Más análisis de mi cartera",
+      "videos": "Vídeos cortos",
+      "other": "Otra cosa"
+    },
+    "otherPlaceholder": "Cuéntanos qué",
+    "commentPlaceholder": "Escribe lo que quieras (opcional)",
+    "next": "Siguiente",
+    "send": "Enviar",
+    "sendWithout": "Enviar sin comentario",
+    "thanksTitle": "¡Gracias!",
+    "thanksGems": "Nos ayuda muchísimo. Tienes {gems} gemas más.",
+    "thanksBody": "Nos ayuda muchísimo a mejorar Lumi.",
+    "done": "Volver al inicio",
+    "error": "No se ha podido enviar. Prueba otra vez."
   }
 }

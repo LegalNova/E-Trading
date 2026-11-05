@@ -264,6 +264,16 @@ const statusOf = (u: User, s: { status: string; renewsAt: Date | null; trialEnds
   plan: u.plan, status: (s?.status ?? 'NONE') as BillingStatusT['status'], renewsAt: s?.renewsAt?.toISOString() ?? null, trialEndsAt: s?.trialEndsAt?.toISOString() ?? null, interval: (s?.interval ?? null) as BillingStatusT['interval'],
 })
 
+/** Para el botón de Max que se ve en toda la app (no cuenta como «ha visto los planes») */
+export async function planBadge() {
+  const u = await currentUser()
+  if (!u) fail(401, 'UNAUTHORIZED', 'Inicia sesión para continuar')
+  const sub = await db.subscription.findUnique({ where: { userId: u!.id } })
+  const temporary = (sub?.status === 'TRIALING' || sub?.status === 'GIFT') && sub.trialEndsAt && sub.trialEndsAt.getTime() > Date.now()
+  const daysLeft = temporary ? Math.max(1, Math.ceil((sub!.trialEndsAt!.getTime() - Date.now()) / DAY_MS)) : null
+  return { plan: u!.plan, status: sub?.status ?? 'NONE', endsAt: temporary ? sub!.trialEndsAt!.toISOString() : null, daysLeft, trialUsed: u!.trialUsed, isGuest: !!u!.isAnonymous }
+}
+
 export const billingStatus = () =>
   withCtx(async c => {
     // La pantalla de planes pide el estado al abrirse: cuenta como «ha visto los planes» (una vez al día)

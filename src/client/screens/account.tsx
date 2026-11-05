@@ -102,7 +102,6 @@ export function Premium() {
           />
         )}
         <p className="t-foot m-0">{t(tier === 'PLUS' ? 'plusPitch' : 'maxPitch')}</p>
-        <FeatureList features={features(isPlus ? 'PREMIUM' : tier)} />
         <button className="opt" aria-pressed={interval === 'YEAR'} onClick={() => setInterval_('YEAR')}>
           <span className="flex-1">
             <b>{t('yearly')}</b>
@@ -139,6 +138,7 @@ export function Premium() {
             ),
           })}
         </p>
+        <FeatureList features={features(isPlus ? 'PREMIUM' : tier)} />
         <div className="banner banner-info">{t('demoNote')}</div>
       </div>
     </>

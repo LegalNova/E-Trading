@@ -253,10 +253,11 @@ export const es: Record<LegalSlug, LegalDoc> = {
       {
         h: '8. Invitaciones',
         list: [
-          'Cada persona tiene un enlace de invitación. Si alguien crea su cuenta con él, la guarda con email y contraseña y termina su primera clase, los dos recibís 30 días de Max gratis.',
-          'Puedes ganar como mucho 12 meses en total. El regalo no tiene valor económico, no se puede cambiar por dinero ni transferir, y se suma al Max que ya tengas.',
-          'No vale invitarte a ti mismo, crear cuentas falsas ni comprar o vender invitaciones. Si pasa, podemos retirar los meses regalados y aplicar el apartado 5.',
-          'Podemos cambiar o terminar el programa avisando antes en la app; los meses ya ganados se respetan.',
+          'Cada persona tiene un enlace de invitación. Quien crea su cuenta con él recibe 14 días de Max gratis al terminar la bienvenida.',
+          'Quien invita recibe 14 días de Max cuando su amigo guarda la cuenta con email y contraseña y termina su primera clase, hasta un máximo de un año en total.',
+          'El regalo no tiene valor económico, no se puede cambiar por dinero ni transferir, y se suma al Max que ya tengas.',
+          'No vale invitarte a ti mismo, crear cuentas falsas ni comprar o vender invitaciones. Si pasa, podemos retirar los días regalados y aplicar el apartado 5.',
+          'Podemos cambiar o terminar el programa avisando antes en la app; los días ya ganados se respetan.',
         ],
       },
       {
