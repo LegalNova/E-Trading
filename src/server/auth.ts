@@ -12,6 +12,7 @@ import { headers } from 'next/headers'
 import { LEGAL_VERSION } from '@/shared/legal'
 import { db } from './db'
 import { langOf, mailEnabled, sendTemplate } from './mail'
+import { memo } from './request'
 import { viewAs } from './view'
 
 const admins = (process.env.ADMIN_EMAILS ?? '').split(',').map(e => e.trim().toLowerCase()).filter(Boolean)
@@ -41,7 +42,9 @@ export const auth = betterAuth({
     sendVerificationEmail: async ({ user, url }, req) => sendTemplate('verify', langOf(req), user.email, url),
   },
   socialProviders: google ? { google } : {},
-  session: { expiresIn: 60 * 60 * 24 * 30, updateAge: 60 * 60 * 24 },
+  // La sesión se guarda firmada en una cookie 5 minutos: no hace falta consultar la base de datos en cada petición
+  // (el usuario sí se lee siempre, así que un bloqueo o un cambio de plan se aplican al momento)
+  session: { expiresIn: 60 * 60 * 24 * 30, updateAge: 60 * 60 * 24, cookieCache: { enabled: true, maxAge: 5 * 60 } },
   // Guardado en BD: vale aunque Vercel reparta las peticiones entre instancias
   rateLimit: {
     enabled: true,
@@ -85,16 +88,18 @@ export const googleEnabled = !!google
 export { mailEnabled }
 
 /** Quien ha iniciado sesión de verdad (o null). Lee la cookie de la petición. */
-export async function realUser() {
-  const s = await auth.api.getSession({ headers: await headers() })
-  if (!s) return null
-  const u = await db.user.findUnique({ where: { id: s.user.id } })
-  return u && !u.blockedAt ? u : null
+export function realUser() {
+  return memo('realUser', async () => {
+    const s = await auth.api.getSession({ headers: await headers() })
+    if (!s) return null
+    const u = await db.user.findUnique({ where: { id: s.user.id } })
+    return u && !u.blockedAt ? u : null
+  })
 }
 
 /** Usuario de la sesión actual: el real o, si un admin está «viendo como», el usuario elegido */
 export async function currentUser() {
   const v = viewAs()
-  if (v) return db.user.findUnique({ where: { id: v.targetId } })
+  if (v) return memo('viewAsUser', () => db.user.findUnique({ where: { id: v.targetId } }))
   return realUser()
 }

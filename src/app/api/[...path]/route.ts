@@ -8,6 +8,7 @@ import { recordClientEvent, recordServerError } from '@/server/game/analytics'
 import { lens, lessonTable, type LensRange } from '@/server/game/lens'
 import { realUser } from '@/server/auth'
 import { withViewAs } from '@/server/view'
+import { withRequest } from '@/server/request'
 import * as feedback from '@/server/game/feedback'
 import * as invites from '@/server/game/invites'
 import * as learning from '@/server/game/learning'
@@ -191,7 +192,7 @@ async function handle(req: NextRequest, ctx: RouteContext<'/api/[...path]'>) {
       view = { targetId: asId.slice(0, 64), adminId: admin.id }
     }
     // Los textos del curso y del motor salen en el idioma de la pantalla del móvil
-    const out = await withLocale(req.headers.get('x-locale'), () => withViewAs(view, () => m.r.run(req, m.params, body)))
+    const out = await withRequest(req.method, () => withLocale(req.headers.get('x-locale'), () => withViewAs(view, () => m.r.run(req, m.params, body))))
     return out === undefined ? new Response(null, { status: 204 }) : Response.json(out, { headers: { 'Cache-Control': 'no-store' } })
   } catch (e) {
     if (e instanceof HttpError) return Response.json({ error: { code: e.code, message: e.message } }, { status: e.status })

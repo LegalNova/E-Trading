@@ -10,6 +10,7 @@ import { ACHIEVEMENTS, LEVEL_TITLES, LUMI, RISK_LESSON, UNITS } from '../content
 import { achievementT } from '../content/translate'
 import { currentLocale } from '../locale'
 import { viewAs } from '../view'
+import { isReadRequest } from '../request'
 
 export class HttpError extends Error {
   constructor(public status: number, public code: string, message: string) {
@@ -48,6 +49,8 @@ export interface Ctx {
   counters: Counters
   today: string
   fx: Fx
+  /** Fila del usuario bloqueada (escrituras). Las lecturas van sin bloqueo y lo piden con lockUser si van a cambiar algo */
+  locked?: boolean
 }
 
 // ── Niveles: 500 × 1,4 ───────────────────────────────────
@@ -78,29 +81,53 @@ class ReadOnlyResult {
 export async function withCtx<T>(fn: (c: Ctx) => Promise<T>, user?: User): Promise<T> {
   const u0 = user ?? (await requireUser())
   const readOnly = !!viewAs()
+  // Lecturas (GET) sin bloquear al usuario: varias pantallas pueden pedir datos a la vez sin hacer cola.
+  // Las tareas programadas (que pasan el usuario) y las escrituras bloquean como siempre.
+  const read = !user && isReadRequest()
   try {
-    return await inCtx(fn, u0, readOnly)
+    return await inCtx(fn, u0, readOnly, read)
   } catch (e) {
     if (e instanceof ReadOnlyResult) return e.out as T
     throw e
   }
 }
 
-function inCtx<T>(fn: (c: Ctx) => Promise<T>, u0: User, readOnly: boolean): Promise<T> {
+const lockSql = () => `SELECT 1 FROM "${DB_SCHEMA}"."GameState" WHERE "userId" = $1 FOR UPDATE`
+
+/** Antes de cambiar algo en una lectura (ejecutar órdenes, por ejemplo): bloquea y recarga el estado del usuario */
+export async function lockUser(c: Ctx) {
+  if (c.locked) return
+  await c.tx.$queryRawUnsafe(lockSql(), c.user.id)
+  c.g = await c.tx.gameState.findUniqueOrThrow({ where: { userId: c.user.id } })
+  c.counters = { ...((c.g.counters as Counters) ?? {}) }
+  c.locked = true
+  await rollover(c)
+}
+
+const STATE_KEYS = ['xp', 'weekKey', 'weekXp', 'gems', 'lives', 'livesUpdatedAt', 'streak', 'bestStreak', 'lastActiveDay', 'freezes', 'placementDone', 'tradesDay', 'tradesToday', 'division'] as const
+const stateOf = (g: GameState, counters: Counters) => JSON.stringify([...STATE_KEYS.map(k => g[k]), counters])
+
+function inCtx<T>(fn: (c: Ctx) => Promise<T>, u0: User, readOnly: boolean, read: boolean): Promise<T> {
   return db.$transaction(
     async tx => {
-      await tx.gameState.upsert({ where: { userId: u0.id }, create: { userId: u0.id }, update: {} })
+      // Crear el estado si no existe sin chocar con otra petición que lo esté creando a la vez
+      if (!(await tx.gameState.findUnique({ where: { userId: u0.id }, select: { userId: true } }))) await tx.gameState.createMany({ data: [{ userId: u0.id }], skipDuplicates: true })
       // Bloqueo de la fila del usuario: sus acciones simultáneas se ejecutan de una en una
       // (evita gastar dos veces el mismo saldo, las mismas gemas o cobrar dos veces un logro)
-      await tx.$queryRawUnsafe(`SELECT 1 FROM "${DB_SCHEMA}"."GameState" WHERE "userId" = $1 FOR UPDATE`, u0.id)
+      if (!read) await tx.$queryRawUnsafe(lockSql(), u0.id)
       const g = await tx.gameState.findUniqueOrThrow({ where: { userId: u0.id } })
-      const u = await expireTrial(tx, (await tx.user.findUnique({ where: { id: u0.id } })) ?? u0)
-      const c: Ctx = { tx, user: u, g, counters: { ...((g.counters as Counters) ?? {}) }, today: dayOf(Date.now(), u.timezone), fx: { xp: 0, goals: [], ach: [], levelFrom: levelOf(g.xp).n, features: [] } }
+      const u = await expireTrial(tx, read ? u0 : ((await tx.user.findUnique({ where: { id: u0.id } })) ?? u0))
+      const c: Ctx = { tx, user: u, g, counters: { ...((g.counters as Counters) ?? {}) }, today: dayOf(Date.now(), u.timezone), fx: { xp: 0, goals: [], ach: [], levelFrom: levelOf(g.xp).n, features: [] }, locked: !read }
+      const loaded = { at: g.updatedAt, state: stateOf(g, c.counters) }
       await rollover(c)
       const out = await fn(c)
       if (c.g.weekXp > 0) await (await import('./league')).ensureMembership(c)
       const { xp, weekKey, weekXp, gems, lives, livesUpdatedAt, streak, bestStreak, lastActiveDay, freezes, placementDone, tradesDay, tradesToday, division } = c.g
-      await tx.gameState.update({ where: { userId: u.id }, data: { xp, weekKey, weekXp, gems, lives, livesUpdatedAt, streak, bestStreak, lastActiveDay, freezes, placementDone, tradesDay, tradesToday, division, counters: c.counters } })
+      const data = { xp, weekKey, weekXp, gems, lives, livesUpdatedAt, streak, bestStreak, lastActiveDay, freezes, placementDone, tradesDay, tradesToday, division, counters: c.counters }
+      if (c.locked) await tx.gameState.update({ where: { userId: u.id }, data })
+      // Lectura sin bloqueo: solo se guarda si el mantenimiento del día cambió algo y nadie escribió entretanto
+      // (si alguien escribió, se deja: la siguiente petición lo recalcula sobre el estado nuevo)
+      else if (stateOf(c.g, c.counters) !== loaded.state) await tx.gameState.updateMany({ where: { userId: u.id, updatedAt: loaded.at }, data })
       if (readOnly) throw new ReadOnlyResult(out)
       return out
     },
@@ -113,7 +140,9 @@ async function expireTrial(tx: Tx, u: User): Promise<User> {
   if (u.plan === 'FREE') return u
   const sub = await tx.subscription.findUnique({ where: { userId: u.id } })
   if ((sub?.status === 'TRIALING' || sub?.status === 'GIFT') && sub.trialEndsAt && sub.trialEndsAt.getTime() < Date.now()) {
-    await tx.subscription.update({ where: { userId: u.id }, data: { status: 'CANCELED', renewsAt: null } })
+    // Solo una petición la cierra (si llegan dos a la vez, la segunda ya no encuentra nada que cerrar)
+    const closed = await tx.subscription.updateMany({ where: { userId: u.id, status: sub.status }, data: { status: 'CANCELED', renewsAt: null } })
+    if (!closed.count) return (await tx.user.findUnique({ where: { id: u.id } })) ?? u
     const gift = sub.status === 'GIFT'
     await tx.notification.create({ data: { userId: u.id, type: 'NEW_LESSON', title: gift ? 'Tu Max regalado ha terminado' : 'Tu prueba ha terminado', body: gift ? 'Sigues con todo lo de Free. Invita a más amigos para ganar otro mes, o pásate a Plus o Max.' : 'Sigues con todo lo de Free. Puedes volver a Plus o Max cuando quieras.', deepLink: gift ? '/perfil/invitar' : '/premium' } })
     return tx.user.update({ where: { id: u.id }, data: { plan: 'FREE' } })
@@ -195,7 +224,12 @@ export function goalDefs(minutes: number): { id: GoalId; target: number; xp: num
 export const minutesOf = (u: User) => Number((u.settings as { dailyGoalMinutes?: number } | null)?.dailyGoalMinutes ?? 10)
 
 export async function goalsOf(c: Ctx) {
-  return c.tx.dailyGoals.upsert({ where: { userId_day: { userId: c.user.id, day: c.today } }, create: { userId: c.user.id, day: c.today }, update: {} })
+  const where = { userId_day: { userId: c.user.id, day: c.today } }
+  const row = await c.tx.dailyGoals.findUnique({ where })
+  if (row) return row
+  // Sin choques si dos peticiones lo crean a la vez
+  await c.tx.dailyGoals.createMany({ data: [{ userId: c.user.id, day: c.today }], skipDuplicates: true })
+  return c.tx.dailyGoals.findUniqueOrThrow({ where })
 }
 
 export async function bumpGoal(c: Ctx, id: GoalId) {

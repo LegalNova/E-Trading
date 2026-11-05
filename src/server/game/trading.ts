@@ -9,7 +9,7 @@ import { db } from '../db'
 import { fxRates, loadAssets, normCurrency, toEur } from '../market/service'
 import { LESSON, lessonRef, RISK_LESSON } from '../content/catalog'
 import { coach } from '../tutor/coach'
-import { addXp, bump, bumpGoal, endFx, fail, lumi, markActive, notify, requireUser, RISK_PCT, START_CASH, unlockedFeatures, withCtx, type Ctx, type Tx } from './core'
+import { lockUser, addXp, bump, bumpGoal, endFx, fail, lumi, markActive, notify, requireUser, RISK_PCT, START_CASH, unlockedFeatures, withCtx, type Ctx, type Tx } from './core'
 
 // ── Libro de precios (solo los activos que necesita la petición) ──
 export interface Px {
@@ -62,7 +62,11 @@ const fmtPrice = (p: Px, v: number) => (p.type === 'FX' ? v.toFixed(5) : fixPric
 const n = (d: unknown) => Number(d ?? 0)
 
 export async function portfolioRow(tx: Tx, user: User) {
-  return tx.portfolio.upsert({ where: { userId: user.id }, create: { userId: user.id, cash: START_CASH[user.plan], resetsYear: new Date().getFullYear() }, update: {} })
+  const pf = await tx.portfolio.findUnique({ where: { userId: user.id } })
+  if (pf) return pf
+  // Sin choques si dos peticiones la crean a la vez
+  await tx.portfolio.createMany({ data: [{ userId: user.id, cash: START_CASH[user.plan], resetsYear: new Date().getFullYear() }], skipDuplicates: true })
+  return tx.portfolio.findUniqueOrThrow({ where: { userId: user.id } })
 }
 
 function posValue(book: Book, p: Position) {
@@ -246,7 +250,13 @@ export async function placeOrder(i: OrderInput, idempotencyKey?: string): Promis
 
 /** Ejecuta órdenes pendientes y alertas que ya se cumplen (al leer y desde la tarea programada) */
 export async function processPendingFor(c: Ctx, book: Book) {
-  const orders = await c.tx.order.findMany({ where: { userId: c.user.id, status: 'PENDING' }, orderBy: { createdAt: 'asc' } })
+  const [orders, alerts] = await Promise.all([c.tx.order.findMany({ where: { userId: c.user.id, status: 'PENDING' }, orderBy: { createdAt: 'asc' } }), c.tx.priceAlert.findMany({ where: { userId: c.user.id, active: true } })])
+  if (!orders.length && !alerts.length) return
+  // Hay algo que ejecutar: bloqueo (en una lectura aún no lo estaba) y se vuelve a leer, por si otra petición se adelantó
+  if (!c.locked) {
+    await lockUser(c)
+    return processPendingFor(c, book)
+  }
   for (const o of orders) {
     const px = book.get(o.symbol)
     if (!px || !px.tradable) continue
@@ -255,7 +265,6 @@ export async function processPendingFor(c: Ctx, book: Book) {
     const hit = o.type === 'MARKET' || (trig !== null && ((o.type === 'LIMIT' && (o.side === 'BUY' ? p <= trig : p >= trig)) || (o.type === 'STOP_LOSS' && p <= trig) || (o.type === 'TAKE_PROFIT' && p >= trig)))
     if (hit) await fill(c, book, o)
   }
-  const alerts = await c.tx.priceAlert.findMany({ where: { userId: c.user.id, active: true } })
   for (const al of alerts) {
     const p = book.get(al.symbol)?.price
     if (p === undefined) continue
@@ -286,7 +295,9 @@ export async function portfolioIn(c: Ctx, book: Book): Promise<PortfolioT> {
     .sort((a, b) => Number(b.marketValue) - Number(a.marketValue))
   const start = START_CASH[c.user.plan]
   // Foto diaria real del valor de la cartera (para el gráfico de evolución)
-  await c.tx.portfolioSnapshot.upsert({ where: { userId_day: { userId: c.user.id, day: c.today } }, create: { userId: c.user.id, day: c.today, value: fix2(total) }, update: { value: fix2(total) } })
+  // (solo se escribe si cambia el valor: con precios que se actualizan cada pocos minutos, casi nunca)
+  const snap = await c.tx.portfolioSnapshot.findUnique({ where: { userId_day: { userId: c.user.id, day: c.today } }, select: { value: true } })
+  if (!snap || n(snap.value).toFixed(2) !== fix2(total)) await c.tx.portfolioSnapshot.upsert({ where: { userId_day: { userId: c.user.id, day: c.today } }, create: { userId: c.user.id, day: c.today, value: fix2(total) }, update: { value: fix2(total) } })
   return { totalValue: fix2(total), cash: fix2(cash), dayChange: fix2(dayChange), dayChangePct: total - dayChange ? (dayChange / (total - dayChange)) * 100 : 0, totalReturnPct: ((total - start) / start) * 100, realizedPnl: fix2(n(pf.realized)), unrealizedPnl: fix2(unreal), positions: list, resetsLeft: pf.resetsLeft }
 }
 

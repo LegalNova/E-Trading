@@ -10,6 +10,7 @@ import { db } from '../db'
 import { headers } from 'next/headers'
 import { auth, currentUser, googleEnabled, mailEnabled, realUser } from '../auth'
 import { viewAs } from '../view'
+import { forgetMemo } from '../request'
 import { ACHIEVEMENTS } from '../content/catalog'
 import { achievementList, endFx, fail, FREEZE_PRICE, goalDefs, goalsOf, minutesOf, levelOf, levelTitle, LIVES_MAX, livesOf, lumi, MAX_FREEZES, notify, REFILL_PRICE, START_CASH, withCtx } from './core'
 import { ALL_Q, pathOf } from './learning'
@@ -52,6 +53,7 @@ export async function saveGuest(email: string, password: string) {
   ])
   // Si llegó invitado y ya terminó una clase, ahora que tiene cuenta reciben los dos su mes de Max
   await db.$transaction(tx => maybeRewardInvite(tx, u!.id))
+  forgetMemo()
   return session()
 }
 

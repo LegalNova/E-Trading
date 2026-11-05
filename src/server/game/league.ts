@@ -27,7 +27,8 @@ export async function ensureMembership(c: Ctx) {
   const groups = await c.tx.leagueMember.groupBy({ by: ['groupNo'], where: { weekKey, division }, _count: { _all: true }, orderBy: { groupNo: 'asc' } })
   const open = groups.find(g => g._count._all < GROUP_SIZE)
   const groupNo = open ? open.groupNo : (groups.at(-1)?.groupNo ?? 0) + 1
-  await c.tx.leagueMember.create({ data: { weekKey, userId: c.user.id, division, groupNo, xp: c.g.weekXp } })
+  // createMany + skipDuplicates: si otra petición del mismo usuario lo crea a la vez, no falla
+  await c.tx.leagueMember.createMany({ data: [{ weekKey, userId: c.user.id, division, groupNo, xp: c.g.weekXp }], skipDuplicates: true })
 }
 
 /** Rentabilidad semanal real (fotos diarias de la cartera) con penalización por concentración */

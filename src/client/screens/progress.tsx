@@ -201,7 +201,7 @@ export function Achievements({ back = '/perfil' }: { back?: string }) {
 export function League() {
   const t = useTranslations('league')
   const locale = useLang()
-  const { data: l, isError, refetch } = useQuery({ queryKey: ['league'], queryFn: api.league, refetchInterval: 30_000 })
+  const { data: l, isError, refetch } = useQuery({ queryKey: ['league'], queryFn: api.league, refetchInterval: 60_000 })
   const [, tick] = useState(0)
   useEffect(() => {
     const id = setInterval(() => tick(n => n + 1), 60_000)
