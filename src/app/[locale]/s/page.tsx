@@ -17,7 +17,7 @@ export async function generateMetadata({ params, searchParams }: P): Promise<Met
   const card = await resolveShare(q)
   if (!card) return { title: 'Lumi' }
   const image = `/api/share/image?${q.toString()}`
-  const title = `${card.big.match(/^\d+$/) ? card.big + ' ' : ''}${card.title} · Lumi`
+  const title = `${card.big.match(/^\d+$/) ? card.big + ' ' : ''}${card.title}`
   return { metadataBase: new URL(OWNER.site), title, description: card.who ?? undefined, openGraph: { title, description: card.cta, images: [{ url: image, width: 1200, height: 630 }] }, twitter: { card: 'summary_large_image', title, images: [image] }, robots: { index: false } }
 }
 
