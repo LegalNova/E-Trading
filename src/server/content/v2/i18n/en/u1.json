@@ -2,7 +2,7 @@
  "unit": {
   "title": "Money and inflation",
   "description": "What money is, why it loses value and how it grows with compound interest",
-  "section": "Money basics"
+  "section": "Your money in order"
  },
  "lessons": {
   "u1l1": {
@@ -195,50 +195,6 @@
       "Huh… I'd never thought of it like that.",
       "Bear in mind: deposits are protected up to **€100,000** by the Fondo de Garantía de Depósitos (Spain's deposit guarantee scheme) if the bank goes bust. That protects your euros, not your purchasing power."
      ]
-    }
-   ]
-  },
-  "u1l5": {
-   "title": "Simple and compound interest",
-   "steps": [
-    {
-     "texts": [
-      "The mattress, simple and compound",
-      "Three ways to keep **€1,000**:\n\n• **Under the mattress:** it doesn't grow.\n• **Simple interest:** you always earn on what you put in.\n• **Compound interest:** you also earn on what you've already earned.",
-      "€1,000 at 7 % a year for 30 years. How much will you have with compound interest?",
-      "About €3,100",
-      "About €7,600",
-      "About €21,000",
-      "With simple interest it would be €3,100. With compound, **€7,612**: almost two and a half times as much, without adding a single euro.",
-      "Reach €10,000 without adding any money: play with the return and the years.",
-      "Compounding **speeds up**: the last years grow much more than the first ones. That's why time matters as much as the return.",
-      "Returns that high aren't normal: 7 % is already very good over the long term.",
-      "Look at the end of the green curve: it shoots up!",
-      "Move the years: watch how the lines pull apart"
-     ]
-    },
-    {
-     "texts": [
-      "Ana and Bruno",
-      "Both put aside **€200 a month** at 7 % until 65. Ana starts at 25. What if Bruno starts later?",
-      "Ana",
-      "Bruno",
-      "Bruno starts 10 years after Ana. At 65, how much will he have compared with her?",
-      "25 % less",
-      "Less than half",
-      "Almost the same",
-      "Ana ends up with about **€494,000** and Bruno with about **€234,000**: less than half, even though Ana only put in €24,000 more.",
-      "Delay Bruno until Ana has three times as much as him.",
-      "Every year you wait costs far more than it seems: your first euros are the ones with the most time to compound.",
-      "Starting at 45, Bruno can't catch up with Ana even if he puts in the same each month.",
-      "If they start at the same time, they end up the same. Now delay Bruno",
-      "Every year of delay widens the gap. How far does it go?"
-     ]
-    },
-    {
-     "title": "It works against you too",
-     "body": "Compound interest works the same way with debt: a card that charges interest on interest grows on its own. You'll see it in the debt unit.\n\nAnd remember: these are examples, not promises. The stock market doesn't return 7 % every year.",
-     "key": "Gains generate new gains: the sooner you start, the more time works for you."
     }
    ]
   },
@@ -537,64 +493,6 @@
     "inflation"
    ],
    "explanation": "It's the quick way to tell whether your money is gaining or losing purchasing power."
-  },
-  "u1l5-1": {
-   "prompt": "€1,000 at 7 % compound interest for 30 years: what does it turn into? (round it)",
-   "options": [],
-   "explanation": "1,000 × 1.07³⁰ ≈ €7,612. With simple interest it would be €3,100.",
-   "unit": "€"
-  },
-  "u1l5-3": {
-   "prompt": "Match each case with the type of interest.",
-   "options": [
-    "You always earn on what you put in",
-    "You also earn on what you've already earned",
-    "A credit card debt that grows on itself"
-   ],
-   "explanation": "Compounding speeds up growth… including the growth of debts.",
-   "right": [
-    "Compound interest",
-    "Simple interest",
-    "Compound interest working against you"
-   ]
-  },
-  "u1l5-4": {
-   "prompt": "€10,000 at 5 % compound for 10 years: how much does it come to? (round to euros)",
-   "options": [],
-   "explanation": "10,000 × 1.05¹⁰ ≈ €16,289. With simple interest it would be €15,000.",
-   "unit": "€"
-  },
-  "u1l5-5": {
-   "prompt": "Compound interest only works in your favour.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "It works against you too: a revolving credit card at 20 % doubles the debt in under 4 years."
-  },
-  "u1l5-6": {
-   "prompt": "Put in order from lowest to highest the result of €100 a month for 30 years.",
-   "options": [
-    "At 5 %",
-    "At 7 %",
-    "At 2 %",
-    "At 0 %"
-   ],
-   "explanation": "€36,000, €49,273, €83,226 and €121,997: a few points of return make a huge difference to the end result."
-  },
-  "u1l5-7": {
-   "prompt": "You're 22 and have €50 a month to invest. What do you do?",
-   "options": [
-    "Spend it: €50 won't get you anywhere",
-    "Start now with €50 and raise the amount when I can",
-    "Wait until I earn more to start with something «serious»"
-   ],
-   "explanation": "Starting early, even with a little, is what makes the most of compound interest.",
-   "feedback": [
-    "€50 a month at 7 % for 40 years comes to about €130,000, with €24,000 put in.",
-    "Good: with time on your side, starting early matters more than starting big.",
-    "Waiting is costly: the early years are the ones with the most time to compound."
-   ]
   },
   "u1l6-1": {
    "prompt": "By the rule of 72, at 6 % a year money doubles in about ____ years.",

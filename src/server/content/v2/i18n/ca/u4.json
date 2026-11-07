@@ -2,7 +2,7 @@
  "unit": {
   "title": "El teu primer pla financer",
   "description": "Objectius amb xifra i data, el teu termini, el teu risc i el que diuen les dades del trading",
-  "section": "Fonaments dels diners"
+  "section": "Els teus diners en ordre"
  },
  "lessons": {
   "u4l1": {
@@ -91,32 +91,6 @@
     }
    ]
   },
-  "u4l3": {
-   "title": "El teu horitzó temporal",
-   "steps": [
-    {
-     "texts": [
-      "Quant cal esperar?",
-      "Dades reals: l'S&P 500 mes a mes durant 40 anys. Imagina que hi vas invertir **qualsevol** mes i vas esperar uns quants anys. Quantes vegades hauries perdut diners?",
-      "Si hi invertissis un mes qualsevol i venguessis **un any després**, quantes vegades hauries perdut diners?",
-      "Gairebé mai",
-      "Més o menys 1 de cada 5 vegades",
-      "La meitat de les vegades",
-      "En aquests 40 anys, el **20,8 %** dels períodes d'un any va acabar en pèrdua, i el pitjor va perdre un 45 %.",
-      "Troba a partir de quants anys no hi va haver ni un sol cas amb pèrdua.",
-      "En aquestes dades, esperant **14 anys o més** mai no es van perdre diners. Però el passat no garanteix el futur: qui va comprar el 1929, o al Japó el 1989, va esperar molt més. El termini decideix el risc que pots assumir.",
-      "A curt termini la borsa és una muntanya russa: gairebé qualsevol cosa pot passar.",
-      "Mira el pitjor cas: encara hi ha períodes llargs en pèrdues (els que van començar el 2000).",
-      "Continua allargant l'espera"
-     ]
-    },
-    {
-     "title": "Posa data a cada euro",
-     "body": "• **Coixí:** sempre disponible compte remunerat, fons monetari.\n• **Viatge o cotxe (1-3 anys)** dipòsits, lletres.\n• **Entrada d'un pis (3-7 anys)** combinació prudent, més renda fixa.\n• **Jubilació (15 anys o més)** sobretot accions diversificades.",
-     "key": "No s'inverteixen a borsa els diners que es necessiten aviat: poden estar baixant just quan els necessitis."
-    }
-   ]
-  },
   "u4l4": {
    "title": "Quant risc pots aguantar",
    "steps": [
@@ -182,7 +156,7 @@
    "steps": []
   },
   "s1boss": {
-   "title": "Repte final: Fonaments dels diners",
+   "title": "Repte final: Els teus diners en ordre",
    "steps": []
   }
  },
@@ -316,90 +290,6 @@
     "Veu quant porta de cadascun i el viatge no es menja el coixí.",
     "Mentrestant, els altres terminis continuen corrent."
    ]
-  },
-  "u4l3-1": {
-   "prompt": "Relaciona cada objectiu amb on sol tenir sentit.",
-   "options": [
-    "Coixí d'emergència",
-    "Viatge d'aquí a un any",
-    "Entrada d'un pis en 5 anys",
-    "Jubilació en 35 anys"
-   ],
-   "explanation": "Com més termini, més temps per recuperar-se de les caigudes.",
-   "right": [
-    "Combinació prudent, més renda fixa",
-    "Sobretot accions diversificades",
-    "Dipòsit o lletres",
-    "Compte remunerat"
-   ]
-  },
-  "u4l3-2": {
-   "prompt": "Necessites l'entrada d'un pis d'aquí a 18 mesos. On té més sentit?",
-   "options": [
-    "Dipòsits o un fons monetari",
-    "Criptomonedes",
-    "100 % en accions tecnològiques"
-   ],
-   "explanation": "A 18 mesos, una caiguda del 30 % arruïnaria el pla."
-  },
-  "u4l3-3": {
-   "prompt": "Ordena de menys a més el risc que sol admetre cada objectiu.",
-   "options": [
-    "Entrada d'un pis en 5 anys",
-    "Jubilació en 30 anys",
-    "Viatge en un any",
-    "Coixí d'emergència"
-   ],
-   "explanation": "Com més lluny és l'objectiu, més caigudes es poden aguantar pel camí."
-  },
-  "u4l3-5": {
-   "prompt": "En Bruno té 8.000 € per a la matrícula d'un màster que paga d'aquí a 10 mesos. Un amic li diu que a borsa «en traurà alguna cosa més». Què fa?",
-   "options": [
-    "Els posa en una cripto que ha pujat molt",
-    "Els deixa en un dipòsit o en lletres fins al pagament",
-    "Ho posa tot a borsa"
-   ],
-   "explanation": "Diners amb una data propera: sense risc, encara que rendeixin poc.",
-   "feedback": [
-    "Caigudes del 50 % en pocs mesos no són rares en cripto: es podria quedar sense màster.",
-    "Guanya poc, però el dia de la matrícula els 8.000 € hi seran.",
-    "Si la borsa cau un 20 % just abans, li faltarien 1.600 € per a la matrícula."
-   ]
-  },
-  "u4l3-6": {
-   "prompt": "S&P 500, setembre del 2008. Imagina que aquí tens els diners de l'entrada d'un pis que pagues en 6 mesos. Què creus que va fer l'índex els mesos següents?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Sigui quin sigui el resultat, els diners que necessites en pocs mesos no haurien de dependre del que faci la borsa en aquest termini.",
-   "horizon": "els mesos següents"
-  },
-  "u4l3-8": {
-   "prompt": "Curt o llarg termini?",
-   "options": [
-    "Fiança d'un lloguer d'aquí a 6 mesos",
-    "Independència financera als 50 (en tens 25)",
-    "Vacances de l'estiu que ve",
-    "Jubilació",
-    "Canviar de mòbil",
-    "Estalvi per a la universitat d'un nadó"
-   ],
-   "explanation": "El que necessites aviat, sense risc; el que és lluny pot aguantar més alts i baixos.",
-   "right": [
-    "Curt termini (menys de 3 anys)",
-    "Llarg termini (més de 10 anys)"
-   ]
-  },
-  "u4l3-10": {
-   "prompt": "No s'inverteixen a borsa els diners que es necessiten ____.",
-   "options": [
-    "d'aquí a 30 anys",
-    "per jubilar-se",
-    "mai",
-    "aviat"
-   ],
-   "explanation": "No perquè hagin de baixar segur, sinó perquè poden estar baixant just quan els necessitis."
   },
   "u4l4-1": {
    "prompt": "Quin és el teu perfil de risc real?",

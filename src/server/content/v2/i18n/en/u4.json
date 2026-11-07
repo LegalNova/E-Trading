@@ -2,7 +2,7 @@
  "unit": {
   "title": "Your first financial plan",
   "description": "Goals with an amount and a date, your time horizon, your risk and what the trading data says",
-  "section": "Money basics"
+  "section": "Your money in order"
  },
  "lessons": {
   "u4l1": {
@@ -91,32 +91,6 @@
     }
    ]
   },
-  "u4l3": {
-   "title": "Your time horizon",
-   "steps": [
-    {
-     "texts": [
-      "How long do you have to wait?",
-      "Real data: the S&P 500 month by month over 40 years. Imagine you invested in **any** month and waited a few years. How many times would you have lost money?",
-      "If you invested in any given month and sold **a year later**, how often did you lose money?",
-      "Almost never",
-      "Roughly 1 in 5 times",
-      "Half the time",
-      "Over these 40 years, **20.8 %** of one-year periods ended in a loss, and the worst one lost 45 %.",
-      "Find how many years you had to wait for there to be not a single case with a loss.",
-      "In this data, waiting **14 years or more** never lost money. But the past doesn't guarantee the future: anyone who bought in 1929, or in Japan in 1989, waited much longer. Your time horizon decides how much risk you can take.",
-      "In the short term the stock market is a rollercoaster: almost anything can happen.",
-      "Look at the worst case: there are still long periods in the red (the ones that started in 2000).",
-      "Keep making the wait longer"
-     ]
-    },
-    {
-     "title": "Put a date on every euro",
-     "body": "• **Cushion:** always available interest-paying account, money market fund.\n• **Trip or car (1-3 years)** deposits, Treasury bills.\n• **Deposit on a flat (3-7 years)** a cautious mix, more bonds.\n• **Retirement (15 years or more)** mostly diversified shares.",
-     "key": "Money you'll need soon doesn't go into the stock market: it could be falling just when you need it."
-    }
-   ]
-  },
   "u4l4": {
    "title": "How much risk you can handle",
    "steps": [
@@ -182,7 +156,7 @@
    "steps": []
   },
   "s1boss": {
-   "title": "Final challenge: Money basics",
+   "title": "Final challenge: Your money in order",
    "steps": []
   }
  },
@@ -316,90 +290,6 @@
     "She can see how far along she is with each, and the trip doesn't eat into the cushion.",
     "Meanwhile, the clock keeps ticking on the other goals."
    ]
-  },
-  "u4l3-1": {
-   "prompt": "Match each goal with where it usually makes sense.",
-   "options": [
-    "Emergency cushion",
-    "Trip in a year's time",
-    "Deposit on a flat in 5 years",
-    "Retirement in 35 years"
-   ],
-   "explanation": "The longer the horizon, the more time to recover from falls.",
-   "right": [
-    "A cautious mix, more bonds",
-    "Mostly diversified shares",
-    "Deposit or Treasury bills",
-    "Interest-paying account"
-   ]
-  },
-  "u4l3-2": {
-   "prompt": "You need a deposit for a flat in 18 months. Where does it make most sense?",
-   "options": [
-    "Deposits or a money market fund",
-    "Cryptocurrencies",
-    "100 % in tech shares"
-   ],
-   "explanation": "With 18 months to go, a 30 % fall would wreck the plan."
-  },
-  "u4l3-3": {
-   "prompt": "Put in order from least to most the risk each goal can usually take.",
-   "options": [
-    "Deposit on a flat in 5 years",
-    "Retirement in 30 years",
-    "Trip in a year",
-    "Emergency cushion"
-   ],
-   "explanation": "The further away the goal, the more falls you can ride out along the way."
-  },
-  "u4l3-5": {
-   "prompt": "Bruno has €8,000 for the fees of a master's he pays in 10 months. A friend tells him he'll «get a bit more» in the stock market. What does he do?",
-   "options": [
-    "Puts it into a crypto that has gone up a lot",
-    "Leaves it in a deposit or Treasury bills until he pays",
-    "Puts it all in the stock market"
-   ],
-   "explanation": "Money with a close date: no risk, even if it earns little.",
-   "feedback": [
-    "Falls of 50 % in a few months aren't unusual in crypto: he could end up without his master's.",
-    "He earns little, but on the day the fees are due the €8,000 will be there.",
-    "If the market drops 20 % just before, he'd be €1,600 short for the fees."
-   ]
-  },
-  "u4l3-6": {
-   "prompt": "S&P 500, September 2008. Imagine this is where you've got the money for a deposit on a flat you pay in 6 months. What do you think the index did in the following months?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "Whatever the outcome, money you need in a few months shouldn't depend on what the stock market does in that time.",
-   "horizon": "the following months"
-  },
-  "u4l3-8": {
-   "prompt": "Short or long term?",
-   "options": [
-    "Rental deposit in 6 months",
-    "Financial independence at 50 (you're 25)",
-    "Next summer's holiday",
-    "Retirement",
-    "A new phone",
-    "Saving for a baby's university"
-   ],
-   "explanation": "What you need soon, without risk; what's far off can ride out more ups and downs.",
-   "right": [
-    "Short term (under 3 years)",
-    "Long term (over 10 years)"
-   ]
-  },
-  "u4l3-10": {
-   "prompt": "Money you'll need ____ doesn't go into the stock market.",
-   "options": [
-    "in 30 years",
-    "for retirement",
-    "never",
-    "soon"
-   ],
-   "explanation": "Not because it's sure to fall, but because it could be falling just when you need it."
   },
   "u4l4-1": {
    "prompt": "What's your real risk profile?",

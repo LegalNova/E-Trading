@@ -2,60 +2,11 @@ import 'server-only'
 // Sección 7 · Unidad 20 · Velas japonesas (docs/curso-v2/02-curriculo.md)
 // Fuentes: docs/curso/08-velas-japonesas.md. Estadísticas: Bulkowski (thepatternsite.com).
 // Velas reales detectadas por scripts/build-lesson-charts.py (docs/curso-v2/graficos.md).
-import { buckets, candle, chart, chat, choose, fill, key, lesson, match, multi, note, num, opt, order, play, say, scenario, single, story, tf, timed, unit, upDown, when } from '../dsl'
+import { buckets, candle, chart, chat, choose, fill, key, lesson, match, multi, num, opt, order, play, say, scenario, single, story, tf, timed, unit, upDown, when } from '../dsl'
 
 export default unit({
   id: 'u20', order: 20, title: 'Velas japonesas', description: 'Leer cada vela, sus patrones principales y cuánto funcionan de verdad',
   lessons: [
-    lesson('u20l1', 'Anatomía de una vela', [
-      story('Rojo es subir', [{ id: 'mei', name: 'Mei' }], [
-        note('Mei, una amiga de Shanghái, te enseña su app de bolsa.'),
-        say('mei', 'Hoy mi acción está en rojo. ¡Qué bien, ha subido!'),
-        choose('¿Qué pasa aquí?', [
-          opt('En China el rojo suele ser subida', 'good', say('lumi', 'Eso. En China, Japón y Corea los colores suelen ir al revés.')),
-          opt('Se ha equivocado: rojo es bajar', 'bad', say('lumi', 'Aquí sí, pero en su app no. Mira siempre la leyenda.')),
-          opt('Su app está rota', 'ok', say('lumi', 'No está rota: allí el rojo suele significar subida.')),
-        ]),
-        say('lumi', 'Las velas nacieron en el mercado de arroz de **Dojima** (Osaka), en el siglo XVIII.'),
-        say('lumi', 'La tradición se las atribuye al comerciante Munehisa Homma.'),
-        say('lumi', 'Steve Nison las trajo a Occidente en 1991. Hoy son el gráfico por defecto.'),
-      ]),
-      play({
-        title: '¿Verde o roja?',
-        intro: 'El **cuerpo** va de la apertura al cierre; las **mechas**, hasta el máximo y el mínimo. ¿De qué color es cada vela?',
-        widget: {
-          kind: 'sort',
-          bins: [{ label: 'Verde' }, { label: 'Roja' }],
-          cards: [
-            { icon: 'candles', label: 'Abre en 100 y cierra en 106', bin: 0, why: 'Cierra por encima de la apertura. Cuerpo: 6.' },
-            { icon: 'candles', label: 'Abre en 62 y cierra en 57', bin: 1, why: 'Cierra por debajo de la apertura. Cuerpo: 5.' },
-            { icon: 'candles', label: 'Abre en 20, sube hasta 25 y cierra en 19', bin: 1, why: 'El máximo no decide el color: cierra por debajo de la apertura.' },
-            { icon: 'candles', label: 'Abre en 40, baja hasta 35 y cierra en 41', bin: 0, why: 'Cayó mucho, pero cerró por encima de la apertura.' },
-            { icon: 'candles', label: 'Abre en 75 y cierra en 80', bin: 0, why: 'El cierre queda arriba: verde.' },
-            { icon: 'candles', label: 'Abre en 12 y cierra en 11', bin: 1, why: 'El cierre queda abajo: roja.' },
-          ],
-        },
-        goal: { text: 'Pinta las seis velas.', when: [when('done', '==', 6)] },
-        insight: '**Verde:** cierra por encima de la apertura. **Roja:** por debajo. Las mechas llegan al máximo y al mínimo, pero **no deciden el color**.',
-        lumi: [
-          { when: when('wrong', '>=', 2), say: 'Compara solo la apertura y el cierre.', mood: 'THINKING' },
-          { say: '¿El cierre queda arriba o abajo?', mood: 'HAPPY' },
-        ],
-      }),
-      chart('morning-star-1', 'Ahora en un gráfico real: toca la vela verde con el cuerpo más grande, la que más subió de la apertura al cierre', 'Esa. Su cuerpo va de la apertura (abajo) al cierre (arriba); las líneas finas marcan el máximo y el mínimo.', 'Busca el rectángulo verde más alto, sin contar las líneas finas.'),
-      key('Un ejemplo con números', 'Vela con O = 100, H = 108, L = 97, C = 106: es verde (106 > 100), su cuerpo mide 6 (de 100 a 106), la mecha superior 2 (de 106 a 108), la inferior 3 (de 97 a 100) y el rango total 11.', 'El cuerpo va de la apertura al cierre; las mechas llegan al máximo y al mínimo.', 'Verde: el cierre está arriba. Roja: el cierre está abajo.'),
-    ], [
-      match('En una vela verde, empareja cada punto con su precio.', [['Parte alta del cuerpo', 'El cierre'], ['Parte baja del cuerpo', 'La apertura'], ['Punta de la mecha superior', 'El máximo'], ['Punta de la mecha inferior', 'El mínimo']], 'En una vela verde la apertura está abajo y el cierre arriba; en una roja, al revés. Las mechas siempre llegan al máximo y al mínimo.'),
-      single('Vela con apertura 40, máximo 44, mínimo 39 y cierre 43. ¿De qué color es?', ['Verde', 'Roja'], 0, 'Cierra (43) por encima de la apertura (40): es alcista, verde.'),
-      num('Vela con apertura 40, máximo 44, mínimo 39 y cierre 43. ¿Cuánto mide el cuerpo?', 3, 'puntos', 'Del 40 de la apertura al 43 del cierre: 3 puntos.'),
-      num('Vela verde con apertura 40, máximo 44, mínimo 39 y cierre 43. ¿Cuánto mide su mecha inferior?', 1, 'puntos', 'De la apertura (40), que es la parte baja del cuerpo, al mínimo (39): 1 punto.'),
-      num('Vela roja con apertura 62, máximo 63, mínimo 55 y cierre 57. ¿Cuánto mide su cuerpo?', 5, 'puntos', 'De 62 a 57: 5 puntos. En una roja, la apertura está arriba y el cierre abajo.'),
-      fill('En una vela roja, la apertura está en la parte ____ del cuerpo.', 'alta', ['baja', 'media', 'exterior'], 'Si cierra por debajo de la apertura, la apertura queda arriba y el cierre abajo.'),
-      candle('Toca la vela con la mecha inferior más larga.', 'hammer-3', 'El precio bajó mucho durante esa sesión, pero se recuperó antes del cierre. Esa línea fina es el camino hasta el mínimo.'),
-      order('Ordena de menor a mayor los precios de una vela verde con mechas.', ['Mínimo', 'Apertura', 'Cierre', 'Máximo'], 'Mínimo ≤ apertura < cierre ≤ máximo. En una roja, apertura y cierre se intercambian.'),
-      tf('En todas las plataformas del mundo, el verde significa que el precio subió.', false, 'En China, Japón y Corea los colores suelen ir al revés: rojo para subir y verde para bajar.'),
-      timed(fill('El libro que llevó las velas japonesas a Occidente en 1991 lo escribió Steve ____.', 'Nison', ['Dow', 'Elder', 'Wilder'], 'Steve Nison publicó Japanese Candlestick Charting Techniques en 1991.'), 12),
-    ], { source: '8.2', minutes: 6, retire: [1, 8, 9] }),
 
     lesson('u20l2', 'Cuerpo y mechas: la batalla', [
       story('Un 5 % que se esfumó', [{ id: 'pau', name: 'Pau' }], [

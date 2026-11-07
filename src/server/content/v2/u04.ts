@@ -1,6 +1,6 @@
 import 'server-only'
 // Sección 1 · Unidad 4 · Tu primer plan financiero (docs/curso-v2/02-curriculo.md)
-import { buckets, chat, choose, fill, key, lesson, match, mission, multi, note, num, opt, order, play, say, scenario, single, spot, story, tf, timed, unit, upDown, when } from '../dsl'
+import { buckets, chat, choose, fill, key, lesson, match, mission, multi, note, num, opt, order, play, say, scenario, single, spot, story, tf, timed, unit, when } from '../dsl'
 
 export default unit({
   id: 'u4', order: 4, title: 'Tu primer plan financiero', description: 'Objetivos con cifra y fecha, tu plazo, tu riesgo y lo que dicen los datos del trading',
@@ -99,39 +99,6 @@ export default unit({
       scenario('Ana quiere un colchón de 3.000 €, un viaje de 1.500 € en verano y la entrada de un piso dentro de 6 años. Lo guarda todo junto en la misma cuenta. ¿Qué le conviene?', [['Separar cada objetivo en su propia cuenta o hucha', 'Ve cuánto lleva de cada uno y el viaje no se come el colchón.'], ['Seguir con todo junto: es más sencillo', 'En verano no sabrá cuánto puede gastar sin tocar el colchón o el piso.'], ['Ir a por un objetivo cada vez y olvidar los demás', 'Mientras tanto, los otros plazos siguen corriendo.']], 0, 'Un cajón por objetivo: así el dinero de cada meta no se mezcla.'),
       tf('Si el objetivo es a 2 años, la aportación mensual es lo que falta dividido entre 24.', true, '2 años son 24 meses (sin contar intereses).'),
     ], { source: '1.5', minutes: 6, retire: [6, 7, 9] }),
-
-    lesson('u4l3', 'Tu horizonte temporal', [
-      mission({
-        title: '¿Cuánto hay que esperar?',
-        intro: 'Datos reales: el S&P 500 mes a mes durante 40 años. Imagina que invertiste en **cualquier** mes y esperaste unos años. ¿Cuántas veces habrías perdido dinero?',
-        widget: { kind: 'horizon', series: 'series-sp500-monthly', years: 1, maxYears: 20 },
-        predict: {
-          prompt: 'Si invertías en un mes cualquiera y vendías **un año después**, ¿cuántas veces perdiste dinero?',
-          options: ['Casi nunca', 'Más o menos 1 de cada 5 veces', 'La mitad de las veces'],
-          answer: 1,
-          why: 'En estos 40 años, el **20,8 %** de los periodos de un año acabó en pérdida, y el peor perdió un 45 %.',
-        },
-        goal: { text: 'Encuentra a partir de cuántos años no hubo ni un solo caso con pérdida.', when: [when('lossPct', '==', 0)] },
-        insight: 'En estos datos, esperando **14 años o más** nunca se perdió dinero. Pero el pasado no garantiza el futuro: quien compró en 1929, o en Japón en 1989, esperó mucho más. El plazo decide el riesgo que puedes asumir.',
-        lumi: [
-          { when: when('years', '<=', 2), say: 'A corto plazo la bolsa es una montaña rusa: casi cualquier cosa puede pasar.', mood: 'WORRIED' },
-          { when: when('years', '>=', 10), say: 'Mira el peor caso: aún hay periodos largos en pérdidas (los que empezaron en 2000).', mood: 'THINKING' },
-          { say: 'Sigue alargando la espera', mood: 'HAPPY' },
-        ],
-      }),
-      key('Ponle fecha a cada euro', '• **Colchón:** siempre disponible cuenta remunerada, fondo monetario.\n• **Viaje o coche (1-3 años)** depósitos, letras.\n• **Entrada de un piso (3-7 años)** mezcla prudente, más renta fija.\n• **Jubilación (15 años o más)** sobre todo acciones diversificadas.', 'No se invierte en bolsa el dinero que se necesita pronto: puede estar bajando justo cuando lo necesites.'),
-    ], [
-      match('Empareja cada objetivo con dónde suele tener sentido.', [['Colchón de emergencia', 'Cuenta remunerada'], ['Viaje dentro de un año', 'Depósito o letras'], ['Entrada de un piso en 5 años', 'Mezcla prudente, más renta fija'], ['Jubilación en 35 años', 'Sobre todo acciones diversificadas']], 'A más plazo, más tiempo para recuperarse de las caídas.'),
-      single('Necesitas la entrada de un piso dentro de 18 meses. ¿Dónde tiene más sentido?', ['100 % en acciones tecnológicas', 'Depósitos o un fondo monetario', 'Criptomonedas'], 1, 'A 18 meses, una caída del 30 % arruinaría el plan.'),
-      order('Ordena de menor a mayor el riesgo que suele admitir cada objetivo.', ['Colchón de emergencia', 'Viaje en un año', 'Entrada de un piso en 5 años', 'Jubilación en 30 años'], 'Cuanto más lejos está el objetivo, más caídas se pueden aguantar por el camino.'),
-      tf('En periodos de 20 años, el S&P 500 casi nunca ha dado pérdidas.', true, 'Casi nunca no es nunca: por eso también conviene diversificar por países.'),
-      scenario('Bruno tiene 8.000 € para la matrícula de un máster que paga dentro de 10 meses. Un amigo le dice que en bolsa «sacará algo más». ¿Qué hace?', [['Lo deja en un depósito o letras hasta el pago', 'Gana poco, pero el día de la matrícula los 8.000 € estarán ahí.'], ['Lo mete todo en bolsa', 'Si la bolsa cae un 20 % justo antes, le faltarían 1.600 € para la matrícula.'], ['Lo mete en una cripto que ha subido mucho', 'Caídas del 50 % en pocos meses no son raras en cripto: podría quedarse sin máster.']], 0, 'Dinero con fecha cercana: sin riesgo, aunque rinda poco.'),
-      upDown('S&P 500, septiembre de 2008. Imagina que aquí tienes el dinero de la entrada de un piso que pagas en 6 meses. ¿Qué crees que hizo el índice en los meses siguientes?', 'hist-2008', 'Sea cual sea el resultado, el dinero que necesitas en pocos meses no debería depender de lo que haga la bolsa en ese plazo.', 'los meses siguientes'),
-      timed(single('Rápido: dinero que necesitarás en 2 años. ¿En bolsa?', ['Mejor no: puede estar cayendo justo cuando lo necesites', 'Sí: en 2 años siempre sube', 'Sí, si es una sola empresa'], 0, 'A 2 años, la bolsa puede estar en plena caída el día que necesitas el dinero.'), 12),
-      buckets('¿Corto o largo plazo?', ['Corto plazo (menos de 3 años)', 'Largo plazo (más de 10 años)'], [['Jubilación', 1], ['Vacaciones del verano que viene', 0], ['Ahorro para la universidad de un bebé', 1], ['Cambiar de móvil', 0], ['Independencia financiera a los 50 (tienes 25)', 1], ['Fianza de un alquiler dentro de 6 meses', 0]], 'Lo que necesitas pronto, sin riesgo; lo lejano puede aguantar más altibajos.'),
-      num('Si el S&P 500 ha caído aproximadamente uno de cada cuatro años, ¿en cuántos años de cada 40 esperarías caídas, más o menos?', 10, 'años', '40 ÷ 4 = 10 años. Las caídas son normales: lo que cambia con el plazo es el tiempo para recuperarse.'),
-      fill('No se invierte en bolsa el dinero que se necesita ____.', 'pronto', ['nunca', 'en 30 años', 'para jubilarse'], 'No porque vaya a bajar seguro, sino porque puede estar bajando justo cuando lo necesites.'),
-    ], { source: '1.5', minutes: 6, retire: [3, 6, 8] }),
 
     lesson('u4l4', 'Cuánto riesgo puedes aguantar', [
       mission({

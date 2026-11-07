@@ -1,56 +1,11 @@
 import 'server-only'
 // Sección 6 · Unidad 16 · Leer las cuentas de una empresa (docs/curso-v2/02-curriculo.md)
 // Ejemplo inventado del manual: «Panadería Global, S. A.». Datos reales de Inditex (ejercicio 2024) solo como ejemplo, nunca como recomendación.
-import { buckets, chat, choose, fill, key, lesson, match, multi, note, num, opt, order, play, say, scenario, single, story, tf, timed, trend, unit, upDown, when } from '../dsl'
+import { buckets, choose, fill, key, lesson, match, multi, note, num, opt, order, play, say, scenario, single, story, tf, timed, trend, unit, upDown, when } from '../dsl'
 
 export default unit({
   id: 'u16', order: 16, title: 'Leer las cuentas de una empresa', description: 'Precio y valor, cuenta de resultados, balance, caja, deuda y resultados trimestrales',
   lessons: [
-    lesson('u16l1', 'Precio y valor no son lo mismo', [
-      play({
-        title: 'Lo que pagas y lo que obtienes',
-        intro: 'Una empresa gana **2 €** por acción al año y tú decides cuánto pagas por ella. ¿Cuántos años de beneficios tardas en recuperar el precio?',
-        widget: { kind: 'valuation', price: 40, eps: 2, growth: 5, maxPrice: 80, maxGrowth: 20 },
-        predict: {
-          prompt: 'Pagas 40 € por la acción y sus beneficios crecen un 5 % al año. ¿En cuántos años los beneficios suman lo que pagaste?',
-          options: ['En unos 5 años', 'En unos 15 años', 'En unos 40 años'],
-          answer: 1,
-          why: 'Sumando sus beneficios, que crecen un 5 % al año, tardas **15 años** en juntar 40 €.',
-        },
-        goal: { text: 'Sin tocar el crecimiento, busca el precio más alto con el que lo recuperas en 10 años.', when: [when('growth', '==', 5), when('payback', '<=', 10), when('price', '>=', 25)] },
-        insight: 'A **25 €** la recuperas en 10 años; a 80 €, en 23. **El precio es lo que pagas y el valor, lo que obtienes**: la misma empresa puede ser buena compra a un precio y mala a otro.',
-        lumi: [
-          { when: when('payback', '>=', 20), say: 'Pagas tanto que tardarías décadas en recuperarlo.', mood: 'WORRIED' },
-          { when: when('growth', '>=', 15), say: '¿Crecer así muchos años seguidos? Muy pocas empresas lo logran.', mood: 'THINKING' },
-          { when: when('payback', '<=', 10), say: '¡Eso es un precio razonable para lo que gana!', mood: 'HAPPY' },
-          { say: 'Mueve el precio y mira cuántos años tardas', mood: 'HAPPY' },
-        ],
-      }),
-      story('El señor Mercado', [{ id: 'mercado', name: 'Señor Mercado' }], [
-        note('Benjamin Graham imaginaba al mercado como un socio de humor cambiante que cada día te ofrece un precio.'),
-        say('mercado', '¡Hoy estoy eufórico! Te compro tu parte por 40 €. Mañana, quién sabe.'),
-        note('Una semana después, sin que el negocio haya cambiado nada…'),
-        say('mercado', 'Todo va fatal. Te vendo mi parte por 12 €. ¡Corre!'),
-        choose('Estimas que la empresa vale unos 20 € por acción. ¿Qué haces?', [
-          opt('Vender: si él está asustado, algo pasará', 'bad', say('lumi', 'Venderías barato justo cuando el negocio no ha cambiado.')),
-          opt('Comprobar que el negocio sigue igual y, si es así, comprar', 'good', say('lumi', 'Eso: el precio ha bajado, el valor no. Su precio es una oferta, no una orden.')),
-          opt('Comprar con todo tu dinero sin revisar nada', 'ok', say('lumi', 'Buen instinto, pero revisa tu estimación y no lo pongas todo.')),
-        ]),
-        say('lumi', 'A 12 €, algo que vale 20 €: un **40 %** de margen de seguridad.'),
-      ]),
-      key('Margen de seguridad', '«El precio es lo que pagas; el valor es lo que obtienes» (Warren Buffett).\n\nEl **análisis fundamental** estudia el negocio (ventas, beneficios, deuda, competencia) para estimar cuánto **vale**: responde a *qué* comprar. El **técnico** estudia el gráfico e intenta responder a *cuándo*.\n\nSi estimas que una acción vale 20 € y solo la compras por debajo de 15 €, tienes un **25 % de margen de seguridad**: un colchón por si te has equivocado al estimar.', 'Una empresa excelente comprada demasiado cara puede ser una mala inversión.', 'El valor es una estimación; por eso necesitas colchón.'),
-    ], [
-      single('¿Qué intenta responder el análisis fundamental?', ['Qué comprar y si está caro o barato', 'Cuándo entrar exactamente', 'Qué vela viene mañana'], 0, 'El técnico intenta responder a cuándo; el fundamental, a qué y a qué precio.'),
-      num('Estimas que una acción vale 40 € y cotiza a 30 €. ¿Qué margen de seguridad tienes sobre el valor estimado?', 25, '%', '(40 − 30) ÷ 40 = 25 %.'),
-      num('Quieres un margen de seguridad del 30 % sobre un valor estimado de 50 €. ¿Por debajo de qué precio comprarías?', 35, '€', '50 × (1 − 0,30) = 35 €.'),
-      tf('Una gran empresa es una buena inversión a cualquier precio.', false, 'Quien compró Microsoft en su máximo de 2000 tardó unos 16 años en recuperar ese precio, aunque el negocio siguió siendo excelente.'),
-      scenario('El señor Mercado está deprimido: una empresa que estimas en 20 € por acción cotiza a 12 € tras una caída general de la bolsa, sin que su negocio haya cambiado. ¿Qué haría un inversor de valor?', [['Vender porque baja', 'Venderías justo cuando te ofrecen una ganga, sin que el negocio haya cambiado.'], ['Comprobar que el negocio sigue igual y, si es así, ver que el precio está muy por debajo del valor', 'Eso: el precio ha bajado, el valor no. Y aun así, revisa bien tu estimación.'], ['Comprar con todo su dinero sin revisar nada', 'El margen de seguridad no sustituye a revisar tu estimación ni a diversificar.']], 1, 'Graham aprovechaba los cambios de humor del mercado sin dejarse arrastrar por ellos.'),
-      fill('La diferencia entre el valor estimado y el precio que pagas se llama margen de ____.', 'seguridad', ['beneficio', 'error', 'maniobra'], 'Te protege si te equivocas en la estimación.'),
-      buckets('¿Habla de precio o de valor?', ['Precio', 'Valor'], [['La acción cerró ayer a 15,20 €', 0], ['La empresa generará unos 100 M€ de caja al año', 1], ['Ha subido un 8 % esta semana', 0], ['Tiene una marca que le permite subir precios', 1], ['Capitaliza 1.500 M€ en bolsa', 0]], 'El precio lo ves en la pantalla; el valor sale de analizar el negocio.'),
-      timed(tf('El precio de una acción y su valor pueden estar muy separados durante años.', true, 'El precio lo fija el ánimo del mercado; el valor, lo que generará el negocio.'), 10),
-      chat(['Esta acción ha caído un 60 %, ¡ya no puede bajar más!', 'Voy a comprar 🤑'], '¿Qué le contestas a Lumi?', [['Claro, ya está en el suelo', 'Lo que ha caído un 60 % puede caer otro 60 %.'], ['Primero mira por qué ha caído y cuánto vale el negocio: barato no es lo mismo que infravalorado', 'Vale… ¿y si cayó porque el negocio se ha roto? Entonces el valor también bajó.'], ['Compra el doble para promediar', 'Doblar sin analizar es apostar más a ciegas.']], 1, 'Un precio bajo solo es oportunidad si está por debajo del valor.'),
-      single('Según Graham, ¿cómo hay que tratar al «señor Mercado»?', ['Aprovechar sus cambios de humor sin obedecerle', 'Hacer siempre lo que dice', 'Ignorar siempre los precios'], 0, 'Sus precios son una oferta que puedes aceptar o no.'),
-    ], { source: '5.1', minutes: 6, retire: [3, 4, 7, 9] }),
 
     lesson('u16l2', 'La cuenta de resultados', [
       play({

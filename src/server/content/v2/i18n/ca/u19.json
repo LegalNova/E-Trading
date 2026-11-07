@@ -5,54 +5,6 @@
   "section": "Anàlisi tècnica"
  },
  "lessons": {
-  "u19l1": {
-   "title": "Què mostra un gràfic de preus",
-   "steps": [
-    {
-     "texts": [
-      "Què t'explica un gràfic?",
-      "En horitzontal, el **temps**. En vertical, el **preu**. A sota, el **volum**. Què pots saber si el mires?",
-      "Ho diu el gràfic",
-      "No ho diu",
-      "A quin preu va obrir ahir",
-      "Cada espelma guarda la seva obertura.",
-      "El preu de demà",
-      "Ningú no ho sap: el gràfic és un registre del passat.",
-      "El preu més alt de la setmana",
-      "Cada espelma guarda el seu màxim i el seu mínim.",
-      "Quant s'ha negociat avui",
-      "És el volum: les barres de sota.",
-      "Si l'empresa és un bon negoci",
-      "Això ho diuen els seus comptes, no el seu gràfic.",
-      "El tancament de fa un any",
-      "L'eix horitzontal et porta enrere en el temps.",
-      "Si continuarà pujant",
-      "Pot continuar o no: són probabilitats, mai certeses.",
-      "Classifica les set preguntes.",
-      "Un gràfic és el **registre exacte** del que compradors i venedors van acordar. Explica el que va passar, **no el que passarà**.",
-      "Ja ha passat o encara no? Aquesta és la clau.",
-      "Ho pots llegir al gràfic?"
-     ]
-    },
-    {
-     "texts": [
-      "Llegir no és endevinar",
-      "Tres gràfics reals de 30 espelmes diàries. Llegeix-los i decideix: **puja o baixa** en les 10 sessions següents?",
-      "Juga les tres rondes.",
-      "Llegir el passat és fàcil; endevinar el futur, no. L'anàlisi tècnica treballa amb **probabilitats, mai amb certeses**.",
-      "Tres de tres! Amb tan poques rondes, la sort pesa molt.",
-      "Encertar el futur amb espelmes és difícil per a tothom.",
-      "Mira les espelmes i tria: puja o baixa?"
-     ]
-    },
-    {
-     "title": "Quatre preus per període",
-     "body": "De cada període es desen quatre dades (en anglès, **OHLC**):\n\n• **Obertura** (open): el primer preu.\n• **Màxim** (high) i **mínim** (low).\n• **Tancament** (close): l'últim, i el més important.\n\nA E-Trading, quan passes el dit per una espelma, en veus els quatre preus, la variació i el volum.",
-     "key": "Un gràfic explica el que va passar, no el que passarà.",
-     "tip": "Llegir-lo bé ja és un avantatge: molta gent només mira si està en verd o en vermell."
-    }
-   ]
-  },
   "u19l2": {
    "title": "Línia, barres i espelmes",
    "steps": [
@@ -359,67 +311,6 @@
   }
  },
  "questions": {
-  "u19l1-1": {
-   "prompt": "Relaciona cada part del gràfic amb el que mostra.",
-   "options": [
-    "Eix horitzontal",
-    "Eix vertical",
-    "Barres de sota",
-    "Cada espelma"
-   ],
-   "explanation": "El temps va d'esquerra a dreta, el preu en vertical i el volum a sota. Cada espelma resumeix un període: un minut, un dia o una setmana.",
-   "right": [
-    "El preu",
-    "El que va passar en un període",
-    "El volum negociat",
-    "El temps"
-   ]
-  },
-  "u19l1-2": {
-   "prompt": "Quin preu de cada període es considera el més important?",
-   "options": [
-    "El màxim",
-    "El tancament",
-    "L'obertura"
-   ],
-   "explanation": "El tancament és el preu en què compradors i venedors es van quedar al final del període. Gairebé tots els indicadors es calculen amb tancaments."
-  },
-  "u19l1-3": {
-   "prompt": "Toca el tancament més alt d'aquest gràfic (Microsoft · tancaments cada 3 sessions · juny–agost del 2026)",
-   "options": [],
-   "explanation": "El màxim va arribar abans del final i després el preu va retrocedir una mica. El punt més alt no ha de ser necessàriament l'últim."
-  },
-  "u19l1-4": {
-   "prompt": "Ara toca el tancament més baix (Apple · tancaments cada 3 sessions · febrer–abril del 2025)",
-   "options": [],
-   "explanation": "El mínim no és al final: després de tocar-lo, el preu va rebotar. Localitzar els extrems és el primer pas per llegir un gràfic."
-  },
-  "u19l1-5": {
-   "prompt": "En anglès, els quatre preus de cada període es resumeixen com a ____.",
-   "options": [
-    "RSI",
-    "IPC",
-    "ETF",
-    "OHLC"
-   ],
-   "explanation": "Open, high, low, close: obertura, màxim, mínim i tancament."
-  },
-  "u19l1-6": {
-   "prompt": "Una acció va tancar ahir a 50 € i avui a 53 €. Quant ha variat en el dia?",
-   "options": [],
-   "explanation": "(53 − 50) ÷ 50 = 0,06 → +6 %. La variació diària es calcula entre un tancament i l'anterior.",
-   "unit": "%"
-  },
-  "u19l1-10": {
-   "prompt": "Passes el dit per una espelma al gràfic d'E-Trading. Quines dades hi veus? Marca-les totes.",
-   "options": [
-    "El tancament",
-    "El preu de demà",
-    "El màxim i el mínim",
-    "L'obertura"
-   ],
-   "explanation": "Hi veus els quatre preus del període, a més de la variació i el volum. El preu de demà no el sap ningú."
-  },
   "u19l2-1": {
    "prompt": "Relaciona cada tipus de gràfic amb el que mostra.",
    "options": [

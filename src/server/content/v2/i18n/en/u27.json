@@ -138,46 +138,6 @@
     }
    ]
   },
-  "u27l4": {
-   "title": "FOMO and herd behaviour",
-   "steps": [
-    {
-     "texts": [
-      "Live through the dotcom fever",
-      "December 1998. The internet is going to change everything and your friends only talk about tech stocks. You put **€10,000** into the Nasdaq 100, with real data.",
-      "Go all the way to the end, whether you sell or not.",
-      "It rose **156 %** in 15 months; then it fell **83 %** from the peak and didn't get back there until 2015. **When everyone's talking about something that «only goes up», the risk is usually at its highest.**",
-      "You've sold. See what happens next…",
-      "From euphoria to collapse. And nobody warned you about the top.",
-      "More than double! Now everyone wants in.",
-      "Hit start. You can sell whenever you like"
-     ]
-    },
-    {
-     "texts": [
-      "«Get in today!»",
-      "Álex",
-      "This share has gone up **200 %** in two weeks.",
-      "Everyone in the group is in. Get in today or you'll miss out!",
-      "It's not in your plan. What do you do?",
-      "Buy now, before it goes up even more",
-      "That's **FOMO**: buying without knowing what the company does, after a huge rise.",
-      "Wait 48 hours and ask myself if I'd buy it if nobody were talking about it",
-      "That's it! If it still makes sense in two days, you decide calmly.",
-      "Take out a loan to go in big",
-      "Debt plus FOMO: the classic recipe for the worst losses.",
-      "When **everyone** has already bought, there's nobody left to keep pushing it up.",
-      "Urgency is FOMO's fuel. Take away the time pressure and it fizzles out."
-     ]
-    },
-    {
-     "title": "Warning signs",
-     "body": "• You hear about it from friends or social media accounts that had never invested before.\n• The reason is «**it's going up a lot**», not what the asset actually does.\n• You feel **urgency**: «if I don't buy today, I'll miss it».\n• People say «**this time it's different**».\n\nAntidotes: the **48-hour rule** and a **speculation limit** written into your plan.",
-     "key": "When everyone's talking about something that «only goes up», the risk is usually at its highest.",
-     "tip": "If your hairdresser recommends a cryptocurrency, it may already be too late."
-    }
-   ]
-  },
   "u27l5": {
    "title": "Overconfidence",
    "steps": [
@@ -521,86 +481,6 @@
    "lines": [
     "My share is up 6 %! 🎉",
     "I'll sell it now, before it drops."
-   ]
-  },
-  "u27l4-1": {
-   "prompt": "Select the messages trying to trigger your FOMO to sell you something or trick you.",
-   "options": [
-    "Reminder: your regular €100 contribution will go through on the 5th.",
-    "Everyone's making money on this share. Put your savings in, don't overthink it.",
-    "Only 3 places left in my signals group. This time it's different, don't miss out.",
-    "Check whether a firm is authorised before investing with it.",
-    "🚀 This crypto is up 300 % in a month. Tomorrow will be too late. Get in NOW!"
-   ],
-   "explanation": "Urgency, «this time it's different» and «everyone's winning» are the classic signs of FOMO.",
-   "senders": [
-    "Your broker",
-    "Your cousin",
-    "Influencer",
-    "CNMV",
-    "«Lambo 2030» group"
-   ]
-  },
-  "u27l4-2": {
-   "prompt": "November 2021: bitcoin is at record highs, it's on every news bulletin and your friends who had never invested are buying. What did it do next?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "Bitcoin fell by around 75 % over the following year. The moment of peak euphoria is usually the moment of peak risk. Remember: with crypto you can lose everything you put in.",
-   "horizon": "the following year"
-  },
-  "u27l4-3": {
-   "prompt": "This asset has risen sharply and everyone on social media is talking about it. Does it go up or down over the following sessions?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "Neither the hype on social media nor the earlier rises tell you what's coming. That's why the 48-hour rule exists.",
-   "horizon": "the next 10 sessions"
-  },
-  "u27l4-6": {
-   "prompt": "Which are warning signs of a bubble? Select all that apply.",
-   "options": [
-    "The only reason is that it's going up a lot",
-    "Steady, growing earnings for years",
-    "Inexperienced people recommending it",
-    "«This time it's different»"
-   ],
-   "explanation": "Steady earnings aren't a sign of a bubble: euphoria and a lack of reasons are."
-  },
-  "u27l4-9": {
-   "prompt": "Match each bubble with its era.",
-   "options": [
-    "Dotcom",
-    "Japanese stock market",
-    "Meme stocks",
-    "Crypto (twice)"
-   ],
-   "explanation": "The assets change; FOMO is always the same.",
-   "right": [
-    "1989",
-    "2017 and 2021",
-    "2021",
-    "1999–2000"
-   ]
-  },
-  "u27l4-10": {
-   "prompt": "What do you tell Lumi?",
-   "options": [
-    "Put your emergency fund in",
-    "Wait 48 hours and think about whether you'd buy it if nobody were talking about it",
-    "Get in now, it's flying"
-   ],
-   "explanation": "The rush is the signal: when you feel urgency, stop.",
-   "feedback": [
-    "That's the one thing you never touch. And with crypto you can lose everything you put in.",
-    "OK… If it still makes sense in two days, I'll put it within my speculation limit. If not, nothing.",
-    "If I get in out of fear of missing out, I'll most likely buy near the top."
-   ],
-   "lines": [
-    "Everyone on TikTok is making money on a new coin 🐶",
-    "If I don't get in today, I'll miss out."
    ]
   },
   "u27l5-5": {

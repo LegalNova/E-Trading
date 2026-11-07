@@ -1,0 +1,661 @@
+{
+ "unit": {
+  "title": "Your first analysis",
+  "description": "Look at a company, a chart and your own fear with judgement before you buy",
+  "section": "Invest from today"
+ },
+ "lessons": {
+  "u16l1": {
+   "title": "Price and value aren't the same",
+   "steps": [
+    {
+     "texts": [
+      "What you pay and what you get",
+      "A company earns **€2** per share a year and you decide how much to pay for it. How many years of earnings does it take to get the price back?",
+      "You pay €40 for the share and its earnings grow 5 % a year. In how many years do the earnings add up to what you paid?",
+      "In about 5 years",
+      "In about 15 years",
+      "In about 40 years",
+      "Adding up its earnings, which grow 5 % a year, it takes you **15 years** to reach €40.",
+      "Without touching the growth, find the highest price at which you get it back in 10 years.",
+      "At **€25** you get it back in 10 years; at €80, in 23. **Price is what you pay and value is what you get**: the same company can be a good buy at one price and a bad one at another.",
+      "You're paying so much it would take decades to get it back.",
+      "Growing like that for years on end? Very few companies manage it.",
+      "Now that's a reasonable price for what it earns!",
+      "Move the price and see how many years it takes"
+     ]
+    },
+    {
+     "texts": [
+      "Meet Mr Market",
+      "Mr Market",
+      "Benjamin Graham pictured the market as a moody business partner who offers you a price every day.",
+      "I'm feeling euphoric today! I'll buy your stake for €40. Tomorrow, who knows.",
+      "A week later, without the business changing at all…",
+      "Everything's going terribly. I'll sell you my stake for €12. Quick!",
+      "You estimate the company is worth about €20 a share. What do you do?",
+      "Sell: if he's scared, something must be about to happen",
+      "You'd be selling cheap just when the business hasn't changed.",
+      "Check the business is still the same and, if so, buy",
+      "That's it: the price has dropped, the value hasn't. His price is an offer, not an order.",
+      "Buy with all your money without checking anything",
+      "Good instinct, but check your estimate and don't put everything in.",
+      "At €12, something worth €20: a **40 %** margin of safety."
+     ]
+    },
+    {
+     "title": "Margin of safety",
+     "body": "«Price is what you pay; value is what you get» (Warren Buffett).\n\n**Fundamental analysis** studies the business (sales, profits, debt, competition) to estimate what it's **worth**: it answers *what* to buy. **Technical analysis** studies the chart and tries to answer *when*.\n\nIf you estimate a share is worth €20 and you'll only buy it below €15, you have a **25 % margin of safety**: a cushion in case your estimate is wrong.",
+     "key": "An excellent company bought too expensively can be a bad investment.",
+     "tip": "Value is an estimate; that's why you need a cushion."
+    }
+   ]
+  },
+  "u17l1": {
+   "title": "The P/E ratio",
+   "steps": [
+    {
+     "texts": [
+      "A P/E of 4: a bargain?",
+      "Hugo",
+      "I've found a share with a P/E of 4. It's a steal!",
+      "You're only paying for 4 years of earnings. I'm putting all my savings in.",
+      "What do you tell him?",
+      "Quick, before it's gone!",
+      "Hardly anything has a P/E of 4 for no reason. First you need to know what it is.",
+      "Find out why it's so low before buying",
+      "Good. A very low P/E is a **question**, not an answer.",
+      "Just buy a little, to be safe",
+      "Cautious, but you still don't know what you're buying.",
+      "OK… Its sales have been falling for five years.",
+      "There you go: the market pays little because it expects it to earn **less**.",
+      "A low P/E can mean decline or a one-off profit. A high P/E, maybe growth."
+     ]
+    },
+    {
+     "texts": [
+      "How many years of earnings are you paying for?",
+      "This company earns **€2 per share** a year. Move the share price and see what happens to the **P/E**.",
+      "If earnings don't change and the price goes from €30 to €60, what happens to the P/E?",
+      "It stays the same",
+      "It doubles",
+      "It halves",
+      "P/E = price ÷ earnings per share: 60 ÷ 2 = **30**, double 30 ÷ 2 = 15.",
+      "Find the price at which you're paying for 20 years of earnings.",
+      "**P/E = price ÷ earnings per share**: the years of earnings you're paying for. Panadería Global (€15 and €0.975 EPS) has a P/E of 15.4, and its inverse, the **earnings yield**, is 6.5 %.",
+      "You're paying for 30 years of earnings or more. Will it grow enough to deserve it?",
+      "Very low P/E… bargain or company in trouble?",
+      "Move the price and watch the P/E"
+     ]
+    },
+    {
+     "texts": [
+      "High P/E: always expensive?",
+      "Now it trades at **€60**: a P/E of 30. With no growth, it takes 30 years for the earnings to pay back the price. What if they grow?",
+      "If earnings grow 10 % a year, how long does it take to get the €60 back?",
+      "About 15 years",
+      "About 27 years",
+      "Still 30 years",
+      "At 10 % a year, earnings add up to €60 in **15 years**: half the time.",
+      "With the price at €60, find the growth that pays back the price in 15 years or less.",
+      "**A high P/E isn't expensive** if earnings grow fast, and **a low P/E isn't cheap** if they're going to shrink. Always compare it with its growth, its history and its sector.",
+      "Ten years or less! Fast growth makes a high P/E cheaper.",
+      "With no growth, a P/E of 30 means 30 years. Turn up the growth.",
+      "Turn up the growth and watch the years"
+     ]
+    },
+    {
+     "title": "Trailing and forward",
+     "body": "Using last year's earnings gives you the **trailing P/E**; using forecast earnings, the **forward P/E**. If earnings are set to grow a lot, the forward one will be lower.\n\nThe market average is around **15-17**. Compare it with its history and its sector: a bank on a P/E of 8 and a software company on 35 can both be «fairly priced».",
+     "key": "A P/E of 10 can be expensive and one of 30 cheap: it depends on what the company is going to earn."
+    }
+   ]
+  },
+  "u20l1": {
+   "title": "Anatomy of a candle",
+   "steps": [
+    {
+     "texts": [
+      "Red means up",
+      "Mei",
+      "Mei, a friend from Shanghai, shows you her stock market app.",
+      "My share is in the red today. Great, it's gone up!",
+      "What's going on here?",
+      "In China, red usually means a rise",
+      "That's it. In China, Japan and Korea the colours are usually the other way round.",
+      "She's got it wrong: red means down",
+      "Here it does, but not in her app. Always check the legend.",
+      "Her app is broken",
+      "It isn't broken: over there, red usually signals a rise.",
+      "Candlesticks were born in the **Dojima** rice market (Osaka), in the eighteenth century.",
+      "Tradition credits them to the merchant Munehisa Homma.",
+      "Steve Nison brought them to the West in 1991. Today they're the default chart."
+     ]
+    },
+    {
+     "texts": [
+      "Green or red?",
+      "The **body** runs from the open to the close; the **wicks**, out to the high and the low. What colour is each candle?",
+      "Green",
+      "Red",
+      "Opens at 100 and closes at 106",
+      "Closes above the open. Body: 6.",
+      "Opens at 62 and closes at 57",
+      "Closes below the open. Body: 5.",
+      "Opens at 20, rises to 25 and closes at 19",
+      "The high doesn't decide the colour: it closes below the open.",
+      "Opens at 40, drops to 35 and closes at 41",
+      "It fell a lot, but closed above the open.",
+      "Opens at 75 and closes at 80",
+      "The close is at the top: green.",
+      "Opens at 12 and closes at 11",
+      "The close is at the bottom: red.",
+      "Colour in all six candles.",
+      "**Green:** closes above the open. **Red:** below it. The wicks reach the high and the low, but **don't decide the colour**.",
+      "Compare only the open and the close.",
+      "Is the close at the top or the bottom?"
+     ]
+    },
+    {
+     "prompt": "Now on a real chart: tap the green candle with the biggest body, the one that rose most from open to close",
+     "ok": "That's the one. Its body runs from the open (bottom) to the close (top); the thin lines mark the high and the low.",
+     "ko": "Look for the tallest green rectangle, not counting the thin lines."
+    },
+    {
+     "title": "An example with numbers",
+     "body": "Candle with O = 100, H = 108, L = 97, C = 106: it's green (106 > 100), its body measures 6 (from 100 to 106), the upper wick 2 (from 106 to 108), the lower wick 3 (from 97 to 100) and the total range 11.",
+     "key": "The body runs from the open to the close; the wicks reach the high and the low.",
+     "tip": "Green: the close is at the top. Red: the close is at the bottom."
+    }
+   ]
+  },
+  "u21l1": {
+   "title": "Support and resistance",
+   "steps": [
+    {
+     "texts": [
+      "The market’s memory",
+      "Pablo",
+      "I bought at €50 and the share sank to €40.",
+      "Now it’s back at €50. I just want to get out without a loss.",
+      "Like Pablo, lots of people bought at €50 and have been waiting for months.",
+      "What tends to happen when the price gets back to €50?",
+      "Nothing: €50 is just another price",
+      "That’s exactly where lots of trapped buyers want out: **selling** tends to show up.",
+      "Selling shows up: it acts as resistance",
+      "That’s it! Lots of people sell there to «get their money back». That’s **resistance**.",
+      "It’s sure to shoot up",
+      "It might break through, but it’s hard: there are sellers waiting at €50.",
+      "**Support** is the opposite: where buyers showed up before."
+     ]
+    },
+    {
+     "texts": [
+      "Stop below support",
+      "Real Alphabet candles: you buy at the last price. **Support** sits just over 2 % below and **resistance** almost 5 % above.",
+      "Where would you put the stop on this trade?",
+      "Just above support, to lose less",
+      "A little below support",
+      "No stop: support will hold",
+      "If the price loses support, your reason for buying no longer holds: the stop goes on the other side. Above it, any normal dip knocks you out.",
+      "Put the stop below support and the target before resistance. Then see what happened.",
+      "The stop goes **on the other side of support**: if it breaks, the idea is dead. And the target goes **before resistance**, where selling tends to show up.",
+      "Target hit! Support held and your stop wasn’t triggered.",
+      "Stopped out. Was it below support or above it?",
+      "That stop is above support: any wick will trigger it.",
+      "Move the stop and the target, then hit «See what happened»"
+     ]
+    },
+    {
+     "title": "How to draw them",
+     "body": "• Daily or weekly charts work best.\n• Look for zones where the price has turned at least **2–3 times**.\n• Draw a **zone** (a narrow rectangle), not a line to the cent.\n• More touches and more volume = more relevant. Old, distant levels carry less weight.\n• Round numbers and all-time highs also attract orders.",
+     "key": "Support is where buyers showed up before; resistance is where sellers did.",
+     "tip": "Draw them as zones, not as razor-sharp lines."
+    }
+   ]
+  },
+  "u24l3": {
+   "title": "The 1 % rule",
+   "steps": [
+    {
+     "texts": [
+      "Risking isn't investing",
+      "An account of **€10,000**. The 1 % rule: if the stop is hit, you lose **€100** at most.",
+      "Does that mean you can only invest €100?",
+      "Yes: €100 and not a euro more",
+      "No: what you invest depends on where the stop goes",
+      "No: you can invest whatever you like, with no stop",
+      "With the stop at 2 %, you can invest **€5,000** and, if it's hit, you lose €100. Risk isn't the same as the amount invested.",
+      "With the risk at 1 %, find the stop that puts the position at €2,000.",
+      "**Size = risk ÷ distance to the stop.** Stop close, you buy more; stop far, you buy less. The maximum loss is always the same.",
+      "More than 2 % per trade is a lot, especially when you're starting out.",
+      "With the stop that close, you're putting in the whole account. Sure?",
+      "Stop far away: you buy little, but risk the same.",
+      "Keep the 1 % and move the stop"
+     ]
+    },
+    {
+     "texts": [
+      "«I'm absolutely sure»",
+      "Bruno",
+      "I've got €8,000 and this trade is a sure thing. I'm risking 10 %.",
+      "What do you recommend?",
+      "Go for it: if he's sure, there's no risk",
+      "If it fails, he loses **€800** in one go. His confidence changes nothing.",
+      "Stick to 1 %: €80 of risk, like any other trade",
+      "That's it! Nobody knows which trade will work out: the risk is the same on all of them.",
+      "Risk 10 %, but with no stop",
+      "Without a stop, the loss has no limit. Even worse.",
+      "And what if it really does work out?",
+      "He'll make a bit less. But he'll still be in the game when another one fails."
+     ]
+    },
+    {
+     "title": "Limits that add up",
+     "body": "Most professionals risk between **0.5 % and 2 %** per trade; to start with, 1 % or less. It's also wise to cap your **total open risk** (no more than 5–6 % at once) and the **weight of each position** (E-Trading warns you from 20 %).",
+     "key": "Risk isn't the same as the amount invested: you can invest 16 % and risk 1 %.",
+     "tip": "First you decide where you're wrong. Then how many shares you buy."
+    }
+   ]
+  },
+  "u27l4": {
+   "title": "FOMO and herd behaviour",
+   "steps": [
+    {
+     "texts": [
+      "Live through the dotcom fever",
+      "December 1998. The internet is going to change everything and your friends only talk about tech stocks. You put **€10,000** into the Nasdaq 100, with real data.",
+      "Go all the way to the end, whether you sell or not.",
+      "It rose **156 %** in 15 months; then it fell **83 %** from the peak and didn't get back there until 2015. **When everyone's talking about something that «only goes up», the risk is usually at its highest.**",
+      "You've sold. See what happens next…",
+      "From euphoria to collapse. And nobody warned you about the top.",
+      "More than double! Now everyone wants in.",
+      "Hit start. You can sell whenever you like"
+     ]
+    },
+    {
+     "texts": [
+      "«Get in today!»",
+      "Álex",
+      "This share has gone up **200 %** in two weeks.",
+      "Everyone in the group is in. Get in today or you'll miss out!",
+      "It's not in your plan. What do you do?",
+      "Buy now, before it goes up even more",
+      "That's **FOMO**: buying without knowing what the company does, after a huge rise.",
+      "Wait 48 hours and ask myself if I'd buy it if nobody were talking about it",
+      "That's it! If it still makes sense in two days, you decide calmly.",
+      "Take out a loan to go in big",
+      "Debt plus FOMO: the classic recipe for the worst losses.",
+      "When **everyone** has already bought, there's nobody left to keep pushing it up.",
+      "Urgency is FOMO's fuel. Take away the time pressure and it fizzles out."
+     ]
+    },
+    {
+     "title": "Warning signs",
+     "body": "• You hear about it from friends or social media accounts that had never invested before.\n• The reason is «**it's going up a lot**», not what the asset actually does.\n• You feel **urgency**: «if I don't buy today, I'll miss it».\n• People say «**this time it's different**».\n\nAntidotes: the **48-hour rule** and a **speculation limit** written into your plan.",
+     "key": "When everyone's talking about something that «only goes up», the risk is usually at its highest.",
+     "tip": "If your hairdresser recommends a cryptocurrency, it may already be too late."
+    }
+   ]
+  },
+  "h3r": {
+   "title": "Unit review",
+   "steps": []
+  },
+  "s0boss": {
+   "title": "Final challenge: Invest from today",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u16l1-1": {
+   "prompt": "What does fundamental analysis try to answer?",
+   "options": [
+    "Exactly when to buy in",
+    "What to buy and whether it's expensive or cheap",
+    "Which candle comes tomorrow"
+   ],
+   "explanation": "Technical analysis tries to answer when; fundamental analysis, what and at what price."
+  },
+  "u16l1-2": {
+   "prompt": "You estimate a share is worth €40 and it's trading at €30. What margin of safety do you have on the estimated value?",
+   "options": [],
+   "explanation": "(40 − 30) ÷ 40 = 25 %.",
+   "unit": "%"
+  },
+  "u16l1-3": {
+   "prompt": "You want a 30 % margin of safety on an estimated value of €50. Below what price would you buy?",
+   "options": [],
+   "explanation": "50 × (1 − 0.30) = €35.",
+   "unit": "€"
+  },
+  "u16l1-6": {
+   "prompt": "The gap between the estimated value and the price you pay is called the margin of ____.",
+   "options": [
+    "profit",
+    "manoeuvre",
+    "error",
+    "safety"
+   ],
+   "explanation": "It protects you if your estimate is wrong."
+  },
+  "u16l1-7": {
+   "prompt": "Is it about price or value?",
+   "options": [
+    "The company will generate about €100m of cash a year",
+    "It has a brand that lets it raise prices",
+    "Its market cap is €1,500m",
+    "The share closed yesterday at €15.20",
+    "It's up 8 % this week"
+   ],
+   "explanation": "You see the price on the screen; the value comes from analysing the business.",
+   "right": [
+    "Price",
+    "Value"
+   ]
+  },
+  "u16l1-9": {
+   "prompt": "What do you say to Lumi?",
+   "options": [
+    "Sure, it's already hit the floor",
+    "Buy twice as much to average down",
+    "First look at why it fell and what the business is worth: cheap isn't the same as undervalued"
+   ],
+   "explanation": "A low price is only an opportunity if it's below the value.",
+   "feedback": [
+    "Something that's fallen 60 % can fall another 60 %.",
+    "Doubling up without analysing is just betting more blindly.",
+    "OK… and what if it fell because the business is broken? Then the value fell too."
+   ],
+   "lines": [
+    "This share has fallen 60 %, it can't go any lower!",
+    "I'm buying 🤑"
+   ]
+  },
+  "u17l1-1": {
+   "prompt": "A share trades at €30 and its EPS is €2. What is its P/E?",
+   "options": [],
+   "explanation": "30 ÷ 2 = 15: you're paying 15 years of current earnings.",
+   "unit": "times"
+  },
+  "u17l1-2": {
+   "prompt": "A company has a market cap of €4,000m and earns €250m a year. What is its P/E?",
+   "options": [],
+   "explanation": "4,000 ÷ 250 = 16. It makes no difference whether you work it out per share or for the whole company.",
+   "unit": "times"
+  },
+  "u17l1-3": {
+   "prompt": "A share has a P/E of 20. What is its earnings yield?",
+   "options": [],
+   "explanation": "1 ÷ 20 = 5 %.",
+   "unit": "%"
+  },
+  "u17l1-4": {
+   "prompt": "P/E = price ÷ ____.",
+   "options": [
+    "dividend",
+    "debt",
+    "sales",
+    "EPS"
+   ],
+   "explanation": "The share price divided by earnings per share."
+  },
+  "u17l1-5": {
+   "prompt": "If EPS doubles and the price doesn't move, the P/E drops to ____ of what it was.",
+   "options": [
+    "a quarter",
+    "a tenth",
+    "a third",
+    "half"
+   ],
+   "explanation": "The same price divided by twice the earnings gives half the P/E."
+  },
+  "u17l1-7": {
+   "prompt": "One year, a company sells its headquarters and its profit triples. Its P/E falls from 18 to 6. What has happened?",
+   "options": [
+    "The P/E is distorted by a one-off profit",
+    "It has become a bargain",
+    "Its business has improved a lot"
+   ],
+   "explanation": "That profit won't happen again: you need to look at recurring earnings."
+  },
+  "u17l1-8": {
+   "prompt": "A share at €60 has EPS of €3 this year, and EPS of €4 is expected next year. What is its forward P/E?",
+   "options": [],
+   "explanation": "60 ÷ 4 = 15. The trailing P/E is 60 ÷ 3 = 20.",
+   "unit": "times"
+  },
+  "u20l1-1": {
+   "prompt": "On a green candle, match each point with its price.",
+   "options": [
+    "Top of the body",
+    "Bottom of the body",
+    "Tip of the upper wick",
+    "Tip of the lower wick"
+   ],
+   "explanation": "On a green candle the open is at the bottom and the close at the top; on a red one, the other way round. The wicks always reach the high and the low.",
+   "right": [
+    "The high",
+    "The low",
+    "The open",
+    "The close"
+   ]
+  },
+  "u20l1-3": {
+   "prompt": "Candle with an open of 40, high of 44, low of 39 and close of 43. How big is the body?",
+   "options": [],
+   "explanation": "From the open at 40 to the close at 43: 3 points.",
+   "unit": "points"
+  },
+  "u20l1-4": {
+   "prompt": "Green candle with an open of 40, high of 44, low of 39 and close of 43. How long is its lower wick?",
+   "options": [],
+   "explanation": "From the open (40), which is the bottom of the body, to the low (39): 1 point.",
+   "unit": "points"
+  },
+  "u20l1-5": {
+   "prompt": "Red candle with an open of 62, high of 63, low of 55 and close of 57. How big is its body?",
+   "options": [],
+   "explanation": "From 62 to 57: 5 points. On a red candle, the open is at the top and the close at the bottom.",
+   "unit": "points"
+  },
+  "u20l1-6": {
+   "prompt": "On a red candle, the open is at the ____ of the body.",
+   "options": [
+    "bottom",
+    "middle",
+    "outer edge",
+    "top"
+   ],
+   "explanation": "If it closes below the open, the open ends up at the top and the close at the bottom."
+  },
+  "u20l1-7": {
+   "prompt": "Tap the candle with the longest lower wick.",
+   "options": [],
+   "explanation": "The price fell a long way during that session, but recovered before the close. That thin line is the path down to the low. (Amazon · daily candles · February 2025)"
+  },
+  "u20l1-8": {
+   "prompt": "Put the prices of a green candle with wicks in order from lowest to highest.",
+   "options": [
+    "Open",
+    "Close",
+    "High",
+    "Low"
+   ],
+   "explanation": "Low ≤ open < close ≤ high. On a red candle, the open and close swap places."
+  },
+  "u21l1-1": {
+   "prompt": "In this sideways stretch, tap the ceiling: the highest close, where sellers showed up (Microsoft · closes every 3 sessions · August–October 2024)",
+   "options": [],
+   "explanation": "That zone acts as resistance: the rise stalled there and the price fell back."
+  },
+  "u21l1-2": {
+   "prompt": "Now the floor: tap the lowest close, where buyers showed up (NVIDIA · closes every 3 sessions · December 2025 – February 2026)",
+   "options": [],
+   "explanation": "That zone acted as support: the fall stalled and the price bounced strongly."
+  },
+  "u21l1-3": {
+   "prompt": "You’ve bought at the last price. Place the stop a little below the support: the recent low.",
+   "options": [],
+   "explanation": "If the price loses the support, the buy idea is no longer valid. The stop goes a little below, not right on the line, so that a wick doesn’t trigger it."
+  },
+  "u21l1-6": {
+   "prompt": "What makes a support level more relevant? Select all that apply.",
+   "options": [
+    "That it’s recent",
+    "That an ad on social media says so",
+    "That there was a lot of volume in that zone",
+    "That the price has turned there several times"
+   ],
+   "explanation": "More touches, more volume and more recent. Old, distant levels carry less weight."
+  },
+  "u21l1-7": {
+   "prompt": "Look for support and resistance in these 30 candles. Up or down over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Support or resistance tells you where buying or selling may appear, not what will happen. Above all, it shows you where you’ve been proved wrong.",
+   "horizon": "the next 10 sessions"
+  },
+  "u21l1-10": {
+   "prompt": "There’s support around €20. You put the stop 3 % below. At what price does it go?",
+   "options": [],
+   "explanation": "20 × 0.97 = €19.40. Leaving a bit of margin stops a mere wick from knocking you out.",
+   "unit": "€"
+  },
+  "u24l3-2": {
+   "prompt": "Your simulated portfolio is worth €5,000. With the 1 % rule, what's the most you can lose on one trade?",
+   "options": [],
+   "explanation": "5,000 × 0.01 = €50.",
+   "unit": "€"
+  },
+  "u24l3-3": {
+   "prompt": "You have €20,000, risk 1 %, buy at €80 and set the stop at €76. How many shares do you buy?",
+   "options": [],
+   "explanation": "20,000 × 1 % = €200. Distance to the stop: €4. 200 ÷ 4 = 50 shares.",
+   "unit": "shares"
+  },
+  "u24l3-4": {
+   "prompt": "In the previous trade (50 shares at €80 with €20,000 of capital), what percentage of your capital have you invested?",
+   "options": [],
+   "explanation": "50 × 80 = €4,000; 4,000 ÷ 20,000 = 20 %. You invest 20 % but only risk 1 %.",
+   "unit": "%"
+  },
+  "u24l3-6": {
+   "prompt": "You have €10,000. Does it follow the 1 % rule?",
+   "options": [
+    "If the stop is hit I lose €150",
+    "I invest €1,000 with no stop",
+    "If the stop is hit I lose €500",
+    "If the stop is hit I lose €100",
+    "If the stop is hit I lose €80"
+   ],
+   "explanation": "With no stop, the risk is everything invested: €1,000 is 10 % of the account.",
+   "right": [
+    "Yes, it does",
+    "No, it doesn't"
+   ]
+  },
+  "u24l3-8": {
+   "prompt": "Which risk limits does the course suggest for beginners? Select all that apply.",
+   "options": [
+    "Keep an eye on the weight of each position (warning from 20 %)",
+    "Use at least 1:10 leverage",
+    "No more than 5–6 % open risk at once",
+    "Risk 1 % or less per trade"
+   ],
+   "explanation": "Leverage isn't part of the rule: while you're learning, better without it."
+  },
+  "u24l3-10": {
+   "prompt": "First you decide where the ____ goes; then, how many shares you buy.",
+   "options": [
+    "target",
+    "dividend",
+    "leverage",
+    "stop"
+   ],
+   "explanation": "Size comes from the distance to the stop, never the other way round."
+  },
+  "u27l4-1": {
+   "prompt": "Select the messages trying to trigger your FOMO to sell you something or trick you.",
+   "options": [
+    "Reminder: your regular €100 contribution will go through on the 5th.",
+    "Everyone's making money on this share. Put your savings in, don't overthink it.",
+    "Only 3 places left in my signals group. This time it's different, don't miss out.",
+    "Check whether a firm is authorised before investing with it.",
+    "🚀 This crypto is up 300 % in a month. Tomorrow will be too late. Get in NOW!"
+   ],
+   "explanation": "Urgency, «this time it's different» and «everyone's winning» are the classic signs of FOMO.",
+   "senders": [
+    "Your broker",
+    "Your cousin",
+    "Influencer",
+    "CNMV",
+    "«Lambo 2030» group"
+   ]
+  },
+  "u27l4-2": {
+   "prompt": "November 2021: bitcoin is at record highs, it's on every news bulletin and your friends who had never invested are buying. What did it do next?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Bitcoin fell by around 75 % over the following year. The moment of peak euphoria is usually the moment of peak risk. Remember: with crypto you can lose everything you put in.",
+   "horizon": "the following year"
+  },
+  "u27l4-3": {
+   "prompt": "This asset has risen sharply and everyone on social media is talking about it. Does it go up or down over the following sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Neither the hype on social media nor the earlier rises tell you what's coming. That's why the 48-hour rule exists.",
+   "horizon": "the next 10 sessions"
+  },
+  "u27l4-6": {
+   "prompt": "Which are warning signs of a bubble? Select all that apply.",
+   "options": [
+    "The only reason is that it's going up a lot",
+    "Steady, growing earnings for years",
+    "Inexperienced people recommending it",
+    "«This time it's different»"
+   ],
+   "explanation": "Steady earnings aren't a sign of a bubble: euphoria and a lack of reasons are."
+  },
+  "u27l4-9": {
+   "prompt": "Match each bubble with its era.",
+   "options": [
+    "Dotcom",
+    "Japanese stock market",
+    "Meme stocks",
+    "Crypto (twice)"
+   ],
+   "explanation": "The assets change; FOMO is always the same.",
+   "right": [
+    "1989",
+    "2017 and 2021",
+    "2021",
+    "1999–2000"
+   ]
+  },
+  "u27l4-10": {
+   "prompt": "What do you tell Lumi?",
+   "options": [
+    "Put your emergency fund in",
+    "Wait 48 hours and think about whether you'd buy it if nobody were talking about it",
+    "Get in now, it's flying"
+   ],
+   "explanation": "The rush is the signal: when you feel urgency, stop.",
+   "feedback": [
+    "That's the one thing you never touch. And with crypto you can lose everything you put in.",
+    "OK… If it still makes sense in two days, I'll put it within my speculation limit. If not, nothing.",
+    "If I get in out of fear of missing out, I'll most likely buy near the top."
+   ],
+   "lines": [
+    "Everyone on TikTok is making money on a new coin 🐶",
+    "If I don't get in today, I'll miss out."
+   ]
+  }
+ }
+}

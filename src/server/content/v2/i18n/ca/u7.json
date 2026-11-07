@@ -5,60 +5,6 @@
   "section": "Com funcionen els mercats"
  },
  "lessons": {
-  "u7l1": {
-   "title": "Què és un índex",
-   "steps": [
-    {
-     "texts": [
-      "El fons que va guanyar un 8 %",
-      "Marta",
-      "El meu fons ha guanyat un 8 % aquest any! És boníssim, oi?",
-      "Aquell any, l'índex del seu mercat va pujar un 14 %.",
-      "Què li dius a la Marta?",
-      "Enhorabona: un 8 % és genial",
-      "Sona bé… però copiar l'índex li hauria donat un 14 %.",
-      "Ha quedat 6 punts per darrere del seu índex",
-      "Exacte. Per a això serveix un índex: és la **vara de mesurar**.",
-      "Depèn de quants diners hi hagi posat",
-      "L'import no canvia el percentatge: 8 % davant de 14 %.",
-      "I com compro jo aquest índex?",
-      "No es compra tal qual: es compra un **fons o ETF** que el replica."
-     ]
-    },
-    {
-     "texts": [
-      "Per a què serveix un índex?",
-      "Un **índex** resumeix en una xifra com va un grup de valors. Es fa servir per a tres coses.",
-      "Termòmetre",
-      "Vara de mesurar",
-      "Base de productes",
-      "«La borsa espanyola puja avui un 1 %»",
-      "És l'IBEX 35: diu com va el mercat.",
-      "Un fons compara el seu resultat amb l'IBEX 35",
-      "L'índex és la referència per saber si el fons ho ha fet bé.",
-      "Un ETF que copia l'S&P 500",
-      "Els ETF i els fons indexats el repliquen amb costos baixos.",
-      "Saber com va avui el sector bancari",
-      "Hi ha índexs de països i de sectors: termòmetres més concrets.",
-      "Comprovar si la teva cartera ho ha fet bé",
-      "Compara-la amb un índex que s'assembli al que tens.",
-      "Un fons indexat per fer-hi aportacions cada mes",
-      "El fons indexat copia l'índex: així es «compra».",
-      "Classifica els sis usos.",
-      "Un índex és **termòmetre**, **vara de mesurar** i **base de productes**. Cadascun té les seves regles: quines empreses hi entren, quant pesa cadascuna i cada quant es revisa.",
-      "Pista: informa, serveix per comparar-se o es compra com a fons?",
-      "Una xifra amb molts oficis diferents.",
-      "Toca cada cas: per a què es fa servir l'índex?"
-     ]
-    },
-    {
-     "title": "Punts, no euros",
-     "body": "Un índex es mesura en punts, no en euros. El que importa és la **variació**: si passa de 14.000 a 14.700 punts, ha pujat un 5 %.",
-     "key": "Un índex és una cistella de referència, no una cosa que es compra tal qual.",
-     "tip": "Comprar l'índex sencer és apostar per tota una economia, no per una empresa."
-    }
-   ]
-  },
   "u7l2": {
    "title": "S&P 500, Nasdaq, IBEX 35 i MSCI World",
    "steps": [
@@ -276,55 +222,6 @@
   }
  },
  "questions": {
-  "u7l1-1": {
-   "prompt": "Què és un índex borsari?",
-   "options": [
-    "Una empresa que cotitza a borsa",
-    "Un tipus d'interès",
-    "Una xifra que resumeix com va un grup de valors"
-   ],
-   "explanation": "És una cistella de referència amb regles sobre què hi entra i quant pesa."
-  },
-  "u7l1-3": {
-   "prompt": "Un índex passa de 14.000 a 14.700 punts. Quant ha pujat?",
-   "options": [],
-   "explanation": "(14.700 − 14.000) ÷ 14.000 = 0,05 → 5 %.",
-   "unit": "%"
-  },
-  "u7l1-4": {
-   "prompt": "Ràpid: un índex passa de 5.000 a 4.600 punts. Quant ha caigut, en %? (escriu-ho en positiu)",
-   "options": [],
-   "explanation": "400 ÷ 5.000 = 0,08 → ha caigut un 8 %.",
-   "unit": "%"
-  },
-  "u7l1-6": {
-   "prompt": "Si l'IBEX 35 és a 14.000 punts, comprar-lo costa 14.000 €.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "Els punts no són euros: mesuren l'evolució des d'una base."
-  },
-  "u7l1-7": {
-   "prompt": "Què fixen les regles d'un índex? Marca-les totes.",
-   "options": [
-    "Quant pesa cadascuna",
-    "El que opini cada dia un tertulià",
-    "Cada quant es revisa",
-    "Quines empreses hi entren"
-   ],
-   "explanation": "Les regles són públiques i objectives: per això l'índex serveix de referència."
-  },
-  "u7l1-10": {
-   "prompt": "Un índex no es compra directament: es compra un fons o un ____ que el replica.",
-   "options": [
-    "IPC",
-    "bo",
-    "dipòsit",
-    "ETF"
-   ],
-   "explanation": "Els ETF i els fons indexats copien l'índex amb costos baixos."
-  },
   "u7l2-1": {
    "prompt": "Relaciona cada índex amb el que mesura.",
    "options": [

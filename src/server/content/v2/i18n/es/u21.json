@@ -5,51 +5,6 @@
   "section": "Análisis técnico"
  },
  "lessons": {
-  "u21l1": {
-   "title": "Soportes y resistencias",
-   "steps": [
-    {
-     "texts": [
-      "La memoria del mercado",
-      "Pablo",
-      "Compré a 50 € y la acción se hundió hasta 40 €.",
-      "Ahora vuelve a 50 €. Solo quiero salir sin perder.",
-      "Como Pablo, mucha gente compró a 50 € y lleva meses esperando.",
-      "¿Qué suele pasar cuando el precio vuelve a 50 €?",
-      "Nada: 50 € es un precio como otro",
-      "Es justo donde muchos atrapados quieren salir: suele aparecer **venta**.",
-      "Aparece venta: actúa como resistencia",
-      "¡Eso! Muchos venden ahí para «recuperar lo suyo». Eso es una **resistencia**.",
-      "Sube seguro con fuerza",
-      "Puede romperla, pero cuesta: en 50 € hay vendedores esperando.",
-      "Un **soporte** es lo contrario: donde antes aparecieron compradores."
-     ]
-    },
-    {
-     "texts": [
-      "Stop bajo el soporte",
-      "Velas reales de Alphabet: compras al último precio. El **soporte** queda algo más de un 2 % por debajo y la **resistencia**, casi un 5 % por encima.",
-      "¿Dónde pondrías el stop de esta compra?",
-      "Justo encima del soporte, para perder poco",
-      "Un poco por debajo del soporte",
-      "Sin stop: el soporte aguantará",
-      "Si el precio pierde el soporte, tu idea de compra deja de valer: el stop va al otro lado. Por encima, cualquier bajada normal te saca.",
-      "Pon el stop bajo el soporte y el objetivo antes de la resistencia. Luego mira qué pasó.",
-      "El stop va **al otro lado del soporte**: si se pierde, la idea ya no vale. Y el objetivo, **antes de la resistencia**, donde suele aparecer venta.",
-      "¡Objetivo! El soporte aguantó y tu stop no saltó.",
-      "Saltó el stop. ¿Estaba por debajo del soporte o por encima?",
-      "Ese stop queda por encima del soporte: cualquier mecha lo salta.",
-      "Mueve el stop y el objetivo, y dale a ver qué pasó"
-     ]
-    },
-    {
-     "title": "Cómo trazarlos",
-     "body": "• Mejor en diario o semanal.\n• Busca zonas donde el precio haya girado al menos **2–3 veces**.\n• Traza una **zona** (un rectángulo estrecho), no una línea al céntimo.\n• Más toques y más volumen = más relevante. Los niveles antiguos y lejanos pesan menos.\n• Los números redondos y los máximos históricos también atraen órdenes.",
-     "key": "Un soporte es donde antes aparecieron compradores; una resistencia, donde aparecieron vendedores.",
-     "tip": "Trázalos como zonas, no como líneas al milímetro."
-    }
-   ]
-  },
   "u21l2": {
    "title": "El cambio de rol",
    "steps": [
@@ -364,46 +319,6 @@
   }
  },
  "questions": {
-  "u21l1-1": {
-   "prompt": "En este tramo lateral, toca el techo: el cierre más alto, donde aparecieron vendedores (Microsoft · cierres cada 3 sesiones · agosto–octubre de 2024)",
-   "options": [],
-   "explanation": "Esa zona actúa como resistencia: la subida se frenó ahí y el precio volvió a bajar."
-  },
-  "u21l1-2": {
-   "prompt": "Ahora el suelo: toca el cierre más bajo, donde aparecieron compradores (NVIDIA · cierres cada 3 sesiones · diciembre de 2025 – febrero de 2026)",
-   "options": [],
-   "explanation": "Esa zona actuó como soporte: la caída se frenó y el precio rebotó con fuerza."
-  },
-  "u21l1-3": {
-   "prompt": "Has comprado al último precio. Coloca el stop un poco por debajo del soporte: el mínimo reciente.",
-   "options": [],
-   "explanation": "Si el precio pierde el soporte, la idea de compra deja de valer. El stop va algo por debajo, no justo encima de la línea, para que una mecha no lo salte."
-  },
-  "u21l1-6": {
-   "prompt": "¿Qué hace más relevante un soporte? Marca todo.",
-   "options": [
-    "Que sea reciente",
-    "Que lo diga un anuncio en redes",
-    "Que hubiera mucho volumen en esa zona",
-    "Que el precio haya girado ahí varias veces"
-   ],
-   "explanation": "Más toques, más volumen y más cercanía en el tiempo. Los niveles antiguos y lejanos pesan menos."
-  },
-  "u21l1-7": {
-   "prompt": "Busca soportes y resistencias en estas 30 velas. ¿Sube o baja en las 10 sesiones siguientes?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Un soporte o una resistencia dicen dónde puede aparecer compra o venta, no qué pasará. Sirven sobre todo para saber dónde te has equivocado.",
-   "horizon": "las 10 sesiones siguientes"
-  },
-  "u21l1-10": {
-   "prompt": "Un soporte está en la zona de 20 €. Pones el stop un 3 % por debajo. ¿A qué precio va?",
-   "options": [],
-   "explanation": "20 × 0,97 = 19,40 €. Dejar algo de margen evita que una simple mecha te saque.",
-   "unit": "€"
-  },
   "u21l2-3": {
    "prompt": "Bruno compró tras la rotura de una resistencia en 100 €. El precio sube a 106 € y vuelve a 101 €. ¿Qué hace con lógica?",
    "options": [

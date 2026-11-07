@@ -97,51 +97,6 @@ export default unit({
       timed(single('Rápido: pierdes un 75 %. ¿Cuánto tienes que ganar para recuperarte?', ['+75 %', '+150 %', '+300 %'], 2, '1 ÷ 0,25 − 1 = 3 → +300 %.'), 15),
     ], { source: '3.3', minutes: 6, retire: [1, 6, 7, 9] }),
 
-    lesson('u24l3', 'La regla del 1 %', [
-      play({
-        title: 'Arriesgar no es invertir',
-        intro: 'Cuenta de **10.000 €**. La regla del 1 %: si salta el stop, pierdes como mucho **100 €**.',
-        widget: { kind: 'position', account: 10000, riskPct: 1, stopPct: 2, entry: 50, maxRisk: 5, maxStop: 15 },
-        predict: {
-          prompt: '¿Significa que solo puedes invertir 100 €?',
-          options: ['Sí: 100 € y ni un euro más', 'No: lo que inviertes depende de dónde va el stop', 'No: puedes invertir lo que quieras, sin stop'],
-          answer: 1,
-          why: 'Con el stop al 2 %, puedes invertir **5.000 €** y, si salta, pierdes 100 €. Riesgo no es lo mismo que cantidad invertida.',
-        },
-        goal: { text: 'Con el riesgo en el 1 %, busca el stop que deja la posición en 2.000 €.', when: [when('riskEur', '==', 100), when('size', '==', 2000)] },
-        insight: '**Tamaño = riesgo ÷ distancia al stop.** Stop cerca, compras más; stop lejos, compras menos. La pérdida máxima es siempre la misma.',
-        lumi: [
-          { when: when('riskPct', '>', 2), say: 'Más de un 2 % por operación es mucho, sobre todo al empezar.', mood: 'WORRIED' },
-          { when: when('posPct', '>=', 100), say: 'Con el stop tan cerca, metes toda la cuenta. ¿Seguro?', mood: 'THINKING' },
-          { when: when('stopPct', '>=', 10), say: 'Stop lejos: compras poco, pero arriesgas lo mismo.', mood: 'HAPPY' },
-          { say: 'Deja el 1 % y mueve el stop', mood: 'HAPPY' },
-        ],
-      }),
-      story('«Estoy segurísimo»', [{ id: 'bruno', name: 'Bruno' }], [
-        say('bruno', 'Tengo 8.000 € y esta operación es segura. Arriesgo un 10 %.'),
-        choose('¿Qué le recomiendas?', [
-          opt('Adelante: si está seguro, no hay riesgo', 'bad', say('lumi', 'Si falla, pierde **800 €** de golpe. Su seguridad no cambia nada.')),
-          opt('Que mantenga el 1 %: 80 € de riesgo, como en cualquier otra', 'good', say('lumi', '¡Eso! Nadie sabe qué operación saldrá bien: el riesgo es el mismo en todas.')),
-          opt('Que arriesgue el 10 %, pero sin stop', 'bad', say('lumi', 'Sin stop, la pérdida no tiene límite. Todavía peor.')),
-        ]),
-        say('bruno', '¿Y si de verdad sale bien?'),
-        say('lumi', 'Ganará algo menos. Pero seguirá en el juego cuando falle otra.'),
-      ]),
-      key('Límites que se suman', 'La mayoría de profesionales arriesga entre el **0,5 % y el 2 %** por operación; para empezar, un 1 % o menos. Además conviene limitar el **riesgo total abierto** (no más del 5–6 % a la vez) y el **peso de cada posición** (E-Trading avisa a partir del 20 %).', 'Riesgo no es lo mismo que cantidad invertida: puedes invertir un 16 % y arriesgar un 1 %.', 'Primero decides dónde te equivocas. Después, cuántas acciones compras.'),
-    ], [
-      single('Tienes 10.000 € y sigues la regla del 1 %. ¿Qué significa?', ['Que solo puedes invertir 100 €', 'Que si salta el stop pierdes como mucho 100 €', 'Que esperas ganar un 1 % por operación'], 1, 'La regla limita la pérdida si te equivocas, no la cantidad invertida.'),
-      num('Tu cartera simulada vale 5.000 €. Con la regla del 1 %, ¿cuánto puedes perder como máximo en una operación?', 50, '€', '5.000 × 0,01 = 50 €.'),
-      num('Tienes 20.000 €, arriesgas un 1 %, compras a 80 € y pones el stop en 76 €. ¿Cuántas acciones compras?', 50, 'acciones', '20.000 × 1 % = 200 €. Distancia al stop: 4 €. 200 ÷ 4 = 50 acciones.'),
-      num('En la operación anterior (50 acciones a 80 € con 20.000 € de capital), ¿qué porcentaje de tu capital has invertido?', 20, '%', '50 × 80 = 4.000 €; 4.000 ÷ 20.000 = 20 %. Inviertes un 20 % pero solo arriesgas un 1 %.'),
-      tf('Riesgo por operación y cantidad invertida son lo mismo.', false, 'El riesgo es lo que pierdes si salta el stop; la cantidad invertida puede ser mucho mayor.'),
-      buckets('Tienes 10.000 €. ¿Respeta la regla del 1 %?', ['Sí la respeta', 'No la respeta'], [['Si salta el stop pierdo 100 €', 0], ['Si salta el stop pierdo 150 €', 1], ['Si salta el stop pierdo 80 €', 0], ['Invierto 1.000 € sin stop', 1], ['Si salta el stop pierdo 500 €', 1]], 'Sin stop, el riesgo es todo lo invertido: 1.000 € es un 10 % de la cuenta.'),
-      scenario('Bruno tiene 8.000 € y está «segurísimo» de una operación. Quiere arriesgar un 10 % en ella. ¿Qué le recomiendas como concepto?', [['Que lo haga: si está seguro, no hay riesgo', 'La seguridad que siente no cambia nada: si falla, pierde 800 € de golpe.'], ['Que mantenga el 1 %: 80 € de riesgo, como en cualquier otra', 'Bien: el riesgo es el mismo en todas, porque nadie sabe qué operación saldrá bien.'], ['Que arriesgue el 10 % pero sin stop', 'Sin stop la pérdida no tiene límite: es todavía peor.']], 1, 'El riesgo por operación no depende de lo convencido que estés: es siempre el mismo.'),
-      multi('¿Qué límites de riesgo propone el curso para quien empieza? Marca todos.', ['Arriesgar un 1 % o menos por operación', 'No más del 5–6 % de riesgo abierto a la vez', 'Vigilar el peso de cada posición (aviso a partir del 20 %)', 'Usar al menos un apalancamiento 1:10'], [0, 1, 2], 'El apalancamiento no forma parte de la regla: mientras aprendes, mejor sin él.'),
-      timed(single('Rápido: ¿cuánto suelen arriesgar los profesionales por operación?', ['Entre el 0,5 % y el 2 %', 'Entre el 10 % y el 20 %', 'Todo lo que pueden'], 0, 'Y para quien empieza, un 1 % o menos.'), 12),
-      fill('Primero decides dónde va el ____; después, cuántas acciones compras.', 'stop', ['objetivo', 'dividendo', 'apalancamiento'], 'El tamaño sale de la distancia al stop, nunca al revés.'),
-      chat(['Con la regla del 1 % y 10.000 €, ¿solo puedo comprar 100 € de acciones? 🤔', 'Así no gano nada...'], '¿Qué le explicas a Lumi?', [['Sí, solo 100 € por operación', 'Eso confunde riesgo con inversión: puedes invertir bastante más.'], ['Puedes invertir más: lo que no puedes es perder más de 100 € si salta el stop', '¡Ahh! Entonces, con el stop a 3 € de la entrada, compro 33 acciones y arriesgo 99 €.'], ['La regla solo sirve con cuentas grandes', 'Funciona igual con 1.000 € o con 100.000 €: siempre es un porcentaje.']], 1, 'El 1 % limita la pérdida, no la inversión.'),
-    ], { source: '10.2', minutes: 6, retire: [0, 4, 6, 8, 10] }),
-
     lesson('u24l4', 'El tamaño de la posición', [
       play({
         title: 'Calcula tu tamaño',

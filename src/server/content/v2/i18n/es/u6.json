@@ -5,49 +5,6 @@
   "section": "Cómo funcionan los mercados"
  },
  "lessons": {
-  "u6l1": {
-   "title": "La orden a mercado",
-   "steps": [
-    {
-     "texts": [
-      "Comprar ya",
-      "Una **orden a mercado** compra al momento, al mejor precio de venta disponible. Esta empresa es pequeña y casi no se negocia.",
-      "Compras **1.000 acciones a mercado**. ¿Qué crees que pasará con tu precio?",
-      "Pagas 4,00 €, el mejor precio",
-      "Pagas bastante más de media",
-      "Pagas menos: compras al por mayor",
-      "Solo hay 200 a 4,00 €. Las 1.000 te salen a **4,115 €** de media: casi un 3 % más.",
-      "Sube la compra hasta las 1.000 acciones.",
-      "Una orden a mercado **garantiza que se ejecute, no el precio**. En valores poco líquidos, tu orden se come varios escalones del libro.",
-      "Más de un 2 % de más, solo por comprar con prisa.",
-      "Se acabaron las de 4,00 €: ahora pagas más.",
-      "Sube la cantidad y mira tu precio medio"
-     ]
-    },
-    {
-     "texts": [
-      "Rápido o barato",
-      "Laura",
-      "Quiero 5.000 acciones de una empresa que casi no se negocia.",
-      "Le doy a «comprar a mercado» y listo, ¿no?",
-      "¿Qué le aconsejas?",
-      "Sí: a mercado pagas el precio que ves",
-      "A mercado aseguras la ejecución, no el precio. Aquí pagaría mucho más.",
-      "Mejor una orden con su precio máximo",
-      "Eso: una **limitada**. Compra hasta su precio y, si no hay vendedores, espera.",
-      "A mercado, pero en varias veces",
-      "Ayuda un poco, pero sigue sin controlar el precio.",
-      "En grandes empresas y en horario normal, la diferencia suele ser de céntimos."
-     ]
-    },
-    {
-     "title": "Cuándo sale cara",
-     "body": "• **Valores poco líquidos:** tu orden se come varios escalones del libro.\n• **Apertura o justo tras una noticia:** los precios saltan.\n• **Bolsa cerrada:** se ejecutará en la apertura, al precio que haya entonces.\n\nEn el simulador, la compra a mercado entra al último precio y te pide también un **stop**: lo verás en la clase 4 de esta unidad.",
-     "key": "A mercado = rapidez garantizada, precio no garantizado.",
-     "tip": "Si te importa el precio exacto, la orden a mercado no es la tuya."
-    }
-   ]
-  },
   "u6l2": {
    "title": "Horquilla, spread y deslizamiento",
    "steps": [
@@ -279,60 +236,6 @@
   }
  },
  "questions": {
-  "u6l1-1": {
-   "prompt": "Libro: mejor compra 15,20 €, mejor venta 15,23 €. Das una orden de compra a mercado. ¿A qué precio entras?",
-   "options": [
-    "15,215 €",
-    "15,23 €",
-    "15,20 €"
-   ],
-   "explanation": "Compras al mejor precio de venta (ask), el que pide quien vende."
-  },
-  "u6l1-2": {
-   "prompt": "En ese mismo libro (15,20 € / 15,23 €), si vendes a mercado, ¿cuánto cobras por acción?",
-   "options": [
-    "15,20 €",
-    "15,215 €",
-    "15,23 €"
-   ],
-   "explanation": "Vendes al mejor precio de compra (bid), el que paga quien compra."
-  },
-  "u6l1-5": {
-   "prompt": "Simula tu primera compra a mercado: tienes 10.000 € y no quieres arriesgar más de un 1 % (100 €). Coloca un stop por debajo del último mínimo y elige el importe.",
-   "options": [],
-   "explanation": "Con una orden a mercado entras al último precio. Primero decides dónde saldrías (el stop) y, con esa distancia, cuánto comprar para no arriesgar más de 100 €."
-  },
-  "u6l1-6": {
-   "prompt": "Compras 40 acciones a mercado y se ejecutan a 25,10 €. ¿Cuánto pagas, sin contar comisiones?",
-   "options": [],
-   "explanation": "40 × 25,10 = 1.004 €.",
-   "unit": "€"
-  },
-  "u6l1-9": {
-   "prompt": "¿Orden a mercado razonable o arriesgada?",
-   "options": [
-    "Comprar justo en la apertura tras una noticia bomba",
-    "Un ETF muy negociado a mitad de sesión",
-    "Dar la orden un sábado para el lunes",
-    "10 acciones de una gran empresa del IBEX a media sesión",
-    "Vender un valor que apenas se negocia"
-   ],
-   "explanation": "Liquidez alta y horario normal: a mercado funciona bien. Poca liquidez, aperturas y noticias: mejor limitar el precio.",
-   "right": [
-    "Razonable",
-    "Arriesgada"
-   ]
-  },
-  "u6l1-10": {
-   "prompt": "Ordena lo que pasa al dar una orden de compra a mercado.",
-   "options": [
-    "El bróker envía la orden",
-    "Recibes la confirmación con el precio de ejecución",
-    "Se cruza con el mejor precio de venta",
-    "Pulsas «comprar a mercado»"
-   ],
-   "explanation": "El precio final lo sabes al final, no al pulsar."
-  },
   "u6l2-2": {
    "prompt": "Una acción cotiza a 50,00 € (compra) y 50,25 € (venta). ¿Qué spread es, en % del precio de compra?",
    "options": [],

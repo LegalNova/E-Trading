@@ -5,66 +5,6 @@
   "section": "Anàlisi fonamental"
  },
  "lessons": {
-  "u17l1": {
-   "title": "El PER",
-   "steps": [
-    {
-     "texts": [
-      "PER 4: una ganga?",
-      "Hugo",
-      "He trobat una acció amb PER 4. És regalada!",
-      "Només pagues 4 anys de benefici. Hi poso tots els meus estalvis.",
-      "Què li dius?",
-      "Corre, que se t'escapa!",
-      "Gairebé res no té PER 4 sense motiu. Primer cal saber quin és.",
-      "Mira per què és tan baix abans de comprar",
-      "Bé. Un PER molt baix és una **pregunta**, no una resposta.",
-      "Compra'n només una mica, per si de cas",
-      "Prudent, però continues sense saber què compres.",
-      "D'acord… Fa cinc anys que les seves vendes cauen.",
-      "Aquí ho tens: el mercat paga poc perquè espera que guanyi **menys**.",
-      "Un PER baix pot ser declivi o un benefici puntual. Un PER alt, potser creixement."
-     ]
-    },
-    {
-     "texts": [
-      "Quants anys de benefici pagues?",
-      "Aquesta empresa guanya **2 € per acció** l'any. Mou el preu de l'acció i mira què passa amb el **PER**.",
-      "Si el benefici no canvia i el preu passa de 30 € a 60 €, què li passa al PER?",
-      "Es queda igual",
-      "Es duplica",
-      "Baixa a la meitat",
-      "PER = preu ÷ benefici per acció: 60 ÷ 2 = **30**, el doble que 30 ÷ 2 = 15.",
-      "Busca el preu amb què pagues 20 anys de benefici.",
-      "**PER = preu ÷ benefici per acció**: els anys de benefici que pagues. Panadería Global (15 € i 0,975 € de BPA) té PER 15,4, i el seu invers, la **rendibilitat per benefici**, és un 6,5 %.",
-      "Pagues 30 anys de benefici o més. Creixerà prou per merèixer-ho?",
-      "PER molt baix… ganga o empresa en problemes?",
-      "Mou el preu i mira el PER"
-     ]
-    },
-    {
-     "texts": [
-      "PER alt, sempre car?",
-      "Ara cotitza a **60 €**: PER 30. Sense créixer, trigues 30 anys a recuperar el preu amb els beneficis. I si creixen?",
-      "Si el benefici creix un 10 % l'any, quant trigues a recuperar els 60 €?",
-      "Uns 15 anys",
-      "Uns 27 anys",
-      "Continuen sent 30 anys",
-      "Amb un 10 % anual, els beneficis sumen 60 € en **15 anys**: la meitat de temps.",
-      "Amb el preu a 60 €, busca el creixement que et retorna el preu en 15 anys o menys.",
-      "**Un PER alt no és car** si el benefici creix de pressa, i **un PER baix no és barat** si s'ha d'encongir. Compara'l sempre amb el seu creixement, la seva història i el seu sector.",
-      "Deu anys o menys! Créixer de pressa abarateix un PER alt.",
-      "Sense créixer, PER 30 són 30 anys. Apuja el creixement.",
-      "Apuja el creixement i mira els anys"
-     ]
-    },
-    {
-     "title": "Històric i avançat",
-     "body": "Amb el benefici de l'últim any és el **PER històric**; amb el previst, el **PER avançat**. Si el benefici ha de créixer molt, l'avançat serà més baix.\n\nLa mitjana del mercat volta els **15-17**. Compara'l amb la seva història i el seu sector: un banc a PER 8 i una empresa de programari a PER 35 poden estar «al seu preu».",
-     "key": "Un PER de 10 pot ser car i un de 30, barat: depèn del que guanyarà l'empresa."
-    }
-   ]
-  },
   "u17l2": {
    "title": "PEG, EV/EBITDA i preu/valor comptable",
    "steps": [
@@ -375,59 +315,6 @@
   }
  },
  "questions": {
-  "u17l1-1": {
-   "prompt": "Una acció cotitza a 30 € i el seu BPA és de 2 €. Quin és el seu PER?",
-   "options": [],
-   "explanation": "30 ÷ 2 = 15: pagues 15 anys del benefici actual.",
-   "unit": "vegades"
-  },
-  "u17l1-2": {
-   "prompt": "Una empresa capitalitza 4.000 M€ i guanya 250 M€ l'any. Quin és el seu PER?",
-   "options": [],
-   "explanation": "4.000 ÷ 250 = 16. És igual fer-ho per acció o amb l'empresa sencera.",
-   "unit": "vegades"
-  },
-  "u17l1-3": {
-   "prompt": "Una acció té un PER de 20. Quina és la seva rendibilitat per benefici?",
-   "options": [],
-   "explanation": "1 ÷ 20 = 5 %.",
-   "unit": "%"
-  },
-  "u17l1-4": {
-   "prompt": "PER = preu ÷ ____.",
-   "options": [
-    "dividend",
-    "deute",
-    "vendes",
-    "BPA"
-   ],
-   "explanation": "Preu de l'acció entre el benefici per acció."
-  },
-  "u17l1-5": {
-   "prompt": "Si el BPA es duplica i el preu no es mou, el PER es redueix a ____.",
-   "options": [
-    "la quarta part",
-    "la desena part",
-    "la tercera part",
-    "la meitat"
-   ],
-   "explanation": "El mateix preu entre el doble de benefici dona la meitat de PER."
-  },
-  "u17l1-7": {
-   "prompt": "Un any, una empresa ven la seu i el benefici se li triplica. El PER cau de 18 a 6. Què ha passat?",
-   "options": [
-    "El PER està distorsionat per un benefici puntual",
-    "S'ha convertit en una ganga",
-    "El negoci ha millorat molt"
-   ],
-   "explanation": "Aquest benefici no es repetirà: cal mirar el benefici recurrent."
-  },
-  "u17l1-8": {
-   "prompt": "Una acció a 60 € té un BPA de 3 € aquest any i s'espera un BPA de 4 € el que ve. Quin és el seu PER avançat?",
-   "options": [],
-   "explanation": "60 ÷ 4 = 15. L'històric és 60 ÷ 3 = 20.",
-   "unit": "vegades"
-  },
   "u17l2-2": {
    "prompt": "PER de 30 i creixement esperat del BPA del 15 % anual. Quin és el seu PEG?",
    "options": [],

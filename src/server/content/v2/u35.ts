@@ -2,7 +2,7 @@ import 'server-only'
 // Sección 13 · Unidad 35 · Retos con datos reales (docs/curso-v2/02-curriculo.md)
 // Laboratorio de mercado: práctica pura con gráficos reales de docs/curso-v2/graficos.md (cada clase usa gráficos distintos).
 // En «¿Sube o baja?» las explicaciones son neutrales: el resultado real lo revela el motor al responder.
-import { candle, chart, chat, choose, fill, key, level, lesson, match, mission, multi, note, num, opt, order, play, point, portfolio, say, scenario, simTrade, single, story, tf, timed, trend, unit, upDown, when } from '../dsl'
+import { candle, chart, chat, choose, fill, key, lesson, level, match, mission, multi, note, num, opt, order, play, point, portfolio, say, scenario, simTrade, single, story, tf, timed, trend, unit, upDown, when } from '../dsl'
 
 export default unit({
   id: 'u35', order: 35, title: 'Retos con datos reales', description: 'Predice, marca niveles y opera con gráficos reales para ver qué pasó de verdad',

@@ -5,52 +5,6 @@
   "section": "Anàlisi fonamental"
  },
  "lessons": {
-  "u16l1": {
-   "title": "Preu i valor no són el mateix",
-   "steps": [
-    {
-     "texts": [
-      "El que pagues i el que obtens",
-      "Una empresa guanya **2 €** per acció l'any i tu decideixes quant pagues per ella. Quants anys de beneficis trigues a recuperar el preu?",
-      "Pagues 40 € per l'acció i els seus beneficis creixen un 5 % l'any. En quants anys els beneficis sumen el que vas pagar?",
-      "En uns 5 anys",
-      "En uns 15 anys",
-      "En uns 40 anys",
-      "Sumant els seus beneficis, que creixen un 5 % l'any, trigues **15 anys** a reunir 40 €.",
-      "Sense tocar el creixement, busca el preu més alt amb què la recuperes en 10 anys.",
-      "A **25 €** la recuperes en 10 anys; a 80 €, en 23. **El preu és el que pagues i el valor, el que obtens**: la mateixa empresa pot ser una bona compra a un preu i una mala compra a un altre.",
-      "Pagues tant que trigaries dècades a recuperar-ho.",
-      "Créixer així molts anys seguits? Molt poques empreses ho aconsegueixen.",
-      "Això sí que és un preu raonable pel que guanya!",
-      "Mou el preu i mira quants anys trigues"
-     ]
-    },
-    {
-     "texts": [
-      "El senyor Mercat",
-      "Senyor Mercat",
-      "Benjamin Graham imaginava el mercat com un soci d'humor canviant que cada dia t'ofereix un preu.",
-      "Avui estic eufòric! Et compro la teva part per 40 €. Demà, qui sap.",
-      "Una setmana després, sense que el negoci hagi canviat gens…",
-      "Tot va fatal. Et venc la meva part per 12 €. Corre!",
-      "Calcules que l'empresa val uns 20 € per acció. Què fas?",
-      "Vendre: si ell està espantat, alguna cosa passarà",
-      "Vendries barat just quan el negoci no ha canviat.",
-      "Comprovar que el negoci segueix igual i, si és així, comprar",
-      "Això: el preu ha baixat, el valor no. El seu preu és una oferta, no una ordre.",
-      "Comprar amb tots els teus diners sense revisar res",
-      "Bon instint, però revisa la teva estimació i no ho posis tot.",
-      "A 12 €, una cosa que val 20 €: un **40 %** de marge de seguretat."
-     ]
-    },
-    {
-     "title": "Marge de seguretat",
-     "body": "«El preu és el que pagues; el valor és el que obtens» (Warren Buffett).\n\nL'**anàlisi fonamental** estudia el negoci (vendes, beneficis, deute, competència) per estimar quant **val**: respon a *què* comprar. La **tècnica** estudia el gràfic i intenta respondre a *quan*.\n\nSi estimes que una acció val 20 € i només la compres per sota de 15 €, tens un **25 % de marge de seguretat**: un coixí per si t'has equivocat en l'estimació.",
-     "key": "Una empresa excel·lent comprada massa cara pot ser una mala inversió.",
-     "tip": "El valor és una estimació; per això necessites coixí."
-    }
-   ]
-  },
   "u16l2": {
    "title": "El compte de resultats",
    "steps": [
@@ -373,70 +327,6 @@
   }
  },
  "questions": {
-  "u16l1-1": {
-   "prompt": "A què intenta respondre l'anàlisi fonamental?",
-   "options": [
-    "Quan entrar exactament",
-    "Què comprar i si és car o barat",
-    "Quina espelma ve demà"
-   ],
-   "explanation": "La tècnica intenta respondre a quan; la fonamental, a què i a quin preu."
-  },
-  "u16l1-2": {
-   "prompt": "Estimes que una acció val 40 € i cotitza a 30 €. Quin marge de seguretat tens sobre el valor estimat?",
-   "options": [],
-   "explanation": "(40 − 30) ÷ 40 = 25 %.",
-   "unit": "%"
-  },
-  "u16l1-3": {
-   "prompt": "Vols un marge de seguretat del 30 % sobre un valor estimat de 50 €. Per sota de quin preu compraries?",
-   "options": [],
-   "explanation": "50 × (1 − 0,30) = 35 €.",
-   "unit": "€"
-  },
-  "u16l1-6": {
-   "prompt": "La diferència entre el valor estimat i el preu que pagues s'anomena marge de ____.",
-   "options": [
-    "benefici",
-    "maniobra",
-    "error",
-    "seguretat"
-   ],
-   "explanation": "Et protegeix si t'equivoques en l'estimació."
-  },
-  "u16l1-7": {
-   "prompt": "Parla de preu o de valor?",
-   "options": [
-    "L'empresa generarà uns 100 M€ de caixa l'any",
-    "Té una marca que li permet apujar preus",
-    "Capitalitza 1.500 M€ a borsa",
-    "L'acció va tancar ahir a 15,20 €",
-    "Ha pujat un 8 % aquesta setmana"
-   ],
-   "explanation": "El preu el veus a la pantalla; el valor surt d'analitzar el negoci.",
-   "right": [
-    "Preu",
-    "Valor"
-   ]
-  },
-  "u16l1-9": {
-   "prompt": "Què li contestes a la Lumi?",
-   "options": [
-    "És clar, ja és a terra",
-    "Compra'n el doble per fer mitjana",
-    "Primer mira per què ha caigut i quant val el negoci: barat no és el mateix que infravalorat"
-   ],
-   "explanation": "Un preu baix només és una oportunitat si és per sota del valor.",
-   "feedback": [
-    "El que ha caigut un 60 % pot caure un altre 60 %.",
-    "Doblar sense analitzar és apostar més a cegues.",
-    "D'acord… I si va caure perquè el negoci s'ha trencat? Llavors el valor també va baixar."
-   ],
-   "lines": [
-    "Aquesta acció ha caigut un 60 %, ja no pot baixar més!",
-    "En compraré 🤑"
-   ]
-  },
   "u16l2-1": {
    "prompt": "Ordena el compte de resultats de dalt a baix.",
    "options": [

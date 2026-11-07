@@ -2,7 +2,7 @@
  "unit": {
   "title": "El dinero y la inflación",
   "description": "Qué es el dinero, por qué pierde valor y cómo crece con el interés compuesto",
-  "section": "Fundamentos del dinero"
+  "section": "Tu dinero en orden"
  },
  "lessons": {
   "u1l1": {
@@ -195,50 +195,6 @@
       "Vaya… nunca lo había pensado así.",
       "Ojo: los depósitos están protegidos hasta **100.000 €** por el Fondo de Garantía de Depósitos si quiebra el banco. Eso protege tus euros, no tu poder de compra."
      ]
-    }
-   ]
-  },
-  "u1l5": {
-   "title": "Interés simple e interés compuesto",
-   "steps": [
-    {
-     "texts": [
-      "El colchón, el simple y el compuesto",
-      "Tres formas de guardar **1.000 €**:\n\n• **Colchón:** no crecen.\n• **Interés simple:** cobras siempre sobre lo que pusiste.\n• **Interés compuesto:** también ganas sobre lo ya ganado.",
-      "1.000 € al 7 % al año durante 30 años. ¿Cuánto tendrás con interés compuesto?",
-      "Unos 3.100 €",
-      "Unos 7.600 €",
-      "Unos 21.000 €",
-      "Con interés simple serían 3.100 €. Con compuesto, **7.612 €**: casi dos veces y media más, sin poner ni un euro más.",
-      "Llega a 10.000 € sin añadir dinero: juega con la rentabilidad y los años.",
-      "El compuesto **acelera**: los últimos años crecen mucho más que los primeros. Por eso el tiempo pesa tanto como la rentabilidad.",
-      "Rentabilidades tan altas no son normales: con un 7 % ya vas muy bien a largo plazo.",
-      "Mira el final de la curva verde: ¡se dispara!",
-      "Mueve los años: fíjate en cómo se separan las líneas"
-     ]
-    },
-    {
-     "texts": [
-      "Ana y Bruno",
-      "Los dos apartan **200 € al mes** al 7 % hasta los 65. Ana empieza a los 25. ¿Y si Bruno empieza más tarde?",
-      "Ana",
-      "Bruno",
-      "Bruno empieza 10 años después que Ana. A los 65, ¿cuánto tendrá él comparado con ella?",
-      "Un 25 % menos",
-      "Menos de la mitad",
-      "Casi lo mismo",
-      "Ana llega a unos **494.000 €** y Bruno a unos **234.000 €**: menos de la mitad, aunque Ana solo puso 24.000 € más.",
-      "Retrasa a Bruno hasta que Ana tenga el triple que él.",
-      "Cada año que esperas cuesta mucho más de lo que parece: los primeros euros son los que más tiempo tienen para componerse.",
-      "Empezando a los 45, Bruno ya no alcanza a Ana aunque aporte lo mismo cada mes.",
-      "Si empiezan a la vez, acaban igual. Ahora retrasa a Bruno",
-      "Cada año de retraso abre más la brecha. ¿Hasta dónde llega?"
-     ]
-    },
-    {
-     "title": "También en tu contra",
-     "body": "El interés compuesto funciona igual con las deudas: una tarjeta que cobra intereses sobre intereses crece sola. Lo verás en la unidad de deudas.\n\nY recuerda: son ejemplos, no promesas. La bolsa no da un 7 % cada año.",
-     "key": "Las ganancias generan nuevas ganancias: cuanto antes empiezas, más trabaja el tiempo por ti."
     }
    ]
   },
@@ -537,64 +493,6 @@
     "inflación"
    ],
    "explanation": "Es la forma rápida de saber si tu dinero gana o pierde poder de compra."
-  },
-  "u1l5-1": {
-   "prompt": "1.000 € al 7 % de interés compuesto durante 30 años, ¿en cuánto se convierten? (redondea)",
-   "options": [],
-   "explanation": "1.000 × 1,07³⁰ ≈ 7.612 €. Con interés simple serían 3.100 €.",
-   "unit": "€"
-  },
-  "u1l5-3": {
-   "prompt": "Empareja cada caso con el tipo de interés.",
-   "options": [
-    "Cobras siempre sobre lo que pusiste",
-    "Ganas también sobre lo ya ganado",
-    "Una deuda de tarjeta que crece sobre sí misma"
-   ],
-   "explanation": "El compuesto acelera el crecimiento… también el de las deudas.",
-   "right": [
-    "Interés compuesto",
-    "Interés simple",
-    "Interés compuesto en tu contra"
-   ]
-  },
-  "u1l5-4": {
-   "prompt": "10.000 € al 5 % compuesto durante 10 años, ¿cuánto suman? (redondea a euros)",
-   "options": [],
-   "explanation": "10.000 × 1,05¹⁰ ≈ 16.289 €. Con simple serían 15.000 €.",
-   "unit": "€"
-  },
-  "u1l5-5": {
-   "prompt": "El interés compuesto solo funciona a tu favor.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "También en tu contra: una tarjeta revolving al 20 % duplica la deuda en menos de 4 años."
-  },
-  "u1l5-6": {
-   "prompt": "Ordena de menos a más el resultado de 100 € al mes durante 30 años.",
-   "options": [
-    "Al 5 %",
-    "Al 7 %",
-    "Al 2 %",
-    "Al 0 %"
-   ],
-   "explanation": "36.000 €, 49.273 €, 83.226 € y 121.997 €: unos pocos puntos de rentabilidad cambian muchísimo el final."
-  },
-  "u1l5-7": {
-   "prompt": "Tienes 22 años y 50 € al mes para invertir. ¿Qué haces?",
-   "options": [
-    "Lo gasto: 50 € no dan para nada",
-    "Empiezo ya con 50 € y subo la aportación cuando pueda",
-    "Espero a ganar más para empezar con algo «serio»"
-   ],
-   "explanation": "Empezar pronto, aunque sea con poco, es lo que más aprovecha el interés compuesto.",
-   "feedback": [
-    "50 € al mes al 7 % durante 40 años son unos 130.000 €, con 24.000 € aportados.",
-    "Bien: con el tiempo de tu lado, empezar pronto pesa más que empezar con mucho.",
-    "Esperar cuesta caro: los primeros años son los que más tiempo tienen para componerse."
-   ]
   },
   "u1l6-1": {
    "prompt": "Según la regla del 72, al 6 % anual el dinero se duplica en unos ____ años.",

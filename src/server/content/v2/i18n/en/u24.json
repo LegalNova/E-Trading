@@ -98,50 +98,6 @@
     }
    ]
   },
-  "u24l3": {
-   "title": "The 1 % rule",
-   "steps": [
-    {
-     "texts": [
-      "Risking isn't investing",
-      "An account of **€10,000**. The 1 % rule: if the stop is hit, you lose **€100** at most.",
-      "Does that mean you can only invest €100?",
-      "Yes: €100 and not a euro more",
-      "No: what you invest depends on where the stop goes",
-      "No: you can invest whatever you like, with no stop",
-      "With the stop at 2 %, you can invest **€5,000** and, if it's hit, you lose €100. Risk isn't the same as the amount invested.",
-      "With the risk at 1 %, find the stop that puts the position at €2,000.",
-      "**Size = risk ÷ distance to the stop.** Stop close, you buy more; stop far, you buy less. The maximum loss is always the same.",
-      "More than 2 % per trade is a lot, especially when you're starting out.",
-      "With the stop that close, you're putting in the whole account. Sure?",
-      "Stop far away: you buy little, but risk the same.",
-      "Keep the 1 % and move the stop"
-     ]
-    },
-    {
-     "texts": [
-      "«I'm absolutely sure»",
-      "Bruno",
-      "I've got €8,000 and this trade is a sure thing. I'm risking 10 %.",
-      "What do you recommend?",
-      "Go for it: if he's sure, there's no risk",
-      "If it fails, he loses **€800** in one go. His confidence changes nothing.",
-      "Stick to 1 %: €80 of risk, like any other trade",
-      "That's it! Nobody knows which trade will work out: the risk is the same on all of them.",
-      "Risk 10 %, but with no stop",
-      "Without a stop, the loss has no limit. Even worse.",
-      "And what if it really does work out?",
-      "He'll make a bit less. But he'll still be in the game when another one fails."
-     ]
-    },
-    {
-     "title": "Limits that add up",
-     "body": "Most professionals risk between **0.5 % and 2 %** per trade; to start with, 1 % or less. It's also wise to cap your **total open risk** (no more than 5–6 % at once) and the **weight of each position** (E-Trading warns you from 20 %).",
-     "key": "Risk isn't the same as the amount invested: you can invest 16 % and risk 1 %.",
-     "tip": "First you decide where you're wrong. Then how many shares you buy."
-    }
-   ]
-  },
   "u24l4": {
    "title": "Position size",
    "steps": [
@@ -437,59 +393,6 @@
     "20 %"
    ],
    "explanation": "5 × 20 % = 100 %: leverage speeds up big losses."
-  },
-  "u24l3-2": {
-   "prompt": "Your simulated portfolio is worth €5,000. With the 1 % rule, what's the most you can lose on one trade?",
-   "options": [],
-   "explanation": "5,000 × 0.01 = €50.",
-   "unit": "€"
-  },
-  "u24l3-3": {
-   "prompt": "You have €20,000, risk 1 %, buy at €80 and set the stop at €76. How many shares do you buy?",
-   "options": [],
-   "explanation": "20,000 × 1 % = €200. Distance to the stop: €4. 200 ÷ 4 = 50 shares.",
-   "unit": "shares"
-  },
-  "u24l3-4": {
-   "prompt": "In the previous trade (50 shares at €80 with €20,000 of capital), what percentage of your capital have you invested?",
-   "options": [],
-   "explanation": "50 × 80 = €4,000; 4,000 ÷ 20,000 = 20 %. You invest 20 % but only risk 1 %.",
-   "unit": "%"
-  },
-  "u24l3-6": {
-   "prompt": "You have €10,000. Does it follow the 1 % rule?",
-   "options": [
-    "If the stop is hit I lose €150",
-    "I invest €1,000 with no stop",
-    "If the stop is hit I lose €500",
-    "If the stop is hit I lose €100",
-    "If the stop is hit I lose €80"
-   ],
-   "explanation": "With no stop, the risk is everything invested: €1,000 is 10 % of the account.",
-   "right": [
-    "Yes, it does",
-    "No, it doesn't"
-   ]
-  },
-  "u24l3-8": {
-   "prompt": "Which risk limits does the course suggest for beginners? Select all that apply.",
-   "options": [
-    "Keep an eye on the weight of each position (warning from 20 %)",
-    "Use at least 1:10 leverage",
-    "No more than 5–6 % open risk at once",
-    "Risk 1 % or less per trade"
-   ],
-   "explanation": "Leverage isn't part of the rule: while you're learning, better without it."
-  },
-  "u24l3-10": {
-   "prompt": "First you decide where the ____ goes; then, how many shares you buy.",
-   "options": [
-    "target",
-    "dividend",
-    "leverage",
-    "stop"
-   ],
-   "explanation": "Size comes from the distance to the stop, never the other way round."
   },
   "u24l4-1": {
    "prompt": "Capital €10,000, risk 1 %, entry €50, stop €47. How many shares do you buy? (round down)",

@@ -5,54 +5,6 @@
   "section": "Technical analysis"
  },
  "lessons": {
-  "u19l1": {
-   "title": "What a price chart shows",
-   "steps": [
-    {
-     "texts": [
-      "What does a chart tell you?",
-      "Across, **time**. Up the side, **price**. Underneath, **volume**. What can you find out by looking at it?",
-      "The chart shows it",
-      "It doesn't",
-      "What price it opened at yesterday",
-      "Every candle records its open.",
-      "Tomorrow's price",
-      "Nobody knows: the chart is a record of the past.",
-      "The highest price of the week",
-      "Every candle records its high and its low.",
-      "How much was traded today",
-      "That's the volume: the bars at the bottom.",
-      "Whether the company is a good business",
-      "Its accounts tell you that, not its chart.",
-      "The close a year ago",
-      "The horizontal axis takes you back in time.",
-      "Whether it'll keep rising",
-      "It may or may not: these are probabilities, never certainties.",
-      "Sort the seven questions.",
-      "A chart is the **exact record** of what buyers and sellers agreed. It tells you what happened, **not what's going to happen**.",
-      "Has it already happened, or not yet? That's the key.",
-      "Can you read it on the chart?"
-     ]
-    },
-    {
-     "texts": [
-      "Reading isn't guessing",
-      "Three real charts of 30 daily candles. Read them and decide: does it go **up or down** over the next 10 sessions?",
-      "Play all three rounds.",
-      "Reading the past is easy; guessing the future isn't. Technical analysis works with **probabilities, never certainties**.",
-      "Three out of three! With so few rounds, luck plays a big part.",
-      "Calling the future with candles is hard for everyone.",
-      "Look at the candles and choose: up or down?"
-     ]
-    },
-    {
-     "title": "Four prices per period",
-     "body": "For each period, four figures are recorded (**OHLC**):\n\n• **Open:** the first price.\n• **High** and **low**.\n• **Close:** the last one, and the most important.\n\nIn E-Trading, when you run your finger over a candle you see its four prices, the change and the volume.",
-     "key": "A chart tells you what happened, not what's going to happen.",
-     "tip": "Reading it properly is already an advantage: lots of people only check whether it's green or red."
-    }
-   ]
-  },
   "u19l2": {
    "title": "Line, bars and candlesticks",
    "steps": [
@@ -359,67 +311,6 @@
   }
  },
  "questions": {
-  "u19l1-1": {
-   "prompt": "Match each part of the chart with what it shows.",
-   "options": [
-    "Horizontal axis",
-    "Vertical axis",
-    "Bars at the bottom",
-    "Each candle"
-   ],
-   "explanation": "Time runs from left to right, price goes up the side and volume sits underneath. Each candle sums up one period: a minute, a day or a week.",
-   "right": [
-    "The price",
-    "What happened in one period",
-    "The volume traded",
-    "Time"
-   ]
-  },
-  "u19l1-2": {
-   "prompt": "Which price in each period is considered the most important?",
-   "options": [
-    "The high",
-    "The close",
-    "The open"
-   ],
-   "explanation": "The close is the price buyers and sellers settled on at the end of the period. Almost all indicators are calculated using closes."
-  },
-  "u19l1-3": {
-   "prompt": "Tap the highest close on this chart (Microsoft · closes every 3 sessions · June–August 2026)",
-   "options": [],
-   "explanation": "The high came before the end and then the price pulled back a little. The highest point doesn't have to be the last one."
-  },
-  "u19l1-4": {
-   "prompt": "Now tap the lowest close (Apple · closes every 3 sessions · February–April 2025)",
-   "options": [],
-   "explanation": "The low isn't at the end: after touching it, the price bounced. Finding the extremes is the first step in reading a chart."
-  },
-  "u19l1-5": {
-   "prompt": "In English, the four prices of each period are summed up as ____.",
-   "options": [
-    "RSI",
-    "CPI",
-    "ETF",
-    "OHLC"
-   ],
-   "explanation": "Open, high, low, close."
-  },
-  "u19l1-6": {
-   "prompt": "A share closed at €50 yesterday and at €53 today. How much has it changed on the day?",
-   "options": [],
-   "explanation": "(53 − 50) ÷ 50 = 0.06 → +6 %. The daily change is calculated between one close and the previous one.",
-   "unit": "%"
-  },
-  "u19l1-10": {
-   "prompt": "You run your finger over a candle on the E-Trading chart. What data do you see? Tick all that apply.",
-   "options": [
-    "The close",
-    "Tomorrow's price",
-    "The high and the low",
-    "The open"
-   ],
-   "explanation": "You see the period's four prices, plus the change and the volume. Nobody knows tomorrow's price."
-  },
   "u19l2-1": {
    "prompt": "Match each chart type with what it shows.",
    "options": [

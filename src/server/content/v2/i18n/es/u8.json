@@ -5,67 +5,6 @@
   "section": "Productos de inversión"
  },
  "lessons": {
-  "u8l1": {
-   "title": "Qué es una acción",
-   "steps": [
-    {
-     "texts": [
-      "¿Ya soy un poco dueña?",
-      "Sara",
-      "Me he comprado una acción de una empresa de videojuegos.",
-      "¿Eso significa que ya soy un poco dueña?",
-      "¿Qué le contestas a Sara?",
-      "Sí: de una parte diminuta del negocio",
-      "Eso. Si el negocio va bien lo notas, y si va mal, también.",
-      "No: solo es un número que sube y baja",
-      "Detrás del precio hay un negocio real, y tienes un trocito.",
-      "Sí, y ya puede mandar en la empresa",
-      "Puede votar en la junta, pero su voto pesa muy poco.",
-      "¿Y cómo gano dinero con ella?",
-      "**Dividendos + revalorización**: lo que reparte y lo que sube el precio.",
-      "A largo plazo, el precio sigue a los beneficios; a corto, a las expectativas.",
-      "Si la empresa quiebra, el accionista cobra el último y casi nunca recupera nada."
-     ]
-    },
-    {
-     "texts": [
-      "¿Dueño o prestamista?",
-      "Inditex tiene unos 3.100 millones de **acciones**: con una eres dueño de un trocito. Con un **bono**, en cambio, le prestas dinero.",
-      "Acción: dueño",
-      "Bono: prestamista",
-      "Tienes una parte de sus tiendas, marcas y beneficios",
-      "Eso es ser copropietario: renta variable.",
-      "Cobras un cupón pactado",
-      "El bonista cobra lo pactado si la empresa puede pagar.",
-      "Te devuelven el dinero en una fecha",
-      "El bono vence; la acción no tiene fecha de vencimiento.",
-      "Cobras dividendos si la empresa los reparte",
-      "El dividendo es una parte del beneficio que se reparte a los dueños.",
-      "Si la empresa quiebra, cobras el último",
-      "Primero cobran los acreedores; el accionista casi nunca recupera nada.",
-      "Ganas mucho si el negocio crece mucho",
-      "El accionista comparte el éxito y el riesgo del negocio.",
-      "Clasifica las seis tarjetas.",
-      "Una acción es **renta variable**: lo que ganas no está fijado, depende de cómo le vaya al negocio. El bonista, en cambio, cobra lo pactado.",
-      "Pista: el dueño comparte éxito y riesgo; el prestamista cobra lo pactado.",
-      "Más riesgo para el dueño, pero también más premio.",
-      "Toca cada tarjeta: ¿dueño o prestamista?"
-     ]
-    },
-    {
-     "texts": [
-      "Una sola acción",
-      "Datos reales: **10.000 €** en Tesla a finales de 2018, en dólares y sin dividendos. Así se vive la renta variable.",
-      "Llega hasta el final, vendas o no.",
-      "Tesla se multiplicó por casi 19, pero por el camino llegó a caer un **72 %** desde su máximo. Y es una excepción: solo un **4 %** de las acciones de EE. UU. generó toda la ganancia neta del mercado entre 1926 y 2016 (Bessembinder).",
-      "Has vendido. Mira lo que pasa después…",
-      "Un 30 % por debajo de lo que pusiste. ¿Aguantas?",
-      "Ya has más que duplicado. ¿Y si ahora cae?",
-      "Dale a empezar. Puedes vender cuando quieras"
-     ]
-    }
-   ]
-  },
   "u8l2": {
    "title": "Derechos del accionista",
    "steps": [
@@ -400,64 +339,6 @@
   }
  },
  "questions": {
-  "u8l1-1": {
-   "prompt": "Compras una acción de Inditex. ¿Qué eres?",
-   "options": [
-    "Copropietario de una parte diminuta de la empresa",
-    "Cliente con descuento en sus tiendas",
-    "Prestamista de la empresa"
-   ],
-   "explanation": "Una acción es una parte del capital: participas en sus beneficios y en sus riesgos. Prestar dinero a la empresa sería comprar un bono."
-  },
-  "u8l1-2": {
-   "prompt": "Empareja cada término con su significado.",
-   "options": [
-    "Acción",
-    "OPV",
-    "Dividendo",
-    "Revalorización"
-   ],
-   "explanation": "Son las cuatro palabras básicas de la renta variable: qué compras, cómo llega a la bolsa y de dónde sale lo que ganas.",
-   "right": [
-    "Salida a bolsa vendiendo acciones",
-    "Beneficio repartido en efectivo",
-    "Subida del precio de la acción",
-    "Parte del capital de una empresa"
-   ]
-  },
-  "u8l1-3": {
-   "prompt": "Rentabilidad total = dividendos + ____.",
-   "options": [
-    "inflación",
-    "cupones",
-    "comisiones",
-    "revalorización"
-   ],
-   "explanation": "Ganas por lo que reparte la empresa (dividendos) y por la subida del precio (revalorización). El cupón es propio de los bonos."
-  },
-  "u8l1-5": {
-   "prompt": "Compraste una acción a 40 €. Hoy vale 46 € y este año has cobrado 1 € de dividendo. ¿Cuál es tu rentabilidad total?",
-   "options": [],
-   "explanation": "(46 − 40 + 1) ÷ 40 = 7 ÷ 40 = 17,5 %. Revalorización (6 €) + dividendo (1 €).",
-   "unit": "%"
-  },
-  "u8l1-7": {
-   "prompt": "Si una empresa quiebra, los accionistas cobran antes que los bancos y los bonistas.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Cobran los últimos, después de todos los acreedores, y casi nunca recuperan nada."
-  },
-  "u8l1-8": {
-   "prompt": "Según Bessembinder (2018), de unas 26.000 acciones de EE. UU. entre 1926 y 2016, ¿qué parte generó toda la ganancia neta del mercado?",
-   "options": [
-    "Alrededor de un 4 %",
-    "Casi todas",
-    "La mitad"
-   ],
-   "explanation": "Solo un 4 % explicó toda la ganancia neta, y más de la mitad rindió menos que las letras del Tesoro. Por eso una sola acción es arriesgada y conviene diversificar."
-  },
   "u8l2-2": {
    "prompt": "Empareja cada derecho con su tipo.",
    "options": [

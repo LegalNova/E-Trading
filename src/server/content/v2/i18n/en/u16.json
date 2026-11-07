@@ -5,52 +5,6 @@
   "section": "Fundamental analysis"
  },
  "lessons": {
-  "u16l1": {
-   "title": "Price and value aren't the same",
-   "steps": [
-    {
-     "texts": [
-      "What you pay and what you get",
-      "A company earns **€2** per share a year and you decide how much to pay for it. How many years of earnings does it take to get the price back?",
-      "You pay €40 for the share and its earnings grow 5 % a year. In how many years do the earnings add up to what you paid?",
-      "In about 5 years",
-      "In about 15 years",
-      "In about 40 years",
-      "Adding up its earnings, which grow 5 % a year, it takes you **15 years** to reach €40.",
-      "Without touching the growth, find the highest price at which you get it back in 10 years.",
-      "At **€25** you get it back in 10 years; at €80, in 23. **Price is what you pay and value is what you get**: the same company can be a good buy at one price and a bad one at another.",
-      "You're paying so much it would take decades to get it back.",
-      "Growing like that for years on end? Very few companies manage it.",
-      "Now that's a reasonable price for what it earns!",
-      "Move the price and see how many years it takes"
-     ]
-    },
-    {
-     "texts": [
-      "Meet Mr Market",
-      "Mr Market",
-      "Benjamin Graham pictured the market as a moody business partner who offers you a price every day.",
-      "I'm feeling euphoric today! I'll buy your stake for €40. Tomorrow, who knows.",
-      "A week later, without the business changing at all…",
-      "Everything's going terribly. I'll sell you my stake for €12. Quick!",
-      "You estimate the company is worth about €20 a share. What do you do?",
-      "Sell: if he's scared, something must be about to happen",
-      "You'd be selling cheap just when the business hasn't changed.",
-      "Check the business is still the same and, if so, buy",
-      "That's it: the price has dropped, the value hasn't. His price is an offer, not an order.",
-      "Buy with all your money without checking anything",
-      "Good instinct, but check your estimate and don't put everything in.",
-      "At €12, something worth €20: a **40 %** margin of safety."
-     ]
-    },
-    {
-     "title": "Margin of safety",
-     "body": "«Price is what you pay; value is what you get» (Warren Buffett).\n\n**Fundamental analysis** studies the business (sales, profits, debt, competition) to estimate what it's **worth**: it answers *what* to buy. **Technical analysis** studies the chart and tries to answer *when*.\n\nIf you estimate a share is worth €20 and you'll only buy it below €15, you have a **25 % margin of safety**: a cushion in case your estimate is wrong.",
-     "key": "An excellent company bought too expensively can be a bad investment.",
-     "tip": "Value is an estimate; that's why you need a cushion."
-    }
-   ]
-  },
   "u16l2": {
    "title": "The income statement",
    "steps": [
@@ -373,70 +327,6 @@
   }
  },
  "questions": {
-  "u16l1-1": {
-   "prompt": "What does fundamental analysis try to answer?",
-   "options": [
-    "Exactly when to buy in",
-    "What to buy and whether it's expensive or cheap",
-    "Which candle comes tomorrow"
-   ],
-   "explanation": "Technical analysis tries to answer when; fundamental analysis, what and at what price."
-  },
-  "u16l1-2": {
-   "prompt": "You estimate a share is worth €40 and it's trading at €30. What margin of safety do you have on the estimated value?",
-   "options": [],
-   "explanation": "(40 − 30) ÷ 40 = 25 %.",
-   "unit": "%"
-  },
-  "u16l1-3": {
-   "prompt": "You want a 30 % margin of safety on an estimated value of €50. Below what price would you buy?",
-   "options": [],
-   "explanation": "50 × (1 − 0.30) = €35.",
-   "unit": "€"
-  },
-  "u16l1-6": {
-   "prompt": "The gap between the estimated value and the price you pay is called the margin of ____.",
-   "options": [
-    "profit",
-    "manoeuvre",
-    "error",
-    "safety"
-   ],
-   "explanation": "It protects you if your estimate is wrong."
-  },
-  "u16l1-7": {
-   "prompt": "Is it about price or value?",
-   "options": [
-    "The company will generate about €100m of cash a year",
-    "It has a brand that lets it raise prices",
-    "Its market cap is €1,500m",
-    "The share closed yesterday at €15.20",
-    "It's up 8 % this week"
-   ],
-   "explanation": "You see the price on the screen; the value comes from analysing the business.",
-   "right": [
-    "Price",
-    "Value"
-   ]
-  },
-  "u16l1-9": {
-   "prompt": "What do you say to Lumi?",
-   "options": [
-    "Sure, it's already hit the floor",
-    "Buy twice as much to average down",
-    "First look at why it fell and what the business is worth: cheap isn't the same as undervalued"
-   ],
-   "explanation": "A low price is only an opportunity if it's below the value.",
-   "feedback": [
-    "Something that's fallen 60 % can fall another 60 %.",
-    "Doubling up without analysing is just betting more blindly.",
-    "OK… and what if it fell because the business is broken? Then the value fell too."
-   ],
-   "lines": [
-    "This share has fallen 60 %, it can't go any lower!",
-    "I'm buying 🤑"
-   ]
-  },
   "u16l2-1": {
    "prompt": "Put the income statement in order from top to bottom.",
    "options": [

@@ -1,0 +1,695 @@
+{
+ "unit": {
+  "title": "Invertir como los que ganan",
+  "description": "Índices, ETFs, diversificar y aportar cada mes: la cartera sencilla que funciona a largo plazo",
+  "section": "Invierte desde hoy"
+ },
+ "lessons": {
+  "u7l1": {
+   "title": "Qué es un índice",
+   "steps": [
+    {
+     "texts": [
+      "El fondo que ganó un 8 %",
+      "Marta",
+      "¡Mi fondo ha ganado un 8 % este año! Es buenísimo, ¿no?",
+      "Ese año, el índice de su mercado subió un 14 %.",
+      "¿Qué le dices a Marta?",
+      "Enhorabuena: un 8 % es genial",
+      "Suena bien… pero copiar el índice le habría dado un 14 %.",
+      "Ha quedado 6 puntos por detrás de su índice",
+      "Eso. Para eso sirve un índice: es la **vara de medir**.",
+      "Depende de cuánto dinero haya puesto",
+      "El importe no cambia el porcentaje: 8 % frente a 14 %.",
+      "¿Y cómo compro yo ese índice?",
+      "No se compra tal cual: se compra un **fondo o ETF** que lo replica."
+     ]
+    },
+    {
+     "texts": [
+      "¿Para qué sirve un índice?",
+      "Un **índice** resume en una cifra cómo va un grupo de valores. Se usa para tres cosas.",
+      "Termómetro",
+      "Vara de medir",
+      "Base de productos",
+      "«La bolsa española sube hoy un 1 %»",
+      "Es el IBEX 35: dice cómo va el mercado.",
+      "Un fondo compara su resultado con el IBEX 35",
+      "El índice es la referencia para saber si el fondo lo hizo bien.",
+      "Un ETF que copia el S&P 500",
+      "Los ETFs y fondos indexados lo replican con costes bajos.",
+      "Saber cómo va hoy el sector bancario",
+      "Hay índices de países y de sectores: termómetros más concretos.",
+      "Comprobar si tu cartera lo hizo bien",
+      "Compárala con un índice que se parezca a lo que tienes.",
+      "Un fondo indexado para aportar cada mes",
+      "El fondo indexado copia el índice: así se «compra».",
+      "Clasifica los seis usos.",
+      "Un índice es **termómetro**, **vara de medir** y **base de productos**. Cada uno tiene sus reglas: qué empresas entran, cuánto pesa cada una y cada cuánto se revisa.",
+      "Pista: ¿informa, sirve para compararse o se compra como fondo?",
+      "Una cifra con muchos trabajos distintos.",
+      "Toca cada caso: ¿para qué se usa el índice?"
+     ]
+    },
+    {
+     "title": "Puntos, no euros",
+     "body": "Un índice se mide en puntos, no en euros. Lo que importa es la **variación**: si pasa de 14.000 a 14.700 puntos, ha subido un 5 %.",
+     "key": "Un índice es una cesta de referencia, no algo que se compra tal cual.",
+     "tip": "Comprar el índice entero es apostar por toda una economía, no por una empresa."
+    }
+   ]
+  },
+  "u10l2": {
+   "title": "Qué es un ETF",
+   "steps": [
+    {
+     "texts": [
+      "¿ETF o fondo tradicional?",
+      "Un **ETF** es un fondo, casi siempre de un índice, que **cotiza en bolsa** como una acción. ¿Es cosa del ETF o del fondo de siempre?",
+      "ETF",
+      "Fondo tradicional",
+      "Lo compras a las 11:37 al precio que ves en pantalla",
+      "El ETF cotiza durante toda la sesión: su precio cambia a cada momento.",
+      "Lo cambias por otro sin pagar impuestos",
+      "El traspaso sin impuestos es la gran ventaja del fondo en España.",
+      "Pagas comisión del bróker y spread",
+      "Se compra en bolsa, con sus costes de compraventa.",
+      "Su precio se calcula una vez al día",
+      "El valor liquidativo del fondo se fija una vez cada día.",
+      "Cada venta con ganancia tributa, aunque reinviertas",
+      "En España, los ETF no tienen el régimen de traspaso.",
+      "Lo contratas en la gestora, el banco o una plataforma",
+      "El fondo tradicional no cotiza: se suscribe directamente.",
+      "Clasifica los seis rasgos.",
+      "El ETF se compra y se vende **en bolsa, como una acción**, y los grandes cuestan del **0,03 % al 0,30 %** al año. El fondo tradicional tiene, en España, la ventaja del **traspaso**.",
+      "Pista: ¿cotiza en bolsa o no?",
+      "Clasifica cada rasgo"
+     ]
+    },
+    {
+     "texts": [
+      "«Como una acción»",
+      "Nora",
+      "Me han dicho que un ETF es «como una acción».",
+      "Entonces, ¿es igual de arriesgado que comprar una sola empresa?",
+      "¿Qué le contestas?",
+      "Sí, igual de arriesgado",
+      "Se compra como una acción, pero dentro lleva cientos o miles de empresas.",
+      "Se compra como una acción, pero dentro hay una cesta de muchas empresas",
+      "¡Eso! Uno del MSCI World lleva más de mil empresas de países desarrollados.",
+      "No tiene ningún riesgo",
+      "Tiene el del índice: si el mercado cae un 30 %, el ETF también.",
+      "Un ETF de índice es comprar el supermercado entero en vez de un solo producto."
+     ]
+    },
+    {
+     "title": "ETF UCITS",
+     "body": "Un minorista en la UE compra ETF europeos **UCITS**, con su documento **KID**. Muchos ETF de EE. UU. no se pueden vender a minoristas europeos porque no tienen KID.",
+     "key": "Un ETF es un fondo, casi siempre indexado, que se compra y se vende en bolsa como una acción.",
+     "tip": "Antes de comprar un ETF, busca «UCITS» en su nombre y lee su KID."
+    }
+   ]
+  },
+  "u29l1": {
+   "title": "Diversificar: lo único gratis en finanzas",
+   "steps": [
+    {
+     "texts": [
+      "Todo a una carta",
+      "Bruno",
+      "He metido mis 3.000 € en una sola empresa. ¡Va a ser la próxima gran tecnológica!",
+      "La conozco bien: me he leído todo sobre ella.",
+      "¿Qué le dices?",
+      "Perfecto: si la conoces, no hay riesgo",
+      "Conocerla no la protege de un fraude, un producto fallido o una quiebra.",
+      "Reparte: entre muchas empresas, una quiebra apenas se nota",
+      "¡Eso! Si una empresa pesa un 0,1 %, su desastre casi ni se ve.",
+      "Compra otra más y así tienes dos",
+      "Mejor que una, pero dos empresas siguen siendo muy pocas.",
+      "Una sola empresa puede caer un **90 %**. Para recuperarte necesitarías un **+900 %**.",
+      "Uf. ¿Y si reparto, ya no hay ningún riesgo?",
+      "Hay dos tipos de riesgo. Vamos a separarlos."
+     ]
+    },
+    {
+     "texts": [
+      "¿De una empresa o de todas?",
+      "El riesgo **específico** golpea a una empresa concreta. El **de mercado**, a todas a la vez. ¿Cuál es cada uno?",
+      "Específico: de una empresa",
+      "De mercado: de todas",
+      "Un fraude contable en una empresa",
+      "Le pasa a una sola: en un índice de miles de empresas, apenas se nota.",
+      "Una recesión mundial",
+      "Golpea a casi todas a la vez: no se diluye con más acciones.",
+      "El producto estrella de una empresa fracasa",
+      "Un problema de esa empresa, no de toda la economía.",
+      "Una pandemia que cierra la economía",
+      "Afecta a todo el mercado: repartir entre más acciones no lo evita.",
+      "Una huelga larga en la fábrica de una empresa",
+      "Solo frena a esa empresa: sus competidoras siguen vendiendo.",
+      "El banco central sube los tipos de golpe",
+      "Cambia el precio del dinero para todas las empresas a la vez.",
+      "Clasifica los seis sustos.",
+      "Diversificar **elimina el riesgo específico**: una quiebra pesa poco entre miles de empresas. El **riesgo de mercado** no desaparece con más acciones; solo se suaviza combinando con bonos o liquidez.",
+      "Pregúntate: ¿le pasa a una empresa o a toda la economía?",
+      "¡Bien separado! Ahora, el único almuerzo gratis.",
+      "Clasifica cada susto"
+     ]
+    },
+    {
+     "title": "El almuerzo gratis",
+     "body": "Una acción suelta se mueve un 30-35 % al año; 20-30 acciones de sectores distintos, cerca del 20 %; un índice mundial, un 15 %.\n\nHarry Markowitz, Nobel de Economía, llamó a esto **el único almuerzo gratis**: menos riesgo sin renunciar a rentabilidad esperada.",
+     "key": "Con muchas empresas, los desastres de unas se compensan con los éxitos de otras.",
+     "tip": "No pongas todos los huevos en la misma cesta, ni todas las cestas en el mismo camión."
+    }
+   ]
+  },
+  "u25l2": {
+   "title": "Aportaciones periódicas (DCA)",
+   "steps": [
+    {
+     "texts": [
+      "El precio baja… y vuelve",
+      "Irene",
+      "Aporto 100 € cada mes a un fondo, pase lo que pase.",
+      "En cinco meses, el precio pasa por 10 €, 8 €, 5 €, 8 € y vuelve a 10 €.",
+      "Ha vuelto a donde estaba. Supongo que estoy igual que al principio.",
+      "¿Cómo está Irene?",
+      "Igual: el precio acabó donde empezó",
+      "No: cuando estaba barato, sus 100 € compraron más participaciones.",
+      "Ganando: compró más participaciones cuando estaba barato",
+      "¡Eso! Puso 500 € y ahora tiene 650 €: un **30 %** más.",
+      "Perdiendo: compró en plena caída",
+      "Al revés: en la caída, el mismo dinero le dio más participaciones.",
+      "Invertir **la misma cantidad cada mes** se llama DCA. Las caídas juegan a tu favor."
+     ]
+    },
+    {
+     "texts": [
+      "¿De golpe o poco a poco?",
+      "Tienes **12.000 €** para el S&P 500, con datos reales. ¿Todo el primer mes o repartido en 12? Mira cuánto tendrías 10 años después.",
+      "Mirando todos los meses de inicio posibles, ¿qué gana más veces a 10 años?",
+      "Repartir, casi siempre",
+      "Todo de golpe, unas tres de cada cuatro veces",
+      "Mitad y mitad",
+      "Todo de golpe gana en el **74 %** de los meses de inicio. Vanguard, con el MSCI World de 1976 a 2022, lo vio un 68 % de las veces tras un año.",
+      "Busca un mes de inicio en el que repartir saliera mejor.",
+      "**De golpe suele ganar**, porque el mercado sube más veces de las que baja. **Repartir** gana justo antes de una caída y reduce el arrepentimiento, pero nadie sabe cuándo llega.",
+      "¡Aquí ganó repartir! Mira lo que vino justo después: una caída.",
+      "De golpe gana por mucho: el mercado subió desde el principio.",
+      "Mueve el mes de inicio. Prueba justo antes de una crisis"
+     ]
+    },
+    {
+     "title": "Con una suma grande",
+     "body": "Una solución intermedia razonable: repartirla en **6–12 meses** con aportaciones automáticas.\n\nLo que no funciona es esperar «a que baje»: nadie sabe cuándo es el suelo.",
+     "key": "De golpe suele ganar más veces; poco a poco reduce el arrepentimiento. Lo importante es empezar y no parar.",
+     "tip": "Invertir cada mes es como subir una escalera: lo que importa es no pararse."
+    }
+   ]
+  },
+  "u10l3": {
+   "title": "Comisiones: el TER y los costes ocultos",
+   "steps": [
+    {
+     "texts": [
+      "El coste que no ves",
+      "Los mismos **10.000 €** y el mismo mercado: un 7 % al año antes de costes. Un fondo cobra un **0,2 %** al año; el otro, lo que tú elijas.",
+      "A 30 años, un fondo cobra un 0,2 % y otro un 1,5 %. ¿Cuánto se lleva la diferencia?",
+      "Poco: más o menos un 1 % del resultado",
+      "Casi un tercio del resultado",
+      "Más de la mitad",
+      "El coste se cobra **cada año** y se compone: el barato acaba en 71.968 € y el caro en 49.840 €. Son **22.128 €**, un 31 %.",
+      "Pon el fondo caro al 1,5 % y mira qué pasa a 30 años.",
+      "El **TER** (gastos corrientes) no llega en ninguna factura: se descuenta poco a poco del valor del fondo. A 30 años, un 1,5 % al año se lleva **casi un tercio** de tu dinero.",
+      "¡Casi un tercio de tu dinero, en comisiones!",
+      "Sigue: con más años, la diferencia se dispara.",
+      "Sube la comisión del fondo caro y los años"
+     ]
+    },
+    {
+     "texts": [
+      "El equipo estrella",
+      "Ana",
+      "Gestor del banco",
+      "Ana, te recomiendo nuestro fondo de acciones. Lo gestiona un equipo estrella.",
+      "¿Y cuánto cobra?",
+      "Un 2 % al año. Es calidad.",
+      "Un fondo indexado parecido cobra un 0,2 %.",
+      "¿Qué debería pensar Ana?",
+      "Si es un equipo estrella, merece la pena",
+      "Tendría que batir al índice 1,8 puntos al año, años seguidos. Casi nadie lo logra.",
+      "El caro tiene que ganar 1,8 puntos más cada año solo para empatar",
+      "¡Eso! El coste es seguro; batir al índice, no.",
+      "Que lo pruebe un año y compare",
+      "Un año dice poco: puede ser suerte. El coste, en cambio, se paga siempre."
+     ]
+    },
+    {
+     "title": "Los costes ocultos",
+     "body": "Un indexado puede cobrar un 0,1-0,3 % al año; muchos fondos activos en España, un 1,5 % o más. Lo verás en el **KID**, como gastos corrientes.\n\nAdemás del TER: comisión del bróker por operación, *spread*, custodia, cambio de divisa y, en algunos fondos, comisiones de suscripción o reembolso. Súmalos todos.",
+     "key": "Cada 1 % anual de costes se come una parte enorme del resultado, por el interés compuesto.",
+     "tip": "Un 1,5 % al año suena a poco. A 30 años, es casi un tercio de tu dinero."
+    }
+   ]
+  },
+  "u4l3": {
+   "title": "Tu horizonte temporal",
+   "steps": [
+    {
+     "texts": [
+      "¿Cuánto hay que esperar?",
+      "Datos reales: el S&P 500 mes a mes durante 40 años. Imagina que invertiste en **cualquier** mes y esperaste unos años. ¿Cuántas veces habrías perdido dinero?",
+      "Si invertías en un mes cualquiera y vendías **un año después**, ¿cuántas veces perdiste dinero?",
+      "Casi nunca",
+      "Más o menos 1 de cada 5 veces",
+      "La mitad de las veces",
+      "En estos 40 años, el **20,8 %** de los periodos de un año acabó en pérdida, y el peor perdió un 45 %.",
+      "Encuentra a partir de cuántos años no hubo ni un solo caso con pérdida.",
+      "En estos datos, esperando **14 años o más** nunca se perdió dinero. Pero el pasado no garantiza el futuro: quien compró en 1929, o en Japón en 1989, esperó mucho más. El plazo decide el riesgo que puedes asumir.",
+      "A corto plazo la bolsa es una montaña rusa: casi cualquier cosa puede pasar.",
+      "Mira el peor caso: aún hay periodos largos en pérdidas (los que empezaron en 2000).",
+      "Sigue alargando la espera"
+     ]
+    },
+    {
+     "title": "Ponle fecha a cada euro",
+     "body": "• **Colchón:** siempre disponible cuenta remunerada, fondo monetario.\n• **Viaje o coche (1-3 años)** depósitos, letras.\n• **Entrada de un piso (3-7 años)** mezcla prudente, más renta fija.\n• **Jubilación (15 años o más)** sobre todo acciones diversificadas.",
+     "key": "No se invierte en bolsa el dinero que se necesita pronto: puede estar bajando justo cuando lo necesites."
+    }
+   ]
+  },
+  "h2r": {
+   "title": "Repaso de la unidad",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u7l1-1": {
+   "prompt": "¿Qué es un índice bursátil?",
+   "options": [
+    "Una empresa que cotiza en bolsa",
+    "Un tipo de interés",
+    "Una cifra que resume cómo va un grupo de valores"
+   ],
+   "explanation": "Es una cesta de referencia con reglas sobre qué entra y cuánto pesa."
+  },
+  "u7l1-3": {
+   "prompt": "Un índice pasa de 14.000 a 14.700 puntos. ¿Cuánto ha subido?",
+   "options": [],
+   "explanation": "(14.700 − 14.000) ÷ 14.000 = 0,05 → 5 %.",
+   "unit": "%"
+  },
+  "u7l1-4": {
+   "prompt": "Rápido: un índice pasa de 5.000 a 4.600 puntos. ¿Cuánto ha caído, en %? (escríbelo en positivo)",
+   "options": [],
+   "explanation": "400 ÷ 5.000 = 0,08 → ha caído un 8 %.",
+   "unit": "%"
+  },
+  "u7l1-6": {
+   "prompt": "Si el IBEX 35 está en 14.000 puntos, comprarlo cuesta 14.000 €.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Los puntos no son euros: miden la evolución desde una base."
+  },
+  "u7l1-7": {
+   "prompt": "¿Qué fijan las reglas de un índice? Marca todas.",
+   "options": [
+    "Cuánto pesa cada una",
+    "Lo que opine cada día un tertuliano",
+    "Cada cuánto se revisa",
+    "Qué empresas entran"
+   ],
+   "explanation": "Las reglas son públicas y objetivas: por eso el índice sirve de referencia."
+  },
+  "u7l1-10": {
+   "prompt": "Un índice no se compra directamente: se compra un fondo o un ____ que lo replica.",
+   "options": [
+    "IPC",
+    "bono",
+    "depósito",
+    "ETF"
+   ],
+   "explanation": "Los ETFs y fondos indexados copian el índice con costes bajos."
+  },
+  "u10l2-1": {
+   "prompt": "Empareja cada término con su significado.",
+   "options": [
+    "ETF",
+    "UCITS",
+    "KID",
+    "Índice"
+   ],
+   "explanation": "Son las cuatro palabras que verás al buscar cualquier ETF.",
+   "right": [
+    "Norma europea de fondos para minoristas",
+    "Documento con riesgos y costes",
+    "Cesta de empresas que copia el ETF",
+    "Fondo que cotiza en bolsa"
+   ]
+  },
+  "u10l2-3": {
+   "prompt": "Este gráfico es un índice que copian varios ETF: un ETF de ese índice hará lo mismo, menos sus costes. ¿Qué hizo en las 10 sesiones siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Un ETF indexado no elimina los vaivenes del mercado: tienes exactamente lo que haga el índice, para bien y para mal.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u10l2-4": {
+   "prompt": "¿Qué coste anual suelen tener los grandes ETF indexados?",
+   "options": [
+    "Del 1,5 % al 2 %",
+    "Del 0,03 % al 0,30 %",
+    "Del 5 % al 10 %"
+   ],
+   "explanation": "Copiar un índice es barato: no hace falta un equipo eligiendo empresas."
+  },
+  "u10l2-6": {
+   "prompt": "¿Por qué un minorista europeo no puede comprar muchos ETF de EE. UU.?",
+   "options": [
+    "Porque está prohibido invertir en dólares",
+    "Porque no tienen el documento KID",
+    "Porque cotizan de noche"
+   ],
+   "explanation": "Sin KID, no se pueden comercializar a minoristas en la UE."
+  },
+  "u10l2-7": {
+   "prompt": "Compras 15 participaciones de un ETF a 98,40 € y el bróker cobra 2 € de comisión. ¿Cuánto pagas en total?",
+   "options": [],
+   "explanation": "15 × 98,40 = 1.476 € + 2 € de comisión = 1.478 €.",
+   "unit": "€"
+  },
+  "u10l2-10": {
+   "prompt": "Los ETF que puede comprar un minorista en la UE suelen llevar la etiqueta ____.",
+   "options": [
+    "TIPS",
+    "SPIVA",
+    "REIT",
+    "UCITS"
+   ],
+   "explanation": "Es la norma europea que fija reglas de diversificación, custodia e información."
+  },
+  "u29l1-1": {
+   "prompt": "¿Qué riesgo elimina repartir tu dinero entre cientos de acciones?",
+   "options": [
+    "Todo el riesgo",
+    "El riesgo de mercado",
+    "El riesgo específico de cada empresa"
+   ],
+   "explanation": "Una quiebra deja de ser un drama si pesa un 0,1 %. Pero si cae todo el mercado, caen todas: ese riesgo solo se suaviza con bonos o liquidez."
+  },
+  "u29l1-2": {
+   "prompt": "Repartes 10.000 € a partes iguales entre 20 acciones. Una quiebra y pierde todo su valor; el resto se queda igual. ¿Cuántos euros pierdes?",
+   "options": [],
+   "explanation": "10.000 ÷ 20 = 500 € por acción. Con una sola acción, esa quiebra se habría llevado los 10.000 €.",
+   "unit": "€"
+  },
+  "u29l1-4": {
+   "prompt": "Ejercicio de práctica (no es una recomendación): reparte 10.000 € entre estas acciones. Reglas: al menos 6 empresas, ninguna por encima del 20 % y ningún sector por encima del 30 %.",
+   "options": [
+    "Iberdrola",
+    "Repsol",
+    "BBVA",
+    "Banco Santander",
+    "Inditex",
+    "Coca-Cola",
+    "Apple",
+    "Microsoft"
+   ],
+   "explanation": "Repartir entre empresas y sectores reduce el riesgo específico. Aun así, 8 acciones siguen siendo pocas: un índice tiene cientos o miles.",
+   "kinds": [
+    "ENERGÍA",
+    "ENERGÍA",
+    "BANCA",
+    "BANCA",
+    "CONSUMO",
+    "CONSUMO",
+    "TECNOLOGÍA",
+    "TECNOLOGÍA"
+   ]
+  },
+  "u29l1-6": {
+   "prompt": "¿Qué NO es diversificar? Marca todas.",
+   "options": [
+    "Un fondo de acciones de todo el mundo y otro de bonos",
+    "Tener casi todo en acciones de la empresa donde trabajas",
+    "Tener 15 criptomonedas distintas",
+    "Tener 10 fondos que compran las mismas 50 tecnológicas"
+   ],
+   "explanation": "Nombres distintos no son activos distintos: las criptos suelen caer juntas y los fondos repetidos compran lo mismo."
+  },
+  "u29l1-8": {
+   "prompt": "Pablo tiene el 80 % de sus ahorros en acciones de la empresa donde trabaja: «La conozco mejor que nadie». ¿Qué le dices?",
+   "options": [
+    "Que concentra dos riesgos en el mismo sitio: su sueldo y sus ahorros",
+    "Que pase todo a otra empresa que le guste más",
+    "Tiene razón: conocer la empresa elimina el riesgo"
+   ],
+   "explanation": "Concentrar en tu propia empresa es doble riesgo. Diversificar lo reduce sin renunciar a rentabilidad esperada.",
+   "feedback": [
+    "Eso es: si la empresa tropieza, le golpea por los dos lados. Es justo el riesgo que diversificar elimina.",
+    "Cambiar una sola empresa por otra deja el mismo problema: todo en una cesta.",
+    "Conocerla no la protege de una crisis del sector. Y si va mal, Pablo pierde a la vez el sueldo y los ahorros."
+   ]
+  },
+  "u29l1-9": {
+   "prompt": "Markowitz llamó a la diversificación «el único almuerzo ____» de las finanzas.",
+   "options": [
+    "caro",
+    "rápido",
+    "seguro",
+    "gratis"
+   ],
+   "explanation": "Reduces el riesgo sin pagar a cambio menos rentabilidad esperada."
+  },
+  "u29l1-10": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "No: si todas caen a la vez, es como tener una sola",
+    "Sí, 15 son muchísimas",
+    "Sí, sobre todo si son nuevas"
+   ],
+   "explanation": "Activos muy correlacionados no diversifican. Y recuerda: en cripto puede perderse la totalidad de lo invertido.",
+   "feedback": [
+    "¡Bien visto! Diversificar es tener cosas que se comportan distinto, no muchos nombres.",
+    "Ojalá… pero cuando bitcoin cae con fuerza, la mayoría de las demás caen con él.",
+    "Las más nuevas suelen ser aún más volátiles. Más nombres no es menos riesgo."
+   ],
+   "lines": [
+    "Tengo 300 € en 15 criptomonedas distintas 😎",
+    "Ya estoy superdiversificado, ¿no?"
+   ]
+  },
+  "u25l2-1": {
+   "prompt": "Inviertes 100 € al mes y el precio pasa por 10, 8, 5, 8 y 10 €. ¿Cuántas participaciones tienes en total?",
+   "options": [],
+   "explanation": "100 ÷ 10 + 100 ÷ 8 + 100 ÷ 5 + 100 ÷ 8 + 100 ÷ 10 = 10 + 12,5 + 20 + 12,5 + 10 = 65.",
+   "unit": "participaciones"
+  },
+  "u25l2-2": {
+   "prompt": "Con esas 65 participaciones por 500 €, ¿cuál es tu precio medio de compra? (redondea a dos decimales)",
+   "options": [],
+   "explanation": "500 ÷ 65 ≈ 7,69 €. Al acabar en 10 €, ganas un 30 % sin que el precio haya subido.",
+   "unit": "€"
+  },
+  "u25l2-3": {
+   "prompt": "Septiembre de 2008. Empiezas a aportar 200 € al mes a un fondo del S&P 500. ¿Qué hizo el índice en los meses siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Con aportaciones periódicas, cuando el precio cae compras más participaciones con el mismo dinero: las caídas trabajan a tu favor si no paras.",
+   "horizon": "los meses siguientes"
+  },
+  "u25l2-4": {
+   "prompt": "Julio de 2012: el IBEX 35 lleva años de crisis y casi nadie quiere invertir en España. Si aportabas cada mes, ¿qué pasó después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Quien aportaba cada mes compró muchas participaciones baratas en lo peor de la crisis. El DCA no exige adivinar el suelo.",
+   "horizon": "el año y medio siguiente"
+  },
+  "u25l2-5": {
+   "prompt": "Ana hereda 30.000 € para invertir a largo plazo. Sabe por experiencia que si lo invierte todo y cae un 20 % al mes siguiente, lo vendería todo por nervios. ¿Qué opción encaja mejor con lo que sabe de sí misma?",
+   "options": [
+    "Repartirlo en 6–12 meses con aportaciones automáticas",
+    "Esperar a que la bolsa baje",
+    "Invertirlo todo hoy"
+   ],
+   "explanation": "La mejor estrategia es la que vas a poder mantener. Esperar «el momento» suele ser la peor.",
+   "feedback": [
+    "Buena solución intermedia: entra en el mercado sin el miedo a hacerlo todo el peor día.",
+    "Nadie sabe cuándo bajará: mientras espera, el mercado puede subir un 30 %.",
+    "Estadísticamente gana unas 2 de cada 3 veces, pero Ana ya sabe que abandonaría en una caída, y eso sería lo peor."
+   ]
+  },
+  "u25l2-8": {
+   "prompt": "¿Es una ventaja de las aportaciones periódicas o de invertir de golpe?",
+   "options": [
+    "Automatiza la disciplina",
+    "Todo el dinero trabaja desde el primer día",
+    "Encaja con cobrar un sueldo cada mes",
+    "Reduce el arrepentimiento si cae justo después",
+    "Históricamente gana más veces"
+   ],
+   "explanation": "Las dos son válidas: lo que no funciona es intentar adivinar el momento.",
+   "right": [
+    "Aportaciones periódicas",
+    "De golpe"
+   ]
+  },
+  "u25l2-10": {
+   "prompt": "Invertir la misma cantidad cada mes, pase lo que pase, se llama ____.",
+   "options": [
+    "rebalanceo",
+    "market timing",
+    "apalancamiento",
+    "DCA"
+   ],
+   "explanation": "Dollar-cost averaging: aportaciones periódicas."
+  },
+  "u10l3-1": {
+   "prompt": "10.000 € a 30 años al 7 % anual sin costes se convierten en 76.123 €. Con un 1 % de costes anuales (6 % neto), ¿en cuánto? (redondea a euros)",
+   "options": [],
+   "explanation": "10.000 × 1,06³⁰ ≈ 57.435 €.",
+   "unit": "€"
+  },
+  "u10l3-2": {
+   "prompt": "Con esos datos, ¿cuánto te cuesta en total ese 1 % anual a 30 años? (redondea)",
+   "options": [],
+   "explanation": "76.123 − 57.435 = 18.688 €: casi el doble de lo que invertiste, solo en costes.",
+   "unit": "€"
+  },
+  "u10l3-3": {
+   "prompt": "Tienes 20.000 € en un fondo con un TER del 1,8 %. ¿Cuánto pagas este año?",
+   "options": [],
+   "explanation": "20.000 × 1,8 % = 360 €. En un indexado al 0,2 % serían 40 €.",
+   "unit": "€"
+  },
+  "u10l3-4": {
+   "prompt": "¿Dónde encuentras los gastos corrientes de un fondo?",
+   "options": [
+    "Solo en la publicidad del banco",
+    "En el KID (Documento de Datos Fundamentales)",
+    "En una factura mensual de la gestora"
+   ],
+   "explanation": "Es obligatorio que aparezcan en el KID, junto al resto de costes."
+  },
+  "u10l3-5": {
+   "prompt": "¿Qué costes pueden reducir tu rentabilidad? Marca todos.",
+   "options": [
+    "Comisión del bróker",
+    "Cambio de divisa",
+    "Que el fondo tenga muchos partícipes",
+    "TER o gastos corrientes"
+   ],
+   "explanation": "También el spread, la custodia y los impuestos. El número de partícipes no es un coste."
+  },
+  "u10l3-10": {
+   "prompt": "¿Qué le explicas?",
+   "options": [
+    "Se descuenta cada día del valor del fondo, por eso no lo ves",
+    "Lo cobra Hacienda a final de año",
+    "Entonces no lo cobra"
+   ],
+   "explanation": "Que no veas un cargo no significa que no pagues: el TER ya está restado del valor liquidativo.",
+   "feedback": [
+    "¡Eso! Es el coste más silencioso: no llega factura, pero lo pagas.",
+    "No es un impuesto: es lo que se queda la gestora.",
+    "Sí lo cobra: sale del valor del fondo cada día, por eso no lo ves."
+   ],
+   "lines": [
+    "Mi fondo cobra un 1,8 %, pero nunca me han cobrado nada en la cuenta 🤔"
+   ]
+  },
+  "u4l3-1": {
+   "prompt": "Empareja cada objetivo con dónde suele tener sentido.",
+   "options": [
+    "Colchón de emergencia",
+    "Viaje dentro de un año",
+    "Entrada de un piso en 5 años",
+    "Jubilación en 35 años"
+   ],
+   "explanation": "A más plazo, más tiempo para recuperarse de las caídas.",
+   "right": [
+    "Mezcla prudente, más renta fija",
+    "Sobre todo acciones diversificadas",
+    "Depósito o letras",
+    "Cuenta remunerada"
+   ]
+  },
+  "u4l3-2": {
+   "prompt": "Necesitas la entrada de un piso dentro de 18 meses. ¿Dónde tiene más sentido?",
+   "options": [
+    "Depósitos o un fondo monetario",
+    "Criptomonedas",
+    "100 % en acciones tecnológicas"
+   ],
+   "explanation": "A 18 meses, una caída del 30 % arruinaría el plan."
+  },
+  "u4l3-3": {
+   "prompt": "Ordena de menor a mayor el riesgo que suele admitir cada objetivo.",
+   "options": [
+    "Entrada de un piso en 5 años",
+    "Jubilación en 30 años",
+    "Viaje en un año",
+    "Colchón de emergencia"
+   ],
+   "explanation": "Cuanto más lejos está el objetivo, más caídas se pueden aguantar por el camino."
+  },
+  "u4l3-5": {
+   "prompt": "Bruno tiene 8.000 € para la matrícula de un máster que paga dentro de 10 meses. Un amigo le dice que en bolsa «sacará algo más». ¿Qué hace?",
+   "options": [
+    "Lo mete en una cripto que ha subido mucho",
+    "Lo deja en un depósito o letras hasta el pago",
+    "Lo mete todo en bolsa"
+   ],
+   "explanation": "Dinero con fecha cercana: sin riesgo, aunque rinda poco.",
+   "feedback": [
+    "Caídas del 50 % en pocos meses no son raras en cripto: podría quedarse sin máster.",
+    "Gana poco, pero el día de la matrícula los 8.000 € estarán ahí.",
+    "Si la bolsa cae un 20 % justo antes, le faltarían 1.600 € para la matrícula."
+   ]
+  },
+  "u4l3-6": {
+   "prompt": "S&P 500, septiembre de 2008. Imagina que aquí tienes el dinero de la entrada de un piso que pagas en 6 meses. ¿Qué crees que hizo el índice en los meses siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Sea cual sea el resultado, el dinero que necesitas en pocos meses no debería depender de lo que haga la bolsa en ese plazo.",
+   "horizon": "los meses siguientes"
+  },
+  "u4l3-8": {
+   "prompt": "¿Corto o largo plazo?",
+   "options": [
+    "Fianza de un alquiler dentro de 6 meses",
+    "Independencia financiera a los 50 (tienes 25)",
+    "Vacaciones del verano que viene",
+    "Jubilación",
+    "Cambiar de móvil",
+    "Ahorro para la universidad de un bebé"
+   ],
+   "explanation": "Lo que necesitas pronto, sin riesgo; lo lejano puede aguantar más altibajos.",
+   "right": [
+    "Corto plazo (menos de 3 años)",
+    "Largo plazo (más de 10 años)"
+   ]
+  },
+  "u4l3-10": {
+   "prompt": "No se invierte en bolsa el dinero que se necesita ____.",
+   "options": [
+    "en 30 años",
+    "para jubilarse",
+    "nunca",
+    "pronto"
+   ],
+   "explanation": "No porque vaya a bajar seguro, sino porque puede estar bajando justo cuando lo necesites."
+  }
+ }
+}

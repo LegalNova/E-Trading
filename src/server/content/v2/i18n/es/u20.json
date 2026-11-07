@@ -5,64 +5,6 @@
   "section": "Análisis técnico"
  },
  "lessons": {
-  "u20l1": {
-   "title": "Anatomía de una vela",
-   "steps": [
-    {
-     "texts": [
-      "Rojo es subir",
-      "Mei",
-      "Mei, una amiga de Shanghái, te enseña su app de bolsa.",
-      "Hoy mi acción está en rojo. ¡Qué bien, ha subido!",
-      "¿Qué pasa aquí?",
-      "En China el rojo suele ser subida",
-      "Eso. En China, Japón y Corea los colores suelen ir al revés.",
-      "Se ha equivocado: rojo es bajar",
-      "Aquí sí, pero en su app no. Mira siempre la leyenda.",
-      "Su app está rota",
-      "No está rota: allí el rojo suele significar subida.",
-      "Las velas nacieron en el mercado de arroz de **Dojima** (Osaka), en el siglo XVIII.",
-      "La tradición se las atribuye al comerciante Munehisa Homma.",
-      "Steve Nison las trajo a Occidente en 1991. Hoy son el gráfico por defecto."
-     ]
-    },
-    {
-     "texts": [
-      "¿Verde o roja?",
-      "El **cuerpo** va de la apertura al cierre; las **mechas**, hasta el máximo y el mínimo. ¿De qué color es cada vela?",
-      "Verde",
-      "Roja",
-      "Abre en 100 y cierra en 106",
-      "Cierra por encima de la apertura. Cuerpo: 6.",
-      "Abre en 62 y cierra en 57",
-      "Cierra por debajo de la apertura. Cuerpo: 5.",
-      "Abre en 20, sube hasta 25 y cierra en 19",
-      "El máximo no decide el color: cierra por debajo de la apertura.",
-      "Abre en 40, baja hasta 35 y cierra en 41",
-      "Cayó mucho, pero cerró por encima de la apertura.",
-      "Abre en 75 y cierra en 80",
-      "El cierre queda arriba: verde.",
-      "Abre en 12 y cierra en 11",
-      "El cierre queda abajo: roja.",
-      "Pinta las seis velas.",
-      "**Verde:** cierra por encima de la apertura. **Roja:** por debajo. Las mechas llegan al máximo y al mínimo, pero **no deciden el color**.",
-      "Compara solo la apertura y el cierre.",
-      "¿El cierre queda arriba o abajo?"
-     ]
-    },
-    {
-     "prompt": "Ahora en un gráfico real: toca la vela verde con el cuerpo más grande, la que más subió de la apertura al cierre",
-     "ok": "Esa. Su cuerpo va de la apertura (abajo) al cierre (arriba); las líneas finas marcan el máximo y el mínimo.",
-     "ko": "Busca el rectángulo verde más alto, sin contar las líneas finas."
-    },
-    {
-     "title": "Un ejemplo con números",
-     "body": "Vela con O = 100, H = 108, L = 97, C = 106: es verde (106 > 100), su cuerpo mide 6 (de 100 a 106), la mecha superior 2 (de 106 a 108), la inferior 3 (de 97 a 100) y el rango total 11.",
-     "key": "El cuerpo va de la apertura al cierre; las mechas llegan al máximo y al mínimo.",
-     "tip": "Verde: el cierre está arriba. Roja: el cierre está abajo."
-    }
-   ]
-  },
   "u20l2": {
    "title": "Cuerpo y mechas: la batalla",
    "steps": [
@@ -393,65 +335,6 @@
   }
  },
  "questions": {
-  "u20l1-1": {
-   "prompt": "En una vela verde, empareja cada punto con su precio.",
-   "options": [
-    "Parte alta del cuerpo",
-    "Parte baja del cuerpo",
-    "Punta de la mecha superior",
-    "Punta de la mecha inferior"
-   ],
-   "explanation": "En una vela verde la apertura está abajo y el cierre arriba; en una roja, al revés. Las mechas siempre llegan al máximo y al mínimo.",
-   "right": [
-    "El máximo",
-    "El mínimo",
-    "La apertura",
-    "El cierre"
-   ]
-  },
-  "u20l1-3": {
-   "prompt": "Vela con apertura 40, máximo 44, mínimo 39 y cierre 43. ¿Cuánto mide el cuerpo?",
-   "options": [],
-   "explanation": "Del 40 de la apertura al 43 del cierre: 3 puntos.",
-   "unit": "puntos"
-  },
-  "u20l1-4": {
-   "prompt": "Vela verde con apertura 40, máximo 44, mínimo 39 y cierre 43. ¿Cuánto mide su mecha inferior?",
-   "options": [],
-   "explanation": "De la apertura (40), que es la parte baja del cuerpo, al mínimo (39): 1 punto.",
-   "unit": "puntos"
-  },
-  "u20l1-5": {
-   "prompt": "Vela roja con apertura 62, máximo 63, mínimo 55 y cierre 57. ¿Cuánto mide su cuerpo?",
-   "options": [],
-   "explanation": "De 62 a 57: 5 puntos. En una roja, la apertura está arriba y el cierre abajo.",
-   "unit": "puntos"
-  },
-  "u20l1-6": {
-   "prompt": "En una vela roja, la apertura está en la parte ____ del cuerpo.",
-   "options": [
-    "baja",
-    "media",
-    "exterior",
-    "alta"
-   ],
-   "explanation": "Si cierra por debajo de la apertura, la apertura queda arriba y el cierre abajo."
-  },
-  "u20l1-7": {
-   "prompt": "Toca la vela con la mecha inferior más larga.",
-   "options": [],
-   "explanation": "El precio bajó mucho durante esa sesión, pero se recuperó antes del cierre. Esa línea fina es el camino hasta el mínimo. (Amazon · velas diarias · febrero de 2025)"
-  },
-  "u20l1-8": {
-   "prompt": "Ordena de menor a mayor los precios de una vela verde con mechas.",
-   "options": [
-    "Apertura",
-    "Cierre",
-    "Máximo",
-    "Mínimo"
-   ],
-   "explanation": "Mínimo ≤ apertura < cierre ≤ máximo. En una roja, apertura y cierre se intercambian."
-  },
   "u20l2-1": {
    "prompt": "¿Qué indica una mecha superior muy larga?",
    "options": [

@@ -1,0 +1,661 @@
+{
+ "unit": {
+  "title": "La teva primera anàlisi",
+  "description": "Mira una empresa, un gràfic i la teva pròpia por amb criteri abans de comprar",
+  "section": "Inverteix des d’avui"
+ },
+ "lessons": {
+  "u16l1": {
+   "title": "Preu i valor no són el mateix",
+   "steps": [
+    {
+     "texts": [
+      "El que pagues i el que obtens",
+      "Una empresa guanya **2 €** per acció l'any i tu decideixes quant pagues per ella. Quants anys de beneficis trigues a recuperar el preu?",
+      "Pagues 40 € per l'acció i els seus beneficis creixen un 5 % l'any. En quants anys els beneficis sumen el que vas pagar?",
+      "En uns 5 anys",
+      "En uns 15 anys",
+      "En uns 40 anys",
+      "Sumant els seus beneficis, que creixen un 5 % l'any, trigues **15 anys** a reunir 40 €.",
+      "Sense tocar el creixement, busca el preu més alt amb què la recuperes en 10 anys.",
+      "A **25 €** la recuperes en 10 anys; a 80 €, en 23. **El preu és el que pagues i el valor, el que obtens**: la mateixa empresa pot ser una bona compra a un preu i una mala compra a un altre.",
+      "Pagues tant que trigaries dècades a recuperar-ho.",
+      "Créixer així molts anys seguits? Molt poques empreses ho aconsegueixen.",
+      "Això sí que és un preu raonable pel que guanya!",
+      "Mou el preu i mira quants anys trigues"
+     ]
+    },
+    {
+     "texts": [
+      "El senyor Mercat",
+      "Senyor Mercat",
+      "Benjamin Graham imaginava el mercat com un soci d'humor canviant que cada dia t'ofereix un preu.",
+      "Avui estic eufòric! Et compro la teva part per 40 €. Demà, qui sap.",
+      "Una setmana després, sense que el negoci hagi canviat gens…",
+      "Tot va fatal. Et venc la meva part per 12 €. Corre!",
+      "Calcules que l'empresa val uns 20 € per acció. Què fas?",
+      "Vendre: si ell està espantat, alguna cosa passarà",
+      "Vendries barat just quan el negoci no ha canviat.",
+      "Comprovar que el negoci segueix igual i, si és així, comprar",
+      "Això: el preu ha baixat, el valor no. El seu preu és una oferta, no una ordre.",
+      "Comprar amb tots els teus diners sense revisar res",
+      "Bon instint, però revisa la teva estimació i no ho posis tot.",
+      "A 12 €, una cosa que val 20 €: un **40 %** de marge de seguretat."
+     ]
+    },
+    {
+     "title": "Marge de seguretat",
+     "body": "«El preu és el que pagues; el valor és el que obtens» (Warren Buffett).\n\nL'**anàlisi fonamental** estudia el negoci (vendes, beneficis, deute, competència) per estimar quant **val**: respon a *què* comprar. La **tècnica** estudia el gràfic i intenta respondre a *quan*.\n\nSi estimes que una acció val 20 € i només la compres per sota de 15 €, tens un **25 % de marge de seguretat**: un coixí per si t'has equivocat en l'estimació.",
+     "key": "Una empresa excel·lent comprada massa cara pot ser una mala inversió.",
+     "tip": "El valor és una estimació; per això necessites coixí."
+    }
+   ]
+  },
+  "u17l1": {
+   "title": "El PER",
+   "steps": [
+    {
+     "texts": [
+      "PER 4: una ganga?",
+      "Hugo",
+      "He trobat una acció amb PER 4. És regalada!",
+      "Només pagues 4 anys de benefici. Hi poso tots els meus estalvis.",
+      "Què li dius?",
+      "Corre, que se t'escapa!",
+      "Gairebé res no té PER 4 sense motiu. Primer cal saber quin és.",
+      "Mira per què és tan baix abans de comprar",
+      "Bé. Un PER molt baix és una **pregunta**, no una resposta.",
+      "Compra'n només una mica, per si de cas",
+      "Prudent, però continues sense saber què compres.",
+      "D'acord… Fa cinc anys que les seves vendes cauen.",
+      "Aquí ho tens: el mercat paga poc perquè espera que guanyi **menys**.",
+      "Un PER baix pot ser declivi o un benefici puntual. Un PER alt, potser creixement."
+     ]
+    },
+    {
+     "texts": [
+      "Quants anys de benefici pagues?",
+      "Aquesta empresa guanya **2 € per acció** l'any. Mou el preu de l'acció i mira què passa amb el **PER**.",
+      "Si el benefici no canvia i el preu passa de 30 € a 60 €, què li passa al PER?",
+      "Es queda igual",
+      "Es duplica",
+      "Baixa a la meitat",
+      "PER = preu ÷ benefici per acció: 60 ÷ 2 = **30**, el doble que 30 ÷ 2 = 15.",
+      "Busca el preu amb què pagues 20 anys de benefici.",
+      "**PER = preu ÷ benefici per acció**: els anys de benefici que pagues. Panadería Global (15 € i 0,975 € de BPA) té PER 15,4, i el seu invers, la **rendibilitat per benefici**, és un 6,5 %.",
+      "Pagues 30 anys de benefici o més. Creixerà prou per merèixer-ho?",
+      "PER molt baix… ganga o empresa en problemes?",
+      "Mou el preu i mira el PER"
+     ]
+    },
+    {
+     "texts": [
+      "PER alt, sempre car?",
+      "Ara cotitza a **60 €**: PER 30. Sense créixer, trigues 30 anys a recuperar el preu amb els beneficis. I si creixen?",
+      "Si el benefici creix un 10 % l'any, quant trigues a recuperar els 60 €?",
+      "Uns 15 anys",
+      "Uns 27 anys",
+      "Continuen sent 30 anys",
+      "Amb un 10 % anual, els beneficis sumen 60 € en **15 anys**: la meitat de temps.",
+      "Amb el preu a 60 €, busca el creixement que et retorna el preu en 15 anys o menys.",
+      "**Un PER alt no és car** si el benefici creix de pressa, i **un PER baix no és barat** si s'ha d'encongir. Compara'l sempre amb el seu creixement, la seva història i el seu sector.",
+      "Deu anys o menys! Créixer de pressa abarateix un PER alt.",
+      "Sense créixer, PER 30 són 30 anys. Apuja el creixement.",
+      "Apuja el creixement i mira els anys"
+     ]
+    },
+    {
+     "title": "Històric i avançat",
+     "body": "Amb el benefici de l'últim any és el **PER històric**; amb el previst, el **PER avançat**. Si el benefici ha de créixer molt, l'avançat serà més baix.\n\nLa mitjana del mercat volta els **15-17**. Compara'l amb la seva història i el seu sector: un banc a PER 8 i una empresa de programari a PER 35 poden estar «al seu preu».",
+     "key": "Un PER de 10 pot ser car i un de 30, barat: depèn del que guanyarà l'empresa."
+    }
+   ]
+  },
+  "u20l1": {
+   "title": "Anatomia d'una espelma",
+   "steps": [
+    {
+     "texts": [
+      "Vermell és pujar",
+      "Mei",
+      "La Mei, una amiga de Xangai, t'ensenya la seva app de borsa.",
+      "Avui la meva acció està en vermell. Que bé, ha pujat!",
+      "Què passa aquí?",
+      "A la Xina el vermell sol voler dir pujada",
+      "Això. A la Xina, el Japó i Corea els colors solen anar al revés.",
+      "S'ha equivocat: vermell és baixar",
+      "Aquí sí, però a la seva app no. Mira sempre la llegenda.",
+      "La seva app està espatllada",
+      "No està espatllada: allà el vermell sol significar pujada.",
+      "Les espelmes van néixer al mercat d'arròs de **Dojima** (Osaka), al segle XVIII.",
+      "La tradició les atribueix al comerciant Munehisa Homma.",
+      "Steve Nison les va portar a Occident el 1991. Avui són el gràfic per defecte."
+     ]
+    },
+    {
+     "texts": [
+      "Verda o vermella?",
+      "El **cos** va de l'obertura al tancament; les **metxes**, fins al màxim i el mínim. De quin color és cada espelma?",
+      "Verda",
+      "Vermella",
+      "Obre a 100 i tanca a 106",
+      "Tanca per sobre de l'obertura. Cos: 6.",
+      "Obre a 62 i tanca a 57",
+      "Tanca per sota de l'obertura. Cos: 5.",
+      "Obre a 20, puja fins a 25 i tanca a 19",
+      "El màxim no decideix el color: tanca per sota de l'obertura.",
+      "Obre a 40, baixa fins a 35 i tanca a 41",
+      "Va caure molt, però va tancar per sobre de l'obertura.",
+      "Obre a 75 i tanca a 80",
+      "El tancament queda a dalt: verda.",
+      "Obre a 12 i tanca a 11",
+      "El tancament queda a baix: vermella.",
+      "Pinta les sis espelmes.",
+      "**Verda:** tanca per sobre de l'obertura. **Vermella:** per sota. Les metxes arriben al màxim i al mínim, però **no decideixen el color**.",
+      "Compara només l'obertura i el tancament.",
+      "El tancament queda a dalt o a baix?"
+     ]
+    },
+    {
+     "prompt": "Ara en un gràfic real: toca l'espelma verda amb el cos més gran, la que més va pujar de l'obertura al tancament",
+     "ok": "Aquesta. El seu cos va de l'obertura (a baix) al tancament (a dalt); les línies fines marquen el màxim i el mínim.",
+     "ko": "Busca el rectangle verd més alt, sense comptar les línies fines."
+    },
+    {
+     "title": "Un exemple amb números",
+     "body": "Espelma amb O = 100, H = 108, L = 97, C = 106: és verda (106 > 100), el cos mesura 6 (de 100 a 106), la metxa superior 2 (de 106 a 108), la inferior 3 (de 97 a 100) i el rang total 11.",
+     "key": "El cos va de l'obertura al tancament; les metxes arriben al màxim i al mínim.",
+     "tip": "Verda: el tancament és a dalt. Vermella: el tancament és a baix."
+    }
+   ]
+  },
+  "u21l1": {
+   "title": "Suports i resistències",
+   "steps": [
+    {
+     "texts": [
+      "La memòria del mercat",
+      "Pablo",
+      "Vaig comprar a 50 € i l’acció es va enfonsar fins a 40 €.",
+      "Ara torna a ser a 50 €. Només vull sortir sense perdre.",
+      "Com en Pablo, molta gent va comprar a 50 € i fa mesos que espera.",
+      "Què sol passar quan el preu torna a 50 €?",
+      "Res: 50 € és un preu com un altre",
+      "És just on molts atrapats volen sortir: sol aparèixer **venda**.",
+      "Apareix venda: fa de resistència",
+      "Això mateix! Molts hi venen per «recuperar el que és seu». Això és una **resistència**.",
+      "Segur que puja amb força",
+      "Pot trencar-la, però costa: a 50 € hi ha venedors esperant.",
+      "Un **suport** és el contrari: on abans van aparèixer compradors."
+     ]
+    },
+    {
+     "texts": [
+      "Stop sota el suport",
+      "Espelmes reals d’Alphabet: compres a l’últim preu. El **suport** queda una mica més d’un 2 % per sota i la **resistència**, gairebé un 5 % per sobre.",
+      "On posaries l’stop d’aquesta compra?",
+      "Just per sobre del suport, per perdre poc",
+      "Una mica per sota del suport",
+      "Sense stop: el suport aguantarà",
+      "Si el preu perd el suport, la teva idea de compra deixa de valer: l’stop va a l’altra banda. Per sobre, qualsevol baixada normal et treu.",
+      "Posa l’stop sota el suport i l’objectiu abans de la resistència. Després mira què va passar.",
+      "L’stop va **a l’altra banda del suport**: si es perd, la idea ja no val. I l’objectiu, **abans de la resistència**, on sol aparèixer venda.",
+      "Objectiu! El suport va aguantar i el teu stop no va saltar.",
+      "Ha saltat l’stop. Era per sota del suport o per sobre?",
+      "Aquest stop queda per sobre del suport: qualsevol metxa el fa saltar.",
+      "Mou l’stop i l’objectiu, i prem «Veure què va passar»"
+     ]
+    },
+    {
+     "title": "Com traçar-los",
+     "body": "• Millor en diari o setmanal.\n• Busca zones on el preu hagi girat almenys **2–3 vegades**.\n• Traça una **zona** (un rectangle estret), no una línia al cèntim.\n• Més tocs i més volum = més rellevant. Els nivells antics i llunyans pesen menys.\n• Els nombres rodons i els màxims històrics també atrauen ordres.",
+     "key": "Un suport és on abans van aparèixer compradors; una resistència, on van aparèixer venedors.",
+     "tip": "Traça’ls com a zones, no com a línies al mil·límetre."
+    }
+   ]
+  },
+  "u24l3": {
+   "title": "La regla de l'1 %",
+   "steps": [
+    {
+     "texts": [
+      "Arriscar no és invertir",
+      "Compte de **10.000 €**. La regla de l'1 %: si salta l'stop, perds com a màxim **100 €**.",
+      "Vol dir que només pots invertir 100 €?",
+      "Sí: 100 € i ni un euro més",
+      "No: el que inverteixes depèn d'on va l'stop",
+      "No: pots invertir el que vulguis, sense stop",
+      "Amb l'stop al 2 %, pots invertir **5.000 €** i, si salta, perds 100 €. Risc no és el mateix que quantitat invertida.",
+      "Amb el risc a l'1 %, busca l'stop que deixa la posició en 2.000 €.",
+      "**Mida = risc ÷ distància a l'stop.** Stop a prop, compres més; stop lluny, compres menys. La pèrdua màxima és sempre la mateixa.",
+      "Més d'un 2 % per operació és molt, sobretot quan comences.",
+      "Amb l'stop tan a prop, hi poses tot el compte. Segur?",
+      "Stop lluny: compres poc, però arrisques el mateix.",
+      "Deixa l'1 % i mou l'stop"
+     ]
+    },
+    {
+     "texts": [
+      "«N'estic seguríssim»",
+      "Bruno",
+      "Tinc 8.000 € i aquesta operació és segura. Hi arrisco un 10 %.",
+      "Què li recomanes?",
+      "Endavant: si n'està segur, no hi ha risc",
+      "Si falla, perd **800 €** de cop. La seva seguretat no canvia res.",
+      "Que mantingui l'1 %: 80 € de risc, com en qualsevol altra",
+      "Això mateix! Ningú no sap quina operació sortirà bé: el risc és el mateix en totes.",
+      "Que arrisqui el 10 %, però sense stop",
+      "Sense stop, la pèrdua no té límit. Encara pitjor.",
+      "I si de debò surt bé?",
+      "Guanyarà una mica menys. Però continuarà en joc quan en falli una altra."
+     ]
+    },
+    {
+     "title": "Límits que se sumen",
+     "body": "La majoria de professionals arrisca entre el **0,5 % i el 2 %** per operació; per començar, un 1 % o menys. A més, convé limitar el **risc total obert** (no més del 5–6 % alhora) i el **pes de cada posició** (E-Trading avisa a partir del 20 %).",
+     "key": "Risc no és el mateix que quantitat invertida: pots invertir un 16 % i arriscar un 1 %.",
+     "tip": "Primer decideixes on t'equivoques. Després, quantes accions compres."
+    }
+   ]
+  },
+  "u27l4": {
+   "title": "FOMO i efecte ramat",
+   "steps": [
+    {
+     "texts": [
+      "Viu la febre de les puntcom",
+      "Desembre del 1998. Internet ho canviarà tot i els teus amics només parlen de tecnològiques. Poses **10.000 €** al Nasdaq 100, amb dades reals.",
+      "Arriba fins al final, tant si vens com si no.",
+      "Va pujar un **156 %** en 15 mesos; després va caure un **83 %** des del màxim i no el va recuperar fins al 2015. **Quan tothom parla d'una cosa que «només puja», el risc sol ser màxim.**",
+      "Has venut. Mira què passa després…",
+      "De l'eufòria a l'enfonsament. I ningú no va avisar del sostre.",
+      "Més del doble! Ara tothom hi vol entrar.",
+      "Prem el botó per començar. Pots vendre quan vulguis"
+     ]
+    },
+    {
+     "texts": [
+      "«Entra-hi avui!»",
+      "Àlex",
+      "Aquesta acció ha pujat un **200 %** en dues setmanes.",
+      "Tot el grup ja hi és. Entra-hi avui o t'ho perdràs!",
+      "No és al teu pla. Què fas?",
+      "Compro ja, abans que pugi més",
+      "Això és **FOMO**: compres sense saber què fa l'empresa, després d'una pujada enorme.",
+      "Espero 48 hores i em pregunto si la compraria si ningú no en parlés",
+      "Això mateix! Si d'aquí a dos dies continua tenint sentit, ho decideixes amb calma.",
+      "Demano un préstec per entrar-hi fort",
+      "Deute i FOMO: la recepta clàssica de les pitjors pèrdues.",
+      "Quan **tothom** ja ha comprat, no queda ningú que continuï empenyent.",
+      "La urgència és el combustible del FOMO. Treu-li temps i s'apaga."
+     ]
+    },
+    {
+     "title": "Senyals d'alarma",
+     "body": "• T'assabentes per amics o xarxes que no havien invertit mai.\n• El motiu és que «**puja molt**», no què fa l'actiu.\n• Sents **urgència**: «si no compro avui, m'ho perdo».\n• Es diu que «**aquesta vegada és diferent**».\n\nAntídots: la **regla de les 48 hores** i un **límit d'especulació** escrit al teu pla.",
+     "key": "Quan tothom parla d'una cosa que «només puja», el risc sol ser màxim.",
+     "tip": "Si el teu perruquer et recomana una criptomoneda, potser ja és tard."
+    }
+   ]
+  },
+  "h3r": {
+   "title": "Repàs de la unitat",
+   "steps": []
+  },
+  "s0boss": {
+   "title": "Repte final: Inverteix des d’avui",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u16l1-1": {
+   "prompt": "A què intenta respondre l'anàlisi fonamental?",
+   "options": [
+    "Quan entrar exactament",
+    "Què comprar i si és car o barat",
+    "Quina espelma ve demà"
+   ],
+   "explanation": "La tècnica intenta respondre a quan; la fonamental, a què i a quin preu."
+  },
+  "u16l1-2": {
+   "prompt": "Estimes que una acció val 40 € i cotitza a 30 €. Quin marge de seguretat tens sobre el valor estimat?",
+   "options": [],
+   "explanation": "(40 − 30) ÷ 40 = 25 %.",
+   "unit": "%"
+  },
+  "u16l1-3": {
+   "prompt": "Vols un marge de seguretat del 30 % sobre un valor estimat de 50 €. Per sota de quin preu compraries?",
+   "options": [],
+   "explanation": "50 × (1 − 0,30) = 35 €.",
+   "unit": "€"
+  },
+  "u16l1-6": {
+   "prompt": "La diferència entre el valor estimat i el preu que pagues s'anomena marge de ____.",
+   "options": [
+    "benefici",
+    "maniobra",
+    "error",
+    "seguretat"
+   ],
+   "explanation": "Et protegeix si t'equivoques en l'estimació."
+  },
+  "u16l1-7": {
+   "prompt": "Parla de preu o de valor?",
+   "options": [
+    "L'empresa generarà uns 100 M€ de caixa l'any",
+    "Té una marca que li permet apujar preus",
+    "Capitalitza 1.500 M€ a borsa",
+    "L'acció va tancar ahir a 15,20 €",
+    "Ha pujat un 8 % aquesta setmana"
+   ],
+   "explanation": "El preu el veus a la pantalla; el valor surt d'analitzar el negoci.",
+   "right": [
+    "Preu",
+    "Valor"
+   ]
+  },
+  "u16l1-9": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "És clar, ja és a terra",
+    "Compra'n el doble per fer mitjana",
+    "Primer mira per què ha caigut i quant val el negoci: barat no és el mateix que infravalorat"
+   ],
+   "explanation": "Un preu baix només és una oportunitat si és per sota del valor.",
+   "feedback": [
+    "El que ha caigut un 60 % pot caure un altre 60 %.",
+    "Doblar sense analitzar és apostar més a cegues.",
+    "D'acord… I si va caure perquè el negoci s'ha trencat? Llavors el valor també va baixar."
+   ],
+   "lines": [
+    "Aquesta acció ha caigut un 60 %, ja no pot baixar més!",
+    "En compraré 🤑"
+   ]
+  },
+  "u17l1-1": {
+   "prompt": "Una acció cotitza a 30 € i el seu BPA és de 2 €. Quin és el seu PER?",
+   "options": [],
+   "explanation": "30 ÷ 2 = 15: pagues 15 anys del benefici actual.",
+   "unit": "vegades"
+  },
+  "u17l1-2": {
+   "prompt": "Una empresa capitalitza 4.000 M€ i guanya 250 M€ l'any. Quin és el seu PER?",
+   "options": [],
+   "explanation": "4.000 ÷ 250 = 16. És igual fer-ho per acció o amb l'empresa sencera.",
+   "unit": "vegades"
+  },
+  "u17l1-3": {
+   "prompt": "Una acció té un PER de 20. Quina és la seva rendibilitat per benefici?",
+   "options": [],
+   "explanation": "1 ÷ 20 = 5 %.",
+   "unit": "%"
+  },
+  "u17l1-4": {
+   "prompt": "PER = preu ÷ ____.",
+   "options": [
+    "dividend",
+    "deute",
+    "vendes",
+    "BPA"
+   ],
+   "explanation": "Preu de l'acció entre el benefici per acció."
+  },
+  "u17l1-5": {
+   "prompt": "Si el BPA es duplica i el preu no es mou, el PER es redueix a ____.",
+   "options": [
+    "la quarta part",
+    "la desena part",
+    "la tercera part",
+    "la meitat"
+   ],
+   "explanation": "El mateix preu entre el doble de benefici dona la meitat de PER."
+  },
+  "u17l1-7": {
+   "prompt": "Un any, una empresa ven la seu i el benefici se li triplica. El PER cau de 18 a 6. Què ha passat?",
+   "options": [
+    "El PER està distorsionat per un benefici puntual",
+    "S'ha convertit en una ganga",
+    "El negoci ha millorat molt"
+   ],
+   "explanation": "Aquest benefici no es repetirà: cal mirar el benefici recurrent."
+  },
+  "u17l1-8": {
+   "prompt": "Una acció a 60 € té un BPA de 3 € aquest any i s'espera un BPA de 4 € el que ve. Quin és el seu PER avançat?",
+   "options": [],
+   "explanation": "60 ÷ 4 = 15. L'històric és 60 ÷ 3 = 20.",
+   "unit": "vegades"
+  },
+  "u20l1-1": {
+   "prompt": "En una espelma verda, relaciona cada punt amb el seu preu.",
+   "options": [
+    "Part alta del cos",
+    "Part baixa del cos",
+    "Punta de la metxa superior",
+    "Punta de la metxa inferior"
+   ],
+   "explanation": "En una espelma verda l'obertura és a baix i el tancament a dalt; en una de vermella, al revés. Les metxes sempre arriben al màxim i al mínim.",
+   "right": [
+    "El màxim",
+    "El mínim",
+    "L'obertura",
+    "El tancament"
+   ]
+  },
+  "u20l1-3": {
+   "prompt": "Espelma amb obertura 40, màxim 44, mínim 39 i tancament 43. Quant mesura el cos?",
+   "options": [],
+   "explanation": "Del 40 de l'obertura al 43 del tancament: 3 punts.",
+   "unit": "punts"
+  },
+  "u20l1-4": {
+   "prompt": "Espelma verda amb obertura 40, màxim 44, mínim 39 i tancament 43. Quant mesura la metxa inferior?",
+   "options": [],
+   "explanation": "De l'obertura (40), que és la part baixa del cos, al mínim (39): 1 punt.",
+   "unit": "punts"
+  },
+  "u20l1-5": {
+   "prompt": "Espelma vermella amb obertura 62, màxim 63, mínim 55 i tancament 57. Quant mesura el cos?",
+   "options": [],
+   "explanation": "De 62 a 57: 5 punts. En una vermella, l'obertura és a dalt i el tancament a baix.",
+   "unit": "punts"
+  },
+  "u20l1-6": {
+   "prompt": "En una espelma vermella, l'obertura és a la part ____ del cos.",
+   "options": [
+    "baixa",
+    "mitjana",
+    "exterior",
+    "alta"
+   ],
+   "explanation": "Si tanca per sota de l'obertura, l'obertura queda a dalt i el tancament a baix."
+  },
+  "u20l1-7": {
+   "prompt": "Toca l'espelma amb la metxa inferior més llarga.",
+   "options": [],
+   "explanation": "El preu va baixar molt durant aquella sessió, però es va recuperar abans del tancament. Aquesta línia fina és el camí fins al mínim. (Amazon · espelmes diàries · febrer del 2025)"
+  },
+  "u20l1-8": {
+   "prompt": "Ordena de més baix a més alt els preus d'una espelma verda amb metxes.",
+   "options": [
+    "Obertura",
+    "Tancament",
+    "Màxim",
+    "Mínim"
+   ],
+   "explanation": "Mínim ≤ obertura < tancament ≤ màxim. En una vermella, obertura i tancament s'intercanvien."
+  },
+  "u21l1-1": {
+   "prompt": "En aquest tram lateral, toca el sostre: el tancament més alt, on van aparèixer venedors (Microsoft · tancaments cada 3 sessions · agost–octubre del 2024)",
+   "options": [],
+   "explanation": "Aquella zona fa de resistència: la pujada s’hi va frenar i el preu va tornar a baixar."
+  },
+  "u21l1-2": {
+   "prompt": "Ara el terra: toca el tancament més baix, on van aparèixer compradors (NVIDIA · tancaments cada 3 sessions · desembre del 2025 – febrer del 2026)",
+   "options": [],
+   "explanation": "Aquella zona va fer de suport: la caiguda es va frenar i el preu va rebotar amb força."
+  },
+  "u21l1-3": {
+   "prompt": "Has comprat a l’últim preu. Col·loca l’stop una mica per sota del suport: el mínim recent.",
+   "options": [],
+   "explanation": "Si el preu perd el suport, la idea de compra deixa de valer. L’stop va una mica per sota, no just a sobre de la línia, perquè una metxa no el faci saltar."
+  },
+  "u21l1-6": {
+   "prompt": "Què fa més rellevant un suport? Marca-ho tot.",
+   "options": [
+    "Que sigui recent",
+    "Que ho digui un anunci a les xarxes",
+    "Que hi hagués molt de volum en aquella zona",
+    "Que el preu hi hagi girat diverses vegades"
+   ],
+   "explanation": "Més tocs, més volum i més proximitat en el temps. Els nivells antics i llunyans pesen menys."
+  },
+  "u21l1-7": {
+   "prompt": "Busca suports i resistències en aquestes 30 espelmes. Puja o baixa en les 10 sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Un suport o una resistència diuen on pot aparèixer compra o venda, no què passarà. Serveixen sobretot per saber on t’has equivocat.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u21l1-10": {
+   "prompt": "Un suport és a la zona dels 20 €. Poses l’stop un 3 % per sota. A quin preu va?",
+   "options": [],
+   "explanation": "20 × 0,97 = 19,40 €. Deixar una mica de marge evita que una simple metxa et tregui.",
+   "unit": "€"
+  },
+  "u24l3-2": {
+   "prompt": "La teva cartera simulada val 5.000 €. Amb la regla de l'1 %, quant pots perdre com a màxim en una operació?",
+   "options": [],
+   "explanation": "5.000 × 0,01 = 50 €.",
+   "unit": "€"
+  },
+  "u24l3-3": {
+   "prompt": "Tens 20.000 €, arrisques un 1 %, compres a 80 € i poses l'stop a 76 €. Quantes accions compres?",
+   "options": [],
+   "explanation": "20.000 × 1 % = 200 €. Distància a l'stop: 4 €. 200 ÷ 4 = 50 accions.",
+   "unit": "accions"
+  },
+  "u24l3-4": {
+   "prompt": "En l'operació anterior (50 accions a 80 € amb 20.000 € de capital), quin percentatge del teu capital has invertit?",
+   "options": [],
+   "explanation": "50 × 80 = 4.000 €; 4.000 ÷ 20.000 = 20 %. Inverteixes un 20 % però només arrisques un 1 %.",
+   "unit": "%"
+  },
+  "u24l3-6": {
+   "prompt": "Tens 10.000 €. Respecta la regla de l'1 %?",
+   "options": [
+    "Si salta l'stop perdo 150 €",
+    "Inverteixo 1.000 € sense stop",
+    "Si salta l'stop perdo 500 €",
+    "Si salta l'stop perdo 100 €",
+    "Si salta l'stop perdo 80 €"
+   ],
+   "explanation": "Sense stop, el risc és tot el que has invertit: 1.000 € és un 10 % del compte.",
+   "right": [
+    "Sí que la respecta",
+    "No la respecta"
+   ]
+  },
+  "u24l3-8": {
+   "prompt": "Quins límits de risc proposa el curs per a qui comença? Marca'ls tots.",
+   "options": [
+    "Vigilar el pes de cada posició (avís a partir del 20 %)",
+    "Fer servir com a mínim un palanquejament 1:10",
+    "No més del 5–6 % de risc obert alhora",
+    "Arriscar un 1 % o menys per operació"
+   ],
+   "explanation": "El palanquejament no forma part de la regla: mentre aprens, millor sense."
+  },
+  "u24l3-10": {
+   "prompt": "Primer decideixes on va ____; després, quantes accions compres.",
+   "options": [
+    "l'objectiu",
+    "el dividend",
+    "el palanquejament",
+    "l'stop"
+   ],
+   "explanation": "La mida surt de la distància a l'stop, mai a l'inrevés."
+  },
+  "u27l4-1": {
+   "prompt": "Marca els missatges que intenten activar el teu FOMO per vendre't alguna cosa o enganyar-te.",
+   "options": [
+    "Recordatori: la teva aportació periòdica de 100 € s'executarà el dia 5.",
+    "Tothom està guanyant amb aquesta acció. Fica-hi els estalvis, no t'ho pensis.",
+    "Només queden 3 places al meu grup de senyals. Aquesta vegada és diferent, no et quedis fora.",
+    "Consulta si una entitat està autoritzada abans d'invertir-hi.",
+    "🚀 Aquesta cripto ha pujat un 300 % en un mes. Demà serà tard. Entra JA!"
+   ],
+   "explanation": "Urgència, «aquesta vegada és diferent» i «tothom guanya» són els senyals clàssics del FOMO.",
+   "senders": [
+    "El teu bròker",
+    "El teu cosí",
+    "Influencer",
+    "CNMV",
+    "Grup «Lambo 2030»"
+   ]
+  },
+  "u27l4-2": {
+   "prompt": "Novembre del 2021: el bitcoin és en màxims, surt a tots els telenotícies i els teus amics que no havien invertit mai estan comprant. Què va fer després?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "El bitcoin va caure prop d'un 75 % l'any següent. El moment de màxima eufòria sol ser el de màxim risc. Recorda: en cripto es pot perdre la totalitat del que has invertit.",
+   "horizon": "l'any següent"
+  },
+  "u27l4-3": {
+   "prompt": "Aquest actiu ha pujat amb força i a les xarxes tothom en parla. Puja o baixa en les sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Ni l'eufòria a les xarxes ni les pujades anteriors et diuen què vindrà. Per això existeix la regla de les 48 hores.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u27l4-6": {
+   "prompt": "Quins són senyals d'alarma d'una bombolla? Marca'ls tots.",
+   "options": [
+    "L'únic motiu és que puja molt",
+    "Beneficis creixents i estables durant anys",
+    "Gent sense experiència que la recomana",
+    "«Aquesta vegada és diferent»"
+   ],
+   "explanation": "Uns beneficis estables no són senyal de bombolla: ho són l'eufòria i la falta de motius."
+  },
+  "u27l4-9": {
+   "prompt": "Relaciona cada bombolla amb la seva època.",
+   "options": [
+    "Puntcom",
+    "Borsa japonesa",
+    "Meme stocks",
+    "Criptomonedes (dues vegades)"
+   ],
+   "explanation": "Canvien els actius; el FOMO és sempre el mateix.",
+   "right": [
+    "1989",
+    "2017 i 2021",
+    "2021",
+    "1999–2000"
+   ]
+  },
+  "u27l4-10": {
+   "prompt": "Què li dius a la Lumi?",
+   "options": [
+    "Fica-hi el fons d'emergència",
+    "Espera 48 hores i pensa si la compraries si ningú en parlés",
+    "Entra ja, que vola"
+   ],
+   "explanation": "La pressa és el senyal: quan sents urgència, atura't.",
+   "feedback": [
+    "Això és l'única cosa que no es toca mai. I en cripto es pot perdre tot el que has invertit.",
+    "D'acord… Si d'aquí a dos dies continua tenint sentit, la poso dins el meu límit d'especulació. Si no, res.",
+    "Si entro per por de quedar-me fora, el més probable és que compri a prop del sostre."
+   ],
+   "lines": [
+    "Tothom a TikTok està guanyant amb una moneda nova 🐶",
+    "Si no hi entro avui, m'ho perdo."
+   ]
+  }
+ }
+}

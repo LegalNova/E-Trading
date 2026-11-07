@@ -98,50 +98,6 @@
     }
    ]
   },
-  "u24l3": {
-   "title": "La regla de l'1 %",
-   "steps": [
-    {
-     "texts": [
-      "Arriscar no és invertir",
-      "Compte de **10.000 €**. La regla de l'1 %: si salta l'stop, perds com a màxim **100 €**.",
-      "Vol dir que només pots invertir 100 €?",
-      "Sí: 100 € i ni un euro més",
-      "No: el que inverteixes depèn d'on va l'stop",
-      "No: pots invertir el que vulguis, sense stop",
-      "Amb l'stop al 2 %, pots invertir **5.000 €** i, si salta, perds 100 €. Risc no és el mateix que quantitat invertida.",
-      "Amb el risc a l'1 %, busca l'stop que deixa la posició en 2.000 €.",
-      "**Mida = risc ÷ distància a l'stop.** Stop a prop, compres més; stop lluny, compres menys. La pèrdua màxima és sempre la mateixa.",
-      "Més d'un 2 % per operació és molt, sobretot quan comences.",
-      "Amb l'stop tan a prop, hi poses tot el compte. Segur?",
-      "Stop lluny: compres poc, però arrisques el mateix.",
-      "Deixa l'1 % i mou l'stop"
-     ]
-    },
-    {
-     "texts": [
-      "«N'estic seguríssim»",
-      "Bruno",
-      "Tinc 8.000 € i aquesta operació és segura. Hi arrisco un 10 %.",
-      "Què li recomanes?",
-      "Endavant: si n'està segur, no hi ha risc",
-      "Si falla, perd **800 €** de cop. La seva seguretat no canvia res.",
-      "Que mantingui l'1 %: 80 € de risc, com en qualsevol altra",
-      "Això mateix! Ningú no sap quina operació sortirà bé: el risc és el mateix en totes.",
-      "Que arrisqui el 10 %, però sense stop",
-      "Sense stop, la pèrdua no té límit. Encara pitjor.",
-      "I si de debò surt bé?",
-      "Guanyarà una mica menys. Però continuarà en joc quan en falli una altra."
-     ]
-    },
-    {
-     "title": "Límits que se sumen",
-     "body": "La majoria de professionals arrisca entre el **0,5 % i el 2 %** per operació; per començar, un 1 % o menys. A més, convé limitar el **risc total obert** (no més del 5–6 % alhora) i el **pes de cada posició** (E-Trading avisa a partir del 20 %).",
-     "key": "Risc no és el mateix que quantitat invertida: pots invertir un 16 % i arriscar un 1 %.",
-     "tip": "Primer decideixes on t'equivoques. Després, quantes accions compres."
-    }
-   ]
-  },
   "u24l4": {
    "title": "La mida de la posició",
    "steps": [
@@ -437,59 +393,6 @@
     "20 %"
    ],
    "explanation": "5 × 20 % = 100 %: el palanquejament accelera les pèrdues grans."
-  },
-  "u24l3-2": {
-   "prompt": "La teva cartera simulada val 5.000 €. Amb la regla de l'1 %, quant pots perdre com a màxim en una operació?",
-   "options": [],
-   "explanation": "5.000 × 0,01 = 50 €.",
-   "unit": "€"
-  },
-  "u24l3-3": {
-   "prompt": "Tens 20.000 €, arrisques un 1 %, compres a 80 € i poses l'stop a 76 €. Quantes accions compres?",
-   "options": [],
-   "explanation": "20.000 × 1 % = 200 €. Distància a l'stop: 4 €. 200 ÷ 4 = 50 accions.",
-   "unit": "accions"
-  },
-  "u24l3-4": {
-   "prompt": "En l'operació anterior (50 accions a 80 € amb 20.000 € de capital), quin percentatge del teu capital has invertit?",
-   "options": [],
-   "explanation": "50 × 80 = 4.000 €; 4.000 ÷ 20.000 = 20 %. Inverteixes un 20 % però només arrisques un 1 %.",
-   "unit": "%"
-  },
-  "u24l3-6": {
-   "prompt": "Tens 10.000 €. Respecta la regla de l'1 %?",
-   "options": [
-    "Si salta l'stop perdo 150 €",
-    "Inverteixo 1.000 € sense stop",
-    "Si salta l'stop perdo 500 €",
-    "Si salta l'stop perdo 100 €",
-    "Si salta l'stop perdo 80 €"
-   ],
-   "explanation": "Sense stop, el risc és tot el que has invertit: 1.000 € és un 10 % del compte.",
-   "right": [
-    "Sí que la respecta",
-    "No la respecta"
-   ]
-  },
-  "u24l3-8": {
-   "prompt": "Quins límits de risc proposa el curs per a qui comença? Marca'ls tots.",
-   "options": [
-    "Vigilar el pes de cada posició (avís a partir del 20 %)",
-    "Fer servir com a mínim un palanquejament 1:10",
-    "No més del 5–6 % de risc obert alhora",
-    "Arriscar un 1 % o menys per operació"
-   ],
-   "explanation": "El palanquejament no forma part de la regla: mentre aprens, millor sense."
-  },
-  "u24l3-10": {
-   "prompt": "Primer decideixes on va ____; després, quantes accions compres.",
-   "options": [
-    "l'objectiu",
-    "el dividend",
-    "el palanquejament",
-    "l'stop"
-   ],
-   "explanation": "La mida surt de la distància a l'stop, mai a l'inrevés."
   },
   "u24l4-1": {
    "prompt": "Capital 10.000 €, risc 1 %, entrada 50 €, stop 47 €. Quantes accions compres? (arrodoneix cap avall)",

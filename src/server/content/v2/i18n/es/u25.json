@@ -49,50 +49,6 @@
     }
    ]
   },
-  "u25l2": {
-   "title": "Aportaciones periódicas (DCA)",
-   "steps": [
-    {
-     "texts": [
-      "El precio baja… y vuelve",
-      "Irene",
-      "Aporto 100 € cada mes a un fondo, pase lo que pase.",
-      "En cinco meses, el precio pasa por 10 €, 8 €, 5 €, 8 € y vuelve a 10 €.",
-      "Ha vuelto a donde estaba. Supongo que estoy igual que al principio.",
-      "¿Cómo está Irene?",
-      "Igual: el precio acabó donde empezó",
-      "No: cuando estaba barato, sus 100 € compraron más participaciones.",
-      "Ganando: compró más participaciones cuando estaba barato",
-      "¡Eso! Puso 500 € y ahora tiene 650 €: un **30 %** más.",
-      "Perdiendo: compró en plena caída",
-      "Al revés: en la caída, el mismo dinero le dio más participaciones.",
-      "Invertir **la misma cantidad cada mes** se llama DCA. Las caídas juegan a tu favor."
-     ]
-    },
-    {
-     "texts": [
-      "¿De golpe o poco a poco?",
-      "Tienes **12.000 €** para el S&P 500, con datos reales. ¿Todo el primer mes o repartido en 12? Mira cuánto tendrías 10 años después.",
-      "Mirando todos los meses de inicio posibles, ¿qué gana más veces a 10 años?",
-      "Repartir, casi siempre",
-      "Todo de golpe, unas tres de cada cuatro veces",
-      "Mitad y mitad",
-      "Todo de golpe gana en el **74 %** de los meses de inicio. Vanguard, con el MSCI World de 1976 a 2022, lo vio un 68 % de las veces tras un año.",
-      "Busca un mes de inicio en el que repartir saliera mejor.",
-      "**De golpe suele ganar**, porque el mercado sube más veces de las que baja. **Repartir** gana justo antes de una caída y reduce el arrepentimiento, pero nadie sabe cuándo llega.",
-      "¡Aquí ganó repartir! Mira lo que vino justo después: una caída.",
-      "De golpe gana por mucho: el mercado subió desde el principio.",
-      "Mueve el mes de inicio. Prueba justo antes de una crisis"
-     ]
-    },
-    {
-     "title": "Con una suma grande",
-     "body": "Una solución intermedia razonable: repartirla en **6–12 meses** con aportaciones automáticas.\n\nLo que no funciona es esperar «a que baje»: nadie sabe cuándo es el suelo.",
-     "key": "De golpe suele ganar más veces; poco a poco reduce el arrepentimiento. Lo importante es empezar y no parar.",
-     "tip": "Invertir cada mes es como subir una escalera: lo que importa es no pararse."
-    }
-   ]
-  },
   "u25l3": {
    "title": "Value investing al estilo Buffett",
    "steps": [
@@ -508,75 +464,6 @@
     "Comprar y mantener es de abuelos 👴",
     "Yo prefiero algo con emoción."
    ]
-  },
-  "u25l2-1": {
-   "prompt": "Inviertes 100 € al mes y el precio pasa por 10, 8, 5, 8 y 10 €. ¿Cuántas participaciones tienes en total?",
-   "options": [],
-   "explanation": "100 ÷ 10 + 100 ÷ 8 + 100 ÷ 5 + 100 ÷ 8 + 100 ÷ 10 = 10 + 12,5 + 20 + 12,5 + 10 = 65.",
-   "unit": "participaciones"
-  },
-  "u25l2-2": {
-   "prompt": "Con esas 65 participaciones por 500 €, ¿cuál es tu precio medio de compra? (redondea a dos decimales)",
-   "options": [],
-   "explanation": "500 ÷ 65 ≈ 7,69 €. Al acabar en 10 €, ganas un 30 % sin que el precio haya subido.",
-   "unit": "€"
-  },
-  "u25l2-3": {
-   "prompt": "Septiembre de 2008. Empiezas a aportar 200 € al mes a un fondo del S&P 500. ¿Qué hizo el índice en los meses siguientes?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Con aportaciones periódicas, cuando el precio cae compras más participaciones con el mismo dinero: las caídas trabajan a tu favor si no paras.",
-   "horizon": "los meses siguientes"
-  },
-  "u25l2-4": {
-   "prompt": "Julio de 2012: el IBEX 35 lleva años de crisis y casi nadie quiere invertir en España. Si aportabas cada mes, ¿qué pasó después?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Quien aportaba cada mes compró muchas participaciones baratas en lo peor de la crisis. El DCA no exige adivinar el suelo.",
-   "horizon": "el año y medio siguiente"
-  },
-  "u25l2-5": {
-   "prompt": "Ana hereda 30.000 € para invertir a largo plazo. Sabe por experiencia que si lo invierte todo y cae un 20 % al mes siguiente, lo vendería todo por nervios. ¿Qué opción encaja mejor con lo que sabe de sí misma?",
-   "options": [
-    "Repartirlo en 6–12 meses con aportaciones automáticas",
-    "Esperar a que la bolsa baje",
-    "Invertirlo todo hoy"
-   ],
-   "explanation": "La mejor estrategia es la que vas a poder mantener. Esperar «el momento» suele ser la peor.",
-   "feedback": [
-    "Buena solución intermedia: entra en el mercado sin el miedo a hacerlo todo el peor día.",
-    "Nadie sabe cuándo bajará: mientras espera, el mercado puede subir un 30 %.",
-    "Estadísticamente gana unas 2 de cada 3 veces, pero Ana ya sabe que abandonaría en una caída, y eso sería lo peor."
-   ]
-  },
-  "u25l2-8": {
-   "prompt": "¿Es una ventaja de las aportaciones periódicas o de invertir de golpe?",
-   "options": [
-    "Automatiza la disciplina",
-    "Todo el dinero trabaja desde el primer día",
-    "Encaja con cobrar un sueldo cada mes",
-    "Reduce el arrepentimiento si cae justo después",
-    "Históricamente gana más veces"
-   ],
-   "explanation": "Las dos son válidas: lo que no funciona es intentar adivinar el momento.",
-   "right": [
-    "Aportaciones periódicas",
-    "De golpe"
-   ]
-  },
-  "u25l2-10": {
-   "prompt": "Invertir la misma cantidad cada mes, pase lo que pase, se llama ____.",
-   "options": [
-    "rebalanceo",
-    "market timing",
-    "apalancamiento",
-    "DCA"
-   ],
-   "explanation": "Dollar-cost averaging: aportaciones periódicas."
   },
   "u25l3-1": {
    "prompt": "Estimas que una acción vale 20 € y cotiza a 15 €. ¿Qué margen de seguridad tienes respecto a tu valor estimado?",

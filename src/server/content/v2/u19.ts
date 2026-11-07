@@ -6,55 +6,6 @@ import { buckets, candle, chart, chat, choose, fill, key, lesson, match, mission
 export default unit({
   id: 'u19', order: 19, title: 'Leer un gráfico', description: 'Ejes, tipos de gráfico, temporalidades, escalas, tendencia y volumen',
   lessons: [
-    lesson('u19l1', 'Qué muestra un gráfico de precios', [
-      play({
-        title: '¿Qué te cuenta un gráfico?',
-        intro: 'En horizontal, el **tiempo**. En vertical, el **precio**. Debajo, el **volumen**. ¿Qué puedes saber mirándolo?',
-        widget: {
-          kind: 'sort',
-          bins: [{ label: 'Lo dice el gráfico' }, { label: 'No lo dice' }],
-          cards: [
-            { icon: 'candles', label: 'A qué precio abrió ayer', bin: 0, why: 'Cada vela guarda su apertura.' },
-            { icon: 'clock', label: 'El precio de mañana', bin: 1, why: 'Nadie lo sabe: el gráfico es un registro del pasado.' },
-            { icon: 'up', label: 'El precio más alto de la semana', bin: 0, why: 'Cada vela guarda su máximo y su mínimo.' },
-            { icon: 'bars', label: 'Cuánto se negoció hoy', bin: 0, why: 'Es el volumen: las barras de abajo.' },
-            { icon: 'company', label: 'Si la empresa es un buen negocio', bin: 1, why: 'Eso lo dicen sus cuentas, no su gráfico.' },
-            { icon: 'calendar', label: 'El cierre de hace un año', bin: 0, why: 'El eje horizontal te lleva hacia atrás en el tiempo.' },
-            { icon: 'target', label: 'Si va a seguir subiendo', bin: 1, why: 'Puede seguir o no: son probabilidades, nunca certezas.' },
-          ],
-        },
-        goal: { text: 'Clasifica las siete preguntas.', when: [when('done', '==', 7)] },
-        insight: 'Un gráfico es el **registro exacto** de lo que compradores y vendedores acordaron. Cuenta lo que pasó, **no lo que va a pasar**.',
-        lumi: [
-          { when: when('wrong', '>=', 2), say: '¿Ya ha pasado o todavía no? Esa es la clave.', mood: 'THINKING' },
-          { say: '¿Lo puedes leer en el gráfico?', mood: 'HAPPY' },
-        ],
-      }),
-      play({
-        title: 'Leer no es adivinar',
-        intro: 'Tres gráficos reales de 30 velas diarias. Léelos y decide: ¿**sube o baja** en las 10 sesiones siguientes?',
-        widget: { kind: 'guess', rounds: ['ud-8', 'ud-24', 'ud-91'] },
-        goal: { text: 'Juega las tres rondas.', when: [when('done', '==', 3)] },
-        insight: 'Leer el pasado es fácil; adivinar el futuro, no. El análisis técnico trabaja con **probabilidades, nunca con certezas**.',
-        lumi: [
-          { when: when('right', '==', 3), say: '¡Tres de tres! Con tan pocas rondas, la suerte pesa mucho.', mood: 'CELEBRATE' },
-          { when: when('done', '==', 3), say: 'Acertar el futuro con velas es difícil para todo el mundo.', mood: 'CALM' },
-          { say: 'Mira las velas y elige: ¿sube o baja?', mood: 'HAPPY' },
-        ],
-      }),
-      key('Cuatro precios por periodo', 'De cada periodo se guardan cuatro datos (en inglés, **OHLC**):\n\n• **Apertura** (open): el primer precio.\n• **Máximo** (high) y **mínimo** (low).\n• **Cierre** (close): el último, y el más importante.\n\nEn E-Trading, al pasar el dedo por una vela ves sus cuatro precios, la variación y el volumen.', 'Un gráfico cuenta lo que pasó, no lo que va a pasar.', 'Leerlo bien ya es una ventaja: mucha gente solo mira si está en verde o en rojo.'),
-    ], [
-      match('Empareja cada parte del gráfico con lo que muestra.', [['Eje horizontal', 'El tiempo'], ['Eje vertical', 'El precio'], ['Barras de abajo', 'El volumen negociado'], ['Cada vela', 'Lo que pasó en un periodo']], 'El tiempo va de izquierda a derecha, el precio en vertical y el volumen debajo. Cada vela resume un periodo: un minuto, un día o una semana.'),
-      single('¿Qué precio de cada periodo se considera el más importante?', ['La apertura', 'El cierre', 'El máximo'], 1, 'El cierre es el precio en el que compradores y vendedores se quedaron al final del periodo. Casi todos los indicadores se calculan con cierres.'),
-      point('Toca el cierre más alto de este gráfico', 'trend-up-2', 'max', 'El máximo llegó antes del final y después el precio retrocedió un poco. El punto más alto no tiene por qué ser el último.'),
-      point('Ahora toca el cierre más bajo', 'trend-down-1', 'min', 'El mínimo no está al final: tras tocarlo, el precio rebotó. Localizar los extremos es el primer paso para leer un gráfico.'),
-      fill('En inglés, los cuatro precios de cada periodo se resumen como ____.', 'OHLC', ['ETF', 'RSI', 'IPC'], 'Open, high, low, close: apertura, máximo, mínimo y cierre.'),
-      num('Una acción cerró ayer en 50 € y hoy en 53 €. ¿Cuánto ha variado en el día?', 6, '%', '(53 − 50) ÷ 50 = 0,06 → +6 %. La variación diaria se calcula entre un cierre y el anterior.'),
-      tf('Si un gráfico lleva tres meses subiendo, es seguro que mañana también subirá.', false, 'Un gráfico registra el pasado. La tendencia puede seguir o no: se habla de probabilidades, nunca de certezas.'),
-      upDown('Primer contacto: 30 velas diarias reales, sin nombre ni fecha. ¿Qué crees que hizo el precio en las 10 sesiones siguientes?', 'ud-2', 'Mirando solo un gráfico nadie lo sabe con certeza. Este ejercicio sirve para notar la diferencia entre leer el pasado y adivinar el futuro.'),
-      timed(single('Rápido: ¿qué eje muestra el tiempo?', ['El horizontal', 'El vertical', 'Ninguno: va en la leyenda'], 0, 'El tiempo avanza de izquierda a derecha; el precio va en vertical.'), 10),
-      multi('Pasas el dedo por una vela en el gráfico de E-Trading. ¿Qué datos ves? Marca todos.', ['La apertura', 'El máximo y el mínimo', 'El cierre', 'El precio de mañana'], [0, 1, 2], 'Ves los cuatro precios del periodo, además de la variación y el volumen. El precio de mañana no lo sabe nadie.'),
-    ], { source: '7.1', minutes: 6, retire: [6, 7, 8] }),
 
     lesson('u19l2', 'Línea, barras y velas', [
       story('Solo una línea', [{ id: 'hugo', name: 'Hugo' }], [

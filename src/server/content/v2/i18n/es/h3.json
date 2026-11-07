@@ -1,0 +1,661 @@
+{
+ "unit": {
+  "title": "Tu primer análisis",
+  "description": "Mira una empresa, un gráfico y tu propio miedo con criterio antes de comprar",
+  "section": "Invierte desde hoy"
+ },
+ "lessons": {
+  "u16l1": {
+   "title": "Precio y valor no son lo mismo",
+   "steps": [
+    {
+     "texts": [
+      "Lo que pagas y lo que obtienes",
+      "Una empresa gana **2 €** por acción al año y tú decides cuánto pagas por ella. ¿Cuántos años de beneficios tardas en recuperar el precio?",
+      "Pagas 40 € por la acción y sus beneficios crecen un 5 % al año. ¿En cuántos años los beneficios suman lo que pagaste?",
+      "En unos 5 años",
+      "En unos 15 años",
+      "En unos 40 años",
+      "Sumando sus beneficios, que crecen un 5 % al año, tardas **15 años** en juntar 40 €.",
+      "Sin tocar el crecimiento, busca el precio más alto con el que lo recuperas en 10 años.",
+      "A **25 €** la recuperas en 10 años; a 80 €, en 23. **El precio es lo que pagas y el valor, lo que obtienes**: la misma empresa puede ser buena compra a un precio y mala a otro.",
+      "Pagas tanto que tardarías décadas en recuperarlo.",
+      "¿Crecer así muchos años seguidos? Muy pocas empresas lo logran.",
+      "¡Eso es un precio razonable para lo que gana!",
+      "Mueve el precio y mira cuántos años tardas"
+     ]
+    },
+    {
+     "texts": [
+      "El señor Mercado",
+      "Señor Mercado",
+      "Benjamin Graham imaginaba al mercado como un socio de humor cambiante que cada día te ofrece un precio.",
+      "¡Hoy estoy eufórico! Te compro tu parte por 40 €. Mañana, quién sabe.",
+      "Una semana después, sin que el negocio haya cambiado nada…",
+      "Todo va fatal. Te vendo mi parte por 12 €. ¡Corre!",
+      "Estimas que la empresa vale unos 20 € por acción. ¿Qué haces?",
+      "Vender: si él está asustado, algo pasará",
+      "Venderías barato justo cuando el negocio no ha cambiado.",
+      "Comprobar que el negocio sigue igual y, si es así, comprar",
+      "Eso: el precio ha bajado, el valor no. Su precio es una oferta, no una orden.",
+      "Comprar con todo tu dinero sin revisar nada",
+      "Buen instinto, pero revisa tu estimación y no lo pongas todo.",
+      "A 12 €, algo que vale 20 €: un **40 %** de margen de seguridad."
+     ]
+    },
+    {
+     "title": "Margen de seguridad",
+     "body": "«El precio es lo que pagas; el valor es lo que obtienes» (Warren Buffett).\n\nEl **análisis fundamental** estudia el negocio (ventas, beneficios, deuda, competencia) para estimar cuánto **vale**: responde a *qué* comprar. El **técnico** estudia el gráfico e intenta responder a *cuándo*.\n\nSi estimas que una acción vale 20 € y solo la compras por debajo de 15 €, tienes un **25 % de margen de seguridad**: un colchón por si te has equivocado al estimar.",
+     "key": "Una empresa excelente comprada demasiado cara puede ser una mala inversión.",
+     "tip": "El valor es una estimación; por eso necesitas colchón."
+    }
+   ]
+  },
+  "u17l1": {
+   "title": "El PER",
+   "steps": [
+    {
+     "texts": [
+      "PER 4: ¿una ganga?",
+      "Hugo",
+      "He encontrado una acción con PER 4. ¡Está regalada!",
+      "Pagas solo 4 años de beneficio. Le meto todos mis ahorros.",
+      "¿Qué le dices?",
+      "¡Corre, que se escapa!",
+      "Casi nada tiene PER 4 sin motivo. Primero hay que saber cuál.",
+      "Mira por qué es tan bajo antes de comprar",
+      "Bien. Un PER muy bajo es una **pregunta**, no una respuesta.",
+      "Compra solo un poco, por si acaso",
+      "Prudente, pero sigues sin saber qué compras.",
+      "Vale… Sus ventas llevan cinco años cayendo.",
+      "Ahí está: el mercado paga poco porque espera que gane **menos**.",
+      "PER bajo puede ser declive o un beneficio puntual. PER alto, quizá crecimiento."
+     ]
+    },
+    {
+     "texts": [
+      "¿Cuántos años de beneficio pagas?",
+      "Esta empresa gana **2 € por acción** al año. Mueve el precio de la acción y mira qué pasa con el **PER**.",
+      "Si el beneficio no cambia y el precio pasa de 30 € a 60 €, ¿qué le pasa al PER?",
+      "Se queda igual",
+      "Se duplica",
+      "Baja a la mitad",
+      "PER = precio ÷ beneficio por acción: 60 ÷ 2 = **30**, el doble que 30 ÷ 2 = 15.",
+      "Busca el precio con el que pagas 20 años de beneficio.",
+      "**PER = precio ÷ beneficio por acción**: los años de beneficio que pagas. Panadería Global (15 € y 0,975 € de BPA) tiene PER 15,4, y su inverso, la **rentabilidad por beneficio**, es un 6,5 %.",
+      "Pagas 30 años de beneficio o más. ¿Crecerá para merecerlo?",
+      "PER muy bajo… ¿ganga o empresa en apuros?",
+      "Mueve el precio y mira el PER"
+     ]
+    },
+    {
+     "texts": [
+      "PER alto, ¿siempre caro?",
+      "Ahora cotiza a **60 €**: PER 30. Sin crecer, tardas 30 años en recuperar el precio con los beneficios. ¿Y si crecen?",
+      "Si el beneficio crece un 10 % al año, ¿cuánto tardas en recuperar los 60 €?",
+      "Unos 15 años",
+      "Unos 27 años",
+      "Sigue en 30 años",
+      "Con un 10 % anual, los beneficios suman 60 € en **15 años**: la mitad de tiempo.",
+      "Con el precio en 60 €, busca el crecimiento que te devuelve el precio en 15 años o menos.",
+      "**PER alto no es caro** si el beneficio crece deprisa, y **PER bajo no es barato** si va a menguar. Compáralo siempre con su crecimiento, su historia y su sector.",
+      "¡Diez años o menos! Crecer rápido abarata un PER alto.",
+      "Sin crecer, PER 30 son 30 años. Sube el crecimiento.",
+      "Sube el crecimiento y mira los años"
+     ]
+    },
+    {
+     "title": "Histórico y adelantado",
+     "body": "Con el beneficio del último año es el **PER histórico**; con el previsto, el **PER adelantado**. Si el beneficio va a crecer mucho, el adelantado será más bajo.\n\nLa media del mercado ronda **15-17**. Compara con su historia y su sector: un banco a PER 8 y un software a PER 35 pueden estar «en su precio».",
+     "key": "Un PER de 10 puede ser caro y uno de 30 barato: depende de lo que vaya a ganar la empresa."
+    }
+   ]
+  },
+  "u20l1": {
+   "title": "Anatomía de una vela",
+   "steps": [
+    {
+     "texts": [
+      "Rojo es subir",
+      "Mei",
+      "Mei, una amiga de Shanghái, te enseña su app de bolsa.",
+      "Hoy mi acción está en rojo. ¡Qué bien, ha subido!",
+      "¿Qué pasa aquí?",
+      "En China el rojo suele ser subida",
+      "Eso. En China, Japón y Corea los colores suelen ir al revés.",
+      "Se ha equivocado: rojo es bajar",
+      "Aquí sí, pero en su app no. Mira siempre la leyenda.",
+      "Su app está rota",
+      "No está rota: allí el rojo suele significar subida.",
+      "Las velas nacieron en el mercado de arroz de **Dojima** (Osaka), en el siglo XVIII.",
+      "La tradición se las atribuye al comerciante Munehisa Homma.",
+      "Steve Nison las trajo a Occidente en 1991. Hoy son el gráfico por defecto."
+     ]
+    },
+    {
+     "texts": [
+      "¿Verde o roja?",
+      "El **cuerpo** va de la apertura al cierre; las **mechas**, hasta el máximo y el mínimo. ¿De qué color es cada vela?",
+      "Verde",
+      "Roja",
+      "Abre en 100 y cierra en 106",
+      "Cierra por encima de la apertura. Cuerpo: 6.",
+      "Abre en 62 y cierra en 57",
+      "Cierra por debajo de la apertura. Cuerpo: 5.",
+      "Abre en 20, sube hasta 25 y cierra en 19",
+      "El máximo no decide el color: cierra por debajo de la apertura.",
+      "Abre en 40, baja hasta 35 y cierra en 41",
+      "Cayó mucho, pero cerró por encima de la apertura.",
+      "Abre en 75 y cierra en 80",
+      "El cierre queda arriba: verde.",
+      "Abre en 12 y cierra en 11",
+      "El cierre queda abajo: roja.",
+      "Pinta las seis velas.",
+      "**Verde:** cierra por encima de la apertura. **Roja:** por debajo. Las mechas llegan al máximo y al mínimo, pero **no deciden el color**.",
+      "Compara solo la apertura y el cierre.",
+      "¿El cierre queda arriba o abajo?"
+     ]
+    },
+    {
+     "prompt": "Ahora en un gráfico real: toca la vela verde con el cuerpo más grande, la que más subió de la apertura al cierre",
+     "ok": "Esa. Su cuerpo va de la apertura (abajo) al cierre (arriba); las líneas finas marcan el máximo y el mínimo.",
+     "ko": "Busca el rectángulo verde más alto, sin contar las líneas finas."
+    },
+    {
+     "title": "Un ejemplo con números",
+     "body": "Vela con O = 100, H = 108, L = 97, C = 106: es verde (106 > 100), su cuerpo mide 6 (de 100 a 106), la mecha superior 2 (de 106 a 108), la inferior 3 (de 97 a 100) y el rango total 11.",
+     "key": "El cuerpo va de la apertura al cierre; las mechas llegan al máximo y al mínimo.",
+     "tip": "Verde: el cierre está arriba. Roja: el cierre está abajo."
+    }
+   ]
+  },
+  "u21l1": {
+   "title": "Soportes y resistencias",
+   "steps": [
+    {
+     "texts": [
+      "La memoria del mercado",
+      "Pablo",
+      "Compré a 50 € y la acción se hundió hasta 40 €.",
+      "Ahora vuelve a 50 €. Solo quiero salir sin perder.",
+      "Como Pablo, mucha gente compró a 50 € y lleva meses esperando.",
+      "¿Qué suele pasar cuando el precio vuelve a 50 €?",
+      "Nada: 50 € es un precio como otro",
+      "Es justo donde muchos atrapados quieren salir: suele aparecer **venta**.",
+      "Aparece venta: actúa como resistencia",
+      "¡Eso! Muchos venden ahí para «recuperar lo suyo». Eso es una **resistencia**.",
+      "Sube seguro con fuerza",
+      "Puede romperla, pero cuesta: en 50 € hay vendedores esperando.",
+      "Un **soporte** es lo contrario: donde antes aparecieron compradores."
+     ]
+    },
+    {
+     "texts": [
+      "Stop bajo el soporte",
+      "Velas reales de Alphabet: compras al último precio. El **soporte** queda algo más de un 2 % por debajo y la **resistencia**, casi un 5 % por encima.",
+      "¿Dónde pondrías el stop de esta compra?",
+      "Justo encima del soporte, para perder poco",
+      "Un poco por debajo del soporte",
+      "Sin stop: el soporte aguantará",
+      "Si el precio pierde el soporte, tu idea de compra deja de valer: el stop va al otro lado. Por encima, cualquier bajada normal te saca.",
+      "Pon el stop bajo el soporte y el objetivo antes de la resistencia. Luego mira qué pasó.",
+      "El stop va **al otro lado del soporte**: si se pierde, la idea ya no vale. Y el objetivo, **antes de la resistencia**, donde suele aparecer venta.",
+      "¡Objetivo! El soporte aguantó y tu stop no saltó.",
+      "Saltó el stop. ¿Estaba por debajo del soporte o por encima?",
+      "Ese stop queda por encima del soporte: cualquier mecha lo salta.",
+      "Mueve el stop y el objetivo, y dale a ver qué pasó"
+     ]
+    },
+    {
+     "title": "Cómo trazarlos",
+     "body": "• Mejor en diario o semanal.\n• Busca zonas donde el precio haya girado al menos **2–3 veces**.\n• Traza una **zona** (un rectángulo estrecho), no una línea al céntimo.\n• Más toques y más volumen = más relevante. Los niveles antiguos y lejanos pesan menos.\n• Los números redondos y los máximos históricos también atraen órdenes.",
+     "key": "Un soporte es donde antes aparecieron compradores; una resistencia, donde aparecieron vendedores.",
+     "tip": "Trázalos como zonas, no como líneas al milímetro."
+    }
+   ]
+  },
+  "u24l3": {
+   "title": "La regla del 1 %",
+   "steps": [
+    {
+     "texts": [
+      "Arriesgar no es invertir",
+      "Cuenta de **10.000 €**. La regla del 1 %: si salta el stop, pierdes como mucho **100 €**.",
+      "¿Significa que solo puedes invertir 100 €?",
+      "Sí: 100 € y ni un euro más",
+      "No: lo que inviertes depende de dónde va el stop",
+      "No: puedes invertir lo que quieras, sin stop",
+      "Con el stop al 2 %, puedes invertir **5.000 €** y, si salta, pierdes 100 €. Riesgo no es lo mismo que cantidad invertida.",
+      "Con el riesgo en el 1 %, busca el stop que deja la posición en 2.000 €.",
+      "**Tamaño = riesgo ÷ distancia al stop.** Stop cerca, compras más; stop lejos, compras menos. La pérdida máxima es siempre la misma.",
+      "Más de un 2 % por operación es mucho, sobre todo al empezar.",
+      "Con el stop tan cerca, metes toda la cuenta. ¿Seguro?",
+      "Stop lejos: compras poco, pero arriesgas lo mismo.",
+      "Deja el 1 % y mueve el stop"
+     ]
+    },
+    {
+     "texts": [
+      "«Estoy segurísimo»",
+      "Bruno",
+      "Tengo 8.000 € y esta operación es segura. Arriesgo un 10 %.",
+      "¿Qué le recomiendas?",
+      "Adelante: si está seguro, no hay riesgo",
+      "Si falla, pierde **800 €** de golpe. Su seguridad no cambia nada.",
+      "Que mantenga el 1 %: 80 € de riesgo, como en cualquier otra",
+      "¡Eso! Nadie sabe qué operación saldrá bien: el riesgo es el mismo en todas.",
+      "Que arriesgue el 10 %, pero sin stop",
+      "Sin stop, la pérdida no tiene límite. Todavía peor.",
+      "¿Y si de verdad sale bien?",
+      "Ganará algo menos. Pero seguirá en el juego cuando falle otra."
+     ]
+    },
+    {
+     "title": "Límites que se suman",
+     "body": "La mayoría de profesionales arriesga entre el **0,5 % y el 2 %** por operación; para empezar, un 1 % o menos. Además conviene limitar el **riesgo total abierto** (no más del 5–6 % a la vez) y el **peso de cada posición** (E-Trading avisa a partir del 20 %).",
+     "key": "Riesgo no es lo mismo que cantidad invertida: puedes invertir un 16 % y arriesgar un 1 %.",
+     "tip": "Primero decides dónde te equivocas. Después, cuántas acciones compras."
+    }
+   ]
+  },
+  "u27l4": {
+   "title": "FOMO y efecto rebaño",
+   "steps": [
+    {
+     "texts": [
+      "Vive la fiebre puntocom",
+      "Diciembre de 1998. Internet lo va a cambiar todo y tus amigos solo hablan de tecnológicas. Metes **10.000 €** en el Nasdaq 100, con datos reales.",
+      "Llega hasta el final, vendas o no.",
+      "Subió un **156 %** en 15 meses; luego cayó un **83 %** desde el máximo y no lo recuperó hasta 2015. **Cuando todo el mundo habla de algo que «solo sube», el riesgo suele ser máximo.**",
+      "Has vendido. Mira qué pasa después…",
+      "De la euforia al desplome. Y nadie avisó del techo.",
+      "¡Más del doble! Ahora todo el mundo quiere entrar.",
+      "Dale a empezar. Puedes vender cuando quieras"
+     ]
+    },
+    {
+     "texts": [
+      "«¡Entra hoy!»",
+      "Álex",
+      "Esta acción ha subido un **200 %** en dos semanas.",
+      "Todos en el grupo están dentro. ¡Entra hoy o te lo pierdes!",
+      "No está en tu plan. ¿Qué haces?",
+      "Compro ya, antes de que suba más",
+      "Eso es **FOMO**: compras sin saber qué hace la empresa, tras una subida enorme.",
+      "Espero 48 horas y me pregunto si la compraría si nadie hablara de ella",
+      "¡Eso! Si en dos días sigue teniendo sentido, lo decides con calma.",
+      "Pido un préstamo para entrar fuerte",
+      "Deuda y FOMO: la receta clásica de las peores pérdidas.",
+      "Cuando **todos** ya han comprado, no queda nadie para seguir empujando.",
+      "La urgencia es el combustible del FOMO. Quítale tiempo y se apaga."
+     ]
+    },
+    {
+     "title": "Señales de alarma",
+     "body": "• Te enteras por amigos o redes que nunca habían invertido.\n• La razón es que «**sube mucho**», no qué hace el activo.\n• Sientes **urgencia**: «si no compro hoy, me lo pierdo».\n• Se dice que «**esta vez es diferente**».\n\nAntídotos: la **regla de las 48 horas** y un **límite de especulación** escrito en tu plan.",
+     "key": "Cuando todo el mundo habla de algo que «solo sube», el riesgo suele ser máximo.",
+     "tip": "Si tu peluquero te recomienda una criptomoneda, quizá ya es tarde."
+    }
+   ]
+  },
+  "h3r": {
+   "title": "Repaso de la unidad",
+   "steps": []
+  },
+  "s0boss": {
+   "title": "Reto final: Invierte desde hoy",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u16l1-1": {
+   "prompt": "¿Qué intenta responder el análisis fundamental?",
+   "options": [
+    "Cuándo entrar exactamente",
+    "Qué comprar y si está caro o barato",
+    "Qué vela viene mañana"
+   ],
+   "explanation": "El técnico intenta responder a cuándo; el fundamental, a qué y a qué precio."
+  },
+  "u16l1-2": {
+   "prompt": "Estimas que una acción vale 40 € y cotiza a 30 €. ¿Qué margen de seguridad tienes sobre el valor estimado?",
+   "options": [],
+   "explanation": "(40 − 30) ÷ 40 = 25 %.",
+   "unit": "%"
+  },
+  "u16l1-3": {
+   "prompt": "Quieres un margen de seguridad del 30 % sobre un valor estimado de 50 €. ¿Por debajo de qué precio comprarías?",
+   "options": [],
+   "explanation": "50 × (1 − 0,30) = 35 €.",
+   "unit": "€"
+  },
+  "u16l1-6": {
+   "prompt": "La diferencia entre el valor estimado y el precio que pagas se llama margen de ____.",
+   "options": [
+    "beneficio",
+    "maniobra",
+    "error",
+    "seguridad"
+   ],
+   "explanation": "Te protege si te equivocas en la estimación."
+  },
+  "u16l1-7": {
+   "prompt": "¿Habla de precio o de valor?",
+   "options": [
+    "La empresa generará unos 100 M€ de caja al año",
+    "Tiene una marca que le permite subir precios",
+    "Capitaliza 1.500 M€ en bolsa",
+    "La acción cerró ayer a 15,20 €",
+    "Ha subido un 8 % esta semana"
+   ],
+   "explanation": "El precio lo ves en la pantalla; el valor sale de analizar el negocio.",
+   "right": [
+    "Precio",
+    "Valor"
+   ]
+  },
+  "u16l1-9": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Claro, ya está en el suelo",
+    "Compra el doble para promediar",
+    "Primero mira por qué ha caído y cuánto vale el negocio: barato no es lo mismo que infravalorado"
+   ],
+   "explanation": "Un precio bajo solo es oportunidad si está por debajo del valor.",
+   "feedback": [
+    "Lo que ha caído un 60 % puede caer otro 60 %.",
+    "Doblar sin analizar es apostar más a ciegas.",
+    "Vale… ¿y si cayó porque el negocio se ha roto? Entonces el valor también bajó."
+   ],
+   "lines": [
+    "Esta acción ha caído un 60 %, ¡ya no puede bajar más!",
+    "Voy a comprar 🤑"
+   ]
+  },
+  "u17l1-1": {
+   "prompt": "Una acción cotiza a 30 € y su BPA es de 2 €. ¿Cuál es su PER?",
+   "options": [],
+   "explanation": "30 ÷ 2 = 15: pagas 15 años del beneficio actual.",
+   "unit": "veces"
+  },
+  "u17l1-2": {
+   "prompt": "Una empresa capitaliza 4.000 M€ y gana 250 M€ al año. ¿Cuál es su PER?",
+   "options": [],
+   "explanation": "4.000 ÷ 250 = 16. Da igual hacerlo por acción o con la empresa entera.",
+   "unit": "veces"
+  },
+  "u17l1-3": {
+   "prompt": "Una acción tiene un PER de 20. ¿Cuál es su rentabilidad por beneficio?",
+   "options": [],
+   "explanation": "1 ÷ 20 = 5 %.",
+   "unit": "%"
+  },
+  "u17l1-4": {
+   "prompt": "PER = precio ÷ ____.",
+   "options": [
+    "dividendo",
+    "deuda",
+    "ventas",
+    "BPA"
+   ],
+   "explanation": "Precio de la acción entre el beneficio por acción."
+  },
+  "u17l1-5": {
+   "prompt": "Si el BPA se duplica y el precio no se mueve, el PER se reduce a la ____.",
+   "options": [
+    "cuarta parte",
+    "décima parte",
+    "tercera parte",
+    "mitad"
+   ],
+   "explanation": "El mismo precio entre el doble de beneficio da la mitad de PER."
+  },
+  "u17l1-7": {
+   "prompt": "Un año, una empresa vende su sede y su beneficio se triplica. Su PER cae de 18 a 6. ¿Qué ha pasado?",
+   "options": [
+    "El PER está distorsionado por un beneficio puntual",
+    "Se ha convertido en una ganga",
+    "Su negocio ha mejorado mucho"
+   ],
+   "explanation": "Ese beneficio no se repetirá: hay que mirar el beneficio recurrente."
+  },
+  "u17l1-8": {
+   "prompt": "Una acción a 60 € tiene un BPA de 3 € este año y se espera un BPA de 4 € el próximo. ¿Cuál es su PER adelantado?",
+   "options": [],
+   "explanation": "60 ÷ 4 = 15. El histórico es 60 ÷ 3 = 20.",
+   "unit": "veces"
+  },
+  "u20l1-1": {
+   "prompt": "En una vela verde, empareja cada punto con su precio.",
+   "options": [
+    "Parte alta del cuerpo",
+    "Parte baja del cuerpo",
+    "Punta de la mecha superior",
+    "Punta de la mecha inferior"
+   ],
+   "explanation": "En una vela verde la apertura está abajo y el cierre arriba; en una roja, al revés. Las mechas siempre llegan al máximo y al mínimo.",
+   "right": [
+    "El máximo",
+    "El mínimo",
+    "La apertura",
+    "El cierre"
+   ]
+  },
+  "u20l1-3": {
+   "prompt": "Vela con apertura 40, máximo 44, mínimo 39 y cierre 43. ¿Cuánto mide el cuerpo?",
+   "options": [],
+   "explanation": "Del 40 de la apertura al 43 del cierre: 3 puntos.",
+   "unit": "puntos"
+  },
+  "u20l1-4": {
+   "prompt": "Vela verde con apertura 40, máximo 44, mínimo 39 y cierre 43. ¿Cuánto mide su mecha inferior?",
+   "options": [],
+   "explanation": "De la apertura (40), que es la parte baja del cuerpo, al mínimo (39): 1 punto.",
+   "unit": "puntos"
+  },
+  "u20l1-5": {
+   "prompt": "Vela roja con apertura 62, máximo 63, mínimo 55 y cierre 57. ¿Cuánto mide su cuerpo?",
+   "options": [],
+   "explanation": "De 62 a 57: 5 puntos. En una roja, la apertura está arriba y el cierre abajo.",
+   "unit": "puntos"
+  },
+  "u20l1-6": {
+   "prompt": "En una vela roja, la apertura está en la parte ____ del cuerpo.",
+   "options": [
+    "baja",
+    "media",
+    "exterior",
+    "alta"
+   ],
+   "explanation": "Si cierra por debajo de la apertura, la apertura queda arriba y el cierre abajo."
+  },
+  "u20l1-7": {
+   "prompt": "Toca la vela con la mecha inferior más larga.",
+   "options": [],
+   "explanation": "El precio bajó mucho durante esa sesión, pero se recuperó antes del cierre. Esa línea fina es el camino hasta el mínimo. (Amazon · velas diarias · febrero de 2025)"
+  },
+  "u20l1-8": {
+   "prompt": "Ordena de menor a mayor los precios de una vela verde con mechas.",
+   "options": [
+    "Apertura",
+    "Cierre",
+    "Máximo",
+    "Mínimo"
+   ],
+   "explanation": "Mínimo ≤ apertura < cierre ≤ máximo. En una roja, apertura y cierre se intercambian."
+  },
+  "u21l1-1": {
+   "prompt": "En este tramo lateral, toca el techo: el cierre más alto, donde aparecieron vendedores (Microsoft · cierres cada 3 sesiones · agosto–octubre de 2024)",
+   "options": [],
+   "explanation": "Esa zona actúa como resistencia: la subida se frenó ahí y el precio volvió a bajar."
+  },
+  "u21l1-2": {
+   "prompt": "Ahora el suelo: toca el cierre más bajo, donde aparecieron compradores (NVIDIA · cierres cada 3 sesiones · diciembre de 2025 – febrero de 2026)",
+   "options": [],
+   "explanation": "Esa zona actuó como soporte: la caída se frenó y el precio rebotó con fuerza."
+  },
+  "u21l1-3": {
+   "prompt": "Has comprado al último precio. Coloca el stop un poco por debajo del soporte: el mínimo reciente.",
+   "options": [],
+   "explanation": "Si el precio pierde el soporte, la idea de compra deja de valer. El stop va algo por debajo, no justo encima de la línea, para que una mecha no lo salte."
+  },
+  "u21l1-6": {
+   "prompt": "¿Qué hace más relevante un soporte? Marca todo.",
+   "options": [
+    "Que sea reciente",
+    "Que lo diga un anuncio en redes",
+    "Que hubiera mucho volumen en esa zona",
+    "Que el precio haya girado ahí varias veces"
+   ],
+   "explanation": "Más toques, más volumen y más cercanía en el tiempo. Los niveles antiguos y lejanos pesan menos."
+  },
+  "u21l1-7": {
+   "prompt": "Busca soportes y resistencias en estas 30 velas. ¿Sube o baja en las 10 sesiones siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Un soporte o una resistencia dicen dónde puede aparecer compra o venta, no qué pasará. Sirven sobre todo para saber dónde te has equivocado.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u21l1-10": {
+   "prompt": "Un soporte está en la zona de 20 €. Pones el stop un 3 % por debajo. ¿A qué precio va?",
+   "options": [],
+   "explanation": "20 × 0,97 = 19,40 €. Dejar algo de margen evita que una simple mecha te saque.",
+   "unit": "€"
+  },
+  "u24l3-2": {
+   "prompt": "Tu cartera simulada vale 5.000 €. Con la regla del 1 %, ¿cuánto puedes perder como máximo en una operación?",
+   "options": [],
+   "explanation": "5.000 × 0,01 = 50 €.",
+   "unit": "€"
+  },
+  "u24l3-3": {
+   "prompt": "Tienes 20.000 €, arriesgas un 1 %, compras a 80 € y pones el stop en 76 €. ¿Cuántas acciones compras?",
+   "options": [],
+   "explanation": "20.000 × 1 % = 200 €. Distancia al stop: 4 €. 200 ÷ 4 = 50 acciones.",
+   "unit": "acciones"
+  },
+  "u24l3-4": {
+   "prompt": "En la operación anterior (50 acciones a 80 € con 20.000 € de capital), ¿qué porcentaje de tu capital has invertido?",
+   "options": [],
+   "explanation": "50 × 80 = 4.000 €; 4.000 ÷ 20.000 = 20 %. Inviertes un 20 % pero solo arriesgas un 1 %.",
+   "unit": "%"
+  },
+  "u24l3-6": {
+   "prompt": "Tienes 10.000 €. ¿Respeta la regla del 1 %?",
+   "options": [
+    "Si salta el stop pierdo 150 €",
+    "Invierto 1.000 € sin stop",
+    "Si salta el stop pierdo 500 €",
+    "Si salta el stop pierdo 100 €",
+    "Si salta el stop pierdo 80 €"
+   ],
+   "explanation": "Sin stop, el riesgo es todo lo invertido: 1.000 € es un 10 % de la cuenta.",
+   "right": [
+    "Sí la respeta",
+    "No la respeta"
+   ]
+  },
+  "u24l3-8": {
+   "prompt": "¿Qué límites de riesgo propone el curso para quien empieza? Marca todos.",
+   "options": [
+    "Vigilar el peso de cada posición (aviso a partir del 20 %)",
+    "Usar al menos un apalancamiento 1:10",
+    "No más del 5–6 % de riesgo abierto a la vez",
+    "Arriesgar un 1 % o menos por operación"
+   ],
+   "explanation": "El apalancamiento no forma parte de la regla: mientras aprendes, mejor sin él."
+  },
+  "u24l3-10": {
+   "prompt": "Primero decides dónde va el ____; después, cuántas acciones compras.",
+   "options": [
+    "objetivo",
+    "dividendo",
+    "apalancamiento",
+    "stop"
+   ],
+   "explanation": "El tamaño sale de la distancia al stop, nunca al revés."
+  },
+  "u27l4-1": {
+   "prompt": "Marca los mensajes que intentan activar tu FOMO para venderte algo o engañarte.",
+   "options": [
+    "Recordatorio: tu aportación periódica de 100 € se ejecutará el día 5.",
+    "Todo el mundo está ganando con esta acción. Mete los ahorros, no lo pienses.",
+    "Solo quedan 3 plazas en mi grupo de señales. Esta vez es diferente, no te quedes fuera.",
+    "Consulta si una entidad está autorizada antes de invertir con ella.",
+    "🚀 Esta cripto ha subido un 300 % en un mes. Mañana será tarde. ¡Entra YA!"
+   ],
+   "explanation": "Urgencia, «esta vez es diferente» y «todo el mundo gana» son las señales clásicas del FOMO.",
+   "senders": [
+    "Tu bróker",
+    "Tu primo",
+    "Influencer",
+    "CNMV",
+    "Grupo «Lambo 2030»"
+   ]
+  },
+  "u27l4-2": {
+   "prompt": "Noviembre de 2021: bitcoin está en máximos, sale en todos los telediarios y tus amigos que nunca habían invertido están comprando. ¿Qué hizo después?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Bitcoin cayó cerca de un 75 % en el año siguiente. El momento de máxima euforia suele ser el de máximo riesgo. Recuerda: en cripto puede perderse la totalidad de lo invertido.",
+   "horizon": "el año siguiente"
+  },
+  "u27l4-3": {
+   "prompt": "Este activo ha subido con fuerza y en redes todo el mundo habla de él. ¿Sube o baja en las sesiones siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Ni la euforia en redes ni las subidas anteriores te dicen qué viene. Por eso existe la regla de las 48 horas.",
+   "horizon": "las 10 sesiones siguientes"
+  },
+  "u27l4-6": {
+   "prompt": "¿Cuáles son señales de alarma de una burbuja? Marca todas.",
+   "options": [
+    "La única razón es que sube mucho",
+    "Beneficios crecientes y estables durante años",
+    "Gente sin experiencia recomendándolo",
+    "«Esta vez es diferente»"
+   ],
+   "explanation": "Unos beneficios estables no son señal de burbuja: lo son la euforia y la falta de motivos."
+  },
+  "u27l4-9": {
+   "prompt": "Empareja cada burbuja con su época.",
+   "options": [
+    "Puntocom",
+    "Bolsa japonesa",
+    "Meme stocks",
+    "Criptomonedas (dos veces)"
+   ],
+   "explanation": "Cambian los activos; el FOMO es siempre el mismo.",
+   "right": [
+    "1989",
+    "2017 y 2021",
+    "2021",
+    "1999–2000"
+   ]
+  },
+  "u27l4-10": {
+   "prompt": "¿Qué le dices a Lumi?",
+   "options": [
+    "Mete los ahorros de emergencia",
+    "Espera 48 horas y piensa si la comprarías si nadie hablara de ella",
+    "Entra ya, que vuela"
+   ],
+   "explanation": "La prisa es la señal: cuando sientes urgencia, para.",
+   "feedback": [
+    "Eso es lo único que nunca se toca. Y en cripto se puede perder todo lo invertido.",
+    "Vale… Si sigue teniendo sentido en dos días, la meto en mi límite de especulación. Si no, nada.",
+    "Si entro por miedo a quedarme fuera, lo más probable es que compre cerca del techo."
+   ],
+   "lines": [
+    "Todo el mundo en TikTok está ganando con una moneda nueva 🐶",
+    "Si no entro hoy, me lo pierdo."
+   ]
+  }
+ }
+}

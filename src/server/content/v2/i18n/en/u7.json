@@ -5,60 +5,6 @@
   "section": "How markets work"
  },
  "lessons": {
-  "u7l1": {
-   "title": "What an index is",
-   "steps": [
-    {
-     "texts": [
-      "The fund that made 8 %",
-      "Marta",
-      "My fund made 8 % this year! That's brilliant, right?",
-      "That year, the index for its market rose 14 %.",
-      "What do you tell Marta?",
-      "Congratulations: 8 % is great",
-      "Sounds good… but copying the index would have given her 14 %.",
-      "It came in 6 points behind its index",
-      "Exactly. That's what an index is for: it's the **yardstick**.",
-      "It depends how much money she put in",
-      "The amount doesn't change the percentage: 8 % versus 14 %.",
-      "So how do I buy that index?",
-      "You can't buy it as such: you buy a **fund or ETF** that tracks it."
-     ]
-    },
-    {
-     "texts": [
-      "What's an index for?",
-      "An **index** sums up in one figure how a group of securities is doing. It's used for three things.",
-      "Thermometer",
-      "Yardstick",
-      "Basis for products",
-      "«The Spanish stock market is up 1 % today»",
-      "That's the IBEX 35: it tells you how the market is doing.",
-      "A fund compares its performance with the IBEX 35",
-      "The index is the benchmark for knowing whether the fund did well.",
-      "An ETF that copies the S&P 500",
-      "ETFs and index funds track it at low cost.",
-      "Finding out how the banking sector is doing today",
-      "There are country and sector indices: more specific thermometers.",
-      "Checking whether your portfolio did well",
-      "Compare it with an index that resembles what you hold.",
-      "An index fund to pay into every month",
-      "The index fund copies the index: that's how you «buy» it.",
-      "Sort the six uses.",
-      "An index is a **thermometer**, a **yardstick** and a **basis for products**. Each one has its own rules: which companies get in, how much each one weighs and how often it's reviewed.",
-      "Hint: does it inform, help you compare, or get bought as a fund?",
-      "One figure with lots of different jobs.",
-      "Tap each case: what's the index used for?"
-     ]
-    },
-    {
-     "title": "Points, not euros",
-     "body": "An index is measured in points, not euros. What matters is the **change**: if it goes from 14,000 to 14,700 points, it's up 5 %.",
-     "key": "An index is a reference basket, not something you buy as such.",
-     "tip": "Buying the whole index is betting on an entire economy, not on one company."
-    }
-   ]
-  },
   "u7l2": {
    "title": "S&P 500, Nasdaq, IBEX 35 and MSCI World",
    "steps": [
@@ -276,55 +222,6 @@
   }
  },
  "questions": {
-  "u7l1-1": {
-   "prompt": "What is a stock market index?",
-   "options": [
-    "A company listed on the stock market",
-    "An interest rate",
-    "A figure that sums up how a group of securities is doing"
-   ],
-   "explanation": "It's a reference basket with rules about what gets in and how much it weighs."
-  },
-  "u7l1-3": {
-   "prompt": "An index goes from 14,000 to 14,700 points. How much has it risen?",
-   "options": [],
-   "explanation": "(14,700 − 14,000) ÷ 14,000 = 0.05 → 5 %.",
-   "unit": "%"
-  },
-  "u7l1-4": {
-   "prompt": "Quick: an index goes from 5,000 to 4,600 points. How much has it fallen, in %? (enter it as a positive number)",
-   "options": [],
-   "explanation": "400 ÷ 5,000 = 0.08 → it has fallen 8 %.",
-   "unit": "%"
-  },
-  "u7l1-6": {
-   "prompt": "If the IBEX 35 is at 14,000 points, buying it costs €14,000.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "Points aren't euros: they measure the change from a base."
-  },
-  "u7l1-7": {
-   "prompt": "What do an index's rules set? Select all that apply.",
-   "options": [
-    "How much each one weighs",
-    "Whatever a TV pundit thinks that day",
-    "How often it's reviewed",
-    "Which companies get in"
-   ],
-   "explanation": "The rules are public and objective: that's why the index works as a benchmark."
-  },
-  "u7l1-10": {
-   "prompt": "You can't buy an index directly: you buy a fund or an ____ that tracks it.",
-   "options": [
-    "CPI",
-    "bond",
-    "deposit",
-    "ETF"
-   ],
-   "explanation": "ETFs and index funds copy the index at low cost."
-  },
   "u7l2-1": {
    "prompt": "Match each index with what it measures.",
    "options": [

@@ -2,7 +2,7 @@
  "unit": {
   "title": "Els diners i la inflació",
   "description": "Què són els diners, per què perden valor i com creixen amb l'interès compost",
-  "section": "Fonaments dels diners"
+  "section": "Els teus diners en ordre"
  },
  "lessons": {
   "u1l1": {
@@ -195,50 +195,6 @@
       "Vaja… mai no ho havia pensat així.",
       "Compte: els dipòsits estan protegits fins a **100.000 €** pel Fons de Garantia de Dipòsits si el banc fa fallida. Això protegeix els teus euros, no el teu poder de compra."
      ]
-    }
-   ]
-  },
-  "u1l5": {
-   "title": "Interès simple i interès compost",
-   "steps": [
-    {
-     "texts": [
-      "El matalàs, el simple i el compost",
-      "Tres maneres de guardar **1.000 €**:\n\n• **Sota el matalàs:** no creixen.\n• **Interès simple:** cobres sempre sobre el que hi vas posar.\n• **Interès compost:** també guanyes sobre el que ja has guanyat.",
-      "1.000 € al 7 % l'any durant 30 anys. Quant tindràs amb interès compost?",
-      "Uns 3.100 €",
-      "Uns 7.600 €",
-      "Uns 21.000 €",
-      "Amb interès simple serien 3.100 €. Amb compost, **7.612 €**: gairebé dues vegades i mitja més, sense posar-hi ni un euro més.",
-      "Arriba a 10.000 € sense afegir-hi diners: juga amb la rendibilitat i els anys.",
-      "El compost **accelera**: els últims anys creixen molt més que els primers. Per això el temps pesa tant com la rendibilitat.",
-      "Rendibilitats tan altes no són normals: amb un 7 % ja vas molt bé a llarg termini.",
-      "Mira el final de la corba verda: es dispara!",
-      "Mou els anys: fixa't com se separen les línies"
-     ]
-    },
-    {
-     "texts": [
-      "L'Ana i en Bruno",
-      "Tots dos aparten **200 € al mes** al 7 % fins als 65. L'Ana comença als 25. I si en Bruno comença més tard?",
-      "Ana",
-      "Bruno",
-      "En Bruno comença 10 anys després que l'Ana. Als 65, quant tindrà ell comparat amb ella?",
-      "Un 25 % menys",
-      "Menys de la meitat",
-      "Gairebé el mateix",
-      "L'Ana arriba a uns **494.000 €** i en Bruno a uns **234.000 €**: menys de la meitat, tot i que l'Ana només hi va posar 24.000 € més.",
-      "Endarrereix en Bruno fins que l'Ana tingui el triple que ell.",
-      "Cada any que esperes costa molt més del que sembla: els primers euros són els que tenen més temps per créixer amb l'interès compost.",
-      "Si comença als 45, en Bruno ja no atrapa l'Ana encara que aporti el mateix cada mes.",
-      "Si comencen alhora, acaben igual. Ara endarrereix en Bruno",
-      "Cada any de retard obre més la bretxa. Fins on arriba?"
-     ]
-    },
-    {
-     "title": "També en contra teu",
-     "body": "L'interès compost funciona igual amb els deutes: una targeta que cobra interessos sobre interessos creix tota sola. Ho veuràs a la unitat de deutes.\n\nI recorda: són exemples, no promeses. La borsa no dona un 7 % cada any.",
-     "key": "Els guanys generen nous guanys: com més aviat comences, més treballa el temps per tu."
     }
    ]
   },
@@ -537,64 +493,6 @@
     "inflació"
    ],
    "explanation": "És la manera ràpida de saber si els teus diners guanyen o perden poder de compra."
-  },
-  "u1l5-1": {
-   "prompt": "1.000 € al 7 % d'interès compost durant 30 anys, en quant es converteixen? (arrodoneix)",
-   "options": [],
-   "explanation": "1.000 × 1,07³⁰ ≈ 7.612 €. Amb interès simple serien 3.100 €.",
-   "unit": "€"
-  },
-  "u1l5-3": {
-   "prompt": "Relaciona cada cas amb el tipus d'interès.",
-   "options": [
-    "Cobres sempre sobre el que vas posar",
-    "Guanyes també sobre el que ja has guanyat",
-    "Un deute de targeta que creix sobre si mateix"
-   ],
-   "explanation": "El compost accelera el creixement… també el dels deutes.",
-   "right": [
-    "Interès compost",
-    "Interès simple",
-    "Interès compost en contra teva"
-   ]
-  },
-  "u1l5-4": {
-   "prompt": "10.000 € al 5 % compost durant 10 anys, quant sumen? (arrodoneix a euros)",
-   "options": [],
-   "explanation": "10.000 × 1,05¹⁰ ≈ 16.289 €. Amb simple serien 15.000 €.",
-   "unit": "€"
-  },
-  "u1l5-5": {
-   "prompt": "L'interès compost només funciona a favor teu.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "També en contra teva: una targeta revolving al 20 % duplica el deute en menys de 4 anys."
-  },
-  "u1l5-6": {
-   "prompt": "Ordena de menys a més el resultat de 100 € al mes durant 30 anys.",
-   "options": [
-    "Al 5 %",
-    "Al 7 %",
-    "Al 2 %",
-    "Al 0 %"
-   ],
-   "explanation": "36.000 €, 49.273 €, 83.226 € i 121.997 €: uns pocs punts de rendibilitat canvien moltíssim el resultat final."
-  },
-  "u1l5-7": {
-   "prompt": "Tens 22 anys i 50 € al mes per invertir. Què fas?",
-   "options": [
-    "Me'ls gasto: amb 50 € no hi ha per a res",
-    "Començo ja amb 50 € i pujo l'aportació quan pugui",
-    "Espero a guanyar més per començar amb alguna cosa «seriosa»"
-   ],
-   "explanation": "Començar aviat, encara que sigui amb poc, és el que més aprofita l'interès compost.",
-   "feedback": [
-    "50 € al mes al 7 % durant 40 anys són uns 130.000 €, amb 24.000 € aportats.",
-    "Bé: amb el temps al teu favor, començar aviat pesa més que començar amb molt.",
-    "Esperar surt car: els primers anys són els que tenen més temps per compondre's."
-   ]
   },
   "u1l6-1": {
    "prompt": "Segons la regla del 72, al 6 % anual els diners es dupliquen en uns ____ anys.",

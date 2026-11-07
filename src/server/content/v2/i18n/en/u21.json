@@ -5,51 +5,6 @@
   "section": "Technical analysis"
  },
  "lessons": {
-  "u21l1": {
-   "title": "Support and resistance",
-   "steps": [
-    {
-     "texts": [
-      "The market’s memory",
-      "Pablo",
-      "I bought at €50 and the share sank to €40.",
-      "Now it’s back at €50. I just want to get out without a loss.",
-      "Like Pablo, lots of people bought at €50 and have been waiting for months.",
-      "What tends to happen when the price gets back to €50?",
-      "Nothing: €50 is just another price",
-      "That’s exactly where lots of trapped buyers want out: **selling** tends to show up.",
-      "Selling shows up: it acts as resistance",
-      "That’s it! Lots of people sell there to «get their money back». That’s **resistance**.",
-      "It’s sure to shoot up",
-      "It might break through, but it’s hard: there are sellers waiting at €50.",
-      "**Support** is the opposite: where buyers showed up before."
-     ]
-    },
-    {
-     "texts": [
-      "Stop below support",
-      "Real Alphabet candles: you buy at the last price. **Support** sits just over 2 % below and **resistance** almost 5 % above.",
-      "Where would you put the stop on this trade?",
-      "Just above support, to lose less",
-      "A little below support",
-      "No stop: support will hold",
-      "If the price loses support, your reason for buying no longer holds: the stop goes on the other side. Above it, any normal dip knocks you out.",
-      "Put the stop below support and the target before resistance. Then see what happened.",
-      "The stop goes **on the other side of support**: if it breaks, the idea is dead. And the target goes **before resistance**, where selling tends to show up.",
-      "Target hit! Support held and your stop wasn’t triggered.",
-      "Stopped out. Was it below support or above it?",
-      "That stop is above support: any wick will trigger it.",
-      "Move the stop and the target, then hit «See what happened»"
-     ]
-    },
-    {
-     "title": "How to draw them",
-     "body": "• Daily or weekly charts work best.\n• Look for zones where the price has turned at least **2–3 times**.\n• Draw a **zone** (a narrow rectangle), not a line to the cent.\n• More touches and more volume = more relevant. Old, distant levels carry less weight.\n• Round numbers and all-time highs also attract orders.",
-     "key": "Support is where buyers showed up before; resistance is where sellers did.",
-     "tip": "Draw them as zones, not as razor-sharp lines."
-    }
-   ]
-  },
   "u21l2": {
    "title": "The role reversal",
    "steps": [
@@ -364,46 +319,6 @@
   }
  },
  "questions": {
-  "u21l1-1": {
-   "prompt": "In this sideways stretch, tap the ceiling: the highest close, where sellers showed up (Microsoft · closes every 3 sessions · August–October 2024)",
-   "options": [],
-   "explanation": "That zone acts as resistance: the rise stalled there and the price fell back."
-  },
-  "u21l1-2": {
-   "prompt": "Now the floor: tap the lowest close, where buyers showed up (NVIDIA · closes every 3 sessions · December 2025 – February 2026)",
-   "options": [],
-   "explanation": "That zone acted as support: the fall stalled and the price bounced strongly."
-  },
-  "u21l1-3": {
-   "prompt": "You’ve bought at the last price. Place the stop a little below the support: the recent low.",
-   "options": [],
-   "explanation": "If the price loses the support, the buy idea is no longer valid. The stop goes a little below, not right on the line, so that a wick doesn’t trigger it."
-  },
-  "u21l1-6": {
-   "prompt": "What makes a support level more relevant? Select all that apply.",
-   "options": [
-    "That it’s recent",
-    "That an ad on social media says so",
-    "That there was a lot of volume in that zone",
-    "That the price has turned there several times"
-   ],
-   "explanation": "More touches, more volume and more recent. Old, distant levels carry less weight."
-  },
-  "u21l1-7": {
-   "prompt": "Look for support and resistance in these 30 candles. Up or down over the next 10 sessions?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "Support or resistance tells you where buying or selling may appear, not what will happen. Above all, it shows you where you’ve been proved wrong.",
-   "horizon": "the next 10 sessions"
-  },
-  "u21l1-10": {
-   "prompt": "There’s support around €20. You put the stop 3 % below. At what price does it go?",
-   "options": [],
-   "explanation": "20 × 0.97 = €19.40. Leaving a bit of margin stops a mere wick from knocking you out.",
-   "unit": "€"
-  },
   "u21l2-3": {
    "prompt": "Bruno bought after resistance at €100 was broken. The price rises to €106 and falls back to €101. What’s the sensible thing to do?",
    "options": [

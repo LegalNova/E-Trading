@@ -103,54 +103,6 @@ export default unit({
       chat(['He leído que los fondos y los algoritmos dominan la bolsa 😰', '¿Entonces los particulares no pintamos nada?'], '¿Qué le contestas a Lumi?', [['Exacto, mejor ni lo intentes', 'Tampoco: no hace falta ganarles en velocidad para invertir bien a largo plazo.'], ['A corto plazo es difícil ganarles; a largo plazo no compites con ellos', '¡Bien visto! Invertir a largo plazo es participar de lo que ganan las empresas.'], ['Hay que operar más rápido que ellos', 'Ellos operan en microsegundos: esa carrera está perdida.']], 1, 'El minorista no gana por velocidad, sino por tiempo y costes bajos.'),
     ], { source: '2.3', minutes: 6, retire: [3, 4, 5, 9] }),
 
-    lesson('u5l3', 'Oferta, demanda y precio', [
-      play({
-        title: 'El libro de órdenes',
-        intro: 'A la izquierda, quien quiere **comprar** (*bid*); a la derecha, quien quiere **vender** (*ask*). Si compras ya, compras al mejor precio de venta.',
-        widget: {
-          kind: 'book', size: 100, maxSize: 2000,
-          bids: [{ price: 10.02, size: 500 }, { price: 10.01, size: 700 }, { price: 10.0, size: 1200 }],
-          asks: [{ price: 10.04, size: 300 }, { price: 10.05, size: 800 }, { price: 10.07, size: 1000 }],
-        },
-        predict: {
-          prompt: 'Quieres comprar **600 acciones** ya. ¿A qué precio medio te salen?',
-          options: ['A 10,04 €, el mejor precio de venta', 'Algo más caras que 10,04 €', 'A 10,02 €, el mejor precio de compra'],
-          answer: 1,
-          why: 'Solo hay 300 a 10,04 €: las otras 300 salen a 10,05 €. Pagas 6.027 €, una media de **10,045 €**.',
-        },
-        goal: { text: 'Compra tantas que tu precio medio se aleje más de un 0,1 % del mejor precio.', when: [when('slippagePct', '>', 0.1)] },
-        insight: 'La diferencia entre el mejor *bid* y el mejor *ask* es la **horquilla** o *spread*. Si llegan más compradores con prisa, **se comen la oferta escalón a escalón** y el precio sube.',
-        lumi: [
-          { when: when('slippagePct', '>', 0.1), say: 'Tu propia compra ha empujado el precio hacia arriba. Así se mueve.', mood: 'THINKING' },
-          { when: when('size', '>', 300), say: 'Se acabaron las de 10,04 €: las siguientes salen más caras.', mood: 'THINKING' },
-          { say: 'Mueve cuántas acciones compras de golpe', mood: 'HAPPY' },
-        ],
-      }),
-      story('Resultados por sorpresa', [{ id: 'leo', name: 'Leo' }], [
-        note('Son las 10:00. La empresa de Leo publica resultados mucho mejores de lo esperado.'),
-        say('leo', 'En el libro, el mejor vendedor pedía 10,04 €. ¿Y ahora qué?'),
-        choose('¿Qué crees que pasa con el precio?', [
-          opt('Sube: los compradores se comen la oferta', 'good', say('lumi', 'Eso. Se agotan las de 10,04 €, se cruza a 10,05 €… y sube.')),
-          opt('Nada: el precio lo fija la empresa', 'bad', say('lumi', 'La empresa no fija el precio: es el último acuerdo entre comprador y vendedor.')),
-          opt('Depende solo de lo que valga la empresa', 'ok', say('lumi', 'A largo plazo importa. Hoy manda quién tiene más prisa por comprar.')),
-        ]),
-        say('leo', 'Entonces, ¿el precio es lo que vale la empresa?'),
-        say('lumi', 'No: es lo que alguien **acaba de pagar**. Lo mueven noticias, resultados y datos.'),
-      ]),
-      key('Las subastas', 'La Bolsa de Madrid abre y cierra con una **subasta**: de 8:30 a 9:00 y de 17:30 a 17:35 se acumulan órdenes y se fija un único precio que cruza el máximo volumen.', 'El precio es el último acuerdo entre quien más paga y quien menos pide.', 'El precio no es lo que vale una empresa: es lo que alguien acaba de pagar.'),
-    ], [
-      single('El mejor precio de compra es 20,10 € y el de venta 20,14 €. Si compras ya, ¿a qué precio compras?', ['20,10 €', '20,12 €', '20,14 €'], 2, 'Compras al mejor precio de venta (ask): es lo que pide quien vende.'),
-      timed(num('Rápido: en ese libro (20,10 € / 20,14 €), ¿de cuánto es el spread?', 0.04, '€', '20,14 − 20,10 = 0,04 €.'), 15),
-      num('Simula tu compra: quieres 600 acciones ya. En el libro hay 300 a 10,04 € y 800 a 10,05 €. ¿Cuánto pagas en total?', 6027, '€', '300 × 10,04 = 3.012 € y 300 × 10,05 = 3.015 €. Total: 6.027 €.'),
-      num('En esa compra de 600 acciones por 6.027 €, ¿cuál es tu precio medio por acción?', 10.045, '€', '6.027 ÷ 600 = 10,045 €: un poco más que el mejor precio porque te has comido dos escalones.', 0.02),
-      order('Ordena lo que pasa cuando llegan muchos compradores con prisa.', ['Llegan muchas órdenes de compra a mercado', 'Se agotan las acciones a 10,04 €', 'Las siguientes compras se cruzan a 10,05 €', 'El último precio negociado sube'], 'Así sube el precio: la demanda se come la oferta escalón a escalón.'),
-      order('Ordena una sesión de la Bolsa de Madrid.', ['Subasta de apertura (8:30-9:00)', 'Mercado abierto (9:00-17:30)', 'Subasta de cierre (17:30-17:35)', 'Se publica el precio de cierre'], 'Dos subastas enmarcan la sesión continua.'),
-      tf('Si llegan más vendedores que compradores, el precio tiende a bajar.', true, 'Los vendedores con prisa aceptan precios cada vez más bajos del libro de compra.'),
-      multi('¿Qué puede mover el precio de una acción? Marca todos.', ['Los resultados de la empresa', 'Un dato económico', 'Que lleguen más vendedores que compradores', 'El color de su logotipo'], [0, 1, 2], 'Todo lo que cambia lo que la gente está dispuesta a pagar mueve el precio.'),
-      scenario('Ana quiere vender ya 2.000 acciones de una empresa pequeña. En el libro de compra hay 300 a 5,00 €, 500 a 4,90 € y 1.200 a 4,70 €. ¿Qué hace?', [['Pone una orden limitada a 5,00 € y vende poco a poco', 'Vende a su precio lo que haya y el resto espera: no regala el valor por las prisas.'], ['Vende las 2.000 a mercado', 'Se come el libro: cobra 9.590 €, una media de unos 4,80 € frente a los 5,00 € del mejor precio.'], ['Vende a mercado y además pone más órdenes a la vez', 'Más presión vendedora sobre un libro pequeño: el precio cae todavía más.']], 0, 'En valores poco líquidos, una orden grande a mercado mueve el precio en tu contra.'),
-      timed(tf('El precio de una acción es lo que vale de verdad la empresa.', false, 'Es el último acuerdo entre un comprador y un vendedor; el valor de la empresa es otra cosa.'), 10),
-    ], { source: '2.4', minutes: 6, retire: [1, 2, 6, 9] }),
-
     lesson('u5l4', 'Horarios y sesiones', [
       play({
         title: 'Jueves, 20:00 en España',

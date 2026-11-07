@@ -1,55 +1,11 @@
 import 'server-only'
 // Sección 7 · Unidad 21 · Soportes, resistencias y figuras (docs/curso-v2/02-curriculo.md)
 // Fuentes: docs/curso/09-analisis-tecnico.md (9.1–9.4). Estadísticas de figuras: Bulkowski.
-import { buckets, chat, choose, fill, key, lesson, level, match, mission, multi, note, num, opt, order, play, point, say, scenario, simTrade, single, story, tf, timed, trend, unit, upDown, when } from '../dsl'
+import { buckets, chat, choose, fill, key, lesson, level, match, multi, note, num, opt, order, play, point, say, scenario, simTrade, single, story, tf, timed, trend, unit, upDown, when } from '../dsl'
 
 export default unit({
   id: 'u21', order: 21, title: 'Soportes, resistencias y figuras', description: 'Zonas de precio, líneas de tendencia, figuras chartistas y rupturas falsas',
   lessons: [
-    lesson('u21l1', 'Soportes y resistencias', [
-      story('La memoria del mercado', [{ id: 'pablo', name: 'Pablo' }], [
-        say('pablo', 'Compré a 50 € y la acción se hundió hasta 40 €.'),
-        say('pablo', 'Ahora vuelve a 50 €. Solo quiero salir sin perder.'),
-        note('Como Pablo, mucha gente compró a 50 € y lleva meses esperando.'),
-        choose('¿Qué suele pasar cuando el precio vuelve a 50 €?', [
-          opt('Nada: 50 € es un precio como otro', 'bad', say('lumi', 'Es justo donde muchos atrapados quieren salir: suele aparecer **venta**.')),
-          opt('Aparece venta: actúa como resistencia', 'good', say('lumi', '¡Eso! Muchos venden ahí para «recuperar lo suyo». Eso es una **resistencia**.')),
-          opt('Sube seguro con fuerza', 'ok', say('lumi', 'Puede romperla, pero cuesta: en 50 € hay vendedores esperando.')),
-        ]),
-        say('lumi', 'Un **soporte** es lo contrario: donde antes aparecieron compradores.'),
-      ]),
-      mission({
-        title: 'Stop bajo el soporte',
-        intro: 'Velas reales de Alphabet: compras al último precio. El **soporte** queda algo más de un 2 % por debajo y la **resistencia**, casi un 5 % por encima.',
-        widget: { kind: 'orders', chart: 'lvl-12', stopPct: 1, takePct: 4, maxPct: 10 },
-        predict: {
-          prompt: '¿Dónde pondrías el stop de esta compra?',
-          options: ['Justo encima del soporte, para perder poco', 'Un poco por debajo del soporte', 'Sin stop: el soporte aguantará'],
-          answer: 1,
-          why: 'Si el precio pierde el soporte, tu idea de compra deja de valer: el stop va al otro lado. Por encima, cualquier bajada normal te saca.',
-        },
-        goal: { text: 'Pon el stop bajo el soporte y el objetivo antes de la resistencia. Luego mira qué pasó.', when: [when('stopPct', '>=', 2.5), when('takePct', '<=', 4.5), when('played', '==', 1), when('hit', '==', 2)] },
-        insight: 'El stop va **al otro lado del soporte**: si se pierde, la idea ya no vale. Y el objetivo, **antes de la resistencia**, donde suele aparecer venta.',
-        lumi: [
-          { when: when('hit', '==', 2), say: '¡Objetivo! El soporte aguantó y tu stop no saltó.', mood: 'CELEBRATE' },
-          { when: when('hit', '==', 1), say: 'Saltó el stop. ¿Estaba por debajo del soporte o por encima?', mood: 'WORRIED' },
-          { when: when('stopPct', '<', 2.5), say: 'Ese stop queda por encima del soporte: cualquier mecha lo salta.', mood: 'THINKING' },
-          { say: 'Mueve el stop y el objetivo, y dale a ver qué pasó', mood: 'HAPPY' },
-        ],
-      }),
-      key('Cómo trazarlos', '• Mejor en diario o semanal.\n• Busca zonas donde el precio haya girado al menos **2–3 veces**.\n• Traza una **zona** (un rectángulo estrecho), no una línea al céntimo.\n• Más toques y más volumen = más relevante. Los niveles antiguos y lejanos pesan menos.\n• Los números redondos y los máximos históricos también atraen órdenes.', 'Un soporte es donde antes aparecieron compradores; una resistencia, donde aparecieron vendedores.', 'Trázalos como zonas, no como líneas al milímetro.'),
-    ], [
-      point('En este tramo lateral, toca el techo: el cierre más alto, donde aparecieron vendedores', 'trend-flat-2', 'max', 'Esa zona actúa como resistencia: la subida se frenó ahí y el precio volvió a bajar.'),
-      point('Ahora el suelo: toca el cierre más bajo, donde aparecieron compradores', 'trend-flat-3', 'min', 'Esa zona actuó como soporte: la caída se frenó y el precio rebotó con fuerza.'),
-      level('Has comprado al último precio. Coloca el stop un poco por debajo del soporte: el mínimo reciente.', 'lvl-1', 'STOP', 'Si el precio pierde el soporte, la idea de compra deja de valer. El stop va algo por debajo, no justo encima de la línea, para que una mecha no lo salte.'),
-      level('Coloca ahora el objetivo: cerca de la resistencia, el máximo anterior.', 'lvl-12', 'TAKE', 'En el máximo anterior suele aparecer venta: poner el objetivo en esa zona es más realista que esperar a que la atraviese.'),
-      tf('Los soportes deben trazarse como líneas exactas al céntimo.', false, 'Son zonas donde muchos se ponen de acuerdo, no un precio exacto.'),
-      multi('¿Qué hace más relevante un soporte? Marca todo.', ['Que el precio haya girado ahí varias veces', 'Que hubiera mucho volumen en esa zona', 'Que sea reciente', 'Que lo diga un anuncio en redes'], [0, 1, 2], 'Más toques, más volumen y más cercanía en el tiempo. Los niveles antiguos y lejanos pesan menos.'),
-      upDown('Busca soportes y resistencias en estas 30 velas. ¿Sube o baja en las 10 sesiones siguientes?', 'ud-20', 'Un soporte o una resistencia dicen dónde puede aparecer compra o venta, no qué pasará. Sirven sobre todo para saber dónde te has equivocado.'),
-      scenario('Pablo compró a 50 €, la acción cayó a 40 € y ahora vuelve a 50 €. Muchos como él quieren «recuperar lo suyo». ¿Qué suele pasar en esa zona?', [['Nada especial: 50 € es un precio como otro', 'Es justo donde muchos compradores atrapados quieren salir: suele aparecer venta.'], ['Suele aparecer venta: actúa como resistencia', 'Eso: la memoria de los que compraron arriba crea oferta en ese nivel.'], ['El precio sube seguro con fuerza', 'Puede romperla, pero lo habitual es que cueste: allí hay vendedores esperando.']], 1, 'Las resistencias nacen de la memoria de los participantes: quien perdió quiere salir sin pérdidas.'),
-      timed(single('Rápido: zona donde las caídas se han frenado varias veces.', ['Soporte', 'Resistencia', 'Clavicular'], 0, 'Es un soporte: ahí aparecieron compradores.'), 10),
-      num('Un soporte está en la zona de 20 €. Pones el stop un 3 % por debajo. ¿A qué precio va?', 19.4, '€', '20 × 0,97 = 19,40 €. Dejar algo de margen evita que una simple mecha te saque.'),
-    ], { source: '9.1', minutes: 6, retire: [3, 4, 7, 8] }),
 
     lesson('u21l2', 'El cambio de rol', [
       story('El suelo que se volvió techo', [{ id: 'laura', name: 'Laura' }], [

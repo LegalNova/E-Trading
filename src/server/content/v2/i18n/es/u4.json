@@ -2,7 +2,7 @@
  "unit": {
   "title": "Tu primer plan financiero",
   "description": "Objetivos con cifra y fecha, tu plazo, tu riesgo y lo que dicen los datos del trading",
-  "section": "Fundamentos del dinero"
+  "section": "Tu dinero en orden"
  },
  "lessons": {
   "u4l1": {
@@ -91,32 +91,6 @@
     }
    ]
   },
-  "u4l3": {
-   "title": "Tu horizonte temporal",
-   "steps": [
-    {
-     "texts": [
-      "¿Cuánto hay que esperar?",
-      "Datos reales: el S&P 500 mes a mes durante 40 años. Imagina que invertiste en **cualquier** mes y esperaste unos años. ¿Cuántas veces habrías perdido dinero?",
-      "Si invertías en un mes cualquiera y vendías **un año después**, ¿cuántas veces perdiste dinero?",
-      "Casi nunca",
-      "Más o menos 1 de cada 5 veces",
-      "La mitad de las veces",
-      "En estos 40 años, el **20,8 %** de los periodos de un año acabó en pérdida, y el peor perdió un 45 %.",
-      "Encuentra a partir de cuántos años no hubo ni un solo caso con pérdida.",
-      "En estos datos, esperando **14 años o más** nunca se perdió dinero. Pero el pasado no garantiza el futuro: quien compró en 1929, o en Japón en 1989, esperó mucho más. El plazo decide el riesgo que puedes asumir.",
-      "A corto plazo la bolsa es una montaña rusa: casi cualquier cosa puede pasar.",
-      "Mira el peor caso: aún hay periodos largos en pérdidas (los que empezaron en 2000).",
-      "Sigue alargando la espera"
-     ]
-    },
-    {
-     "title": "Ponle fecha a cada euro",
-     "body": "• **Colchón:** siempre disponible cuenta remunerada, fondo monetario.\n• **Viaje o coche (1-3 años)** depósitos, letras.\n• **Entrada de un piso (3-7 años)** mezcla prudente, más renta fija.\n• **Jubilación (15 años o más)** sobre todo acciones diversificadas.",
-     "key": "No se invierte en bolsa el dinero que se necesita pronto: puede estar bajando justo cuando lo necesites."
-    }
-   ]
-  },
   "u4l4": {
    "title": "Cuánto riesgo puedes aguantar",
    "steps": [
@@ -182,7 +156,7 @@
    "steps": []
   },
   "s1boss": {
-   "title": "Reto final: Fundamentos del dinero",
+   "title": "Reto final: Tu dinero en orden",
    "steps": []
   }
  },
@@ -316,90 +290,6 @@
     "Ve cuánto lleva de cada uno y el viaje no se come el colchón.",
     "Mientras tanto, los otros plazos siguen corriendo."
    ]
-  },
-  "u4l3-1": {
-   "prompt": "Empareja cada objetivo con dónde suele tener sentido.",
-   "options": [
-    "Colchón de emergencia",
-    "Viaje dentro de un año",
-    "Entrada de un piso en 5 años",
-    "Jubilación en 35 años"
-   ],
-   "explanation": "A más plazo, más tiempo para recuperarse de las caídas.",
-   "right": [
-    "Mezcla prudente, más renta fija",
-    "Sobre todo acciones diversificadas",
-    "Depósito o letras",
-    "Cuenta remunerada"
-   ]
-  },
-  "u4l3-2": {
-   "prompt": "Necesitas la entrada de un piso dentro de 18 meses. ¿Dónde tiene más sentido?",
-   "options": [
-    "Depósitos o un fondo monetario",
-    "Criptomonedas",
-    "100 % en acciones tecnológicas"
-   ],
-   "explanation": "A 18 meses, una caída del 30 % arruinaría el plan."
-  },
-  "u4l3-3": {
-   "prompt": "Ordena de menor a mayor el riesgo que suele admitir cada objetivo.",
-   "options": [
-    "Entrada de un piso en 5 años",
-    "Jubilación en 30 años",
-    "Viaje en un año",
-    "Colchón de emergencia"
-   ],
-   "explanation": "Cuanto más lejos está el objetivo, más caídas se pueden aguantar por el camino."
-  },
-  "u4l3-5": {
-   "prompt": "Bruno tiene 8.000 € para la matrícula de un máster que paga dentro de 10 meses. Un amigo le dice que en bolsa «sacará algo más». ¿Qué hace?",
-   "options": [
-    "Lo mete en una cripto que ha subido mucho",
-    "Lo deja en un depósito o letras hasta el pago",
-    "Lo mete todo en bolsa"
-   ],
-   "explanation": "Dinero con fecha cercana: sin riesgo, aunque rinda poco.",
-   "feedback": [
-    "Caídas del 50 % en pocos meses no son raras en cripto: podría quedarse sin máster.",
-    "Gana poco, pero el día de la matrícula los 8.000 € estarán ahí.",
-    "Si la bolsa cae un 20 % justo antes, le faltarían 1.600 € para la matrícula."
-   ]
-  },
-  "u4l3-6": {
-   "prompt": "S&P 500, septiembre de 2008. Imagina que aquí tienes el dinero de la entrada de un piso que pagas en 6 meses. ¿Qué crees que hizo el índice en los meses siguientes?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Sea cual sea el resultado, el dinero que necesitas en pocos meses no debería depender de lo que haga la bolsa en ese plazo.",
-   "horizon": "los meses siguientes"
-  },
-  "u4l3-8": {
-   "prompt": "¿Corto o largo plazo?",
-   "options": [
-    "Fianza de un alquiler dentro de 6 meses",
-    "Independencia financiera a los 50 (tienes 25)",
-    "Vacaciones del verano que viene",
-    "Jubilación",
-    "Cambiar de móvil",
-    "Ahorro para la universidad de un bebé"
-   ],
-   "explanation": "Lo que necesitas pronto, sin riesgo; lo lejano puede aguantar más altibajos.",
-   "right": [
-    "Corto plazo (menos de 3 años)",
-    "Largo plazo (más de 10 años)"
-   ]
-  },
-  "u4l3-10": {
-   "prompt": "No se invierte en bolsa el dinero que se necesita ____.",
-   "options": [
-    "en 30 años",
-    "para jubilarse",
-    "nunca",
-    "pronto"
-   ],
-   "explanation": "No porque vaya a bajar seguro, sino porque puede estar bajando justo cuando lo necesites."
   },
   "u4l4-1": {
    "prompt": "¿Cuál es tu perfil de riesgo real?",

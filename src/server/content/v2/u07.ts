@@ -1,58 +1,10 @@
 import 'server-only'
 // Sección 2 · Unidad 7 · Índices y referencias (docs/curso-v2/02-curriculo.md)
-import { buckets, chat, choose, fill, key, lesson, match, mission, multi, note, num, opt, play, say, scenario, single, story, tf, timed, unit, upDown, when } from '../dsl'
+import { buckets, chat, choose, fill, key, lesson, match, mission, note, num, opt, play, say, scenario, single, story, tf, timed, unit, upDown, when } from '../dsl'
 
 export default unit({
   id: 'u7', order: 7, title: 'Índices y referencias', description: 'Qué mide cada índice, cómo se pondera y cómo usarlo para medir tu rentabilidad',
   lessons: [
-    lesson('u7l1', 'Qué es un índice', [
-      story('El fondo que ganó un 8 %', [{ id: 'marta', name: 'Marta' }], [
-        say('marta', '¡Mi fondo ha ganado un 8 % este año! Es buenísimo, ¿no?'),
-        note('Ese año, el índice de su mercado subió un 14 %.'),
-        choose('¿Qué le dices a Marta?', [
-          opt('Enhorabuena: un 8 % es genial', 'bad', say('lumi', 'Suena bien… pero copiar el índice le habría dado un 14 %.')),
-          opt('Ha quedado 6 puntos por detrás de su índice', 'good', say('lumi', 'Eso. Para eso sirve un índice: es la **vara de medir**.')),
-          opt('Depende de cuánto dinero haya puesto', 'ok', say('lumi', 'El importe no cambia el porcentaje: 8 % frente a 14 %.')),
-        ]),
-        say('marta', '¿Y cómo compro yo ese índice?'),
-        say('lumi', 'No se compra tal cual: se compra un **fondo o ETF** que lo replica.'),
-      ]),
-      play({
-        title: '¿Para qué sirve un índice?',
-        intro: 'Un **índice** resume en una cifra cómo va un grupo de valores. Se usa para tres cosas.',
-        widget: {
-          kind: 'sort',
-          bins: [{ label: 'Termómetro' }, { label: 'Vara de medir' }, { label: 'Base de productos' }],
-          cards: [
-            { icon: 'news', label: '«La bolsa española sube hoy un 1 %»', bin: 0, why: 'Es el IBEX 35: dice cómo va el mercado.' },
-            { icon: 'scale', label: 'Un fondo compara su resultado con el IBEX 35', bin: 1, why: 'El índice es la referencia para saber si el fondo lo hizo bien.' },
-            { icon: 'layers', label: 'Un ETF que copia el S&P 500', bin: 2, why: 'Los ETFs y fondos indexados lo replican con costes bajos.' },
-            { icon: 'bank', label: 'Saber cómo va hoy el sector bancario', bin: 0, why: 'Hay índices de países y de sectores: termómetros más concretos.' },
-            { icon: 'pie', label: 'Comprobar si tu cartera lo hizo bien', bin: 1, why: 'Compárala con un índice que se parezca a lo que tienes.' },
-            { icon: 'piggy', label: 'Un fondo indexado para aportar cada mes', bin: 2, why: 'El fondo indexado copia el índice: así se «compra».' },
-          ],
-        },
-        goal: { text: 'Clasifica los seis usos.', when: [when('done', '==', 6)] },
-        insight: 'Un índice es **termómetro**, **vara de medir** y **base de productos**. Cada uno tiene sus reglas: qué empresas entran, cuánto pesa cada una y cada cuánto se revisa.',
-        lumi: [
-          { when: when('wrong', '>=', 2), say: 'Pista: ¿informa, sirve para compararse o se compra como fondo?', mood: 'THINKING' },
-          { when: when('done', '>=', 4), say: 'Una cifra con muchos trabajos distintos.', mood: 'HAPPY' },
-          { say: 'Toca cada caso: ¿para qué se usa el índice?', mood: 'HAPPY' },
-        ],
-      }),
-      key('Puntos, no euros', 'Un índice se mide en puntos, no en euros. Lo que importa es la **variación**: si pasa de 14.000 a 14.700 puntos, ha subido un 5 %.', 'Un índice es una cesta de referencia, no algo que se compra tal cual.', 'Comprar el índice entero es apostar por toda una economía, no por una empresa.'),
-    ], [
-      single('¿Qué es un índice bursátil?', ['Una cifra que resume cómo va un grupo de valores', 'Una empresa que cotiza en bolsa', 'Un tipo de interés'], 0, 'Es una cesta de referencia con reglas sobre qué entra y cuánto pesa.'),
-      tf('Se puede comprar directamente el índice S&P 500.', false, 'Se compra un fondo o ETF que lo replica.'),
-      num('Un índice pasa de 14.000 a 14.700 puntos. ¿Cuánto ha subido?', 5, '%', '(14.700 − 14.000) ÷ 14.000 = 0,05 → 5 %.'),
-      timed(num('Rápido: un índice pasa de 5.000 a 4.600 puntos. ¿Cuánto ha caído, en %? (escríbelo en positivo)', 8, '%', '400 ÷ 5.000 = 0,08 → ha caído un 8 %.'), 20),
-      match('Empareja cada uso del índice con un ejemplo.', [['Termómetro', 'Saber cómo va un mercado hoy'], ['Vara de medir', 'Comparar la rentabilidad de un fondo'], ['Base de productos', 'Fondos y ETFs que lo copian'], ['Reglas del índice', 'Qué entra, cuánto pesa y cuándo se revisa']], 'Un índice informa, sirve de referencia y es la base de los fondos indexados.'),
-      tf('Si el IBEX 35 está en 14.000 puntos, comprarlo cuesta 14.000 €.', false, 'Los puntos no son euros: miden la evolución desde una base.'),
-      multi('¿Qué fijan las reglas de un índice? Marca todas.', ['Qué empresas entran', 'Cuánto pesa cada una', 'Cada cuánto se revisa', 'Lo que opine cada día un tertuliano'], [0, 1, 2], 'Las reglas son públicas y objetivas: por eso el índice sirve de referencia.'),
-      scenario('Un fondo presume en un anuncio: «¡Hemos ganado un 8 % este año!». El índice de su mercado ha subido un 14 %. ¿Qué piensas?', [['Que ha quedado 6 puntos por detrás de su referencia', 'Ganar un 8 % suena bien, pero un fondo indexado de ese mercado habría dado bastante más.'], ['Que es un fondo excelente', 'Solo lo parece si no lo comparas con nada.'], ['Que no se puede comparar con nada', 'Para eso sirven los índices: son la vara de medir.']], 0, 'Una rentabilidad sola no dice si es buena: hay que compararla con su índice.'),
-      timed(tf('Si un índice sube, todas sus empresas han subido.', false, 'Es una media ponderada: unas suben, otras bajan, y el índice resume el conjunto.'), 10),
-      fill('Un índice no se compra directamente: se compra un fondo o un ____ que lo replica.', 'ETF', ['IPC', 'bono', 'depósito'], 'Los ETFs y fondos indexados copian el índice con costes bajos.'),
-    ], { source: '2.6', minutes: 6, retire: [1, 4, 7, 8] }),
 
     lesson('u7l2', 'S&P 500, Nasdaq, IBEX 35 y MSCI World', [
       play({

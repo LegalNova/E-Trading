@@ -5,60 +5,6 @@
   "section": "Cómo funcionan los mercados"
  },
  "lessons": {
-  "u7l1": {
-   "title": "Qué es un índice",
-   "steps": [
-    {
-     "texts": [
-      "El fondo que ganó un 8 %",
-      "Marta",
-      "¡Mi fondo ha ganado un 8 % este año! Es buenísimo, ¿no?",
-      "Ese año, el índice de su mercado subió un 14 %.",
-      "¿Qué le dices a Marta?",
-      "Enhorabuena: un 8 % es genial",
-      "Suena bien… pero copiar el índice le habría dado un 14 %.",
-      "Ha quedado 6 puntos por detrás de su índice",
-      "Eso. Para eso sirve un índice: es la **vara de medir**.",
-      "Depende de cuánto dinero haya puesto",
-      "El importe no cambia el porcentaje: 8 % frente a 14 %.",
-      "¿Y cómo compro yo ese índice?",
-      "No se compra tal cual: se compra un **fondo o ETF** que lo replica."
-     ]
-    },
-    {
-     "texts": [
-      "¿Para qué sirve un índice?",
-      "Un **índice** resume en una cifra cómo va un grupo de valores. Se usa para tres cosas.",
-      "Termómetro",
-      "Vara de medir",
-      "Base de productos",
-      "«La bolsa española sube hoy un 1 %»",
-      "Es el IBEX 35: dice cómo va el mercado.",
-      "Un fondo compara su resultado con el IBEX 35",
-      "El índice es la referencia para saber si el fondo lo hizo bien.",
-      "Un ETF que copia el S&P 500",
-      "Los ETFs y fondos indexados lo replican con costes bajos.",
-      "Saber cómo va hoy el sector bancario",
-      "Hay índices de países y de sectores: termómetros más concretos.",
-      "Comprobar si tu cartera lo hizo bien",
-      "Compárala con un índice que se parezca a lo que tienes.",
-      "Un fondo indexado para aportar cada mes",
-      "El fondo indexado copia el índice: así se «compra».",
-      "Clasifica los seis usos.",
-      "Un índice es **termómetro**, **vara de medir** y **base de productos**. Cada uno tiene sus reglas: qué empresas entran, cuánto pesa cada una y cada cuánto se revisa.",
-      "Pista: ¿informa, sirve para compararse o se compra como fondo?",
-      "Una cifra con muchos trabajos distintos.",
-      "Toca cada caso: ¿para qué se usa el índice?"
-     ]
-    },
-    {
-     "title": "Puntos, no euros",
-     "body": "Un índice se mide en puntos, no en euros. Lo que importa es la **variación**: si pasa de 14.000 a 14.700 puntos, ha subido un 5 %.",
-     "key": "Un índice es una cesta de referencia, no algo que se compra tal cual.",
-     "tip": "Comprar el índice entero es apostar por toda una economía, no por una empresa."
-    }
-   ]
-  },
   "u7l2": {
    "title": "S&P 500, Nasdaq, IBEX 35 y MSCI World",
    "steps": [
@@ -276,55 +222,6 @@
   }
  },
  "questions": {
-  "u7l1-1": {
-   "prompt": "¿Qué es un índice bursátil?",
-   "options": [
-    "Una empresa que cotiza en bolsa",
-    "Un tipo de interés",
-    "Una cifra que resume cómo va un grupo de valores"
-   ],
-   "explanation": "Es una cesta de referencia con reglas sobre qué entra y cuánto pesa."
-  },
-  "u7l1-3": {
-   "prompt": "Un índice pasa de 14.000 a 14.700 puntos. ¿Cuánto ha subido?",
-   "options": [],
-   "explanation": "(14.700 − 14.000) ÷ 14.000 = 0,05 → 5 %.",
-   "unit": "%"
-  },
-  "u7l1-4": {
-   "prompt": "Rápido: un índice pasa de 5.000 a 4.600 puntos. ¿Cuánto ha caído, en %? (escríbelo en positivo)",
-   "options": [],
-   "explanation": "400 ÷ 5.000 = 0,08 → ha caído un 8 %.",
-   "unit": "%"
-  },
-  "u7l1-6": {
-   "prompt": "Si el IBEX 35 está en 14.000 puntos, comprarlo cuesta 14.000 €.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Los puntos no son euros: miden la evolución desde una base."
-  },
-  "u7l1-7": {
-   "prompt": "¿Qué fijan las reglas de un índice? Marca todas.",
-   "options": [
-    "Cuánto pesa cada una",
-    "Lo que opine cada día un tertuliano",
-    "Cada cuánto se revisa",
-    "Qué empresas entran"
-   ],
-   "explanation": "Las reglas son públicas y objetivas: por eso el índice sirve de referencia."
-  },
-  "u7l1-10": {
-   "prompt": "Un índice no se compra directamente: se compra un fondo o un ____ que lo replica.",
-   "options": [
-    "IPC",
-    "bono",
-    "depósito",
-    "ETF"
-   ],
-   "explanation": "Los ETFs y fondos indexados copian el índice con costes bajos."
-  },
   "u7l2-1": {
    "prompt": "Empareja cada índice con lo que mide.",
    "options": [

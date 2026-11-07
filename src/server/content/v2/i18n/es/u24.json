@@ -98,50 +98,6 @@
     }
    ]
   },
-  "u24l3": {
-   "title": "La regla del 1 %",
-   "steps": [
-    {
-     "texts": [
-      "Arriesgar no es invertir",
-      "Cuenta de **10.000 €**. La regla del 1 %: si salta el stop, pierdes como mucho **100 €**.",
-      "¿Significa que solo puedes invertir 100 €?",
-      "Sí: 100 € y ni un euro más",
-      "No: lo que inviertes depende de dónde va el stop",
-      "No: puedes invertir lo que quieras, sin stop",
-      "Con el stop al 2 %, puedes invertir **5.000 €** y, si salta, pierdes 100 €. Riesgo no es lo mismo que cantidad invertida.",
-      "Con el riesgo en el 1 %, busca el stop que deja la posición en 2.000 €.",
-      "**Tamaño = riesgo ÷ distancia al stop.** Stop cerca, compras más; stop lejos, compras menos. La pérdida máxima es siempre la misma.",
-      "Más de un 2 % por operación es mucho, sobre todo al empezar.",
-      "Con el stop tan cerca, metes toda la cuenta. ¿Seguro?",
-      "Stop lejos: compras poco, pero arriesgas lo mismo.",
-      "Deja el 1 % y mueve el stop"
-     ]
-    },
-    {
-     "texts": [
-      "«Estoy segurísimo»",
-      "Bruno",
-      "Tengo 8.000 € y esta operación es segura. Arriesgo un 10 %.",
-      "¿Qué le recomiendas?",
-      "Adelante: si está seguro, no hay riesgo",
-      "Si falla, pierde **800 €** de golpe. Su seguridad no cambia nada.",
-      "Que mantenga el 1 %: 80 € de riesgo, como en cualquier otra",
-      "¡Eso! Nadie sabe qué operación saldrá bien: el riesgo es el mismo en todas.",
-      "Que arriesgue el 10 %, pero sin stop",
-      "Sin stop, la pérdida no tiene límite. Todavía peor.",
-      "¿Y si de verdad sale bien?",
-      "Ganará algo menos. Pero seguirá en el juego cuando falle otra."
-     ]
-    },
-    {
-     "title": "Límites que se suman",
-     "body": "La mayoría de profesionales arriesga entre el **0,5 % y el 2 %** por operación; para empezar, un 1 % o menos. Además conviene limitar el **riesgo total abierto** (no más del 5–6 % a la vez) y el **peso de cada posición** (E-Trading avisa a partir del 20 %).",
-     "key": "Riesgo no es lo mismo que cantidad invertida: puedes invertir un 16 % y arriesgar un 1 %.",
-     "tip": "Primero decides dónde te equivocas. Después, cuántas acciones compras."
-    }
-   ]
-  },
   "u24l4": {
    "title": "El tamaño de la posición",
    "steps": [
@@ -437,59 +393,6 @@
     "20 %"
    ],
    "explanation": "5 × 20 % = 100 %: el apalancamiento acelera las pérdidas grandes."
-  },
-  "u24l3-2": {
-   "prompt": "Tu cartera simulada vale 5.000 €. Con la regla del 1 %, ¿cuánto puedes perder como máximo en una operación?",
-   "options": [],
-   "explanation": "5.000 × 0,01 = 50 €.",
-   "unit": "€"
-  },
-  "u24l3-3": {
-   "prompt": "Tienes 20.000 €, arriesgas un 1 %, compras a 80 € y pones el stop en 76 €. ¿Cuántas acciones compras?",
-   "options": [],
-   "explanation": "20.000 × 1 % = 200 €. Distancia al stop: 4 €. 200 ÷ 4 = 50 acciones.",
-   "unit": "acciones"
-  },
-  "u24l3-4": {
-   "prompt": "En la operación anterior (50 acciones a 80 € con 20.000 € de capital), ¿qué porcentaje de tu capital has invertido?",
-   "options": [],
-   "explanation": "50 × 80 = 4.000 €; 4.000 ÷ 20.000 = 20 %. Inviertes un 20 % pero solo arriesgas un 1 %.",
-   "unit": "%"
-  },
-  "u24l3-6": {
-   "prompt": "Tienes 10.000 €. ¿Respeta la regla del 1 %?",
-   "options": [
-    "Si salta el stop pierdo 150 €",
-    "Invierto 1.000 € sin stop",
-    "Si salta el stop pierdo 500 €",
-    "Si salta el stop pierdo 100 €",
-    "Si salta el stop pierdo 80 €"
-   ],
-   "explanation": "Sin stop, el riesgo es todo lo invertido: 1.000 € es un 10 % de la cuenta.",
-   "right": [
-    "Sí la respeta",
-    "No la respeta"
-   ]
-  },
-  "u24l3-8": {
-   "prompt": "¿Qué límites de riesgo propone el curso para quien empieza? Marca todos.",
-   "options": [
-    "Vigilar el peso de cada posición (aviso a partir del 20 %)",
-    "Usar al menos un apalancamiento 1:10",
-    "No más del 5–6 % de riesgo abierto a la vez",
-    "Arriesgar un 1 % o menos por operación"
-   ],
-   "explanation": "El apalancamiento no forma parte de la regla: mientras aprendes, mejor sin él."
-  },
-  "u24l3-10": {
-   "prompt": "Primero decides dónde va el ____; después, cuántas acciones compras.",
-   "options": [
-    "objetivo",
-    "dividendo",
-    "apalancamiento",
-    "stop"
-   ],
-   "explanation": "El tamaño sale de la distancia al stop, nunca al revés."
   },
   "u24l4-1": {
    "prompt": "Capital 10.000 €, riesgo 1 %, entrada 50 €, stop 47 €. ¿Cuántas acciones compras? (redondea hacia abajo)",

@@ -5,51 +5,6 @@
   "section": "Anàlisi tècnica"
  },
  "lessons": {
-  "u21l1": {
-   "title": "Suports i resistències",
-   "steps": [
-    {
-     "texts": [
-      "La memòria del mercat",
-      "Pablo",
-      "Vaig comprar a 50 € i l’acció es va enfonsar fins a 40 €.",
-      "Ara torna a ser a 50 €. Només vull sortir sense perdre.",
-      "Com en Pablo, molta gent va comprar a 50 € i fa mesos que espera.",
-      "Què sol passar quan el preu torna a 50 €?",
-      "Res: 50 € és un preu com un altre",
-      "És just on molts atrapats volen sortir: sol aparèixer **venda**.",
-      "Apareix venda: fa de resistència",
-      "Això mateix! Molts hi venen per «recuperar el que és seu». Això és una **resistència**.",
-      "Segur que puja amb força",
-      "Pot trencar-la, però costa: a 50 € hi ha venedors esperant.",
-      "Un **suport** és el contrari: on abans van aparèixer compradors."
-     ]
-    },
-    {
-     "texts": [
-      "Stop sota el suport",
-      "Espelmes reals d’Alphabet: compres a l’últim preu. El **suport** queda una mica més d’un 2 % per sota i la **resistència**, gairebé un 5 % per sobre.",
-      "On posaries l’stop d’aquesta compra?",
-      "Just per sobre del suport, per perdre poc",
-      "Una mica per sota del suport",
-      "Sense stop: el suport aguantarà",
-      "Si el preu perd el suport, la teva idea de compra deixa de valer: l’stop va a l’altra banda. Per sobre, qualsevol baixada normal et treu.",
-      "Posa l’stop sota el suport i l’objectiu abans de la resistència. Després mira què va passar.",
-      "L’stop va **a l’altra banda del suport**: si es perd, la idea ja no val. I l’objectiu, **abans de la resistència**, on sol aparèixer venda.",
-      "Objectiu! El suport va aguantar i el teu stop no va saltar.",
-      "Ha saltat l’stop. Era per sota del suport o per sobre?",
-      "Aquest stop queda per sobre del suport: qualsevol metxa el fa saltar.",
-      "Mou l’stop i l’objectiu, i prem «Veure què va passar»"
-     ]
-    },
-    {
-     "title": "Com traçar-los",
-     "body": "• Millor en diari o setmanal.\n• Busca zones on el preu hagi girat almenys **2–3 vegades**.\n• Traça una **zona** (un rectangle estret), no una línia al cèntim.\n• Més tocs i més volum = més rellevant. Els nivells antics i llunyans pesen menys.\n• Els nombres rodons i els màxims històrics també atrauen ordres.",
-     "key": "Un suport és on abans van aparèixer compradors; una resistència, on van aparèixer venedors.",
-     "tip": "Traça’ls com a zones, no com a línies al mil·límetre."
-    }
-   ]
-  },
   "u21l2": {
    "title": "El canvi de rol",
    "steps": [
@@ -364,46 +319,6 @@
   }
  },
  "questions": {
-  "u21l1-1": {
-   "prompt": "En aquest tram lateral, toca el sostre: el tancament més alt, on van aparèixer venedors (Microsoft · tancaments cada 3 sessions · agost–octubre del 2024)",
-   "options": [],
-   "explanation": "Aquella zona fa de resistència: la pujada s’hi va frenar i el preu va tornar a baixar."
-  },
-  "u21l1-2": {
-   "prompt": "Ara el terra: toca el tancament més baix, on van aparèixer compradors (NVIDIA · tancaments cada 3 sessions · desembre del 2025 – febrer del 2026)",
-   "options": [],
-   "explanation": "Aquella zona va fer de suport: la caiguda es va frenar i el preu va rebotar amb força."
-  },
-  "u21l1-3": {
-   "prompt": "Has comprat a l’últim preu. Col·loca l’stop una mica per sota del suport: el mínim recent.",
-   "options": [],
-   "explanation": "Si el preu perd el suport, la idea de compra deixa de valer. L’stop va una mica per sota, no just a sobre de la línia, perquè una metxa no el faci saltar."
-  },
-  "u21l1-6": {
-   "prompt": "Què fa més rellevant un suport? Marca-ho tot.",
-   "options": [
-    "Que sigui recent",
-    "Que ho digui un anunci a les xarxes",
-    "Que hi hagués molt de volum en aquella zona",
-    "Que el preu hi hagi girat diverses vegades"
-   ],
-   "explanation": "Més tocs, més volum i més proximitat en el temps. Els nivells antics i llunyans pesen menys."
-  },
-  "u21l1-7": {
-   "prompt": "Busca suports i resistències en aquestes 30 espelmes. Puja o baixa en les 10 sessions següents?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Un suport o una resistència diuen on pot aparèixer compra o venda, no què passarà. Serveixen sobretot per saber on t’has equivocat.",
-   "horizon": "les 10 sessions següents"
-  },
-  "u21l1-10": {
-   "prompt": "Un suport és a la zona dels 20 €. Poses l’stop un 3 % per sota. A quin preu va?",
-   "options": [],
-   "explanation": "20 × 0,97 = 19,40 €. Deixar una mica de marge evita que una simple metxa et tregui.",
-   "unit": "€"
-  },
   "u21l2-3": {
    "prompt": "En Bruno va comprar després de la ruptura d’una resistència a 100 €. El preu puja a 106 € i torna a 101 €. Què fa amb lògica?",
    "options": [

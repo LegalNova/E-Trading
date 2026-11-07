@@ -49,50 +49,6 @@
     }
    ]
   },
-  "u25l2": {
-   "title": "Regular contributions (DCA)",
-   "steps": [
-    {
-     "texts": [
-      "The price drops… and comes back",
-      "Irene",
-      "I put €100 into a fund every month, no matter what.",
-      "Over five months, the price goes €10, €8, €5, €8 and back to €10.",
-      "It's back where it was. I guess I'm where I started.",
-      "How is Irene doing?",
-      "Same as before: the price ended where it started",
-      "No: when it was cheap, her €100 bought more units.",
-      "Up: she bought more units when it was cheap",
-      "Exactly! She put in €500 and now has €650: **30 %** more.",
-      "Down: she bought in the middle of a fall",
-      "The opposite: during the fall, the same money got her more units.",
-      "Investing **the same amount every month** is called DCA (dollar-cost averaging). Falls work in your favour."
-     ]
-    },
-    {
-     "texts": [
-      "All at once or bit by bit?",
-      "You've got **€12,000** for the S&P 500, with real data. All in the first month or spread over 12? See how much you'd have 10 years later.",
-      "Looking at every possible starting month, which wins more often over 10 years?",
-      "Spreading it out, almost always",
-      "All at once, about three times out of four",
-      "Half and half",
-      "All at once wins in **74 %** of starting months. Vanguard, using the MSCI World from 1976 to 2022, saw it win 68 % of the time after one year.",
-      "Find a starting month where spreading it out came out ahead.",
-      "**All at once usually wins**, because the market goes up more often than it goes down. **Spreading it out** wins just before a fall and reduces regret, but nobody knows when the fall is coming.",
-      "Here spreading it out won! Look what came right after: a fall.",
-      "All at once wins by a mile: the market rose from the start.",
-      "Move the starting month. Try just before a crisis"
-     ]
-    },
-    {
-     "title": "With a large sum",
-     "body": "A sensible middle ground: spread it over **6–12 months** with automatic contributions.\n\nWhat doesn't work is waiting «for it to drop»: nobody knows where the bottom is.",
-     "key": "All at once wins more often; bit by bit reduces regret. What matters is starting and not stopping.",
-     "tip": "Investing every month is like climbing stairs: what matters is not stopping."
-    }
-   ]
-  },
   "u25l3": {
    "title": "Value investing, Buffett-style",
    "steps": [
@@ -508,75 +464,6 @@
     "Buy and hold is for grandparents 👴",
     "I'd rather have something exciting."
    ]
-  },
-  "u25l2-1": {
-   "prompt": "You invest €100 a month and the price goes through 10, 8, 5, 8 and €10. How many units do you have in total?",
-   "options": [],
-   "explanation": "100 ÷ 10 + 100 ÷ 8 + 100 ÷ 5 + 100 ÷ 8 + 100 ÷ 10 = 10 + 12.5 + 20 + 12.5 + 10 = 65.",
-   "unit": "units"
-  },
-  "u25l2-2": {
-   "prompt": "With those 65 units for €500, what's your average purchase price? (round to two decimal places)",
-   "options": [],
-   "explanation": "500 ÷ 65 ≈ €7.69. Since it ends at €10, you make 30 % without the price having risen.",
-   "unit": "€"
-  },
-  "u25l2-3": {
-   "prompt": "September 2008. You start putting €200 a month into an S&P 500 fund. What did the index do over the following months?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "With regular contributions, when the price falls you buy more units with the same money: falls work in your favour if you don't stop.",
-   "horizon": "the following months"
-  },
-  "u25l2-4": {
-   "prompt": "July 2012: the IBEX 35 has had years of crisis and hardly anyone wants to invest in Spain. If you were investing every month, what happened next?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "Anyone investing every month bought lots of cheap units at the worst of the crisis. DCA doesn't require guessing the bottom.",
-   "horizon": "the next year and a half"
-  },
-  "u25l2-5": {
-   "prompt": "Ana inherits €30,000 to invest for the long term. She knows from experience that if she invests it all and it falls 20 % the next month, she'd sell everything out of nerves. Which option fits best with what she knows about herself?",
-   "options": [
-    "Spread it over 6–12 months with automatic contributions",
-    "Wait for the market to drop",
-    "Invest it all today"
-   ],
-   "explanation": "The best strategy is the one you'll be able to stick to. Waiting for «the right moment» is usually the worst.",
-   "feedback": [
-    "A good middle ground: she gets into the market without the fear of doing it all on the worst day.",
-    "Nobody knows when it'll drop: while she waits, the market could rise 30 %.",
-    "Statistically it wins about 2 times out of 3, but Ana already knows she'd bail out in a fall, and that would be the worst outcome."
-   ]
-  },
-  "u25l2-8": {
-   "prompt": "Is it an advantage of regular contributions or of investing all at once?",
-   "options": [
-    "It automates discipline",
-    "All the money works from day one",
-    "It fits with getting paid a salary every month",
-    "It reduces regret if it falls right afterwards",
-    "Historically it wins more often"
-   ],
-   "explanation": "Both are valid: what doesn't work is trying to guess the timing.",
-   "right": [
-    "Regular contributions",
-    "All at once"
-   ]
-  },
-  "u25l2-10": {
-   "prompt": "Investing the same amount every month, whatever happens, is called ____.",
-   "options": [
-    "rebalancing",
-    "market timing",
-    "leverage",
-    "DCA"
-   ],
-   "explanation": "Dollar-cost averaging: regular contributions."
   },
   "u25l3-1": {
    "prompt": "You estimate a share is worth €20 and it trades at €15. What margin of safety do you have relative to your estimated value?",

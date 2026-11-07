@@ -1,0 +1,695 @@
+{
+ "unit": {
+  "title": "Invest like the winners",
+  "description": "Indices, ETFs, diversification and investing every month: the simple portfolio that works long term",
+  "section": "Invest from today"
+ },
+ "lessons": {
+  "u7l1": {
+   "title": "What an index is",
+   "steps": [
+    {
+     "texts": [
+      "The fund that made 8 %",
+      "Marta",
+      "My fund made 8 % this year! That's brilliant, right?",
+      "That year, the index for its market rose 14 %.",
+      "What do you tell Marta?",
+      "Congratulations: 8 % is great",
+      "Sounds good… but copying the index would have given her 14 %.",
+      "It came in 6 points behind its index",
+      "Exactly. That's what an index is for: it's the **yardstick**.",
+      "It depends how much money she put in",
+      "The amount doesn't change the percentage: 8 % versus 14 %.",
+      "So how do I buy that index?",
+      "You can't buy it as such: you buy a **fund or ETF** that tracks it."
+     ]
+    },
+    {
+     "texts": [
+      "What's an index for?",
+      "An **index** sums up in one figure how a group of securities is doing. It's used for three things.",
+      "Thermometer",
+      "Yardstick",
+      "Basis for products",
+      "«The Spanish stock market is up 1 % today»",
+      "That's the IBEX 35: it tells you how the market is doing.",
+      "A fund compares its performance with the IBEX 35",
+      "The index is the benchmark for knowing whether the fund did well.",
+      "An ETF that copies the S&P 500",
+      "ETFs and index funds track it at low cost.",
+      "Finding out how the banking sector is doing today",
+      "There are country and sector indices: more specific thermometers.",
+      "Checking whether your portfolio did well",
+      "Compare it with an index that resembles what you hold.",
+      "An index fund to pay into every month",
+      "The index fund copies the index: that's how you «buy» it.",
+      "Sort the six uses.",
+      "An index is a **thermometer**, a **yardstick** and a **basis for products**. Each one has its own rules: which companies get in, how much each one weighs and how often it's reviewed.",
+      "Hint: does it inform, help you compare, or get bought as a fund?",
+      "One figure with lots of different jobs.",
+      "Tap each case: what's the index used for?"
+     ]
+    },
+    {
+     "title": "Points, not euros",
+     "body": "An index is measured in points, not euros. What matters is the **change**: if it goes from 14,000 to 14,700 points, it's up 5 %.",
+     "key": "An index is a reference basket, not something you buy as such.",
+     "tip": "Buying the whole index is betting on an entire economy, not on one company."
+    }
+   ]
+  },
+  "u10l2": {
+   "title": "What an ETF is",
+   "steps": [
+    {
+     "texts": [
+      "ETF or traditional fund?",
+      "An **ETF** is a fund, almost always tracking an index, that **trades on the stock exchange** like a share. Is it an ETF thing or a traditional fund thing?",
+      "ETF",
+      "Traditional fund",
+      "You buy it at 11:37 at the price on your screen",
+      "An ETF trades all session long: its price changes from moment to moment.",
+      "You swap it for another without paying tax",
+      "Tax-free transfers are the fund's big advantage in Spain.",
+      "You pay the broker's commission and the spread",
+      "It's bought on the stock exchange, with the usual trading costs.",
+      "Its price is calculated once a day",
+      "A fund's net asset value is set once every day.",
+      "Every sale at a profit is taxed, even if you reinvest",
+      "In Spain, ETFs don't get the fund transfer rules.",
+      "You buy it through the management company, a bank or a platform",
+      "A traditional fund isn't listed: you subscribe to it directly.",
+      "Sort all six features.",
+      "An ETF is bought and sold **on the stock exchange, like a share**, and the big ones cost from **0.03 % to 0.30 %** a year. In Spain, the traditional fund has the advantage of **tax-free transfers**.",
+      "Hint: is it traded on the stock exchange or not?",
+      "Sort each feature"
+     ]
+    },
+    {
+     "texts": [
+      "«Like a share»",
+      "Nora",
+      "Someone told me an ETF is «like a share».",
+      "So is it just as risky as buying a single company?",
+      "What do you tell her?",
+      "Yes, just as risky",
+      "You buy it like a share, but inside there are hundreds or thousands of companies.",
+      "You buy it like a share, but inside there's a basket of lots of companies",
+      "That's it! An MSCI World one holds more than a thousand companies from developed countries.",
+      "It has no risk at all",
+      "It has the index's risk: if the market falls 30 %, so does the ETF.",
+      "An index ETF is like buying the whole supermarket instead of a single product."
+     ]
+    },
+    {
+     "title": "UCITS ETFs",
+     "body": "A retail investor in the EU buys European **UCITS** ETFs, which come with a **KID**. Many US ETFs can't be sold to European retail investors because they don't have a KID.",
+     "key": "An ETF is a fund, almost always an index one, that you buy and sell on the stock exchange like a share.",
+     "tip": "Before buying an ETF, look for «UCITS» in its name and read its KID."
+    }
+   ]
+  },
+  "u29l1": {
+   "title": "Diversifying: the only free thing in finance",
+   "steps": [
+    {
+     "texts": [
+      "All your eggs in one basket",
+      "Bruno",
+      "I've put my €3,000 into a single company. It's going to be the next big tech giant!",
+      "I know it well: I've read everything there is about it.",
+      "What do you tell him?",
+      "Perfect: if you know it, there's no risk",
+      "Knowing it doesn't protect it from fraud, a failed product or bankruptcy.",
+      "Spread it out: across lots of companies, one bankruptcy barely shows",
+      "That's it! If a company is 0.1 % of your money, its disaster hardly shows.",
+      "Buy one more, then you've got two",
+      "Better than one, but two companies is still very few.",
+      "A single company can fall **90 %**. To recover, you'd need **+900 %**.",
+      "Phew. And if I spread it out, is there no risk at all?",
+      "There are two kinds of risk. Let's separate them."
+     ]
+    },
+    {
+     "texts": [
+      "One company or all of them?",
+      "**Specific** risk hits one particular company. **Market** risk hits them all at once. Which is which?",
+      "Specific: one company",
+      "Market: all of them",
+      "Accounting fraud at a company",
+      "It only happens to one: in an index of thousands of companies, it barely shows.",
+      "A global recession",
+      "It hits almost every company at once: more shares don't dilute it.",
+      "A company's flagship product flops",
+      "A problem for that company, not for the whole economy.",
+      "A pandemic that shuts down the economy",
+      "It affects the whole market: spreading across more shares doesn't avoid it.",
+      "A long strike at a company's factory",
+      "It only slows that company down: its competitors keep selling.",
+      "The central bank suddenly raises interest rates",
+      "It changes the price of money for every company at once.",
+      "Sort the six scares.",
+      "Diversifying **removes specific risk**: one bankruptcy weighs little among thousands of companies. **Market risk** doesn't go away with more shares; it's only softened by mixing in bonds or cash.",
+      "Ask yourself: does it happen to one company or to the whole economy?",
+      "Nicely sorted! Now for the only free lunch.",
+      "Sort each scare"
+     ]
+    },
+    {
+     "title": "The free lunch",
+     "body": "A single share moves 30-35 % a year; 20-30 shares from different sectors, around 20 %; a global index, 15 %.\n\nHarry Markowitz, Nobel Prize in Economics, called this **the only free lunch**: less risk without giving up expected return.",
+     "key": "With lots of companies, the disasters of some are offset by the successes of others.",
+     "tip": "Don't put all your eggs in one basket, or all your baskets on the same lorry."
+    }
+   ]
+  },
+  "u25l2": {
+   "title": "Regular contributions (DCA)",
+   "steps": [
+    {
+     "texts": [
+      "The price drops… and comes back",
+      "Irene",
+      "I put €100 into a fund every month, no matter what.",
+      "Over five months, the price goes €10, €8, €5, €8 and back to €10.",
+      "It's back where it was. I guess I'm where I started.",
+      "How is Irene doing?",
+      "Same as before: the price ended where it started",
+      "No: when it was cheap, her €100 bought more units.",
+      "Up: she bought more units when it was cheap",
+      "Exactly! She put in €500 and now has €650: **30 %** more.",
+      "Down: she bought in the middle of a fall",
+      "The opposite: during the fall, the same money got her more units.",
+      "Investing **the same amount every month** is called DCA (dollar-cost averaging). Falls work in your favour."
+     ]
+    },
+    {
+     "texts": [
+      "All at once or bit by bit?",
+      "You've got **€12,000** for the S&P 500, with real data. All in the first month or spread over 12? See how much you'd have 10 years later.",
+      "Looking at every possible starting month, which wins more often over 10 years?",
+      "Spreading it out, almost always",
+      "All at once, about three times out of four",
+      "Half and half",
+      "All at once wins in **74 %** of starting months. Vanguard, using the MSCI World from 1976 to 2022, saw it win 68 % of the time after one year.",
+      "Find a starting month where spreading it out came out ahead.",
+      "**All at once usually wins**, because the market goes up more often than it goes down. **Spreading it out** wins just before a fall and reduces regret, but nobody knows when the fall is coming.",
+      "Here spreading it out won! Look what came right after: a fall.",
+      "All at once wins by a mile: the market rose from the start.",
+      "Move the starting month. Try just before a crisis"
+     ]
+    },
+    {
+     "title": "With a large sum",
+     "body": "A sensible middle ground: spread it over **6–12 months** with automatic contributions.\n\nWhat doesn't work is waiting «for it to drop»: nobody knows where the bottom is.",
+     "key": "All at once wins more often; bit by bit reduces regret. What matters is starting and not stopping.",
+     "tip": "Investing every month is like climbing stairs: what matters is not stopping."
+    }
+   ]
+  },
+  "u10l3": {
+   "title": "Fees: the TER and hidden costs",
+   "steps": [
+    {
+     "texts": [
+      "The cost you can't see",
+      "The same **€10,000** and the same market: 7 % a year before costs. One fund charges **0.2 %** a year; the other, whatever you choose.",
+      "Over 30 years, one fund charges 0.2 % and another 1.5 %. How much does the difference take?",
+      "Not much: about 1 % of the result",
+      "Almost a third of the result",
+      "More than half",
+      "The cost is charged **every year** and compounds: the cheap one ends at €71,968 and the expensive one at €49,840. That's **€22,128**, or 31 %.",
+      "Set the expensive fund to 1.5 % and see what happens over 30 years.",
+      "The **TER** (ongoing charges) never arrives as a bill: it's taken little by little out of the fund's value. Over 30 years, 1.5 % a year takes **almost a third** of your money.",
+      "Almost a third of your money, gone on fees!",
+      "Keep going: with more years, the gap shoots up.",
+      "Raise the expensive fund's fee and the years"
+     ]
+    },
+    {
+     "texts": [
+      "The star team",
+      "Ana",
+      "Bank adviser",
+      "Ana, I recommend our equity fund. It's run by a star team.",
+      "And how much does it charge?",
+      "2 % a year. You're paying for quality.",
+      "A similar index fund charges 0.2 %.",
+      "What should Ana think?",
+      "If it's a star team, it's worth it",
+      "It would have to beat the index by 1.8 points a year, year after year. Hardly anyone manages that.",
+      "The expensive one has to earn 1.8 points more every year just to break even",
+      "That's it! The cost is guaranteed; beating the index isn't.",
+      "She should try it for a year and compare",
+      "One year tells you little: it could be luck. The cost, on the other hand, is always paid."
+     ]
+    },
+    {
+     "title": "Hidden costs",
+     "body": "An index fund might charge 0.1-0.3 % a year; many active funds in Spain, 1.5 % or more. You'll see it in the **KID**, as ongoing charges.\n\nOn top of the TER: the broker's commission per trade, *spread*, custody fees, currency exchange and, for some funds, entry or exit fees. Add them all up.",
+     "key": "Every 1 % a year in costs eats a huge chunk of the result, because of compound interest.",
+     "tip": "1.5 % a year sounds like nothing. Over 30 years, it's almost a third of your money."
+    }
+   ]
+  },
+  "u4l3": {
+   "title": "Your time horizon",
+   "steps": [
+    {
+     "texts": [
+      "How long do you have to wait?",
+      "Real data: the S&P 500 month by month over 40 years. Imagine you invested in **any** month and waited a few years. How many times would you have lost money?",
+      "If you invested in any given month and sold **a year later**, how often did you lose money?",
+      "Almost never",
+      "Roughly 1 in 5 times",
+      "Half the time",
+      "Over these 40 years, **20.8 %** of one-year periods ended in a loss, and the worst one lost 45 %.",
+      "Find how many years you had to wait for there to be not a single case with a loss.",
+      "In this data, waiting **14 years or more** never lost money. But the past doesn't guarantee the future: anyone who bought in 1929, or in Japan in 1989, waited much longer. Your time horizon decides how much risk you can take.",
+      "In the short term the stock market is a rollercoaster: almost anything can happen.",
+      "Look at the worst case: there are still long periods in the red (the ones that started in 2000).",
+      "Keep making the wait longer"
+     ]
+    },
+    {
+     "title": "Put a date on every euro",
+     "body": "• **Cushion:** always available interest-paying account, money market fund.\n• **Trip or car (1-3 years)** deposits, Treasury bills.\n• **Deposit on a flat (3-7 years)** a cautious mix, more bonds.\n• **Retirement (15 years or more)** mostly diversified shares.",
+     "key": "Money you'll need soon doesn't go into the stock market: it could be falling just when you need it."
+    }
+   ]
+  },
+  "h2r": {
+   "title": "Unit review",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u7l1-1": {
+   "prompt": "What is a stock market index?",
+   "options": [
+    "A company listed on the stock market",
+    "An interest rate",
+    "A figure that sums up how a group of securities is doing"
+   ],
+   "explanation": "It's a reference basket with rules about what gets in and how much it weighs."
+  },
+  "u7l1-3": {
+   "prompt": "An index goes from 14,000 to 14,700 points. How much has it risen?",
+   "options": [],
+   "explanation": "(14,700 − 14,000) ÷ 14,000 = 0.05 → 5 %.",
+   "unit": "%"
+  },
+  "u7l1-4": {
+   "prompt": "Quick: an index goes from 5,000 to 4,600 points. How much has it fallen, in %? (enter it as a positive number)",
+   "options": [],
+   "explanation": "400 ÷ 5,000 = 0.08 → it has fallen 8 %.",
+   "unit": "%"
+  },
+  "u7l1-6": {
+   "prompt": "If the IBEX 35 is at 14,000 points, buying it costs €14,000.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Points aren't euros: they measure the change from a base."
+  },
+  "u7l1-7": {
+   "prompt": "What do an index's rules set? Select all that apply.",
+   "options": [
+    "How much each one weighs",
+    "Whatever a TV pundit thinks that day",
+    "How often it's reviewed",
+    "Which companies get in"
+   ],
+   "explanation": "The rules are public and objective: that's why the index works as a benchmark."
+  },
+  "u7l1-10": {
+   "prompt": "You can't buy an index directly: you buy a fund or an ____ that tracks it.",
+   "options": [
+    "CPI",
+    "bond",
+    "deposit",
+    "ETF"
+   ],
+   "explanation": "ETFs and index funds copy the index at low cost."
+  },
+  "u10l2-1": {
+   "prompt": "Match each term to its meaning.",
+   "options": [
+    "ETF",
+    "UCITS",
+    "KID",
+    "Index"
+   ],
+   "explanation": "These are the four words you'll see when you look up any ETF.",
+   "right": [
+    "European rules for retail funds",
+    "Document with risks and costs",
+    "Basket of companies the ETF copies",
+    "Fund that trades on the stock exchange"
+   ]
+  },
+  "u10l2-3": {
+   "prompt": "This chart is an index that several ETFs copy: an ETF tracking it will do the same, minus its costs. What did it do over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "An index ETF doesn't remove the market's ups and downs: you get exactly what the index does, for better and for worse.",
+   "horizon": "the next 10 sessions"
+  },
+  "u10l2-4": {
+   "prompt": "What annual cost do the big index ETFs usually have?",
+   "options": [
+    "From 1.5 % to 2 %",
+    "From 0.03 % to 0.30 %",
+    "From 5 % to 10 %"
+   ],
+   "explanation": "Copying an index is cheap: you don't need a team picking companies."
+  },
+  "u10l2-6": {
+   "prompt": "Why can't a European retail investor buy many US ETFs?",
+   "options": [
+    "Because investing in dollars is banned",
+    "Because they don't have a KID",
+    "Because they trade at night"
+   ],
+   "explanation": "Without a KID, they can't be marketed to retail investors in the EU."
+  },
+  "u10l2-7": {
+   "prompt": "You buy 15 units of an ETF at €98.40 and the broker charges a €2 commission. How much do you pay in total?",
+   "options": [],
+   "explanation": "15 × 98.40 = €1,476 + €2 commission = €1,478.",
+   "unit": "€"
+  },
+  "u10l2-10": {
+   "prompt": "The ETFs a retail investor can buy in the EU usually carry the ____ label.",
+   "options": [
+    "TIPS",
+    "SPIVA",
+    "REIT",
+    "UCITS"
+   ],
+   "explanation": "It's the European framework that sets rules on diversification, custody and disclosure."
+  },
+  "u29l1-1": {
+   "prompt": "Which risk do you eliminate by spreading your money across hundreds of shares?",
+   "options": [
+    "All risk",
+    "Market risk",
+    "Each company's specific risk"
+   ],
+   "explanation": "A bankruptcy stops being a drama if it's 0.1 % of your money. But if the whole market falls, they all fall: that risk is only softened with bonds or cash."
+  },
+  "u29l1-2": {
+   "prompt": "You split €10,000 equally across 20 shares. One goes bankrupt and loses all its value; the rest stay the same. How many euros do you lose?",
+   "options": [],
+   "explanation": "10,000 ÷ 20 = €500 per share. With a single share, that bankruptcy would have wiped out the whole €10,000.",
+   "unit": "€"
+  },
+  "u29l1-4": {
+   "prompt": "Practice exercise (not a recommendation): split €10,000 across these shares. Rules: at least 6 companies, none above 20 % and no sector above 30 %.",
+   "options": [
+    "Iberdrola",
+    "Repsol",
+    "BBVA",
+    "Banco Santander",
+    "Inditex",
+    "Coca-Cola",
+    "Apple",
+    "Microsoft"
+   ],
+   "explanation": "Spreading across companies and sectors reduces specific risk. Even so, 8 shares is still very few: an index has hundreds or thousands.",
+   "kinds": [
+    "ENERGY",
+    "ENERGY",
+    "BANKING",
+    "BANKING",
+    "CONSUMER",
+    "CONSUMER",
+    "TECH",
+    "TECH"
+   ]
+  },
+  "u29l1-6": {
+   "prompt": "What is NOT diversifying? Select all that apply.",
+   "options": [
+    "A global share fund and a bond fund",
+    "Having almost everything in shares of the company you work for",
+    "Owning 15 different cryptocurrencies",
+    "Owning 10 funds that all buy the same 50 tech companies"
+   ],
+   "explanation": "Different names aren't different assets: cryptos tend to fall together and overlapping funds buy the same things."
+  },
+  "u29l1-8": {
+   "prompt": "Pablo has 80 % of his savings in shares of the company he works for: «I know it better than anyone». What do you tell him?",
+   "options": [
+    "That he's concentrating two risks in one place: his salary and his savings",
+    "That he should move everything to another company he likes more",
+    "He's right: knowing the company eliminates the risk"
+   ],
+   "explanation": "Concentrating in your own employer is a double risk. Diversifying reduces it without giving up expected return.",
+   "feedback": [
+    "That's it: if the company stumbles, it hits him from both sides. It's exactly the risk diversifying eliminates.",
+    "Swapping one company for another leaves the same problem: everything in one basket.",
+    "Knowing it doesn't protect it from a sector crisis. And if it goes badly, Pablo loses his salary and his savings at the same time."
+   ]
+  },
+  "u29l1-9": {
+   "prompt": "Markowitz called diversification «the only ____ lunch» in finance.",
+   "options": [
+    "expensive",
+    "quick",
+    "safe",
+    "free"
+   ],
+   "explanation": "You reduce risk without paying for it with lower expected return."
+  },
+  "u29l1-10": {
+   "prompt": "What do you reply to Lumi?",
+   "options": [
+    "No: if they all fall at once, it's like owning just one",
+    "Yes, 15 is loads",
+    "Yes, especially if they're new"
+   ],
+   "explanation": "Highly correlated assets don't diversify. And remember: with crypto you can lose everything you put in.",
+   "feedback": [
+    "Well spotted! Diversifying means owning things that behave differently, not lots of names.",
+    "If only… but when bitcoin falls hard, most of the others fall with it.",
+    "The newest ones tend to be even more volatile. More names doesn't mean less risk."
+   ],
+   "lines": [
+    "I've got €300 in 15 different cryptocurrencies 😎",
+    "I'm super diversified now, right?"
+   ]
+  },
+  "u25l2-1": {
+   "prompt": "You invest €100 a month and the price goes through 10, 8, 5, 8 and €10. How many units do you have in total?",
+   "options": [],
+   "explanation": "100 ÷ 10 + 100 ÷ 8 + 100 ÷ 5 + 100 ÷ 8 + 100 ÷ 10 = 10 + 12.5 + 20 + 12.5 + 10 = 65.",
+   "unit": "units"
+  },
+  "u25l2-2": {
+   "prompt": "With those 65 units for €500, what's your average purchase price? (round to two decimal places)",
+   "options": [],
+   "explanation": "500 ÷ 65 ≈ €7.69. Since it ends at €10, you make 30 % without the price having risen.",
+   "unit": "€"
+  },
+  "u25l2-3": {
+   "prompt": "September 2008. You start putting €200 a month into an S&P 500 fund. What did the index do over the following months?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "With regular contributions, when the price falls you buy more units with the same money: falls work in your favour if you don't stop.",
+   "horizon": "the following months"
+  },
+  "u25l2-4": {
+   "prompt": "July 2012: the IBEX 35 has had years of crisis and hardly anyone wants to invest in Spain. If you were investing every month, what happened next?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Anyone investing every month bought lots of cheap units at the worst of the crisis. DCA doesn't require guessing the bottom.",
+   "horizon": "the next year and a half"
+  },
+  "u25l2-5": {
+   "prompt": "Ana inherits €30,000 to invest for the long term. She knows from experience that if she invests it all and it falls 20 % the next month, she'd sell everything out of nerves. Which option fits best with what she knows about herself?",
+   "options": [
+    "Spread it over 6–12 months with automatic contributions",
+    "Wait for the market to drop",
+    "Invest it all today"
+   ],
+   "explanation": "The best strategy is the one you'll be able to stick to. Waiting for «the right moment» is usually the worst.",
+   "feedback": [
+    "A good middle ground: she gets into the market without the fear of doing it all on the worst day.",
+    "Nobody knows when it'll drop: while she waits, the market could rise 30 %.",
+    "Statistically it wins about 2 times out of 3, but Ana already knows she'd bail out in a fall, and that would be the worst outcome."
+   ]
+  },
+  "u25l2-8": {
+   "prompt": "Is it an advantage of regular contributions or of investing all at once?",
+   "options": [
+    "It automates discipline",
+    "All the money works from day one",
+    "It fits with getting paid a salary every month",
+    "It reduces regret if it falls right afterwards",
+    "Historically it wins more often"
+   ],
+   "explanation": "Both are valid: what doesn't work is trying to guess the timing.",
+   "right": [
+    "Regular contributions",
+    "All at once"
+   ]
+  },
+  "u25l2-10": {
+   "prompt": "Investing the same amount every month, whatever happens, is called ____.",
+   "options": [
+    "rebalancing",
+    "market timing",
+    "leverage",
+    "DCA"
+   ],
+   "explanation": "Dollar-cost averaging: regular contributions."
+  },
+  "u10l3-1": {
+   "prompt": "€10,000 over 30 years at 7 % a year with no costs grows to €76,123. With 1 % in annual costs (6 % net), how much? (round to the nearest euro)",
+   "options": [],
+   "explanation": "10,000 × 1.06³⁰ ≈ €57,435.",
+   "unit": "€"
+  },
+  "u10l3-2": {
+   "prompt": "With those figures, how much does that 1 % a year cost you in total over 30 years? (round)",
+   "options": [],
+   "explanation": "76,123 − 57,435 = €18,688: almost twice what you invested, just in costs.",
+   "unit": "€"
+  },
+  "u10l3-3": {
+   "prompt": "You have €20,000 in a fund with a TER of 1.8 %. How much do you pay this year?",
+   "options": [],
+   "explanation": "20,000 × 1.8 % = €360. In an index fund at 0.2 % it would be €40.",
+   "unit": "€"
+  },
+  "u10l3-4": {
+   "prompt": "Where do you find a fund's ongoing charges?",
+   "options": [
+    "Only in the bank's adverts",
+    "In the KID (Key Information Document)",
+    "On a monthly bill from the management company"
+   ],
+   "explanation": "They're required to appear in the KID, along with the other costs."
+  },
+  "u10l3-5": {
+   "prompt": "Which costs can reduce your return? Select all.",
+   "options": [
+    "Broker's commission",
+    "Currency exchange",
+    "The fund having lots of unitholders",
+    "TER or ongoing charges"
+   ],
+   "explanation": "So can the spread, custody fees and tax. The number of unitholders isn't a cost."
+  },
+  "u10l3-10": {
+   "prompt": "What do you explain?",
+   "options": [
+    "It's taken out of the fund's value every day, which is why you don't see it",
+    "Hacienda (the tax authority) collects it at the end of the year",
+    "Then it isn't charging it"
+   ],
+   "explanation": "Not seeing a charge doesn't mean you're not paying: the TER has already been taken out of the net asset value.",
+   "feedback": [
+    "That's it! It's the quietest cost: no bill arrives, but you pay it.",
+    "It isn't a tax: it's what the management company keeps.",
+    "It does: it comes out of the fund's value every day, which is why you don't see it."
+   ],
+   "lines": [
+    "My fund charges 1.8 %, but nothing has ever been taken from my account 🤔"
+   ]
+  },
+  "u4l3-1": {
+   "prompt": "Match each goal with where it usually makes sense.",
+   "options": [
+    "Emergency cushion",
+    "Trip in a year's time",
+    "Deposit on a flat in 5 years",
+    "Retirement in 35 years"
+   ],
+   "explanation": "The longer the horizon, the more time to recover from falls.",
+   "right": [
+    "A cautious mix, more bonds",
+    "Mostly diversified shares",
+    "Deposit or Treasury bills",
+    "Interest-paying account"
+   ]
+  },
+  "u4l3-2": {
+   "prompt": "You need a deposit for a flat in 18 months. Where does it make most sense?",
+   "options": [
+    "Deposits or a money market fund",
+    "Cryptocurrencies",
+    "100 % in tech shares"
+   ],
+   "explanation": "With 18 months to go, a 30 % fall would wreck the plan."
+  },
+  "u4l3-3": {
+   "prompt": "Put in order from least to most the risk each goal can usually take.",
+   "options": [
+    "Deposit on a flat in 5 years",
+    "Retirement in 30 years",
+    "Trip in a year",
+    "Emergency cushion"
+   ],
+   "explanation": "The further away the goal, the more falls you can ride out along the way."
+  },
+  "u4l3-5": {
+   "prompt": "Bruno has €8,000 for the fees of a master's he pays in 10 months. A friend tells him he'll «get a bit more» in the stock market. What does he do?",
+   "options": [
+    "Puts it into a crypto that has gone up a lot",
+    "Leaves it in a deposit or Treasury bills until he pays",
+    "Puts it all in the stock market"
+   ],
+   "explanation": "Money with a close date: no risk, even if it earns little.",
+   "feedback": [
+    "Falls of 50 % in a few months aren't unusual in crypto: he could end up without his master's.",
+    "He earns little, but on the day the fees are due the €8,000 will be there.",
+    "If the market drops 20 % just before, he'd be €1,600 short for the fees."
+   ]
+  },
+  "u4l3-6": {
+   "prompt": "S&P 500, September 2008. Imagine this is where you've got the money for a deposit on a flat you pay in 6 months. What do you think the index did in the following months?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "Whatever the outcome, money you need in a few months shouldn't depend on what the stock market does in that time.",
+   "horizon": "the following months"
+  },
+  "u4l3-8": {
+   "prompt": "Short or long term?",
+   "options": [
+    "Rental deposit in 6 months",
+    "Financial independence at 50 (you're 25)",
+    "Next summer's holiday",
+    "Retirement",
+    "A new phone",
+    "Saving for a baby's university"
+   ],
+   "explanation": "What you need soon, without risk; what's far off can ride out more ups and downs.",
+   "right": [
+    "Short term (under 3 years)",
+    "Long term (over 10 years)"
+   ]
+  },
+  "u4l3-10": {
+   "prompt": "Money you'll need ____ doesn't go into the stock market.",
+   "options": [
+    "in 30 years",
+    "for retirement",
+    "never",
+    "soon"
+   ],
+   "explanation": "Not because it's sure to fall, but because it could be falling just when you need it."
+  }
+ }
+}

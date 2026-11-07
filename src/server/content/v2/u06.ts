@@ -1,56 +1,10 @@
 import 'server-only'
 // Sección 2 · Unidad 6 · Las órdenes (docs/curso-v2/02-curriculo.md)
-import { buckets, chat, choose, key, lesson, level, match, mission, multi, note, num, opt, order, play, say, scenario, simTrade, single, story, tf, timed, unit, when } from '../dsl'
+import { chat, choose, key, lesson, level, match, mission, multi, note, num, opt, order, play, say, scenario, simTrade, single, story, tf, timed, unit, when } from '../dsl'
 
 export default unit({
   id: 'u6', order: 6, title: 'Las órdenes', description: 'A mercado, limitada, stop loss, take profit y OCO: qué orden usar y qué cuesta',
   lessons: [
-    lesson('u6l1', 'La orden a mercado', [
-      play({
-        title: 'Comprar ya',
-        intro: 'Una **orden a mercado** compra al momento, al mejor precio de venta disponible. Esta empresa es pequeña y casi no se negocia.',
-        widget: {
-          kind: 'book', size: 100, maxSize: 2000,
-          bids: [{ price: 3.95, size: 300 }, { price: 3.9, size: 500 }, { price: 3.8, size: 800 }, { price: 3.7, size: 1000 }],
-          asks: [{ price: 4.0, size: 200 }, { price: 4.05, size: 300 }, { price: 4.2, size: 500 }, { price: 4.4, size: 1000 }],
-        },
-        predict: {
-          prompt: 'Compras **1.000 acciones a mercado**. ¿Qué crees que pasará con tu precio?',
-          options: ['Pagas 4,00 €, el mejor precio', 'Pagas bastante más de media', 'Pagas menos: compras al por mayor'],
-          answer: 1,
-          why: 'Solo hay 200 a 4,00 €. Las 1.000 te salen a **4,115 €** de media: casi un 3 % más.',
-        },
-        goal: { text: 'Sube la compra hasta las 1.000 acciones.', when: [when('size', '>=', 1000)] },
-        insight: 'Una orden a mercado **garantiza que se ejecute, no el precio**. En valores poco líquidos, tu orden se come varios escalones del libro.',
-        lumi: [
-          { when: when('slippagePct', '>', 2), say: 'Más de un 2 % de más, solo por comprar con prisa.', mood: 'WORRIED' },
-          { when: when('size', '>', 200), say: 'Se acabaron las de 4,00 €: ahora pagas más.', mood: 'THINKING' },
-          { say: 'Sube la cantidad y mira tu precio medio', mood: 'HAPPY' },
-        ],
-      }),
-      story('Rápido o barato', [{ id: 'laura', name: 'Laura' }], [
-        say('laura', 'Quiero 5.000 acciones de una empresa que casi no se negocia.'),
-        say('laura', 'Le doy a «comprar a mercado» y listo, ¿no?'),
-        choose('¿Qué le aconsejas?', [
-          opt('Sí: a mercado pagas el precio que ves', 'bad', say('lumi', 'A mercado aseguras la ejecución, no el precio. Aquí pagaría mucho más.')),
-          opt('Mejor una orden con su precio máximo', 'good', say('lumi', 'Eso: una **limitada**. Compra hasta su precio y, si no hay vendedores, espera.')),
-          opt('A mercado, pero en varias veces', 'ok', say('lumi', 'Ayuda un poco, pero sigue sin controlar el precio.')),
-        ]),
-        say('lumi', 'En grandes empresas y en horario normal, la diferencia suele ser de céntimos.'),
-      ]),
-      key('Cuándo sale cara', '• **Valores poco líquidos:** tu orden se come varios escalones del libro.\n• **Apertura o justo tras una noticia:** los precios saltan.\n• **Bolsa cerrada:** se ejecutará en la apertura, al precio que haya entonces.\n\nEn el simulador, la compra a mercado entra al último precio y te pide también un **stop**: lo verás en la clase 4 de esta unidad.', 'A mercado = rapidez garantizada, precio no garantizado.', 'Si te importa el precio exacto, la orden a mercado no es la tuya.'),
-    ], [
-      single('Libro: mejor compra 15,20 €, mejor venta 15,23 €. Das una orden de compra a mercado. ¿A qué precio entras?', ['15,23 €', '15,20 €', '15,215 €'], 0, 'Compras al mejor precio de venta (ask), el que pide quien vende.'),
-      single('En ese mismo libro (15,20 € / 15,23 €), si vendes a mercado, ¿cuánto cobras por acción?', ['15,23 €', '15,20 €', '15,215 €'], 1, 'Vendes al mejor precio de compra (bid), el que paga quien compra.'),
-      tf('Una orden a mercado garantiza el precio exacto al que compras.', false, 'Garantiza que se ejecute, no el precio: puede salir algo peor de lo que veías.'),
-      tf('Una orden a mercado se ejecuta casi seguro si hay compradores y vendedores.', true, 'Por eso es la más rápida: acepta el mejor precio que haya.'),
-      simTrade('Simula tu primera compra a mercado: tienes 10.000 € y no quieres arriesgar más de un 1 % (100 €). Coloca un stop por debajo del último mínimo y elige el importe.', 'lvl-3', 'Con una orden a mercado entras al último precio. Primero decides dónde saldrías (el stop) y, con esa distancia, cuánto comprar para no arriesgar más de 100 €.', { cash: 10_000, maxRiskPct: 1 }),
-      num('Compras 40 acciones a mercado y se ejecutan a 25,10 €. ¿Cuánto pagas, sin contar comisiones?', 1004, '€', '40 × 25,10 = 1.004 €.'),
-      scenario('Laura quiere comprar 5.000 acciones de una empresa muy pequeña que casi no se negocia. Piensa usar una orden a mercado. ¿Qué le conviene?', [['Usar una orden limitada con su precio máximo', 'Compra solo hasta el precio que fija; si no hay vendedores a ese precio, espera.'], ['Comprar a mercado', 'Con un libro tan fino, su orden se come varios escalones y paga mucho más de lo que veía.'], ['Comprar a mercado justo en la apertura', 'En la apertura los precios saltan más: lo peor de los dos mundos.']], 0, 'En valores poco líquidos, la orden a mercado puede salir cara.'),
-      timed(single('Rápido: ¿qué te asegura una orden a mercado?', ['Que se ejecute', 'El precio exacto', 'Las dos cosas'], 0, 'Rapidez sí; precio exacto, no.'), 10),
-      buckets('¿Orden a mercado razonable o arriesgada?', ['Razonable', 'Arriesgada'], [['10 acciones de una gran empresa del IBEX a media sesión', 0], ['Comprar justo en la apertura tras una noticia bomba', 1], ['Vender un valor que apenas se negocia', 1], ['Un ETF muy negociado a mitad de sesión', 0], ['Dar la orden un sábado para el lunes', 1]], 'Liquidez alta y horario normal: a mercado funciona bien. Poca liquidez, aperturas y noticias: mejor limitar el precio.'),
-      order('Ordena lo que pasa al dar una orden de compra a mercado.', ['Pulsas «comprar a mercado»', 'El bróker envía la orden', 'Se cruza con el mejor precio de venta', 'Recibes la confirmación con el precio de ejecución'], 'El precio final lo sabes al final, no al pulsar.'),
-    ], { source: '2.5', minutes: 6, retire: [2, 3, 6, 7] }),
 
     lesson('u6l2', 'Horquilla, spread y deslizamiento', [
       play({

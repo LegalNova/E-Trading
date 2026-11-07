@@ -1,6 +1,9 @@
 // Generado por scripts/content-i18n.ts index: no editar a mano.
 import type { AchievementText, UnitText } from '../../i18n'
 import ca__achievements from './ca/_achievements.json'
+import ca_h1 from './ca/h1.json'
+import ca_h2 from './ca/h2.json'
+import ca_h3 from './ca/h3.json'
 import ca_u1 from './ca/u1.json'
 import ca_u10 from './ca/u10.json'
 import ca_u11 from './ca/u11.json'
@@ -38,6 +41,9 @@ import ca_u8 from './ca/u8.json'
 import ca_u9 from './ca/u9.json'
 import ca_vocab from './ca/vocab.json'
 import en__achievements from './en/_achievements.json'
+import en_h1 from './en/h1.json'
+import en_h2 from './en/h2.json'
+import en_h3 from './en/h3.json'
 import en_u1 from './en/u1.json'
 import en_u10 from './en/u10.json'
 import en_u11 from './en/u11.json'
@@ -75,5 +81,5 @@ import en_u8 from './en/u8.json'
 import en_u9 from './en/u9.json'
 import en_vocab from './en/vocab.json'
 
-export const TEXTS: Record<'ca' | 'en', Record<string, UnitText>> = { ca: { "u1": ca_u1 as UnitText, "u10": ca_u10 as UnitText, "u11": ca_u11 as UnitText, "u12": ca_u12 as UnitText, "u13": ca_u13 as UnitText, "u14": ca_u14 as UnitText, "u15": ca_u15 as UnitText, "u16": ca_u16 as UnitText, "u17": ca_u17 as UnitText, "u18": ca_u18 as UnitText, "u19": ca_u19 as UnitText, "u2": ca_u2 as UnitText, "u20": ca_u20 as UnitText, "u21": ca_u21 as UnitText, "u22": ca_u22 as UnitText, "u23": ca_u23 as UnitText, "u24": ca_u24 as UnitText, "u25": ca_u25 as UnitText, "u26": ca_u26 as UnitText, "u27": ca_u27 as UnitText, "u28": ca_u28 as UnitText, "u29": ca_u29 as UnitText, "u3": ca_u3 as UnitText, "u30": ca_u30 as UnitText, "u31": ca_u31 as UnitText, "u32": ca_u32 as UnitText, "u33": ca_u33 as UnitText, "u34": ca_u34 as UnitText, "u35": ca_u35 as UnitText, "u4": ca_u4 as UnitText, "u5": ca_u5 as UnitText, "u6": ca_u6 as UnitText, "u7": ca_u7 as UnitText, "u8": ca_u8 as UnitText, "u9": ca_u9 as UnitText, "vocab": ca_vocab as UnitText }, en: { "u1": en_u1 as UnitText, "u10": en_u10 as UnitText, "u11": en_u11 as UnitText, "u12": en_u12 as UnitText, "u13": en_u13 as UnitText, "u14": en_u14 as UnitText, "u15": en_u15 as UnitText, "u16": en_u16 as UnitText, "u17": en_u17 as UnitText, "u18": en_u18 as UnitText, "u19": en_u19 as UnitText, "u2": en_u2 as UnitText, "u20": en_u20 as UnitText, "u21": en_u21 as UnitText, "u22": en_u22 as UnitText, "u23": en_u23 as UnitText, "u24": en_u24 as UnitText, "u25": en_u25 as UnitText, "u26": en_u26 as UnitText, "u27": en_u27 as UnitText, "u28": en_u28 as UnitText, "u29": en_u29 as UnitText, "u3": en_u3 as UnitText, "u30": en_u30 as UnitText, "u31": en_u31 as UnitText, "u32": en_u32 as UnitText, "u33": en_u33 as UnitText, "u34": en_u34 as UnitText, "u35": en_u35 as UnitText, "u4": en_u4 as UnitText, "u5": en_u5 as UnitText, "u6": en_u6 as UnitText, "u7": en_u7 as UnitText, "u8": en_u8 as UnitText, "u9": en_u9 as UnitText, "vocab": en_vocab as UnitText } }
+export const TEXTS: Record<'ca' | 'en', Record<string, UnitText>> = { ca: { "h1": ca_h1 as UnitText, "h2": ca_h2 as UnitText, "h3": ca_h3 as UnitText, "u1": ca_u1 as UnitText, "u10": ca_u10 as UnitText, "u11": ca_u11 as UnitText, "u12": ca_u12 as UnitText, "u13": ca_u13 as UnitText, "u14": ca_u14 as UnitText, "u15": ca_u15 as UnitText, "u16": ca_u16 as UnitText, "u17": ca_u17 as UnitText, "u18": ca_u18 as UnitText, "u19": ca_u19 as UnitText, "u2": ca_u2 as UnitText, "u20": ca_u20 as UnitText, "u21": ca_u21 as UnitText, "u22": ca_u22 as UnitText, "u23": ca_u23 as UnitText, "u24": ca_u24 as UnitText, "u25": ca_u25 as UnitText, "u26": ca_u26 as UnitText, "u27": ca_u27 as UnitText, "u28": ca_u28 as UnitText, "u29": ca_u29 as UnitText, "u3": ca_u3 as UnitText, "u30": ca_u30 as UnitText, "u31": ca_u31 as UnitText, "u32": ca_u32 as UnitText, "u33": ca_u33 as UnitText, "u34": ca_u34 as UnitText, "u35": ca_u35 as UnitText, "u4": ca_u4 as UnitText, "u5": ca_u5 as UnitText, "u6": ca_u6 as UnitText, "u7": ca_u7 as UnitText, "u8": ca_u8 as UnitText, "u9": ca_u9 as UnitText, "vocab": ca_vocab as UnitText }, en: { "h1": en_h1 as UnitText, "h2": en_h2 as UnitText, "h3": en_h3 as UnitText, "u1": en_u1 as UnitText, "u10": en_u10 as UnitText, "u11": en_u11 as UnitText, "u12": en_u12 as UnitText, "u13": en_u13 as UnitText, "u14": en_u14 as UnitText, "u15": en_u15 as UnitText, "u16": en_u16 as UnitText, "u17": en_u17 as UnitText, "u18": en_u18 as UnitText, "u19": en_u19 as UnitText, "u2": en_u2 as UnitText, "u20": en_u20 as UnitText, "u21": en_u21 as UnitText, "u22": en_u22 as UnitText, "u23": en_u23 as UnitText, "u24": en_u24 as UnitText, "u25": en_u25 as UnitText, "u26": en_u26 as UnitText, "u27": en_u27 as UnitText, "u28": en_u28 as UnitText, "u29": en_u29 as UnitText, "u3": en_u3 as UnitText, "u30": en_u30 as UnitText, "u31": en_u31 as UnitText, "u32": en_u32 as UnitText, "u33": en_u33 as UnitText, "u34": en_u34 as UnitText, "u35": en_u35 as UnitText, "u4": en_u4 as UnitText, "u5": en_u5 as UnitText, "u6": en_u6 as UnitText, "u7": en_u7 as UnitText, "u8": en_u8 as UnitText, "u9": en_u9 as UnitText, "vocab": en_vocab as UnitText } }
 export const ACHIEVEMENT_TEXTS: Record<'ca' | 'en', Record<string, AchievementText>> = { ca: ca__achievements, en: en__achievements }

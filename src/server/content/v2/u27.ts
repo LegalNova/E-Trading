@@ -1,7 +1,7 @@
 import 'server-only'
 // Sección 9 · Unidad 27 · Los sesgos que cuestan dinero (docs/curso-v2/02-curriculo.md)
 // Fuentes: docs/curso/11 (11.1–11.5) y 03 (3.4, Bessembinder); clase antigua course/u11.ts.
-import { buckets, chat, choose, fill, key, lesson, match, mission, multi, num, opt, play, point, say, scenario, simTrade, single, spot, story, tf, timed, trend, unit, upDown, when } from '../dsl'
+import { buckets, chat, choose, fill, key, lesson, match, mission, multi, num, opt, play, point, say, scenario, simTrade, single, story, tf, timed, trend, unit, upDown, when } from '../dsl'
 
 export default unit({
   id: 'u27', order: 27, title: 'Los sesgos que cuestan dinero', description: 'Los atajos mentales que te hacen comprar caro, vender barato y creerte un genio',
@@ -142,45 +142,6 @@ export default unit({
       timed(tf('Vender siempre lo que va en verde y aguantar lo que va en rojo es una buena forma de gestionar una cartera.', false, 'Es el efecto disposición: cortas lo que funciona y alimentas lo que no.'), 10),
       chat(['¡Mi acción ha subido un 6 %! 🎉', 'La vendo ya, que luego baja.'], '¿Qué le dices a Lumi?', [['Sí, asegura, nunca se sabe', 'Puede salir bien hoy, pero si lo haces siempre, cortas tus mejores operaciones.'], ['¿Qué decía tu plan de salida antes de entrar?', 'Mmm… Decía mitad en 2R y el resto con stop dinámico. Vale, sigo el plan.'], ['Compra más con todo lo que tengas', 'Pasar del miedo a la euforia en un minuto tampoco es un plan.']], 1, 'La salida se decide antes de entrar, no al ver el primer verde.'),
     ], { source: '11.2', minutes: 6, retire: [2, 3, 4, 8] }),
-
-    lesson('u27l4', 'FOMO y efecto rebaño', [
-      mission({
-        title: 'Vive la fiebre puntocom',
-        intro: 'Diciembre de 1998. Internet lo va a cambiar todo y tus amigos solo hablan de tecnológicas. Metes **10.000 €** en el Nasdaq 100, con datos reales.',
-        widget: { kind: 'crash', series: 'series-dotcom', amount: 10000 },
-        goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
-        insight: 'Subió un **156 %** en 15 meses; luego cayó un **83 %** desde el máximo y no lo recuperó hasta 2015. **Cuando todo el mundo habla de algo que «solo sube», el riesgo suele ser máximo.**',
-        lumi: [
-          { when: when('sold', '==', 1), say: 'Has vendido. Mira qué pasa después…', mood: 'THINKING' },
-          { when: when('drop', '<=', -40), say: 'De la euforia al desplome. Y nadie avisó del techo.', mood: 'WORRIED' },
-          { when: when('drop', '>=', 100), say: '¡Más del doble! Ahora todo el mundo quiere entrar.', mood: 'HAPPY' },
-          { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
-        ],
-      }),
-      story('«¡Entra hoy!»', [{ id: 'alex', name: 'Álex' }], [
-        say('alex', 'Esta acción ha subido un **200 %** en dos semanas.'),
-        say('alex', 'Todos en el grupo están dentro. ¡Entra hoy o te lo pierdes!'),
-        choose('No está en tu plan. ¿Qué haces?', [
-          opt('Compro ya, antes de que suba más', 'bad', say('lumi', 'Eso es **FOMO**: compras sin saber qué hace la empresa, tras una subida enorme.')),
-          opt('Espero 48 horas y me pregunto si la compraría si nadie hablara de ella', 'good', say('lumi', '¡Eso! Si en dos días sigue teniendo sentido, lo decides con calma.')),
-          opt('Pido un préstamo para entrar fuerte', 'bad', say('lumi', 'Deuda y FOMO: la receta clásica de las peores pérdidas.')),
-        ]),
-        say('lumi', 'Cuando **todos** ya han comprado, no queda nadie para seguir empujando.'),
-        say('lumi', 'La urgencia es el combustible del FOMO. Quítale tiempo y se apaga.'),
-      ]),
-      key('Señales de alarma', '• Te enteras por amigos o redes que nunca habían invertido.\n• La razón es que «**sube mucho**», no qué hace el activo.\n• Sientes **urgencia**: «si no compro hoy, me lo pierdo».\n• Se dice que «**esta vez es diferente**».\n\nAntídotos: la **regla de las 48 horas** y un **límite de especulación** escrito en tu plan.', 'Cuando todo el mundo habla de algo que «solo sube», el riesgo suele ser máximo.', 'Si tu peluquero te recomienda una criptomoneda, quizá ya es tarde.'),
-    ], [
-      spot('Marca los mensajes que intentan activar tu FOMO para venderte algo o engañarte.', [['Grupo «Lambo 2030»', '🚀 Esta cripto ha subido un 300 % en un mes. Mañana será tarde. ¡Entra YA!', true], ['Tu bróker', 'Recordatorio: tu aportación periódica de 100 € se ejecutará el día 5.', false], ['Influencer', 'Solo quedan 3 plazas en mi grupo de señales. Esta vez es diferente, no te quedes fuera.', true], ['Tu primo', 'Todo el mundo está ganando con esta acción. Mete los ahorros, no lo pienses.', true], ['CNMV', 'Consulta si una entidad está autorizada antes de invertir con ella.', false]], 'Urgencia, «esta vez es diferente» y «todo el mundo gana» son las señales clásicas del FOMO.'),
-      upDown('Noviembre de 2021: bitcoin está en máximos, sale en todos los telediarios y tus amigos que nunca habían invertido están comprando. ¿Qué hizo después?', 'hist-btc-2021', 'Bitcoin cayó cerca de un 75 % en el año siguiente. El momento de máxima euforia suele ser el de máximo riesgo. Recuerda: en cripto puede perderse la totalidad de lo invertido.', 'el año siguiente'),
-      upDown('Este activo ha subido con fuerza y en redes todo el mundo habla de él. ¿Sube o baja en las sesiones siguientes?', 'ud-95', 'Ni la euforia en redes ni las subidas anteriores te dicen qué viene. Por eso existe la regla de las 48 horas.'),
-      scenario('Un amigo te escribe: «Esta acción ha subido un 200 % en dos semanas. Todos en el grupo están dentro. ¡Entra hoy!». No está en tu plan. ¿Qué haces?', [['Compro ya, antes de que suba más', 'Estás comprando por FOMO: sin saber qué hace la empresa y después de una subida enorme.'], ['Aplico la regla de las 48 horas y me pregunto si la compraría si nadie hablara de ella', 'Bien: si en dos días sigue teniendo sentido y cabe en tu límite de especulación, lo decides con calma.'], ['Pido un préstamo para entrar fuerte', 'Deuda + FOMO es la receta clásica de las peores pérdidas.']], 1, 'La urgencia es el combustible del FOMO: quitarle tiempo a la decisión es su antídoto.'),
-      single('¿Qué regla ayuda contra el FOMO?', ['Comprar enseguida para no perder la subida', 'Esperar 48 horas cualquier compra que no esté en tu plan', 'Doblar la posición si sigue subiendo'], 1, 'Dos días bastan para que se pase la urgencia.'),
-      multi('¿Cuáles son señales de alarma de una burbuja? Marca todas.', ['«Esta vez es diferente»', 'Gente sin experiencia recomendándolo', 'La única razón es que sube mucho', 'Beneficios crecientes y estables durante años'], [0, 1, 2], 'Unos beneficios estables no son señal de burbuja: lo son la euforia y la falta de motivos.'),
-      tf('Cuando ya todo el mundo ha comprado algo, suele quedarle mucho recorrido al alza.', false, 'Si todos han comprado ya, no queda nadie para seguir empujando el precio.'),
-      timed(single('Rápido: ¿qué pregunta te protege del efecto rebaño?', ['¿Cuánto ha subido esta semana?', '¿Lo compraría si nadie hablara de ello?', '¿Qué dicen en el foro?'], 1, 'Separa el valor de lo que hace la multitud.'), 12),
-      match('Empareja cada burbuja con su época.', [['Puntocom', '1999–2000'], ['Bolsa japonesa', '1989'], ['Meme stocks', '2021'], ['Criptomonedas (dos veces)', '2017 y 2021']], 'Cambian los activos; el FOMO es siempre el mismo.'),
-      chat(['Todo el mundo en TikTok está ganando con una moneda nueva 🐶', 'Si no entro hoy, me lo pierdo.'], '¿Qué le dices a Lumi?', [['Entra ya, que vuela', 'Si entro por miedo a quedarme fuera, lo más probable es que compre cerca del techo.'], ['Espera 48 horas y piensa si la comprarías si nadie hablara de ella', 'Vale… Si sigue teniendo sentido en dos días, la meto en mi límite de especulación. Si no, nada.'], ['Mete los ahorros de emergencia', 'Eso es lo único que nunca se toca. Y en cripto se puede perder todo lo invertido.']], 1, 'La prisa es la señal: cuando sientes urgencia, para.'),
-    ], { source: '11.3', minutes: 6, retire: [3, 4, 6, 7] }),
 
     lesson('u27l5', 'Exceso de confianza', [
       mission({

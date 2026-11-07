@@ -5,64 +5,6 @@
   "section": "Anàlisi tècnica"
  },
  "lessons": {
-  "u20l1": {
-   "title": "Anatomia d'una espelma",
-   "steps": [
-    {
-     "texts": [
-      "Vermell és pujar",
-      "Mei",
-      "La Mei, una amiga de Xangai, t'ensenya la seva app de borsa.",
-      "Avui la meva acció està en vermell. Que bé, ha pujat!",
-      "Què passa aquí?",
-      "A la Xina el vermell sol voler dir pujada",
-      "Això. A la Xina, el Japó i Corea els colors solen anar al revés.",
-      "S'ha equivocat: vermell és baixar",
-      "Aquí sí, però a la seva app no. Mira sempre la llegenda.",
-      "La seva app està espatllada",
-      "No està espatllada: allà el vermell sol significar pujada.",
-      "Les espelmes van néixer al mercat d'arròs de **Dojima** (Osaka), al segle XVIII.",
-      "La tradició les atribueix al comerciant Munehisa Homma.",
-      "Steve Nison les va portar a Occident el 1991. Avui són el gràfic per defecte."
-     ]
-    },
-    {
-     "texts": [
-      "Verda o vermella?",
-      "El **cos** va de l'obertura al tancament; les **metxes**, fins al màxim i el mínim. De quin color és cada espelma?",
-      "Verda",
-      "Vermella",
-      "Obre a 100 i tanca a 106",
-      "Tanca per sobre de l'obertura. Cos: 6.",
-      "Obre a 62 i tanca a 57",
-      "Tanca per sota de l'obertura. Cos: 5.",
-      "Obre a 20, puja fins a 25 i tanca a 19",
-      "El màxim no decideix el color: tanca per sota de l'obertura.",
-      "Obre a 40, baixa fins a 35 i tanca a 41",
-      "Va caure molt, però va tancar per sobre de l'obertura.",
-      "Obre a 75 i tanca a 80",
-      "El tancament queda a dalt: verda.",
-      "Obre a 12 i tanca a 11",
-      "El tancament queda a baix: vermella.",
-      "Pinta les sis espelmes.",
-      "**Verda:** tanca per sobre de l'obertura. **Vermella:** per sota. Les metxes arriben al màxim i al mínim, però **no decideixen el color**.",
-      "Compara només l'obertura i el tancament.",
-      "El tancament queda a dalt o a baix?"
-     ]
-    },
-    {
-     "prompt": "Ara en un gràfic real: toca l'espelma verda amb el cos més gran, la que més va pujar de l'obertura al tancament",
-     "ok": "Aquesta. El seu cos va de l'obertura (a baix) al tancament (a dalt); les línies fines marquen el màxim i el mínim.",
-     "ko": "Busca el rectangle verd més alt, sense comptar les línies fines."
-    },
-    {
-     "title": "Un exemple amb números",
-     "body": "Espelma amb O = 100, H = 108, L = 97, C = 106: és verda (106 > 100), el cos mesura 6 (de 100 a 106), la metxa superior 2 (de 106 a 108), la inferior 3 (de 97 a 100) i el rang total 11.",
-     "key": "El cos va de l'obertura al tancament; les metxes arriben al màxim i al mínim.",
-     "tip": "Verda: el tancament és a dalt. Vermella: el tancament és a baix."
-    }
-   ]
-  },
   "u20l2": {
    "title": "Cos i metxes: la batalla",
    "steps": [
@@ -393,65 +335,6 @@
   }
  },
  "questions": {
-  "u20l1-1": {
-   "prompt": "En una espelma verda, relaciona cada punt amb el seu preu.",
-   "options": [
-    "Part alta del cos",
-    "Part baixa del cos",
-    "Punta de la metxa superior",
-    "Punta de la metxa inferior"
-   ],
-   "explanation": "En una espelma verda l'obertura és a baix i el tancament a dalt; en una de vermella, al revés. Les metxes sempre arriben al màxim i al mínim.",
-   "right": [
-    "El màxim",
-    "El mínim",
-    "L'obertura",
-    "El tancament"
-   ]
-  },
-  "u20l1-3": {
-   "prompt": "Espelma amb obertura 40, màxim 44, mínim 39 i tancament 43. Quant mesura el cos?",
-   "options": [],
-   "explanation": "Del 40 de l'obertura al 43 del tancament: 3 punts.",
-   "unit": "punts"
-  },
-  "u20l1-4": {
-   "prompt": "Espelma verda amb obertura 40, màxim 44, mínim 39 i tancament 43. Quant mesura la metxa inferior?",
-   "options": [],
-   "explanation": "De l'obertura (40), que és la part baixa del cos, al mínim (39): 1 punt.",
-   "unit": "punts"
-  },
-  "u20l1-5": {
-   "prompt": "Espelma vermella amb obertura 62, màxim 63, mínim 55 i tancament 57. Quant mesura el cos?",
-   "options": [],
-   "explanation": "De 62 a 57: 5 punts. En una vermella, l'obertura és a dalt i el tancament a baix.",
-   "unit": "punts"
-  },
-  "u20l1-6": {
-   "prompt": "En una espelma vermella, l'obertura és a la part ____ del cos.",
-   "options": [
-    "baixa",
-    "mitjana",
-    "exterior",
-    "alta"
-   ],
-   "explanation": "Si tanca per sota de l'obertura, l'obertura queda a dalt i el tancament a baix."
-  },
-  "u20l1-7": {
-   "prompt": "Toca l'espelma amb la metxa inferior més llarga.",
-   "options": [],
-   "explanation": "El preu va baixar molt durant aquella sessió, però es va recuperar abans del tancament. Aquesta línia fina és el camí fins al mínim. (Amazon · espelmes diàries · febrer del 2025)"
-  },
-  "u20l1-8": {
-   "prompt": "Ordena de més baix a més alt els preus d'una espelma verda amb metxes.",
-   "options": [
-    "Obertura",
-    "Tancament",
-    "Màxim",
-    "Mínim"
-   ],
-   "explanation": "Mínim ≤ obertura < tancament ≤ màxim. En una vermella, obertura i tancament s'intercanvien."
-  },
   "u20l2-1": {
    "prompt": "Què indica una metxa superior molt llarga?",
    "options": [

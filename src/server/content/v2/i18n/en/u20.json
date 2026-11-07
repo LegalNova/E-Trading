@@ -5,64 +5,6 @@
   "section": "Technical analysis"
  },
  "lessons": {
-  "u20l1": {
-   "title": "Anatomy of a candle",
-   "steps": [
-    {
-     "texts": [
-      "Red means up",
-      "Mei",
-      "Mei, a friend from Shanghai, shows you her stock market app.",
-      "My share is in the red today. Great, it's gone up!",
-      "What's going on here?",
-      "In China, red usually means a rise",
-      "That's it. In China, Japan and Korea the colours are usually the other way round.",
-      "She's got it wrong: red means down",
-      "Here it does, but not in her app. Always check the legend.",
-      "Her app is broken",
-      "It isn't broken: over there, red usually signals a rise.",
-      "Candlesticks were born in the **Dojima** rice market (Osaka), in the eighteenth century.",
-      "Tradition credits them to the merchant Munehisa Homma.",
-      "Steve Nison brought them to the West in 1991. Today they're the default chart."
-     ]
-    },
-    {
-     "texts": [
-      "Green or red?",
-      "The **body** runs from the open to the close; the **wicks**, out to the high and the low. What colour is each candle?",
-      "Green",
-      "Red",
-      "Opens at 100 and closes at 106",
-      "Closes above the open. Body: 6.",
-      "Opens at 62 and closes at 57",
-      "Closes below the open. Body: 5.",
-      "Opens at 20, rises to 25 and closes at 19",
-      "The high doesn't decide the colour: it closes below the open.",
-      "Opens at 40, drops to 35 and closes at 41",
-      "It fell a lot, but closed above the open.",
-      "Opens at 75 and closes at 80",
-      "The close is at the top: green.",
-      "Opens at 12 and closes at 11",
-      "The close is at the bottom: red.",
-      "Colour in all six candles.",
-      "**Green:** closes above the open. **Red:** below it. The wicks reach the high and the low, but **don't decide the colour**.",
-      "Compare only the open and the close.",
-      "Is the close at the top or the bottom?"
-     ]
-    },
-    {
-     "prompt": "Now on a real chart: tap the green candle with the biggest body, the one that rose most from open to close",
-     "ok": "That's the one. Its body runs from the open (bottom) to the close (top); the thin lines mark the high and the low.",
-     "ko": "Look for the tallest green rectangle, not counting the thin lines."
-    },
-    {
-     "title": "An example with numbers",
-     "body": "Candle with O = 100, H = 108, L = 97, C = 106: it's green (106 > 100), its body measures 6 (from 100 to 106), the upper wick 2 (from 106 to 108), the lower wick 3 (from 97 to 100) and the total range 11.",
-     "key": "The body runs from the open to the close; the wicks reach the high and the low.",
-     "tip": "Green: the close is at the top. Red: the close is at the bottom."
-    }
-   ]
-  },
   "u20l2": {
    "title": "Body and wicks: the battle",
    "steps": [
@@ -393,65 +335,6 @@
   }
  },
  "questions": {
-  "u20l1-1": {
-   "prompt": "On a green candle, match each point with its price.",
-   "options": [
-    "Top of the body",
-    "Bottom of the body",
-    "Tip of the upper wick",
-    "Tip of the lower wick"
-   ],
-   "explanation": "On a green candle the open is at the bottom and the close at the top; on a red one, the other way round. The wicks always reach the high and the low.",
-   "right": [
-    "The high",
-    "The low",
-    "The open",
-    "The close"
-   ]
-  },
-  "u20l1-3": {
-   "prompt": "Candle with an open of 40, high of 44, low of 39 and close of 43. How big is the body?",
-   "options": [],
-   "explanation": "From the open at 40 to the close at 43: 3 points.",
-   "unit": "points"
-  },
-  "u20l1-4": {
-   "prompt": "Green candle with an open of 40, high of 44, low of 39 and close of 43. How long is its lower wick?",
-   "options": [],
-   "explanation": "From the open (40), which is the bottom of the body, to the low (39): 1 point.",
-   "unit": "points"
-  },
-  "u20l1-5": {
-   "prompt": "Red candle with an open of 62, high of 63, low of 55 and close of 57. How big is its body?",
-   "options": [],
-   "explanation": "From 62 to 57: 5 points. On a red candle, the open is at the top and the close at the bottom.",
-   "unit": "points"
-  },
-  "u20l1-6": {
-   "prompt": "On a red candle, the open is at the ____ of the body.",
-   "options": [
-    "bottom",
-    "middle",
-    "outer edge",
-    "top"
-   ],
-   "explanation": "If it closes below the open, the open ends up at the top and the close at the bottom."
-  },
-  "u20l1-7": {
-   "prompt": "Tap the candle with the longest lower wick.",
-   "options": [],
-   "explanation": "The price fell a long way during that session, but recovered before the close. That thin line is the path down to the low. (Amazon · daily candles · February 2025)"
-  },
-  "u20l1-8": {
-   "prompt": "Put the prices of a green candle with wicks in order from lowest to highest.",
-   "options": [
-    "Open",
-    "Close",
-    "High",
-    "Low"
-   ],
-   "explanation": "Low ≤ open < close ≤ high. On a red candle, the open and close swap places."
-  },
   "u20l2-1": {
    "prompt": "What does a very long upper wick indicate?",
    "options": [

@@ -50,50 +50,6 @@ export default unit({
       chat(['Comprar y mantener es de abuelos 👴', 'Yo prefiero algo con emoción.'], '¿Qué le respondes a Lumi?', [['Tienes razón, aburrido es malo', 'Pues según SPIVA, el 97 % de los fondos activos europeos rinde menos que el índice en 10 años…'], ['Aburrido no es malo: es la estrategia con más evidencia a largo plazo', 'Vale, vale. Lo aburrido para el dinero de largo plazo, y la emoción, con una parte pequeña.'], ['Mejor busca la acción que más suba este año', 'Eso es apostar: la mayoría de acciones individuales rinden menos que el índice.']], 1, 'La emoción no paga: lo que paga es estar invertido, diversificado y con costes bajos durante años.'),
     ], { source: '4.1', minutes: 6, retire: [2, 4, 5, 7] }),
 
-    lesson('u25l2', 'Aportaciones periódicas (DCA)', [
-      story('El precio baja… y vuelve', [{ id: 'irene', name: 'Irene' }], [
-        say('irene', 'Aporto 100 € cada mes a un fondo, pase lo que pase.'),
-        note('En cinco meses, el precio pasa por 10 €, 8 €, 5 €, 8 € y vuelve a 10 €.'),
-        say('irene', 'Ha vuelto a donde estaba. Supongo que estoy igual que al principio.'),
-        choose('¿Cómo está Irene?', [
-          opt('Igual: el precio acabó donde empezó', 'bad', say('lumi', 'No: cuando estaba barato, sus 100 € compraron más participaciones.')),
-          opt('Ganando: compró más participaciones cuando estaba barato', 'good', say('lumi', '¡Eso! Puso 500 € y ahora tiene 650 €: un **30 %** más.')),
-          opt('Perdiendo: compró en plena caída', 'ok', say('lumi', 'Al revés: en la caída, el mismo dinero le dio más participaciones.')),
-        ]),
-        say('lumi', 'Invertir **la misma cantidad cada mes** se llama DCA. Las caídas juegan a tu favor.'),
-      ]),
-      play({
-        title: '¿De golpe o poco a poco?',
-        intro: 'Tienes **12.000 €** para el S&P 500, con datos reales. ¿Todo el primer mes o repartido en 12? Mira cuánto tendrías 10 años después.',
-        widget: { kind: 'dca', series: 'series-sp500-monthly', total: 12000, spread: 12, window: 120, start: 0 },
-        predict: {
-          prompt: 'Mirando todos los meses de inicio posibles, ¿qué gana más veces a 10 años?',
-          options: ['Repartir, casi siempre', 'Todo de golpe, unas tres de cada cuatro veces', 'Mitad y mitad'],
-          answer: 1,
-          why: 'Todo de golpe gana en el **74 %** de los meses de inicio. Vanguard, con el MSCI World de 1976 a 2022, lo vio un 68 % de las veces tras un año.',
-        },
-        goal: { text: 'Busca un mes de inicio en el que repartir saliera mejor.', when: [when('lumpWins', '==', 0)] },
-        insight: '**De golpe suele ganar**, porque el mercado sube más veces de las que baja. **Repartir** gana justo antes de una caída y reduce el arrepentimiento, pero nadie sabe cuándo llega.',
-        lumi: [
-          { when: when('lumpWins', '==', 0), say: '¡Aquí ganó repartir! Mira lo que vino justo después: una caída.', mood: 'THINKING' },
-          { when: when('diffPct', '>=', 10), say: 'De golpe gana por mucho: el mercado subió desde el principio.', mood: 'HAPPY' },
-          { say: 'Mueve el mes de inicio. Prueba justo antes de una crisis', mood: 'HAPPY' },
-        ],
-      }),
-      key('Con una suma grande', 'Una solución intermedia razonable: repartirla en **6–12 meses** con aportaciones automáticas.\n\nLo que no funciona es esperar «a que baje»: nadie sabe cuándo es el suelo.', 'De golpe suele ganar más veces; poco a poco reduce el arrepentimiento. Lo importante es empezar y no parar.', 'Invertir cada mes es como subir una escalera: lo que importa es no pararse.'),
-    ], [
-      num('Inviertes 100 € al mes y el precio pasa por 10, 8, 5, 8 y 10 €. ¿Cuántas participaciones tienes en total?', 65, 'participaciones', '100 ÷ 10 + 100 ÷ 8 + 100 ÷ 5 + 100 ÷ 8 + 100 ÷ 10 = 10 + 12,5 + 20 + 12,5 + 10 = 65.'),
-      num('Con esas 65 participaciones por 500 €, ¿cuál es tu precio medio de compra? (redondea a dos decimales)', 7.69, '€', '500 ÷ 65 ≈ 7,69 €. Al acabar en 10 €, ganas un 30 % sin que el precio haya subido.'),
-      upDown('Septiembre de 2008. Empiezas a aportar 200 € al mes a un fondo del S&P 500. ¿Qué hizo el índice en los meses siguientes?', 'hist-2008', 'Con aportaciones periódicas, cuando el precio cae compras más participaciones con el mismo dinero: las caídas trabajan a tu favor si no paras.', 'los meses siguientes'),
-      upDown('Julio de 2012: el IBEX 35 lleva años de crisis y casi nadie quiere invertir en España. Si aportabas cada mes, ¿qué pasó después?', 'hist-ibex-2012', 'Quien aportaba cada mes compró muchas participaciones baratas en lo peor de la crisis. El DCA no exige adivinar el suelo.', 'el año y medio siguiente'),
-      scenario('Ana hereda 30.000 € para invertir a largo plazo. Sabe por experiencia que si lo invierte todo y cae un 20 % al mes siguiente, lo vendería todo por nervios. ¿Qué opción encaja mejor con lo que sabe de sí misma?', [['Invertirlo todo hoy', 'Estadísticamente gana unas 2 de cada 3 veces, pero Ana ya sabe que abandonaría en una caída, y eso sería lo peor.'], ['Repartirlo en 6–12 meses con aportaciones automáticas', 'Buena solución intermedia: entra en el mercado sin el miedo a hacerlo todo el peor día.'], ['Esperar a que la bolsa baje', 'Nadie sabe cuándo bajará: mientras espera, el mercado puede subir un 30 %.']], 1, 'La mejor estrategia es la que vas a poder mantener. Esperar «el momento» suele ser la peor.'),
-      tf('Según Vanguard, invertir una suma grande de golpe ganó a repartirla unas dos de cada tres veces.', true, 'Porque el mercado sube más veces de las que baja: esperar suele costar.'),
-      single('¿Por qué invertir de golpe gana más veces que repartir?', ['Porque el mercado sube más veces de las que baja', 'Porque las comisiones son menores', 'Porque los bancos lo prefieren'], 0, 'Cada mes que esperas, el dinero que falta por invertir no está en el mercado.'),
-      buckets('¿Es una ventaja de las aportaciones periódicas o de invertir de golpe?', ['Aportaciones periódicas', 'De golpe'], [['Reduce el arrepentimiento si cae justo después', 0], ['Históricamente gana más veces', 1], ['Encaja con cobrar un sueldo cada mes', 0], ['Todo el dinero trabaja desde el primer día', 1], ['Automatiza la disciplina', 0]], 'Las dos son válidas: lo que no funciona es intentar adivinar el momento.'),
-      timed(tf('Las aportaciones periódicas garantizan comprar en el precio mínimo.', false, 'Compras a precios variados: tu precio medio es razonable, pero no el mínimo.'), 10),
-      fill('Invertir la misma cantidad cada mes, pase lo que pase, se llama ____.', 'DCA', ['rebalanceo', 'apalancamiento', 'market timing'], 'Dollar-cost averaging: aportaciones periódicas.'),
-    ], { source: '4.3', minutes: 6, retire: [5, 6, 8] }),
-
     lesson('u25l3', 'Value investing al estilo Buffett', [
       story('El señor Mercado', [{ id: 'mercado', name: 'Señor Mercado' }], [
         note('Graham imaginaba a la bolsa como un socio de humor cambiante: el señor Mercado.'),

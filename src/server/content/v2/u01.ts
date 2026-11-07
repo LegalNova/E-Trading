@@ -1,7 +1,7 @@
 import 'server-only'
 // Sección 1 · Unidad 1 · El dinero y la inflación (docs/curso-v2/02-curriculo.md)
 // Unidad de referencia del curso v2: teoría corta (≤3 pantallas) y 8-12 ejercicios de al menos 3 tipos.
-import { buckets, chat, choose, fill, key, lesson, match, multi, note, num, opt, order, play, say, scenario, single, story, tf, timed, unit, when } from '../dsl'
+import { buckets, chat, choose, fill, key, lesson, match, multi, note, num, opt, play, say, scenario, single, story, tf, timed, unit, when } from '../dsl'
 
 export default unit({
   id: 'u1', order: 1, title: 'El dinero y la inflación', description: 'Qué es el dinero, por qué pierde valor y cómo crece con el interés compuesto',
@@ -188,56 +188,6 @@ export default unit({
       chat(['Tengo 5.000 € en la cuenta corriente desde hace años.', 'Total, ahí están seguros, ¿no?'], '¿Qué le contestas?', [['Sí, ahí no pasa nada', 'Los euros están, pero cada año compran un poco menos.'], ['Seguros sí, pero la inflación se come su valor poco a poco', '¡Bien visto! Lo que no necesites pronto puede trabajar para ganarle a la inflación.'], ['Mejor sácalos en efectivo', 'En un cajón pierden igual con la inflación y además se pueden perder o robar.']], 1, 'Seguridad nominal no es protección real.'),
       tf('Un depósito garantizado nunca puede hacerte perder poder de compra.', false, 'Si rinde menos que la inflación, sí lo pierdes, aunque el saldo no baje.'),
     ], { source: '1.1', minutes: 6, retire: [6, 7, 8] }),
-
-    lesson('u1l5', 'Interés simple e interés compuesto', [
-      play({
-        title: 'El colchón, el simple y el compuesto',
-        intro: 'Tres formas de guardar **1.000 €**:\n\n• **Colchón:** no crecen.\n• **Interés simple:** cobras siempre sobre lo que pusiste.\n• **Interés compuesto:** también ganas sobre lo ya ganado.',
-        widget: { kind: 'growth', initial: 1000, monthly: 0, rate: 7, years: 30, maxInitial: 10000, maxMonthly: 500, maxRate: 12, maxYears: 40, lines: ['mattress', 'simple', 'compound'], controls: ['rate', 'years'] },
-        predict: {
-          prompt: '1.000 € al 7 % al año durante 30 años. ¿Cuánto tendrás con interés compuesto?',
-          options: ['Unos 3.100 €', 'Unos 7.600 €', 'Unos 21.000 €'],
-          answer: 1,
-          why: 'Con interés simple serían 3.100 €. Con compuesto, **7.612 €**: casi dos veces y media más, sin poner ni un euro más.',
-        },
-        goal: { text: 'Llega a 10.000 € sin añadir dinero: juega con la rentabilidad y los años.', when: [when('final', '>=', 10000)] },
-        insight: 'El compuesto **acelera**: los últimos años crecen mucho más que los primeros. Por eso el tiempo pesa tanto como la rentabilidad.',
-        lumi: [
-          { when: when('rate', '>=', 11), say: 'Rentabilidades tan altas no son normales: con un 7 % ya vas muy bien a largo plazo.', mood: 'THINKING' },
-          { when: when('years', '>=', 35), say: 'Mira el final de la curva verde: ¡se dispara!', mood: 'HAPPY' },
-          { say: 'Mueve los años: fíjate en cómo se separan las líneas', mood: 'HAPPY' },
-        ],
-      }),
-      play({
-        title: 'Ana y Bruno',
-        intro: 'Los dos apartan **200 € al mes** al 7 % hasta los 65. Ana empieza a los 25. ¿Y si Bruno empieza más tarde?',
-        widget: { kind: 'race', monthly: 200, rate: 7, endAge: 65, a: { name: 'Ana', age: 25 }, b: { name: 'Bruno', age: 35 }, maxAge: 55 },
-        predict: {
-          prompt: 'Bruno empieza 10 años después que Ana. A los 65, ¿cuánto tendrá él comparado con ella?',
-          options: ['Un 25 % menos', 'Menos de la mitad', 'Casi lo mismo'],
-          answer: 1,
-          why: 'Ana llega a unos **494.000 €** y Bruno a unos **234.000 €**: menos de la mitad, aunque Ana solo puso 24.000 € más.',
-        },
-        goal: { text: 'Retrasa a Bruno hasta que Ana tenga el triple que él.', when: [when('ratio', '>=', 3)] },
-        insight: 'Cada año que esperas cuesta mucho más de lo que parece: los primeros euros son los que más tiempo tienen para componerse.',
-        lumi: [
-          { when: when('delay', '>=', 20), say: 'Empezando a los 45, Bruno ya no alcanza a Ana aunque aporte lo mismo cada mes.', mood: 'WORRIED' },
-          { when: when('delay', '<=', 0), say: 'Si empiezan a la vez, acaban igual. Ahora retrasa a Bruno', mood: 'HAPPY' },
-          { say: 'Cada año de retraso abre más la brecha. ¿Hasta dónde llega?', mood: 'THINKING' },
-        ],
-      }),
-      key('También en tu contra', 'El interés compuesto funciona igual con las deudas: una tarjeta que cobra intereses sobre intereses crece sola. Lo verás en la unidad de deudas.\n\nY recuerda: son ejemplos, no promesas. La bolsa no da un 7 % cada año.', 'Las ganancias generan nuevas ganancias: cuanto antes empiezas, más trabaja el tiempo por ti.'),
-    ], [
-      num('1.000 € al 7 % de interés compuesto durante 30 años, ¿en cuánto se convierten? (redondea)', 7612, '€', '1.000 × 1,07³⁰ ≈ 7.612 €. Con interés simple serían 3.100 €.', 2),
-      single('Ana y Bruno aportan 200 € al mes al 7 %, pero Ana empieza 10 años antes. A los 65, Ana tiene…', ['Un 25 % más', 'Más del doble', 'Lo mismo'], 1, '524.963 € frente a 243.994 €: los primeros años son los que más se componen.'),
-      match('Empareja cada caso con el tipo de interés.', [['Cobras siempre sobre lo que pusiste', 'Interés simple'], ['Ganas también sobre lo ya ganado', 'Interés compuesto'], ['Una deuda de tarjeta que crece sobre sí misma', 'Interés compuesto en tu contra']], 'El compuesto acelera el crecimiento… también el de las deudas.'),
-      num('10.000 € al 5 % compuesto durante 10 años, ¿cuánto suman? (redondea a euros)', 16289, '€', '10.000 × 1,05¹⁰ ≈ 16.289 €. Con simple serían 15.000 €.', 1),
-      tf('El interés compuesto solo funciona a tu favor.', false, 'También en tu contra: una tarjeta revolving al 20 % duplica la deuda en menos de 4 años.'),
-      order('Ordena de menos a más el resultado de 100 € al mes durante 30 años.', ['Al 0 %', 'Al 2 %', 'Al 5 %', 'Al 7 %'], '36.000 €, 49.273 €, 83.226 € y 121.997 €: unos pocos puntos de rentabilidad cambian muchísimo el final.'),
-      scenario('Tienes 22 años y 50 € al mes para invertir. ¿Qué haces?', [['Espero a ganar más para empezar con algo «serio»', 'Esperar cuesta caro: los primeros años son los que más tiempo tienen para componerse.'], ['Empiezo ya con 50 € y subo la aportación cuando pueda', 'Bien: con el tiempo de tu lado, empezar pronto pesa más que empezar con mucho.'], ['Lo gasto: 50 € no dan para nada', '50 € al mes al 7 % durante 40 años son unos 130.000 €, con 24.000 € aportados.']], 1, 'Empezar pronto, aunque sea con poco, es lo que más aprovecha el interés compuesto.'),
-      timed(tf('Con interés compuesto, el dinero crece más deprisa cuanto más tiempo pasa.', true, 'Cada año ganas sobre una base más grande: la curva se empina con el tiempo.'), 10),
-      chat(['He visto que si dejo 1.000 € al 7 %, en 30 años tengo 7.600 €.', '¿Y si en vez de 30 son 40 años?'], '¿Qué le dices?', [['Un poco más, unos 8.500 €', 'Mucho más: 1.000 × 1,07⁴⁰ ≈ 14.974 €. Los últimos 10 años casi duplican el resultado.'], ['Casi el doble, unos 15.000 €', '¡Eso! Diez años más al 7 % multiplican por casi 2 (1,07¹⁰ ≈ 1,97).'], ['Lo mismo, el tiempo no importa', 'El tiempo es justo lo que más importa en el interés compuesto.']], 1, 'Cada década extra al 7 % casi duplica el dinero.'),
-    ], { source: '1.3', minutes: 6, retire: [1, 7, 8] }),
 
     lesson('u1l6', 'La regla del 72', [
       play({

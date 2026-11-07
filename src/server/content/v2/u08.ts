@@ -1,72 +1,10 @@
 import 'server-only'
 // Sección 3 · Unidad 8 · Acciones (docs/curso-v2/02-curriculo.md)
-import { buckets, chat, choose, fill, key, lesson, match, mission, multi, note, num, opt, order, play, say, scenario, single, story, tf, timed, unit, upDown, when } from '../dsl'
+import { buckets, chat, choose, fill, key, lesson, match, multi, note, num, opt, order, play, say, scenario, single, story, tf, timed, unit, upDown, when } from '../dsl'
 
 export default unit({
   id: 'u8', order: 8, title: 'Acciones', description: 'Qué compras con una acción, cómo cobras dividendos y qué tipos de empresas hay',
   lessons: [
-    lesson('u8l1', 'Qué es una acción', [
-      story('¿Ya soy un poco dueña?', [{ id: 'sara', name: 'Sara' }], [
-        say('sara', 'Me he comprado una acción de una empresa de videojuegos.'),
-        say('sara', '¿Eso significa que ya soy un poco dueña?'),
-        choose('¿Qué le contestas a Sara?', [
-          opt('Sí: de una parte diminuta del negocio', 'good', say('lumi', 'Eso. Si el negocio va bien lo notas, y si va mal, también.')),
-          opt('No: solo es un número que sube y baja', 'bad', say('lumi', 'Detrás del precio hay un negocio real, y tienes un trocito.')),
-          opt('Sí, y ya puede mandar en la empresa', 'ok', say('lumi', 'Puede votar en la junta, pero su voto pesa muy poco.')),
-        ]),
-        say('sara', '¿Y cómo gano dinero con ella?'),
-        say('lumi', '**Dividendos + revalorización**: lo que reparte y lo que sube el precio.'),
-        say('lumi', 'A largo plazo, el precio sigue a los beneficios; a corto, a las expectativas.'),
-        say('lumi', 'Si la empresa quiebra, el accionista cobra el último y casi nunca recupera nada.'),
-      ]),
-      play({
-        title: '¿Dueño o prestamista?',
-        intro: 'Inditex tiene unos 3.100 millones de **acciones**: con una eres dueño de un trocito. Con un **bono**, en cambio, le prestas dinero.',
-        widget: {
-          kind: 'sort',
-          bins: [{ label: 'Acción: dueño' }, { label: 'Bono: prestamista' }],
-          cards: [
-            { icon: 'store', label: 'Tienes una parte de sus tiendas, marcas y beneficios', bin: 0, why: 'Eso es ser copropietario: renta variable.' },
-            { icon: 'percent', label: 'Cobras un cupón pactado', bin: 1, why: 'El bonista cobra lo pactado si la empresa puede pagar.' },
-            { icon: 'calendar', label: 'Te devuelven el dinero en una fecha', bin: 1, why: 'El bono vence; la acción no tiene fecha de vencimiento.' },
-            { icon: 'coins', label: 'Cobras dividendos si la empresa los reparte', bin: 0, why: 'El dividendo es una parte del beneficio que se reparte a los dueños.' },
-            { icon: 'alert', label: 'Si la empresa quiebra, cobras el último', bin: 0, why: 'Primero cobran los acreedores; el accionista casi nunca recupera nada.' },
-            { icon: 'up', label: 'Ganas mucho si el negocio crece mucho', bin: 0, why: 'El accionista comparte el éxito y el riesgo del negocio.' },
-          ],
-        },
-        goal: { text: 'Clasifica las seis tarjetas.', when: [when('done', '==', 6)] },
-        insight: 'Una acción es **renta variable**: lo que ganas no está fijado, depende de cómo le vaya al negocio. El bonista, en cambio, cobra lo pactado.',
-        lumi: [
-          { when: when('wrong', '>=', 2), say: 'Pista: el dueño comparte éxito y riesgo; el prestamista cobra lo pactado.', mood: 'THINKING' },
-          { when: when('done', '>=', 4), say: 'Más riesgo para el dueño, pero también más premio.', mood: 'HAPPY' },
-          { say: 'Toca cada tarjeta: ¿dueño o prestamista?', mood: 'HAPPY' },
-        ],
-      }),
-      mission({
-        title: 'Una sola acción',
-        intro: 'Datos reales: **10.000 €** en Tesla a finales de 2018, en dólares y sin dividendos. Así se vive la renta variable.',
-        widget: { kind: 'crash', series: 'series-tsla', amount: 10000 },
-        goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
-        insight: 'Tesla se multiplicó por casi 19, pero por el camino llegó a caer un **72 %** desde su máximo. Y es una excepción: solo un **4 %** de las acciones de EE. UU. generó toda la ganancia neta del mercado entre 1926 y 2016 (Bessembinder).',
-        lumi: [
-          { when: when('sold', '==', 1), say: 'Has vendido. Mira lo que pasa después…', mood: 'THINKING' },
-          { when: when('drop', '<=', -30), say: 'Un 30 % por debajo de lo que pusiste. ¿Aguantas?', mood: 'WORRIED' },
-          { when: when('drop', '>=', 100), say: 'Ya has más que duplicado. ¿Y si ahora cae?', mood: 'THINKING' },
-          { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
-        ],
-      }),
-    ], [
-      single('Compras una acción de Inditex. ¿Qué eres?', ['Prestamista de la empresa', 'Copropietario de una parte diminuta de la empresa', 'Cliente con descuento en sus tiendas'], 1, 'Una acción es una parte del capital: participas en sus beneficios y en sus riesgos. Prestar dinero a la empresa sería comprar un bono.'),
-      match('Empareja cada término con su significado.', [['Acción', 'Parte del capital de una empresa'], ['OPV', 'Salida a bolsa vendiendo acciones'], ['Dividendo', 'Beneficio repartido en efectivo'], ['Revalorización', 'Subida del precio de la acción']], 'Son las cuatro palabras básicas de la renta variable: qué compras, cómo llega a la bolsa y de dónde sale lo que ganas.'),
-      fill('Rentabilidad total = dividendos + ____.', 'revalorización', ['comisiones', 'inflación', 'cupones'], 'Ganas por lo que reparte la empresa (dividendos) y por la subida del precio (revalorización). El cupón es propio de los bonos.'),
-      tf('Cuando compras acciones de Inditex en bolsa, ese dinero va a Inditex.', false, 'Normalmente se lo pagas a otro inversor que vende. La empresa solo recibe dinero cuando emite acciones nuevas, como en su salida a bolsa o en una ampliación.'),
-      num('Compraste una acción a 40 €. Hoy vale 46 € y este año has cobrado 1 € de dividendo. ¿Cuál es tu rentabilidad total?', 17.5, '%', '(46 − 40 + 1) ÷ 40 = 7 ÷ 40 = 17,5 %. Revalorización (6 €) + dividendo (1 €).'),
-      buckets('¿Eres dueño (acción) o prestamista (bono)?', ['Dueño: acción', 'Prestamista: bono'], [['Votas en la junta', 0], ['Cobras un cupón pactado', 1], ['Te devuelven el dinero en una fecha', 1], ['Cobras dividendos si la empresa los reparte', 0], ['Ganas mucho si la empresa crece mucho', 0]], 'El accionista comparte el éxito y el riesgo del negocio; el bonista cobra lo pactado si la empresa puede pagar.'),
-      tf('Si una empresa quiebra, los accionistas cobran antes que los bancos y los bonistas.', false, 'Cobran los últimos, después de todos los acreedores, y casi nunca recuperan nada.'),
-      single('Según Bessembinder (2018), de unas 26.000 acciones de EE. UU. entre 1926 y 2016, ¿qué parte generó toda la ganancia neta del mercado?', ['Alrededor de un 4 %', 'La mitad', 'Casi todas'], 0, 'Solo un 4 % explicó toda la ganancia neta, y más de la mitad rindió menos que las letras del Tesoro. Por eso una sola acción es arriesgada y conviene diversificar.'),
-      timed(tf('A las acciones también se las llama renta variable.', true, 'Lo que ganas no está fijado de antemano: depende de cómo le vaya a la empresa.'), 10),
-      chat(['Me he comprado 1 acción de una empresa de videojuegos 🎮', '¿Eso significa que ya soy un poco dueña?'], '¿Qué le contestas a Lumi?', [['Sí: tienes una parte diminuta del negocio, con sus beneficios y sus riesgos', '¡Eso! Una entre millones, pero tuya: si el negocio va bien lo notas, y si va mal, también.'], ['No, solo has comprado un número que sube y baja', 'El precio se mueve cada día, pero detrás hay un negocio real del que tienes una parte.'], ['Sí, y ya puedes mandar en la empresa', 'Puedes votar en la junta, pero tu voto pesa lo que pesan tus acciones: muy poco.']], 0, 'Una acción es propiedad real de una parte del negocio, aunque sea diminuta.'),
-    ], { source: '2.1', minutes: 6, retire: [3, 5, 8, 9] }),
 
     lesson('u8l2', 'Derechos del accionista', [
       play({

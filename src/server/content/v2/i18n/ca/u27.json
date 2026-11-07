@@ -138,46 +138,6 @@
     }
    ]
   },
-  "u27l4": {
-   "title": "FOMO i efecte ramat",
-   "steps": [
-    {
-     "texts": [
-      "Viu la febre de les puntcom",
-      "Desembre del 1998. Internet ho canviarà tot i els teus amics només parlen de tecnològiques. Poses **10.000 €** al Nasdaq 100, amb dades reals.",
-      "Arriba fins al final, tant si vens com si no.",
-      "Va pujar un **156 %** en 15 mesos; després va caure un **83 %** des del màxim i no el va recuperar fins al 2015. **Quan tothom parla d'una cosa que «només puja», el risc sol ser màxim.**",
-      "Has venut. Mira què passa després…",
-      "De l'eufòria a l'enfonsament. I ningú no va avisar del sostre.",
-      "Més del doble! Ara tothom hi vol entrar.",
-      "Prem el botó per començar. Pots vendre quan vulguis"
-     ]
-    },
-    {
-     "texts": [
-      "«Entra-hi avui!»",
-      "Àlex",
-      "Aquesta acció ha pujat un **200 %** en dues setmanes.",
-      "Tot el grup ja hi és. Entra-hi avui o t'ho perdràs!",
-      "No és al teu pla. Què fas?",
-      "Compro ja, abans que pugi més",
-      "Això és **FOMO**: compres sense saber què fa l'empresa, després d'una pujada enorme.",
-      "Espero 48 hores i em pregunto si la compraria si ningú no en parlés",
-      "Això mateix! Si d'aquí a dos dies continua tenint sentit, ho decideixes amb calma.",
-      "Demano un préstec per entrar-hi fort",
-      "Deute i FOMO: la recepta clàssica de les pitjors pèrdues.",
-      "Quan **tothom** ja ha comprat, no queda ningú que continuï empenyent.",
-      "La urgència és el combustible del FOMO. Treu-li temps i s'apaga."
-     ]
-    },
-    {
-     "title": "Senyals d'alarma",
-     "body": "• T'assabentes per amics o xarxes que no havien invertit mai.\n• El motiu és que «**puja molt**», no què fa l'actiu.\n• Sents **urgència**: «si no compro avui, m'ho perdo».\n• Es diu que «**aquesta vegada és diferent**».\n\nAntídots: la **regla de les 48 hores** i un **límit d'especulació** escrit al teu pla.",
-     "key": "Quan tothom parla d'una cosa que «només puja», el risc sol ser màxim.",
-     "tip": "Si el teu perruquer et recomana una criptomoneda, potser ja és tard."
-    }
-   ]
-  },
   "u27l5": {
    "title": "Excés de confiança",
    "steps": [
@@ -521,86 +481,6 @@
    "lines": [
     "La meva acció ha pujat un 6 %! 🎉",
     "La venc ja, que després baixa."
-   ]
-  },
-  "u27l4-1": {
-   "prompt": "Marca els missatges que intenten activar el teu FOMO per vendre't alguna cosa o enganyar-te.",
-   "options": [
-    "Recordatori: la teva aportació periòdica de 100 € s'executarà el dia 5.",
-    "Tothom està guanyant amb aquesta acció. Fica-hi els estalvis, no t'ho pensis.",
-    "Només queden 3 places al meu grup de senyals. Aquesta vegada és diferent, no et quedis fora.",
-    "Consulta si una entitat està autoritzada abans d'invertir-hi.",
-    "🚀 Aquesta cripto ha pujat un 300 % en un mes. Demà serà tard. Entra JA!"
-   ],
-   "explanation": "Urgència, «aquesta vegada és diferent» i «tothom guanya» són els senyals clàssics del FOMO.",
-   "senders": [
-    "El teu bròker",
-    "El teu cosí",
-    "Influencer",
-    "CNMV",
-    "Grup «Lambo 2030»"
-   ]
-  },
-  "u27l4-2": {
-   "prompt": "Novembre del 2021: el bitcoin és en màxims, surt a tots els telenotícies i els teus amics que no havien invertit mai estan comprant. Què va fer després?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "El bitcoin va caure prop d'un 75 % l'any següent. El moment de màxima eufòria sol ser el de màxim risc. Recorda: en cripto es pot perdre la totalitat del que has invertit.",
-   "horizon": "l'any següent"
-  },
-  "u27l4-3": {
-   "prompt": "Aquest actiu ha pujat amb força i a les xarxes tothom en parla. Puja o baixa en les sessions següents?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Ni l'eufòria a les xarxes ni les pujades anteriors et diuen què vindrà. Per això existeix la regla de les 48 hores.",
-   "horizon": "les 10 sessions següents"
-  },
-  "u27l4-6": {
-   "prompt": "Quins són senyals d'alarma d'una bombolla? Marca'ls tots.",
-   "options": [
-    "L'únic motiu és que puja molt",
-    "Beneficis creixents i estables durant anys",
-    "Gent sense experiència que la recomana",
-    "«Aquesta vegada és diferent»"
-   ],
-   "explanation": "Uns beneficis estables no són senyal de bombolla: ho són l'eufòria i la falta de motius."
-  },
-  "u27l4-9": {
-   "prompt": "Relaciona cada bombolla amb la seva època.",
-   "options": [
-    "Puntcom",
-    "Borsa japonesa",
-    "Meme stocks",
-    "Criptomonedes (dues vegades)"
-   ],
-   "explanation": "Canvien els actius; el FOMO és sempre el mateix.",
-   "right": [
-    "1989",
-    "2017 i 2021",
-    "2021",
-    "1999–2000"
-   ]
-  },
-  "u27l4-10": {
-   "prompt": "Què li dius a la Lumi?",
-   "options": [
-    "Fica-hi el fons d'emergència",
-    "Espera 48 hores i pensa si la compraries si ningú en parlés",
-    "Entra ja, que vola"
-   ],
-   "explanation": "La pressa és el senyal: quan sents urgència, atura't.",
-   "feedback": [
-    "Això és l'única cosa que no es toca mai. I en cripto es pot perdre tot el que has invertit.",
-    "D'acord… Si d'aquí a dos dies continua tenint sentit, la poso dins el meu límit d'especulació. Si no, res.",
-    "Si entro per por de quedar-me fora, el més probable és que compri a prop del sostre."
-   ],
-   "lines": [
-    "Tothom a TikTok està guanyant amb una moneda nova 🐶",
-    "Si no hi entro avui, m'ho perdo."
    ]
   },
   "u27l5-5": {

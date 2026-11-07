@@ -1,0 +1,545 @@
+{
+ "unit": {
+  "title": "Your first investment",
+  "description": "Buy your first share, understand why it moves and why investing early changes everything",
+  "section": "Invest from today"
+ },
+ "lessons": {
+  "u8l1": {
+   "title": "What a share is",
+   "steps": [
+    {
+     "texts": [
+      "Am I a bit of an owner now?",
+      "Sara",
+      "I've bought a share in a video game company.",
+      "Does that mean I'm already a bit of an owner?",
+      "What do you tell Sara?",
+      "Yes: of a tiny part of the business",
+      "Exactly. If the business does well you notice, and if it does badly, you do too.",
+      "No: it's just a number that goes up and down",
+      "Behind the price there's a real business, and you own a tiny slice.",
+      "Yes, and now she can run the company",
+      "She can vote at the general meeting, but her vote counts for very little.",
+      "So how do I make money from it?",
+      "**Dividends + capital gains**: what it pays out and how much the price rises.",
+      "In the long run, the price follows profits; in the short run, expectations.",
+      "If the company goes bust, shareholders get paid last and almost never get anything back."
+     ]
+    },
+    {
+     "texts": [
+      "Owner or lender?",
+      "Inditex has around 3,100 million **shares**: with one you own a tiny slice. With a **bond**, on the other hand, you lend it money.",
+      "Share: owner",
+      "Bond: lender",
+      "You own part of its shops, brands and profits",
+      "That's being a co-owner: equities (variable income).",
+      "You receive an agreed coupon",
+      "The bondholder gets what was agreed if the company can pay.",
+      "You get your money back on a set date",
+      "A bond matures; a share has no maturity date.",
+      "You receive dividends if the company pays them",
+      "A dividend is part of the profit that's paid out to the owners.",
+      "If the company goes bust, you get paid last",
+      "Creditors get paid first; shareholders almost never get anything back.",
+      "You make a lot if the business grows a lot",
+      "Shareholders share in the business's success and its risk.",
+      "Sort the six cards.",
+      "A share is **variable income**: what you make isn't fixed, it depends on how the business does. The bondholder, on the other hand, gets what was agreed.",
+      "Hint: the owner shares success and risk; the lender gets what was agreed.",
+      "More risk for the owner, but also more reward.",
+      "Tap each card: owner or lender?"
+     ]
+    },
+    {
+     "texts": [
+      "Just one share",
+      "Real data: **€10,000** in Tesla at the end of 2018, measured in dollars and without dividends. This is what equities feel like.",
+      "Make it to the end, whether you sell or not.",
+      "Tesla multiplied almost 19 times over, but along the way it fell as much as **72 %** from its high. And it's an exception: just **4 %** of US stocks generated all of the market's net gain between 1926 and 2016 (Bessembinder).",
+      "You've sold. Watch what happens next…",
+      "30 % below what you put in. Can you hold on?",
+      "You've more than doubled your money. What if it falls now?",
+      "Hit «Start». You can sell whenever you like"
+     ]
+    }
+   ]
+  },
+  "u5l3": {
+   "title": "Supply, demand and price",
+   "steps": [
+    {
+     "texts": [
+      "The order book",
+      "On the left, people who want to **buy** (*bid*); on the right, people who want to **sell** (*ask*). If you buy right now, you pay the best selling price.",
+      "You want to buy **600 shares** right now. What average price do you pay?",
+      "€10.04, the best selling price",
+      "A bit more than €10.04",
+      "€10.02, the best buying price",
+      "There are only 300 at €10.04: the other 300 cost €10.05. You pay €6,027, an average of **€10.045**.",
+      "Buy so many that your average price ends up more than 0.1 % away from the best price.",
+      "The difference between the best *bid* and the best *ask* is the **spread**. If more buyers in a hurry turn up, **they eat through the offers step by step** and the price rises.",
+      "Your own purchase has pushed the price up. That's how it moves.",
+      "The €10.04 shares are gone: the next ones cost more.",
+      "Change how many shares you buy at once"
+     ]
+    },
+    {
+     "texts": [
+      "Surprise results",
+      "Leo",
+      "It's 10:00. The company Leo has invested in publishes results far better than expected.",
+      "In the book, the best seller was asking €10.04. What now?",
+      "What do you think happens to the price?",
+      "It rises: buyers eat through the offers",
+      "Exactly. The €10.04 shares run out, it trades at €10.05… and up it goes.",
+      "Nothing: the company sets the price",
+      "The company doesn't set the price: it's the last deal between a buyer and a seller.",
+      "It only depends on what the company is worth",
+      "That matters in the long run. Today, whoever's most eager to buy calls the shots.",
+      "So is the price what the company is worth?",
+      "No: it's what someone **has just paid**. News, results and data move it."
+     ]
+    },
+    {
+     "title": "Auctions",
+     "body": "The Madrid Stock Exchange opens and closes with an **auction**: from 8:30 to 9:00 and from 17:30 to 17:35 orders build up and a single price is set that matches the largest volume.",
+     "key": "The price is the latest deal between whoever pays most and whoever asks least.",
+     "tip": "The price isn't what a company is worth: it's what someone has just paid."
+    }
+   ]
+  },
+  "u6l1": {
+   "title": "The market order",
+   "steps": [
+    {
+     "texts": [
+      "Buy right now",
+      "A **market order** buys instantly, at the best selling price available. This company is small and hardly trades.",
+      "You buy **1,000 shares at market**. What do you think will happen to your price?",
+      "You pay €4.00, the best price",
+      "You pay quite a bit more on average",
+      "You pay less: you're buying in bulk",
+      "There are only 200 at €4.00. Your 1,000 cost an average of **€4.115**: almost 3 % more.",
+      "Raise the purchase to 1,000 shares.",
+      "A market order **guarantees execution, not the price**. With illiquid securities, your order eats through several steps of the book.",
+      "Over 2 % extra, just for buying in a hurry.",
+      "The €4.00 shares are gone: now you're paying more.",
+      "Raise the quantity and watch your average price"
+     ]
+    },
+    {
+     "texts": [
+      "Fast or cheap",
+      "Laura",
+      "I want 5,000 shares in a company that hardly trades.",
+      "I just hit «buy at market» and that's it, right?",
+      "What do you advise her?",
+      "Yes: at market you pay the price you see",
+      "At market you secure execution, not the price. Here she'd pay a lot more.",
+      "Better an order with her maximum price",
+      "That's it: a **limit order**. It buys up to her price and, if there are no sellers, it waits.",
+      "At market, but in several goes",
+      "It helps a little, but she still doesn't control the price.",
+      "With big companies during normal hours, the difference is usually a matter of cents."
+     ]
+    },
+    {
+     "title": "When it gets expensive",
+     "body": "• **Illiquid securities:** your order eats through several steps of the book.\n• **The open, or right after news:** prices jump.\n• **Exchange closed:** it'll execute at the open, at whatever the price is then.\n\nIn the simulator, a market buy goes in at the last price and also asks you for a **stop**: you'll see it in lesson 4 of this unit.",
+     "key": "Market order = guaranteed speed, no guaranteed price.",
+     "tip": "If the exact price matters to you, a market order isn't the one for you."
+    }
+   ]
+  },
+  "u19l1": {
+   "title": "What a price chart shows",
+   "steps": [
+    {
+     "texts": [
+      "What does a chart tell you?",
+      "Across, **time**. Up the side, **price**. Underneath, **volume**. What can you find out by looking at it?",
+      "The chart shows it",
+      "It doesn't",
+      "What price it opened at yesterday",
+      "Every candle records its open.",
+      "Tomorrow's price",
+      "Nobody knows: the chart is a record of the past.",
+      "The highest price of the week",
+      "Every candle records its high and its low.",
+      "How much was traded today",
+      "That's the volume: the bars at the bottom.",
+      "Whether the company is a good business",
+      "Its accounts tell you that, not its chart.",
+      "The close a year ago",
+      "The horizontal axis takes you back in time.",
+      "Whether it'll keep rising",
+      "It may or may not: these are probabilities, never certainties.",
+      "Sort the seven questions.",
+      "A chart is the **exact record** of what buyers and sellers agreed. It tells you what happened, **not what's going to happen**.",
+      "Has it already happened, or not yet? That's the key.",
+      "Can you read it on the chart?"
+     ]
+    },
+    {
+     "texts": [
+      "Reading isn't guessing",
+      "Three real charts of 30 daily candles. Read them and decide: does it go **up or down** over the next 10 sessions?",
+      "Play all three rounds.",
+      "Reading the past is easy; guessing the future isn't. Technical analysis works with **probabilities, never certainties**.",
+      "Three out of three! With so few rounds, luck plays a big part.",
+      "Calling the future with candles is hard for everyone.",
+      "Look at the candles and choose: up or down?"
+     ]
+    },
+    {
+     "title": "Four prices per period",
+     "body": "For each period, four figures are recorded (**OHLC**):\n\n• **Open:** the first price.\n• **High** and **low**.\n• **Close:** the last one, and the most important.\n\nIn E-Trading, when you run your finger over a candle you see its four prices, the change and the volume.",
+     "key": "A chart tells you what happened, not what's going to happen.",
+     "tip": "Reading it properly is already an advantage: lots of people only check whether it's green or red."
+    }
+   ]
+  },
+  "u1l5": {
+   "title": "Simple and compound interest",
+   "steps": [
+    {
+     "texts": [
+      "The mattress, simple and compound",
+      "Three ways to keep **€1,000**:\n\n• **Under the mattress:** it doesn't grow.\n• **Simple interest:** you always earn on what you put in.\n• **Compound interest:** you also earn on what you've already earned.",
+      "€1,000 at 7 % a year for 30 years. How much will you have with compound interest?",
+      "About €3,100",
+      "About €7,600",
+      "About €21,000",
+      "With simple interest it would be €3,100. With compound, **€7,612**: almost two and a half times as much, without adding a single euro.",
+      "Reach €10,000 without adding any money: play with the return and the years.",
+      "Compounding **speeds up**: the last years grow much more than the first ones. That's why time matters as much as the return.",
+      "Returns that high aren't normal: 7 % is already very good over the long term.",
+      "Look at the end of the green curve: it shoots up!",
+      "Move the years: watch how the lines pull apart"
+     ]
+    },
+    {
+     "texts": [
+      "Ana and Bruno",
+      "Both put aside **€200 a month** at 7 % until 65. Ana starts at 25. What if Bruno starts later?",
+      "Ana",
+      "Bruno",
+      "Bruno starts 10 years after Ana. At 65, how much will he have compared with her?",
+      "25 % less",
+      "Less than half",
+      "Almost the same",
+      "Ana ends up with about **€494,000** and Bruno with about **€234,000**: less than half, even though Ana only put in €24,000 more.",
+      "Delay Bruno until Ana has three times as much as him.",
+      "Every year you wait costs far more than it seems: your first euros are the ones with the most time to compound.",
+      "Starting at 45, Bruno can't catch up with Ana even if he puts in the same each month.",
+      "If they start at the same time, they end up the same. Now delay Bruno",
+      "Every year of delay widens the gap. How far does it go?"
+     ]
+    },
+    {
+     "title": "It works against you too",
+     "body": "Compound interest works the same way with debt: a card that charges interest on interest grows on its own. You'll see it in the debt unit.\n\nAnd remember: these are examples, not promises. The stock market doesn't return 7 % every year.",
+     "key": "Gains generate new gains: the sooner you start, the more time works for you."
+    }
+   ]
+  },
+  "h1r": {
+   "title": "Unit review",
+   "steps": []
+  }
+ },
+ "questions": {
+  "u8l1-1": {
+   "prompt": "You buy an Inditex share. What are you?",
+   "options": [
+    "Co-owner of a minuscule part of the company",
+    "A customer with a discount in its shops",
+    "A lender to the company"
+   ],
+   "explanation": "A share is part of the company's capital: you share in its profits and its risks. Lending money to the company would mean buying a bond."
+  },
+  "u8l1-2": {
+   "prompt": "Match each term with its meaning.",
+   "options": [
+    "Share",
+    "IPO",
+    "Dividend",
+    "Capital gain"
+   ],
+   "explanation": "These are the four basic words of equity investing: what you buy, how it gets onto the stock market and where your returns come from.",
+   "right": [
+    "Stock market listing by selling shares",
+    "Profit paid out in cash",
+    "Rise in the share price",
+    "Part of a company's capital"
+   ]
+  },
+  "u8l1-3": {
+   "prompt": "Total return = dividends + ____.",
+   "options": [
+    "inflation",
+    "coupons",
+    "fees",
+    "capital gains"
+   ],
+   "explanation": "You make money from what the company pays out (dividends) and from the rise in price (capital gains). Coupons belong to bonds."
+  },
+  "u8l1-5": {
+   "prompt": "You bought a share at €40. Today it's worth €46 and this year you've received €1 in dividends. What's your total return?",
+   "options": [],
+   "explanation": "(46 − 40 + 1) ÷ 40 = 7 ÷ 40 = 17.5 %. Capital gain (€6) + dividend (€1).",
+   "unit": "%"
+  },
+  "u8l1-7": {
+   "prompt": "If a company goes bust, shareholders get paid before banks and bondholders.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "They get paid last, after all the creditors, and almost never get anything back."
+  },
+  "u8l1-8": {
+   "prompt": "According to Bessembinder (2018), out of some 26,000 US stocks between 1926 and 2016, what share generated all of the market's net gain?",
+   "options": [
+    "Around 4 %",
+    "Almost all of them",
+    "Half"
+   ],
+   "explanation": "Just 4 % accounted for the entire net gain, and more than half returned less than Treasury bills. That's why a single share is risky and it pays to diversify."
+  },
+  "u5l3-1": {
+   "prompt": "The best buying price is €20.10 and the best selling price €20.14. If you buy right now, what price do you pay?",
+   "options": [
+    "€20.12",
+    "€20.14",
+    "€20.10"
+   ],
+   "explanation": "You buy at the best selling price (ask): it's what the seller is asking."
+  },
+  "u5l3-4": {
+   "prompt": "In that purchase of 600 shares for €6,027, what's your average price per share?",
+   "options": [],
+   "explanation": "6,027 ÷ 600 = €10.045: a bit more than the best price because you ate through two steps.",
+   "unit": "€"
+  },
+  "u5l3-5": {
+   "prompt": "Put in order what happens when lots of buyers arrive in a hurry.",
+   "options": [
+    "The shares at €10.04 run out",
+    "The next purchases are matched at €10.05",
+    "The last traded price goes up",
+    "Lots of market buy orders arrive"
+   ],
+   "explanation": "That's how the price rises: demand eats through supply step by step."
+  },
+  "u5l3-6": {
+   "prompt": "Put a Madrid Stock Exchange session in order.",
+   "options": [
+    "Closing auction (17:30-17:35)",
+    "The closing price is published",
+    "Market open (9:00-17:30)",
+    "Opening auction (8:30-9:00)"
+   ],
+   "explanation": "Two auctions frame the continuous session."
+  },
+  "u5l3-8": {
+   "prompt": "What can move a share's price? Select all that apply.",
+   "options": [
+    "An economic data release",
+    "More sellers turning up than buyers",
+    "The colour of its logo",
+    "The company's results"
+   ],
+   "explanation": "Anything that changes what people are willing to pay moves the price."
+  },
+  "u5l3-9": {
+   "prompt": "Ana wants to sell 2,000 shares in a small company right now. On the buy side of the book there are 300 at €5.00, 500 at €4.90 and 1,200 at €4.70. What does she do?",
+   "options": [
+    "Places a limit order at €5.00 and sells bit by bit",
+    "Sells all 2,000 at market",
+    "Sells at market and places more orders at the same time"
+   ],
+   "explanation": "With illiquid securities, a large market order moves the price against you.",
+   "feedback": [
+    "She sells what's there at her price and the rest waits: she doesn't give it away out of impatience.",
+    "She eats through the book: she gets €9,590, an average of about €4.80 versus the best price of €5.00.",
+    "More selling pressure on a thin book: the price falls even further."
+   ]
+  },
+  "u6l1-1": {
+   "prompt": "Book: best bid €15.20, best ask €15.23. You place a market buy order. What price do you get in at?",
+   "options": [
+    "€15.215",
+    "€15.23",
+    "€15.20"
+   ],
+   "explanation": "You buy at the best selling price (ask), the one the seller is asking."
+  },
+  "u6l1-2": {
+   "prompt": "In that same book (€15.20 / €15.23), if you sell at market, how much do you get per share?",
+   "options": [
+    "€15.20",
+    "€15.215",
+    "€15.23"
+   ],
+   "explanation": "You sell at the best buying price (bid), the one the buyer is paying."
+  },
+  "u6l1-5": {
+   "prompt": "Simulate your first market buy: you have €10,000 and don't want to risk more than 1 % (€100). Set a stop below the last low and choose the amount.",
+   "options": [],
+   "explanation": "With a market order you get in at the last price. First you decide where you'd get out (the stop) and, with that distance, how much to buy so you don't risk more than €100."
+  },
+  "u6l1-6": {
+   "prompt": "You buy 40 shares at market and they execute at €25.10. How much do you pay, not counting fees?",
+   "options": [],
+   "explanation": "40 × 25.10 = €1,004.",
+   "unit": "€"
+  },
+  "u6l1-9": {
+   "prompt": "Market order: sensible or risky?",
+   "options": [
+    "Buying right at the open after bombshell news",
+    "A heavily traded ETF mid-session",
+    "Placing the order on a Saturday for Monday",
+    "10 shares of a big IBEX company mid-session",
+    "Selling a security that barely trades"
+   ],
+   "explanation": "High liquidity and normal hours: a market order works fine. Low liquidity, the open and news: better to cap the price.",
+   "right": [
+    "Sensible",
+    "Risky"
+   ]
+  },
+  "u6l1-10": {
+   "prompt": "Put in order what happens when you place a market buy order.",
+   "options": [
+    "The broker sends the order",
+    "You get the confirmation with the execution price",
+    "It's matched with the best selling price",
+    "You tap «buy at market»"
+   ],
+   "explanation": "You find out the final price at the end, not when you tap."
+  },
+  "u19l1-1": {
+   "prompt": "Match each part of the chart with what it shows.",
+   "options": [
+    "Horizontal axis",
+    "Vertical axis",
+    "Bars at the bottom",
+    "Each candle"
+   ],
+   "explanation": "Time runs from left to right, price goes up the side and volume sits underneath. Each candle sums up one period: a minute, a day or a week.",
+   "right": [
+    "The price",
+    "What happened in one period",
+    "The volume traded",
+    "Time"
+   ]
+  },
+  "u19l1-2": {
+   "prompt": "Which price in each period is considered the most important?",
+   "options": [
+    "The high",
+    "The close",
+    "The open"
+   ],
+   "explanation": "The close is the price buyers and sellers settled on at the end of the period. Almost all indicators are calculated using closes."
+  },
+  "u19l1-3": {
+   "prompt": "Tap the highest close on this chart (Microsoft · closes every 3 sessions · June–August 2026)",
+   "options": [],
+   "explanation": "The high came before the end and then the price pulled back a little. The highest point doesn't have to be the last one."
+  },
+  "u19l1-4": {
+   "prompt": "Now tap the lowest close (Apple · closes every 3 sessions · February–April 2025)",
+   "options": [],
+   "explanation": "The low isn't at the end: after touching it, the price bounced. Finding the extremes is the first step in reading a chart."
+  },
+  "u19l1-5": {
+   "prompt": "In English, the four prices of each period are summed up as ____.",
+   "options": [
+    "RSI",
+    "CPI",
+    "ETF",
+    "OHLC"
+   ],
+   "explanation": "Open, high, low, close."
+  },
+  "u19l1-6": {
+   "prompt": "A share closed at €50 yesterday and at €53 today. How much has it changed on the day?",
+   "options": [],
+   "explanation": "(53 − 50) ÷ 50 = 0.06 → +6 %. The daily change is calculated between one close and the previous one.",
+   "unit": "%"
+  },
+  "u19l1-10": {
+   "prompt": "You run your finger over a candle on the E-Trading chart. What data do you see? Tick all that apply.",
+   "options": [
+    "The close",
+    "Tomorrow's price",
+    "The high and the low",
+    "The open"
+   ],
+   "explanation": "You see the period's four prices, plus the change and the volume. Nobody knows tomorrow's price."
+  },
+  "u1l5-1": {
+   "prompt": "€1,000 at 7 % compound interest for 30 years: what does it turn into? (round it)",
+   "options": [],
+   "explanation": "1,000 × 1.07³⁰ ≈ €7,612. With simple interest it would be €3,100.",
+   "unit": "€"
+  },
+  "u1l5-3": {
+   "prompt": "Match each case with the type of interest.",
+   "options": [
+    "You always earn on what you put in",
+    "You also earn on what you've already earned",
+    "A credit card debt that grows on itself"
+   ],
+   "explanation": "Compounding speeds up growth… including the growth of debts.",
+   "right": [
+    "Compound interest",
+    "Simple interest",
+    "Compound interest working against you"
+   ]
+  },
+  "u1l5-4": {
+   "prompt": "€10,000 at 5 % compound for 10 years: how much does it come to? (round to euros)",
+   "options": [],
+   "explanation": "10,000 × 1.05¹⁰ ≈ €16,289. With simple interest it would be €15,000.",
+   "unit": "€"
+  },
+  "u1l5-5": {
+   "prompt": "Compound interest only works in your favour.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It works against you too: a revolving credit card at 20 % doubles the debt in under 4 years."
+  },
+  "u1l5-6": {
+   "prompt": "Put in order from lowest to highest the result of €100 a month for 30 years.",
+   "options": [
+    "At 5 %",
+    "At 7 %",
+    "At 2 %",
+    "At 0 %"
+   ],
+   "explanation": "€36,000, €49,273, €83,226 and €121,997: a few points of return make a huge difference to the end result."
+  },
+  "u1l5-7": {
+   "prompt": "You're 22 and have €50 a month to invest. What do you do?",
+   "options": [
+    "Spend it: €50 won't get you anywhere",
+    "Start now with €50 and raise the amount when I can",
+    "Wait until I earn more to start with something «serious»"
+   ],
+   "explanation": "Starting early, even with a little, is what makes the most of compound interest.",
+   "feedback": [
+    "€50 a month at 7 % for 40 years comes to about €130,000, with €24,000 put in.",
+    "Good: with time on your side, starting early matters more than starting big.",
+    "Waiting is costly: the early years are the ones with the most time to compound."
+   ]
+  }
+ }
+}

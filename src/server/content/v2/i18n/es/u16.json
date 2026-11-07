@@ -5,52 +5,6 @@
   "section": "Análisis fundamental"
  },
  "lessons": {
-  "u16l1": {
-   "title": "Precio y valor no son lo mismo",
-   "steps": [
-    {
-     "texts": [
-      "Lo que pagas y lo que obtienes",
-      "Una empresa gana **2 €** por acción al año y tú decides cuánto pagas por ella. ¿Cuántos años de beneficios tardas en recuperar el precio?",
-      "Pagas 40 € por la acción y sus beneficios crecen un 5 % al año. ¿En cuántos años los beneficios suman lo que pagaste?",
-      "En unos 5 años",
-      "En unos 15 años",
-      "En unos 40 años",
-      "Sumando sus beneficios, que crecen un 5 % al año, tardas **15 años** en juntar 40 €.",
-      "Sin tocar el crecimiento, busca el precio más alto con el que lo recuperas en 10 años.",
-      "A **25 €** la recuperas en 10 años; a 80 €, en 23. **El precio es lo que pagas y el valor, lo que obtienes**: la misma empresa puede ser buena compra a un precio y mala a otro.",
-      "Pagas tanto que tardarías décadas en recuperarlo.",
-      "¿Crecer así muchos años seguidos? Muy pocas empresas lo logran.",
-      "¡Eso es un precio razonable para lo que gana!",
-      "Mueve el precio y mira cuántos años tardas"
-     ]
-    },
-    {
-     "texts": [
-      "El señor Mercado",
-      "Señor Mercado",
-      "Benjamin Graham imaginaba al mercado como un socio de humor cambiante que cada día te ofrece un precio.",
-      "¡Hoy estoy eufórico! Te compro tu parte por 40 €. Mañana, quién sabe.",
-      "Una semana después, sin que el negocio haya cambiado nada…",
-      "Todo va fatal. Te vendo mi parte por 12 €. ¡Corre!",
-      "Estimas que la empresa vale unos 20 € por acción. ¿Qué haces?",
-      "Vender: si él está asustado, algo pasará",
-      "Venderías barato justo cuando el negocio no ha cambiado.",
-      "Comprobar que el negocio sigue igual y, si es así, comprar",
-      "Eso: el precio ha bajado, el valor no. Su precio es una oferta, no una orden.",
-      "Comprar con todo tu dinero sin revisar nada",
-      "Buen instinto, pero revisa tu estimación y no lo pongas todo.",
-      "A 12 €, algo que vale 20 €: un **40 %** de margen de seguridad."
-     ]
-    },
-    {
-     "title": "Margen de seguridad",
-     "body": "«El precio es lo que pagas; el valor es lo que obtienes» (Warren Buffett).\n\nEl **análisis fundamental** estudia el negocio (ventas, beneficios, deuda, competencia) para estimar cuánto **vale**: responde a *qué* comprar. El **técnico** estudia el gráfico e intenta responder a *cuándo*.\n\nSi estimas que una acción vale 20 € y solo la compras por debajo de 15 €, tienes un **25 % de margen de seguridad**: un colchón por si te has equivocado al estimar.",
-     "key": "Una empresa excelente comprada demasiado cara puede ser una mala inversión.",
-     "tip": "El valor es una estimación; por eso necesitas colchón."
-    }
-   ]
-  },
   "u16l2": {
    "title": "La cuenta de resultados",
    "steps": [
@@ -373,70 +327,6 @@
   }
  },
  "questions": {
-  "u16l1-1": {
-   "prompt": "¿Qué intenta responder el análisis fundamental?",
-   "options": [
-    "Cuándo entrar exactamente",
-    "Qué comprar y si está caro o barato",
-    "Qué vela viene mañana"
-   ],
-   "explanation": "El técnico intenta responder a cuándo; el fundamental, a qué y a qué precio."
-  },
-  "u16l1-2": {
-   "prompt": "Estimas que una acción vale 40 € y cotiza a 30 €. ¿Qué margen de seguridad tienes sobre el valor estimado?",
-   "options": [],
-   "explanation": "(40 − 30) ÷ 40 = 25 %.",
-   "unit": "%"
-  },
-  "u16l1-3": {
-   "prompt": "Quieres un margen de seguridad del 30 % sobre un valor estimado de 50 €. ¿Por debajo de qué precio comprarías?",
-   "options": [],
-   "explanation": "50 × (1 − 0,30) = 35 €.",
-   "unit": "€"
-  },
-  "u16l1-6": {
-   "prompt": "La diferencia entre el valor estimado y el precio que pagas se llama margen de ____.",
-   "options": [
-    "beneficio",
-    "maniobra",
-    "error",
-    "seguridad"
-   ],
-   "explanation": "Te protege si te equivocas en la estimación."
-  },
-  "u16l1-7": {
-   "prompt": "¿Habla de precio o de valor?",
-   "options": [
-    "La empresa generará unos 100 M€ de caja al año",
-    "Tiene una marca que le permite subir precios",
-    "Capitaliza 1.500 M€ en bolsa",
-    "La acción cerró ayer a 15,20 €",
-    "Ha subido un 8 % esta semana"
-   ],
-   "explanation": "El precio lo ves en la pantalla; el valor sale de analizar el negocio.",
-   "right": [
-    "Precio",
-    "Valor"
-   ]
-  },
-  "u16l1-9": {
-   "prompt": "¿Qué le contestas a Lumi?",
-   "options": [
-    "Claro, ya está en el suelo",
-    "Compra el doble para promediar",
-    "Primero mira por qué ha caído y cuánto vale el negocio: barato no es lo mismo que infravalorado"
-   ],
-   "explanation": "Un precio bajo solo es oportunidad si está por debajo del valor.",
-   "feedback": [
-    "Lo que ha caído un 60 % puede caer otro 60 %.",
-    "Doblar sin analizar es apostar más a ciegas.",
-    "Vale… ¿y si cayó porque el negocio se ha roto? Entonces el valor también bajó."
-   ],
-   "lines": [
-    "Esta acción ha caído un 60 %, ¡ya no puede bajar más!",
-    "Voy a comprar 🤑"
-   ]
-  },
   "u16l2-1": {
    "prompt": "Ordena la cuenta de resultados de arriba abajo.",
    "options": [

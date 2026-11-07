@@ -7,55 +7,6 @@ import { buckets, chat, choose, fill, key, lesson, match, mission, multi, num, o
 export default unit({
   id: 'u29', order: 29, title: 'Diversificación', description: 'Repartir bien: empresas, activos, países, carteras indexadas, factores y ESG',
   lessons: [
-    lesson('u29l1', 'Diversificar: lo único gratis en finanzas', [
-      story('Todo a una carta', [{ id: 'bruno', name: 'Bruno' }], [
-        say('bruno', 'He metido mis 3.000 € en una sola empresa. ¡Va a ser la próxima gran tecnológica!'),
-        say('bruno', 'La conozco bien: me he leído todo sobre ella.'),
-        choose('¿Qué le dices?', [
-          opt('Perfecto: si la conoces, no hay riesgo', 'bad', say('lumi', 'Conocerla no la protege de un fraude, un producto fallido o una quiebra.')),
-          opt('Reparte: entre muchas empresas, una quiebra apenas se nota', 'good', say('lumi', '¡Eso! Si una empresa pesa un 0,1 %, su desastre casi ni se ve.')),
-          opt('Compra otra más y así tienes dos', 'ok', say('lumi', 'Mejor que una, pero dos empresas siguen siendo muy pocas.')),
-        ]),
-        say('lumi', 'Una sola empresa puede caer un **90 %**. Para recuperarte necesitarías un **+900 %**.'),
-        say('bruno', 'Uf. ¿Y si reparto, ya no hay ningún riesgo?'),
-        say('lumi', 'Hay dos tipos de riesgo. Vamos a separarlos.'),
-      ]),
-      play({
-        title: '¿De una empresa o de todas?',
-        intro: 'El riesgo **específico** golpea a una empresa concreta. El **de mercado**, a todas a la vez. ¿Cuál es cada uno?',
-        widget: {
-          kind: 'sort',
-          bins: [{ label: 'Específico: de una empresa' }, { label: 'De mercado: de todas' }],
-          cards: [
-            { icon: 'alert', label: 'Un fraude contable en una empresa', bin: 0, why: 'Le pasa a una sola: en un índice de miles de empresas, apenas se nota.' },
-            { icon: 'globe', label: 'Una recesión mundial', bin: 1, why: 'Golpea a casi todas a la vez: no se diluye con más acciones.' },
-            { icon: 'package', label: 'El producto estrella de una empresa fracasa', bin: 0, why: 'Un problema de esa empresa, no de toda la economía.' },
-            { icon: 'siren', label: 'Una pandemia que cierra la economía', bin: 1, why: 'Afecta a todo el mercado: repartir entre más acciones no lo evita.' },
-            { icon: 'factory', label: 'Una huelga larga en la fábrica de una empresa', bin: 0, why: 'Solo frena a esa empresa: sus competidoras siguen vendiendo.' },
-            { icon: 'percent', label: 'El banco central sube los tipos de golpe', bin: 1, why: 'Cambia el precio del dinero para todas las empresas a la vez.' },
-          ],
-        },
-        goal: { text: 'Clasifica los seis sustos.', when: [when('done', '==', 6)] },
-        insight: 'Diversificar **elimina el riesgo específico**: una quiebra pesa poco entre miles de empresas. El **riesgo de mercado** no desaparece con más acciones; solo se suaviza combinando con bonos o liquidez.',
-        lumi: [
-          { when: when('wrong', '>=', 2), say: 'Pregúntate: ¿le pasa a una empresa o a toda la economía?', mood: 'THINKING' },
-          { when: when('done', '==', 6), say: '¡Bien separado! Ahora, el único almuerzo gratis.', mood: 'CELEBRATE' },
-          { say: 'Clasifica cada susto', mood: 'HAPPY' },
-        ],
-      }),
-      key('El almuerzo gratis', 'Una acción suelta se mueve un 30-35 % al año; 20-30 acciones de sectores distintos, cerca del 20 %; un índice mundial, un 15 %.\n\nHarry Markowitz, Nobel de Economía, llamó a esto **el único almuerzo gratis**: menos riesgo sin renunciar a rentabilidad esperada.', 'Con muchas empresas, los desastres de unas se compensan con los éxitos de otras.', 'No pongas todos los huevos en la misma cesta, ni todas las cestas en el mismo camión.'),
-    ], [
-      single('¿Qué riesgo elimina repartir tu dinero entre cientos de acciones?', ['El riesgo de mercado', 'El riesgo específico de cada empresa', 'Todo el riesgo'], 1, 'Una quiebra deja de ser un drama si pesa un 0,1 %. Pero si cae todo el mercado, caen todas: ese riesgo solo se suaviza con bonos o liquidez.'),
-      num('Repartes 10.000 € a partes iguales entre 20 acciones. Una quiebra y pierde todo su valor; el resto se queda igual. ¿Cuántos euros pierdes?', 500, '€', '10.000 ÷ 20 = 500 € por acción. Con una sola acción, esa quiebra se habría llevado los 10.000 €.'),
-      buckets('¿Es riesgo específico o riesgo de mercado?', ['Específico (de una empresa)', 'De mercado (de todas)'], [['Un fraude contable en una empresa', 0], ['Una recesión mundial', 1], ['Un producto estrella que fracasa', 0], ['Una pandemia que cierra la economía', 1], ['Una subida fuerte de tipos del banco central', 1], ['Una huelga larga en la fábrica de una empresa', 0]], 'Lo que afecta a una empresa se diluye en un índice; lo que afecta a toda la economía, no.'),
-      portfolio('Ejercicio de práctica (no es una recomendación): reparte 10.000 € entre estas acciones. Reglas: al menos 6 empresas, ninguna por encima del 20 % y ningún sector por encima del 30 %.', [['Iberdrola', 'ENERGÍA'], ['Repsol', 'ENERGÍA'], ['BBVA', 'BANCA'], ['Banco Santander', 'BANCA'], ['Inditex', 'CONSUMO'], ['Coca-Cola', 'CONSUMO'], ['Apple', 'TECNOLOGÍA'], ['Microsoft', 'TECNOLOGÍA']], { minAssets: 6, maxWeight: 20, maxKind: { ENERGÍA: 30, BANCA: 30, CONSUMO: 30, TECNOLOGÍA: 30 } }, 'Repartir entre empresas y sectores reduce el riesgo específico. Aun así, 8 acciones siguen siendo pocas: un índice tiene cientos o miles.'),
-      timed(single('Rápido: volatilidad anual típica de un índice mundial de acciones…', ['Un 15 %', 'Un 35 %', 'Un 70 %'], 0, 'Una acción suelta ronda el 25-35 % y una pequeña o joven puede pasar del 40 %.'), 12),
-      multi('¿Qué NO es diversificar? Marca todas.', ['Tener 10 fondos que compran las mismas 50 tecnológicas', 'Tener 15 criptomonedas distintas', 'Un fondo de acciones de todo el mundo y otro de bonos', 'Tener casi todo en acciones de la empresa donde trabajas'], [0, 1, 3], 'Nombres distintos no son activos distintos: las criptos suelen caer juntas y los fondos repetidos compran lo mismo.'),
-      tf('España supone más del 10 % de la bolsa mundial.', false, 'Es menos del 1 %. Invertir solo en España es concentrar, aunque tengas 35 empresas.'),
-      scenario('Pablo tiene el 80 % de sus ahorros en acciones de la empresa donde trabaja: «La conozco mejor que nadie». ¿Qué le dices?', [['Tiene razón: conocer la empresa elimina el riesgo', 'Conocerla no la protege de una crisis del sector. Y si va mal, Pablo pierde a la vez el sueldo y los ahorros.'], ['Que concentra dos riesgos en el mismo sitio: su sueldo y sus ahorros', 'Eso es: si la empresa tropieza, le golpea por los dos lados. Es justo el riesgo que diversificar elimina.'], ['Que pase todo a otra empresa que le guste más', 'Cambiar una sola empresa por otra deja el mismo problema: todo en una cesta.']], 1, 'Concentrar en tu propia empresa es doble riesgo. Diversificar lo reduce sin renunciar a rentabilidad esperada.'),
-      fill('Markowitz llamó a la diversificación «el único almuerzo ____» de las finanzas.', 'gratis', ['caro', 'seguro', 'rápido'], 'Reduces el riesgo sin pagar a cambio menos rentabilidad esperada.'),
-      chat(['Tengo 300 € en 15 criptomonedas distintas 😎', 'Ya estoy superdiversificado, ¿no?'], '¿Qué le contestas a Lumi?', [['Sí, 15 son muchísimas', 'Ojalá… pero cuando bitcoin cae con fuerza, la mayoría de las demás caen con él.'], ['No: si todas caen a la vez, es como tener una sola', '¡Bien visto! Diversificar es tener cosas que se comportan distinto, no muchos nombres.'], ['Sí, sobre todo si son nuevas', 'Las más nuevas suelen ser aún más volátiles. Más nombres no es menos riesgo.']], 1, 'Activos muy correlacionados no diversifican. Y recuerda: en cripto puede perderse la totalidad de lo invertido.'),
-    ], { source: '3.4', minutes: 6, retire: [2, 4, 6] }),
 
     lesson('u29l2', 'La correlación', [
       play({

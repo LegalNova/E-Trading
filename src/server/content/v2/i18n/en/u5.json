@@ -110,50 +110,6 @@
     }
    ]
   },
-  "u5l3": {
-   "title": "Supply, demand and price",
-   "steps": [
-    {
-     "texts": [
-      "The order book",
-      "On the left, people who want to **buy** (*bid*); on the right, people who want to **sell** (*ask*). If you buy right now, you pay the best selling price.",
-      "You want to buy **600 shares** right now. What average price do you pay?",
-      "€10.04, the best selling price",
-      "A bit more than €10.04",
-      "€10.02, the best buying price",
-      "There are only 300 at €10.04: the other 300 cost €10.05. You pay €6,027, an average of **€10.045**.",
-      "Buy so many that your average price ends up more than 0.1 % away from the best price.",
-      "The difference between the best *bid* and the best *ask* is the **spread**. If more buyers in a hurry turn up, **they eat through the offers step by step** and the price rises.",
-      "Your own purchase has pushed the price up. That's how it moves.",
-      "The €10.04 shares are gone: the next ones cost more.",
-      "Change how many shares you buy at once"
-     ]
-    },
-    {
-     "texts": [
-      "Surprise results",
-      "Leo",
-      "It's 10:00. The company Leo has invested in publishes results far better than expected.",
-      "In the book, the best seller was asking €10.04. What now?",
-      "What do you think happens to the price?",
-      "It rises: buyers eat through the offers",
-      "Exactly. The €10.04 shares run out, it trades at €10.05… and up it goes.",
-      "Nothing: the company sets the price",
-      "The company doesn't set the price: it's the last deal between a buyer and a seller.",
-      "It only depends on what the company is worth",
-      "That matters in the long run. Today, whoever's most eager to buy calls the shots.",
-      "So is the price what the company is worth?",
-      "No: it's what someone **has just paid**. News, results and data move it."
-     ]
-    },
-    {
-     "title": "Auctions",
-     "body": "The Madrid Stock Exchange opens and closes with an **auction**: from 8:30 to 9:00 and from 17:30 to 17:35 orders build up and a single price is set that matches the largest volume.",
-     "key": "The price is the latest deal between whoever pays most and whoever asks least.",
-     "tip": "The price isn't what a company is worth: it's what someone has just paid."
-    }
-   ]
-  },
   "u5l4": {
    "title": "Trading hours and sessions",
    "steps": [
@@ -518,65 +474,6 @@
     "sells"
    ],
    "explanation": "Every purchase has a sale on the other side."
-  },
-  "u5l3-1": {
-   "prompt": "The best buying price is €20.10 and the best selling price €20.14. If you buy right now, what price do you pay?",
-   "options": [
-    "€20.12",
-    "€20.14",
-    "€20.10"
-   ],
-   "explanation": "You buy at the best selling price (ask): it's what the seller is asking."
-  },
-  "u5l3-4": {
-   "prompt": "In that purchase of 600 shares for €6,027, what's your average price per share?",
-   "options": [],
-   "explanation": "6,027 ÷ 600 = €10.045: a bit more than the best price because you ate through two steps.",
-   "unit": "€"
-  },
-  "u5l3-5": {
-   "prompt": "Put in order what happens when lots of buyers arrive in a hurry.",
-   "options": [
-    "The shares at €10.04 run out",
-    "The next purchases are matched at €10.05",
-    "The last traded price goes up",
-    "Lots of market buy orders arrive"
-   ],
-   "explanation": "That's how the price rises: demand eats through supply step by step."
-  },
-  "u5l3-6": {
-   "prompt": "Put a Madrid Stock Exchange session in order.",
-   "options": [
-    "Closing auction (17:30-17:35)",
-    "The closing price is published",
-    "Market open (9:00-17:30)",
-    "Opening auction (8:30-9:00)"
-   ],
-   "explanation": "Two auctions frame the continuous session."
-  },
-  "u5l3-8": {
-   "prompt": "What can move a share's price? Select all that apply.",
-   "options": [
-    "An economic data release",
-    "More sellers turning up than buyers",
-    "The colour of its logo",
-    "The company's results"
-   ],
-   "explanation": "Anything that changes what people are willing to pay moves the price."
-  },
-  "u5l3-9": {
-   "prompt": "Ana wants to sell 2,000 shares in a small company right now. On the buy side of the book there are 300 at €5.00, 500 at €4.90 and 1,200 at €4.70. What does she do?",
-   "options": [
-    "Places a limit order at €5.00 and sells bit by bit",
-    "Sells all 2,000 at market",
-    "Sells at market and places more orders at the same time"
-   ],
-   "explanation": "With illiquid securities, a large market order moves the price against you.",
-   "feedback": [
-    "She sells what's there at her price and the rest waits: she doesn't give it away out of impatience.",
-    "She eats through the book: she gets €9,590, an average of about €4.80 versus the best price of €5.00.",
-    "More selling pressure on a thin book: the price falls even further."
-   ]
   },
   "u5l4-1": {
    "prompt": "Match each market with its hours (Spanish mainland time).",

@@ -5,66 +5,6 @@
   "section": "Análisis fundamental"
  },
  "lessons": {
-  "u17l1": {
-   "title": "El PER",
-   "steps": [
-    {
-     "texts": [
-      "PER 4: ¿una ganga?",
-      "Hugo",
-      "He encontrado una acción con PER 4. ¡Está regalada!",
-      "Pagas solo 4 años de beneficio. Le meto todos mis ahorros.",
-      "¿Qué le dices?",
-      "¡Corre, que se escapa!",
-      "Casi nada tiene PER 4 sin motivo. Primero hay que saber cuál.",
-      "Mira por qué es tan bajo antes de comprar",
-      "Bien. Un PER muy bajo es una **pregunta**, no una respuesta.",
-      "Compra solo un poco, por si acaso",
-      "Prudente, pero sigues sin saber qué compras.",
-      "Vale… Sus ventas llevan cinco años cayendo.",
-      "Ahí está: el mercado paga poco porque espera que gane **menos**.",
-      "PER bajo puede ser declive o un beneficio puntual. PER alto, quizá crecimiento."
-     ]
-    },
-    {
-     "texts": [
-      "¿Cuántos años de beneficio pagas?",
-      "Esta empresa gana **2 € por acción** al año. Mueve el precio de la acción y mira qué pasa con el **PER**.",
-      "Si el beneficio no cambia y el precio pasa de 30 € a 60 €, ¿qué le pasa al PER?",
-      "Se queda igual",
-      "Se duplica",
-      "Baja a la mitad",
-      "PER = precio ÷ beneficio por acción: 60 ÷ 2 = **30**, el doble que 30 ÷ 2 = 15.",
-      "Busca el precio con el que pagas 20 años de beneficio.",
-      "**PER = precio ÷ beneficio por acción**: los años de beneficio que pagas. Panadería Global (15 € y 0,975 € de BPA) tiene PER 15,4, y su inverso, la **rentabilidad por beneficio**, es un 6,5 %.",
-      "Pagas 30 años de beneficio o más. ¿Crecerá para merecerlo?",
-      "PER muy bajo… ¿ganga o empresa en apuros?",
-      "Mueve el precio y mira el PER"
-     ]
-    },
-    {
-     "texts": [
-      "PER alto, ¿siempre caro?",
-      "Ahora cotiza a **60 €**: PER 30. Sin crecer, tardas 30 años en recuperar el precio con los beneficios. ¿Y si crecen?",
-      "Si el beneficio crece un 10 % al año, ¿cuánto tardas en recuperar los 60 €?",
-      "Unos 15 años",
-      "Unos 27 años",
-      "Sigue en 30 años",
-      "Con un 10 % anual, los beneficios suman 60 € en **15 años**: la mitad de tiempo.",
-      "Con el precio en 60 €, busca el crecimiento que te devuelve el precio en 15 años o menos.",
-      "**PER alto no es caro** si el beneficio crece deprisa, y **PER bajo no es barato** si va a menguar. Compáralo siempre con su crecimiento, su historia y su sector.",
-      "¡Diez años o menos! Crecer rápido abarata un PER alto.",
-      "Sin crecer, PER 30 son 30 años. Sube el crecimiento.",
-      "Sube el crecimiento y mira los años"
-     ]
-    },
-    {
-     "title": "Histórico y adelantado",
-     "body": "Con el beneficio del último año es el **PER histórico**; con el previsto, el **PER adelantado**. Si el beneficio va a crecer mucho, el adelantado será más bajo.\n\nLa media del mercado ronda **15-17**. Compara con su historia y su sector: un banco a PER 8 y un software a PER 35 pueden estar «en su precio».",
-     "key": "Un PER de 10 puede ser caro y uno de 30 barato: depende de lo que vaya a ganar la empresa."
-    }
-   ]
-  },
   "u17l2": {
    "title": "PEG, EV/EBITDA y precio/valor contable",
    "steps": [
@@ -375,59 +315,6 @@
   }
  },
  "questions": {
-  "u17l1-1": {
-   "prompt": "Una acción cotiza a 30 € y su BPA es de 2 €. ¿Cuál es su PER?",
-   "options": [],
-   "explanation": "30 ÷ 2 = 15: pagas 15 años del beneficio actual.",
-   "unit": "veces"
-  },
-  "u17l1-2": {
-   "prompt": "Una empresa capitaliza 4.000 M€ y gana 250 M€ al año. ¿Cuál es su PER?",
-   "options": [],
-   "explanation": "4.000 ÷ 250 = 16. Da igual hacerlo por acción o con la empresa entera.",
-   "unit": "veces"
-  },
-  "u17l1-3": {
-   "prompt": "Una acción tiene un PER de 20. ¿Cuál es su rentabilidad por beneficio?",
-   "options": [],
-   "explanation": "1 ÷ 20 = 5 %.",
-   "unit": "%"
-  },
-  "u17l1-4": {
-   "prompt": "PER = precio ÷ ____.",
-   "options": [
-    "dividendo",
-    "deuda",
-    "ventas",
-    "BPA"
-   ],
-   "explanation": "Precio de la acción entre el beneficio por acción."
-  },
-  "u17l1-5": {
-   "prompt": "Si el BPA se duplica y el precio no se mueve, el PER se reduce a la ____.",
-   "options": [
-    "cuarta parte",
-    "décima parte",
-    "tercera parte",
-    "mitad"
-   ],
-   "explanation": "El mismo precio entre el doble de beneficio da la mitad de PER."
-  },
-  "u17l1-7": {
-   "prompt": "Un año, una empresa vende su sede y su beneficio se triplica. Su PER cae de 18 a 6. ¿Qué ha pasado?",
-   "options": [
-    "El PER está distorsionado por un beneficio puntual",
-    "Se ha convertido en una ganga",
-    "Su negocio ha mejorado mucho"
-   ],
-   "explanation": "Ese beneficio no se repetirá: hay que mirar el beneficio recurrente."
-  },
-  "u17l1-8": {
-   "prompt": "Una acción a 60 € tiene un BPA de 3 € este año y se espera un BPA de 4 € el próximo. ¿Cuál es su PER adelantado?",
-   "options": [],
-   "explanation": "60 ÷ 4 = 15. El histórico es 60 ÷ 3 = 20.",
-   "unit": "veces"
-  },
   "u17l2-2": {
    "prompt": "PER de 30 y crecimiento esperado del BPA del 15 % anual. ¿Cuál es su PEG?",
    "options": [],

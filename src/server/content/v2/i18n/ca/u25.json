@@ -49,50 +49,6 @@
     }
    ]
   },
-  "u25l2": {
-   "title": "Aportacions periòdiques (DCA)",
-   "steps": [
-    {
-     "texts": [
-      "El preu baixa… i torna",
-      "Irene",
-      "Aporto 100 € cada mes a un fons, passi el que passi.",
-      "En cinc mesos, el preu passa per 10 €, 8 €, 5 €, 8 € i torna a 10 €.",
-      "Ha tornat on era. Suposo que estic igual que al principi.",
-      "Com està la Irene?",
-      "Igual: el preu ha acabat on va començar",
-      "No: quan estava barat, els seus 100 € van comprar més participacions.",
-      "Guanyant: va comprar més participacions quan estava barat",
-      "Això mateix! Va posar 500 € i ara en té 650 €: un **30 %** més.",
-      "Perdent: va comprar en plena caiguda",
-      "Al revés: en la caiguda, els mateixos diners li van donar més participacions.",
-      "Invertir **la mateixa quantitat cada mes** s'anomena DCA. Les caigudes juguen a favor teu."
-     ]
-    },
-    {
-     "texts": [
-      "Tot de cop o de mica en mica?",
-      "Tens **12.000 €** per a l'S&P 500, amb dades reals. Tot el primer mes o repartit en 12? Mira quant tindries 10 anys després.",
-      "Mirant tots els mesos d'inici possibles, què guanya més vegades a 10 anys?",
-      "Repartir, gairebé sempre",
-      "Tot de cop, unes tres de cada quatre vegades",
-      "Meitat i meitat",
-      "Tot de cop guanya en el **74 %** dels mesos d'inici. Vanguard, amb l'MSCI World del 1976 al 2022, ho va veure un 68 % de les vegades al cap d'un any.",
-      "Busca un mes d'inici en què repartir sortís més a compte.",
-      "**Tot de cop sol guanyar**, perquè el mercat puja més vegades de les que baixa. **Repartir** guanya just abans d'una caiguda i redueix el penediment, però ningú no sap quan arriba.",
-      "Aquí ha guanyat repartir! Mira què ha vingut just després: una caiguda.",
-      "Tot de cop guanya de molt: el mercat ha pujat des del principi.",
-      "Mou el mes d'inici. Prova just abans d'una crisi"
-     ]
-    },
-    {
-     "title": "Amb una suma gran",
-     "body": "Una solució intermèdia raonable: repartir-la en **6–12 mesos** amb aportacions automàtiques.\n\nEl que no funciona és esperar «que baixi»: ningú no sap on és el terra.",
-     "key": "Tot de cop sol guanyar més vegades; de mica en mica redueix el penediment. L'important és començar i no parar.",
-     "tip": "Invertir cada mes és com pujar una escala: el que importa és no aturar-se."
-    }
-   ]
-  },
   "u25l3": {
    "title": "Value investing a l'estil Buffett",
    "steps": [
@@ -508,75 +464,6 @@
     "Comprar i mantenir és cosa d'avis 👴",
     "Jo prefereixo alguna cosa amb emoció."
    ]
-  },
-  "u25l2-1": {
-   "prompt": "Inverteixes 100 € al mes i el preu passa per 10, 8, 5, 8 i 10 €. Quantes participacions tens en total?",
-   "options": [],
-   "explanation": "100 ÷ 10 + 100 ÷ 8 + 100 ÷ 5 + 100 ÷ 8 + 100 ÷ 10 = 10 + 12,5 + 20 + 12,5 + 10 = 65.",
-   "unit": "participacions"
-  },
-  "u25l2-2": {
-   "prompt": "Amb aquestes 65 participacions per 500 €, quin és el teu preu mitjà de compra? (arrodoneix a dos decimals)",
-   "options": [],
-   "explanation": "500 ÷ 65 ≈ 7,69 €. Com que acaba a 10 €, guanyes un 30 % sense que el preu hagi pujat.",
-   "unit": "€"
-  },
-  "u25l2-3": {
-   "prompt": "Setembre del 2008. Comences a aportar 200 € al mes a un fons de l'S&P 500. Què va fer l'índex els mesos següents?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Amb aportacions periòdiques, quan el preu cau compres més participacions amb els mateixos diners: les caigudes treballen a favor teu si no pares.",
-   "horizon": "els mesos següents"
-  },
-  "u25l2-4": {
-   "prompt": "Juliol del 2012: l'IBEX 35 fa anys que està en crisi i gairebé ningú no vol invertir a Espanya. Si aportaves cada mes, què va passar després?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Qui aportava cada mes va comprar moltes participacions barates en el pitjor moment de la crisi. El DCA no obliga a endevinar el terra.",
-   "horizon": "l'any i mig següent"
-  },
-  "u25l2-5": {
-   "prompt": "L'Ana hereta 30.000 € per invertir a llarg termini. Sap per experiència que si ho inverteix tot i cau un 20 % el mes següent, ho vendria tot pels nervis. Quina opció encaixa millor amb el que sap d'ella mateixa?",
-   "options": [
-    "Repartir-ho en 6–12 mesos amb aportacions automàtiques",
-    "Esperar que la borsa baixi",
-    "Invertir-ho tot avui"
-   ],
-   "explanation": "La millor estratègia és la que podràs mantenir. Esperar «el moment» sol ser la pitjor.",
-   "feedback": [
-    "Bona solució intermèdia: entra al mercat sense la por de fer-ho tot el pitjor dia.",
-    "Ningú no sap quan baixarà: mentre espera, el mercat pot pujar un 30 %.",
-    "Estadísticament guanya unes 2 de cada 3 vegades, però l'Ana ja sap que abandonaria en una caiguda, i això seria el pitjor."
-   ]
-  },
-  "u25l2-8": {
-   "prompt": "És un avantatge de les aportacions periòdiques o d'invertir de cop?",
-   "options": [
-    "Automatitza la disciplina",
-    "Tots els diners treballen des del primer dia",
-    "Encaixa amb cobrar un sou cada mes",
-    "Redueix el penediment si cau just després",
-    "Històricament guanya més vegades"
-   ],
-   "explanation": "Totes dues són vàlides: el que no funciona és intentar endevinar el moment.",
-   "right": [
-    "Aportacions periòdiques",
-    "De cop"
-   ]
-  },
-  "u25l2-10": {
-   "prompt": "Invertir la mateixa quantitat cada mes, passi el que passi, s'anomena ____.",
-   "options": [
-    "rebalanceig",
-    "market timing",
-    "palanquejament",
-    "DCA"
-   ],
-   "explanation": "Dollar-cost averaging: aportacions periòdiques."
   },
   "u25l3-1": {
    "prompt": "Estimes que una acció val 20 € i cotitza a 15 €. Quin marge de seguretat tens respecte al teu valor estimat?",

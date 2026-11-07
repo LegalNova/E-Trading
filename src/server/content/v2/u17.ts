@@ -6,68 +6,6 @@ import { buckets, chat, choose, fill, key, lesson, match, mission, note, num, op
 export default unit({
   id: 'u17', order: 17, title: 'Ratios y valoración', description: 'PER, PEG, EV/EBITDA, ROE, dividendos, DCF y CAPE con números de verdad',
   lessons: [
-    lesson('u17l1', 'El PER', [
-      story('PER 4: ¿una ganga?', [{ id: 'hugo', name: 'Hugo' }], [
-        say('hugo', 'He encontrado una acción con PER 4. ¡Está regalada!'),
-        say('hugo', 'Pagas solo 4 años de beneficio. Le meto todos mis ahorros.'),
-        choose('¿Qué le dices?', [
-          opt('¡Corre, que se escapa!', 'bad', say('lumi', 'Casi nada tiene PER 4 sin motivo. Primero hay que saber cuál.')),
-          opt('Mira por qué es tan bajo antes de comprar', 'good', say('lumi', 'Bien. Un PER muy bajo es una **pregunta**, no una respuesta.')),
-          opt('Compra solo un poco, por si acaso', 'ok', say('lumi', 'Prudente, pero sigues sin saber qué compras.')),
-        ]),
-        say('hugo', 'Vale… Sus ventas llevan cinco años cayendo.'),
-        say('lumi', 'Ahí está: el mercado paga poco porque espera que gane **menos**.'),
-        say('lumi', 'PER bajo puede ser declive o un beneficio puntual. PER alto, quizá crecimiento.'),
-      ]),
-      play({
-        title: '¿Cuántos años de beneficio pagas?',
-        intro: 'Esta empresa gana **2 € por acción** al año. Mueve el precio de la acción y mira qué pasa con el **PER**.',
-        widget: { kind: 'valuation', price: 30, eps: 2, growth: 0, maxPrice: 80, maxGrowth: 30 },
-        predict: {
-          prompt: 'Si el beneficio no cambia y el precio pasa de 30 € a 60 €, ¿qué le pasa al PER?',
-          options: ['Se queda igual', 'Se duplica', 'Baja a la mitad'],
-          answer: 1,
-          why: 'PER = precio ÷ beneficio por acción: 60 ÷ 2 = **30**, el doble que 30 ÷ 2 = 15.',
-        },
-        goal: { text: 'Busca el precio con el que pagas 20 años de beneficio.', when: [when('per', '==', 20)] },
-        insight: '**PER = precio ÷ beneficio por acción**: los años de beneficio que pagas. Panadería Global (15 € y 0,975 € de BPA) tiene PER 15,4, y su inverso, la **rentabilidad por beneficio**, es un 6,5 %.',
-        lumi: [
-          { when: when('per', '>=', 30), say: 'Pagas 30 años de beneficio o más. ¿Crecerá para merecerlo?', mood: 'THINKING' },
-          { when: when('per', '<=', 8), say: 'PER muy bajo… ¿ganga o empresa en apuros?', mood: 'THINKING' },
-          { say: 'Mueve el precio y mira el PER', mood: 'HAPPY' },
-        ],
-      }),
-      play({
-        title: 'PER alto, ¿siempre caro?',
-        intro: 'Ahora cotiza a **60 €**: PER 30. Sin crecer, tardas 30 años en recuperar el precio con los beneficios. ¿Y si crecen?',
-        widget: { kind: 'valuation', price: 60, eps: 2, growth: 0, maxPrice: 80, maxGrowth: 30 },
-        predict: {
-          prompt: 'Si el beneficio crece un 10 % al año, ¿cuánto tardas en recuperar los 60 €?',
-          options: ['Unos 15 años', 'Unos 27 años', 'Sigue en 30 años'],
-          answer: 0,
-          why: 'Con un 10 % anual, los beneficios suman 60 € en **15 años**: la mitad de tiempo.',
-        },
-        goal: { text: 'Con el precio en 60 €, busca el crecimiento que te devuelve el precio en 15 años o menos.', when: [when('price', '==', 60), when('payback', '<=', 15)] },
-        insight: '**PER alto no es caro** si el beneficio crece deprisa, y **PER bajo no es barato** si va a menguar. Compáralo siempre con su crecimiento, su historia y su sector.',
-        lumi: [
-          { when: when('payback', '<=', 10), say: '¡Diez años o menos! Crecer rápido abarata un PER alto.', mood: 'CELEBRATE' },
-          { when: when('growth', '==', 0), say: 'Sin crecer, PER 30 son 30 años. Sube el crecimiento.', mood: 'THINKING' },
-          { say: 'Sube el crecimiento y mira los años', mood: 'HAPPY' },
-        ],
-      }),
-      key('Histórico y adelantado', 'Con el beneficio del último año es el **PER histórico**; con el previsto, el **PER adelantado**. Si el beneficio va a crecer mucho, el adelantado será más bajo.\n\nLa media del mercado ronda **15-17**. Compara con su historia y su sector: un banco a PER 8 y un software a PER 35 pueden estar «en su precio».', 'Un PER de 10 puede ser caro y uno de 30 barato: depende de lo que vaya a ganar la empresa.'),
-    ], [
-      num('Una acción cotiza a 30 € y su BPA es de 2 €. ¿Cuál es su PER?', 15, 'veces', '30 ÷ 2 = 15: pagas 15 años del beneficio actual.'),
-      num('Una empresa capitaliza 4.000 M€ y gana 250 M€ al año. ¿Cuál es su PER?', 16, 'veces', '4.000 ÷ 250 = 16. Da igual hacerlo por acción o con la empresa entera.'),
-      num('Una acción tiene un PER de 20. ¿Cuál es su rentabilidad por beneficio?', 5, '%', '1 ÷ 20 = 5 %.'),
-      fill('PER = precio ÷ ____.', 'BPA', ['ventas', 'dividendo', 'deuda'], 'Precio de la acción entre el beneficio por acción.'),
-      fill('Si el BPA se duplica y el precio no se mueve, el PER se reduce a la ____.', 'mitad', ['tercera parte', 'cuarta parte', 'décima parte'], 'El mismo precio entre el doble de beneficio da la mitad de PER.'),
-      tf('Un PER bajo siempre significa que la acción está barata.', false, 'Puede reflejar una empresa en declive o un beneficio puntual inflado.'),
-      single('Un año, una empresa vende su sede y su beneficio se triplica. Su PER cae de 18 a 6. ¿Qué ha pasado?', ['El PER está distorsionado por un beneficio puntual', 'Se ha convertido en una ganga', 'Su negocio ha mejorado mucho'], 0, 'Ese beneficio no se repetirá: hay que mirar el beneficio recurrente.'),
-      num('Una acción a 60 € tiene un BPA de 3 € este año y se espera un BPA de 4 € el próximo. ¿Cuál es su PER adelantado?', 15, 'veces', '60 ÷ 4 = 15. El histórico es 60 ÷ 3 = 20.'),
-      timed(single('Rápido: precio 45 €, BPA 3 €. ¿PER?', ['12', '15', '18'], 1, '45 ÷ 3 = 15.'), 12),
-      chat(['He encontrado una acción con PER 4 😍', '¡Está regalada!'], '¿Qué le contestas a Lumi?', [['Cómprala ya, que se escapa', 'Antes de nada: casi nada tiene PER 4 sin motivo, y hay que averiguar cuál.'], ['Mira por qué es tan bajo: beneficio puntual, negocio en declive o deuda enorme', 'Vale, investigo antes de enamorarme del número.'], ['Un PER bajo siempre es mejor', 'No siempre: a veces es la forma que tiene el mercado de decir «este beneficio no va a durar».']], 1, 'Un PER muy bajo es una pregunta, no una respuesta.'),
-    ], { source: '5.5', minutes: 6, retire: [5, 8, 9] }),
 
     lesson('u17l2', 'PEG, EV/EBITDA y precio/valor contable', [
       play({

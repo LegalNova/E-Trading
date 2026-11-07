@@ -5,66 +5,6 @@
   "section": "Fundamental analysis"
  },
  "lessons": {
-  "u17l1": {
-   "title": "The P/E ratio",
-   "steps": [
-    {
-     "texts": [
-      "A P/E of 4: a bargain?",
-      "Hugo",
-      "I've found a share with a P/E of 4. It's a steal!",
-      "You're only paying for 4 years of earnings. I'm putting all my savings in.",
-      "What do you tell him?",
-      "Quick, before it's gone!",
-      "Hardly anything has a P/E of 4 for no reason. First you need to know what it is.",
-      "Find out why it's so low before buying",
-      "Good. A very low P/E is a **question**, not an answer.",
-      "Just buy a little, to be safe",
-      "Cautious, but you still don't know what you're buying.",
-      "OK… Its sales have been falling for five years.",
-      "There you go: the market pays little because it expects it to earn **less**.",
-      "A low P/E can mean decline or a one-off profit. A high P/E, maybe growth."
-     ]
-    },
-    {
-     "texts": [
-      "How many years of earnings are you paying for?",
-      "This company earns **€2 per share** a year. Move the share price and see what happens to the **P/E**.",
-      "If earnings don't change and the price goes from €30 to €60, what happens to the P/E?",
-      "It stays the same",
-      "It doubles",
-      "It halves",
-      "P/E = price ÷ earnings per share: 60 ÷ 2 = **30**, double 30 ÷ 2 = 15.",
-      "Find the price at which you're paying for 20 years of earnings.",
-      "**P/E = price ÷ earnings per share**: the years of earnings you're paying for. Panadería Global (€15 and €0.975 EPS) has a P/E of 15.4, and its inverse, the **earnings yield**, is 6.5 %.",
-      "You're paying for 30 years of earnings or more. Will it grow enough to deserve it?",
-      "Very low P/E… bargain or company in trouble?",
-      "Move the price and watch the P/E"
-     ]
-    },
-    {
-     "texts": [
-      "High P/E: always expensive?",
-      "Now it trades at **€60**: a P/E of 30. With no growth, it takes 30 years for the earnings to pay back the price. What if they grow?",
-      "If earnings grow 10 % a year, how long does it take to get the €60 back?",
-      "About 15 years",
-      "About 27 years",
-      "Still 30 years",
-      "At 10 % a year, earnings add up to €60 in **15 years**: half the time.",
-      "With the price at €60, find the growth that pays back the price in 15 years or less.",
-      "**A high P/E isn't expensive** if earnings grow fast, and **a low P/E isn't cheap** if they're going to shrink. Always compare it with its growth, its history and its sector.",
-      "Ten years or less! Fast growth makes a high P/E cheaper.",
-      "With no growth, a P/E of 30 means 30 years. Turn up the growth.",
-      "Turn up the growth and watch the years"
-     ]
-    },
-    {
-     "title": "Trailing and forward",
-     "body": "Using last year's earnings gives you the **trailing P/E**; using forecast earnings, the **forward P/E**. If earnings are set to grow a lot, the forward one will be lower.\n\nThe market average is around **15-17**. Compare it with its history and its sector: a bank on a P/E of 8 and a software company on 35 can both be «fairly priced».",
-     "key": "A P/E of 10 can be expensive and one of 30 cheap: it depends on what the company is going to earn."
-    }
-   ]
-  },
   "u17l2": {
    "title": "PEG, EV/EBITDA and price-to-book",
    "steps": [
@@ -375,59 +315,6 @@
   }
  },
  "questions": {
-  "u17l1-1": {
-   "prompt": "A share trades at €30 and its EPS is €2. What is its P/E?",
-   "options": [],
-   "explanation": "30 ÷ 2 = 15: you're paying 15 years of current earnings.",
-   "unit": "times"
-  },
-  "u17l1-2": {
-   "prompt": "A company has a market cap of €4,000m and earns €250m a year. What is its P/E?",
-   "options": [],
-   "explanation": "4,000 ÷ 250 = 16. It makes no difference whether you work it out per share or for the whole company.",
-   "unit": "times"
-  },
-  "u17l1-3": {
-   "prompt": "A share has a P/E of 20. What is its earnings yield?",
-   "options": [],
-   "explanation": "1 ÷ 20 = 5 %.",
-   "unit": "%"
-  },
-  "u17l1-4": {
-   "prompt": "P/E = price ÷ ____.",
-   "options": [
-    "dividend",
-    "debt",
-    "sales",
-    "EPS"
-   ],
-   "explanation": "The share price divided by earnings per share."
-  },
-  "u17l1-5": {
-   "prompt": "If EPS doubles and the price doesn't move, the P/E drops to ____ of what it was.",
-   "options": [
-    "a quarter",
-    "a tenth",
-    "a third",
-    "half"
-   ],
-   "explanation": "The same price divided by twice the earnings gives half the P/E."
-  },
-  "u17l1-7": {
-   "prompt": "One year, a company sells its headquarters and its profit triples. Its P/E falls from 18 to 6. What has happened?",
-   "options": [
-    "The P/E is distorted by a one-off profit",
-    "It has become a bargain",
-    "Its business has improved a lot"
-   ],
-   "explanation": "That profit won't happen again: you need to look at recurring earnings."
-  },
-  "u17l1-8": {
-   "prompt": "A share at €60 has EPS of €3 this year, and EPS of €4 is expected next year. What is its forward P/E?",
-   "options": [],
-   "explanation": "60 ÷ 4 = 15. The trailing P/E is 60 ÷ 3 = 20.",
-   "unit": "times"
-  },
   "u17l2-2": {
    "prompt": "P/E of 30 and expected EPS growth of 15 % a year. What is its PEG?",
    "options": [],

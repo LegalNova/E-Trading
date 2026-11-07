@@ -5,49 +5,6 @@
   "section": "Com funcionen els mercats"
  },
  "lessons": {
-  "u6l1": {
-   "title": "L'ordre a mercat",
-   "steps": [
-    {
-     "texts": [
-      "Comprar ara mateix",
-      "Una **ordre a mercat** compra a l'instant, al millor preu de venda disponible. Aquesta empresa és petita i gairebé no es negocia.",
-      "Compres **1.000 accions a mercat**. Què creus que passarà amb el teu preu?",
-      "Pagues 4,00 €, el millor preu",
-      "Pagues força més de mitjana",
-      "Pagues menys: compres a l'engròs",
-      "Només n'hi ha 200 a 4,00 €. Les 1.000 et surten a **4,115 €** de mitjana: gairebé un 3 % més.",
-      "Apuja la compra fins a les 1.000 accions.",
-      "Una ordre a mercat **garanteix que s'executi, no el preu**. En valors poc líquids, la teva ordre es menja diversos graons del llibre.",
-      "Més d'un 2 % de més, només per comprar amb pressa.",
-      "S'han acabat les de 4,00 €: ara pagues més.",
-      "Apuja la quantitat i mira el teu preu mitjà"
-     ]
-    },
-    {
-     "texts": [
-      "Ràpid o barat",
-      "Laura",
-      "Vull 5.000 accions d'una empresa que gairebé no es negocia.",
-      "Premo «comprar a mercat» i llestos, oi?",
-      "Què li aconselles?",
-      "Sí: a mercat pagues el preu que veus",
-      "A mercat assegures l'execució, no el preu. Aquí pagaria molt més.",
-      "Millor una ordre amb el seu preu màxim",
-      "Exacte: una **limitada**. Compra fins al seu preu i, si no hi ha venedors, espera.",
-      "A mercat, però en diverses vegades",
-      "Ajuda una mica, però continua sense controlar el preu.",
-      "En empreses grans i en horari normal, la diferència sol ser de cèntims."
-     ]
-    },
-    {
-     "title": "Quan surt cara",
-     "body": "• **Valors poc líquids:** la teva ordre es menja diversos graons del llibre.\n• **Obertura o just després d'una notícia:** els preus salten.\n• **Borsa tancada:** s'executarà a l'obertura, al preu que hi hagi llavors.\n\nAl simulador, la compra a mercat entra a l'últim preu i també et demana un **stop**: ho veuràs a la classe 4 d'aquesta unitat.",
-     "key": "A mercat = rapidesa garantida, preu no garantit.",
-     "tip": "Si t'importa el preu exacte, l'ordre a mercat no és la teva."
-    }
-   ]
-  },
   "u6l2": {
    "title": "Forquilla, spread i lliscament",
    "steps": [
@@ -279,60 +236,6 @@
   }
  },
  "questions": {
-  "u6l1-1": {
-   "prompt": "Llibre: millor compra 15,20 €, millor venda 15,23 €. Dones una ordre de compra a mercat. A quin preu entres?",
-   "options": [
-    "15,215 €",
-    "15,23 €",
-    "15,20 €"
-   ],
-   "explanation": "Compres al millor preu de venda (ask), el que demana qui ven."
-  },
-  "u6l1-2": {
-   "prompt": "En aquest mateix llibre (15,20 € / 15,23 €), si vens a mercat, quant cobres per acció?",
-   "options": [
-    "15,20 €",
-    "15,215 €",
-    "15,23 €"
-   ],
-   "explanation": "Vens al millor preu de compra (bid), el que paga qui compra."
-  },
-  "u6l1-5": {
-   "prompt": "Simula la teva primera compra a mercat: tens 10.000 € i no vols arriscar més d'un 1 % (100 €). Col·loca un stop per sota de l'últim mínim i tria l'import.",
-   "options": [],
-   "explanation": "Amb una ordre a mercat entres a l'últim preu. Primer decideixes on sortiries (l'stop) i, amb aquesta distància, quant comprar per no arriscar més de 100 €."
-  },
-  "u6l1-6": {
-   "prompt": "Compres 40 accions a mercat i s'executen a 25,10 €. Quant pagues, sense comptar comissions?",
-   "options": [],
-   "explanation": "40 × 25,10 = 1.004 €.",
-   "unit": "€"
-  },
-  "u6l1-9": {
-   "prompt": "Ordre a mercat raonable o arriscada?",
-   "options": [
-    "Comprar just a l'obertura després d'una notícia bomba",
-    "Un ETF molt negociat a mitja sessió",
-    "Donar l'ordre un dissabte per al dilluns",
-    "10 accions d'una gran empresa de l'IBEX a mitja sessió",
-    "Vendre un valor que gairebé no es negocia"
-   ],
-   "explanation": "Liquiditat alta i horari normal: a mercat funciona bé. Poca liquiditat, obertures i notícies: millor limitar el preu.",
-   "right": [
-    "Raonable",
-    "Arriscada"
-   ]
-  },
-  "u6l1-10": {
-   "prompt": "Ordena el que passa quan dones una ordre de compra a mercat.",
-   "options": [
-    "El bròquer envia l'ordre",
-    "Reps la confirmació amb el preu d'execució",
-    "S'encreua amb el millor preu de venda",
-    "Prems «comprar a mercat»"
-   ],
-   "explanation": "El preu final el saps al final, no quan prems el botó."
-  },
   "u6l2-2": {
    "prompt": "Una acció cotitza a 50,00 € (compra) i 50,25 € (venda). Quin spread és, en % del preu de compra?",
    "options": [],

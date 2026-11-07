@@ -110,50 +110,6 @@
     }
    ]
   },
-  "u5l3": {
-   "title": "Oferta, demanda y precio",
-   "steps": [
-    {
-     "texts": [
-      "El libro de órdenes",
-      "A la izquierda, quien quiere **comprar** (*bid*); a la derecha, quien quiere **vender** (*ask*). Si compras ya, compras al mejor precio de venta.",
-      "Quieres comprar **600 acciones** ya. ¿A qué precio medio te salen?",
-      "A 10,04 €, el mejor precio de venta",
-      "Algo más caras que 10,04 €",
-      "A 10,02 €, el mejor precio de compra",
-      "Solo hay 300 a 10,04 €: las otras 300 salen a 10,05 €. Pagas 6.027 €, una media de **10,045 €**.",
-      "Compra tantas que tu precio medio se aleje más de un 0,1 % del mejor precio.",
-      "La diferencia entre el mejor *bid* y el mejor *ask* es la **horquilla** o *spread*. Si llegan más compradores con prisa, **se comen la oferta escalón a escalón** y el precio sube.",
-      "Tu propia compra ha empujado el precio hacia arriba. Así se mueve.",
-      "Se acabaron las de 10,04 €: las siguientes salen más caras.",
-      "Mueve cuántas acciones compras de golpe"
-     ]
-    },
-    {
-     "texts": [
-      "Resultados por sorpresa",
-      "Leo",
-      "Son las 10:00. La empresa de Leo publica resultados mucho mejores de lo esperado.",
-      "En el libro, el mejor vendedor pedía 10,04 €. ¿Y ahora qué?",
-      "¿Qué crees que pasa con el precio?",
-      "Sube: los compradores se comen la oferta",
-      "Eso. Se agotan las de 10,04 €, se cruza a 10,05 €… y sube.",
-      "Nada: el precio lo fija la empresa",
-      "La empresa no fija el precio: es el último acuerdo entre comprador y vendedor.",
-      "Depende solo de lo que valga la empresa",
-      "A largo plazo importa. Hoy manda quién tiene más prisa por comprar.",
-      "Entonces, ¿el precio es lo que vale la empresa?",
-      "No: es lo que alguien **acaba de pagar**. Lo mueven noticias, resultados y datos."
-     ]
-    },
-    {
-     "title": "Las subastas",
-     "body": "La Bolsa de Madrid abre y cierra con una **subasta**: de 8:30 a 9:00 y de 17:30 a 17:35 se acumulan órdenes y se fija un único precio que cruza el máximo volumen.",
-     "key": "El precio es el último acuerdo entre quien más paga y quien menos pide.",
-     "tip": "El precio no es lo que vale una empresa: es lo que alguien acaba de pagar."
-    }
-   ]
-  },
   "u5l4": {
    "title": "Horarios y sesiones",
    "steps": [
@@ -518,65 +474,6 @@
     "vende"
    ],
    "explanation": "Toda compra tiene una venta al otro lado."
-  },
-  "u5l3-1": {
-   "prompt": "El mejor precio de compra es 20,10 € y el de venta 20,14 €. Si compras ya, ¿a qué precio compras?",
-   "options": [
-    "20,12 €",
-    "20,14 €",
-    "20,10 €"
-   ],
-   "explanation": "Compras al mejor precio de venta (ask): es lo que pide quien vende."
-  },
-  "u5l3-4": {
-   "prompt": "En esa compra de 600 acciones por 6.027 €, ¿cuál es tu precio medio por acción?",
-   "options": [],
-   "explanation": "6.027 ÷ 600 = 10,045 €: un poco más que el mejor precio porque te has comido dos escalones.",
-   "unit": "€"
-  },
-  "u5l3-5": {
-   "prompt": "Ordena lo que pasa cuando llegan muchos compradores con prisa.",
-   "options": [
-    "Se agotan las acciones a 10,04 €",
-    "Las siguientes compras se cruzan a 10,05 €",
-    "El último precio negociado sube",
-    "Llegan muchas órdenes de compra a mercado"
-   ],
-   "explanation": "Así sube el precio: la demanda se come la oferta escalón a escalón."
-  },
-  "u5l3-6": {
-   "prompt": "Ordena una sesión de la Bolsa de Madrid.",
-   "options": [
-    "Subasta de cierre (17:30-17:35)",
-    "Se publica el precio de cierre",
-    "Mercado abierto (9:00-17:30)",
-    "Subasta de apertura (8:30-9:00)"
-   ],
-   "explanation": "Dos subastas enmarcan la sesión continua."
-  },
-  "u5l3-8": {
-   "prompt": "¿Qué puede mover el precio de una acción? Marca todos.",
-   "options": [
-    "Un dato económico",
-    "Que lleguen más vendedores que compradores",
-    "El color de su logotipo",
-    "Los resultados de la empresa"
-   ],
-   "explanation": "Todo lo que cambia lo que la gente está dispuesta a pagar mueve el precio."
-  },
-  "u5l3-9": {
-   "prompt": "Ana quiere vender ya 2.000 acciones de una empresa pequeña. En el libro de compra hay 300 a 5,00 €, 500 a 4,90 € y 1.200 a 4,70 €. ¿Qué hace?",
-   "options": [
-    "Pone una orden limitada a 5,00 € y vende poco a poco",
-    "Vende las 2.000 a mercado",
-    "Vende a mercado y además pone más órdenes a la vez"
-   ],
-   "explanation": "En valores poco líquidos, una orden grande a mercado mueve el precio en tu contra.",
-   "feedback": [
-    "Vende a su precio lo que haya y el resto espera: no regala el valor por las prisas.",
-    "Se come el libro: cobra 9.590 €, una media de unos 4,80 € frente a los 5,00 € del mejor precio.",
-    "Más presión vendedora sobre un libro pequeño: el precio cae todavía más."
-   ]
   },
   "u5l4-1": {
    "prompt": "Empareja cada mercado con su horario (hora peninsular).",

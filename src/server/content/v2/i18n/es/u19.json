@@ -5,54 +5,6 @@
   "section": "Análisis técnico"
  },
  "lessons": {
-  "u19l1": {
-   "title": "Qué muestra un gráfico de precios",
-   "steps": [
-    {
-     "texts": [
-      "¿Qué te cuenta un gráfico?",
-      "En horizontal, el **tiempo**. En vertical, el **precio**. Debajo, el **volumen**. ¿Qué puedes saber mirándolo?",
-      "Lo dice el gráfico",
-      "No lo dice",
-      "A qué precio abrió ayer",
-      "Cada vela guarda su apertura.",
-      "El precio de mañana",
-      "Nadie lo sabe: el gráfico es un registro del pasado.",
-      "El precio más alto de la semana",
-      "Cada vela guarda su máximo y su mínimo.",
-      "Cuánto se negoció hoy",
-      "Es el volumen: las barras de abajo.",
-      "Si la empresa es un buen negocio",
-      "Eso lo dicen sus cuentas, no su gráfico.",
-      "El cierre de hace un año",
-      "El eje horizontal te lleva hacia atrás en el tiempo.",
-      "Si va a seguir subiendo",
-      "Puede seguir o no: son probabilidades, nunca certezas.",
-      "Clasifica las siete preguntas.",
-      "Un gráfico es el **registro exacto** de lo que compradores y vendedores acordaron. Cuenta lo que pasó, **no lo que va a pasar**.",
-      "¿Ya ha pasado o todavía no? Esa es la clave.",
-      "¿Lo puedes leer en el gráfico?"
-     ]
-    },
-    {
-     "texts": [
-      "Leer no es adivinar",
-      "Tres gráficos reales de 30 velas diarias. Léelos y decide: ¿**sube o baja** en las 10 sesiones siguientes?",
-      "Juega las tres rondas.",
-      "Leer el pasado es fácil; adivinar el futuro, no. El análisis técnico trabaja con **probabilidades, nunca con certezas**.",
-      "¡Tres de tres! Con tan pocas rondas, la suerte pesa mucho.",
-      "Acertar el futuro con velas es difícil para todo el mundo.",
-      "Mira las velas y elige: ¿sube o baja?"
-     ]
-    },
-    {
-     "title": "Cuatro precios por periodo",
-     "body": "De cada periodo se guardan cuatro datos (en inglés, **OHLC**):\n\n• **Apertura** (open): el primer precio.\n• **Máximo** (high) y **mínimo** (low).\n• **Cierre** (close): el último, y el más importante.\n\nEn E-Trading, al pasar el dedo por una vela ves sus cuatro precios, la variación y el volumen.",
-     "key": "Un gráfico cuenta lo que pasó, no lo que va a pasar.",
-     "tip": "Leerlo bien ya es una ventaja: mucha gente solo mira si está en verde o en rojo."
-    }
-   ]
-  },
   "u19l2": {
    "title": "Línea, barras y velas",
    "steps": [
@@ -359,67 +311,6 @@
   }
  },
  "questions": {
-  "u19l1-1": {
-   "prompt": "Empareja cada parte del gráfico con lo que muestra.",
-   "options": [
-    "Eje horizontal",
-    "Eje vertical",
-    "Barras de abajo",
-    "Cada vela"
-   ],
-   "explanation": "El tiempo va de izquierda a derecha, el precio en vertical y el volumen debajo. Cada vela resume un periodo: un minuto, un día o una semana.",
-   "right": [
-    "El precio",
-    "Lo que pasó en un periodo",
-    "El volumen negociado",
-    "El tiempo"
-   ]
-  },
-  "u19l1-2": {
-   "prompt": "¿Qué precio de cada periodo se considera el más importante?",
-   "options": [
-    "El máximo",
-    "El cierre",
-    "La apertura"
-   ],
-   "explanation": "El cierre es el precio en el que compradores y vendedores se quedaron al final del periodo. Casi todos los indicadores se calculan con cierres."
-  },
-  "u19l1-3": {
-   "prompt": "Toca el cierre más alto de este gráfico (Microsoft · cierres cada 3 sesiones · junio–agosto de 2026)",
-   "options": [],
-   "explanation": "El máximo llegó antes del final y después el precio retrocedió un poco. El punto más alto no tiene por qué ser el último."
-  },
-  "u19l1-4": {
-   "prompt": "Ahora toca el cierre más bajo (Apple · cierres cada 3 sesiones · febrero–abril de 2025)",
-   "options": [],
-   "explanation": "El mínimo no está al final: tras tocarlo, el precio rebotó. Localizar los extremos es el primer paso para leer un gráfico."
-  },
-  "u19l1-5": {
-   "prompt": "En inglés, los cuatro precios de cada periodo se resumen como ____.",
-   "options": [
-    "RSI",
-    "IPC",
-    "ETF",
-    "OHLC"
-   ],
-   "explanation": "Open, high, low, close: apertura, máximo, mínimo y cierre."
-  },
-  "u19l1-6": {
-   "prompt": "Una acción cerró ayer en 50 € y hoy en 53 €. ¿Cuánto ha variado en el día?",
-   "options": [],
-   "explanation": "(53 − 50) ÷ 50 = 0,06 → +6 %. La variación diaria se calcula entre un cierre y el anterior.",
-   "unit": "%"
-  },
-  "u19l1-10": {
-   "prompt": "Pasas el dedo por una vela en el gráfico de E-Trading. ¿Qué datos ves? Marca todos.",
-   "options": [
-    "El cierre",
-    "El precio de mañana",
-    "El máximo y el mínimo",
-    "La apertura"
-   ],
-   "explanation": "Ves los cuatro precios del periodo, además de la variación y el volumen. El precio de mañana no lo sabe nadie."
-  },
   "u19l2-1": {
    "prompt": "Empareja cada tipo de gráfico con lo que muestra.",
    "options": [
