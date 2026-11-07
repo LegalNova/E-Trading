@@ -60,7 +60,7 @@
      "title": "Location is everything",
      "body": "The same candle means different things depending on where it appears: after a long fall and at a support level it can signal that sellers are exhausted; in the middle of a range, almost nothing.",
      "key": "A big body is conviction; a long wick is a rejection.",
-     "tip": "Don't read a candle on its own: ask yourself where the price has come from."
+     "tip": "Try it: in Market, open Bitcoin in Candles and find the longest wick of the month."
     }
    ]
   },
@@ -117,7 +117,7 @@
      "title": "The four dojis",
      "body": "• **Standard:** a cross with similar wicks.\n• **Long-legged:** very long wicks on both sides.\n• **Dragonfly:** a T, with a long lower wick.\n• **Gravestone:** an upside-down T, with a long upper wick.",
      "key": "Marubozu means strength; spinning top, doubt; doji, a draw.",
-     "tip": "A doji doesn't say «it's going to reverse». It says «nobody knows what to do». Wait for the next candle."
+     "tip": "Try it: in Market, find a doji on Inditex's daily chart."
     }
    ]
   },
@@ -175,7 +175,7 @@
      "title": "What the data says (Bulkowski)",
      "body": "• Hammer: reverses upwards **60 %** of the time (rank 65 of 103).\n• Hanging man: keeps rising **59 %** of the time! (rank 87).\n• Shooting star: reverses downwards **59 %** of the time (rank 55).\n\nHe himself describes them as «not far from random».",
      "key": "The same shape changes its name depending on whether it comes after a rise or a fall.",
-     "tip": "A hammer is only a hammer after a fall. And even then, without context it's barely better than a coin."
+     "tip": "Try it: in Market, look for hammers on Tesla's daily chart and see what came next."
     }
    ]
   },
@@ -213,7 +213,7 @@
      "title": "Harami, piercing pattern and dark cloud cover",
      "body": "• **Engulfing:** the second candle's body swallows the first one's, in the opposite direction.\n• **Harami** («pregnant»): a long candle followed by a small one **inside** its body. The momentum stalls.\n• **Piercing pattern:** after a fall, a green candle that closes **above the midpoint** of the previous red body.\n• **Dark cloud cover:** after a rise, a red candle that closes **below the midpoint** of the green one.",
      "key": "Getting the direction right isn't enough: the size of the move has to make up for the risk.",
-     "tip": "An engulfing pattern often reverses, but sometimes not by much."
+     "tip": "Try it: in Market, find an engulfing pattern on Bitcoin's daily chart."
     }
    ]
   },
@@ -270,7 +270,7 @@
      "title": "The best numbers (Bulkowski)",
      "body": "• Morning star: reverses **78 %** of the time (rank 12 of 103).\n• Evening star: **72 %** (rank **4**).\n• Three white soldiers: **82 %** (rank 32).\n• Three black crows: **78 %** (rank **3**).\n\nBetter than single candles, but much less common.",
      "key": "Three candles tell the story better than one.",
-     "tip": "That's why they're more reliable… and rarer."
+     "tip": "Try it: in Market, look for three long green candles in a row on NVIDIA's daily chart."
     }
    ]
   },
@@ -325,7 +325,7 @@
      "title": "So what are they good for?",
      "body": "A study in Japan (1975–2004), the birthplace of candlesticks, reached the same conclusion as Marshall, Young and Rose. Bulkowski measures without commissions or *spreads*. And if you test a hundred patterns, some will seem to work by pure chance (*data snooping*).\n\nCandlesticks are useful for **reading** the market (rejection, conviction, indecision), for putting your **stop** in a logical place and for not being fooled by people selling patterns «with a 90 % success rate».",
      "key": "Candlesticks are a language, not a crystal ball.",
-     "tip": "The candle is the sentence; the context is the whole book."
+     "tip": "Try it: in Market, find a hammer and run through the four filters before deciding."
     }
    ]
   },
@@ -354,12 +354,6 @@
    "options": [],
    "explanation": "Buyers drove the price a long way up, but the session closed well below that high. (Microsoft · daily candles · April 2026)"
   },
-  "u20l2-5": {
-   "prompt": "A candle opens at 50, drops to 44 and closes at 50.5. How far did it fall from the open, in percentage terms?",
-   "options": [],
-   "explanation": "(50 − 44) ÷ 50 = 0.12 → −12 %. And even so it closed above the open: buyers won the battle.",
-   "unit": "%"
-  },
   "u20l2-7": {
    "prompt": "Read the last few candles as a battle. Up or down over the next 10 sessions?",
    "options": [
@@ -382,6 +376,11 @@
     "The lower wick is a rejection of lower prices: it's not a sell signal, but here it's not a buy signal either.",
     "In the middle of a range, with no trend to reverse, that wick means very little."
    ]
+  },
+  "u20l2-11": {
+   "prompt": "Tap the candle where nobody won: the one with an almost non-existent body.",
+   "options": [],
+   "explanation": "Open and close almost equal, with wicks on both sides: buyers and sellers drew. A tiny body is indecision, not strength. (Amazon · daily candles · April 2026)"
   },
   "u20l3-1": {
    "prompt": "Match each candle with the story it tells.",
@@ -468,12 +467,6 @@
    ],
    "explanation": "If the price breaks below the low of the wick, the idea that lower prices were rejected has failed."
   },
-  "u20l4-5": {
-   "prompt": "A hammer has a high of €52 and a low of €47. You buy at €52 after confirmation and put your stop at €46.50. How much are you risking per share?",
-   "options": [],
-   "explanation": "52 − 46.50 = €5.50 per share. The stop goes a little below the wick so it isn't triggered by a mere wick.",
-   "unit": "€"
-  },
   "u20l4-7": {
    "prompt": "Look at the wicks on the last few candles. Up or down over the next 10 sessions?",
    "options": [
@@ -505,6 +498,11 @@
     "Appearing near the low for the year"
    ],
    "explanation": "It works better in the lower third of the yearly range, and ones with a green body do better."
+  },
+  "u20l4-11": {
+   "prompt": "As under a hammer's wick: you've bought at the last price. Place the stop below the last relevant low.",
+   "options": [],
+   "explanation": "If the price loses that low, the rejection of low prices has failed and the idea no longer holds. That's why the stop goes a little below, not right above, where any wick would trigger it."
   },
   "u20l5-1": {
    "prompt": "After the rise, tap the red candle that engulfs the previous green one.",
@@ -556,6 +554,15 @@
     "midpoint"
    ],
    "explanation": "If it engulfed it completely, it would be a bearish engulfing."
+  },
+  "u20l5-11": {
+   "prompt": "Read the last candles in pairs, as in an engulfing pattern or a harami. Does it go up or down in the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "An engulfing pattern often gets the direction right, but the move can be short; a harami only says the momentum is slowing. Neither comes with the result written on it: that's why you trade with a stop.",
+   "horizon": "the next 10 sessions"
   },
   "u20l6-1": {
    "prompt": "Put the candles of a morning star in order.",

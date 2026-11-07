@@ -5,6 +5,55 @@
   "section": "Invest from today"
  },
  "lessons": {
+  "h1l1": {
+   "title": "Your first investment in 3 minutes",
+   "steps": [
+    {
+     "texts": [
+      "40 years of stock market in 20 seconds",
+      "The **S&P 500** brings together the 500 largest US companies, like Apple and Amazon. You invest **€1,000** of virtual money in January 1985 and live through what really happened.",
+      "Without adding a single euro, how much is that €1,000 worth at the end of 2025?",
+      "About €2,000",
+      "About €8,000",
+      "More than €30,000",
+      "It's worth **€38,109**: about 38 times what you put in, not counting dividends or the exchange rate.",
+      "Get to 2025. If you get scared, you can sell.",
+      "There were two falls of around half (2000-2002 and 2008), and even so whoever didn't sell multiplied their money **38** times. Whoever started in 2005, only **5.8** times: **starting early** matters enormously.",
+      "You've sold. Look at what it would be worth if you'd held on.",
+      "Forty years, several crises and about 38 times your money.",
+      "Already over €11,000. All you had to do was wait.",
+      "Hit start. You can sell whenever you want."
+     ]
+    },
+    {
+     "texts": [
+      "I'll start when I earn more",
+      "Leo",
+      "Leo is 20 and has just seen that same chart.",
+      "Mind-blowing. But right now I can only put aside €50 a month.",
+      "Better to wait until I'm 30 and put in €100 a month.",
+      "Up to age 60 and earning 7 % a year, when does he end up with more?",
+      "If he starts now, with €50 a month",
+      "Exactly: he puts in €24,000 and gets to over €120,000.",
+      "If he waits, he puts in €36,000 and gets to about €117,000.",
+      "If he waits until 30, with €100 a month",
+      "He puts in €36,000 and gets to about €117,000. Starting now, over €120,000.",
+      "More or less the same",
+      "Close, but starting now he puts in €12,000 less and ends up with more.",
+      "It's **compound interest**: what you earn also earns, and time multiplies it.",
+      "The 7 % is an example: the stock market promises nothing in any given year.",
+      "And how do I start without risking my money?",
+      "With virtual money, right here. I'll show you."
+     ]
+    },
+    {
+     "title": "What you've just discovered",
+     "body": "• A **share** is a tiny piece of a company. With the S&P 500 you own a tiny piece of 500 at once.\n• The stock market sometimes falls, and hard, but over those 40 years whoever didn't sell multiplied their money.\n• **Starting early** matters more than starting big.\n\nIn Lumi you practise with virtual money: you can make mistakes without losing anything real.",
+     "key": "Investing means buying tiny pieces of companies and giving them time to grow.",
+     "tip": "Your turn: in Market, search for a company you know and buy your first share."
+    }
+   ]
+  },
   "u8l1": {
    "title": "What a share is",
    "steps": [
@@ -20,9 +69,9 @@
       "No: it's just a number that goes up and down",
       "Behind the price there's a real business, and you own a tiny slice.",
       "Yes, and now she can run the company",
-      "She can vote at the general meeting, but her vote counts for very little.",
+      "She can vote at the shareholders' meeting, but her vote counts for very little.",
       "So how do I make money from it?",
-      "**Dividends + capital gains**: what it pays out and how much the price rises.",
+      "In two ways: **dividends** (it shares out profits) and **capital gains** (the price rises).",
       "In the long run, the price follows profits; in the short run, expectations.",
       "If the company goes bust, shareholders get paid last and almost never get anything back."
      ]
@@ -57,7 +106,7 @@
       "Just one share",
       "Real data: **€10,000** in Tesla at the end of 2018, measured in dollars and without dividends. This is what equities feel like.",
       "Make it to the end, whether you sell or not.",
-      "Tesla multiplied almost 19 times over, but along the way it fell as much as **72 %** from its high. And it's an exception: just **4 %** of US stocks generated all of the market's net gain between 1926 and 2016 (Bessembinder).",
+      "Tesla multiplied almost 19 times over, but it fell as much as **72 %**, and it's an exception: just **4 %** of US stocks generated all of the market's net gain between 1926 and 2016. Try it: in Market, open Tesla and see how much it has gone up and down this year.",
       "You've sold. Watch what happens next…",
       "30 % below what you put in. Can you hold on?",
       "You've more than doubled your money. What if it falls now?",
@@ -72,7 +121,7 @@
     {
      "texts": [
       "The order book",
-      "On the left, people who want to **buy** (*bid*); on the right, people who want to **sell** (*ask*). If you buy right now, you pay the best selling price.",
+      "You want 600 shares right now and the cheapest seller is asking **€10.04**. This is the **order book**: on the left, people who want to buy (*bid*); on the right, people who want to sell (*ask*).",
       "You want to buy **600 shares** right now. What average price do you pay?",
       "€10.04, the best selling price",
       "A bit more than €10.04",
@@ -89,7 +138,7 @@
      "texts": [
       "Surprise results",
       "Leo",
-      "It's 10:00. The company Leo has invested in publishes results far better than expected.",
+      "It's 10:00. The company Leo has invested in announces it has earned far more than expected.",
       "In the book, the best seller was asking €10.04. What now?",
       "What do you think happens to the price?",
       "It rises: buyers eat through the offers",
@@ -103,10 +152,10 @@
      ]
     },
     {
-     "title": "Auctions",
-     "body": "The Madrid Stock Exchange opens and closes with an **auction**: from 8:30 to 9:00 and from 17:30 to 17:35 orders build up and a single price is set that matches the largest volume.",
+     "title": "What moves the price",
+     "body": "The price you see isn't what the company is worth: it's what someone **has just paid**. If more buyers arrive in a hurry, it rises; if more sellers arrive, it falls.\n\nThe Madrid Stock Exchange opens and closes with an **auction**: from 8:30 to 9:00 and from 17:30 to 17:35 orders are gathered and a single price is set, the one that allows the most trades.",
      "key": "The price is the latest deal between whoever pays most and whoever asks least.",
-     "tip": "The price isn't what a company is worth: it's what someone has just paid."
+     "tip": "Try it: in Market, open Inditex and see how much it has gone up or down today."
     }
    ]
   },
@@ -116,7 +165,7 @@
     {
      "texts": [
       "Buy right now",
-      "A **market order** buys instantly, at the best selling price available. This company is small and hardly trades.",
+      "You want shares in a small company that hardly trades and you tap «buy now». That's a **market order**: it buys instantly, at the best selling price there is.",
       "You buy **1,000 shares at market**. What do you think will happen to your price?",
       "You pay €4.00, the best price",
       "You pay quite a bit more on average",
@@ -147,9 +196,9 @@
     },
     {
      "title": "When it gets expensive",
-     "body": "• **Illiquid securities:** your order eats through several steps of the book.\n• **The open, or right after news:** prices jump.\n• **Exchange closed:** it'll execute at the open, at whatever the price is then.\n\nIn the simulator, a market buy goes in at the last price and also asks you for a **stop**: you'll see it in lesson 4 of this unit.",
+     "body": "• **Illiquid securities** (ones almost nobody buys or sells): your order eats through several steps of the book.\n• **The open, or right after news:** prices jump.\n• **Exchange closed:** it'll execute at the open, at whatever the price is then.\n\nIn the simulator, a market buy goes in at the last price. Before buying, also think about your **stop**: the price at which you'd sell to cut your loss if it falls.",
      "key": "Market order = guaranteed speed, no guaranteed price.",
-     "tip": "If the exact price matters to you, a market order isn't the one for you."
+     "tip": "Try it: in Market, buy a big company at market and see what price you get in at."
     }
    ]
   },
@@ -159,11 +208,11 @@
     {
      "texts": [
       "What does a chart tell you?",
-      "Across, **time**. Up the side, **price**. Underneath, **volume**. What can you find out by looking at it?",
+      "A friend shows you a share that keeps going up: «Should I buy now?». On its chart, **time** runs across, **price** up the side and **volume** (how much is traded) underneath: what does it tell you, and what doesn't it?",
       "The chart shows it",
       "It doesn't",
       "What price it opened at yesterday",
-      "Every candle records its open.",
+      "Every candle, the little bar for each day, records its open.",
       "Tomorrow's price",
       "Nobody knows: the chart is a record of the past.",
       "The highest price of the week",
@@ -187,7 +236,7 @@
       "Reading isn't guessing",
       "Three real charts of 30 daily candles. Read them and decide: does it go **up or down** over the next 10 sessions?",
       "Play all three rounds.",
-      "Reading the past is easy; guessing the future isn't. Technical analysis works with **probabilities, never certainties**.",
+      "Reading the past is easy; guessing the future isn't. People who study charts work with **probabilities, never certainties**.",
       "Three out of three! With so few rounds, luck plays a big part.",
       "Calling the future with candles is hard for everyone.",
       "Look at the candles and choose: up or down?"
@@ -195,9 +244,9 @@
     },
     {
      "title": "Four prices per period",
-     "body": "For each period, four figures are recorded (**OHLC**):\n\n• **Open:** the first price.\n• **High** and **low**.\n• **Close:** the last one, and the most important.\n\nIn E-Trading, when you run your finger over a candle you see its four prices, the change and the volume.",
+     "body": "Each **candle** sums up a period (a day, a week…) with four figures (**OHLC**):\n\n• **Open:** the first price.\n• **High** and **low**.\n• **Close:** the last one, and the most important.\n\nIn Lumi, when you run your finger over a candle you see its four prices, the change and the volume. Reading a chart properly is already an advantage: lots of people only check whether it's green or red.",
      "key": "A chart tells you what happened, not what's going to happen.",
-     "tip": "Reading it properly is already an advantage: lots of people only check whether it's green or red."
+     "tip": "Try it: in Market, open a chart and run your finger over the last candle."
     }
    ]
   },
@@ -207,15 +256,15 @@
     {
      "texts": [
       "The mattress, simple and compound",
-      "Three ways to keep **€1,000**:\n\n• **Under the mattress:** it doesn't grow.\n• **Simple interest:** you always earn on what you put in.\n• **Compound interest:** you also earn on what you've already earned.",
+      "You have **€1,000** and 30 years ahead of you. Three ways to keep it:\n\n• **Under the mattress:** it doesn't grow.\n• **Simple interest:** you always earn on what you put in.\n• **Compound interest:** you also earn on what you've already earned.",
       "€1,000 at 7 % a year for 30 years. How much will you have with compound interest?",
       "About €3,100",
       "About €7,600",
       "About €21,000",
       "With simple interest it would be €3,100. With compound, **€7,612**: almost two and a half times as much, without adding a single euro.",
-      "Reach €10,000 without adding any money: play with the return and the years.",
+      "Reach €10,000 without adding any money: play with the return (what your money earns each year) and the years.",
       "Compounding **speeds up**: the last years grow much more than the first ones. That's why time matters as much as the return.",
-      "Returns that high aren't normal: 7 % is already very good over the long term.",
+      "That much isn't normal: 7 % a year is already a lot over the long term.",
       "Look at the end of the green curve: it shoots up!",
       "Move the years: watch how the lines pull apart"
      ]
@@ -233,15 +282,16 @@
       "Ana ends up with about **€494,000** and Bruno with about **€234,000**: less than half, even though Ana only put in €24,000 more.",
       "Delay Bruno until Ana has three times as much as him.",
       "Every year you wait costs far more than it seems: your first euros are the ones with the most time to compound.",
-      "Starting at 45, Bruno can't catch up with Ana even if he puts in the same each month.",
+      "Starting at 45, Bruno can't catch up with Ana even if he puts in the same.",
       "If they start at the same time, they end up the same. Now delay Bruno",
       "Every year of delay widens the gap. How far does it go?"
      ]
     },
     {
      "title": "It works against you too",
-     "body": "Compound interest works the same way with debt: a card that charges interest on interest grows on its own. You'll see it in the debt unit.\n\nAnd remember: these are examples, not promises. The stock market doesn't return 7 % every year.",
-     "key": "Gains generate new gains: the sooner you start, the more time works for you."
+     "body": "Compound interest works the same way with debt: a card that charges interest on interest makes what you owe grow even if you buy nothing else.\n\nAnd remember: these are examples, not promises. The stock market doesn't return 7 % every year.",
+     "key": "Gains generate new gains: the sooner you start, the more time works for you.",
+     "tip": "Try it: in Market, search for SPY (the S&P 500) and look at its chart in monthly candles."
     }
    ]
   },
@@ -251,6 +301,79 @@
   }
  },
  "questions": {
+  "h1l1-1": {
+   "prompt": "What are you buying when you buy a share?",
+   "options": [
+    "One of the company's products at a discount",
+    "A small piece of the company",
+    "A loan to the company"
+   ],
+   "explanation": "A share is a part of the company: you gain if the company is worth more, not because it owes you anything."
+  },
+  "h1l1-2": {
+   "prompt": "You've put €1,000 of virtual money into the S&P 500 and within a few months it drops to €700. You won't need that money for years. What do you do?",
+   "options": [
+    "Take out a loan to buy more while it's cheap",
+    "Hold on: I don't need it and I have time",
+    "Sell everything so I don't lose more"
+   ],
+   "explanation": "Falls are part of investing. If you don't need the money, selling in the middle of a fall is what turns a temporary drop into a real loss.",
+   "feedback": [
+    "If it keeps falling, you lose with money that isn't yours and you also owe the interest.",
+    "You give it time to recover. In 2008 it fell by more than half, and those who held on ended up multiplying their money.",
+    "By selling you turn a drop into a real loss, and you miss the recovery."
+   ]
+  },
+  "h1l1-3": {
+   "prompt": "What do you reply?",
+   "options": [
+    "No: you buy tiny pieces of companies that make money and grow",
+    "Yes, it's pure luck",
+    "Only if you pick the right company"
+   ],
+   "explanation": "In a casino the odds are set up for you to lose. On the stock market you buy parts of businesses that make profits, and with time and many companies at once the result depends much less on luck.",
+   "feedback": [
+    "Exactly. Behind every share there's a real business, not a roulette wheel.",
+    "In a casino the house always wins. A company that makes money tends to be worth more over the years.",
+    "Picking well helps, but with 500 companies at once you no longer depend on getting one right."
+   ],
+   "lines": [
+    "Investing in the stock market is like going to a casino, right?",
+    "Either you win it all or you lose it all."
+   ]
+  },
+  "h1l1-4": {
+   "prompt": "Does it help your money in the long run or hold it back?",
+   "options": [
+    "Selling everything as soon as the market falls",
+    "Spreading it across many companies",
+    "Waiting until you have lots of money to start",
+    "Letting the years go by without touching it",
+    "Starting early, even with a little"
+   ],
+   "explanation": "Time and spreading out work in your favour. Waiting or selling out of fear means time works less for you.",
+   "right": [
+    "Helps",
+    "Holds it back"
+   ]
+  },
+  "h1l1-5": {
+   "prompt": "Between 1985 and 2025, the S&P 500 never fell more than 20 %.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It fell by almost half in 2000-2002 and by more than half in 2008-2009. Even so, whoever didn't sell multiplied their money 38 times: big falls pass, and holding on is the hard part."
+  },
+  "h1l1-6": {
+   "prompt": "€1,000 in the S&P 500 in 1985 turned into about €38,000 in 2025. What did almost all the work?",
+   "options": [
+    "Time: 40 years without selling",
+    "A single company that shot up",
+    "Buying and selling at just the right moment"
+   ],
+   "explanation": "All it took was not touching it for 40 years. There was no need to time when to buy or sell, and the S&P 500 is 500 companies, not just one."
+  },
   "u8l1-1": {
    "prompt": "You buy an Inditex share. What are you?",
    "options": [
@@ -286,12 +409,6 @@
    ],
    "explanation": "You make money from what the company pays out (dividends) and from the rise in price (capital gains). Coupons belong to bonds."
   },
-  "u8l1-5": {
-   "prompt": "You bought a share at €40. Today it's worth €46 and this year you've received €1 in dividends. What's your total return?",
-   "options": [],
-   "explanation": "(46 − 40 + 1) ÷ 40 = 7 ÷ 40 = 17.5 %. Capital gain (€6) + dividend (€1).",
-   "unit": "%"
-  },
   "u8l1-7": {
    "prompt": "If a company goes bust, shareholders get paid before banks and bondholders.",
    "options": [
@@ -309,6 +426,20 @@
    ],
    "explanation": "Just 4 % accounted for the entire net gain, and more than half returned less than Treasury bills. That's why a single share is risky and it pays to diversify."
   },
+  "u8l1-11": {
+   "prompt": "Your cousin wants to put all her savings into a single trendy share because «it just keeps going up». What do you advise?",
+   "options": [
+    "All into that share: if it's rising so much, it'll keep rising",
+    "Spread it across many companies, for example with a fund that buys all 500 in the S&P 500",
+    "Buy it, but sell as soon as it dips a little"
+   ],
+   "explanation": "A single share can multiply or sink, and very few generate almost all the gains. Spreading across many stops everything depending on just one; the temptation of «if it's rising, it'll keep rising» forgets that it can also fall a long way.",
+   "feedback": [
+    "Having gone up says nothing about what it'll do. Tesla fell as much as 72 %: with everything in it, all her savings fall.",
+    "If one company falls, the others cushion the blow: she doesn't depend on picking the exception.",
+    "She'll sell at the first normal dip, often at a loss, and still has everything in a single company."
+   ]
+  },
   "u5l3-1": {
    "prompt": "The best buying price is €20.10 and the best selling price €20.14. If you buy right now, what price do you pay?",
    "options": [
@@ -317,12 +448,6 @@
     "€20.10"
    ],
    "explanation": "You buy at the best selling price (ask): it's what the seller is asking."
-  },
-  "u5l3-4": {
-   "prompt": "In that purchase of 600 shares for €6,027, what's your average price per share?",
-   "options": [],
-   "explanation": "6,027 ÷ 600 = €10.045: a bit more than the best price because you ate through two steps.",
-   "unit": "€"
   },
   "u5l3-5": {
    "prompt": "Put in order what happens when lots of buyers arrive in a hurry.",
@@ -368,6 +493,20 @@
     "More selling pressure on a thin book: the price falls even further."
    ]
   },
+  "u5l3-11": {
+   "prompt": "Does it push the price up or down?",
+   "options": [
+    "Lots of sellers arrive in a hurry",
+    "News comes out that its sales are falling",
+    "Lots of buyers arrive in a hurry",
+    "The company earns far more than expected"
+   ],
+   "explanation": "The price rises when there's more appetite to buy than to sell, and falls the other way round. Good news attracts buyers; bad news, sellers.",
+   "right": [
+    "Up",
+    "Down"
+   ]
+  },
   "u6l1-1": {
    "prompt": "Book: best bid €15.20, best ask €15.23. You place a market buy order. What price do you get in at?",
    "options": [
@@ -390,12 +529,6 @@
    "prompt": "Simulate your first market buy: you have €10,000 and don't want to risk more than 1 % (€100). Set a stop below the last low and choose the amount.",
    "options": [],
    "explanation": "With a market order you get in at the last price. First you decide where you'd get out (the stop) and, with that distance, how much to buy so you don't risk more than €100."
-  },
-  "u6l1-6": {
-   "prompt": "You buy 40 shares at market and they execute at €25.10. How much do you pay, not counting fees?",
-   "options": [],
-   "explanation": "40 × 25.10 = €1,004.",
-   "unit": "€"
   },
   "u6l1-9": {
    "prompt": "Market order: sensible or risky?",
@@ -467,12 +600,6 @@
    ],
    "explanation": "Open, high, low, close."
   },
-  "u19l1-6": {
-   "prompt": "A share closed at €50 yesterday and at €53 today. How much has it changed on the day?",
-   "options": [],
-   "explanation": "(53 − 50) ÷ 50 = 0.06 → +6 %. The daily change is calculated between one close and the previous one.",
-   "unit": "%"
-  },
   "u19l1-10": {
    "prompt": "You run your finger over a candle on the E-Trading chart. What data do you see? Tick all that apply.",
    "options": [
@@ -483,11 +610,23 @@
    ],
    "explanation": "You see the period's four prices, plus the change and the volume. Nobody knows tomorrow's price."
   },
-  "u1l5-1": {
-   "prompt": "€1,000 at 7 % compound interest for 30 years: what does it turn into? (round it)",
-   "options": [],
-   "explanation": "1,000 × 1.07³⁰ ≈ €7,612. With simple interest it would be €3,100.",
-   "unit": "€"
+  "u19l1-11": {
+   "prompt": "What do you reply?",
+   "options": [
+    "Yes: if it's risen for three months, it'll keep going",
+    "The chart says what happened, not what will happen: don't bet everything",
+    "No: if it's risen that much, it's bound to fall"
+   ],
+   "explanation": "A chart is the record of what has already happened. It shows how the price has moved, but it doesn't guarantee what it will do: neither that it keeps rising nor that it falls.",
+   "feedback": [
+    "Nobody knows. A chart records the past: the rise could end tomorrow.",
+    "Exactly. It could carry on or turn around: these are probabilities, not certainties.",
+    "You don't know that either: the chart doesn't say whether it'll go up or down."
+   ],
+   "lines": [
+    "This share has been rising non-stop for three months.",
+    "So it's bound to keep going. Shall I put all my savings in?"
+   ]
   },
   "u1l5-3": {
    "prompt": "Match each case with the type of interest.",
@@ -502,12 +641,6 @@
     "Simple interest",
     "Compound interest working against you"
    ]
-  },
-  "u1l5-4": {
-   "prompt": "€10,000 at 5 % compound for 10 years: how much does it come to? (round to euros)",
-   "options": [],
-   "explanation": "10,000 × 1.05¹⁰ ≈ €16,289. With simple interest it would be €15,000.",
-   "unit": "€"
   },
   "u1l5-5": {
    "prompt": "Compound interest only works in your favour.",
@@ -539,6 +672,34 @@
     "€50 a month at 7 % for 40 years comes to about €130,000, with €24,000 put in.",
     "Good: with time on your side, starting early matters more than starting big.",
     "Waiting is costly: the early years are the ones with the most time to compound."
+   ]
+  },
+  "u1l5-10": {
+   "prompt": "Marta is 18 and has €1,000 from a gift. She plans to invest it «when I finish my degree, in 5 years». What do you advise?",
+   "options": [
+    "Start now, even if only with part of it",
+    "Wait: at 18 it's too early to invest",
+    "Keep it at home until then"
+   ],
+   "explanation": "Time matters as much as the return: starting 5 years earlier lets compound interest work for 5 more years. Waiting seems prudent, but it has a cost you can't see.",
+   "feedback": [
+    "Every year she waits is one less year of compound interest: the first euros are the ones with the most time to grow.",
+    "The opposite: at 18 she has time on her side, which is what matters most.",
+    "Under the mattress it doesn't grow, and with prices rising it buys less each year."
+   ]
+  },
+  "u1l5-11": {
+   "prompt": "Simple or compound interest?",
+   "options": [
+    "The curve gets steeper the more time passes",
+    "You earn the same in year 1 as in year 30",
+    "What you earn is added on and also generates gains",
+    "Each year you earn on what you put in at the start"
+   ],
+   "explanation": "With simple interest, each year's gain is always the same. With compound interest, you earn on an ever-bigger base, which is why the later years grow much more than the early ones.",
+   "right": [
+    "Simple",
+    "Compound"
    ]
   }
  }

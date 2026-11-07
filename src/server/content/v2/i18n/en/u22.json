@@ -10,6 +10,24 @@
    "steps": [
     {
      "texts": [
+      "Leo’s whipsaws",
+      "Leo",
+      "Leo has discovered **moving averages**: the average of the latest closes, drawn on the chart.",
+      "My rule: I buy when the price crosses the 20 average upwards and sell when it crosses it downwards.",
+      "For weeks, the share moves sideways.",
+      "I’ve bought and sold loads of times. I pay commission and *spread* on every one… and I’m losing.",
+      "What’s happened to him?",
+      "Bad luck: the rule is fine",
+      "It’s not luck: in a sideways market, the price crosses the average again and again.",
+      "In a sideways market, the average gives false signals",
+      "That’s it! The average is flat and every cross is a **whipsaw**, with its own cost.",
+      "He should use an even shorter average",
+      "A shorter average crosses even more often: more whipsaws.",
+      "Averages sum up the past: they confirm the trend **late**."
+     ]
+    },
+    {
+     "texts": [
       "Simple or exponential",
       "A **moving average** sums up the latest closes. The simple one (SMA) and the exponential one (EMA) do it differently.",
       "Simple average (SMA)",
@@ -27,32 +45,15 @@
       "Sort all five ideas.",
       "The **SMA** weights every close equally; the **EMA** weights recent ones more and reacts sooner. Both **lag behind the price**.",
       "Hint: «exponential» means recent closes count more.",
-      "Nice! Now see what happens when there’s no trend.",
+      "Well done! Both of them lag behind the price.",
       "Simple or exponential? Sort each idea"
-     ]
-    },
-    {
-     "texts": [
-      "Leo’s whipsaws",
-      "Leo",
-      "My rule: I buy when the price crosses the 20 average upwards and sell when it crosses it downwards.",
-      "For weeks, the share moves sideways.",
-      "I’ve bought and sold loads of times. I pay commission and *spread* on every one… and I’m losing.",
-      "What’s happened to him?",
-      "Bad luck: the rule is fine",
-      "It’s not luck: in a sideways market, the price crosses the average again and again.",
-      "In a sideways market, the average gives false signals",
-      "That’s it! The average is flat and every cross is a **whipsaw**, with its own cost.",
-      "He should use an even shorter average",
-      "A shorter average crosses even more often: more whipsaws.",
-      "Averages sum up the past: they confirm the trend **late**."
      ]
     },
     {
      "title": "How they’re used",
      "body": "• **Filter:** price above the 200 SMA = long-term uptrend; below it, downtrend.\n• **Dynamic support:** in trends, the price often bounces off the 20 or 50 SMA.\n• **Slope:** a rising average = uptrend; a flat one = sideways.\n\nAnd they always arrive late: in sideways markets they give lots of false signals, each with its own commission and *spread*.",
      "key": "A moving average smooths the price and shows the trend, always with a delay.",
-     "tip": "Averages don’t predict: they confirm, late, what’s already happening."
+     "tip": "Try it: in Market, open a chart and turn on the SMA 200."
     }
    ]
   },
@@ -97,7 +98,7 @@
      "title": "The evidence",
      "body": "Brock, Lakonishok and LeBaron (1992) found that simple moving-average rules seemed to work on the Dow Jones from 1897 to 1986. Correcting for data-snooping bias, Sullivan, Timmermann and White (1999) weakened those results considerably, and their predictive power on indices fell or disappeared after 1986.\n\nIts most sensible use: the 200 SMA as a **risk filter** in big downtrends, with whipsaws along the way.",
      "key": "Crosses confirm late: they’re more useful as a risk filter than for winning trade by trade.",
-     "tip": "A cross is a late snapshot of what has already happened."
+     "tip": "Try it: open the S&P 500 in Market and turn on the 50 and 200 averages."
     }
    ]
   },
@@ -150,13 +151,29 @@
      "title": "What the RSI is",
      "body": "The **RSI** (Wilder, 1978) compares the strength of the gains with that of the losses over the last **14** periods. It runs from **0 to 100**.\n\n• Above **70**: «overbought» (it has risen a lot, without a break).\n• Below **30**: «oversold».\n• **Bearish divergence:** the price makes a higher high and the RSI a lower one. It can last a long time before the price turns, so it’s never enough on its own.",
      "key": "A high RSI doesn’t mean «it’s going to fall»: it means «it has risen a lot».",
-     "tip": "Overbought and rising can go hand in hand for a long time."
+     "tip": "Try it: in Market, turn on the RSI for a share that has risen a lot."
     }
    ]
   },
   "u22l4": {
    "title": "The MACD",
    "steps": [
+    {
+     "texts": [
+      "The cross that came too late",
+      "Nico",
+      "The share has been rising strongly for weeks. Nico looks at the **MACD**, a momentum indicator built from averages.",
+      "The MACD has just crossed upwards! I’m buying now.",
+      "What risk is Nico running?",
+      "None: the cross says «buy»",
+      "The cross says «momentum is improving», not «buy».",
+      "The signal arrives just as the move is running out",
+      "That’s it! It’s made from averages and inherits their **lag**.",
+      "The MACD is miscalculated",
+      "The calculation is fine: the problem is that it sums up the past.",
+      "And in sideways markets, like the averages, it gives lots of false signals."
+     ]
+    },
     {
      "texts": [
       "What is the MACD saying?",
@@ -181,26 +198,10 @@
      ]
     },
     {
-     "texts": [
-      "The cross that came too late",
-      "Nico",
-      "The share has been rising strongly for weeks.",
-      "The MACD has just crossed upwards! I’m buying now.",
-      "What risk is Nico running?",
-      "None: the cross says «buy»",
-      "The cross says «momentum is improving», not «buy».",
-      "The signal arrives just as the move is running out",
-      "That’s it! It’s made from averages and inherits their **lag**.",
-      "The MACD is miscalculated",
-      "The calculation is fine: the problem is that it sums up the past.",
-      "And in sideways markets, like the averages, it gives lots of false signals."
-     ]
-    },
-    {
      "title": "How it’s built",
-     "body": "Created by Gerald Appel, the MACD (12, 26, 9) has three parts:\n\n• **MACD line:** 12 EMA − 26 EMA.\n• **Signal line:** 9 EMA of the MACD line.\n• **Histogram:** the difference between the two.\n\nIt also has **divergences**, like the RSI.",
+     "body": "Created by Gerald Appel, the MACD (12, 26, 9) has three parts:\n\n• **MACD line:** 12 EMA − 26 EMA.\n• **Signal line:** 9 EMA of the MACD line.\n• **Histogram:** the difference between the two.\n\nIt also has **divergences**, like the RSI. A MACD that crosses upwards says «momentum is improving», not «buy».",
      "key": "The MACD measures the trend’s momentum.",
-     "tip": "A MACD crossing upwards says «momentum is improving», not «buy»."
+     "tip": "Try it: turn on the MACD on a chart in Market and find its latest crossover."
     }
    ]
   },
@@ -243,13 +244,32 @@
     {
      "title": "Bollinger and the ATR",
      "body": "**Bollinger Bands (20, 2):** a 20-period average in the middle and two bands 2 standard deviations away.\n• **When they narrow:** low volatility; it often comes before a strong move (*squeeze*), without saying which way.\n• In strong trends, the price can **walk** along the upper band: touching it isn’t a reason to sell.\n\nThe **ATR** (Wilder) measures how much the price moves on average, usually over 14 periods. Its **true range** also counts gaps. It doesn’t tell you the direction.",
-     "key": "Volatility sets the stop distance; your maximum risk sets the size."
+     "key": "Volatility sets the stop distance; your maximum risk sets the size.",
+     "tip": "Try it: on your next simulator buy, place the stop outside the daily noise."
     }
    ]
   },
   "u22l6": {
    "title": "Fibonacci without the magic",
    "steps": [
+    {
+     "texts": [
+      "«Fibonacci never fails»",
+      "Laura",
+      "Laura has drawn the **Fibonacci retracements**: lines that mark how much of a rise the price gives back.",
+      "Look: it rose from €100 to €200 and bounced right at €138.20, the 61.8 % level.",
+      "Fibonacci never fails!",
+      "What do you tell her?",
+      "She’s right: there’s the proof",
+      "One case seen in hindsight proves nothing.",
+      "With five levels, the price almost always touches one",
+      "That’s it! You’d have to test it on lots of cases, not one hand-picked one.",
+      "She should use 90 % instead",
+      "Changing the number fixes nothing: it’s looking back for whatever fits.",
+      "Here, 38.2 % falls at €161.80 and 50 % at €150.",
+      "With five lines so close together, the price almost always touches one."
+     ]
+    },
     {
      "texts": [
       "The tool’s levels",
@@ -277,27 +297,10 @@
      ]
     },
     {
-     "texts": [
-      "«Fibonacci never fails»",
-      "Laura",
-      "Look: it rose from €100 to €200 and bounced right at €138.20, the 61.8 % level.",
-      "Fibonacci never fails!",
-      "What do you tell her?",
-      "She’s right: there’s the proof",
-      "One case seen in hindsight proves nothing.",
-      "With five levels, the price almost always touches one",
-      "That’s it! You’d have to test it on lots of cases, not one hand-picked one.",
-      "She should use 90 % instead",
-      "Changing the number fixes nothing: it’s looking back for whatever fits.",
-      "Here, 38.2 % falls at €161.80 and 50 % at €150.",
-      "With five lines so close together, the price almost always touches one."
-     ]
-    },
-    {
      "title": "Scepticism",
      "body": "There’s no solid proof that these levels work better than other percentages. It may work partly because lots of people place orders there.\n\nA reasonable use: in an uptrend, many people look for buying zones between 38.2 and 61.8 %, especially if they line up with support or an average.",
      "key": "Fibonacci organises retracement zones; it doesn’t predict.",
-     "tip": "Draw five lines and the price will always touch one. It’s not magic, it’s statistics."
+     "tip": "Try it: in Market, find a strong rise and see where it stopped when it pulled back."
     }
    ]
   },
@@ -307,7 +310,7 @@
     {
      "texts": [
       "Build the OBV",
-      "The **OBV** adds the volume of days that **close** up and subtracts the volume of days that close down. One week of a share:",
+      "This share has risen over the week, but were there buyers behind it? The **OBV** checks: it adds the volume of days that **close** higher and subtracts the volume of days that close lower.",
       "Adds its volume",
       "Subtracts its volume",
       "Monday: closes above Friday, with 1,000 shares",
@@ -347,7 +350,7 @@
      "title": "The same limits",
      "body": "Both depend on reliable volume data: in forex and crypto, the data are partial. And, like every indicator, they describe what has already happened.\n\nIf the price rises and OBV does too, volume is backing the move; if the price rises and OBV falls, there’s a **divergence**: a clue, not a sufficient signal.",
      "key": "OBV checks whether volume is backing the move; VWAP shows the average price traded.",
-     "tip": "Volume is the footprint of the people behind the price; these indicators put it in order."
+     "tip": "Try it: turn on volume on a chart in Market and see whether it backs the move."
     }
    ]
   },
@@ -357,24 +360,6 @@
   }
  },
  "questions": {
-  "u22l1-1": {
-   "prompt": "Last 5 closes: 10, 12, 11, 13 and €14. What’s the 5-session simple moving average?",
-   "options": [],
-   "explanation": "(10 + 12 + 11 + 13 + 14) ÷ 5 = 60 ÷ 5 = €12.",
-   "unit": "€"
-  },
-  "u22l1-2": {
-   "prompt": "Closes: 10, 12, 11, 13 and €14. Tomorrow it closes at €15 and the €10 drops out of the window. What’s the new 5-session simple moving average?",
-   "options": [],
-   "explanation": "(12 + 11 + 13 + 14 + 15) ÷ 5 = 65 ÷ 5 = €13. The average «moves» because the new figure comes in and the oldest one drops out.",
-   "unit": "€"
-  },
-  "u22l1-3": {
-   "prompt": "A 9-session EMA uses a weight of 2 ÷ (9 + 1) = 0.2. If yesterday’s EMA was €100 and today’s close is €110, what is it today?",
-   "options": [],
-   "explanation": "100 + 0.2 × (110 − 100) = €102. It covers a fifth of the distance in a single day: that’s why it reacts sooner than a long simple average.",
-   "unit": "€"
-  },
   "u22l1-4": {
    "prompt": "Match each use of averages with its rule.",
    "options": [
@@ -430,6 +415,20 @@
    "right": [
     "Long-term uptrend",
     "Long-term downtrend"
+   ]
+  },
+  "u22l1-11": {
+   "prompt": "Your share trades well above its SMA 200, which is rising. It pulls back to the SMA 50 and bounces. How do you read it?",
+   "options": [
+    "Possible dynamic support within an uptrend: a clue, with a stop",
+    "Sell signal: the price has touched the average",
+    "Safe buy: it has touched the average"
+   ],
+   "explanation": "With the price above a rising SMA 200, the 50 average can act as dynamic support. It’s a clue for finding an entry with a stop, not a guarantee.",
+   "feedback": [
+    "That’s it: in trends, the price often bounces off the SMA 20 or 50, but with no certainty.",
+    "Touching the average in an uptrend is usually read the other way round: as possible support.",
+    "No average guarantees a bounce: the price can cut through it and keep falling."
    ]
   },
   "u22l2-3": {
@@ -574,18 +573,6 @@
    ],
    "explanation": "It’s the third number in MACD (12, 26, 9)."
   },
-  "u22l4-3": {
-   "prompt": "The 12 EMA is at €105 and the 26 EMA at €101. What’s the value of the MACD line?",
-   "options": [],
-   "explanation": "105 − 101 = 4. It’s positive: the short average is above the long one.",
-   "unit": "€"
-  },
-  "u22l4-4": {
-   "prompt": "The MACD line is at 4 and the signal line at 3.2. What’s the value of the histogram?",
-   "options": [],
-   "explanation": "4 − 3.2 = 0.8. If it shrinks over the next few days, momentum is slowing.",
-   "unit": "points"
-  },
   "u22l4-6": {
    "prompt": "In stretches like this, the short average usually runs above the long one. What trend is it? (Amazon · closes every 3 sessions · March–May 2026)",
    "options": [
@@ -604,23 +591,33 @@
    "explanation": "The MACD sums up what the averages have already done: it confirms momentum with a delay; it doesn’t anticipate the next sessions.",
    "horizon": "the next 10 sessions"
   },
-  "u22l5-1": {
-   "prompt": "20-session average: €50. Standard deviation: €2. Where is the upper Bollinger Band (20, 2)?",
-   "options": [],
-   "explanation": "50 + 2 × 2 = €54. The lower one would be at €46.",
-   "unit": "€"
+  "u22l4-11": {
+   "prompt": "A share has moved sideways for a month. Its MACD has crossed the signal line five times, up and down. A sixth upward crossover appears. What do you do?",
+   "options": [
+    "I buy double to make up for the earlier whipsaws",
+    "I treat it as noise: with no trend, the MACD gives lots of false signals",
+    "I buy: this time it’s the real one"
+   ],
+   "explanation": "The MACD works in trends. In a sideways market, its crossovers are mostly noise, and every trade has its cost.",
+   "feedback": [
+    "Increasing the size to recover losses is the fastest way to make them bigger.",
+    "That’s it: the MACD is built from averages and, like them, fails in sideways markets.",
+    "That’s what you thought the five previous times: in a sideways market, crossovers are usually whipsaws."
+   ]
   },
-  "u22l5-2": {
-   "prompt": "Yesterday it closed at €98. Today, a high of €105 and a low of €101. What’s today’s true range?",
-   "options": [],
-   "explanation": "High − low = 4; |105 − 98| = 7; |101 − 98| = 3. The largest is €7: the opening gap counts.",
-   "unit": "€"
-  },
-  "u22l5-3": {
-   "prompt": "A share’s ATR is €2. You buy at €50 and set the stop 2 ATR from the entry. At what price does the stop go?",
-   "options": [],
-   "explanation": "50 − 2 × 2 = €46.",
-   "unit": "€"
+  "u22l4-12": {
+   "prompt": "What does each MACD reading say?",
+   "options": [
+    "The histogram shrinks day after day",
+    "The price rises and the MACD falls",
+    "The histogram grows day after day",
+    "The MACD crosses above its signal line"
+   ],
+   "explanation": "Upward crossover and a growing histogram: momentum is improving. A shrinking histogram or a divergence: it’s slowing. No reading tells you what the price will do tomorrow.",
+   "right": [
+    "Momentum is improving",
+    "Momentum is slowing"
+   ]
   },
   "u22l5-5": {
    "prompt": "Place the stop below the recent low, leaving room for the asset’s normal volatility.",
@@ -641,22 +638,56 @@
    ],
    "explanation": "The squeeze warns that a move may be coming, not which way."
   },
-  "u22l6-1": {
-   "prompt": "A share rises from €100 to €200. At what price is the 61.8 % retracement?",
-   "options": [],
-   "explanation": "200 − 0.618 × 100 = €138.20.",
-   "unit": "€"
+  "u22l5-11": {
+   "prompt": "A share’s ATR is €2: that’s how much it moves on a normal day. Is this stop inside the noise or does it have room?",
+   "options": [
+    "Stop €1 from the entry",
+    "Stop €5 from the entry",
+    "Stop €4 from the entry",
+    "Stop €0.50 from the entry"
+   ],
+   "explanation": "A stop closer than a normal day’s move gets hit by pure noise. At 2–3 times the ATR, it’s only hit if the idea really fails.",
+   "right": [
+    "Inside the noise",
+    "With room"
+   ]
+  },
+  "u22l5-12": {
+   "prompt": "A share is rising strongly and has touched the upper Bollinger Band for five days. A friend tells you: «Touching the band is a sell signal». What do you reply?",
+   "options": [
+    "That she should buy more, because the band guarantees it will keep rising",
+    "That in a strong rise the price can walk along the band: touching it isn’t selling",
+    "That she’s right: sell now"
+   ],
+   "explanation": "Bollinger Bands measure volatility. Touching the upper one in a strong rise is normal, not a sell order.",
+   "feedback": [
+    "The bands guarantee nothing: they describe how much the price has moved.",
+    "That’s it: the bands measure volatility, they don’t mark tops.",
+    "In strong trends, the price can walk along the upper band for days: selling because it touches it is going against the trend."
+   ]
+  },
+  "u22l5-13": {
+   "prompt": "What do you tell Lumi?",
+   "options": [
+    "Move it further away using its ATR and buy less, to risk the same",
+    "Yes, remove it: stops only cause trouble",
+    "Put it even closer, at 0.2 %"
+   ],
+   "explanation": "Volatility (the ATR) sets the stop distance; the amount adjusts so the risk in euros stays the same.",
+   "feedback": [
+    "Of course: stop outside the noise and a smaller amount. My risk in euros doesn’t change.",
+    "Without a stop, one bad trade could cost me more than three small stops.",
+    "Closer, it would be hit even more: bitcoin moves much more than that in a day."
+   ],
+   "lines": [
+    "I put the stop at 0.5 % on bitcoin.",
+    "It’s been hit three times this week. Should I remove it?"
+   ]
   },
   "u22l6-2": {
    "prompt": "A share rises from €40 to €60. Where is the 50 % retracement?",
    "options": [],
    "explanation": "60 − 0.5 × 20 = €50.",
-   "unit": "€"
-  },
-  "u22l6-3": {
-   "prompt": "A share rises from €10 to €30. Where is the 38.2 % retracement?",
-   "options": [],
-   "explanation": "30 − 0.382 × 20 = 30 − 7.64 = €22.36.",
    "unit": "€"
   },
   "u22l6-5": {
@@ -677,11 +708,33 @@
    "options": [],
    "explanation": "The high came before the end and the price was already pulling back. That pullback would be measured as a percentage of the whole rise."
   },
-  "u22l7-2": {
-   "prompt": "You buy 100 shares at €10 and another 300 at €12. What volume-weighted average price did you pay?",
-   "options": [],
-   "explanation": "(100 × 10 + 300 × 12) ÷ 400 = 4,600 ÷ 400 = €11.50. It’s the same idea as VWAP.",
-   "unit": "€"
+  "u22l6-11": {
+   "prompt": "A share in an uptrend rises strongly from €40 to €60 and starts to pull back. Near €50, its 50 % retracement, there’s also an old support. How do you use it?",
+   "options": [
+    "I buy everything at €50: Fibonacci guarantees it",
+    "I ignore it: Fibonacci is pure magic",
+    "I mark it as a zone of interest and, if I enter, I put the stop below it"
+   ],
+   "explanation": "Fibonacci organises retracement zones. It carries more weight when it lines up with other pieces, like a support, and it’s always used with a stop.",
+   "feedback": [
+    "No level guarantees anything: the price can cut through it without stopping.",
+    "It doesn’t predict, but it helps organise zones, especially if it lines up with a support.",
+    "That’s it: a retracement that lines up with a support is a reasonable zone, never a certainty."
+   ]
+  },
+  "u22l6-12": {
+   "prompt": "Sensible use of Fibonacci or magical thinking?",
+   "options": [
+    "Buying because the price «has to» bounce at 61.8 %",
+    "Trying levels until one fits the past",
+    "Giving more weight to a level that lines up with a support",
+    "Looking for zones between 38.2 and 61.8 % in an uptrend"
+   ],
+   "explanation": "Fibonacci helps organise zones and combine them with other pieces. Believing a level «has to» work, or looking back for the one that fits, is fooling yourself.",
+   "right": [
+    "Sensible use",
+    "Magical thinking"
+   ]
   },
   "u22l7-3": {
    "prompt": "In one session, 2,000 shares trade at €20 and another 2,000 at €22. What’s the VWAP?",
@@ -736,6 +789,20 @@
    ],
    "explanation": "OBV and VWAP put in order what has already happened with volume. They help you judge whether a move has people behind it, not guess the next sessions.",
    "horizon": "the next 10 sessions"
+  },
+  "u22l7-11": {
+   "prompt": "Your share is making new highs, but its OBV has been falling for weeks. What do you do with your position?",
+   "options": [
+    "I take it as a clue: I review my stop and don’t add to the position",
+    "I buy more: new highs are a sign of strength",
+    "I sell everything now: the divergence says so"
+   ],
+   "explanation": "If the price rises and the OBV falls, the rise has fewer people behind it. It’s a clue to be cautious, not a sufficient signal to sell.",
+   "feedback": [
+    "That’s it: if volume isn’t backing the move, it pays to be cautious, without treating it as an order.",
+    "Highs with volume against them are exactly when more caution pays.",
+    "A divergence can last a long time before the price turns, or never turn at all."
+   ]
   }
  }
 }

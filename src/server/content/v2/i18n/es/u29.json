@@ -48,7 +48,8 @@
     {
      "title": "Cómo se mide",
      "body": "La **correlación** dice si dos activos se mueven a la vez. Va de **+1** (siempre igual) a **−1** (siempre al contrario). Un **0** significa que no hay relación.\n\n• S&P 500 y Euro Stoxx 50: alta (0,7-0,9).\n• Dos criptos grandes: muy alta.\n• Acciones y bonos de calidad: baja o negativa en muchas crisis.\n• Acciones y oro: baja y variable.",
-     "key": "Diversificar de verdad es tener cosas que no se hundan todas el mismo día."
+     "key": "Diversificar de verdad es tener cosas que no se hundan todas el mismo día.",
+     "tip": "Pruébalo: sigue SPY, TLT y GLD en Mercado y compáralos el próximo día rojo."
     }
    ]
   },
@@ -96,7 +97,8 @@
     {
      "title": "Repartos de ejemplo",
      "body": "Estudios clásicos (Brinson y otros): este reparto explica la mayor parte de cómo oscila una cartera diversificada.\n\n• Conservador: 20-40 % acciones (caída posible: −10 a −20 %).\n• Moderado: 50-60 % (−20 a −30 %).\n• Decidido: 70-90 % (−30 a −45 %).\n• 100 % acciones: −50 % o más.\n\nCuanto más cerca está el objetivo, menos acciones. Una referencia antigua es «100 menos tu edad» en acciones; hoy muchos usan 110 o 120 menos la edad. Son ejemplos educativos, no recomendaciones.",
-     "key": "Horizonte largo permite más acciones; horizonte corto pide más bonos y liquidez."
+     "key": "Horizonte largo permite más acciones; horizonte corto pide más bonos y liquidez.",
+     "tip": "Pruébalo: en Cartera, mira el peso de tus acciones y compáralo con tu perfil."
     }
    ]
   },
@@ -135,7 +137,8 @@
     {
      "title": "El sesgo de casa",
      "body": "Tendemos a invertir en lo que conocemos: el **sesgo doméstico**. Pero España es **menos del 1 %** de la bolsa mundial, y EE. UU., alrededor del 60-70 % del índice de países desarrollados.\n\nUn índice mundial reparte entre decenas de países y monedas: si una región tiene una década mala, no lo pagas todo tú.",
-     "key": "Diversificar por países reduce el riesgo de elegir «el Japón de los próximos 30 años»."
+     "key": "Diversificar por países reduce el riesgo de elegir «el Japón de los próximos 30 años».",
+     "tip": "Pruébalo: revisa tu Cartera y cuenta cuánto depende de un solo país."
     }
    ]
   },
@@ -186,7 +189,7 @@
      "title": "Uno, dos o tres productos",
      "body": "• **Un producto:** un fondo o ETF de todo el mundo (MSCI ACWI o FTSE All-World), con miles de empresas de países desarrollados y emergentes.\n• **Dos:** acciones mundiales + bonos globales de calidad cubiertos a euros.\n• **Tres:** países desarrollados (MSCI World) + emergentes (10-12 %, más o menos su peso en el mundo) + bonos.\n\nSon ejemplos para entender cómo se construyen, no recomendaciones personalizadas.",
      "key": "Con uno a tres fondos indexados puedes tener miles de empresas de todo el mundo.",
-     "tip": "Una cartera aburrida es una cartera que funciona."
+     "tip": "Pruébalo: busca VWCE en Mercado, un ETF de todo el mundo, y síguelo."
     }
    ]
   },
@@ -195,8 +198,25 @@
    "steps": [
     {
      "texts": [
+      "El fondo de valor de Pablo",
+      "Pablo",
+      "Leí que el factor valor batió al mercado en el último siglo. Metí todo en un fondo de valor.",
+      "Tres años después voy un 15 % por detrás del índice.",
+      "¿Qué le dices?",
+      "Cámbiate al factor que mejor ha ido",
+      "Saltar de factor en factor es perseguir el pasado: compras caro y vendes barato.",
+      "Puede ir por detrás muchos años: decide si lo aguantas",
+      "Eso es. Si no lo aguantas, mejor un índice de todo el mercado.",
+      "Pide un préstamo y compra más, que ya rebotará",
+      "Con dinero prestado, unos años malos te pueden obligar a vender en lo peor.",
+      "El valor lo hizo peor que el mercado durante buena parte de **2007-2020**.",
+      "Y los fondos de factores («smart beta») suelen cobrar más que un indexado."
+     ]
+    },
+    {
+     "texts": [
       "¿Qué factor es?",
-      "Un **factor** es un rasgo que, de media y en décadas, se ha asociado a rentabilidades distintas. El de **tamaño** es fácil: empresas pequeñas. Clasifica los otros tres.",
+      "Pablo apostó por un **factor**: un rasgo que, de media y en décadas, se ha asociado a rentabilidades distintas. El de **tamaño** es fácil: empresas pequeñas. Clasifica los otros tres.",
       "Valor",
       "Calidad",
       "Momentum",
@@ -219,32 +239,33 @@
      ]
     },
     {
-     "texts": [
-      "El fondo de valor de Pablo",
-      "Pablo",
-      "Leí que el factor valor batió al mercado en el último siglo. Metí todo en un fondo de valor.",
-      "Tres años después voy un 15 % por detrás del índice.",
-      "¿Qué le dices?",
-      "Cámbiate al factor que mejor ha ido",
-      "Saltar de factor en factor es perseguir el pasado: compras caro y vendes barato.",
-      "Puede ir por detrás muchos años: decide si lo aguantas",
-      "Eso es. Si no lo aguantas, mejor un índice de todo el mercado.",
-      "Pide un préstamo y compra más, que ya rebotará",
-      "Con dinero prestado, unos años malos te pueden obligar a vender en lo peor.",
-      "El valor lo hizo peor que el mercado durante buena parte de **2007-2020**.",
-      "Y los fondos de factores («smart beta») suelen cobrar más que un indexado."
-     ]
-    },
-    {
      "title": "Lo que te llevas",
      "body": "Un factor no es un atajo: puede pasar más de una década por detrás del índice, y hay que aguantarlo para cobrar la prima, si llega. Además, cuando muchos inversores conocen un factor, su prima puede reducirse.",
-     "key": "Los factores son una forma de inclinar la cartera, no una garantía de ganar al mercado."
+     "key": "Los factores son una forma de inclinar la cartera, no una garantía de ganar al mercado.",
+     "tip": "Pruébalo: en Mercado, compara a un año VLUE (valor) y MTUM (momentum)."
     }
    ]
   },
   "u29l7": {
    "title": "Inversión sostenible (ESG)",
    "steps": [
+    {
+     "texts": [
+      "El fondo «Verde Futuro»",
+      "Marta",
+      "Mira este anuncio: «Verde Futuro». Bosques, molinos… ¡me lo quedo!",
+      "Aunque entre sus mayores posiciones hay petroleras. Raro, ¿no?",
+      "¿Qué le dices?",
+      "Si se llama verde, será verde",
+      "El nombre y el anuncio no bastan: cuenta lo que hay dentro.",
+      "Mira su documentación, su clasificación SFDR y sus posiciones",
+      "¡Bien! Así distingues un fondo sostenible de un caso de **greenwashing**.",
+      "Olvida la inversión sostenible: todo es mentira",
+      "Hay fondos serios. El problema es no comprobar.",
+      "Ni las agencias de rating ESG se ponen de acuerdo.",
+      "Un estudio del MIT (2022) halló una correlación media de solo **0,54** entre sus notas."
+     ]
+    },
     {
      "texts": [
       "¿E, S o G?",
@@ -272,23 +293,6 @@
     },
     {
      "texts": [
-      "El fondo «Verde Futuro»",
-      "Marta",
-      "Mira este anuncio: «Verde Futuro». Bosques, molinos… ¡me lo quedo!",
-      "Aunque entre sus mayores posiciones hay petroleras. Raro, ¿no?",
-      "¿Qué le dices?",
-      "Si se llama verde, será verde",
-      "El nombre y el anuncio no bastan: cuenta lo que hay dentro.",
-      "Mira su documentación, su clasificación SFDR y sus posiciones",
-      "¡Bien! Así distingues un fondo sostenible de un caso de **greenwashing**.",
-      "Olvida la inversión sostenible: todo es mentira",
-      "Hay fondos serios. El problema es no comprobar.",
-      "Ni las agencias de rating ESG se ponen de acuerdo.",
-      "Un estudio del MIT (2022) halló una correlación media de solo **0,54** entre sus notas."
-     ]
-    },
-    {
-     "texts": [
       "La etiqueta europea",
       "El reglamento europeo **SFDR** clasifica los fondos en tres artículos. Coloca cada fondo en el suyo.",
       "Artículo 6",
@@ -307,7 +311,7 @@
       "Fondo que promueve características sociales, como buenas condiciones laborales",
       "Artículo 8: promueve, no persigue un objetivo sostenible.",
       "Coloca los seis fondos.",
-      "Desde 2025, la ESMA exige que un fondo con términos ESG en el nombre invierta **al menos un 80 %** en activos que cumplan esas características. Lee **qué hay dentro**, no solo el nombre.",
+      "Desde 2025, la ESMA exige que un fondo con términos ESG en el nombre invierta **al menos un 80 %** en activos que cumplan esas características. Lee **qué hay dentro**, no solo el nombre. Pruébalo: en Mercado, compara el último año de ICLN, un ETF de energía limpia, con el de SPY.",
       "6: nada. 8: lo promueve. 9: es su objetivo.",
       "Coloca cada fondo"
      ]
@@ -410,12 +414,6 @@
    ],
    "explanation": "Es la asignación de activos: la palanca principal del riesgo que asumes."
   },
-  "u29l3-2": {
-   "prompt": "Tienes 10.000 € en una cartera 60 % acciones y 40 % bonos. Las acciones caen un 40 % y los bonos se quedan igual. ¿Cuánto cae tu cartera en total?",
-   "options": [],
-   "explanation": "0,6 × 40 % = 24 %. Con 100 % acciones habrías caído un 40 %.",
-   "unit": "%"
-  },
   "u29l3-3": {
    "prompt": "Empareja cada perfil de ejemplo con su reparto típico.",
    "options": [
@@ -458,12 +456,6 @@
    ],
    "explanation": "Hoy muchos usan 110 o 120 menos la edad. Es solo una orientación."
   },
-  "u29l3-8": {
-   "prompt": "Con la regla de «110 menos la edad», ¿qué porcentaje en acciones saldría a los 30 años?",
-   "options": [],
-   "explanation": "110 − 30 = 80 % en acciones. Es una orientación: tu tolerancia a las caídas también cuenta.",
-   "unit": "%"
-  },
   "u29l3-10": {
    "prompt": "¿Qué le dices a Lumi?",
    "options": [
@@ -482,6 +474,20 @@
     "Pero en 2020 lo vendí todo cuando cayó un 30 % 😬"
    ]
   },
+  "u29l3-11": {
+   "prompt": "Tienes dos objetivos: 2.000 € para un viaje dentro de un año y la jubilación, dentro de 40. ¿Cómo lo organizas?",
+   "options": [
+    "Todo junto en una cartera con muchas acciones: a la larga sube",
+    "El dinero del viaje en algo de poco riesgo y el de la jubilación con muchas acciones",
+    "Todo en un depósito, para no arriesgar nada"
+   ],
+   "explanation": "El reparto se decide por objetivo: el dinero con fecha cercana no depende de la bolsa, y el de décadas puede llevar muchas acciones. Meterlo todo junto obliga a elegir mal para uno de los dos.",
+   "feedback": [
+    "La jubilación aguanta una caída; el viaje no: un mal año en bolsa te dejaría sin él.",
+    "¡Eso! Cada objetivo tiene su plazo, y el plazo decide el reparto.",
+    "Para el viaje, bien. Para 40 años, la inflación se comería buena parte."
+   ]
+  },
   "u29l4-1": {
    "prompt": "¿Qué peso aproximado tiene la bolsa española en la bolsa mundial?",
    "options": [
@@ -490,12 +496,6 @@
     "Menos del 1 %"
    ],
    "explanation": "Por eso una cartera solo española concentra mucho, aunque tenga 35 empresas."
-  },
-  "u29l4-3": {
-   "prompt": "Tienes una acción de EE. UU. que vale 100 $ todo el año. El euro pasa de 1,00 a 1,10 dólares. ¿Cuántos euros vale ahora? (redondea)",
-   "options": [],
-   "explanation": "100 ÷ 1,10 ≈ 90,91 €: pierdes un 9 % solo por la divisa, sin que la acción se mueva.",
-   "unit": "€"
   },
   "u29l4-4": {
    "prompt": "Reparte una cartera de acciones por regiones. Reglas: al menos 4 fondos, ninguno por encima del 60 % y como máximo un 10 % en España.",
@@ -594,12 +594,6 @@
     "EMERGENTES",
     "BONOS"
    ]
-  },
-  "u29l5-4": {
-   "prompt": "Tu cartera es 70 % en un fondo mundial que cobra un 0,20 %, 10 % en emergentes al 0,25 % y 20 % en bonos al 0,10 %. ¿Cuál es el coste medio anual?",
-   "options": [],
-   "explanation": "0,7 × 0,20 + 0,1 × 0,25 + 0,2 × 0,10 = 0,14 + 0,025 + 0,02 = 0,185 %.",
-   "unit": "%"
   },
   "u29l5-7": {
    "prompt": "Laura cambia cada enero al fondo que más subió el año anterior. ¿Qué es lo más probable?",

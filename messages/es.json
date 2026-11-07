@@ -284,7 +284,10 @@
     "continueNext": "Siguiente: {title}",
     "continueBtn": "Continuar",
     "sectionNeeds": "Se abre al superar el reto final de: {needs}",
-    "tryMaxFree": "Probar Max gratis"
+    "tryMaxFree": "Probar Max gratis",
+    "testOutTitle": "¿Ya lo sabes? Supera la unidad",
+    "testOutBody": "Una prueba de 10 preguntas. Con el 80 % la das por hecha y sigues con la siguiente.",
+    "testOutBodyFree": "Una prueba de 10 preguntas. Con el 80 % la das por hecha y se te abre gratis otra unidad más."
   },
   "lesson": {
     "close": "Cerrar la lección",
@@ -425,7 +428,13 @@
     "seeAnswers": "Ver respuestas",
     "seeAnswersMisses": "Ver respuestas ({n, plural, one {# fallo} other {# fallos}})",
     "hideAnswers": "Ocultar respuestas",
-    "dayStreak": "Racha de {n, plural, one {# día} other {# días}}"
+    "dayStreak": "Racha de {n, plural, one {# día} other {# días}}",
+    "mixedReview": "Repaso de una clase anterior",
+    "testOutPassed": "Unidad superada",
+    "testOutFailed": "Aún no del todo",
+    "testOutPassedBody": "La das por hecha: sigue con la siguiente unidad.",
+    "testOutFailedBody": "Necesitas el 80 %. Haz las clases de la unidad y vuelve a intentarlo cuando quieras.",
+    "s0Done": "Ya sabes invertir. El siguiente paso: analizar como un profesional."
   },
   "market": {
     "title": "Mercado",

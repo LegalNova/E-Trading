@@ -8,6 +8,16 @@ export default unit({
   id: 'u10', order: 10, title: 'Fondos y ETFs', description: 'Fondos, ETFs, comisiones, gestión indexada y cómo leer su ficha',
   lessons: [
     lesson('u10l1', 'Qué es un fondo de inversión', [
+      story('Cambiar de fondo', [{ id: 'pablo', name: 'Pablo' }], [
+        say('pablo', 'Tengo 5.000 € en un fondo, con 1.000 € de ganancia.'),
+        say('pablo', 'He encontrado otro parecido pero más barato. ¿Cómo me cambio?'),
+        choose('¿Qué le dices?', [
+          opt('Vende, y con el dinero compra el nuevo', 'bad', say('lumi', 'Al vender tributa por los 1.000 € de ganancia: unos 190 € para Hacienda.')),
+          opt('Pide un traspaso del fondo viejo al nuevo', 'good', say('lumi', '¡Eso! En España el traspaso no tributa. Pagará cuando venda del todo.')),
+          opt('Espera a no tener ganancias', 'ok', say('lumi', 'Podría esperar años. Con un traspaso se cambia hoy, sin pagar.')),
+        ]),
+        say('lumi', 'Ojo: para que sea traspaso, el dinero no puede pasar por tu cuenta.'),
+      ]),
       play({
         title: '¿Quién hace qué?',
         intro: 'Un **fondo de inversión** reúne el dinero de miles de personas, que compran **participaciones**, y lo invierte según una política. ¿Quién hace cada cosa?',
@@ -30,17 +40,7 @@ export default unit({
           { say: 'Clasifica cada tarea', mood: 'HAPPY' },
         ],
       }),
-      story('Cambiar de fondo', [{ id: 'pablo', name: 'Pablo' }], [
-        say('pablo', 'Tengo 5.000 € en un fondo, con 1.000 € de ganancia.'),
-        say('pablo', 'He encontrado otro parecido pero más barato. ¿Cómo me cambio?'),
-        choose('¿Qué le dices?', [
-          opt('Vende, y con el dinero compra el nuevo', 'bad', say('lumi', 'Al vender tributa por los 1.000 € de ganancia: unos 190 € para Hacienda.')),
-          opt('Pide un traspaso del fondo viejo al nuevo', 'good', say('lumi', '¡Eso! En España el traspaso no tributa. Pagará cuando venda del todo.')),
-          opt('Espera a no tener ganancias', 'ok', say('lumi', 'Podría esperar años. Con un traspaso se cambia hoy, sin pagar.')),
-        ]),
-        say('lumi', 'Ojo: para que sea traspaso, el dinero no puede pasar por tu cuenta.'),
-      ]),
-      key('Activa o indexada', 'Hay fondos de **gestión activa** (el gestor elige para intentar batir al índice) e **indexados** (copian un índice con costes bajos).\n\nEl precio de cada participación, el **valor liquidativo**, se calcula una vez al día. Y un fondo no garantiza ganancias: su valor sube y baja con lo que tiene dentro.', 'Un fondo reúne el dinero de muchos para comprar muchos activos, con una gestora al mando.', 'El traspaso entre fondos es cambiar de carril sin pagar peaje.'),
+      key('Activa o indexada', 'Hay fondos de **gestión activa** (el gestor elige para intentar batir al índice) e **indexados** (copian un índice con costes bajos).\n\nEl precio de cada participación, el **valor liquidativo**, se calcula una vez al día. Y un fondo no garantiza ganancias: su valor sube y baja con lo que tiene dentro.\n\nEl traspaso entre fondos es cambiar de carril sin pagar peaje.', 'Un fondo reúne el dinero de muchos para comprar muchos activos, con una gestora al mando.', 'Pruébalo: en Mercado, busca IWDA, un ETF que copia el índice MSCI World, y añádelo a Favoritos.'),
     ], [
       match('Empareja cada pieza con su papel.', [['Gestora', 'Decide en qué se invierte'], ['Depositaria', 'Guarda los activos y vigila'], ['CNMV', 'Supervisa y registra'], ['Partícipe', 'Tú: dueño de participaciones']], 'Cada pieza vigila a otra: así el dinero de los partícipes está protegido de la gestora.'),
       num('Un fondo tiene un valor liquidativo de 12,50 €. Inviertes 1.000 €. ¿Cuántas participaciones compras?', 80, 'participaciones', '1.000 ÷ 12,50 = 80 participaciones.'),
@@ -52,7 +52,9 @@ export default unit({
       scenario('Pablo tiene 5.000 € en un fondo con una ganancia de 1.000 € y quiere pasarse a otro fondo más barato. ¿Cómo lo hace?', [['Vende, recibe el dinero en su cuenta y compra el nuevo', 'Al vender tributa por la ganancia de 1.000 € (unos 190 €) antes de reinvertir.'], ['Pide un traspaso del fondo antiguo al nuevo', 'Bien: el dinero pasa directamente sin tributar; pagará cuando reembolse del todo.'], ['No se puede cambiar de fondo', 'Sí se puede, y en España con ventaja fiscal.']], 1, 'El traspaso permite cambiar de fondo sin pasar por Hacienda, siempre que el dinero no pase por tu cuenta.'),
       timed(fill('El precio de una participación de un fondo se llama valor ____.', 'liquidativo', ['nominal', 'contable', 'facial'], 'Es el patrimonio del fondo dividido entre sus participaciones, calculado cada día.'), 15),
       multi('¿Qué ventajas tiene un fondo frente a comprar acciones sueltas? Marca todas.', ['Diversificas con poco dinero', 'Lo gestionan profesionales', 'En España se puede traspasar sin impuestos', 'Tiene ganancias garantizadas'], [0, 1, 2], 'Un fondo de inversión normal no garantiza ganancias: su valor sube y baja con lo que tiene dentro.'),
-    ], { source: '2.7', minutes: 6, retire: [0, 4, 7, 8] }),
+      scenario('Ana quiere invertir 50 € al mes en empresas de todo el mundo. ¿Qué le encaja más?', [['Comprar cada mes una acción suelta distinta', 'Con 50 € al mes tardaría años en estar repartida, y pagaría una comisión por cada compra.'], ['Un fondo o ETF indexado mundial', 'Bien: con cada aportación compra un trocito de miles de empresas, con costes bajos.'], ['La acción que más ha subido este año', 'Todo a una sola empresa, elegida por lo que ya subió: mucho riesgo.']], 1, 'Un fondo reúne el dinero de muchos y te da miles de empresas con poco dinero. Ir comprando acciones sueltas parece más controlado, pero con poco dinero diversificas mal y pagas más comisiones.'),
+      chat(['El banco me ofrece un fondo y dice que «siempre acaba ganando».', '¿Los fondos no pierden nunca?'], '¿Qué le contestas?', [['Un fondo sube y baja con lo que tiene dentro: no garantiza ganancias', 'Eso. Y el FGD no cubre los fondos de inversión.'], ['Si lo vende un banco, es seguro', 'El banco lo vende, pero su valor depende de lo que compra el fondo.'], ['No pierden: la CNMV lo garantiza', 'La CNMV supervisa los fondos, pero no garantiza que ganen.']], 0, 'Un fondo normal no garantiza nada: vale lo que valen sus activos. Que lo venda un banco o lo supervise la CNMV da seguridad sobre las reglas y la custodia, no sobre la rentabilidad.'),
+    ], { source: '2.7', minutes: 6, retire: [0, 1, 2, 4, 7, 8] }),
 
     lesson('u10l4', 'Gestión activa contra indexada', [
       mission({
@@ -77,7 +79,7 @@ export default unit({
         ]),
         say('lumi', 'La rentabilidad pasada dice poco del futuro. Los costes, en cambio, se repiten.'),
       ]),
-      key('La aritmética de Sharpe', '1. Todos los inversores juntos **son** el mercado.\n2. Antes de costes, el inversor activo medio gana lo mismo que el mercado.\n3. Después de costes, **tiene que** ganar menos.\n\nNo es que los gestores sean malos: compiten entre ellos y cobran más. SPIVA (Europa, cierre de 2025): en solo **1 año**, el **81,8 %** de los fondos de acciones europeas ya quedó por detrás de su índice. Buffett ganó una apuesta de 10 años con un indexado del S&P 500 frente a una selección de *hedge funds*.', 'A largo plazo, la gran mayoría de fondos activos rinde menos que su índice, sobre todo por los costes.', 'Si casi nadie bate al índice, comprar el índice ya te pone por delante de casi todos.'),
+      key('La aritmética de Sharpe', '1. Todos los inversores juntos **son** el mercado.\n2. Antes de costes, el inversor activo medio gana lo mismo que el mercado.\n3. Después de costes, **tiene que** ganar menos.\n\nNo es que los gestores sean malos: compiten entre ellos y cobran más. SPIVA (Europa, cierre de 2025): en solo **1 año**, el **81,8 %** de los fondos de acciones europeas ya quedó por detrás de su índice. Buffett ganó una apuesta de 10 años con un indexado del S&P 500 frente a una selección de *hedge funds*. Si casi nadie bate al índice, comprar el índice ya te pone por delante de casi todos.', 'A largo plazo, la gran mayoría de fondos activos rinde menos que su índice, sobre todo por los costes.', 'Pruébalo: en el simulador, compra un poco de CSPX, un ETF que copia el S&P 500, y déjalo crecer.'),
     ], [
       single('Según SPIVA (Europa, cierre de 2025), ¿qué porcentaje de fondos de acciones europeas quedó por detrás de su índice en 10 años?', ['Un 40 %', 'Un 65 %', 'Un 97 %'], 2, 'En 1 año ya era el 81,8 %; a 10 años, casi todos.'),
       num('De 100 fondos activos de acciones europeas, ¿cuántos batieron a su índice en 10 años, según ese 97 %?', 3, 'fondos', '100 − 97 = 3. Y el verdadero problema es encontrar esos 3 por adelantado.'),
@@ -89,9 +91,21 @@ export default unit({
       timed(tf('Un fondo indexado intenta batir a su índice.', false, 'Intenta copiarlo con el menor coste posible.'), 10),
       fill('El informe que compara los fondos activos con su índice se llama ____.', 'SPIVA', ['KID', 'UCITS', 'MiCA'], 'Lo publica S&P Dow Jones Indices para Europa, EE. UU. y otras regiones.'),
       multi('¿Qué conclusiones son razonables a partir de SPIVA? Marca todas.', ['La mayoría de fondos activos no bate a su índice a largo plazo', 'Los costes explican buena parte de la diferencia', 'Ningún gestor activo ha batido nunca al mercado', 'Es difícil saber de antemano quién batirá al índice'], [0, 1, 3], 'Algunos sí lo baten; el problema es que son pocos y casi imposibles de identificar por adelantado.'),
-    ], { source: '4.1', minutes: 6, retire: [3, 4, 5, 7] }),
+      chat(['Mi banco me recomienda su fondo estrella: cobra un 1,8 % al año.', 'Dice que su gestor bate al mercado. ¿Lo contrato?'], '¿Qué le contestas?', [['Antes compáralo con un indexado barato del mismo mercado y mira si de verdad lo ha batido muchos años', 'Eso. Y recuerda: ese 1,8 % lo pagas cada año, gane o pierda.'], ['Sí: si lo dice el banco, será verdad', 'El banco cobra por venderlo. La mayoría de activos no bate a su índice.'], ['Sí, y cuanto más cobre, mejor gestor', 'Cobrar más no te hace mejor: los costes restan cada año.']], 0, 'Según SPIVA, casi todos los fondos activos quedan por detrás de su índice a 10 años, y sus costes se repiten cada año. Fiarse del banco tienta, pero quien te lo vende cobra por hacerlo.'),
+    ], { source: '4.1', minutes: 6, retire: [1, 3, 4, 5, 7] }),
 
     lesson('u10l5', 'Acumulación o distribución', [
+      story('Ver el dinero', [{ id: 'lucia', name: 'Lucía' }], [
+        say('lucia', 'Prefiero el de distribución: así «veo» el dinero.'),
+        say('lucia', 'Con el de acumulación parece que no gano nada.'),
+        note('Lucía tiene 10.000 € en un fondo que reparte un 3 % en dividendos.'),
+        choose('¿Qué le dices?', [
+          opt('Tienes razón, el de acumulación no da nada', 'bad', say('lumi', 'Sí da: sus 300 € se reinvierten y sus participaciones valen más.')),
+          opt('Ganas lo mismo, solo que reinvertido, y pagas impuestos más tarde', 'good', say('lumi', '¡Eso! Con el de distribución cobraría 300 €, pero tras la retención le llegarían 243 €.')),
+          opt('Da igual, elige el que quieras', 'ok', say('lumi', 'Antes de impuestos rinden igual. Si no necesitas las rentas, suele ganar el de acumulación.')),
+        ]),
+        say('lumi', 'No ver el dinero no significa no ganarlo.'),
+      ]),
       play({
         title: '¿Acc o Dist?',
         intro: 'Dos versiones del mismo fondo, con las **mismas empresas** dentro: solo cambia qué se hace con los dividendos. ¿De cuál es cada rasgo?',
@@ -114,18 +128,7 @@ export default unit({
           { say: 'Clasifica cada rasgo', mood: 'HAPPY' },
         ],
       }),
-      story('Ver el dinero', [{ id: 'lucia', name: 'Lucía' }], [
-        say('lucia', 'Prefiero el de distribución: así «veo» el dinero.'),
-        say('lucia', 'Con el de acumulación parece que no gano nada.'),
-        note('Lucía tiene 10.000 € en un fondo que reparte un 3 % en dividendos.'),
-        choose('¿Qué le dices?', [
-          opt('Tienes razón, el de acumulación no da nada', 'bad', say('lumi', 'Sí da: sus 300 € se reinvierten y sus participaciones valen más.')),
-          opt('Ganas lo mismo, solo que reinvertido, y pagas impuestos más tarde', 'good', say('lumi', '¡Eso! Con el de distribución cobraría 300 €, pero tras la retención le llegarían 243 €.')),
-          opt('Da igual, elige el que quieras', 'ok', say('lumi', 'Antes de impuestos rinden igual. Si no necesitas las rentas, suele ganar el de acumulación.')),
-        ]),
-        say('lumi', 'No ver el dinero no significa no ganarlo.'),
-      ]),
-      key('Cuál encaja en cada fase', 'Para **acumular** patrimonio durante años, el de acumulación suele ser más eficiente: los 300 € siguen trabajando. El de distribución tiene sentido si **necesitas rentas** (por ejemplo, en la jubilación).\n\nNo es que uno rinda más: cambia cuándo pagas impuestos.', 'Acumular reinvierte y aplaza impuestos; distribuir te paga rentas que tributan cada año.', 'Mira el nombre del ETF: «Acc» o «Dist» te dice cuál es.'),
+      key('Cuál encaja en cada fase', 'Para **acumular** patrimonio durante años, el de acumulación suele ser más eficiente: los 300 € siguen trabajando. El de distribución tiene sentido si **necesitas rentas** (por ejemplo, en la jubilación).\n\nNo es que uno rinda más: cambia cuándo pagas impuestos.', 'Acumular reinvierte y aplaza impuestos; distribuir te paga rentas que tributan cada año.', 'Pruébalo: en Mercado, busca Vanguard FTSE All-World y encontrarás sus dos versiones, Acc y Dist.'),
     ], [
       match('Empareja cada término con su significado.', [['Acc', 'Reinvierte los dividendos'], ['Dist', 'Paga los dividendos al partícipe'], ['Diferimiento fiscal', 'No pagas hasta vender'], ['Retención', 'El 19 % que se descuenta al cobrar']], 'Acumulación y distribución solo cambian qué se hace con los dividendos y cuándo tributan.'),
       num('Un ETF de distribución te paga 400 € de dividendos este año. Con una retención del 19 %, ¿cuánto te llega?', 324, '€', '400 × 0,81 = 324 €. Los otros 76 € van a Hacienda este año.'),
@@ -137,9 +140,20 @@ export default unit({
       timed(single('Rápido: ¿qué versión te paga los dividendos?', ['Distribución', 'Acumulación', 'Ninguna'], 0, 'La de distribución (Dist) los reparte; la de acumulación (Acc) los reinvierte.'), 10),
       chat(['Prefiero el de distribución: así «veo» el dinero 💸', 'Con el de acumulación parece que no gano nada.'], '¿Qué le dices?', [['Tienes razón, el de acumulación no da nada', 'Sí da: los dividendos se reinvierten y tus participaciones valen más.'], ['Ganas lo mismo, solo que reinvertido, y en España pagas impuestos más tarde', '¡Eso! No ver el dinero no significa no ganarlo.'], ['El de distribución rinde el doble', 'Antes de impuestos rinden igual; después, el de distribución suele quedarse algo atrás si no necesitas las rentas.']], 1, 'Las dos versiones tienen las mismas empresas; cambia el momento en que cobras y en que tributas.'),
       fill('Lo que reparte un fondo de distribución tributa el año en que lo ____.', 'cobras', ['vendes', 'compras', 'reinviertes'], 'Por eso, si no necesitas esas rentas, pagas impuestos antes de tiempo.'),
-    ], { source: '4.7', minutes: 6, retire: [4, 5, 7, 8] }),
+      scenario('En Mercado encuentras Vanguard FTSE All-World en dos versiones, Acc y Dist. Tienes 22 años y vas a aportar cada mes durante décadas. ¿Cuál eliges?', [['La Acc, que reinvierte los dividendos', 'Bien: todo sigue componiéndose y no pagas impuestos por los dividendos hasta vender.'], ['La Dist, para ir cobrando los dividendos', 'Los cobrarías, pero tributarías cada año por unas rentas que no necesitas.'], ['Da igual: son fondos distintos', 'Tienen las mismas empresas dentro: solo cambia qué hacen con los dividendos.']], 0, 'Si no necesitas rentas, la Acc deja que los dividendos se reinviertan sin pasar por Hacienda cada año. Cobrar con la Dist tienta porque «ves» el dinero, pero ese ingreso tributa y deja de componerse.'),
+    ], { source: '4.7', minutes: 6, retire: [1, 4, 5, 6, 7, 8] }),
 
     lesson('u10l6', 'Réplica física y sintética', [
+      story('Dos ETF del mismo índice', [{ id: 'ana', name: 'Ana' }], [
+        say('ana', 'Dudo entre dos ETF del mismo índice. Uno físico, con un TER del 0,07 %. Otro sintético, del 0,05 %.'),
+        say('ana', 'Me quedo el más barato y listo, ¿no?'),
+        choose('¿Qué más debería mirar?', [
+          opt('Nada: el más barato, siempre', 'bad', say('lumi', 'El TER importa, pero también cuánto se desvía de verdad del índice y su tamaño.')),
+          opt('La diferencia de seguimiento real, el tamaño y el tipo de réplica', 'good', say('lumi', '¡Bien! Son las piezas para comparar dos ETF del mismo índice.')),
+          opt('Cuántos años lleva en el mercado', 'ok', say('lumi', 'Ayuda algo, pero lo clave es cuánto se desvía y su tamaño.')),
+        ]),
+        say('lumi', 'Dos ETF del mismo índice no son idénticos: mira cuánto se desvía cada uno.'),
+      ]),
       play({
         title: '¿Física o sintética?',
         intro: 'Dos formas de copiar un índice: **comprar** lo que hay dentro o que un banco te **pague** lo que haga. ¿Cuál es cuál?',
@@ -162,17 +176,7 @@ export default unit({
           { say: 'Clasifica cada rasgo', mood: 'HAPPY' },
         ],
       }),
-      story('Dos ETF del mismo índice', [{ id: 'ana', name: 'Ana' }], [
-        say('ana', 'Dudo entre dos ETF del mismo índice. Uno físico, con un TER del 0,07 %. Otro sintético, del 0,05 %.'),
-        say('ana', 'Me quedo el más barato y listo, ¿no?'),
-        choose('¿Qué más debería mirar?', [
-          opt('Nada: el más barato, siempre', 'bad', say('lumi', 'El TER importa, pero también cuánto se desvía de verdad del índice y su tamaño.')),
-          opt('La diferencia de seguimiento real, el tamaño y el tipo de réplica', 'good', say('lumi', '¡Bien! Son las piezas para comparar dos ETF del mismo índice.')),
-          opt('Cuántos años lleva en el mercado', 'ok', say('lumi', 'Ayuda algo, pero lo clave es cuánto se desvía y su tamaño.')),
-        ]),
-        say('lumi', 'Dos ETF del mismo índice no son idénticos: mira cuánto se desvía cada uno.'),
-      ]),
-      key('Cuánto se desvía', 'La **diferencia de seguimiento** (*tracking difference*) es lo que el ETF se queda por detrás (o por delante) de su índice en un año. Suele parecerse al TER.\n\nLa sintética puede seguir al índice con mucha precisión y, en algunos casos, ahorrar impuestos. Mira la diferencia de seguimiento junto al tamaño del ETF y su tipo de réplica.', 'Física: compra lo que hay en el índice. Sintética: un banco le paga lo que hace el índice.', 'Ninguna réplica es mala: lo importante es entender qué riesgo añade cada una.'),
+      key('Cuánto se desvía', 'La **diferencia de seguimiento** (*tracking difference*) es lo que el ETF se queda por detrás (o por delante) de su índice en un año. Suele parecerse al TER.\n\nLa sintética puede seguir al índice con mucha precisión y, en algunos casos, ahorrar impuestos. Mira la diferencia de seguimiento junto al tamaño del ETF y su tipo de réplica.', 'Física: compra lo que hay en el índice. Sintética: un banco le paga lo que hace el índice.', 'Pruébalo: en Mercado, busca IWDA y XDWD: dos ETF de gestoras distintas que copian el mismo MSCI World.'),
     ], [
       multi('¿Qué es cierto de un ETF de réplica física? Marca todo.', ['Compra las acciones del índice', 'Puede comprar solo una muestra representativa', 'Puede prestar valores a cambio de una comisión', 'Depende de un swap con un banco'], [0, 1, 2], 'El swap es propio de la réplica sintética.'),
       multi('¿Qué rasgos tiene la réplica sintética? Marca todos.', ['Riesgo de contraparte', 'Usa un swap', 'En UCITS, la exposición a la contraparte está limitada al 10 %', 'No sigue al índice en absoluto'], [0, 1, 2], 'Sigue al índice, a menudo con mucha precisión; su riesgo particular es la contraparte.'),
@@ -184,9 +188,21 @@ export default unit({
       timed(tf('La réplica por muestreo es habitual en índices con miles de valores.', true, 'Comprar miles de valores pequeños saldría caro; una muestra bien elegida sigue al índice casi igual.'), 10),
       buckets('¿Física o sintética?', ['Física', 'Sintética'], [['Compra las acciones del índice', 0], ['Firma un swap con un banco', 1], ['Un banco le paga la rentabilidad del índice', 1], ['Préstamo de valores de su cartera', 0]], 'La física tiene lo que hay en el índice; la sintética recibe su rentabilidad mediante un contrato.'),
       fill('En un ETF sintético, el banco con el que firma el swap se llama ____.', 'contraparte', ['depositaria', 'gestora', 'emisora'], 'Si la contraparte falla, el ETF puede perder hasta lo que le deba, que UCITS limita al 10 %.'),
-    ], { source: '2.7', minutes: 6, retire: [3, 6, 7, 8] }),
+      scenario('Lees que el banco con el que tu ETF sintético firma el swap tiene problemas. ¿Qué haces?', [['Vendo todo ya, antes de perderlo todo', 'No lo perderías todo: la norma limita lo que el ETF puede tener en juego con ese banco.'], ['Compruebo su exposición al banco y sus garantías antes de decidir', 'Bien: UCITS limita la exposición a la contraparte al 10 % y el ETF tiene una cesta de activos como garantía.'], ['Nada: un ETF no puede perder por eso', 'Sí puede perder algo: es justo el riesgo propio de la réplica sintética.']], 1, 'El riesgo de la sintética es la contraparte, pero está acotado: como mucho un 10 % del fondo, y con garantías. Vender en pánico tienta, pero supone un riesgo mucho mayor del real; ignorarlo del todo también es un error.'),
+    ], { source: '2.7', minutes: 6, retire: [3, 5, 6, 7, 8] }),
 
     lesson('u10l7', 'Leer la ficha de un fondo (KID)', [
+      story('«Es una oportunidad»', [{ id: 'laura', name: 'Laura' }, { id: 'comercial', name: 'Comercial' }], [
+        say('comercial', 'Laura, esto es una oportunidad. Hay que entrar ya.'),
+        note('La ficha oficial del producto, el KID, dice: indicador de riesgo 7. Periodo de mantenimiento recomendado: 1 día.'),
+        say('laura', 'El objetivo del producto no lo acabo de entender…'),
+        choose('¿Qué hace Laura?', [
+          opt('Lo compra: si tiene KID, es seguro', 'bad', say('lumi', 'Tener KID solo significa que informa, no que sea adecuado para ella.')),
+          opt('No lo compra mientras no entienda qué es y cuánto puede perder', 'good', say('lumi', '¡Bien! Riesgo 7 y un plazo de un día: producto complejo y especulativo.')),
+          opt('Compra un poco para probar', 'ok', say('lumi', 'Probar con algo que no entiendes no es aprender: es apostar.')),
+        ]),
+        say('lumi', 'El KID sirve para esto: ver en un minuto que algo no es para ti.'),
+      ]),
       play({
         title: '¿Está en el KID?',
         intro: 'Todo fondo o ETF que se vende a minoristas en la UE tiene un **KID**: como máximo 3 páginas, siempre con las mismas secciones. ¿Qué encontrarás?',
@@ -209,18 +225,7 @@ export default unit({
           { say: 'Clasifica cada cosa', mood: 'HAPPY' },
         ],
       }),
-      story('«Es una oportunidad»', [{ id: 'laura', name: 'Laura' }, { id: 'comercial', name: 'Comercial' }], [
-        say('comercial', 'Laura, esto es una oportunidad. Hay que entrar ya.'),
-        note('El KID dice: indicador de riesgo 7. Periodo de mantenimiento recomendado: 1 día.'),
-        say('laura', 'El objetivo del producto no lo acabo de entender…'),
-        choose('¿Qué hace Laura?', [
-          opt('Lo compra: si tiene KID, es seguro', 'bad', say('lumi', 'Tener KID solo significa que informa, no que sea adecuado para ella.')),
-          opt('No lo compra mientras no entienda qué es y cuánto puede perder', 'good', say('lumi', '¡Bien! Riesgo 7 y un plazo de un día: producto complejo y especulativo.')),
-          opt('Compra un poco para probar', 'ok', say('lumi', 'Probar con algo que no entiendes no es aprender: es apostar.')),
-        ]),
-        say('lumi', 'El KID sirve para esto: ver en un minuto que algo no es para ti.'),
-      ]),
-      key('Lo que buscas en un minuto', '1. **ISIN:** el DNI del fondo (12 caracteres; empieza por el país, como IE o LU).\n2. **Objetivo y política:** ¿qué compra?\n3. **Indicador de riesgo** (1-7): un monetario suele estar en 1; uno de acciones mundiales, en torno a 4; uno de un solo sector o de emergentes, más arriba.\n4. **Costes** anuales.\n5. **Periodo de mantenimiento recomendado.**', 'El KID te dice en 3 páginas qué compras, cuánto puede doler y cuánto cuesta.', 'Si no entiendes el KID de un producto, no lo compres.'),
+      key('Lo que buscas en un minuto', '1. **ISIN:** el DNI del fondo (12 caracteres; empieza por el país, como IE o LU).\n2. **Objetivo y política:** ¿qué compra?\n3. **Indicador de riesgo** (1-7): un monetario suele estar en 1; uno de acciones mundiales, en torno a 4; uno de un solo sector o de emergentes, más arriba.\n4. **Costes** anuales.\n5. **Periodo de mantenimiento recomendado.**\n\nSi no entiendes el KID de un producto, no lo compres.', 'El KID te dice en 3 páginas qué compras, cuánto puede doler y cuánto cuesta.', 'Pruébalo: pregúntale a la profesora Lumi qué mirar en un ETF antes de comprarlo.'),
     ], [
       single(`${KID} ¿Qué nivel de riesgo indica?`, ['Medio: 4 en una escala de 1 a 7', 'Muy bajo: 4 sobre 100', 'El máximo posible'], 0, 'Un 4 de 7 es habitual en un fondo de acciones mundiales: oscila bastante, pero está diversificado.'),
       num(`${KID} Si inviertes 5.000 €, ¿cuánto pagarás al año en costes corrientes?`, 10, '€', '5.000 × 0,20 % = 10 € al año.'),
@@ -232,6 +237,7 @@ export default unit({
       scenario('A Laura le dan el KID de un producto con indicador de riesgo 7, periodo recomendado de 1 día y un objetivo que no entiende. El comercial insiste en que «es una oportunidad». ¿Qué hace?', [['Lo compra: si tiene KID, es seguro', 'Tener KID solo significa que cumple la obligación de informar, no que sea adecuado para ella.'], ['No lo compra mientras no entienda qué es y cuánto puede perder', 'Bien: riesgo 7 y un horizonte de un día apuntan a un producto complejo y especulativo.'], ['Compra un poco para probar', 'Probar con algo que no entiendes no es aprender: es apostar.']], 1, 'El KID sirve justo para esto: detectar en un minuto que un producto no es lo que te están vendiendo.'),
       timed(single('Rápido: en el indicador de riesgo del KID, ¿qué número es el más arriesgado?', ['7', '1', '10'], 0, 'La escala va del 1 (más bajo) al 7 (más alto).'), 10),
       buckets('¿Está en el KID o no?', ['Está en el KID', 'No está en el KID'], [['Costes', 0], ['Indicador de riesgo', 0], ['La opinión del comercial', 1], ['Qué pasa si la entidad no puede pagar', 0], ['Una previsión garantizada de la bolsa', 1]], 'El KID tiene un formato fijo y objetivo: ni opiniones ni garantías.'),
-    ], { source: '2.7', minutes: 6, retire: [5, 7, 8, 9] }),
+      scenario('Comparas el KID de dos fondos que copian el MSCI World. Los dos tienen un indicador de riesgo 4. Uno cuesta un 0,20 % al año y el otro, un 1,80 %. Vas a mantenerlo 20 años. ¿Cuál eliges?', [['El del 0,20 %', 'Bien: mismo índice y mismo riesgo; la diferencia de costes se repite cada año durante 20 años.'], ['El del 1,80 %: si cuesta más, será mejor', 'Copian el mismo índice: pagar más no te da más, solo te deja menos.'], ['Da igual: es poca diferencia', 'En un año parece poco, pero en 20 años se come una parte grande de lo ganado.']], 0, 'Si dos fondos compran lo mismo, el coste es lo que más los diferencia. Pensar que más caro es mejor tienta, pero en un indexado el coste extra solo resta.'),
+    ], { source: '2.7', minutes: 6, retire: [1, 5, 7, 8, 9] }),
   ],
 })

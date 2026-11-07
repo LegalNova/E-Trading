@@ -11,7 +11,7 @@
     {
      "texts": [
       "Moat or not?",
-      "Without an advantage to protect it, the competition eats up the profits. Buffett calls it a **moat**. Which of these are moats?",
+      "Why do you stay on WhatsApp even when a better app comes out? Because your friends are there: that's a **moat**, as Buffett calls it, an advantage the competition can't copy.",
       "Moat",
       "Not a moat",
       "A patented drug",
@@ -55,7 +55,8 @@
     {
      "title": "How a moat shows up in the numbers",
      "body": "• **High, stable** margins and ROIC for 10 years.\n• It can **raise prices** without losing customers, even with inflation.\n• It holds on to or gains **market share**.",
-     "key": "A good business needs a moat; a good investment also needs a good price."
+     "key": "A good business needs a moat; a good investment also needs a good price.",
+     "tip": "Try it: ask Lumi what moat an app you use every day has."
     }
    ]
   },
@@ -65,7 +66,7 @@
     {
      "texts": [
       "Cyclical or defensive?",
-      "When the economy's doing well, almost everything sells. When it's doing badly, not everything falls the same. Sort each business.",
+      "If you lost your job tomorrow, you'd keep buying food but put off the summer trip. Companies go through the same thing in a crisis: sort each business.",
       "Cyclical",
       "Defensive",
       "Carmaker",
@@ -109,7 +110,8 @@
     {
      "title": "The economic cycle",
      "body": "1. **Recovery:** low interest rates, the economy starts to grow.\n2. **Expansion:** high employment and rising profits; inflation may appear.\n3. **Slowdown:** rates go up and growth slows.\n4. **Recession:** GDP falls (technically, two quarters in a row) and unemployment rises.\n\nThe stock market usually falls **before** a recession and rises **before** it ends: in March 2009 and March 2020 it hit bottom amid terrible news.",
-     "key": "The stock market doesn't look at the present: it looks at what it expects 6 or 12 months ahead."
+     "key": "The stock market doesn't look at the present: it looks at what it expects 6 or 12 months ahead.",
+     "tip": "Try it: in Market, check the sector of Inditex and of Iberdrola: which is defensive?"
     }
    ]
   },
@@ -180,7 +182,8 @@
     {
      "title": "The price of money",
      "body": "• **ECB:** inflation target of **2 %** over the medium term.\n• **Federal Reserve:** stable prices and maximum employment.\n\nThe ECB's benchmark rate is the **deposit facility rate**: in June 2026 it raised it to **2.25 %**. Check the current figure at ecb.europa.eu, because it changes several times a year.",
-     "key": "When money gets more expensive, the future is worth less."
+     "key": "When money gets more expensive, the future is worth less.",
+     "tip": "Try it: find the TLT long-bond ETF in Market and look at its 2022."
     }
    ]
   },
@@ -235,7 +238,8 @@
     {
      "title": "The economic calendar",
      "body": "• **CPI/HICP:** inflation. It decides interest rates.\n• **GDP:** how fast the economy is growing.\n• **Jobs:** in the US, non-farm payrolls on the first Friday of each month; in Spain, the EPA (labour force survey) and registered unemployment.\n• **PMI:** a monthly survey of purchasing managers. **Above 50 = expansion.** It comes out ahead of GDP.\n• **Interest rate decisions** by the ECB and the Fed.",
-     "key": "The market doesn't react to whether the data is good or bad, but to whether it's better or worse than expected."
+     "key": "The market doesn't react to whether the data is good or bad, but to whether it's better or worse than expected.",
+     "tip": "Try it: on the first Friday of the month, watch how the S&P 500 reacts in Market."
     }
    ]
   },
@@ -293,7 +297,8 @@
     {
      "title": "Many don't make it",
      "body": "• With no profit, the P/E is useless. You look at **price/sales**: market cap ÷ sales.\n• Small companies can multiply… or disappear. More than half of US shares since 1926 returned less than Treasury bills.\n• They're among the hardest hit when interest rates rise.",
-     "key": "With a loss-making company, the key question is whether it will start making money before it runs out of cash."
+     "key": "With a loss-making company, the key question is whether it will start making money before it runs out of cash.",
+     "tip": "Try it: ask Lumi how to work out how many months of cash a company has."
     }
    ]
   },
@@ -349,7 +354,8 @@
     {
      "title": "The 10-question checklist",
      "body": "1. Do I understand how it makes money?\n2. Is it growing?\n3. Is it profitable (margins, ROE, ROIC)?\n4. Does it generate cash?\n5. Is it financially healthy (debt)?\n6. Does it have a moat?\n7. Who runs it?\n8. Is it expensive?\n9. What could go wrong?\n10. What would make me sell?",
-     "key": "If you can't explain in three sentences why you're buying a company, you're not ready to buy it yet."
+     "key": "If you can't explain in three sentences why you're buying a company, you're not ready to buy it yet.",
+     "tip": "Try it: pick a company in Market and go through the 10 questions with Lumi."
     }
    ]
   },
@@ -427,12 +433,6 @@
     "Microsoft had a moat in 2000 too, and anyone who bought at the peak took about 16 years to break even.",
     "It doesn't guarantee anything; it just signals very high expectations."
    ]
-  },
-  "u18l1-9": {
-   "prompt": "Microsoft took about 16 years to get back to its 2000 peak. If inflation had been 2 % a year, how much purchasing power would someone who got back exactly to that price have lost? (in %)",
-   "options": [],
-   "explanation": "1 ÷ 1.02¹⁶ ≈ 0.728: 27 % less purchasing power over 16 years, not counting dividends.",
-   "unit": "%"
   },
   "u18l1-10": {
    "prompt": "What do you reply to Lumi?",
@@ -518,12 +518,6 @@
     "Utilities"
    ],
    "explanation": "Construction is very cyclical."
-  },
-  "u18l2-10": {
-   "prompt": "In a recession, a cyclical sector falls 40 %. How much does it then need to rise to get back to where it was?",
-   "options": [],
-   "explanation": "1 ÷ 0.60 ≈ 1.667 → +66.7 %. A defensive sector that falls 15 % only needs +17.6 %.",
-   "unit": "%"
   },
   "u18l3-1": {
    "prompt": "January 2022: US inflation is at a near 40-year high and the Fed is preparing to raise rates. This is an ETF of US Treasury bonds with more than 20 years to maturity. What did it do next?",
@@ -667,30 +661,6 @@
    ],
    "explanation": "Without a surprise, there's not much to adjust."
   },
-  "u18l5-1": {
-   "prompt": "A company has €90m in cash and burns €7.5m a month. How many months of cash does it have?",
-   "options": [],
-   "explanation": "90 ÷ 7.5 = 12 months.",
-   "unit": "months"
-  },
-  "u18l5-2": {
-   "prompt": "It has a market cap of €3,000m and sales of €200m a year. What is its price/sales ratio?",
-   "options": [],
-   "explanation": "3,000 ÷ 200 = 15: you're paying 15 years of sales, not of profits.",
-   "unit": "times"
-  },
-  "u18l5-3": {
-   "prompt": "You own 1 million shares in a company that has 100 million (1 %). It raises capital by issuing 25 million new shares and you don't take part. What percentage do you own now?",
-   "options": [],
-   "explanation": "1 ÷ 125 = 0.8 %. Your stake has shrunk by 20 %.",
-   "unit": "%"
-  },
-  "u18l5-4": {
-   "prompt": "A company had sales of €50m last year and €80m this year. How much have its sales grown?",
-   "options": [],
-   "explanation": "(80 − 50) ÷ 50 = 60 %.",
-   "unit": "%"
-  },
   "u18l5-6": {
    "prompt": "A company keeps selling more, but its gross margin is 5 % and falling: almost everything it takes in goes on the cost of making the sale. How does it look?",
    "options": [
@@ -714,6 +684,63 @@
    ],
    "explanation": "That's why you look at sales, margins and cash."
   },
+  "u18l5-11": {
+   "prompt": "A young company that still loses money: good or bad sign?",
+   "options": [
+    "It spends more on ads than it sells",
+    "It needs a capital increase every year",
+    "Its gross margin falls every year",
+    "Its customers come back and pay every month",
+    "Its losses shrink every year",
+    "It has cash left for two and a half years"
+   ],
+   "explanation": "The good signs bring it closer to making money before it runs out of cash. The bad ones push it further away or force it to raise money, which usually dilutes you.",
+   "right": [
+    "Good sign",
+    "Bad sign"
+   ]
+  },
+  "u18l5-12": {
+   "prompt": "You own shares in a young company that loses money. It announces a capital increase: it will issue lots of new shares and you won't buy any. What happens to your share of the company?",
+   "options": [
+    "It grows: new money comes into the company",
+    "It gets smaller: the cake is shared among more shares",
+    "It doesn't change: I still have the same shares"
+   ],
+   "explanation": "If there are more shares and you don't buy, your percentage falls: that's dilution. It's very common in companies that burn cash, which is why you look at months of cash.",
+   "feedback": [
+    "Money comes into the company, but your slice of the cake shrinks.",
+    "That's dilution: you have the same shares, but out of a bigger total.",
+    "You have the same ones, but now there are more in total: your percentage falls."
+   ]
+  },
+  "u18l5-13": {
+   "prompt": "Two made-up companies with no profits sell €100m a year. One is worth €300m on the stock market; the other, €3,000m. Which is more expensive by price/sales?",
+   "options": [
+    "The €3,000m one: you pay 30 times its sales",
+    "Both the same: they sell the same",
+    "The €300m one: it's smaller"
+   ],
+   "explanation": "With no profits, you compare what it's worth with what it sells: 3 times sales versus 30. The expensive one needs to grow enormously to justify its price."
+  },
+  "u18l5-14": {
+   "prompt": "What do you reply to Lumi?",
+   "options": [
+    "By its social media followers",
+    "With the P/E, like all of them",
+    "With its sales, its gross margin and its months of cash"
+   ],
+   "explanation": "With no profit, the P/E is no use. You look at how much you pay for its sales, whether each sale makes money (gross margin) and how long its cash will last.",
+   "feedback": [
+    "Popularity doesn't pay salaries.",
+    "With no profit, the P/E comes out negative and tells you nothing.",
+    "Of course: price/sales, margin and cash. The P/E is no use here."
+   ],
+   "lines": [
+    "This company sells 80 % more every year.",
+    "But it loses money! How do I value it without a P/E?"
+   ]
+  },
   "u18l6-1": {
    "prompt": "Put the first five steps of the checklist in order.",
    "options": [
@@ -724,12 +751,6 @@
     "Is it profitable?"
    ],
    "explanation": "First understand the business; then its numbers."
-  },
-  "u18l6-2": {
-   "prompt": "Using the Inditex figures, what was its EBIT margin (EBIT ÷ sales)? (one decimal place)",
-   "options": [],
-   "explanation": "7,554 ÷ 38,632 ≈ 19.6 %: out of every €100 of sales, almost €20 of operating profit.",
-   "unit": "%"
   },
   "u18l6-5": {
    "prompt": "Real chart of an IBEX 35 share: 30 sessions with no name or date. Even if you'd done your 30-minute analysis, would you know what it did over the next 10?",
@@ -744,12 +765,6 @@
    "prompt": "Real price of a big tech company over two months. Tap the highest point. (Microsoft · closes every 3 sessions · June–August 2026)",
    "options": [],
    "explanation": "A two-month high doesn't tell you whether the business is good: the checklist answers that."
-  },
-  "u18l6-7": {
-   "prompt": "Inditex paid a dividend of €1.68 and its earnings per share were about €1.88. What was its approximate payout ratio?",
-   "options": [],
-   "explanation": "1.68 ÷ 1.88 ≈ 89 %. It included a €0.55 special dividend; with so much net cash, a high payout ratio is easier to sustain than with debt.",
-   "unit": "%"
   },
   "u18l6-8": {
    "prompt": "You've run the checklist on a company: it's growing, very profitable, generates cash, has no debt and has a strong brand. But it trades on a P/E well above its historical average. What do you conclude?",
@@ -774,6 +789,38 @@
     "How the business makes money"
    ],
    "explanation": "A thesis explains why the business is worth more than its price, and when you'd stop believing it."
+  },
+  "u18l6-11": {
+   "prompt": "You apply the checklist to two made-up companies in the same sector, at the same P/E. A grows, generates cash and has more cash than debt. B grows just as much, but its profit doesn't reach its cash and it raises capital every year. Which passes the test better?",
+   "options": [
+    "Both the same: they have the same P/E",
+    "A: it grows, turns profit into cash and is healthy",
+    "B: it grows just as much"
+   ],
+   "explanation": "At the same price, the winner is the one that answers «does it generate cash?» and «is it healthy?» better. The red flags are usually in cash and debt, not in the profit headline.",
+   "feedback": [
+    "The P/E is the same; the quality of the profit isn't.",
+    "That's it: at the same price, the one that generates cash and doesn't dilute you is the better buy.",
+    "It grows on paper, but doesn't generate cash and dilutes you every year."
+   ]
+  },
+  "u18l6-12": {
+   "prompt": "What do you reply to Lumi?",
+   "options": [
+    "Yes: if it's a good business, the price doesn't matter",
+    "No: analysis is useless",
+    "Question 8 is missing: does the price leave a margin of safety?"
+   ],
+   "explanation": "The checklist doesn't end at «it's a good business»: you also have to decide whether the price is reasonable and what would make you sell.",
+   "feedback": [
+    "Remember Microsoft in 2000: great business, sky-high price.",
+    "It helps you decide with judgement, not guess the price.",
+    "True: a great business bought too dear can be a bad investment."
+   ],
+   "lines": [
+    "I've done my analysis of Inditex: it's a brilliant business.",
+    "Shall I buy now?"
+   ]
   }
  }
 }

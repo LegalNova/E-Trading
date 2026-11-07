@@ -54,13 +54,23 @@
      "title": "The return to the level",
      "body": "After a breakout, the price often comes back to **test** the level before moving on. Bulkowski calls it a *throwback* if the breakout was upwards and a *pullback* if it was downwards. In the head and shoulders, for example, the price returns to the neckline **68 %** of the time.\n\nIf the broken level holds on the return, the breakout gains credibility. If the price clearly moves back inside, the breakout was false and the idea has failed.",
      "key": "Broken support often becomes resistance, and broken resistance becomes support.",
-     "tip": "What used to be the ceiling can be the new floor."
+     "tip": "Try it: in Market, set a price alert at an old ceiling that has already broken."
     }
    ]
   },
   "u21l3": {
    "title": "Trendlines and channels",
    "steps": [
+    {
+     "texts": [
+      "Does the trend hold?",
+      "Four real trends, with no name or date. Imagine a line through the lows or the highs. Does it go up or down in the next 10 sessions?",
+      "Play all four rounds.",
+      "Here, two trends continued and two broke. A **trendline** doesn't predict the future: it marks **where the idea stops being valid**.",
+      "Two continued and two turned. The line warns you of the change.",
+      "Follow the direction by eye and decide"
+     ]
+    },
     {
      "texts": [
       "A good line or a forced one?",
@@ -108,7 +118,7 @@
      "title": "Channels and slope",
      "body": "A parallel line through the highs of an uptrend forms a **channel**: the lower edge acts as support and the upper edge as resistance.\n\nVery steep lines break quickly; those at around **30–45 degrees** tend to hold longer. On charts covering several years, use a **logarithmic scale**.",
      "key": "An uptrend line connects higher lows; as long as it holds, the trend continues.",
-     "tip": "If you have to force the line to touch the points, the line is in your head."
+     "tip": "Try it: in Market, draw a «Trend line» through two rising lows on Apple."
     }
    ]
   },
@@ -159,7 +169,7 @@
      "title": "The target and the data",
      "body": "Classic target: the distance from the head to the neckline, projected from the break. Head at €120, neckline at €100: height €20 → target **€80**. Bulkowski suggests a more cautious one, using half the height → **€90**.\n\nHis data: average fall after the break, **16 %**; fails (doesn’t even fall 5 %), **19 %**; returns to the neckline, **68 %**; reaches the classic target, only **51 %**.",
      "key": "No neckline break, no pattern.",
-     "tip": "An H&S without a breakout is just a nicely shaped mountain."
+     "tip": "Try it: in Market, look for three peaks on a weekly chart and mark their neckline."
     }
    ]
   },
@@ -209,7 +219,7 @@
      "title": "The target",
      "body": "Classic target: the height of the pattern, projected from the breakout.\n\nDouble bottom with lows at €40 and a high in between at €50. Height: €10. On a close above €50, the classic target is **€60**. If it then closes clearly below €50 again, the breakout has failed.",
      "key": "No breakout, no pattern.",
-     "tip": "Two peaks aren’t a double top until the trough breaks."
+     "tip": "Try it: if you spot an M in Market, set a price alert at its trough."
     }
    ]
   },
@@ -218,8 +228,19 @@
    "steps": [
     {
      "texts": [
+      "Pauses on real candles",
+      "Four real charts: can you spot a pause after a strong move? Decide whether it goes up or down over the next 10 sessions.",
+      "Answer all four rounds.",
+      "After a strong move, the price often **catches its breath** for a few days. These pauses have names (triangles, flags, rectangles), but **they don't tell you how they end**.",
+      "Done. Getting four rounds right or wrong says very little.",
+      "You’re doing well… but the pause doesn’t tell you how it ends.",
+      "Look at the candles and choose: up or down?"
+     ]
+    },
+    {
+     "texts": [
       "Which way does it usually break?",
-      "Continuation patterns are pauses in the price. Their shape tells you who’s pushing.",
+      "These pauses are **continuation patterns**. Their shape tells you who’s pushing.",
       "Usually breaks upwards",
       "Usually breaks downwards",
       "Either way",
@@ -236,26 +257,15 @@
       "Sort all five patterns.",
       "The **ascending** and **descending** triangles have a bias; the symmetrical triangle and the rectangle depend on the breakout. **Volume** tends to fall while they form and rise when they break.",
       "Hint: the flat line is the one someone is defending. Who’s pushing against it?",
-      "Well spotted. Now let’s try it with real candles.",
+      "Well spotted. The shape gives clues, not certainties.",
       "Sort each pattern"
-     ]
-    },
-    {
-     "texts": [
-      "Pauses on real candles",
-      "Four real charts: can you spot a pause after a strong move? Decide whether it goes up or down over the next 10 sessions.",
-      "Answer all four rounds.",
-      "Even if you see a textbook flag, **it fails almost half the time**. Continuation patterns give modest odds: what you really decide is how much you risk.",
-      "Done. Getting four rounds right or wrong says very little.",
-      "You’re doing well… but the pause doesn’t tell you how it ends.",
-      "Look at the candles and choose: up or down?"
      ]
     },
     {
      "title": "Flags and rectangles",
      "body": "• **Flag:** after a strong, fast move (the **flagpole**), a few days in a small rectangle tilted against the trend. It lasts **less than 3 weeks**. If it’s a small triangle, it’s a **pennant**.\n• **Rectangle:** a sideways range between clear support and resistance.\n\nBulkowski: in a bull market, flags break upwards **60 %** of the time, the average move after the breakout is around **9 %** and they **fail** (don’t even advance 5 %) in roughly **44–45 %** of cases.",
      "key": "Continuation patterns are the market catching its breath, although sometimes it turns.",
-     "tip": "A flag is a pause for breath, but almost half the time the runner runs out of air."
+     "tip": "Try it: in Market, mark Bitcoin's latest pause with «Rectangle»."
     }
    ]
   },
@@ -309,7 +319,7 @@
      "title": "And if it fails, the stop",
      "body": "No filter gets rid of them all. That’s why the stop goes where the breakout stops making sense: back inside the zone, below the last relevant low. And the position size is set so that this failure costs little.",
      "key": "A breakout without a close or volume is just an excursion.",
-     "tip": "Before you enter a breakout, decide where you’ll admit it was false."
+     "tip": "Try it: after your next purchase, set a price alert where the idea fails."
     }
    ]
   },
@@ -417,6 +427,25 @@
    ],
    "explanation": "Inside the channel, the lower edge acts as support and the upper edge as resistance."
   },
+  "u21l3-11": {
+   "prompt": "You buy within an uptrend. Place the stop below the last relevant low, the one holding up your line.",
+   "options": [],
+   "explanation": "If the price loses the last low, the line and the structure of rising lows break at the same time: the idea no longer holds. Right above it, any normal dip would take you out."
+  },
+  "u21l3-12": {
+   "prompt": "An uptrend line has three touches. The price drops to touch it a fourth time and Marta wants to buy without a stop «because it always bounces». What do you tell her?",
+   "options": [
+    "That she can buy, but with the stop below the line and the last low",
+    "To redraw the line lower so she can relax",
+    "That she's right: three touches are a guarantee"
+   ],
+   "explanation": "A trendline tells you where the idea stops being valid. That's why the stop goes on the other side: if it breaks, you get out losing little.",
+   "feedback": [
+    "That's it: if the line breaks and loses the low, she gets out with a small loss.",
+    "Moving the line to make it fit is fooling yourself: the line is on the chart, not in her wishes.",
+    "Three touches make the line more relevant, not unbreakable. Lines get broken all the time."
+   ]
+  },
   "u21l4-1": {
    "prompt": "Put the formation of a head and shoulders in order.",
    "options": [
@@ -427,24 +456,6 @@
     "Right shoulder, lower than the head"
    ],
    "explanation": "The pattern only exists once the last step arrives: the neckline break."
-  },
-  "u21l4-3": {
-   "prompt": "Head at €120 and neckline at €100. What’s the classic target after the breakout?",
-   "options": [],
-   "explanation": "Height: 120 − 100 = €20. Projected from €100: 100 − 20 = €80.",
-   "unit": "€"
-  },
-  "u21l4-4": {
-   "prompt": "Head at €120 and neckline at €100. What’s Bulkowski’s cautious target, using half the height?",
-   "options": [],
-   "explanation": "Half the height: €10. 100 − 10 = €90. Only 51 % reach the full target.",
-   "unit": "€"
-  },
-  "u21l4-5": {
-   "prompt": "Inverse H&S: head (the low) at €40 and neckline at €50. Classic target after breaking upwards?",
-   "options": [],
-   "explanation": "A height of €10, projected upwards from €50: €60.",
-   "unit": "€"
   },
   "u21l4-6": {
    "prompt": "Before looking for shoulders, find the summit: tap the highest close in this stretch (Apple · closes every 3 sessions · September–November 2024)",
@@ -460,17 +471,51 @@
    "explanation": "Reversal patterns are confirmed when their key line breaks, and you only see that afterwards. At the top, nobody has that confirmation yet.",
    "horizon": "the following years"
   },
-  "u21l5-3": {
-   "prompt": "Double bottom: lows at €40 and a high in between at €50. Classic target after clearing €50?",
-   "options": [],
-   "explanation": "Height: 50 − 40 = €10. Projected from €50: €60.",
-   "unit": "€"
+  "u21l4-11": {
+   "prompt": "You own shares in a company. After a big rise it forms a head and shoulders and today closes below the neckline on high volume. What do you do?",
+   "options": [
+    "Nothing: patterns fail, so I ignore them",
+    "I buy more: it's cheaper now",
+    "I review my plan: sell part or protect my gains, because the pattern has been confirmed"
+   ],
+   "explanation": "A confirmed pattern isn't a certainty, but it changes the plan: according to Bulkowski, the average fall after the breakout is 16 %.",
+   "feedback": [
+    "They fail 19 % of the time, not almost always: a confirmed pattern is a serious warning.",
+    "Buying more just as a bearish pattern is confirmed means going against the signal.",
+    "That's it: the breakout confirms the pattern. It's not certain to fall, but you now have a reason to act according to plan."
+   ]
   },
-  "u21l5-4": {
-   "prompt": "Double top: peaks at €80 and trough at €72. Classic target after losing €72?",
-   "options": [],
-   "explanation": "Height: 80 − 72 = €8. Projected downwards from €72: €64.",
-   "unit": "€"
+  "u21l4-12": {
+   "prompt": "Confirmed head and shoulders, with the head at €120 and the neckline at €100. Ana is waiting for it to fall to the classic target of €80 to buy back in. What do you tell her?",
+   "options": [
+    "That only half reach €80: a prudent target would be €90",
+    "That the pattern gives no clue about how far it falls",
+    "That it'll surely reach €80: it's the pattern's target"
+   ],
+   "explanation": "Pattern targets are references, not promises. With half the height, the target is more realistic.",
+   "feedback": [
+    "That's it: Bulkowski suggests half the height, €90, because the full target is only reached 51 % of the time.",
+    "It does give a reference: the height projected from the breakout. But it's a reference, not a promise.",
+    "According to Bulkowski, only 51 % reach the classic target."
+   ]
+  },
+  "u21l4-13": {
+   "prompt": "What do you reply to Lumi?",
+   "options": [
+    "It's an inverse H&S: bullish, and it's confirmed when it closes above its neckline",
+    "Yes: all head and shoulders patterns are bearish",
+    "It's bullish: I'll buy now, before the breakout"
+   ],
+   "explanation": "The normal H&S comes after a rise and is bearish; the inverse one comes after a fall and is bullish. Both are confirmed when they break their neckline.",
+   "feedback": [
+    "That's it: after a fall, the inverse version points upwards. And without a breakout, it isn't a pattern yet.",
+    "This one is upside down and comes after a fall: it's the inverse one, which is bullish.",
+    "Right direction, but without a close above the neckline the pattern doesn't exist."
+   ],
+   "lines": [
+    "After months of falling I see three lows, with the middle one lowest.",
+    "It's a head and shoulders: bearish, right?"
+   ]
   },
   "u21l5-7": {
    "prompt": "Tap the lowest close in this stretch: in a double bottom, it would be one of the two lows (Apple · closes every 3 sessions · February–April 2025)",
@@ -494,6 +539,39 @@
    ],
    "explanation": "Looking for Ms and Ws on every chart is tempting; the eye finds shapes everywhere. That’s why a breakout is required.",
    "horizon": "the next 10 sessions"
+  },
+  "u21l5-11": {
+   "prompt": "Double bottom with lows at €40 and an intermediate high at €50. The price closes at €51 and Bruno buys. Days later it closes at €47. What has happened?",
+   "options": [
+    "It's time to buy double",
+    "Nothing: the target is still €60",
+    "The breakout has failed: it has closed clearly below €50 again"
+   ],
+   "explanation": "A confirmed pattern can still fail. If the price closes clearly back on the other side of the key line, the breakout was false.",
+   "feedback": [
+    "Buying more into an idea that has failed usually makes the loss bigger.",
+    "The target only counts if the breakout holds, and it has closed clearly below €50 again.",
+    "That's it: if it goes back inside the pattern with a clear close, the idea no longer holds. Time to get out as planned."
+   ]
+  },
+  "u21l5-12": {
+   "prompt": "Same double bottom: lows at €40, intermediate high at €50 and a close at €51. Where does Bruno's stop make most sense?",
+   "options": [
+    "A little below €50, where the breakout would fail",
+    "Below €40, under both bottoms",
+    "No need: the pattern is confirmed"
+   ],
+   "explanation": "The stop goes where the idea stops being valid. In a breakout, that means back inside the pattern.",
+   "feedback": [
+    "That's it: if it closes clearly below €50 again, the idea has failed and he gets out losing little.",
+    "It makes sense, but it's very far away: he risks much more per share for the same idea.",
+    "Confirmed doesn't mean certain. Without a stop, a failure can cost a lot."
+   ]
+  },
+  "u21l5-13": {
+   "prompt": "Now with real candles: you've bought at the last price. Place the stop below the last relevant low, as under the bottoms of a W.",
+   "options": [],
+   "explanation": "Below the recent low, the structure that justified the purchase breaks. A little margin stops a mere wick from taking you out."
   },
   "u21l6-1": {
    "prompt": "Match each pattern with its shape.",
@@ -564,12 +642,6 @@
    ],
    "explanation": "If it lasts longer, it’s called a rectangle or a channel."
   },
-  "u21l7-3": {
-   "prompt": "There’s resistance at €50. You require the close to clear it by 2 % before you treat it as broken. Above what price must it close?",
-   "options": [],
-   "explanation": "50 × 1.02 = €51.",
-   "unit": "€"
-  },
   "u21l7-4": {
    "prompt": "You’ve bought after a breakout. Place the stop where the breakout would stop making sense: below the last relevant low.",
    "options": [],
@@ -593,6 +665,39 @@
    ],
    "explanation": "Not even breakouts on volume guarantee anything. What you can control is where you get out if they fail and how much you lose.",
    "horizon": "the next 10 sessions"
+  },
+  "u21l7-11": {
+   "prompt": "During the session, a stock moves above its high for the year. There are two hours to the close and volume is below average. You want to buy. What do you do?",
+   "options": [
+    "I buy now, before it gets away",
+    "I buy double to make the most of the rise",
+    "I wait for the close and check whether it clears the level with volume"
+   ],
+   "explanation": "Breakouts are confirmed by the close and the volume. Waiting a few hours costs little; falling into the trap, much more.",
+   "feedback": [
+    "That's exactly how people fall for a false breakout: without a close or volume, there's no breakout yet.",
+    "More size on an unconfirmed signal multiplies the cost if it turns out to be false.",
+    "That's it: a close on the other side with above-average volume filters out many false breakouts."
+   ]
+  },
+  "u21l7-12": {
+   "prompt": "What do you reply to Lumi?",
+   "options": [
+    "Yes: I should have removed the stop to hold on",
+    "Yes: if the stop is hit, the trade was badly set up",
+    "No: I followed the filters and the stop limited the loss; sometimes it goes wrong anyway"
+   ],
+   "explanation": "No filter eliminates every false breakout: according to Bulkowski, the H&S fails 19 % of the time and flags around 44 %. What you control is how much the mistake costs.",
+   "feedback": [
+    "Removing the stop turns a small mistake into one that can be huge.",
+    "Not necessarily: no filter eliminates every false breakout.",
+    "That's it: a good decision can turn out badly. The stop has done its job."
+   ],
+   "lines": [
+    "You bought a breakout with a close and volume.",
+    "Even so, three days later it goes back inside and hits your stop.",
+    "Did you get it wrong?"
+   ]
   }
  }
 }

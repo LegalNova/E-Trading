@@ -53,7 +53,8 @@
     {
      "title": "Who's who",
      "body": "In Spain the stock exchange is run by **BME** (Bolsas y Mercados Españoles), part of the Swiss SIX group, and supervised by the **CNMV** (Spain's securities regulator).\n\nYou don't go to the exchange yourself: you buy through an authorised **broker**, who takes your order to the market.",
-     "key": "The exchange is the meeting point; the broker is the way in."
+     "key": "The exchange is the meeting point; the broker is the way in.",
+     "tip": "Try it: in Market, look up Inditex: everyone sees that same price."
     }
    ]
   },
@@ -106,7 +107,7 @@
      "title": "Your edge",
      "body": "A retail investor doesn't have to report every quarter, can wait for years and can keep costs very low. That's their edge, not speed.",
      "key": "The stock market is full of professionals: your edge is time and low costs.",
-     "tip": "Don't try to outrun an algorithm: you don't need to."
+     "tip": "Try it: in Market, add a company you'd hold for years to your Favourites."
     }
    ]
   },
@@ -161,7 +162,7 @@
      "title": "Watch the clock",
      "body": "Because of the **clock change**, the US and Europe don't change their clocks on the same day: for a few weeks a year New York opens at **14:30** Spanish time.\n\nTokyo opens in the middle of the night in Spain and takes a lunch break (Tokyo time).",
      "key": "Before you trade, check whether the market is open.",
-     "tip": "Just because the app lets you tap «buy» doesn't mean the market is open."
+     "tip": "Try it: in Market, check whether Apple shows «open» or «closed» right now."
     }
    ]
   },
@@ -210,15 +211,32 @@
     },
     {
      "title": "Settlement and custody",
-     "body": "Once matched, the trade **settles**: the money goes to the seller and the shares to you. In Europe it takes two business days (**T+2**); in the US, one (T+1) since 2024. In Spain the central register is **Iberclear**.\n\nWith a broker from another EU country, that country's fund covers you, and it may cover less (the EU minimum is €20,000).",
+     "body": "Once matched, the trade **settles**: the money goes to the seller and the shares to you. In Europe it takes two business days (**T+2**); in the US, one (T+1) since 2024. In Spain the central register is **Iberclear**.\n\nWith a broker from another EU country, that country's fund covers you, and it may cover less (the EU minimum is €20,000). Before you open an account, check on the CNMV website that the broker is authorised.",
      "key": "The broker is your way in; your securities are held in your name.",
-     "tip": "Check on the CNMV website that the broker is authorised before you open an account."
+     "tip": "Try it: make a purchase in Market and find the trade in your Portfolio."
     }
    ]
   },
   "u5l6": {
    "title": "Primary and secondary markets: IPOs",
    "steps": [
+    {
+     "texts": [
+      "The trendy listing",
+      "Bruno",
+      "Everyone's talking about a fashion brand going public.",
+      "If it's going public it must be doing brilliantly, right? I'm putting in all my savings!",
+      "What do you advise him?",
+      "Put it all in: it's a one-off opportunity",
+      "If it falls 30 % in the first few months, he's left with no cushion and with losses.",
+      "Read the prospectus and, if he invests, only a small part",
+      "Exactly. The **prospectus**, approved by the CNMV, explains the business and the risks.",
+      "Wait and see what people say on social media",
+      "Social media doesn't know the company. The prospectus does.",
+      "The price is set by whoever's selling, and they know the company better than you.",
+      "Many listings end up trading below their offer price."
+     ]
+    },
     {
      "texts": [
       "Who gets your money?",
@@ -246,23 +264,6 @@
     },
     {
      "texts": [
-      "The trendy listing",
-      "Bruno",
-      "Everyone's talking about a fashion brand going public.",
-      "If it's going public it must be doing brilliantly, right? I'm putting in all my savings!",
-      "What do you advise him?",
-      "Put it all in: it's a one-off opportunity",
-      "If it falls 30 % in the first few months, he's left with no cushion and with losses.",
-      "Read the prospectus and, if he invests, only a small part",
-      "Exactly. The **prospectus**, approved by the CNMV, explains the business and the risks.",
-      "Wait and see what people say on social media",
-      "Social media doesn't know the company. The prospectus does.",
-      "The price is set by whoever's selling, and they know the company better than you.",
-      "Many listings end up trading below their offer price."
-     ]
-    },
-    {
-     "texts": [
       "OPS or OPV?",
       "There are two ways to go public in Spain, often combined. The key: **who keeps the money?**",
       "OPS: it goes to the company",
@@ -276,7 +277,7 @@
       "The company issues shares to pay off its debt",
       "It issues new shares: the money goes to the company.",
       "Sort the four cases.",
-      "**OPS:** new shares and money for the company. **OPV:** the owners sell and the money goes to them. Outside Spain, a listing is simply called an IPO.",
+      "**OPS:** new shares and money for the company. **OPV:** the owners sell and the money goes to them. Outside Spain, a listing is simply called an IPO. Try it: in Market, open a company's monthly chart and find its first day on the stock market.",
       "If no new shares are created, the company doesn't get paid.",
       "Before a listing, check who's selling and why.",
       "Tap each case: OPS or OPV?"
@@ -287,6 +288,22 @@
   "u5l7": {
    "title": "The Spanish stock market: the IBEX and the continuous market",
    "steps": [
+    {
+     "texts": [
+      "Out of the IBEX",
+      "Pablo",
+      "The company I own shares in has dropped out of the IBEX 35. Is it doing terribly?",
+      "What do you tell Pablo?",
+      "Yes: only the best companies are in the IBEX",
+      "It has the 35 **most liquid** ones, not the best.",
+      "Not necessarily: it's just traded less than others now",
+      "Exactly. Not being in the IBEX doesn't make it a bad company.",
+      "It's no longer listed",
+      "It's still trading on the continuous market, with over a hundred companies.",
+      "And who decides that?",
+      "A technical committee, twice a year: in June and December."
+     ]
+    },
     {
      "texts": [
       "Where is it listed?",
@@ -312,26 +329,10 @@
      ]
     },
     {
-     "texts": [
-      "Out of the IBEX",
-      "Pablo",
-      "The company I own shares in has dropped out of the IBEX 35. Is it doing terribly?",
-      "What do you tell Pablo?",
-      "Yes: only the best companies are in the IBEX",
-      "It has the 35 **most liquid** ones, not the best.",
-      "Not necessarily: it's just traded less than others now",
-      "Exactly. Not being in the IBEX doesn't make it a bad company.",
-      "It's no longer listed",
-      "It's still trading on the continuous market, with over a hundred companies.",
-      "And who decides that?",
-      "A technical committee, twice a year: in June and December."
-     ]
-    },
-    {
      "title": "The IBEX 35 and the continuous market",
      "body": "The **continuous market** (SIBE) links the Madrid, Barcelona, Bilbao and Valencia exchanges in one electronic system, with a single order book per security. It's run by **BME**, part of the Swiss SIX group since 2020.\n\nThe **IBEX 35** is weighted by market capitalisation, counting only freely traded shares. Its base was **3,000 points** at the end of 1989.",
      "key": "The IBEX 35 is the shop window; the continuous market is the whole shop.",
-     "tip": "Not being in the IBEX doesn't make it a bad company: it just means it's traded less."
+     "tip": "Try it: in Market, use «Explore by index» and look at the 35 IBEX companies."
     }
    ]
   },
@@ -499,12 +500,6 @@
     "22:00"
    ],
    "explanation": "From 9:30 to 16:00 in New York = from 15:30 to 22:00 in Spain."
-  },
-  "u5l4-5": {
-   "prompt": "How many hours does the Madrid Stock Exchange session last, from 9:00 to 17:30?",
-   "options": [],
-   "explanation": "From 9:00 to 17:30 is 8 and a half hours: 8.5.",
-   "unit": "hours"
   },
   "u5l4-6": {
    "prompt": "Because of the clock change, for a few weeks a year New York opens at 14:30 Spanish time.",
@@ -737,6 +732,48 @@
     "By number of employees"
    ],
    "explanation": "The biggest companies by market value carry more weight in the index."
+  },
+  "u5l2-11": {
+   "prompt": "Leo invests €50 a month in an index fund. A friend tells him he'll never beat the professionals that way and should trade every day. What does he do?",
+   "options": [
+    "Sticks to his plan: his edge is time and low costs",
+    "Stops investing: the stock market is only for professionals",
+    "Starts trading every day to beat them"
+   ],
+   "explanation": "The temptation is to trade more, but in the short term the retail investor is at a disadvantage. In the long term, time and low costs work in his favour.",
+   "feedback": [
+    "He doesn't compete on speed: for years he shares in what companies earn.",
+    "He gives up his big advantage, time. In the long run he doesn't need to beat them on speed.",
+    "He joins a race where algorithms and professionals have the edge, and pays costs on every trade."
+   ]
+  },
+  "u5l4-11": {
+   "prompt": "Leo works from 9:00 to 18:00 and wants to buy Microsoft shares while the New York Stock Exchange is open. When can he do it on a normal day?",
+   "options": [
+    "At midnight, in peace",
+    "At lunchtime, at 14:00",
+    "After work, before 22:00"
+   ],
+   "explanation": "New York opens in the afternoon Spanish time, from 15:30 to 22:00. Buying outside those hours is tempting because it's convenient, but the order waits for the open and may fill at a different price.",
+   "feedback": [
+    "At midnight New York has already closed: the order would execute the next day, at whatever the price is then.",
+    "At 14:00 New York hasn't opened yet: the order would wait for the open.",
+    "New York is open from 15:30 to 22:00 Spanish time: he has plenty of time in the evening."
+   ]
+  },
+  "u5l6-11": {
+   "prompt": "A company announces its stock market listing. The prospectus says all the shares on offer belong to its founders, who are selling part of their stake. What does that mean?",
+   "options": [
+    "It's an OPS: the company gets money to grow",
+    "It's an OPV: the money goes to the founders, not the company",
+    "It's a good sign: if they're listing, it must be doing great"
+   ],
+   "explanation": "If no new shares are issued, it's an OPV and the company gets nothing. The temptation is to read it as a good sign, but whoever sells picks the moment that suits them.",
+   "feedback": [
+    "In an OPS new shares are issued. Here only existing shares change hands.",
+    "No new shares are created: the company receives nothing. It's worth asking why they're selling now.",
+    "Whoever sells knows the company better than you and picks the moment that suits them."
+   ]
   }
  }
 }

@@ -10,6 +10,22 @@
    "steps": [
     {
      "texts": [
+      "The general meeting",
+      "Pablo",
+      "I've got 50 shares and I've received the notice for the general meeting.",
+      "They're voting on a big pay rise for the CEO. Whatever, my vote doesn't count…",
+      "What do you tell Pablo?",
+      "Read the proposal and vote remotely or appoint a proxy",
+      "Exactly. It's his right as an owner, and meetings add up big and small votes alike.",
+      "Do nothing: with 50 shares it makes no difference",
+      "His vote carries little weight, but it counts. If he doesn't vote, others decide for him.",
+      "Sell everything in protest",
+      "He can, but he gives up his stake without having used his voice.",
+      "As a general rule, **one share = one vote**. The big funds really do swing votes."
+     ]
+    },
+    {
+     "texts": [
       "Your rights",
       "Being a shareholder gives you three kinds of rights, in proportion to your shares.",
       "Economic",
@@ -35,32 +51,33 @@
      ]
     },
     {
-     "texts": [
-      "The general meeting",
-      "Pablo",
-      "I've got 50 shares and I've received the notice for the general meeting.",
-      "They're voting on a big pay rise for the CEO. Whatever, my vote doesn't count…",
-      "What do you tell Pablo?",
-      "Read the proposal and vote remotely or appoint a proxy",
-      "Exactly. It's his right as an owner, and meetings add up big and small votes alike.",
-      "Do nothing: with 50 shares it makes no difference",
-      "His vote carries little weight, but it counts. If he doesn't vote, others decide for him.",
-      "Sell everything in protest",
-      "He can, but he gives up his stake without having used his voice.",
-      "As a general rule, **one share = one vote**. The big funds really do swing votes."
-     ]
-    },
-    {
      "title": "Information for everyone at once",
-     "body": "Listed companies must publish their accounts and report any **inside information** (results, acquisitions, problems) to the **CNMV** so that all investors learn about it at the same time.\n\nSome companies have **non-voting** shares or give double votes to people who hold them for years.",
+     "body": "Listed companies must publish their accounts and report any **inside information** (results, acquisitions, problems) to the **CNMV** so that all investors learn about it at the same time. The accounts of every Spanish listed company are free on the CNMV website.\n\nSome companies have **non-voting** shares or give double votes to people who hold them for years.",
      "key": "Being a shareholder gives you economic, voting and information rights, in proportion to your shares.",
-     "tip": "The accounts of every Spanish listed company are free on the CNMV website."
+     "tip": "Try it: in Market, add three companies you'd like to own to your Favourites."
     }
    ]
   },
   "u8l3": {
    "title": "Dividends: how and when you get paid",
    "steps": [
+    {
+     "texts": [
+      "The master plan",
+      "Leo",
+      "Plan: I buy at €20 just before the dividend, collect €0.50 and sell.",
+      "Free money!",
+      "What's wrong with Leo's plan?",
+      "Nothing: it's free money",
+      "On the day the dividend is deducted, the share opens at around €19.50.",
+      "The price drops by roughly what he collects",
+      "Exactly. He has €0.50 in cash and €0.50 less in shares.",
+      "He has to wait for the payment date",
+      "He'll get paid that day, yes. But the price will already have dropped by about €0.50.",
+      "Well, at least I get the dividend, right?",
+      "And it's taxed: in Spain the payer already **withholds 19 %**."
+     ]
+    },
     {
      "texts": [
       "Do you get the dividend?",
@@ -85,27 +102,10 @@
      ]
     },
     {
-     "texts": [
-      "The master plan",
-      "Leo",
-      "Plan: I buy at €20 the day before the ex-dividend date, collect €0.50 and sell.",
-      "Free money!",
-      "What's wrong with Leo's plan?",
-      "Nothing: it's free money",
-      "On the ex-dividend date the share opens at around €19.50.",
-      "The price drops by roughly what he collects",
-      "Exactly. He has €0.50 in cash and €0.50 less in shares.",
-      "He has to wait for the payment date",
-      "He'll get paid that day, yes. But the price will already have dropped by about €0.50.",
-      "Well, at least I get the dividend, right?",
-      "And it's taxed: in Spain the payer already **withholds 19 %**."
-     ]
-    },
-    {
      "title": "Dividend yield",
      "body": "**Dividend yield = annual dividend ÷ price.** A €30 share that pays €1.20 a year yields 4 %.\n\nCareful: a sky-high dividend is sometimes a warning that the price has fallen because a cut is expected.",
      "key": "A dividend isn't free money: it comes out of the company's value.",
-     "tip": "A sky-high dividend is sometimes an alarm bell, not a gift."
+     "tip": "Try it: in Market, search for Iberdrola, which pays a dividend every year, and add it to your Favourites."
     }
    ]
   },
@@ -157,15 +157,31 @@
     },
     {
      "title": "What changes and what doesn't",
-     "body": "In a capital increase, **pre-emptive rights** let you buy the new shares you're entitled to before anyone else: that way you keep your percentage.\n\nSome Spanish companies pay the dividend in new shares if you want: the *scrip* or flexible dividend.",
+     "body": "In a capital increase, **pre-emptive rights** let you buy the new shares you're entitled to before anyone else: that way you keep your percentage.\n\nSome Spanish companies pay the dividend in new shares if you want: the *scrip* or flexible dividend.\n\nIf a headline says «the share plunges 75 %», check first whether there's been a split.",
      "key": "Splits and reverse splits don't change what you own; a capital increase you don't take part in does: it dilutes you.",
-     "tip": "If a headline says «the share plunges 75 %», check first whether there's been a split."
+     "tip": "Try it: in Market, search for NVIDIA, which did a 10×1 split in 2024, and look at its chart in monthly candles."
     }
    ]
   },
   "u8l5": {
    "title": "Large, mid and small caps",
    "steps": [
+    {
+     "texts": [
+      "The forum micro cap",
+      "Ana",
+      "On a forum they say this micro cap, a tiny company, could multiply by 10.",
+      "I'm putting in all my savings. I'm betting everything on this one!",
+      "What do you tell Ana?",
+      "Small caps always go up more",
+      "Sometimes they rise more, but many fall by the wayside or go bust.",
+      "She could lose almost everything: better not to bet it all on one",
+      "Exactly. The potential is real, but the risk of a single small company is huge.",
+      "Invest only half",
+      "That's still a lot in a single small, illiquid company.",
+      "Careful: forums are also the favourite hangout of people trying to pump up a share."
+     ]
+    },
     {
      "texts": [
       "Big or small?",
@@ -194,32 +210,33 @@
      ]
     },
     {
-     "texts": [
-      "The forum micro cap",
-      "Ana",
-      "People on a forum say this micro cap could multiply by 10.",
-      "I'm putting in all my savings. I'm betting everything on this one!",
-      "What do you tell Ana?",
-      "Small caps always go up more",
-      "Sometimes they rise more, but many fall by the wayside or go bust.",
-      "She could lose almost everything: better not to bet it all on one",
-      "Exactly. The potential is real, but the risk of a single small company is huge.",
-      "Invest only half",
-      "That's still a lot in a single small, illiquid company.",
-      "Careful: forums are also the favourite hangout of people trying to pump up a share."
-     ]
-    },
-    {
      "title": "Sizes and indices",
      "body": "A common convention (in dollars):\n• **Large caps:** over 10,000 million.\n• **Mid caps:** from 2,000 to 10,000 million.\n• **Small caps:** from 300 to 2,000 million.\n• Below that, *micro caps*.\n\nIn Spain there are the IBEX Medium Cap and IBEX Small Cap. A global index is cap-weighted: the giants weigh most.",
      "key": "Smaller = more potential, but also more volatility and more risk of going bust.",
-     "tip": "Being small doesn't make a company cheap or good: just riskier."
+     "tip": "Try it: in Market, compare the chart of SPY, large companies, with that of IWM, small ones."
     }
    ]
   },
   "u8l6": {
    "title": "Growth and value",
    "steps": [
+    {
+     "texts": [
+      "P/E of 70 or P/E of 9",
+      "Laura",
+      "I'm torn between a tech company with a P/E of 70 that's growing 40 % a year…",
+      "…and an insurer with a P/E of 9 growing 3 %. Which is better?",
+      "Which reasoning is right?",
+      "The P/E 70 one: it's growing much faster",
+      "If that growth is already in the price, any disappointment sinks it.",
+      "It depends whether the price reflects its future properly",
+      "Exactly. What matters is what you pay for what you get.",
+      "The P/E 9 one: it's cheap",
+      "It might be cheap for a reason: a stagnant business disappoints too.",
+      "Cheap is sometimes cheap for a reason: that's the **value trap**.",
+      "A great company isn't always a great investment: it depends on the price."
+     ]
+    },
     {
      "texts": [
       "How many years of profits are you paying for?",
@@ -255,27 +272,10 @@
       "P/E of 50 thanks to a new product",
       "Expensive relative to what it earns today: growth.",
       "Sort the six companies.",
-      "Growth: **high P/E**, little dividend and lots of reinvestment. Value: **low P/E**, mature business and a dividend. Each style has its good periods: neither always wins.",
+      "Growth: **high P/E**, little dividend and lots of reinvestment; value: **low P/E**, mature business and dividend, and neither always wins. Try it: in Market, compare the chart of NVIDIA with that of Coca-Cola.",
       "Hint: does it reinvest to grow or pay out what it earns?",
       "Look at the P/E: high for growth, low for value.",
       "Tap each company: growth or value?"
-     ]
-    },
-    {
-     "texts": [
-      "P/E of 70 or P/E of 9",
-      "Laura",
-      "I'm torn between a tech company with a P/E of 70 that's growing 40 % a year…",
-      "…and an insurer with a P/E of 9 growing 3 %. Which is better?",
-      "Which reasoning is right?",
-      "The P/E 70 one: it's growing much faster",
-      "If that growth is already in the price, any disappointment sinks it.",
-      "It depends whether the price reflects its future properly",
-      "Exactly. What matters is what you pay for what you get.",
-      "The P/E 9 one: it's cheap",
-      "It might be cheap for a reason: a stagnant business disappoints too.",
-      "Cheap is sometimes cheap for a reason: that's the **value trap**.",
-      "A great company isn't always a great investment: it depends on the price."
      ]
     }
    ]
@@ -287,6 +287,7 @@
      "texts": [
       "Fewer shares, more profit",
       "Leo",
+      "I own shares in a company that's going to buy back its own. What's in it for me?",
       "A company earns 500 million and has 100 million shares: **€5 of earnings per share** (EPS).",
       "It has announced it will buy back and cancel 10 million of its own shares.",
       "What happens to earnings per share?",
@@ -329,7 +330,7 @@
      "title": "What price it buys back at",
      "body": "Apple has been buying back shares since 2012, to the tune of hundreds of billions of dollars.\n\nBut buying back at a **high price** destroys value, and doing it **with debt** adds risk.",
      "key": "A buyback shares the cake among fewer owners.",
-     "tip": "Always ask what price the company is buying back at: buying expensive isn't returning value."
+     "tip": "Try it: in Market, search for Apple, which has been buying back shares since 2012, and add it to your Favourites."
     }
    ]
   },
@@ -364,12 +365,6 @@
    ],
    "explanation": "As a general rule, one share = one vote. Whoever has more shares has more votes."
   },
-  "u8l2-4": {
-   "prompt": "A small company has 4 million shares and you have 20,000. What percentage of the votes do you have?",
-   "options": [],
-   "explanation": "20,000 ÷ 4,000,000 = 0.005 → 0.5 % of the votes (if all shares carry voting rights).",
-   "unit": "%"
-  },
   "u8l2-7": {
    "prompt": "Listed companies must report inside information to the ____ so that everyone learns about it at the same time.",
    "options": [
@@ -399,6 +394,20 @@
    ],
    "explanation": "The price is set by the market through supply and demand, not by the meeting."
   },
+  "u8l2-11": {
+   "prompt": "The company Sara holds shares in announces a capital increase: it will issue new shares to raise money. Sara doesn't want to lose her percentage. What does she do?",
+   "options": [
+    "She votes against it at the meeting and forgets about it",
+    "She uses her pre-emptive rights and buys the new shares she's entitled to",
+    "She does nothing: her shares are still hers"
+   ],
+   "explanation": "That's what pre-emptive rights are for: buying what you're entitled to first so you don't lose your share. Doing nothing seems neutral, but with more shares in circulation your percentage falls.",
+   "feedback": [
+    "Voting is her right, but if the capital increase is approved, she gets diluted anyway.",
+    "Good: she buys in proportion to what she already has and her percentage doesn't change.",
+    "They're still hers, but there will be more shares in total: her percentage falls. That's dilution."
+   ]
+  },
   "u8l3-1": {
    "prompt": "Put a dividend's dates in order.",
    "options": [
@@ -408,18 +417,6 @@
     "Announcement"
    ],
    "explanation": "First it's announced; from the ex-dividend date the share trades without the right; then they check who the shareholders are (record) and finally it's paid."
-  },
-  "u8l3-4": {
-   "prompt": "A €30 share pays a €1.20 dividend a year. What's its dividend yield?",
-   "options": [],
-   "explanation": "1.20 ÷ 30 = 0.04 → 4 %.",
-   "unit": "%"
-  },
-  "u8l3-5": {
-   "prompt": "You have 200 shares and each pays a €0.50 dividend. With 19 % withheld, how much reaches your account?",
-   "options": [],
-   "explanation": "200 × 0.50 = €100 gross; 100 − 19 = €81 net.",
-   "unit": "€"
   },
   "u8l3-7": {
    "prompt": "This is the share of a utility known for paying regular dividends. What did it do over the next 10 sessions?",
@@ -462,18 +459,6 @@
     "19 %"
    ],
    "explanation": "The payer withholds 19 % on account of IRPF (Spanish income tax). Dividends then go into the savings tax base, taxed at 19 % to 30 %."
-  },
-  "u8l4-2": {
-   "prompt": "You have 1,000 shares at €0.20 and there's a 1-for-10 reverse split. What price will each new share trade at, if nothing else changes?",
-   "options": [],
-   "explanation": "1,000 ÷ 10 = 100 shares; €200 ÷ 100 = €2 per share.",
-   "unit": "€"
-  },
-  "u8l4-4": {
-   "prompt": "A company has 100 million shares and you have 1 million (1 %). It raises capital with 25 million new shares and you don't buy any. What percentage do you have now?",
-   "options": [],
-   "explanation": "1 ÷ 125 = 0.008 → 0.8 %. That's dilution.",
-   "unit": "%"
   },
   "u8l4-5": {
    "prompt": "Match each operation with what happens.",
@@ -524,11 +509,37 @@
    ],
    "explanation": "80 ÷ 2 = €40, and you have twice as many shares."
   },
-  "u8l5-1": {
-   "prompt": "A company trades at €50 and has 200 million shares. What's its market cap?",
-   "options": [],
-   "explanation": "50 × 200 million = €10,000 million.",
-   "unit": "million €"
+  "u8l4-11": {
+   "prompt": "NVIDIA announces a 10×1 split and a friend tells you: «Now that each share costs ten times less, it's the time to buy». What do you reply?",
+   "options": [
+    "That he should sell any he has before the split so as not to lose out",
+    "That the split doesn't change what the company is worth: you have to decide on the business and its total price",
+    "That he's right: it's much cheaper now"
+   ],
+   "explanation": "A split changes the price of each share, not the value of the company. The temptation is to see a bargain in the lower price per share, but what you pay for the whole business hasn't changed.",
+   "feedback": [
+    "There's nothing to lose: after the split, his money is worth the same.",
+    "Good: ten smaller slices of the same pizza are still the same pizza.",
+    "Each share costs less, but the company is worth the same: it isn't cheaper."
+   ]
+  },
+  "u8l4-12": {
+   "prompt": "What do you reply?",
+   "options": [
+    "Yes: if you don't take part, your percentage of the company falls",
+    "No: your shares are still the same",
+    "Yes: they take away some of your shares"
+   ],
+   "explanation": "In a capital increase new shares are issued: if you don't buy the ones you're entitled to, your percentage falls (dilution). It's tempting to think nothing happens because you keep your shares, but the total has grown.",
+   "feedback": [
+    "That's it. There are more shares and you have the same ones: you get diluted.",
+    "The same shares, but of a pie with more slices: your share falls.",
+    "Nobody takes anything from you: what falls is your percentage."
+   ],
+   "lines": [
+    "My company is going to raise capital with new shares.",
+    "I'm not planning to buy any. Does it affect me at all?"
+   ]
   },
   "u8l5-2": {
    "prompt": "Match each size with its approximate market cap (convention in dollars).",
@@ -571,20 +582,6 @@
    ],
    "explanation": "It can grow faster, but its price moves more and it goes bust more often."
   },
-  "u8l5-6": {
-   "prompt": "Large or small? Work out the market cap.",
-   "options": [
-    "€5 × 200 million shares",
-    "€300 × 50 million shares",
-    "€40 × 25 million shares",
-    "€20 × 1,000 million shares"
-   ],
-   "explanation": "20,000 M, 1,000 M, 15,000 M and 1,000 M. Price on its own tells you nothing.",
-   "right": [
-    "Large (over 10,000 M)",
-    "Small (300–2,000 M)"
-   ]
-  },
   "u8l5-8": {
    "prompt": "Quick: how is market cap calculated?",
    "options": [
@@ -610,6 +607,20 @@
    "lines": [
     "Small caps go up more than large caps, right?",
     "So I'm moving everything into small caps 🚀"
+   ]
+  },
+  "u8l5-11": {
+   "prompt": "You want to invest in small US companies, but without betting everything on one. What do you do?",
+   "options": [
+    "I buy a Russell 2000 ETF, which holds around 2,000 small caps",
+    "I buy the micro cap a forum recommends",
+    "I buy the small cap that has risen most this month"
+   ],
+   "explanation": "A small-cap ETF gives you their potential without depending on just one. Picking a single one because it has risen or because of a forum is tempting, but it concentrates all the risk of bankruptcy.",
+   "feedback": [
+    "Good: you get the potential of small caps, spread across many. If one goes bust, you barely notice.",
+    "A single tiny, illiquid company: if it goes wrong, you lose almost everything.",
+    "What has risen most isn't what will rise most, and you still have everything in a single company."
    ]
   },
   "u8l6-1": {
@@ -682,12 +693,6 @@
     "Issues new shares"
    ],
    "explanation": "When they're cancelled, there are fewer shares and each one is worth a bigger part of the company."
-  },
-  "u8l7-3": {
-   "prompt": "You hold 1,000 of a company's 1,000,000 shares (0.1 %). It buys back and cancels 200,000. What percentage do you have now?",
-   "options": [],
-   "explanation": "1,000 ÷ 800,000 = 0.00125 → 0.125 %. Your stake grows without you buying anything.",
-   "unit": "%"
   },
   "u8l7-6": {
    "prompt": "Match each use of profit with its effect.",

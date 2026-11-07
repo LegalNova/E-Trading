@@ -59,7 +59,7 @@ export default unit({
           { say: 'Pasa una parte de acciones a bonos', mood: 'HAPPY' },
         ],
       }),
-      key('Fija, pero no inmóvil', 'En España, el Tesoro emite **letras** (hasta 12 meses), **bonos** (de 2 a 5 años) y **obligaciones** (más de 5). Las empresas emiten bonos corporativos, que suelen pagar más porque arriesgan más.\n\nEl cupón es fijo, pero el **precio** del bono cambia cada día. Si lo mantienes hasta el vencimiento, cobras lo pactado (si el emisor paga). Si lo vendes antes, puedes ganar o perder.', 'Un bono es un préstamo: cobras intereses y te devuelven el dinero al vencimiento, si el emisor puede pagar.', 'Acción = ser dueño. Bono = ser prestamista.'),
+      key('Fija, pero no inmóvil', 'En España, el Tesoro emite **letras** (hasta 12 meses), **bonos** (de 2 a 5 años) y **obligaciones** (más de 5). Las empresas emiten bonos corporativos, que suelen pagar más porque arriesgan más.\n\nEl cupón es fijo, pero el **precio** del bono cambia cada día. Si lo mantienes hasta el vencimiento, cobras lo pactado (si el emisor paga). Si lo vendes antes, puedes ganar o perder.', 'Un bono es un préstamo: cobras intereses y te devuelven el dinero al vencimiento, si el emisor puede pagar.', 'Pruébalo: en Mercado, compara el gráfico de SHY, un ETF de bonos del Tesoro de EE. UU., con el de SPY.'),
     ], [
       single('¿Qué recibes al comprar un bono?', ['Una parte de la empresa y derecho a voto', 'Intereses periódicos y la devolución del dinero al vencimiento', 'Un dividendo que decide la junta'], 1, 'Un bono es un préstamo: cupón mientras dura y nominal al final.'),
       num('Compras un bono de 1.000 € de nominal con un cupón del 3 % anual. ¿Cuánto cobras de cupón cada año?', 30, '€', '1.000 × 3 % = 30 € al año, pase lo que pase con su precio en el mercado.'),
@@ -71,9 +71,21 @@ export default unit({
       fill('El interés periódico que paga un bono se llama ____.', 'cupón', ['dividendo', 'nominal', 'vencimiento'], 'El nombre viene de los antiguos bonos en papel, que llevaban cupones recortables para cobrar cada pago.'),
       timed(single('Rápido: ¿qué es el nominal de un bono?', ['Lo que te devuelven al vencimiento', 'El interés anual', 'Su precio de hoy'], 0, 'Es la cantidad prestada que el emisor se compromete a devolver.'), 12),
       chat(['Mi abuelo dice que los bonos son «para gente mayor» 👴', '¿Para qué sirven en una cartera?'], '¿Qué le explicas?', [['Para nada, solo las acciones dan dinero', 'Las acciones suelen rendir más a largo plazo, pero los bonos dan ingresos previsibles y suelen amortiguar las caídas.'], ['Dan ingresos previsibles y suelen amortiguar las caídas de la bolsa', '¡Eso! Aunque no siempre: en 2022 cayeron a la vez que las acciones.'], ['Son imposibles de perder', 'Si el emisor no paga, o si vendes cuando han bajado, se puede perder.']], 1, 'Los bonos aportan ingresos y estabilidad, aunque ninguna protección funciona siempre.'),
+      scenario('Tienes 3.000 € que no vas a tocar en 10 años, pero sabes que si ves tu inversión caer un 40 % te pondrás muy nervioso. ¿Qué haces?', [['Lo pongo todo en acciones y procuro no mirar', 'Puede salir bien, pero si en una caída fuerte no aguantas y vendes, conviertes el susto en pérdida.'], ['Pongo una parte en bonos para que las caídas duelan menos, aunque gane algo menos', 'Bien: los bonos suelen amortiguar las caídas. A cambio, a largo plazo se rinde menos.'], ['Lo pongo todo en bonos: así nunca bajará', 'Los bonos también bajan: en 2022 cayeron a la vez que las acciones. Y rinden menos a largo plazo.']], 1, 'Mezclar bonos con acciones cambia algo de rentabilidad por caídas más suaves. Todo en acciones tienta si solo miras lo que se gana, pero solo funciona si aguantas las caídas; todo en bonos no te libra de perder.'),
     ], { source: '2.2', minutes: 6, retire: [1, 2, 4, 6, 8] }),
 
     lesson('u9l2', 'Cupón, precio y TIR', [
+      story('El cupón que engaña', [{ id: 'dani', name: 'Dani' }], [
+        say('dani', 'Mira estos dos bonos. Mismo emisor, y los dos vencen dentro de un año.'),
+        note('Bono A: cupón del 6 %, cuesta 1.030 € (cotiza «a 103»). Bono B: cupón del 2 %, cuesta 990 € («a 99»).'),
+        say('dani', 'Yo me quedo el A, que paga el triple.'),
+        choose('¿Cuál rinde más hasta el vencimiento?', [
+          opt('El A: su cupón es el triple', 'bad', say('lumi', 'Cobra 60 €, pero pierde 30 € al vencimiento: unos **2,91 %**.')),
+          opt('El B: lo compras por debajo de 100', 'good', say('lumi', '¡Bien! 20 € de cupón y 10 € de diferencia: unos **3,03 %**, más que el A.')),
+          opt('Rinden exactamente lo mismo', 'ok', say('lumi', 'Se parecen, pero el B rinde un poco más: 3,03 % frente a 2,91 %.')),
+        ]),
+        say('lumi', 'Para comparar bonos, manda la **TIR**, no el cupón.'),
+      ]),
       play({
         title: 'Un bono a 960 €',
         intro: 'Un bono de **1.000 €** con un cupón del 4 % vence dentro de un año. Su precio depende del **tipo de interés del mercado**.',
@@ -93,18 +105,7 @@ export default unit({
           { say: 'Sube el tipo de interés del mercado', mood: 'HAPPY' },
         ],
       }),
-      story('El cupón que engaña', [{ id: 'dani', name: 'Dani' }], [
-        say('dani', 'Mira estos dos bonos. Mismo emisor, y los dos vencen dentro de un año.'),
-        note('Bono A: cupón del 6 %, cuesta 1.030 € (cotiza «a 103»). Bono B: cupón del 2 %, cuesta 990 € («a 99»).'),
-        say('dani', 'Yo me quedo el A, que paga el triple.'),
-        choose('¿Cuál rinde más hasta el vencimiento?', [
-          opt('El A: su cupón es el triple', 'bad', say('lumi', 'Cobra 60 €, pero pierde 30 € al vencimiento: unos **2,91 %**.')),
-          opt('El B: lo compras por debajo de 100', 'good', say('lumi', '¡Bien! 20 € de cupón y 10 € de diferencia: unos **3,03 %**, más que el A.')),
-          opt('Rinden exactamente lo mismo', 'ok', say('lumi', 'Se parecen, pero el B rinde un poco más: 3,03 % frente a 2,91 %.')),
-        ]),
-        say('lumi', 'Para comparar bonos, manda la **TIR**, no el cupón.'),
-      ]),
-      key('Tres rentabilidades', 'Los bonos cotizan en **% del nominal**: «a 96» son 960 € por cada 1.000 €.\n\n• **Cupón:** sobre el nominal. 40 € de 1.000 € = 4 %.\n• **Rentabilidad corriente:** cupón ÷ precio. 40 € ÷ 960 € = 4,17 %.\n• **TIR:** todo lo que ganas hasta el vencimiento, contando la diferencia de precio. Es la que sirve para comparar.\n\nY para saber si ganas poder de compra, réstale la inflación.', 'La TIR es lo que rinde un bono si lo mantienes hasta el vencimiento y el emisor paga.', 'Compara bonos por su TIR, no por su cupón.'),
+      key('Tres rentabilidades', 'Los bonos cotizan en **% del nominal**: «a 96» son 960 € por cada 1.000 €.\n\n• **Cupón:** sobre el nominal. 40 € de 1.000 € = 4 %.\n• **Rentabilidad corriente:** cupón ÷ precio. 40 € ÷ 960 € = 4,17 %.\n• **TIR:** todo lo que ganas hasta el vencimiento, contando la diferencia de precio. Es la que sirve para comparar.\n\nY para saber si ganas poder de compra, réstale la inflación.', 'La TIR es lo que rinde un bono si lo mantienes hasta el vencimiento y el emisor paga.', 'Pruébalo: en Mercado, filtra por ETF y elige la categoría de renta fija: cada uno reúne muchos bonos.'),
     ], [
       num('Un bono de 1.000 € de nominal cotiza «a 96». ¿Cuánto pagas por él?', 960, '€', '96 % de 1.000 € = 960 €.'),
       num('Bono de 1.000 €, cupón del 5 %, vence dentro de un año. Lo compras a 1.000 €. ¿Cuál es su TIR?', 5, '%', 'Cobras 50 € y recuperas lo que pagaste: 50 ÷ 1.000 = 5 %. Si compras a 100, la TIR coincide con el cupón.'),
@@ -117,7 +118,9 @@ export default unit({
       timed(fill('La rentabilidad que obtienes si mantienes el bono hasta el final se llama ____.', 'TIR', ['TAE', 'TER', 'PER'], 'Tasa interna de rentabilidad: la «rentabilidad a vencimiento».'), 15),
       num('Un bono tiene una TIR del 3 % y la inflación es del 2 %. ¿Cuál es su rentabilidad real aproximada?', 1, '%', '3 − 2 = 1 %. La TIR es nominal: réstale la inflación para saber si ganas poder de compra.'),
       tf('Un bono con cupón del 7 % siempre rinde más que uno con cupón del 3 %.', false, 'Depende del precio al que lo compres: la TIR es la que manda.'),
-    ], { source: '2.2', minutes: 6, retire: [2, 7, 8, 10] }),
+      scenario('Dos bonos del mismo emisor vencen dentro de un año y pagan el mismo cupón del 3 %. Uno cotiza a 100 y el otro a 104. ¿Cuál compras?', [['El de 104: si es más caro, será mejor', 'Mismo emisor, mismo cupón y mismo plazo: pagar más solo te deja menos ganancia.'], ['El de 100: con el mismo cupón, pagar 104 te hace perder 4 € por cada 100 al vencimiento', 'Bien: al vencimiento te devuelven 100 en los dos. Comprar por encima baja la TIR.'], ['Da igual: pagan el mismo cupón', 'El cupón es el mismo, pero no lo que pagas: su TIR es distinta.']], 1, 'Con todo lo demás igual, el bono más barato rinde más hasta el vencimiento. El cupón igual tienta a pensar que rinden igual, pero quien paga 104 solo recupera 100.'),
+      buckets('Sin hacer cuentas: ¿su TIR será mayor o menor que su cupón?', ['TIR mayor que el cupón', 'TIR menor que el cupón'], [['Compras el bono a 95', 0], ['Compras el bono a 103', 1], ['Compras el bono a 98', 0], ['Compras el bono a 110', 1]], 'Por debajo de 100, al vencimiento recibes más de lo que pagaste y la TIR supera al cupón. Por encima de 100, recuperas menos de lo que pagaste y la TIR queda por debajo: un cupón alto no compensa pagar caro.'),
+    ], { source: '2.2', minutes: 6, retire: [0, 2, 3, 7, 8, 9, 10] }),
 
     lesson('u9l3', 'Si suben los tipos, bajan los bonos', [
       play({
@@ -150,7 +153,7 @@ export default unit({
         ]),
         say('lumi', 'Una subida de tipos solo es pérdida si vendes antes o hay impago.'),
       ]),
-      key('2022, el año que cayeron los bonos', 'La **duración** mide cuánto se mueve el precio si cambian los tipos:\n\n**Variación del precio ≈ − duración × cambio de tipos.**\n\nCon duración 7, si los tipos suben 1 punto, el bono cae un 7 % aproximadamente. En 2022 la inflación disparó los tipos y muchos índices de bonos a largo plazo cayeron más de un 20 %.', 'Tipos arriba, bonos abajo; cuanto más largo el bono, más fuerte el golpe.', 'Bonos y tipos juegan al balancín.'),
+      key('2022, el año que cayeron los bonos', 'La **duración** mide cuánto se mueve el precio si cambian los tipos:\n\n**Variación del precio ≈ − duración × cambio de tipos.**\n\nCon duración 7, si los tipos suben 1 punto, el bono cae un 7 % aproximadamente. En 2022 la inflación disparó los tipos y muchos índices de bonos a largo plazo cayeron más de un 20 %.', 'Tipos arriba, bonos abajo; cuanto más largo el bono, más fuerte el golpe.', 'Pruébalo: en Mercado, compara el gráfico de TLT, de bonos a más de 20 años, con el de SHY, de 1 a 3 años.'),
     ], [
       upDown('Enero de 2022: la inflación en EE. UU. está en máximos de casi 40 años y se espera que la Reserva Federal suba los tipos. Este es un ETF de bonos del Tesoro de EE. UU. a más de 20 años. ¿Qué hizo después?', 'hist-rates-2022', 'Los bonos a muy largo plazo tienen mucha duración: su precio es muy sensible a los cambios de tipos, en los dos sentidos.', 'hasta octubre de 2023'),
       single('El banco central sube los tipos. ¿Qué pasa con el precio de los bonos ya emitidos?', ['Sube', 'Baja', 'No cambia'], 1, 'Los nuevos pagan más, así que los antiguos solo se venden más baratos.'),
@@ -162,9 +165,23 @@ export default unit({
       tf('Si mantienes un bono hasta el vencimiento y el emisor paga, una subida de tipos no te hace perder el nominal.', true, 'Al vencimiento recibes el 100 %; lo que pierdes es la oportunidad de haber cobrado más interés.'),
       timed(single('Rápido: tipos abajo, precio de los bonos…', ['Arriba', 'Abajo', 'Igual'], 0, 'Si bajan los tipos, los bonos antiguos con cupones más altos valen más.'), 10),
       match('Empareja cada situación con lo que suele pasar.', [['Suben los tipos', 'Bajan los precios de los bonos'], ['Bajan los tipos', 'Suben los precios de los bonos'], ['Bono con más duración', 'Más sensible a los tipos'], ['Mantener hasta el vencimiento', 'Cobras lo pactado si el emisor paga']], 'Es la regla del balancín, más el papel de la duración y del plazo.'),
-    ], { source: '2.2', minutes: 6, retire: [1, 6, 7, 8] }),
+      scenario('Vas a guardar en bonos un dinero que quizá necesites dentro de un año, y se habla de que los tipos pueden subir. ¿Qué bono te expone menos?', [['Una obligación a 30 años, que paga más', 'Es la más sensible: si los tipos suben y tienes que vender, puede caer mucho.'], ['Una letra o un bono a corto plazo', 'Bien: con poco plazo, su precio apenas se mueve con los tipos y pronto te devuelven el dinero.'], ['Da igual el plazo: todos se mueven igual', 'No: cuanto más largo el bono, más se mueve su precio.']], 1, 'Con un plazo corto, la duración es pequeña y una subida de tipos apenas mueve el precio. El bono largo tienta porque suele pagar más, pero es el que más cae si suben los tipos y tienes que vender.'),
+      buckets('¿Qué le pasa al precio del bono que ya tienes?', ['Sube', 'Baja'], [['El banco central sube los tipos', 1], ['Los bonos nuevos pasan a pagar menos', 0], ['Se esperan bajadas de tipos', 0], ['Los tipos del mercado pasan del 2 % al 4 %', 1]], 'Es el balancín: si los tipos suben, tu bono, con su cupón fijo, solo se vende más barato; si bajan, su cupón resulta más atractivo y su precio sube.'),
+      chat(['He leído que el banco central va a bajar los tipos.', '¿Eso es bueno o malo para los bonos que ya tengo?'], '¿Qué le contestas?', [['Bueno: si bajan los tipos, el precio de tus bonos sube', 'Eso. Y cuanto más largo el bono, más sube.'], ['Malo: cobrarás menos cupón', 'Tu cupón es fijo y no cambia. Lo que cambia es el precio, y sube.'], ['Da igual: los bonos no se mueven', 'Sí se mueven: tipos abajo, precio arriba.']], 0, 'Si los tipos bajan, tu cupón fijo es más atractivo que el de los bonos nuevos y tu bono vale más. Lo tentador es pensar que cobrarás menos, pero eso solo les pasa a los bonos nuevos, no al tuyo.'),
+    ], { source: '2.2', minutes: 6, retire: [1, 2, 3, 4, 6, 7, 8] }),
 
     lesson('u9l4', 'Rating y riesgo de impago', [
+      story('El bono del 14 %', [{ id: 'leo', name: 'Leo' }], [
+        say('leo', 'He encontrado un bono de una empresa que paga un 14 % al año.'),
+        say('leo', 'Es como un depósito, pero mejor. ¡Voy a meter ahí todos mis ahorros!'),
+        note('Las agencias de calificación le ponen a la empresa una nota CCC, de las más bajas.'),
+        choose('¿Qué le dices?', [
+          opt('Genial: el cupón es fijo', 'bad', say('lumi', 'Fijo, si la empresa puede pagarlo. Con CCC, el riesgo de impago es altísimo.')),
+          opt('Ese 14 % es el precio de un riesgo alto de no cobrar', 'good', say('lumi', '¡Eso! El FGD cubre depósitos, no bonos. Uno basura puede no devolver casi nada.')),
+          opt('Mete solo la mitad de tus ahorros', 'ok', say('lumi', 'Mejor, pero sigue siendo muchísimo en un solo emisor tan arriesgado.')),
+        ]),
+        say('lumi', 'Si un bono paga mucho más que los demás, pregúntate qué teme el mercado.'),
+      ]),
       play({
         title: 'La nota del emisor',
         intro: 'Las agencias **S&P, Moody\'s y Fitch** ponen nota a la capacidad de pago de Estados y empresas, de la AAA a la D. Clasifica cada nota.',
@@ -187,18 +204,7 @@ export default unit({
           { say: 'Clasifica cada nota', mood: 'HAPPY' },
         ],
       }),
-      story('El bono del 14 %', [{ id: 'leo', name: 'Leo' }], [
-        say('leo', 'He encontrado un bono de una empresa que paga un 14 % al año.'),
-        say('leo', 'Es como un depósito, pero mejor. ¡Voy a meter ahí todos mis ahorros!'),
-        note('La empresa tiene una nota CCC.'),
-        choose('¿Qué le dices?', [
-          opt('Genial: el cupón es fijo', 'bad', say('lumi', 'Fijo, si la empresa puede pagarlo. Con CCC, el riesgo de impago es altísimo.')),
-          opt('Ese 14 % es el precio de un riesgo alto de no cobrar', 'good', say('lumi', '¡Eso! El FGD cubre depósitos, no bonos. Uno basura puede no devolver casi nada.')),
-          opt('Mete solo la mitad de tus ahorros', 'ok', say('lumi', 'Mejor, pero sigue siendo muchísimo en un solo emisor tan arriesgado.')),
-        ]),
-        say('lumi', 'Si un bono paga mucho más que los demás, pregúntate qué teme el mercado.'),
-      ]),
-      key('Cuando no pagan', 'Quien presta a alguien con peor nota exige más interés. La diferencia frente a un bono muy seguro se llama **prima de riesgo**; en España, la diferencia con el bono alemán a 10 años.\n\nEn 2012, los acreedores privados de Grecia aceptaron una quita de más de la mitad del nominal de sus bonos. Una empresa en quiebra puede no devolver casi nada. Por eso también se diversifica en renta fija.', 'La nota mide el riesgo de impago: a peor nota, más cupón y más riesgo de perder.', 'Un cupón muy alto no es un regalo: es el precio del riesgo de no cobrar.'),
+      key('Cuando no pagan', 'Quien presta a alguien con peor nota exige más interés. La diferencia frente a un bono muy seguro se llama **prima de riesgo**; en España, la diferencia con el bono alemán a 10 años.\n\nEn 2012, los acreedores privados de Grecia aceptaron una quita de más de la mitad del nominal de sus bonos. Una empresa en quiebra puede no devolver casi nada. Por eso también se diversifica en renta fija.', 'La nota mide el riesgo de impago: a peor nota, más cupón y más riesgo de perder.', 'Pruébalo: en Mercado, compara el gráfico de EMB, de bonos de países emergentes, con el de IEF, del Tesoro de EE. UU.'),
     ], [
       match('Empareja cada nota con su significado.', [['AAA', 'Máxima calidad'], ['BBB−', 'Último escalón del grado de inversión'], ['BB', 'Especulativo (high yield)'], ['D', 'Impago']], 'Por encima de BBB− es grado de inversión; por debajo, especulativo.'),
       order('Ordena de mejor a peor calificación.', ['AAA', 'AA', 'A', 'BBB', 'BB', 'D'], 'Las letras bajan de calidad de la AAA a la D (impago).'),
@@ -210,9 +216,21 @@ export default unit({
       multi('¿Qué entidades califican la deuda de Estados y empresas? Marca todas.', ['S&P', 'Moody\'s', 'Fitch', 'La CNMV'], [0, 1, 2], 'La CNMV supervisa los mercados en España, pero no pone notas a los emisores.'),
       num('Del mismo plazo, un bono alemán paga un 2,5 % y uno español un 3,2 %. ¿Cuál es la prima de riesgo en puntos básicos? (1 punto = 100 pb)', 70, 'pb', '3,2 − 2,5 = 0,7 puntos = 70 puntos básicos.'),
       timed(single('Rápido: ¿qué significa una calificación D?', ['Impago', 'Muy segura', 'Sin calificar'], 0, 'D es la nota de un emisor que ya no ha pagado.'), 10),
-    ], { source: '2.2', minutes: 6, retire: [3, 4, 5, 9] }),
+      scenario('Quieres guardar en bonos el dinero de la entrada de un piso para dentro de 5 años. Te ofrecen dos: uno de un emisor con nota AAA y otro de una empresa con nota BB que paga bastante más. ¿Cuál eliges?', [['El de nota BB: paga más', 'Paga más porque el riesgo de no cobrar es mayor, y ese dinero no te lo puedes jugar.'], ['El de nota AAA, aunque pague menos', 'Bien: para un dinero con fecha que no puedes perder, manda la seguridad de cobrar.'], ['Mitad y mitad, para tener de los dos', 'Mejor que todo en BB, pero sigues arriesgando parte de un dinero que necesitas sí o sí.']], 1, 'Un cupón más alto es el precio de un riesgo de impago mayor. Para un dinero que necesitas en una fecha, la nota alta protege lo que importa; el interés extra tienta, pero puede costarte parte de la entrada.'),
+    ], { source: '2.2', minutes: 6, retire: [3, 4, 5, 8, 9] }),
 
     lesson('u9l5', 'Letras del Tesoro y depósitos', [
+      story('La entrada del piso', [{ id: 'laura', name: 'Laura' }], [
+        say('laura', 'Tengo 15.000 € para la entrada de un piso. Firmo dentro de 10 meses.'),
+        say('laura', 'Mi primo dice que en bolsa sacaría mucho más.'),
+        choose('¿Qué le recomiendas?', [
+          opt('Acciones, para que crezca más', 'bad', say('lumi', 'En 10 meses la bolsa puede caer un 20 % justo cuando lo necesite.')),
+          opt('Una letra o un depósito que venza antes de la firma', 'good', say('lumi', '¡Bien! Poco riesgo, y el dinero estará ahí el día que firme.')),
+          opt('Dejarlo en la cuenta al 0 %', 'ok', say('lumi', 'Es seguro, pero renuncia a un interés casi sin riesgo.')),
+        ]),
+        say('laura', '¿Y si mi banco quebrara?'),
+        say('lumi', 'El FGD cubre hasta 100.000 € por titular y entidad: sus 15.000 € estarían cubiertos.'),
+      ]),
       play({
         title: '¿Letra o depósito?',
         intro: 'Dos sitios para el dinero que vas a necesitar pronto: una **letra del Tesoro** o un **depósito a plazo** en un banco. ¿De cuál es cada rasgo?',
@@ -235,18 +253,7 @@ export default unit({
           { say: 'Clasifica cada rasgo', mood: 'HAPPY' },
         ],
       }),
-      story('La entrada del piso', [{ id: 'laura', name: 'Laura' }], [
-        say('laura', 'Tengo 15.000 € para la entrada de un piso. Firmo dentro de 10 meses.'),
-        say('laura', 'Mi primo dice que en bolsa sacaría mucho más.'),
-        choose('¿Qué le recomiendas?', [
-          opt('Acciones, para que crezca más', 'bad', say('lumi', 'En 10 meses la bolsa puede caer un 20 % justo cuando lo necesite.')),
-          opt('Una letra o un depósito que venza antes de la firma', 'good', say('lumi', '¡Bien! Poco riesgo, y el dinero estará ahí el día que firme.')),
-          opt('Dejarlo en la cuenta al 0 %', 'ok', say('lumi', 'Es seguro, pero renuncia a un interés casi sin riesgo.')),
-        ]),
-        say('laura', '¿Y si mi banco quebrara?'),
-        say('lumi', 'El FGD cubre hasta 100.000 € por titular y entidad: sus 15.000 € estarían cubiertos.'),
-      ]),
-      key('Cómo comparar', 'Compara siempre la rentabilidad **anual** (TAE o TIR) neta de comisiones. Los intereses de letras y depósitos tributan en la base del ahorro (desde el 19 %).\n\nNinguno de los dos es para hacerse rico: son para el dinero que necesitarás pronto.', 'Letras y depósitos: poco riesgo y poca rentabilidad, para el corto plazo.', 'Por encima de 100.000 € en un banco, reparte entre varias entidades.'),
+      key('Cómo comparar', 'Compara siempre la rentabilidad **anual** (TAE o TIR) neta de comisiones. Los intereses de letras y depósitos tributan en la base del ahorro (desde el 19 %).\n\nNinguno de los dos es para hacerse rico: son para el dinero que necesitarás pronto. Y por encima de 100.000 € en un banco, reparte entre varias entidades.', 'Letras y depósitos: poco riesgo y poca rentabilidad, para el corto plazo.', 'Pruébalo: en Mercado, busca SGOV, un ETF de letras del Tesoro de EE. UU. a muy corto plazo, y mira lo poco que se mueve.'),
     ], [
       num('Compras una letra a 12 meses por 980 € y al vencimiento recibes 1.000 €. ¿Qué rentabilidad obtienes? (dos decimales)', 2.04, '%', '20 ÷ 980 = 2,04 %.'),
       num('Un depósito de 10.000 € al 2,5 % TAE durante un año. Con la retención del 19 %, ¿cuánto ganas neto?', 202.5, '€', '10.000 × 2,5 % = 250 € brutos; 250 × 0,81 = 202,50 € netos.'),
@@ -258,9 +265,22 @@ export default unit({
       scenario('Laura tiene 15.000 € para la entrada de un piso que comprará dentro de 10 meses. ¿Qué tiene más sentido?', [['Meterlo en acciones para que crezca más', 'En 10 meses la bolsa puede caer un 20 % justo cuando necesite el dinero.'], ['Una letra o un depósito con un plazo que encaje con la fecha', 'Bien: poco riesgo y el dinero disponible cuando lo necesita.'], ['Dejarlo en una cuenta al 0 %', 'Es seguro, pero renuncia a un interés sin apenas riesgo.']], 1, 'El plazo manda: el dinero con fecha cercana no debe depender de la bolsa.'),
       timed(tf('El FGD cubre hasta 100.000 € por titular y por entidad.', true, 'Si tienes más en un mismo banco, el exceso no está cubierto.'), 10),
       fill('Las letras del Tesoro se compran desde ____ €.', '1.000', ['100', '10.000', '50'], 'Es el importe mínimo en las subastas del Tesoro.'),
-    ], { source: '2.2', minutes: 6, retire: [3, 5, 7, 8] }),
+      scenario('Tu banco te ofrece un depósito a 12 meses, pero no sabes si necesitarás el dinero antes. ¿Qué miras antes de firmar?', [['Solo la TAE: cuanto más alta, mejor', 'La TAE importa, pero si lo cancelas antes, la penalización puede comerse el interés.'], ['La penalización por sacarlo antes y si el plazo encaja con cuándo lo necesitarás', 'Bien: un depósito encaja si el plazo coincide con tu plan. Si no, quizá te convenga una letra más corta.'], ['Nada: todos los depósitos son iguales', 'Cambian el tipo, el plazo y la penalización: compáralos.']], 1, 'Un depósito te ata durante un plazo: lo primero es que encaje con cuándo necesitarás el dinero. Fijarse solo en la TAE más alta tienta, pero cancelar antes puede salir caro.'),
+      chat(['Tengo 3.000 € para el viaje de fin de curso, dentro de 6 meses.', '¿Los meto en un ETF de acciones para sacar algo más?'], '¿Qué le contestas?', [['Mejor una letra a 6 meses o un depósito: en 6 meses la bolsa puede caer', 'Eso. Para un dinero con fecha tan cercana, prima que esté ahí.'], ['Sí: en 6 meses seguro que sube', 'Nadie lo sabe. Puede caer justo antes del viaje.'], ['Mejor en bitcoin, que sube más', 'Aún más volátil: podrías quedarte sin viaje.']], 0, 'El plazo manda: en 6 meses la bolsa puede estar abajo justo cuando necesites el dinero. Una letra o un depósito que venza a tiempo rinde poco, pero el dinero estará ahí; la bolsa tienta porque rinde más a largo plazo, no en unos meses.'),
+    ], { source: '2.2', minutes: 6, retire: [0, 1, 3, 5, 7, 8] }),
 
     lesson('u9l6', 'Bonos ligados a la inflación', [
+      story('Protegida… ¿de todo?', [{ id: 'marta', name: 'Marta' }], [
+        note('2021. Marta compra un fondo de bonos ligados a la inflación «para protegerse».'),
+        note('2022. La inflación se dispara… y su fondo cae.'),
+        say('marta', '¡No lo entiendo! Lo compré justo para esto.'),
+        choose('¿Qué ha pasado?', [
+          opt('El fondo es una estafa', 'bad', say('lumi', 'No. Estos bonos también bajan de precio cuando suben los tipos reales.')),
+          opt('Subieron los tipos y eso pesó más que el ajuste por inflación', 'good', say('lumi', '¡Exacto! Protegen el poder de compra hasta el vencimiento, pero su precio se mueve.')),
+          opt('La inflación hunde a los bonos ligados', 'ok', say('lumi', 'Al revés: el ajuste les ayuda. Lo que les pesó fue la subida de tipos.')),
+        ]),
+        say('lumi', 'Un fondo vende bonos antes del vencimiento: por eso sí nota las subidas de tipos.'),
+      ]),
       play({
         title: '¿Y si la inflación se dispara?',
         intro: 'Piensa en un bono normal como una cuenta que paga un **3 %** fijo durante 10 años. Uno ligado a la inflación paga un **1 %** más la inflación.',
@@ -279,18 +299,7 @@ export default unit({
           { say: 'Sube la inflación poco a poco', mood: 'HAPPY' },
         ],
       }),
-      story('Protegida… ¿de todo?', [{ id: 'marta', name: 'Marta' }], [
-        note('2021. Marta compra un fondo de bonos ligados a la inflación «para protegerse».'),
-        note('2022. La inflación se dispara… y su fondo cae.'),
-        say('marta', '¡No lo entiendo! Lo compré justo para esto.'),
-        choose('¿Qué ha pasado?', [
-          opt('El fondo es una estafa', 'bad', say('lumi', 'No. Estos bonos también bajan de precio cuando suben los tipos reales.')),
-          opt('Subieron los tipos y eso pesó más que el ajuste por inflación', 'good', say('lumi', '¡Exacto! Protegen el poder de compra hasta el vencimiento, pero su precio se mueve.')),
-          opt('La inflación hunde a los bonos ligados', 'ok', say('lumi', 'Al revés: el ajuste les ayuda. Lo que les pesó fue la subida de tipos.')),
-        ]),
-        say('lumi', 'Un fondo vende bonos antes del vencimiento: por eso sí nota las subidas de tipos.'),
-      ]),
-      key('Cómo funcionan', 'El bono ajusta su **nominal** con la inflación: con un 3 %, el nominal de 1.000 € pasa a 1.030 € y el cupón se calcula sobre esa cifra. El Tesoro español los liga a la inflación de la **zona euro** (sin tabaco); en EE. UU. se llaman **TIPS**.\n\nNo protegen de las subidas de tipos si vendes antes ni de un impago. Y si la inflación acaba siendo baja, rinden menos que un bono normal.', 'Protegen frente a la inflación inesperada si los mantienes hasta el final, no frente a todo.', 'Ningún activo protege de todo: cada uno cubre un riesgo concreto.'),
+      key('Cómo funcionan', 'El bono ajusta su **nominal** con la inflación: con un 3 %, el nominal de 1.000 € pasa a 1.030 € y el cupón se calcula sobre esa cifra. El Tesoro español los liga a la inflación de la **zona euro** (sin tabaco); en EE. UU. se llaman **TIPS**.\n\nNo protegen de las subidas de tipos si vendes antes ni de un impago. Y si la inflación acaba siendo baja, rinden menos que un bono normal.', 'Protegen frente a la inflación inesperada si los mantienes hasta el final, no frente a todo.', 'Pruébalo: en Mercado, busca TIP, un ETF de bonos ligados a la inflación de EE. UU., y mira qué hizo en 2022.'),
     ], [
       num('Bono ligado a la inflación con nominal de 1.000 €. Este año la inflación es del 3 %. ¿Cuál es el nuevo nominal?', 1030, '€', '1.000 × 1,03 = 1.030 €.'),
       num('Ese bono paga un cupón real del 1 % sobre el nominal ajustado de 1.030 €. ¿Cuánto cobras este año? (dos decimales)', 10.3, '€', '1.030 × 1 % = 10,30 €.'),
@@ -302,6 +311,7 @@ export default unit({
       buckets('Bono ligado a la inflación mantenido hasta el vencimiento: ¿te protege o no?', ['Protege', 'No protege'], [['Una inflación mayor de la esperada', 0], ['Una subida de tipos si tienes que vender antes', 1], ['La pérdida de poder de compra', 0], ['Un impago del emisor', 1]], 'Cubre el riesgo de inflación; no el de tipos si vendes antes ni el de crédito.'),
       timed(fill('En EE. UU., los bonos ligados a la inflación se llaman ____.', 'TIPS', ['ETF', 'REIT', 'CFD'], 'Treasury Inflation-Protected Securities.'), 12),
       chat(['La inflación me da miedo 😱', '¿Con bonos ligados a la inflación ya estoy protegida de todo?'], '¿Qué le dices?', [['Sí, de todo', 'Protegen de la inflación, no de las subidas de tipos ni de un impago.'], ['Protegen de la inflación inesperada si los mantienes hasta el final, pero su precio también se mueve', '¡Bien! Cubren un riesgo concreto, no todos.'], ['No, no protegen de nada', 'Sí protegen el poder de compra si los mantienes hasta el vencimiento.']], 1, 'Cada activo cubre un riesgo concreto; ninguno lo cubre todo.'),
-    ], { minutes: 6, retire: [2, 4, 6, 8] }),
+      scenario('Crees que la inflación de los próximos años será más alta de lo que espera el mercado, y vas a mantener el bono hasta que venza. ¿Cuál eliges?', [['Uno ligado a la inflación', 'Bien: su nominal sube con la inflación. Si es mayor de la esperada, gana al normal.'], ['Uno normal, que paga un cupón más alto', 'Su cupón es fijo: si la inflación sube más de lo previsto, se come su rentabilidad real.'], ['Ninguno: con inflación, los bonos siempre pierden', 'El ligado está pensado justo para eso, si lo mantienes hasta el final.']], 0, 'Si la inflación supera la que espera el mercado, el ajuste del nominal compensa el cupón más bajo del ligado. El cupón más alto del normal tienta, pero es fijo y la inflación lo erosiona.'),
+    ], { minutes: 6, retire: [0, 1, 2, 4, 6, 8] }),
   ],
 })

@@ -10,6 +10,22 @@
    "steps": [
     {
      "texts": [
+      "Canviar de fons",
+      "Pablo",
+      "Tinc 5.000 € en un fons, amb 1.000 € de guany.",
+      "N'he trobat un altre de semblant però més barat. Com m'hi canvio?",
+      "Què li dius?",
+      "Ven, i amb els diners compra el nou",
+      "En vendre tributa pels 1.000 € de guany: uns 190 € per a Hisenda.",
+      "Demana un traspàs del fons vell al nou",
+      "Això! A Espanya el traspàs no tributa. Pagarà quan ho vengui tot.",
+      "Espera a no tenir guanys",
+      "Podria esperar anys. Amb un traspàs es canvia avui, sense pagar.",
+      "Compte: perquè sigui un traspàs, els diners no poden passar pel teu compte."
+     ]
+    },
+    {
+     "texts": [
       "Qui fa què?",
       "Un **fons d'inversió** reuneix els diners de milers de persones, que compren **participacions**, i els inverteix segons una política. Qui fa cada cosa?",
       "Gestora",
@@ -34,26 +50,10 @@
      ]
     },
     {
-     "texts": [
-      "Canviar de fons",
-      "Pablo",
-      "Tinc 5.000 € en un fons, amb 1.000 € de guany.",
-      "N'he trobat un altre de semblant però més barat. Com m'hi canvio?",
-      "Què li dius?",
-      "Ven, i amb els diners compra el nou",
-      "En vendre tributa pels 1.000 € de guany: uns 190 € per a Hisenda.",
-      "Demana un traspàs del fons vell al nou",
-      "Això! A Espanya el traspàs no tributa. Pagarà quan ho vengui tot.",
-      "Espera a no tenir guanys",
-      "Podria esperar anys. Amb un traspàs es canvia avui, sense pagar.",
-      "Compte: perquè sigui un traspàs, els diners no poden passar pel teu compte."
-     ]
-    },
-    {
      "title": "Activa o indexada",
-     "body": "Hi ha fons de **gestió activa** (el gestor tria per intentar batre l'índex) i **indexats** (copien un índex amb costos baixos).\n\nEl preu de cada participació, el **valor liquidatiu**, es calcula un cop al dia. I un fons no garanteix guanys: el seu valor puja i baixa amb el que té a dins.",
+     "body": "Hi ha fons de **gestió activa** (el gestor tria per intentar batre l'índex) i **indexats** (copien un índex amb costos baixos).\n\nEl preu de cada participació, el **valor liquidatiu**, es calcula un cop al dia. I un fons no garanteix guanys: el seu valor puja i baixa amb el que té a dins.\n\nEl traspàs entre fons és canviar de carril sense pagar peatge.",
      "key": "Un fons reuneix els diners de molts per comprar molts actius, amb una gestora al capdavant.",
-     "tip": "El traspàs entre fons és canviar de carril sense pagar peatge."
+     "tip": "Prova-ho: a Mercat, cerca IWDA, un ETF que copia l'índex MSCI World, i afegeix-lo a Preferits."
     }
    ]
   },
@@ -89,15 +89,32 @@
     },
     {
      "title": "L'aritmètica de Sharpe",
-     "body": "1. Tots els inversors junts **són** el mercat.\n2. Abans de costos, l'inversor actiu mitjà guanya el mateix que el mercat.\n3. Després de costos, **ha de** guanyar menys.\n\nNo és que els gestors siguin dolents: competeixen entre ells i cobren més. SPIVA (Europa, tancament del 2025): en només **1 any**, el **81,8 %** dels fons d'accions europees ja va quedar per darrere del seu índex. Buffett va guanyar una aposta de 10 anys amb un indexat de l'S&P 500 davant d'una selecció de *hedge funds*.",
+     "body": "1. Tots els inversors junts **són** el mercat.\n2. Abans de costos, l'inversor actiu mitjà guanya el mateix que el mercat.\n3. Després de costos, **ha de** guanyar menys.\n\nNo és que els gestors siguin dolents: competeixen entre ells i cobren més. SPIVA (Europa, tancament del 2025): en només **1 any**, el **81,8 %** dels fons d'accions europees ja va quedar per darrere del seu índex. Buffett va guanyar una aposta de 10 anys amb un indexat de l'S&P 500 davant d'una selecció de *hedge funds*. Si gairebé ningú no bat l'índex, comprar l'índex ja et posa per davant de gairebé tothom.",
      "key": "A llarg termini, la gran majoria de fons actius rendeix menys que el seu índex, sobretot pels costos.",
-     "tip": "Si gairebé ningú no bat l'índex, comprar l'índex ja et posa per davant de gairebé tothom."
+     "tip": "Prova-ho: al simulador, compra una mica de CSPX, un ETF que copia l'S&P 500, i deixa'l créixer."
     }
    ]
   },
   "u10l5": {
    "title": "Acumulació o distribució",
    "steps": [
+    {
+     "texts": [
+      "Veure els diners",
+      "Lucía",
+      "Prefereixo el de distribució: així «veig» els diners.",
+      "Amb el d'acumulació sembla que no guanyo res.",
+      "La Lucía té 10.000 € en un fons que reparteix un 3 % en dividends.",
+      "Què li dius?",
+      "Tens raó, el d'acumulació no dona res",
+      "Sí que dona: els seus 300 € es reinverteixen i les seves participacions valen més.",
+      "Guanyes el mateix, només que reinvertit, i pagues impostos més tard",
+      "Això! Amb el de distribució cobraria 300 €, però després de la retenció n'hi arribarien 243.",
+      "Tant és, tria el que vulguis",
+      "Abans d'impostos rendeixen igual. Si no necessites les rendes, sol guanyar el d'acumulació.",
+      "No veure els diners no vol dir no guanyar-los."
+     ]
+    },
     {
      "texts": [
       "Acc o Dist?",
@@ -123,33 +140,32 @@
      ]
     },
     {
-     "texts": [
-      "Veure els diners",
-      "Lucía",
-      "Prefereixo el de distribució: així «veig» els diners.",
-      "Amb el d'acumulació sembla que no guanyo res.",
-      "La Lucía té 10.000 € en un fons que reparteix un 3 % en dividends.",
-      "Què li dius?",
-      "Tens raó, el d'acumulació no dona res",
-      "Sí que dona: els seus 300 € es reinverteixen i les seves participacions valen més.",
-      "Guanyes el mateix, només que reinvertit, i pagues impostos més tard",
-      "Això! Amb el de distribució cobraria 300 €, però després de la retenció n'hi arribarien 243.",
-      "Tant és, tria el que vulguis",
-      "Abans d'impostos rendeixen igual. Si no necessites les rendes, sol guanyar el d'acumulació.",
-      "No veure els diners no vol dir no guanyar-los."
-     ]
-    },
-    {
      "title": "Quin encaixa en cada fase",
      "body": "Per **acumular** patrimoni durant anys, el d'acumulació sol ser més eficient: els 300 € continuen treballant. El de distribució té sentit si **necessites rendes** (per exemple, a la jubilació).\n\nNo és que un rendeixi més: canvia quan pagues impostos.",
      "key": "Acumular reinverteix i ajorna impostos; distribuir et paga rendes que tributen cada any.",
-     "tip": "Mira el nom de l'ETF: «Acc» o «Dist» et diu quin és."
+     "tip": "Prova-ho: a Mercat, cerca Vanguard FTSE All-World i en trobaràs les dues versions, Acc i Dist."
     }
    ]
   },
   "u10l6": {
    "title": "Rèplica física i sintètica",
    "steps": [
+    {
+     "texts": [
+      "Dos ETF del mateix índex",
+      "Ana",
+      "Dubto entre dos ETF del mateix índex. Un de físic, amb un TER del 0,07 %. Un altre de sintètic, del 0,05 %.",
+      "Em quedo el més barat i llestos, no?",
+      "Què més hauria de mirar?",
+      "Res: el més barat, sempre",
+      "El TER importa, però també quant es desvia de debò de l'índex i la seva mida.",
+      "La diferència de seguiment real, la mida i el tipus de rèplica",
+      "Molt bé! Són les peces per comparar dos ETF del mateix índex.",
+      "Quants anys fa que és al mercat",
+      "Ajuda una mica, però la clau és quant es desvia i la seva mida.",
+      "Dos ETF del mateix índex no són idèntics: mira quant es desvia cadascun."
+     ]
+    },
     {
      "texts": [
       "Física o sintètica?",
@@ -175,32 +191,34 @@
      ]
     },
     {
-     "texts": [
-      "Dos ETF del mateix índex",
-      "Ana",
-      "Dubto entre dos ETF del mateix índex. Un de físic, amb un TER del 0,07 %. Un altre de sintètic, del 0,05 %.",
-      "Em quedo el més barat i llestos, no?",
-      "Què més hauria de mirar?",
-      "Res: el més barat, sempre",
-      "El TER importa, però també quant es desvia de debò de l'índex i la seva mida.",
-      "La diferència de seguiment real, la mida i el tipus de rèplica",
-      "Molt bé! Són les peces per comparar dos ETF del mateix índex.",
-      "Quants anys fa que és al mercat",
-      "Ajuda una mica, però la clau és quant es desvia i la seva mida.",
-      "Dos ETF del mateix índex no són idèntics: mira quant es desvia cadascun."
-     ]
-    },
-    {
      "title": "Quant es desvia",
      "body": "La **diferència de seguiment** (*tracking difference*) és el que l'ETF queda per darrere (o per davant) del seu índex en un any. Sol assemblar-se al TER.\n\nLa sintètica pot seguir l'índex amb molta precisió i, en alguns casos, estalviar impostos. Mira la diferència de seguiment juntament amb la mida de l'ETF i el seu tipus de rèplica.",
      "key": "Física: compra el que hi ha a l'índex. Sintètica: un banc li paga el que fa l'índex.",
-     "tip": "Cap rèplica no és dolenta: l'important és entendre quin risc afegeix cadascuna."
+     "tip": "Prova-ho: a Mercat, cerca IWDA i XDWD: dos ETF de gestores diferents que copien el mateix MSCI World."
     }
    ]
   },
   "u10l7": {
    "title": "Llegir la fitxa d'un fons (KID)",
    "steps": [
+    {
+     "texts": [
+      "«És una oportunitat»",
+      "Laura",
+      "Comercial",
+      "Laura, això és una oportunitat. Cal entrar-hi ja.",
+      "La fitxa oficial del producte, el KID, diu: indicador de risc 7. Període de manteniment recomanat: 1 dia.",
+      "L'objectiu del producte no l'acabo d'entendre…",
+      "Què fa la Laura?",
+      "El compra: si té KID, és segur",
+      "Tenir KID només vol dir que informa, no que sigui adequat per a ella.",
+      "No el compra mentre no entengui què és i quant pot perdre",
+      "Molt bé! Risc 7 i un termini d'un dia: producte complex i especulatiu.",
+      "En compra una mica per provar",
+      "Provar amb una cosa que no entens no és aprendre: és apostar.",
+      "El KID serveix per a això: veure en un minut que una cosa no és per a tu."
+     ]
+    },
     {
      "texts": [
       "És al KID?",
@@ -226,28 +244,10 @@
      ]
     },
     {
-     "texts": [
-      "«És una oportunitat»",
-      "Laura",
-      "Comercial",
-      "Laura, això és una oportunitat. Cal entrar-hi ja.",
-      "El KID diu: indicador de risc 7. Període de manteniment recomanat: 1 dia.",
-      "L'objectiu del producte no l'acabo d'entendre…",
-      "Què fa la Laura?",
-      "El compra: si té KID, és segur",
-      "Tenir KID només vol dir que informa, no que sigui adequat per a ella.",
-      "No el compra mentre no entengui què és i quant pot perdre",
-      "Molt bé! Risc 7 i un termini d'un dia: producte complex i especulatiu.",
-      "En compra una mica per provar",
-      "Provar amb una cosa que no entens no és aprendre: és apostar.",
-      "El KID serveix per a això: veure en un minut que una cosa no és per a tu."
-     ]
-    },
-    {
      "title": "El que busques en un minut",
-     "body": "1. **ISIN:** el DNI del fons (12 caràcters; comença pel país, com IE o LU).\n2. **Objectiu i política:** què compra?\n3. **Indicador de risc** (1-7): un monetari sol estar a l'1; un d'accions mundials, cap al 4; un d'un sol sector o d'emergents, més amunt.\n4. **Costos** anuals.\n5. **Període de manteniment recomanat.**",
+     "body": "1. **ISIN:** el DNI del fons (12 caràcters; comença pel país, com IE o LU).\n2. **Objectiu i política:** què compra?\n3. **Indicador de risc** (1-7): un monetari sol estar a l'1; un d'accions mundials, cap al 4; un d'un sol sector o d'emergents, més amunt.\n4. **Costos** anuals.\n5. **Període de manteniment recomanat.**\n\nSi no entens el KID d'un producte, no el compris.",
      "key": "El KID et diu en 3 pàgines què compres, quant de mal pot fer i quant costa.",
-     "tip": "Si no entens el KID d'un producte, no el compris."
+     "tip": "Prova-ho: pregunta a la professora Lumi què mirar en un ETF abans de comprar-lo."
     }
    ]
   },
@@ -257,18 +257,6 @@
   }
  },
  "questions": {
-  "u10l1-2": {
-   "prompt": "Un fons té un valor liquidatiu de 12,50 €. Inverteixes 1.000 €. Quantes participacions compres?",
-   "options": [],
-   "explanation": "1.000 ÷ 12,50 = 80 participacions.",
-   "unit": "participacions"
-  },
-  "u10l1-3": {
-   "prompt": "Un any després el valor liquidatiu és de 13,75 €. Quant valen les teves 80 participacions?",
-   "options": [],
-   "explanation": "80 × 13,75 = 1.100 €: un 10 % més.",
-   "unit": "€"
-  },
   "u10l1-4": {
    "prompt": "Si la gestora del fons fa fallida, què passa amb els teus diners?",
    "options": [
@@ -311,6 +299,38 @@
    ],
    "explanation": "Un fons d'inversió normal no garanteix guanys: el seu valor puja i baixa amb el que té a dins."
   },
+  "u10l1-11": {
+   "prompt": "L'Ana vol invertir 50 € al mes en empreses de tot el món. Què li encaixa més?",
+   "options": [
+    "Un fons o ETF indexat mundial",
+    "L'acció que més ha pujat aquest any",
+    "Comprar cada mes una acció solta diferent"
+   ],
+   "explanation": "Un fons reuneix els diners de molts i et dona milers d'empreses amb pocs diners. Anar comprant accions soltes sembla més controlat, però amb pocs diners diversifiques malament i pagues més comissions.",
+   "feedback": [
+    "Bé: amb cada aportació compra un trosset de milers d'empreses, amb costos baixos.",
+    "Tot a una sola empresa, triada pel que ja ha pujat: molt de risc.",
+    "Amb 50 € al mes trigaria anys a estar repartida, i pagaria una comissió per cada compra."
+   ]
+  },
+  "u10l1-12": {
+   "prompt": "Què li contestes?",
+   "options": [
+    "Si el ven un banc, és segur",
+    "Un fons puja i baixa amb el que té a dins: no garanteix guanys",
+    "No perden: la CNMV ho garanteix"
+   ],
+   "explanation": "Un fons normal no garanteix res: val el que valen els seus actius. Que el vengui un banc o el supervisi la CNMV dona seguretat sobre les regles i la custòdia, no sobre la rendibilitat.",
+   "feedback": [
+    "El banc el ven, però el seu valor depèn del que compra el fons.",
+    "Això. I l'FGD no cobreix els fons d'inversió.",
+    "La CNMV supervisa els fons, però no garanteix que guanyin."
+   ],
+   "lines": [
+    "El banc m'ofereix un fons i diu que «sempre acaba guanyant».",
+    "Els fons no perden mai?"
+   ]
+  },
   "u10l4-1": {
    "prompt": "Segons SPIVA (Europa, tancament del 2025), quin percentatge de fons d'accions europees va quedar per darrere del seu índex en 10 anys?",
    "options": [
@@ -319,12 +339,6 @@
     "Un 65 %"
    ],
    "explanation": "En 1 any ja era el 81,8 %; a 10 anys, gairebé tots."
-  },
-  "u10l4-2": {
-   "prompt": "De 100 fons actius d'accions europees, quants van batre el seu índex en 10 anys, segons aquest 97 %?",
-   "options": [],
-   "explanation": "100 − 97 = 3. I el problema de debò és trobar aquests 3 per endavant.",
-   "unit": "fons"
   },
   "u10l4-3": {
    "prompt": "Ordena el raonament de William Sharpe.",
@@ -365,6 +379,24 @@
    ],
    "explanation": "Alguns sí que el baten; el problema és que són pocs i gairebé impossibles d'identificar per endavant."
   },
+  "u10l4-11": {
+   "prompt": "Què li contestes?",
+   "options": [
+    "Sí: si ho diu el banc, serà veritat",
+    "Abans compara'l amb un indexat barat del mateix mercat i mira si de debò l'ha batut molts anys",
+    "Sí, i com més cobri, millor gestor"
+   ],
+   "explanation": "Segons SPIVA, gairebé tots els fons actius queden per darrere del seu índex a 10 anys, i els seus costos es repeteixen cada any. Refiar-se del banc tempta, però qui te'l ven cobra per fer-ho.",
+   "feedback": [
+    "El banc cobra per vendre'l. La majoria d'actius no bat el seu índex.",
+    "Això. I recorda: aquest 1,8 % el pagues cada any, guanyi o perdi.",
+    "Cobrar més no et fa millor: els costos resten cada any."
+   ],
+   "lines": [
+    "El meu banc em recomana el seu fons estrella: cobra un 1,8 % l'any.",
+    "Diu que el seu gestor bat el mercat. El contracto?"
+   ]
+  },
   "u10l5-1": {
    "prompt": "Relaciona cada terme amb el seu significat.",
    "options": [
@@ -380,12 +412,6 @@
     "El 19 % que es descompta en cobrar",
     "Reinverteix els dividends"
    ]
-  },
-  "u10l5-2": {
-   "prompt": "Un ETF de distribució et paga 400 € de dividends aquest any. Amb una retenció del 19 %, quant t'arriba?",
-   "options": [],
-   "explanation": "400 × 0,81 = 324 €. Els altres 76 € van a Hisenda aquest any.",
-   "unit": "€"
   },
   "u10l5-3": {
    "prompt": "A Espanya, quina versió sol ser més eficient fiscalment per acumular patrimoni durant anys?",
@@ -410,12 +436,6 @@
     "Al revés: la Marta hauria de vendre participacions per tenir rendes i en Pablo pagaria impostos sense necessitat."
    ]
   },
-  "u10l5-7": {
-   "prompt": "Inverteixes 10.000 € en un fons d'acumulació que cobra un 3 % anual en dividends i els reinverteix. Sense comptar pujades de preu, quant tindries al cap de 2 anys? (arrodoneix)",
-   "options": [],
-   "explanation": "10.000 × 1,03² = 10.609 €. Els dividends reinvertits també generen dividends.",
-   "unit": "€"
-  },
   "u10l5-10": {
    "prompt": "El que reparteix un fons de distribució tributa l'any en què el ____.",
    "options": [
@@ -425,6 +445,20 @@
     "cobres"
    ],
    "explanation": "Per això, si no necessites aquestes rendes, pagues impostos abans d'hora."
+  },
+  "u10l5-11": {
+   "prompt": "A Mercat trobes Vanguard FTSE All-World en dues versions, Acc i Dist. Tens 22 anys i aportaràs cada mes durant dècades. Quina tries?",
+   "options": [
+    "L'Acc, que reinverteix els dividends",
+    "La Dist, per anar cobrant els dividends",
+    "Tant fa: són fons diferents"
+   ],
+   "explanation": "Si no necessites rendes, l'Acc deixa que els dividends es reinverteixin sense passar per Hisenda cada any. Cobrar amb la Dist tempta perquè «veus» els diners, però aquest ingrés tributa i deixa de component-se.",
+   "feedback": [
+    "Bé: tot continua component-se i no pagues impostos pels dividends fins que vens.",
+    "Els cobraries, però tributaries cada any per unes rendes que no necessites.",
+    "Tenen les mateixes empreses a dins: només canvia què fan amb els dividends."
+   ]
   },
   "u10l6-1": {
    "prompt": "Què és cert d'un ETF de rèplica física? Marca-ho tot.",
@@ -471,12 +505,6 @@
     "Compra tots els valors de l'índex"
    ]
   },
-  "u10l6-6": {
-   "prompt": "Un índex puja un 10,00 % en un any i l'ETF que el replica, un 9,78 %. Quina és la diferència de seguiment en punts?",
-   "options": [],
-   "explanation": "10,00 − 9,78 = 0,22 punts, en línia amb el que costa un ETF barat.",
-   "unit": "punts"
-  },
   "u10l6-10": {
    "prompt": "En un ETF sintètic, el banc amb què signa el swap es diu ____.",
    "options": [
@@ -487,6 +515,20 @@
    ],
    "explanation": "Si la contrapart falla, l'ETF pot perdre fins al que li degui, que UCITS limita al 10 %."
   },
+  "u10l6-11": {
+   "prompt": "Llegeixes que el banc amb què el teu ETF sintètic signa el swap té problemes. Què fas?",
+   "options": [
+    "Res: un ETF no pot perdre per això",
+    "Comprovo la seva exposició al banc i les seves garanties abans de decidir",
+    "Ho venc tot ara mateix, abans de perdre-ho tot"
+   ],
+   "explanation": "El risc de la sintètica és la contrapart, però està acotat: com a màxim un 10 % del fons, i amb garanties. Vendre en pànic tempta, però suposa un risc molt més gran del real; ignorar-lo del tot també és un error.",
+   "feedback": [
+    "Sí que pot perdre alguna cosa: és justament el risc propi de la rèplica sintètica.",
+    "Bé: UCITS limita l'exposició a la contrapart al 10 % i l'ETF té una cistella d'actius com a garantia.",
+    "No ho perdries tot: la norma limita el que l'ETF pot tenir en joc amb aquest banc."
+   ]
+  },
   "u10l7-1": {
    "prompt": "Extracte d'un KID (fictici): «Fons Exemple Mundial, classe Acc. ISIN IE00XXXXXXXX. Objectiu: replicar l'índex MSCI World. Indicador de risc: 4 de 7. Costos corrents: 0,20 % anual. Període de manteniment recomanat: 5 anys». Quin nivell de risc indica?",
    "options": [
@@ -495,12 +537,6 @@
     "Molt baix: 4 sobre 100"
    ],
    "explanation": "Un 4 de 7 és habitual en un fons d'accions mundials: oscil·la força, però està diversificat."
-  },
-  "u10l7-2": {
-   "prompt": "Extracte d'un KID (fictici): «Fons Exemple Mundial, classe Acc. ISIN IE00XXXXXXXX. Objectiu: replicar l'índex MSCI World. Indicador de risc: 4 de 7. Costos corrents: 0,20 % anual. Període de manteniment recomanat: 5 anys». Si inverteixes 5.000 €, quant pagaràs l'any en costos corrents?",
-   "options": [],
-   "explanation": "5.000 × 0,20 % = 10 € l'any.",
-   "unit": "€"
   },
   "u10l7-3": {
    "prompt": "Què trobaràs sempre en un KID? Marca-ho tot.",
@@ -547,6 +583,20 @@
     "ISIN"
    ],
    "explanation": "Amb l'ISIN trobes el fons exacte en qualsevol bròquer o a la CNMV."
+  },
+  "u10l7-11": {
+   "prompt": "Compares el KID de dos fons que copien l'MSCI World. Tots dos tenen un indicador de risc 4. Un costa un 0,20 % l'any i l'altre, un 1,80 %. El mantindràs 20 anys. Quin tries?",
+   "options": [
+    "El de l'1,80 %: si costa més, serà millor",
+    "Tant fa: és poca diferència",
+    "El del 0,20 %"
+   ],
+   "explanation": "Si dos fons compren el mateix, el cost és el que més els diferencia. Pensar que més car és millor tempta, però en un indexat el cost extra només resta.",
+   "feedback": [
+    "Copien el mateix índex: pagar més no et dona més, només et deixa menys.",
+    "En un any sembla poc, però en 20 anys es menja una part gran del que has guanyat.",
+    "Bé: mateix índex i mateix risc; la diferència de costos es repeteix cada any durant 20 anys."
+   ]
   }
  }
 }

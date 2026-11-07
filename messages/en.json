@@ -284,7 +284,10 @@
     "continueNext": "Next: {title}",
     "continueBtn": "Continue",
     "sectionNeeds": "Opens when you pass the final challenge of: {needs}",
-    "tryMaxFree": "Try Max for free"
+    "tryMaxFree": "Try Max for free",
+    "testOutTitle": "Already know this? Test out",
+    "testOutBody": "A 10-question test. Score 80 % and the unit is done: move on to the next one.",
+    "testOutBodyFree": "A 10-question test. Score 80 % and the unit is done, and another unit opens for free."
   },
   "lesson": {
     "close": "Close lesson",
@@ -425,7 +428,13 @@
     "seeAnswers": "See answers",
     "seeAnswersMisses": "See answers ({n, plural, one {# miss} other {# misses}})",
     "hideAnswers": "Hide answers",
-    "dayStreak": "{n, plural, one {#-day} other {#-day}} streak"
+    "dayStreak": "{n, plural, one {#-day} other {#-day}} streak",
+    "mixedReview": "Review from an earlier lesson",
+    "testOutPassed": "Unit passed",
+    "testOutFailed": "Not quite yet",
+    "testOutPassedBody": "It’s done: move on to the next unit.",
+    "testOutFailedBody": "You need 80 %. Take the unit’s lessons and try again whenever you like.",
+    "s0Done": "You know how to invest now. Next step: analyse like a professional."
   },
   "market": {
     "title": "Market",

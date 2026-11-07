@@ -11,7 +11,7 @@
     {
      "texts": [
       "¿Foso o no?",
-      "Sin una ventaja que la proteja, la competencia se come los beneficios. Buffett lo llama **foso**. ¿Cuáles lo son?",
+      "¿Por qué sigues en WhatsApp aunque salga una app mejor? Porque están tus amigos: eso es un **foso**, como lo llama Buffett, una ventaja que la competencia no puede copiar.",
       "Es foso",
       "No es foso",
       "Un medicamento con patente",
@@ -55,7 +55,8 @@
     {
      "title": "Cómo se ve un foso en los números",
      "body": "• Márgenes y ROIC **altos y estables** durante 10 años.\n• Puede **subir precios** sin perder clientes, incluso con inflación.\n• Mantiene o gana **cuota de mercado**.",
-     "key": "Un buen negocio necesita un foso; una buena inversión necesita, además, un buen precio."
+     "key": "Un buen negocio necesita un foso; una buena inversión necesita, además, un buen precio.",
+     "tip": "Pruébalo: pregúntale a Lumi qué foso tiene una app que uses cada día."
     }
    ]
   },
@@ -65,7 +66,7 @@
     {
      "texts": [
       "¿Cíclico o defensivo?",
-      "Cuando la economía va bien, casi todo vende. Cuando va mal, no todo cae igual. Clasifica cada negocio.",
+      "Si mañana te quedaras sin trabajo, seguirías comprando comida, pero aplazarías el viaje de verano. A las empresas les pasa igual en una crisis: clasifica cada negocio.",
       "Cíclico",
       "Defensivo",
       "Fabricante de coches",
@@ -109,7 +110,8 @@
     {
      "title": "El ciclo económico",
      "body": "1. **Recuperación:** tipos bajos, la economía empieza a crecer.\n2. **Expansión:** empleo alto y beneficios al alza; puede aparecer la inflación.\n3. **Desaceleración:** suben los tipos y se frena el crecimiento.\n4. **Recesión:** cae el PIB (técnicamente, dos trimestres seguidos) y sube el paro.\n\nLa bolsa suele caer **antes** de una recesión y subir **antes** de que termine: en marzo de 2009 y en marzo de 2020 tocó fondo con noticias terribles.",
-     "key": "La bolsa no mira el presente: mira lo que espera dentro de 6 o 12 meses."
+     "key": "La bolsa no mira el presente: mira lo que espera dentro de 6 o 12 meses.",
+     "tip": "Pruébalo: en Mercado, mira el sector de Inditex y el de Iberdrola: ¿cuál es defensivo?"
     }
    ]
   },
@@ -180,7 +182,8 @@
     {
      "title": "El precio del dinero",
      "body": "• **BCE:** objetivo de inflación del **2 %** a medio plazo.\n• **Reserva Federal:** precios estables y máximo empleo.\n\nEl tipo de referencia del BCE es la **facilidad de depósito**: en junio de 2026 lo subió al **2,25 %**. Consulta el valor vigente en ecb.europa.eu, porque cambia varias veces al año.",
-     "key": "Cuando el dinero se encarece, el futuro vale menos."
+     "key": "Cuando el dinero se encarece, el futuro vale menos.",
+     "tip": "Pruébalo: busca en Mercado el ETF TLT de bonos largos y mira su 2022."
     }
    ]
   },
@@ -235,7 +238,8 @@
     {
      "title": "El calendario económico",
      "body": "• **IPC/IPCA:** inflación. Decide los tipos.\n• **PIB:** crecimiento de la economía.\n• **Empleo:** en EE. UU., las nóminas no agrícolas del primer viernes de cada mes; en España, la EPA y el paro registrado.\n• **PMI:** encuesta mensual a gestores de compras. **Por encima de 50 = expansión.** Se adelanta al PIB.\n• **Decisiones de tipos** del BCE y la Fed.",
-     "key": "El mercado no reacciona a si el dato es bueno o malo, sino a si es mejor o peor de lo esperado."
+     "key": "El mercado no reacciona a si el dato es bueno o malo, sino a si es mejor o peor de lo esperado.",
+     "tip": "Pruébalo: el primer viernes del mes, mira en Mercado cómo reacciona el S&P 500."
     }
    ]
   },
@@ -293,7 +297,8 @@
     {
      "title": "Muchas no llegan",
      "body": "• Sin beneficio, el PER no sirve. Se mira el **precio/ventas**: capitalización ÷ ventas.\n• Las pequeñas pueden multiplicarse… o desaparecer. Más de la mitad de las acciones de EE. UU. desde 1926 rindió menos que las letras del Tesoro.\n• Son de las que más sufren cuando suben los tipos.",
-     "key": "En una empresa sin beneficios, la pregunta clave es si llegará a ganar dinero antes de quedarse sin caja."
+     "key": "En una empresa sin beneficios, la pregunta clave es si llegará a ganar dinero antes de quedarse sin caja.",
+     "tip": "Pruébalo: pregúntale a Lumi cómo se calculan los meses de caja de una empresa."
     }
    ]
   },
@@ -349,7 +354,8 @@
     {
      "title": "La lista de 10 preguntas",
      "body": "1. ¿Entiendo cómo gana dinero?\n2. ¿Crece?\n3. ¿Es rentable (márgenes, ROE, ROIC)?\n4. ¿Genera caja?\n5. ¿Está sana (deuda)?\n6. ¿Tiene foso?\n7. ¿Quién la dirige?\n8. ¿Está cara?\n9. ¿Qué puede salir mal?\n10. ¿Qué me haría vender?",
-     "key": "Si no puedes explicar en tres frases por qué compras una empresa, aún no estás listo para comprarla."
+     "key": "Si no puedes explicar en tres frases por qué compras una empresa, aún no estás listo para comprarla.",
+     "tip": "Pruébalo: elige una empresa en Mercado y repasa con Lumi las 10 preguntas."
     }
    ]
   },
@@ -427,12 +433,6 @@
     "Microsoft en 2000 también tenía foso, y quien compró en el máximo tardó unos 16 años en recuperar.",
     "No garantiza nada; solo indica expectativas muy altas."
    ]
-  },
-  "u18l1-9": {
-   "prompt": "Microsoft tardó unos 16 años en recuperar su máximo de 2000. Si la inflación hubiera sido del 2 % anual, ¿cuánto poder de compra habría perdido quien recuperó justo ese precio? (en %)",
-   "options": [],
-   "explanation": "1 ÷ 1,02¹⁶ ≈ 0,728: un 27 % menos de poder de compra en 16 años, sin contar dividendos.",
-   "unit": "%"
   },
   "u18l1-10": {
    "prompt": "¿Qué le contestas a Lumi?",
@@ -518,12 +518,6 @@
     "Eléctricas"
    ],
    "explanation": "La construcción es muy cíclica."
-  },
-  "u18l2-10": {
-   "prompt": "En una recesión, un sector cíclico cae un 40 %. ¿Cuánto tiene que subir después para volver a su nivel?",
-   "options": [],
-   "explanation": "1 ÷ 0,60 ≈ 1,667 → +66,7 %. Un defensivo que cae un 15 % solo necesita un +17,6 %.",
-   "unit": "%"
   },
   "u18l3-1": {
    "prompt": "Enero de 2022: la inflación en EE. UU. está en máximos de casi 40 años y la Fed prepara subidas de tipos. Este es un ETF de bonos del Tesoro de EE. UU. a más de 20 años. ¿Qué hizo después?",
@@ -667,30 +661,6 @@
    ],
    "explanation": "Sin sorpresa, no hay mucho que ajustar."
   },
-  "u18l5-1": {
-   "prompt": "Una empresa tiene 90 M€ en caja y quema 7,5 M€ al mes. ¿Cuántos meses de caja tiene?",
-   "options": [],
-   "explanation": "90 ÷ 7,5 = 12 meses.",
-   "unit": "meses"
-  },
-  "u18l5-2": {
-   "prompt": "Capitaliza 3.000 M€ y vende 200 M€ al año. ¿Cuál es su precio/ventas?",
-   "options": [],
-   "explanation": "3.000 ÷ 200 = 15: pagas 15 años de ventas, no de beneficios.",
-   "unit": "veces"
-  },
-  "u18l5-3": {
-   "prompt": "Tienes 1 millón de acciones de una empresa con 100 millones (el 1 %). Amplía capital con 25 millones de acciones nuevas y no acudes. ¿Qué porcentaje tienes ahora?",
-   "options": [],
-   "explanation": "1 ÷ 125 = 0,8 %. Tu parte se ha reducido un 20 %.",
-   "unit": "%"
-  },
-  "u18l5-4": {
-   "prompt": "Una empresa vendió 50 M€ el año pasado y este año vende 80 M€. ¿Cuánto han crecido sus ventas?",
-   "options": [],
-   "explanation": "(80 − 50) ÷ 50 = 60 %.",
-   "unit": "%"
-  },
   "u18l5-6": {
    "prompt": "Una empresa vende cada vez más, pero su margen bruto es del 5 % y bajando: casi todo lo que cobra se le va en lo que le cuesta vender. ¿Qué pinta tiene?",
    "options": [
@@ -714,6 +684,63 @@
    ],
    "explanation": "Por eso se miran ventas, márgenes y caja."
   },
+  "u18l5-11": {
+   "prompt": "Una empresa joven que aún pierde dinero: ¿buena o mala señal?",
+   "options": [
+    "Gasta en anuncios más de lo que vende",
+    "Necesita una ampliación de capital cada año",
+    "Su margen bruto baja cada año",
+    "Sus clientes repiten y pagan cada mes",
+    "Sus pérdidas se reducen cada año",
+    "Le queda caja para dos años y medio"
+   ],
+   "explanation": "Lo bueno la acerca a ganar dinero antes de quedarse sin caja. Lo malo la aleja o la obliga a pedir dinero, y eso suele diluirte.",
+   "right": [
+    "Buena señal",
+    "Mala señal"
+   ]
+  },
+  "u18l5-12": {
+   "prompt": "Tienes acciones de una empresa joven que pierde dinero. Anuncia una ampliación de capital: emitirá muchas acciones nuevas y tú no vas a comprar ninguna. ¿Qué pasa con tu parte de la empresa?",
+   "options": [
+    "Crece: entra dinero nuevo en la empresa",
+    "Se hace más pequeña: el pastel se reparte entre más acciones",
+    "No cambia: sigo teniendo las mismas acciones"
+   ],
+   "explanation": "Si hay más acciones y tú no compras, tu porcentaje baja: es la dilución. En empresas que queman caja es de lo más habitual, por eso se miran los meses de caja.",
+   "feedback": [
+    "Entra dinero en la empresa, pero tu trozo del pastel se encoge.",
+    "Eso es la dilución: tienes las mismas acciones, pero de un total mayor.",
+    "Tienes las mismas, pero ahora hay más en total: tu porcentaje baja."
+   ]
+  },
+  "u18l5-13": {
+   "prompt": "Dos empresas inventadas sin beneficios venden 100 M€ al año. Una vale 300 M€ en bolsa; la otra, 3.000 M€. ¿Cuál está más cara según su precio/ventas?",
+   "options": [
+    "La de 3.000 M€: pagas 30 veces sus ventas",
+    "Las dos igual: venden lo mismo",
+    "La de 300 M€: es más pequeña"
+   ],
+   "explanation": "Sin beneficios, se compara lo que vale con lo que vende: 3 veces las ventas frente a 30. La cara necesita crecer muchísimo para justificar su precio."
+  },
+  "u18l5-14": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Por sus seguidores en redes",
+    "Con el PER, como todas",
+    "Con sus ventas, su margen bruto y sus meses de caja"
+   ],
+   "explanation": "Sin beneficio, el PER no sirve. Se mira cuánto pagas por sus ventas, si cada venta deja dinero (margen bruto) y cuánto aguanta con su caja.",
+   "feedback": [
+    "La popularidad no paga nóminas.",
+    "Sin beneficio, el PER sale negativo y no dice nada.",
+    "Claro: precio/ventas, margen y caja. El PER aquí no sirve."
+   ],
+   "lines": [
+    "Esta empresa vende un 80 % más cada año.",
+    "¡Pero pierde dinero! ¿Cómo la valoro sin PER?"
+   ]
+  },
   "u18l6-1": {
    "prompt": "Ordena los cinco primeros pasos de la lista.",
    "options": [
@@ -724,12 +751,6 @@
     "¿Es rentable?"
    ],
    "explanation": "Primero entender el negocio; después, sus números."
-  },
-  "u18l6-2": {
-   "prompt": "Con los datos de Inditex, ¿cuál fue su margen EBIT (EBIT ÷ ventas)? (un decimal)",
-   "options": [],
-   "explanation": "7.554 ÷ 38.632 ≈ 19,6 %: de cada 100 € vendidos, casi 20 € de beneficio operativo.",
-   "unit": "%"
   },
   "u18l6-5": {
    "prompt": "Gráfico real de una acción del IBEX 35: 30 sesiones sin nombre ni fecha. Aunque hubieras hecho tu análisis de 30 minutos, ¿sabrías qué hizo en las 10 siguientes?",
@@ -744,12 +765,6 @@
    "prompt": "Precio real de una gran tecnológica durante dos meses. Toca el punto más alto. (Microsoft · cierres cada 3 sesiones · junio–agosto de 2026)",
    "options": [],
    "explanation": "El máximo de dos meses no dice si el negocio es bueno: eso lo responde la lista de comprobación."
-  },
-  "u18l6-7": {
-   "prompt": "Inditex repartió un dividendo de 1,68 € y su beneficio por acción fue de unos 1,88 €. ¿Cuál fue su payout aproximado?",
-   "options": [],
-   "explanation": "1,68 ÷ 1,88 ≈ 89 %. Incluía 0,55 € de dividendo extraordinario; con tanta caja neta, un payout alto es más fácil de sostener que con deuda.",
-   "unit": "%"
   },
   "u18l6-8": {
    "prompt": "Has aplicado la lista a una empresa: crece, gana mucho, genera caja, no tiene deuda y tiene una marca fuerte. Pero cotiza a un PER muy por encima de su media histórica. ¿Qué concluyes?",
@@ -774,6 +789,38 @@
     "Cómo gana dinero el negocio"
    ],
    "explanation": "Una tesis explica por qué el negocio vale más que su precio, y cuándo dejarías de creerlo."
+  },
+  "u18l6-11": {
+   "prompt": "Aplicas la lista a dos empresas inventadas del mismo sector, al mismo PER. A crece, genera caja y tiene más caja que deuda. B crece igual, pero su beneficio no llega a la caja y amplía capital cada año. ¿Cuál pasa mejor el examen?",
+   "options": [
+    "Las dos igual: tienen el mismo PER",
+    "A: crece, convierte el beneficio en caja y está sana",
+    "B: crece lo mismo"
+   ],
+   "explanation": "Al mismo precio, gana la que responde mejor a «¿genera caja?» y «¿está sana?». Las alarmas suelen estar en la caja y la deuda, no en el titular del beneficio.",
+   "feedback": [
+    "El PER es igual; la calidad del beneficio, no.",
+    "Eso: al mismo precio, la que genera caja y no te diluye es mejor compra.",
+    "Crece en papel, pero no genera caja y te diluye cada año."
+   ]
+  },
+  "u18l6-12": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Sí: si es buen negocio, el precio da igual",
+    "No: los análisis no sirven para nada",
+    "Falta la pregunta 8: ¿el precio deja margen de seguridad?"
+   ],
+   "explanation": "La lista no termina en «es buen negocio»: también hay que decidir si el precio es razonable y qué te haría vender.",
+   "feedback": [
+    "Recuerda a Microsoft en 2000: gran negocio, precio carísimo.",
+    "Sirven para decidir con criterio, no para adivinar el precio.",
+    "Cierto: un gran negocio comprado caro puede ser mala inversión."
+   ],
+   "lines": [
+    "Ya he hecho mi análisis de Inditex: es un negocio buenísimo.",
+    "¿Compro ya?"
+   ]
   }
  }
 }

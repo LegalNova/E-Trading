@@ -301,7 +301,7 @@ async function achievementFacts(tx: Tx, userId: string, g: GameState, counters: 
   return {
     FIRST_LESSON: done.size, LESSONS_5: done.size, LESSONS_20: done.size, LESSONS_50: done.size, QUIZ_PERFECT: n('perfect'), QUIZ_PERFECT_5: n('perfect'),
     // Curso v2 (con secciones): velas = u20 y gestión del riesgo = u24; antes, u8 y u10
-    UNIT_1: unitDone('u1'), UNIT_2: unitDone(v2 ? 'u20' : 'u8'), UNIT_3: unitDone(v2 ? 'u24' : 'u10'), COURSE_DONE: UNITS.filter(u => !u.side).every(u => unitDone(u.id)) ? 1 : 0, PLACEMENT: g.placementDone ? 1 : 0,
+    UNIT_1: unitDone('h1'), UNIT_2: unitDone(v2 ? 'u20' : 'u8'), UNIT_3: unitDone(v2 ? 'u24' : 'u10'), COURSE_DONE: UNITS.filter(u => !u.side).every(u => unitDone(u.id)) ? 1 : 0, PLACEMENT: g.placementDone ? 1 : 0,
     BOSS_1: bosses, BOSS_5: bosses, UPDOWN_10: n('updown'), CALC_20: n('ok_NUMBER'), SCAM_5: n('ok_SPOT'), SIM_5: n('ok_SIM_TRADE'), CANDLE_10: n('ok_CHART_CANDLE'),
     HISTORY: v2 ? unitDone('u34') : 0, LAB: v2 ? unitDone('u35') : 0,
     REVIEW_10: n('reviewed'), SPEED: n('fastPerfect'), FIRST_TRADE: filled, TRADES_10: filled, TRADES_50: filled,

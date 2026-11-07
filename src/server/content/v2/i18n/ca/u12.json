@@ -54,7 +54,7 @@
      "title": "Per què no es pot reescriure",
      "body": "Les transaccions s'agrupen en **blocs**. Cada bloc porta una empremta (**hash**) de l'anterior: així queden encadenats.\n\nSi algú canvia una transacció antiga, canvia l'empremta d'aquell bloc i es trenquen tots els següents. A més, els altres nodes tenen la còpia bona i rebutgen la falsa.",
      "key": "Blockchain: un registre compartit i encadenat que ningú no pot reescriure tot sol.",
-     "tip": "Que una cosa faci servir blockchain no la converteix en una bona inversió."
+     "tip": "Prova-ho: a Mercat, busca Bitcoin i afegeix-lo a Preferits per seguir-lo aquesta setmana."
     }
    ]
   },
@@ -93,13 +93,29 @@
      "title": "El halving",
      "body": "Bitcoin va néixer el 2009, creat per algú amb el pseudònim **Satoshi Nakamoto**. Els bitcoins nous neixen com a premi per a qui afegeix blocs (els miners). Cada **210.000 blocs**, uns **4 anys**, aquest premi es redueix a la meitat: és el **halving**.\n\n50 → 25 (2012) → 12,5 (2016) → 6,25 (2020) → **3,125** (2024). Després del del 2024 ja s'havia emès el 93,75 % de tots els bitcoins.",
      "key": "Bitcoin: màxim de 21 milions i una emissió que es redueix a la meitat cada 4 anys, aproximadament.",
-     "tip": "Escassetat programada no vol dir preu garantit."
+     "tip": "Prova-ho: a Mercat, busca Bitcoin i mira quant ha caigut des del seu màxim."
     }
    ]
   },
   "u12l3": {
    "title": "Mineria i prova de treball",
    "steps": [
+    {
+     "texts": [
+      "Mina des del teu mòbil",
+      "Laura",
+      "Mira aquest anunci: «Mina bitcoins des del teu mòbil i guanya 50 € al dia».",
+      "Em descarrego l'app?",
+      "Què li dius?",
+      "Sí, són diners fàcils",
+      "La mineria real fa servir màquines especialitzades i molta electricitat. Un mòbil no pot competir.",
+      "Gairebé segur que és un engany: un mòbil no pot competir",
+      "Molt bé! Moltes «apps de mineria» són estafes o fan servir el teu mòbil per a altres coses.",
+      "Instal·la-la només per provar",
+      "Aquestes apps poden exposar les teves dades o la teva cartera. Millor que no.",
+      "Quan una promesa no encaixa amb com funciona la tecnologia, desconfia'n."
+     ]
+    },
     {
      "texts": [
       "Treball o participació?",
@@ -125,32 +141,32 @@
      ]
     },
     {
-     "texts": [
-      "Mina des del teu mòbil",
-      "Laura",
-      "Mira aquest anunci: «Mina bitcoins des del teu mòbil i guanya 50 € al dia».",
-      "Em descarrego l'app?",
-      "Què li dius?",
-      "Sí, són diners fàcils",
-      "La mineria real fa servir màquines especialitzades i molta electricitat. Un mòbil no pot competir.",
-      "Gairebé segur que és un engany: un mòbil no pot competir",
-      "Molt bé! Moltes «apps de mineria» són estafes o fan servir el teu mòbil per a altres coses.",
-      "Instal·la-la només per provar",
-      "Aquestes apps poden exposar les teves dades o la teva cartera. Millor que no.",
-      "Quan una promesa no encaixa amb com funciona la tecnologia, desconfia'n."
-     ]
-    },
-    {
      "title": "Una competició de càlcul",
      "body": "Els **miners** agrupen transaccions en un bloc i competeixen per trobar un número que faci que el seu hash compleixi una condició. El primer cobra el **premi** més les **comissions**. Buscar la solució costa molt; comprovar-la, molt poc.\n\nLa **dificultat** s'ajusta cada 2.016 blocs perquè surti un bloc cada **10 minuts** de mitjana. I la tecnologia no canvia el risc de preu: en cripto **es pot perdre tot el que s'ha invertit**.",
      "key": "Prova de treball: es guanya el dret d'afegir blocs gastant energia en càlculs.",
-     "tip": "L'energia de la mineria és el preu que es paga perquè ningú no pugui reescriure el registre."
+     "tip": "Prova-ho: crea una alerta de preu a Bitcoin i mira quant es mou aquesta setmana."
     }
    ]
   },
   "u12l4": {
    "title": "Ethereum i els contractes intel·ligents",
    "steps": [
+    {
+     "texts": [
+      "Tokens gratis",
+      "Web desconegut",
+      "Enhorabona! Tens 500 tokens gratis que t'esperen.",
+      "Connecta la teva cartera i signa aquest contracte per reclamar-los.",
+      "Què fas?",
+      "Signo: és gratis",
+      "Signar un contracte que no entens pot donar permís per buidar-te la cartera.",
+      "No signo res que no entengui i comprovo el projecte pels seus canals oficials",
+      "Molt bé! Moltes estafes fan servir signatures de contractes intel·ligents per robar.",
+      "Signo amb la meva cartera principal, per rebre'n més",
+      "Si és una trampa, perdràs tot el que hi hagi en aquesta cartera.",
+      "En un contracte intel·ligent, el codi és la llei… també quan té un error."
+     ]
+    },
     {
      "texts": [
       "Bitcoin o Ethereum?",
@@ -176,26 +192,10 @@
      ]
     },
     {
-     "texts": [
-      "Tokens gratis",
-      "Web desconegut",
-      "Enhorabona! Tens 500 tokens gratis que t'esperen.",
-      "Connecta la teva cartera i signa aquest contracte per reclamar-los.",
-      "Què fas?",
-      "Signo: és gratis",
-      "Signar un contracte que no entens pot donar permís per buidar-te la cartera.",
-      "No signo res que no entengui i comprovo el projecte pels seus canals oficials",
-      "Molt bé! Moltes estafes fan servir signatures de contractes intel·ligents per robar.",
-      "Signo amb la meva cartera principal, per rebre'n més",
-      "Si és una trampa, perdràs tot el que hi hagi en aquesta cartera.",
-      "En un contracte intel·ligent, el codi és la llei… també quan té un error."
-     ]
-    },
-    {
      "title": "Més possibilitats, més riscos",
      "body": "Més funcions també vol dir més maneres de fallar: un error en el codi d'un contracte el pot buidar, i en una blockchain no hi ha ningú a qui reclamar.\n\nL'ETH és molt volàtil i **es pot perdre la totalitat del que s'ha invertit**.",
      "key": "Ethereum afegeix a Bitcoin la possibilitat d'executar programes: els contractes intel·ligents.",
-     "tip": "Amb contractes intel·ligents, una sola signatura pot autoritzar moviments de tot el teu saldo."
+     "tip": "Prova-ho: a Mercat, busca Ethereum i compara'n el gràfic amb el de Bitcoin."
     }
    ]
   },
@@ -246,7 +246,7 @@
      "title": "Què exigeix MiCA",
      "body": "Les stablecoins serveixen per moure's entre criptos sense passar pel banc i per fer pagaments. Les més utilitzades són **USDT** (Tether) i **USDC** (Circle).\n\nA la UE, el reglament **MiCA** exigeix que els seus emissors estiguin autoritzats, tinguin **reserves** suficients i separades i permetin **bescanviar** els tokens a la par. Tot i així, «estable» no vol dir «garantit»: no les cobreix el Fons de Garantia de Dipòsits i **es pot perdre el que s'ha invertit**.",
      "key": "Una stablecoin val el que valguin les seves reserves i la confiança en el seu emissor.",
-     "tip": "Si una stablecoin et paga un 20 % «sense risc», pregunta d'on surt."
+     "tip": "Si t'ofereixen un 20 % «estable», pregunta-ho abans a la professora Lumi."
     }
    ]
   },
@@ -256,7 +256,7 @@
     {
      "texts": [
       "Es pot ensenyar?",
-      "Les teves criptos són a la blockchain; la teva **wallet** guarda les **claus**. Què pots ensenyar sense problema i què mai?",
+      "Acabes de crear la teva primera **wallet**, l'app que guarda les **claus** de les teves criptos. Tothom et demana alguna cosa: què pots ensenyar sense problema i què mai?",
       "Sense problema",
       "Mai",
       "La teva adreça pública, perquè et paguin",
@@ -298,7 +298,7 @@
      "title": "Custòdia pròpia o aliena",
      "body": "• **En un exchange:** ell guarda les claus. Còmode, però si fa fallida o et bloqueja, depens d'ell (FTX, 2022).\n• **Autocustòdia:** tu guardes les claus, en una wallet de programari o de maquinari. Ningú no les pot congelar… però si perds la frase llavor, **ningú** no les pot recuperar.\n\nLa teva frase llavor, **en paper o metall, fora d'internet**, en un lloc segur. Mai en una foto, un correu o el núvol.",
      "key": "«Not your keys, not your coins»: qui controla les claus controla les criptos.",
-     "tip": "Ningú legítim no et demanarà mai la frase llavor: ni el suport, ni l'exchange, ni «Hisenda»."
+     "tip": "Pregunta a la professora Lumi quina diferència hi ha entre la teva adreça i la teva clau privada."
     }
    ]
   },
@@ -349,7 +349,7 @@
      "title": "Què els exigeix MiCA",
      "body": "• **Autorització** d'un supervisor nacional (a Espanya, la CNMV), vàlida a tota la UE.\n• **Separar** les criptos dels clients de les seves.\n• Requisits de **capital**, govern i gestió de conflictes d'interès.\n• Informació clara i un sistema de **reclamacions**.\n\nSegons la CNMV, des de l'**1 de juliol de 2026** només poden operar a Espanya els proveïdors autoritzats. Abans d'obrir un compte, busca'l als registres de la **CNMV** o de l'**ESMA**.",
      "key": "MiCA exigeix autorització, separació d'actius i transparència als exchanges de la UE.",
-     "tip": "Comprova la plataforma al registre oficial, no al seu propi web."
+     "tip": "Abans d'obrir compte en un exchange real, pregunta a la professora Lumi com comprovar-ho."
     }
    ]
   },
@@ -458,18 +458,6 @@
    ],
    "explanation": "Cada halving divideix el premi entre dos: l'emissió es frena fins a arribar als 21 milions."
   },
-  "u12l2-4": {
-   "prompt": "Després del halving del 2024 el premi és de 3,125 BTC per bloc. Quin serà després del halving següent?",
-   "options": [],
-   "explanation": "3,125 ÷ 2 = 1,5625 BTC per bloc.",
-   "unit": "BTC"
-  },
-  "u12l2-5": {
-   "prompt": "A Bitcoin s'afegeix un bloc cada 10 minuts de mitjana. Quants blocs surten cada dia?",
-   "options": [],
-   "explanation": "24 × 60 ÷ 10 = 144 blocs al dia.",
-   "unit": "blocs"
-  },
   "u12l2-6": {
    "prompt": "Aquest és el gràfic d'una de les grans criptomonedes, en espelmes diàries. Què va fer en les 10 sessions següents?",
    "options": [
@@ -487,6 +475,20 @@
     "El que altres estiguin disposats a pagar-ne"
    ],
    "explanation": "No genera beneficis ni interessos: el seu preu depèn de l'adopció i de la demanda."
+  },
+  "u12l2-11": {
+   "prompt": "Bitcoin fa setmanes que cau. En Nico en té una mica i llegeix a les xarxes: «Després de cada halving sempre puja, fica-hi tot el que puguis». Què fa?",
+   "options": [
+    "Hi fica tots els estalvis: el halving ho garanteix",
+    "Segueix el seu pla: només hi posa el que podria perdre sencer, passi el que passi amb el halving",
+    "Ho ven tot perquè, si cau, és que Bitcoin ha mort"
+   ],
+   "explanation": "La bona és seguir un pla amb una quantitat que puguis perdre. La temptadora, el «sempre puja», confon escassetat programada amb preu garantit.",
+   "feedback": [
+    "El halving només frena l'emissió de bitcoins nous. El preu depèn de la demanda, i ha caigut més d'un 70 % diverses vegades.",
+    "Molt bé: l'escassetat no garanteix el preu, i en cripto es pot perdre la totalitat del que s'ha invertit.",
+    "Decidir per la por d'unes setmanes és tan arriscat com decidir per l'eufòria."
+   ]
   },
   "u12l3-1": {
    "prompt": "Ordena com es mina un bloc de Bitcoin.",
@@ -533,12 +535,6 @@
    ],
    "explanation": "Proof of stake: validen els qui bloquegen ETH com a garantia."
   },
-  "u12l3-7": {
-   "prompt": "La dificultat s'ajusta cada 2.016 blocs. A 10 minuts per bloc, cada quants dies aproximadament?",
-   "options": [],
-   "explanation": "2.016 × 10 = 20.160 minuts ÷ 1.440 minuts al dia = 14 dies.",
-   "unit": "dies"
-  },
   "u12l3-10": {
    "prompt": "Què és cert sobre la prova de treball? Marca-ho tot.",
    "options": [
@@ -548,6 +544,20 @@
     "Consumeix molta electricitat"
    ],
    "explanation": "Ethereum la va abandonar el 2022 per passar a la prova de participació."
+  },
+  "u12l3-11": {
+   "prompt": "Un conegut li ofereix a en Leo un «pla de mineria al núvol»: paga una quota i cobra un 2 % diari fix, sense fer res. Què en pensa en Leo?",
+   "options": [
+    "Que és una manera còmoda de minar sense màquines",
+    "Que prova amb poc, per si de cas",
+    "Que un rendiment fix no encaixa amb la mineria real, i que és un senyal clar d'estafa"
+   ],
+   "explanation": "La bona encerta perquè la mineria no dona un rendiment fix: depèn del preu, la dificultat i la competència. La temptadora, provar amb poc, continua sent donar diners a un possible frau.",
+   "feedback": [
+    "El que guanya un miner de veritat canvia cada dia: depèn del preu, de la dificultat i de les comissions.",
+    "Si és una estafa, aquest poc es perd sencer i no hi ha a qui reclamar.",
+    "Molt bé: un miner cobra premi i comissions només si guanya la competició. Ningú seriós no pot prometre un 2 % diari fix."
+   ]
   },
   "u12l4-1": {
    "prompt": "Relaciona cada concepte amb el seu significat.",
@@ -615,11 +625,19 @@
    ],
    "explanation": "Smart contracts: s'executen quan es compleixen les seves condicions, sense intermediari."
   },
-  "u12l4-10": {
-   "prompt": "Enviar uns tokens costa 0,0005 ETH de gas i l'ETH val 2.000 €. Quant pagues de comissió?",
-   "options": [],
-   "explanation": "0,0005 × 2.000 = 1 €. Si la xarxa se satura, pot costar força més.",
-   "unit": "€"
+  "u12l4-11": {
+   "prompt": "La Irene vol enviar uns tokens sense cap pressa. La seva wallet avisa que avui el gas és caríssim perquè la xarxa està saturada. Què fa?",
+   "options": [
+    "Els envia ja: el gas és una comissió fixa",
+    "Els envia per Bitcoin per no pagar gas",
+    "Espera un moment amb la xarxa més tranquil·la"
+   ],
+   "explanation": "La bona funciona perquè el gas puja i baixa amb la demanda de la xarxa. La temptadora falla: el gas no és una tarifa fixa, sinó un preu que canvia.",
+   "feedback": [
+    "El gas no és fix: puja quan la xarxa està saturada i baixa quan hi ha poca demanda.",
+    "Els tokens d'Ethereum viuen a Ethereum: no es poden enviar per la xarxa de Bitcoin.",
+    "Molt bé: sense pressa, esperar sol abaratir molt la comissió."
+   ]
   },
   "u12l5-1": {
    "prompt": "Què intenta una stablecoin?",

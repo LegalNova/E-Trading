@@ -1,6 +1,6 @@
 import 'server-only'
 // Sección 5 · Unidad 14 · Divisas (forex) (docs/curso-v2/02-curriculo.md)
-import { buckets, chat, choose, fill, key, lesson, match, multi, note, num, opt, order, play, say, scenario, single, story, tf, timed, unit, upDown, when } from '../dsl'
+import { buckets, chat, choose, fill, key, lesson, level, match, multi, note, num, opt, order, play, say, scenario, single, story, tf, timed, unit, upDown, when } from '../dsl'
 
 export default unit({
   id: 'u14', order: 14, title: 'Divisas (forex)', description: 'Cómo se leen los pares, qué mueve una divisa y cómo afecta a tu cartera',
@@ -8,7 +8,7 @@ export default unit({
     lesson('u14l1', 'Pares de divisas', [
       play({
         title: '¿Sube o baja el euro?',
-        intro: '**EUR/USD = 1,16** significa que **1 euro vale 1,16 dólares**. Si la cifra sube, el euro se **aprecia** (compra más dólares); si baja, se **deprecia**.',
+        intro: 'Preparas un viaje a Nueva York y tu banco marca **EUR/USD = 1,16**: por cada euro te dan **1,16 dólares**. Si la cifra sube, el euro se **aprecia** (compra más dólares); si baja, se **deprecia**.',
         widget: {
           kind: 'sort',
           bins: [{ label: 'El euro se aprecia' }, { label: 'El euro se deprecia' }],
@@ -40,7 +40,7 @@ export default unit({
         say('lumi', 'Y de euros a dólares, **multiplica**.'),
         say('lumi', 'Truco: si EUR/USD = 1,25, un dólar vale 1 ÷ 1,25 = 0,80 €.'),
       ]),
-      key('El mercado más grande del mundo', 'Se negocian unos **9,6 billones de dólares al día** (BIS, abril de 2025). El dólar está en el **89 %** de las operaciones; le siguen el euro y el yen.\n\n• **Pares mayores:** EUR/USD, USD/JPY, GBP/USD, USD/CHF…\n• Abre las **24 horas** de lunes a viernes: Sídney, Tokio, Londres y Nueva York se pasan el testigo.\n\nComprar EUR/USD es comprar euros pagando con dólares; venderlo, lo contrario.', 'En un par siempre compras una divisa vendiendo la otra: la primera es la que compras.', 'Una divisa nunca sube sola: sube frente a otra.'),
+      key('El mercado más grande del mundo', 'Se negocian unos **9,6 billones de dólares al día** (BIS, abril de 2025). El dólar está en el **89 %** de las operaciones; le siguen el euro y el yen.\n\n• **Pares mayores:** EUR/USD, USD/JPY, GBP/USD, USD/CHF…\n• Abre las **24 horas** de lunes a viernes: Sídney, Tokio, Londres y Nueva York se pasan el testigo.\n\nComprar EUR/USD es comprar euros pagando con dólares; venderlo, lo contrario.', 'En un par siempre compras una divisa vendiendo la otra: la primera es la que compras.', 'Pruébalo: en Mercado, busca EUR/USD y mira si hoy el euro sube o baja.'),
     ], [
       single('EUR/USD = 1,16. ¿Qué significa?', ['1 euro vale 1,16 dólares', '1 dólar vale 1,16 euros', 'El euro ha subido un 16 % este año'], 0, 'La primera divisa (la base) siempre vale 1; la cifra dice cuántas unidades de la segunda cuesta.'),
       fill('En EUR/USD, el euro es la divisa ____ y el dólar la cotizada.', 'base', ['cotizada', 'refugio', 'fuerte'], 'La base va primero y siempre vale 1 unidad.'),
@@ -53,13 +53,13 @@ export default unit({
       tf('El mercado de divisas cierra cada día a las 17:30, como la Bolsa de Madrid.', false, 'Funciona las 24 horas de lunes a viernes, pasando de Asia a Europa y América.'),
       scenario('Laura cobra en euros y se va de Erasmus a Londres. Ve que GBP/EUR ha pasado de 1,15 a 1,20 este mes. ¿Cómo le afecta?', [['Le sale más barato el viaje', 'Al revés: cada libra cuesta ahora 1,20 € en lugar de 1,15 €.'], ['Cada libra le cuesta más euros: todo se le encarece algo más de un 4 %', 'Eso es: (1,20 − 1,15) ÷ 1,15 ≈ 4,3 % más caro.'], ['No le afecta porque paga con tarjeta', 'La tarjeta convierte al tipo de cambio del día: le afecta igual.']], 1, 'Si sube la divisa que necesitas, te cuesta más euros.'),
       multi('¿Cuáles son pares mayores? Marca todos.', ['EUR/USD', 'USD/JPY', 'GBP/USD', 'USD/TRY (lira turca)'], [0, 1, 2], 'Los mayores combinan el dólar con otra gran divisa. USD/TRY es un par exótico: más spread y más volatilidad.'),
-    ], { source: '2.8', minutes: 6, retire: [2, 4, 7, 8] }),
+    ], { source: '2.8', minutes: 6, retire: [2, 3, 4, 7, 8] }),
 
     lesson('u14l2', 'Pips, lotes y apalancamiento', [
       story('¿Cuánto es un pip?', [{ id: 'marc', name: 'Marc' }], [
-        note('Las divisas se mueven en **pips**: la cuarta cifra decimal (0,0001). Un lote estándar son 100.000 unidades de la divisa base.'),
         say('marc', 'He abierto 1 lote estándar de EUR/USD a 1,1600. ¡Ya está en 1,1650!'),
         say('marc', 'Medio céntimo… eso no es nada, ¿no?'),
+        note('Las divisas se mueven en **pips**: la cuarta cifra decimal (0,0001). Un lote estándar son 100.000 unidades de la divisa base.'),
         choose('¿Cuánto ha ganado Marc?', [
           opt('Casi nada: medio céntimo', 'bad', say('lumi', 'Son **50 pips**. Con un lote estándar, cada pip vale 10 $: 500 $.')),
           opt('50 pips × 10 $ = 500 $', 'good', say('lumi', '¡Eso! Con un lote estándar, cada pip de EUR/USD vale **10 $**.')),
@@ -87,7 +87,7 @@ export default unit({
           { say: 'Mueve el precio en contra y mira tu garantía', mood: 'HAPPY' },
         ],
       }),
-      key('Advertencia de la CNMV', '«Los CFD son instrumentos complejos y están asociados a un riesgo elevado de perder dinero rápidamente debido al apalancamiento. Entre un 74 y un 89 % de los inversores minoristas pierden dinero cuando negocian con CFD.»', 'El apalancamiento no te hace mejor inversor: solo hace más grandes tus errores.', 'Que te dejen operar con 30 veces tu dinero no significa que debas.'),
+      key('Advertencia de la CNMV', '«Los CFD son instrumentos complejos y están asociados a un riesgo elevado de perder dinero rápidamente debido al apalancamiento. Entre un 74 y un 89 % de los inversores minoristas pierden dinero cuando negocian con CFD.»', 'El apalancamiento no te hace mejor inversor: solo hace más grandes tus errores.', 'Pruébalo: en Mercado, compara cuánto se mueve hoy EUR/USD frente a Tesla.'),
     ], [
       num('EUR/USD pasa de 1,1600 a 1,1675. ¿Cuántos pips se ha movido?', 75, 'pips', '1,1675 − 1,1600 = 0,0075 = 75 pips (cada pip es 0,0001).'),
       num('Con 1 lote estándar de EUR/USD (1 pip = 10 $), el par se mueve 40 pips a tu favor. ¿Cuánto ganas?', 400, '$', '40 × 10 $ = 400 $. Si se mueve 40 en contra, pierdes lo mismo.'),
@@ -100,7 +100,9 @@ export default unit({
       scenario('Pablo abre 1 lote estándar de EUR/USD (100.000 €) con 4.000 € de garantía. El par cae 120 pips tras un dato de inflación. ¿Qué ha pasado?', [['Ha perdido 120 $, una minucia', 'Cada pip vale 10 $ con un lote estándar: son 1.200 $, algo más de 1.000 €.'], ['Ha perdido unos 1.200 $: más de una cuarta parte de su garantía en un día', 'Exacto: 120 × 10 $ = 1.200 $. Un movimiento normal del par y su cuenta ha caído más de un 25 %.'], ['No ha perdido nada hasta que cierre', 'La pérdida es real aunque no cierres; y si sigue cayendo, el bróker cerrará la posición.']], 1, 'Con apalancamiento, un movimiento corriente del par se convierte en un golpe enorme para tu dinero.'),
       multi('¿Qué protecciones tiene un minorista en la UE al operar CFD de divisas? Marca todas.', ['Límite de apalancamiento (1:30 en pares mayores)', 'Cierre automático si la garantía baja al 50 %', 'No poder perder más del dinero de la cuenta', 'Garantía de no perder dinero'], [0, 1, 2], 'ESMA impuso límites de apalancamiento, cierre al 50 % de la garantía y protección frente a saldo negativo. Nada garantiza no perder: entre un 74 y un 89 % de los minoristas pierde con CFD.'),
       chat(['Un tiktoker dice que con forex y apalancamiento 1:500 se vive de esto 🤑', 'Con 200 € muevo 100.000 €, ¿no es genial?'], '¿Qué le contestas a Lumi?', [['Genial, así se gana más rápido', 'Y se pierde más rápido: un 0,2 % en contra se lleva tus 200 €.'], ['Con 1:500, un 0,2 % en contra te deja a cero; y en la UE el máximo para minoristas es 1:30', '¡Uf! Entonces quien me ofrece 1:500 no está jugando con las reglas europeas…'], ['Mejor 1:1000, que es más', 'Más apalancamiento solo acerca el momento de perderlo todo.']], 1, '1 ÷ 500 = 0,2 %. Quien ofrece 1:500 a un minorista europeo no cumple las reglas de ESMA: mala señal.'),
-    ], { source: '2.8', minutes: 6, retire: [1, 3, 5, 7] }),
+      scenario('Pablo tiene 2.000 € ahorrados. Su bróker le ofrece pasar de 1:30 a 1:100 si se declara «cliente profesional». ¿Qué hace?', [['Acepta: con 1:100 gana más rápido', 'Con 1:100, un 1 % en contra se lleva toda su garantía. Y pierde las protecciones de minorista.'], ['Lo rechaza: perdería las protecciones de minorista y el riesgo se dispara', 'Bien: el límite de 1:30, el cierre al 50 % y no poder perder más de lo que hay en la cuenta son para él.'], ['Acepta, pero promete operar con cuidado', 'El cuidado no cambia la cuenta: más apalancamiento acerca el momento de perderlo todo.']], 1, 'La buena acierta porque las reglas de ESMA protegen a los minoristas, y declararse profesional las quita. La tentadora, ganar más rápido, olvida que las pérdidas se multiplican igual.'),
+      level('Has comprado USD/JPY al último precio. Antes de pensar en apalancamiento, coloca el stop: algo por debajo del último mínimo.', 'lvl-22', 'STOP', 'Si el par pierde el último mínimo, tu idea deja de valer: el stop va algo por debajo, con margen. Con el stop decidido, el tamaño sale de lo que estás dispuesto a perder, no del apalancamiento que te ofrecen. Pegarlo al precio es la tentación, pero cualquier vaivén normal lo salta.'),
+    ], { source: '2.8', minutes: 6, retire: [0, 1, 2, 3, 4, 5, 7] }),
 
     lesson('u14l3', 'Qué mueve una divisa', [
       story('2022: el euro, a la paridad', [{ id: 'hugo', name: 'Hugo' }], [
@@ -139,7 +141,7 @@ export default unit({
           { say: '¿Sube o baja el euro? Clasifica cada caso', mood: 'HAPPY' },
         ],
       }),
-      key('Cuenta la sorpresa', 'No cuenta solo el tipo de interés de hoy, sino lo que el mercado **espera** que hagan los bancos centrales: una subida ya anunciada puede no mover nada.\n\nY las demás fuerzas también se comparan: la **inflación** alta y persistente debilita una divisa a largo plazo; un país que **exporta** mucho recibe demanda de la suya; el **crecimiento** atrae inversión, y con **miedo** el dinero huye a dólar, franco suizo y yen.', 'Las divisas se mueven por diferencias: de tipos, de inflación, de crecimiento y de confianza.'),
+      key('Cuenta la sorpresa', 'No cuenta solo el tipo de interés de hoy, sino lo que el mercado **espera** que hagan los bancos centrales: una subida ya anunciada puede no mover nada.\n\nY las demás fuerzas también se comparan: la **inflación** alta y persistente debilita una divisa a largo plazo; un país que **exporta** mucho recibe demanda de la suya; el **crecimiento** atrae inversión, y con **miedo** el dinero huye a dólar, franco suizo y yen.', 'Las divisas se mueven por diferencias: de tipos, de inflación, de crecimiento y de confianza.', 'Pruébalo: crea una alerta de precio en EUR/USD y mira qué noticia lo mueve.'),
     ], [
       match('Empareja cada causa con su efecto habitual en la divisa.', [['El banco central sube los tipos más de lo esperado', 'La divisa tiende a apreciarse'], ['Inflación alta durante años', 'La divisa pierde valor a largo plazo'], ['Pánico en los mercados', 'Se compran dólares, francos y yenes'], ['El país exporta mucho más de lo que importa', 'Hay demanda de su divisa']], 'Tipos, inflación, miedo y comercio son los grandes motores.'),
       single('¿Por qué un tipo de interés más alto suele atraer dinero a una divisa?', ['Porque los depósitos y bonos en esa divisa pagan más', 'Porque obliga a los turistas a cambiar', 'Porque el banco central regala divisas'], 0, 'Los inversores compran la divisa para cobrar ese interés mayor.'),
@@ -184,7 +186,7 @@ export default unit({
         ]),
         say('lumi', 'En 2022, al revés: el dólar subió y amortiguó la caída de la bolsa americana.'),
       ]),
-      key('Cubrir o no cubrir', 'Hay fondos **con cobertura de divisa** («EUR Hedged»): quitan casi todo el efecto del dólar a cambio de un pequeño coste. En fondos de acciones a largo plazo muchos inversores no cubren; en bonos se suele cubrir, porque la divisa movería más que el propio bono.', 'Cuando inviertes fuera, también inviertes en su moneda.', 'Mira en qué divisa está lo que compras… y en cuál vas a gastar.'),
+      key('Cubrir o no cubrir', 'Hay fondos **con cobertura de divisa** («EUR Hedged»): quitan casi todo el efecto del dólar a cambio de un pequeño coste. En fondos de acciones a largo plazo muchos inversores no cubren; en bonos se suele cubrir, porque la divisa movería más que el propio bono.', 'Cuando inviertes fuera, también inviertes en su moneda.', 'Pruébalo: revisa tu Cartera y mira qué activos cotizan en dólares.'),
     ], [
       num('Inviertes 1.000 € cuando EUR/USD = 1,00 (compras 1.000 $ en acciones). Un año después valen 1.100 $ y EUR/USD = 1,10. ¿Cuántos euros tienes?', 1000, '€', '1.100 ÷ 1,10 = 1.000 €. Las acciones subieron un 10 %, pero el dólar perdió valor y se comió toda la ganancia.'),
       num('Las acciones suben un 15 % en dólares y el dólar cae un 10 % frente al euro. ¿Cuál es tu rentabilidad aproximada en euros?', 3.5, '%', '1,15 × 0,90 − 1 = 0,035 → +3,5 %.', 3),
@@ -196,12 +198,15 @@ export default unit({
       scenario('Ana tiene un fondo del S&P 500 sin cobertura y un horizonte de 20 años. Lee que «el dólar se hunde» y quiere venderlo todo. ¿Qué haría bien?', [['Vender ya y volver cuando el dólar se recupere', 'Tendría que acertar dos veces (cuándo salir y cuándo volver) con un movimiento que nadie predice.'], ['Entender que la divisa sube y baja, y decidir con calma si quiere cobertura en el futuro', 'Bien: cubrir o no es una decisión de planificación, no una reacción a un titular.'], ['Pasarse a una sola empresa europea', 'Cambiaría riesgo de divisa por mucho más riesgo de concentración.']], 1, 'El riesgo divisa se gestiona eligiendo el fondo, no persiguiendo titulares.'),
       timed(single('Rápido: el dólar sube frente al euro. Tus acciones americanas, medidas en euros…', ['Valen más', 'Valen menos', 'Valen igual'], 0, 'Cada dólar se convierte en más euros.'), 10),
       chat(['Mi fondo del S&P 500 ha subido un 12 % este año en dólares…', '…y en la app pone que en euros solo +2 %. ¿Me están robando? 😠'], '¿Qué le contestas a Lumi?', [['Sí, seguro que son comisiones ocultas', 'Las comisiones de un indexado son mínimas: la diferencia viene de otra cosa.'], ['No: el dólar ha caído frente al euro y eso resta en euros', '¡Ah! Gano en dólares, pero cada dólar vale menos euros.'], ['Es un error de la app', 'La app hace bien la cuenta: es el efecto de la divisa.']], 1, '1,12 × 0,91 ≈ 1,02: una caída del dólar de un 9 % convierte un +12 % en un +2 %.'),
-    ], { source: '2.8', minutes: 6, retire: [5, 7, 8, 9] }),
+      single('2022: la bolsa americana cae en dólares, pero el dólar sube frente al euro. Medida en euros, tu pérdida es…', ['Menor que en dólares', 'Mayor que en dólares', 'La misma'], 0, 'Cada dólar que te queda vale más euros, así que la subida del dólar amortigua la caída. Es lo que pasó en 2022. La tentación es pensar que la divisa no cuenta si el fondo está en euros, pero las empresas siguen ganando en dólares.'),
+      scenario('Inés tiene un fondo del S&P 500 sin cobertura. Ese año las acciones suben en dólares, pero el dólar cae con fuerza frente al euro. ¿Qué verá en su app, en euros?', [['La misma ganancia que en dólares', 'La app convierte a euros: si cada dólar vale menos euros, la ganancia en euros es menor.'], ['Una ganancia menor, o incluso una pérdida', 'Bien: gana en dólares, pero cada dólar se convierte en menos euros.'], ['Más ganancia, porque el dólar barato le favorece', 'Al revés: un dólar más débil resta cuando vuelves a euros.']], 1, 'La buena acierta porque la rentabilidad en euros suma dos cosas: lo que hacen las acciones y lo que hace el dólar. La tentadora olvida la segunda.'),
+      scenario('Ana va a comprar un fondo de bonos de EE. UU. para la parte tranquila de su cartera. Hay versión normal y versión «EUR Hedged». ¿Cuál encaja mejor?', [['La normal: la divisa da igual en bonos', 'En un bono, el dólar puede mover más que el propio bono: la parte tranquila dejaría de serlo.'], ['La «EUR Hedged», con cobertura de divisa', 'Bien: en bonos se suele cubrir, porque la divisa movería más que el propio bono.'], ['Ninguna: mejor acciones de una sola empresa americana', 'Eso añade mucho más riesgo justo en la parte que quería tranquila.']], 1, 'La buena acierta porque un bono se mueve poco y la divisa mucho: sin cubrir, el riesgo lo pone el dólar. En acciones a largo plazo muchos no cubren, pero en bonos se suele hacer.'),
+    ], { source: '2.8', minutes: 6, retire: [0, 1, 2, 5, 7, 8, 9] }),
 
     lesson('u14l5', 'Divisas refugio', [
       play({
         title: '¿Dónde se esconde el dinero?',
-        intro: 'Cuando hay pánico, el dinero corre hacia las **divisas refugio**. ¿Cuál suele subir y cuál suele caer?',
+        intro: 'Marzo de 2020: la COVID hunde las bolsas y el dinero corre a esconderse en las **divisas refugio**. En un pánico así, ¿cuál suele subir y cuál suele caer?',
         widget: {
           kind: 'sort',
           bins: [{ label: 'Suele subir en el pánico' }, { label: 'Suele caer en el pánico' }],
@@ -234,7 +239,7 @@ export default unit({
         say('lumi', 'Un −29 % en minutos en una divisa mayor. Varios brókers quebraron.'),
         say('lumi', 'El franco es refugio, pero refugio no es lo mismo que seguro.'),
       ]),
-      key('El susto del yen', 'Con el *carry trade* se piden yenes baratos para invertir donde se paga más. Funciona mientras el yen está tranquilo.\n\nEn **agosto de 2024** el yen subió de golpe, todos deshicieron a la vez y el Nikkei cayó un **12,4 %** en un día.', 'Una divisa refugio suele subir cuando todo cae, pero puede moverse con violencia en ambos sentidos.', 'Saberlo sirve para entender una crisis, no para adivinar la siguiente.'),
+      key('El susto del yen', 'Con el *carry trade* se piden yenes baratos para invertir donde se paga más. Funciona mientras el yen está tranquilo.\n\nEn **agosto de 2024** el yen subió de golpe, todos deshicieron a la vez y el Nikkei cayó un **12,4 %** en un día.', 'Una divisa refugio suele subir cuando todo cae, pero puede moverse con violencia en ambos sentidos.', 'Pruébalo: añade USD/JPY a Favoritos y míralo el próximo día de pánico.'),
     ], [
       multi('¿Cuáles se consideran divisas refugio? Marca todas.', ['Dólar estadounidense', 'Franco suizo', 'Yen japonés', 'Real brasileño'], [0, 1, 2], 'El real es una divisa emergente: en el pánico suele caer, no subir.'),
       upDown('Gráfico real de un par de divisas (30 sesiones, sin nombre ni fecha). ¿Subió o bajó en las 10 siguientes?', 'ud-99', 'Hasta los pares más seguidos del mundo sorprenden: se mueven por expectativas de tipos y por el apetito de riesgo de cada momento.'),

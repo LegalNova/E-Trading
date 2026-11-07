@@ -46,7 +46,7 @@
      "title": "La brecha del inversor",
      "body": "Morningstar, 10 años hasta 2025: los fondos de EE. UU. ganaron un **9,9 %** anual; el dinero de sus inversores, que entraba y salía, un **8,7 %**: 1,2 puntos menos al año.\n\nEn los fondos más volátiles, la brecha fue de −2,1 puntos; en los tranquilos, de −0,4.",
      "key": "El producto puede ser bueno; el problema es el comportamiento: comprar tras las subidas y vender tras las caídas.",
-     "tip": "El mayor riesgo de tu cartera suele estar sentado delante de la pantalla."
+     "tip": "Pruébalo: pídele a Lumi, en el modo Mis sesgos, que revise tu última operación."
     }
    ]
   },
@@ -90,7 +90,7 @@
      "title": "Cómo protegerte",
      "body": "Cuando perdemos, nos volvemos **más arriesgados** («doblo para recuperar»); cuando ganamos, **más conservadores**.\n\nDecide el stop antes de entrar, en calma. Y hazte la pregunta correcta: no «¿cuánto he perdido?», sino **«si no la tuviera, ¿la compraría hoy a este precio?»**.",
      "key": "Perder duele el doble de lo que alegra ganar: por eso nos aferramos a lo que pierde.",
-     "tip": "Al mercado le da igual a cuánto compraste. Decide con lo que sabes hoy."
+     "tip": "Pruébalo: mira en tu Cartera la posición más en rojo: ¿la comprarías hoy?"
     }
    ]
   },
@@ -134,7 +134,7 @@
      "title": "Cómo protegerte",
      "body": "Stop y plan de salida **antes** de entrar. Si la operación va a favor, la salida la decide el plan (por ejemplo, mitad en 2R y el resto con stop dinámico), no el miedo a devolver lo ganado.",
      "key": "Vendemos lo que gana por alegría rápida y aguantamos lo que pierde por no aceptar el error.",
-     "tip": "Corta las pérdidas y deja correr las ganancias. Tu cerebro te pedirá lo contrario."
+     "tip": "Pruébalo: en tu próxima compra, pon el objetivo al doble de distancia que el stop."
     }
    ]
   },
@@ -174,7 +174,7 @@
      "title": "Suerte o habilidad",
      "body": "Unas cuantas ganancias al principio son lo más peligroso para un principiante: **confunde suerte con habilidad**, sube el riesgo y se salta las reglas.\n\nEntre mucha gente, siempre habrá «genios» por pura suerte.",
      "key": "Acertar dos o tres veces no te hace experto: con pocas operaciones, manda la suerte.",
-     "tip": "Mide tus resultados en el diario y compáralos con un índice. Tu memoria siempre te da la razón."
+     "tip": "Pruébalo: compara tu Cartera con el ETF del S&P 500 desde tu primera compra."
     }
    ]
   },
@@ -227,7 +227,7 @@
      "title": "Lo que te llevas",
      "body": "Valora con datos de hoy (beneficios, deuda, negocio), no con el precio al que compraste o al que estuvo. Y busca a propósito la **opinión contraria**.",
      "key": "Que algo haya caído mucho no lo hace barato. Que te den la razón no te hace acertar.",
-     "tip": "Si solo lees a quien te da la razón, no estás analizando: te estás animando."
+     "tip": "Pruébalo: pídele a Lumi tres motivos en contra de tu próxima compra."
     }
    ]
   },
@@ -263,6 +263,12 @@
       "Solo un **4 %** de ellas explicó toda la ganancia neta del mercado.",
       "Y **más de la mitad** rindió menos que las letras del Tesoro."
      ]
+    },
+    {
+     "title": "Lo que te llevas",
+     "body": "La **recencia** hace que lo último que ha pasado pese demasiado: tras subir, «siempre sube»; tras caer, «ya solo baja». La **supervivencia** te enseña solo a los que ganaron.\n\nAntídoto: datos de décadas y el mercado entero, no los casos que salen en redes.",
+     "key": "Ni el último año ni los ganadores visibles cuentan toda la historia.",
+     "tip": "Pruébalo: abre en Mercado el ETF del S&P 500 y busca sus caídas pasadas."
     }
    ]
   },
@@ -280,12 +286,6 @@
     "Unos 10 puntos"
    ],
    "explanation": "9,9 % de los fondos frente a 8,7 % de sus inversores, por comprar y vender en mal momento."
-  },
-  "u27l1-4": {
-   "prompt": "Imagina 10.000 € durante 10 años al 9,9 % anual (el fondo) o al 8,7 % (sus inversores). ¿Cuánta diferencia hay al final? (redondea a euros)",
-   "options": [],
-   "explanation": "10.000 × 1,099¹⁰ ≈ 25.703 € frente a 10.000 × 1,087¹⁰ ≈ 23.030 €: unos 2.673 € perdidos solo por el comportamiento.",
-   "unit": "€"
   },
   "u27l1-5": {
    "prompt": "Un lunes lees: «Las bolsas se desploman un 4 %». Tienes un fondo indexado para dentro de 20 años y el corazón a mil. ¿Qué haces?",
@@ -434,12 +434,6 @@
    "options": [],
    "explanation": "Decidir el stop antes de entrar evita que, si el precio cae, la aversión a la pérdida te convenza de aguantar «hasta que vuelva»."
   },
-  "u27l3-6": {
-   "prompt": "Un sistema acierta el 60 %, pero por miedo cierras las ganancias en +0,5R y dejas correr las pérdidas hasta −2R. ¿Cuál es tu esperanza?",
-   "options": [],
-   "explanation": "0,6 × 0,5 − 0,4 × 2 = 0,3 − 0,8 = −0,5R. El efecto disposición convierte un buen acierto en pérdidas.",
-   "unit": "R"
-  },
   "u27l3-7": {
    "prompt": "¿Es efecto disposición o es seguir el plan?",
    "options": [
@@ -483,12 +477,6 @@
     "La vendo ya, que luego baja."
    ]
   },
-  "u27l5-5": {
-   "prompt": "Si adivinas al azar (50 %), ¿qué probabilidad hay de acertar 4 de 4?",
-   "options": [],
-   "explanation": "0,5⁴ = 0,0625 → 6,25 %. Si 1.000 personas lo intentan, unas 62 acertarán todo sin saber nada.",
-   "unit": "%"
-  },
   "u27l5-7": {
    "prompt": "Rápido: según Barber y Odean (2001), ¿cuánto más operaban los hombres que las mujeres?",
    "options": [
@@ -529,6 +517,39 @@
     "Medir tus resultados en un diario"
    ],
    "explanation": "Subir el riesgo tras acertar es justo lo que hace el exceso de confianza."
+  },
+  "u27l5-11": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Entonces sube el riesgo en tus próximas compras",
+    "Con cuatro intentos manda la suerte: hacen falta muchas más operaciones registradas",
+    "Sí: cuatro de cuatro no es casualidad"
+   ],
+   "explanation": "Con pocos intentos, la suerte se parece mucho al talento: solo una muestra grande y medida distingue una de otro. Lo tentador es creerse el marcador de cuatro rondas.",
+   "feedback": [
+    "Subir el riesgo tras una racha corta es exceso de confianza de manual.",
+    "Vale: lo apunto y sigo midiendo. Ya veré qué dice mi marcador con muchas más.",
+    "Al azar, acertar las cuatro pasa más de una vez de cada veinte. Sí puede serlo."
+   ],
+   "lines": [
+    "He acertado las cuatro rondas de «¿sube o baja?».",
+    "Creo que tengo un don para esto."
+   ]
+  },
+  "u27l5-12": {
+   "prompt": "¿Es exceso de confianza o prudencia?",
+   "options": [
+    "Hacer 40 operaciones al mes porque «me sé el mercado»",
+    "Fiarte de tu memoria para saber cómo te va",
+    "Comparar tu resultado con un índice durante años",
+    "Subir el riesgo tras tres aciertos seguidos",
+    "Mantener el mismo riesgo después de una buena racha"
+   ],
+   "explanation": "La prudencia mide y mantiene las reglas; el exceso de confianza las cambia en cuanto llegan unos aciertos. Y la memoria guarda los aciertos y olvida los errores.",
+   "right": [
+    "Exceso de confianza",
+    "Prudencia"
+   ]
   },
   "u27l6-2": {
    "prompt": "Empareja cada sesgo con su antídoto.",
@@ -578,12 +599,6 @@
     "equivocado"
    ],
    "explanation": "Es el antídoto más sencillo contra el sesgo de confirmación."
-  },
-  "u27l6-9": {
-   "prompt": "Una acción cae de 100 € a 60 €. Si te anclas en los 100 € y esperas a que vuelva, ¿cuánto tiene que subir? (redondea a un decimal)",
-   "options": [],
-   "explanation": "100 ÷ 60 − 1 ≈ 0,667 → +66,7 %. Nada garantiza que lo haga.",
-   "unit": "%"
   },
   "u27l6-10": {
    "prompt": "¿Qué le contestas a Lumi?",

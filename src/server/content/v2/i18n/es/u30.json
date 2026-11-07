@@ -56,7 +56,7 @@
      "title": "Tres formas de rebalancear",
      "body": "1. **Por calendario:** una vez al año, por ejemplo en enero.\n2. **Por umbral:** cuando una parte se aleja más de 5 puntos.\n3. **Con las aportaciones:** el dinero nuevo va a lo que se ha quedado corto. No vendes, así que no generas impuestos.\n\nCon fondos de inversión también puedes rebalancear por **traspaso**, sin tributar.",
      "key": "Calendario, umbral o aportaciones: lo importante es tener una regla y seguirla.",
-     "tip": "Es la forma automática de comprar barato cuando todos venden."
+     "tip": "Pruébalo: en Cartera, mira el «Peso en cartera» de cada activo frente a tu plan."
     }
    ]
   },
@@ -98,7 +98,8 @@
     {
      "title": "Todos los costes",
      "body": "Gastos corrientes o **TER** (vienen en el KID), comisión por operación, spread, custodia, cambio de divisa e impuestos.\n\nJohn Bogle, fundador de Vanguard, lo resumía así: «En inversión, obtienes aquello por lo que no pagas».",
-     "key": "Cada punto de comisión anual se come una parte enorme del resultado por el interés compuesto."
+     "key": "Cada punto de comisión anual se come una parte enorme del resultado por el interés compuesto.",
+     "tip": "Pruébalo: pregúntale a Lumi qué TER es barato para un ETF indexado."
     }
    ]
   },
@@ -157,7 +158,7 @@
       "Un plan de aportación periódica sin coste",
       "Todo tu dinero se pone a trabajar.",
       "Clasifica las seis opciones.",
-      "Con poco dinero, busca **cero comisiones fijas** y automatiza la aportación. Empezar pronto con poco suele pesar más que empezar tarde con mucho.",
+      "Con poco dinero, busca **cero comisiones fijas** y automatiza la aportación. Pruébalo: en Mercado, compra 50 € de un ETF mundial, como VWCE, con tu dinero virtual.",
       "Pregúntate: ¿se come una parte fija de cada aportación?",
       "Clasifica cada opción"
      ]
@@ -167,22 +168,6 @@
   "u30l4": {
    "title": "Medir tu rentabilidad bien",
    "steps": [
-    {
-     "texts": [
-      "¿Cuánto es al año?",
-      "Un fondo convierte **10.000 € en 15.000 €** en 5 años: un +50 % en total. ¿Qué ritmo anual es eso?",
-      "+50 % en 5 años, ¿cuánto es al año?",
-      "Un 10 % al año: 50 entre 5",
-      "Algo menos del 10 % al año",
-      "Un 50 % al año",
-      "El interés se compone: al 10 % anual, 10.000 € serían **16.105 €** en 5 años. Hace falta menos.",
-      "Busca el % anual que convierte 10.000 € en unos 15.000 € en 5 años.",
-      "Un +50 % en 5 años es un **8,4 % anual**, no un 10 %: anualizar es componer al revés. Compara siempre **% anual con % anual**.",
-      "Te pasas: el interés de cada año también gana interés.",
-      "¡Justo! Ni un 10 % ni un 50 %: algo más de un 8 %.",
-      "Mueve el % anual hasta llegar a 15.000 €"
-     ]
-    },
     {
      "texts": [
       "El fondo ganó; Laura, no",
@@ -202,9 +187,26 @@
      ]
     },
     {
+     "texts": [
+      "¿Cuánto es al año?",
+      "Un fondo convierte **10.000 € en 15.000 €** en 5 años: un +50 % en total. ¿Qué ritmo anual es eso?",
+      "+50 % en 5 años, ¿cuánto es al año?",
+      "Un 10 % al año: 50 entre 5",
+      "Algo menos del 10 % al año",
+      "Un 50 % al año",
+      "El interés se compone: al 10 % anual, 10.000 € serían **16.105 €** en 5 años. Hace falta menos.",
+      "Busca el % anual que convierte 10.000 € en unos 15.000 € en 5 años.",
+      "Un +50 % en 5 años es un **8,4 % anual**, no un 10 %: anualizar es componer al revés. Compara siempre **% anual con % anual**.",
+      "Te pasas: el interés de cada año también gana interés.",
+      "¡Justo! Ni un 10 % ni un 50 %: algo más de un 8 %.",
+      "Mueve el % anual hasta llegar a 15.000 €"
+     ]
+    },
+    {
      "title": "Medir con honestidad",
      "body": "Resta comisiones e impuestos, compara con un índice de referencia y recuerda la inflación.\n\nUna app que te dice «+40 % desde el inicio» sin decir en cuántos años no te dice casi nada.",
-     "key": "Para comparar, usa la rentabilidad anualizada; para saber cuánto ganaste tú, la ponderada por dinero."
+     "key": "Para comparar, usa la rentabilidad anualizada; para saber cuánto ganaste tú, la ponderada por dinero.",
+     "tip": "Pruébalo: compara la «Rentabilidad» de tu Cartera con la de SPY en ese tiempo."
     }
    ]
   },
@@ -215,8 +217,9 @@
      "texts": [
       "Tu plan, en una página",
       "Ana",
-      "Quiero escribir mi Declaración de Política de Inversión. ¿Eso no es de grandes inversores?",
-      "Ellos la tienen. Tú puedes tener la tuya en **una página**.",
+      "En marzo de 2020 la bolsa cayó un 30 % y lo vendí todo.",
+      "Luego subió y me quedé fuera. ¿Cómo evito que me vuelva a pasar?",
+      "Con un plan escrito en una página: tu **Declaración de Política de Inversión**.",
       "Dice qué haces, por qué y qué harás cuando el mercado se ponga feo.",
       "Punto 8: «Si la bolsa cae un 30 %, yo…»",
       "…vendo todo y vuelvo cuando se calme",
@@ -272,7 +275,7 @@
      "title": "La plantilla",
      "body": "1. Objetivos («X € en el año Y para Z»).\n2. Horizonte.\n3. Colchón.\n4. Reparto.\n5. Productos y coste máximo.\n6. Aportación automática.\n7. Cuándo rebalanceo.\n8. Qué haré si la bolsa cae un 30 %.\n9. Qué no haré nunca.\n10. Límite para especular (opcional).",
      "key": "Un plan escrito en un momento de calma es lo que te salva en un momento de pánico.",
-     "tip": "Escribe hoy lo que harás el día que todo el mundo tenga miedo."
+     "tip": "Pruébalo: pon una alerta un 20 % bajo tu ETF principal; si salta, relee tu plan."
     }
    ]
   },
@@ -286,7 +289,8 @@
     {
      "title": "Cómo se defiende una cartera",
      "body": "Con argumentos, no con predicciones: «tengo miles de empresas de todo el mundo, un 20 % en bonos para las caídas, un coste del 0,2 % y una regla escrita para rebalancear». Es un ejercicio para aprender, no una recomendación.",
-     "key": "Una buena cartera no es la que más sube un año, sino la que puedes mantener 20 años."
+     "key": "Una buena cartera no es la que más sube un año, sino la que puedes mantener 20 años.",
+     "tip": "Pruébalo: monta tu cartera en Mercado con dinero virtual, por ejemplo con VWCE e IEAG."
     }
    ]
   },
@@ -308,18 +312,6 @@
     "Comprar más acciones, que van bien"
    ],
    "explanation": "Vuelves al nivel de riesgo que elegiste con calma."
-  },
-  "u30l1-2": {
-   "prompt": "Tienes 10.000 €: 6.000 € en acciones y 4.000 € en bonos. Las acciones suben un 40 % y los bonos se quedan igual. ¿Qué porcentaje de la cartera son ahora las acciones? (redondea a un decimal)",
-   "options": [],
-   "explanation": "Acciones: 8.400 €. Total: 12.400 €. 8.400 ÷ 12.400 ≈ 67,7 %.",
-   "unit": "%"
-  },
-  "u30l1-3": {
-   "prompt": "Siguiendo el caso anterior (8.400 € en acciones y 4.000 € en bonos), ¿cuántos euros de acciones tendrías que vender para volver al 60 %?",
-   "options": [],
-   "explanation": "El 60 % de 12.400 € son 7.440 €. 8.400 − 7.440 = 960 €, que pasan a bonos.",
-   "unit": "€"
   },
   "u30l1-5": {
    "prompt": "Tu cartera se ha ido a 75 % acciones y 25 % renta fija. Tu plan es 60/40. Reparte cómo debería quedar: entre un 58 % y un 62 % en acciones.",
@@ -370,17 +362,19 @@
    ],
    "explanation": "El traspaso entre fondos no tributa hasta el reembolso final. Los ETF no tienen esta ventaja."
   },
-  "u30l2-1": {
-   "prompt": "10.000 € a 30 años con un mercado al 7 %. Sin costes acabas con 76.123 € y con un 1,5 % anual con 49.840 €. ¿Cuánto se ha llevado la comisión?",
-   "options": [],
-   "explanation": "76.123 − 49.840 = 26.283 €: más de un tercio del resultado.",
-   "unit": "€"
-  },
-  "u30l2-2": {
-   "prompt": "Mismo caso, pero con un 1,8 % de costes (rentabilidad neta del 5,2 %). ¿Cuánto tendrías a los 30 años? (redondea)",
-   "options": [],
-   "explanation": "10.000 × 1,052³⁰ ≈ 45.759 €, frente a 71.968 € con un 0,2 %.",
-   "unit": "€"
+  "u30l1-11": {
+   "prompt": "Tu plan es 70 % acciones y 30 % bonos, y tras un buen año estás en 78/22. Este mes vas a aportar 300 €. ¿Qué haces?",
+   "options": [
+    "Aporto los 300 € a bonos, y lo mismo los meses siguientes hasta volver al 70/30",
+    "Vendo ya todas las acciones que sobran",
+    "Aporto los 300 € a acciones, que son las que van bien"
+   ],
+   "explanation": "Rebalancear con las aportaciones devuelve la cartera a tu plan sin vender, así que no generas impuestos. Meter el dinero en lo que más sube parece lógico, pero te aleja del riesgo que elegiste.",
+   "feedback": [
+    "¡Bien! Rebalanceas sin vender nada, así que no pagas impuestos.",
+    "Funciona, pero si son ETF o acciones, vender con ganancias tributa. Con las aportaciones lo evitas.",
+    "Así te alejas aún más del plan: cada vez más riesgo del que elegiste."
+   ]
   },
   "u30l2-3": {
    "prompt": "Aportando 300 € al mes durante 30 años, ¿cuánto separa un 0,2 % de costes de un 1,8 %?",
@@ -439,11 +433,19 @@
     "Así que el coste da igual, ¿no?"
    ]
   },
-  "u30l3-4": {
-   "prompt": "Inviertes 100 € al mes y el precio pasa por 10, 8, 5, 8 y 10 €. Compras 65 participaciones con 500 €. ¿Cuál es tu precio medio? (dos decimales)",
-   "options": [],
-   "explanation": "500 ÷ 65 ≈ 7,69 €: por debajo de 10 € aunque el precio empezó y acabó ahí.",
-   "unit": "€"
+  "u30l2-11": {
+   "prompt": "Tienes un ETF del MSCI World que cobra un 0,20 %, con buenas ganancias. Descubres otro del mismo índice al 0,12 %. ¿Qué haces?",
+   "options": [
+    "Me da igual: los costes no importan",
+    "Mantengo el que tengo y llevo las aportaciones nuevas al barato",
+    "Vendo el mío ya y compro el barato"
+   ],
+   "explanation": "Entre dos ETF baratos del mismo índice, la diferencia es pequeña y vender tiene un coste fiscal seguro. Lo sensato es que el dinero nuevo vaya al más barato. Cambiar de golpe solo compensa cuando la diferencia es grande, como de 1,5 % a 0,2 %.",
+   "feedback": [
+    "Sí importan, pero aquí la diferencia es pequeña. Lo caro sería vender con prisa.",
+    "¡Eso! Ahorras costes en lo nuevo sin pagar impuestos por vender lo viejo.",
+    "Vender un ETF con ganancias tributa hoy: pagarías impuestos para ahorrar un 0,08 % al año."
+   ]
   },
   "u30l3-5": {
    "prompt": "Repartes tus 50 € al mes. Reglas: al menos 2 productos, ninguno por encima del 85 %, como máximo un 5 % en cripto y un 10 % en una acción suelta.",
@@ -496,17 +498,33 @@
     "Con eso no voy a ningún sitio, ¿verdad?"
    ]
   },
-  "u30l4-1": {
-   "prompt": "Inviertes 2.000 € y hoy valen 2.600 €. ¿Cuál es tu rentabilidad simple?",
-   "options": [],
-   "explanation": "(2.600 − 2.000) ÷ 2.000 = 0,30 → 30 %.",
-   "unit": "%"
+  "u30l3-11": {
+   "prompt": "Aportas 50 € cada mes a un fondo indexado. Este mes la bolsa ha caído un 20 %. ¿Qué haces con la aportación?",
+   "options": [
+    "La mantengo: con los mismos 50 € compro más participaciones",
+    "Vendo lo que llevo para no perder más",
+    "La paro hasta que la bolsa se recupere"
+   ],
+   "explanation": "Con una aportación fija, cuando el precio baja compras más participaciones y tu precio medio baja. Parar en las caídas parece prudente, pero es dejar de comprar justo cuando está más barato.",
+   "feedback": [
+    "¡Eso! Aportar en las caídas baja tu precio medio sin que tengas que adivinar nada.",
+    "Vender en la caída convierte una bajada temporal en una pérdida definitiva.",
+    "Justo cuando está barato dejas de comprar: te pierdes las participaciones a mejor precio."
+   ]
   },
-  "u30l4-2": {
-   "prompt": "Una inversión gana un 50 % en total en 5 años. ¿Cuál es su rentabilidad anualizada? (un decimal)",
-   "options": [],
-   "explanation": "1,5^(1/5) − 1 ≈ 0,084 → 8,4 % anual. No es 10 %: el interés se compone.",
-   "unit": "%"
+  "u30l3-12": {
+   "prompt": "Vas a invertir 50 € al mes. El bróker A cobra 3 € por cada compra y su ETF, un 0,10 % al año. El B no cobra por comprar y su ETF cuesta un 0,20 %. ¿Cuál te conviene?",
+   "options": [
+    "El A: su ETF es más barato",
+    "El B: sin comisión fija, todo tu dinero se pone a trabajar",
+    "Da igual: la diferencia es mínima"
+   ],
+   "explanation": "Con poco dinero, una comisión fija se come un trozo de cada aportación (3 € de 50 € es mucho más que una décima de punto al año). Por eso el ETF más barato no siempre es la opción más barata.",
+   "feedback": [
+    "Su ETF sí, pero 3 € de cada 50 € se van antes de invertir: eso pesa mucho más.",
+    "Exacto. Con aportaciones pequeñas, una comisión fija por compra es lo más caro.",
+    "No lo es: con 50 € al mes, 3 € por compra se lleva una parte grande de cada aportación."
+   ]
   },
   "u30l4-3": {
    "prompt": "Una inversión duplica su valor (+100 %) en 10 años. ¿Su rentabilidad anualizada es…?",
@@ -567,6 +585,20 @@
    ],
    "explanation": "El mejor año dice poco: importa el resultado neto, a largo plazo y frente a una alternativa."
   },
+  "u30l4-11": {
+   "prompt": "El fondo A anuncia «+60 % en 10 años». El fondo B, «un 6 % anual durante los últimos 5 años». ¿Cuál ha ido mejor cada año?",
+   "options": [
+    "El A: un 60 % es mucho más que un 6 %",
+    "El B: +60 % en 10 años es menos de un 6 % al año, porque el interés se compone",
+    "No se pueden comparar"
+   ],
+   "explanation": "Para comparar, todo tiene que estar en % anual. 60 entre 10 sería un 6 %, pero al componerse hace falta menos cada año para llegar al 60 %, así que A va por detrás de B.",
+   "feedback": [
+    "Comparas un total con un ritmo anual. Hay que pasarlos a la misma medida.",
+    "¡Bien! Repartido entre 10 años y compuesto, ese 60 % da menos que el 6 % anual de B.",
+    "Sí se puede: anualizando los dos. Y ojo, plazos distintos no dicen qué pasará después."
+   ]
+  },
   "u30l5-1": {
    "prompt": "Ordena las primeras secciones de una Declaración de Política de Inversión.",
    "options": [
@@ -608,11 +640,24 @@
    ],
    "explanation": "Aportar cada mes es parte del plan, no algo que evitar."
   },
-  "u30l5-6": {
-   "prompt": "Tu Declaración dice que como máximo un 5 % de tu patrimonio irá a especular. Tienes 18.000 €. ¿Cuál es el máximo?",
+  "u30l5-11": {
+   "prompt": "Tu Declaración dice «como mucho un 5 % para especular». Un año después, tu apuesta en una cripto se ha triplicado y ya pesa un 14 % de tu cartera. ¿Qué haces?",
+   "options": [
+    "La dejo correr: está funcionando",
+    "Vendo lo que pasa del 5 % y lo llevo al resto de la cartera",
+    "Compro más, que va muy bien"
+   ],
+   "explanation": "El límite para especular se respeta también cuando sale bien: si la apuesta crece, se recorta hasta su peso. Dejarla correr parece ganar más, pero convierte lo pequeño en lo que más riesgo tiene.",
+   "feedback": [
+    "Ahora un 14 % de tu dinero depende de algo que puede perderse entero. Tu límite era para esto.",
+    "¡Eso es seguir el plan! Te quedas con parte de la ganancia y el riesgo vuelve a su sitio.",
+    "Subir la apuesta tras una subida es dejar que la euforia decida por ti."
+   ]
+  },
+  "u30l5-12": {
+   "prompt": "Tu Declaración dice «en la parte para especular, siempre con stop». Compras bitcoin al último precio. Coloca el stop algo por debajo del mínimo reciente.",
    "options": [],
-   "explanation": "18.000 × 0,05 = 900 €, y solo dinero que puedas perder entero.",
-   "unit": "€"
+   "explanation": "La regla escrita decide cuánto puedes perder antes de que el miedo o la euforia decidan por ti. El stop va algo por debajo del mínimo reciente: justo encima, cualquier mecha lo saltaría."
   },
   "u30l6-1": {
    "prompt": "Reparte los 10.000 €. Reglas: al menos 4 productos, ninguno por encima del 60 %, al menos un 15 % en bonos, como máximo un 10 % en oro, un 10 % en una acción suelta y un 5 % en cripto.",
@@ -678,12 +723,6 @@
    ],
    "explanation": "Diversificación, coste y tolerancia a las caídas: lo que puedes controlar."
   },
-  "u30l6-6": {
-   "prompt": "Tu cartera: 60 % en un fondo al 0,20 %, 20 % en emergentes al 0,30 % y 20 % en bonos al 0,15 %. ¿Cuántos euros pagas al año sobre 10.000 €?",
-   "options": [],
-   "explanation": "0,6 × 0,20 + 0,2 × 0,30 + 0,2 × 0,15 = 0,21 % → 10.000 × 0,0021 = 21 € al año.",
-   "unit": "€"
-  },
   "u30l6-7": {
    "prompt": "¿Qué debería tener tu cartera de 10.000 € a 20 años? Marca todo.",
    "options": [
@@ -693,14 +732,6 @@
     "Diversificación por empresas y países"
    ],
    "explanation": "Lo especulativo, si lo hay, pequeño y limitado."
-  },
-  "u30l6-8": {
-   "prompt": "Una cartera de 10.000 € necesita al menos 15 productos para estar diversificada.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Con uno a tres fondos indexados ya tienes miles de empresas de todo el mundo."
   },
   "u30l6-9": {
    "prompt": "Ordena los pasos para poner en marcha la cartera.",

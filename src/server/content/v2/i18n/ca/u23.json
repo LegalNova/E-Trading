@@ -54,7 +54,7 @@
      "title": "Peces de tipus diferents",
      "body": "Millor poques eines de **tipus diferents**:\n\n• **Tendència:** màxims i mínims, mitjanes, SMA 200.\n• **Impuls:** RSI o MACD (amb un n’hi ha prou).\n• **Volatilitat:** Bollinger, ATR.\n• **Volum:** més gent al darrere.\n\nI un **senyal** sobre un **nivell**: espelma de gir confirmada o ruptura amb volum.",
      "key": "Busca coincidències de peces diferents, no més indicadors.",
-     "tip": "Deu indicadors no són deu opinions: sovint són la mateixa, repetida."
+     "tip": "Abans de la teva propera compra al simulador, busca tendència, nivell, senyal i volum."
     }
    ]
   },
@@ -107,7 +107,7 @@
      "title": "El mètode en 7 passos",
      "body": "1. Setmanal: tendència i SMA 200.\n2. Estructura de màxims i mínims.\n3. Nivells.\n4. Situació actual: a prop d’un nivell o en una figura?\n5. Senyal en diari.\n6. Indicadors com a filtre.\n7. Pla: entrada, stop, objectiu i risc.\n\nQue les temporalitats no coincideixin també és informació.",
      "key": "Primer la direcció en la temporalitat major; després, el moment en la menor.",
-     "tip": "Abans de mirar l’espelma de cinc minuts, mira on és la de la setmana."
+     "tip": "Prova-ho: a Mercat, mira un actiu en setmanal abans de mirar-lo en diari."
     }
    ]
   },
@@ -151,7 +151,7 @@
      "title": "Els paranys del backtest",
      "body": "• **Sobreajust:** proves tantes variants que alguna surt bé per casualitat.\n• **Biaix d’anticipació:** fer servir dades que en aquell moment encara no es coneixien.\n• **Biaix de supervivència:** provar només amb empreses que avui continuen vives.\n• **Oblidar els costos:** comissions, *spread* i impostos.\n\nLa regla s’escriu **abans** de mirar els resultats. Es dissenya amb una part de les dades (**dins de la mostra**) i es prova una sola vegada amb una altra (**fora de la mostra**).",
      "key": "Un backtest diu el que hauria passat, no el que passarà.",
-     "tip": "Si tortures prou les dades, acaben confessant qualsevol cosa."
+     "tip": "Escriu la teva regla abans de provar-la al simulador, i no la canviïs."
     }
    ]
   },
@@ -203,7 +203,7 @@
      "title": "Per què aprendre-la igualment",
      "body": "Park i Irwin (2007) van revisar 95 estudis moderns: 56 positius, 20 negatius i 19 mixtos… però la majoria amb problemes de mètode, i els més recents troben poc o cap avantatge en accions. Tot i així, entre un 30 i un 40 % dels professionals enquestats la consideren important a curt termini.\n\nServeix per posar entrades, sortides i stops amb lògica, entendre el que fan els altres i detectar els venedors de fum. Un avantatge petit amb una bona gestió del risc pot ser suficient; un de gran sense gestió del risc acaba en ruïna.",
      "key": "Tendència i momentum tenen suport empíric; moltes altres idees no superen les proves.",
-     "tip": "L’anàlisi tècnica no et diu el futur: t’ajuda a decidir on t’equivoques i quant et costa."
+     "tip": "En la teva propera compra del simulador, decideix on t’equivoques abans d’entrar."
     }
    ]
   },
@@ -237,12 +237,6 @@
    ],
    "explanation": "Tendència, impuls i volum mesuren coses diferents."
   },
-  "u23l1-4": {
-   "prompt": "Entres a 50 € amb l’stop a 48 €. A quin preu, com a mínim, hauria de ser l’objectiu per a una relació benefici/risc de 2 a 1?",
-   "options": [],
-   "explanation": "Risc: 2 €. Objectiu: 2 × 2 = 4 € per sobre de l’entrada → 54 €.",
-   "unit": "€"
-  },
   "u23l1-6": {
    "prompt": "Busca tendència, nivells i espelmes en aquest gràfic. Puja o baixa en les 10 sessions següents?",
    "options": [
@@ -269,6 +263,20 @@
     "Afegir-ne més només multiplica les coincidències per casualitat.",
     "Això mateix: millor poques eines de tipus diferents que un parlament d’oscil·ladors.",
     "Si diversos mesuren el mateix, aquest 6 contra 3 pot ser un 1 contra 1 repetit."
+   ]
+  },
+  "u23l1-11": {
+   "prompt": "Tens confluència per comprar: tendència alcista, suport i volum. L’stop va un 3 % per sota, sota el suport, i la resistència més propera és només un 2 % per sobre. Hi entres?",
+   "options": [
+    "Sí: amb tanta confluència, segur que la trenca",
+    "No: arrisco més del que puc guanyar fins a la resistència, així que no compensa",
+    "Sí, però acosto l’stop a un 0,5 % perquè quadri"
+   ],
+   "explanation": "Abans d’entrar, compara: la distància a l’objectiu hauria de ser almenys el doble que la de l’stop. Si no, ni la millor confluència compensa.",
+   "feedback": [
+    "La confluència millora la idea, no l’assegura. I aquí arrisques més del que pots guanyar fins a la resistència.",
+    "Això: si l’objectiu no és almenys al doble de distància que l’stop, l’operació no val la pena.",
+    "Moure l’stop perquè quadrin els comptes el deixa dins del soroll: saltarà sense motiu."
    ]
   },
   "u23l2-1": {
@@ -345,18 +353,6 @@
    "explanation": "100 × 0,05 = 5. Si només ensenyes aquestes 5, semblarà que has descobert alguna cosa.",
    "unit": "regles"
   },
-  "u23l3-2": {
-   "prompt": "Una regla guanya de mitjana un 0,10 % brut per operació. Cada operació costa un 0,15 % entre comissió i spread. Quin és el resultat net per operació?",
-   "options": [],
-   "explanation": "0,10 − 0,15 = −0,05 %. Amb costos, l’«avantatge» es converteix en pèrdua.",
-   "unit": "%"
-  },
-  "u23l3-3": {
-   "prompt": "Una regla encerta el 40 % de les vegades i guanya 300 € quan encerta; el 60 % restant perd 100 €. Quant guanya de mitjana per operació?",
-   "options": [],
-   "explanation": "0,4 × 300 − 0,6 × 100 = 120 − 60 = 60 €. Es pot fallar més del que s’encerta i guanyar, si els guanys són més grans que les pèrdues.",
-   "unit": "€"
-  },
   "u23l3-4": {
    "prompt": "Relaciona cada parany amb el seu exemple.",
    "options": [
@@ -395,6 +391,35 @@
     "Van aconseguir que es prohibissin"
    ],
    "explanation": "Molt del que semblava avantatge era en part casualitat."
+  },
+  "u23l3-11": {
+   "prompt": "Trampa del backtest o prova honesta?",
+   "options": [
+    "Calcular sense comissions ni spread",
+    "Fer servir només les empreses que avui continuen a l’índex",
+    "Escriure la regla abans de mirar els resultats",
+    "Provar 500 variants i ensenyar només la millor",
+    "Provar-la una sola vegada amb dades que no es van fer servir per dissenyar-la"
+   ],
+   "explanation": "Les trampes inflen el passat: quedar-se amb la millor de moltes, oblidar els costos o mirar només les supervivents. El que és honest és fixar la regla abans i provar-la amb dades noves.",
+   "right": [
+    "Trampa",
+    "Prova honesta"
+   ]
+  },
+  "u23l3-12": {
+   "prompt": "La teva regla guanya una mica de mitjana per operació abans de costos, i opera diverses vegades al dia. Què comproves abans de fer-la servir?",
+   "options": [
+    "Si pot operar encara més vegades al dia",
+    "Res: si guanya abans de costos, guanyarà sempre",
+    "Si l’avantatge sobreviu a la comissió i l’spread de cada operació"
+   ],
+   "explanation": "Un backtest sense costos enganya. Amb moltes operacions, un avantatge petit pot desaparèixer en pagar comissió i spread.",
+   "feedback": [
+    "Més operacions multipliquen els costos, no l’avantatge.",
+    "Amb moltes operacions, la comissió i l’spread es poden menjar tot l’avantatge.",
+    "Això: com més operacions, més pesen els costos. Un avantatge petit es pot convertir en pèrdua."
+   ]
   },
   "u23l4-2": {
    "prompt": "Segons Park i Irwin, els estudis positius sobre anàlisi tècnica no tenen problemes de mètode.",

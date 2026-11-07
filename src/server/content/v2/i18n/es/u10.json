@@ -10,6 +10,22 @@
    "steps": [
     {
      "texts": [
+      "Cambiar de fondo",
+      "Pablo",
+      "Tengo 5.000 € en un fondo, con 1.000 € de ganancia.",
+      "He encontrado otro parecido pero más barato. ¿Cómo me cambio?",
+      "¿Qué le dices?",
+      "Vende, y con el dinero compra el nuevo",
+      "Al vender tributa por los 1.000 € de ganancia: unos 190 € para Hacienda.",
+      "Pide un traspaso del fondo viejo al nuevo",
+      "¡Eso! En España el traspaso no tributa. Pagará cuando venda del todo.",
+      "Espera a no tener ganancias",
+      "Podría esperar años. Con un traspaso se cambia hoy, sin pagar.",
+      "Ojo: para que sea traspaso, el dinero no puede pasar por tu cuenta."
+     ]
+    },
+    {
+     "texts": [
       "¿Quién hace qué?",
       "Un **fondo de inversión** reúne el dinero de miles de personas, que compran **participaciones**, y lo invierte según una política. ¿Quién hace cada cosa?",
       "Gestora",
@@ -34,26 +50,10 @@
      ]
     },
     {
-     "texts": [
-      "Cambiar de fondo",
-      "Pablo",
-      "Tengo 5.000 € en un fondo, con 1.000 € de ganancia.",
-      "He encontrado otro parecido pero más barato. ¿Cómo me cambio?",
-      "¿Qué le dices?",
-      "Vende, y con el dinero compra el nuevo",
-      "Al vender tributa por los 1.000 € de ganancia: unos 190 € para Hacienda.",
-      "Pide un traspaso del fondo viejo al nuevo",
-      "¡Eso! En España el traspaso no tributa. Pagará cuando venda del todo.",
-      "Espera a no tener ganancias",
-      "Podría esperar años. Con un traspaso se cambia hoy, sin pagar.",
-      "Ojo: para que sea traspaso, el dinero no puede pasar por tu cuenta."
-     ]
-    },
-    {
      "title": "Activa o indexada",
-     "body": "Hay fondos de **gestión activa** (el gestor elige para intentar batir al índice) e **indexados** (copian un índice con costes bajos).\n\nEl precio de cada participación, el **valor liquidativo**, se calcula una vez al día. Y un fondo no garantiza ganancias: su valor sube y baja con lo que tiene dentro.",
+     "body": "Hay fondos de **gestión activa** (el gestor elige para intentar batir al índice) e **indexados** (copian un índice con costes bajos).\n\nEl precio de cada participación, el **valor liquidativo**, se calcula una vez al día. Y un fondo no garantiza ganancias: su valor sube y baja con lo que tiene dentro.\n\nEl traspaso entre fondos es cambiar de carril sin pagar peaje.",
      "key": "Un fondo reúne el dinero de muchos para comprar muchos activos, con una gestora al mando.",
-     "tip": "El traspaso entre fondos es cambiar de carril sin pagar peaje."
+     "tip": "Pruébalo: en Mercado, busca IWDA, un ETF que copia el índice MSCI World, y añádelo a Favoritos."
     }
    ]
   },
@@ -89,15 +89,32 @@
     },
     {
      "title": "La aritmética de Sharpe",
-     "body": "1. Todos los inversores juntos **son** el mercado.\n2. Antes de costes, el inversor activo medio gana lo mismo que el mercado.\n3. Después de costes, **tiene que** ganar menos.\n\nNo es que los gestores sean malos: compiten entre ellos y cobran más. SPIVA (Europa, cierre de 2025): en solo **1 año**, el **81,8 %** de los fondos de acciones europeas ya quedó por detrás de su índice. Buffett ganó una apuesta de 10 años con un indexado del S&P 500 frente a una selección de *hedge funds*.",
+     "body": "1. Todos los inversores juntos **son** el mercado.\n2. Antes de costes, el inversor activo medio gana lo mismo que el mercado.\n3. Después de costes, **tiene que** ganar menos.\n\nNo es que los gestores sean malos: compiten entre ellos y cobran más. SPIVA (Europa, cierre de 2025): en solo **1 año**, el **81,8 %** de los fondos de acciones europeas ya quedó por detrás de su índice. Buffett ganó una apuesta de 10 años con un indexado del S&P 500 frente a una selección de *hedge funds*. Si casi nadie bate al índice, comprar el índice ya te pone por delante de casi todos.",
      "key": "A largo plazo, la gran mayoría de fondos activos rinde menos que su índice, sobre todo por los costes.",
-     "tip": "Si casi nadie bate al índice, comprar el índice ya te pone por delante de casi todos."
+     "tip": "Pruébalo: en el simulador, compra un poco de CSPX, un ETF que copia el S&P 500, y déjalo crecer."
     }
    ]
   },
   "u10l5": {
    "title": "Acumulación o distribución",
    "steps": [
+    {
+     "texts": [
+      "Ver el dinero",
+      "Lucía",
+      "Prefiero el de distribución: así «veo» el dinero.",
+      "Con el de acumulación parece que no gano nada.",
+      "Lucía tiene 10.000 € en un fondo que reparte un 3 % en dividendos.",
+      "¿Qué le dices?",
+      "Tienes razón, el de acumulación no da nada",
+      "Sí da: sus 300 € se reinvierten y sus participaciones valen más.",
+      "Ganas lo mismo, solo que reinvertido, y pagas impuestos más tarde",
+      "¡Eso! Con el de distribución cobraría 300 €, pero tras la retención le llegarían 243 €.",
+      "Da igual, elige el que quieras",
+      "Antes de impuestos rinden igual. Si no necesitas las rentas, suele ganar el de acumulación.",
+      "No ver el dinero no significa no ganarlo."
+     ]
+    },
     {
      "texts": [
       "¿Acc o Dist?",
@@ -123,33 +140,32 @@
      ]
     },
     {
-     "texts": [
-      "Ver el dinero",
-      "Lucía",
-      "Prefiero el de distribución: así «veo» el dinero.",
-      "Con el de acumulación parece que no gano nada.",
-      "Lucía tiene 10.000 € en un fondo que reparte un 3 % en dividendos.",
-      "¿Qué le dices?",
-      "Tienes razón, el de acumulación no da nada",
-      "Sí da: sus 300 € se reinvierten y sus participaciones valen más.",
-      "Ganas lo mismo, solo que reinvertido, y pagas impuestos más tarde",
-      "¡Eso! Con el de distribución cobraría 300 €, pero tras la retención le llegarían 243 €.",
-      "Da igual, elige el que quieras",
-      "Antes de impuestos rinden igual. Si no necesitas las rentas, suele ganar el de acumulación.",
-      "No ver el dinero no significa no ganarlo."
-     ]
-    },
-    {
      "title": "Cuál encaja en cada fase",
      "body": "Para **acumular** patrimonio durante años, el de acumulación suele ser más eficiente: los 300 € siguen trabajando. El de distribución tiene sentido si **necesitas rentas** (por ejemplo, en la jubilación).\n\nNo es que uno rinda más: cambia cuándo pagas impuestos.",
      "key": "Acumular reinvierte y aplaza impuestos; distribuir te paga rentas que tributan cada año.",
-     "tip": "Mira el nombre del ETF: «Acc» o «Dist» te dice cuál es."
+     "tip": "Pruébalo: en Mercado, busca Vanguard FTSE All-World y encontrarás sus dos versiones, Acc y Dist."
     }
    ]
   },
   "u10l6": {
    "title": "Réplica física y sintética",
    "steps": [
+    {
+     "texts": [
+      "Dos ETF del mismo índice",
+      "Ana",
+      "Dudo entre dos ETF del mismo índice. Uno físico, con un TER del 0,07 %. Otro sintético, del 0,05 %.",
+      "Me quedo el más barato y listo, ¿no?",
+      "¿Qué más debería mirar?",
+      "Nada: el más barato, siempre",
+      "El TER importa, pero también cuánto se desvía de verdad del índice y su tamaño.",
+      "La diferencia de seguimiento real, el tamaño y el tipo de réplica",
+      "¡Bien! Son las piezas para comparar dos ETF del mismo índice.",
+      "Cuántos años lleva en el mercado",
+      "Ayuda algo, pero lo clave es cuánto se desvía y su tamaño.",
+      "Dos ETF del mismo índice no son idénticos: mira cuánto se desvía cada uno."
+     ]
+    },
     {
      "texts": [
       "¿Física o sintética?",
@@ -175,32 +191,34 @@
      ]
     },
     {
-     "texts": [
-      "Dos ETF del mismo índice",
-      "Ana",
-      "Dudo entre dos ETF del mismo índice. Uno físico, con un TER del 0,07 %. Otro sintético, del 0,05 %.",
-      "Me quedo el más barato y listo, ¿no?",
-      "¿Qué más debería mirar?",
-      "Nada: el más barato, siempre",
-      "El TER importa, pero también cuánto se desvía de verdad del índice y su tamaño.",
-      "La diferencia de seguimiento real, el tamaño y el tipo de réplica",
-      "¡Bien! Son las piezas para comparar dos ETF del mismo índice.",
-      "Cuántos años lleva en el mercado",
-      "Ayuda algo, pero lo clave es cuánto se desvía y su tamaño.",
-      "Dos ETF del mismo índice no son idénticos: mira cuánto se desvía cada uno."
-     ]
-    },
-    {
      "title": "Cuánto se desvía",
      "body": "La **diferencia de seguimiento** (*tracking difference*) es lo que el ETF se queda por detrás (o por delante) de su índice en un año. Suele parecerse al TER.\n\nLa sintética puede seguir al índice con mucha precisión y, en algunos casos, ahorrar impuestos. Mira la diferencia de seguimiento junto al tamaño del ETF y su tipo de réplica.",
      "key": "Física: compra lo que hay en el índice. Sintética: un banco le paga lo que hace el índice.",
-     "tip": "Ninguna réplica es mala: lo importante es entender qué riesgo añade cada una."
+     "tip": "Pruébalo: en Mercado, busca IWDA y XDWD: dos ETF de gestoras distintas que copian el mismo MSCI World."
     }
    ]
   },
   "u10l7": {
    "title": "Leer la ficha de un fondo (KID)",
    "steps": [
+    {
+     "texts": [
+      "«Es una oportunidad»",
+      "Laura",
+      "Comercial",
+      "Laura, esto es una oportunidad. Hay que entrar ya.",
+      "La ficha oficial del producto, el KID, dice: indicador de riesgo 7. Periodo de mantenimiento recomendado: 1 día.",
+      "El objetivo del producto no lo acabo de entender…",
+      "¿Qué hace Laura?",
+      "Lo compra: si tiene KID, es seguro",
+      "Tener KID solo significa que informa, no que sea adecuado para ella.",
+      "No lo compra mientras no entienda qué es y cuánto puede perder",
+      "¡Bien! Riesgo 7 y un plazo de un día: producto complejo y especulativo.",
+      "Compra un poco para probar",
+      "Probar con algo que no entiendes no es aprender: es apostar.",
+      "El KID sirve para esto: ver en un minuto que algo no es para ti."
+     ]
+    },
     {
      "texts": [
       "¿Está en el KID?",
@@ -226,28 +244,10 @@
      ]
     },
     {
-     "texts": [
-      "«Es una oportunidad»",
-      "Laura",
-      "Comercial",
-      "Laura, esto es una oportunidad. Hay que entrar ya.",
-      "El KID dice: indicador de riesgo 7. Periodo de mantenimiento recomendado: 1 día.",
-      "El objetivo del producto no lo acabo de entender…",
-      "¿Qué hace Laura?",
-      "Lo compra: si tiene KID, es seguro",
-      "Tener KID solo significa que informa, no que sea adecuado para ella.",
-      "No lo compra mientras no entienda qué es y cuánto puede perder",
-      "¡Bien! Riesgo 7 y un plazo de un día: producto complejo y especulativo.",
-      "Compra un poco para probar",
-      "Probar con algo que no entiendes no es aprender: es apostar.",
-      "El KID sirve para esto: ver en un minuto que algo no es para ti."
-     ]
-    },
-    {
      "title": "Lo que buscas en un minuto",
-     "body": "1. **ISIN:** el DNI del fondo (12 caracteres; empieza por el país, como IE o LU).\n2. **Objetivo y política:** ¿qué compra?\n3. **Indicador de riesgo** (1-7): un monetario suele estar en 1; uno de acciones mundiales, en torno a 4; uno de un solo sector o de emergentes, más arriba.\n4. **Costes** anuales.\n5. **Periodo de mantenimiento recomendado.**",
+     "body": "1. **ISIN:** el DNI del fondo (12 caracteres; empieza por el país, como IE o LU).\n2. **Objetivo y política:** ¿qué compra?\n3. **Indicador de riesgo** (1-7): un monetario suele estar en 1; uno de acciones mundiales, en torno a 4; uno de un solo sector o de emergentes, más arriba.\n4. **Costes** anuales.\n5. **Periodo de mantenimiento recomendado.**\n\nSi no entiendes el KID de un producto, no lo compres.",
      "key": "El KID te dice en 3 páginas qué compras, cuánto puede doler y cuánto cuesta.",
-     "tip": "Si no entiendes el KID de un producto, no lo compres."
+     "tip": "Pruébalo: pregúntale a la profesora Lumi qué mirar en un ETF antes de comprarlo."
     }
    ]
   },
@@ -257,18 +257,6 @@
   }
  },
  "questions": {
-  "u10l1-2": {
-   "prompt": "Un fondo tiene un valor liquidativo de 12,50 €. Inviertes 1.000 €. ¿Cuántas participaciones compras?",
-   "options": [],
-   "explanation": "1.000 ÷ 12,50 = 80 participaciones.",
-   "unit": "participaciones"
-  },
-  "u10l1-3": {
-   "prompt": "Un año después el valor liquidativo es de 13,75 €. ¿Cuánto valen tus 80 participaciones?",
-   "options": [],
-   "explanation": "80 × 13,75 = 1.100 €: un 10 % más.",
-   "unit": "€"
-  },
   "u10l1-4": {
    "prompt": "Si la gestora del fondo quiebra, ¿qué pasa con tu dinero?",
    "options": [
@@ -311,6 +299,38 @@
    ],
    "explanation": "Un fondo de inversión normal no garantiza ganancias: su valor sube y baja con lo que tiene dentro."
   },
+  "u10l1-11": {
+   "prompt": "Ana quiere invertir 50 € al mes en empresas de todo el mundo. ¿Qué le encaja más?",
+   "options": [
+    "Un fondo o ETF indexado mundial",
+    "La acción que más ha subido este año",
+    "Comprar cada mes una acción suelta distinta"
+   ],
+   "explanation": "Un fondo reúne el dinero de muchos y te da miles de empresas con poco dinero. Ir comprando acciones sueltas parece más controlado, pero con poco dinero diversificas mal y pagas más comisiones.",
+   "feedback": [
+    "Bien: con cada aportación compra un trocito de miles de empresas, con costes bajos.",
+    "Todo a una sola empresa, elegida por lo que ya subió: mucho riesgo.",
+    "Con 50 € al mes tardaría años en estar repartida, y pagaría una comisión por cada compra."
+   ]
+  },
+  "u10l1-12": {
+   "prompt": "¿Qué le contestas?",
+   "options": [
+    "Si lo vende un banco, es seguro",
+    "Un fondo sube y baja con lo que tiene dentro: no garantiza ganancias",
+    "No pierden: la CNMV lo garantiza"
+   ],
+   "explanation": "Un fondo normal no garantiza nada: vale lo que valen sus activos. Que lo venda un banco o lo supervise la CNMV da seguridad sobre las reglas y la custodia, no sobre la rentabilidad.",
+   "feedback": [
+    "El banco lo vende, pero su valor depende de lo que compra el fondo.",
+    "Eso. Y el FGD no cubre los fondos de inversión.",
+    "La CNMV supervisa los fondos, pero no garantiza que ganen."
+   ],
+   "lines": [
+    "El banco me ofrece un fondo y dice que «siempre acaba ganando».",
+    "¿Los fondos no pierden nunca?"
+   ]
+  },
   "u10l4-1": {
    "prompt": "Según SPIVA (Europa, cierre de 2025), ¿qué porcentaje de fondos de acciones europeas quedó por detrás de su índice en 10 años?",
    "options": [
@@ -319,12 +339,6 @@
     "Un 65 %"
    ],
    "explanation": "En 1 año ya era el 81,8 %; a 10 años, casi todos."
-  },
-  "u10l4-2": {
-   "prompt": "De 100 fondos activos de acciones europeas, ¿cuántos batieron a su índice en 10 años, según ese 97 %?",
-   "options": [],
-   "explanation": "100 − 97 = 3. Y el verdadero problema es encontrar esos 3 por adelantado.",
-   "unit": "fondos"
   },
   "u10l4-3": {
    "prompt": "Ordena el razonamiento de William Sharpe.",
@@ -365,6 +379,24 @@
    ],
    "explanation": "Algunos sí lo baten; el problema es que son pocos y casi imposibles de identificar por adelantado."
   },
+  "u10l4-11": {
+   "prompt": "¿Qué le contestas?",
+   "options": [
+    "Sí: si lo dice el banco, será verdad",
+    "Antes compáralo con un indexado barato del mismo mercado y mira si de verdad lo ha batido muchos años",
+    "Sí, y cuanto más cobre, mejor gestor"
+   ],
+   "explanation": "Según SPIVA, casi todos los fondos activos quedan por detrás de su índice a 10 años, y sus costes se repiten cada año. Fiarse del banco tienta, pero quien te lo vende cobra por hacerlo.",
+   "feedback": [
+    "El banco cobra por venderlo. La mayoría de activos no bate a su índice.",
+    "Eso. Y recuerda: ese 1,8 % lo pagas cada año, gane o pierda.",
+    "Cobrar más no te hace mejor: los costes restan cada año."
+   ],
+   "lines": [
+    "Mi banco me recomienda su fondo estrella: cobra un 1,8 % al año.",
+    "Dice que su gestor bate al mercado. ¿Lo contrato?"
+   ]
+  },
   "u10l5-1": {
    "prompt": "Empareja cada término con su significado.",
    "options": [
@@ -380,12 +412,6 @@
     "El 19 % que se descuenta al cobrar",
     "Reinvierte los dividendos"
    ]
-  },
-  "u10l5-2": {
-   "prompt": "Un ETF de distribución te paga 400 € de dividendos este año. Con una retención del 19 %, ¿cuánto te llega?",
-   "options": [],
-   "explanation": "400 × 0,81 = 324 €. Los otros 76 € van a Hacienda este año.",
-   "unit": "€"
   },
   "u10l5-3": {
    "prompt": "En España, ¿qué versión suele ser más eficiente fiscalmente para acumular patrimonio durante años?",
@@ -410,12 +436,6 @@
     "Al revés: Marta tendría que vender participaciones para tener rentas y Pablo pagaría impuestos sin necesidad."
    ]
   },
-  "u10l5-7": {
-   "prompt": "Inviertes 10.000 € en un fondo de acumulación que cobra un 3 % anual en dividendos y los reinvierte. Sin contar subidas de precio, ¿cuánto tendrías tras 2 años? (redondea)",
-   "options": [],
-   "explanation": "10.000 × 1,03² = 10.609 €. Los dividendos reinvertidos también generan dividendos.",
-   "unit": "€"
-  },
   "u10l5-10": {
    "prompt": "Lo que reparte un fondo de distribución tributa el año en que lo ____.",
    "options": [
@@ -425,6 +445,20 @@
     "cobras"
    ],
    "explanation": "Por eso, si no necesitas esas rentas, pagas impuestos antes de tiempo."
+  },
+  "u10l5-11": {
+   "prompt": "En Mercado encuentras Vanguard FTSE All-World en dos versiones, Acc y Dist. Tienes 22 años y vas a aportar cada mes durante décadas. ¿Cuál eliges?",
+   "options": [
+    "La Acc, que reinvierte los dividendos",
+    "La Dist, para ir cobrando los dividendos",
+    "Da igual: son fondos distintos"
+   ],
+   "explanation": "Si no necesitas rentas, la Acc deja que los dividendos se reinviertan sin pasar por Hacienda cada año. Cobrar con la Dist tienta porque «ves» el dinero, pero ese ingreso tributa y deja de componerse.",
+   "feedback": [
+    "Bien: todo sigue componiéndose y no pagas impuestos por los dividendos hasta vender.",
+    "Los cobrarías, pero tributarías cada año por unas rentas que no necesitas.",
+    "Tienen las mismas empresas dentro: solo cambia qué hacen con los dividendos."
+   ]
   },
   "u10l6-1": {
    "prompt": "¿Qué es cierto de un ETF de réplica física? Marca todo.",
@@ -471,12 +505,6 @@
     "Compra todos los valores del índice"
    ]
   },
-  "u10l6-6": {
-   "prompt": "Un índice sube un 10,00 % en un año y el ETF que lo replica, un 9,78 %. ¿Cuál es la diferencia de seguimiento en puntos?",
-   "options": [],
-   "explanation": "10,00 − 9,78 = 0,22 puntos, en línea con lo que cuesta un ETF barato.",
-   "unit": "puntos"
-  },
   "u10l6-10": {
    "prompt": "En un ETF sintético, el banco con el que firma el swap se llama ____.",
    "options": [
@@ -487,6 +515,20 @@
    ],
    "explanation": "Si la contraparte falla, el ETF puede perder hasta lo que le deba, que UCITS limita al 10 %."
   },
+  "u10l6-11": {
+   "prompt": "Lees que el banco con el que tu ETF sintético firma el swap tiene problemas. ¿Qué haces?",
+   "options": [
+    "Nada: un ETF no puede perder por eso",
+    "Compruebo su exposición al banco y sus garantías antes de decidir",
+    "Vendo todo ya, antes de perderlo todo"
+   ],
+   "explanation": "El riesgo de la sintética es la contraparte, pero está acotado: como mucho un 10 % del fondo, y con garantías. Vender en pánico tienta, pero supone un riesgo mucho mayor del real; ignorarlo del todo también es un error.",
+   "feedback": [
+    "Sí puede perder algo: es justo el riesgo propio de la réplica sintética.",
+    "Bien: UCITS limita la exposición a la contraparte al 10 % y el ETF tiene una cesta de activos como garantía.",
+    "No lo perderías todo: la norma limita lo que el ETF puede tener en juego con ese banco."
+   ]
+  },
   "u10l7-1": {
    "prompt": "Extracto de un KID (ficticio): «Fondo Ejemplo Mundial, clase Acc. ISIN IE00XXXXXXXX. Objetivo: replicar el índice MSCI World. Indicador de riesgo: 4 de 7. Costes corrientes: 0,20 % anual. Periodo de mantenimiento recomendado: 5 años». ¿Qué nivel de riesgo indica?",
    "options": [
@@ -495,12 +537,6 @@
     "Muy bajo: 4 sobre 100"
    ],
    "explanation": "Un 4 de 7 es habitual en un fondo de acciones mundiales: oscila bastante, pero está diversificado."
-  },
-  "u10l7-2": {
-   "prompt": "Extracto de un KID (ficticio): «Fondo Ejemplo Mundial, clase Acc. ISIN IE00XXXXXXXX. Objetivo: replicar el índice MSCI World. Indicador de riesgo: 4 de 7. Costes corrientes: 0,20 % anual. Periodo de mantenimiento recomendado: 5 años». Si inviertes 5.000 €, ¿cuánto pagarás al año en costes corrientes?",
-   "options": [],
-   "explanation": "5.000 × 0,20 % = 10 € al año.",
-   "unit": "€"
   },
   "u10l7-3": {
    "prompt": "¿Qué encontrarás siempre en un KID? Marca todo.",
@@ -547,6 +583,20 @@
     "ISIN"
    ],
    "explanation": "Con el ISIN encuentras el fondo exacto en cualquier bróker o en la CNMV."
+  },
+  "u10l7-11": {
+   "prompt": "Comparas el KID de dos fondos que copian el MSCI World. Los dos tienen un indicador de riesgo 4. Uno cuesta un 0,20 % al año y el otro, un 1,80 %. Vas a mantenerlo 20 años. ¿Cuál eliges?",
+   "options": [
+    "El del 1,80 %: si cuesta más, será mejor",
+    "Da igual: es poca diferencia",
+    "El del 0,20 %"
+   ],
+   "explanation": "Si dos fondos compran lo mismo, el coste es lo que más los diferencia. Pensar que más caro es mejor tienta, pero en un indexado el coste extra solo resta.",
+   "feedback": [
+    "Copian el mismo índice: pagar más no te da más, solo te deja menos.",
+    "En un año parece poco, pero en 20 años se come una parte grande de lo ganado.",
+    "Bien: mismo índice y mismo riesgo; la diferencia de costes se repite cada año durante 20 años."
+   ]
   }
  }
 }

@@ -42,7 +42,7 @@
      "title": "El cicle emocional",
      "body": "Optimisme → entusiasme → **eufòria** (màxim risc) → ansietat → negació → por → **pànic i capitulació** (màxima oportunitat) → desesperança → esperança…\n\nNo es tracta d'endevinar el sostre o el terra: ningú no ho fa de manera fiable. Es tracta de no deixar que la por o l'avarícia canviïn un pla escrit amb calma.",
      "key": "Els inversors tendeixen a comprar en l'eufòria i vendre en el pànic: just al revés del que convé.",
-     "tip": "Quan sentis eufòria o pànic, no decideixis avui: rellegeix el teu pla."
+     "tip": "Prova-ho: posa una alerta de caiguda al teu ETF i decideix avui què faràs."
     }
    ]
   },
@@ -86,7 +86,7 @@
      "title": "La regla preparada",
      "body": "**«Després de 3 pèrdues seguides, m'aturo la resta del dia.»**\n\nI, a més:\n• El risc per operació és sempre el mateix.\n• Si perds un 6 % en un mes, t'atures fins al mes següent.\n• Apuntes al diari com et senties.",
      "key": "Després d'una pèrdua, la millor decisió sol ser no prendre'n cap més aquell dia.",
-     "tip": "Després de tres pèrdues seguides, la millor operació és apagar la pantalla."
+     "tip": "Prova-ho: revisa el teu historial i mira què vas fer just després de l'última pèrdua."
     }
    ]
   },
@@ -130,7 +130,7 @@
      "title": "El que t'emportes",
      "body": "Com més mires el mercat, més moviments veus que no signifiquen res, i cadascun sembla demanar una decisió.\n\nMenys operacions, més ben triades, amb costos baixos. I per al llarg termini: aportacions automàtiques i revisar la cartera de tant en tant, no cada dia.",
      "key": "Cada operació paga costos: operar molt converteix un avantatge petit en pèrdua.",
-     "tip": "En inversió, moltes vegades el més rendible és no fer res."
+     "tip": "Prova-ho: deixa a Preferits només els actius del teu pla i treu la resta."
     }
    ]
   },
@@ -181,7 +181,7 @@
      "title": "Revisió mensual",
      "body": "• He seguit el meu pla? En quines operacions no, i per què?\n• La meva rendibilitat supera la d'un índex comparable?\n• Quin biaix he vist en mi aquest mes?\n\nI pregunta-li a la Lumi en el mode Biaixos: et farà d'advocat del diable.",
      "key": "No pots eliminar les emocions; pots impedir que decideixin per tu.",
-     "tip": "No cal que siguis fred com una màquina. Necessites regles que funcionin encara que no ho siguis."
+     "tip": "Prova-ho: passa la llista sencera abans de la teva propera compra del simulador."
     }
    ]
   },
@@ -278,12 +278,6 @@
     "Si apujo la mida, ho recupero tot aquesta tarda."
    ]
   },
-  "u28l2-5": {
-   "prompt": "Compte de 10.000 €. Perds tres operacions de 100 € i, per ràbia, arrisques 600 € a la quarta, que també perds. Quant has perdut en total?",
-   "options": [],
-   "explanation": "3 × 100 + 600 = 900 €: un 9 % del compte en una tarda. Amb la regla d'aturar-te, haurien estat 300 €.",
-   "unit": "€"
-  },
   "u28l2-6": {
    "prompt": "Ordena què has de fer després de tres pèrdues seguides.",
    "options": [
@@ -322,18 +316,6 @@
     "No tenen res en comú"
    ],
    "explanation": "Quan perdem, ens tornem més arriscats: «doblo per recuperar»."
-  },
-  "u28l3-1": {
-   "prompt": "Fas 2 operacions a la setmana i cadascuna et costa 6 € entre comissió i spread. Quant pagues en un any de 52 setmanes?",
-   "options": [],
-   "explanation": "2 × 6 × 52 = 624 €.",
-   "unit": "€"
-  },
-  "u28l3-2": {
-   "prompt": "Si el teu compte és de 5.000 €, quin percentatge anual es mengen aquests 624 € de costos? (arrodoneix a un decimal)",
-   "options": [],
-   "explanation": "624 ÷ 5.000 ≈ 0,125 → 12,5 % l'any. Hauries de guanyar això només per quedar-te igual.",
-   "unit": "%"
   },
   "u28l3-8": {
    "prompt": "És una decisió útil o soroll?",
@@ -383,6 +365,30 @@
     "M'he posat alertes de preu en 40 accions 📲",
     "Així no em perdo res."
    ]
+  },
+  "u28l3-11": {
+   "prompt": "El teu fons indexat de llarg termini baixa un 1 % un dimarts. Fa tres dies que obres l'app cada hora. Què fas?",
+   "options": [
+    "Em passo al fons que més puja avui",
+    "No el toco: continuo amb les aportacions i el reviso de tant en tant",
+    "Venc avui i recompro quan baixi més"
+   ],
+   "explanation": "Per al llarg termini, un dia dolent no demana cap decisió: cada operació de més paga costos i poques vegades millora el resultat. El temptador és «fer alguna cosa» perquè ho estàs mirant.",
+   "feedback": [
+    "Canviar segons el que puja avui és perseguir el soroll, i cada canvi paga costos.",
+    "Bé: un 1 % en un dia és soroll per a un pla d'anys.",
+    "Pagues costos dues vegades i has d'encertar dos moments. El normal és fallar-ne algun."
+   ]
+  },
+  "u28l3-12": {
+   "prompt": "Què tornes a pagar cada vegada que compres o vens? Marca-ho tot.",
+   "options": [
+    "L'spread entre el preu de compra i el de venda",
+    "Els impostos, si vens amb guanys",
+    "La rendibilitat de l'índex",
+    "La comissió del bròker"
+   ],
+   "explanation": "Comissió, spread i impostos es paguen en cada operació: per això operar molt es menja un avantatge petit. La rendibilitat de l'índex no és un cost: és el que guanyes si no et mous."
   },
   "u28l4-1": {
    "prompt": "Ordena la teva rutina antibiaixos d'una operació.",

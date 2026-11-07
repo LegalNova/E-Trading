@@ -41,7 +41,7 @@ export default unit({
           { say: 'Coloca cada criterio', mood: 'HAPPY' },
         ],
       }),
-      key('El orden para elegir', '1. **Regulación:** CNMV o supervisor de la UE con pasaporte.\n2. **Protección:** valores separados y fondo de garantía (FOGAIN, hasta 100.000 €).\n3. **Costes:** compraventa, custodia, divisa, inactividad.\n4. **Productos:** ¿tiene los fondos indexados y ETF que quieres?\n5. **Fiscalidad:** un bróker español retiene e informa; con uno extranjero declaras tú todo.', 'Primero, que sea seguro y esté autorizado; después, que sea barato.', 'Antes de mirar cuánto cobra un bróker, mira quién lo vigila.'),
+      key('El orden para elegir', '1. **Regulación:** CNMV o supervisor de la UE con pasaporte.\n2. **Protección:** valores separados y fondo de garantía (FOGAIN, hasta 100.000 €).\n3. **Costes:** compraventa, custodia, divisa, inactividad.\n4. **Productos:** ¿tiene los fondos indexados y ETF que quieres?\n5. **Fiscalidad:** un bróker español retiene e informa; con uno extranjero declaras tú todo.', 'Primero, que sea seguro y esté autorizado; después, que sea barato.', 'Pruébalo: en Mercado, busca un ETF del MSCI World y apunta su nombre.'),
     ], [
       order('Ordena los criterios para elegir un bróker, del primero al último que deberías mirar.', ['Regulación', 'Protección si quiebra', 'Costes', 'Productos', 'Fiscalidad y comodidad'], 'Seguridad primero; precio y comodidad después.'),
       multi('¿Qué compruebas antes de abrir una cuenta? Marca todo.', ['Que esté autorizado en los registros de la CNMV', 'Qué fondo de garantía le protege', 'Sus comisiones de compraventa, custodia y divisa', 'Cuántos seguidores tiene en redes'], [0, 1, 2], 'La popularidad en redes no dice nada sobre su seguridad.'),
@@ -58,7 +58,7 @@ export default unit({
     lesson('u33l2', 'Las comisiones de un bróker', [
       play({
         title: '¿Barata o cara?',
-        intro: 'Una comisión pesa distinto según cuánto compres. ¿Se lleva **menos del 1 %** de la compra o **un 1 % o más**?',
+        intro: 'Vas a meter **100 €** en un ETF y el bróker cobra **3 € fijos**. ¿Mucho o poco? Depende de lo que compres: ¿se lleva **menos del 1 %** o **un 1 % o más**?',
         widget: {
           kind: 'sort',
           bins: [{ label: 'Menos del 1 %' }, { label: 'Un 1 % o más' }],
@@ -96,7 +96,7 @@ export default unit({
           { say: 'Sube el coste y mira cuánto se lleva', mood: 'HAPPY' },
         ],
       }),
-      key('Qué te cobran', '• **Compraventa:** por cada operación (fija, porcentual o mixta).\n• **Custodia:** por guardar tus valores, a veces mensual o anual.\n• **Cambio de divisa:** al comprar en otra moneda. Suele ser el **coste oculto más alto**: del 0,1 % al 0,5 % o más por operación.\n• **Otras:** inactividad, retirada, cobro de dividendos.\n\nY dentro de cada fondo o ETF, su **TER**.', 'El bróker más barato es el que menos te cobra a ti, con tu forma de invertir.'),
+      key('Qué te cobran', '• **Compraventa:** por cada operación (fija, porcentual o mixta).\n• **Custodia:** por guardar tus valores, a veces mensual o anual.\n• **Cambio de divisa:** al comprar en otra moneda. Suele ser el **coste oculto más alto**: del 0,1 % al 0,5 % o más por operación.\n• **Otras:** inactividad, retirada, cobro de dividendos.\n\nY dentro de cada fondo o ETF, su **TER**.', 'El bróker más barato es el que menos te cobra a ti, con tu forma de invertir.', 'Pruébalo: en Mercado, prepara una compra de 100 € y mira la comisión simulada.'),
     ], [
       num('Pagas 5 € de comisión fija por comprar 100 € de un ETF. ¿Qué porcentaje se va en comisión?', 5, '%', '5 ÷ 100 = 5 %. Tendrías que ganar un 5 % solo para empatar.'),
       num('Compras 2.000 € de acciones de EE. UU. y el bróker cobra un 0,5 % por el cambio de divisa. ¿Cuántos euros pagas solo por cambiar?', 10, '€', '2.000 × 0,005 = 10 €. Y al vender pagarías otra vez.'),
@@ -108,7 +108,8 @@ export default unit({
       buckets('¿Se paga por operación o cada año?', ['En cada operación', 'Cada año'], [['Comisión de compraventa', 0], ['Custodia', 1], ['Cambio de divisa', 0], ['TER de un fondo', 1], ['Spread entre compra y venta', 0]], 'Los costes por operación castigan operar mucho; los anuales, mantener caro.'),
       timed(single('Rápido: ¿dónde encuentras el coste anual (TER) de un fondo o ETF?', ['En el KID, el documento de datos fundamentales', 'En su cuenta de Instagram', 'En tu declaración de la renta'], 0, 'Es obligatorio y está estandarizado para poder comparar.'), 12),
       order('Compra única de 100 €. Ordena de más barato a más caro.', ['0,1 % sin mínimo (0,10 €)', '0,5 % sin mínimo (0,50 €)', '2 € fijos', '5 € fijos'], 'Con importes pequeños, las comisiones fijas pesan muchísimo.'),
-    ], { source: '12.1', minutes: 6, retire: [0, 6, 8, 9] }),
+      scenario('Vas a aportar 100 € cada mes a un ETF que cotiza en dólares. Un bróker anuncia en grande «0 € de comisión». ¿Qué haces antes de elegirlo?', [['Lo elijo: 0 € no se puede mejorar', 'La compraventa puede ser gratis y el coste estar en el cambio de divisa o la custodia. El «0 €» en grande no dice nada de la letra pequeña.'], ['Miro también cuánto cobra por cambiar divisa y por custodia', 'Bien: si compras en dólares cada mes, el cambio de divisa puede ser tu coste más alto aunque la compraventa sea gratis.'], ['Elijo el que más anuncios hace, que será el más fiable', 'La publicidad no dice nada de lo que te cobran a ti ni de si está autorizado.']], 1, 'El bróker más barato es el que menos te cobra con tu forma de invertir: suma todos los costes. La tentadora, «0 €», falla porque solo mira una comisión.'),
+    ], { source: '12.1', minutes: 6, retire: [0, 1, 2, 6, 8, 9] }),
 
     lesson('u33l3', 'Neobrókers: cómo ganan dinero', [
       play({
@@ -164,6 +165,7 @@ export default unit({
         ]),
         say('lumi', 'Con un 0,2 % de spread, son **480 € al año**, aunque diga «0 € de comisión».'),
         say('lumi', 'Un neobróker autorizado puede ser buena opción. Solo no dejes que decida cuánto operas.'),
+        say('lumi', 'Pruébalo: abre tu Historial y cuenta cuántas operaciones hiciste este mes.'),
       ]),
     ], [
       single('¿Qué es el pago por flujo de órdenes (PFOF)?', ['Una comisión que pagas tú al bróker', 'Lo que un intermediario paga al bróker por enviarle tus órdenes', 'Un impuesto sobre las operaciones'], 1, 'Por eso un bróker puede anunciar compraventa a 0 € y aun así ganar con tus órdenes.'),
@@ -181,7 +183,7 @@ export default unit({
     lesson('u33l4', 'Robo-advisors y gestión automatizada', [
       play({
         title: '¿Cuánto cuesta la comodidad?',
-        intro: '**10.000 €** a 30 años con un mercado del 7 % anual (ejemplo). Hacerlo tú con indexados cuesta un **0,2 %** al año; un robo-advisor, entre gestión y fondos, un **0,6 %**.',
+        intro: 'Una app te ofrece invertir tus **10.000 €** por ti, sin que tengas que pensar. Cobra un **0,6 %** al año entre gestión y fondos; hacerlo tú con indexados, un **0,2 %**. A 30 años y con un mercado del 7 % anual (ejemplo), ¿compensa?',
         widget: { kind: 'fees', amount: 10000, monthly: 0, gross: 7, feeA: 0.2, feeB: 0.6, years: 30, maxFee: 2, maxYears: 40 },
         predict: {
           prompt: 'A 30 años, ¿cuánto te cuesta el robo-advisor frente a hacerlo tú?',
@@ -207,7 +209,7 @@ export default unit({
         ]),
         say('lumi', 'Ojo: un robo-advisor **no elimina el riesgo**. Si cae el mercado, cae tu cartera.'),
       ]),
-      key('Qué es un robo-advisor', 'Un servicio de **gestión automatizada**: respondes un cuestionario (el **test de idoneidad**), te asigna una cartera de fondos indexados según tu perfil y se encarga de aportar y **rebalancear** por ti.\n\nEn España tiene que ser una entidad **autorizada por la CNMV**.', 'Un robo-advisor automatiza la disciplina, pero cobra por ello y no elimina el riesgo de mercado.'),
+      key('Qué es un robo-advisor', 'Un servicio de **gestión automatizada**: respondes un cuestionario (el **test de idoneidad**), te asigna una cartera de fondos indexados según tu perfil y se encarga de aportar y **rebalancear** por ti.\n\nEn España tiene que ser una entidad **autorizada por la CNMV**.', 'Un robo-advisor automatiza la disciplina, pero cobra por ello y no elimina el riesgo de mercado.', 'Pruébalo: en tu Cartera, mira el peso de cada activo; un robo-advisor lo reajusta solo.'),
     ], [
       match('Empareja cada forma de invertir con su descripción.', [['Robo-advisor', 'Cartera automática de indexados según un test'], ['Hacerlo tú', 'Eliges y compras tus fondos indexados'], ['Fondo activo', 'Un gestor elige valores para batir al índice'], ['Gestión discrecional', 'Delegas las decisiones en una entidad autorizada']], 'El robo-advisor es una gestión discrecional automatizada y, normalmente, indexada.'),
       single('¿Qué hace un robo-advisor después de tu test de perfil?', ['Te recomienda acciones de moda', 'Te asigna una cartera de indexados y la rebalancea por ti', 'Te garantiza una rentabilidad'], 1, 'Automatiza el reparto, las aportaciones y el rebalanceo.'),

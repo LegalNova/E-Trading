@@ -5,6 +5,55 @@
   "section": "Inverteix des d’avui"
  },
  "lessons": {
+  "h1l1": {
+   "title": "La teva primera inversió en 3 minuts",
+   "steps": [
+    {
+     "texts": [
+      "40 anys de borsa en 20 segons",
+      "L'**S&P 500** reuneix les 500 empreses més grans dels EUA, com Apple o Amazon. Hi poses **1.000 €** virtuals el gener del 1985 i vius el que va passar de debò.",
+      "Sense afegir-hi ni un euro, quant valen aquests 1.000 € a finals del 2025?",
+      "Uns 2.000 €",
+      "Uns 8.000 €",
+      "Més de 30.000 €",
+      "Valen **38.109 €**: unes 38 vegades el que hi vas posar, sense comptar dividends ni el canvi de moneda.",
+      "Arriba fins al 2025. Si t'espantes, pots vendre.",
+      "Hi va haver dues caigudes d'aproximadament la meitat (2000-2002 i 2008) i, tot i així, qui no va vendre va multiplicar els seus diners per **38**. Qui va començar el 2005, només per **5,8**: **començar aviat** pesa moltíssim.",
+      "Has venut. Mira quant valdria si haguessis aguantat.",
+      "Quaranta anys, diverses crisis i unes 38 vegades els teus diners.",
+      "Ja passen de 11.000 €. Només has hagut d'esperar.",
+      "Prem començar. Pots vendre quan vulguis."
+     ]
+    },
+    {
+     "texts": [
+      "Començo quan guanyi més",
+      "Leo",
+      "En Leo té 20 anys i acaba de veure aquest mateix gràfic.",
+      "Brutal. Però ara només puc apartar 50 € al mes.",
+      "Millor espero als 30 i hi poso 100 € al mes.",
+      "Fins als 60 i guanyant un 7 % l'any, quan acaba amb més?",
+      "Si comença ja, amb 50 € al mes",
+      "Això: hi posa 24.000 € i arriba a més de 120.000 €.",
+      "Si espera, hi posa 36.000 € i arriba a uns 117.000 €.",
+      "Si espera als 30, amb 100 € al mes",
+      "Hi posa 36.000 € i arriba a uns 117.000 €. Començant ja, a més de 120.000 €.",
+      "Més o menys igual",
+      "Gairebé, però començant ja hi posa 12.000 € menys i acaba amb més.",
+      "És l'**interès compost**: el que guanyes també guanya, i el temps ho multiplica.",
+      "El 7 % és un exemple: la borsa no promet res cada any.",
+      "I com començo sense arriscar els meus diners?",
+      "Amb diners virtuals, aquí mateix. T'ho ensenyo."
+     ]
+    },
+    {
+     "title": "El que acabes de descobrir",
+     "body": "• Una **acció** és un trosset d'una empresa. Amb l'S&P 500 tens un trosset de 500 alhora.\n• La borsa de vegades cau, i molt, però en aquests 40 anys qui no va vendre va multiplicar els seus diners.\n• **Començar aviat** pesa més que començar amb molt.\n\nA Lumi practiques amb diners virtuals: et pots equivocar sense perdre res de debò.",
+     "key": "Invertir és comprar trossets d'empreses i donar-los temps per créixer.",
+     "tip": "Ara tu: a Mercat, cerca una empresa que coneguis i compra la teva primera acció."
+    }
+   ]
+  },
   "u8l1": {
    "title": "Què és una acció",
    "steps": [
@@ -20,9 +69,9 @@
       "No: només és un número que puja i baixa",
       "Darrere del preu hi ha un negoci real, i en tens un trosset.",
       "Sí, i ja pot manar a l'empresa",
-      "Pot votar a la junta, però el seu vot pesa molt poc.",
+      "Pot votar a la junta d'accionistes, però el seu vot pesa molt poc.",
       "I com hi guanyo diners?",
-      "**Dividends + revalorització**: el que reparteix i el que puja el preu.",
+      "De dues maneres: **dividends** (reparteix beneficis) i **revalorització** (puja el preu).",
       "A llarg termini, el preu segueix els beneficis; a curt, les expectatives.",
       "Si l'empresa fa fallida, l'accionista cobra l'últim i gairebé mai no recupera res."
      ]
@@ -57,7 +106,7 @@
       "Una sola acció",
       "Dades reals: **10.000 €** a Tesla a finals del 2018, en dòlars i sense dividends. Així es viu la renda variable.",
       "Arriba fins al final, tant si vens com si no.",
-      "Tesla es va multiplicar per gairebé 19, però pel camí va arribar a caure un **72 %** des del seu màxim. I és una excepció: només un **4 %** de les accions dels EUA va generar tot el guany net del mercat entre el 1926 i el 2016 (Bessembinder).",
+      "Tesla es va multiplicar per gairebé 19, però va arribar a caure un **72 %**, i és una excepció: només un **4 %** de les accions dels EUA va generar tot el guany net del mercat entre el 1926 i el 2016. Prova-ho: a Mercat, obre Tesla i mira quant ha pujat i baixat aquest any.",
       "Has venut. Mira què passa després…",
       "Un 30 % per sota del que hi vas posar. Aguantes?",
       "Ja has més que duplicat. I si ara cau?",
@@ -72,7 +121,7 @@
     {
      "texts": [
       "El llibre d'ordres",
-      "A l'esquerra, qui vol **comprar** (*bid*); a la dreta, qui vol **vendre** (*ask*). Si compres ara mateix, compres al millor preu de venda.",
+      "Vols 600 accions ara mateix i el venedor més barat demana **10,04 €**. Aquest és el **llibre d'ordres**: a l'esquerra, qui vol comprar (*bid*); a la dreta, qui vol vendre (*ask*).",
       "Vols comprar **600 accions** ara mateix. A quin preu mitjà et surten?",
       "A 10,04 €, el millor preu de venda",
       "Una mica més cares que 10,04 €",
@@ -89,7 +138,7 @@
      "texts": [
       "Resultats per sorpresa",
       "Leo",
-      "Són les 10:00. L'empresa d'en Leo publica uns resultats molt millors del que s'esperava.",
+      "Són les 10:00. L'empresa d'en Leo anuncia que ha guanyat molt més del que s'esperava.",
       "Al llibre, el millor venedor demanava 10,04 €. I ara què?",
       "Què creus que passa amb el preu?",
       "Puja: els compradors es mengen l'oferta",
@@ -103,10 +152,10 @@
      ]
     },
     {
-     "title": "Les subhastes",
-     "body": "La Borsa de Madrid obre i tanca amb una **subhasta**: de 8:30 a 9:00 i de 17:30 a 17:35 s'acumulen ordres i es fixa un preu únic que encreua el volum màxim.",
+     "title": "El que mou el preu",
+     "body": "El preu que veus no és el que val l'empresa: és el que algú **acaba de pagar**. Si arriben més compradors amb pressa, puja; si arriben més venedors, baixa.\n\nLa Borsa de Madrid obre i tanca amb una **subhasta**: de 8:30 a 9:00 i de 17:30 a 17:35 s'ajunten les ordres i es fixa un preu únic, el que permet més compravendes.",
      "key": "El preu és l'últim acord entre qui paga més i qui demana menys.",
-     "tip": "El preu no és el que val una empresa: és el que algú acaba de pagar."
+     "tip": "Prova-ho: a Mercat, obre Inditex i mira quant ha pujat o baixat avui."
     }
    ]
   },
@@ -116,7 +165,7 @@
     {
      "texts": [
       "Comprar ara mateix",
-      "Una **ordre a mercat** compra a l'instant, al millor preu de venda disponible. Aquesta empresa és petita i gairebé no es negocia.",
+      "Vols accions d'una empresa petita que gairebé no es negocia i prems «comprar ara». Això és una **ordre a mercat**: compra a l'instant, al millor preu de venda que hi hagi.",
       "Compres **1.000 accions a mercat**. Què creus que passarà amb el teu preu?",
       "Pagues 4,00 €, el millor preu",
       "Pagues força més de mitjana",
@@ -147,9 +196,9 @@
     },
     {
      "title": "Quan surt cara",
-     "body": "• **Valors poc líquids:** la teva ordre es menja diversos graons del llibre.\n• **Obertura o just després d'una notícia:** els preus salten.\n• **Borsa tancada:** s'executarà a l'obertura, al preu que hi hagi llavors.\n\nAl simulador, la compra a mercat entra a l'últim preu i també et demana un **stop**: ho veuràs a la classe 4 d'aquesta unitat.",
+     "body": "• **Valors poc líquids** (els que gairebé ningú compra ni ven): la teva ordre es menja diversos graons del llibre.\n• **Obertura o just després d'una notícia:** els preus salten.\n• **Borsa tancada:** s'executarà a l'obertura, al preu que hi hagi llavors.\n\nAl simulador, la compra a mercat entra a l'últim preu. Abans de comprar, pensa també el teu **stop**: el preu al qual vendries per tallar la pèrdua si baixa.",
      "key": "A mercat = rapidesa garantida, preu no garantit.",
-     "tip": "Si t'importa el preu exacte, l'ordre a mercat no és la teva."
+     "tip": "Prova-ho: a Mercat, compra a mercat una gran empresa i mira a quin preu entres."
     }
    ]
   },
@@ -159,11 +208,11 @@
     {
      "texts": [
       "Què t'explica un gràfic?",
-      "En horitzontal, el **temps**. En vertical, el **preu**. A sota, el **volum**. Què pots saber si el mires?",
+      "Un amic t'ensenya una acció que no para de pujar: «Compro ja?». Al seu gràfic, el **temps** va en horitzontal, el **preu** en vertical i el **volum** (quant es negocia) a sota: què et diu i què no?",
       "Ho diu el gràfic",
       "No ho diu",
       "A quin preu va obrir ahir",
-      "Cada espelma guarda la seva obertura.",
+      "Cada espelma, la barreta de cada dia, guarda la seva obertura.",
       "El preu de demà",
       "Ningú no ho sap: el gràfic és un registre del passat.",
       "El preu més alt de la setmana",
@@ -187,7 +236,7 @@
       "Llegir no és endevinar",
       "Tres gràfics reals de 30 espelmes diàries. Llegeix-los i decideix: **puja o baixa** en les 10 sessions següents?",
       "Juga les tres rondes.",
-      "Llegir el passat és fàcil; endevinar el futur, no. L'anàlisi tècnica treballa amb **probabilitats, mai amb certeses**.",
+      "Llegir el passat és fàcil; endevinar el futur, no. Qui estudia gràfics treballa amb **probabilitats, mai amb certeses**.",
       "Tres de tres! Amb tan poques rondes, la sort pesa molt.",
       "Encertar el futur amb espelmes és difícil per a tothom.",
       "Mira les espelmes i tria: puja o baixa?"
@@ -195,9 +244,9 @@
     },
     {
      "title": "Quatre preus per període",
-     "body": "De cada període es desen quatre dades (en anglès, **OHLC**):\n\n• **Obertura** (open): el primer preu.\n• **Màxim** (high) i **mínim** (low).\n• **Tancament** (close): l'últim, i el més important.\n\nA E-Trading, quan passes el dit per una espelma, en veus els quatre preus, la variació i el volum.",
+     "body": "Cada **espelma** resumeix un període (un dia, una setmana…) amb quatre dades (en anglès, **OHLC**):\n\n• **Obertura** (open): el primer preu.\n• **Màxim** (high) i **mínim** (low).\n• **Tancament** (close): l'últim, i el més important.\n\nA Lumi, quan passes el dit per una espelma, en veus els quatre preus, la variació i el volum. Llegir bé un gràfic ja és un avantatge: molta gent només mira si està en verd o en vermell.",
      "key": "Un gràfic explica el que va passar, no el que passarà.",
-     "tip": "Llegir-lo bé ja és un avantatge: molta gent només mira si està en verd o en vermell."
+     "tip": "Prova-ho: a Mercat, obre un gràfic i passa el dit per l'última espelma."
     }
    ]
   },
@@ -207,15 +256,15 @@
     {
      "texts": [
       "El matalàs, el simple i el compost",
-      "Tres maneres de guardar **1.000 €**:\n\n• **Sota el matalàs:** no creixen.\n• **Interès simple:** cobres sempre sobre el que hi vas posar.\n• **Interès compost:** també guanyes sobre el que ja has guanyat.",
+      "Tens **1.000 €** i 30 anys per endavant. Tres maneres de guardar-los:\n\n• **Sota el matalàs:** no creixen.\n• **Interès simple:** cobres sempre sobre el que hi vas posar.\n• **Interès compost:** també guanyes sobre el que ja has guanyat.",
       "1.000 € al 7 % l'any durant 30 anys. Quant tindràs amb interès compost?",
       "Uns 3.100 €",
       "Uns 7.600 €",
       "Uns 21.000 €",
       "Amb interès simple serien 3.100 €. Amb compost, **7.612 €**: gairebé dues vegades i mitja més, sense posar-hi ni un euro més.",
-      "Arriba a 10.000 € sense afegir-hi diners: juga amb la rendibilitat i els anys.",
+      "Arriba a 10.000 € sense afegir-hi diners: juga amb la rendibilitat (el que guanyen els teus diners cada any) i els anys.",
       "El compost **accelera**: els últims anys creixen molt més que els primers. Per això el temps pesa tant com la rendibilitat.",
-      "Rendibilitats tan altes no són normals: amb un 7 % ja vas molt bé a llarg termini.",
+      "Tant no és normal: un 7 % l'any ja és molt a llarg termini.",
       "Mira el final de la corba verda: es dispara!",
       "Mou els anys: fixa't com se separen les línies"
      ]
@@ -233,15 +282,16 @@
       "L'Ana arriba a uns **494.000 €** i en Bruno a uns **234.000 €**: menys de la meitat, tot i que l'Ana només hi va posar 24.000 € més.",
       "Endarrereix en Bruno fins que l'Ana tingui el triple que ell.",
       "Cada any que esperes costa molt més del que sembla: els primers euros són els que tenen més temps per créixer amb l'interès compost.",
-      "Si comença als 45, en Bruno ja no atrapa l'Ana encara que aporti el mateix cada mes.",
+      "Si comença als 45, en Bruno ja no atrapa l'Ana encara que aporti el mateix.",
       "Si comencen alhora, acaben igual. Ara endarrereix en Bruno",
       "Cada any de retard obre més la bretxa. Fins on arriba?"
      ]
     },
     {
      "title": "També en contra teu",
-     "body": "L'interès compost funciona igual amb els deutes: una targeta que cobra interessos sobre interessos creix tota sola. Ho veuràs a la unitat de deutes.\n\nI recorda: són exemples, no promeses. La borsa no dona un 7 % cada any.",
-     "key": "Els guanys generen nous guanys: com més aviat comences, més treballa el temps per tu."
+     "body": "L'interès compost funciona igual amb els deutes: una targeta que cobra interessos sobre interessos fa créixer el que deus encara que no compris res més.\n\nI recorda: són exemples, no promeses. La borsa no dona un 7 % cada any.",
+     "key": "Els guanys generen nous guanys: com més aviat comences, més treballa el temps per tu.",
+     "tip": "Prova-ho: a Mercat, cerca SPY (l'S&P 500) i mira'n el gràfic en espelmes mensuals."
     }
    ]
   },
@@ -251,6 +301,79 @@
   }
  },
  "questions": {
+  "h1l1-1": {
+   "prompt": "Què compres quan compres una acció?",
+   "options": [
+    "Un producte de l'empresa amb descompte",
+    "Un tros petit de l'empresa",
+    "Un préstec a l'empresa"
+   ],
+   "explanation": "Una acció és una part de l'empresa: guanyes si l'empresa val més, no perquè et degui res."
+  },
+  "h1l1-2": {
+   "prompt": "Has posat 1.000 € virtuals a l'S&P 500 i en pocs mesos baixen a 700 €. No necessites aquests diners en anys. Què fas?",
+   "options": [
+    "Demano un préstec per comprar més barat",
+    "Aguanto: no els necessito i tinc temps",
+    "Ho venc tot per no perdre més"
+   ],
+   "explanation": "Les caigudes formen part d'invertir. Si no necessites els diners, vendre en plena caiguda és el que converteix una baixada temporal en una pèrdua de debò.",
+   "feedback": [
+    "Si continua caient, perds amb diners que no són teus i a més deus els interessos.",
+    "Li dones temps per recuperar-se. El 2008 va caure més de la meitat i qui va aguantar va acabar multiplicant els seus diners.",
+    "En vendre converteixes una baixada en una pèrdua real, i et perds la recuperació."
+   ]
+  },
+  "h1l1-3": {
+   "prompt": "Què li contestes?",
+   "options": [
+    "No: compres trossets d'empreses que guanyen diners i creixen",
+    "Sí, és pura sort",
+    "Només si tries bé l'empresa"
+   ],
+   "explanation": "Al casino els números estan fets perquè perdis. A la borsa compres parts de negocis que generen beneficis, i amb temps i moltes empreses alhora el resultat depèn molt menys de la sort.",
+   "feedback": [
+    "Això. Darrere de cada acció hi ha un negoci real, no una ruleta.",
+    "Al casino la banca sempre guanya. Una empresa que guanya diners sol valer més amb els anys.",
+    "Encertar ajuda, però amb 500 empreses alhora ja no depens d'encertar-ne una."
+   ],
+   "lines": [
+    "Invertir en borsa és com anar al casino, oi?",
+    "O ho guanyes tot o ho perds tot."
+   ]
+  },
+  "h1l1-4": {
+   "prompt": "Ajuda els teus diners a llarg termini o els resta?",
+   "options": [
+    "Vendre-ho tot quan la borsa cau",
+    "Repartir entre moltes empreses",
+    "Esperar a tenir molts diners per començar",
+    "Deixar passar els anys sense tocar-los",
+    "Començar aviat, encara que sigui amb poc"
+   ],
+   "explanation": "El temps i el repartiment juguen al teu favor. Esperar o vendre amb por fa que el temps treballi menys per tu.",
+   "right": [
+    "Els ajuda",
+    "Els resta"
+   ]
+  },
+  "h1l1-5": {
+   "prompt": "Entre el 1985 i el 2025, l'S&P 500 no va caure mai més d'un 20 %.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Va caure gairebé a la meitat el 2000-2002 i més de la meitat el 2008-2009. Tot i així, qui no va vendre va multiplicar els seus diners per 38: les caigudes fortes passen, i aguantar és el difícil."
+  },
+  "h1l1-6": {
+   "prompt": "1.000 € a l'S&P 500 el 1985 es van convertir en uns 38.000 € el 2025. Què va fer gairebé tota la feina?",
+   "options": [
+    "El temps: 40 anys sense vendre",
+    "Una sola empresa que es va disparar",
+    "Comprar i vendre en el moment just"
+   ],
+   "explanation": "N'hi havia prou de no tocar-ho durant 40 anys. No calia encertar quan comprar o vendre, i l'S&P 500 són 500 empreses, no una de sola."
+  },
   "u8l1-1": {
    "prompt": "Compres una acció d'Inditex. Què ets?",
    "options": [
@@ -286,12 +409,6 @@
    ],
    "explanation": "Guanyes pel que reparteix l'empresa (dividends) i per la pujada del preu (revalorització). El cupó és propi dels bons."
   },
-  "u8l1-5": {
-   "prompt": "Vas comprar una acció a 40 €. Avui val 46 € i aquest any has cobrat 1 € de dividend. Quina és la teva rendibilitat total?",
-   "options": [],
-   "explanation": "(46 − 40 + 1) ÷ 40 = 7 ÷ 40 = 17,5 %. Revalorització (6 €) + dividend (1 €).",
-   "unit": "%"
-  },
   "u8l1-7": {
    "prompt": "Si una empresa fa fallida, els accionistes cobren abans que els bancs i els bonistes.",
    "options": [
@@ -309,6 +426,20 @@
    ],
    "explanation": "Només un 4 % va explicar tot el guany net, i més de la meitat va rendir menys que les lletres del Tresor. Per això una sola acció és arriscada i convé diversificar."
   },
+  "u8l1-11": {
+   "prompt": "La teva cosina vol posar tots els seus estalvis en una sola acció de moda perquè «no para de pujar». Què li aconselles?",
+   "options": [
+    "Tot a aquesta acció: si puja tant, continuarà pujant",
+    "Repartir entre moltes empreses, per exemple amb un fons que compra les 500 de l'S&P 500",
+    "Comprar-la, però vendre tan bon punt baixi una mica"
+   ],
+   "explanation": "Una sola acció es pot multiplicar o enfonsar, i molt poques generen gairebé tot el guany. Repartir entre moltes evita que tot depengui d'una de sola; la temptació de «si puja, continuarà pujant» oblida que també pot caure molt.",
+   "feedback": [
+    "Que hagi pujat no diu el que farà. Tesla va arribar a caure un 72 %: amb tot a dins, cau tot el seu estalvi.",
+    "Si una empresa cau, les altres esmorteeixen el cop: no depèn d'encertar l'excepció.",
+    "Vendrà a la primera baixada normal, sovint perdent, i continua amb tot en una sola empresa."
+   ]
+  },
   "u5l3-1": {
    "prompt": "El millor preu de compra és 20,10 € i el de venda, 20,14 €. Si compres ara mateix, a quin preu compres?",
    "options": [
@@ -317,12 +448,6 @@
     "20,10 €"
    ],
    "explanation": "Compres al millor preu de venda (ask): és el que demana qui ven."
-  },
-  "u5l3-4": {
-   "prompt": "En aquesta compra de 600 accions per 6.027 €, quin és el teu preu mitjà per acció?",
-   "options": [],
-   "explanation": "6.027 ÷ 600 = 10,045 €: una mica més que el millor preu perquè t'has menjat dos graons.",
-   "unit": "€"
   },
   "u5l3-5": {
    "prompt": "Ordena el que passa quan arriben molts compradors amb pressa.",
@@ -368,6 +493,20 @@
     "Més pressió venedora sobre un llibre petit: el preu cau encara més."
    ]
   },
+  "u5l3-11": {
+   "prompt": "Empeny el preu cap amunt o cap avall?",
+   "options": [
+    "Arriben molts venedors amb pressa",
+    "Surt la notícia que les seves vendes cauen",
+    "Arriben molts compradors amb pressa",
+    "L'empresa guanya molt més del que s'esperava"
+   ],
+   "explanation": "El preu puja quan hi ha més ganes de comprar que de vendre, i baixa al revés. Una bona notícia atrau compradors; una de dolenta, venedors.",
+   "right": [
+    "Cap amunt",
+    "Cap avall"
+   ]
+  },
   "u6l1-1": {
    "prompt": "Llibre: millor compra 15,20 €, millor venda 15,23 €. Dones una ordre de compra a mercat. A quin preu entres?",
    "options": [
@@ -390,12 +529,6 @@
    "prompt": "Simula la teva primera compra a mercat: tens 10.000 € i no vols arriscar més d'un 1 % (100 €). Col·loca un stop per sota de l'últim mínim i tria l'import.",
    "options": [],
    "explanation": "Amb una ordre a mercat entres a l'últim preu. Primer decideixes on sortiries (l'stop) i, amb aquesta distància, quant comprar per no arriscar més de 100 €."
-  },
-  "u6l1-6": {
-   "prompt": "Compres 40 accions a mercat i s'executen a 25,10 €. Quant pagues, sense comptar comissions?",
-   "options": [],
-   "explanation": "40 × 25,10 = 1.004 €.",
-   "unit": "€"
   },
   "u6l1-9": {
    "prompt": "Ordre a mercat raonable o arriscada?",
@@ -467,12 +600,6 @@
    ],
    "explanation": "Open, high, low, close: obertura, màxim, mínim i tancament."
   },
-  "u19l1-6": {
-   "prompt": "Una acció va tancar ahir a 50 € i avui a 53 €. Quant ha variat en el dia?",
-   "options": [],
-   "explanation": "(53 − 50) ÷ 50 = 0,06 → +6 %. La variació diària es calcula entre un tancament i l'anterior.",
-   "unit": "%"
-  },
   "u19l1-10": {
    "prompt": "Passes el dit per una espelma al gràfic d'E-Trading. Quines dades hi veus? Marca-les totes.",
    "options": [
@@ -483,11 +610,23 @@
    ],
    "explanation": "Hi veus els quatre preus del període, a més de la variació i el volum. El preu de demà no el sap ningú."
   },
-  "u1l5-1": {
-   "prompt": "1.000 € al 7 % d'interès compost durant 30 anys, en quant es converteixen? (arrodoneix)",
-   "options": [],
-   "explanation": "1.000 × 1,07³⁰ ≈ 7.612 €. Amb interès simple serien 3.100 €.",
-   "unit": "€"
+  "u19l1-11": {
+   "prompt": "Què li contestes?",
+   "options": [
+    "Sí: si puja tres mesos, continuarà",
+    "El gràfic diu el que va passar, no el que passarà: no t'ho juguis tot",
+    "No: si ha pujat tant, segur que cau"
+   ],
+   "explanation": "Un gràfic és el registre del que ja va passar. Serveix per veure com s'ha mogut el preu, però no garanteix el que farà: ni que continuï pujant ni que caigui.",
+   "feedback": [
+    "Ningú no ho sap. Un gràfic registra el passat: la pujada pot acabar demà.",
+    "Això. Pot continuar o girar-se: són probabilitats, no certeses.",
+    "Tampoc no ho saps: el gràfic no diu si pujarà o baixarà."
+   ],
+   "lines": [
+    "Aquesta acció fa tres mesos que puja sense parar.",
+    "Així que segur que continua. Hi poso tots els meus estalvis?"
+   ]
   },
   "u1l5-3": {
    "prompt": "Relaciona cada cas amb el tipus d'interès.",
@@ -502,12 +641,6 @@
     "Interès simple",
     "Interès compost en contra teva"
    ]
-  },
-  "u1l5-4": {
-   "prompt": "10.000 € al 5 % compost durant 10 anys, quant sumen? (arrodoneix a euros)",
-   "options": [],
-   "explanation": "10.000 × 1,05¹⁰ ≈ 16.289 €. Amb simple serien 15.000 €.",
-   "unit": "€"
   },
   "u1l5-5": {
    "prompt": "L'interès compost només funciona a favor teu.",
@@ -539,6 +672,34 @@
     "50 € al mes al 7 % durant 40 anys són uns 130.000 €, amb 24.000 € aportats.",
     "Bé: amb el temps al teu favor, començar aviat pesa més que començar amb molt.",
     "Esperar surt car: els primers anys són els que tenen més temps per compondre's."
+   ]
+  },
+  "u1l5-10": {
+   "prompt": "La Marta té 18 anys i 1.000 € d'un regal. Pensa invertir-los «quan acabi la carrera, d'aquí a 5 anys». Què li aconselles?",
+   "options": [
+    "Començar ja, encara que sigui amb una part",
+    "Esperar: amb 18 anys és aviat per invertir",
+    "Guardar-los a casa fins aleshores"
+   ],
+   "explanation": "El temps pesa tant com la rendibilitat: començar 5 anys abans deixa que l'interès compost treballi 5 anys més. Esperar sembla prudent, però té un cost que no es veu.",
+   "feedback": [
+    "Cada any que espera és un any menys d'interès compost: els primers euros són els que tenen més temps per créixer.",
+    "Al contrari: als 18 té el temps al seu favor, que és el que més pesa.",
+    "Sota el matalàs no creixen, i amb els preus pujant compren menys cada any."
+   ]
+  },
+  "u1l5-11": {
+   "prompt": "Interès simple o compost?",
+   "options": [
+    "La corba s'empina com més temps passa",
+    "Guanyes el mateix l'any 1 que l'any 30",
+    "El que guanyes se suma i també genera guanys",
+    "Cobres cada any sobre el que hi vas posar al principi"
+   ],
+   "explanation": "Amb el simple, el guany de cada any és sempre igual. Amb el compost, guanyes sobre una base cada vegada més gran, i per això els últims anys creixen molt més que els primers.",
+   "right": [
+    "Simple",
+    "Compost"
    ]
   }
  }

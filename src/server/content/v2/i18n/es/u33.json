@@ -57,7 +57,7 @@
      "title": "El orden para elegir",
      "body": "1. **Regulación:** CNMV o supervisor de la UE con pasaporte.\n2. **Protección:** valores separados y fondo de garantía (FOGAIN, hasta 100.000 €).\n3. **Costes:** compraventa, custodia, divisa, inactividad.\n4. **Productos:** ¿tiene los fondos indexados y ETF que quieres?\n5. **Fiscalidad:** un bróker español retiene e informa; con uno extranjero declaras tú todo.",
      "key": "Primero, que sea seguro y esté autorizado; después, que sea barato.",
-     "tip": "Antes de mirar cuánto cobra un bróker, mira quién lo vigila."
+     "tip": "Pruébalo: en Mercado, busca un ETF del MSCI World y apunta su nombre."
     }
    ]
   },
@@ -67,7 +67,7 @@
     {
      "texts": [
       "¿Barata o cara?",
-      "Una comisión pesa distinto según cuánto compres. ¿Se lleva **menos del 1 %** de la compra o **un 1 % o más**?",
+      "Vas a meter **100 €** en un ETF y el bróker cobra **3 € fijos**. ¿Mucho o poco? Depende de lo que compres: ¿se lleva **menos del 1 %** o **un 1 % o más**?",
       "Menos del 1 %",
       "Un 1 % o más",
       "3 € fijos en una compra de 10.000 €",
@@ -107,7 +107,8 @@
     {
      "title": "Qué te cobran",
      "body": "• **Compraventa:** por cada operación (fija, porcentual o mixta).\n• **Custodia:** por guardar tus valores, a veces mensual o anual.\n• **Cambio de divisa:** al comprar en otra moneda. Suele ser el **coste oculto más alto**: del 0,1 % al 0,5 % o más por operación.\n• **Otras:** inactividad, retirada, cobro de dividendos.\n\nY dentro de cada fondo o ETF, su **TER**.",
-     "key": "El bróker más barato es el que menos te cobra a ti, con tu forma de invertir."
+     "key": "El bróker más barato es el que menos te cobra a ti, con tu forma de invertir.",
+     "tip": "Pruébalo: en Mercado, prepara una compra de 100 € y mira la comisión simulada."
     }
    ]
   },
@@ -167,7 +168,8 @@
       "Cámbiate a otra app con más premios",
       "Más premios, más empujones a operar.",
       "Con un 0,2 % de spread, son **480 € al año**, aunque diga «0 € de comisión».",
-      "Un neobróker autorizado puede ser buena opción. Solo no dejes que decida cuánto operas."
+      "Un neobróker autorizado puede ser buena opción. Solo no dejes que decida cuánto operas.",
+      "Pruébalo: abre tu Historial y cuenta cuántas operaciones hiciste este mes."
      ]
     }
    ]
@@ -178,7 +180,7 @@
     {
      "texts": [
       "¿Cuánto cuesta la comodidad?",
-      "**10.000 €** a 30 años con un mercado del 7 % anual (ejemplo). Hacerlo tú con indexados cuesta un **0,2 %** al año; un robo-advisor, entre gestión y fondos, un **0,6 %**.",
+      "Una app te ofrece invertir tus **10.000 €** por ti, sin que tengas que pensar. Cobra un **0,6 %** al año entre gestión y fondos; hacerlo tú con indexados, un **0,2 %**. A 30 años y con un mercado del 7 % anual (ejemplo), ¿compensa?",
       "A 30 años, ¿cuánto te cuesta el robo-advisor frente a hacerlo tú?",
       "Unos 700 €",
       "Unos 7.700 €",
@@ -210,7 +212,8 @@
     {
      "title": "Qué es un robo-advisor",
      "body": "Un servicio de **gestión automatizada**: respondes un cuestionario (el **test de idoneidad**), te asigna una cartera de fondos indexados según tu perfil y se encarga de aportar y **rebalancear** por ti.\n\nEn España tiene que ser una entidad **autorizada por la CNMV**.",
-     "key": "Un robo-advisor automatiza la disciplina, pero cobra por ello y no elimina el riesgo de mercado."
+     "key": "Un robo-advisor automatiza la disciplina, pero cobra por ello y no elimina el riesgo de mercado.",
+     "tip": "Pruébalo: en tu Cartera, mira el peso de cada activo; un robo-advisor lo reajusta solo."
     }
    ]
   },
@@ -294,18 +297,6 @@
     "Supervisor de los servicios de inversión en España"
    ]
   },
-  "u33l2-2": {
-   "prompt": "Compras 2.000 € de acciones de EE. UU. y el bróker cobra un 0,5 % por el cambio de divisa. ¿Cuántos euros pagas solo por cambiar?",
-   "options": [],
-   "explanation": "2.000 × 0,005 = 10 €. Y al vender pagarías otra vez.",
-   "unit": "€"
-  },
-  "u33l2-3": {
-   "prompt": "Un bróker cobra un 0,2 % anual de custodia. Tienes 20.000 €. ¿Cuánto pagas al año?",
-   "options": [],
-   "explanation": "20.000 × 0,002 = 40 € al año, suba o baje tu cartera.",
-   "unit": "€"
-  },
   "u33l2-4": {
    "prompt": "Empareja cada comisión con lo que cobra.",
    "options": [
@@ -358,6 +349,20 @@
    "right": [
     "En cada operación",
     "Cada año"
+   ]
+  },
+  "u33l2-11": {
+   "prompt": "Vas a aportar 100 € cada mes a un ETF que cotiza en dólares. Un bróker anuncia en grande «0 € de comisión». ¿Qué haces antes de elegirlo?",
+   "options": [
+    "Elijo el que más anuncios hace, que será el más fiable",
+    "Miro también cuánto cobra por cambiar divisa y por custodia",
+    "Lo elijo: 0 € no se puede mejorar"
+   ],
+   "explanation": "El bróker más barato es el que menos te cobra con tu forma de invertir: suma todos los costes. La tentadora, «0 €», falla porque solo mira una comisión.",
+   "feedback": [
+    "La publicidad no dice nada de lo que te cobran a ti ni de si está autorizado.",
+    "Bien: si compras en dólares cada mes, el cambio de divisa puede ser tu coste más alto aunque la compraventa sea gratis.",
+    "La compraventa puede ser gratis y el coste estar en el cambio de divisa o la custodia. El «0 €» en grande no dice nada de la letra pequeña."
    ]
   },
   "u33l3-1": {

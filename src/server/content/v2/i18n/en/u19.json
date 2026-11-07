@@ -59,7 +59,7 @@
      "title": "Be careful with Heikin Ashi",
      "body": "There are other kinds too: the **area** chart (the line with the space below filled in, as in lots of apps) and **Heikin Ashi**, averaged candles that smooth out the noise.\n\nIts opens and closes are calculated from averages: **they're not real prices**. It's useful for seeing the trend, never for deciding what price to enter at or where to put a stop.",
      "key": "The line sums up; candlesticks tell the story of each period's battle.",
-     "tip": "To see where it's heading, use the line. To see who's winning each day, use candlesticks."
+     "tip": "Try it: in Market, open Apple and switch from Line to Candles."
     }
    ]
   },
@@ -119,7 +119,7 @@
       "Hugo is investing in an index fund for 20 years",
       "Minute candles would only give him frights.",
       "Place all six people.",
-      "Choose the timeframe to suit your **horizon** and always look at **the longer one before the shorter one**. Elder's method: weekly for direction, daily for timing and hourly to fine-tune the entry and the stop.",
+      "Choose the timeframe to suit your **horizon** and always look at **the longer one before the shorter one**. Elder's method: weekly for direction, daily for timing and hourly to fine-tune the entry and the stop. Try it: in Market, open an asset and switch from 1D to 1W to see the big trend.",
       "How long does each person hold their investment?",
       "Place each person"
      ]
@@ -183,7 +183,7 @@
       "A share over the last month",
       "Small moves: there's hardly any difference.",
       "Sort the six charts.",
-      "For long periods or assets that have multiplied many times over, **logarithmic**. Over short stretches, euros and percentages move almost in step.",
+      "For long periods or assets that have multiplied many times over, **logarithmic**. Over short stretches, euros and percentages move almost in step. Try it: in Market, open Bitcoin on 1M and use «Measure» on an old rise and a recent one.",
       "Is it years and very different prices, or just a few days?",
       "Logarithmic or no difference?"
      ]
@@ -250,7 +250,7 @@
      "title": "Momentum is real",
      "body": "Trends lasting 3–12 months have tended to persist in shares, bonds, currencies and commodities (Jegadeesh and Titman, 1993; Moskowitz, Ooi and Pedersen, 2012). Profiting from it after costs and sharp reversals is another story.",
      "key": "Uptrend = higher highs and lows; downtrend = lower ones.",
-     "tip": "The trend is your friend… until it stops making higher highs."
+     "tip": "Try it: in Market, open Apple on 1W and check whether its lows are rising."
     }
    ]
   },
@@ -301,7 +301,7 @@
      "title": "Spikes and limits",
      "body": "• Rises on high volume: conviction. Falls on low volume: a calm pullback.\n• Volume spikes come with news, expiries, panic or euphoria; after a sharp fall, they sometimes mark **capitulation**.\n• In forex there's no centralised volume, and in crypto it's spread across lots of platforms.",
      "key": "A move with lots of volume has lots of people behind it; without volume it may be an illusion.",
-     "tip": "The price tells you what's happening. Volume tells you how many people believe it."
+     "tip": "Try it: in Market, find the day with the most volume in the last month."
     }
    ]
   },
@@ -421,11 +421,19 @@
    ],
    "explanation": "The longest one sets the direction: if the weekly is in an uptrend, you only look for buys. The shortest fine-tunes the entry and the stop."
   },
-  "u19l3-10": {
-   "prompt": "A day trader makes 5 trades a day and pays €2 in commission on each. How much do they pay in a month of 20 sessions?",
-   "options": [],
-   "explanation": "5 × 2 × 20 = €200, not counting the spread. On short timeframes, costs add up very quickly.",
-   "unit": "€"
+  "u19l3-11": {
+   "prompt": "Leo holds his trades for a few weeks. On the weekly chart, the stock is making lower highs and lower lows. On the daily, it's rising strongly today. What does he do?",
+   "options": [
+    "Looks at the 1-minute chart to decide",
+    "Doesn't look for buys while the weekly is still bearish",
+    "Buys now: the daily rules because it's more recent"
+   ],
+   "explanation": "Elder's method: the longer timeframe decides the direction and the shorter one only fine-tunes the entry. Buying against the weekly is swimming against the current.",
+   "feedback": [
+    "Dropping to minutes adds noise, not information: the problem is that it goes against the weekly.",
+    "That's it: the longer timeframe first. A strong day inside a weekly decline usually ends up as just a bounce.",
+    "The daily fine-tunes the timing, but the weekly sets the direction, and there it's bearish."
+   ]
   },
   "u19l4-1": {
    "prompt": "A share has gone from €1 to €300 in 15 years. Which scale do you use to study its history?",
@@ -443,18 +451,6 @@
     "False"
    ],
    "explanation": "That's what happens on a logarithmic scale. On a linear one, 100 to €200 takes up ten times more space than 10 to €20."
-  },
-  "u19l4-3": {
-   "prompt": "A share goes from €20 to €30. By what percentage has it risen?",
-   "options": [],
-   "explanation": "(30 − 20) ÷ 20 = 0.5 → +50 %.",
-   "unit": "%"
-  },
-  "u19l4-4": {
-   "prompt": "Another share goes from €200 to €210. By what percentage has it risen?",
-   "options": [],
-   "explanation": "€10 on €200 = +5 %. On a linear scale, this €10 jump takes up the same space as the one from 20 to €30; on a log scale, it looks ten times smaller.",
-   "unit": "%"
   },
   "u19l4-7": {
    "prompt": "S&P 500, late September 1929: weekly closes have been rising for almost two years. What do you think happened next?",
@@ -474,6 +470,38 @@
     "percentage"
    ],
    "explanation": "That's why it's good for comparing eras with very different prices."
+  },
+  "u19l4-11": {
+   "prompt": "On a 10-year linear chart, a stock rises from €10 to €20 at the start and from €100 to €200 at the end. Dani says the second rise was much better because it looks ten times bigger. What do you tell him?",
+   "options": [
+    "That the first was better because the stock was cheaper",
+    "That he's right: it looks bigger, so it was better",
+    "That both were +100 %: on a logarithmic scale they'd take up the same space"
+   ],
+   "explanation": "What matters to your money is the percentage. The linear scale enlarges the stretches with high prices; the logarithmic one compares them properly.",
+   "feedback": [
+    "Being cheaper doesn't make it better: in both stretches the money doubled.",
+    "On a linear scale it looks bigger because it's more euros, but in percentage terms both are the same.",
+    "That's it: whoever bought at the start also doubled their money. The logarithmic scale shows it as it is."
+   ]
+  },
+  "u19l4-12": {
+   "prompt": "What do you reply to Lumi?",
+   "options": [
+    "It depends on the chart's scale",
+    "Yes: down 75 % and up 75 %, it's back to the same",
+    "No: after falling 75 % it needs to rise much more, 300 %"
+   ],
+   "explanation": "A big fall needs a much bigger rise to recover: after −75 % you need +300 %. The logarithmic scale respects those proportions; the linear one doesn't.",
+   "feedback": [
+    "The scale changes how you see it, not what happens to your money.",
+    "No: after falling 75 %, a 75 % rise leaves it well below the high.",
+    "That's it: percentages aren't symmetrical. Bitcoin needed 302 % to get back."
+   ],
+   "lines": [
+    "Bitcoin fell 75 % from its 2021 high.",
+    "If it now rises 75 %, is it back where it was?"
+   ]
   },
   "u19l5-1": {
    "prompt": "What's the trend on this chart? (NVIDIA · closes every 3 sessions · March–May 2026)",

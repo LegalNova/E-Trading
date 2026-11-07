@@ -42,7 +42,7 @@ export default unit({
           { say: 'Coloca cada caso: ¿suelo o techo?', mood: 'HAPPY' },
         ],
       }),
-      key('La vuelta al nivel', 'Tras una rotura, el precio a menudo vuelve a **probar** el nivel antes de seguir. Bulkowski lo llama *throwback* si la rotura fue al alza y *pullback* si fue a la baja. En el hombro-cabeza-hombro, por ejemplo, vuelve a la clavicular el **68 %** de las veces.\n\nSi el nivel roto aguanta en la vuelta, la rotura gana credibilidad. Si el precio se mete otra vez dentro con claridad, la rotura era falsa y la idea ha fallado.', 'Un soporte roto suele volverse resistencia, y una resistencia rota, soporte.', 'Lo que antes era techo puede ser el nuevo suelo.'),
+      key('La vuelta al nivel', 'Tras una rotura, el precio a menudo vuelve a **probar** el nivel antes de seguir. Bulkowski lo llama *throwback* si la rotura fue al alza y *pullback* si fue a la baja. En el hombro-cabeza-hombro, por ejemplo, vuelve a la clavicular el **68 %** de las veces.\n\nSi el nivel roto aguanta en la vuelta, la rotura gana credibilidad. Si el precio se mete otra vez dentro con claridad, la rotura era falsa y la idea ha fallado.', 'Un soporte roto suele volverse resistencia, y una resistencia rota, soporte.', 'Pruébalo: en Mercado, pon una alerta de precio en un antiguo techo ya roto.'),
     ], [
       single('El precio rompe con fuerza una resistencia en 50 € y semanas después vuelve a 50 €. ¿Qué papel suele jugar ahora ese nivel?', ['Resistencia otra vez', 'Soporte', 'Ninguno'], 1, 'Es el cambio de papel: el antiguo techo suele actuar como suelo.'),
       scenario('Un soporte en 30 € aguantó un año. Hoy el precio cierra en 27 € con mucho volumen. Días después rebota hasta 30 €. Laura tiene acciones y espera que «vuelva a subir como antes». ¿Qué es lo más probable en 30 €?', [['Que lo atraviese sin problemas', 'Puede pasar, pero ahora ahí hay vendedores: los que compraron en el soporte quieren salir sin perder.'], ['Que encuentre venta: el antiguo soporte puede actuar como resistencia', 'Ese es el cambio de papel. No es seguro, pero es lo que conviene vigilar.'], ['Que el nivel ya no importe', 'Los niveles rotos suelen importar todavía más: mucha gente los recuerda.']], 1, 'Un soporte roto con volumen suele convertirse en resistencia.'),
@@ -57,6 +57,17 @@ export default unit({
     ], { source: '9.1', minutes: 6, retire: [0, 1, 7, 8] }),
 
     lesson('u21l3', 'Líneas de tendencia y canales', [
+      play({
+        title: '¿Aguanta la tendencia?',
+        intro: 'Cuatro tendencias reales, sin nombre ni fecha. Imagina una línea por los mínimos o por los máximos. ¿Sube o baja en las 10 sesiones siguientes?',
+        widget: { kind: 'guess', rounds: ['ud-85', 'ud-27', 'ud-84', 'ud-41'] },
+        goal: { text: 'Juega las cuatro rondas.', when: [when('done', '==', 4)] },
+        insight: 'Aquí, dos tendencias siguieron y dos se rompieron. Una **línea de tendencia** no adivina el futuro: marca **dónde deja de valer** la idea.',
+        lumi: [
+          { when: when('done', '==', 4), say: 'Dos siguieron y dos giraron. La línea te avisa del cambio.', mood: 'THINKING' },
+          { say: 'Sigue la dirección con la vista y decide', mood: 'HAPPY' },
+        ],
+      }),
       play({
         title: '¿Buena línea o línea forzada?',
         intro: 'Una **línea de tendencia** une puntos de giro del precio. Clasifica cada una.',
@@ -91,7 +102,7 @@ export default unit({
         say('leo', 'Vale, no vendo por una línea. Miro si pierde el último mínimo.'),
         say('lumi', 'Romper la línea es un aviso, no una sentencia.'),
       ]),
-      key('Canales y pendiente', 'Una paralela por los máximos de una tendencia alcista forma un **canal**: la parte baja actúa como soporte y la alta, como resistencia.\n\nLas líneas muy verticales se rompen pronto; las de unos **30–45 grados** suelen aguantar más. En gráficos de varios años, usa **escala logarítmica**.', 'Una línea alcista une mínimos crecientes; mientras se respete, la tendencia sigue.', 'Si tienes que forzar la línea para que toque los puntos, la línea está en tu cabeza.'),
+      key('Canales y pendiente', 'Una paralela por los máximos de una tendencia alcista forma un **canal**: la parte baja actúa como soporte y la alta, como resistencia.\n\nLas líneas muy verticales se rompen pronto; las de unos **30–45 grados** suelen aguantar más. En gráficos de varios años, usa **escala logarítmica**.', 'Una línea alcista une mínimos crecientes; mientras se respete, la tendencia sigue.', 'Pruébalo: en Mercado, traza una «Línea de tendencia» por dos mínimos crecientes de Apple.'),
     ], [
       single('Una línea de tendencia alcista une…', ['Máximos decrecientes', 'Mínimos crecientes', 'Cierres elegidos al azar'], 1, 'Dos mínimos crecientes la trazan y un tercer toque la confirma.'),
       trend('Fíjate en los mínimos: ¿qué tendencia marcan?', 'trend-up-4', 'Alcista', 'Cada mínimo queda por encima del anterior: se podría trazar una línea alcista por debajo.'),
@@ -103,6 +114,8 @@ export default unit({
       fill('Si trazas una paralela por los máximos de una tendencia alcista, obtienes un ____.', 'canal', ['triángulo', 'doji', 'hueco'], 'Dentro del canal, la parte baja actúa como soporte y la alta como resistencia.'),
       timed(single('Rápido: ¿cuántos mínimos crecientes hacen falta, como mínimo, para trazar una línea alcista?', ['Uno', 'Dos', 'Cinco'], 1, 'Dos la trazan; un tercer toque la confirma.'), 10),
       scenario('Ana traza una línea de tendencia casi vertical tras una subida del 40 % en tres semanas. ¿Qué le dices?', [['Perfecto: cuanto más vertical, más fuerte', 'Las líneas muy verticales suelen romperse pronto: una subida así es difícil de sostener.'], ['Que probablemente se romperá pronto, y que romperla no significará el fin de todo', 'Eso: una línea tan vertical se rompe con facilidad, y la rotura puede dar paso solo a un lateral.'], ['Que borre la línea y compre más', 'Ignorar el riesgo de una subida tan vertical no es un plan.']], 1, 'Pendientes de 30–45 grados son más sostenibles; las verticales acaban en correcciones bruscas.'),
+      level('Compras dentro de una tendencia alcista. Coloca el stop por debajo del último mínimo relevante, el que sostiene tu línea.', 'lvl-20', 'STOP', 'Si el precio pierde el último mínimo, la línea y la estructura de mínimos crecientes se rompen a la vez: la idea ya no vale. Justo encima, cualquier caída normal te sacaría.'),
+      scenario('Una línea alcista lleva tres toques. El precio baja a tocarla por cuarta vez y Marta quiere comprar sin stop «porque siempre rebota». ¿Qué le dices?', [['Que tiene razón: tres toques son una garantía', 'Tres toques hacen la línea más relevante, no irrompible. Romper una línea es habitual.'], ['Que puede comprar, pero con el stop por debajo de la línea y del último mínimo', 'Eso: si la línea se rompe y pierde el mínimo, sale con una pérdida pequeña.'], ['Que redibuje la línea más abajo para estar tranquila', 'Mover la línea para que encaje es engañarse: la línea está en el gráfico, no en sus deseos.']], 1, 'Una línea de tendencia te dice dónde deja de valer la idea. Por eso el stop va al otro lado: si se rompe, sales perdiendo poco.'),
     ], { source: '9.2', minutes: 6, retire: [0, 5, 8, 9] }),
 
     lesson('u21l4', 'Hombro-cabeza-hombro', [
@@ -138,7 +151,7 @@ export default unit({
           { say: 'Lee cada caso y decide', mood: 'HAPPY' },
         ],
       }),
-      key('El objetivo y los datos', 'Objetivo clásico: la distancia de la cabeza a la clavicular, proyectada desde la rotura. Cabeza en 120 €, clavicular en 100 €: altura 20 € → objetivo **80 €**. Bulkowski propone uno más prudente, con la mitad de la altura → **90 €**.\n\nSus datos: caída media tras la rotura, **16 %**; fracasa (no cae ni un 5 %), **19 %**; vuelve a la clavicular, **68 %**; alcanza el objetivo clásico, solo el **51 %**.', 'Sin rotura de la clavicular, no hay figura.', 'Un HCH sin rotura es solo una montaña con forma bonita.'),
+      key('El objetivo y los datos', 'Objetivo clásico: la distancia de la cabeza a la clavicular, proyectada desde la rotura. Cabeza en 120 €, clavicular en 100 €: altura 20 € → objetivo **80 €**. Bulkowski propone uno más prudente, con la mitad de la altura → **90 €**.\n\nSus datos: caída media tras la rotura, **16 %**; fracasa (no cae ni un 5 %), **19 %**; vuelve a la clavicular, **68 %**; alcanza el objetivo clásico, solo el **51 %**.', 'Sin rotura de la clavicular, no hay figura.', 'Pruébalo: en Mercado, busca tres picos en un gráfico semanal y marca su clavicular.'),
     ], [
       order('Ordena cómo se forma un hombro-cabeza-hombro.', ['Subida previa', 'Hombro izquierdo', 'Cabeza, más alta', 'Hombro derecho, más bajo que la cabeza', 'Cierre por debajo de la clavicular'], 'La figura solo existe cuando llega el último paso: la rotura de la clavicular.'),
       single('¿Cuándo se confirma un hombro-cabeza-hombro?', ['Al formarse la cabeza', 'Al cerrar por debajo de la línea clavicular', 'Al aparecer el hombro derecho'], 1, 'Antes de la rotura, solo es una posibilidad.'),
@@ -150,7 +163,10 @@ export default unit({
       upDown('Nasdaq 100, marzo de 2000, tras años de fuertes subidas. ¿Qué crees que pasó después?', 'hist-dotcom', 'Las figuras de giro se confirman con la rotura de su línea clave, y eso solo se ve después. En la cumbre, nadie tiene aún esa confirmación.', 'los años siguientes'),
       timed(single('Rápido: ¿qué línea une los mínimos entre la cabeza y los hombros?', ['La clavicular', 'La de tendencia alcista', 'La media de 200'], 0, 'La línea clavicular: su rotura confirma la figura.'), 10),
       scenario('Una acción ha formado dos hombros y una cabeza, pero aún no ha roto la clavicular. Pablo quiere vender todo ya «para adelantarse». ¿Qué le dices?', [['Bien: adelantarse siempre paga', 'Sin rotura, la figura no existe: muchas acaban en nuevos máximos.'], ['Que la figura no está confirmada hasta el cierre por debajo de la clavicular', 'Eso: hasta la rotura es solo una posibilidad. Y aun confirmada, fracasa un 19 % de las veces.'], ['Que compre más: la figura es alcista', 'El HCH (no invertido) es una figura bajista: esa idea no tiene sentido.']], 1, 'Sin rotura no hay figura. Anticiparse es apostar por algo que aún no existe.'),
-    ], { source: '9.3', minutes: 6, retire: [1, 6, 8, 9] }),
+      scenario('Tienes acciones de una empresa. Tras una gran subida forma un hombro-cabeza-hombro y hoy cierra por debajo de la clavicular con volumen alto. ¿Qué haces?', [['Nada: las figuras fallan, así que las ignoro', 'Fallan un 19 % de las veces, no casi siempre: una figura confirmada es un aviso serio.'], ['Reviso mi plan: vender una parte o proteger lo ganado, porque la figura se ha confirmado', 'Eso: la rotura confirma la figura. No es seguro que caiga, pero ya tienes un motivo para actuar con plan.'], ['Compro más: ahora está más barata', 'Comprar más justo cuando se confirma una figura bajista es ir contra la señal.']], 1, 'Una figura confirmada no es una certeza, pero cambia el plan: según Bulkowski, la caída media tras la rotura es del 16 %.'),
+      scenario('Hombro-cabeza-hombro confirmado, con la cabeza en 120 € y la clavicular en 100 €. Ana espera a que caiga hasta el objetivo clásico de 80 € para volver a comprar. ¿Qué le dices?', [['Que seguro que llega a 80 €: es el objetivo de la figura', 'Según Bulkowski, solo el 51 % alcanza el objetivo clásico.'], ['Que solo la mitad llega a 80 €: un objetivo prudente sería 90 €', 'Eso: Bulkowski propone la mitad de la altura, 90 €, porque el objetivo completo solo se alcanza el 51 % de las veces.'], ['Que la figura no da ninguna pista sobre hasta dónde cae', 'Sí da una referencia: la altura proyectada desde la rotura. Pero es una referencia, no una promesa.']], 1, 'Los objetivos de las figuras son referencias, no promesas. Con la mitad de la altura, el objetivo es más realista.'),
+      chat(['Tras meses de caída veo tres mínimos, con el central más bajo.', 'Es un hombro-cabeza-hombro: bajista, ¿verdad?'], '¿Qué le contestas a Lumi?', [['Sí: todos los hombro-cabeza-hombro son bajistas', 'Este está boca abajo y aparece tras una caída: es el invertido, que es alcista.'], ['Es un HCH invertido: alcista, y se confirma al cerrar por encima de su clavicular', 'Eso: tras una caída, la versión invertida apunta al alza. Y sin rotura, aún no es figura.'], ['Es alcista: compro ya, antes de la rotura', 'Bien la dirección, pero sin un cierre por encima de la clavicular la figura no existe.']], 1, 'El HCH normal aparece tras una subida y es bajista; el invertido aparece tras una caída y es alcista. Los dos se confirman al romper su clavicular.'),
+    ], { source: '9.3', minutes: 6, retire: [1, 2, 3, 4, 6, 8, 9] }),
 
     lesson('u21l5', 'Dobles techos y suelos', [
       story('Dos picos', [{ id: 'ana', name: 'Ana' }], [
@@ -185,7 +201,7 @@ export default unit({
           { say: 'Lee cada caso: ¿confirmada o solo posible?', mood: 'HAPPY' },
         ],
       }),
-      key('El objetivo', 'Objetivo clásico: la altura de la figura, proyectada desde la rotura.\n\nDoble suelo con mínimos en 40 € y máximo intermedio en 50 €. Altura: 10 €. Al superar 50 € con un cierre, el objetivo clásico es **60 €**. Si después vuelve a cerrar claramente por debajo de 50 €, la rotura ha fallado.', 'Sin rotura no hay figura.', 'Dos picos no son un doble techo hasta que el valle se rompe.'),
+      key('El objetivo', 'Objetivo clásico: la altura de la figura, proyectada desde la rotura.\n\nDoble suelo con mínimos en 40 € y máximo intermedio en 50 €. Altura: 10 €. Al superar 50 € con un cierre, el objetivo clásico es **60 €**. Si después vuelve a cerrar claramente por debajo de 50 €, la rotura ha fallado.', 'Sin rotura no hay figura.', 'Pruébalo: si ves una M en Mercado, pon una alerta de precio en su valle.'),
     ], [
       timed(single('Rápido: forma de M.', ['Doble techo', 'Doble suelo', 'Triángulo'], 0, 'Dos máximos parecidos con un valle en medio.'), 8),
       timed(single('Rápido: ¿cuándo se confirma un doble suelo?', ['Al marcar el segundo mínimo', 'Al superar el máximo intermedio', 'Al subir el volumen'], 1, 'Hasta entonces, solo son dos mínimos.'), 12),
@@ -197,12 +213,27 @@ export default unit({
       upDown('Fíjate en los últimos máximos y mínimos. ¿Sube o baja en las 10 sesiones siguientes?', 'ud-33', 'Una figura a medio formar es solo una hipótesis. Hasta que rompe su línea clave, puede acabar en cualquier lado.'),
       upDown('Otro gráfico real, sin nombre. ¿Sube o baja en las 10 sesiones siguientes?', 'ud-49', 'Buscar M y W en cada gráfico es tentador; el ojo encuentra formas en cualquier parte. Por eso se exige la rotura.'),
       tf('Un doble techo se confirma en cuanto el precio marca el segundo máximo.', false, 'Se confirma al romper el mínimo del valle entre los dos máximos.'),
-    ], { source: '9.3', minutes: 6, retire: [0, 1, 4, 5, 9] }),
+      scenario('Doble suelo con mínimos en 40 € y máximo intermedio en 50 €. El precio cierra en 51 € y Bruno compra. Días después cierra en 47 €. ¿Qué ha pasado?', [['Nada: el objetivo sigue en 60 €', 'El objetivo solo vale si la rotura aguanta, y ha vuelto a cerrar claramente por debajo de 50 €.'], ['La rotura ha fallado: ha vuelto a cerrar claramente por debajo de 50 €', 'Eso: si vuelve dentro de la figura con un cierre claro, la idea ya no vale. Toca salir según el plan.'], ['Es el momento de comprar el doble', 'Comprar más en una idea que ha fallado suele agrandar la pérdida.']], 1, 'Una figura confirmada también puede fallar. Si el precio vuelve a cerrar claramente al otro lado de la línea clave, la rotura era falsa.'),
+      scenario('Mismo doble suelo: mínimos en 40 €, máximo intermedio en 50 € y cierre en 51 €. ¿Dónde tiene más sentido el stop de Bruno?', [['Algo por debajo de 50 €, donde la rotura fallaría', 'Eso: si vuelve a cerrar claramente por debajo de 50 €, la idea ha fallado y sale perdiendo poco.'], ['Por debajo de 40 €, bajo los dos suelos', 'Tiene lógica, pero queda muy lejos: arriesga mucho más por acción para la misma idea.'], ['No hace falta: la figura está confirmada', 'Confirmada no quiere decir segura. Sin stop, un fallo puede costar mucho.']], 0, 'El stop va donde la idea deja de valer. En una rotura, eso es de vuelta dentro de la figura.'),
+      level('Ahora con velas reales: has comprado al último precio. Coloca el stop por debajo del último mínimo relevante, como bajo los suelos de una W.', 'lvl-22', 'STOP', 'Por debajo del mínimo reciente, la estructura que justificaba la compra se rompe. Un poco de margen evita que una simple mecha te saque.'),
+    ], { source: '9.3', minutes: 6, retire: [0, 1, 2, 3, 4, 5, 9] }),
 
     lesson('u21l6', 'Triángulos, banderas y rectángulos', [
       play({
+        title: 'Pausas con velas reales',
+        intro: 'Cuatro gráficos reales: ¿ves alguna pausa tras un movimiento fuerte? Decide si sube o baja en las 10 sesiones siguientes.',
+        widget: { kind: 'guess', rounds: ['ud-54', 'ud-91', 'ud-93', 'ud-75'] },
+        goal: { text: 'Responde las cuatro rondas.', when: [when('done', '==', 4)] },
+        insight: 'Tras un movimiento fuerte, el precio a menudo **toma aire** unos días. Esas pausas tienen nombre (triángulos, banderas, rectángulos), pero **no dicen cómo terminan**.',
+        lumi: [
+          { when: when('done', '==', 4), say: 'Hecho. Acertar o fallar cuatro rondas dice muy poco.', mood: 'CALM' },
+          { when: when('right', '>=', 2), say: 'Vas bien… pero la pausa no dice cómo termina.', mood: 'THINKING' },
+          { say: 'Mira las velas y elige: ¿sube o baja?', mood: 'HAPPY' },
+        ],
+      }),
+      play({
         title: '¿Hacia dónde suele romper?',
-        intro: 'Las figuras de continuación son pausas del precio. Su forma dice quién aprieta.',
+        intro: 'Esas pausas son **figuras de continuación**. Su forma dice quién aprieta.',
         widget: {
           kind: 'sort',
           bins: [{ label: 'Suele romper al alza' }, { label: 'Suele romper a la baja' }, { label: 'Hacia cualquier lado' }],
@@ -218,23 +249,11 @@ export default unit({
         insight: 'El triángulo **ascendente** y el **descendente** tienen sesgo; el simétrico y el rectángulo dependen de la rotura. El **volumen** suele bajar mientras se forman y subir al romper.',
         lumi: [
           { when: when('wrong', '>=', 2), say: 'Pista: la línea horizontal es la que alguien defiende. ¿Quién empuja contra ella?', mood: 'THINKING' },
-          { when: when('done', '>=', 3), say: 'Bien visto. Ahora, a probarlo con velas reales.', mood: 'HAPPY' },
+          { when: when('done', '>=', 3), say: 'Bien visto. La forma da pistas, no certezas.', mood: 'HAPPY' },
           { say: 'Clasifica cada figura', mood: 'HAPPY' },
         ],
       }),
-      play({
-        title: 'Pausas con velas reales',
-        intro: 'Cuatro gráficos reales: ¿ves alguna pausa tras un movimiento fuerte? Decide si sube o baja en las 10 sesiones siguientes.',
-        widget: { kind: 'guess', rounds: ['ud-54', 'ud-91', 'ud-93', 'ud-75'] },
-        goal: { text: 'Responde las cuatro rondas.', when: [when('done', '==', 4)] },
-        insight: 'Aunque veas una bandera de libro, **fracasa casi la mitad de las veces**. Las figuras de continuación dan probabilidades modestas: lo que decides de verdad es cuánto arriesgas.',
-        lumi: [
-          { when: when('done', '==', 4), say: 'Hecho. Acertar o fallar cuatro rondas dice muy poco.', mood: 'CALM' },
-          { when: when('right', '>=', 2), say: 'Vas bien… pero la pausa no dice cómo termina.', mood: 'THINKING' },
-          { say: 'Mira las velas y elige: ¿sube o baja?', mood: 'HAPPY' },
-        ],
-      }),
-      key('Banderas y rectángulos', '• **Bandera:** tras un movimiento fuerte y rápido (el **mástil**), unos días en un pequeño rectángulo inclinado contra la tendencia. Dura **menos de 3 semanas**. Si es un pequeño triángulo, es un **banderín**.\n• **Rectángulo:** rango lateral entre un soporte y una resistencia claros.\n\nBulkowski: en mercado alcista, las banderas rompen al alza el **60 %** de las veces, el movimiento medio tras la rotura ronda el **9 %** y **fracasan** (no avanzan ni un 5 %) en torno al **44–45 %**.', 'Las figuras de continuación son el mercado tomando aire, aunque a veces se gira.', 'Una bandera es una pausa para respirar, pero casi la mitad de las veces el corredor se queda sin aire.'),
+      key('Banderas y rectángulos', '• **Bandera:** tras un movimiento fuerte y rápido (el **mástil**), unos días en un pequeño rectángulo inclinado contra la tendencia. Dura **menos de 3 semanas**. Si es un pequeño triángulo, es un **banderín**.\n• **Rectángulo:** rango lateral entre un soporte y una resistencia claros.\n\nBulkowski: en mercado alcista, las banderas rompen al alza el **60 %** de las veces, el movimiento medio tras la rotura ronda el **9 %** y **fracasan** (no avanzan ni un 5 %) en torno al **44–45 %**.', 'Las figuras de continuación son el mercado tomando aire, aunque a veces se gira.', 'Pruébalo: en Mercado, marca con «Rectángulo» la última pausa de Bitcoin.'),
     ], [
       match('Empareja cada figura con su forma.', [['Triángulo ascendente', 'Techo horizontal y mínimos crecientes'], ['Triángulo descendente', 'Suelo horizontal y máximos decrecientes'], ['Triángulo simétrico', 'Máximos más bajos y mínimos más altos'], ['Rectángulo', 'Techo y suelo horizontales']], 'La forma dice quién aprieta: en el ascendente, los compradores; en el descendente, los vendedores.'),
       match('Empareja cada parte con su definición.', [['Mástil', 'Movimiento fuerte y rápido previo'], ['Bandera', 'Pequeño rectángulo inclinado contra la tendencia'], ['Banderín', 'Pequeño triángulo tras el mástil'], ['Rotura', 'Salida de la figura, mejor con volumen']], 'Mástil, pausa y rotura: así se cuenta una figura de continuación.'),
@@ -284,7 +303,7 @@ export default unit({
           { say: 'Clasifica cada idea', mood: 'HAPPY' },
         ],
       }),
-      key('Y si falla, el stop', 'Ningún filtro las elimina todas. Por eso el stop va donde la rotura deja de tener sentido: de vuelta dentro de la zona, por debajo del último mínimo relevante. Y el tamaño se calcula para que ese fallo cueste poco.', 'Una rotura sin cierre ni volumen es solo una excursión.', 'Antes de entrar en una rotura, decide dónde reconocerás que era falsa.'),
+      key('Y si falla, el stop', 'Ningún filtro las elimina todas. Por eso el stop va donde la rotura deja de tener sentido: de vuelta dentro de la zona, por debajo del último mínimo relevante. Y el tamaño se calcula para que ese fallo cueste poco.', 'Una rotura sin cierre ni volumen es solo una excursión.', 'Pruébalo: tras tu próxima compra, pon una alerta de precio donde la idea falla.'),
     ], [
       multi('¿Qué reduce el riesgo de entrar en una ruptura falsa? Marca todo.', ['Esperar un cierre al otro lado', 'Pedir volumen superior a la media', 'Exigir que el cierre supere el nivel en un 1–3 %', 'Entrar con la primera mecha que asome'], [0, 1, 2], 'La primera mecha es justo lo que atrapa a la mayoría en las roturas falsas.'),
       scenario('Resistencia en 100 €. Hoy el precio llega a 101,50 € durante la sesión, pero cierra en 99,20 € con volumen bajo. Marta compró a 101 € al ver «la rotura». ¿Qué ha pasado?', [['Ha entrado en una rotura confirmada', 'No: cerró por debajo del nivel y sin volumen. Fue una mecha, no una rotura.'], ['Ha comprado una excursión que no se confirmó', 'Eso: sin cierre por encima ni volumen, la rotura no existe. Si no tenía stop, ahora está atrapada.'], ['Ha hecho lo correcto: hay que entrar antes que nadie', 'Entrar antes de la confirmación es la forma más típica de caer en una ruptura falsa.']], 1, 'Una rotura se confirma con el cierre y el volumen, no con la mecha.'),
@@ -296,6 +315,8 @@ export default unit({
       tf('Si el precio supera una resistencia solo con la mecha y cierra por debajo, la rotura está confirmada.', false, 'Una mecha no confirma nada: hace falta un cierre al otro lado, mejor con volumen.'),
       timed(single('Rápido: ¿qué confirma mejor una rotura?', ['Una mecha al otro lado', 'Un cierre al otro lado con volumen alto', 'Un comentario en un foro'], 1, 'Cierre más volumen: mucha gente detrás del movimiento.'), 10),
       chat(['He comprado una rotura y al día siguiente el precio ha vuelto dentro del rango 😬', '¿Aguanto, que seguro vuelve a subir?'], '¿Qué le contestas?', [['Sí, aguanta lo que haga falta', 'Si la rotura ha fallado, aguantar sin plan convierte un error pequeño en uno grande.'], ['Si cierra claramente dentro y toca tu stop, la idea ha fallado: se sale y se aprende', '¡Eso! El stop está para esto. Una ruptura falsa con stop es un coste pequeño; sin stop, puede ser enorme.'], ['Compra más para bajar el precio medio', 'Promediar a la baja una idea que ya ha fallado suele agrandar la pérdida.']], 1, 'Las rupturas falsas son parte del juego: el stop decide cuánto cuestan.'),
-    ], { source: '9.1', minutes: 6, retire: [0, 1, 7, 8, 9] }),
+      scenario('Una acción supera durante la sesión su máximo del año. Faltan dos horas para el cierre y el volumen va por debajo de la media. Quieres comprar. ¿Qué haces?', [['Compro ya, antes de que se escape', 'Es justo como se cae en una ruptura falsa: sin cierre ni volumen, todavía no hay rotura.'], ['Espero al cierre y miro si supera el nivel con volumen', 'Eso: un cierre al otro lado con volumen superior a la media filtra muchas rupturas falsas.'], ['Compro el doble para aprovechar más la subida', 'Más tamaño en una señal sin confirmar multiplica el coste si resulta falsa.']], 1, 'Las rupturas se confirman con el cierre y el volumen. Esperar unas horas cuesta poco; caer en la trampa, mucho más.'),
+      chat(['Compraste una rotura con cierre y volumen.', 'Aun así, a los tres días vuelve dentro y toca tu stop.', '¿Lo hiciste mal?'], '¿Qué le contestas a Lumi?', [['Sí: si salta el stop, la operación estaba mal planteada', 'No necesariamente: ningún filtro elimina todas las rupturas falsas.'], ['No: seguí los filtros y el stop limitó la pérdida; a veces sale mal igual', 'Eso: una buena decisión puede salir mal. El stop ha hecho su trabajo.'], ['Sí: tendría que haber quitado el stop para aguantar', 'Quitar el stop convierte un error pequeño en uno que puede ser enorme.']], 1, 'Ningún filtro elimina todas las rupturas falsas: según Bulkowski, el HCH fracasa un 19 % de las veces y las banderas, en torno al 44 %. Lo que controlas es cuánto cuesta el error.'),
+    ], { source: '9.1', minutes: 6, retire: [0, 1, 2, 7, 8, 9] }),
   ],
 })

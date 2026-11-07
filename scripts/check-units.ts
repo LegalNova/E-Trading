@@ -8,7 +8,11 @@ const main = async () => {
   const files = process.argv.slice(2)
   if (!files.length) throw new Error('Indica los archivos de unidad')
   const units: ContentUnit[] = []
-  for (const f of files) units.push((await import(path.resolve(f))).default as ContentUnit)
+  for (const f of files) {
+    const m = (await import(path.resolve(f))).default as ContentUnit | ContentUnit['lessons']
+    // Las unidades de la sección 0 (h1.ts, h2.ts, h3.ts) exportan la lista de clases: se montan como unidad
+    units.push(Array.isArray(m) ? { id: path.basename(f, '.ts'), order: 0, title: path.basename(f, '.ts'), description: '', lessons: m } : m)
+  }
   const r = validateUnits(units, QUIZZES, { v2Only: true })
   for (const u of units) {
     const ls = u.lessons.filter(l => !l.isUnitReview)

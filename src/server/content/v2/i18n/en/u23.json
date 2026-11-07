@@ -54,7 +54,7 @@
      "title": "Pieces of different types",
      "body": "Better to use a few tools of **different types**:\n\n• **Trend:** highs and lows, averages, 200 SMA.\n• **Momentum:** RSI or MACD (one is enough).\n• **Volatility:** Bollinger, ATR.\n• **Volume:** more people behind the move.\n\nAnd a **signal** at a **level**: a confirmed reversal candle or a breakout on volume.",
      "key": "Look for agreement between different pieces, not for more indicators.",
-     "tip": "Ten indicators aren’t ten opinions: often they’re the same one, repeated."
+     "tip": "Before your next simulator buy, look for trend, level, signal and volume."
     }
    ]
   },
@@ -107,7 +107,7 @@
      "title": "The method in 7 steps",
      "body": "1. Weekly: trend and 200 SMA.\n2. Structure of highs and lows.\n3. Levels.\n4. Current situation: near a level or in a pattern?\n5. Signal on the daily chart.\n6. Indicators as a filter.\n7. Plan: entry, stop, target and risk.\n\nTimeframes that don’t agree are information too.",
      "key": "First the direction on the higher timeframe; then the timing on the lower one.",
-     "tip": "Before you look at the five-minute candle, check where the weekly one is."
+     "tip": "Try it: in Market, look at an asset on the weekly chart before the daily one."
     }
    ]
   },
@@ -151,7 +151,7 @@
      "title": "Backtesting traps",
      "body": "• **Overfitting:** you test so many variants that one comes out well by chance.\n• **Look-ahead bias:** using data that weren’t known yet at that moment.\n• **Survivorship bias:** testing only on companies that are still around today.\n• **Forgetting costs:** commissions, *spread* and taxes.\n\nThe rule is written **before** looking at the results. It’s designed on one part of the data (**in-sample**) and tested just once on another (**out-of-sample**).",
      "key": "A backtest tells you what would have happened, not what will happen.",
-     "tip": "Torture the data long enough and they’ll confess to anything."
+     "tip": "Write down your rule before testing it in the simulator, and don’t change it."
     }
    ]
   },
@@ -203,7 +203,7 @@
      "title": "Why learn it anyway",
      "body": "Park and Irwin (2007) reviewed 95 modern studies: 56 positive, 20 negative and 19 mixed… but most had problems of method, and the most recent ones find little or no edge in shares. Even so, between 30 and 40 % of professionals surveyed consider it important in the short term.\n\nIt helps you set entries, exits and stops logically, understand what others are doing and spot people selling smoke and mirrors. A small edge with good risk management can be enough; a big one without it ends in ruin.",
      "key": "Trend and momentum have evidence behind them; many other ideas don’t pass the tests.",
-     "tip": "Technical analysis doesn’t tell you the future: it helps you decide where you’re wrong and how much it costs you."
+     "tip": "On your next simulator buy, decide where you’re wrong before you enter."
     }
    ]
   },
@@ -237,12 +237,6 @@
    ],
    "explanation": "Trend, momentum and volume measure different things."
   },
-  "u23l1-4": {
-   "prompt": "You enter at €50 with the stop at €48. What’s the minimum price the target should be at for a 2 to 1 reward-to-risk ratio?",
-   "options": [],
-   "explanation": "Risk: €2. Target: 2 × 2 = €4 above the entry → €54.",
-   "unit": "€"
-  },
   "u23l1-6": {
    "prompt": "Look for trend, levels and candles on this chart. Up or down over the next 10 sessions?",
    "options": [
@@ -269,6 +263,20 @@
     "Adding more just multiplies the chance coincidences.",
     "Exactly: better a few tools of different types than a parliament of oscillators.",
     "If several measure the same thing, that 6 to 3 may be 1 to 1, repeated."
+   ]
+  },
+  "u23l1-11": {
+   "prompt": "You have confluence to buy: uptrend, support and volume. The stop goes 3 % below, under the support, and the nearest resistance is only 2 % above. Do you enter?",
+   "options": [
+    "Yes: with so much confluence, it’s bound to break it",
+    "No: I’m risking more than I can gain up to the resistance, so it isn’t worth it",
+    "Yes, but I move the stop closer, to 0.5 %, so it adds up"
+   ],
+   "explanation": "Before entering, compare: the distance to the target should be at least double the distance to the stop. If not, not even the best confluence makes it worth it.",
+   "feedback": [
+    "Confluence improves the idea, it doesn’t guarantee it. And here you risk more than you can gain up to the resistance.",
+    "That’s it: if the target isn’t at least twice as far as the stop, the trade isn’t worth it.",
+    "Moving the stop to make the numbers work leaves it inside the noise: it will be hit for no reason."
    ]
   },
   "u23l2-1": {
@@ -345,18 +353,6 @@
    "explanation": "100 × 0.05 = 5. If you only show those 5, it’ll look like you’ve discovered something.",
    "unit": "rules"
   },
-  "u23l3-2": {
-   "prompt": "A rule makes an average gross profit of 0.10 % per trade. Each trade costs 0.15 % in commission and spread. What’s the net result per trade?",
-   "options": [],
-   "explanation": "0.10 − 0.15 = −0.05 %. With costs, the «edge» turns into a loss.",
-   "unit": "%"
-  },
-  "u23l3-3": {
-   "prompt": "A rule is right 40 % of the time and makes €300 when it’s right; the other 60 % of the time it loses €100. How much does it make on average per trade?",
-   "options": [],
-   "explanation": "0.4 × 300 − 0.6 × 100 = 120 − 60 = €60. You can be wrong more often than right and still make money, if the gains are bigger than the losses.",
-   "unit": "€"
-  },
   "u23l3-4": {
    "prompt": "Match each trap with its example.",
    "options": [
@@ -395,6 +391,35 @@
     "They got them banned"
    ],
    "explanation": "Much of what looked like an edge was partly luck."
+  },
+  "u23l3-11": {
+   "prompt": "Backtest trap or honest test?",
+   "options": [
+    "Calculating without commissions or spread",
+    "Using only the companies still in the index today",
+    "Writing the rule before looking at the results",
+    "Testing 500 variants and showing only the best one",
+    "Testing it just once on data that wasn’t used to design it"
+   ],
+   "explanation": "Traps inflate the past: keeping the best of many, forgetting costs or looking only at the survivors. The honest way is to fix the rule beforehand and test it on new data.",
+   "right": [
+    "Trap",
+    "Honest test"
+   ]
+  },
+  "u23l3-12": {
+   "prompt": "Your rule makes a little per trade on average before costs, and it trades several times a day. What do you check before using it?",
+   "options": [
+    "Whether it can trade even more times a day",
+    "Nothing: if it wins before costs, it will always win",
+    "Whether the edge survives the commission and spread on each trade"
+   ],
+   "explanation": "A backtest without costs is misleading. With many trades, a small edge can disappear once you pay commission and spread.",
+   "feedback": [
+    "More trades multiply the costs, not the edge.",
+    "With many trades, commission and spread can eat up the whole edge.",
+    "That’s it: the more trades, the more costs weigh. A small edge can turn into a loss."
+   ]
   },
   "u23l4-2": {
    "prompt": "According to Park and Irwin, the positive studies on technical analysis have no problems of method.",

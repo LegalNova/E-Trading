@@ -10,24 +10,47 @@
    "steps": [
     {
      "texts": [
-      "Lo que hace tu dinero mientras duermes",
-      "Leo",
-      "Leo tiene 20 años y 500 € ahorrados en la cuenta.",
-      "Mis padres dicen que el dinero se guarda en el banco y punto.",
-      "¿Qué crees que pasa con esos 500 € si se quedan quietos 10 años?",
-      "Siguen valiendo lo mismo",
-      "Siguen siendo 500 €, pero con los precios subiendo cada año **compran menos**.",
-      "Compran menos cosas que hoy",
-      "Exacto: los precios suben y el dinero quieto **pierde poder de compra**.",
-      "Crecen solos",
-      "En una cuenta normal casi no crecen: los precios suben más deprisa.",
-      "Invertir es poner ese dinero a trabajar. Vamos a ver cómo, con dinero virtual."
+      "40 años de bolsa en 20 segundos",
+      "El **S&P 500** junta las 500 mayores empresas de EE. UU., como Apple o Amazon. Pones **1.000 €** virtuales en enero de 1985 y vives lo que pasó de verdad.",
+      "Sin añadir ni un euro, ¿cuánto valen esos 1.000 € a finales de 2025?",
+      "Unos 2.000 €",
+      "Unos 8.000 €",
+      "Más de 30.000 €",
+      "Valen **38.109 €**: unas 38 veces lo que pusiste, sin contar dividendos ni el cambio de moneda.",
+      "Llega hasta 2025. Si te asustas, puedes vender.",
+      "Hubo dos caídas de alrededor de la mitad (2000-2002 y 2008) y aun así quien no vendió multiplicó su dinero por **38**. Quien empezó en 2005, solo por **5,8**: **empezar pronto** pesa muchísimo.",
+      "Has vendido. Mira cuánto valdría si hubieras aguantado.",
+      "Cuarenta años, varias crisis y unas 38 veces tu dinero.",
+      "Ya pasan de 11.000 €. Solo has tenido que esperar.",
+      "Dale a empezar. Puedes vender cuando quieras."
      ]
     },
     {
-     "title": "Invertir es comprar un trozo de algo que crece",
-     "body": "Cuando compras una **acción** compras un trozo pequeño de una empresa. Si la empresa gana más, ese trozo suele valer más.",
-     "key": "Pruébalo: en Mercado, busca una empresa que uses cada día y mira su gráfico de 5 años."
+     "texts": [
+      "Empiezo cuando gane más",
+      "Leo",
+      "Leo tiene 20 años y acaba de ver ese mismo gráfico.",
+      "Brutal. Pero ahora solo puedo apartar 50 € al mes.",
+      "Mejor espero a los 30 y pongo 100 € al mes.",
+      "Hasta los 60 y ganando un 7 % al año, ¿cuándo acaba con más?",
+      "Si empieza ya, con 50 € al mes",
+      "Eso: pone 24.000 € y llega a más de 120.000 €.",
+      "Si espera, pone 36.000 € y llega a unos 117.000 €.",
+      "Si espera a los 30, con 100 € al mes",
+      "Pone 36.000 € y llega a unos 117.000 €. Empezando ya, a más de 120.000 €.",
+      "Más o menos igual",
+      "Casi, pero empezando ya pone 12.000 € menos y acaba con más.",
+      "Es el **interés compuesto**: lo que ganas también gana, y el tiempo lo multiplica.",
+      "El 7 % es un ejemplo: la bolsa no promete nada cada año.",
+      "¿Y cómo empiezo sin arriesgar mi dinero?",
+      "Con dinero virtual, aquí mismo. Te enseño."
+     ]
+    },
+    {
+     "title": "Lo que acabas de descubrir",
+     "body": "• Una **acción** es un trocito de una empresa. Con el S&P 500 tienes un trocito de 500 a la vez.\n• La bolsa a veces cae, y mucho, pero en esos 40 años quien no vendió multiplicó su dinero.\n• **Empezar pronto** pesa más que empezar con mucho.\n\nEn Lumi practicas con dinero virtual: puedes equivocarte sin perder nada de verdad.",
+     "key": "Invertir es comprar trocitos de empresas y darles tiempo para crecer.",
+     "tip": "Ahora tú: en Mercado, busca una empresa que conozcas y compra tu primera acción."
     }
    ]
   },
@@ -46,9 +69,9 @@
       "No: solo es un número que sube y baja",
       "Detrás del precio hay un negocio real, y tienes un trocito.",
       "Sí, y ya puede mandar en la empresa",
-      "Puede votar en la junta, pero su voto pesa muy poco.",
+      "Puede votar en la junta de accionistas, pero su voto pesa muy poco.",
       "¿Y cómo gano dinero con ella?",
-      "**Dividendos + revalorización**: lo que reparte y lo que sube el precio.",
+      "De dos formas: **dividendos** (reparte beneficios) y **revalorización** (sube el precio).",
       "A largo plazo, el precio sigue a los beneficios; a corto, a las expectativas.",
       "Si la empresa quiebra, el accionista cobra el último y casi nunca recupera nada."
      ]
@@ -83,7 +106,7 @@
       "Una sola acción",
       "Datos reales: **10.000 €** en Tesla a finales de 2018, en dólares y sin dividendos. Así se vive la renta variable.",
       "Llega hasta el final, vendas o no.",
-      "Tesla se multiplicó por casi 19, pero por el camino llegó a caer un **72 %** desde su máximo. Y es una excepción: solo un **4 %** de las acciones de EE. UU. generó toda la ganancia neta del mercado entre 1926 y 2016 (Bessembinder).",
+      "Tesla se multiplicó por casi 19, pero llegó a caer un **72 %**, y es una excepción: solo un **4 %** de las acciones de EE. UU. generó toda la ganancia neta del mercado entre 1926 y 2016. Pruébalo: en Mercado, abre Tesla y mira cuánto ha subido y bajado este año.",
       "Has vendido. Mira lo que pasa después…",
       "Un 30 % por debajo de lo que pusiste. ¿Aguantas?",
       "Ya has más que duplicado. ¿Y si ahora cae?",
@@ -98,7 +121,7 @@
     {
      "texts": [
       "El libro de órdenes",
-      "A la izquierda, quien quiere **comprar** (*bid*); a la derecha, quien quiere **vender** (*ask*). Si compras ya, compras al mejor precio de venta.",
+      "Quieres 600 acciones ya y el vendedor más barato pide **10,04 €**. Este es el **libro de órdenes**: a la izquierda, quien quiere comprar (*bid*); a la derecha, quien quiere vender (*ask*).",
       "Quieres comprar **600 acciones** ya. ¿A qué precio medio te salen?",
       "A 10,04 €, el mejor precio de venta",
       "Algo más caras que 10,04 €",
@@ -115,7 +138,7 @@
      "texts": [
       "Resultados por sorpresa",
       "Leo",
-      "Son las 10:00. La empresa de Leo publica resultados mucho mejores de lo esperado.",
+      "Son las 10:00. La empresa de Leo anuncia que ha ganado mucho más de lo esperado.",
       "En el libro, el mejor vendedor pedía 10,04 €. ¿Y ahora qué?",
       "¿Qué crees que pasa con el precio?",
       "Sube: los compradores se comen la oferta",
@@ -129,10 +152,10 @@
      ]
     },
     {
-     "title": "Las subastas",
-     "body": "La Bolsa de Madrid abre y cierra con una **subasta**: de 8:30 a 9:00 y de 17:30 a 17:35 se acumulan órdenes y se fija un único precio que cruza el máximo volumen.",
+     "title": "Lo que mueve el precio",
+     "body": "El precio que ves no es lo que vale la empresa: es lo que alguien **acaba de pagar**. Si llegan más compradores con prisa, sube; si llegan más vendedores, baja.\n\nLa Bolsa de Madrid abre y cierra con una **subasta**: de 8:30 a 9:00 y de 17:30 a 17:35 se juntan las órdenes y se fija un único precio, el que permite más compraventas.",
      "key": "El precio es el último acuerdo entre quien más paga y quien menos pide.",
-     "tip": "El precio no es lo que vale una empresa: es lo que alguien acaba de pagar."
+     "tip": "Pruébalo: en Mercado, abre Inditex y mira cuánto ha subido o bajado hoy."
     }
    ]
   },
@@ -142,7 +165,7 @@
     {
      "texts": [
       "Comprar ya",
-      "Una **orden a mercado** compra al momento, al mejor precio de venta disponible. Esta empresa es pequeña y casi no se negocia.",
+      "Quieres acciones de una empresa pequeña que casi no se negocia y le das a «comprar ya». Eso es una **orden a mercado**: compra al momento, al mejor precio de venta que haya.",
       "Compras **1.000 acciones a mercado**. ¿Qué crees que pasará con tu precio?",
       "Pagas 4,00 €, el mejor precio",
       "Pagas bastante más de media",
@@ -173,9 +196,9 @@
     },
     {
      "title": "Cuándo sale cara",
-     "body": "• **Valores poco líquidos:** tu orden se come varios escalones del libro.\n• **Apertura o justo tras una noticia:** los precios saltan.\n• **Bolsa cerrada:** se ejecutará en la apertura, al precio que haya entonces.\n\nEn el simulador, la compra a mercado entra al último precio y te pide también un **stop**: lo verás en la clase 4 de esta unidad.",
+     "body": "• **Valores poco líquidos** (los que casi nadie compra ni vende): tu orden se come varios escalones del libro.\n• **Apertura o justo tras una noticia:** los precios saltan.\n• **Bolsa cerrada:** se ejecutará en la apertura, al precio que haya entonces.\n\nEn el simulador, la compra a mercado entra al último precio. Antes de comprar, piensa también tu **stop**: el precio al que venderías para cortar la pérdida si baja.",
      "key": "A mercado = rapidez garantizada, precio no garantizado.",
-     "tip": "Si te importa el precio exacto, la orden a mercado no es la tuya."
+     "tip": "Pruébalo: en Mercado, compra a mercado una gran empresa y mira a qué precio entras."
     }
    ]
   },
@@ -185,11 +208,11 @@
     {
      "texts": [
       "¿Qué te cuenta un gráfico?",
-      "En horizontal, el **tiempo**. En vertical, el **precio**. Debajo, el **volumen**. ¿Qué puedes saber mirándolo?",
+      "Un amigo te enseña una acción que no para de subir: «¿Compro ya?». En su gráfico, el **tiempo** va en horizontal, el **precio** en vertical y el **volumen** (cuánto se negocia) debajo: ¿qué te dice y qué no?",
       "Lo dice el gráfico",
       "No lo dice",
       "A qué precio abrió ayer",
-      "Cada vela guarda su apertura.",
+      "Cada vela, la barrita de cada día, guarda su apertura.",
       "El precio de mañana",
       "Nadie lo sabe: el gráfico es un registro del pasado.",
       "El precio más alto de la semana",
@@ -213,7 +236,7 @@
       "Leer no es adivinar",
       "Tres gráficos reales de 30 velas diarias. Léelos y decide: ¿**sube o baja** en las 10 sesiones siguientes?",
       "Juega las tres rondas.",
-      "Leer el pasado es fácil; adivinar el futuro, no. El análisis técnico trabaja con **probabilidades, nunca con certezas**.",
+      "Leer el pasado es fácil; adivinar el futuro, no. Quien estudia gráficos trabaja con **probabilidades, nunca con certezas**.",
       "¡Tres de tres! Con tan pocas rondas, la suerte pesa mucho.",
       "Acertar el futuro con velas es difícil para todo el mundo.",
       "Mira las velas y elige: ¿sube o baja?"
@@ -221,9 +244,9 @@
     },
     {
      "title": "Cuatro precios por periodo",
-     "body": "De cada periodo se guardan cuatro datos (en inglés, **OHLC**):\n\n• **Apertura** (open): el primer precio.\n• **Máximo** (high) y **mínimo** (low).\n• **Cierre** (close): el último, y el más importante.\n\nEn E-Trading, al pasar el dedo por una vela ves sus cuatro precios, la variación y el volumen.",
+     "body": "Cada **vela** resume un periodo (un día, una semana…) con cuatro datos (en inglés, **OHLC**):\n\n• **Apertura** (open): el primer precio.\n• **Máximo** (high) y **mínimo** (low).\n• **Cierre** (close): el último, y el más importante.\n\nEn Lumi, al pasar el dedo por una vela ves sus cuatro precios, la variación y el volumen. Leer bien un gráfico ya es una ventaja: mucha gente solo mira si está en verde o en rojo.",
      "key": "Un gráfico cuenta lo que pasó, no lo que va a pasar.",
-     "tip": "Leerlo bien ya es una ventaja: mucha gente solo mira si está en verde o en rojo."
+     "tip": "Pruébalo: en Mercado, abre un gráfico y pasa el dedo por la última vela."
     }
    ]
   },
@@ -233,15 +256,15 @@
     {
      "texts": [
       "El colchón, el simple y el compuesto",
-      "Tres formas de guardar **1.000 €**:\n\n• **Colchón:** no crecen.\n• **Interés simple:** cobras siempre sobre lo que pusiste.\n• **Interés compuesto:** también ganas sobre lo ya ganado.",
+      "Tienes **1.000 €** y 30 años por delante. Tres formas de guardarlos:\n\n• **Colchón:** no crecen.\n• **Interés simple:** cobras siempre sobre lo que pusiste.\n• **Interés compuesto:** también ganas sobre lo ya ganado.",
       "1.000 € al 7 % al año durante 30 años. ¿Cuánto tendrás con interés compuesto?",
       "Unos 3.100 €",
       "Unos 7.600 €",
       "Unos 21.000 €",
       "Con interés simple serían 3.100 €. Con compuesto, **7.612 €**: casi dos veces y media más, sin poner ni un euro más.",
-      "Llega a 10.000 € sin añadir dinero: juega con la rentabilidad y los años.",
+      "Llega a 10.000 € sin añadir dinero: juega con la rentabilidad (lo que gana tu dinero cada año) y los años.",
       "El compuesto **acelera**: los últimos años crecen mucho más que los primeros. Por eso el tiempo pesa tanto como la rentabilidad.",
-      "Rentabilidades tan altas no son normales: con un 7 % ya vas muy bien a largo plazo.",
+      "Tanto no es normal: un 7 % al año ya es mucho a largo plazo.",
       "Mira el final de la curva verde: ¡se dispara!",
       "Mueve los años: fíjate en cómo se separan las líneas"
      ]
@@ -259,15 +282,16 @@
       "Ana llega a unos **494.000 €** y Bruno a unos **234.000 €**: menos de la mitad, aunque Ana solo puso 24.000 € más.",
       "Retrasa a Bruno hasta que Ana tenga el triple que él.",
       "Cada año que esperas cuesta mucho más de lo que parece: los primeros euros son los que más tiempo tienen para componerse.",
-      "Empezando a los 45, Bruno ya no alcanza a Ana aunque aporte lo mismo cada mes.",
+      "Empezando a los 45, Bruno ya no alcanza a Ana aunque aporte lo mismo.",
       "Si empiezan a la vez, acaban igual. Ahora retrasa a Bruno",
       "Cada año de retraso abre más la brecha. ¿Hasta dónde llega?"
      ]
     },
     {
      "title": "También en tu contra",
-     "body": "El interés compuesto funciona igual con las deudas: una tarjeta que cobra intereses sobre intereses crece sola. Lo verás en la unidad de deudas.\n\nY recuerda: son ejemplos, no promesas. La bolsa no da un 7 % cada año.",
-     "key": "Las ganancias generan nuevas ganancias: cuanto antes empiezas, más trabaja el tiempo por ti."
+     "body": "El interés compuesto funciona igual con las deudas: una tarjeta que cobra intereses sobre intereses hace crecer lo que debes aunque no compres nada más.\n\nY recuerda: son ejemplos, no promesas. La bolsa no da un 7 % cada año.",
+     "key": "Las ganancias generan nuevas ganancias: cuanto antes empiezas, más trabaja el tiempo por ti.",
+     "tip": "Pruébalo: en Mercado, busca SPY (el S&P 500) y mira su gráfico en velas mensuales."
     }
    ]
   },
@@ -285,6 +309,70 @@
     "Un préstamo a la empresa"
    ],
    "explanation": "Una acción es una parte de la empresa: ganas si la empresa vale más, no porque te deba nada."
+  },
+  "h1l1-2": {
+   "prompt": "Has puesto 1.000 € virtuales en el S&P 500 y en pocos meses caen a 700 €. No necesitas ese dinero en años. ¿Qué haces?",
+   "options": [
+    "Pido un préstamo para comprar más barato",
+    "Aguanto: no lo necesito y tengo tiempo",
+    "Vendo todo para no perder más"
+   ],
+   "explanation": "Las caídas forman parte de invertir. Si no necesitas el dinero, vender en plena caída es lo que convierte una bajada temporal en una pérdida de verdad.",
+   "feedback": [
+    "Si sigue cayendo, pierdes con dinero que no es tuyo y además debes los intereses.",
+    "Le das tiempo a recuperarse. En 2008 cayó más de la mitad y quien aguantó acabó multiplicando su dinero.",
+    "Al vender conviertes una bajada en una pérdida real, y te pierdes la recuperación."
+   ]
+  },
+  "h1l1-3": {
+   "prompt": "¿Qué le contestas?",
+   "options": [
+    "No: compras trocitos de empresas que ganan dinero y crecen",
+    "Sí, es pura suerte",
+    "Solo si eliges bien la empresa"
+   ],
+   "explanation": "En el casino las cuentas están hechas para que pierdas. En bolsa compras partes de negocios que generan beneficios, y con tiempo y muchas empresas a la vez el resultado depende mucho menos de la suerte.",
+   "feedback": [
+    "Eso. Detrás de cada acción hay un negocio real, no una ruleta.",
+    "En el casino la banca siempre gana. Una empresa que gana dinero suele valer más con los años.",
+    "Acertar ayuda, pero con 500 empresas a la vez ya no dependes de acertar una."
+   ],
+   "lines": [
+    "Invertir en bolsa es como ir al casino, ¿no?",
+    "O lo ganas todo o lo pierdes todo."
+   ]
+  },
+  "h1l1-4": {
+   "prompt": "¿Ayuda a tu dinero a largo plazo o le resta?",
+   "options": [
+    "Vender todo en cuanto la bolsa cae",
+    "Repartir entre muchas empresas",
+    "Esperar a tener mucho dinero para empezar",
+    "Dejar pasar los años sin tocarlo",
+    "Empezar pronto, aunque sea con poco"
+   ],
+   "explanation": "El tiempo y el reparto juegan a tu favor. Esperar o vender con miedo hace que el tiempo trabaje menos para ti.",
+   "right": [
+    "Le ayuda",
+    "Le resta"
+   ]
+  },
+  "h1l1-5": {
+   "prompt": "Entre 1985 y 2025, el S&P 500 nunca cayó más de un 20 %.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Cayó casi a la mitad en 2000-2002 y más de la mitad en 2008-2009. Aun así, quien no vendió multiplicó su dinero por 38: las caídas fuertes pasan, y aguantar es lo difícil."
+  },
+  "h1l1-6": {
+   "prompt": "1.000 € en el S&P 500 en 1985 se convirtieron en unos 38.000 € en 2025. ¿Qué hizo casi todo el trabajo?",
+   "options": [
+    "El tiempo: 40 años sin vender",
+    "Una sola empresa que se disparó",
+    "Comprar y vender en el momento justo"
+   ],
+   "explanation": "Bastaba con no tocarlo durante 40 años. No hacía falta acertar cuándo comprar o vender, y el S&P 500 son 500 empresas, no una sola."
   },
   "u8l1-1": {
    "prompt": "Compras una acción de Inditex. ¿Qué eres?",
@@ -321,12 +409,6 @@
    ],
    "explanation": "Ganas por lo que reparte la empresa (dividendos) y por la subida del precio (revalorización). El cupón es propio de los bonos."
   },
-  "u8l1-5": {
-   "prompt": "Compraste una acción a 40 €. Hoy vale 46 € y este año has cobrado 1 € de dividendo. ¿Cuál es tu rentabilidad total?",
-   "options": [],
-   "explanation": "(46 − 40 + 1) ÷ 40 = 7 ÷ 40 = 17,5 %. Revalorización (6 €) + dividendo (1 €).",
-   "unit": "%"
-  },
   "u8l1-7": {
    "prompt": "Si una empresa quiebra, los accionistas cobran antes que los bancos y los bonistas.",
    "options": [
@@ -344,6 +426,20 @@
    ],
    "explanation": "Solo un 4 % explicó toda la ganancia neta, y más de la mitad rindió menos que las letras del Tesoro. Por eso una sola acción es arriesgada y conviene diversificar."
   },
+  "u8l1-11": {
+   "prompt": "Tu prima quiere meter todos sus ahorros en una sola acción de moda porque «no para de subir». ¿Qué le aconsejas?",
+   "options": [
+    "Todo a esa acción: si sube tanto, seguirá subiendo",
+    "Repartir entre muchas empresas, por ejemplo con un fondo que compra las 500 del S&P 500",
+    "Comprarla, pero vender en cuanto baje un poco"
+   ],
+   "explanation": "Una sola acción puede multiplicarse o hundirse, y muy pocas generan casi toda la ganancia. Repartir entre muchas evita que todo dependa de una sola; la tentación de «si sube, seguirá subiendo» olvida que también puede caer mucho.",
+   "feedback": [
+    "Que haya subido no dice lo que hará. Tesla llegó a caer un 72 %: con todo dentro, cae todo su ahorro.",
+    "Si una empresa cae, las demás amortiguan el golpe: no depende de acertar la excepción.",
+    "Venderá en la primera bajada normal, a menudo perdiendo, y sigue con todo en una sola empresa."
+   ]
+  },
   "u5l3-1": {
    "prompt": "El mejor precio de compra es 20,10 € y el de venta 20,14 €. Si compras ya, ¿a qué precio compras?",
    "options": [
@@ -352,12 +448,6 @@
     "20,10 €"
    ],
    "explanation": "Compras al mejor precio de venta (ask): es lo que pide quien vende."
-  },
-  "u5l3-4": {
-   "prompt": "En esa compra de 600 acciones por 6.027 €, ¿cuál es tu precio medio por acción?",
-   "options": [],
-   "explanation": "6.027 ÷ 600 = 10,045 €: un poco más que el mejor precio porque te has comido dos escalones.",
-   "unit": "€"
   },
   "u5l3-5": {
    "prompt": "Ordena lo que pasa cuando llegan muchos compradores con prisa.",
@@ -403,6 +493,20 @@
     "Más presión vendedora sobre un libro pequeño: el precio cae todavía más."
    ]
   },
+  "u5l3-11": {
+   "prompt": "¿Empuja el precio hacia arriba o hacia abajo?",
+   "options": [
+    "Llegan muchos vendedores con prisa",
+    "Sale la noticia de que sus ventas caen",
+    "Llegan muchos compradores con prisa",
+    "La empresa gana mucho más de lo esperado"
+   ],
+   "explanation": "El precio sube cuando hay más ganas de comprar que de vender, y baja al revés. Una buena noticia atrae compradores; una mala, vendedores.",
+   "right": [
+    "Hacia arriba",
+    "Hacia abajo"
+   ]
+  },
   "u6l1-1": {
    "prompt": "Libro: mejor compra 15,20 €, mejor venta 15,23 €. Das una orden de compra a mercado. ¿A qué precio entras?",
    "options": [
@@ -425,12 +529,6 @@
    "prompt": "Simula tu primera compra a mercado: tienes 10.000 € y no quieres arriesgar más de un 1 % (100 €). Coloca un stop por debajo del último mínimo y elige el importe.",
    "options": [],
    "explanation": "Con una orden a mercado entras al último precio. Primero decides dónde saldrías (el stop) y, con esa distancia, cuánto comprar para no arriesgar más de 100 €."
-  },
-  "u6l1-6": {
-   "prompt": "Compras 40 acciones a mercado y se ejecutan a 25,10 €. ¿Cuánto pagas, sin contar comisiones?",
-   "options": [],
-   "explanation": "40 × 25,10 = 1.004 €.",
-   "unit": "€"
   },
   "u6l1-9": {
    "prompt": "¿Orden a mercado razonable o arriesgada?",
@@ -502,12 +600,6 @@
    ],
    "explanation": "Open, high, low, close: apertura, máximo, mínimo y cierre."
   },
-  "u19l1-6": {
-   "prompt": "Una acción cerró ayer en 50 € y hoy en 53 €. ¿Cuánto ha variado en el día?",
-   "options": [],
-   "explanation": "(53 − 50) ÷ 50 = 0,06 → +6 %. La variación diaria se calcula entre un cierre y el anterior.",
-   "unit": "%"
-  },
   "u19l1-10": {
    "prompt": "Pasas el dedo por una vela en el gráfico de E-Trading. ¿Qué datos ves? Marca todos.",
    "options": [
@@ -518,11 +610,23 @@
    ],
    "explanation": "Ves los cuatro precios del periodo, además de la variación y el volumen. El precio de mañana no lo sabe nadie."
   },
-  "u1l5-1": {
-   "prompt": "1.000 € al 7 % de interés compuesto durante 30 años, ¿en cuánto se convierten? (redondea)",
-   "options": [],
-   "explanation": "1.000 × 1,07³⁰ ≈ 7.612 €. Con interés simple serían 3.100 €.",
-   "unit": "€"
+  "u19l1-11": {
+   "prompt": "¿Qué le contestas?",
+   "options": [
+    "Sí: si sube tres meses, seguirá",
+    "El gráfico dice lo que pasó, no lo que pasará: no lo apuestes todo",
+    "No: si ha subido tanto, seguro que cae"
+   ],
+   "explanation": "Un gráfico es el registro de lo que ya pasó. Sirve para ver cómo se ha movido el precio, pero no garantiza lo que hará: ni que siga subiendo ni que caiga.",
+   "feedback": [
+    "Nadie lo sabe. Un gráfico registra el pasado: la subida puede acabar mañana.",
+    "Eso. Puede seguir o darse la vuelta: son probabilidades, no certezas.",
+    "Tampoco lo sabes: el gráfico no dice si va a subir o a bajar."
+   ],
+   "lines": [
+    "Esta acción lleva tres meses subiendo sin parar.",
+    "Así que seguro que sigue. ¿Meto todos mis ahorros?"
+   ]
   },
   "u1l5-3": {
    "prompt": "Empareja cada caso con el tipo de interés.",
@@ -537,12 +641,6 @@
     "Interés simple",
     "Interés compuesto en tu contra"
    ]
-  },
-  "u1l5-4": {
-   "prompt": "10.000 € al 5 % compuesto durante 10 años, ¿cuánto suman? (redondea a euros)",
-   "options": [],
-   "explanation": "10.000 × 1,05¹⁰ ≈ 16.289 €. Con simple serían 15.000 €.",
-   "unit": "€"
   },
   "u1l5-5": {
    "prompt": "El interés compuesto solo funciona a tu favor.",
@@ -574,6 +672,34 @@
     "50 € al mes al 7 % durante 40 años son unos 130.000 €, con 24.000 € aportados.",
     "Bien: con el tiempo de tu lado, empezar pronto pesa más que empezar con mucho.",
     "Esperar cuesta caro: los primeros años son los que más tiempo tienen para componerse."
+   ]
+  },
+  "u1l5-10": {
+   "prompt": "Marta tiene 18 años y 1.000 € de un regalo. Piensa invertirlos «cuando acabe la carrera, dentro de 5 años». ¿Qué le aconsejas?",
+   "options": [
+    "Empezar ya, aunque sea con una parte",
+    "Esperar: con 18 años es pronto para invertir",
+    "Guardarlos en casa hasta entonces"
+   ],
+   "explanation": "El tiempo pesa tanto como la rentabilidad: empezar 5 años antes deja que el compuesto trabaje 5 años más. Esperar parece prudente, pero tiene un coste que no se ve.",
+   "feedback": [
+    "Cada año que espera es un año menos de interés compuesto: los primeros euros son los que más tiempo tienen para crecer.",
+    "Al revés: a los 18 tiene el tiempo de su lado, que es lo que más pesa.",
+    "En el colchón no crecen, y con los precios subiendo compran menos cada año."
+   ]
+  },
+  "u1l5-11": {
+   "prompt": "¿Interés simple o compuesto?",
+   "options": [
+    "La curva se empina cuanto más tiempo pasa",
+    "Ganas lo mismo el año 1 que el año 30",
+    "Lo que ganas se suma y también genera ganancias",
+    "Cobras cada año sobre lo que pusiste al principio"
+   ],
+   "explanation": "Con el simple, la ganancia de cada año es siempre igual. Con el compuesto, ganas sobre una base cada vez más grande, y por eso los últimos años crecen mucho más que los primeros.",
+   "right": [
+    "Simple",
+    "Compuesto"
    ]
   }
  }

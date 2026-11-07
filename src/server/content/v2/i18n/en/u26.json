@@ -10,6 +10,23 @@
    "steps": [
     {
      "texts": [
+      "Up 8 % in an hour",
+      "Pablo",
+      "My plan says: I only enter on a reversal candle at a support.",
+      "A share shoots up 8 % in an hour. It doesn't meet any of his rules.",
+      "It's getting away from me! Do I get in?",
+      "What do you tell Pablo?",
+      "Get in: it's a once-in-a-lifetime chance",
+      "That's FOMO. And if it goes wrong, he won't know whether his plan works.",
+      "Don't get in, and log it in your journal as a temptation",
+      "That's it! There'll be plenty of chances. A plan only works if you follow it.",
+      "Get in with a little, just in case",
+      "A little or a lot, it's still breaking the plan.",
+      "Write the plan when you're calm. You'll need it when you're not."
+     ]
+    },
+    {
+     "texts": [
       "Rule or wish?",
       "A plan says how much time you put in, what you trade, when you enter, where the stop goes, how much you risk, how you exit and when you stop. Do these sentences work?",
       "Concrete rule",
@@ -31,27 +48,10 @@
      ]
     },
     {
-     "texts": [
-      "Up 8 % in an hour",
-      "Pablo",
-      "My plan says: I only enter on a reversal candle at a support.",
-      "A share shoots up 8 % in an hour. It doesn't meet any of his rules.",
-      "It's getting away from me! Do I get in?",
-      "What do you tell Pablo?",
-      "Get in: it's a once-in-a-lifetime chance",
-      "That's FOMO. And if it goes wrong, he won't know whether his plan works.",
-      "Don't get in, and log it in your journal as a temptation",
-      "That's it! There'll be plenty of chances. A plan only works if you follow it.",
-      "Get in with a little, just in case",
-      "A little or a lot, it's still breaking the plan.",
-      "Write the plan when you're calm. You'll need it when you're not."
-     ]
-    },
-    {
      "title": "Limits protect you from yourself",
      "body": "«I don't trade on earnings day. I don't average down. I don't move the stop against me. If I lose 6 % in a month, I stop until the next month. If the account falls 15 % from its peak, I halve my risk and review the plan.»\n\nAnd every 20 trades, a review of the stats.",
      "key": "If it isn't written down, it isn't a plan: it's a hunch.",
-     "tip": "Size of each trade: 1 % risk or less while you're learning."
+     "tip": "Try it: write your plan and make your next simulator buy only if it meets it."
     }
    ]
   },
@@ -101,29 +101,13 @@
      "title": "A journal entry",
      "body": "12/11, buy at €4.10, stop €3.95, target €4.40, 1R = €100, 666 shares. Result: +€180, +1.8R. Followed the plan: yes. Emotion: calm.\n\nFrom this you get your win rate, average win and loss in R, **expectancy** and streaks.",
      "key": "A journal turns your trades into data you can improve with.",
-     "tip": "Your journal shows you the mistakes your memory would rather forget."
+     "tip": "Try it: open your Portfolio history and note the reason and emotion behind each trade."
     }
    ]
   },
   "u26l3": {
    "title": "Losing streaks and drawdown",
    "steps": [
-    {
-     "texts": [
-      "Ten losses in a row",
-      "Streaks are normal: with a 40 % win rate, almost half the time there are **8 or more losses in a row** in 100 trades. How much can your account take?",
-      "You risk 5 % per trade. After 10 losses in a row, how much is left of your €10,000?",
-      "About €9,500",
-      "About €6,000",
-      "Nothing: you lose it all",
-      "You're left with **€5,987**: each loss is 5 % of what's left. At 1 %, you'd have €9,044.",
-      "Find the risk at which, after 10 losses, you still have more than €9,000.",
-      "At **1 %**, 8 losses in a row are −7.7 %; at 5 %, −33.7 %. **Risk little so you can ride out the streaks.**",
-      "This way a bad streak won't knock you out of the game.",
-      "At this risk, a normal streak takes a big bite.",
-      "Lower the risk per trade"
-     ]
-    },
     {
      "texts": [
       "Seven losses in a row",
@@ -142,10 +126,26 @@
      ]
     },
     {
+     "texts": [
+      "Ten losses in a row",
+      "Streaks are normal: with a 40 % win rate, almost half the time there are **8 or more losses in a row** in 100 trades. How much can your account take?",
+      "You risk 5 % per trade. After 10 losses in a row, how much is left of your €10,000?",
+      "About €9,500",
+      "About €6,000",
+      "Nothing: you lose it all",
+      "You're left with **€5,987**: each loss is 5 % of what's left. At 1 %, you'd have €9,044.",
+      "Find the risk at which, after 10 losses, you still have more than €9,000.",
+      "At **1 %**, 8 losses in a row are −7.7 %; at 5 %, −33.7 %. **Risk little so you can ride out the streaks.**",
+      "This way a bad streak won't knock you out of the game.",
+      "At this risk, a normal streak takes a big bite.",
+      "Lower the risk per trade"
+     ]
+    },
+    {
      "title": "Drawdown",
      "body": "It's the fall in the account from its peak to the next low. Climbing back is harder than falling: after −15 % you need to gain **17.6 %**; after −35 %, almost **54 %**.\n\nRule in the example plan: if the account falls 10–15 % from its peak, you **halve your risk** and review.",
      "key": "Streaks are just statistics: risk little so you can ride them out.",
-     "tip": "Eight misses in a row don't mean the plan is wrong: they mean you're on a losing streak."
+     "tip": "Try it: find your longest losing streak in your Portfolio history."
     }
    ]
   },
@@ -189,7 +189,7 @@
      "title": "The four phases",
      "body": "1. **Backtest:** 50–100 signals with their results.\n2. **Out-of-sample:** other assets or another period, without changing the rules.\n3. **Real-time simulator:** 2–3 months at least.\n4. **Real money, bit by bit:** a fraction of your capital and half the risk.\n\nIf after 100 trades your expectancy after costs is negative or close to zero, you don't have an edge. It's not a failure: it's information.",
      "key": "A system isn't proven until it works on new data and with enough trades.",
-     "tip": "The simulator teaches you to trade. Real money teaches you who you are. Start small."
+     "tip": "Try it: count in your Portfolio history how many trades you've made: do you reach 50?"
     }
    ]
   },
@@ -254,12 +254,6 @@
    ],
    "explanation": "Not setting a stop would mean skipping the foundation of the plan."
   },
-  "u26l1-7": {
-   "prompt": "Your plan caps total open risk at 5 % of the account and each trade risks 1 %. What's the maximum number of trades you can have open at once?",
-   "options": [],
-   "explanation": "5 % ÷ 1 % = 5 open trades.",
-   "unit": "trades"
-  },
   "u26l1-10": {
    "prompt": "Your plan says: «stop below the recent low». Apply it to this buy on a real chart.",
    "options": [],
@@ -306,24 +300,6 @@
     "How many trades work out"
    ]
   },
-  "u26l2-3": {
-   "prompt": "Risk per trade: €100. You enter at €4.10 with the stop at €3.95. How many shares do you buy? (round down)",
-   "options": [],
-   "explanation": "Distance: €0.15. 100 ÷ 0.15 = 666.7 → 666 shares.",
-   "unit": "shares"
-  },
-  "u26l2-4": {
-   "prompt": "Your journal has 20 trades: 8 winners and 12 losers. What's your win rate?",
-   "options": [],
-   "explanation": "8 ÷ 20 = 0.4 → 40 %.",
-   "unit": "%"
-  },
-  "u26l2-5": {
-   "prompt": "In those 20 trades, the winners made +2R on average and the losers −1R. What's your expectancy per trade?",
-   "options": [],
-   "explanation": "0.4 × 2 − 0.6 × 1 = +0.2R.",
-   "unit": "R"
-  },
   "u26l2-6": {
    "prompt": "Which journal statistic tells you whether your system makes money in the long run?",
    "options": [
@@ -351,6 +327,34 @@
     "Anyway, I can remember my trades."
    ]
   },
+  "u26l2-11": {
+   "prompt": "You go over your journal: almost every trade where you wrote «in a hurry» ended in a loss; the rest are doing fine. What do you do?",
+   "options": [
+    "Trade faster so the hurry has no time to kick in",
+    "Stop writing down the emotion, it stresses me out",
+    "Add a rule to the plan: if I feel rushed, I don't enter today"
+   ],
+   "explanation": "The journal is there to change the plan with data: if an emotion keeps showing up in your losses, it becomes a rule. The temptation is to stop looking at what makes you uncomfortable.",
+   "feedback": [
+    "More hurry is exactly what's costing you money.",
+    "The problem is still there; you just can't see it any more.",
+    "Good: the journal showed you where you lose, and a written rule cuts it off."
+   ]
+  },
+  "u26l2-12": {
+   "prompt": "What does each journal finding tell you?",
+   "options": [
+    "You lose mostly on the trades you made without a signal",
+    "You move the stop against you and the losses grow",
+    "You apply the rules well, but costs eat what you make",
+    "You follow every rule and, after 100 trades, the expectancy comes out negative"
+   ],
+   "explanation": "If you follow the plan and still lose, the problem is the system. If you lose when you skip it, the system works: what's failing is discipline. Mixing them up leads you to change a plan that was fine.",
+   "right": [
+    "The system needs reviewing",
+    "You need to follow the plan better"
+   ]
+  },
   "u26l3-1": {
    "prompt": "With a system that's right 50 % of the time, is it unusual to have 6 losses in a row in 100 trades?",
    "options": [
@@ -359,12 +363,6 @@
     "No, it's normal"
    ],
    "explanation": "It's the typical longest streak in 100 trades."
-  },
-  "u26l3-2": {
-   "prompt": "You risk 1 % per trade and take 8 losses in a row. How much does your account fall? (round to one decimal place)",
-   "options": [],
-   "explanation": "0.99⁸ ≈ 0.923 → a 7.7 % fall.",
-   "unit": "%"
   },
   "u26l3-4": {
    "prompt": "Match the risk per trade with the fall after 8 losses in a row.",
@@ -381,12 +379,6 @@
     "−14.9 %",
     "−7.7 %"
    ]
-  },
-  "u26l3-5": {
-   "prompt": "Your account falls 15 % from its peak. How much do you need to gain to get back to it? (round to one decimal place)",
-   "options": [],
-   "explanation": "1 ÷ 0.85 − 1 ≈ 0.176 → +17.6 %.",
-   "unit": "%"
   },
   "u26l3-7": {
    "prompt": "Bruno's account falls 15 % from its peak. What does the example plan say?",
@@ -411,6 +403,25 @@
     "drawdown"
    ],
    "explanation": "It's the measure that best reflects how much a strategy really hurts."
+  },
+  "u26l3-11": {
+   "prompt": "You're coming off four losses in a row, all within the plan. Account of €10,000 and a maximum risk of 1 %, as always. Choose your stop and amount.",
+   "options": [],
+   "explanation": "After a streak, the risk stays the same as always: no more to win it back, no less out of fear. That way every trade counts equally in your statistics."
+  },
+  "u26l3-12": {
+   "prompt": "Is it a normal streak or a signal to review the plan?",
+   "options": [
+    "The account falls 15 % from its peak",
+    "After 100 trades, the expectancy after costs is negative",
+    "6 losses in a row with a 50 % hit rate, over 100 trades",
+    "7 losses in a row with a 40 % hit rate, following every rule"
+   ],
+   "explanation": "Streaks within what's expected say nothing about the system. A 15 % drawdown calls for cutting risk and reviewing, and a negative expectancy over many trades says there's no edge. The tempting move is to switch systems after every streak.",
+   "right": [
+    "Normal streak: follow the plan",
+    "Signal to review"
+   ]
   },
   "u26l4-1": {
    "prompt": "Put the phases for validating a system in order.",
@@ -469,12 +480,6 @@
     "Seeing a signal in the past as crystal clear when it wasn't in real time",
     "Tweaking parameters until the past looks perfect"
    ]
-  },
-  "u26l4-9": {
-   "prompt": "You're going to start with €2,000 of real money and half your usual 1 % risk. How much do you risk per trade?",
-   "options": [],
-   "explanation": "Half of 1 % = 0.5 %. 2,000 × 0.005 = €10.",
-   "unit": "€"
   },
   "u26l4-10": {
    "prompt": "First «small» trade: your account is €2,000 and, since you're just starting, you risk 0.5 % at most. Choose the stop and amount.",

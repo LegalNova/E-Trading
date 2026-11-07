@@ -48,7 +48,7 @@
      "title": "Volatility in numbers",
      "body": "Bitcoin had already fallen more than **80 %** in 2014-2015 and in 2018; winning back its late-2017 high took about **3 years**.\n\nIts annual volatility is around **50-80 %**, compared with 15 % for a global stock index: a −10 % week is common. It's a highly volatile asset, no guarantee scheme covers it and **you can lose everything you invest**.",
      "key": "In crypto, falls of 70 % and years of waiting to recover are part of the history.",
-     "tip": "If something can rise 300 % in a year, it can also fall 75 %."
+     "tip": "Try it: in Market, open Bitcoin and compare its chart with the S&P 500's."
     }
    ]
   },
@@ -104,7 +104,7 @@
      "title": "What changed",
      "body": "Sam Bankman-Fried, founder of FTX, was sentenced in 2024 to **25 years** in prison for fraud.\n\nMiCA now requires platforms to be authorised and to keep customers' assets separate. Even so, in crypto there's no guarantee scheme like the one for bank deposits: it pays to know who holds your crypto and not to keep it all on one platform. And remember: **you can lose everything you invest**.",
      "key": "If someone else holds your crypto, you also take on their risk of bankruptcy or fraud.",
-     "tip": "Even a huge exchange can collapse in a week."
+     "tip": "Ask your tutor Lumi what happens to your shares if your broker goes bust."
     }
    ]
   },
@@ -159,31 +159,13 @@
      "title": "The red flags",
      "body": "A **memecoin** starts life as a joke or a fad (Dogecoin, in 2013, as a joke): many have no use at all and their price depends only on attention.\n\nRed flags: anonymous creators with no track record, promises of «x100», urgency, paid influencers, not being able to sell, being asked to connect your wallet or share your seed phrase. With these tokens **you can lose everything you invest** in minutes.",
      "key": "If the only reason to buy is that «it's going to go up», someone probably wants to sell to you.",
-     "tip": "With a memecoin, your money may be someone else's exit."
+     "tip": "Try it: in Market, search for Dogecoin and see how far it has fallen from its peak."
     }
    ]
   },
   "u13l4": {
    "title": "Staking and DeFi: where the yield comes from",
    "steps": [
-    {
-     "texts": [
-      "Staking: does it protect you from the price?",
-      "With **staking** you lock up your coins to validate blocks (on Ethereum, for example) and the network pays you **in the same crypto**; if the validator fails, you can lose part of it (*slashing*). You have **€1,000** in ether.",
-      "ether",
-      "You earn 3 % from staking, paid in ether, and ether falls 40 % against the euro. Where do you end up?",
-      "Ahead: staking protects me",
-      "Down almost 40 %",
-      "Where I started",
-      "1.03 × 0.60 = 0.618: your €1,000 shrinks to **€618**. The 3 % is paid in a coin that's worth less.",
-      "With ether down 40 %, find the yield you'd need to break even.",
-      "To make up for a 40 % fall you'd need a **67 %** yield. **Staking doesn't protect you from the price**: it just gives you more units of the same thing.",
-      "Yields like that in crypto usually hide a lot of risk… or a trap.",
-      "In the red: that's what *slashing* looks like, if the validator fails.",
-      "You've got more coins, but each one is worth less.",
-      "Lower the price of ether and see what you're left with in euros"
-     ]
-    },
     {
      "texts": [
       "20 % for depositing",
@@ -200,6 +182,24 @@
       "2022: the subsidies stop being enough and everything collapses.",
       "That same year Celsius, which also promised high interest, went bust.",
       "If you don't know where the yield comes from, maybe the yield is you."
+     ]
+    },
+    {
+     "texts": [
+      "Staking: does it protect you from the price?",
+      "With **staking** you lock up your coins to validate blocks (on Ethereum, for example) and the network pays you **in the same crypto**; if the validator fails, you can lose part of it (*slashing*). You have **€1,000** in ether.",
+      "ether",
+      "You earn 3 % from staking, paid in ether, and ether falls 40 % against the euro. Where do you end up?",
+      "Ahead: staking protects me",
+      "Down almost 40 %",
+      "Where I started",
+      "1.03 × 0.60 = 0.618: your €1,000 shrinks to **€618**. The 3 % is paid in a coin that's worth less.",
+      "With ether down 40 %, find the yield you'd need to break even.",
+      "To make up for a 40 % fall you'd need a **67 %** yield. **Staking doesn't protect you from the price**: it just gives you more units of the same thing.",
+      "Yields like that in crypto usually hide a lot of risk… or a trap.",
+      "In the red: that's what *slashing* looks like, if the validator fails.",
+      "You've got more coins, but each one is worth less.",
+      "Lower the price of ether and see what you're left with in euros"
      ]
     },
     {
@@ -222,7 +222,7 @@
       "A platform that lends your crypto to others",
       "It pays you part of what it charges borrowers… and risks your money.",
       "Place the six yields.",
-      "**Who pays the interest, and why?** If nobody can explain it, it may come from the money of those who join later. And in crypto **you can lose everything you invest**.",
+      "**Who pays the interest, and why?** If nobody can explain it, it may come from those who join later, and in crypto **you can lose everything**. Try it: ask your tutor Lumi where a yield you've seen comes from.",
       "Ask yourself: whose pocket is that money coming out of?",
       "Nice! Explainable doesn't mean risk-free, but the unexplainable usually ends badly.",
       "Who pays? Place each yield"
@@ -233,6 +233,24 @@
   "u13l5": {
    "title": "Crypto ETFs and ETPs",
    "steps": [
+    {
+     "texts": [
+      "Iker's ETP",
+      "Iker",
+      "At last I can buy bitcoin like a share, with my broker! It's up 50 % this month.",
+      "Two months later, bitcoin falls 30 %. So does Iker's ETP.",
+      "Wasn't this a regulated product? I'm selling it all before it falls further.",
+      "What's happened to Iker?",
+      "He's been unlucky with the product",
+      "The ETP did the same as bitcoin. The problem was when he bought and when he sold.",
+      "He bought in euphoria and sold in panic",
+      "Exactly. It has a name: the **behaviour gap**.",
+      "He should have bought bitcoin directly",
+      "The wrapper wouldn't have changed the fall or how he reacted.",
+      "According to Morningstar, that's how investors lost about 14 points a year compared with the ETF itself.",
+      "With assets this volatile, the biggest risk is usually our own behaviour."
+     ]
+    },
     {
      "texts": [
       "Directly or on the stock market",
@@ -260,28 +278,10 @@
      ]
     },
     {
-     "texts": [
-      "Iker's ETP",
-      "Iker",
-      "At last I can buy bitcoin like a share, with my broker! It's up 50 % this month.",
-      "Two months later, bitcoin falls 30 %. So does Iker's ETP.",
-      "Wasn't this a regulated product? I'm selling it all before it falls further.",
-      "What's happened to Iker?",
-      "He's been unlucky with the product",
-      "The ETP did the same as bitcoin. The problem was when he bought and when he sold.",
-      "He bought in euphoria and sold in panic",
-      "Exactly. It has a name: the **behaviour gap**.",
-      "He should have bought bitcoin directly",
-      "The wrapper wouldn't have changed the fall or how he reacted.",
-      "According to Morningstar, that's how investors lost about 14 points a year compared with the ETF itself.",
-      "With assets this volatile, the biggest risk is usually our own behaviour."
-     ]
-    },
-    {
      "title": "In Europe: ETPs and ETNs",
      "body": "In the US, **spot bitcoin ETFs** were approved in January 2024, but many can't be bought from the EU because they don't have a KID.\n\nUCITS rules don't allow a fund holding a single crypto, so in Europe they're sold as **ETPs** or **ETNs**: debt securities from an issuer, usually **backed** by the crypto held by a custodian. On top, you take on issuer and custodian risk, plus an annual fee. **You can lose everything you invest**.",
      "key": "A crypto ETP saves you from looking after keys, but it doesn't save you a single point of volatility.",
-     "tip": "The wrapper doesn't change what's inside."
+     "tip": "Try it: in Market, search for the IBIT ETF and compare its chart with Bitcoin's."
     }
    ]
   },
@@ -325,7 +325,7 @@
      "title": "The part you could lose",
      "body": "With 5 % in crypto, a 75 % fall knocks **3.75 %** off the total; with 50 %, **37.5 %**.\n\nPeople who decide to hold crypto usually write into their plan: first, the **cushion** and no expensive debt; a **maximum** they could lose entirely without it changing their life; and when to **rebalance**. These are examples of how people think it through, not personalised recommendations. In crypto **you can lose everything you invest**.",
      "key": "Crypto's weight in the total, not its potential, decides how much it can hurt you.",
-     "tip": "Write down your crypto maximum today, before a rally talks you out of it."
+     "tip": "Try it: open your Portfolio and see what percentage you have in crypto today."
     }
    ]
   },
@@ -357,18 +357,6 @@
    "explanation": "Guessing the next move of such a volatile asset is a lot like tossing a coin.",
    "horizon": "the next 10 sessions"
   },
-  "u13l1-5": {
-   "prompt": "You invest €2,000 in a cryptocurrency and it falls 84 %, like Bitcoin in 2018. How much do you have left?",
-   "options": [],
-   "explanation": "2,000 × 0.16 = €320.",
-   "unit": "€"
-  },
-  "u13l1-6": {
-   "prompt": "A cryptocurrency falls 90 %. How much does it need to rise to get back to its high?",
-   "options": [],
-   "explanation": "From 100 to 10: getting back to 100 means multiplying by 10, a 900 % rise.",
-   "unit": "%"
-  },
   "u13l1-8": {
    "prompt": "Laura bought bitcoin at a peak and is down 60 %. She reads on social media that \"it always recovers\". What does she think?",
    "options": [
@@ -392,6 +380,20 @@
     "Treasury bills"
    ],
    "explanation": "Less than 1 %, 4-7 %, around 15 % and 50-80 % a year."
+  },
+  "u13l1-11": {
+   "prompt": "A cryptocurrency falls 90% from its peak. What has to happen for it to get back there?",
+   "options": [
+    "It has to multiply by 10",
+    "It has to rise 100%, doubling",
+    "It has to rise 90%, the same as it fell"
+   ],
+   "explanation": "If €10 is left of every €100, you need to multiply by 10 to get back: +900%. The tempting one, rising as much as it fell, fails because a 90% rise is calculated on the little that's left."
+  },
+  "u13l1-12": {
+   "prompt": "You have €10,000 and don't want to risk more than 1% (€100) on bitcoin. Place the stop below the last low and choose the amount.",
+   "options": [],
+   "explanation": "In such a volatile asset the stop sits far from the price, so the amount comes out small. That way, even if the stop is hit, you only lose €100. The temptation is to buy a lot and put the stop very close, but any normal swing will trigger it."
   },
   "u13l2-1": {
    "prompt": "Put in order what happened with FTX in November 2022.",
@@ -692,24 +694,6 @@
     "CASH"
    ]
   },
-  "u13l6-2": {
-   "prompt": "You have €10,000 with 5 % in crypto. Crypto falls 75 % and the rest doesn't move. How much does your portfolio lose in total?",
-   "options": [],
-   "explanation": "500 × 75 % = €375: 3.75 % of the total.",
-   "unit": "€"
-  },
-  "u13l6-3": {
-   "prompt": "Now with 40 % in crypto (4,000 of €10,000). It falls 75 % and the rest doesn't move. What percentage does the portfolio lose?",
-   "options": [],
-   "explanation": "4,000 × 75 % = €3,000 → 30 % of €10,000.",
-   "unit": "%"
-  },
-  "u13l6-4": {
-   "prompt": "A €10,000 portfolio: €9,500 in funds and €500 in crypto. Crypto triples and the funds don't move. What weight does crypto have now? (one decimal place)",
-   "options": [],
-   "explanation": "500 × 3 = €1,500; total, €11,000; 1,500 ÷ 11,000 ≈ 13.6 %. It's gone from 5 % to 13.6 % without you deciding anything.",
-   "unit": "%"
-  },
   "u13l6-6": {
    "prompt": "Pablo is 22, has no emergency fund and owes €2,000 on his credit card. He wants to put €3,000 into crypto \"because he's young and can take risks\". What does he bear in mind?",
    "options": [
@@ -750,6 +734,29 @@
    "lines": [
     "I read that someone put everything into crypto and got rich 🤑",
     "Why not do the same?"
+   ]
+  },
+  "u13l6-11": {
+   "prompt": "You have 5% of your portfolio in crypto. If that crypto goes to zero, what is the most your portfolio can lose?",
+   "options": [
+    "Everything",
+    "5%: what the crypto weighs",
+    "Half"
+   ],
+   "explanation": "The most you can lose on one part is what that part weighs in the total. That's why the weight is decided before buying. The temptation is to think that a crypto going to zero drags down the whole portfolio, and it doesn't: only if it weighs a lot."
+  },
+  "u13l6-12": {
+   "prompt": "Marta had written «crypto at most 5%». After a big rise, her crypto now weighs 13.6% without her buying any more. What does she do?",
+   "options": [
+    "She puts more money into crypto because it's doing well",
+    "She sells crypto until she's back at 5% and moves the rest into her funds",
+    "Nothing: if it's rising, let it keep rising"
+   ],
+   "explanation": "The right one is to rebalance: follow the plan written calmly. The tempting one, letting it run, turns a 5% into the asset that rules the whole portfolio.",
+   "feedback": [
+    "That way she decides with euphoria and raises a risk that was already over her limit.",
+    "Good: she follows her plan, keeps part of the gain and goes back to the risk she chose.",
+    "Her portfolio is now quite a bit riskier than what she decided calmly."
    ]
   }
  }

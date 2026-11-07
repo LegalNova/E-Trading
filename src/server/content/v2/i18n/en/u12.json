@@ -54,7 +54,7 @@
      "title": "Why it can't be rewritten",
      "body": "Transactions are grouped into **blocks**. Each block carries a fingerprint (**hash**) of the previous one: that's how they're chained together.\n\nIf someone changes an old transaction, that block's fingerprint changes and every block after it breaks. On top of that, the other nodes have the correct copy and reject the fake one.",
      "key": "Blockchain: a shared, chained record that nobody can rewrite on their own.",
-     "tip": "Using blockchain doesn't make something a good investment."
+     "tip": "Try it: in Market, search for Bitcoin and add it to Favourites to follow it this week."
     }
    ]
   },
@@ -93,13 +93,29 @@
      "title": "The halving",
      "body": "Bitcoin was born in 2009, created by someone using the pseudonym **Satoshi Nakamoto**. New bitcoins are created as a reward for whoever adds blocks (the miners). Every **210,000 blocks**, about **4 years**, that reward is cut in half: that's the **halving**.\n\n50 → 25 (2012) → 12.5 (2016) → 6.25 (2020) → **3.125** (2024). After the 2024 halving, 93.75 % of all bitcoins had already been issued.",
      "key": "Bitcoin: a maximum of 21 million, with new issuance halving roughly every 4 years.",
-     "tip": "Programmed scarcity doesn't mean a guaranteed price."
+     "tip": "Try it: in Market, search for Bitcoin and see how far it has fallen from its peak."
     }
    ]
   },
   "u12l3": {
    "title": "Mining and proof of work",
    "steps": [
+    {
+     "texts": [
+      "Mine from your phone",
+      "Laura",
+      "Look at this ad: «Mine bitcoins from your phone and earn €50 a day».",
+      "Shall I download the app?",
+      "What do you tell her?",
+      "Yes, it's easy money",
+      "Real mining uses specialised machines and loads of electricity. A phone can't compete.",
+      "It's almost certainly a scam: a phone can't compete",
+      "Nice! Lots of «mining apps» are scams or use your phone for other things.",
+      "Install it just to try it out",
+      "These apps can expose your data or your wallet. Better not.",
+      "When a promise doesn't fit with how the technology works, be suspicious."
+     ]
+    },
     {
      "texts": [
       "Work or stake?",
@@ -125,32 +141,32 @@
      ]
     },
     {
-     "texts": [
-      "Mine from your phone",
-      "Laura",
-      "Look at this ad: «Mine bitcoins from your phone and earn €50 a day».",
-      "Shall I download the app?",
-      "What do you tell her?",
-      "Yes, it's easy money",
-      "Real mining uses specialised machines and loads of electricity. A phone can't compete.",
-      "It's almost certainly a scam: a phone can't compete",
-      "Nice! Lots of «mining apps» are scams or use your phone for other things.",
-      "Install it just to try it out",
-      "These apps can expose your data or your wallet. Better not.",
-      "When a promise doesn't fit with how the technology works, be suspicious."
-     ]
-    },
-    {
      "title": "A computing race",
      "body": "**Miners** group transactions into a block and race to find a number that makes its hash meet a condition. The first one collects the **reward** plus the **fees**. Finding the solution costs a lot; checking it, very little.\n\nThe **difficulty** adjusts every 2,016 blocks so that a block is found every **10 minutes** on average. And the technology doesn't change the price risk: in crypto **you can lose everything you invest**.",
      "key": "Proof of work: you earn the right to add blocks by spending energy on calculations.",
-     "tip": "The energy used in mining is the price of making the record impossible to rewrite."
+     "tip": "Try it: create a price alert on Bitcoin and see how much it moves this week."
     }
    ]
   },
   "u12l4": {
    "title": "Ethereum and smart contracts",
    "steps": [
+    {
+     "texts": [
+      "Free tokens",
+      "Unknown website",
+      "Congratulations! You've got 500 free tokens waiting for you.",
+      "Connect your wallet and sign this contract to claim them.",
+      "What do you do?",
+      "I sign: it's free",
+      "Signing a contract you don't understand can give permission to empty your wallet.",
+      "I don't sign anything I don't understand, and I check the project through its official channels",
+      "Nice! Lots of scams use smart contract signatures to steal.",
+      "I sign with my main wallet, to get more",
+      "If it's a trap, you'll lose everything in that wallet.",
+      "In a smart contract, code is law… even when it has a bug."
+     ]
+    },
     {
      "texts": [
       "Bitcoin or Ethereum?",
@@ -176,26 +192,10 @@
      ]
     },
     {
-     "texts": [
-      "Free tokens",
-      "Unknown website",
-      "Congratulations! You've got 500 free tokens waiting for you.",
-      "Connect your wallet and sign this contract to claim them.",
-      "What do you do?",
-      "I sign: it's free",
-      "Signing a contract you don't understand can give permission to empty your wallet.",
-      "I don't sign anything I don't understand, and I check the project through its official channels",
-      "Nice! Lots of scams use smart contract signatures to steal.",
-      "I sign with my main wallet, to get more",
-      "If it's a trap, you'll lose everything in that wallet.",
-      "In a smart contract, code is law… even when it has a bug."
-     ]
-    },
-    {
      "title": "More possibilities, more risks",
      "body": "More features also mean more ways to fail: a bug in a contract's code can let someone drain it, and on a blockchain there's nobody to complain to.\n\nETH is very volatile and **you can lose everything you invest**.",
      "key": "Ethereum adds to Bitcoin the ability to run programs: smart contracts.",
-     "tip": "With smart contracts, a single signature can authorise moving your entire balance."
+     "tip": "Try it: in Market, search for Ethereum and compare its chart with Bitcoin's."
     }
    ]
   },
@@ -246,7 +246,7 @@
      "title": "What MiCA requires",
      "body": "Stablecoins are used to move between cryptos without going through a bank and to make payments. The most widely used are **USDT** (Tether) and **USDC** (Circle).\n\nIn the EU, the **MiCA** regulation requires their issuers to be authorised, hold sufficient, segregated **reserves** and let you **redeem** tokens at par. Even so, «stable» doesn't mean «guaranteed»: they're not covered by the deposit guarantee scheme and **you can lose what you invest**.",
      "key": "A stablecoin is worth what its reserves are worth, plus trust in its issuer.",
-     "tip": "If a stablecoin pays you 20 % «with no risk», ask where that money comes from."
+     "tip": "If someone offers you a «stable» 20%, ask your tutor Lumi first."
     }
    ]
   },
@@ -256,7 +256,7 @@
     {
      "texts": [
       "Can you show it?",
-      "Your crypto is on the blockchain; your **wallet** holds the **keys**. What can you show without a problem, and what never?",
+      "You've just created your first **wallet**, the app that holds the **keys** to your crypto. Everyone asks you for something: what can you show without a problem, and what never?",
       "No problem",
       "Never",
       "Your public address, so people can pay you",
@@ -298,7 +298,7 @@
      "title": "Your own custody or someone else's",
      "body": "• **On an exchange:** it holds the keys. Convenient, but if it goes bust or freezes your account, you're at its mercy (FTX, 2022).\n• **Self-custody:** you hold the keys, in a software or hardware wallet. Nobody can freeze them… but if you lose your seed phrase, **nobody** can recover them.\n\nYour seed phrase goes **on paper or metal, offline**, somewhere safe. Never in a photo, an email or the cloud.",
      "key": "«Not your keys, not your coins»: whoever controls the keys controls the crypto.",
-     "tip": "No legitimate party will ever ask for your seed phrase: not support, not the exchange, not «Hacienda» (the Spanish tax authority)."
+     "tip": "Ask your tutor Lumi what the difference is between your address and your private key."
     }
    ]
   },
@@ -349,7 +349,7 @@
      "title": "What MiCA requires of them",
      "body": "• **Authorisation** from a national supervisor (in Spain, the CNMV), valid across the EU.\n• **Keeping** clients' crypto separate from their own.\n• **Capital**, governance and conflict-of-interest requirements.\n• Clear information and a **complaints** procedure.\n\nAccording to the CNMV, from **1 July 2026** only authorised providers can operate in Spain. Before opening an account, look it up in the **CNMV** or **ESMA** registers.",
      "key": "MiCA requires exchanges in the EU to be authorised, keep client assets separate and be transparent.",
-     "tip": "Check the platform in the official register, not on its own website."
+     "tip": "Before opening an account on a real exchange, ask your tutor Lumi how to check it."
     }
    ]
   },
@@ -458,18 +458,6 @@
    ],
    "explanation": "Each halving divides the reward by two: issuance slows until it reaches 21 million."
   },
-  "u12l2-4": {
-   "prompt": "After the 2024 halving, the reward is 3.125 BTC per block. What will it be after the next halving?",
-   "options": [],
-   "explanation": "3.125 ÷ 2 = 1.5625 BTC per block.",
-   "unit": "BTC"
-  },
-  "u12l2-5": {
-   "prompt": "Bitcoin adds a block every 10 minutes on average. How many blocks are produced per day?",
-   "options": [],
-   "explanation": "24 × 60 ÷ 10 = 144 blocks a day.",
-   "unit": "blocks"
-  },
   "u12l2-6": {
    "prompt": "This is a chart of one of the big cryptocurrencies, in daily candlesticks. What did it do over the next 10 sessions?",
    "options": [
@@ -487,6 +475,20 @@
     "What others are willing to pay for it"
    ],
    "explanation": "It doesn't generate profits or interest: its price depends on adoption and demand."
+  },
+  "u12l2-11": {
+   "prompt": "Bitcoin has been falling for weeks. Nico owns a little and reads on social media: «After every halving it always goes up, put in everything you can». What does he do?",
+   "options": [
+    "He puts in all his savings: the halving guarantees it",
+    "He sticks to his plan: he only puts in what he could lose entirely, whatever happens with the halving",
+    "He sells everything because, if it falls, Bitcoin must be dead"
+   ],
+   "explanation": "The right one is to follow a plan with an amount you can afford to lose. The tempting one, «it always goes up», mistakes programmed scarcity for a guaranteed price.",
+   "feedback": [
+    "The halving only slows the issuance of new bitcoins. The price depends on demand, and it has fallen more than 70% several times.",
+    "Good: scarcity doesn't guarantee the price, and in crypto you can lose everything you invest.",
+    "Deciding out of a few weeks of fear is as risky as deciding out of euphoria."
+   ]
   },
   "u12l3-1": {
    "prompt": "Put in order how a Bitcoin block is mined.",
@@ -533,12 +535,6 @@
    ],
    "explanation": "Proof of stake: validation is done by those who lock up ETH as collateral."
   },
-  "u12l3-7": {
-   "prompt": "Difficulty adjusts every 2,016 blocks. At 10 minutes per block, roughly every how many days is that?",
-   "options": [],
-   "explanation": "2,016 × 10 = 20,160 minutes ÷ 1,440 minutes a day = 14 days.",
-   "unit": "days"
-  },
   "u12l3-10": {
    "prompt": "What's true about proof of work? Select all.",
    "options": [
@@ -548,6 +544,20 @@
     "It uses a lot of electricity"
    ],
    "explanation": "Ethereum dropped it in 2022 and moved to proof of stake."
+  },
+  "u12l3-11": {
+   "prompt": "An acquaintance offers Leo a «cloud mining plan»: he pays a fee and earns a fixed 2% a day, without doing anything. What does Leo think?",
+   "options": [
+    "That it's an easy way to mine without machines",
+    "That he'll try it with a little, just in case",
+    "That a fixed return doesn't fit real mining, and that it's a clear sign of a scam"
+   ],
+   "explanation": "The right one works because mining doesn't give a fixed return: it depends on the price, the difficulty and the competition. The tempting one, trying with a little, still means giving money to a possible fraud.",
+   "feedback": [
+    "What a real miner earns changes every day: it depends on the price, the difficulty and the fees.",
+    "If it's a scam, that little is lost entirely and there's nobody to complain to.",
+    "Good: a miner earns the reward and fees only by winning the competition. Nobody serious can promise a fixed 2% a day."
+   ]
   },
   "u12l4-1": {
    "prompt": "Match each concept to its meaning.",
@@ -615,11 +625,19 @@
    ],
    "explanation": "Smart contracts: they run when their conditions are met, with no middleman."
   },
-  "u12l4-10": {
-   "prompt": "Sending some tokens costs 0.0005 ETH in gas and ETH is worth €2,000. How much do you pay in fees?",
-   "options": [],
-   "explanation": "0.0005 × 2,000 = €1. If the network gets congested, it can cost a lot more.",
-   "unit": "€"
+  "u12l4-11": {
+   "prompt": "Irene wants to send some tokens and is in no hurry. Her wallet warns that gas is very expensive today because the network is congested. What does she do?",
+   "options": [
+    "She sends them now: gas is a fixed fee",
+    "She sends them over Bitcoin to avoid paying gas",
+    "She waits for a moment when the network is calmer"
+   ],
+   "explanation": "The right one works because gas rises and falls with demand on the network. The tempting one fails: gas isn't a fixed fee but a price that changes.",
+   "feedback": [
+    "Gas isn't fixed: it rises when the network is congested and falls when demand is low.",
+    "Ethereum tokens live on Ethereum: they can't be sent over the Bitcoin network.",
+    "Good: with no rush, waiting usually makes the fee much cheaper."
+   ]
   },
   "u12l5-1": {
    "prompt": "What does a stablecoin try to do?",

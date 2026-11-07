@@ -42,9 +42,9 @@
     },
     {
      "title": "Qué mirar antes de decidir",
-     "body": "• **Tendencia previa:** ¿máximos y mínimos crecientes o decrecientes?\n• **Dónde está el precio:** ¿cerca de máximos, de mínimos o en medio?\n• **Tamaño de las velas:** velas grandes = más volatilidad = más incertidumbre.\n\nNada de esto garantiza el resultado: en dos semanas, una noticia lo cambia todo.",
+     "body": "• **Tendencia previa:** ¿máximos y mínimos crecientes o decrecientes?\n• **Dónde está el precio:** ¿cerca de máximos, de mínimos o en medio?\n• **Tamaño de las velas:** velas grandes = más volatilidad = más incertidumbre.\n\nNada de esto garantiza el resultado: en dos semanas, una noticia lo cambia todo. Apunta si aciertas en cada gráfico. Con pocos intentos, la suerte manda.",
      "key": "A corto plazo el precio tiene mucho de ruido: lo que sí controlas es cuánto arriesgas.",
-     "tip": "Apunta si aciertas en cada gráfico. Con pocos intentos, la suerte manda."
+     "tip": "Pruébalo: pon una acción en Favoritos, predice si sube y compruébalo en dos semanas."
     }
    ]
   },
@@ -80,7 +80,8 @@
     {
      "title": "Lo que cuesta recuperarse",
      "body": "• Si cae un **50 %**, tiene que subir un **+100 %** para volver al punto de partida.\n• Si cae un **80 %**, un **+400 %**: multiplicar por 5.\n\nEl bitcoin ha caído más de un 70 % desde máximos varias veces.",
-     "key": "Las caídas grandes son muy difíciles de recuperar: en cripto, solo dinero que podrías perder entero."
+     "key": "Las caídas grandes son muy difíciles de recuperar: en cripto, solo dinero que podrías perder entero.",
+     "tip": "Pruébalo: en Mercado, abre el bitcoin y mira cuánto se movió en la última semana."
     }
    ]
   },
@@ -90,7 +91,7 @@
     {
      "texts": [
       "Oro en dólares, ganancias en euros",
-      "El oro **cotiza en dólares**. Si compras desde España, cuentan dos cosas: lo que hace el oro y lo que hace el dólar frente al euro.",
+      "Compras **1.000 €** de oro desde España y el oro sube un 10 %. ¿Has ganado un 10 %? El oro **cotiza en dólares**: también cuenta lo que hace el dólar frente al euro.",
       "dólar",
       "El oro sube un 10 % en dólares, pero el dólar cae un 10 % frente al euro. ¿Qué ganas en euros?",
       "Un 10 %",
@@ -115,9 +116,9 @@
     },
     {
      "title": "El oro, refugio con matices",
-     "body": "Un par como **EUR/USD** dice cuántos dólares vale un euro: si pasa de 1,10 a 1,12, el euro se ha apreciado frente al dólar.\n\nEl oro no paga intereses ni dividendos. Se suele buscar en las crisis y frente a la inflación, pero puede pasar años sin subir: de 1980 a 2000 perdió mucho valor real.",
+     "body": "Un par como **EUR/USD** dice cuántos dólares vale un euro: si pasa de 1,10 a 1,12, el euro se ha apreciado frente al dólar.\n\nEl oro no paga intereses ni dividendos. Se suele buscar en las crisis y frente a la inflación, pero puede pasar años sin subir: de 1980 a 2000 perdió mucho valor real.\n\nEn divisas, mira bien la escala del eje: un 1 % ya es mucho.",
      "key": "Refugio no significa que siempre suba: significa que mucha gente lo busca cuando tiene miedo.",
-     "tip": "En divisas, mira bien la escala del eje: un 1 % ya es mucho."
+     "tip": "Pruébalo: en Mercado, abre el EUR/USD y mira cuánto se ha movido en un mes."
     }
    ]
   },
@@ -163,9 +164,9 @@
     },
     {
      "title": "Chuleta de patrones",
-     "body": "• **Martillo:** mecha inferior larga tras una caída.\n• **Estrella fugaz:** mecha superior larga tras una subida.\n• **Doji:** apertura ≈ cierre.\n• **Envolvente:** un cuerpo se come el anterior, en sentido contrario.\n• **Marubozu:** cuerpo largo sin apenas mechas.\n• **Estrella de la mañana:** roja grande, pequeña y verde fuerte.",
+     "body": "• **Martillo:** mecha inferior larga tras una caída.\n• **Estrella fugaz:** mecha superior larga tras una subida.\n• **Doji:** apertura ≈ cierre.\n• **Envolvente:** un cuerpo se come el anterior, en sentido contrario.\n• **Marubozu:** cuerpo largo sin apenas mechas.\n• **Estrella de la mañana:** roja grande, pequeña y verde fuerte.\n\nAntes de buscar la vela, mira de dónde viene el precio.",
      "key": "Un patrón es una pista, no una orden: confírmalo con el contexto.",
-     "tip": "Antes de buscar la vela, mira de dónde viene el precio."
+     "tip": "Pruébalo: abre una acción en velas diarias y busca un martillo tras una caída."
     }
    ]
   },
@@ -203,9 +204,9 @@
     },
     {
      "title": "Cómo encontrarlos",
-     "body": "Busca los mínimos y máximos que más destacan y mira si el precio ha vuelto a ellos. Cuantas más veces se respeta un nivel, más gente lo vigila. Pero muchas roturas son **falsas**: el precio cruza unos días y vuelve dentro.",
+     "body": "Busca los mínimos y máximos que más destacan y mira si el precio ha vuelto a ellos. Cuantas más veces se respeta un nivel, más gente lo vigila. Pero muchas roturas son **falsas**: el precio cruza unos días y vuelve dentro. Dibuja zonas anchas, no líneas finas: el mercado no usa regla.",
      "key": "Un soporte es donde aparecieron compradores antes; nada asegura que vuelvan.",
-     "tip": "Dibuja zonas anchas, no líneas finas: el mercado no usa regla."
+     "tip": "Pruébalo: marca un soporte en el gráfico de una acción y pon una alerta ahí."
     }
    ]
   },
@@ -242,9 +243,9 @@
     },
     {
      "title": "Primero el stop, después el tamaño",
-     "body": "Tamaño = (capital × % de riesgo) ÷ (entrada − stop).\n\nCon 10.000 € y un 1 % de riesgo arriesgas 100 €. Entrada a 50 € y stop a 47 €: 100 ÷ 3 = **33 acciones** (unos 1.650 €).",
+     "body": "Tamaño = (capital × % de riesgo) ÷ (entrada − stop).\n\nCon 10.000 € y un 1 % de riesgo arriesgas 100 €. Entrada a 50 € y stop a 47 €: 100 ÷ 3 = **33 acciones** (unos 1.650 €).\n\nUn stop muy pegado salta con el ruido normal; uno muy lejos te obliga a comprar muy poco.",
      "key": "No decides cuánto compras: lo decide la distancia a tu stop.",
-     "tip": "Un stop muy pegado salta con el ruido normal; uno muy lejos te obliga a comprar muy poco."
+     "tip": "Pruébalo: en tu próxima compra del simulador, pon el stop bajo el último mínimo."
     }
    ]
   },
@@ -295,7 +296,7 @@
      "title": "Qué hacer ante un titular",
      "body": "• Pregúntate qué **esperaba** el mercado, no si la noticia es buena o mala.\n• No operes en los primeros minutos: el precio salta y el *spread* se abre.\n• Si ya tienes una posición, que decida tu stop, no el pánico.",
      "key": "En bolsa, una buena noticia que ya se esperaba no es noticia.",
-     "tip": "Antes de reaccionar, pregúntate: ¿esto no lo sabía ya todo el mundo?"
+     "tip": "Pruébalo: ante un titular, abre el activo en Mercado y mira si ya se movió."
     }
    ]
   },
@@ -331,9 +332,9 @@
     },
     {
      "title": "Cinco decisiones antes de entrar",
-     "body": "1. **Tesis:** por qué crees que puede subir.\n2. **Stop:** dónde te equivocas.\n3. **Objetivo:** dónde recoges.\n4. **Tamaño:** cuánto compras para arriesgar solo un 1 %.\n5. **Registro:** lo apuntas en tu diario.\n\nMedir en **R** permite comparar operaciones de distinto tamaño y saber si tu sistema gana a la larga.",
+     "body": "1. **Tesis:** por qué crees que puede subir.\n2. **Stop:** dónde te equivocas.\n3. **Objetivo:** dónde recoges.\n4. **Tamaño:** cuánto compras para arriesgar solo un 1 %.\n5. **Registro:** lo apuntas en tu diario.\n\nMedir en **R** permite comparar operaciones de distinto tamaño y saber si tu sistema gana a la larga. Revisa el diario cada 20 operaciones: te enseña lo que tu memoria prefiere olvidar.",
      "key": "Una buena operación es la que sigue el plan, aunque pierda.",
-     "tip": "Revisa el diario cada 20 operaciones: te enseña lo que tu memoria prefiere olvidar."
+     "tip": "Pruébalo: haz una compra en el simulador con stop, objetivo y un 1 % de riesgo."
     }
    ]
   },
@@ -383,9 +384,9 @@
     },
     {
      "title": "Tu semana",
-     "body": "No gana quien más sube, sino quien **cumple las reglas** y toma decisiones que podría explicar. El lunes repartes, durante la semana llegan noticias y oportunidades, y el viernes revisas.\n\nEs una simulación educativa con **10.000 € virtuales**, no una recomendación.",
+     "body": "No gana quien más sube, sino quien **cumple las reglas** y toma decisiones que podría explicar. El lunes repartes, durante la semana llegan noticias y oportunidades, y el viernes revisas.\n\nEs una simulación educativa con **10.000 € virtuales**, no una recomendación.\n\nSi una decisión no la podrías explicar en voz alta, no la tomes.",
      "key": "Las reglas se escriben el lunes con la cabeza fría; el resto de la semana solo se cumplen.",
-     "tip": "Si una decisión no la podrías explicar en voz alta, no la tomes."
+     "tip": "Pruébalo: reparte tu Cartera virtual con las reglas del reto y revísala el viernes."
     }
    ]
   },
@@ -461,12 +462,6 @@
    ],
    "explanation": "Es la falacia del jugador: las sesiones no «se deben» nada entre sí. Una racha no hace más probable el cambio de dirección."
   },
-  "u35l2-2": {
-   "prompt": "Una cripto cae un 75 % desde su máximo. ¿Cuánto tiene que subir después para volver a él?",
-   "options": [],
-   "explanation": "De 100 pasa a 25. Para volver de 25 a 100 hay que multiplicar por 4: +300 %. Las caídas grandes son muy difíciles de recuperar.",
-   "unit": "%"
-  },
   "u35l2-3": {
    "prompt": "Otra criptomoneda. ¿Más arriba o más abajo 10 días después?",
    "options": [
@@ -533,12 +528,6 @@
    ],
    "explanation": "Fíjate en la escala: en divisas, lo que parece un desplome puede ser un 1 %. Por eso en forex se ofrece tanto apalancamiento… y por eso tanta gente pierde con él.",
    "horizon": "las 10 sesiones siguientes"
-  },
-  "u35l3-3": {
-   "prompt": "El EUR/USD sube de 1,10 a 1,122. ¿Cuánto ha subido, en porcentaje?",
-   "options": [],
-   "explanation": "(1,122 − 1,10) ÷ 1,10 = 0,02 → 2 %. En una divisa principal, un 2 % en pocas semanas es un movimiento grande.",
-   "unit": "%"
   },
   "u35l3-4": {
    "prompt": "Metal precioso, velas diarias. ¿Subió o bajó en las 10 sesiones siguientes?",
@@ -702,12 +691,6 @@
    "options": [],
    "explanation": "Por debajo del mínimo reciente (unos 12,90 €). Ni pegado al precio, porque el ruido lo haría saltar, ni tan lejos que la pérdida se dispare."
   },
-  "u35l6-6": {
-   "prompt": "Tienes 10.000 € y arriesgas un 1 %. Entras a 80 € con el stop a 76 €. ¿Cuántas acciones compras?",
-   "options": [],
-   "explanation": "El 1 % son 100 €. Distancia al stop: 4 €. 100 ÷ 4 = 25 acciones (2.000 € invertidos).",
-   "unit": "acciones"
-  },
   "u35l6-7": {
    "prompt": "Tienes 10.000 € y arriesgas como mucho un 1 %. Coloca el stop y elige el importe.",
    "options": [],
@@ -819,12 +802,6 @@
    "options": [],
    "explanation": "Un buen plan no garantiza ganar: garantiza que, si pierdes, pierdes lo previsto."
   },
-  "u35l8-6": {
-   "prompt": "Arriesgaste 80 € y cerraste la operación ganando 200 €. ¿Cuántas R has ganado?",
-   "options": [],
-   "explanation": "200 ÷ 80 = 2,5R. Con R puedes comparar esta operación con cualquier otra, sea del tamaño que sea.",
-   "unit": "R"
-  },
   "u35l8-7": {
    "prompt": "Ana ha perdido tres operaciones seguidas, todas siguiendo su plan. Está enfadada y ve otra oportunidad. ¿Qué hace?",
    "options": [
@@ -887,22 +864,10 @@
     "Rebalancear: vendes parte de lo que ha subido y vuelves al riesgo que elegiste."
    ]
   },
-  "u35l9-4": {
-   "prompt": "Tu cartera vale 10.250 € y el bitcoin, 1.250 €. ¿Cuántos euros de bitcoin tienes que vender para que vuelva a pesar un 10 %?",
-   "options": [],
-   "explanation": "El 10 % de 10.250 € son 1.025 €. 1.250 − 1.025 = 225 €. El dinero pasa a otros activos, así que la cartera sigue valiendo lo mismo.",
-   "unit": "€"
-  },
   "u35l9-5": {
    "prompt": "Jueves: ves una oportunidad en una acción. Cartera de 10.000 €, riesgo máximo del 1 %. Pon el stop y el importe.",
    "options": [],
    "explanation": "Con el stop bajo el último mínimo y un 1 % de riesgo, aunque salga mal pierdes como mucho 100 €. Dentro de una cartera, una operación nunca debe poder arruinarte la semana."
-  },
-  "u35l9-6": {
-   "prompt": "Jueves por la noche: tu cartera es 50 % acciones, 30 % bonos y 20 % oro. Esta semana las acciones han hecho −3 %, los bonos +1 % y el oro +4 %. ¿Cuánto ha hecho la cartera?",
-   "options": [],
-   "explanation": "0,5 × (−3) + 0,3 × 1 + 0,2 × 4 = −1,5 + 0,3 + 0,8 = −0,4 %. Las acciones cayeron un 3 %, pero la cartera solo un 0,4 %: eso es diversificar.",
-   "unit": "%"
   },
   "u35l9-7": {
    "prompt": "Viernes: el índice tecnológico que sigues lleva así 30 sesiones. ¿Más arriba o más abajo 10 sesiones después?",

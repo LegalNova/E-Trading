@@ -56,7 +56,7 @@
      "title": "Three ways to rebalance",
      "body": "1. **By calendar:** once a year, for example in January.\n2. **By threshold:** when one part drifts more than 5 points.\n3. **With contributions:** new money goes to whatever has fallen short. You don't sell, so you don't trigger any tax.\n\nWith investment funds you can also rebalance through a **fund transfer** (a Spanish «traspaso»), without paying tax.",
      "key": "Calendar, threshold or contributions: what matters is having a rule and sticking to it.",
-     "tip": "It's the automatic way to buy cheap when everyone else is selling."
+     "tip": "Try it: in Portfolio, check the «Portfolio weight» of each asset against your plan."
     }
    ]
   },
@@ -98,7 +98,8 @@
     {
      "title": "All the costs",
      "body": "Ongoing charges or **TER** (you'll find them in the KID), commission per trade, spread, custody, currency exchange and taxes.\n\nJohn Bogle, founder of Vanguard, summed it up like this: «In investing, you get what you don't pay for».",
-     "key": "Every point of annual fees eats up a huge part of the result because of compound interest."
+     "key": "Every point of annual fees eats up a huge part of the result because of compound interest.",
+     "tip": "Try it: ask Lumi what TER is cheap for an index ETF."
     }
    ]
   },
@@ -157,7 +158,7 @@
       "A free regular investment plan",
       "All your money gets put to work.",
       "Sort the six options.",
-      "With little money, look for **zero fixed fees** and automate your contribution. Starting early with a little usually counts for more than starting late with a lot.",
+      "With little money, look for **zero fixed fees** and automate your contribution. Try it: in Market, buy €50 of a global ETF, such as VWCE, with your virtual money.",
       "Ask yourself: does it eat a fixed chunk of every contribution?",
       "Sort each option"
      ]
@@ -167,22 +168,6 @@
   "u30l4": {
    "title": "Measuring your return properly",
    "steps": [
-    {
-     "texts": [
-      "How much is that a year?",
-      "A fund turns **€10,000 into €15,000** in 5 years: +50 % in total. What yearly pace is that?",
-      "+50 % in 5 years: how much is that a year?",
-      "10 % a year: 50 divided by 5",
-      "A bit less than 10 % a year",
-      "50 % a year",
-      "Interest compounds: at 10 % a year, €10,000 would become **€16,105** in 5 years. You need less.",
-      "Find the annual % that turns €10,000 into about €15,000 in 5 years.",
-      "+50 % in 5 years is **8.4 % a year**, not 10 %: annualising is compounding in reverse. Always compare **% a year with % a year**.",
-      "Too high: each year's interest earns interest too.",
-      "Spot on! Neither 10 % nor 50 %: just over 8 %.",
-      "Move the annual % until you reach €15,000"
-     ]
-    },
     {
      "texts": [
       "The fund made money; Laura didn't",
@@ -202,9 +187,26 @@
      ]
     },
     {
+     "texts": [
+      "How much is that a year?",
+      "A fund turns **€10,000 into €15,000** in 5 years: +50 % in total. What yearly pace is that?",
+      "+50 % in 5 years: how much is that a year?",
+      "10 % a year: 50 divided by 5",
+      "A bit less than 10 % a year",
+      "50 % a year",
+      "Interest compounds: at 10 % a year, €10,000 would become **€16,105** in 5 years. You need less.",
+      "Find the annual % that turns €10,000 into about €15,000 in 5 years.",
+      "+50 % in 5 years is **8.4 % a year**, not 10 %: annualising is compounding in reverse. Always compare **% a year with % a year**.",
+      "Too high: each year's interest earns interest too.",
+      "Spot on! Neither 10 % nor 50 %: just over 8 %.",
+      "Move the annual % until you reach €15,000"
+     ]
+    },
+    {
      "title": "Measuring honestly",
      "body": "Subtract fees and taxes, compare with a benchmark index and remember inflation.\n\nAn app telling you «+40 % since you started» without saying over how many years tells you almost nothing.",
-     "key": "To compare, use the annualised return; to know how much you made, use the money-weighted one."
+     "key": "To compare, use the annualised return; to know how much you made, use the money-weighted one.",
+     "tip": "Try it: compare your Portfolio's «Return» with SPY's over the same time."
     }
    ]
   },
@@ -215,8 +217,9 @@
      "texts": [
       "Your plan, on one page",
       "Ana",
-      "I want to write my Investment Policy Statement. Isn't that for big investors?",
-      "They have one. You can have yours on **one page**.",
+      "In March 2020 the stock market fell 30 % and I sold everything.",
+      "Then it went up and I was left out. How do I stop it happening again?",
+      "With a written plan on one page: your **Investment Policy Statement**.",
       "It says what you do, why, and what you'll do when the market turns ugly.",
       "Point 8: «If the market falls 30 %, I…»",
       "…sell everything and come back when it calms down",
@@ -272,7 +275,7 @@
      "title": "The template",
      "body": "1. Goals («X € in year Y for Z»).\n2. Horizon.\n3. Cushion.\n4. Allocation.\n5. Products and maximum cost.\n6. Automatic contribution.\n7. When I rebalance.\n8. What I'll do if the market falls 30 %.\n9. What I'll never do.\n10. Speculation limit (optional).",
      "key": "A plan written in a moment of calm is what saves you in a moment of panic.",
-     "tip": "Write down today what you'll do on the day everyone is scared."
+     "tip": "Try it: set an alert 20 % below your main ETF; if it goes off, reread your plan."
     }
    ]
   },
@@ -286,7 +289,8 @@
     {
      "title": "How to defend a portfolio",
      "body": "With arguments, not predictions: «I own thousands of companies from all over the world, 20 % in bonds for the falls, a 0.2 % cost and a written rule for rebalancing». It's an exercise for learning, not a recommendation.",
-     "key": "A good portfolio isn't the one that rises most in a year, but the one you can stick with for 20 years."
+     "key": "A good portfolio isn't the one that rises most in a year, but the one you can stick with for 20 years.",
+     "tip": "Try it: build your portfolio in Market with virtual money, for example with VWCE and IEAG."
     }
    ]
   },
@@ -308,18 +312,6 @@
     "Buying more shares, since they're doing well"
    ],
    "explanation": "You go back to the level of risk you chose when you were calm."
-  },
-  "u30l1-2": {
-   "prompt": "You have €10,000: €6,000 in shares and €4,000 in bonds. Shares rise 40 % and bonds stay the same. What percentage of the portfolio are shares now? (round to one decimal place)",
-   "options": [],
-   "explanation": "Shares: €8,400. Total: €12,400. 8,400 ÷ 12,400 ≈ 67.7 %.",
-   "unit": "%"
-  },
-  "u30l1-3": {
-   "prompt": "Following on from the previous case (€8,400 in shares and €4,000 in bonds), how many euros of shares would you need to sell to get back to 60 %?",
-   "options": [],
-   "explanation": "60 % of €12,400 is €7,440. 8,400 − 7,440 = €960, which moves into bonds.",
-   "unit": "€"
   },
   "u30l1-5": {
    "prompt": "Your portfolio has drifted to 75 % shares and 25 % fixed income. Your plan is 60/40. Allocate how it should end up: between 58 % and 62 % in shares.",
@@ -370,17 +362,19 @@
    ],
    "explanation": "A transfer between funds isn't taxed until you finally cash out. ETFs don't have this advantage."
   },
-  "u30l2-1": {
-   "prompt": "€10,000 over 30 years with the market at 7 %. With no costs you end up with €76,123, and with 1.5 % a year, €49,840. How much have the fees taken?",
-   "options": [],
-   "explanation": "76,123 − 49,840 = €26,283: more than a third of the result.",
-   "unit": "€"
-  },
-  "u30l2-2": {
-   "prompt": "Same case, but with 1.8 % in costs (a net return of 5.2 %). How much would you have after 30 years? (round it)",
-   "options": [],
-   "explanation": "10,000 × 1.052³⁰ ≈ €45,759, versus €71,968 with 0.2 %.",
-   "unit": "€"
+  "u30l1-11": {
+   "prompt": "Your plan is 70 % shares and 30 % bonds, and after a good year you're at 78/22. This month you're putting in €300. What do you do?",
+   "options": [
+    "I put the €300 into bonds, and the same in the following months until I'm back at 70/30",
+    "I sell all the extra shares right now",
+    "I put the €300 into shares, since they're the ones doing well"
+   ],
+   "explanation": "Rebalancing with your contributions brings the portfolio back to your plan without selling, so you trigger no tax. Putting the money into whatever is rising most seems logical, but it takes you away from the risk you chose.",
+   "feedback": [
+    "Good! You rebalance without selling anything, so you pay no tax.",
+    "It works, but if they're ETFs or shares, selling at a gain is taxed. With contributions you avoid that.",
+    "That takes you even further from the plan: more and more risk than you chose."
+   ]
   },
   "u30l2-3": {
    "prompt": "Putting in €300 a month for 30 years, how much separates 0.2 % in costs from 1.8 %?",
@@ -439,11 +433,19 @@
     "So the cost doesn't matter, right?"
    ]
   },
-  "u30l3-4": {
-   "prompt": "You invest €100 a month and the price goes through 10, 8, 5, 8 and €10. You buy 65 units with €500. What's your average price? (two decimal places)",
-   "options": [],
-   "explanation": "500 ÷ 65 ≈ €7.69: below €10 even though the price started and finished there.",
-   "unit": "€"
+  "u30l2-11": {
+   "prompt": "You have an MSCI World ETF that charges 0.20 %, with good gains. You find another on the same index at 0.12 %. What do you do?",
+   "options": [
+    "I don't care: costs don't matter",
+    "I keep the one I have and send new contributions to the cheap one",
+    "I sell mine now and buy the cheap one"
+   ],
+   "explanation": "Between two cheap ETFs on the same index, the difference is small and selling has a certain tax cost. The sensible thing is for new money to go to the cheaper one. Switching all at once only pays off when the gap is big, like from 1.5 % to 0.2 %.",
+   "feedback": [
+    "They do matter, but here the difference is small. What would be costly is selling in a hurry.",
+    "That's it! You save costs on the new money without paying tax for selling the old.",
+    "Selling an ETF at a gain is taxed today: you'd pay tax to save 0.08 % a year."
+   ]
   },
   "u30l3-5": {
    "prompt": "You split your €50 a month. Rules: at least 2 products, none above 85 %, at most 5 % in crypto and 10 % in a single share.",
@@ -496,17 +498,33 @@
     "I won't get anywhere with that, will I?"
    ]
   },
-  "u30l4-1": {
-   "prompt": "You invest €2,000 and today it's worth €2,600. What's your simple return?",
-   "options": [],
-   "explanation": "(2,600 − 2,000) ÷ 2,000 = 0.30 → 30 %.",
-   "unit": "%"
+  "u30l3-11": {
+   "prompt": "You put €50 a month into an index fund. This month the stock market has fallen 20 %. What do you do with the contribution?",
+   "options": [
+    "I keep it: with the same €50 I buy more units",
+    "I sell what I have so I don't lose more",
+    "I pause it until the market recovers"
+   ],
+   "explanation": "With a fixed contribution, when the price falls you buy more units and your average price falls. Pausing in the dips seems prudent, but it means you stop buying just when it's cheapest.",
+   "feedback": [
+    "That's it! Contributing in the dips lowers your average price without you having to guess anything.",
+    "Selling in the fall turns a temporary drop into a permanent loss.",
+    "You stop buying just when it's cheap: you miss the units at a better price."
+   ]
   },
-  "u30l4-2": {
-   "prompt": "An investment gains 50 % in total over 5 years. What's its annualised return? (one decimal place)",
-   "options": [],
-   "explanation": "1.5^(1/5) − 1 ≈ 0.084 → 8.4 % a year. It's not 10 %: the interest compounds.",
-   "unit": "%"
+  "u30l3-12": {
+   "prompt": "You're going to invest €50 a month. Broker A charges €3 per purchase and its ETF 0.10 % a year. Broker B charges nothing to buy and its ETF costs 0.20 %. Which suits you?",
+   "options": [
+    "A: its ETF is cheaper",
+    "B: with no fixed fee, all your money goes to work",
+    "It doesn't matter: the difference is tiny"
+   ],
+   "explanation": "With little money, a fixed fee eats a chunk of every contribution (€3 out of €50 is far more than a tenth of a point a year). That's why the cheapest ETF isn't always the cheapest option.",
+   "feedback": [
+    "Its ETF is, but €3 of every €50 goes before it's invested: that weighs far more.",
+    "Exactly. With small contributions, a fixed fee per purchase is the most expensive thing.",
+    "It isn't: with €50 a month, €3 per purchase takes a big part of every contribution."
+   ]
   },
   "u30l4-3": {
    "prompt": "An investment doubles in value (+100 %) over 10 years. Its annualised return is…?",
@@ -567,6 +585,20 @@
    ],
    "explanation": "Your best year says little: what matters is the net result, over the long term and against an alternative."
   },
+  "u30l4-11": {
+   "prompt": "Fund A advertises «+60 % in 10 years». Fund B, «6 % a year over the last 5 years». Which did better each year?",
+   "options": [
+    "A: 60 % is much more than 6 %",
+    "B: +60 % in 10 years is less than 6 % a year, because interest compounds",
+    "They can't be compared"
+   ],
+   "explanation": "To compare, everything has to be in % a year. 60 divided by 10 would be 6 %, but because it compounds you need less each year to reach 60 %, so A is behind B.",
+   "feedback": [
+    "You're comparing a total with a yearly pace. You have to put them in the same measure.",
+    "Good! Spread over 10 years and compounded, that 60 % gives less than B's 6 % a year.",
+    "You can: by annualising both. And careful, different periods don't tell you what happens next."
+   ]
+  },
   "u30l5-1": {
    "prompt": "Put the first sections of an Investment Policy Statement in order.",
    "options": [
@@ -608,11 +640,24 @@
    ],
    "explanation": "Contributing every month is part of the plan, not something to avoid."
   },
-  "u30l5-6": {
-   "prompt": "Your Statement says that at most 5 % of your wealth will go on speculation. You have €18,000. What's the maximum?",
+  "u30l5-11": {
+   "prompt": "Your Statement says «at most 5 % for speculating». A year later, your bet on a crypto has tripled and now weighs 14 % of your portfolio. What do you do?",
+   "options": [
+    "I let it run: it's working",
+    "I sell what's above 5 % and move it to the rest of the portfolio",
+    "I buy more, it's going really well"
+   ],
+   "explanation": "The limit for speculating is respected when it goes well too: if the bet grows, you trim it back to its weight. Letting it run seems to win more, but it turns the small part into the riskiest one.",
+   "feedback": [
+    "Now 14 % of your money depends on something that can be lost entirely. Your limit was for this.",
+    "That's following the plan! You keep part of the gain and the risk goes back where it belongs.",
+    "Raising the bet after a rise is letting euphoria decide for you."
+   ]
+  },
+  "u30l5-12": {
+   "prompt": "Your Statement says «in the speculative part, always with a stop». You buy bitcoin at the last price. Place the stop a little below the recent low.",
    "options": [],
-   "explanation": "18,000 × 0.05 = €900, and only money you could afford to lose entirely.",
-   "unit": "€"
+   "explanation": "The written rule decides how much you can lose before fear or euphoria decide for you. The stop goes a little below the recent low: right on top of it, any wick would trigger it."
   },
   "u30l6-1": {
    "prompt": "Allocate the €10,000. Rules: at least 4 products, none above 60 %, at least 15 % in bonds, at most 10 % in gold, 10 % in a single share and 5 % in crypto.",
@@ -678,12 +723,6 @@
    ],
    "explanation": "Diversification, cost and tolerance for falls: the things you can control."
   },
-  "u30l6-6": {
-   "prompt": "Your portfolio: 60 % in a fund at 0.20 %, 20 % in emerging markets at 0.30 % and 20 % in bonds at 0.15 %. How many euros a year do you pay on €10,000?",
-   "options": [],
-   "explanation": "0.6 × 0.20 + 0.2 × 0.30 + 0.2 × 0.15 = 0.21 % → 10,000 × 0.0021 = €21 a year.",
-   "unit": "€"
-  },
   "u30l6-7": {
    "prompt": "What should your €10,000 portfolio over 20 years have? Select all that apply.",
    "options": [
@@ -693,14 +732,6 @@
     "Diversification across companies and countries"
    ],
    "explanation": "The speculative part, if there is one, small and limited."
-  },
-  "u30l6-8": {
-   "prompt": "A €10,000 portfolio needs at least 15 products to be diversified.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "With one to three index funds you already own thousands of companies from all over the world."
   },
   "u30l6-9": {
    "prompt": "Put the steps for getting your portfolio up and running in order.",

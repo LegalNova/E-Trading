@@ -54,7 +54,7 @@
      "title": "Por qué no se puede reescribir",
      "body": "Las transacciones se agrupan en **bloques**. Cada bloque lleva una huella (**hash**) del anterior: así quedan encadenados.\n\nSi alguien cambia una transacción antigua, cambia la huella de ese bloque y se rompen todos los siguientes. Además, los demás nodos tienen la copia buena y rechazan la falsa.",
      "key": "Blockchain: un registro compartido y encadenado que nadie puede reescribir en solitario.",
-     "tip": "Que algo use blockchain no lo convierte en buena inversión."
+     "tip": "Pruébalo: en Mercado, busca Bitcoin y añádelo a Favoritos para seguirlo esta semana."
     }
    ]
   },
@@ -93,13 +93,29 @@
      "title": "El halving",
      "body": "Bitcoin nació en 2009, creado por alguien con el seudónimo **Satoshi Nakamoto**. Los bitcoins nuevos nacen como premio a quien añade bloques (los mineros). Cada **210.000 bloques**, unos **4 años**, ese premio se reduce a la mitad: es el **halving**.\n\n50 → 25 (2012) → 12,5 (2016) → 6,25 (2020) → **3,125** (2024). Tras el de 2024 ya se había emitido el 93,75 % de todos los bitcoins.",
      "key": "Bitcoin: máximo de 21 millones y una emisión que se reduce a la mitad cada unos 4 años.",
-     "tip": "Escasez programada no significa precio garantizado."
+     "tip": "Pruébalo: en Mercado, busca Bitcoin y mira cuánto ha caído desde su máximo."
     }
    ]
   },
   "u12l3": {
    "title": "Minería y prueba de trabajo",
    "steps": [
+    {
+     "texts": [
+      "Mina desde tu móvil",
+      "Laura",
+      "Mira este anuncio: «Mina bitcoins desde tu móvil y gana 50 € al día».",
+      "¿Me descargo la app?",
+      "¿Qué le dices?",
+      "Sí, es dinero fácil",
+      "La minería real usa máquinas especializadas y mucha electricidad. Un móvil no compite.",
+      "Es casi seguro un engaño: un móvil no puede competir",
+      "¡Bien! Muchas «apps de minería» son estafas o usan tu móvil para otras cosas.",
+      "Instálala solo para probar",
+      "Estas apps pueden exponer tus datos o tu cartera. Mejor no.",
+      "Cuando una promesa no encaja con cómo funciona la tecnología, desconfía."
+     ]
+    },
     {
      "texts": [
       "¿Trabajo o participación?",
@@ -125,32 +141,32 @@
      ]
     },
     {
-     "texts": [
-      "Mina desde tu móvil",
-      "Laura",
-      "Mira este anuncio: «Mina bitcoins desde tu móvil y gana 50 € al día».",
-      "¿Me descargo la app?",
-      "¿Qué le dices?",
-      "Sí, es dinero fácil",
-      "La minería real usa máquinas especializadas y mucha electricidad. Un móvil no compite.",
-      "Es casi seguro un engaño: un móvil no puede competir",
-      "¡Bien! Muchas «apps de minería» son estafas o usan tu móvil para otras cosas.",
-      "Instálala solo para probar",
-      "Estas apps pueden exponer tus datos o tu cartera. Mejor no.",
-      "Cuando una promesa no encaja con cómo funciona la tecnología, desconfía."
-     ]
-    },
-    {
      "title": "Una competición de cálculo",
      "body": "Los **mineros** agrupan transacciones en un bloque y compiten por encontrar un número que haga que su hash cumpla una condición. El primero cobra el **premio** más las **comisiones**. Buscar la solución cuesta mucho; comprobarla, muy poco.\n\nLa **dificultad** se ajusta cada 2.016 bloques para que salga un bloque cada **10 minutos** de media. Y la tecnología no cambia el riesgo de precio: en cripto **puede perderse todo lo invertido**.",
      "key": "Prueba de trabajo: se gana el derecho a añadir bloques gastando energía en cálculos.",
-     "tip": "La energía de la minería es el precio de que nadie pueda reescribir el registro."
+     "tip": "Pruébalo: crea una alerta de precio en Bitcoin y mira cuánto se mueve esta semana."
     }
    ]
   },
   "u12l4": {
    "title": "Ethereum y los contratos inteligentes",
    "steps": [
+    {
+     "texts": [
+      "Tokens gratis",
+      "Web desconocida",
+      "¡Enhorabuena! Tienes 500 tokens gratis esperándote.",
+      "Conecta tu cartera y firma este contrato para reclamarlos.",
+      "¿Qué haces?",
+      "Firmo: es gratis",
+      "Firmar un contrato que no entiendes puede dar permiso para vaciar tu cartera.",
+      "No firmo nada que no entienda y compruebo el proyecto por sus canales oficiales",
+      "¡Bien! Muchas estafas usan firmas de contratos inteligentes para robar.",
+      "Firmo con mi cartera principal, para recibir más",
+      "Si es una trampa, perderás todo lo que haya en esa cartera.",
+      "En un contrato inteligente, el código es la ley… también cuando tiene un error."
+     ]
+    },
     {
      "texts": [
       "¿Bitcoin o Ethereum?",
@@ -176,26 +192,10 @@
      ]
     },
     {
-     "texts": [
-      "Tokens gratis",
-      "Web desconocida",
-      "¡Enhorabuena! Tienes 500 tokens gratis esperándote.",
-      "Conecta tu cartera y firma este contrato para reclamarlos.",
-      "¿Qué haces?",
-      "Firmo: es gratis",
-      "Firmar un contrato que no entiendes puede dar permiso para vaciar tu cartera.",
-      "No firmo nada que no entienda y compruebo el proyecto por sus canales oficiales",
-      "¡Bien! Muchas estafas usan firmas de contratos inteligentes para robar.",
-      "Firmo con mi cartera principal, para recibir más",
-      "Si es una trampa, perderás todo lo que haya en esa cartera.",
-      "En un contrato inteligente, el código es la ley… también cuando tiene un error."
-     ]
-    },
-    {
      "title": "Más posibilidades, más riesgos",
      "body": "Más funciones también significan más formas de fallar: un error en el código de un contrato puede vaciarlo, y en una blockchain no hay a quién reclamar.\n\nETH es muy volátil y **puede perderse la totalidad de lo invertido**.",
      "key": "Ethereum añade a Bitcoin la posibilidad de ejecutar programas: los contratos inteligentes.",
-     "tip": "Con contratos inteligentes, una sola firma puede autorizar movimientos de todo tu saldo."
+     "tip": "Pruébalo: en Mercado, busca Ethereum y compara su gráfico con el de Bitcoin."
     }
    ]
   },
@@ -246,7 +246,7 @@
      "title": "Qué exige MiCA",
      "body": "Las stablecoins sirven para moverse entre criptos sin pasar por el banco y para hacer pagos. Las más usadas son **USDT** (Tether) y **USDC** (Circle).\n\nEn la UE, el reglamento **MiCA** exige que sus emisores estén autorizados, tengan **reservas** suficientes y separadas y permitan **canjear** los tokens a la par. Aun así, «estable» no es «garantizado»: no las cubre el Fondo de Garantía de Depósitos y **puede perderse lo invertido**.",
      "key": "Una stablecoin vale lo que valgan sus reservas y la confianza en su emisor.",
-     "tip": "Si una stablecoin te paga un 20 % «sin riesgo», pregunta de dónde sale."
+     "tip": "Si te ofrecen un 20 % «estable», pregúntale antes a la profesora Lumi."
     }
    ]
   },
@@ -256,7 +256,7 @@
     {
      "texts": [
       "¿Se puede enseñar?",
-      "Tus criptos están en la blockchain; tu **wallet** guarda las **claves**. ¿Qué puedes enseñar sin problema y qué jamás?",
+      "Acabas de crear tu primera **wallet**, la app que guarda las **claves** de tus criptos. Todos te piden algo: ¿qué puedes enseñar sin problema y qué jamás?",
       "Sin problema",
       "Jamás",
       "Tu dirección pública, para que te paguen",
@@ -298,7 +298,7 @@
      "title": "Custodia propia o ajena",
      "body": "• **En un exchange:** él guarda las claves. Cómodo, pero si quiebra o te bloquea, dependes de él (FTX, 2022).\n• **Autocustodia:** tú guardas las claves, en una wallet de software o de hardware. Nadie puede congelarlas… pero si pierdes la frase semilla, **nadie** puede recuperarlas.\n\nTu frase semilla, **en papel o metal, fuera de internet**, en un sitio seguro. Nunca en una foto, un correo o la nube.",
      "key": "«Not your keys, not your coins»: quien controla las claves controla las criptos.",
-     "tip": "Nadie legítimo te pedirá jamás tu frase semilla: ni el soporte, ni el exchange, ni «Hacienda»."
+     "tip": "Pregúntale a la profesora Lumi qué diferencia hay entre tu dirección y tu clave privada."
     }
    ]
   },
@@ -349,7 +349,7 @@
      "title": "Qué les exige MiCA",
      "body": "• **Autorización** de un supervisor nacional (en España, la CNMV), válida en toda la UE.\n• **Separar** las criptos de los clientes de las suyas.\n• Requisitos de **capital**, gobierno y gestión de conflictos de interés.\n• Información clara y un sistema de **reclamaciones**.\n\nSegún la CNMV, desde el **1 de julio de 2026** solo pueden operar en España los proveedores autorizados. Antes de abrir cuenta, búscalo en los registros de la **CNMV** o de **ESMA**.",
      "key": "MiCA exige autorización, separación de activos y transparencia a los exchanges en la UE.",
-     "tip": "Comprueba la plataforma en el registro oficial, no en su propia web."
+     "tip": "Antes de abrir cuenta en un exchange real, pregúntale a la profesora Lumi cómo comprobarlo."
     }
    ]
   },
@@ -458,18 +458,6 @@
    ],
    "explanation": "Cada halving divide el premio entre dos: la emisión se frena hasta llegar a los 21 millones."
   },
-  "u12l2-4": {
-   "prompt": "Tras el halving de 2024 el premio es de 3,125 BTC por bloque. ¿Cuál será tras el siguiente halving?",
-   "options": [],
-   "explanation": "3,125 ÷ 2 = 1,5625 BTC por bloque.",
-   "unit": "BTC"
-  },
-  "u12l2-5": {
-   "prompt": "En Bitcoin se añade un bloque cada 10 minutos de media. ¿Cuántos bloques salen al día?",
-   "options": [],
-   "explanation": "24 × 60 ÷ 10 = 144 bloques al día.",
-   "unit": "bloques"
-  },
   "u12l2-6": {
    "prompt": "Este es el gráfico de una de las grandes criptomonedas, en velas diarias. ¿Qué hizo en las 10 sesiones siguientes?",
    "options": [
@@ -487,6 +475,20 @@
     "Lo que otros estén dispuestos a pagar por él"
    ],
    "explanation": "No genera beneficios ni intereses: su precio depende de la adopción y de la demanda."
+  },
+  "u12l2-11": {
+   "prompt": "Bitcoin lleva semanas cayendo. Nico tiene un poco y lee en redes: «Tras cada halving siempre sube, mete todo lo que puedas». ¿Qué hace?",
+   "options": [
+    "Mete todos sus ahorros: el halving lo garantiza",
+    "Sigue su plan: solo pone lo que podría perder entero, pase lo que pase con el halving",
+    "Lo vende todo porque, si cae, es que Bitcoin ha muerto"
+   ],
+   "explanation": "La buena es seguir un plan con una cantidad que puedas perder. La tentadora, el «siempre sube», confunde escasez programada con precio garantizado.",
+   "feedback": [
+    "El halving solo frena la emisión de bitcoins nuevos. El precio depende de la demanda, y ha caído más de un 70 % varias veces.",
+    "Bien: la escasez no garantiza el precio, y en cripto puede perderse la totalidad de lo invertido.",
+    "Decidir por el miedo de unas semanas es tan arriesgado como decidir por la euforia."
+   ]
   },
   "u12l3-1": {
    "prompt": "Ordena cómo se mina un bloque de Bitcoin.",
@@ -533,12 +535,6 @@
    ],
    "explanation": "Proof of stake: validan quienes bloquean ETH como garantía."
   },
-  "u12l3-7": {
-   "prompt": "La dificultad se ajusta cada 2.016 bloques. A 10 minutos por bloque, ¿cada cuántos días aproximadamente?",
-   "options": [],
-   "explanation": "2.016 × 10 = 20.160 minutos ÷ 1.440 minutos al día = 14 días.",
-   "unit": "días"
-  },
   "u12l3-10": {
    "prompt": "¿Qué es cierto sobre la prueba de trabajo? Marca todo.",
    "options": [
@@ -548,6 +544,20 @@
     "Consume mucha electricidad"
    ],
    "explanation": "Ethereum la abandonó en 2022 para pasar a la prueba de participación."
+  },
+  "u12l3-11": {
+   "prompt": "Un conocido le ofrece a Leo un «plan de minería en la nube»: paga una cuota y cobra un 2 % diario fijo, sin hacer nada. ¿Qué piensa Leo?",
+   "options": [
+    "Que es una forma cómoda de minar sin máquinas",
+    "Que prueba con poco, por si acaso",
+    "Que un rendimiento fijo no encaja con la minería real, y que es una señal clara de estafa"
+   ],
+   "explanation": "La buena acierta porque la minería no da un rendimiento fijo: depende del precio, la dificultad y la competencia. La tentadora, probar con poco, sigue siendo darle dinero a un posible fraude.",
+   "feedback": [
+    "Lo que gana un minero de verdad cambia cada día: depende del precio, de la dificultad y de las comisiones.",
+    "Si es una estafa, ese poco se pierde entero y no hay a quién reclamar.",
+    "Bien: un minero cobra premio y comisiones solo si gana la competición. Nadie serio puede prometer un 2 % diario fijo."
+   ]
   },
   "u12l4-1": {
    "prompt": "Empareja cada concepto con su significado.",
@@ -615,11 +625,19 @@
    ],
    "explanation": "Smart contracts: se ejecutan cuando se cumplen sus condiciones, sin intermediario."
   },
-  "u12l4-10": {
-   "prompt": "Enviar unos tokens cuesta 0,0005 ETH de gas y el ETH vale 2.000 €. ¿Cuánto pagas de comisión?",
-   "options": [],
-   "explanation": "0,0005 × 2.000 = 1 €. Si la red se satura, puede costar bastante más.",
-   "unit": "€"
+  "u12l4-11": {
+   "prompt": "Irene quiere enviar unos tokens sin ninguna prisa. Su wallet avisa de que hoy el gas está carísimo porque la red está saturada. ¿Qué hace?",
+   "options": [
+    "Lo envía ya: el gas es una comisión fija",
+    "Lo envía en Bitcoin para no pagar gas",
+    "Espera a un momento con la red más tranquila"
+   ],
+   "explanation": "La buena funciona porque el gas sube y baja con la demanda de la red. La tentadora falla: el gas no es una tarifa fija, sino un precio que cambia.",
+   "feedback": [
+    "El gas no es fijo: sube cuando la red está saturada y baja cuando hay poca demanda.",
+    "Los tokens de Ethereum viven en Ethereum: no se pueden enviar por la red de Bitcoin.",
+    "Bien: sin prisa, esperar suele abaratar mucho la comisión."
+   ]
   },
   "u12l5-1": {
    "prompt": "¿Qué intenta una stablecoin?",

@@ -48,7 +48,7 @@
      "title": "La volatilitat en números",
      "body": "Bitcoin ja havia caigut més d'un **80 %** el 2014-2015 i el 2018; recuperar el màxim de finals del 2017 li va costar uns **3 anys**.\n\nLa seva volatilitat anual volta el **50-80 %**, davant del 15 % d'un índex mundial d'accions: un −10 % en una setmana és habitual. És un actiu molt volàtil, no el cobreix cap fons de garantia i **es pot perdre la totalitat del que s'ha invertit**.",
      "key": "En cripto, caigudes del 70 % i anys d'espera per recuperar-se formen part de la història.",
-     "tip": "Que una cosa pugi un 300 % en un any també vol dir que pot caure un 75 %."
+     "tip": "Prova-ho: a Mercat, obre Bitcoin i compara'n el gràfic amb el de l'S&P 500."
     }
    ]
   },
@@ -104,7 +104,7 @@
      "title": "El que ha canviat",
      "body": "Sam Bankman-Fried, fundador d'FTX, va ser condemnat el 2024 a **25 anys** de presó per frau.\n\nAra MiCA exigeix a les plataformes que estiguin autoritzades i que separin els actius dels clients. Tot i així, en cripto no hi ha un fons de garantia com el dels dipòsits: convé saber qui custodia les teves criptos i no concentrar-ho tot en una plataforma. I recorda: **es pot perdre la totalitat del que s'ha invertit**.",
      "key": "Si un altre guarda les teves criptos, també assumeixes el seu risc de fallida o de frau.",
-     "tip": "Un exchange enorme també pot caure en una setmana."
+     "tip": "Pregunta a la professora Lumi què passa amb les teves accions si fa fallida el teu bròquer."
     }
    ]
   },
@@ -159,31 +159,13 @@
      "title": "Els senyals d'alarma",
      "body": "Una **memecoin** neix d'un acudit o d'una moda (Dogecoin, el 2013, com a broma): moltes no tenen cap ús i el seu preu només depèn de l'atenció.\n\nSenyals d'alarma: creadors anònims sense historial, promeses de «x100», pressa, influencers pagats, que no puguis vendre, que et demanin connectar la wallet o la frase llavor. En aquests tokens **es pot perdre la totalitat del que s'ha invertit** en minuts.",
      "key": "Si l'únic motiu per comprar és que «pujarà», probablement algú et vol vendre a tu.",
-     "tip": "En una memecoin, els teus diners poden ser la sortida d'un altre."
+     "tip": "Prova-ho: a Mercat, busca Dogecoin i mira quant ha caigut des del seu màxim."
     }
    ]
   },
   "u13l4": {
    "title": "Staking i DeFi: d'on surt el rendiment",
    "steps": [
-    {
-     "texts": [
-      "Staking: et protegeix del preu?",
-      "Amb l'**staking** bloqueges les teves monedes per validar blocs (a Ethereum, per exemple) i la xarxa et paga **en la mateixa cripto**; si el validador falla, en pots perdre una part (*slashing*). Tens **1.000 €** en ether.",
-      "ether",
-      "Cobres un 3 % d'staking en ether i l'ether cau un 40 % davant de l'euro. Com acabes?",
-      "Guanyant: l'staking em protegeix",
-      "Perdent gairebé un 40 %",
-      "Igual que vaig començar",
-      "1,03 × 0,60 = 0,618: els teus 1.000 € es queden en **618 €**. El 3 % es cobra en una moneda que val menys.",
-      "Amb l'ether caient un 40 %, busca quin rendiment caldria per no perdre.",
-      "Per compensar una caiguda del 40 % caldria un **67 %** de rendiment. **L'staking no et protegeix del preu**: només et dona més unitats del mateix.",
-      "Rendiments així en cripto solen amagar molt de risc… o un parany.",
-      "En negatiu: així es nota un *slashing*, si el validador falla.",
-      "Tens més monedes, però cadascuna val menys.",
-      "Baixa el preu de l'ether i mira què et queda en euros"
-     ]
-    },
     {
      "texts": [
       "Un 20 % per dipositar",
@@ -200,6 +182,24 @@
       "2022: els subsidis deixen de ser suficients i tot s'enfonsa.",
       "Aquell mateix any va fer fallida Celsius, que també prometia interessos alts.",
       "Si no saps d'on surt el rendiment, potser el rendiment ets tu."
+     ]
+    },
+    {
+     "texts": [
+      "Staking: et protegeix del preu?",
+      "Amb l'**staking** bloqueges les teves monedes per validar blocs (a Ethereum, per exemple) i la xarxa et paga **en la mateixa cripto**; si el validador falla, en pots perdre una part (*slashing*). Tens **1.000 €** en ether.",
+      "ether",
+      "Cobres un 3 % d'staking en ether i l'ether cau un 40 % davant de l'euro. Com acabes?",
+      "Guanyant: l'staking em protegeix",
+      "Perdent gairebé un 40 %",
+      "Igual que vaig començar",
+      "1,03 × 0,60 = 0,618: els teus 1.000 € es queden en **618 €**. El 3 % es cobra en una moneda que val menys.",
+      "Amb l'ether caient un 40 %, busca quin rendiment caldria per no perdre.",
+      "Per compensar una caiguda del 40 % caldria un **67 %** de rendiment. **L'staking no et protegeix del preu**: només et dona més unitats del mateix.",
+      "Rendiments així en cripto solen amagar molt de risc… o un parany.",
+      "En negatiu: així es nota un *slashing*, si el validador falla.",
+      "Tens més monedes, però cadascuna val menys.",
+      "Baixa el preu de l'ether i mira què et queda en euros"
      ]
     },
     {
@@ -222,7 +222,7 @@
       "Una plataforma que presta les teves criptos a altres",
       "Et paga part del que cobra a qui demana prestat… i arrisca els teus diners.",
       "Col·loca els sis rendiments.",
-      "**Qui paga l'interès i per què?** Si ningú no ho sap explicar, pot sortir dels diners dels que entren després. I en cripto **es pot perdre la totalitat del que s'ha invertit**.",
+      "**Qui paga l'interès i per què?** Si ningú no ho sap explicar, pot sortir dels que entren després, i en cripto **es pot perdre tot**. Prova-ho: pregunta a la professora Lumi d'on surt un rendiment que hagis vist.",
       "Pregunta't: de quina butxaca surten aquests diners?",
       "Molt bé! El que es pot explicar no està lliure de risc, però el que no s'explica sol acabar malament.",
       "Qui paga? Col·loca cada rendiment"
@@ -233,6 +233,24 @@
   "u13l5": {
    "title": "ETF i ETP de cripto",
    "steps": [
+    {
+     "texts": [
+      "L'ETP de l'Iker",
+      "Iker",
+      "Per fi compro bitcoin com una acció, amb el meu bròquer! Aquest mes ha pujat un 50 %.",
+      "Dos mesos després, bitcoin cau un 30 %. L'ETP de l'Iker, també.",
+      "No era un producte regulat? Ho venc tot abans que caigui més.",
+      "Què li ha passat a l'Iker?",
+      "Ha tingut mala sort amb el producte",
+      "L'ETP va fer el mateix que bitcoin. El problema va ser quan va comprar i quan va vendre.",
+      "Va comprar amb eufòria i va vendre amb pànic",
+      "Exacte. Té nom: la **bretxa de comportament**.",
+      "Hauria d'haver comprat bitcoin directament",
+      "L'embolcall no hauria canviat ni la caiguda ni la seva reacció.",
+      "Segons Morningstar, així es van perdre uns 14 punts l'any respecte al mateix ETF.",
+      "En actius tan volàtils, el risc més gran sol ser el nostre comportament."
+     ]
+    },
     {
      "texts": [
       "Directament o en borsa",
@@ -260,28 +278,10 @@
      ]
     },
     {
-     "texts": [
-      "L'ETP de l'Iker",
-      "Iker",
-      "Per fi compro bitcoin com una acció, amb el meu bròquer! Aquest mes ha pujat un 50 %.",
-      "Dos mesos després, bitcoin cau un 30 %. L'ETP de l'Iker, també.",
-      "No era un producte regulat? Ho venc tot abans que caigui més.",
-      "Què li ha passat a l'Iker?",
-      "Ha tingut mala sort amb el producte",
-      "L'ETP va fer el mateix que bitcoin. El problema va ser quan va comprar i quan va vendre.",
-      "Va comprar amb eufòria i va vendre amb pànic",
-      "Exacte. Té nom: la **bretxa de comportament**.",
-      "Hauria d'haver comprat bitcoin directament",
-      "L'embolcall no hauria canviat ni la caiguda ni la seva reacció.",
-      "Segons Morningstar, així es van perdre uns 14 punts l'any respecte al mateix ETF.",
-      "En actius tan volàtils, el risc més gran sol ser el nostre comportament."
-     ]
-    },
-    {
      "title": "A Europa: ETP i ETN",
      "body": "Als EUA es van aprovar els **ETF de bitcoin al comptat** el gener del 2024, però molts no es poden comprar des de la UE perquè no tenen KID.\n\nLa norma UCITS no permet un fons d'una sola cripto, així que a Europa es venen com a **ETP** o **ETN**: títols de deute d'un emissor, normalment **respaldats** per la cripto que guarda un custodi. Hi sumes el risc de l'emissor i del custodi, i una comissió anual. **Es pot perdre la totalitat del que s'ha invertit**.",
      "key": "Un ETP de cripto t'estalvia guardar claus, però no t'estalvia ni un punt de volatilitat.",
-     "tip": "L'embolcall no canvia el que hi ha dins."
+     "tip": "Prova-ho: a Mercat, busca l'ETF IBIT i compara'n el gràfic amb el de Bitcoin."
     }
    ]
   },
@@ -325,7 +325,7 @@
      "title": "La part que podries perdre",
      "body": "Amb un 5 % en cripto, una caiguda del 75 % resta un **3,75 %** al total; amb un 50 %, un **37,5 %**.\n\nQui decideix tenir cripto sol deixar escrit al seu pla: abans, el **coixí** i cap deute car; un **màxim** que podria perdre sencer sense que li canviï la vida, i quan **rebalancejar**. Són exemples de com es pensa, no recomanacions personalitzades. En cripto **es pot perdre la totalitat del que s'ha invertit**.",
      "key": "El pes de la cripto en el total, no el seu potencial, decideix quant et pot fer mal.",
-     "tip": "Escriu avui el teu màxim en cripto, abans que una pujada et convenci del contrari."
+     "tip": "Prova-ho: obre la teva Cartera i mira quin percentatge tens avui en cripto."
     }
    ]
   },
@@ -357,18 +357,6 @@
    "explanation": "Endevinar el pròxim moviment d'un actiu tan volàtil s'assembla molt a llançar una moneda a l'aire.",
    "horizon": "les 10 sessions següents"
   },
-  "u13l1-5": {
-   "prompt": "Inverteixes 2.000 € en una criptomoneda i cau un 84 %, com Bitcoin el 2018. Quant et queda?",
-   "options": [],
-   "explanation": "2.000 × 0,16 = 320 €.",
-   "unit": "€"
-  },
-  "u13l1-6": {
-   "prompt": "Una criptomoneda cau un 90 %. Quant ha de pujar per tornar al seu màxim?",
-   "options": [],
-   "explanation": "De 100 a 10: per tornar a 100 cal multiplicar per 10, una pujada del 900 %.",
-   "unit": "%"
-  },
   "u13l1-8": {
    "prompt": "La Laura va comprar bitcoin en un màxim i perd un 60 %. Llegeix a les xarxes que «sempre es recupera». Què pensa?",
    "options": [
@@ -392,6 +380,20 @@
     "Lletres del Tresor"
    ],
    "explanation": "Menys de l'1 %, un 4-7 %, al voltant del 15 % i un 50-80 % anual."
+  },
+  "u13l1-11": {
+   "prompt": "Una criptomoneda cau un 90 % des del seu màxim. Què ha de passar perquè hi torni?",
+   "options": [
+    "Que es multipliqui per 10",
+    "Que pugi un 100 %, que la dupliqui",
+    "Que pugi un 90 %, el mateix que va caure"
+   ],
+   "explanation": "Si de cada 100 € te'n queden 10, cal multiplicar per 10 per tornar-hi: un +900 %. La temptadora, pujar el mateix que va caure, falla perquè el 90 % de pujada es calcula sobre el poc que queda."
+  },
+  "u13l1-12": {
+   "prompt": "Tens 10.000 € i no vols arriscar més d'un 1 % (100 €) en bitcoin. Col·loca l'stop per sota de l'últim mínim i tria l'import.",
+   "options": [],
+   "explanation": "En un actiu tan volàtil, l'stop queda lluny del preu, així que l'import surt petit. Així, encara que salti l'stop, només perds 100 €. La temptació és comprar molt i posar l'stop molt a prop, però qualsevol vaivé normal el fa saltar."
   },
   "u13l2-1": {
    "prompt": "Ordena el que va passar amb FTX el novembre del 2022.",
@@ -692,24 +694,6 @@
     "LIQUIDESA"
    ]
   },
-  "u13l6-2": {
-   "prompt": "Tens 10.000 € amb un 5 % en cripto. La cripto cau un 75 % i la resta no es mou. Quant perd la teva cartera en total?",
-   "options": [],
-   "explanation": "500 × 75 % = 375 €: un 3,75 % del total.",
-   "unit": "€"
-  },
-  "u13l6-3": {
-   "prompt": "Ara amb un 40 % en cripto (4.000 de 10.000 €). Cau un 75 % i la resta no es mou. Quin percentatge perd la cartera?",
-   "options": [],
-   "explanation": "4.000 × 75 % = 3.000 € → un 30 % de 10.000 €.",
-   "unit": "%"
-  },
-  "u13l6-4": {
-   "prompt": "Cartera de 10.000 €: 9.500 € en fons i 500 € en cripto. La cripto es triplica i els fons no es mouen. Quin pes té ara la cripto? (un decimal)",
-   "options": [],
-   "explanation": "500 × 3 = 1.500 €; total, 11.000 €; 1.500 ÷ 11.000 ≈ 13,6 %. Ha passat del 5 % al 13,6 % sense que decideixis res.",
-   "unit": "%"
-  },
   "u13l6-6": {
    "prompt": "En Pablo té 22 anys, no té coixí d'emergència i deu 2.000 € de la targeta. Vol posar 3.000 € en cripto «perquè és jove i pot arriscar». Què té en compte?",
    "options": [
@@ -750,6 +734,29 @@
    "lines": [
     "He llegit que algú ho va posar tot en cripto i es va fer ric 🤑",
     "Per què no fer el mateix?"
+   ]
+  },
+  "u13l6-11": {
+   "prompt": "Tens un 5 % de la teva cartera en cripto. Si aquesta cripto va a zero, quant perd com a molt la teva cartera?",
+   "options": [
+    "Tot",
+    "Un 5 %: el que pesa la cripto",
+    "La meitat"
+   ],
+   "explanation": "El màxim que pots perdre amb una part és el que aquesta part pesa en el total. Per això el pes es decideix abans de comprar. La temptació és pensar que una cripto que cau a zero arrossega tota la cartera, i no: només si pesa molt."
+  },
+  "u13l6-12": {
+   "prompt": "La Marta tenia escrit «cripto com a màxim un 5 %». Després d'una gran pujada, la seva cripto ja pesa un 13,6 % sense que n'hagi comprat més. Què fa?",
+   "options": [
+    "Hi posa més diners perquè va bé",
+    "Ven cripto fins a tornar al 5 % i porta la resta als seus fons",
+    "Res: si puja, que continuï pujant"
+   ],
+   "explanation": "La bona és reequilibrar: seguir el pla escrit amb calma. La temptadora, deixar-ho córrer, converteix un 5 % en l'actiu que mana en tota la cartera.",
+   "feedback": [
+    "Així decideix amb l'eufòria i augmenta un risc que ja superava el seu límit.",
+    "Molt bé: compleix el seu pla, guarda part de la pujada i torna al risc que va triar.",
+    "La seva cartera és ara força més arriscada del que va decidir amb calma."
    ]
   }
  }

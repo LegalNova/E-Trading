@@ -22,7 +22,7 @@ export const RISK_LESSON = V2 ? 'u6l4' : 'u10l3'
 /** Enlace a una lección escrito con los ids del curso anterior (avisos de Lumi): en el curso v2, su equivalente */
 export const lessonRef = (id: string | null) => (id && V2 ? (LEGACY_TO_V2[id] ?? id) : id)
 
-// Test de nivel: 8 preguntas de las unidades 1 y 2. Con 5 o más aciertos se salta la unidad 1.
+// Test de nivel: 8 preguntas de lo básico del dinero. Con 5 o más aciertos se salta «El dinero y la inflación» (sección opcional).
 const P = [
   single('¿Qué es una acción?', ['Un préstamo a una empresa', 'Una pequeña parte de una empresa', 'Un depósito en el banco', 'No lo sé'], 1, ''),
   single('¿Qué es un ETF?', ['Un fondo que cotiza en bolsa y reúne muchas empresas', 'Una criptomoneda', 'Un tipo de cuenta bancaria', 'No lo sé'], 0, ''),
@@ -44,7 +44,7 @@ export const ACHIEVEMENTS: ContentAchievement[] = [
   { code: 'QUIZ_PERFECT', title: 'Quiz perfecto', description: 'Acierta todas las preguntas de un quiz', icon: '★', category: 'LEARNING', target: 1, gems: 20, xp: 10 },
   { code: 'QUIZ_PERFECT_5', title: 'Cinco perfectos', description: 'Consigue 5 quizzes perfectos', icon: '★5', category: 'LEARNING', target: 5, gems: 40, xp: 30 },
   { code: 'LESSONS_50', title: 'Cincuenta lecciones', description: 'Completa 50 lecciones', icon: '50', category: 'LEARNING', target: 50, gems: 60, xp: 80 },
-  { code: 'UNIT_1', title: 'Primeros pasos', description: 'Completa la unidad «El dinero y la inflación»', icon: 'U1', category: 'LEARNING', target: 1, gems: 30, xp: 30 },
+  { code: 'UNIT_1', title: 'Primeros pasos', description: 'Completa la unidad «Tu primera inversión»', icon: 'U1', category: 'LEARNING', target: 1, gems: 30, xp: 30 },
   { code: 'UNIT_2', title: 'Lector de velas', description: 'Completa la unidad «Velas japonesas»', icon: 'U8', category: 'LEARNING', target: 1, gems: 40, xp: 40 },
   { code: 'UNIT_3', title: 'Gestor de riesgo', description: 'Completa la unidad «Gestión del riesgo»', icon: 'U10', category: 'LEARNING', target: 1, gems: 40, xp: 40 },
   { code: 'COURSE_DONE', title: 'Inversor autónomo', description: 'Completa todas las unidades del curso', icon: '★', category: 'LEARNING', target: 1, gems: 200, xp: 200 },

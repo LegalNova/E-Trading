@@ -42,9 +42,9 @@
     },
     {
      "title": "What to look at before deciding",
-     "body": "• **Prior trend:** higher highs and higher lows, or lower ones?\n• **Where the price is:** near the highs, near the lows or in the middle?\n• **Candle size:** big candles = more volatility = more uncertainty.\n\nNone of this guarantees the outcome: in two weeks, a single piece of news can change everything.",
+     "body": "• **Prior trend:** higher highs and higher lows, or lower ones?\n• **Where the price is:** near the highs, near the lows or in the middle?\n• **Candle size:** big candles = more volatility = more uncertainty.\n\nNone of this guarantees the outcome: in two weeks, a single piece of news can change everything. Note down whether you get each chart right. With only a few attempts, luck rules.",
      "key": "In the short term, price is mostly noise: what you do control is how much you risk.",
-     "tip": "Note down whether you get each chart right. With only a few attempts, luck rules."
+     "tip": "Try it: add a stock to Favourites, predict whether it rises and check in two weeks."
     }
    ]
   },
@@ -80,7 +80,8 @@
     {
      "title": "What it takes to recover",
      "body": "• If it falls **50 %**, it has to rise **+100 %** to get back to where it started.\n• If it falls **80 %**, **+400 %**: multiply by 5.\n\nBitcoin has fallen more than 70 % from its highs several times.",
-     "key": "Big falls are very hard to recover from: in crypto, only use money you could afford to lose entirely."
+     "key": "Big falls are very hard to recover from: in crypto, only use money you could afford to lose entirely.",
+     "tip": "Try it: in Market, open bitcoin and see how much it moved in the last week."
     }
    ]
   },
@@ -90,7 +91,7 @@
     {
      "texts": [
       "Gold in dollars, gains in euros",
-      "Gold is **priced in dollars**. If you buy from Spain, two things count: what gold does and what the dollar does against the euro.",
+      "You buy **€1,000** of gold from Spain and gold rises 10 %. Have you made 10 %? Gold **is priced in dollars**: what the dollar does against the euro also counts.",
       "dollar",
       "Gold rises 10 % in dollars, but the dollar falls 10 % against the euro. What do you make in euros?",
       "10 %",
@@ -115,9 +116,9 @@
     },
     {
      "title": "Gold, a safe haven with caveats",
-     "body": "A pair like **EUR/USD** tells you how many dollars one euro is worth: if it goes from 1.10 to 1.12, the euro has appreciated against the dollar.\n\nGold pays no interest or dividends. People tend to turn to it in crises and against inflation, but it can go years without rising: from 1980 to 2000 it lost a lot of value in real terms.",
+     "body": "A pair like **EUR/USD** tells you how many dollars one euro is worth: if it goes from 1.10 to 1.12, the euro has appreciated against the dollar.\n\nGold pays no interest or dividends. People tend to turn to it in crises and against inflation, but it can go years without rising: from 1980 to 2000 it lost a lot of value in real terms.\n\nWith currencies, check the axis scale carefully: 1 % is already a lot.",
      "key": "Safe haven doesn't mean it always goes up: it means lots of people buy it when they're scared.",
-     "tip": "With currencies, check the axis scale carefully: 1 % is already a lot."
+     "tip": "Try it: in Market, open EUR/USD and see how much it has moved in a month."
     }
    ]
   },
@@ -163,9 +164,9 @@
     },
     {
      "title": "Pattern cheat sheet",
-     "body": "• **Hammer:** long lower wick after a fall.\n• **Shooting star:** long upper wick after a rise.\n• **Doji:** open ≈ close.\n• **Engulfing:** one body swallows the previous one, in the opposite direction.\n• **Marubozu:** long body with hardly any wicks.\n• **Morning star:** a big red, a small one and a strong green.",
+     "body": "• **Hammer:** long lower wick after a fall.\n• **Shooting star:** long upper wick after a rise.\n• **Doji:** open ≈ close.\n• **Engulfing:** one body swallows the previous one, in the opposite direction.\n• **Marubozu:** long body with hardly any wicks.\n• **Morning star:** a big red, a small one and a strong green.\n\nBefore looking for the candle, check where the price is coming from.",
      "key": "A pattern is a clue, not an order: confirm it with the context.",
-     "tip": "Before looking for the candle, check where the price is coming from."
+     "tip": "Try it: open a stock with daily candles and look for a hammer after a fall."
     }
    ]
   },
@@ -203,9 +204,9 @@
     },
     {
      "title": "How to find them",
-     "body": "Look for the lows and highs that stand out most and check whether the price has come back to them. The more often a level holds, the more people watch it. But many breakouts are **false**: the price crosses for a few days and then comes back inside.",
+     "body": "Look for the lows and highs that stand out most and check whether the price has come back to them. The more often a level holds, the more people watch it. But many breakouts are **false**: the price crosses for a few days and then comes back inside. Draw wide zones, not thin lines: the market doesn't use a ruler.",
      "key": "A support is where buyers showed up before; nothing guarantees they'll come back.",
-     "tip": "Draw wide zones, not thin lines: the market doesn't use a ruler."
+     "tip": "Try it: mark a support on a stock's chart and set an alert there."
     }
    ]
   },
@@ -242,9 +243,9 @@
     },
     {
      "title": "Stop first, then size",
-     "body": "Size = (capital × % risk) ÷ (entry − stop).\n\nWith €10,000 and 1 % risk, you're risking €100. Entry at €50 and stop at €47: 100 ÷ 3 = **33 shares** (about €1,650).",
+     "body": "Size = (capital × % risk) ÷ (entry − stop).\n\nWith €10,000 and 1 % risk, you're risking €100. Entry at €50 and stop at €47: 100 ÷ 3 = **33 shares** (about €1,650).\n\nA stop that's too tight gets hit by normal noise; one that's too far away forces you to buy very little.",
      "key": "You don't decide how much to buy: the distance to your stop does.",
-     "tip": "A stop that's too tight gets hit by normal noise; one that's too far away forces you to buy very little."
+     "tip": "Try it: on your next purchase in the simulator, place the stop below the last low."
     }
    ]
   },
@@ -295,7 +296,7 @@
      "title": "What to do when a headline hits",
      "body": "• Ask yourself what the market **expected**, not whether the news is good or bad.\n• Don't trade in the first few minutes: the price jumps and the *spread* widens.\n• If you already have a position, let your stop decide, not panic.",
      "key": "On the stock market, good news that was already expected isn't news.",
-     "tip": "Before reacting, ask yourself: didn't everyone already know this?"
+     "tip": "Try it: when you see a headline, open the asset in Market and check whether it has already moved."
     }
    ]
   },
@@ -331,9 +332,9 @@
     },
     {
      "title": "Five decisions before you enter",
-     "body": "1. **Thesis:** why you think it could rise.\n2. **Stop:** where you're wrong.\n3. **Target:** where you take profits.\n4. **Size:** how much you buy so you only risk 1 %.\n5. **Record:** you log it in your journal.\n\nMeasuring in **R** lets you compare trades of different sizes and know whether your system wins in the long run.",
+     "body": "1. **Thesis:** why you think it could rise.\n2. **Stop:** where you're wrong.\n3. **Target:** where you take profits.\n4. **Size:** how much you buy so you only risk 1 %.\n5. **Record:** you log it in your journal.\n\nMeasuring in **R** lets you compare trades of different sizes and know whether your system wins in the long run. Review your journal every 20 trades: it shows you what your memory would rather forget.",
      "key": "A good trade is one that follows the plan, even if it loses.",
-     "tip": "Review your journal every 20 trades: it shows you what your memory would rather forget."
+     "tip": "Try it: make a purchase in the simulator with a stop, a target and 1 % risk."
     }
    ]
   },
@@ -383,9 +384,9 @@
     },
     {
      "title": "Your week",
-     "body": "The winner isn't whoever gains the most, but whoever **sticks to the rules** and makes decisions they could explain. On Monday you allocate, during the week news and opportunities come up, and on Friday you review.\n\nIt's an educational simulation with **€10,000 in virtual money**, not a recommendation.",
+     "body": "The winner isn't whoever gains the most, but whoever **sticks to the rules** and makes decisions they could explain. On Monday you allocate, during the week news and opportunities come up, and on Friday you review.\n\nIt's an educational simulation with **€10,000 in virtual money**, not a recommendation.\n\nIf you couldn't explain a decision out loud, don't make it.",
      "key": "The rules are written on Monday with a cool head; for the rest of the week, you just follow them.",
-     "tip": "If you couldn't explain a decision out loud, don't make it."
+     "tip": "Try it: split your virtual Portfolio using the challenge rules and review it on Friday."
     }
    ]
   },
@@ -461,12 +462,6 @@
    ],
    "explanation": "That's the gambler's fallacy: sessions don't «owe» each other anything. A streak doesn't make a change of direction more likely."
   },
-  "u35l2-2": {
-   "prompt": "A crypto falls 75 % from its high. How much does it then have to rise to get back there?",
-   "options": [],
-   "explanation": "From 100 it goes to 25. To get from 25 back to 100 you have to multiply by 4: +300 %. Big falls are very hard to recover from.",
-   "unit": "%"
-  },
   "u35l2-3": {
    "prompt": "Another cryptocurrency. Higher or lower 10 days later?",
    "options": [
@@ -533,12 +528,6 @@
    ],
    "explanation": "Look at the scale: in currencies, what looks like a crash may be 1 %. That's why forex brokers offer so much leverage… and why so many people lose money with it.",
    "horizon": "the next 10 sessions"
-  },
-  "u35l3-3": {
-   "prompt": "EUR/USD rises from 1.10 to 1.122. By what percentage has it risen?",
-   "options": [],
-   "explanation": "(1.122 − 1.10) ÷ 1.10 = 0.02 → 2 %. For a major currency, 2 % in a few weeks is a big move.",
-   "unit": "%"
   },
   "u35l3-4": {
    "prompt": "Precious metal, daily candles. Did it go up or down over the next 10 sessions?",
@@ -702,12 +691,6 @@
    "options": [],
    "explanation": "Below the recent low (about €12.90). Not right next to the price, because noise would trigger it, nor so far away that the loss gets out of hand."
   },
-  "u35l6-6": {
-   "prompt": "You have €10,000 and risk 1 %. You enter at €80 with your stop at €76. How many shares do you buy?",
-   "options": [],
-   "explanation": "1 % is €100. Distance to the stop: €4. 100 ÷ 4 = 25 shares (€2,000 invested).",
-   "unit": "shares"
-  },
   "u35l6-7": {
    "prompt": "You have €10,000 and risk at most 1 %. Place the stop and choose the amount.",
    "options": [],
@@ -819,12 +802,6 @@
    "options": [],
    "explanation": "A good plan doesn't guarantee you'll win: it guarantees that, if you lose, you lose what you planned."
   },
-  "u35l8-6": {
-   "prompt": "You risked €80 and closed the trade with a €200 profit. How many R have you made?",
-   "options": [],
-   "explanation": "200 ÷ 80 = 2.5R. With R you can compare this trade with any other, whatever its size.",
-   "unit": "R"
-  },
   "u35l8-7": {
    "prompt": "Ana has lost three trades in a row, all of them following her plan. She's angry and sees another opportunity. What does she do?",
    "options": [
@@ -887,22 +864,10 @@
     "Rebalancing: you sell part of what has gone up and go back to the risk you chose."
    ]
   },
-  "u35l9-4": {
-   "prompt": "Your portfolio is worth €10,250 and your bitcoin €1,250. How many euros of bitcoin do you have to sell for it to weigh 10 % again?",
-   "options": [],
-   "explanation": "10 % of €10,250 is €1,025. 1,250 − 1,025 = €225. The money moves into other assets, so the portfolio is still worth the same.",
-   "unit": "€"
-  },
   "u35l9-5": {
    "prompt": "Thursday: you spot an opportunity in a stock. €10,000 portfolio, maximum risk of 1 %. Set the stop and the amount.",
    "options": [],
    "explanation": "With the stop below the last low and 1 % risk, even if it goes wrong you lose €100 at most. Within a portfolio, a single trade should never be able to ruin your week."
-  },
-  "u35l9-6": {
-   "prompt": "Thursday night: your portfolio is 50 % shares, 30 % bonds and 20 % gold. This week shares returned −3 %, bonds +1 % and gold +4 %. How did the portfolio do?",
-   "options": [],
-   "explanation": "0.5 × (−3) + 0.3 × 1 + 0.2 × 4 = −1.5 + 0.3 + 0.8 = −0.4 %. Shares fell 3 %, but the portfolio only 0.4 %: that's diversification.",
-   "unit": "%"
   },
   "u35l9-7": {
    "prompt": "Friday: the tech index you follow has looked like this for 30 sessions. Higher or lower 10 sessions later?",

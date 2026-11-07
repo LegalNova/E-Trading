@@ -57,9 +57,9 @@
     },
     {
      "title": "Always check",
-     "body": "Unauthorised firms usually have very professional websites, English-sounding names and very friendly «advisers». Every year the CNMV (Spain's securities regulator) publishes hundreds of **warnings** about unauthorised firms.\n\nBefore investing, look the firm up on **cnmv.es**: in the registers of authorised firms and in the warnings list. Never trust what its own website says.",
+     "body": "Unauthorised firms usually have very professional websites, English-sounding names and very friendly «advisers». Every year the CNMV (Spain's securities regulator) publishes hundreds of **warnings** about unauthorised firms.\n\nBefore investing, look the firm up on **cnmv.es**: in the registers of authorised firms and in the warnings list. Never trust what its own website says.\n\nNobody who knew a safe way to make 20 % a month would call you up to tell you about it.",
      "key": "If someone contacts you unprompted offering high, safe returns, it's almost certainly a scam.",
-     "tip": "Nobody who knew a safe way to make 20 % a month would call you up to tell you about it."
+     "tip": "Try it: in Market, check how much the S&P 500 has risen in the last year."
     }
    ]
   },
@@ -103,7 +103,8 @@
     {
      "title": "Real cases",
      "body": "• **Charles Ponzi**, Boston, 1920: he promised **50 % in 45 days**.\n• **Bernard Madoff**, uncovered in 2008: for decades he fooled even professional investors.\n• **Fórum Filatélico and Afinsa**, Spain, 2006: hundreds of thousands of victims of a stamp business.\n\nA **Ponzi** pays earlier investors with newcomers' money; in a **pyramid** you earn mainly by recruiting.",
-     "key": "If the maths doesn't work with compound interest, it isn't a business: it's a scam."
+     "key": "If the maths doesn't work with compound interest, it isn't a business: it's a scam.",
+     "tip": "Try it: open the S&P 500 with monthly candles. Real markets have red months too."
     }
    ]
   },
@@ -156,7 +157,8 @@
     {
      "title": "Pump it, dump it",
      "body": "1. The organisers quietly buy a small asset (a crypto or a thinly traded share).\n2. They announce it as «the signal» on Telegram, WhatsApp or social media.\n3. Members buy and the price shoots up.\n4. The organisers sell at the top.\n5. The price crashes and the latecomers lose.",
-     "key": "If you're tipped off at the same time as thousands of people, you're not the one buying early: you're the one buying high."
+     "key": "If you're tipped off at the same time as thousands of people, you're not the one buying early: you're the one buying high.",
+     "tip": "Try it: if something shoots up, set a price alert and decide calmly tomorrow."
     }
    ]
   },
@@ -210,7 +212,8 @@
     {
      "title": "If you've already fallen for it",
      "body": "Call your bank on its official number to block the card or the transaction, change your passwords, check your account activity and report it. You can get help on **017**, the free cybersecurity helpline run by INCIBE (Spain's national cybersecurity institute).\n\nAnd when you're being rushed («your account will be blocked in 1 hour»), stop and check.",
-     "key": "No bank will ever ask for your passwords or codes: whoever asks for them is robbing you."
+     "key": "No bank will ever ask for your passwords or codes: whoever asks for them is robbing you.",
+     "tip": "Try it: tell your tutor Lumi about a strange message you have received."
     }
    ]
   },
@@ -263,7 +266,8 @@
     {
      "title": "Questions to ask yourself",
      "body": "Do they make money if I buy? Do they show me their losses or only their wins? Are they selling me a course or «signals»? Are they rushing me? Lots of followers doesn't mean they know how to invest.\n\nSince 2024, crypto advertising in the EU has been regulated by **MiCA**: clear, fair, not misleading, identified as advertising and with a risk warning. The CNMV replaced its circular 1/2022 with 1/2024 to adapt.",
-     "key": "An influencer can teach you; if they tell you what to buy, ask yourself who's paying them."
+     "key": "An influencer can teach you; if they tell you what to buy, ask yourself who's paying them.",
+     "tip": "Try it: if an influencer recommends a stock, add it to Favourites and follow it for a month."
     }
    ]
   },
@@ -315,9 +319,9 @@
     },
     {
      "title": "What to do right now",
-     "body": "1. **Don't send any more money**, even if they promise to return what you've already paid.\n2. **Tell your bank** as soon as possible: sometimes a transfer can be stopped.\n3. **Keep evidence:** screenshots, chats, emails, payment receipts, websites.\n4. **Report it** to the Policía Nacional or the Guardia Civil.\n5. **Notify the CNMV** if it was an unauthorised firm.",
+     "body": "1. **Don't send any more money**, even if they promise to return what you've already paid.\n2. **Tell your bank** as soon as possible: sometimes a transfer can be stopped.\n3. **Keep evidence:** screenshots, chats, emails, payment receipts, websites.\n4. **Report it** to the Policía Nacional or the Guardia Civil.\n5. **Notify the CNMV** if it was an unauthorised firm.\n\nGetting scammed doesn't make you stupid: it makes you human. Reporting it helps stop it happening to someone else.",
      "key": "Stop the damage, keep evidence and report it. And be wary of anyone offering to recover your money in exchange for money.",
-     "tip": "Getting scammed doesn't make you stupid: it makes you human. Reporting it helps stop it happening to someone else."
+     "tip": "Try it: tell your tutor Lumi about a case and ask her where to go first."
     }
    ]
   },
@@ -411,12 +415,6 @@
    ],
    "explanation": "That's why it needs new money coming in non-stop."
   },
-  "u32l2-2": {
-   "prompt": "A website promises 1 % a day, compounded. If it were true, what would €1,000 grow into in 365 days? (round it)",
-   "options": [],
-   "explanation": "1,000 × 1.01³⁶⁵ ≈ €37,783. No real investment does that: it's the sign of a Ponzi.",
-   "unit": "€"
-  },
   "u32l2-4": {
    "prompt": "Select the messages that smell like a Ponzi or a pyramid scheme.",
    "options": [
@@ -503,12 +501,6 @@
    ],
    "explanation": "Serious analysis explains risks; manipulation only promises rockets."
   },
-  "u32l3-6": {
-   "prompt": "You buy during the pump at €0.30 with €500. The price drops back to €0.06. How much do you have left?",
-   "options": [],
-   "explanation": "500 ÷ 0.30 ≈ 1,667 coins × 0.06 = €100. You lose 80 %.",
-   "unit": "€"
-  },
   "u32l3-8": {
    "prompt": "The strategy of inflating a price and selling at the top is called pump and ____.",
    "options": [
@@ -527,6 +519,20 @@
     "Everyone, if nobody sells"
    ],
    "explanation": "Some people's profit is the loss of those who arrive later."
+  },
+  "u32l3-11": {
+   "prompt": "A tiny crypto on your watchlist rises 300 % in an hour, with no news at all. On a forum, hundreds of messages shout «to the moon!». What do you do?",
+   "options": [
+    "I don't buy and look for any official news that explains the rise",
+    "I buy now, before it gets away",
+    "I buy with borrowed money to make more in less time"
+   ],
+   "explanation": "A huge rise with no news and euphoria on social media is the typical footprint of a pump and dump. The tempting one, «I buy before it gets away», fails because arriving with the crowd means arriving late.",
+   "feedback": [
+    "Good: if there is nothing official behind it, it is most likely an inflated rise that unwinds just as fast.",
+    "With no news to explain it and euphoria on a forum, it looks like a pump: you would be buying just as the organisers sell.",
+    "If the price goes back to where it was, the loss stays and so does the debt."
+   ]
   },
   "u32l4-1": {
    "prompt": "Select the messages that are phishing or smishing.",
@@ -650,12 +656,6 @@
     "authorisation"
    ],
    "explanation": "Recommending what to buy based on your situation is a regulated investment service."
-  },
-  "u32l5-9": {
-   "prompt": "An influencer earns €0.30 for every person who signs up to a platform with their link and gets 20,000 sign-ups. How much do they earn?",
-   "options": [],
-   "explanation": "20,000 × 0.30 = €6,000. They earn even if you lose: that's a conflict of interest.",
-   "unit": "€"
   },
   "u32l5-10": {
    "prompt": "What do you say to Lumi?",

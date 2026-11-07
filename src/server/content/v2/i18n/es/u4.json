@@ -1,13 +1,29 @@
 {
  "unit": {
   "title": "Tu primer plan financiero",
-  "description": "Objetivos con cifra y fecha, tu plazo, tu riesgo y lo que dicen los datos del trading",
+  "description": "Ahorrar, invertir o especular, objetivos con fecha, cuánto riesgo aguantas y lo que dicen los datos del trading",
   "section": "Tu dinero en orden"
  },
  "lessons": {
   "u4l1": {
    "title": "Ahorrar, invertir y especular",
    "steps": [
+    {
+     "texts": [
+      "La moneda de moda",
+      "Nico",
+      "¡Mete 5.000 € en esta moneda! Ha subido un 300 % este mes y todo el mundo está entrando",
+      "Tienes 12.000 € ahorrados y gastas 1.200 € al mes.",
+      "¿Qué haces?",
+      "Meto los 5.000 €: no quiero quedarme fuera",
+      "Eso es **FOMO**, el miedo a quedarte fuera. Comprar porque ya ha subido mucho es especular… con casi la mitad de tus ahorros.",
+      "Si acaso, una cantidad pequeña que pueda perder entera",
+      "Bien: se especula **solo con lo que puedes perder**. Antes, el colchón y la inversión a largo plazo.",
+      "Le paso mis claves para que lo gestione él",
+      "¡Nunca des el control de tu dinero ni tus claves a nadie! Es la puerta de muchas estafas.",
+      "Se ahorra para lo cercano, se invierte para lo lejano y se especula solo con lo que puedes perder."
+     ]
+    },
     {
      "texts": [
       "¿Ahorrar, invertir o especular?",
@@ -28,25 +44,9 @@
       "Acciones de muchas empresas para dentro de 15 años",
       "Beneficios de empresas, diversificado y a largo plazo: invertir.",
       "Clasifica los seis casos.",
-      "Pregúntate **de dónde sale la ganancia**: del interés (ahorro), de lo que produce lo que compras (inversión) o del bolsillo de otro que acierta menos que tú (especulación).",
+      "Pregúntate **de dónde sale la ganancia**: del interés (ahorro), de lo que produce lo que compras (inversión) o del bolsillo de otro que acierta menos que tú (especulación). Pruébalo: en Mercado, compara el gráfico del bitcoin con el de un ETF mundial.",
       "Pista: ¿eso produce algo, o solo esperas que suba?",
       "Clasifica cada caso"
-     ]
-    },
-    {
-     "texts": [
-      "La moneda de moda",
-      "Nico",
-      "¡Mete 5.000 € en esta moneda! Ha subido un 300 % este mes y todo el mundo está entrando",
-      "Tienes 12.000 € ahorrados y gastas 1.200 € al mes.",
-      "¿Qué haces?",
-      "Meto los 5.000 €: no quiero quedarme fuera",
-      "Eso es **FOMO**, el miedo a quedarte fuera. Comprar porque ya ha subido mucho es especular… con casi la mitad de tus ahorros.",
-      "Si acaso, una cantidad pequeña que pueda perder entera",
-      "Bien: se especula **solo con lo que puedes perder**. Antes, el colchón y la inversión a largo plazo.",
-      "Le paso mis claves para que lo gestione él",
-      "¡Nunca des el control de tu dinero ni tus claves a nadie! Es la puerta de muchas estafas.",
-      "Se ahorra para lo cercano, se invierte para lo lejano y se especula solo con lo que puedes perder."
      ]
     }
    ]
@@ -88,6 +88,12 @@
       "¡Casi! Un poco más de plazo en algo y cabe.",
       "Alarga el plazo de lo que menos prisa corre"
      ]
+    },
+    {
+     "title": "Cada objetivo, en su sitio",
+     "body": "Ya sabes que **el plazo decide el riesgo** que puedes asumir. Aplícalo a cada objetivo:\n\n• **Menos de 3 años** (viaje, carné, portátil): ahorrado en cuenta remunerada, depósitos o letras.\n• **15 años o más** (jubilación, libertad financiera): sobre todo acciones diversificadas, con aportaciones periódicas.\n• **Entre medias:** una mezcla prudente, con más renta fija cuanto más cerca esté.",
+     "key": "La fecha de cada objetivo decide si lo ahorras o lo inviertes.",
+     "tip": "Pruébalo: compra en el simulador un ETF mundial para tu objetivo más lejano."
     }
    ]
   },
@@ -109,9 +115,9 @@
     },
     {
      "title": "Capacidad y tolerancia",
-     "body": "**Capacidad de riesgo:** cuánto puedes perder **sin que cambie tu vida** (ingresos, colchón, cargas, plazo). Es objetiva.\n\n**Tolerancia al riesgo:** cuánto puedes ver caer tu dinero **sin vender en pánico**. Es psicológica, y casi todos la sobrestiman cuando la bolsa sube.\n\nTu perfil real es **el menor de los dos**.",
+     "body": "**Capacidad de riesgo:** cuánto puedes perder **sin que cambie tu vida** (ingresos, colchón, cargas, plazo). Es objetiva.\n\n**Tolerancia al riesgo:** cuánto puedes ver caer tu dinero **sin vender en pánico**. Es psicológica, y casi todos la sobrestiman cuando la bolsa sube.\n\nTu perfil real es **el menor de los dos**. Al abrir cuenta en un bróker europeo te harán un **test MiFID**: contéstalo con sinceridad, te protege de productos que no entiendes.",
      "key": "Todo el mundo es valiente cuando la bolsa sube.",
-     "tip": "Al abrir cuenta en un bróker europeo te harán un test MiFID: contéstalo con sinceridad, te protege de productos que no entiendes."
+     "tip": "Pruébalo: en Mercado, abre el S&P 500 en velas mensuales y busca su peor caída."
     }
    ]
   },
@@ -146,7 +152,8 @@
       "¡Todas! Promete mucho sin enseñar su historial completo, mete prisa («10 plazas»), vende suscripciones y cobra por llevarte a un bróker.",
       "Solo una: que cobra 99 €",
       "Hay más: la prisa, las promesas sin historial y el enlace a un bróker concreto, por el que suele cobrar.",
-      "Antes de dar dinero a nadie, mira si está registrado en la **CNMV** y si aparece en su lista de «chiringuitos financieros»."
+      "Antes de pagar a nadie, búscalo en la **CNMV** y en su lista de «chiringuitos».",
+      "Pruébalo: en el simulador, haz lo aburrido: aporta cada mes a un ETF mundial."
      ]
     }
    ]
@@ -231,18 +238,6 @@
    ],
    "explanation": "Cifra, fecha, punto de partida y división: así un deseo se convierte en un plan mensual."
   },
-  "u4l2-2": {
-   "prompt": "Quieres 3.000 € para un viaje dentro de 12 meses y ya tienes 600 €. ¿Cuánto tienes que apartar al mes?",
-   "options": [],
-   "explanation": "(3.000 − 600) ÷ 12 = 200 € al mes.",
-   "unit": "€"
-  },
-  "u4l2-3": {
-   "prompt": "Quieres 30.000 € de entrada para un piso en 5 años y empiezas de cero. Sin contar intereses, ¿cuánto al mes?",
-   "options": [],
-   "explanation": "30.000 ÷ 60 meses = 500 € al mes.",
-   "unit": "€"
-  },
   "u4l2-4": {
    "prompt": "Un objetivo SMART es específico, medible, alcanzable, relevante y tiene ____.",
    "options": [
@@ -291,6 +286,35 @@
     "Mientras tanto, los otros plazos siguen corriendo."
    ]
   },
+  "u4l2-11": {
+   "prompt": "¿Ahorrar o invertir para este objetivo?",
+   "options": [
+    "Carné de conducir dentro de 10 meses",
+    "Tu jubilación",
+    "Libertad financiera dentro de 20 años",
+    "Viaje el verano que viene",
+    "Tu colchón para imprevistos"
+   ],
+   "explanation": "Lo que necesitas en menos de 3 años no puede depender de que la bolsa no esté cayendo ese día; lo lejano tiene tiempo para recuperarse de las caídas. Invertirlo todo «para que crezca más» tienta, pero el plazo manda.",
+   "right": [
+    "Ahorrar (cuenta o depósito)",
+    "Invertir (ETF a largo plazo)"
+   ]
+  },
+  "u4l2-12": {
+   "prompt": "Sara quiere 1.200 € para un portátil dentro de 8 meses. Un amigo le dice que los meta en acciones «para que crezcan más». ¿Qué hace?",
+   "options": [
+    "Los ahorra en una cuenta remunerada",
+    "Los mete todos en acciones",
+    "Los mete en una cripto que está de moda"
+   ],
+   "explanation": "A 8 meses, el dinero tiene que estar disponible y sin riesgo de caída. Las acciones tientan porque suelen crecer más, pero solo a largo plazo y con caídas por el camino.",
+   "feedback": [
+    "Dentro de 8 meses tendrá su dinero entero, pase lo que pase en la bolsa.",
+    "Si la bolsa cae un 20 % justo antes, se queda sin portátil o tiene que esperar.",
+    "Aún más riesgo para un dinero que necesita pronto y con fecha."
+   ]
+  },
   "u4l4-1": {
    "prompt": "¿Cuál es tu perfil de riesgo real?",
    "options": [
@@ -330,18 +354,6 @@
     "Endeudarse para invertir multiplica el riesgo: si sigue cayendo, debe dinero y pierde."
    ]
   },
-  "u4l4-5": {
-   "prompt": "Tus 10.000 € caen un 40 %. ¿Cuánto valen ahora?",
-   "options": [],
-   "explanation": "10.000 × (1 − 0,40) = 6.000 €.",
-   "unit": "€"
-  },
-  "u4l4-6": {
-   "prompt": "Después de caer un 40 %, ¿cuánto tiene que subir tu cartera para volver a 10.000 €? (redondea)",
-   "options": [],
-   "explanation": "De 6.000 a 10.000 € hay que ganar 4.000 €: 4.000 ÷ 6.000 ≈ 66,7 %. Las caídas grandes cuestan mucho de recuperar.",
-   "unit": "%"
-  },
   "u4l4-7": {
    "prompt": "¿Esto suma o resta capacidad de riesgo?",
    "options": [
@@ -366,6 +378,15 @@
     "Muy decidido"
    ],
    "explanation": "Baja tolerancia y plazo corto: mucha renta fija y poca bolsa."
+  },
+  "u4l4-11": {
+   "prompt": "Tu cartera cae un 50 %. Para volver a donde estaba, ¿cuánto tiene que subir después?",
+   "options": [
+    "Un 100 %: tiene que duplicarse",
+    "Un 50 %",
+    "Un 25 %"
+   ],
+   "explanation": "Tras caer a la mitad, recuperarse exige duplicar lo que queda: un 100 %. Lo tentador es pensar que basta con un 50 %, pero ese 50 % se calcula sobre una cantidad ya mucho más pequeña. Por eso las caídas grandes cuestan tanto de recuperar."
   },
   "u4l5-2": {
    "prompt": "Según la ESMA, ¿qué porcentaje de cuentas minoristas de CFD pierde dinero?",
@@ -426,12 +447,6 @@
     "Una captura de un mes bueno no dice nada de los meses malos que no enseña.",
     "No aparece registrado y solo tiene capturas de días buenos: te ahorras 99 € al mes y probablemente mucho más."
    ]
-  },
-  "u4l5-8": {
-   "prompt": "Según Barber y Odean, los hogares que más operaban ganaban un 11,4 % anual y el mercado un 17,9 %. ¿Cuántos puntos al año se dejaban?",
-   "options": [],
-   "explanation": "17,9 − 11,4 = 6,5 puntos al año, sobre todo por costes y exceso de confianza.",
-   "unit": "puntos"
   },
   "u4l5-10": {
    "prompt": "Lo que funciona: aportar con regularidad, diversificar, costes bajos, mucho tiempo y no vender en ____.",

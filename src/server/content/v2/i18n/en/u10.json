@@ -10,6 +10,22 @@
    "steps": [
     {
      "texts": [
+      "Switching funds",
+      "Pablo",
+      "I've got €5,000 in a fund, with €1,000 of gains.",
+      "I've found a similar one that's cheaper. How do I switch?",
+      "What do you tell him?",
+      "Sell, and use the money to buy the new one",
+      "Selling means paying tax on the €1,000 gain: about €190 to Hacienda (the Spanish tax office).",
+      "Ask for a transfer from the old fund to the new one",
+      "That's it! In Spain, a fund transfer isn't taxed. He'll pay when he sells out completely.",
+      "Wait until you don't have any gains",
+      "That could take years. With a transfer he switches today, without paying.",
+      "Careful: for it to count as a transfer, the money can't pass through your account."
+     ]
+    },
+    {
+     "texts": [
       "Who does what?",
       "An **investment fund** pools the money of thousands of people, who buy **units**, and invests it according to a policy. Who does each job?",
       "Management company",
@@ -34,26 +50,10 @@
      ]
     },
     {
-     "texts": [
-      "Switching funds",
-      "Pablo",
-      "I've got €5,000 in a fund, with €1,000 of gains.",
-      "I've found a similar one that's cheaper. How do I switch?",
-      "What do you tell him?",
-      "Sell, and use the money to buy the new one",
-      "Selling means paying tax on the €1,000 gain: about €190 to Hacienda (the Spanish tax office).",
-      "Ask for a transfer from the old fund to the new one",
-      "That's it! In Spain, a fund transfer isn't taxed. He'll pay when he sells out completely.",
-      "Wait until you don't have any gains",
-      "That could take years. With a transfer he switches today, without paying.",
-      "Careful: for it to count as a transfer, the money can't pass through your account."
-     ]
-    },
-    {
      "title": "Active or index",
-     "body": "There are **actively managed** funds (the manager picks investments to try to beat the index) and **index** funds (they copy an index at low cost).\n\nThe price of each unit, the **net asset value (NAV)**, is calculated once a day. And a fund doesn't guarantee gains: its value goes up and down with what it holds.",
+     "body": "There are **actively managed** funds (the manager picks investments to try to beat the index) and **index** funds (they copy an index at low cost).\n\nThe price of each unit, the **net asset value (NAV)**, is calculated once a day. And a fund doesn't guarantee gains: its value goes up and down with what it holds.\n\nTransferring between funds is like changing lanes without paying a toll.",
      "key": "A fund pools many people's money to buy many assets, with a management company in charge.",
-     "tip": "Transferring between funds is like changing lanes without paying a toll."
+     "tip": "Try it: in Market, search for IWDA, an ETF that copies the MSCI World index, and add it to your Favourites."
     }
    ]
   },
@@ -89,15 +89,32 @@
     },
     {
      "title": "Sharpe's arithmetic",
-     "body": "1. All investors together **are** the market.\n2. Before costs, the average active investor earns the same as the market.\n3. After costs, they **must** earn less.\n\nIt's not that managers are bad: they compete against each other and charge more. SPIVA (Europe, end of 2025): over just **1 year**, **81.8 %** of European equity funds were already behind their index. Buffett won a 10-year bet with an S&P 500 index fund against a selection of *hedge funds*.",
+     "body": "1. All investors together **are** the market.\n2. Before costs, the average active investor earns the same as the market.\n3. After costs, they **must** earn less.\n\nIt's not that managers are bad: they compete against each other and charge more. SPIVA (Europe, end of 2025): over just **1 year**, **81.8 %** of European equity funds were already behind their index. Buffett won a 10-year bet with an S&P 500 index fund against a selection of *hedge funds*. If hardly anyone beats the index, buying the index already puts you ahead of almost everyone.",
      "key": "Over the long run, the vast majority of active funds return less than their index, mainly because of costs.",
-     "tip": "If hardly anyone beats the index, buying the index already puts you ahead of almost everyone."
+     "tip": "Try it: in the simulator, buy a little CSPX, an ETF that copies the S&P 500, and let it grow."
     }
    ]
   },
   "u10l5": {
    "title": "Accumulating or distributing",
    "steps": [
+    {
+     "texts": [
+      "Seeing the money",
+      "Lucía",
+      "I prefer the distributing one: that way I «see» the money.",
+      "With the accumulating one it feels like I'm not earning anything.",
+      "Lucía has €10,000 in a fund that pays out 3 % in dividends.",
+      "What do you tell her?",
+      "You're right, the accumulating one gives you nothing",
+      "It does: her €300 get reinvested and her units are worth more.",
+      "You earn the same, just reinvested, and you pay tax later",
+      "That's it! With the distributing one she'd receive €300, but after withholding she'd get €243.",
+      "It doesn't matter, pick whichever you like",
+      "Before tax they return the same. If you don't need the income, accumulating usually wins.",
+      "Not seeing the money doesn't mean you're not earning it."
+     ]
+    },
     {
      "texts": [
       "Acc or Dist?",
@@ -123,33 +140,32 @@
      ]
     },
     {
-     "texts": [
-      "Seeing the money",
-      "Lucía",
-      "I prefer the distributing one: that way I «see» the money.",
-      "With the accumulating one it feels like I'm not earning anything.",
-      "Lucía has €10,000 in a fund that pays out 3 % in dividends.",
-      "What do you tell her?",
-      "You're right, the accumulating one gives you nothing",
-      "It does: her €300 get reinvested and her units are worth more.",
-      "You earn the same, just reinvested, and you pay tax later",
-      "That's it! With the distributing one she'd receive €300, but after withholding she'd get €243.",
-      "It doesn't matter, pick whichever you like",
-      "Before tax they return the same. If you don't need the income, accumulating usually wins.",
-      "Not seeing the money doesn't mean you're not earning it."
-     ]
-    },
-    {
      "title": "Which suits each stage",
      "body": "To **build up** wealth over years, the accumulating version is usually more efficient: the €300 keep working. The distributing one makes sense if you **need income** (in retirement, for example).\n\nIt's not that one returns more: what changes is when you pay tax.",
      "key": "Accumulating reinvests and defers tax; distributing pays you income that's taxed every year.",
-     "tip": "Look at the ETF's name: «Acc» or «Dist» tells you which it is."
+     "tip": "Try it: in Market, search for Vanguard FTSE All-World and you'll find both versions, Acc and Dist."
     }
    ]
   },
   "u10l6": {
    "title": "Physical and synthetic replication",
    "steps": [
+    {
+     "texts": [
+      "Two ETFs on the same index",
+      "Ana",
+      "I can't decide between two ETFs on the same index. One's physical, with a 0.07 % TER. The other's synthetic, at 0.05 %.",
+      "I'll just go for the cheaper one, right?",
+      "What else should she look at?",
+      "Nothing: always the cheapest",
+      "The TER matters, but so does how far it really strays from the index, and its size.",
+      "The actual tracking difference, the size and the replication method",
+      "Nice! Those are the pieces for comparing two ETFs on the same index.",
+      "How many years it's been on the market",
+      "It helps a bit, but the key is how far it strays and its size.",
+      "Two ETFs on the same index aren't identical: check how far each one strays."
+     ]
+    },
     {
      "texts": [
       "Physical or synthetic?",
@@ -175,32 +191,34 @@
      ]
     },
     {
-     "texts": [
-      "Two ETFs on the same index",
-      "Ana",
-      "I can't decide between two ETFs on the same index. One's physical, with a 0.07 % TER. The other's synthetic, at 0.05 %.",
-      "I'll just go for the cheaper one, right?",
-      "What else should she look at?",
-      "Nothing: always the cheapest",
-      "The TER matters, but so does how far it really strays from the index, and its size.",
-      "The actual tracking difference, the size and the replication method",
-      "Nice! Those are the pieces for comparing two ETFs on the same index.",
-      "How many years it's been on the market",
-      "It helps a bit, but the key is how far it strays and its size.",
-      "Two ETFs on the same index aren't identical: check how far each one strays."
-     ]
-    },
-    {
      "title": "How far it strays",
      "body": "**Tracking difference** is how far the ETF falls behind (or gets ahead of) its index over a year. It's usually similar to the TER.\n\nSynthetic replication can track the index very precisely and, in some cases, save on tax. Look at the tracking difference alongside the ETF's size and its replication method.",
      "key": "Physical: it buys what's in the index. Synthetic: a bank pays it what the index does.",
-     "tip": "Neither kind of replication is bad: what matters is understanding the risk each one adds."
+     "tip": "Try it: in Market, search for IWDA and XDWD: two ETFs from different providers that copy the same MSCI World."
     }
    ]
   },
   "u10l7": {
    "title": "Reading a fund's factsheet (KID)",
    "steps": [
+    {
+     "texts": [
+      "«It's an opportunity»",
+      "Laura",
+      "Salesperson",
+      "Laura, this is an opportunity. You need to get in now.",
+      "The product's official fact sheet, the KID, says: risk indicator 7. Recommended holding period: 1 day.",
+      "I don't quite get the product's objective…",
+      "What does Laura do?",
+      "She buys it: if it has a KID, it's safe",
+      "Having a KID only means it gives information, not that it's right for her.",
+      "She doesn't buy it until she understands what it is and how much she could lose",
+      "Nice! Risk 7 and a one-day horizon: a complex, speculative product.",
+      "She buys a little to try it out",
+      "Trying something you don't understand isn't learning: it's gambling.",
+      "That's what the KID is for: seeing in a minute that something isn't for you."
+     ]
+    },
     {
      "texts": [
       "Is it in the KID?",
@@ -226,28 +244,10 @@
      ]
     },
     {
-     "texts": [
-      "«It's an opportunity»",
-      "Laura",
-      "Salesperson",
-      "Laura, this is an opportunity. You need to get in now.",
-      "The KID says: risk indicator 7. Recommended holding period: 1 day.",
-      "I don't quite get the product's objective…",
-      "What does Laura do?",
-      "She buys it: if it has a KID, it's safe",
-      "Having a KID only means it gives information, not that it's right for her.",
-      "She doesn't buy it until she understands what it is and how much she could lose",
-      "Nice! Risk 7 and a one-day horizon: a complex, speculative product.",
-      "She buys a little to try it out",
-      "Trying something you don't understand isn't learning: it's gambling.",
-      "That's what the KID is for: seeing in a minute that something isn't for you."
-     ]
-    },
-    {
      "title": "What to look for in a minute",
-     "body": "1. **ISIN:** the fund's ID card (12 characters; it starts with the country, like IE or LU).\n2. **Objective and policy:** what does it buy?\n3. **Risk indicator** (1-7): a money market fund is usually a 1; a global equity fund, around 4; a single-sector or emerging-markets fund, higher.\n4. Annual **costs**.\n5. **Recommended holding period.**",
+     "body": "1. **ISIN:** the fund's ID card (12 characters; it starts with the country, like IE or LU).\n2. **Objective and policy:** what does it buy?\n3. **Risk indicator** (1-7): a money market fund is usually a 1; a global equity fund, around 4; a single-sector or emerging-markets fund, higher.\n4. Annual **costs**.\n5. **Recommended holding period.**\n\nIf you don't understand a product's KID, don't buy it.",
      "key": "In 3 pages, the KID tells you what you're buying, how much it can hurt and what it costs.",
-     "tip": "If you don't understand a product's KID, don't buy it."
+     "tip": "Try it: ask your tutor Lumi what to check in an ETF before you buy it."
     }
    ]
   },
@@ -257,18 +257,6 @@
   }
  },
  "questions": {
-  "u10l1-2": {
-   "prompt": "A fund has a net asset value of €12.50. You invest €1,000. How many units do you buy?",
-   "options": [],
-   "explanation": "1,000 ÷ 12.50 = 80 units.",
-   "unit": "units"
-  },
-  "u10l1-3": {
-   "prompt": "A year later the net asset value is €13.75. How much are your 80 units worth?",
-   "options": [],
-   "explanation": "80 × 13.75 = €1,100: 10 % more.",
-   "unit": "€"
-  },
   "u10l1-4": {
    "prompt": "If the fund's management company goes bust, what happens to your money?",
    "options": [
@@ -311,6 +299,38 @@
    ],
    "explanation": "A normal investment fund doesn't guarantee gains: its value goes up and down with what it holds."
   },
+  "u10l1-11": {
+   "prompt": "Ana wants to invest €50 a month in companies from all over the world. What suits her best?",
+   "options": [
+    "A global index fund or ETF",
+    "The share that has risen most this year",
+    "Buying a different single share every month"
+   ],
+   "explanation": "A fund pools many people's money and gives you thousands of companies with little money. Buying single shares one by one seems more controlled, but with little money you diversify poorly and pay more fees.",
+   "feedback": [
+    "Good: with each contribution she buys a small piece of thousands of companies, at low cost.",
+    "Everything in a single company, chosen for what it has already risen: a lot of risk.",
+    "With €50 a month it would take her years to be spread out, and she'd pay a fee on every purchase."
+   ]
+  },
+  "u10l1-12": {
+   "prompt": "What do you reply?",
+   "options": [
+    "If a bank sells it, it's safe",
+    "A fund goes up and down with what it holds: it doesn't guarantee gains",
+    "They don't lose: the CNMV guarantees it"
+   ],
+   "explanation": "A normal fund guarantees nothing: it's worth what its assets are worth. Being sold by a bank or supervised by the CNMV gives you certainty about the rules and custody, not about returns.",
+   "feedback": [
+    "The bank sells it, but its value depends on what the fund buys.",
+    "That's it. And the FGD doesn't cover investment funds.",
+    "The CNMV supervises funds, but it doesn't guarantee they make money."
+   ],
+   "lines": [
+    "The bank is offering me a fund and says it «always ends up winning».",
+    "Don't funds ever lose?"
+   ]
+  },
   "u10l4-1": {
    "prompt": "According to SPIVA (Europe, end of 2025), what percentage of European equity funds lagged their index over 10 years?",
    "options": [
@@ -319,12 +339,6 @@
     "65 %"
    ],
    "explanation": "Over 1 year it was already 81.8 %; over 10 years, almost all of them."
-  },
-  "u10l4-2": {
-   "prompt": "Out of 100 active European equity funds, how many beat their index over 10 years, going by that 97 %?",
-   "options": [],
-   "explanation": "100 − 97 = 3. And the real problem is finding those 3 in advance.",
-   "unit": "funds"
   },
   "u10l4-3": {
    "prompt": "Put William Sharpe's reasoning in order.",
@@ -365,6 +379,24 @@
    ],
    "explanation": "Some do beat it; the problem is that they're few and almost impossible to spot in advance."
   },
+  "u10l4-11": {
+   "prompt": "What do you reply?",
+   "options": [
+    "Yes: if the bank says so, it must be true",
+    "First compare it with a cheap index fund in the same market and check whether it really has beaten it for many years",
+    "Yes, and the more it charges, the better the manager"
+   ],
+   "explanation": "According to SPIVA, almost all active funds fall behind their index over 10 years, and their costs repeat every year. Trusting the bank is tempting, but whoever sells it to you gets paid for doing so.",
+   "feedback": [
+    "The bank gets paid to sell it. Most active funds don't beat their index.",
+    "That's it. And remember: you pay that 1.8 % every year, win or lose.",
+    "Charging more doesn't make you better: costs subtract every year."
+   ],
+   "lines": [
+    "My bank recommends its star fund: it charges 1.8 % a year.",
+    "It says its manager beats the market. Should I sign up?"
+   ]
+  },
   "u10l5-1": {
    "prompt": "Match each term to its meaning.",
    "options": [
@@ -380,12 +412,6 @@
     "The 19 % taken off when you're paid",
     "Reinvests the dividends"
    ]
-  },
-  "u10l5-2": {
-   "prompt": "A distributing ETF pays you €400 in dividends this year. With 19 % withheld, how much reaches you?",
-   "options": [],
-   "explanation": "400 × 0.81 = €324. The other €76 go to Hacienda this year.",
-   "unit": "€"
   },
   "u10l5-3": {
    "prompt": "In Spain, which version is usually more tax-efficient for building wealth over years?",
@@ -410,12 +436,6 @@
     "The other way round: Marta would have to sell units to get income and Pablo would pay tax for no reason."
    ]
   },
-  "u10l5-7": {
-   "prompt": "You invest €10,000 in an accumulating fund that receives 3 % a year in dividends and reinvests them. Not counting price rises, how much would you have after 2 years? (round)",
-   "options": [],
-   "explanation": "10,000 × 1.03² = €10,609. Reinvested dividends earn dividends too.",
-   "unit": "€"
-  },
   "u10l5-10": {
    "prompt": "What a distributing fund pays out is taxed in the year you ____ it.",
    "options": [
@@ -425,6 +445,20 @@
     "receive"
    ],
    "explanation": "That's why, if you don't need that income, you pay tax earlier than you have to."
+  },
+  "u10l5-11": {
+   "prompt": "In Market you find Vanguard FTSE All-World in two versions, Acc and Dist. You're 22 and you'll pay in every month for decades. Which do you choose?",
+   "options": [
+    "The Acc one, which reinvests the dividends",
+    "The Dist one, to keep collecting the dividends",
+    "It doesn't matter: they're different funds"
+   ],
+   "explanation": "If you don't need income, the Acc version lets dividends be reinvested without going through the taxman every year. Collecting with the Dist version is tempting because you «see» the money, but that income is taxed and stops compounding.",
+   "feedback": [
+    "Good: everything keeps compounding and you don't pay tax on the dividends until you sell.",
+    "You'd collect them, but you'd pay tax every year on income you don't need.",
+    "They hold the same companies: only what they do with the dividends changes."
+   ]
   },
   "u10l6-1": {
    "prompt": "What's true of a physically replicated ETF? Select all.",
@@ -471,12 +505,6 @@
     "Buys every stock in the index"
    ]
   },
-  "u10l6-6": {
-   "prompt": "An index rises 10.00 % in a year and the ETF that replicates it, 9.78 %. What is the tracking difference in points?",
-   "options": [],
-   "explanation": "10.00 − 9.78 = 0.22 points, in line with what a cheap ETF costs.",
-   "unit": "points"
-  },
   "u10l6-10": {
    "prompt": "In a synthetic ETF, the bank it signs the swap with is called the ____.",
    "options": [
@@ -487,6 +515,20 @@
    ],
    "explanation": "If the counterparty fails, the ETF can lose up to what it's owed, which UCITS caps at 10 %."
   },
+  "u10l6-11": {
+   "prompt": "You read that the bank your synthetic ETF has its swap with is in trouble. What do you do?",
+   "options": [
+    "Nothing: an ETF can't lose because of that",
+    "I check its exposure to the bank and its collateral before deciding",
+    "I sell everything now, before I lose it all"
+   ],
+   "explanation": "The risk of synthetic replication is the counterparty, but it's capped: at most 10 % of the fund, and with collateral. Panic selling is tempting, but it assumes a much bigger risk than the real one; ignoring it completely is also a mistake.",
+   "feedback": [
+    "It can lose something: that's exactly the risk specific to synthetic replication.",
+    "Good: UCITS limits counterparty exposure to 10 % and the ETF holds a basket of assets as collateral.",
+    "You wouldn't lose it all: the rules limit what the ETF can have at stake with that bank."
+   ]
+  },
   "u10l7-1": {
    "prompt": "Extract from a (fictional) KID: «Example World Fund, Acc class. ISIN IE00XXXXXXXX. Objective: to replicate the MSCI World index. Risk indicator: 4 out of 7. Ongoing charges: 0.20 % a year. Recommended holding period: 5 years». What level of risk does it indicate?",
    "options": [
@@ -495,12 +537,6 @@
     "Very low: 4 out of 100"
    ],
    "explanation": "A 4 out of 7 is typical for a global equity fund: it swings quite a bit, but it's diversified."
-  },
-  "u10l7-2": {
-   "prompt": "Extract from a (fictional) KID: «Example World Fund, Acc class. ISIN IE00XXXXXXXX. Objective: to replicate the MSCI World index. Risk indicator: 4 out of 7. Ongoing charges: 0.20 % a year. Recommended holding period: 5 years». If you invest €5,000, how much will you pay a year in ongoing charges?",
-   "options": [],
-   "explanation": "5,000 × 0.20 % = €10 a year.",
-   "unit": "€"
   },
   "u10l7-3": {
    "prompt": "What will you always find in a KID? Select all.",
@@ -547,6 +583,20 @@
     "ISIN"
    ],
    "explanation": "With the ISIN you can find the exact fund at any broker or on the CNMV website."
+  },
+  "u10l7-11": {
+   "prompt": "You compare the KIDs of two funds that copy the MSCI World. Both have a risk indicator of 4. One costs 0.20 % a year and the other 1.80 %. You'll hold it for 20 years. Which do you choose?",
+   "options": [
+    "The 1.80 % one: if it costs more, it must be better",
+    "It doesn't matter: it's a small difference",
+    "The 0.20 % one"
+   ],
+   "explanation": "If two funds buy the same thing, cost is what sets them apart most. Thinking more expensive is better is tempting, but in an index fund the extra cost only subtracts.",
+   "feedback": [
+    "They copy the same index: paying more doesn't give you more, it just leaves you with less.",
+    "In one year it seems small, but over 20 years it eats a big chunk of your gains.",
+    "Good: same index and same risk; the cost difference repeats every year for 20 years."
+   ]
   }
  }
 }

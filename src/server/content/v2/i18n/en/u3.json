@@ -1,7 +1,7 @@
 {
  "unit": {
   "title": "Debt and credit",
-  "description": "What debt really costs, which kinds to avoid and how to get out of it",
+  "description": "What debt really costs, which kinds to avoid and why expensive debt comes before investing",
   "section": "Your money in order"
  },
  "lessons": {
@@ -29,9 +29,9 @@
       "What a loan really costs",
       "You borrow **€6,000**. The bank offers you a 7 % nominal rate and a 3 % arrangement fee. The **APR** adds in the fees and tells you the real cost over a year.",
       "Over 4 years, how much will you end up paying back in total, including the fee?",
-      "About €6,420",
-      "About €7,080",
-      "About €8,000",
+      "The €6,000 and not much more",
+      "About €1,000 more than you borrowed",
+      "Double what you borrowed",
       "A €143.68 payment × 48 months + a €180 fee = **€7,077**. The €6,000 costs you €1,077.",
       "With €6,000, find the term at which the loan costs you less than €500.",
       "A low monthly payment isn't a cheap loan: it's usually a **longer** one. To compare, always look at the **APR** and how much you pay in total.",
@@ -42,14 +42,30 @@
     },
     {
      "title": "Nominal rate and APR",
-     "body": "• **Nominal rate (TIN in Spain):** the «pure» interest you're charged on the money you borrow.\n• **APR (TAE in Spain):** adds the compulsory **fees** and takes into account how often you pay. It's the real cost over a year.\n\nOver 3 years, a loan at a 6 % nominal rate with a 3 % fee costs more than one at a 7.5 % nominal rate with no fee: **an APR of 8.36 % versus 7.76 %**.",
-     "key": "To compare loans, look at the APR, not the nominal rate or the monthly payment."
+     "body": "• **Nominal rate (TIN in Spain):** the «pure» interest you're charged on the money you borrow.\n• **APR (TAE in Spain):** adds the compulsory **fees** and takes into account how often you pay. It's the real cost over a year.\n\nOver 3 years, a loan at a 6 % nominal rate with a 3 % fee costs more than one at a 7.5 % nominal rate with no fee: **an APR of 8.36 % versus 7.76 %**.\n\nAnd if you're thinking of investing: a loan at 7 % APR costs you that 7 % **for sure** every year.",
+     "key": "To compare loans, look at the APR, not the nominal rate or the monthly payment.",
+     "tip": "Try it: ask your tutor Lumi what your loan would cost over a different term."
     }
    ]
   },
   "u3l2": {
    "title": "Good debt and bad debt",
    "steps": [
+    {
+     "texts": [
+      "Japan on instalments",
+      "Marta",
+      "I'm off to Japan! The trip costs €3,000 and they'll finance it over 24 months at 18 % APR. I deserve it!",
+      "What do you tell her?",
+      "Great, go for it!",
+      "At that rate she'll pay **over €500** in interest, and she'll still be paying for the trip more than a year after she gets back.",
+      "What if you save up for a few months and go next year?",
+      "Good idea! With €250 a month she'll have it in a year, **with no interest**, and she'll enjoy the trip just as much.",
+      "Put it on the revolving card, it's easier",
+      "Even worse: the revolving card's small payment can drag the debt out for years.",
+      "Fine… but next year I'm going, no matter what!"
+     ]
+    },
     {
      "texts": [
       "Does it create value or destroy it?",
@@ -75,19 +91,10 @@
      ]
     },
     {
-     "texts": [
-      "Japan on instalments",
-      "Marta",
-      "I'm off to Japan! The trip costs €3,000 and they'll finance it over 24 months at 18 % APR. I deserve it!",
-      "What do you tell her?",
-      "Great, go for it!",
-      "At that rate she'll pay **over €500** in interest, and she'll still be paying for the trip more than a year after she gets back.",
-      "What if you save up for a few months and go next year?",
-      "Good idea! With €250 a month she'll have it in a year, **with no interest**, and she'll enjoy the trip just as much.",
-      "Put it on the revolving card, it's easier",
-      "Even worse: the revolving card's small payment can drag the debt out for years.",
-      "Fine… but next year I'm going, no matter what!"
-     ]
+     "title": "Expensive debt comes before investing",
+     "body": "A debt at 20 % charges you that 20 % **for sure** every year. No investment guarantees you'll earn that: not even the stock market, which has good years and very bad ones.\n\nThat's why expensive debt goes before investing. Cheap, affordable debt, like a mortgage with a reasonable payment, can live alongside your portfolio.",
+     "key": "If a debt costs you more than you expect to earn by investing, clear it first.",
+     "tip": "Try it: ask your tutor Lumi whether your debt is expensive or cheap."
     }
    ]
   },
@@ -97,7 +104,7 @@
     {
      "texts": [
       "The small-payment trap",
-      "A **revolving** credit card lets you pay a small fixed amount each month. Seems convenient… but the payment barely covers the interest.",
+      "You buy a laptop on your card and pick the «easy payment» option of a **revolving** card: you owe **€3,000** at 22 % and pay **€60 a month**. Sounds like little… but the payment barely covers the interest.",
       "You owe €3,000 at 22 % and pay €60 a month. How long does it take you to pay it all off?",
       "About 4 years",
       "Over 11 years",
@@ -123,7 +130,9 @@
       "Good: negotiating a delay or asking for help is far, far cheaper than a payday loan.",
       "I take it and pay it back with the revolving card",
       "Covering one expensive debt with another is the fastest way into a spiral.",
-      "Golden rule: if someone offers you **quick, easy** money, it's usually **expensive**. And if you think an interest rate is abusive, complain to the lender and, if they don't respond properly, to the Bank of Spain."
+      "Golden rule: if someone offers you **quick, easy** money, it's usually **expensive**.",
+      "If an interest rate seems abusive, complain to the bank and then to the Bank of Spain.",
+      "Try it: in Market, see how the S&P 500 goes up and down; your revolving card always charges."
      ]
     }
    ]
@@ -152,9 +161,10 @@
      ]
     },
     {
-     "title": "What doesn't work",
-     "body": "Spreading what's left over with no plan, or taking on another expensive debt to pay off the old ones.\n\nAnd a tip: when you clear a debt, **its payment gets added to the next one**. That's why the plan speeds up as it goes, like a snowball that keeps growing.",
-     "key": "Minimums on all of them; the rest on just one. That's how you get out of debt."
+     "title": "What doesn't work (and what comes next)",
+     "body": "Spreading what's left over without a plan, or taking on another expensive debt to pay off the old ones.\n\nAnd a trick: when you clear a debt, **its payment gets added to the next one**. That's why the plan speeds up over time, like a growing snowball. When the last one goes, that freed-up payment becomes your **monthly contribution to invest**.",
+     "key": "Minimums on all of them; the rest on just one. That's how you get out of debt.",
+     "tip": "Try it: when you pay off a debt, buy an ETF in the simulator with that payment."
     }
    ]
   },
@@ -195,7 +205,7 @@
       "Loan from your family at 0 %, cushion in place",
       "Paying off at 0 % earns you nothing (though owing your family weighs on you too).",
       "Decide what Bruno would do in each case.",
-      "**In order:** cushion expensive debts (over 7-8 %) long-term investing, and pay off the cheap ones if it gives you peace of mind. Before paying off a mortgage early, check whether there's a fee for doing so.",
+      "**In order:** emergency fund, expensive debts (over 7-8 %) and then long-term investing; pay off cheap ones early if it gives you peace of mind, checking first whether there's a fee. Try it: tell your tutor Lumi your situation and ask where to start.",
       "Ask yourself first: does he have a cushion? Then look at the debt's interest rate.",
       "What would Bruno do in each case?"
      ]
@@ -227,12 +237,6 @@
    ],
    "explanation": "APR of A ≈ 8.36 %; of B ≈ 7.76 %. The arrangement fee makes A dearer even though its nominal rate is lower."
   },
-  "u3l1-3": {
-   "prompt": "You borrow €10,000 over 5 years at a 7 % nominal rate and pay €198.01 a month. How much do you pay in interest in total? (round it)",
-   "options": [],
-   "explanation": "198.01 × 60 = €11,880.60; minus the €10,000 borrowed = about €1,881 in interest.",
-   "unit": "€"
-  },
   "u3l1-7": {
    "prompt": "Match each term with what it means.",
    "options": [
@@ -249,22 +253,6 @@
     "The loan's pure interest"
    ]
   },
-  "u3l1-8": {
-   "prompt": "You borrow €20,000 at an 8 % nominal rate. Over 5 years you pay €4,332 in interest; over 8 years, €7,142. How much more do you pay by stretching it?",
-   "options": [],
-   "explanation": "7,142 − 4,332 = €2,810 more for having a lower payment.",
-   "unit": "€"
-  },
-  "u3l1-9": {
-   "prompt": "A 12 % nominal rate with monthly payments works out as an APR of ____.",
-   "options": [
-    "12 %",
-    "1 %",
-    "144 %",
-    "12.68 %"
-   ],
-   "explanation": "1.01¹² − 1 ≈ 0.1268 12.68 %. Each month's interest earns interest."
-  },
   "u3l1-10": {
    "prompt": "What can make a loan more expensive? Tick all.",
    "options": [
@@ -274,6 +262,38 @@
     "An arrangement fee"
    ],
    "explanation": "Paying back early with no penalty cuts the interest: it's the only thing on the list that makes it cheaper."
+  },
+  "u3l1-11": {
+   "prompt": "You want to start investing and the bank offers you a personal loan at 9 % APR to do it «in a big way». What do you do?",
+   "options": [
+    "I don't take it: I start with what I save each month",
+    "I take it: the stock market goes up in the long run",
+    "I borrow half, just in case"
+   ],
+   "explanation": "The debt charges a guaranteed 9 %; the investment, on the other hand, can fall just when the payment is due. It's tempting to think the market always goes up, but in the short run nobody guarantees it.",
+   "feedback": [
+    "With no interest to pay, any gain is yours, and a fall doesn't leave you owing money.",
+    "You'd have to earn over 9 % every year just to break even, and the payment arrives even if the market falls.",
+    "Less risk than borrowing it all, but you still owe a guaranteed 9 % for something that isn't guaranteed."
+   ]
+  },
+  "u3l1-12": {
+   "prompt": "What do you reply to Lumi?",
+   "options": [
+    "Ask them to stretch the term so you pay less",
+    "First ask for the APR and the total you'll pay",
+    "Sign: at 0 % you pay nothing"
+   ],
+   "explanation": "A 0 % nominal rate can hide opening fees or tied insurance that only show up in the APR and the total to pay. It's tempting to stick with the «0 %», but what you compare is the APR.",
+   "feedback": [
+    "A lower payment, but more months paying interest and fees.",
+    "That's it! With fees and insurance, a 0 % nominal rate can turn out expensive.",
+    "The nominal rate doesn't include fees or compulsory insurance: look at the APR."
+   ],
+   "lines": [
+    "The dealer is offering me the car at a 0 % nominal rate.",
+    "It's free! Shall I sign now?"
+   ]
   },
   "u3l2-2": {
    "prompt": "Match each debt with its description.",
@@ -298,12 +318,6 @@
     "False"
    ],
    "explanation": "Well above 7-8 %: you need to get rid of it as soon as possible."
-  },
-  "u3l2-6": {
-   "prompt": "You take home €1,800. If your debt repayments shouldn't go over 35 % of your income, what's the most you can pay a month?",
-   "options": [],
-   "explanation": "1,800 × 0.35 = €630.",
-   "unit": "€"
   },
   "u3l2-7": {
    "prompt": "Which debt makes most sense?",
@@ -346,11 +360,20 @@
     "If the pay rise comes, the debt pays for itself in a short time: it's debt that can create value."
    ]
   },
-  "u3l3-1": {
-   "prompt": "You owe €1,000 on a revolving card at 2 % a month. How many euros of interest do you pay in the first month?",
-   "options": [],
-   "explanation": "1,000 × 0.02 = €20.",
-   "unit": "€"
+  "u3l2-10": {
+   "prompt": "Before you start investing, do you clear this debt or can it live alongside your portfolio?",
+   "options": [
+    "Fixed mortgage at 2 % with an affordable payment",
+    "Instalment purchase at 18 %",
+    "Payday loan",
+    "Revolving card at 22 %",
+    "Student loan at 3 %"
+   ],
+   "explanation": "Expensive debt charges more, for sure, than any investment can promise you, so it goes first. With cheap, affordable debt there's less of a rush: paying it off early only saves you its interest, and you can invest at the same time.",
+   "right": [
+    "Clear it first",
+    "Can live alongside"
+   ]
   },
   "u3l3-3": {
    "prompt": "Tick the messages that are a debt trap or a scam.",
@@ -457,12 +480,6 @@
     "Highest interest first"
    ]
   },
-  "u3l4-4": {
-   "prompt": "You owe €1,200 on a revolving card at 22 % a year. How much interest do you save in a year if you clear it now? (approximate, simple interest)",
-   "options": [],
-   "explanation": "1,200 × 0.22 = €264 a year.",
-   "unit": "€"
-  },
   "u3l4-6": {
    "prompt": "Pablo has tried the avalanche twice and given up: his big debt never seems to end and he loses heart. What does he do?",
    "options": [
@@ -501,11 +518,19 @@
    ],
    "explanation": "Paying the minimum on all and putting the extra into one is exactly the basis of both methods."
   },
-  "u3l5-2": {
-   "prompt": "You pay €3,000 off a loan at 9 % early. Roughly how much interest do you save in the first year?",
-   "options": [],
-   "explanation": "3,000 × 0.09 = €270: a guaranteed 9 % return.",
-   "unit": "€"
+  "u3l4-11": {
+   "prompt": "Pablo has just paid off his last expensive debt and now has €300 a month free that used to go on payments. He already has an emergency fund. What does he do?",
+   "options": [
+    "He leaves it in his current account",
+    "He raises his spending: he's earned it",
+    "He turns it into an automatic contribution to an index ETF"
+   ],
+   "explanation": "Pablo was already living without that €300, so investing it costs him nothing day to day. Raising his spending is tempting as a reward, but it stops dead the momentum he'd built.",
+   "feedback": [
+    "With nowhere to go, it gets spent and loses purchasing power too.",
+    "Tempting, but he misses the best chance to start investing without noticing.",
+    "He lives just as before, but now that €300 works for him."
+   ]
   },
   "u3l5-3": {
    "prompt": "Bruno has a fixed-rate mortgage at 2 %, a 6-month cushion and another €10,000 saved that he won't need for 15 years. What does he do?",
@@ -543,12 +568,6 @@
     "Nothing, because you don't earn interest"
    ],
    "explanation": "What you no longer pay is a guaranteed gain equal to the interest rate."
-  },
-  "u3l5-8": {
-   "prompt": "Your fixed-rate mortgage charges a 0.5 % fee for paying off early. You pay off €10,000. How much is the fee?",
-   "options": [],
-   "explanation": "10,000 × 0.005 = €50. Always check your contract before paying off early.",
-   "unit": "€"
   },
   "u3l5-9": {
    "prompt": "What do you tell Lumi?",

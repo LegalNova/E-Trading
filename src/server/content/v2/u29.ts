@@ -39,7 +39,7 @@ export default unit({
         say('lumi', 'Suelen proteger los bonos de calidad y la liquidez.'),
         say('lumi', 'Pero no siempre: en 2022, acciones −18 % y bonos −13 %.'),
       ]),
-      key('Cómo se mide', 'La **correlación** dice si dos activos se mueven a la vez. Va de **+1** (siempre igual) a **−1** (siempre al contrario). Un **0** significa que no hay relación.\n\n• S&P 500 y Euro Stoxx 50: alta (0,7-0,9).\n• Dos criptos grandes: muy alta.\n• Acciones y bonos de calidad: baja o negativa en muchas crisis.\n• Acciones y oro: baja y variable.', 'Diversificar de verdad es tener cosas que no se hundan todas el mismo día.'),
+      key('Cómo se mide', 'La **correlación** dice si dos activos se mueven a la vez. Va de **+1** (siempre igual) a **−1** (siempre al contrario). Un **0** significa que no hay relación.\n\n• S&P 500 y Euro Stoxx 50: alta (0,7-0,9).\n• Dos criptos grandes: muy alta.\n• Acciones y bonos de calidad: baja o negativa en muchas crisis.\n• Acciones y oro: baja y variable.', 'Diversificar de verdad es tener cosas que no se hundan todas el mismo día.', 'Pruébalo: sigue SPY, TLT y GLD en Mercado y compáralos el próximo día rojo.'),
     ], [
       match('Empareja cada correlación con su significado.', [['+1', 'Se mueven siempre igual'], ['−1', 'Se mueven siempre al contrario'], ['0', 'No hay relación entre ellos'], ['0,8', 'Suelen moverse en la misma dirección']], 'Cuanto más cerca de +1, menos te protege uno del otro.'),
       single('¿Qué pareja suele tener una correlación más alta?', ['Bitcoin y ethereum', 'Acciones y bonos del Estado de calidad', 'Acciones y oro'], 0, 'Las grandes criptos tienden a subir y caer juntas: combinarlas apenas diversifica.'),
@@ -85,7 +85,7 @@ export default unit({
         say('pablo', '¿Y lo de la jubilación? Me quedan 35 años.'),
         say('lumi', 'Ahí sí caben muchas acciones: hay tiempo para recuperarse de las caídas.'),
       ]),
-      key('Repartos de ejemplo', 'Estudios clásicos (Brinson y otros): este reparto explica la mayor parte de cómo oscila una cartera diversificada.\n\n• Conservador: 20-40 % acciones (caída posible: −10 a −20 %).\n• Moderado: 50-60 % (−20 a −30 %).\n• Decidido: 70-90 % (−30 a −45 %).\n• 100 % acciones: −50 % o más.\n\nCuanto más cerca está el objetivo, menos acciones. Una referencia antigua es «100 menos tu edad» en acciones; hoy muchos usan 110 o 120 menos la edad. Son ejemplos educativos, no recomendaciones.', 'Horizonte largo permite más acciones; horizonte corto pide más bonos y liquidez.'),
+      key('Repartos de ejemplo', 'Estudios clásicos (Brinson y otros): este reparto explica la mayor parte de cómo oscila una cartera diversificada.\n\n• Conservador: 20-40 % acciones (caída posible: −10 a −20 %).\n• Moderado: 50-60 % (−20 a −30 %).\n• Decidido: 70-90 % (−30 a −45 %).\n• 100 % acciones: −50 % o más.\n\nCuanto más cerca está el objetivo, menos acciones. Una referencia antigua es «100 menos tu edad» en acciones; hoy muchos usan 110 o 120 menos la edad. Son ejemplos educativos, no recomendaciones.', 'Horizonte largo permite más acciones; horizonte corto pide más bonos y liquidez.', 'Pruébalo: en Cartera, mira el peso de tus acciones y compáralo con tu perfil.'),
     ], [
       single('¿Qué decisión explica la mayor parte de las oscilaciones de una cartera diversificada?', ['Qué día de la semana compras', 'El reparto entre acciones, bonos y liquidez', 'Elegir el fondo que más subió el año pasado'], 1, 'Es la asignación de activos: la palanca principal del riesgo que asumes.'),
       num('Tienes 10.000 € en una cartera 60 % acciones y 40 % bonos. Las acciones caen un 40 % y los bonos se quedan igual. ¿Cuánto cae tu cartera en total?', 24, '%', '0,6 × 40 % = 24 %. Con 100 % acciones habrías caído un 40 %.'),
@@ -97,7 +97,8 @@ export default unit({
       num('Con la regla de «110 menos la edad», ¿qué porcentaje en acciones saldría a los 30 años?', 80, '%', '110 − 30 = 80 % en acciones. Es una orientación: tu tolerancia a las caídas también cuenta.'),
       timed(single('Rápido: una cartera 80 % acciones y 20 % bonos es de perfil…', ['Conservador', 'Decidido', 'Sin riesgo'], 1, 'En una crisis fuerte podría caer entre un 30 % y un 45 %.'), 12),
       chat(['Mi primo dice que con 25 años lo suyo es 100 % acciones.', 'Pero en 2020 lo vendí todo cuando cayó un 30 % 😬'], '¿Qué le dices a Lumi?', [['Tu primo tiene razón: 100 % acciones y aguanta', 'Por edad podrías, pero ya sabes que vendiste con un −30 %. Un plan que no aguantas no sirve.'], ['Mejor un reparto con algo de bonos que sí seas capaz de mantener', '¡Eso! La mejor mezcla es la que no abandonas en la próxima caída.'], ['Lo mejor es no invertir nada', 'Así evitas las caídas, pero la inflación se come tus ahorros poco a poco.']], 1, 'El reparto depende del horizonte y también de lo que aguantas sin vender.'),
-    ], { source: '4.4', minutes: 6, retire: [4, 5, 8] }),
+      scenario('Tienes dos objetivos: 2.000 € para un viaje dentro de un año y la jubilación, dentro de 40. ¿Cómo lo organizas?', [['Todo junto en una cartera con muchas acciones: a la larga sube', 'La jubilación aguanta una caída; el viaje no: un mal año en bolsa te dejaría sin él.'], ['El dinero del viaje en algo de poco riesgo y el de la jubilación con muchas acciones', '¡Eso! Cada objetivo tiene su plazo, y el plazo decide el reparto.'], ['Todo en un depósito, para no arriesgar nada', 'Para el viaje, bien. Para 40 años, la inflación se comería buena parte.']], 1, 'El reparto se decide por objetivo: el dinero con fecha cercana no depende de la bolsa, y el de décadas puede llevar muchas acciones. Meterlo todo junto obliga a elegir mal para uno de los dos.'),
+    ], { source: '4.4', minutes: 6, retire: [1, 4, 5, 7, 8] }),
 
     lesson('u29l4', 'Diversificar por países y divisas', [
       mission({
@@ -131,7 +132,7 @@ export default unit({
           { say: 'Mueve la acción y el dólar', mood: 'HAPPY' },
         ],
       }),
-      key('El sesgo de casa', 'Tendemos a invertir en lo que conocemos: el **sesgo doméstico**. Pero España es **menos del 1 %** de la bolsa mundial, y EE. UU., alrededor del 60-70 % del índice de países desarrollados.\n\nUn índice mundial reparte entre decenas de países y monedas: si una región tiene una década mala, no lo pagas todo tú.', 'Diversificar por países reduce el riesgo de elegir «el Japón de los próximos 30 años».'),
+      key('El sesgo de casa', 'Tendemos a invertir en lo que conocemos: el **sesgo doméstico**. Pero España es **menos del 1 %** de la bolsa mundial, y EE. UU., alrededor del 60-70 % del índice de países desarrollados.\n\nUn índice mundial reparte entre decenas de países y monedas: si una región tiene una década mala, no lo pagas todo tú.', 'Diversificar por países reduce el riesgo de elegir «el Japón de los próximos 30 años».', 'Pruébalo: revisa tu Cartera y cuenta cuánto depende de un solo país.'),
     ], [
       single('¿Qué peso aproximado tiene la bolsa española en la bolsa mundial?', ['Menos del 1 %', 'Un 10 %', 'Un 25 %'], 0, 'Por eso una cartera solo española concentra mucho, aunque tenga 35 empresas.'),
       tf('Japón fue la mayor bolsa del mundo en 1989 y tardó 34 años en recuperar su máximo.', true, 'Un solo país puede estancarse décadas. Diversificar por países protege de eso.'),
@@ -143,7 +144,7 @@ export default unit({
       fill('La tendencia a invertir sobre todo en tu propio país se llama sesgo ____.', 'doméstico', ['de confirmación', 'de recencia', 'de anclaje'], 'También se le llama sesgo local o «home bias».'),
       multi('¿Qué ventajas tiene repartir entre países? Marca todas.', ['Si una región tiene una década mala, no lo pagas todo', 'Te da acceso a empresas y sectores que no hay en tu país', 'Elimina las caídas de la bolsa', 'Reduce la dependencia de la economía de un solo país'], [0, 1, 3], 'Reduce el riesgo de un país, no el riesgo de mercado: si cae el mundo, cae tu cartera.'),
       single('¿Por qué en los fondos de bonos se suele elegir la versión cubierta a euros?', ['Porque son más baratos siempre', 'Porque la divisa podría moverse más que los propios bonos', 'Porque es obligatorio por ley'], 1, 'Un bono de calidad puede moverse poco; un 10 % de cambio de divisa borraría su papel de estabilizador.'),
-    ], { source: '3.4', minutes: 6, retire: [1, 5, 6] }),
+    ], { source: '3.4', minutes: 6, retire: [1, 2, 5, 6] }),
 
     lesson('u29l5', 'Carteras sencillas con indexados', [
       story('¿Solo el S&P 500?', [{ id: 'laura', name: 'Laura' }], [
@@ -178,7 +179,7 @@ export default unit({
           { say: 'Clasifica cada idea', mood: 'HAPPY' },
         ],
       }),
-      key('Uno, dos o tres productos', '• **Un producto:** un fondo o ETF de todo el mundo (MSCI ACWI o FTSE All-World), con miles de empresas de países desarrollados y emergentes.\n• **Dos:** acciones mundiales + bonos globales de calidad cubiertos a euros.\n• **Tres:** países desarrollados (MSCI World) + emergentes (10-12 %, más o menos su peso en el mundo) + bonos.\n\nSon ejemplos para entender cómo se construyen, no recomendaciones personalizadas.', 'Con uno a tres fondos indexados puedes tener miles de empresas de todo el mundo.', 'Una cartera aburrida es una cartera que funciona.'),
+      key('Uno, dos o tres productos', '• **Un producto:** un fondo o ETF de todo el mundo (MSCI ACWI o FTSE All-World), con miles de empresas de países desarrollados y emergentes.\n• **Dos:** acciones mundiales + bonos globales de calidad cubiertos a euros.\n• **Tres:** países desarrollados (MSCI World) + emergentes (10-12 %, más o menos su peso en el mundo) + bonos.\n\nSon ejemplos para entender cómo se construyen, no recomendaciones personalizadas.', 'Con uno a tres fondos indexados puedes tener miles de empresas de todo el mundo.', 'Pruébalo: busca VWCE en Mercado, un ETF de todo el mundo, y síguelo.'),
     ], [
       match('Empareja cada cartera de ejemplo con lo que lleva.', [['De un producto', 'Un fondo de acciones de todo el mundo'], ['De dos productos', 'Acciones mundiales + bonos de calidad'], ['De tres productos', 'Desarrollados + emergentes + bonos']], 'La proporción entre acciones y bonos depende del perfil y del horizonte.'),
       single('¿Cuántas empresas tiene aproximadamente un índice mundial como el MSCI ACWI o el FTSE All-World?', ['Unas 50', 'Unas 500', 'Entre 2.500 y 4.000'], 2, 'De decenas de países desarrollados y emergentes, en un solo producto.'),
@@ -190,12 +191,23 @@ export default unit({
       order('Ordena los pasos para montar una cartera indexada sencilla.', ['Decidir el reparto entre acciones y bonos', 'Elegir fondos indexados baratos', 'Programar una aportación automática', 'Revisar y rebalancear una vez al año'], 'Primero el reparto (la decisión clave), luego los productos y después la disciplina.'),
       timed(single('Rápido: en una cartera de tres fondos, ¿qué peso aproximado tienen los emergentes?', ['Un 1 %', 'Un 10-12 %', 'Un 50 %'], 1, 'Es más o menos su peso en el mercado mundial.'), 12),
       chat(['¿Y por qué no meto todo en el S&P 500 y listo?', 'Es lo que hace todo el mundo en internet 🤷'], '¿Qué le contestas?', [['Porque EE. UU. ya no va a subir nunca', 'Nadie lo sabe. El argumento no es predecir, es no depender de un solo país.'], ['Porque el mundo ya incluye EE. UU. y te cubre si tiene una década mala', '¡Eso! Como en 2000-2009: EE. UU. dio casi cero mientras otras regiones subían.'], ['Porque el S&P 500 es un fondo activo', 'No: es un índice. El problema es la concentración en un país.']], 1, 'Un índice mundial diversifica entre países; el S&P 500, no.'),
-    ], { source: '4.5', minutes: 6, retire: [4, 5, 8, 9] }),
+    ], { source: '4.5', minutes: 6, retire: [3, 4, 5, 8, 9] }),
 
     lesson('u29l6', 'Factores: tamaño, valor, calidad y momentum', [
+      story('El fondo de valor de Pablo', [{ id: 'pablo', name: 'Pablo' }], [
+        say('pablo', 'Leí que el factor valor batió al mercado en el último siglo. Metí todo en un fondo de valor.'),
+        say('pablo', 'Tres años después voy un 15 % por detrás del índice.'),
+        choose('¿Qué le dices?', [
+          opt('Cámbiate al factor que mejor ha ido', 'bad', say('lumi', 'Saltar de factor en factor es perseguir el pasado: compras caro y vendes barato.')),
+          opt('Puede ir por detrás muchos años: decide si lo aguantas', 'good', say('lumi', 'Eso es. Si no lo aguantas, mejor un índice de todo el mercado.')),
+          opt('Pide un préstamo y compra más, que ya rebotará', 'bad', say('lumi', 'Con dinero prestado, unos años malos te pueden obligar a vender en lo peor.')),
+        ]),
+        say('lumi', 'El valor lo hizo peor que el mercado durante buena parte de **2007-2020**.'),
+        say('lumi', 'Y los fondos de factores («smart beta») suelen cobrar más que un indexado.'),
+      ]),
       play({
         title: '¿Qué factor es?',
-        intro: 'Un **factor** es un rasgo que, de media y en décadas, se ha asociado a rentabilidades distintas. El de **tamaño** es fácil: empresas pequeñas. Clasifica los otros tres.',
+        intro: 'Pablo apostó por un **factor**: un rasgo que, de media y en décadas, se ha asociado a rentabilidades distintas. El de **tamaño** es fácil: empresas pequeñas. Clasifica los otros tres.',
         widget: {
           kind: 'sort',
           bins: [{ label: 'Valor' }, { label: 'Calidad' }, { label: 'Momentum' }],
@@ -215,18 +227,7 @@ export default unit({
           { say: 'Clasifica cada empresa', mood: 'HAPPY' },
         ],
       }),
-      story('El fondo de valor de Pablo', [{ id: 'pablo', name: 'Pablo' }], [
-        say('pablo', 'Leí que el factor valor batió al mercado en el último siglo. Metí todo en un fondo de valor.'),
-        say('pablo', 'Tres años después voy un 15 % por detrás del índice.'),
-        choose('¿Qué le dices?', [
-          opt('Cámbiate al factor que mejor ha ido', 'bad', say('lumi', 'Saltar de factor en factor es perseguir el pasado: compras caro y vendes barato.')),
-          opt('Puede ir por detrás muchos años: decide si lo aguantas', 'good', say('lumi', 'Eso es. Si no lo aguantas, mejor un índice de todo el mercado.')),
-          opt('Pide un préstamo y compra más, que ya rebotará', 'bad', say('lumi', 'Con dinero prestado, unos años malos te pueden obligar a vender en lo peor.')),
-        ]),
-        say('lumi', 'El valor lo hizo peor que el mercado durante buena parte de **2007-2020**.'),
-        say('lumi', 'Y los fondos de factores («smart beta») suelen cobrar más que un indexado.'),
-      ]),
-      key('Lo que te llevas', 'Un factor no es un atajo: puede pasar más de una década por detrás del índice, y hay que aguantarlo para cobrar la prima, si llega. Además, cuando muchos inversores conocen un factor, su prima puede reducirse.', 'Los factores son una forma de inclinar la cartera, no una garantía de ganar al mercado.'),
+      key('Lo que te llevas', 'Un factor no es un atajo: puede pasar más de una década por detrás del índice, y hay que aguantarlo para cobrar la prima, si llega. Además, cuando muchos inversores conocen un factor, su prima puede reducirse.', 'Los factores son una forma de inclinar la cartera, no una garantía de ganar al mercado.', 'Pruébalo: en Mercado, compara a un año VLUE (valor) y MTUM (momentum).'),
     ], [
       match('Empareja cada factor con las empresas que busca.', [['Tamaño', 'Empresas pequeñas'], ['Valor', 'Baratas respecto a beneficios o valor contable'], ['Calidad', 'Muy rentables y con poca deuda'], ['Momentum', 'Las que más han subido en los últimos meses']], 'Son las cuatro inclinaciones más estudiadas.'),
       trend('Una estrategia momentum compra lo que más ha subido en el último año. ¿Qué tendencia ves en este gráfico?', 'hist-tsla-2020', 'Alcista', 'Un año de subida fortísima: exactamente lo que buscaría una estrategia momentum.'),
@@ -241,6 +242,17 @@ export default unit({
     ], { minutes: 6, retire: [4, 5, 7, 8] }),
 
     lesson('u29l7', 'Inversión sostenible (ESG)', [
+      story('El fondo «Verde Futuro»', [{ id: 'marta', name: 'Marta' }], [
+        say('marta', 'Mira este anuncio: «Verde Futuro». Bosques, molinos… ¡me lo quedo!'),
+        say('marta', 'Aunque entre sus mayores posiciones hay petroleras. Raro, ¿no?'),
+        choose('¿Qué le dices?', [
+          opt('Si se llama verde, será verde', 'bad', say('lumi', 'El nombre y el anuncio no bastan: cuenta lo que hay dentro.')),
+          opt('Mira su documentación, su clasificación SFDR y sus posiciones', 'good', say('lumi', '¡Bien! Así distingues un fondo sostenible de un caso de **greenwashing**.')),
+          opt('Olvida la inversión sostenible: todo es mentira', 'ok', say('lumi', 'Hay fondos serios. El problema es no comprobar.')),
+        ]),
+        say('lumi', 'Ni las agencias de rating ESG se ponen de acuerdo.'),
+        say('lumi', 'Un estudio del MIT (2022) halló una correlación media de solo **0,54** entre sus notas.'),
+      ]),
       play({
         title: '¿E, S o G?',
         intro: '**ESG** son las siglas en inglés de tres áreas: **ambiental**, **social** y **gobierno corporativo**. ¿De cuál es cada tema?',
@@ -263,17 +275,6 @@ export default unit({
           { say: 'Clasifica cada tema', mood: 'HAPPY' },
         ],
       }),
-      story('El fondo «Verde Futuro»', [{ id: 'marta', name: 'Marta' }], [
-        say('marta', 'Mira este anuncio: «Verde Futuro». Bosques, molinos… ¡me lo quedo!'),
-        say('marta', 'Aunque entre sus mayores posiciones hay petroleras. Raro, ¿no?'),
-        choose('¿Qué le dices?', [
-          opt('Si se llama verde, será verde', 'bad', say('lumi', 'El nombre y el anuncio no bastan: cuenta lo que hay dentro.')),
-          opt('Mira su documentación, su clasificación SFDR y sus posiciones', 'good', say('lumi', '¡Bien! Así distingues un fondo sostenible de un caso de **greenwashing**.')),
-          opt('Olvida la inversión sostenible: todo es mentira', 'ok', say('lumi', 'Hay fondos serios. El problema es no comprobar.')),
-        ]),
-        say('lumi', 'Ni las agencias de rating ESG se ponen de acuerdo.'),
-        say('lumi', 'Un estudio del MIT (2022) halló una correlación media de solo **0,54** entre sus notas.'),
-      ]),
       play({
         title: 'La etiqueta europea',
         intro: 'El reglamento europeo **SFDR** clasifica los fondos en tres artículos. Coloca cada fondo en el suyo.',
@@ -290,7 +291,7 @@ export default unit({
           ],
         },
         goal: { text: 'Coloca los seis fondos.', when: [when('done', '==', 6)] },
-        insight: 'Desde 2025, la ESMA exige que un fondo con términos ESG en el nombre invierta **al menos un 80 %** en activos que cumplan esas características. Lee **qué hay dentro**, no solo el nombre.',
+        insight: 'Desde 2025, la ESMA exige que un fondo con términos ESG en el nombre invierta **al menos un 80 %** en activos que cumplan esas características. Lee **qué hay dentro**, no solo el nombre. Pruébalo: en Mercado, compara el último año de ICLN, un ETF de energía limpia, con el de SPY.',
         lumi: [
           { when: when('wrong', '>=', 2), say: '6: nada. 8: lo promueve. 9: es su objetivo.', mood: 'THINKING' },
           { say: 'Coloca cada fondo', mood: 'HAPPY' },

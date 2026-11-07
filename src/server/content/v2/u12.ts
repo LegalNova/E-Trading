@@ -40,7 +40,7 @@ export default unit({
           { say: 'Clasifica cada tarjeta', mood: 'HAPPY' },
         ],
       }),
-      key('Por qué no se puede reescribir', 'Las transacciones se agrupan en **bloques**. Cada bloque lleva una huella (**hash**) del anterior: así quedan encadenados.\n\nSi alguien cambia una transacción antigua, cambia la huella de ese bloque y se rompen todos los siguientes. Además, los demás nodos tienen la copia buena y rechazan la falsa.', 'Blockchain: un registro compartido y encadenado que nadie puede reescribir en solitario.', 'Que algo use blockchain no lo convierte en buena inversión.'),
+      key('Por qué no se puede reescribir', 'Las transacciones se agrupan en **bloques**. Cada bloque lleva una huella (**hash**) del anterior: así quedan encadenados.\n\nSi alguien cambia una transacción antigua, cambia la huella de ese bloque y se rompen todos los siguientes. Además, los demás nodos tienen la copia buena y rechazan la falsa.', 'Blockchain: un registro compartido y encadenado que nadie puede reescribir en solitario.', 'Pruébalo: en Mercado, busca Bitcoin y añádelo a Favoritos para seguirlo esta semana.'),
     ], [
       order('Ordena cómo se registra una transacción en una blockchain.', ['Envías la transacción a la red', 'Los nodos comprueban que tienes saldo', 'Se agrupa con otras en un bloque', 'El bloque se añade a la cadena y todos actualizan su copia'], 'Comprobar, agrupar, encadenar y copiar: así nadie necesita fiarse de un intermediario.'),
       single('¿Quién controla una blockchain pública como la de Bitcoin?', ['Un banco central', 'Nadie en solitario: miles de nodos comparten el registro', 'La empresa que la creó'], 1, 'Ese es su rasgo clave: el registro está repartido entre muchos participantes.'),
@@ -78,7 +78,7 @@ export default unit({
         ]),
         say('lumi', 'Bitcoin ha caído más de un 70 % varias veces.'),
       ]),
-      key('El halving', 'Bitcoin nació en 2009, creado por alguien con el seudónimo **Satoshi Nakamoto**. Los bitcoins nuevos nacen como premio a quien añade bloques (los mineros). Cada **210.000 bloques**, unos **4 años**, ese premio se reduce a la mitad: es el **halving**.\n\n50 → 25 (2012) → 12,5 (2016) → 6,25 (2020) → **3,125** (2024). Tras el de 2024 ya se había emitido el 93,75 % de todos los bitcoins.', 'Bitcoin: máximo de 21 millones y una emisión que se reduce a la mitad cada unos 4 años.', 'Escasez programada no significa precio garantizado.'),
+      key('El halving', 'Bitcoin nació en 2009, creado por alguien con el seudónimo **Satoshi Nakamoto**. Los bitcoins nuevos nacen como premio a quien añade bloques (los mineros). Cada **210.000 bloques**, unos **4 años**, ese premio se reduce a la mitad: es el **halving**.\n\n50 → 25 (2012) → 12,5 (2016) → 6,25 (2020) → **3,125** (2024). Tras el de 2024 ya se había emitido el 93,75 % de todos los bitcoins.', 'Bitcoin: máximo de 21 millones y una emisión que se reduce a la mitad cada unos 4 años.', 'Pruébalo: en Mercado, busca Bitcoin y mira cuánto ha caído desde su máximo.'),
     ], [
       single('¿Cuántos bitcoins podrán existir como máximo?', ['21 millones', '100 millones', 'Ilimitados'], 0, 'Está fijado en su protocolo: la emisión se va frenando con cada halving.'),
       fill('Cada unos 4 años, el premio por bloque de Bitcoin se reduce a la mitad: es el ____.', 'halving', ['staking', 'split', 'airdrop'], 'Halving significa «reducir a la mitad».'),
@@ -90,9 +90,20 @@ export default unit({
       timed(fill('Bitcoin lo creó alguien con el seudónimo Satoshi ____.', 'Nakamoto', ['Buterin', 'Bogle', 'Sharpe'], 'Su identidad real sigue sin conocerse. Vitalik Buterin es el cocreador de Ethereum.'), 12),
       chat(['Bitcoin es oro digital, así que nunca puede bajar mucho, ¿no? 🪙'], '¿Qué le contestas?', [['Claro, es como el oro', 'Hasta el oro ha pasado años perdiendo valor, y Bitcoin ha caído más de un 70 % en varias ocasiones.'], ['Su oferta es limitada, pero su precio es muy volátil y ha caído más de un 70 % varias veces', '¡Eso! Escasez no es estabilidad: en cripto puede perderse la totalidad de lo invertido.'], ['No baja porque solo existen 21 bitcoins', 'Son 21 millones como máximo, no 21, y su precio sí baja.']], 1, 'La escasez explica parte del atractivo de Bitcoin, no su estabilidad.'),
       single('¿Qué hay detrás del precio de Bitcoin?', ['Lo que otros estén dispuestos a pagar por él', 'Los beneficios de una empresa', 'Los intereses que paga'], 0, 'No genera beneficios ni intereses: su precio depende de la adopción y de la demanda.'),
-    ], { source: '2.9', minutes: 6, retire: [6, 7, 8] }),
+      scenario('Bitcoin lleva semanas cayendo. Nico tiene un poco y lee en redes: «Tras cada halving siempre sube, mete todo lo que puedas». ¿Qué hace?', [['Mete todos sus ahorros: el halving lo garantiza', 'El halving solo frena la emisión de bitcoins nuevos. El precio depende de la demanda, y ha caído más de un 70 % varias veces.'], ['Sigue su plan: solo pone lo que podría perder entero, pase lo que pase con el halving', 'Bien: la escasez no garantiza el precio, y en cripto puede perderse la totalidad de lo invertido.'], ['Lo vende todo porque, si cae, es que Bitcoin ha muerto', 'Decidir por el miedo de unas semanas es tan arriesgado como decidir por la euforia.']], 1, 'La buena es seguir un plan con una cantidad que puedas perder. La tentadora, el «siempre sube», confunde escasez programada con precio garantizado.'),
+    ], { source: '2.9', minutes: 6, retire: [3, 4, 6, 7, 8] }),
 
     lesson('u12l3', 'Minería y prueba de trabajo', [
+      story('Mina desde tu móvil', [{ id: 'laura', name: 'Laura' }], [
+        say('laura', 'Mira este anuncio: «Mina bitcoins desde tu móvil y gana 50 € al día».'),
+        say('laura', '¿Me descargo la app?'),
+        choose('¿Qué le dices?', [
+          opt('Sí, es dinero fácil', 'bad', say('lumi', 'La minería real usa máquinas especializadas y mucha electricidad. Un móvil no compite.')),
+          opt('Es casi seguro un engaño: un móvil no puede competir', 'good', say('lumi', '¡Bien! Muchas «apps de minería» son estafas o usan tu móvil para otras cosas.')),
+          opt('Instálala solo para probar', 'ok', say('lumi', 'Estas apps pueden exponer tus datos o tu cartera. Mejor no.')),
+        ]),
+        say('lumi', 'Cuando una promesa no encaja con cómo funciona la tecnología, desconfía.'),
+      ]),
       play({
         title: '¿Trabajo o participación?',
         intro: 'Dos formas de decidir quién añade el siguiente bloque: **gastando energía** en cálculos o **arriesgando monedas** como garantía. ¿Cuál es cuál?',
@@ -115,17 +126,7 @@ export default unit({
           { say: 'Clasifica cada tarjeta', mood: 'HAPPY' },
         ],
       }),
-      story('Mina desde tu móvil', [{ id: 'laura', name: 'Laura' }], [
-        say('laura', 'Mira este anuncio: «Mina bitcoins desde tu móvil y gana 50 € al día».'),
-        say('laura', '¿Me descargo la app?'),
-        choose('¿Qué le dices?', [
-          opt('Sí, es dinero fácil', 'bad', say('lumi', 'La minería real usa máquinas especializadas y mucha electricidad. Un móvil no compite.')),
-          opt('Es casi seguro un engaño: un móvil no puede competir', 'good', say('lumi', '¡Bien! Muchas «apps de minería» son estafas o usan tu móvil para otras cosas.')),
-          opt('Instálala solo para probar', 'ok', say('lumi', 'Estas apps pueden exponer tus datos o tu cartera. Mejor no.')),
-        ]),
-        say('lumi', 'Cuando una promesa no encaja con cómo funciona la tecnología, desconfía.'),
-      ]),
-      key('Una competición de cálculo', 'Los **mineros** agrupan transacciones en un bloque y compiten por encontrar un número que haga que su hash cumpla una condición. El primero cobra el **premio** más las **comisiones**. Buscar la solución cuesta mucho; comprobarla, muy poco.\n\nLa **dificultad** se ajusta cada 2.016 bloques para que salga un bloque cada **10 minutos** de media. Y la tecnología no cambia el riesgo de precio: en cripto **puede perderse todo lo invertido**.', 'Prueba de trabajo: se gana el derecho a añadir bloques gastando energía en cálculos.', 'La energía de la minería es el precio de que nadie pueda reescribir el registro.'),
+      key('Una competición de cálculo', 'Los **mineros** agrupan transacciones en un bloque y compiten por encontrar un número que haga que su hash cumpla una condición. El primero cobra el **premio** más las **comisiones**. Buscar la solución cuesta mucho; comprobarla, muy poco.\n\nLa **dificultad** se ajusta cada 2.016 bloques para que salga un bloque cada **10 minutos** de media. Y la tecnología no cambia el riesgo de precio: en cripto **puede perderse todo lo invertido**.', 'Prueba de trabajo: se gana el derecho a añadir bloques gastando energía en cálculos.', 'Pruébalo: crea una alerta de precio en Bitcoin y mira cuánto se mueve esta semana.'),
     ], [
       order('Ordena cómo se mina un bloque de Bitcoin.', ['El minero agrupa transacciones pendientes', 'Prueba combinaciones hasta dar con un hash válido', 'La red comprueba que el bloque es correcto', 'El bloque se añade y el minero cobra premio y comisiones'], 'Buscar la solución cuesta mucho; comprobarla, muy poco: esa asimetría es la base de la prueba de trabajo.'),
       single('¿Qué ganan los mineros por añadir un bloque?', ['Bitcoins nuevos y las comisiones de las transacciones', 'Un sueldo del banco central', 'Acciones de Bitcoin'], 0, 'Con cada halving el premio baja, así que las comisiones pesarán cada vez más.'),
@@ -137,9 +138,20 @@ export default unit({
       timed(single('Rápido: ¿qué protege la prueba de trabajo?', ['Que sea carísimo reescribir el registro', 'Que el precio suba', 'Que las comisiones sean cero'], 0, 'Atacar la red exigiría más potencia de cálculo que todos los demás mineros juntos.'), 12),
       scenario('Laura lee: «Mina bitcoins desde tu móvil con nuestra app y gana 50 € al día». ¿Qué piensa?', [['Que es una forma fácil de ganar dinero', 'La minería real exige máquinas especializadas y mucha electricidad: un móvil no compite.'], ['Que es casi seguro un engaño: un móvil no puede competir con la minería profesional', 'Bien: muchas «apps de minería» son estafas o usan tu móvil para otros fines.'], ['Que la instala solo para probar', 'Instalar este tipo de apps puede exponer tus datos o tu cartera.']], 1, 'Cuando una promesa no encaja con cómo funciona la tecnología, desconfía.'),
       multi('¿Qué es cierto sobre la prueba de trabajo? Marca todo.', ['Consume mucha electricidad', 'Hace muy caro atacar la red', 'Los mineros compiten por resolver un cálculo', 'La usa Ethereum desde 2022'], [0, 1, 2], 'Ethereum la abandonó en 2022 para pasar a la prueba de participación.'),
-    ], { source: '2.9', minutes: 6, retire: [2, 3, 7, 8] }),
+      scenario('Un conocido le ofrece a Leo un «plan de minería en la nube»: paga una cuota y cobra un 2 % diario fijo, sin hacer nada. ¿Qué piensa Leo?', [['Que es una forma cómoda de minar sin máquinas', 'Lo que gana un minero de verdad cambia cada día: depende del precio, de la dificultad y de las comisiones.'], ['Que un rendimiento fijo no encaja con la minería real, y que es una señal clara de estafa', 'Bien: un minero cobra premio y comisiones solo si gana la competición. Nadie serio puede prometer un 2 % diario fijo.'], ['Que prueba con poco, por si acaso', 'Si es una estafa, ese poco se pierde entero y no hay a quién reclamar.']], 1, 'La buena acierta porque la minería no da un rendimiento fijo: depende del precio, la dificultad y la competencia. La tentadora, probar con poco, sigue siendo darle dinero a un posible fraude.'),
+    ], { source: '2.9', minutes: 6, retire: [2, 3, 6, 7, 8] }),
 
     lesson('u12l4', 'Ethereum y los contratos inteligentes', [
+      story('Tokens gratis', [{ id: 'web', name: 'Web desconocida' }], [
+        say('web', '¡Enhorabuena! Tienes 500 tokens gratis esperándote.'),
+        say('web', 'Conecta tu cartera y firma este contrato para reclamarlos.'),
+        choose('¿Qué haces?', [
+          opt('Firmo: es gratis', 'bad', say('lumi', 'Firmar un contrato que no entiendes puede dar permiso para vaciar tu cartera.')),
+          opt('No firmo nada que no entienda y compruebo el proyecto por sus canales oficiales', 'good', say('lumi', '¡Bien! Muchas estafas usan firmas de contratos inteligentes para robar.')),
+          opt('Firmo con mi cartera principal, para recibir más', 'bad', say('lumi', 'Si es una trampa, perderás todo lo que haya en esa cartera.')),
+        ]),
+        say('lumi', 'En un contrato inteligente, el código es la ley… también cuando tiene un error.'),
+      ]),
       play({
         title: '¿Bitcoin o Ethereum?',
         intro: '**Ethereum** (2015) es una blockchain que, además de enviar dinero, ejecuta programas; su moneda es el **ether (ETH)**. ¿Es de Bitcoin o de Ethereum?',
@@ -162,17 +174,7 @@ export default unit({
           { say: 'Clasifica cada tarjeta', mood: 'HAPPY' },
         ],
       }),
-      story('Tokens gratis', [{ id: 'web', name: 'Web desconocida' }], [
-        say('web', '¡Enhorabuena! Tienes 500 tokens gratis esperándote.'),
-        say('web', 'Conecta tu cartera y firma este contrato para reclamarlos.'),
-        choose('¿Qué haces?', [
-          opt('Firmo: es gratis', 'bad', say('lumi', 'Firmar un contrato que no entiendes puede dar permiso para vaciar tu cartera.')),
-          opt('No firmo nada que no entienda y compruebo el proyecto por sus canales oficiales', 'good', say('lumi', '¡Bien! Muchas estafas usan firmas de contratos inteligentes para robar.')),
-          opt('Firmo con mi cartera principal, para recibir más', 'bad', say('lumi', 'Si es una trampa, perderás todo lo que haya en esa cartera.')),
-        ]),
-        say('lumi', 'En un contrato inteligente, el código es la ley… también cuando tiene un error.'),
-      ]),
-      key('Más posibilidades, más riesgos', 'Más funciones también significan más formas de fallar: un error en el código de un contrato puede vaciarlo, y en una blockchain no hay a quién reclamar.\n\nETH es muy volátil y **puede perderse la totalidad de lo invertido**.', 'Ethereum añade a Bitcoin la posibilidad de ejecutar programas: los contratos inteligentes.', 'Con contratos inteligentes, una sola firma puede autorizar movimientos de todo tu saldo.'),
+      key('Más posibilidades, más riesgos', 'Más funciones también significan más formas de fallar: un error en el código de un contrato puede vaciarlo, y en una blockchain no hay a quién reclamar.\n\nETH es muy volátil y **puede perderse la totalidad de lo invertido**.', 'Ethereum añade a Bitcoin la posibilidad de ejecutar programas: los contratos inteligentes.', 'Pruébalo: en Mercado, busca Ethereum y compara su gráfico con el de Bitcoin.'),
     ], [
       match('Empareja cada concepto con su significado.', [['Contrato inteligente', 'Programa que se ejecuta solo en la blockchain'], ['Gas', 'Comisión por operar en Ethereum'], ['Token', 'Moneda creada sobre otra blockchain'], ['ETH', 'La moneda de Ethereum']], 'El vocabulario básico para entender qué pasa dentro de Ethereum.'),
       match('Empareja cada elemento con lo que lo define.', [['Bitcoin', 'Dinero digital escaso, máximo 21 millones'], ['Ethereum', 'Plataforma para contratos inteligentes'], ['Stablecoin', 'Token que intenta valer siempre 1 dólar o 1 euro'], ['NFT', 'Certificado digital de propiedad']], 'Bitcoin y Ethereum son redes distintas; stablecoins y NFT son cosas que se construyen encima.'),
@@ -184,7 +186,8 @@ export default unit({
       timed(single('Rápido: ¿en qué moneda se paga el gas de Ethereum?', ['ETH', 'BTC', 'Euros'], 0, 'Cada operación en Ethereum paga su comisión en ether.'), 10),
       fill('Los programas que se ejecutan solos en Ethereum se llaman contratos ____.', 'inteligentes', ['de futuros', 'por diferencias', 'de depósito'], 'Smart contracts: se ejecutan cuando se cumplen sus condiciones, sin intermediario.'),
       num('Enviar unos tokens cuesta 0,0005 ETH de gas y el ETH vale 2.000 €. ¿Cuánto pagas de comisión?', 1, '€', '0,0005 × 2.000 = 1 €. Si la red se satura, puede costar bastante más.'),
-    ], { source: '2.9', minutes: 6, retire: [3, 4, 6, 7] }),
+      scenario('Irene quiere enviar unos tokens sin ninguna prisa. Su wallet avisa de que hoy el gas está carísimo porque la red está saturada. ¿Qué hace?', [['Lo envía ya: el gas es una comisión fija', 'El gas no es fijo: sube cuando la red está saturada y baja cuando hay poca demanda.'], ['Espera a un momento con la red más tranquila', 'Bien: sin prisa, esperar suele abaratar mucho la comisión.'], ['Lo envía en Bitcoin para no pagar gas', 'Los tokens de Ethereum viven en Ethereum: no se pueden enviar por la red de Bitcoin.']], 1, 'La buena funciona porque el gas sube y baja con la demanda de la red. La tentadora falla: el gas no es una tarifa fija, sino un precio que cambia.'),
+    ], { source: '2.9', minutes: 6, retire: [3, 4, 6, 7, 9] }),
 
     lesson('u12l5', 'Stablecoins', [
       story('El 20 % «estable»', [{ id: 'bruno', name: 'Bruno' }], [
@@ -220,7 +223,7 @@ export default unit({
           { say: 'Clasifica cada tarjeta', mood: 'HAPPY' },
         ],
       }),
-      key('Qué exige MiCA', 'Las stablecoins sirven para moverse entre criptos sin pasar por el banco y para hacer pagos. Las más usadas son **USDT** (Tether) y **USDC** (Circle).\n\nEn la UE, el reglamento **MiCA** exige que sus emisores estén autorizados, tengan **reservas** suficientes y separadas y permitan **canjear** los tokens a la par. Aun así, «estable» no es «garantizado»: no las cubre el Fondo de Garantía de Depósitos y **puede perderse lo invertido**.', 'Una stablecoin vale lo que valgan sus reservas y la confianza en su emisor.', 'Si una stablecoin te paga un 20 % «sin riesgo», pregunta de dónde sale.'),
+      key('Qué exige MiCA', 'Las stablecoins sirven para moverse entre criptos sin pasar por el banco y para hacer pagos. Las más usadas son **USDT** (Tether) y **USDC** (Circle).\n\nEn la UE, el reglamento **MiCA** exige que sus emisores estén autorizados, tengan **reservas** suficientes y separadas y permitan **canjear** los tokens a la par. Aun así, «estable» no es «garantizado»: no las cubre el Fondo de Garantía de Depósitos y **puede perderse lo invertido**.', 'Una stablecoin vale lo que valgan sus reservas y la confianza en su emisor.', 'Si te ofrecen un 20 % «estable», pregúntale antes a la profesora Lumi.'),
     ], [
       single('¿Qué intenta una stablecoin?', ['Valer siempre lo mismo que una moneda, como 1 dólar', 'Subir más que Bitcoin', 'Pagar un dividendo'], 0, 'Su objetivo es la estabilidad frente a una moneda, no la revalorización.'),
       match('Empareja cada caso o concepto con su significado.', [['TerraUSD (UST), mayo de 2022', 'Stablecoin algorítmica que se hundió'], ['USDC, marzo de 2023', 'Cayó a unos 0,87 $ por la quiebra de un banco'], ['Reservas', 'Dinero y deuda que respaldan cada token'], ['Canje a la par', 'Cambiar 1 token por 1 dólar o 1 euro']], 'Dos episodios reales que muestran los dos riesgos: sin reservas y con reservas en problemas.'),
@@ -237,7 +240,7 @@ export default unit({
     lesson('u12l6', 'Wallets, claves y autocustodia', [
       play({
         title: '¿Se puede enseñar?',
-        intro: 'Tus criptos están en la blockchain; tu **wallet** guarda las **claves**. ¿Qué puedes enseñar sin problema y qué jamás?',
+        intro: 'Acabas de crear tu primera **wallet**, la app que guarda las **claves** de tus criptos. Todos te piden algo: ¿qué puedes enseñar sin problema y qué jamás?',
         widget: {
           kind: 'sort',
           bins: [{ label: 'Sin problema' }, { label: 'Jamás' }],
@@ -268,7 +271,7 @@ export default unit({
         ]),
         say('lumi', 'Quien te pide tu frase semilla te está robando.'),
       ]),
-      key('Custodia propia o ajena', '• **En un exchange:** él guarda las claves. Cómodo, pero si quiebra o te bloquea, dependes de él (FTX, 2022).\n• **Autocustodia:** tú guardas las claves, en una wallet de software o de hardware. Nadie puede congelarlas… pero si pierdes la frase semilla, **nadie** puede recuperarlas.\n\nTu frase semilla, **en papel o metal, fuera de internet**, en un sitio seguro. Nunca en una foto, un correo o la nube.', '«Not your keys, not your coins»: quien controla las claves controla las criptos.', 'Nadie legítimo te pedirá jamás tu frase semilla: ni el soporte, ni el exchange, ni «Hacienda».'),
+      key('Custodia propia o ajena', '• **En un exchange:** él guarda las claves. Cómodo, pero si quiebra o te bloquea, dependes de él (FTX, 2022).\n• **Autocustodia:** tú guardas las claves, en una wallet de software o de hardware. Nadie puede congelarlas… pero si pierdes la frase semilla, **nadie** puede recuperarlas.\n\nTu frase semilla, **en papel o metal, fuera de internet**, en un sitio seguro. Nunca en una foto, un correo o la nube.', '«Not your keys, not your coins»: quien controla las claves controla las criptos.', 'Pregúntale a la profesora Lumi qué diferencia hay entre tu dirección y tu clave privada.'),
     ], [
       order('Ordena los pasos para crear una wallet de autocustodia de forma segura.', ['Descargar la wallet desde su web oficial', 'Generarla y anotar la frase semilla en papel', 'Guardar el papel en un sitio seguro fuera de internet', 'Enviar una cantidad pequeña de prueba antes de mover más'], 'Origen fiable, copia de la frase fuera de internet y una prueba pequeña antes de arriesgar más.'),
       spot('Marca los mensajes que son estafa.', [['Soporte «Ledger»', 'Tu wallet ha sido comprometida. Verifica tus 24 palabras en este enlace para protegerla.', true], ['App de tu exchange', 'Nuevo inicio de sesión desde otro dispositivo. Si no has sido tú, revisa tu cuenta desde la app.', false], ['@CriptoAyuda', 'Vi tu problema en el foro. Pásame tu frase semilla y te recupero los fondos.', true], ['Amigo de Instagram', 'Te devuelvo el doble si me envías 0,1 ETH a esta dirección 😉', true], ['App de tu wallet', 'Recuerda: nunca compartas tu frase semilla con nadie.', false]], 'Nadie legítimo pide la frase semilla, y «te devuelvo el doble» es un clásico. Los avisos que te mandan a tu propia app sin pedir datos son normales.'),
@@ -315,7 +318,7 @@ export default unit({
           { say: 'Clasifica cada tarjeta', mood: 'HAPPY' },
         ],
       }),
-      key('Qué les exige MiCA', '• **Autorización** de un supervisor nacional (en España, la CNMV), válida en toda la UE.\n• **Separar** las criptos de los clientes de las suyas.\n• Requisitos de **capital**, gobierno y gestión de conflictos de interés.\n• Información clara y un sistema de **reclamaciones**.\n\nSegún la CNMV, desde el **1 de julio de 2026** solo pueden operar en España los proveedores autorizados. Antes de abrir cuenta, búscalo en los registros de la **CNMV** o de **ESMA**.', 'MiCA exige autorización, separación de activos y transparencia a los exchanges en la UE.', 'Comprueba la plataforma en el registro oficial, no en su propia web.'),
+      key('Qué les exige MiCA', '• **Autorización** de un supervisor nacional (en España, la CNMV), válida en toda la UE.\n• **Separar** las criptos de los clientes de las suyas.\n• Requisitos de **capital**, gobierno y gestión de conflictos de interés.\n• Información clara y un sistema de **reclamaciones**.\n\nSegún la CNMV, desde el **1 de julio de 2026** solo pueden operar en España los proveedores autorizados. Antes de abrir cuenta, búscalo en los registros de la **CNMV** o de **ESMA**.', 'MiCA exige autorización, separación de activos y transparencia a los exchanges en la UE.', 'Antes de abrir cuenta en un exchange real, pregúntale a la profesora Lumi cómo comprobarlo.'),
     ], [
       multi('¿Qué exige MiCA a un exchange que opera en la UE? Marca todo.', ['Autorización de un supervisor', 'Separar las criptos de los clientes de las propias', 'Un sistema de reclamaciones', 'Garantizar que el precio no baje'], [0, 1, 2], 'MiCA regula a la plataforma, no al precio de las criptos.'),
       multi('¿Dónde compruebas si un exchange está autorizado? Marca todo.', ['Registros de la CNMV', 'Registro de ESMA', 'La web del propio exchange', 'Lo que diga un influencer'], [0, 1], 'Solo los registros oficiales sirven: cualquiera puede poner un sello falso en su web.'),

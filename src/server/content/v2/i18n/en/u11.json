@@ -11,7 +11,7 @@
     {
      "texts": [
       "Your own flat or a SOCIMI?",
-      "A **SOCIMI** (in the US, a **REIT**) is a listed company that owns rental properties: offices, warehouses, homes… Your own flat or a SOCIMI?",
+      "You have €500 and want to invest in property. A **SOCIMI** (in the US, a **REIT**) is a listed company with offices, warehouses or homes for rent: your own flat or a SOCIMI?",
       "Your own flat",
       "SOCIMI",
       "You need tens of thousands of euros up front",
@@ -52,7 +52,7 @@
      "title": "Pros and risks",
      "body": "A SOCIMI must pay out at least **80 %** of the profit that comes from rents; a US REIT, at least **90 %** of its taxable profit.\n\nRisks: they're listed and **can fall like the stock market**, they suffer when rates rise (they borrow and compete with bonds) and they depend on their sector, like offices after the pandemic.",
      "key": "A SOCIMI is bricks and mortar that trades on the market: diversified and liquid, but with stock-market volatility.",
-     "tip": "Buying a flat isn't the only way to invest in property."
+     "tip": "Try it: in Market, search for Merlin Properties, a SOCIMI in the IBEX 35, and look at its chart in monthly candles."
     }
    ]
   },
@@ -121,9 +121,9 @@
     },
     {
      "title": "Why they're not for beginners",
-     "body": "Futures and options are **derivatives**: their value depends on another asset. With a future you only put down **margin**, a fraction of the value: that's leverage.\n\nA small move turns into a big gain or loss and, in some cases (selling options, futures), you can lose more than you put in.",
+     "body": "Futures and options are **derivatives**: their value depends on another asset. With a future you only put down **margin**, a fraction of the value: that's leverage.\n\nA small move turns into a big gain or loss and, in some cases (selling options, futures), you can lose more than you put in. If you can't explain how much you could lose in the worst case, don't trade derivatives.",
      "key": "Future = an obligation at an agreed price. Option = a right in exchange for a premium.",
-     "tip": "If you can't explain how much you could lose in the worst case, don't trade derivatives."
+     "tip": "Try it: on your next purchase in the simulator, set a stop: it limits your loss without using derivatives."
     }
    ]
   },
@@ -133,7 +133,7 @@
     {
      "texts": [
       "A 5 % that wipes everything out",
-      "With a **CFD** you receive or pay the price difference of an asset, **with leverage**: you put down margin and control a much bigger position.",
+      "An ad invites you to trade **CFDs** «at 20 to 1». With a CFD you receive or pay the price difference of an asset, **with leverage**: you put down margin and move a much bigger position.",
       "You put in €1,000 with 20 to 1 leverage. What price drop wipes out all your margin?",
       "A 50 % one",
       "A 20 % one",
@@ -160,15 +160,31 @@
     },
     {
      "title": "What the EU requires",
-     "body": "A CFD doesn't give you the asset: it's a contract with your broker for the **price difference**. And you pay **financing** for every night the position stays open.\n\nMaximum leverage for retail investors in the EU: 30 to 1 on major currencies, 20 to 1 on major indices and gold, 5 to 1 on shares and **2 to 1 on crypto**. And every broker must display the CNMV's warning, alongside its own percentage: «CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage».",
+     "body": "A CFD doesn't give you the asset: it's a contract with your broker for the **price difference**. And you pay **financing** for every night the position stays open.\n\nMaximum leverage for retail investors in the EU: 30 to 1 on major currencies, 20 to 1 on major indices and gold, 5 to 1 on shares and **2 to 1 on crypto**. And every broker must display the CNMV's warning, alongside its own percentage: «CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage». If an ad hides it, be twice as suspicious.",
      "key": "Leverage multiplies gains and, above all, losses: most retail investors lose money with CFDs.",
-     "tip": "If a CFD ad hides the risk warning, be twice as suspicious."
+     "tip": "Try it: in Market, open the gold chart in weekly candles and think about what ×20 would do to your margin each week."
     }
    ]
   },
   "u11l4": {
    "title": "Pension plans",
    "steps": [
+    {
+     "texts": [
+      "A plan «for the tax relief»",
+      "Ana",
+      "Ana is 23 and has just got her first salary. Her IRPF marginal rate is low.",
+      "The bank is offering me a pension plan «for the tax relief». It charges 1.5 % a year.",
+      "What do you tell her?",
+      "Tax relief always pays off",
+      "With a low rate, she saves little. And she'd pay 1.5 % a year for decades.",
+      "It depends on her marginal rate, the fees and whether she'll need the money",
+      "That's it! It pays off with a high rate today, low fees and money you won't need.",
+      "She won't pay tax when she cashes it in",
+      "She will: everything she cashes in is taxed as employment income.",
+      "A pension plan isn't good or bad in general: it depends on your situation."
+     ]
+    },
     {
      "texts": [
       "The small print",
@@ -192,26 +208,10 @@
      ]
     },
     {
-     "texts": [
-      "A plan «for the tax relief»",
-      "Ana",
-      "Ana is 23 and has just got her first salary. Her IRPF marginal rate is low.",
-      "The bank is offering me a pension plan «for the tax relief». It charges 1.5 % a year.",
-      "What do you tell her?",
-      "Tax relief always pays off",
-      "With a low rate, she saves little. And she'd pay 1.5 % a year for decades.",
-      "It depends on her marginal rate, the fees and whether she'll need the money",
-      "That's it! It pays off with a high rate today, low fees and money you won't need.",
-      "She won't pay tax when she cashes it in",
-      "She will: everything she cashes in is taxed as employment income.",
-      "A pension plan isn't good or bad in general: it depends on your situation."
-     ]
-    },
-    {
      "title": "Tax relief today, tax tomorrow",
-     "body": "Paying into a personal plan reduces your taxable income by up to **€1,500 a year** (up to €10,000 in total with contributions to workplace plans). With a 30 % marginal rate, paying in €1,500 saves you **€450** that year.\n\nYou can only cash it in at retirement, in specific cases (long-term unemployment, serious illness, disability, dependency) or for contributions more than **10 years** old. It pays off mainly if your rate is high today and you expect it to be lower when you retire.",
+     "body": "Paying into a personal plan reduces your taxable income by up to **€1,500 a year** (up to €10,000 in total with contributions to workplace plans). With a 30 % marginal rate, paying in €1,500 saves you **€450** that year.\n\nYou can only cash it in at retirement, in specific cases (long-term unemployment, serious illness, disability, dependency) or for contributions more than **10 years** old. It pays off mainly if your rate is high today and you expect it to be lower when you retire. And check the fees: the plan doesn't save you those.",
      "key": "A pension plan defers tax and locks your money away: useful if you pay a lot of IRPF today.",
-     "tip": "What a pension plan doesn't save you is fees: check them."
+     "tip": "Try it: ask Lumi, your teacher, whether a pension plan would pay off with your salary today."
     }
    ]
   },
@@ -276,9 +276,9 @@
     },
     {
      "title": "Three places for the short term",
-     "body": "• **Interest-bearing account:** pays interest and you take your money out whenever you like. Watch out for limits: sometimes it only pays on up to a certain amount or for a few months.\n• **Fixed-term deposit:** you lock your money away for a while at a fixed rate.\n• **Money market fund:** very short-term, high-quality debt; its return follows ECB rates.\n\nAlways compare the **APR** and the terms.",
+     "body": "• **Interest-bearing account:** pays interest and you take your money out whenever you like. Watch out for limits: sometimes it only pays on up to a certain amount or for a few months.\n• **Fixed-term deposit:** you lock your money away for a while at a fixed rate.\n• **Money market fund:** very short-term, high-quality debt; its return follows ECB rates.\n\nAlways compare the **APR** and the terms. They're for your emergency cushion and what you'll need within months or a few years, not for the long term.",
      "key": "Short term: access and safety before returns.",
-     "tip": "For your emergency cushion and what you'll need within months or a few years, not for the long term."
+     "tip": "Try it: open your Portfolio and see how much virtual money you have uninvested: it's your cushion in the simulator."
     }
    ]
   },
@@ -317,18 +317,6 @@
     "Spanish listed property company"
    ]
   },
-  "u11l1-3": {
-   "prompt": "A SOCIMI makes 10 million in profit from rents. What's the minimum it must pay out as dividends?",
-   "options": [],
-   "explanation": "At least 80 %: 10 × 0.8 = 8 million.",
-   "unit": "million €"
-  },
-  "u11l1-4": {
-   "prompt": "A SOCIMI trades at €10 and pays out €0.45 a year. What is its dividend yield?",
-   "options": [],
-   "explanation": "0.45 ÷ 10 = 4.5 %.",
-   "unit": "%"
-  },
   "u11l1-6": {
    "prompt": "With a SOCIMI you can invest in property with far less money than buying a flat.",
    "options": [
@@ -346,6 +334,38 @@
     "Its price falling with the stock market"
    ],
    "explanation": "The SOCIMI manages the properties; you take on market, interest-rate and sector risks."
+  },
+  "u11l1-11": {
+   "prompt": "You have €300 and want to invest in Spanish property. Which option makes sense?",
+   "options": [
+    "Waiting until you have enough for a deposit on a flat",
+    "A platform promising a guaranteed 15 % on flats",
+    "Buying shares in a SOCIMI in the IBEX 35, like Merlin Properties"
+   ],
+   "explanation": "A SOCIMI lets you invest in property with little money, diversified and with liquidity, in exchange for its price moving every day. A guaranteed return is tempting, but in investing it doesn't exist.",
+   "feedback": [
+    "It could be a goal, but it would take years and you'd have everything in a single property.",
+    "Nobody can guarantee 15 %: it's the typical promise of a scam.",
+    "Good: with little money you own part of many buildings and can sell whenever you like."
+   ]
+  },
+  "u11l1-12": {
+   "prompt": "What do you reply?",
+   "options": [
+    "Yes, and they're covered by the FGD too",
+    "Yes: the dividend is fixed",
+    "No: the dividend isn't guaranteed and the price can fall like the stock market"
+   ],
+   "explanation": "A SOCIMI is a share: it pays out a lot because the law requires it, but its dividend depends on rents and its price is listed. Comparing it with a deposit is tempting because of the dividend, but it has no fixed interest and no FGD.",
+   "feedback": [
+    "The FGD covers bank deposits, not shares.",
+    "It depends on rental profits: it can go down.",
+    "That's it. And the FGD doesn't cover shares."
+   ],
+   "lines": [
+    "SOCIMIs pay high dividends.",
+    "So they're like a deposit, but better?"
+   ]
   },
   "u11l2-1": {
    "prompt": "Match each term to its definition.",
@@ -383,12 +403,6 @@
    ],
    "explanation": "A put is the option to sell; the strike is the agreed price."
   },
-  "u11l2-4": {
-   "prompt": "You buy a call with a strike of €100 and pay a €5 premium. At expiry the share is worth €112. How much do you make per share?",
-   "options": [],
-   "explanation": "You buy for €100 something worth €112: €12 − €5 premium = €7.",
-   "unit": "€"
-  },
   "u11l2-5": {
    "prompt": "With the same call (strike €100, premium €5), at expiry the share is worth €95. How much do you lose per share?",
    "options": [],
@@ -409,11 +423,20 @@
     "Social media shows the gains, rarely the losses."
    ]
   },
-  "u11l3-2": {
-   "prompt": "With that €20,000 position, the asset falls 2 %. How much do you lose?",
-   "options": [],
-   "explanation": "20,000 × 2 % = €400: 40 % of your margin from a 2 % move.",
-   "unit": "€"
+  "u11l2-11": {
+   "prompt": "Hedging a risk or speculating?",
+   "options": [
+    "You sell calls without owning the share to collect the premium",
+    "You own shares and buy a put in case they fall",
+    "Someone with no shares buys calls to profit if the market rises",
+    "An airline buys oil futures to lock in what it will pay for fuel",
+    "A farmer sells futures on his harvest"
+   ],
+   "explanation": "Hedging means using the derivative to reduce a risk you already have: fuel, the harvest, your shares. If you didn't have that risk before, the derivative protects you from nothing: it's a bet, and selling calls without the share can turn out very expensive.",
+   "right": [
+    "Hedges a risk they already have",
+    "Creates a new risk (speculates)"
+   ]
   },
   "u11l3-4": {
    "prompt": "According to the CNMV's mandatory warning, between 74 and 89 % of retail investors lose money with CFDs.",
@@ -472,18 +495,6 @@
     "No: in the EU, when margin falls to 50 % of what's required, the broker closes the position and the loss becomes real."
    ]
   },
-  "u11l4-1": {
-   "prompt": "Your marginal IRPF (Spanish income tax) rate is 30 % and you pay €1,500 into your personal plan. How much IRPF do you save that year?",
-   "options": [],
-   "explanation": "1,500 × 30 % = €450.",
-   "unit": "€"
-  },
-  "u11l4-2": {
-   "prompt": "With a marginal rate of 19 %, how much do you save by paying in €1,500?",
-   "options": [],
-   "explanation": "1,500 × 19 % = €285. The lower your rate, the smaller the advantage.",
-   "unit": "€"
-  },
   "u11l4-3": {
    "prompt": "How is cashing in a pension plan taxed?",
    "options": [
@@ -522,6 +533,38 @@
    ],
    "explanation": "You get tax relief going in, the money grows untaxed and you pay on the way out."
   },
+  "u11l4-11": {
+   "prompt": "Javier is 50, with a high salary and a high marginal IRPF rate. He won't need the money until he retires. He's offered an index plan with low fees. Does it suit him?",
+   "options": [
+    "Yes: he gets tax relief at a high rate, he doesn't need the money and costs are low",
+    "Only if the return is guaranteed",
+    "No: a pension plan never pays off"
+   ],
+   "explanation": "A plan pays off with a high marginal rate today, low fees and money that won't be needed, and Javier ticks all three. Always ruling it out or demanding guarantees is tempting, but it ignores his situation.",
+   "feedback": [
+    "Good: it's the case where a plan usually pays off, especially if his rate drops when he retires.",
+    "An index plan goes up and down with the market: the advantage is in the tax, not in a guarantee.",
+    "It depends on each case, and his is one of those that gain most from the tax advantage."
+   ]
+  },
+  "u11l4-12": {
+   "prompt": "What do you reply?",
+   "options": [
+    "No: it's locked away except at retirement, in specific cases or for contributions more than 10 years old",
+    "Yes, it works like an account",
+    "Yes, by paying a small fee"
+   ],
+   "explanation": "A pension plan can only be cashed in at retirement, in specific cases or for contributions more than 10 years old. Using it as a cushion is tempting because of the tax relief, but a cushion has to be available instantly.",
+   "feedback": [
+    "That's it. For emergencies, an interest-bearing account is better.",
+    "No: the money is locked away for years.",
+    "It's not about a fee: outside the legal cases, you can't take it out."
+   ],
+   "lines": [
+    "I've been told I can take money out of a pension plan whenever I want.",
+    "So I can use it as an emergency cushion, right?"
+   ]
+  },
   "u11l5-1": {
    "prompt": "Match each product to its feature.",
    "options": [
@@ -537,18 +580,6 @@
     "Very short-term debt; can be transferred",
     "Money available whenever you want"
    ]
-  },
-  "u11l5-2": {
-   "prompt": "You have €6,000 in an account at 2 % APR for a year. How much gross interest do you earn?",
-   "options": [],
-   "explanation": "6,000 × 2 % = €120 gross (19 % is then withheld).",
-   "unit": "€"
-  },
-  "u11l5-3": {
-   "prompt": "An account pays 3 % APR, but only on the first €5,000; the rest earns 0 %. You have €8,000. Gross interest over a year?",
-   "options": [],
-   "explanation": "5,000 × 3 % = €150; the other €3,000 earn nothing. On €8,000, that's 1.875 %.",
-   "unit": "€"
   },
   "u11l5-5": {
    "prompt": "Which of these products is NOT covered by Spain's deposit guarantee scheme (FGD)?",
@@ -574,6 +605,35 @@
     "False"
    ],
    "explanation": "Its risk is very low, not zero: it invests in debt that, in extreme cases, can fall in price or not be repaid."
+  },
+  "u11l5-11": {
+   "prompt": "An account advertises «4 % APR». The small print: only for 3 months and up to €5,000. You have a €10,000 cushion. What do you do?",
+   "options": [
+    "I put it in shares, they return more",
+    "I sign up now: 4 % is a lot",
+    "I compare what it would pay me over the whole year with other accounts without those limits"
+   ],
+   "explanation": "Offers with a time or amount limit pay much less than they advertise on all your money. The big number in the ad is tempting, but the terms are what count.",
+   "feedback": [
+    "It's your cushion: it has to be available and not depend on the stock market.",
+    "It would only pay that 4 % for a few months and on half your money: the rest of the year, maybe nothing.",
+    "Good: what matters is what you actually earn on all your money over the year."
+   ]
+  },
+  "u11l5-12": {
+   "prompt": "Where does each pot of money fit best?",
+   "options": [
+    "A monthly contribution for 20 years from now",
+    "A flat deposit in 1 year",
+    "A trip in 6 months",
+    "The emergency cushion",
+    "Retirement, 40 years away"
+   ],
+   "explanation": "What you'll need soon has to be safe and available, even if it earns little. Over decades, the stock market makes up for its falls; over a few months, there's no time to recover from one.",
+   "right": [
+    "Interest-bearing account, deposit or money market fund",
+    "Equity fund or ETF"
+   ]
   }
  }
 }

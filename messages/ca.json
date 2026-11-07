@@ -284,7 +284,10 @@
     "continueNext": "Següent: {title}",
     "continueBtn": "Continuar",
     "sectionNeeds": "S’obre en superar el repte final de: {needs}",
-    "tryMaxFree": "Provar Max gratis"
+    "tryMaxFree": "Provar Max gratis",
+    "testOutTitle": "Ja ho saps? Supera la unitat",
+    "testOutBody": "Una prova de 10 preguntes. Amb el 80 % la dones per feta i continues amb la següent.",
+    "testOutBodyFree": "Una prova de 10 preguntes. Amb el 80 % la dones per feta i se t’obre gratis una altra unitat."
   },
   "lesson": {
     "close": "Tancar la lliçó",
@@ -425,7 +428,13 @@
     "seeAnswers": "Veure les respostes",
     "seeAnswersMisses": "Veure les respostes ({n, plural, one {# error} other {# errors}})",
     "hideAnswers": "Amagar les respostes",
-    "dayStreak": "Ratxa de {n, plural, one {# dia} other {# dies}}"
+    "dayStreak": "Ratxa de {n, plural, one {# dia} other {# dies}}",
+    "mixedReview": "Repàs d’una classe anterior",
+    "testOutPassed": "Unitat superada",
+    "testOutFailed": "Encara no del tot",
+    "testOutPassedBody": "La dones per feta: continua amb la unitat següent.",
+    "testOutFailedBody": "Necessites el 80 %. Fes les classes de la unitat i torna-ho a provar quan vulguis.",
+    "s0Done": "Ja saps invertir. El pas següent: analitzar com un professional."
   },
   "market": {
     "title": "Mercat",

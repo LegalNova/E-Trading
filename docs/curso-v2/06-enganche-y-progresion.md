@@ -128,3 +128,28 @@ Presupuesto, deudas e inflación siguen siendo útiles, pero no son la puerta de
 - **Prueba de unidad:** % que la usa y % que la supera (si casi todos la superan, la unidad es demasiado fácil).
 - **Pago:** conversión a pago en los 7 días siguientes a terminar la sección 0.
 - **Abandono:** dónde se deja cada clase (`lesson_exit`, ya se mide en el admin).
+
+## 9. Lo aplicado (7 de noviembre de 2026)
+
+**Recorrido y planes**
+- **Orden:** sección 0 «Invierte desde hoy» al principio. Son 3 unidades (h1-h3): 17 clases movidas con su id, su progreso y sus traducciones, más la clase nueva h1l1 con datos reales del S&P 500 desde 1985.
+- **Finanzas personales:** pasan a ser la sección opcional «Tu dinero en orden». Se abre al terminar la sección 0.
+- **Plan gratis:** h1-h3 completas, más las 3 primeras clases de cada unidad.
+- **Prueba de unidad** (`testout-<unidad>`, 10 preguntas, 80 %): las unidades superadas no gastan plan y se abre gratis la siguiente del camino.
+
+**Clases y quiz**
+- **Pasada de enganche a las 226 clases**, hecha con 13 agentes en paralelo (encargo-enganche.md) y traducida al catalán y al inglés:
+  - gancho concreto;
+  - frase final «Pruébalo:» con una acción en la app;
+  - quiz de 5-8 preguntas de decisión.
+- **Preguntas de cálculo:** de **271 a 16**, todas de razonar. Ninguna en la sección 0.
+- **Motor del quiz:**
+  - como mucho 1 pregunta de cifra por quiz (0 en la sección 0);
+  - hasta 2 preguntas de repaso de clases anteriores marcadas como «Repaso de una clase anterior», que no quitan vidas y siguen el repaso espaciado;
+  - «Ver respuestas» al final;
+  - nada avanza solo: se elige, se comprueba y se continúa.
+
+**Avisos y pago**
+- Al aprobar el reto de la sección 0 aparece la oferta de Max.
+
+**Pendiente de comprobar con datos reales:** las métricas de la sección 8 en el admin, a partir de las primeras cuentas que entren por invitación.

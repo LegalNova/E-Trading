@@ -3,9 +3,19 @@ import 'server-only'
 import { buckets, chat, choose, fill, key, lesson, match, mission, multi, note, num, opt, order, play, say, scenario, single, spot, story, tf, timed, unit, when } from '../dsl'
 
 export default unit({
-  id: 'u4', order: 4, title: 'Tu primer plan financiero', description: 'Objetivos con cifra y fecha, tu plazo, tu riesgo y lo que dicen los datos del trading',
+  id: 'u4', order: 4, title: 'Tu primer plan financiero', description: 'Ahorrar, invertir o especular, objetivos con fecha, cuánto riesgo aguantas y lo que dicen los datos del trading',
   lessons: [
     lesson('u4l1', 'Ahorrar, invertir y especular', [
+      story('La moneda de moda', [{ id: 'nico', name: 'Nico' }], [
+        say('nico', '¡Mete 5.000 € en esta moneda! Ha subido un 300 % este mes y todo el mundo está entrando'),
+        note('Tienes 12.000 € ahorrados y gastas 1.200 € al mes.'),
+        choose('¿Qué haces?', [
+          opt('Meto los 5.000 €: no quiero quedarme fuera', 'bad', say('lumi', 'Eso es **FOMO**, el miedo a quedarte fuera. Comprar porque ya ha subido mucho es especular… con casi la mitad de tus ahorros.')),
+          opt('Si acaso, una cantidad pequeña que pueda perder entera', 'good', say('lumi', 'Bien: se especula **solo con lo que puedes perder**. Antes, el colchón y la inversión a largo plazo.')),
+          opt('Le paso mis claves para que lo gestione él', 'bad', say('lumi', '¡Nunca des el control de tu dinero ni tus claves a nadie! Es la puerta de muchas estafas.')),
+        ]),
+        say('lumi', 'Se ahorra para lo cercano, se invierte para lo lejano y se especula solo con lo que puedes perder.'),
+      ]),
       play({
         title: '¿Ahorrar, invertir o especular?',
         intro: '• **Ahorrar:** apartar sin arriesgar, para lo cercano.\n• **Invertir:** poner dinero en lo que **produce valor** (empresas, préstamos, inmuebles), para 5 años o más.\n• **Especular:** comprar esperando que otro te lo compre más caro pronto.',
@@ -22,22 +32,12 @@ export default unit({
           ],
         },
         goal: { text: 'Clasifica los seis casos.', when: [when('done', '==', 6)] },
-        insight: 'Pregúntate **de dónde sale la ganancia**: del interés (ahorro), de lo que produce lo que compras (inversión) o del bolsillo de otro que acierta menos que tú (especulación).',
+        insight: 'Pregúntate **de dónde sale la ganancia**: del interés (ahorro), de lo que produce lo que compras (inversión) o del bolsillo de otro que acierta menos que tú (especulación). Pruébalo: en Mercado, compara el gráfico del bitcoin con el de un ETF mundial.',
         lumi: [
           { when: when('wrong', '>=', 2), say: 'Pista: ¿eso produce algo, o solo esperas que suba?', mood: 'THINKING' },
           { say: 'Clasifica cada caso', mood: 'HAPPY' },
         ],
       }),
-      story('La moneda de moda', [{ id: 'nico', name: 'Nico' }], [
-        say('nico', '¡Mete 5.000 € en esta moneda! Ha subido un 300 % este mes y todo el mundo está entrando'),
-        note('Tienes 12.000 € ahorrados y gastas 1.200 € al mes.'),
-        choose('¿Qué haces?', [
-          opt('Meto los 5.000 €: no quiero quedarme fuera', 'bad', say('lumi', 'Eso es **FOMO**, el miedo a quedarte fuera. Comprar porque ya ha subido mucho es especular… con casi la mitad de tus ahorros.')),
-          opt('Si acaso, una cantidad pequeña que pueda perder entera', 'good', say('lumi', 'Bien: se especula **solo con lo que puedes perder**. Antes, el colchón y la inversión a largo plazo.')),
-          opt('Le paso mis claves para que lo gestione él', 'bad', say('lumi', '¡Nunca des el control de tu dinero ni tus claves a nadie! Es la puerta de muchas estafas.')),
-        ]),
-        say('lumi', 'Se ahorra para lo cercano, se invierte para lo lejano y se especula solo con lo que puedes perder.'),
-      ]),
     ], [
       match('Empareja cada actividad con de dónde sale su ganancia.', [['Ahorrar', 'Intereses sin arriesgar lo que pusiste'], ['Invertir', 'Beneficios, intereses o rentas a largo plazo'], ['Especular', 'Que otro pague más caro pronto']], 'La pregunta clave es siempre la misma: ¿de dónde sale la ganancia?'),
       buckets('¿Es ahorrar, invertir o especular?', ['Ahorrar', 'Invertir', 'Especular'], [['Depósito a 12 meses', 0], ['Aportar cada mes a un fondo indexado mundial durante 20 años', 1], ['Comprar una moneda de moda porque está subiendo', 2], ['Letras del Tesoro', 0], ['Operar cada pocos minutos con apalancamiento', 2], ['Acciones de muchas empresas para 15 años', 1]], 'Plazo, riesgo y origen de la ganancia separan las tres cosas.'),
@@ -87,6 +87,7 @@ export default unit({
           { say: 'Alarga el plazo de lo que menos prisa corre', mood: 'HAPPY' },
         ],
       }),
+      key('Cada objetivo, en su sitio', 'Ya sabes que **el plazo decide el riesgo** que puedes asumir. Aplícalo a cada objetivo:\n\n• **Menos de 3 años** (viaje, carné, portátil): ahorrado en cuenta remunerada, depósitos o letras.\n• **15 años o más** (jubilación, libertad financiera): sobre todo acciones diversificadas, con aportaciones periódicas.\n• **Entre medias:** una mezcla prudente, con más renta fija cuanto más cerca esté.', 'La fecha de cada objetivo decide si lo ahorras o lo inviertes.', 'Pruébalo: compra en el simulador un ETF mundial para tu objetivo más lejano.'),
     ], [
       order('Ordena los pasos para calcular tu aportación mensual.', ['Decidir cuánto necesitas', 'Ponerle fecha', 'Restar lo que ya tienes', 'Dividir lo que falta entre los meses que quedan'], 'Cifra, fecha, punto de partida y división: así un deseo se convierte en un plan mensual.'),
       num('Quieres 3.000 € para un viaje dentro de 12 meses y ya tienes 600 €. ¿Cuánto tienes que apartar al mes?', 200, '€', '(3.000 − 600) ÷ 12 = 200 € al mes.'),
@@ -98,7 +99,9 @@ export default unit({
       timed(single('Rápido: necesitas 2.400 € en 12 meses. ¿Cuánto al mes?', ['100 €', '200 €', '240 €'], 1, '2.400 ÷ 12 = 200 €.'), 12),
       scenario('Ana quiere un colchón de 3.000 €, un viaje de 1.500 € en verano y la entrada de un piso dentro de 6 años. Lo guarda todo junto en la misma cuenta. ¿Qué le conviene?', [['Separar cada objetivo en su propia cuenta o hucha', 'Ve cuánto lleva de cada uno y el viaje no se come el colchón.'], ['Seguir con todo junto: es más sencillo', 'En verano no sabrá cuánto puede gastar sin tocar el colchón o el piso.'], ['Ir a por un objetivo cada vez y olvidar los demás', 'Mientras tanto, los otros plazos siguen corriendo.']], 0, 'Un cajón por objetivo: así el dinero de cada meta no se mezcla.'),
       tf('Si el objetivo es a 2 años, la aportación mensual es lo que falta dividido entre 24.', true, '2 años son 24 meses (sin contar intereses).'),
-    ], { source: '1.5', minutes: 6, retire: [6, 7, 9] }),
+      buckets('¿Ahorrar o invertir para este objetivo?', ['Ahorrar (cuenta o depósito)', 'Invertir (ETF a largo plazo)'], [['Viaje el verano que viene', 0], ['Carné de conducir dentro de 10 meses', 0], ['Tu jubilación', 1], ['Libertad financiera dentro de 20 años', 1], ['Tu colchón para imprevistos', 0]], 'Lo que necesitas en menos de 3 años no puede depender de que la bolsa no esté cayendo ese día; lo lejano tiene tiempo para recuperarse de las caídas. Invertirlo todo «para que crezca más» tienta, pero el plazo manda.'),
+      scenario('Sara quiere 1.200 € para un portátil dentro de 8 meses. Un amigo le dice que los meta en acciones «para que crezcan más». ¿Qué hace?', [['Los ahorra en una cuenta remunerada', 'Dentro de 8 meses tendrá su dinero entero, pase lo que pase en la bolsa.'], ['Los mete todos en acciones', 'Si la bolsa cae un 20 % justo antes, se queda sin portátil o tiene que esperar.'], ['Los mete en una cripto que está de moda', 'Aún más riesgo para un dinero que necesita pronto y con fecha.']], 0, 'A 8 meses, el dinero tiene que estar disponible y sin riesgo de caída. Las acciones tientan porque suelen crecer más, pero solo a largo plazo y con caídas por el camino.'),
+    ], { source: '1.5', minutes: 6, retire: [1, 2, 6, 7, 9] }),
 
     lesson('u4l4', 'Cuánto riesgo puedes aguantar', [
       mission({
@@ -115,7 +118,7 @@ export default unit({
           { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
         ],
       }),
-      key('Capacidad y tolerancia', '**Capacidad de riesgo:** cuánto puedes perder **sin que cambie tu vida** (ingresos, colchón, cargas, plazo). Es objetiva.\n\n**Tolerancia al riesgo:** cuánto puedes ver caer tu dinero **sin vender en pánico**. Es psicológica, y casi todos la sobrestiman cuando la bolsa sube.\n\nTu perfil real es **el menor de los dos**.', 'Todo el mundo es valiente cuando la bolsa sube.', 'Al abrir cuenta en un bróker europeo te harán un test MiFID: contéstalo con sinceridad, te protege de productos que no entiendes.'),
+      key('Capacidad y tolerancia', '**Capacidad de riesgo:** cuánto puedes perder **sin que cambie tu vida** (ingresos, colchón, cargas, plazo). Es objetiva.\n\n**Tolerancia al riesgo:** cuánto puedes ver caer tu dinero **sin vender en pánico**. Es psicológica, y casi todos la sobrestiman cuando la bolsa sube.\n\nTu perfil real es **el menor de los dos**. Al abrir cuenta en un bróker europeo te harán un **test MiFID**: contéstalo con sinceridad, te protege de productos que no entiendes.', 'Todo el mundo es valiente cuando la bolsa sube.', 'Pruébalo: en Mercado, abre el S&P 500 en velas mensuales y busca su peor caída.'),
     ], [
       single('¿Cuál es tu perfil de riesgo real?', ['El mayor entre capacidad y tolerancia', 'El menor entre capacidad y tolerancia', 'El que tenga tu mejor amigo'], 1, 'Si puedes perder mucho pero no lo soportas, venderás en pánico; si lo soportas pero no puedes permitírtelo, te arriesgas demasiado.'),
       match('Empareja cada concepto con su significado.', [['Capacidad de riesgo', 'Cuánto puedes perder sin que cambie tu vida'], ['Tolerancia al riesgo', 'Cuánto aguantas ver caer sin vender'], ['Test MiFID', 'Comprueba tu experiencia y tus conocimientos'], ['Horizonte', 'Cuándo vas a necesitar el dinero']], 'Capacidad y horizonte son objetivos; la tolerancia es psicológica.'),
@@ -127,7 +130,8 @@ export default unit({
       chat(['Yo invirtiendo soy superagresivo 😎', 'Aunque cuando el mes pasado bajó un 5 % no pegué ojo…'], '¿Qué le dices a Lumi?', [['Entonces eres agresivo; solo ha sido un mal mes', 'Si un 5 % te quita el sueño, ¿cómo llevarías un 40 %?'], ['Tu tolerancia real parece más baja de lo que crees', 'Eso: tu perfil lo marca cómo reaccionas en las caídas, no cómo te sientes cuando sube.'], ['Invierte aún más para acostumbrarte', 'Más riesgo con poca tolerancia suele acabar vendiendo en pánico.']], 1, 'La tolerancia se descubre en las caídas, no en las subidas.'),
       timed(single('Rápido: ¿para qué sirve el test MiFID del bróker?', ['Para cobrarte más comisiones', 'Para protegerte de productos que no entiendes', 'Para nada'], 1, 'La normativa europea obliga a comprobar tu experiencia y tus conocimientos.'), 12),
       single('Te pones muy nervioso al ver números rojos y vas a necesitar el dinero en 3 años. Tu perfil es…', ['Conservador', 'Muy decidido', 'Especulador'], 0, 'Baja tolerancia y plazo corto: mucha renta fija y poca bolsa.'),
-    ], { source: '1.6', minutes: 6, retire: [3, 7, 8] }),
+      single('Tu cartera cae un 50 %. Para volver a donde estaba, ¿cuánto tiene que subir después?', ['Un 50 %', 'Un 100 %: tiene que duplicarse', 'Un 25 %'], 1, 'Tras caer a la mitad, recuperarse exige duplicar lo que queda: un 100 %. Lo tentador es pensar que basta con un 50 %, pero ese 50 % se calcula sobre una cantidad ya mucho más pequeña. Por eso las caídas grandes cuestan tanto de recuperar.'),
+    ], { source: '1.6', minutes: 6, retire: [3, 4, 5, 7, 8] }),
 
     lesson('u4l5', 'La verdad sobre hacerse rico rápido', [
       play({
@@ -155,7 +159,8 @@ export default unit({
           opt('Varias: promesas, prisas, la cuota y el enlace al bróker', 'good', say('lumi', '¡Todas! Promete mucho sin enseñar su historial completo, mete prisa («10 plazas»), vende suscripciones y cobra por llevarte a un bróker.')),
           opt('Solo una: que cobra 99 €', 'ok', say('lumi', 'Hay más: la prisa, las promesas sin historial y el enlace a un bróker concreto, por el que suele cobrar.')),
         ]),
-        say('lumi', 'Antes de dar dinero a nadie, mira si está registrado en la **CNMV** y si aparece en su lista de «chiringuitos financieros».'),
+        say('lumi', 'Antes de pagar a nadie, búscalo en la **CNMV** y en su lista de «chiringuitos».'),
+        say('lumi', 'Pruébalo: en el simulador, haz lo aburrido: aporta cada mes a un ETF mundial.'),
       ]),
     ], [
       tf('La mayoría de quienes hacen day trading de forma continuada gana dinero.', false, 'En Brasil, el 97 % de quienes lo hicieron más de 300 días perdió dinero.'),
@@ -168,6 +173,6 @@ export default unit({
       num('Según Barber y Odean, los hogares que más operaban ganaban un 11,4 % anual y el mercado un 17,9 %. ¿Cuántos puntos al año se dejaban?', 6.5, 'puntos', '17,9 − 11,4 = 6,5 puntos al año, sobre todo por costes y exceso de confianza.'),
       timed(tf('Si alguien te promete rentabilidad alta sin riesgo, es una señal de alarma.', true, 'Rentabilidad y riesgo van juntos: lo «alto y seguro» no existe.'), 8),
       fill('Lo que funciona: aportar con regularidad, diversificar, costes bajos, mucho tiempo y no vender en ____.', 'pánico', ['euros', 'verano', 'Navidad'], 'Vender en pánico convierte las caídas temporales en pérdidas reales.'),
-    ], { source: '1.7', minutes: 6, retire: [0, 3, 8] }),
+    ], { source: '1.7', minutes: 6, retire: [0, 3, 7, 8] }),
   ],
 })

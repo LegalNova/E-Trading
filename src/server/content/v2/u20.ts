@@ -2,7 +2,7 @@ import 'server-only'
 // Sección 7 · Unidad 20 · Velas japonesas (docs/curso-v2/02-curriculo.md)
 // Fuentes: docs/curso/08-velas-japonesas.md. Estadísticas: Bulkowski (thepatternsite.com).
 // Velas reales detectadas por scripts/build-lesson-charts.py (docs/curso-v2/graficos.md).
-import { buckets, candle, chart, chat, choose, fill, key, lesson, match, multi, num, opt, order, play, say, scenario, single, story, tf, timed, unit, upDown, when } from '../dsl'
+import { buckets, candle, chart, chat, choose, fill, key, lesson, level, match, multi, num, opt, order, play, say, scenario, single, story, tf, timed, unit, upDown, when } from '../dsl'
 
 export default unit({
   id: 'u20', order: 20, title: 'Velas japonesas', description: 'Leer cada vela, sus patrones principales y cuánto funcionan de verdad',
@@ -44,7 +44,7 @@ export default unit({
           { say: '¿Quién ganó cada batalla?', mood: 'HAPPY' },
         ],
       }),
-      key('La ubicación lo es todo', 'La misma vela significa cosas distintas según dónde aparece: tras una caída larga y en un soporte puede indicar agotamiento vendedor; en mitad de un rango, casi nada.', 'Un cuerpo grande es convicción; una mecha larga es un rechazo.', 'No leas una vela sola: pregúntate de dónde viene el precio.'),
+      key('La ubicación lo es todo', 'La misma vela significa cosas distintas según dónde aparece: tras una caída larga y en un soporte puede indicar agotamiento vendedor; en mitad de un rango, casi nada.', 'Un cuerpo grande es convicción; una mecha larga es un rechazo.', 'Pruébalo: en Mercado, abre Bitcoin en Velas y busca la mecha más larga del mes.'),
     ], [
       single('¿Qué indica una mecha superior muy larga?', ['Que los compradores dominaron todo el periodo', 'Rechazo de los precios altos', 'Que no hubo operaciones'], 1, 'El precio llegó arriba, pero los vendedores lo devolvieron abajo antes del cierre.'),
       buckets('¿Quién ganó la sesión?', ['Compradores', 'Vendedores', 'Empate'], [['Verde larga, casi sin mechas', 0], ['Roja larga que cierra en el mínimo', 1], ['Cuerpo diminuto con mechas iguales', 2], ['Abre en 50, cae a 44 y cierra en 50,5', 0], ['Abre en 30, sube a 34 y cierra en 29', 1]], 'Lo que manda es dónde cierra respecto a la apertura y cuánto cuerpo deja. Las mechas cuentan los intentos fallidos.'),
@@ -56,7 +56,8 @@ export default unit({
       scenario('Ves una vela con una mecha inferior larguísima en mitad de un rango lateral, sin tendencia previa. Laura dice que es una señal de compra clarísima. ¿Qué le contestas?', [['Que tiene razón: mecha larga, compra segura', 'En mitad de un rango, sin tendencia que girar, esa mecha significa muy poco.'], ['Que la ubicación importa: en mitad de un rango, esa vela dice poco', 'Exacto: la misma vela tras una caída larga y en un soporte contaría otra historia.'], ['Que es una señal de venta', 'La mecha inferior es rechazo de los precios bajos: no es señal de venta, pero aquí tampoco de compra.']], 1, 'Una vela se lee en su contexto: de dónde viene el precio y dónde está.'),
       timed(single('Rápido: un cuerpo muy pequeño significa…', ['Fuerza compradora', 'Indecisión', 'Caída segura'], 1, 'Ni compradores ni vendedores ganaron con claridad.'), 10),
       chat(['Hoy mi acción subió un 5 % durante la mañana 🚀', 'Pero cerró casi en el precio de apertura 😕'], '¿Cómo le explicas a Lumi lo que pasó?', [['Que fue un gran día para los compradores', 'A media mañana sí, pero al cierre los vendedores devolvieron el precio abajo. Mira el cierre, no el máximo.'], ['Que la vela tiene una mecha superior larga: hubo rechazo de los precios altos', '¡Eso! Los compradores llegaron lejos, pero los vendedores ganaron el final de la batalla.'], ['Que es un error de la app', 'No hay error: subir y volver es muy normal, y la vela lo registra con la mecha.']], 1, 'El máximo cuenta hasta dónde llegaron los compradores; el cierre, quién ganó.'),
-    ], { source: '8.3', minutes: 6, retire: [1, 5, 8, 9] }),
+      candle('Toca la vela donde nadie ganó: la de cuerpo casi inexistente.', 'doji-3', 'Apertura y cierre casi iguales, con mechas a los dos lados: compradores y vendedores empataron. Un cuerpo diminuto es indecisión, no fuerza.'),
+    ], { source: '8.3', minutes: 6, retire: [1, 4, 5, 8, 9] }),
 
     lesson('u20l3', 'Doji, peonza y marubozu', [
       chart('doji-1', 'Toca el doji: la vela cuya apertura y cierre casi coinciden', 'Cuerpo casi inexistente y mechas a los dos lados: ni compradores ni vendedores ganaron esa sesión.', 'Busca la vela cuyo cuerpo es casi una raya.'),
@@ -93,7 +94,7 @@ export default unit({
         say('lumi', 'Un doji no dice «va a girar». Dice «nadie sabe qué hacer».'),
         say('lumi', 'Es una señal de **atención**, no de acción.'),
       ]),
-      key('Los cuatro doji', '• **Normal:** una cruz con mechas parecidas.\n• **De patas largas:** mechas muy largas a los dos lados.\n• **Libélula:** una T, con mecha inferior larga.\n• **Lápida:** una T invertida, con mecha superior larga.', 'Marubozu dice fuerza; peonza, duda; doji, empate.', 'Un doji no dice «va a girar». Dice «nadie sabe qué hacer». Espera a la vela siguiente.'),
+      key('Los cuatro doji', '• **Normal:** una cruz con mechas parecidas.\n• **De patas largas:** mechas muy largas a los dos lados.\n• **Libélula:** una T, con mecha inferior larga.\n• **Lápida:** una T invertida, con mecha superior larga.', 'Marubozu dice fuerza; peonza, duda; doji, empate.', 'Pruébalo: en Mercado, busca un doji en el gráfico diario de Inditex.'),
     ], [
       match('Empareja cada vela con lo que cuenta.', [['Marubozu alcista', 'Los compradores mandaron toda la sesión'], ['Peonza', 'Indecisión con movimiento a los dos lados'], ['Doji', 'Empate: apertura y cierre casi iguales'], ['Marubozu bajista', 'Los vendedores mandaron toda la sesión']], 'El tamaño del cuerpo cuenta la convicción; las mechas, los intentos de cada bando.'),
       match('Empareja cada doji con su forma.', [['Doji libélula', 'T: mecha inferior larga, sin mecha superior'], ['Doji lápida', 'T invertida: mecha superior larga'], ['Doji de patas largas', 'Mechas muy largas a los dos lados'], ['Doji normal', 'Una cruz con mechas parecidas']], 'En la libélula, los compradores devolvieron el precio arriba del todo; en la lápida, los vendedores lo devolvieron abajo.'),
@@ -142,7 +143,7 @@ export default unit({
           { say: 'Mira la forma y luego el contexto', mood: 'HAPPY' },
         ],
       }),
-      key('Lo que dicen los datos (Bulkowski)', '• Martillo: gira al alza el **60 %** (puesto 65 de 103).\n• Hombre colgado: ¡sigue al alza el **59 %**! (puesto 87).\n• Estrella fugaz: gira a la baja el **59 %** (puesto 55).\n\nÉl mismo los describe como «no muy lejos del azar».', 'La misma forma cambia de nombre según venga tras una subida o tras una bajada.', 'El martillo solo es martillo tras una caída. Y aun así, sin contexto acierta poco más que una moneda.'),
+      key('Lo que dicen los datos (Bulkowski)', '• Martillo: gira al alza el **60 %** (puesto 65 de 103).\n• Hombre colgado: ¡sigue al alza el **59 %**! (puesto 87).\n• Estrella fugaz: gira a la baja el **59 %** (puesto 55).\n\nÉl mismo los describe como «no muy lejos del azar».', 'La misma forma cambia de nombre según venga tras una subida o tras una bajada.', 'Pruébalo: en Mercado, busca martillos en el diario de Tesla y mira qué vino después.'),
     ], [
       candle('Tras la caída, toca el martillo.', 'hammer-2', 'Cuerpo pequeño arriba y mecha inferior larguísima tras varias velas rojas: los vendedores empujaron y los compradores devolvieron el precio arriba.'),
       candle('Tras la subida, toca la estrella fugaz.', 'shooting-star-2', 'Mecha superior varias veces mayor que el cuerpo: el intento de subir fue rechazado.'),
@@ -154,7 +155,8 @@ export default unit({
       scenario('Ves un martillo de manual en un gráfico diario, tras dos semanas de caída y cerca del mínimo del año. ¿Qué haces según lo aprendido?', [['Compro ya con todo', 'Aun en buenas condiciones falla a menudo: entrar con todo y sin stop convierte un 60 % en una ruleta.'], ['Espero la confirmación y, si entro, pongo el stop bajo la mecha', 'Bien: confirmación (un cierre por encima del máximo del martillo) y un stop donde la idea deja de valer.'], ['Lo ignoro: las velas no sirven para nada', 'Las velas no predicen solas, pero dan contexto y un sitio lógico para el stop.']], 1, 'Un martillo es una pista, no una orden: confirmación, stop y tamaño prudente.'),
       timed(single('Rápido: mecha superior larga tras una subida.', ['Martillo', 'Estrella fugaz', 'Marubozu'], 1, 'Cuerpo pequeño abajo y mecha superior larga tras subir: estrella fugaz.'), 10),
       single('Según Bulkowski, ¿qué mejora los resultados del martillo?', ['Que aparezca cerca del mínimo del año', 'Que aparezca en mitad de un rango', 'Que tenga el cuerpo rojo'], 0, 'Funciona mejor en el tercio inferior del rango anual, y los de cuerpo verde van mejor.'),
-    ], { source: '8.5', minutes: 6, retire: [2, 5, 8] }),
+      level('Como bajo la mecha de un martillo: has comprado al último precio. Coloca el stop por debajo del último mínimo relevante.', 'lvl-19', 'STOP', 'Si el precio pierde ese mínimo, el rechazo de los precios bajos ha fallado y la idea ya no vale. Por eso el stop va algo por debajo, no justo encima, donde lo saltaría cualquier mecha.'),
+    ], { source: '8.5', minutes: 6, retire: [2, 4, 5, 8] }),
 
     lesson('u20l5', 'Envolventes y harami', [
       chart('bull-engulfing-2', 'Tras la caída, toca la vela verde que envuelve a la roja anterior', 'Su cuerpo se come entero el rojo del día anterior: los compradores recuperaron todo lo perdido y más.', 'Busca una vela verde enorme justo después de una roja.'),
@@ -170,7 +172,7 @@ export default unit({
         say('lumi', 'La nube oscura gira el **60 %** y aun así queda en el puesto **22**.'),
         say('lumi', 'Acertar la dirección no basta: el recorrido tiene que compensar el riesgo.'),
       ]),
-      key('Harami, penetrante y nube oscura', '• **Envolvente:** el cuerpo de la segunda vela se come el de la primera, en sentido contrario.\n• **Harami** («embarazada»): vela larga y después una pequeña **dentro** de su cuerpo. El impulso se frena.\n• **Pauta penetrante:** tras una caída, una verde que cierra **por encima de la mitad** del cuerpo rojo anterior.\n• **Nube oscura:** tras una subida, una roja que cierra **por debajo de la mitad** del verde.', 'Acertar la dirección no basta: el recorrido tiene que compensar el riesgo.', 'Una envolvente gira a menudo, pero a veces gira poco.'),
+      key('Harami, penetrante y nube oscura', '• **Envolvente:** el cuerpo de la segunda vela se come el de la primera, en sentido contrario.\n• **Harami** («embarazada»): vela larga y después una pequeña **dentro** de su cuerpo. El impulso se frena.\n• **Pauta penetrante:** tras una caída, una verde que cierra **por encima de la mitad** del cuerpo rojo anterior.\n• **Nube oscura:** tras una subida, una roja que cierra **por debajo de la mitad** del verde.', 'Acertar la dirección no basta: el recorrido tiene que compensar el riesgo.', 'Pruébalo: en Mercado, busca una envolvente en el gráfico diario de Bitcoin.'),
     ], [
       candle('Tras la subida, toca la vela roja que envuelve a la verde anterior.', 'bear-engulfing-1', 'El cuerpo rojo se come el verde anterior: los vendedores borran todo lo ganado la sesión previa.'),
       candle('Toca la envolvente alcista de este gráfico.', 'bull-engulfing-3', 'Vela verde cuyo cuerpo cubre por completo el de la roja anterior, después de varias sesiones flojas.'),
@@ -182,6 +184,7 @@ export default unit({
       tf('Los patrones con hueco entre velas tienen el mismo sentido en criptomonedas que en acciones.', false, 'Las cripto cotizan 24/7 y las divisas casi sin pausa: apenas hay huecos entre velas, así que estos patrones se forman de otra manera o pierden sentido.'),
       timed(single('Rápido: vela verde cuyo cuerpo se come el cuerpo rojo anterior, tras una caída.', ['Envolvente alcista', 'Harami', 'Estrella fugaz'], 0, 'Es la envolvente alcista.'), 10),
       scenario('Marta encuentra una envolvente bajista de manual. Sabe que gira el 79 % de las veces y quiere apostar fuerte. ¿Qué le falta mirar?', [['Nada: un 79 % es casi seguro', 'Acierta la dirección a menudo, pero si el recorrido es pequeño y el stop grande, puede perder dinero acertando.'], ['Cuánto puede caer frente a lo que pierde si falla', 'Eso: con un recorrido medio pequeño, la relación beneficio/riesgo puede no compensar.'], ['El color de la vela anterior', 'Ya lo sabe: verde. La pregunta importante es cuánto gana si acierta y cuánto pierde si falla.']], 1, 'Acertar la dirección no basta: hay que comparar el recorrido esperado con el riesgo.'),
+      upDown('Lee las últimas velas por parejas, como en una envolvente o un harami. ¿Sube o baja en las 10 sesiones siguientes?', 'ud-58', 'Una envolvente acierta a menudo la dirección, pero el recorrido puede ser corto; un harami solo dice que el impulso se frena. Ninguno trae el resultado escrito: por eso se opera con stop.'),
     ], { source: '8.6', minutes: 6, retire: [4, 7, 8, 9] }),
 
     lesson('u20l6', 'Estrellas, soldados y cuervos', [
@@ -219,7 +222,7 @@ export default unit({
         say('lumi', 'Ojo: como rebote en una tendencia bajista, la bajada suele continuar.'),
         say('lumi', 'Los mejores patrones mejoran las probabilidades. No las convierten en certezas.'),
       ]),
-      key('Los mejores números (Bulkowski)', '• Estrella de la mañana: gira el **78 %** (puesto 12 de 103).\n• Estrella de la tarde: **72 %** (puesto **4**).\n• Tres soldados blancos: **82 %** (puesto 32).\n• Tres cuervos negros: **78 %** (puesto **3**).\n\nMejores que las velas sueltas, pero mucho menos frecuentes.', 'Tres velas cuentan mejor la historia que una.', 'Por eso son más fiables… y más raras.'),
+      key('Los mejores números (Bulkowski)', '• Estrella de la mañana: gira el **78 %** (puesto 12 de 103).\n• Estrella de la tarde: **72 %** (puesto **4**).\n• Tres soldados blancos: **82 %** (puesto 32).\n• Tres cuervos negros: **78 %** (puesto **3**).\n\nMejores que las velas sueltas, pero mucho menos frecuentes.', 'Tres velas cuentan mejor la historia que una.', 'Pruébalo: en Mercado, busca tres velas verdes largas seguidas en el diario de NVIDIA.'),
     ], [
       order('Ordena las velas de una estrella de la mañana.', ['Roja larga tras una caída', 'Vela pequeña con hueco abajo', 'Verde larga que cierra por encima de la mitad de la primera'], 'Los vendedores dominan, después dudan y al final los compradores toman el control.'),
       candle('Toca la vela que completa la estrella de la mañana.', 'morning-star-3', 'Tras una roja larga y una vela pequeña de duda, esta verde larga cierra el patrón.'),
@@ -271,7 +274,7 @@ export default unit({
           { say: 'Mira solo las velas y decide', mood: 'HAPPY' },
         ],
       }),
-      key('Entonces, ¿para qué sirven?', 'Un estudio en Japón (1975–2004), la cuna de las velas, llegó a lo mismo que Marshall, Young y Rose. Bulkowski mide sin comisiones ni *spreads*. Y si pruebas cien patrones, alguno parecerá funcionar por casualidad (*data snooping*).\n\nLas velas sirven para **leer** el mercado (rechazo, convicción, indecisión), para poner el **stop** en un sitio lógico y para no dejarte engañar por quien vende patrones «con un 90 % de acierto».', 'Las velas son un idioma, no una bola de cristal.', 'La vela es la frase; el contexto, el libro entero.'),
+      key('Entonces, ¿para qué sirven?', 'Un estudio en Japón (1975–2004), la cuna de las velas, llegó a lo mismo que Marshall, Young y Rose. Bulkowski mide sin comisiones ni *spreads*. Y si pruebas cien patrones, alguno parecerá funcionar por casualidad (*data snooping*).\n\nLas velas sirven para **leer** el mercado (rechazo, convicción, indecisión), para poner el **stop** en un sitio lógico y para no dejarte engañar por quien vende patrones «con un 90 % de acierto».', 'Las velas son un idioma, no una bola de cristal.', 'Pruébalo: en Mercado, busca un martillo y repasa los cuatro filtros antes de decidir.'),
     ], [
       multi('¿Cuáles son los cuatro filtros que dan valor a un patrón de velas? Marca todos.', ['Tendencia previa', 'Nivel relevante', 'Volumen', 'Confirmación', 'Que el gráfico sea de 1 minuto'], [0, 1, 2, 3], 'Sin ellos, el patrón es poco más que ruido. Y en gráficos de minutos el ruido manda.'),
       upDown('Reto: mira solo las velas y decide. ¿Sube o baja en las 10 sesiones siguientes?', 'ud-60', 'Apunta tus aciertos en estos retos: con suficientes intentos verás que, solo con velas, rondan los de una moneda al aire.'),

@@ -54,13 +54,23 @@
      "title": "La vuelta al nivel",
      "body": "Tras una rotura, el precio a menudo vuelve a **probar** el nivel antes de seguir. Bulkowski lo llama *throwback* si la rotura fue al alza y *pullback* si fue a la baja. En el hombro-cabeza-hombro, por ejemplo, vuelve a la clavicular el **68 %** de las veces.\n\nSi el nivel roto aguanta en la vuelta, la rotura gana credibilidad. Si el precio se mete otra vez dentro con claridad, la rotura era falsa y la idea ha fallado.",
      "key": "Un soporte roto suele volverse resistencia, y una resistencia rota, soporte.",
-     "tip": "Lo que antes era techo puede ser el nuevo suelo."
+     "tip": "Pruébalo: en Mercado, pon una alerta de precio en un antiguo techo ya roto."
     }
    ]
   },
   "u21l3": {
    "title": "Líneas de tendencia y canales",
    "steps": [
+    {
+     "texts": [
+      "¿Aguanta la tendencia?",
+      "Cuatro tendencias reales, sin nombre ni fecha. Imagina una línea por los mínimos o por los máximos. ¿Sube o baja en las 10 sesiones siguientes?",
+      "Juega las cuatro rondas.",
+      "Aquí, dos tendencias siguieron y dos se rompieron. Una **línea de tendencia** no adivina el futuro: marca **dónde deja de valer** la idea.",
+      "Dos siguieron y dos giraron. La línea te avisa del cambio.",
+      "Sigue la dirección con la vista y decide"
+     ]
+    },
     {
      "texts": [
       "¿Buena línea o línea forzada?",
@@ -108,7 +118,7 @@
      "title": "Canales y pendiente",
      "body": "Una paralela por los máximos de una tendencia alcista forma un **canal**: la parte baja actúa como soporte y la alta, como resistencia.\n\nLas líneas muy verticales se rompen pronto; las de unos **30–45 grados** suelen aguantar más. En gráficos de varios años, usa **escala logarítmica**.",
      "key": "Una línea alcista une mínimos crecientes; mientras se respete, la tendencia sigue.",
-     "tip": "Si tienes que forzar la línea para que toque los puntos, la línea está en tu cabeza."
+     "tip": "Pruébalo: en Mercado, traza una «Línea de tendencia» por dos mínimos crecientes de Apple."
     }
    ]
   },
@@ -159,7 +169,7 @@
      "title": "El objetivo y los datos",
      "body": "Objetivo clásico: la distancia de la cabeza a la clavicular, proyectada desde la rotura. Cabeza en 120 €, clavicular en 100 €: altura 20 € → objetivo **80 €**. Bulkowski propone uno más prudente, con la mitad de la altura → **90 €**.\n\nSus datos: caída media tras la rotura, **16 %**; fracasa (no cae ni un 5 %), **19 %**; vuelve a la clavicular, **68 %**; alcanza el objetivo clásico, solo el **51 %**.",
      "key": "Sin rotura de la clavicular, no hay figura.",
-     "tip": "Un HCH sin rotura es solo una montaña con forma bonita."
+     "tip": "Pruébalo: en Mercado, busca tres picos en un gráfico semanal y marca su clavicular."
     }
    ]
   },
@@ -209,7 +219,7 @@
      "title": "El objetivo",
      "body": "Objetivo clásico: la altura de la figura, proyectada desde la rotura.\n\nDoble suelo con mínimos en 40 € y máximo intermedio en 50 €. Altura: 10 €. Al superar 50 € con un cierre, el objetivo clásico es **60 €**. Si después vuelve a cerrar claramente por debajo de 50 €, la rotura ha fallado.",
      "key": "Sin rotura no hay figura.",
-     "tip": "Dos picos no son un doble techo hasta que el valle se rompe."
+     "tip": "Pruébalo: si ves una M en Mercado, pon una alerta de precio en su valle."
     }
    ]
   },
@@ -218,8 +228,19 @@
    "steps": [
     {
      "texts": [
+      "Pausas con velas reales",
+      "Cuatro gráficos reales: ¿ves alguna pausa tras un movimiento fuerte? Decide si sube o baja en las 10 sesiones siguientes.",
+      "Responde las cuatro rondas.",
+      "Tras un movimiento fuerte, el precio a menudo **toma aire** unos días. Esas pausas tienen nombre (triángulos, banderas, rectángulos), pero **no dicen cómo terminan**.",
+      "Hecho. Acertar o fallar cuatro rondas dice muy poco.",
+      "Vas bien… pero la pausa no dice cómo termina.",
+      "Mira las velas y elige: ¿sube o baja?"
+     ]
+    },
+    {
+     "texts": [
       "¿Hacia dónde suele romper?",
-      "Las figuras de continuación son pausas del precio. Su forma dice quién aprieta.",
+      "Esas pausas son **figuras de continuación**. Su forma dice quién aprieta.",
       "Suele romper al alza",
       "Suele romper a la baja",
       "Hacia cualquier lado",
@@ -236,26 +257,15 @@
       "Clasifica las cinco figuras.",
       "El triángulo **ascendente** y el **descendente** tienen sesgo; el simétrico y el rectángulo dependen de la rotura. El **volumen** suele bajar mientras se forman y subir al romper.",
       "Pista: la línea horizontal es la que alguien defiende. ¿Quién empuja contra ella?",
-      "Bien visto. Ahora, a probarlo con velas reales.",
+      "Bien visto. La forma da pistas, no certezas.",
       "Clasifica cada figura"
-     ]
-    },
-    {
-     "texts": [
-      "Pausas con velas reales",
-      "Cuatro gráficos reales: ¿ves alguna pausa tras un movimiento fuerte? Decide si sube o baja en las 10 sesiones siguientes.",
-      "Responde las cuatro rondas.",
-      "Aunque veas una bandera de libro, **fracasa casi la mitad de las veces**. Las figuras de continuación dan probabilidades modestas: lo que decides de verdad es cuánto arriesgas.",
-      "Hecho. Acertar o fallar cuatro rondas dice muy poco.",
-      "Vas bien… pero la pausa no dice cómo termina.",
-      "Mira las velas y elige: ¿sube o baja?"
      ]
     },
     {
      "title": "Banderas y rectángulos",
      "body": "• **Bandera:** tras un movimiento fuerte y rápido (el **mástil**), unos días en un pequeño rectángulo inclinado contra la tendencia. Dura **menos de 3 semanas**. Si es un pequeño triángulo, es un **banderín**.\n• **Rectángulo:** rango lateral entre un soporte y una resistencia claros.\n\nBulkowski: en mercado alcista, las banderas rompen al alza el **60 %** de las veces, el movimiento medio tras la rotura ronda el **9 %** y **fracasan** (no avanzan ni un 5 %) en torno al **44–45 %**.",
      "key": "Las figuras de continuación son el mercado tomando aire, aunque a veces se gira.",
-     "tip": "Una bandera es una pausa para respirar, pero casi la mitad de las veces el corredor se queda sin aire."
+     "tip": "Pruébalo: en Mercado, marca con «Rectángulo» la última pausa de Bitcoin."
     }
    ]
   },
@@ -309,7 +319,7 @@
      "title": "Y si falla, el stop",
      "body": "Ningún filtro las elimina todas. Por eso el stop va donde la rotura deja de tener sentido: de vuelta dentro de la zona, por debajo del último mínimo relevante. Y el tamaño se calcula para que ese fallo cueste poco.",
      "key": "Una rotura sin cierre ni volumen es solo una excursión.",
-     "tip": "Antes de entrar en una rotura, decide dónde reconocerás que era falsa."
+     "tip": "Pruébalo: tras tu próxima compra, pon una alerta de precio donde la idea falla."
     }
    ]
   },
@@ -417,6 +427,25 @@
    ],
    "explanation": "Dentro del canal, la parte baja actúa como soporte y la alta como resistencia."
   },
+  "u21l3-11": {
+   "prompt": "Compras dentro de una tendencia alcista. Coloca el stop por debajo del último mínimo relevante, el que sostiene tu línea.",
+   "options": [],
+   "explanation": "Si el precio pierde el último mínimo, la línea y la estructura de mínimos crecientes se rompen a la vez: la idea ya no vale. Justo encima, cualquier caída normal te sacaría."
+  },
+  "u21l3-12": {
+   "prompt": "Una línea alcista lleva tres toques. El precio baja a tocarla por cuarta vez y Marta quiere comprar sin stop «porque siempre rebota». ¿Qué le dices?",
+   "options": [
+    "Que puede comprar, pero con el stop por debajo de la línea y del último mínimo",
+    "Que redibuje la línea más abajo para estar tranquila",
+    "Que tiene razón: tres toques son una garantía"
+   ],
+   "explanation": "Una línea de tendencia te dice dónde deja de valer la idea. Por eso el stop va al otro lado: si se rompe, sales perdiendo poco.",
+   "feedback": [
+    "Eso: si la línea se rompe y pierde el mínimo, sale con una pérdida pequeña.",
+    "Mover la línea para que encaje es engañarse: la línea está en el gráfico, no en sus deseos.",
+    "Tres toques hacen la línea más relevante, no irrompible. Romper una línea es habitual."
+   ]
+  },
   "u21l4-1": {
    "prompt": "Ordena cómo se forma un hombro-cabeza-hombro.",
    "options": [
@@ -427,24 +456,6 @@
     "Hombro derecho, más bajo que la cabeza"
    ],
    "explanation": "La figura solo existe cuando llega el último paso: la rotura de la clavicular."
-  },
-  "u21l4-3": {
-   "prompt": "Cabeza en 120 € y clavicular en 100 €. ¿Cuál es el objetivo clásico tras la rotura?",
-   "options": [],
-   "explanation": "Altura: 120 − 100 = 20 €. Proyectada desde 100 €: 100 − 20 = 80 €.",
-   "unit": "€"
-  },
-  "u21l4-4": {
-   "prompt": "Cabeza en 120 € y clavicular en 100 €. ¿Cuál es el objetivo prudente de Bulkowski, con la mitad de la altura?",
-   "options": [],
-   "explanation": "Mitad de la altura: 10 €. 100 − 10 = 90 €. Solo el 51 % alcanza el objetivo completo.",
-   "unit": "€"
-  },
-  "u21l4-5": {
-   "prompt": "HCH invertido: cabeza (el mínimo) en 40 € y clavicular en 50 €. ¿Objetivo clásico tras romper al alza?",
-   "options": [],
-   "explanation": "Altura de 10 €, proyectada hacia arriba desde 50 €: 60 €.",
-   "unit": "€"
   },
   "u21l4-6": {
    "prompt": "Antes de buscar hombros, localiza la cumbre: toca el cierre más alto de este tramo (Apple · cierres cada 3 sesiones · septiembre–noviembre de 2024)",
@@ -460,17 +471,51 @@
    "explanation": "Las figuras de giro se confirman con la rotura de su línea clave, y eso solo se ve después. En la cumbre, nadie tiene aún esa confirmación.",
    "horizon": "los años siguientes"
   },
-  "u21l5-3": {
-   "prompt": "Doble suelo: mínimos en 40 € y máximo intermedio en 50 €. ¿Objetivo clásico tras superar los 50 €?",
-   "options": [],
-   "explanation": "Altura: 50 − 40 = 10 €. Proyectada desde 50 €: 60 €.",
-   "unit": "€"
+  "u21l4-11": {
+   "prompt": "Tienes acciones de una empresa. Tras una gran subida forma un hombro-cabeza-hombro y hoy cierra por debajo de la clavicular con volumen alto. ¿Qué haces?",
+   "options": [
+    "Nada: las figuras fallan, así que las ignoro",
+    "Compro más: ahora está más barata",
+    "Reviso mi plan: vender una parte o proteger lo ganado, porque la figura se ha confirmado"
+   ],
+   "explanation": "Una figura confirmada no es una certeza, pero cambia el plan: según Bulkowski, la caída media tras la rotura es del 16 %.",
+   "feedback": [
+    "Fallan un 19 % de las veces, no casi siempre: una figura confirmada es un aviso serio.",
+    "Comprar más justo cuando se confirma una figura bajista es ir contra la señal.",
+    "Eso: la rotura confirma la figura. No es seguro que caiga, pero ya tienes un motivo para actuar con plan."
+   ]
   },
-  "u21l5-4": {
-   "prompt": "Doble techo: máximos en 80 € y valle en 72 €. ¿Objetivo clásico tras perder los 72 €?",
-   "options": [],
-   "explanation": "Altura: 80 − 72 = 8 €. Proyectada hacia abajo desde 72 €: 64 €.",
-   "unit": "€"
+  "u21l4-12": {
+   "prompt": "Hombro-cabeza-hombro confirmado, con la cabeza en 120 € y la clavicular en 100 €. Ana espera a que caiga hasta el objetivo clásico de 80 € para volver a comprar. ¿Qué le dices?",
+   "options": [
+    "Que solo la mitad llega a 80 €: un objetivo prudente sería 90 €",
+    "Que la figura no da ninguna pista sobre hasta dónde cae",
+    "Que seguro que llega a 80 €: es el objetivo de la figura"
+   ],
+   "explanation": "Los objetivos de las figuras son referencias, no promesas. Con la mitad de la altura, el objetivo es más realista.",
+   "feedback": [
+    "Eso: Bulkowski propone la mitad de la altura, 90 €, porque el objetivo completo solo se alcanza el 51 % de las veces.",
+    "Sí da una referencia: la altura proyectada desde la rotura. Pero es una referencia, no una promesa.",
+    "Según Bulkowski, solo el 51 % alcanza el objetivo clásico."
+   ]
+  },
+  "u21l4-13": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Es un HCH invertido: alcista, y se confirma al cerrar por encima de su clavicular",
+    "Sí: todos los hombro-cabeza-hombro son bajistas",
+    "Es alcista: compro ya, antes de la rotura"
+   ],
+   "explanation": "El HCH normal aparece tras una subida y es bajista; el invertido aparece tras una caída y es alcista. Los dos se confirman al romper su clavicular.",
+   "feedback": [
+    "Eso: tras una caída, la versión invertida apunta al alza. Y sin rotura, aún no es figura.",
+    "Este está boca abajo y aparece tras una caída: es el invertido, que es alcista.",
+    "Bien la dirección, pero sin un cierre por encima de la clavicular la figura no existe."
+   ],
+   "lines": [
+    "Tras meses de caída veo tres mínimos, con el central más bajo.",
+    "Es un hombro-cabeza-hombro: bajista, ¿verdad?"
+   ]
   },
   "u21l5-7": {
    "prompt": "Toca el cierre más bajo de este tramo: en un doble suelo, sería uno de los dos apoyos (Apple · cierres cada 3 sesiones · febrero–abril de 2025)",
@@ -494,6 +539,39 @@
    ],
    "explanation": "Buscar M y W en cada gráfico es tentador; el ojo encuentra formas en cualquier parte. Por eso se exige la rotura.",
    "horizon": "las 10 sesiones siguientes"
+  },
+  "u21l5-11": {
+   "prompt": "Doble suelo con mínimos en 40 € y máximo intermedio en 50 €. El precio cierra en 51 € y Bruno compra. Días después cierra en 47 €. ¿Qué ha pasado?",
+   "options": [
+    "Es el momento de comprar el doble",
+    "Nada: el objetivo sigue en 60 €",
+    "La rotura ha fallado: ha vuelto a cerrar claramente por debajo de 50 €"
+   ],
+   "explanation": "Una figura confirmada también puede fallar. Si el precio vuelve a cerrar claramente al otro lado de la línea clave, la rotura era falsa.",
+   "feedback": [
+    "Comprar más en una idea que ha fallado suele agrandar la pérdida.",
+    "El objetivo solo vale si la rotura aguanta, y ha vuelto a cerrar claramente por debajo de 50 €.",
+    "Eso: si vuelve dentro de la figura con un cierre claro, la idea ya no vale. Toca salir según el plan."
+   ]
+  },
+  "u21l5-12": {
+   "prompt": "Mismo doble suelo: mínimos en 40 €, máximo intermedio en 50 € y cierre en 51 €. ¿Dónde tiene más sentido el stop de Bruno?",
+   "options": [
+    "Algo por debajo de 50 €, donde la rotura fallaría",
+    "Por debajo de 40 €, bajo los dos suelos",
+    "No hace falta: la figura está confirmada"
+   ],
+   "explanation": "El stop va donde la idea deja de valer. En una rotura, eso es de vuelta dentro de la figura.",
+   "feedback": [
+    "Eso: si vuelve a cerrar claramente por debajo de 50 €, la idea ha fallado y sale perdiendo poco.",
+    "Tiene lógica, pero queda muy lejos: arriesga mucho más por acción para la misma idea.",
+    "Confirmada no quiere decir segura. Sin stop, un fallo puede costar mucho."
+   ]
+  },
+  "u21l5-13": {
+   "prompt": "Ahora con velas reales: has comprado al último precio. Coloca el stop por debajo del último mínimo relevante, como bajo los suelos de una W.",
+   "options": [],
+   "explanation": "Por debajo del mínimo reciente, la estructura que justificaba la compra se rompe. Un poco de margen evita que una simple mecha te saque."
   },
   "u21l6-1": {
    "prompt": "Empareja cada figura con su forma.",
@@ -564,12 +642,6 @@
    ],
    "explanation": "Si dura más, se habla de rectángulo o de canal."
   },
-  "u21l7-3": {
-   "prompt": "Una resistencia está en 50 €. Exiges que el cierre la supere en un 2 % para darla por rota. ¿Por encima de qué precio debe cerrar?",
-   "options": [],
-   "explanation": "50 × 1,02 = 51 €.",
-   "unit": "€"
-  },
   "u21l7-4": {
    "prompt": "Has comprado tras una rotura. Coloca el stop donde la rotura dejaría de tener sentido: por debajo del último mínimo relevante.",
    "options": [],
@@ -593,6 +665,39 @@
    ],
    "explanation": "Ni las roturas con volumen garantizan nada. Lo que sí puedes controlar es dónde sales si fallan y cuánto pierdes.",
    "horizon": "las 10 sesiones siguientes"
+  },
+  "u21l7-11": {
+   "prompt": "Una acción supera durante la sesión su máximo del año. Faltan dos horas para el cierre y el volumen va por debajo de la media. Quieres comprar. ¿Qué haces?",
+   "options": [
+    "Compro ya, antes de que se escape",
+    "Compro el doble para aprovechar más la subida",
+    "Espero al cierre y miro si supera el nivel con volumen"
+   ],
+   "explanation": "Las rupturas se confirman con el cierre y el volumen. Esperar unas horas cuesta poco; caer en la trampa, mucho más.",
+   "feedback": [
+    "Es justo como se cae en una ruptura falsa: sin cierre ni volumen, todavía no hay rotura.",
+    "Más tamaño en una señal sin confirmar multiplica el coste si resulta falsa.",
+    "Eso: un cierre al otro lado con volumen superior a la media filtra muchas rupturas falsas."
+   ]
+  },
+  "u21l7-12": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Sí: tendría que haber quitado el stop para aguantar",
+    "Sí: si salta el stop, la operación estaba mal planteada",
+    "No: seguí los filtros y el stop limitó la pérdida; a veces sale mal igual"
+   ],
+   "explanation": "Ningún filtro elimina todas las rupturas falsas: según Bulkowski, el HCH fracasa un 19 % de las veces y las banderas, en torno al 44 %. Lo que controlas es cuánto cuesta el error.",
+   "feedback": [
+    "Quitar el stop convierte un error pequeño en uno que puede ser enorme.",
+    "No necesariamente: ningún filtro elimina todas las rupturas falsas.",
+    "Eso: una buena decisión puede salir mal. El stop ha hecho su trabajo."
+   ],
+   "lines": [
+    "Compraste una rotura con cierre y volumen.",
+    "Aun así, a los tres días vuelve dentro y toca tu stop.",
+    "¿Lo hiciste mal?"
+   ]
   }
  }
 }

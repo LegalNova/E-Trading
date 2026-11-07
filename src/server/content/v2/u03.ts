@@ -3,7 +3,7 @@ import 'server-only'
 import { buckets, chat, choose, fill, key, lesson, match, multi, num, opt, order, play, say, scenario, single, spot, story, tf, timed, unit, when } from '../dsl'
 
 export default unit({
-  id: 'u3', order: 3, title: 'Deudas y crédito', description: 'Cuánto cuesta de verdad una deuda, cuáles evitar y cómo salir de ellas',
+  id: 'u3', order: 3, title: 'Deudas y crédito', description: 'Cuánto cuesta de verdad una deuda, cuáles evitar y por qué la cara va antes que invertir',
   lessons: [
     lesson('u3l1', 'TIN, TAE y el coste real de un préstamo', [
       story('«Solo 149 € al mes»', [{ id: 'vendedor', name: 'Vendedor' }], [
@@ -22,7 +22,7 @@ export default unit({
         widget: { kind: 'loan', amount: 6000, tin: 7, months: 48, fee: 3, maxAmount: 20000, maxTin: 15, maxMonths: 96 },
         predict: {
           prompt: 'A 4 años, ¿cuánto acabarás devolviendo en total, con la comisión?',
-          options: ['Unos 6.420 €', 'Unos 7.080 €', 'Unos 8.000 €'],
+          options: ['Los 6.000 € y poco más', 'Unos 1.000 € más de lo que pediste', 'El doble de lo que pediste'],
           answer: 1,
           why: 'Cuota de 143,68 € × 48 meses + 180 € de comisión = **7.077 €**. Los 6.000 € te cuestan 1.077 €.',
         },
@@ -34,7 +34,7 @@ export default unit({
           { say: 'Mueve el plazo y mira la cuota y el total', mood: 'HAPPY' },
         ],
       }),
-      key('TIN y TAE', '• **TIN:** el interés «puro» que te cobran por el dinero prestado.\n• **TAE:** suma las **comisiones** obligatorias y tiene en cuenta cada cuánto pagas. Es el coste real en un año.\n\nA 3 años, un préstamo al 6 % TIN con un 3 % de comisión sale más caro que otro al 7,5 % TIN sin comisión: **TAE del 8,36 % frente al 7,76 %**.', 'Para comparar préstamos, mira la TAE, no el TIN ni la cuota.'),
+      key('TIN y TAE', '• **TIN:** el interés «puro» que te cobran por el dinero prestado.\n• **TAE:** suma las **comisiones** obligatorias y tiene en cuenta cada cuánto pagas. Es el coste real en un año.\n\nA 3 años, un préstamo al 6 % TIN con un 3 % de comisión sale más caro que otro al 7,5 % TIN sin comisión: **TAE del 8,36 % frente al 7,76 %**.\n\nY si piensas en invertir: un préstamo al 7 % TAE te cuesta ese 7 % **seguro** cada año.', 'Para comparar préstamos, mira la TAE, no el TIN ni la cuota.', 'Pruébalo: pregúntale a la profesora Lumi cuánto te costaría tu préstamo a otro plazo.'),
     ], [
       fill('Para comparar préstamos hay que mirar la ____, porque incluye las comisiones.', 'TAE', ['TIN', 'cuota', 'IBAN'], 'La TAE recoge el interés, las comisiones obligatorias y la frecuencia de pago: es el coste comparable.'),
       single('Préstamo A: 6 % TIN y 3 % de comisión de apertura. Préstamo B: 7,5 % TIN sin comisiones. Mismo importe y plazo (3 años). ¿Cuál es más barato?', ['A, porque su TIN es menor', 'B, porque su TAE es menor', 'Cuestan lo mismo'], 1, 'TAE de A ≈ 8,36 %; de B ≈ 7,76 %. La comisión de apertura encarece A aunque su TIN sea menor.'),
@@ -46,9 +46,20 @@ export default unit({
       num('Pides 20.000 € al 8 % TIN. A 5 años pagas 4.332 € de intereses; a 8 años, 7.142 €. ¿Cuánto más pagas por alargarlo?', 2810, '€', '7.142 − 4.332 = 2.810 € más por tener la cuota más baja.'),
       fill('Un TIN del 12 % con pagos mensuales equivale a una TAE de ____.', '12,68 %', ['12 %', '1 %', '144 %'], '1,01¹² − 1 ≈ 0,1268 → 12,68 %. El interés de cada mes genera interés.'),
       multi('¿Qué puede hacer que un préstamo salga más caro? Marca todas.', ['Una comisión de apertura', 'Un plazo más largo', 'Un seguro obligatorio vinculado', 'Devolverlo antes sin penalización'], [0, 1, 2], 'Devolver antes sin penalización reduce los intereses: es lo único de la lista que abarata.'),
-    ], { minutes: 6, retire: [3, 4, 5] }),
+      scenario('Quieres empezar a invertir y el banco te ofrece un préstamo personal al 9 % TAE para hacerlo «a lo grande». ¿Qué haces?', [['No lo pido: empiezo con lo que ahorro cada mes', 'Sin intereses que pagar, cualquier ganancia es tuya, y una caída no te deja debiendo dinero.'], ['Lo pido: la bolsa sube a largo plazo', 'Tendrías que ganar más de un 9 % cada año solo para empatar, y la cuota llega aunque la bolsa caiga.'], ['Pido la mitad, por si acaso', 'Menos riesgo que pedirlo todo, pero sigues debiendo un 9 % seguro por algo que no lo es.']], 0, 'La deuda cobra un 9 % seguro; la inversión, en cambio, puede caer justo cuando toca pagar la cuota. Lo tentador es pensar que la bolsa siempre sube, pero a corto plazo nadie lo garantiza.'),
+      chat(['El concesionario me ofrece el coche al 0 % TIN.', '¡Es gratis! ¿Firmo ya?'], '¿Qué le contestas a Lumi?', [['Firma: al 0 % no pagas nada', 'El TIN no incluye comisiones ni seguros obligatorios: mira la TAE.'], ['Antes pide la TAE y el total que vas a pagar', '¡Eso! Con comisiones y seguros, un 0 % TIN puede salir caro.'], ['Pide que te alarguen el plazo para pagar menos', 'Cuota más baja, pero más meses pagando intereses y comisiones.']], 1, 'Un 0 % TIN puede esconder comisiones de apertura o seguros vinculados que solo aparecen en la TAE y en el total a pagar. Lo tentador es quedarse con el «0 %», pero lo que se compara es la TAE.'),
+    ], { minutes: 6, retire: [2, 3, 4, 5, 7, 8] }),
 
     lesson('u3l2', 'Deuda buena y deuda mala', [
+      story('Japón a plazos', [{ id: 'marta', name: 'Marta' }], [
+        say('marta', '¡Me voy a Japón! El viaje cuesta 3.000 € y me lo financian a 24 meses al 18 % TAE. ¡Me lo merezco!'),
+        choose('¿Qué le dices?', [
+          opt('¡Genial, aprovecha!', 'bad', say('lumi', 'A ese interés pagará **más de 500 €** de intereses, y seguirá pagando el viaje más de un año después de volver.')),
+          opt('¿Y si lo ahorras unos meses y vas el año que viene?', 'good', say('lumi', '¡Buena idea! Con 250 € al mes lo tiene en un año, **sin intereses**, y disfruta igual del viaje.')),
+          opt('Pídelo con la revolving, que es más cómodo', 'bad', say('lumi', 'Peor aún: la cuota pequeña de la revolving puede alargar la deuda durante años.')),
+        ]),
+        say('marta', 'Vale… ¡pero el año que viene me voy sí o sí!'),
+      ]),
       play({
         title: '¿Crea valor o lo destruye?',
         intro: 'No toda deuda es igual. La que **puede tener sentido** paga algo que dura o te genera ingresos, a un interés razonable. La que conviene **evitar** paga algo que se acaba antes que la deuda, y cara.',
@@ -71,15 +82,7 @@ export default unit({
           { say: 'Clasifica cada deuda', mood: 'HAPPY' },
         ],
       }),
-      story('Japón a plazos', [{ id: 'marta', name: 'Marta' }], [
-        say('marta', '¡Me voy a Japón! El viaje cuesta 3.000 € y me lo financian a 24 meses al 18 % TAE. ¡Me lo merezco!'),
-        choose('¿Qué le dices?', [
-          opt('¡Genial, aprovecha!', 'bad', say('lumi', 'A ese interés pagará **más de 500 €** de intereses, y seguirá pagando el viaje más de un año después de volver.')),
-          opt('¿Y si lo ahorras unos meses y vas el año que viene?', 'good', say('lumi', '¡Buena idea! Con 250 € al mes lo tiene en un año, **sin intereses**, y disfruta igual del viaje.')),
-          opt('Pídelo con la revolving, que es más cómodo', 'bad', say('lumi', 'Peor aún: la cuota pequeña de la revolving puede alargar la deuda durante años.')),
-        ]),
-        say('marta', 'Vale… ¡pero el año que viene me voy sí o sí!'),
-      ]),
+      key('La deuda cara va antes que invertir', 'Una deuda al 20 % te cobra ese 20 % **seguro** cada año. Ninguna inversión te garantiza ganar eso: ni siquiera la bolsa, que tiene años buenos y años muy malos.\n\nPor eso la deuda cara se quita antes de invertir. La barata y asumible, como una hipoteca con una cuota razonable, puede convivir con tu cartera.', 'Si una deuda te cuesta más de lo que esperas ganar invirtiendo, quítatela primero.', 'Pruébalo: pregúntale a la profesora Lumi si tu deuda es cara o barata.'),
     ], [
       buckets('¿Esta deuda suele crear o destruir valor?', ['Suele crear valor', 'Suele destruir valor'], [['Hipoteca asumible al 3 %', 0], ['Vacaciones pagadas con la revolving', 1], ['Préstamo barato para una FP que sube tu sueldo', 0], ['Cena de cumpleaños aplazada con la tarjeta al 20 %', 1], ['Móvil de 1.200 € a 24 meses con intereses', 1]], 'La pregunta clave: ¿lo que compras dura o rinde más que lo que cuesta la deuda?'),
       match('Empareja cada deuda con su descripción.', [['Hipoteca a 25 años', 'Una vivienda que dura más que la deuda'], ['Tarjeta revolving', 'Deuda cara que se alarga sin fin'], ['Préstamo para formación', 'Puede subir tus ingresos futuros'], ['Minicrédito', 'Dinero rápido a un coste altísimo']], 'El tipo de interés y para qué se usa el dinero deciden si una deuda ayuda o hunde.'),
@@ -90,12 +93,13 @@ export default unit({
       single('¿Qué deuda tiene más sentido?', ['Una hipoteca con una cuota del 25 % de tus ingresos', 'Una revolving para pagar un viaje', 'Un minicrédito para un concierto'], 0, 'Barata, para algo que dura y con una cuota asumible.'),
       chat(['Me quiero comprar el móvil nuevo de 1.200 € 📱', 'La tienda me lo financia a 24 meses, ¡solo 60 € al mes!'], '¿Qué le dices a Lumi?', [['¡Genial, así no se nota!', 'Se nota: 60 × 24 = 1.440 €. Pagas 240 € más por algo que en 2 años valdrá mucho menos.'], ['Mira la TAE y cuánto pagas en total', '¡Bien! 60 × 24 = 1.440 €: 240 € de intereses. Quizá ahorrar unos meses salga mejor.'], ['Mejor uno de 2.000 €, la cuota sube poco', 'Así solo alargas la deuda por algo que pierde valor muy rápido.']], 1, 'Antes de financiar un capricho, multiplica la cuota por los meses.'),
       scenario('Pablo puede pedir 6.000 € al 6 % TAE para un curso certificado con el que, en su sector, el sueldo suele subir unos 300 € al mes. Tiene colchón. ¿Qué hace?', [['Comprueba que la cuota cabe en su presupuesto y lo pide', 'Si la subida de sueldo llega, la deuda se paga sola en poco tiempo: es deuda que puede crear valor.'], ['Lo pone en la revolving para no pedir préstamo', 'Misma compra, pero a un interés mucho más alto.'], ['Pide 10.000 € para darse algún capricho también', 'Mezcla una deuda que crea valor con otra que lo destruye.']], 0, 'La misma deuda puede ser buena o mala: depende del coste y de lo que te devuelve.'),
-    ], { source: '1.4', minutes: 6, retire: [0, 2, 4] }),
+      buckets('Antes de empezar a invertir, ¿esta deuda la quitas o puede convivir con tu cartera?', ['Quitarla primero', 'Puede convivir'], [['Revolving al 22 %', 0], ['Minicrédito', 0], ['Hipoteca fija al 2 % con cuota asumible', 1], ['Préstamo de estudios al 3 %', 1], ['Compra a plazos al 18 %', 0]], 'La deuda cara cobra seguro más de lo que una inversión puede prometerte, así que va primero. Con la barata y asumible no hay tanta prisa: amortizarla solo te ahorra su interés, y puedes invertir a la vez.'),
+    ], { source: '1.4', minutes: 6, retire: [0, 2, 4, 5] }),
 
     lesson('u3l3', 'Tarjetas revolving y minicréditos', [
       play({
         title: 'La trampa de la cuota pequeña',
-        intro: 'Una tarjeta **revolving** te deja pagar una cuota fija pequeña cada mes. Parece cómodo… pero la cuota apenas cubre los intereses.',
+        intro: 'Te compras un portátil con la tarjeta y eliges la «cuota cómoda» de una **revolving**: debes **3.000 €** al 22 % y pagas **60 € al mes**. Parece poco… pero la cuota apenas cubre los intereses.',
         widget: { kind: 'revolving', debt: 3000, apr: 22, payment: 60, minPayment: 40, maxPayment: 300 },
         predict: {
           prompt: 'Debes 3.000 € al 22 % y pagas 60 € al mes. ¿Cuánto tardas en pagarlo todo?',
@@ -119,7 +123,9 @@ export default unit({
           opt('Hablo con el casero o con mi familia y reviso gastos', 'good', say('lumi', 'Bien: negociar un retraso o pedir ayuda sale muchísimo más barato que un minicrédito.')),
           opt('Lo pido y lo pago con la tarjeta revolving', 'bad', say('lumi', 'Tapar una deuda cara con otra cara es la forma más rápida de entrar en una espiral.')),
         ]),
-        say('lumi', 'Regla de oro: si te ofrecen dinero **rápido y fácil**, suele ser **caro**. Y si crees que un interés es abusivo, reclama a la entidad y, si no responde bien, al Banco de España.'),
+        say('lumi', 'Regla de oro: si te ofrecen dinero **rápido y fácil**, suele ser **caro**.'),
+        say('lumi', 'Si un interés te parece abusivo, reclama al banco y luego al Banco de España.'),
+        say('lumi', 'Pruébalo: en Mercado, mira cómo sube y baja el S&P 500; tu revolving cobra siempre.'),
       ]),
     ], [
       num('Debes 1.000 € en una revolving al 2 % mensual. ¿Cuántos euros de intereses pagas el primer mes?', 20, '€', '1.000 × 0,02 = 20 €.'),
@@ -132,7 +138,7 @@ export default unit({
       timed(single('Rápido: ¿qué deuda es más cara?', ['Préstamo personal al 8 % TAE', 'Revolving al 22 % TAE', 'Hipoteca al 3 % TAE'], 1, 'La revolving: casi tres veces el préstamo personal y más de siete la hipoteca.'), 10),
       fill('Un minicrédito de 300 € por el que devuelves 390 € a los 30 días tiene una TAE de más del ____.', '2.300 %', ['30 %', '39 %', '90 %'], 'Un 30 % en un mes, compuesto durante un año, supera el 2.300 %.'),
       chat(['Mi tarjeta me deja pagar solo 25 € al mes de lo que debo 😌', 'Así voy tranquila, ¿no?'], '¿Qué le contestas a Lumi?', [['Sí, así no te agobias', 'Con 1.000 € al 2 % mensual, a 25 € al mes tardarías unos 81 meses y pagarías más de 2.000 €.'], ['Cuidado: con esa cuota casi todo son intereses', '¡Eso! Sube la cuota todo lo que puedas y deja de usarla hasta liquidarla.'], ['Pide otra tarjeta para pagar esta', 'Así tendrías dos deudas caras en lugar de una.']], 1, 'Una cuota cómoda puede esconder una deuda que dura años.'),
-    ], { minutes: 6, retire: [1, 7, 9] }),
+    ], { minutes: 6, retire: [0, 1, 7, 9] }),
 
     lesson('u3l4', 'Bola de nieve o avalancha', [
       play({
@@ -161,7 +167,7 @@ export default unit({
           { say: 'Compara los intereses de los dos métodos', mood: 'THINKING' },
         ],
       }),
-      key('Lo que no funciona', 'Repartir lo que sobra sin criterio, o pedir otra deuda cara para pagar las anteriores.\n\nY un truco: cuando cancelas una deuda, **su cuota se suma a la siguiente**. Por eso el plan va cada vez más deprisa, como una bola que crece.', 'Mínimos a todas; el resto, a una sola. Así se sale de las deudas.'),
+      key('Lo que no funciona (y lo que viene después)', 'Repartir lo que sobra sin criterio, o pedir otra deuda cara para pagar las anteriores.\n\nY un truco: cuando cancelas una deuda, **su cuota se suma a la siguiente**. Por eso el plan va cada vez más deprisa, como una bola que crece. Cuando cae la última, esa cuota liberada pasa a ser tu **aportación mensual para invertir**.', 'Mínimos a todas; el resto, a una sola. Así se sale de las deudas.', 'Pruébalo: cuando liquides una deuda, compra un ETF en el simulador con esa cuota.'),
     ], [
       order('Método avalancha: ordena qué deuda atacas primero.', ['Revolving: 1.200 € al 22 %', 'Compra a plazos: 800 € al 12 %', 'Préstamo del coche: 6.000 € al 7 %', 'Préstamo de un familiar: 500 € al 0 %'], 'En la avalancha manda el tipo de interés: de mayor a menor.'),
       order('Método bola de nieve con las mismas deudas: ordena de primera a última.', ['Préstamo de un familiar: 500 € al 0 %', 'Compra a plazos: 800 € al 12 %', 'Revolving: 1.200 € al 22 %', 'Préstamo del coche: 6.000 € al 7 %'], 'En la bola de nieve manda el saldo: de menor a mayor.'),
@@ -173,7 +179,8 @@ export default unit({
       tf('La bola de nieve es siempre el método que menos intereses te hace pagar.', false, 'Esa es la avalancha. La bola de nieve sacrifica algo de dinero a cambio de motivación.'),
       timed(single('Rápido: en la avalancha, ¿qué miras para elegir?', ['El tipo de interés', 'El saldo pendiente', 'El nombre del banco'], 0, 'El interés: primero la deuda más cara.'), 10),
       multi('¿Qué es mala idea si tienes varias deudas? Marca todas.', ['Pedir un minicrédito para pagar la tarjeta', 'Dejar de pagar el mínimo de alguna', 'Pagar el mínimo en todas y el extra a una', 'Seguir comprando con la revolving'], [0, 1, 3], 'Pagar el mínimo en todas y concentrar el extra es justo la base de los dos métodos.'),
-    ], { minutes: 6, retire: [4, 7, 8] }),
+      scenario('Pablo acaba de liquidar su última deuda cara y le quedan libres 300 € al mes que antes iban a cuotas. Ya tiene colchón. ¿Qué hace?', [['Los convierte en una aportación automática a un ETF indexado', 'Sigue viviendo igual que antes, pero ahora esos 300 € trabajan para él.'], ['Sube su nivel de gasto: se lo ha ganado', 'Es tentador, pero pierde la mejor ocasión de empezar a invertir sin notarlo.'], ['Los deja en la cuenta corriente', 'Sin destino, se acaban gastando y además pierden poder de compra.']], 0, 'Pablo ya vivía sin esos 300 €, así que invertirlos no le cuesta nada en su día a día. Subir el gasto tienta como premio, pero frena en seco el impulso que había cogido.'),
+    ], { minutes: 6, retire: [3, 4, 7, 8] }),
 
     lesson('u3l5', 'Invertir o amortizar', [
       story('La paga extra de Bruno', [{ id: 'bruno', name: 'Bruno' }], [
@@ -201,7 +208,7 @@ export default unit({
           ],
         },
         goal: { text: 'Decide qué haría Bruno en cada caso.', when: [when('done', '==', 5)] },
-        insight: '**Por orden:** colchón deudas caras (más del 7-8 %) invertir a largo plazo, y amortizar las baratas si te da tranquilidad. Antes de amortizar una hipoteca, mira si cobra comisión por hacerlo.',
+        insight: '**Por orden:** colchón, deudas caras (más del 7-8 %) e invertir a largo plazo; las baratas, amortízalas si te da tranquilidad, mirando antes si cobran comisión. Pruébalo: cuéntale tu caso a la profesora Lumi y pregúntale por dónde empezar.',
         lumi: [
           { when: when('wrong', '>=', 2), say: 'Pregúntate primero: ¿tiene colchón? Luego mira el interés de la deuda.', mood: 'THINKING' },
           { say: '¿Qué haría Bruno en cada caso?', mood: 'HAPPY' },
@@ -218,6 +225,6 @@ export default unit({
       num('Tu hipoteca fija cobra un 0,5 % de comisión por amortizar antes. Amortizas 10.000 €. ¿Cuánto pagas de comisión?', 50, '€', '10.000 × 0,005 = 50 €. Mira siempre tu contrato antes de amortizar.'),
       chat(['Tengo una hipoteca al 2 % y me sobran 200 € al mes.', '¿Amortizo o invierto?'], '¿Qué le contestas a Lumi?', [['Siempre amortizar: las deudas son malas', 'No siempre: al 2 % es deuda barata. Depende de tu colchón, tu plazo y tu tranquilidad.'], ['Depende: compara el 2 % seguro con invertir a largo plazo, y si tienes colchón', 'Eso: con deuda barata no hay una sola respuesta; lo importante es entender qué comparas.'], ['Invierte en lo que más haya subido este año', 'Eso no es comparar: es perseguir modas.']], 1, 'Amortizar da una rentabilidad segura; invertir, una esperada. Con deuda barata, las dos opciones pueden tener sentido.'),
       order('Ordena las prioridades habituales de tu dinero.', ['Saber cuánto gastas', 'Fondo de emergencia', 'Eliminar deudas caras', 'Invertir a largo plazo'], 'La pirámide del dinero: sin base, cualquier imprevisto te obliga a vender en el peor momento.'),
-    ], { source: '1.4', minutes: 6, retire: [0, 4, 5] }),
+    ], { source: '1.4', minutes: 6, retire: [0, 1, 4, 5, 7] }),
   ],
 })

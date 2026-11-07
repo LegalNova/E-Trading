@@ -1,6 +1,6 @@
 import 'server-only'
 // Sección 2 · Unidad 6 · Las órdenes (docs/curso-v2/02-curriculo.md)
-import { chat, choose, key, lesson, level, match, mission, multi, note, num, opt, order, play, say, scenario, simTrade, single, story, tf, timed, unit, when } from '../dsl'
+import { buckets, chat, choose, key, lesson, level, match, mission, multi, note, num, opt, order, play, say, scenario, simTrade, single, story, tf, timed, unit, when } from '../dsl'
 
 export default unit({
   id: 'u6', order: 6, title: 'Las órdenes', description: 'A mercado, limitada, stop loss, take profit y OCO: qué orden usar y qué cuesta',
@@ -9,20 +9,20 @@ export default unit({
     lesson('u6l2', 'Horquilla, spread y deslizamiento', [
       play({
         title: 'Comprar y vender al momento',
-        intro: 'La **horquilla** o *spread* es la diferencia entre el mejor precio de venta (*ask*) y el de compra (*bid*). Esta es una acción grande y muy negociada.',
+        intro: 'Esta es una acción grande y muy negociada. Compras 100 y, un segundo después, cambias de idea.',
         widget: {
           kind: 'book', size: 100, maxSize: 3000,
           bids: [{ price: 10.0, size: 800 }, { price: 9.99, size: 1500 }, { price: 9.97, size: 2000 }],
           asks: [{ price: 10.02, size: 500 }, { price: 10.03, size: 1000 }, { price: 10.06, size: 2000 }],
         },
         predict: {
-          prompt: 'Compras 100 acciones y **las vendes al momento**. ¿Qué pasa?',
-          options: ['Te quedas igual', 'Pierdes la horquilla: unos 2 €', 'Ganas un poco'],
+          prompt: 'Las **vendes al momento**. ¿Qué pasa?',
+          options: ['Te quedas igual', 'Pierdes unos 2 €', 'Ganas un poco'],
           answer: 1,
-          why: 'Compras a 10,02 € y vendes a 10,00 €: 0,02 € × 100 = **2 €**, un 0,2 %.',
+          why: 'Compras a 10,02 €, lo que piden los vendedores (*ask*), y vendes a 10,00 €, lo que pagan los compradores (*bid*): pierdes **2 €**, un 0,2 %.',
         },
         goal: { text: 'Compra tanto que el deslizamiento supere al spread (0,2 %).', when: [when('slippagePct', '>', 0.2)] },
-        insight: 'Pagas dos costes al operar: el **spread**, que pierdes al comprar y vender al momento, y el **deslizamiento**, la diferencia entre el precio que esperabas y el que obtienes.',
+        insight: 'Esa diferencia entre *ask* y *bid* es la **horquilla** o *spread*: la pierdes al comprar y vender al momento. Si compras mucho, pagas además **deslizamiento**: la diferencia entre el precio que esperabas y el que obtienes.',
         lumi: [
           { when: when('slippagePct', '>', 0.2), say: 'Ahora el deslizamiento te cuesta más que la horquilla.', mood: 'WORRIED' },
           { when: when('size', '>', 500), say: 'Ya no te llega con el primer escalón del libro.', mood: 'THINKING' },
@@ -32,15 +32,15 @@ export default unit({
       story('«Cero comisiones»', [{ id: 'pablo', name: 'Pablo' }], [
         say('pablo', 'Mi bróker es de 0 comisiones. Hago 20 operaciones al mes de 1.000 €.'),
         say('pablo', 'Entre spread y lo demás, cada una me cuesta un 0,3 %. Nada.'),
-        choose('¿Cuánto le cuesta operar así en un año?', [
-          opt('Nada: su bróker no cobra', 'bad', say('lumi', 'El spread se paga igual: compra al ask y vende al bid.')),
-          opt('Casi nada: solo es un 0,3 %', 'ok', say('lumi', 'Son 3 € por operación: en un año, **720 €**.')),
-          opt('Más de 700 € al año', 'good', say('lumi', 'Eso: 3 € × 20 × 12 meses = **720 €**, gane o pierda.')),
+        choose('¿Le sale gratis operar así?', [
+          opt('Sí: su bróker no cobra comisiones', 'bad', say('lumi', 'El spread se paga igual: compra al ask y vende al bid.')),
+          opt('Casi: un 0,3 % es muy poco', 'ok', say('lumi', 'Son 3 € por operación: en un año, **720 €**.')),
+          opt('No: pagará mucho, gane o pierda', 'good', say('lumi', 'Eso: 3 € × 20 × 12 meses = **720 €** al año.')),
         ]),
         say('pablo', 'Uf… ¿y qué hago?'),
         say('lumi', 'Operar menos. Los costes son lo único seguro de una inversión.'),
       ]),
-      key('Cuándo hay más deslizamiento', 'Cuando tu orden es grande para el libro o el precio se mueve muy rápido: en la **apertura**, tras una **noticia** o en momentos de **pánico**.\n\nCuanta más **liquidez**, más estrecha es la horquilla. En porcentaje, spread ÷ precio: 10,00 € / 10,02 € es un 0,2 %.', 'Spread, deslizamiento y comisiones son costes de operar: cuanto más operas, más pagas.'),
+      key('Cuándo hay más deslizamiento', 'Cuando tu orden es grande para el libro o el precio se mueve muy rápido: en la **apertura**, tras una **noticia** o en momentos de **pánico**.\n\nCuanta más **liquidez**, más estrecha es la horquilla. En porcentaje, spread ÷ precio: 10,00 € / 10,02 € es un 0,2 %.', 'Spread, deslizamiento y comisiones son costes de operar: cuanto más operas, más pagas.', 'Pruébalo: antes de comprar en el Mercado, mira la comisión simulada de tu orden.'),
     ], [
       timed(num('Rápido: bid 20,10 €, ask 20,14 €. ¿Spread en euros?', 0.04, '€', '20,14 − 20,10 = 0,04 €.'), 15),
       num('Una acción cotiza a 50,00 € (compra) y 50,25 € (venta). ¿Qué spread es, en % del precio de compra?', 0.5, '%', '0,25 ÷ 50 = 0,005 → 0,5 %.'),
@@ -52,12 +52,14 @@ export default unit({
       timed(tf('El spread es un coste aunque el bróker anuncie «0 comisiones».', true, 'Lo pagas al comprar al ask y vender al bid, cobre o no comisión el bróker.'), 10),
       multi('¿Cuándo suele haber más deslizamiento? Marca todas.', ['En la apertura, tras una noticia', 'Con órdenes grandes en valores poco líquidos', 'Con una orden pequeña en una gran empresa a media sesión', 'En momentos de pánico, con el precio moviéndose muy rápido'], [0, 1, 3], 'El deslizamiento aparece cuando falta liquidez o el precio corre.'),
       scenario('Marta quiere comprar 3.000 € de una empresa pequeña con un spread de un 1 %. ¿Qué hace?', [['Usa una orden limitada y evita operar con frecuencia ese valor', 'Controla el precio de entrada y no paga el 1 % una y otra vez.'], ['Compra a mercado y vende en cuanto gane un poco', 'Necesita que suba más de un 1 % solo para empatar el spread.'], ['Compra y vende varias veces al día para aprovechar los movimientos', 'Cada vuelta le cuesta un 1 %: el spread se come cualquier ganancia.']], 0, 'En valores con spread alto, operar mucho es perder dinero seguro.'),
-    ], { source: '2.4', minutes: 6, retire: [0, 6, 7] }),
+      buckets('¿Horquilla estrecha o ancha?', ['Estrecha', 'Ancha'], [['Una acción grande del S&P 500 a media sesión', 0], ['Una empresa pequeña de BME Growth', 1], ['Un ETF muy negociado del S&P 500', 0], ['Una criptomoneda poco conocida', 1], ['Una acción poco negociada justo en la apertura', 1], ['El euro frente al dólar', 0]], 'Donde hay muchos compradores y vendedores, la horquilla es estrecha. Con poca liquidez, o en la apertura, se abre: por eso lo pequeño y lo poco negociado cuesta más de operar.'),
+      chat(['Mi bróker es de 0 comisiones: puedo comprar y vender cada día gratis, ¿no?'], '¿Qué le contestas a Lumi?', [['Exacto: sin comisiones, operar no cuesta nada', 'Cada vuelta paga la horquilla: compras al ask y vendes al bid, cobre o no comisión el bróker.'], ['No: cada compra y venta paga la horquilla, y cuanto más operas, más pagas', '¡Eso! Los costes de operar se suman en cada operación, ganes o pierdas.'], ['Solo pagas si pierdes dinero', 'Los costes se pagan en cada operación, también en las que ganas.']], 1, 'La tentadora es creer que «0 comisiones» es gratis. El spread y el deslizamiento se pagan siempre, y se multiplican con cada operación.'),
+    ], { source: '2.4', minutes: 6, retire: [0, 1, 2, 3, 6, 7] }),
 
     lesson('u6l3', 'La orden limitada', [
       play({
         title: '¿Se ejecuta?',
-        intro: 'Con una **orden limitada** pones tú el precio: compras a tu precio **o más barato** y vendes a tu precio **o más caro**.',
+        intro: 'Una acción cotiza a 50 € y tú solo la quieres a 47 €. Con una **orden limitada** pones tú el precio: compras a tu precio **o más barato** y vendes a tu precio **o más caro**.',
         widget: {
           kind: 'sort',
           bins: [{ label: 'Se ejecuta' }, { label: 'No se ejecuta' }],
@@ -88,7 +90,7 @@ export default unit({
         ]),
         say('lumi', 'Muchos brókers les ponen un máximo, a menudo de 90 días.'),
       ]),
-      key('Cuándo usarla', 'Cuando el precio te importa: valores poco líquidos, horquillas amplias, aperturas o si solo quieres comprar en una zona concreta.\n\n**Validez:** del día (caduca al cierre) o hasta cancelar (*GTC*), que sigue viva hasta que se cumpla o la canceles.', 'Con una limitada controlas el precio; a cambio, puede no ejecutarse nunca.'),
+      key('Cuándo usarla', 'Cuando el precio te importa: valores poco líquidos, horquillas amplias, aperturas o si solo quieres comprar en una zona concreta.\n\n**Validez:** del día (caduca al cierre) o hasta cancelar (*GTC*), que sigue viva hasta que se cumpla o la canceles.', 'Con una limitada controlas el precio; a cambio, puede no ejecutarse nunca.', 'Pruébalo: en Mercado, pon una alerta de precio donde pondrías tu orden limitada.'),
     ], [
       single('Quieres comprar, pero solo si el precio baja a 45 €. ¿Qué orden usas?', ['A mercado', 'Limitada de compra a 45 €', 'Take profit a 45 €'], 1, 'La limitada solo se ejecuta a 45 € o menos.'),
       single('Cotiza a 50 €. Pones una limitada de compra a 47 € y mañana el mínimo del día es 47,40 €. ¿Qué pasa?', ['No se ejecuta', 'Compras a 47,40 €', 'Compras a 47 €'], 0, 'El precio no llegó a tu límite: la orden sigue esperando (o caduca, si era del día).'),
@@ -100,12 +102,12 @@ export default unit({
       match('Empareja cada orden con lo que hace.', [['Limitada de compra', 'A tu precio o más barato'], ['Limitada de venta', 'A tu precio o más caro'], ['Validez del día', 'Caduca al cierre'], ['Hasta cancelar', 'Sigue viva hasta que se cumpla o la canceles']], 'Precio límite y validez: las dos cosas que eliges en una limitada.'),
       timed(tf('Una orden limitada siempre se ejecuta.', false, 'Si el precio no llega a tu límite, no se ejecuta.'), 10),
       num('Pones una limitada de compra de 200 acciones a 12,50 € y se ejecuta a 12,46 €. ¿Cuánto pagas de menos frente a tu límite?', 8, '€', '0,04 € × 200 = 8 €. La limitada compra a tu precio o mejor.'),
-    ], { source: '2.5', minutes: 6, retire: [1, 2, 6, 8] }),
+    ], { source: '2.5', minutes: 6, retire: [1, 2, 6, 8, 9] }),
 
     lesson('u6l4', 'El stop loss', [
       mission({
         title: 'Tu salida de emergencia',
-        intro: 'Un **stop loss** vende solo si el precio **cae hasta un nivel**. Compras Tesla al último precio: ¿dónde pones el stop?',
+        intro: 'Compras Tesla al último precio y te vas a dormir. Un **stop loss** venderá solo si el precio **cae hasta el nivel** que elijas: ¿dónde lo pones?',
         widget: { kind: 'orders', chart: 'lvl-10', stopPct: 2, takePct: 6, maxPct: 12 },
         predict: {
           prompt: 'Con el stop solo un **2 %** por debajo, ¿qué crees que pasará?',
@@ -141,7 +143,7 @@ export default unit({
           { say: 'Mueve la distancia al stop', mood: 'HAPPY' },
         ],
       }),
-      key('Stop a mercado o limitado', '• **Stop (a mercado):** al tocar el nivel, vende al precio que haya. Sales seguro, pero quizá peor.\n• **Stop limitado:** al tocar el nivel, lanza una limitada. Controlas el peor precio, pero si el precio salta puede no venderse y seguir cayendo.', 'El stop decide dónde sales; el tamaño, que esa pérdida sea pequeña.', 'El stop se decide antes de entrar, con la cabeza fría, y no se aleja después.'),
+      key('Stop a mercado o limitado', '• **Stop (a mercado):** al tocar el nivel, vende al precio que haya. Sales seguro, pero quizá peor.\n• **Stop limitado:** al tocar el nivel, lanza una limitada. Controlas el peor precio, pero si el precio salta puede no venderse y seguir cayendo.\n\nEl stop se decide antes de entrar, con la cabeza fría, y no se aleja después.', 'El stop decide dónde sales; el tamaño, que esa pérdida sea pequeña.', 'Aprueba esta clase y añade un stop loss a tu próxima compra del Mercado.'),
     ], [
       level('Has comprado al último precio. Coloca el stop loss donde tu idea deja de ser válida.', 'lvl-1', 'STOP', 'Un poco por debajo del último mínimo relevante: si lo pierde, la subida que esperabas ya no se cumple.'),
       level('Otra operación: coloca el stop loss con la misma lógica.', 'lvl-11', 'STOP', 'Por debajo del mínimo reciente, con algo de margen para que el ruido diario no te saque.'),
@@ -153,12 +155,12 @@ export default unit({
       timed(single('Rápido: compras a 100 € con el stop a 95 €. ¿Riesgo por acción?', ['5 €', '95 €', '0,95 €'], 0, '100 − 95 = 5 € por acción.'), 12),
       match('Empareja cada caso con lo que pasa.', [['Stop a mercado', 'Sale seguro, quizá a peor precio'], ['Stop limitado', 'Controla el precio, pero puede no ejecutarse'], ['Stop muy ajustado', 'El ruido normal te saca'], ['Sin stop', 'No sabes cuánto puedes perder']], 'No hay stop perfecto: cada opción tiene su coste.'),
       scenario('Bruno compró a 40 € con el stop a 37 €. El precio baja a 37,50 € y piensa en bajar el stop a 33 € «para darle aire». ¿Qué hace?', [['Mantiene el stop donde lo puso', 'Si salta, pierde lo que había previsto. Si no, sigue su plan.'], ['Lo baja a 33 €', 'Ahora arriesga más del doble de lo planeado: así empiezan las grandes pérdidas.'], ['Quita el stop y espera a que se recupere', 'Sin stop, la pérdida no tiene límite.']], 0, 'El stop se decide antes de entrar, con la cabeza fría, y no se aleja después.'),
-    ], { source: '2.5', minutes: 6, retire: [3, 6, 7, 9] }),
+    ], { source: '2.5', minutes: 6, retire: [3, 4, 6, 7, 9] }),
 
     lesson('u6l5', 'El take profit', [
       mission({
         title: 'Pon tu objetivo',
-        intro: 'Un **take profit** vende solo cuando el precio **sube hasta tu objetivo**. Compras Ethereum al último precio.',
+        intro: 'Compras Ethereum al último precio y no quieres pasarte el día mirando. Un **take profit** venderá solo si el precio **sube hasta tu objetivo**.',
         widget: { kind: 'orders', chart: 'lvl-16', stopPct: 5, takePct: 15, maxPct: 15 },
         predict: {
           prompt: 'Tu objetivo está un **15 %** arriba, muy por encima del máximo anterior. ¿Qué crees?',
@@ -186,7 +188,7 @@ export default unit({
         say('lumi', 'Lo que sube después de tu objetivo ya no es tuyo.'),
         say('lumi', 'Es el precio de tener un plan. Decide el objetivo antes de entrar.'),
       ]),
-      key('Riesgo y beneficio', 'Compras a 50 €, stop a 47 € (arriesgas 3 €) y objetivo a 56 € (puedes ganar 6 €): la relación es **1:2**.\n\nCon 1:2, si aciertas 4 de cada 10 operaciones, ganas 24 € y pierdes 18 € por acción (antes de costes).', 'El take profit sale por arriba; el stop, por abajo.', 'Decide el objetivo antes de entrar, no cuando ya vas ganando.'),
+      key('Riesgo y beneficio', 'Compras a 50 €, stop a 47 € (arriesgas 3 €) y objetivo a 56 € (puedes ganar 6 €): la relación es **1:2**.\n\nCon 1:2, si aciertas 4 de cada 10 operaciones, ganas 24 € y pierdes 18 € por acción (antes de costes).\n\nDecide el objetivo antes de entrar, no cuando ya vas ganando.', 'El take profit sale por arriba; el stop, por abajo.', 'Pruébalo: en tu próxima compra del Mercado, añade un take profit cerca del máximo anterior.'),
     ], [
       level('Has comprado al último precio. Coloca tu objetivo (take profit) en un sitio lógico.', 'lvl-2', 'TAKE', 'Cerca del máximo anterior: es donde muchos vendieron y suele aparecer venta otra vez.'),
       level('Otra operación: coloca el take profit.', 'lvl-13', 'TAKE', 'Cerca del máximo anterior, sin pasarte: un objetivo demasiado ambicioso puede no tocarse nunca.'),
@@ -198,12 +200,14 @@ export default unit({
       timed(tf('El take profit se coloca por debajo del precio de compra.', false, 'Va por encima; por debajo va el stop loss.'), 10),
       scenario('Laura compró a 30 € con el objetivo en 36 €. En tres semanas llega a 36 € y se vende. Una semana después cotiza a 39 €. ¿Qué hace?', [['Acepta que cumplió su plan y revisa si el objetivo era razonable', 'Ganó un 20 % siguiendo su plan. La próxima vez decidirá el objetivo con el mismo método.'], ['Decide no volver a poner objetivos nunca', 'La próxima vez, sin objetivo, puede ver cómo la ganancia se evapora.'], ['Vuelve a comprar a 39 € por rabia', 'Comprar por rabia no es un plan: es una reacción.']], 0, 'Un buen plan no acierta el máximo: protege lo que ganas.'),
       multi('¿Qué hace un take profit? Marca todas.', ['Vende sin que estés mirando', 'Asegura la ganancia si se llega al objetivo', 'Garantiza vender en el máximo', 'Evita que la avaricia decida por ti'], [0, 1, 3], 'Nadie vende siempre en el máximo; el take profit vende en tu objetivo.'),
-    ], { source: '2.5', minutes: 6, retire: [5, 6, 7, 8] }),
+      chat(['Pongo el objetivo un 50 % por encima: así, cuando llegue, gano mucho más'], '¿Qué le contestas a Lumi?', [['Buena idea: cuanto más lejos, más ganas', 'Solo si llega. Un objetivo demasiado lejano puede no tocarse nunca y acabar en el stop.'], ['Mejor cerca del máximo anterior, donde suele aparecer venta', '¡Eso! Un objetivo razonable se toca más a menudo: ganar algo menos, pero de verdad.'], ['Mejor no poner objetivo y vender a ojo', 'Sin objetivo deciden la avaricia o el miedo, justo en el peor momento.']], 1, 'La tentadora es el objetivo lejano: parece que gana más, pero si no se toca no gana nada. Cerca del máximo anterior suele aparecer venta, y ahí el objetivo tiene opciones reales.'),
+      scenario('Laura usa siempre una relación 1:2: arriesga 3 € para ganar 6 €. Acierta 4 de cada 10 operaciones y cree que es mala trader. ¿Qué le dirías?', [['Que, antes de costes, va ganando: cada acierto vale el doble que cada fallo', 'Con 1:2, 4 aciertos dan 24 € y 6 fallos quitan 18 € por acción. Fallar más de lo que acierta no la hace perder.'], ['Que lo deje: si falla más de la mitad, pierde dinero', 'No necesariamente: depende de cuánto gana al acertar frente a lo que pierde al fallar.'], ['Que quite el stop para fallar menos', 'Sin stop, una sola mala operación puede borrar muchos aciertos.']], 0, 'Lo que cuenta no es solo cuántas aciertas, sino cuánto ganas al acertar frente a lo que pierdes al fallar. La tentadora es fijarse solo en el porcentaje de aciertos.'),
+    ], { source: '2.5', minutes: 6, retire: [3, 4, 5, 6, 7, 8] }),
 
     lesson('u6l6', 'Combinar órdenes: OCO', [
       mission({
         title: 'Monta tu OCO',
-        intro: 'Una **OCO** junta un stop por debajo y un objetivo por encima. **Cuando salta una, la otra se cancela sola.**',
+        intro: 'Te vas una semana de viaje y no podrás mirar el precio. Una **OCO** junta un stop por debajo y un objetivo por encima: **cuando salta una, la otra se cancela sola.**',
         widget: { kind: 'orders', chart: 'lvl-18', stopPct: 1, takePct: 5, maxPct: 10 },
         goal: { text: 'Pon el stop bajo el último mínimo, el objetivo cerca del máximo anterior, y mira qué salta.', when: [when('stopPct', '>=', 2.5), when('takePct', '>=', 4), when('played', '==', 1)] },
         insight: 'Una OCO es un plan completo de salida: **cuando salta una orden, la otra se cancela sola**. No te queda ninguna orden suelta.',
@@ -226,7 +230,7 @@ export default unit({
         say('lumi', 'Se cancela solo. Pero ningún stop es un seguro perfecto.'),
         say('lumi', 'Contra los huecos, tu mejor defensa es el **tamaño** de la posición.'),
       ]),
-      key('El stop dinámico', 'El **stop dinámico** (*trailing stop*) sube con el precio a una distancia fija: con un 8 %, si el precio pasa de 100 € a 120 €, tu stop sube de 92 € a 110,40 €. Nunca baja.\n\nLos huecos también pasan al alza: si abre por encima de tu objetivo, el take profit se ejecuta a ese precio, mejor que el previsto.', 'OCO = plan completo de salida; los huecos son su límite.', 'No todos los brókers ofrecen órdenes OCO: compruébalo antes.'),
+      key('El stop dinámico', 'El **stop dinámico** (*trailing stop*) sube con el precio a una distancia fija: con un 8 %, si el precio pasa de 100 € a 120 €, tu stop sube de 92 € a 110,40 €. Nunca baja.\n\nLos huecos también pasan al alza: si abre por encima de tu objetivo, el take profit se ejecuta a ese precio, mejor que el previsto.\n\nNo todos los brókers ofrecen órdenes OCO: compruébalo antes.', 'OCO = plan completo de salida; los huecos son su límite.', 'Pruébalo: en el Mercado, pon stop y take profit en la misma compra.'),
     ], [
       level('Monta tu OCO. Primero, coloca el stop loss.', 'lvl-17', 'STOP', 'Por debajo del mínimo reciente: si lo pierde, tu idea ya no vale.'),
       level('Ahora, en la misma operación, coloca el take profit.', 'lvl-17', 'TAKE', 'Cerca del máximo anterior. Con stop y objetivo puestos, la OCO cancela uno cuando salta el otro.'),
@@ -239,6 +243,6 @@ export default unit({
       timed(tf('Un stop loss puede ejecutarse peor que su nivel si hay un hueco.', true, 'Sin precios intermedios, se vende al primero disponible.'), 10),
       match('Empareja cada término con su significado.', [['OCO', 'Stop y objetivo: uno cancela al otro'], ['Hueco', 'Salto de precio sin cotizaciones intermedias'], ['Stop dinámico', 'Sube con el precio y nunca baja'], ['Stop limitado', 'Puede no ejecutarse si el precio salta']], 'Las órdenes combinadas automatizan tu plan, pero no eliminan los huecos.'),
       chat(['Con mi OCO ya no puedo perder más del 5 %, ¿verdad? 😎'], '¿Qué le contestas a Lumi?', [['Exacto, estás totalmente protegido', 'Con un hueco por la noche, el stop puede ejecutarse muy por debajo de ese 5 %.'], ['Casi siempre, pero un hueco puede hacerte perder más', '¡Eso! Por eso también cuenta cuánto dinero pones en cada operación.'], ['La OCO no sirve para nada', 'Sí sirve: automatiza tu salida. Solo que no es un seguro perfecto.']], 1, 'La OCO organiza la salida; el tamaño de la posición limita el daño de lo imprevisto.'),
-    ], { source: '2.5', minutes: 6, retire: [3, 7, 8, 10] }),
+    ], { source: '2.5', minutes: 6, retire: [3, 5, 6, 7, 8, 10] }),
   ],
 })

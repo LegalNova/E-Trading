@@ -11,7 +11,7 @@
     {
      "texts": [
       "¿Sube o baja el euro?",
-      "**EUR/USD = 1,16** significa que **1 euro vale 1,16 dólares**. Si la cifra sube, el euro se **aprecia** (compra más dólares); si baja, se **deprecia**.",
+      "Preparas un viaje a Nueva York y tu banco marca **EUR/USD = 1,16**: por cada euro te dan **1,16 dólares**. Si la cifra sube, el euro se **aprecia** (compra más dólares); si baja, se **deprecia**.",
       "El euro se aprecia",
       "El euro se deprecia",
       "EUR/USD pasa de 1,16 a 1,20",
@@ -54,7 +54,7 @@
      "title": "El mercado más grande del mundo",
      "body": "Se negocian unos **9,6 billones de dólares al día** (BIS, abril de 2025). El dólar está en el **89 %** de las operaciones; le siguen el euro y el yen.\n\n• **Pares mayores:** EUR/USD, USD/JPY, GBP/USD, USD/CHF…\n• Abre las **24 horas** de lunes a viernes: Sídney, Tokio, Londres y Nueva York se pasan el testigo.\n\nComprar EUR/USD es comprar euros pagando con dólares; venderlo, lo contrario.",
      "key": "En un par siempre compras una divisa vendiendo la otra: la primera es la que compras.",
-     "tip": "Una divisa nunca sube sola: sube frente a otra."
+     "tip": "Pruébalo: en Mercado, busca EUR/USD y mira si hoy el euro sube o baja."
     }
    ]
   },
@@ -65,9 +65,9 @@
      "texts": [
       "¿Cuánto es un pip?",
       "Marc",
-      "Las divisas se mueven en **pips**: la cuarta cifra decimal (0,0001). Un lote estándar son 100.000 unidades de la divisa base.",
       "He abierto 1 lote estándar de EUR/USD a 1,1600. ¡Ya está en 1,1650!",
       "Medio céntimo… eso no es nada, ¿no?",
+      "Las divisas se mueven en **pips**: la cuarta cifra decimal (0,0001). Un lote estándar son 100.000 unidades de la divisa base.",
       "¿Cuánto ha ganado Marc?",
       "Casi nada: medio céntimo",
       "Son **50 pips**. Con un lote estándar, cada pip vale 10 $: 500 $.",
@@ -100,7 +100,7 @@
      "title": "Advertencia de la CNMV",
      "body": "«Los CFD son instrumentos complejos y están asociados a un riesgo elevado de perder dinero rápidamente debido al apalancamiento. Entre un 74 y un 89 % de los inversores minoristas pierden dinero cuando negocian con CFD.»",
      "key": "El apalancamiento no te hace mejor inversor: solo hace más grandes tus errores.",
-     "tip": "Que te dejen operar con 30 veces tu dinero no significa que debas."
+     "tip": "Pruébalo: en Mercado, compara cuánto se mueve hoy EUR/USD frente a Tesla."
     }
    ]
   },
@@ -154,7 +154,8 @@
     {
      "title": "Cuenta la sorpresa",
      "body": "No cuenta solo el tipo de interés de hoy, sino lo que el mercado **espera** que hagan los bancos centrales: una subida ya anunciada puede no mover nada.\n\nY las demás fuerzas también se comparan: la **inflación** alta y persistente debilita una divisa a largo plazo; un país que **exporta** mucho recibe demanda de la suya; el **crecimiento** atrae inversión, y con **miedo** el dinero huye a dólar, franco suizo y yen.",
-     "key": "Las divisas se mueven por diferencias: de tipos, de inflación, de crecimiento y de confianza."
+     "key": "Las divisas se mueven por diferencias: de tipos, de inflación, de crecimiento y de confianza.",
+     "tip": "Pruébalo: crea una alerta de precio en EUR/USD y mira qué noticia lo mueve."
     }
    ]
   },
@@ -200,7 +201,7 @@
      "title": "Cubrir o no cubrir",
      "body": "Hay fondos **con cobertura de divisa** («EUR Hedged»): quitan casi todo el efecto del dólar a cambio de un pequeño coste. En fondos de acciones a largo plazo muchos inversores no cubren; en bonos se suele cubrir, porque la divisa movería más que el propio bono.",
      "key": "Cuando inviertes fuera, también inviertes en su moneda.",
-     "tip": "Mira en qué divisa está lo que compras… y en cuál vas a gastar."
+     "tip": "Pruébalo: revisa tu Cartera y mira qué activos cotizan en dólares."
     }
    ]
   },
@@ -210,7 +211,7 @@
     {
      "texts": [
       "¿Dónde se esconde el dinero?",
-      "Cuando hay pánico, el dinero corre hacia las **divisas refugio**. ¿Cuál suele subir y cuál suele caer?",
+      "Marzo de 2020: la COVID hunde las bolsas y el dinero corre a esconderse en las **divisas refugio**. En un pánico así, ¿cuál suele subir y cuál suele caer?",
       "Suele subir en el pánico",
       "Suele caer en el pánico",
       "Dólar estadounidense",
@@ -254,7 +255,7 @@
      "title": "El susto del yen",
      "body": "Con el *carry trade* se piden yenes baratos para invertir donde se paga más. Funciona mientras el yen está tranquilo.\n\nEn **agosto de 2024** el yen subió de golpe, todos deshicieron a la vez y el Nikkei cayó un **12,4 %** en un día.",
      "key": "Una divisa refugio suele subir cuando todo cae, pero puede moverse con violencia en ambos sentidos.",
-     "tip": "Saberlo sirve para entender una crisis, no para adivinar la siguiente."
+     "tip": "Pruébalo: añade USD/JPY a Favoritos y míralo el próximo día de pánico."
     }
    ]
   },
@@ -282,12 +283,6 @@
     "base"
    ],
    "explanation": "La base va primero y siempre vale 1 unidad."
-  },
-  "u14l1-4": {
-   "prompt": "EUR/USD = 1,25. ¿Cuántos euros vale 1 dólar?",
-   "options": [],
-   "explanation": "1 ÷ 1,25 = 0,80 €.",
-   "unit": "€"
   },
   "u14l1-6": {
    "prompt": "Empareja cada cotización con lo que significa.",
@@ -338,24 +333,6 @@
    ],
    "explanation": "Los mayores combinan el dólar con otra gran divisa. USD/TRY es un par exótico: más spread y más volatilidad."
   },
-  "u14l2-1": {
-   "prompt": "EUR/USD pasa de 1,1600 a 1,1675. ¿Cuántos pips se ha movido?",
-   "options": [],
-   "explanation": "1,1675 − 1,1600 = 0,0075 = 75 pips (cada pip es 0,0001).",
-   "unit": "pips"
-  },
-  "u14l2-3": {
-   "prompt": "Con un mini lote de EUR/USD (10.000 €), ¿cuánto vale cada pip?",
-   "options": [],
-   "explanation": "10.000 × 0,0001 = 1 $ por pip.",
-   "unit": "$"
-  },
-  "u14l2-5": {
-   "prompt": "Con apalancamiento 1:30, ¿cuánta garantía necesitas para abrir una posición de 15.000 €?",
-   "options": [],
-   "explanation": "15.000 ÷ 30 = 500 €.",
-   "unit": "€"
-  },
   "u14l2-7": {
    "prompt": "En la UE, un minorista puede operar CFD sobre pares de divisas mayores con un apalancamiento de hasta 1:30.",
    "options": [
@@ -405,6 +382,25 @@
     "Un tiktoker dice que con forex y apalancamiento 1:500 se vive de esto 🤑",
     "Con 200 € muevo 100.000 €, ¿no es genial?"
    ]
+  },
+  "u14l2-12": {
+   "prompt": "Pablo tiene 2.000 € ahorrados. Su bróker le ofrece pasar de 1:30 a 1:100 si se declara «cliente profesional». ¿Qué hace?",
+   "options": [
+    "Lo rechaza: perdería las protecciones de minorista y el riesgo se dispara",
+    "Acepta: con 1:100 gana más rápido",
+    "Acepta, pero promete operar con cuidado"
+   ],
+   "explanation": "La buena acierta porque las reglas de ESMA protegen a los minoristas, y declararse profesional las quita. La tentadora, ganar más rápido, olvida que las pérdidas se multiplican igual.",
+   "feedback": [
+    "Bien: el límite de 1:30, el cierre al 50 % y no poder perder más de lo que hay en la cuenta son para él.",
+    "Con 1:100, un 1 % en contra se lleva toda su garantía. Y pierde las protecciones de minorista.",
+    "El cuidado no cambia la cuenta: más apalancamiento acerca el momento de perderlo todo."
+   ]
+  },
+  "u14l2-13": {
+   "prompt": "Has comprado USD/JPY al último precio. Antes de pensar en apalancamiento, coloca el stop: algo por debajo del último mínimo.",
+   "options": [],
+   "explanation": "Si el par pierde el último mínimo, tu idea deja de valer: el stop va algo por debajo, con margen. Con el stop decidido, el tamaño sale de lo que estás dispuesto a perder, no del apalancamiento que te ofrecen. Pegarlo al precio es la tentación, pero cualquier vaivén normal lo salta."
   },
   "u14l3-1": {
    "prompt": "Empareja cada causa con su efecto habitual en la divisa.",
@@ -487,24 +483,6 @@
     "¿No tendría que haber subido?"
    ]
   },
-  "u14l4-1": {
-   "prompt": "Inviertes 1.000 € cuando EUR/USD = 1,00 (compras 1.000 $ en acciones). Un año después valen 1.100 $ y EUR/USD = 1,10. ¿Cuántos euros tienes?",
-   "options": [],
-   "explanation": "1.100 ÷ 1,10 = 1.000 €. Las acciones subieron un 10 %, pero el dólar perdió valor y se comió toda la ganancia.",
-   "unit": "€"
-  },
-  "u14l4-2": {
-   "prompt": "Las acciones suben un 15 % en dólares y el dólar cae un 10 % frente al euro. ¿Cuál es tu rentabilidad aproximada en euros?",
-   "options": [],
-   "explanation": "1,15 × 0,90 − 1 = 0,035 → +3,5 %.",
-   "unit": "%"
-  },
-  "u14l4-3": {
-   "prompt": "La bolsa americana cae un 18 % en dólares, pero el dólar sube un 6 % frente al euro. ¿Tu rentabilidad en euros?",
-   "options": [],
-   "explanation": "0,82 × 1,06 − 1 ≈ −0,131 → −13,1 %. Algo así pasó en 2022: el dólar amortiguó la caída.",
-   "unit": "%"
-  },
   "u14l4-4": {
    "prompt": "Gráfico real de un par de divisas: 30 sesiones, sin nombre ni fecha. Si tu fondo invierte fuera, algo así mueve tu rentabilidad en euros. ¿Qué hizo en las 10 sesiones siguientes?",
    "options": [
@@ -536,6 +514,43 @@
    "right": [
     "Sí",
     "No (o casi nada)"
+   ]
+  },
+  "u14l4-11": {
+   "prompt": "2022: la bolsa americana cae en dólares, pero el dólar sube frente al euro. Medida en euros, tu pérdida es…",
+   "options": [
+    "La misma",
+    "Mayor que en dólares",
+    "Menor que en dólares"
+   ],
+   "explanation": "Cada dólar que te queda vale más euros, así que la subida del dólar amortigua la caída. Es lo que pasó en 2022. La tentación es pensar que la divisa no cuenta si el fondo está en euros, pero las empresas siguen ganando en dólares."
+  },
+  "u14l4-12": {
+   "prompt": "Inés tiene un fondo del S&P 500 sin cobertura. Ese año las acciones suben en dólares, pero el dólar cae con fuerza frente al euro. ¿Qué verá en su app, en euros?",
+   "options": [
+    "Una ganancia menor, o incluso una pérdida",
+    "Más ganancia, porque el dólar barato le favorece",
+    "La misma ganancia que en dólares"
+   ],
+   "explanation": "La buena acierta porque la rentabilidad en euros suma dos cosas: lo que hacen las acciones y lo que hace el dólar. La tentadora olvida la segunda.",
+   "feedback": [
+    "Bien: gana en dólares, pero cada dólar se convierte en menos euros.",
+    "Al revés: un dólar más débil resta cuando vuelves a euros.",
+    "La app convierte a euros: si cada dólar vale menos euros, la ganancia en euros es menor."
+   ]
+  },
+  "u14l4-13": {
+   "prompt": "Ana va a comprar un fondo de bonos de EE. UU. para la parte tranquila de su cartera. Hay versión normal y versión «EUR Hedged». ¿Cuál encaja mejor?",
+   "options": [
+    "La «EUR Hedged», con cobertura de divisa",
+    "La normal: la divisa da igual en bonos",
+    "Ninguna: mejor acciones de una sola empresa americana"
+   ],
+   "explanation": "La buena acierta porque un bono se mueve poco y la divisa mucho: sin cubrir, el riesgo lo pone el dólar. En acciones a largo plazo muchos no cubren, pero en bonos se suele hacer.",
+   "feedback": [
+    "Bien: en bonos se suele cubrir, porque la divisa movería más que el propio bono.",
+    "En un bono, el dólar puede mover más que el propio bono: la parte tranquila dejaría de serlo.",
+    "Eso añade mucho más riesgo justo en la parte que quería tranquila."
    ]
   },
   "u14l5-2": {

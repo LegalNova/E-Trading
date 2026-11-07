@@ -10,22 +10,6 @@
    "steps": [
     {
      "texts": [
-      "Por tramos, no de golpe",
-      "Vendes con ganancias. La ganancia va a la **base del ahorro** del IRPF, que paga **por tramos**: cada parte, a su tipo.",
-      "Ganas 8.000 € vendiendo acciones. ¿Cómo tributan?",
-      "Los 8.000 € al 21 %",
-      "Los primeros 6.000 € al 19 % y el resto al 21 %",
-      "Nada hasta los 50.000 €",
-      "6.000 × 19 % + 2.000 × 21 % = **1.560 €**. Los primeros 6.000 € pagan siempre el 19 %.",
-      "Busca desde qué ganancia el último euro paga un 23 %.",
-      "Subir de tramo **solo encarece lo que pasa del límite**. Con 50.500 € de ganancia, el último euro paga un 23 %, pero tu tipo medio es del 20,8 %.",
-      "Ese 23 % solo se aplica a lo que pasa de 50.000 €.",
-      "Los primeros 6.000 € siguen pagando un 19 %.",
-      "Sube la ganancia y mira los tramos"
-     ]
-    },
-    {
-     "texts": [
       "El fondo de Ana",
       "Ana",
       "¡Mi fondo ha ganado 15.000 € este año! No he vendido nada.",
@@ -39,6 +23,22 @@
       "Ni siquiera al vender se paga por todo: solo por la ganancia.",
       "¿Y los dividendos y los intereses?",
       "Esos tributan el año que los cobras, con una retención del 19 % a cuenta."
+     ]
+    },
+    {
+     "texts": [
+      "Por tramos, no de golpe",
+      "Vendes con ganancias. La ganancia va a la **base del ahorro** del IRPF, que paga **por tramos**: cada parte, a su tipo.",
+      "Ganas 8.000 € vendiendo acciones. ¿Cómo tributan?",
+      "Los 8.000 € al 21 %",
+      "Los primeros 6.000 € al 19 % y el resto al 21 %",
+      "Nada hasta los 50.000 €",
+      "6.000 × 19 % + 2.000 × 21 % = **1.560 €**. Los primeros 6.000 € pagan siempre el 19 %.",
+      "Busca desde qué ganancia el último euro paga un 23 %.",
+      "Subir de tramo **solo encarece lo que pasa del límite**. Con 50.500 € de ganancia, el último euro paga un 23 %, pero tu tipo medio es del 20,8 %.",
+      "Ese 23 % solo se aplica a lo que pasa de 50.000 €.",
+      "Los primeros 6.000 € siguen pagando un 19 %.",
+      "Sube la ganancia y mira los tramos"
      ]
     },
     {
@@ -69,7 +69,7 @@
      "title": "La escala del ahorro (2026)",
      "body": "• Hasta 6.000 €: **19 %**\n• De 6.000 a 50.000 €: **21 %**\n• De 50.000 a 200.000 €: **23 %**\n• De 200.000 a 300.000 €: **27 %**\n• Más de 300.000 €: **30 %**\n\nEs la escala de territorio común. País Vasco y Navarra tienen normas propias; consulta siempre la Agencia Tributaria.",
      "key": "Las inversiones tributan en la base del ahorro, del 19 % al 30 %, y las ganancias solo cuando vendes.",
-     "tip": "Hacienda cobra cuando vendes con ganancias, no cuando sube tu cartera."
+     "tip": "Pruébalo: en Cartera, mira lo «No realizado»: solo tributaría si vendieras."
     }
    ]
   },
@@ -129,7 +129,8 @@
       "Exacto: hasta el **25 %** de los dividendos; el resto, en **4 años**.",
       "Hacienda le devuelve 2.000 € en efectivo",
       "No hay devolución: la pérdida solo reduce lo que tributas.",
-      "Pasados esos 4 años, la pérdida que no hayas aprovechado caduca."
+      "Pasados esos 4 años, la pérdida que no hayas aprovechado caduca.",
+      "Pruébalo: en Cartera, mira tu «Resultado realizado»: es lo que vería Hacienda."
      ]
     }
    ]
@@ -181,7 +182,8 @@
     {
      "title": "Optimización legal",
      "body": "Antes de acabar el año, algunos inversores realizan pérdidas para compensar ganancias, respetando los dos meses (por ejemplo, cambiando a un producto distinto que replique un índice parecido).\n\nEs legal, pero la fiscalidad nunca debería ser el motivo principal de una inversión.",
-     "key": "Si recompras lo mismo en dos meses, la pérdida espera."
+     "key": "Si recompras lo mismo en dos meses, la pérdida espera.",
+     "tip": "Pruébalo: antes de vender con pérdidas, mira en el Historial cuándo compraste."
     }
    ]
   },
@@ -239,7 +241,7 @@
       "En unos 19.000 €",
       "Al 7 %, el dinero se duplica más o menos cada 10 años: dos veces en 20. Son **3.676 €**.",
       "Llévalos a 20 años.",
-      "Aplazar impuestos también **se compone**. Al final pagarás, pero sobre una bola más grande: el traspaso es como cambiar de carril sin pagar peaje.",
+      "Aplazar impuestos también **se compone**: al final pagarás, pero sobre una bola más grande. Pruébalo: en tu Cartera de ETF, rebalancea con la próxima compra en vez de vender.",
       "¡Casi cuatro veces más! Y sin hacer nada.",
       "Arrastra los años"
      ]
@@ -291,13 +293,31 @@
     {
      "title": "Cuando retienen de más",
      "body": "Algunos países retienen más de lo que permite el convenio: Suiza, un **35 %**. Recuperar el exceso exige trámites allí.\n\nLos ETF y fondos europeos de acumulación gestionan esto por dentro.",
-     "key": "Firma el W-8BEN si cobras dividendos de EE. UU., y deduce la doble imposición en tu declaración."
+     "key": "Firma el W-8BEN si cobras dividendos de EE. UU., y deduce la doble imposición en tu declaración.",
+     "tip": "Pruébalo: en Mercado, compara VWCE (acumulación) y VGWL (distribución), el mismo índice."
     }
    ]
   },
   "u31l6": {
    "title": "Cripto y modelos 720 y 721",
    "steps": [
+    {
+     "texts": [
+      "Diez cambios, cero euros",
+      "Bruno",
+      "Este año he hecho diez cambios entre criptos. Nunca he pasado a euros.",
+      "Así que no tengo nada que declarar, ¿no?",
+      "¿Qué le dices?",
+      "Claro: sin euros no hay ganancia",
+      "Cada cambio entre criptos es una venta para Hacienda.",
+      "Cada cambio es una venta: calcula la ganancia o pérdida de cada uno",
+      "Exacto. Lleva un registro con la fecha y el valor en euros de cada operación.",
+      "Declara solo el que más ganó",
+      "Hay que declararlos todos. Y las pérdidas también te ayudan a compensar.",
+      "Comprar y mantener no tributa. Vender o cambiar, sí: del 19 % al 30 %.",
+      "Y recuerda: la cripto **puede perderse entera**. No está protegida como un depósito."
+     ]
+    },
     {
      "texts": [
       "¿Qué modelo toca?",
@@ -324,27 +344,10 @@
      ]
     },
     {
-     "texts": [
-      "Diez cambios, cero euros",
-      "Bruno",
-      "Este año he hecho diez cambios entre criptos. Nunca he pasado a euros.",
-      "Así que no tengo nada que declarar, ¿no?",
-      "¿Qué le dices?",
-      "Claro: sin euros no hay ganancia",
-      "Cada cambio entre criptos es una venta para Hacienda.",
-      "Cada cambio es una venta: calcula la ganancia o pérdida de cada uno",
-      "Exacto. Lleva un registro con la fecha y el valor en euros de cada operación.",
-      "Declara solo el que más ganó",
-      "Hay que declararlos todos. Y las pérdidas también te ayudan a compensar.",
-      "Comprar y mantener no tributa. Vender o cambiar, sí: del 19 % al 30 %.",
-      "Y recuerda: la cripto **puede perderse entera**. No está protegida como un depósito."
-     ]
-    },
-    {
      "title": "Informar no es pagar",
      "body": "• **Modelo 720:** de enero a marzo. Después, solo si el valor sube más de 20.000 € o dejas de tener esos bienes.\n• **Modelo 721:** cripto custodiada en el extranjero por más de 50.000 € a 31 de diciembre.\n\nEl Tribunal de Justicia de la UE anuló en 2022 las sanciones desproporcionadas del 720, pero **la obligación de informar sigue**.",
      "key": "Las inversiones en el extranjero por encima de 50.000 € deben declararse, aunque no generen impuestos.",
-     "tip": "Un bróker extranjero puede ser barato, pero el papeleo con Hacienda corre de tu cuenta."
+     "tip": "Pruébalo: en el Historial, cuenta tus ventas de cripto: cada una se declara."
     }
    ]
   },
@@ -354,27 +357,6 @@
   }
  },
  "questions": {
-  "u31l1-1": {
-   "prompt": "Vendes acciones con una ganancia de 8.000 €. ¿Cuánto pagas con la escala del ahorro?",
-   "options": [],
-   "explanation": "6.000 × 19 % + 2.000 × 21 % = 1.140 + 420 = 1.560 €.",
-   "unit": "€"
-  },
-  "u31l1-3": {
-   "prompt": "Ganancia de 20.000 € por la venta de un fondo. ¿Cuánto pagas?",
-   "options": [],
-   "explanation": "6.000 × 19 % + 14.000 × 21 % = 1.140 + 2.940 = 4.080 €.",
-   "unit": "€"
-  },
-  "u31l1-4": {
-   "prompt": "Vendes con una ganancia de 10.000 €. ¿Cuánto pagas?",
-   "options": [
-    "2.100 €",
-    "1.980 €",
-    "1.900 €"
-   ],
-   "explanation": "6.000 × 19 % + 4.000 × 21 % = 1.140 + 840 = 1.980 €. Solo la parte que supera 6.000 € paga el 21 %."
-  },
   "u31l1-5": {
    "prompt": "Empareja cada tramo de la base del ahorro con su tipo.",
    "options": [
@@ -393,12 +375,6 @@
     "21 %"
    ]
   },
-  "u31l1-8": {
-   "prompt": "Con una ganancia de 10.000 € pagas 1.980 €. ¿Cuál es tu tipo medio? (un decimal)",
-   "options": [],
-   "explanation": "1.980 ÷ 10.000 = 0,198 → 19,8 %. El tipo medio siempre queda por debajo del tipo del último tramo.",
-   "unit": "%"
-  },
   "u31l1-10": {
    "prompt": "¿Qué territorios tienen su propia normativa de IRPF?",
    "options": [
@@ -408,23 +384,51 @@
    ],
    "explanation": "Tienen régimen foral. En el resto (territorio común) se aplica la escala estatal más la autonómica."
   },
-  "u31l2-1": {
-   "prompt": "Compras 100 acciones a 20 € con 10 € de comisión y las vendes a 30 € con otros 10 € de comisión. ¿Cuál es tu ganancia fiscal?",
-   "options": [],
-   "explanation": "Compra: 2.000 + 10 = 2.010 €. Venta: 3.000 − 10 = 2.990 €. Ganancia: 2.990 − 2.010 = 980 €.",
-   "unit": "€"
+  "u31l1-11": {
+   "prompt": "Es diciembre. Este año ya ganaste 4.000 € vendiendo unas acciones. Ahora quieres vender un ETF con 5.000 € de ganancia, pero no necesitas el dinero hasta marzo. ¿Cuándo vendes?",
+   "options": [
+    "Nunca, para no pagar impuestos",
+    "En enero: cada año, sus primeros 6.000 € de ganancia pagan el 19 %",
+    "Ahora: da igual el año en que venda"
+   ],
+   "explanation": "La escala se aplica a lo que ganas en cada año. Si puedes esperar unas semanas, repartir las ventas entre dos años puede dejar todo en el tramo del 19 %. Vender ya parece lo mismo, pero suma las dos ganancias en el mismo año.",
+   "feedback": [
+    "Necesitas el dinero en marzo. No vender nunca no es un plan: algún día tributará.",
+    "¡Bien visto! Repartida en dos años, toda la ganancia paga el tipo más bajo.",
+    "No da igual: este año se sumarían 9.000 € y parte pagaría el 21 %."
+   ]
   },
-  "u31l2-2": {
-   "prompt": "Compras 10 acciones a 50 € y, meses después, otras 10 a 80 €. Vendes 10 a 90 €. Con el método FIFO, ¿cuánto ganas? (sin comisiones)",
-   "options": [],
-   "explanation": "FIFO: vendes las primeras, las de 50 €. 10 × (90 − 50) = 400 €.",
-   "unit": "€"
+  "u31l1-12": {
+   "prompt": "Este año llevas 5.900 € de ganancia por ventas. Si vendes un poco más, pasarás de 6.000 € y entrarás en el tramo del 21 %. ¿Te frena?",
+   "options": [
+    "No: solo la parte que pase de 6.000 € paga el 21 %",
+    "Sí: todo lo que gane pasará a pagar un 21 %",
+    "Sí: mejor vender a pérdidas para compensar"
+   ],
+   "explanation": "Cada tramo solo encarece lo que pasa de su límite. Ganar un euro más nunca te hace pagar más de un euro de impuestos, así que el tramo no debería decidir si vendes.",
+   "feedback": [
+    "Exacto. Subir de tramo nunca te deja con menos dinero.",
+    "Es el gran mito de los tramos: lo que ya tienes sigue pagando un 19 %.",
+    "Perder dinero para pagar menos impuestos es perder dos veces."
+   ]
   },
-  "u31l2-4": {
-   "prompt": "En el caso anterior, ¿cuánto pagas por esos 2.000 € de ganancia neta?",
-   "options": [],
-   "explanation": "2.000 × 19 % = 380 €. Sin compensar, habrías pagado por 5.000 €: 950 €.",
-   "unit": "€"
+  "u31l1-13": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "No: va a la base del ahorro, que tiene su propia escala del 19 % al 30 %",
+    "No tributa: hasta 6.000 € es gratis",
+    "Sí: todo va junto con la nómina"
+   ],
+   "explanation": "Dividendos, intereses y ganancias por ventas van a la base del ahorro, separada de la nómina. El error tentador es creer que los primeros 6.000 € están exentos: pagan el 19 %.",
+   "feedback": [
+    "¡Eso es! Y con 2.600 € en total, todo paga el 19 %.",
+    "No es gratis: los primeros 6.000 € pagan el 19 %, el tipo más bajo.",
+    "No: la nómina va a la base general y tus inversiones, a la del ahorro, con su escala."
+   ],
+   "lines": [
+    "Este año he cobrado 600 € de dividendos y he ganado 2.000 € vendiendo un ETF.",
+    "¿Eso se suma a mi nómina en la renta?"
+   ]
   },
   "u31l2-7": {
    "prompt": "Ordena cómo se aprovecha una pérdida por venta.",
@@ -444,6 +448,44 @@
     "FIFO"
    ],
    "explanation": "First in, first out: lo primero que entra es lo primero que sale."
+  },
+  "u31l2-11": {
+   "prompt": "Es noviembre. Este año has ganado 4.000 € vendiendo un ETF. Tienes otra acción que va 1.500 € en pérdidas y en la que ya no crees. ¿Qué te conviene?",
+   "options": [
+    "Venderla antes del 31 de diciembre: la pérdida resta de la ganancia de este año",
+    "Venderla en enero",
+    "Esperar a que vuelva a subir para no perder"
+   ],
+   "explanation": "Las pérdidas por ventas se restan de las ganancias del mismo año. Si ya ibas a vender algo en pérdidas, hacerlo antes de fin de año reduce lo que pagas. Esperar a enero parece igual, pero la pérdida ya no compensa la ganancia de este año.",
+   "feedback": [
+    "¡Bien! Tributas por 2.500 € en vez de por 4.000 €, y sales de algo en lo que no crees.",
+    "La pérdida contaría para el año que viene, y este año pagarías por los 4.000 € enteros.",
+    "Si ya no crees en ella, aguantarla solo por no ver la pérdida es el efecto disposición."
+   ]
+  },
+  "u31l2-12": {
+   "prompt": "Compraste participaciones del mismo ETF en 2019 y en 2024, más caras. Vendes la mitad. ¿Cuáles cuentan como vendidas para Hacienda?",
+   "options": [
+    "Las de 2019, las primeras que compraste",
+    "Las de 2024, las últimas",
+    "Las que tú elijas"
+   ],
+   "explanation": "Se aplica FIFO: lo primero que entra es lo primero que sale. Por eso no puedes elegir vender las de 2024 para declarar menos ganancia."
+  },
+  "u31l2-13": {
+   "prompt": "¿Resta de tus ganancias por ventas de este año?",
+   "options": [
+    "Cambias bitcoin por ether con pérdidas",
+    "Vendes un ETF con pérdidas",
+    "Tu ETF va 800 € en pérdidas y no lo vendes",
+    "Vendes acciones con 800 € de pérdida",
+    "Tu acción ha caído un 30 % pero la mantienes"
+   ],
+   "explanation": "Solo cuenta la pérdida realizada: la que aparece al vender o cambiar. Una pérdida latente, sin vender, no resta nada todavía.",
+   "right": [
+    "Sí, resta este año",
+    "No resta este año"
+   ]
   },
   "u31l3-1": {
    "prompt": "¿Qué hace la regla de los dos meses?",
@@ -478,12 +520,6 @@
    ],
    "explanation": "Por ejemplo, acciones de la misma empresa o el mismo ETF."
   },
-  "u31l3-8": {
-   "prompt": "Vendes con pérdidas el 15 de octubre. ¿Cuántos meses tienes que esperar para recomprar lo mismo sin que la pérdida se aplace? (valores cotizados)",
-   "options": [],
-   "explanation": "La ventana es de dos meses: si recompras pasado el 15 de diciembre, ya no se activa (siempre que no compraras lo mismo en los dos meses anteriores a la venta).",
-   "unit": "meses"
-  },
   "u31l3-9": {
    "prompt": "¿Qué es cierto sobre la regla de los dos meses? Marca todo.",
    "options": [
@@ -493,6 +529,34 @@
     "Está en el artículo 33.5 de la Ley del IRPF"
    ],
    "explanation": "Puedes vender cuando quieras; lo que cambia es cuándo puedes usar la pérdida."
+  },
+  "u31l3-11": {
+   "prompt": "Es 20 de diciembre. Tu ETF del MSCI World va 2.000 € en pérdidas y este año ganaste 3.000 € con otra venta. Quieres seguir invertido en bolsa mundial. ¿Qué haces?",
+   "options": [
+    "No hago nada",
+    "Lo vendo y recompro el mismo ETF el 2 de enero",
+    "Lo vendo y compro a la vez un ETF de otro índice mundial parecido"
+   ],
+   "explanation": "La regla solo aplaza la pérdida si recompras los mismos valores. Cambiar a un producto distinto que replica un índice parecido es legal y te deja seguir invertido. Recomprar lo mismo en enero parece listo, pero es justo lo que la regla desactiva.",
+   "feedback": [
+    "Es válido, pero pagarás por los 3.000 € enteros pudiendo compensar.",
+    "Recompras lo mismo antes de dos meses: la pérdida queda aplazada y este año no te sirve.",
+    "¡Bien! No son valores homogéneos: la pérdida compensa este año y sigues invertido."
+   ]
+  },
+  "u31l3-12": {
+   "prompt": "Vendiste un ETF cotizado con pérdidas el 1 de diciembre y no habías comprado más antes. ¿Desde cuándo puedes recomprar el mismo ETF sin que la pérdida se aplace?",
+   "options": [
+    "Nunca: ese ETF queda prohibido",
+    "Desde el 2 de enero: ya es otro año",
+    "Pasados dos meses, a partir del 2 de febrero"
+   ],
+   "explanation": "Para valores cotizados, la ventana es de dos meses antes y después de la venta, sin importar el año. Recomprar en enero es la trampa típica: el año cambia, pero sigues dentro de los dos meses.",
+   "feedback": [
+    "No hay prohibición: solo se retrasa el uso fiscal de la pérdida.",
+    "El cambio de año no cuenta: la ventana es de dos meses desde la venta.",
+    "Exacto: fuera de la ventana de dos meses, la pérdida cuenta ya."
+   ]
   },
   "u31l4-1": {
    "prompt": "Empareja cada producto con su fiscalidad.",
@@ -509,12 +573,6 @@
     "Desgrava al aportar y tributa como trabajo al rescatar",
     "Se traspasa sin tributar hasta el reembolso"
    ]
-  },
-  "u31l4-2": {
-   "prompt": "Tu fondo pasó de 10.000 € a 15.000 €. Si lo reembolsas para comprar otro, en vez de traspasar, ¿cuánto pagas de impuestos?",
-   "options": [],
-   "explanation": "Ganancia: 5.000 €. 5.000 × 19 % = 950 €. Con un traspaso, pagarías 0 € ahora.",
-   "unit": "€"
   },
   "u31l4-3": {
    "prompt": "¿Cuánto pagas de impuestos al traspasar de un fondo a otro?",
@@ -545,17 +603,37 @@
    ],
    "explanation": "Es legal y es la gran ventaja del traspaso."
   },
-  "u31l5-1": {
-   "prompt": "Cobras un dividendo bruto de 1.000 € de una empresa de EE. UU. y has firmado el W-8BEN. ¿Cuántos euros retiene EE. UU.?",
-   "options": [],
-   "explanation": "1.000 × 15 % = 150 €, el máximo del convenio entre España y EE. UU.",
-   "unit": "€"
+  "u31l4-11": {
+   "prompt": "Tienes 15.000 € en un fondo indexado de bolsa, con 4.000 € de ganancia. Te compras un piso dentro de 3 años y quieres bajar el riesgo. ¿Qué haces?",
+   "options": [
+    "Lo reembolso y lo meto en un depósito",
+    "Lo dejo en bolsa: a la larga sube",
+    "Traspaso el dinero a un fondo monetario"
+   ],
+   "explanation": "Con fondos, cambiar de riesgo se hace por traspaso, sin tributar hasta el reembolso final. Reembolsar también baja el riesgo, pero adelanta el impuesto y ese dinero deja de trabajar para ti.",
+   "feedback": [
+    "Bajas el riesgo, pero pagas ya por los 4.000 € de ganancia sin necesidad.",
+    "A 3 años no hay «larga»: una caída fuerte justo antes de comprar te dejaría corto.",
+    "¡Bien! Bajas el riesgo sin pagar nada ahora: tributarás al reembolsar para el piso."
+   ]
   },
-  "u31l5-2": {
-   "prompt": "Siguiendo el caso: en España te corresponde un 19 % (190 €) y deduces los 150 € pagados en EE. UU. ¿Cuánto pagas además en España?",
-   "options": [],
-   "explanation": "190 − 150 = 40 €. En total pagas 190 €: no pagas dos veces.",
-   "unit": "€"
+  "u31l4-12": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Sí, los ETF se traspasan igual que los fondos",
+    "No: venderlo tributa; puedes dejarlo y llevar lo nuevo al mundial",
+    "Mejor no invertir más hasta decidir"
+   ],
+   "explanation": "Los ETF no tienen el traspaso de los fondos: cada venta tributa. Si ya tienes ganancias, suele ser mejor no vender y dirigir las aportaciones nuevas al producto que prefieres.",
+   "feedback": [
+    "Ojalá. En general, vender un ETF tributa como vender una acción.",
+    "¡Eso! Sin vender no pagas, y las aportaciones nuevas ya van al mundial.",
+    "Parar tus aportaciones no arregla nada: el tiempo invertido también cuenta."
+   ],
+   "lines": [
+    "Tengo un ETF del S&P 500 con mucha ganancia.",
+    "Quiero pasarme a uno mundial. ¿Lo traspaso sin pagar, como un fondo?"
+   ]
   },
   "u31l5-3": {
    "prompt": "Si no firmas el W-8BEN, ¿cuánto suele retener EE. UU. sobre tus dividendos?",
@@ -596,6 +674,38 @@
     "No es automático: hay que solicitarlo."
    ]
   },
+  "u31l5-11": {
+   "prompt": "Tienes 25 años, inviertes cada mes para dentro de 30 y no necesitas cobrar rentas. ¿ETF de acumulación o de distribución?",
+   "options": [
+    "De distribución: me gusta cobrar dividendos",
+    "Da igual: fiscalmente son lo mismo",
+    "De acumulación: reinvierte por dentro y no tributo hasta vender"
+   ],
+   "explanation": "Si no necesitas rentas, la acumulación aplaza impuestos y ese dinero sigue componiéndose. Cobrar dividendos parece ganar más, pero el precio baja en esa cantidad y además tributa.",
+   "feedback": [
+    "Es legítimo, pero pagas impuestos cada año por lo que cobras y luego tienes que reinvertirlo tú.",
+    "No lo son: el de distribución tributa cada dividendo; el de acumulación, solo al vender.",
+    "¡Eso! Mientras acumulas, el impuesto que no pagas sigue trabajando para ti."
+   ]
+  },
+  "u31l5-12": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Sí: un 8 % gratis cada año",
+    "El precio baja lo que paga y además tributa: mira si el negocio es bueno",
+    "Solo si la empresa es de EE. UU."
+   ],
+   "explanation": "El dividendo sale del valor de la empresa: tu dinero pasa de acciones a efectivo, y ese efectivo tributa. Un dividendo alto no basta para comprar: importa el negocio que lo paga.",
+   "feedback": [
+    "No es gratis: al pagarlo, el precio de la acción baja más o menos esa cantidad.",
+    "¡Bien! Un dividendo alto puede venir de un negocio en apuros.",
+    "El país no lo convierte en gratis, y fuera puede haber retención extra."
+   ],
+   "lines": [
+    "Esta empresa paga un dividendo del 8 % al año.",
+    "¡Es dinero gratis! La compro solo por eso, ¿no?"
+   ]
+  },
   "u31l6-1": {
    "prompt": "Cambias 0,5 ether por solana sin pasar por euros. ¿Qué es para Hacienda?",
    "options": [
@@ -623,12 +733,6 @@
    ],
    "explanation": "Existe desde 2024 y, como el 720, es informativo."
   },
-  "u31l6-4": {
-   "prompt": "Compras 0,1 bitcoin a 30.000 € el bitcoin y lo vendes a 60.000 € el bitcoin. ¿Cuánto pagas de impuestos? (sin comisiones)",
-   "options": [],
-   "explanation": "Compra: 3.000 €. Venta: 6.000 €. Ganancia: 3.000 € × 19 % = 570 €.",
-   "unit": "€"
-  },
   "u31l6-7": {
    "prompt": "¿Cuándo se presenta el modelo 720?",
    "options": [
@@ -647,6 +751,20 @@
     "721"
    ],
    "explanation": "El 720 es para cuentas, valores e inmuebles; el 100, la renta; el 303, el IVA."
+  },
+  "u31l6-11": {
+   "prompt": "Tienes cripto en un exchange extranjero. El 31 de diciembre vale 56.000 €. No has vendido nada. ¿Qué te toca?",
+   "options": [
+    "Nada: mientras no pase a euros, no cuenta",
+    "Presentar el modelo 721 entre enero y marzo: informar no es pagar",
+    "Vender una parte antes del 31 para quedarme por debajo de 50.000 €"
+   ],
+   "explanation": "Pasar de 50.000 € en cripto custodiada fuera obliga a presentar el 721, que es solo informativo. Vender para evitarlo es la tentación, pero convierte un trámite gratis en un impuesto real.",
+   "feedback": [
+    "Para el 721 cuenta lo que tienes fuera a 31 de diciembre, lo hayas vendido o no.",
+    "¡Exacto! Hacienda solo quiere saberlo. Pagarás cuando vendas con ganancias.",
+    "Vender sí tributaría por la ganancia. Informar, en cambio, no te cuesta impuestos."
+   ]
   }
  }
 }

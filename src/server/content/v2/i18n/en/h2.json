@@ -13,7 +13,7 @@
       "The fund that made 8 %",
       "Marta",
       "My fund made 8 % this year! That's brilliant, right?",
-      "That year, the index for its market rose 14 %.",
+      "That year, the index for its market, the average of its big companies, rose 14 %.",
       "What do you tell Marta?",
       "Congratulations: 8 % is great",
       "Sounds good… but copying the index would have given her 14 %.",
@@ -33,11 +33,11 @@
       "Yardstick",
       "Basis for products",
       "«The Spanish stock market is up 1 % today»",
-      "That's the IBEX 35: it tells you how the market is doing.",
+      "That's the IBEX 35, the index of the 35 biggest companies on the Spanish stock exchange.",
       "A fund compares its performance with the IBEX 35",
       "The index is the benchmark for knowing whether the fund did well.",
       "An ETF that copies the S&P 500",
-      "ETFs and index funds track it at low cost.",
+      "The S&P 500 brings together 500 big US companies; ETFs copy it at low cost.",
       "Finding out how the banking sector is doing today",
       "There are country and sector indices: more specific thermometers.",
       "Checking whether your portfolio did well",
@@ -53,9 +53,9 @@
     },
     {
      "title": "Points, not euros",
-     "body": "An index is measured in points, not euros. What matters is the **change**: if it goes from 14,000 to 14,700 points, it's up 5 %.",
+     "body": "An index is measured in points, not euros. What matters is the **change**: if it goes from 14,000 to 14,700 points, it's up 5 %.\n\nBuying the whole thing, through a fund or an ETF, is betting on an entire economy, not on one company.",
      "key": "An index is a reference basket, not something you buy as such.",
-     "tip": "Buying the whole index is betting on an entire economy, not on one company."
+     "tip": "Try it: in Market, look up the IBEX 35 and see if it's up or down today."
     }
    ]
   },
@@ -64,18 +64,36 @@
    "steps": [
     {
      "texts": [
+      "All 500 at once",
+      "Nora",
+      "I want to invest €100 in the S&P 500, the 500 biggest US companies.",
+      "Do I have to buy 500 shares, one from each company?",
+      "What do you tell her?",
+      "Yes: one of each, and lots of patience",
+      "You'd need a lot of money and 500 purchases. There's a shortcut.",
+      "Buy an S&P 500 ETF: one single purchase and you own all 500",
+      "That's it! An **ETF** is a fund that copies an index and trades like a share.",
+      "Just buy the biggest one: it's almost the same",
+      "No: that's betting on one company, not on all 500.",
+      "If you buy it like a share, is it as risky as a single company?",
+      "No: inside there are hundreds of companies. But if the whole market falls, so does it.",
+      "An index ETF is like buying the whole supermarket instead of a single product."
+     ]
+    },
+    {
+     "texts": [
       "ETF or traditional fund?",
-      "An **ETF** is a fund, almost always tracking an index, that **trades on the stock exchange** like a share. Is it an ETF thing or a traditional fund thing?",
+      "An **ETF** trades on the stock exchange like a share; a traditional fund doesn't. Which one has each feature?",
       "ETF",
       "Traditional fund",
       "You buy it at 11:37 at the price on your screen",
       "An ETF trades all session long: its price changes from moment to moment.",
       "You swap it for another without paying tax",
-      "Tax-free transfers are the fund's big advantage in Spain.",
+      "That's a tax-free transfer: the traditional fund's big advantage in Spain.",
       "You pay the broker's commission and the spread",
-      "It's bought on the stock exchange, with the usual trading costs.",
+      "It's bought on the stock exchange: you pay the broker (the middleman) and the spread, the gap between the buying and selling price.",
       "Its price is calculated once a day",
-      "A fund's net asset value is set once every day.",
+      "The fund's price, its net asset value, is set once every day.",
       "Every sale at a profit is taxed, even if you reinvest",
       "In Spain, ETFs don't get the fund transfer rules.",
       "You buy it through the management company, a bank or a platform",
@@ -87,26 +105,10 @@
      ]
     },
     {
-     "texts": [
-      "«Like a share»",
-      "Nora",
-      "Someone told me an ETF is «like a share».",
-      "So is it just as risky as buying a single company?",
-      "What do you tell her?",
-      "Yes, just as risky",
-      "You buy it like a share, but inside there are hundreds or thousands of companies.",
-      "You buy it like a share, but inside there's a basket of lots of companies",
-      "That's it! An MSCI World one holds more than a thousand companies from developed countries.",
-      "It has no risk at all",
-      "It has the index's risk: if the market falls 30 %, so does the ETF.",
-      "An index ETF is like buying the whole supermarket instead of a single product."
-     ]
-    },
-    {
      "title": "UCITS ETFs",
-     "body": "A retail investor in the EU buys European **UCITS** ETFs, which come with a **KID**. Many US ETFs can't be sold to European retail investors because they don't have a KID.",
+     "body": "A small investor (a **retail investor**) in the EU buys European **UCITS** ETFs, which come with a **KID** summarising risks and costs. Many US ETFs can't be sold to European retail investors because they don't have a KID.\n\nWith real money, look for «UCITS» in the name and read its KID. In the simulator you can practise with US ETFs.",
      "key": "An ETF is a fund, almost always an index one, that you buy and sell on the stock exchange like a share.",
-     "tip": "Before buying an ETF, look for «UCITS» in its name and read its KID."
+     "tip": "Try it: in Market, look up the S&P 500 ETF and compare it with the index."
     }
    ]
   },
@@ -150,7 +152,7 @@
       "The central bank suddenly raises interest rates",
       "It changes the price of money for every company at once.",
       "Sort the six scares.",
-      "Diversifying **removes specific risk**: one bankruptcy weighs little among thousands of companies. **Market risk** doesn't go away with more shares; it's only softened by mixing in bonds or cash.",
+      "Diversifying **removes specific risk**: one bankruptcy weighs little among thousands of companies. **Market risk** doesn't go away with more shares; it's only softened by mixing in bonds (loans to governments or companies) or cash in an account.",
       "Ask yourself: does it happen to one company or to the whole economy?",
       "Nicely sorted! Now for the only free lunch.",
       "Sort each scare"
@@ -158,9 +160,9 @@
     },
     {
      "title": "The free lunch",
-     "body": "A single share moves 30-35 % a year; 20-30 shares from different sectors, around 20 %; a global index, 15 %.\n\nHarry Markowitz, Nobel Prize in Economics, called this **the only free lunch**: less risk without giving up expected return.",
+     "body": "How much it goes up and down in a typical year: a single share, 30-35 %; 20-30 shares from different sectors, around 20 %; a global index, 15 %.\n\nHarry Markowitz, Nobel Prize in Economics, called this **the only free lunch**: less risk without giving up expected return. An ETF on a global index gives you that basket in a single purchase.",
      "key": "With lots of companies, the disasters of some are offset by the successes of others.",
-     "tip": "Don't put all your eggs in one basket, or all your baskets on the same lorry."
+     "tip": "Try it: open Portfolio and check whether any position weighs more than 20 %."
     }
    ]
   },
@@ -172,7 +174,7 @@
       "The price drops… and comes back",
       "Irene",
       "I put €100 into a fund every month, no matter what.",
-      "Over five months, the price goes €10, €8, €5, €8 and back to €10.",
+      "Each €100 buys units, little slices of the fund. Over five months, their price goes €10, €8, €5, €8 and back to €10.",
       "It's back where it was. I guess I'm where I started.",
       "How is Irene doing?",
       "Same as before: the price ended where it started",
@@ -192,7 +194,7 @@
       "Spreading it out, almost always",
       "All at once, about three times out of four",
       "Half and half",
-      "All at once wins in **74 %** of starting months. Vanguard, using the MSCI World from 1976 to 2022, saw it win 68 % of the time after one year.",
+      "All at once wins in **74 %** of starting months. The fund manager Vanguard, using the global MSCI World index from 1976 to 2022, saw it win 68 % of the time after one year.",
       "Find a starting month where spreading it out came out ahead.",
       "**All at once usually wins**, because the market goes up more often than it goes down. **Spreading it out** wins just before a fall and reduces regret, but nobody knows when the fall is coming.",
       "Here spreading it out won! Look what came right after: a fall.",
@@ -202,15 +204,35 @@
     },
     {
      "title": "With a large sum",
-     "body": "A sensible middle ground: spread it over **6–12 months** with automatic contributions.\n\nWhat doesn't work is waiting «for it to drop»: nobody knows where the bottom is.",
+     "body": "With a salary, the natural thing is to put in part of it every month. If one day you have a large sum (an inheritance, a severance payment), a sensible middle ground is to spread it over **6–12 months** with automatic contributions.\n\nWhat doesn't work is waiting «for it to drop»: nobody knows where the bottom is.",
      "key": "All at once wins more often; bit by bit reduces regret. What matters is starting and not stopping.",
-     "tip": "Investing every month is like climbing stairs: what matters is not stopping."
+     "tip": "Try it: buy a little of the S&P 500 ETF today and repeat every month."
     }
    ]
   },
   "u10l3": {
    "title": "Fees: the TER and hidden costs",
    "steps": [
+    {
+     "texts": [
+      "The star team",
+      "Ana",
+      "Bank adviser",
+      "Ana is 24 and goes to the bank to make her first investment.",
+      "Ana, I recommend our equity fund. It's run by a star team.",
+      "And how much does it charge?",
+      "2 % a year. You're paying for quality.",
+      "A similar index fund, which just copies the index, charges 0.2 %.",
+      "What should Ana think?",
+      "If it's a star team, it's worth it",
+      "It would have to beat the index by 1.8 points a year, year after year. Hardly anyone manages that.",
+      "The expensive one has to earn 1.8 points more every year just to break even",
+      "That's it! The cost is guaranteed; beating the index isn't.",
+      "She should try it for a year and compare",
+      "One year tells you little: it could be luck. The cost, on the other hand, is always paid.",
+      "Does 2 % sound like little? See what it eats up in 30 years."
+     ]
+    },
     {
      "texts": [
       "The cost you can't see",
@@ -228,28 +250,10 @@
      ]
     },
     {
-     "texts": [
-      "The star team",
-      "Ana",
-      "Bank adviser",
-      "Ana, I recommend our equity fund. It's run by a star team.",
-      "And how much does it charge?",
-      "2 % a year. You're paying for quality.",
-      "A similar index fund charges 0.2 %.",
-      "What should Ana think?",
-      "If it's a star team, it's worth it",
-      "It would have to beat the index by 1.8 points a year, year after year. Hardly anyone manages that.",
-      "The expensive one has to earn 1.8 points more every year just to break even",
-      "That's it! The cost is guaranteed; beating the index isn't.",
-      "She should try it for a year and compare",
-      "One year tells you little: it could be luck. The cost, on the other hand, is always paid."
-     ]
-    },
-    {
      "title": "Hidden costs",
-     "body": "An index fund might charge 0.1-0.3 % a year; many active funds in Spain, 1.5 % or more. You'll see it in the **KID**, as ongoing charges.\n\nOn top of the TER: the broker's commission per trade, *spread*, custody fees, currency exchange and, for some funds, entry or exit fees. Add them all up.",
+     "body": "An index fund might charge 0.1-0.3 % a year; many active funds (with a team picking companies) in Spain, 1.5 % or more. You'll see it in the **KID**, as ongoing charges.\n\nOn top of the TER: the broker's commission per trade, *spread* (the gap between the buying and selling price), custody fees (what you're charged to hold your securities), currency exchange and, for some funds, fees when you get in or out (subscription or redemption fees). Add them all up.",
      "key": "Every 1 % a year in costs eats a huge chunk of the result, because of compound interest.",
-     "tip": "1.5 % a year sounds like nothing. Over 30 years, it's almost a third of your money."
+     "tip": "Try it: ask Lumi, your teacher, which costs to check in an ETF's KID."
     }
    ]
   },
@@ -274,8 +278,9 @@
     },
     {
      "title": "Put a date on every euro",
-     "body": "• **Cushion:** always available interest-paying account, money market fund.\n• **Trip or car (1-3 years)** deposits, Treasury bills.\n• **Deposit on a flat (3-7 years)** a cautious mix, more bonds.\n• **Retirement (15 years or more)** mostly diversified shares.",
-     "key": "Money you'll need soon doesn't go into the stock market: it could be falling just when you need it."
+     "body": "• **Cushion for emergencies (always available):** an interest-paying account or a money market fund, which is very stable.\n• **Trip or car (1-3 years):** deposits or Treasury bills, that is, lending to a bank or the government for a fixed term.\n• **Deposit on a flat (3-7 years):** a cautious mix, with more fixed income (bonds).\n• **Retirement (15 years or more):** mostly diversified shares.\n\nYour simple long-term portfolio: a global index ETF, low fees, a contribution every month and only money you won't need for many years.",
+     "key": "Money you'll need soon doesn't go into the stock market: it could be falling just when you need it.",
+     "tip": "Try it: in Market, look at the S&P 500 in monthly candles and find its falls."
     }
    ]
   },
@@ -293,18 +298,6 @@
     "A figure that sums up how a group of securities is doing"
    ],
    "explanation": "It's a reference basket with rules about what gets in and how much it weighs."
-  },
-  "u7l1-3": {
-   "prompt": "An index goes from 14,000 to 14,700 points. How much has it risen?",
-   "options": [],
-   "explanation": "(14,700 − 14,000) ÷ 14,000 = 0.05 → 5 %.",
-   "unit": "%"
-  },
-  "u7l1-4": {
-   "prompt": "Quick: an index goes from 5,000 to 4,600 points. How much has it fallen, in %? (enter it as a positive number)",
-   "options": [],
-   "explanation": "400 ÷ 5,000 = 0.08 → it has fallen 8 %.",
-   "unit": "%"
   },
   "u7l1-6": {
    "prompt": "If the IBEX 35 is at 14,000 points, buying it costs €14,000.",
@@ -377,12 +370,6 @@
    ],
    "explanation": "Without a KID, they can't be marketed to retail investors in the EU."
   },
-  "u10l2-7": {
-   "prompt": "You buy 15 units of an ETF at €98.40 and the broker charges a €2 commission. How much do you pay in total?",
-   "options": [],
-   "explanation": "15 × 98.40 = €1,476 + €2 commission = €1,478.",
-   "unit": "€"
-  },
   "u10l2-10": {
    "prompt": "The ETFs a retail investor can buy in the EU usually carry the ____ label.",
    "options": [
@@ -401,12 +388,6 @@
     "Each company's specific risk"
    ],
    "explanation": "A bankruptcy stops being a drama if it's 0.1 % of your money. But if the whole market falls, they all fall: that risk is only softened with bonds or cash."
-  },
-  "u29l1-2": {
-   "prompt": "You split €10,000 equally across 20 shares. One goes bankrupt and loses all its value; the rest stay the same. How many euros do you lose?",
-   "options": [],
-   "explanation": "10,000 ÷ 20 = €500 per share. With a single share, that bankruptcy would have wiped out the whole €10,000.",
-   "unit": "€"
   },
   "u29l1-4": {
    "prompt": "Practice exercise (not a recommendation): split €10,000 across these shares. Rules: at least 6 companies, none above 20 % and no sector above 30 %.",
@@ -484,18 +465,6 @@
     "I'm super diversified now, right?"
    ]
   },
-  "u25l2-1": {
-   "prompt": "You invest €100 a month and the price goes through 10, 8, 5, 8 and €10. How many units do you have in total?",
-   "options": [],
-   "explanation": "100 ÷ 10 + 100 ÷ 8 + 100 ÷ 5 + 100 ÷ 8 + 100 ÷ 10 = 10 + 12.5 + 20 + 12.5 + 10 = 65.",
-   "unit": "units"
-  },
-  "u25l2-2": {
-   "prompt": "With those 65 units for €500, what's your average purchase price? (round to two decimal places)",
-   "options": [],
-   "explanation": "500 ÷ 65 ≈ €7.69. Since it ends at €10, you make 30 % without the price having risen.",
-   "unit": "€"
-  },
   "u25l2-3": {
    "prompt": "September 2008. You start putting €200 a month into an S&P 500 fund. What did the index do over the following months?",
    "options": [
@@ -552,24 +521,6 @@
     "DCA"
    ],
    "explanation": "Dollar-cost averaging: regular contributions."
-  },
-  "u10l3-1": {
-   "prompt": "€10,000 over 30 years at 7 % a year with no costs grows to €76,123. With 1 % in annual costs (6 % net), how much? (round to the nearest euro)",
-   "options": [],
-   "explanation": "10,000 × 1.06³⁰ ≈ €57,435.",
-   "unit": "€"
-  },
-  "u10l3-2": {
-   "prompt": "With those figures, how much does that 1 % a year cost you in total over 30 years? (round)",
-   "options": [],
-   "explanation": "76,123 − 57,435 = €18,688: almost twice what you invested, just in costs.",
-   "unit": "€"
-  },
-  "u10l3-3": {
-   "prompt": "You have €20,000 in a fund with a TER of 1.8 %. How much do you pay this year?",
-   "options": [],
-   "explanation": "20,000 × 1.8 % = €360. In an index fund at 0.2 % it would be €40.",
-   "unit": "€"
   },
   "u10l3-4": {
    "prompt": "Where do you find a fund's ongoing charges?",
@@ -690,6 +641,59 @@
     "soon"
    ],
    "explanation": "Not because it's sure to fall, but because it could be falling just when you need it."
+  },
+  "u7l1-11": {
+   "prompt": "This chart is a real index: the average of a country's big companies, with no name or date. What did it do over the next 10 sessions?",
+   "options": [
+    "Up",
+    "Down"
+   ],
+   "explanation": "An index sums up in a single line how all its companies did together: that's why it works as a thermometer for the market. What it doesn't do is predict the future: not even a whole index can be called two weeks ahead.",
+   "horizon": "the next 10 sessions"
+  },
+  "u7l1-12": {
+   "prompt": "Imagine: your portfolio of Spanish shares is up 5 % this year and the IBEX 35, 12 %. A friend tells you you're a genius. What do you conclude?",
+   "options": [
+    "That I did worse than the index: copying it would have given me more",
+    "That I'm a genius: I made money",
+    "That the index has nothing to do with my portfolio"
+   ],
+   "explanation": "A result is only good or bad compared with its index: at 5 % against 12 %, copying the index would have earned more. The tempting answer, «I made money», fails because a gain with no yardstick doesn't tell you whether you did well.",
+   "feedback": [
+    "That's it: a fund copying the IBEX 35 would have given you more, without picking companies.",
+    "Making money isn't enough: compare yourself with what you'd have made by copying the index.",
+    "If you own Spanish shares, the IBEX 35 is exactly your yardstick."
+   ]
+  },
+  "u10l3-11": {
+   "prompt": "Two ETFs copy exactly the same index. One charges 0.2 % a year and the other 1 %. You're going to leave €10,000 in it for 30 years. Which do you choose?",
+   "options": [
+    "The 1 % one: if it charges more, it must be better",
+    "It doesn't matter: it's less than a point of difference",
+    "The 0.2 % one: if they copy the same thing, the cheap one leaves you more"
+   ],
+   "explanation": "With the same index inside, the cost is the only thing that changes. With a market at 7 %, the 0.2 % one ends at €71,968 and the 1 % one at €57,435. The tempting thought is that «less than a point» is small: it's charged every year on everything accumulated.",
+   "feedback": [
+    "They copy the same index: charging more doesn't make them earn more, it just leaves less for you.",
+    "That point is charged every year and compounds: over 30 years it's thousands of euros.",
+    "That's it: before costs they'll return the same, so the winner is the one that takes less along the way."
+   ]
+  },
+  "u10l3-12": {
+   "prompt": "Low or high cost for an equity fund?",
+   "options": [
+    "A TER of 0.3 %",
+    "A TER of 2 %",
+    "A TER of 1.5 %",
+    "A TER of 0.2 %",
+    "A TER of 1.8 %",
+    "A TER of 0.1 %"
+   ],
+   "explanation": "An index fund might charge 0.1-0.3 % a year; many active funds, with a team picking companies, 1.5 % or more. It seems a small gap, but it's charged every year: over 30 years, 1.5 % takes almost a third of the result.",
+   "right": [
+    "Low, like an index fund",
+    "High, like many active funds"
+   ]
   }
  }
 }

@@ -60,7 +60,7 @@
      "title": "La ubicació ho és tot",
      "body": "La mateixa espelma vol dir coses diferents segons on apareix: després d'una caiguda llarga i en un suport pot indicar esgotament venedor; al mig d'un rang, gairebé res.",
      "key": "Un cos gran és convicció; una metxa llarga és un rebuig.",
-     "tip": "No llegeixis una espelma sola: pregunta't d'on ve el preu."
+     "tip": "Prova-ho: a Mercat, obre el bitcoin en Espelmes i busca la metxa més llarga del mes."
     }
    ]
   },
@@ -117,7 +117,7 @@
      "title": "Els quatre doji",
      "body": "• **Normal:** una creu amb metxes semblants.\n• **De potes llargues:** metxes molt llargues als dos costats.\n• **Libèl·lula:** una T, amb metxa inferior llarga.\n• **Làpida:** una T invertida, amb metxa superior llarga.",
      "key": "El marubozu diu força; la baldufa, dubte; el doji, empat.",
-     "tip": "Un doji no diu «girarà». Diu «ningú no sap què fer». Espera l'espelma següent."
+     "tip": "Prova-ho: a Mercat, busca un doji al gràfic diari d'Inditex."
     }
    ]
   },
@@ -175,7 +175,7 @@
      "title": "El que diuen les dades (Bulkowski)",
      "body": "• Martell: gira a l'alça el **60 %** (posició 65 de 103).\n• Home penjat: continua a l'alça el **59 %**! (posició 87).\n• Estrella fugaç: gira a la baixa el **59 %** (posició 55).\n\nEll mateix els descriu com «no gaire lluny de l'atzar».",
      "key": "La mateixa forma canvia de nom segons si ve després d'una pujada o d'una baixada.",
-     "tip": "El martell només és martell després d'una caiguda. I tot i així, sense context, l'encerta poc més que una moneda."
+     "tip": "Prova-ho: a Mercat, busca martells al diari de Tesla i mira què va venir després."
     }
    ]
   },
@@ -213,7 +213,7 @@
      "title": "Harami, patró penetrant i núvol fosc",
      "body": "• **Envolvent:** el cos de la segona espelma es menja el de la primera, en sentit contrari.\n• **Harami** («embarassada»): espelma llarga i després una de petita **dins** del seu cos. L'impuls es frena.\n• **Patró penetrant:** després d'una caiguda, una verda que tanca **per sobre de la meitat** del cos vermell anterior.\n• **Núvol fosc:** després d'una pujada, una vermella que tanca **per sota de la meitat** de la verda.",
      "key": "No n'hi ha prou d'encertar la direcció: el recorregut ha de compensar el risc.",
-     "tip": "Una envolvent gira sovint, però de vegades gira poc."
+     "tip": "Prova-ho: a Mercat, busca una envolvent al gràfic diari del bitcoin."
     }
    ]
   },
@@ -270,7 +270,7 @@
      "title": "Els millors números (Bulkowski)",
      "body": "• Estrella del matí: gira el **78 %** (posició 12 de 103).\n• Estrella del vespre: **72 %** (posició **4**).\n• Tres soldats blancs: **82 %** (posició 32).\n• Tres corbs negres: **78 %** (posició **3**).\n\nMillors que les espelmes soltes, però molt menys freqüents.",
      "key": "Tres espelmes expliquen la història millor que una.",
-     "tip": "Per això són més fiables… i més rares."
+     "tip": "Prova-ho: a Mercat, busca tres espelmes verdes llargues seguides al diari de NVIDIA."
     }
    ]
   },
@@ -325,7 +325,7 @@
      "title": "Aleshores, per a què serveixen?",
      "body": "Un estudi al Japó (1975–2004), el bressol de les espelmes, va arribar a la mateixa conclusió que Marshall, Young i Rose. Bulkowski mesura sense comissions ni *spreads*. I si proves cent patrons, algun semblarà que funciona per casualitat (*data snooping*).\n\nLes espelmes serveixen per **llegir** el mercat (rebuig, convicció, indecisió), per posar l'**stop** en un lloc lògic i per no deixar-te enganyar per qui ven patrons «amb un 90 % d'encert».",
      "key": "Les espelmes són un idioma, no una bola de vidre.",
-     "tip": "L'espelma és la frase; el context, el llibre sencer."
+     "tip": "Prova-ho: a Mercat, busca un martell i repassa els quatre filtres abans de decidir."
     }
    ]
   },
@@ -354,12 +354,6 @@
    "options": [],
    "explanation": "Els compradors van portar el preu molt amunt, però la sessió va tancar lluny d'aquell màxim. (Microsoft · espelmes diàries · abril del 2026)"
   },
-  "u20l2-5": {
-   "prompt": "Una espelma obre a 50, baixa fins a 44 i tanca a 50,5. Quant va arribar a caure des de l'obertura, en percentatge?",
-   "options": [],
-   "explanation": "(50 − 44) ÷ 50 = 0,12 → −12 %. I tot i així va tancar per sobre de l'obertura: els compradors van guanyar la batalla.",
-   "unit": "%"
-  },
   "u20l2-7": {
    "prompt": "Llegeix les últimes espelmes com una batalla. Puja o baixa en les 10 sessions següents?",
    "options": [
@@ -382,6 +376,11 @@
     "La metxa inferior és rebuig dels preus baixos: no és senyal de venda, però aquí tampoc no ho és de compra.",
     "Al mig d'un rang, sense tendència per girar, aquesta metxa vol dir molt poca cosa."
    ]
+  },
+  "u20l2-11": {
+   "prompt": "Toca l'espelma on no va guanyar ningú: la de cos gairebé inexistent.",
+   "options": [],
+   "explanation": "Obertura i tancament gairebé iguals, amb metxes a tots dos costats: compradors i venedors van empatar. Un cos diminut és indecisió, no força. (Amazon · espelmes diàries · abril del 2026)"
   },
   "u20l3-1": {
    "prompt": "Relaciona cada espelma amb el que explica.",
@@ -468,12 +467,6 @@
    ],
    "explanation": "Si el preu perd el mínim de la metxa, la idea del rebuig dels preus baixos ha fallat."
   },
-  "u20l4-5": {
-   "prompt": "Un martell té un màxim de 52 € i un mínim de 47 €. Compres a 52 € després de la confirmació i poses l'stop a 46,50 €. Quant arrisques per acció?",
-   "options": [],
-   "explanation": "52 − 46,50 = 5,50 € per acció. L'stop va una mica per sota de la metxa perquè no salti per una simple metxa.",
-   "unit": "€"
-  },
   "u20l4-7": {
    "prompt": "Fixa't en les metxes de les últimes espelmes. Puja o baixa en les 10 sessions següents?",
    "options": [
@@ -505,6 +498,11 @@
     "Que aparegui a prop del mínim de l'any"
    ],
    "explanation": "Funciona millor en el terç inferior del rang anual, i els de cos verd van millor."
+  },
+  "u20l4-11": {
+   "prompt": "Com sota la metxa d'un martell: has comprat a l'últim preu. Col·loca l'stop per sota de l'últim mínim rellevant.",
+   "options": [],
+   "explanation": "Si el preu perd aquest mínim, el rebuig dels preus baixos ha fallat i la idea ja no val. Per això l'stop va una mica per sota, no just a sobre, on el saltaria qualsevol metxa."
   },
   "u20l5-1": {
    "prompt": "Després de la pujada, toca l'espelma vermella que envolta la verda anterior.",
@@ -556,6 +554,15 @@
     "meitat"
    ],
    "explanation": "Si l'envoltés sencer, seria una envolvent baixista."
+  },
+  "u20l5-11": {
+   "prompt": "Llegeix les últimes espelmes per parelles, com en una envolvent o un harami. Puja o baixa en les 10 sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Una envolvent encerta sovint la direcció, però el recorregut pot ser curt; un harami només diu que l'impuls es frena. Cap no porta el resultat escrit: per això s'opera amb stop.",
+   "horizon": "les 10 sessions següents"
   },
   "u20l6-1": {
    "prompt": "Ordena les espelmes d'una estrella del matí.",

@@ -1,13 +1,29 @@
 {
  "unit": {
   "title": "El teu primer pla financer",
-  "description": "Objectius amb xifra i data, el teu termini, el teu risc i el que diuen les dades del trading",
+  "description": "Estalviar, invertir o especular, objectius amb data, quant risc aguantes i el que diuen les dades del trading",
   "section": "Els teus diners en ordre"
  },
  "lessons": {
   "u4l1": {
    "title": "Estalviar, invertir i especular",
    "steps": [
+    {
+     "texts": [
+      "La moneda de moda",
+      "Nico",
+      "Posa 5.000 € en aquesta moneda! Ha pujat un 300 % aquest mes i tothom hi està entrant",
+      "Tens 12.000 € estalviats i gastes 1.200 € al mes.",
+      "Què fas?",
+      "Hi poso els 5.000 €: no em vull quedar fora",
+      "Això és **FOMO**, la por de quedar-te fora. Comprar perquè ja ha pujat molt és especular… amb gairebé la meitat dels teus estalvis.",
+      "Com a molt, una quantitat petita que pugui perdre sencera",
+      "Bé: només s'especula **amb el que pots perdre**. Abans, el coixí i la inversió a llarg termini.",
+      "Li passo les meves claus perquè ho gestioni ell",
+      "No donis mai a ningú el control dels teus diners ni les teves claus! És la porta d'entrada de moltes estafes.",
+      "S'estalvia per al que és a prop, s'inverteix per al que és lluny i s'especula només amb el que pots perdre."
+     ]
+    },
     {
      "texts": [
       "Estalviar, invertir o especular?",
@@ -28,25 +44,9 @@
       "Accions de moltes empreses per d'aquí a 15 anys",
       "Beneficis d'empreses, diversificat i a llarg termini: invertir.",
       "Classifica els sis casos.",
-      "Pregunta't **d'on surt el guany**: de l'interès (estalvi), del que produeix allò que compres (inversió) o de la butxaca d'un altre que encerta menys que tu (especulació).",
+      "Pregunta't **d'on surt el guany**: de l'interès (estalvi), del que produeix allò que compres (inversió) o de la butxaca d'un altre que encerta menys que tu (especulació). Prova-ho: al Mercat, compara el gràfic del bitcoin amb el d'un ETF mundial.",
       "Pista: això produeix alguna cosa, o només esperes que pugi?",
       "Classifica cada cas"
-     ]
-    },
-    {
-     "texts": [
-      "La moneda de moda",
-      "Nico",
-      "Posa 5.000 € en aquesta moneda! Ha pujat un 300 % aquest mes i tothom hi està entrant",
-      "Tens 12.000 € estalviats i gastes 1.200 € al mes.",
-      "Què fas?",
-      "Hi poso els 5.000 €: no em vull quedar fora",
-      "Això és **FOMO**, la por de quedar-te fora. Comprar perquè ja ha pujat molt és especular… amb gairebé la meitat dels teus estalvis.",
-      "Com a molt, una quantitat petita que pugui perdre sencera",
-      "Bé: només s'especula **amb el que pots perdre**. Abans, el coixí i la inversió a llarg termini.",
-      "Li passo les meves claus perquè ho gestioni ell",
-      "No donis mai a ningú el control dels teus diners ni les teves claus! És la porta d'entrada de moltes estafes.",
-      "S'estalvia per al que és a prop, s'inverteix per al que és lluny i s'especula només amb el que pots perdre."
      ]
     }
    ]
@@ -88,6 +88,12 @@
       "Gairebé! Una mica més de termini en alguna cosa i hi cap.",
       "Allarga el termini del que corre menys pressa"
      ]
+    },
+    {
+     "title": "Cada objectiu, al seu lloc",
+     "body": "Ja saps que **el termini decideix el risc** que pots assumir. Aplica-ho a cada objectiu:\n\n• **Menys de 3 anys** (viatge, carnet, portàtil): estalviat en un compte remunerat, dipòsits o lletres.\n• **15 anys o més** (jubilació, llibertat financera): sobretot accions diversificades, amb aportacions periòdiques.\n• **Entremig:** una barreja prudent, amb més renda fixa com més a prop sigui.",
+     "key": "La data de cada objectiu decideix si l'estalvies o l'inverteixes.",
+     "tip": "Prova-ho: compra al simulador un ETF mundial per al teu objectiu més llunyà."
     }
    ]
   },
@@ -109,9 +115,9 @@
     },
     {
      "title": "Capacitat i tolerància",
-     "body": "**Capacitat de risc:** quant pots perdre **sense que la teva vida canviï** (ingressos, coixí, càrregues, termini). És objectiva.\n\n**Tolerància al risc:** quant pots veure caure els teus diners **sense vendre en pànic**. És psicològica, i gairebé tothom la sobreestima quan la borsa puja.\n\nEl teu perfil real és **el més baix dels dos**.",
+     "body": "**Capacitat de risc:** quant pots perdre **sense que la teva vida canviï** (ingressos, coixí, càrregues, termini). És objectiva.\n\n**Tolerància al risc:** quant pots veure caure els teus diners **sense vendre en pànic**. És psicològica, i gairebé tothom la sobreestima quan la borsa puja.\n\nEl teu perfil real és **el més baix dels dos**. Quan obris un compte en un bròquer europeu et faran un **test MiFID**: contesta'l amb sinceritat, et protegeix de productes que no entens.",
      "key": "Tothom és valent quan la borsa puja.",
-     "tip": "Quan obris un compte en un bròquer europeu et faran un test MiFID: contesta'l amb sinceritat, et protegeix de productes que no entens."
+     "tip": "Prova-ho: al Mercat, obre l'S&P 500 en espelmes mensuals i busca la seva pitjor caiguda."
     }
    ]
   },
@@ -146,7 +152,8 @@
       "Tots! Promet molt sense ensenyar el seu historial complet, et fa córrer («10 places»), ven subscripcions i cobra per portar-te a un bròquer.",
       "Només un: que cobra 99 €",
       "N'hi ha més: les presses, les promeses sense historial i l'enllaç a un bròquer concret, pel qual sol cobrar.",
-      "Abans de donar diners a ningú, mira si està registrat a la **CNMV** i si surt a la seva llista de «xiringuitos financers»."
+      "Abans de pagar ningú, busca'l a la **CNMV** i a la seva llista de «chiringuitos».",
+      "Prova-ho: al simulador, fes el que és avorrit: aporta cada mes a un ETF mundial."
      ]
     }
    ]
@@ -231,18 +238,6 @@
    ],
    "explanation": "Xifra, data, punt de partida i divisió: així un desig es converteix en un pla mensual."
   },
-  "u4l2-2": {
-   "prompt": "Vols 3.000 € per a un viatge d'aquí a 12 mesos i ja en tens 600. Quant has d'apartar al mes?",
-   "options": [],
-   "explanation": "(3.000 − 600) ÷ 12 = 200 € al mes.",
-   "unit": "€"
-  },
-  "u4l2-3": {
-   "prompt": "Vols 30.000 € d'entrada per a un pis en 5 anys i comences de zero. Sense comptar interessos, quant al mes?",
-   "options": [],
-   "explanation": "30.000 ÷ 60 mesos = 500 € al mes.",
-   "unit": "€"
-  },
   "u4l2-4": {
    "prompt": "Un objectiu SMART és específic, mesurable, assolible, rellevant i té ____.",
    "options": [
@@ -291,6 +286,35 @@
     "Mentrestant, els altres terminis continuen corrent."
    ]
   },
+  "u4l2-11": {
+   "prompt": "Estalviar o invertir per a aquest objectiu?",
+   "options": [
+    "Carnet de conduir d'aquí a 10 mesos",
+    "La teva jubilació",
+    "Llibertat financera d'aquí a 20 anys",
+    "Viatge l'estiu que ve",
+    "El teu coixí per als imprevistos"
+   ],
+   "explanation": "El que necessites en menys de 3 anys no pot dependre que la borsa no estigui caient aquell dia; el llunyà té temps per recuperar-se de les caigudes. Invertir-ho tot «perquè creixi més» tempta, però el termini mana.",
+   "right": [
+    "Estalviar (compte o dipòsit)",
+    "Invertir (ETF a llarg termini)"
+   ]
+  },
+  "u4l2-12": {
+   "prompt": "La Sara vol 1.200 € per a un portàtil d'aquí a 8 mesos. Un amic li diu que els posi en accions «perquè creixin més». Què fa?",
+   "options": [
+    "Els estalvia en un compte remunerat",
+    "Els posa tots en accions",
+    "Els posa en una cripto que està de moda"
+   ],
+   "explanation": "A 8 mesos, els diners han d'estar disponibles i sense risc de caiguda. Les accions temptent perquè acostumen a créixer més, però només a llarg termini i amb caigudes pel camí.",
+   "feedback": [
+    "D'aquí a 8 mesos tindrà els seus diners sencers, passi el que passi a la borsa.",
+    "Si la borsa cau un 20 % just abans, es queda sense portàtil o ha d'esperar.",
+    "Encara més risc per a uns diners que necessita aviat i amb data."
+   ]
+  },
   "u4l4-1": {
    "prompt": "Quin és el teu perfil de risc real?",
    "options": [
@@ -330,18 +354,6 @@
     "Endeutar-se per invertir multiplica el risc: si continua caient, deu diners i perd."
    ]
   },
-  "u4l4-5": {
-   "prompt": "Els teus 10.000 € cauen un 40 %. Quant valen ara?",
-   "options": [],
-   "explanation": "10.000 × (1 − 0,40) = 6.000 €.",
-   "unit": "€"
-  },
-  "u4l4-6": {
-   "prompt": "Després de caure un 40 %, quant ha de pujar la teva cartera per tornar a 10.000 €? (arrodoneix)",
-   "options": [],
-   "explanation": "De 6.000 a 10.000 € cal guanyar 4.000 €: 4.000 ÷ 6.000 ≈ 66,7 %. Les caigudes grans costen molt de recuperar.",
-   "unit": "%"
-  },
   "u4l4-7": {
    "prompt": "Això suma o resta capacitat de risc?",
    "options": [
@@ -366,6 +378,15 @@
     "Molt decidit"
    ],
    "explanation": "Tolerància baixa i termini curt: molta renda fixa i poca borsa."
+  },
+  "u4l4-11": {
+   "prompt": "La teva cartera cau un 50 %. Per tornar on era, quant ha de pujar després?",
+   "options": [
+    "Un 100 %: s'ha de duplicar",
+    "Un 50 %",
+    "Un 25 %"
+   ],
+   "explanation": "Després de caure a la meitat, recuperar-se exigeix duplicar el que queda: un 100 %. El temptador és pensar que n'hi ha prou amb un 50 %, però aquest 50 % es calcula sobre una quantitat ja molt més petita. Per això les caigudes grans costen tant de recuperar."
   },
   "u4l5-2": {
    "prompt": "Segons l'ESMA, quin percentatge de comptes minoristes de CFD perd diners?",
@@ -426,12 +447,6 @@
     "Una captura d'un mes bo no diu res dels mesos dolents que no ensenya.",
     "No hi apareix registrat i només té captures de dies bons: t'estalvies 99 € al mes i probablement molt més."
    ]
-  },
-  "u4l5-8": {
-   "prompt": "Segons Barber i Odean, les llars que més operaven guanyaven un 11,4 % anual i el mercat un 17,9 %. Quants punts l'any s'hi deixaven?",
-   "options": [],
-   "explanation": "17,9 − 11,4 = 6,5 punts l'any, sobretot per costos i excés de confiança.",
-   "unit": "punts"
   },
   "u4l5-10": {
    "prompt": "El que funciona: aportar amb regularitat, diversificar, costos baixos, molt de temps i no vendre ____.",

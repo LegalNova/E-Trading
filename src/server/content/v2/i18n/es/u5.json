@@ -53,7 +53,8 @@
     {
      "title": "Quién es quién",
      "body": "En España la bolsa la gestiona **BME** (Bolsas y Mercados Españoles), del grupo suizo SIX, y la supervisa la **CNMV**.\n\nTú no vas a la bolsa: compras a través de un **bróker** autorizado, que lleva tu orden al mercado.",
-     "key": "La bolsa es el punto de encuentro; el bróker, la puerta de entrada."
+     "key": "La bolsa es el punto de encuentro; el bróker, la puerta de entrada.",
+     "tip": "Pruébalo: en Mercado, busca Inditex: ese precio lo ve igual todo el mundo."
     }
    ]
   },
@@ -106,7 +107,7 @@
      "title": "Tu ventaja",
      "body": "Un minorista no rinde cuentas cada trimestre, puede esperar años y puede mantener costes muy bajos. Esa es su ventaja, no la velocidad.",
      "key": "La bolsa está llena de profesionales: tu ventaja está en el tiempo y en los costes bajos.",
-     "tip": "No intentes correr más que un algoritmo: no hace falta."
+     "tip": "Pruébalo: en Mercado, añade a Favoritos una empresa que quieras tener durante años."
     }
    ]
   },
@@ -161,7 +162,7 @@
      "title": "Ojo con el reloj",
      "body": "Por el **cambio de hora**, EE. UU. y Europa no cambian el reloj el mismo día: unas semanas al año Nueva York abre a las **14:30** en España.\n\nTokio abre de madrugada en España y hace una pausa a mediodía (hora de Tokio).",
      "key": "Antes de operar, mira si el mercado está abierto.",
-     "tip": "Que la app te deje pulsar «comprar» no significa que el mercado esté abierto."
+     "tip": "Pruébalo: en Mercado, mira si Apple pone «abierto» o «cerrado» ahora mismo."
     }
    ]
   },
@@ -210,15 +211,32 @@
     },
     {
      "title": "Liquidación y custodia",
-     "body": "Tras el cruce, la operación se **liquida**: el dinero va al vendedor y las acciones a ti. En Europa tarda dos días hábiles (**T+2**); en EE. UU., uno (T+1) desde 2024. En España el registro central es **Iberclear**.\n\nCon un bróker de otro país de la UE te cubre el fondo de ese país, que puede ser menor (el mínimo europeo es 20.000 €).",
+     "body": "Tras el cruce, la operación se **liquida**: el dinero va al vendedor y las acciones a ti. En Europa tarda dos días hábiles (**T+2**); en EE. UU., uno (T+1) desde 2024. En España el registro central es **Iberclear**.\n\nCon un bróker de otro país de la UE te cubre el fondo de ese país, que puede ser menor (el mínimo europeo es 20.000 €). Antes de abrir cuenta, comprueba en la web de la CNMV que el bróker está autorizado.",
      "key": "El bróker es tu puerta de entrada; tus valores se guardan a tu nombre.",
-     "tip": "Comprueba en la web de la CNMV que el bróker está autorizado antes de abrir cuenta."
+     "tip": "Pruébalo: haz una compra en el Mercado y busca la operación en tu Cartera."
     }
    ]
   },
   "u5l6": {
    "title": "Mercado primario y secundario: las OPV",
    "steps": [
+    {
+     "texts": [
+      "La salida a bolsa de moda",
+      "Bruno",
+      "Todo el mundo habla de la salida a bolsa de una marca de moda.",
+      "Si sale a bolsa es porque va genial, ¿no? ¡Meto todos mis ahorros!",
+      "¿Qué le aconsejas?",
+      "Que meta todo: es una oportunidad única",
+      "Si cae un 30 % los primeros meses, se queda sin colchón y con pérdidas.",
+      "Que lea el folleto y, si invierte, con una parte pequeña",
+      "Eso. El **folleto**, aprobado por la CNMV, explica el negocio y los riesgos.",
+      "Que espere a ver qué dicen en redes",
+      "Las redes no conocen la empresa. El folleto, sí.",
+      "El precio lo fija quien vende, y conoce la empresa mejor que tú.",
+      "Muchas salidas a bolsa acaban cotizando por debajo de su precio de salida."
+     ]
+    },
     {
      "texts": [
       "¿Quién recibe tu dinero?",
@@ -246,23 +264,6 @@
     },
     {
      "texts": [
-      "La salida a bolsa de moda",
-      "Bruno",
-      "Todo el mundo habla de la salida a bolsa de una marca de moda.",
-      "Si sale a bolsa es porque va genial, ¿no? ¡Meto todos mis ahorros!",
-      "¿Qué le aconsejas?",
-      "Que meta todo: es una oportunidad única",
-      "Si cae un 30 % los primeros meses, se queda sin colchón y con pérdidas.",
-      "Que lea el folleto y, si invierte, con una parte pequeña",
-      "Eso. El **folleto**, aprobado por la CNMV, explica el negocio y los riesgos.",
-      "Que espere a ver qué dicen en redes",
-      "Las redes no conocen la empresa. El folleto, sí.",
-      "El precio lo fija quien vende, y conoce la empresa mejor que tú.",
-      "Muchas salidas a bolsa acaban cotizando por debajo de su precio de salida."
-     ]
-    },
-    {
-     "texts": [
       "¿OPS u OPV?",
       "Para salir a bolsa hay dos formas, a menudo combinadas. La clave: **¿quién se queda el dinero?**",
       "OPS: va a la empresa",
@@ -276,7 +277,7 @@
       "La empresa emite acciones para pagar su deuda",
       "Emite acciones nuevas: el dinero va a la empresa.",
       "Clasifica los cuatro casos.",
-      "**OPS:** acciones nuevas y dinero para la empresa. **OPV:** los dueños venden y el dinero va a ellos. En inglés, una salida a bolsa se llama IPO.",
+      "**OPS:** acciones nuevas y dinero para la empresa. **OPV:** los dueños venden y el dinero va a ellos. En inglés, una salida a bolsa se llama IPO. Pruébalo: en Mercado, mira el gráfico mensual de una empresa y busca su primer día en bolsa.",
       "Si no se crean acciones nuevas, la empresa no cobra.",
       "Antes de una salida a bolsa, mira quién vende y por qué.",
       "Toca cada caso: ¿OPS u OPV?"
@@ -287,6 +288,22 @@
   "u5l7": {
    "title": "La bolsa española: IBEX y mercado continuo",
    "steps": [
+    {
+     "texts": [
+      "Fuera del IBEX",
+      "Pablo",
+      "La empresa de la que tengo acciones ha salido del IBEX 35. ¿Va fatal?",
+      "¿Qué le dices a Pablo?",
+      "Sí: en el IBEX solo están las mejores",
+      "Están las 35 **más líquidas**, no las mejores.",
+      "No necesariamente: ahora se negocia menos que otras",
+      "Eso. No estar en el IBEX no significa ser mala empresa.",
+      "Ya no cotiza en bolsa",
+      "Sigue cotizando en el mercado continuo, con más de un centenar de empresas.",
+      "¿Y quién decide eso?",
+      "Un comité técnico, dos veces al año: en junio y en diciembre."
+     ]
+    },
     {
      "texts": [
       "¿Dónde cotiza?",
@@ -312,26 +329,10 @@
      ]
     },
     {
-     "texts": [
-      "Fuera del IBEX",
-      "Pablo",
-      "La empresa de la que tengo acciones ha salido del IBEX 35. ¿Va fatal?",
-      "¿Qué le dices a Pablo?",
-      "Sí: en el IBEX solo están las mejores",
-      "Están las 35 **más líquidas**, no las mejores.",
-      "No necesariamente: ahora se negocia menos que otras",
-      "Eso. No estar en el IBEX no significa ser mala empresa.",
-      "Ya no cotiza en bolsa",
-      "Sigue cotizando en el mercado continuo, con más de un centenar de empresas.",
-      "¿Y quién decide eso?",
-      "Un comité técnico, dos veces al año: en junio y en diciembre."
-     ]
-    },
-    {
      "title": "El IBEX 35 y el mercado continuo",
      "body": "El **mercado continuo** (SIBE) une en un sistema electrónico las bolsas de Madrid, Barcelona, Bilbao y Valencia, con un único libro de órdenes por valor. Lo gestiona **BME**, del grupo suizo SIX desde 2020.\n\nEl **IBEX 35** pondera por capitalización, contando solo las acciones que se negocian libremente. Su base fueron **3.000 puntos** a finales de 1989.",
      "key": "El IBEX 35 es el escaparate; el mercado continuo, la tienda entera.",
-     "tip": "No estar en el IBEX no significa ser mala empresa: solo que es menos negociada."
+     "tip": "Pruébalo: en Mercado, usa «Explorar por índice» y mira las 35 empresas del IBEX."
     }
    ]
   },
@@ -475,6 +476,20 @@
    ],
    "explanation": "Toda compra tiene una venta al otro lado."
   },
+  "u5l2-11": {
+   "prompt": "Leo invierte 50 € al mes en un fondo indexado. Un amigo le dice que así nunca ganará a los profesionales y que debería operar cada día. ¿Qué hace?",
+   "options": [
+    "Sigue con su plan: su ventaja es el tiempo y los costes bajos",
+    "Deja de invertir: la bolsa es solo para profesionales",
+    "Empieza a operar cada día para ganarles"
+   ],
+   "explanation": "La tentación es operar más, pero a corto plazo el minorista juega en desventaja. A largo plazo, el tiempo y los costes bajos juegan a su favor.",
+   "feedback": [
+    "No compite en velocidad: participa durante años de lo que ganan las empresas.",
+    "Renuncia a su gran ventaja, el tiempo. A largo plazo no necesita ganarles en velocidad.",
+    "Entra en la carrera donde algoritmos y profesionales tienen ventaja, y paga costes en cada operación."
+   ]
+  },
   "u5l4-1": {
    "prompt": "Empareja cada mercado con su horario (hora peninsular).",
    "options": [
@@ -499,12 +514,6 @@
     "22:00"
    ],
    "explanation": "De 9:30 a 16:00 en Nueva York = de 15:30 a 22:00 en España."
-  },
-  "u5l4-5": {
-   "prompt": "¿Cuántas horas dura la sesión de la Bolsa de Madrid, de 9:00 a 17:30?",
-   "options": [],
-   "explanation": "De 9:00 a 17:30 hay 8 horas y media: 8,5.",
-   "unit": "horas"
   },
   "u5l4-6": {
    "prompt": "Por el cambio de hora, unas semanas al año Nueva York abre a las 14:30 en España.",
@@ -539,6 +548,20 @@
     "hueco"
    ],
    "explanation": "El hueco (gap) es un salto de precio sin cotizaciones intermedias."
+  },
+  "u5l4-11": {
+   "prompt": "Leo trabaja de 9:00 a 18:00 y quiere comprar acciones de Microsoft con la bolsa de Nueva York abierta. ¿Cuándo puede hacerlo un día normal?",
+   "options": [
+    "A medianoche, con calma",
+    "A la hora de comer, a las 14:00",
+    "Al salir del trabajo, antes de las 22:00"
+   ],
+   "explanation": "Nueva York abre por la tarde en España, de 15:30 a 22:00. Comprar fuera de ese horario es tentador por comodidad, pero la orden espera a la apertura y puede salir a otro precio.",
+   "feedback": [
+    "A medianoche Nueva York ya ha cerrado: la orden se ejecutaría al día siguiente, al precio que haya.",
+    "A las 14:00 Nueva York aún no ha abierto: la orden esperaría a la apertura.",
+    "Nueva York abre de 15:30 a 22:00 en España: por la tarde tiene tiempo de sobra."
+   ]
   },
   "u5l5-1": {
    "prompt": "¿Qué hace un bróker?",
@@ -670,6 +693,20 @@
     "La empresa decide salir a bolsa"
    ],
    "explanation": "Después del estreno, las acciones pasan a negociarse entre inversores."
+  },
+  "u5l6-11": {
+   "prompt": "Una empresa anuncia su salida a bolsa. El folleto dice que todas las acciones que se ofrecen son de sus fundadores, que venden parte de lo suyo. ¿Qué significa?",
+   "options": [
+    "Es una OPS: la empresa recibe dinero para crecer",
+    "Es una OPV: el dinero va a los fundadores, no a la empresa",
+    "Que es buena señal: si salen a bolsa, es que va muy bien"
+   ],
+   "explanation": "Si no se emiten acciones nuevas, es una OPV y la empresa no cobra. La tentación es leerlo como buena señal, pero quien vende elige el momento que le conviene.",
+   "feedback": [
+    "En una OPS se emiten acciones nuevas. Aquí solo cambian de manos las que ya existían.",
+    "No se crean acciones nuevas: la empresa no recibe nada. Conviene preguntarse por qué venden ahora.",
+    "Quien vende conoce la empresa mejor que tú y elige el momento que le conviene a él."
+   ]
   },
   "u5l7-1": {
    "prompt": "Empareja cada nombre con lo que es.",

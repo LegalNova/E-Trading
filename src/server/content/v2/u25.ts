@@ -36,7 +36,7 @@ export default unit({
           { say: 'Alarga la espera y mira cuántas veces se perdió', mood: 'HAPPY' },
         ],
       }),
-      key('La estrategia aburrida que funciona', 'Comprar un índice amplio y barato, **mantenerlo durante décadas** y aportar con regularidad.\n\nSegún SPIVA (cierre de 2025), el **97 %** de los fondos de acciones europeos quedó por detrás de su índice en 10 años. Comprar el índice ya te pone por delante de casi todos.', 'En bolsa, el tiempo dentro del mercado vale más que acertar cuándo entrar.', 'Una cartera aburrida es una cartera que funciona.'),
+      key('La estrategia aburrida que funciona', 'Comprar un índice amplio y barato, **mantenerlo durante décadas** y aportar con regularidad.\n\nSegún SPIVA (cierre de 2025), el **97 %** de los fondos de acciones europeos quedó por detrás de su índice en 10 años. Comprar el índice ya te pone por delante de casi todos.', 'En bolsa, el tiempo dentro del mercado vale más que acertar cuándo entrar.', 'Pruébalo: en Mercado, abre el ETF del S&P 500 y mira su gráfico mensual.'),
     ], [
       trend('Así iba el S&P 500 hasta marzo de 2009. ¿Qué tendencia ves?', 'hist-2009-bottom', 'Bajista', 'Caída de más de un 50 % desde 2007: el momento en que más gente abandonó el «comprar y mantener».'),
       upDown('Marzo de 2009: tras la peor crisis en décadas, mucha gente vende para «no perder más». ¿Qué hizo el S&P 500 después?', 'hist-2009-bottom', 'Quien aguantó (o siguió aportando) recuperó. Quien vendió en el pánico convirtió una caída temporal en una pérdida definitiva.', 'el año y medio siguiente'),
@@ -85,7 +85,7 @@ export default unit({
           { say: '¿Valor o trampa? Clasifica cada empresa', mood: 'HAPPY' },
         ],
       }),
-      key('Lo que no es', 'Value no es comprar lo que ha caído mucho ni lo que tiene el PER más bajo. Un PER bajo puede ser un negocio en declive: una **trampa de valor**. Y el estilo puede pasar años por detrás del mercado.', 'Comprar negocios por menos de lo que valen, con margen por si te equivocas.', 'Una empresa excelente comprada demasiado cara puede ser una mala inversión.'),
+      key('Lo que no es', 'Value no es comprar lo que ha caído mucho ni lo que tiene el PER más bajo. Un PER bajo puede ser un negocio en declive: una **trampa de valor**. Y el estilo puede pasar años por detrás del mercado.', 'Comprar negocios por menos de lo que valen, con margen por si te equivocas.', 'Pruébalo: pon una alerta de precio bajo lo que crees que vale tu empresa favorita.'),
     ], [
       num('Estimas que una acción vale 20 € y cotiza a 15 €. ¿Qué margen de seguridad tienes respecto a tu valor estimado?', 25, '%', '(20 − 15) ÷ 20 = 0,25 → 25 %.'),
       num('Estimas que una empresa vale 40 € por acción y exiges un margen de seguridad del 30 %. ¿Qué precio máximo pagarías?', 28, '€', '40 × (1 − 0,30) = 28 €.'),
@@ -98,7 +98,7 @@ export default unit({
       timed(fill('Buffett: «El precio es lo que pagas; el ____ es lo que obtienes».', 'valor', ['dividendo', 'beneficio', 'riesgo'], 'Precio y valor no son lo mismo: el value investing vive de esa diferencia.'), 12),
       multi('¿Qué señales apuntan a una posible trampa de valor? Marca todas.', ['Ventas que caen año tras año', 'Deuda que no para de crecer', 'Un sector que está desapareciendo', 'Beneficios estables y un ROIC alto'], [0, 1, 2], 'Beneficios estables y alta rentabilidad sobre el capital son señales de calidad, no de trampa.'),
       chat(['Value investing es comprar lo que más ha caído, ¿no? 📉', 'Esta acción estaba a 100 € y ahora a 40 €: ¡chollo!'], '¿Qué le contestas a Lumi?', [['Sí, cuanto más cae, mejor', 'Eso es anclaje: que antes valiera 100 € no dice nada de lo que vale hoy.'], ['Lo que importa es cuánto vale el negocio, no a cuánto estuvo', 'Ah, vale: primero estimo el valor, y solo si el precio está bastante por debajo, hay margen.'], ['Value es comprar lo que más sube', 'Eso se parece más al momentum, otra estrategia distinta.']], 1, 'Value compara precio con valor, no precio de hoy con precio de ayer.'),
-    ], { source: '5.1', minutes: 6, retire: [2, 6, 7, 8] }),
+    ], { source: '5.1', minutes: 6, retire: [0, 1, 2, 6, 7, 8] }),
 
     lesson('u25l4', 'Invertir por dividendos', [
       story('El euro «gratis»', [{ id: 'ines', name: 'Inés' }], [
@@ -133,7 +133,7 @@ export default unit({
           { say: '¿Sano o alarma? Clasifica cada dividendo', mood: 'HAPPY' },
         ],
       }),
-      key('Acumulación o distribución', 'Los fondos de **distribución** te pagan los dividendos en la cuenta: útiles si necesitas rentas.\n\nPara acumular patrimonio, los de **acumulación** reinvierten sin pagar impuestos hasta la venta.', 'El dividendo no es dinero gratis: sale del valor de la empresa. Lo que importa es la rentabilidad total.', 'Un dividendo altísimo a veces es una alarma, no un regalo.'),
+      key('Acumulación o distribución', 'Los fondos de **distribución** te pagan los dividendos en la cuenta: útiles si necesitas rentas.\n\nPara acumular patrimonio, los de **acumulación** reinvierten sin pagar impuestos hasta la venta.', 'El dividendo no es dinero gratis: sale del valor de la empresa. Lo que importa es la rentabilidad total.', 'Pruébalo: abre en Mercado una empresa de dividendo alto y mira si su precio crece.'),
     ], [
       num('Una acción cotiza a 15 € y paga 0,50 € de dividendo al año. ¿Cuál es su rentabilidad por dividendo? (redondea a un decimal)', 3.3, '%', '0,50 ÷ 15 ≈ 0,033 → 3,3 %.', 2),
       num('Una empresa gana 2 € por acción y paga 1,80 € de dividendo. ¿Cuál es su pay-out?', 90, '%', '1,80 ÷ 2 = 0,9 → 90 %: reparte casi todo lo que gana. Si los beneficios bajan, el dividendo peligra.'),
@@ -145,7 +145,9 @@ export default unit({
       timed(single('Rápido: un pay-out del 95 % durante años, ¿qué puede indicar?', ['Que el dividendo puede estar en peligro', 'Que la empresa crece muy deprisa', 'Que el dividendo está garantizado'], 0, 'Reparte casi todo lo que gana: poco margen si los beneficios caen.'), 12),
       scenario('Bruno busca rentas. Duda entre una empresa con un dividendo del 12 %, beneficios en caída y deuda creciente, y otra con un 3 % cubierto con holgura por el beneficio. ¿Qué es más prudente como criterio?', [['La del 12 %: cobra cuatro veces más', 'Si recorta el dividendo y la acción cae, Bruno pierde rentas y capital a la vez.'], ['Mirar la sostenibilidad del dividendo, no solo su tamaño', 'Bien: un dividendo cubierto y estable vale más que uno alto en peligro.'], ['Elegir según el que más ha subido este mes', 'Eso no dice nada de si el dividendo es sostenible.']], 1, 'Lo importante es la rentabilidad total y que el dividendo sea sostenible.'),
       fill('El día en que la acción empieza a cotizar sin derecho al dividendo se llama fecha ____.', 'ex-dividendo', ['de pago', 'de valor', 'de emisión'], 'Ese día el precio baja aproximadamente lo que se paga de dividendo.'),
-    ], { source: '4.7', minutes: 6, retire: [4, 5, 7] }),
+      scenario('Tienes 20 años y quieres hacer crecer tu dinero durante décadas, sin necesitar rentas. Dudas entre la versión de acumulación y la de distribución del mismo fondo indexado. ¿Cuál encaja mejor?', [['La de distribución: así cobro algo cada año', 'Cobrarías dividendos que no necesitas y que tributan cada año: te retienen un 19 % antes de reinvertir.'], ['La de acumulación: reinvierte sola y no pagas impuestos hasta vender', 'Bien: todo el dividendo sigue trabajando dentro del fondo, y Hacienda espera a que vendas.'], ['Da igual: son el mismo fondo', 'Invierten en lo mismo, pero no tributan igual: para acumular, la diferencia suma con los años.']], 1, 'Si no necesitas rentas, la acumulación es más eficiente: el dividendo se reinvierte entero. La distribución tienta porque «cobras», pero cada pago tributa antes de volver a invertirlo.'),
+      chat(['Voy a comprar la acción con el dividendo más alto del Mercado.', 'Un 12 % al año: rentas aseguradas.'], '¿Qué le contestas a Lumi?', [['Perfecto: cuanto más alto, mejor', 'Un 12 % suele significar que el precio ha caído porque el mercado espera un recorte.'], ['Antes, mira si el beneficio lo cubre y por qué ha caído el precio', 'Vale: si los beneficios caen, ese 12 % es una alarma, no un regalo.'], ['Compra también la del segundo dividendo más alto', 'Dos dividendos en peligro no hacen uno seguro.']], 1, 'Un dividendo altísimo a veces es la señal de que va a recortarse: lo que importa es que el beneficio lo cubra. La tentación es mirar solo el tamaño del dividendo.'),
+    ], { source: '4.7', minutes: 6, retire: [0, 1, 2, 4, 5, 7] }),
 
     lesson('u25l5', 'Seguir la tendencia y el momentum', [
       story('Las 20 operaciones de Hugo', [{ id: 'hugo', name: 'Hugo' }], [
@@ -179,7 +181,7 @@ export default unit({
           { say: '¿Le va bien o sufre? Clasifica cada mercado', mood: 'HAPPY' },
         ],
       }),
-      key('Una regla típica', 'Comprar cuando el precio supera su media de muchas sesiones, con stop bajo el último mínimo creciente, y subir el stop a medida que avanza.', 'El momentum es una de las anomalías más estudiadas, pero solo funciona con disciplina y gestión del riesgo.', 'La tendencia es tu amiga… hasta que se gira. Por eso el stop siempre.'),
+      key('Una regla típica', 'Comprar cuando el precio supera su media de muchas sesiones, con stop bajo el último mínimo creciente, y subir el stop a medida que avanza.', 'El momentum es una de las anomalías más estudiadas, pero solo funciona con disciplina y gestión del riesgo.', 'Pruébalo: busca en Mercado un activo en tendencia alcista y añádelo a Favoritos.'),
     ], [
       trend('¿Qué tendencia ves en este gráfico real?', 'trend-up-1', 'Alcista', 'Máximos y mínimos cada vez más altos: es el terreno del seguidor de tendencias.'),
       trend('¿Y en este otro?', 'trend-down-6', 'Bajista', 'Máximos y mínimos cada vez más bajos: un seguidor de tendencias en compras se quedaría fuera.'),
@@ -194,6 +196,17 @@ export default unit({
     ], { source: '9.10', minutes: 6, retire: [6, 7, 8] }),
 
     lesson('u25l6', 'Swing trading', [
+      story('La noche antes de resultados', [{ id: 'nora', name: 'Nora' }], [
+        say('nora', 'Tengo una compra para unas semanas, con su stop. Mañana la empresa presenta resultados.'),
+        say('nora', 'Total, si sale mal, salta el stop y ya.'),
+        choose('¿Qué haces tú en su lugar?', [
+          opt('La dejo igual: el stop me protege', 'bad', say('lumi', 'Si mañana abre muy por debajo, el stop se ejecuta allí, lejos de lo previsto.')),
+          opt('Reduzco el tamaño o cierro antes de resultados', 'good', say('lumi', '¡Bien! Mejor no tener posiciones grandes antes de resultados.')),
+          opt('Compro más: seguro que salen buenos', 'bad', say('lumi', 'Nadie sabe cómo saldrán. Doblar justo antes es apostar.')),
+        ]),
+        note('A la mañana siguiente, el precio abre lejos del cierre de ayer.'),
+        say('lumi', 'Eso es un **hueco**. En swing, la noche y el fin de semana también cuentan.'),
+      ]),
       play({
         title: 'Cuánto comprar en un swing',
         intro: 'Cuenta de **10.000 €**. El stop va bajo el mínimo reciente, un **5 %** por debajo de tu entrada.',
@@ -212,18 +225,7 @@ export default unit({
           { say: 'Ajusta el riesgo y la distancia al stop', mood: 'HAPPY' },
         ],
       }),
-      story('La noche antes de resultados', [{ id: 'nora', name: 'Nora' }], [
-        say('nora', 'Tengo una compra de swing con su stop. Mañana la empresa presenta resultados.'),
-        say('nora', 'Total, si sale mal, salta el stop y ya.'),
-        choose('¿Qué haces tú en su lugar?', [
-          opt('La dejo igual: el stop me protege', 'bad', say('lumi', 'Si mañana abre muy por debajo, el stop se ejecuta allí, lejos de lo previsto.')),
-          opt('Reduzco el tamaño o cierro antes de resultados', 'good', say('lumi', '¡Bien! Mejor no tener posiciones grandes antes de resultados.')),
-          opt('Compro más: seguro que salen buenos', 'bad', say('lumi', 'Nadie sabe cómo saldrán. Doblar justo antes es apostar.')),
-        ]),
-        note('A la mañana siguiente, el precio abre lejos del cierre de ayer.'),
-        say('lumi', 'Eso es un **hueco**. En swing, la noche y el fin de semana también cuentan.'),
-      ]),
-      key('Lo que te llevas', 'Swing: operaciones de **días a semanas**, en gráfico diario. Se busca un tramo: comprar en un retroceso o un soporte dentro de una tendencia y salir cerca de la resistencia.\n\nCada operación paga comisión y *spread*, y cuanto más corto el plazo, más señales falsas.', 'Swing: tramos de días o semanas, con stop por estructura y relación beneficio/riesgo de 2:1 o más.', 'En swing, el fin de semana también cuenta: dimensiona pensando en los huecos.'),
+      key('Lo que te llevas', 'Swing: operaciones de **días a semanas**, en gráfico diario. Se busca un tramo: comprar en un retroceso o un soporte dentro de una tendencia y salir cerca de la resistencia.\n\nCada operación paga comisión y *spread*, y cuanto más corto el plazo, más señales falsas.', 'Swing: tramos de días o semanas, con stop por estructura y relación beneficio/riesgo de 2:1 o más.', 'Pruébalo: en tu próxima compra del simulador, pon stop y objetivo antes de entrar.'),
     ], [
       simTrade('Operación de swing: tienes 10.000 € y arriesgas como máximo un 1 %. Elige stop e importe.', 'lvl-14', 'Stop bajo el mínimo reciente y tamaño calculado con ese stop. Lo demás lo decide el mercado.'),
       simTrade('Otra operación, ahora con una cuenta de 5.000 €. Mismo límite: 1 % como máximo.', 'lvl-21', 'Si el precio va en contra, el stop limita la pérdida a lo previsto. Por eso se decide antes de entrar.', { cash: 5000 }),
@@ -235,7 +237,7 @@ export default unit({
       single('¿Qué riesgo tiene el swing trading que no tiene el day trading?', ['Los huecos de precio entre una sesión y la siguiente', 'Que no hay comisiones', 'Que no se usan stops'], 0, 'Al dejar posiciones abiertas por la noche, el precio puede abrir lejos de tu stop.'),
       timed(tf('El swing trading se hace normalmente en gráficos de 1 minuto.', false, 'Se suele usar el gráfico diario: operaciones de días a semanas.'), 10),
       num('Swing: entras a 30 €, stop en 28,50 € y objetivo en 34,50 €. Si llega al objetivo, ¿cuántos R ganas?', 3, 'R', 'Riesgo: 1,50 €. Beneficio: 4,50 €. 4,50 ÷ 1,50 = 3R.'),
-    ], { source: '7.3', minutes: 6, retire: [1, 7, 8] }),
+    ], { source: '7.3', minutes: 6, retire: [1, 7, 8, 9] }),
 
     lesson('u25l7', 'Day trading: lo que dicen los datos', [
       mission({
@@ -266,7 +268,7 @@ export default unit({
         ]),
         say('lumi', 'En redes solo ves capturas de ganancias, nunca el historial completo.'),
       ]),
-      key('Por qué pierden', '• **Costes:** comisión y *spread* en cada operación. Con muchas al día, se comen cualquier ventaja pequeña.\n• **Competencia:** profesionales y algoritmos con mejores datos y costes casi nulos.\n• **Ruido:** en gráficos de minutos, la mayoría de movimientos no significan nada.', 'La gran mayoría de quienes hacen day trading de forma continuada pierde dinero.', 'Si alguien vive de enseñarte a vivir del trading, pregúntate de qué vive de verdad.'),
+      key('Por qué pierden', '• **Costes:** comisión y *spread* en cada operación. Con muchas al día, se comen cualquier ventaja pequeña.\n• **Competencia:** profesionales y algoritmos con mejores datos y costes casi nulos.\n• **Ruido:** en gráficos de minutos, la mayoría de movimientos no significan nada.', 'La gran mayoría de quienes hacen day trading de forma continuada pierde dinero.', 'Pruébalo: abre el historial de tu Cartera y cuenta cuántas operaciones hiciste este mes.'),
     ], [
       tf('Según el estudio de Brasil, la mayoría de quienes hicieron day trading más de 300 días ganó dinero.', false, 'El 97 % perdió dinero (Chague, De-Losso y Giovannetti, 2020).'),
       single('En ese estudio de Brasil, ¿qué porcentaje ganó más que el salario mínimo?', ['Alrededor del 1 %', 'Alrededor del 25 %', 'Alrededor del 50 %'], 0, 'Un 1,1 %: incluso entre los pocos que ganaban, casi ninguno ganaba lo bastante para vivir de ello.'),
@@ -278,7 +280,7 @@ export default unit({
       buckets('¿Dato real o mito?', ['Dato real', 'Mito'], [['El 97 % de quienes hicieron day trading más de 300 días en Brasil perdió', 0], ['Con 500 € y un buen curso se puede vivir del trading', 1], ['En Taiwán, menos del 1 % gana de forma persistente tras comisiones', 0], ['Las capturas en redes muestran el historial completo', 1], ['Cuantas más operaciones, más pesan los costes', 0]], 'Los datos vienen de estudios con millones de operaciones; los mitos, de capturas sueltas.'),
       timed(single('Rápido: ¿qué convierte una ventaja pequeña en pérdida cuando operas mucho?', ['Los costes', 'Los dividendos', 'La inflación'], 0, 'Comisión y spread en cada operación: cuantas más, más pesan.'), 12),
       chat(['Estoy pensando en dejar el trabajo para hacer day trading 🚀', 'He ganado 3 días seguidos con el simulador.'], '¿Qué le dices a Lumi?', [['¡Adelante, tienes talento!', 'Tres días son una muestra ridícula… y los datos dicen que casi todos los que lo intentan en serio pierden.'], ['Tres días no prueban nada; los estudios dicen que casi todos pierden', 'Vale, mejor sigo aprendiendo, registro 100 operaciones en el simulador y mantengo el trabajo.'], ['Pide un préstamo para tener más capital', 'Eso convierte una mala idea en una peor: pérdidas y deudas.']], 1, 'Antes de arriesgar tu sustento, mira la evidencia y tus propias estadísticas con muchas operaciones.'),
-    ], { source: '1.7', minutes: 6, retire: [0, 2, 6, 8] }),
+    ], { source: '1.7', minutes: 6, retire: [0, 2, 4, 6, 8] }),
 
     lesson('u25l8', 'Apalancamiento y cortos', [
       play({
@@ -310,7 +312,7 @@ export default unit({
         note('Enero de 2021: GameStop se dispara y los que estaban cortos tienen que recomprar a la vez.'),
         say('leo', 'Vale. Mientras aprendo, nada de cortos.'),
       ]),
-      key('Lo que dice la CNMV', 'Un **CFD** replica un activo con apalancamiento. Aviso obligatorio: «Entre un **74 y un 89 %** de los inversores minoristas pierden dinero cuando negocian con CFD».\n\nEn la UE (ESMA, 2018): como máximo **1:30** en divisas principales, 1:20 en índices, 1:5 en acciones y **1:2 en cripto**. Cierre si el margen baja del 50 % y no puedes perder más de lo depositado. Mantenerlo abierto paga **financiación** diaria.', 'El apalancamiento multiplica ganancias y pérdidas por igual, pero las pérdidas grandes te sacan del juego.', 'Mientras aprendes: sin apalancamiento y sin cortos.'),
+      key('Lo que dice la CNMV', 'Un **CFD** replica un activo con apalancamiento. Aviso obligatorio: «Entre un **74 y un 89 %** de los inversores minoristas pierden dinero cuando negocian con CFD».\n\nEn la UE (ESMA, 2018): como máximo **1:30** en divisas principales, 1:20 en índices, 1:5 en acciones y **1:2 en cripto**. Cierre si el margen baja del 50 % y no puedes perder más de lo depositado. Mantenerlo abierto paga **financiación** diaria.', 'El apalancamiento multiplica ganancias y pérdidas por igual, pero las pérdidas grandes te sacan del juego.', 'Pruébalo: mira en Mercado cuánto se mueve en un día tu activo favorito.'),
     ], [
       num('Con apalancamiento 1:10 pones 1.000 € de margen. El activo sube un 5 %. ¿Cuánto ganas?', 500, '€', 'Controlas 10.000 €: 10.000 × 5 % = 500 €, un 50 % de tu dinero. Si hubiera bajado un 5 %, perderías lo mismo.'),
       num('Con apalancamiento 1:30, ¿qué movimiento en contra se lleva todo el margen de la posición? (redondea a un decimal)', 3.3, '%', '100 % ÷ 30 ≈ 3,3 %: un movimiento normal de un par de días.', 2),
@@ -322,7 +324,7 @@ export default unit({
       match('Empareja cada producto con el apalancamiento máximo para minoristas en CFD en la UE.', [['Divisas principales', '1:30'], ['Índices principales', '1:20'], ['Acciones individuales', '1:5'], ['Criptomonedas', '1:2']], 'Cuanto más volátil el activo, menor el apalancamiento permitido (ESMA, 2018).'),
       timed(tf('El apalancamiento multiplica las ganancias pero no las pérdidas.', false, 'Multiplica las dos por igual.'), 10),
       fill('Cuando una subida violenta obliga a los que están cortos a recomprar a la vez, se produce un ____.', 'short squeeze', ['margin call', 'dividendo', 'split'], 'Como en GameStop en 2021: los cortos recomprando empujan aún más el precio.'),
-    ], { source: '10.7', minutes: 6, retire: [0, 1, 3, 8] }),
+    ], { source: '10.7', minutes: 6, retire: [0, 1, 2, 3, 8] }),
 
     lesson('u25l9', 'Elegir tu estrategia', [
       mission({
@@ -364,7 +366,7 @@ export default unit({
           { say: 'Lee cada caso y elige su estrategia', mood: 'HAPPY' },
         ],
       }),
-      key('Núcleo y satélite', 'Mucha gente separa una **cartera principal** de largo plazo (diversificada, barata, automática) de una **parte pequeña** para especular o aprender, con un límite escrito que podría perder entera.', 'Primero el núcleo aburrido; la emoción, si acaso, con una parte pequeña y limitada.', 'Elige la estrategia que seguirías también en una caída del 30 %.'),
+      key('Núcleo y satélite', 'Mucha gente separa una **cartera principal** de largo plazo (diversificada, barata, automática) de una **parte pequeña** para especular o aprender, con un límite escrito que podría perder entera.', 'Primero el núcleo aburrido; la emoción, si acaso, con una parte pequeña y limitada.', 'Pruébalo: en el simulador, compra un ETF mundial como núcleo y deja el satélite pequeño.'),
     ], [
       match('Empareja cada personaje con la estrategia que más encaja con lo que cuenta de sí mismo.', [['Marta: 30 minutos al mes y odia mirar la bolsa', 'Aportaciones automáticas a un indexado'], ['Pablo: le encanta leer cuentas de empresas', 'Value investing con estudio de negocios'], ['Ana: revisa gráficos a diario y sigue reglas', 'Swing trading con plan y diario'], ['Bruno: horizonte de 40 años y quiere algo simple', 'Comprar y mantener un índice mundial']], 'Son ejemplos educativos de encaje entre tiempo, gustos y estrategia, no recomendaciones.'),
       scenario('Bruno trabaja 10 horas al día y solo puede mirar el móvil en los descansos. Quiere empezar con day trading. ¿Qué le encaja mejor como concepto?', [['Day trading en los descansos', 'Sin poder mirar la pantalla, cada operación queda a merced del ruido. Y la mayoría pierde incluso dedicándose a tiempo completo.'], ['Una estrategia que no dependa de mirar el mercado, como aportar cada mes a un indexado', 'Bien: encaja con su tiempo y no le obliga a decidir con prisa entre reunión y reunión.'], ['Day trading con apalancamiento para compensar el poco tiempo', 'Peor todavía: más riesgo con menos atención.']], 1, 'La estrategia tiene que caber en tu vida real.'),

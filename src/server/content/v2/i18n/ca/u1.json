@@ -1,7 +1,7 @@
 {
  "unit": {
   "title": "Els diners i la inflació",
-  "description": "Què són els diners, per què perden valor i com creixen amb l'interès compost",
+  "description": "Per què els diners quiets perden valor i quant ha de guanyar la teva inversió per protegir-te",
   "section": "Els teus diners en ordre"
  },
  "lessons": {
@@ -23,37 +23,39 @@
       "Exacte! En Pablo reuneix **18.000 €** en 5 anys i la Marta, 3.000 €. El que compta és el que et queda, no el que cobres.",
       "Tots dos igual",
       "No: la Marta aparta 50 € al mes i en Pablo, 300 €. En 5 anys són 3.000 € davant de 18.000 €.",
-      "Guanyar molt no és el mateix que **tenir** molt. Anem a mesurar el que té en Pablo."
+      "I si en Pablo inverteix aquests 300 €, l'interès compost encara fa més gran la diferència.",
+      "Guanyar molt no és el mateix que **tenir** molt. Mira el que té en Pablo."
      ]
     },
     {
      "texts": [
       "Quant té de debò?",
-      "Això és el que té i el que deu en Pablo. Col·loca cada cosa: **suma** o **resta**?",
+      "En Pablo ja inverteix una part del que aparta. Això és el que té i el que deu: **suma** o **resta**?",
       "Patrimoni d'en Pablo",
       "El que té",
       "El que deu",
-      "Estalvis al compte",
-      "Els diners estalviats són seus: sumen.",
+      "El seu coixí al compte",
+      "És seu i el té disponible: suma.",
+      "El seu ETF indexat (el que val avui)",
+      "El que has invertit compta pel que val avui: si l'ETF puja, el seu patrimoni puja.",
       "El seu cotxe (el que val avui)",
-      "El que tens compta pel que val avui, no pel que va costar.",
+      "Suma pel que val avui, no pel que va costar, i cada any val menys.",
       "El que queda del préstec del cotxe",
       "Un deute resta: el cotxe encara no és ben bé seu.",
-      "El seu portàtil",
-      "Un objecte de valor suma, encara que cada any valgui una mica menys.",
       "El que queda per pagar de la targeta",
       "El que deus de la targeta resta, encara que no ho vegis.",
       "Col·loca-ho tot i descobreix el patrimoni d'en Pablo.",
-      "**Patrimoni = el que tens − el que deus.** El d'en Pablo: 9.500 − 4.300 = **5.200 €**. És una foto; la seva renda i el seu estalvi són la pel·lícula que la va canviant.",
+      "**Patrimoni = el que tens − el que deus.** És el teu marcador de debò: el que has invertit pot créixer amb els anys, el cotxe perd valor i els deutes resten.",
       "Compte amb els deutes: encara que no els vegis, resten.",
       "Vas bé! Mira com canvia el càlcul de sota.",
       "Toca **suma** o **resta** per a cada cosa"
      ]
     },
     {
-     "title": "Per a què serveixen els diners",
-     "body": "Els diners fan tres feines:\n\n• **Mitjà de pagament:** canvies feina per pa sense fer intercanvis.\n• **Unitat de compte:** saps que un cafè val menys que una bici.\n• **Dipòsit de valor:** els pots guardar per a demà… tot i que, com veuràs a la pròxima classe, es van desgastant.",
-     "key": "La riquesa és patrimoni, no sou: el que tens menys el que deus."
+     "title": "El teu marcador de debò",
+     "body": "El teu **sou** diu quant t'entra cada mes; el teu **patrimoni**, quant tens. Per fer-lo créixer hi ha dues palanques:\n\n• **Apartar la diferència** entre el que entra i el que surt.\n• **Invertir-la**, perquè treballi per tu.\n\nEl que el frena: gastar-te cada augment de sou, els deutes cars i els diners quiets, que amb la inflació valen cada any una mica menys.",
+     "key": "La riquesa és patrimoni, no sou: el que tens menys el que deus.",
+     "tip": "Prova-ho: obre Cartera i mira quant valen avui tots els teus diners virtuals."
     }
    ]
   },
@@ -96,7 +98,7 @@
       "Res: tot costarà deu vegades més",
       "Un 3 % durant 20 anys apuja els preus un 81 %: els teus 50 € compren el que avui compren 28 €. Comprova-ho movent els anys.",
       "Busca quina inflació deixa el teu cistell a la meitat en només 10 anys.",
-      "Truc per calcular-ho de memòria: **70 ÷ inflació** = anys fins que els teus diners compren la meitat. Al 7 %, 10 anys; al 2 %, 35.",
+      "**Els diners quiets s'encongeixen**: al 3 %, en 20 anys compren poc més de la meitat. Per això, el que no necessites en anys ha de rendir més que la inflació.",
       "Uf! Amb això no omples ni un terç del cistell. Així es viu una inflació alta.",
       "Ho veus? Els bitllets són els mateixos 50 €, però compren molt menys.",
       "Ara apuja la inflació: què passa amb un 7 %?",
@@ -106,7 +108,8 @@
     {
      "title": "Per què pugen els preus",
      "body": "Pugen quan hi ha més diners o més demanda que coses per comprar, o quan produir costa més (l'energia el 2022). A Espanya la mesura l'INE amb l'**IPC**: el 2025 va ser del 2,7 % de mitjana.\n\nEl BCE intenta que se situï al voltant del **2 %** pujant o baixant els tipus d'interès.",
-     "key": "Amb inflació, els diners quiets compren cada any una mica menys."
+     "key": "Amb inflació, els diners quiets compren cada any una mica menys.",
+     "tip": "Prova-ho: al Mercat, mira si l'S&P 500 ha pujat més que la inflació."
     }
    ]
   },
@@ -155,9 +158,10 @@
      ]
     },
     {
-     "title": "Com es mesura",
-     "body": "Cada mes, l'INE anota els preus d'un **cistell** de centenars de productes i serveis: menjar, habitatge, transport, oci… L'**IPC** és el que ha canviat aquest cistell respecte al mateix mes de l'any anterior.\n\nCada cosa pesa segons el que gasten de mitjana les llars.",
-     "key": "L'IPC és la mitjana de tothom: la teva inflació depèn d'en què gastes tu."
+     "title": "Com es mesura i per què la borsa s'hi fixa",
+     "body": "Cada mes, l'INE anota els preus d'un **cistell** de centenars de productes i serveis. L'**IPC** és el que ha canviat aquest cistell respecte al mateix mes de l'any anterior; cada cosa pesa segons el que gasten de mitjana les llars.\n\nEls inversors l'esperen amb lupa: si surt més alt del previst, s'espera que el banc central apugi els tipus, i això sol moure la borsa aquell mateix dia.",
+     "key": "L'IPC és la mitjana de tothom: la teva inflació depèn d'en què gastes tu.",
+     "tip": "Prova-ho: el dia de l'IPC, mira al Mercat com es mou l'S&P 500."
     }
    ]
   },
@@ -193,7 +197,9 @@
       "Millor treu-los i guarda'ls a casa",
       "En un calaix perden igual amb la inflació… i a més es poden perdre o te'ls poden robar.",
       "Vaja… mai no ho havia pensat així.",
-      "Compte: els dipòsits estan protegits fins a **100.000 €** pel Fons de Garantia de Dipòsits si el banc fa fallida. Això protegeix els teus euros, no el teu poder de compra."
+      "Compte: el Fons de Garantia de Dipòsits protegeix fins a **100.000 €** si el banc fa fallida.",
+      "Protegeix els teus euros, no el teu poder de compra.",
+      "Prova-ho: al simulador, posa a treballar 1.000 € virtuals en un ETF mundial."
      ]
     }
    ]
@@ -203,33 +209,34 @@
    "steps": [
     {
      "texts": [
+      "Una oferta increïble",
+      "Nico",
+      "He trobat un fons que **duplica els teus diners en 2 anys** i sense risc.",
+      "T'hi apuntes? Només queden places avui.",
+      "Què en penses?",
+      "M'hi apunto! Sona genial",
+      "Duplicar en 2 anys exigeix un **36 % l'any**. Ningú no ho dona sense risc.",
+      "Duplicar en 2 anys sense risc és impossible: fa olor d'estafa",
+      "Ben vist! I les presses («només avui») són un altre senyal clàssic d'estafa.",
+      "Li demano que m'ho expliqui i m'hi apunto amb la meitat",
+      "Ni la meitat: comprova-ho abans al web de la CNMV.",
+      "Hi ha un truc per enxampar aquestes promeses en segons: la **regla del 72**."
+     ]
+    },
+    {
+     "texts": [
       "Quan es duplica?",
-      "Hi ha un truc per saber de memòria quant triguen els teus diners a duplicar-se: **72 ÷ rendibilitat**.",
+      "**72 ÷ rendibilitat** = els anys que triga la teva inversió a duplicar-se. Mou la rendibilitat i comprova-ho.",
       "Al 6 % l'any, en quants anys es dupliquen 1.000 €?",
       "En 6 anys",
       "En uns 12 anys",
       "En uns 20 anys",
       "72 ÷ 6 = **12 anys**. El càlcul exacte dona 11,9: la regla del 72 gairebé l'encerta.",
       "Troba la rendibilitat que duplica els teus diners en uns 8 anys.",
-      "**72 ÷ rendibilitat = anys per duplicar.** I al revés: 72 ÷ anys = la rendibilitat que necessites.",
+      "**72 ÷ rendibilitat = anys per duplicar**: et diu quant pesa una comissió, un deute o una promesa impossible. Prova-ho: al Mercat, obre l'S&P 500 en espelmes mensuals i busca quan es va duplicar.",
       "Això també val per als deutes: una targeta al 24 % duplica el que deus en 3 anys.",
       "Al 2 %, 36 anys per duplicar! És just el que sol pujar la inflació…",
       "Mou la rendibilitat i mira com creix la torre de bitllets"
-     ]
-    },
-    {
-     "texts": [
-      "Una oferta increïble",
-      "Nico",
-      "He trobat un fons que **duplica els teus diners en 2 anys** i sense risc. T'hi apuntes? Només queden places avui.",
-      "Fes servir la regla del 72. Què en penses?",
-      "M'hi apunto! Sona genial",
-      "Duplicar en 2 anys és un **36 % l'any** (72 ÷ 2). Ningú no pot garantir això «sense risc»: té tota la pinta d'estafa.",
-      "72 ÷ 2 = un 36 % l'any sense risc: impossible. Fa olor d'estafa",
-      "Perfecte! Un 36 % anual garantit no existeix. I les presses («només avui») són un altre senyal clàssic d'estafa.",
-      "Li demano que m'ho expliqui i m'hi apunto amb la meitat",
-      "Millor no arriscar ni la meitat: un 36 % l'any «sense risc» és impossible. Comprova-ho abans al web de la CNMV.",
-      "La regla del 72 és el teu detector de contes: si la rendibilitat promesa és enorme i «segura», desconfia."
      ]
     }
    ]
@@ -255,21 +262,6 @@
     "Posar l'estalvi a produir més",
     "El que t'entra cada mes"
    ]
-  },
-  "u1l1-2": {
-   "prompt": "Tens 2.500 € al banc i un portàtil que val 800 €, i deus 1.200 € d'un préstec. Quin és el teu patrimoni?",
-   "options": [],
-   "explanation": "2.500 + 800 − 1.200 = 2.100 €. El patrimoni resta el que deus.",
-   "unit": "€"
-  },
-  "u1l1-3": {
-   "prompt": "Quina d'aquestes funcions dels diners falla quan hi ha molta inflació?",
-   "options": [
-    "Unitat de compte per comparar un cafè i una bici",
-    "Mitjà de pagament",
-    "Dipòsit de valor"
-   ],
-   "explanation": "Amb una inflació alta, els diners guardats compren menys cada any: deixen de ser un bon dipòsit de valor."
   },
   "u1l1-4": {
    "prompt": "Algú que guanya 4.000 € al mes i s'ho gasta tot pot tenir menys patrimoni que algú que guanya 1.500 € i n'estalvia 300.",
@@ -304,11 +296,37 @@
    ],
    "explanation": "Els deutes resten: un cotxe de 15.000 € amb 12.000 € de préstec només t'aporta 3.000 €."
   },
-  "u1l2-1": {
-   "prompt": "Amb una inflació del 3 % durant 20 anys, quant podran comprar 1.000 € en euros d'avui? (arrodoneix)",
-   "options": [],
-   "explanation": "1.000 ÷ 1,03²⁰ ≈ 554 €. Cada any els preus pugen i els mateixos diners compren menys.",
-   "unit": "€"
+  "u1l1-10": {
+   "prompt": "T'apugen el sou 200 € al mes. Ja tens coixí i cap deute car. Què farà créixer més el teu patrimoni d'aquí a 10 anys?",
+   "options": [
+    "Canviar de cotxe, ara que pots pagar una quota més alta",
+    "Programar cada mes una aportació d'una part a un ETF indexat",
+    "Deixar-ho al compte corrent i ja decidiràs"
+   ],
+   "explanation": "El patrimoni creix apartant la diferència i invertint-la. Canviar de cotxe tempta, però converteix l'augment en un deute sobre una cosa que perd valor.",
+   "feedback": [
+    "L'augment se'n va en quotes i en un cotxe que perd valor cada any: el teu patrimoni gairebé no es mou.",
+    "Ho apartes abans de veure-ho i ho inverteixes: l'interès compost treballa per tu durant 10 anys.",
+    "Sense pla, els diners s'acaben gastant, i els que queden perden poder de compra."
+   ]
+  },
+  "u1l1-11": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "El patrimoni és el que cobres cada mes",
+    "Depèn del que encara deus i del que val avui el cotxe",
+    "Sí: el cotxe val 25.000 €"
+   ],
+   "explanation": "El cotxe suma pel que val avui, no pel que va costar, i el préstec resta. El temptador és comptar el preu de compra, però el deute i el desgast se'l mengen.",
+   "feedback": [
+    "Això és la teva renda: el patrimoni és el que acumules.",
+    "Això! El patrimoni és el que tens menys el que deus, a preu d'avui.",
+    "Falta restar el que deus del préstec, i el cotxe val menys cada any."
+   ],
+   "lines": [
+    "M'he comprat un cotxe de 25.000 € a terminis.",
+    "Ja tinc 25.000 € de patrimoni, oi?"
+   ]
   },
   "u1l2-2": {
    "prompt": "L'objectiu d'inflació del BCE és el 0 %.",
@@ -317,16 +335,6 @@
     "Fals"
    ],
    "explanation": "És el 2 % a mitjà termini. Per això els diners aturats perden valor fins i tot en anys normals."
-  },
-  "u1l2-3": {
-   "prompt": "Amb la regla del 70, una inflació del 2 % redueix a la meitat el poder de compra en uns ____ anys.",
-   "options": [
-    "70",
-    "20",
-    "10",
-    "35"
-   ],
-   "explanation": "70 ÷ 2 = 35 anys."
   },
   "u1l2-4": {
    "prompt": "Què pot fer pujar els preus? Marca totes les que corresponguin.",
@@ -366,14 +374,34 @@
     "Gastar per por no protegeix el teu futur: només canvia estalvi per consum."
    ]
   },
-  "u1l2-7": {
-   "prompt": "Ràpid: inflació del 7 %. En quants anys els teus diners compren la meitat (regla del 70)?",
+  "u1l2-8": {
+   "prompt": "A 20 anys, això sol protegir els teus diners de la inflació?",
    "options": [
-    "5 anys",
-    "10 anys",
-    "20 anys"
+    "Un compte al 0 %",
+    "Un ETF d'accions de tot el món",
+    "Un dipòsit a l'1 % amb la inflació al 3 %",
+    "Bitllets en un calaix",
+    "Un fons indexat a l'S&P 500"
    ],
-   "explanation": "70 ÷ 7 = 10 anys."
+   "explanation": "Quan tot puja, les empreses també apugen els seus preus: per això, a llarg termini, les accions diversificades acostumen a guanyar a la inflació, amb anys dolents pel camí. Els diners quiets, o que rendeixen menys que els preus, perden poder de compra encara que el saldo no baixi.",
+   "right": [
+    "Sol protegir-los",
+    "No els protegeix"
+   ]
+  },
+  "u1l2-9": {
+   "prompt": "Surt la notícia: la inflació puja més del previst i es parla que el BCE apujarà els tipus. El teu ETF mundial baixa una mica aquell dia. Inverteixes per d'aquí a 20 anys. Què fas?",
+   "options": [
+    "Ho venc tot fins que baixi la inflació",
+    "Continuo amb les meves aportacions com sempre",
+    "Ho passo tot al compte corrent"
+   ],
+   "explanation": "Amb inflació alta, els diners quiets perden més que mai. Vendre per un titular tempta, però canvia el teu pla a 20 anys per un ensurt d'un dia.",
+   "feedback": [
+    "Ningú no sap quan passarà, i fora del mercat els teus diners tornen a perdre davant dels preus.",
+    "Un titular mou el preu uns dies; a 20 anys, el que compta és continuar invertint.",
+    "Just amb inflació alta, els diners quiets són els que més perden."
+   ]
   },
   "u1l3-1": {
    "prompt": "Què mesura l'IPC?",
@@ -402,12 +430,6 @@
    ],
    "explanation": "La subjacent exclou l'energia per veure la tendència de fons."
   },
-  "u1l3-6": {
-   "prompt": "Un cistell costava 200 € fa un any i avui costa 206 €. Quina ha estat la inflació d'aquest cistell?",
-   "options": [],
-   "explanation": "(206 − 200) ÷ 200 = 0,03 3 %.",
-   "unit": "%"
-  },
   "u1l3-7": {
    "prompt": "Relaciona cada perfil amb la part del cistell que més l'afecta.",
    "options": [
@@ -432,11 +454,19 @@
    ],
    "explanation": "L'IPC és una mitjana ponderada de preus de consum."
   },
-  "u1l4-1": {
-   "prompt": "El teu compte paga un 1,5 % i la inflació és del 2,7 %. Quina és la teva rendibilitat real aproximada?",
-   "options": [],
-   "explanation": "Real ≈ 1,5 − 2,7 = −1,2 %. Guanyes euros, però perds poder de compra.",
-   "unit": "%"
+  "u1l3-10": {
+   "prompt": "Lloges en una ciutat cara i la teva inflació personal és del 5 %, encara que l'IPC oficial sigui del 3 %. Inverteixes per d'aquí a 20 anys. Què et diu això?",
+   "options": [
+    "Res: l'únic que compta és l'IPC oficial",
+    "Que els meus diners han de rendir més que la meva pròpia inflació",
+    "Que no val la pena invertir si els preus pugen tant"
+   ],
+   "explanation": "La teva inflació personal és el llistó que han de superar els teus diners. El temptador és mirar només la xifra oficial, però el teu cistell pot pujar més que la mitjana.",
+   "feedback": [
+    "L'IPC és la mitjana; el que pagues tu depèn del teu cistell.",
+    "Exacte: el teu llistó és la teva inflació, no la mitjana. El que rendeix poc perd davant dels teus preus.",
+    "Just al revés: amb els preus pujant, els diners quiets són els que més perden."
+   ]
   },
   "u1l4-2": {
    "prompt": "Si el teu compte paga un 3 % i la inflació és del 2 %, guanyes poder de compra.",
@@ -470,20 +500,6 @@
    ],
    "explanation": "Protegeix els euros dipositats si el banc fa fallida, no davant la inflació ni davant les caigudes de la borsa."
   },
-  "u1l4-5": {
-   "prompt": "Tens 20.000 € en un compte al 0 % i no els necessitaràs en 15 anys. Un amic et diu: «Així no perds res». Què li dius?",
-   "options": [
-    "Que hauria de posar-ho tot en una sola acció",
-    "Té raó: el saldo no baixa",
-    "Que perdo poder de compra cada any"
-   ],
-   "explanation": "Diners quiets durant anys = poder de compra perdut.",
-   "feedback": [
-    "Això és passar d'un extrem a l'altre: més endavant veuràs per què cal diversificar.",
-    "El saldo no baixa, però amb un 2,5 % d'inflació aquests 20.000 € compraran com uns 13.800 € d'avui d'aquí a 15 anys.",
-    "Exacte: no perds euros, perds el que pots comprar amb ells."
-   ]
-  },
   "u1l4-6": {
    "prompt": "Rendibilitat real ≈ rendibilitat nominal − ____.",
    "options": [
@@ -494,21 +510,37 @@
    ],
    "explanation": "És la manera ràpida de saber si els teus diners guanyen o perden poder de compra."
   },
-  "u1l6-1": {
-   "prompt": "Segons la regla del 72, al 6 % anual els diners es dupliquen en uns ____ anys.",
+  "u1l4-10": {
+   "prompt": "Tens 6.000 €: 3.000 € són el teu coixí i els altres 3.000 € no els tocaràs en 15 anys. Com ho organitzes?",
    "options": [
-    "6",
-    "72",
-    "20",
-    "12"
+    "Tot al compte al 0 %: així està segur",
+    "El coixí en un compte remunerat i la resta en un ETF indexat mundial",
+    "Tot a l'ETF, coixí inclòs"
    ],
-   "explanation": "72 ÷ 6 = 12 anys."
+   "explanation": "Cada euro segons el seu termini: el que pots necessitar demà, disponible i sense risc; el que no tocaràs en anys, invertit. Posar-ho tot a l'ETF tempta, però et deixa sense coixí.",
+   "feedback": [
+    "Els 3.000 € de llarg termini perden poder de compra durant 15 anys.",
+    "El coixí continua a mà i el de llarg termini treballa per guanyar a la inflació.",
+    "Si arriba un imprevist en plena caiguda, hauràs de vendre amb pèrdues."
+   ]
   },
-  "u1l6-2": {
-   "prompt": "Al 9 % anual, en quants anys es dupliquen els diners segons la regla del 72?",
-   "options": [],
-   "explanation": "72 ÷ 9 = 8 anys.",
-   "unit": "anys"
+  "u1l4-11": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Millor treu-los i gasta'ls abans que valguin menys",
+    "Sí: un 2 % és guanyar",
+    "Guanyes euros, però perds poder de compra"
+   ],
+   "explanation": "Si els teus diners rendeixen menys que la inflació, la teva rendibilitat real és negativa encara que el saldo pugi. El temptador és mirar només el 2 %, però el que importa és el que pots comprar amb ells.",
+   "feedback": [
+    "Gastar per por no protegeix el teu futur: només canvia estalvi per consum.",
+    "Guanyes euros, però els preus pugen més de pressa que el teu saldo.",
+    "Això! Rendeix menys que la inflació: el que no necessitis aviat pot buscar més."
+   ],
+   "lines": [
+    "El meu banc em dona un 2 % i la inflació és al 2,7 %.",
+    "Almenys guanyo alguna cosa, oi?"
+   ]
   },
   "u1l6-4": {
    "prompt": "Relaciona cada rendibilitat amb els anys per duplicar.",
@@ -525,12 +557,6 @@
     "12 anys",
     "24 anys"
    ]
-  },
-  "u1l6-6": {
-   "prompt": "Una targeta revolving cobra un 24 % anual. En quants anys es duplica el deute si no pagues?",
-   "options": [],
-   "explanation": "72 ÷ 24 = 3 anys. L'interès compost també treballa per al teu creditor.",
-   "unit": "anys"
   },
   "u1l6-7": {
    "prompt": "La regla del 72 també serveix per a la inflació: al 3 %, els preus es dupliquen en uns 24 anys.",
@@ -552,6 +578,54 @@
    "right": [
     "N'hi ha prou",
     "No n'hi ha prou"
+   ]
+  },
+  "u1l6-10": {
+   "prompt": "Dos fons copien el mateix índex mundial. Un cobra un 0,2 % l'any i l'altre, un 2 %. Invertiràs durant 30 anys. Quin tries?",
+   "options": [
+    "Tant és: la diferència és molt petita",
+    "El del 2 %: si cobra més, serà millor",
+    "El del 0,2 %"
+   ],
+   "explanation": "Amb el mateix índex, la comissió és l'única cosa que canvia i resta de la teva rendibilitat cada any: amb menys rendibilitat, els teus diners triguen més a duplicar-se. Pensar que el car és millor tempta, però aquí no compres res de més.",
+   "feedback": [
+    "Un 2 % l'any endarrereix diversos anys cada duplicació, i en 30 anys això pesa moltíssim.",
+    "Copien el mateix índex: l'única cosa que canvia és el que et treuen cada any.",
+    "Et quedes gairebé tota la rendibilitat: els teus diners es dupliquen força abans."
+   ]
+  },
+  "u1l6-11": {
+   "prompt": "Marca les promeses que la regla del 72 delata com a impossibles.",
+   "options": [
+    "Dipòsit a 12 mesos al 2 % TAE, cobert pel Fons de Garantia de Dipòsits.",
+    "Fons indexat mundial. Les rendibilitats passades no garanteixen rendibilitats futures.",
+    "Un 3 % al mes assegurat. Places limitades fins aquesta nit.",
+    "Duplica els teus diners en 6 mesos, garantit i sense risc."
+   ],
+   "explanation": "Duplicar en 6 mesos o guanyar un 3 % al mes «assegurat» són rendibilitats enormes que ningú no pot garantir: la regla del 72 ho delata en segons. El que és legal t'explica el risc i no et fa córrer.",
+   "senders": [
+    "El teu banc",
+    "Gestora de fons",
+    "Grup de Telegram",
+    "Inversions Top"
+   ]
+  },
+  "u1l6-12": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Paga primer la targeta",
+    "Inverteix: la borsa puja a llarg termini",
+    "Fes les dues coses a mitges"
+   ],
+   "explanation": "La regla del 72 també val per al que deus: al 24 %, el deute es duplica en uns 3 anys. Invertir tempta, però cap inversió no et garanteix guanyar a aquest ritme.",
+   "feedback": [
+    "Això! Treure't un 24 % és guanyar un 24 % segur.",
+    "Al 24 %, el teu deute es duplica en uns 3 anys: cap inversió no et garanteix això.",
+    "Millor que res, però deixes viu un deute que creix molt de pressa."
+   ],
+   "lines": [
+    "Tinc una targeta al 24 % i 1.000 € per invertir.",
+    "Inverteixo o pago la targeta?"
    ]
   }
  }

@@ -274,6 +274,7 @@ export function Path() {
   const t = useTranslations('path')
   const router = useRouter()
   const { data: p, isError, refetch } = usePath()
+  const { data: me } = useMe()
   const { data: mistakes = 0 } = useQuery({ queryKey: ['mistakes'], queryFn: api.mistakesCount })
   const [locked, setLocked] = useState<PathLessonT | null>(null)
   const [openUnits, setOpenUnits] = useState<Set<string>>(new Set())
@@ -358,6 +359,18 @@ export function Path() {
             {expanded && (
               <div id={`lessons-${u.id}`} className="flex flex-col gap-3">
                 {u.unlocksFeature && <div className="banner banner-info">{t('unlocksOrders')}</div>}
+                {/* «¿Ya lo sabes?»: quien domina la unidad la supera con una prueba y sigue adelante */}
+                {u.testOut && u.progressPct < 100 && (
+                  <Link href={`/quiz/testout-${u.id}`} className="card flex items-center gap-3" style={{ color: 'inherit' }}>
+                    <GlyphTile name="verified" size={36} color="var(--brand)" />
+                    <span className="flex-1">
+                      <b>{t('testOutTitle')}</b>
+                      <br />
+                      <span className="t-foot">{me?.plan === 'FREE' ? t('testOutBodyFree') : t('testOutBody')}</span>
+                    </span>
+                    <Icon name="chev" size={16} />
+                  </Link>
+                )}
                 {u.lessons.map(l => (
                   <LessonRow key={l.id} l={l} onLocked={setLocked} />
                 ))}

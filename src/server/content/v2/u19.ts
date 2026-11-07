@@ -43,7 +43,7 @@ export default unit({
           { say: 'Elige el gráfico para cada cosa', mood: 'HAPPY' },
         ],
       }),
-      key('Cuidado con Heikin Ashi', 'Hay más formas: el **área** (la línea con relleno, como en muchas apps) y el **Heikin Ashi**, velas promediadas que suavizan el ruido.\n\nSus aperturas y cierres se calculan con promedios: **no son precios reales**. Sirve para ver la tendencia, nunca para decidir a qué precio entrar o dónde poner un stop.', 'La línea resume; las velas cuentan la batalla de cada periodo.', 'Para ver hacia dónde va, la línea. Para ver quién gana cada día, las velas.'),
+      key('Cuidado con Heikin Ashi', 'Hay más formas: el **área** (la línea con relleno, como en muchas apps) y el **Heikin Ashi**, velas promediadas que suavizan el ruido.\n\nSus aperturas y cierres se calculan con promedios: **no son precios reales**. Sirve para ver la tendencia, nunca para decidir a qué precio entrar o dónde poner un stop.', 'La línea resume; las velas cuentan la batalla de cada periodo.', 'Pruébalo: en Mercado, abre Apple y pasa de Línea a Velas.'),
     ], [
       match('Empareja cada tipo de gráfico con lo que muestra.', [['Línea', 'Solo los cierres unidos'], ['Barras', 'Del mínimo al máximo, con rayitas de apertura y cierre'], ['Velas', 'Cuerpo de color entre apertura y cierre'], ['Heikin Ashi', 'Velas promediadas, sin precios reales']], 'Línea y área resumen; barras y velas tienen los cuatro precios; Heikin Ashi suaviza a costa de no mostrar precios reales.'),
       single('¿Qué gráfico no muestra los precios reales de apertura y cierre?', ['Velas', 'Barras', 'Heikin Ashi'], 2, 'Heikin Ashi calcula cada vela con promedios para suavizar el ruido: sus aperturas y cierres no son precios negociados.'),
@@ -103,7 +103,7 @@ export default unit({
           ],
         },
         goal: { text: 'Coloca a las seis personas.', when: [when('done', '==', 6)] },
-        insight: 'Elige la temporalidad según tu **horizonte** y mira siempre **la mayor antes que la menor**. Método de Elder: semanal para la dirección, diario para el momento y horas para afinar la entrada y el stop.',
+        insight: 'Elige la temporalidad según tu **horizonte** y mira siempre **la mayor antes que la menor**. Método de Elder: semanal para la dirección, diario para el momento y horas para afinar la entrada y el stop. Pruébalo: en Mercado, abre un activo y pasa de 1D a 1S para ver la tendencia grande.',
         lumi: [
           { when: when('wrong', '>=', 2), say: '¿Cuánto tiempo mantiene cada uno su inversión?', mood: 'THINKING' },
           { say: 'Coloca a cada persona', mood: 'HAPPY' },
@@ -120,7 +120,8 @@ export default unit({
       scenario('En el gráfico semanal, una acción lleva un año con máximos y mínimos crecientes. En el de 5 minutos, lleva toda la mañana cayendo. Marta, que invierte a varios años, se asusta. ¿Qué le dices?', [['Que venda ya: la tendencia ha cambiado', 'Una mañana en 5 minutos no rompe una tendencia de un año: para su horizonte es ruido.'], ['Que mire la temporalidad que encaja con su horizonte', 'Bien: para años manda el semanal. La caída de la mañana puede ser parte del ruido.'], ['Que compre más para aprovechar la caída', 'Ni vender ni comprar por una mañana: decidir con el gráfico de 5 minutos es usar la herramienta equivocada.']], 1, 'Cada horizonte tiene su temporalidad. Mezclarlas lleva a decisiones impulsivas.'),
       timed(single('Rápido: un inversor a largo plazo debería mirar sobre todo…', ['Velas de 1 minuto', 'Gráficos semanales y mensuales', 'Solo las noticias del día'], 1, 'Su horizonte son años, no minutos.'), 12),
       num('Un day trader hace 5 operaciones al día y paga 2 € de comisión por cada una. ¿Cuánto paga en un mes de 20 sesiones?', 200, '€', '5 × 2 × 20 = 200 €, sin contar el spread. En temporalidades cortas, los costes se acumulan muy deprisa.'),
-    ], { source: '7.3', minutes: 6, retire: [1, 6, 7, 8] }),
+      scenario('Leo mantiene sus operaciones unas semanas. En el gráfico semanal, la acción hace máximos y mínimos cada vez más bajos. En el diario, hoy sube con fuerza. ¿Qué hace?', [['Compra ya: el diario manda porque es más reciente', 'El diario afina el momento, pero la dirección la marca el semanal, y ahí es bajista.'], ['No busca compras mientras el semanal siga bajista', 'Eso: primero la temporalidad mayor. Un día fuerte dentro de una caída semanal suele quedarse en rebote.'], ['Mira el gráfico de 1 minuto para decidir', 'Bajar a minutos añade ruido, no información: el problema es que va contra el semanal.']], 1, 'Método de Elder: la temporalidad mayor decide la dirección y la menor solo afina la entrada. Comprar contra el semanal es nadar contra la corriente.'),
+    ], { source: '7.3', minutes: 6, retire: [1, 6, 7, 8, 9] }),
 
     lesson('u19l4', 'Escala lineal y logarítmica', [
       story('Bitcoin, una línea plana', [{ id: 'dani', name: 'Dani' }], [
@@ -170,7 +171,7 @@ export default unit({
           ],
         },
         goal: { text: 'Clasifica los seis gráficos.', when: [when('done', '==', 6)] },
-        insight: 'Para periodos largos o activos que se han multiplicado mucho, **logarítmica**. En tramos cortos, euros y porcentajes van casi a la par.',
+        insight: 'Para periodos largos o activos que se han multiplicado mucho, **logarítmica**. En tramos cortos, euros y porcentajes van casi a la par. Pruébalo: en Mercado, abre Bitcoin en 1M y mide con «Medir» una subida antigua y otra reciente.',
         lumi: [
           { when: when('wrong', '>=', 2), say: '¿Son años y precios muy distintos, o unos pocos días?', mood: 'THINKING' },
           { say: '¿Logarítmica o da igual?', mood: 'HAPPY' },
@@ -187,7 +188,9 @@ export default unit({
       fill('En escala logarítmica, la misma distancia vertical representa el mismo ____.', 'porcentaje', ['número de euros', 'volumen', 'número de días'], 'Por eso compara bien épocas con precios muy distintos.'),
       timed(tf('Para mirar unas pocas semanas, la escala apenas cambia el gráfico.', true, 'En tramos cortos los movimientos son pequeños y euros y porcentajes van casi a la par.'), 10),
       chat(['He visto un gráfico de bitcoin desde 2013 👀', 'Hasta 2017 es una línea plana y luego todo pasa al final.', '¿Antes no se movía?'], '¿Qué le contestas?', [['No, antes no pasaba nada', 'Pasaba muchísimo, con caídas de más del 80 %. En lineal, como los precios eran bajos, no se ve.'], ['Es la escala lineal: con precios bajos, movimientos enormes en porcentaje ocupan poco. En logarítmica se verían', '¡Eso! En logarítmica, un +100 % ocupa lo mismo en 2014 que en 2024.'], ['Es que el gráfico está mal hecho', 'El gráfico está bien; lo que engaña es usar escala lineal para tantos años.']], 1, 'En periodos largos, la escala lineal esconde los movimientos antiguos. La logarítmica los pone en su sitio.'),
-    ], { source: '7.4', minutes: 6, retire: [4, 5, 8, 9] }),
+      scenario('En un gráfico lineal de 10 años, una acción sube de 10 a 20 € al principio y de 100 a 200 € al final. Dani dice que la segunda subida fue mucho mejor porque se ve diez veces más grande. ¿Qué le dices?', [['Que tiene razón: se ve más grande, así que fue mejor', 'En lineal se ve más grande porque son más euros, pero en porcentaje las dos son iguales.'], ['Que las dos fueron un +100 %: en logarítmica ocuparían lo mismo', 'Eso: quien compró al principio también duplicó su dinero. La escala logarítmica lo enseña tal cual.'], ['Que la primera fue mejor porque la acción era más barata', 'Ser más barata no la hace mejor: en los dos tramos el dinero se duplicó.']], 1, 'A tu dinero le importa el porcentaje. La escala lineal agranda los tramos con precios altos; la logarítmica los compara de verdad.'),
+      chat(['Bitcoin cayó un 75 % desde su máximo de 2021.', 'Si ahora sube un 75 %, ¿vuelve a donde estaba?'], '¿Qué le contestas a Lumi?', [['Sí: baja un 75 % y sube un 75 %, se queda igual', 'No: tras caer un 75 %, subir un 75 % lo deja muy por debajo del máximo.'], ['No: después de caer un 75 % hace falta subir mucho más, un 300 %', 'Eso: los porcentajes no son simétricos. Bitcoin necesitó un 302 % para volver.'], ['Depende de la escala del gráfico', 'La escala cambia cómo lo ves, no lo que pasa con tu dinero.']], 1, 'Una caída grande pide una subida mucho mayor para recuperarse: tras un −75 % hace falta un +300 %. La escala logarítmica respeta esas proporciones; la lineal, no.'),
+    ], { source: '7.4', minutes: 6, retire: [2, 3, 4, 5, 8, 9] }),
 
     lesson('u19l5', 'Tendencias: máximos y mínimos', [
       story('¿Sigue subiendo?', [{ id: 'leo', name: 'Leo' }], [
@@ -235,7 +238,7 @@ export default unit({
           { say: 'Mira hacia dónde van las velas y decide', mood: 'HAPPY' },
         ],
       }),
-      key('El momentum existe', 'Las tendencias de 3–12 meses han tendido a persistir en acciones, bonos, divisas y materias primas (Jegadeesh y Titman, 1993; Moskowitz, Ooi y Pedersen, 2012). Aprovecharlo tras costes y giros bruscos es otra historia.', 'Alcista = máximos y mínimos más altos; bajista = más bajos.', 'La tendencia es tu amiga… hasta que deja de hacer máximos más altos.'),
+      key('El momentum existe', 'Las tendencias de 3–12 meses han tendido a persistir en acciones, bonos, divisas y materias primas (Jegadeesh y Titman, 1993; Moskowitz, Ooi y Pedersen, 2012). Aprovecharlo tras costes y giros bruscos es otra historia.', 'Alcista = máximos y mínimos más altos; bajista = más bajos.', 'Pruébalo: en Mercado, abre Apple en 1S y mira si sus mínimos suben.'),
     ], [
       trend('¿Qué tendencia tiene este gráfico?', 'trend-up-3', 'Alcista', 'Cada caída se queda por encima de la anterior y cada subida supera el máximo previo.'),
       trend('¿Y este?', 'trend-down-3', 'Bajista', 'Los rebotes no llegan a los máximos anteriores y los mínimos son cada vez más bajos.'),
@@ -283,7 +286,7 @@ export default unit({
           { say: '¿Confirma o pone en duda?', mood: 'HAPPY' },
         ],
       }),
-      key('Picos y límites', '• Sube con volumen alto: convicción. Baja con volumen bajo: corrección tranquila.\n• Los picos de volumen llegan con noticias, vencimientos, pánico o euforia; tras una caída fuerte, a veces marcan la **capitulación**.\n• En divisas no hay volumen centralizado y en cripto se reparte entre muchas plataformas.', 'Un movimiento con mucho volumen tiene a mucha gente detrás; sin volumen puede ser una ilusión.', 'El precio te dice qué pasa. El volumen, cuánta gente se lo cree.'),
+      key('Picos y límites', '• Sube con volumen alto: convicción. Baja con volumen bajo: corrección tranquila.\n• Los picos de volumen llegan con noticias, vencimientos, pánico o euforia; tras una caída fuerte, a veces marcan la **capitulación**.\n• En divisas no hay volumen centralizado y en cripto se reparte entre muchas plataformas.', 'Un movimiento con mucho volumen tiene a mucha gente detrás; sin volumen puede ser una ilusión.', 'Pruébalo: en Mercado, busca el día de más volumen del último mes.'),
     ], [
       buckets('¿El volumen confirma el movimiento o lo pone en duda?', ['Lo confirma', 'Lo pone en duda'], [['Sube con volumen muy superior a la media', 0], ['Rompe una resistencia con un volumen bajísimo', 1], ['Sube con volumen cada vez menor', 1], ['Rompe un soporte con un volumen enorme', 0]], 'Volumen alto = mucha gente detrás del movimiento. Volumen bajo o decreciente = poca convicción.'),
       single('El precio rompe una resistencia con un volumen muy inferior a la media. ¿Qué riesgo hay?', ['Ninguno', 'Que sea una falsa rotura', 'Que suspendan la cotización'], 1, 'Sin volumen, la rotura tiene poca gente detrás y es más fácil que el precio vuelva dentro.'),

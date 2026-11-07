@@ -9,7 +9,7 @@ export default unit({
     lesson('u18l1', 'Ventajas competitivas: el foso', [
       play({
         title: '¿Foso o no?',
-        intro: 'Sin una ventaja que la proteja, la competencia se come los beneficios. Buffett lo llama **foso**. ¿Cuáles lo son?',
+        intro: '¿Por qué sigues en WhatsApp aunque salga una app mejor? Porque están tus amigos: eso es un **foso**, como lo llama Buffett, una ventaja que la competencia no puede copiar.',
         widget: {
           kind: 'sort',
           bins: [{ label: 'Es foso' }, { label: 'No es foso' }],
@@ -42,7 +42,7 @@ export default unit({
         say('luis', 'Vaya. Buen negocio… y mala compra.'),
         say('lumi', 'Un buen negocio necesita foso. Una buena inversión, además, un buen precio.'),
       ]),
-      key('Cómo se ve un foso en los números', '• Márgenes y ROIC **altos y estables** durante 10 años.\n• Puede **subir precios** sin perder clientes, incluso con inflación.\n• Mantiene o gana **cuota de mercado**.', 'Un buen negocio necesita un foso; una buena inversión necesita, además, un buen precio.'),
+      key('Cómo se ve un foso en los números', '• Márgenes y ROIC **altos y estables** durante 10 años.\n• Puede **subir precios** sin perder clientes, incluso con inflación.\n• Mantiene o gana **cuota de mercado**.', 'Un buen negocio necesita un foso; una buena inversión necesita, además, un buen precio.', 'Pruébalo: pregúntale a Lumi qué foso tiene una app que uses cada día.'),
     ], [
       match('Empareja cada ejemplo con su foso.', [['Una red social con miles de millones de usuarios', 'Efecto red'], ['El software de gestión que usa toda una empresa', 'Costes de cambio'], ['Una farmacéutica con un medicamento patentado', 'Intangibles'], ['Un gran distribuidor que compra más barato que nadie', 'Ventaja en costes'], ['El único oleoducto de una región', 'Escala eficiente']], 'Los cinco fosos de Morningstar y Pat Dorsey.'),
       single('¿Qué foso tiene un sistema de pagos que aceptan casi todas las tiendas y usan casi todos los clientes?', ['Efecto red', 'Escala eficiente', 'Ninguno'], 0, 'Cuantas más tiendas lo aceptan, más clientes lo quieren, y al revés.'),
@@ -54,12 +54,12 @@ export default unit({
       timed(single('Rápido: una app de mensajería vale más con cada usuario nuevo. ¿Qué foso es?', ['Efecto red', 'Ventaja en costes', 'Patente'], 0, 'Cada usuario hace el producto más útil para los demás.'), 10),
       num('Microsoft tardó unos 16 años en recuperar su máximo de 2000. Si la inflación hubiera sido del 2 % anual, ¿cuánto poder de compra habría perdido quien recuperó justo ese precio? (en %)', 27, '%', '1 ÷ 1,02¹⁶ ≈ 0,728: un 27 % menos de poder de compra en 16 años, sin contar dividendos.', 3),
       chat(['Me encanta esta marca, la uso cada día 😍', '¿Eso significa que tiene foso y que es buena inversión?'], '¿Qué le contestas a Lumi?', [['Sí: si te gusta a ti, le gusta a todos', 'Que te guste es un comienzo, no un análisis.'], ['Puede tener foso, pero hay que verlo en sus márgenes y su ROIC, y además mirar el precio', 'Vale: que me guste el producto no me dice si la acción está cara.'], ['No, las marcas nunca son foso', 'Las marcas fuertes pueden ser un foso muy potente.']], 1, 'Busca el foso en los números y no olvides el precio.'),
-    ], { source: '5.7', minutes: 6, retire: [5, 6, 7] }),
+    ], { source: '5.7', minutes: 6, retire: [5, 6, 7, 8] }),
 
     lesson('u18l2', 'Sectores cíclicos y defensivos', [
       play({
         title: '¿Cíclico o defensivo?',
-        intro: 'Cuando la economía va bien, casi todo vende. Cuando va mal, no todo cae igual. Clasifica cada negocio.',
+        intro: 'Si mañana te quedaras sin trabajo, seguirías comprando comida, pero aplazarías el viaje de verano. A las empresas les pasa igual en una crisis: clasifica cada negocio.',
         widget: {
           kind: 'sort',
           bins: [{ label: 'Cíclico' }, { label: 'Defensivo' }],
@@ -99,7 +99,7 @@ export default unit({
           { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
         ],
       }),
-      key('El ciclo económico', '1. **Recuperación:** tipos bajos, la economía empieza a crecer.\n2. **Expansión:** empleo alto y beneficios al alza; puede aparecer la inflación.\n3. **Desaceleración:** suben los tipos y se frena el crecimiento.\n4. **Recesión:** cae el PIB (técnicamente, dos trimestres seguidos) y sube el paro.\n\nLa bolsa suele caer **antes** de una recesión y subir **antes** de que termine: en marzo de 2009 y en marzo de 2020 tocó fondo con noticias terribles.', 'La bolsa no mira el presente: mira lo que espera dentro de 6 o 12 meses.'),
+      key('El ciclo económico', '1. **Recuperación:** tipos bajos, la economía empieza a crecer.\n2. **Expansión:** empleo alto y beneficios al alza; puede aparecer la inflación.\n3. **Desaceleración:** suben los tipos y se frena el crecimiento.\n4. **Recesión:** cae el PIB (técnicamente, dos trimestres seguidos) y sube el paro.\n\nLa bolsa suele caer **antes** de una recesión y subir **antes** de que termine: en marzo de 2009 y en marzo de 2020 tocó fondo con noticias terribles.', 'La bolsa no mira el presente: mira lo que espera dentro de 6 o 12 meses.', 'Pruébalo: en Mercado, mira el sector de Inditex y el de Iberdrola: ¿cuál es defensivo?'),
     ], [
       buckets('¿Cíclico o defensivo?', ['Cíclico', 'Defensivo'], [['Fabricante de coches', 0], ['Eléctrica', 1], ['Cadena de hoteles', 0], ['Farmacéutica', 1], ['Marca de lujo', 0], ['Supermercado', 1]], 'Lo que se compra igual en una crisis es defensivo; lo que se aplaza, cíclico.'),
       match('Empareja cada fase del ciclo con lo que suele pasar.', [['Recuperación', 'Tipos bajos y la economía empieza a crecer'], ['Expansión', 'Empleo alto y beneficios al alza'], ['Desaceleración', 'Suben los tipos y se frena el crecimiento'], ['Recesión', 'Cae el PIB y sube el paro']], 'Y vuelta a empezar.'),
@@ -111,7 +111,7 @@ export default unit({
       timed(single('Rápido: ¿qué sector suele caer menos en una recesión?', ['Alimentación', 'Aerolíneas', 'Automoción'], 0, 'La gente sigue comprando comida en las crisis.'), 10),
       multi('¿Qué sectores son defensivos? Marca todos.', ['Eléctricas', 'Salud', 'Alimentación', 'Construcción'], [0, 1, 2], 'La construcción es muy cíclica.'),
       num('En una recesión, un sector cíclico cae un 40 %. ¿Cuánto tiene que subir después para volver a su nivel?', 66.7, '%', '1 ÷ 0,60 ≈ 1,667 → +66,7 %. Un defensivo que cae un 15 % solo necesita un +17,6 %.', 2),
-    ], { source: '6.3', minutes: 6, retire: [0, 5, 7] }),
+    ], { source: '6.3', minutes: 6, retire: [0, 5, 7, 9] }),
 
     lesson('u18l3', 'Bancos centrales y tipos de interés', [
       story('El BCE sube los tipos', [{ id: 'dani', name: 'Dani' }], [
@@ -168,7 +168,7 @@ export default unit({
           { say: 'Clasifica cada uno', mood: 'HAPPY' },
         ],
       }),
-      key('El precio del dinero', '• **BCE:** objetivo de inflación del **2 %** a medio plazo.\n• **Reserva Federal:** precios estables y máximo empleo.\n\nEl tipo de referencia del BCE es la **facilidad de depósito**: en junio de 2026 lo subió al **2,25 %**. Consulta el valor vigente en ecb.europa.eu, porque cambia varias veces al año.', 'Cuando el dinero se encarece, el futuro vale menos.'),
+      key('El precio del dinero', '• **BCE:** objetivo de inflación del **2 %** a medio plazo.\n• **Reserva Federal:** precios estables y máximo empleo.\n\nEl tipo de referencia del BCE es la **facilidad de depósito**: en junio de 2026 lo subió al **2,25 %**. Consulta el valor vigente en ecb.europa.eu, porque cambia varias veces al año.', 'Cuando el dinero se encarece, el futuro vale menos.', 'Pruébalo: busca en Mercado el ETF TLT de bonos largos y mira su 2022.'),
     ], [
       upDown('Enero de 2022: la inflación en EE. UU. está en máximos de casi 40 años y la Fed prepara subidas de tipos. Este es un ETF de bonos del Tesoro de EE. UU. a más de 20 años. ¿Qué hizo después?', 'hist-rates-2022', 'Los bonos largos son muy sensibles a los tipos: cuanto más lejos está el dinero que pagan, más cambia su valor de hoy cuando el tipo se mueve.', 'hasta octubre de 2023'),
       order('Ordena lo que pasa cuando el banco central sube los tipos.', ['Los préstamos se encarecen', 'Se consume e invierte menos', 'La economía se enfría', 'La inflación baja con retraso'], 'Con un retraso de 12 a 24 meses entre el primer paso y el último.'),
@@ -218,7 +218,7 @@ export default unit({
           { say: '¿Mejor, peor o igual de lo esperado?', mood: 'HAPPY' },
         ],
       }),
-      key('El calendario económico', '• **IPC/IPCA:** inflación. Decide los tipos.\n• **PIB:** crecimiento de la economía.\n• **Empleo:** en EE. UU., las nóminas no agrícolas del primer viernes de cada mes; en España, la EPA y el paro registrado.\n• **PMI:** encuesta mensual a gestores de compras. **Por encima de 50 = expansión.** Se adelanta al PIB.\n• **Decisiones de tipos** del BCE y la Fed.', 'El mercado no reacciona a si el dato es bueno o malo, sino a si es mejor o peor de lo esperado.'),
+      key('El calendario económico', '• **IPC/IPCA:** inflación. Decide los tipos.\n• **PIB:** crecimiento de la economía.\n• **Empleo:** en EE. UU., las nóminas no agrícolas del primer viernes de cada mes; en España, la EPA y el paro registrado.\n• **PMI:** encuesta mensual a gestores de compras. **Por encima de 50 = expansión.** Se adelanta al PIB.\n• **Decisiones de tipos** del BCE y la Fed.', 'El mercado no reacciona a si el dato es bueno o malo, sino a si es mejor o peor de lo esperado.', 'Pruébalo: el primer viernes del mes, mira en Mercado cómo reacciona el S&P 500.'),
     ], [
       match('Empareja cada dato con lo que mide.', [['IPC', 'La inflación'], ['PIB', 'El crecimiento de la economía'], ['PMI', 'La actividad de fábricas y servicios, por encuesta'], ['EPA', 'El empleo y el paro en España']], 'Los datos que más se miran en el calendario.'),
       timed(single('Rápido: un PMI de 46 indica…', ['Contracción', 'Expansión', 'Nada relevante'], 0, 'Por debajo de 50, la actividad se contrae.'), 10),
@@ -270,7 +270,7 @@ export default unit({
           { say: 'Clasifica cada pista', mood: 'HAPPY' },
         ],
       }),
-      key('Muchas no llegan', '• Sin beneficio, el PER no sirve. Se mira el **precio/ventas**: capitalización ÷ ventas.\n• Las pequeñas pueden multiplicarse… o desaparecer. Más de la mitad de las acciones de EE. UU. desde 1926 rindió menos que las letras del Tesoro.\n• Son de las que más sufren cuando suben los tipos.', 'En una empresa sin beneficios, la pregunta clave es si llegará a ganar dinero antes de quedarse sin caja.'),
+      key('Muchas no llegan', '• Sin beneficio, el PER no sirve. Se mira el **precio/ventas**: capitalización ÷ ventas.\n• Las pequeñas pueden multiplicarse… o desaparecer. Más de la mitad de las acciones de EE. UU. desde 1926 rindió menos que las letras del Tesoro.\n• Son de las que más sufren cuando suben los tipos.', 'En una empresa sin beneficios, la pregunta clave es si llegará a ganar dinero antes de quedarse sin caja.', 'Pruébalo: pregúntale a Lumi cómo se calculan los meses de caja de una empresa.'),
     ], [
       num('Una empresa tiene 90 M€ en caja y quema 7,5 M€ al mes. ¿Cuántos meses de caja tiene?', 12, 'meses', '90 ÷ 7,5 = 12 meses.'),
       num('Capitaliza 3.000 M€ y vende 200 M€ al año. ¿Cuál es su precio/ventas?', 15, 'veces', '3.000 ÷ 200 = 15: pagas 15 años de ventas, no de beneficios.'),
@@ -282,7 +282,11 @@ export default unit({
       tf('Las empresas de crecimiento sin beneficios suelen sufrir más cuando suben los tipos de interés.', true, 'Su valor depende de beneficios lejanos, que valen menos hoy con tipos más altos.'),
       timed(single('Rápido: 60 M€ de caja y 5 M€ quemados al mes. ¿Meses de caja?', ['6', '12', '30'], 1, '60 ÷ 5 = 12 meses.'), 12),
       multi('¿Qué conviene mirar en una empresa joven sin beneficios? Marca todo lo útil.', ['Crecimiento de ventas', 'Margen bruto', 'Meses de caja', 'Cuántas veces sale en redes sociales'], [0, 1, 2], 'Crecimiento, margen y caja dicen si el negocio puede llegar a ser rentable.'),
-    ], { source: '5.5', minutes: 6, retire: [4, 7, 8, 9] }),
+      buckets('Una empresa joven que aún pierde dinero: ¿buena o mala señal?', ['Buena señal', 'Mala señal'], [['Sus clientes repiten y pagan cada mes', 0], ['Sus pérdidas se reducen cada año', 0], ['Gasta en anuncios más de lo que vende', 1], ['Necesita una ampliación de capital cada año', 1], ['Le queda caja para dos años y medio', 0], ['Su margen bruto baja cada año', 1]], 'Lo bueno la acerca a ganar dinero antes de quedarse sin caja. Lo malo la aleja o la obliga a pedir dinero, y eso suele diluirte.'),
+      scenario('Tienes acciones de una empresa joven que pierde dinero. Anuncia una ampliación de capital: emitirá muchas acciones nuevas y tú no vas a comprar ninguna. ¿Qué pasa con tu parte de la empresa?', [['Se hace más pequeña: el pastel se reparte entre más acciones', 'Eso es la dilución: tienes las mismas acciones, pero de un total mayor.'], ['Crece: entra dinero nuevo en la empresa', 'Entra dinero en la empresa, pero tu trozo del pastel se encoge.'], ['No cambia: sigo teniendo las mismas acciones', 'Tienes las mismas, pero ahora hay más en total: tu porcentaje baja.']], 0, 'Si hay más acciones y tú no compras, tu porcentaje baja: es la dilución. En empresas que queman caja es de lo más habitual, por eso se miran los meses de caja.'),
+      single('Dos empresas inventadas sin beneficios venden 100 M€ al año. Una vale 300 M€ en bolsa; la otra, 3.000 M€. ¿Cuál está más cara según su precio/ventas?', ['La de 3.000 M€: pagas 30 veces sus ventas', 'La de 300 M€: es más pequeña', 'Las dos igual: venden lo mismo'], 0, 'Sin beneficios, se compara lo que vale con lo que vende: 3 veces las ventas frente a 30. La cara necesita crecer muchísimo para justificar su precio.'),
+      chat(['Esta empresa vende un 80 % más cada año.', '¡Pero pierde dinero! ¿Cómo la valoro sin PER?'], '¿Qué le contestas a Lumi?', [['Con sus ventas, su margen bruto y sus meses de caja', 'Claro: precio/ventas, margen y caja. El PER aquí no sirve.'], ['Con el PER, como todas', 'Sin beneficio, el PER sale negativo y no dice nada.'], ['Por sus seguidores en redes', 'La popularidad no paga nóminas.']], 0, 'Sin beneficio, el PER no sirve. Se mira cuánto pagas por sus ventas, si cada venta deja dinero (margen bruto) y cuánto aguanta con su caja.'),
+    ], { source: '5.5', minutes: 6, retire: [0, 1, 2, 3, 4, 7, 8, 9] }),
 
     lesson('u18l6', 'Analizar una empresa en 30 minutos', [
       story('Inditex en 30 minutos', [{ id: 'laura', name: 'Laura' }], [
@@ -321,7 +325,7 @@ export default unit({
           { say: 'Clasifica cada señal', mood: 'HAPPY' },
         ],
       }),
-      key('La lista de 10 preguntas', '1. ¿Entiendo cómo gana dinero?\n2. ¿Crece?\n3. ¿Es rentable (márgenes, ROE, ROIC)?\n4. ¿Genera caja?\n5. ¿Está sana (deuda)?\n6. ¿Tiene foso?\n7. ¿Quién la dirige?\n8. ¿Está cara?\n9. ¿Qué puede salir mal?\n10. ¿Qué me haría vender?', 'Si no puedes explicar en tres frases por qué compras una empresa, aún no estás listo para comprarla.'),
+      key('La lista de 10 preguntas', '1. ¿Entiendo cómo gana dinero?\n2. ¿Crece?\n3. ¿Es rentable (márgenes, ROE, ROIC)?\n4. ¿Genera caja?\n5. ¿Está sana (deuda)?\n6. ¿Tiene foso?\n7. ¿Quién la dirige?\n8. ¿Está cara?\n9. ¿Qué puede salir mal?\n10. ¿Qué me haría vender?', 'Si no puedes explicar en tres frases por qué compras una empresa, aún no estás listo para comprarla.', 'Pruébalo: elige una empresa en Mercado y repasa con Lumi las 10 preguntas.'),
     ], [
       order('Ordena los cinco primeros pasos de la lista.', ['¿Entiendo cómo gana dinero?', '¿Crece?', '¿Es rentable?', '¿Genera caja?', '¿Está sana?'], 'Primero entender el negocio; después, sus números.'),
       num('Con los datos de Inditex, ¿cuál fue su margen EBIT (EBIT ÷ ventas)? (un decimal)', 19.6, '%', '7.554 ÷ 38.632 ≈ 19,6 %: de cada 100 € vendidos, casi 20 € de beneficio operativo.', 2),
@@ -333,6 +337,8 @@ export default unit({
       scenario('Has aplicado la lista a una empresa: crece, gana mucho, genera caja, no tiene deuda y tiene una marca fuerte. Pero cotiza a un PER muy por encima de su media histórica. ¿Qué concluyes?', [['Compra segura: es un gran negocio', 'Gran negocio no es lo mismo que gran inversión: el precio importa.'], ['Es un gran negocio, pero tengo que decidir si el precio deja margen de seguridad', 'Eso: la pregunta 8 («¿está cara?») pesa tanto como las demás.'], ['Es una estafa', 'Nada lo indica: es un negocio sano a un precio exigente.']], 1, 'Un buen negocio necesita, además, un buen precio.'),
       timed(single('Rápido: ¿cuándo tiene sentido vender según tu análisis?', ['Cuando la tesis de inversión se rompe', 'Cuando el precio baja un 3 %', 'Cuando lo dice un foro'], 0, 'El precio puede bajar sin que el negocio empeore.'), 12),
       multi('¿Qué debe tener una buena tesis de inversión? Marca todo lo que corresponda.', ['Cómo gana dinero el negocio', 'Por qué el precio está por debajo del valor', 'Qué te haría vender', '«Porque está subiendo mucho»'], [0, 1, 2], 'Una tesis explica por qué el negocio vale más que su precio, y cuándo dejarías de creerlo.'),
-    ], { source: '5.9', minutes: 6, retire: [2, 3, 8] }),
+      scenario('Aplicas la lista a dos empresas inventadas del mismo sector, al mismo PER. A crece, genera caja y tiene más caja que deuda. B crece igual, pero su beneficio no llega a la caja y amplía capital cada año. ¿Cuál pasa mejor el examen?', [['A: crece, convierte el beneficio en caja y está sana', 'Eso: al mismo precio, la que genera caja y no te diluye es mejor compra.'], ['B: crece lo mismo', 'Crece en papel, pero no genera caja y te diluye cada año.'], ['Las dos igual: tienen el mismo PER', 'El PER es igual; la calidad del beneficio, no.']], 0, 'Al mismo precio, gana la que responde mejor a «¿genera caja?» y «¿está sana?». Las alarmas suelen estar en la caja y la deuda, no en el titular del beneficio.'),
+      chat(['Ya he hecho mi análisis de Inditex: es un negocio buenísimo.', '¿Compro ya?'], '¿Qué le contestas a Lumi?', [['Falta la pregunta 8: ¿el precio deja margen de seguridad?', 'Cierto: un gran negocio comprado caro puede ser mala inversión.'], ['Sí: si es buen negocio, el precio da igual', 'Recuerda a Microsoft en 2000: gran negocio, precio carísimo.'], ['No: los análisis no sirven para nada', 'Sirven para decidir con criterio, no para adivinar el precio.']], 0, 'La lista no termina en «es buen negocio»: también hay que decidir si el precio es razonable y qué te haría vender.'),
+    ], { source: '5.9', minutes: 6, retire: [1, 2, 3, 6, 8] }),
   ],
 })

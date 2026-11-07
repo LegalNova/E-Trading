@@ -46,7 +46,7 @@
      "title": "The investor gap",
      "body": "Morningstar, 10 years to 2025: US funds returned **9.9 %** a year; their investors' money, flowing in and out, returned **8.7 %**: 1.2 points less a year.\n\nIn the most volatile funds, the gap was −2.1 points; in the calm ones, −0.4.",
      "key": "The product may be good; the problem is behaviour: buying after rises and selling after falls.",
-     "tip": "The biggest risk in your portfolio is usually sitting in front of the screen."
+     "tip": "Try it: ask Lumi, in My biases mode, to review your last trade."
     }
    ]
   },
@@ -90,7 +90,7 @@
      "title": "How to protect yourself",
      "body": "When we're losing, we get **riskier** («I'll double up to win it back»); when we're winning, **more cautious**.\n\nSet your stop before you get in, while you're calm. And ask yourself the right question: not «how much have I lost?», but **«if I didn't own it, would I buy it today at this price?»**.",
      "key": "Losing hurts twice as much as winning feels good: that's why we cling on to losers.",
-     "tip": "The market doesn't care what you paid. Decide based on what you know today."
+     "tip": "Try it: look at the reddest position in your Portfolio: would you buy it today?"
     }
    ]
   },
@@ -134,7 +134,7 @@
      "title": "How to protect yourself",
      "body": "Stop and exit plan **before** you get in. If the trade goes your way, the plan decides the exit (for example, half at 2R and the rest with a trailing stop), not the fear of giving back what you've made.",
      "key": "We sell winners for a quick buzz and hold losers so we don't have to admit a mistake.",
-     "tip": "Cut your losses and let your profits run. Your brain will ask you to do the opposite."
+     "tip": "Try it: on your next buy, set the target twice as far away as the stop."
     }
    ]
   },
@@ -174,7 +174,7 @@
      "title": "Luck or skill",
      "body": "A few early wins are the most dangerous thing for a beginner: they **mistake luck for skill**, raise their risk and break their own rules.\n\nAmong lots of people, there will always be some «geniuses» by pure luck.",
      "key": "Getting it right two or three times doesn't make you an expert: with few trades, luck is in charge.",
-     "tip": "Track your results in your journal and compare them with an index. Your memory always says you were right."
+     "tip": "Try it: compare your Portfolio with the S&P 500 ETF since your first buy."
     }
    ]
   },
@@ -227,7 +227,7 @@
      "title": "Your takeaway",
      "body": "Value things with today's data (earnings, debt, business), not with the price you paid or the price it used to be. And deliberately look for the **opposite view**.",
      "key": "Falling a lot doesn't make something cheap. People agreeing with you doesn't make you right.",
-     "tip": "If you only read people who agree with you, you're not analysing: you're cheering yourself on."
+     "tip": "Try it: ask Lumi for three reasons against your next buy."
     }
    ]
   },
@@ -263,6 +263,12 @@
       "Just **4 %** of them accounted for the market's entire net gain.",
       "And **more than half** returned less than Treasury bills."
      ]
+    },
+    {
+     "title": "What you take away",
+     "body": "**Recency** makes whatever just happened weigh too much: after a rise, «it always goes up»; after a fall, «it can only go down». **Survivorship** only shows you the ones who won.\n\nThe antidote: decades of data and the whole market, not the cases that show up on social media.",
+     "key": "Neither last year nor the visible winners tell the whole story.",
+     "tip": "Try it: in Market, open the S&P 500 ETF and look for its past falls."
     }
    ]
   },
@@ -280,12 +286,6 @@
     "About 10 points"
    ],
    "explanation": "9.9 % for the funds versus 8.7 % for their investors, from buying and selling at the wrong time."
-  },
-  "u27l1-4": {
-   "prompt": "Picture €10,000 over 10 years at 9.9 % a year (the fund) or at 8.7 % (its investors). How big is the difference at the end? (round to the nearest euro)",
-   "options": [],
-   "explanation": "10,000 × 1.099¹⁰ ≈ €25,703 versus 10,000 × 1.087¹⁰ ≈ €23,030: about €2,673 lost purely to behaviour.",
-   "unit": "€"
   },
   "u27l1-5": {
    "prompt": "One Monday you read: «Stock markets plunge 4 %». You have an index fund for 20 years from now and your heart is racing. What do you do?",
@@ -434,12 +434,6 @@
    "options": [],
    "explanation": "Setting the stop before you get in stops loss aversion from convincing you to hold on «until it comes back» if the price falls."
   },
-  "u27l3-6": {
-   "prompt": "A system is right 60 % of the time, but out of fear you close winners at +0.5R and let losers run to −2R. What's your expectancy?",
-   "options": [],
-   "explanation": "0.6 × 0.5 − 0.4 × 2 = 0.3 − 0.8 = −0.5R. The disposition effect turns a good hit rate into losses.",
-   "unit": "R"
-  },
   "u27l3-7": {
    "prompt": "Disposition effect or following the plan?",
    "options": [
@@ -483,12 +477,6 @@
     "I'll sell it now, before it drops."
    ]
   },
-  "u27l5-5": {
-   "prompt": "If you guess at random (50 %), what's the probability of getting 4 out of 4 right?",
-   "options": [],
-   "explanation": "0.5⁴ = 0.0625 → 6.25 %. If 1,000 people try, about 62 will get them all right without knowing anything.",
-   "unit": "%"
-  },
   "u27l5-7": {
    "prompt": "Quick: according to Barber and Odean (2001), how much more did men trade than women?",
    "options": [
@@ -529,6 +517,39 @@
     "Tracking your results in a journal"
    ],
    "explanation": "Raising your risk after a win is exactly what overconfidence does."
+  },
+  "u27l5-11": {
+   "prompt": "What do you say to Lumi?",
+   "options": [
+    "Then raise the risk on your next buys",
+    "With four tries, luck rules: you need many more recorded trades",
+    "Yes: four out of four is no coincidence"
+   ],
+   "explanation": "With few tries, luck looks a lot like talent: only a large, measured sample tells them apart. The temptation is to believe a four-round scoreboard.",
+   "feedback": [
+    "Raising the risk after a short streak is textbook overconfidence.",
+    "OK: I'll note it down and keep measuring. We'll see what my score says after many more.",
+    "By chance, getting all four right happens more than once in twenty. It may well be."
+   ],
+   "lines": [
+    "I got all four rounds of «up or down?» right.",
+    "I think I have a gift for this."
+   ]
+  },
+  "u27l5-12": {
+   "prompt": "Is it overconfidence or prudence?",
+   "options": [
+    "Making 40 trades a month because «I know the market by heart»",
+    "Trusting your memory to know how you're doing",
+    "Comparing your result with an index over several years",
+    "Raising the risk after three wins in a row",
+    "Keeping the same risk after a good streak"
+   ],
+   "explanation": "Prudence measures and sticks to the rules; overconfidence changes them as soon as a few wins come along. And memory keeps the wins and forgets the mistakes.",
+   "right": [
+    "Overconfidence",
+    "Prudence"
+   ]
   },
   "u27l6-2": {
    "prompt": "Match each bias with its antidote.",
@@ -578,12 +599,6 @@
     "wrong"
    ],
    "explanation": "It's the simplest antidote to confirmation bias."
-  },
-  "u27l6-9": {
-   "prompt": "A share falls from €100 to €60. If you anchor on the €100 and wait for it to come back, how much does it need to rise? (round to one decimal place)",
-   "options": [],
-   "explanation": "100 ÷ 60 − 1 ≈ 0.667 → +66.7 %. Nothing guarantees it will.",
-   "unit": "%"
   },
   "u27l6-10": {
    "prompt": "What do you reply to Lumi?",

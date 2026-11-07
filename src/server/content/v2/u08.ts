@@ -7,6 +7,16 @@ export default unit({
   lessons: [
 
     lesson('u8l2', 'Derechos del accionista', [
+      story('La junta', [{ id: 'pablo', name: 'Pablo' }], [
+        say('pablo', 'Tengo 50 acciones y me ha llegado la convocatoria de la junta.'),
+        say('pablo', 'Se vota subir mucho el sueldo del consejero delegado. Total, mi voto no cuenta…'),
+        choose('¿Qué le dices a Pablo?', [
+          opt('Que lea la propuesta y vote o delegue a distancia', 'good', say('lumi', 'Eso. Es su derecho como dueño, y las juntas suman votos grandes y pequeños.')),
+          opt('Que no haga nada: con 50 acciones da igual', 'bad', say('lumi', 'Su voto pesa poco, pero cuenta. Si no vota, otros deciden por él.')),
+          opt('Que venda todo en protesta', 'ok', say('lumi', 'Puede, pero renuncia a su parte sin haber usado su voz.')),
+        ]),
+        say('lumi', 'Por regla general, **una acción = un voto**. Los grandes fondos sí mueven votaciones.'),
+      ]),
       play({
         title: 'Tus derechos',
         intro: 'Ser accionista te da tres tipos de derechos, en proporción a tus acciones.',
@@ -30,17 +40,7 @@ export default unit({
           { say: 'Toca cada derecho: ¿de qué tipo es?', mood: 'HAPPY' },
         ],
       }),
-      story('La junta', [{ id: 'pablo', name: 'Pablo' }], [
-        say('pablo', 'Tengo 50 acciones y me ha llegado la convocatoria de la junta.'),
-        say('pablo', 'Se vota subir mucho el sueldo del consejero delegado. Total, mi voto no cuenta…'),
-        choose('¿Qué le dices a Pablo?', [
-          opt('Que lea la propuesta y vote o delegue a distancia', 'good', say('lumi', 'Eso. Es su derecho como dueño, y las juntas suman votos grandes y pequeños.')),
-          opt('Que no haga nada: con 50 acciones da igual', 'bad', say('lumi', 'Su voto pesa poco, pero cuenta. Si no vota, otros deciden por él.')),
-          opt('Que venda todo en protesta', 'ok', say('lumi', 'Puede, pero renuncia a su parte sin haber usado su voz.')),
-        ]),
-        say('lumi', 'Por regla general, **una acción = un voto**. Los grandes fondos sí mueven votaciones.'),
-      ]),
-      key('Información para todos a la vez', 'Las cotizadas deben publicar sus cuentas y comunicar a la **CNMV** cualquier **información privilegiada** (resultados, compras, problemas) para que todos los inversores la conozcan a la vez.\n\nAlgunas empresas tienen acciones **sin voto** o dan voto doble a quien las mantiene años.', 'Ser accionista te da derechos económicos, políticos y de información, en proporción a tus acciones.', 'Las cuentas de cualquier cotizada española están gratis en la web de la CNMV.'),
+      key('Información para todos a la vez', 'Las cotizadas deben publicar sus cuentas y comunicar a la **CNMV** cualquier **información privilegiada** (resultados, compras, problemas) para que todos los inversores la conozcan a la vez. Las cuentas de cualquier cotizada española están gratis en la web de la CNMV.\n\nAlgunas empresas tienen acciones **sin voto** o dan voto doble a quien las mantiene años.', 'Ser accionista te da derechos económicos, políticos y de información, en proporción a tus acciones.', 'Pruébalo: en Mercado, añade a Favoritos tres empresas de las que te gustaría ser dueño.'),
     ], [
       multi('¿Qué derechos te da ser accionista? Marca todos.', ['Votar en la junta general', 'Cobrar dividendos si se reparten', 'Recibir las cuentas de la empresa', 'Que te devuelvan el dinero en una fecha fija'], [0, 1, 2], 'Que te devuelvan el dinero en una fecha fija es propio de un bono: la acción no tiene vencimiento.'),
       match('Empareja cada derecho con su tipo.', [['Cobrar el dividendo', 'Económico'], ['Votar al consejo de administración', 'Político'], ['Recibir las cuentas anuales', 'De información'], ['Comprar antes que nadie en una ampliación', 'Suscripción preferente']], 'Económicos, políticos y de información, más la suscripción preferente para no perder tu porcentaje.'),
@@ -52,9 +52,21 @@ export default unit({
       single('¿Qué es el derecho de suscripción preferente?', ['Cobrar el dividendo antes que los demás accionistas', 'Poder comprar acciones nuevas antes que otros en una ampliación, para no perder tu porcentaje', 'Votar dos veces en la junta'], 1, 'Si la empresa emite acciones nuevas, los accionistas actuales pueden comprar primero en proporción a lo que tienen.'),
       multi('¿Qué puede decidir la junta general de accionistas? Marca todo.', ['Aprobar las cuentas anuales', 'Nombrar a los consejeros', 'Aprobar el reparto de dividendos', 'Fijar el precio de la acción en bolsa'], [0, 1, 2], 'El precio lo fija el mercado con la oferta y la demanda, no la junta.'),
       timed(tf('Una acción no tiene fecha de vencimiento.', true, 'A diferencia de un bono, la acción existe mientras exista la empresa (o hasta que la vendas).'), 10),
-    ], { source: '2.1', minutes: 6, retire: [0, 4, 5, 9] }),
+      scenario('La empresa de la que Sara tiene acciones anuncia una ampliación de capital: emitirá acciones nuevas para conseguir dinero. Sara no quiere perder su porcentaje. ¿Qué hace?', [['Usa su derecho de suscripción preferente y compra las acciones nuevas que le tocan', 'Bien: compra en proporción a lo que ya tiene y su porcentaje no cambia.'], ['No hace nada: sus acciones siguen siendo suyas', 'Siguen siendo suyas, pero habrá más acciones en total: su porcentaje baja. Es la dilución.'], ['Vota en contra en la junta y se olvida', 'Votar es su derecho, pero si la ampliación sale aprobada, se diluye igual.']], 0, 'La suscripción preferente existe para esto: comprar primero lo que te toca y no perder tu parte. Quedarse quieto parece neutro, pero con más acciones en circulación tu porcentaje baja.'),
+    ], { source: '2.1', minutes: 6, retire: [0, 3, 4, 5, 9] }),
 
     lesson('u8l3', 'Dividendos: cómo y cuándo se cobran', [
+      story('El plan maestro', [{ id: 'leo', name: 'Leo' }], [
+        say('leo', 'Plan: compro a 20 € justo antes del dividendo, cobro 0,50 € y vendo.'),
+        say('leo', '¡Dinero gratis!'),
+        choose('¿Qué falla en el plan de Leo?', [
+          opt('Nada: es dinero gratis', 'bad', say('lumi', 'El día que se descuenta el dividendo, la acción abre en torno a 19,50 €.')),
+          opt('El precio baja más o menos lo que cobra', 'good', say('lumi', 'Eso. Tiene 0,50 € en efectivo y 0,50 € menos en acciones.')),
+          opt('Que tiene que esperar a la fecha de pago', 'ok', say('lumi', 'Cobrará ese día, sí. Pero el precio ya habrá bajado unos 0,50 €.')),
+        ]),
+        say('leo', 'Bueno, al menos cobro el dividendo, ¿no?'),
+        say('lumi', 'Y tributa: en España el pagador ya **retiene un 19 %**.'),
+      ]),
       play({
         title: '¿Cobras el dividendo?',
         intro: 'Desde la **fecha ex-dividendo**, la acción cotiza sin el derecho a ese dividendo. Para cobrarlo, tienes que tenerla **antes**.',
@@ -77,18 +89,7 @@ export default unit({
           { say: '¿Lo cobras o no? Toca cada caso', mood: 'HAPPY' },
         ],
       }),
-      story('El plan maestro', [{ id: 'leo', name: 'Leo' }], [
-        say('leo', 'Plan: compro a 20 € la víspera del ex-dividendo, cobro 0,50 € y vendo.'),
-        say('leo', '¡Dinero gratis!'),
-        choose('¿Qué falla en el plan de Leo?', [
-          opt('Nada: es dinero gratis', 'bad', say('lumi', 'El día ex-dividendo la acción abre en torno a 19,50 €.')),
-          opt('El precio baja más o menos lo que cobra', 'good', say('lumi', 'Eso. Tiene 0,50 € en efectivo y 0,50 € menos en acciones.')),
-          opt('Que tiene que esperar a la fecha de pago', 'ok', say('lumi', 'Cobrará ese día, sí. Pero el precio ya habrá bajado unos 0,50 €.')),
-        ]),
-        say('leo', 'Bueno, al menos cobro el dividendo, ¿no?'),
-        say('lumi', 'Y tributa: en España el pagador ya **retiene un 19 %**.'),
-      ]),
-      key('Rentabilidad por dividendo', '**Rentabilidad por dividendo = dividendo anual ÷ precio.** Una acción de 30 € que paga 1,20 € al año rinde un 4 %.\n\nOjo: un dividendo altísimo a veces avisa de que el precio ha caído porque se espera un recorte.', 'El dividendo no es dinero gratis: sale del valor de la empresa.', 'Un dividendo altísimo a veces es una alarma, no un regalo.'),
+      key('Rentabilidad por dividendo', '**Rentabilidad por dividendo = dividendo anual ÷ precio.** Una acción de 30 € que paga 1,20 € al año rinde un 4 %.\n\nOjo: un dividendo altísimo a veces avisa de que el precio ha caído porque se espera un recorte.', 'El dividendo no es dinero gratis: sale del valor de la empresa.', 'Pruébalo: en Mercado, busca Iberdrola, que reparte dividendo cada año, y añádela a Favoritos.'),
     ], [
       order('Ordena las fechas de un dividendo.', ['Anuncio', 'Fecha ex-dividendo', 'Fecha de registro', 'Fecha de pago'], 'Primero se anuncia; desde el ex-dividendo la acción cotiza sin el derecho; después se mira quién es accionista (registro) y por último se paga.'),
       single('¿Qué día tienes que tener la acción, como tarde, para cobrar el dividendo?', ['El mismo día de pago', 'El día anterior a la fecha ex-dividendo', 'La fecha de registro, aunque compres ese mismo día'], 1, 'Si compras el día ex-dividendo o después, la acción ya cotiza sin ese dividendo.'),
@@ -100,7 +101,7 @@ export default unit({
       scenario('Bruno ve una acción con un dividendo del 14 % y quiere meter ahí todos sus ahorros. ¿Qué haces si estás en su lugar?', [['Compro ya, un 14 % es un chollo', 'Si el mercado espera un recorte, el dividendo puede bajar y el precio caer todavía más: el 14 % era una ilusión.'], ['Miro por qué ha caído el precio y si el beneficio cubre el dividendo', 'Bien: un dividendo así suele ser una alarma. Si los beneficios no lo cubren, es probable que se recorte.'], ['Compro justo antes de la fecha ex-dividendo, cobro y vendo', 'El precio baja más o menos el dividendo el día ex-dividendo y encima pagas impuestos: no hay dinero gratis.']], 1, 'La rentabilidad por dividendo sube cuando cae el precio; a veces anticipa problemas en la empresa.'),
       timed(fill('Rentabilidad por dividendo = dividendo anual ÷ ____.', 'precio', ['beneficio', 'número de acciones', 'capitalización'], 'Por eso, si el precio cae, la rentabilidad por dividendo «sube» aunque la empresa no pague más.'), 15),
       single('En España, ¿qué retención se aplica normalmente a los dividendos?', ['19 %', '0 %', '50 %'], 0, 'El pagador retiene un 19 % a cuenta del IRPF. Luego van a la base del ahorro, que tributa del 19 % al 30 %.'),
-    ], { source: '4.7', minutes: 6, retire: [1, 2, 5] }),
+    ], { source: '4.7', minutes: 6, retire: [1, 2, 3, 4, 5] }),
 
     lesson('u8l4', 'Splits, contrasplits y ampliaciones', [
       story('«Ha caído un 90 %»', [{ id: 'marta', name: 'Marta' }], [
@@ -137,7 +138,7 @@ export default unit({
           { say: 'Toca cada caso: ¿split, contrasplit o ampliación?', mood: 'HAPPY' },
         ],
       }),
-      key('Lo que cambia y lo que no', 'En una ampliación, el **derecho de suscripción preferente** te deja comprar antes que nadie las acciones nuevas que te tocan: así mantienes tu porcentaje.\n\nAlgunas empresas españolas pagan el dividendo en acciones nuevas si quieres: el *scrip* o dividendo flexible.', 'Split y contrasplit no cambian lo que tienes; una ampliación a la que no acudes, sí: te diluye.', 'Si un titular dice «la acción se desploma un 75 %», mira antes si ha habido un split.'),
+      key('Lo que cambia y lo que no', 'En una ampliación, el **derecho de suscripción preferente** te deja comprar antes que nadie las acciones nuevas que te tocan: así mantienes tu porcentaje.\n\nAlgunas empresas españolas pagan el dividendo en acciones nuevas si quieres: el *scrip* o dividendo flexible.\n\nSi un titular dice «la acción se desploma un 75 %», mira antes si ha habido un split.', 'Split y contrasplit no cambian lo que tienes; una ampliación a la que no acudes, sí: te diluye.', 'Pruébalo: en Mercado, busca NVIDIA, que hizo un split 10×1 en 2024, y mira su gráfico con velas mensuales.'),
     ], [
       num('Tienes 10 acciones a 400 € y la empresa hace un split 4×1. ¿Cuántas acciones tienes después?', 40, 'acciones', '10 × 4 = 40 acciones a 100 € cada una: sigues teniendo 4.000 €.'),
       num('Tienes 1.000 acciones a 0,20 € y hay un contrasplit 1×10. ¿A qué precio cotizará cada acción nueva, si nada más cambia?', 2, '€', '1.000 ÷ 10 = 100 acciones; 200 € ÷ 100 = 2 € por acción.'),
@@ -149,9 +150,21 @@ export default unit({
       tf('Un contrasplit suele llegar después de buenas noticias para la empresa.', false, 'No cambia el valor, pero suele hacerlo quien ha caído mucho y cotiza a céntimos.'),
       timed(single('Rápido: split 2×1 de una acción de 80 €. ¿Nuevo precio?', ['40 €', '160 €', '80 €'], 0, '80 ÷ 2 = 40 €, y tienes el doble de acciones.'), 12),
       scenario('Marta ve en su app que una acción suya «ha caído un 90 % hoy». Tenía 5 acciones y ahora le aparecen 50. ¿Qué ha pasado?', [['Ha perdido el 90 % de su dinero', 'Sería así con las mismas acciones, pero ahora tiene diez veces más.'], ['Ha habido un split 10×1 y su dinero vale lo mismo', 'Exacto: de 5 a 50 acciones a la décima parte del precio. El valor total no cambia.'], ['La empresa le ha regalado 45 acciones', 'Nadie regala nada: la pizza es la misma, cortada en más trozos.']], 1, 'Antes de asustarte por una caída enorme, comprueba si ha habido un split.'),
-    ], { minutes: 6, retire: [0, 2, 7, 9] }),
+      scenario('NVIDIA anuncia un split 10×1 y un amigo te dice: «Ahora que cada acción cuesta diez veces menos, es el momento de comprar». ¿Qué le contestas?', [['Que tiene razón: ahora está mucho más barata', 'Cada acción cuesta menos, pero la empresa vale lo mismo: no está más barata.'], ['Que el split no cambia lo que vale la empresa: hay que decidir por el negocio y su precio total', 'Bien: diez trozos más pequeños de la misma pizza siguen siendo la misma pizza.'], ['Que venda las que tenga antes del split para no perder', 'No hay nada que perder: tras el split, su dinero vale lo mismo.']], 1, 'Un split cambia el precio de cada acción, no el valor de la empresa. Lo tentador es ver una ganga en el precio por acción más bajo, pero lo que pagas por todo el negocio no ha cambiado.'),
+      chat(['Mi empresa va a ampliar capital con acciones nuevas.', 'Yo no pienso comprar ninguna. ¿Me afecta en algo?'], '¿Qué le contestas?', [['Sí: si no acudes, tu porcentaje de la empresa baja', 'Eso. Hay más acciones y tú tienes las mismas: te diluyes.'], ['No: tus acciones siguen siendo las mismas', 'Las mismas acciones, pero de un pastel con más trozos: tu parte baja.'], ['Sí: te quitan parte de tus acciones', 'Nadie te quita nada: lo que baja es tu porcentaje.']], 0, 'En una ampliación salen acciones nuevas: si no compras las que te tocan, tu porcentaje baja (dilución). Lo tentador es pensar que no pasa nada porque conservas tus acciones, pero el total ha crecido.'),
+    ], { minutes: 6, retire: [0, 1, 2, 3, 7, 9] }),
 
     lesson('u8l5', 'Grandes, medianas y pequeñas', [
+      story('La micro cap del foro', [{ id: 'ana', name: 'Ana' }], [
+        say('ana', 'En un foro dicen que esta micro cap, una empresa diminuta, puede multiplicarse por 10.'),
+        say('ana', 'Voy a meter todo mi ahorro. ¡Me lo juego todo a esta!'),
+        choose('¿Qué le dices a Ana?', [
+          opt('Que las pequeñas siempre suben más', 'bad', say('lumi', 'A veces suben más, pero muchas se quedan por el camino o quiebran.')),
+          opt('Que puede perderlo casi todo: mejor no jugárselo todo a una', 'good', say('lumi', 'Eso. El potencial existe, pero el riesgo de una sola pequeña es enorme.')),
+          opt('Que invierta solo la mitad', 'ok', say('lumi', 'Sigue siendo mucho en una sola empresa pequeña y poco líquida.')),
+        ]),
+        say('lumi', 'Ojo: los foros también son el sitio favorito de quien quiere inflar una acción.'),
+      ]),
       play({
         title: '¿Grande o pequeña?',
         intro: '**Capitalización = precio × número de acciones**: lo que vale la empresa en bolsa. Según su tamaño, cambia su perfil.',
@@ -176,17 +189,7 @@ export default unit({
           { say: 'Toca cada rasgo: ¿grande o pequeña?', mood: 'HAPPY' },
         ],
       }),
-      story('La micro cap del foro', [{ id: 'ana', name: 'Ana' }], [
-        say('ana', 'En un foro dicen que esta micro cap puede multiplicarse por 10.'),
-        say('ana', 'Voy a meter todo mi ahorro. ¡Me lo juego todo a esta!'),
-        choose('¿Qué le dices a Ana?', [
-          opt('Que las pequeñas siempre suben más', 'bad', say('lumi', 'A veces suben más, pero muchas se quedan por el camino o quiebran.')),
-          opt('Que puede perderlo casi todo: mejor no jugárselo todo a una', 'good', say('lumi', 'Eso. El potencial existe, pero el riesgo de una sola pequeña es enorme.')),
-          opt('Que invierta solo la mitad', 'ok', say('lumi', 'Sigue siendo mucho en una sola empresa pequeña y poco líquida.')),
-        ]),
-        say('lumi', 'Ojo: los foros también son el sitio favorito de quien quiere inflar una acción.'),
-      ]),
-      key('Tamaños e índices', 'Una convención habitual (en dólares):\n• **Grandes** (*large caps*): más de 10.000 millones.\n• **Medianas** (*mid caps*): de 2.000 a 10.000 millones.\n• **Pequeñas** (*small caps*): de 300 a 2.000 millones.\n• Por debajo, *micro caps*.\n\nEn España están el IBEX Medium Cap y el IBEX Small Cap. Un índice mundial pondera por capitalización: pesan más las gigantes.', 'Más pequeña = más potencial, pero también más volatilidad y más riesgo de quiebra.', 'Que una empresa sea pequeña no la hace barata ni buena: solo más arriesgada.'),
+      key('Tamaños e índices', 'Una convención habitual (en dólares):\n• **Grandes** (*large caps*): más de 10.000 millones.\n• **Medianas** (*mid caps*): de 2.000 a 10.000 millones.\n• **Pequeñas** (*small caps*): de 300 a 2.000 millones.\n• Por debajo, *micro caps*.\n\nEn España están el IBEX Medium Cap y el IBEX Small Cap. Un índice mundial pondera por capitalización: pesan más las gigantes.', 'Más pequeña = más potencial, pero también más volatilidad y más riesgo de quiebra.', 'Pruébalo: en Mercado, compara el gráfico de SPY, de grandes empresas, con el de IWM, de pequeñas.'),
     ], [
       num('Una empresa cotiza a 50 € y tiene 200 millones de acciones. ¿Cuál es su capitalización?', 10000, 'millones de €', '50 × 200 millones = 10.000 millones de euros.'),
       match('Empareja cada tamaño con su capitalización aproximada (convención en dólares).', [['Grande', 'Más de 10.000 millones'], ['Mediana', 'De 2.000 a 10.000 millones'], ['Pequeña', 'De 300 a 2.000 millones'], ['Micro', 'Menos de 300 millones']], 'Son rangos orientativos que usan índices y gestoras; no hay una frontera oficial única.'),
@@ -198,9 +201,21 @@ export default unit({
       timed(single('Rápido: ¿cómo se calcula la capitalización?', ['Precio × número de acciones', 'Beneficio × precio', 'Ventas ÷ número de acciones'], 0, 'Es el valor de la empresa en bolsa.'), 12),
       tf('Las acciones pequeñas suelen tener spreads (horquillas) más amplios que las grandes.', true, 'Hay menos compradores y vendedores, así que comprar y vender cuesta más.'),
       chat(['Las pequeñas suben más que las grandes, ¿no?', 'Pues me paso todo a small caps 🚀'], '¿Qué le dices?', [['Sí, a largo plazo siempre ganan', 'No siempre: ha habido periodos de muchos años en que las grandes les han ganado con claridad.'], ['Pueden rendir más, pero con más riesgo, y no es una regla fija', '¡Eso! Más potencial, más sustos y años en que van peor.'], ['No, las pequeñas nunca suben', 'Algunas pequeñas se convierten en gigantes; lo difícil es saber cuáles de antemano.']], 1, 'El tamaño cambia el perfil de riesgo, pero no garantiza un resultado.'),
-    ], { source: '2.6', minutes: 6, retire: [4, 6, 8] }),
+      scenario('Quieres invertir en pequeñas empresas de EE. UU., pero sin jugártelo todo a una. ¿Qué haces?', [['Compro un ETF del Russell 2000, que reúne unas 2.000 pequeñas', 'Bien: tienes el potencial de las pequeñas, repartido entre muchas. Si una quiebra, apenas lo notas.'], ['Compro la pequeña que más ha subido este mes', 'Lo que más ha subido no es lo que más subirá, y sigues con todo en una sola empresa.'], ['Compro la micro cap que recomiendan en un foro', 'Una sola empresa diminuta y poco líquida: si sale mal, lo pierdes casi todo.']], 0, 'Un ETF de pequeñas te da su potencial sin depender de una sola. Elegir una suelta por lo que ha subido o por un foro es tentador, pero concentra todo el riesgo de quiebra.'),
+    ], { source: '2.6', minutes: 6, retire: [0, 4, 5, 6, 8] }),
 
     lesson('u8l6', 'Crecimiento y valor', [
+      story('PER de 70 o PER de 9', [{ id: 'laura', name: 'Laura' }], [
+        say('laura', 'Dudo entre una tecnológica con PER de 70 que crece un 40 % al año…'),
+        say('laura', '…y una aseguradora con PER de 9 que crece un 3 %. ¿Cuál es mejor?'),
+        choose('¿Qué razonamiento es el bueno?', [
+          opt('La de PER 70: crece mucho más', 'bad', say('lumi', 'Si ese crecimiento ya está en el precio, cualquier decepción la hunde.')),
+          opt('Depende de si el precio refleja bien su futuro', 'good', say('lumi', 'Eso. Importa lo que pagas por lo que recibes.')),
+          opt('La de PER 9: es barata', 'ok', say('lumi', 'Puede ser barata por algo: un negocio estancado también decepciona.')),
+        ]),
+        say('lumi', 'Lo barato a veces es barato por algo: es la **trampa de valor**.'),
+        say('lumi', 'Una gran empresa no siempre es una gran inversión: depende del precio.'),
+      ]),
       play({
         title: '¿Cuántos años de beneficios pagas?',
         intro: 'Esta acción cuesta **100 €** y gana **2 € por acción** al año. El **PER** es el precio ÷ el beneficio por acción.',
@@ -235,24 +250,13 @@ export default unit({
           ],
         },
         goal: { text: 'Clasifica las seis empresas.', when: [when('done', '==', 6)] },
-        insight: 'Crecimiento: **PER alto**, poco dividendo y mucha reinversión. Valor: **PER bajo**, negocio maduro y dividendo. Hay épocas buenas para cada estilo: ninguno gana siempre.',
+        insight: 'Crecimiento: **PER alto**, poco dividendo y mucha reinversión; valor: **PER bajo**, negocio maduro y dividendo, y ninguno gana siempre. Pruébalo: en Mercado, compara el gráfico de NVIDIA con el de Coca-Cola.',
         lumi: [
           { when: when('wrong', '>=', 2), say: 'Pista: ¿reinvierte para crecer o reparte lo que gana?', mood: 'THINKING' },
           { when: when('done', '>=', 4), say: 'Fíjate en el PER: alto en crecimiento, bajo en valor.', mood: 'HAPPY' },
           { say: 'Toca cada empresa: ¿crecimiento o valor?', mood: 'HAPPY' },
         ],
       }),
-      story('PER de 70 o PER de 9', [{ id: 'laura', name: 'Laura' }], [
-        say('laura', 'Dudo entre una tecnológica con PER de 70 que crece un 40 % al año…'),
-        say('laura', '…y una aseguradora con PER de 9 que crece un 3 %. ¿Cuál es mejor?'),
-        choose('¿Qué razonamiento es el bueno?', [
-          opt('La de PER 70: crece mucho más', 'bad', say('lumi', 'Si ese crecimiento ya está en el precio, cualquier decepción la hunde.')),
-          opt('Depende de si el precio refleja bien su futuro', 'good', say('lumi', 'Eso. Importa lo que pagas por lo que recibes.')),
-          opt('La de PER 9: es barata', 'ok', say('lumi', 'Puede ser barata por algo: un negocio estancado también decepciona.')),
-        ]),
-        say('lumi', 'Lo barato a veces es barato por algo: es la **trampa de valor**.'),
-        say('lumi', 'Una gran empresa no siempre es una gran inversión: depende del precio.'),
-      ]),
     ], [
       match('Empareja cada concepto con su significado.', [['Crecimiento', 'Pagas hoy por beneficios futuros'], ['Valor', 'Compras beneficios actuales con descuento'], ['Trampa de valor', 'Barata porque el negocio va a peor'], ['PER', 'Precio ÷ beneficio por acción']], 'Dos estilos, una herramienta para medirlos y una trampa que conviene conocer.'),
       buckets('¿Crecimiento o valor?', ['Crecimiento', 'Valor'], [['Tecnológica joven que duplica ventas y no paga dividendo', 0], ['Eléctrica madura con PER de 11 y dividendo estable', 1], ['PER de 60 por las expectativas de un producto nuevo', 0], ['Banco que cotiza por debajo de su valor contable', 1], ['Reinvierte todo el beneficio para expandirse', 0]], 'Crecimiento: PER alto, poco dividendo y mucha reinversión. Valor: PER bajo, negocio maduro y dividendo.'),
@@ -268,6 +272,7 @@ export default unit({
 
     lesson('u8l7', 'Recompras de acciones', [
       story('Menos acciones, más beneficio', [{ id: 'leo', name: 'Leo' }], [
+        say('leo', 'Tengo acciones de una empresa que va a recomprar las suyas. ¿Eso a mí qué me da?'),
         note('Una empresa gana 500 millones y tiene 100 millones de acciones: **5 € de beneficio por acción** (BPA).'),
         say('leo', 'Ha anunciado que recompra y amortiza 10 millones de sus propias acciones.'),
         choose('¿Qué pasa con el beneficio por acción?', [
@@ -301,7 +306,7 @@ export default unit({
           { say: 'Toca cada tarjeta: ¿dividendo o recompra?', mood: 'HAPPY' },
         ],
       }),
-      key('A qué precio recompra', 'Apple lleva desde 2012 recomprando acciones por cientos de miles de millones de dólares.\n\nPero recomprar **caro** destruye valor, y hacerlo **con deuda** añade riesgo.', 'Una recompra reparte el pastel entre menos dueños.', 'Pregunta siempre a qué precio recompra la empresa: comprar caro no es devolver valor.'),
+      key('A qué precio recompra', 'Apple lleva desde 2012 recomprando acciones por cientos de miles de millones de dólares.\n\nPero recomprar **caro** destruye valor, y hacerlo **con deuda** añade riesgo.', 'Una recompra reparte el pastel entre menos dueños.', 'Pruébalo: en Mercado, busca Apple, que recompra acciones desde 2012, y añádela a Favoritos.'),
     ], [
       single('¿Qué hace una empresa en una recompra de acciones?', ['Compra sus propias acciones y normalmente las amortiza', 'Emite acciones nuevas', 'Presta dinero a sus accionistas'], 0, 'Al amortizarlas, hay menos acciones y cada una vale una parte mayor de la empresa.'),
       num('Una empresa gana 500 millones y tiene 100 millones de acciones. Recompra y amortiza 10 millones. ¿Nuevo beneficio por acción? (dos decimales)', 5.56, '€', '500 ÷ 90 = 5,56 €, frente a 5 € antes: un 11 % más con el mismo beneficio.'),
@@ -313,6 +318,6 @@ export default unit({
       timed(tf('Al amortizar las acciones recompradas, el número total de acciones baja.', true, 'Por eso cada acción representa más beneficio.'), 10),
       fill('BPA significa beneficio por ____.', 'acción', ['año', 'activo', 'accionista'], 'Beneficio neto ÷ número de acciones. Una recompra lo sube porque baja el denominador.'),
       single('¿Por qué algunos inversores prefieren las recompras a los dividendos?', ['Porque no tributan hasta que vendes', 'Porque son más seguras', 'Porque las paga Hacienda'], 0, 'El dividendo tributa al cobrarlo; con la recompra, tu ganancia se acumula en el precio y pagas al vender.'),
-    ], { minutes: 6, retire: [1, 3, 4, 7] }),
+    ], { minutes: 6, retire: [1, 2, 3, 4, 7] }),
   ],
 })

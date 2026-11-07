@@ -45,7 +45,7 @@
      "title": "The boring strategy that works",
      "body": "Buy a broad, cheap index, **hold it for decades** and add money regularly.\n\nAccording to SPIVA (end of 2025), **97 %** of European equity funds lagged their index over 10 years. Buying the index already puts you ahead of almost everyone.",
      "key": "In the stock market, time in the market beats timing the market.",
-     "tip": "A boring portfolio is a portfolio that works."
+     "tip": "Try it: in Market, open the S&P 500 ETF and look at its monthly chart."
     }
    ]
   },
@@ -97,7 +97,7 @@
      "title": "What it isn't",
      "body": "Value isn't buying whatever has fallen a lot or has the lowest P/E. A low P/E can be a business in decline: a **value trap**. And the style can spend years lagging the market.",
      "key": "Buying businesses for less than they're worth, with a margin in case you're wrong.",
-     "tip": "An excellent company bought too expensively can be a bad investment."
+     "tip": "Try it: set a price alert below what you think your favourite company is worth."
     }
    ]
   },
@@ -147,7 +147,7 @@
      "title": "Accumulating or distributing",
      "body": "**Distributing** funds pay the dividends into your account: useful if you need an income.\n\nTo build wealth, **accumulating** funds reinvest them without paying tax until you sell.",
      "key": "A dividend isn't free money: it comes out of the company's value. What matters is total return.",
-     "tip": "A sky-high dividend is sometimes a red flag, not a gift."
+     "tip": "Try it: in Market, open a high-dividend company and check whether its price grows."
     }
    ]
   },
@@ -195,13 +195,30 @@
      "title": "A typical rule",
      "body": "Buy when the price rises above its average over many sessions, with a stop below the latest higher low, and raise the stop as it moves up.",
      "key": "Momentum is one of the most studied anomalies, but it only works with discipline and risk management.",
-     "tip": "The trend is your friend… until it turns. That's why you always use a stop."
+     "tip": "Try it: find an asset in an uptrend in Market and add it to Favourites."
     }
    ]
   },
   "u25l6": {
    "title": "Swing trading",
    "steps": [
+    {
+     "texts": [
+      "The night before earnings",
+      "Nora",
+      "I've got a buy for a few weeks, with its stop. Tomorrow the company reports earnings.",
+      "Anyway, if it goes wrong, the stop kicks in and that's that.",
+      "What would you do in her place?",
+      "Leave it as it is: the stop protects me",
+      "If it opens far lower tomorrow, the stop fills there, a long way from what you planned.",
+      "Cut the size or close before earnings",
+      "Nice! Better not to hold big positions going into earnings.",
+      "Buy more: they're bound to be good",
+      "Nobody knows how they'll turn out. Doubling up right before is gambling.",
+      "The next morning, the price opens far from the previous day's close.",
+      "That's a **gap**. In swing trading, nights and weekends count too."
+     ]
+    },
     {
      "texts": [
       "How much to buy in a swing trade",
@@ -219,27 +236,10 @@
      ]
     },
     {
-     "texts": [
-      "The night before earnings",
-      "Nora",
-      "I've got a swing buy with its stop. Tomorrow the company reports earnings.",
-      "Anyway, if it goes wrong, the stop kicks in and that's that.",
-      "What would you do in her place?",
-      "Leave it as it is: the stop protects me",
-      "If it opens far lower tomorrow, the stop fills there, a long way from what you planned.",
-      "Cut the size or close before earnings",
-      "Nice! Better not to hold big positions going into earnings.",
-      "Buy more: they're bound to be good",
-      "Nobody knows how they'll turn out. Doubling up right before is gambling.",
-      "The next morning, the price opens far from the previous day's close.",
-      "That's a **gap**. In swing trading, nights and weekends count too."
-     ]
-    },
-    {
      "title": "Key takeaway",
      "body": "Swing: trades lasting **days to weeks**, on the daily chart. You aim to catch one leg: buy on a pullback or at a support within a trend and get out near resistance.\n\nEvery trade pays commission and *spread*, and the shorter the timeframe, the more false signals.",
      "key": "Swing: legs lasting days or weeks, with a structural stop and a reward/risk ratio of 2:1 or more.",
-     "tip": "In swing trading the weekend counts too: size your positions with gaps in mind."
+     "tip": "Try it: on your next simulator buy, set the stop and target before you enter."
     }
    ]
   },
@@ -282,7 +282,7 @@
      "title": "Why they lose",
      "body": "• **Costs:** commission and *spread* on every trade. With lots of trades a day, they eat up any small edge.\n• **Competition:** professionals and algorithms with better data and near-zero costs.\n• **Noise:** on minute charts, most moves mean nothing.",
      "key": "The vast majority of people who day trade consistently lose money.",
-     "tip": "If someone makes a living teaching you to make a living from trading, ask yourself what they really live on."
+     "tip": "Try it: open your Portfolio history and count how many trades you made this month."
     }
    ]
   },
@@ -326,7 +326,7 @@
      "title": "What the CNMV says",
      "body": "A **CFD** tracks an asset with leverage. Mandatory warning: «Between **74 and 89 %** of retail investor accounts lose money when trading CFDs».\n\nIn the EU (ESMA, 2018): at most **1:30** on major currency pairs, 1:20 on indices, 1:5 on shares and **1:2 on crypto**. Positions are closed if margin drops below 50 % and you can't lose more than you deposited. Keeping a position open costs daily **financing**.",
      "key": "Leverage multiplies gains and losses equally, but big losses take you out of the game.",
-     "tip": "While you're learning: no leverage and no shorting."
+     "tip": "Try it: check in Market how much your favourite asset moves in a day."
     }
    ]
   },
@@ -379,7 +379,7 @@
      "title": "Core and satellite",
      "body": "Lots of people separate a long-term **core portfolio** (diversified, cheap, automatic) from a **small part** for speculating or learning, with a written limit they could lose entirely.",
      "key": "The boring core first; the excitement, if any, with a small, capped part.",
-     "tip": "Choose the strategy you'd still follow during a 30 % fall."
+     "tip": "Try it: in the simulator, buy a global ETF as your core and keep the satellite small."
     }
    ]
   },
@@ -465,18 +465,6 @@
     "I'd rather have something exciting."
    ]
   },
-  "u25l3-1": {
-   "prompt": "You estimate a share is worth €20 and it trades at €15. What margin of safety do you have relative to your estimated value?",
-   "options": [],
-   "explanation": "(20 − 15) ÷ 20 = 0.25 → 25 %.",
-   "unit": "%"
-  },
-  "u25l3-2": {
-   "prompt": "You estimate a company is worth €40 per share and you demand a 30 % margin of safety. What's the most you'd pay?",
-   "options": [],
-   "explanation": "40 × (1 − 0.30) = €28.",
-   "unit": "€"
-  },
   "u25l3-4": {
    "prompt": "Because of a general panic, a company with stable profits, little debt and loyal customers falls 30 % in a month without its business having changed. How does a value investor see it?",
    "options": [
@@ -549,24 +537,6 @@
     "This share was at €100 and now it's at €40: bargain!"
    ]
   },
-  "u25l4-1": {
-   "prompt": "A share trades at €15 and pays a €0.50 dividend a year. What's its dividend yield? (round to one decimal place)",
-   "options": [],
-   "explanation": "0.50 ÷ 15 ≈ 0.033 → 3.3 %.",
-   "unit": "%"
-  },
-  "u25l4-2": {
-   "prompt": "A company earns €2 per share and pays a €1.80 dividend. What's its payout ratio?",
-   "options": [],
-   "explanation": "1.80 ÷ 2 = 0.9 → 90 %: it pays out almost everything it earns. If profits fall, the dividend is at risk.",
-   "unit": "%"
-  },
-  "u25l4-3": {
-   "prompt": "You receive €1,000 gross in dividends from Spanish companies and 19 % is withheld. How much reaches your account?",
-   "options": [],
-   "explanation": "1,000 × (1 − 0.19) = €810. Then, in your tax return, it's adjusted to your bracket.",
-   "unit": "€"
-  },
   "u25l4-4": {
    "prompt": "Select the messages that are a scam or an obvious trap.",
    "options": [
@@ -622,6 +592,38 @@
     "ex-dividend"
    ],
    "explanation": "On that day the price drops by roughly the amount paid out as a dividend."
+  },
+  "u25l4-11": {
+   "prompt": "You're 20 and want to grow your money over decades, without needing an income. You're torn between the accumulating and the distributing version of the same index fund. Which fits better?",
+   "options": [
+    "It doesn't matter: they're the same fund",
+    "The accumulating one: it reinvests on its own and you pay no tax until you sell",
+    "The distributing one: that way I get paid something every year"
+   ],
+   "explanation": "If you don't need an income, accumulating is more efficient: the whole dividend is reinvested. Distributing is tempting because you «get paid», but each payment is taxed before you can reinvest it.",
+   "feedback": [
+    "They invest in the same thing, but they're not taxed the same: when building wealth, the difference adds up over the years.",
+    "Good: the whole dividend keeps working inside the fund, and the taxman waits until you sell.",
+    "You'd receive dividends you don't need, taxed every year: 19 % is withheld before you can reinvest."
+   ]
+  },
+  "u25l4-12": {
+   "prompt": "What do you say to Lumi?",
+   "options": [
+    "Buy the one with the second-highest dividend too",
+    "Perfect: the higher, the better",
+    "First, check whether earnings cover it and why the price has fallen"
+   ],
+   "explanation": "A sky-high dividend is sometimes the sign that it's about to be cut: what matters is that earnings cover it. The temptation is to look only at the size of the dividend.",
+   "feedback": [
+    "Two dividends at risk don't make one safe one.",
+    "A 12 % yield usually means the price has fallen because the market expects a cut.",
+    "OK: if earnings are falling, that 12 % is a red flag, not a gift."
+   ],
+   "lines": [
+    "I'm going to buy the share with the highest dividend in the Market.",
+    "12 % a year: guaranteed income."
+   ]
   },
   "u25l5-1": {
    "prompt": "What trend do you see in this real chart? (Apple · closes every 3 sessions · March–May 2026)",
@@ -733,12 +735,6 @@
     "Minutes or hours; closes the same day"
    ]
   },
-  "u25l6-10": {
-   "prompt": "Swing: you enter at €30, stop at €28.50 and target at €34.50. If it reaches the target, how many R do you make?",
-   "options": [],
-   "explanation": "Risk: €1.50. Reward: €4.50. 4.50 ÷ 1.50 = 3R.",
-   "unit": "R"
-  },
   "u25l7-2": {
    "prompt": "In that Brazil study, what percentage earned more than the minimum wage?",
    "options": [
@@ -757,12 +753,6 @@
     "97 %"
    ],
    "explanation": "Chague, De-Losso and Giovannetti (2020)."
-  },
-  "u25l7-5": {
-   "prompt": "You make 4 trades a day and each one costs you €5 in commission and spread. Over 250 market days, how much do you pay in costs?",
-   "options": [],
-   "explanation": "4 × 5 × 250 = €5,000: before you've made anything, you already have to win that back.",
-   "unit": "€"
   },
   "u25l7-6": {
    "prompt": "Why do most day traders lose? Select all that apply.",
@@ -806,12 +796,6 @@
     "I'm thinking of quitting my job to day trade 🚀",
     "I've won 3 days in a row on the simulator."
    ]
-  },
-  "u25l8-3": {
-   "prompt": "With 1:5 leverage, what fall in the asset wipes out all your margin?",
-   "options": [],
-   "explanation": "100 % ÷ 5 = 20 %.",
-   "unit": "%"
   },
   "u25l8-5": {
    "prompt": "In the EU, a retail client can lose more than they've deposited when trading CFDs.",

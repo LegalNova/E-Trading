@@ -60,7 +60,7 @@
      "title": "La ubicación lo es todo",
      "body": "La misma vela significa cosas distintas según dónde aparece: tras una caída larga y en un soporte puede indicar agotamiento vendedor; en mitad de un rango, casi nada.",
      "key": "Un cuerpo grande es convicción; una mecha larga es un rechazo.",
-     "tip": "No leas una vela sola: pregúntate de dónde viene el precio."
+     "tip": "Pruébalo: en Mercado, abre Bitcoin en Velas y busca la mecha más larga del mes."
     }
    ]
   },
@@ -117,7 +117,7 @@
      "title": "Los cuatro doji",
      "body": "• **Normal:** una cruz con mechas parecidas.\n• **De patas largas:** mechas muy largas a los dos lados.\n• **Libélula:** una T, con mecha inferior larga.\n• **Lápida:** una T invertida, con mecha superior larga.",
      "key": "Marubozu dice fuerza; peonza, duda; doji, empate.",
-     "tip": "Un doji no dice «va a girar». Dice «nadie sabe qué hacer». Espera a la vela siguiente."
+     "tip": "Pruébalo: en Mercado, busca un doji en el gráfico diario de Inditex."
     }
    ]
   },
@@ -175,7 +175,7 @@
      "title": "Lo que dicen los datos (Bulkowski)",
      "body": "• Martillo: gira al alza el **60 %** (puesto 65 de 103).\n• Hombre colgado: ¡sigue al alza el **59 %**! (puesto 87).\n• Estrella fugaz: gira a la baja el **59 %** (puesto 55).\n\nÉl mismo los describe como «no muy lejos del azar».",
      "key": "La misma forma cambia de nombre según venga tras una subida o tras una bajada.",
-     "tip": "El martillo solo es martillo tras una caída. Y aun así, sin contexto acierta poco más que una moneda."
+     "tip": "Pruébalo: en Mercado, busca martillos en el diario de Tesla y mira qué vino después."
     }
    ]
   },
@@ -213,7 +213,7 @@
      "title": "Harami, penetrante y nube oscura",
      "body": "• **Envolvente:** el cuerpo de la segunda vela se come el de la primera, en sentido contrario.\n• **Harami** («embarazada»): vela larga y después una pequeña **dentro** de su cuerpo. El impulso se frena.\n• **Pauta penetrante:** tras una caída, una verde que cierra **por encima de la mitad** del cuerpo rojo anterior.\n• **Nube oscura:** tras una subida, una roja que cierra **por debajo de la mitad** del verde.",
      "key": "Acertar la dirección no basta: el recorrido tiene que compensar el riesgo.",
-     "tip": "Una envolvente gira a menudo, pero a veces gira poco."
+     "tip": "Pruébalo: en Mercado, busca una envolvente en el gráfico diario de Bitcoin."
     }
    ]
   },
@@ -270,7 +270,7 @@
      "title": "Los mejores números (Bulkowski)",
      "body": "• Estrella de la mañana: gira el **78 %** (puesto 12 de 103).\n• Estrella de la tarde: **72 %** (puesto **4**).\n• Tres soldados blancos: **82 %** (puesto 32).\n• Tres cuervos negros: **78 %** (puesto **3**).\n\nMejores que las velas sueltas, pero mucho menos frecuentes.",
      "key": "Tres velas cuentan mejor la historia que una.",
-     "tip": "Por eso son más fiables… y más raras."
+     "tip": "Pruébalo: en Mercado, busca tres velas verdes largas seguidas en el diario de NVIDIA."
     }
    ]
   },
@@ -325,7 +325,7 @@
      "title": "Entonces, ¿para qué sirven?",
      "body": "Un estudio en Japón (1975–2004), la cuna de las velas, llegó a lo mismo que Marshall, Young y Rose. Bulkowski mide sin comisiones ni *spreads*. Y si pruebas cien patrones, alguno parecerá funcionar por casualidad (*data snooping*).\n\nLas velas sirven para **leer** el mercado (rechazo, convicción, indecisión), para poner el **stop** en un sitio lógico y para no dejarte engañar por quien vende patrones «con un 90 % de acierto».",
      "key": "Las velas son un idioma, no una bola de cristal.",
-     "tip": "La vela es la frase; el contexto, el libro entero."
+     "tip": "Pruébalo: en Mercado, busca un martillo y repasa los cuatro filtros antes de decidir."
     }
    ]
   },
@@ -354,12 +354,6 @@
    "options": [],
    "explanation": "Los compradores llevaron el precio muy arriba, pero la sesión cerró lejos de ese máximo. (Microsoft · velas diarias · abril de 2026)"
   },
-  "u20l2-5": {
-   "prompt": "Una vela abre en 50, baja hasta 44 y cierra en 50,5. ¿Cuánto llegó a caer desde la apertura, en porcentaje?",
-   "options": [],
-   "explanation": "(50 − 44) ÷ 50 = 0,12 → −12 %. Y aun así cerró por encima de la apertura: los compradores ganaron la batalla.",
-   "unit": "%"
-  },
   "u20l2-7": {
    "prompt": "Lee las últimas velas como una batalla. ¿Sube o baja en las 10 sesiones siguientes?",
    "options": [
@@ -382,6 +376,11 @@
     "La mecha inferior es rechazo de los precios bajos: no es señal de venta, pero aquí tampoco de compra.",
     "En mitad de un rango, sin tendencia que girar, esa mecha significa muy poco."
    ]
+  },
+  "u20l2-11": {
+   "prompt": "Toca la vela donde nadie ganó: la de cuerpo casi inexistente.",
+   "options": [],
+   "explanation": "Apertura y cierre casi iguales, con mechas a los dos lados: compradores y vendedores empataron. Un cuerpo diminuto es indecisión, no fuerza. (Amazon · velas diarias · abril de 2026)"
   },
   "u20l3-1": {
    "prompt": "Empareja cada vela con lo que cuenta.",
@@ -468,12 +467,6 @@
    ],
    "explanation": "Si el precio pierde el mínimo de la mecha, la idea del rechazo de los precios bajos ha fallado."
   },
-  "u20l4-5": {
-   "prompt": "Un martillo tiene máximo 52 € y mínimo 47 €. Compras en 52 € tras la confirmación y pones el stop en 46,50 €. ¿Cuánto arriesgas por acción?",
-   "options": [],
-   "explanation": "52 − 46,50 = 5,50 € por acción. El stop va un poco por debajo de la mecha para no saltar por una simple mecha.",
-   "unit": "€"
-  },
   "u20l4-7": {
    "prompt": "Fíjate en las mechas de las últimas velas. ¿Sube o baja en las 10 sesiones siguientes?",
    "options": [
@@ -505,6 +498,11 @@
     "Que aparezca cerca del mínimo del año"
    ],
    "explanation": "Funciona mejor en el tercio inferior del rango anual, y los de cuerpo verde van mejor."
+  },
+  "u20l4-11": {
+   "prompt": "Como bajo la mecha de un martillo: has comprado al último precio. Coloca el stop por debajo del último mínimo relevante.",
+   "options": [],
+   "explanation": "Si el precio pierde ese mínimo, el rechazo de los precios bajos ha fallado y la idea ya no vale. Por eso el stop va algo por debajo, no justo encima, donde lo saltaría cualquier mecha."
   },
   "u20l5-1": {
    "prompt": "Tras la subida, toca la vela roja que envuelve a la verde anterior.",
@@ -556,6 +554,15 @@
     "mitad"
    ],
    "explanation": "Si lo envolviera entero, sería una envolvente bajista."
+  },
+  "u20l5-11": {
+   "prompt": "Lee las últimas velas por parejas, como en una envolvente o un harami. ¿Sube o baja en las 10 sesiones siguientes?",
+   "options": [
+    "Sube",
+    "Baja"
+   ],
+   "explanation": "Una envolvente acierta a menudo la dirección, pero el recorrido puede ser corto; un harami solo dice que el impulso se frena. Ninguno trae el resultado escrito: por eso se opera con stop.",
+   "horizon": "las 10 sesiones siguientes"
   },
   "u20l6-1": {
    "prompt": "Ordena las velas de una estrella de la mañana.",

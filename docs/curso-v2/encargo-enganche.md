@@ -64,7 +64,7 @@ Cada unidad tiene su traducción en `src/server/content/v2/i18n/ca/<unidad>.json
   - En `play`/`story`, la lista `texts` con los textos en el mismo orden en que los recorre `walkTexts`.
   - Si no encaja, la app enseña esa clase en castellano.
   - Para ver la forma exacta, genera el español con `export` (abajo) y mira `i18n/es/<unidad>.json`.
-- **Preguntas nuevas** (`questions["<idClase>-<n>"]`): `n` es su posición en la lista original contando las retiradas, empezando en 1. Tradúcelas a catalán y a inglés con la misma forma que las demás. Las retiradas pueden quedarse en el JSON.
+- **Preguntas nuevas** (`questions["<idClase>-<n>"]`): `n` es su posición en la lista original contando las retiradas, empezando en 1. Tradúcelas a catalán y a inglés con la misma forma que las demás. Las retiradas hay que quitarlas del JSON (si no, `check` da «sobra»).
 - **Estilo:**
   - catalán: «la Lumi», «en Pablo», «Vertader/Fals»;
   - inglés: «€10,000», comillas «».

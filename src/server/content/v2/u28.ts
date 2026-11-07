@@ -32,7 +32,7 @@ export default unit({
         say('lumi', 'Bitcoin cayó cerca de un **75 %** en el año siguiente.'),
         say('lumi', 'El momento de más euforia suele ser el de **más riesgo**.'),
       ]),
-      key('El ciclo emocional', 'Optimismo → entusiasmo → **euforia** (máximo riesgo) → ansiedad → negación → miedo → **pánico y capitulación** (máxima oportunidad) → desesperanza → esperanza…\n\nNo se trata de adivinar el techo o el suelo: nadie lo hace de forma fiable. Se trata de que el miedo o la avaricia no cambien un plan escrito en calma.', 'Los inversores tienden a comprar en la euforia y vender en el pánico: justo al revés de lo que conviene.', 'Cuando sientas euforia o pánico, no decidas hoy: relee tu plan.'),
+      key('El ciclo emocional', 'Optimismo → entusiasmo → **euforia** (máximo riesgo) → ansiedad → negación → miedo → **pánico y capitulación** (máxima oportunidad) → desesperanza → esperanza…\n\nNo se trata de adivinar el techo o el suelo: nadie lo hace de forma fiable. Se trata de que el miedo o la avaricia no cambien un plan escrito en calma.', 'Los inversores tienden a comprar en la euforia y vender en el pánico: justo al revés de lo que conviene.', 'Pruébalo: pon una alerta de caída en tu ETF y decide hoy qué harás.'),
     ], [
       order('Ordena esta parte del ciclo emocional del mercado.', ['Optimismo', 'Euforia', 'Ansiedad', 'Miedo', 'Pánico'], 'El máximo riesgo está en la euforia; la máxima oportunidad, en el pánico.'),
       point('Así iba el S&P 500 en la caída del covid. Toca el día de máximo pánico (el cierre más bajo).', 'hist-covid', 'min', 'Ese suelo de marzo de 2020 fue el peor momento para vender: el índice tardó unos 5 meses en volver a su máximo.'),
@@ -76,7 +76,7 @@ export default unit({
           { say: 'Baja el riesgo a lo que dice tu plan', mood: 'THINKING' },
         ],
       }),
-      key('La regla preparada', '**«Tras 3 pérdidas seguidas, paro el resto del día.»**\n\nY además:\n• El riesgo por operación es siempre el mismo.\n• Si pierdes un 6 % en un mes, paras hasta el mes siguiente.\n• Apuntas en el diario cómo te sentías.', 'Tras una pérdida, la mejor decisión suele ser no tomar ninguna más ese día.', 'Después de tres pérdidas seguidas, la mejor operación es apagar la pantalla.'),
+      key('La regla preparada', '**«Tras 3 pérdidas seguidas, paro el resto del día.»**\n\nY además:\n• El riesgo por operación es siempre el mismo.\n• Si pierdes un 6 % en un mes, paras hasta el mes siguiente.\n• Apuntas en el diario cómo te sentías.', 'Tras una pérdida, la mejor decisión suele ser no tomar ninguna más ese día.', 'Pruébalo: revisa tu historial y mira qué hiciste justo después de tu última pérdida.'),
     ], [
       tf('Después de varias pérdidas, subir el tamaño de la siguiente operación ayuda a recuperar sin más riesgo.', false, 'Subes el riesgo justo cuando peor estás decidiendo. Si vuelve a salir mal, el agujero se duplica.'),
       scenario('Ana ha perdido tres operaciones seguidas esta mañana, todas dentro de su plan. Está enfadada y ve otra «oportunidad». ¿Qué hace?', [['Entra con el triple de tamaño para recuperarlo todo', 'Es operar por venganza: si falla, en una tarde pierde lo de un mes.'], ['Para el resto del día, apunta cómo se siente y vuelve mañana con el tamaño normal', 'Bien: las tres pérdidas son una racha normal. Lo que no es normal es dejar que la rabia opere.'], ['Quita los stops para que no salten más', 'Sin stop, la siguiente pérdida no tiene límite.']], 1, 'La regla de las 3 pérdidas existe para este momento exacto.'),
@@ -88,7 +88,7 @@ export default unit({
       multi('¿Qué señales indican que estás operando por venganza? Marca todas.', ['Entras sin que se cumpla tu señal', 'Subes el tamaño para recuperar', 'Sientes rabia o prisa', 'Sigues tu plan con el riesgo habitual'], [0, 1, 2], 'Seguir el plan con el riesgo habitual es justo lo contrario.'),
       fill('Regla preparada: tras ____ pérdidas seguidas, paro el resto del día.', '3', ['10', '20', '50'], 'Es la regla del manual: corta la espiral antes de que crezca.'),
       single('¿Qué tiene en común operar por venganza con la aversión a la pérdida?', ['Las dos nos hacen asumir más riesgo para no aceptar una pérdida', 'Las dos reducen el riesgo', 'No tienen nada en común'], 0, 'Cuando perdemos, nos volvemos más arriesgados: «doblo para recuperar».'),
-    ], { source: '11.6', minutes: 6, retire: [0, 1, 2, 6] }),
+    ], { source: '11.6', minutes: 6, retire: [0, 1, 2, 4, 6] }),
 
     lesson('u28l3', 'Operar demasiado', [
       story('20 operaciones a la semana', [{ id: 'bruno', name: 'Bruno' }], [
@@ -120,7 +120,7 @@ export default unit({
           { say: 'Sube las comisiones del fondo caro', mood: 'HAPPY' },
         ],
       }),
-      key('Lo que te llevas', 'Cuanto más miras el mercado, más movimientos ves que no significan nada, y cada uno parece pedir una decisión.\n\nMenos operaciones, mejor elegidas, con costes bajos. Y para el largo plazo: aportaciones automáticas y revisar la cartera de vez en cuando, no cada día.', 'Cada operación paga costes: operar mucho convierte una ventaja pequeña en pérdida.', 'En inversión, muchas veces lo más rentable es no hacer nada.'),
+      key('Lo que te llevas', 'Cuanto más miras el mercado, más movimientos ves que no significan nada, y cada uno parece pedir una decisión.\n\nMenos operaciones, mejor elegidas, con costes bajos. Y para el largo plazo: aportaciones automáticas y revisar la cartera de vez en cuando, no cada día.', 'Cada operación paga costes: operar mucho convierte una ventaja pequeña en pérdida.', 'Pruébalo: deja en Favoritos solo los activos de tu plan y quita el resto.'),
     ], [
       num('Haces 2 operaciones a la semana y cada una te cuesta 6 € entre comisión y spread. ¿Cuánto pagas en un año de 52 semanas?', 624, '€', '2 × 6 × 52 = 624 €.'),
       num('Si tu cuenta es de 5.000 €, ¿qué porcentaje anual se comen esos 624 € de costes? (redondea a un decimal)', 12.5, '%', '624 ÷ 5.000 ≈ 0,125 → 12,5 % al año. Tendrías que ganar eso solo para quedarte igual.', 2),
@@ -132,7 +132,9 @@ export default unit({
       buckets('¿Es una decisión útil o ruido?', ['Útil', 'Ruido'], [['Rebalancear una vez al año según el plan', 0], ['Vender porque la cartera ha bajado un 1 % hoy', 1], ['Comprar porque un vídeo dice que «hoy explota»', 1], ['Hacer la aportación mensual automática', 0], ['Cambiar de fondo cada mes según el que más subió', 1]], 'Las decisiones útiles salen del plan; el ruido sale de la pantalla.'),
       match('Empareja cada coste con su descripción.', [['Comisión', 'Lo que cobra el bróker por operación'], ['Spread', 'Diferencia entre el precio de compra y el de venta'], ['Financiación', 'Coste diario de mantener una posición apalancada'], ['Impuestos', 'Lo que pagas a Hacienda por las ganancias']], 'Todos crecen con el número de operaciones.'),
       chat(['Me he instalado alertas de precio en 40 acciones 📲', 'Así no me pierdo nada.'], '¿Qué le dices a Lumi?', [['Genial, más información es mejor', 'Más alertas suelen traer más operaciones impulsivas… y más costes.'], ['Cuidado: más estímulos suelen acabar en más operaciones y más costes', 'Tienes razón. Dejo alertas solo para mis stops y objetivos, y el resto lo miro con calma.'], ['Mejor pon 100 alertas', 'Eso es ruido en estado puro.']], 1, 'No necesitas ver cada movimiento: necesitas actuar solo cuando lo dice tu plan.'),
-    ], { source: '11.4', minutes: 6, retire: [2, 3, 4, 5, 6] }),
+      scenario('Tu fondo indexado de largo plazo baja un 1 % un martes. Llevas tres días abriendo la app cada hora. ¿Qué haces?', [['Vendo hoy y recompro cuando baje más', 'Pagas costes dos veces y tienes que acertar dos momentos. Lo normal es fallar alguno.'], ['No lo toco: sigo con mis aportaciones y lo reviso de vez en cuando', 'Bien: un 1 % en un día es ruido para un plan de años.'], ['Me paso al fondo que más sube hoy', 'Cambiar según lo que sube hoy es perseguir el ruido, y cada cambio paga costes.']], 1, 'Para el largo plazo, un día malo no pide ninguna decisión: cada operación de más paga costes y rara vez mejora el resultado. Lo tentador es «hacer algo» porque lo estás mirando.'),
+      multi('¿Qué pagas otra vez cada vez que compras o vendes? Marca todo.', ['La comisión del bróker', 'El spread entre el precio de compra y el de venta', 'Los impuestos, si vendes con ganancias', 'La rentabilidad del índice'], [0, 1, 2], 'Comisión, spread e impuestos se pagan en cada operación: por eso operar mucho se come una ventaja pequeña. La rentabilidad del índice no es un coste: es lo que ganas si no te mueves.'),
+    ], { source: '11.4', minutes: 6, retire: [0, 1, 2, 3, 4, 5, 6] }),
 
     lesson('u28l4', 'Tu sistema anti-sesgos', [
       play({
@@ -167,7 +169,7 @@ export default unit({
         ]),
         say('lumi', 'Los pilotos usan listas aunque sepan volar.'),
       ]),
-      key('Revisión mensual', '• ¿He seguido mi plan? ¿En qué operaciones no, y por qué?\n• ¿Mi rentabilidad bate a la de un índice comparable?\n• ¿Qué sesgo he visto en mí este mes?\n\nY pregúntale a Lumi en el modo Sesgos: te hará de abogado del diablo.', 'No puedes eliminar las emociones; puedes impedir que decidan por ti.', 'No necesitas ser frío como una máquina. Necesitas reglas que funcionen aunque no lo seas.'),
+      key('Revisión mensual', '• ¿He seguido mi plan? ¿En qué operaciones no, y por qué?\n• ¿Mi rentabilidad bate a la de un índice comparable?\n• ¿Qué sesgo he visto en mí este mes?\n\nY pregúntale a Lumi en el modo Sesgos: te hará de abogado del diablo.', 'No puedes eliminar las emociones; puedes impedir que decidan por ti.', 'Pruébalo: pasa la lista entera antes de tu próxima compra del simulador.'),
     ], [
       order('Ordena tu rutina anti-sesgos de una operación.', ['Antes: pasar la lista de comprobación', 'Al entrar: fijar stop y tamaño', 'Durante: no tocar el stop en contra', 'Al salir: anotarla en el diario', 'Cada mes: revisar estadísticas y compararte con un índice'], 'Cada momento tiene su regla: así las emociones no encuentran hueco.'),
       multi('¿Qué preguntas están en la lista antes de comprar? Marca todas.', ['¿Está en mi plan?', '¿Sé dónde está mi stop?', '¿Estoy tranquilo?', '¿Cuánto ha subido esta semana?'], [0, 1, 2], 'Cuánto ha subido alimenta el FOMO, no la decisión.'),

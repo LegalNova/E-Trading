@@ -47,7 +47,7 @@
      "title": "La pregunta del professional",
      "body": "El principiant pregunta «què compro?» i «pujarà?». El professional pregunta: **«quant perdo si m'equivoco?»**.\n\nNingú no sap si una operació concreta sortirà bé. Pots encertar el 60 % de les vegades i arruïnar-te, o encertar el 40 % i guanyar diners: la diferència és quant guanyes quan encertes i quant perds quan falles.",
      "key": "El primer objectiu d'un trader és sobreviure perquè el seu avantatge, si en té, pugui actuar.",
-     "tip": "No controles si encertes. Controles quant perds quan falles."
+     "tip": "Prova-ho: en la teva propera compra del simulador, arrisca com a màxim un 1 %."
     }
    ]
   },
@@ -94,30 +94,13 @@
      "title": "El que costa tornar-hi",
      "body": "**Pujada necessària = 1 ÷ (1 − caiguda) − 1**\n\n• Perds un 10 % → necessites +11,1 %\n• Perds un 20 % → +25 %\n• Perds un 30 % → +42,9 %\n• Perds un 50 % → **+100 %**\n• Perds un 75 % → +300 %\n• Perds un 90 % → **+900 %**\n\nI la mitjana enganya: +50 % i −50 % és 100 € → 150 € → 75 €. Amb palanquejament 1:5, una caiguda del 20 % de l'actiu s'emporta tots els teus diners.",
      "key": "Evitar les grans pèrdues és més important que buscar grans guanys.",
-     "tip": "Perdre el 50 % obliga a guanyar el 100 %. Protegeix primer el que tens."
+     "tip": "Posa un stop en la teva propera compra del simulador: així talles les caigudes grans."
     }
    ]
   },
   "u24l4": {
    "title": "La mida de la posició",
    "steps": [
-    {
-     "texts": [
-      "Calcula la teva mida",
-      "Compte de **10.000 €** i risc de l'**1 %** (100 €). Compres a **50 €** i l'stop és un 6 % per sota, a **47 €**.",
-      "Quantes accions pots comprar?",
-      "Unes 100",
-      "Unes 33",
-      "Unes 10",
-      "Arrisques 3 € per acció: 100 ÷ 3 = **33 accions**, uns 1.650 €. Si salta l'stop, perds 99 €.",
-      "Allunya l'stop fins al 10 % sense canviar el risc. Quantes accions ara?",
-      "Amb l'stop al 10 % només compres **20 accions**: l'actiu més volàtil necessita un stop més llunyà i, per tant, **menys accions**. El risc continua sent de 100 €.",
-      "El risc es queda a l'1 %: mou només l'stop.",
-      "Stop més lluny, menys accions. El risc, igual.",
-      "Stop més a prop, més accions… i més fàcil que salti amb el soroll.",
-      "Mira quantes accions compres i després allunya l'stop"
-     ]
-    },
     {
      "texts": [
       "L'stop de la Marta",
@@ -135,10 +118,27 @@
      ]
     },
     {
+     "texts": [
+      "La mida surt sola",
+      "Compte de **10.000 €** i la regla de l'**1 %** que ja coneixes: 100 € de risc. Compres a **50 €** i l'stop és un 6 % per sota, a **47 €**.",
+      "Quantes accions pots comprar?",
+      "Totes les que càpiguen en els teus 10.000 €",
+      "Les justes per perdre 100 € si salta l'stop",
+      "Una per cada euro de risc: 100",
+      "Arrisques 3 € per acció: la peça calcula **33 accions**, uns 1.650 €. Si salta l'stop, perds 99 €.",
+      "Allunya l'stop fins al 10 % sense canviar el risc. Quantes accions ara?",
+      "Amb l'stop al 10 % només compres **20 accions**: l'actiu més volàtil necessita un stop més llunyà i, per tant, **menys accions**. El risc continua sent de 100 €.",
+      "El risc es queda a l'1 %: mou només l'stop.",
+      "Stop més lluny, menys accions. El risc, igual.",
+      "Stop més a prop, més accions… i més fàcil que salti amb el soroll.",
+      "Mira quantes accions compres i després allunya l'stop"
+     ]
+    },
+    {
      "title": "El que t'emportes",
      "body": "Amb un stop a 1 € podries comprar 100 accions; amb un a 10 €, només 10. Les dues operacions arrisquen 100 €. Així cada operació pesa el mateix, sigui quin sigui l'actiu.\n\n**Mida = (capital × % de risc) ÷ (entrada − stop)**",
      "key": "No decideixes quant compres: ho decideix la distància al teu stop.",
-     "tip": "Arrodoneix sempre cap avall: millor arriscar 99 € que 102 €."
+     "tip": "Prova-ho: en la teva propera compra del simulador, posa primer l'stop i després l'import."
     }
    ]
   },
@@ -181,7 +181,7 @@
      "title": "Tres mètodes i els seus errors",
      "body": "1. **Estructural:** a l'altra banda d'un nivell, o sota el mínim de l'espelma de gir.\n2. **Per volatilitat:** a 2–3 vegades l'**ATR** (rang mitjà de les últimes 14 espelmes).\n3. **Per temps:** si en, per exemple, 10 sessions no fa el que esperaves, surts.\n\nErrors típics: posar-lo massa a prop, en números rodons evidents (50,00 €), allunyar-lo quan el preu s'hi acosta o no posar-lo. I amb un salt de preu (gap), s'executa pitjor del previst. Si va a favor, el pots pujar al preu d'entrada o sota l'últim mínim creixent.",
      "key": "L'stop va on la teva idea deixa de ser vàlida, no on et fa mal perdre.",
-     "tip": "L'stop no és on et fa mal: és on la teva idea mor."
+     "tip": "En la teva propera compra del simulador, posa l'stop sota l'últim mínim."
     }
    ]
   },
@@ -232,7 +232,7 @@
      "title": "Què és R",
      "body": "**1R** és el que arrisques en una operació: distància a l'stop × nombre d'accions. Si arrisques 100 €:\n\n• Salta l'stop: **−1R**.\n• Guanyes 250 €: **+2,5R**.\n• Surts abans perdent 40 €: **−0,4R**.\n\nSi arrisques 100 € i en guanyes 300, has guanyat 3R. Si arrisques 50 € i en guanyes 150, també 3R: totes dues han estat igual de bones.",
      "key": "Una operació es mesura en múltiples del que vas arriscar.",
-     "tip": "No comptis euros: compta R."
+     "tip": "Abans de la teva propera compra al simulador, posa l'objectiu almenys a 2R."
     }
    ]
   },
@@ -282,7 +282,7 @@
      "title": "Els costos",
      "body": "Cada operació paga comissió, *spread* i, si hi ha palanquejament, finançament. Si la teva esperança és +0,1R i els costos suposen 0,15R per operació, el teu sistema real **perd**. Com més operacions, més pesen.\n\nAmb +0,2R, un 1 % de risc i 100 operacions l'any sortirien uns 20R: a prop d'un 20 % anual, amb ratxes de pèrdues pel camí. És només un exemple, no una promesa.",
      "key": "Un sistema guanya si, de mitjana, cada operació guanya més del que perd, comptant encerts i errors.",
-     "tip": "No cal que encertis gaire: cal que els teus encerts valguin més que els teus errors."
+     "tip": "Prova-ho: a Cartera, compara el que guanyes de mitjana amb el que perds."
     }
    ]
   },
@@ -319,12 +319,6 @@
    "explanation": "Encertar o fallar una predicció solta diu poca cosa. El que decideix el teu resultat a llarg termini és quant arrisques en cada intent.",
    "horizon": "les 10 sessions següents"
   },
-  "u24l1-5": {
-   "prompt": "Arrisques un 2 % per operació i encadenes 10 pèrdues. Quin percentatge del compte et queda? (arrodoneix a un decimal)",
-   "options": [],
-   "explanation": "0,98¹⁰ ≈ 0,817 → et queda el 81,7 %. Per tornar-hi necessitaries guanyar un 22,4 %.",
-   "unit": "%"
-  },
   "u24l1-8": {
    "prompt": "Ho controles tu o no?",
    "options": [
@@ -340,17 +334,33 @@
     "No ho controlo"
    ]
   },
-  "u24l2-1": {
-   "prompt": "La teva cartera cau un 20 %. Quant ha de pujar per tornar al punt de partida?",
-   "options": [],
-   "explanation": "1 ÷ (1 − 0,20) − 1 = 1 ÷ 0,8 − 1 = 0,25 → +25 %.",
-   "unit": "%"
+  "u24l1-11": {
+   "prompt": "Comences amb 10.000 € al simulador. Saps que fins i tot un bon sistema encadena de vegades 10 pèrdues seguides. Quant arrisques en cada operació?",
+   "options": [
+    "Un 10 %: així guanyo ràpid",
+    "Depèn de com estigui de segur de cada operació",
+    "Un 1 %: deu errors serien un mal mes, no el final"
+   ],
+   "explanation": "El risc per operació ha de ser petit per sobreviure a les ratxes dolentes, que arriben fins i tot amb un bon sistema.",
+   "feedback": [
+    "Amb un 10 %, deu errors seguits et deixen amb 3.487 €, i hauries de guanyar un 187 % per recuperar-te.",
+    "Ningú no sap quina operació sortirà bé: sentir-te segur no canvia el risc.",
+    "Això: amb un 1 %, després de deu errors et queda el 90,4 % del compte."
+   ]
   },
-  "u24l2-3": {
-   "prompt": "Una acció cau un 40 %. Quina pujada necessita per recuperar el preu? (arrodoneix a un decimal)",
-   "options": [],
-   "explanation": "1 ÷ 0,6 − 1 ≈ 0,667 → +66,7 %.",
-   "unit": "%"
+  "u24l1-12": {
+   "prompt": "Encadenes deu pèrdues seguides. Continues en joc o et deixa molt tocat?",
+   "options": [
+    "Arriscar un 2 % per operació",
+    "Arriscar un 10 % per operació",
+    "Arriscar un 20 % per operació",
+    "Arriscar un 1 % per operació"
+   ],
+   "explanation": "Amb un 1 % et queda el 90,4 % del compte; amb un 2 %, el 81,7 %. Amb un 10 %, només el 34,9 %, i amb un 20 % n'hi ha prou amb quatre errors per quedar-te amb un 41 %.",
+   "right": [
+    "Continues en joc",
+    "Et deixa molt tocat"
+   ]
   },
   "u24l2-4": {
    "prompt": "Relaciona cada caiguda amb la pujada que cal per recuperar-la.",
@@ -394,17 +404,37 @@
    ],
    "explanation": "5 × 20 % = 100 %: el palanquejament accelera les pèrdues grans."
   },
-  "u24l4-1": {
-   "prompt": "Capital 10.000 €, risc 1 %, entrada 50 €, stop 47 €. Quantes accions compres? (arrodoneix cap avall)",
-   "options": [],
-   "explanation": "100 € ÷ 3 € = 33,3 → 33 accions.",
-   "unit": "accions"
+  "u24l2-11": {
+   "prompt": "La teva cartera del simulador ha caigut un 30 %. Per recuperar-te abans, penses doblar el risc en les properes operacions. Què fas?",
+   "options": [
+    "Mantinc el risc petit: una caiguda més gran costaria moltíssim més de recuperar",
+    "Ho venc tot i no torno a invertir",
+    "Doblo el risc: cal tornar com més aviat millor"
+   ],
+   "explanation": "Les pèrdues grans es recuperen molt a poc a poc. Després d'una caiguda, el que és prudent no és arriscar més, sinó continuar amb un risc petit.",
+   "feedback": [
+    "Això: ja necessites un +42,9 % per recuperar-te; si arribessis a un −50 %, caldria un +100 %.",
+    "Abandonar converteix la caiguda en definitiva. El que és sensat és continuar amb un risc petit.",
+    "Si surt malament, la caiguda es fa més gran, i com més caus, molt més has de pujar per recuperar-te."
+   ]
   },
-  "u24l4-2": {
-   "prompt": "En aquesta operació (33 accions a 50 €), quants diners inverteixes?",
-   "options": [],
-   "explanation": "33 × 50 = 1.650 €, un 16,5 % del compte, amb només un 1 % en risc.",
-   "unit": "€"
+  "u24l2-12": {
+   "prompt": "Què li dius a la Lumi?",
+   "options": [
+    "Compte: com més cau, molt més ha de pujar per recuperar-se",
+    "Millor no invertir mai",
+    "Sí: el que cau es recupera amb una pujada igual"
+   ],
+   "explanation": "Una caiguda del 50 % exigeix una pujada del 100 %. Per això caure menys sol valer més que pujar més.",
+   "feedback": [
+    "D'acord: evitar les grans caigudes pot valer més que buscar grans pujades.",
+    "Tampoc: es tracta de no caure tant, no de quedar-se fora.",
+    "És el que em pensava… però després d'un −50 % caldria un +100 % per recuperar-se."
+   ],
+   "lines": [
+    "La meva cartera prudent cau menys en les crisis, però també puja menys.",
+    "No seria millor arriscar més? Ja recuperaré el que caigui."
+   ]
   },
   "u24l4-3": {
    "prompt": "Tens 10.000 € i arrisques com a màxim un 1 %. Col·loca l'stop on la teva idea deixa de ser vàlida i ajusta l'import per no passar-te'n.",
@@ -437,6 +467,34 @@
     "100 accions"
    ]
   },
+  "u24l4-11": {
+   "prompt": "Amb 10.000 € i la regla de l'1 %, vols comprar dos actius: un de tranquil, amb l'stop a un 2 %, i una cripto, amb l'stop a un 8 %. Com reparteixes els diners?",
+   "options": [
+    "Més import en la cripto, que pot pujar més",
+    "Més import en el tranquil i menys en la cripto, per arriscar 100 € en cadascun",
+    "El mateix import en tots dos"
+   ],
+   "explanation": "L'import s'adapta a la distància de l'stop: amb l'stop al 2 %, uns 5.000 €; al 8 %, uns 1.250 €. Totes dues operacions arrisquen 100 €.",
+   "feedback": [
+    "Així l'operació més volàtil seria també la més gran: un error aquí et costaria molt més.",
+    "Això: amb l'stop quatre vegades més lluny, quatre vegades menys import. Cada operació pesa el mateix.",
+    "Amb el mateix import, la cripto arriscaria quatre vegades més que l'actiu tranquil."
+   ]
+  },
+  "u24l4-12": {
+   "prompt": "Compres més o menys accions que abans?",
+   "options": [
+    "El teu compte creix i l'1 % són més euros",
+    "Baixes el risc de l'1 % al 0,5 %",
+    "Allunyes l'stop perquè l'actiu es mou molt",
+    "Acostes l'stop a l'entrada, amb el mateix risc"
+   ],
+   "explanation": "Accions = risc en euros ÷ distància a l'stop. Amb més distància o menys risc, en compres menys; amb menys distància o més euros de risc, en compres més.",
+   "right": [
+    "Més accions",
+    "Menys accions"
+   ]
+  },
   "u24l5-1": {
    "prompt": "Compres a l'últim preu després d'un rebot. Col·loca l'stop on la idea deixa de ser vàlida.",
    "options": [],
@@ -455,12 +513,6 @@
    "prompt": "En un mercat lateral, l'stop d'una compra a la part baixa del rang va sota el mínim del rang. Toca aquest mínim. (Apple · tancaments cada 3 sessions · setembre–novembre del 2024)",
    "options": [],
    "explanation": "Si el preu perd el terra del rang, la idea de rebot deixa de valer."
-  },
-  "u24l5-7": {
-   "prompt": "Compres a 50 €. L'ATR és de 2 € i poses l'stop a 2 ATR de distància. A quin preu va l'stop?",
-   "options": [],
-   "explanation": "2 × 2 € = 4 €; 50 − 4 = 46 €.",
-   "unit": "€"
   },
   "u24l5-8": {
    "prompt": "El rang mitjà de les últimes 14 espelmes, molt utilitzat per col·locar stops, s'anomena ____.",
@@ -490,18 +542,6 @@
     "Baixar-lo perquè no salti"
    ],
    "explanation": "Pujar l'stop a favor protegeix el que has guanyat sense canviar el teu pla."
-  },
-  "u24l6-1": {
-   "prompt": "Arrisques 150 € i en guanyes 450. Quantes R has guanyat?",
-   "options": [],
-   "explanation": "450 ÷ 150 = 3R.",
-   "unit": "R"
-  },
-  "u24l6-2": {
-   "prompt": "Arrisques 200 € i surts abans d'hora perdent 80 €. Quin és el resultat en R?",
-   "options": [],
-   "explanation": "−80 ÷ 200 = −0,4R: has perdut menys del que arriscaves.",
-   "unit": "R"
   },
   "u24l6-3": {
    "prompt": "1R = 100 €. Relaciona cada resultat amb el seu valor en R.",
@@ -533,23 +573,51 @@
    "options": [],
    "explanation": "A prop del màxim anterior: és on molts van vendre abans i pot frenar la pujada."
   },
-  "u24l6-7": {
-   "prompt": "Entres a 50 € amb l'stop a 47 €. Vols una relació de 2:1 exacta. On poses l'objectiu?",
-   "options": [],
-   "explanation": "Risc: 3 €. Benefici: 2 × 3 = 6 €. 50 + 6 = 56 €.",
-   "unit": "€"
+  "u24l6-11": {
+   "prompt": "Compraràs al darrer preu. L'stop lògic és un 4 % per sota, sota el suport, i el màxim anterior només un 2 % per sobre. Aquesta operació compensa?",
+   "options": [
+    "Sí: si encerto, guanyo",
+    "Sí, si poso l'objectiu molt per sobre del màxim",
+    "No: arrisco 1R per guanyar mig R. Millor esperar una altra ocasió"
+   ],
+   "explanation": "Abans d'entrar, compara la distància a l'objectiu amb la de l'stop. Amb mig R de premi per 1R de risc, l'operació no compensa.",
+   "feedback": [
+    "Si encertes guanyes mig R i si falles perds 1R: hauries d'encertar moltíssim perquè surti a compte.",
+    "Posar l'objectiu on no és raonable arribar només maquilla el compte: el màxim anterior pot frenar la pujada.",
+    "Això: molts operadors no entren per sota de 2:1, i aquí guanyaries la meitat del que arrisques."
+   ]
   },
-  "u24l7-1": {
-   "prompt": "Encertes el 45 % de les vegades, guanyes 2R de mitjana i perds 1R. Quina és la teva esperança per operació?",
-   "options": [],
-   "explanation": "0,45 × 2 − 0,55 × 1 = 0,90 − 0,55 = +0,35R.",
-   "unit": "R"
+  "u24l6-12": {
+   "prompt": "Dues operacions tancades. L'Ana va arriscar 100 € i en va guanyar 300. En Bruno va arriscar 400 € i en va guanyar 400. Quina va ser millor operació?",
+   "options": [
+    "La d'en Bruno: va guanyar més euros",
+    "La de l'Ana: va guanyar 3R, i en Bruno, només 1R",
+    "Totes dues igual: totes dues van guanyar"
+   ],
+   "explanation": "En R es comparen operacions de qualsevol mida: el que s'ha guanyat entre el que s'ha arriscat. L'Ana, 3R; en Bruno, 1R.",
+   "feedback": [
+    "Va guanyar més euros, però arriscant quatre vegades més: només +1R.",
+    "Això: l'Ana va guanyar el triple del que va arriscar; en Bruno, el mateix que va arriscar.",
+    "Guanyar no n'hi ha prou: importa quant guanyes per cada euro que poses en risc."
+   ]
   },
-  "u24l7-2": {
-   "prompt": "Un sistema encerta el 70 %, guanya 0,4R de mitjana i perd 1R. Quina és la seva esperança?",
-   "options": [],
-   "explanation": "0,7 × 0,4 − 0,3 × 1 = 0,28 − 0,30 = −0,02R. Encerta molt i tot i així perd.",
-   "unit": "R"
+  "u24l6-13": {
+   "prompt": "Què li dius a la Lumi?",
+   "options": [
+    "No: és −1R, just el que havies decidit arriscar",
+    "Sí: perdre sempre és un desastre",
+    "Sí: hauries d'haver tret l'stop"
+   ],
+   "explanation": "Si salta l'stop, el resultat és −1R: una pèrdua petita i planificada, no un desastre.",
+   "feedback": [
+    "Cert: −1R és una pèrdua planificada. El dolent seria perdre més per treure l'stop.",
+    "Però vaig perdre exactament el que havia previst… això no sona a desastre.",
+    "Sense stop, la pèrdua podria haver estat molt més gran que 1R."
+   ],
+   "lines": [
+    "La meva última operació: va saltar l'stop i vaig perdre 100 €.",
+    "Arriscava just 100 €. Ha estat un desastre?"
+   ]
   },
   "u24l7-3": {
    "prompt": "El sistema B encerta el 60 % i perd diners. Per què?",
@@ -574,12 +642,6 @@
     "Esperança: 0. Després de comissions i spread, perd."
    ]
   },
-  "u24l7-7": {
-   "prompt": "El teu sistema té una esperança de +0,2R, arrisques un 1 % per operació i fas 100 operacions l'any. Quin guany esperat en surt, com a exemple teòric?",
-   "options": [],
-   "explanation": "100 × 0,2R = 20R; amb 1R = 1 % del compte, uns 20 %. És una esperança, no una promesa: hi haurà ratxes dolentes.",
-   "unit": "%"
-  },
   "u24l7-9": {
    "prompt": "Esperança = (% d'encert × guany mitjà) − (% d'error × ____).",
    "options": [
@@ -589,6 +651,52 @@
     "pèrdua mitjana"
    ],
    "explanation": "Cada error resta el que perds de mitjana quan falles."
+  },
+  "u24l7-11": {
+   "prompt": "Un curs promet un sistema que «encerta el 85 % de les operacions». Què preguntes abans de pagar res?",
+   "options": [
+    "Quant guanya quan encerta i quant perd quan falla, després de costos",
+    "Si hi ha descompte per pagar avui",
+    "Quants alumnes el fan servir ja"
+   ],
+   "explanation": "El percentatge d'encert sol no diu res: l'esperança combina quant encertes amb quant guanyes i perds en cada cas.",
+   "feedback": [
+    "Això: sense aquestes dues xifres, el 85 % no diu res. Un sistema que encerta el 90 % pot perdre diners.",
+    "La pressa per pagar és un senyal d'alarma, no una dada del sistema.",
+    "Que molta gent el faci servir no diu si guanya diners."
+   ]
+  },
+  "u24l7-12": {
+   "prompt": "Dos sistemes tenen el mateix avantatge abans de costos. L'A opera 5 vegades l'any; el B, 500 vegades, i paga comissió i spread en cadascuna. Quin té més risc de perdre diners a la pràctica?",
+   "options": [
+    "El B, perquè paga costos en cada operació i es poden menjar l'avantatge",
+    "L'A, perquè opera poc",
+    "Tots dos igual: tenen el mateix avantatge"
+   ],
+   "explanation": "Cada operació paga comissió i spread. Si els costos superen l'avantatge, el sistema perd, i amb moltes operacions es nota més.",
+   "feedback": [
+    "Això: com més operacions, més pesen els costos.",
+    "Operar poc no és cap problema: paga molt pocs costos.",
+    "El mateix avantatge abans de costos no és el mateix avantatge real."
+   ]
+  },
+  "u24l7-13": {
+   "prompt": "Què li dius a la Lumi?",
+   "options": [
+    "Millor un 50 %, per aprofitar-ho al màxim",
+    "Sí: amb esperança positiva no es pot perdre",
+    "L'esperança es compleix a la llarga; amb un risc gran, una mala ratxa et treu abans"
+   ],
+   "explanation": "L'esperança positiva es nota amb moltes operacions. Per arribar-hi cal sobreviure a les ratxes dolentes amb un risc petit.",
+   "feedback": [
+    "Això només accelera la ruïna: dos errors seguits i em quedaria amb un 25 %.",
+    "Amb poques operacions encara mana la sort. Una mala ratxa al 20 % em trauria.",
+    "Té sentit: millor un risc petit per arribar a aquesta «llarga»."
+   ],
+   "lines": [
+    "El meu sistema té esperança positiva.",
+    "Així que puc arriscar un 20 % per operació, oi?"
+   ]
   }
  }
 }

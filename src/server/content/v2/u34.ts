@@ -31,7 +31,7 @@ export default unit({
         note('Newton volvió a comprar caro y perdió unas 20.000 libras. Se le atribuye esta frase:'),
         say('newton', 'Puedo calcular el movimiento de los astros, pero no la locura de la gente.'),
       ]),
-      key('El patrón eterno', 'Una novedad real o prometida → precios que suben → gente que compra solo porque sube → crédito fácil → «esta vez es distinto» → nadie más compra → caída rápida.', 'Las burbujas cambian de disfraz, pero repiten el mismo guion.', 'Cuando compras algo solo porque crees que otro te lo pagará más caro, ya estás dentro de una burbuja.'),
+      key('El patrón eterno', 'Una novedad real o prometida → precios que suben → gente que compra solo porque sube → crédito fácil → «esta vez es distinto» → nadie más compra → caída rápida.\n\nCuando compras algo solo porque crees que otro te lo pagará más caro, ya estás dentro de una burbuja.', 'Las burbujas cambian de disfraz, pero repiten el mismo guion.', 'Pruébalo: antes de tu próxima compra, cuéntale a la profesora Lumi por qué la haces.'),
     ], [
       order('Ordena las fases típicas de una burbuja.', ['Aparece una novedad que ilusiona', 'Los precios suben y atraen a más compradores', 'Euforia: se compra solo porque sube, a menudo con crédito', 'Los primeros venden y dejan de entrar compradores', 'Pánico y caída rápida'], 'Es el patrón descrito por economistas como Kindleberger y Minsky: se repite siglo tras siglo.'),
       single('¿Dónde y cuándo ocurrió la tulipomanía?', ['En las Provincias Unidas (Holanda), hacia 1637', 'En Londres, en 1720', 'En París, en 1929'], 0, 'Londres 1720 es la Compañía de los Mares del Sur.'),
@@ -77,7 +77,7 @@ export default unit({
           why: 'Las acciones valen 9.000 €, justo lo que debes. Con ×10, **un −10 % del precio es un −100 %** de tu dinero.',
         },
         goal: { text: 'Con ×10, busca la caída que borra todo tu dinero.', when: [when('wiped', '==', 1), when('lev', '==', 10)] },
-        insight: 'Con préstamos, una bajada pequeña se lo llevaba todo y **los brókers obligaban a vender**; esas ventas forzadas hundían más los precios. **El apalancamiento convierte una caída en ruina.**',
+        insight: 'Con préstamos, una bajada pequeña se lo llevaba todo y **los brókers obligaban a vender**; esas ventas forzadas hundían más los precios. **El apalancamiento convierte una caída en ruina.** Pruébalo: en tu Cartera, mira tu efectivo: invertir solo con dinero tuyo te deja esperar.',
         lumi: [
           { when: when('wiped', '==', 1), say: 'Todo perdido, y el precio solo ha bajado un poco.', mood: 'SAD' },
           { when: when('lev', '<=', 2), say: 'Con poco préstamo, una caída duele, pero no te arruina.', mood: 'CALM' },
@@ -95,7 +95,7 @@ export default unit({
       order('Ordena lo que pasó.', ['Euforia de los años 20 y compras a crédito', 'Máximo del Dow Jones en septiembre de 1929', 'Jueves y martes negros, en octubre de 1929', 'Mínimo en julio de 1932', 'El Dow recupera su máximo en 1954'], 'Subir duró años; caer, unos pocos; recuperarse, décadas sin dividendos.'),
       timed(single('Rápido: ¿cuál es la gran lección del crack de 1929?', ['El apalancamiento convierte una caída en ruina', 'Las crisis duran un mes', 'Hay que invertir solo en un país'], 0, 'Sin deudas se podía esperar; con deudas, te obligaban a vender en el peor momento.'), 12),
       scenario('Es 1930. La bolsa ha caído un 40 %. Ana no debe nada y no necesita el dinero en años. Bruno compró a crédito y el bróker le pide más garantías. ¿Quién tiene más opciones?', [['Bruno, porque si pone más dinero puede recuperar más', 'Bruno tiene que poner dinero que quizá no tiene o vender en el peor momento. Y aún quedaba caída.'], ['Ana: sin deudas, nadie puede obligarla a vender', 'Exacto. El tiempo solo juega a tu favor si puedes esperar.'], ['Los dos igual: la bolsa es la misma', 'Misma bolsa, situaciones opuestas: la deuda decide quién aguanta.']], 1, 'No invertir con dinero prestado es la primera regla que sale de la historia.'),
-    ], { source: '3.7', minutes: 6, retire: [3, 4, 5, 8] }),
+    ], { source: '3.7', minutes: 6, retire: [3, 4, 5, 6, 8] }),
 
     lesson('u34l3', 'La burbuja puntocom', [
       mission({
@@ -127,6 +127,7 @@ export default unit({
         ]),
         note('Pets.com sale a bolsa en febrero de 2000 y cierra ese noviembre. Amazon cae más de un 90 %… y sobrevive.'),
         say('lumi', 'Una gran empresa puede ser una mala inversión si pagas demasiado por ella.'),
+        say('lumi', 'Pruébalo: mira tu Cartera. Si un solo sector pesa más de la mitad, reparte.'),
       ]),
     ], [
       trend('Así se movió el Nasdaq 100 entre finales de 1997 y marzo de 2000. ¿Qué tendencia ves?', 'hist-dotcom', 'Alcista', 'Más que se cuadruplicó en poco más de dos años: el entusiasmo por internet parecía no tener techo.'),
@@ -139,7 +140,7 @@ export default unit({
       timed(tf('Una gran empresa siempre es una buena inversión, pagues lo que pagues por ella.', false, 'El precio de entrada decide buena parte de tu rentabilidad.'), 10),
       multi('¿Qué señales de burbuja se vieron en 1999-2000? Marca todas.', ['Empresas sin beneficios valoradas en miles de millones', 'Salidas a bolsa que doblaban su precio el primer día', 'Valoraciones prudentes respecto a los beneficios', 'Mucha gente nueva comprando solo porque subía'], [0, 1, 3], 'Las valoraciones se olvidaron: «las reglas de antes ya no sirven».'),
       chat(['La inteligencia artificial va a cambiarlo todo 🤖', 'Así que cualquier empresa de IA es buena compra, ¿no?'], '¿Qué le contestas a Lumi?', [['Sí, como internet en 2000', 'Precisamente en 2000 internet cambió todo… y el Nasdaq cayó un 78 %.'], ['La tecnología puede ser real y aun así el precio puede estar caro', '¡Eso! Lo que importa no es solo la idea, sino cuánto pagas por ella.'], ['No, la IA es una moda', 'No hace falta decidir si es una moda: basta con no pagar cualquier precio y diversificar.']], 1, 'Acertar con una tecnología no garantiza acertar con la inversión.'),
-    ], { source: '3.7', minutes: 6, retire: [2, 3, 5, 7] }),
+    ], { source: '3.7', minutes: 6, retire: [2, 3, 4, 5, 7] }),
 
     lesson('u34l4', 'La crisis de 2008', [
       story('Una hipoteca para todos', [{ id: 'agente', name: 'Agente hipotecario' }], [
@@ -159,7 +160,7 @@ export default unit({
         intro: 'Octubre de 2007: **10.000 €** en el S&P 500, con datos reales. Tienes colchón, no debes nada y no necesitas el dinero en años.',
         widget: { kind: 'crash', series: 'series-crash-2008', amount: 10000 },
         goal: { text: 'Llega hasta el final sin vender.', when: [when('played', '==', 1), when('sold', '==', 0)] },
-        insight: 'En marzo de 2009 tus 10.000 € valían **unos 4.390 €** (−56 %), y sin vender volvieron a 10.000 € en marzo de 2013, sin dividendos. **Con colchón y sin deudas, una caída no te obliga a vender.**',
+        insight: 'En marzo de 2009 tus 10.000 € valían **unos 4.390 €** (−56 %), y sin vender volvieron a 10.000 € en marzo de 2013, sin dividendos. **Con colchón y sin deudas, una caída no te obliga a vender.** Pruébalo: pon una alerta un 20 % por debajo del precio del ETF del S&P 500 y decide hoy qué harás.',
         lumi: [
           { when: when('sold', '==', 1), say: 'Has vendido. Al terminar, repite y prueba a aguantar.', mood: 'THINKING' },
           { when: when('drop', '<=', -45), say: 'Lehman ha quebrado y se habla de otra Gran Depresión.', mood: 'WORRIED' },
@@ -178,7 +179,7 @@ export default unit({
       num('El S&P 500 cayó un 57 % entre 2007 y 2009. ¿Cuánto tenía que subir para recuperar el máximo? (redondea)', 133, '%', '1 ÷ 0,43 − 1 ≈ 1,33 → +133 %. Con dividendos, el S&P 500 tardó unos 4 años en recuperar su máximo.', 2),
       timed(single('Rápido: ¿qué lección deja 2008 a un inversor particular?', ['Ten colchón y evita productos que no entiendes', 'Compra solo acciones de bancos', 'Los expertos nunca se equivocan'], 0, 'Hasta los grandes bancos se equivocaron con lo que tenían en su balance.'), 12),
       multi('¿Qué hizo la crisis de 2008 mucho peor? Marca todo.', ['Bancos muy endeudados', 'Productos complejos que casi nadie entendía', 'Notas de riesgo demasiado optimistas', 'Que la gente tuviera mucho colchón de ahorro'], [0, 1, 2], 'El apalancamiento y la complejidad convirtieron un problema de hipotecas en una crisis mundial.'),
-    ], { source: '3.7', minutes: 6, retire: [3, 5, 6, 8] }),
+    ], { source: '3.7', minutes: 6, retire: [3, 5, 6, 7, 8] }),
 
     lesson('u34l5', 'Japón 1989: treinta años para recuperar', [
       mission({
@@ -210,6 +211,7 @@ export default unit({
           opt('Los dos igual: la bolsa es la bolsa', 'ok', say('lumi', 'Un país y el mundo pueden ir muy distinto durante décadas.')),
         ]),
         say('lumi', 'Un índice mundial no depende de que un país concreto vaya bien.'),
+        say('lumi', 'Pruébalo: en Mercado, compara el gráfico del Nikkei 225 con el de un ETF mundial.'),
       ]),
     ], [
       trend('Así se movió el Nikkei 225 de Japón entre 1984 y finales de 1989. ¿Qué tendencia ves?', 'hist-japan-1989', 'Alcista', 'Más que se triplicó en cinco años: parecía que Japón no podía dejar de crecer.'),
@@ -222,7 +224,8 @@ export default unit({
       timed(tf('Los grandes índices bursátiles siempre recuperan su máximo en menos de 10 años.', false, 'El Nikkei tardó 34 años y el Nasdaq, 15.'), 10),
       chat(['El S&P 500 siempre se recupera 💪', 'Así que lo meto todo ahí y no necesito diversificar, ¿no?'], '¿Qué le contestas a Lumi?', [['Exacto, EE. UU. nunca fallará', 'En 1989 se decía lo mismo de Japón, y su bolsa tardó 34 años en volver.'], ['Japón también «siempre se recuperaba»: mejor no depender de un solo país', '¡Bien! El índice mundial ya incluye EE. UU. y te cubre si tiene su propia década perdida.'], ['Mejor lo meto todo en Japón, que ya se ha recuperado', 'Cambiar de país sigue siendo concentrar.']], 1, 'La historia de EE. UU. es la del mercado que mejor ha ido. No está garantizado que se repita.'),
       multi('¿Qué tenía la burbuja japonesa? Marca todo.', ['Crédito barato', 'Bolsa y suelo disparados a la vez', 'Valoraciones muy altas', 'Una bolsa pequeña y poco conocida'], [0, 1, 2], 'Era la mayor bolsa del mundo, no una pequeña.'),
-    ], { source: '3.7', minutes: 6, retire: [2, 4, 5, 6, 7] }),
+      scenario('Es 1990. El Nikkei ya ha empezado a bajar desde su máximo de 1989 y un amigo te dice: «Japón es la mayor bolsa del mundo y siempre se recupera: mete aquí todos tus ahorros». ¿Qué haces?', [['Lo meto todo en el Nikkei: Japón siempre se recupera', 'El Nikkei no superó su máximo de 1989 hasta febrero de 2024: 34 años de espera.'], ['Invierto repartido por todo el mundo, con Japón como una parte más', 'Bien: si un país vive su década perdida, el resto de la cartera sigue adelante.'], ['Pido un préstamo para comprar más ahora que ha bajado', 'Con deuda no puedes esperar décadas: te obligarían a vender mucho antes.']], 1, 'Repartir por países te protege de elegir el país equivocado. La tentadora, «siempre se recupera», falla porque un país puede tardar décadas: Japón tardó 34 años.'),
+    ], { source: '3.7', minutes: 6, retire: [2, 3, 4, 5, 6, 7] }),
 
     lesson('u34l6', 'España: burbuja inmobiliaria y prima de riesgo', [
       mission({
@@ -255,6 +258,7 @@ export default unit({
         note('26 de julio de 2012, Londres.'),
         say('draghi', 'El BCE hará lo que sea necesario para preservar el euro. Y créanme, será suficiente.'),
         say('lumi', 'Prima de riesgo: lo que paga España de más que Alemania. 100 puntos = 1 %.'),
+        say('lumi', 'Pruébalo: en Mercado, compara el IBEX 35 con un ETF del MSCI World.'),
       ]),
     ], [
       trend('Así se movió el IBEX 35 de enero de 2010 a julio de 2012. ¿Qué tendencia ves?', 'hist-ibex-2012', 'Bajista', 'Dos años y medio de crisis de deuda: del entorno de 12.000 puntos a menos de 6.300.'),
@@ -267,7 +271,7 @@ export default unit({
       timed(single('Rápido: 100 puntos básicos equivalen a…', ['Un 0,1 %', 'Un 1 %', 'Un 10 %'], 1, 'Un punto básico es una centésima de punto porcentual.'), 12),
       fill('Draghi dijo en inglés que haría «whatever it ____» para salvar el euro.', 'takes', ['costs', 'needs', 'gets'], 'Las tres palabras más famosas de la crisis del euro, el 26 de julio de 2012.'),
       multi('¿Qué lecciones deja la crisis española? Marca todas.', ['Tu propio país también puede tener una crisis muy dura', 'El crédito fácil y el ladrillo pueden formar una burbuja', 'Concentrarte en tu país te protege', 'Vender en el máximo miedo suele salir caro'], [0, 1, 3], 'Concentrarte en casa no protege: concentra.'),
-    ], { minutes: 6, retire: [4, 6, 7] }),
+    ], { minutes: 6, retire: [2, 4, 6, 7] }),
 
     lesson('u34l7', 'El crash del COVID en 2020', [
       mission({
@@ -299,6 +303,7 @@ export default unit({
         ]),
         note('Según J.P. Morgan, 7 de los 10 mejores días del S&P 500 entre 2005 y 2024 llegaron a menos de dos semanas de uno de los 10 peores.'),
         say('lumi', 'Nadie predice el suelo. Vender en pánico fue el gran error de 2020.'),
+        say('lumi', 'Pruébalo: cuéntale a la profesora Lumi qué harás si tu Cartera cae un 25 %.'),
       ]),
     ], [
       point('Toca el máximo del S&P 500 antes de la caída del COVID.', 'hist-covid', 'max', 'El 19 de febrero de 2020: casi nadie esperaba lo que llegaría en las semanas siguientes.'),
@@ -311,7 +316,7 @@ export default unit({
       chat(['Yo vendí todo en marzo de 2020 😓', 'Pensaba volver a entrar cuando bajara más… y nunca bajó.'], '¿Qué le contestas a Lumi?', [['Mala suerte, la próxima vez acertarás el suelo', 'Acertar el suelo es casi imposible: nadie lo anunció de antemano.'], ['Le pasó a muchísima gente: la próxima vez, decide antes con un plan escrito', '¡Eso! Tu Declaración de Política de Inversión existe para ese momento.'], ['Lo mejor es no volver a invertir', 'Así el error de marzo de 2020 te costaría también todos los años siguientes.']], 1, 'El plan se escribe en calma para cumplirlo en el pánico.'),
       timed(tf('Los expertos anunciaron con antelación que el 23 de marzo de 2020 sería el suelo.', false, 'Nadie lo anunció. Los suelos solo se ven en el retrovisor.'), 10),
       multi('¿Qué funcionó en la crisis del COVID? Marca todo.', ['No vender en pánico', 'Seguir aportando cada mes', 'Rebalancear hacia acciones', 'Esperar fuera a que «se aclarara»'], [0, 1, 2], 'Cuando se aclaró, la bolsa ya había recuperado casi todo.'),
-    ], { source: '3.7', minutes: 6, retire: [4, 5, 6, 8] }),
+    ], { source: '3.7', minutes: 6, retire: [3, 4, 5, 6, 8] }),
 
     lesson('u34l8', 'Cripto 2022: Terra y FTX', [
       mission({
@@ -344,6 +349,7 @@ export default unit({
         say('exchange', 'Retiradas pausadas temporalmente. Sus fondos están a salvo.'),
         note('Celsius y otras plataformas congelan las retiradas y quiebran. En noviembre quiebra FTX tras usar el dinero de sus clientes; su fundador, condenado a 25 años.'),
         say('lumi', '«Si no tienes tus claves, no son tus monedas.»'),
+        say('lumi', 'Pruébalo: mira tu Cartera. La cripto debería ser una parte pequeña que puedas perder.'),
       ]),
     ], [
       upDown('Es el 8 de noviembre de 2021. Bitcoin ha multiplicado su precio por siete en año y medio y está cerca de su máximo histórico. ¿Qué hizo en el año siguiente?', 'hist-btc-2021', 'En un activo tan volátil, un año puede traer subidas o caídas enormes: por eso su peso en una cartera debe ser pequeño.', 'el año siguiente'),
@@ -356,7 +362,7 @@ export default unit({
       timed(single('Rápido: te ofrecen un 20 % anual «estable» en cripto. ¿Qué es?', ['Una señal de riesgo', 'Una inversión segura', 'Un depósito garantizado'], 0, 'Un rendimiento alto y estable sin explicación clara fue la antesala de Terra y Celsius.'), 12),
       multi('¿Qué lecciones deja la cripto en 2022? Marca todas.', ['Una rentabilidad altísima y «estable» es una alarma', 'Un exchange puede quebrar con tu dinero dentro', 'Si todos lo compran, es seguro', 'Lo especulativo debe ser una parte pequeña que puedas perder entera'], [0, 1, 3], 'La popularidad no protegió a nadie en 2022.'),
       fill('En cripto se dice: «si no tienes tus claves, no son tus ____».', 'monedas', ['acciones', 'deudas', 'cuentas'], 'Si otro custodia tus criptos, dependes de que esa entidad no quiebre.'),
-    ], { source: '3.7', minutes: 6, retire: [0, 3, 5, 7] }),
+    ], { source: '3.7', minutes: 6, retire: [0, 3, 4, 5, 7] }),
 
     lesson('u34l9', 'Qué tienen en común todas las crisis', [
       play({
@@ -400,7 +406,7 @@ export default unit({
           { say: 'Mueve los pesos y mira la peor caída', mood: 'HAPPY' },
         ],
       }),
-      key('Las cinco reglas', '1. No inviertas con dinero prestado.\n2. Diversifica empresas, sectores y países.\n3. Ten un colchón para no tener que vender.\n4. No pagues cualquier precio.\n5. No vendas en pánico: si tu plan es a 20 años, una caída de meses no lo cambia.', 'Quien estaba diversificado, sin deudas y con paciencia, se recuperó de todas las crisis.', 'Las crisis no avisan, pero sí se pueden preparar.'),
+      key('Las cinco reglas', '1. No inviertas con dinero prestado.\n2. Diversifica empresas, sectores y países.\n3. Ten un colchón para no tener que vender.\n4. No pagues cualquier precio.\n5. No vendas en pánico: si tu plan es a 20 años, una caída de meses no lo cambia.\n\nLas crisis no avisan, pero sí se pueden preparar.', 'Quien estaba diversificado, sin deudas y con paciencia, se recuperó de todas las crisis.', 'Pruébalo: revisa tu Cartera con las cinco reglas y corrige la que no cumplas.'),
     ], [
       multi('¿Qué elementos se repiten en casi todas las burbujas y crisis? Marca todos.', ['Crédito fácil o apalancamiento', 'Euforia y «esta vez es distinto»', 'Valoraciones prudentes', 'Ventas en pánico al final'], [0, 1, 3], 'Las valoraciones prudentes son justo lo que desaparece en una burbuja.'),
       chat(['Algún día llegará la próxima crisis 😬', '¿Qué vas a hacer tú cuando llegue?'], '¿Qué le contestas a Lumi?', [['Venderé todo justo antes de que empiece', 'Nadie ha sabido nunca cuándo empieza. Es un plan que depende de adivinar.'], ['Tendré colchón, cartera diversificada, sin deudas y seguiré mi plan escrito', '¡Perfecto! No sabes cuándo llegará, pero sí cómo vas a reaccionar.'], ['Pediré un préstamo para comprar barato', 'Comprar con deuda en una crisis puede obligarte a vender si cae aún más.']], 1, 'No se trata de predecir la crisis, sino de estar preparado para aguantarla.'),

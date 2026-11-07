@@ -72,7 +72,8 @@
     {
      "title": "P/VC: per a bancs i asseguradores",
      "body": "**P/VC = preu ÷ valor comptable per acció.** Panadería Global: 15 ÷ 4,5 = **3,3**.\n\nEs fa servir sobretot en bancs i asseguradores, que tenen el balanç ple d'actius financers. En una empresa de programari, que val per les idees i no pels actius, diu poca cosa.",
-     "key": "Tria la ràtio segons el tipus d'empresa."
+     "key": "Tria la ràtio segons el tipus d'empresa.",
+     "tip": "Prova-ho: pregunta a la Lumi quan un PER alt pot estar justificat."
     }
    ]
   },
@@ -141,7 +142,8 @@
     {
      "title": "ROE i ROIC de Panadería Global",
      "body": "• **ROE = benefici net ÷ patrimoni net.** 97,5 ÷ 450 = **21,7 %**. Sostingut per sobre del **15 %**, és molt bo.\n• **ROIC = EBIT × (1 − impostos) ÷ (patrimoni + deute net).** 150 × 0,75 ÷ (450 + 320) = **14,6 %**. Ha de superar el **cost del capital** (≈ 8-10 %).",
-     "key": "Busca negocis que converteixin cada euro invertit en molt més d'un euro, any rere any."
+     "key": "Busca negocis que converteixin cada euro invertit en molt més d'un euro, any rere any.",
+     "tip": "Prova-ho: pregunta a la Lumi quin ROIC té un negoci excel·lent."
     }
    ]
   },
@@ -194,7 +196,8 @@
     {
      "title": "El dividend no és cap regal",
      "body": "Quan una empresa paga 1 € per acció, l'acció sol baixar al voltant d'1 € aquell dia: els diners passen de l'empresa a la teva butxaca, i Hisenda s'endú la seva part. El que compta és la **rendibilitat total**.",
-     "key": "Un dividend sostenible surt de la caixa, no del deute."
+     "key": "Un dividend sostenible surt de la caixa, no del deute.",
+     "tip": "Prova-ho: pregunta a la Lumi quin payout posa en perill un dividend."
     }
    ]
   },
@@ -204,7 +207,7 @@
     {
      "texts": [
       "Portar el futur a avui",
-      "Una promesa: cobraràs **100 €** d'aquí a uns quants anys, sense res més pel camí. Quant val avui? Depèn de la **taxa** que exigeixes.",
+      "La teva àvia t'ofereix **100 €** avui o d'aquí a uns anys: a que els prefereixes avui? Mou els anys i la **taxa** que exigeixes i mira quant val avui aquest cobrament futur.",
       "Quant val avui un cobrament de 100 € en el futur",
       "Amb una taxa del 9 %, quant valen avui 100 € que cobraràs d'aquí a un any?",
       "Uns 109 €",
@@ -264,7 +267,8 @@
     {
      "title": "Les peces d'un DCF",
      "body": "1. Estima la **caixa lliure** dels pròxims anys.\n2. Descompta cada flux a avui.\n3. Suma-hi el **valor terminal** (fórmula de Gordon): caixa lliure de l'any següent ÷ (taxa − creixement perpetu).\n4. Compara-ho amb el preu.\n\nPanadería Global: fluxos de 10 anys ≈ **8,6 €** + valor terminal (26,1 €, portat a avui) ≈ **11,0 €** = **19,6 €**.",
-     "key": "Si canvies una mica les hipòtesis i el valor s'enfonsa, vés amb compte."
+     "key": "Si canvies una mica les hipòtesis i el valor s'enfonsa, vés amb compte.",
+     "tip": "Prova-ho: pregunta a la Lumi què passa amb el preu si una empresa creix menys del previst."
     }
    ]
   },
@@ -305,7 +309,8 @@
     {
      "title": "Què diu i què no",
      "body": "**Sí:** històricament, un CAPE alt s'ha associat a **rendibilitats més baixes en els 10 anys següents**.\n**No:** no diu **quan** caurà el mercat; pot continuar car durant anys.\n\nAltres regions cotitzen força més barates: un altre argument per diversificar per països.",
-     "key": "El CAPE serveix per ajustar expectatives, no per endevinar el mes que ve."
+     "key": "El CAPE serveix per ajustar expectatives, no per endevinar el mes que ve.",
+     "tip": "Prova-ho: a Mercat, compara a 5 anys l'S&P 500 amb l'IBEX 35."
     }
    ]
   },
@@ -315,24 +320,6 @@
   }
  },
  "questions": {
-  "u17l2-2": {
-   "prompt": "PER de 30 i creixement esperat del BPA del 15 % anual. Quin és el seu PEG?",
-   "options": [],
-   "explanation": "30 ÷ 15 = 2: cara per al creixement que té.",
-   "unit": "vegades"
-  },
-  "u17l2-3": {
-   "prompt": "Capitalització de 2.000 M€, deute net de 600 M€ i EBITDA de 260 M€. Quin és el seu EV/EBITDA?",
-   "options": [],
-   "explanation": "(2.000 + 600) ÷ 260 = 10.",
-   "unit": "vegades"
-  },
-  "u17l2-4": {
-   "prompt": "Un banc cotitza a 6 € i el seu valor comptable per acció és de 7,5 €. Quin és el seu P/VC?",
-   "options": [],
-   "explanation": "6 ÷ 7,5 = 0,8: cotitza per sota del seu valor en llibres.",
-   "unit": "vegades"
-  },
   "u17l2-6": {
    "prompt": "Per què l'EV/EBITDA serveix per comparar empreses amb nivells de deute diferents?",
    "options": [
@@ -378,23 +365,46 @@
     "Cara (PEG de 2 o més)"
    ]
   },
-  "u17l3-1": {
-   "prompt": "Benefici net de 50 M€ i patrimoni net de 250 M€. Quin és el ROE?",
-   "options": [],
-   "explanation": "50 ÷ 250 = 20 %.",
-   "unit": "%"
+  "u17l2-11": {
+   "prompt": "FitA i FitB, dues cadenes de gimnasos inventades, cotitzen a PER 15. FitA no té deute; FitB té un deute net igual al que val a borsa. Si compressis l'empresa sencera, quina seria més cara?",
+   "options": [
+    "FitB: amb el seu deute, el seu valor d'empresa és el doble",
+    "Les dues igual: tenen el mateix PER",
+    "FitA, perquè no aprofita el deute"
+   ],
+   "explanation": "El valor d'empresa suma el deute net a la capitalització. Amb el mateix PER, la que més deu és la més cara de comprar sencera.",
+   "feedback": [
+    "Això: comprant FitB et quedes també amb el seu deute. El seu EV duplica la seva capitalització.",
+    "El PER no veu el deute: per això existeix l'EV/EBITDA.",
+    "No deure res no encareix l'empresa: al contrari, no has de tornar res."
+   ]
   },
-  "u17l3-2": {
-   "prompt": "EBIT de 200 M€, impostos del 25 %, patrimoni de 600 M€ i deute net de 400 M€. Quin és el ROIC?",
-   "options": [],
-   "explanation": "200 × 0,75 = 150; 150 ÷ (600 + 400) = 15 %.",
-   "unit": "%"
+  "u17l2-12": {
+   "prompt": "Tres empreses inventades. Quina sembla més barata pel que creix?",
+   "options": [
+    "PER 20 i creix al 5 % l'any",
+    "PER 30 i creix al 30 % l'any",
+    "PER 10 i creix al 2 % l'any"
+   ],
+   "explanation": "Compara el PER amb el creixement: 30 entre 30 dona un PEG d'1; 20 entre 5, de 4; 10 entre 2, de 5. El PER més baix tempta, però no és barat si l'empresa gairebé no creix."
   },
-  "u17l3-3": {
-   "prompt": "Una empresa guanya 40 M€ amb un patrimoni de 400 M€ (ROE del 10 %). Recompra accions amb deute: el patrimoni baixa a 200 M€ i, pels interessos, el benefici baixa a 36 M€. Quin és el nou ROE?",
-   "options": [],
-   "explanation": "36 ÷ 200 = 18 %. El ROE gairebé es duplica sense que el negoci hagi millorat: és efecte del deute.",
-   "unit": "%"
+  "u17l2-13": {
+   "prompt": "Què li respons a la Lumi?",
+   "options": [
+    "El P/VC no serveix per a bancs",
+    "Pot ser barat, però mira per què el mercat desconfia del seu balanç",
+    "Sí, és una ganga segura: compra tot el que puguis"
+   ],
+   "explanation": "En bancs i asseguradores el P/VC és molt útil, però un de molt baix sol indicar que el mercat dubta del que val el seu balanç. Barat no és el mateix que segur.",
+   "feedback": [
+    "Al contrari: en bancs és una de les ràtios més útils.",
+    "D'acord: potser els seus préstecs valen menys del que diu.",
+    "Si el mercat dubta dels seus préstecs, aquest valor comptable es pot encongir."
+   ],
+   "lines": [
+    "Aquest banc cotitza a la meitat del seu valor comptable.",
+    "És una ganga segura?"
+   ]
   },
   "u17l3-5": {
    "prompt": "Un ROE molt alt pot ser degut al fet que l'empresa té molt de deute.",
@@ -437,23 +447,47 @@
     "Amb el ROE, el ROIC i el deute ja te'n pots fer una idea força bona."
    ]
   },
-  "u17l4-1": {
-   "prompt": "Una acció cotitza a 40 € i paga 1,60 € de dividend l'any. Quina és la seva rendibilitat per dividend?",
-   "options": [],
-   "explanation": "1,60 ÷ 40 = 4 %.",
-   "unit": "%"
+  "u17l3-11": {
+   "prompt": "Dues cafeteries inventades guanyen 100.000 € l'any cadascuna. La primera va necessitar 200.000 € per obrir; la segona, 2 milions. Quin és millor negoci?",
+   "options": [
+    "La segona: és més gran",
+    "Les dues igual: guanyen el mateix",
+    "La primera: guanya el mateix amb molt menys capital"
+   ],
+   "explanation": "El ROIC compara el que guanya un negoci amb el capital que necessita. Amb el mateix benefici, el que necessita menys capital és millor negoci i pot créixer sense demanar tants diners.",
+   "feedback": [
+    "Més gran no és millor: necessita deu vegades més diners per guanyar el mateix.",
+    "Guanyen el mateix, però una necessita deu vegades més capital.",
+    "Això: rendeix un 50 % sobre el seu capital; la segona, només un 5 %."
+   ]
   },
-  "u17l4-2": {
-   "prompt": "BPA de 2 € i dividend d'1,50 €. Quin és el payout?",
-   "options": [],
-   "explanation": "1,50 ÷ 2 = 75 %: reparteix tres quartes parts del que guanya.",
-   "unit": "%"
+  "u17l3-12": {
+   "prompt": "Què li respons a la Lumi?",
+   "options": [
+    "El ROE no serveix de res",
+    "Sí: compra ja",
+    "Mira abans el seu deute i el seu ROIC: el deute infla el ROE"
+   ],
+   "explanation": "Un ROE molt alt pot sortir d'un gran negoci o de molt deute. El ROIC, que compta tot el capital, diu quina de les dues coses és.",
+   "feedback": [
+    "Serveix, però cal mirar-lo juntament amb el deute i el ROIC.",
+    "Un ROE així pot venir del deute més que del negoci.",
+    "Tens raó: amb poc patrimoni, qualsevol benefici sembla enorme."
+   ],
+   "lines": [
+    "Aquesta empresa té un ROE del 60 %.",
+    "És el millor negoci del món!"
+   ]
   },
-  "u17l4-3": {
-   "prompt": "Inditex va proposar un dividend d'1,68 € per acció pel seu exercici 2024. Si l'acció cotitzés a 48 €, quina seria la seva rendibilitat per dividend?",
-   "options": [],
-   "explanation": "1,68 ÷ 48 = 3,5 %. És un càlcul amb un preu d'exemple, no una recomanació.",
-   "unit": "%"
+  "u17l3-13": {
+   "prompt": "Quins senyals apunten a un negoci de qualitat? Marca'ls tots.",
+   "options": [
+    "ROE alt gairebé sense deute",
+    "ROE alt només gràcies a molt deute",
+    "Créixer de pressa amb un ROIC del 4 %",
+    "ROIC per sobre del cost del capital durant anys"
+   ],
+   "explanation": "La qualitat és a rendir molt sobre tot el capital sense dependre del deute. Créixer amb un ROIC per sota del cost del capital destrueix valor, per ràpid que sigui."
   },
   "u17l4-4": {
    "prompt": "Marca els missatges que són senyal d'estafa o d'engany amb els dividends.",
@@ -487,12 +521,6 @@
     "Exacte: un dividend més petit però sostenible sol valer més que un d'alt en perill."
    ]
   },
-  "u17l4-9": {
-   "prompt": "Una acció val 30 € i paga un dividend de 0,90 €. Sense altres notícies, a quin preu aproximat sol obrir el dia que descompta el dividend?",
-   "options": [],
-   "explanation": "30 − 0,90 = 29,10 €. El dividend surt del valor de l'empresa.",
-   "unit": "€"
-  },
   "u17l4-10": {
    "prompt": "Payout = dividend per acció ÷ ____.",
    "options": [
@@ -503,29 +531,47 @@
    ],
    "explanation": "Quina part del benefici es reparteix."
   },
-  "u17l5-1": {
-   "prompt": "Amb una taxa del 10 %, quant valen avui 110 € que cobraràs d'aquí a un any?",
-   "options": [],
-   "explanation": "110 ÷ 1,10 = 100 €.",
-   "unit": "€"
+  "u17l4-11": {
+   "prompt": "Cobres un dividend d'1 € per acció i aquell mateix dia l'acció passa de 20 € a 19 €, sense altres notícies. Has guanyat diners?",
+   "options": [
+    "He perdut 1 € per acció",
+    "Sí: 1 € gratis per acció",
+    "No pel dividend en si: aquest euro ha passat de l'acció a la teva butxaca"
+   ],
+   "explanation": "El dividend no és un regal: surt del valor de l'empresa. El que importa és la rendibilitat total, preu més dividends.",
+   "feedback": [
+    "Tampoc: l'acció val 1 € menys, però aquest euro el tens tu.",
+    "No és gratis: surt del valor de l'empresa, que baixa el mateix.",
+    "Això: el que compta és la rendibilitat total, i a sobre Hisenda s'endú la seva part."
+   ]
   },
-  "u17l5-2": {
-   "prompt": "Amb una taxa del 8 %, quant valen avui 1.000 € que cobraràs d'aquí a 5 anys?",
-   "options": [],
-   "explanation": "1,08⁵ ≈ 1,4693; 1.000 ÷ 1,4693 ≈ 680,58 €.",
-   "unit": "€"
+  "u17l4-12": {
+   "prompt": "Què li respons a la Lumi?",
+   "options": [
+    "Llança-t'hi: un 15 % és imbatible",
+    "Els dividends alts sempre són una estafa",
+    "Abans mira si guanya el que reparteix: aquesta caiguda avisa d'una retallada"
+   ],
+   "explanation": "Quan el preu s'enfonsa, la rendibilitat per dividend es dispara sense que l'empresa pagui més. Sol ser senyal que el mercat espera una retallada.",
+   "feedback": [
+    "Si retallen el dividend, el 15 % desapareix i el preu pot caure més.",
+    "No sempre, però un de tan alt obliga a mirar d'on surt.",
+    "Tens raó: un 15 % amb el preu enfonsat sona a parany."
+   ],
+   "lines": [
+    "He trobat una acció que paga un 15 % de dividend.",
+    "El seu preu ha caigut a la meitat aquest any. M'hi llanço?"
+   ]
   },
-  "u17l5-3": {
-   "prompt": "Valor terminal amb la fórmula de Gordon: el FCF de l'any següent és de 2 €, la taxa de descompte, un 9 %, i el creixement perpetu, un 2 %. Quant val?",
-   "options": [],
-   "explanation": "2 ÷ (0,09 − 0,02) = 2 ÷ 0,07 ≈ 28,57 €.",
-   "unit": "€"
-  },
-  "u17l5-4": {
-   "prompt": "El teu DCF diu que una acció val 25 € i cotitza a 20 €. Quin marge de seguretat tens sobre el valor?",
-   "options": [],
-   "explanation": "(25 − 20) ÷ 25 = 20 %.",
-   "unit": "%"
+  "u17l4-13": {
+   "prompt": "Ordena aquests dividends de més segur a més en perill.",
+   "options": [
+    "Payout del 70 % i beneficis estables",
+    "Payout del 130 % pagat amb deute",
+    "Payout del 100 %: reparteix tot el que guanya",
+    "Payout del 40 % i beneficis creixent"
+   ],
+   "explanation": "Com més a prop o per sobre del 100 % és el payout, menys marge queda si el benefici baixa. Pagar-lo amb deute és el pitjor senyal."
   },
   "u17l5-6": {
    "prompt": "Per a què serveix sobretot un DCF?",
@@ -577,6 +623,29 @@
     "El meu DCF diu que aquesta acció val 47,32 € exactament 🤓"
    ]
   },
+  "u17l5-12": {
+   "prompt": "Amb una taxa del 9 %, quin cobrament val més avui?",
+   "options": [
+    "100 € d'aquí a 1 any",
+    "100 € d'aquí a 10 anys",
+    "100 € d'aquí a 30 anys"
+   ],
+   "explanation": "Com abans arriben els diners, menys cal descomptar-los. A 30 anys, 100 € valen avui molt poc amb una taxa del 9 %: per això el futur llunyà pesa tan poc en un DCF."
+  },
+  "u17l5-13": {
+   "prompt": "L'Iván i la Sara valoren la mateixa empresa amb una taxa del 9 %. L'Iván suposa que creixerà un 30 % l'any durant 20 anys; la Sara, un 7 % durant 10 anys i després un 2 %. Quin valor és més útil per decidir?",
+   "options": [
+    "El de l'Iván: surt més alt",
+    "El de la Sara: les seves hipòtesis són prudents i creïbles",
+    "Els dos igual: fan servir la mateixa taxa"
+   ],
+   "explanation": "Un DCF és tan bo com les seves hipòtesis. Amb supòsits prudents, el valor que en surt serveix per decidir; amb supòsits de somni, només per il·lusionar-se.",
+   "feedback": [
+    "Més alt no és més cert: depèn d'un creixement gairebé impossible.",
+    "Això: molt poques empreses creixen un 30 % l'any durant 20 anys.",
+    "La taxa és la mateixa, però el creixement ho canvia tot."
+   ]
+  },
   "u17l6-1": {
    "prompt": "Mira el Nasdaq 100 des de finals del 1997 fins al març del 2000. Quina tendència hi veus? (Nasdaq 100 · tancaments setmanals · fins al 06/03/2000)",
    "options": [
@@ -614,17 +683,37 @@
    ],
    "explanation": "L'octubre del 2026 voltava els 41, molt per sobre d'aquesta mitjana."
   },
-  "u17l6-8": {
-   "prompt": "Un índex cotitza a 4.100 punts i la mitjana dels seus beneficis reals de 10 anys és de 100 punts. Quin és el seu CAPE?",
-   "options": [],
-   "explanation": "4.100 ÷ 100 = 41.",
-   "unit": "vegades"
+  "u17l6-12": {
+   "prompt": "Dues borses inventades: la A cotitza a un CAPE de 40 i la B, a un de 15. Inverteixes per als pròxims 10 anys. Què és més raonable esperar?",
+   "options": [
+    "Que la A caigui aquest any segur",
+    "Que la A rendeixi menys que la B, tot i que no sé quan ni quant",
+    "Que la A rendeixi més: si és cara, és perquè va bé"
+   ],
+   "explanation": "Històricament, un CAPE alt s'ha associat a rendibilitats més baixes a 10 anys. Serveix per ajustar el que esperes i diversificar, no per endevinar el moment.",
+   "feedback": [
+    "El CAPE no diu quan: la A pot continuar cara durant anys.",
+    "Això: pagar car deixa menys marge, però el CAPE no dona dates.",
+    "Pagar car deixa menys marge per guanyar després."
+   ]
   },
-  "u17l6-9": {
-   "prompt": "Amb un CAPE de 41, quina és la rendibilitat per benefici implícita (el seu invers)?",
-   "options": [],
-   "explanation": "1 ÷ 41 ≈ 2,44 %. Amb un CAPE de 17 seria ≈ 5,9 %: pagar més car deixa menys rendibilitat esperada.",
-   "unit": "%"
+  "u17l6-13": {
+   "prompt": "Què li respons a la Lumi?",
+   "options": [
+    "Sí, surt ja",
+    "Compra'n més amb un préstec",
+    "El CAPE no diu quan: millor ajusta el que esperes i diversifica"
+   ],
+   "explanation": "Sortir i tornar a entrar obliga a encertar dues vegades. Un CAPE alt demana expectatives més modestes i diversificar per països, no apostar per una data.",
+   "feedback": [
+    "Pot continuar car anys: el Nasdaq va continuar pujant fins al març del 2000.",
+    "Deute en un mercat car: risc sobre risc.",
+    "Tens raó: hauria d'encertar dues vegades, en sortir i en tornar."
+   ],
+   "lines": [
+    "Diuen que el mercat està caríssim.",
+    "Ho venc tot i hi torno a entrar quan caigui, oi?"
+   ]
   }
  }
 }

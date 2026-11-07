@@ -57,7 +57,7 @@
      "title": "The order to choose in",
      "body": "1. **Regulation:** the CNMV or an EU supervisor with a passport.\n2. **Protection:** segregated securities and a compensation scheme (FOGAIN, up to €100,000).\n3. **Costs:** trading, custody, currency exchange, inactivity.\n4. **Products:** does it have the index funds and ETFs you want?\n5. **Tax:** a Spanish broker withholds and reports; with a foreign one, you declare everything yourself.",
      "key": "First, make sure it's safe and authorised; then, that it's cheap.",
-     "tip": "Before looking at what a broker charges, look at who supervises it."
+     "tip": "Try it: in Market, search for an MSCI World ETF and write down its name."
     }
    ]
   },
@@ -67,7 +67,7 @@
     {
      "texts": [
       "Cheap or expensive?",
-      "A fee weighs differently depending on how much you buy. Does it take **less than 1 %** of the purchase or **1 % or more**?",
+      "You are about to put **€100** into an ETF and the broker charges a **flat €3**. A lot or a little? It depends on what you buy: does it take **less than 1 %** or **1 % or more**?",
       "Less than 1 %",
       "1 % or more",
       "€3 flat on a €10,000 purchase",
@@ -107,7 +107,8 @@
     {
      "title": "What they charge you",
      "body": "• **Trading:** per trade (flat, percentage or mixed).\n• **Custody:** for holding your securities, sometimes monthly or yearly.\n• **Currency exchange:** when you buy in another currency. It's usually the **biggest hidden cost**: from 0.1 % to 0.5 % or more per trade.\n• **Others:** inactivity, withdrawals, collecting dividends.\n\nAnd inside every fund or ETF, its **TER**.",
-     "key": "The cheapest broker is the one that charges you the least, given the way you invest."
+     "key": "The cheapest broker is the one that charges you the least, given the way you invest.",
+     "tip": "Try it: in Market, set up a €100 purchase and look at the simulated fee."
     }
    ]
   },
@@ -167,7 +168,8 @@
       "Switch to another app with more rewards",
       "More rewards, more nudges to trade.",
       "With a 0.2 % spread, that's **€480 a year**, even if it says «€0 commission».",
-      "An authorised neobroker can be a good option. Just don't let it decide how much you trade."
+      "An authorised neobroker can be a good option. Just don't let it decide how much you trade.",
+      "Try it: open your History and count how many trades you made this month."
      ]
     }
    ]
@@ -178,7 +180,7 @@
     {
      "texts": [
       "What does convenience cost?",
-      "**€10,000** over 30 years with the market returning 7 % a year (example). Doing it yourself with index funds costs **0.2 %** a year; a robo-adviser, management plus funds, **0.6 %**.",
+      "An app offers to invest your **€10,000** for you, without you having to think. It charges **0.6 %** a year between management and funds; doing it yourself with index funds, **0.2 %**. Over 30 years and with a 7 % annual market (example), is it worth it?",
       "Over 30 years, how much does the robo-adviser cost you compared with doing it yourself?",
       "About €700",
       "About €7,700",
@@ -210,7 +212,8 @@
     {
      "title": "What a robo-adviser is",
      "body": "An **automated portfolio management** service: you fill in a questionnaire (the **suitability test**), it assigns you a portfolio of index funds based on your profile and takes care of investing and **rebalancing** for you.\n\nIn Spain it has to be a firm **authorised by the CNMV**.",
-     "key": "A robo-adviser automates discipline, but it charges for it and doesn't remove market risk."
+     "key": "A robo-adviser automates discipline, but it charges for it and doesn't remove market risk.",
+     "tip": "Try it: in your Portfolio, check the weight of each asset; a robo-advisor readjusts it on its own."
     }
    ]
   },
@@ -294,18 +297,6 @@
     "Supervisor of investment services in Spain"
    ]
   },
-  "u33l2-2": {
-   "prompt": "You buy €2,000 of US shares and the broker charges 0.5 % for currency exchange. How many euros do you pay just to convert?",
-   "options": [],
-   "explanation": "2,000 × 0.005 = €10. And you'd pay again when you sell.",
-   "unit": "€"
-  },
-  "u33l2-3": {
-   "prompt": "A broker charges 0.2 % a year for custody. You have €20,000. How much do you pay per year?",
-   "options": [],
-   "explanation": "20,000 × 0.002 = €40 a year, whether your portfolio goes up or down.",
-   "unit": "€"
-  },
   "u33l2-4": {
    "prompt": "Match each fee with what it charges for.",
    "options": [
@@ -358,6 +349,20 @@
    "right": [
     "On every trade",
     "Every year"
+   ]
+  },
+  "u33l2-11": {
+   "prompt": "You are going to put €100 a month into an ETF priced in dollars. A broker advertises «€0 commission» in big letters. What do you do before choosing it?",
+   "options": [
+    "I choose the one with the most ads, it must be the most reliable",
+    "I also check what it charges for currency exchange and custody",
+    "I choose it: €0 can't be beaten"
+   ],
+   "explanation": "The cheapest broker is the one that charges you least for the way you invest: add up all the costs. The tempting one, «€0», fails because it only looks at one fee.",
+   "feedback": [
+    "Advertising says nothing about what they charge you or whether it is authorised.",
+    "Good: if you buy in dollars every month, currency exchange can be your biggest cost even if trading is free.",
+    "Buying and selling may be free while the cost sits in the currency exchange or custody. The big «€0» says nothing about the small print."
    ]
   },
   "u33l3-1": {

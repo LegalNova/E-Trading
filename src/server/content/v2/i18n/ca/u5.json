@@ -53,7 +53,8 @@
     {
      "title": "Qui és qui",
      "body": "A Espanya la borsa la gestiona **BME** (Bolsas y Mercados Españoles), del grup suís SIX, i la supervisa la **CNMV**.\n\nTu no vas a la borsa: compres a través d'un **bròquer** autoritzat, que porta la teva ordre al mercat.",
-     "key": "La borsa és el punt de trobada; el bròquer, la porta d'entrada."
+     "key": "La borsa és el punt de trobada; el bròquer, la porta d'entrada.",
+     "tip": "Prova-ho: al Mercat, busca Inditex: aquest preu el veu igual tothom."
     }
    ]
   },
@@ -106,7 +107,7 @@
      "title": "El teu avantatge",
      "body": "Un minorista no ha de retre comptes cada trimestre, pot esperar anys i pot mantenir costos molt baixos. Aquest és el seu avantatge, no la velocitat.",
      "key": "La borsa és plena de professionals: el teu avantatge és el temps i els costos baixos.",
-     "tip": "No intentis córrer més que un algorisme: no cal."
+     "tip": "Prova-ho: al Mercat, afegeix a Preferits una empresa que vulguis tenir durant anys."
     }
    ]
   },
@@ -161,7 +162,7 @@
      "title": "Compte amb el rellotge",
      "body": "Pel **canvi d'hora**, els EUA i Europa no canvien el rellotge el mateix dia: unes quantes setmanes l'any Nova York obre a les **14:30** a Espanya.\n\nTòquio obre de matinada a Espanya i fa una pausa al migdia (hora de Tòquio).",
      "key": "Abans d'operar, mira si el mercat és obert.",
-     "tip": "Que l'app et deixi prémer «comprar» no vol dir que el mercat sigui obert."
+     "tip": "Prova-ho: al Mercat, mira si Apple posa «obert» o «tancat» ara mateix."
     }
    ]
   },
@@ -210,15 +211,32 @@
     },
     {
      "title": "Liquidació i custòdia",
-     "body": "Després de l'encreuament, l'operació es **liquida**: els diners van al venedor i les accions a tu. A Europa triga dos dies hàbils (**T+2**); als EUA, un (T+1) des del 2024. A Espanya el registre central és **Iberclear**.\n\nAmb un bròquer d'un altre país de la UE et cobreix el fons d'aquell país, que pot ser menor (el mínim europeu és de 20.000 €).",
+     "body": "Després de l'encreuament, l'operació es **liquida**: els diners van al venedor i les accions a tu. A Europa triga dos dies hàbils (**T+2**); als EUA, un (T+1) des del 2024. A Espanya el registre central és **Iberclear**.\n\nAmb un bròquer d'un altre país de la UE et cobreix el fons d'aquell país, que pot ser menor (el mínim europeu és de 20.000 €). Abans d'obrir-hi un compte, comprova al web de la CNMV que el bròquer està autoritzat.",
      "key": "El bròquer és la teva porta d'entrada; els teus valors es guarden a nom teu.",
-     "tip": "Comprova al web de la CNMV que el bròquer està autoritzat abans d'obrir-hi un compte."
+     "tip": "Prova-ho: fes una compra al Mercat i busca l'operació a la teva Cartera."
     }
    ]
   },
   "u5l6": {
    "title": "Mercat primari i secundari: les OPV",
    "steps": [
+    {
+     "texts": [
+      "La sortida a borsa de moda",
+      "Bruno",
+      "Tothom parla de la sortida a borsa d'una marca de roba.",
+      "Si surt a borsa és perquè va de meravella, no? Hi fico tots els meus estalvis!",
+      "Què li aconselles?",
+      "Que ho posi tot: és una oportunitat única",
+      "Si cau un 30 % els primers mesos, es queda sense coixí i amb pèrdues.",
+      "Que llegeixi el fullet i, si inverteix, que sigui amb una part petita",
+      "Exacte. El **fullet**, aprovat per la CNMV, explica el negoci i els riscos.",
+      "Que esperi a veure què diuen a les xarxes",
+      "Les xarxes no coneixen l'empresa. El fullet, sí.",
+      "El preu el fixa qui ven, i coneix l'empresa millor que tu.",
+      "Moltes sortides a borsa acaben cotitzant per sota del preu de sortida."
+     ]
+    },
     {
      "texts": [
       "Qui rep els teus diners?",
@@ -246,23 +264,6 @@
     },
     {
      "texts": [
-      "La sortida a borsa de moda",
-      "Bruno",
-      "Tothom parla de la sortida a borsa d'una marca de roba.",
-      "Si surt a borsa és perquè va de meravella, no? Hi fico tots els meus estalvis!",
-      "Què li aconselles?",
-      "Que ho posi tot: és una oportunitat única",
-      "Si cau un 30 % els primers mesos, es queda sense coixí i amb pèrdues.",
-      "Que llegeixi el fullet i, si inverteix, que sigui amb una part petita",
-      "Exacte. El **fullet**, aprovat per la CNMV, explica el negoci i els riscos.",
-      "Que esperi a veure què diuen a les xarxes",
-      "Les xarxes no coneixen l'empresa. El fullet, sí.",
-      "El preu el fixa qui ven, i coneix l'empresa millor que tu.",
-      "Moltes sortides a borsa acaben cotitzant per sota del preu de sortida."
-     ]
-    },
-    {
-     "texts": [
       "OPS o OPV?",
       "Per sortir a borsa hi ha dues maneres, sovint combinades. La clau: **qui es queda els diners?**",
       "OPS: van a l'empresa",
@@ -276,7 +277,7 @@
       "L'empresa emet accions per pagar el seu deute",
       "Emet accions noves: els diners van a l'empresa.",
       "Classifica els quatre casos.",
-      "**OPS:** accions noves i diners per a l'empresa. **OPV:** els propietaris venen i els diners van a ells. En anglès, una sortida a borsa es diu IPO.",
+      "**OPS:** accions noves i diners per a l'empresa. **OPV:** els propietaris venen i els diners van a ells. En anglès, una sortida a borsa es diu IPO. Prova-ho: al Mercat, mira el gràfic mensual d'una empresa i busca el seu primer dia a borsa.",
       "Si no es creen accions noves, l'empresa no cobra.",
       "Abans d'una sortida a borsa, mira qui ven i per què.",
       "Toca cada cas: OPS o OPV?"
@@ -287,6 +288,22 @@
   "u5l7": {
    "title": "La borsa espanyola: IBEX i mercat continu",
    "steps": [
+    {
+     "texts": [
+      "Fora de l'IBEX",
+      "Pablo",
+      "L'empresa de la qual tinc accions ha sortit de l'IBEX 35. Va fatal?",
+      "Què li dius a en Pablo?",
+      "Sí: a l'IBEX només hi ha les millors",
+      "Hi ha les 35 **més líquides**, no les millors.",
+      "No necessàriament: ara es negocia menys que d'altres",
+      "Exacte. No ser a l'IBEX no vol dir ser una mala empresa.",
+      "Ja no cotitza a borsa",
+      "Continua cotitzant al mercat continu, amb més d'un centenar d'empreses.",
+      "I qui ho decideix, això?",
+      "Un comitè tècnic, dues vegades l'any: al juny i al desembre."
+     ]
+    },
     {
      "texts": [
       "On cotitza?",
@@ -312,26 +329,10 @@
      ]
     },
     {
-     "texts": [
-      "Fora de l'IBEX",
-      "Pablo",
-      "L'empresa de la qual tinc accions ha sortit de l'IBEX 35. Va fatal?",
-      "Què li dius a en Pablo?",
-      "Sí: a l'IBEX només hi ha les millors",
-      "Hi ha les 35 **més líquides**, no les millors.",
-      "No necessàriament: ara es negocia menys que d'altres",
-      "Exacte. No ser a l'IBEX no vol dir ser una mala empresa.",
-      "Ja no cotitza a borsa",
-      "Continua cotitzant al mercat continu, amb més d'un centenar d'empreses.",
-      "I qui ho decideix, això?",
-      "Un comitè tècnic, dues vegades l'any: al juny i al desembre."
-     ]
-    },
-    {
      "title": "L'IBEX 35 i el mercat continu",
      "body": "El **mercat continu** (SIBE) uneix en un sistema electrònic les borses de Madrid, Barcelona, Bilbao i València, amb un únic llibre d'ordres per valor. El gestiona **BME**, del grup suís SIX des del 2020.\n\nL'**IBEX 35** pondera per capitalització, comptant només les accions que es negocien lliurement. La seva base va ser de **3.000 punts** a finals del 1989.",
      "key": "L'IBEX 35 és l'aparador; el mercat continu, la botiga sencera.",
-     "tip": "No ser a l'IBEX no vol dir ser una mala empresa: només que es negocia menys."
+     "tip": "Prova-ho: al Mercat, fes servir «Explorar per índex» i mira les 35 empreses de l'IBEX."
     }
    ]
   },
@@ -499,12 +500,6 @@
     "22:00"
    ],
    "explanation": "De 9:30 a 16:00 a Nova York = de 15:30 a 22:00 a Espanya."
-  },
-  "u5l4-5": {
-   "prompt": "Quantes hores dura la sessió de la Borsa de Madrid, de 9:00 a 17:30?",
-   "options": [],
-   "explanation": "De 9:00 a 17:30 hi ha 8 hores i mitja: 8,5.",
-   "unit": "hores"
   },
   "u5l4-6": {
    "prompt": "Pel canvi d'hora, unes quantes setmanes l'any Nova York obre a les 14:30 a Espanya.",
@@ -737,6 +732,48 @@
     "Per nombre d'empleats"
    ],
    "explanation": "Les més grans en borsa pesen més a l'índex."
+  },
+  "u5l2-11": {
+   "prompt": "En Leo inverteix 50 € al mes en un fons indexat. Un amic li diu que així mai no guanyarà els professionals i que hauria d'operar cada dia. Què fa?",
+   "options": [
+    "Continua amb el seu pla: el seu avantatge és el temps i els costos baixos",
+    "Deixa d'invertir: la borsa és només per a professionals",
+    "Comença a operar cada dia per guanyar-los"
+   ],
+   "explanation": "La temptació és operar més, però a curt termini el minorista juga en desavantatge. A llarg termini, el temps i els costos baixos juguen a favor seu.",
+   "feedback": [
+    "No competeix en velocitat: participa durant anys del que guanyen les empreses.",
+    "Renuncia al seu gran avantatge, el temps. A llarg termini no necessita guanyar-los en velocitat.",
+    "Entra en la cursa on algoritmes i professionals tenen avantatge, i paga costos a cada operació."
+   ]
+  },
+  "u5l4-11": {
+   "prompt": "En Leo treballa de 9:00 a 18:00 i vol comprar accions de Microsoft amb la borsa de Nova York oberta. Quan ho pot fer un dia normal?",
+   "options": [
+    "A mitjanit, amb calma",
+    "A l'hora de dinar, a les 14:00",
+    "En sortir de la feina, abans de les 22:00"
+   ],
+   "explanation": "Nova York obre a la tarda a Espanya, de 15:30 a 22:00. Comprar fora d'aquest horari és temptador per comoditat, però l'ordre espera a l'obertura i pot sortir a un altre preu.",
+   "feedback": [
+    "A mitjanit Nova York ja ha tancat: l'ordre s'executaria l'endemà, al preu que hi hagi.",
+    "A les 14:00 Nova York encara no ha obert: l'ordre esperaria a l'obertura.",
+    "Nova York obre de 15:30 a 22:00 a Espanya: a la tarda té temps de sobres."
+   ]
+  },
+  "u5l6-11": {
+   "prompt": "Una empresa anuncia la seva sortida a borsa. El fullet diu que totes les accions que s'ofereixen són dels fundadors, que venen part del que tenen. Què vol dir?",
+   "options": [
+    "És una OPS: l'empresa rep diners per créixer",
+    "És una OPV: els diners van als fundadors, no a l'empresa",
+    "Que és bon senyal: si surten a borsa, és que va molt bé"
+   ],
+   "explanation": "Si no s'emeten accions noves, és una OPV i l'empresa no cobra. La temptació és llegir-ho com a bon senyal, però qui ven tria el moment que li convé.",
+   "feedback": [
+    "En una OPS s'emeten accions noves. Aquí només canvien de mans les que ja existien.",
+    "No es creen accions noves: l'empresa no rep res. Convé preguntar-se per què venen ara.",
+    "Qui ven coneix l'empresa millor que tu i tria el moment que li convé a ell."
+   ]
   }
  }
 }

@@ -1,7 +1,7 @@
 import 'server-only'
 // Sección 4 · Unidad 13 · Riesgos y realidad cripto (docs/curso-v2/02-curriculo.md)
 // Clases de cripto: recordar siempre que es un activo muy volátil y que puede perderse la totalidad de lo invertido.
-import { buckets, chat, choose, fill, key, lesson, match, mission, multi, note, num, opt, order, play, portfolio, say, scenario, single, spot, story, tf, timed, unit, upDown, when } from '../dsl'
+import { buckets, chat, choose, fill, key, lesson, match, mission, multi, note, num, opt, order, play, portfolio, say, scenario, simTrade, single, spot, story, tf, timed, unit, upDown, when } from '../dsl'
 
 export default unit({
   id: 'u13', order: 13, title: 'Riesgos y realidad cripto', description: 'Volatilidad, quiebras, estafas, rendimientos y cuánto pesa la cripto en una cartera',
@@ -38,7 +38,7 @@ export default unit({
         say('lumi', 'Y con un −90 %, hace falta un **+900 %**.'),
         say('lumi', 'Muchas criptos cayeron más de un 90 % y nunca volvieron.'),
       ]),
-      key('La volatilidad en números', 'Bitcoin ya había caído más de un **80 %** en 2014-2015 y en 2018; recuperar el máximo de finales de 2017 le llevó unos **3 años**.\n\nSu volatilidad anual ronda el **50-80 %**, frente al 15 % de un índice mundial de acciones: un −10 % en una semana es habitual. Es un activo muy volátil, no lo cubre ningún fondo de garantía y **puede perderse la totalidad de lo invertido**.', 'En cripto, caídas del 70 % y años de espera para recuperarse forman parte de la historia.', 'Que algo suba un 300 % en un año también significa que puede caer un 75 %.'),
+      key('La volatilidad en números', 'Bitcoin ya había caído más de un **80 %** en 2014-2015 y en 2018; recuperar el máximo de finales de 2017 le llevó unos **3 años**.\n\nSu volatilidad anual ronda el **50-80 %**, frente al 15 % de un índice mundial de acciones: un −10 % en una semana es habitual. Es un activo muy volátil, no lo cubre ningún fondo de garantía y **puede perderse la totalidad de lo invertido**.', 'En cripto, caídas del 70 % y años de espera para recuperarse forman parte de la historia.', 'Pruébalo: en Mercado, abre Bitcoin y compara su gráfico con el del S&P 500.'),
     ], [
       upDown('Noviembre de 2021: Bitcoin se ha multiplicado casi por 7 desde mayo de 2020 y marca máximos históricos. Muchos dicen que «esta vez es distinto». ¿Qué hizo en el año siguiente?', 'hist-btc-2021', 'Tras subidas tan fuertes, el riesgo de una caída grande también es alto. Este episodio es de los más estudiados sobre la volatilidad cripto.', 'hasta diciembre de 2022'),
       upDown('Una de las grandes criptomonedas, en velas diarias. ¿Qué hizo en las 10 sesiones siguientes?', 'ud-74', 'En cripto son frecuentes los movimientos del 10-15 % en dos semanas, en cualquier dirección.'),
@@ -50,7 +50,9 @@ export default unit({
       scenario('Laura compró bitcoin en un máximo y va perdiendo un 60 %. Lee en redes que «siempre se recupera». ¿Qué piensa?', [['Que se recuperará seguro, como siempre', 'Bitcoin se ha recuperado en el pasado tras años; muchas otras criptos no lo han hecho nunca. El pasado no garantiza nada.'], ['Que no sabe si se recuperará ni cuándo, y decide según su plan y lo que puede permitirse perder', 'Bien: en cripto puede perderse la totalidad de lo invertido; por eso el tamaño de la posición se decide antes.'], ['Que debe pedir un préstamo para comprar más y promediar', 'Endeudarse para un activo que puede seguir cayendo puede convertir una pérdida en un problema serio.']], 1, 'Ante una caída fuerte, lo que ayuda es el plan decidido en calma, no las frases de las redes.'),
       tf('Tras la caída de 2022, Bitcoin tardó más de 2 años en recuperar su máximo de noviembre de 2021.', true, 'Lo superó en marzo de 2024. Muchas otras criptos de aquella época nunca han vuelto a sus máximos.'),
       order('Ordena de menor a mayor volatilidad típica.', ['Letras del Tesoro', 'Bonos del Estado', 'Índice mundial de acciones', 'Bitcoin'], 'Menos del 1 %, un 4-7 %, en torno al 15 % y un 50-80 % anual.'),
-    ], { source: '2.9', minutes: 6, retire: [0, 3, 6, 8] }),
+      single('Una criptomoneda cae un 90 % desde su máximo. ¿Qué tiene que pasar para que vuelva a él?', ['Que suba un 90 %, lo mismo que cayó', 'Que se multiplique por 10', 'Que suba un 100 %, que la duplique'], 1, 'Si de cada 100 € te quedan 10, hay que multiplicar por 10 para volver: un +900 %. La tentadora, subir lo mismo que cayó, falla porque el 90 % de subida se calcula sobre lo poco que queda.'),
+      simTrade('Tienes 10.000 € y no quieres arriesgar más de un 1 % (100 €) en bitcoin. Coloca el stop por debajo del último mínimo y elige el importe.', 'lvl-6', 'En un activo tan volátil, el stop queda lejos del precio, así que el importe sale pequeño. Así, aunque salte el stop, solo pierdes 100 €. La tentación es comprar mucho y poner el stop muy cerca, pero cualquier vaivén normal lo salta.', { cash: 10_000, maxRiskPct: 1 }),
+    ], { source: '2.9', minutes: 6, retire: [0, 3, 4, 5, 6, 8] }),
 
     lesson('u13l2', 'Cuando cae un exchange: FTX', [
       story('Una semana de noviembre de 2022', [{ id: 'alex', name: 'Álex' }], [
@@ -90,7 +92,7 @@ export default unit({
           { say: '¿Reduce el riesgo o lo aumenta? Clasifica cada caso', mood: 'HAPPY' },
         ],
       }),
-      key('Lo que cambió', 'Sam Bankman-Fried, fundador de FTX, fue condenado en 2024 a **25 años** de prisión por fraude.\n\nMiCA exige ahora a las plataformas estar autorizadas y separar los activos de los clientes. Aun así, en cripto no hay un fondo de garantía como el de los depósitos: conviene saber quién custodia tus criptos y no concentrarlo todo en una plataforma. Y recuerda: **puede perderse la totalidad de lo invertido**.', 'Si otro guarda tus criptos, también asumes su riesgo de quiebra o de fraude.', 'Un exchange enorme también puede caer en una semana.'),
+      key('Lo que cambió', 'Sam Bankman-Fried, fundador de FTX, fue condenado en 2024 a **25 años** de prisión por fraude.\n\nMiCA exige ahora a las plataformas estar autorizadas y separar los activos de los clientes. Aun así, en cripto no hay un fondo de garantía como el de los depósitos: conviene saber quién custodia tus criptos y no concentrarlo todo en una plataforma. Y recuerda: **puede perderse la totalidad de lo invertido**.', 'Si otro guarda tus criptos, también asumes su riesgo de quiebra o de fraude.', 'Pregúntale a la profesora Lumi qué pasa con tus acciones si quiebra tu bróker.'),
     ], [
       order('Ordena lo que pasó con FTX en noviembre de 2022.', ['Se publica que Alameda, su empresa hermana, depende mucho del token FTT', 'Los clientes retiran en masa', 'FTX congela las retiradas', 'FTX se declara en quiebra'], 'Todo ocurrió en unos diez días: la confianza tardó años en construirse y días en romperse.'),
       single('¿Qué es el riesgo de contraparte?', ['El riesgo de que quien guarda o te debe tu dinero no pueda o no quiera devolverlo', 'El riesgo de que baje el precio', 'El riesgo de equivocarte de dirección al enviar'], 0, 'No depende del activo, sino de la empresa en la que confías.'),
@@ -140,7 +142,7 @@ export default unit({
           { say: 'Clasifica cada trampa', mood: 'HAPPY' },
         ],
       }),
-      key('Las señales de alarma', 'Una **memecoin** nace de un chiste o una moda (Dogecoin, en 2013, como broma): muchas no tienen ningún uso y su precio depende solo de la atención.\n\nSeñales de alarma: creadores anónimos sin historial, promesas de «x100», prisa, influencers pagados, que no puedas vender, que te pidan conectar la wallet o la frase semilla. En estos tokens **puede perderse la totalidad de lo invertido** en minutos.', 'Si el único motivo para comprar es que «va a subir», probablemente alguien quiere venderte a ti.', 'En una memecoin, tu dinero puede ser la salida de otro.'),
+      key('Las señales de alarma', 'Una **memecoin** nace de un chiste o una moda (Dogecoin, en 2013, como broma): muchas no tienen ningún uso y su precio depende solo de la atención.\n\nSeñales de alarma: creadores anónimos sin historial, promesas de «x100», prisa, influencers pagados, que no puedas vender, que te pidan conectar la wallet o la frase semilla. En estos tokens **puede perderse la totalidad de lo invertido** en minutos.', 'Si el único motivo para comprar es que «va a subir», probablemente alguien quiere venderte a ti.', 'Pruébalo: en Mercado, busca Dogecoin y mira cuánto ha caído desde su máximo.'),
     ], [
       spot('Marca los mensajes que son estafa o una señal clara de rug pull.', [['Grupo de Telegram', '🚀 $LAMBO va a hacer x100 esta noche. Compra YA antes de que lo listen en los grandes exchanges.', true], ['Web de «airdrop»', 'Felicidades, tienes 2.000 $ en tokens gratis. Conecta tu wallet y firma para reclamarlos.', true], ['Tu exchange autorizado', 'Recordatorio: las criptomonedas son muy volátiles y puedes perder todo lo invertido.', false], ['Influencer', 'No es consejo financiero 😉 pero yo he metido todo en esta moneda que lancé ayer.', true], ['Amiga', 'He leído la guía de la CNMV sobre criptoactivos, ¿la comentamos?', false]], 'Prisa, promesas de x100, regalos que piden firmar y un creador que promociona su propia moneda son señales clásicas.'),
       multi('¿Qué son señales de alarma en un token nuevo? Marca todas.', ['Creadores anónimos sin historial', 'Promesas de multiplicar x100', 'Que no te deje vender después de comprar', 'Que su código esté publicado y auditado'], [0, 1, 2], 'Una auditoría publicada no garantiza nada, pero su ausencia sí es una alarma.'),
@@ -155,6 +157,18 @@ export default unit({
     ], { source: '2.9', minutes: 6, retire: [2, 5, 6, 7] }),
 
     lesson('u13l4', 'Staking y DeFi: de dónde sale el rendimiento', [
+      story('Un 20 % por depositar', [{ id: 'sara', name: 'Sara' }], [
+        say('sara', 'Una plataforma paga casi un 20 % al año por depositar UST.'),
+        say('sara', 'Es una stablecoin, una moneda estable. Así que no hay riesgo, ¿no?'),
+        choose('¿Qué le preguntas primero?', [
+          opt('¿Cuánto puedo depositar como máximo?', 'bad', say('lumi', 'Antes del cuánto, el **de dónde**. Si nadie lo explica, desconfía.')),
+          opt('¿Quién paga ese 20 % y con qué dinero?', 'good', say('lumi', 'Esa es la pregunta. Aquí lo pagaban **subsidios**, y no eran infinitos.')),
+          opt('¿Gano más si traigo a mis amigos?', 'bad', say('lumi', 'Ganar por traer gente es la señal típica de un esquema piramidal.')),
+        ]),
+        note('2022: los subsidios dejan de bastar y todo se hunde.'),
+        say('lumi', 'Ese mismo año quebró Celsius, que también prometía intereses altos.'),
+        say('lumi', 'Si no sabes de dónde sale el rendimiento, quizá el rendimiento eres tú.'),
+      ]),
       play({
         title: 'Staking: ¿te protege del precio?',
         intro: 'Con el **staking** bloqueas tus monedas para validar bloques (en Ethereum, por ejemplo) y la red te paga **en la misma cripto**; si el validador falla, puedes perder parte (*slashing*). Tienes **1.000 €** en ether.',
@@ -174,18 +188,6 @@ export default unit({
           { say: 'Baja el precio del ether y mira qué te queda en euros', mood: 'HAPPY' },
         ],
       }),
-      story('Un 20 % por depositar', [{ id: 'sara', name: 'Sara' }], [
-        say('sara', 'Una plataforma paga casi un 20 % al año por depositar UST.'),
-        say('sara', 'Es una stablecoin, una moneda estable. Así que no hay riesgo, ¿no?'),
-        choose('¿Qué le preguntas primero?', [
-          opt('¿Cuánto puedo depositar como máximo?', 'bad', say('lumi', 'Antes del cuánto, el **de dónde**. Si nadie lo explica, desconfía.')),
-          opt('¿Quién paga ese 20 % y con qué dinero?', 'good', say('lumi', 'Esa es la pregunta. Aquí lo pagaban **subsidios**, y no eran infinitos.')),
-          opt('¿Gano más si traigo a mis amigos?', 'bad', say('lumi', 'Ganar por traer gente es la señal típica de un esquema piramidal.')),
-        ]),
-        note('2022: los subsidios dejan de bastar y todo se hunde.'),
-        say('lumi', 'Ese mismo año quebró Celsius, que también prometía intereses altos.'),
-        say('lumi', 'Si no sabes de dónde sale el rendimiento, quizá el rendimiento eres tú.'),
-      ]),
       play({
         title: '¿Quién paga el interés?',
         intro: 'Todo rendimiento sale de algún sitio: coloca cada uno según **quién lo paga**. En DeFi, además, hay fallos de código y hackeos.',
@@ -202,7 +204,7 @@ export default unit({
           ],
         },
         goal: { text: 'Coloca los seis rendimientos.', when: [when('done', '==', 6)] },
-        insight: '**¿Quién paga el interés y por qué?** Si nadie sabe explicarlo, puede salir del dinero de los que entran después. Y en cripto **puede perderse la totalidad de lo invertido**.',
+        insight: '**¿Quién paga el interés y por qué?** Si nadie sabe explicarlo, puede salir de los que entran después, y en cripto **puede perderse todo**. Pruébalo: pregúntale a la profesora Lumi de dónde sale un rendimiento que hayas visto.',
         lumi: [
           { when: when('wrong', '>=', 2), say: 'Pregúntate: ¿de qué bolsillo sale ese dinero?', mood: 'THINKING' },
           { when: when('done', '>=', 3), say: '¡Bien! Lo explicable no es sin riesgo, pero lo inexplicable suele acabar mal.', mood: 'HAPPY' },
@@ -223,6 +225,18 @@ export default unit({
     ], { source: '2.9', minutes: 6, retire: [0, 2, 5, 8] }),
 
     lesson('u13l5', 'ETFs y ETPs de cripto', [
+      story('El ETP de Iker', [{ id: 'iker', name: 'Iker' }], [
+        say('iker', '¡Por fin compro bitcoin como una acción, con mi bróker! Ha subido un 50 % este mes.'),
+        note('Dos meses después, bitcoin cae un 30 %. El ETP de Iker, también.'),
+        say('iker', '¿No era un producto regulado? Lo vendo todo antes de que caiga más.'),
+        choose('¿Qué le ha pasado a Iker?', [
+          opt('Ha tenido mala suerte con el producto', 'bad', say('lumi', 'El ETP hizo lo mismo que bitcoin. El problema fue cuándo compró y vendió.')),
+          opt('Compró con euforia y vendió con pánico', 'good', say('lumi', 'Exacto. Tiene nombre: la **brecha de comportamiento**.')),
+          opt('Debió comprar el bitcoin directamente', 'ok', say('lumi', 'El envoltorio no habría cambiado ni la caída ni su reacción.')),
+        ]),
+        say('lumi', 'Según Morningstar, así perdieron unos 14 puntos al año frente al propio ETF.'),
+        say('lumi', 'En activos tan volátiles, el mayor riesgo suele ser nuestro comportamiento.'),
+      ]),
       play({
         title: 'Directamente o en bolsa',
         intro: 'Puedes tener bitcoin **directamente** (en un exchange o guardándolo tú) o con un **ETP** que sigue su precio y cotiza en bolsa. ¿De cuál es cada rasgo?',
@@ -246,19 +260,7 @@ export default unit({
           { say: '¿Directamente, ETP o los dos? Clasifica cada rasgo', mood: 'HAPPY' },
         ],
       }),
-      story('El ETP de Iker', [{ id: 'iker', name: 'Iker' }], [
-        say('iker', '¡Por fin compro bitcoin como una acción, con mi bróker! Ha subido un 50 % este mes.'),
-        note('Dos meses después, bitcoin cae un 30 %. El ETP de Iker, también.'),
-        say('iker', '¿No era un producto regulado? Lo vendo todo antes de que caiga más.'),
-        choose('¿Qué le ha pasado a Iker?', [
-          opt('Ha tenido mala suerte con el producto', 'bad', say('lumi', 'El ETP hizo lo mismo que bitcoin. El problema fue cuándo compró y vendió.')),
-          opt('Compró con euforia y vendió con pánico', 'good', say('lumi', 'Exacto. Tiene nombre: la **brecha de comportamiento**.')),
-          opt('Debió comprar el bitcoin directamente', 'ok', say('lumi', 'El envoltorio no habría cambiado ni la caída ni su reacción.')),
-        ]),
-        say('lumi', 'Según Morningstar, así perdieron unos 14 puntos al año frente al propio ETF.'),
-        say('lumi', 'En activos tan volátiles, el mayor riesgo suele ser nuestro comportamiento.'),
-      ]),
-      key('En Europa: ETP y ETN', 'En EE. UU. se aprobaron los **ETF de bitcoin al contado** en enero de 2024, pero muchos no se pueden comprar desde la UE por no tener KID.\n\nLa norma UCITS no permite un fondo de una sola cripto, así que en Europa se venden como **ETP** o **ETN**: títulos de deuda de un emisor, normalmente **respaldados** por la cripto que guarda un custodio. Sumas el riesgo del emisor y del custodio, y una comisión anual. **Puede perderse la totalidad de lo invertido**.', 'Un ETP de cripto te ahorra guardar claves, pero no te ahorra ni un punto de volatilidad.', 'El envoltorio no cambia lo que hay dentro.'),
+      key('En Europa: ETP y ETN', 'En EE. UU. se aprobaron los **ETF de bitcoin al contado** en enero de 2024, pero muchos no se pueden comprar desde la UE por no tener KID.\n\nLa norma UCITS no permite un fondo de una sola cripto, así que en Europa se venden como **ETP** o **ETN**: títulos de deuda de un emisor, normalmente **respaldados** por la cripto que guarda un custodio. Sumas el riesgo del emisor y del custodio, y una comisión anual. **Puede perderse la totalidad de lo invertido**.', 'Un ETP de cripto te ahorra guardar claves, pero no te ahorra ni un punto de volatilidad.', 'Pruébalo: en Mercado, busca el ETF IBIT y compara su gráfico con el de Bitcoin.'),
     ], [
       match('Empareja cada forma de exposición con su rasgo.', [['Cripto en autocustodia', 'Tú guardas las claves'], ['Cripto en un exchange', 'La plataforma custodia por ti'], ['ETP de bitcoin en Europa', 'Título cotizado respaldado por bitcoin'], ['ETF de bitcoin al contado de EE. UU.', 'Aprobados en enero de 2024']], 'Cuatro caminos hacia el mismo activo, con distintos riesgos de custodia.'),
       buckets('¿Comprar la cripto directamente o un ETP en bolsa?', ['Directamente', 'ETP en bolsa'], [['Cotiza 24 horas, 7 días', 0], ['Lo compras con tu bróker de siempre', 1], ['Riesgo del emisor del producto', 1], ['Si pierdes la frase semilla, lo pierdes', 0], ['Cobra una comisión anual de gestión', 1]], 'Cambias el riesgo de custodia propia por el del emisor y el custodio, y sumas una comisión.'),
@@ -303,7 +305,7 @@ export default unit({
           { say: 'Sube bitcoin poco a poco y vigila la peor caída', mood: 'HAPPY' },
         ],
       }),
-      key('La parte que podrías perder', 'Con un 5 % en cripto, una caída del 75 % resta un **3,75 %** al total; con un 50 %, un **37,5 %**.\n\nQuien decide tener cripto suele dejar escrito en su plan: antes, el **colchón** y sin deudas caras; un **máximo** que podría perder entero sin que le cambie la vida, y cuándo **rebalancear**. Son ejemplos de cómo se piensa, no recomendaciones personalizadas. En cripto **puede perderse la totalidad de lo invertido**.', 'El peso de la cripto en el total, no su potencial, decide cuánto te puede doler.', 'Escribe hoy tu máximo en cripto, antes de que una subida te convenza de lo contrario.'),
+      key('La parte que podrías perder', 'Con un 5 % en cripto, una caída del 75 % resta un **3,75 %** al total; con un 50 %, un **37,5 %**.\n\nQuien decide tener cripto suele dejar escrito en su plan: antes, el **colchón** y sin deudas caras; un **máximo** que podría perder entero sin que le cambie la vida, y cuándo **rebalancear**. Son ejemplos de cómo se piensa, no recomendaciones personalizadas. En cripto **puede perderse la totalidad de lo invertido**.', 'El peso de la cripto en el total, no su potencial, decide cuánto te puede doler.', 'Pruébalo: abre tu Cartera y mira qué porcentaje tienes hoy en cripto.'),
     ], [
       portfolio('Reparte una cartera de ejemplo de 10.000 € a 20 años. El plan escrito dice: cripto como máximo un 5 % en total, al menos un 20 % en bonos y ningún activo por encima del 60 %.', [['Fondo indexado mundial de acciones', 'ACCIONES'], ['Fondo de bonos de calidad', 'BONOS'], ['Bitcoin (ETP)', 'CRIPTO'], ['Ethereum (ETP)', 'CRIPTO'], ['Fondo monetario', 'LIQUIDEZ']], { maxWeight: 60, maxKind: { CRIPTO: 5 }, minKind: { BONOS: 20 }, minAssets: 3 }, 'Las reglas las fija cada uno en su plan; aquí sirven para practicar. Fíjate en que el límite de cripto es la suma de bitcoin y ethereum.'),
       num('Tienes 10.000 € con un 5 % en cripto. La cripto cae un 75 % y el resto no se mueve. ¿Cuánto pierde tu cartera en total?', 375, '€', '500 × 75 % = 375 €: un 3,75 % del total.'),
@@ -315,6 +317,8 @@ export default unit({
       timed(num('Rápido: un 10 % de la cartera en cripto y la cripto cae un 50 %. ¿Cuánto pierde la cartera?', 5, '%', '10 % × 50 % = un 5 % del total.'), 20),
       tf('El peso de la cripto en una cartera puede subir solo, sin que compres más.', true, 'Si se revaloriza más que el resto, su porcentaje crece: por eso se rebalancea.'),
       chat(['He leído que alguien metió todo en cripto y se hizo rico 🤑', '¿Por qué no hacer lo mismo?'], '¿Qué le dices?', [['Porque solo ves a los que ganaron, no a los que lo perdieron todo', '¡Eso! Es el sesgo de supervivencia: quien lo perdió todo no suele contarlo en redes.'], ['Hazlo: si a él le salió bien, a ti también', 'Que a uno le saliera bien no dice nada de las probabilidades.'], ['Porque la cripto siempre baja', 'Tampoco: puede subir mucho. El problema es no poder permitirte que caiga a cero.']], 0, 'Las historias de éxito que circulan son una muestra sesgada: las pérdidas no se publican.'),
-    ], { source: '2.9', minutes: 6, retire: [4, 7, 8] }),
+      single('Tienes un 5 % de tu cartera en cripto. Si esa cripto se va a cero, ¿cuánto pierde como mucho tu cartera?', ['Un 5 %: lo que pesa la cripto', 'La mitad', 'Todo'], 0, 'Lo más que puedes perder con una parte es lo que esa parte pesa en el total. Por eso el peso se decide antes de comprar. La tentación es pensar que una cripto que cae a cero arrastra a toda la cartera, y no: solo si pesa mucho.'),
+      scenario('Marta tenía escrito «cripto como máximo un 5 %». Tras una gran subida, su cripto pesa ya un 13,6 % sin que haya comprado más. ¿Qué hace?', [['Nada: si sube, que siga subiendo', 'Su cartera es ahora bastante más arriesgada de lo que decidió con calma.'], ['Vende cripto hasta volver al 5 % y lleva el resto a sus fondos', 'Bien: cumple su plan, guarda parte de la subida y vuelve al riesgo que eligió.'], ['Mete más dinero en cripto porque va bien', 'Así decide con la euforia y aumenta un riesgo que ya superaba su límite.']], 1, 'La buena es rebalancear: seguir el plan escrito en calma. La tentadora, dejarlo correr, convierte un 5 % en el activo que manda en toda la cartera.'),
+    ], { source: '2.9', minutes: 6, retire: [1, 2, 3, 4, 7, 8] }),
   ],
 })

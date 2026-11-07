@@ -74,30 +74,13 @@
      "title": "Fixa, però no immòbil",
      "body": "A Espanya, el Tresor emet **lletres** (fins a 12 mesos), **bons** (de 2 a 5 anys) i **obligacions** (més de 5). Les empreses emeten bons corporatius, que solen pagar més perquè arrisquen més.\n\nEl cupó és fix, però el **preu** del bo canvia cada dia. Si el mantens fins al venciment, cobres el que s'ha pactat (si l'emissor paga). Si el vens abans, pots guanyar o perdre.",
      "key": "Un bo és un préstec: cobres interessos i et tornen els diners al venciment, si l'emissor pot pagar.",
-     "tip": "Acció = ser-ne propietari. Bo = ser-ne prestador."
+     "tip": "Prova-ho: a Mercat, compara el gràfic d'SHY, un ETF de bons del Tresor dels EUA, amb el d'SPY."
     }
    ]
   },
   "u9l2": {
    "title": "Cupó, preu i TIR",
    "steps": [
-    {
-     "texts": [
-      "Un bo a 960 €",
-      "Un bo de **1.000 €** amb un cupó del 4 % venç d'aquí a un any. El seu preu depèn del **tipus d'interès del mercat**.",
-      "El compres per 960 €. Quina rendibilitat en treus si el mantens fins al final?",
-      "Un 4 %, el que diu el cupó",
-      "Força més del 4 %",
-      "Menys del 4 %",
-      "Cobres 40 € de cupó i et tornen 1.000 € per una cosa que t'ha costat 960 €: guanyes **80 € sobre 960 €**, un 8,33 %.",
-      "Busca el tipus de mercat amb què el bo val uns 960 €.",
-      "Aquest tipus és la **TIR**: el que rendeix el bo si el mantens fins al venciment, aquí un 8,33 %. Si el compres per sota de 1.000 €, la TIR supera el cupó.",
-      "Aquest bo venç d'aquí a 1 any: deixa el termini a 1.",
-      "T'has passat: abaixa una mica el tipus.",
-      "Aquí! A aquest tipus, el bo val 960 €.",
-      "Apuja el tipus d'interès del mercat"
-     ]
-    },
     {
      "texts": [
       "El cupó que enganya",
@@ -116,10 +99,27 @@
      ]
     },
     {
+     "texts": [
+      "Un bo a 960 €",
+      "Un bo de **1.000 €** amb un cupó del 4 % venç d'aquí a un any. El seu preu depèn del **tipus d'interès del mercat**.",
+      "El compres per 960 €. Quina rendibilitat en treus si el mantens fins al final?",
+      "Un 4 %, el que diu el cupó",
+      "Força més del 4 %",
+      "Menys del 4 %",
+      "Cobres 40 € de cupó i et tornen 1.000 € per una cosa que t'ha costat 960 €: guanyes **80 € sobre 960 €**, un 8,33 %.",
+      "Busca el tipus de mercat amb què el bo val uns 960 €.",
+      "Aquest tipus és la **TIR**: el que rendeix el bo si el mantens fins al venciment, aquí un 8,33 %. Si el compres per sota de 1.000 €, la TIR supera el cupó.",
+      "Aquest bo venç d'aquí a 1 any: deixa el termini a 1.",
+      "T'has passat: abaixa una mica el tipus.",
+      "Aquí! A aquest tipus, el bo val 960 €.",
+      "Apuja el tipus d'interès del mercat"
+     ]
+    },
+    {
      "title": "Tres rendibilitats",
      "body": "Els bons cotitzen en **% del nominal**: «a 96» són 960 € per cada 1.000 €.\n\n• **Cupó:** sobre el nominal. 40 € de 1.000 € = 4 %.\n• **Rendibilitat corrent:** cupó ÷ preu. 40 € ÷ 960 € = 4,17 %.\n• **TIR:** tot el que guanyes fins al venciment, comptant-hi la diferència de preu. És la que serveix per comparar.\n\nI per saber si guanyes poder adquisitiu, resta-hi la inflació.",
      "key": "La TIR és el que rendeix un bo si el mantens fins al venciment i l'emissor paga.",
-     "tip": "Compara els bons per la TIR, no pel cupó."
+     "tip": "Prova-ho: a Mercat, filtra per ETF i tria la categoria de renda fixa: cadascun reuneix molts bons."
     }
    ]
   },
@@ -164,13 +164,30 @@
      "title": "2022, l'any que van caure els bons",
      "body": "La **durada** mesura quant es mou el preu si canvien els tipus:\n\n**Variació del preu ≈ − durada × canvi de tipus.**\n\nAmb durada 7, si els tipus pugen 1 punt, el bo cau aproximadament un 7 %. El 2022 la inflació va disparar els tipus i molts índexs de bons a llarg termini van caure més d'un 20 %.",
      "key": "Tipus amunt, bons avall; com més llarg és el bo, més fort és el cop.",
-     "tip": "Bons i tipus juguen al balancí."
+     "tip": "Prova-ho: a Mercat, compara el gràfic de TLT, de bons a més de 20 anys, amb el d'SHY, d'1 a 3 anys."
     }
    ]
   },
   "u9l4": {
    "title": "Ràting i risc d'impagament",
    "steps": [
+    {
+     "texts": [
+      "El bo del 14 %",
+      "Leo",
+      "He trobat un bo d'una empresa que paga un 14 % l'any.",
+      "És com un dipòsit, però millor. Hi posaré tots els meus estalvis!",
+      "Les agències de qualificació posen a l'empresa una nota CCC, de les més baixes.",
+      "Què li dius?",
+      "Genial: el cupó és fix",
+      "Fix, si l'empresa el pot pagar. Amb CCC, el risc d'impagament és altíssim.",
+      "Aquest 14 % és el preu d'un risc alt de no cobrar",
+      "Això! El FGD cobreix dipòsits, no bons. Un bo escombraria pot no tornar gairebé res.",
+      "Posa-hi només la meitat dels teus estalvis",
+      "Millor, però continua sent moltíssim en un sol emissor tan arriscat.",
+      "Si un bo paga molt més que els altres, pregunta't què tem el mercat."
+     ]
+    },
     {
      "texts": [
       "La nota de l'emissor",
@@ -197,33 +214,33 @@
      ]
     },
     {
-     "texts": [
-      "El bo del 14 %",
-      "Leo",
-      "He trobat un bo d'una empresa que paga un 14 % l'any.",
-      "És com un dipòsit, però millor. Hi posaré tots els meus estalvis!",
-      "L'empresa té una nota CCC.",
-      "Què li dius?",
-      "Genial: el cupó és fix",
-      "Fix, si l'empresa el pot pagar. Amb CCC, el risc d'impagament és altíssim.",
-      "Aquest 14 % és el preu d'un risc alt de no cobrar",
-      "Això! El FGD cobreix dipòsits, no bons. Un bo escombraria pot no tornar gairebé res.",
-      "Posa-hi només la meitat dels teus estalvis",
-      "Millor, però continua sent moltíssim en un sol emissor tan arriscat.",
-      "Si un bo paga molt més que els altres, pregunta't què tem el mercat."
-     ]
-    },
-    {
      "title": "Quan no paguen",
      "body": "Qui presta a algú amb pitjor nota exigeix més interès. La diferència respecte d'un bo molt segur es diu **prima de risc**; a Espanya, la diferència amb el bo alemany a 10 anys.\n\nEl 2012, els creditors privats de Grècia van acceptar una quita de més de la meitat del nominal dels seus bons. Una empresa en fallida pot no tornar gairebé res. Per això també es diversifica en renda fixa.",
      "key": "La nota mesura el risc d'impagament: com pitjor és la nota, més cupó i més risc de perdre.",
-     "tip": "Un cupó molt alt no és un regal: és el preu del risc de no cobrar."
+     "tip": "Prova-ho: a Mercat, compara el gràfic d'EMB, de bons de països emergents, amb el d'IEF, del Tresor dels EUA."
     }
    ]
   },
   "u9l5": {
    "title": "Lletres del Tresor i dipòsits",
    "steps": [
+    {
+     "texts": [
+      "L'entrada del pis",
+      "Laura",
+      "Tinc 15.000 € per a l'entrada d'un pis. Signo d'aquí a 10 mesos.",
+      "El meu cosí diu que a la borsa en trauria molt més.",
+      "Què li recomanes?",
+      "Accions, perquè creixin més",
+      "En 10 mesos la borsa pot caure un 20 % just quan els necessiti.",
+      "Una lletra o un dipòsit que venci abans de signar",
+      "Molt bé! Poc risc, i els diners hi seran el dia que signi.",
+      "Deixar-los al compte al 0 %",
+      "És segur, però renuncia a un interès gairebé sense risc.",
+      "I si el meu banc fes fallida?",
+      "El FGD cobreix fins a 100.000 € per titular i entitat: els seus 15.000 € estarien coberts."
+     ]
+    },
     {
      "texts": [
       "Lletra o dipòsit?",
@@ -249,49 +266,16 @@
      ]
     },
     {
-     "texts": [
-      "L'entrada del pis",
-      "Laura",
-      "Tinc 15.000 € per a l'entrada d'un pis. Signo d'aquí a 10 mesos.",
-      "El meu cosí diu que a la borsa en trauria molt més.",
-      "Què li recomanes?",
-      "Accions, perquè creixin més",
-      "En 10 mesos la borsa pot caure un 20 % just quan els necessiti.",
-      "Una lletra o un dipòsit que venci abans de signar",
-      "Molt bé! Poc risc, i els diners hi seran el dia que signi.",
-      "Deixar-los al compte al 0 %",
-      "És segur, però renuncia a un interès gairebé sense risc.",
-      "I si el meu banc fes fallida?",
-      "El FGD cobreix fins a 100.000 € per titular i entitat: els seus 15.000 € estarien coberts."
-     ]
-    },
-    {
      "title": "Com comparar",
-     "body": "Compara sempre la rendibilitat **anual** (TAE o TIR) neta de comissions. Els interessos de lletres i dipòsits tributen a la base de l'estalvi (des del 19 %).\n\nCap dels dos no serveix per fer-se ric: són per als diners que necessitaràs aviat.",
+     "body": "Compara sempre la rendibilitat **anual** (TAE o TIR) neta de comissions. Els interessos de lletres i dipòsits tributen a la base de l'estalvi (des del 19 %).\n\nCap dels dos no serveix per fer-se ric: són per als diners que necessitaràs aviat. I per sobre de 100.000 € en un banc, reparteix-los entre diverses entitats.",
      "key": "Lletres i dipòsits: poc risc i poca rendibilitat, per al curt termini.",
-     "tip": "Per sobre de 100.000 € en un banc, reparteix-los entre diverses entitats."
+     "tip": "Prova-ho: a Mercat, cerca SGOV, un ETF de lletres del Tresor dels EUA a molt curt termini, i mira que poc es mou."
     }
    ]
   },
   "u9l6": {
    "title": "Bons lligats a la inflació",
    "steps": [
-    {
-     "texts": [
-      "I si la inflació es dispara?",
-      "Pensa en un bo normal com un compte que paga un **3 %** fix durant 10 anys. Un de lligat a la inflació paga un **1 %** més la inflació.",
-      "El normal dona un 3 %; el lligat, un 1 % més la inflació. Amb quina inflació empaten?",
-      "Amb un 1 %",
-      "Amb un 2 %",
-      "Amb un 4 %",
-      "Amb un 2 % d'inflació, el lligat dona 1 + 2 = 3 %, el mateix que el normal. És la **inflació d'equilibri** que espera el mercat.",
-      "Apuja la inflació fins que el bo normal rendeixi menys d'un 1 % real.",
-      "Si la inflació supera la d'equilibri (aquí, un **2 %**), guanya el bo lligat: continua donant el seu 1 % real si el mantens fins al final. Si es queda per sota, guanya el normal.",
-      "Ara el bo normal ja perd poder adquisitiu.",
-      "El lligat, amb el seu 1 % real, ja guanya el normal.",
-      "Apuja la inflació a poc a poc"
-     ]
-    },
     {
      "texts": [
       "Protegida… de tot?",
@@ -310,10 +294,26 @@
      ]
     },
     {
+     "texts": [
+      "I si la inflació es dispara?",
+      "Pensa en un bo normal com un compte que paga un **3 %** fix durant 10 anys. Un de lligat a la inflació paga un **1 %** més la inflació.",
+      "El normal dona un 3 %; el lligat, un 1 % més la inflació. Amb quina inflació empaten?",
+      "Amb un 1 %",
+      "Amb un 2 %",
+      "Amb un 4 %",
+      "Amb un 2 % d'inflació, el lligat dona 1 + 2 = 3 %, el mateix que el normal. És la **inflació d'equilibri** que espera el mercat.",
+      "Apuja la inflació fins que el bo normal rendeixi menys d'un 1 % real.",
+      "Si la inflació supera la d'equilibri (aquí, un **2 %**), guanya el bo lligat: continua donant el seu 1 % real si el mantens fins al final. Si es queda per sota, guanya el normal.",
+      "Ara el bo normal ja perd poder adquisitiu.",
+      "El lligat, amb el seu 1 % real, ja guanya el normal.",
+      "Apuja la inflació a poc a poc"
+     ]
+    },
+    {
      "title": "Com funcionen",
      "body": "El bo ajusta el seu **nominal** amb la inflació: amb un 3 %, el nominal de 1.000 € passa a 1.030 € i el cupó es calcula sobre aquesta xifra. El Tresor espanyol els lliga a la inflació de la **zona euro** (sense tabac); als EUA es diuen **TIPS**.\n\nNo protegeixen de les pujades de tipus si vens abans, ni d'un impagament. I si la inflació acaba sent baixa, rendeixen menys que un bo normal.",
      "key": "Protegeixen davant la inflació inesperada si els mantens fins al final, no davant de tot.",
-     "tip": "Cap actiu no protegeix de tot: cadascun cobreix un risc concret."
+     "tip": "Prova-ho: a Mercat, cerca TIP, un ETF de bons lligats a la inflació dels EUA, i mira què va fer el 2022."
     }
    ]
   },
@@ -382,23 +382,25 @@
     "Per a què serveixen en una cartera?"
    ]
   },
-  "u9l2-1": {
-   "prompt": "Un bo de 1.000 € de nominal cotitza «a 96». Quant en pagues?",
-   "options": [],
-   "explanation": "96 % de 1.000 € = 960 €.",
-   "unit": "€"
+  "u9l1-11": {
+   "prompt": "Tens 3.000 € que no tocaràs en 10 anys, però saps que si veus la teva inversió caure un 40 % et posaràs molt nerviós. Què fas?",
+   "options": [
+    "Poso una part en bons perquè les caigudes facin menys mal, encara que guanyi una mica menys",
+    "Ho poso tot en accions i procuro no mirar",
+    "Ho poso tot en bons: així no baixarà mai"
+   ],
+   "explanation": "Barrejar bons amb accions canvia una mica de rendibilitat per caigudes més suaus. Tot en accions tempta si només mires el que es guanya, però només funciona si aguantes les caigudes; tot en bons no t'estalvia perdre.",
+   "feedback": [
+    "Bé: els bons solen esmorteir les caigudes. A canvi, a llarg termini es rendeix menys.",
+    "Pot sortir bé, però si en una caiguda forta no aguantes i vens, converteixes l'ensurt en pèrdua.",
+    "Els bons també baixen: el 2022 van caure alhora que les accions. I rendeixen menys a llarg termini."
+   ]
   },
   "u9l2-2": {
    "prompt": "Bo de 1.000 €, cupó del 5 %, venç d'aquí a un any. El compres a 1.000 €. Quina és la seva TIR?",
    "options": [],
    "explanation": "Cobres 50 € i recuperes el que has pagat: 50 ÷ 1.000 = 5 %. Si compres a 100, la TIR coincideix amb el cupó.",
    "unit": "%"
-  },
-  "u9l2-4": {
-   "prompt": "Bo de 1.000 €, cupó del 5 %, venç d'aquí a un any. El compres a 1.050 €. Quant guanyes en total al venciment?",
-   "options": [],
-   "explanation": "50 € de cupó − 50 € que perds en rebre 1.000 € per allò que vas pagar a 1.050 € = 0 €. TIR del 0 %, encara que el cupó sigui del 5 %.",
-   "unit": "€"
   },
   "u9l2-5": {
    "prompt": "Si compres un bo per sota del nominal, la seva TIR és ____ que el cupó.",
@@ -435,11 +437,33 @@
     "Interès anual sobre el nominal"
    ]
   },
-  "u9l2-10": {
-   "prompt": "Un bo té una TIR del 3 % i la inflació és del 2 %. Quina és la seva rendibilitat real aproximada?",
-   "options": [],
-   "explanation": "3 − 2 = 1 %. La TIR és nominal: resta-hi la inflació per saber si guanyes poder adquisitiu.",
-   "unit": "%"
+  "u9l2-12": {
+   "prompt": "Dos bons del mateix emissor vencen d'aquí a un any i paguen el mateix cupó del 3 %. Un cotitza a 100 i l'altre a 104. Quin compres?",
+   "options": [
+    "El de 104: si és més car, serà millor",
+    "El de 100: amb el mateix cupó, pagar 104 et fa perdre 4 € per cada 100 al venciment",
+    "Tant fa: paguen el mateix cupó"
+   ],
+   "explanation": "Amb tota la resta igual, el bo més barat rendeix més fins al venciment. El cupó igual tempta a pensar que rendeixen igual, però qui paga 104 només en recupera 100.",
+   "feedback": [
+    "Mateix emissor, mateix cupó i mateix termini: pagar més només et deixa menys guany.",
+    "Bé: al venciment et tornen 100 en tots dos. Comprar per sobre baixa la TIR.",
+    "El cupó és el mateix, però no el que pagues: la seva TIR és diferent."
+   ]
+  },
+  "u9l2-13": {
+   "prompt": "Sense fer comptes: la seva TIR serà més alta o més baixa que el seu cupó?",
+   "options": [
+    "Compres el bo a 103",
+    "Compres el bo a 98",
+    "Compres el bo a 110",
+    "Compres el bo a 95"
+   ],
+   "explanation": "Per sota de 100, al venciment reps més del que vas pagar i la TIR supera el cupó. Per sobre de 100, recuperes menys del que vas pagar i la TIR queda per sota: un cupó alt no compensa pagar car.",
+   "right": [
+    "TIR més alta que el cupó",
+    "TIR més baixa que el cupó"
+   ]
   },
   "u9l3-1": {
    "prompt": "Gener de 2022: la inflació als EUA és en màxims de gairebé 40 anys i s'espera que la Reserva Federal apugi els tipus. Aquest és un ETF de bons del Tresor dels EUA a més de 20 anys. Què va fer després?",
@@ -449,24 +473,6 @@
    ],
    "explanation": "Els bons a molt llarg termini tenen molta durada: el seu preu és molt sensible als canvis de tipus, en tots dos sentits.",
    "horizon": "fins a l'octubre de 2023"
-  },
-  "u9l3-3": {
-   "prompt": "Un bo té durada 7 i els tipus pugen 1 punt. Quant cau aproximadament el seu preu?",
-   "options": [],
-   "explanation": "7 × 1 = 7 % de caiguda aproximada.",
-   "unit": "%"
-  },
-  "u9l3-4": {
-   "prompt": "Tens 10.000 € en bons amb durada 6 i els tipus pugen 2 punts. Quants euros perds aproximadament?",
-   "options": [],
-   "explanation": "6 × 2 = 12 % → 10.000 × 12 % = 1.200 €.",
-   "unit": "€"
-  },
-  "u9l3-5": {
-   "prompt": "Un bo amb durada 8 i els tipus baixen 1,5 punts. Quant puja aproximadament el seu preu?",
-   "options": [],
-   "explanation": "8 × 1,5 = 12 % de pujada: el balancí també funciona cap amunt.",
-   "unit": "%"
   },
   "u9l3-6": {
    "prompt": "Ordena de menys a més sensibilitat als tipus d'interès.",
@@ -492,6 +498,52 @@
     "Més sensible als tipus",
     "Cobres el que s'ha pactat si l'emissor paga",
     "Baixen els preus dels bons"
+   ]
+  },
+  "u9l3-11": {
+   "prompt": "Guardaràs en bons uns diners que potser necessitaràs d'aquí a un any, i es parla que els tipus poden pujar. Quin bo t'exposa menys?",
+   "options": [
+    "Tant fa el termini: tots es mouen igual",
+    "Una obligació a 30 anys, que paga més",
+    "Una lletra o un bo a curt termini"
+   ],
+   "explanation": "Amb un termini curt, la durada és petita i una pujada de tipus gairebé no mou el preu. El bo llarg tempta perquè sol pagar més, però és el que més cau si pugen els tipus i has de vendre.",
+   "feedback": [
+    "No: com més llarg és el bo, més es mou el seu preu.",
+    "És la més sensible: si els tipus pugen i has de vendre, pot caure molt.",
+    "Bé: amb poc termini, el seu preu gairebé no es mou amb els tipus i aviat et tornen els diners."
+   ]
+  },
+  "u9l3-12": {
+   "prompt": "Què li passa al preu del bo que ja tens?",
+   "options": [
+    "Els bons nous passen a pagar menys",
+    "Els tipus del mercat passen del 2 % al 4 %",
+    "S'esperen baixades de tipus",
+    "El banc central apuja els tipus"
+   ],
+   "explanation": "És el balancí: si els tipus pugen, el teu bo, amb el seu cupó fix, només es ven més barat; si baixen, el seu cupó resulta més atractiu i el seu preu puja.",
+   "right": [
+    "Puja",
+    "Baixa"
+   ]
+  },
+  "u9l3-13": {
+   "prompt": "Què li contestes?",
+   "options": [
+    "Tant fa: els bons no es mouen",
+    "Dolent: cobraràs menys cupó",
+    "Bo: si baixen els tipus, el preu dels teus bons puja"
+   ],
+   "explanation": "Si els tipus baixen, el teu cupó fix és més atractiu que el dels bons nous i el teu bo val més. El que tempta és pensar que cobraràs menys, però això només els passa als bons nous, no al teu.",
+   "feedback": [
+    "Sí que es mouen: tipus avall, preu amunt.",
+    "El teu cupó és fix i no canvia. El que canvia és el preu, i puja.",
+    "Això. I com més llarg és el bo, més puja."
+   ],
+   "lines": [
+    "He llegit que el banc central abaixarà els tipus.",
+    "Això és bo o dolent per als bons que ja tinc?"
    ]
   },
   "u9l4-1": {
@@ -551,23 +603,19 @@
    ],
    "explanation": "La CNMV supervisa els mercats a Espanya, però no posa notes als emissors."
   },
-  "u9l4-9": {
-   "prompt": "Amb el mateix termini, un bo alemany paga un 2,5 % i un d'espanyol un 3,2 %. Quina és la prima de risc en punts bàsics? (1 punt = 100 pb)",
-   "options": [],
-   "explanation": "3,2 − 2,5 = 0,7 punts = 70 punts bàsics.",
-   "unit": "pb"
-  },
-  "u9l5-1": {
-   "prompt": "Compres una lletra a 12 mesos per 980 € i al venciment en reps 1.000 €. Quina rendibilitat obtens? (dos decimals)",
-   "options": [],
-   "explanation": "20 ÷ 980 = 2,04 %.",
-   "unit": "%"
-  },
-  "u9l5-2": {
-   "prompt": "Un dipòsit de 10.000 € al 2,5 % TAE durant un any. Amb la retenció del 19 %, quant guanyes net?",
-   "options": [],
-   "explanation": "10.000 × 2,5 % = 250 € bruts; 250 × 0,81 = 202,50 € nets.",
-   "unit": "€"
+  "u9l4-11": {
+   "prompt": "Vols guardar en bons els diners de l'entrada d'un pis per d'aquí a 5 anys. Te n'ofereixen dos: un d'un emissor amb nota AAA i un altre d'una empresa amb nota BB que paga força més. Quin tries?",
+   "options": [
+    "El de nota AAA, encara que pagui menys",
+    "El de nota BB: paga més",
+    "Meitat i meitat, per tenir dels dos"
+   ],
+   "explanation": "Un cupó més alt és el preu d'un risc d'impagament més gran. Per a uns diners que necessites en una data, la nota alta protegeix el que importa; l'interès extra tempta, però et pot costar part de l'entrada.",
+   "feedback": [
+    "Bé: per a uns diners amb data que no pots perdre, mana la seguretat de cobrar.",
+    "Paga més perquè el risc de no cobrar és més gran, i aquests diners no te'ls pots jugar.",
+    "Millor que tot en BB, però continues arriscant part d'uns diners que necessites sí o sí."
+   ]
   },
   "u9l5-3": {
    "prompt": "Tens 130.000 € en un dipòsit d'un sol banc. Si el banc fa fallida, quant queda fora del Fons de Garantia de Dipòsits?",
@@ -609,17 +657,37 @@
    ],
    "explanation": "És l'import mínim a les subhastes del Tresor."
   },
-  "u9l6-1": {
-   "prompt": "Bo lligat a la inflació amb un nominal de 1.000 €. Aquest any la inflació és del 3 %. Quin és el nou nominal?",
-   "options": [],
-   "explanation": "1.000 × 1,03 = 1.030 €.",
-   "unit": "€"
+  "u9l5-11": {
+   "prompt": "El teu banc t'ofereix un dipòsit a 12 mesos, però no saps si necessitaràs els diners abans. Què mires abans de signar?",
+   "options": [
+    "La penalització per treure'ls abans i si el termini encaixa amb quan els necessitaràs",
+    "Res: tots els dipòsits són iguals",
+    "Només la TAE: com més alta, millor"
+   ],
+   "explanation": "Un dipòsit et lliga durant un termini: el primer és que encaixi amb quan necessitaràs els diners. Fixar-se només en la TAE més alta tempta, però cancel·lar abans pot sortir car.",
+   "feedback": [
+    "Bé: un dipòsit encaixa si el termini coincideix amb el teu pla. Si no, potser et convé una lletra més curta.",
+    "Canvien el tipus, el termini i la penalització: compara'ls.",
+    "La TAE importa, però si el cancel·les abans, la penalització es pot menjar l'interès."
+   ]
   },
-  "u9l6-2": {
-   "prompt": "Aquest bo paga un cupó real de l'1 % sobre el nominal ajustat de 1.030 €. Quant cobres aquest any? (dos decimals)",
-   "options": [],
-   "explanation": "1.030 × 1 % = 10,30 €.",
-   "unit": "€"
+  "u9l5-12": {
+   "prompt": "Què li contestes?",
+   "options": [
+    "Sí: en 6 mesos segur que puja",
+    "Millor en bitcoin, que puja més",
+    "Millor una lletra a 6 mesos o un dipòsit: en 6 mesos la borsa pot caure"
+   ],
+   "explanation": "El termini mana: en 6 mesos la borsa pot estar avall just quan necessitis els diners. Una lletra o un dipòsit que venci a temps rendeix poc, però els diners hi seran; la borsa tempta perquè rendeix més a llarg termini, no en uns quants mesos.",
+   "feedback": [
+    "Ningú no ho sap. Pot caure just abans del viatge.",
+    "Encara més volàtil: et podries quedar sense viatge.",
+    "Això. Per a uns diners amb una data tan propera, el primer és que hi siguin."
+   ],
+   "lines": [
+    "Tinc 3.000 € per al viatge de final de curs, d'aquí a 6 mesos.",
+    "Els poso en un ETF d'accions per treure'n una mica més?"
+   ]
   },
   "u9l6-4": {
    "prompt": "Quan guanya el bo lligat a la inflació davant del normal?",
@@ -668,6 +736,20 @@
    "lines": [
     "La inflació em fa por 😱",
     "Amb bons lligats a la inflació ja estic protegida de tot?"
+   ]
+  },
+  "u9l6-11": {
+   "prompt": "Creus que la inflació dels propers anys serà més alta del que espera el mercat, i mantindràs el bo fins que venci. Quin tries?",
+   "options": [
+    "Un de normal, que paga un cupó més alt",
+    "Un de lligat a la inflació",
+    "Cap: amb inflació, els bons sempre perden"
+   ],
+   "explanation": "Si la inflació supera la que espera el mercat, l'ajust del nominal compensa el cupó més baix del lligat. El cupó més alt del normal tempta, però és fix i la inflació l'erosiona.",
+   "feedback": [
+    "El seu cupó és fix: si la inflació puja més del previst, es menja la seva rendibilitat real.",
+    "Bé: el seu nominal puja amb la inflació. Si és més alta de l'esperada, guanya el normal.",
+    "El lligat està pensat justament per a això, si el mantens fins al final."
    ]
   }
  }

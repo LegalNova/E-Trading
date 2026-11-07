@@ -1,7 +1,7 @@
 {
  "unit": {
   "title": "Pressupost i estalvi",
-  "description": "Saber en què se'n van els teus diners, repartir el sou i muntar el teu coixí",
+  "description": "Saber en què se'n van els teus diners, muntar el teu coixí i treure cada mes diners per invertir",
   "section": "Els teus diners en ordre"
  },
  "lessons": {
@@ -53,10 +53,10 @@
      ]
     },
     {
-     "title": "El compte que importa",
-     "body": "Ingressos − despeses = el que et queda. Si cobres 1.400 € i en gastes 1.250, la teva capacitat d'estalvi és de 150 € al mes: un 10,7 %.",
+     "title": "El que et queda és el que pots invertir",
+     "body": "Ingressos − despeses = el que et queda cada mes. Aquesta xifra omple primer el teu coixí i després les teves **aportacions periòdiques**: encara que siguin 50 € al mes, l'interès compost comença a treballar.\n\nSi no et queda res, el pressupost et diu d'on treure-ho: gairebé sempre, de les despeses variables.",
      "key": "Si no saps en què se'n van els teus diners, no pots decidir on van.",
-     "tip": "Revisa el teu pressupost una vegada al mes: amb deu minuts n'hi ha prou."
+     "tip": "Prova-ho: compra al simulador un ETF pel que et sobra al mes."
     }
    ]
   },
@@ -66,7 +66,7 @@
     {
      "texts": [
       "Reparteix el sou de la Laura",
-      "La regla **50/30/20** reparteix el que cobres **net**: el 50 % per a necessitats, el 30 % per a desitjos i el 20 % per estalviar o pagar deutes. Així estan ara les despeses de la Laura:",
+      "La Laura cobra **1.400 €** nets i vol començar a invertir. La regla **50/30/20** diu: el 50 % per a necessitats, el 30 % per a desitjos i el 20 % per estalviar. Així estan ara les seves despeses:",
       "Necessitats",
       "Desitjos",
       "Estalvi",
@@ -83,7 +83,7 @@
       "Uns 280 €, el 20 %",
       "Necessitats, 800 €; desitjos, 590 €: li'n queden **10 €**. No és que guanyi poc: és que tot se'n va en el dia a dia.",
       "Ajusta les despeses perquè la Laura estalviï almenys el 20 %.",
-      "Amb l'estalvi **reservat**, la resta es reparteix sola. Si l'habitatge es menja més del 50 %, ajusta (60/25/15 o el que puguis), però sense treure mai la part de l'estalvi.",
+      "Amb l'estalvi **reservat**, la resta es reparteix sola. Aquest 20 % és el que omple el teu coixí i, després, les teves aportacions per invertir.",
       "Compte! Així gasta més del que cobra.",
       "Gairebé! Una empenteta més i arriba al 20 %.",
       "Els desitjos ja són al seu lloc. Es pot estalviar alguna cosa al súper o al lloguer?",
@@ -93,7 +93,8 @@
     {
      "title": "Quan no quadra",
      "body": "La regla la va popularitzar la senadora nord-americana Elizabeth Warren. A les ciutats cares, només el lloguer es pot endur el 40 % del sou. Llavors ajustes, però **sempre amb un percentatge d'estalvi reservat**, encara que comenci en un 5 %.",
-     "key": "L'important no són els números exactes: és que l'estalvi tingui la seva part fixa."
+     "key": "L'important no són els números exactes: és que l'estalvi tingui la seva part fixa.",
+     "tip": "Prova-ho: pregunta a la professora Lumi com repartiries el teu sou amb la 50/30/20."
     }
    ]
   },
@@ -125,7 +126,8 @@
     {
      "title": "Les subscripcions",
      "body": "Streaming, música, gimnàs, apps, núvol… Es cobren soles i per això se t'obliden. Quatre subscripcions de 12 € són 48 € al mes: **576 € l'any**.\n\nRevisa l'extracte i pregunta't de cadascuna: l'he fet servir aquest mes? Moltes proves gratuïtes passen a ser de pagament si no les cancel·les.",
-     "key": "El que és petit i repetit es fa gran: revisa els teus càrrecs una vegada al mes."
+     "key": "El que és petit i repetit es fa gran: revisa els teus càrrecs una vegada al mes.",
+     "tip": "Prova-ho: compra al simulador un ETF amb el que retallis aquest mes."
     }
    ]
   },
@@ -152,9 +154,27 @@
      ]
     },
     {
+     "texts": [
+      "Març de 2020",
+      "Leo",
+      "Març de 2020. En Leo té 4.000 € en un ETF de l'S&P 500 i cap coixí.",
+      "La borsa s'enfonsa pel virus i a mi m'han posat en un ERTO.",
+      "Necessito 1.000 € aquest mes i només els tinc a l'ETF…",
+      "Què l'hauria salvat?",
+      "Tenir un coixí a part per als imprevistos",
+      "Això: paga amb el coixí i l'ETF pot esperar a recuperar-se.",
+      "Haver-ho venut tot just abans de la caiguda",
+      "Ningú no sap quan arriba una caiguda. El coixí funciona sense endevinar res.",
+      "Demanar un minicrèdit per no tocar l'ETF",
+      "No ven amb pèrdues, però paga interessos altíssims. El coixí surt de franc.",
+      "Sense coixí, et toca **vendre en el pitjor moment**. Amb coixí, decideixes tu."
+     ]
+    },
+    {
      "title": "On guardar-lo",
      "body": "Ha d'estar **disponible i sense risc**: compte remunerat, dipòsit que puguis cancel·lar sense perdre el que hi vas posar o Lletres del Tresor per a una part.\n\nEls dipòsits estan coberts pel **Fons de Garantia de Dipòsits fins a 100.000 €** per titular i entitat. **A la borsa, no:** les crisis porten alhora acomiadaments i caigudes.",
-     "key": "Un coixí a mitges ja et salva de molts ensurts: comença per un mes de despeses."
+     "key": "Un coixí a mitges ja et salva de molts ensurts: comença per un mes de despeses.",
+     "tip": "Prova-ho: posa una alerta de preu un 20 % per sota del teu ETF."
     }
    ]
   },
@@ -192,9 +212,9 @@
     },
     {
      "title": "Automatitza-ho",
-     "body": "1. Obre un compte separat per a l'estalvi.\n2. Programa una **transferència periòdica** per al dia després de cobrar.\n3. Comença amb un percentatge que no faci mal (5-10 %) i apuja'l amb cada augment de sou.",
+     "body": "1. Obre un compte separat per a l'estalvi.\n2. Programa una **transferència periòdica** per al dia després de cobrar.\n3. Amb el coixí fet, converteix aquesta transferència en una **aportació periòdica** al teu ETF.\n4. Comença amb un percentatge que no faci mal (5-10 %) i apuja'l amb cada augment de sou.",
      "key": "Primer estalvies; després gastes el que queda.",
-     "tip": "El que no veus al compte de despeses no ho trobes a faltar."
+     "tip": "Prova-ho: tria al Mercat l'ETF on anirà la teva transferència i afegeix-lo a Preferits."
     }
    ]
   },
@@ -229,18 +249,6 @@
    ],
    "explanation": "La memòria enganya: gairebé tots ens pensem que gastem menys del que gastem. L'extracte del banc és la foto real."
   },
-  "u2l1-4": {
-   "prompt": "En Pablo cobra 1.300 € al mes. Les seves despeses fixes sumen 700 € i les variables 450 €. Quant li queda?",
-   "options": [],
-   "explanation": "1.300 − 700 − 450 = 150 €. Aquesta és la seva capacitat d'estalvi mensual.",
-   "unit": "€"
-  },
-  "u2l1-5": {
-   "prompt": "La Marta ingressa 1.600 € al mes i n'estalvia 240. Quin percentatge dels seus ingressos estalvia?",
-   "options": [],
-   "explanation": "240 ÷ 1.600 = 0,15 15 %.",
-   "unit": "%"
-  },
   "u2l1-6": {
    "prompt": "L'Ana cobra 1.200 € al mes i les seves despeses fixes ja són 660 € (el 55 %). Reparteix el 100 % del seu sou: cobreix les fixes, guarda almenys un 10 % per a estalvi i no passis del 35 % en variables.",
    "options": [
@@ -269,17 +277,37 @@
    ],
    "explanation": "Ingrés és tot el que entra; el lloguer que pagues és una despesa fixa."
   },
-  "u2l2-1": {
-   "prompt": "El teu sou net és de 1.600 €. Segons la regla 50/30/20, quant va a l'estalvi?",
-   "options": [],
-   "explanation": "El 20 % de 1.600 = 320 €.",
-   "unit": "€"
+  "u2l1-11": {
+   "prompt": "La Laura descobreix que se li'n van 160 € al mes en menjar a domicili i ho deixa a la meitat. Encara no té coixí. Què fa amb els 80 € que allibera?",
+   "options": [
+    "Els deixa al compte corrent, sense pla",
+    "Els aparta cada mes: primer per al coixí i després per invertir",
+    "Se'ls gasta en roba: total, ja ha retallat"
+   ],
+   "explanation": "Una retallada només serveix si aquests diners tenen destinació: primer el coixí, després invertir. Deixar-los al compte sembla igual de bo, però sense pla s'acaben gastant.",
+   "feedback": [
+    "El que no té destinació s'acaba gastant sense que te n'adonis.",
+    "Amb el coixí fet, aquests 80 € passen a ser la seva aportació mensual a un ETF.",
+    "La retallada desapareix i a final de mes torna a estar a zero."
+   ]
   },
-  "u2l2-2": {
-   "prompt": "Amb un sou net de 2.000 €, quant tocaria a desitjos?",
-   "options": [],
-   "explanation": "El 30 % de 2.000 = 600 €.",
-   "unit": "€"
+  "u2l1-12": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Inverteix tot el que tinguis al compte",
+    "Espera a guanyar més per començar",
+    "Mira els teus moviments de l'últim mes i calcula el que et sobra"
+   ],
+   "explanation": "El que pots invertir surt del teu pressupost real, no d'una xifra a ull. Invertir-ho tot tempta, però sense coixí qualsevol ensurt t'obliga a vendre.",
+   "feedback": [
+    "Sense coixí, el primer imprevist t'obliga a vendre, potser amb pèrdues.",
+    "Amb més sou sol pujar la despesa: començar aviat i amb poc compta més.",
+    "Això! Sabràs quant pots aportar cada mes sense passar-te."
+   ],
+   "lines": [
+    "Vull començar a invertir, però no sé quant puc.",
+    "Per on començo?"
+   ]
   },
   "u2l2-4": {
    "prompt": "Reparteix un sou de 1.500 € amb la regla 50/30/20: com a màxim un 50 % en necessitats i un 30 % en desitjos, i almenys un 20 % d'estalvi.",
@@ -333,11 +361,29 @@
     "Així el 30 % es converteix en deute amb interessos: el forat creix cada mes."
    ]
   },
-  "u2l3-1": {
-   "prompt": "Et prens un cafè d'1,50 € cada dia feiner (20 al mes). Quant gastes en un any?",
-   "options": [],
-   "explanation": "1,50 × 20 × 12 = 360 €.",
-   "unit": "€"
+  "u2l2-11": {
+   "prompt": "Ja tens el coixí complet i cap deute car. Què fas amb el 20 % de cada mes?",
+   "options": [
+    "Continuar engreixant el coixí sense límit",
+    "Comprar cada mes l'acció que més va pujar la setmana anterior",
+    "Una aportació automàtica a un ETF indexat mundial"
+   ],
+   "explanation": "Amb el coixí fet, el 20 % passa a ser la teva aportació per invertir a llarg termini. Comprar el que més ha pujat tempta, però és deixar-se portar pel FOMO.",
+   "feedback": [
+    "Segur, però el que no necessites en anys perd poder de compra.",
+    "Això és perseguir modes: compres car el que ja ha pujat.",
+    "El teu estalvi comença a treballar cada mes sense que hagis de decidir res."
+   ]
+  },
+  "u2l2-12": {
+   "prompt": "Què va al 20 % d'estalvi de la regla? Marca-les totes.",
+   "options": [
+    "Pagar abans un deute car",
+    "El sopar dels divendres",
+    "La teva aportació mensual a un ETF",
+    "Omplir el teu fons d'emergència"
+   ],
+   "explanation": "El 20 % és per al teu jo del futur: coixí, treure't deutes cars i invertir. El sopar és un desig i va al 30 %, per molt que sembli imprescindible."
   },
   "u2l3-4": {
    "prompt": "Quines són despeses formiga típiques? Marca-les totes.",
@@ -348,12 +394,6 @@
     "El cafè per emportar de cada matí"
    ],
    "explanation": "El lloguer és una despesa fixa gran; les formiga són petites, freqüents i gairebé invisibles."
-  },
-  "u2l3-5": {
-   "prompt": "Pagues tres plataformes d'11 € al mes i un gimnàs de 30 € al qual no vas. Quant sumen en un any?",
-   "options": [],
-   "explanation": "(3 × 11 + 30) × 12 = 63 × 12 = 756 €.",
-   "unit": "€"
   },
   "u2l3-6": {
    "prompt": "La Marta revisa el seu extracte i troba cinc subscripcions: dues les fa servir cada setmana i tres no les obre des de fa mesos. Què fa?",
@@ -388,21 +428,37 @@
    ],
    "explanation": "Per això convé apuntar la data en què acaba la prova."
   },
-  "u2l3-9": {
-   "prompt": "Quatre subscripcions de 12 € al mes sumen ____ € l'any.",
+  "u2l3-11": {
+   "prompt": "Retalles 60 € al mes en subscripcions que no feies servir. Ja tens coixí. Què fas perquè aquests diners no s'esfumin?",
    "options": [
-    "144",
-    "480",
-    "48",
-    "576"
+    "Programo aquell mateix dia una aportació de 60 € a un ETF",
+    "Em dono un caprici de 60 € per celebrar-ho",
+    "Els deixo al compte corrent, ja veuré"
    ],
-   "explanation": "12 × 4 = 48 € al mes; 48 × 12 = 576 € l'any."
+   "explanation": "Una retallada només compta si aquests diners tenen una destinació automàtica. Deixar-los al compte sembla suficient, però el que no s'aparta es gasta.",
+   "feedback": [
+    "Els diners canvien de destinació abans que els trobis a faltar, i comencen a créixer.",
+    "Una vegada està bé, però si es repeteix, la retallada no ha servit de res.",
+    "Sense destinació, se'n van en altres despeses petites."
+   ]
   },
-  "u2l4-1": {
-   "prompt": "Gastes 1.100 € al mes. Quant hauria de tenir un coixí de 6 mesos?",
-   "options": [],
-   "explanation": "1.100 × 6 = 6.600 €.",
-   "unit": "€"
+  "u2l3-12": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Només si ho inverteixes en cripto, que puja més",
+    "Res: 3 € no són diners",
+    "Sí: el que és petit i repetit, invertit anys, es nota molt"
+   ],
+   "explanation": "Una despesa petita repetida cada dia suma molt a l'any, i si s'inverteix, l'interès compost la fa més gran. Pensar «només són 3 €» tempta, però el que pesa és la freqüència.",
+   "feedback": [
+    "El que importa és la constància i el temps, no perseguir el que més puja.",
+    "Són més de 1.000 € l'any; invertits durant anys, bastant més.",
+    "Això! I no cal treure-ho tot: amb la meitat ja es nota."
+   ],
+   "lines": [
+    "Em gasto 3 € al dia a la màquina de la uni.",
+    "Si ho invertís, canviaria alguna cosa?"
+   ]
   },
   "u2l4-2": {
    "prompt": "Sobre què es calcula el fons d'emergència?",
@@ -477,6 +533,20 @@
    ],
    "explanation": "De 3 a 6 mesos de despeses; més si els teus ingressos són inestables."
   },
+  "u2l4-11": {
+   "prompt": "La teva cartera d'ETF cau un 25 % i, la mateixa setmana, et ve una avaria de 900 €. Tens un coixí de 3 mesos. Què fas?",
+   "options": [
+    "Venc part de l'ETF per pagar-la",
+    "Pago l'avaria amb el coixí i no toco la cartera",
+    "La pago amb la targeta a terminis"
+   ],
+   "explanation": "El coixí existeix perquè mai no hagis de vendre les teves inversions en plena caiguda. Vendre una mica sembla prudent, però fixa la pèrdua just en el pitjor moment.",
+   "feedback": [
+    "Converteixes una caiguda temporal en pèrdua real tenint els diners al costat.",
+    "La caiguda continua sent temporal mentre no venguis, i el coixí ha fet la seva feina.",
+    "Pagues interessos tenint un coixí pensat justament per a això."
+   ]
+  },
   "u2l5-1": {
    "prompt": "Ordena el mes de qui es paga primer a si mateix.",
    "options": [
@@ -486,12 +556,6 @@
     "Cobra la nòmina"
    ],
    "explanation": "L'estalvi surt abans que qualsevol despesa: així no competeix amb els capricis."
-  },
-  "u2l5-3": {
-   "prompt": "Apartes el 10 % d'una nòmina de 1.400 € cada mes. Quant estalvies en un any (12 nòmines)?",
-   "options": [],
-   "explanation": "140 € × 12 = 1.680 €.",
-   "unit": "€"
   },
   "u2l5-4": {
    "prompt": "Relaciona cada truc amb el motiu pel qual funciona.",
@@ -542,11 +606,19 @@
    ],
    "explanation": "Just després de cobrar, abans que els diners es barregin amb les despeses."
   },
-  "u2l5-10": {
-   "prompt": "L'Ana comença estalviant el 5 % de 1.200 € al mes i als 6 mesos ho apuja al 10 %. Quant aparta el primer any?",
-   "options": [],
-   "explanation": "60 € × 6 + 120 € × 6 = 360 + 720 = 1.080 €.",
-   "unit": "€"
+  "u2l5-11": {
+   "prompt": "En Pablo ja té el coixí complet, i la seva transferència de 150 € continua sortint cada mes. Què en fa ara?",
+   "options": [
+    "La dirigeix a una aportació periòdica a un ETF indexat",
+    "L'atura i es gasta aquests 150 €",
+    "Continua engreixant el coixí per sempre"
+   ],
+   "explanation": "Pagar-te primer a tu serveix per omplir el coixí i, després, per invertir sense pensar-hi. Continuar engreixant el coixí sembla prudent, però aquests diners quiets perden davant de la inflació.",
+   "feedback": [
+    "L'hàbit ja està fet: ara, a més, els seus diners treballen per ell.",
+    "Perd l'hàbit que més li havia costat crear.",
+    "Un coixí enorme no rendeix: el que no necessita en anys perd poder de compra."
+   ]
   }
  }
 }

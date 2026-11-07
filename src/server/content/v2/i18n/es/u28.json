@@ -42,7 +42,7 @@
      "title": "El ciclo emocional",
      "body": "Optimismo → entusiasmo → **euforia** (máximo riesgo) → ansiedad → negación → miedo → **pánico y capitulación** (máxima oportunidad) → desesperanza → esperanza…\n\nNo se trata de adivinar el techo o el suelo: nadie lo hace de forma fiable. Se trata de que el miedo o la avaricia no cambien un plan escrito en calma.",
      "key": "Los inversores tienden a comprar en la euforia y vender en el pánico: justo al revés de lo que conviene.",
-     "tip": "Cuando sientas euforia o pánico, no decidas hoy: relee tu plan."
+     "tip": "Pruébalo: pon una alerta de caída en tu ETF y decide hoy qué harás."
     }
    ]
   },
@@ -86,7 +86,7 @@
      "title": "La regla preparada",
      "body": "**«Tras 3 pérdidas seguidas, paro el resto del día.»**\n\nY además:\n• El riesgo por operación es siempre el mismo.\n• Si pierdes un 6 % en un mes, paras hasta el mes siguiente.\n• Apuntas en el diario cómo te sentías.",
      "key": "Tras una pérdida, la mejor decisión suele ser no tomar ninguna más ese día.",
-     "tip": "Después de tres pérdidas seguidas, la mejor operación es apagar la pantalla."
+     "tip": "Pruébalo: revisa tu historial y mira qué hiciste justo después de tu última pérdida."
     }
    ]
   },
@@ -130,7 +130,7 @@
      "title": "Lo que te llevas",
      "body": "Cuanto más miras el mercado, más movimientos ves que no significan nada, y cada uno parece pedir una decisión.\n\nMenos operaciones, mejor elegidas, con costes bajos. Y para el largo plazo: aportaciones automáticas y revisar la cartera de vez en cuando, no cada día.",
      "key": "Cada operación paga costes: operar mucho convierte una ventaja pequeña en pérdida.",
-     "tip": "En inversión, muchas veces lo más rentable es no hacer nada."
+     "tip": "Pruébalo: deja en Favoritos solo los activos de tu plan y quita el resto."
     }
    ]
   },
@@ -181,7 +181,7 @@
      "title": "Revisión mensual",
      "body": "• ¿He seguido mi plan? ¿En qué operaciones no, y por qué?\n• ¿Mi rentabilidad bate a la de un índice comparable?\n• ¿Qué sesgo he visto en mí este mes?\n\nY pregúntale a Lumi en el modo Sesgos: te hará de abogado del diablo.",
      "key": "No puedes eliminar las emociones; puedes impedir que decidan por ti.",
-     "tip": "No necesitas ser frío como una máquina. Necesitas reglas que funcionen aunque no lo seas."
+     "tip": "Pruébalo: pasa la lista entera antes de tu próxima compra del simulador."
     }
    ]
   },
@@ -278,12 +278,6 @@
     "Si subo el tamaño, lo recupero todo esta tarde."
    ]
   },
-  "u28l2-5": {
-   "prompt": "Cuenta de 10.000 €. Pierdes tres operaciones de 100 € y, por rabia, arriesgas 600 € en la cuarta, que también pierdes. ¿Cuánto has perdido en total?",
-   "options": [],
-   "explanation": "3 × 100 + 600 = 900 €: un 9 % de la cuenta en una tarde. Con la regla de parar, habrían sido 300 €.",
-   "unit": "€"
-  },
   "u28l2-6": {
    "prompt": "Ordena qué hacer después de tres pérdidas seguidas.",
    "options": [
@@ -322,18 +316,6 @@
     "No tienen nada en común"
    ],
    "explanation": "Cuando perdemos, nos volvemos más arriesgados: «doblo para recuperar»."
-  },
-  "u28l3-1": {
-   "prompt": "Haces 2 operaciones a la semana y cada una te cuesta 6 € entre comisión y spread. ¿Cuánto pagas en un año de 52 semanas?",
-   "options": [],
-   "explanation": "2 × 6 × 52 = 624 €.",
-   "unit": "€"
-  },
-  "u28l3-2": {
-   "prompt": "Si tu cuenta es de 5.000 €, ¿qué porcentaje anual se comen esos 624 € de costes? (redondea a un decimal)",
-   "options": [],
-   "explanation": "624 ÷ 5.000 ≈ 0,125 → 12,5 % al año. Tendrías que ganar eso solo para quedarte igual.",
-   "unit": "%"
   },
   "u28l3-8": {
    "prompt": "¿Es una decisión útil o ruido?",
@@ -383,6 +365,30 @@
     "Me he instalado alertas de precio en 40 acciones 📲",
     "Así no me pierdo nada."
    ]
+  },
+  "u28l3-11": {
+   "prompt": "Tu fondo indexado de largo plazo baja un 1 % un martes. Llevas tres días abriendo la app cada hora. ¿Qué haces?",
+   "options": [
+    "Me paso al fondo que más sube hoy",
+    "No lo toco: sigo con mis aportaciones y lo reviso de vez en cuando",
+    "Vendo hoy y recompro cuando baje más"
+   ],
+   "explanation": "Para el largo plazo, un día malo no pide ninguna decisión: cada operación de más paga costes y rara vez mejora el resultado. Lo tentador es «hacer algo» porque lo estás mirando.",
+   "feedback": [
+    "Cambiar según lo que sube hoy es perseguir el ruido, y cada cambio paga costes.",
+    "Bien: un 1 % en un día es ruido para un plan de años.",
+    "Pagas costes dos veces y tienes que acertar dos momentos. Lo normal es fallar alguno."
+   ]
+  },
+  "u28l3-12": {
+   "prompt": "¿Qué pagas otra vez cada vez que compras o vendes? Marca todo.",
+   "options": [
+    "El spread entre el precio de compra y el de venta",
+    "Los impuestos, si vendes con ganancias",
+    "La rentabilidad del índice",
+    "La comisión del bróker"
+   ],
+   "explanation": "Comisión, spread e impuestos se pagan en cada operación: por eso operar mucho se come una ventaja pequeña. La rentabilidad del índice no es un coste: es lo que ganas si no te mueves."
   },
   "u28l4-1": {
    "prompt": "Ordena tu rutina anti-sesgos de una operación.",

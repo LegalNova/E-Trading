@@ -11,14 +11,14 @@
     {
      "texts": [
       "Comprar i vendre a l'instant",
-      "La **forquilla** o *spread* és la diferència entre el millor preu de venda (*ask*) i el de compra (*bid*). Aquesta és una acció gran i molt negociada.",
-      "Compres 100 accions i **les vens a l'instant**. Què passa?",
+      "Aquesta és una acció gran i molt negociada. En compres 100 i, un segon després, canvies d'idea.",
+      "Les **vens a l'instant**. Què passa?",
       "Et quedes igual",
-      "Perds la forquilla: uns 2 €",
+      "Perds uns 2 €",
       "Guanyes una mica",
-      "Compres a 10,02 € i vens a 10,00 €: 0,02 € × 100 = **2 €**, un 0,2 %.",
+      "Compres a 10,02 €, el que demanen els venedors (*ask*), i vens a 10,00 €, el que paguen els compradors (*bid*): perds **2 €**, un 0,2 %.",
       "Compra tant que el lliscament superi l'spread (0,2 %).",
-      "En operar pagues dos costos: l'**spread**, que perds en comprar i vendre a l'instant, i el **lliscament**, la diferència entre el preu que esperaves i el que obtens.",
+      "Aquesta diferència entre *ask* i *bid* és la **forquilla** o *spread*: la perds en comprar i vendre a l'instant. Si compres molt, pagues a més **lliscament**: la diferència entre el preu que esperaves i el que obtens.",
       "Ara el lliscament et costa més que la forquilla.",
       "Ja no en tens prou amb el primer graó del llibre.",
       "Mira la forquilla i després apuja la quantitat"
@@ -30,13 +30,13 @@
       "Pablo",
       "El meu bròquer és de 0 comissions. Faig 20 operacions al mes de 1.000 €.",
       "Entre l'spread i la resta, cadascuna em costa un 0,3 %. Res.",
-      "Quant li costa operar així en un any?",
-      "Res: el seu bròquer no cobra",
+      "Li surt gratis operar així?",
+      "Sí: el seu bròquer no cobra comissions",
       "L'spread es paga igualment: compra a l'ask i ven al bid.",
-      "Gairebé res: només és un 0,3 %",
+      "Gairebé: un 0,3 % és molt poc",
       "Són 3 € per operació: en un any, **720 €**.",
-      "Més de 700 € l'any",
-      "Exacte: 3 € × 20 × 12 mesos = **720 €**, guanyi o perdi.",
+      "No: pagarà molt, guanyi o perdi",
+      "Exacte: 3 € × 20 × 12 mesos = **720 €** l'any.",
       "Uf… i què faig?",
       "Operar menys. Els costos són l'única cosa segura d'una inversió."
      ]
@@ -44,7 +44,8 @@
     {
      "title": "Quan hi ha més lliscament",
      "body": "Quan la teva ordre és gran per al llibre o el preu es mou molt de pressa: a l'**obertura**, després d'una **notícia** o en moments de **pànic**.\n\nCom més **liquiditat**, més estreta és la forquilla. En percentatge, spread ÷ preu: 10,00 € / 10,02 € és un 0,2 %.",
-     "key": "Spread, lliscament i comissions són costos d'operar: com més operes, més pagues."
+     "key": "Spread, lliscament i comissions són costos d'operar: com més operes, més pagues.",
+     "tip": "Prova-ho: abans de comprar al Mercat, mira la comissió simulada de la teva ordre."
     }
    ]
   },
@@ -54,7 +55,7 @@
     {
      "texts": [
       "S'executa?",
-      "Amb una **ordre limitada** poses tu el preu: compres al teu preu **o més barat** i vens al teu preu **o més car**.",
+      "Una acció cotitza a 50 € i tu només la vols a 47 €. Amb una **ordre limitada** poses tu el preu: compres al teu preu **o més barat** i vens al teu preu **o més car**.",
       "S'executa",
       "No s'executa",
       "Limitada de compra a 47 €. El mínim del dia és 47,40 €",
@@ -95,7 +96,8 @@
     {
      "title": "Quan fer-la servir",
      "body": "Quan el preu t'importa: valors poc líquids, forquilles amples, obertures o si només vols comprar en una zona concreta.\n\n**Validesa:** del dia (caduca al tancament) o fins a cancel·lar (*GTC*), que continua viva fins que es compleixi o la cancel·lis.",
-     "key": "Amb una limitada controles el preu; a canvi, pot no executar-se mai."
+     "key": "Amb una limitada controles el preu; a canvi, pot no executar-se mai.",
+     "tip": "Prova-ho: al Mercat, posa una alerta de preu on posaries la teva ordre limitada."
     }
    ]
   },
@@ -105,7 +107,7 @@
     {
      "texts": [
       "La teva sortida d'emergència",
-      "Un **stop loss** ven només si el preu **cau fins a un nivell**. Compres Tesla a l'últim preu: on poses l'stop?",
+      "Compres Tesla a l'últim preu i te'n vas a dormir. Un **stop loss** vendrà només si el preu **cau fins al nivell** que triïs: on el poses?",
       "Amb l'stop només un **2 %** per sota, què creus que passarà?",
       "Aguanta: un 2 % és marge de sobres",
       "El soroll normal del preu el fa saltar",
@@ -138,9 +140,9 @@
     },
     {
      "title": "Stop a mercat o limitat",
-     "body": "• **Stop (a mercat):** quan toca el nivell, ven al preu que hi hagi. Surts segur, però potser pitjor.\n• **Stop limitat:** quan toca el nivell, llança una limitada. Controles el pitjor preu, però si el preu salta pot no vendre's i continuar caient.",
+     "body": "• **Stop (a mercat):** quan toca el nivell, ven al preu que hi hagi. Surts segur, però potser pitjor.\n• **Stop limitat:** quan toca el nivell, llança una limitada. Controles el pitjor preu, però si el preu salta pot no vendre's i continuar caient.\n\nL'stop es decideix abans d'entrar, amb el cap fred, i després no s'allunya.",
      "key": "L'stop decideix on surts; la mida, que aquesta pèrdua sigui petita.",
-     "tip": "L'stop es decideix abans d'entrar, amb el cap fred, i després no s'allunya."
+     "tip": "Aprova aquesta classe i afegeix un stop loss a la teva propera compra del Mercat."
     }
    ]
   },
@@ -150,7 +152,7 @@
     {
      "texts": [
       "Posa el teu objectiu",
-      "Un **take profit** ven només quan el preu **puja fins al teu objectiu**. Compres Ethereum a l'últim preu.",
+      "Compres Ethereum a l'últim preu i no et vols passar el dia mirant. Un **take profit** vendrà només si el preu **puja fins al teu objectiu**.",
       "El teu objectiu és un **15 %** amunt, molt per sobre del màxim anterior. Què en penses?",
       "Es tocarà: les criptomonedes es mouen molt",
       "Potser no es toca mai",
@@ -183,9 +185,9 @@
     },
     {
      "title": "Risc i benefici",
-     "body": "Compres a 50 €, stop a 47 € (arrisques 3 €) i objectiu a 56 € (pots guanyar 6 €): la relació és **1:2**.\n\nAmb 1:2, si l'encertes en 4 de cada 10 operacions, guanyes 24 € i perds 18 € per acció (abans de costos).",
+     "body": "Compres a 50 €, stop a 47 € (arrisques 3 €) i objectiu a 56 € (pots guanyar 6 €): la relació és **1:2**.\n\nAmb 1:2, si l'encertes en 4 de cada 10 operacions, guanyes 24 € i perds 18 € per acció (abans de costos).\n\nDecideix l'objectiu abans d'entrar, no quan ja vas guanyant.",
      "key": "El take profit surt per dalt; l'stop, per baix.",
-     "tip": "Decideix l'objectiu abans d'entrar, no quan ja vas guanyant."
+     "tip": "Prova-ho: a la teva propera compra del Mercat, afegeix un take profit a prop del màxim anterior."
     }
    ]
   },
@@ -195,7 +197,7 @@
     {
      "texts": [
       "Munta la teva OCO",
-      "Una **OCO** ajunta un stop per sota i un objectiu per sobre. **Quan en salta una, l'altra es cancel·la sola.**",
+      "Te'n vas una setmana de viatge i no podràs mirar el preu. Una **OCO** ajunta un stop per sota i un objectiu per sobre: **quan en salta una, l'altra es cancel·la sola.**",
       "Posa l'stop sota l'últim mínim i l'objectiu a prop del màxim anterior, i mira què salta.",
       "Una OCO és un pla complet de sortida: **quan salta una ordre, l'altra es cancel·la sola**. No et queda cap ordre solta.",
       "Ha saltat l'stop: l'objectiu s'ha cancel·lat sol.",
@@ -224,9 +226,9 @@
     },
     {
      "title": "L'stop dinàmic",
-     "body": "L'**stop dinàmic** (*trailing stop*) puja amb el preu a una distància fixa: amb un 8 %, si el preu passa de 100 € a 120 €, el teu stop puja de 92 € a 110,40 €. No baixa mai.\n\nEls buits també passen a l'alça: si obre per sobre del teu objectiu, el take profit s'executa a aquell preu, millor que el previst.",
+     "body": "L'**stop dinàmic** (*trailing stop*) puja amb el preu a una distància fixa: amb un 8 %, si el preu passa de 100 € a 120 €, el teu stop puja de 92 € a 110,40 €. No baixa mai.\n\nEls buits també passen a l'alça: si obre per sobre del teu objectiu, el take profit s'executa a aquell preu, millor que el previst.\n\nNo tots els bròquers ofereixen ordres OCO: comprova-ho abans.",
      "key": "OCO = pla complet de sortida; els buits són el seu límit.",
-     "tip": "No tots els bròquers ofereixen ordres OCO: comprova-ho abans."
+     "tip": "Prova-ho: al Mercat, posa stop i take profit a la mateixa compra."
     }
    ]
   },
@@ -236,24 +238,6 @@
   }
  },
  "questions": {
-  "u6l2-2": {
-   "prompt": "Una acció cotitza a 50,00 € (compra) i 50,25 € (venda). Quin spread és, en % del preu de compra?",
-   "options": [],
-   "explanation": "0,25 ÷ 50 = 0,005 → 0,5 %.",
-   "unit": "%"
-  },
-  "u6l2-3": {
-   "prompt": "Compres 1.000 accions a 10,04 € (ask) i les vens a l'instant a 10,02 € (bid). Quant perds?",
-   "options": [],
-   "explanation": "0,02 € × 1.000 = 20 €, només per l'spread.",
-   "unit": "€"
-  },
-  "u6l2-4": {
-   "prompt": "Esperaves comprar a 30,00 € i la teva ordre s'ha executat a 30,15 €. Quant lliscament per acció?",
-   "options": [],
-   "explanation": "30,15 − 30,00 = 0,15 € per acció.",
-   "unit": "€"
-  },
   "u6l2-5": {
    "prompt": "Què sol tenir l'spread més petit?",
    "options": [
@@ -352,12 +336,6 @@
     "Al teu preu o més barat"
    ]
   },
-  "u6l3-10": {
-   "prompt": "Poses una limitada de compra de 200 accions a 12,50 € i s'executa a 12,46 €. Quant pagues de menys respecte al teu límit?",
-   "options": [],
-   "explanation": "0,04 € × 200 = 8 €. La limitada compra al teu preu o millor.",
-   "unit": "€"
-  },
   "u6l4-1": {
    "prompt": "Has comprat a l'últim preu. Col·loca l'stop loss on la teva idea deixa de ser vàlida.",
    "options": [],
@@ -372,12 +350,6 @@
    "prompt": "Tens 10.000 € i arrisques com a màxim un 1 %. Primer l'stop, després l'import.",
    "options": [],
    "explanation": "Risc = import × distància a l'stop ÷ preu d'entrada. Amb l'stop decidit, l'import surt sol."
-  },
-  "u6l4-5": {
-   "prompt": "Compres 80 accions a 25 € amb l'stop a 23,50 €. Si salta, quant perds (sense costos)?",
-   "options": [],
-   "explanation": "(25 − 23,50) × 80 = 1,50 × 80 = 120 €.",
-   "unit": "€"
   },
   "u6l4-6": {
    "prompt": "On té més lògica un stop loss?",
@@ -418,18 +390,6 @@
    "prompt": "Tens 8.000 € i arrisques com a màxim un 1 % (80 €). Tria l'import i l'stop.",
    "options": [],
    "explanation": "Amb un stop a prop del mínim recent, la distància és curta i pots comprar més sense passar de 80 € de risc."
-  },
-  "u6l5-4": {
-   "prompt": "Compres a 50 €, amb l'stop a 47 € i l'objectiu a 56 €. Quantes vegades el risc és el benefici possible?",
-   "options": [],
-   "explanation": "Guanyes 6 € i arrisques 3 €: 6 ÷ 3 = 2. Relació 1:2.",
-   "unit": "vegades"
-  },
-  "u6l5-5": {
-   "prompt": "Arrisques 3 € per guanyar-ne 6 per acció. En 10 operacions n'encertes 4. Quin és el resultat per acció, abans de costos?",
-   "options": [],
-   "explanation": "4 × 6 = 24 € guanyats; 6 × 3 = 18 € perduts. 24 − 18 = 6 €.",
-   "unit": "€"
   },
   "u6l5-10": {
    "prompt": "Què fa un take profit? Marca-les totes.",
@@ -476,18 +436,6 @@
     "Doble mida i un stop que no protegeix dels buits: doble cop."
    ]
   },
-  "u6l6-6": {
-   "prompt": "Vas comprar a 50 € amb l'stop a 47,50 €. L'acció obre amb un buit a 42,50 € i l'stop s'executa allà. Quants euros per acció perds de més respecte al previst?",
-   "options": [],
-   "explanation": "Previst: 50 − 47,50 = 2,50 €. Real: 50 − 42,50 = 7,50 €. De més: 5 €.",
-   "unit": "€"
-  },
-  "u6l6-7": {
-   "prompt": "Stop dinàmic del 10 %. El preu puja de 80 € a 95 €. On és ara l'stop?",
-   "options": [],
-   "explanation": "95 × 0,90 = 85,50 €. L'stop segueix el preu cap amunt.",
-   "unit": "€"
-  },
   "u6l6-10": {
    "prompt": "Relaciona cada terme amb el seu significat.",
    "options": [
@@ -502,6 +450,70 @@
     "Puja amb el preu i no baixa mai",
     "Pot no executar-se si el preu salta",
     "Stop i objectiu: un cancel·la l'altre"
+   ]
+  },
+  "u6l2-11": {
+   "prompt": "Forquilla estreta o ampla?",
+   "options": [
+    "Una acció poc negociada just a l'obertura",
+    "Una criptomoneda poc coneguda",
+    "Una empresa petita de BME Growth",
+    "Una acció gran de l'S&P 500 a mitja sessió",
+    "L'euro davant del dòlar",
+    "Un ETF molt negociat de l'S&P 500"
+   ],
+   "explanation": "On hi ha molts compradors i venedors, la forquilla és estreta. Amb poca liquiditat, o a l'obertura, s'obre: per això el que és petit i poc negociat costa més d'operar.",
+   "right": [
+    "Estreta",
+    "Ampla"
+   ]
+  },
+  "u6l2-12": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Només pagues si perds diners",
+    "No: cada compra i venda paga la forquilla, i com més operes, més pagues",
+    "Exacte: sense comissions, operar no costa res"
+   ],
+   "explanation": "La temptadora és creure que «0 comissions» és gratis. L'spread i el lliscament es paguen sempre, i es multipliquen amb cada operació.",
+   "feedback": [
+    "Els costos es paguen a cada operació, també en les que guanyes.",
+    "Això mateix! Els costos d'operar se sumen a cada operació, guanyis o perdis.",
+    "Cada volta paga la forquilla: compres a l'ask i vens al bid, cobri o no comissió el bròquer."
+   ],
+   "lines": [
+    "El meu bròquer és de 0 comissions: puc comprar i vendre cada dia gratis, oi?"
+   ]
+  },
+  "u6l5-11": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Millor no posar objectiu i vendre a ull",
+    "Millor a prop del màxim anterior, on sol aparèixer venda",
+    "Bona idea: com més lluny, més guanyes"
+   ],
+   "explanation": "La temptadora és l'objectiu llunyà: sembla que guanya més, però si no es toca no guanya res. A prop del màxim anterior sol aparèixer venda, i allà l'objectiu té opcions reals.",
+   "feedback": [
+    "Sense objectiu decideixen l'avarícia o la por, just en el pitjor moment.",
+    "Això mateix! Un objectiu raonable es toca més sovint: guanyar una mica menys, però de debò.",
+    "Només si hi arriba. Un objectiu massa llunyà pot no tocar-se mai i acabar a l'stop."
+   ],
+   "lines": [
+    "Poso l'objectiu un 50 % per sobre: així, quan hi arribi, guanyo molt més"
+   ]
+  },
+  "u6l5-12": {
+   "prompt": "La Laura fa servir sempre una relació 1:2: arrisca 3 € per guanyar-ne 6. Encerta 4 de cada 10 operacions i creu que és mala trader. Què li diries?",
+   "options": [
+    "Que, abans de costos, va guanyant: cada encert val el doble que cada error",
+    "Que tregui l'stop per fallar menys",
+    "Que ho deixi: si falla més de la meitat, perd diners"
+   ],
+   "explanation": "El que compta no és només quantes n'encertes, sinó quant guanyes en encertar davant del que perds en fallar. La temptadora és fixar-se només en el percentatge d'encerts.",
+   "feedback": [
+    "Amb 1:2, 4 encerts donen 24 € i 6 errors en treuen 18 per acció. Fallar més del que encerta no la fa perdre.",
+    "Sense stop, una sola mala operació pot esborrar molts encerts.",
+    "No necessàriament: depèn de quant guanya quan encerta davant del que perd quan falla."
    ]
   }
  }

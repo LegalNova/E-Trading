@@ -37,7 +37,7 @@ export default unit({
         ]),
         say('lumi', 'No controlas si aciertas. Controlas **cuánto pierdes** cuando fallas.'),
       ]),
-      key('La pregunta del profesional', 'El principiante pregunta «¿qué compro?» y «¿va a subir?». El profesional pregunta: **«¿cuánto pierdo si me equivoco?»**.\n\nNadie sabe si una operación concreta saldrá bien. Puedes acertar el 60 % de las veces y arruinarte, o acertar el 40 % y ganar dinero: la diferencia está en cuánto ganas cuando aciertas y cuánto pierdes cuando fallas.', 'El primer objetivo de un trader es sobrevivir para que su ventaja, si la tiene, pueda actuar.', 'No controlas si aciertas. Controlas cuánto pierdes cuando fallas.'),
+      key('La pregunta del profesional', 'El principiante pregunta «¿qué compro?» y «¿va a subir?». El profesional pregunta: **«¿cuánto pierdo si me equivoco?»**.\n\nNadie sabe si una operación concreta saldrá bien. Puedes acertar el 60 % de las veces y arruinarte, o acertar el 40 % y ganar dinero: la diferencia está en cuánto ganas cuando aciertas y cuánto pierdes cuando fallas.', 'El primer objetivo de un trader es sobrevivir para que su ventaja, si la tiene, pueda actuar.', 'Pruébalo: en tu próxima compra del simulador, arriesga como mucho un 1 %.'),
     ], [
       single('¿Qué es lo único que controlas al 100 % en cada operación?', ['Si el precio subirá', 'Cuánto arriesgas si te equivocas', 'Lo que harán los demás inversores'], 1, 'El resultado de una operación concreta nadie lo sabe. El riesgo que asumes lo decides tú antes de entrar.'),
       upDown('Primera prueba de humildad: mira este gráfico real. ¿Qué hizo el precio en las sesiones siguientes?', 'ud-3', 'Mirar el gráfico no basta para saberlo con seguridad. Por eso los profesionales deciden antes cuánto pierden si fallan.'),
@@ -49,7 +49,9 @@ export default unit({
       buckets('¿Lo controlas tú o no?', ['Lo controlo yo', 'No lo controlo'], [['Cuánto arriesgo en la operación', 0], ['Si la empresa da buenos resultados', 1], ['Dónde pongo el stop', 0], ['Lo que hará el mercado mañana', 1], ['Cuántas operaciones hago', 0]], 'Céntrate en lo que depende de ti: riesgo, stop y número de operaciones.'),
       timed(single('Rápido: arriesgas un 10 % por operación y pierdes 10 seguidas. ¿Cuánto te queda?', ['Un 90 %', 'Unos dos tercios', 'Alrededor de un 35 %'], 2, '0,9¹⁰ ≈ 34,9 %: necesitarías ganar un 187 % para volver.'), 15),
       chat(['Tengo un método que acierta muchísimo 😎', 'Por eso meto un 20 % de la cuenta en cada operación.'], '¿Qué le contestas a Lumi?', [['Si aciertas mucho, perfecto', 'Hasta que llegue la racha mala: con un 20 % por operación, cuatro fallos seguidos te dejan con un 41 %.'], ['Lo importante es cuánto pierdes cuando fallas', '¡Eso! Ningún método acierta siempre, y con tanto riesgo una racha normal me saca del juego.'], ['Mejor un 50 %, así recuperas antes', 'Eso acelera la ruina: dos fallos y te queda un 25 %.']], 1, 'Sobrevivir a las rachas malas es lo primero: el riesgo por operación tiene que ser pequeño.'),
-    ], { source: '10.1', minutes: 6, retire: [3, 5, 6, 8, 9] }),
+      scenario('Empiezas con 10.000 € en el simulador. Sabes que incluso un buen sistema encadena a veces 10 pérdidas seguidas. ¿Cuánto arriesgas en cada operación?', [['Un 10 %: así gano rápido', 'Con un 10 %, diez fallos seguidos te dejan con 3.487 €, y necesitarías ganar un 187 % para volver.'], ['Un 1 %: diez fallos serían un mal mes, no el final', 'Eso: con un 1 %, tras diez fallos te queda el 90,4 % de la cuenta.'], ['Depende de lo seguro que esté de cada operación', 'Nadie sabe qué operación saldrá bien: sentirte seguro no cambia el riesgo.']], 1, 'El riesgo por operación tiene que ser pequeño para sobrevivir a las rachas malas, que llegan incluso con un buen sistema.'),
+      buckets('Encadenas diez pérdidas seguidas. ¿Sigues en el juego o te deja muy tocado?', ['Sigues en el juego', 'Te deja muy tocado'], [['Arriesgar un 1 % por operación', 0], ['Arriesgar un 2 % por operación', 0], ['Arriesgar un 10 % por operación', 1], ['Arriesgar un 20 % por operación', 1]], 'Con un 1 % te queda el 90,4 % de la cuenta; con un 2 %, el 81,7 %. Con un 10 %, solo el 34,9 %, y con un 20 % bastan cuatro fallos para quedarte con un 41 %.'),
+    ], { source: '10.1', minutes: 6, retire: [3, 4, 5, 6, 8, 9] }),
 
     lesson('u24l2', 'Las matemáticas de las pérdidas', [
       mission({
@@ -83,7 +85,7 @@ export default unit({
         say('ana', 'Vaya. Entonces lo importante es no caer mucho.'),
         say('lumi', 'Eso es: evitar las grandes caídas suele valer más que buscar grandes subidas.'),
       ]),
-      key('Lo que cuesta volver', '**Subida necesaria = 1 ÷ (1 − caída) − 1**\n\n• Pierdes 10 % → necesitas +11,1 %\n• Pierdes 20 % → +25 %\n• Pierdes 30 % → +42,9 %\n• Pierdes 50 % → **+100 %**\n• Pierdes 75 % → +300 %\n• Pierdes 90 % → **+900 %**\n\nY la media engaña: +50 % y −50 % es 100 € → 150 € → 75 €. Con apalancamiento 1:5, una caída del 20 % del activo se lleva todo tu dinero.', 'Evitar las grandes pérdidas es más importante que buscar grandes ganancias.', 'Perder el 50 % exige ganar el 100 %. Protege primero lo que tienes.'),
+      key('Lo que cuesta volver', '**Subida necesaria = 1 ÷ (1 − caída) − 1**\n\n• Pierdes 10 % → necesitas +11,1 %\n• Pierdes 20 % → +25 %\n• Pierdes 30 % → +42,9 %\n• Pierdes 50 % → **+100 %**\n• Pierdes 75 % → +300 %\n• Pierdes 90 % → **+900 %**\n\nY la media engaña: +50 % y −50 % es 100 € → 150 € → 75 €. Con apalancamiento 1:5, una caída del 20 % del activo se lleva todo tu dinero.', 'Evitar las grandes pérdidas es más importante que buscar grandes ganancias.', 'Pon un stop en tu próxima compra del simulador: así cortas las caídas grandes.'),
     ], [
       num('Tu cartera cae un 20 %. ¿Cuánto tiene que subir para volver al punto de partida?', 25, '%', '1 ÷ (1 − 0,20) − 1 = 1 ÷ 0,8 − 1 = 0,25 → +25 %.'),
       timed(tf('Si pierdes un 50 %, te basta con ganar un 50 % para recuperarte.', false, 'Necesitas un 100 %: de 100 € pasas a 50 €, y para volver a 100 € tienes que duplicar.'), 10),
@@ -95,28 +97,11 @@ export default unit({
       upDown('Marzo de 2000: el Nasdaq 100 lleva años subiendo sin parar. ¿Qué hizo después?', 'hist-dotcom', 'Tras una caída de cerca del 78 %, un índice necesita subir más de un 350 % para volver: el Nasdaq tardó unos 15 años en recuperar aquel máximo.', 'los dos años y medio siguientes'),
       fill('Con apalancamiento 1:5, una caída del ____ del activo se lleva todo tu dinero.', '20 %', ['5 %', '50 %', '80 %'], '5 × 20 % = 100 %: el apalancamiento acelera las pérdidas grandes.'),
       timed(single('Rápido: pierdes un 75 %. ¿Cuánto tienes que ganar para recuperarte?', ['+75 %', '+150 %', '+300 %'], 2, '1 ÷ 0,25 − 1 = 3 → +300 %.'), 15),
-    ], { source: '3.3', minutes: 6, retire: [1, 6, 7, 9] }),
+      scenario('Tu cartera del simulador ha caído un 30 %. Para recuperarte antes, piensas duplicar el riesgo en las próximas operaciones. ¿Qué haces?', [['Duplico el riesgo: hay que volver cuanto antes', 'Si sale mal, la caída se hace más grande, y cuanto más caes, mucho más tienes que subir para volver.'], ['Mantengo el riesgo pequeño: una caída mayor costaría muchísimo más recuperarla', 'Eso: ya necesitas un +42,9 % para volver; si llegaras a un −50 %, haría falta un +100 %.'], ['Lo vendo todo y no vuelvo a invertir', 'Abandonar convierte la caída en definitiva. Lo sensato es seguir con un riesgo pequeño.']], 1, 'Las pérdidas grandes se recuperan muy despacio. Tras una caída, lo prudente no es arriesgar más, sino seguir con un riesgo pequeño.'),
+      chat(['Mi cartera prudente cae menos en las crisis, pero también sube menos.', '¿No sería mejor arriesgar más? Ya recuperaré lo que caiga.'], '¿Qué le dices a Lumi?', [['Sí: lo que cae se recupera con una subida igual', 'Eso creía… pero tras un −50 % haría falta un +100 % para volver.'], ['Ojo: cuanto más cae, mucho más tiene que subir para volver', 'Vale: evitar las grandes caídas puede valer más que buscar grandes subidas.'], ['Mejor no invertir nunca', 'Tampoco: se trata de no caer tanto, no de quedarse fuera.']], 1, 'Una caída del 50 % exige una subida del 100 %. Por eso caer menos suele valer más que subir más.'),
+    ], { source: '3.3', minutes: 6, retire: [0, 1, 2, 6, 7, 9] }),
 
     lesson('u24l4', 'El tamaño de la posición', [
-      play({
-        title: 'Calcula tu tamaño',
-        intro: 'Cuenta de **10.000 €** y riesgo del **1 %** (100 €). Compras a **50 €** y el stop está un 6 % por debajo, en **47 €**.',
-        widget: { kind: 'position', account: 10000, riskPct: 1, stopPct: 6, entry: 50, maxRisk: 3, maxStop: 15 },
-        predict: {
-          prompt: '¿Cuántas acciones puedes comprar?',
-          options: ['Unas 100', 'Unas 33', 'Unas 10'],
-          answer: 1,
-          why: 'Arriesgas 3 € por acción: 100 ÷ 3 = **33 acciones**, unos 1.650 €. Si salta el stop, pierdes 99 €.',
-        },
-        goal: { text: 'Aleja el stop al 10 % sin cambiar el riesgo. ¿Cuántas acciones ahora?', when: [when('stopPct', '==', 10), when('riskEur', '==', 100)] },
-        insight: 'Con el stop al 10 % compras solo **20 acciones**: el activo más volátil necesita un stop más lejano y, por tanto, **menos acciones**. El riesgo sigue en 100 €.',
-        lumi: [
-          { when: when('riskPct', '>', 1), say: 'El riesgo se queda en el 1 %: mueve solo el stop.', mood: 'THINKING' },
-          { when: when('stopPct', '>=', 10), say: 'Stop más lejos, menos acciones. El riesgo, igual.', mood: 'HAPPY' },
-          { when: when('stopPct', '<', 6), say: 'Stop más cerca, más acciones… y más fácil que salte con el ruido.', mood: 'THINKING' },
-          { say: 'Mira cuántas acciones compras y luego aleja el stop', mood: 'HAPPY' },
-        ],
-      }),
       story('El stop de Marta', [{ id: 'marta', name: 'Marta' }], [
         note('Marta tiene 10.000 €. Quiere comprar a 20 €, y el mínimo reciente está en 18,50 €.'),
         say('marta', 'Si pongo el stop en 19,90 €, ¡puedo comprar 1.000 acciones!'),
@@ -127,7 +112,26 @@ export default unit({
         ]),
         say('lumi', 'El stop lo marca el gráfico; el tamaño se adapta a él, **nunca al revés**.'),
       ]),
-      key('Lo que te llevas', 'Con un stop a 1 € podrías comprar 100 acciones; con uno a 10 €, solo 10. Las dos operaciones arriesgan 100 €. Así cada operación pesa lo mismo, sea cual sea el activo.\n\n**Tamaño = (capital × % de riesgo) ÷ (entrada − stop)**', 'No decides cuánto compras: lo decide la distancia a tu stop.', 'Redondea siempre hacia abajo: mejor arriesgar 99 € que 102 €.'),
+      play({
+        title: 'El tamaño sale solo',
+        intro: 'Cuenta de **10.000 €** y la regla del **1 %** que ya conoces: 100 € de riesgo. Compras a **50 €** y el stop está un 6 % por debajo, en **47 €**.',
+        widget: { kind: 'position', account: 10000, riskPct: 1, stopPct: 6, entry: 50, maxRisk: 3, maxStop: 15 },
+        predict: {
+          prompt: '¿Cuántas acciones puedes comprar?',
+          options: ['Todas las que quepan en tus 10.000 €', 'Las justas para perder 100 € si salta el stop', 'Una por cada euro de riesgo: 100'],
+          answer: 1,
+          why: 'Arriesgas 3 € por acción: la pieza calcula **33 acciones**, unos 1.650 €. Si salta el stop, pierdes 99 €.',
+        },
+        goal: { text: 'Aleja el stop al 10 % sin cambiar el riesgo. ¿Cuántas acciones ahora?', when: [when('stopPct', '==', 10), when('riskEur', '==', 100)] },
+        insight: 'Con el stop al 10 % compras solo **20 acciones**: el activo más volátil necesita un stop más lejano y, por tanto, **menos acciones**. El riesgo sigue en 100 €.',
+        lumi: [
+          { when: when('riskPct', '>', 1), say: 'El riesgo se queda en el 1 %: mueve solo el stop.', mood: 'THINKING' },
+          { when: when('stopPct', '>=', 10), say: 'Stop más lejos, menos acciones. El riesgo, igual.', mood: 'HAPPY' },
+          { when: when('stopPct', '<', 6), say: 'Stop más cerca, más acciones… y más fácil que salte con el ruido.', mood: 'THINKING' },
+          { say: 'Mira cuántas acciones compras y luego aleja el stop', mood: 'HAPPY' },
+        ],
+      }),
+      key('Lo que te llevas', 'Con un stop a 1 € podrías comprar 100 acciones; con uno a 10 €, solo 10. Las dos operaciones arriesgan 100 €. Así cada operación pesa lo mismo, sea cual sea el activo.\n\n**Tamaño = (capital × % de riesgo) ÷ (entrada − stop)**', 'No decides cuánto compras: lo decide la distancia a tu stop.', 'Pruébalo: en tu próxima compra del simulador, pon primero el stop y luego el importe.'),
     ], [
       num('Capital 10.000 €, riesgo 1 %, entrada 50 €, stop 47 €. ¿Cuántas acciones compras? (redondea hacia abajo)', 33, 'acciones', '100 € ÷ 3 € = 33,3 → 33 acciones.', 2),
       num('En esa operación (33 acciones a 50 €), ¿cuánto dinero inviertes?', 1650, '€', '33 × 50 = 1.650 €, un 16,5 % de la cuenta, con solo un 1 % en riesgo.'),
@@ -139,7 +143,9 @@ export default unit({
       single('Si alejas el stop, para arriesgar lo mismo debes comprar…', ['Más acciones', 'Menos acciones', 'Las mismas acciones'], 1, 'Más distancia por acción = menos acciones para la misma pérdida máxima.'),
       tf('Con un stop más cercano puedes comprar más acciones arriesgando la misma cantidad.', true, 'Pero un stop demasiado cerca te puede sacar con el ruido normal del precio.'),
       scenario('Marta tiene 10.000 € y quiere comprar una acción a 20 €. El mínimo reciente está en 18,50 €, pero pone el stop en 19,90 € para poder comprar 1.000 acciones. ¿Qué pasa?', [['Genial: mucho tamaño con poco riesgo', 'El ruido normal de un día mueve más de 10 céntimos: lo más probable es que salte el stop sin motivo.'], ['Mejor el stop bajo los 18,50 € y calcular el tamaño con esa distancia', 'Bien: con algo más de 1,50 € de distancia y 100 € de riesgo, unas 60 acciones.'], ['Mejor sin stop y con las 1.000 acciones', 'Son 20.000 € de posición con una cuenta de 10.000 €: imposible sin apalancamiento y sin límite de pérdida.']], 1, 'El stop se pone donde dice el gráfico; el tamaño se adapta a él, nunca al revés.'),
-    ], { source: '10.2', minutes: 6, retire: [6, 7, 8, 9] }),
+      scenario('Con 10.000 € y la regla del 1 %, quieres comprar dos activos: uno tranquilo, con el stop a un 2 %, y una cripto, con el stop a un 8 %. ¿Cómo repartes el dinero?', [['El mismo importe en los dos', 'Con el mismo importe, la cripto arriesgaría cuatro veces más que el activo tranquilo.'], ['Más importe en el tranquilo y menos en la cripto, para arriesgar 100 € en cada uno', 'Eso: con el stop cuatro veces más lejos, cuatro veces menos importe. Cada operación pesa lo mismo.'], ['Más importe en la cripto, que puede subir más', 'Así la operación más volátil sería también la más grande: un fallo ahí te costaría mucho más.']], 1, 'El importe se adapta a la distancia del stop: con el stop al 2 %, unos 5.000 €; al 8 %, unos 1.250 €. Las dos operaciones arriesgan 100 €.'),
+      buckets('¿Compras más o menos acciones que antes?', ['Más acciones', 'Menos acciones'], [['Acercas el stop a la entrada, con el mismo riesgo', 0], ['Alejas el stop porque el activo se mueve mucho', 1], ['Tu cuenta crece y el 1 % son más euros', 0], ['Bajas el riesgo del 1 % al 0,5 %', 1]], 'Acciones = riesgo en euros ÷ distancia al stop. Con más distancia o menos riesgo, compras menos; con menos distancia o más euros de riesgo, compras más.'),
+    ], { source: '10.2', minutes: 6, retire: [0, 1, 6, 7, 8, 9] }),
 
     lesson('u24l5', 'Dónde poner el stop loss', [
       mission({
@@ -171,7 +177,7 @@ export default unit({
         ]),
         say('lumi', 'Un stop nunca se aleja en contra. A favor, sí puedes subirlo.'),
       ]),
-      key('Tres métodos y sus errores', '1. **Estructural:** al otro lado de un nivel, o bajo el mínimo de la vela de giro.\n2. **Por volatilidad:** a 2–3 veces el **ATR** (rango medio de las últimas 14 velas).\n3. **Por tiempo:** si en, por ejemplo, 10 sesiones no hace lo previsto, sales.\n\nErrores típicos: ponerlo demasiado cerca, en números redondos obvios (50,00 €), alejarlo cuando el precio se acerca o no ponerlo. Y con un hueco de precio, se ejecuta peor de lo previsto. Si va a favor, puedes subirlo al precio de entrada o bajo el último mínimo creciente.', 'El stop va donde tu idea deja de ser válida, no donde te duele perder.', 'El stop no es donde te duele: es donde tu idea muere.'),
+      key('Tres métodos y sus errores', '1. **Estructural:** al otro lado de un nivel, o bajo el mínimo de la vela de giro.\n2. **Por volatilidad:** a 2–3 veces el **ATR** (rango medio de las últimas 14 velas).\n3. **Por tiempo:** si en, por ejemplo, 10 sesiones no hace lo previsto, sales.\n\nErrores típicos: ponerlo demasiado cerca, en números redondos obvios (50,00 €), alejarlo cuando el precio se acerca o no ponerlo. Y con un hueco de precio, se ejecuta peor de lo previsto. Si va a favor, puedes subirlo al precio de entrada o bajo el último mínimo creciente.', 'El stop va donde tu idea deja de ser válida, no donde te duele perder.', 'En tu próxima compra del simulador, pon el stop bajo el último mínimo.'),
     ], [
       level('Compras al último precio tras un rebote. Coloca el stop donde la idea deja de ser válida.', 'lvl-1', 'STOP', 'Por debajo del último mínimo relevante: si el precio lo pierde, el rebote ha fallado.'),
       level('Otro gráfico real. Coloca un stop estructural para esta compra.', 'lvl-11', 'STOP', 'Bajo el mínimo reciente, con un pequeño margen para el ruido normal.'),
@@ -184,7 +190,7 @@ export default unit({
       timed(tf('Un stop loss garantiza siempre el precio exacto de salida.', false, 'Si el precio abre con un hueco por debajo, se ejecuta al primer precio disponible, que puede ser peor.'), 10),
       multi('¿Cuáles son errores típicos con el stop? Marca todos.', ['Ponerlo justo en un número redondo obvio', 'Alejarlo cuando el precio se acerca', 'Ponerlo bajo el mínimo de la vela de giro', 'Ponerlo tan cerca que lo saca el ruido'], [0, 1, 3], 'Bajo el mínimo de la vela de giro es un stop estructural correcto.'),
       single('La operación va a favor y ya ganas 2R. ¿Qué puedes hacer con el stop?', ['Subirlo al precio de entrada o bajo el último mínimo creciente', 'Quitarlo, ya vas ganando', 'Bajarlo para que no salte'], 0, 'Subir el stop a favor protege lo ganado sin cambiar tu plan.'),
-    ], { source: '10.3', minutes: 6, retire: [1, 2, 5, 8] }),
+    ], { source: '10.3', minutes: 6, retire: [1, 2, 5, 6, 8] }),
 
     lesson('u24l6', 'Pensar en R: riesgo y beneficio', [
       mission({
@@ -228,7 +234,7 @@ export default unit({
           { say: '¿Cumple 2:1? Clasifica cada operación', mood: 'HAPPY' },
         ],
       }),
-      key('Qué es R', '**1R** es lo que arriesgas en una operación: distancia al stop × número de acciones. Si arriesgas 100 €:\n\n• Salta el stop: **−1R**.\n• Ganas 250 €: **+2,5R**.\n• Sales antes perdiendo 40 €: **−0,4R**.\n\nSi arriesgas 100 € y ganas 300 €, has ganado 3R. Si arriesgas 50 € y ganas 150 €, también 3R: las dos fueron igual de buenas.', 'Una operación se mide en múltiplos de lo que arriesgaste.', 'No cuentes euros: cuenta R.'),
+      key('Qué es R', '**1R** es lo que arriesgas en una operación: distancia al stop × número de acciones. Si arriesgas 100 €:\n\n• Salta el stop: **−1R**.\n• Ganas 250 €: **+2,5R**.\n• Sales antes perdiendo 40 €: **−0,4R**.\n\nSi arriesgas 100 € y ganas 300 €, has ganado 3R. Si arriesgas 50 € y ganas 150 €, también 3R: las dos fueron igual de buenas.', 'Una operación se mide en múltiplos de lo que arriesgaste.', 'Antes de tu próxima compra en el simulador, pon el objetivo al menos a 2R.'),
     ], [
       num('Arriesgas 150 € y ganas 450 €. ¿Cuántos R has ganado?', 3, 'R', '450 ÷ 150 = 3R.'),
       num('Arriesgas 200 € y sales antes de tiempo perdiendo 80 €. ¿Cuál es el resultado en R?', -0.4, 'R', '−80 ÷ 200 = −0,4R: perdiste menos de lo que arriesgabas.'),
@@ -240,7 +246,10 @@ export default unit({
       buckets('¿La operación cumple un mínimo de 2:1?', ['Cumple (2:1 o más)', 'No cumple'], [['Riesgo 2 €, objetivo a 6 €', 0], ['Riesgo 5 €, objetivo a 5 €', 1], ['Riesgo 1 €, objetivo a 1,50 €', 1], ['Riesgo 3 €, objetivo a 9 €', 0], ['Riesgo 4 €, objetivo a 8 €', 0]], 'Divide la distancia al objetivo entre la distancia al stop.'),
       timed(tf('Si salta el stop, el resultado de la operación es −1R.', true, 'Por definición: 1R es lo que arriesgabas hasta el stop.'), 10),
       single('¿Para qué sirve medir las operaciones en R?', ['Para comparar operaciones de tamaños distintos', 'Para pagar menos comisiones', 'Para acertar más veces'], 0, 'Una operación de 50 € de riesgo y otra de 200 € se comparan fácilmente en R.'),
-    ], { source: '10.4', minutes: 6, retire: [5, 7, 8, 9] }),
+      scenario('Vas a comprar al último precio. El stop lógico está un 4 % por debajo, bajo el soporte, y el máximo anterior solo un 2 % por encima. ¿Esta operación compensa?', [['Sí: si acierto, gano', 'Si aciertas ganas medio R y si fallas pierdes 1R: tendrías que acertar muchísimo para que salga a cuenta.'], ['No: arriesgo 1R para ganar medio R. Mejor esperar otra ocasión', 'Eso: muchos operadores no entran por debajo de 2:1, y aquí ganarías la mitad de lo que arriesgas.'], ['Sí, si pongo el objetivo muy por encima del máximo', 'Poner el objetivo donde no es razonable llegar solo maquilla la cuenta: el máximo anterior puede frenar la subida.']], 1, 'Antes de entrar, compara la distancia al objetivo con la del stop. Con medio R de premio por 1R de riesgo, la operación no compensa.'),
+      scenario('Dos operaciones cerradas. Ana arriesgó 100 € y ganó 300 €. Bruno arriesgó 400 € y ganó 400 €. ¿Cuál fue mejor operación?', [['La de Bruno: ganó más euros', 'Ganó más euros, pero arriesgando cuatro veces más: solo +1R.'], ['La de Ana: ganó 3R, y Bruno, solo 1R', 'Eso: Ana ganó el triple de lo que arriesgó; Bruno, lo mismo que arriesgó.'], ['Las dos igual: las dos ganaron', 'Ganar no basta: importa cuánto ganas por cada euro que pones en riesgo.']], 1, 'En R se comparan operaciones de cualquier tamaño: lo ganado entre lo arriesgado. Ana, 3R; Bruno, 1R.'),
+      chat(['Mi última operación: saltó el stop y perdí 100 €.', 'Arriesgaba justo 100 €. ¿Ha sido un desastre?'], '¿Qué le dices a Lumi?', [['Sí: perder siempre es un desastre', 'Pero perdí exactamente lo previsto… eso no suena a desastre.'], ['No: es −1R, justo lo que habías decidido arriesgar', 'Cierto: −1R es una pérdida planificada. Lo malo sería perder más por quitar el stop.'], ['Sí: deberías haber quitado el stop', 'Sin stop, la pérdida podría haber sido mucho mayor que 1R.']], 1, 'Si salta el stop, el resultado es −1R: una pérdida pequeña y planificada, no un desastre.'),
+    ], { source: '10.4', minutes: 6, retire: [0, 1, 5, 6, 7, 8, 9] }),
 
     lesson('u24l7', 'La esperanza matemática', [
       play({
@@ -283,7 +292,7 @@ export default unit({
           { say: '¿Gana o pierde a la larga? Clasifica cada sistema', mood: 'HAPPY' },
         ],
       }),
-      key('Los costes', 'Cada operación paga comisión, *spread* y, si hay apalancamiento, financiación. Si tu esperanza es +0,1R y los costes suponen 0,15R por operación, tu sistema real **pierde**. Cuantas más operaciones, más pesan.\n\nCon +0,2R, un 1 % de riesgo y 100 operaciones al año saldrían unos 20R: cerca de un 20 % anual, con rachas de pérdidas por el camino. Es solo un ejemplo, no una promesa.', 'Un sistema gana si, de media, cada operación gana más de lo que pierde, contando aciertos y fallos.', 'No necesitas acertar mucho: necesitas que tus aciertos valgan más que tus fallos.'),
+      key('Los costes', 'Cada operación paga comisión, *spread* y, si hay apalancamiento, financiación. Si tu esperanza es +0,1R y los costes suponen 0,15R por operación, tu sistema real **pierde**. Cuantas más operaciones, más pesan.\n\nCon +0,2R, un 1 % de riesgo y 100 operaciones al año saldrían unos 20R: cerca de un 20 % anual, con rachas de pérdidas por el camino. Es solo un ejemplo, no una promesa.', 'Un sistema gana si, de media, cada operación gana más de lo que pierde, contando aciertos y fallos.', 'Pruébalo: en Cartera, compara lo que ganas de media con lo que pierdes.'),
     ], [
       num('Aciertas el 45 % de las veces, ganas 2R de media y pierdes 1R. ¿Cuál es tu esperanza por operación?', 0.35, 'R', '0,45 × 2 − 0,55 × 1 = 0,90 − 0,55 = +0,35R.'),
       num('Un sistema acierta el 70 %, gana 0,4R de media y pierde 1R. ¿Cuál es su esperanza?', -0.02, 'R', '0,7 × 0,4 − 0,3 × 1 = 0,28 − 0,30 = −0,02R. Acierta mucho y aun así pierde.', 5),
@@ -295,6 +304,9 @@ export default unit({
       timed(single('Rápido: tu esperanza es +0,1R y los costes son 0,15R por operación. ¿Qué pasa?', ['Ganas 0,25R', 'Pierdes 0,05R por operación', 'Quedas en 0'], 1, '0,1 − 0,15 = −0,05R: los costes se comen la ventaja.'), 15),
       fill('Esperanza = (% de acierto × ganancia media) − (% de fallo × ____).', 'pérdida media', ['comisión media', 'ganancia máxima', 'capital total'], 'Cada fallo resta lo que pierdes de media cuando fallas.'),
       chat(['¡He encontrado un sistema que acierta el 90 %! 🤩', 'Gana 0,1R cuando acierta y pierde 2R cuando falla.'], '¿Qué le dices a Lumi?', [['¡Enhorabuena, con un 90 % es imposible perder!', 'Hagamos la cuenta: 0,9 × 0,1 − 0,1 × 2 = −0,11R. Pierdo en cada operación de media… 😳'], ['Calculemos la esperanza antes de celebrarlo', 'Vale: 0,09 − 0,20 = −0,11R. Acierta mucho, pero sus fallos son enormes.'], ['Sube el riesgo al 10 % para aprovecharlo', 'Con esperanza negativa, más riesgo solo acelera las pérdidas.']], 1, 'Acertar mucho no sirve si los pocos fallos se llevan más de lo que ganan los aciertos.'),
-    ], { source: '10.5', minutes: 6, retire: [4, 5, 7, 9] }),
+      scenario('Un curso promete un sistema que «acierta el 85 % de las operaciones». ¿Qué preguntas antes de pagar nada?', [['Cuántos alumnos lo usan ya', 'Que mucha gente lo use no dice si gana dinero.'], ['Cuánto gana cuando acierta y cuánto pierde cuando falla, después de costes', 'Eso: sin esas dos cifras, el 85 % no dice nada. Un sistema que acierta el 90 % puede perder dinero.'], ['Si hay descuento por pagar hoy', 'La prisa por pagar es una señal de alarma, no un dato del sistema.']], 1, 'El porcentaje de acierto solo no dice nada: la esperanza combina cuánto aciertas con cuánto ganas y pierdes en cada caso.'),
+      scenario('Dos sistemas tienen la misma ventaja antes de costes. A opera 5 veces al año; B, 500 veces, y paga comisión y spread en cada una. ¿Cuál tiene más riesgo de perder dinero en la práctica?', [['A, porque opera poco', 'Operar poco no es un problema: paga muy pocos costes.'], ['B, porque paga costes en cada operación y pueden comerse la ventaja', 'Eso: cuantas más operaciones, más pesan los costes.'], ['Los dos igual: tienen la misma ventaja', 'La misma ventaja antes de costes no es la misma ventaja real.']], 1, 'Cada operación paga comisión y spread. Si los costes superan la ventaja, el sistema pierde, y con muchas operaciones se nota más.'),
+      chat(['Mi sistema tiene esperanza positiva.', 'Así que puedo arriesgar un 20 % por operación, ¿no?'], '¿Qué le dices a Lumi?', [['Sí: con esperanza positiva no se puede perder', 'Con pocas operaciones aún manda la suerte. Una racha mala al 20 % me sacaría.'], ['La esperanza se cumple a la larga; con un riesgo grande, una racha mala te saca antes', 'Tiene sentido: mejor un riesgo pequeño para llegar a esa «larga».'], ['Mejor un 50 %, para aprovecharlo al máximo', 'Eso solo acelera la ruina: dos fallos seguidos y me quedaría con un 25 %.']], 1, 'La esperanza positiva se nota con muchas operaciones. Para llegar hasta ahí hay que sobrevivir a las rachas malas con un riesgo pequeño.'),
+    ], { source: '10.5', minutes: 6, retire: [0, 1, 4, 5, 6, 7, 9] }),
   ],
 })

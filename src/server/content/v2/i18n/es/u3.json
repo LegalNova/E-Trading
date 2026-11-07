@@ -1,7 +1,7 @@
 {
  "unit": {
   "title": "Deudas y crédito",
-  "description": "Cuánto cuesta de verdad una deuda, cuáles evitar y cómo salir de ellas",
+  "description": "Cuánto cuesta de verdad una deuda, cuáles evitar y por qué la cara va antes que invertir",
   "section": "Tu dinero en orden"
  },
  "lessons": {
@@ -29,9 +29,9 @@
       "Lo que de verdad cuesta un préstamo",
       "Pides **6.000 €**. El banco te ofrece un 7 % TIN y un 3 % de comisión de apertura. La **TAE** suma las comisiones y te dice el coste real en un año.",
       "A 4 años, ¿cuánto acabarás devolviendo en total, con la comisión?",
-      "Unos 6.420 €",
-      "Unos 7.080 €",
-      "Unos 8.000 €",
+      "Los 6.000 € y poco más",
+      "Unos 1.000 € más de lo que pediste",
+      "El doble de lo que pediste",
       "Cuota de 143,68 € × 48 meses + 180 € de comisión = **7.077 €**. Los 6.000 € te cuestan 1.077 €.",
       "Con 6.000 €, encuentra el plazo con el que el préstamo te cuesta menos de 500 €.",
       "Una cuota baja no es un préstamo barato: suele ser un préstamo **más largo**. Para comparar, mira siempre la **TAE** y cuánto pagas en total.",
@@ -42,14 +42,30 @@
     },
     {
      "title": "TIN y TAE",
-     "body": "• **TIN:** el interés «puro» que te cobran por el dinero prestado.\n• **TAE:** suma las **comisiones** obligatorias y tiene en cuenta cada cuánto pagas. Es el coste real en un año.\n\nA 3 años, un préstamo al 6 % TIN con un 3 % de comisión sale más caro que otro al 7,5 % TIN sin comisión: **TAE del 8,36 % frente al 7,76 %**.",
-     "key": "Para comparar préstamos, mira la TAE, no el TIN ni la cuota."
+     "body": "• **TIN:** el interés «puro» que te cobran por el dinero prestado.\n• **TAE:** suma las **comisiones** obligatorias y tiene en cuenta cada cuánto pagas. Es el coste real en un año.\n\nA 3 años, un préstamo al 6 % TIN con un 3 % de comisión sale más caro que otro al 7,5 % TIN sin comisión: **TAE del 8,36 % frente al 7,76 %**.\n\nY si piensas en invertir: un préstamo al 7 % TAE te cuesta ese 7 % **seguro** cada año.",
+     "key": "Para comparar préstamos, mira la TAE, no el TIN ni la cuota.",
+     "tip": "Pruébalo: pregúntale a la profesora Lumi cuánto te costaría tu préstamo a otro plazo."
     }
    ]
   },
   "u3l2": {
    "title": "Deuda buena y deuda mala",
    "steps": [
+    {
+     "texts": [
+      "Japón a plazos",
+      "Marta",
+      "¡Me voy a Japón! El viaje cuesta 3.000 € y me lo financian a 24 meses al 18 % TAE. ¡Me lo merezco!",
+      "¿Qué le dices?",
+      "¡Genial, aprovecha!",
+      "A ese interés pagará **más de 500 €** de intereses, y seguirá pagando el viaje más de un año después de volver.",
+      "¿Y si lo ahorras unos meses y vas el año que viene?",
+      "¡Buena idea! Con 250 € al mes lo tiene en un año, **sin intereses**, y disfruta igual del viaje.",
+      "Pídelo con la revolving, que es más cómodo",
+      "Peor aún: la cuota pequeña de la revolving puede alargar la deuda durante años.",
+      "Vale… ¡pero el año que viene me voy sí o sí!"
+     ]
+    },
     {
      "texts": [
       "¿Crea valor o lo destruye?",
@@ -75,19 +91,10 @@
      ]
     },
     {
-     "texts": [
-      "Japón a plazos",
-      "Marta",
-      "¡Me voy a Japón! El viaje cuesta 3.000 € y me lo financian a 24 meses al 18 % TAE. ¡Me lo merezco!",
-      "¿Qué le dices?",
-      "¡Genial, aprovecha!",
-      "A ese interés pagará **más de 500 €** de intereses, y seguirá pagando el viaje más de un año después de volver.",
-      "¿Y si lo ahorras unos meses y vas el año que viene?",
-      "¡Buena idea! Con 250 € al mes lo tiene en un año, **sin intereses**, y disfruta igual del viaje.",
-      "Pídelo con la revolving, que es más cómodo",
-      "Peor aún: la cuota pequeña de la revolving puede alargar la deuda durante años.",
-      "Vale… ¡pero el año que viene me voy sí o sí!"
-     ]
+     "title": "La deuda cara va antes que invertir",
+     "body": "Una deuda al 20 % te cobra ese 20 % **seguro** cada año. Ninguna inversión te garantiza ganar eso: ni siquiera la bolsa, que tiene años buenos y años muy malos.\n\nPor eso la deuda cara se quita antes de invertir. La barata y asumible, como una hipoteca con una cuota razonable, puede convivir con tu cartera.",
+     "key": "Si una deuda te cuesta más de lo que esperas ganar invirtiendo, quítatela primero.",
+     "tip": "Pruébalo: pregúntale a la profesora Lumi si tu deuda es cara o barata."
     }
    ]
   },
@@ -97,7 +104,7 @@
     {
      "texts": [
       "La trampa de la cuota pequeña",
-      "Una tarjeta **revolving** te deja pagar una cuota fija pequeña cada mes. Parece cómodo… pero la cuota apenas cubre los intereses.",
+      "Te compras un portátil con la tarjeta y eliges la «cuota cómoda» de una **revolving**: debes **3.000 €** al 22 % y pagas **60 € al mes**. Parece poco… pero la cuota apenas cubre los intereses.",
       "Debes 3.000 € al 22 % y pagas 60 € al mes. ¿Cuánto tardas en pagarlo todo?",
       "Unos 4 años",
       "Más de 11 años",
@@ -123,7 +130,9 @@
       "Bien: negociar un retraso o pedir ayuda sale muchísimo más barato que un minicrédito.",
       "Lo pido y lo pago con la tarjeta revolving",
       "Tapar una deuda cara con otra cara es la forma más rápida de entrar en una espiral.",
-      "Regla de oro: si te ofrecen dinero **rápido y fácil**, suele ser **caro**. Y si crees que un interés es abusivo, reclama a la entidad y, si no responde bien, al Banco de España."
+      "Regla de oro: si te ofrecen dinero **rápido y fácil**, suele ser **caro**.",
+      "Si un interés te parece abusivo, reclama al banco y luego al Banco de España.",
+      "Pruébalo: en Mercado, mira cómo sube y baja el S&P 500; tu revolving cobra siempre."
      ]
     }
    ]
@@ -152,9 +161,10 @@
      ]
     },
     {
-     "title": "Lo que no funciona",
-     "body": "Repartir lo que sobra sin criterio, o pedir otra deuda cara para pagar las anteriores.\n\nY un truco: cuando cancelas una deuda, **su cuota se suma a la siguiente**. Por eso el plan va cada vez más deprisa, como una bola que crece.",
-     "key": "Mínimos a todas; el resto, a una sola. Así se sale de las deudas."
+     "title": "Lo que no funciona (y lo que viene después)",
+     "body": "Repartir lo que sobra sin criterio, o pedir otra deuda cara para pagar las anteriores.\n\nY un truco: cuando cancelas una deuda, **su cuota se suma a la siguiente**. Por eso el plan va cada vez más deprisa, como una bola que crece. Cuando cae la última, esa cuota liberada pasa a ser tu **aportación mensual para invertir**.",
+     "key": "Mínimos a todas; el resto, a una sola. Así se sale de las deudas.",
+     "tip": "Pruébalo: cuando liquides una deuda, compra un ETF en el simulador con esa cuota."
     }
    ]
   },
@@ -195,7 +205,7 @@
       "Préstamo de tu familia al 0 %, con colchón hecho",
       "Amortizar al 0 % no te da ninguna rentabilidad (aunque deber a la familia también pesa).",
       "Decide qué haría Bruno en cada caso.",
-      "**Por orden:** colchón deudas caras (más del 7-8 %) invertir a largo plazo, y amortizar las baratas si te da tranquilidad. Antes de amortizar una hipoteca, mira si cobra comisión por hacerlo.",
+      "**Por orden:** colchón, deudas caras (más del 7-8 %) e invertir a largo plazo; las baratas, amortízalas si te da tranquilidad, mirando antes si cobran comisión. Pruébalo: cuéntale tu caso a la profesora Lumi y pregúntale por dónde empezar.",
       "Pregúntate primero: ¿tiene colchón? Luego mira el interés de la deuda.",
       "¿Qué haría Bruno en cada caso?"
      ]
@@ -227,12 +237,6 @@
    ],
    "explanation": "TAE de A ≈ 8,36 %; de B ≈ 7,76 %. La comisión de apertura encarece A aunque su TIN sea menor."
   },
-  "u3l1-3": {
-   "prompt": "Pides 10.000 € a 5 años al 7 % TIN y pagas 198,01 € al mes. ¿Cuánto pagas en intereses en total? (redondea)",
-   "options": [],
-   "explanation": "198,01 × 60 = 11.880,60 €; menos los 10.000 € prestados = unos 1.881 € de intereses.",
-   "unit": "€"
-  },
   "u3l1-7": {
    "prompt": "Empareja cada término con lo que significa.",
    "options": [
@@ -249,22 +253,6 @@
     "El interés puro del préstamo"
    ]
   },
-  "u3l1-8": {
-   "prompt": "Pides 20.000 € al 8 % TIN. A 5 años pagas 4.332 € de intereses; a 8 años, 7.142 €. ¿Cuánto más pagas por alargarlo?",
-   "options": [],
-   "explanation": "7.142 − 4.332 = 2.810 € más por tener la cuota más baja.",
-   "unit": "€"
-  },
-  "u3l1-9": {
-   "prompt": "Un TIN del 12 % con pagos mensuales equivale a una TAE de ____.",
-   "options": [
-    "12 %",
-    "1 %",
-    "144 %",
-    "12,68 %"
-   ],
-   "explanation": "1,01¹² − 1 ≈ 0,1268 → 12,68 %. El interés de cada mes genera interés."
-  },
   "u3l1-10": {
    "prompt": "¿Qué puede hacer que un préstamo salga más caro? Marca todas.",
    "options": [
@@ -274,6 +262,38 @@
     "Una comisión de apertura"
    ],
    "explanation": "Devolver antes sin penalización reduce los intereses: es lo único de la lista que abarata."
+  },
+  "u3l1-11": {
+   "prompt": "Quieres empezar a invertir y el banco te ofrece un préstamo personal al 9 % TAE para hacerlo «a lo grande». ¿Qué haces?",
+   "options": [
+    "No lo pido: empiezo con lo que ahorro cada mes",
+    "Lo pido: la bolsa sube a largo plazo",
+    "Pido la mitad, por si acaso"
+   ],
+   "explanation": "La deuda cobra un 9 % seguro; la inversión, en cambio, puede caer justo cuando toca pagar la cuota. Lo tentador es pensar que la bolsa siempre sube, pero a corto plazo nadie lo garantiza.",
+   "feedback": [
+    "Sin intereses que pagar, cualquier ganancia es tuya, y una caída no te deja debiendo dinero.",
+    "Tendrías que ganar más de un 9 % cada año solo para empatar, y la cuota llega aunque la bolsa caiga.",
+    "Menos riesgo que pedirlo todo, pero sigues debiendo un 9 % seguro por algo que no lo es."
+   ]
+  },
+  "u3l1-12": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Pide que te alarguen el plazo para pagar menos",
+    "Antes pide la TAE y el total que vas a pagar",
+    "Firma: al 0 % no pagas nada"
+   ],
+   "explanation": "Un 0 % TIN puede esconder comisiones de apertura o seguros vinculados que solo aparecen en la TAE y en el total a pagar. Lo tentador es quedarse con el «0 %», pero lo que se compara es la TAE.",
+   "feedback": [
+    "Cuota más baja, pero más meses pagando intereses y comisiones.",
+    "¡Eso! Con comisiones y seguros, un 0 % TIN puede salir caro.",
+    "El TIN no incluye comisiones ni seguros obligatorios: mira la TAE."
+   ],
+   "lines": [
+    "El concesionario me ofrece el coche al 0 % TIN.",
+    "¡Es gratis! ¿Firmo ya?"
+   ]
   },
   "u3l2-2": {
    "prompt": "Empareja cada deuda con su descripción.",
@@ -298,12 +318,6 @@
     "Falso"
    ],
    "explanation": "Muy por encima del 7-8 %: hay que eliminarla cuanto antes."
-  },
-  "u3l2-6": {
-   "prompt": "Cobras 1.800 € netos. Si las cuotas de tus deudas no deben pasar del 35 % de tus ingresos, ¿cuánto puedes pagar como máximo al mes?",
-   "options": [],
-   "explanation": "1.800 × 0,35 = 630 €.",
-   "unit": "€"
   },
   "u3l2-7": {
    "prompt": "¿Qué deuda tiene más sentido?",
@@ -346,11 +360,20 @@
     "Si la subida de sueldo llega, la deuda se paga sola en poco tiempo: es deuda que puede crear valor."
    ]
   },
-  "u3l3-1": {
-   "prompt": "Debes 1.000 € en una revolving al 2 % mensual. ¿Cuántos euros de intereses pagas el primer mes?",
-   "options": [],
-   "explanation": "1.000 × 0,02 = 20 €.",
-   "unit": "€"
+  "u3l2-10": {
+   "prompt": "Antes de empezar a invertir, ¿esta deuda la quitas o puede convivir con tu cartera?",
+   "options": [
+    "Hipoteca fija al 2 % con cuota asumible",
+    "Compra a plazos al 18 %",
+    "Minicrédito",
+    "Revolving al 22 %",
+    "Préstamo de estudios al 3 %"
+   ],
+   "explanation": "La deuda cara cobra seguro más de lo que una inversión puede prometerte, así que va primero. Con la barata y asumible no hay tanta prisa: amortizarla solo te ahorra su interés, y puedes invertir a la vez.",
+   "right": [
+    "Quitarla primero",
+    "Puede convivir"
+   ]
   },
   "u3l3-3": {
    "prompt": "Marca los mensajes que son una trampa de deuda o una estafa.",
@@ -457,12 +480,6 @@
     "Primero la de mayor interés"
    ]
   },
-  "u3l4-4": {
-   "prompt": "Debes 1.200 € en una revolving al 22 % anual. ¿Cuántos intereses te ahorras en un año si la cancelas ya? (aproximado, interés simple)",
-   "options": [],
-   "explanation": "1.200 × 0,22 = 264 € al año.",
-   "unit": "€"
-  },
   "u3l4-6": {
    "prompt": "Pablo ha intentado dos veces la avalancha y lo ha dejado: su deuda grande no se acaba nunca y se desanima. ¿Qué hace?",
    "options": [
@@ -501,11 +518,19 @@
    ],
    "explanation": "Pagar el mínimo en todas y concentrar el extra es justo la base de los dos métodos."
   },
-  "u3l5-2": {
-   "prompt": "Amortizas 3.000 € de un préstamo al 9 %. ¿Cuántos intereses te ahorras el primer año, aproximadamente?",
-   "options": [],
-   "explanation": "3.000 × 0,09 = 270 €: una rentabilidad segura del 9 %.",
-   "unit": "€"
+  "u3l4-11": {
+   "prompt": "Pablo acaba de liquidar su última deuda cara y le quedan libres 300 € al mes que antes iban a cuotas. Ya tiene colchón. ¿Qué hace?",
+   "options": [
+    "Los deja en la cuenta corriente",
+    "Sube su nivel de gasto: se lo ha ganado",
+    "Los convierte en una aportación automática a un ETF indexado"
+   ],
+   "explanation": "Pablo ya vivía sin esos 300 €, así que invertirlos no le cuesta nada en su día a día. Subir el gasto tienta como premio, pero frena en seco el impulso que había cogido.",
+   "feedback": [
+    "Sin destino, se acaban gastando y además pierden poder de compra.",
+    "Es tentador, pero pierde la mejor ocasión de empezar a invertir sin notarlo.",
+    "Sigue viviendo igual que antes, pero ahora esos 300 € trabajan para él."
+   ]
   },
   "u3l5-3": {
    "prompt": "Bruno tiene una hipoteca fija al 2 %, un colchón de 6 meses y 10.000 € más ahorrados que no necesitará en 15 años. ¿Qué hace?",
@@ -543,12 +568,6 @@
     "Nada, porque no cobras intereses"
    ],
    "explanation": "Lo que dejas de pagar es una ganancia segura igual al tipo de interés."
-  },
-  "u3l5-8": {
-   "prompt": "Tu hipoteca fija cobra un 0,5 % de comisión por amortizar antes. Amortizas 10.000 €. ¿Cuánto pagas de comisión?",
-   "options": [],
-   "explanation": "10.000 × 0,005 = 50 €. Mira siempre tu contrato antes de amortizar.",
-   "unit": "€"
   },
   "u3l5-9": {
    "prompt": "¿Qué le contestas a Lumi?",

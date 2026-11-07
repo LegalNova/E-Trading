@@ -41,7 +41,7 @@ export default unit({
           { say: '¿Sistema 1 o sistema 2? Clasifica cada decisión', mood: 'HAPPY' },
         ],
       }),
-      key('La brecha del inversor', 'Morningstar, 10 años hasta 2025: los fondos de EE. UU. ganaron un **9,9 %** anual; el dinero de sus inversores, que entraba y salía, un **8,7 %**: 1,2 puntos menos al año.\n\nEn los fondos más volátiles, la brecha fue de −2,1 puntos; en los tranquilos, de −0,4.', 'El producto puede ser bueno; el problema es el comportamiento: comprar tras las subidas y vender tras las caídas.', 'El mayor riesgo de tu cartera suele estar sentado delante de la pantalla.'),
+      key('La brecha del inversor', 'Morningstar, 10 años hasta 2025: los fondos de EE. UU. ganaron un **9,9 %** anual; el dinero de sus inversores, que entraba y salía, un **8,7 %**: 1,2 puntos menos al año.\n\nEn los fondos más volátiles, la brecha fue de −2,1 puntos; en los tranquilos, de −0,4.', 'El producto puede ser bueno; el problema es el comportamiento: comprar tras las subidas y vender tras las caídas.', 'Pruébalo: pídele a Lumi, en el modo Mis sesgos, que revise tu última operación.'),
     ], [
       single('Según Morningstar, ¿cuánto ganó de menos al año el inversor medio frente a sus propios fondos en los 10 años hasta 2025?', ['Nada', 'Alrededor de 1,2 puntos', 'Unos 10 puntos'], 1, '9,9 % de los fondos frente a 8,7 % de sus inversores, por comprar y vender en mal momento.'),
       buckets('¿Qué sistema está decidiendo?', ['Sistema 1 (rápido y emocional)', 'Sistema 2 (lento y analítico)'], [['Vender todo tras leer un titular alarmante', 0], ['Calcular la esperanza de tu sistema con el diario', 1], ['Comprar porque todo el mundo habla de ello', 0], ['Revisar tu plan antes de operar', 1], ['Esquivar un patinete que viene de frente', 0]], 'El sistema 1 es útil para sobrevivir; para invertir conviene obligarse a usar el 2.'),
@@ -53,7 +53,7 @@ export default unit({
       multi('¿Qué suele poner al sistema 1 a decidir? Marca todas.', ['El miedo', 'La prisa', 'La euforia', 'Una lista de comprobación escrita'], [0, 1, 2], 'Una lista escrita obliga a pensar despacio: es una herramienta del sistema 2.'),
       fill('El problema de la brecha no es el producto, sino el ____ del inversor.', 'comportamiento', ['sueldo', 'bróker', 'país'], 'El mismo fondo da resultados distintos según cómo entras y sales.'),
       chat(['Mi fondo ha ganado un 10 % al año… ¡pero yo mucho menos! 🤨', '¿Me están robando?'], '¿Qué le explicas a Lumi?', [['Seguro que es una estafa', 'Puede que no: si entraste tras las subidas y saliste en las caídas, la diferencia es tuya.'], ['Probablemente entraste y saliste en mal momento: es la brecha del inversor', 'Ups… Compré cuando estaba en máximos y vendí en el susto de marzo. Touché.'], ['Los fondos siempre mienten en sus datos', 'Los datos de rentabilidad del fondo son reales; lo que cambia es cuándo estuviste dentro.']], 1, 'Tu rentabilidad depende del fondo y de cuándo entras y sales.'),
-    ], { source: '11.1', minutes: 6, retire: [1, 2, 6] }),
+    ], { source: '11.1', minutes: 6, retire: [1, 2, 3, 6] }),
 
     lesson('u27l2', 'Aversión a la pérdida', [
       story('Cara o cruz con Dani', [{ id: 'dani', name: 'Dani' }], [
@@ -85,7 +85,7 @@ export default unit({
           { say: 'Sube las veces que juega cada uno', mood: 'HAPPY' },
         ],
       }),
-      key('Cómo protegerte', 'Cuando perdemos, nos volvemos **más arriesgados** («doblo para recuperar»); cuando ganamos, **más conservadores**.\n\nDecide el stop antes de entrar, en calma. Y hazte la pregunta correcta: no «¿cuánto he perdido?», sino **«si no la tuviera, ¿la compraría hoy a este precio?»**.', 'Perder duele el doble de lo que alegra ganar: por eso nos aferramos a lo que pierde.', 'Al mercado le da igual a cuánto compraste. Decide con lo que sabes hoy.'),
+      key('Cómo protegerte', 'Cuando perdemos, nos volvemos **más arriesgados** («doblo para recuperar»); cuando ganamos, **más conservadores**.\n\nDecide el stop antes de entrar, en calma. Y hazte la pregunta correcta: no «¿cuánto he perdido?», sino **«si no la tuviera, ¿la compraría hoy a este precio?»**.', 'Perder duele el doble de lo que alegra ganar: por eso nos aferramos a lo que pierde.', 'Pruébalo: mira en tu Cartera la posición más en rojo: ¿la comprarías hoy?'),
     ], [
       single('Según la teoría prospectiva, una pérdida de 100 € duele aproximadamente…', ['Lo mismo que alegra ganar 100 €', 'El doble de lo que alegra ganar 100 €', 'La mitad'], 1, 'Kahneman y Tversky, 1979.'),
       num('Te ofrecen lanzar una moneda: si sale cara ganas 150 €, si sale cruz pierdes 100 €. ¿Cuál es la ganancia esperada por tirada?', 25, '€', '0,5 × 150 − 0,5 × 100 = 75 − 50 = +25 €.'),
@@ -129,7 +129,7 @@ export default unit({
           { say: 'Coloca el stop y el objetivo, y mira qué pasó', mood: 'HAPPY' },
         ],
       }),
-      key('Cómo protegerte', 'Stop y plan de salida **antes** de entrar. Si la operación va a favor, la salida la decide el plan (por ejemplo, mitad en 2R y el resto con stop dinámico), no el miedo a devolver lo ganado.', 'Vendemos lo que gana por alegría rápida y aguantamos lo que pierde por no aceptar el error.', 'Corta las pérdidas y deja correr las ganancias. Tu cerebro te pedirá lo contrario.'),
+      key('Cómo protegerte', 'Stop y plan de salida **antes** de entrar. Si la operación va a favor, la salida la decide el plan (por ejemplo, mitad en 2R y el resto con stop dinámico), no el miedo a devolver lo ganado.', 'Vendemos lo que gana por alegría rápida y aguantamos lo que pierde por no aceptar el error.', 'Pruébalo: en tu próxima compra, pon el objetivo al doble de distancia que el stop.'),
     ], [
       single('¿Qué es el efecto disposición?', ['Vender pronto lo que gana y mantener demasiado lo que pierde', 'Comprar siempre lo que más sube', 'Repartir el dinero entre muchos activos'], 0, 'Lo midió Odean en 1998 en miles de cuentas.'),
       simTrade('Compras al último precio con una cuenta de 10.000 € y un riesgo máximo del 1 %. Fija ahora el stop, en calma, antes de que el precio se mueva.', 'lvl-2', 'Decidir el stop antes de entrar evita que, si el precio cae, la aversión a la pérdida te convenza de aguantar «hasta que vuelva».'),
@@ -141,7 +141,7 @@ export default unit({
       fill('El consejo clásico: corta las pérdidas y deja correr las ____.', 'ganancias', ['comisiones', 'noticias', 'pérdidas'], 'El efecto disposición hace justo lo contrario.'),
       timed(tf('Vender siempre lo que va en verde y aguantar lo que va en rojo es una buena forma de gestionar una cartera.', false, 'Es el efecto disposición: cortas lo que funciona y alimentas lo que no.'), 10),
       chat(['¡Mi acción ha subido un 6 %! 🎉', 'La vendo ya, que luego baja.'], '¿Qué le dices a Lumi?', [['Sí, asegura, nunca se sabe', 'Puede salir bien hoy, pero si lo haces siempre, cortas tus mejores operaciones.'], ['¿Qué decía tu plan de salida antes de entrar?', 'Mmm… Decía mitad en 2R y el resto con stop dinámico. Vale, sigo el plan.'], ['Compra más con todo lo que tengas', 'Pasar del miedo a la euforia en un minuto tampoco es un plan.']], 1, 'La salida se decide antes de entrar, no al ver el primer verde.'),
-    ], { source: '11.2', minutes: 6, retire: [2, 3, 4, 8] }),
+    ], { source: '11.2', minutes: 6, retire: [2, 3, 4, 5, 8] }),
 
     lesson('u27l5', 'Exceso de confianza', [
       mission({
@@ -167,7 +167,7 @@ export default unit({
         ]),
         say('lumi', 'La causa principal: el **exceso de confianza**. Creemos saber más de lo que sabemos.'),
       ]),
-      key('Suerte o habilidad', 'Unas cuantas ganancias al principio son lo más peligroso para un principiante: **confunde suerte con habilidad**, sube el riesgo y se salta las reglas.\n\nEntre mucha gente, siempre habrá «genios» por pura suerte.', 'Acertar dos o tres veces no te hace experto: con pocas operaciones, manda la suerte.', 'Mide tus resultados en el diario y compáralos con un índice. Tu memoria siempre te da la razón.'),
+      key('Suerte o habilidad', 'Unas cuantas ganancias al principio son lo más peligroso para un principiante: **confunde suerte con habilidad**, sube el riesgo y se salta las reglas.\n\nEntre mucha gente, siempre habrá «genios» por pura suerte.', 'Acertar dos o tres veces no te hace experto: con pocas operaciones, manda la suerte.', 'Pruébalo: compara tu Cartera con el ETF del S&P 500 desde tu primera compra.'),
     ], [
       upDown('Ronda 1 de 4. Gráfico real, sin nombre ni fecha. ¿Sube o baja en las sesiones siguientes?', 'ud-7', 'Un acierto o un fallo suelto no dice nada. Apúntalo y sigue: al final verás qué significa tu marcador.'),
       upDown('Ronda 2 de 4. ¿Sube o baja?', 'ud-22', 'Dos rondas siguen siendo una muestra minúscula, vayas como vayas.'),
@@ -179,7 +179,9 @@ export default unit({
       timed(tf('Ganar tus primeras operaciones demuestra que tienes habilidad.', false, 'Con pocas operaciones, la suerte pesa muchísimo. Es justo cuando más peligro hay de subir el riesgo.'), 10),
       scenario('Bruno ha acertado 3 operaciones seguidas en el simulador. Quiere triplicar el tamaño «porque ya le ha pillado el truco». ¿Qué le pasa?', [['Nada, tres seguidas prueban que sabe', 'Tres aciertos seguidos al azar pasan una de cada ocho veces. No prueban nada.'], ['Exceso de confianza: debería mantener el mismo riesgo y seguir registrando', 'Bien: el riesgo por operación no cambia porque vayas ganando.'], ['Debería dejar de usar stops', 'Las rachas buenas no eliminan el riesgo; solo lo esconden.']], 1, 'Tras varias ganancias, la regla es la misma: el riesgo por operación no se toca.'),
       multi('¿Qué te protege del exceso de confianza? Marca todas.', ['Medir tus resultados en un diario', 'Compararte con un índice durante varios años', 'Escribir tres motivos por los que podrías equivocarte', 'Subir el riesgo después de cada acierto'], [0, 1, 2], 'Subir el riesgo tras acertar es justo lo que hace el exceso de confianza.'),
-    ], { source: '11.4', minutes: 6, retire: [0, 1, 2, 3, 5] }),
+      chat(['He acertado las cuatro rondas de «¿sube o baja?».', 'Creo que tengo un don para esto.'], '¿Qué le contestas a Lumi?', [['Sí: cuatro de cuatro no es casualidad', 'Al azar, acertar las cuatro pasa más de una vez de cada veinte. Sí puede serlo.'], ['Con cuatro intentos manda la suerte: hacen falta muchas más operaciones registradas', 'Vale: lo apunto y sigo midiendo. Ya veré qué dice mi marcador con muchas más.'], ['Entonces sube el riesgo en tus próximas compras', 'Subir el riesgo tras una racha corta es exceso de confianza de manual.']], 1, 'Con pocos intentos, la suerte se parece mucho al talento: solo una muestra grande y medida distingue una de otro. Lo tentador es creerse el marcador de cuatro rondas.'),
+      buckets('¿Es exceso de confianza o prudencia?', ['Exceso de confianza', 'Prudencia'], [['Subir el riesgo tras tres aciertos seguidos', 0], ['Hacer 40 operaciones al mes porque «me sé el mercado»', 0], ['Comparar tu resultado con un índice durante años', 1], ['Mantener el mismo riesgo después de una buena racha', 1], ['Fiarte de tu memoria para saber cómo te va', 0]], 'La prudencia mide y mantiene las reglas; el exceso de confianza las cambia en cuanto llegan unos aciertos. Y la memoria guarda los aciertos y olvida los errores.'),
+    ], { source: '11.4', minutes: 6, retire: [0, 1, 2, 3, 4, 5] }),
 
     lesson('u27l6', 'Anclaje y confirmación', [
       story('Hasta recuperar los 40 €', [{ id: 'pablo', name: 'Pablo' }], [
@@ -215,7 +217,7 @@ export default unit({
           { say: '¿Anclaje, coste hundido o confirmación?', mood: 'HAPPY' },
         ],
       }),
-      key('Lo que te llevas', 'Valora con datos de hoy (beneficios, deuda, negocio), no con el precio al que compraste o al que estuvo. Y busca a propósito la **opinión contraria**.', 'Que algo haya caído mucho no lo hace barato. Que te den la razón no te hace acertar.', 'Si solo lees a quien te da la razón, no estás analizando: te estás animando.'),
+      key('Lo que te llevas', 'Valora con datos de hoy (beneficios, deuda, negocio), no con el precio al que compraste o al que estuvo. Y busca a propósito la **opinión contraria**.', 'Que algo haya caído mucho no lo hace barato. Que te den la razón no te hace acertar.', 'Pruébalo: pídele a Lumi tres motivos en contra de tu próxima compra.'),
     ], [
       match('Empareja cada sesgo con la frase que lo delata.', [['Anclaje', '«Estaba a 120 €, a 70 € es un chollo»'], ['Coste hundido', '«Ya he perdido mucho, no puedo vender ahora»'], ['Confirmación', '«Solo sigo a quien piensa como yo»'], ['Falacia del jugador', '«Ha bajado siete días, mañana sube seguro»']], 'Cada frase suena razonable… hasta que ves el sesgo detrás.'),
       match('Empareja cada sesgo con su antídoto.', [['Anclaje', 'Valorar con datos actuales'], ['Coste hundido', 'Decidir desde hoy, sin mirar lo perdido'], ['Confirmación', 'Buscar la opinión contraria'], ['Falacia del jugador', 'Recordar que cada día es casi independiente']], 'Cada atajo mental tiene una pregunta que lo desmonta.'),
@@ -227,7 +229,7 @@ export default unit({
       fill('Antes de comprar, escribe tres motivos por los que podrías estar ____.', 'equivocado', ['acertando', 'ganando', 'tranquilo'], 'Es el antídoto más sencillo contra el sesgo de confirmación.'),
       num('Una acción cae de 100 € a 60 €. Si te anclas en los 100 € y esperas a que vuelva, ¿cuánto tiene que subir? (redondea a un decimal)', 66.7, '%', '100 ÷ 60 − 1 ≈ 0,667 → +66,7 %. Nada garantiza que lo haga.', 2),
       chat(['Esta acción ha caído un 50 % 😍', '¡Está a mitad de precio, como en rebajas!'], '¿Qué le contestas a Lumi?', [['Sí, a mitad de precio siempre es una ganga', 'No en bolsa: puede haber caído porque el negocio vale la mitad… o menos.'], ['Barato o caro depende de lo que vale el negocio, no de a cuánto estuvo', 'Cierto. Primero miro beneficios, deuda y por qué ha caído. El precio antiguo no es una etiqueta.'], ['Espera a que caiga otro 50 % y será aún más barata', 'Eso sigue siendo mirar solo el precio, no el valor.']], 1, 'Las rebajas de la bolsa no son como las del súper: el producto también puede haber cambiado.'),
-    ], { source: '11.5', minutes: 6, retire: [0, 3, 5, 6] }),
+    ], { source: '11.5', minutes: 6, retire: [0, 3, 5, 6, 8] }),
 
     lesson('u27l7', 'Recencia y supervivencia', [
       mission({
@@ -255,6 +257,7 @@ export default unit({
         say('lumi', 'Solo un **4 %** de ellas explicó toda la ganancia neta del mercado.'),
         say('lumi', 'Y **más de la mitad** rindió menos que las letras del Tesoro.'),
       ]),
+      key('Lo que te llevas', 'La **recencia** hace que lo último que ha pasado pese demasiado: tras subir, «siempre sube»; tras caer, «ya solo baja». La **supervivencia** te enseña solo a los que ganaron.\n\nAntídoto: datos de décadas y el mercado entero, no los casos que salen en redes.', 'Ni el último año ni los ganadores visibles cuentan toda la historia.', 'Pruébalo: abre en Mercado el ETF del S&P 500 y busca sus caídas pasadas.'),
     ], [
       trend('Mira solo estos dos meses de un gráfico real. ¿Qué tendencia ves?', 'trend-up-2', 'Alcista', 'Sube con claridad. La recencia nos lleva a creer que seguirá así siempre; un tramo de dos meses no dice nada de los próximos años.'),
       point('Así iba el Nikkei japonés hasta noviembre de 1989. Toca el punto más alto.', 'hist-japan-1989', 'max', 'Tras años de subidas, todos creían que seguiría. El máximo de finales de 1989 tardó 34 años en recuperarse.'),

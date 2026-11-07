@@ -10,6 +10,24 @@
    "steps": [
     {
      "texts": [
+      "Les fuetades d’en Leo",
+      "Leo",
+      "En Leo ha descobert les **mitjanes mòbils**: la mitjana dels últims tancaments, dibuixada sobre el gràfic.",
+      "La meva regla: compro quan el preu creua la mitjana de 20 cap amunt i venc quan la creua cap avall.",
+      "Durant setmanes, l’acció va de costat.",
+      "He comprat i venut un munt de vegades. Pago comissió i *spread* en cadascuna… i vaig perdent.",
+      "Què li ha passat?",
+      "Mala sort: la regla és bona",
+      "No és sort: en un lateral, el preu creua la mitjana una vegada i una altra.",
+      "En un lateral, la mitjana dona senyals falsos",
+      "Això mateix! La mitjana és plana i cada encreuament és una **fuetada**, amb el seu cost.",
+      "Hauria de fer servir una mitjana encara més curta",
+      "Una mitjana més curta creua encara més vegades: més fuetades.",
+      "Les mitjanes resumeixen el passat: confirmen la tendència **tard**."
+     ]
+    },
+    {
+     "texts": [
       "Simple o exponencial",
       "Una **mitjana mòbil** resumeix els últims tancaments. La simple (SMA) i l’exponencial (EMA) ho fan de manera diferent.",
       "Mitjana simple (SMA)",
@@ -27,32 +45,15 @@
       "Classifica les cinc idees.",
       "La **SMA** dona el mateix pes a tots els tancaments; l’**EMA** en dona més als recents i reacciona abans. Totes dues van **darrere del preu**.",
       "Pista: «exponencial» vol dir que el més recent compta més.",
-      "Molt bé! Ara mira què passa quan no hi ha tendència.",
+      "Molt bé! Totes dues van darrere del preu.",
       "Simple o exponencial? Classifica cada idea"
-     ]
-    },
-    {
-     "texts": [
-      "Les fuetades d’en Leo",
-      "Leo",
-      "La meva regla: compro quan el preu creua la mitjana de 20 cap amunt i venc quan la creua cap avall.",
-      "Durant setmanes, l’acció va de costat.",
-      "He comprat i venut un munt de vegades. Pago comissió i *spread* en cadascuna… i vaig perdent.",
-      "Què li ha passat?",
-      "Mala sort: la regla és bona",
-      "No és sort: en un lateral, el preu creua la mitjana una vegada i una altra.",
-      "En un lateral, la mitjana dona senyals falsos",
-      "Això mateix! La mitjana és plana i cada encreuament és una **fuetada**, amb el seu cost.",
-      "Hauria de fer servir una mitjana encara més curta",
-      "Una mitjana més curta creua encara més vegades: més fuetades.",
-      "Les mitjanes resumeixen el passat: confirmen la tendència **tard**."
      ]
     },
     {
      "title": "Com es fan servir",
      "body": "• **Filtre:** preu per sobre de la SMA 200 = tendència de fons alcista; per sota, baixista.\n• **Suport dinàmic:** en tendències, el preu sol rebotar a la SMA 20 o 50.\n• **Pendent:** mitjana que puja = tendència alcista; plana = lateral.\n\nI sempre arriben tard: en laterals donen molts senyals falsos, cadascun amb la seva comissió i el seu *spread*.",
      "key": "Una mitjana mòbil suavitza el preu i mostra la tendència, sempre amb retard.",
-     "tip": "Les mitjanes no prediuen: confirmen tard el que ja està passant."
+     "tip": "Prova-ho: a Mercat, obre un gràfic i activa la SMA 200."
     }
    ]
   },
@@ -97,7 +98,7 @@
      "title": "L’evidència",
      "body": "Brock, Lakonishok i LeBaron (1992) van veure que regles senzilles de mitjanes semblaven funcionar al Dow Jones del 1897 al 1986. Corregint el biaix de cerca de dades, Sullivan, Timmermann i White (1999) van afeblir molt aquests resultats, i el seu poder predictiu en índexs va baixar o va desaparèixer després del 1986.\n\nEl seu ús més assenyat: la SMA 200 com a **filtre de risc** en les grans tendències baixistes, amb fuetades pel camí.",
      "key": "Els encreuaments confirmen tard: serveixen més com a filtre de risc que per guanyar operació a operació.",
-     "tip": "Un encreuament és una foto tardana del que ja ha passat."
+     "tip": "Prova-ho: obre l’S&P 500 a Mercat i activa les mitjanes de 50 i 200."
     }
    ]
   },
@@ -150,13 +151,29 @@
      "title": "Què és l’RSI",
      "body": "L’**RSI** (Wilder, 1978) compara la força de les pujades amb la de les baixades dels últims **14** períodes. Va de **0 a 100**.\n\n• Per sobre de **70**: «sobrecompra» (ha pujat molt i seguit).\n• Per sota de **30**: «sobrevenda».\n• **Divergència baixista:** preu amb un màxim més alt i RSI amb un de més baix. Pot durar molt abans que el preu giri, així que mai no n’hi ha prou amb ella sola.",
      "key": "Un RSI alt no vol dir «caurà»: vol dir «ha pujat molt».",
-     "tip": "Sobrecompra i pujada poden conviure molt de temps."
+     "tip": "Prova-ho: a Mercat, activa l’RSI en una acció que hagi pujat molt."
     }
    ]
   },
   "u22l4": {
    "title": "El MACD",
    "steps": [
+    {
+     "texts": [
+      "L’encreuament que va arribar tard",
+      "Nico",
+      "L’acció fa setmanes que puja amb força. En Nico mira el **MACD**, un indicador d’impuls fet amb mitjanes.",
+      "El MACD acaba de creuar a l’alça! Compro ja.",
+      "Quin risc corre en Nico?",
+      "Cap: l’encreuament diu «compra»",
+      "L’encreuament diu «l’impuls millora», no «compra».",
+      "Que el senyal arribi quan el moviment ja s’esgota",
+      "Això mateix! Està fet amb mitjanes i n’hereta el **retard**.",
+      "Que el MACD estigui mal calculat",
+      "El càlcul està bé: el problema és que resumeix el passat.",
+      "I en laterals, com les mitjanes, dona molts senyals falsos."
+     ]
+    },
     {
      "texts": [
       "Què diu el MACD?",
@@ -181,26 +198,10 @@
      ]
     },
     {
-     "texts": [
-      "L’encreuament que va arribar tard",
-      "Nico",
-      "Fa setmanes que l’acció puja amb força.",
-      "El MACD acaba de creuar a l’alça! Compro ja.",
-      "Quin risc corre en Nico?",
-      "Cap: l’encreuament diu «compra»",
-      "L’encreuament diu «l’impuls millora», no «compra».",
-      "Que el senyal arribi quan el moviment ja s’esgota",
-      "Això mateix! Està fet amb mitjanes i n’hereta el **retard**.",
-      "Que el MACD estigui mal calculat",
-      "El càlcul està bé: el problema és que resumeix el passat.",
-      "I en laterals, com les mitjanes, dona molts senyals falsos."
-     ]
-    },
-    {
      "title": "Com es construeix",
-     "body": "Creat per Gerald Appel, el MACD (12, 26, 9) té tres peces:\n\n• **Línia MACD:** EMA de 12 − EMA de 26.\n• **Línia de senyal:** EMA de 9 de la línia MACD.\n• **Histograma:** la diferència entre totes dues.\n\nTambé té **divergències**, com l’RSI.",
+     "body": "Creat per Gerald Appel, el MACD (12, 26, 9) té tres peces:\n\n• **Línia MACD:** EMA de 12 − EMA de 26.\n• **Línia de senyal:** EMA de 9 de la línia MACD.\n• **Histograma:** la diferència entre totes dues.\n\nTambé té **divergències**, com l’RSI. Un MACD que creua a l’alça diu «l’impuls millora», no «compra».",
      "key": "El MACD mesura l’impuls de la tendència.",
-     "tip": "Un MACD que creua a l’alça diu «l’impuls millora», no «compra»."
+     "tip": "Prova-ho: activa el MACD en un gràfic de Mercat i busca’n l’últim creuament."
     }
    ]
   },
@@ -243,13 +244,32 @@
     {
      "title": "Bollinger i l’ATR",
      "body": "**Bandes de Bollinger (20, 2):** una mitjana de 20 al centre i dues bandes a 2 desviacions típiques.\n• **S’estrenyen:** volatilitat baixa; sol precedir un moviment fort (*squeeze*), sense dir cap a on.\n• En tendències fortes, el preu pot **caminar** per la banda superior: tocar-la no vol dir vendre.\n\nL’**ATR** (Wilder) mesura quant es mou de mitjana el preu, normalment en 14 períodes. El seu **rang veritable** també compta els gaps. No diu la direcció.",
-     "key": "La volatilitat decideix la distància de l’stop; el teu risc màxim decideix la mida."
+     "key": "La volatilitat decideix la distància de l’stop; el teu risc màxim decideix la mida.",
+     "tip": "Prova-ho: en la teva propera compra del simulador, posa l’stop fora del soroll diari."
     }
    ]
   },
   "u22l6": {
    "title": "Fibonacci sense màgia",
    "steps": [
+    {
+     "texts": [
+      "«Fibonacci no falla mai»",
+      "Laura",
+      "La Laura ha dibuixat els **retrocessos de Fibonacci**: línies que marquen quina part d’una pujada torna el preu.",
+      "Mira: va pujar de 100 € a 200 € i va rebotar just a 138,20 €, el 61,8 %.",
+      "Fibonacci no falla mai!",
+      "Què li dius?",
+      "Que té raó: aquí hi ha la prova",
+      "Un cas vist a posteriori no prova res.",
+      "Que amb cinc nivells gairebé sempre se’n toca algun",
+      "Això mateix! Caldria provar-ho en molts casos, no en un de triat.",
+      "Que faci servir millor el 90 %",
+      "Canviar de número no arregla res: és buscar a posteriori el que encaixa.",
+      "Aquí, el 38,2 % cau a 161,80 € i el 50 %, a 150 €.",
+      "Amb cinc línies tan juntes, el preu gairebé sempre en toca alguna."
+     ]
+    },
     {
      "texts": [
       "Els nivells de l’eina",
@@ -277,27 +297,10 @@
      ]
     },
     {
-     "texts": [
-      "«Fibonacci no falla mai»",
-      "Laura",
-      "Mira: va pujar de 100 € a 200 € i va rebotar just a 138,20 €, el 61,8 %.",
-      "Fibonacci no falla mai!",
-      "Què li dius?",
-      "Que té raó: aquí hi ha la prova",
-      "Un cas vist a posteriori no prova res.",
-      "Que amb cinc nivells gairebé sempre se’n toca algun",
-      "Això mateix! Caldria provar-ho en molts casos, no en un de triat.",
-      "Que faci servir millor el 90 %",
-      "Canviar de número no arregla res: és buscar a posteriori el que encaixa.",
-      "Aquí, el 38,2 % cau a 161,80 € i el 50 %, a 150 €.",
-      "Amb cinc línies tan juntes, el preu gairebé sempre en toca alguna."
-     ]
-    },
-    {
      "title": "Escepticisme",
      "body": "No hi ha proves sòlides que aquests nivells funcionin millor que altres percentatges. Pot funcionar en part perquè molta gent hi posa ordres.\n\nÚs raonable: en tendència alcista, molts busquen zones de compra entre el 38,2 i el 61,8 %, sobretot si coincideixen amb un suport o una mitjana.",
      "key": "Fibonacci organitza zones de retrocés; no prediu.",
-     "tip": "Si traces cinc línies, el preu sempre en tocarà alguna. No és màgia, és estadística."
+     "tip": "Prova-ho: a Mercat, busca una pujada forta i mira on es va frenar en retrocedir."
     }
    ]
   },
@@ -307,7 +310,7 @@
     {
      "texts": [
       "Construeix l’OBV",
-      "L’**OBV** suma el volum dels dies que **tanquen** a l’alça i resta el dels que tanquen a la baixa. Una setmana d’una acció:",
+      "Aquesta acció ha pujat durant la setmana, però hi havia compradors al darrere? L’**OBV** ho mira: suma el volum dels dies que **tanquen** a l’alça i resta el dels que tanquen a la baixa.",
       "Suma el seu volum",
       "Resta el seu volum",
       "Dilluns: tanca per sobre del divendres, amb 1.000 accions",
@@ -347,7 +350,7 @@
      "title": "Els mateixos límits",
      "body": "Tots dos depenen d’un volum fiable: en divises i cripto, la dada és parcial. I, com tot indicador, descriuen el que ja ha passat.\n\nSi el preu puja i l’OBV també, el volum acompanya; si el preu puja i l’OBV baixa, hi ha una **divergència**: una pista, no un senyal suficient.",
      "key": "L’OBV mira si el volum acompanya; el VWAP, a quin preu mitjà s’ha negociat.",
-     "tip": "El volum és la petjada de la gent que hi ha darrere del preu; aquests indicadors l’ordenen."
+     "tip": "Prova-ho: activa el volum en un gràfic de Mercat i mira si acompanya."
     }
    ]
   },
@@ -357,24 +360,6 @@
   }
  },
  "questions": {
-  "u22l1-1": {
-   "prompt": "Últims 5 tancaments: 10, 12, 11, 13 i 14 €. Quant val la mitjana simple de 5 sessions?",
-   "options": [],
-   "explanation": "(10 + 12 + 11 + 13 + 14) ÷ 5 = 60 ÷ 5 = 12 €.",
-   "unit": "€"
-  },
-  "u22l1-2": {
-   "prompt": "Tancaments: 10, 12, 11, 13 i 14 €. Demà tanca a 15 € i el 10 € surt de la finestra. Quant val la nova mitjana simple de 5 sessions?",
-   "options": [],
-   "explanation": "(12 + 11 + 13 + 14 + 15) ÷ 5 = 65 ÷ 5 = 13 €. La mitjana «es mou» perquè hi entra la dada nova i en surt la més antiga.",
-   "unit": "€"
-  },
-  "u22l1-3": {
-   "prompt": "Una EMA de 9 sessions fa servir un pes de 2 ÷ (9 + 1) = 0,2. Si l’EMA d’ahir era 100 € i avui el tancament és 110 €, quant val avui?",
-   "options": [],
-   "explanation": "100 + 0,2 × (110 − 100) = 102 €. Recorre una cinquena part de la distància en un sol dia: per això reacciona abans que una mitjana simple llarga.",
-   "unit": "€"
-  },
   "u22l1-4": {
    "prompt": "Relaciona cada ús de les mitjanes amb la seva regla.",
    "options": [
@@ -430,6 +415,20 @@
    "right": [
     "Fons alcista",
     "Fons baixista"
+   ]
+  },
+  "u22l1-11": {
+   "prompt": "La teva acció cotitza molt per sobre de la seva SMA 200, que va pujant. Corregeix fins a la SMA 50 i rebota. Com ho llegeixes?",
+   "options": [
+    "Possible suport dinàmic dins d’una tendència alcista: una pista, amb stop",
+    "Senyal de venda: el preu ha tocat la mitjana",
+    "Compra segura: ha tocat la mitjana"
+   ],
+   "explanation": "Amb el preu per sobre d’una SMA 200 que puja, la mitjana de 50 pot fer de suport dinàmic. És una pista per buscar entrada amb stop, no una garantia.",
+   "feedback": [
+    "Això: en tendències, el preu sol rebotar a la SMA 20 o 50, però sense certesa.",
+    "Tocar la mitjana en una tendència alcista se sol llegir al revés: com a possible suport.",
+    "Cap mitjana no garanteix el rebot: el preu la pot travessar i continuar caient."
    ]
   },
   "u22l2-3": {
@@ -574,18 +573,6 @@
    ],
    "explanation": "És el tercer nombre de MACD (12, 26, 9)."
   },
-  "u22l4-3": {
-   "prompt": "L’EMA de 12 val 105 € i l’EMA de 26 val 101 €. Quant val la línia MACD?",
-   "options": [],
-   "explanation": "105 − 101 = 4. És positiva: la mitjana curta és per sobre de la llarga.",
-   "unit": "€"
-  },
-  "u22l4-4": {
-   "prompt": "La línia MACD val 4 i la de senyal, 3,2. Quant val l’histograma?",
-   "options": [],
-   "explanation": "4 − 3,2 = 0,8. Si els dies següents s’encongeix, l’impuls s’està frenant.",
-   "unit": "punts"
-  },
   "u22l4-6": {
    "prompt": "En trams així, la mitjana curta sol anar per sobre de la llarga. Quina tendència és? (Amazon · tancaments cada 3 sessions · març–maig del 2026)",
    "options": [
@@ -604,23 +591,33 @@
    "explanation": "El MACD resumeix el que ja van fer les mitjanes: confirma l’impuls amb retard, no anticipa les sessions següents.",
    "horizon": "les 10 sessions següents"
   },
-  "u22l5-1": {
-   "prompt": "Mitjana de 20 sessions: 50 €. Desviació típica: 2 €. On és la banda superior de Bollinger (20, 2)?",
-   "options": [],
-   "explanation": "50 + 2 × 2 = 54 €. La inferior seria a 46 €.",
-   "unit": "€"
+  "u22l4-11": {
+   "prompt": "Una acció fa un mes que va de costat. El seu MACD ha creuat la línia de senyal cinc vegades, amunt i avall. Apareix un sisè creuament a l’alça. Què fas?",
+   "options": [
+    "Compro el doble per recuperar les fuetades anteriors",
+    "M’ho prenc com a soroll: sense tendència, el MACD dona molts senyals falsos",
+    "Compro: aquesta vegada sí que és la bona"
+   ],
+   "explanation": "El MACD serveix en tendències. En un lateral, els seus creuaments són sobretot soroll, i cada operació té el seu cost.",
+   "feedback": [
+    "Augmentar la mida per recuperar pèrdues és la manera més ràpida de fer-les més grans.",
+    "Això: el MACD està fet amb mitjanes i, com elles, falla en els laterals.",
+    "És el que vas pensar les cinc vegades anteriors: en un lateral, els creuaments solen ser fuetades."
+   ]
   },
-  "u22l5-2": {
-   "prompt": "Ahir va tancar a 98 €. Avui, màxim de 105 € i mínim de 101 €. Quin és el rang veritable d’avui?",
-   "options": [],
-   "explanation": "Màxim − mínim = 4; |105 − 98| = 7; |101 − 98| = 3. El més gran és 7 €: el gap d’obertura compta.",
-   "unit": "€"
-  },
-  "u22l5-3": {
-   "prompt": "L’ATR d’una acció és 2 €. Compres a 50 € i poses l’stop a 2 ATR de l’entrada. A quin preu va l’stop?",
-   "options": [],
-   "explanation": "50 − 2 × 2 = 46 €.",
-   "unit": "€"
+  "u22l4-12": {
+   "prompt": "Què diu cada lectura del MACD?",
+   "options": [
+    "L’histograma s’encongeix dia rere dia",
+    "El preu puja i el MACD baixa",
+    "L’histograma creix dia rere dia",
+    "El MACD creua per sobre de la seva línia de senyal"
+   ],
+   "explanation": "Creuament a l’alça i histograma que creix: l’impuls millora. Histograma que s’encongeix o divergència: es frena. Cap lectura no diu què farà el preu demà.",
+   "right": [
+    "L’impuls millora",
+    "L’impuls es frena"
+   ]
   },
   "u22l5-5": {
    "prompt": "Col·loca l’stop per sota del mínim recent, deixant marge per a la volatilitat normal de l’actiu.",
@@ -641,22 +638,56 @@
    ],
    "explanation": "L’squeeze avisa que pot venir un moviment, no cap a on."
   },
-  "u22l6-1": {
-   "prompt": "Una acció puja de 100 € a 200 €. A quin preu és el retrocés del 61,8 %?",
-   "options": [],
-   "explanation": "200 − 0,618 × 100 = 138,20 €.",
-   "unit": "€"
+  "u22l5-11": {
+   "prompt": "L’ATR d’una acció és de 2 €: és el que es mou en un dia normal. Aquest stop és dins del soroll o té marge?",
+   "options": [
+    "Stop a 1 € de l’entrada",
+    "Stop a 5 € de l’entrada",
+    "Stop a 4 € de l’entrada",
+    "Stop a 0,50 € de l’entrada"
+   ],
+   "explanation": "Un stop més a prop que el moviment d’un dia normal salta per pur soroll. A 2–3 vegades l’ATR, només salta si la idea falla de veritat.",
+   "right": [
+    "Dins del soroll",
+    "Amb marge"
+   ]
+  },
+  "u22l5-12": {
+   "prompt": "Una acció puja amb força i fa cinc dies que toca la banda superior de Bollinger. Una amiga et diu: «Tocar la banda és senyal de venda». Què li contestes?",
+   "options": [
+    "Que en compri més, perquè la banda garanteix que continuarà pujant",
+    "Que en una pujada forta el preu pot caminar per la banda: tocar-la no és vendre",
+    "Que té raó: cal vendre ja"
+   ],
+   "explanation": "Les bandes de Bollinger mesuren volatilitat. Tocar la superior en una pujada forta és normal, no una ordre de venda.",
+   "feedback": [
+    "Les bandes no garanteixen res: descriuen quant s’ha mogut el preu.",
+    "Això: les bandes mesuren volatilitat, no marquen sostres.",
+    "En tendències fortes, el preu pot caminar per la banda superior durant dies: vendre per tocar-la és anar contra la tendència."
+   ]
+  },
+  "u22l5-13": {
+   "prompt": "Què li dius a la Lumi?",
+   "options": [
+    "Allunya’l segons el seu ATR i compra’n menys, per arriscar el mateix",
+    "Sí, treu-lo: els stops només donen disgustos",
+    "Posa’l encara més a prop, al 0,2 %"
+   ],
+   "explanation": "La distància de l’stop la marca la volatilitat (l’ATR); l’import s’ajusta perquè el risc en euros continuï igual.",
+   "feedback": [
+    "És clar: stop fora del soroll i menys import. El meu risc en euros no canvia.",
+    "Sense stop, una sola mala operació em pot costar més que tres stops petits.",
+    "Més a prop saltaria encara més: el bitcoin es mou molt més en un dia."
+   ],
+   "lines": [
+    "He posat l’stop a un 0,5 % en bitcoin.",
+    "M’ha saltat tres vegades aquesta setmana. El trec?"
+   ]
   },
   "u22l6-2": {
    "prompt": "Una acció puja de 40 € a 60 €. On és el retrocés del 50 %?",
    "options": [],
    "explanation": "60 − 0,5 × 20 = 50 €.",
-   "unit": "€"
-  },
-  "u22l6-3": {
-   "prompt": "Una acció puja de 10 € a 30 €. On és el retrocés del 38,2 %?",
-   "options": [],
-   "explanation": "30 − 0,382 × 20 = 30 − 7,64 = 22,36 €.",
    "unit": "€"
   },
   "u22l6-5": {
@@ -677,11 +708,33 @@
    "options": [],
    "explanation": "El màxim va arribar abans del final i el preu ja retrocedia. Aquest retrocés es mesuraria en percentatge de tota la pujada."
   },
-  "u22l7-2": {
-   "prompt": "Compres 100 accions a 10 € i 300 més a 12 €. A quin preu mitjà ponderat pel volum has comprat?",
-   "options": [],
-   "explanation": "(100 × 10 + 300 × 12) ÷ 400 = 4.600 ÷ 400 = 11,50 €. És la mateixa idea que el VWAP.",
-   "unit": "€"
+  "u22l6-11": {
+   "prompt": "Una acció en tendència alcista puja amb força de 40 € a 60 € i comença a retrocedir. A prop de 50 €, el seu retrocés del 50 %, hi ha a més un suport antic. Com ho fas servir?",
+   "options": [
+    "Compro tot a 50 €: Fibonacci ho garanteix",
+    "L’ignoro: Fibonacci és pura màgia",
+    "La marco com a zona d’interès i, si entro, poso l’stop per sota"
+   ],
+   "explanation": "Fibonacci organitza zones de retrocés. Pesa més quan coincideix amb altres peces, com un suport, i sempre es fa servir amb stop.",
+   "feedback": [
+    "Cap nivell no garanteix res: el preu el pot travessar sense aturar-se.",
+    "No prediu, però serveix per organitzar zones, sobretot si coincideix amb un suport.",
+    "Això: un retrocés que coincideix amb un suport és una zona raonable, mai una certesa."
+   ]
+  },
+  "u22l6-12": {
+   "prompt": "Ús raonable de Fibonacci o pensament màgic?",
+   "options": [
+    "Comprar perquè el preu «ha de» rebotar al 61,8 %",
+    "Provar nivells fins que un encaixi amb el passat",
+    "Donar més pes a un nivell que coincideix amb un suport",
+    "Buscar zones entre el 38,2 i el 61,8 % en una tendència alcista"
+   ],
+   "explanation": "Fibonacci serveix per organitzar zones i combinar-les amb altres peces. Creure que un nivell «ha de» funcionar, o buscar a posteriori el que encaixa, és enganyar-se.",
+   "right": [
+    "Ús raonable",
+    "Pensament màgic"
+   ]
   },
   "u22l7-3": {
    "prompt": "En una sessió es negocien 2.000 accions a 20 € i 2.000 més a 22 €. Quant val el VWAP?",
@@ -736,6 +789,20 @@
    ],
    "explanation": "L’OBV i el VWAP ordenen el que ja ha passat amb el volum. Ajuden a valorar si un moviment té gent al darrere, no a endevinar les sessions següents.",
    "horizon": "les 10 sessions següents"
+  },
+  "u22l7-11": {
+   "prompt": "La teva acció marca màxims nous, però el seu OBV fa setmanes que baixa. Què fas amb la teva posició?",
+   "options": [
+    "M’ho prenc com una pista: reviso el meu stop i no augmento la posició",
+    "Compro més: els màxims nous són senyal de força",
+    "Ho venc tot ja: la divergència ho diu"
+   ],
+   "explanation": "Si el preu puja i l’OBV baixa, la pujada té menys gent al darrere. És una pista per ser prudent, no un senyal suficient per vendre.",
+   "feedback": [
+    "Això: si el volum no acompanya, convé ser prudent, sense tractar-ho com una ordre.",
+    "Màxims amb el volum en contra són justament el cas en què convé més prudència.",
+    "Una divergència pot durar molt abans que el preu giri, o no girar mai."
+   ]
   }
  }
 }

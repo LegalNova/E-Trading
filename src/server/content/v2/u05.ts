@@ -40,7 +40,7 @@ export default unit({
           { say: 'Toca cada tarjeta: ¿lo hace la bolsa o no?', mood: 'HAPPY' },
         ],
       }),
-      key('Quién es quién', 'En España la bolsa la gestiona **BME** (Bolsas y Mercados Españoles), del grupo suizo SIX, y la supervisa la **CNMV**.\n\nTú no vas a la bolsa: compras a través de un **bróker** autorizado, que lleva tu orden al mercado.', 'La bolsa es el punto de encuentro; el bróker, la puerta de entrada.'),
+      key('Quién es quién', 'En España la bolsa la gestiona **BME** (Bolsas y Mercados Españoles), del grupo suizo SIX, y la supervisa la **CNMV**.\n\nTú no vas a la bolsa: compras a través de un **bróker** autorizado, que lleva tu orden al mercado.', 'La bolsa es el punto de encuentro; el bróker, la puerta de entrada.', 'Pruébalo: en Mercado, busca Inditex: ese precio lo ve igual todo el mundo.'),
     ], [
       single('¿Qué es una bolsa?', ['Un mercado regulado donde se cruzan órdenes de compra y venta de valores', 'Un banco que guarda tus ahorros', 'Una empresa que te vende sus propias acciones cada día'], 0, 'La bolsa cruza órdenes: junta compradores y vendedores con reglas y precios públicos.'),
       multi('¿Para qué sirve la bolsa? Marca todas.', ['Que las empresas consigan financiación', 'Que los inversores puedan vender cuando quieran', 'Garantizar que las acciones suban', 'Dar un precio público de cada valor'], [0, 1, 3], 'La bolsa no garantiza nada sobre el precio: solo hace posible comprar y vender.'),
@@ -89,7 +89,7 @@ export default unit({
         say('bruno', '¿Entonces los particulares no pintamos nada?'),
         say('lumi', 'A largo plazo no compites con ellos: participas de lo que ganan las empresas.'),
       ]),
-      key('Tu ventaja', 'Un minorista no rinde cuentas cada trimestre, puede esperar años y puede mantener costes muy bajos. Esa es su ventaja, no la velocidad.', 'La bolsa está llena de profesionales: tu ventaja está en el tiempo y en los costes bajos.', 'No intentes correr más que un algoritmo: no hace falta.'),
+      key('Tu ventaja', 'Un minorista no rinde cuentas cada trimestre, puede esperar años y puede mantener costes muy bajos. Esa es su ventaja, no la velocidad.', 'La bolsa está llena de profesionales: tu ventaja está en el tiempo y en los costes bajos.', 'Pruébalo: en Mercado, añade a Favoritos una empresa que quieras tener durante años.'),
     ], [
       match('Empareja cada participante con lo que hace.', [['Minorista', 'Particular que invierte su dinero'], ['Institucional', 'Fondo de pensiones o aseguradora'], ['Creador de mercado', 'Pone precio de compra y de venta a la vez'], ['Alta frecuencia', 'Algoritmos que operan en microsegundos']], 'Cada participante tiene objetivos y herramientas distintos.'),
       single('¿Cómo gana dinero un creador de mercado?', ['Con la diferencia entre su precio de compra y el de venta', 'Cobrando una cuota a la CNMV', 'Con los dividendos de las empresas'], 0, 'Compra un poco más barato de lo que vende: esa diferencia es su margen.'),
@@ -101,6 +101,7 @@ export default unit({
       multi('¿Qué ventajas tiene un minorista a largo plazo? Marca todas.', ['Puede esperar años sin rendir cuentas a nadie', 'No necesita ganar cada trimestre', 'Tiene la información antes que nadie', 'Puede mantener costes muy bajos'], [0, 1, 3], 'La información y la velocidad no están de su lado; la paciencia y los costes, sí.'),
       fill('Cada vez que compras una acción, otro inversor la ____.', 'vende', ['regala', 'presta', 'alquila'], 'Toda compra tiene una venta al otro lado.'),
       chat(['He leído que los fondos y los algoritmos dominan la bolsa 😰', '¿Entonces los particulares no pintamos nada?'], '¿Qué le contestas a Lumi?', [['Exacto, mejor ni lo intentes', 'Tampoco: no hace falta ganarles en velocidad para invertir bien a largo plazo.'], ['A corto plazo es difícil ganarles; a largo plazo no compites con ellos', '¡Bien visto! Invertir a largo plazo es participar de lo que ganan las empresas.'], ['Hay que operar más rápido que ellos', 'Ellos operan en microsegundos: esa carrera está perdida.']], 1, 'El minorista no gana por velocidad, sino por tiempo y costes bajos.'),
+      scenario('Leo invierte 50 € al mes en un fondo indexado. Un amigo le dice que así nunca ganará a los profesionales y que debería operar cada día. ¿Qué hace?', [['Sigue con su plan: su ventaja es el tiempo y los costes bajos', 'No compite en velocidad: participa durante años de lo que ganan las empresas.'], ['Empieza a operar cada día para ganarles', 'Entra en la carrera donde algoritmos y profesionales tienen ventaja, y paga costes en cada operación.'], ['Deja de invertir: la bolsa es solo para profesionales', 'Renuncia a su gran ventaja, el tiempo. A largo plazo no necesita ganarles en velocidad.']], 0, 'La tentación es operar más, pero a corto plazo el minorista juega en desventaja. A largo plazo, el tiempo y los costes bajos juegan a su favor.'),
     ], { source: '2.3', minutes: 6, retire: [3, 4, 5, 9] }),
 
     lesson('u5l4', 'Horarios y sesiones', [
@@ -139,7 +140,7 @@ export default unit({
         say('pablo', '¿Un hueco?'),
         say('lumi', 'Un salto de precio entre el cierre y la apertura, sin precios intermedios.'),
       ]),
-      key('Ojo con el reloj', 'Por el **cambio de hora**, EE. UU. y Europa no cambian el reloj el mismo día: unas semanas al año Nueva York abre a las **14:30** en España.\n\nTokio abre de madrugada en España y hace una pausa a mediodía (hora de Tokio).', 'Antes de operar, mira si el mercado está abierto.', 'Que la app te deje pulsar «comprar» no significa que el mercado esté abierto.'),
+      key('Ojo con el reloj', 'Por el **cambio de hora**, EE. UU. y Europa no cambian el reloj el mismo día: unas semanas al año Nueva York abre a las **14:30** en España.\n\nTokio abre de madrugada en España y hace una pausa a mediodía (hora de Tokio).', 'Antes de operar, mira si el mercado está abierto.', 'Pruébalo: en Mercado, mira si Apple pone «abierto» o «cerrado» ahora mismo.'),
     ], [
       match('Empareja cada mercado con su horario (hora peninsular).', [['Bolsa de Madrid', 'De 9:00 a 17:30'], ['Nueva York', 'De 15:30 a 22:00'], ['Criptomonedas', '24 horas, 7 días'], ['Divisas', 'De domingo noche a viernes noche']], 'Cada mercado tiene su horario; las cripto no cierran nunca.'),
       timed(multi('Rápido: un miércoles normal a las 16:00 (hora peninsular), ¿qué está abierto? Marca todos.', ['Bolsa de Madrid', 'Bolsa de Nueva York', 'Criptomonedas', 'Bolsa de Tokio'], [0, 1, 2], 'A las 16:00 coinciden Madrid y Nueva York; Tokio cerró hace horas y las cripto nunca cierran.'), 20),
@@ -151,7 +152,8 @@ export default unit({
       buckets('Un martes a las 10:00 (hora peninsular), ¿abierto o cerrado?', ['Abierto', 'Cerrado'], [['Bolsa de Madrid', 0], ['Bolsa de Nueva York', 1], ['Bolsa de Londres', 0], ['Bitcoin', 0], ['Bolsa de Fráncfort', 0], ['Bolsa de Tokio', 1]], 'A las 10:00 en España, Nueva York aún no ha abierto y en Tokio ya es de noche.'),
       tf('Si das una orden con la bolsa cerrada, se ejecuta al último precio de cierre.', false, 'Espera a la apertura y se ejecuta al precio que haya entonces.'),
       fill('Cuando una acción abre muy lejos del cierre anterior por noticias de la noche, se produce un ____.', 'hueco', ['spread', 'dividendo', 'desdoblamiento'], 'El hueco (gap) es un salto de precio sin cotizaciones intermedias.'),
-    ], { source: '2.3', minutes: 6, retire: [1, 2, 6, 8] }),
+      scenario('Leo trabaja de 9:00 a 18:00 y quiere comprar acciones de Microsoft con la bolsa de Nueva York abierta. ¿Cuándo puede hacerlo un día normal?', [['Al salir del trabajo, antes de las 22:00', 'Nueva York abre de 15:30 a 22:00 en España: por la tarde tiene tiempo de sobra.'], ['A la hora de comer, a las 14:00', 'A las 14:00 Nueva York aún no ha abierto: la orden esperaría a la apertura.'], ['A medianoche, con calma', 'A medianoche Nueva York ya ha cerrado: la orden se ejecutaría al día siguiente, al precio que haya.']], 0, 'Nueva York abre por la tarde en España, de 15:30 a 22:00. Comprar fuera de ese horario es tentador por comodidad, pero la orden espera a la apertura y puede salir a otro precio.'),
+    ], { source: '2.3', minutes: 6, retire: [1, 2, 4, 6, 8] }),
 
     lesson('u5l5', 'Bróker, cuenta y custodia', [
       story('Cero comisiones y un bono', [{ id: 'marta', name: 'Marta' }], [
@@ -187,7 +189,7 @@ export default unit({
           { say: '¿Te protege o es riesgo tuyo? Toca cada caso', mood: 'HAPPY' },
         ],
       }),
-      key('Liquidación y custodia', 'Tras el cruce, la operación se **liquida**: el dinero va al vendedor y las acciones a ti. En Europa tarda dos días hábiles (**T+2**); en EE. UU., uno (T+1) desde 2024. En España el registro central es **Iberclear**.\n\nCon un bróker de otro país de la UE te cubre el fondo de ese país, que puede ser menor (el mínimo europeo es 20.000 €).', 'El bróker es tu puerta de entrada; tus valores se guardan a tu nombre.', 'Comprueba en la web de la CNMV que el bróker está autorizado antes de abrir cuenta.'),
+      key('Liquidación y custodia', 'Tras el cruce, la operación se **liquida**: el dinero va al vendedor y las acciones a ti. En Europa tarda dos días hábiles (**T+2**); en EE. UU., uno (T+1) desde 2024. En España el registro central es **Iberclear**.\n\nCon un bróker de otro país de la UE te cubre el fondo de ese país, que puede ser menor (el mínimo europeo es 20.000 €). Antes de abrir cuenta, comprueba en la web de la CNMV que el bróker está autorizado.', 'El bróker es tu puerta de entrada; tus valores se guardan a tu nombre.', 'Pruébalo: haz una compra en el Mercado y busca la operación en tu Cartera.'),
     ], [
       single('¿Qué hace un bróker?', ['Recibe tu orden y la lleva al mercado', 'Decide qué empresas cotizan', 'Garantiza que tus inversiones suban'], 0, 'Es el intermediario entre tú y el mercado.'),
       tf('Si tu bróker quiebra, tus acciones se pierden con él.', false, 'Están a tu nombre y separadas de su patrimonio.'),
@@ -202,6 +204,17 @@ export default unit({
     ], { source: '2.3', minutes: 6, retire: [1, 2, 5, 8] }),
 
     lesson('u5l6', 'Mercado primario y secundario: las OPV', [
+      story('La salida a bolsa de moda', [{ id: 'bruno', name: 'Bruno' }], [
+        say('bruno', 'Todo el mundo habla de la salida a bolsa de una marca de moda.'),
+        say('bruno', 'Si sale a bolsa es porque va genial, ¿no? ¡Meto todos mis ahorros!'),
+        choose('¿Qué le aconsejas?', [
+          opt('Que meta todo: es una oportunidad única', 'bad', say('lumi', 'Si cae un 30 % los primeros meses, se queda sin colchón y con pérdidas.')),
+          opt('Que lea el folleto y, si invierte, con una parte pequeña', 'good', say('lumi', 'Eso. El **folleto**, aprobado por la CNMV, explica el negocio y los riesgos.')),
+          opt('Que espere a ver qué dicen en redes', 'ok', say('lumi', 'Las redes no conocen la empresa. El folleto, sí.')),
+        ]),
+        say('lumi', 'El precio lo fija quien vende, y conoce la empresa mejor que tú.'),
+        say('lumi', 'Muchas salidas a bolsa acaban cotizando por debajo de su precio de salida.'),
+      ]),
       play({
         title: '¿Quién recibe tu dinero?',
         intro: 'En el **mercado primario** se emiten valores nuevos. En el **secundario**, los inversores se compran y venden los que ya existen.',
@@ -225,17 +238,6 @@ export default unit({
           { say: 'Toca cada operación: ¿primario o secundario?', mood: 'HAPPY' },
         ],
       }),
-      story('La salida a bolsa de moda', [{ id: 'bruno', name: 'Bruno' }], [
-        say('bruno', 'Todo el mundo habla de la salida a bolsa de una marca de moda.'),
-        say('bruno', 'Si sale a bolsa es porque va genial, ¿no? ¡Meto todos mis ahorros!'),
-        choose('¿Qué le aconsejas?', [
-          opt('Que meta todo: es una oportunidad única', 'bad', say('lumi', 'Si cae un 30 % los primeros meses, se queda sin colchón y con pérdidas.')),
-          opt('Que lea el folleto y, si invierte, con una parte pequeña', 'good', say('lumi', 'Eso. El **folleto**, aprobado por la CNMV, explica el negocio y los riesgos.')),
-          opt('Que espere a ver qué dicen en redes', 'ok', say('lumi', 'Las redes no conocen la empresa. El folleto, sí.')),
-        ]),
-        say('lumi', 'El precio lo fija quien vende, y conoce la empresa mejor que tú.'),
-        say('lumi', 'Muchas salidas a bolsa acaban cotizando por debajo de su precio de salida.'),
-      ]),
       play({
         title: '¿OPS u OPV?',
         intro: 'Para salir a bolsa hay dos formas, a menudo combinadas. La clave: **¿quién se queda el dinero?**',
@@ -250,7 +252,7 @@ export default unit({
           ],
         },
         goal: { text: 'Clasifica los cuatro casos.', when: [when('done', '==', 4)] },
-        insight: '**OPS:** acciones nuevas y dinero para la empresa. **OPV:** los dueños venden y el dinero va a ellos. En inglés, una salida a bolsa se llama IPO.',
+        insight: '**OPS:** acciones nuevas y dinero para la empresa. **OPV:** los dueños venden y el dinero va a ellos. En inglés, una salida a bolsa se llama IPO. Pruébalo: en Mercado, mira el gráfico mensual de una empresa y busca su primer día en bolsa.',
         lumi: [
           { when: when('wrong', '>=', 1), say: 'Si no se crean acciones nuevas, la empresa no cobra.', mood: 'THINKING' },
           { when: when('done', '>=', 2), say: 'Antes de una salida a bolsa, mira quién vende y por qué.', mood: 'HAPPY' },
@@ -268,9 +270,20 @@ export default unit({
       fill('Cuando una empresa que ya cotiza emite acciones nuevas para conseguir dinero, hace una ____ de capital.', 'ampliación', ['reducción', 'liquidación', 'subasta'], 'La ampliación de capital es mercado primario aunque la empresa ya cotice.'),
       order('Ordena los pasos de una salida a bolsa.', ['La empresa decide salir a bolsa', 'La CNMV aprueba el folleto', 'Los inversores piden acciones al precio fijado', 'Primer día de cotización en el mercado secundario'], 'Después del estreno, las acciones pasan a negociarse entre inversores.'),
       chat(['Si una empresa sale a bolsa, es porque va genial, ¿no? 🚀'], '¿Qué le contestas a Lumi?', [['Sí, solo salen las mejores', 'Salen las que quieren dinero o cuyos dueños quieren vender: no tiene por qué ser buena señal.'], ['No necesariamente: a veces los dueños aprovechan para vender caro', '¡Eso! Quien vende conoce la empresa mejor que tú. Lee el folleto antes de decidir.'], ['Si sale a bolsa, está garantizado que sube', 'Nada garantiza que suba: muchas acaban por debajo de su precio de salida.']], 1, 'En una OPV, quien vende elige el momento, y suele elegir uno bueno para él.'),
+      scenario('Una empresa anuncia su salida a bolsa. El folleto dice que todas las acciones que se ofrecen son de sus fundadores, que venden parte de lo suyo. ¿Qué significa?', [['Es una OPV: el dinero va a los fundadores, no a la empresa', 'No se crean acciones nuevas: la empresa no recibe nada. Conviene preguntarse por qué venden ahora.'], ['Es una OPS: la empresa recibe dinero para crecer', 'En una OPS se emiten acciones nuevas. Aquí solo cambian de manos las que ya existían.'], ['Que es buena señal: si salen a bolsa, es que va muy bien', 'Quien vende conoce la empresa mejor que tú y elige el momento que le conviene a él.']], 0, 'Si no se emiten acciones nuevas, es una OPV y la empresa no cobra. La tentación es leerlo como buena señal, pero quien vende elige el momento que le conviene.'),
     ], { source: '2.1', minutes: 6, retire: [1, 4, 6, 9] }),
 
     lesson('u5l7', 'La bolsa española: IBEX y mercado continuo', [
+      story('Fuera del IBEX', [{ id: 'pablo', name: 'Pablo' }], [
+        say('pablo', 'La empresa de la que tengo acciones ha salido del IBEX 35. ¿Va fatal?'),
+        choose('¿Qué le dices a Pablo?', [
+          opt('Sí: en el IBEX solo están las mejores', 'bad', say('lumi', 'Están las 35 **más líquidas**, no las mejores.')),
+          opt('No necesariamente: ahora se negocia menos que otras', 'good', say('lumi', 'Eso. No estar en el IBEX no significa ser mala empresa.')),
+          opt('Ya no cotiza en bolsa', 'ok', say('lumi', 'Sigue cotizando en el mercado continuo, con más de un centenar de empresas.')),
+        ]),
+        say('pablo', '¿Y quién decide eso?'),
+        say('lumi', 'Un comité técnico, dos veces al año: en junio y en diciembre.'),
+      ]),
       play({
         title: '¿Dónde cotiza?',
         intro: 'Más de un centenar de empresas cotizan en el **mercado continuo**, pero no todas en el mismo escaparate.',
@@ -293,17 +306,7 @@ export default unit({
           { say: 'Toca cada empresa: ¿dónde cotiza?', mood: 'HAPPY' },
         ],
       }),
-      story('Fuera del IBEX', [{ id: 'pablo', name: 'Pablo' }], [
-        say('pablo', 'La empresa de la que tengo acciones ha salido del IBEX 35. ¿Va fatal?'),
-        choose('¿Qué le dices a Pablo?', [
-          opt('Sí: en el IBEX solo están las mejores', 'bad', say('lumi', 'Están las 35 **más líquidas**, no las mejores.')),
-          opt('No necesariamente: ahora se negocia menos que otras', 'good', say('lumi', 'Eso. No estar en el IBEX no significa ser mala empresa.')),
-          opt('Ya no cotiza en bolsa', 'ok', say('lumi', 'Sigue cotizando en el mercado continuo, con más de un centenar de empresas.')),
-        ]),
-        say('pablo', '¿Y quién decide eso?'),
-        say('lumi', 'Un comité técnico, dos veces al año: en junio y en diciembre.'),
-      ]),
-      key('El IBEX 35 y el mercado continuo', 'El **mercado continuo** (SIBE) une en un sistema electrónico las bolsas de Madrid, Barcelona, Bilbao y Valencia, con un único libro de órdenes por valor. Lo gestiona **BME**, del grupo suizo SIX desde 2020.\n\nEl **IBEX 35** pondera por capitalización, contando solo las acciones que se negocian libremente. Su base fueron **3.000 puntos** a finales de 1989.', 'El IBEX 35 es el escaparate; el mercado continuo, la tienda entera.', 'No estar en el IBEX no significa ser mala empresa: solo que es menos negociada.'),
+      key('El IBEX 35 y el mercado continuo', 'El **mercado continuo** (SIBE) une en un sistema electrónico las bolsas de Madrid, Barcelona, Bilbao y Valencia, con un único libro de órdenes por valor. Lo gestiona **BME**, del grupo suizo SIX desde 2020.\n\nEl **IBEX 35** pondera por capitalización, contando solo las acciones que se negocian libremente. Su base fueron **3.000 puntos** a finales de 1989.', 'El IBEX 35 es el escaparate; el mercado continuo, la tienda entera.', 'Pruébalo: en Mercado, usa «Explorar por índice» y mira las 35 empresas del IBEX.'),
     ], [
       match('Empareja cada nombre con lo que es.', [['IBEX 35', 'Las 35 empresas más líquidas'], ['Mercado continuo', 'Sistema electrónico que une las cuatro bolsas'], ['BME Growth', 'Empresas pequeñas en expansión'], ['Latibex', 'Empresas latinoamericanas en euros']], 'La bolsa española tiene varios segmentos con reglas y riesgos distintos.'),
       single('¿Cada cuánto se revisa de forma ordinaria la composición del IBEX 35?', ['Dos veces al año', 'Cada día', 'Nunca: siempre son las mismas'], 0, 'En junio y diciembre un comité técnico decide qué entra y qué sale.'),

@@ -16,6 +16,7 @@ import { ErrorState, PageSkeleton, Stars, Steps, TopBar } from '../ui/kit'
 import { useGuard } from '../shell'
 import { BadgeArt } from '../ui/badge'
 import { Lumi } from '../ui/lumi'
+import { MaxCard } from '../upgrade'
 import { DYNAMIC, DynamicExercise, isAnswered } from './exercises'
 
 export type AnswerValue = number | number[] | string | null
@@ -251,7 +252,7 @@ function AnswersReview({ log }: { log: AnswerLog }) {
   )
 }
 
-export function QuizResult({ r, lessonId, review, onRetry, log = [] }: { r: QuizFinishT; lessonId: string | null; review?: boolean; onRetry: () => void; log?: AnswerLog }) {
+export function QuizResult({ r, lessonId, review, testOut, onRetry, log = [] }: { r: QuizFinishT; lessonId: string | null; review?: boolean; testOut?: boolean; onRetry: () => void; log?: AnswerLog }) {
   const t = useTranslations('quiz')
   const [showAnswers, setShowAnswers] = useState(false)
   const misses = log.filter(x => !x.reveal.correct).length
@@ -266,7 +267,8 @@ export function QuizResult({ r, lessonId, review, onRetry, log = [] }: { r: Quiz
       <div className="animate-pop">
         <Lumi mood={r.companion?.mood ?? (perfect ? 'CELEBRATE' : passed ? 'HAPPY' : 'CALM')} size={84} />
       </div>
-      <h1 className="t-large">{review ? t('reviewDone') : perfect ? t('perfect') : passed ? t('lessonDone') : t('almost')}</h1>
+      <h1 className="t-large">{testOut ? (passed ? t('testOutPassed') : t('testOutFailed')) : review ? t('reviewDone') : perfect ? t('perfect') : passed ? t('lessonDone') : t('almost')}</h1>
+      {testOut && <p className="t-body m-0 max-w-[340px]">{passed ? t('testOutPassedBody') : t('testOutFailedBody')}</p>}
       {!review && (
         <div aria-label={t('starsLabel', { n: r.stars })}>
           <Stars n={r.stars} size={30} />
@@ -328,6 +330,13 @@ export function QuizResult({ r, lessonId, review, onRetry, log = [] }: { r: Quiz
           </span>
         </div>
       ))}
+      {/* Al terminar «Invierte desde hoy» (el pico de motivación): el siguiente paso, con la oferta de Max si no la tiene */}
+      {lessonId === 's0boss' && passed && (
+        <div className="flex w-full flex-col gap-2 text-left">
+          <b className="t-head">{t('s0Done')}</b>
+          <MaxCard />
+        </div>
+      )}
       {log.length > 0 && (
         <button className="btn btn-secondary" onClick={() => setShowAnswers(v => !v)} aria-expanded={showAnswers}>
           {showAnswers ? t('hideAnswers') : misses ? t('seeAnswersMisses', { n: misses }) : t('seeAnswers')}
@@ -436,12 +445,12 @@ function QuizInner({ id }: { id: string }) {
   if (start.isError) return <ErrorState onRetry={() => start.refetch()} message={start.error.message} />
   if (!start.data) return <PageSkeleton />
   if (out) return <NoLives onClose={reset} />
-  if (finish.data) return <QuizResult r={finish.data} lessonId={start.data.lessonId} review={id === 'review'} onRetry={reset} log={log} />
+  if (finish.data) return <QuizResult r={finish.data} lessonId={start.data.lessonId} review={id === 'review'} testOut={id.startsWith('testout-')} onRetry={reset} log={log} />
 
   const qs = start.data.questions
   const q = qs[i]
   const livesNow = lives ?? start.data.lives.current
-  const lessonMode = id !== 'review'
+  const lessonMode = id !== 'review' && !id.startsWith('testout-')
   // Tocar solo elige (se puede cambiar); responder es siempre con «Comprobar»
   const pick = (v: AnswerValue) => {
     if (reveal || answer.isPending) return
@@ -469,7 +478,7 @@ function QuizInner({ id }: { id: string }) {
       </div>
       <div className="pad flex-1">
         <span className="t-foot flex items-center justify-between gap-2">
-          {id === 'review' ? t('reviewHint') : hint(q)}
+          {id === 'review' ? t('reviewHint') : q.meta?.review ? <b style={{ color: 'var(--brand-ink)' }}>{t('mixedReview')}</b> : hint(q)}
           {limit && !reveal && (
             <b className="chip tabular-nums" style={{ background: (left ?? limit) <= 3 ? 'var(--down)' : 'var(--fill)', color: (left ?? limit) <= 3 ? '#fff' : undefined }} aria-live="polite">
               ⏱ {left ?? limit} s

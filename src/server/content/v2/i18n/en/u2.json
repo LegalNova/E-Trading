@@ -1,7 +1,7 @@
 {
  "unit": {
   "title": "Budgeting and saving",
-  "description": "Knowing where your money goes, splitting your pay and building your safety cushion",
+  "description": "Know where your money goes, build your emergency fund and free up money to invest every month",
   "section": "Your money in order"
  },
  "lessons": {
@@ -53,10 +53,10 @@
      ]
     },
     {
-     "title": "The sum that matters",
-     "body": "Income − spending = what you have left. If you earn €1,400 and spend €1,250, you can save €150 a month: 10.7 %.",
+     "title": "What you have left is what you can invest",
+     "body": "Income − spending = what you have left each month. That figure fills your emergency fund first and then your **regular contributions**: even if it's €50 a month, compound interest starts working.\n\nIf nothing is left, your budget tells you where to find it: almost always, in your variable spending.",
      "key": "If you don't know where your money goes, you can't decide where it goes.",
-     "tip": "Check your budget once a month: ten minutes is enough."
+     "tip": "Try it: buy an ETF in the simulator with what you have left each month."
     }
    ]
   },
@@ -66,7 +66,7 @@
     {
      "texts": [
       "Split Laura's pay",
-      "The **50/30/20** rule splits your **take-home** pay: 50 % for needs, 30 % for wants and 20 % for saving or paying off debt. This is how Laura's spending looks right now:",
+      "Laura takes home **€1,400** and wants to start investing. The **50/30/20** rule says: 50 % for needs, 30 % for wants and 20 % for saving. This is what her spending looks like now:",
       "Needs",
       "Wants",
       "Savings",
@@ -83,7 +83,7 @@
       "About €280, 20 %",
       "Needs, €800; wants, €590: she's left with **€10**. It's not that she earns too little: it all goes on day-to-day stuff.",
       "Adjust the spending so Laura saves at least 20 %.",
-      "With savings **set aside** first, the rest falls into place. If housing eats up more than 50 %, adjust (60/25/15 or whatever you can), but never cut the savings share.",
+      "With saving **set aside first**, the rest sorts itself out. That 20 % is what fills your emergency fund and, after that, your contributions to invest.",
       "Careful! This way she spends more than she earns.",
       "Nearly! One more little push and she hits 20 %.",
       "Wants are already where they should be. Can she save something on groceries or rent?",
@@ -93,7 +93,8 @@
     {
      "title": "When it doesn't add up",
      "body": "The rule was popularised by US senator Elizabeth Warren. In expensive cities, rent alone can take 40 % of your pay. Then you adjust, but **always with a percentage set aside for savings**, even if it starts at 5 %.",
-     "key": "The exact numbers aren't what matters: what matters is that saving has its own fixed share."
+     "key": "The exact numbers aren't what matters: what matters is that saving has its own fixed share.",
+     "tip": "Try it: ask your tutor Lumi how you'd split your salary with 50/30/20."
     }
    ]
   },
@@ -125,7 +126,8 @@
     {
      "title": "Subscriptions",
      "body": "Streaming, music, gym, apps, cloud storage… They charge you automatically, which is why you forget them. Four subscriptions at €12 are €48 a month: **€576 a year**.\n\nCheck your statement and ask yourself about each one: have I used it this month? Lots of free trials turn into paid plans if you don't cancel them.",
-     "key": "Small, repeated costs add up: check your charges once a month."
+     "key": "Small, repeated costs add up: check your charges once a month.",
+     "tip": "Try it: buy an ETF in the simulator with what you cut this month."
     }
    ]
   },
@@ -152,9 +154,27 @@
      ]
     },
     {
+     "texts": [
+      "March 2020",
+      "Leo",
+      "March 2020. Leo has €4,000 in an S&P 500 ETF and no emergency fund.",
+      "The stock market is crashing because of the virus and I've been furloughed.",
+      "I need €1,000 this month and the only place I have it is the ETF…",
+      "What would have saved him?",
+      "Having a separate emergency fund",
+      "That's it: he pays from the fund and the ETF can wait to recover.",
+      "Having sold everything just before the fall",
+      "Nobody knows when a fall is coming. An emergency fund works without guessing.",
+      "Taking out a payday loan so as not to touch the ETF",
+      "He doesn't sell at a loss, but pays sky-high interest. The fund costs nothing.",
+      "Without a fund, you're forced to **sell at the worst moment**. With one, you decide."
+     ]
+    },
+    {
      "title": "Where to keep it",
      "body": "It has to be **available and risk-free**: an interest-paying account, a deposit you can cancel without losing what you put in, or Treasury bills (Letras del Tesoro) for part of it.\n\nDeposits are covered by the **Fondo de Garantía de Depósitos (Spain's deposit guarantee scheme) up to €100,000** per holder per bank. **Not in the stock market:** crises bring layoffs and market falls at the same time.",
-     "key": "A half-built cushion already saves you from plenty of scares: start with one month of expenses."
+     "key": "A half-built cushion already saves you from plenty of scares: start with one month of expenses.",
+     "tip": "Try it: set a price alert 20 % below your ETF's price."
     }
    ]
   },
@@ -192,9 +212,9 @@
     },
     {
      "title": "Automate it",
-     "body": "1. Open a separate account for your savings.\n2. Set up a **standing order** for the day after payday.\n3. Start with a percentage that doesn't hurt (5-10 %) and raise it with every pay rise.",
+     "body": "1. Open a separate account for your savings.\n2. Set up a **standing order** for the day after payday.\n3. Once your emergency fund is full, turn that transfer into a **regular contribution** to your ETF.\n4. Start with a percentage that doesn't hurt (5-10 %) and raise it with every pay rise.",
      "key": "Save first; then spend what's left.",
-     "tip": "What you don't see in your spending account, you don't miss."
+     "tip": "Try it: pick in Market the ETF your transfer will go to and add it to Favourites."
     }
    ]
   },
@@ -229,18 +249,6 @@
    ],
    "explanation": "Memory plays tricks: nearly all of us think we spend less than we do. Your bank statement is the real picture."
   },
-  "u2l1-4": {
-   "prompt": "Pablo earns €1,300 a month. His fixed costs add up to €700 and his variable costs to €450. How much does he have left?",
-   "options": [],
-   "explanation": "1,300 − 700 − 450 = €150. That's how much he can save each month.",
-   "unit": "€"
-  },
-  "u2l1-5": {
-   "prompt": "Marta earns €1,600 a month and saves €240. What percentage of her income does she save?",
-   "options": [],
-   "explanation": "240 ÷ 1,600 = 0.15 15 %.",
-   "unit": "%"
-  },
   "u2l1-6": {
    "prompt": "Ana earns €1,200 a month and her fixed costs are already €660 (55 %). Split 100 % of her pay: cover the fixed costs, keep at least 10 % for savings and don't go over 35 % on variable costs.",
    "options": [
@@ -269,17 +277,37 @@
    ],
    "explanation": "Income is everything that comes in; the rent you pay is a fixed cost."
   },
-  "u2l2-1": {
-   "prompt": "Your take-home pay is €1,600. Under the 50/30/20 rule, how much goes to savings?",
-   "options": [],
-   "explanation": "20 % of 1,600 = €320.",
-   "unit": "€"
+  "u2l1-11": {
+   "prompt": "Laura finds she spends €160 a month on takeaway food and cuts it in half. She doesn't have an emergency fund yet. What does she do with the €80 she frees up?",
+   "options": [
+    "She leaves it in her current account, with no plan",
+    "She puts it aside every month: first for the emergency fund and then to invest",
+    "She spends it on clothes: she's already cut back, after all"
+   ],
+   "explanation": "A cut only works if that money has somewhere to go: first the emergency fund, then investing. Leaving it in the account seems just as good, but without a plan it ends up spent.",
+   "feedback": [
+    "Money with nowhere to go ends up spent without you noticing.",
+    "Once the fund is full, that €80 becomes her monthly contribution to an ETF.",
+    "The cut vanishes and she's back at zero by the end of the month."
+   ]
   },
-  "u2l2-2": {
-   "prompt": "With take-home pay of €2,000, how much would go to wants?",
-   "options": [],
-   "explanation": "30 % of 2,000 = €600.",
-   "unit": "€"
+  "u2l1-12": {
+   "prompt": "What do you reply to Lumi?",
+   "options": [
+    "Invest everything you have in your account",
+    "Wait until you earn more to start",
+    "Look at last month's transactions and work out what you have left"
+   ],
+   "explanation": "What you can invest comes from your real budget, not a guess. Investing everything is tempting, but without an emergency fund any scare forces you to sell.",
+   "feedback": [
+    "Without an emergency fund, the first surprise forces you to sell, maybe at a loss.",
+    "With a bigger salary, spending usually goes up too: starting early and small counts for more.",
+    "That's it! You'll know how much you can put in each month without overdoing it."
+   ],
+   "lines": [
+    "I want to start investing, but I don't know how much I can afford.",
+    "Where do I start?"
+   ]
   },
   "u2l2-4": {
    "prompt": "Split a €1,500 salary with the 50/30/20 rule: at most 50 % on needs and 30 % on wants, and at least 20 % saved.",
@@ -333,11 +361,29 @@
     "That way the 30 % turns into debt with interest: the hole grows every month."
    ]
   },
-  "u2l3-1": {
-   "prompt": "You buy a €1.50 coffee every working day (20 a month). How much do you spend in a year?",
-   "options": [],
-   "explanation": "1.50 × 20 × 12 = €360.",
-   "unit": "€"
+  "u2l2-11": {
+   "prompt": "Your emergency fund is full and you have no expensive debt. What do you do with your 20 % each month?",
+   "options": [
+    "Keep growing the emergency fund with no limit",
+    "Buy each month the share that rose most the week before",
+    "An automatic contribution to a global index ETF"
+   ],
+   "explanation": "Once the fund is full, the 20 % becomes your contribution to invest for the long term. Buying whatever has risen most is tempting, but that's letting FOMO drive.",
+   "feedback": [
+    "Safe, but money you won't need for years loses purchasing power.",
+    "That's chasing trends: you buy expensive what has already gone up.",
+    "Your savings start working every month without you having to decide anything."
+   ]
+  },
+  "u2l2-12": {
+   "prompt": "What goes in the rule's 20 % for saving? Mark all that apply.",
+   "options": [
+    "Paying off an expensive debt early",
+    "Friday night dinner out",
+    "Your monthly contribution to an ETF",
+    "Filling your emergency fund"
+   ],
+   "explanation": "The 20 % is for your future self: emergency fund, getting rid of expensive debt and investing. The dinner is a want and goes in the 30 %, however essential it feels."
   },
   "u2l3-4": {
    "prompt": "Which are typical small leaks? Tick all.",
@@ -348,12 +394,6 @@
     "The takeaway coffee every morning"
    ],
    "explanation": "Rent is a big fixed cost; small leaks are small, frequent and almost invisible."
-  },
-  "u2l3-5": {
-   "prompt": "You pay for three platforms at €11 a month and a €30 gym you never go to. How much do they add up to in a year?",
-   "options": [],
-   "explanation": "(3 × 11 + 30) × 12 = 63 × 12 = €756.",
-   "unit": "€"
   },
   "u2l3-6": {
    "prompt": "Marta checks her statement and finds five subscriptions: she uses two every week and hasn't opened three in months. What does she do?",
@@ -388,21 +428,37 @@
    ],
    "explanation": "That's why it's worth noting the date the trial ends."
   },
-  "u2l3-9": {
-   "prompt": "Four subscriptions at €12 a month add up to ____ € a year.",
+  "u2l3-11": {
+   "prompt": "You cut €60 a month on subscriptions you weren't using. You already have an emergency fund. What do you do so the money doesn't just vanish?",
    "options": [
-    "144",
-    "480",
-    "48",
-    "576"
+    "That same day I set up a €60 contribution to an ETF",
+    "I treat myself to something for €60 to celebrate",
+    "I leave it in my current account, I'll see"
    ],
-   "explanation": "12 × 4 = €48 a month; 48 × 12 = €576 a year."
+   "explanation": "A cut only counts if that money has an automatic destination. Leaving it in the account seems enough, but what isn't set aside gets spent.",
+   "feedback": [
+    "The money changes destination before you miss it, and starts to grow.",
+    "Once is fine, but if it keeps happening, the cut was for nothing.",
+    "With nowhere to go, it drains away on other small spending."
+   ]
   },
-  "u2l4-1": {
-   "prompt": "You spend €1,100 a month. How much should a 6-month cushion hold?",
-   "options": [],
-   "explanation": "1,100 × 6 = €6,600.",
-   "unit": "€"
+  "u2l3-12": {
+   "prompt": "What do you reply to Lumi?",
+   "options": [
+    "Only if you invest it in crypto, which goes up more",
+    "Nothing: €3 isn't real money",
+    "Yes: small and repeated, invested for years, really shows"
+   ],
+   "explanation": "A small expense repeated every day adds up to a lot over a year, and if it's invested, compound interest makes it bigger. Thinking «it's only €3» is tempting, but what weighs is how often.",
+   "feedback": [
+    "What matters is consistency and time, not chasing whatever rises most.",
+    "That's more than €1,000 a year; invested for years, quite a bit more.",
+    "That's it! And you don't have to cut it all: even half shows."
+   ],
+   "lines": [
+    "I spend €3 a day at the vending machine at uni.",
+    "If I invested it, would it change anything?"
+   ]
   },
   "u2l4-2": {
    "prompt": "What is the emergency fund based on?",
@@ -477,6 +533,20 @@
    ],
    "explanation": "3 to 6 months of expenses; more if your income is unstable."
   },
+  "u2l4-11": {
+   "prompt": "Your ETF portfolio falls 25 % and, the same week, you get a €900 repair bill. You have a 3-month emergency fund. What do you do?",
+   "options": [
+    "Sell part of the ETF to pay for it",
+    "Pay the repair from the emergency fund and leave the portfolio alone",
+    "Pay it on the card in instalments"
+   ],
+   "explanation": "The emergency fund exists so you never have to sell your investments in the middle of a fall. Selling a little seems prudent, but it locks in the loss at exactly the worst moment.",
+   "feedback": [
+    "You turn a temporary fall into a real loss with the money right there.",
+    "The fall stays temporary as long as you don't sell, and the fund has done its job.",
+    "You pay interest while sitting on a fund meant for exactly this."
+   ]
+  },
   "u2l5-1": {
    "prompt": "Put in order the month of someone who pays themselves first.",
    "options": [
@@ -486,12 +556,6 @@
     "Gets paid"
    ],
    "explanation": "Savings go out before any spending: that way they don't compete with treats."
-  },
-  "u2l5-3": {
-   "prompt": "You set aside 10 % of a €1,400 salary every month. How much do you save in a year (12 payslips)?",
-   "options": [],
-   "explanation": "€140 × 12 = €1,680.",
-   "unit": "€"
   },
   "u2l5-4": {
    "prompt": "Match each trick with why it works.",
@@ -542,11 +606,19 @@
    ],
    "explanation": "Right after getting paid, before the money gets mixed up with spending."
   },
-  "u2l5-10": {
-   "prompt": "Ana starts by saving 5 % of €1,200 a month and after 6 months raises it to 10 %. How much does she set aside in the first year?",
-   "options": [],
-   "explanation": "€60 × 6 + €120 × 6 = 360 + 720 = €1,080.",
-   "unit": "€"
+  "u2l5-11": {
+   "prompt": "Pablo's emergency fund is now full, and his €150 transfer still goes out every month. What does he do with it now?",
+   "options": [
+    "He points it at a regular contribution to an index ETF",
+    "He stops it and spends the €150",
+    "He keeps growing the emergency fund forever"
+   ],
+   "explanation": "Paying yourself first works to fill the emergency fund and, after that, to invest without thinking about it. Growing the fund forever seems prudent, but that idle money loses against inflation.",
+   "feedback": [
+    "The habit is already built: now his money also works for him.",
+    "He loses the habit that was hardest for him to build.",
+    "A huge emergency fund earns nothing: money he won't need for years loses purchasing power."
+   ]
   }
  }
 }

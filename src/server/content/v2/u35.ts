@@ -36,7 +36,7 @@ export default unit({
         ]),
         say('lumi', 'Y ojo con la falacia del jugador: las sesiones no «se deben» nada.'),
       ]),
-      key('Qué mirar antes de decidir', '• **Tendencia previa:** ¿máximos y mínimos crecientes o decrecientes?\n• **Dónde está el precio:** ¿cerca de máximos, de mínimos o en medio?\n• **Tamaño de las velas:** velas grandes = más volatilidad = más incertidumbre.\n\nNada de esto garantiza el resultado: en dos semanas, una noticia lo cambia todo.', 'A corto plazo el precio tiene mucho de ruido: lo que sí controlas es cuánto arriesgas.', 'Apunta si aciertas en cada gráfico. Con pocos intentos, la suerte manda.'),
+      key('Qué mirar antes de decidir', '• **Tendencia previa:** ¿máximos y mínimos crecientes o decrecientes?\n• **Dónde está el precio:** ¿cerca de máximos, de mínimos o en medio?\n• **Tamaño de las velas:** velas grandes = más volatilidad = más incertidumbre.\n\nNada de esto garantiza el resultado: en dos semanas, una noticia lo cambia todo. Apunta si aciertas en cada gráfico. Con pocos intentos, la suerte manda.', 'A corto plazo el precio tiene mucho de ruido: lo que sí controlas es cuánto arriesgas.', 'Pruébalo: pon una acción en Favoritos, predice si sube y compruébalo en dos semanas.'),
     ], [
       upDown('Mira las 30 velas. ¿El precio acabó más arriba o más abajo 10 sesiones después?', 'ud-1', 'En plazos de dos semanas, el resultado depende mucho de noticias que nadie ve venir. Por eso nadie serio opera sin stop: no porque espere fallar, sino porque sabe que puede fallar.'),
       upDown('Otra acción, otro momento. ¿Más arriba o más abajo dentro de 10 sesiones?', 'ud-5', 'Fíjate en el tamaño de las velas: cuanto más grandes, más incierto es el siguiente movimiento, en cualquier dirección. La volatilidad dice cuánto se mueve, no hacia dónde.'),
@@ -81,7 +81,7 @@ export default unit({
           { say: 'Mueve la distancia del stop', mood: 'THINKING' },
         ],
       }),
-      key('Lo que cuesta recuperarse', '• Si cae un **50 %**, tiene que subir un **+100 %** para volver al punto de partida.\n• Si cae un **80 %**, un **+400 %**: multiplicar por 5.\n\nEl bitcoin ha caído más de un 70 % desde máximos varias veces.', 'Las caídas grandes son muy difíciles de recuperar: en cripto, solo dinero que podrías perder entero.'),
+      key('Lo que cuesta recuperarse', '• Si cae un **50 %**, tiene que subir un **+100 %** para volver al punto de partida.\n• Si cae un **80 %**, un **+400 %**: multiplicar por 5.\n\nEl bitcoin ha caído más de un 70 % desde máximos varias veces.', 'Las caídas grandes son muy difíciles de recuperar: en cripto, solo dinero que podrías perder entero.', 'Pruébalo: en Mercado, abre el bitcoin y mira cuánto se movió en la última semana.'),
     ], [
       upDown('Criptomoneda, velas diarias. ¿Más arriba o más abajo 10 días después?', 'ud-43', 'En cripto, 10 días son 10 sesiones completas sin pausa, fines de semana incluidos: hay más tiempo para que pase de todo. Moverse un 10 % en una semana no es raro.', 'los 10 días siguientes'),
       num('Una cripto cae un 75 % desde su máximo. ¿Cuánto tiene que subir después para volver a él?', 300, '%', 'De 100 pasa a 25. Para volver de 25 a 100 hay que multiplicar por 4: +300 %. Las caídas grandes son muy difíciles de recuperar.'),
@@ -94,12 +94,12 @@ export default unit({
       tf('Si tu cartera tiene dos criptomonedas distintas, ya está bien diversificada.', false, 'Las grandes criptos suelen moverse juntas. Diversificar es combinar activos distintos (acciones, bonos, liquidez…), no dos fichas del mismo juego.'),
       upDown('Vuelve la primera cripto, en otro momento. ¿Más arriba o más abajo 10 días después?', 'ud-44', 'En cripto el sábado por la noche también se puede desplomar o disparar el precio. Por eso muchos dejan órdenes stop puestas en lugar de vigilar la pantalla a todas horas.', 'los 10 días siguientes'),
       timed(upDown('¡Rápido! Velas diarias de una cripto. ¿Más arriba o más abajo 10 días después?', 'ud-72', 'Decidir por corazonada es lo habitual en cripto. En un activo tan volátil, una corazonada equivocada sin stop puede costar muy cara.', 'los 10 días siguientes'), 20),
-    ], { minutes: 6, retire: [0, 4, 6, 7, 10] }),
+    ], { minutes: 6, retire: [0, 1, 4, 6, 7, 10] }),
 
     lesson('u35l3', '¿Sube o baja? Divisas y oro', [
       play({
         title: 'Oro en dólares, ganancias en euros',
-        intro: 'El oro **cotiza en dólares**. Si compras desde España, cuentan dos cosas: lo que hace el oro y lo que hace el dólar frente al euro.',
+        intro: 'Compras **1.000 €** de oro desde España y el oro sube un 10 %. ¿Has ganado un 10 %? El oro **cotiza en dólares**: también cuenta lo que hace el dólar frente al euro.',
         widget: { kind: 'fx', amount: 1000, asset: 10, fx: 0, maxAsset: 30, maxFx: 20, currency: 'dólar' },
         predict: {
           prompt: 'El oro sube un 10 % en dólares, pero el dólar cae un 10 % frente al euro. ¿Qué ganas en euros?',
@@ -125,7 +125,7 @@ export default unit({
           { say: 'Fíjate en la escala del eje antes de decidir', mood: 'HAPPY' },
         ],
       }),
-      key('El oro, refugio con matices', 'Un par como **EUR/USD** dice cuántos dólares vale un euro: si pasa de 1,10 a 1,12, el euro se ha apreciado frente al dólar.\n\nEl oro no paga intereses ni dividendos. Se suele buscar en las crisis y frente a la inflación, pero puede pasar años sin subir: de 1980 a 2000 perdió mucho valor real.', 'Refugio no significa que siempre suba: significa que mucha gente lo busca cuando tiene miedo.', 'En divisas, mira bien la escala del eje: un 1 % ya es mucho.'),
+      key('El oro, refugio con matices', 'Un par como **EUR/USD** dice cuántos dólares vale un euro: si pasa de 1,10 a 1,12, el euro se ha apreciado frente al dólar.\n\nEl oro no paga intereses ni dividendos. Se suele buscar en las crisis y frente a la inflación, pero puede pasar años sin subir: de 1980 a 2000 perdió mucho valor real.\n\nEn divisas, mira bien la escala del eje: un 1 % ya es mucho.', 'Refugio no significa que siempre suba: significa que mucha gente lo busca cuando tiene miedo.', 'Pruébalo: en Mercado, abre el EUR/USD y mira cuánto se ha movido en un mes.'),
     ], [
       single('El EUR/USD pasa de 1,08 a 1,12. ¿Qué ha pasado?', ['El euro se ha apreciado frente al dólar', 'El dólar se ha apreciado frente al euro', 'Los dos han perdido el mismo valor'], 0, 'EUR/USD = dólares que cuesta un euro. Si hacen falta más dólares para comprar un euro, el euro vale más.'),
       upDown('Par de divisas, velas diarias. ¿Más arriba o más abajo 10 sesiones después?', 'ud-46', 'Fíjate en la escala: en divisas, lo que parece un desplome puede ser un 1 %. Por eso en forex se ofrece tanto apalancamiento… y por eso tanta gente pierde con él.'),
@@ -138,7 +138,7 @@ export default unit({
       upDown('Otro metal, velas diarias. ¿Subió o bajó en las 10 sesiones siguientes?', 'ud-92', 'La plata se parece al oro, pero es bastante más volátil porque también tiene mucho uso industrial. Dos activos «parecidos» pueden tener riesgos muy distintos.'),
       upDown('Vuelve el EUR/USD, en otra época. ¿Más arriba o más abajo 10 sesiones después?', 'ud-49', 'Fíjate en las mechas: en divisas, un dato de empleo o de inflación de EE. UU. provoca picos en minutos. Una sola vela no cuenta toda la historia.'),
       timed(single('Rápido: si el USD/JPY sube, ¿qué moneda se ha fortalecido?', ['El dólar', 'El yen', 'El euro'], 0, 'USD/JPY = yenes que cuesta un dólar. Si sube, cada dólar compra más yenes: el dólar se ha fortalecido.'), 12),
-    ], { minutes: 6, retire: [7, 8, 9, 10] }),
+    ], { minutes: 6, retire: [2, 7, 8, 9, 10] }),
 
     lesson('u35l4', 'Encuentra la vela', [
       chart('hammer-1', 'Calienta: toca el martillo (cuerpo pequeño arriba y mecha inferior larga, después de una caída).', '¡Ese es! Los vendedores empujaron el precio abajo y los compradores lo devolvieron arriba.', 'Busca la vela con la mecha de abajo mucho más larga que su cuerpo.'),
@@ -166,7 +166,7 @@ export default unit({
           { say: 'Clasifica cada patrón', mood: 'HAPPY' },
         ],
       }),
-      key('Chuleta de patrones', '• **Martillo:** mecha inferior larga tras una caída.\n• **Estrella fugaz:** mecha superior larga tras una subida.\n• **Doji:** apertura ≈ cierre.\n• **Envolvente:** un cuerpo se come el anterior, en sentido contrario.\n• **Marubozu:** cuerpo largo sin apenas mechas.\n• **Estrella de la mañana:** roja grande, pequeña y verde fuerte.', 'Un patrón es una pista, no una orden: confírmalo con el contexto.', 'Antes de buscar la vela, mira de dónde viene el precio.'),
+      key('Chuleta de patrones', '• **Martillo:** mecha inferior larga tras una caída.\n• **Estrella fugaz:** mecha superior larga tras una subida.\n• **Doji:** apertura ≈ cierre.\n• **Envolvente:** un cuerpo se come el anterior, en sentido contrario.\n• **Marubozu:** cuerpo largo sin apenas mechas.\n• **Estrella de la mañana:** roja grande, pequeña y verde fuerte.\n\nAntes de buscar la vela, mira de dónde viene el precio.', 'Un patrón es una pista, no una orden: confírmalo con el contexto.', 'Pruébalo: abre una acción en velas diarias y busca un martillo tras una caída.'),
     ], [
       candle('Toca el martillo.', 'hammer-2', 'Cuerpo pequeño en la parte alta y una mecha inferior de al menos el doble del cuerpo, tras varias velas a la baja.'),
       candle('Toca la estrella fugaz.', 'shooting-star-1', 'Mecha superior larga y cuerpo pequeño abajo, después de subir: los compradores lo intentaron y los vendedores devolvieron el precio abajo.'),
@@ -207,7 +207,7 @@ export default unit({
         say('lumi', 'Una **falsa rotura**. Por eso los soportes son **zonas**, no líneas.'),
         say('lumi', 'Y si se rompen de verdad, cambian de papel: la resistencia rota pasa a soporte.'),
       ]),
-      key('Cómo encontrarlos', 'Busca los mínimos y máximos que más destacan y mira si el precio ha vuelto a ellos. Cuantas más veces se respeta un nivel, más gente lo vigila. Pero muchas roturas son **falsas**: el precio cruza unos días y vuelve dentro.', 'Un soporte es donde aparecieron compradores antes; nada asegura que vuelvan.', 'Dibuja zonas anchas, no líneas finas: el mercado no usa regla.'),
+      key('Cómo encontrarlos', 'Busca los mínimos y máximos que más destacan y mira si el precio ha vuelto a ellos. Cuantas más veces se respeta un nivel, más gente lo vigila. Pero muchas roturas son **falsas**: el precio cruza unos días y vuelve dentro. Dibuja zonas anchas, no líneas finas: el mercado no usa regla.', 'Un soporte es donde aparecieron compradores antes; nada asegura que vuelvan.', 'Pruébalo: marca un soporte en el gráfico de una acción y pon una alerta ahí.'),
     ], [
       point('Rango lateral. Toca el punto más bajo: el suelo que vigilan los compradores.', 'trend-flat-1', 'min', 'Unos 222 $: el mínimo del rango marca el soporte. Si el precio vuelve ahí, mucha gente mirará si aguanta.'),
       point('Ahora el techo: toca el punto más alto de este rango.', 'trend-flat-2', 'max', 'Unos 433 $: ahí se frenaron las subidas. Es la resistencia del rango.'),
@@ -246,7 +246,7 @@ export default unit({
         ]),
         say('lumi', 'El stop se decide en frío, antes de entrar. Nunca lo muevas en contra.'),
       ]),
-      key('Primero el stop, después el tamaño', 'Tamaño = (capital × % de riesgo) ÷ (entrada − stop).\n\nCon 10.000 € y un 1 % de riesgo arriesgas 100 €. Entrada a 50 € y stop a 47 €: 100 ÷ 3 = **33 acciones** (unos 1.650 €).', 'No decides cuánto compras: lo decide la distancia a tu stop.', 'Un stop muy pegado salta con el ruido normal; uno muy lejos te obliga a comprar muy poco.'),
+      key('Primero el stop, después el tamaño', 'Tamaño = (capital × % de riesgo) ÷ (entrada − stop).\n\nCon 10.000 € y un 1 % de riesgo arriesgas 100 €. Entrada a 50 € y stop a 47 €: 100 ÷ 3 = **33 acciones** (unos 1.650 €).\n\nUn stop muy pegado salta con el ruido normal; uno muy lejos te obliga a comprar muy poco.', 'No decides cuánto compras: lo decide la distancia a tu stop.', 'Pruébalo: en tu próxima compra del simulador, pon el stop bajo el último mínimo.'),
     ], [
       trend('Antes de comprar, mira la tendencia. ¿Cuál es?', 'trend-up-3', 'Alcista', 'Máximos y mínimos crecientes: de unos 168 $ a máximos de unos 236 $. Comprar a favor de la tendencia y poner el stop bajo el último mínimo es el planteamiento clásico.'),
       level('Has comprado al último precio. Coloca tu stop loss donde tu idea deja de ser válida.', 'lvl-1', 'STOP', 'Justo por debajo del último mínimo relevante (unos 408 $), con un pequeño margen. Si el precio pierde ese suelo, la tendencia que buscabas ya no está.'),
@@ -259,7 +259,7 @@ export default unit({
       level('Coloca el objetivo de esta operación.', 'lvl-11', 'TAKE', 'Cerca del máximo anterior (unos 256 $). Si el precio lo supera con fuerza, siempre puedes subir el stop y dejar correr la ganancia.'),
       scenario('Laura compra con el stop bajo el último mínimo. El precio baja y se acerca peligrosamente al stop. ¿Qué hace?', [['Baja el stop para darle «más aire»', 'Así una pérdida pequeña y prevista se convierte en una grande. Es el efecto disposición: aguantar lo que pierde.'], ['Lo deja donde estaba: era el punto en el que su idea fallaba', 'Bien: si salta, pierde lo previsto y pasa a la siguiente con la cuenta intacta.'], ['Compra más para bajar el precio medio', 'Dobla la apuesta en una idea que el mercado está desmintiendo. Su riesgo ya no es el 1 %.']], 1, 'El stop se decide con la cabeza fría, antes de entrar. Moverlo en contra por miedo a perder es uno de los errores más caros.'),
       simTrade('Otra operación: 5.000 € de capital y un riesgo máximo del 1 %.', 'lvl-14', 'Con 5.000 € y un 1 %, como mucho puedes perder 50 €. El importe invertido puede ser bastante mayor que el riesgo: lo que manda es la distancia al stop.', { cash: 5000, maxRiskPct: 1 }),
-    ], { minutes: 6, retire: [3, 7, 9, 10] }),
+    ], { minutes: 6, retire: [3, 5, 7, 9, 10] }),
 
     lesson('u35l7', 'Noticias y reacciones', [
       story('Beneficios récord', [{ id: 'marta', name: 'Marta' }], [
@@ -294,7 +294,7 @@ export default unit({
           { say: 'Clasifica cada titular', mood: 'HAPPY' },
         ],
       }),
-      key('Qué hacer ante un titular', '• Pregúntate qué **esperaba** el mercado, no si la noticia es buena o mala.\n• No operes en los primeros minutos: el precio salta y el *spread* se abre.\n• Si ya tienes una posición, que decida tu stop, no el pánico.', 'En bolsa, una buena noticia que ya se esperaba no es noticia.', 'Antes de reaccionar, pregúntate: ¿esto no lo sabía ya todo el mundo?'),
+      key('Qué hacer ante un titular', '• Pregúntate qué **esperaba** el mercado, no si la noticia es buena o mala.\n• No operes en los primeros minutos: el precio salta y el *spread* se abre.\n• Si ya tienes una posición, que decida tu stop, no el pánico.', 'En bolsa, una buena noticia que ya se esperaba no es noticia.', 'Pruébalo: ante un titular, abre el activo en Mercado y mira si ya se movió.'),
     ], [
       single('Una empresa presenta beneficios récord y su acción cae un 8 %. ¿Cuál es la explicación más probable?', ['El mercado esperaba aún más', 'Los beneficios récord siempre hacen caer la acción', 'Alguien se ha equivocado al publicar el precio'], 0, 'El precio ya incorpora lo esperado. Si el consenso esperaba más, un récord puede ser una decepción.'),
       upDown('Marzo de 2020: el covid ha confinado medio mundo y el S&P 500 ha caído más de un 30 % en un mes. Los titulares hablan de la peor crisis en décadas. ¿Qué hizo el índice en los meses siguientes?', 'hist-covid', 'La bolsa se mueve por lo que espera del futuro, no por los titulares de hoy. Ante noticias terribles, la pregunta clave es si lo que viene será peor o mejor de lo que el precio ya refleja.', 'los meses siguientes'),
@@ -340,7 +340,7 @@ export default unit({
           { say: 'Mueve la distancia del stop', mood: 'THINKING' },
         ],
       }),
-      key('Cinco decisiones antes de entrar', '1. **Tesis:** por qué crees que puede subir.\n2. **Stop:** dónde te equivocas.\n3. **Objetivo:** dónde recoges.\n4. **Tamaño:** cuánto compras para arriesgar solo un 1 %.\n5. **Registro:** lo apuntas en tu diario.\n\nMedir en **R** permite comparar operaciones de distinto tamaño y saber si tu sistema gana a la larga.', 'Una buena operación es la que sigue el plan, aunque pierda.', 'Revisa el diario cada 20 operaciones: te enseña lo que tu memoria prefiere olvidar.'),
+      key('Cinco decisiones antes de entrar', '1. **Tesis:** por qué crees que puede subir.\n2. **Stop:** dónde te equivocas.\n3. **Objetivo:** dónde recoges.\n4. **Tamaño:** cuánto compras para arriesgar solo un 1 %.\n5. **Registro:** lo apuntas en tu diario.\n\nMedir en **R** permite comparar operaciones de distinto tamaño y saber si tu sistema gana a la larga. Revisa el diario cada 20 operaciones: te enseña lo que tu memoria prefiere olvidar.', 'Una buena operación es la que sigue el plan, aunque pierda.', 'Pruébalo: haz una compra en el simulador con stop, objetivo y un 1 % de riesgo.'),
     ], [
       order('Ordena los pasos de una operación bien hecha.', ['Escribir la tesis', 'Decidir dónde va el stop', 'Fijar el objetivo', 'Calcular el tamaño de la posición', 'Enviar la orden', 'Apuntarla en el diario'], 'Primero la idea y dónde te equivocas; después el objetivo y el tamaño, que depende del stop; al final la orden y el registro.'),
       level('Paso 2: coloca el stop de esta compra.', 'lvl-5', 'STOP', 'Por debajo del último mínimo (unos 10.530 puntos), con un margen para el ruido. Ahí es donde tu idea deja de valer.'),
@@ -353,7 +353,7 @@ export default unit({
       simTrade('Segunda operación: 3.000 € de capital y un riesgo máximo del 1 %.', 'lvl-17', 'Con 3.000 € y un 1 %, el riesgo máximo son 30 €. Con poco capital la regla es la misma: el tamaño lo marca la distancia al stop.', { cash: 3000, maxRiskPct: 1 }),
       timed(fill('Si arriesgas 100 € y salta tu stop, has perdido ____.', '1R', ['2R', '0,5R', '10R'], 'Por definición, lo que arriesgas al entrar es 1R.'), 12),
       tf('Una operación que gana dinero siempre fue una buena operación.', false, 'Si ganaste sin stop o arriesgando un 10 %, tuviste suerte con un mal plan. Juzga el proceso, no solo el resultado.'),
-    ], { minutes: 6, retire: [3, 9, 10] }),
+    ], { minutes: 6, retire: [3, 5, 9, 10] }),
 
     lesson('u35l9', 'El reto de la semana', [
       play({
@@ -389,7 +389,7 @@ export default unit({
         ]),
         say('lumi', 'La bolsa cayó un 3 %; tu cartera, solo un 1,8 %. Eso es diversificar.'),
       ]),
-      key('Tu semana', 'No gana quien más sube, sino quien **cumple las reglas** y toma decisiones que podría explicar. El lunes repartes, durante la semana llegan noticias y oportunidades, y el viernes revisas.\n\nEs una simulación educativa con **10.000 € virtuales**, no una recomendación.', 'Las reglas se escriben el lunes con la cabeza fría; el resto de la semana solo se cumplen.', 'Si una decisión no la podrías explicar en voz alta, no la tomes.'),
+      key('Tu semana', 'No gana quien más sube, sino quien **cumple las reglas** y toma decisiones que podría explicar. El lunes repartes, durante la semana llegan noticias y oportunidades, y el viernes revisas.\n\nEs una simulación educativa con **10.000 € virtuales**, no una recomendación.\n\nSi una decisión no la podrías explicar en voz alta, no la tomes.', 'Las reglas se escriben el lunes con la cabeza fría; el resto de la semana solo se cumplen.', 'Pruébalo: reparte tu Cartera virtual con las reglas del reto y revísala el viernes.'),
     ], [
       portfolio('Lunes: reparte tus 10.000 € virtuales cumpliendo las reglas del reto.', [['Fondo indexado MSCI World', 'ACCIONES'], ['ETF del IBEX 35', 'ACCIONES'], ['Fondo de bonos europeos', 'BONOS'], ['Oro (ETC)', 'ORO'], ['Bitcoin', 'CRIPTO']], { maxWeight: 40, minAssets: 4, maxKind: { CRIPTO: 10 } }, 'Con un máximo del 40 % por activo y al menos 4 activos, ninguna sorpresa puede hundir tu semana. Si incluyes cripto, que sea poco: puede perderse la totalidad de lo invertido.'),
       scenario('Martes: la bolsa cae un 3 % por un dato de inflación peor de lo esperado y tu cartera pierde 180 €. ¿Qué haces?', [['Vendo todas las acciones para que no caiga más', 'Conviertes una caída normal en una pérdida definitiva, y te toca adivinar cuándo volver a entrar.'], ['No toco nada: la cartera está repartida y la caída entra en lo normal', 'Bien: un −1,8 % en un día malo es justo para lo que está pensada una cartera diversificada.'], ['Paso todo a bitcoin para recuperarlo rápido', 'Rompes la regla del 10 % y concentras todo en el activo más volátil. Eso es operar por venganza.']], 1, 'Las caídas de varios puntos son parte del viaje. Lo que convierte una caída en pérdida es vender por pánico.'),
@@ -401,6 +401,6 @@ export default unit({
       timed(tf('Si tu cartera cumple todas las reglas, es imposible que pierda dinero en una semana.', false, 'Las reglas limitan cuánto puedes perder, no evitan las pérdidas. En una semana mala, una cartera diversificada también baja.'), 10),
       portfolio('Viernes: prepara la cartera de la semana que viene con reglas más prudentes: máximo un 35 % por activo, al menos 5 activos, como mucho un 5 % en cripto y al menos un 20 % en bonos.', [['Fondo indexado MSCI World', 'ACCIONES'], ['Fondo indexado de EE. UU.', 'ACCIONES'], ['Fondo de bonos europeos', 'BONOS'], ['Letras del Tesoro', 'BONOS'], ['Oro (ETC)', 'ORO'], ['Ethereum', 'CRIPTO']], { maxWeight: 35, minAssets: 5, maxKind: { CRIPTO: 5 }, minKind: { BONOS: 20 } }, 'Más activos, más renta fija y menos cripto: reglas más prudentes reducen cuánto se mueve la cartera. Es un ejercicio de reglas, no una recomendación de reparto.'),
       chat(['Viernes 🎉 Mi cartera ha ganado un 1 % esta semana.', 'La de mi primo ha ganado un 20 % con una sola cripto. ¿He hecho el tonto?'], '¿Qué le contestas a Lumi?', [['Sí: la próxima vez, todo a una cripto', 'Una semana de +20 % puede ser un −40 % la siguiente. Copiar al que más gana es efecto rebaño.'], ['No: tu primo ha asumido un riesgo enorme y una semana no dice quién lo ha hecho mejor', '¡Eso! Lo que cuenta es el resultado según el riesgo y durante años, no una captura de pantalla. 😌'], ['Depende de cuántos «me gusta» tenga su post', 'Los «me gusta» no pagan pérdidas. 😅 Compara riesgos, no capturas.']], 1, 'Una semana es ruido. Se compara el resultado teniendo en cuenta el riesgo asumido, y en plazos largos.'),
-    ], { minutes: 6, retire: [1, 7, 9] }),
+    ], { minutes: 6, retire: [1, 3, 5, 7, 9] }),
   ],
 })

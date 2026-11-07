@@ -123,6 +123,8 @@ export const PathUnit = z.object({
   unlocksFeature: Feature.optional(),
   /** Sección (curso v2): abierta o no y, si no, qué retos finales faltan */
   section: z.object({ id: z.string(), title: z.string(), open: z.boolean(), needs: z.array(z.string()) }).optional(),
+  /** Se puede superar con la prueba de unidad («¿ya lo sabes?») */
+  testOut: z.boolean().optional(),
   lessons: z.array(PathLesson),
 })
 export const CoursePath = z.object({ courseId: z.string(), title: z.string(), currentUnitId: z.string(), units: z.array(PathUnit), minutesTotal: z.number(), dailyGoalMinutes: z.number() })
@@ -189,6 +191,8 @@ export const Question = z.object({
       timeLimit: z.number().optional(),
       /** Preguntas de cifra: opciones para tocar (una es la buena), nunca hay que escribir ni hacer cuentas a mano */
       choices: z.array(z.number()).optional(),
+      /** Pregunta de una clase anterior que tocaba repasar (se mezcla en el quiz de la clase) */
+      review: z.boolean().optional(),
     })
     .optional(),
 })

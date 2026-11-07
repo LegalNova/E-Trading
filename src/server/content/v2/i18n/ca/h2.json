@@ -13,7 +13,7 @@
       "El fons que va guanyar un 8 %",
       "Marta",
       "El meu fons ha guanyat un 8 % aquest any! És boníssim, oi?",
-      "Aquell any, l'índex del seu mercat va pujar un 14 %.",
+      "Aquell any, l'índex del seu mercat, la mitjana de les seves grans empreses, va pujar un 14 %.",
       "Què li dius a la Marta?",
       "Enhorabona: un 8 % és genial",
       "Sona bé… però copiar l'índex li hauria donat un 14 %.",
@@ -33,11 +33,11 @@
       "Vara de mesurar",
       "Base de productes",
       "«La borsa espanyola puja avui un 1 %»",
-      "És l'IBEX 35: diu com va el mercat.",
+      "És l'IBEX 35, l'índex de les 35 grans de la borsa espanyola.",
       "Un fons compara el seu resultat amb l'IBEX 35",
       "L'índex és la referència per saber si el fons ho ha fet bé.",
       "Un ETF que copia l'S&P 500",
-      "Els ETF i els fons indexats el repliquen amb costos baixos.",
+      "L'S&P 500 reuneix 500 grans empreses dels EUA; els ETF el copien amb costos baixos.",
       "Saber com va avui el sector bancari",
       "Hi ha índexs de països i de sectors: termòmetres més concrets.",
       "Comprovar si la teva cartera ho ha fet bé",
@@ -53,9 +53,9 @@
     },
     {
      "title": "Punts, no euros",
-     "body": "Un índex es mesura en punts, no en euros. El que importa és la **variació**: si passa de 14.000 a 14.700 punts, ha pujat un 5 %.",
+     "body": "Un índex es mesura en punts, no en euros. El que importa és la **variació**: si passa de 14.000 a 14.700 punts, ha pujat un 5 %.\n\nComprar-lo sencer, amb un fons o un ETF, és apostar per tota una economia, no per una empresa.",
      "key": "Un índex és una cistella de referència, no una cosa que es compra tal qual.",
-     "tip": "Comprar l'índex sencer és apostar per tota una economia, no per una empresa."
+     "tip": "Prova-ho: a Mercat, busca l'IBEX 35 i mira si avui puja o baixa."
     }
    ]
   },
@@ -64,18 +64,36 @@
    "steps": [
     {
      "texts": [
+      "Les 500 de cop",
+      "Nora",
+      "Vull invertir 100 € a l'S&P 500, les 500 grans dels EUA.",
+      "He de comprar 500 accions, una de cada empresa?",
+      "Què li dius?",
+      "Sí: una de cada, i molta paciència",
+      "Necessitaries molts diners i 500 compres. Hi ha una drecera.",
+      "Compra un ETF de l'S&P 500: una sola compra i tens les 500",
+      "Això! Un **ETF** és un fons que copia un índex i cotitza com una acció.",
+      "Compra només la més gran: és gairebé el mateix",
+      "No: això és apostar per una empresa, no per les 500.",
+      "Si es compra com una acció, és tan arriscat com una sola empresa?",
+      "No: a dins hi ha centenars d'empreses. Però si cau tot el mercat, també cau.",
+      "Un ETF d'índex és comprar el supermercat sencer en lloc d'un sol producte."
+     ]
+    },
+    {
+     "texts": [
       "ETF o fons tradicional?",
-      "Un **ETF** és un fons, gairebé sempre d'un índex, que **cotitza en borsa** com una acció. És cosa de l'ETF o del fons de tota la vida?",
+      "L'**ETF** cotitza en borsa com una acció; el fons de tota la vida, no. De quin és cada tret?",
       "ETF",
       "Fons tradicional",
       "El compres a les 11:37 al preu que veus a la pantalla",
       "L'ETF cotitza durant tota la sessió: el seu preu canvia a cada moment.",
       "El canvies per un altre sense pagar impostos",
-      "El traspàs sense impostos és el gran avantatge del fons a Espanya.",
+      "És el traspàs: el gran avantatge del fons tradicional a Espanya.",
       "Pagues comissió del bròquer i spread",
-      "Es compra en borsa, amb els seus costos de compravenda.",
+      "Es compra en borsa: pagues el bròquer (l'intermediari) i l'spread, la diferència entre el preu de compra i el de venda.",
       "El seu preu es calcula un cop al dia",
-      "El valor liquidatiu del fons es fixa un cop cada dia.",
+      "El preu del fons, el seu valor liquidatiu, es fixa un cop cada dia.",
       "Cada venda amb guany tributa, encara que reinverteixis",
       "A Espanya, els ETF no tenen el règim de traspàs.",
       "El contractes a la gestora, al banc o en una plataforma",
@@ -87,26 +105,10 @@
      ]
     },
     {
-     "texts": [
-      "«Com una acció»",
-      "Nora",
-      "M'han dit que un ETF és «com una acció».",
-      "Aleshores, és tan arriscat com comprar una sola empresa?",
-      "Què li respons?",
-      "Sí, igual d'arriscat",
-      "Es compra com una acció, però a dins porta centenars o milers d'empreses.",
-      "Es compra com una acció, però a dins hi ha una cistella de moltes empreses",
-      "Això! Un del MSCI World porta més de mil empreses de països desenvolupats.",
-      "No té cap risc",
-      "Té el de l'índex: si el mercat cau un 30 %, l'ETF també.",
-      "Un ETF d'índex és comprar el supermercat sencer en lloc d'un sol producte."
-     ]
-    },
-    {
      "title": "ETF UCITS",
-     "body": "Un minorista a la UE compra ETF europeus **UCITS**, amb el seu document **KID**. Molts ETF dels EUA no es poden vendre a minoristes europeus perquè no tenen KID.",
+     "body": "Un petit inversor (un **minorista**) a la UE compra ETF europeus **UCITS**, amb el seu document **KID**, que resumeix riscos i costos. Molts ETF dels EUA no es poden vendre a minoristes europeus perquè no tenen KID.\n\nAmb diners reals, busca «UCITS» al nom i llegeix-ne el KID. Al simulador pots practicar amb ETF dels EUA.",
      "key": "Un ETF és un fons, gairebé sempre indexat, que es compra i es ven en borsa com una acció.",
-     "tip": "Abans de comprar un ETF, busca «UCITS» al seu nom i llegeix-ne el KID."
+     "tip": "Prova-ho: a Mercat, busca l'ETF de l'S&P 500 i compara'l amb l'índex."
     }
    ]
   },
@@ -150,7 +152,7 @@
       "El banc central apuja els tipus de cop",
       "Canvia el preu dels diners per a totes les empreses alhora.",
       "Classifica els sis ensurts.",
-      "Diversificar **elimina el risc específic**: una fallida pesa poc entre milers d'empreses. El **risc de mercat** no desapareix amb més accions; només se suavitza combinant-les amb bons o liquiditat.",
+      "Diversificar **elimina el risc específic**: una fallida pesa poc entre milers d'empreses. El **risc de mercat** no desapareix amb més accions; només se suavitza combinant-les amb bons (préstecs a estats o empreses) o diners en compte.",
       "Pregunta't: li passa a una empresa o a tota l'economia?",
       "Ben separat! Ara, l'únic dinar gratis.",
       "Classifica cada ensurt"
@@ -158,9 +160,9 @@
     },
     {
      "title": "El dinar gratis",
-     "body": "Una acció sola es mou un 30-35 % l'any; 20-30 accions de sectors diferents, prop del 20 %; un índex mundial, un 15 %.\n\nHarry Markowitz, Nobel d'Economia, en va dir **l'únic dinar gratis**: menys risc sense renunciar a rendibilitat esperada.",
+     "body": "Quant puja i baixa en un any típic: una acció sola, un 30-35 %; 20-30 accions de sectors diferents, prop del 20 %; un índex mundial, un 15 %.\n\nHarry Markowitz, Nobel d'Economia, en va dir **l'únic dinar gratis**: menys risc sense renunciar a rendibilitat esperada. Un ETF d'un índex mundial et dona aquesta cistella en una sola compra.",
      "key": "Amb moltes empreses, els desastres d'unes es compensen amb els èxits d'altres.",
-     "tip": "No posis tots els ous al mateix cistell, ni tots els cistells al mateix camió."
+     "tip": "Prova-ho: obre Cartera i mira si alguna posició pesa més del 20 %."
     }
    ]
   },
@@ -172,7 +174,7 @@
       "El preu baixa… i torna",
       "Irene",
       "Aporto 100 € cada mes a un fons, passi el que passi.",
-      "En cinc mesos, el preu passa per 10 €, 8 €, 5 €, 8 € i torna a 10 €.",
+      "Amb cada 100 € compra participacions, trossets del fons. En cinc mesos, el seu preu passa per 10 €, 8 €, 5 €, 8 € i torna a 10 €.",
       "Ha tornat on era. Suposo que estic igual que al principi.",
       "Com està la Irene?",
       "Igual: el preu ha acabat on va començar",
@@ -192,7 +194,7 @@
       "Repartir, gairebé sempre",
       "Tot de cop, unes tres de cada quatre vegades",
       "Meitat i meitat",
-      "Tot de cop guanya en el **74 %** dels mesos d'inici. Vanguard, amb l'MSCI World del 1976 al 2022, ho va veure un 68 % de les vegades al cap d'un any.",
+      "Tot de cop guanya en el **74 %** dels mesos d'inici. La gestora Vanguard, amb l'índex mundial MSCI World del 1976 al 2022, ho va veure un 68 % de les vegades al cap d'un any.",
       "Busca un mes d'inici en què repartir sortís més a compte.",
       "**Tot de cop sol guanyar**, perquè el mercat puja més vegades de les que baixa. **Repartir** guanya just abans d'una caiguda i redueix el penediment, però ningú no sap quan arriba.",
       "Aquí ha guanyat repartir! Mira què ha vingut just després: una caiguda.",
@@ -202,15 +204,35 @@
     },
     {
      "title": "Amb una suma gran",
-     "body": "Una solució intermèdia raonable: repartir-la en **6–12 mesos** amb aportacions automàtiques.\n\nEl que no funciona és esperar «que baixi»: ningú no sap on és el terra.",
+     "body": "Amb el sou, el natural és aportar-ne una part cada mes. Si un dia tens una suma gran (una herència, un finiquito), una solució intermèdia raonable és repartir-la en **6–12 mesos** amb aportacions automàtiques.\n\nEl que no funciona és esperar «que baixi»: ningú no sap on és el terra.",
      "key": "Tot de cop sol guanyar més vegades; de mica en mica redueix el penediment. L'important és començar i no parar.",
-     "tip": "Invertir cada mes és com pujar una escala: el que importa és no aturar-se."
+     "tip": "Prova-ho: compra avui una mica de l'ETF de l'S&P 500 i repeteix cada mes."
     }
    ]
   },
   "u10l3": {
    "title": "Comissions: el TER i els costos ocults",
    "steps": [
+    {
+     "texts": [
+      "L'equip estrella",
+      "Ana",
+      "Gestor del banc",
+      "L'Ana té 24 anys i va al banc a fer la seva primera inversió.",
+      "Ana, et recomano el nostre fons d'accions. El gestiona un equip estrella.",
+      "I quant cobra?",
+      "Un 2 % l'any. És qualitat.",
+      "Un fons indexat semblant, que només copia l'índex, cobra un 0,2 %.",
+      "Què hauria de pensar l'Ana?",
+      "Si és un equip estrella, val la pena",
+      "Hauria de batre l'índex 1,8 punts l'any, anys seguits. Gairebé ningú no ho aconsegueix.",
+      "El car ha de guanyar 1,8 punts més cada any només per empatar",
+      "Això! El cost és segur; batre l'índex, no.",
+      "Que el provi un any i compari",
+      "Un any diu poc: pot ser sort. El cost, en canvi, es paga sempre.",
+      "Un 2 % et sembla poc? Mira el que es menja en 30 anys."
+     ]
+    },
     {
      "texts": [
       "El cost que no veus",
@@ -228,28 +250,10 @@
      ]
     },
     {
-     "texts": [
-      "L'equip estrella",
-      "Ana",
-      "Gestor del banc",
-      "Ana, et recomano el nostre fons d'accions. El gestiona un equip estrella.",
-      "I quant cobra?",
-      "Un 2 % l'any. És qualitat.",
-      "Un fons indexat semblant cobra un 0,2 %.",
-      "Què hauria de pensar l'Ana?",
-      "Si és un equip estrella, val la pena",
-      "Hauria de batre l'índex 1,8 punts l'any, anys seguits. Gairebé ningú no ho aconsegueix.",
-      "El car ha de guanyar 1,8 punts més cada any només per empatar",
-      "Això! El cost és segur; batre l'índex, no.",
-      "Que el provi un any i compari",
-      "Un any diu poc: pot ser sort. El cost, en canvi, es paga sempre."
-     ]
-    },
-    {
      "title": "Els costos ocults",
-     "body": "Un indexat pot cobrar un 0,1-0,3 % l'any; molts fons actius a Espanya, un 1,5 % o més. Ho veuràs al **KID**, com a despeses corrents.\n\nA més del TER: comissió del bròquer per operació, *spread*, custòdia, canvi de divisa i, en alguns fons, comissions de subscripció o de reemborsament. Suma-les totes.",
+     "body": "Un indexat pot cobrar un 0,1-0,3 % l'any; molts fons actius (amb un equip que tria empreses) a Espanya, un 1,5 % o més. Ho veuràs al **KID**, com a despeses corrents.\n\nA més del TER: comissió del bròquer per operació, *spread* (la diferència entre el preu de compra i el de venda), custòdia (el que et cobren per guardar-te els valors), canvi de divisa i, en alguns fons, comissions en entrar o en sortir (de subscripció o de reemborsament). Suma-les totes.",
      "key": "Cada 1 % anual de costos es menja una part enorme del resultat, per l'interès compost.",
-     "tip": "Un 1,5 % l'any sembla poca cosa. A 30 anys, és gairebé un terç dels teus diners."
+     "tip": "Prova-ho: pregunta a la professora Lumi quins costos mirar al KID d'un ETF."
     }
    ]
   },
@@ -274,8 +278,9 @@
     },
     {
      "title": "Posa data a cada euro",
-     "body": "• **Coixí:** sempre disponible compte remunerat, fons monetari.\n• **Viatge o cotxe (1-3 anys)** dipòsits, lletres.\n• **Entrada d'un pis (3-7 anys)** combinació prudent, més renda fixa.\n• **Jubilació (15 anys o més)** sobretot accions diversificades.",
-     "key": "No s'inverteixen a borsa els diners que es necessiten aviat: poden estar baixant just quan els necessitis."
+     "body": "• **Coixí per a imprevistos (sempre disponible):** compte remunerat, que et paga interessos, o fons monetari, molt estable.\n• **Viatge o cotxe (1-3 anys):** dipòsits o Lletres del Tresor, és a dir, prestar al banc o a l'Estat a termini fix.\n• **Entrada d'un pis (3-7 anys):** combinació prudent, amb més renda fixa (bons).\n• **Jubilació (15 anys o més):** sobretot accions diversificades.\n\nLa teva cartera senzilla a llarg termini: un ETF indexat de tot el món, comissions baixes, una aportació cada mes i només diners que no hagis de necessitar en molts anys.",
+     "key": "No s'inverteixen a borsa els diners que es necessiten aviat: poden estar baixant just quan els necessitis.",
+     "tip": "Prova-ho: a Mercat, mira l'S&P 500 en espelmes mensuals i busca'n les caigudes."
     }
    ]
   },
@@ -293,18 +298,6 @@
     "Una xifra que resumeix com va un grup de valors"
    ],
    "explanation": "És una cistella de referència amb regles sobre què hi entra i quant pesa."
-  },
-  "u7l1-3": {
-   "prompt": "Un índex passa de 14.000 a 14.700 punts. Quant ha pujat?",
-   "options": [],
-   "explanation": "(14.700 − 14.000) ÷ 14.000 = 0,05 → 5 %.",
-   "unit": "%"
-  },
-  "u7l1-4": {
-   "prompt": "Ràpid: un índex passa de 5.000 a 4.600 punts. Quant ha caigut, en %? (escriu-ho en positiu)",
-   "options": [],
-   "explanation": "400 ÷ 5.000 = 0,08 → ha caigut un 8 %.",
-   "unit": "%"
   },
   "u7l1-6": {
    "prompt": "Si l'IBEX 35 és a 14.000 punts, comprar-lo costa 14.000 €.",
@@ -377,12 +370,6 @@
    ],
    "explanation": "Sense KID, no es poden comercialitzar a minoristes a la UE."
   },
-  "u10l2-7": {
-   "prompt": "Compres 15 participacions d'un ETF a 98,40 € i el bròquer cobra 2 € de comissió. Quant pagues en total?",
-   "options": [],
-   "explanation": "15 × 98,40 = 1.476 € + 2 € de comissió = 1.478 €.",
-   "unit": "€"
-  },
   "u10l2-10": {
    "prompt": "Els ETF que pot comprar un minorista a la UE solen portar l'etiqueta ____.",
    "options": [
@@ -401,12 +388,6 @@
     "El risc específic de cada empresa"
    ],
    "explanation": "Una fallida deixa de ser un drama si pesa un 0,1 %. Però si cau tot el mercat, cauen totes: aquest risc només se suavitza amb bons o liquiditat."
-  },
-  "u29l1-2": {
-   "prompt": "Reparteixes 10.000 € a parts iguals entre 20 accions. Una fa fallida i perd tot el seu valor; la resta es queda igual. Quants euros perds?",
-   "options": [],
-   "explanation": "10.000 ÷ 20 = 500 € per acció. Amb una sola acció, aquesta fallida s'hauria endut els 10.000 €.",
-   "unit": "€"
   },
   "u29l1-4": {
    "prompt": "Exercici de pràctica (no és una recomanació): reparteix 10.000 € entre aquestes accions. Regles: almenys 6 empreses, cap per sobre del 20 % i cap sector per sobre del 30 %.",
@@ -484,18 +465,6 @@
     "Ja estic superdiversificada, oi?"
    ]
   },
-  "u25l2-1": {
-   "prompt": "Inverteixes 100 € al mes i el preu passa per 10, 8, 5, 8 i 10 €. Quantes participacions tens en total?",
-   "options": [],
-   "explanation": "100 ÷ 10 + 100 ÷ 8 + 100 ÷ 5 + 100 ÷ 8 + 100 ÷ 10 = 10 + 12,5 + 20 + 12,5 + 10 = 65.",
-   "unit": "participacions"
-  },
-  "u25l2-2": {
-   "prompt": "Amb aquestes 65 participacions per 500 €, quin és el teu preu mitjà de compra? (arrodoneix a dos decimals)",
-   "options": [],
-   "explanation": "500 ÷ 65 ≈ 7,69 €. Com que acaba a 10 €, guanyes un 30 % sense que el preu hagi pujat.",
-   "unit": "€"
-  },
   "u25l2-3": {
    "prompt": "Setembre del 2008. Comences a aportar 200 € al mes a un fons de l'S&P 500. Què va fer l'índex els mesos següents?",
    "options": [
@@ -552,24 +521,6 @@
     "DCA"
    ],
    "explanation": "Dollar-cost averaging: aportacions periòdiques."
-  },
-  "u10l3-1": {
-   "prompt": "10.000 € a 30 anys al 7 % anual sense costos es converteixen en 76.123 €. Amb un 1 % de costos anuals (6 % net), en quant? (arrodoneix a euros)",
-   "options": [],
-   "explanation": "10.000 × 1,06³⁰ ≈ 57.435 €.",
-   "unit": "€"
-  },
-  "u10l3-2": {
-   "prompt": "Amb aquestes dades, quant et costa en total aquest 1 % anual a 30 anys? (arrodoneix)",
-   "options": [],
-   "explanation": "76.123 − 57.435 = 18.688 €: gairebé el doble del que vas invertir, només en costos.",
-   "unit": "€"
-  },
-  "u10l3-3": {
-   "prompt": "Tens 20.000 € en un fons amb un TER de l'1,8 %. Quant pagues aquest any?",
-   "options": [],
-   "explanation": "20.000 × 1,8 % = 360 €. En un indexat al 0,2 % serien 40 €.",
-   "unit": "€"
   },
   "u10l3-4": {
    "prompt": "On trobes les despeses corrents d'un fons?",
@@ -690,6 +641,59 @@
     "aviat"
    ],
    "explanation": "No perquè hagin de baixar segur, sinó perquè poden estar baixant just quan els necessitis."
+  },
+  "u7l1-11": {
+   "prompt": "Aquest gràfic és un índex real: la mitjana de les grans empreses d'un país, sense nom ni data. Què va fer en les 10 sessions següents?",
+   "options": [
+    "Puja",
+    "Baixa"
+   ],
+   "explanation": "Un índex resumeix en una sola línia com els ha anat a totes les seves empreses juntes: per això serveix de termòmetre del mercat. El que no fa és endevinar el futur: ni l'índex sencer es pot preveure a dues setmanes vista.",
+   "horizon": "les 10 sessions següents"
+  },
+  "u7l1-12": {
+   "prompt": "Imagina: la teva cartera d'accions espanyoles ha guanyat un 5 % aquest any i l'IBEX 35, un 12 %. Un amic et diu que ets un crac. Què en conclous?",
+   "options": [
+    "Que ho he fet pitjor que l'índex: copiar-lo m'hauria donat més",
+    "Que soc un crac: he guanyat diners",
+    "Que l'índex no té res a veure amb la meva cartera"
+   ],
+   "explanation": "Un resultat només és bo o dolent comparat amb el seu índex: amb un 5 % davant d'un 12 %, copiar l'índex hauria guanyat més. La temptadora, «he guanyat diners», falla perquè un guany sense vara de mesurar no diu si ho has fet bé.",
+   "feedback": [
+    "Això mateix: un fons que copia l'IBEX 35 t'hauria donat més, i sense triar empreses.",
+    "Guanyar no n'hi ha prou: t'has de comparar amb el que hauries guanyat copiant l'índex.",
+    "Si tens accions espanyoles, l'IBEX 35 és justament la teva vara de mesurar."
+   ]
+  },
+  "u10l3-11": {
+   "prompt": "Dos ETF copien exactament el mateix índex. Un cobra un 0,2 % l'any i l'altre, un 1 %. Hi deixaràs 10.000 € durant 30 anys. Quin tries?",
+   "options": [
+    "El de l'1 %: si cobra més, serà millor",
+    "Tant és: és menys d'un punt de diferència",
+    "El del 0,2 %: si copien el mateix, el barat et deixa més"
+   ],
+   "explanation": "Amb el mateix índex a dins, el cost és l'únic que canvia. Amb un mercat al 7 %, el del 0,2 % acaba en 71.968 € i el de l'1 %, en 57.435 €. La temptadora és pensar que «menys d'un punt» és poc: es cobra cada any sobre tot el que s'ha acumulat.",
+   "feedback": [
+    "Copien el mateix índex: cobrar més no els fa guanyar més, només et deixa menys a tu.",
+    "Aquest punt es cobra cada any i es compon: a 30 anys són milers d'euros.",
+    "Això mateix: abans de costos donaran el mateix, així que guanya el que menys es queda pel camí."
+   ]
+  },
+  "u10l3-12": {
+   "prompt": "Cost baix o alt per a un fons d'accions?",
+   "options": [
+    "Un TER del 0,3 %",
+    "Un TER del 2 %",
+    "Un TER de l'1,5 %",
+    "Un TER del 0,2 %",
+    "Un TER de l'1,8 %",
+    "Un TER del 0,1 %"
+   ],
+   "explanation": "Un indexat pot cobrar un 0,1-0,3 % l'any; molts fons actius, amb un equip que tria empreses, un 1,5 % o més. Sembla poca diferència, però es cobra cada any: a 30 anys, un 1,5 % s'endú gairebé un terç del resultat.",
+   "right": [
+    "Baix, com un indexat",
+    "Alt, com molts fons actius"
+   ]
   }
  }
 }

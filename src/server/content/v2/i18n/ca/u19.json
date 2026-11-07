@@ -59,7 +59,7 @@
      "title": "Compte amb el Heikin Ashi",
      "body": "Hi ha més maneres: l'**àrea** (la línia amb farciment, com en moltes apps) i el **Heikin Ashi**, espelmes mitjanes que suavitzen el soroll.\n\nLes seves obertures i tancaments es calculen amb mitjanes: **no són preus reals**. Serveix per veure la tendència, mai per decidir a quin preu entrar o on posar un stop.",
      "key": "La línia resumeix; les espelmes expliquen la batalla de cada període.",
-     "tip": "Per veure cap on va, la línia. Per veure qui guanya cada dia, les espelmes."
+     "tip": "Prova-ho: a Mercat, obre Apple i passa de Línia a Espelmes."
     }
    ]
   },
@@ -119,7 +119,7 @@
       "En Hugo inverteix en un fons indexat a 20 anys",
       "Les espelmes de minuts només li donarien ensurts.",
       "Col·loca les sis persones.",
-      "Tria la temporalitat segons el teu **horitzó** i mira sempre **la més gran abans que la més petita**. Mètode d'Elder: setmanal per a la direcció, diari per al moment i hores per afinar l'entrada i l'stop.",
+      "Tria la temporalitat segons el teu **horitzó** i mira sempre **la més gran abans que la més petita**. Mètode d'Elder: setmanal per a la direcció, diari per al moment i hores per afinar l'entrada i l'stop. Prova-ho: a Mercat, obre un actiu i passa de 1D a 1S per veure la tendència gran.",
       "Quant de temps manté cadascú la seva inversió?",
       "Col·loca cada persona"
      ]
@@ -183,7 +183,7 @@
       "Una acció en l'últim mes",
       "Moviments petits: gairebé no hi ha diferència.",
       "Classifica els sis gràfics.",
-      "Per a períodes llargs o actius que s'han multiplicat molt, **logarítmica**. En trams curts, euros i percentatges van gairebé a la par.",
+      "Per a períodes llargs o actius que s'han multiplicat molt, **logarítmica**. En trams curts, euros i percentatges van gairebé a la par. Prova-ho: a Mercat, obre el bitcoin en 1M i mesura amb «Mesurar» una pujada antiga i una de recent.",
       "Són anys i preus molt diferents, o uns pocs dies?",
       "Logarítmica o tant se val?"
      ]
@@ -250,7 +250,7 @@
      "title": "El momentum existeix",
      "body": "Les tendències de 3–12 mesos han tendit a persistir en accions, bons, divises i matèries primeres (Jegadeesh i Titman, 1993; Moskowitz, Ooi i Pedersen, 2012). Aprofitar-ho després de costos i girs bruscos ja és una altra història.",
      "key": "Alcista = màxims i mínims més alts; baixista = més baixos.",
-     "tip": "La tendència és la teva amiga… fins que deixa de fer màxims més alts."
+     "tip": "Prova-ho: a Mercat, obre Apple en 1S i mira si els seus mínims pugen."
     }
    ]
   },
@@ -301,7 +301,7 @@
      "title": "Pics i límits",
      "body": "• Puja amb volum alt: convicció. Baixa amb volum baix: correcció tranquil·la.\n• Els pics de volum arriben amb notícies, venciments, pànic o eufòria; després d'una caiguda forta, de vegades marquen la **capitulació**.\n• En divises no hi ha volum centralitzat i en cripto es reparteix entre moltes plataformes.",
      "key": "Un moviment amb molt de volum té molta gent al darrere; sense volum pot ser una il·lusió.",
-     "tip": "El preu et diu què passa. El volum, quanta gent s'ho creu."
+     "tip": "Prova-ho: a Mercat, busca el dia de més volum de l'últim mes."
     }
    ]
   },
@@ -421,11 +421,19 @@
    ],
    "explanation": "La més gran marca la direcció: si el setmanal és alcista, només es busquen compres. La més petita afina l'entrada i l'stop."
   },
-  "u19l3-10": {
-   "prompt": "Un day trader fa 5 operacions al dia i paga 2 € de comissió per cadascuna. Quant paga en un mes de 20 sessions?",
-   "options": [],
-   "explanation": "5 × 2 × 20 = 200 €, sense comptar l'spread. En temporalitats curtes, els costos s'acumulen molt de pressa.",
-   "unit": "€"
+  "u19l3-11": {
+   "prompt": "En Leo manté les seves operacions unes quantes setmanes. En el gràfic setmanal, l'acció fa màxims i mínims cada vegada més baixos. En el diari, avui puja amb força. Què fa?",
+   "options": [
+    "Mira el gràfic d'1 minut per decidir",
+    "No busca compres mentre el setmanal continuï baixista",
+    "Compra ara: el diari mana perquè és més recent"
+   ],
+   "explanation": "Mètode d'Elder: la temporalitat més gran decideix la direcció i la més petita només afina l'entrada. Comprar contra el setmanal és nedar contra corrent.",
+   "feedback": [
+    "Baixar a minuts afegeix soroll, no informació: el problema és que va contra el setmanal.",
+    "Això: primer la temporalitat més gran. Un dia fort dins d'una caiguda setmanal sol quedar-se en rebot.",
+    "El diari afina el moment, però la direcció la marca el setmanal, i allà és baixista."
+   ]
   },
   "u19l4-1": {
    "prompt": "Una acció ha passat d'1 € a 300 € en 15 anys. Quina escala fas servir per estudiar-ne la història?",
@@ -443,18 +451,6 @@
     "Fals"
    ],
    "explanation": "Això passa en la logarítmica. En lineal, de 100 a 200 € ocupa deu vegades més que de 10 a 20 €."
-  },
-  "u19l4-3": {
-   "prompt": "Una acció passa de 20 € a 30 €. Quin percentatge ha pujat?",
-   "options": [],
-   "explanation": "(30 − 20) ÷ 20 = 0,5 → +50 %.",
-   "unit": "%"
-  },
-  "u19l4-4": {
-   "prompt": "Una altra acció passa de 200 € a 210 €. Quin percentatge ha pujat?",
-   "options": [],
-   "explanation": "10 € sobre 200 € = +5 %. En lineal, aquest salt de 10 € ocupa el mateix que el de 20 a 30 €; en logarítmica, es veu deu vegades més petit.",
-   "unit": "%"
   },
   "u19l4-7": {
    "prompt": "S&P 500, finals de setembre del 1929: els tancaments setmanals fa gairebé dos anys que pugen. Què creus que va passar després?",
@@ -474,6 +470,38 @@
     "percentatge"
    ],
    "explanation": "Per això compara bé èpoques amb preus molt diferents."
+  },
+  "u19l4-11": {
+   "prompt": "En un gràfic lineal de 10 anys, una acció puja de 10 a 20 € al principi i de 100 a 200 € al final. En Dani diu que la segona pujada va ser molt millor perquè es veu deu vegades més gran. Què li dius?",
+   "options": [
+    "Que la primera va ser millor perquè l'acció era més barata",
+    "Que té raó: es veu més gran, així que va ser millor",
+    "Que totes dues van ser un +100 %: en logarítmica ocuparien el mateix"
+   ],
+   "explanation": "Als teus diners els importa el percentatge. L'escala lineal engrandeix els trams amb preus alts; la logarítmica els compara de debò.",
+   "feedback": [
+    "Ser més barata no la fa millor: en tots dos trams els diners es van duplicar.",
+    "En lineal es veu més gran perquè són més euros, però en percentatge totes dues són iguals.",
+    "Això: qui va comprar al principi també va duplicar els diners. L'escala logarítmica ho ensenya tal com és."
+   ]
+  },
+  "u19l4-12": {
+   "prompt": "Què li contestes a la Lumi?",
+   "options": [
+    "Depèn de l'escala del gràfic",
+    "Sí: baixa un 75 % i puja un 75 %, es queda igual",
+    "No: després de caure un 75 % cal pujar molt més, un 300 %"
+   ],
+   "explanation": "Una caiguda gran demana una pujada molt més gran per recuperar-se: després d'un −75 % cal un +300 %. L'escala logarítmica respecta aquestes proporcions; la lineal, no.",
+   "feedback": [
+    "L'escala canvia com ho veus, no el que passa amb els teus diners.",
+    "No: després de caure un 75 %, pujar un 75 % el deixa molt per sota del màxim.",
+    "Això: els percentatges no són simètrics. El bitcoin va necessitar un 302 % per tornar-hi."
+   ],
+   "lines": [
+    "El bitcoin va caure un 75 % des del seu màxim del 2021.",
+    "Si ara puja un 75 %, torna on era?"
+   ]
   },
   "u19l5-1": {
    "prompt": "Quina tendència té aquest gràfic? (NVIDIA · tancaments cada 3 sessions · març–maig del 2026)",

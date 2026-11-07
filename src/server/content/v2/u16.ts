@@ -1,7 +1,7 @@
 import 'server-only'
 // Sección 6 · Unidad 16 · Leer las cuentas de una empresa (docs/curso-v2/02-curriculo.md)
 // Ejemplo inventado del manual: «Panadería Global, S. A.». Datos reales de Inditex (ejercicio 2024) solo como ejemplo, nunca como recomendación.
-import { buckets, choose, fill, key, lesson, match, multi, note, num, opt, order, play, say, scenario, single, story, tf, timed, trend, unit, upDown, when } from '../dsl'
+import { buckets, chat, choose, fill, key, lesson, match, multi, note, num, opt, order, play, say, scenario, single, story, tf, timed, trend, unit, upDown, when } from '../dsl'
 
 export default unit({
   id: 'u16', order: 16, title: 'Leer las cuentas de una empresa', description: 'Precio y valor, cuenta de resultados, balance, caja, deuda y resultados trimestrales',
@@ -10,7 +10,7 @@ export default unit({
     lesson('u16l2', 'La cuenta de resultados', [
       play({
         title: 'De las ventas al beneficio',
-        intro: 'Panadería Global es una empresa inventada (cifras en **millones de euros**). ¿Cada partida es un ingreso, un gasto o ninguna de las dos cosas?',
+        intro: 'De cada 100 € que vendió Inditex (Zara) en su ejercicio 2024, le quedaron algo más de 15 € de beneficio: ¿adónde fue el resto? Descúbrelo con Panadería Global, una empresa inventada (en **millones de euros**): ¿ingreso, gasto o ninguna de las dos cosas?',
         widget: {
           kind: 'sort', sumLabel: 'Beneficio antes de impuestos',
           bins: [{ label: 'Ingreso', sign: 1 }, { label: 'Gasto', sign: -1 }, { label: 'Ni lo uno ni lo otro', sign: 0 }],
@@ -43,7 +43,7 @@ export default unit({
         say('lumi', 'Margen bruto del 57,8 % y 5.866 M€ de beneficio: más de 15 € por cada 100.'),
         say('lumi', 'Es un dato para practicar, no una recomendación.'),
       ]),
-      key('Márgenes y BPA', '• **Margen bruto:** alto (60-80 %) en software o lujo; bajo (20-30 %) en supermercados.\n• **Margen operativo** (EBIT ÷ ventas): la eficiencia del negocio.\n• **Margen neto:** lo que queda para el accionista.\n• **BPA:** beneficio neto ÷ número de acciones.', 'Las ventas son la vanidad, el beneficio es la cordura y la caja es la realidad.'),
+      key('Márgenes y BPA', '• **Margen bruto:** alto (60-80 %) en software o lujo; bajo (20-30 %) en supermercados.\n• **Margen operativo** (EBIT ÷ ventas): la eficiencia del negocio.\n• **Margen neto:** lo que queda para el accionista.\n• **BPA:** beneficio neto ÷ número de acciones.', 'Las ventas son la vanidad, el beneficio es la cordura y la caja es la realidad.', 'Pruébalo: busca Inditex en Mercado y añádela a Favoritos para seguir sus resultados.'),
     ], [
       order('Ordena la cuenta de resultados de arriba abajo.', ['Ventas', 'Margen bruto', 'EBITDA', 'EBIT', 'Beneficio antes de impuestos', 'Beneficio neto'], 'Se van restando costes, amortizaciones, intereses e impuestos.'),
       fill('EBITDA es el beneficio antes de intereses, impuestos, depreciaciones y ____.', 'amortizaciones', ['dividendos', 'ventas', 'salarios'], 'Mide lo que gana el negocio antes de cómo se financia y del desgaste de sus activos.'),
@@ -55,12 +55,15 @@ export default unit({
       timed(single('Rápido: ¿qué negocio suele tener el margen bruto más bajo?', ['Un supermercado', 'Una empresa de software', 'Una marca de lujo'], 0, 'Supermercados 20-30 %; software o lujo 60-80 %.'), 12),
       trend('Este es el precio real de una acción durante dos meses. ¿Qué tendencia tiene?', 'trend-up-1', 'Alcista', 'A corto plazo el precio lo mueven las expectativas; a largo plazo suele seguir a los beneficios. La cuenta de resultados te dice si hay beneficios detrás de la subida.'),
       tf('Una empresa puede vender más cada año y ganar menos.', true, 'Si los costes suben más que las ventas, los márgenes se encogen. Por eso se lee toda la cuenta, no solo las ventas.'),
-    ], { source: '5.2', minutes: 6, retire: [6, 7, 9] }),
+      scenario('Ritmo y Zancada, dos marcas de zapatillas inventadas, venden 100 M€ cada una. A Ritmo le quedan 20 M€ de beneficio operativo; a Zancada, 5 M€. Suben mucho los materiales. ¿Cuál aguanta mejor?', [['Ritmo: con más margen, le cabe la subida de costes', 'Eso: de cada 100 € vendidos le quedan 20, así que tiene colchón antes de perder dinero.'], ['Zancada: vende lo mismo', 'Vende lo mismo, pero le quedan solo 5 de cada 100: una subida de costes se los come enseguida.'], ['Las dos igual: venden lo mismo', 'Las ventas son iguales; lo que queda después de los costes, no.']], 0, 'Con las mismas ventas, el margen dice cuánto colchón hay antes de perder dinero. La tentación es mirar solo las ventas, y ahí son iguales.'),
+      buckets('¿Margen bruto alto o bajo? Piensa en cuánto cuesta lo que vende cada uno.', ['Margen bruto alto', 'Margen bruto bajo'], [['Una app de suscripción', 0], ['Un supermercado', 1], ['Una marca de bolsos de lujo', 0], ['Una gasolinera', 1], ['Un videojuego que se descarga', 0], ['Un concesionario de coches', 1]], 'Si vender una copia más no cuesta casi nada (apps, videojuegos) o la marca permite cobrar mucho (lujo), el margen bruto es alto. Revender productos con mucha competencia deja poco.'),
+      chat(['Esta empresa de patinetes ha vendido el doble que el año pasado.', 'Pero su beneficio neto ha bajado. ¿Cómo puede ser?'], '¿Qué le contestas a Lumi?', [['Que sus costes han crecido más deprisa que sus ventas', 'Claro: vender más no sirve si cada venta deja menos.'], ['Que es imposible: si vende el doble, gana el doble', 'Pues pasa: si los costes suben más que las ventas, el beneficio baja.'], ['Que las ventas no importan nada', 'Importan, pero solo si dejan beneficio detrás.']], 0, 'El beneficio es lo que queda tras restar todos los costes. Si crecen más deprisa que las ventas, el margen se encoge y el beneficio puede bajar aunque se venda el doble.'),
+    ], { source: '5.2', minutes: 6, retire: [2, 3, 4, 6, 7, 9] }),
 
     lesson('u16l3', 'El balance', [
       play({
         title: 'Lo que tiene y lo que debe',
-        intro: 'El balance de Panadería Global, en **millones de euros**. Coloca cada partida: ¿es algo que **tiene** o algo que **debe**?',
+        intro: 'Tu amigo luce un móvil de 1.200 € que aún debe entero; el tuyo, de 300 €, ya está pagado: ¿quién tiene más? En las empresas pasa igual: coloca cada partida de Panadería Global (en **millones de euros**), ¿la **tiene** o la **debe**?',
         widget: {
           kind: 'sort', sumLabel: 'Patrimonio neto',
           bins: [{ label: 'Lo que tiene (activo)', sign: 1 }, { label: 'Lo que debe (pasivo)', sign: -1 }],
@@ -92,7 +95,7 @@ export default unit({
         ]),
         say('lumi', 'La deuda no hunde a una empresa en los años buenos, sino en los malos.'),
       ]),
-      key('Foto, no película', 'El balance es una **foto** en un día concreto; la cuenta de resultados es la **película** del año. Hay que mirar las dos.\n\nLiquidez de Panadería Global: activos a corto (80 + 170 = **250**) frente a deudas a corto (**150**): las cubre.', 'Lo que la empresa tiene se financia con deuda o con dinero de los accionistas.'),
+      key('Foto, no película', 'El balance es una **foto** en un día concreto; la cuenta de resultados es la **película** del año. Hay que mirar las dos.\n\nLiquidez de Panadería Global: activos a corto (80 + 170 = **250**) frente a deudas a corto (**150**): las cubre.', 'Lo que la empresa tiene se financia con deuda o con dinero de los accionistas.', 'Pruébalo: pregúntale a Lumi cómo saber si una empresa debe demasiado.'),
     ], [
       match('Empareja cada concepto con su definición.', [['Activo', 'Lo que la empresa tiene'], ['Pasivo', 'Lo que la empresa debe'], ['Patrimonio neto', 'Lo que es de los accionistas'], ['Valor contable por acción', 'Patrimonio neto ÷ número de acciones']], 'Activo = pasivo + patrimonio neto: siempre cuadra.'),
       buckets('¿Dónde va cada partida?', ['Activo', 'Pasivo', 'Patrimonio neto'], [['Caja en el banco', 0], ['Préstamo bancario', 1], ['Hornos y tiendas', 0], ['Facturas pendientes con proveedores', 1], ['Beneficios no repartidos', 2], ['Existencias de harina', 0]], 'Lo que tiene, lo que debe y lo que es de los socios.'),
@@ -104,12 +107,15 @@ export default unit({
       timed(tf('El balance muestra lo que ha ganado la empresa durante el año.', false, 'Eso es la cuenta de resultados. El balance es una foto de lo que tiene y debe en un día concreto.'), 10),
       tf('Si el patrimonio neto es negativo, la empresa debe más de lo que tiene en libros.', true, 'Es una señal seria, aunque a veces se debe a grandes recompras de acciones en empresas muy rentables. Hay que mirar por qué.'),
       scenario('Pablo compara dos panaderías con el mismo beneficio. La A tiene 50 M€ de deuda y 300 M€ de patrimonio; la B, 400 M€ de deuda y 50 M€ de patrimonio. Llega una crisis y las ventas caen un 30 %. ¿Cuál sufre más?', [['La A', 'Con poca deuda, la A puede aguantar varios años malos.'], ['La B: los intereses siguen ahí aunque venda menos', 'Exacto: la deuda no espera a que vuelvan los buenos tiempos.'], ['Igual, tienen el mismo beneficio', 'En los años buenos sí; en los malos, la deuda marca la diferencia.']], 1, 'La deuda no hunde a una empresa en los años buenos: la hunde en los malos.'),
-    ], { source: '5.3', minutes: 6, retire: [1, 2, 7, 9] }),
+      scenario('Lucía duda entre dos cadenas de gimnasios inventadas que ganan lo mismo. FitUno casi no debe nada y tiene 10 M€ en caja; FitDos debe 300 M€ y tiene 2 M€ en caja. Las autoridades cierran los gimnasios tres meses. ¿Cuál corre más peligro?', [['FitDos: sigue debiendo y pagando intereses sin ingresos', 'Eso: sin ingresos, la deuda y sus intereses siguen ahí, y apenas tiene caja para pagarlos.'], ['FitUno: con tan poca deuda, no aprovecha el dinero de los bancos', 'En un cierre, deber poco no es un problema: al revés, le da tiempo para aguantar.'], ['Las dos igual: ganan lo mismo', 'En un año normal, sí. Cuando dejan de entrar ingresos, manda el balance.']], 0, 'El balance dice cuánto aguanta una empresa cuando dejan de entrar ingresos: poca deuda y algo de caja dan tiempo; mucha deuda y poca caja, no.'),
+      single('Dos empresas inventadas cotizan a 20 € por acción. Según su balance, A tiene 10 € de patrimonio neto por acción y B, 2 €. ¿Por cuál pagas más en relación con lo que tiene en libros?', ['Por B: pagas 10 veces su valor contable', 'Por A: tiene más patrimonio', 'Por las dos igual: cuestan 20 €'], 0, 'En A pagas el doble de lo que tiene en libros; en B, diez veces. No significa que B sea peor (una marca o un programa pueden valer más de lo que dice el balance), pero conviene saber qué pagas.'),
+      buckets('Una cadena de cines inventada: ¿lo tiene o lo debe?', ['Activo (lo tiene)', 'Pasivo (lo debe)'], [['Las salas y los proyectores', 0], ['El alquiler que aún no ha pagado', 1], ['Las palomitas y refrescos del almacén', 0], ['Un préstamo para reformar las salas', 1], ['Dinero en el banco', 0], ['Entradas cobradas para un estreno del mes que viene', 1]], 'Lo que usa para hacer negocio es activo. Lo que aún tiene que pagar es pasivo, y las entradas cobradas por adelantado también: le debe la película al cliente.'),
+    ], { source: '5.3', minutes: 6, retire: [1, 2, 3, 4, 7, 9] }),
 
     lesson('u16l4', 'El flujo de caja', [
       play({
         title: 'Beneficio no es caja',
-        intro: 'Un año de Obrador Luna, otra empresa inventada (en **millones de euros**): ha vendido 100, pero no lo ha cobrado todo. ¿Qué mueve de verdad su caja?',
+        intro: 'Vendes tu consola por 200 € y te dicen que te la pagan «el mes que viene»: ¿ya tienes esos 200 €? A Obrador Luna, otra empresa inventada (en **millones de euros**), le pasa lo mismo: ha vendido 100, pero no lo ha cobrado todo.',
         widget: {
           kind: 'sort', sumLabel: 'Caja del año',
           bins: [{ label: 'Entra caja', sign: 1 }, { label: 'Sale caja', sign: -1 }, { label: 'No mueve caja', sign: 0 }],
@@ -140,7 +146,7 @@ export default unit({
         say('lumi', 'Enron, Wirecard y Gowex mostraban beneficios que no se convertían en caja.'),
         say('lumi', 'Si los beneficios nunca llegan a la caja, desconfía de los beneficios.'),
       ]),
-      key('Las tres partes de la caja', '1. **Operativo:** el dinero que genera el negocio en el día a día.\n2. **De inversión:** hornos, tiendas, compras de empresas (*capex*).\n3. **De financiación:** deuda que pide o devuelve, dividendos y recompras de acciones.\n\n**FCF = flujo operativo − capex.** Panadería Global genera 160 M€ e invierte 60 M€: **FCF de 100 M€**, 1 € por acción. Es lo que puede repartir, usar para recomprar acciones o reducir deuda sin dañar el negocio.', 'El beneficio es una opinión contable; la caja es un hecho.'),
+      key('Las tres partes de la caja', '1. **Operativo:** el dinero que genera el negocio en el día a día.\n2. **De inversión:** hornos, tiendas, compras de empresas (*capex*).\n3. **De financiación:** deuda que pide o devuelve, dividendos y recompras de acciones.\n\n**FCF = flujo operativo − capex.** Panadería Global genera 160 M€ e invierte 60 M€: **FCF de 100 M€**, 1 € por acción. Es lo que puede repartir, usar para recomprar acciones o reducir deuda sin dañar el negocio.', 'El beneficio es una opinión contable; la caja es un hecho.', 'Pruébalo: pregúntale a Lumi por qué el flujo de caja importa más que el beneficio.'),
     ], [
       num('Flujo operativo de 80 M€ y capex de 30 M€. ¿Cuál es el flujo de caja libre?', 50, 'M€', '80 − 30 = 50 M€.'),
       num('Flujo de caja libre de 150 M€ y 60 millones de acciones. ¿Cuál es el FCF por acción?', 2.5, '€', '150 ÷ 60 = 2,50 € por acción.'),
@@ -152,12 +158,14 @@ export default unit({
       scenario('Una cadena de tiendas tiene FCF negativo este año porque ha abierto 200 tiendas, pero su flujo operativo es alto y creciente. ¿Cómo lo interpretas?', [['Alarma: está a punto de quebrar', 'No necesariamente: el FCF es negativo por invertir en crecer, no porque el negocio no genere caja.'], ['Puede ser razonable: invierte para crecer, siempre que las tiendas nuevas acaben rindiendo', 'Eso: no es lo mismo caja que no llega que caja que se invierte.'], ['Da igual, la caja no importa', 'Importa, por eso hay que entender el porqué.']], 1, 'Un FCF negativo por invertir mucho no es lo mismo que un negocio que no cobra.'),
       timed(fill('FCF = flujo operativo − ____.', 'capex', ['dividendos', 'impuestos', 'ventas'], 'El capex es la inversión en activos: hornos, tiendas, máquinas.'), 12),
       multi('¿Qué puede hacer una empresa con su flujo de caja libre? Marca todas.', ['Pagar dividendos', 'Recomprar acciones', 'Reducir deuda', 'Contarlo como ventas del año siguiente'], [0, 1, 2], 'El FCF es dinero disponible; no es una venta.'),
-    ], { source: '5.4', minutes: 6, retire: [2, 5, 6, 8] }),
+      scenario('RapiBox y LlegaYa, dos apps de reparto inventadas, ganan 50 M€ cada una este año. RapiBox ha cobrado casi todo y su caja ha crecido; LlegaYa tiene la caja en negativo porque sus clientes le deben cada vez más. ¿De qué beneficio te fías más?', [['Del de RapiBox: su beneficio se ve en la caja', 'Eso: el beneficio que llega al banco es el más fiable.'], ['Del de LlegaYa: gana lo mismo', 'Gana lo mismo en papel, pero el dinero no llega: hay que saber por qué.'], ['De los dos igual: el beneficio es el mismo', 'El beneficio es una opinión contable; la caja dice cuál es real.']], 0, 'Cuando el beneficio se convierte en caja, es más fiable. Si lo que le deben los clientes no para de crecer, quizá nunca llegue a cobrarlo.'),
+      chat(['Mi empresa favorita tiene flujo de caja libre negativo este año.', '¿La vendo ya?'], '¿Qué le contestas a Lumi?', [['Primero mira por qué: no es lo mismo invertir para crecer que no cobrar', 'Vale: si es porque abre fábricas nuevas, puede ser buena señal.'], ['Sí, véndela: caja negativa es quiebra segura', 'Uf, ¿y si es porque está invirtiendo para crecer?'], ['No pasa nada, la caja no importa', 'Importa: la caja es un hecho; el beneficio, una opinión.']], 0, 'Un FCF negativo puede venir de invertir mucho (hornos, tiendas, fábricas) o de un negocio que no cobra. Lo primero puede ser bueno; lo segundo es una alarma. Hay que mirar el flujo operativo.'),
+    ], { source: '5.4', minutes: 6, retire: [0, 1, 2, 5, 6, 8] }),
 
     lesson('u16l5', 'La deuda de una empresa', [
       play({
         title: 'La deuda neta',
-        intro: 'Para saber cuánto debe de verdad Panadería Global, a su deuda financiera se le resta la caja. Cifras en **millones de euros**.',
+        intro: 'Inditex, la dueña de Zara, tiene más dinero en el banco que deudas; muchas empresas deben varias veces lo que ganan en un año. Para saber cuánto debe de verdad Panadería Global (en **millones de euros**), a su deuda financiera se le resta la caja.',
         widget: {
           kind: 'sort', sumLabel: 'Deuda neta',
           bins: [{ label: 'Deuda financiera', sign: 1 }, { label: 'Caja', sign: -1 }, { label: 'No cuenta', sign: 0 }],
@@ -188,7 +196,7 @@ export default unit({
         say('jorge', 'Y los intereses hay que pagarlos igual…'),
         say('lumi', 'Por eso la deuda hunde a las empresas en los años malos.'),
       ]),
-      key('¿Cuánto es demasiado?', '**Deuda neta / EBITDA:** menos de 2, cómodo; más de 4, preocupante. Depende del sector: eléctricas, autopistas e inmobiliarias soportan más deuda porque sus ingresos son muy estables.\n\n**Cobertura de intereses** (EBIT ÷ intereses): Panadería Global, 150 ÷ 20 = **7,5 veces**. Por debajo de 2-3, cualquier tropiezo aprieta.\n\nSi la caja supera la deuda, hay **caja neta**: Inditex cerró su ejercicio 2024 con 11.495 M€.', 'La deuda multiplica: los años buenos parecen mejores y los malos, mucho peores.'),
+      key('¿Cuánto es demasiado?', '**Deuda neta / EBITDA:** menos de 2, cómodo; más de 4, preocupante. Depende del sector: eléctricas, autopistas e inmobiliarias soportan más deuda porque sus ingresos son muy estables.\n\n**Cobertura de intereses** (EBIT ÷ intereses): Panadería Global, 150 ÷ 20 = **7,5 veces**. Por debajo de 2-3, cualquier tropiezo aprieta.\n\nSi la caja supera la deuda, hay **caja neta**: Inditex cerró su ejercicio 2024 con 11.495 M€.', 'La deuda multiplica: los años buenos parecen mejores y los malos, mucho peores.', 'Pruébalo: pregúntale a Lumi a partir de qué deuda neta/EBITDA hay que preocuparse.'),
     ], [
       num('Deuda financiera de 300 M€ y caja de 100 M€. ¿Cuál es la deuda neta?', 200, 'M€', '300 − 100 = 200 M€.'),
       num('Con esa deuda neta de 200 M€ y un EBITDA de 100 M€, ¿cuánto vale deuda neta/EBITDA?', 2, 'veces', '200 ÷ 100 = 2 veces: en el límite de lo cómodo.'),
@@ -200,7 +208,10 @@ export default unit({
       buckets('Empresa industrial: ¿cómo está su deuda neta/EBITDA?', ['Cómoda (menos de 2)', 'Vigilar (de 2 a 4)', 'Preocupante (más de 4)'], [['Deuda neta 100, EBITDA 100', 0], ['Deuda neta 300, EBITDA 100', 1], ['Deuda neta 900, EBITDA 150', 2], ['Caja neta de 50', 0], ['Deuda neta 500, EBITDA 100', 2]], '1 vez; 3 veces; 6 veces; negativa; 5 veces.'),
       timed(single('Rápido: deuda 500, caja 100, EBITDA 200. ¿Deuda neta/EBITDA?', ['2', '2,5', '3'], 0, '(500 − 100) ÷ 200 = 2 veces.'), 15),
       scenario('Marta duda entre dos empresas iguales en todo salvo la deuda. A: deuda neta/EBITDA de 0,5 y ROE del 12 %. B: deuda neta/EBITDA de 4,5 y ROE del 20 %. ¿Qué debería tener en cuenta?', [['Que B es mejor: su ROE es mayor', 'Parte de ese ROE puede venir de la deuda, que también multiplica las pérdidas cuando las cosas van mal.'], ['Que el ROE de B puede estar inflado por la deuda y que en una crisis lo pasará peor', 'Eso: más deuda, más riesgo. No es mejor negocio, solo más apalancado.'], ['Que la deuda da igual si la empresa gana dinero', 'Hoy gana; la pregunta es qué pasa el año que no gane.']], 1, 'Mira el ROE junto a la deuda: la deuda infla la rentabilidad y el riesgo.'),
-    ], { source: '5.3', minutes: 6, retire: [3, 4, 6, 8] }),
+      scenario('Vas a comprar una de estas tres cadenas de hamburgueserías inventadas, del mismo tamaño, y se acerca una recesión. ¿Cuál eliges para dormir tranquilo?', [['La que tiene más caja que deuda', 'Eso: con caja neta, una recesión no la obliga a pedir dinero a nadie.'], ['La que debe 5 veces su EBITDA, porque crece más', 'Crece con deuda, pero en una recesión el EBITDA baja y los intereses no esperan.'], ['La que debe 3 veces su EBITDA y paga intereses altos', 'Está en zona de vigilar: no es la más segura si llega una recesión.']], 0, 'En una recesión, el EBITDA baja y la deuda se queda: el ratio empeora sin pedir un euro más. La caja neta es el mejor colchón.'),
+      chat(['La deuda neta de esta empresa es negativa.', '¿Eso es malo? Suena fatal.'], '¿Qué le contestas a Lumi?', [['Al contrario: tiene más caja que deuda', '¡Ah! Entonces es como Inditex: le sobra dinero.'], ['Sí: debe muchísimo', 'Negativa significa al revés: la caja supera a la deuda.'], ['No significa nada', 'Sí significa algo: podría devolver todo lo que debe con su caja.']], 0, 'Deuda neta = deuda financiera − caja. Si sale negativa, la empresa tiene caja neta: es la situación más cómoda. Suena mal por el signo, pero es buena noticia.'),
+      order('Empresas industriales: ordena su deuda de más cómoda a más preocupante.', ['Caja neta: más caja que deuda', 'Deuda neta de 1 vez el EBITDA', 'Deuda neta de 3 veces el EBITDA', 'Deuda neta de 6 veces el EBITDA'], 'Cuantas más veces su EBITDA debe una empresa, más años tardaría en pagar. Por debajo de 2 es cómodo; por encima de 4, preocupante en una industrial.'),
+    ], { source: '5.3', minutes: 6, retire: [0, 1, 2, 3, 4, 6, 8] }),
 
     lesson('u16l6', 'Resultados trimestrales y expectativas', [
       story('Un récord que no gustó', [{ id: 'nora', name: 'Nora' }], [
@@ -237,7 +248,7 @@ export default unit({
           { say: '¿Sube o baja? Clasifica cada resultado', mood: 'HAPPY' },
         ],
       }),
-      key('Días de huecos', 'Cuatro veces al año las cotizadas publican sus cuentas. Antes, los analistas publican sus previsiones (ventas, BPA y lo que esperan para el futuro): su media es el **consenso**.\n\nSon días de **huecos de precio**: la acción puede abrir muy lejos del cierre anterior, y un stop salta al primer precio disponible, quizá muy por debajo de lo previsto.', 'En bolsa, una buena noticia que ya se esperaba no es noticia.'),
+      key('Días de huecos', 'Cuatro veces al año las cotizadas publican sus cuentas. Antes, los analistas publican sus previsiones (ventas, BPA y lo que esperan para el futuro): su media es el **consenso**.\n\nSon días de **huecos de precio**: la acción puede abrir muy lejos del cierre anterior, y un stop salta al primer precio disponible, quizá muy por debajo de lo previsto.', 'En bolsa, una buena noticia que ya se esperaba no es noticia.', 'Pruébalo: pon una alerta de precio en Inditex para enterarte si se mueve tras resultados.'),
     ], [
       single('El consenso esperaba un BPA de 1,20 € y la empresa presenta 1,10 €, un 15 % más que hace un año. ¿Qué es más probable a corto plazo?', ['Que la acción caiga: ha decepcionado frente a lo esperado', 'Que suba con fuerza: ha crecido un 15 %', 'Que no se mueva'], 0, 'Se compara con lo esperado (1,20 €), no con el año pasado.'),
       scenario('Bruno tiene acciones de una tecnológica que presenta resultados mañana. Ha leído que «serán buenísimos» y quiere triplicar su posición justo antes. ¿Qué se le escapa?', [['Nada: si son buenísimos, sube', 'Si «buenísimos» es lo que todos esperan, ya está en el precio. Y si decepciona, el hueco puede ser enorme.'], ['Que el precio ya descuenta lo esperado y que puede abrir con un hueco en cualquier dirección', 'Bien: el día de resultados no es momento de multiplicar el tamaño de una posición.'], ['Que mañana es festivo', 'No es el problema: el problema es el riesgo del hueco.']], 1, 'Antes de resultados, el riesgo es mayor de lo que parece: el stop no te protege de un hueco.'),
@@ -249,12 +260,13 @@ export default unit({
       timed(single('Rápido: beneficio récord, pero por debajo de lo esperado. ¿Reacción más probable?', ['Caída', 'Subida', 'Ninguna'], 0, 'Se compara con la expectativa, no con el récord.'), 10),
       scenario('Ana lee «Inditex gana un récord de 5.866 M€» y ve, sorprendida, que la acción cae más de un 7 %. ¿Qué explicación es más razonable?', [['Que el titular es falso', 'El beneficio fue real; lo que pasó es otra cosa.'], ['Que el mercado esperaba más crecimiento y le decepcionó el ritmo', 'Eso: fue su menor crecimiento desde 2020. El récord ya estaba en el precio.'], ['Que la bolsa se equivoca siempre', 'No se equivoca ni acierta: compara con lo que esperaba.']], 1, 'El precio reacciona a la diferencia entre lo que pasa y lo esperado.'),
       multi('¿Qué puede mover una acción el día de resultados? Marca todas.', ['El BPA frente al consenso', 'Las previsiones para los próximos trimestres', 'Los márgenes frente a lo esperado', 'El color de la presentación'], [0, 1, 2], 'Todo lo que cambia lo que el mercado espera del futuro.'),
-    ], { source: '6.4', minutes: 6, retire: [0, 4, 7, 8] }),
+      chat(['Mañana presenta resultados una empresa de mi cartera.', 'Todo el mundo espera unas cifras espectaculares.'], '¿Qué le contestas a Lumi?', [['Si ya lo espera todo el mundo, ya está en el precio: ojo con el hueco', 'Cierto: si solo son buenas, igual hasta cae. Reviso mi posición.'], ['Compra más hoy: mañana se disparará', 'Si decepciona un poco, podría abrir muy abajo. Y el stop no frena un hueco.'], ['Pon un stop muy ajustado y listo', 'Un hueco salta por encima del stop: vende al primer precio disponible.']], 0, 'El precio reacciona a la diferencia con lo esperado. Si todos esperan cifras espectaculares, solo unas aún mejores lo harán subir, y un hueco puede saltarse tu stop.'),
+    ], { source: '6.4', minutes: 6, retire: [0, 4, 5, 7, 8] }),
 
     lesson('u16l7', 'Leer un informe anual sin perderte', [
       play({
         title: 'Señales en un informe anual',
-        intro: 'Un informe anual puede tener 300 páginas. Estas cosas se ven rápido: ¿son **señal de alarma** o **buena señal**?',
+        intro: 'En 2020 quebró Wirecard, una empresa alemana de pagos: su auditor no encontraba una parte enorme de su caja. Estas señales de un informe anual se ven rápido: ¿son **señal de alarma** o **buena señal**?',
         widget: {
           kind: 'sort',
           bins: [{ label: 'Señal de alarma' }, { label: 'Buena señal' }],
@@ -286,7 +298,7 @@ export default unit({
         say('lumi', 'Compara siempre el beneficio ajustado con el oficial y con la caja.'),
         say('lumi', 'El entusiasmo no paga la deuda.'),
       ]),
-      key('Dónde está cada cosa', 'Lo importante: **estados financieros** (resultados, balance y flujos de caja), **notas** (deuda, litigios, ajustes), **informe del auditor** (que no tenga «salvedades»), **riesgos** y la carta del presidente o del CEO, que es el relato.\n\nDónde: la web de **relación con inversores**, la **CNMV** (cotizadas españolas) y **SEC EDGAR** (EE. UU.: **10-K** anual y **10-Q** trimestral). Compara al menos **5 años**.', 'Lee primero los números y las notas; el relato, después.'),
+      key('Dónde está cada cosa', 'Lo importante: **estados financieros** (resultados, balance y flujos de caja), **notas** (deuda, litigios, ajustes), **informe del auditor** (que no tenga «salvedades»), **riesgos** y la carta del presidente o del CEO, que es el relato.\n\nDónde: la web de **relación con inversores**, la **CNMV** (cotizadas españolas) y **SEC EDGAR** (EE. UU.: **10-K** anual y **10-Q** trimestral). Compara al menos **5 años**.', 'Lee primero los números y las notas; el relato, después.', 'Pruébalo: elige una empresa de Mercado y pregúntale a Lumi qué miraría en su informe.'),
     ], [
       order('Ordena la lectura que te proponemos: primero hechos, luego relato.', ['Cuenta de resultados, balance y flujos de caja', 'Notas sobre deuda y ajustes', 'Informe del auditor', 'Carta del CEO'], 'Si lees el relato con los números ya en la cabeza, te dejas llevar mucho menos.'),
       multi('¿Qué son señales de alarma en un informe anual? Marca todas.', ['El auditor emite su opinión con salvedades', 'El beneficio «ajustado» es muy distinto del oficial año tras año', 'Ha cambiado tres veces de auditor en cuatro años', 'El flujo de caja libre acompaña al beneficio'], [0, 1, 2], 'Que la caja acompañe al beneficio es buena señal.'),
@@ -298,6 +310,7 @@ export default unit({
       scenario('Pablo lee la carta del CEO: «Año histórico, crecimiento excepcional, futuro brillante». En las notas descubre que la deuda se ha duplicado y que el beneficio ajustado lleva tres años quitando «costes extraordinarios». ¿Qué hace?', [['Se fía de la carta: el CEO conoce mejor la empresa', 'La carta es el relato; las notas son los hechos. Y no cuadran.'], ['Da más peso a las notas y a la caja que al relato', 'Bien: los números de las notas no llevan adjetivos.'], ['Compra porque el CEO está ilusionado', 'El entusiasmo no paga la deuda.']], 1, 'Lee primero los números y las notas; el relato, después.'),
       timed(single('Rápido: ¿qué parte del informe opina sobre si las cuentas son fiables?', ['El informe del auditor', 'La carta del CEO', 'La portada'], 0, 'El auditor revisa las cuentas y dice si reflejan la imagen fiel.'), 12),
       multi('Si solo tienes 10 minutos con un informe anual, ¿qué miras? Marca las tres más útiles.', ['La evolución de ventas y beneficio', 'El flujo de caja libre', 'La deuda neta', 'Las fotos de las tiendas'], [0, 1, 2], 'Crecimiento, caja y deuda: lo esencial en poco tiempo.'),
-    ], { source: '5.9', minutes: 6, retire: [1, 6, 7, 8] }),
+      scenario('Dos empresas inventadas anuncian un «beneficio ajustado récord». En A, el ajustado y el oficial casi coinciden; en B, el ajustado dobla al oficial año tras año. ¿De cuál te fías más?', [['De A: su cifra ajustada y la oficial cuentan lo mismo', 'Eso: no necesita apartar gastos para presumir de beneficio.'], ['De B: su beneficio ajustado es mayor', 'Más alto no es mejor: si cada año aparta gastos «extraordinarios», son gastos normales.'], ['De las dos igual: las dos tienen un récord', 'Un récord de una cifra que cada empresa calcula a su manera.']], 0, 'El beneficio oficial sigue reglas comunes; el ajustado lo define la empresa. Si se separan año tras año, mira qué gastos se están apartando.'),
+    ], { source: '5.9', minutes: 6, retire: [1, 4, 6, 7, 8] }),
   ],
 })

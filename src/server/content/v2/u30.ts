@@ -2,7 +2,7 @@ import 'server-only'
 // Sección 10 · Unidad 30 · Gestionar tu cartera (docs/curso-v2/02-curriculo.md)
 // Clases interactivas (docs/curso-v2/05-clases-interactivas.md). Cifras calculadas con src/client/play/math.ts:
 // mixPath/maxDrawdown sobre mix-classic (charts.json) y growthPath (7 % anual equivalente, como las piezas).
-import { buckets, chat, choose, fill, key, lesson, match, multi, note, num, opt, order, play, portfolio, say, scenario, simTrade, single, story, text, tf, timed, unit, when } from '../dsl'
+import { buckets, chat, choose, fill, key, lesson, level, match, multi, note, num, opt, order, play, portfolio, say, scenario, simTrade, single, story, text, tf, timed, unit, when } from '../dsl'
 
 export default unit({
   id: 'u30', order: 30, title: 'Gestionar tu cartera', description: 'Rebalancear, vigilar costes, aportar poco a poco, medir bien y escribir tu plan',
@@ -48,7 +48,7 @@ export default unit({
           { say: '¿Qué haces en cada caso?', mood: 'HAPPY' },
         ],
       }),
-      key('Tres formas de rebalancear', '1. **Por calendario:** una vez al año, por ejemplo en enero.\n2. **Por umbral:** cuando una parte se aleja más de 5 puntos.\n3. **Con las aportaciones:** el dinero nuevo va a lo que se ha quedado corto. No vendes, así que no generas impuestos.\n\nCon fondos de inversión también puedes rebalancear por **traspaso**, sin tributar.', 'Calendario, umbral o aportaciones: lo importante es tener una regla y seguirla.', 'Es la forma automática de comprar barato cuando todos venden.'),
+      key('Tres formas de rebalancear', '1. **Por calendario:** una vez al año, por ejemplo en enero.\n2. **Por umbral:** cuando una parte se aleja más de 5 puntos.\n3. **Con las aportaciones:** el dinero nuevo va a lo que se ha quedado corto. No vendes, así que no generas impuestos.\n\nCon fondos de inversión también puedes rebalancear por **traspaso**, sin tributar.', 'Calendario, umbral o aportaciones: lo importante es tener una regla y seguirla.', 'Pruébalo: en Cartera, mira el «Peso en cartera» de cada activo frente a tu plan.'),
     ], [
       single('Tu plan es 60/40 y tras una racha buena estás en 72/28. Rebalancear es…', ['Comprar más acciones, que van bien', 'Vender acciones o aportar a bonos hasta volver al 60/40', 'No tocar nada nunca'], 1, 'Vuelves al nivel de riesgo que elegiste con calma.'),
       num('Tienes 10.000 €: 6.000 € en acciones y 4.000 € en bonos. Las acciones suben un 40 % y los bonos se quedan igual. ¿Qué porcentaje de la cartera son ahora las acciones? (redondea a un decimal)', 67.7, '%', 'Acciones: 8.400 €. Total: 12.400 €. 8.400 ÷ 12.400 ≈ 67,7 %.', 1),
@@ -60,7 +60,8 @@ export default unit({
       timed(tf('Rebalancear con las aportaciones nuevas evita pagar impuestos por vender.', true, 'Si no vendes, no hay ganancia que declarar.'), 10),
       fill('Si decides corregir solo cuando una parte se aleja más de 5 puntos, rebalanceas por ____.', 'umbral', ['calendario', 'intuición', 'rumor'], 'También se puede hacer por calendario, una vez al año.'),
       single('Con fondos de inversión en España, ¿cómo puedes rebalancear sin pagar impuestos?', ['Vendiendo y comprando en el mismo día', 'Mediante un traspaso entre fondos', 'No se puede'], 1, 'El traspaso entre fondos no tributa hasta el reembolso final. Los ETF no tienen esta ventaja.'),
-    ], { source: '4.6', minutes: 6, retire: [3, 6, 7] }),
+      scenario('Tu plan es 70 % acciones y 30 % bonos, y tras un buen año estás en 78/22. Este mes vas a aportar 300 €. ¿Qué haces?', [['Aporto los 300 € a acciones, que son las que van bien', 'Así te alejas aún más del plan: cada vez más riesgo del que elegiste.'], ['Aporto los 300 € a bonos, y lo mismo los meses siguientes hasta volver al 70/30', '¡Bien! Rebalanceas sin vender nada, así que no pagas impuestos.'], ['Vendo ya todas las acciones que sobran', 'Funciona, pero si son ETF o acciones, vender con ganancias tributa. Con las aportaciones lo evitas.']], 1, 'Rebalancear con las aportaciones devuelve la cartera a tu plan sin vender, así que no generas impuestos. Meter el dinero en lo que más sube parece lógico, pero te aleja del riesgo que elegiste.'),
+    ], { source: '4.6', minutes: 6, retire: [1, 2, 3, 6, 7] }),
 
     lesson('u30l2', 'El coste de las comisiones a largo plazo', [
       play({
@@ -91,7 +92,7 @@ export default unit({
         ]),
         say('lumi', 'Una comisión alta es un **lastre seguro**. Batir al índice, una esperanza incierta.'),
       ]),
-      key('Todos los costes', 'Gastos corrientes o **TER** (vienen en el KID), comisión por operación, spread, custodia, cambio de divisa e impuestos.\n\nJohn Bogle, fundador de Vanguard, lo resumía así: «En inversión, obtienes aquello por lo que no pagas».', 'Cada punto de comisión anual se come una parte enorme del resultado por el interés compuesto.'),
+      key('Todos los costes', 'Gastos corrientes o **TER** (vienen en el KID), comisión por operación, spread, custodia, cambio de divisa e impuestos.\n\nJohn Bogle, fundador de Vanguard, lo resumía así: «En inversión, obtienes aquello por lo que no pagas».', 'Cada punto de comisión anual se come una parte enorme del resultado por el interés compuesto.', 'Pruébalo: pregúntale a Lumi qué TER es barato para un ETF indexado.'),
     ], [
       num('10.000 € a 30 años con un mercado al 7 %. Sin costes acabas con 76.123 € y con un 1,5 % anual con 49.840 €. ¿Cuánto se ha llevado la comisión?', 26283, '€', '76.123 − 49.840 = 26.283 €: más de un tercio del resultado.', 1),
       num('Mismo caso, pero con un 1,8 % de costes (rentabilidad neta del 5,2 %). ¿Cuánto tendrías a los 30 años? (redondea)', 45759, '€', '10.000 × 1,052³⁰ ≈ 45.759 €, frente a 71.968 € con un 0,2 %.', 2),
@@ -103,7 +104,8 @@ export default unit({
       timed(single('Rápido: ¿de quién es la frase «en inversión, obtienes aquello por lo que no pagas»?', ['John Bogle', 'Elon Musk', 'Isaac Newton'], 0, 'El fundador de Vanguard y del primer fondo indexado para minoristas (1976).'), 12),
       scenario('Tu banco te ofrece un fondo con un 1,9 % de gastos «con un gestor estrella». La alternativa es un indexado mundial al 0,2 %. ¿Qué piensas?', [['El gestor estrella compensará la comisión', 'Según SPIVA, en 10 años un 97 % de los fondos de acciones europeos quedó por detrás de su índice. La estrella tendría que ser excepcional… durante décadas.'], ['Necesitaría batir al índice por 1,7 puntos al año, cada año, para empatar', 'Exacto: es un listón altísimo que casi nadie supera de forma sostenida.'], ['Da igual, la diferencia es pequeña', 'A 30 años, esa diferencia puede ser un tercio de tu dinero.']], 1, 'Una comisión alta es un handicap seguro; batir al índice, una esperanza incierta.'),
       chat(['Mi fondo cobra un 1,5 %, pero este año ha subido un 10 % 🚀', 'Así que el coste da igual, ¿no?'], '¿Qué le contestas a Lumi?', [['Sí, con un 10 % no importa', 'Ese 10 % ya es neto de comisiones, pero sin ellas habría sido un 11,5 %. Y el año que no suba, el 1,5 % se cobra igual.'], ['Compáralo con su índice: si el índice subió un 12 %, el fondo lo hizo peor', '¡Eso! Lo que importa es cuánto te deja frente a la alternativa barata, año tras año.'], ['Entonces mejor un fondo que cobre un 3 %', 'Cobrar más no hace subir más. Lo único seguro de una comisión es que se paga.']], 1, 'Juzga un fondo frente a su índice y durante muchos años, no por un buen año.'),
-    ], { source: '4.2', minutes: 6, retire: [3, 7, 8] }),
+      scenario('Tienes un ETF del MSCI World que cobra un 0,20 %, con buenas ganancias. Descubres otro del mismo índice al 0,12 %. ¿Qué haces?', [['Vendo el mío ya y compro el barato', 'Vender un ETF con ganancias tributa hoy: pagarías impuestos para ahorrar un 0,08 % al año.'], ['Mantengo el que tengo y llevo las aportaciones nuevas al barato', '¡Eso! Ahorras costes en lo nuevo sin pagar impuestos por vender lo viejo.'], ['Me da igual: los costes no importan', 'Sí importan, pero aquí la diferencia es pequeña. Lo caro sería vender con prisa.']], 1, 'Entre dos ETF baratos del mismo índice, la diferencia es pequeña y vender tiene un coste fiscal seguro. Lo sensato es que el dinero nuevo vaya al más barato. Cambiar de golpe solo compensa cuando la diferencia es grande, como de 1,5 % a 0,2 %.'),
+    ], { source: '4.2', minutes: 6, retire: [0, 1, 3, 7, 8] }),
 
     lesson('u30l3', 'Invertir con poco: 50 € al mes', [
       play({
@@ -151,7 +153,7 @@ export default unit({
           ],
         },
         goal: { text: 'Clasifica las seis opciones.', when: [when('done', '==', 6)] },
-        insight: 'Con poco dinero, busca **cero comisiones fijas** y automatiza la aportación. Empezar pronto con poco suele pesar más que empezar tarde con mucho.',
+        insight: 'Con poco dinero, busca **cero comisiones fijas** y automatiza la aportación. Pruébalo: en Mercado, compra 50 € de un ETF mundial, como VWCE, con tu dinero virtual.',
         lumi: [
           { when: when('wrong', '>=', 2), say: 'Pregúntate: ¿se come una parte fija de cada aportación?', mood: 'THINKING' },
           { say: 'Clasifica cada opción', mood: 'HAPPY' },
@@ -168,9 +170,23 @@ export default unit({
       buckets('¿Ayuda o complica invertir con poco dinero?', ['Ayuda', 'Complica'], [['Fondos indexados sin importe mínimo', 0], ['Aportación automática el día de cobro', 0], ['Una comisión fija de 10 € por compra', 1], ['Esperar a tener mucho para empezar', 1], ['Una custodia mínima de 30 € al año', 1]], 'Con poco dinero, los costes fijos se comen gran parte de la aportación.'),
       timed(single('Rápido: con una suma grande, ¿qué ganó más veces en los estudios de Vanguard?', ['Invertirla de golpe', 'Repartirla en 3 años', 'Esperar a una caída'], 0, 'Unas dos de cada tres veces, porque el mercado sube más veces de las que baja. Con un sueldo, aportar cada mes es lo natural.'), 12),
       chat(['Solo puedo ahorrar 50 € al mes 😔', 'Con eso no voy a ningún sitio, ¿verdad?'], '¿Qué le contestas a Lumi?', [['Tienes razón, mejor gastarlos', 'Gastar es legítimo, pero 50 € al mes durante décadas pueden ser decenas de miles de euros.'], ['Empieza con 50 € y súbelo cuando ganes más: el tiempo hace el resto', '¡Así se hace! Lo que más pesa es empezar pronto y no parar.'], ['Pide un préstamo para invertir más', 'Invertir con dinero prestado convierte una caída en un problema serio.']], 1, 'Con poco y pronto se llega lejos. Lo importante es el hábito.'),
-    ], { source: '4.3', minutes: 6, retire: [0, 1, 2, 5, 7] }),
+      scenario('Aportas 50 € cada mes a un fondo indexado. Este mes la bolsa ha caído un 20 %. ¿Qué haces con la aportación?', [['La paro hasta que la bolsa se recupere', 'Justo cuando está barato dejas de comprar: te pierdes las participaciones a mejor precio.'], ['La mantengo: con los mismos 50 € compro más participaciones', '¡Eso! Aportar en las caídas baja tu precio medio sin que tengas que adivinar nada.'], ['Vendo lo que llevo para no perder más', 'Vender en la caída convierte una bajada temporal en una pérdida definitiva.']], 1, 'Con una aportación fija, cuando el precio baja compras más participaciones y tu precio medio baja. Parar en las caídas parece prudente, pero es dejar de comprar justo cuando está más barato.'),
+      scenario('Vas a invertir 50 € al mes. El bróker A cobra 3 € por cada compra y su ETF, un 0,10 % al año. El B no cobra por comprar y su ETF cuesta un 0,20 %. ¿Cuál te conviene?', [['El A: su ETF es más barato', 'Su ETF sí, pero 3 € de cada 50 € se van antes de invertir: eso pesa mucho más.'], ['El B: sin comisión fija, todo tu dinero se pone a trabajar', 'Exacto. Con aportaciones pequeñas, una comisión fija por compra es lo más caro.'], ['Da igual: la diferencia es mínima', 'No lo es: con 50 € al mes, 3 € por compra se lleva una parte grande de cada aportación.']], 1, 'Con poco dinero, una comisión fija se come un trozo de cada aportación (3 € de 50 € es mucho más que una décima de punto al año). Por eso el ETF más barato no siempre es la opción más barata.'),
+    ], { source: '4.3', minutes: 6, retire: [0, 1, 2, 3, 5, 7] }),
 
     lesson('u30l4', 'Medir tu rentabilidad bien', [
+      story('El fondo ganó; Laura, no', [{ id: 'laura', name: 'Laura' }], [
+        note('Laura mete 1.000 € en un fondo. Sube un 20 %: ya tiene 1.200 €.'),
+        say('laura', '¡Qué bien va! Le meto 10.000 € más.'),
+        note('Justo después, el fondo cae un 10 %. Laura tiene 10.080 €.'),
+        choose('¿Laura ha ganado o ha perdido?', [
+          opt('Ha ganado: el fondo sube un 8 % en total', 'ok', say('lumi', 'El fondo, sí. Pero Laura puso 11.000 € y tiene 10.080 €.')),
+          opt('Ha perdido 920 €, aunque el fondo gane un 8 %', 'good', say('lumi', '¡Exacto! Tenía casi todo dentro justo en la caída.')),
+          opt('Ha perdido un 10 %, como el fondo', 'bad', say('lumi', 'El fondo no pierde en total: gana un 8 %. Y ella pierde 920 €.')),
+        ]),
+        say('lumi', 'Ponderada **por tiempo**: lo que hizo el fondo. Sirve para comparar fondos.'),
+        say('lumi', 'Ponderada **por dinero**: lo que ganaste **tú**, según cuándo metiste el dinero.'),
+      ]),
       play({
         title: '¿Cuánto es al año?',
         intro: 'Un fondo convierte **10.000 € en 15.000 €** en 5 años: un +50 % en total. ¿Qué ritmo anual es eso?',
@@ -189,19 +205,7 @@ export default unit({
           { say: 'Mueve el % anual hasta llegar a 15.000 €', mood: 'HAPPY' },
         ],
       }),
-      story('El fondo ganó; Laura, no', [{ id: 'laura', name: 'Laura' }], [
-        note('Laura mete 1.000 € en un fondo. Sube un 20 %: ya tiene 1.200 €.'),
-        say('laura', '¡Qué bien va! Le meto 10.000 € más.'),
-        note('Justo después, el fondo cae un 10 %. Laura tiene 10.080 €.'),
-        choose('¿Laura ha ganado o ha perdido?', [
-          opt('Ha ganado: el fondo sube un 8 % en total', 'ok', say('lumi', 'El fondo, sí. Pero Laura puso 11.000 € y tiene 10.080 €.')),
-          opt('Ha perdido 920 €, aunque el fondo gane un 8 %', 'good', say('lumi', '¡Exacto! Tenía casi todo dentro justo en la caída.')),
-          opt('Ha perdido un 10 %, como el fondo', 'bad', say('lumi', 'El fondo no pierde en total: gana un 8 %. Y ella pierde 920 €.')),
-        ]),
-        say('lumi', 'Ponderada **por tiempo**: lo que hizo el fondo. Sirve para comparar fondos.'),
-        say('lumi', 'Ponderada **por dinero**: lo que ganaste **tú**, según cuándo metiste el dinero.'),
-      ]),
-      key('Medir con honestidad', 'Resta comisiones e impuestos, compara con un índice de referencia y recuerda la inflación.\n\nUna app que te dice «+40 % desde el inicio» sin decir en cuántos años no te dice casi nada.', 'Para comparar, usa la rentabilidad anualizada; para saber cuánto ganaste tú, la ponderada por dinero.'),
+      key('Medir con honestidad', 'Resta comisiones e impuestos, compara con un índice de referencia y recuerda la inflación.\n\nUna app que te dice «+40 % desde el inicio» sin decir en cuántos años no te dice casi nada.', 'Para comparar, usa la rentabilidad anualizada; para saber cuánto ganaste tú, la ponderada por dinero.', 'Pruébalo: compara la «Rentabilidad» de tu Cartera con la de SPY en ese tiempo.'),
     ], [
       num('Inviertes 2.000 € y hoy valen 2.600 €. ¿Cuál es tu rentabilidad simple?', 30, '%', '(2.600 − 2.000) ÷ 2.000 = 0,30 → 30 %.'),
       num('Una inversión gana un 50 % en total en 5 años. ¿Cuál es su rentabilidad anualizada? (un decimal)', 8.4, '%', '1,5^(1/5) − 1 ≈ 0,084 → 8,4 % anual. No es 10 %: el interés se compone.', 2),
@@ -213,12 +217,14 @@ export default unit({
       timed(single('Rápido: +21 % en 2 años. ¿Rentabilidad anualizada?', ['10 %', '10,5 %', '21 %'], 0, '1,21^(1/2) = 1,10 → 10 % anual. 1,1 × 1,1 = 1,21.'), 15),
       scenario('Una app presume de que tu cartera lleva «+40 % desde el inicio». Empezaste hace 7 años. Un fondo indexado mundial ha dado un 7 % anual en ese tiempo. ¿Cómo lo valoras?', [['Genial: un 40 % es muchísimo', 'Sin el plazo no se sabe: en 7 años, un 40 % es menos de un 5 % anual.'], ['Lo anualizo: 1,4^(1/7) − 1 ≈ 4,9 % anual, por debajo del índice', 'Exacto. Solo al anualizar puedes comparar, y aquí la comparación no sale bien.'], ['Mejor no mirar la rentabilidad', 'Medir bien es justo lo que te permite decidir.']], 1, 'Una cifra total sin plazo no dice nada. Anualiza y compara con un índice de referencia.'),
       multi('¿Qué debes tener en cuenta para medir tu rentabilidad con honestidad? Marca todo.', ['Restar comisiones e impuestos', 'Compararla con un índice de referencia', 'Tener en cuenta la inflación', 'Fijarte solo en el mejor año'], [0, 1, 2], 'El mejor año dice poco: importa el resultado neto, a largo plazo y frente a una alternativa.'),
-    ], { minutes: 6, retire: [5, 6, 7] }),
+      scenario('El fondo A anuncia «+60 % en 10 años». El fondo B, «un 6 % anual durante los últimos 5 años». ¿Cuál ha ido mejor cada año?', [['El A: un 60 % es mucho más que un 6 %', 'Comparas un total con un ritmo anual. Hay que pasarlos a la misma medida.'], ['El B: +60 % en 10 años es menos de un 6 % al año, porque el interés se compone', '¡Bien! Repartido entre 10 años y compuesto, ese 60 % da menos que el 6 % anual de B.'], ['No se pueden comparar', 'Sí se puede: anualizando los dos. Y ojo, plazos distintos no dicen qué pasará después.']], 1, 'Para comparar, todo tiene que estar en % anual. 60 entre 10 sería un 6 %, pero al componerse hace falta menos cada año para llegar al 60 %, así que A va por detrás de B.'),
+    ], { minutes: 6, retire: [0, 1, 5, 6, 7] }),
 
     lesson('u30l5', 'Tu Declaración de Política de Inversión', [
       story('Tu plan, en una página', [{ id: 'ana', name: 'Ana' }], [
-        say('ana', 'Quiero escribir mi Declaración de Política de Inversión. ¿Eso no es de grandes inversores?'),
-        say('lumi', 'Ellos la tienen. Tú puedes tener la tuya en **una página**.'),
+        say('ana', 'En marzo de 2020 la bolsa cayó un 30 % y lo vendí todo.'),
+        say('ana', 'Luego subió y me quedé fuera. ¿Cómo evito que me vuelva a pasar?'),
+        say('lumi', 'Con un plan escrito en una página: tu **Declaración de Política de Inversión**.'),
         say('lumi', 'Dice qué haces, por qué y qué harás cuando el mercado se ponga feo.'),
         choose('Punto 8: «Si la bolsa cae un 30 %, yo…»', [
           opt('…vendo todo y vuelvo cuando se calme', 'bad', say('lumi', 'Eso no lo decides en calma: lo decide el miedo.')),
@@ -259,7 +265,7 @@ export default unit({
         ]),
         say('lumi', 'Revísalo cada año o si cambia tu vida. **Nunca** por el mercado.'),
       ]),
-      key('La plantilla', '1. Objetivos («X € en el año Y para Z»).\n2. Horizonte.\n3. Colchón.\n4. Reparto.\n5. Productos y coste máximo.\n6. Aportación automática.\n7. Cuándo rebalanceo.\n8. Qué haré si la bolsa cae un 30 %.\n9. Qué no haré nunca.\n10. Límite para especular (opcional).', 'Un plan escrito en un momento de calma es lo que te salva en un momento de pánico.', 'Escribe hoy lo que harás el día que todo el mundo tenga miedo.'),
+      key('La plantilla', '1. Objetivos («X € en el año Y para Z»).\n2. Horizonte.\n3. Colchón.\n4. Reparto.\n5. Productos y coste máximo.\n6. Aportación automática.\n7. Cuándo rebalanceo.\n8. Qué haré si la bolsa cae un 30 %.\n9. Qué no haré nunca.\n10. Límite para especular (opcional).', 'Un plan escrito en un momento de calma es lo que te salva en un momento de pánico.', 'Pruébalo: pon una alerta un 20 % bajo tu ETF principal; si salta, relee tu plan.'),
     ], [
       order('Ordena las primeras secciones de una Declaración de Política de Inversión.', ['Objetivos', 'Horizonte', 'Colchón', 'Reparto', 'Productos', 'Aportaciones'], 'Primero qué y para cuándo; después con qué colchón, cómo repartir y con qué productos.'),
       fill('La Declaración se revisa una vez al año o cuando cambia tu ____, no cuando cambia el mercado.', 'vida', ['cartera', 'bróker', 'humor'], 'Un trabajo nuevo o un hijo cambian tus objetivos; una caída de la bolsa, no.'),
@@ -271,11 +277,13 @@ export default unit({
       scenario('La Declaración de Bruno dice 80 % acciones y 20 % bonos. Tras dos años muy buenos, quiere pasar al 100 % acciones «porque los bonos no rinden». ¿Qué le dices?', [['Que lo haga: la bolsa está subiendo', 'Subir el riesgo después de las subidas es comprar euforia. Su plan ya tenía en cuenta que los bonos rinden menos.'], ['Que relea por qué eligió el 80/20 y, si su vida no ha cambiado, lo mantenga', 'Bien: el plan existe para no decidir con la emoción del momento.'], ['Que lo pase todo a bonos por si acaso', 'Cambiar por miedo tampoco es seguir el plan.']], 1, 'La Declaración cambia con tu vida, no con el mercado.'),
       timed(tf('Escribir el plan en calma sirve para no decidir en pleno pánico.', true, 'Es su función principal: separar la decisión del momento de miedo.'), 10),
       chat(['La bolsa ha caído un 30 % 😱 Todo el mundo vende.', '¿Qué dice tu Declaración de Política de Inversión?'], '¿Qué le contestas a Lumi?', [['Que venda todo y vuelva cuando se calme', 'Eso no lo decidiste en calma: lo está decidiendo el miedo.'], ['No vendo, sigo aportando, rebalanceo si toca y releo el plan', '¡Eso es tener un plan! Y en caídas así, rebalancear te hace comprar barato.'], ['Pido un préstamo para comprar más', 'Tu Declaración seguramente dice «nunca con dinero prestado». Por algo.']], 1, 'El punto 8 del plan existe para este momento.'),
-    ], { source: '4.8', minutes: 6, retire: [4, 6, 7, 8, 9] }),
+      scenario('Tu Declaración dice «como mucho un 5 % para especular». Un año después, tu apuesta en una cripto se ha triplicado y ya pesa un 14 % de tu cartera. ¿Qué haces?', [['La dejo correr: está funcionando', 'Ahora un 14 % de tu dinero depende de algo que puede perderse entero. Tu límite era para esto.'], ['Vendo lo que pasa del 5 % y lo llevo al resto de la cartera', '¡Eso es seguir el plan! Te quedas con parte de la ganancia y el riesgo vuelve a su sitio.'], ['Compro más, que va muy bien', 'Subir la apuesta tras una subida es dejar que la euforia decida por ti.']], 1, 'El límite para especular se respeta también cuando sale bien: si la apuesta crece, se recorta hasta su peso. Dejarla correr parece ganar más, pero convierte lo pequeño en lo que más riesgo tiene.'),
+      level('Tu Declaración dice «en la parte para especular, siempre con stop». Compras bitcoin al último precio. Coloca el stop algo por debajo del mínimo reciente.', 'lvl-6', 'STOP', 'La regla escrita decide cuánto puedes perder antes de que el miedo o la euforia decidan por ti. El stop va algo por debajo del mínimo reciente: justo encima, cualquier mecha lo saltaría.'),
+    ], { source: '4.8', minutes: 6, retire: [4, 5, 6, 7, 8, 9] }),
 
     lesson('u30l6', 'Reto: tu cartera de 10.000 €', [
       text('El reto', 'Tienes **10.000 €** para invertir a 20 años (ya tienes tu colchón aparte). Construye una cartera diversificada, barata y que puedas defender en una mala racha.\n\nUsa todo lo de la sección: reparto según horizonte, varios países, pocos productos, costes bajos y una parte pequeña para especular si quieres.'),
-      key('Cómo se defiende una cartera', 'Con argumentos, no con predicciones: «tengo miles de empresas de todo el mundo, un 20 % en bonos para las caídas, un coste del 0,2 % y una regla escrita para rebalancear». Es un ejercicio para aprender, no una recomendación.', 'Una buena cartera no es la que más sube un año, sino la que puedes mantener 20 años.'),
+      key('Cómo se defiende una cartera', 'Con argumentos, no con predicciones: «tengo miles de empresas de todo el mundo, un 20 % en bonos para las caídas, un coste del 0,2 % y una regla escrita para rebalancear». Es un ejercicio para aprender, no una recomendación.', 'Una buena cartera no es la que más sube un año, sino la que puedes mantener 20 años.', 'Pruébalo: monta tu cartera en Mercado con dinero virtual, por ejemplo con VWCE e IEAG.'),
     ], [
       portfolio('Reparte los 10.000 €. Reglas: al menos 4 productos, ninguno por encima del 60 %, al menos un 15 % en bonos, como máximo un 10 % en oro, un 10 % en una acción suelta y un 5 % en cripto.', [['Fondo indexado MSCI World', 'ACCIONES'], ['Fondo indexado de emergentes', 'ACCIONES'], ['Fondo de bonos globales cubierto a euros', 'BONOS'], ['Fondo monetario', 'LIQUIDEZ'], ['Oro (ETC)', 'ORO'], ['Bitcoin', 'CRIPTO'], ['Una acción que te gusta', 'ACCIÓN SUELTA']], { minAssets: 4, maxWeight: 60, minKind: { BONOS: 15 }, maxKind: { ORO: 10, 'ACCIÓN SUELTA': 10, CRIPTO: 5 } }, 'Núcleo diversificado y barato, colchón de bonos para las caídas y lo especulativo limitado. La cripto puede perderse entera. Ejemplo educativo, no recomendación.'),
       simTrade('Reservaste una parte pequeña para especular. Quieres operar el IBEX 35 sin arriesgar más del 1 % de tus 10.000 € (100 €). Elige el importe y coloca el stop.', 'lvl-5', 'La parte especulativa también lleva reglas: el stop y el tamaño deciden cuánto puedes perder, no el mercado.', { cash: 10000, maxRiskPct: 1 }),
@@ -287,6 +295,6 @@ export default unit({
       timed(tf('Una cartera de 10.000 € necesita al menos 15 productos para estar diversificada.', false, 'Con uno a tres fondos indexados ya tienes miles de empresas de todo el mundo.'), 10),
       order('Ordena los pasos para poner en marcha la cartera.', ['Tener el colchón aparte', 'Decidir el reparto', 'Elegir productos baratos', 'Automatizar las aportaciones', 'Rebalancear una vez al año'], 'Primero la base y la decisión clave; después los productos y la disciplina.'),
       chat(['A ver, defiéndeme tu cartera 🧐', '¿Por qué crees que va a funcionar?'], '¿Qué le contestas a Lumi?', [['Porque he elegido lo que más va a subir', 'Nadie sabe qué subirá más. Una cartera que depende de acertar es frágil.'], ['No sé si subirá este año, pero está diversificada, es barata y sé qué haré en una caída', '¡Defensa perfecta! Has hablado de lo que controlas, no de lo que adivinas.'], ['Porque la bolsa siempre sube', 'A largo plazo ha subido, pero con caídas de hasta un 50 % por el camino.']], 1, 'Una cartera se defiende con diversificación, costes y un plan, no con predicciones.'),
-    ], { source: '4.5' }),
+    ], { source: '4.5', retire: [5, 7] }),
   ],
 })

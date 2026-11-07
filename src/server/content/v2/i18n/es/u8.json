@@ -10,6 +10,22 @@
    "steps": [
     {
      "texts": [
+      "La junta",
+      "Pablo",
+      "Tengo 50 acciones y me ha llegado la convocatoria de la junta.",
+      "Se vota subir mucho el sueldo del consejero delegado. Total, mi voto no cuenta…",
+      "¿Qué le dices a Pablo?",
+      "Que lea la propuesta y vote o delegue a distancia",
+      "Eso. Es su derecho como dueño, y las juntas suman votos grandes y pequeños.",
+      "Que no haga nada: con 50 acciones da igual",
+      "Su voto pesa poco, pero cuenta. Si no vota, otros deciden por él.",
+      "Que venda todo en protesta",
+      "Puede, pero renuncia a su parte sin haber usado su voz.",
+      "Por regla general, **una acción = un voto**. Los grandes fondos sí mueven votaciones."
+     ]
+    },
+    {
+     "texts": [
       "Tus derechos",
       "Ser accionista te da tres tipos de derechos, en proporción a tus acciones.",
       "Económico",
@@ -35,32 +51,33 @@
      ]
     },
     {
-     "texts": [
-      "La junta",
-      "Pablo",
-      "Tengo 50 acciones y me ha llegado la convocatoria de la junta.",
-      "Se vota subir mucho el sueldo del consejero delegado. Total, mi voto no cuenta…",
-      "¿Qué le dices a Pablo?",
-      "Que lea la propuesta y vote o delegue a distancia",
-      "Eso. Es su derecho como dueño, y las juntas suman votos grandes y pequeños.",
-      "Que no haga nada: con 50 acciones da igual",
-      "Su voto pesa poco, pero cuenta. Si no vota, otros deciden por él.",
-      "Que venda todo en protesta",
-      "Puede, pero renuncia a su parte sin haber usado su voz.",
-      "Por regla general, **una acción = un voto**. Los grandes fondos sí mueven votaciones."
-     ]
-    },
-    {
      "title": "Información para todos a la vez",
-     "body": "Las cotizadas deben publicar sus cuentas y comunicar a la **CNMV** cualquier **información privilegiada** (resultados, compras, problemas) para que todos los inversores la conozcan a la vez.\n\nAlgunas empresas tienen acciones **sin voto** o dan voto doble a quien las mantiene años.",
+     "body": "Las cotizadas deben publicar sus cuentas y comunicar a la **CNMV** cualquier **información privilegiada** (resultados, compras, problemas) para que todos los inversores la conozcan a la vez. Las cuentas de cualquier cotizada española están gratis en la web de la CNMV.\n\nAlgunas empresas tienen acciones **sin voto** o dan voto doble a quien las mantiene años.",
      "key": "Ser accionista te da derechos económicos, políticos y de información, en proporción a tus acciones.",
-     "tip": "Las cuentas de cualquier cotizada española están gratis en la web de la CNMV."
+     "tip": "Pruébalo: en Mercado, añade a Favoritos tres empresas de las que te gustaría ser dueño."
     }
    ]
   },
   "u8l3": {
    "title": "Dividendos: cómo y cuándo se cobran",
    "steps": [
+    {
+     "texts": [
+      "El plan maestro",
+      "Leo",
+      "Plan: compro a 20 € justo antes del dividendo, cobro 0,50 € y vendo.",
+      "¡Dinero gratis!",
+      "¿Qué falla en el plan de Leo?",
+      "Nada: es dinero gratis",
+      "El día que se descuenta el dividendo, la acción abre en torno a 19,50 €.",
+      "El precio baja más o menos lo que cobra",
+      "Eso. Tiene 0,50 € en efectivo y 0,50 € menos en acciones.",
+      "Que tiene que esperar a la fecha de pago",
+      "Cobrará ese día, sí. Pero el precio ya habrá bajado unos 0,50 €.",
+      "Bueno, al menos cobro el dividendo, ¿no?",
+      "Y tributa: en España el pagador ya **retiene un 19 %**."
+     ]
+    },
     {
      "texts": [
       "¿Cobras el dividendo?",
@@ -85,27 +102,10 @@
      ]
     },
     {
-     "texts": [
-      "El plan maestro",
-      "Leo",
-      "Plan: compro a 20 € la víspera del ex-dividendo, cobro 0,50 € y vendo.",
-      "¡Dinero gratis!",
-      "¿Qué falla en el plan de Leo?",
-      "Nada: es dinero gratis",
-      "El día ex-dividendo la acción abre en torno a 19,50 €.",
-      "El precio baja más o menos lo que cobra",
-      "Eso. Tiene 0,50 € en efectivo y 0,50 € menos en acciones.",
-      "Que tiene que esperar a la fecha de pago",
-      "Cobrará ese día, sí. Pero el precio ya habrá bajado unos 0,50 €.",
-      "Bueno, al menos cobro el dividendo, ¿no?",
-      "Y tributa: en España el pagador ya **retiene un 19 %**."
-     ]
-    },
-    {
      "title": "Rentabilidad por dividendo",
      "body": "**Rentabilidad por dividendo = dividendo anual ÷ precio.** Una acción de 30 € que paga 1,20 € al año rinde un 4 %.\n\nOjo: un dividendo altísimo a veces avisa de que el precio ha caído porque se espera un recorte.",
      "key": "El dividendo no es dinero gratis: sale del valor de la empresa.",
-     "tip": "Un dividendo altísimo a veces es una alarma, no un regalo."
+     "tip": "Pruébalo: en Mercado, busca Iberdrola, que reparte dividendo cada año, y añádela a Favoritos."
     }
    ]
   },
@@ -157,15 +157,31 @@
     },
     {
      "title": "Lo que cambia y lo que no",
-     "body": "En una ampliación, el **derecho de suscripción preferente** te deja comprar antes que nadie las acciones nuevas que te tocan: así mantienes tu porcentaje.\n\nAlgunas empresas españolas pagan el dividendo en acciones nuevas si quieres: el *scrip* o dividendo flexible.",
+     "body": "En una ampliación, el **derecho de suscripción preferente** te deja comprar antes que nadie las acciones nuevas que te tocan: así mantienes tu porcentaje.\n\nAlgunas empresas españolas pagan el dividendo en acciones nuevas si quieres: el *scrip* o dividendo flexible.\n\nSi un titular dice «la acción se desploma un 75 %», mira antes si ha habido un split.",
      "key": "Split y contrasplit no cambian lo que tienes; una ampliación a la que no acudes, sí: te diluye.",
-     "tip": "Si un titular dice «la acción se desploma un 75 %», mira antes si ha habido un split."
+     "tip": "Pruébalo: en Mercado, busca NVIDIA, que hizo un split 10×1 en 2024, y mira su gráfico con velas mensuales."
     }
    ]
   },
   "u8l5": {
    "title": "Grandes, medianas y pequeñas",
    "steps": [
+    {
+     "texts": [
+      "La micro cap del foro",
+      "Ana",
+      "En un foro dicen que esta micro cap, una empresa diminuta, puede multiplicarse por 10.",
+      "Voy a meter todo mi ahorro. ¡Me lo juego todo a esta!",
+      "¿Qué le dices a Ana?",
+      "Que las pequeñas siempre suben más",
+      "A veces suben más, pero muchas se quedan por el camino o quiebran.",
+      "Que puede perderlo casi todo: mejor no jugárselo todo a una",
+      "Eso. El potencial existe, pero el riesgo de una sola pequeña es enorme.",
+      "Que invierta solo la mitad",
+      "Sigue siendo mucho en una sola empresa pequeña y poco líquida.",
+      "Ojo: los foros también son el sitio favorito de quien quiere inflar una acción."
+     ]
+    },
     {
      "texts": [
       "¿Grande o pequeña?",
@@ -194,32 +210,33 @@
      ]
     },
     {
-     "texts": [
-      "La micro cap del foro",
-      "Ana",
-      "En un foro dicen que esta micro cap puede multiplicarse por 10.",
-      "Voy a meter todo mi ahorro. ¡Me lo juego todo a esta!",
-      "¿Qué le dices a Ana?",
-      "Que las pequeñas siempre suben más",
-      "A veces suben más, pero muchas se quedan por el camino o quiebran.",
-      "Que puede perderlo casi todo: mejor no jugárselo todo a una",
-      "Eso. El potencial existe, pero el riesgo de una sola pequeña es enorme.",
-      "Que invierta solo la mitad",
-      "Sigue siendo mucho en una sola empresa pequeña y poco líquida.",
-      "Ojo: los foros también son el sitio favorito de quien quiere inflar una acción."
-     ]
-    },
-    {
      "title": "Tamaños e índices",
      "body": "Una convención habitual (en dólares):\n• **Grandes** (*large caps*): más de 10.000 millones.\n• **Medianas** (*mid caps*): de 2.000 a 10.000 millones.\n• **Pequeñas** (*small caps*): de 300 a 2.000 millones.\n• Por debajo, *micro caps*.\n\nEn España están el IBEX Medium Cap y el IBEX Small Cap. Un índice mundial pondera por capitalización: pesan más las gigantes.",
      "key": "Más pequeña = más potencial, pero también más volatilidad y más riesgo de quiebra.",
-     "tip": "Que una empresa sea pequeña no la hace barata ni buena: solo más arriesgada."
+     "tip": "Pruébalo: en Mercado, compara el gráfico de SPY, de grandes empresas, con el de IWM, de pequeñas."
     }
    ]
   },
   "u8l6": {
    "title": "Crecimiento y valor",
    "steps": [
+    {
+     "texts": [
+      "PER de 70 o PER de 9",
+      "Laura",
+      "Dudo entre una tecnológica con PER de 70 que crece un 40 % al año…",
+      "…y una aseguradora con PER de 9 que crece un 3 %. ¿Cuál es mejor?",
+      "¿Qué razonamiento es el bueno?",
+      "La de PER 70: crece mucho más",
+      "Si ese crecimiento ya está en el precio, cualquier decepción la hunde.",
+      "Depende de si el precio refleja bien su futuro",
+      "Eso. Importa lo que pagas por lo que recibes.",
+      "La de PER 9: es barata",
+      "Puede ser barata por algo: un negocio estancado también decepciona.",
+      "Lo barato a veces es barato por algo: es la **trampa de valor**.",
+      "Una gran empresa no siempre es una gran inversión: depende del precio."
+     ]
+    },
     {
      "texts": [
       "¿Cuántos años de beneficios pagas?",
@@ -255,27 +272,10 @@
       "PER de 50 por un producto nuevo",
       "Cara frente a lo que gana hoy: crecimiento.",
       "Clasifica las seis empresas.",
-      "Crecimiento: **PER alto**, poco dividendo y mucha reinversión. Valor: **PER bajo**, negocio maduro y dividendo. Hay épocas buenas para cada estilo: ninguno gana siempre.",
+      "Crecimiento: **PER alto**, poco dividendo y mucha reinversión; valor: **PER bajo**, negocio maduro y dividendo, y ninguno gana siempre. Pruébalo: en Mercado, compara el gráfico de NVIDIA con el de Coca-Cola.",
       "Pista: ¿reinvierte para crecer o reparte lo que gana?",
       "Fíjate en el PER: alto en crecimiento, bajo en valor.",
       "Toca cada empresa: ¿crecimiento o valor?"
-     ]
-    },
-    {
-     "texts": [
-      "PER de 70 o PER de 9",
-      "Laura",
-      "Dudo entre una tecnológica con PER de 70 que crece un 40 % al año…",
-      "…y una aseguradora con PER de 9 que crece un 3 %. ¿Cuál es mejor?",
-      "¿Qué razonamiento es el bueno?",
-      "La de PER 70: crece mucho más",
-      "Si ese crecimiento ya está en el precio, cualquier decepción la hunde.",
-      "Depende de si el precio refleja bien su futuro",
-      "Eso. Importa lo que pagas por lo que recibes.",
-      "La de PER 9: es barata",
-      "Puede ser barata por algo: un negocio estancado también decepciona.",
-      "Lo barato a veces es barato por algo: es la **trampa de valor**.",
-      "Una gran empresa no siempre es una gran inversión: depende del precio."
      ]
     }
    ]
@@ -287,6 +287,7 @@
      "texts": [
       "Menos acciones, más beneficio",
       "Leo",
+      "Tengo acciones de una empresa que va a recomprar las suyas. ¿Eso a mí qué me da?",
       "Una empresa gana 500 millones y tiene 100 millones de acciones: **5 € de beneficio por acción** (BPA).",
       "Ha anunciado que recompra y amortiza 10 millones de sus propias acciones.",
       "¿Qué pasa con el beneficio por acción?",
@@ -329,7 +330,7 @@
      "title": "A qué precio recompra",
      "body": "Apple lleva desde 2012 recomprando acciones por cientos de miles de millones de dólares.\n\nPero recomprar **caro** destruye valor, y hacerlo **con deuda** añade riesgo.",
      "key": "Una recompra reparte el pastel entre menos dueños.",
-     "tip": "Pregunta siempre a qué precio recompra la empresa: comprar caro no es devolver valor."
+     "tip": "Pruébalo: en Mercado, busca Apple, que recompra acciones desde 2012, y añádela a Favoritos."
     }
    ]
   },
@@ -364,12 +365,6 @@
    ],
    "explanation": "Por regla general, una acción = un voto. Quien tiene más acciones, tiene más votos."
   },
-  "u8l2-4": {
-   "prompt": "Una empresa pequeña tiene 4 millones de acciones y tú tienes 20.000. ¿Qué porcentaje de los votos tienes?",
-   "options": [],
-   "explanation": "20.000 ÷ 4.000.000 = 0,005 → 0,5 % de los votos (si todas las acciones tienen voto).",
-   "unit": "%"
-  },
   "u8l2-7": {
    "prompt": "Las cotizadas deben comunicar a la ____ la información privilegiada para que todos la conozcan a la vez.",
    "options": [
@@ -399,6 +394,20 @@
    ],
    "explanation": "El precio lo fija el mercado con la oferta y la demanda, no la junta."
   },
+  "u8l2-11": {
+   "prompt": "La empresa de la que Sara tiene acciones anuncia una ampliación de capital: emitirá acciones nuevas para conseguir dinero. Sara no quiere perder su porcentaje. ¿Qué hace?",
+   "options": [
+    "Vota en contra en la junta y se olvida",
+    "Usa su derecho de suscripción preferente y compra las acciones nuevas que le tocan",
+    "No hace nada: sus acciones siguen siendo suyas"
+   ],
+   "explanation": "La suscripción preferente existe para esto: comprar primero lo que te toca y no perder tu parte. Quedarse quieto parece neutro, pero con más acciones en circulación tu porcentaje baja.",
+   "feedback": [
+    "Votar es su derecho, pero si la ampliación sale aprobada, se diluye igual.",
+    "Bien: compra en proporción a lo que ya tiene y su porcentaje no cambia.",
+    "Siguen siendo suyas, pero habrá más acciones en total: su porcentaje baja. Es la dilución."
+   ]
+  },
   "u8l3-1": {
    "prompt": "Ordena las fechas de un dividendo.",
    "options": [
@@ -408,18 +417,6 @@
     "Anuncio"
    ],
    "explanation": "Primero se anuncia; desde el ex-dividendo la acción cotiza sin el derecho; después se mira quién es accionista (registro) y por último se paga."
-  },
-  "u8l3-4": {
-   "prompt": "Una acción de 30 € paga 1,20 € de dividendo al año. ¿Cuál es su rentabilidad por dividendo?",
-   "options": [],
-   "explanation": "1,20 ÷ 30 = 0,04 → 4 %.",
-   "unit": "%"
-  },
-  "u8l3-5": {
-   "prompt": "Tienes 200 acciones y cada una paga 0,50 € de dividendo. Con la retención del 19 %, ¿cuánto llega a tu cuenta?",
-   "options": [],
-   "explanation": "200 × 0,50 = 100 € brutos; 100 − 19 = 81 € netos.",
-   "unit": "€"
   },
   "u8l3-7": {
    "prompt": "Esta es la acción de una eléctrica conocida por repartir dividendo con regularidad. ¿Qué hizo en las 10 sesiones siguientes?",
@@ -462,18 +459,6 @@
     "19 %"
    ],
    "explanation": "El pagador retiene un 19 % a cuenta del IRPF. Luego van a la base del ahorro, que tributa del 19 % al 30 %."
-  },
-  "u8l4-2": {
-   "prompt": "Tienes 1.000 acciones a 0,20 € y hay un contrasplit 1×10. ¿A qué precio cotizará cada acción nueva, si nada más cambia?",
-   "options": [],
-   "explanation": "1.000 ÷ 10 = 100 acciones; 200 € ÷ 100 = 2 € por acción.",
-   "unit": "€"
-  },
-  "u8l4-4": {
-   "prompt": "Una empresa tiene 100 millones de acciones y tú 1 millón (el 1 %). Amplía capital con 25 millones de acciones nuevas y no compras ninguna. ¿Qué porcentaje tienes ahora?",
-   "options": [],
-   "explanation": "1 ÷ 125 = 0,008 → 0,8 %. Es la dilución.",
-   "unit": "%"
   },
   "u8l4-5": {
    "prompt": "Empareja cada operación con lo que pasa.",
@@ -524,11 +509,37 @@
    ],
    "explanation": "80 ÷ 2 = 40 €, y tienes el doble de acciones."
   },
-  "u8l5-1": {
-   "prompt": "Una empresa cotiza a 50 € y tiene 200 millones de acciones. ¿Cuál es su capitalización?",
-   "options": [],
-   "explanation": "50 × 200 millones = 10.000 millones de euros.",
-   "unit": "millones de €"
+  "u8l4-11": {
+   "prompt": "NVIDIA anuncia un split 10×1 y un amigo te dice: «Ahora que cada acción cuesta diez veces menos, es el momento de comprar». ¿Qué le contestas?",
+   "options": [
+    "Que venda las que tenga antes del split para no perder",
+    "Que el split no cambia lo que vale la empresa: hay que decidir por el negocio y su precio total",
+    "Que tiene razón: ahora está mucho más barata"
+   ],
+   "explanation": "Un split cambia el precio de cada acción, no el valor de la empresa. Lo tentador es ver una ganga en el precio por acción más bajo, pero lo que pagas por todo el negocio no ha cambiado.",
+   "feedback": [
+    "No hay nada que perder: tras el split, su dinero vale lo mismo.",
+    "Bien: diez trozos más pequeños de la misma pizza siguen siendo la misma pizza.",
+    "Cada acción cuesta menos, pero la empresa vale lo mismo: no está más barata."
+   ]
+  },
+  "u8l4-12": {
+   "prompt": "¿Qué le contestas?",
+   "options": [
+    "Sí: si no acudes, tu porcentaje de la empresa baja",
+    "No: tus acciones siguen siendo las mismas",
+    "Sí: te quitan parte de tus acciones"
+   ],
+   "explanation": "En una ampliación salen acciones nuevas: si no compras las que te tocan, tu porcentaje baja (dilución). Lo tentador es pensar que no pasa nada porque conservas tus acciones, pero el total ha crecido.",
+   "feedback": [
+    "Eso. Hay más acciones y tú tienes las mismas: te diluyes.",
+    "Las mismas acciones, pero de un pastel con más trozos: tu parte baja.",
+    "Nadie te quita nada: lo que baja es tu porcentaje."
+   ],
+   "lines": [
+    "Mi empresa va a ampliar capital con acciones nuevas.",
+    "Yo no pienso comprar ninguna. ¿Me afecta en algo?"
+   ]
   },
   "u8l5-2": {
    "prompt": "Empareja cada tamaño con su capitalización aproximada (convención en dólares).",
@@ -571,20 +582,6 @@
    ],
    "explanation": "Puede crecer más deprisa, pero sus precios se mueven más y quiebra con más frecuencia."
   },
-  "u8l5-6": {
-   "prompt": "¿Grande o pequeña? Calcula la capitalización.",
-   "options": [
-    "5 € × 200 millones de acciones",
-    "300 € × 50 millones de acciones",
-    "40 € × 25 millones de acciones",
-    "20 € × 1.000 millones de acciones"
-   ],
-   "explanation": "20.000 M, 1.000 M, 15.000 M y 1.000 M. El precio por sí solo no dice nada.",
-   "right": [
-    "Grande (más de 10.000 M)",
-    "Pequeña (300–2.000 M)"
-   ]
-  },
   "u8l5-8": {
    "prompt": "Rápido: ¿cómo se calcula la capitalización?",
    "options": [
@@ -610,6 +607,20 @@
    "lines": [
     "Las pequeñas suben más que las grandes, ¿no?",
     "Pues me paso todo a small caps 🚀"
+   ]
+  },
+  "u8l5-11": {
+   "prompt": "Quieres invertir en pequeñas empresas de EE. UU., pero sin jugártelo todo a una. ¿Qué haces?",
+   "options": [
+    "Compro un ETF del Russell 2000, que reúne unas 2.000 pequeñas",
+    "Compro la micro cap que recomiendan en un foro",
+    "Compro la pequeña que más ha subido este mes"
+   ],
+   "explanation": "Un ETF de pequeñas te da su potencial sin depender de una sola. Elegir una suelta por lo que ha subido o por un foro es tentador, pero concentra todo el riesgo de quiebra.",
+   "feedback": [
+    "Bien: tienes el potencial de las pequeñas, repartido entre muchas. Si una quiebra, apenas lo notas.",
+    "Una sola empresa diminuta y poco líquida: si sale mal, lo pierdes casi todo.",
+    "Lo que más ha subido no es lo que más subirá, y sigues con todo en una sola empresa."
    ]
   },
   "u8l6-1": {
@@ -682,12 +693,6 @@
     "Emite acciones nuevas"
    ],
    "explanation": "Al amortizarlas, hay menos acciones y cada una vale una parte mayor de la empresa."
-  },
-  "u8l7-3": {
-   "prompt": "Tienes 1.000 de las 1.000.000 de acciones de una empresa (el 0,1 %). Recompra y amortiza 200.000. ¿Qué porcentaje tienes ahora?",
-   "options": [],
-   "explanation": "1.000 ÷ 800.000 = 0,00125 → 0,125 %. Tu parte crece sin comprar nada.",
-   "unit": "%"
   },
   "u8l7-6": {
    "prompt": "Empareja cada uso del beneficio con su efecto.",

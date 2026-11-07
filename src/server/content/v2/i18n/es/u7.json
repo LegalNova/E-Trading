@@ -10,6 +10,22 @@
    "steps": [
     {
      "texts": [
+      "Repartido por el planeta",
+      "Leo",
+      "Tengo un fondo del MSCI World: estoy repartido por todo el planeta.",
+      "¿Qué le dices a Leo?",
+      "Sí: todos los países por igual",
+      "No: más de dos tercios es EE. UU. y no hay emergentes.",
+      "Muy diversificado, pero sobre todo en EE. UU.",
+      "Eso. Más de mil empresas, pero no repartidas por igual.",
+      "Depende sobre todo de Europa",
+      "Europa pesa mucho menos: lo que más le mueve es EE. UU.",
+      "¿Y cómo sé qué hay dentro de cada índice?",
+      "Mira su composición por países y sectores. El nombre no basta."
+     ]
+    },
+    {
+     "texts": [
       "¿Está en el MSCI World?",
       "El **MSCI World** reúne grandes y medianas empresas de **23 países desarrollados**. ¿Cuáles de estas tiene dentro?",
       "Está dentro",
@@ -34,25 +50,10 @@
      ]
     },
     {
-     "texts": [
-      "Repartido por el planeta",
-      "Leo",
-      "Tengo un fondo del MSCI World: estoy repartido por todo el planeta.",
-      "¿Qué le dices a Leo?",
-      "Sí: todos los países por igual",
-      "No: más de dos tercios es EE. UU. y no hay emergentes.",
-      "Muy diversificado, pero sobre todo en EE. UU.",
-      "Eso. Más de mil empresas, pero no repartidas por igual.",
-      "Depende sobre todo de Europa",
-      "Europa pesa mucho menos: lo que más le mueve es EE. UU.",
-      "¿Y cómo sé qué hay dentro de cada índice?",
-      "Mira su composición por países y sectores. El nombre no basta."
-     ]
-    },
-    {
      "title": "Los grandes índices",
      "body": "• **S&P 500:** unas 500 grandes de EE. UU., ponderadas por capitalización; cubre en torno al 80 % del valor de su bolsa.\n• **Nasdaq 100:** las 100 mayores no financieras del Nasdaq; mucha tecnología.\n• **Dow Jones:** solo 30 empresas; pondera por precio.\n• **Euro Stoxx 50:** 50 grandes de la zona euro. **DAX:** Alemania.\n• **MSCI World:** unas 1.250-1.300 empresas en 2026; la cifra cambia con cada revisión.",
-     "key": "Cada índice mide una parte del mercado: mira qué hay dentro antes de compararte con él."
+     "key": "Cada índice mide una parte del mercado: mira qué hay dentro antes de compararte con él.",
+     "tip": "Pruébalo: en Mercado, compara el gráfico del S&P 500 con el del IBEX 35."
     }
    ]
   },
@@ -63,15 +64,16 @@
      "texts": [
       "El índice de tres empresas",
       "Sara",
-      "Un índice con tres empresas. A vale 600 millones; B, 300; C, 100.",
-      "Mañana A sube un 10 % y las otras no se mueven. ¿Cuánto sube el índice?",
-      "Si pondera por capitalización, ¿cuánto sube?",
-      "Un 10 %, lo mismo que A",
+      "Hoy casi todas las empresas de mi fondo del S&P 500 han bajado.",
+      "Y aun así el fondo ha subido. ¿Cómo puede ser?",
+      "Un índice de juguete con tres empresas: A vale 600 millones; B, 300; C, 100. A sube un 10 % y las otras no se mueven.",
+      "Si pondera por lo que vale cada empresa, ¿cuánto sube el índice?",
+      "Lo mismo que A",
       "A pesa 600 de 1.000, un **60 %**: el índice sube un 6 %.",
-      "Un 6 %: A pesa un 60 %",
-      "Eso. Quien más vale, más pesa: 0,60 × 10 % = 6 %.",
-      "Un 3,3 %: la media de las tres",
-      "Eso sería si pesaran igual. Por capitalización, A pesa un 60 %: un 6 %.",
+      "Bastante, pero menos que A",
+      "Eso. A pesa un 60 %: el índice sube un 6 %.",
+      "Un tercio de lo que sube A: es una de tres",
+      "Eso sería si pesaran igual. A pesa un 60 %: sube un 6 %.",
       "O sea, que las grandes mandan.",
       "**Capitalización = precio × número de acciones.** La que más vale, más pesa."
      ]
@@ -104,9 +106,9 @@
     },
     {
      "title": "La concentración",
-     "body": "Con capitalización, las ganadoras pesan cada vez más. En 2026, unas pocas tecnológicas suponen más de un tercio del S&P 500: comprar el índice es, en buena parte, comprar esas empresas.",
+     "body": "Con capitalización, las ganadoras pesan cada vez más. En 2026, unas pocas tecnológicas suponen más de un tercio del S&P 500: comprar el índice es, en buena parte, comprar esas empresas. Mira sus 10 mayores posiciones: te dicen qué compras de verdad.",
      "key": "Capitalización = precio × número de acciones; quien más vale, más pesa.",
-     "tip": "Mira las 10 mayores posiciones de un índice: te dicen qué compras de verdad."
+     "tip": "Pruébalo: en Mercado, compara hoy cuánto se mueve Apple y cuánto el S&P 500."
     }
    ]
   },
@@ -115,8 +117,20 @@
    "steps": [
     {
      "texts": [
+      "El IBEX que «no subía»",
+      "Datos reales: **10.000 €** en el IBEX 35 a finales de 2006, el índice que sale en las noticias. Dale a empezar.",
+      "Llega hasta el final, vendas o no.",
+      "Con cierres mensuales, el IBEX de precios no superó su máximo de 2007 **hasta septiembre de 2025**, y 10.000 € eran 12.287 € a finales de 2025. Pero no cuenta los dividendos: **el IBEX 35 con dividendos ha estado muy por encima**.",
+      "Has vendido. Mira lo que pasa después…",
+      "Más de la mitad abajo. Y sin contar dividendos.",
+      "Un 20 % abajo… y este índice no cuenta los dividendos.",
+      "Dale a empezar. Puedes vender cuando quieras"
+     ]
+    },
+    {
+     "texts": [
       "Con o sin dividendos",
-      "Los índices de las noticias son **de precios**: no cuentan los dividendos. Este sube un 5 % al año de precio y reparte un 2 % más en dividendos.",
+      "Ese IBEX es un índice **de precios**: no cuenta los dividendos. Imagina uno que sube un 5 % al año de precio y reparte un 2 % más en dividendos.",
       "A 30 años, ¿cuánto cambia reinvertir ese 2 % de dividendos?",
       "Casi nada: un 2 % es poco",
       "Algo: un 10 % más",
@@ -130,21 +144,10 @@
      ]
     },
     {
-     "texts": [
-      "El IBEX que «no subía»",
-      "Datos reales: **10.000 €** en el IBEX 35 a finales de 2006. Es el índice **de precios**, sin dividendos. Dale a empezar.",
-      "Llega hasta el final, vendas o no.",
-      "Con cierres mensuales, el IBEX de precios no superó su máximo de 2007 **hasta septiembre de 2025**, y 10.000 € eran 12.287 € a finales de 2025. Pero no cuenta los dividendos: **el IBEX 35 con dividendos ha estado muy por encima**.",
-      "Has vendido. Mira lo que pasa después…",
-      "Más de la mitad abajo. Y sin contar dividendos.",
-      "Un 20 % abajo… y este índice no cuenta los dividendos.",
-      "Dale a empezar. Puedes vender cuando quieras"
-     ]
-    },
-    {
      "title": "Compara igual con igual",
      "body": "Si cuentas los dividendos que cobras, compárate con el índice **con dividendos**. Si no, parecerá que lo haces mejor de lo que lo haces.\n\nUn **fondo de acumulación** reinvierte los dividendos por ti.",
-     "key": "Para medir una inversión a largo plazo, usa el índice con dividendos."
+     "key": "Para medir una inversión a largo plazo, usa el índice con dividendos.",
+     "tip": "Pruébalo: en Mercado, busca un ETF con «Acc» en el nombre: reinvierte los dividendos."
     }
    ]
   },
@@ -204,7 +207,7 @@
       "Casi todo",
       "El barato acaba en **71.968 €** y el caro, en **45.759 €**: se pierden 26.209 €, un 36 %.",
       "Lleva el plazo a 30 años.",
-      "Batir al índice es difícil incluso para profesionales: según SPIVA (cierre de 2025), un **97 %** de los fondos activos de acciones europeas quedó por detrás en 10 años. Y el inversor medio gana **1,2 puntos al año menos** que sus fondos por comprar y vender en mal momento (Morningstar).",
+      "Batir al índice es difícil incluso para profesionales: según SPIVA (cierre de 2025), un **97 %** de los fondos activos de acciones europeas quedó por detrás en 10 años. Y el inversor medio gana **1,2 puntos al año menos** que sus fondos por comprar y vender en mal momento (Morningstar). Pruébalo: busca en Mercado el índice que se parece a tu cartera y añádelo a Favoritos.",
       "Más de un tercio, solo por quedarse atrás cada año.",
       "Sigue: los puntos que pierdes también se componen.",
       "Alarga los años y mira la diferencia"
@@ -293,18 +296,6 @@
    ],
    "explanation": "23 países desarrollados; para los emergentes existe el MSCI Emerging Markets y, juntos, el ACWI."
   },
-  "u7l3-1": {
-   "prompt": "Una empresa tiene 2.000 millones de acciones a 15 € cada una. ¿Cuál es su capitalización, en millones de euros?",
-   "options": [],
-   "explanation": "2.000 millones × 15 € = 30.000 millones de €.",
-   "unit": "millones de €"
-  },
-  "u7l3-4": {
-   "prompt": "Rápido: índice equiponderado de 4 empresas. ¿Cuánto pesa cada una?",
-   "options": [],
-   "explanation": "100 ÷ 4 = 25 %.",
-   "unit": "%"
-  },
   "u7l3-5": {
    "prompt": "En un índice ponderado por precio, como el Dow Jones, ¿qué pesa más?",
    "options": [
@@ -345,11 +336,22 @@
     "Descubre que unas pocas tecnológicas pesan más de un tercio: ahora sabe lo que compra de verdad."
    ]
   },
-  "u7l4-1": {
-   "prompt": "Un índice sube un 4 % de precio y reparte un 3 % en dividendos. ¿Cuál es su rentabilidad total aproximada?",
-   "options": [],
-   "explanation": "4 % + 3 % ≈ 7 %.",
-   "unit": "%"
+  "u7l3-12": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "Sí: son pocas empresas de 500",
+    "No lo nota nada: el fondo está diversificado",
+    "Lo nota bastante: por capitalización, esas pocas pesan muchísimo"
+   ],
+   "explanation": "La tentadora es contar empresas: «son pocas de 500». Pero en un índice por capitalización pesa lo que vale cada una, y esas pocas suponen más de un tercio.",
+   "feedback": [
+    "Son pocas, pero pesan más de un tercio del índice: si caen, tu fondo lo nota mucho.",
+    "Diversificado no significa repartido por igual: las grandes mandan.",
+    "¡Eso! En 2026, unas pocas tecnológicas suponen más de un tercio del S&P 500."
+   ],
+   "lines": [
+    "Mi fondo del S&P 500 casi no nota si caen las grandes tecnológicas, ¿verdad?"
+   ]
   },
   "u7l4-4": {
    "prompt": "¿Qué mide un índice de rentabilidad total?",
@@ -412,24 +414,6 @@
    ],
    "explanation": "Tú cuentas dividendos y el índice no: parecerá que lo haces mejor de lo que lo haces."
   },
-  "u7l5-1": {
-   "prompt": "Tu cartera ganó un 6 % y su índice de referencia un 9 %. ¿Cuántos puntos quedaste por detrás?",
-   "options": [],
-   "explanation": "9 − 6 = 3 puntos.",
-   "unit": "puntos"
-  },
-  "u7l5-2": {
-   "prompt": "Empiezas el año con 5.000 €, no aportas nada y lo acabas con 5.400 €. ¿Qué rentabilidad has tenido?",
-   "options": [],
-   "explanation": "400 ÷ 5.000 = 0,08 → 8 %.",
-   "unit": "%"
-  },
-  "u7l5-3": {
-   "prompt": "Empiezas con 5.000 €, aportas 1.000 € durante el año y acabas con 6.300 €. ¿Cuánto has ganado de verdad?",
-   "options": [],
-   "explanation": "6.300 − 5.000 − 1.000 = 300 €. Lo que aportas no es ganancia.",
-   "unit": "€"
-  },
   "u7l5-6": {
    "prompt": "Marta elige un fondo porque batió a su índice el año pasado. ¿Qué le conviene?",
    "options": [
@@ -460,6 +444,38 @@
     "Falso"
    ],
    "explanation": "Son riesgos distintos. Una cartera de acciones se compara con un índice de acciones parecido."
+  },
+  "u7l5-11": {
+   "prompt": "¿Qué le contestas a Lumi?",
+   "options": [
+    "¡Enhorabuena, 1.300 € de ganancia!",
+    "Parte de eso lo pusiste tú: la ganancia de verdad es mucho menor",
+    "Has perdido dinero"
+   ],
+   "explanation": "La tentadora es mirar solo cuánto ha crecido la cuenta. Para medir lo que ganas, resta lo que has aportado: si no, te comparas con ventaja.",
+   "feedback": [
+    "No todo es ganancia: 1.000 € los pusiste tú. Lo que aportas no es rentabilidad.",
+    "¡Eso! Has ganado 300 €: el resto es dinero que aportaste.",
+    "Tampoco: la cartera vale más que todo lo que metiste."
+   ],
+   "lines": [
+    "Empecé el año con 5.000 €, metí 1.000 € más y acabo con 6.300 €",
+    "¡He ganado 1.300 €!"
+   ]
+  },
+  "u7l5-12": {
+   "prompt": "Leo tiene un fondo de grandes empresas de EE. UU. Este año su fondo ha subido y el IBEX 35 ha bajado, y Leo presume: «Lo hago mejor que la bolsa». ¿Qué le dices?",
+   "options": [
+    "Que tiene razón: ha batido al IBEX",
+    "Que se compare con un depósito",
+    "Que se compare con el S&P 500 con dividendos, que se parece a su fondo"
+   ],
+   "explanation": "La referencia tiene que parecerse a lo que inviertes. La tentadora es compararse con el índice que le deja mejor: así cualquiera «bate al mercado».",
+   "feedback": [
+    "Batir a un índice que no se parece a tu cartera no dice nada de cómo lo haces.",
+    "Es otro riesgo: unas acciones se comparan con un índice de acciones parecido.",
+    "Su fondo es de grandes empresas de EE. UU.: esa es su vara de medir, no la bolsa española."
+   ]
   }
  }
 }
