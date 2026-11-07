@@ -416,7 +416,16 @@
     "scam": "Estafa",
     "spotHint": "Marca tots els missatges que siguin estafa.",
     "correctStreak": "Correcte! {n} seguides",
-    "tapToAnswer": "Toca la teva resposta"
+    "tapToAnswer": "Toca la teva resposta",
+    "questionN": "Pregunta {n}",
+    "gotRight": "Bé",
+    "gotWrong": "Fallada",
+    "whyRight": "Per què és correcta",
+    "whyWrong": "Per què no era així",
+    "seeAnswers": "Veure les respostes",
+    "seeAnswersMisses": "Veure les respostes ({n, plural, one {# error} other {# errors}})",
+    "hideAnswers": "Amagar les respostes",
+    "dayStreak": "Ratxa de {n, plural, one {# dia} other {# dies}}"
   },
   "market": {
     "title": "Mercat",

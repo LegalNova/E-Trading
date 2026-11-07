@@ -416,7 +416,16 @@
     "scam": "Scam",
     "spotHint": "Mark every message that is a scam.",
     "correctStreak": "Correct! {n} in a row",
-    "tapToAnswer": "Tap your answer"
+    "tapToAnswer": "Tap your answer",
+    "questionN": "Question {n}",
+    "gotRight": "Right",
+    "gotWrong": "Missed",
+    "whyRight": "Why it’s right",
+    "whyWrong": "Why it wasn’t",
+    "seeAnswers": "See answers",
+    "seeAnswersMisses": "See answers ({n, plural, one {# miss} other {# misses}})",
+    "hideAnswers": "Hide answers",
+    "dayStreak": "{n, plural, one {#-day} other {#-day}} streak"
   },
   "market": {
     "title": "Market",

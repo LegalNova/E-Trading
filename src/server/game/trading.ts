@@ -26,6 +26,8 @@ export interface Px {
   open: boolean
   /** Mercado abierto y precio reciente: solo así se ejecuta una orden a mercado (un festivo cuenta como cerrado) */
   tradable: boolean
+  /** Hora de la última cotización guardada */
+  asOf: number
 }
 export type Book = Map<string, Px>
 
@@ -40,7 +42,7 @@ export async function priceBook(symbols: string[]): Promise<Book> {
     if (eur === null) continue
     const open = isOpen(a.hours, new Date(now))
     const fresh = now - a.quote.asOf.getTime() < (a.delayedMinutes + 20) * 60_000
-    book.set(a.symbol, { symbol: a.symbol, name: a.name, type: a.type, hours: a.hours, currency: cur, price: Number(a.quote.price) / div, prevClose: Number(a.quote.prevClose) / div, eur, open, tradable: open && fresh })
+    book.set(a.symbol, { symbol: a.symbol, name: a.name, type: a.type, hours: a.hours, currency: cur, price: Number(a.quote.price) / div, prevClose: Number(a.quote.prevClose) / div, eur, open, tradable: open && fresh, asOf: a.quote.asOf.getTime() })
   }
   return book
 }

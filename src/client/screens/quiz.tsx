@@ -3,7 +3,7 @@
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { useTranslations } from 'next-intl'
 import { ShareButton } from '../share'
-import { useEffect, useEffectEvent, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
 import type { AnswerResultT, QuestionT, QuizFinishT } from '@/shared/contract'
 import { clock, num } from '@/shared/format'
@@ -131,15 +131,12 @@ export function QuestionView({ q, value, onChange, reveal }: { q: QuestionT; val
 
 const hasAnswer = (q: QuestionT, v: AnswerValue) => isAnswered(q, v)
 
-// Ritmo «pum, pum, pum»: tocar ya es responder, y al acertar se pasa sola a la siguiente
-/** Se comprueban solas al tocar una opción */
-const INSTANT = new Set(['SINGLE', 'TRUE_FALSE', 'CHART_TREND', 'CHART_POINT', 'FILL_BLANK', 'NUMBER', 'UP_DOWN', 'CHART_CANDLE', 'SCENARIO', 'CHAT'])
-/** Se comprueban solas al completarlas */
-const ON_COMPLETE = new Set(['MATCH', 'BUCKETS', 'ORDER'])
-/** Al acertar pasan solas a la siguiente (las que no enseñan después un gráfico real o una consecuencia que leer) */
-const AUTO_NEXT = new Set(['SINGLE', 'TRUE_FALSE', 'CHART_TREND', 'CHART_POINT', 'FILL_BLANK', 'NUMBER', 'MULTIPLE', 'MATCH', 'BUCKETS', 'ORDER', 'SPOT'])
-const AUTO_MS = 1300
-const complete = (q: QuestionT, v: AnswerValue) => (q.type === 'ORDER' ? Array.isArray(v) && v.length === q.options.length : isAnswered(q, v))
+// Siempre en dos pasos: tocar elige (se puede cambiar) y «Comprobar» responde; después, «Continuar» pasa a la siguiente.
+// Nada avanza solo: así un toque de más nunca responde la pregunta siguiente sin querer.
+/** Milisegundos en los que una pregunta recién aparecida no acepta toques (evita el doble toque) */
+const TAP_GUARD_MS = 450
+/** Lo que se ha respondido en cada pregunta (para «Ver respuestas» al final) */
+export type AnswerLog = { q: QuestionT; value: AnswerValue; reveal: AnswerResultT }[]
 
 /** Texto de ayuda encima del enunciado según el tipo */
 export function useTypeHint() {
@@ -226,8 +223,38 @@ function CountUp({ to }: { to: number }) {
   return <>+{v}</>
 }
 
-export function QuizResult({ r, lessonId, review, onRetry }: { r: QuizFinishT; lessonId: string | null; review?: boolean; onRetry: () => void }) {
+/** Repaso de lo respondido: cada pregunta con tu respuesta, la buena y el porqué */
+function AnswersReview({ log }: { log: AnswerLog }) {
   const t = useTranslations('quiz')
+  const hint = useTypeHint()
+  return (
+    <div className="flex w-full flex-col gap-3 text-left">
+      {log.map(({ q, value, reveal }, k) => (
+        <div key={q.id + k} className="card flex flex-col gap-2.5">
+          <span className="t-cap flex items-center justify-between gap-2 font-bold">
+            <span>{t('questionN', { n: k + 1 })} · {hint(q)}</span>
+            <span className={`chip ${reveal.correct ? 'up' : 'down'}`}>
+              <Icon name={reveal.correct ? 'check' : 'close'} size={14} /> {reveal.correct ? t('gotRight') : t('gotWrong')}
+            </span>
+          </span>
+          {q.type === 'SCENARIO' ? <p className="t-body m-0">{q.prompt}</p> : q.type !== 'FILL_BLANK' && <b className="t-head">{q.prompt}</b>}
+          <div className="pointer-events-none" aria-disabled>
+            <QuestionView q={q} value={value} onChange={() => {}} reveal={reveal} />
+          </div>
+          <div className={`feedback ${reveal.correct ? 'ok' : 'bad'} rounded-2xl`} style={{ position: 'static' }}>
+            <b className={reveal.correct ? 'up' : 'down'}>{reveal.correct ? t('whyRight') : t('whyWrong')}</b>
+            <span className="t-body whitespace-pre-line">{reveal.explanation}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+export function QuizResult({ r, lessonId, review, onRetry, log = [] }: { r: QuizFinishT; lessonId: string | null; review?: boolean; onRetry: () => void; log?: AnswerLog }) {
+  const t = useTranslations('quiz')
+  const [showAnswers, setShowAnswers] = useState(false)
+  const misses = log.filter(x => !x.reveal.correct).length
   const tg = useTranslations('goals')
   const locale = useLang()
   const { data: me } = useMe()
@@ -273,7 +300,7 @@ export function QuizResult({ r, lessonId, review, onRetry }: { r: QuizFinishT; l
         </p>
       )}
       <div className="banner banner-info w-full justify-center">
-        <Flame /> {t('streak', { n: r.streak.days })}
+        <Flame /> {t('dayStreak', { n: r.streak.days })}
         {r.streak.extendedToday ? ` · ${t('extended')}` : ''}
       </div>
       {r.goalsCompleted.map(g => (
@@ -301,6 +328,12 @@ export function QuizResult({ r, lessonId, review, onRetry }: { r: QuizFinishT; l
           </span>
         </div>
       ))}
+      {log.length > 0 && (
+        <button className="btn btn-secondary" onClick={() => setShowAnswers(v => !v)} aria-expanded={showAnswers}>
+          {showAnswers ? t('hideAnswers') : misses ? t('seeAnswersMisses', { n: misses }) : t('seeAnswers')}
+        </button>
+      )}
+      {showAnswers && <AnswersReview log={log} />}
       <div className="flex-1" />
       {!passed && lessonId && (
         <button className="btn btn-primary" onClick={onRetry}>
@@ -339,6 +372,7 @@ function QuizInner({ id }: { id: string }) {
   const [out, setOut] = useState(false)
   /** Aciertos seguidos: la racha del quiz */
   const [streak, setStreak] = useState(0)
+  const [log, setLog] = useState<AnswerLog>([])
   const shownAt = useRef(0)
   useEffect(() => {
     shownAt.current = Date.now()
@@ -346,8 +380,10 @@ function QuizInner({ id }: { id: string }) {
 
   const answer = useMutation({
     mutationFn: (v: AnswerValue) => api.answer(start.data!.attemptId, start.data!.questions[i].id, v as number | number[] | string, Date.now() - shownAt.current),
-    onSuccess: r => {
+    onSuccess: (r, v) => {
       setReveal(r)
+      const q = start.data?.questions[i]
+      if (q) setLog(l => [...l.filter(x => x.q.id !== q.id), { q, value: v, reveal: r }])
       setStreak(n => (r.correct ? n + 1 : 0))
       if (r.livesLeft !== null) setLives(r.livesLeft)
     },
@@ -368,16 +404,6 @@ function QuizInner({ id }: { id: string }) {
     if (limit && left === 0 && !reveal && !sending) send(TIMEOUT)
   }, [left, limit, reveal, sending, send])
 
-  // Al acertar, la siguiente llega sola (se puede adelantar tocando «Continuar»)
-  const cur = start.data?.questions[i]
-  const auto = !!reveal && reveal.correct && !!cur && AUTO_NEXT.has(cur.type) && !reveal.reveal
-  const goOn = useEffectEvent(() => next())
-  useEffect(() => {
-    if (!auto) return
-    const id = setTimeout(goOn, AUTO_MS)
-    return () => clearTimeout(id)
-  }, [auto, i])
-
   const isLast = !!start.data && i === start.data.questions.length - 1
   function next() {
     if (reveal && !reveal.correct && reveal.livesLeft === 0 && !isLast) {
@@ -396,6 +422,7 @@ function QuizInner({ id }: { id: string }) {
 
   const reset = () => {
     setStreak(0)
+    setLog([])
     setI(0)
     setValue(null)
     setReveal(null)
@@ -409,17 +436,17 @@ function QuizInner({ id }: { id: string }) {
   if (start.isError) return <ErrorState onRetry={() => start.refetch()} message={start.error.message} />
   if (!start.data) return <PageSkeleton />
   if (out) return <NoLives onClose={reset} />
-  if (finish.data) return <QuizResult r={finish.data} lessonId={start.data.lessonId} review={id === 'review'} onRetry={reset} />
+  if (finish.data) return <QuizResult r={finish.data} lessonId={start.data.lessonId} review={id === 'review'} onRetry={reset} log={log} />
 
   const qs = start.data.questions
   const q = qs[i]
   const livesNow = lives ?? start.data.lives.current
   const lessonMode = id !== 'review'
-  // Tocar una opción ya responde (o completar el ejercicio, en emparejar, clasificar y ordenar)
+  // Tocar solo elige (se puede cambiar); responder es siempre con «Comprobar»
   const pick = (v: AnswerValue) => {
     if (reveal || answer.isPending) return
+    if (Date.now() - shownAt.current < TAP_GUARD_MS) return
     setValue(v)
-    if ((INSTANT.has(q.type) && hasAnswer(q, v)) || (ON_COMPLETE.has(q.type) && complete(q, v))) answer.mutate(v)
   }
 
   return (
@@ -460,7 +487,6 @@ function QuizInner({ id }: { id: string }) {
             <b className={`${reveal.correct ? 'up animate-pop' : 'down'} inline-block self-start`} style={{ fontSize: 17 }}>
               {reveal.correct ? (streak >= 2 ? <span className="inline-flex items-center gap-1.5">{t('correctStreak', { n: streak })} <Flame size={16} /></span> : t('correct')) : reveal.livesLeft !== null ? t('wrongLife') : t('wrong')}
             </b>
-            {auto && <i className="block h-1 origin-left rounded-full" style={{ background: 'var(--up)', animation: `drain ${AUTO_MS}ms linear forwards` }} aria-hidden />}
             <span className="t-body whitespace-pre-line">{reveal.explanation}</span>
             <button className={`btn ${reveal.correct ? 'btn-success' : 'btn-danger'}`} onClick={next} disabled={finish.isPending} autoFocus>
               {isLast ? t('seeResult') : reveal.correct ? t('continue') : t('gotIt')}
@@ -468,13 +494,9 @@ function QuizInner({ id }: { id: string }) {
           </div>
         ) : (
           <div className="px-4 pt-2.5" style={{ paddingBottom: 'max(24px, env(safe-area-inset-bottom))' }}>
-            {INSTANT.has(q.type) || ON_COMPLETE.has(q.type) ? (
-              <p className="t-foot m-0 flex h-[52px] items-center justify-center text-center">{answer.isPending ? '…' : t('tapToAnswer')}</p>
-            ) : (
-              <button className="btn btn-primary" disabled={!hasAnswer(q, value) || answer.isPending} onClick={() => answer.mutate(value)}>
-                {hasAnswer(q, value) ? t('check') : t('pick')}
-              </button>
-            )}
+            <button className="btn btn-primary" disabled={!hasAnswer(q, value) || answer.isPending} onClick={() => answer.mutate(value)}>
+              {answer.isPending ? '…' : hasAnswer(q, value) ? t('check') : t('pick')}
+            </button>
           </div>
         )}
       </div>

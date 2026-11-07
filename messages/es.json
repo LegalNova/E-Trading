@@ -416,7 +416,16 @@
     "scam": "Estafa",
     "spotHint": "Marca todos los mensajes que sean estafa.",
     "correctStreak": "¡Correcto! {n} seguidas",
-    "tapToAnswer": "Toca tu respuesta"
+    "tapToAnswer": "Toca tu respuesta",
+    "questionN": "Pregunta {n}",
+    "gotRight": "Bien",
+    "gotWrong": "Fallada",
+    "whyRight": "Por qué es correcta",
+    "whyWrong": "Por qué no era así",
+    "seeAnswers": "Ver respuestas",
+    "seeAnswersMisses": "Ver respuestas ({n, plural, one {# fallo} other {# fallos}})",
+    "hideAnswers": "Ocultar respuestas",
+    "dayStreak": "Racha de {n, plural, one {# día} other {# días}}"
   },
   "market": {
     "title": "Mercado",

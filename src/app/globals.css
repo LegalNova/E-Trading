@@ -221,6 +221,9 @@ button { cursor: pointer; }
   .seg { display: flex; background: var(--fill); border-radius: 999px; padding: 3px; gap: 2px; }
   .seg > button { flex: 1; border: none; background: transparent; border-radius: 999px; height: 32px; font-size: 13px; font-weight: 700; color: var(--ink-2); white-space: nowrap; padding: 0 10px; }
   .seg > button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 4px rgb(0 0 0 / 0.12); }
+  /* Opciones largas (clasificar): el texto baja de línea en vez de salirse de la tarjeta */
+  .seg.wrap { border-radius: 16px; }
+  .seg.wrap > button { flex: 1 1 0; min-width: 0; white-space: normal; height: auto; min-height: 34px; padding: 6px 8px; line-height: 1.2; border-radius: 13px; }
 
   .pills { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 0 16px; }
   .pills::-webkit-scrollbar { display: none; }
