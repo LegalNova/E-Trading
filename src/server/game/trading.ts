@@ -6,7 +6,7 @@ import { isOpen, nextOpen, type ExchangeCode } from '@/shared/market-hours'
 import { DAY_MS, addDays, dayOf } from '@/shared/time'
 import type { Order, Position, Trade, User } from '@/generated/prisma/client'
 import { db } from '../db'
-import { fxRates, loadAssets, normCurrency, toEur } from '../market/service'
+import { candles, fxRates, loadAssets, normCurrency, toEur } from '../market/service'
 import { LESSON, lessonRef, RISK_LESSON } from '../content/catalog'
 import { coach } from '../tutor/coach'
 import { lockUser, addXp, bump, bumpGoal, endFx, fail, lumi, markActive, notify, requireUser, RISK_PCT, START_CASH, unlockedFeatures, withCtx, type Ctx, type Tx } from './core'
@@ -175,8 +175,10 @@ const toTradeT = (t: Trade): TradeT => ({
 })
 
 /** Ejecuta una orden al precio actual del servidor. Devuelve la orden actualizada. */
-async function fill(c: Ctx, book: Book, o: Order, silent = false): Promise<Order> {
-  const px = pxOf(book, o.symbol)
+async function fill(c: Ctx, book: Book, o: Order, silent = false, at?: number): Promise<Order> {
+  const px0 = pxOf(book, o.symbol)
+  // `at`: precio de ejecución en la moneda del activo cuando no es el de ahora (una orden pendiente que se cumplió antes)
+  const px = at && at > 0 ? { ...px0, price: at, eur: px0.eur * (at / px0.price) } : px0
   // Puede haberse cancelado en esta misma pasada (la otra mitad de un OCO o una venta que ya lo vendió todo)
   // (al colocar una orden nueva, silent, no hace falta mirarlo)
   const now0 = silent ? o : await c.tx.order.findUnique({ where: { id: o.id } })
@@ -303,6 +305,29 @@ export async function placeOrder(i: OrderInput, idempotencyKey?: string): Promis
 }
 
 /** Ejecuta órdenes pendientes y alertas que ya se cumplen (al leer y desde la tarea programada) */
+/**
+ * Precio al que se habría ejecutado una orden pendiente según las velas de 5 minutos desde que se puso:
+ * - límite, stop y objetivo: en la primera vela que toca su precio, a ese precio; si la vela ya abrió más allá
+ *   (un salto, por ejemplo al abrir la bolsa), al precio de apertura, como en un bróker real;
+ * - a mercado (puesta con la bolsa cerrada): al precio de apertura de la primera vela.
+ * null si aún no ha pasado (o si no hay velas: entonces se mira el precio de ahora).
+ */
+async function executionPrice(o: Order): Promise<number | null> {
+  const since = o.createdAt.getTime()
+  const all = await candles(o.symbol, '5m')
+  const after = all.filter(k => k.t * 1000 >= since)
+  if (o.type === 'MARKET') return after[0]?.o ?? null
+  if (o.triggerPrice === null) return null
+  const trig = n(o.triggerPrice)
+  // Se activa al bajar: compra límite y stop loss. Al subir: venta límite y take profit
+  const down = (o.type === 'LIMIT' && o.side === 'BUY') || o.type === 'STOP_LOSS'
+  for (const k of after) {
+    if (down ? k.l > trig : k.h < trig) continue
+    return (down ? k.o <= trig : k.o >= trig) ? k.o : trig
+  }
+  return null
+}
+
 export async function processPendingFor(c: Ctx, book: Book) {
   const [orders, alerts] = await Promise.all([c.tx.order.findMany({ where: { userId: c.user.id, status: 'PENDING' }, orderBy: { createdAt: 'asc' } }), c.tx.priceAlert.findMany({ where: { userId: c.user.id, active: true } })])
   if (!orders.length && !alerts.length) return
@@ -313,7 +338,15 @@ export async function processPendingFor(c: Ctx, book: Book) {
   }
   for (const o of orders) {
     const px = book.get(o.symbol)
-    if (!px || !px.tradable) continue
+    if (!px) continue
+    // Primero, al precio real del momento en que el mercado lo tocó (aunque nadie abriera la app entonces,
+    // aunque la bolsa ya haya cerrado): así un stop no se ejecuta tarde ni a peor precio por cuándo se revisa
+    const at = await executionPrice(o).catch(() => null)
+    if (at !== null) {
+      await fill(c, book, o, false, at)
+      continue
+    }
+    if (!px.tradable) continue
     if (triggered(o, px.price)) await fill(c, book, o)
   }
   for (const al of alerts) {
