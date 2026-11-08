@@ -5,7 +5,8 @@ import 'server-only'
 import Stripe from 'stripe'
 import type { User } from '@/generated/prisma/client'
 import { db } from '../db'
-import { HttpError, START_CASH } from '../game/core'
+import { HttpError, START_CASH, type Tx } from '../game/core'
+import { addFlow } from '../game/league'
 
 const KEY = process.env.STRIPE_SECRET_KEY ?? ''
 export const stripeEnabled = /^(sk|rk)_(test|live)_[A-Za-z0-9]{20,}$/.test(KEY)
@@ -50,8 +51,9 @@ export async function checkoutUrl(user: User, plan: PlanId, opts: { trialDays: n
     metadata: { userId: user.id, plan },
     allow_promotion_codes: true,
     locale: opts.locale === 'ca' ? 'auto' : (opts.locale as 'es' | 'en'),
-    success_url: `${opts.origin}/${opts.locale}/premium?pago=ok`,
-    cancel_url: `${opts.origin}/${opts.locale}/premium`,
+    // Al volver, la app confirma el pago con Stripe ({CHECKOUT_SESSION_ID} lo rellena Stripe) y enseña el «Gracias»
+    success_url: `${opts.origin}/${opts.locale}/premium?pago=ok&sid={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${opts.origin}/${opts.locale}/premium?pago=no`,
   })
   return session.url!
 }
@@ -85,9 +87,25 @@ export async function syncSubscription(s: Stripe.Subscription) {
   })
   await db.user.update({ where: { id: userId }, data: { plan: keeps ? tier : 'FREE', ...(status === 'TRIALING' ? { trialUsed: true } : {}) } })
   // Saldo virtual de los planes de pago (una sola vez, como en la prueba)
+  // (condición en la misma sentencia: si el aviso de Stripe y la confirmación llegan a la vez, solo se suma una vez)
   if (keeps) {
-    const pf = await db.portfolio.findUnique({ where: { userId } })
-    if (pf && !pf.premiumTopUp) await db.portfolio.update({ where: { userId }, data: { cash: { increment: START_CASH.PREMIUM - START_CASH.FREE }, premiumTopUp: true } })
+    const up = await db.portfolio.updateMany({ where: { userId, premiumTopUp: false }, data: { cash: { increment: START_CASH.PREMIUM - START_CASH.FREE }, premiumTopUp: true } })
+    // En la liga, ese saldo extra no es rentabilidad
+    if (up.count) await addFlow(db as unknown as Tx, userId, START_CASH.PREMIUM - START_CASH.FREE)
   }
   return { userId, status, tier }
+}
+
+/**
+ * Vuelta de la página de pago: se pregunta a Stripe por esa sesión (no se fía de la URL) y, si está pagada,
+ * se activa el plan al momento, sin esperar al aviso de Stripe (que puede tardar unos segundos).
+ */
+export async function confirmCheckout(userId: string, sessionId: string) {
+  const s = await stripe!.checkout.sessions.retrieve(sessionId).catch(() => null)
+  // Solo la persona que pagó puede confirmar su sesión
+  if (!s || s.client_reference_id !== userId) throw new HttpError(404, 'NOT_FOUND', 'No encontramos ese pago')
+  if (s.status !== 'complete' || !s.subscription) return { done: false as const, expired: s.status === 'expired' }
+  const sub = await stripe!.subscriptions.retrieve(String(s.subscription))
+  await syncSubscription(sub)
+  return { done: true as const, amount: (s.amount_total ?? 0) / 100, currency: (s.currency ?? 'eur').toUpperCase(), trial: sub.status === 'trialing' }
 }

@@ -3,7 +3,8 @@
 import { PLAN_NAME } from '@/shared/plans'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useLocale, useTranslations } from 'next-intl'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
 import type { GenderT, SettingsT } from '@/shared/contract'
@@ -18,7 +19,98 @@ import { usePlanBadge } from '../upgrade'
 import { PushToggle } from '../push'
 
 // ── Premium (06.1–06.2) ──────────────────────────────────
+/** Vuelta de Stripe en la URL: ?pago=ok&sid=cs_… (pagado) o ?pago=no (salió sin pagar) */
+function usePaymentReturn(): { ok: true; sid: string | null } | { ok: false } | null {
+  // Con useSearchParams el servidor y el navegador pintan lo mismo (sin saltos al cargar)
+  const q = useSearchParams()
+  return q.get('pago') === 'ok' ? { ok: true, sid: q.get('sid') } : q.get('pago') === 'no' ? { ok: false } : null
+}
+
 export function Premium() {
+  const ret = usePaymentReturn()
+  if (ret?.ok) return <PaymentDone sid={ret.sid} />
+  return <PlansScreen canceled={ret?.ok === false} />
+}
+
+/** «Gracias»: confirma el pago con Stripe al volver y enseña el plan ya activo */
+function PaymentDone({ sid }: { sid: string | null }) {
+  const t = useTranslations('premium')
+  const locale = useLang()
+  const refresh = useRefreshAll()
+  const [tries, setTries] = useState(0)
+  // Medio minuto sin confirmación: se ofrece volver a comprobar (y ayuda)
+  const [late, setLate] = useState(false)
+  useEffect(() => {
+    const id = setTimeout(() => setLate(true), 30_000)
+    return () => clearTimeout(id)
+  }, [tries])
+  const confirm = useQuery({
+    queryKey: ['pay-confirm', sid, tries],
+    queryFn: () => (sid ? api.confirmPayment(sid) : api.billingStatus().then(s => ({ ...s, done: s.plan !== 'FREE', amount: 0, currency: 'EUR', trial: s.status === 'TRIALING' }) as Awaited<ReturnType<typeof api.confirmPayment>>)),
+    retry: 2,
+    staleTime: Infinity,
+    // El banco puede tardar unos segundos: se vuelve a preguntar cada 2 s durante medio minuto
+    refetchInterval: q => (q.state.data && !q.state.data.done && !q.state.data.expired ? 2_000 : false),
+  })
+  const r = confirm.data
+  const done = !!r?.done
+  useEffect(() => {
+    if (!done) return
+    refresh()
+    // La URL vuelve a /premium: recargar no repite la confirmación
+    window.history.replaceState(null, '', window.location.pathname)
+  }, [done, refresh])
+
+  if (confirm.isError || (r && !r.done && (r.expired || late)))
+    return (
+      <div className="pad items-center pt-16 text-center">
+        <Lumi mood="THINKING" size={72} />
+        <p className="t-head m-0">{r && !r.done && r.expired ? t('payExpired') : t('payPending')}</p>
+        <button className="btn btn-primary" onClick={() => (setLate(false), setTries(n => n + 1))}>
+          {t('payRetry')}
+        </button>
+        <Link href="/ayuda" className="btn btn-plain">
+          {t('payHelp')}
+        </Link>
+      </div>
+    )
+  if (!r || !r.done)
+    return (
+      <div className="pad items-center pt-24 text-center" aria-busy="true">
+        <Lumi mood="THINKING" size={72} />
+        <p className="t-head m-0">{t('confirmingPay')}</p>
+      </div>
+    )
+  const plan = r.plan === 'PLUS' ? 'PLUS' : 'PREMIUM'
+  const date = (iso: string | null) => (iso ? new Date(iso).toLocaleDateString(locale, { day: 'numeric', month: 'long' }) : '')
+  const features = t.raw(plan === 'PLUS' ? 'plusFeatures' : 'maxFeatures') as string[]
+  return (
+    <div className="pad min-h-[calc(100dvh-120px)] pt-8">
+      <div className="flex flex-col items-center gap-2 text-center">
+        <div className="animate-pop">
+          <Lumi mood="CELEBRATE" size={96} />
+        </div>
+        <h1 className="t-large">{t('paidTitle', { plan: PLAN_NAME[plan] })}</h1>
+        <p className="t-body muted m-0">
+          {r.trial ? t('paidTrialBody', { date: date(r.trialEndsAt) }) : r.amount > 0 ? t('paidBody', { amount: money(r.amount, r.currency === 'USD' ? 'USD' : 'EUR', locale), date: date(r.renewsAt) }) : t('paidBodyShort')}
+        </p>
+      </div>
+      <div className="banner banner-info justify-center">
+        <Icon name="check" size={16} /> {t('paidReceipt')}
+      </div>
+      <b className="t-head mt-2 px-0.5">{t('paidUnlocked')}</b>
+      <FeatureList features={features} />
+      <Link href="/clases" className="btn btn-primary">
+        {t('startLearning')}
+      </Link>
+      <Link href="/inicio" className="btn btn-plain">
+        {t('goHome')}
+      </Link>
+    </div>
+  )
+}
+
+function PlansScreen({ canceled }: { canceled: boolean }) {
   const t = useTranslations('premium')
   const { data: session } = useSession()
   const { data: badge } = usePlanBadge()
@@ -79,7 +171,7 @@ export function Premium() {
         <TopBar close="/perfil" />
         <div className="pad">
           <h1 className="t-large">{t('youAre', { plan: 'Max' })}</h1>
-          <p className="t-body muted m-0">{(status.status === 'TRIALING' || status.status === 'GIFT') && status.trialEndsAt ? t(status.status === 'GIFT' ? 'giftUntil' : 'trialUntil', { date: new Date(status.trialEndsAt).toLocaleDateString(locale, { day: 'numeric', month: 'long' }) }) : t('active')}</p>
+          <p className="t-body muted m-0">{(status.status === 'TRIALING' || status.status === 'GIFT') && status.trialEndsAt ? t(status.status === 'GIFT' ? 'giftUntil' : badge?.stripe ? 'freeUntil' : 'trialUntil', { date: new Date(status.trialEndsAt).toLocaleDateString(locale, { day: 'numeric', month: 'long' }) }) : t('active')}</p>
           <FeatureList features={features('PREMIUM')} />
           <Link href="/ajustes" className="btn btn-secondary">
             {t('manage')}
@@ -97,6 +189,7 @@ export function Premium() {
       <TopBar close="/inicio" />
       <div className="pad">
         <h1 className="t-large">{isPlus ? t('upgradeTitle') : t('title')}</h1>
+        {canceled && <div className="banner">{t('payCanceled')}</div>}
         {isPlus && <p className="t-body muted m-0">{t('youAre', { plan: 'Plus' })}</p>}
         {!isPlus && (
           <Seg
@@ -152,7 +245,7 @@ export function Premium() {
             {isPlus ? t('upgradeCta') : badge?.payments && (badge.trialUsed || !badge.trialUnlocked) ? t('subscribe', { plan: PLAN_NAME[tier] }) : t('tryFree', { days: chosen.trialDays, plan: PLAN_NAME[tier] })}
           </button>
         )}
-        <p className="t-cap m-0 text-center">{t('after', { price: money(chosen.price, 'EUR', locale), per: chosen.interval === 'YEAR' ? t('perYear') : t('perMonth') })}</p>
+        <p className="t-cap m-0 text-center">{t(badge?.payments && !isPlus && !badge.trialUsed && badge.trialUnlocked ? 'after' : 'chargedNow', { price: money(chosen.price, 'EUR', locale), per: chosen.interval === 'YEAR' ? t('perYear') : t('perMonth') })}</p>
         <p className="t-cap m-0 text-center">
           {t.rich('purchaseTerms', {
             terms: c => (

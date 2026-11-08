@@ -134,7 +134,7 @@ export interface Api {
   feedbackLater(): Promise<void>
   submitFeedback(a: { nps: number; likes: string[]; blockers: string[]; pay: string; price?: string; wants: string[]; wantsOther?: string; comment?: string }): Promise<{ ok: boolean; gems: number }>
   adminFeedback(): Promise<AdminFeedback>
-  planBadge(): Promise<{ plan: 'FREE' | 'PLUS' | 'PREMIUM'; status: string; endsAt: string | null; daysLeft: number | null; trialUsed: boolean; isGuest: boolean; streak: number; trialUnlocked: boolean; trialStreak: number; payments: boolean; isAdmin: boolean }>
+  planBadge(): Promise<{ plan: 'FREE' | 'PLUS' | 'PREMIUM'; status: string; stripe: boolean; endsAt: string | null; daysLeft: number | null; trialUsed: boolean; isGuest: boolean; streak: number; trialUnlocked: boolean; trialStreak: number; payments: boolean; isAdmin: boolean }>
   myInvites(): Promise<{ code: string; joined: number; rewarded: number; daysEarned: number; maxDays: number; days: number }>
   inviterName(code: string): Promise<{ valid: boolean; name: string | null }>
   signInGuest(): Promise<Session>
@@ -204,6 +204,7 @@ export interface Api {
   billingStatus(): Promise<BillingStatusT>
   checkout(planId: string): Promise<BillingStatusT & { url?: string }>
   cancelSubscription(): Promise<BillingStatusT & { url?: string }>
+  confirmPayment(sessionId: string): Promise<BillingStatusT & ({ done: true; amount: number; currency: string; trial: boolean } | { done: false; expired: boolean })>
   billingPortal(): Promise<{ url: string }>
   exportData(): Promise<string>
   deleteAccount(): Promise<void>

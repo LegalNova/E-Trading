@@ -2,19 +2,26 @@ import 'server-only'
 // Liga semanal (docs/02-gamificacion.md §Liga). Solo personas reales (D-019).
 // - Todo el que usa la app en una semana entra en la liga: un único grupo para todos hasta 30 personas (luego se abre
 //   otro). Los grupos mezclan divisiones; la división de cada uno sube o baja según su puesto. Semana = hora de Madrid.
-// - Puntos = XP de la semana (y nada más): lo que se ve es lo que cuenta. La rentabilidad no puntúa: premiarla
-//   empujaría a apostar fuerte para ganar la liga, justo lo contrario de lo que enseña Lumi.
+// - Puntos = XP de la semana + puntos de inversión (rentabilidad de la cartera en la semana):
+//   +10 por cada +1 % y −10 por cada −1 %, con tope de ±100 (un 10 %). Estudiar sigue pesando más (una clase ≈ 100 XP).
+//   Si más del 40 % de lo invertido está en una sola acción (los fondos y ETF no cuentan), las ganancias valen la mitad:
+//   jugárselo todo a una carta no sale a cuenta; las pérdidas cuentan enteras. El total nunca baja de 0.
+//   El dinero que entra o sale sin invertir (el saldo extra de Max, un reinicio de cartera) no es rentabilidad.
 // - Cierre (lunes): suben los 7 primeros (+30 gemas), bajan los puestos 26–30. Nadie baja de Novato ni sube de Experto.
 import type { LeagueT } from '@/shared/contract'
 import { addDays, weekOf } from '@/shared/time'
 import { db } from '../db'
 import { DIVISIONS } from '../content/catalog'
-import { bump, checkAchievements, notify, withCtx, type Ctx, type Tx } from './core'
+import { bump, checkAchievements, notify, START_CASH, withCtx, type Ctx, type Tx } from './core'
+import { priceBook } from './trading'
+import { score, tradePoints, weekReturnPct } from '@/shared/league-points'
 
 export const GROUP_SIZE = 30
 export const PROMOTE_TOP = 7
 export const DEMOTE_FROM = 26
 export const PROMOTE_GEMS = 30
+/** Más de este peso en una sola acción (sin contar fondos/ETF) = cartera concentrada */
+const CONCENTRATED = 0.4
 
 /** Semana de la liga: la misma para todos (hora de Madrid, igual que el cierre de los lunes),
  *  aunque cada persona tenga su zona horaria. Así nadie queda en una «semana» distinta a la de los demás. */
@@ -38,8 +45,38 @@ export async function ensureMembership(c: Ctx, evenWithoutXp = false) {
   const open = groups.find(g => g._count._all < GROUP_SIZE)
   const groupNo = open ? open.groupNo : (groups.at(-1)?.groupNo ?? 0) + 1
   // createMany + skipDuplicates: si otra petición del mismo usuario lo crea a la vez, no falla
-  await c.tx.leagueMember.createMany({ data: [{ weekKey, userId: c.user.id, division: c.g.division, groupNo, xp }], skipDuplicates: true })
+  // Base de la rentabilidad: lo que vale su cartera al entrar en la liga esta semana
+  // (sin cartera todavía: se creará con el saldo inicial de su plan)
+  const startValue = (await portfolioValues(c.tx, [c.user.id])).get(c.user.id)?.value ?? START_CASH[c.user.plan]
+  await c.tx.leagueMember.createMany({ data: [{ weekKey, userId: c.user.id, division: c.g.division, groupNo, xp, startValue }], skipDuplicates: true })
 }
+
+/** Dinero que entra o sale de la cartera sin ser inversión (saldo extra de Max, reinicio): no cuenta como rentabilidad */
+export async function addFlow(tx: Tx, userId: string, amount: number) {
+  if (!amount || !Number.isFinite(amount)) return
+  await tx.leagueMember.updateMany({ where: { weekKey: leagueWeekKey(), userId, finalRank: null }, data: { flows: { increment: Math.round(amount * 100) / 100 } } })
+}
+
+/** Valor actual de la cartera de varias personas (precios guardados; sin precio, a coste: nunca inventado) */
+export async function portfolioValues(tx: Tx, userIds: string[]) {
+  const [pfs, positions] = await Promise.all([
+    tx.portfolio.findMany({ where: { userId: { in: userIds } }, select: { userId: true, cash: true } }),
+    tx.position.findMany({ where: { userId: { in: userIds } }, select: { userId: true, symbol: true, qty: true, avgPrice: true } }),
+  ])
+  const book = positions.length ? await priceBook(positions.map(p => p.symbol)) : new Map()
+  const out = new Map<string, { value: number; concentrated: boolean }>()
+  for (const pf of pfs) {
+    const mine = positions.filter(p => p.userId === pf.userId).map(p => {
+      const px = book.get(p.symbol)
+      return { v: Number(p.qty) * (px ? px.eur : Number(p.avgPrice)), single: !px || (px.type !== 'ETF' && px.type !== 'INDEX') }
+    })
+    const invested = mine.reduce((a, x) => a + x.v, 0)
+    const biggestSingle = Math.max(0, ...mine.filter(x => x.single).map(x => x.v))
+    out.set(pf.userId, { value: Number(pf.cash) + invested, concentrated: invested > 0 && biggestSingle / invested > CONCENTRATED })
+  }
+  return out
+}
+
 
 /** Junta los grupos de la semana que caben en uno (por ejemplo, si una versión antigua los separó por división
  *  o si dos personas entraron a la vez en grupos distintos). Idempotente; no toca semanas ya cerradas. */
@@ -61,29 +98,32 @@ export async function compactWeek(tx: Tx, weekKey: string) {
   return moved
 }
 
-/** Rentabilidad semanal real (fotos diarias de la cartera) con penalización por concentración */
-async function riskAdjusted(tx: Tx, userIds: string[], weekKey: string) {
-  const [snaps, positions] = await Promise.all([
-    tx.portfolioSnapshot.findMany({ where: { userId: { in: userIds }, day: { gte: addDays(weekKey, -1), lt: addDays(weekKey, 7) } }, orderBy: { day: 'asc' } }),
-    tx.position.findMany({ where: { userId: { in: userIds } }, select: { userId: true, qty: true, avgPrice: true } }),
-  ])
-  const out = new Map<string, number>()
-  for (const id of userIds) {
-    const s = snaps.filter(x => x.userId === id)
-    let r = s.length >= 2 ? (Number(s[s.length - 1].value) / Number(s[0].value) - 1) * 100 : 0
-    // Concentración: si un solo activo es más del 40 % de lo invertido, las ganancias cuentan la mitad
-    const pos = positions.filter(p => p.userId === id).map(p => Number(p.qty) * Number(p.avgPrice))
-    const invested = pos.reduce((a, b) => a + b, 0)
-    if (r > 0 && invested > 0 && Math.max(...pos) / invested > 0.4) r /= 2
-    // Un ingreso de saldo (el de los planes de pago) no es rentabilidad: un salto así en una semana se descarta
-    if (Math.abs(r) > 50) r = 0
-    out.set(id, Math.round(r * 100) / 100)
+/** Rentabilidad de la semana y puntos de inversión de cada miembro. A quien entró antes de que existiera la base
+ *  se le pone una: la última foto de su cartera antes de la semana (o su valor de ahora, sin entradas de dinero). */
+async function returnsOf(tx: Tx, weekKey: string, members: { userId: string; startValue: unknown; flows: unknown; finalRank: number | null; tradePts: number }[]) {
+  const ids = members.map(m => m.userId)
+  const values = await portfolioValues(tx, ids)
+  const out = new Map<string, { pct: number; pts: number }>()
+  for (const m of members) {
+    const v = values.get(m.userId)
+    if (!v) {
+      out.set(m.userId, { pct: 0, pts: 0 })
+      continue
+    }
+    let start = m.startValue === null ? null : Number(m.startValue)
+    let flows = Number(m.flows)
+    if (start === null) {
+      const snap = await tx.portfolioSnapshot.findFirst({ where: { userId: m.userId, day: { lt: weekKey } }, orderBy: { day: 'desc' } })
+      start = snap ? Number(snap.value) : v.value
+      if (!snap) flows = 0
+      await tx.leagueMember.updateMany({ where: { weekKey, userId: m.userId, startValue: null }, data: { startValue: start, flows } })
+    }
+    const pct = weekReturnPct(start, v.value, flows)
+    out.set(m.userId, { pct, pts: m.finalRank !== null ? m.tradePts : tradePoints(pct, v.concentrated) })
   }
   return out
 }
 
-/** Puntos de la liga: el XP de la semana */
-const score = (xp: number) => xp
 
 function displayName(name: string, visible: boolean) {
   if (!visible) return 'Jugador anónimo'
@@ -97,14 +137,14 @@ async function standings(tx: Tx, weekKey: string, groupNo: number) {
   const ids = members.map(m => m.userId)
   const [users, rets] = await Promise.all([
     tx.user.findMany({ where: { id: { in: ids } }, select: { id: true, name: true, leagueVisible: true, blockedAt: true } }),
-    riskAdjusted(tx, ids, weekKey),
+    returnsOf(tx, weekKey, members),
   ])
   return ids
     .map(id => {
       const u = users.find(x => x.id === id)
       const xp = members.find(x => x.userId === id)?.xp ?? 0
-      const r = rets.get(id) ?? 0
-      return { userId: id, division: members.find(x => x.userId === id)?.division ?? 1, exists: !!u, name: u?.name ?? '', visible: u?.leagueVisible ?? true, blocked: !!u?.blockedAt, weeklyXp: xp, riskAdjReturnPct: r, score: score(xp) }
+      const r = rets.get(id) ?? { pct: 0, pts: 0 }
+      return { userId: id, division: members.find(x => x.userId === id)?.division ?? 1, exists: !!u, name: u?.name ?? '', visible: u?.leagueVisible ?? true, blocked: !!u?.blockedAt, weeklyXp: xp, riskAdjReturnPct: r.pct, tradePts: r.pts, score: score(xp, r.pts) }
     })
     .filter(m => m.exists && !m.blocked)
     .sort((a, b) => b.score - a.score || b.weeklyXp - a.weeklyXp)
@@ -122,8 +162,8 @@ export async function leagueFor(c: Ctx): Promise<LeagueT> {
   await compactWeek(c.tx, weekKey)
   const me = await c.tx.leagueMember.findUnique({ where: { weekKey_userId: { weekKey, userId: c.user.id } } })
   const rows = me ? await standings(c.tx, weekKey, me.groupNo) : []
-  const members = rows.map(m => ({ rank: m.rank, userId: m.userId, displayName: m.userId === c.user.id ? c.user.name || '—' : displayName(m.name, m.visible), weeklyXp: m.weeklyXp, riskAdjReturnPct: m.riskAdjReturnPct, score: m.score, isMe: m.userId === c.user.id, division: DIVISIONS[m.division - 1] }))
-  if (!me) members.push({ rank: 0, userId: c.user.id, displayName: c.user.name || '—', weeklyXp: 0, riskAdjReturnPct: 0, score: 0, isMe: true, division: DIVISIONS[division - 1] })
+  const members = rows.map(m => ({ rank: m.rank, userId: m.userId, displayName: m.userId === c.user.id ? c.user.name || '—' : displayName(m.name, m.visible), weeklyXp: m.weeklyXp, riskAdjReturnPct: m.riskAdjReturnPct, tradePts: m.tradePts, score: m.score, isMe: m.userId === c.user.id, division: DIVISIONS[m.division - 1] }))
+  if (!me) members.push({ rank: 0, userId: c.user.id, displayName: c.user.name || '—', weeklyXp: 0, riskAdjReturnPct: 0, tradePts: 0, score: 0, isMe: true, division: DIVISIONS[division - 1] })
   return { division: { id: `d${division}`, name: DIVISIONS[division - 1], order: division }, divisions: DIVISIONS, endsAt: new Date(addDays(weekKey, 7) + 'T00:00:00Z').toISOString(), promoteTop: PROMOTE_TOP, demoteFrom: DEMOTE_FROM, members }
 }
 
@@ -139,7 +179,7 @@ export async function closeWeek(weekKey: string) {
       const up = m.rank <= PROMOTE_TOP && m.division < DIVISIONS.length && m.weeklyXp > 0
       const down = m.rank >= DEMOTE_FROM && m.division > 1
       const outcome = up ? 'UP' : down ? 'DOWN' : 'STAY'
-      await db.leagueMember.update({ where: { weekKey_userId: { weekKey, userId: m.userId } }, data: { finalRank: m.rank, outcome } })
+      await db.leagueMember.update({ where: { weekKey_userId: { weekKey, userId: m.userId } }, data: { finalRank: m.rank, outcome, tradePts: m.tradePts } })
       const user = await db.user.findUnique({ where: { id: m.userId } })
       if (!user) continue
       await withCtx(async c => {

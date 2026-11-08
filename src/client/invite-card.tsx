@@ -7,6 +7,7 @@ import { useState } from 'react'
 import { Link } from '@/i18n/navigation'
 import { api } from './api'
 import { useSession } from './hooks'
+import { usePlanBadge } from './upgrade'
 import { Icon } from './ui/icons'
 
 export function InviteCard() {
@@ -15,8 +16,14 @@ export function InviteCard() {
   const { data: session } = useSession()
   const guest = !!session?.isGuest
   const { data: inv } = useQuery({ queryKey: ['invite'], queryFn: api.myInvites, retry: false, staleTime: 3_600_000, enabled: !!session && !guest })
+  const { data: badge } = usePlanBadge()
   const [copied, setCopied] = useState(false)
   if (!session?.signedIn) return null
+  // Quien ya tiene Max no «gana Max»: regala Max a su amigo. Quien paga, además, retrasa 7 días su próximo cobro.
+  const hasMax = badge?.plan === 'PREMIUM'
+  const pays = !!badge && badge.plan !== 'FREE' && !badge.daysLeft
+  const title = hasMax ? t('titleGive') : t('title')
+  const body = pays ? t('bodyPaid') : hasMax ? t('bodyMax') : t('body')
   const share = async () => {
     if (!inv) return
     const link = `${location.origin}/?inv=${inv.code}`
@@ -37,9 +44,9 @@ export function InviteCard() {
           <Icon name="gift" size={24} />
         </span>
         <span className="min-w-0 flex-1">
-          <b className="block text-[18px] leading-[23px] tracking-[-0.01em]">{t('title')}</b>
+          <b className="block text-[18px] leading-[23px] tracking-[-0.01em]">{title}</b>
           <span className="mt-0.5 block text-[13px] leading-[18px]" style={{ color: 'rgb(255 255 255 / 0.85)' }}>
-            {inv?.rewarded ? t('bodyEarned', { n: inv.daysEarned }) : t('body')}{' '}
+            {inv?.rewarded && !pays ? t('bodyEarned', { n: inv.daysEarned }) : body}{' '}
             <Link href="/perfil/invitar" className="font-bold whitespace-nowrap underline" style={{ color: '#fff' }}>
               {t('how')}
             </Link>

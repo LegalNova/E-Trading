@@ -372,6 +372,8 @@ export const LeagueMember = z.object({
   displayName: z.string(),
   weeklyXp: z.number(),
   riskAdjReturnPct: z.number(),
+  /** Puntos por la rentabilidad de la semana (pueden ser negativos) */
+  tradePts: z.number(),
   score: z.number(),
   isMe: z.boolean(),
   division: z.string().optional(),

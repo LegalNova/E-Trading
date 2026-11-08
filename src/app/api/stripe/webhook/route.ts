@@ -6,8 +6,9 @@ import { notify } from '@/server/game/core'
 
 /** Stripe puede reenviar el mismo aviso: cada uno se apunta una sola vez */
 async function once(userId: string, name: string, key: string, props: Record<string, unknown>) {
-  if (await db.event.count({ where: { userId, name, props: { path: ['key'], equals: key } } })) return
+  if (await db.event.count({ where: { userId, name, props: { path: ['key'], equals: key } } })) return false
   await db.event.create({ data: { userId, name, props: { ...props, key } as object } })
+  return true
 }
 
 export async function POST(req: Request) {
@@ -50,7 +51,9 @@ export async function POST(req: Request) {
         const inv = event.data.object
         if (inv.amount_paid > 0) {
           const sub = await db.subscription.findFirst({ where: { stripeCustomerId: String(inv.customer) }, select: { userId: true } })
-          if (sub) await once(sub.userId, 'paid', inv.id!, { amount: inv.amount_paid / 100, currency: inv.currency })
+          // Recibo dentro de la app (una vez por factura)
+          if (sub && (await once(sub.userId, 'paid', inv.id!, { amount: inv.amount_paid / 100, currency: inv.currency })))
+            await notify({ tx: db, user: { id: sub.userId } as never }, 'ACHIEVEMENT', 'Pago recibido', `Hemos cobrado ${(inv.amount_paid / 100).toFixed(2).replace('.', ',')} € de tu suscripción. Gracias por apoyar Lumi.`, '/ajustes')
         }
         break
       }

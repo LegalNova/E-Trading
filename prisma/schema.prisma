@@ -486,6 +486,9 @@ model LeagueMember {
   division  Int
   groupNo   Int
   xp        Int      @default(0) // XP de esa semana (se congela al cerrar)
+  startValue Decimal? @db.Decimal(20, 2) // valor de la cartera al empezar su semana (base de la rentabilidad)
+  flows     Decimal  @default(0) @db.Decimal(20, 2) // dinero que entra o sale sin invertir (saldo de Max, reinicios)
+  tradePts  Int      @default(0) // puntos de inversión (se congelan al cerrar)
   finalRank Int?
   outcome   String? // UP | STAY | DOWN
   joinedAt  DateTime @default(now())

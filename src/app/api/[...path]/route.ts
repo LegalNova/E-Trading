@@ -129,6 +129,7 @@ const routes: Route[] = [
   { method: 'GET', path: 'billing/status', run: () => profile.billingStatus() },
   { method: 'POST', path: 'billing/checkout', run: (_r, _p, b) => profile.checkout(z.object({ planId: z.string().max(40) }).parse(b).planId) },
   { method: 'POST', path: 'billing/cancel', run: () => profile.cancelSubscription() },
+  { method: 'POST', path: 'billing/confirm', run: async (_r, _p, b) => { await rateLimit(`pay:${(await requireUser()).id}`, 30, 60); return profile.confirmPayment(z.object({ sessionId: z.string().regex(/^cs_(test|live)_[A-Za-z0-9]{10,200}$/) }).parse(b).sessionId) } },
   // Público
   { method: 'GET', path: 'public/stats', run: () => profile.publicStats() },
   { method: 'POST', path: 'waitlist', run: async (r, _p, b) => { const x = z.object({ email: z.string().max(200), website: z.string().max(200).optional() }).parse(b); if (x.website) return; await rateLimit(`waitlist:${clientIp(r)}`, 5, 600); return profile.joinWaitlist(x.email, r.headers.get('accept-language')?.slice(0, 2) ?? 'es') } },

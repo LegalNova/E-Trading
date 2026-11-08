@@ -720,17 +720,20 @@
     "promoting": "A zona d'ascens",
     "demoting": "A zona de descens",
     "staying": "Et mantens",
-    "points": "{n} XP aquesta setmana",
+    "points": "{n} punts",
     "player": "Jugador",
     "promoteZone": "Zona d'ascens fins al {n}è",
     "demoteZone": "Zona de descens des del {n}è",
     "you": "Tu · {name}",
-    "rule": "Compta l’XP que guanyes aquesta setmana: classes, quizzes, objectius i operacions. Es posa a zero cada dilluns; el teu XP total continua al teu perfil.",
-    "pointsCol": "XP setmana",
+    "rule": "Punts = XP de la setmana + inversió. La teva cartera suma 10 punts per cada 1 % que guanyi a la setmana i en resta 10 per cada 1 % que perdi (com a màxim ±100). Si més del 40 % és en una sola acció, els guanys valen la meitat: diversificar puntua. Tot torna a zero el dilluns.",
+    "pointsCol": "Punts",
     "joinHint": "Ja ets a la lliga d’aquesta setmana. Fes una classe o una operació per sumar els teus primers punts.",
     "inviteTitle": "Porta els teus amics a la lliga",
     "inviteBody": "Amb el teu enllaç entren amb 7 dies de Max i competiu cada setmana.",
-    "yourDivision": "La teva divisió: {name}"
+    "yourDivision": "La teva divisió: {name}",
+    "rowXp": "{xp} XP",
+    "rowTrade": "cartera {pct} % ({pts})",
+    "breakdown": "{xp} XP {pts} per invertir"
   },
   "profile": {
     "title": "Perfil",
@@ -756,7 +759,8 @@
     "feedbackTitle": "Dona’ns la teva opinió",
     "feedbackSub": "Un minut per ajudar-nos a millorar Lumi",
     "tutor": "Pregunta-li a la Lumi",
-    "help": "Ajuda"
+    "help": "Ajuda",
+    "inviteSubGive": "Regala 7 dies de Max a un amic"
   },
   "notifications": {
     "title": "Avisos",
@@ -811,7 +815,23 @@
     "lockedBody": "Entra {n} dies seguits (en portes {s}) o arriba amb la invitació d’un amic. També et podràs subscriure directament quan activem el pagament amb targeta.",
     "lockedCta": "Continuar la ratxa",
     "inviteCta": "Convidar un amic",
-    "subscribe": "Subscriure’m a {plan}"
+    "subscribe": "Subscriure’m a {plan}",
+    "confirmingPay": "Confirmant el teu pagament…",
+    "payPending": "El teu banc encara està confirmant el pagament. Sol trigar uns segons.",
+    "payExpired": "Aquest pagament no es va completar. No se t’ha cobrat res.",
+    "payRetry": "Comprovar-ho de nou",
+    "payHelp": "Necessito ajuda",
+    "payCanceled": "Has sortit del pagament sense acabar-lo. No se t’ha cobrat res.",
+    "paidTitle": "Gràcies! Ja tens {plan}",
+    "paidBody": "Pagament rebut: {amount}. Es renova el {date} i pots cancel·lar quan vulguis des d’Ajustos.",
+    "paidTrialBody": "La teva prova gratis ja ha començat. No se’t cobra res fins al {date}; si cancel·les abans des d’Ajustos, no pagues res.",
+    "paidBodyShort": "La teva subscripció està activa.",
+    "paidReceipt": "Tens el rebut a Ajustos › Gestionar subscripció",
+    "paidUnlocked": "Ja tens desbloquejat",
+    "startLearning": "Començar a aprendre",
+    "goHome": "Anar a l’inici",
+    "chargedNow": "Es cobra avui {price}{per} i es renova sol. Cancel·la quan vulguis des d’Ajustos.",
+    "freeUntil": "Sense cobraments fins al {date}."
   },
   "settings": {
     "title": "Configuració",
@@ -1520,7 +1540,10 @@
     "rules": "Pots guanyar fins a un any de Max ({days} dies per amic). Els teus dies arriben quan el teu amic desa el compte i acaba la primera classe. Crear comptes falsos o convidar-te a tu mateix va contra les <terms>Condicions d’ús</terms>.",
     "guest": "Per convidar els teus amics, primer desa el teu progrés amb correu i contrasenya.",
     "guestCta": "Desar el meu progrés",
-    "daysEarned": "Dies de Max guanyats"
+    "daysEarned": "Dies de Max guanyats",
+    "headlineGive": "Regala 7 dies de Max als teus amics",
+    "step3Paid": "Quan acaba la primera classe, el teu proper cobrament es retarda 7 dies.",
+    "subPaid": "El teu amic té {days} dies de Max només entrar. I per cada amic que acabi la primera classe, el teu proper cobrament es retarda {days} dies."
   },
   "upgrade": {
     "short": "Max gratis",
@@ -1637,7 +1660,10 @@
     "cta": "Convidar un amic",
     "copied": "Enllaç copiat",
     "how": "Com funciona",
-    "guestCta": "Desa el compte per convidar"
+    "guestCta": "Desa el compte per convidar",
+    "titleGive": "Convida un amic i regala-li 7 dies de Max",
+    "bodyMax": "El teu amic entra amb 7 dies de Max gratis. I tu sumes 7 dies més al teu Max quan acabi la primera classe.",
+    "bodyPaid": "El teu amic entra amb 7 dies de Max gratis. Quan acabi la primera classe, el teu proper cobrament es retarda 7 dies."
   },
   "buy": {
     "title": "Fes-te Plus o Max",

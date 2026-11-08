@@ -720,17 +720,20 @@
     "promoting": "In the promotion zone",
     "demoting": "In the relegation zone",
     "staying": "You're holding on",
-    "points": "{n} XP this week",
+    "points": "{n} points",
     "player": "Player",
     "promoteZone": "Promotion zone up to #{n}",
     "demoteZone": "Relegation zone from #{n}",
     "you": "You · {name}",
-    "rule": "What counts is the XP you earn this week: lessons, quizzes, goals and trades. It resets every Monday; your total XP stays on your profile.",
-    "pointsCol": "Week XP",
+    "rule": "Points = this week’s XP + investing. Your portfolio adds 10 points for every 1 % it gains during the week and takes away 10 for every 1 % it loses (±100 at most). If more than 40 % is in a single stock, gains count half: diversifying scores. Everything resets on Monday.",
+    "pointsCol": "Points",
     "joinHint": "You’re in this week’s league. Take a lesson or make a trade to score your first points.",
     "inviteTitle": "Bring your friends into the league",
     "inviteBody": "With your link they join with 7 days of Max and you compete every week.",
-    "yourDivision": "Your division: {name}"
+    "yourDivision": "Your division: {name}",
+    "rowXp": "{xp} XP",
+    "rowTrade": "portfolio {pct} % ({pts})",
+    "breakdown": "{xp} XP {pts} from investing"
   },
   "profile": {
     "title": "Profile",
@@ -756,7 +759,8 @@
     "feedbackTitle": "Tell us what you think",
     "feedbackSub": "One minute to help us improve Lumi",
     "tutor": "Ask Lumi",
-    "help": "Help"
+    "help": "Help",
+    "inviteSubGive": "Give a friend 7 days of Max"
   },
   "notifications": {
     "title": "Notifications",
@@ -811,7 +815,23 @@
     "lockedBody": "Come back {n} days in a row (you’re on {s}) or join with a friend’s invitation. You’ll also be able to subscribe directly once card payments are on.",
     "lockedCta": "Keep my streak",
     "inviteCta": "Invite a friend",
-    "subscribe": "Subscribe to {plan}"
+    "subscribe": "Subscribe to {plan}",
+    "confirmingPay": "Confirming your payment…",
+    "payPending": "Your bank is still confirming the payment. It usually takes a few seconds.",
+    "payExpired": "That payment wasn’t completed. You haven’t been charged.",
+    "payRetry": "Check again",
+    "payHelp": "I need help",
+    "payCanceled": "You left checkout before finishing. You haven’t been charged.",
+    "paidTitle": "Thank you! You now have {plan}",
+    "paidBody": "Payment received: {amount}. It renews on {date} and you can cancel anytime from Settings.",
+    "paidTrialBody": "Your free trial has started. You won’t be charged until {date}; cancel before then from Settings and you pay nothing.",
+    "paidBodyShort": "Your subscription is active.",
+    "paidReceipt": "Your receipt is in Settings › Manage subscription",
+    "paidUnlocked": "Now unlocked",
+    "startLearning": "Start learning",
+    "goHome": "Go home",
+    "chargedNow": "You’re charged {price}{per} today and it renews automatically. Cancel anytime from Settings.",
+    "freeUntil": "No charges until {date}."
   },
   "settings": {
     "title": "Settings",
@@ -1520,7 +1540,10 @@
     "rules": "You can earn up to a year of Max ({days} days per friend). Your days arrive when your friend saves their account and finishes their first lesson. Creating fake accounts or inviting yourself goes against the <terms>Terms of use</terms>.",
     "guest": "To invite your friends, first save your progress with an email and password.",
     "guestCta": "Save my progress",
-    "daysEarned": "Days of Max earned"
+    "daysEarned": "Days of Max earned",
+    "headlineGive": "Give your friends 7 days of Max",
+    "step3Paid": "When they finish their first lesson, your next charge moves back 7 days.",
+    "subPaid": "Your friend gets {days} days of Max the moment they join. And for every friend who finishes their first lesson, your next charge moves back {days} days."
   },
   "upgrade": {
     "short": "Max free",
@@ -1637,7 +1660,10 @@
     "cta": "Invite a friend",
     "copied": "Link copied",
     "how": "How it works",
-    "guestCta": "Save your account to invite"
+    "guestCta": "Save your account to invite",
+    "titleGive": "Invite a friend and give them 7 days of Max",
+    "bodyMax": "Your friend joins with 7 days of Max free. And you add 7 more days to your Max when they finish their first lesson.",
+    "bodyPaid": "Your friend joins with 7 days of Max free. When they finish their first lesson, your next charge moves back 7 days."
   },
   "buy": {
     "title": "Go Plus or Max",

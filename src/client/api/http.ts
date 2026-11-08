@@ -165,6 +165,7 @@ export const httpApi: Api = {
   billingStatus: () => get('/billing/status'),
   checkout: planId => post('/billing/checkout', { planId }),
   cancelSubscription: () => post('/billing/cancel'),
+  confirmPayment: sessionId => post('/billing/confirm', { sessionId }),
   billingPortal: () => post('/billing/portal'),
   exportData: async () => JSON.stringify(await get('/me/export'), null, 2),
   deleteAccount: () => call('DELETE', '/me'),

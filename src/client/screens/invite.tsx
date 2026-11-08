@@ -9,12 +9,17 @@ import { useGuard } from '../shell'
 import { Icon } from '../ui/icons'
 import { ErrorState, PageSkeleton, TopBar } from '../ui/kit'
 import { Lumi } from '../ui/lumi'
+import { usePlanBadge } from '../upgrade'
 
 export function Invite() {
   const t = useTranslations('invite')
   const { ready } = useGuard('app')
   const { data, error, refetch } = useQuery({ queryKey: ['invite'], queryFn: api.myInvites, enabled: ready })
   const [copied, setCopied] = useState(false)
+  const { data: badge } = usePlanBadge()
+  // Textos según el plan: quien ya tiene Max regala Max; quien paga retrasa su próximo cobro
+  const hasMax = badge?.plan === 'PREMIUM'
+  const pays = !!badge && badge.plan !== 'FREE' && !badge.daysLeft
   if (error instanceof ApiFailure && error.code === 'GUEST_MUST_SAVE')
     return (
       <>
@@ -51,16 +56,16 @@ export function Invite() {
       }
     } else window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank', 'noopener')
   }
-  const steps = [t('step1'), t('step2'), t('step3')]
+  const steps = [t('step1'), t('step2'), t(pays ? 'step3Paid' : 'step3')]
   return (
     <>
       <TopBar back="/perfil" title={t('title')} />
       <div className="pad">
         <div className="hero flex flex-col items-start gap-3 p-6">
           <Lumi mood="CELEBRATE" size={56} />
-          <h1 className="t-title m-0">{t('headline')}</h1>
+          <h1 className="t-title m-0">{t(hasMax ? 'headlineGive' : 'headline')}</h1>
           <p className="m-0" style={{ color: 'rgb(255 255 255 / 0.75)' }}>
-            {t('sub', { days: data.days })}
+            {t(pays ? 'subPaid' : 'sub', { days: data.days })}
           </p>
         </div>
         <div className="card flex flex-col gap-2.5">

@@ -347,6 +347,9 @@ export async function resetPortfolio() {
     const year = new Date().getFullYear()
     const left = pf.resetsYear === year ? pf.resetsLeft : 3
     if (left <= 0) fail(429, 'RESET_LIMIT', 'Has usado los 3 reinicios de este año')
+    // En la liga, reiniciar no borra lo perdido esta semana: la diferencia cuenta como dinero que entra (o sale)
+    const before = n(pf.cash) + (await c.tx.position.findMany({ where: { userId: c.user.id } })).reduce((t, p) => t + posValue(book, p), 0)
+    await (await import('./league')).addFlow(c.tx, c.user.id, START_CASH[c.user.plan] - before)
     await c.tx.position.deleteMany({ where: { userId: c.user.id } })
     await c.tx.order.updateMany({ where: { userId: c.user.id, status: 'PENDING' }, data: { status: 'CANCELLED' } })
     await c.tx.portfolio.update({ where: { userId: c.user.id }, data: { cash: START_CASH[c.user.plan], realized: 0, resetsLeft: left - 1, resetsYear: year } })

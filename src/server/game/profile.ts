@@ -10,13 +10,14 @@ import { db } from '../db'
 import { headers } from 'next/headers'
 import { auth, currentUser, googleEnabled, mailEnabled, realUser } from '../auth'
 import { viewAs } from '../view'
-import { checkoutUrl, portalUrl, stripeEnabled, type PlanId as StripePlanId } from '../billing/stripe'
+import { checkoutUrl, confirmCheckout, portalUrl, stripeEnabled, type PlanId as StripePlanId } from '../billing/stripe'
 import { currentLocale } from '../locale'
 import { forgetMemo } from '../request'
 import { ACHIEVEMENTS } from '../content/catalog'
 import { achievementList, endFx, fail, FREEZE_PRICE, goalDefs, goalsOf, minutesOf, levelOf, levelTitle, LIVES_MAX, livesOf, lumi, MAX_FREEZES, notify, REFILL_PRICE, START_CASH, withCtx } from './core'
 import { ALL_Q, pathOf } from './learning'
 import { portfolioIn, portfolioRow, processPendingFor, userBook } from './trading'
+import { addFlow } from './league'
 
 const DAY_MS = 86_400_000
 
@@ -279,10 +280,11 @@ export async function planBadge() {
   const u = await currentUser()
   if (!u) fail(401, 'UNAUTHORIZED', 'Inicia sesión para continuar')
   const sub = await db.subscription.findUnique({ where: { userId: u!.id } })
-  const temporary = (sub?.status === 'TRIALING' || sub?.status === 'GIFT') && sub.trialEndsAt && sub.trialEndsAt.getTime() > Date.now()
+  // Temporal = regalo o prueba sin tarjeta. Una suscripción de Stripe en periodo gratis ya está contratada: no se le ofrece pagar
+  const temporary = (sub?.status === 'TRIALING' || sub?.status === 'GIFT') && !sub.stripeSubId && sub.trialEndsAt && sub.trialEndsAt.getTime() > Date.now()
   const daysLeft = temporary ? Math.max(1, Math.ceil((sub!.trialEndsAt!.getTime() - Date.now()) / DAY_MS)) : null
   const g = await db.gameState.findUnique({ where: { userId: u!.id }, select: { streak: true, bestStreak: true } })
-  return { plan: u!.plan, status: sub?.status ?? 'NONE', endsAt: temporary ? sub!.trialEndsAt!.toISOString() : null, daysLeft, trialUsed: u!.trialUsed, isGuest: !!u!.isAnonymous, streak: g?.streak ?? 0, trialUnlocked: trialUnlocked(g?.bestStreak ?? 0), trialStreak: TRIAL_STREAK, payments: stripeEnabled, isAdmin: u!.role === 'ADMIN' && !viewAs() }
+  return { plan: u!.plan, status: sub?.status ?? 'NONE', stripe: !!sub?.stripeSubId, endsAt: temporary ? sub!.trialEndsAt!.toISOString() : null, daysLeft, trialUsed: u!.trialUsed, isGuest: !!u!.isAnonymous, streak: g?.streak ?? 0, trialUnlocked: trialUnlocked(g?.bestStreak ?? 0), trialStreak: TRIAL_STREAK, payments: stripeEnabled, isAdmin: u!.role === 'ADMIN' && !viewAs() }
 }
 
 export const billingStatus = () =>
@@ -317,6 +319,16 @@ async function stripeCheckout(planId: string) {
   return { url: await checkoutUrl(u!, plan.id as StripePlanId, { trialDays: trial, origin, locale }) }
 }
 
+/** Vuelta de Stripe: confirma el pago y devuelve el plan ya activo (para el «Gracias» de la app) */
+export async function confirmPayment(sessionId: string) {
+  const u = await currentUser()
+  if (!u) fail(401, 'UNAUTHORIZED', 'Inicia sesión para continuar')
+  if (!stripeEnabled) fail(404, 'NOT_FOUND', 'El pago con tarjeta aún no está activo')
+  const r = await confirmCheckout(u!.id, sessionId)
+  const [fresh, sub] = await Promise.all([db.user.findUniqueOrThrow({ where: { id: u!.id } }), db.subscription.findUnique({ where: { userId: u!.id } })])
+  return { ...r, ...statusOf(fresh, sub) }
+}
+
 /** Portal de Stripe para gestionar la suscripción (tarjeta, facturas, cambio de plan, cancelación) */
 export async function billingPortal() {
   const u = await currentUser()
@@ -346,7 +358,10 @@ const simulatedCheckout = (planId: string) =>
     if (age !== null && age < 18 && c.user.guardianConsent !== 'CONFIRMED') fail(403, 'GUARDIAN_CONSENT_REQUIRED', 'Para un plan de pago hace falta que un adulto lo confirme')
     const trialEnds = upgradingTrial && current?.trialEndsAt ? current.trialEndsAt : new Date(Date.now() + plan.trialDays * DAY_MS)
     const pf = await portfolioRow(c.tx, c.user)
-    if (!pf.premiumTopUp) await c.tx.portfolio.update({ where: { userId: c.user.id }, data: { cash: { increment: START_CASH.PREMIUM - START_CASH.FREE }, premiumTopUp: true } })
+    if (!pf.premiumTopUp) {
+      const up = await c.tx.portfolio.updateMany({ where: { userId: c.user.id, premiumTopUp: false }, data: { cash: { increment: START_CASH.PREMIUM - START_CASH.FREE }, premiumTopUp: true } })
+      if (up.count) await addFlow(c.tx, c.user.id, START_CASH.PREMIUM - START_CASH.FREE)
+    }
     const sub = await c.tx.subscription.upsert({ where: { userId: c.user.id }, create: { userId: c.user.id, status: 'TRIALING', interval: plan.interval, trialEndsAt: trialEnds, renewsAt: trialEnds }, update: { status: 'TRIALING', interval: plan.interval, trialEndsAt: trialEnds, renewsAt: trialEnds } })
     const u = await c.tx.user.update({ where: { id: c.user.id }, data: { plan: plan.tier, trialUsed: true } })
     c.g.lives = LIVES_MAX

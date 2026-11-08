@@ -720,17 +720,20 @@
     "promoting": "En zona de ascenso",
     "demoting": "En zona de descenso",
     "staying": "Te mantienes",
-    "points": "{n} XP esta semana",
+    "points": "{n} puntos",
     "player": "Jugador",
     "promoteZone": "Zona de ascenso hasta el {n}.º",
     "demoteZone": "Zona de descenso desde el {n}.º",
     "you": "Tú · {name}",
-    "rule": "Cuenta el XP que ganas esta semana: clases, quizzes, objetivos y operaciones. Se pone a cero cada lunes; tu XP total sigue en tu perfil.",
-    "pointsCol": "XP semana",
+    "rule": "Puntos = XP de la semana + inversión. Tu cartera suma 10 puntos por cada 1 % que gane en la semana y resta 10 por cada 1 % que pierda (como mucho ±100). Si más del 40 % está en una sola acción, las ganancias valen la mitad: diversificar puntúa. Todo vuelve a cero el lunes.",
+    "pointsCol": "Puntos",
     "joinHint": "Ya estás en la liga de esta semana. Haz una clase o una operación para sumar tus primeros puntos.",
     "inviteTitle": "Trae a tus amigos a la liga",
     "inviteBody": "Con tu enlace entran con 7 días de Max y competís cada semana.",
-    "yourDivision": "Tu división: {name}"
+    "yourDivision": "Tu división: {name}",
+    "rowXp": "{xp} XP",
+    "rowTrade": "cartera {pct} % ({pts})",
+    "breakdown": "{xp} XP {pts} por invertir"
   },
   "profile": {
     "title": "Perfil",
@@ -756,7 +759,8 @@
     "feedbackTitle": "Danos tu opinión",
     "feedbackSub": "Un minuto para ayudarnos a mejorar Lumi",
     "tutor": "Pregúntale a Lumi",
-    "help": "Ayuda"
+    "help": "Ayuda",
+    "inviteSubGive": "Regálale 7 días de Max a un amigo"
   },
   "notifications": {
     "title": "Avisos",
@@ -811,7 +815,23 @@
     "lockedBody": "Entra {n} días seguidos (llevas {s}) o llega con la invitación de un amigo. También podrás suscribirte directamente en cuanto activemos el pago con tarjeta.",
     "lockedCta": "Seguir mi racha",
     "inviteCta": "Invitar a un amigo",
-    "subscribe": "Suscribirme a {plan}"
+    "subscribe": "Suscribirme a {plan}",
+    "confirmingPay": "Confirmando tu pago…",
+    "payPending": "Tu banco aún está confirmando el pago. Suele tardar unos segundos.",
+    "payExpired": "Ese pago no se completó. No se te ha cobrado nada.",
+    "payRetry": "Comprobar otra vez",
+    "payHelp": "Necesito ayuda",
+    "payCanceled": "Has salido del pago sin terminarlo. No se te ha cobrado nada.",
+    "paidTitle": "¡Gracias! Ya tienes {plan}",
+    "paidBody": "Pago recibido: {amount}. Se renueva el {date} y puedes cancelar cuando quieras desde Ajustes.",
+    "paidTrialBody": "Tu prueba gratis ya ha empezado. No se te cobra nada hasta el {date}; si cancelas antes desde Ajustes, no pagas nada.",
+    "paidBodyShort": "Tu suscripción está activa.",
+    "paidReceipt": "Tienes el recibo en Ajustes › Gestionar suscripción",
+    "paidUnlocked": "Ya tienes desbloqueado",
+    "startLearning": "Empezar a aprender",
+    "goHome": "Ir al inicio",
+    "chargedNow": "Se cobra hoy {price}{per} y se renueva solo. Cancela cuando quieras desde Ajustes.",
+    "freeUntil": "Sin cobros hasta el {date}."
   },
   "settings": {
     "title": "Ajustes",
@@ -1520,7 +1540,10 @@
     "rules": "Puedes ganar hasta un año de Max ({days} días por amigo). Tus días llegan cuando tu amigo guarda su cuenta y termina su primera clase. Crear cuentas falsas o invitarte a ti mismo va contra los <terms>Términos de uso</terms>.",
     "guest": "Para invitar a tus amigos primero guarda tu progreso con email y contraseña.",
     "guestCta": "Guardar mi progreso",
-    "daysEarned": "Días de Max ganados"
+    "daysEarned": "Días de Max ganados",
+    "headlineGive": "Regala 7 días de Max a tus amigos",
+    "step3Paid": "Cuando termina su primera clase, tu próximo cobro se retrasa 7 días.",
+    "subPaid": "Tu amigo tiene {days} días de Max nada más entrar. Y por cada amigo que termine su primera clase, tu próximo cobro se retrasa {days} días."
   },
   "upgrade": {
     "short": "Max gratis",
@@ -1637,7 +1660,10 @@
     "cta": "Invitar a un amigo",
     "copied": "Enlace copiado",
     "how": "Cómo funciona",
-    "guestCta": "Guarda tu cuenta para invitar"
+    "guestCta": "Guarda tu cuenta para invitar",
+    "titleGive": "Invita a un amigo y regálale 7 días de Max",
+    "bodyMax": "Tu amigo entra con 7 días de Max gratis. Y tú sumas 7 días más a tu Max cuando termine su primera clase.",
+    "bodyPaid": "Tu amigo entra con 7 días de Max gratis. Cuando termine su primera clase, tu próximo cobro se retrasa 7 días."
   },
   "buy": {
     "title": "Hazte Plus o Max",

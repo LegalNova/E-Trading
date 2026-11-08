@@ -237,6 +237,8 @@ export function League() {
             {me.rank <= l.promoteTop ? t('promoting') : me.rank >= l.demoteFrom ? t('demoting') : t('staying')}
             <br />
             <b style={{ color: 'var(--ink)' }}>{t('points', { n: num(me.score, locale, 0) })}</b>
+            <br />
+            <span className="t-cap">{t('breakdown', { xp: num(me.weeklyXp, locale, 0), pts: `${me.tradePts >= 0 ? '+' : '−'}${Math.abs(me.tradePts)}` })}</span>
           </span>
         </div>
       )}
@@ -254,9 +256,20 @@ export function League() {
               <b className="w-6">{m.rank}</b>
               <span className="min-w-0 flex-1 truncate" style={{ fontWeight: m.isMe ? 800 : 600 }}>
                 {m.isMe ? t('you', { name: m.displayName }) : m.displayName}
-                {m.division && <span className="t-cap block font-normal">{m.division}</span>}
+                <span className="t-cap block truncate font-normal">
+                  {t('rowXp', { xp: num(m.weeklyXp, locale, 0) })}
+                  {(m.tradePts !== 0 || m.riskAdjReturnPct !== 0) && (
+                    <>
+                      {' · '}
+                      <span className={m.tradePts > 0 ? 'up' : m.tradePts < 0 ? 'down' : undefined}>
+                        {t('rowTrade', { pct: `${m.riskAdjReturnPct > 0 ? '+' : m.riskAdjReturnPct < 0 ? '−' : ''}${num(Math.abs(m.riskAdjReturnPct), locale, 1)}`, pts: `${m.tradePts > 0 ? '+' : m.tradePts < 0 ? '−' : ''}${Math.abs(m.tradePts)}` })}
+                      </span>
+                    </>
+                  )}
+                  {m.division ? ` · ${m.division}` : ''}
+                </span>
               </span>
-              <span className="flex-none text-right font-bold tabular-nums">{num(m.weeklyXp, locale, 0)} XP</span>
+              <span className="flex-none text-right font-bold tabular-nums">{num(m.score, locale, 0)}</span>
             </div>
           </div>
         ))}
@@ -359,7 +372,7 @@ export function Profile() {
         <span className="flex-1">
           <b>{t('inviteTitle')}</b>
           <br />
-          <span className="t-foot">{t('inviteSub')}</span>
+          <span className="t-foot">{t(me.plan === 'PREMIUM' ? 'inviteSubGive' : 'inviteSub')}</span>
         </span>
         <Icon name="chev" size={18} />
       </Link>
