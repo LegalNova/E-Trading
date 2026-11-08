@@ -23,6 +23,31 @@ const DAY_MS = 86_400_000
 const monthsOf = (days: number): GiftMonths => (days >= 365 ? 12 : 1)
 const firstName = (s: string | null | undefined) => s?.trim().split(/\s+/)[0] || null
 
+// ── Avisos (en el idioma de quien los recibe) ─────────────
+type Lang = 'es' | 'ca' | 'en'
+const langOf = (l: string | null | undefined): Lang => (l === 'ca' || l === 'en' ? l : 'es')
+const localeOf = async (userId: string) => langOf((await db.user.findUnique({ where: { id: userId }, select: { locale: true } }))?.locale)
+const NOTE = {
+  es: {
+    ready: (plan: string, to: string | null) => ['Tu regalo está listo', `Lumi ${plan} para ${to || 'quien tú quieras'}. Comparte el enlace: se puede canjear durante 12 meses.`],
+    span: (m: GiftMonths) => (m === 12 ? '12 meses' : '1 mes'),
+    redeemed: (plan: string, span: string, from: string | null, days: number, delayed: boolean) => [`Regalo canjeado: ${plan} ${span}`, delayed ? `Tu próximo cobro se retrasa ${days} días. Regalo de ${from || 'alguien que te aprecia'}.` : `Regalo de ${from || 'alguien que te aprecia'}. Disfruta aprendiendo.`],
+    toBuyer: (who: string | null, plan: string, span: string) => [`${who || 'Alguien'} ha canjeado tu regalo`, `Ya tiene Lumi ${plan} durante ${span}. Gracias por regalar aprender a invertir.`],
+  },
+  ca: {
+    ready: (plan: string, to: string | null) => ['El teu regal està a punt', `La Lumi ${plan} per a ${to || 'qui tu vulguis'}. Comparteix l’enllaç: es pot bescanviar durant 12 mesos.`],
+    span: (m: GiftMonths) => (m === 12 ? '12 mesos' : '1 mes'),
+    redeemed: (plan: string, span: string, from: string | null, days: number, delayed: boolean) => [`Regal bescanviat: ${plan} ${span}`, delayed ? `El teu proper cobrament es retarda ${days} dies. Regal de ${from || 'algú que t’aprecia'}.` : `Regal de ${from || 'algú que t’aprecia'}. Gaudeix aprenent.`],
+    toBuyer: (who: string | null, plan: string, span: string) => [`${who || 'Algú'} ha bescanviat el teu regal`, `Ja té la Lumi ${plan} durant ${span}. Gràcies per regalar aprendre a invertir.`],
+  },
+  en: {
+    ready: (plan: string, to: string | null) => ['Your gift is ready', `Lumi ${plan} for ${to || 'whoever you like'}. Share the link: it can be redeemed for 12 months.`],
+    span: (m: GiftMonths) => (m === 12 ? '12 months' : '1 month'),
+    redeemed: (plan: string, span: string, from: string | null, days: number, delayed: boolean) => [`Gift redeemed: ${plan} ${span}`, delayed ? `Your next charge is pushed back ${days} days. A gift from ${from || 'someone who cares about you'}.` : `A gift from ${from || 'someone who cares about you'}. Enjoy learning.`],
+    toBuyer: (who: string | null, plan: string, span: string) => [`${who || 'Someone'} redeemed your gift`, `They now have Lumi ${plan} for ${span}. Thanks for giving the gift of learning to invest.`],
+  },
+} as const
+
 /** Texto escrito por la persona: sin caracteres de control ni de dirección del texto, espacios limpios */
 function clean(s: string | undefined | null, max: number, multiline = false) {
   if (!s) return ''
@@ -122,7 +147,8 @@ export async function markGiftPaid(s: Stripe.Checkout.Session): Promise<Gift | n
     const r = await tx.gift.updateMany({ where: { id: g.id, paidAt: null, status: { in: ['PENDING', 'CANCELED'] } }, data: { status: 'READY', paidAt: now, expiresAt: until, stripeSessionId: s.id, buyerEmail: g.buyerEmail ?? s.customer_details?.email ?? null } })
     if (!r.count || !g.buyerId) return
     await tx.event.create({ data: { userId: g.buyerId, name: 'gift_paid', props: { giftId: g.id, tier: g.tier, days: g.days, amount: Number(g.amount ?? 0) } } })
-    await notify({ tx, user: { id: g.buyerId } as never }, 'ACHIEVEMENT', 'Tu regalo está listo', `Lumi ${PLAN_NAME[g.tier === 'PLUS' ? 'PLUS' : 'PREMIUM']} para ${g.toName || 'quien tú quieras'}. Comparte el enlace: se puede canjear durante 12 meses.`, '/regalar')
+    const [title, body] = NOTE[await localeOf(g.buyerId)].ready(PLAN_NAME[g.tier === 'PLUS' ? 'PLUS' : 'PREMIUM'], g.toName)
+    await notify({ tx, user: { id: g.buyerId } as never }, 'ACHIEVEMENT', title, body, '/regalar')
   })
   return db.gift.findUnique({ where: { id: g.id } })
 }
@@ -223,9 +249,14 @@ export async function redeemGift(code: string): Promise<GiftRedeemT> {
     const r = await grantPlan(ctx.tx, u.id, tier, g.days, `gift-${g.id}`)
     await ctx.tx.event.create({ data: { userId: u.id, name: 'gift_redeemed', props: { giftId: g.id, tier, days: g.days, mode: r.mode } } })
     const plan = PLAN_NAME[tier]
-    const span = monthsOf(g.days) === 12 ? '12 meses' : '1 mes'
-    await notify(ctx, 'ACHIEVEMENT', `Regalo canjeado: ${plan} ${span}`, r.mode === 'DELAYED_CHARGE' ? `Tu próximo cobro se retrasa ${g.days} días. Regalo de ${g.fromName || 'alguien que te aprecia'}.` : `Regalo de ${g.fromName || 'alguien que te aprecia'}. Disfruta aprendiendo.`, r.mode === 'DELAYED_CHARGE' ? '/ajustes' : '/clases')
-    if (g.buyerId) await notify({ tx: ctx.tx, user: { id: g.buyerId } as never }, 'ACHIEVEMENT', `${firstName(u.name) || g.toName || 'Alguien'} ha canjeado tu regalo`, `Ya tiene Lumi ${plan} durante ${span}. Gracias por regalar aprender a invertir.`, '/regalar')
+    const mine = NOTE[langOf(u.locale)]
+    const [title, body] = mine.redeemed(plan, mine.span(monthsOf(g.days)), g.fromName, g.days, r.mode === 'DELAYED_CHARGE')
+    await notify(ctx, 'ACHIEVEMENT', title, body, r.mode === 'DELAYED_CHARGE' ? '/ajustes' : '/clases')
+    if (g.buyerId) {
+      const theirs = NOTE[await localeOf(g.buyerId)]
+      const [bt, bb] = theirs.toBuyer(firstName(u.name) || g.toName, plan, theirs.span(monthsOf(g.days)))
+      await notify({ tx: ctx.tx, user: { id: g.buyerId } as never }, 'ACHIEVEMENT', bt, bb, '/regalar')
+    }
     return { tier, days: g.days, months: monthsOf(g.days), mode: r.mode, plan: r.plan === 'PLUS' ? 'PLUS' : r.plan === 'PREMIUM' ? 'PREMIUM' : 'FREE', until: r.until?.toISOString() ?? null, fromName: g.fromName }
   })
 }

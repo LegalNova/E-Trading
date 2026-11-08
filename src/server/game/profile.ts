@@ -419,9 +419,20 @@ export const exportData = () =>
       c.tx.leagueMember.findMany({ where: { userId: id } }),
       c.tx.event.findMany({ where: { userId: id }, select: { name: true, props: true, createdAt: true } }),
     ])
+    // Etapas 1-4: diario, misiones, tesis, avisos de fallos, ligas de amigos y regalos (también son datos suyos)
+    const [journal, missions, theses, reports, friendLeagues, giftsBought, giftsRedeemed] = await Promise.all([
+      c.tx.journalEntry.findMany({ where: { userId: id }, select: { symbol: true, side: true, tag: true, reason: true, priceAt: true, verdict: true, note: true, createdAt: true, reviewedAt: true } }),
+      c.tx.mission.findMany({ where: { userId: id }, select: { lessonId: true, startedAt: true, doneAt: true } }),
+      c.tx.thesis.findMany({ where: { userId: id }, select: { symbol: true, answers: true, status: true, score: true, createdAt: true, completedAt: true } }),
+      c.tx.report.findMany({ where: { userId: id }, select: { kind: true, path: true, message: true, status: true, createdAt: true } }),
+      c.tx.privateLeagueMember.findMany({ where: { userId: id }, select: { joinedAt: true, league: { select: { name: true, ownerId: true } } } }),
+      c.tx.gift.findMany({ where: { buyerId: id }, select: { tier: true, days: true, status: true, fromName: true, toName: true, message: true, amount: true, paidAt: true, redeemedAt: true, createdAt: true } }),
+      c.tx.gift.findMany({ where: { redeemedById: id }, select: { tier: true, days: true, source: true, fromName: true, message: true, redeemedAt: true } }),
+    ])
     const { name, email, createdAt, gender, birthDate, locale, timezone, plan, companionName, skinId, settings } = c.user
     const profile = { name, email, createdAt, gender, birthDate, locale, timezone, plan, companionName, skinId, settings }
-    return { exportedAt: new Date().toISOString(), profile, game: c.g, portfolio, positions, orders, trades, alerts, lessons, achievements, streak, notifications, tutorChat, watchlist, mistakes, quizzes, feedback, subscription, league, events }
+    const friends = friendLeagues.map(m => ({ name: m.league.name, joinedAt: m.joinedAt, owner: m.league.ownerId === id }))
+    return { exportedAt: new Date().toISOString(), profile, game: c.g, portfolio, positions, orders, trades, alerts, lessons, achievements, streak, notifications, tutorChat, watchlist, mistakes, quizzes, feedback, subscription, league, events, journal, missions, theses, reports, friendLeagues: friends, giftsBought, giftsRedeemed }
   })
 
 export async function deleteAccount() {
