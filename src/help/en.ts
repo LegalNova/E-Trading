@@ -15,12 +15,12 @@ export const en: HelpDoc = {
       id: 'empezar',
       title: 'Getting started',
       items: [
-        { id: 'que-es', q: 'What is Lumi?', a: ['An app to learn to invest from scratch: short interactive lessons, quizzes and a market with real prices where you practise with virtual money. Lumi, the mascot, is with you every step of the way.'] },
+        { id: 'que-es', q: 'What is E-Trading?', a: ['An app to learn to invest from scratch: short interactive lessons, quizzes and a market with real prices where you practise with virtual money. Lumi, the mascot, is with you every step of the way.'] },
         { id: 'dinero-real', q: 'Is real money used?', a: ['No. All the money in the simulator is virtual and has no value: you can’t pay money in or take it out, and your trades never reach a real market.'] },
         { id: 'cuesta', q: 'Does it cost anything?', a: ['The Free plan is free forever. Plus and Max are optional and expand the course, your lives and Lumi.', 'You can subscribe by card whenever you like and cancel in Settings. There’s also a 7-day free trial, unlocked with a 5-day streak or by joining with a friend’s invitation.'] },
         { id: 'saber-antes', q: 'Do I need to know anything first?', a: ['No. The course starts with the practical part: your first investment in the simulator, what you buy when you buy a share and why its price moves. If you already know some of it, you can take a placement test at the start and, in every unit, a test to mark it as done.'] },
         { id: 'edad', q: 'How old do I need to be?', a: ['At least 14. Between 14 and 17, a parent or guardian has to confirm before you take out a paid plan.'] },
-        { id: 'asesoramiento', q: 'Does Lumi tell me what to invest in?', a: ['No. Lumi is education, not financial advice: nothing in the app is a recommendation to buy or sell anything. You learn how markets work so that one day you can decide for yourself, with good judgement.'] },
+        { id: 'asesoramiento', q: 'Does E-Trading tell me what to invest in?', a: ['No. E-Trading is education, not financial advice: nothing in the app is a recommendation to buy or sell anything. You learn how markets work so that one day you can decide for yourself, with good judgement.'] },
       ],
     },
     {
@@ -72,7 +72,7 @@ export const en: HelpDoc = {
       title: 'Account and privacy',
       items: [
         { id: 'sin-registro', q: 'Can I try it without signing up?', a: ['Yes: tap «Try it without signing up» and you’re in straight away, with no email or password. If you like it, add an email and password to your account in «Save» and keep all your progress.', 'If you don’t save it, the guest account is deleted after 30 days without signing in. To try Plus or Max you need to save your progress first.'] },
-        { id: 'google-bluetooth', q: 'Signing in with Google asks me to turn on Bluetooth', a: ['That’s a Google step, not a Lumi one: if your Google account has a passkey, Google tries to use your phone as the key, and that needs Bluetooth.', 'If it doesn’t work, tap «Try another way» on that Google screen and choose your Google password or a code on your phone. You can also sign in with your email and a Lumi password.'] },
+        { id: 'google-bluetooth', q: 'Signing in with Google asks me to turn on Bluetooth', a: ['That’s a Google step, not an E-Trading one: if your Google account has a passkey, Google tries to use your phone as the key, and that needs Bluetooth.', 'If it doesn’t work, tap «Try another way» on that Google screen and choose your Google password or a code on your phone. You can also sign in with your email and an E-Trading password.'] },
         { id: 'crear-contrasena', q: 'I signed up with Google: can I sign in with email?', a: ['Yes. Sign in once with Google and go to Settings, Account, «Create a password». From then on you can sign in with your email and that password, or keep using Google.'] },
         { id: 'invitar', q: 'How does inviting friends work?', a: ['In Profile, «Invite your friends», you’ll find your link. Your friend gets 7 days of Max for free as soon as they join. You add 7 days of Max when they save their account and finish their first lesson, up to a year in total.'], links: [{ href: '/perfil/invitar', label: 'Invite friends' }] },
         { id: 'contrasena', q: 'I’ve forgotten my password', a: ['On «Sign in», tap «Forgot your password?» and we’ll email you a link. If it doesn’t arrive or the app says it can’t send it right now, write to us from Contact with your account email and we’ll help you.'], links: [{ href: '/recuperar', label: 'Recover your password' }] },
@@ -85,7 +85,7 @@ export const en: HelpDoc = {
       id: 'seguridad',
       title: 'Safety',
       items: [
-        { id: 'fraude', q: 'Someone says they’re from Lumi and offers me an investment', a: ['It’s a scam. Lumi will never ask you for money, bank details, your password or codes by email, message or social media, and will never offer to invest or «manage» your money.', 'Don’t reply, don’t pay anything and tell us from Contact. If you’ve already paid, contact your bank and report it to the police.'] },
+        { id: 'fraude', q: 'Someone says they’re from E-Trading and offers me an investment', a: ['It’s a scam. E-Trading will never ask you for money, bank details, your password or codes by email, message or social media, and will never offer to invest or «manage» your money.', 'Don’t reply, don’t pay anything and tell us from Contact. If you’ve already paid, contact your bank and report it to the police.'] },
         { id: 'cuenta-segura', q: 'How do I keep my account safe?', a: ['Use a password you don’t use anywhere else, with at least 8 characters and a number, or sign in with Google. If someone else uses your device, sign out when you’re done.'] },
         { id: 'error', q: 'I’ve found a bug', a: ['Thanks for telling us. Write to us from Contact explaining what you were doing and what happened; add a screenshot if you can. Using a bug to get ahead in the league is against the rules.'] },
       ],

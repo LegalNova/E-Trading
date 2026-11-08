@@ -95,7 +95,7 @@
     "send": "Send",
     "contactThanks": "Thank you. We'll reply within 48 hours.",
     "contactError": "Please check the fields: the message needs at least 10 characters.",
-    "legal": "Lumi is an educational app. No real money is traded, it doesn't connect to any broker and it doesn't give personalised investment advice.",
+    "legal": "E-Trading is an educational app. No real money is traded, it doesn't connect to any broker and it doesn't give personalised investment advice.",
     "privacy": "Privacy policy",
     "terms": "Terms of use",
     "cookies": "Cookie policy",
@@ -103,8 +103,8 @@
     "help": "Help",
     "purchase": "Terms of purchase",
     "guestNote": "No email or password. If you like it, save your progress whenever you want.",
-    "invitedBy": "{name} has invited you to Lumi",
-    "invited": "You’ve been invited to Lumi",
+    "invitedBy": "{name} has invited you to E-Trading",
+    "invited": "You’ve been invited to E-Trading",
     "invitedSub": "Create your account and get 7 days of Max for free straight away.",
     "trialNote": "7-day free trial: unlocked with a 5-day streak or when you join with a friend’s invitation. You can also subscribe straight away."
   },
@@ -164,7 +164,7 @@
     "month": "Month",
     "year": "Year",
     "birthNote": "We use it to adapt the content and for legal reasons. It isn't shown to anyone. If you're under 18, an adult will need to confirm payments.",
-    "underAge": "Lumi is for people aged 14 and over.",
+    "underAge": "E-Trading is for people aged 14 and over.",
     "expTitle": "Have you ever invested?",
     "exp": {
       "NONE": {
@@ -208,7 +208,7 @@
     "balanceTitle": "Your virtual balance to practise with",
     "balancePremium": "With Plus or Max: {amount}",
     "beforeStart": "Before you start",
-    "disclaimer": "Lumi is an educational app. No real money is ever traded, it doesn't connect to any broker and it doesn't give investment advice.",
+    "disclaimer": "E-Trading is an educational app. No real money is ever traded, it doesn't connect to any broker and it doesn't give investment advice.",
     "accept": "I understand and accept",
     "start": "Start"
   },
@@ -759,7 +759,7 @@
     "inviteTitle": "Invite your friends",
     "inviteSub": "7 days of Max for your friend and for you",
     "feedbackTitle": "Tell us what you think",
-    "feedbackSub": "One minute to help us improve Lumi",
+    "feedbackSub": "One minute to help us improve E-Trading",
     "tutor": "Ask Lumi",
     "help": "Help",
     "inviteSubGive": "Give a friend 7 days of Max"
@@ -882,7 +882,7 @@
     "pushNote": "Mobile push notifications will arrive with the installable version.",
     "accountSection": "Account and privacy",
     "account": "Account, portfolio and data",
-    "version": "Lumi 2.0",
+    "version": "E-Trading 2.0",
     "privacy": "Privacy",
     "leagueVisible": "Show my name in the league",
     "leagueVisibleNote": "If you turn it off, others will see you as «Anonymous player».",
@@ -1097,7 +1097,7 @@
     },
     "campaigns": {
       "title": "Campaign links",
-      "what": "Create a different link for every place you share Lumi: your TikTok, a creator, a class group… Everyone who comes in through that link is counted here, so you know which channel brings people who stay and pay.",
+      "what": "Create a different link for every place you share E-Trading: your TikTok, a creator, a class group… Everyone who comes in through that link is counted here, so you know which channel brings people who stay and pay.",
       "name": "Link name",
       "placeholder": "For example: TikTok, Laura creator, class group",
       "create": "Create link",
@@ -1130,7 +1130,7 @@
       "nps": "NPS (−100 to 100)",
       "wouldPay": "Would pay for Max now",
       "withComment": "With a comment",
-      "npsTitle": "Would they recommend Lumi? (0-10)",
+      "npsTitle": "Would they recommend E-Trading? (0-10)",
       "npsNote": "NPS = % giving 9-10 minus % giving 0-6. Above 0 is good; above 30, very good.",
       "likes": "What they like most",
       "blockers": "What holds them back",
@@ -1216,7 +1216,7 @@
       "BIASES": "Checks your simulated trades for biases (FOMO, overtrading, the disposition effect…) and suggests rules. Max only."
     },
     "hello": "Hi, I’m {name}",
-    "intro": "Your course tutor. Ask me anything you don’t understand: I answer with the Lumi manual and your progress (for now, in Spanish). I don’t give investment advice: I teach you to decide for yourself.",
+    "intro": "Your course tutor. Ask me anything you don’t understand: I answer with the E-Trading manual and your progress (for now, in Spanish). I don’t give investment advice: I teach you to decide for yourself.",
     "suggest": {
       "s1": "What is an ETF?",
       "s2": "How do I read a candle?",
@@ -1253,7 +1253,7 @@
       "4": "Four sparks",
       "5": "Full glow"
     },
-    "story": "Lumi is a jelly cube that keeps you company in Lumi. It explains what you don’t understand, warns you before a bad trade and reminds you of your plan when the market gets nervous. The more you learn, the more it glows: little bubbles of light appear inside.",
+    "story": "Lumi is a jelly cube that keeps you company in E-Trading. It explains what you don’t understand, warns you before a bad trade and reminds you of your plan when the market gets nervous. The more you learn, the more it glows: little bubbles of light appear inside.",
     "growTitle": "It glows with you",
     "fromLevel": "Level {n}",
     "next": "At level {n} it becomes «{name}».",
@@ -1517,7 +1517,7 @@
     "home": "Go to the start"
   },
   "guest": {
-    "bar": "You’re trying Lumi without an account. Save your progress so you don’t lose it.",
+    "bar": "You’re trying E-Trading without an account. Save your progress so you don’t lose it.",
     "barCta": "Save",
     "saveTitle": "Save your progress",
     "saveIntro": "Add an email and password to your account and keep everything you’ve done: lessons, XP, streak and portfolio.",
@@ -1526,7 +1526,7 @@
     "savedBody": "You can now sign in from any device with your email and password.",
     "continue": "Continue",
     "accountNote": "You don’t have an account yet: if you sign out or don’t come back for 30 days, your progress is lost.",
-    "logoutWarning": "You’re trying Lumi without an account: if you sign out now, you’ll lose your progress. Sign out anyway?"
+    "logoutWarning": "You’re trying E-Trading without an account: if you sign out now, you’ll lose your progress. Sign out anyway?"
   },
   "invite": {
     "title": "Invite friends",
@@ -1539,7 +1539,7 @@
     "copy": "Copy link",
     "copied": "Copied",
     "share": "Share",
-    "shareText": "I’m learning to invest with Lumi, without risking real money. Join with my link and get 7 days of Max for free: {link}",
+    "shareText": "I’m learning to invest with E-Trading, without risking real money. Join with my link and get 7 days of Max for free: {link}",
     "joined": "Friends who joined",
     "rules": "You can earn up to a year of Max ({days} days per friend). Your days arrive when your friend saves their account and finishes their first lesson. Creating fake accounts or inviting yourself goes against the <terms>Terms of use</terms>.",
     "guest": "To invite your friends, first save your progress with an email and password.",
@@ -1575,12 +1575,12 @@
     "cardCta": "Answer",
     "later": "Not now",
     "q": {
-      "nps": "From 0 to 10, how likely are you to recommend Lumi to a friend?",
+      "nps": "From 0 to 10, how likely are you to recommend E-Trading to a friend?",
       "likes": "What have you liked most?",
       "blockers": "What has held you back or felt like a drag?",
       "pay": "If Max cost {price} a month (or {year} a year), what would you do?",
       "price": "What monthly price would feel fair?",
-      "wants": "What would you like Lumi to have?",
+      "wants": "What would you like E-Trading to have?",
       "comment": "Last one: if you could change just one thing, what would it be?"
     },
     "npsHint": "Tap a number.",
@@ -1630,14 +1630,14 @@
     "sendWithout": "Send without a comment",
     "thanksTitle": "Thank you!",
     "thanksGems": "It helps us a lot. You have {gems} more gems.",
-    "thanksBody": "It helps us a lot to improve Lumi.",
+    "thanksBody": "It helps us a lot to improve E-Trading.",
     "done": "Back to home",
     "error": "It couldn’t be sent. Try again."
   },
   "share": {
     "cta": "Share",
     "copied": "Link copied",
-    "text": "Look what I got learning to invest with Lumi."
+    "text": "Look what I got learning to invest with E-Trading."
   },
   "push": {
     "title": "Turn on notifications",
@@ -1649,8 +1649,8 @@
     "iosTitle": "Get notifications on your iPhone",
     "ios1": "Tap Safari’s Share button (the square with the arrow).",
     "ios2": "Choose «Add to Home Screen».",
-    "ios3": "Open Lumi from that icon and turn on notifications.",
-    "iosHint": "On iPhone, add Lumi to your Home Screen (Share, «Add to Home Screen») and open it from the icon to turn on notifications.",
+    "ios3": "Open E-Trading from that icon and turn on notifications.",
+    "iosHint": "On iPhone, add E-Trading to your Home Screen (Share, «Add to Home Screen») and open it from the icon to turn on notifications.",
     "unsupported": "This browser doesn’t support notifications.",
     "device": "Notifications on this device",
     "on": "On",

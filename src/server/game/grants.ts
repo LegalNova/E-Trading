@@ -24,6 +24,8 @@ export async function grantPlan(tx: Tx, userId: string, tier: 'PLUS' | 'PREMIUM'
   if (!Number.isInteger(days) || days < 1 || days > 3660) fail(422, 'VALIDATION_ERROR', 'Duración no válida')
   const [sub, user] = await Promise.all([tx.subscription.findUnique({ where: { userId } }), tx.user.findUnique({ where: { id: userId }, select: { plan: true } })])
   if (!user) fail(404, 'NOT_FOUND', 'Usuario no encontrado')
+  // Tiene el plan por su grupo: los días se guardan debajo del grupo (no se le quita el plan del grupo)
+  if (sub?.status === 'GROUP') return (await import('./groups')).giftUnderGroup(tx, userId, tier, days)
   const now = Date.now()
   if (sub?.stripeSubId && LIVE.includes(sub.status)) {
     const subId = sub.stripeSubId

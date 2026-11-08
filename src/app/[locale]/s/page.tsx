@@ -1,4 +1,4 @@
-// Página pública de un logro compartido: la tarjeta, la vista previa para WhatsApp y redes, y el botón para probar Lumi
+// Página pública de un logro compartido: la tarjeta, la vista previa para WhatsApp y redes, y el botón para probar E-Trading
 import type { Metadata } from 'next'
 import { Suspense } from 'react'
 import { Link } from '@/i18n/navigation'
@@ -16,7 +16,7 @@ export async function generateMetadata({ params, searchParams }: P): Promise<Met
   const q = qs(await searchParams)
   q.set('l', locale)
   const card = await resolveShare(q)
-  if (!card) return { title: 'Lumi' }
+  if (!card) return { title: 'E-Trading' }
   const image = `/api/share/image?${q.toString()}`
   const title = `${card.big.match(/^\d+$/) ? card.big + ' ' : ''}${card.title}`
   return { metadataBase: new URL(OWNER.site), title, description: card.who ?? undefined, openGraph: { title, description: card.cta, images: [{ url: image, width: 1200, height: 630 }] }, twitter: { card: 'summary_large_image', title, images: [image] }, robots: { index: false } }

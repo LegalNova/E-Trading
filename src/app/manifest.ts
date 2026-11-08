@@ -2,8 +2,8 @@ import type { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Lumi',
-    short_name: 'Lumi',
+    name: 'E-Trading',
+    short_name: 'E-Trading',
     description: 'Aprende a invertir sin arriesgar un euro. Simulación educativa.',
     start_url: '/inicio',
     display: 'standalone',

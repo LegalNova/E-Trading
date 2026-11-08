@@ -14,7 +14,7 @@ import { useToast } from '../providers'
 import { Flame, Gem, Icon, type IconName } from '../ui/icons'
 import { Bar, ErrorState, PageSkeleton, Sheet, TopBar } from '../ui/kit'
 import { BadgeArt, RARITY, rarityOf } from '../ui/badge'
-import { BuyPlans } from '../upgrade'
+import { BuyPlans, GroupCard } from '../upgrade'
 import { ThemeToggle } from '../theme-toggle'
 import { giftLinkLabel } from './gifts'
 import { ShareButton } from '../share'
@@ -392,6 +392,7 @@ export function Profile() {
         <Icon name="chev" size={18} />
       </Link>
       <BuyPlans id="planes" />
+      <GroupCard />
       {stats && (
         <div className="card px-4 py-1">
           <div className="kv pt-3">

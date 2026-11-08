@@ -22,6 +22,8 @@ import * as tutor from '@/server/tutor/tutor'
 import * as thesis from '@/server/game/thesis'
 import * as missions from '@/server/game/missions'
 import * as journal from '@/server/game/journal'
+import * as groups from '@/server/game/groups'
+import * as students from '@/server/game/students'
 import { requireUser } from '@/server/game/core'
 import { db } from '@/server/db'
 import { clientIp, rateLimit } from '@/server/http/ratelimit'
@@ -156,7 +158,21 @@ const routes: Route[] = [
   { method: 'GET', path: 'notifications', run: () => profile.notifications() },
   { method: 'POST', path: 'notifications/read', run: (_r, _p, b) => { const x = z.object({ ids: z.union([z.array(z.string()).max(100), z.literal('all')]) }).parse(b); return profile.markRead(x.ids) } },
   // Premium (simulado hasta Stripe)
-  { method: 'GET', path: 'billing/plans', run: async () => profile.PLANS },
+  { method: 'GET', path: 'billing/plans', run: () => profile.billingPlans() },
+  // Precio de estudiante (la solicitud con el justificante se sube a /api/uploads/student) y planes de grupo
+  { method: 'GET', path: 'billing/student', run: () => students.myStudent() },
+  { method: 'GET', path: 'groups/mine', run: () => groups.myGroup() },
+  { method: 'POST', path: 'groups', run: async (_r, _p, b) => { const x = z.object({ name: z.string().max(200), tier: z.enum(['PLUS', 'PREMIUM']), size: z.union([z.literal(4), z.literal(8), z.literal(0)]), interval: z.enum(['MONTH', 'YEAR']) }).parse(b); await rateLimit(`grc:${(await requireUser()).id}`, 15, 3600); return groups.createGroup(x) } },
+  { method: 'POST', path: 'groups/confirm', run: async (_r, _p, b) => { await rateLimit(`grpay:${(await requireUser()).id}`, 40, 60); return groups.confirmGroup(z.object({ sessionId: z.string().regex(/^cs_(test|live)_[A-Za-z0-9]{10,200}$/) }).parse(b).sessionId) } },
+  { method: 'GET', path: 'groups/code/:code', run: async (r, p) => { await rateLimit(`grp:${clientIp(r)}`, 30, 60); return groups.peekGroup(z.string().max(40).parse(p[0])) } },
+  { method: 'POST', path: 'groups/join', run: async (_r, _p, b) => { const x = z.object({ code: z.string().max(40) }).parse(b); await rateLimit(`grj:${(await requireUser()).id}`, 20, 3600); return groups.joinGroup(x.code) } },
+  { method: 'POST', path: 'groups/leave', run: () => groups.leaveGroup() },
+  { method: 'PATCH', path: 'groups/mine', run: async (_r, _p, b) => { const x = z.object({ name: z.string().max(200) }).parse(b); await rateLimit(`gre:${(await requireUser()).id}`, 30, 3600); return groups.renameGroup(x.name) } },
+  { method: 'DELETE', path: 'groups/members/:key', run: async (_r, p) => { await rateLimit(`gre:${(await requireUser()).id}`, 30, 3600); return groups.removeGroupMember(z.string().regex(/^[A-Za-z0-9_-]{16}$/).parse(p[0])) } },
+  { method: 'POST', path: 'groups/payment', run: async () => { await rateLimit(`grpo:${(await requireUser()).id}`, 20, 600); return groups.groupPayment() } },
+  { method: 'GET', path: 'admin/students', run: () => students.adminStudentRequests() },
+  { method: 'POST', path: 'admin/students/:id', run: (_r, p, b) => { const x = z.object({ approve: z.boolean(), note: z.string().max(300).optional() }).parse(b); return students.decideStudent(z.string().regex(/^[a-z0-9]{10,40}$/).parse(p[0]), x.approve, x.note) } },
+  { method: 'GET', path: 'admin/groups', run: () => groups.adminGroups() },
   { method: 'GET', path: 'billing/status', run: () => profile.billingStatus() },
   { method: 'POST', path: 'billing/checkout', run: (_r, _p, b) => profile.checkout(z.object({ planId: z.string().max(40) }).parse(b).planId) },
   { method: 'POST', path: 'billing/cancel', run: () => profile.cancelSubscription() },

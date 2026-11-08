@@ -12,6 +12,7 @@ import type { FriendLeaguePeekT, FriendLeaguesT, FriendLeagueT } from '@/shared/
 import type { EffectsT } from '@/shared/contract'
 import type { JournalT, JournalVerdictT, LessonMissionT, MissionsT } from '@/shared/contract'
 import type { FundamentalsT, IdeasT } from '@/shared/contract'
+import type { GroupPeekT, GroupViewT, StudentStatusT } from '@/shared/contract'
 import type { ThesisDetailT, ThesisListT, ThesisT } from '@/shared/thesis'
 
 export interface GiftInput { tier: 'PLUS' | 'PREMIUM'; months: 1 | 12; fromName: string; toName?: string; message?: string }
@@ -144,6 +145,12 @@ export interface AdminUserControls {
   giftRunning: boolean
   gifts: { id: string; tier: 'PLUS' | 'PREMIUM'; days: number; by: string | null; reason: string | null; status: string; at: string }[]
 }
+export interface AdminStudentUser { id: string; name: string; email: string; studentUntil: string | null }
+export interface AdminStudents {
+  pending: { id: string; institution: string; studentEmail: string | null; photoType: string | null; createdAt: string; user: AdminStudentUser }[]
+  decided: { id: string; institution: string; status: 'APPROVED' | 'REJECTED'; note: string | null; decidedBy: string | null; decidedAt: string | null; user: AdminStudentUser }[]
+}
+export interface AdminGroup { id: string; name: string; ownerId: string; ownerName: string; ownerEmail: string; tier: 'PLUS' | 'PREMIUM'; size: number; seats: number; members: number; interval: 'MONTH' | 'YEAR'; student: boolean; status: string; price: number; renewsAt: string | null; createdAt: string; stripe: boolean }
 export interface AdminGift { id: string; userId: string; name: string; email: string; tier: 'PLUS' | 'PREMIUM'; days: number; by: string | null; reason: string | null; at: string; stripe: boolean; until: string | null }
 export interface AuditEntry { id: string; actor: string; action: string; entity: string; createdAt: string }
 
@@ -169,7 +176,7 @@ export interface Api {
   feedbackLater(): Promise<void>
   submitFeedback(a: { nps: number; likes: string[]; blockers: string[]; pay: string; price?: string; wants: string[]; wantsOther?: string; comment?: string }): Promise<{ ok: boolean; gems: number }>
   adminFeedback(): Promise<AdminFeedback>
-  planBadge(): Promise<{ plan: 'FREE' | 'PLUS' | 'PREMIUM'; status: string; stripe: boolean; endsAt: string | null; daysLeft: number | null; trialUsed: boolean; isGuest: boolean; streak: number; trialUnlocked: boolean; trialStreak: number; payments: boolean; isAdmin: boolean }>
+  planBadge(): Promise<{ plan: 'FREE' | 'PLUS' | 'PREMIUM'; status: string; stripe: boolean; endsAt: string | null; daysLeft: number | null; trialUsed: boolean; isGuest: boolean; streak: number; trialUnlocked: boolean; trialStreak: number; payments: boolean; isAdmin: boolean; group?: { name: string; owner: boolean; tier: 'PLUS' | 'PREMIUM'; pastDue: boolean } | null; inAnyGroup?: boolean; student?: boolean; studentUntil?: string | null }>
   myInvites(): Promise<{ code: string; joined: number; rewarded: number; daysEarned: number; maxDays: number; days: number }>
   inviterName(code: string): Promise<{ valid: boolean; name: string | null }>
   signInGuest(): Promise<Session>
@@ -269,6 +276,21 @@ export interface Api {
   cancelSubscription(): Promise<BillingStatusT & { url?: string }>
   confirmPayment(sessionId: string): Promise<BillingStatusT & ({ done: true; amount: number; currency: string; trial: boolean } | { done: false; expired: boolean })>
   billingPortal(): Promise<{ url: string }>
+  // Precio de estudiante y planes de grupo
+  studentStatus(): Promise<StudentStatusT>
+  requestStudent(form: FormData): Promise<{ id: string; status: 'PENDING' }>
+  myGroup(): Promise<GroupViewT>
+  createGroup(g: { name: string; tier: 'PLUS' | 'PREMIUM'; size: 4 | 8 | 0; interval: 'MONTH' | 'YEAR' }): Promise<{ id: string; url: string | null }>
+  confirmGroup(sessionId: string): Promise<{ done: boolean; expired: boolean }>
+  groupPeek(code: string): Promise<GroupPeekT>
+  joinGroup(code: string): Promise<{ id: string; name: string; tier: 'PLUS' | 'PREMIUM'; mode: 'GROUP' | 'OWN'; already: boolean }>
+  leaveGroup(): Promise<{ left: true; back: 'free' | 'gift' | 'own' }>
+  renameGroup(name: string): Promise<{ id: string; name: string }>
+  removeGroupMember(key: string): Promise<void>
+  groupPayment(): Promise<{ url: string | null }>
+  adminStudents(): Promise<AdminStudents>
+  adminDecideStudent(id: string, approve: boolean, note?: string): Promise<{ id: string; status: string; until: string | null; switched: boolean }>
+  adminGroups(): Promise<AdminGroup[]>
   exportData(): Promise<string>
   deleteAccount(): Promise<void>
 

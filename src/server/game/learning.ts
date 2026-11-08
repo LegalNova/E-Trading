@@ -21,8 +21,8 @@ export const ALL_Q: Record<string, ContentQuestion> = Object.fromEntries([...Obj
  * que se barajan las opciones depende del texto original, y las traducciones van por posición.
  */
 const EMOJI = /\s?[\u2190-\u21ff\u2300-\u23ff\u2460-\u27bf\u2b00-\u2bff\u{1F000}-\u{1FAFF}\ufe0f\u200d]+/gu
-/** La app se llama Lumi: el contenido escrito antes («E-Trading») se adapta al enviarlo, sin tocar el texto original */
-const brand = (t: string) => t.replace(/d['’]E-Trading/g, 'de Lumi').replace(/E-Trading/g, 'Lumi')
+/** La app vuelve a llamarse E-Trading (Lumi es solo la mascota y profesora): el contenido ya dice «E-Trading» y se envía tal cual */
+const brand = (t: string) => t
 const clean = (t: string) => brand(t.replace(EMOJI, '').trim())
 /** «(redondea…)» sobra cuando la cifra se elige entre opciones */
 const ROUND_NOTE = /\s*\((?:redondea|arrodoneix|round)[^)]*\)/gi

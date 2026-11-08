@@ -7,6 +7,7 @@ import { useState, useSyncExternalStore } from 'react'
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
 import { arrowPct, money, num } from '@/shared/format'
+import { PRICES } from '@/shared/plans'
 import { GuestButton } from './auth'
 import { api, ApiFailure, type ContactInput } from '../api'
 import { Icon, Wordmark } from '../ui/icons'
@@ -304,8 +305,8 @@ export function Landing({ lessons }: { lessons: number }) {
           </div>
           {(
             [
-              ['Plus', 3.99, 29.99, plus, false],
-              ['Max', 7.99, 59.99, max, true],
+              ['Plus', PRICES.normal.PLUS.MONTH, PRICES.normal.PLUS.YEAR, plus, false],
+              ['Max', PRICES.normal.PREMIUM.MONTH, PRICES.normal.PREMIUM.YEAR, max, true],
             ] as const
           ).map(([name, month, year, feats, hero]) => (
             <div key={name} className={`${hero ? 'hero' : 'card'} flex flex-col gap-3 p-6`}>
@@ -338,6 +339,8 @@ export function Landing({ lessons }: { lessons: number }) {
           ))}
         </div>
         <p className="t-cap mt-3 mb-0">{t('trialNote')}</p>
+        <p className="t-cap mt-2 mb-0">{t2('studentNote', { plus: money(PRICES.student.PLUS.MONTH, 'EUR', locale), max: money(PRICES.student.PREMIUM.MONTH, 'EUR', locale) })}</p>
+        <p className="t-cap mt-2 mb-0">{t2('groupNote')}</p>
       </section>
 
       <LandingGift />

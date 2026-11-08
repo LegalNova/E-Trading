@@ -1,7 +1,7 @@
 // Ligas de amigos: reglas que comparten el servidor y la pantalla (nombre, código y límites).
 export const MAX_OWNED = 5
 export const MAX_JOINED = 10
-export const MAX_MEMBERS = 50
+export const MAX_MEMBERS = 100
 export const NAME_MIN = 3
 export const NAME_MAX = 30
 export const CODE_LEN = 8

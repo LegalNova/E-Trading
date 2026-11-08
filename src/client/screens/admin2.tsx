@@ -10,6 +10,7 @@ import { useLang, useSession } from '../hooks'
 import { useToast } from '../providers'
 import { Icon } from '../ui/icons'
 import { PageSkeleton, Seg } from '../ui/kit'
+import { BillingAdmin } from './admin-billing'
 
 const KINDS: ReportKind[] = ['CONTENT', 'BUG', 'MARKET', 'OTHER']
 const PLAN = { FREE: 'Free', PLUS: 'Plus', PREMIUM: 'Max' } as const
@@ -199,6 +200,8 @@ export function PanelCards({ onOpenUser, onOpenReports }: { onOpenUser: (id: str
           <span className="t-cap">{t('noGifts')}</span>
         )}
       </div>
+      {/* Estudiantes (precio de estudiante) y Grupos (planes de grupo) */}
+      <BillingAdmin onOpenUser={onOpenUser} />
     </div>
   )
 }

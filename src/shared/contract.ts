@@ -453,8 +453,12 @@ export const BillingPlan = z.object({
   price: money,
   currency: z.literal('EUR'),
   trialDays: z.number(),
+  /** (+) Precio normal (si tiene precio de estudiante, `price` es el de estudiante y este se enseña tachado) */
+  regularPrice: money.optional(),
+  student: z.boolean().optional(),
 })
-export const BillingStatus = z.object({ plan: Plan, status: z.enum(['NONE', 'TRIALING', 'ACTIVE', 'PAST_DUE', 'CANCELED', 'GIFT']), renewsAt: iso.nullable(), trialEndsAt: iso.nullable(), interval: z.enum(['MONTH', 'YEAR']).nullable() })
+/** GROUP: tiene el plan por un plan de grupo (cuenta como pagado; se gestiona en /grupo) */
+export const BillingStatus = z.object({ plan: Plan, status: z.enum(['NONE', 'TRIALING', 'ACTIVE', 'PAST_DUE', 'CANCELED', 'GIFT', 'GROUP']), renewsAt: iso.nullable(), trialEndsAt: iso.nullable(), interval: z.enum(['MONTH', 'YEAR']).nullable() })
 
 // ── Lumi, la profesora (chat con el manual del curso) ──
 export const TutorMode = z.enum(['EXPLAIN', 'PATH', 'PORTFOLIO', 'BIASES'])
@@ -601,3 +605,26 @@ export type JournalVerdictT = z.infer<typeof JournalVerdict>
 export type JournalEntryT = z.infer<typeof JournalEntry>
 export type JournalSummaryT = z.infer<typeof JournalSummary>
 export type JournalT = z.infer<typeof Journal>
+
+// ── Precio de estudiante y planes de grupo ───────────────
+export const StudentStatus = z.object({
+  active: z.boolean(), until: iso.nullable(), canRenew: z.boolean(), pending: z.object({ createdAt: iso, institution: z.string() }).nullable(),
+  last: z.object({ status: z.enum(['APPROVED', 'REJECTED']), note: z.string().nullable(), decidedAt: iso.nullable() }).nullable(), requestsLeft: z.number(), isGuest: z.boolean(),
+})
+export const GroupSizeE = z.union([z.literal(4), z.literal(8), z.literal(0)])
+export const GroupPrice = z.object({ size: GroupSizeE, tier: z.enum(['PLUS', 'PREMIUM']), interval: z.enum(['MONTH', 'YEAR']), price: z.number(), regular: z.number(), seats: z.number() })
+export const GroupView = z.object({
+  student: z.boolean(), payments: z.boolean(), isGuest: z.boolean(), ownPaid: z.boolean(), prices: z.array(GroupPrice),
+  group: z
+    .object({
+      id: z.string(), name: z.string(), code: z.string().nullable(), tier: z.enum(['PLUS', 'PREMIUM']), size: GroupSizeE, seats: z.number(), used: z.number(), interval: z.enum(['MONTH', 'YEAR']),
+      status: z.enum(['PENDING', 'ACTIVE', 'PAST_DUE', 'CANCELED']), student: z.boolean(), price: z.number(), renewsAt: iso.nullable(), isOwner: z.boolean(), ownerName: z.string(), leagueId: z.string().nullable(), myMode: z.enum(['GROUP', 'OWN']),
+    })
+    .nullable(),
+  members: z.array(z.object({ key: z.string(), name: z.string(), isMe: z.boolean(), isOwner: z.boolean(), joinedAt: iso })),
+})
+export const GroupPeek = z.object({ valid: z.boolean(), name: z.string().nullable(), tier: z.enum(['PLUS', 'PREMIUM']).nullable(), seatsLeft: z.number(), full: z.boolean(), active: z.boolean(), ownerName: z.string().nullable() })
+export type StudentStatusT = z.infer<typeof StudentStatus>
+export type GroupPriceT = z.infer<typeof GroupPrice>
+export type GroupViewT = z.infer<typeof GroupView>
+export type GroupPeekT = z.infer<typeof GroupPeek>

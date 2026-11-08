@@ -6,6 +6,7 @@ import { db } from '@/server/db'
 import { MAX_FREEZES, notify } from '@/server/game/core'
 import { closeWeek } from '@/server/game/league'
 import { cronAuthorized } from '@/server/http/cron'
+import { remindStudentExpiry } from '@/server/game/students'
 
 export const maxDuration = 60
 
@@ -50,7 +51,9 @@ export async function GET(req: Request) {
       await notify({ tx: db, user: { id: u.id } as never }, 'NEW_LESSON', 'Lumi quiere saber qué te parece', 'Seis preguntas rápidas, un minuto. Te lo agradecemos con 50 gemas.', '/opinion')
       asked++
     }
-    return Response.json({ reminders: sent, freezes, feedbackAsked: asked })
+    // Precio de estudiante: aviso 15 días antes de que termine (una vez)
+    const studentNotices = await remindStudentExpiry().catch(e => (console.error('cron/student', e), 0))
+    return Response.json({ reminders: sent, freezes, feedbackAsked: asked, studentNotices })
   }
   return Response.json({ error: { code: 'VALIDATION_ERROR', message: 'job=close|remind' } }, { status: 422 })
 }

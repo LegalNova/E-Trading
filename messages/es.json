@@ -95,7 +95,7 @@
     "send": "Enviar",
     "contactThanks": "Gracias. Te responderemos en 48 horas.",
     "contactError": "Revisa los campos: el mensaje necesita al menos 10 caracteres.",
-    "legal": "Lumi es una app educativa. No se opera con dinero real, no se conecta a ningún broker y no ofrece recomendaciones de inversión personalizadas.",
+    "legal": "E-Trading es una app educativa. No se opera con dinero real, no se conecta a ningún broker y no ofrece recomendaciones de inversión personalizadas.",
     "privacy": "Política de privacidad",
     "terms": "Términos de uso",
     "cookies": "Política de cookies",
@@ -103,8 +103,8 @@
     "help": "Ayuda",
     "purchase": "Contratación",
     "guestNote": "Sin email ni contraseña. Si te gusta, guardas tu progreso cuando quieras.",
-    "invitedBy": "{name} te ha invitado a Lumi",
-    "invited": "Te han invitado a Lumi",
+    "invitedBy": "{name} te ha invitado a E-Trading",
+    "invited": "Te han invitado a E-Trading",
     "invitedSub": "Crea tu cuenta y tienes 7 días de Max gratis desde el primer momento.",
     "trialNote": "Prueba gratis de 7 días: se desbloquea con 5 días seguidos de racha o al llegar con la invitación de un amigo. También puedes suscribirte directamente."
   },
@@ -164,7 +164,7 @@
     "month": "Mes",
     "year": "Año",
     "birthNote": "Lo usamos para adaptar el contenido y por motivos legales. No se muestra a nadie. Si tienes menos de 18 años, un adulto tendrá que confirmar los pagos.",
-    "underAge": "Lumi es para mayores de 14 años.",
+    "underAge": "E-Trading es para mayores de 14 años.",
     "expTitle": "¿Has invertido alguna vez?",
     "exp": {
       "NONE": {
@@ -208,7 +208,7 @@
     "balanceTitle": "Tu saldo virtual para practicar",
     "balancePremium": "Con Plus o Max: {amount}",
     "beforeStart": "Antes de empezar",
-    "disclaimer": "Lumi es una app educativa. Nunca se opera con dinero real, no se conecta a ningún broker y no ofrece recomendaciones de inversión.",
+    "disclaimer": "E-Trading es una app educativa. Nunca se opera con dinero real, no se conecta a ningún broker y no ofrece recomendaciones de inversión.",
     "accept": "Lo entiendo y acepto",
     "start": "Empezar"
   },
@@ -759,7 +759,7 @@
     "inviteTitle": "Invita a tus amigos",
     "inviteSub": "7 días de Max para tu amigo y para ti",
     "feedbackTitle": "Danos tu opinión",
-    "feedbackSub": "Un minuto para ayudarnos a mejorar Lumi",
+    "feedbackSub": "Un minuto para ayudarnos a mejorar E-Trading",
     "tutor": "Pregúntale a Lumi",
     "help": "Ayuda",
     "inviteSubGive": "Regálale 7 días de Max a un amigo"
@@ -882,7 +882,7 @@
     "pushNote": "Las notificaciones push del móvil llegarán con la versión instalable.",
     "accountSection": "Cuenta y privacidad",
     "account": "Cuenta, cartera y datos",
-    "version": "Lumi 2.0",
+    "version": "E-Trading 2.0",
     "privacy": "Privacidad",
     "leagueVisible": "Aparecer en la liga con mi nombre",
     "leagueVisibleNote": "Si lo desactivas, los demás te verán como «Jugador anónimo».",
@@ -1097,7 +1097,7 @@
     },
     "campaigns": {
       "title": "Enlaces de campaña",
-      "what": "Crea un enlace distinto para cada sitio donde compartas Lumi: tu TikTok, un creador, un grupo de clase… Cada persona que entre por ese enlace queda contada aquí, y así sabes qué canal trae gente que se queda y paga.",
+      "what": "Crea un enlace distinto para cada sitio donde compartas E-Trading: tu TikTok, un creador, un grupo de clase… Cada persona que entre por ese enlace queda contada aquí, y así sabes qué canal trae gente que se queda y paga.",
       "name": "Nombre del enlace",
       "placeholder": "Por ejemplo: TikTok, Laura creadora, grupo de clase",
       "create": "Crear enlace",
@@ -1130,7 +1130,7 @@
       "nps": "NPS (−100 a 100)",
       "wouldPay": "Pagarían Max ya",
       "withComment": "Con comentario",
-      "npsTitle": "¿Recomendarían Lumi? (0-10)",
+      "npsTitle": "¿Recomendarían E-Trading? (0-10)",
       "npsNote": "NPS = % que pone 9-10 menos % que pone 0-6. Por encima de 0 es bueno; por encima de 30, muy bueno.",
       "likes": "Lo que más gusta",
       "blockers": "Lo que frena",
@@ -1216,7 +1216,7 @@
       "BIASES": "Revisa tus operaciones simuladas en busca de sesgos (FOMO, operar de más, efecto disposición…) y te propone reglas. Solo en Max."
     },
     "hello": "Hola, soy {name}",
-    "intro": "Tu profesora del curso. Pregúntame lo que no entiendas: respondo con el manual de Lumi y tu progreso. No doy consejos de inversión: te enseño a decidir por ti.",
+    "intro": "Tu profesora del curso. Pregúntame lo que no entiendas: respondo con el manual de E-Trading y tu progreso. No doy consejos de inversión: te enseño a decidir por ti.",
     "suggest": {
       "s1": "¿Qué es un ETF?",
       "s2": "¿Cómo se lee una vela?",
@@ -1253,7 +1253,7 @@
       "4": "Cuatro chispas",
       "5": "Brillo total"
     },
-    "story": "Lumi es un cubo de gelatina que te acompaña en Lumi. Te explica lo que no entiendes, te avisa antes de una mala operación y te recuerda tu plan cuando el mercado se pone nervioso. Cuanto más aprendes, más brilla: le van saliendo burbujitas de luz dentro.",
+    "story": "Lumi es un cubo de gelatina que te acompaña en E-Trading. Te explica lo que no entiendes, te avisa antes de una mala operación y te recuerda tu plan cuando el mercado se pone nervioso. Cuanto más aprendes, más brilla: le van saliendo burbujitas de luz dentro.",
     "growTitle": "Brilla contigo",
     "fromLevel": "Nivel {n}",
     "next": "En el nivel {n} pasará a «{name}».",
@@ -1539,7 +1539,7 @@
     "copy": "Copiar enlace",
     "copied": "Copiado",
     "share": "Compartir",
-    "shareText": "Estoy aprendiendo a invertir con Lumi, sin arriesgar dinero real. Entra con mi enlace y tienes 7 días de Max gratis: {link}",
+    "shareText": "Estoy aprendiendo a invertir con E-Trading, sin arriesgar dinero real. Entra con mi enlace y tienes 7 días de Max gratis: {link}",
     "joined": "Amigos que se han unido",
     "rules": "Puedes ganar hasta un año de Max ({days} días por amigo). Tus días llegan cuando tu amigo guarda su cuenta y termina su primera clase. Crear cuentas falsas o invitarte a ti mismo va contra los <terms>Términos de uso</terms>.",
     "guest": "Para invitar a tus amigos primero guarda tu progreso con email y contraseña.",
@@ -1575,12 +1575,12 @@
     "cardCta": "Responder",
     "later": "Ahora no",
     "q": {
-      "nps": "Del 0 al 10, ¿cuánto le recomendarías Lumi a un amigo?",
+      "nps": "Del 0 al 10, ¿cuánto le recomendarías E-Trading a un amigo?",
       "likes": "¿Qué es lo que más te ha gustado?",
       "blockers": "¿Qué te ha frenado o se te ha hecho pesado?",
       "pay": "Si Max costara {price} al mes (o {year} al año), ¿qué harías?",
       "price": "¿Qué precio al mes te parecería justo?",
-      "wants": "¿Qué te gustaría que tuviera Lumi?",
+      "wants": "¿Qué te gustaría que tuviera E-Trading?",
       "comment": "Lo último: si pudieras cambiar una sola cosa, ¿cuál sería?"
     },
     "npsHint": "Toca un número.",
@@ -1630,14 +1630,14 @@
     "sendWithout": "Enviar sin comentario",
     "thanksTitle": "¡Gracias!",
     "thanksGems": "Nos ayuda muchísimo. Tienes {gems} gemas más.",
-    "thanksBody": "Nos ayuda muchísimo a mejorar Lumi.",
+    "thanksBody": "Nos ayuda muchísimo a mejorar E-Trading.",
     "done": "Volver al inicio",
     "error": "No se ha podido enviar. Prueba otra vez."
   },
   "share": {
     "cta": "Compartir",
     "copied": "Enlace copiado",
-    "text": "Mira lo que he conseguido aprendiendo a invertir con Lumi."
+    "text": "Mira lo que he conseguido aprendiendo a invertir con E-Trading."
   },
   "push": {
     "title": "Activa los avisos",
@@ -1649,8 +1649,8 @@
     "iosTitle": "Recibe avisos en tu iPhone",
     "ios1": "Toca el botón Compartir de Safari (el cuadrado con la flecha).",
     "ios2": "Elige «Añadir a pantalla de inicio».",
-    "ios3": "Abre Lumi desde ese icono y activa los avisos.",
-    "iosHint": "En iPhone, añade Lumi a la pantalla de inicio (Compartir, «Añadir a pantalla de inicio») y ábrela desde el icono para activar los avisos.",
+    "ios3": "Abre E-Trading desde ese icono y activa los avisos.",
+    "iosHint": "En iPhone, añade E-Trading a la pantalla de inicio (Compartir, «Añadir a pantalla de inicio») y ábrela desde el icono para activar los avisos.",
     "unsupported": "Este navegador no permite avisos.",
     "device": "Avisos en este dispositivo",
     "on": "Activados",

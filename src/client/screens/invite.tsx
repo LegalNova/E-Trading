@@ -19,7 +19,8 @@ export function Invite() {
   const { data: badge } = usePlanBadge()
   // Textos según el plan: quien ya tiene Max o paga (Plus o Max) regala Max; quien paga, además, retrasa su próximo cobro
   const hasMax = badge?.plan === 'PREMIUM'
-  const pays = !!badge && badge.plan !== 'FREE' && !badge.daysLeft
+  // (con plan de grupo no tiene cobro propio que retrasar: sus días se guardan para después)
+  const pays = !!badge && badge.plan !== 'FREE' && !badge.daysLeft && badge.status !== 'GROUP'
   if (error instanceof ApiFailure && error.code === 'GUEST_MUST_SAVE')
     return (
       <>
@@ -49,7 +50,7 @@ export function Invite() {
   const share = async () => {
     if (navigator.share) {
       try {
-        await navigator.share({ title: 'Lumi', text: message })
+        await navigator.share({ title: 'E-Trading', text: message })
         return
       } catch {
         // cancelado: no pasa nada

@@ -9,9 +9,9 @@ export type ShareLang = 'es' | 'ca' | 'en'
 export interface ShareCard { kicker: string; big: string; stars?: number; slots?: number; title: string; who: string | null; cta: string; lang: ShareLang; code: string | null }
 
 const TXT = {
-  es: { logro: 'Insignia conseguida', racha: 'días seguidos aprendiendo a invertir', clase: 'Clase superada', who: (n: string) => `${n} aprende a invertir con Lumi`, anon: 'Aprendiendo a invertir con Lumi', cta: 'Pruébalo gratis: clases de 5 minutos y un mercado real con dinero virtual' },
-  ca: { logro: 'Insígnia aconseguida', racha: 'dies seguits aprenent a invertir', clase: 'Classe superada', who: (n: string) => `${n} aprèn a invertir amb Lumi`, anon: 'Aprenent a invertir amb Lumi', cta: 'Prova-ho gratis: classes de 5 minuts i un mercat real amb diners virtuals' },
-  en: { logro: 'Badge unlocked', racha: 'days in a row learning to invest', clase: 'Lesson completed', who: (n: string) => `${n} is learning to invest with Lumi`, anon: 'Learning to invest with Lumi', cta: 'Try it free: 5-minute lessons and a real market with virtual money' },
+  es: { logro: 'Insignia conseguida', racha: 'días seguidos aprendiendo a invertir', clase: 'Clase superada', who: (n: string) => `${n} aprende a invertir con E-Trading`, anon: 'Aprendiendo a invertir con E-Trading', cta: 'Pruébalo gratis: clases de 5 minutos y un mercado real con dinero virtual' },
+  ca: { logro: 'Insígnia aconseguida', racha: 'dies seguits aprenent a invertir', clase: 'Classe superada', who: (n: string) => `${n} aprèn a invertir amb E-Trading`, anon: 'Aprenent a invertir amb E-Trading', cta: 'Prova-ho gratis: classes de 5 minuts i un mercat real amb diners virtuals' },
+  en: { logro: 'Badge unlocked', racha: 'days in a row learning to invest', clase: 'Lesson completed', who: (n: string) => `${n} is learning to invest with E-Trading`, anon: 'Learning to invest with E-Trading', cta: 'Try it free: 5-minute lessons and a real market with virtual money' },
 }
 
 export async function resolveShare(q: URLSearchParams): Promise<ShareCard | null> {

@@ -1,7 +1,7 @@
 {
   "gifts": {
-    "link": "Gift Lumi",
-    "title": "Gift Lumi",
+    "link": "Gift E-Trading",
+    "title": "Gift E-Trading",
     "headline": "Give the gift of learning to invest",
     "intro": "Short lessons and practice with virtual money and real prices. No gurus, no signals, no promises.",
     "whatTitle": "What you’re giving",
@@ -20,7 +20,7 @@
     "pay": "Pay {price}",
     "payNote": "One-off payment with Stripe. It doesn’t renew: there are no further charges.",
     "terms": "By paying you accept the <terms>purchase terms</terms>. It can be redeemed within 12 months and you have 14 days to withdraw as long as it hasn’t been redeemed.",
-    "guest": "Save your progress with an email and password to be able to gift Lumi.",
+    "guest": "Save your progress with an email and password to be able to gift E-Trading.",
     "guestCta": "Save my progress",
     "unavailable": "Card payments aren’t active yet. Please try again soon.",
     "canceled": "You left the payment without finishing it. You haven’t been charged.",
@@ -42,12 +42,12 @@
     "share": "Share",
     "copy": "Copy link",
     "copied": "Copied",
-    "shareText": "{from} is giving you Lumi {plan} for {length} to learn to invest. Redeem it here: {link}",
-    "shareTextAnon": "I’m giving you Lumi {plan} for {length} to learn to invest. Redeem it here: {link}",
+    "shareText": "{from} is giving you E-Trading {plan} for {length} to learn to invest. Redeem it here: {link}",
+    "shareTextAnon": "I’m giving you E-Trading {plan} for {length} to learn to invest. Redeem it here: {link}",
     "another": "Give another",
     "mine": "My gifts",
-    "mineEmpty": "You haven’t gifted Lumi yet. When you do, you’ll see here whether it’s been redeemed.",
-    "mineItem": "Lumi {plan} · {length}",
+    "mineEmpty": "You haven’t gifted E-Trading yet. When you do, you’ll see here whether it’s been redeemed.",
+    "mineItem": "E-Trading {plan} · {length}",
     "mineFor": "For {name}",
     "status": {
       "PENDING": "Awaiting payment",
@@ -72,13 +72,13 @@
     },
     "redeem": {
       "pageTitle": "A gift for you",
-      "metaFrom": "{name} is giving you Lumi {plan}",
-      "metaAnon": "You’ve been given Lumi {plan}",
-      "metaDescription": "Lumi is the reliable way to learn to invest: short lessons and practice with virtual money and real prices.",
-      "title": "{name} is giving you Lumi",
-      "titleAnon": "You’ve been given Lumi",
-      "includes": "Lumi {plan} for {length}. It includes:",
-      "what": "Lumi is the reliable way to learn to invest: you learn with short lessons and practise with virtual money and real prices. No gurus, no signals, no promises.",
+      "metaFrom": "{name} is giving you E-Trading {plan}",
+      "metaAnon": "You’ve been given E-Trading {plan}",
+      "metaDescription": "E-Trading is the reliable way to learn to invest: short lessons and practice with virtual money and real prices.",
+      "title": "{name} is giving you E-Trading",
+      "titleAnon": "You’ve been given E-Trading",
+      "includes": "E-Trading {plan} for {length}. It includes:",
+      "what": "E-Trading is the reliable way to learn to invest: you learn with short lessons and practise with virtual money and real prices. No gurus, no signals, no promises.",
       "cta": "Redeem my gift",
       "signUp": "Create an account and redeem",
       "signIn": "I already have an account",
@@ -88,7 +88,7 @@
       "onboarding": "Finish the welcome and come back here to redeem it. We’ve kept it for you.",
       "onboardingCta": "Continue the welcome",
       "until": "Can be redeemed until {date}.",
-      "doneTitle": "You now have Lumi {plan}!",
+      "doneTitle": "You now have E-Trading {plan}!",
       "doneGift": "You have it until {date}. Enjoy learning.",
       "doneKeepMax": "You keep Max and the days add up: you have it until {date}.",
       "doneDelayed": "As you already pay for a subscription, your next charge is pushed back {days} days.",
@@ -104,9 +104,9 @@
       "canceled": "This gift was cancelled and can no longer be redeemed.",
       "notFound": "This gift code doesn’t exist. Check the link.",
       "loadError": "We couldn’t load the gift. Please try again.",
-      "goApp": "Go to Lumi",
-      "knowMore": "Discover Lumi",
-      "legal": "Lumi is an educational app: it isn’t financial advice and the simulation uses virtual money, never real money.",
+      "goApp": "Go to E-Trading",
+      "knowMore": "Discover E-Trading",
+      "legal": "E-Trading is an educational app: it isn’t financial advice and the simulation uses virtual money, never real money.",
       "errors": {
         "GIFT_REDEEMED": "This gift has already been redeemed.",
         "GIFT_ALREADY_YOURS": "You already redeemed this gift.",
@@ -122,7 +122,7 @@
     "banner": {
       "xmasTitle": "This Christmas, give the gift of learning to invest",
       "xmasBody": "Plus or Max for 1 or 12 months. One-off payment, no renewals.",
-      "title": "Gift Lumi",
+      "title": "Gift E-Trading",
       "body": "Plus or Max for 1 or 12 months. One-off payment, no renewals.",
       "pendingTitle": "You have a gift to redeem",
       "pendingBody": "It’s yours: redeem it in one tap.",
@@ -132,8 +132,8 @@
   "landing2": {
     "hero": "The reliable way to learn to invest.",
     "heroTag": "No gurus, no signals, no promises.",
-    "heroSub": "Lumi teaches you to make your own decisions. You learn with five-minute lessons and practise with virtual money on real prices.",
-    "navWhy": "Why Lumi",
+    "heroSub": "E-Trading teaches you to make your own decisions. You learn with five-minute lessons and practise with virtual money on real prices.",
+    "navWhy": "Why E-Trading",
     "navGift": "Gift",
     "whyTitle": "The opposite of a «guru» course",
     "whySub": "Nobody here sells you the formula to get rich. We teach you to think like an investor.",
@@ -156,7 +156,7 @@
       },
       "transparent": {
         "title": "Transparency",
-        "body": "We explain how everything works: where prices come from and what’s simulated. Lumi is paid for by its plans: it doesn’t connect to any broker or charge commissions."
+        "body": "We explain how everything works: where prices come from and what’s simulated. E-Trading is paid for by its plans: it doesn’t connect to any broker or charge commissions."
       }
     },
     "freeTag": "Free forever",
@@ -172,14 +172,16 @@
     "orYear": "or {year} a year (save {pct}%)",
     "plansSub": "Final prices including VAT. Cancel any time from Settings.",
     "legalTitle": "Important",
-    "legal": "Lumi is an educational app. It isn’t financial advice or a personalised investment recommendation. The simulation uses virtual money: no real money is traded and it doesn’t connect to any broker, and simulated results don’t guarantee real results.",
+    "legal": "E-Trading is an educational app. It isn’t financial advice or a personalised investment recommendation. The simulation uses virtual money: no real money is traded and it doesn’t connect to any broker, and simulated results don’t guarantee real results.",
     "giftTitle": "Give the gift of learning to invest",
     "giftXmasTitle": "This Christmas, give the gift of learning to invest",
     "giftBody": "Gift Plus or Max for 1 or 12 months. One-off payment, no renewals: the recipient redeems it with a link.",
-    "giftCta": "Gift Lumi",
+    "giftCta": "Gift E-Trading",
     "giftFrom": "From {price}",
     "giftNote": "Can be redeemed within 12 months of purchase.",
     "giftSignIn": "I already have an account",
-    "example": "Example"
+    "example": "Example",
+    "studentNote": "Student? With your student ID or enrolment you pay less: Plus {plus}/month and Max {max}/month.",
+    "groupNote": "There are also group plans for 4, 8 or more people: friends, classes and academies."
   }
 }

@@ -22,8 +22,8 @@ function useCopy(): Copy | null {
   const t = useTranslations('upgrade')
   const { data: b } = usePlanBadge()
   if (!b) return null
-  // El equipo no ve ofertas: tiene todo abierto
-  if (b.isAdmin) return null
+  // El equipo no ve ofertas: tiene todo abierto. Con plan de grupo, tampoco: ya lo tiene pagado
+  if (b.isAdmin || b.status === 'GROUP') return null
   const daysLeft = b.daysLeft
   if (b.plan === 'PREMIUM' && !daysLeft) return null
   const href = b.isGuest ? '/guardar' : '/premium'
@@ -101,6 +101,7 @@ export function MaxSide() {
  */
 export function BuyPlans({ id }: { id?: string }) {
   const t = useTranslations('buy')
+  const tb = useTranslations('billing')
   const locale = useLang()
   const toast = useToast()
   const { data: b } = usePlanBadge()
@@ -114,7 +115,8 @@ export function BuyPlans({ id }: { id?: string }) {
     onSuccess: r => window.location.assign(r.url ?? `/${locale}/premium`),
     onError: e => (setBusy(null), toast(e instanceof ApiFailure ? e.message : t('failed'))),
   })
-  if (!b || !plans) return null
+  // Con plan de grupo ya lo tiene pagado: no se le ofrece pagar
+  if (!b || !plans || b.status === 'GROUP') return null
   const paid = b.plan !== 'FREE' && !b.daysLeft
   if (paid && b.plan === 'PREMIUM') return null
   const tiers = (paid && b.plan === 'PLUS' ? ['PREMIUM'] : ['PLUS', 'PREMIUM']) as ('PLUS' | 'PREMIUM')[]
@@ -148,6 +150,12 @@ export function BuyPlans({ id }: { id?: string }) {
               <span>
                 <b className="text-[22px] tracking-[-0.02em]">{money(perMonth, 'EUR', locale)}</b>
                 <span className="t-cap"> {t('perMonth')}</span>
+                {/* Precio de estudiante: el normal, tachado */}
+                {p.student && p.regularPrice && p.regularPrice !== p.price && (
+                  <span className="t-cap block">
+                    <s aria-label={tb('was', { price: money(interval === 'YEAR' ? Number(p.regularPrice) / 12 : p.regularPrice, 'EUR', locale) })}>{money(interval === 'YEAR' ? Number(p.regularPrice) / 12 : p.regularPrice, 'EUR', locale)}</s> · {tb('studentPrice')}
+                  </span>
+                )}
               </span>
               <span className="t-cap min-h-8">{interval === 'YEAR' ? t('billedYear', { price: money(p.price, 'EUR', locale) }) : t(max ? 'maxLine' : 'plusLine')}</span>
               {b.isGuest ? (
@@ -169,6 +177,31 @@ export function BuyPlans({ id }: { id?: string }) {
           {t('compare')}
         </Link>
       </p>
+      {!b.student && !b.isGuest && (
+        <Link href="/estudiante" className="t-cap font-bold" style={{ color: 'var(--brand-ink)' }}>
+          {tb('studentLink')}
+        </Link>
+      )}
     </section>
+  )
+}
+
+/** Tarjeta de Perfil: «Plan de grupo» (o «Tu grupo», si ya está en uno) */
+export function GroupCard() {
+  const t = useTranslations('billing')
+  const { data: b } = usePlanBadge()
+  if (!b || b.isAdmin) return null
+  const g = b.group
+  return (
+    <Link href="/grupo" className="card flex items-center gap-3.5" style={{ color: 'inherit' }}>
+      <span className="grid h-10 w-10 flex-none place-items-center rounded-full" style={{ background: 'var(--fill)', color: 'var(--brand-ink)' }}>
+        <Icon name="league" size={20} />
+      </span>
+      <span className="min-w-0 flex-1">
+        <b className="block truncate">{g ? t('groupMine', { name: g.name }) : t('groupLink')}</b>
+        <span className="t-foot">{g ? t('groupMineBody', { plan: g.tier === 'PLUS' ? 'Plus' : 'Max' }) : t('groupLinkBody')}</span>
+      </span>
+      <Icon name="chev" size={18} />
+    </Link>
   )
 }

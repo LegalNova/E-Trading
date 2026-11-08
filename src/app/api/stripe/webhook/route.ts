@@ -1,9 +1,18 @@
 // Avisos de Stripe (pagos, pruebas, cancelaciones y regalos). Firmados con STRIPE_WEBHOOK_SECRET: sin firma válida no se hace nada.
+// Las suscripciones de grupo (metadata.kind = 'group') las lleva groups.ts: syncSubscription se las pasa.
 import type Stripe from 'stripe'
 import { db } from '@/server/db'
-import { GIFT_KIND, GIFT_META, stripe, syncSubscription } from '@/server/billing/stripe'
+import { GIFT_KIND, GIFT_META, GROUP_KIND, stripe, syncSubscription } from '@/server/billing/stripe'
+import { groupInvoice } from '@/server/game/groups'
 import { giftRefunded, giftSessionExpired, markGiftPaid } from '@/server/game/gifts'
 import { notify } from '@/server/game/core'
+
+/** Factura de un plan de grupo: su suscripción lleva metadata.kind = 'group' */
+function groupSubOf(inv: Stripe.Invoice) {
+  const d = inv.parent?.subscription_details
+  if (d?.metadata?.kind !== GROUP_KIND || !d.subscription) return null
+  return typeof d.subscription === 'string' ? d.subscription : d.subscription.id
+}
 
 /** Stripe puede reenviar el mismo aviso: cada uno se apunta una sola vez */
 async function once(userId: string, name: string, key: string, props: Record<string, unknown>) {
@@ -79,6 +88,11 @@ export async function POST(req: Request) {
       case 'invoice.payment_failed': {
         // Cobro rechazado (tarjeta caducada, sin saldo…): Stripe lo reintenta; se avisa una vez por factura
         const inv = event.data.object
+        const gsub = groupSubOf(inv)
+        if (gsub) {
+          if (inv.id) await groupInvoice(gsub, 'failed', inv.amount_due, inv.id)
+          break
+        }
         const sub = await db.subscription.findFirst({ where: { stripeCustomerId: String(inv.customer) }, select: { userId: true, user: { select: { plan: true } } } })
         const plan = sub?.user.plan === 'PLUS' ? 'Plus' : 'Max'
         if (sub && inv.id && (await once(sub.userId, 'payment_failed', inv.id, { amount: inv.amount_due / 100, currency: inv.currency })))
@@ -87,11 +101,16 @@ export async function POST(req: Request) {
       }
       case 'invoice.paid': {
         const inv = event.data.object
+        const gsub = groupSubOf(inv)
+        if (gsub) {
+          if (inv.id) await groupInvoice(gsub, 'paid', inv.amount_paid, inv.id)
+          break
+        }
         if (inv.amount_paid > 0) {
           const sub = await db.subscription.findFirst({ where: { stripeCustomerId: String(inv.customer) }, select: { userId: true } })
           // Recibo dentro de la app (una vez por factura)
           if (sub && (await once(sub.userId, 'paid', inv.id!, { amount: inv.amount_paid / 100, currency: inv.currency })))
-            await notify({ tx: db, user: { id: sub.userId } as never }, 'ACHIEVEMENT', 'Pago recibido', `Hemos cobrado ${(inv.amount_paid / 100).toFixed(2).replace('.', ',')} € de tu suscripción. Gracias por apoyar Lumi.`, '/ajustes')
+            await notify({ tx: db, user: { id: sub.userId } as never }, 'ACHIEVEMENT', 'Pago recibido', `Hemos cobrado ${(inv.amount_paid / 100).toFixed(2).replace('.', ',')} € de tu suscripción. Gracias por apoyar E-Trading.`, '/ajustes')
         }
         break
       }

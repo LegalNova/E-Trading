@@ -7,6 +7,7 @@ import { useTranslations } from 'next-intl'
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { AdminLayer } from './admin-layer'
 import { PendingLeagueJoin } from './screens/friends'
+import { PendingGroupJoin } from './screens/groups'
 import { MaxSide } from './upgrade'
 import { ThemeToggle } from './theme-toggle'
 import { api } from './api'
@@ -27,7 +28,7 @@ function tabOf(path: string) {
   if (path.startsWith('/avisos')) return '/inicio'
   if (path.startsWith('/ajustes') || path.startsWith('/premium')) return '/perfil'
   if (path.startsWith('/profesora')) return '/clases'
-  if (path.startsWith('/regalar')) return '/perfil'
+  if (path.startsWith('/regalar') || path.startsWith('/grupo') || path.startsWith('/estudiante')) return '/perfil'
   if (path.startsWith('/proyecto') || path.startsWith('/tesis')) return '/clases'
   return TABS.find(t => path.startsWith(t.href))?.href ?? '/inicio'
 }
@@ -106,6 +107,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       </Suspense>
       {/* Llegó por el enlace de una liga de amigos sin cuenta: al entrar, se une */}
       <PendingLeagueJoin />
+      {/* Llegó por el enlace de un plan de grupo sin cuenta: al entrar, se une */}
+      <PendingGroupJoin />
       {/* Barra inferior flotante de cristal (estilo «liquid glass») */}
       <nav aria-label={t('label')} className="glass fixed inset-x-3 z-30 rounded-[30px] p-1.5 md:hidden" style={{ bottom: 'max(10px, env(safe-area-inset-bottom))' }}>
         <Suspense>

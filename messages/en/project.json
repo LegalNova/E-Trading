@@ -10,7 +10,7 @@
     },
     "intro": {
       "title": "Think like an investor",
-      "body": "Pick a real company from Lumi's market and reason your thesis with its data: what it does, why it could keep making money, its risks, whether it's expensive and how you'd manage the risk.",
+      "body": "Pick a real company from E-Trading's market and reason your thesis with its data: what it does, why it could keep making money, its risks, whether it's expensive and how you'd manage the risk.",
       "p1": "· 8 questions, about 15 minutes. Every step is saved.",
       "p2": "· At the end: your thesis sheet, a score out of 100 and a certificate to share.",
       "p3": "· +150 XP for your first thesis and +50 for the next ones (one a day)."
@@ -20,7 +20,7 @@
     "mine": "My theses",
     "doneLine": "Finished · {score}/100",
     "draftLine": "Draft · step {n} of {total}",
-    "disclaimer": "It's an exercise to learn how to analyse. Lumi doesn't tell you what to buy: the thesis is yours and you practise with virtual money.",
+    "disclaimer": "It's an exercise to learn how to analyse. E-Trading doesn't tell you what to buy: the thesis is yours and you practise with virtual money.",
     "pick": {
       "title": "Pick a company",
       "body": "Ideally one you know or whose products you use: it'll be easier to explain its business.",
@@ -112,7 +112,7 @@
       "compare": "Its P/E is {ratio} times its sector's. Above 1, the market pays more for each euro of earnings than for its rivals.",
       "noSector": "Not enough companies in its sector have data to compare. Reason it out with what you know about the business.",
       "noPe": "We don't have this company's P/E. You can reason with its growth or earnings, or compare it with others you know.",
-      "noHistory": "We don't have its historical P/E in Lumi yet: if you know it, you can use it in your explanation.",
+      "noHistory": "We don't have its historical P/E in E-Trading yet: if you know it, you can use it in your explanation.",
       "choose": "Your conclusion",
       "label": "Why?",
       "ph": "Its P/E is… versus… because…",
@@ -224,7 +224,7 @@
     },
     "cert": {
       "title": "Your certificate",
-      "text": "I've completed my investment thesis on {name} with Lumi.",
+      "text": "I've completed my investment thesis on {name} with E-Trading.",
       "alt": "Certificate for the investment thesis on {name}",
       "privacy": "The certificate only shows your first name, the company and the score. Your answers aren't shared.",
       "share": "Share the certificate",

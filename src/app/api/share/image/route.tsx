@@ -48,7 +48,7 @@ export async function GET(req: Request) {
             <div style={{ width: 13 * s, height: 13 * s, borderRadius: 99, background: '#fff' }} />
           </div>
           <div style={{ display: 'flex', fontSize: 52 * s, fontWeight: 800, letterSpacing: -1.5 * s }}>
-            Lumi<span style={{ color: '#2997ff' }}>.</span>
+            E-Trading<span style={{ color: '#2997ff' }}>.</span>
           </div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 18 * s }}>

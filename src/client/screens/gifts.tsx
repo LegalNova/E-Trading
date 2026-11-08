@@ -1,6 +1,6 @@
 'use client'
-// Regalar Lumi: comprar un regalo (/regalar), la tarjeta para compartirlo, «Mis regalos», canjearlo (/regalo/<código>),
-// el banner de Inicio (Navidad y, después, «Regala Lumi») y la sección de la portada.
+// Regalar E-Trading: comprar un regalo (/regalar), la tarjeta para compartirlo, «Mis regalos», canjearlo (/regalo/<código>),
+// el banner de Inicio (Navidad y, después, «Regala E-Trading») y la sección de la portada.
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useLocale, useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
@@ -62,8 +62,8 @@ const noSubscribe = () => () => {}
 const usePending = () => useSyncExternalStore(noSubscribe, readPending, () => null)
 
 // ── Textos comunes ────────────────────────────────────────
-/** «Regalar Lumi» para la lista de Perfil (allí la etiqueta es un texto, sin hook) */
-export const giftLinkLabel = (locale: string) => ({ es: 'Regalar Lumi', ca: 'Regalar la Lumi', en: 'Gift Lumi' })[locale as 'es'] ?? 'Regalar Lumi'
+/** «Regalar E-Trading» para la lista de Perfil (allí la etiqueta es un texto, sin hook) */
+export const giftLinkLabel = (locale: string) => ({ es: 'Regalar E-Trading', ca: 'Regalar E-Trading', en: 'Gift E-Trading' })[locale as 'es'] ?? 'Regalar E-Trading'
 
 const giftUrl = (code: string) => `${location.origin}/regalo/${code}`
 const prettyCode = (code: string) => `${code.slice(0, 5)}-${code.slice(5)}`
@@ -83,7 +83,7 @@ function useShare() {
   const share = async (text: string) => {
     if (navigator.share) {
       try {
-        await navigator.share({ title: 'Lumi', text })
+        await navigator.share({ title: 'E-Trading', text })
       } catch {
         // cancelado: no pasa nada
       }
@@ -114,7 +114,7 @@ export function GiftArt({ tier, months, toName, fromName, message, code }: { tie
         </span>
       </div>
       <div className="flex flex-col">
-        <span className="text-[34px] leading-[38px] font-extrabold tracking-[-0.02em]">Lumi {PLAN_NAME[tier]}</span>
+        <span className="text-[34px] leading-[38px] font-extrabold tracking-[-0.02em]">E-Trading {PLAN_NAME[tier]}</span>
         <span className="text-[17px] font-bold" style={{ color: 'rgb(255 255 255 / 0.85)' }}>
           {t('length', { months })}
         </span>
@@ -562,7 +562,7 @@ export function GiftRedeem({ code }: { code: string }) {
 
   return (
     <main className="mx-auto flex min-h-dvh w-full max-w-[560px] flex-col gap-4 px-4 py-6">
-      <Link href={session?.signedIn ? '/inicio' : '/'} className="self-start" style={{ color: 'var(--ink)' }} aria-label="Lumi">
+      <Link href={session?.signedIn ? '/inicio' : '/'} className="self-start" style={{ color: 'var(--ink)' }} aria-label="E-Trading">
         <Wordmark size={20} />
       </Link>
       {body}
@@ -622,7 +622,7 @@ function RedeemDone({ r }: { r: GiftRedeemT }) {
  * En Inicio, justo después de «Invita a un amigo»:
  *  · si hay un regalo guardado para canjear (llegó por un enlace sin cuenta), se le lleva a canjearlo una vez y,
  *    si vuelve sin hacerlo, se le recuerda aquí;
- *  · si no, la campaña de Navidad hasta XMAS_UNTIL y, después, «Regala Lumi».
+ *  · si no, la campaña de Navidad hasta XMAS_UNTIL y, después, «Regala E-Trading».
  */
 /** ¿Campaña de Navidad? En el navegador, con la fecha de hoy; al prerenderizar (sin «ahora»), sí */
 const noop = () => () => {}

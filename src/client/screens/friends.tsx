@@ -300,7 +300,7 @@ function LeagueBody({ l }: { l: FriendLeagueT }) {
     const text = t('inviteText', { name: l.name, link })
     if (navigator.share) {
       try {
-        await navigator.share({ title: 'Lumi', text })
+        await navigator.share({ title: 'E-Trading', text })
       } catch {
         // cancelado: no pasa nada
       }

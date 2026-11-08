@@ -12,10 +12,10 @@ export const en: Record<LegalSlug, LegalDoc> = {
     sections: [
       { h: '1. Owner', table: { head: ['Item', 'Value'], rows: [['Owner', O.name], ['Tax ID (NIF)', O.nif], ['Address', O.address], ['Contact email', O.email], ['Website', O.site]] } },
       {
-        h: '2. What Lumi is',
+        h: '2. What E-Trading is',
         p: [
-          'Lumi is an educational app for learning to invest through lessons, quizzes and a market simulator with virtual money.',
-          'Lumi is not a financial institution or an investment firm: it does not receive money from users, does not execute real trades, does not connect to any broker and does not provide investment advice. It is therefore not authorised or supervised by the Spanish securities regulator (CNMV).',
+          'E-Trading is an educational app for learning to invest through lessons, quizzes and a market simulator with virtual money.',
+          'E-Trading is not a financial institution or an investment firm: it does not receive money from users, does not execute real trades, does not connect to any broker and does not provide investment advice. It is therefore not authorised or supervised by the Spanish securities regulator (CNMV).',
         ],
       },
       {
@@ -29,7 +29,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
       {
         h: '5. Intellectual property',
         p: [
-          'The texts, exercises, design, logos, the Lumi mascot and the code of Lumi belong to their owner or are used under licence. They may not be copied or distributed without permission, except for personal, non-commercial use.',
+          'The texts, exercises, design, logos, the Lumi mascot and the code of E-Trading belong to their owner or are used under licence. They may not be copied or distributed without permission, except for personal, non-commercial use.',
           'Brands and company names shown in the simulator belong to their owners and are mentioned only to identify the assets.',
         ],
       },
@@ -136,15 +136,15 @@ export const en: Record<LegalSlug, LegalDoc> = {
       { h: '1. What they are', p: ['Cookies and similar technologies (such as the browser’s local storage) are small files a website stores on your device to remember information.'] },
       {
         h: '2. What we use',
-        p: ['Lumi only uses technical cookies and storage, or preferences you choose. We use no analytics, advertising or third-party cookies.'],
+        p: ['E-Trading only uses technical cookies and storage, or preferences you choose. We use no analytics, advertising or third-party cookies.'],
         table: {
           head: ['Name', 'Owner', 'Purpose', 'Duration', 'Type'],
           rows: [
-            ['__Secure-better-auth.session_token', 'Lumi', 'Keep you securely signed in', '30 days', 'Technical, necessary'],
-            ['better-auth.state', 'Lumi', 'Protect sign-in with Google (only if you use it)', '10 minutes', 'Technical, necessary'],
-            ['NEXT_LOCALE', 'Lumi', 'Remember the language you choose in Settings', '1 year', 'Preference you chose'],
-            ['et-theme (local storage)', 'Lumi', 'Remember the light or dark theme', 'Until you delete it', 'Preference you chose'],
-            ['et-cookies (local storage)', 'Lumi', 'Remember that you have seen the cookie notice', 'Until you delete it', 'Technical'],
+            ['__Secure-better-auth.session_token', 'E-Trading', 'Keep you securely signed in', '30 days', 'Technical, necessary'],
+            ['better-auth.state', 'E-Trading', 'Protect sign-in with Google (only if you use it)', '10 minutes', 'Technical, necessary'],
+            ['NEXT_LOCALE', 'E-Trading', 'Remember the language you choose in Settings', '1 year', 'Preference you chose'],
+            ['et-theme (local storage)', 'E-Trading', 'Remember the light or dark theme', 'Until you delete it', 'Preference you chose'],
+            ['et-cookies (local storage)', 'E-Trading', 'Remember that you have seen the cookie notice', 'Until you delete it', 'Technical'],
           ],
         },
       },
@@ -161,9 +161,9 @@ export const en: Record<LegalSlug, LegalDoc> = {
 
   terminos: {
     title: 'Terms of use',
-    intro: `Last updated: ${UPDATED}. These terms govern the use of Lumi. You accept them when you create an account. The Spanish version prevails.`,
+    intro: `Last updated: ${UPDATED}. These terms govern the use of E-Trading. You accept them when you create an account. The Spanish version prevails.`,
     sections: [
-      { h: '1. The service', p: [`Lumi, by ${O.name}, offers lessons, quizzes, a market simulator with virtual money and game elements (XP, streak, lives, gems, achievements and league) for learning to invest.`] },
+      { h: '1. The service', p: [`E-Trading, by ${O.name}, offers lessons, quizzes, a market simulator with virtual money and game elements (XP, streak, lives, gems, achievements and league) for learning to invest.`] },
       {
         h: '2. It is an educational simulation',
         list: [
@@ -211,7 +211,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
           'We may change or end the programme with prior notice in the app; days already earned are kept.',
         ],
       },
-      { h: '9. Intellectual property', p: ['Lumi content belongs to its owner or is used under licence. You may use it for your personal learning, but not copy or distribute it without permission.'] },
+      { h: '9. Intellectual property', p: ['E-Trading content belongs to its owner or is used under licence. You may use it for your personal learning, but not copy or distribute it without permission.'] },
       { h: '10. Liability', p: ['We take great care with the service, but it may have errors or interruptions. We are not liable for real investment decisions made based on the app. Nothing here limits your statutory rights as a consumer.'] },
       { h: '11. Changes to the service and the terms', p: ['We may improve or change features. If we change these terms significantly we will give you advance notice in the app.'] },
       { h: '12. Law and disputes', p: [`Spanish law applies. If you have a problem, write to us first at ${O.email} and we will try to solve it. As a consumer you may also contact the consumer bodies of your region and the courts of your place of residence.`] },
@@ -292,7 +292,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
         h: '9. If something does not work',
         p: [
           'The service must work as described. If it does not, you are entitled to have it fixed and, if we cannot do so within a reasonable time, to a price reduction or to end the contract with the corresponding refund (conformity guarantee for digital content and services).',
-          'Lumi is an educational service with virtual money: it does not guarantee any real financial result.',
+          'E-Trading is an educational service with virtual money: it does not guarantee any real financial result.',
         ],
       },
       {
@@ -312,7 +312,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
         ],
       },
       {
-        h: '12. Gifting Lumi',
+        h: '12. Gifting E-Trading',
         p: ['You can give someone else Plus or Max for 1 month (30 days) or 12 months (365 days). These terms apply to the gift together with the ones above.'],
         list: [
           'Price: the plan’s 1-month or yearly price (Plus: €3.99 or €29.99; Max: €7.99 or €59.99), taxes included. It is a one-off card payment through Stripe: it is not a subscription, it does not renew and there are no further charges.',

@@ -197,15 +197,15 @@ const T: Record<PushKind, Record<Lang, ((v: V) => Msg)[]>> = {
   },
   evening: {
     es: [
-      v => ({ title: 'Tu día en Lumi', body: `${v.summary}. Mañana: «${v.lesson}».` }),
+      v => ({ title: 'Tu día en E-Trading', body: `${v.summary}. Mañana: «${v.lesson}».` }),
       v => ({ title: 'Buen trabajo hoy', body: `${v.summary}. Descansa: mañana sigue «${v.lesson}».` }),
     ],
     ca: [
-      v => ({ title: 'El teu dia a Lumi', body: `${v.summary}. Demà: «${v.lesson}».` }),
+      v => ({ title: 'El teu dia a E-Trading', body: `${v.summary}. Demà: «${v.lesson}».` }),
       v => ({ title: 'Bona feina avui', body: `${v.summary}. Descansa: demà continua «${v.lesson}».` }),
     ],
     en: [
-      v => ({ title: 'Your day on Lumi', body: `${v.summary}. Tomorrow: «${v.lesson}».` }),
+      v => ({ title: 'Your day on E-Trading', body: `${v.summary}. Tomorrow: «${v.lesson}».` }),
       v => ({ title: 'Good work today', body: `${v.summary}. Rest up: «${v.lesson}» is next.` }),
     ],
   },

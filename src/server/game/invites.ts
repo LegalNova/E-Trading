@@ -72,6 +72,8 @@ export async function linkInviter(tx: Tx, userId: string, source: string | null)
 async function giftMax(tx: Tx, userId: string, days: number, friendId?: string) {
   const sub = await tx.subscription.findUnique({ where: { userId } })
   const now = Date.now()
+  // Tiene el plan por su grupo: los días de Max se guardan debajo del grupo (no se le quita el plan del grupo)
+  if (sub?.status === 'GROUP') return void (await (await import('./groups')).giftUnderGroup(tx, userId, 'PREMIUM', days))
   if (sub?.stripeSubId && LIVE.includes(sub.status)) {
     // Suscripción de pago en Stripe: el regalo son días sin cobro de verdad. Se pide a Stripe cuando la clase del amigo
     // ya está guardada (fuera de la transacción: si Stripe tarda, la clase no se queda esperando ni se pierde), y solo si

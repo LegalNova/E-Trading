@@ -10,7 +10,7 @@
     },
     "intro": {
       "title": "Piensa como un inversor",
-      "body": "Elige una empresa real del mercado de Lumi y razona tu tesis con sus datos: qué hace, por qué podría seguir ganando dinero, sus riesgos, si está cara y cómo gestionarías el riesgo.",
+      "body": "Elige una empresa real del mercado de E-Trading y razona tu tesis con sus datos: qué hace, por qué podría seguir ganando dinero, sus riesgos, si está cara y cómo gestionarías el riesgo.",
       "p1": "· 8 preguntas, unos 15 minutos. Se guarda cada paso.",
       "p2": "· Al terminar: tu ficha de tesis, una puntuación de 0 a 100 y un certificado para compartir.",
       "p3": "· +150 XP la primera tesis y +50 las siguientes (una al día)."
@@ -20,7 +20,7 @@
     "mine": "Mis tesis",
     "doneLine": "Terminada · {score}/100",
     "draftLine": "Borrador · paso {n} de {total}",
-    "disclaimer": "Es un ejercicio para aprender a analizar. Lumi no te dice qué comprar: la tesis es tuya y se practica con dinero virtual.",
+    "disclaimer": "Es un ejercicio para aprender a analizar. E-Trading no te dice qué comprar: la tesis es tuya y se practica con dinero virtual.",
     "pick": {
       "title": "Elige una empresa",
       "body": "Mejor una que conozcas o cuyos productos uses: te costará menos explicar su negocio.",
@@ -112,7 +112,7 @@
       "compare": "Su PER es {ratio} veces el de su sector. Por encima de 1, el mercado paga más por cada euro de beneficio que en sus rivales.",
       "noSector": "No hay suficientes empresas de su sector con dato para comparar. Razónalo con lo que sabes del negocio.",
       "noPe": "No tenemos el PER de esta empresa. Puedes razonar con su crecimiento, sus beneficios o compararla con otras que conozcas.",
-      "noHistory": "Todavía no tenemos su PER histórico en Lumi: si lo conoces, puedes usarlo en tu explicación.",
+      "noHistory": "Todavía no tenemos su PER histórico en E-Trading: si lo conoces, puedes usarlo en tu explicación.",
       "choose": "Tu conclusión",
       "label": "¿Por qué?",
       "ph": "Su PER es… frente a… porque…",
@@ -224,7 +224,7 @@
     },
     "cert": {
       "title": "Tu certificado",
-      "text": "He completado mi tesis de inversión sobre {name} con Lumi.",
+      "text": "He completado mi tesis de inversión sobre {name} con E-Trading.",
       "alt": "Certificado de la tesis de inversión sobre {name}",
       "privacy": "El certificado solo muestra tu nombre de pila, la empresa y la puntuación. Tus respuestas no se comparten.",
       "share": "Compartir el certificado",

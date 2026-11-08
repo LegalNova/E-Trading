@@ -29,22 +29,22 @@ const langOf = (l: string | null | undefined): Lang => (l === 'ca' || l === 'en'
 const localeOf = async (userId: string) => langOf((await db.user.findUnique({ where: { id: userId }, select: { locale: true } }))?.locale)
 const NOTE = {
   es: {
-    ready: (plan: string, to: string | null) => ['Tu regalo está listo', `Lumi ${plan} para ${to || 'quien tú quieras'}. Comparte el enlace: se puede canjear durante 12 meses.`],
+    ready: (plan: string, to: string | null) => ['Tu regalo está listo', `E-Trading ${plan} para ${to || 'quien tú quieras'}. Comparte el enlace: se puede canjear durante 12 meses.`],
     span: (m: GiftMonths) => (m === 12 ? '12 meses' : '1 mes'),
     redeemed: (plan: string, span: string, from: string | null, days: number, delayed: boolean) => [`Regalo canjeado: ${plan} ${span}`, delayed ? `Tu próximo cobro se retrasa ${days} días. Regalo de ${from || 'alguien que te aprecia'}.` : `Regalo de ${from || 'alguien que te aprecia'}. Disfruta aprendiendo.`],
-    toBuyer: (who: string | null, plan: string, span: string) => [`${who || 'Alguien'} ha canjeado tu regalo`, `Ya tiene Lumi ${plan} durante ${span}. Gracias por regalar aprender a invertir.`],
+    toBuyer: (who: string | null, plan: string, span: string) => [`${who || 'Alguien'} ha canjeado tu regalo`, `Ya tiene E-Trading ${plan} durante ${span}. Gracias por regalar aprender a invertir.`],
   },
   ca: {
-    ready: (plan: string, to: string | null) => ['El teu regal està a punt', `La Lumi ${plan} per a ${to || 'qui tu vulguis'}. Comparteix l’enllaç: es pot bescanviar durant 12 mesos.`],
+    ready: (plan: string, to: string | null) => ['El teu regal està a punt', `E-Trading ${plan} per a ${to || 'qui tu vulguis'}. Comparteix l’enllaç: es pot bescanviar durant 12 mesos.`],
     span: (m: GiftMonths) => (m === 12 ? '12 mesos' : '1 mes'),
     redeemed: (plan: string, span: string, from: string | null, days: number, delayed: boolean) => [`Regal bescanviat: ${plan} ${span}`, delayed ? `El teu proper cobrament es retarda ${days} dies. Regal de ${from || 'algú que t’aprecia'}.` : `Regal de ${from || 'algú que t’aprecia'}. Gaudeix aprenent.`],
-    toBuyer: (who: string | null, plan: string, span: string) => [`${who || 'Algú'} ha bescanviat el teu regal`, `Ja té la Lumi ${plan} durant ${span}. Gràcies per regalar aprendre a invertir.`],
+    toBuyer: (who: string | null, plan: string, span: string) => [`${who || 'Algú'} ha bescanviat el teu regal`, `Ja té E-Trading ${plan} durant ${span}. Gràcies per regalar aprendre a invertir.`],
   },
   en: {
-    ready: (plan: string, to: string | null) => ['Your gift is ready', `Lumi ${plan} for ${to || 'whoever you like'}. Share the link: it can be redeemed for 12 months.`],
+    ready: (plan: string, to: string | null) => ['Your gift is ready', `E-Trading ${plan} for ${to || 'whoever you like'}. Share the link: it can be redeemed for 12 months.`],
     span: (m: GiftMonths) => (m === 12 ? '12 months' : '1 month'),
     redeemed: (plan: string, span: string, from: string | null, days: number, delayed: boolean) => [`Gift redeemed: ${plan} ${span}`, delayed ? `Your next charge is pushed back ${days} days. A gift from ${from || 'someone who cares about you'}.` : `A gift from ${from || 'someone who cares about you'}. Enjoy learning.`],
-    toBuyer: (who: string | null, plan: string, span: string) => [`${who || 'Someone'} redeemed your gift`, `They now have Lumi ${plan} for ${span}. Thanks for giving the gift of learning to invest.`],
+    toBuyer: (who: string | null, plan: string, span: string) => [`${who || 'Someone'} redeemed your gift`, `They now have E-Trading ${plan} for ${span}. Thanks for giving the gift of learning to invest.`],
   },
 } as const
 
@@ -58,9 +58,9 @@ function clean(s: string | undefined | null, max: number, multiline = false) {
 }
 
 const NAMES: Record<'es' | 'ca' | 'en', (plan: string, months: GiftMonths) => [string, string]> = {
-  es: (p, m) => [`Regalo: Lumi ${p} · ${m === 12 ? '12 meses' : '1 mes'}`, 'Pago único, sin renovación. Se canjea con un enlace durante 12 meses.'],
-  ca: (p, m) => [`Regal: la Lumi ${p} · ${m === 12 ? '12 mesos' : '1 mes'}`, 'Pagament únic, sense renovació. Es bescanvia amb un enllaç durant 12 mesos.'],
-  en: (p, m) => [`Gift: Lumi ${p} · ${m === 12 ? '12 months' : '1 month'}`, 'One-off payment, no renewal. Redeemed with a link within 12 months.'],
+  es: (p, m) => [`Regalo: E-Trading ${p} · ${m === 12 ? '12 meses' : '1 mes'}`, 'Pago único, sin renovación. Se canjea con un enlace durante 12 meses.'],
+  ca: (p, m) => [`Regal: E-Trading ${p} · ${m === 12 ? '12 mesos' : '1 mes'}`, 'Pagament únic, sense renovació. Es bescanvia amb un enllaç durant 12 mesos.'],
+  en: (p, m) => [`Gift: E-Trading ${p} · ${m === 12 ? '12 months' : '1 month'}`, 'One-off payment, no renewal. Redeemed with a link within 12 months.'],
 }
 
 /** Estado que se enseña: un regalo listo cuyo plazo de canje ya pasó se ve como caducado */
@@ -88,7 +88,7 @@ async function newCode() {
 // ── Comprar ───────────────────────────────────────────────
 export async function createGift(input: { tier: GiftTier; months: GiftMonths; fromName: string; toName?: string; message?: string }) {
   const u = await requireUser()
-  if (u.isAnonymous) fail(403, 'GUEST_MUST_SAVE', 'Guarda tu progreso con email y contraseña para regalar Lumi')
+  if (u.isAnonymous) fail(403, 'GUEST_MUST_SAVE', 'Guarda tu progreso con email y contraseña para regalar E-Trading')
   if (u.onboardingStep !== null) fail(403, 'FORBIDDEN', 'Termina el registro primero')
   // Como en las suscripciones: entre 14 y 17 años hace falta que un adulto lo confirme
   const age = u.birthDate ? (Date.now() - u.birthDate.getTime()) / (365.25 * DAY_MS) : null

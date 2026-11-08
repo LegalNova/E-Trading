@@ -10,7 +10,7 @@
     },
     "intro": {
       "title": "Pensa com un inversor",
-      "body": "Tria una empresa real del mercat de la Lumi i raona la teva tesi amb les seves dades: què fa, per què podria continuar guanyant diners, els seus riscos, si és cara i com gestionaries el risc.",
+      "body": "Tria una empresa real del mercat d'E-Trading i raona la teva tesi amb les seves dades: què fa, per què podria continuar guanyant diners, els seus riscos, si és cara i com gestionaries el risc.",
       "p1": "· 8 preguntes, uns 15 minuts. Cada pas es desa.",
       "p2": "· En acabar: la teva fitxa de tesi, una puntuació de 0 a 100 i un certificat per compartir.",
       "p3": "· +150 XP la primera tesi i +50 les següents (una al dia)."
@@ -20,7 +20,7 @@
     "mine": "Les meves tesis",
     "doneLine": "Acabada · {score}/100",
     "draftLine": "Esborrany · pas {n} de {total}",
-    "disclaimer": "És un exercici per aprendre a analitzar. La Lumi no et diu què has de comprar: la tesi és teva i es practica amb diners virtuals.",
+    "disclaimer": "És un exercici per aprendre a analitzar. E-Trading no et diu què has de comprar: la tesi és teva i es practica amb diners virtuals.",
     "pick": {
       "title": "Tria una empresa",
       "body": "Millor una que coneguis o de la qual facis servir els productes: et costarà menys explicar-ne el negoci.",
@@ -112,7 +112,7 @@
       "compare": "El seu PER és {ratio} vegades el del sector. Per sobre d'1, el mercat paga més per cada euro de benefici que en els rivals.",
       "noSector": "No hi ha prou empreses del seu sector amb dades per comparar. Raona-ho amb el que saps del negoci.",
       "noPe": "No tenim el PER d'aquesta empresa. Pots raonar amb el creixement, els beneficis o comparar-la amb altres que coneguis.",
-      "noHistory": "Encara no tenim el seu PER històric a la Lumi: si el coneixes, el pots fer servir a la teva explicació.",
+      "noHistory": "Encara no tenim el seu PER històric a E-Trading: si el coneixes, el pots fer servir a la teva explicació.",
       "choose": "La teva conclusió",
       "label": "Per què?",
       "ph": "El seu PER és… davant de… perquè…",
@@ -224,7 +224,7 @@
     },
     "cert": {
       "title": "El teu certificat",
-      "text": "He completat la meva tesi d'inversió sobre {name} amb la Lumi.",
+      "text": "He completat la meva tesi d'inversió sobre {name} amb E-Trading.",
       "alt": "Certificat de la tesi d'inversió sobre {name}",
       "privacy": "El certificat només mostra el teu nom de pila, l'empresa i la puntuació. Les teves respostes no es comparteixen.",
       "share": "Compartir el certificat",

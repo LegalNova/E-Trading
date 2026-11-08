@@ -15,12 +15,12 @@ export const ca: HelpDoc = {
       id: 'empezar',
       title: 'Començar',
       items: [
-        { id: 'que-es', q: 'Què és Lumi?', a: ['Una app per aprendre a invertir des de zero: classes curtes i interactives, qüestionaris i un mercat amb preus reals on practiques amb diners virtuals. La Lumi, la mascota, t’acompanya a cada pas.'] },
+        { id: 'que-es', q: 'Què és E-Trading?', a: ['Una app per aprendre a invertir des de zero: classes curtes i interactives, qüestionaris i un mercat amb preus reals on practiques amb diners virtuals. La Lumi, la mascota, t’acompanya a cada pas.'] },
         { id: 'dinero-real', q: 'S’hi fan servir diners reals?', a: ['No. Tots els diners del simulador són virtuals i no tenen cap valor: no pots ingressar ni retirar diners, i les teves operacions no arriben a cap mercat real.'] },
         { id: 'cuesta', q: 'Costa alguna cosa?', a: ['El pla Free és gratuït per sempre. Plus i Max són opcionals i amplien el curs, les vides i la Lumi.', 'Et pots subscriure amb targeta quan vulguis i cancel·lar des de Configuració. A més, hi ha una prova gratuïta de 7 dies que es desbloqueja amb una ratxa de 5 dies seguits o arribant amb la invitació d’un amic.'] },
         { id: 'saber-antes', q: 'Necessito saber alguna cosa abans?', a: ['No. El curs comença pel més pràctic: la teva primera inversió al simulador, què compres quan compres una acció i per què se’n mou el preu. Si ja en saps, en començar pots fer un test de nivell i, a cada unitat, una prova per donar-la per feta.'] },
         { id: 'edad', q: 'A partir de quina edat es pot fer servir?', a: ['A partir dels 14 anys. Entre els 14 i els 17, per contractar un pla de pagament cal que ho confirmi la teva mare, el teu pare o el teu tutor.'] },
-        { id: 'asesoramiento', q: 'La Lumi em diu en què invertir?', a: ['No. Lumi és educació, no assessorament financer: res de l’app és una recomanació per comprar o vendre res. Aprens com funcionen els mercats perquè algun dia decideixis tu, amb criteri.'] },
+        { id: 'asesoramiento', q: 'E-Trading em diu en què invertir?', a: ['No. E-Trading és educació, no assessorament financer: res de l’app és una recomanació per comprar o vendre res. Aprens com funcionen els mercats perquè algun dia decideixis tu, amb criteri.'] },
       ],
     },
     {
@@ -54,7 +54,7 @@ export const ca: HelpDoc = {
       items: [
         { id: 'que-hace', q: 'Què li puc preguntar a la Lumi?', a: ['Dubtes del curs, conceptes que no entens, què estudiar ara i, als plans de pagament, com va la teva cartera o quins biaixos es veuen a les teves operacions. Respon amb el contingut del curs i el teu progrés.'] },
         { id: 'limite', q: 'Quantes preguntes puc fer?', a: ['5 al dia a Free, 30 a Plus i 100 a Max. El comptador es reinicia cada dia.'] },
-        { id: 'privacidad-lumi', q: 'Les meves preguntes surten de Lumi?', a: ['No. La Lumi funciona als nostres propis servidors: les teves preguntes no s’envien a cap servei d’intel·ligència artificial de tercers. Pots esborrar l’historial quan vulguis des de la mateixa conversa.'] },
+        { id: 'privacidad-lumi', q: 'Les meves preguntes surten de la Lumi?', a: ['No. La Lumi funciona als nostres propis servidors: les teves preguntes no s’envien a cap servei d’intel·ligència artificial de tercers. Pots esborrar l’historial quan vulguis des de la mateixa conversa.'] },
       ],
     },
     {
@@ -72,7 +72,7 @@ export const ca: HelpDoc = {
       title: 'Compte i privadesa',
       items: [
         { id: 'sin-registro', q: 'Puc provar-ho sense registrar-me?', a: ['Sí: toca «Provar sense registrar-me» i entres al moment, sense correu ni contrasenya. Si t’agrada, a «Desar» li poses correu i contrasenya al teu compte i conserves tot el progrés.', 'Si no el deses, el compte de convidat s’esborra als 30 dies sense entrar. Per provar Plus o Max cal desar abans el progrés.'] },
-        { id: 'google-bluetooth', q: 'En entrar amb Google em demana activar el Bluetooth', a: ['És un pas de Google, no de Lumi: si el teu compte de Google té una clau d’accés (passkey), Google intenta fer servir el mòbil com a clau i per això necessita Bluetooth.', 'Si no funciona, en aquella pantalla de Google toca «Prova una altra manera» i tria la contrasenya de Google o un codi al mòbil. També pots entrar amb el teu correu i una contrasenya de Lumi.'] },
+        { id: 'google-bluetooth', q: 'En entrar amb Google em demana activar el Bluetooth', a: ['És un pas de Google, no d’E-Trading: si el teu compte de Google té una clau d’accés (passkey), Google intenta fer servir el mòbil com a clau i per això necessita Bluetooth.', 'Si no funciona, en aquella pantalla de Google toca «Prova una altra manera» i tria la contrasenya de Google o un codi al mòbil. També pots entrar amb el teu correu i una contrasenya d’E-Trading.'] },
         { id: 'crear-contrasena', q: 'Em vaig registrar amb Google: puc entrar amb correu?', a: ['Sí. Entra un cop amb Google i ves a Configuració, Compte, «Crear una contrasenya». A partir d’aleshores pots entrar amb el teu correu i aquesta contrasenya, o continuar fent servir Google.'] },
         { id: 'invitar', q: 'Com funciona convidar amics?', a: ['A Perfil, «Convida els teus amics», tens el teu enllaç. El teu amic té 7 dies de Max gratis només entrar. Tu sumes 7 dies de Max quan desa el compte i acaba la primera classe, fins a un any en total.'], links: [{ href: '/perfil/invitar', label: 'Convidar amics' }] },
         { id: 'contrasena', q: 'He oblidat la contrasenya', a: ['A «Entrar», toca «Has oblidat la contrasenya?» i t’enviem un enllaç al teu correu. Si no t’arriba o l’app et diu que ara no el pot enviar, escriu-nos des de Contacte amb el correu del teu compte i t’ajudem.'], links: [{ href: '/recuperar', label: 'Recuperar la contrasenya' }] },
@@ -85,7 +85,7 @@ export const ca: HelpDoc = {
       id: 'seguridad',
       title: 'Seguretat',
       items: [
-        { id: 'fraude', q: 'Algú diu que és de Lumi i m’ofereix invertir', a: ['És un frau. Lumi mai no et demanarà diners, dades del teu banc, la contrasenya ni codis per correu, missatge o xarxes socials, i mai no t’oferirà invertir ni «gestionar» els teus diners.', 'No responguis, no paguis res i avisa’ns des de Contacte. Si ja has pagat, contacta amb el teu banc i denuncia-ho a la policia.'] },
+        { id: 'fraude', q: 'Algú diu que és d’E-Trading i m’ofereix invertir', a: ['És un frau. E-Trading mai no et demanarà diners, dades del teu banc, la contrasenya ni codis per correu, missatge o xarxes socials, i mai no t’oferirà invertir ni «gestionar» els teus diners.', 'No responguis, no paguis res i avisa’ns des de Contacte. Si ja has pagat, contacta amb el teu banc i denuncia-ho a la policia.'] },
         { id: 'cuenta-segura', q: 'Com protegeixo el meu compte?', a: ['Fes servir una contrasenya que no facis servir en altres llocs, amb almenys 8 caràcters i un número, o entra amb Google. Si algú més fa servir el teu dispositiu, tanca la sessió en acabar.'] },
         { id: 'error', q: 'He trobat un error', a: ['Gràcies per avisar. Escriu-nos des de Contacte explicant què feies i què ha passat; si pots, afegeix-hi una captura. Aprofitar un error per guanyar avantatge a la lliga va contra les normes.'] },
       ],

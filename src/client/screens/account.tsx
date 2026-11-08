@@ -121,6 +121,7 @@ function PaymentDone({ sid }: { sid: string | null }) {
 
 function PlansScreen({ canceled }: { canceled: boolean }) {
   const t = useTranslations('premium')
+  const tb = useTranslations('billing')
   const { data: session } = useSession()
   const { data: badge } = usePlanBadge()
   const locale = useLang()
@@ -174,6 +175,23 @@ function PlansScreen({ canceled }: { canceled: boolean }) {
       </div>
     )
 
+  // Plan de grupo: ya lo tiene pagado, no se le ofrece pagar
+  if (status.status === 'GROUP')
+    return (
+      <>
+        <TopBar close="/perfil" />
+        <div className="pad">
+          <h1 className="t-large">{tb('inGroupTitle', { plan: PLAN_NAME[status.plan] })}</h1>
+          <p className="t-body muted m-0">{tb('inGroupBody', { name: badge?.group?.name ?? '' })}</p>
+          {badge?.group?.pastDue && <div className="banner">{tb('inGroupPastDue')}</div>}
+          <FeatureList features={features(status.plan === 'PLUS' ? 'PLUS' : 'PREMIUM')} />
+          <Link href="/grupo" className="btn btn-primary">
+            {tb('seeGroup')}
+          </Link>
+        </div>
+      </>
+    )
+
   if (status.plan === 'PREMIUM')
     return (
       <>
@@ -187,6 +205,7 @@ function PlansScreen({ canceled }: { canceled: boolean }) {
           <Link href="/ajustes" className="btn btn-secondary">
             {t('manage')}
           </Link>
+          <ExtraPlans student={badge?.student ? badge.studentUntil ?? null : undefined} />
         </div>
       </>
     )
@@ -219,6 +238,7 @@ function PlansScreen({ canceled }: { canceled: boolean }) {
             <b>{t('yearly')}</b>
             <br />
             <span className="t-foot">{t('yearlyPrice', { price: money(year.price, 'EUR', locale), month: money(Number(year.price) / 12, 'EUR', locale) })}</span>
+            {year.student && year.regularPrice && <Was price={money(year.regularPrice, 'EUR', locale)} />}
           </span>
           <span className="chip" style={{ background: 'var(--up)', color: '#fff' }}>
             −{saving} %
@@ -229,6 +249,7 @@ function PlansScreen({ canceled }: { canceled: boolean }) {
             <b>{t('monthly')}</b>
             <br />
             <span className="t-foot">{t('monthlyPrice', { price: money(month.price, 'EUR', locale) })}</span>
+            {month.student && month.regularPrice && <Was price={money(month.regularPrice, 'EUR', locale)} />}
           </span>
         </button>
         {session?.isGuest ? (
@@ -268,8 +289,55 @@ function PlansScreen({ canceled }: { canceled: boolean }) {
         </p>
         <FeatureList features={features(isPlus ? 'PREMIUM' : tier)} />
         <div className="banner banner-info">{t('demoNote')}</div>
+        <ExtraPlans student={badge?.student ? badge.studentUntil ?? null : undefined} />
       </div>
     </>
+  )
+}
+
+/** Precio normal tachado (cuando tiene precio de estudiante) */
+function Was({ price }: { price: string }) {
+  const t = useTranslations('billing')
+  return (
+    <span className="t-cap block">
+      <s aria-label={t('was', { price })}>{price}</s> · {t('studentPrice')}
+    </span>
+  )
+}
+
+/** Debajo de los planes: precio de estudiante (o hasta cuándo lo tiene) y plan de grupo */
+function ExtraPlans({ student }: { student?: string | null }) {
+  const t = useTranslations('billing')
+  const locale = useLang()
+  const { data: session } = useSession()
+  return (
+    <div className="list">
+      {student !== undefined ? (
+        <div className="li plainline">
+          <Icon name="check" size={18} />
+          <span className="flex-1">{t('studentActive', { date: student ? new Date(student).toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' }) : '' })}</span>
+        </div>
+      ) : (
+        !session?.isGuest && (
+          <Link href="/estudiante" className="li plainline justify-between">
+            <span className="min-w-0 flex-1">
+              <b>{t('studentLink')}</b>
+              <br />
+              <span className="t-foot">{t('studentLinkBody')}</span>
+            </span>
+            <Icon name="chev" size={18} />
+          </Link>
+        )
+      )}
+      <Link href="/grupo" className="li plainline justify-between">
+        <span className="min-w-0 flex-1">
+          <b>{t('groupLink')}</b>
+          <br />
+          <span className="t-foot">{t('groupLinkBody')}</span>
+        </span>
+        <Icon name="chev" size={18} />
+      </Link>
+    </div>
   )
 }
 
@@ -291,6 +359,7 @@ function FeatureList({ features }: { features: string[] }) {
 // ── Ajustes (06.3) ───────────────────────────────────────
 export function Settings() {
   const t = useTranslations('settings')
+  const tb = useTranslations('billing')
   const locale = useLocale()
   const path = usePathname()
   const router = useRouter()
@@ -341,9 +410,19 @@ export function Settings() {
         <div className="list">
           <div className="li plainline justify-between">
             <span>{t('plan')}</span>
-            <b>{me.plan === 'FREE' ? 'Free' : status.status === 'GIFT' ? `${PLAN_NAME[me.plan]} · ${t('gift')}` : `${PLAN_NAME[me.plan]} · ${status.interval === 'YEAR' ? t('yearly') : t('monthly')}`}</b>
+            <b>{me.plan === 'FREE' ? 'Free' : status.status === 'GROUP' ? `${PLAN_NAME[me.plan]} · ${tb('settingsGroup')}` : status.status === 'GIFT' ? `${PLAN_NAME[me.plan]} · ${t('gift')}` : `${PLAN_NAME[me.plan]} · ${status.interval === 'YEAR' ? t('yearly') : t('monthly')}`}</b>
           </div>
-          {me.plan !== 'FREE' && status.status === 'GIFT' ? (
+          {me.plan !== 'FREE' && status.status === 'GROUP' ? (
+            // Plan de grupo: se gestiona en /grupo (aquí no hay nada que cancelar)
+            <Link href="/grupo" className="li plainline justify-between">
+              <span className="min-w-0 flex-1">
+                {tb('seeGroup')}
+                <br />
+                <span className="t-cap">{badge?.group?.owner ? tb('group.manageHint') : tb('settingsGroupLeave')}</span>
+              </span>
+              <Icon name="chev" size={18} />
+            </Link>
+          ) : me.plan !== 'FREE' && status.status === 'GIFT' ? (
             <>
               {status.trialEndsAt && (
                 <div className="li plainline justify-between">

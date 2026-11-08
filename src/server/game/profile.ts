@@ -1,7 +1,7 @@
 import 'server-only'
 import { cleanSource, track, trackDaily } from './analytics'
 import { linkInviter, maybeRewardInvite } from './invites'
-import { tierOf, TRIAL_DAYS, TRIAL_STREAK, trialUnlocked } from '@/shared/plans'
+import { priceOf, tierOf, TRIAL_DAYS, TRIAL_STREAK, trialUnlocked } from '@/shared/plans'
 // Perfil, onboarding, Inicio, progreso, avisos, ajustes, Premium (simulado hasta Stripe) y RGPD
 import type { BillingStatusT, HomeT, MeT, Mood, NotificationT, SettingsT, StreakT } from '@/shared/contract'
 import { addDays, dayOf } from '@/shared/time'
@@ -10,7 +10,7 @@ import { db } from '../db'
 import { headers } from 'next/headers'
 import { auth, currentUser, googleEnabled, mailEnabled, realUser } from '../auth'
 import { viewAs } from '../view'
-import { checkoutUrl, confirmCheckout, LIVE, portalUrl, refreshAfterPortal, stripe, stripeEnabled, type PlanId as StripePlanId } from '../billing/stripe'
+import { checkoutUrl, confirmCheckout, isStudent, LIVE, portalUrl, refreshAfterPortal, stripe, stripeEnabled, type PlanId as StripePlanId } from '../billing/stripe'
 import { currentLocale } from '../locale'
 import { forgetMemo } from '../request'
 import { ACHIEVEMENTS } from '../content/catalog'
@@ -95,7 +95,7 @@ export const saveOnboarding = (step: number, patch: Partial<Draft>) =>
     if (patch.birthDate) {
       const t = Date.parse(patch.birthDate)
       if (!Number.isFinite(t)) fail(422, 'VALIDATION_ERROR', 'Fecha no válida')
-      if ((Date.now() - t) / (365.25 * DAY_MS) < 14) fail(403, 'UNDER_MIN_AGE', 'Lumi es para mayores de 14 años')
+      if ((Date.now() - t) / (365.25 * DAY_MS) < 14) fail(403, 'UNDER_MIN_AGE', 'E-Trading es para mayores de 14 años')
     }
     if (patch.name !== undefined && (patch.name.trim().length < 1 || patch.name.length > 30)) fail(422, 'VALIDATION_ERROR', 'Nombre no válido')
     const draft = { ...emptyDraft(c.user), ...((c.user.onboarding as object) ?? {}), ...patch }
@@ -266,14 +266,27 @@ export const markRead = (ids: string[] | 'all') =>
     await c.tx.notification.updateMany({ where: { userId: c.user.id, readAt: null, ...(ids === 'all' ? {} : { id: { in: ids } }) }, data: { readAt: new Date() } })
   })
 
-// ── Premium (simulado hasta conectar Stripe en la etapa 7) ──
-// Precios provisionales (D-053): Plus es el plan intermedio y PREMIUM se muestra como «Max»
-export const PLANS = [
-  { id: 'plus-month', tier: 'PLUS' as const, interval: 'MONTH' as const, price: '3.99', currency: 'EUR' as const, trialDays: 7 },
-  { id: 'plus-year', tier: 'PLUS' as const, interval: 'YEAR' as const, price: '29.99', currency: 'EUR' as const, trialDays: 7 },
-  { id: 'premium-month', tier: 'PREMIUM' as const, interval: 'MONTH' as const, price: '7.99', currency: 'EUR' as const, trialDays: 7 },
-  { id: 'premium-year', tier: 'PREMIUM' as const, interval: 'YEAR' as const, price: '59.99', currency: 'EUR' as const, trialDays: 7 },
+// ── Premium: planes y pago (Stripe; sin claves, pago simulado) ──
+// Plus es el plan intermedio y PREMIUM se muestra como «Max». Importes en src/shared/plans.ts (normal y de estudiante).
+const PLAN_DEFS = [
+  { id: 'plus-month', tier: 'PLUS' as const, interval: 'MONTH' as const },
+  { id: 'plus-year', tier: 'PLUS' as const, interval: 'YEAR' as const },
+  { id: 'premium-month', tier: 'PREMIUM' as const, interval: 'MONTH' as const },
+  { id: 'premium-year', tier: 'PREMIUM' as const, interval: 'YEAR' as const },
 ]
+/** Planes con su precio: el de estudiante si lo tiene vigente (regularPrice: el normal, para tacharlo) */
+export const plansFor = (student: boolean) =>
+  PLAN_DEFS.map(p => ({ ...p, price: priceOf(p.tier, p.interval, student).toFixed(2), regularPrice: priceOf(p.tier, p.interval, false).toFixed(2), student, currency: 'EUR' as const, trialDays: TRIAL_DAYS }))
+export const PLANS = plansFor(false)
+
+/** GET /billing/plans: con sesión, los precios que le tocan (estudiante o normal); sin sesión, los normales */
+export async function billingPlans() {
+  const u = await currentUser().catch(() => null)
+  return plansFor(!!u && isStudent(u))
+}
+
+/** Tiene el plan por un grupo: no se le ofrece pagar (lo gestiona en /grupo) */
+const inGroup = (sub: { status: string } | null) => sub?.status === 'GROUP'
 
 const statusOf = (u: User, s: { status: string; renewsAt: Date | null; trialEndsAt: Date | null; interval: string | null } | null): BillingStatusT => ({
   plan: u.plan, status: (s?.status ?? 'NONE') as BillingStatusT['status'], renewsAt: s?.renewsAt?.toISOString() ?? null, trialEndsAt: s?.trialEndsAt?.toISOString() ?? null, interval: (s?.interval ?? null) as BillingStatusT['interval'],
@@ -290,8 +303,12 @@ export async function planBadge() {
   // Regalo o prueba ya terminados (aún sin cerrar: se cierran en la siguiente acción): ya es Free, no se le habla como a quien tiene Max
   const plan = temporal && !temporary && u!.role !== 'ADMIN' ? 'FREE' : u!.plan
   const daysLeft = temporary ? Math.max(1, Math.ceil((sub!.trialEndsAt!.getTime() - Date.now()) / DAY_MS)) : null
-  const g = await db.gameState.findUnique({ where: { userId: u!.id }, select: { streak: true, bestStreak: true } })
-  return { plan, status: sub?.status ?? 'NONE', stripe: !!sub?.stripeSubId && LIVE.includes(sub.status), endsAt: temporary ? sub!.trialEndsAt!.toISOString() : null, daysLeft, trialUsed: u!.trialUsed, isGuest: !!u!.isAnonymous, streak: g?.streak ?? 0, trialUnlocked: trialUnlocked(g?.bestStreak ?? 0), trialStreak: TRIAL_STREAK, payments: stripeEnabled, isAdmin: u!.role === 'ADMIN' && !viewAs() }
+  const [g, group] = await Promise.all([db.gameState.findUnique({ where: { userId: u!.id }, select: { streak: true, bestStreak: true } }), (await import('./groups')).groupBadge(u!.id)])
+  return {
+    plan, status: sub?.status ?? 'NONE', stripe: !!sub?.stripeSubId && LIVE.includes(sub.status), endsAt: temporary ? sub!.trialEndsAt!.toISOString() : null, daysLeft, trialUsed: u!.trialUsed, isGuest: !!u!.isAnonymous, streak: g?.streak ?? 0, trialUnlocked: trialUnlocked(g?.bestStreak ?? 0), trialStreak: TRIAL_STREAK, payments: stripeEnabled, isAdmin: u!.role === 'ADMIN' && !viewAs(),
+    // Plan de grupo (cuenta como pagado: no se le ofrece pagar) y precio de estudiante
+    group: sub?.status === 'GROUP' ? group : null, inAnyGroup: !!group, student: isStudent(u!), studentUntil: u!.studentUntil?.toISOString() ?? null,
+  }
 }
 
 export const billingStatus = async () => {
@@ -326,13 +343,15 @@ async function stripeCheckout(planId: string) {
   const origin = h.get('origin') ?? `https://${h.get('host')}`
   const locale = currentLocale()
   const sub = await db.subscription.findUnique({ where: { userId: u!.id } })
+  if (inGroup(sub)) fail(409, 'IN_GROUP', 'Ya tienes el plan con tu grupo. Lo gestionas en Perfil › Grupo.')
   // Ya tiene una suscripción de pago: el cambio de plan (de Plus a Max, a anual…) se confirma en el portal de Stripe
   if (sub?.stripeSubId && LIVE.includes(sub.status)) return { url: (await portalUrl(u!, origin, locale, plan.id as StripePlanId))! }
   const g = await db.gameState.findUnique({ where: { userId: u!.id }, select: { bestStreak: true } })
   const trial = !u!.trialUsed && trialUnlocked(g?.bestStreak ?? 0) ? TRIAL_DAYS : null
   // Con Max regalado (o una prueba sin tarjeta) en curso, el primer cobro llega cuando se acaba: no pierde esos días
   const freeUntil = (sub?.status === 'GIFT' || (sub?.status === 'TRIALING' && !sub.stripeSubId)) && sub.trialEndsAt && sub.trialEndsAt.getTime() > Date.now() ? sub.trialEndsAt : null
-  return { url: await checkoutUrl(u!, plan.id as StripePlanId, { trialDays: trial, freeUntil, origin, locale }) }
+  // Precio de estudiante vigente: se paga con los precios _student
+  return { url: await checkoutUrl(u!, plan.id as StripePlanId, { trialDays: trial, freeUntil, origin, locale, student: isStudent(u!) }) }
 }
 
 /** Vuelta de Stripe: confirma el pago y devuelve el plan ya activo (para el «Gracias» de la app) */
@@ -363,6 +382,7 @@ const simulatedCheckout = (planId: string) =>
     if (c.user.onboardingStep !== null) fail(403, 'FORBIDDEN', 'Termina el registro primero')
     if (tierOf(c.user.plan) >= tierOf(plan.tier)) fail(409, 'CONFLICT', 'Ya tienes este plan o uno superior')
     const current = await c.tx.subscription.findUnique({ where: { userId: c.user.id } })
+    if (inGroup(current)) fail(409, 'IN_GROUP', 'Ya tienes el plan con tu grupo. Lo gestionas en Perfil › Grupo.')
     // Durante la prueba se puede subir de Plus a Max sin gastar otra prueba
     const upgradingTrial = current?.status === 'TRIALING' && c.user.plan === 'PLUS'
     // Una sola prueba gratis por cuenta
@@ -397,6 +417,7 @@ const simulatedCancel = () =>
   withCtx(async c => {
     // Sin nada que cancelar no se apunta una «cancelación» (contaría en los datos como baja)
     if (c.user.plan === 'FREE') fail(409, 'CONFLICT', 'No tienes ninguna suscripción activa')
+    if (inGroup(await c.tx.subscription.findUnique({ where: { userId: c.user.id } }))) fail(409, 'IN_GROUP', 'Tu plan es del grupo: si quieres dejarlo, sal del grupo en Perfil › Grupo.')
     const sub = await c.tx.subscription.upsert({ where: { userId: c.user.id }, create: { userId: c.user.id, status: 'CANCELED' }, update: { status: 'CANCELED', renewsAt: null, trialEndsAt: null, interval: null } })
     const u = await c.tx.user.update({ where: { id: c.user.id }, data: { plan: 'FREE' } })
     await track(c.tx, c.user.id, 'cancel', { from: c.user.plan })
@@ -432,7 +453,15 @@ export const exportData = () =>
     const { name, email, createdAt, gender, birthDate, locale, timezone, plan, companionName, skinId, settings } = c.user
     const profile = { name, email, createdAt, gender, birthDate, locale, timezone, plan, companionName, skinId, settings }
     const friends = friendLeagues.map(m => ({ name: m.league.name, joinedAt: m.joinedAt, owner: m.league.ownerId === id }))
-    return { exportedAt: new Date().toISOString(), profile, game: c.g, portfolio, positions, orders, trades, alerts, lessons, achievements, streak, notifications, tutorChat, watchlist, mistakes, quizzes, feedback, subscription, league, events, journal, missions, theses, reports, friendLeagues: friends, giftsBought, giftsRedeemed }
+    // Precio de estudiante (sin el justificante: se borra al decidir) y plan de grupo
+    const [studentRequests, groupMember, groupsOwned] = await Promise.all([
+      c.tx.studentRequest.findMany({ where: { userId: id }, select: { institution: true, studentEmail: true, status: true, note: true, createdAt: true, decidedAt: true } }),
+      c.tx.groupMember.findUnique({ where: { userId: id }, select: { joinedAt: true, group: { select: { name: true, tier: true, size: true, ownerId: true } } } }),
+      c.tx.groupPlan.findMany({ where: { ownerId: id }, select: { name: true, tier: true, size: true, interval: true, student: true, status: true, createdAt: true } }),
+    ])
+    const student = { until: c.user.studentUntil, requests: studentRequests }
+    const group = { member: groupMember && { name: groupMember.group.name, tier: groupMember.group.tier, size: groupMember.group.size, owner: groupMember.group.ownerId === id, joinedAt: groupMember.joinedAt }, owned: groupsOwned }
+    return { exportedAt: new Date().toISOString(), profile, game: c.g, portfolio, positions, orders, trades, alerts, lessons, achievements, streak, notifications, tutorChat, watchlist, mistakes, quizzes, feedback, subscription, league, events, journal, missions, theses, reports, friendLeagues: friends, giftsBought, giftsRedeemed, student, group }
   })
 
 export async function deleteAccount() {
@@ -448,6 +477,8 @@ export async function deleteAccount() {
       fail(502, 'PAYMENTS_UNAVAILABLE', 'No hemos podido cancelar tu suscripción. Inténtalo de nuevo o escríbenos desde Ayuda.')
     }
   }
+  // Si paga un plan de grupo, se cancela y cada miembro vuelve a lo suyo (con aviso)
+  await (await import('./groups')).beforeDeleteAccount(u!.id)
   // Sus ligas de amigos pasan a otro miembro (si no, se borrarían para todos)
   await (await import('./friends')).handOverLeagues(db as unknown as Tx, u!.id)
   // Las tablas del usuario se borran en cascada; queda constancia en la auditoría (sin datos personales)

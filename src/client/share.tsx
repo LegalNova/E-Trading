@@ -33,7 +33,7 @@ export function ShareButton({ what, className = 'btn btn-secondary' }: { what: S
       const img = await fetch(`/api/share/image?${q.toString()}&l=${locale}&f=story`)
       const file = new File([await img.blob()], 'lumi.png', { type: 'image/png' })
       if (navigator.canShare?.({ files: [file] })) await navigator.share({ files: [file], text: `${text} ${url}` })
-      else if (navigator.share) await navigator.share({ title: 'Lumi', text, url })
+      else if (navigator.share) await navigator.share({ title: 'E-Trading', text, url })
       else {
         await navigator.clipboard.writeText(`${text} ${url}`)
         setDone(true)

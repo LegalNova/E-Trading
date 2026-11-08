@@ -7,14 +7,32 @@ import type { User } from '@/generated/prisma/client'
 import { db } from '../db'
 import { HttpError, START_CASH, type Tx } from '../game/core'
 import { addFlow } from '../game/league'
+import { groupLookupKey, lookupKey, type BillingInterval, type GroupSize, type PaidTier } from '@/shared/plans'
 
 const KEY = process.env.STRIPE_SECRET_KEY ?? ''
 export const stripeEnabled = /^(sk|rk)_(test|live)_[A-Za-z0-9]{20,}$/.test(KEY)
 export const stripe = stripeEnabled ? new Stripe(KEY, { maxNetworkRetries: 2, timeout: 15_000 }) : null
 
 export type PlanId = 'plus-month' | 'plus-year' | 'premium-month' | 'premium-year'
-export const LOOKUP: Record<PlanId, string> = { 'plus-month': 'lumi_plus_month', 'plus-year': 'lumi_plus_year', 'premium-month': 'lumi_max_month', 'premium-year': 'lumi_max_year' }
-const TIER_OF_LOOKUP: Record<string, 'PLUS' | 'PREMIUM'> = { lumi_plus_month: 'PLUS', lumi_plus_year: 'PLUS', lumi_max_month: 'PREMIUM', lumi_max_year: 'PREMIUM' }
+const PLAN_OF: Record<PlanId, { tier: PaidTier; interval: BillingInterval }> = {
+  'plus-month': { tier: 'PLUS', interval: 'MONTH' },
+  'plus-year': { tier: 'PLUS', interval: 'YEAR' },
+  'premium-month': { tier: 'PREMIUM', interval: 'MONTH' },
+  'premium-year': { tier: 'PREMIUM', interval: 'YEAR' },
+}
+/** Lookup key del plan: precio normal (plus_month…) o de estudiante (plus_month_student…) */
+export const lookupOf = (plan: PlanId, student: boolean) => lookupKey(PLAN_OF[plan].tier, PLAN_OF[plan].interval, student)
+// Precios antiguos «lumi_*» (importes de estudiante): quien ya paga con ellos sigue igual
+const TIER_OF_LOOKUP: Record<string, 'PLUS' | 'PREMIUM'> = {
+  lumi_plus_month: 'PLUS', lumi_plus_year: 'PLUS', lumi_max_month: 'PREMIUM', lumi_max_year: 'PREMIUM',
+  ...Object.fromEntries((['PLUS', 'PREMIUM'] as const).flatMap(t => (['MONTH', 'YEAR'] as const).flatMap(i => [false, true].map(st => [lookupKey(t, i, st), t])))),
+}
+/** ¿Es un precio de estudiante? (los antiguos «lumi_*» tienen el importe de estudiante) */
+export const isStudentPrice = (p: Stripe.Price) => p.metadata?.lumi_student === '1' || /^lumi_/.test(p.lookup_key ?? '') || (p.lookup_key ?? '').endsWith('_student')
+/** Precio de estudiante vigente (lo aprueba el equipo en el admin) */
+export const isStudent = (u: Pick<User, 'studentUntil'>) => !!u.studentUntil && u.studentUntil.getTime() > Date.now()
+/** Suscripciones de plan de grupo: metadata.kind = 'group' y metadata.groupId (no son la suscripción propia de quien paga) */
+export const GROUP_KIND = 'group'
 /** Estados de una suscripción de Stripe que mantienen el plan */
 export const LIVE = ['ACTIVE', 'TRIALING', 'PAST_DUE']
 /**
@@ -38,6 +56,18 @@ async function priceId(lookup: string) {
   return id
 }
 
+/** Portal del cliente con los precios normales o con los de estudiante (scripts/stripe-setup.ts los crea) */
+const portalCache = new Map<string, { id: string | null; at: number }>()
+async function portalConfig(student: boolean) {
+  const tag = student ? 'student' : 'normal'
+  const hit = portalCache.get(tag)
+  if (hit && Date.now() - hit.at < 10 * 60_000) return hit.id ?? undefined
+  const list = await stripe!.billingPortal.configurations.list({ limit: 100, active: true }).catch(() => null)
+  const id = list?.data.find(c => c.metadata?.lumi_portal === tag)?.id ?? null
+  portalCache.set(tag, { id, at: Date.now() })
+  return id ?? undefined
+}
+
 /** Cliente de Stripe del usuario (se crea la primera vez) */
 async function customerOf(user: User) {
   const sub = await db.subscription.findUnique({ where: { userId: user.id } })
@@ -48,12 +78,13 @@ async function customerOf(user: User) {
 }
 
 /** Página de pago de Stripe (con la prueba de 7 días si la ha desbloqueado) */
-export async function checkoutUrl(user: User, plan: PlanId, opts: { trialDays: number | null; freeUntil?: Date | null; origin: string; locale: string }) {
+export async function checkoutUrl(user: User, plan: PlanId, opts: { trialDays: number | null; freeUntil?: Date | null; origin: string; locale: string; student: boolean }) {
   const customer = await customerOf(user)
   // Pagos abiertos en otras pestañas: se cierran, para que no se pueda pagar dos suscripciones a la vez
   // (solo los de suscripción: un regalo a medio pagar en otra pestaña no se toca)
   const open = await stripe!.checkout.sessions.list({ customer, status: 'open', limit: 10 }).catch(() => null)
-  await Promise.all((open?.data ?? []).filter(s => s.mode === 'subscription').map(s => stripe!.checkout.sessions.expire(s.id).catch(() => null)))
+  // (los de un plan de grupo tampoco: son otra suscripción)
+  await Promise.all((open?.data ?? []).filter(s => s.mode === 'subscription' && s.metadata?.kind !== GROUP_KIND).map(s => stripe!.checkout.sessions.expire(s.id).catch(() => null)))
   // Periodo sin cobro: la prueba (si la tiene) o los días de Max regalado que le queden (no se pierden al suscribirse).
   // Stripe pide que el final de un periodo gratis fijado a mano quede al menos 48 h por delante.
   const trialEnd = Math.max(opts.trialDays ? Date.now() + opts.trialDays * DAY_MS : 0, opts.freeUntil?.getTime() ?? 0)
@@ -62,9 +93,9 @@ export async function checkoutUrl(user: User, plan: PlanId, opts: { trialDays: n
     mode: 'subscription',
     customer,
     client_reference_id: user.id,
-    line_items: [{ price: await priceId(LOOKUP[plan]), quantity: 1 }],
-    subscription_data: { metadata: { userId: user.id, plan }, ...free },
-    metadata: { userId: user.id, plan },
+    line_items: [{ price: await priceId(lookupOf(plan, opts.student)), quantity: 1 }],
+    subscription_data: { metadata: { userId: user.id, plan, ...(opts.student ? { student: '1' } : {}) }, ...free },
+    metadata: { userId: user.id, plan, ...(opts.student ? { student: '1' } : {}) },
     allow_promotion_codes: true,
     locale: opts.locale === 'ca' ? 'auto' : (opts.locale as 'es' | 'en'),
     // Al volver, la app confirma el pago con Stripe ({CHECKOUT_SESSION_ID} lo rellena Stripe) y enseña el «Gracias»
@@ -82,18 +113,21 @@ export async function portalUrl(user: User, origin: string, locale: string, plan
   const sub = await db.subscription.findUnique({ where: { userId: user.id } })
   if (!sub?.stripeCustomerId) return null
   const return_url = `${origin}/${locale}/ajustes`
+  // Portal con los precios que le tocan (normal o de estudiante); si aún no existe, el de por defecto
+  const configuration = await portalConfig(isStudent(user))
   let flow: Stripe.BillingPortal.SessionCreateParams.FlowData | undefined
   if (plan && sub.stripeSubId && LIVE.includes(sub.status)) {
     const s = await stripe!.subscriptions.retrieve(sub.stripeSubId).catch(() => null)
     const item = s?.items.data[0]
-    if (s && item && item.price.lookup_key !== LOOKUP[plan] && !s.cancel_at_period_end)
-      flow = { type: 'subscription_update_confirm', subscription_update_confirm: { subscription: s.id, items: [{ id: item.id, price: await priceId(LOOKUP[plan]), quantity: 1 }] }, after_completion: { type: 'redirect', redirect: { return_url } } }
+    const lookup = lookupOf(plan, isStudent(user))
+    if (s && item && item.price.lookup_key !== lookup && !s.cancel_at_period_end)
+      flow = { type: 'subscription_update_confirm', subscription_update_confirm: { subscription: s.id, items: [{ id: item.id, price: await priceId(lookup), quantity: 1 }] }, after_completion: { type: 'redirect', redirect: { return_url } } }
   }
-  const s = await stripe!.billingPortal.sessions.create({ customer: sub.stripeCustomerId, return_url, ...(flow ? { flow_data: flow } : {}) }).catch(e => {
+  const s = await stripe!.billingPortal.sessions.create({ customer: sub.stripeCustomerId, return_url, ...(configuration ? { configuration } : {}), ...(flow ? { flow_data: flow } : {}) }).catch(e => {
     // Si el cambio directo no se puede preparar (portal sin ese plan, por ejemplo), se abre el portal normal
     if (!flow) throw e
     console.error('stripe portal flow', e)
-    return stripe!.billingPortal.sessions.create({ customer: sub.stripeCustomerId!, return_url })
+    return stripe!.billingPortal.sessions.create({ customer: sub.stripeCustomerId!, return_url, ...(configuration ? { configuration } : {}) })
   })
   // Al volver del portal, la app vuelve a mirar en Stripe (por si el aviso de Stripe tarda o no llega)
   await db.event.create({ data: { userId: user.id, name: 'portal_open', props: { plan: plan ?? null } } }).catch(() => null)
@@ -126,6 +160,11 @@ const STATUS: Record<string, string> = { trialing: 'TRIALING', active: 'ACTIVE',
 
 /** Copia en nuestra base de datos el estado de una suscripción de Stripe (idempotente) */
 export async function syncSubscription(s: Stripe.Subscription) {
+  // Plan de grupo: va a su grupo (no es la suscripción propia de quien paga)
+  if (s.metadata?.kind === GROUP_KIND) {
+    await (await import('../game/groups')).syncGroupSub(s)
+    return null
+  }
   const userId = s.metadata?.userId ?? (await db.subscription.findFirst({ where: { stripeCustomerId: String(s.customer) }, select: { userId: true } }))?.userId
   if (!userId) return null
   const item = s.items.data[0]
@@ -140,7 +179,9 @@ export async function syncSubscription(s: Stripe.Subscription) {
     // (otra suscripción de pago más nueva, o Max regalado por invitar después de cancelar)
     const otherLive = !!row.stripeSubId && row.stripeSubId !== s.id && LIVE.includes(row.status)
     const liveGift = row.status === 'GIFT' && !!row.trialEndsAt && row.trialEndsAt.getTime() > Date.now()
-    if (otherLive || liveGift) return { userId, status: row.status, tier, ignored: true as const }
+    // Tiene el plan por su grupo: un aviso de su suscripción propia (vieja o recién terminada) no se lo quita
+    const inGroup = row.status === 'GROUP'
+    if (otherLive || liveGift || inGroup) return { userId, status: row.status, tier, ignored: true as const }
   }
   const renewsAt = item?.current_period_end ? new Date(item.current_period_end * 1000) : null
   const trialEndsAt = s.trial_end ? new Date(s.trial_end * 1000) : null
@@ -155,6 +196,8 @@ export async function syncSubscription(s: Stripe.Subscription) {
     // En la liga, ese saldo extra no es rentabilidad
     if (up.count) await addFlow(db as unknown as Tx, userId, START_CASH.PREMIUM - START_CASH.FREE)
   }
+  // Su suscripción propia ha terminado pero está en un plan de grupo en marcha: sigue con el plan del grupo
+  if (!keeps) await (await import('../game/groups')).reapplyGroupPlan(userId)
   return { userId, status, tier, ignored: false as const }
 }
 
@@ -186,7 +229,7 @@ export async function delayNextCharge(userId: string, subId: string, days: numbe
 export async function confirmCheckout(userId: string, sessionId: string) {
   const s = await stripe!.checkout.sessions.retrieve(sessionId).catch(() => null)
   // Solo la persona que pagó puede confirmar su sesión
-  if (!s || s.client_reference_id !== userId) throw new HttpError(404, 'NOT_FOUND', 'No encontramos ese pago')
+  if (!s || s.client_reference_id !== userId || s.metadata?.kind === GROUP_KIND) throw new HttpError(404, 'NOT_FOUND', 'No encontramos ese pago')
   if (s.status !== 'complete' || !s.subscription) return { done: false as const, expired: s.status === 'expired' }
   const sub = await stripe!.subscriptions.retrieve(String(s.subscription))
   const r = await syncSubscription(sub)
@@ -223,3 +266,67 @@ export async function giftCheckout(user: User, gift: { id: string; amount: numbe
 /** Sesión de pago de Stripe (para confirmar un regalo al volver) */
 export const checkoutSession = (id: string) => stripe!.checkout.sessions.retrieve(id)
 
+
+// ── Precio de estudiante en una suscripción que ya paga ──────────────────
+/**
+ * Le aprueban el precio de estudiante y ya paga el normal: su suscripción pasa al precio de estudiante desde el
+ * siguiente cobro (sin prorrateo: lo ya pagado no cambia). Devuelve true si se ha cambiado.
+ */
+export async function switchToStudentPrice(userId: string) {
+  if (!stripe) return false
+  const row = await db.subscription.findUnique({ where: { userId } })
+  if (!row?.stripeSubId || !LIVE.includes(row.status)) return false
+  const s = await stripe.subscriptions.retrieve(row.stripeSubId)
+  const item = s.items.data[0]
+  if (s.metadata?.kind === GROUP_KIND || !item || isStudentPrice(item.price) || s.cancel_at_period_end) return false
+  const tier = (item.price.metadata?.lumi_tier as PaidTier | undefined) ?? TIER_OF_LOOKUP[item.price.lookup_key ?? ''] ?? 'PREMIUM'
+  const interval: BillingInterval = item.price.recurring?.interval === 'year' ? 'YEAR' : 'MONTH'
+  const price = await priceId(lookupKey(tier, interval, true))
+  const updated = await stripe.subscriptions.update(s.id, { items: [{ id: item.id, price }], proration_behavior: 'none', metadata: { student: '1' } }, { idempotencyKey: `student-${s.id}-${price}` })
+  await syncSubscription(updated)
+  return true
+}
+
+// ── Planes de grupo: suscripción de quien paga, con metadata.kind = 'group' ──
+export const groupLookup = (g: { size: number; tier: PaidTier; interval: BillingInterval }, student: boolean) => groupLookupKey(g.size as GroupSize, g.tier, g.interval, student)
+
+export async function groupCheckout(user: User, g: { id: string; name: string; size: number; tier: PaidTier; interval: BillingInterval; student: boolean }, opts: { origin: string; locale: string }) {
+  const customer = await customerOf(user)
+  const meta = { kind: GROUP_KIND, groupId: g.id, userId: user.id }
+  const session = await stripe!.checkout.sessions.create(
+    {
+      mode: 'subscription',
+      customer,
+      client_reference_id: user.id,
+      line_items: [{ price: await priceId(groupLookup(g, g.student)), quantity: 1 }],
+      subscription_data: { metadata: meta, description: g.name },
+      metadata: meta,
+      allow_promotion_codes: true,
+      locale: opts.locale === 'ca' ? 'auto' : (opts.locale as 'es' | 'en'),
+      success_url: `${opts.origin}/${opts.locale}/grupo?pago=ok&sid={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${opts.origin}/${opts.locale}/grupo?pago=no`,
+    },
+  )
+  return { id: session.id, url: session.url! }
+}
+
+/** Grupo de quien ya paga el precio normal y le aprueban el de estudiante: pasa al precio de estudiante desde el siguiente cobro */
+export async function switchGroupToStudent(subId: string, g: { size: number; tier: PaidTier; interval: BillingInterval }) {
+  if (!stripe) return false
+  const s = await stripe.subscriptions.retrieve(subId)
+  const item = s.items.data[0]
+  if (!item || isStudentPrice(item.price) || !['active', 'trialing', 'past_due'].includes(s.status) || s.cancel_at_period_end) return false
+  const price = await priceId(groupLookup(g, true))
+  const updated = await stripe.subscriptions.update(s.id, { items: [{ id: item.id, price }], proration_behavior: 'none' }, { idempotencyKey: `group-student-${s.id}-${price}` })
+  await syncSubscription(updated)
+  return true
+}
+
+/** Portal de Stripe para gestionar el pago del grupo (mismo cliente que su suscripción propia) */
+export async function groupPortalUrl(user: User, origin: string, locale: string) {
+  const sub = await db.subscription.findUnique({ where: { userId: user.id } })
+  if (!sub?.stripeCustomerId) return null
+  const configuration = await portalConfig(isStudent(user))
+  const s = await stripe!.billingPortal.sessions.create({ customer: sub.stripeCustomerId, return_url: `${origin}/${locale}/grupo`, ...(configuration ? { configuration } : {}) })
+  return s.url
+}

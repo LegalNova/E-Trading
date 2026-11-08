@@ -190,6 +190,26 @@ export const httpApi: Api = {
   cancelSubscription: () => post('/billing/cancel'),
   confirmPayment: sessionId => post('/billing/confirm', { sessionId }),
   billingPortal: () => post('/billing/portal'),
+  studentStatus: () => get('/billing/student'),
+  requestStudent: async form => {
+    // Multipart (con el justificante): va a su propia ruta, fuera del límite de 32 KB de la API
+    const r = await fetch('/api/uploads/student', { method: 'POST', body: form, credentials: 'same-origin', headers: { 'x-locale': document.documentElement.lang || 'es' } })
+    const data = await r.json().catch(() => null)
+    if (!r.ok) throw new ApiFailure(data?.error?.code ?? (r.status === 413 ? 'FILE_TOO_BIG' : 'INTERNAL'), data?.error?.message ?? 'Algo no ha ido bien. Prueba otra vez.', r.status)
+    return data
+  },
+  myGroup: () => get('/groups/mine'),
+  createGroup: g => post('/groups', g),
+  confirmGroup: sessionId => post('/groups/confirm', { sessionId }),
+  groupPeek: code => get(`/groups/code/${encodeURIComponent(code)}`),
+  joinGroup: code => post('/groups/join', { code }),
+  leaveGroup: () => post('/groups/leave'),
+  renameGroup: name => call('PATCH', '/groups/mine', { name }),
+  removeGroupMember: key => call('DELETE', `/groups/members/${encodeURIComponent(key)}`),
+  groupPayment: () => post('/groups/payment'),
+  adminStudents: () => get('/admin/students'),
+  adminDecideStudent: (id, approve, note) => post(`/admin/students/${encodeURIComponent(id)}`, { approve, note }),
+  adminGroups: () => get('/admin/groups'),
   exportData: async () => JSON.stringify(await get('/me/export'), null, 2),
   deleteAccount: () => call('DELETE', '/me'),
 

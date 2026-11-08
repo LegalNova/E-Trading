@@ -1,7 +1,7 @@
 {
   "gifts": {
-    "link": "Regalar la Lumi",
-    "title": "Regalar la Lumi",
+    "link": "Regalar E-Trading",
+    "title": "Regalar E-Trading",
     "headline": "Regala aprendre a invertir",
     "intro": "Classes curtes i pràctica amb diners virtuals i preus reals. Sense gurus, sense senyals, sense promeses.",
     "whatTitle": "Què regales",
@@ -20,7 +20,7 @@
     "pay": "Pagar {price}",
     "payNote": "Pagament únic amb Stripe. No es renova: no hi haurà més cobraments.",
     "terms": "En pagar acceptes les <terms>condicions de contractació</terms>. Es pot bescanviar durant 12 mesos i tens 14 dies per desistir mentre no s’hagi bescanviat.",
-    "guest": "Desa el teu progrés amb correu i contrasenya per poder regalar la Lumi.",
+    "guest": "Desa el teu progrés amb correu i contrasenya per poder regalar E-Trading.",
     "guestCta": "Desar el meu progrés",
     "unavailable": "El pagament amb targeta encara no està actiu. Torna-ho a provar aviat.",
     "canceled": "Has sortit del pagament sense acabar-lo. No se t’ha cobrat res.",
@@ -42,12 +42,12 @@
     "share": "Compartir",
     "copy": "Copiar l’enllaç",
     "copied": "Copiat",
-    "shareText": "{from} et regala la Lumi {plan} durant {length} per aprendre a invertir. Bescanvia-la aquí: {link}",
-    "shareTextAnon": "Et regalo la Lumi {plan} durant {length} per aprendre a invertir. Bescanvia-la aquí: {link}",
+    "shareText": "{from} et regala E-Trading {plan} durant {length} per aprendre a invertir. Bescanvia el regal aquí: {link}",
+    "shareTextAnon": "Et regalo E-Trading {plan} durant {length} per aprendre a invertir. Bescanvia el regal aquí: {link}",
     "another": "Regalar-ne un altre",
     "mine": "Els meus regals",
-    "mineEmpty": "Encara no has regalat la Lumi. Quan ho facis, aquí veuràs si ja l’han bescanviat.",
-    "mineItem": "Lumi {plan} · {length}",
+    "mineEmpty": "Encara no has regalat E-Trading. Quan ho facis, aquí veuràs si ja l’han bescanviat.",
+    "mineItem": "E-Trading {plan} · {length}",
     "mineFor": "Per a {name}",
     "status": {
       "PENDING": "Pendent de pagament",
@@ -72,13 +72,13 @@
     },
     "redeem": {
       "pageTitle": "Un regal per a tu",
-      "metaFrom": "{name} et regala la Lumi {plan}",
-      "metaAnon": "T’han regalat la Lumi {plan}",
-      "metaDescription": "La Lumi és la manera fiable d’aprendre a invertir: classes curtes i pràctica amb diners virtuals i preus reals.",
-      "title": "{name} et regala la Lumi",
-      "titleAnon": "T’han regalat la Lumi",
-      "includes": "La Lumi {plan} durant {length}. Inclou:",
-      "what": "La Lumi és la manera fiable d’aprendre a invertir: aprens amb classes curtes i practiques amb diners virtuals i preus reals. Sense gurus, sense senyals, sense promeses.",
+      "metaFrom": "{name} et regala E-Trading {plan}",
+      "metaAnon": "T’han regalat E-Trading {plan}",
+      "metaDescription": "E-Trading és la manera fiable d’aprendre a invertir: classes curtes i pràctica amb diners virtuals i preus reals.",
+      "title": "{name} et regala E-Trading",
+      "titleAnon": "T’han regalat E-Trading",
+      "includes": "E-Trading {plan} durant {length}. Inclou:",
+      "what": "E-Trading és la manera fiable d’aprendre a invertir: aprens amb classes curtes i practiques amb diners virtuals i preus reals. Sense gurus, sense senyals, sense promeses.",
       "cta": "Bescanviar el meu regal",
       "signUp": "Crear compte i bescanviar",
       "signIn": "Ja tinc compte",
@@ -88,7 +88,7 @@
       "onboarding": "Acaba la benvinguda i torna aquí per bescanviar-lo. El tenim guardat.",
       "onboardingCta": "Continuar la benvinguda",
       "until": "Es pot bescanviar fins al {date}.",
-      "doneTitle": "Ja tens la Lumi {plan}!",
+      "doneTitle": "Ja tens E-Trading {plan}!",
       "doneGift": "La tens fins al {date}. Gaudeix aprenent.",
       "doneKeepMax": "Mantens Max i els dies se sumen: el tens fins al {date}.",
       "doneDelayed": "Com que ja pagues una subscripció, el teu proper cobrament es retarda {days} dies.",
@@ -104,9 +104,9 @@
       "canceled": "Aquest regal es va anul·lar i ja no es pot bescanviar.",
       "notFound": "Aquest codi de regal no existeix. Revisa l’enllaç.",
       "loadError": "No hem pogut carregar el regal. Torna-ho a provar.",
-      "goApp": "Anar a la Lumi",
-      "knowMore": "Conèixer la Lumi",
-      "legal": "La Lumi és una app educativa: no és assessorament financer i la simulació fa servir diners virtuals, mai diners reals.",
+      "goApp": "Anar a E-Trading",
+      "knowMore": "Conèixer E-Trading",
+      "legal": "E-Trading és una app educativa: no és assessorament financer i la simulació fa servir diners virtuals, mai diners reals.",
       "errors": {
         "GIFT_REDEEMED": "Aquest regal ja s’ha bescanviat.",
         "GIFT_ALREADY_YOURS": "Ja vas bescanviar aquest regal.",
@@ -122,7 +122,7 @@
     "banner": {
       "xmasTitle": "Aquest Nadal, regala aprendre a invertir",
       "xmasBody": "Plus o Max durant 1 o 12 mesos. Pagament únic, sense renovacions.",
-      "title": "Regala la Lumi",
+      "title": "Regala E-Trading",
       "body": "Plus o Max durant 1 o 12 mesos. Pagament únic, sense renovacions.",
       "pendingTitle": "Tens un regal per bescanviar",
       "pendingBody": "És teu: bescanvia’l amb un toc.",
@@ -132,8 +132,8 @@
   "landing2": {
     "hero": "La manera fiable d’aprendre a invertir.",
     "heroTag": "Sense gurus, sense senyals, sense promeses.",
-    "heroSub": "La Lumi t’ensenya a decidir per tu. Aprens amb classes de cinc minuts i practiques amb diners virtuals sobre preus reals.",
-    "navWhy": "Per què la Lumi",
+    "heroSub": "E-Trading t’ensenya a decidir per tu. Aprens amb classes de cinc minuts i practiques amb diners virtuals sobre preus reals.",
+    "navWhy": "Per què E-Trading",
     "navGift": "Regalar",
     "whyTitle": "El contrari d’un curs de «guru»",
     "whySub": "Aquí ningú no et ven la fórmula per fer-te ric. T’ensenyem a pensar com un inversor.",
@@ -156,7 +156,7 @@
       },
       "transparent": {
         "title": "Transparència",
-        "body": "T’expliquem com funciona tot: d’on surten els preus i què és simulat. La Lumi es paga amb els seus plans: no es connecta a cap bròquer ni cobra comissions."
+        "body": "T’expliquem com funciona tot: d’on surten els preus i què és simulat. E-Trading es paga amb els seus plans: no es connecta a cap bròquer ni cobra comissions."
       }
     },
     "freeTag": "Gratis per sempre",
@@ -172,14 +172,16 @@
     "orYear": "o {year} l’any (estalvies un {pct} %)",
     "plansSub": "Preus finals amb IVA. Cancel·les quan vulguis des d’Ajustos.",
     "legalTitle": "Important",
-    "legal": "La Lumi és una app educativa. No és assessorament financer ni una recomanació d’inversió personalitzada. La simulació fa servir diners virtuals: no s’opera amb diners reals ni es connecta a cap bròquer, i els resultats simulats no garanteixen resultats reals.",
+    "legal": "E-Trading és una app educativa. No és assessorament financer ni una recomanació d’inversió personalitzada. La simulació fa servir diners virtuals: no s’opera amb diners reals ni es connecta a cap bròquer, i els resultats simulats no garanteixen resultats reals.",
     "giftTitle": "Regala aprendre a invertir",
     "giftXmasTitle": "Aquest Nadal, regala aprendre a invertir",
     "giftBody": "Regala Plus o Max durant 1 o 12 mesos. Pagament únic, sense renovacions: qui el rep el bescanvia amb un enllaç.",
-    "giftCta": "Regalar la Lumi",
+    "giftCta": "Regalar E-Trading",
     "giftFrom": "Des de {price}",
     "giftNote": "Es pot bescanviar durant 12 mesos des de la compra.",
     "giftSignIn": "Ja tinc compte",
-    "example": "Exemple"
+    "example": "Exemple",
+    "studentNote": "Ets estudiant? Amb el carnet o la matrícula pagues menys: Plus {plus}/mes i Max {max}/mes.",
+    "groupNote": "També hi ha plans de grup per a 4, 8 o més persones: amics, classes i acadèmies."
   }
 }

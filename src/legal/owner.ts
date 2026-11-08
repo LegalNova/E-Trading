@@ -6,5 +6,5 @@ export const OWNER = {
   address: '[pendiente de completar]',
   email: 'jvidalalmirall@gmail.com',
   site: 'https://e-trading-app.vercel.app',
-  brand: 'Lumi',
+  brand: 'E-Trading',
 }

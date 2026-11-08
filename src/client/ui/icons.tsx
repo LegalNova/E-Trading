@@ -78,13 +78,13 @@ export function Logo({ size = 28, className }: { size?: number; className?: stri
   )
 }
 
-/** Logotipo completo: símbolo + «Lumi» con el punto azul como único acento */
+/** Logotipo completo: símbolo + «E-Trading» con el punto azul como único acento (Lumi es la mascota, no la marca) */
 export function Wordmark({ size = 22, symbol = true, className }: { size?: number; symbol?: boolean; className?: string }) {
   return (
-    <span className={`inline-flex items-center font-extrabold ${className ?? ''}`} style={{ gap: size * 0.38, fontSize: size, letterSpacing: '-0.03em', color: 'var(--ink)', lineHeight: 1 }} aria-label="Lumi" role="img">
+    <span className={`inline-flex flex-none items-center font-extrabold whitespace-nowrap ${className ?? ''}`} style={{ gap: size * 0.38, fontSize: size, letterSpacing: '-0.03em', color: 'var(--ink)', lineHeight: 1 }} aria-label="E-Trading" role="img">
       {symbol && <Logo size={size * 1.15} />}
       <span className="inline-flex items-end" aria-hidden="true">
-        Lumi
+        E-Trading
         <span style={{ width: size * 0.25, height: size * 0.25, borderRadius: '50%', background: 'var(--brand)', margin: `0 0 ${size * 0.12}px ${size * 0.08}px` }} />
       </span>
     </span>

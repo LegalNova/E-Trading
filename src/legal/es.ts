@@ -24,10 +24,10 @@ export const es: Record<LegalSlug, LegalDoc> = {
         },
       },
       {
-        h: '2. Qué es Lumi',
+        h: '2. Qué es E-Trading',
         p: [
-          'Lumi es una aplicación educativa para aprender a invertir mediante clases, cuestionarios y un simulador de mercado con dinero virtual.',
-          'Lumi no es una entidad financiera ni una empresa de servicios de inversión: no recibe dinero de los usuarios, no ejecuta operaciones reales, no se conecta a ningún bróker y no presta asesoramiento en materia de inversión. Por ello no está autorizada ni supervisada por la Comisión Nacional del Mercado de Valores (CNMV).',
+          'E-Trading es una aplicación educativa para aprender a invertir mediante clases, cuestionarios y un simulador de mercado con dinero virtual.',
+          'E-Trading no es una entidad financiera ni una empresa de servicios de inversión: no recibe dinero de los usuarios, no ejecuta operaciones reales, no se conecta a ningún bróker y no presta asesoramiento en materia de inversión. Por ello no está autorizada ni supervisada por la Comisión Nacional del Mercado de Valores (CNMV).',
         ],
       },
       {
@@ -44,7 +44,7 @@ export const es: Record<LegalSlug, LegalDoc> = {
       {
         h: '5. Propiedad intelectual',
         p: [
-          'Los textos, ejercicios, diseño, logotipos, la mascota Lumi y el código de Lumi pertenecen a su titular o se usan con licencia. No se permite copiarlos ni distribuirlos sin autorización, salvo para uso personal y no comercial.',
+          'Los textos, ejercicios, diseño, logotipos, la mascota Lumi y el código de E-Trading pertenecen a su titular o se usan con licencia. No se permite copiarlos ni distribuirlos sin autorización, salvo para uso personal y no comercial.',
           'Las marcas y nombres de empresas que aparecen en el simulador (por ejemplo, Apple o Banco Santander) pertenecen a sus titulares y se citan solo para identificar los activos.',
         ],
       },
@@ -175,15 +175,15 @@ export const es: Record<LegalSlug, LegalDoc> = {
       },
       {
         h: '2. Qué usamos',
-        p: ['Lumi solo usa cookies y almacenamiento técnicos o de preferencias que tú eliges. No usamos cookies de analítica, de publicidad ni de terceros.'],
+        p: ['E-Trading solo usa cookies y almacenamiento técnicos o de preferencias que tú eliges. No usamos cookies de analítica, de publicidad ni de terceros.'],
         table: {
           head: ['Nombre', 'Titular', 'Para qué', 'Duración', 'Tipo'],
           rows: [
-            ['__Secure-better-auth.session_token', 'Lumi', 'Mantener tu sesión iniciada de forma segura', '30 días', 'Técnica, necesaria'],
-            ['better-auth.state', 'Lumi', 'Proteger el inicio de sesión con Google (solo si lo usas)', '10 minutos', 'Técnica, necesaria'],
-            ['NEXT_LOCALE', 'Lumi', 'Recordar el idioma que elijas en Ajustes', '1 año', 'De preferencia elegida por ti'],
-            ['et-theme (almacenamiento local)', 'Lumi', 'Recordar el tema claro u oscuro', 'Hasta que lo borres', 'De preferencia elegida por ti'],
-            ['et-cookies (almacenamiento local)', 'Lumi', 'Recordar que ya has visto el aviso de cookies', 'Hasta que lo borres', 'Técnica'],
+            ['__Secure-better-auth.session_token', 'E-Trading', 'Mantener tu sesión iniciada de forma segura', '30 días', 'Técnica, necesaria'],
+            ['better-auth.state', 'E-Trading', 'Proteger el inicio de sesión con Google (solo si lo usas)', '10 minutos', 'Técnica, necesaria'],
+            ['NEXT_LOCALE', 'E-Trading', 'Recordar el idioma que elijas en Ajustes', '1 año', 'De preferencia elegida por ti'],
+            ['et-theme (almacenamiento local)', 'E-Trading', 'Recordar el tema claro u oscuro', 'Hasta que lo borres', 'De preferencia elegida por ti'],
+            ['et-cookies (almacenamiento local)', 'E-Trading', 'Recordar que ya has visto el aviso de cookies', 'Hasta que lo borres', 'Técnica'],
           ],
         },
       },
@@ -203,11 +203,11 @@ export const es: Record<LegalSlug, LegalDoc> = {
 
   terminos: {
     title: 'Términos de uso',
-    intro: `Última actualización: ${LEGAL_UPDATED}. Estos términos regulan el uso de Lumi. Al crear una cuenta los aceptas.`,
+    intro: `Última actualización: ${LEGAL_UPDATED}. Estos términos regulan el uso de E-Trading. Al crear una cuenta los aceptas.`,
     sections: [
       {
         h: '1. El servicio',
-        p: [`Lumi, de ${O.name}, ofrece clases, cuestionarios, un simulador de mercado con dinero virtual y elementos de juego (XP, racha, vidas, gemas, logros y liga) para aprender a invertir.`],
+        p: [`E-Trading, de ${O.name}, ofrece clases, cuestionarios, un simulador de mercado con dinero virtual y elementos de juego (XP, racha, vidas, gemas, logros y liga) para aprender a invertir.`],
       },
       {
         h: '2. Es una simulación educativa',
@@ -264,7 +264,7 @@ export const es: Record<LegalSlug, LegalDoc> = {
       },
       {
         h: '9. Propiedad intelectual',
-        p: ['El contenido de Lumi pertenece a su titular o se usa con licencia. Puedes usarlo para tu aprendizaje personal, pero no copiarlo ni distribuirlo sin permiso.'],
+        p: ['El contenido de E-Trading pertenece a su titular o se usa con licencia. Puedes usarlo para tu aprendizaje personal, pero no copiarlo ni distribuirlo sin permiso.'],
       },
       {
         h: '10. Responsabilidad',
@@ -357,7 +357,7 @@ export const es: Record<LegalSlug, LegalDoc> = {
         h: '9. Si algo no funciona',
         p: [
           'El servicio debe funcionar como se describe. Si no es así, tienes derecho a que lo arreglemos y, si no lo conseguimos en un plazo razonable, a una rebaja del precio o a terminar el contrato con la devolución correspondiente (garantía de conformidad de los contenidos y servicios digitales).',
-          'Lumi es un servicio educativo con dinero virtual: no garantiza ningún resultado económico real.',
+          'E-Trading es un servicio educativo con dinero virtual: no garantiza ningún resultado económico real.',
         ],
       },
       {
@@ -377,7 +377,7 @@ export const es: Record<LegalSlug, LegalDoc> = {
         ],
       },
       {
-        h: '12. Regalar Lumi',
+        h: '12. Regalar E-Trading',
         p: ['Puedes regalar Plus o Max durante 1 mes (30 días) o 12 meses (365 días) a otra persona. Estas condiciones se aplican al regalo junto con las anteriores.'],
         list: [
           'Precio: el de 1 mes o el anual del plan (Plus: 3,99 € o 29,99 €; Max: 7,99 € o 59,99 €), con impuestos incluidos. Es un pago único con tarjeta a través de Stripe: no es una suscripción, no se renueva y no habrá más cobros.',

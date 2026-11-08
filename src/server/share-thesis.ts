@@ -6,9 +6,9 @@ import { db } from './db'
 import type { ShareCard, ShareLang } from './share'
 
 const TXT = {
-  es: { done: 'Completada', kicker: (c: string) => `Tesis de inversión · ${c}`, first: (n: string) => `${n} ha completado su primera tesis de inversión con Lumi`, next: (n: string) => `${n} ha completado una tesis de inversión con Lumi`, who: 'Puntuación de la tesis, de 0 a 100', anon: 'Alguien' },
-  ca: { done: 'Completada', kicker: (c: string) => `Tesi d'inversió · ${c}`, first: (n: string) => `${n} ha completat la seva primera tesi d'inversió amb la Lumi`, next: (n: string) => `${n} ha completat una tesi d'inversió amb la Lumi`, who: 'Puntuació de la tesi, de 0 a 100', anon: 'Algú' },
-  en: { done: 'Completed', kicker: (c: string) => `Investment thesis · ${c}`, first: (n: string) => `${n} has completed their first investment thesis with Lumi`, next: (n: string) => `${n} has completed an investment thesis with Lumi`, who: 'Thesis score, out of 100', anon: 'Someone' },
+  es: { done: 'Completada', kicker: (c: string) => `Tesis de inversión · ${c}`, first: (n: string) => `${n} ha completado su primera tesis de inversión con E-Trading`, next: (n: string) => `${n} ha completado una tesis de inversión con E-Trading`, who: 'Puntuación de la tesis, de 0 a 100', anon: 'Alguien' },
+  ca: { done: 'Completada', kicker: (c: string) => `Tesi d'inversió · ${c}`, first: (n: string) => `${n} ha completat la seva primera tesi d'inversió amb E-Trading`, next: (n: string) => `${n} ha completat una tesi d'inversió amb E-Trading`, who: 'Puntuació de la tesi, de 0 a 100', anon: 'Algú' },
+  en: { done: 'Completed', kicker: (c: string) => `Investment thesis · ${c}`, first: (n: string) => `${n} has completed their first investment thesis with E-Trading`, next: (n: string) => `${n} has completed an investment thesis with E-Trading`, who: 'Thesis score, out of 100', anon: 'Someone' },
 }
 
 export async function thesisCard(q: URLSearchParams, base: Omit<ShareCard, 'kicker' | 'big' | 'title'>, lang: ShareLang): Promise<ShareCard | null> {

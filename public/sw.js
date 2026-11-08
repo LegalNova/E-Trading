@@ -1,4 +1,4 @@
-// Lumi · trabajador de avisos: muestra los avisos que llegan y, al tocarlos, abre la pantalla que toca.
+// E-Trading · trabajador de avisos: muestra los avisos que llegan y, al tocarlos, abre la pantalla que toca.
 self.addEventListener('install', () => self.skipWaiting())
 self.addEventListener('activate', e => e.waitUntil(self.clients.claim()))
 
@@ -7,12 +7,12 @@ self.addEventListener('push', e => {
   try {
     d = e.data ? e.data.json() : {}
   } catch {
-    d = { title: 'Lumi', body: e.data ? e.data.text() : '' }
+    d = { title: 'E-Trading', body: e.data ? e.data.text() : '' }
   }
   // Solo enlaces de la propia app
   const url = typeof d.url === 'string' && d.url.startsWith('/') ? d.url : '/'
   e.waitUntil(
-    self.registration.showNotification(String(d.title || 'Lumi').slice(0, 120), {
+    self.registration.showNotification(String(d.title || 'E-Trading').slice(0, 120), {
       body: String(d.body || '').slice(0, 300),
       icon: '/icons/icon-192.png',
       badge: '/icons/icon-192.png',

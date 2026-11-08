@@ -21,7 +21,8 @@ export function InviteCard() {
   if (!session?.signedIn) return null
   // Quien ya tiene Max no «gana Max»: regala Max a su amigo. Quien paga (Plus o Max) tampoco: retrasa 7 días su próximo cobro.
   const hasMax = badge?.plan === 'PREMIUM'
-  const pays = !!badge && badge.plan !== 'FREE' && !badge.daysLeft
+  // (con plan de grupo no tiene cobro propio que retrasar: sus días se guardan para después)
+  const pays = !!badge && badge.plan !== 'FREE' && !badge.daysLeft && badge.status !== 'GROUP'
   const title = hasMax || pays ? t('titleGive') : t('title')
   const body = pays ? t('bodyPaid') : hasMax ? t('bodyMax') : t('body')
   const share = async () => {
@@ -29,7 +30,7 @@ export function InviteCard() {
     const link = `${location.origin}/?inv=${inv.code}`
     const text = ti('shareText', { link })
     try {
-      if (navigator.share) return void (await navigator.share({ title: 'Lumi', text }))
+      if (navigator.share) return void (await navigator.share({ title: 'E-Trading', text }))
       await navigator.clipboard.writeText(link)
       setCopied(true)
       setTimeout(() => setCopied(false), 1800)

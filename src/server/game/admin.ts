@@ -357,9 +357,9 @@ async function controlsOf(userId: string) {
 
 function giftText(lang: Lang, tier: 'PLUS' | 'PREMIUM', days: number, mode: 'DELAYED_CHARGE' | 'EXTENDED' | 'GIFT', until: Date | null) {
   const D = {
-    es: { 7: '7 días', 30: '1 mes', 90: '3 meses', 180: '6 meses', 365: '1 año', n: `${days} días`, of: 'de', title: 'El equipo de Lumi te ha regalado', delayed: `Tu próximo cobro se retrasa ${days} días.`, gift: 'Ya lo tienes hasta el', ext: 'Tu plan se alarga hasta el' },
-    ca: { 7: '7 dies', 30: '1 mes', 90: '3 mesos', 180: '6 mesos', 365: '1 any', n: `${days} dies`, of: 'de', title: 'L’equip de la Lumi t’ha regalat', delayed: `El teu proper cobrament es retarda ${days} dies.`, gift: 'Ja el tens fins al', ext: 'El teu pla s’allarga fins al' },
-    en: { 7: '7 days', 30: '1 month', 90: '3 months', 180: '6 months', 365: '1 year', n: `${days} days`, of: 'of', title: 'The Lumi team has gifted you', delayed: `Your next charge is pushed back ${days} days.`, gift: 'You have it until', ext: 'Your plan now runs until' },
+    es: { 7: '7 días', 30: '1 mes', 90: '3 meses', 180: '6 meses', 365: '1 año', n: `${days} días`, of: 'de', title: 'El equipo de E-Trading te ha regalado', delayed: `Tu próximo cobro se retrasa ${days} días.`, gift: 'Ya lo tienes hasta el', ext: 'Tu plan se alarga hasta el' },
+    ca: { 7: '7 dies', 30: '1 mes', 90: '3 mesos', 180: '6 mesos', 365: '1 any', n: `${days} dies`, of: 'de', title: 'L’equip d’E-Trading t’ha regalat', delayed: `El teu proper cobrament es retarda ${days} dies.`, gift: 'Ja el tens fins al', ext: 'El teu pla s’allarga fins al' },
+    en: { 7: '7 days', 30: '1 month', 90: '3 months', 180: '6 months', 365: '1 year', n: `${days} days`, of: 'of', title: 'The E-Trading team has gifted you', delayed: `Your next charge is pushed back ${days} days.`, gift: 'You have it until', ext: 'Your plan now runs until' },
   }[lang]
   const dur = (D as Record<string, string>)[String(days)] ?? D.n
   const date = until ? until.toLocaleDateString(lang === 'ca' ? 'ca-ES' : lang === 'en' ? 'en-GB' : 'es-ES', { day: 'numeric', month: 'long', timeZone: 'Europe/Madrid' }) : ''
@@ -381,7 +381,7 @@ export async function giveGift(userId: string, tier: 'PLUS' | 'PREMIUM', days: n
     const log = await audited(tx, a, 'GIFT_PLAN', userId, before, { tier, days, reason: why })
     const key = `admin-${log.id}`
     const r = await grantPlan(tx, userId, tier, days, key)
-    await tx.gift.create({ data: { code: key, tier, days, source: 'ADMIN', status: 'REDEEMED', buyerEmail: a.email, fromName: 'Equipo de Lumi', message: why, redeemedById: userId, redeemedAt: new Date() } })
+    await tx.gift.create({ data: { code: key, tier, days, source: 'ADMIN', status: 'REDEEMED', buyerEmail: a.email, fromName: 'Equipo de E-Trading', message: why, redeemedById: userId, redeemedAt: new Date() } })
     const n = giftText(langOf(u.locale), tier, days, r.mode, r.until)
     await notify({ tx, user: u }, 'ACHIEVEMENT', n.title, n.body, '/premium')
     const until = r.until?.toISOString() ?? null
