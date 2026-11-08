@@ -43,7 +43,12 @@ export function Tutor({ lessonTitle }: { lessonTitle?: string }) {
       })
       setQ('')
     },
-    onError: e => toast(e instanceof ApiFailure ? e.message : t('error')),
+    onError: e => {
+      const code = e instanceof ApiFailure ? e.code : null
+      // Límite del día o modo de otro plan: se recarga el historial y la pantalla lo explica con su tarjeta
+      if (code === 'TUTOR_LIMIT' || code === 'FEATURE_LOCKED') qc.invalidateQueries({ queryKey: ['tutor'] })
+      else toast(code === 'RATE_LIMITED' ? t('tooFast') : t('error'))
+    },
     onSettled: () => setPending(null),
   })
   const clear = useMutation({ mutationFn: api.tutorClear, onSuccess: () => (qc.invalidateQueries({ queryKey: ['tutor'] }), toast(t('cleared'))) })
@@ -137,7 +142,7 @@ export function Tutor({ lessonTitle }: { lessonTitle?: string }) {
         {limited && (
           <div className="card flex items-center gap-3">
             <Lumi mood="SLEEPY" size={40} skin={me?.companion.skinId} stage={stageOf(me?.level.n ?? 1)} label={name} />
-            <span className="t-foot flex-1">{premium ? t('limitPremium') : t('limitFree')}</span>
+            <span className="t-foot flex-1">{premium ? t('limitPremium') : h.plan === 'PLUS' ? t('limitPlus', { n: h.usage.limit }) : t('limitFree')}</span>
             {!premium && (
               <Link href="/premium" className="btn btn-primary w-auto px-4 py-2 text-[14px]">
                 {t('seePremium')}

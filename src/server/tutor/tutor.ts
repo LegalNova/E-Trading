@@ -48,7 +48,9 @@ async function brainContext(user: User, mode: TutorModeT, lastQuestion: string):
   const next = Object.values(LESSON).find(l => !doneIds.has(l.id) && !l.isUnitReview && !l.isBoss && !l.unit.side)
   return {
     name: user.name || 'tú', mode, lastQuestion, mistakes, streak: g?.streak ?? 0,
-    doneLessons: doneIds.size, totalLessons: Object.keys(LESSON).length,
+    // Solo clases de verdad (sin repasos ni retos finales): 226, como en el resto de la app
+    doneLessons: Object.values(LESSON).filter(l => !l.isUnitReview && !l.isBoss && doneIds.has(l.id)).length,
+    totalLessons: Object.values(LESSON).filter(l => !l.isUnitReview && !l.isBoss).length,
     nextLesson: next ? { id: next.id, title: next.title, unit: next.unit.title } : null,
     portfolio: mode === 'PORTFOLIO' || mode === 'BIASES' ? await portfolio() : null,
     trades: trades.map(t => ({ side: t.side, symbol: t.symbol, total: Number(t.total), realizedPnl: t.realizedPnl === null ? null : Number(t.realizedPnl), createdAt: t.createdAt })),

@@ -8,7 +8,8 @@ import { OWNER } from '@/legal/owner'
 
 type P = { params: Promise<{ locale: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> }
 const qs = (sp: Record<string, string | string[] | undefined>) => new URLSearchParams(Object.entries(sp).flatMap(([k, v]) => (typeof v === 'string' ? [[k, v]] : [])))
-const CTA = { es: ['Pruébalo gratis', 'Sin tarjeta. Si entras con este enlace, tienes 7 días de Max.'], ca: ['Prova-ho gratis', 'Sense targeta. Si entres amb aquest enllaç, tens 7 dies de Max.'], en: ['Try it free', 'No card needed. Join with this link and get 7 days of Max.'] }
+// La nota de los 7 días de Max solo vale si el enlace lleva el código de quien invita
+const CTA = { es: ['Pruébalo gratis', 'Sin tarjeta. Si entras con este enlace, tienes 7 días de Max.', 'Sin tarjeta. El plan Free es gratis para siempre.'], ca: ['Prova-ho gratis', 'Sense targeta. Si entres amb aquest enllaç, tens 7 dies de Max.', 'Sense targeta. El pla Free és gratis per sempre.'], en: ['Try it free', 'No card needed. Join with this link and get 7 days of Max.', 'No card needed. The Free plan is free forever.'] }
 
 export async function generateMetadata({ params, searchParams }: P): Promise<Metadata> {
   const { locale } = await params
@@ -26,7 +27,8 @@ async function Card({ params, searchParams }: P) {
   const q = qs(await searchParams)
   q.set('l', locale)
   const card = await resolveShare(q)
-  const [cta, note] = CTA[(locale as 'es') in CTA ? (locale as 'es') : 'es']
+  const [cta, noteInvite, noteFree] = CTA[(locale as 'es') in CTA ? (locale as 'es') : 'es']
+  const note = card?.code ? noteInvite : noteFree
   const join = card?.code ? `/?inv=${card.code}` : '/'
   return (
     <main className="mx-auto flex min-h-dvh max-w-[560px] flex-col gap-5 px-4 py-8">

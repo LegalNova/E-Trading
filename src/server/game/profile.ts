@@ -10,7 +10,7 @@ import { db } from '../db'
 import { headers } from 'next/headers'
 import { auth, currentUser, googleEnabled, mailEnabled, realUser } from '../auth'
 import { viewAs } from '../view'
-import { checkoutUrl, confirmCheckout, portalUrl, stripeEnabled, type PlanId as StripePlanId } from '../billing/stripe'
+import { checkoutUrl, confirmCheckout, LIVE, portalUrl, refreshAfterPortal, stripe, stripeEnabled, type PlanId as StripePlanId } from '../billing/stripe'
 import { currentLocale } from '../locale'
 import { forgetMemo } from '../request'
 import { ACHIEVEMENTS } from '../content/catalog'
@@ -104,8 +104,12 @@ export const saveOnboarding = (step: number, patch: Partial<Draft>) =>
 
 export const completeOnboarding = (source?: unknown) =>
   withCtx(async c => {
+    // Solo una vez: repetirlo reiniciaba los ajustes y volvía a ligar invitaciones
+    if (c.user.onboardingStep === null) return
     const d = { ...emptyDraft(c.user), ...((c.user.onboarding as object) ?? {}) } as Draft
     if (!d.disclaimerAccepted) fail(422, 'VALIDATION_ERROR', 'Acepta el aviso legal para continuar')
+    // La edad decide qué se puede contratar (menores necesitan a un adulto): sin fecha no se termina
+    if (!d.birthDate) fail(422, 'VALIDATION_ERROR', 'Falta tu fecha de nacimiento')
     await c.tx.user.update({
       where: { id: c.user.id },
       data: {
@@ -115,11 +119,11 @@ export const completeOnboarding = (source?: unknown) =>
         ...(c.user.source ? {} : { source: cleanSource(source) }),
       },
     })
-    if (c.user.onboardingStep !== null) await track(c.tx, c.user.id, 'signup', { source: c.user.source ?? cleanSource(source) })
+    await track(c.tx, c.user.id, 'signup', { source: c.user.source ?? cleanSource(source) })
     // Llegó con el enlace de un amigo: se apunta para darles el mes de Max cuando termine su primera clase
     await linkInviter(c.tx, c.user.id, c.user.source ?? cleanSource(source))
     await portfolioRow(c.tx, c.user)
-    await notify(c, 'NEW_LESSON', 'Tu primera clase te espera', '«Qué es invertir»: 4 minutos.', '/clases')
+    await notify(c, 'NEW_LESSON', 'Tu primera clase te espera', '«Tu primera inversión en 3 minutos»: empieza por aquí.', '/clases')
   })
 
 // ── Ajustes ──────────────────────────────────────────────
@@ -280,19 +284,29 @@ export async function planBadge() {
   const u = await currentUser()
   if (!u) fail(401, 'UNAUTHORIZED', 'Inicia sesión para continuar')
   const sub = await db.subscription.findUnique({ where: { userId: u!.id } })
-  // Temporal = regalo o prueba sin tarjeta. Una suscripción de Stripe en periodo gratis ya está contratada: no se le ofrece pagar
-  const temporary = (sub?.status === 'TRIALING' || sub?.status === 'GIFT') && !sub.stripeSubId && sub.trialEndsAt && sub.trialEndsAt.getTime() > Date.now()
+  // Temporal = Max regalado o prueba sin tarjeta. Una suscripción de Stripe en periodo gratis ya está contratada: no se le ofrece pagar
+  const temporal = sub?.status === 'GIFT' || (sub?.status === 'TRIALING' && !sub.stripeSubId)
+  const temporary = temporal && !!sub!.trialEndsAt && sub!.trialEndsAt.getTime() > Date.now()
+  // Regalo o prueba ya terminados (aún sin cerrar: se cierran en la siguiente acción): ya es Free, no se le habla como a quien tiene Max
+  const plan = temporal && !temporary && u!.role !== 'ADMIN' ? 'FREE' : u!.plan
   const daysLeft = temporary ? Math.max(1, Math.ceil((sub!.trialEndsAt!.getTime() - Date.now()) / DAY_MS)) : null
   const g = await db.gameState.findUnique({ where: { userId: u!.id }, select: { streak: true, bestStreak: true } })
-  return { plan: u!.plan, status: sub?.status ?? 'NONE', stripe: !!sub?.stripeSubId, endsAt: temporary ? sub!.trialEndsAt!.toISOString() : null, daysLeft, trialUsed: u!.trialUsed, isGuest: !!u!.isAnonymous, streak: g?.streak ?? 0, trialUnlocked: trialUnlocked(g?.bestStreak ?? 0), trialStreak: TRIAL_STREAK, payments: stripeEnabled, isAdmin: u!.role === 'ADMIN' && !viewAs() }
+  return { plan, status: sub?.status ?? 'NONE', stripe: !!sub?.stripeSubId && LIVE.includes(sub.status), endsAt: temporary ? sub!.trialEndsAt!.toISOString() : null, daysLeft, trialUsed: u!.trialUsed, isGuest: !!u!.isAnonymous, streak: g?.streak ?? 0, trialUnlocked: trialUnlocked(g?.bestStreak ?? 0), trialStreak: TRIAL_STREAK, payments: stripeEnabled, isAdmin: u!.role === 'ADMIN' && !viewAs() }
 }
 
-export const billingStatus = () =>
-  withCtx(async c => {
+export const billingStatus = async () => {
+  // Vuelta del portal de Stripe (cambio de plan, cancelación): se mira en Stripe sin esperar al aviso
+  if (stripeEnabled) {
+    const u = await currentUser()
+    // (si cambió algo, se olvida el usuario ya leído en esta petición para responder con el plan nuevo)
+    if (u && (await refreshAfterPortal(u.id))) forgetMemo()
+  }
+  return withCtx(async c => {
     // La pantalla de planes pide el estado al abrirse: cuenta como «ha visto los planes» (una vez al día)
     await trackDaily(c.tx, c.user.id, 'premium_view')
     return statusOf(c.user, await c.tx.subscription.findUnique({ where: { userId: c.user.id } }))
   })
+}
 
 export const checkout = async (planId: string) => {
   // Con Stripe configurado: página de pago de Stripe (con la prueba si la ha desbloqueado)
@@ -312,11 +326,13 @@ async function stripeCheckout(planId: string) {
   const origin = h.get('origin') ?? `https://${h.get('host')}`
   const locale = currentLocale()
   const sub = await db.subscription.findUnique({ where: { userId: u!.id } })
-  // Ya tiene una suscripción de pago: se cambia de plan desde el portal de Stripe
-  if (sub?.stripeSubId && ['ACTIVE', 'TRIALING', 'PAST_DUE'].includes(sub.status)) return { url: (await portalUrl(u!, origin, locale))! }
+  // Ya tiene una suscripción de pago: el cambio de plan (de Plus a Max, a anual…) se confirma en el portal de Stripe
+  if (sub?.stripeSubId && LIVE.includes(sub.status)) return { url: (await portalUrl(u!, origin, locale, plan.id as StripePlanId))! }
   const g = await db.gameState.findUnique({ where: { userId: u!.id }, select: { bestStreak: true } })
   const trial = !u!.trialUsed && trialUnlocked(g?.bestStreak ?? 0) ? TRIAL_DAYS : null
-  return { url: await checkoutUrl(u!, plan.id as StripePlanId, { trialDays: trial, origin, locale }) }
+  // Con Max regalado (o una prueba sin tarjeta) en curso, el primer cobro llega cuando se acaba: no pierde esos días
+  const freeUntil = (sub?.status === 'GIFT' || (sub?.status === 'TRIALING' && !sub.stripeSubId)) && sub.trialEndsAt && sub.trialEndsAt.getTime() > Date.now() ? sub.trialEndsAt : null
+  return { url: await checkoutUrl(u!, plan.id as StripePlanId, { trialDays: trial, freeUntil, origin, locale }) }
 }
 
 /** Vuelta de Stripe: confirma el pago y devuelve el plan ya activo (para el «Gracias» de la app) */
@@ -372,13 +388,15 @@ const simulatedCheckout = (planId: string) =>
 export const cancelSubscription = async () => {
   if (stripeEnabled) {
     const sub = await db.subscription.findFirst({ where: { user: { id: (await currentUser())?.id ?? '' } } })
-    if (sub?.stripeSubId) return billingPortal()
+    if (sub?.stripeSubId && LIVE.includes(sub.status)) return billingPortal()
   }
   return simulatedCancel()
 }
 
 const simulatedCancel = () =>
   withCtx(async c => {
+    // Sin nada que cancelar no se apunta una «cancelación» (contaría en los datos como baja)
+    if (c.user.plan === 'FREE') fail(409, 'CONFLICT', 'No tienes ninguna suscripción activa')
     const sub = await c.tx.subscription.upsert({ where: { userId: c.user.id }, create: { userId: c.user.id, status: 'CANCELED' }, update: { status: 'CANCELED', renewsAt: null, trialEndsAt: null, interval: null } })
     const u = await c.tx.user.update({ where: { id: c.user.id }, data: { plan: 'FREE' } })
     await track(c.tx, c.user.id, 'cancel', { from: c.user.plan })
@@ -389,20 +407,36 @@ const simulatedCancel = () =>
 export const exportData = () =>
   withCtx(async c => {
     const id = c.user.id
-    const [portfolio, positions, orders, trades, alerts, lessons, achievements, streak, notifications, tutorChat] = await Promise.all([
+    const [portfolio, positions, orders, trades, alerts, lessons, achievements, streak, notifications, tutorChat, watchlist, mistakes, quizzes, feedback, subscription, league, events] = await Promise.all([
       c.tx.portfolio.findUnique({ where: { userId: id } }), c.tx.position.findMany({ where: { userId: id } }), c.tx.order.findMany({ where: { userId: id } }), c.tx.trade.findMany({ where: { userId: id } }),
       c.tx.priceAlert.findMany({ where: { userId: id } }), c.tx.lessonProgress.findMany({ where: { userId: id } }), c.tx.userAchievement.findMany({ where: { userId: id } }),
       c.tx.streakDay.findMany({ where: { userId: id } }), c.tx.notification.findMany({ where: { userId: id } }),
       c.tx.tutorMessage.findMany({ where: { userId: id }, orderBy: { createdAt: 'asc' }, select: { role: true, content: true, mode: true, createdAt: true } }),
+      c.tx.watchItem.findMany({ where: { userId: id } }), c.tx.mistake.findMany({ where: { userId: id } }),
+      c.tx.quizAttempt.findMany({ where: { userId: id }, select: { lessonId: true, mode: true, startedAt: true, finishedAt: true } }),
+      c.tx.feedback.findMany({ where: { userId: id } }),
+      c.tx.subscription.findUnique({ where: { userId: id }, select: { status: true, interval: true, trialEndsAt: true, renewsAt: true } }),
+      c.tx.leagueMember.findMany({ where: { userId: id } }),
+      c.tx.event.findMany({ where: { userId: id }, select: { name: true, props: true, createdAt: true } }),
     ])
     const { name, email, createdAt, gender, birthDate, locale, timezone, plan, companionName, skinId, settings } = c.user
     const profile = { name, email, createdAt, gender, birthDate, locale, timezone, plan, companionName, skinId, settings }
-    return { exportedAt: new Date().toISOString(), profile, game: c.g, portfolio, positions, orders, trades, alerts, lessons, achievements, streak, notifications, tutorChat }
+    return { exportedAt: new Date().toISOString(), profile, game: c.g, portfolio, positions, orders, trades, alerts, lessons, achievements, streak, notifications, tutorChat, watchlist, mistakes, quizzes, feedback, subscription, league, events }
   })
 
 export async function deleteAccount() {
   const u = await currentUser()
   if (!u) fail(401, 'UNAUTHORIZED', 'Inicia sesión para continuar')
+  // Si paga con Stripe, la suscripción se cancela antes de borrar: sin cuenta no puede seguir cobrándose
+  const sub = await db.subscription.findUnique({ where: { userId: u!.id } })
+  if (sub?.stripeSubId && stripe && ['ACTIVE', 'TRIALING', 'PAST_DUE'].includes(sub.status)) {
+    try {
+      await stripe.subscriptions.cancel(sub.stripeSubId)
+    } catch (e) {
+      console.error('deleteAccount/stripe', e)
+      fail(502, 'PAYMENTS_UNAVAILABLE', 'No hemos podido cancelar tu suscripción. Inténtalo de nuevo o escríbenos desde Ayuda.')
+    }
+  }
   // Las tablas del usuario se borran en cascada; queda constancia en la auditoría (sin datos personales)
   await db.$transaction([
     db.leagueMember.deleteMany({ where: { userId: u!.id } }),

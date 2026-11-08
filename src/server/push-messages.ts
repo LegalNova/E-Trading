@@ -7,28 +7,35 @@ export type Lang = 'es' | 'ca' | 'en'
 export type PushKind = 'streak' | 'streak_last' | 'unfinished' | 'unfinished2' | 'review' | 'daily' | 'nudge' | 'market' | 'pos_down' | 'pos_up' | 'watch_down' | 'watch_up' | 'morning' | 'evening' | 'league' | 'comeback' | 'trial'
 type V = Record<string, string | number>
 type Msg = { title: string; body: string }
+/** «1 día» / «2 días» (y en catalán e inglés) */
+const days = (n: unknown, lang: Lang) => `${n} ${Number(n) === 1 ? { es: 'día', ca: 'dia', en: 'day' }[lang] : { es: 'días', ca: 'dies', en: 'days' }[lang]}`
+/** 1st, 2nd, 3rd, 4th… 11th, 12th, 13th, 21st, 22nd… */
+const ordinal = (n: number) => {
+  const t = n % 100
+  return `${n}${t >= 11 && t <= 13 ? 'th' : n % 10 === 1 ? 'st' : n % 10 === 2 ? 'nd' : n % 10 === 3 ? 'rd' : 'th'}`
+}
 
 const T: Record<PushKind, Record<Lang, ((v: V) => Msg)[]>> = {
   streak: {
     es: [
-      v => ({ title: `Tu racha de ${v.n} días sigue viva`, body: 'Aún estás a tiempo: una clase de 5 minutos y mañana sigue creciendo.' }),
-      v => ({ title: `${v.n} días seguidos. No lo tires ahora`, body: `Te espera «${v.lesson}». Cinco minutos y la racha está salvada.` }),
-      v => ({ title: 'Lumi te guarda el sitio', body: `Llevas ${v.n} días aprendiendo sin fallar. Hoy todavía no: ¿una clase rápida?` }),
+      v => ({ title: `Tu racha de ${days(v.n, 'es')} sigue viva`, body: 'Aún estás a tiempo: una clase de 5 minutos y mañana sigue creciendo.' }),
+      v => ({ title: Number(v.n) === 1 ? 'Ayer empezaste tu racha. No la tires ahora' : `${v.n} días seguidos. No lo tires ahora`, body: `Te espera «${v.lesson}». Cinco minutos y la racha está salvada.` }),
+      v => ({ title: 'Lumi te guarda el sitio', body: `Llevas ${days(v.n, 'es')} aprendiendo sin fallar. Hoy todavía no: ¿una clase rápida?` }),
     ],
     ca: [
-      v => ({ title: `La teva ratxa de ${v.n} dies continua viva`, body: 'Encara hi ets a temps: una classe de 5 minuts i demà continua creixent.' }),
-      v => ({ title: `${v.n} dies seguits. No ho llencis ara`, body: `T’espera «${v.lesson}». Cinc minuts i la ratxa està salvada.` }),
-      v => ({ title: 'La Lumi et guarda el lloc', body: `Portes ${v.n} dies aprenent sense fallar. Avui encara no: una classe ràpida?` }),
+      v => ({ title: `La teva ratxa de ${days(v.n, 'ca')} continua viva`, body: 'Encara hi ets a temps: una classe de 5 minuts i demà continua creixent.' }),
+      v => ({ title: Number(v.n) === 1 ? 'Ahir vas començar la ratxa. No la llencis ara' : `${v.n} dies seguits. No ho llencis ara`, body: `T’espera «${v.lesson}». Cinc minuts i la ratxa està salvada.` }),
+      v => ({ title: 'La Lumi et guarda el lloc', body: `Portes ${days(v.n, 'ca')} aprenent sense fallar. Avui encara no: una classe ràpida?` }),
     ],
     en: [
       v => ({ title: `Your ${v.n}-day streak is still alive`, body: 'There’s still time: one 5-minute lesson and it keeps growing tomorrow.' }),
-      v => ({ title: `${v.n} days in a row. Don’t throw it away now`, body: `«${v.lesson}» is waiting. Five minutes and your streak is safe.` }),
-      v => ({ title: 'Lumi is saving your spot', body: `You’ve learned ${v.n} days without missing one. Not today yet: a quick lesson?` }),
+      v => ({ title: Number(v.n) === 1 ? 'You started your streak yesterday. Don’t drop it now' : `${v.n} days in a row. Don’t throw it away now`, body: `«${v.lesson}» is waiting. Five minutes and your streak is safe.` }),
+      v => ({ title: 'Lumi is saving your spot', body: `You’ve learned ${days(v.n, 'en')} without missing one. Not today yet: a quick lesson?` }),
     ],
   },
   streak_last: {
-    es: [v => ({ title: `Últimas horas para tu racha de ${v.n} días`, body: 'A medianoche se pierde. Un repaso de 2 minutos también cuenta.' })],
-    ca: [v => ({ title: `Últimes hores per a la teva ratxa de ${v.n} dies`, body: 'A mitjanit es perd. Un repàs de 2 minuts també compta.' })],
+    es: [v => ({ title: `Últimas horas para tu racha de ${days(v.n, 'es')}`, body: 'A medianoche se pierde. Un repaso de 2 minutos también cuenta.' })],
+    ca: [v => ({ title: `Últimes hores per a la teva ratxa de ${days(v.n, 'ca')}`, body: 'A mitjanit es perd. Un repàs de 2 minuts també compta.' })],
     en: [v => ({ title: `Last hours for your ${v.n}-day streak`, body: 'It resets at midnight. A 2-minute review counts too.' })],
   },
   unfinished: {
@@ -148,30 +155,30 @@ const T: Record<PushKind, Record<Lang, ((v: V) => Msg)[]>> = {
   },
   watch_down: {
     es: [
-      v => ({ title: `${v.name} ha caído ${v.chg}`, body: 'La tienes en favoritos. ¿Es tu momento de comprarla? Pruébalo con tu dinero virtual.' }),
-      v => ({ title: `¿Rebajas en ${v.name}?`, body: `${v.chg} hoy. Mira el gráfico y decide si entras: sin riesgo, con dinero virtual.` }),
+      v => ({ title: `${v.name} ha caído ${v.chg}`, body: 'La tienes en favoritos. Mira el gráfico y la noticia antes de decidir nada: con dinero virtual, sin prisa.' }),
+      v => ({ title: `${v.name} ${v.chg} hoy`, body: 'Una caída no la hace barata ni cara. Entra a ver qué ha pasado.' }),
     ],
     ca: [
-      v => ({ title: `${v.name} ha caigut ${v.chg}`, body: 'La tens a preferits. És el teu moment de comprar-la? Prova-ho amb els teus diners virtuals.' }),
-      v => ({ title: `Rebaixes a ${v.name}?`, body: `${v.chg} avui. Mira el gràfic i decideix si hi entres: sense risc, amb diners virtuals.` }),
+      v => ({ title: `${v.name} ha caigut ${v.chg}`, body: 'La tens a preferits. Mira el gràfic i la notícia abans de decidir res: amb diners virtuals, sense pressa.' }),
+      v => ({ title: `${v.name} ${v.chg} avui`, body: 'Una caiguda no la fa barata ni cara. Entra a veure què ha passat.' }),
     ],
     en: [
-      v => ({ title: `${v.name} has dropped ${v.chg}`, body: 'It’s on your watchlist. Is this your moment to buy? Try it with your virtual money.' }),
-      v => ({ title: `${v.name} on sale?`, body: `${v.chg} today. Check the chart and decide if you get in: no risk, virtual money.` }),
+      v => ({ title: `${v.name} has dropped ${v.chg}`, body: 'It’s on your watchlist. Check the chart and the news before deciding anything: virtual money, no rush.' }),
+      v => ({ title: `${v.name} ${v.chg} today`, body: 'A drop doesn’t make it cheap or expensive. Come and see what happened.' }),
     ],
   },
   watch_up: {
     es: [
-      v => ({ title: `${v.name} se dispara: ${v.chg}`, body: 'Está en tus favoritos y sube con fuerza. No te quedes mirando: practícalo con tu dinero virtual.' }),
-      v => ({ title: `No pierdas de vista ${v.name}`, body: `${v.chg} hoy. ¿Entras ahora o esperas a que corrija?` }),
+      v => ({ title: `${v.name} sube con fuerza: ${v.chg}`, body: 'La tienes en favoritos. Entra a ver qué la mueve: subir mucho en un día no garantiza nada.' }),
+      v => ({ title: `${v.name} ${v.chg} hoy`, body: 'Un movimiento fuerte en tus favoritos. Míralo con calma: comprar por miedo a quedarse fuera es un sesgo (FOMO).' }),
     ],
     ca: [
-      v => ({ title: `${v.name} es dispara: ${v.chg}`, body: 'És als teus preferits i puja amb força. No et quedis mirant: practica-ho amb diners virtuals.' }),
-      v => ({ title: `No perdis de vista ${v.name}`, body: `${v.chg} avui. Hi entres ara o esperes que corregeixi?` }),
+      v => ({ title: `${v.name} puja amb força: ${v.chg}`, body: 'La tens a preferits. Entra a veure què la mou: pujar molt en un dia no garanteix res.' }),
+      v => ({ title: `${v.name} ${v.chg} avui`, body: 'Un moviment fort als teus preferits. Mira-ho amb calma: comprar per por de quedar-se fora és un biaix (FOMO).' }),
     ],
     en: [
-      v => ({ title: `${v.name} is surging: ${v.chg}`, body: 'It’s on your watchlist and climbing fast. Don’t just watch: practise with your virtual money.' }),
-      v => ({ title: `Keep an eye on ${v.name}`, body: `${v.chg} today. Get in now or wait for a pullback?` }),
+      v => ({ title: `${v.name} is climbing fast: ${v.chg}`, body: 'It’s on your watchlist. See what’s moving it: a big day guarantees nothing.' }),
+      v => ({ title: `${v.name} ${v.chg} today`, body: 'A big move on your watchlist. Take it calmly: buying for fear of missing out is a bias (FOMO).' }),
     ],
   },
   morning: {
@@ -210,7 +217,7 @@ const T: Record<PushKind, Record<Lang, ((v: V) => Msg)[]>> = {
       v => ({ title: `Lloc ${v.rank} a la teva lliga`, body: Number(v.gap) > 0 ? `Et falten ${v.gap} punts per a la zona d’ascens. Queden ${v.hours} hores.` : `Ets a la zona d’ascens. Queden ${v.hours} hores: defensa-la.` }),
     ],
     en: [
-      v => ({ title: `${v.rank}${v.rank === 1 ? 'st' : v.rank === 2 ? 'nd' : v.rank === 3 ? 'rd' : 'th'} in your league`, body: Number(v.gap) > 0 ? `${v.gap} points from the promotion zone. ${v.hours} hours left.` : `You’re in the promotion zone. ${v.hours} hours left: hold on to it.` }),
+      v => ({ title: `${ordinal(Number(v.rank))} in your league`, body: Number(v.gap) > 0 ? `${v.gap} points from the promotion zone. ${v.hours} hours left.` : `You’re in the promotion zone. ${v.hours} hours left: hold on to it.` }),
     ],
   },
   comeback: {
@@ -228,9 +235,9 @@ const T: Record<PushKind, Record<Lang, ((v: V) => Msg)[]>> = {
     ],
   },
   trial: {
-    es: [v => ({ title: `Te quedan ${v.n} días de Max`, body: 'Aprovecha: todo el curso abierto y vidas ilimitadas. Hoy, una clase de las avanzadas.' })],
-    ca: [v => ({ title: `Et queden ${v.n} dies de Max`, body: 'Aprofita-ho: tot el curs obert i vides il·limitades. Avui, una classe de les avançades.' })],
-    en: [v => ({ title: `${v.n} days of Max left`, body: 'Make the most of it: the whole course and unlimited lives. Try an advanced lesson today.' })],
+    es: [v => ({ title: Number(v.n) === 1 ? 'Hoy es tu último día de Max' : `Te quedan ${v.n} días de Max`, body: 'Aprovecha: todo el curso abierto y vidas ilimitadas. Hoy, una clase de las avanzadas.' })],
+    ca: [v => ({ title: Number(v.n) === 1 ? 'Avui és el teu últim dia de Max' : `Et queden ${v.n} dies de Max`, body: 'Aprofita-ho: tot el curs obert i vides il·limitades. Avui, una classe de les avançades.' })],
+    en: [v => ({ title: Number(v.n) === 1 ? 'It’s your last day of Max' : `${v.n} days of Max left`, body: 'Make the most of it: the whole course and unlimited lives. Try an advanced lesson today.' })],
   },
 }
 

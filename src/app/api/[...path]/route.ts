@@ -19,6 +19,7 @@ import * as tutor from '@/server/tutor/tutor'
 import { requireUser } from '@/server/game/core'
 import { db } from '@/server/db'
 import { clientIp, rateLimit } from '@/server/http/ratelimit'
+import { safeDecode } from '@/shared/safe-decode'
 
 type Handler = (req: NextRequest, p: string[], body: unknown) => Promise<unknown>
 interface Route { method: string; path: string; run: Handler }
@@ -156,7 +157,7 @@ function match(method: string, parts: string[]) {
     const segs = r.path.split('/')
     if (segs.length !== parts.length) continue
     const params: string[] = []
-    if (segs.every((s, i) => (s.startsWith(':') ? (params.push(decodeURIComponent(parts[i])), true) : s === parts[i]))) return { r, params }
+    if (segs.every((s, i) => (s.startsWith(':') ? (params.push(safeDecode(parts[i])), true) : s === parts[i]))) return { r, params }
   }
   return null
 }

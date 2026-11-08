@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Lumi',
     short_name: 'Lumi',
     description: 'Aprende a invertir sin arriesgar un euro. Simulación educativa.',
-    start_url: '/es/inicio',
+    start_url: '/inicio',
     display: 'standalone',
     background_color: '#F7F3EC',
     theme_color: '#F7F3EC',

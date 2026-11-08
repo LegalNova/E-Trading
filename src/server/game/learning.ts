@@ -34,8 +34,13 @@ const publicQ = (q: ContentQuestion): QuestionT => ({
 
 /** El camino principal en orden (sin «Tu dinero en orden», que es opcional, ni las unidades paralelas) */
 const MAIN_PATH = UNITS.filter(u => !u.side && u.section?.id !== 's1')
+/**
+ * Clases que supera la prueba de unidad: todas menos el reto final de sección (si la unidad lo lleva). El reto mezcla
+ * toda la sección y abre las siguientes: la prueba de una sola unidad no lo puede aprobar por él.
+ */
+const testOutLessons = (u: (typeof UNITS)[number]) => u.lessons.filter(l => !l.isBoss)
 /** ¿Superó la unidad con la prueba de unidad? (todas sus clases marcadas como saltadas) */
-const testedOut = (u: (typeof UNITS)[number], done: Map<string, { skipped: boolean }>) => u.lessons.every(l => done.get(l.id)?.skipped)
+const testedOut = (u: (typeof UNITS)[number], done: Map<string, { skipped: boolean }>) => testOutLessons(u).every(l => done.get(l.id)?.skipped)
 
 /** Unidades completas a las que tiene derecho su plan: las N primeras del camino, sin contar las superadas con la prueba */
 function fullUnitsOf(plan: User['plan'], done: Map<string, { skipped: boolean }>) {
@@ -101,7 +106,7 @@ export async function pathOf(tx: Tx, user: User): Promise<CoursePathT> {
     const ut = unitT(loc, u.id)
     const section = u.section ? { id: u.section.id, title: ut?.section ?? u.section.title, open: sectionOpen(u), needs: u.section.requires.filter(r => !bossDone(r)).map(titleOf) } : undefined
     // Prueba de unidad: en una sección abierta, con la unidad a su alcance y aún sin terminar
-    const testOut = !u.side && sectionOpen(u) && n < lessons.length && lessons.every(l => !l.requiresPremium)
+    const testOut = !u.side && sectionOpen(u) && testOutLessons(u).some(l => !done.has(l.id)) && lessons.every(l => !l.requiresPremium)
     return { id: u.id, order: u.order, title: ut?.title ?? u.title, description: ut?.description ?? u.description, progressPct: u.lessons.length ? Math.round((n / u.lessons.length) * 100) : 0, access, side: !!u.side, unlocksFeature: u.unlocksFeature, section, testOut, lessons }
   })
   return { courseId: 'de-cero-a-inversor', title: engineT(loc).course, currentUnitId, units, minutesTotal: courseMinutes(), dailyGoalMinutes: minutesOf(user) }
@@ -131,18 +136,23 @@ export async function lesson(user: User, tx: Tx, id: string, peek = false): Prom
     if (s.kind === 'STORY') return { id: sid, type: 'STORY', ...s.story }
     return { id: sid, type: 'SIMULATOR_TASK', title: s.title, body: s.body, task: s.task }
   })
-  steps.push({ id: `${id}-quiz`, type: 'QUIZ', quizId: l.quizId, title: e.quizTitle, body: e.quizBody((QUIZZES[l.quizId] ?? []).length) })
+  steps.push({ id: `${id}-quiz`, type: 'QUIZ', quizId: l.quizId, title: e.quizTitle, body: e.quizBody((QUIZZES[l.quizId] ?? []).length, user.plan === 'FREE') }) // vidas ilimitadas en Plus y Max
   return { id, title, unitTitle, minutes: l.minutes, xp: l.xp, steps: steps.map(st => walkTexts(st, brand)) }
 }
 
-export function checkStep(lessonId: string, stepId: string, idx: number): StepCheckT {
-  const l = LESSON[lessonId]
-  const i = Number(stepId.split('-s')[1])
-  const s = l && stepsT(currentLocale(), lessonId, l.steps)[i]
-  if (!s || s.kind !== 'CHART') return fail(404, 'NOT_FOUND', 'Paso no encontrado')
-  const correct = idx === s.solution
-  return { correct, explanation: correct ? s.ok : s.ko }
-}
+export const checkStep = (lessonId: string, stepId: string, idx: number) =>
+  withCtx(async (c): Promise<StepCheckT> => {
+    const l = LESSON[lessonId]
+    const i = Number(stepId.split('-s')[1])
+    const s = l && stepsT(currentLocale(), lessonId, l.steps)[i]
+    if (!s || s.kind !== 'CHART') return fail(404, 'NOT_FOUND', 'Paso no encontrado')
+    // Como la propia lección: una clase cerrada por plan o aún bloqueada no se puede corregir desde fuera
+    const st = (await pathOf(c.tx, c.user)).units.flatMap(u => u.lessons).find(x => x.id === lessonId)
+    if (st?.requiresPremium) fail(403, 'FEATURE_LOCKED', st.requiredPlan === 'PLUS' ? 'Esta lección está en el plan Plus' : 'Esta lección está en el plan Max')
+    if (st?.status === 'LOCKED') fail(403, 'LESSON_LOCKED', 'Termina la lección anterior para abrir esta')
+    const correct = idx === s.solution
+    return { correct, explanation: correct ? s.ok : s.ko }
+  })
 
 /** Preguntas de cálculo (de cifra) como mucho por quiz de clase: ninguna en «Invierte desde hoy», una en el resto */
 const maxNumbers = (unitSection?: string) => (unitSection === 's0' ? 0 : 1)
@@ -189,6 +199,9 @@ export const quizStart = (id: string) =>
       const m = await c.tx.mistake.findMany({ where: { userId: c.user.id, questionId: { in: Object.keys(ALL_Q) }, dueAt: { lte: new Date() } }, orderBy: { dueAt: 'asc' }, take: 8 })
       qs = m.map(x => ALL_Q[x.questionId]).filter(Boolean)
       if (!qs.length) fail(404, 'NOT_FOUND', 'Hoy no te toca repasar nada: vuelve mañana')
+      // Un solo repaso abierto a la vez: con varios abiertos se responderían los mismos fallos en cada uno
+      // (XP repetida y fallos que se dan por dominados en un minuto)
+      await c.tx.quizAttempt.updateMany({ where: { userId: c.user.id, mode: 'REVIEW', finishedAt: null }, data: { finishedAt: new Date() } })
     } else {
       const l = LESSON[id] ?? fail(404, 'NOT_FOUND', 'Lección no encontrada')
       await lesson(c.user, c.tx, id) // comprueba el acceso por plan
@@ -261,7 +274,8 @@ export const answer = (attemptId: string, questionId: string, value: unknown, el
         if (correct) bump(c, 'reviewed')
       } else if (!correct) await c.tx.mistake.upsert({ where: key, create: { userId: c.user.id, questionId }, update: { box: 0, dueAt: new Date() } })
     }
-    return { correct, correctAnswer: typeof q.solution === 'string' ? clean(q.solution) : q.solution, explanation: clean(g.explanation), reveal: g.reveal, livesLeft: costsLife ? c.g.lives : null, xpGained: correct && at.mode !== 'PLACEMENT' ? 10 : 0 }
+    // La buena, tal como se vio (en «completa el hueco», la opción en su idioma)
+    return { correct, correctAnswer: typeof tq.solution === 'string' ? clean(tq.solution) : tq.solution, explanation: clean(g.explanation), reveal: g.reveal, livesLeft: costsLife ? c.g.lives : null, xpGained: correct && at.mode !== 'PLACEMENT' ? 10 : 0 }
   })
 
 export const quizFinish = (attemptId: string) =>
@@ -269,6 +283,7 @@ export const quizFinish = (attemptId: string) =>
     const at = await attemptOf(c, attemptId)
     if (at.finishedAt && at.result) return at.result as unknown as QuizFinishT // idempotente
     if (at.mode === 'PLACEMENT') fail(400, 'VALIDATION_ERROR', 'Usa el final del test de nivel')
+    if (at.finishedAt) fail(409, 'CONFLICT', 'Este repaso se ha cerrado porque has empezado otro')
     if (at.mode === 'TESTOUT') return finishTestOut(c, at)
     const correct = at.answers.filter(a => a.correct).length
     const total = at.questionIds.length
@@ -332,7 +347,7 @@ async function finishTestOut(c: Ctx, at: Awaited<ReturnType<typeof attemptOf>>):
   const repeatsToday = await c.tx.quizAttempt.count({ where: { userId: c.user.id, lessonId: at.lessonId, finishedAt: { gte: new Date(Date.now() - 86_400_000) } } })
   const farming = repeatsToday >= 2
   const base = farming ? 0 : correct * 10 + (passed ? 50 : 0)
-  if (passed) await c.tx.lessonProgress.createMany({ data: unit!.lessons.map(l => ({ userId: c.user.id, lessonId: l.id, stars: 0, skipped: true })), skipDuplicates: true })
+  if (passed) await c.tx.lessonProgress.createMany({ data: testOutLessons(unit!).map(l => ({ userId: c.user.id, lessonId: l.id, stars: 0, skipped: true })), skipDuplicates: true })
   addXp(c, base)
   const extendedToday = await markActive(c)
   c.fx.companion = passed ? lumi(c, 'QUIZ_PERFECT') : lumi(c, 'QUIZ_WRONG')

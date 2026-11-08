@@ -58,6 +58,13 @@ export const auth = betterAuth({
   telemetry: { enabled: false },
   hooks: {
     before: createAuthMiddleware(async ctx => {
+      // Una cuenta bloqueada no puede iniciar sesión (ni con contraseña buena)
+      if (ctx.path === '/sign-in/email') {
+        const email = String((ctx.body as { email?: unknown })?.email ?? '').trim().toLowerCase()
+        const u = email ? await db.user.findUnique({ where: { email }, select: { blockedAt: true } }) : null
+        if (u?.blockedAt) throw new APIError('FORBIDDEN', { message: 'Esta cuenta está bloqueada', code: 'ACCOUNT_BLOCKED' })
+        return
+      }
       if (!['/sign-up/email', '/reset-password', '/change-password', '/set-password'].includes(ctx.path)) return
       const b = ctx.body as { password?: unknown; newPassword?: unknown }
       const pw = String(b?.password ?? b?.newPassword ?? '')

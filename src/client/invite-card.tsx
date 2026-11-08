@@ -19,10 +19,10 @@ export function InviteCard() {
   const { data: badge } = usePlanBadge()
   const [copied, setCopied] = useState(false)
   if (!session?.signedIn) return null
-  // Quien ya tiene Max no «gana Max»: regala Max a su amigo. Quien paga, además, retrasa 7 días su próximo cobro.
+  // Quien ya tiene Max no «gana Max»: regala Max a su amigo. Quien paga (Plus o Max) tampoco: retrasa 7 días su próximo cobro.
   const hasMax = badge?.plan === 'PREMIUM'
   const pays = !!badge && badge.plan !== 'FREE' && !badge.daysLeft
-  const title = hasMax ? t('titleGive') : t('title')
+  const title = hasMax || pays ? t('titleGive') : t('title')
   const body = pays ? t('bodyPaid') : hasMax ? t('bodyMax') : t('body')
   const share = async () => {
     if (!inv) return

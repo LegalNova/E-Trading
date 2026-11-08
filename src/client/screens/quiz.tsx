@@ -371,6 +371,7 @@ function QuizInner({ id }: { id: string }) {
   const router = useRouter()
   const refresh = useRefreshAll()
   const hint = useTypeHint()
+  const toast = useToast()
   const { data: me } = useMe()
   const [run, setRun] = useState(0)
   const start = useQuery({ queryKey: ['quiz-start', id, run], queryFn: () => api.quizStart(id), staleTime: Infinity, gcTime: 0, retry: false, refetchOnWindowFocus: false })
@@ -396,8 +397,15 @@ function QuizInner({ id }: { id: string }) {
       setStreak(n => (r.correct ? n + 1 : 0))
       if (r.livesLeft !== null) setLives(r.livesLeft)
     },
+    // Sin esto, un fallo (sin vidas, quiz caducado o cerrado, sin conexión) dejaba el botón sin hacer nada
+    onError: e => {
+      if (e instanceof ApiFailure && e.code === 'NO_LIVES') {
+        refresh()
+        setOut(true)
+      } else toast(e instanceof ApiFailure ? e.message : t('error'))
+    },
   })
-  const finish = useMutation({ mutationFn: () => api.quizFinish(start.data!.attemptId), onSuccess: refresh })
+  const finish = useMutation({ mutationFn: () => api.quizFinish(start.data!.attemptId), onSuccess: refresh, onError: e => toast(e instanceof ApiFailure ? e.message : t('error')) })
 
   // Retos cronometrados: cuenta atrás; al llegar a 0 se responde solo (cuenta como fallo)
   const limit = start.data?.questions[i]?.meta?.timeLimit
@@ -480,8 +488,8 @@ function QuizInner({ id }: { id: string }) {
         <span className="t-foot flex items-center justify-between gap-2">
           {id === 'review' ? t('reviewHint') : q.meta?.review ? <b style={{ color: 'var(--brand-ink)' }}>{t('mixedReview')}</b> : hint(q)}
           {limit && !reveal && (
-            <b className="chip tabular-nums" style={{ background: (left ?? limit) <= 3 ? 'var(--down)' : 'var(--fill)', color: (left ?? limit) <= 3 ? '#fff' : undefined }} aria-live="polite">
-              ⏱ {left ?? limit} s
+            <b className="chip inline-flex items-center gap-1 tabular-nums" style={{ background: (left ?? limit) <= 3 ? 'var(--down)' : 'var(--fill)', color: (left ?? limit) <= 3 ? '#fff' : undefined }} aria-live="polite">
+              <Icon name="clock" size={14} /> {left ?? limit} s
             </b>
           )}
         </span>

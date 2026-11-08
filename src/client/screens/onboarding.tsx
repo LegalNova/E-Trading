@@ -2,7 +2,7 @@
 // 02.6–02.12 · Onboarding en 7 pasos. Cada paso se guarda; si sales, vuelves al pendiente.
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useLocale, useTranslations } from 'next-intl'
-import { useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useRouter } from '@/i18n/navigation'
 import type { GenderT, PlacementFinishT } from '@/shared/contract'
 import { money } from '@/shared/format'
@@ -10,7 +10,7 @@ import { api, ApiFailure, type OnboardingDraft } from '../api'
 import { useGuard } from '../shell'
 import { readSource } from '../attribution'
 import { Icon } from '../ui/icons'
-import { Check, PageSkeleton, Seg, Steps } from '../ui/kit'
+import { Check, ErrorState, PageSkeleton, Seg, Steps } from '../ui/kit'
 import { Lumi, SKINS } from '../ui/lumi'
 import { QuestionView, type AnswerValue } from './quiz'
 
@@ -37,9 +37,14 @@ function Head({ n, onBack }: { n: number; onBack?: () => void }) {
 
 const MONTHS = Array.from({ length: 12 }, (_, i) => i + 1)
 
-function Placement({ onDone, onBack }: { onDone: (r: PlacementFinishT) => void; onBack: () => void }) {
+function Placement({ onDone, onBack, onAlreadyDone }: { onDone: (r: PlacementFinishT) => void; onBack: () => void; onAlreadyDone: () => void }) {
   const t = useTranslations('onboarding')
   const start = useQuery({ queryKey: ['placement'], queryFn: () => api.quizStart('placement'), staleTime: Infinity, gcTime: 0, retry: false })
+  // Ya lo hizo (p. ej. cerró la app en la pantalla del resultado): se sigue con el paso siguiente en vez de quedarse cargando
+  const already = start.error instanceof ApiFailure && start.error.code === 'CONFLICT'
+  useEffect(() => {
+    if (already) onAlreadyDone()
+  }, [already, onAlreadyDone])
   const [i, setI] = useState(0)
   const [value, setValue] = useState<AnswerValue>(null)
   const finish = useMutation({ mutationFn: () => api.placementFinish(start.data!.attemptId), onSuccess: onDone })
@@ -53,6 +58,7 @@ function Placement({ onDone, onBack }: { onDone: (r: PlacementFinishT) => void; 
       }
     },
   })
+  if (start.isError && !already) return <ErrorState onRetry={() => start.refetch()} message={start.error.message} />
   if (!start.data) return <PageSkeleton />
   const qs = start.data.questions
   const q = qs[i]
@@ -112,6 +118,8 @@ function Flow({ initialStep, initialDraft }: { initialStep: number; initialDraft
     },
   })
 
+  const { mutate: saveStep } = save
+  const skipPlacement = useCallback(() => saveStep({ n: 4, patch: {} }), [saveStep])
   const set = (patch: Partial<OnboardingDraft>) => setD({ ...d, ...patch })
   const back = () => setStep(Math.max(1, step - 1))
   const err = save.error instanceof ApiFailure ? save.error : null
@@ -213,7 +221,7 @@ function Flow({ initialStep, initialDraft }: { initialStep: number; initialDraft
   }
 
   if (step === 4) {
-    if (!placement) return <Placement onBack={back} onDone={setPlacement} />
+    if (!placement) return <Placement onBack={back} onDone={setPlacement} onAlreadyDone={skipPlacement} />
     return (
       <div className="pad min-h-dvh pt-10">
         <Lumi mood="CELEBRATE" size={64} skin={d.skinId} />

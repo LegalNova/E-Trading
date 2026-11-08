@@ -261,7 +261,7 @@ export function DynamicExercise({ q, value, onChange, reveal }: { q: QuestionT; 
                   <span className="flex items-center gap-1">
                     <Icon name="chat" size={14} /> {q.meta?.senders?.[i]}
                   </span>
-                  {on && <b style={{ color: 'var(--down)' }}>⚠︎ {t('scam')}</b>}
+                  {on && <b className="inline-flex items-center gap-1" style={{ color: 'var(--down)' }}><Icon name="info" size={14} /> {t('scam')}</b>}
                 </span>
                 <span className="text-[15px]">{o}</span>
               </button>

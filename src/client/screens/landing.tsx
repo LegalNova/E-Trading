@@ -15,8 +15,9 @@ export function LanguageSwitch() {
   const locale = useLocale()
   const path = usePathname()
   const router = useRouter()
+  const ts = useTranslations('settings')
   return (
-    <div className="flex gap-1 text-xs font-bold" role="group" aria-label="Idioma">
+    <div className="flex gap-1 text-xs font-bold" role="group" aria-label={ts('language')}>
       {routing.locales.map(l => (
         <button key={l} onClick={() => router.replace(path, { locale: l })} aria-pressed={l === locale} className="rounded-md px-1.5 py-1 uppercase" style={{ color: l === locale ? 'var(--ink)' : 'var(--ink-3)' }}>
           {l}
@@ -222,14 +223,17 @@ export function Landing() {
             </div>
           ))}
         </div>
-        <div className="mt-3 grid grid-cols-3 gap-3">
-          {(['activeUsers', 'lessonsCompleted', 'simulatedTrades'] as const).map(k => (
-            <div key={k} className="stat">
-              <b>{num(stats?.[k] ?? 0, locale, 0)}</b>
-              <span className="t-cap">{t(`stats.${k}`)}</span>
-            </div>
-          ))}
-        </div>
+        {/* Cifras reales de la base de datos: solo se enseñan cuando han llegado (nunca un «0» mientras cargan) */}
+        {stats && stats.activeUsers > 0 && (
+          <div className="mt-3 grid grid-cols-3 gap-3">
+            {(['activeUsers', 'lessonsCompleted', 'simulatedTrades'] as const).map(k => (
+              <div key={k} className="stat min-w-0">
+                <b>{num(stats[k], locale, 0)}</b>
+                <span className="t-cap">{t(`stats.${k}`)}</span>
+              </div>
+            ))}
+          </div>
+        )}
       </section>
 
       <section id="planes" className="mx-auto max-w-[1120px] scroll-mt-16 px-4 pb-14">
@@ -278,6 +282,7 @@ export function Landing() {
             </div>
           ))}
         </div>
+        <p className="t-cap mt-3 mb-0">{t('trialNote')}</p>
       </section>
 
       <section id="contacto" className="mx-auto max-w-[760px] scroll-mt-16 px-4 pb-14">

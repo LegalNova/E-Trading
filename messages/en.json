@@ -105,7 +105,8 @@
     "guestNote": "No email or password. If you like it, save your progress whenever you want.",
     "invitedBy": "{name} has invited you to Lumi",
     "invited": "You’ve been invited to Lumi",
-    "invitedSub": "Create your account and get 7 days of Max for free straight away."
+    "invitedSub": "Create your account and get 7 days of Max for free straight away.",
+    "trialNote": "7-day free trial: unlocked with a 5-day streak or when you join with a friend’s invitation. You can also subscribe straight away."
   },
   "auth": {
     "signUpTitle": "Create your account",
@@ -123,14 +124,15 @@
     "noAccount": "Don't have an account?",
     "forgot": "Forgot your password?",
     "forgotTitle": "New password",
-    "forgotSent": "We don't send emails yet: password recovery will arrive with our own domain. Meanwhile, write to us from Contact on the home page and we'll help.",
+    "forgotSent": "We can’t email you a reset link right now. Write to us from Contact with your account email and we’ll help you get back in.",
     "errors": {
       "INVALID_CREDENTIALS": "Wrong email or password.",
       "EMAIL_IN_USE": "There's already an account with this email.",
       "VALIDATION_ERROR": "Enter a valid email.",
       "ACCOUNT_BLOCKED": "This account is blocked. Write to us if you think it's a mistake.",
       "RATE_LIMITED": "Too many attempts. Try again in a minute.",
-      "GUEST_MUST_SAVE": "Save your progress with an email and password to continue."
+      "GUEST_MUST_SAVE": "Save your progress with an email and password to continue.",
+      "INTERNAL": "Something went wrong. Please try again in a moment."
     },
     "contact": "Go to Contact",
     "resetAsk": "Enter your account email and we'll send you a link to choose a new password.",
@@ -775,7 +777,7 @@
     "monthly": "Monthly",
     "monthlyPrice": "{price} a month",
     "tryFree": "Try {plan} free for {days} days",
-    "after": "Then {price}{per}. Cancel any time in Settings. We'll remind you 2 days before charging.",
+    "after": "Then {price}{per}. We’ll remind you before the trial ends and you can cancel any time in Settings.",
     "perYear": "/year",
     "perMonth": "/month",
     "demoNote": "Secure payment with Stripe. You can cancel anytime from Settings.",
@@ -788,10 +790,10 @@
     "active": "Your subscription is active.",
     "manage": "Manage in Settings",
     "choosePlan": "Plan",
-    "plusPitch": "Plus: the middle plan. The key units in full and the first 5 lessons of all the others.",
+    "plusPitch": "Plus: the middle plan. Units 1 to 5 in full and the first 5 lessons of all the others.",
     "maxPitch": "Max: the whole course and all of Lumi, no limits.",
     "plusFeatures": [
-      "«Invest from today» and the key units in full",
+      "Units 1 to 5 in full, including «Invest from today»",
       "The first 5 lessons of every unit",
       "Unlimited lives in quizzes",
       "€50,000 virtual money to practise with",
@@ -880,7 +882,7 @@
     "pushNote": "Mobile push notifications will arrive with the installable version.",
     "accountSection": "Account and privacy",
     "account": "Account, portfolio and data",
-    "version": "Lumi 2.0 · test version",
+    "version": "Lumi 2.0",
     "privacy": "Privacy",
     "leagueVisible": "Show my name in the league",
     "leagueVisibleNote": "If you turn it off, others will see you as «Anonymous player».",
@@ -896,7 +898,7 @@
     "helpSection": "Help",
     "gift": "gift",
     "giftEnds": "Gift ends",
-    "giftMore": "Earn more months by inviting",
+    "giftMore": "Earn more days by inviting",
     "toLight": "Light mode",
     "toDark": "Dark mode",
     "manageSub": "Manage subscription (card, invoices, plan)",
@@ -917,7 +919,7 @@
     "disclaimer": "Legal notice accepted",
     "logout": "Sign out",
     "deleteTitle": "Delete account",
-    "deleteBody": "Your profile, progress and portfolio are deleted. This can't be undone.",
+    "deleteBody": "Your profile, progress and portfolio are deleted. This can’t be undone. If you pay for a subscription, cancel it first in Settings, Subscription.",
     "deleteWord": "DELETE",
     "deleteType": "Type {word} to confirm",
     "delete": "Delete my account",
@@ -1144,7 +1146,7 @@
   },
   "cookies": {
     "label": "Cookie notice",
-    "text": "We only use technical cookies the app needs to work, plus the preferences you choose. No advertising or analytics.",
+    "text": "We only use technical cookies the app needs to work, plus the preferences you choose. No advertising or analytics cookies.",
     "more": "Cookie policy",
     "ok": "Got it"
   },
@@ -1210,11 +1212,11 @@
     "modeHint": {
       "EXPLAIN": "Ask about any course concept: she explains it with examples.",
       "PATH": "Recommends your next step based on your progress.",
-      "PORTFOLIO": "Reviews your simulated positions and trades using what the course teaches. Plus or Max.",
-      "BIASES": "Spots biases in your questions and trades and suggests rules. Plus or Max."
+      "PORTFOLIO": "Reviews your simulated positions using what the course teaches: spread, concentration and stops. Plus or Max.",
+      "BIASES": "Checks your simulated trades for biases (FOMO, overtrading, the disposition effect…) and suggests rules. Max only."
     },
     "hello": "Hi, I’m {name}",
-    "intro": "Your course tutor. Ask me anything you don’t understand: I answer with the Lumi manual and your progress. I don’t give investment advice: I teach you to decide for yourself.",
+    "intro": "Your course tutor. Ask me anything you don’t understand: I answer with the Lumi manual and your progress (for now, in Spanish). I don’t give investment advice: I teach you to decide for yourself.",
     "suggest": {
       "s1": "What is an ETF?",
       "s2": "How do I read a candle?",
@@ -1237,7 +1239,9 @@
     "ask": "Ask {name}",
     "askHint": "Questions? Your tutor answers with the course",
     "askLesson": "Ask the tutor",
-    "engineLumi": "Lumi answers from the course, no external AI"
+    "engineLumi": "Lumi answers from the course, no external AI",
+    "limitPlus": "You’ve used your {n} questions for today. Max gives you 100 a day and every mode.",
+    "tooFast": "You’re going a bit fast. Wait a minute and ask again."
   },
   "lumi": {
     "title": "Your {name}",
@@ -1637,7 +1641,7 @@
   },
   "push": {
     "title": "Turn on notifications",
-    "body": "We’ll remind you before you lose your streak, when you leave a lesson halfway and when something moves in the market. 3 a day at most.",
+    "body": "We’ll remind you before you lose your streak, when you leave a lesson halfway and when something moves in the market. Never at night, and you choose which ones in Settings.",
     "enable": "Turn on",
     "later": "Not now",
     "denied": "Notifications are blocked in this browser. You can allow them in its settings.",
@@ -1668,14 +1672,14 @@
   "buy": {
     "title": "Go Plus or Max",
     "body": "The whole course, unlimited lives and €50,000 virtual money. Cancel anytime.",
-    "keepBody": "You have {n} days of Max left. Subscribe so you don’t lose the full course.",
+    "keepBody": "You have {n} days of Max left. Subscribe now and you won't be charged until they run out.",
     "billing": "Billing",
     "monthly": "Monthly",
     "yearly": "Yearly (−{n} %)",
     "best": "Recommended",
     "perMonth": "/month",
     "billedYear": "One payment of {price} a year",
-    "plusLine": "Key units in full and unlimited lives",
+    "plusLine": "Units 1 to 5 in full and unlimited lives",
     "maxLine": "All 39 units, no limits",
     "cta": "Subscribe",
     "trialCta": "Try 7 days free",

@@ -1,5 +1,5 @@
 'use client'
-// Invitar amigos: tu enlace, cómo funciona y lo que llevas ganado (un mes de Max para los dos por amigo).
+// Invitar amigos: tu enlace, cómo funciona y lo que llevas ganado (7 días de Max para los dos por amigo).
 import { useQuery } from '@tanstack/react-query'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
@@ -17,7 +17,7 @@ export function Invite() {
   const { data, error, refetch } = useQuery({ queryKey: ['invite'], queryFn: api.myInvites, enabled: ready })
   const [copied, setCopied] = useState(false)
   const { data: badge } = usePlanBadge()
-  // Textos según el plan: quien ya tiene Max regala Max; quien paga retrasa su próximo cobro
+  // Textos según el plan: quien ya tiene Max o paga (Plus o Max) regala Max; quien paga, además, retrasa su próximo cobro
   const hasMax = badge?.plan === 'PREMIUM'
   const pays = !!badge && badge.plan !== 'FREE' && !badge.daysLeft
   if (error instanceof ApiFailure && error.code === 'GUEST_MUST_SAVE')
@@ -63,7 +63,7 @@ export function Invite() {
       <div className="pad">
         <div className="hero flex flex-col items-start gap-3 p-6">
           <Lumi mood="CELEBRATE" size={56} />
-          <h1 className="t-title m-0">{t(hasMax ? 'headlineGive' : 'headline')}</h1>
+          <h1 className="t-title m-0">{t(hasMax || pays ? 'headlineGive' : 'headline')}</h1>
           <p className="m-0" style={{ color: 'rgb(255 255 255 / 0.75)' }}>
             {t(pays ? 'subPaid' : 'sub', { days: data.days })}
           </p>

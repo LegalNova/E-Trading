@@ -196,8 +196,8 @@ export const ca: Record<LegalSlug, LegalDoc> = {
         h: '7. Plans de pagament (Plus i Max)',
         list: [
           'Plus i Max amplien les classes, les vides, el saldo virtual, els tipus d’ordre i les preguntes a la Lumi. El preu i el que inclou cada pla es mostren abans de contractar.',
-          'Hi ha una prova gratuïta de 7 dies, una per persona, que es desbloqueja amb una ratxa de 5 dies seguits o arribant amb una invitació. A la versió actual el pagament encara no està actiu: la prova s’acaba sola i tornes a Free sense cost.',
-          'Quan el pagament estigui actiu, la compra es regeix per les Condicions de contractació: preu, renovació, cancel·lació des de Configuració, avís abans de cada cobrament després de la prova i 14 dies naturals per desistir.',
+          'Hi ha una prova gratuïta de 7 dies, una per persona, que es desbloqueja amb una ratxa de 5 dies seguits o arribant amb una invitació.',
+          'La compra es regeix per les Condicions de contractació: preu, renovació, cancel·lació des de Configuració, avís abans que s’acabi la prova i 14 dies naturals per desistir.',
         ],
       },
       {
@@ -218,7 +218,7 @@ export const ca: Record<LegalSlug, LegalDoc> = {
   },
   contratacion: {
     title: 'Condicions de contractació',
-    intro: `Darrera actualització: ${UPDATED}. S’apliquen quan contractes un pla de pagament (Plus o Max) i completen les Condicions d’ús. Compleixen el Reial decret legislatiu 1/2007 (Llei general per a la defensa dels consumidors i usuaris) i la LSSI-CE. Mentre el pagament no estigui actiu, els plans només es poden provar gratis i no es cobra res. En cas de dubte, preval la versió en castellà.`,
+    intro: `Darrera actualització: ${UPDATED}. S’apliquen quan contractes un pla de pagament (Plus o Max) i completen les Condicions d’ús. Compleixen el Reial decret legislatiu 1/2007 (Llei general per a la defensa dels consumidors i usuaris) i la LSSI-CE. En cas de dubte, preval la versió en castellà.`,
     sections: [
       {
         h: '1. Qui et ven',
@@ -256,7 +256,7 @@ export const ca: Record<LegalSlug, LegalDoc> = {
         list: [
           'Pots tenir una prova gratuïta de 7 dies (una vegada per persona): es desbloqueja amb una ratxa de 5 dies seguits o arribant amb la invitació d’un amic. També pots contractar directament, sense prova.',
           'Si la cancel·les abans que s’acabi, no se’t cobra res. Si no, en acabar es cobra el primer període del pla triat.',
-          'T’avisarem dins de l’app i per correu abans que s’acabi la prova.',
+          'T’avisarem dins de l’app (i al mòbil, si tens els avisos activats) abans que s’acabi la prova.',
         ],
       },
       {

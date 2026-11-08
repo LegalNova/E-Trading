@@ -69,7 +69,7 @@ const weekdayIn = (tz: string, d = new Date()) => new Intl.DateTimeFormat('en-GB
 const pct = (v: number, lang: Lang) => `${v >= 0 ? '+' : '−'}${new Intl.NumberFormat(lang === 'en' ? 'en-GB' : lang, { maximumFractionDigits: 1, minimumFractionDigits: 1 }).format(Math.abs(v))} %`
 
 type Candidate = { kind: PushKind; vars: Record<string, string | number>; url: string; key?: string }
-type PushUser = User & { game: { streak: number; lastActiveDay: string | null; xp: number } | null }
+type PushUser = User & { game: { streak: number; lastActiveDay: string | null; xp: number; freezes?: number } | null }
 /** Lo que ya se le ha enviado hoy (tipo y, en avisos de un activo, cuál) */
 type Sent = { kind?: string; key?: string }[]
 
@@ -90,7 +90,7 @@ async function movesOf(u: User, maxAgeMs: number) {
 }
 
 /** Qué aviso toca ahora a esta persona (o ninguno). `sent` = lo que ya se le envió hoy. */
-export async function candidateFor(u: PushUser, lang: Lang, hour: number, today: string, sent: Sent = []): Promise<Candidate | null> {
+export async function candidateFor(u: PushUser, lang: Lang, hour: number, today: string, sent: Sent = [], now = new Date()): Promise<Candidate | null> {
   const g = u.game
   const activeToday = g?.lastActiveDay === today
   const daysAway = g?.lastActiveDay ? Math.round((Date.parse(today) - Date.parse(g.lastActiveDay)) / 86_400_000) : 99
@@ -121,13 +121,14 @@ export async function candidateFor(u: PushUser, lang: Lang, hour: number, today:
     const parts = [
       nL ? plural(nL, lang, { es: 'clase', ca: 'classe', en: 'lesson' }, { es: 'clases', ca: 'classes', en: 'lessons' }) : '',
       nT ? plural(nT, lang, { es: 'operación', ca: 'operació', en: 'trade' }, { es: 'operaciones', ca: 'operacions', en: 'trades' }) : '',
-      g && g.streak > 0 ? { es: `racha de ${g.streak} días`, ca: `ratxa de ${g.streak} dies`, en: `a ${g.streak}-day streak` }[lang] : '',
+      g && g.streak > 0 ? { es: `racha de ${g.streak} ${g.streak === 1 ? 'día' : 'días'}`, ca: `ratxa de ${g.streak} ${g.streak === 1 ? 'dia' : 'dies'}`, en: `a ${g.streak}-day streak` }[lang] : '',
     ].filter(Boolean)
     const l = await nextLesson()
     if (parts.length) return { kind: 'evening', vars: { summary: list(parts, lang).replace(/^./, c => c.toUpperCase()), lesson: l?.title ?? '' }, url: lessonUrl(l) }
   }
   if (hour === 19 || hour === 21) {
-    if (g && g.streak >= 1 && !activeToday && daysAway <= 1) {
+    // (con protectores, la racha sigue viva aunque falte algún día: cada protector cubre uno)
+    if (g && g.streak >= 1 && !activeToday && daysAway <= 1 + (g.freezes ?? 0)) {
       const l = await nextLesson()
       return { kind: hour === 21 ? 'streak_last' : 'streak', vars: { n: g.streak, lesson: l?.title ?? '' }, url: lessonUrl(l) }
     }
@@ -161,7 +162,7 @@ export async function candidateFor(u: PushUser, lang: Lang, hour: number, today:
   if (hour === 11) {
     const sub = await db.subscription.findUnique({ where: { userId: u.id } })
     if ((sub?.status === 'TRIALING' || sub?.status === 'GIFT') && sub.trialEndsAt) {
-      const left = Math.ceil((sub.trialEndsAt.getTime() - Date.now()) / 86_400_000)
+      const left = Math.ceil((sub.trialEndsAt.getTime() - now.getTime()) / 86_400_000)
       if (left === 2 || left === 1) return { kind: 'trial', vars: { n: left }, url: '/clases' }
     }
   }
@@ -184,25 +185,41 @@ export async function candidateFor(u: PushUser, lang: Lang, hour: number, today:
     if (best && Math.abs(best.chg) >= 0.5) return { kind: 'market', vars: { name: best.p.name, chg: pct(best.chg, lang) }, url: `/mercado/${encodeURIComponent(best.p.symbol)}` }
   }
   // Miércoles 17:00 (mitad de semana) y domingo 18:00 (se cierra el lunes): cómo va en la liga
-  const wd = weekdayIn(u.timezone)
+  const wd = weekdayIn(u.timezone, now)
   if ((hour === 18 && wd === 'Sun') || (hour === 17 && wd === 'Wed')) {
     const { withCtx } = await import('./game/core')
-    const { leagueFor } = await import('./game/league')
+    const { leagueFor, leagueWeekKey } = await import('./game/league')
+    // Solo a quien ya está en la liga esta semana (abrir la liga desde aquí le metería sin haber usado la app)
+    if (!(await db.leagueMember.findUnique({ where: { weekKey_userId: { weekKey: leagueWeekKey(), userId: u.id } } }))) return null
     const l = await withCtx(c => leagueFor(c), u)
     const me = l.members.find(m => m.isMe)
     const cut = l.members.find(m => m.rank === l.promoteTop)
     if (me && me.rank > 0 && l.members.length > 1) {
-      const hours = Math.max(1, Math.round((Date.parse(l.endsAt) - Date.now()) / 3_600_000))
-      return { kind: 'league', vars: { rank: me.rank, gap: me.rank <= l.promoteTop ? 0 : Math.max(1, (cut?.score ?? 0) - me.score + 1), hours }, url: '/liga' }
+      const hours = Math.max(1, Math.round((Date.parse(l.endsAt) - now.getTime()) / 3_600_000))
+      // (para subir hace falta algo de XP esta semana: en zona de ascenso sin XP aún no se sube)
+      const inZone = me.rank <= l.promoteTop && me.weeklyXp > 0
+      return { kind: 'league', vars: { rank: me.rank, gap: inZone ? 0 : Math.max(1, (cut?.score ?? 0) - me.score + 1), hours }, url: '/liga' }
     }
   }
   return null
 }
 
+/** ¿Se le puede enviar algo ahora? Nada de 22:00 a 9:00 (su hora), 6 al día como mucho y 1 hora entre uno y otro.
+ *  `recent` = avisos enviados en las últimas 24 h. Devuelve su hora, su día y lo que ya se le envió hoy. */
+export function pushSlot(u: Pick<User, 'id' | 'timezone'>, now: Date, recent: { userId: string | null; createdAt: Date; props: unknown }[]) {
+  const hour = hourIn(u.timezone, now)
+  if (hour < 9 || hour >= 22) return null
+  const today = dayOf(now, u.timezone)
+  const mine = recent.filter(r => r.userId === u.id && dayOf(r.createdAt, u.timezone) === today)
+  if (mine.length >= MAX_PER_DAY) return null
+  if (recent.some(r => r.userId === u.id && now.getTime() - r.createdAt.getTime() < GAP_MS)) return null
+  return { hour, today, already: mine.map(r => (r.props ?? {}) as { kind?: string; key?: string }) }
+}
+
 /** Ronda de avisos (la llama la tarea programada cada hora) */
 export async function runPushRound(now = new Date()) {
   if (!pushEnabled) return { sent: 0, users: 0, skipped: 'sin claves VAPID' }
-  const users = await db.user.findMany({ where: { blockedAt: null, pushSubs: { some: {} } }, include: { game: { select: { streak: true, lastActiveDay: true, xp: true } } }, take: 5000 })
+  const users = await db.user.findMany({ where: { blockedAt: null, pushSubs: { some: {} } }, include: { game: { select: { streak: true, lastActiveDay: true, xp: true, freezes: true } } }, take: 5000 })
   const since = new Date(now.getTime() - 24 * 3_600_000)
   const recent = await db.event.findMany({ where: { name: 'push_sent', userId: { in: users.map(u => u.id) }, createdAt: { gte: since } }, select: { userId: true, createdAt: true, props: true } })
   let sent = 0
@@ -212,15 +229,11 @@ export async function runPushRound(now = new Date()) {
     Array.from({ length: 8 }, async () => {
       for (let u = queue.shift(); u; u = queue.shift()) {
         try {
-          const hour = hourIn(u.timezone, now)
-          if (hour < 9 || hour >= 22) continue
-          const today = dayOf(now, u.timezone)
-          const mine = recent.filter(r => r.userId === u!.id && dayOf(r.createdAt, u!.timezone) === today)
-          if (mine.length >= MAX_PER_DAY) continue
-          if (recent.some(r => r.userId === u!.id && now.getTime() - r.createdAt.getTime() < GAP_MS)) continue
+          const slot = pushSlot(u, now, recent)
+          if (!slot) continue
+          const { hour, today, already } = slot
           const lang = langOf(u)
-          const already = mine.map(r => (r.props ?? {}) as { kind?: string; key?: string })
-          const c = await candidateFor(u, lang, hour, today, already)
+          const c = await candidateFor(u, lang, hour, today, already, now)
           if (!c) continue
           // Cada tipo, una vez al día (los de un activo, una vez por activo)
           if (already.some(r => r.kind === c.kind && (r.key ?? null) === (c.key ?? null))) continue

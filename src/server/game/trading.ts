@@ -50,16 +50,33 @@ export async function priceBook(symbols: string[]): Promise<Book> {
 /** Precios de lo que tiene el usuario (posiciones, órdenes pendientes y alertas) más los símbolos indicados */
 export async function userBook(extra: string[] = [], userId?: string): Promise<Book> {
   const id = userId ?? (await requireUser()).id
-  const [pos, ord, al] = await Promise.all([
+  const [pos, ord, al, traded] = await Promise.all([
     db.position.findMany({ where: { userId: id }, select: { symbol: true } }),
     db.order.findMany({ where: { userId: id, status: 'PENDING' }, select: { symbol: true } }),
     db.priceAlert.findMany({ where: { userId: id, active: true }, select: { symbol: true } }),
+    // Lo vendido hoy también cuenta en la variación del día
+    db.trade.findMany({ where: { userId: id, status: 'FILLED', createdAt: { gte: new Date(Date.now() - 36 * 3_600_000) } }, select: { symbol: true }, distinct: ['symbol'] }),
   ])
-  return priceBook([...extra, ...pos.map(x => x.symbol), ...ord.map(x => x.symbol), ...al.map(x => x.symbol)])
+  return priceBook([...extra, ...pos.map(x => x.symbol), ...ord.map(x => x.symbol), ...al.map(x => x.symbol), ...traded.map(x => x.symbol)])
 }
 
 const pxOf = (book: Book, sym: string) => book.get(sym) ?? fail(503, 'MARKET_UNAVAILABLE', 'Precio no disponible ahora mismo')
+/** Sin precio en el libro: si el activo no existe es un 404, no un «mercado no disponible» */
+async function requirePx(book: Book, sym: string) {
+  if (!book.has(sym) && !(await db.asset.findFirst({ where: { symbol: sym, enabled: true }, select: { symbol: true } }))) fail(404, 'NOT_FOUND', 'Activo no encontrado')
+  return pxOf(book, sym)
+}
 const fee = (amount: number) => Math.max(amount * 0.001, 1)
+const eurFmt = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' })
+/** ¿Se cumple ya la condición de una orden con este precio? */
+function triggered(o: { type: string; side: string; triggerPrice: unknown }, p: number) {
+  if (o.type === 'MARKET') return true
+  const trig = o.triggerPrice === null || o.triggerPrice === undefined ? null : n(o.triggerPrice)
+  if (trig === null) return false
+  if (o.type === 'LIMIT') return o.side === 'BUY' ? p <= trig : p >= trig
+  if (o.type === 'STOP_LOSS') return p <= trig
+  return o.type === 'TAKE_PROFIT' && p >= trig
+}
 const fmtPrice = (p: Px, v: number) => (p.type === 'FX' ? v.toFixed(5) : fixPrice(v))
 const n = (d: unknown) => Number(d ?? 0)
 
@@ -67,7 +84,8 @@ export async function portfolioRow(tx: Tx, user: User) {
   const pf = await tx.portfolio.findUnique({ where: { userId: user.id } })
   if (pf) return pf
   // Sin choques si dos peticiones la crean a la vez
-  await tx.portfolio.createMany({ data: [{ userId: user.id, cash: START_CASH[user.plan], resetsYear: new Date().getFullYear() }], skipDuplicates: true })
+  // Si se crea ya con el saldo de Plus o Max, queda marcada: si no, al activar la suscripción se le sumaban otros 40.000 € (90.000 en total)
+  await tx.portfolio.createMany({ data: [{ userId: user.id, cash: START_CASH[user.plan], resetsYear: new Date().getFullYear(), premiumTopUp: user.plan !== 'FREE' }], skipDuplicates: true })
   return tx.portfolio.findUniqueOrThrow({ where: { userId: user.id } })
 }
 
@@ -82,13 +100,16 @@ export interface OrderInput { symbol: string; side: 'BUY' | 'SELL'; type: 'MARKE
 async function previewIn(c: Ctx, book: Book, i: OrderInput): Promise<OrderPreviewT> {
   const px = pxOf(book, i.symbol)
   const since = new Date(Date.now() - 86_400_000)
-  const [pf, positions, features, recent, buys, stops] = await Promise.all([
+  const [pf, positions, features, recent, buys, stops, pendingBuys] = await Promise.all([
     portfolioRow(c.tx, c.user), c.tx.position.findMany({ where: { userId: c.user.id } }), unlockedFeatures(c.tx, c.user),
     c.tx.trade.findMany({ where: { userId: c.user.id, status: 'FILLED', createdAt: { gte: since } }, select: { side: true, realizedPnl: true } }),
     c.tx.trade.aggregate({ where: { userId: c.user.id, status: 'FILLED', side: 'BUY', createdAt: { gte: new Date(Date.now() - 30 * 86_400_000) } }, _avg: { total: true } }),
     c.tx.order.count({ where: { userId: c.user.id, symbol: i.symbol, status: 'PENDING', type: 'STOP_LOSS' } }),
+    // Saldo comprometido en compras pendientes (como en un broker: no se puede gastar dos veces)
+    c.tx.order.aggregate({ where: { userId: c.user.id, status: 'PENDING', side: 'BUY' }, _sum: { amount: true, fee: true } }),
   ])
   const cash = n(pf.cash)
+  const reserved = n(pendingBuys._sum.amount) + n(pendingBuys._sum.fee)
   const total = cash + positions.reduce((t, p) => t + posValue(book, p), 0)
   const mine = positions.find(p => p.symbol === i.symbol)
   const held = n(mine?.qty)
@@ -106,10 +127,13 @@ async function previewIn(c: Ctx, book: Book, i: OrderInput): Promise<OrderPrevie
   const sl = Number(i.stopLoss ?? 0), tp = Number(i.takeProfit ?? 0)
   let error: OrderPreviewT['error'] = null
   if (amount > 0 && amount < 1) error = 'MIN_AMOUNT'
-  else if (i.side === 'BUY' && amount + f > cash) error = 'INSUFFICIENT_FUNDS'
+  else if (i.side === 'BUY' && amount + f > cash - reserved + 1e-6) error = 'INSUFFICIENT_FUNDS'
   else if (i.side === 'SELL' && qty > held + 1e-9) error = 'INSUFFICIENT_QTY'
   else if (i.side === 'BUY' && sl > 0 && sl >= entry) error = 'BAD_STOP'
   else if (i.side === 'BUY' && tp > 0 && tp <= entry) error = 'BAD_TAKE_PROFIT'
+  // Stop loss o take profit sueltos (de venta) en el lado equivocado del precio: saltarían al instante
+  else if (i.type === 'STOP_LOSS' && Number(i.triggerPrice) >= px.price) error = 'BAD_STOP'
+  else if (i.type === 'TAKE_PROFIT' && Number(i.triggerPrice) > 0 && Number(i.triggerPrice) <= px.price) error = 'BAD_TAKE_PROFIT'
   const cashAfter = i.side === 'BUY' ? cash - amount - f : cash + amount - f
   const cryptoNow = positions.reduce((t, p) => t + (book.get(p.symbol)?.type === 'CRYPTO' ? posValue(book, p) : 0), 0)
   const tips = error
@@ -135,6 +159,7 @@ async function previewIn(c: Ctx, book: Book, i: OrderInput): Promise<OrderPrevie
 
 export async function preview(i: OrderInput) {
   const book = await userBook([i.symbol])
+  await requirePx(book, i.symbol)
   return withCtx(c => previewIn(c, book, i))
 }
 
@@ -152,6 +177,10 @@ const toTradeT = (t: Trade): TradeT => ({
 /** Ejecuta una orden al precio actual del servidor. Devuelve la orden actualizada. */
 async function fill(c: Ctx, book: Book, o: Order, silent = false): Promise<Order> {
   const px = pxOf(book, o.symbol)
+  // Puede haberse cancelado en esta misma pasada (la otra mitad de un OCO o una venta que ya lo vendió todo)
+  // (al colocar una orden nueva, silent, no hace falta mirarlo)
+  const now0 = silent ? o : await c.tx.order.findUnique({ where: { id: o.id } })
+  if (!now0 || now0.status !== 'PENDING') return now0 ?? o
   const pf = await portfolioRow(c.tx, c.user)
   const pos = await c.tx.position.findUnique({ where: { userId_symbol: { userId: c.user.id, symbol: o.symbol } } })
   let qty = n(o.qty)
@@ -160,6 +189,8 @@ async function fill(c: Ctx, book: Book, o: Order, silent = false): Promise<Order
   const f = fee(amount)
   const reject = async (reason: string) => {
     await c.tx.trade.create({ data: { userId: c.user.id, orderId: o.id, side: o.side, type: o.type, symbol: o.symbol, qty: fix8(qty), price: fmtPrice(px, px.price), fee: 0, total: fix2(amount), status: 'REJECTED', rejectReason: reason } })
+    // Una orden pendiente que no se puede ejecutar se avisa (si no, la persona no se entera hasta mirar el historial)
+    if (!silent) await notify(c, 'ORDER_FILLED', `Orden no ejecutada: ${px.name}`, `${reason}. No se ha hecho la ${o.side === 'BUY' ? 'compra' : 'venta'}.`, '/mercado/ordenes')
     return c.tx.order.update({ where: { id: o.id }, data: { status: 'REJECTED' } })
   }
   if (qty <= 0) return reject('No tienes participaciones')
@@ -167,7 +198,8 @@ async function fill(c: Ctx, book: Book, o: Order, silent = false): Promise<Order
   let pnl: number | null = null
   if (o.side === 'BUY') {
     const oldQ = n(pos?.qty)
-    const avg = (oldQ * n(pos?.avgPrice) + amount) / (oldQ + qty)
+    // Precio medio con la comisión de compra incluida (coste real): así lo ganado y lo perdido cuadran con el valor de la cartera
+    const avg = (oldQ * n(pos?.avgPrice) + amount + f) / (oldQ + qty)
     await c.tx.position.upsert({ where: { userId_symbol: { userId: c.user.id, symbol: o.symbol } }, create: { userId: c.user.id, symbol: o.symbol, qty: fix8(qty), avgPrice: avg.toFixed(12) }, update: { qty: fix8(oldQ + qty), avgPrice: avg.toFixed(12) } })
     await c.tx.portfolio.update({ where: { userId: c.user.id }, data: { cash: fix2(n(pf.cash) - amount - f) } })
     if (px.type === 'CRYPTO') bump(c, 'crypto')
@@ -178,21 +210,29 @@ async function fill(c: Ctx, book: Book, o: Order, silent = false): Promise<Order
     if (left < 1e-9) await c.tx.position.delete({ where: { userId_symbol: { userId: c.user.id, symbol: o.symbol } } })
     else await c.tx.position.update({ where: { userId_symbol: { userId: c.user.id, symbol: o.symbol } }, data: { qty: fix8(left) } })
     await c.tx.portfolio.update({ where: { userId: c.user.id }, data: { cash: fix2(n(pf.cash) + amount - f), realized: fix2(n(pf.realized) + pnl) } })
+    // Las demás ventas pendientes de este activo no pueden vender más de lo que queda: sin nada, se cancelan; si queda algo, se ajustan
+    const others = await c.tx.order.findMany({ where: { userId: c.user.id, symbol: o.symbol, side: 'SELL', status: 'PENDING', id: { not: o.id } } })
+    for (const x of others) {
+      if (left < 1e-9) await c.tx.order.update({ where: { id: x.id }, data: { status: 'CANCELLED' } })
+      else if (n(x.qty) > left) await c.tx.order.update({ where: { id: x.id }, data: { qty: fix8(left), amount: fix2((n(x.amount) * left) / n(x.qty)) } })
+    }
   }
   const now = new Date()
   await c.tx.trade.create({ data: { userId: c.user.id, orderId: o.id, side: o.side, type: o.type, symbol: o.symbol, qty: fix8(qty), price: fmtPrice(px, px.price), fee: fix2(f), total: fix2(amount), realizedPnl: pnl === null ? null : fix2(pnl), status: 'FILLED' } })
   // XP solo en las 3 primeras operaciones del día (D-017)
-  if (c.g.tradesToday < 3) addXp(c, 15)
+  // XP solo cuando la operación la hace la persona (no cuando la ejecuta la tarea programada en su ausencia)
+  if (silent && c.g.tradesToday < 3) addXp(c, 15)
   c.g.tradesToday++
   await bumpGoal(c, 'ops')
-  await markActive(c)
-  if (!silent) await notify(c, 'ORDER_FILLED', `Orden ejecutada: ${o.symbol}`, `${o.side === 'BUY' ? 'Compra' : 'Venta'} a ${fmtPrice(px, px.price)} ${px.currency}.`, '/mercado/cartera')
+  // La racha solo se alarga cuando la persona opera (silent: orden recién colocada); no cuando la ejecuta la tarea programada o una lectura
+  if (silent) await markActive(c)
+  if (!silent) await notify(c, 'ORDER_FILLED', `Orden ejecutada: ${px.name}`, `${o.side === 'BUY' ? 'Compra' : 'Venta'} a ${fmtPrice(px, px.price)} ${px.currency}.`, '/mercado/cartera')
   // Compra con salidas: se crean el stop loss y el take profit por la cantidad comprada
   if (o.side === 'BUY') {
     const exits = [['STOP_LOSS', o.stopLoss], ['TAKE_PROFIT', o.takeProfit]] as const
     for (const [type, trig] of exits) {
       if (!trig) continue
-      await c.tx.order.create({ data: { userId: c.user.id, symbol: o.symbol, side: 'SELL', type, status: 'PENDING', qty: fix8(qty), amount: fix2(qty * px.eur * (n(trig) / px.price)), triggerPrice: trig, parentId: o.id } })
+      await c.tx.order.create({ data: { userId: c.user.id, symbol: o.symbol, side: 'SELL', type, status: 'PENDING', qty: fix8(qty), amount: fix2(qty * px.eur * (n(trig) / px.price)), triggerPrice: String(trig), parentId: o.id } })
     }
   }
   // Salida de una compra: al ejecutarse una, la otra se cancela (OCO)
@@ -209,19 +249,29 @@ export async function placeOrder(i: OrderInput, idempotencyKey?: string): Promis
       const dup = await c.tx.order.findUnique({ where: { idempotencyKey: key } })
       if (dup && dup.userId === c.user.id) return { xp: 0, goalsCompleted: [], achievementsUnlocked: [], unlockedFeatures: [], order: toOrderT(dup) }
     }
-    const px = pxOf(book, i.symbol)
+    const px = await requirePx(book, i.symbol)
     const pv = await previewIn(c, book, i)
-    if (i.type !== 'MARKET' && !pv.allowedTypes.includes(i.type)) fail(422, 'FEATURE_LOCKED', `Aprueba la lección «${LESSON[RISK_LESSON]?.title ?? 'El stop loss'}» (gratis) o hazte Premium`)
+    const locked = `Aprueba la lección «${LESSON[RISK_LESSON]?.title ?? 'El stop loss'}» (gratis) o hazte Premium`
+    const trig = Number(i.triggerPrice)
+    if (i.type !== 'MARKET' && !pv.allowedTypes.includes(i.type)) fail(422, 'FEATURE_LOCKED', locked)
     if (px.type === 'INDEX') fail(422, 'VALIDATION_ERROR', 'Los índices no se compran directamente')
+    if ((i.type === 'STOP_LOSS' || i.type === 'TAKE_PROFIT') && i.side !== 'SELL') fail(422, 'VALIDATION_ERROR', 'El stop loss y el take profit son órdenes de venta. Para comprar a un precio, usa una orden límite.')
     if (Number(pv.qty) <= 0) fail(422, 'VALIDATION_ERROR', 'Indica un importe')
     if (pv.error === 'MIN_AMOUNT') fail(422, 'VALIDATION_ERROR', 'El importe mínimo es 1 €')
     if (pv.error === 'INSUFFICIENT_QTY') fail(422, 'INSUFFICIENT_FUNDS', 'No tienes tantas participaciones')
-    if (pv.error === 'INSUFFICIENT_FUNDS' && i.type === 'MARKET') fail(422, 'INSUFFICIENT_FUNDS', 'No tienes saldo suficiente')
-    if (i.type !== 'MARKET' && !(Number(i.triggerPrice) > 0)) fail(422, 'VALIDATION_ERROR', 'Indica el precio de activación')
-    if (i.type !== 'MARKET' && Number(i.triggerPrice) > px.price * 10) fail(422, 'VALIDATION_ERROR', 'Precio de activación fuera de rango')
+    if (pv.error === 'INSUFFICIENT_FUNDS') {
+      const pend = await c.tx.order.aggregate({ where: { userId: c.user.id, status: 'PENDING', side: 'BUY' }, _sum: { amount: true, fee: true } })
+      const reserved = n(pend._sum.amount) + n(pend._sum.fee)
+      fail(422, 'INSUFFICIENT_FUNDS', reserved > 0 ? `No tienes saldo suficiente: ${eurFmt.format(reserved)} están reservados para tus compras pendientes` : 'No tienes saldo suficiente')
+    }
+    if (i.type !== 'MARKET' && !(trig > 0)) fail(422, 'VALIDATION_ERROR', 'Indica el precio de activación')
+    if (i.type !== 'MARKET' && (trig > px.price * 10 || trig < px.price / 10)) fail(422, 'VALIDATION_ERROR', 'Precio de activación fuera de rango')
+    // Un stop por encima del precio (o un objetivo por debajo) saltaría al instante: casi siempre es un error al escribirlo
+    if (i.type === 'STOP_LOSS' && trig >= px.price) fail(422, 'VALIDATION_ERROR', 'El stop loss tiene que estar por debajo del precio actual')
+    if (i.type === 'TAKE_PROFIT' && trig <= px.price) fail(422, 'VALIDATION_ERROR', 'El take profit tiene que estar por encima del precio actual')
     if ((i.stopLoss || i.takeProfit) && i.side !== 'BUY') fail(422, 'VALIDATION_ERROR', 'El stop loss y el take profit se añaden al comprar')
-    if (i.stopLoss && !pv.allowedTypes.includes('STOP_LOSS')) fail(422, 'FEATURE_LOCKED', `Aprueba la lección «${LESSON[RISK_LESSON]?.title ?? 'El stop loss'}» (gratis) o hazte Premium`)
-    if (i.takeProfit && !pv.allowedTypes.includes('TAKE_PROFIT')) fail(422, 'FEATURE_LOCKED', `Aprueba la lección «${LESSON[RISK_LESSON]?.title ?? 'El stop loss'}» (gratis) o hazte Premium`)
+    if (i.stopLoss && !pv.allowedTypes.includes('STOP_LOSS')) fail(422, 'FEATURE_LOCKED', locked)
+    if (i.takeProfit && !pv.allowedTypes.includes('TAKE_PROFIT')) fail(422, 'FEATURE_LOCKED', locked)
     if (pv.error === 'BAD_STOP') fail(422, 'VALIDATION_ERROR', 'El stop loss tiene que estar por debajo del precio de compra')
     if (pv.error === 'BAD_TAKE_PROFIT') fail(422, 'VALIDATION_ERROR', 'El take profit tiene que estar por encima del precio de compra')
     if (Number(i.takeProfit) > px.price * 10) fail(422, 'VALIDATION_ERROR', 'Take profit fuera de rango')
@@ -231,19 +281,21 @@ export async function placeOrder(i: OrderInput, idempotencyKey?: string): Promis
     if (i.type === 'LIMIT') bump(c, 'limits')
     if (i.type === 'STOP_LOSS' || Number(i.stopLoss) > 0) bump(c, 'stops')
     if (i.type === 'TAKE_PROFIT' || Number(i.takeProfit) > 0) bump(c, 'tps')
+    // Los precios van como texto: con Number() se guardaban como 68092.71000000001
     let o = await c.tx.order.create({
       data: {
         userId: c.user.id, symbol: i.symbol, side: i.side, type: i.type, status: 'PENDING', qty: pv.qty, amount: fix2(Number(pv.qty) * px.eur), fee: pv.fee,
-        triggerPrice: i.type === 'MARKET' ? null : Number(i.triggerPrice), riskAcknowledged: !!i.riskAcknowledged, idempotencyKey: key ?? null,
-        stopLoss: Number(i.stopLoss) > 0 ? Number(i.stopLoss) : null, takeProfit: Number(i.takeProfit) > 0 ? Number(i.takeProfit) : null,
+        triggerPrice: i.type === 'MARKET' ? null : i.triggerPrice!, riskAcknowledged: !!i.riskAcknowledged, idempotencyKey: key ?? null,
+        stopLoss: Number(i.stopLoss) > 0 ? i.stopLoss! : null, takeProfit: Number(i.takeProfit) > 0 ? i.takeProfit! : null,
       },
     })
-    if (i.type === 'MARKET' && px.tradable) {
+    // A mercado con la bolsa abierta, o una límite que ya se cumple (comprar a 70 algo que vale 68): se ejecuta ya
+    if (px.tradable && triggered(o, px.price)) {
       o = await fill(c, book, o, true)
-      c.fx.companion = firstTrade ? lumi(c, 'FIRST_TRADE') : lumi(c, 'TRADE_DONE')
+      if (o.status === 'FILLED') c.fx.companion = firstTrade ? lumi(c, 'FIRST_TRADE') : lumi(c, 'TRADE_DONE')
     } else {
-      // Mercado cerrado o condicional: queda pendiente (D-013)
-      if (i.type === 'MARKET') o = await c.tx.order.update({ where: { id: o.id }, data: { executesAt: nextOpen(px.hours) } })
+      // Mercado cerrado o condicional: queda pendiente (D-013). Abierto pero sin precio reciente: en cuanto lo haya
+      if (i.type === 'MARKET' && !px.open) o = await c.tx.order.update({ where: { id: o.id }, data: { executesAt: nextOpen(px.hours) } })
       await markActive(c)
     }
     return { ...(await endFx(c)), order: toOrderT(o) }
@@ -262,45 +314,73 @@ export async function processPendingFor(c: Ctx, book: Book) {
   for (const o of orders) {
     const px = book.get(o.symbol)
     if (!px || !px.tradable) continue
-    const p = px.price
-    const trig = o.triggerPrice ? n(o.triggerPrice) : null
-    const hit = o.type === 'MARKET' || (trig !== null && ((o.type === 'LIMIT' && (o.side === 'BUY' ? p <= trig : p >= trig)) || (o.type === 'STOP_LOSS' && p <= trig) || (o.type === 'TAKE_PROFIT' && p >= trig)))
-    if (hit) await fill(c, book, o)
+    if (triggered(o, px.price)) await fill(c, book, o)
   }
   for (const al of alerts) {
     const p = book.get(al.symbol)?.price
     if (p === undefined) continue
     if ((al.condition === 'ABOVE' && p >= n(al.price)) || (al.condition === 'BELOW' && p <= n(al.price))) {
       await c.tx.priceAlert.update({ where: { id: al.id }, data: { active: false } })
-      await notify(c, 'PRICE_ALERT', `${al.symbol} ha ${al.condition === 'ABOVE' ? 'superado' : 'bajado de'} ${n(al.price)}`, 'Tu alerta de precio se ha cumplido.', `/mercado/${al.symbol}`)
+      const px = book.get(al.symbol)!
+      const show = (v: number) => `${new Intl.NumberFormat('es-ES', { maximumFractionDigits: px.type === 'FX' ? 5 : v < 1 ? 6 : 2 }).format(v)}${px.type === 'FX' || px.type === 'INDEX' ? '' : ` ${px.currency}`}`
+      await notify(c, 'PRICE_ALERT', `${px.name} ha ${al.condition === 'ABOVE' ? 'superado' : 'bajado de'} ${show(n(al.price))}`, `Tu alerta de precio se ha cumplido: ahora está a ${show(px.price)}.`, `/mercado/${encodeURIComponent(al.symbol)}`)
     }
   }
 }
 
 // ── Cartera (04.6) ───────────────────────────────────────
 export async function portfolioIn(c: Ctx, book: Book): Promise<PortfolioT> {
-  const [pf, positions] = await Promise.all([portfolioRow(c.tx, c.user), c.tx.position.findMany({ where: { userId: c.user.id } })])
+  const since = new Date(Date.now() - 36 * 3_600_000)
+  const [pf, positions, recent] = await Promise.all([
+    portfolioRow(c.tx, c.user),
+    c.tx.position.findMany({ where: { userId: c.user.id } }),
+    c.tx.trade.findMany({ where: { userId: c.user.id, status: 'FILLED', createdAt: { gte: since } }, select: { symbol: true, side: true, qty: true, total: true, fee: true, createdAt: true } }),
+  ])
+  const lastReset = recent.length ? await c.tx.auditLog.findFirst({ where: { actorId: c.user.id, action: 'PORTFOLIO_RESET', createdAt: { gte: since } }, orderBy: { createdAt: 'desc' }, select: { createdAt: true } }) : null
   const cash = n(pf.cash)
   const values = positions.map(p => ({ p, v: posValue(book, p), px: book.get(p.symbol) }))
   const total = cash + values.reduce((t, x) => t + x.v, 0)
+  // Variación del día, activo a activo: valor de ahora + lo cobrado hoy al vender − (lo que había al empezar el día al cierre anterior + lo pagado hoy al comprar).
+  // Así lo comprado hoy cuenta desde su precio de compra (con comisión) y no desde el cierre de ayer. Lo de antes de un reinicio no cuenta.
+  const today = new Map<string, { buyQ: number; buyCost: number; sellQ: number; sellNet: number }>()
+  for (const t of recent) {
+    if (dayOf(t.createdAt, c.user.timezone) !== c.today || (lastReset && t.createdAt <= lastReset.createdAt)) continue
+    const d = today.get(t.symbol) ?? { buyQ: 0, buyCost: 0, sellQ: 0, sellNet: 0 }
+    if (t.side === 'BUY') {
+      d.buyQ += n(t.qty)
+      d.buyCost += n(t.total) + n(t.fee)
+    } else {
+      d.sellQ += n(t.qty)
+      d.sellNet += n(t.total) - n(t.fee)
+    }
+    today.set(t.symbol, d)
+  }
+  const prevEur = (px: Px) => (px.prevClose > 0 ? px.eur * (px.prevClose / px.price) : px.eur)
   let dayChange = 0
+  for (const sym of new Set([...positions.map(p => p.symbol), ...today.keys()])) {
+    const px = book.get(sym)
+    if (!px) continue // sin precio: no se inventa la variación
+    const held = n(positions.find(p => p.symbol === sym)?.qty)
+    const d = today.get(sym) ?? { buyQ: 0, buyCost: 0, sellQ: 0, sellNet: 0 }
+    const q0 = Math.max(0, held - d.buyQ + d.sellQ)
+    dayChange += held * px.eur + d.sellNet - q0 * prevEur(px) - d.buyCost
+  }
   let unreal = 0
   const list = values
     .map(({ p, v, px }) => {
-      const chg = px ? (px.price - px.prevClose) / px.prevClose : 0
-      dayChange += v - v / (1 + chg)
       const cost = n(p.qty) * n(p.avgPrice)
       const pnl = v - cost
       unreal += pnl
       return { symbol: p.symbol, name: px?.name ?? p.symbol, type: (px?.type ?? 'STOCK') as PortfolioT['positions'][number]['type'], qty: fix8(n(p.qty)), avgPrice: fixPrice(n(p.avgPrice)), marketValue: fix2(v), unrealizedPnl: fix2(pnl), pnlPct: cost ? (pnl / cost) * 100 : 0, weightPct: total ? (v / total) * 100 : 0 }
     })
     .sort((a, b) => Number(b.marketValue) - Number(a.marketValue))
-  const start = START_CASH[c.user.plan]
+  // Base de la rentabilidad: el saldo que se ha recibido (quien tuvo Max y volvió a Free conserva sus 50.000 €)
+  const start = pf.premiumTopUp ? Math.max(START_CASH[c.user.plan], START_CASH.PREMIUM) : START_CASH[c.user.plan]
   // Foto diaria real del valor de la cartera (para el gráfico de evolución)
   // (solo se escribe si cambia el valor: con precios que se actualizan cada pocos minutos, casi nunca)
   const snap = await c.tx.portfolioSnapshot.findUnique({ where: { userId_day: { userId: c.user.id, day: c.today } }, select: { value: true } })
   if (!snap || n(snap.value).toFixed(2) !== fix2(total)) await c.tx.portfolioSnapshot.upsert({ where: { userId_day: { userId: c.user.id, day: c.today } }, create: { userId: c.user.id, day: c.today, value: fix2(total) }, update: { value: fix2(total) } })
-  return { totalValue: fix2(total), cash: fix2(cash), dayChange: fix2(dayChange), dayChangePct: total - dayChange ? (dayChange / (total - dayChange)) * 100 : 0, totalReturnPct: ((total - start) / start) * 100, realizedPnl: fix2(n(pf.realized)), unrealizedPnl: fix2(unreal), positions: list, resetsLeft: pf.resetsLeft }
+  return { totalValue: fix2(total), cash: fix2(cash), dayChange: fix2(dayChange), dayChangePct: total - dayChange ? (dayChange / (total - dayChange)) * 100 : 0, totalReturnPct: ((total - start) / start) * 100, realizedPnl: fix2(n(pf.realized)), unrealizedPnl: fix2(unreal), positions: list, resetsLeft: pf.resetsYear === new Date().getFullYear() ? pf.resetsLeft : 3 }
 }
 
 export async function portfolio() {
@@ -332,7 +412,16 @@ export async function history(range: '1W' | '1M' | '3M' | 'ALL') {
   })
 }
 
-export const orders = () => withCtx(async c => (await c.tx.order.findMany({ where: { userId: c.user.id, status: 'PENDING' }, orderBy: { createdAt: 'desc' } })).map(toOrderT))
+/** Órdenes pendientes (antes se ejecuta lo que ya se cumple: si no, la pantalla de órdenes mostraba como pendiente lo que ya tocaba) */
+export async function orders() {
+  const book = await userBook()
+  return withCtx(async c => {
+    await processPendingFor(c, book)
+    const out = (await c.tx.order.findMany({ where: { userId: c.user.id, status: 'PENDING' }, orderBy: { createdAt: 'desc' } })).map(toOrderT)
+    await endFx(c)
+    return out
+  })
+}
 export const trades = () => withCtx(async c => (await c.tx.trade.findMany({ where: { userId: c.user.id }, orderBy: { createdAt: 'desc' }, take: 100 })).map(toTradeT))
 
 export const cancelOrder = (id: string) =>
@@ -352,7 +441,7 @@ export async function resetPortfolio() {
     await (await import('./league')).addFlow(c.tx, c.user.id, START_CASH[c.user.plan] - before)
     await c.tx.position.deleteMany({ where: { userId: c.user.id } })
     await c.tx.order.updateMany({ where: { userId: c.user.id, status: 'PENDING' }, data: { status: 'CANCELLED' } })
-    await c.tx.portfolio.update({ where: { userId: c.user.id }, data: { cash: START_CASH[c.user.plan], realized: 0, resetsLeft: left - 1, resetsYear: year } })
+    await c.tx.portfolio.update({ where: { userId: c.user.id }, data: { cash: START_CASH[c.user.plan], realized: 0, resetsLeft: left - 1, resetsYear: year, premiumTopUp: c.user.plan !== 'FREE' } })
     await c.tx.auditLog.create({ data: { actorId: c.user.id, actor: c.user.email, action: 'PORTFOLIO_RESET', entity: 'Portfolio', entityId: c.user.id } })
     return portfolioIn(c, book)
   })

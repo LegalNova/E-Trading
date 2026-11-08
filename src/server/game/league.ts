@@ -6,15 +6,18 @@ import 'server-only'
 //   +10 por cada +1 % y −10 por cada −1 %, con tope de ±100 (un 10 %). Estudiar sigue pesando más (una clase ≈ 100 XP).
 //   Si más del 40 % de lo invertido está en una sola acción (los fondos y ETF no cuentan), las ganancias valen la mitad:
 //   jugárselo todo a una carta no sale a cuenta; las pérdidas cuentan enteras. El total nunca baja de 0.
+//   Cuenta la cartera de ahora y la que había antes de cada venta de la semana (pasarlo todo a efectivo antes del
+//   cierre no borra que se concentró; comprar poco a poco para diversificar no penaliza).
 //   El dinero que entra o sale sin invertir (el saldo extra de Max, un reinicio de cartera) no es rentabilidad.
 // - Cierre (lunes): suben los 7 primeros (+30 gemas), bajan los puestos 26–30. Nadie baja de Novato ni sube de Experto.
 import type { LeagueT } from '@/shared/contract'
 import { addDays, weekOf } from '@/shared/time'
 import { db } from '../db'
+import { currentLocale } from '../locale'
 import { DIVISIONS } from '../content/catalog'
 import { bump, checkAchievements, notify, START_CASH, withCtx, type Ctx, type Tx } from './core'
 import { priceBook } from './trading'
-import { score, tradePoints, weekReturnPct } from '@/shared/league-points'
+import { madridMidnight, score, tradePoints, weekReturnPct } from '@/shared/league-points'
 
 export const GROUP_SIZE = 30
 export const PROMOTE_TOP = 7
@@ -57,6 +60,44 @@ export async function addFlow(tx: Tx, userId: string, amount: number) {
   await tx.leagueMember.updateMany({ where: { weekKey: leagueWeekKey(), userId, finalRank: null }, data: { flows: { increment: Math.round(amount * 100) / 100 } } })
 }
 
+/** Marca en los contadores de la persona que esta semana tuvo la cartera concentrada antes de vender
+ *  (se llama tras operar con el número de operaciones hechas). Comprar poco a poco para diversificar no marca:
+ *  solo cuenta la cartera que había justo antes de cada venta. Una clave por semana (conc_20261102). */
+const concKey = (weekKey: string) => `conc_${weekKey.replaceAll('-', '')}`
+export async function noteConcentration(c: Ctx, trades: number) {
+  const weekKey = leagueWeekKey()
+  const key = concKey(weekKey)
+  if (c.counters[key]) return
+  const recent = await c.tx.trade.findMany({ where: { userId: c.user.id, status: 'FILLED' }, orderBy: { createdAt: 'desc' }, take: trades, select: { side: true, symbol: true, qty: true } })
+  const sold = recent.filter(t => t.side === 'SELL')
+  if (!sold.length) return
+  // Cartera de antes de las ventas: la de ahora más lo vendido
+  const now = await c.tx.position.findMany({ where: { userId: c.user.id }, select: { symbol: true, qty: true, avgPrice: true } })
+  const before = new Map(now.map(p => [p.symbol, { qty: Number(p.qty), avgPrice: Number(p.avgPrice) }]))
+  for (const t of sold) {
+    const p = before.get(t.symbol)
+    before.set(t.symbol, { qty: (p?.qty ?? 0) + Number(t.qty), avgPrice: p?.avgPrice ?? 0 })
+  }
+  const book = await priceBook([...before.keys()])
+  if (!isConcentrated([...before].map(([symbol, p]) => ({ symbol, ...p })), book)) return
+  const keep = concKey(addDays(weekKey, -7))
+  for (const k of Object.keys(c.counters)) if (k.startsWith('conc_') && k < keep) delete c.counters[k]
+  c.counters[key] = 1
+}
+
+type Held = { symbol: string; qty: number; avgPrice: number }
+/** Valor de lo invertido y si más del 40 % está en una sola acción (sin precio: a coste, nunca inventado) */
+function holdings(items: Held[], book: Awaited<ReturnType<typeof priceBook>>) {
+  const mine = items.map(p => {
+    const px = book.get(p.symbol)
+    return { v: p.qty * (px ? px.eur : p.avgPrice), single: !px || (px.type !== 'ETF' && px.type !== 'INDEX') }
+  })
+  const invested = mine.reduce((a, x) => a + x.v, 0)
+  const biggestSingle = Math.max(0, ...mine.filter(x => x.single).map(x => x.v))
+  return { invested, concentrated: invested > 0 && biggestSingle / invested > CONCENTRATED }
+}
+const isConcentrated = (items: Held[], book: Awaited<ReturnType<typeof priceBook>>) => holdings(items, book).concentrated
+
 /** Valor actual de la cartera de varias personas (precios guardados; sin precio, a coste: nunca inventado) */
 export async function portfolioValues(tx: Tx, userIds: string[]) {
   const [pfs, positions] = await Promise.all([
@@ -66,13 +107,8 @@ export async function portfolioValues(tx: Tx, userIds: string[]) {
   const book = positions.length ? await priceBook(positions.map(p => p.symbol)) : new Map()
   const out = new Map<string, { value: number; concentrated: boolean }>()
   for (const pf of pfs) {
-    const mine = positions.filter(p => p.userId === pf.userId).map(p => {
-      const px = book.get(p.symbol)
-      return { v: Number(p.qty) * (px ? px.eur : Number(p.avgPrice)), single: !px || (px.type !== 'ETF' && px.type !== 'INDEX') }
-    })
-    const invested = mine.reduce((a, x) => a + x.v, 0)
-    const biggestSingle = Math.max(0, ...mine.filter(x => x.single).map(x => x.v))
-    out.set(pf.userId, { value: Number(pf.cash) + invested, concentrated: invested > 0 && biggestSingle / invested > CONCENTRATED })
+    const h = holdings(positions.filter(p => p.userId === pf.userId).map(p => ({ symbol: p.symbol, qty: Number(p.qty), avgPrice: Number(p.avgPrice) })), book)
+    out.set(pf.userId, { value: Number(pf.cash) + h.invested, concentrated: h.concentrated })
   }
   return out
 }
@@ -102,7 +138,9 @@ export async function compactWeek(tx: Tx, weekKey: string) {
  *  se le pone una: la última foto de su cartera antes de la semana (o su valor de ahora, sin entradas de dinero). */
 async function returnsOf(tx: Tx, weekKey: string, members: { userId: string; startValue: unknown; flows: unknown; finalRank: number | null; tradePts: number }[]) {
   const ids = members.map(m => m.userId)
-  const values = await portfolioValues(tx, ids)
+  const [values, states] = await Promise.all([portfolioValues(tx, ids), tx.gameState.findMany({ where: { userId: { in: ids } }, select: { userId: true, counters: true } })])
+  // Concentrada ahora o en algún momento de la semana después de operar
+  const concWeek = new Set(states.filter(g => (g.counters as Record<string, number> | null)?.[concKey(weekKey)]).map(g => g.userId))
   const out = new Map<string, { pct: number; pts: number }>()
   for (const m of members) {
     const v = values.get(m.userId)
@@ -119,16 +157,18 @@ async function returnsOf(tx: Tx, weekKey: string, members: { userId: string; sta
       await tx.leagueMember.updateMany({ where: { weekKey, userId: m.userId, startValue: null }, data: { startValue: start, flows } })
     }
     const pct = weekReturnPct(start, v.value, flows)
-    out.set(m.userId, { pct, pts: m.finalRank !== null ? m.tradePts : tradePoints(pct, v.concentrated) })
+    out.set(m.userId, { pct, pts: m.finalRank !== null ? m.tradePts : tradePoints(pct, v.concentrated || concWeek.has(m.userId)) })
   }
   return out
 }
 
 
+const ANON = { es: 'Jugador anónimo', ca: 'Jugador anònim', en: 'Anonymous player' } as const
+
 function displayName(name: string, visible: boolean) {
-  if (!visible) return 'Jugador anónimo'
+  if (!visible) return ANON[currentLocale()]
   const parts = name.trim().split(/\s+/)
-  return parts.length > 1 ? `${parts[0]} ${parts[1][0]}.` : parts[0] || '—'
+  return parts.length > 1 ? `${parts[0]} ${parts[1][0].toLocaleUpperCase('es')}.` : parts[0] || '—'
 }
 
 /** Clasificación de un grupo (la usan la pantalla y el cierre semanal) */
@@ -162,40 +202,55 @@ export async function leagueFor(c: Ctx): Promise<LeagueT> {
   await compactWeek(c.tx, weekKey)
   const me = await c.tx.leagueMember.findUnique({ where: { weekKey_userId: { weekKey, userId: c.user.id } } })
   const rows = me ? await standings(c.tx, weekKey, me.groupNo) : []
-  const members = rows.map(m => ({ rank: m.rank, userId: m.userId, displayName: m.userId === c.user.id ? c.user.name || '—' : displayName(m.name, m.visible), weeklyXp: m.weeklyXp, riskAdjReturnPct: m.riskAdjReturnPct, tradePts: m.tradePts, score: m.score, isMe: m.userId === c.user.id, division: DIVISIONS[m.division - 1] }))
+  // De quien se oculta no se envía ni el nombre ni su identificador
+  const members = rows.map(m => ({ rank: m.rank, userId: m.visible || m.userId === c.user.id ? m.userId : `anon-${m.rank}`, displayName: m.userId === c.user.id ? c.user.name || '—' : displayName(m.name, m.visible), weeklyXp: m.weeklyXp, riskAdjReturnPct: m.riskAdjReturnPct, tradePts: m.tradePts, score: m.score, isMe: m.userId === c.user.id, division: DIVISIONS[m.division - 1] }))
   if (!me) members.push({ rank: 0, userId: c.user.id, displayName: c.user.name || '—', weeklyXp: 0, riskAdjReturnPct: 0, tradePts: 0, score: 0, isMe: true, division: DIVISIONS[division - 1] })
-  return { division: { id: `d${division}`, name: DIVISIONS[division - 1], order: division }, divisions: DIVISIONS, endsAt: new Date(addDays(weekKey, 7) + 'T00:00:00Z').toISOString(), promoteTop: PROMOTE_TOP, demoteFrom: DEMOTE_FROM, members }
+  return { division: { id: `d${division}`, name: DIVISIONS[division - 1], order: division }, divisions: DIVISIONS, endsAt: madridMidnight(addDays(weekKey, 7)).toISOString(), promoteTop: PROMOTE_TOP, demoteFrom: DEMOTE_FROM, members }
 }
 
-/** Cierra la semana indicada (idempotente: solo una vez por semana) */
+/** Cierra la semana indicada. Solo una vez por semana: cada persona se cierra en su propia transacción
+ *  (puesto, ascenso, gemas y aviso juntos), así que si el cierre se corta a medias, la siguiente ejecución
+ *  termina a quien faltaba sin repetir nada a quien ya se cerró. */
 export async function closeWeek(weekKey: string) {
-  const already = await db.leagueWeek.findUnique({ where: { weekKey } })
-  if (already) return { weekKey, closed: false, groups: 0 }
-  await db.leagueWeek.create({ data: { weekKey } }) // marca primero: si se ejecuta dos veces a la vez, la segunda falla
+  if (await db.leagueWeek.findUnique({ where: { weekKey } })) {
+    // Ya marcada: solo se sigue si quedó alguien sin cerrar (cierre interrumpido)
+    // (sin contar cuentas borradas o bloqueadas, que no salen en la clasificación)
+    const open = await db.leagueMember.findMany({ where: { weekKey, finalRank: null }, select: { userId: true } })
+    if (!open.length || !(await db.user.count({ where: { id: { in: open.map(x => x.userId) }, blockedAt: null } }))) return { weekKey, closed: false, groups: 0 }
+  } else await db.leagueWeek.createMany({ data: [{ weekKey }], skipDuplicates: true })
   const groups = await db.leagueMember.groupBy({ by: ['groupNo'], where: { weekKey } })
+  let members = 0
   for (const g of groups) {
     const rows = await standings(db, weekKey, g.groupNo)
     for (const m of rows) {
-      const up = m.rank <= PROMOTE_TOP && m.division < DIVISIONS.length && m.weeklyXp > 0
-      const down = m.rank >= DEMOTE_FROM && m.division > 1
-      const outcome = up ? 'UP' : down ? 'DOWN' : 'STAY'
-      await db.leagueMember.update({ where: { weekKey_userId: { weekKey, userId: m.userId } }, data: { finalRank: m.rank, outcome, tradePts: m.tradePts } })
       const user = await db.user.findUnique({ where: { id: m.userId } })
       if (!user) continue
-      await withCtx(async c => {
+      const done = await withCtx(async c => {
+        // Solo una vez por persona (si dos cierres coinciden, el segundo no encuentra nada que cerrar)
+        const first = await c.tx.leagueMember.updateMany({ where: { weekKey, userId: m.userId, finalRank: null }, data: { finalRank: m.rank, tradePts: m.tradePts } })
+        if (!first.count) return false
+        // La división actual de la persona (no la que tenía al entrar): nunca se pierde ni se duplica un ascenso
+        const from = c.g.division
+        const up = m.rank <= PROMOTE_TOP && from < DIVISIONS.length && m.weeklyXp > 0
+        const down = !up && m.rank >= DEMOTE_FROM && from > 1
+        await c.tx.leagueMember.update({ where: { weekKey_userId: { weekKey, userId: m.userId } }, data: { outcome: up ? 'UP' : down ? 'DOWN' : 'STAY' } })
         if (up) {
-          c.g.division = m.division + 1
+          c.g.division = from + 1
           c.g.gems += PROMOTE_GEMS
           bump(c, 'leagueUp')
         }
-        if (down) c.g.division = m.division - 1
+        if (down) c.g.division = from - 1
+        // Si ya entró en la liga de la semana siguiente (antes del cierre), allí aparece con su división nueva
+        if (c.g.division !== from) await c.tx.leagueMember.updateMany({ where: { userId: m.userId, weekKey: { gt: weekKey }, finalRank: null }, data: { division: c.g.division } })
         if (m.rank <= 3 && m.weeklyXp > 0) bump(c, 'top3')
         if (m.riskAdjReturnPct > 0) bump(c, 'weekPositive')
         const name = DIVISIONS[c.g.division - 1]
         await notify(c, 'LEAGUE_RESULT', `Semana cerrada: puesto ${m.rank} de ${rows.length}`, up ? `¡Subes a ${name}! +${PROMOTE_GEMS} gemas.` : down ? `Bajas a ${name}. Esta semana, a recuperar.` : `Sigues en ${name}.`, '/liga')
         await checkAchievements(c)
+        return true
       }, user)
+      if (done) members++
     }
   }
-  return { weekKey, closed: true, groups: groups.length }
+  return { weekKey, closed: true, groups: groups.length, members }
 }

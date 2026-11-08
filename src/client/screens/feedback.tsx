@@ -1,10 +1,11 @@
 'use client'
 // Opinión: Lumi pregunta, una cosa por pantalla, y se responde con toques. Un minuto; al final, +50 gemas.
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
 import { FB_BLOCKERS, FB_LIKES, FB_PAY, FB_PRICE, FB_WANTS } from '@/shared/feedback'
+import { money } from '@/shared/format'
 import { api, ApiFailure } from '../api'
 import { useGuard } from '../shell'
 import { Icon } from '../ui/icons'
@@ -50,6 +51,7 @@ export function Feedback() {
 
 function FeedbackFlow() {
   const t = useTranslations('feedback')
+  const locale = useLocale()
   const qc = useQueryClient()
   const router = useRouter()
   const [a, setA] = useState<Answers>({ likes: [], blockers: [], wants: [], wantsOther: '', comment: '' })
@@ -134,7 +136,7 @@ function FeedbackFlow() {
         <div className="flex items-start gap-3">
           <Lumi mood={step === 'nps' ? 'HAPPY' : step === 'blockers' ? 'THINKING' : step === 'comment' ? 'CALM' : 'HAPPY'} size={52} />
           <div className="card m-0 flex-1 rounded-tl-md">
-            <b className="text-[17px] leading-[23px]">{t(`q.${step}`, { price: '7,99 €', year: '59,99 €' })}</b>
+            <b className="text-[17px] leading-[23px]">{t(`q.${step}`, { price: money(7.99, 'EUR', locale), year: money(59.99, 'EUR', locale) })}</b>
             {step === 'nps' && <p className="t-cap m-0 mt-1">{t('npsHint')}</p>}
           </div>
         </div>

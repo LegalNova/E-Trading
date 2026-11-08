@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { score, tradePoints, weekReturnPct } from '@/shared/league-points'
+import { madridMidnight, score, tradePoints, weekReturnPct } from '@/shared/league-points'
 
 describe('rentabilidad semanal', () => {
   it('sin cambios = 0', () => expect(weekReturnPct(10_000, 10_000, 0)).toBe(0))
@@ -30,4 +30,10 @@ describe('puntos de inversión', () => {
     expect(score(30, -80)).toBe(0)
     expect(score(120, 25)).toBe(145)
   })
+})
+
+describe('fin de la semana de la liga (lunes 00:00 de Madrid)', () => {
+  it('en invierno, 23:00 UTC del domingo', () => expect(madridMidnight('2026-11-09').toISOString()).toBe('2026-11-08T23:00:00.000Z'))
+  it('en verano, 22:00 UTC del domingo', () => expect(madridMidnight('2026-06-15').toISOString()).toBe('2026-06-14T22:00:00.000Z'))
+  it('semana del cambio de hora', () => expect(madridMidnight('2026-10-26').toISOString()).toBe('2026-10-25T23:00:00.000Z'))
 })

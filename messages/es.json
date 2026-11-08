@@ -105,7 +105,8 @@
     "guestNote": "Sin email ni contraseña. Si te gusta, guardas tu progreso cuando quieras.",
     "invitedBy": "{name} te ha invitado a Lumi",
     "invited": "Te han invitado a Lumi",
-    "invitedSub": "Crea tu cuenta y tienes 7 días de Max gratis desde el primer momento."
+    "invitedSub": "Crea tu cuenta y tienes 7 días de Max gratis desde el primer momento.",
+    "trialNote": "Prueba gratis de 7 días: se desbloquea con 5 días seguidos de racha o al llegar con la invitación de un amigo. También puedes suscribirte directamente."
   },
   "auth": {
     "signUpTitle": "Crea tu cuenta",
@@ -123,14 +124,15 @@
     "noAccount": "¿No tienes cuenta?",
     "forgot": "¿Has olvidado la contraseña?",
     "forgotTitle": "Nueva contraseña",
-    "forgotSent": "Aún no enviamos emails: la recuperación de contraseña llegará con el dominio propio. Mientras, escríbenos desde Contacto en la página de inicio y te ayudamos.",
+    "forgotSent": "Ahora mismo no podemos enviarte el enlace por email. Escríbenos desde Contacto con el email de tu cuenta y te ayudamos a recuperarla.",
     "errors": {
       "INVALID_CREDENTIALS": "Email o contraseña incorrectos.",
       "EMAIL_IN_USE": "Ya hay una cuenta con este email.",
       "VALIDATION_ERROR": "Escribe un email válido.",
       "ACCOUNT_BLOCKED": "Esta cuenta está bloqueada. Escríbenos si crees que es un error.",
       "RATE_LIMITED": "Demasiados intentos. Prueba en un minuto.",
-      "GUEST_MUST_SAVE": "Guarda tu progreso con email y contraseña para seguir."
+      "GUEST_MUST_SAVE": "Guarda tu progreso con email y contraseña para seguir.",
+      "INTERNAL": "Algo no ha ido bien. Prueba otra vez en un momento."
     },
     "contact": "Ir a Contacto",
     "resetAsk": "Escribe el email de tu cuenta y te enviamos un enlace para elegir una contraseña nueva.",
@@ -775,7 +777,7 @@
     "monthly": "Mensual",
     "monthlyPrice": "{price} al mes",
     "tryFree": "Probar {plan} {days} días gratis",
-    "after": "Después {price}{per}. Cancela cuando quieras desde Ajustes. Te avisamos 2 días antes de cobrar.",
+    "after": "Después {price}{per}. Te avisamos antes de que acabe la prueba y puedes cancelar cuando quieras desde Ajustes.",
     "perYear": "/año",
     "perMonth": "/mes",
     "demoNote": "Pago seguro con Stripe. Puedes cancelar cuando quieras desde Ajustes.",
@@ -788,10 +790,10 @@
     "active": "Tu suscripción está activa.",
     "manage": "Gestionar en Ajustes",
     "choosePlan": "Plan",
-    "plusPitch": "Plus: el plan intermedio. Las unidades clave completas y las 5 primeras clases de todas las demás.",
+    "plusPitch": "Plus: el plan intermedio. Las unidades 1 a 5 completas y las 5 primeras clases de todas las demás.",
     "maxPitch": "Max: todo el curso y todo Lumi, sin límites.",
     "plusFeatures": [
-      "«Invierte desde hoy» y las unidades clave completas",
+      "Unidades 1 a 5 completas, con «Invierte desde hoy»",
       "Las 5 primeras clases de cada unidad",
       "Vidas ilimitadas en los quizzes",
       "50.000 € virtuales para practicar",
@@ -880,7 +882,7 @@
     "pushNote": "Las notificaciones push del móvil llegarán con la versión instalable.",
     "accountSection": "Cuenta y privacidad",
     "account": "Cuenta, cartera y datos",
-    "version": "Lumi 2.0 · versión de prueba",
+    "version": "Lumi 2.0",
     "privacy": "Privacidad",
     "leagueVisible": "Aparecer en la liga con mi nombre",
     "leagueVisibleNote": "Si lo desactivas, los demás te verán como «Jugador anónimo».",
@@ -896,7 +898,7 @@
     "helpSection": "Ayuda",
     "gift": "regalo",
     "giftEnds": "Fin del regalo",
-    "giftMore": "Gana más meses invitando",
+    "giftMore": "Gana más días invitando",
     "toLight": "Modo claro",
     "toDark": "Modo oscuro",
     "manageSub": "Gestionar suscripción (tarjeta, facturas, plan)",
@@ -917,7 +919,7 @@
     "disclaimer": "Aviso legal aceptado",
     "logout": "Cerrar sesión",
     "deleteTitle": "Borrar cuenta",
-    "deleteBody": "Se borran tu perfil, tu progreso y tu cartera. No se puede deshacer.",
+    "deleteBody": "Se borran tu perfil, tu progreso y tu cartera. No se puede deshacer. Si pagas una suscripción, cancélala antes en Ajustes, Suscripción.",
     "deleteWord": "BORRAR",
     "deleteType": "Escribe {word} para confirmar",
     "delete": "Borrar mi cuenta",
@@ -1144,7 +1146,7 @@
   },
   "cookies": {
     "label": "Aviso de cookies",
-    "text": "Solo usamos cookies técnicas, necesarias para que la app funcione, y las preferencias que tú eliges. Nada de publicidad ni analítica.",
+    "text": "Solo usamos cookies técnicas, necesarias para que la app funcione, y las preferencias que tú eliges. Nada de cookies de publicidad ni de analítica.",
     "more": "Política de cookies",
     "ok": "Entendido"
   },
@@ -1210,8 +1212,8 @@
     "modeHint": {
       "EXPLAIN": "Pregunta cualquier concepto del curso: te lo explica con ejemplos.",
       "PATH": "Te recomienda el siguiente paso según tu progreso.",
-      "PORTFOLIO": "Analiza tus posiciones y operaciones simuladas con lo que enseña el curso. Plus o Max.",
-      "BIASES": "Detecta sesgos en tus preguntas y operaciones y te propone reglas. Plus o Max."
+      "PORTFOLIO": "Analiza tus posiciones simuladas con lo que enseña el curso: reparto, concentración y stops. Plus o Max.",
+      "BIASES": "Revisa tus operaciones simuladas en busca de sesgos (FOMO, operar de más, efecto disposición…) y te propone reglas. Solo en Max."
     },
     "hello": "Hola, soy {name}",
     "intro": "Tu profesora del curso. Pregúntame lo que no entiendas: respondo con el manual de Lumi y tu progreso. No doy consejos de inversión: te enseño a decidir por ti.",
@@ -1237,7 +1239,9 @@
     "ask": "Pregúntale a {name}",
     "askHint": "¿Dudas? Tu profesora responde con el curso",
     "askLesson": "Preguntar a la profesora",
-    "engineLumi": "Lumi responde con el curso, sin IA externa"
+    "engineLumi": "Lumi responde con el curso, sin IA externa",
+    "limitPlus": "Has usado tus {n} preguntas de hoy. Con Max tienes 100 al día y todos los modos.",
+    "tooFast": "Vas muy rápido. Espera un minuto y vuelve a preguntar."
   },
   "lumi": {
     "title": "Tu {name}",
@@ -1637,7 +1641,7 @@
   },
   "push": {
     "title": "Activa los avisos",
-    "body": "Te avisamos antes de perder la racha, cuando dejas una clase a medias y cuando algo se mueve en el mercado. Como mucho 3 al día.",
+    "body": "Te avisamos antes de perder la racha, cuando dejas una clase a medias y cuando algo se mueve en el mercado. Nunca de noche, y puedes elegir cuáles en Ajustes.",
     "enable": "Activar avisos",
     "later": "Ahora no",
     "denied": "Los avisos están bloqueados en este navegador. Puedes activarlos en sus ajustes.",
@@ -1668,14 +1672,14 @@
   "buy": {
     "title": "Hazte Plus o Max",
     "body": "Todo el curso, vidas ilimitadas y 50.000 € virtuales. Cancela cuando quieras.",
-    "keepBody": "Te quedan {n} días de Max. Suscríbete para no perder el curso completo.",
+    "keepBody": "Te quedan {n} días de Max. Si te suscribes ahora, no se te cobra nada hasta que se acaben.",
     "billing": "Forma de pago",
     "monthly": "Mensual",
     "yearly": "Anual (−{n} %)",
     "best": "Recomendado",
     "perMonth": "/mes",
     "billedYear": "Un pago de {price} al año",
-    "plusLine": "Unidades clave completas y vidas ilimitadas",
+    "plusLine": "Unidades 1 a 5 completas y vidas ilimitadas",
     "maxLine": "Las 39 unidades, sin límites",
     "cta": "Suscribirme",
     "trialCta": "Probar 7 días gratis",

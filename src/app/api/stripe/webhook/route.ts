@@ -1,7 +1,7 @@
 // Avisos de Stripe (pagos, pruebas, cancelaciones). Firmados con STRIPE_WEBHOOK_SECRET: sin firma válida no se hace nada.
 import type Stripe from 'stripe'
 import { db } from '@/server/db'
-import { stripe, syncSubscription } from '@/server/billing/stripe'
+import { GIFT_META, stripe, syncSubscription } from '@/server/billing/stripe'
 import { notify } from '@/server/game/core'
 
 /** Stripe puede reenviar el mismo aviso: cada uno se apunta una sola vez */
@@ -34,17 +34,38 @@ export async function POST(req: Request) {
         const r = await syncSubscription(sub)
         const prev = event.data.previous_attributes as Partial<Stripe.Subscription> | undefined
         if (r && event.type === 'customer.subscription.created' && sub.status === 'trialing') await once(r.userId, 'trial_start', sub.id, { plan: sub.metadata?.plan ?? null, stripe: true })
-        if (r && prev && 'cancel_at_period_end' in prev && sub.cancel_at_period_end) await once(r.userId, 'cancel', event.id, { stripe: true })
+        // (una baja por suscripción: pedirla y que después termine cuentan como una sola)
+        if (r && prev && 'cancel_at_period_end' in prev && sub.cancel_at_period_end) await once(r.userId, 'cancel', sub.id, { stripe: true })
         break
       }
       case 'customer.subscription.deleted': {
         const r = await syncSubscription(event.data.object)
-        if (r) await once(r.userId, 'cancel', event.id, { stripe: true, ended: true })
+        if (r) await once(r.userId, 'cancel', event.data.object.id, { stripe: true, ended: true })
         break
       }
       case 'customer.subscription.trial_will_end': {
-        const r = await syncSubscription(event.data.object)
-        if (r) await notify({ tx: db, user: { id: r.userId } as never }, 'NEW_LESSON', 'Tu prueba de Max termina pronto', 'En 3 días empieza tu suscripción. Si no quieres continuar, cancélala en Ajustes sin coste.', '/ajustes')
+        const sub = event.data.object
+        const r = await syncSubscription(sub)
+        const plan = r?.tier === 'PLUS' ? 'Plus' : 'Max'
+        // Días regalados por invitar a quien ya pagaba (no es una prueba): se le avisa de que vuelve a cobrarse
+        const gift = !!sub.metadata?.[GIFT_META]
+        if (r && (await once(r.userId, gift ? 'gift_will_end' : 'trial_will_end', `${sub.id}-${sub.trial_end}`, {})))
+          await notify(
+            { tx: db, user: { id: r.userId } as never },
+            'NEW_LESSON',
+            gift ? 'Tus días regalados terminan pronto' : `Tu prueba de ${plan} termina pronto`,
+            gift ? `En 3 días vuelve a cobrarse tu suscripción de ${plan}. Puedes gestionarla en Ajustes.` : 'En 3 días empieza tu suscripción. Si no quieres continuar, cancélala en Ajustes sin coste.',
+            '/ajustes',
+          )
+        break
+      }
+      case 'invoice.payment_failed': {
+        // Cobro rechazado (tarjeta caducada, sin saldo…): Stripe lo reintenta; se avisa una vez por factura
+        const inv = event.data.object
+        const sub = await db.subscription.findFirst({ where: { stripeCustomerId: String(inv.customer) }, select: { userId: true, user: { select: { plan: true } } } })
+        const plan = sub?.user.plan === 'PLUS' ? 'Plus' : 'Max'
+        if (sub && inv.id && (await once(sub.userId, 'payment_failed', inv.id, { amount: inv.amount_due / 100, currency: inv.currency })))
+          await notify({ tx: db, user: { id: sub.userId } as never }, 'NEW_LESSON', 'No hemos podido cobrar tu suscripción', `No hemos podido cobrar tu suscripción. Revisa tu tarjeta en Ajustes › Gestionar suscripción para no perder ${plan}.`, '/ajustes')
         break
       }
       case 'invoice.paid': {

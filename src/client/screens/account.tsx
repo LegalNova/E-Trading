@@ -3,7 +3,7 @@
 import { PLAN_NAME } from '@/shared/plans'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useLocale, useTranslations } from 'next-intl'
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
@@ -15,7 +15,7 @@ import { applyTheme, useToast } from '../providers'
 import { Icon } from '../ui/icons'
 import { ErrorState, PageSkeleton, Section, Seg, Toggle, TopBar } from '../ui/kit'
 import { Lumi } from '../ui/lumi'
-import { usePlanBadge } from '../upgrade'
+import { BuyPlans, usePlanBadge } from '../upgrade'
 import { PushToggle } from '../push'
 
 // ── Premium (06.1–06.2) ──────────────────────────────────
@@ -27,6 +27,15 @@ function usePaymentReturn(): { ok: true; sid: string | null } | { ok: false } | 
 }
 
 export function Premium() {
+  // useSearchParams necesita su <Suspense> (si no, Next no puede preparar la página de antemano)
+  return (
+    <Suspense fallback={<PageSkeleton />}>
+      <PremiumScreen />
+    </Suspense>
+  )
+}
+
+function PremiumScreen() {
   const ret = usePaymentReturn()
   if (ret?.ok) return <PaymentDone sid={ret.sid} />
   return <PlansScreen canceled={ret?.ok === false} />
@@ -173,6 +182,8 @@ function PlansScreen({ canceled }: { canceled: boolean }) {
           <h1 className="t-large">{t('youAre', { plan: 'Max' })}</h1>
           <p className="t-body muted m-0">{(status.status === 'TRIALING' || status.status === 'GIFT') && status.trialEndsAt ? t(status.status === 'GIFT' ? 'giftUntil' : badge?.stripe ? 'freeUntil' : 'trialUntil', { date: new Date(status.trialEndsAt).toLocaleDateString(locale, { day: 'numeric', month: 'long' }) }) : t('active')}</p>
           <FeatureList features={features('PREMIUM')} />
+          {/* Max regalado o prueba sin tarjeta: aquí mismo puede suscribirse (el cobro empieza cuando se acaban sus días) */}
+          {badge?.daysLeft ? <BuyPlans /> : null}
           <Link href="/ajustes" className="btn btn-secondary">
             {t('manage')}
           </Link>
@@ -558,6 +569,7 @@ export function Account() {
       a.click()
       URL.revokeObjectURL(url)
     },
+    onError: e => toast(e instanceof ApiFailure ? e.message : t('error')),
   })
   const { data: login } = useQuery({ queryKey: ['login-methods'], queryFn: api.loginMethods })
   const tg = useTranslations('guest')

@@ -234,7 +234,8 @@ export function League() {
             <b className="text-2xl">{me.rank}.º</b>
           </span>
           <span className="t-foot text-right">
-            {me.rank <= l.promoteTop ? t('promoting') : me.rank >= l.demoteFrom ? t('demoting') : t('staying')}
+            {/* Como en el cierre: para subir hace falta XP esta semana; nadie sube de la última división ni baja de la primera */}
+            {me.rank <= l.promoteTop && me.weeklyXp > 0 && l.division.order < l.divisions.length ? t('promoting') : me.rank >= l.demoteFrom && l.division.order > 1 ? t('demoting') : t('staying')}
             <br />
             <b style={{ color: 'var(--ink)' }}>{t('points', { n: num(me.score, locale, 0) })}</b>
             <br />

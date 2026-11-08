@@ -2,7 +2,7 @@
 // se llama PREMIUM y se muestra como «Max».
 //   Free: unidades 1–3 completas (la sección «Invierte desde hoy») + las 3 primeras lecciones de cada unidad.
 //         Las unidades superadas con la prueba de unidad no gastan plan: se abre gratis la siguiente del camino.
-//   Plus: además, unidades 4 y 5 completas + las 5 primeras lecciones de cada unidad.
+//   Plus: además, u5 y u6 completas (las 5 primeras del camino) + las 5 primeras lecciones de cada unidad + las 5 primeras lecciones de cada unidad.
 //   Max: todo.
 export type PlanId = 'FREE' | 'PLUS' | 'PREMIUM'
 

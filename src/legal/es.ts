@@ -247,8 +247,8 @@ export const es: Record<LegalSlug, LegalDoc> = {
         h: '7. Planes de pago (Plus y Max)',
         list: [
           'Plus y Max amplían las clases, las vidas, el saldo virtual, los tipos de orden y las preguntas a Lumi. El precio y lo que incluye cada plan se muestran antes de contratar.',
-          'Hay una prueba gratuita de 7 días, una por persona, que se desbloquea con una racha de 5 días seguidos o llegando con una invitación. En la versión actual el pago todavía no está activo: la prueba termina sola y vuelves a Free sin coste.',
-          'Cuando el pago esté activo, la compra se rige por las Condiciones de contratación: precio, renovación, cancelación desde Ajustes, aviso antes de cada cobro tras la prueba y 14 días naturales para desistir.',
+          'Hay una prueba gratuita de 7 días, una por persona, que se desbloquea con una racha de 5 días seguidos o llegando con una invitación.',
+          'La compra se rige por las Condiciones de contratación: precio, renovación, cancelación desde Ajustes, aviso antes de que termine la prueba y 14 días naturales para desistir.',
         ],
       },
       {
@@ -283,7 +283,7 @@ export const es: Record<LegalSlug, LegalDoc> = {
   },
   contratacion: {
     title: 'Condiciones de contratación',
-    intro: `Última actualización: ${LEGAL_UPDATED}. Se aplican cuando contratas un plan de pago (Plus o Max) y completan los Términos de uso. Cumplen el Real Decreto Legislativo 1/2007 (Ley General para la Defensa de los Consumidores y Usuarios) y la LSSI-CE. Mientras el pago no esté activo, los planes solo se pueden probar gratis y no se cobra nada.`,
+    intro: `Última actualización: ${LEGAL_UPDATED}. Se aplican cuando contratas un plan de pago (Plus o Max) y completan los Términos de uso. Cumplen el Real Decreto Legislativo 1/2007 (Ley General para la Defensa de los Consumidores y Usuarios) y la LSSI-CE.`,
     sections: [
       {
         h: '1. Quién te vende',
@@ -321,7 +321,7 @@ export const es: Record<LegalSlug, LegalDoc> = {
         list: [
           'Puedes tener una prueba gratuita de 7 días (una vez por persona): se desbloquea con una racha de 5 días seguidos o llegando con la invitación de un amigo. También puedes contratar directamente, sin prueba.',
           'Si la cancelas antes de que termine, no se te cobra nada. Si no, al terminar se cobra el primer periodo del plan elegido.',
-          'Te avisaremos dentro de la app y por email antes de que termine la prueba.',
+          'Te avisaremos dentro de la app (y en el móvil, si tienes los avisos activados) antes de que termine la prueba.',
         ],
       },
       {

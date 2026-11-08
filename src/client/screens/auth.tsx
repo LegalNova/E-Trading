@@ -101,7 +101,7 @@ export function SaveProgress() {
           </div>
           <div className="field">
             <label htmlFor="g-pass">{ta('password')}</label>
-            <PasswordInput id="g-pass" value={pass} onChange={setPass} invalid={err?.code === 'WEAK_PASSWORD'} />
+            <PasswordInput id="g-pass" value={pass} onChange={setPass} invalid={err?.code === 'WEAK_PASSWORD'} isNew />
             <span className={err?.code === 'WEAK_PASSWORD' ? 'err' : 't-cap'}>{ta('passwordRule')}</span>
           </div>
           {err && err.code !== 'WEAK_PASSWORD' && <p className="err m-0">{ta.has(`errors.${err.code}`) ? ta(`errors.${err.code}`) : err.message}</p>}
@@ -123,12 +123,12 @@ function useAfterAuth() {
   }
 }
 
-function PasswordInput({ id, value, onChange, invalid }: { id: string; value: string; onChange: (v: string) => void; invalid?: boolean }) {
+function PasswordInput({ id, value, onChange, invalid, isNew }: { id: string; value: string; onChange: (v: string) => void; invalid?: boolean; isNew?: boolean }) {
   const t = useTranslations('auth')
   const [show, setShow] = useState(false)
   return (
     <div className="relative">
-      <input id={id} className="input pr-16" type={show ? 'text' : 'password'} value={value} onChange={e => onChange(e.target.value)} autoComplete="current-password" required aria-invalid={invalid} />
+      <input id={id} className="input pr-16" type={show ? 'text' : 'password'} value={value} onChange={e => onChange(e.target.value)} autoComplete={isNew ? 'new-password' : 'current-password'} required aria-invalid={invalid} />
       <button type="button" className="link absolute top-1/2 right-2 -translate-y-1/2 text-sm" onClick={() => setShow(!show)}>
         {show ? t('hide') : t('show')}
       </button>
@@ -162,7 +162,7 @@ export function SignUp() {
         </div>
         <div className="field">
           <label htmlFor="f-pass">{t('password')}</label>
-          <PasswordInput id="f-pass" value={pass} onChange={setPass} invalid={err?.code === 'WEAK_PASSWORD'} />
+          <PasswordInput id="f-pass" value={pass} onChange={setPass} invalid={err?.code === 'WEAK_PASSWORD'} isNew />
           <span className={err?.code === 'WEAK_PASSWORD' ? 'err' : 't-cap'}>{t('passwordRule')}</span>
         </div>
         {err && err.code !== 'WEAK_PASSWORD' && <p className="err m-0">{t.has(`errors.${err.code}`) ? t(`errors.${err.code}`) : err.message}</p>}
@@ -200,7 +200,20 @@ export function SignIn() {
   const done = useAfterAuth()
   const [email, setEmail] = useState('')
   const [pass, setPass] = useState('')
-  const m = useMutation({ mutationFn: () => api.signIn(email.trim(), pass), onSuccess: done })
+  const m = useMutation({
+    mutationFn: async () => {
+      const s = await api.signIn(email.trim(), pass)
+      // La contraseña es buena pero la cuenta está bloqueada: el servidor no da sesión. Se dice, en vez de volver aquí sin más
+      if (!s.signedIn) {
+        await api.signOut().catch(() => {})
+        throw new ApiFailure('ACCOUNT_BLOCKED', 'Cuenta bloqueada', 403)
+      }
+      return s
+    },
+    onSuccess: done,
+  })
+  const err = m.error instanceof ApiFailure ? m.error : null
+  const errText = !m.isError ? null : !err ? t('errors.INTERNAL') : err.code === 'INVALID_CREDENTIALS' || err.status === 401 ? t('errors.INVALID_CREDENTIALS') : t.has(`errors.${err.code}`) ? t(`errors.${err.code}`) : t('errors.INTERNAL')
   return (
     <>
       <TopBar back="/" title={<Wordmark size={18} />} />
@@ -225,7 +238,7 @@ export function SignIn() {
         <Link href="/recuperar" className="link self-start px-0 text-sm">
           {t('forgot')}
         </Link>
-        {m.isError && <p className="err m-0">{t('errors.INVALID_CREDENTIALS')}</p>}
+        {errText && <p className="err m-0">{errText}</p>}
         <button className="btn btn-primary" disabled={m.isPending}>
           {t('signIn')}
         </button>
@@ -340,7 +353,7 @@ function NewPassword({ token }: { token: string }) {
     >
       <div className="field">
         <label htmlFor="f-pass">{t('newPassword')}</label>
-        <PasswordInput id="f-pass" value={pass} onChange={setPass} invalid={err?.code === 'WEAK_PASSWORD'} />
+        <PasswordInput id="f-pass" value={pass} onChange={setPass} invalid={err?.code === 'WEAK_PASSWORD'} isNew />
         <span className={err?.code === 'WEAK_PASSWORD' ? 'err' : 't-cap'}>{t('passwordRule')}</span>
       </div>
       {err && err.code !== 'WEAK_PASSWORD' && <p className="err m-0">{err.code === 'INVALID_TOKEN' || err.status === 400 ? t('resetExpired') : t.has(`errors.${err.code}`) ? t(`errors.${err.code}`) : err.message}</p>}

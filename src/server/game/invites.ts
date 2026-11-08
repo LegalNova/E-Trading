@@ -7,7 +7,8 @@ import { randomInt } from 'node:crypto'
 import { db } from '../db'
 import { fail, notify, START_CASH, type Tx } from './core'
 import { track } from './analytics'
-import { stripe } from '../billing/stripe'
+import { after } from 'next/server'
+import { delayNextCharge, LIVE } from '../billing/stripe'
 import { addFlow } from './league'
 
 export const INVITE_DAYS = 7
@@ -50,6 +51,11 @@ export async function linkInviter(tx: Tx, userId: string, source: string | null)
   if (!source?.startsWith('inv/')) return
   const inviter = await tx.user.findUnique({ where: { inviteCode: source.slice(4) }, select: { id: true, blockedAt: true } })
   if (!inviter || inviter.id === userId || inviter.blockedAt) return
+  // Solo cuentas nuevas: quien ya usó su prueba, ya ha hecho clases, paga o se registró hace días no puede «llegar invitado»
+  // (por ejemplo, repitiendo el final de la bienvenida con el código de otra cuenta suya)
+  const me = await tx.user.findUnique({ where: { id: userId }, select: { trialUsed: true, createdAt: true, subscription: { select: { stripeSubId: true } } } })
+  if (!me || me.trialUsed || me.subscription?.stripeSubId || Date.now() - me.createdAt.getTime() > 3 * DAY_MS) return
+  if (await tx.lessonProgress.count({ where: { userId } })) return
   const res = await tx.user.updateMany({ where: { id: userId, invitedById: null }, data: { invitedById: inviter.id } })
   if (!res.count) return
   await track(tx, userId, 'invite', { by: inviter.id })
@@ -59,27 +65,31 @@ export async function linkInviter(tx: Tx, userId: string, source: string | null)
   await notify({ tx, user: { id: userId } as never }, 'ACHIEVEMENT', `Tienes ${INVITE_DAYS} días de Max`, 'Regalo por llegar con una invitación: todo el curso y vidas ilimitadas.', '/premium')
 }
 
-/** Un mes de Max regalado: suma al regalo o a la prueba que ya tenga; con un pago activo, alarga el periodo */
-async function giftMax(tx: Tx, userId: string, days: number) {
+/**
+ * Días de Max regalados: suman al regalo o a la prueba que ya tenga; con una suscripción de pago, retrasan el próximo cobro.
+ * `friendId`: el amigo por el que se regala (evita darlo dos veces por el mismo amigo en Stripe).
+ */
+async function giftMax(tx: Tx, userId: string, days: number, friendId?: string) {
   const sub = await tx.subscription.findUnique({ where: { userId } })
   const now = Date.now()
-  if (sub?.stripeSubId && (sub.status === 'ACTIVE' || sub.status === 'TRIALING')) {
-    // Suscripción de pago en Stripe: el regalo son días sin cobro de verdad. El próximo cobro se retrasa
-    // (periodo gratis hasta la fecha de cobro + los días regalados); el aviso de Stripe actualiza nuestra copia.
-    if (!stripe) return
+  if (sub?.stripeSubId && LIVE.includes(sub.status)) {
+    // Suscripción de pago en Stripe: el regalo son días sin cobro de verdad. Se pide a Stripe cuando la clase del amigo
+    // ya está guardada (fuera de la transacción: si Stripe tarda, la clase no se queda esperando ni se pierde), y solo si
+    // de verdad se guardó el premio (si la transacción se deshace, no se regala nada).
+    const subId = sub.stripeSubId
+    const run = async () => {
+      if (friendId && !(await db.user.findUnique({ where: { id: friendId }, select: { inviteRewardedAt: true } }))?.inviteRewardedAt) return
+      await delayNextCharge(userId, subId, days, friendId ?? String(now))
+    }
     try {
-      const s = await stripe.subscriptions.retrieve(sub.stripeSubId)
-      const periodEnd = s.items.data[0]?.current_period_end ?? Math.floor(now / 1000)
-      const from = Math.max(periodEnd, s.trial_end ?? 0, Math.floor(now / 1000))
-      const updated = await stripe.subscriptions.update(sub.stripeSubId, { trial_end: from + days * 86_400, proration_behavior: 'none' }, { idempotencyKey: `gift-${sub.stripeSubId}-${from}` })
-      await tx.subscription.update({ where: { userId }, data: { renewsAt: new Date((updated.trial_end ?? from + days * 86_400) * 1000) } })
-    } catch (e) {
-      // Si Stripe falla, la clase del amigo no se rompe: queda apuntado para revisarlo a mano
-      console.error('invite/gift stripe', userId, e)
+      after(run)
+    } catch {
+      // Fuera de una petición (tareas programadas): se hace ya
+      await run()
     }
     return
   }
-  if (sub?.status === 'ACTIVE') {
+  if (sub?.status === 'ACTIVE' && !sub.stripeSubId) {
     // Pago sin Stripe (simulado): se alarga el periodo pagado
     const from = sub.renewsAt && sub.renewsAt.getTime() > now ? sub.renewsAt.getTime() : now
     await tx.subscription.update({ where: { userId }, data: { renewsAt: new Date(from + days * DAY_MS) } })
@@ -87,14 +97,13 @@ async function giftMax(tx: Tx, userId: string, days: number) {
   }
   const running = (sub?.status === 'GIFT' || sub?.status === 'TRIALING') && sub.trialEndsAt && sub.trialEndsAt.getTime() > now
   const end = new Date((running ? sub!.trialEndsAt!.getTime() : now) + days * DAY_MS)
-  await tx.subscription.upsert({ where: { userId }, create: { userId, status: 'GIFT', trialEndsAt: end }, update: { status: 'GIFT', trialEndsAt: end, renewsAt: null, interval: null } })
+  // (una suscripción de Stripe ya terminada deja de contar: el regalo no tiene nada que ver con ella)
+  await tx.subscription.upsert({ where: { userId }, create: { userId, status: 'GIFT', trialEndsAt: end }, update: { status: 'GIFT', trialEndsAt: end, renewsAt: null, interval: null, stripeSubId: null } })
   await tx.user.update({ where: { id: userId }, data: { plan: 'PREMIUM' } })
-  // Como en la prueba: el saldo virtual sube a 50.000 € una sola vez
-  const pf = await tx.portfolio.findUnique({ where: { userId } })
-  if (pf && !pf.premiumTopUp) {
-    const up = await tx.portfolio.updateMany({ where: { userId, premiumTopUp: false }, data: { cash: { increment: START_CASH.PREMIUM - START_CASH.FREE }, premiumTopUp: true } })
-    if (up.count) await addFlow(tx, userId, START_CASH.PREMIUM - START_CASH.FREE)
-  }
+  // Como en la prueba: el saldo virtual sube a 50.000 € una sola vez. Al terminar la bienvenida aún no tiene cartera: se crea ya
+  await tx.portfolio.createMany({ data: [{ userId, cash: START_CASH.FREE, resetsYear: new Date().getFullYear() }], skipDuplicates: true })
+  const up = await tx.portfolio.updateMany({ where: { userId, premiumTopUp: false }, data: { cash: { increment: START_CASH.PREMIUM - START_CASH.FREE }, premiumTopUp: true } })
+  if (up.count) await addFlow(tx, userId, START_CASH.PREMIUM - START_CASH.FREE)
 }
 
 /** Se llama al terminar una clase y al guardar la cuenta de invitado: si ya cumple, quien invitó recibe sus días */
@@ -110,7 +119,9 @@ export async function maybeRewardInvite(tx: Tx, userId: string) {
   if (!inviter || inviter.blockedAt) return
   const already = await tx.user.count({ where: { invitedById: inviter.id, inviteRewardedAt: { not: null }, id: { not: userId } } })
   if (already >= INVITE_CAP) return
-  await giftMax(tx, inviter.id, INVITE_DAYS)
+  const paying = await tx.subscription.findFirst({ where: { userId: inviter.id, stripeSubId: { not: null }, status: { in: LIVE } }, select: { userId: true } })
+  await giftMax(tx, inviter.id, INVITE_DAYS, userId)
   const who = u.name?.trim().split(/\s+/)[0] || 'Tu invitado'
-  await notify({ tx, user: { id: inviter.id } as never }, 'ACHIEVEMENT', `${INVITE_DAYS} días más de Max`, `${who} se ha unido gracias a ti y ha terminado su primera clase.`, '/perfil/invitar')
+  // Quien paga no «suma días de Max»: se le retrasa el próximo cobro
+  await notify({ tx, user: { id: inviter.id } as never }, 'ACHIEVEMENT', paying ? `Tu próximo cobro se retrasa ${INVITE_DAYS} días` : `${INVITE_DAYS} días más de Max`, `${who} se ha unido gracias a ti y ha terminado su primera clase.`, paying ? '/ajustes' : '/perfil/invitar')
 }

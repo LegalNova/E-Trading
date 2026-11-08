@@ -31,6 +31,14 @@ export function normCurrency(cur: string): { cur: string; div: number } {
 }
 
 let fxCache: { at: number; rates: Record<string, number> } | null = null
+let ecbCache: { at: number; rates: Record<string, number> | null } | null = null
+
+/** Tipos diarios del BCE (cambian una vez al día): se piden como mucho cada 6 horas, o cada 10 minutos si falló */
+async function ecbDaily() {
+  if (ecbCache && Date.now() - ecbCache.at < (ecbCache.rates ? 6 * 3_600_000 : 10 * 60_000)) return ecbCache.rates
+  ecbCache = { at: Date.now(), rates: await ecbRates() }
+  return ecbCache.rates
+}
 
 /** Unidades de cada moneda por 1 euro (de las cotizaciones EUR{XXX}=X; respaldo del BCE) */
 export async function fxRates(): Promise<Record<string, number>> {
@@ -41,10 +49,9 @@ export async function fxRates(): Promise<Record<string, number>> {
     const m = r.symbol.match(/^EUR([A-Z]{3})=X$/)
     if (m && r.quote) rates[m[1]] = Number(r.quote.price)
   }
-  if (!rates.USD || Object.keys(rates).length < 6) {
-    const ecb = await ecbRates()
-    if (ecb) for (const [k, v] of Object.entries(ecb)) rates[k] ??= v
-  }
+  // Monedas del catálogo sin par EUR{XXX}=X (THB, IDR, MYR, ZAR…): del BCE. Sin tipo de cambio no se puede operar ese activo
+  const ecb = await ecbDaily()
+  if (ecb) for (const [k, v] of Object.entries(ecb)) rates[k] ??= v
   fxCache = { at: Date.now(), rates }
   return rates
 }
@@ -59,11 +66,38 @@ export function toEur(price: number, currency: string, rates: Record<string, num
 // ── Refresco ─────────────────────────────────────────────
 let refreshing: Promise<void> | null = null
 const pending = new Set<string>()
+/** Símbolos que se están pidiendo ahora mismo: no se vuelven a pedir en cuanto termina la petición */
+const inflight = new Set<string>()
+/** Símbolos que el proveedor no devolvió: no se reintentan en cada petición (evita una llamada a Yahoo por visita) */
+const failedAt = new Map<string, number>()
+const RETRY_FAILED_MS = 60_000
+/** Recién cerrada la bolsa (o con su retraso aún corriendo) se repasa cada minuto, para tener el precio de cierre */
+const REFRESH_JUST_CLOSED_MS = 60_000
 
 function needsRefresh(a: AssetRow, now: number) {
   if (!a.quote) return true
   const age = now - a.quote.updatedAt.getTime()
-  return isOpen(a.hours, new Date(now)) ? age > REFRESH_OPEN_MS : age > REFRESH_CLOSED_MS
+  if (isOpen(a.hours, new Date(now))) return age > REFRESH_OPEN_MS
+  // La última vez que se pidió el mercado estaba abierto (o hace menos que su retraso + margen): falta el cierre
+  const justClosed = isOpen(a.hours, new Date(a.quote.updatedAt.getTime() - (a.delayedMinutes + 20) * 60_000)) || isOpen(a.hours, a.quote.updatedAt)
+  return age > (justClosed ? REFRESH_JUST_CLOSED_MS : REFRESH_CLOSED_MS)
+}
+
+/** Reparto entre instancias: marca como «pedidos ahora» los símbolos que nadie ha pedido en los últimos segundos y devuelve esos.
+ *  Así muchas personas con el mismo activo abierto (aunque caigan en servidores distintos) comparten una sola llamada. */
+async function claim(symbols: string[]): Promise<string[]> {
+  if (!symbols.length) return []
+  try {
+    const rows = await db.$queryRawUnsafe<{ symbol: string }[]>(
+      `UPDATE "${DB_SCHEMA}"."Quote" SET "updatedAt" = now() WHERE "symbol" = ANY($1::text[]) AND "updatedAt" < now() - make_interval(secs => $2) RETURNING "symbol"`,
+      symbols,
+      REFRESH_OPEN_MS / 1000 - 1,
+    )
+    return rows.map(r => r.symbol)
+  } catch (e) {
+    console.error('market/claim', e)
+    return symbols
+  }
 }
 
 /** Guarda las cotizaciones con una sola sentencia por lote (INSERT … ON CONFLICT), parametrizada */
@@ -90,13 +124,26 @@ async function save(raws: Awaited<ReturnType<typeof yahooQuotes>>) {
 
 /** Refresca unos símbolos (las peticiones simultáneas de la misma instancia se agrupan) */
 async function refresh(symbols: string[]) {
-  symbols.forEach(s => pending.add(s))
+  const now = Date.now()
+  for (const s of symbols) if (!inflight.has(s) && now - (failedAt.get(s) ?? 0) > RETRY_FAILED_MS) pending.add(s)
+  if (!pending.size && !refreshing) return
   if (!refreshing) {
     refreshing = (async () => {
       while (pending.size) {
         const batch = [...pending].slice(0, 400)
-        batch.forEach(s => pending.delete(s))
-        await save(await yahooQuotes(batch))
+        batch.forEach(s => (pending.delete(s), inflight.add(s)))
+        try {
+          const raws = await yahooQuotes(batch)
+          const got = new Set(raws.map(r => r.symbol))
+          if (failedAt.size > 5000) failedAt.clear()
+          for (const s of batch) {
+            if (got.has(s)) failedAt.delete(s)
+            else failedAt.set(s, Date.now())
+          }
+          await save(raws)
+        } finally {
+          batch.forEach(s => inflight.delete(s))
+        }
       }
     })().finally(() => (refreshing = null))
   }
@@ -133,20 +180,29 @@ async function freshen(rows: AssetRow[]): Promise<boolean> {
   const old = rows.filter(a => needsRefresh(a, now))
   if (!old.length) return false
   const blocking = old.some(a => !a.quote || (isOpen(a.hours, new Date(now)) && now - a.quote.updatedAt.getTime() > MAX_SERVE_OLD_MS))
-  const run = () => refresh(old.map(a => a.symbol))
   if (!blocking) {
+    // En segundo plano, y solo lo que no esté pidiendo ya otra instancia (los que aún no tienen fila no se pueden marcar: van siempre)
+    const run = async () => {
+      const withRow = old.filter(a => a.quote).map(a => a.symbol)
+      const mine = await claim(withRow)
+      await refresh([...old.filter(a => !a.quote).map(a => a.symbol), ...mine])
+    }
     try {
       after(run)
     } catch {
-      void run()
+      void run().catch(e => console.error('market/refresh', e))
     }
     return false
   }
-  await run()
+  await refresh(old.map(a => a.symbol))
   return true
 }
 
+/** Forma de un símbolo del catálogo (AAPL, SAN.MC, ^GSPC, EURUSD=X, M&M.NS…): lo demás ni se busca */
+export const validSymbol = (s: string) => /^[A-Za-z0-9.^=&-]{1,24}$/.test(s)
+
 export async function loadAssets(symbols: string[]): Promise<AssetRow[]> {
+  symbols = symbols.filter(validSymbol)
   if (!symbols.length) return []
   const where = { symbol: { in: symbols }, enabled: true }
   const rows = await db.asset.findMany({ where, include: { quote: true } })
@@ -211,6 +267,8 @@ async function rankSearch(where: Prisma.AssetWhereInput, q: string, offset: numb
   return rows.map((a, i) => ({ a, k: score(a) * 10_000 + i })).sort((x, y) => x.k - y.k).slice(offset, offset + limit).map(x => x.a)
 }
 
+const likeSafe = (q: string) => q.replace(/[\\%_]/g, m => `\\${m}`)
+
 /** Listado con filtros y paginación (en la BD); refresca solo la página que se devuelve */
 export async function searchAssets(f: AssetFilter): Promise<AssetPageT> {
   const limit = Math.min(Math.max(f.limit ?? 40, 1), 100)
@@ -224,7 +282,8 @@ export async function searchAssets(f: AssetFilter): Promise<AssetPageT> {
     ...(f.country ? { country: f.country } : {}),
     ...(f.sector ? { sector: f.sector } : {}),
     ...(f.index ? { indices: { has: f.index } } : {}),
-    ...(q ? { OR: [{ symbol: { contains: q, mode: 'insensitive' } }, { name: { contains: q, mode: 'insensitive' } }] } : {}),
+    // % y _ son comodines en SQL: se escapan para que «%» no devuelva el catálogo entero
+    ...(q ? { OR: [{ symbol: { contains: likeSafe(q), mode: 'insensitive' } }, { name: { contains: likeSafe(q), mode: 'insensitive' } }] } : {}),
   }
   const orderBy: Prisma.AssetOrderByWithRelationInput[] =
     // Sin búsqueda: las acciones por nombre; cripto, ETFs, índices, divisas y materias primas en el orden curado (los más conocidos primero)
@@ -255,7 +314,10 @@ export async function overview(region: RegionT | 'ALL'): Promise<MarketOverviewT
     db.asset.findMany({ where: base, include: { quote: true }, orderBy: { quote: { changePct: 'asc' } }, take: 8 }),
     db.quote.aggregate({ _max: { updatedAt: true } }),
   ])
-  return { indices: idx, gainers: items(g), losers: items(l), updatedAt: (latest._max.updatedAt ?? new Date()).toISOString() }
+  // La clasificación sale del repaso del catálogo; los precios que se enseñan, al día como en cualquier otra lista
+  const fresh = new Map((await loadAssets([...g, ...l].map(a => a.symbol))).map(a => [a.symbol, a]))
+  const now = (rows: AssetRow[]) => items(rows.map(a => fresh.get(a.symbol) ?? a))
+  return { indices: idx, gainers: now(g), losers: now(l), updatedAt: (latest._max.updatedAt ?? new Date()).toISOString() }
 }
 
 /** Filtros disponibles (países, sectores o categorías e índices de una región y un tipo de activo) */
@@ -326,20 +388,28 @@ export async function assetDetail(symbol: string, userCurrency: 'EUR' | 'USD' = 
 
 // ── Velas: reales del proveedor, con caché en memoria por instancia ──
 const candleCache = new Map<string, { at: number; data: CandleT[] }>()
+/** Peticiones de velas en curso: muchas personas abriendo el mismo gráfico a la vez comparten una sola llamada */
+const candleInflight = new Map<string, Promise<CandleT[]>>()
 const CANDLE_TTL: Record<string, number> = { '1m': 30_000, '5m': 60_000, '15m': 120_000, '1h': 300_000, '1d': 900_000, '1w': 3_600_000, '1M': 6 * 3_600_000 }
 
 export async function candles(symbol: string, interval: Interval): Promise<CandleT[]> {
-  const a = await db.asset.findUnique({ where: { symbol } })
-  if (!a) return []
+  if (!validSymbol(symbol) || !Object.hasOwn(CANDLE_TTL, interval)) return []
   const key = `${symbol}:${interval}`
   const hit = candleCache.get(key)
-  if (hit && Date.now() - hit.at < (CANDLE_TTL[interval] ?? 60_000)) return hit.data
-  const { div } = normCurrency(a.currency)
-  const raw = await yahooCandles(symbol, interval)
-  const data = raw.map(c => ({ t: c.t, o: c.o / div, h: c.h / div, l: c.l / div, c: c.c / div, v: c.v }))
-  if (data.length) {
+  if (hit && Date.now() - hit.at < CANDLE_TTL[interval]) return hit.data
+  const running = candleInflight.get(key)
+  if (running) return running
+  const p = (async () => {
+    const a = await db.asset.findUnique({ where: { symbol } })
+    if (!a) return []
+    const { div } = normCurrency(a.currency)
+    const raw = await yahooCandles(symbol, interval)
+    const data = raw.map(c => ({ t: c.t, o: c.o / div, h: c.h / div, l: c.l / div, c: c.c / div, v: c.v }))
     if (candleCache.size > 500) candleCache.clear()
-    candleCache.set(key, { at: Date.now(), data })
-  }
-  return data.length ? data : (hit?.data ?? [])
+    // Si el proveedor falla se sigue sirviendo lo último que hubo, y se reintenta en 30 s (no en cada visita)
+    candleCache.set(key, data.length ? { at: Date.now(), data } : { at: Date.now() - CANDLE_TTL[interval] + 30_000, data: hit?.data ?? [] })
+    return data.length ? data : (hit?.data ?? [])
+  })().finally(() => candleInflight.delete(key))
+  candleInflight.set(key, p)
+  return p
 }

@@ -13,7 +13,12 @@ export async function GET(req: Request) {
   if (!cronAuthorized(req)) return Response.json({ error: { code: 'UNAUTHORIZED', message: 'No autorizado' } }, { status: 401 })
   const job = new URL(req.url).searchParams.get('job')
   if (job === 'close') {
-    const league = await closeWeek(addDays(weekOf(), -7))
+    // La semana pasada y cualquier semana anterior que se quedara sin cerrar (el cierre se reanuda donde lo dejó)
+    const open = await db.leagueMember.groupBy({ by: ['weekKey'], where: { weekKey: { lt: weekOf() }, finalRank: null }, orderBy: { weekKey: 'asc' } })
+    const weeks = [...new Set([...open.map(w => w.weekKey), addDays(weekOf(), -7)])]
+    const results = []
+    for (const w of weeks) results.push(await closeWeek(w))
+    const league = { weeks: results }
     // Invitados que no han vuelto en 30 días: se borran con todo su progreso (lo dice la política de privacidad)
     const old = new Date(Date.now() - 30 * 86_400_000)
     const guests = await db.user.deleteMany({ where: { isAnonymous: true, createdAt: { lt: old }, sessions: { none: { updatedAt: { gte: old } } } } })

@@ -24,7 +24,7 @@ const PRICES = [
   { lookup: 'lumi_max_month', tier: 'PREMIUM', cents: 799, interval: 'month' },
   { lookup: 'lumi_max_year', tier: 'PREMIUM', cents: 5999, interval: 'year' },
 ] as const
-const EVENTS: Stripe.WebhookEndpointCreateParams.EnabledEvent[] = ['checkout.session.completed', 'customer.subscription.created', 'customer.subscription.updated', 'customer.subscription.deleted', 'customer.subscription.trial_will_end', 'invoice.paid']
+const EVENTS: Stripe.WebhookEndpointCreateParams.EnabledEvent[] = ['checkout.session.completed', 'customer.subscription.created', 'customer.subscription.updated', 'customer.subscription.deleted', 'customer.subscription.trial_will_end', 'invoice.paid', 'invoice.payment_failed']
 
 async function main() {
   const mode = key.startsWith('sk_live') || key.startsWith('rk_live') ? 'REAL' : 'PRUEBA'

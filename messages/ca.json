@@ -105,7 +105,8 @@
     "guestNote": "Sense correu ni contrasenya. Si t’agrada, deses el progrés quan vulguis.",
     "invitedBy": "{name} t’ha convidat a Lumi",
     "invited": "T’han convidat a Lumi",
-    "invitedSub": "Crea el teu compte i tens 7 dies de Max gratis des del primer moment."
+    "invitedSub": "Crea el teu compte i tens 7 dies de Max gratis des del primer moment.",
+    "trialNote": "Prova gratis de 7 dies: es desbloqueja amb 5 dies seguits de ratxa o si arribes amb la invitació d’un amic. També et pots subscriure directament."
   },
   "auth": {
     "signUpTitle": "Crea el teu compte",
@@ -123,14 +124,15 @@
     "noAccount": "No tens compte?",
     "forgot": "Has oblidat la contrasenya?",
     "forgotTitle": "Nova contrasenya",
-    "forgotSent": "Encara no enviem emails: la recuperació de la contrasenya arribarà amb el domini propi. Mentrestant, escriu-nos des de Contacte a la pàgina d'inici i t'ajudarem.",
+    "forgotSent": "Ara mateix no et podem enviar l’enllaç per correu. Escriu-nos des de Contacte amb el correu del teu compte i t’ajudarem a recuperar-lo.",
     "errors": {
       "INVALID_CREDENTIALS": "Email o contrasenya incorrectes.",
       "EMAIL_IN_USE": "Ja hi ha un compte amb aquest email.",
       "VALIDATION_ERROR": "Escriu un email vàlid.",
       "ACCOUNT_BLOCKED": "Aquest compte està bloquejat. Escriu-nos si creus que és un error.",
       "RATE_LIMITED": "Massa intents. Prova-ho d'aquí a un minut.",
-      "GUEST_MUST_SAVE": "Desa el teu progrés amb correu i contrasenya per continuar."
+      "GUEST_MUST_SAVE": "Desa el teu progrés amb correu i contrasenya per continuar.",
+      "INTERNAL": "Alguna cosa no ha anat bé. Torna-ho a provar d’aquí a un moment."
     },
     "contact": "Anar a Contacte",
     "resetAsk": "Escriu el correu del teu compte i t'enviem un enllaç per triar una contrasenya nova.",
@@ -775,7 +777,7 @@
     "monthly": "Mensual",
     "monthlyPrice": "{price} al mes",
     "tryFree": "Provar {plan} {days} dies gratis",
-    "after": "Després {price}{per}. Cancel·la quan vulguis des de Configuració. T'avisem 2 dies abans de cobrar.",
+    "after": "Després {price}{per}. T’avisem abans que acabi la prova i pots cancel·lar quan vulguis des de Configuració.",
     "perYear": "/any",
     "perMonth": "/mes",
     "demoNote": "Pagament segur amb Stripe. Pots cancel·lar quan vulguis des d’Ajustos.",
@@ -788,10 +790,10 @@
     "active": "La teva subscripció està activa.",
     "manage": "Gestionar a Configuració",
     "choosePlan": "Pla",
-    "plusPitch": "Plus: el pla intermedi. Les unitats clau completes i les 5 primeres classes de totes les altres.",
+    "plusPitch": "Plus: el pla intermedi. Les unitats 1 a 5 completes i les 5 primeres classes de totes les altres.",
     "maxPitch": "Max: tot el curs i tota la Lumi, sense límits.",
     "plusFeatures": [
-      "«Inverteix des d’avui» i les unitats clau completes",
+      "Unitats 1 a 5 completes, amb «Inverteix des d’avui»",
       "Les 5 primeres classes de cada unitat",
       "Vides il·limitades als qüestionaris",
       "50.000 € virtuals per practicar",
@@ -880,7 +882,7 @@
     "pushNote": "Les notificacions push del mòbil arribaran amb la versió instal·lable.",
     "accountSection": "Compte i privadesa",
     "account": "Compte, cartera i dades",
-    "version": "Lumi 2.0 · versió de prova",
+    "version": "Lumi 2.0",
     "privacy": "Privadesa",
     "leagueVisible": "Aparèixer a la lliga amb el meu nom",
     "leagueVisibleNote": "Si ho desactives, els altres et veuran com a «Jugador anònim».",
@@ -896,7 +898,7 @@
     "helpSection": "Ajuda",
     "gift": "regal",
     "giftEnds": "Fi del regal",
-    "giftMore": "Guanya més mesos convidant",
+    "giftMore": "Guanya més dies convidant",
     "toLight": "Mode clar",
     "toDark": "Mode fosc",
     "manageSub": "Gestionar la subscripció (targeta, factures, pla)",
@@ -917,7 +919,7 @@
     "disclaimer": "Avís legal acceptat",
     "logout": "Tancar la sessió",
     "deleteTitle": "Esborrar el compte",
-    "deleteBody": "S'esborren el teu perfil, el teu progrés i la teva cartera. No es pot desfer.",
+    "deleteBody": "S’esborren el teu perfil, el teu progrés i la teva cartera. No es pot desfer. Si pagues una subscripció, cancel·la-la abans a Configuració, Subscripció.",
     "deleteWord": "ESBORRAR",
     "deleteType": "Escriu {word} per confirmar",
     "delete": "Esborrar el meu compte",
@@ -1144,7 +1146,7 @@
   },
   "cookies": {
     "label": "Avís de galetes",
-    "text": "Només fem servir galetes tècniques, necessàries perquè l’app funcioni, i les preferències que tries. Res de publicitat ni analítica.",
+    "text": "Només fem servir galetes tècniques, necessàries perquè l’app funcioni, i les preferències que tries. Res de galetes de publicitat ni d’analítica.",
     "more": "Política de galetes",
     "ok": "Entesos"
   },
@@ -1210,11 +1212,11 @@
     "modeHint": {
       "EXPLAIN": "Pregunta qualsevol concepte del curs: te l’explica amb exemples.",
       "PATH": "Et recomana el pas següent segons el teu progrés.",
-      "PORTFOLIO": "Analitza les teves posicions i operacions simulades amb el que ensenya el curs. Plus o Max.",
-      "BIASES": "Detecta biaixos en les teves preguntes i operacions i et proposa regles. Plus o Max."
+      "PORTFOLIO": "Analitza les teves posicions simulades amb el que ensenya el curs: repartiment, concentració i stops. Plus o Max.",
+      "BIASES": "Revisa les teves operacions simulades per trobar-hi biaixos (FOMO, operar massa, efecte disposició…) i et proposa regles. Només a Max."
     },
     "hello": "Hola, soc {name}",
-    "intro": "La teva professora del curs. Pregunta’m el que no entenguis: responc amb el manual de Lumi i el teu progrés. No dono consells d’inversió: t’ensenyo a decidir per tu.",
+    "intro": "La teva professora del curs. Pregunta’m el que no entenguis: responc amb el manual de Lumi i el teu progrés (de moment, en castellà). No dono consells d’inversió: t’ensenyo a decidir per tu.",
     "suggest": {
       "s1": "Què és un ETF?",
       "s2": "Com es llegeix una espelma?",
@@ -1237,7 +1239,9 @@
     "ask": "Pregunta-ho a {name}",
     "askHint": "Dubtes? La teva professora respon amb el curs",
     "askLesson": "Preguntar a la professora",
-    "engineLumi": "La Lumi respon amb el curs, sense IA externa"
+    "engineLumi": "La Lumi respon amb el curs, sense IA externa",
+    "limitPlus": "Has fet servir les {n} preguntes d’avui. Amb Max en tens 100 al dia i tots els modes.",
+    "tooFast": "Vas molt de pressa. Espera un minut i torna a preguntar."
   },
   "lumi": {
     "title": "La teva {name}",
@@ -1637,7 +1641,7 @@
   },
   "push": {
     "title": "Activa els avisos",
-    "body": "T’avisem abans de perdre la ratxa, quan deixes una classe a mitges i quan alguna cosa es mou al mercat. Com a màxim 3 al dia.",
+    "body": "T’avisem abans de perdre la ratxa, quan deixes una classe a mitges i quan alguna cosa es mou al mercat. Mai de nit, i pots triar quins a Configuració.",
     "enable": "Activar els avisos",
     "later": "Ara no",
     "denied": "Els avisos estan bloquejats en aquest navegador. Els pots activar a la seva configuració.",
@@ -1668,14 +1672,14 @@
   "buy": {
     "title": "Fes-te Plus o Max",
     "body": "Tot el curs, vides il·limitades i 50.000 € virtuals. Cancel·la quan vulguis.",
-    "keepBody": "Et queden {n} dies de Max. Subscriu-te per no perdre el curs complet.",
+    "keepBody": "Et queden {n} dies de Max. Si et subscrius ara, no se't cobra res fins que s'acabin.",
     "billing": "Forma de pagament",
     "monthly": "Mensual",
     "yearly": "Anual (−{n} %)",
     "best": "Recomanat",
     "perMonth": "/mes",
     "billedYear": "Un pagament de {price} l’any",
-    "plusLine": "Unitats clau completes i vides il·limitades",
+    "plusLine": "Unitats 1 a 5 completes i vides il·limitades",
     "maxLine": "Les 39 unitats, sense límits",
     "cta": "Subscriure’m",
     "trialCta": "Provar 7 dies gratis",

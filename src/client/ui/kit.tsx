@@ -1,5 +1,6 @@
 'use client'
 // Piezas comunes de la interfaz.
+import { createPortal } from 'react-dom'
 import { useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import { useRouter } from '@/i18n/navigation'
@@ -50,7 +51,8 @@ export function Seg<T extends string>({ value, options, onChange, label, classNa
   return (
     <div className={`seg ${className ?? ''}`} role="group" aria-label={label}>
       {options.map(o => (
-        <button key={o.value} type="button" aria-pressed={value === o.value} onClick={() => onChange(o.value)}>
+        // Con 5 o más opciones (p. ej. la meta diaria) el relleno se reduce para que quepan en 375 px sin desbordar
+        <button key={o.value} type="button" aria-pressed={value === o.value} onClick={() => onChange(o.value)} style={options.length > 4 ? { padding: '0 4px', minWidth: 0 } : undefined}>
           {o.label}
         </button>
       ))}
@@ -91,15 +93,18 @@ export function Sheet({ open, onClose, label, children, alert }: { open: boolean
       prev?.focus?.()
     }
   }, [open, onClose])
-  if (!open) return null
-  return (
-    <div className="fixed inset-0 z-40 flex flex-col justify-end md:items-center md:justify-center">
+  if (!open || typeof document === 'undefined') return null
+  // Se pinta directamente en <body>: así queda siempre por encima de la barra de pestañas y de la página
+  // (dentro de la página quedaba atrapada debajo del menú y había que hacer scroll para ver el botón)
+  return createPortal(
+    <div className="fixed inset-0 z-50 flex flex-col justify-end md:items-center md:justify-center">
       <div className="absolute inset-0 animate-fade" style={{ background: 'var(--scrim)' }} onClick={onClose} />
       <div ref={ref} role={alert ? 'alertdialog' : 'dialog'} aria-modal="true" aria-label={label} className="relative flex max-h-[92dvh] w-full animate-rise flex-col gap-3.5 overflow-y-auto rounded-t-[26px] px-4 pt-2.5 md:max-w-[440px] md:rounded-[26px] md:pb-6" style={{ background: 'var(--bg)', paddingBottom: 'max(24px, env(safe-area-inset-bottom))' }}>
         <div className="mx-auto mb-1 h-[5px] w-[38px] rounded-full md:hidden" style={{ background: 'var(--ink-3)' }} />
         {children}
       </div>
-    </div>
+    </div>,
+    document.body,
   )
 }
 

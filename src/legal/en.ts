@@ -196,8 +196,8 @@ export const en: Record<LegalSlug, LegalDoc> = {
         h: '7. Paid plans (Plus and Max)',
         list: [
           'Plus and Max extend lessons, lives, virtual balance, order types and questions to Lumi. The price and what each plan includes are shown before you subscribe.',
-          'There is a 7-day free trial, one per person, unlocked by a 5-day streak or by joining with an invitation. In the current version payments are not active yet: the trial ends by itself and you go back to Free at no cost.',
-          'Once payments are active, purchases are governed by the Terms of purchase: price, renewal, cancellation in Settings, a reminder before the first charge after the trial and 14 calendar days to withdraw.',
+          'There is a 7-day free trial, one per person, unlocked by a 5-day streak or by joining with an invitation.',
+          'Purchases are governed by the Terms of purchase: price, renewal, cancellation in Settings, a reminder before the trial ends and 14 calendar days to withdraw.',
         ],
       },
       {
@@ -218,7 +218,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
   },
   contratacion: {
     title: 'Terms of purchase',
-    intro: `Last updated: ${UPDATED}. They apply when you take out a paid plan (Plus or Max) and complement the Terms of use. They comply with Spanish Royal Legislative Decree 1/2007 (General Law for the Protection of Consumers and Users) and the LSSI-CE. While payments are not active, plans can only be tried for free and nothing is charged. The Spanish version prevails.`,
+    intro: `Last updated: ${UPDATED}. They apply when you take out a paid plan (Plus or Max) and complement the Terms of use. They comply with Spanish Royal Legislative Decree 1/2007 (General Law for the Protection of Consumers and Users) and the LSSI-CE. The Spanish version prevails.`,
     sections: [
       {
         h: '1. Who sells to you',
@@ -256,7 +256,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
         list: [
           'You can get one 7-day free trial (once per person): it unlocks with a 5-day streak or by joining with a friend’s invitation. You can also subscribe directly, without a trial.',
           'If you cancel before it ends, you pay nothing. Otherwise, when it ends the first period of the chosen plan is charged.',
-          'We will remind you in the app and by email before the trial ends.',
+          'We will remind you in the app (and on your phone, if you have notifications on) before the trial ends.',
         ],
       },
       {

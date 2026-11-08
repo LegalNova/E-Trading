@@ -226,7 +226,8 @@ export function Explore({ initial }: { initial: Partial<AssetFilter> }) {
     initialPageParam: 0,
     getNextPageParam: last => last.nextOffset ?? undefined,
     placeholderData: keepPreviousData,
-    refetchInterval: 30_000,
+    // Con muchas páginas cargadas no se refrescan todas cada 30 s (serían cientos de precios pedidos a la vez por una sola persona)
+    refetchInterval: q => ((q.state.data?.pages.length ?? 0) > 2 ? false : 30_000),
   })
   const sentinel = useRef<HTMLDivElement>(null)
   const { hasNextPage, isFetchingNextPage, fetchNextPage } = list
@@ -388,7 +389,7 @@ export function Asset({ symbol }: { symbol: string }) {
   const status = useStatus()
   const unit = useUnit()
   const refresh = useRefreshAll()
-  const { data: a, isError, refetch } = useQuery({ queryKey: ['asset', symbol], queryFn: () => api.asset(symbol), refetchInterval: 5_000 })
+  const { data: a, isError, refetch } = useQuery({ queryKey: ['asset', symbol], queryFn: () => api.asset(symbol), refetchInterval: q => (q.state.data && !q.state.data.isOpen ? 60_000 : 5_000) })
   const { data: pf } = usePortfolio()
   const { data: watch } = useQuery({ queryKey: ['watchlist'], queryFn: api.watchlist })
   const follow = useMutation({ mutationFn: () => api.toggleWatch(symbol), onSuccess: w => (refresh(), toast(w.includes(symbol) ? t('following') : t('unfollowed'))) })
@@ -552,6 +553,8 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
   const [slOn, setSlOn] = useState(false)
   const [tpOn, setTpOn] = useState(false)
   const [sl, setSl] = useState(() => (toNum(a.price) * 0.95).toFixed(pdec))
+  // Precio de activación de partida según el tipo: el stop por debajo (−5 %) y el objetivo por encima (+10 %); si no, saltarían al instante
+  const triggerFor = (k: OrderTypeT) => (k === 'STOP_LOSS' ? (toNum(a.price) * 0.95).toFixed(pdec) : k === 'TAKE_PROFIT' ? (toNum(a.price) * 1.1).toFixed(pdec) : a.price)
   const [tp, setTp] = useState(() => (toNum(a.price) * 1.1).toFixed(pdec))
   const posValue = toNum(position?.qty ?? '0') * toNum(a.priceInUserCurrency)
   const [sheet, setSheet] = useState<'order' | 'risk' | 'lock'>('order')
@@ -561,7 +564,8 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
     ? { symbol: a.symbol, side, type, amount: String(amount), triggerPrice: type === 'MARKET' ? undefined : trigger, stopLoss: slOn && toNum(sl) > 0 ? sl : undefined, takeProfit: tpOn && toNum(tp) > 0 ? tp : undefined }
     : sellBy === 'amount'
       ? { symbol: a.symbol, side, type, amount: String(sellAmount), triggerPrice: type === 'MARKET' ? undefined : trigger }
-      : { symbol: a.symbol, side, type, qty: String((toNum(position?.qty ?? '0') * sellPct) / 100), triggerPrice: type === 'MARKET' ? undefined : trigger }
+      : // El 100 % es la posición exacta; el resto, con 8 decimales (String() daba «1e-7» con cantidades pequeñas y la orden fallaba)
+        { symbol: a.symbol, side, type, qty: sellPct === 100 ? (position?.qty ?? '0') : ((toNum(position?.qty ?? '0') * sellPct) / 100).toFixed(8), triggerPrice: type === 'MARKET' ? undefined : trigger }
   const pv = useQuery({ queryKey: ['preview', input], queryFn: () => api.previewOrder(input), placeholderData: keepPreviousData })
   const place = useMutation({
     mutationFn: (ack: boolean) => api.placeOrder({ ...input, riskAcknowledged: ack, followedRiskAdvice: followed }),
@@ -600,7 +604,7 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
         </div>
         <div className="seg" role="group" aria-label={t('orderType')}>
           {types.map(x => (
-            <button key={x.k} aria-pressed={type === x.k} onClick={() => (locked(x.k) ? setSheet('lock') : setType(x.k))}>
+            <button key={x.k} aria-pressed={type === x.k} onClick={() => (locked(x.k) ? setSheet('lock') : (setType(x.k), setTrigger(triggerFor(x.k))))}>
               {x.label}
               {locked(x.k) && <> <Icon name="lock" size={12} className="mb-0.5 inline-block align-middle" /></>}
             </button>
@@ -729,9 +733,12 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
           </div>
         )}
         {!a.isOpen && type === 'MARKET' && <div className="banner">{t('closedNote')}</div>}
-        <button className="btn btn-primary" disabled={ctaDisabled} onClick={review}>
-          {errorText ?? (type === 'MARKET' ? (buy ? t('confirmBuy') : t('confirmSell')) : t('placeOrder'))}
-        </button>
+        {/* El botón de confirmar queda siempre a la vista, aunque la hoja sea larga */}
+        <div className="sticky -mx-4 mt-auto px-4 pt-2" style={{ background: 'var(--bg)', bottom: 'calc(-1 * max(24px, env(safe-area-inset-bottom)))', paddingBottom: 'max(12px, env(safe-area-inset-bottom))' }}>
+          <button className="btn btn-primary" disabled={ctaDisabled} onClick={review}>
+            {errorText ?? (type === 'MARKET' ? (buy ? t('confirmBuy') : t('confirmSell')) : t('placeOrder'))}
+          </button>
+        </div>
       </Sheet>
 
       <Sheet open={sheet === 'risk'} onClose={() => setSheet('order')} label={t('riskTitle')} alert>
@@ -1037,7 +1044,7 @@ export function Orders() {
   const toast = useToast()
   const refresh = useRefreshAll()
   const orders = useQuery({ queryKey: ['orders'], queryFn: api.orders, refetchInterval: 20_000 })
-  const trades = useQuery({ queryKey: ['trades'], queryFn: api.trades })
+  const trades = useQuery({ queryKey: ['trades'], queryFn: api.trades, refetchInterval: 20_000 })
   const alerts = useQuery({ queryKey: ['alerts'], queryFn: api.alerts })
   const cancel = useMutation({ mutationFn: (id: string) => api.cancelOrder(id), onSuccess: () => (refresh(), toast(t('cancelled'))) })
   const delAlert = useMutation({ mutationFn: (id: string) => api.deleteAlert(id), onSuccess: () => (refresh(), toast(t('alertDeleted'))) })
@@ -1056,7 +1063,7 @@ export function Orders() {
                   {t(`types.${o.type}`)} · {o.side === 'BUY' ? t('buy') : t('sell')} {o.symbol}
                 </b>
                 <br />
-                <span className="t-cap">{o.triggerPrice ? t('pendingAt', { amount: money(o.amount, 'EUR', locale), price: num(toNum(o.triggerPrice), locale, decimalsFor('STOCK', toNum(o.triggerPrice))) }) : t('pendingOpen', { amount: money(o.amount, 'EUR', locale) })}
+                <span className="t-cap">{o.triggerPrice ? t('pendingAt', { amount: money(o.amount, 'EUR', locale), price: num(toNum(o.triggerPrice), locale, Math.min(6, Math.max(2, o.triggerPrice.split('.')[1]?.length ?? 0))) }) : t('pendingOpen', { amount: money(o.amount, 'EUR', locale) })}
                   {o.parentId && ` · ${t('exitOfBuy')}`}</span>
               </span>
               <button className="link" onClick={() => cancel.mutate(o.id)}>

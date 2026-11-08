@@ -74,7 +74,9 @@ export function questionT(loc: Loc, q: ContentQuestion): ContentQuestion {
   if (loc !== 'es' && /^p\d+$/.test(q.id)) return placementT(loc, q)
   const t = of(loc)?.q[q.id]
   if (!t || t.options.length !== q.options.length) return q
-  const solution = q.type === 'FILL_BLANK' && typeof q.solution === 'string' ? (t.options[q.options.indexOf(q.solution)] ?? q.solution) : q.solution
+  // (con el mismo espacio que no se rompe que las opciones: si no, «20 %» nunca coincidiría con la opción «20 %»)
+  const tSol = q.type === 'FILL_BLANK' && typeof q.solution === 'string' ? t.options[q.options.indexOf(q.solution)] : undefined
+  const solution = tSol !== undefined ? nb(tSol) : q.solution
   return {
     ...q,
     prompt: nb(t.prompt),
@@ -122,19 +124,19 @@ export function captionT(loc: Loc, caption: string): string {
 // ── Textos fijos que genera el motor (paso del quiz, introducción de repasos y retos finales) ──
 const ENGINE = {
   es: {
-    quizTitle: 'Hora del quiz', quizBody: (n: number) => `${n} preguntas para comprobar lo que has aprendido. Cada fallo cuesta una vida.`,
+    quizTitle: 'Hora del quiz', quizBody: (n: number, lives = true) => `${n} preguntas para comprobar lo que has aprendido.${lives ? ' Cada fallo cuesta una vida.' : ''}`,
     review: (u: string, ls: string) => ({ title: `Repaso de «${u}»`, body: `Un quiz con preguntas de toda la unidad: ${ls}.\n\nSi fallas alguna, irá a tu lista de repaso para que la practiques más adelante.`, tip: 'Lee bien cada explicación al responder: así se fija lo aprendido.' }),
     boss: (t: string) => ({ title: t, body: '12 preguntas mezcladas de toda la sección. Para superarlo necesitas acertar el 80 %.\n\nSi no llegas, repasa los fallos y vuelve a intentarlo: no pierdes nada.', tip: 'Tómate tu tiempo: aquí no hay prisa, hay que demostrar que lo dominas.' }),
     course: 'De cero a inversor',
   },
   ca: {
-    quizTitle: 'Hora del quiz', quizBody: (n: number) => `${n} preguntes per comprovar el que has après. Cada error costa una vida.`,
+    quizTitle: 'Hora del quiz', quizBody: (n: number, lives = true) => `${n} preguntes per comprovar el que has après.${lives ? ' Cada error costa una vida.' : ''}`,
     review: (u: string, ls: string) => ({ title: `Repàs de «${u}»`, body: `Un quiz amb preguntes de tota la unitat: ${ls}.\n\nSi en falles alguna, anirà a la teva llista de repàs perquè la practiquis més endavant.`, tip: 'Llegeix bé cada explicació en respondre: així es fixa el que has après.' }),
     boss: (t: string) => ({ title: t, body: '12 preguntes barrejades de tota la secció. Per superar-lo has d’encertar el 80 %.\n\nSi no hi arribes, repassa els errors i torna-ho a provar: no perds res.', tip: 'Pren-te el teu temps: aquí no hi ha pressa, has de demostrar que ho domines.' }),
     course: 'De zero a inversor',
   },
   en: {
-    quizTitle: 'Quiz time', quizBody: (n: number) => `${n} questions to check what you’ve learnt. Each mistake costs a life.`,
+    quizTitle: 'Quiz time', quizBody: (n: number, lives = true) => `${n} questions to check what you’ve learnt.${lives ? ' Each mistake costs a life.' : ''}`,
     review: (u: string, ls: string) => ({ title: `Review: “${u}”`, body: `A quiz with questions from the whole unit: ${ls}.\n\nIf you get any wrong, they’ll go to your review list so you can practise them later.`, tip: 'Read each explanation carefully as you answer: that’s how it sticks.' }),
     boss: (t: string) => ({ title: t, body: '12 mixed questions from the whole section. To pass you need 80 % right.\n\nIf you don’t make it, review your mistakes and try again: you lose nothing.', tip: 'Take your time: there’s no rush here, you need to show you’ve mastered it.' }),
     course: 'From zero to investor',

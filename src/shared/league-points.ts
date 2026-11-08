@@ -1,6 +1,7 @@
 // Puntos de la liga (lógica pura, con pruebas en tests/league-points.test.ts).
 // Puntos = XP de la semana + puntos de inversión. Inversión: +10 por cada +1 % de rentabilidad semanal y −10 por cada −1 %,
 // con tope de ±100. Cartera concentrada (más del 40 % en una sola acción): las ganancias valen la mitad. Total ≥ 0.
+import { dayOf } from './time'
 
 /** Puntos por cada 1 % de rentabilidad semanal */
 export const PTS_PER_PCT = 10
@@ -25,3 +26,11 @@ export function weekReturnPct(start: number, now: number, flows: number) {
 
 /** Puntos de la liga: XP de la semana + puntos de inversión (nunca por debajo de 0) */
 export const score = (xp: number, tradePts: number) => Math.max(0, xp + tradePts)
+
+/** Instante en que empieza un día en Madrid (00:00 de Madrid, con horario de invierno o de verano).
+ *  La semana de la liga acaba el lunes a esta hora. */
+export function madridMidnight(ymd: string) {
+  const utc = Date.parse(ymd + 'T00:00:00Z')
+  for (let h = -3; h <= 1; h++) if (dayOf(utc + h * 3_600_000) === ymd) return new Date(utc + h * 3_600_000)
+  return new Date(utc)
+}

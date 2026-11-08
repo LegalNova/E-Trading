@@ -86,7 +86,7 @@ export async function withCtx<T>(fn: (c: Ctx) => Promise<T>, user?: User): Promi
   // Las tareas programadas (que pasan el usuario) y las escrituras bloquean como siempre.
   const read = !user && isReadRequest()
   try {
-    return await inCtx(fn, u0, readOnly, read)
+    return await inCtx(fn, u0, readOnly, read, !!user)
   } catch (e) {
     if (e instanceof ReadOnlyResult) return e.out as T
     throw e
@@ -111,7 +111,7 @@ export async function lockUser(c: Ctx) {
 const STATE_KEYS = ['xp', 'weekKey', 'weekXp', 'gems', 'lives', 'livesUpdatedAt', 'streak', 'bestStreak', 'lastActiveDay', 'freezes', 'placementDone', 'tradesDay', 'tradesToday', 'division'] as const
 const stateOf = (g: GameState, counters: Counters) => JSON.stringify([...STATE_KEYS.map(k => g[k]), counters])
 
-function inCtx<T>(fn: (c: Ctx) => Promise<T>, u0: User, readOnly: boolean, read: boolean): Promise<T> {
+function inCtx<T>(fn: (c: Ctx) => Promise<T>, u0: User, readOnly: boolean, read: boolean, scheduled: boolean): Promise<T> {
   return db.$transaction(
     async tx => {
       // Crear el estado si no existe sin chocar con otra petición que lo esté creando a la vez
@@ -127,11 +127,18 @@ function inCtx<T>(fn: (c: Ctx) => Promise<T>, u0: User, readOnly: boolean, read:
       const c: Ctx = { tx, user: u, g, counters: { ...((g.counters as Counters) ?? {}) }, today: dayOf(Date.now(), u.timezone), fx: { xp: 0, goals: [], ach: [], levelFrom: levelOf(g.xp).n, features: [] }, locked: !read }
       const loaded = { at: g.updatedAt, state: stateOf(g, c.counters) }
       await rollover(c)
+      const trades0 = c.g.tradesToday
       const out = await fn(c)
+      // Liga: si ha vendido, se apunta si su cartera estaba concentrada antes de vender (vale para toda la semana:
+      // pasarlo todo a efectivo justo antes del cierre no quita la penalización)
+      if (c.g.tradesToday > trades0) await (await import('./league')).noteConcentration(c, c.g.tradesToday - trades0)
       // Liga: todo el que usa la app esta semana entra en su grupo (aunque aún no tenga XP), una vez por semana
-      // (semana de la liga = la de Madrid, la misma para todos)
+      // (semana de la liga = la de Madrid, la misma para todos). Las tareas programadas (cierre de la liga, órdenes
+      // pendientes, avisos) no son «usar la app»: solo meten en la liga a quien gana XP con ellas.
       const lw = weekNo(weekOf(Date.now()))
-      if (c.counters.leagueWeek !== lw) {
+      if (scheduled) {
+        if (c.g.weekXp > 0) await (await import('./league')).ensureMembership(c)
+      } else if (c.counters.leagueWeek !== lw) {
         await (await import('./league')).ensureMembership(c, true)
         c.counters.leagueWeek = lw
       } else if (c.g.weekXp > 0) await (await import('./league')).ensureMembership(c)
@@ -157,7 +164,7 @@ async function expireTrial(tx: Tx, u: User): Promise<User> {
     const closed = await tx.subscription.updateMany({ where: { userId: u.id, status: sub.status }, data: { status: 'CANCELED', renewsAt: null } })
     if (!closed.count) return (await tx.user.findUnique({ where: { id: u.id } })) ?? u
     const gift = sub.status === 'GIFT'
-    await tx.notification.create({ data: { userId: u.id, type: 'NEW_LESSON', title: gift ? 'Tu Max regalado ha terminado' : 'Tu prueba ha terminado', body: gift ? 'Sigues con todo lo de Free. Invita a más amigos para ganar otro mes, o pásate a Plus o Max.' : 'Sigues con todo lo de Free. Puedes volver a Plus o Max cuando quieras.', deepLink: gift ? '/perfil/invitar' : '/premium' } })
+    await tx.notification.create({ data: { userId: u.id, type: 'NEW_LESSON', title: gift ? 'Tu Max regalado ha terminado' : 'Tu prueba ha terminado', body: gift ? 'Sigues con todo lo de Free. Invita a más amigos para ganar más días, o pásate a Plus o Max.' : 'Sigues con todo lo de Free. Puedes volver a Plus o Max cuando quieras.', deepLink: gift ? '/perfil/invitar' : '/premium' } })
     return tx.user.update({ where: { id: u.id }, data: { plan: 'FREE' } })
   }
   return u
@@ -166,7 +173,9 @@ async function expireTrial(tx: Tx, u: User): Promise<User> {
 // ── Mantenimiento al leer: semana, racha, vidas ──────────
 async function rollover(c: Ctx) {
   const { g, today, tx } = c
-  const wk = weekOf(Date.now(), c.user.timezone)
+  // XP de la semana: semana de Madrid, la misma que la de la liga (con la semana local de cada uno, quien vive en
+  // otra zona perdía XP de la liga o la veía a 0 el domingo). Se pone a 0 el lunes a las 00:00 de Madrid.
+  const wk = weekOf(Date.now())
   if (g.weekKey !== wk) {
     g.weekKey = wk
     g.weekXp = 0
@@ -175,24 +184,19 @@ async function rollover(c: Ctx) {
     g.tradesDay = today
     g.tradesToday = 0
   }
-  // Racha: días saltados → protector si hay, si no se pierde
+  // Racha: días saltados → un protector por día si hay bastantes; si no, se pierde (y los protectores se guardan:
+  // gastarlos en una racha que se pierde igualmente no tendría sentido)
   const last = g.lastActiveDay
   if (last && last < addDays(today, -1) && g.streak > 0) {
-    let d = addDays(last, 1)
-    const rows: { userId: string; day: string; status: string }[] = []
-    while (d < today) {
-      if (g.freezes > 0) {
-        g.freezes--
-        c.counters.freezeUsed = (c.counters.freezeUsed ?? 0) + 1
-        rows.push({ userId: g.userId, day: d, status: 'FROZEN' })
-        g.lastActiveDay = d
-      } else {
-        rows.push({ userId: g.userId, day: d, status: 'MISSED' })
-        g.streak = 0
-      }
-      d = addDays(d, 1)
-    }
-    if (rows.length) await tx.streakDay.createMany({ data: rows, skipDuplicates: true })
+    const missed: string[] = []
+    for (let d = addDays(last, 1); d < today; d = addDays(d, 1)) missed.push(d)
+    const saved = g.freezes >= missed.length
+    if (saved) {
+      g.freezes -= missed.length
+      c.counters.freezeUsed = (c.counters.freezeUsed ?? 0) + missed.length
+      g.lastActiveDay = missed.at(-1)!
+    } else g.streak = 0
+    await tx.streakDay.createMany({ data: missed.map(day => ({ userId: g.userId, day, status: saved ? 'FROZEN' : 'MISSED' })), skipDuplicates: true })
   }
   // Vidas: 1 cada 4 h, calculado al leer
   if (g.lives < LIVES_MAX) {
