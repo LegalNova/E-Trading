@@ -31,39 +31,45 @@ enum Plan {
 }
 
 model User {
-  id            String    @id
-  name          String
-  email         String    @unique
-  emailVerified Boolean   @default(false)
-  image         String?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+  id               String    @id
+  name             String
+  email            String    @unique
+  emailVerified    Boolean   @default(false)
+  image            String?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
   // Perfil
-  role          Role      @default(USER)
-  gender        Gender    @default(N)
-  birthDate     DateTime? @db.Date
-  locale        String    @default("es")
-  timezone      String    @default("Europe/Madrid")
-  plan          Plan      @default(FREE)
-  blockedAt     DateTime?
-  blockReason   String?
-  onboarding    Json?
-  onboardingStep Int?     @default(1)
-  disclaimerAt  DateTime?
-  companionName String    @default("Lumi")
-  skinId        String    @default("azul")
-  settings      Json?
+  role             Role      @default(USER)
+  gender           Gender    @default(N)
+  birthDate        DateTime? @db.Date
+  locale           String    @default("es")
+  timezone         String    @default("Europe/Madrid")
+  plan             Plan      @default(FREE)
+  blockedAt        DateTime?
+  blockReason      String?
+  onboarding       Json?
+  onboardingStep   Int?      @default(1)
+  disclaimerAt     DateTime?
+  companionName    String    @default("Lumi")
+  skinId           String    @default("azul")
+  settings         Json?
   // Legal y privacidad
-  legalVersion    String?
-  legalAcceptedAt DateTime?
-  leagueVisible   Boolean   @default(true)
-  trialUsed       Boolean   @default(false)
-  guardianConsent String    @default("NONE") // NONE | PENDING | CONFIRMED | REJECTED
-  /** De dónde llegó (primer contacto: utm_source/utm_campaign o código de quien invita) */
-  source          String?
-  /** Cuenta de invitado («Probar sin registrarme»): sin email real hasta que guarda su progreso */
-  isAnonymous     Boolean?  @default(false)
-  /** Invitaciones: código propio (?inv=…), quién le invitó y cuándo se dio el mes de Max a los dos */
+  legalVersion     String?
+  legalAcceptedAt  DateTime?
+  leagueVisible    Boolean   @default(true)
+  trialUsed        Boolean   @default(false)
+  guardianConsent  String    @default("NONE") // NONE | PENDING | CONFIRMED | REJECTED
+  /**
+   * De dónde llegó (primer contacto: utm_source/utm_campaign o código de quien invita)
+   */
+  source           String?
+  /**
+   * Cuenta de invitado («Probar sin registrarme»): sin email real hasta que guarda su progreso
+   */
+  isAnonymous      Boolean?  @default(false)
+  /**
+   * Invitaciones: código propio (?inv=…), quién le invitó y cuándo se dio el mes de Max a los dos
+   */
   inviteCode       String?   @unique
   invitedById      String?
   inviteRewardedAt DateTime?
@@ -90,6 +96,13 @@ model User {
   snapshots     PortfolioSnapshot[]
   subscription  Subscription?
   tutorMessages TutorMessage[]
+  reports       Report[]
+  missions      Mission[]
+  journal       JournalEntry[]
+  leaguesOwned  PrivateLeague[]
+  leagues       PrivateLeagueMember[]
+  monthBases    MonthBase[]
+  theses        Thesis[]
 
   @@index([invitedById])
   @@map("user")
@@ -227,11 +240,11 @@ model QuizAnswer {
 model TutorMessage {
   id        String   @id @default(cuid())
   userId    String
-  role      String   // user | assistant
+  role      String // user | assistant
   content   String
   mode      String   @default("EXPLAIN")
-  sources   Json?    // lecciones citadas
-  engine    String?  // LUMI: respuesta del cerebro propio (sin IA externa)
+  sources   Json? // lecciones citadas
+  engine    String? // LUMI: respuesta del cerebro propio (sin IA externa)
   createdAt DateTime @default(now())
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -343,14 +356,14 @@ model Candle {
 }
 
 model Portfolio {
-  userId     String   @id
-  cash       Decimal  @db.Decimal(20, 2)
-  realized   Decimal  @default(0) @db.Decimal(20, 2)
-  resetsLeft Int      @default(3)
-  resetsYear Int
-  premiumTopUp Boolean @default(false)
-  updatedAt  DateTime @updatedAt
-  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId       String   @id
+  cash         Decimal  @db.Decimal(20, 2)
+  realized     Decimal  @default(0) @db.Decimal(20, 2)
+  resetsLeft   Int      @default(3)
+  resetsYear   Int
+  premiumTopUp Boolean  @default(false)
+  updatedAt    DateTime @updatedAt
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Position {
@@ -481,17 +494,17 @@ model Subscription {
 
 /// Grupo de la liga en una semana (hasta 30 personas de la misma división)
 model LeagueMember {
-  weekKey   String
-  userId    String
-  division  Int
-  groupNo   Int
-  xp        Int      @default(0) // XP de esa semana (se congela al cerrar)
+  weekKey    String
+  userId     String
+  division   Int
+  groupNo    Int
+  xp         Int      @default(0) // XP de esa semana (se congela al cerrar)
   startValue Decimal? @db.Decimal(20, 2) // valor de la cartera al empezar su semana (base de la rentabilidad)
-  flows     Decimal  @default(0) @db.Decimal(20, 2) // dinero que entra o sale sin invertir (saldo de Max, reinicios)
-  tradePts  Int      @default(0) // puntos de inversión (se congelan al cerrar)
-  finalRank Int?
-  outcome   String? // UP | STAY | DOWN
-  joinedAt  DateTime @default(now())
+  flows      Decimal  @default(0) @db.Decimal(20, 2) // dinero que entra o sale sin invertir (saldo de Max, reinicios)
+  tradePts   Int      @default(0) // puntos de inversión (se congelan al cerrar)
+  finalRank  Int?
+  outcome    String? // UP | STAY | DOWN
+  joinedAt   DateTime @default(now())
 
   @@id([weekKey, userId])
   @@index([weekKey, division, groupNo])
@@ -520,7 +533,6 @@ model ApiRateLimit {
   count       Int
   windowStart DateTime
 }
-
 
 model AppSetting {
   key       String   @id
@@ -601,3 +613,142 @@ model PushSub {
   @@index([userId])
 }
 
+// ── Etapas 1-4 (noviembre de 2026) ────────────────────────
+
+/// «Algo no está bien»: avisos de fallos que manda la gente desde cualquier pantalla
+model Report {
+  id        String   @id @default(cuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  kind      String // CONTENT | BUG | MARKET | OTHER
+  path      String
+  context   Json? // { lessonId, questionId, symbol, step… }
+  message   String
+  status    String   @default("OPEN") // OPEN | DONE | DISCARDED
+  note      String? // nota del equipo
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status, createdAt])
+}
+
+/// Regalo de un plan: lo compra una persona para otra (Stripe, pago único) o lo da el equipo desde el admin
+model Gift {
+  id              String    @id @default(cuid())
+  code            String    @unique
+  tier            Plan // PLUS | PREMIUM
+  days            Int
+  source          String // PURCHASE | ADMIN
+  status          String    @default("PENDING") // PENDING (sin pagar) | READY | REDEEMED | CANCELED
+  buyerId         String?
+  buyerEmail      String?
+  fromName        String?
+  toName          String?
+  message         String?
+  amount          Decimal?  @db.Decimal(10, 2)
+  stripeSessionId String?   @unique
+  paidAt          DateTime?
+  redeemedById    String?
+  redeemedAt      DateTime?
+  expiresAt       DateTime? // hasta cuándo se puede canjear
+  createdAt       DateTime  @default(now())
+
+  @@index([buyerId])
+  @@index([redeemedById])
+}
+
+/// Misión «Pruébalo» de una clase: se abre al terminar la clase y se cumple al hacerlo en la app
+model Mission {
+  userId    String
+  lessonId  String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  startedAt DateTime  @default(now())
+  doneAt    DateTime?
+
+  @@id([userId, lessonId])
+  @@index([userId, doneAt])
+}
+
+/// Diario de operaciones: por qué compras (o vendes) y, días después, si se cumplió
+model JournalEntry {
+  id         String    @id @default(cuid())
+  userId     String
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  orderId    String?   @unique
+  symbol     String
+  side       OrderSide
+  tag        String // motivo elegido (QUALITY | CHEAP | DIVERSIFY | LONG_TERM | NEWS | SOCIAL | HUNCH | OTHER)
+  reason     String    @default("")
+  priceAt    Decimal   @db.Decimal(30, 12)
+  remindAt   DateTime
+  reviewedAt DateTime?
+  verdict    String? // MET | NOT_MET | TOO_EARLY
+  note       String?
+  createdAt  DateTime  @default(now())
+
+  @@index([userId, createdAt])
+  @@index([remindAt, reviewedAt])
+}
+
+/// Liga de amigos (gratis): un grupo privado que compite por puntos de la semana y rentabilidad del mes
+model PrivateLeague {
+  id        String                @id @default(cuid())
+  code      String                @unique
+  name      String
+  ownerId   String
+  owner     User                  @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  createdAt DateTime              @default(now())
+  members   PrivateLeagueMember[]
+}
+
+model PrivateLeagueMember {
+  leagueId String
+  userId   String
+  league   PrivateLeague @relation(fields: [leagueId], references: [id], onDelete: Cascade)
+  user     User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  joinedAt DateTime      @default(now())
+
+  @@id([leagueId, userId])
+  @@index([userId])
+}
+
+/// Base de la rentabilidad del mes de cada persona (temporadas de las ligas de amigos)
+model MonthBase {
+  userId     String
+  month      String // 2026-11
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  startValue Decimal  @db.Decimal(20, 2)
+  flows      Decimal  @default(0) @db.Decimal(20, 2)
+  createdAt  DateTime @default(now())
+
+  @@id([userId, month])
+}
+
+/// Datos de empresa para la ficha (capitalización, PER, dividendo…): reales, con su fecha; null si no hay
+model Fundamentals {
+  symbol        String   @id
+  marketCap     Float?
+  pe            Float?
+  forwardPe     Float?
+  dividendYield Float? // en %
+  eps           Float?
+  beta          Float?
+  payload       Json?
+  updatedAt     DateTime @updatedAt
+}
+
+/// Proyecto final: «Tu primera tesis de inversión» sobre una empresa real
+model Thesis {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  symbol      String
+  answers     Json
+  status      String    @default("DRAFT") // DRAFT | DONE
+  score       Int?
+  shareCode   String?   @unique
+  createdAt   DateTime  @default(now())
+  completedAt DateTime?
+
+  @@index([userId])
+}
