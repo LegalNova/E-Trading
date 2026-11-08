@@ -104,7 +104,7 @@ export function ProChart({ symbol, decimals, up, live }: { symbol: string; decim
   const { data: candles, isLoading, isError } = useQuery({
     queryKey: ['candles', symbol, interval],
     queryFn: () => api.candles(symbol, interval),
-    refetchInterval: ['1m', '5m', '15m'].includes(interval) ? 30_000 : 120_000,
+    refetchInterval: ['1m', '5m', '15m'].includes(interval) ? 15_000 : 60_000,
     staleTime: 20_000,
   })
   const shown = useMemo(() => (candles && kind === 'heikin' ? heikinAshi(candles) : (candles ?? [])), [candles, kind])

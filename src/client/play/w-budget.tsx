@@ -205,7 +205,7 @@ export function Emergency({ w, onMetrics }: W<'emergency'>) {
           {sim.map((s, k) => {
             const seen = k < month
             return (
-              <div key={k} className="flex aspect-square flex-col items-center justify-center rounded-xl text-center transition-all" style={{ background: !seen ? 'var(--surface-2)' : s.hit ? `color-mix(in srgb, var(--${s.paid ? 'up' : 'down'}) 18%, var(--surface))` : 'color-mix(in srgb, var(--brand) 8%, var(--surface))', outline: k === month - 1 ? '2px solid var(--ink)' : undefined }}>
+              <div key={k} className="flex aspect-square flex-col items-center justify-center rounded-xl text-center transition-all" style={{ background: !seen ? 'var(--surface-2)' : s.hit ? `color-mix(in srgb, var(--${s.paid ? 'up' : 'down'}) 18%, var(--surface))` : 'color-mix(in srgb, var(--brand) 8%, var(--surface))', boxShadow: k === month - 1 ? 'inset 0 0 0 2px var(--ink)' : undefined }}>
                 {seen && s.hit ? <Glyph name={s.hit.icon} size={18} /> : <span className="text-[18px] leading-none">{seen ? '·' : ''}</span>}
                 <span className="t-cap">{t('monthShort', { n: k + 1 })}</span>
               </div>

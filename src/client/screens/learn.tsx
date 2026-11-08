@@ -19,7 +19,8 @@ import { Calculator } from '../ui/calculator'
 import { PlayView, StoryView } from '../play/play-step'
 import { Lumi, LumiSays, stageOf } from '../ui/lumi'
 import { GlyphTile } from '../play/glyph'
-import { MaxCard, MaxPill } from '../upgrade'
+import { BuyPlans, MaxPill } from '../upgrade'
+import { InviteCard } from '../invite-card'
 import { FeedbackCard } from './feedback'
 import { PushCard } from '../push'
 
@@ -46,7 +47,7 @@ export function Home() {
   return (
     <div className="pad">
       <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-2 px-0.5">
-        <h1 className="t-title min-w-0 basis-full truncate sm:basis-auto">{t('hello', { name: h.user.name })}</h1>
+        <h1 className="t-title min-w-0 basis-full truncate sm:basis-auto">{t('hello', { name: h.user.name.trim().split(/\s+/)[0] || h.user.name })}</h1>
         <div className="flex flex-none items-center gap-1.5">
           <MaxPill />
           <Link href="/perfil/racha" className="chip" aria-label={t('streakLabel', { n: h.streak.days })}>
@@ -61,16 +62,14 @@ export function Home() {
             <Heart />
             {premium ? '∞' : h.lives.current}
           </Link>
-          <Link href="/avisos" className="icon-btn hidden h-9 w-9 sm:flex md:hidden" aria-label={t('notifications')}>
+          <Link href="/avisos" className="icon-btn h-9 w-9 md:hidden" aria-label={t('notifications')}>
             <Icon name="bell" size={20} />
           </Link>
         </div>
       </div>
 
-      <LumiSays mood={h.companion.mood} message={h.companion.message} skin={me.companion.skinId} stage={stageOf(me.level.n)} />
-      <FeedbackCard />
-      <PushCard />
-      <MaxCard />
+      {/* Lo primero al entrar: invitar a un amigo (7 días de Max para los dos) */}
+      <InviteCard />
 
       {h.nextLesson ? (
         <div className="hero flex flex-col gap-2.5">
@@ -93,22 +92,9 @@ export function Home() {
         </div>
       )}
 
-      {/* Accesos rápidos: lo principal de la app a un toque */}
-      <nav aria-label={t('quick')} className="grid grid-cols-2 gap-2.5">
-        {(
-          [
-            ['/clases', 'book', t('qLearn')],
-            ['/mercado', 'chart', t('qMarket')],
-            ['/insignias', 'award', t('qBadges')],
-            ['/profesora', 'message', t('qLumi')],
-          ] as const
-        ).map(([href, glyph, label]) => (
-          <Link key={href} href={href} className="card flex items-center gap-2.5 px-3.5 py-3" style={{ color: 'var(--ink)' }}>
-            <GlyphTile name={glyph} size={34} />
-            <b className="text-[15px] leading-tight">{label}</b>
-          </Link>
-        ))}
-      </nav>
+      {/* Avisos que piden algo (activar notificaciones, dar tu opinión): solo cuando tocan */}
+      <PushCard />
+      <FeedbackCard />
 
       <div className="card flex flex-col gap-2.5">
         <div className="flex justify-between">
@@ -130,6 +116,8 @@ export function Home() {
         ))}
         {done === h.dailyGoals.length && <span className="t-cap">{t('allGoals')}</span>}
       </div>
+
+      <LumiSays mood={h.companion.mood} message={h.companion.message} skin={me.companion.skinId} stage={stageOf(me.level.n)} />
 
       <Link href="/mercado/cartera" className="card flex flex-col gap-1.5" style={{ color: 'inherit' }}>
         <span className="t-foot">{t('portfolio')}</span>
@@ -165,6 +153,9 @@ export function Home() {
         </Link>
       )}
 
+      {/* Abajo del todo: los planes, con un botón que lleva directo al pago */}
+      <BuyPlans id="planes" />
+
       <div className="t-foot flex items-center justify-between px-1">
         <Link href="/perfil" style={{ color: 'inherit' }}>
           {t('level', { n: me.level.n, title: me.level.title, xp: num(me.level.xp, locale, 0) })}
@@ -175,7 +166,7 @@ export function Home() {
 }
 
 // ── Camino de clases ─────────────────────────────────────
-function LessonRow({ l, onLocked }: { l: PathLessonT; onLocked: (l: PathLessonT) => void }) {
+function LessonRow({ l, next, onLocked }: { l: PathLessonT; next?: boolean; onLocked: (l: PathLessonT) => void }) {
   const t = useTranslations('path')
   const open = l.status === 'AVAILABLE'
   const done = l.status === 'COMPLETED'
@@ -209,7 +200,8 @@ function LessonRow({ l, onLocked }: { l: PathLessonT; onLocked: (l: PathLessonT)
       )}
     </>
   )
-  const style = { border: `2px solid ${open ? 'var(--brand)' : 'transparent'}`, opacity: l.status === 'LOCKED' ? 0.6 : 1, color: 'inherit' }
+  // Solo la siguiente clase va resaltada (borde por dentro: no se sale de la columna)
+  const style = { boxShadow: next ? 'inset 0 0 0 2px var(--brand)' : undefined, opacity: l.status === 'LOCKED' ? 0.6 : 1, color: 'inherit' }
   if (l.status === 'LOCKED')
     return (
       <button className="card flex items-center gap-3 text-left" style={style} onClick={() => onLocked(l)}>
@@ -281,6 +273,7 @@ export function Path() {
   if (isError) return <ErrorState onRetry={refetch} />
   if (!p) return <PageSkeleton />
   const current = p.units.find(u => u.id === p.currentUnitId) ?? p.units[0]
+  const nextId = current.lessons.find(l => l.status === 'AVAILABLE')?.id
   return (
     <div className="pad">
       <div className="flex items-center justify-between px-0.5">
@@ -372,7 +365,7 @@ export function Path() {
                   </Link>
                 )}
                 {u.lessons.map(l => (
-                  <LessonRow key={l.id} l={l} onLocked={setLocked} />
+                  <LessonRow key={l.id} l={l} next={l.id === nextId} onLocked={setLocked} />
                 ))}
               </div>
             )}

@@ -132,7 +132,7 @@ export function Premium() {
             {t('guestSave')}
           </Link>
         ) : badge && !isPlus && !badge.trialUsed && !badge.trialUnlocked && !badge.payments ? (
-          <div className="card flex flex-col gap-2.5" style={{ border: '1.5px solid var(--brand)' }}>
+          <div className="card flex flex-col gap-2.5" style={{ background: 'color-mix(in srgb, var(--brand) 10%, var(--surface))' }}>
             <b>{t('lockedTitle')}</b>
             <span className="t-foot">{t('lockedBody', { n: badge.trialStreak, s: Math.min(badge.streak, badge.trialStreak) })}</span>
             <span className="block h-2 overflow-hidden rounded-full" style={{ background: 'var(--fill)' }}>

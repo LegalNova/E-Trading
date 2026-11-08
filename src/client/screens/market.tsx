@@ -43,36 +43,21 @@ function exploreHref(f: Partial<AssetFilter>) {
 }
 
 // ── Portada del Mercado ──────────────────────────────────
-// Dos pestañas: «Favoritos» (lo que sigues, lo primero al entrar) y «Todo» (categorías, índices, lo que más se mueve)
+// Una sola página, de lo tuyo a lo general: buscador, tus favoritos, lo que más se mueve hoy, índices y categorías.
 export function Market() {
   const t = useTranslations('market')
   const locale = useLang()
-  const [tab, setTab] = useState<'fav' | 'all'>(() => {
-    try {
-      return localStorage.getItem('et-market-tab') === 'all' ? 'all' : 'fav'
-    } catch {
-      return 'fav'
-    }
-  })
   const [region, setRegion] = useState<RegionSel>('ALL')
   const [movers, setMovers] = useState<'gainers' | 'losers'>('gainers')
   const [q, setQ] = useState('')
   const dq = useDebounced(q.trim())
   const { data: pf } = usePortfolio()
-  const overview = useQuery({ queryKey: ['overview', region], queryFn: () => api.marketOverview(region), refetchInterval: 30_000, placeholderData: keepPreviousData, enabled: tab === 'all' })
-  const watch = useQuery({ queryKey: ['assets', 'WATCH'], queryFn: () => api.assets({ type: 'WATCH' }), refetchInterval: 30_000 })
-  const facets = useQuery({ queryKey: ['facets', region], queryFn: () => api.facets(region === 'ALL' ? undefined : region), staleTime: 3_600_000, enabled: tab === 'all' })
+  const overview = useQuery({ queryKey: ['overview', region], queryFn: () => api.marketOverview(region), refetchInterval: 10_000, placeholderData: keepPreviousData })
+  const watch = useQuery({ queryKey: ['assets', 'WATCH'], queryFn: () => api.assets({ type: 'WATCH' }), refetchInterval: 10_000 })
+  const facets = useQuery({ queryKey: ['facets', region], queryFn: () => api.facets(region === 'ALL' ? undefined : region), staleTime: 3_600_000 })
   const search = useQuery({ queryKey: ['search', dq], queryFn: () => api.searchAssets({ q: dq, limit: 25 }), enabled: dq.length > 0, placeholderData: keepPreviousData })
   const ov = overview.data
   const stale = watch.data?.some(a => a.stale)
-  const choose = (v: 'fav' | 'all') => {
-    setTab(v)
-    try {
-      localStorage.setItem('et-market-tab', v)
-    } catch {
-      // sin almacenamiento: se recuerda solo en esta visita
-    }
-  }
 
   return (
     <div className="pad wide">
@@ -109,96 +94,87 @@ export function Market() {
         </>
       ) : (
         <>
-          <Seg label={t('title')} value={tab} onChange={choose} options={[{ value: 'fav', label: `★ ${t('favorites')}` }, { value: 'all', label: t('everything') }]} />
+          {/* Tus favoritos: lo primero */}
+          <section aria-label={t('favorites')} className="flex min-w-0 flex-col gap-2">
+            <span className="t-head px-0.5">{t('favorites')}</span>
+            <div className="list">
+              {!watch.data ? (
+                <div className="li t-foot">{t('loading')}</div>
+              ) : watch.data.length ? (
+                watch.data.map(a => <AssetRow key={a.symbol} a={a} />)
+              ) : (
+                <div className="li t-foot">{t('emptyWatch')}</div>
+              )}
+            </div>
+            {watch.data && watch.data.length < 3 && <span className="t-cap px-0.5">{t('favHint')}</span>}
+          </section>
 
-          {tab === 'fav' ? (
-            <>
-              <section aria-label={t('favorites')} className="flex min-w-0 flex-col gap-2">
-                <div className="list">
-                  {!watch.data ? (
-                    <div className="li t-foot">{t('loading')}</div>
-                  ) : watch.data.length ? (
-                    watch.data.map(a => <AssetRow key={a.symbol} a={a} />)
-                  ) : (
-                    <div className="li t-foot">{t('emptyWatch')}</div>
-                  )}
-                </div>
-                <span className="t-cap px-0.5">{t('favHint')}</span>
-              </section>
-              <button className="btn btn-secondary" onClick={() => choose('all')}>
-                {t('seeEverything')}
-              </button>
-            </>
-          ) : (
-            <>
-              {/* Qué quieres ver: las categorías primero, grandes y claras */}
-              <section aria-label={t('explore')} className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
-                {TYPES.map(k => (
-                  <Link key={k} href={exploreHref({ type: k })} className="stat" style={{ color: 'var(--ink)' }}>
-                    <GlyphTile name={TYPE_GLYPH[k]} size={36} />
-                    <b className="text-[16px]">{t(`filter.${k}`)}</b>
-                    <span className="t-cap">{t(`typeHint.${k}`)}</span>
+          {/* Lo que más se mueve hoy */}
+          <section aria-label={t('movers')} className="flex min-w-0 flex-col gap-2">
+            <div className="flex flex-wrap items-center justify-between gap-2 px-0.5">
+              <span className="t-head">{t('movers')}</span>
+              <Seg label={t('movers')} className="w-[200px]" value={movers} onChange={setMovers} options={[{ value: 'gainers', label: t('gainers') }, { value: 'losers', label: t('losers') }]} />
+            </div>
+            <div className="pills" role="group" aria-label={t('region')}>
+              {REGIONS.map(r => (
+                <button key={r} aria-pressed={region === r} onClick={() => setRegion(r)}>
+                  {t(`regions.${r}`)}
+                </button>
+              ))}
+            </div>
+            <div className="list">
+              {!ov ? (
+                <div className="li t-foot">{t('loading')}</div>
+              ) : ov[movers].length ? (
+                ov[movers].map((a, i) => <AssetRow key={a.symbol} a={a} rank={i + 1} />)
+              ) : (
+                <div className="li t-foot">{t('noMovers')}</div>
+              )}
+            </div>
+            <Link href={exploreHref({ type: 'STOCK', region: region === 'ALL' ? undefined : region, sort: movers })} className="link px-0.5 text-[14px]">
+              {t('seeRanking')}
+            </Link>
+          </section>
+
+          {/* Índices de la región */}
+          <section aria-label={t('indices')} className="flex min-w-0 flex-col gap-2">
+            <div className="flex items-center justify-between px-0.5">
+              <span className="t-head">{t('indices')}</span>
+              <Link href={exploreHref({ type: 'INDEX', region: region === 'ALL' ? undefined : region })} className="link text-[14px]">
+                {t('seeAll')}
+              </Link>
+            </div>
+            <div className="pills pb-1">
+              {!ov ? [0, 1, 2, 3].map(i => <div key={i} className="skel h-[92px] w-[156px] flex-none rounded-2xl" />) : ov.indices.map(a => <IndexCard key={a.symbol} a={a} />)}
+            </div>
+          </section>
+
+          {/* Todas las categorías */}
+          <section aria-label={t('explore')} className="flex flex-col gap-2">
+            <span className="t-head px-0.5">{t('explore')}</span>
+            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
+              {TYPES.map(k => (
+                <Link key={k} href={exploreHref({ type: k })} className="stat" style={{ color: 'var(--ink)' }}>
+                  <GlyphTile name={TYPE_GLYPH[k]} size={36} />
+                  <b className="text-[16px]">{t(`filter.${k}`)}</b>
+                  <span className="t-cap">{t(`typeHint.${k}`)}</span>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          {/* Explorar por índice */}
+          {facets.data && facets.data.indices.length > 0 && (
+            <section aria-label={t('byIndex')} className="flex flex-col gap-2">
+              <span className="t-head px-0.5">{t('byIndex')}</span>
+              <div className="flex flex-wrap gap-2">
+                {facets.data.indices.map(ix => (
+                  <Link key={ix.value} href={exploreHref({ index: ix.value })} className="chip">
+                    {ix.value} <span className="t-cap">{ix.count}</span>
                   </Link>
-                ))}
-              </section>
-
-              <div className="pills" role="group" aria-label={t('region')}>
-                {REGIONS.map(r => (
-                  <button key={r} aria-pressed={region === r} onClick={() => setRegion(r)}>
-                    {t(`regions.${r}`)}
-                  </button>
                 ))}
               </div>
-
-              {/* Índices de la región */}
-              <section aria-label={t('indices')} className="flex flex-col gap-2">
-                <div className="flex items-center justify-between px-0.5">
-                  <span className="t-head">{t('indices')}</span>
-                  <Link href={exploreHref({ type: 'INDEX', region: region === 'ALL' ? undefined : region })} className="link text-[14px]">
-                    {t('seeAll')}
-                  </Link>
-                </div>
-                <div className="pills pb-1">
-                  {!ov
-                    ? [0, 1, 2, 3].map(i => <div key={i} className="skel h-[92px] w-[156px] flex-none rounded-2xl" />)
-                    : ov.indices.map(a => <IndexCard key={a.symbol} a={a} />)}
-                </div>
-              </section>
-
-              {/* Lo que más se mueve hoy */}
-              <section aria-label={t('movers')} className="flex min-w-0 flex-col gap-2">
-                <div className="flex items-center justify-between gap-3 px-0.5">
-                  <span className="t-head">{t('movers')}</span>
-                  <Seg label={t('movers')} className="w-[200px]" value={movers} onChange={setMovers} options={[{ value: 'gainers', label: t('gainers') }, { value: 'losers', label: t('losers') }]} />
-                </div>
-                <div className="list">
-                  {!ov ? (
-                    <div className="li t-foot">{t('loading')}</div>
-                  ) : ov[movers].length ? (
-                    ov[movers].map((a, i) => <AssetRow key={a.symbol} a={a} rank={i + 1} />)
-                  ) : (
-                    <div className="li t-foot">{t('noMovers')}</div>
-                  )}
-                </div>
-                <Link href={exploreHref({ type: 'STOCK', region: region === 'ALL' ? undefined : region, sort: movers })} className="link px-0.5 text-[14px]">
-                  {t('seeRanking')}
-                </Link>
-              </section>
-
-              {/* Explorar por índice */}
-              {facets.data && facets.data.indices.length > 0 && (
-                <section aria-label={t('byIndex')} className="flex flex-col gap-2">
-                  <span className="t-head px-0.5">{t('byIndex')}</span>
-                  <div className="flex flex-wrap gap-2">
-                    {facets.data.indices.map(ix => (
-                      <Link key={ix.value} href={exploreHref({ index: ix.value })} className="chip">
-                        {ix.value} <span className="t-cap">{ix.count}</span>
-                      </Link>
-                    ))}
-                  </div>
-                </section>
-              )}
-            </>
+            </section>
           )}
         </>
       )}
@@ -412,7 +388,7 @@ export function Asset({ symbol }: { symbol: string }) {
   const status = useStatus()
   const unit = useUnit()
   const refresh = useRefreshAll()
-  const { data: a, isError, refetch } = useQuery({ queryKey: ['asset', symbol], queryFn: () => api.asset(symbol), refetchInterval: 15_000 })
+  const { data: a, isError, refetch } = useQuery({ queryKey: ['asset', symbol], queryFn: () => api.asset(symbol), refetchInterval: 5_000 })
   const { data: pf } = usePortfolio()
   const { data: watch } = useQuery({ queryKey: ['watchlist'], queryFn: api.watchlist })
   const follow = useMutation({ mutationFn: () => api.toggleWatch(symbol), onSuccess: w => (refresh(), toast(w.includes(symbol) ? t('following') : t('unfollowed'))) })
@@ -540,7 +516,7 @@ export function Asset({ symbol }: { symbol: string }) {
         <Disclaimer />
       </div>
       {tradable && (
-        <div className="sticky bottom-[calc(64px+env(safe-area-inset-bottom))] grid grid-cols-2 gap-2.5 px-4 py-2.5 md:bottom-0" style={{ background: 'var(--bg)' }}>
+        <div className="sticky bottom-[calc(80px+env(safe-area-inset-bottom))] z-20 grid grid-cols-2 gap-2.5 px-4 py-2.5 md:bottom-0" style={{ background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)' }}>
           <button className="btn btn-secondary" disabled={!pos} onClick={() => setOrder('SELL')}>
             {t('sell')}
           </button>

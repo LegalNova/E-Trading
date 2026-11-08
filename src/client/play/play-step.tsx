@@ -76,7 +76,7 @@ export function PlayView({ s, done, onDone }: { s: PlayStepT; done: boolean; onD
       <h1 className="t-title m-0">{s.title}</h1>
       <RichText text={s.intro} />
       {s.predict && (
-        <div className="card flex flex-col gap-2" style={guess === null ? { outline: '2px solid var(--brand)' } : undefined}>
+        <div className="card flex flex-col gap-2" style={guess === null ? { boxShadow: 'inset 0 0 0 2px var(--brand)' } : undefined}>
           <span className="t-cap font-bold" style={{ color: 'var(--brand-ink)' }}>
             <Glyph name="idea" size={14} className="mr-1 inline align-[-2px]" />
             {t('predict')}
@@ -216,7 +216,7 @@ export function StoryView({ s, done, onDone }: { s: StoryStepT; done: boolean; o
         )}
       </div>
       {waiting && beat && 'choice' in beat && (
-        <div className="card flex animate-pop flex-col gap-1.5" style={{ outline: '2px solid var(--brand)' }}>
+        <div className="card flex animate-pop flex-col gap-1.5" style={{ boxShadow: 'inset 0 0 0 2px var(--brand)' }}>
           <b className="t-head">{inline(beat.choice.prompt)}</b>
           {beat.choice.options.map(o => (
             <button key={o.text} className="opt" onClick={() => pick(o)}>

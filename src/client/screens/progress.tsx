@@ -6,14 +6,14 @@ import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
 import type { AchievementT, NotificationT } from '@/shared/contract'
-import { countdown, num, pct } from '@/shared/format'
+import { countdown, num } from '@/shared/format'
 import { api, ApiFailure } from '../api'
 import { useLang, useMe, useRefreshAll } from '../hooks'
 import { useToast } from '../providers'
 import { Flame, Gem, Icon, type IconName } from '../ui/icons'
 import { Bar, ErrorState, PageSkeleton, Sheet, TopBar } from '../ui/kit'
 import { BadgeArt, RARITY, rarityOf } from '../ui/badge'
-import { MaxCard } from '../upgrade'
+import { BuyPlans } from '../upgrade'
 import { ThemeToggle } from '../theme-toggle'
 import { ShareButton } from '../share'
 import { Lumi, LumiSays, SKINS, stageOf } from '../ui/lumi'
@@ -205,7 +205,7 @@ export function Achievements({ back = '/perfil' }: { back?: string }) {
 export function League() {
   const t = useTranslations('league')
   const locale = useLang()
-  const { data: l, isError, refetch } = useQuery({ queryKey: ['league'], queryFn: api.league, refetchInterval: 60_000 })
+  const { data: l, isError, refetch } = useQuery({ queryKey: ['league'], queryFn: api.league, refetchInterval: 15_000, refetchOnMount: 'always' })
   const [, tick] = useState(0)
   useEffect(() => {
     const id = setInterval(() => tick(n => n + 1), 60_000)
@@ -244,8 +244,7 @@ export function League() {
         <div className="li plainline t-cap font-bold">
           <span className="w-6">#</span>
           <span className="flex-1">{t('player')}</span>
-          <span className="w-16 text-right">{t('pointsCol')}</span>
-          <span className="w-16 text-right">{t('riskAdj')}</span>
+          <span className="text-right">{t('pointsCol')}</span>
         </div>
         {l.members.filter(m => m.rank > 0).map(m => (
           <div key={m.userId} className="contents">
@@ -255,15 +254,9 @@ export function League() {
               <b className="w-6">{m.rank}</b>
               <span className="min-w-0 flex-1 truncate" style={{ fontWeight: m.isMe ? 800 : 600 }}>
                 {m.isMe ? t('you', { name: m.displayName }) : m.displayName}
-                <span className="t-cap block font-normal">
-                  {num(m.weeklyXp, locale, 0)} XP{m.division ? ` · ${m.division}` : ''}
-                </span>
+                {m.division && <span className="t-cap block font-normal">{m.division}</span>}
               </span>
-              <span className="w-16 text-right font-bold tabular-nums">{num(m.score, locale, 0)}</span>
-              <span className={`w-16 text-right font-bold tabular-nums ${m.riskAdjReturnPct >= 0 ? 'up' : 'down'}`}>
-                {m.riskAdjReturnPct >= 0 ? '+' : '−'}
-                {pct(m.riskAdjReturnPct, locale)}
-              </span>
+              <span className="flex-none text-right font-bold tabular-nums">{num(m.weeklyXp, locale, 0)} XP</span>
             </div>
           </div>
         ))}
@@ -297,12 +290,13 @@ export function Profile() {
   const lv = me.level
   const pctLevel = lv.xpForNext > lv.xp ? ((lv.xp - lv.xpLevelStart) / (lv.xpForNext - lv.xpLevelStart)) * 100 : 100
   const since = new Date(me.memberSince).toLocaleDateString(locale, { month: 'long', year: 'numeric' })
+  // Lo que no cabe en las pestañas: avisos, opinión, Lumi, ajustes y ayuda (racha, insignias y cartera ya tienen su sitio)
   const links: { href: string; icon: IconName; label: string }[] = [
-    { href: '/perfil/racha', icon: 'clock', label: t('streak') },
-    { href: '/insignias', icon: 'star', label: t('achievements') },
     { href: '/avisos', icon: 'bell', label: t('notifications') },
-    { href: '/mercado/cartera', icon: 'wallet', label: t('portfolio') },
+    { href: '/profesora', icon: 'chat', label: t('tutor') },
+    { href: '/opinion', icon: 'star', label: t('feedbackTitle') },
     { href: '/ajustes', icon: 'gear', label: t('settings') },
+    { href: '/ayuda', icon: 'info', label: t('help') },
   ]
   return (
     <div className="pad">
@@ -325,29 +319,6 @@ export function Profile() {
           </span>
         </div>
         <Icon name="chev" size={18} className="ml-auto" />
-      </Link>
-      <MaxCard />
-      <Link href="/opinion" className="card flex items-center gap-3.5" style={{ color: 'inherit' }}>
-        <span className="grid h-10 w-10 flex-none place-items-center rounded-full" style={{ background: 'var(--fill)' }}>
-          <Icon name="chat" size={20} />
-        </span>
-        <span className="flex-1">
-          <b>{t('feedbackTitle')}</b>
-          <br />
-          <span className="t-foot">{t('feedbackSub')}</span>
-        </span>
-        <Icon name="chev" size={18} />
-      </Link>
-      <Link href="/perfil/invitar" className="card flex items-center gap-3.5" style={{ color: 'inherit', background: 'color-mix(in srgb, var(--brand) 10%, var(--surface))' }}>
-        <span className="grid h-10 w-10 flex-none place-items-center rounded-full" style={{ background: 'var(--brand)', color: 'var(--on-brand)' }}>
-          <Icon name="user" size={20} />
-        </span>
-        <span className="flex-1">
-          <b>{t('inviteTitle')}</b>
-          <br />
-          <span className="t-foot">{t('inviteSub')}</span>
-        </span>
-        <Icon name="chev" size={18} />
       </Link>
       <div className="card">
         <div className="flex justify-between">
@@ -381,6 +352,18 @@ export function Profile() {
           <span className="t-cap">{t('achievementsN')}</span>
         </Link>
       </div>
+      <Link href="/perfil/invitar" className="card flex items-center gap-3.5" style={{ color: 'inherit', background: 'color-mix(in srgb, var(--brand) 10%, var(--surface))' }}>
+        <span className="grid h-10 w-10 flex-none place-items-center rounded-full" style={{ background: 'var(--brand)', color: 'var(--on-brand)' }}>
+          <Icon name="user" size={20} />
+        </span>
+        <span className="flex-1">
+          <b>{t('inviteTitle')}</b>
+          <br />
+          <span className="t-foot">{t('inviteSub')}</span>
+        </span>
+        <Icon name="chev" size={18} />
+      </Link>
+      <BuyPlans id="planes" />
       {stats && (
         <div className="card px-4 py-1">
           <div className="kv pt-3">
@@ -413,11 +396,6 @@ export function Profile() {
           </Link>
         ))}
       </div>
-      {me.plan === 'FREE' && (
-        <Link href="/premium" className="btn btn-dark">
-          {t('tryPremium')}
-        </Link>
-      )}
     </div>
   )
 }

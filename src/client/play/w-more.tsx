@@ -399,7 +399,7 @@ export function Book({ w, onMetrics }: W<'book'>) {
               <span className="relative">{b ? f.n(b.size) : ''}</span>
               <b className="relative">{b ? f.price(b.price) : ''}</b>
             </div>,
-            <div key={`a${i}`} className="relative flex justify-between rounded-md px-2 py-1 tabular-nums" style={{ outline: take ? '2px solid var(--brand)' : undefined }}>
+            <div key={`a${i}`} className="relative flex justify-between rounded-md px-2 py-1 tabular-nums" style={{ boxShadow: take ? 'inset 0 0 0 2px var(--brand)' : undefined }}>
               <i className="absolute inset-y-0 left-0 rounded-md" style={{ width: `${(a.size / mx) * 100}%`, background: 'color-mix(in srgb, var(--down) 14%, transparent)' }} />
               <b className="relative">{f.price(a.price)}</b>
               <span className="relative">{take ? `${f.n(take)} / ${f.n(a.size)}` : f.n(a.size)}</span>

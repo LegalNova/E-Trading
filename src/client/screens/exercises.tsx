@@ -99,7 +99,7 @@ export function DynamicExercise({ q, value, onChange, reveal }: { q: QuestionT; 
       return (
         <div className="flex flex-col gap-2.5">
           {q.options.map((o, i) => (
-            <div key={i} className={`card flex flex-col gap-2 px-3 py-2.5 ${reveal ? (v[i] === s[i] ? 'ok' : 'bad') : ''}`} style={reveal ? { outline: `2px solid ${v[i] === s[i] ? 'var(--up)' : 'var(--down)'}` } : undefined}>
+            <div key={i} className={`card flex flex-col gap-2 px-3 py-2.5 ${reveal ? (v[i] === s[i] ? 'ok' : 'bad') : ''}`} style={reveal ? { boxShadow: `inset 0 0 0 2px ${v[i] === s[i] ? 'var(--up)' : 'var(--down)'}` } : undefined}>
               <b className="text-[15px]">{o}</b>
               <div className="seg wrap" role="group" aria-label={o}>
                 {groups.map((g, k) => (

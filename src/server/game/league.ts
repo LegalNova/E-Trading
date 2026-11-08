@@ -2,7 +2,8 @@ import 'server-only'
 // Liga semanal (docs/02-gamificacion.md §Liga). Solo personas reales (D-019).
 // - Todo el que usa la app en una semana entra en la liga: un único grupo para todos hasta 30 personas (luego se abre
 //   otro). Los grupos mezclan divisiones; la división de cada uno sube o baja según su puesto. Semana = hora de Madrid.
-// - Puntos = XP de la semana + 100 × rentabilidad ajustada por riesgo (tope ±2 %): estudiar pesa más.
+// - Puntos = XP de la semana (y nada más): lo que se ve es lo que cuenta. La rentabilidad no puntúa: premiarla
+//   empujaría a apostar fuerte para ganar la liga, justo lo contrario de lo que enseña Lumi.
 // - Cierre (lunes): suben los 7 primeros (+30 gemas), bajan los puestos 26–30. Nadie baja de Novato ni sube de Experto.
 import type { LeagueT } from '@/shared/contract'
 import { addDays, weekOf } from '@/shared/time'
@@ -74,12 +75,15 @@ async function riskAdjusted(tx: Tx, userIds: string[], weekKey: string) {
     const pos = positions.filter(p => p.userId === id).map(p => Number(p.qty) * Number(p.avgPrice))
     const invested = pos.reduce((a, b) => a + b, 0)
     if (r > 0 && invested > 0 && Math.max(...pos) / invested > 0.4) r /= 2
+    // Un ingreso de saldo (el de los planes de pago) no es rentabilidad: un salto así en una semana se descarta
+    if (Math.abs(r) > 50) r = 0
     out.set(id, Math.round(r * 100) / 100)
   }
   return out
 }
 
-const score = (xp: number, r: number) => xp + Math.round(Math.max(-2, Math.min(2, r)) * 100)
+/** Puntos de la liga: el XP de la semana */
+const score = (xp: number) => xp
 
 function displayName(name: string, visible: boolean) {
   if (!visible) return 'Jugador anónimo'
@@ -100,7 +104,7 @@ async function standings(tx: Tx, weekKey: string, groupNo: number) {
       const u = users.find(x => x.id === id)
       const xp = members.find(x => x.userId === id)?.xp ?? 0
       const r = rets.get(id) ?? 0
-      return { userId: id, division: members.find(x => x.userId === id)?.division ?? 1, exists: !!u, name: u?.name ?? '', visible: u?.leagueVisible ?? true, blocked: !!u?.blockedAt, weeklyXp: xp, riskAdjReturnPct: r, score: score(xp, r) }
+      return { userId: id, division: members.find(x => x.userId === id)?.division ?? 1, exists: !!u, name: u?.name ?? '', visible: u?.leagueVisible ?? true, blocked: !!u?.blockedAt, weeklyXp: xp, riskAdjReturnPct: r, score: score(xp) }
     })
     .filter(m => m.exists && !m.blocked)
     .sort((a, b) => b.score - a.score || b.weeklyXp - a.weeklyXp)

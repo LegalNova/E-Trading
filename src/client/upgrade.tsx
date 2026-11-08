@@ -1,11 +1,16 @@
 'use client'
 // Botón de Max siempre a mano (no solo al chocar con un límite): en Inicio, Clases, Perfil y el menú lateral.
 // Free: «Prueba Max gratis». En prueba o regalo: días que quedan. Plus: «Pasa a Max». Max de pago: nada.
-import { useQuery } from '@tanstack/react-query'
+import { useMutation, useQuery } from '@tanstack/react-query'
 import { useTranslations } from 'next-intl'
+import { useState } from 'react'
 import { Link } from '@/i18n/navigation'
-import { api } from './api'
+import { money } from '@/shared/format'
+import { api, ApiFailure } from './api'
+import { useLang } from './hooks'
+import { useToast } from './providers'
 import { Icon } from './ui/icons'
+import { Seg } from './ui/kit'
 
 export function usePlanBadge() {
   return useQuery({ queryKey: ['plan-badge'], queryFn: api.planBadge, staleTime: 60_000 })
@@ -55,7 +60,7 @@ export function MaxCard() {
   const c = useCopy()
   if (!c) return null
   return (
-    <Link href={c.href} className="card flex items-center gap-3.5" style={{ color: 'inherit', border: '1.5px solid var(--brand)' }}>
+    <Link href={c.href} className="card flex items-center gap-3.5" style={{ color: 'inherit', background: 'color-mix(in srgb, var(--brand) 10%, var(--surface))' }}>
       <span className="grid h-10 w-10 flex-none place-items-center rounded-full" style={{ background: 'var(--brand)', color: 'var(--on-brand)' }}>
         <Icon name="star" size={20} />
       </span>
@@ -87,5 +92,83 @@ export function MaxSide() {
       <span className="t-cap">{c.body}</span>
       <span className="btn btn-primary btn-sm mt-1.5">{c.cta}</span>
     </Link>
+  )
+}
+
+/**
+ * «Hazte Plus o Max»: los dos planes con su precio y un botón que lleva directo al pago (Stripe), sin pasos intermedios.
+ * Al final de Inicio y en Perfil. No sale a quien ya paga Max; a quien paga Plus solo le ofrece Max.
+ */
+export function BuyPlans({ id }: { id?: string }) {
+  const t = useTranslations('buy')
+  const locale = useLang()
+  const toast = useToast()
+  const { data: b } = usePlanBadge()
+  const { data: plans } = useQuery({ queryKey: ['plans'], queryFn: api.billingPlans, staleTime: 3_600_000 })
+  const [interval, setInterval_] = useState<'MONTH' | 'YEAR'>('MONTH')
+  const [busy, setBusy] = useState<string | null>(null)
+  const pay = useMutation({
+    mutationFn: (planId: string) => api.checkout(planId),
+    onMutate: planId => setBusy(planId),
+    // Con Stripe: a su página de pago. Sin Stripe (pruebas): el plan queda activo y se va a la pantalla de planes.
+    onSuccess: r => window.location.assign(r.url ?? `/${locale}/premium`),
+    onError: e => (setBusy(null), toast(e instanceof ApiFailure ? e.message : t('failed'))),
+  })
+  if (!b || !plans) return null
+  const paid = b.plan !== 'FREE' && !b.daysLeft
+  if (paid && b.plan === 'PREMIUM') return null
+  const tiers = (paid && b.plan === 'PLUS' ? ['PREMIUM'] : ['PLUS', 'PREMIUM']) as ('PLUS' | 'PREMIUM')[]
+  const of = (tier: 'PLUS' | 'PREMIUM', iv: 'MONTH' | 'YEAR') => plans.find(p => p.tier === tier && p.interval === iv)!
+  const saving = Math.round((1 - Number(of('PREMIUM', 'YEAR').price) / (Number(of('PREMIUM', 'MONTH').price) * 12)) * 100)
+  const trial = b.payments && !b.trialUsed && b.trialUnlocked
+  return (
+    <section id={id} aria-labelledby="buy-title" className="card flex scroll-mt-4 flex-col gap-3">
+      <div>
+        <h2 id="buy-title" className="t-head m-0">
+          {t('title')}
+        </h2>
+        <span className="t-foot">{b.daysLeft ? t('keepBody', { n: b.daysLeft }) : t('body')}</span>
+      </div>
+      <Seg label={t('billing')} value={interval} onChange={setInterval_} options={[{ value: 'MONTH', label: t('monthly') }, { value: 'YEAR', label: t('yearly', { n: saving }) }]} />
+      <div className={`grid gap-2.5 ${tiers.length > 1 ? 'grid-cols-2' : 'grid-cols-1'}`}>
+        {tiers.map(tier => {
+          const p = of(tier, interval)
+          const max = tier === 'PREMIUM'
+          const perMonth = interval === 'YEAR' ? Number(p.price) / 12 : Number(p.price)
+          return (
+            <div key={tier} className="flex min-w-0 flex-col gap-2 rounded-2xl p-3" style={max ? { background: 'color-mix(in srgb, var(--brand) 12%, var(--surface))', boxShadow: 'inset 0 0 0 2px var(--brand)' } : { background: 'var(--surface-2)' }}>
+              <span className="flex items-center justify-between gap-1">
+                <b className="text-[17px]">{max ? 'Max' : 'Plus'}</b>
+                {max && tiers.length > 1 && (
+                  <span className="chip px-2 py-0.5 text-[10px]" style={{ background: 'var(--brand)', color: 'var(--on-brand)' }}>
+                    {t('best')}
+                  </span>
+                )}
+              </span>
+              <span>
+                <b className="text-[22px] tracking-[-0.02em]">{money(perMonth, 'EUR', locale)}</b>
+                <span className="t-cap"> {t('perMonth')}</span>
+              </span>
+              <span className="t-cap min-h-8">{interval === 'YEAR' ? t('billedYear', { price: money(p.price, 'EUR', locale) }) : t(max ? 'maxLine' : 'plusLine')}</span>
+              {b.isGuest ? (
+                <Link href="/guardar" className={`btn btn-sm w-full ${max ? 'btn-primary' : 'btn-secondary'}`}>
+                  {t('cta')}
+                </Link>
+              ) : (
+                <button className={`btn btn-sm w-full ${max ? 'btn-primary' : 'btn-secondary'}`} disabled={!!busy} onClick={() => pay.mutate(p.id)}>
+                  {busy === p.id ? t('opening') : trial ? t('trialCta') : t('cta')}
+                </button>
+              )}
+            </div>
+          )
+        })}
+      </div>
+      <p className="t-cap m-0">
+        {trial ? t('trialNote') : t('note')}{' '}
+        <Link href="/premium" className="font-bold" style={{ color: 'var(--brand-ink)' }}>
+          {t('compare')}
+        </Link>
+      </p>
+    </section>
   )
 }

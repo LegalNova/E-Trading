@@ -12,7 +12,7 @@ import { Prisma } from '@/generated/prisma/client'
 import { db, DB_SCHEMA } from '../db'
 import { ecbRates, yahooCandles, yahooQuotes, type Interval } from './providers'
 
-const REFRESH_OPEN_MS = 15_000
+const REFRESH_OPEN_MS = 5_000
 const REFRESH_CLOSED_MS = 60 * 60_000
 /** Más vieja que esto con el mercado abierto: se espera al proveedor en vez de servirla */
 const MAX_SERVE_OLD_MS = 3 * 60_000

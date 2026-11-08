@@ -101,7 +101,7 @@ export function PushCard() {
     )
   if (!p.available) return null
   return (
-    <div className="card flex flex-col gap-3" style={{ border: '1.5px solid var(--brand)' }}>
+    <div className="card flex flex-col gap-3" style={{ background: 'color-mix(in srgb, var(--brand) 10%, var(--surface))' }}>
       <div className="flex items-center gap-3">
         <span className="grid h-10 w-10 flex-none place-items-center rounded-full" style={{ background: 'var(--brand)', color: 'var(--on-brand)' }}>
           <Icon name="bell" size={20} />

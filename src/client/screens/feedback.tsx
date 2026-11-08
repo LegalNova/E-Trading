@@ -22,7 +22,7 @@ export function FeedbackCard() {
   const later = useMutation({ mutationFn: api.feedbackLater, onSuccess: () => qc.setQueryData(['feedback'], { ...data, due: false }) })
   if (!data?.due) return null
   return (
-    <div className="card flex flex-col gap-3" style={{ border: '1.5px solid var(--brand)' }}>
+    <div className="card flex flex-col gap-3" style={{ background: 'color-mix(in srgb, var(--brand) 10%, var(--surface))' }}>
       <div className="flex items-center gap-3">
         <Lumi mood="HAPPY" size={44} />
         <span>
