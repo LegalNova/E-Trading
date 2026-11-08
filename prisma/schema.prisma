@@ -103,6 +103,10 @@ model User {
   leagues       PrivateLeagueMember[]
   monthBases    MonthBase[]
   theses        Thesis[]
+  studentUntil  DateTime? // precio de estudiante hasta esta fecha (lo aprueba el equipo)
+  studentReqs   StudentRequest[]
+  groupsOwned   GroupPlan[]
+  groupMember   GroupMember?
 
   @@index([invitedById])
   @@map("user")
@@ -751,4 +755,58 @@ model Thesis {
   completedAt DateTime?
 
   @@index([userId])
+}
+
+// ── Precios de estudiante y planes de grupo ──────────────
+
+/// Solicitud de precio de estudiante: la persona sube un justificante y el equipo la aprueba en el admin
+model StudentRequest {
+  id           String    @id @default(cuid())
+  userId       String
+  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  institution  String
+  studentEmail String?
+  photo        Bytes? // justificante (carné o matrícula); se borra al decidir
+  photoType    String?
+  status       String    @default("PENDING") // PENDING | APPROVED | REJECTED
+  note         String?
+  decidedBy    String?
+  decidedAt    DateTime?
+  createdAt    DateTime  @default(now())
+
+  @@index([status, createdAt])
+  @@index([userId])
+}
+
+/// Plan de grupo: una persona paga Plus o Max para su grupo (4, 8 o sin límite de personas)
+model GroupPlan {
+  id              String        @id @default(cuid())
+  ownerId         String
+  owner           User          @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  name            String
+  code            String        @unique
+  tier            Plan // PLUS | PREMIUM
+  size            Int // 4, 8 o 0 = sin límite (uso razonable)
+  interval        String // MONTH | YEAR
+  student         Boolean       @default(false)
+  status          String        @default("PENDING") // PENDING (sin pagar) | ACTIVE | PAST_DUE | CANCELED
+  stripeSubId     String?       @unique
+  stripeSessionId String?       @unique
+  renewsAt        DateTime?
+  leagueId        String? // liga de amigos del grupo
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  members         GroupMember[]
+
+  @@index([ownerId])
+}
+
+model GroupMember {
+  groupId  String
+  userId   String    @unique // una persona, un grupo
+  group    GroupPlan @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  joinedAt DateTime  @default(now())
+
+  @@id([groupId, userId])
 }
