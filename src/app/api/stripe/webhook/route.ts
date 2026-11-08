@@ -1,7 +1,8 @@
-// Avisos de Stripe (pagos, pruebas, cancelaciones). Firmados con STRIPE_WEBHOOK_SECRET: sin firma válida no se hace nada.
+// Avisos de Stripe (pagos, pruebas, cancelaciones y regalos). Firmados con STRIPE_WEBHOOK_SECRET: sin firma válida no se hace nada.
 import type Stripe from 'stripe'
 import { db } from '@/server/db'
-import { GIFT_META, stripe, syncSubscription } from '@/server/billing/stripe'
+import { GIFT_KIND, GIFT_META, stripe, syncSubscription } from '@/server/billing/stripe'
+import { giftRefunded, giftSessionExpired, markGiftPaid } from '@/server/game/gifts'
 import { notify } from '@/server/game/core'
 
 /** Stripe puede reenviar el mismo aviso: cada uno se apunta una sola vez */
@@ -25,7 +26,23 @@ export async function POST(req: Request) {
     switch (event.type) {
       case 'checkout.session.completed': {
         const s = event.data.object
-        if (s.subscription) await syncSubscription(await stripe.subscriptions.retrieve(String(s.subscription)))
+        // Regalo (pago único): queda listo para compartir (si la vuelta a la app ya lo confirmó, no pasa nada)
+        if (s.mode === 'payment' && s.metadata?.kind === GIFT_KIND) await markGiftPaid(s)
+        else if (s.subscription) await syncSubscription(await stripe.subscriptions.retrieve(String(s.subscription)))
+        break
+      }
+      // Regalos: pago con un método lento confirmado después, sesión caducada sin pagar y devolución
+      case 'checkout.session.async_payment_succeeded': {
+        const s = event.data.object
+        if (s.metadata?.kind === GIFT_KIND) await markGiftPaid(s)
+        break
+      }
+      case 'checkout.session.expired': {
+        await giftSessionExpired(event.data.object)
+        break
+      }
+      case 'charge.refunded': {
+        await giftRefunded(event.data.object)
         break
       }
       case 'customer.subscription.created':

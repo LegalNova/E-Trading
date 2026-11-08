@@ -81,6 +81,9 @@ const ts = (t: number) => t as UTCTimestamp
 
 export function ProChart({ symbol, decimals, up, live }: { symbol: string; decimals: number; up: boolean; /** Precio actual (se refresca cada pocos segundos): mueve la última vela */ live?: number }) {
   const t = useTranslations('chart')
+  const t2 = useTranslations('market2')
+  /** En el móvil las herramientas de dibujo van plegadas (ocupaban media pantalla); en md y más, siempre a la vista */
+  const [toolsOpen, setToolsOpen] = useState(false)
   const locale = useLang()
   const themeKey = useThemeKey()
   const [interval, setInterval_] = useState<ChartInterval>(() => store.get('et-chart-interval', '1d'))
@@ -414,6 +417,23 @@ export function ProChart({ symbol, decimals, up, live }: { symbol: string; decim
     return null
   }
 
+  const toolBtn = 'flex h-8 w-8 items-center justify-center rounded-lg pointer-coarse:h-11 pointer-coarse:w-11'
+  const toolButtons = (
+    <>
+      {TOOLS.map(tl => (
+        <button key={tl} title={t(`tool.${tl}`)} aria-label={t(`tool.${tl}`)} aria-pressed={tool === tl} onClick={() => (setTool(tl), setDraft(null), setSelected(null))} className={`${toolBtn} text-[13px] font-bold`} style={tool === tl ? { background: 'var(--brand)', color: 'var(--on-brand)' } : { background: 'var(--fill)', color: 'var(--ink)' }}>
+          {TOOL_GLYPH[tl]}
+        </button>
+      ))}
+      <button title={t('deleteSel')} aria-label={t('deleteSel')} disabled={!selected} onClick={() => (setDrawings(ds => ds.filter(d => d.id !== selected)), setSelected(null))} className={toolBtn} style={{ background: 'var(--fill)', opacity: selected ? 1 : 0.4 }}>
+        <Icon name="trash" size={15} />
+      </button>
+      <button title={t('clearAll')} aria-label={t('clearAll')} disabled={!drawings.length} onClick={() => (setDrawings([]), setSelected(null))} className={`${toolBtn} text-[11px] font-extrabold`} style={{ background: 'var(--fill)', opacity: drawings.length ? 1 : 0.4 }}>
+        ✕
+      </button>
+    </>
+  )
+
   const toggleInd = (id: IndicatorId) => setInds(s => (s.includes(id) ? s.filter(x => x !== id) : [...s, id]))
   const upLegend = (legend?.chg ?? 0) >= 0
 
@@ -423,26 +443,26 @@ export function ProChart({ symbol, decimals, up, live }: { symbol: string; decim
       <div className="flex flex-wrap items-center gap-1.5">
         <div className="seg w-full md:w-auto md:flex-none" role="group" aria-label={t('interval')}>
           {INTERVALS.map(i => (
-            <button key={i} aria-pressed={interval === i} onClick={() => setInterval_(i)} className="px-1.5 md:px-2.5">
+            <button key={i} aria-pressed={interval === i} onClick={() => setInterval_(i)} className="px-1.5 pointer-coarse:h-11 md:px-2.5">
               {t(`intervals.${i}`)}
             </button>
           ))}
         </div>
         <div className="seg flex-none" role="group" aria-label={t('kind')}>
           {(['line', 'candles'] as const).map(k => (
-            <button key={k} aria-pressed={kind === k} onClick={() => setKind(k)} className="px-2.5">
+            <button key={k} aria-pressed={kind === k} onClick={() => setKind(k)} className="px-2.5 pointer-coarse:h-11">
               {t(`kinds.${k}`)}
             </button>
           ))}
         </div>
         <div className="relative flex-none">
-          <button className="chip h-8" style={{ background: kind !== 'candles' && kind !== 'line' ? 'var(--brand)' : 'var(--fill)', color: kind !== 'candles' && kind !== 'line' ? 'var(--on-brand)' : undefined }} onClick={() => setMenu(menu === 'kind' ? null : 'kind')} aria-expanded={menu === 'kind'} aria-label={t('moreKinds')}>
+          <button className="chip h-8 pointer-coarse:h-11" style={{ background: kind !== 'candles' && kind !== 'line' ? 'var(--brand)' : 'var(--fill)', color: kind !== 'candles' && kind !== 'line' ? 'var(--on-brand)' : undefined }} onClick={() => setMenu(menu === 'kind' ? null : 'kind')} aria-expanded={menu === 'kind'} aria-label={t('moreKinds')}>
             <Icon name="chart" size={16} /> {kind !== 'candles' && kind !== 'line' ? t(`kinds.${kind}`) : '…'}
           </button>
           {menu === 'kind' && (
             <div className="card absolute left-0 z-20 mt-1 flex w-44 flex-col p-1 shadow-float">
               {KINDS.map(k => (
-                <button key={k} className="rounded-lg px-3 py-2 text-left text-sm font-semibold" style={kind === k ? { background: 'var(--fill)' } : undefined} onClick={() => (setKind(k), setMenu(null))}>
+                <button key={k} className="rounded-lg px-3 py-2 text-left text-sm font-semibold pointer-coarse:min-h-11" style={kind === k ? { background: 'var(--fill)' } : undefined} onClick={() => (setKind(k), setMenu(null))}>
                   {t(`kinds.${k}`)}
                 </button>
               ))}
@@ -450,14 +470,14 @@ export function ProChart({ symbol, decimals, up, live }: { symbol: string; decim
           )}
         </div>
         <div className="relative flex-none">
-          <button className="chip h-8" style={{ background: 'var(--fill)' }} onClick={() => setMenu(menu === 'ind' ? null : 'ind')} aria-expanded={menu === 'ind'}>
+          <button className="chip h-8 pointer-coarse:h-11" style={{ background: 'var(--fill)' }} onClick={() => setMenu(menu === 'ind' ? null : 'ind')} aria-expanded={menu === 'ind'}>
             ƒx <span className="hidden min-[400px]:inline">{t('indicators')}</span>
             {inds.length > 0 && <span className="t-cap">· {inds.length}</span>}
           </button>
           {menu === 'ind' && (
             <div className="card absolute right-0 z-20 mt-1 flex w-60 flex-col p-1 shadow-float md:left-0 md:right-auto">
               {INDICATORS.map(id => (
-                <button key={id} className="flex items-center gap-2 rounded-lg px-3 py-2 text-left text-sm font-semibold" onClick={() => toggleInd(id)} aria-pressed={inds.includes(id)}>
+                <button key={id} className="flex items-center gap-2 rounded-lg px-3 py-2 text-left text-sm font-semibold pointer-coarse:min-h-11" onClick={() => toggleInd(id)} aria-pressed={inds.includes(id)}>
                   <span className={`check ${inds.includes(id) ? 'on' : ''}`} style={{ width: 18, height: 18, borderRadius: 5 }}>
                     {inds.includes(id) && <Icon name="check" size={12} strokeWidth={2.6} />}
                   </span>
@@ -468,8 +488,12 @@ export function ProChart({ symbol, decimals, up, live }: { symbol: string; decim
             </div>
           )}
         </div>
+        {/* Móvil: botón para desplegar las herramientas de dibujo */}
+        <button className="chip h-8 flex-none pointer-coarse:h-11 md:hidden" style={toolsOpen || tool !== 'cursor' ? { background: 'var(--brand)', color: 'var(--on-brand)' } : { background: 'var(--fill)' }} onClick={() => (toolsOpen && (setTool('cursor'), setDraft(null)), setToolsOpen(!toolsOpen))} aria-expanded={toolsOpen} aria-label={toolsOpen ? t2('chart.drawOpen') : t2('chart.drawClosed')}>
+          {TOOL_GLYPH.trend} <span className="hidden min-[400px]:inline">{t2('chart.draw')}</span>
+        </button>
         <span className="flex-1" />
-        <button className="icon-btn h-8 w-8 flex-none" onClick={() => setFull(!full)} aria-label={full ? t('exitFull') : t('full')}>
+        <button className="icon-btn h-8 w-8 flex-none pointer-coarse:h-11 pointer-coarse:w-11" onClick={() => setFull(!full)} aria-label={full ? t('exitFull') : t('full')}>
           <Icon name={full ? 'close' : 'expand'} size={18} />
         </button>
       </div>
@@ -489,20 +513,17 @@ export function ProChart({ symbol, decimals, up, live }: { symbol: string; decim
         </div>
       )}
 
+      {/* Móvil: herramientas de dibujo en una fila, solo si se despliegan */}
+      {toolsOpen && (
+        <div className="flex flex-wrap gap-1 md:hidden" role="toolbar" aria-label={t('tools')}>
+          {toolButtons}
+        </div>
+      )}
+
       <div className="flex min-h-0 flex-1 gap-1">
-        {/* Herramientas de dibujo */}
-        <div className="flex flex-none flex-col gap-1" role="toolbar" aria-label={t('tools')}>
-          {TOOLS.map(tl => (
-            <button key={tl} title={t(`tool.${tl}`)} aria-label={t(`tool.${tl}`)} aria-pressed={tool === tl} onClick={() => (setTool(tl), setDraft(null), setSelected(null))} className="flex h-8 w-8 items-center justify-center rounded-lg text-[13px] font-bold" style={tool === tl ? { background: 'var(--brand)', color: 'var(--on-brand)' } : { background: 'var(--fill)', color: 'var(--ink)' }}>
-              {TOOL_GLYPH[tl]}
-            </button>
-          ))}
-          <button title={t('deleteSel')} aria-label={t('deleteSel')} disabled={!selected} onClick={() => (setDrawings(ds => ds.filter(d => d.id !== selected)), setSelected(null))} className="flex h-8 w-8 items-center justify-center rounded-lg" style={{ background: 'var(--fill)', opacity: selected ? 1 : 0.4 }}>
-            <Icon name="trash" size={15} />
-          </button>
-          <button title={t('clearAll')} aria-label={t('clearAll')} disabled={!drawings.length} onClick={() => (setDrawings([]), setSelected(null))} className="flex h-8 w-8 items-center justify-center rounded-lg text-[11px] font-extrabold" style={{ background: 'var(--fill)', opacity: drawings.length ? 1 : 0.4 }}>
-            ✕
-          </button>
+        {/* Herramientas de dibujo (md y más) */}
+        <div className="hidden flex-none flex-col gap-1 md:flex" role="toolbar" aria-label={t('tools')}>
+          {toolButtons}
         </div>
 
         {/* Gráfico + capa de dibujo */}

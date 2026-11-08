@@ -1,1 +1,124 @@
-{}
+{
+  "market2": {
+    "facts": {
+      "title": "The company in numbers",
+      "titleFund": "The fund in numbers",
+      "none": "No company data yet.",
+      "missing": "No data: {list}.",
+      "source": "Source: Yahoo Finance · data from {date}",
+      "sourcePlain": "Source: Yahoo Finance",
+      "approx": "≈ {value}",
+      "peLoss": "Not applicable: it made a loss",
+      "what": "What is it: {label}",
+      "label": {
+        "marketCap": "Market cap",
+        "pe": "P/E ratio",
+        "dividendYield": "Dividend yield",
+        "eps": "EPS (earnings per share)",
+        "beta": "Beta",
+        "ter": "Annual fee (TER)"
+      },
+      "help": {
+        "marketCap": "What the company is worth on the stock market: one share's price times all its shares.",
+        "pe": "How many years of earnings you pay for the share: its price divided by earnings per share.",
+        "dividendYield": "What the company pays out in dividends in a year, as a % of the share price.",
+        "eps": "Last year's profit divided by the number of shares, in the currency of its accounts.",
+        "beta": "How much it moves compared with the market: 1 is the same as the market; above 1, it moves more.",
+        "ter": "What the fund charges you each year to run it, as a % of what you have invested."
+      },
+      "lesson": {
+        "marketCap": "Lesson: large, mid and small caps",
+        "pe": "Lesson: the P/E ratio",
+        "dividendYield": "Lesson: dividend yield",
+        "eps": "Lesson: the income statement",
+        "beta": "Lesson: correlation",
+        "ter": "Lesson: fund fees"
+      }
+    },
+    "window": {
+      "title": "Markets open now",
+      "us": "US",
+      "eu": "Europe",
+      "asia": "Asia (Tokyo)",
+      "crypto": "Crypto",
+      "open": "Open",
+      "closed": "Closed",
+      "always": "24 h, every day",
+      "closesIn": "closes in {time}",
+      "opensAt": "opens at {time}",
+      "opensOn": "opens on {day} at {time}",
+      "note": "Times in your device's time zone. Europe: Madrid, Frankfurt and Paris open at the same time."
+    },
+    "ideas": {
+      "title": "Ideas to study",
+      "intro": "Lists with a clear rule, built from real data, so you can practise analysis. Pick a company, open it and ask yourself why it's on the list.",
+      "teaser": "Lists with a clear rule to practise analysis.",
+      "notAdvice": "This is not a recommendation: these are lists for you to practise analysis.",
+      "seeAll": "See all",
+      "jump": "Go to a list",
+      "learn": "Learn how to analyse it",
+      "asOf": "Data from {date}",
+      "empty": "No data yet. Check back in a while.",
+      "emptyShort": "No data yet",
+      "follow": "Follow",
+      "following": "Following",
+      "followAria": "Follow {name} to study it",
+      "unfollowAria": "Unfollow {name}",
+      "followed": "Added to your favourites to study it",
+      "unfollowed": "Removed from your favourites",
+      "followError": "Couldn't save it. Please try again.",
+      "metric": {
+        "drops": "fell {v}",
+        "dividend": "{v} dividend",
+        "lowPe": "P/E {v} · sector {ref}",
+        "pe": "P/E {v}",
+        "cap": "worth {v}"
+      },
+      "lists": {
+        "drops": {
+          "title": "Biggest fallers in the last session",
+          "short": "Fallers",
+          "short2": "Large companies with the biggest drop",
+          "criterion": "Shares from the major indices (S&P 500, IBEX 35, Euro Stoxx 50, Nikkei 225…) with the biggest drop in their last session.",
+          "warning": "A drop is not an opportunity on its own. First find out why it fell."
+        },
+        "dividend": {
+          "title": "High dividend",
+          "short": "Dividend",
+          "short2": "Dividend yield above 4%",
+          "criterion": "Shares with a dividend yield above 4%, both the expected one and the last 12 months'. Largest first.",
+          "warning": "A very high dividend can be a warning sign. Check whether the company earns enough to pay it."
+        },
+        "lowPe": {
+          "title": "Low P/E for its sector",
+          "short": "Low P/E",
+          "short2": "P/E below its sector's median",
+          "criterion": "Profitable shares (P/E above 0) with a P/E below the median of their sector. Largest first."
+        },
+        "ibex": {
+          "title": "Large IBEX 35 companies",
+          "short": "IBEX 35",
+          "short2": "The most valuable on the market",
+          "criterion": "The 10 IBEX 35 companies worth the most on the stock market (by market cap)."
+        },
+        "etf": {
+          "title": "ETFs to start with",
+          "short": "ETFs",
+          "short2": "Broad indices: world, S&P 500, Europe",
+          "criterion": "Exchange-traded funds that track broad indices: the whole world, the S&P 500, Europe or emerging markets."
+        }
+      }
+    },
+    "chart": {
+      "draw": "Draw",
+      "drawOpen": "Hide drawing tools",
+      "drawClosed": "Show drawing tools"
+    },
+    "units": {
+      "t": "{cur}{n} trillion",
+      "b": "{cur}{n} billion",
+      "m": "{cur}{n} million",
+      "u": "{cur}{n}"
+    }
+  }
+}

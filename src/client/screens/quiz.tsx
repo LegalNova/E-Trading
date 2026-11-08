@@ -14,9 +14,11 @@ import { QuizChart } from '../ui/charts'
 import { Flame, Gem, Heart, Icon } from '../ui/icons'
 import { ErrorState, PageSkeleton, Stars, Steps, TopBar } from '../ui/kit'
 import { useGuard } from '../shell'
+import { ReportButton } from '../report-button'
 import { BadgeArt } from '../ui/badge'
 import { Lumi } from '../ui/lumi'
 import { MaxCard } from '../upgrade'
+import { TryItNow } from '../missions'
 import { DYNAMIC, DynamicExercise, isAnswered } from './exercises'
 
 export type AnswerValue = number | number[] | string | null
@@ -337,6 +339,7 @@ export function QuizResult({ r, lessonId, review, testOut, onRetry, log = [] }: 
           <MaxCard />
         </div>
       )}
+      {passed && lessonId && !review && !testOut && <TryItNow lessonId={lessonId} />}
       {log.length > 0 && (
         <button className="btn btn-secondary" onClick={() => setShowAnswers(v => !v)} aria-expanded={showAnswers}>
           {showAnswers ? t('hideAnswers') : misses ? t('seeAnswersMisses', { n: misses }) : t('seeAnswers')}
@@ -483,6 +486,7 @@ function QuizInner({ id }: { id: string }) {
             <Heart /> {me?.plan !== 'FREE' ? '∞' : livesNow}
           </span>
         )}
+        <ReportButton context={{ ...(start.data.lessonId ? { lessonId: start.data.lessonId } : {}), quizId: id, questionId: q.id }} />
       </div>
       <div className="pad flex-1">
         <span className="t-foot flex items-center justify-between gap-2">

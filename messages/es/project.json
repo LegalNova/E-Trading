@@ -1,1 +1,234 @@
-{}
+{
+  "project": {
+    "title": "Tu primera tesis de inversión",
+    "card": {
+      "kicker": "Proyecto final",
+      "locked": "Se abre al aprobar «{needs}»",
+      "draft": "Tienes una tesis a medias: sigue donde la dejaste",
+      "done": "{n, plural, one {# tesis terminada} other {# tesis terminadas}} · haz otra",
+      "new": "Analiza una empresa real en 10 pasos · +150 XP"
+    },
+    "intro": {
+      "title": "Piensa como un inversor",
+      "body": "Elige una empresa real del mercado de Lumi y razona tu tesis con sus datos: qué hace, por qué podría seguir ganando dinero, sus riesgos, si está cara y cómo gestionarías el riesgo.",
+      "p1": "· 8 preguntas, unos 15 minutos. Se guarda cada paso.",
+      "p2": "· Al terminar: tu ficha de tesis, una puntuación de 0 a 100 y un certificado para compartir.",
+      "p3": "· +150 XP la primera tesis y +50 las siguientes (una al día)."
+    },
+    "lockedBody": "Este proyecto se abre al aprobar «{needs}». Es el reto final de la primera sección del curso.",
+    "toClasses": "Ir a Clases",
+    "mine": "Mis tesis",
+    "doneLine": "Terminada · {score}/100",
+    "draftLine": "Borrador · paso {n} de {total}",
+    "disclaimer": "Es un ejercicio para aprender a analizar. Lumi no te dice qué comprar: la tesis es tuya y se practica con dinero virtual.",
+    "pick": {
+      "title": "Elige una empresa",
+      "body": "Mejor una que conozcas o cuyos productos uses: te costará menos explicar su negocio.",
+      "placeholder": "Busca por nombre o símbolo (Apple, ITX…)",
+      "none": "No encuentro esa empresa. Prueba con otro nombre o su símbolo.",
+      "choose": "Empezar una tesis sobre {name}"
+    },
+    "err": {
+      "generic": "No se ha podido guardar. Inténtalo de nuevo.",
+      "THESIS_NOT_STOCK": "Elige una empresa (una acción): la tesis analiza un negocio.",
+      "THESIS_DRAFTS": "Tienes 5 tesis a medias: termina o borra alguna antes de empezar otra.",
+      "THESIS_MAX": "Has llegado al máximo de tesis guardadas: borra alguna antigua.",
+      "THESIS_LOCKED": "Aprueba el reto final de la primera sección para abrir el proyecto.",
+      "THESIS_DONE": "Esta tesis ya está terminada.",
+      "RATE_LIMITED": "Vas muy rápido. Espera un momento.",
+      "NOT_FOUND": "No encuentro esa empresa."
+    },
+    "notFound": "No encuentro esta tesis. Puede que la hayas borrado.",
+    "xp": "+{n} XP por terminar tu tesis",
+    "delete": "Borrar la tesis",
+    "deleteTitle": "¿Borrar esta tesis?",
+    "deleteBody": "Se borran tus respuestas. No se puede deshacer.",
+    "deleteDone": "Se borran tus respuestas y el certificado deja de verse. No se puede deshacer.",
+    "deleteYes": "Borrar",
+    "cancel": "Cancelar",
+    "progress": "Paso {n} de {total}",
+    "stepN": "Paso {n} de {total}",
+    "prev": "Atrás",
+    "next": "Guardar y seguir",
+    "toSummary": "Ver mi ficha de tesis",
+    "finish": "Terminar y ver mi puntuación",
+    "facts": {
+      "title": "Datos de la ficha",
+      "none": "sin dato",
+      "noSector": "Sector sin dato",
+      "asOf": "precio de las {time}",
+      "stale": "puede no estar al día",
+      "pe": "PER",
+      "div": "Dividendo",
+      "noRange": "Rango de 52 semanas: sin dato",
+      "rangeLabel": "Rango de 52 semanas de {low} a {high}; precio actual {price}",
+      "low": "Mín. 52 sem.",
+      "high": "Máx. 52 sem."
+    },
+    "s1": {
+      "q": "¿Qué hace {name} y cómo gana dinero?",
+      "help": "Explícalo como se lo contarías a un amigo: qué vende, a quién y quién le paga.",
+      "label": "Tu respuesta",
+      "ph": "Vende… a… y gana dinero con…",
+      "hint": "Si no sabes explicarlo en dos frases, todavía no entiendes el negocio. Mira la descripción de la ficha y piensa en qué parte le deja más dinero."
+    },
+    "s2": {
+      "q": "¿Por qué podría seguir ganando dinero dentro de 5 años?",
+      "help": "Busca su ventaja frente a la competencia: lo que a otros les costaría copiar.",
+      "choose": "Su ventaja principal",
+      "label": "Explica por qué",
+      "ph": "Porque los clientes…",
+      "hint": "Una ventaja de verdad aguanta aunque llegue un competidor con más dinero. Pregúntate qué pasaría si mañana alguien vendiera lo mismo más barato.",
+      "hintNone": "Reconocer que no ves una ventaja clara también es un buen análisis: entonces el precio y el riesgo pesan todavía más."
+    },
+    "moat": {
+      "BRAND": "Marca: la gente la prefiere y paga más por ella",
+      "NETWORK": "Efecto red: cuantos más usuarios, más útil es",
+      "COST": "Costes más bajos que sus rivales",
+      "SWITCHING": "Cambiar a otro proveedor cuesta mucho",
+      "PATENTS": "Patentes, licencias o tecnología propia",
+      "SCALE": "Tamaño: lo que hace es caro de replicar",
+      "NONE": "No veo una ventaja clara"
+    },
+    "s3": {
+      "q": "¿Cuáles son sus riesgos principales?",
+      "help": "Escribe al menos 2. Lo que podría hacer que gane menos dinero o que la acción caiga mucho.",
+      "label": "Riesgo {n}",
+      "ph0": "Por ejemplo: depende mucho de un solo producto",
+      "ph1": "Por ejemplo: tiene mucha deuda y suben los tipos",
+      "ph2": "Por ejemplo: nueva regulación o un competidor fuerte",
+      "add": "Añadir otro riesgo",
+      "count": "{n, plural, =0 {Ningún riesgo válido todavía} one {# riesgo válido} other {# riesgos válidos}} (mínimo 2)",
+      "hint": "Piensa en tipos de riesgo: competencia, deuda, regulación, dependencia de un cliente o producto, divisa y el propio precio. Quien solo ve ventajas suele caer en el sesgo de confirmación."
+    },
+    "s4": {
+      "q": "¿Está cara o barata?",
+      "help": "El PER es el precio de la acción dividido entre el beneficio por acción: cuántos años de beneficios de hoy pagas. Compáralo con su sector y con su propia historia.",
+      "pe": "PER de la empresa",
+      "losses": "Pierde dinero (PER no aplica)",
+      "sector": "PER mediano del sector",
+      "peers": "{n} empresas",
+      "history": "PER medio de sus últimos años",
+      "compare": "Su PER es {ratio} veces el de su sector. Por encima de 1, el mercado paga más por cada euro de beneficio que en sus rivales.",
+      "noSector": "No hay suficientes empresas de su sector con dato para comparar. Razónalo con lo que sabes del negocio.",
+      "noPe": "No tenemos el PER de esta empresa. Puedes razonar con su crecimiento, sus beneficios o compararla con otras que conozcas.",
+      "noHistory": "Todavía no tenemos su PER histórico en Lumi: si lo conoces, puedes usarlo en tu explicación.",
+      "choose": "Tu conclusión",
+      "label": "¿Por qué?",
+      "ph": "Su PER es… frente a… porque…",
+      "hint": "Un PER alto no significa que esté cara si el beneficio va a crecer mucho; uno bajo no significa ganga si el negocio empeora. Ojo con el anclaje: el precio de hace un año no dice si hoy está cara."
+    },
+    "valuation": {
+      "CHEAP": "Parece barata",
+      "FAIR": "Parece razonable",
+      "EXPENSIVE": "Parece cara",
+      "UNSURE": "No lo tengo claro"
+    },
+    "s5": {
+      "q": "¿Cuánto de tu cartera le darías y por qué?",
+      "help": "En el simulador. Ninguna empresa debería poder hundir tu cartera ella sola.",
+      "label": "Peso en tu cartera",
+      "inEur": "Con tu cartera simulada de {total}, serían unos {eur}.",
+      "concentrated": "Más del 10 % en una sola empresa ya es concentrar bastante.",
+      "why": "¿Por qué ese peso?",
+      "ph": "Le doy un…% porque…",
+      "hint": "Regla de la concentración: muchos inversores no ponen más del 5-10 % en una sola empresa y nunca más del 20 %. En el paso siguiente verás cuánto arriesgas con la regla del 1 %."
+    },
+    "s6": {
+      "q": "¿Dónde pondrías tu stop y tu objetivo?",
+      "help": "El stop es el precio al que venderías para cortar la pérdida; el objetivo, el que crees que justifica tu tesis.",
+      "now": "Precio de referencia ahora: {price}",
+      "stop": "Stop",
+      "target": "Objetivo",
+      "dist": "El stop está un {pct} % por debajo del precio.",
+      "up": "El objetivo está un {pct} % por encima.",
+      "risk": "Con un {w} % de la cartera, si salta el stop perderías un {risk} % de toda tu cartera.",
+      "riskOk": "Dentro de la regla del 1 %.",
+      "riskHigh": "Más del 1 %: baja el peso o acerca el stop.",
+      "rr": "Lo que podrías ganar es {rr} veces lo que arriesgas. Muchos buscan al menos 2.",
+      "hint": "Pon el stop donde tu tesis estaría equivocada (por ejemplo, por debajo de un mínimo importante), no donde «duela poco». Regla del 1 %: si salta, no pierdas más del 1 % de la cartera.",
+      "place": "Qué colocas en el gráfico",
+      "chart": "Velas semanales del último año: toca o arrastra para colocar el nivel",
+      "price": "Precio",
+      "drag": "Toca o arrastra en el gráfico para colocar el nivel elegido, o escribe el precio abajo."
+    },
+    "s7": {
+      "q": "¿Cuánto tiempo la mantendrías?",
+      "help": "Una tesis sobre un negocio necesita tiempo para demostrarse.",
+      "choose": "Horizonte",
+      "label": "¿Por qué ese plazo? (opcional)",
+      "ph": "Porque espero que…",
+      "hint": "Si tu idea depende del negocio, piensa en años. Si piensas en semanas, es más especulación que inversión."
+    },
+    "horizon": {
+      "M6": "Menos de 6 meses",
+      "Y1": "Alrededor de 1 año",
+      "Y3": "Unos 3 años",
+      "Y5": "5 años o más",
+      "Y10": "10 años o más"
+    },
+    "s8": {
+      "q": "¿Qué te haría cambiar de opinión?",
+      "help": "Decide ahora qué hechos romperían tu tesis, antes de que el precio te ponga nervioso.",
+      "label": "Cambiaría de opinión si…",
+      "ph": "Si pierde clientes, si su beneficio cae dos años seguidos…",
+      "hint": "Escríbelo con hechos que puedas comprobar (ventas, márgenes, deuda, una noticia concreta), no con el precio. Así evitas el efecto disposición: aguantar lo que pierde por no reconocer el error."
+    },
+    "check": {
+      "SHORT": "Escribe un poco más: con una o dos frases basta.",
+      "CHOOSE": "Elige una opción.",
+      "RISKS_MIN": "Escribe al menos 2 riesgos (de unas pocas palabras cada uno).",
+      "RISKS_SAME": "Los riesgos tienen que ser distintos.",
+      "WEIGHT_MIN": "Indica qué parte de tu cartera le darías.",
+      "WEIGHT_MAX": "No más del 20 % de la cartera en una sola empresa.",
+      "NO_PRICE": "Ahora no tenemos el precio de esta empresa. Vuelve en un rato para fijar el stop y el objetivo.",
+      "STOP_ZERO": "Indica dónde pondrías el stop.",
+      "STOP_ABOVE": "El stop tiene que estar por debajo del precio actual.",
+      "TARGET_BELOW": "El objetivo tiene que estar por encima del precio actual.",
+      "INCOMPLETE": "Te falta algún paso por contestar."
+    },
+    "sum": {
+      "title": "Ficha de tesis: {name}",
+      "business": "Qué hace y cómo gana dinero",
+      "moat": "Su ventaja",
+      "risks": "Riesgos",
+      "valuation": "Valoración",
+      "weight": "Peso en la cartera",
+      "levels": "Stop y objetivo",
+      "levelsLine": "Stop {stop} · objetivo {target} (precio de referencia {price})",
+      "horizon": "Horizonte",
+      "invalidation": "Cambiaría de opinión si…",
+      "edit": "Cambiar: {what}",
+      "editShort": "Cambiar"
+    },
+    "done": {
+      "kicker": "Tesis terminada",
+      "body": "Has razonado una tesis completa sobre {name}. Así se analiza una inversión: con datos, riesgos y un plan.",
+      "simulator": "Abrir la ficha en el simulador",
+      "simulatorNote": "Si quieres, practica tu tesis con dinero virtual: tú decides si operas y cuánto.",
+      "another": "Hacer otra tesis",
+      "date": "Terminada el {date}"
+    },
+    "score": {
+      "title": "Tu puntuación, explicada",
+      "complete": "Completa",
+      "completeHelp": "5 puntos por cada paso explicado con algo de detalle (3 si se queda en lo mínimo).",
+      "risks": "Riesgos",
+      "risksHelp": "2 riesgos distintos, 6 puntos; 3 o más, 10.",
+      "valuation": "Valoración",
+      "valuationHelp": "Argumentar con una cifra o el PER (5), con detalle (5) y una conclusión coherente con los datos de su sector (5).",
+      "risk": "Gestión del riesgo",
+      "riskHelp": "Peso de hasta el 10 %, 10 puntos (hasta el 20 %, 5) y perder como mucho el 1 % de la cartera si salta el stop, 10 (hasta el 2 %, 5).",
+      "plan": "Plan",
+      "planHelp": "Ganancia posible de al menos 2 veces el riesgo (8; de 1 vez, 4), horizonte de un año o más (4) y qué te haría cambiar de opinión, bien explicado (3)."
+    },
+    "cert": {
+      "title": "Tu certificado",
+      "text": "He completado mi tesis de inversión sobre {name} con Lumi.",
+      "alt": "Certificado de la tesis de inversión sobre {name}",
+      "privacy": "El certificado solo muestra tu nombre de pila, la empresa y la puntuación. Tus respuestas no se comparten.",
+      "share": "Compartir el certificado",
+      "copied": "Enlace copiado"
+    }
+  }
+}

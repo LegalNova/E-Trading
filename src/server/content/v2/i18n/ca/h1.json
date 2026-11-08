@@ -37,7 +37,7 @@
       "Això: hi posa 24.000 € i arriba a més de 120.000 €.",
       "Si espera, hi posa 36.000 € i arriba a uns 117.000 €.",
       "Si espera als 30, amb 100 € al mes",
-      "Hi posa 36.000 € i arriba a uns 117.000 €. Començant ja, a més de 120.000 €.",
+      "Amb 36.000 € arriba a uns 117.000 €. Començant ja, a més de 120.000 €.",
       "Més o menys igual",
       "Gairebé, però començant ja hi posa 12.000 € menys i acaba amb més.",
       "És l'**interès compost**: el que guanyes també guanya, i el temps ho multiplica.",
@@ -48,9 +48,9 @@
     },
     {
      "title": "El que acabes de descobrir",
-     "body": "• Una **acció** és un trosset d'una empresa. Amb l'S&P 500 tens un trosset de 500 alhora.\n• La borsa de vegades cau, i molt, però en aquests 40 anys qui no va vendre va multiplicar els seus diners.\n• **Començar aviat** pesa més que començar amb molt.\n\nA Lumi practiques amb diners virtuals: et pots equivocar sense perdre res de debò.",
+     "body": "• Una **acció** és un trosset d'una empresa. Amb l'S&P 500 tens un trosset de 500 alhora.\n• La borsa de vegades cau, i molt, però en aquests 40 anys qui no va vendre va multiplicar els seus diners. Això no garanteix que es repeteixi.\n• **Començar aviat** pesa més que començar amb molt.\n\nA Lumi practiques amb diners virtuals: et pots equivocar sense perdre res de debò.",
      "key": "Invertir és comprar trossets d'empreses i donar-los temps per créixer.",
-     "tip": "Ara tu: a Mercat, cerca una empresa que coneguis i compra la teva primera acció."
+     "tip": "Prova-ho: a Mercat, cerca una empresa que coneguis i compra la teva primera acció."
     }
    ]
   },
@@ -106,7 +106,7 @@
       "Una sola acció",
       "Dades reals: **10.000 €** a Tesla a finals del 2018, en dòlars i sense dividends. Així es viu la renda variable.",
       "Arriba fins al final, tant si vens com si no.",
-      "Tesla es va multiplicar per gairebé 19, però va arribar a caure un **72 %**, i és una excepció: només un **4 %** de les accions dels EUA va generar tot el guany net del mercat entre el 1926 i el 2016. Prova-ho: a Mercat, obre Tesla i mira quant ha pujat i baixat aquest any.",
+      "Tesla es va multiplicar per gairebé 19, però va arribar a caure un **72 %**, i és una excepció: només un **4 %** de les accions dels EUA va generar tot el guany net del mercat entre el 1926 i el 2016. Prova-ho: a Mercat, obre Tesla i mira el seu rang de 52 setmanes: el més baix i el més alt.",
       "Has venut. Mira què passa després…",
       "Un 30 % per sota del que hi vas posar. Aguantes?",
       "Ja has més que duplicat. I si ara cau?",
@@ -246,7 +246,7 @@
      "title": "Quatre preus per període",
      "body": "Cada **espelma** resumeix un període (un dia, una setmana…) amb quatre dades (en anglès, **OHLC**):\n\n• **Obertura** (open): el primer preu.\n• **Màxim** (high) i **mínim** (low).\n• **Tancament** (close): l'últim, i el més important.\n\nA Lumi, quan passes el dit per una espelma, en veus els quatre preus, la variació i el volum. Llegir bé un gràfic ja és un avantatge: molta gent només mira si està en verd o en vermell.",
      "key": "Un gràfic explica el que va passar, no el que passarà.",
-     "tip": "Prova-ho: a Mercat, obre un gràfic i passa el dit per l'última espelma."
+     "tip": "Prova-ho: a Mercat, obre Microsoft, posa el gràfic en espelmes i passa el dit per l'última."
     }
    ]
   },
@@ -289,9 +289,9 @@
     },
     {
      "title": "També en contra teu",
-     "body": "L'interès compost funciona igual amb els deutes: una targeta que cobra interessos sobre interessos fa créixer el que deus encara que no compris res més.\n\nI recorda: són exemples, no promeses. La borsa no dona un 7 % cada any.",
+     "body": "L'interès compost funciona igual amb els deutes: si una targeta et cobra interessos sobre interessos i no la pagues, el que deus creix encara que no compris res més.\n\nI recorda: són exemples, no promeses. La borsa no dona un 7 % cada any.",
      "key": "Els guanys generen nous guanys: com més aviat comences, més treballa el temps per tu.",
-     "tip": "Prova-ho: a Mercat, cerca SPY (l'S&P 500) i mira'n el gràfic en espelmes mensuals."
+     "tip": "Prova-ho: obre Cartera i mira quant ha canviat la teva primera acció des que la vas comprar."
     }
    ]
   },
@@ -382,22 +382,6 @@
     "Prestador de l'empresa"
    ],
    "explanation": "Una acció és una part del capital: participes dels seus beneficis i dels seus riscos. Deixar diners a l'empresa seria comprar un bo."
-  },
-  "u8l1-2": {
-   "prompt": "Relaciona cada terme amb el seu significat.",
-   "options": [
-    "Acció",
-    "OPV",
-    "Dividend",
-    "Revalorització"
-   ],
-   "explanation": "Són les quatre paraules bàsiques de la renda variable: què compres, com arriba a la borsa i d'on surt el que guanyes.",
-   "right": [
-    "Sortida a borsa venent accions",
-    "Benefici repartit en efectiu",
-    "Pujada del preu de l'acció",
-    "Part del capital d'una empresa"
-   ]
   },
   "u8l1-3": {
    "prompt": "Rendibilitat total = dividends + ____.",
@@ -525,11 +509,6 @@
    ],
    "explanation": "Vens al millor preu de compra (bid), el que paga qui compra."
   },
-  "u6l1-5": {
-   "prompt": "Simula la teva primera compra a mercat: tens 10.000 € i no vols arriscar més d'un 1 % (100 €). Col·loca un stop per sota de l'últim mínim i tria l'import.",
-   "options": [],
-   "explanation": "Amb una ordre a mercat entres a l'últim preu. Primer decideixes on sortiries (l'stop) i, amb aquesta distància, quant comprar per no arriscar més de 100 €."
-  },
   "u6l1-9": {
    "prompt": "Ordre a mercat raonable o arriscada?",
    "options": [
@@ -650,30 +629,6 @@
    ],
    "explanation": "També en contra teva: una targeta revolving al 20 % duplica el deute en menys de 4 anys."
   },
-  "u1l5-6": {
-   "prompt": "Ordena de menys a més el resultat de 100 € al mes durant 30 anys.",
-   "options": [
-    "Al 5 %",
-    "Al 7 %",
-    "Al 2 %",
-    "Al 0 %"
-   ],
-   "explanation": "36.000 €, 49.273 €, 83.226 € i 121.997 €: uns pocs punts de rendibilitat canvien moltíssim el resultat final."
-  },
-  "u1l5-7": {
-   "prompt": "Tens 22 anys i 50 € al mes per invertir. Què fas?",
-   "options": [
-    "Me'ls gasto: amb 50 € no hi ha per a res",
-    "Començo ja amb 50 € i pujo l'aportació quan pugui",
-    "Espero a guanyar més per començar amb alguna cosa «seriosa»"
-   ],
-   "explanation": "Començar aviat, encara que sigui amb poc, és el que més aprofita l'interès compost.",
-   "feedback": [
-    "50 € al mes al 7 % durant 40 anys són uns 130.000 €, amb 24.000 € aportats.",
-    "Bé: amb el temps al teu favor, començar aviat pesa més que començar amb molt.",
-    "Esperar surt car: els primers anys són els que tenen més temps per compondre's."
-   ]
-  },
   "u1l5-10": {
    "prompt": "La Marta té 18 anys i 1.000 € d'un regal. Pensa invertir-los «quan acabi la carrera, d'aquí a 5 anys». Què li aconselles?",
    "options": [
@@ -700,6 +655,72 @@
    "right": [
     "Simple",
     "Compost"
+   ]
+  },
+  "u1l5-12": {
+   "prompt": "Ordena de menys a més el que tindries al cap de 30 anys apartant 100 € al mes.",
+   "options": [
+    "Al 2 % l'any",
+    "Al 5 % l'any",
+    "Al 7 % l'any",
+    "Al 0 % l'any"
+   ],
+   "explanation": "Més o menys 36.000 €, 49.000 €, 82.000 € i 117.000 €. Hi poses el mateix en els quatre casos, 36.000 €: uns quants punts l'any canvien moltíssim el final."
+  },
+  "u1l5-13": {
+   "prompt": "Tens 22 anys i pots apartar 50 € al mes per invertir. Què fas?",
+   "options": [
+    "Espero a guanyar més per començar amb alguna cosa «seriosa»",
+    "Començo ja amb 50 € i pujo l'aportació quan pugui",
+    "M'ho gasto: 50 € no donen per a res"
+   ],
+   "explanation": "Començar aviat, encara que sigui amb poc, és el que més aprofita l'interès compost. El 7 % és un exemple per veure'n l'efecte, no una promesa: la borsa puja uns anys i baixa uns altres.",
+   "feedback": [
+    "Esperar surt car: els primers euros són els que tenen més anys per créixer.",
+    "Bé: amb el temps al teu favor, començar aviat pesa més que començar amb molt.",
+    "Al 7 % l'any, 50 € al mes durant 40 anys arriben a més de 120.000 €, amb 24.000 € posats."
+   ]
+  },
+  "u6l1-11": {
+   "prompt": "A mitja sessió, dones l'ordre de comprar a mercat 500 € d'Apple, una de les empreses més negociades del món. Què esperes?",
+   "options": [
+    "Entrar gairebé al preu que veus a la pantalla",
+    "Entrar exactament al preu que veus, garantit",
+    "Pagar bastant més del que veus"
+   ],
+   "explanation": "Amb molta gent comprant i venent alhora, sempre hi ha algú a l'altre costat a un preu gairebé igual. L'ordre a mercat surt cara quan hi ha pocs venedors, no en una gran empresa a mitja sessió.",
+   "feedback": [
+    "Això: en empreses molt negociades i en horari normal, la diferència sol ser de cèntims.",
+    "A mercat es garanteix que l'ordre s'executi, no el preu exacte: pot variar una mica.",
+    "Això passa en valors poc negociats, a l'obertura o just després d'una notícia, no aquí."
+   ]
+  },
+  "u6l1-12": {
+   "prompt": "És dissabte i dones una ordre de compra a mercat d'una acció espanyola. Què passa?",
+   "options": [
+    "Espera i s'executa dilluns a l'obertura, al preu que hi hagi llavors",
+    "S'executa ja, a l'últim preu de divendres",
+    "Es cancel·la sola perquè és cap de setmana"
+   ],
+   "explanation": "Amb la borsa tancada, una ordre a mercat s'executa a l'obertura, al preu que surti llavors. Si arriba una notícia el cap de setmana, el preu pot saltar: «ja» no vol dir «a aquest preu».",
+   "feedback": [
+    "Això: amb la borsa tancada, l'ordre espera. El preu de dilluns pot ser diferent del d'ara.",
+    "Amb la borsa tancada no hi ha ningú amb qui creuar-la: espera que obri.",
+    "No es cancel·la: queda pendent fins que obri la borsa."
+   ]
+  },
+  "u8l1-12": {
+   "prompt": "Tesla no reparteix dividends. El teu cosí diu que llavors les seves accions no serveixen per guanyar diners. Què li respons?",
+   "options": [
+    "Que té raó: sense dividends no es guanya res",
+    "Que també es guanya si puja el preu: és la revaloració",
+    "Que l'empresa li tornarà els diners en una data"
+   ],
+   "explanation": "Amb una acció guanyes de dues maneres: amb dividends i amb la revaloració, la pujada del preu. Sense dividends, tot depèn del preu, que també pot baixar. La temptadora oblida que el preu pot pujar.",
+   "feedback": [
+    "Es pot guanyar amb la pujada del preu. Qui va comprar Tesla a finals del 2018 va multiplicar els seus diners sense cobrar dividends.",
+    "Això: sense dividends, el que guanyes o perds depèn de quant pugi o baixi el preu.",
+    "Això és un bo. Una acció no té data de devolució: guanyes o perds segons el seu preu."
    ]
   }
  }

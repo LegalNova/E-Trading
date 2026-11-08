@@ -280,6 +280,37 @@ export const MarketOverview = z.object({
 })
 /** (+) Página de un listado con filtros */
 export const AssetPage = z.object({ items: z.array(AssetItem), total: z.number(), nextOffset: z.number().nullable() })
+/** (+) Datos de empresa de la ficha (Yahoo). null = sin dato: no se enseña */
+export const Fundamentals = z.object({
+  symbol: z.string(),
+  /** Hay al menos un dato que enseñar */
+  available: z.boolean(),
+  /** En la moneda principal de la cotización (`currency`) */
+  marketCap: z.number().nullable(),
+  marketCapEur: z.number().nullable(),
+  currency: z.string().nullable(),
+  pe: z.number().nullable(),
+  /** En %: 2.37 = 2,37 % */
+  dividendYield: z.number().nullable(),
+  eps: z.number().nullable(),
+  /** Moneda de las cuentas de la empresa (la del BPA) */
+  epsCurrency: z.string().nullable(),
+  beta: z.number().nullable(),
+  /** ETF: comisión anual en % */
+  ter: z.number().nullable(),
+  updatedAt: iso.nullable(),
+})
+/** (+) Ideas para estudiar: listas con un criterio transparente (nunca recomendaciones) */
+export const IdeaListId = z.enum(['drops', 'dividend', 'lowPe', 'ibex', 'etf'])
+export const IdeaItem = z.object({
+  asset: AssetItem,
+  /** Dato del criterio: % del día, rentabilidad por dividendo, PER o capitalización en euros */
+  value: z.number().nullable(),
+  /** PER bajo para su sector: la mediana del sector */
+  ref: z.number().nullable(),
+})
+export const IdeaList = z.object({ id: IdeaListId, asOf: iso.nullable(), lessonId: z.string(), items: z.array(IdeaItem) })
+export const Ideas = z.object({ lists: z.array(IdeaList) })
 export const OrderSide = z.enum(['BUY', 'SELL'])
 export const OrderType = z.enum(['MARKET', 'LIMIT', 'STOP_LOSS', 'TAKE_PROFIT'])
 /** Consejo de Lumi sobre una orden (lógica propia, src/server/tutor/coach.ts) */
@@ -429,9 +460,13 @@ export const BillingStatus = z.object({ plan: Plan, status: z.enum(['NONE', 'TRI
 export const TutorMode = z.enum(['EXPLAIN', 'PATH', 'PORTFOLIO', 'BIASES'])
 export const TutorSource = z.object({ lessonId: z.string(), title: z.string(), unit: z.string() })
 export const TutorUsage = z.object({ used: z.number(), limit: z.number() })
-export const TutorAnswer = z.object({ answer: z.string(), sources: z.array(TutorSource), usage: TutorUsage })
-export const TutorMessage = z.object({ id: z.string(), role: z.enum(['user', 'assistant']), content: z.string(), mode: TutorMode, sources: z.array(TutorSource), createdAt: iso })
-export const TutorHistory = z.object({ messages: z.array(TutorMessage), usage: TutorUsage, plan: Plan })
+/** (+) Respuestas con IA (Claude) de hoy: solo en Max y con la IA activada; on=false → responde el cerebro propio */
+export const TutorAiUsage = z.object({ on: z.boolean(), used: z.number(), limit: z.number() })
+/** (+) Quién respondió: LUMI (cerebro propio) o AI (Claude) */
+export const TutorEngine = z.enum(['LUMI', 'AI'])
+export const TutorAnswer = z.object({ answer: z.string(), sources: z.array(TutorSource), usage: TutorUsage, engine: TutorEngine.optional(), ai: TutorAiUsage.optional() })
+export const TutorMessage = z.object({ id: z.string(), role: z.enum(['user', 'assistant']), content: z.string(), mode: TutorMode, sources: z.array(TutorSource), createdAt: iso, engine: TutorEngine.optional() })
+export const TutorHistory = z.object({ messages: z.array(TutorMessage), usage: TutorUsage, plan: Plan, ai: TutorAiUsage.optional() })
 
 export type Mood = z.infer<typeof Mood>
 export type PlanT = z.infer<typeof Plan>
@@ -467,6 +502,11 @@ export type AssetPageT = z.infer<typeof AssetPage>
 export type AssetItemT = z.infer<typeof AssetItem>
 export type AssetDetailT = z.infer<typeof AssetDetail>
 export type CandleT = z.infer<typeof Candle>
+export type FundamentalsT = z.infer<typeof Fundamentals>
+export type IdeaListIdT = z.infer<typeof IdeaListId>
+export type IdeaItemT = z.infer<typeof IdeaItem>
+export type IdeaListT = z.infer<typeof IdeaList>
+export type IdeasT = z.infer<typeof Ideas>
 export type OrderSideT = z.infer<typeof OrderSide>
 export type OrderTypeT = z.infer<typeof OrderType>
 export type OrderPreviewT = z.infer<typeof OrderPreview>
@@ -483,3 +523,81 @@ export type NotificationT = z.infer<typeof Notification>
 export type SettingsT = z.infer<typeof Settings>
 export type BillingPlanT = z.infer<typeof BillingPlan>
 export type BillingStatusT = z.infer<typeof BillingStatus>
+
+// ── Regalos (regalar Plus o Max) ─────────────────────────
+export const GiftStatus = z.enum(['PENDING', 'READY', 'REDEEMED', 'CANCELED', 'EXPIRED'])
+export const GiftMine = z.object({
+  id: z.string(), code: z.string().nullable(), tier: z.enum(['PLUS', 'PREMIUM']), months: z.union([z.literal(1), z.literal(12)]), days: z.number(),
+  fromName: z.string().nullable(), toName: z.string().nullable(), message: z.string().nullable(), amount: z.number().nullable(), status: GiftStatus,
+  createdAt: z.string(), paidAt: z.string().nullable(), redeemedAt: z.string().nullable(), expiresAt: z.string().nullable(), redeemedBy: z.string().nullable(),
+})
+export const GiftPublic = z.object({
+  code: z.string(), tier: z.enum(['PLUS', 'PREMIUM']), months: z.union([z.literal(1), z.literal(12)]), days: z.number(), fromName: z.string().nullable(), toName: z.string().nullable(), message: z.string().nullable(),
+  status: GiftStatus, expiresAt: z.string().nullable(), mine: z.boolean(), redeemedByMe: z.boolean(),
+})
+export const GiftRedeem = z.object({ tier: z.enum(['PLUS', 'PREMIUM']), days: z.number(), months: z.union([z.literal(1), z.literal(12)]), mode: z.enum(['DELAYED_CHARGE', 'EXTENDED', 'GIFT']), plan: Plan, until: z.string().nullable(), fromName: z.string().nullable() })
+export type GiftMineT = z.infer<typeof GiftMine>
+export type GiftPublicT = z.infer<typeof GiftPublic>
+export type GiftRedeemT = z.infer<typeof GiftRedeem>
+
+// ── Ligas de amigos ──────────────────────────────────────
+export const FriendLeagueItem = z.object({ id: z.string(), name: z.string(), members: z.number(), isOwner: z.boolean() })
+export const FriendLeagues = z.object({
+  leagues: z.array(FriendLeagueItem),
+  owned: z.number(), maxOwned: z.number(), maxJoined: z.number(), maxMembers: z.number(),
+  /** Las cuentas de invitado se pueden unir, pero para crear una liga hay que guardar la cuenta */
+  canCreate: z.boolean(),
+})
+/** Fila de «Esta semana»: los mismos puntos que la liga general (XP de la semana + inversión) */
+export const FriendWeekRow = z.object({ key: z.string(), rank: z.number(), displayName: z.string(), weeklyXp: z.number(), tradePts: z.number(), riskAdjReturnPct: z.number(), score: z.number(), isMe: z.boolean() })
+/** Fila de «Temporada del mes»: rentabilidad del mes con tope de ±10 % (concentrada: ganancias a la mitad) */
+export const FriendMonthRow = z.object({ key: z.string(), rank: z.number(), displayName: z.string(), pct: z.number(), concentrated: z.boolean(), isMe: z.boolean() })
+export const FriendLeague = z.object({
+  id: z.string(), name: z.string(), code: z.string(), isOwner: z.boolean(), ownerName: z.string(), maxMembers: z.number(),
+  /** `key`: identificador opaco del miembro en esta liga (para que quien la creó pueda quitarlo); nunca el id de la cuenta */
+  members: z.array(z.object({ key: z.string(), displayName: z.string(), isMe: z.boolean(), isOwner: z.boolean() })),
+  week: z.object({ endsAt: iso, rows: z.array(FriendWeekRow) }),
+  month: z.object({ month: z.string(), endsAt: iso, rows: z.array(FriendMonthRow) }),
+  /** Ganador (o ganadores, si empatan) del mes anterior */
+  champion: z.object({ month: z.string(), pct: z.number(), names: z.array(z.string()), isMe: z.boolean() }).nullable(),
+})
+export const FriendLeaguePeek = z.object({ valid: z.boolean(), name: z.string().nullable(), members: z.number(), full: z.boolean() })
+export type FriendLeagueItemT = z.infer<typeof FriendLeagueItem>
+export type FriendLeaguesT = z.infer<typeof FriendLeagues>
+export type FriendLeagueT = z.infer<typeof FriendLeague>
+export type FriendLeaguePeekT = z.infer<typeof FriendLeaguePeek>
+export type FriendWeekRowT = z.infer<typeof FriendWeekRow>
+export type FriendMonthRowT = z.infer<typeof FriendMonthRow>
+
+// ── Misiones «Pruébalo» ──────────────────────────────────
+export const MissionKind = z.enum(['VIEW_ASSET', 'BUY_TYPE', 'BUY_SYMBOL', 'SELL', 'WATCH', 'ALERT', 'LIMIT_ORDER', 'STOP_ORDER', 'TAKE_PROFIT', 'OPEN_PORTFOLIO', 'EXPLORE', 'JOURNAL'])
+export const Mission = z.object({
+  lessonId: z.string(), lessonTitle: z.string(),
+  /** La frase «Pruébalo» de la clase (sin la entrada), en el idioma de la pantalla */
+  text: z.string(),
+  kind: MissionKind,
+  /** Activos que la cumplen (vacío: vale cualquiera) */
+  symbols: z.array(z.string()),
+  href: z.string(), xp: z.number(), startedAt: iso.nullable(), doneAt: iso.nullable(),
+})
+export const Missions = z.object({ pending: z.array(Mission), recentDone: z.array(Mission), justDone: z.array(Mission), xpGained: z.number() })
+export const LessonMission = z.object({ mission: Mission.nullable(), state: z.enum(['LOCKED', 'OPEN', 'DONE', 'EXPIRED', 'NONE']), xpGained: z.number() })
+export type MissionKindT = z.infer<typeof MissionKind>
+export type MissionT = z.infer<typeof Mission>
+export type MissionsT = z.infer<typeof Missions>
+export type LessonMissionT = z.infer<typeof LessonMission>
+
+// ── Diario de operaciones ────────────────────────────────
+export const JournalVerdict = z.enum(['MET', 'NOT_MET', 'TOO_EARLY'])
+export const JournalEntry = z.object({
+  id: z.string(), orderId: z.string().nullable(), symbol: z.string(), name: z.string(), type: z.string(), side: OrderSide, tag: z.string(), reason: z.string(),
+  /** Precio al decidir (texto) y ahora (null si no hay cotización), en la moneda del activo */
+  priceAt: money, priceNow: z.number().nullable(), currency: z.string(),
+  createdAt: iso, remindAt: iso, reviewedAt: iso.nullable(), verdict: JournalVerdict.nullable(), note: z.string().nullable(), due: z.boolean(),
+})
+export const JournalSummary = z.object({ side: OrderSide, tag: z.string(), decided: z.number(), met: z.number(), total: z.number() })
+export const Journal = z.object({ entries: z.array(JournalEntry), summary: z.array(JournalSummary), due: z.number() })
+export type JournalVerdictT = z.infer<typeof JournalVerdict>
+export type JournalEntryT = z.infer<typeof JournalEntry>
+export type JournalSummaryT = z.infer<typeof JournalSummary>
+export type JournalT = z.infer<typeof Journal>

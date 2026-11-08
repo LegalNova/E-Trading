@@ -1,0 +1,10 @@
+// Prueba de «Ideas para estudiar» contra v2_dev
+if (process.env.DB_SCHEMA !== 'v2_dev') throw new Error('solo v2_dev')
+const { db } = await import('../src/server/db')
+const { ideas } = await import('../src/server/market/ideas')
+let t = Date.now()
+const r = await ideas()
+console.log('1ª', Date.now() - t, 'ms')
+t = Date.now(); await ideas(); console.log('2ª (caché)', Date.now() - t, 'ms')
+for (const l of r.lists) console.log(l.id, l.asOf, l.lessonId, l.items.map(i => `${i.asset.ticker}:${i.value === null ? '-' : Math.round(i.value * 100) / 100}${i.ref ? '/' + Math.round(i.ref * 10) / 10 : ''}`).join(' '))
+await db.$disconnect()

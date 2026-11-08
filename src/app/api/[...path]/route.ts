@@ -4,6 +4,7 @@ import { withLocale } from '@/server/locale'
 import { z } from 'zod'
 import { HttpError } from '@/server/game/core'
 import * as admin from '@/server/game/admin'
+import * as reports from '@/server/game/reports'
 import { recordClientEvent, recordServerError } from '@/server/game/analytics'
 import { lens, lessonTable, type LensRange } from '@/server/game/lens'
 import { realUser } from '@/server/auth'
@@ -12,10 +13,15 @@ import { withRequest } from '@/server/request'
 import * as feedback from '@/server/game/feedback'
 import * as push from '@/server/push'
 import * as invites from '@/server/game/invites'
+import * as gifts from '@/server/game/gifts'
+import * as friends from '@/server/game/friends'
 import * as learning from '@/server/game/learning'
 import * as profile from '@/server/game/profile'
 import * as trading from '@/server/game/trading'
 import * as tutor from '@/server/tutor/tutor'
+import * as thesis from '@/server/game/thesis'
+import * as missions from '@/server/game/missions'
+import * as journal from '@/server/game/journal'
 import { requireUser } from '@/server/game/core'
 import { db } from '@/server/db'
 import { clientIp, rateLimit } from '@/server/http/ratelimit'
@@ -104,6 +110,13 @@ const routes: Route[] = [
   { method: 'GET', path: 'tutor', run: async () => tutor.history(await requireUser()) },
   { method: 'POST', path: 'tutor/ask', run: async (r, _p, b) => { const x = z.object({ question: z.string().min(1).max(600), mode: z.enum(['EXPLAIN', 'PATH', 'PORTFOLIO', 'BIASES']).default('EXPLAIN') }).parse(b); const u = await requireUser(); await rateLimit(`tutor:${u.id}`, 8, 60); return tutor.ask(u, x.question, x.mode) } },
   { method: 'DELETE', path: 'tutor', run: async () => tutor.clearHistory(await requireUser()) },
+  // Proyecto final: «Tu primera tesis de inversión»
+  { method: 'GET', path: 'thesis', run: () => thesis.thesisList() },
+  { method: 'POST', path: 'thesis', run: async (_r, _p, b) => { const x = z.object({ symbol: z.string().min(1).max(24).regex(/^[A-Za-z0-9.^=\-]+$/) }).parse(b); await rateLimit(`thesis:${(await requireUser()).id}`, 10, 60); return thesis.thesisCreate(x.symbol) } },
+  { method: 'GET', path: 'thesis/:id', run: (_r, p) => thesis.thesisGet(z.string().max(40).parse(p[0])) },
+  { method: 'PUT', path: 'thesis/:id/steps/:n', run: async (_r, p, b) => { await rateLimit(`thesis-step:${(await requireUser()).id}`, 60, 60); return thesis.thesisStep(z.string().max(40).parse(p[0]), Number(p[1]), b) } },
+  { method: 'POST', path: 'thesis/:id/finish', run: async (_r, p) => { await rateLimit(`thesis-fin:${(await requireUser()).id}`, 10, 60); return thesis.thesisFinish(z.string().max(40).parse(p[0])) } },
+  { method: 'DELETE', path: 'thesis/:id', run: (_r, p) => thesis.thesisDelete(z.string().max(40).parse(p[0])) },
   // Mercado y cartera
   { method: 'GET', path: 'watchlist', run: () => trading.watchlist() },
   { method: 'POST', path: 'watchlist/:symbol', run: (_r, p) => trading.toggleWatch(p[0].toUpperCase()) },
@@ -118,11 +131,28 @@ const routes: Route[] = [
   { method: 'GET', path: 'alerts', run: () => trading.alerts() },
   { method: 'POST', path: 'alerts', run: (_r, _p, b) => { const x = z.object({ symbol: z.string().max(24), condition: z.enum(['ABOVE', 'BELOW']), price: z.string().regex(/^\d+(\.\d+)?$/) }).parse(b); return trading.createAlert(x.symbol, x.condition, x.price) } },
   { method: 'DELETE', path: 'alerts/:id', run: (_r, p) => trading.deleteAlert(p[0]) },
+  // Misiones «Pruébalo» y diario de operaciones
+  { method: 'GET', path: 'missions', run: () => missions.missions() },
+  { method: 'GET', path: 'missions/lesson/:id', run: (_r, p) => missions.lessonMission(z.string().regex(/^[a-z0-9-]{1,24}$/).parse(p[0])) },
+  { method: 'POST', path: 'missions/seen', run: async (_r, _p, b) => { const x = z.object({ symbol: z.string().regex(/^[A-Za-z0-9.^=&-]{1,24}$/).optional(), portfolio: z.boolean().optional() }).parse(b); await rateLimit(`mseen:${(await requireUser()).id}`, 60, 60); return missions.missionSeen(x) } },
+  { method: 'GET', path: 'journal', run: () => journal.journal() },
+  { method: 'POST', path: 'journal', run: async (_r, _p, b) => { const x = z.object({ orderId: z.string().min(1).max(40), tag: z.string().regex(/^[A-Z_]{2,12}$/), reason: z.string().max(140).optional() }).parse(b); await rateLimit(`jrn:${(await requireUser()).id}`, 30, 60); return journal.createEntry(x) } },
+  { method: 'POST', path: 'journal/:id/review', run: async (_r, p, b) => { const x = z.object({ verdict: z.enum(journal.VERDICTS), note: z.string().max(280).optional() }).parse(b); await rateLimit(`jrv:${(await requireUser()).id}`, 30, 60); return journal.reviewEntry(z.string().min(1).max(40).parse(p[0]), x.verdict, x.note) } },
   // Progreso
   { method: 'GET', path: 'streak', run: () => profile.streak() },
   { method: 'POST', path: 'shop/streak-freeze', run: () => profile.buyFreeze() },
   { method: 'GET', path: 'achievements', run: () => profile.achievements() },
   { method: 'GET', path: 'league/current', run: () => profile.league() },
+  // Ligas de amigos (gratis). El id de la liga es un cuid; el código, 8 caracteres (se valida en friends.ts para dar un error claro)
+  { method: 'GET', path: 'friends', run: () => friends.myLeagues() },
+  { method: 'POST', path: 'friends', run: async (_r, _p, b) => { const x = z.object({ name: z.string().max(200) }).parse(b); await rateLimit(`flc:${(await requireUser()).id}`, 10, 3600); return friends.createLeague(x.name) } },
+  { method: 'POST', path: 'friends/join', run: async (_r, _p, b) => { const x = z.object({ code: z.string().max(40) }).parse(b); await rateLimit(`flj:${(await requireUser()).id}`, 20, 3600); return friends.joinLeague(x.code) } },
+  { method: 'GET', path: 'friends/code/:code', run: async (r, p) => { await rateLimit(`flp:${clientIp(r)}`, 30, 60); return friends.peekLeague(z.string().max(40).parse(p[0])) } },
+  { method: 'GET', path: 'friends/:id', run: (_r, p) => friends.leagueDetail(z.string().regex(/^[a-z0-9]{10,40}$/).parse(p[0])) },
+  { method: 'PATCH', path: 'friends/:id', run: async (_r, p, b) => { const x = z.object({ name: z.string().max(200) }).parse(b); await rateLimit(`fle:${(await requireUser()).id}`, 30, 3600); return friends.renameLeague(z.string().regex(/^[a-z0-9]{10,40}$/).parse(p[0]), x.name) } },
+  { method: 'DELETE', path: 'friends/:id', run: (_r, p) => friends.deleteLeague(z.string().regex(/^[a-z0-9]{10,40}$/).parse(p[0])) },
+  { method: 'POST', path: 'friends/:id/leave', run: (_r, p) => friends.leaveLeague(z.string().regex(/^[a-z0-9]{10,40}$/).parse(p[0])) },
+  { method: 'DELETE', path: 'friends/:id/members/:key', run: async (_r, p) => { await rateLimit(`fle:${(await requireUser()).id}`, 30, 3600); return friends.removeMember(z.string().regex(/^[a-z0-9]{10,40}$/).parse(p[0]), z.string().regex(/^[A-Za-z0-9_-]{16}$/).parse(p[1])) } },
   { method: 'GET', path: 'notifications', run: () => profile.notifications() },
   { method: 'POST', path: 'notifications/read', run: (_r, _p, b) => { const x = z.object({ ids: z.union([z.array(z.string()).max(100), z.literal('all')]) }).parse(b); return profile.markRead(x.ids) } },
   // Premium (simulado hasta Stripe)
@@ -147,6 +177,25 @@ const routes: Route[] = [
   { method: 'GET', path: 'admin/campaigns', run: () => admin.campaigns() },
   { method: 'POST', path: 'admin/campaigns', run: (_r, _p, b) => admin.createCampaign(z.object({ name: z.string().min(1).max(60) }).parse(b).name) },
   { method: 'DELETE', path: 'admin/campaigns/:slug', run: (_r, p) => admin.deleteCampaign(p[0]) },
+  // «Algo no está bien» (avisos de fallos) y mandos de la ficha de usuario (admin2)
+  { method: 'POST', path: 'reports', run: (_r, _p, b) => reports.createReport(reports.ReportInput.parse(b)) },
+  { method: 'GET', path: 'admin/reports', run: r => { const s = r.nextUrl.searchParams; return reports.reports(z.enum(reports.REPORT_STATUS).optional().catch(undefined).parse(s.get('status') ?? undefined), z.enum(reports.REPORT_KINDS).optional().catch(undefined).parse(s.get('kind') ?? undefined)) } },
+  { method: 'GET', path: 'admin/reports/open', run: () => reports.openReports() },
+  { method: 'POST', path: 'admin/reports/:id', run: (_r, p, b) => { const x = z.object({ status: z.enum(reports.REPORT_STATUS), note: z.string().max(500).optional() }).parse(b); return reports.updateReport(p[0].slice(0, 40), x.status, x.note) } },
+  { method: 'GET', path: 'admin/gifts', run: () => admin.adminGifts() },
+  { method: 'POST', path: 'admin/users/:id/gift', run: (_r, p, b) => { const x = z.object({ tier: z.enum(['PLUS', 'PREMIUM']), days: z.number().int().min(1).max(3650), reason: z.string().max(200).optional() }).parse(b); return admin.giveGift(p[0], x.tier, x.days, x.reason) } },
+  { method: 'POST', path: 'admin/users/:id/gift/revoke', run: (_r, p) => admin.removeGift(p[0]) },
+  { method: 'POST', path: 'admin/users/:id/lives', run: (_r, p) => admin.refillLives(p[0]) },
+  { method: 'POST', path: 'admin/users/:id/gems', run: (_r, p, b) => admin.giveGems(p[0], z.object({ amount: z.number().int().min(1).max(10_000) }).parse(b).amount) },
+  { method: 'POST', path: 'admin/users/:id/streak', run: (_r, p, b) => admin.restoreStreak(p[0], z.object({ streak: z.number().int().min(0).max(3650) }).parse(b).streak) },
+  { method: 'POST', path: 'admin/users/:id/block', run: (_r, p, b) => { const x = z.object({ blocked: z.boolean(), reason: z.string().max(300).optional() }).parse(b); return admin.setBlocked(p[0], x.blocked, x.reason) } },
+  { method: 'POST', path: 'admin/users/:id/welcome', run: (_r, p) => admin.resendWelcome(p[0]) },
+  // Regalar Lumi: comprar (pago único con Stripe), confirmar el pago, mis regalos y, con el código, ver y canjear
+  { method: 'GET', path: 'gifts', run: () => gifts.myGifts() },
+  { method: 'POST', path: 'gifts', run: async (_r, _p, b) => { const x = z.object({ tier: z.enum(['PLUS', 'PREMIUM']), months: z.union([z.literal(1), z.literal(12)]), fromName: z.string().max(80), toName: z.string().max(80).optional(), message: z.string().max(600).optional() }).parse(b); await rateLimit(`gift:${(await requireUser()).id}`, 12, 3600); return gifts.createGift(x) } },
+  { method: 'POST', path: 'gifts/confirm', run: async (_r, _p, b) => { await rateLimit(`giftpay:${(await requireUser()).id}`, 40, 60); return gifts.confirmGift(z.object({ sessionId: z.string().regex(/^cs_(test|live)_[A-Za-z0-9]{10,200}$/) }).parse(b).sessionId) } },
+  { method: 'GET', path: 'gifts/code/:code', run: async (r, p) => { await rateLimit(`giftcode:${clientIp(r)}`, 60, 60); return gifts.publicGift(p[0].slice(0, 30)) } },
+  { method: 'POST', path: 'gifts/code/:code/redeem', run: async (r, p) => { await rateLimit(`giftcode:${clientIp(r)}`, 60, 60); await rateLimit(`redeem:${(await requireUser()).id}`, 10, 600); return gifts.redeemGift(p[0].slice(0, 30)) } },
   // Analítica propia: pantallas vistas y dónde se deja una clase
   { method: 'POST', path: 'events', run: async (r, _p, b) => { await rateLimit(`ev:${clientIp(r)}`, 600, 60); return recordClientEvent(b) } },
 ]
@@ -197,7 +246,8 @@ async function handle(req: NextRequest, ctx: RouteContext<'/api/[...path]'>) {
     if (asId) {
       const admin = await realUser()
       if (admin?.role !== 'ADMIN') return Response.json({ error: { code: 'FORBIDDEN', message: 'Solo para administración' } }, { status: 403 })
-      if (mutating && !path.join('/').startsWith('admin/')) return Response.json({ error: { code: 'VIEW_ONLY', message: 'Estás viendo la app como otro usuario: solo lectura.' } }, { status: 403 })
+      // «Ver como» es solo lectura: la única escritura permitida es empezar a ver como (todo lo demás, también del admin, se bloquea)
+      if (mutating && !/^admin\/users\/[^/]+\/view-as$/.test(path.join('/'))) return Response.json({ error: { code: 'VIEW_ONLY', message: 'Estás viendo la app como otro usuario: solo lectura.' } }, { status: 403 })
       view = { targetId: asId.slice(0, 64), adminId: admin.id }
     }
     // Los textos del curso y del motor salen en el idioma de la pantalla del móvil

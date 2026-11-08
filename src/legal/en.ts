@@ -108,6 +108,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
             ['Neon Inc. (on Amazon Web Services)', 'Database', 'USA (us-east-1) · processor agreement and standard contractual clauses'],
             ['Google LLC', 'Sign in with Google (only if you use it)', 'USA · EU-US Data Privacy Framework'],
             ['Stripe Payments Europe, Ltd.', 'Billing for paid plans (only if you take one out): card, invoices and subscription. We never see your full card details', 'Ireland (EU)'],
+            ['Anthropic, PBC', 'Lumi with AI (Max only, once switched on): your questions to Lumi and a summary of your simulated portfolio, progress and trading journal, without your name or email. Not used to train their models', 'USA · EU-US Data Privacy Framework and standard contractual clauses'],
             ['Resend Inc.', 'Account emails (confirming your email, changing your password)', 'USA · processor agreement and standard contractual clauses'],
           ],
         },
@@ -218,7 +219,7 @@ export const en: Record<LegalSlug, LegalDoc> = {
   },
   contratacion: {
     title: 'Terms of purchase',
-    intro: `Last updated: ${UPDATED}. They apply when you take out a paid plan (Plus or Max) and complement the Terms of use. They comply with Spanish Royal Legislative Decree 1/2007 (General Law for the Protection of Consumers and Users) and the LSSI-CE. The Spanish version prevails.`,
+    intro: `Last updated: ${UPDATED}. They apply when you take out a paid plan (Plus or Max) or buy a gift and complement the Terms of use. They comply with Spanish Royal Legislative Decree 1/2007 (General Law for the Protection of Consumers and Users) and the LSSI-CE. The Spanish version prevails.`,
     sections: [
       {
         h: '1. Who sells to you',
@@ -308,6 +309,19 @@ export const en: Record<LegalSlug, LegalDoc> = {
           `For the attention of ${O.name}, ${O.address}, ${O.email}:`,
           'I hereby give notice that I withdraw from my contract for the following service: [Plus or Max] plan, [monthly or yearly].',
           'Purchased on: [date] · Name: [your name] · Account email: [your email] · Date: [today’s date] · Signature (only if sent on paper).',
+        ],
+      },
+      {
+        h: '12. Gifting Lumi',
+        p: ['You can give someone else Plus or Max for 1 month (30 days) or 12 months (365 days). These terms apply to the gift together with the ones above.'],
+        list: [
+          'Price: the plan’s 1-month or yearly price (Plus: €3.99 or €29.99; Max: €7.99 or €59.99), taxes included. It is a one-off card payment through Stripe: it is not a subscription, it does not renew and there are no further charges.',
+          'When you pay you get a link with a personal code. Anyone who has it can redeem it, so only share it with the person you are giving it to. You cannot redeem a gift you bought yourself.',
+          'It can be redeemed once, within the 12 months after payment. After that it expires unredeemed and the amount is not refunded.',
+          'When redeemed, the recipient has the plan from that moment for the days of the gift. If they already had a gift or trial running, the days are added at the end. If they pay for a subscription, their next charge is pushed back by those days.',
+          'Right of withdrawal: you have 14 calendar days from purchase to withdraw, as long as the gift has not been redeemed. We refund the full amount to the same payment method and the link stops working. Email us at ' + O.email + ' with your account email.',
+          'Once redeemed, the gift has been used and cannot be refunded, because the service starts being provided at that moment with the consent of the person redeeming it.',
+          'If you are 14 to 17, a parent or guardian has to confirm before you buy a gift, as in section 8.',
         ],
       },
     ],

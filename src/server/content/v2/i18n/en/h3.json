@@ -37,7 +37,7 @@
       "Sell: if he's scared, something must be about to happen",
       "You'd be selling cheap just when the business hasn't changed.",
       "Check the business is still the same and, if so, buy",
-      "That's it: the price has dropped, the value hasn't. His price is an offer, not an order.",
+      "That's it: the price fell, not the value. His price is an offer, not an order.",
       "Buy with all your money without checking anything",
       "Good instinct, but check your estimate and don't put everything in.",
       "At €12, something worth €20: a **40 %** margin of safety."
@@ -107,9 +107,9 @@
     },
     {
      "title": "Trailing and forward",
-     "body": "Using last year's earnings gives you the **trailing P/E**; using forecast earnings, the **forward P/E**. If earnings are set to grow a lot, the forward one will be lower.\n\nThe market average is around **15-17**. Compare it with its history and its sector: a bank on a P/E of 8 and a software company on 35 can both be «fairly priced».",
+     "body": "Using last year's earnings gives you the **trailing P/E**; using forecast earnings, the **forward P/E**. If earnings are set to grow a lot, the forward one will be lower.\n\nThe S&P 500's historical average is around **15-17**, though it changes a lot from one era to another. Compare it with its history and its sector: a bank on a P/E of 8 and a software company on 35 can both be «fairly priced».",
      "key": "A P/E of 10 can be expensive and one of 30 cheap: it depends on what the company is going to earn.",
-     "tip": "Try it: ask your tutor Lumi what P/E counts as high or low in each sector."
+     "tip": "Try it: in Market, open a bank and a tech company and tap «Follow» on both to compare them."
     }
    ]
   },
@@ -131,7 +131,7 @@
       "It isn't broken: over there, red usually signals a rise.",
       "Candlesticks were born in the **Dojima** rice market (Osaka), in the eighteenth century.",
       "Tradition credits them to the merchant Munehisa Homma.",
-      "Steve Nison brought them to the West in 1991. Today they're the default chart."
+      "Steve Nison brought them to the West in 1991. Today they're the most used chart."
      ]
     },
     {
@@ -256,9 +256,9 @@
     },
     {
      "title": "Limits that add up",
-     "body": "Most professionals risk between **0.5 % and 2 %** per trade; to start with, 1 % or less. It's also wise to cap:\n\n• your **total open risk**: what you'd lose if all your stops were hit at once (no more than 5–6 %);\n• the **weight of each position**: how much of your portfolio sits in a single purchase (the app warns you from 20 %).\n\nFirst you decide where you're wrong (the stop). Then how much you buy.",
+     "body": "Many professional traders risk between **0.5 % and 2 %** per trade; to start with, 1 % or less. It's also wise to cap:\n\n• your **total open risk**: what you'd lose if all your stops were hit at once (no more than 5–6 %);\n• the **weight of each position**: how much of your portfolio sits in a single purchase (the app warns you from 20 %).\n\nFirst you decide where you're wrong (the stop). Then how much you buy.",
      "key": "Risk isn't the same as the amount invested: you can invest 16 % and risk 1 %.",
-     "tip": "Try it: on your next purchase in Market, decide beforehand at what price you'd get out if it goes wrong."
+     "tip": "Try it: on your next purchase, set a price alert where you'd get out if it goes wrong."
     }
    ]
   },
@@ -285,7 +285,7 @@
       "Everyone in the group is in. Get in today or you'll miss out!",
       "It's not in your plan. What do you do?",
       "Buy now, before it goes up even more",
-      "That's **FOMO**: buying without knowing what the company does, after a huge rise.",
+      "That's **FOMO**, fear of missing out: buying in a hurry, without knowing what.",
       "Wait 48 hours and ask myself if I'd buy it if nobody were talking about it",
       "That's it! If it still makes sense in two days, you decide calmly.",
       "Take out a loan to go in big",
@@ -296,9 +296,9 @@
     },
     {
      "title": "Warning signs",
-     "body": "• You hear about it from friends or social media accounts that had never invested before.\n• The reason is «**it's going up a lot**», not what the asset actually does.\n• You feel **urgency**: «if I don't buy today, I'll miss it».\n• People say «**this time it's different**».\n\nAntidotes: the **48-hour rule** (waiting two days before any purchase that wasn't in your plan) and a **speculation limit**: the small slice of your money you allow yourself, in writing, to risk on bets.\n\nIf your hairdresser recommends a cryptocurrency, it may already be too late.",
+     "body": "The **herd effect** is buying because everyone else is buying. Be wary if:\n\n• You hear about it from friends or social media accounts that had never invested before.\n• The reason is «**it's going up a lot**», not what the asset actually does.\n• You feel **urgency**: «if I don't buy today, I'll miss it».\n• People say «**this time it's different**».\n\nAntidotes: the **48-hour rule** (waiting two days before any purchase that wasn't in your plan) and a **speculation limit**: the small slice of your money you allow yourself, in writing, to risk on bets.\n\nIf your hairdresser recommends a cryptocurrency, it may already be too late.",
      "key": "When everyone's talking about something that «only goes up», the risk is usually at its highest.",
-     "tip": "Try it: if something soaring today tempts you, add it to Favourites and decide in 48 hours."
+     "tip": "Try it: if something soaring today tempts you, tap «Follow» on its page and decide in 48 hours."
     }
    ]
   },
@@ -330,21 +330,6 @@
     "safety"
    ],
    "explanation": "It protects you if your estimate is wrong."
-  },
-  "u16l1-7": {
-   "prompt": "Is it about price or value?",
-   "options": [
-    "The company will generate about €100m of cash a year",
-    "It has a brand that lets it raise prices",
-    "Its market cap is €1,500m",
-    "The share closed yesterday at €15.20",
-    "It's up 8 % this week"
-   ],
-   "explanation": "You see the price on the screen; the value comes from analysing the business.",
-   "right": [
-    "Price",
-    "Value"
-   ]
   },
   "u16l1-9": {
    "prompt": "What do you say to Lumi?",
@@ -549,15 +534,6 @@
    ],
    "explanation": "More touches, more volume and more recent. Old, distant levels carry less weight."
   },
-  "u21l1-7": {
-   "prompt": "Look for support and resistance in these 30 candles. Up or down over the next 10 sessions?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "Support or resistance tells you where buying or selling may appear, not what will happen. Above all, it shows you where you’ve been proved wrong.",
-   "horizon": "the next 10 sessions"
-  },
   "u21l1-11": {
    "prompt": "You bought near a support level and put your stop just below it. Today the price falls hard and breaks the support: it's about to hit your stop. What do you do?",
    "options": [
@@ -667,15 +643,6 @@
    "explanation": "Bitcoin fell by around 75 % over the following year. The moment of peak euphoria is usually the moment of peak risk. Remember: with crypto you can lose everything you put in.",
    "horizon": "the following year"
   },
-  "u27l4-3": {
-   "prompt": "This asset has risen sharply and everyone on social media is talking about it. Does it go up or down over the following sessions?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "Neither the hype on social media nor the earlier rises tell you what's coming. That's why the 48-hour rule exists.",
-   "horizon": "the next 10 sessions"
-  },
   "u27l4-6": {
    "prompt": "Which are warning signs of a bubble? Select all that apply.",
    "options": [
@@ -718,6 +685,22 @@
    "lines": [
     "Everyone on TikTok is making money on a new coin 🐶",
     "If I don't get in today, I'll miss out."
+   ]
+  },
+  "u16l1-13": {
+   "prompt": "Is it about the share's price or the business's value?",
+   "options": [
+    "Lots of investors want to buy it today",
+    "It's up 8 % this week",
+    "It has a brand that lets it raise prices",
+    "Its customers come back year after year",
+    "It earns about 100 million euros a year",
+    "The share closed yesterday at €15.20"
+   ],
+   "explanation": "The price is what's paid today on the market and it changes with the mood of buyers and sellers. The value comes from the business: what it earns and what protects it from competitors.",
+   "right": [
+    "Price",
+    "Value"
    ]
   }
  }

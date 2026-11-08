@@ -21,8 +21,12 @@ import { Lumi, LumiSays, stageOf } from '../ui/lumi'
 import { GlyphTile } from '../play/glyph'
 import { BuyPlans, MaxPill } from '../upgrade'
 import { InviteCard } from '../invite-card'
+import { GiftBanner } from './gifts'
 import { FeedbackCard } from './feedback'
 import { PushCard } from '../push'
+import { HomeMission, MissionPreview } from '../missions'
+import { ReportButton } from '../report-button'
+import { ProjectCard } from './project'
 
 // ── Inicio ───────────────────────────────────────────────
 export function Home() {
@@ -93,6 +97,10 @@ export function Home() {
       )}
 
       {/* Avisos que piden algo (activar notificaciones, dar tu opinión): solo cuando tocan */}
+      {/* Aprender haciendo: la misión «Pruébalo» pendiente (o recién cumplida) */}
+      <HomeMission />
+      {/* Regalar Lumi (en Navidad, destacado): debajo de la clase para no quitarle el sitio a «Continuar» */}
+      <GiftBanner />
       <PushCard />
       <FeedbackCard />
 
@@ -372,6 +380,7 @@ export function Path() {
           </section>
         )
       })}
+      <ProjectCard />
       <AskLumi />
       <Sheet open={!!locked} onClose={() => setLocked(null)} label={t('lockedTitle')}>
         <div className="flex items-center gap-3">
@@ -708,10 +717,12 @@ function LessonInner({ id }: { id: string }) {
         <Link href={`/profesora?leccion=${l.id}`} className="icon-btn" aria-label={tt('askLesson')} title={tt('askLesson')}>
           <Icon name="chat" size={20} />
         </Link>
+        <ReportButton context={{ lessonId: l.id, step: s.id }} />
       </div>
       <div key={s.id} className="pad flex-1 animate-rise">
         {i === 0 && <span className="t-foot">{l.unitTitle} · {l.title}</span>}
         <StepView s={s} lessonId={l.id} solved={!!solved[s.id]} onSolved={() => setSolved(x => ({ ...x, [s.id]: true }))} />
+        {last && <MissionPreview lessonId={l.id} />}
       </div>
       <div className="sticky bottom-0 flex gap-2.5 px-4 pt-2.5" style={{ background: 'var(--bg)', paddingBottom: 'max(24px, env(safe-area-inset-bottom))' }}>
         {i > 0 && (

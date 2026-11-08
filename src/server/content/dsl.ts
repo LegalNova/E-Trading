@@ -326,7 +326,10 @@ export function unit(u: ContentUnit): ContentUnit {
 export function section(id: string, title: string, requires: string[], units: ContentUnit[]): ContentUnit[] {
   // Teoría corta: unos 40 s por pantalla (el quiz suma aparte unos 25 s por ejercicio)
   const tagged = units.map(u => ({ ...u, section: { id, title, requires }, lessons: u.lessons.map(l => (l.isUnitReview ? l : { ...l, minutes: Math.max(1, Math.round(l.steps.reduce((m, s) => m + stepMinutes(s), 0))) })) }))
-  const lists = tagged.map(u => u.lessons.filter(l => !l.isUnitReview).flatMap(l => (QUIZZES[l.quizId] ?? []).slice(-3)))
+  // Una lista por clase (no por unidad): así el reto pregunta por clases de toda la sección.
+  // Con más de 12 clases se eligen 12 repartidas de principio a fin.
+  const perLesson = tagged.flatMap(u => u.lessons.filter(l => !l.isUnitReview).map(l => (QUIZZES[l.quizId] ?? []).slice(-3))).filter(l => l.length)
+  const lists = perLesson.length > 12 ? Array.from({ length: 12 }, (_, i) => perLesson[Math.round((i * (perLesson.length - 1)) / 11)]) : perLesson
   const bid = `${id}boss`
   QUIZZES[`q-${bid}`] = interleave(lists, 12)
   const boss: ContentLesson = {

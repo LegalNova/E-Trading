@@ -3,8 +3,9 @@
 import { PLAN_NAME } from '@/shared/plans'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useTranslations } from 'next-intl'
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
+import { LeagueSwitch } from './friends'
 import type { AchievementT, NotificationT } from '@/shared/contract'
 import { countdown, num } from '@/shared/format'
 import { api, ApiFailure } from '../api'
@@ -15,7 +16,9 @@ import { Bar, ErrorState, PageSkeleton, Sheet, TopBar } from '../ui/kit'
 import { BadgeArt, RARITY, rarityOf } from '../ui/badge'
 import { BuyPlans } from '../upgrade'
 import { ThemeToggle } from '../theme-toggle'
+import { giftLinkLabel } from './gifts'
 import { ShareButton } from '../share'
+import { ReportRow } from '../report-button'
 import { Lumi, LumiSays, SKINS, stageOf } from '../ui/lumi'
 
 // ── Racha (05.1) ─────────────────────────────────────────
@@ -202,7 +205,17 @@ export function Achievements({ back = '/perfil' }: { back?: string }) {
 }
 
 // ── Liga (05.3) ──────────────────────────────────────────
+/** Pestaña Liga: arriba «General | Mis ligas» (ligas de amigos, friends.tsx) */
 export function League() {
+  return (
+    <Suspense fallback={<PageSkeleton />}>
+      <LeagueSwitch general={<GeneralLeague />} />
+    </Suspense>
+  )
+}
+
+/** Liga general de la semana */
+function GeneralLeague() {
   const t = useTranslations('league')
   const locale = useLang()
   const { data: l, isError, refetch } = useQuery({ queryKey: ['league'], queryFn: api.league, refetchInterval: 15_000, refetchOnMount: 'always' })
@@ -259,7 +272,7 @@ export function League() {
                 {m.isMe ? t('you', { name: m.displayName }) : m.displayName}
                 <span className="t-cap block truncate font-normal">
                   {t('rowXp', { xp: num(m.weeklyXp, locale, 0) })}
-                  {(m.tradePts !== 0 || m.riskAdjReturnPct !== 0) && (
+                  {(m.tradePts !== 0 || Math.abs(m.riskAdjReturnPct) >= 0.05) && (
                     <>
                       {' · '}
                       <span className={m.tradePts > 0 ? 'up' : m.tradePts < 0 ? 'down' : undefined}>
@@ -309,6 +322,7 @@ export function Profile() {
     { href: '/avisos', icon: 'bell', label: t('notifications') },
     { href: '/profesora', icon: 'chat', label: t('tutor') },
     { href: '/opinion', icon: 'star', label: t('feedbackTitle') },
+    { href: '/regalar', icon: 'gift', label: giftLinkLabel(locale) },
     { href: '/ajustes', icon: 'gear', label: t('settings') },
     { href: '/ayuda', icon: 'info', label: t('help') },
   ]
@@ -409,6 +423,7 @@ export function Profile() {
             <Icon name="chev" size={18} />
           </Link>
         ))}
+        <ReportRow />
       </div>
     </div>
   )

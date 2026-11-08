@@ -37,7 +37,7 @@
       "Vender: si él está asustado, algo pasará",
       "Venderías barato justo cuando el negocio no ha cambiado.",
       "Comprobar que el negocio sigue igual y, si es así, comprar",
-      "Eso: el precio ha bajado, el valor no. Su precio es una oferta, no una orden.",
+      "Eso: bajó el precio, no el valor. Su precio es una oferta, no una orden.",
       "Comprar con todo tu dinero sin revisar nada",
       "Buen instinto, pero revisa tu estimación y no lo pongas todo.",
       "A 12 €, algo que vale 20 €: un **40 %** de margen de seguridad."
@@ -107,9 +107,9 @@
     },
     {
      "title": "Histórico y adelantado",
-     "body": "Con el beneficio del último año es el **PER histórico**; con el previsto, el **PER adelantado**. Si el beneficio va a crecer mucho, el adelantado será más bajo.\n\nLa media del mercado ronda **15-17**. Compara con su historia y su sector: un banco a PER 8 y un software a PER 35 pueden estar «en su precio».",
+     "body": "Con el beneficio del último año es el **PER histórico**; con el previsto, el **PER adelantado**. Si el beneficio va a crecer mucho, el adelantado será más bajo.\n\nLa media histórica del S&P 500 ronda **15-17**, aunque cambia mucho según la época. Compara con su historia y su sector: un banco a PER 8 y un software a PER 35 pueden estar «en su precio».",
      "key": "Un PER de 10 puede ser caro y uno de 30 barato: depende de lo que vaya a ganar la empresa.",
-     "tip": "Pruébalo: pregúntale a la profesora Lumi qué PER suele ser alto o bajo según el sector."
+     "tip": "Pruébalo: en Mercado, abre un banco y una tecnológica y pulsa «Seguir» en los dos para compararlos."
     }
    ]
   },
@@ -131,7 +131,7 @@
       "No está rota: allí el rojo suele significar subida.",
       "Las velas nacieron en el mercado de arroz de **Dojima** (Osaka), en el siglo XVIII.",
       "La tradición se las atribuye al comerciante Munehisa Homma.",
-      "Steve Nison las trajo a Occidente en 1991. Hoy son el gráfico por defecto."
+      "Steve Nison las trajo a Occidente en 1991. Hoy son el gráfico más usado."
      ]
     },
     {
@@ -256,9 +256,9 @@
     },
     {
      "title": "Límites que se suman",
-     "body": "La mayoría de profesionales arriesga entre el **0,5 % y el 2 %** por operación; para empezar, un 1 % o menos. Además conviene limitar:\n\n• el **riesgo total abierto**: lo que perderías si saltaran todos tus stops a la vez (no más del 5–6 %);\n• el **peso de cada posición**: cuánto de tu cartera hay en una sola compra (la app te avisa a partir del 20 %).\n\nPrimero decides dónde te equivocas (el stop). Después, cuánto compras.",
+     "body": "Muchos traders profesionales arriesgan entre el **0,5 % y el 2 %** por operación; para empezar, un 1 % o menos. Además conviene limitar:\n\n• el **riesgo total abierto**: lo que perderías si saltaran todos tus stops a la vez (no más del 5–6 %);\n• el **peso de cada posición**: cuánto de tu cartera hay en una sola compra (la app te avisa a partir del 20 %).\n\nPrimero decides dónde te equivocas (el stop). Después, cuánto compras.",
      "key": "Riesgo no es lo mismo que cantidad invertida: puedes invertir un 16 % y arriesgar un 1 %.",
-     "tip": "Pruébalo: en tu próxima compra en Mercado, decide antes a qué precio saldrías si sale mal."
+     "tip": "Pruébalo: en tu próxima compra, pon una alerta de precio donde saldrías si sale mal."
     }
    ]
   },
@@ -285,7 +285,7 @@
       "Todos en el grupo están dentro. ¡Entra hoy o te lo pierdes!",
       "No está en tu plan. ¿Qué haces?",
       "Compro ya, antes de que suba más",
-      "Eso es **FOMO**: compras sin saber qué hace la empresa, tras una subida enorme.",
+      "Eso es **FOMO**, miedo a quedarse fuera: compras por la prisa, sin saber qué.",
       "Espero 48 horas y me pregunto si la compraría si nadie hablara de ella",
       "¡Eso! Si en dos días sigue teniendo sentido, lo decides con calma.",
       "Pido un préstamo para entrar fuerte",
@@ -296,9 +296,9 @@
     },
     {
      "title": "Señales de alarma",
-     "body": "• Te enteras por amigos o redes que nunca habían invertido.\n• La razón es que «**sube mucho**», no qué hace el activo.\n• Sientes **urgencia**: «si no compro hoy, me lo pierdo».\n• Se dice que «**esta vez es diferente**».\n\nAntídotos: la **regla de las 48 horas** (esperar dos días antes de cualquier compra que no estaba en tu plan) y un **límite de especulación**: la parte pequeña de tu dinero que, por escrito, te permites arriesgar en apuestas.\n\nSi tu peluquero te recomienda una criptomoneda, quizá ya es tarde.",
+     "body": "El **efecto rebaño** es comprar porque todos compran. Desconfía si:\n\n• Te enteras por amigos o redes que nunca habían invertido.\n• La razón es que «**sube mucho**», no qué hace el activo.\n• Sientes **urgencia**: «si no compro hoy, me lo pierdo».\n• Se dice que «**esta vez es diferente**».\n\nAntídotos: la **regla de las 48 horas** (esperar dos días antes de cualquier compra que no estaba en tu plan) y un **límite de especulación**: la parte pequeña de tu dinero que, por escrito, te permites arriesgar en apuestas.\n\nSi tu peluquero te recomienda una criptomoneda, quizá ya es tarde.",
      "key": "Cuando todo el mundo habla de algo que «solo sube», el riesgo suele ser máximo.",
-     "tip": "Pruébalo: si algo que sube mucho hoy te tienta, añádelo a Favoritos y decide dentro de 48 horas."
+     "tip": "Pruébalo: si algo que sube mucho hoy te tienta, pulsa «Seguir» en su ficha y decide dentro de 48 horas."
     }
    ]
   },
@@ -330,21 +330,6 @@
     "seguridad"
    ],
    "explanation": "Te protege si te equivocas en la estimación."
-  },
-  "u16l1-7": {
-   "prompt": "¿Habla de precio o de valor?",
-   "options": [
-    "La empresa generará unos 100 M€ de caja al año",
-    "Tiene una marca que le permite subir precios",
-    "Capitaliza 1.500 M€ en bolsa",
-    "La acción cerró ayer a 15,20 €",
-    "Ha subido un 8 % esta semana"
-   ],
-   "explanation": "El precio lo ves en la pantalla; el valor sale de analizar el negocio.",
-   "right": [
-    "Precio",
-    "Valor"
-   ]
   },
   "u16l1-9": {
    "prompt": "¿Qué le contestas a Lumi?",
@@ -386,6 +371,22 @@
    ],
    "explanation": "Subió con fuerza. El señor Mercado vendía con pánico a cualquier precio; quien miró el negocio de las empresas y no solo su precio, no vendió en el peor momento. No siempre se recupera tan rápido.",
    "horizon": "los meses siguientes"
+  },
+  "u16l1-13": {
+   "prompt": "¿Habla del precio de la acción o del valor del negocio?",
+   "options": [
+    "Hoy la quieren comprar muchos inversores",
+    "Ha subido un 8 % esta semana",
+    "Tiene una marca que le permite subir precios",
+    "Sus clientes repiten año tras año",
+    "Gana unos 100 millones de euros al año",
+    "La acción cerró ayer a 15,20 €"
+   ],
+   "explanation": "El precio es lo que se paga hoy en bolsa y cambia con el ánimo de quien compra y vende. El valor sale del negocio: lo que gana y lo que lo protege de la competencia.",
+   "right": [
+    "Precio",
+    "Valor"
+   ]
   },
   "u17l1-4": {
    "prompt": "PER = precio ÷ ____.",
@@ -549,15 +550,6 @@
    ],
    "explanation": "Más toques, más volumen y más cercanía en el tiempo. Los niveles antiguos y lejanos pesan menos."
   },
-  "u21l1-7": {
-   "prompt": "Busca soportes y resistencias en estas 30 velas. ¿Sube o baja en las 10 sesiones siguientes?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Un soporte o una resistencia dicen dónde puede aparecer compra o venta, no qué pasará. Sirven sobre todo para saber dónde te has equivocado.",
-   "horizon": "las 10 sesiones siguientes"
-  },
   "u21l1-11": {
    "prompt": "Compraste cerca de un soporte y pusiste el stop un poco por debajo. Hoy el precio cae con fuerza y rompe el soporte: está a punto de tocar tu stop. ¿Qué haces?",
    "options": [
@@ -666,15 +658,6 @@
    ],
    "explanation": "Bitcoin cayó cerca de un 75 % en el año siguiente. El momento de máxima euforia suele ser el de máximo riesgo. Recuerda: en cripto puede perderse la totalidad de lo invertido.",
    "horizon": "el año siguiente"
-  },
-  "u27l4-3": {
-   "prompt": "Este activo ha subido con fuerza y en redes todo el mundo habla de él. ¿Sube o baja en las sesiones siguientes?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Ni la euforia en redes ni las subidas anteriores te dicen qué viene. Por eso existe la regla de las 48 horas.",
-   "horizon": "las 10 sesiones siguientes"
   },
   "u27l4-6": {
    "prompt": "¿Cuáles son señales de alarma de una burbuja? Marca todas.",

@@ -5,7 +5,10 @@ import { db, DB_SCHEMA } from '../db'
 import { campaignSlug } from './analytics'
 import { ACHIEVEMENTS, LESSON, QUIZZES, UNITS } from '../content/catalog'
 import { realUser } from '../auth'
-import { fail, levelOf } from './core'
+import { LIVE } from '../billing/stripe'
+import { viewAs } from '../view'
+import { fail, levelOf, LIVES_MAX, notify, type Tx } from './core'
+import { grantPlan, revokeGift } from './grants'
 
 /** Siempre quien ha iniciado sesión de verdad: también mientras «ve como» otro usuario */
 export async function requireAdmin() {
@@ -188,6 +191,7 @@ export async function userDetail(id: string) {
     tutorQuestions: tutor,
     badges,
     events: events.map(e => ({ name: e.name, props: e.props, at: e.createdAt.toISOString() })),
+    admin2: await controlsOf(u!.id),
   }
 }
 
@@ -294,3 +298,220 @@ export async function feedbackSummary() {
   }
 }
 
+
+// ── Mandos de la ficha de usuario (admin2) ───────────────
+// Todos: solo ADMIN, nunca mientras «ve como» a alguien (es solo lectura), en una transacción con la fila
+// del usuario bloqueada (dos clics a la vez se aplican de uno en uno) y apuntados en la auditoría.
+const DAY_MS = 86_400_000
+const PLAN_NAME = { FREE: 'Free', PLUS: 'Plus', PREMIUM: 'Max' } as const
+type Lang = 'es' | 'ca' | 'en'
+const langOf = (l: string): Lang => (l === 'ca' || l === 'en' ? l : 'es')
+
+async function adminAction() {
+  const a = await requireAdmin()
+  if (viewAs()) fail(403, 'VIEW_ONLY', 'Sal de «ver como» para usar los mandos del admin')
+  return a
+}
+
+async function lockTarget(tx: Tx, id: string) {
+  await tx.$queryRawUnsafe(`SELECT 1 FROM "${DB_SCHEMA}"."user" WHERE "id" = $1 FOR UPDATE`, id)
+  const u = await tx.user.findUnique({ where: { id } })
+  if (!u) fail(404, 'NOT_FOUND', 'Usuario no encontrado')
+  return u!
+}
+
+/** Estado de juego bloqueado (el mismo bloqueo que usan las acciones del propio usuario) */
+async function lockGame(tx: Tx, userId: string) {
+  await tx.gameState.createMany({ data: [{ userId }], skipDuplicates: true })
+  await tx.$queryRawUnsafe(`SELECT 1 FROM "${DB_SCHEMA}"."GameState" WHERE "userId" = $1 FOR UPDATE`, userId)
+  return tx.gameState.findUniqueOrThrow({ where: { userId } })
+}
+
+type Admin = Awaited<ReturnType<typeof requireAdmin>>
+const audited = (tx: Tx, a: Admin, action: string, userId: string, before: object, after: object) =>
+  tx.auditLog.create({ data: { actorId: a.id, actor: a.email, action, entity: 'User', entityId: userId, before, after } })
+
+const run = <T>(fn: (tx: Tx) => Promise<T>) => db.$transaction(fn, { timeout: 20_000, maxWait: 10_000 })
+
+/** Plan, suscripción y regalos de una persona, para la ficha */
+async function controlsOf(userId: string) {
+  const [u, sub, gifts] = await Promise.all([
+    db.user.findUnique({ where: { id: userId }, select: { plan: true, role: true, blockedAt: true, blockReason: true } }),
+    db.subscription.findUnique({ where: { userId } }),
+    db.gift.findMany({ where: { source: 'ADMIN', redeemedById: userId }, orderBy: { createdAt: 'desc' }, take: 10 }),
+  ])
+  const now = Date.now()
+  const stripe = !!sub?.stripeSubId && LIVE.includes(sub.status)
+  const giftRunning = sub?.status === 'GIFT' && !!sub.trialEndsAt && sub.trialEndsAt.getTime() > now
+  const until = !sub ? null : sub.status === 'GIFT' || sub.status === 'TRIALING' ? sub.trialEndsAt : sub.status === 'ACTIVE' || stripe ? sub.renewsAt : null
+  return {
+    plan: u?.plan ?? 'FREE',
+    isTeam: u?.role === 'ADMIN',
+    blockedAt: u?.blockedAt?.toISOString() ?? null,
+    blockReason: u?.blockReason ?? null,
+    subscription: sub ? { status: sub.status, interval: sub.interval, stripe, until: until?.toISOString() ?? null } : null,
+    giftRunning,
+    gifts: gifts.map(g => ({ id: g.id, tier: g.tier as 'PLUS' | 'PREMIUM', days: g.days, by: g.buyerEmail, reason: g.message, status: g.status, at: g.createdAt.toISOString() })),
+  }
+}
+
+function giftText(lang: Lang, tier: 'PLUS' | 'PREMIUM', days: number, mode: 'DELAYED_CHARGE' | 'EXTENDED' | 'GIFT', until: Date | null) {
+  const D = {
+    es: { 7: '7 días', 30: '1 mes', 90: '3 meses', 180: '6 meses', 365: '1 año', n: `${days} días`, of: 'de', title: 'El equipo de Lumi te ha regalado', delayed: `Tu próximo cobro se retrasa ${days} días.`, gift: 'Ya lo tienes hasta el', ext: 'Tu plan se alarga hasta el' },
+    ca: { 7: '7 dies', 30: '1 mes', 90: '3 mesos', 180: '6 mesos', 365: '1 any', n: `${days} dies`, of: 'de', title: 'L’equip de la Lumi t’ha regalat', delayed: `El teu proper cobrament es retarda ${days} dies.`, gift: 'Ja el tens fins al', ext: 'El teu pla s’allarga fins al' },
+    en: { 7: '7 days', 30: '1 month', 90: '3 months', 180: '6 months', 365: '1 year', n: `${days} days`, of: 'of', title: 'The Lumi team has gifted you', delayed: `Your next charge is pushed back ${days} days.`, gift: 'You have it until', ext: 'Your plan now runs until' },
+  }[lang]
+  const dur = (D as Record<string, string>)[String(days)] ?? D.n
+  const date = until ? until.toLocaleDateString(lang === 'ca' ? 'ca-ES' : lang === 'en' ? 'en-GB' : 'es-ES', { day: 'numeric', month: 'long', timeZone: 'Europe/Madrid' }) : ''
+  // Si paga con Stripe se queda con el plan que paga: el regalo son días sin cobro (no se promete otro plan)
+  const title = mode === 'DELAYED_CHARGE' ? `${D.title} ${dur}` : `${D.title} ${dur} ${D.of} ${PLAN_NAME[tier]}`
+  const body = mode === 'DELAYED_CHARGE' ? D.delayed : `${mode === 'GIFT' ? D.gift : D.ext} ${date}.`
+  return { title, body }
+}
+
+/** Regala Plus o Max durante unos días (grantPlan). Si paga con Stripe, retrasa su próximo cobro */
+export async function giveGift(userId: string, tier: 'PLUS' | 'PREMIUM', days: number, reason?: string) {
+  const a = await adminAction()
+  if (!Number.isInteger(days) || days < 1 || days > 3650) fail(422, 'VALIDATION_ERROR', 'Elige entre 1 y 3.650 días')
+  const why = reason?.trim().slice(0, 200) || null
+  return run(async tx => {
+    const u = await lockTarget(tx, userId)
+    const sub = await tx.subscription.findUnique({ where: { userId } })
+    const before = { plan: u.plan, status: sub?.status ?? null, trialEndsAt: sub?.trialEndsAt?.toISOString() ?? null, renewsAt: sub?.renewsAt?.toISOString() ?? null }
+    const log = await audited(tx, a, 'GIFT_PLAN', userId, before, { tier, days, reason: why })
+    const key = `admin-${log.id}`
+    const r = await grantPlan(tx, userId, tier, days, key)
+    await tx.gift.create({ data: { code: key, tier, days, source: 'ADMIN', status: 'REDEEMED', buyerEmail: a.email, fromName: 'Equipo de Lumi', message: why, redeemedById: userId, redeemedAt: new Date() } })
+    const n = giftText(langOf(u.locale), tier, days, r.mode, r.until)
+    await notify({ tx, user: u }, 'ACHIEVEMENT', n.title, n.body, '/premium')
+    const until = r.until?.toISOString() ?? null
+    await tx.auditLog.update({ where: { id: log.id }, data: { after: { tier, days, reason: why, mode: r.mode, plan: r.plan, until } } })
+    return { mode: r.mode, plan: r.plan, until }
+  })
+}
+
+/** Quita el regalo en marcha (revokeGift): vuelve a Free. Una suscripción de pago no se toca */
+export async function removeGift(userId: string) {
+  const a = await adminAction()
+  return run(async tx => {
+    const u = await lockTarget(tx, userId)
+    const sub = await tx.subscription.findUnique({ where: { userId } })
+    await revokeGift(tx, userId)
+    await tx.gift.updateMany({ where: { source: 'ADMIN', redeemedById: userId, status: 'REDEEMED' }, data: { status: 'CANCELED' } })
+    await audited(tx, a, 'GIFT_REVOKED', userId, { plan: u.plan, status: sub?.status ?? null, trialEndsAt: sub?.trialEndsAt?.toISOString() ?? null }, { plan: 'FREE', status: 'CANCELED' })
+  })
+}
+
+/** Llena las vidas */
+export async function refillLives(userId: string) {
+  const a = await adminAction()
+  return run(async tx => {
+    await lockTarget(tx, userId)
+    const g = await lockGame(tx, userId)
+    await tx.gameState.update({ where: { userId }, data: { lives: LIVES_MAX, livesUpdatedAt: new Date() } })
+    await audited(tx, a, 'LIVES_REFILLED', userId, { lives: g.lives }, { lives: LIVES_MAX })
+    return { lives: LIVES_MAX }
+  })
+}
+
+/** Suma gemas */
+export async function giveGems(userId: string, amount: number) {
+  const a = await adminAction()
+  if (!Number.isInteger(amount) || amount < 1 || amount > 10_000) fail(422, 'VALIDATION_ERROR', 'Elige entre 1 y 10.000 gemas')
+  return run(async tx => {
+    await lockTarget(tx, userId)
+    const g = await lockGame(tx, userId)
+    const next = await tx.gameState.update({ where: { userId }, data: { gems: { increment: amount } } })
+    await audited(tx, a, 'GEMS_GIVEN', userId, { gems: g.gems }, { gems: next.gems, amount })
+    return { gems: next.gems }
+  })
+}
+
+/**
+ * Devuelve una racha perdida: la pone en `streak` días y deja «ayer» como último día activo,
+ * así no se vuelve a perder al abrir la app y sigue creciendo si hoy hace algo.
+ * Los días perdidos desde su último día activo pasan a «protegidos» en el calendario.
+ */
+export async function restoreStreak(userId: string, streak: number) {
+  const a = await adminAction()
+  if (!Number.isInteger(streak) || streak < 0 || streak > 3650) fail(422, 'VALIDATION_ERROR', 'Escribe un número entre 0 y 3.650')
+  return run(async tx => {
+    const u = await lockTarget(tx, userId)
+    const g = await lockGame(tx, userId)
+    const today = dayOf(Date.now(), u.timezone)
+    const yesterday = addDays(today, -1)
+    const last = g.lastActiveDay
+    const data: { streak: number; bestStreak: number; lastActiveDay?: string } = { streak, bestStreak: Math.max(g.bestStreak, streak) }
+    if (streak > 0 && (!last || last < yesterday)) {
+      data.lastActiveDay = yesterday
+      const from = last && last > addDays(today, -60) ? addDays(last, 1) : addDays(today, -Math.min(streak, 60))
+      const days: string[] = []
+      for (let d = from; d <= yesterday; d = addDays(d, 1)) days.push(d)
+      if (days.length) {
+        await tx.streakDay.updateMany({ where: { userId, day: { in: days }, status: 'MISSED' }, data: { status: 'FROZEN' } })
+        await tx.streakDay.createMany({ data: days.map(day => ({ userId, day, status: 'FROZEN' })), skipDuplicates: true })
+      }
+    }
+    await tx.gameState.update({ where: { userId }, data })
+    await audited(tx, a, 'STREAK_RESTORED', userId, { streak: g.streak, bestStreak: g.bestStreak, lastActiveDay: last }, data)
+    return { streak }
+  })
+}
+
+/** Bloquea (con motivo) o desbloquea. Al bloquear se cierran sus sesiones abiertas */
+export async function setBlocked(userId: string, blocked: boolean, reason?: string) {
+  const a = await adminAction()
+  const why = reason?.trim().slice(0, 300) || null
+  if (blocked && (!why || why.length < 3)) fail(422, 'VALIDATION_ERROR', 'Escribe el motivo del bloqueo')
+  return run(async tx => {
+    const u = await lockTarget(tx, userId)
+    if (blocked && (u.role === 'ADMIN' || u.id === a.id)) fail(409, 'CONFLICT', 'No se puede bloquear a alguien del equipo')
+    await tx.user.update({ where: { id: userId }, data: blocked ? { blockedAt: new Date(), blockReason: why } : { blockedAt: null, blockReason: null } })
+    if (blocked) await tx.session.deleteMany({ where: { userId } })
+    await audited(tx, a, blocked ? 'USER_BLOCKED' : 'USER_UNBLOCKED', userId, { blocked: !!u.blockedAt, reason: u.blockReason }, { blocked, reason: blocked ? why : null })
+    return { blocked }
+  })
+}
+
+/** Vuelve a mandar el aviso de bienvenida («Tu primera clase te espera») */
+export async function resendWelcome(userId: string) {
+  const a = await adminAction()
+  return run(async tx => {
+    const u = await lockTarget(tx, userId)
+    // Dos clics seguidos no mandan dos avisos
+    if (await tx.notification.count({ where: { userId, type: 'NEW_LESSON', createdAt: { gte: new Date(Date.now() - 60_000) } } })) fail(429, 'RATE_LIMITED', 'Ya se lo hemos mandado hace un momento')
+    const T = {
+      es: ['Tu primera clase te espera', '«Tu primera inversión en 3 minutos»: empieza por aquí.'],
+      ca: ['La teva primera classe t’espera', '«La teva primera inversió en 3 minuts»: comença per aquí.'],
+      en: ['Your first lesson is waiting', '“Your first investment in 3 minutes”: start here.'],
+    }[langOf(u.locale)]
+    await notify({ tx, user: u }, 'NEW_LESSON', T[0], T[1], '/clases')
+    await audited(tx, a, 'WELCOME_RESENT', userId, {}, { type: 'NEW_LESSON' })
+  })
+}
+
+/** Regalos del equipo que siguen en marcha (tarjeta del panel) */
+export async function adminGifts() {
+  await requireAdmin()
+  const rows = await db.gift.findMany({ where: { source: 'ADMIN', status: 'REDEEMED' }, orderBy: { createdAt: 'desc' }, take: 300 })
+  const ids = [...new Set(rows.map(r => r.redeemedById).filter((x): x is string => !!x))]
+  const [users, subs] = await Promise.all([db.user.findMany({ where: { id: { in: ids } }, select: { id: true, name: true, email: true, plan: true } }), db.subscription.findMany({ where: { userId: { in: ids } } })])
+  const now = Date.now()
+  const latest = new Set<string>()
+  return rows
+    .filter(r => {
+      if (!r.redeemedById || !r.redeemedAt) return false
+      const first = !latest.has(r.redeemedById)
+      latest.add(r.redeemedById)
+      const sub = subs.find(s => s.userId === r.redeemedById)
+      // Sigue en marcha si aún no han pasado sus días o, si es el último que se le dio, mientras dure su regalo (los días se suman)
+      return r.redeemedAt.getTime() + r.days * DAY_MS > now || (first && sub?.status === 'GIFT' && !!sub.trialEndsAt && sub.trialEndsAt.getTime() > now)
+    })
+    .map(r => {
+      const u = users.find(x => x.id === r.redeemedById)
+      const sub = subs.find(s => s.userId === r.redeemedById)
+      const stripe = !!sub?.stripeSubId && LIVE.includes(sub.status)
+      const until = sub?.status === 'GIFT' ? sub.trialEndsAt : stripe || sub?.status === 'ACTIVE' ? sub.renewsAt : null
+      return { id: r.id, userId: r.redeemedById!, name: u?.name || '—', email: u?.email ?? '—', tier: r.tier as 'PLUS' | 'PREMIUM', days: r.days, by: r.buyerEmail, reason: r.message, at: r.createdAt.toISOString(), stripe, until: until?.toISOString() ?? null }
+    })
+}

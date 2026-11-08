@@ -104,7 +104,8 @@ export function AssetRow({ a, rank }: { a: AssetItemT; rank?: number }) {
       {rank !== undefined && <span className="t-cap w-4 text-right">{rank}</span>}
       <AssetBadge a={a} />
       <span className="min-w-0 flex-1">
-        <b className="block truncate text-[15px]">
+        {/* Nombres largos (Banco Bilbao Vizcaya Argentaria) bajan de línea en vez de cortarse */}
+        <b className="line-clamp-2 text-[15px] leading-5 [overflow-wrap:anywhere]">
           {a.name}
         </b>
         <span className="t-cap block truncate">
@@ -114,7 +115,8 @@ export function AssetRow({ a, rank }: { a: AssetItemT; rank?: number }) {
       <span className="hidden sm:block">
         <Sparkline values={a.sparkline} up={up} />
       </span>
-      <span className="w-[104px] text-right">
+      {/* Sin ancho fijo: un precio largo (1.234.567 ₩) empuja el nombre en vez de salirse de la fila */}
+      <span className="min-w-[84px] flex-none text-right whitespace-nowrap">
         <Live value={toNum(a.price)} className="block text-[15px] font-bold tabular-nums">
           {fmtAssetPrice(a, locale)}
         </Live>
@@ -130,6 +132,7 @@ export function MarketSeg({ active }: { active: 'assets' | 'portfolio' | 'orders
   return (
     <Seg
       label={t('sections')}
+      className="pointer-coarse:[&>button]:h-11"
       value={active}
       onChange={v => router.push(v === 'assets' ? '/mercado' : v === 'portfolio' ? '/mercado/cartera' : '/mercado/ordenes')}
       options={[

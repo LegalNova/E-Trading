@@ -37,7 +37,7 @@
       "Exactly: he puts in €24,000 and gets to over €120,000.",
       "If he waits, he puts in €36,000 and gets to about €117,000.",
       "If he waits until 30, with €100 a month",
-      "He puts in €36,000 and gets to about €117,000. Starting now, over €120,000.",
+      "With €36,000 in, he gets to about €117,000. Starting now, over €120,000.",
       "More or less the same",
       "Close, but starting now he puts in €12,000 less and ends up with more.",
       "It's **compound interest**: what you earn also earns, and time multiplies it.",
@@ -48,9 +48,9 @@
     },
     {
      "title": "What you've just discovered",
-     "body": "• A **share** is a tiny piece of a company. With the S&P 500 you own a tiny piece of 500 at once.\n• The stock market sometimes falls, and hard, but over those 40 years whoever didn't sell multiplied their money.\n• **Starting early** matters more than starting big.\n\nIn Lumi you practise with virtual money: you can make mistakes without losing anything real.",
+     "body": "• A **share** is a tiny piece of a company. With the S&P 500 you own a tiny piece of 500 at once.\n• The stock market sometimes falls, and hard, but over those 40 years whoever didn't sell multiplied their money. That doesn't guarantee it will happen again.\n• **Starting early** matters more than starting big.\n\nIn Lumi you practise with virtual money: you can make mistakes without losing anything real.",
      "key": "Investing means buying tiny pieces of companies and giving them time to grow.",
-     "tip": "Your turn: in Market, search for a company you know and buy your first share."
+     "tip": "Try it: in Market, search for a company you know and buy your first share."
     }
    ]
   },
@@ -106,7 +106,7 @@
       "Just one share",
       "Real data: **€10,000** in Tesla at the end of 2018, measured in dollars and without dividends. This is what equities feel like.",
       "Make it to the end, whether you sell or not.",
-      "Tesla multiplied almost 19 times over, but it fell as much as **72 %**, and it's an exception: just **4 %** of US stocks generated all of the market's net gain between 1926 and 2016. Try it: in Market, open Tesla and see how much it has gone up and down this year.",
+      "Tesla multiplied almost 19 times over, but it fell as much as **72 %**, and it's an exception: just **4 %** of US stocks generated all of the market's net gain between 1926 and 2016. Try it: in Market, open Tesla and look at its 52-week range: the lowest and the highest.",
       "You've sold. Watch what happens next…",
       "30 % below what you put in. Can you hold on?",
       "You've more than doubled your money. What if it falls now?",
@@ -246,7 +246,7 @@
      "title": "Four prices per period",
      "body": "Each **candle** sums up a period (a day, a week…) with four figures (**OHLC**):\n\n• **Open:** the first price.\n• **High** and **low**.\n• **Close:** the last one, and the most important.\n\nIn Lumi, when you run your finger over a candle you see its four prices, the change and the volume. Reading a chart properly is already an advantage: lots of people only check whether it's green or red.",
      "key": "A chart tells you what happened, not what's going to happen.",
-     "tip": "Try it: in Market, open a chart and run your finger over the last candle."
+     "tip": "Try it: in Market, open Microsoft, switch the chart to candles and run your finger over the last one."
     }
    ]
   },
@@ -289,9 +289,9 @@
     },
     {
      "title": "It works against you too",
-     "body": "Compound interest works the same way with debt: a card that charges interest on interest makes what you owe grow even if you buy nothing else.\n\nAnd remember: these are examples, not promises. The stock market doesn't return 7 % every year.",
+     "body": "Compound interest works the same way with debt: if a card charges you interest on interest and you don't pay it off, what you owe grows even if you buy nothing else.\n\nAnd remember: these are examples, not promises. The stock market doesn't return 7 % every year.",
      "key": "Gains generate new gains: the sooner you start, the more time works for you.",
-     "tip": "Try it: in Market, search for SPY (the S&P 500) and look at its chart in monthly candles."
+     "tip": "Try it: open Portfolio and see how much your first share has changed since you bought it."
     }
    ]
   },
@@ -382,22 +382,6 @@
     "A lender to the company"
    ],
    "explanation": "A share is part of the company's capital: you share in its profits and its risks. Lending money to the company would mean buying a bond."
-  },
-  "u8l1-2": {
-   "prompt": "Match each term with its meaning.",
-   "options": [
-    "Share",
-    "IPO",
-    "Dividend",
-    "Capital gain"
-   ],
-   "explanation": "These are the four basic words of equity investing: what you buy, how it gets onto the stock market and where your returns come from.",
-   "right": [
-    "Stock market listing by selling shares",
-    "Profit paid out in cash",
-    "Rise in the share price",
-    "Part of a company's capital"
-   ]
   },
   "u8l1-3": {
    "prompt": "Total return = dividends + ____.",
@@ -525,11 +509,6 @@
    ],
    "explanation": "You sell at the best buying price (bid), the one the buyer is paying."
   },
-  "u6l1-5": {
-   "prompt": "Simulate your first market buy: you have €10,000 and don't want to risk more than 1 % (€100). Set a stop below the last low and choose the amount.",
-   "options": [],
-   "explanation": "With a market order you get in at the last price. First you decide where you'd get out (the stop) and, with that distance, how much to buy so you don't risk more than €100."
-  },
   "u6l1-9": {
    "prompt": "Market order: sensible or risky?",
    "options": [
@@ -650,30 +629,6 @@
    ],
    "explanation": "It works against you too: a revolving credit card at 20 % doubles the debt in under 4 years."
   },
-  "u1l5-6": {
-   "prompt": "Put in order from lowest to highest the result of €100 a month for 30 years.",
-   "options": [
-    "At 5 %",
-    "At 7 %",
-    "At 2 %",
-    "At 0 %"
-   ],
-   "explanation": "€36,000, €49,273, €83,226 and €121,997: a few points of return make a huge difference to the end result."
-  },
-  "u1l5-7": {
-   "prompt": "You're 22 and have €50 a month to invest. What do you do?",
-   "options": [
-    "Spend it: €50 won't get you anywhere",
-    "Start now with €50 and raise the amount when I can",
-    "Wait until I earn more to start with something «serious»"
-   ],
-   "explanation": "Starting early, even with a little, is what makes the most of compound interest.",
-   "feedback": [
-    "€50 a month at 7 % for 40 years comes to about €130,000, with €24,000 put in.",
-    "Good: with time on your side, starting early matters more than starting big.",
-    "Waiting is costly: the early years are the ones with the most time to compound."
-   ]
-  },
   "u1l5-10": {
    "prompt": "Marta is 18 and has €1,000 from a gift. She plans to invest it «when I finish my degree, in 5 years». What do you advise?",
    "options": [
@@ -700,6 +655,72 @@
    "right": [
     "Simple",
     "Compound"
+   ]
+  },
+  "u1l5-12": {
+   "prompt": "Put in order, from least to most, what you'd have after 30 years of setting aside €100 a month.",
+   "options": [
+    "At 2 % a year",
+    "At 5 % a year",
+    "At 7 % a year",
+    "At 0 % a year"
+   ],
+   "explanation": "Roughly €36,000, €49,000, €82,000 and €117,000. You put in the same in all four cases, €36,000: a few points a year change the end result enormously."
+  },
+  "u1l5-13": {
+   "prompt": "You're 22 and can set aside €50 a month to invest. What do you do?",
+   "options": [
+    "I wait until I earn more so I can start with something «serious»",
+    "I start now with €50 and raise it when I can",
+    "I spend it: €50 won't get me anywhere"
+   ],
+   "explanation": "Starting early, even with a little, is what makes the most of compound interest. The 7 % is an example to show the effect, not a promise: the market goes up some years and down others.",
+   "feedback": [
+    "Waiting is expensive: your first euros are the ones with the most years to grow.",
+    "Good: with time on your side, starting early matters more than starting big.",
+    "At 7 % a year, €50 a month for 40 years grows to over €120,000, with €24,000 put in."
+   ]
+  },
+  "u6l1-11": {
+   "prompt": "Mid-session, you place a market order to buy €500 of Apple, one of the most traded companies in the world. What do you expect?",
+   "options": [
+    "To get in almost at the price you see on screen",
+    "To get in at exactly the price you see, guaranteed",
+    "To pay quite a bit more than you see"
+   ],
+   "explanation": "With lots of people buying and selling at once, there's always someone on the other side at almost the same price. A market order gets expensive when there are few sellers, not with a big company mid-session.",
+   "feedback": [
+    "That's it: with heavily traded companies during normal hours, the difference is usually a few cents.",
+    "A market order guarantees that it gets filled, not the exact price: it can vary a little.",
+    "That happens with thinly traded stocks, at the open or right after news, not here."
+   ]
+  },
+  "u6l1-12": {
+   "prompt": "It's Saturday and you place a market buy order for a Spanish share. What happens?",
+   "options": [
+    "It waits and is filled on Monday at the open, at whatever price there is then",
+    "It's filled right away, at Friday's last price",
+    "It cancels itself because it's the weekend"
+   ],
+   "explanation": "With the market closed, a market order is filled at the open, at whatever price comes out then. If news breaks over the weekend, the price can jump: «now» doesn't mean «at this price».",
+   "feedback": [
+    "That's it: with the market closed, the order waits. Monday's price may differ from today's.",
+    "With the market closed there's nobody to match it with: it waits until it opens.",
+    "It doesn't cancel: it stays pending until the market opens."
+   ]
+  },
+  "u8l1-12": {
+   "prompt": "Tesla doesn't pay dividends. Your cousin says that means its shares are no good for making money. What do you tell him?",
+   "options": [
+    "That he's right: without dividends you make nothing",
+    "That you also make money if the price goes up: that's capital growth",
+    "That the company will give him his money back on a set date"
+   ],
+   "explanation": "With a share you make money in two ways: dividends and capital growth, the rise in the price. Without dividends, everything depends on the price, which can also fall. The tempting answer forgets that the price can go up.",
+   "feedback": [
+    "You can make money from the price rising. Anyone who bought Tesla at the end of 2018 multiplied their money without a single dividend.",
+    "That's it: without dividends, what you make or lose depends on how much the price goes up or down.",
+    "That's a bond. A share has no repayment date: you win or lose depending on its price."
    ]
   }
  }

@@ -39,7 +39,7 @@ export const u7l1 = lesson('u7l1', 'Qué es un índice', [
       { say: 'Toca cada caso: ¿para qué se usa el índice?', mood: 'HAPPY' },
     ],
   }),
-  key('Puntos, no euros', 'Un índice se mide en puntos, no en euros. Lo que importa es la **variación**: si pasa de 14.000 a 14.700 puntos, ha subido un 5 %.\n\nComprarlo entero, con un fondo o un ETF, es apostar por toda una economía, no por una empresa.', 'Un índice es una cesta de referencia, no algo que se compra tal cual.', 'Pruébalo: en Mercado, busca el IBEX 35 y mira si hoy sube o baja.'),
+  key('Puntos, no euros', 'Un índice se mide en puntos, no en euros. Lo que importa es la **variación**: si pasa de 14.000 a 14.700 puntos, ha subido un 5 %.\n\nComprarlo entero, con un fondo o un ETF, es invertir en todo ese mercado a la vez, no en una sola empresa.', 'Un índice es una cesta de referencia, no algo que se compra tal cual.', 'Pruébalo: en Mercado, busca el IBEX 35 y mira si hoy sube o baja.'),
 ], [
   single('¿Qué es un índice bursátil?', ['Una cifra que resume cómo va un grupo de valores', 'Una empresa que cotiza en bolsa', 'Un tipo de interés'], 0, 'Es una cesta de referencia con reglas sobre qué entra y cuánto pesa.'),
   tf('Se puede comprar directamente el índice S&P 500.', false, 'Se compra un fondo o ETF que lo replica.'),
@@ -54,7 +54,7 @@ export const u7l1 = lesson('u7l1', 'Qué es un índice', [
   // Nuevas (sección 0): sustituyen a las dos de cálculo
   upDown('Este gráfico es un índice real: la media de las grandes empresas de un país, sin nombre ni fecha. ¿Qué hizo en las 10 sesiones siguientes?', 'ud-39', 'Un índice resume en una sola línea cómo les fue a todas sus empresas juntas: por eso sirve de termómetro del mercado. Lo que no hace es adivinar el futuro: ni el índice entero se puede prever a dos semanas vista.'),
   scenario('Imagina: tu cartera de acciones españolas ha ganado un 5 % este año y el IBEX 35, un 12 %. Un amigo te dice que eres un crack. ¿Qué concluyes?', [['Que lo he hecho peor que el índice: copiarlo me habría dado más', 'Eso es: un fondo que copia el IBEX 35 te habría dado más, y sin elegir empresas.'], ['Que soy un crack: he ganado dinero', 'Ganar no basta: tienes que compararte con lo que habrías ganado copiando el índice.'], ['Que el índice no tiene nada que ver con mi cartera', 'Si tienes acciones españolas, el IBEX 35 es justo tu vara de medir.']], 0, 'Un resultado solo es bueno o malo comparado con su índice: con un 5 % frente a un 12 %, copiar el índice habría ganado más. La tentadora, «he ganado dinero», falla porque una ganancia sin vara de medir no dice si lo hiciste bien.'),
-], { source: '2.6', minutes: 6, retire: [1, 2, 3, 4, 7, 8] })
+], { source: '2.6', minutes: 6, retire: [1, 2, 3, 4, 7, 8, 10] })
 
 // Antes en u10 (mismo id: conserva progreso y traducciones)
 export const u10l2 = lesson('u10l2', 'Qué es un ETF', [
@@ -92,7 +92,7 @@ export const u10l2 = lesson('u10l2', 'Qué es un ETF', [
       { say: 'Clasifica cada rasgo', mood: 'HAPPY' },
     ],
   }),
-  key('ETF UCITS', 'Un pequeño inversor (un **minorista**) en la UE compra ETF europeos **UCITS**, con su documento **KID**, que resume riesgos y costes. Muchos ETF de EE. UU. no se pueden vender a minoristas europeos porque no tienen KID.\n\nCon dinero real, busca «UCITS» en el nombre y lee su KID. En el simulador puedes practicar con ETF de EE. UU.', 'Un ETF es un fondo, casi siempre indexado, que se compra y se vende en bolsa como una acción.', 'Pruébalo: en Mercado, busca el ETF del S&P 500 y compáralo con el índice.'),
+  key('ETF UCITS', 'Un pequeño inversor (un **minorista**) en la UE compra ETF europeos **UCITS**, con su documento **KID**, que resume riesgos y costes. Muchos ETF de EE. UU. no se pueden vender a minoristas europeos porque no tienen KID.\n\nCon dinero real, busca «UCITS» en el nombre y lee su KID. En el simulador puedes practicar con ETF de EE. UU.', 'Un ETF es un fondo, casi siempre indexado, que se compra y se vende en bolsa como una acción.', 'Pruébalo: en Mercado, busca SPY, un ETF del S&P 500, y compara su gráfico con el del índice.'),
 ], [
   match('Empareja cada término con su significado.', [['ETF', 'Fondo que cotiza en bolsa'], ['UCITS', 'Norma europea de fondos para minoristas'], ['KID', 'Documento con riesgos y costes'], ['Índice', 'Cesta de empresas que copia el ETF']], 'Son las cuatro palabras que verás al buscar cualquier ETF.'),
   buckets('¿ETF o fondo tradicional?', ['ETF', 'Fondo tradicional'], [['Lo compras a las 11:37 al precio que ves en pantalla', 0], ['Se traspasa sin pagar impuestos en España', 1], ['Pagas comisión del bróker y spread', 0], ['Su precio se calcula una vez al día', 1], ['Puedes venderlo en cualquier momento de la sesión', 0]], 'Cotizar en bolsa da flexibilidad al ETF; el régimen de traspaso es la gran ventaja del fondo en España.'),
@@ -104,7 +104,7 @@ export const u10l2 = lesson('u10l2', 'Qué es un ETF', [
   timed(tf('Un ETF se puede comprar y vender durante toda la sesión de bolsa.', true, 'Cotiza como una acción, con un precio que cambia a cada momento.'), 10),
   chat(['Me han dicho que un ETF es «como una acción».', '¿Entonces es igual de arriesgado que comprar una sola empresa?'], '¿Qué le contestas?', [['Sí, igual de arriesgado', 'Se compra como una acción, pero dentro lleva cientos o miles de empresas.'], ['Se compra como una acción, pero dentro hay una cesta de muchas empresas', '¡Eso! Uno del MSCI World lleva más de mil empresas de países desarrollados.'], ['No tiene ningún riesgo', 'Tiene el riesgo del índice que copia: si el mercado cae un 30 %, el ETF también.']], 1, 'La forma de comprarlo es como una acción; el riesgo es el de toda la cesta.'),
   fill('Los ETF que puede comprar un minorista en la UE suelen llevar la etiqueta ____.', 'UCITS', ['TIPS', 'REIT', 'SPIVA'], 'Es la norma europea que fija reglas de diversificación, custodia e información.'),
-], { source: '2.7', minutes: 6, retire: [1, 4, 6, 7, 8] })
+], { source: '2.7', minutes: 6, retire: [1, 2, 6, 7] })
 
 // Antes en u29 (mismo id: conserva progreso y traducciones)
 export const u29l1 = lesson('u29l1', 'Diversificar: lo único gratis en finanzas', [
@@ -143,7 +143,7 @@ export const u29l1 = lesson('u29l1', 'Diversificar: lo único gratis en finanzas
       { say: 'Clasifica cada susto', mood: 'HAPPY' },
     ],
   }),
-  key('El almuerzo gratis', 'Cuánto sube y baja en un año típico: una acción suelta, un 30-35 %; 20-30 acciones de sectores distintos, cerca del 20 %; un índice mundial, un 15 %.\n\nHarry Markowitz, Nobel de Economía, llamó a esto **el único almuerzo gratis**: menos riesgo sin renunciar a rentabilidad esperada. Un ETF de un índice mundial te da esa cesta en una sola compra.', 'Con muchas empresas, los desastres de unas se compensan con los éxitos de otras.', 'Pruébalo: abre Cartera y mira si alguna posición pesa más del 20 %.'),
+  key('El almuerzo gratis', 'Cuánto sube y baja en un año típico (su **volatilidad**): una acción suelta, un 25-35 %; 20-30 acciones de sectores distintos, cerca del 20 %; un índice mundial, un 15 %.\n\nA Harry Markowitz, Nobel de Economía, se le atribuye llamar a esto **el único almuerzo gratis**: menos riesgo sin renunciar a rentabilidad esperada. Un ETF de un índice mundial te da esa cesta en una sola compra.', 'Con muchas empresas, los desastres de unas se compensan con los éxitos de otras.', 'Pruébalo: abre Cartera y mira si alguna posición pesa más del 20 %.'),
 ], [
   single('¿Qué riesgo elimina repartir tu dinero entre cientos de acciones?', ['El riesgo de mercado', 'El riesgo específico de cada empresa', 'Todo el riesgo'], 1, 'Una quiebra deja de ser un drama si pesa un 0,1 %. Pero si cae todo el mercado, caen todas: ese riesgo solo se suaviza con bonos o liquidez.'),
   num('Repartes 10.000 € a partes iguales entre 20 acciones. Una quiebra y pierde todo su valor; el resto se queda igual. ¿Cuántos euros pierdes?', 500, '€', '10.000 ÷ 20 = 500 € por acción. Con una sola acción, esa quiebra se habría llevado los 10.000 €.'),
@@ -188,7 +188,7 @@ export const u25l2 = lesson('u25l2', 'Aportaciones periódicas (DCA)', [
       { say: 'Mueve el mes de inicio. Prueba justo antes de una crisis', mood: 'HAPPY' },
     ],
   }),
-  key('Con una suma grande', 'Con el sueldo, lo natural es aportar una parte cada mes. Si un día tienes una suma grande (una herencia, un finiquito), una solución intermedia razonable es repartirla en **6–12 meses** con aportaciones automáticas.\n\nLo que no funciona es esperar «a que baje»: nadie sabe cuándo es el suelo.', 'De golpe suele ganar más veces; poco a poco reduce el arrepentimiento. Lo importante es empezar y no parar.', 'Pruébalo: compra hoy un poco del ETF del S&P 500 y repite cada mes.'),
+  key('Con una suma grande', 'Con el sueldo, lo natural es aportar una parte cada mes. Si un día tienes una suma grande (una herencia, un finiquito), una solución intermedia razonable es repartirla en **6–12 meses** con aportaciones automáticas.\n\nLo que no funciona es esperar «a que baje»: nadie sabe cuándo es el suelo.', 'De golpe suele ganar más veces; poco a poco reduce el arrepentimiento. Lo importante es empezar y no parar.', 'Pruébalo: en Mercado, compra un poco de un ETF: será tu aportación de este mes.'),
 ], [
   num('Inviertes 100 € al mes y el precio pasa por 10, 8, 5, 8 y 10 €. ¿Cuántas participaciones tienes en total?', 65, 'participaciones', '100 ÷ 10 + 100 ÷ 8 + 100 ÷ 5 + 100 ÷ 8 + 100 ÷ 10 = 10 + 12,5 + 20 + 12,5 + 10 = 65.'),
   num('Con esas 65 participaciones por 500 €, ¿cuál es tu precio medio de compra? (redondea a dos decimales)', 7.69, '€', '500 ÷ 65 ≈ 7,69 €. Al acabar en 10 €, ganas un 30 % sin que el precio haya subido.'),
@@ -235,7 +235,7 @@ export const u10l3 = lesson('u10l3', 'Comisiones: el TER y los costes ocultos', 
       { say: 'Sube la comisión del fondo caro y los años', mood: 'HAPPY' },
     ],
   }),
-  key('Los costes ocultos', 'Un indexado puede cobrar un 0,1-0,3 % al año; muchos fondos activos (con un equipo que elige empresas) en España, un 1,5 % o más. Lo verás en el **KID**, como gastos corrientes.\n\nAdemás del TER: comisión del bróker por operación, *spread* (la diferencia entre el precio de compra y el de venta), custodia (lo que cobran por guardarte los valores), cambio de divisa y, en algunos fondos, comisiones al entrar o al salir (de suscripción o de reembolso). Súmalos todos.', 'Cada 1 % anual de costes se come una parte enorme del resultado, por el interés compuesto.', 'Pruébalo: pregúntale a la profesora Lumi qué costes mirar en el KID de un ETF.'),
+  key('Los costes ocultos', 'Un indexado puede cobrar un 0,1-0,3 % al año; muchos fondos activos (con un equipo que elige empresas) en España, un 1,5 % o más. Lo verás en el **KID**, como gastos corrientes.\n\nAdemás del TER: comisión del bróker por operación, *spread* (la diferencia entre el precio de compra y el de venta), custodia (lo que cobran por guardarte los valores), cambio de divisa y, en algunos fondos, comisiones al entrar o al salir (de suscripción o de reembolso). Súmalos todos.', 'Cada 1 % anual de costes se come una parte enorme del resultado, por el interés compuesto.', 'Pruébalo: en Mercado, empieza a comprar un ETF y mira la comisión simulada antes de confirmar.'),
 ], [
   num('10.000 € a 30 años al 7 % anual sin costes se convierten en 76.123 €. Con un 1 % de costes anuales (6 % neto), ¿en cuánto? (redondea a euros)', 57435, '€', '10.000 × 1,06³⁰ ≈ 57.435 €.'),
   num('Con esos datos, ¿cuánto te cuesta en total ese 1 % anual a 30 años? (redondea)', 18688, '€', '76.123 − 57.435 = 18.688 €: casi el doble de lo que invertiste, solo en costes.'),
@@ -265,14 +265,14 @@ export const u4l3 = lesson('u4l3', 'Tu horizonte temporal', [
       why: 'En estos 40 años, el **20,8 %** de los periodos de un año acabó en pérdida, y el peor perdió un 45 %.',
     },
     goal: { text: 'Encuentra a partir de cuántos años no hubo ni un solo caso con pérdida.', when: [when('lossPct', '==', 0)] },
-    insight: 'En estos datos, esperando **14 años o más** nunca se perdió dinero. Pero el pasado no garantiza el futuro: quien compró en 1929, o en Japón en 1989, esperó mucho más. El plazo decide el riesgo que puedes asumir.',
+    insight: 'En estos datos, sin contar dividendos, esperando **14 años o más** nunca se perdió dinero. Pero el pasado no garantiza el futuro: quien compró en 1929, o en Japón en 1989, esperó mucho más. El plazo decide el riesgo que puedes asumir.',
     lumi: [
       { when: when('years', '<=', 2), say: 'A corto plazo la bolsa es una montaña rusa: casi cualquier cosa puede pasar.', mood: 'WORRIED' },
       { when: when('years', '>=', 10), say: 'Mira el peor caso: aún hay periodos largos en pérdidas (los que empezaron en 2000).', mood: 'THINKING' },
       { say: 'Sigue alargando la espera', mood: 'HAPPY' },
     ],
   }),
-  key('Ponle fecha a cada euro', '• **Colchón para imprevistos (siempre disponible):** cuenta remunerada, que te paga intereses, o fondo monetario, muy estable.\n• **Viaje o coche (1-3 años):** depósitos o Letras del Tesoro, es decir, prestar al banco o al Estado a plazo fijo.\n• **Entrada de un piso (3-7 años):** mezcla prudente, con más renta fija (bonos).\n• **Jubilación (15 años o más):** sobre todo acciones diversificadas.\n\nTu cartera sencilla a largo plazo: un ETF indexado de todo el mundo, comisiones bajas, una aportación cada mes y solo dinero que no vayas a necesitar en muchos años.', 'No se invierte en bolsa el dinero que se necesita pronto: puede estar bajando justo cuando lo necesites.', 'Pruébalo: en Mercado, mira el S&P 500 en velas mensuales y busca sus caídas.'),
+  key('Ponle fecha a cada euro', '• **Colchón para imprevistos (siempre disponible):** cuenta remunerada, que te paga intereses, o fondo monetario, muy estable.\n• **Viaje o coche (1-3 años):** depósitos o Letras del Tesoro, es decir, prestar al banco o al Estado a plazo fijo.\n• **Entrada de un piso (3-7 años):** mezcla prudente, con más renta fija (bonos).\n• **Jubilación (15 años o más):** sobre todo acciones diversificadas.\n\nUn ejemplo de cartera sencilla a largo plazo: un ETF indexado de todo el mundo, comisiones bajas, una aportación cada mes y solo dinero que no vayas a necesitar en muchos años.', 'No se invierte en bolsa el dinero que se necesita pronto: puede estar bajando justo cuando lo necesites.', 'Pruébalo: en Mercado, abre el S&P 500 en velas mensuales y mira cuánto tardó en recuperarse de 2008.'),
 ], [
   match('Empareja cada objetivo con dónde suele tener sentido.', [['Colchón de emergencia', 'Cuenta remunerada'], ['Viaje dentro de un año', 'Depósito o letras'], ['Entrada de un piso en 5 años', 'Mezcla prudente, más renta fija'], ['Jubilación en 35 años', 'Sobre todo acciones diversificadas']], 'A más plazo, más tiempo para recuperarse de las caídas.'),
   single('Necesitas la entrada de un piso dentro de 18 meses. ¿Dónde tiene más sentido?', ['100 % en acciones tecnológicas', 'Depósitos o un fondo monetario', 'Criptomonedas'], 1, 'A 18 meses, una caída del 30 % arruinaría el plan.'),

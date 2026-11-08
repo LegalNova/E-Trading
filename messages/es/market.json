@@ -1,1 +1,124 @@
-{}
+{
+  "market2": {
+    "facts": {
+      "title": "La empresa en cifras",
+      "titleFund": "El fondo en cifras",
+      "none": "Sin datos de la empresa por ahora.",
+      "missing": "Sin datos: {list}.",
+      "source": "Fuente: Yahoo Finance · datos del {date}",
+      "sourcePlain": "Fuente: Yahoo Finance",
+      "approx": "≈ {value}",
+      "peLoss": "No aplica: tuvo pérdidas",
+      "what": "Qué es: {label}",
+      "label": {
+        "marketCap": "Capitalización",
+        "pe": "PER",
+        "dividendYield": "Rentabilidad por dividendo",
+        "eps": "BPA (beneficio por acción)",
+        "beta": "Beta",
+        "ter": "Comisión anual (TER)"
+      },
+      "help": {
+        "marketCap": "Lo que vale la empresa en bolsa: el precio de una acción por todas las acciones que hay.",
+        "pe": "Cuántos años de beneficios pagas por la acción: su precio dividido entre el beneficio por acción.",
+        "dividendYield": "Lo que la empresa reparte en dividendos en un año, en % del precio de la acción.",
+        "eps": "El beneficio del último año dividido entre el número de acciones, en la moneda de sus cuentas.",
+        "beta": "Cuánto se mueve frente al mercado: 1 es lo mismo que el mercado; más de 1, se mueve más.",
+        "ter": "Lo que el fondo te cobra cada año por gestionarlo, en % de lo que tienes invertido."
+      },
+      "lesson": {
+        "marketCap": "Clase: grandes, medianas y pequeñas",
+        "pe": "Clase: el PER",
+        "dividendYield": "Clase: rentabilidad por dividendo",
+        "eps": "Clase: la cuenta de resultados",
+        "beta": "Clase: la correlación",
+        "ter": "Clase: las comisiones de un fondo"
+      }
+    },
+    "window": {
+      "title": "Bolsas abiertas ahora",
+      "us": "EE. UU.",
+      "eu": "Europa",
+      "asia": "Asia (Tokio)",
+      "crypto": "Cripto",
+      "open": "Abierta",
+      "closed": "Cerrada",
+      "always": "24 h, todos los días",
+      "closesIn": "cierra en {time}",
+      "opensAt": "abre a las {time}",
+      "opensOn": "abre el {day} a las {time}",
+      "note": "Horas en la zona horaria de tu dispositivo. Europa: Madrid, Fráncfort y París abren a la vez."
+    },
+    "ideas": {
+      "title": "Ideas para estudiar",
+      "intro": "Listas con un criterio claro, calculadas con datos reales, para que practiques el análisis. Elige una empresa, ábrela y pregúntate por qué está en la lista.",
+      "teaser": "Listas con un criterio claro para practicar el análisis.",
+      "notAdvice": "Esto no es una recomendación: son listas para que practiques el análisis.",
+      "seeAll": "Ver todas",
+      "jump": "Ir a una lista",
+      "learn": "Aprende a analizarla",
+      "asOf": "Datos del {date}",
+      "empty": "Sin datos por ahora. Vuelve en un rato.",
+      "emptyShort": "Sin datos por ahora",
+      "follow": "Seguir",
+      "following": "Siguiendo",
+      "followAria": "Seguir {name} para estudiarla",
+      "unfollowAria": "Dejar de seguir {name}",
+      "followed": "Añadida a tus favoritos para estudiarla",
+      "unfollowed": "Quitada de tus favoritos",
+      "followError": "No se ha podido guardar. Inténtalo de nuevo.",
+      "metric": {
+        "drops": "bajó un {v}",
+        "dividend": "dividendo del {v}",
+        "lowPe": "PER {v} · sector {ref}",
+        "pe": "PER {v}",
+        "cap": "vale {v}"
+      },
+      "lists": {
+        "drops": {
+          "title": "Las que más cayeron en la última sesión",
+          "short": "Caídas",
+          "short2": "Grandes empresas con la mayor bajada",
+          "criterion": "Acciones de los grandes índices (S&P 500, IBEX 35, Euro Stoxx 50, Nikkei 225…) con la mayor bajada en su última sesión.",
+          "warning": "Una caída no es una oportunidad por sí sola. Busca primero por qué ha caído."
+        },
+        "dividend": {
+          "title": "Dividendo alto",
+          "short": "Dividendo",
+          "short2": "Rentabilidad por dividendo de más del 4 %",
+          "criterion": "Acciones con una rentabilidad por dividendo de más del 4 %, la prevista y la de los últimos 12 meses. De mayor a menor tamaño.",
+          "warning": "Un dividendo muy alto puede ser una señal de alarma. Mira si la empresa gana lo suficiente para pagarlo."
+        },
+        "lowPe": {
+          "title": "PER bajo para su sector",
+          "short": "PER bajo",
+          "short2": "PER por debajo de la mediana de su sector",
+          "criterion": "Acciones con beneficios (PER mayor que 0) y un PER por debajo de la mediana de su sector. De mayor a menor tamaño."
+        },
+        "ibex": {
+          "title": "Grandes empresas del IBEX 35",
+          "short": "IBEX 35",
+          "short2": "Las que más valen en bolsa",
+          "criterion": "Las 10 empresas del IBEX 35 que más valen en bolsa (por capitalización)."
+        },
+        "etf": {
+          "title": "ETF para empezar",
+          "short": "ETF",
+          "short2": "Índices amplios: mundo, S&P 500, Europa",
+          "criterion": "Fondos cotizados que replican índices amplios: el mundo entero, el S&P 500, Europa o los países emergentes."
+        }
+      }
+    },
+    "chart": {
+      "draw": "Dibujar",
+      "drawOpen": "Ocultar herramientas de dibujo",
+      "drawClosed": "Mostrar herramientas de dibujo"
+    },
+    "units": {
+      "t": "{n} billones {cur}",
+      "b": "{n} mil millones {cur}",
+      "m": "{n} millones {cur}",
+      "u": "{n} {cur}"
+    }
+  }
+}

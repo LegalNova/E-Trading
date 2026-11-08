@@ -1,1 +1,124 @@
-{}
+{
+  "market2": {
+    "facts": {
+      "title": "L'empresa en xifres",
+      "titleFund": "El fons en xifres",
+      "none": "Encara no hi ha dades de l'empresa.",
+      "missing": "Sense dades: {list}.",
+      "source": "Font: Yahoo Finance · dades del {date}",
+      "sourcePlain": "Font: Yahoo Finance",
+      "approx": "≈ {value}",
+      "peLoss": "No s'aplica: va tenir pèrdues",
+      "what": "Què és: {label}",
+      "label": {
+        "marketCap": "Capitalització",
+        "pe": "PER",
+        "dividendYield": "Rendibilitat per dividend",
+        "eps": "BPA (benefici per acció)",
+        "beta": "Beta",
+        "ter": "Comissió anual (TER)"
+      },
+      "help": {
+        "marketCap": "El que val l'empresa a borsa: el preu d'una acció per totes les accions que hi ha.",
+        "pe": "Quants anys de beneficis pagues per l'acció: el seu preu dividit entre el benefici per acció.",
+        "dividendYield": "El que l'empresa reparteix en dividends en un any, en % del preu de l'acció.",
+        "eps": "El benefici de l'últim any dividit entre el nombre d'accions, en la moneda dels seus comptes.",
+        "beta": "Quant es mou respecte al mercat: 1 és el mateix que el mercat; més d'1, es mou més.",
+        "ter": "El que el fons et cobra cada any per gestionar-lo, en % del que tens invertit."
+      },
+      "lesson": {
+        "marketCap": "Classe: grans, mitjanes i petites",
+        "pe": "Classe: el PER",
+        "dividendYield": "Classe: rendibilitat per dividend",
+        "eps": "Classe: el compte de resultats",
+        "beta": "Classe: la correlació",
+        "ter": "Classe: les comissions d'un fons"
+      }
+    },
+    "window": {
+      "title": "Borses obertes ara",
+      "us": "EUA",
+      "eu": "Europa",
+      "asia": "Àsia (Tòquio)",
+      "crypto": "Cripto",
+      "open": "Oberta",
+      "closed": "Tancada",
+      "always": "24 h, cada dia",
+      "closesIn": "tanca d'aquí a {time}",
+      "opensAt": "obre a les {time}",
+      "opensOn": "obre el {day} a les {time}",
+      "note": "Hores a la zona horària del teu dispositiu. Europa: Madrid, Frankfurt i París obren alhora."
+    },
+    "ideas": {
+      "title": "Idees per estudiar",
+      "intro": "Llistes amb un criteri clar, calculades amb dades reals, perquè practiquis l'anàlisi. Tria una empresa, obre-la i pregunta't per què és a la llista.",
+      "teaser": "Llistes amb un criteri clar per practicar l'anàlisi.",
+      "notAdvice": "Això no és una recomanació: són llistes perquè practiquis l'anàlisi.",
+      "seeAll": "Veure-les totes",
+      "jump": "Anar a una llista",
+      "learn": "Aprèn a analitzar-la",
+      "asOf": "Dades del {date}",
+      "empty": "Encara no hi ha dades. Torna d'aquí a una estona.",
+      "emptyShort": "Encara no hi ha dades",
+      "follow": "Seguir",
+      "following": "Seguint",
+      "followAria": "Seguir {name} per estudiar-la",
+      "unfollowAria": "Deixar de seguir {name}",
+      "followed": "Afegida als teus preferits per estudiar-la",
+      "unfollowed": "Treta dels teus preferits",
+      "followError": "No s'ha pogut desar. Torna-ho a provar.",
+      "metric": {
+        "drops": "va baixar un {v}",
+        "dividend": "dividend del {v}",
+        "lowPe": "PER {v} · sector {ref}",
+        "pe": "PER {v}",
+        "cap": "val {v}"
+      },
+      "lists": {
+        "drops": {
+          "title": "Les que més van caure a l'última sessió",
+          "short": "Caigudes",
+          "short2": "Grans empreses amb la baixada més gran",
+          "criterion": "Accions dels grans índexs (S&P 500, IBEX 35, Euro Stoxx 50, Nikkei 225…) amb la baixada més gran a l'última sessió.",
+          "warning": "Una caiguda no és una oportunitat per si sola. Busca primer per què ha caigut."
+        },
+        "dividend": {
+          "title": "Dividend alt",
+          "short": "Dividend",
+          "short2": "Rendibilitat per dividend de més del 4 %",
+          "criterion": "Accions amb una rendibilitat per dividend de més del 4 %, la prevista i la dels últims 12 mesos. De més gran a més petita.",
+          "warning": "Un dividend molt alt pot ser un senyal d'alarma. Mira si l'empresa guanya prou per pagar-lo."
+        },
+        "lowPe": {
+          "title": "PER baix per al seu sector",
+          "short": "PER baix",
+          "short2": "PER per sota de la mediana del sector",
+          "criterion": "Accions amb beneficis (PER més gran que 0) i un PER per sota de la mediana del seu sector. De més gran a més petita."
+        },
+        "ibex": {
+          "title": "Grans empreses de l'IBEX 35",
+          "short": "IBEX 35",
+          "short2": "Les que més valen a borsa",
+          "criterion": "Les 10 empreses de l'IBEX 35 que més valen a borsa (per capitalització)."
+        },
+        "etf": {
+          "title": "ETF per començar",
+          "short": "ETF",
+          "short2": "Índexs amplis: món, S&P 500, Europa",
+          "criterion": "Fons cotitzats que repliquen índexs amplis: el món sencer, l'S&P 500, Europa o els països emergents."
+        }
+      }
+    },
+    "chart": {
+      "draw": "Dibuixar",
+      "drawOpen": "Amagar les eines de dibuix",
+      "drawClosed": "Mostrar les eines de dibuix"
+    },
+    "units": {
+      "t": "{n} bilions {cur}",
+      "b": "{n} mil milions {cur}",
+      "m": "{n} milions {cur}",
+      "u": "{n} {cur}"
+    }
+  }
+}

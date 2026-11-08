@@ -10,14 +10,18 @@ import 'server-only'
 //   cierre no borra que se concentró; comprar poco a poco para diversificar no penaliza).
 //   El dinero que entra o sale sin invertir (el saldo extra de Max, un reinicio de cartera) no es rentabilidad.
 // - Cierre (lunes): suben los 7 primeros (+30 gemas), bajan los puestos 26–30. Nadie baja de Novato ni sube de Experto.
+// - Ligas de amigos (friends.ts): «Esta semana» usa estos mismos puntos; «Temporada del mes» usa la rentabilidad del mes
+//   natural de Madrid con las mismas reglas (tope ±10 %, concentrada = ganancias a la mitad). Base del mes: MonthBase,
+//   que se apunta la primera vez que la persona usa la app ese mes (o la foto del último día del mes anterior).
 import type { LeagueT } from '@/shared/contract'
-import { addDays, weekOf } from '@/shared/time'
+import type { LeagueMember } from '@/generated/prisma/client'
+import { addDays, DAY_MS, dayOf, weekOf } from '@/shared/time'
 import { db } from '../db'
 import { currentLocale } from '../locale'
 import { DIVISIONS } from '../content/catalog'
 import { bump, checkAchievements, notify, START_CASH, withCtx, type Ctx, type Tx } from './core'
 import { priceBook } from './trading'
-import { madridMidnight, score, tradePoints, weekReturnPct } from '@/shared/league-points'
+import { lastDayOf, madridMidnight, monthOf, monthReturnPct, monthStart, nextMonth, prevMonth, score, seasonPct, tradePoints, weekReturnPct } from '@/shared/league-points'
 
 export const GROUP_SIZE = 30
 export const PROMOTE_TOP = 7
@@ -35,6 +39,7 @@ const weekXpOf = (c: Ctx, weekKey: string) => (c.g.weekKey === weekKey ? c.g.wee
 
 /** Asegura que quien usa la app esta semana está en la liga (y actualiza sus puntos) */
 export async function ensureMembership(c: Ctx, evenWithoutXp = false) {
+  await ensureMonthBase(c)
   const weekKey = leagueWeekKey()
   const xp = weekXpOf(c, weekKey)
   if (xp <= 0 && !evenWithoutXp) return
@@ -57,17 +62,67 @@ export async function ensureMembership(c: Ctx, evenWithoutXp = false) {
 /** Dinero que entra o sale de la cartera sin ser inversión (saldo extra de Max, reinicio): no cuenta como rentabilidad */
 export async function addFlow(tx: Tx, userId: string, amount: number) {
   if (!amount || !Number.isFinite(amount)) return
-  await tx.leagueMember.updateMany({ where: { weekKey: leagueWeekKey(), userId, finalRank: null }, data: { flows: { increment: Math.round(amount * 100) / 100 } } })
+  const flow = Math.round(amount * 100) / 100
+  await tx.leagueMember.updateMany({ where: { weekKey: leagueWeekKey(), userId, finalRank: null }, data: { flows: { increment: flow } } })
+  // Temporada del mes: igual. Si aún no tiene base este mes pero hay foto del último día del mes anterior, la base es
+  // esa foto (anterior a este dinero) y el dinero se apunta como entrada. Sin foto, no se apunta nada: la base se
+  // tomará más tarde con el valor de después (que ya incluye este dinero), así que tampoco cuenta como rentabilidad.
+  const month = monthOf()
+  const up = await tx.monthBase.updateMany({ where: { userId, month }, data: { flows: { increment: flow } } })
+  if (up.count) return
+  const snap = await tx.portfolioSnapshot.findUnique({ where: { userId_day: { userId, day: lastDayOf(prevMonth(month)) } } })
+  if (!snap) return
+  const made = await tx.monthBase.createMany({ data: [{ userId, month, startValue: snap.value, flows: flow }], skipDuplicates: true })
+  // Otra petición la acaba de crear: entonces se suma ahí
+  if (!made.count) await tx.monthBase.updateMany({ where: { userId, month }, data: { flows: { increment: flow } } })
+}
+
+// ── Base del mes (temporada de las ligas de amigos) ─────
+const monthNo = (month: string) => Number(month.replace('-', ''))
+
+/** La primera vez que la persona usa la app en el mes se apunta su base (una vez por mes, con un contador) */
+async function ensureMonthBase(c: Ctx) {
+  const month = monthOf()
+  if (c.counters.monthBase === monthNo(month)) return
+  const got = await monthBases(c.tx, [c.user.id], month)
+  // Sin cartera todavía (bienvenida a medias): se vuelve a mirar en la siguiente petición
+  if (got.has(c.user.id)) c.counters.monthBase = monthNo(month)
+}
+
+/** Bases del mes de varias personas; crea las que faltan. Quien ya tenía cartera parte de la foto del último día del mes
+ *  anterior; si no hay foto, de lo que vale ahora. Sin cartera no hay base (sale con 0 %). */
+export async function monthBases(tx: Tx, userIds: string[], month = monthOf()) {
+  const out = new Map<string, { startValue: number; flows: number; createdAt: Date }>()
+  if (!userIds.length) return out
+  const have = await tx.monthBase.findMany({ where: { month, userId: { in: userIds } } })
+  const missing = userIds.filter(id => !have.some(h => h.userId === id))
+  if (missing.length && month === monthOf()) {
+    const [snaps, values] = await Promise.all([tx.portfolioSnapshot.findMany({ where: { userId: { in: missing }, day: lastDayOf(prevMonth(month)) } }), portfolioValues(tx, missing)])
+    const data = missing.flatMap(userId => {
+      const snap = snaps.find(s => s.userId === userId)
+      const v = snap ? Number(snap.value) : values.get(userId)?.value
+      return v === undefined ? [] : [{ userId, month, startValue: v }]
+    })
+    if (data.length) {
+      await tx.monthBase.createMany({ data, skipDuplicates: true })
+      have.push(...(await tx.monthBase.findMany({ where: { month, userId: { in: data.map(d => d.userId) } } })))
+    }
+  }
+  for (const b of have) out.set(b.userId, { startValue: Number(b.startValue), flows: Number(b.flows), createdAt: b.createdAt })
+  return out
 }
 
 /** Marca en los contadores de la persona que esta semana tuvo la cartera concentrada antes de vender
  *  (se llama tras operar con el número de operaciones hechas). Comprar poco a poco para diversificar no marca:
  *  solo cuenta la cartera que había justo antes de cada venta. Una clave por semana (conc_20261102). */
 const concKey = (weekKey: string) => `conc_${weekKey.replaceAll('-', '')}`
+/** Lo mismo para la temporada del mes (concm_202611) */
+const concMonthKey = (month: string) => `concm_${monthNo(month)}`
 export async function noteConcentration(c: Ctx, trades: number) {
   const weekKey = leagueWeekKey()
   const key = concKey(weekKey)
-  if (c.counters[key]) return
+  const mkey = concMonthKey(monthOf())
+  if (c.counters[key] && c.counters[mkey]) return
   const recent = await c.tx.trade.findMany({ where: { userId: c.user.id, status: 'FILLED' }, orderBy: { createdAt: 'desc' }, take: trades, select: { side: true, symbol: true, qty: true } })
   const sold = recent.filter(t => t.side === 'SELL')
   if (!sold.length) return
@@ -81,8 +136,10 @@ export async function noteConcentration(c: Ctx, trades: number) {
   const book = await priceBook([...before.keys()])
   if (!isConcentrated([...before].map(([symbol, p]) => ({ symbol, ...p })), book)) return
   const keep = concKey(addDays(weekKey, -7))
-  for (const k of Object.keys(c.counters)) if (k.startsWith('conc_') && k < keep) delete c.counters[k]
+  const keepMonth = concMonthKey(prevMonth(monthOf()))
+  for (const k of Object.keys(c.counters)) if ((k.startsWith('conc_') && k < keep) || (k.startsWith('concm_') && k < keepMonth)) delete c.counters[k]
   c.counters[key] = 1
+  c.counters[mkey] = 1
 }
 
 type Held = { symbol: string; qty: number; avgPrice: number }
@@ -165,15 +222,20 @@ async function returnsOf(tx: Tx, weekKey: string, members: { userId: string; sta
 
 const ANON = { es: 'Jugador anónimo', ca: 'Jugador anònim', en: 'Anonymous player' } as const
 
-function displayName(name: string, visible: boolean) {
-  if (!visible) return ANON[currentLocale()]
+/** Nombre en las clasificaciones: nombre e inicial, o «Jugador anónimo» si la persona lo eligió (leagueVisible) */
+export function displayName(name: string, visible: boolean, locale: keyof typeof ANON = currentLocale()) {
+  if (!visible) return ANON[locale] ?? ANON.es
   const parts = name.trim().split(/\s+/)
   return parts.length > 1 ? `${parts[0]} ${parts[1][0].toLocaleUpperCase('es')}.` : parts[0] || '—'
 }
 
 /** Clasificación de un grupo (la usan la pantalla y el cierre semanal) */
 async function standings(tx: Tx, weekKey: string, groupNo: number) {
-  const members = await tx.leagueMember.findMany({ where: { weekKey, groupNo } })
+  return rank(tx, weekKey, await tx.leagueMember.findMany({ where: { weekKey, groupNo } }))
+}
+
+/** Puntos de la semana y orden (XP + inversión, desempate por XP). Lo comparten la liga general y las de amigos */
+async function rank(tx: Tx, weekKey: string, members: LeagueMember[]) {
   const ids = members.map(m => m.userId)
   const [users, rets] = await Promise.all([
     tx.user.findMany({ where: { id: { in: ids } }, select: { id: true, name: true, leagueVisible: true, blockedAt: true } }),
@@ -189,6 +251,68 @@ async function standings(tx: Tx, weekKey: string, groupNo: number) {
     .filter(m => m.exists && !m.blocked)
     .sort((a, b) => b.score - a.score || b.weeklyXp - a.weeklyXp)
     .map((m, i) => ({ ...m, rank: i + 1 }))
+}
+
+// ── Para las ligas de amigos (friends.ts) ──────────────
+/** «Esta semana»: los mismos puntos y el mismo orden que la liga general, solo con estas personas.
+ *  Quien aún no ha entrado en la liga esta semana no sale aquí (friends.ts lo pone con 0). */
+export async function weekStandingsOf(tx: Tx, userIds: string[]) {
+  const weekKey = leagueWeekKey()
+  const rows = userIds.length ? await rank(tx, weekKey, await tx.leagueMember.findMany({ where: { weekKey, userId: { in: userIds } } })) : []
+  return { endsAt: madridMidnight(addDays(weekKey, 7)), rows }
+}
+
+const concentratedIn = async (tx: Tx, userIds: string[], keys: string[]) =>
+  new Set((await tx.gameState.findMany({ where: { userId: { in: userIds } }, select: { userId: true, counters: true } })).filter(g => keys.some(k => (g.counters as Record<string, number> | null)?.[k])).map(g => g.userId))
+
+/** «Temporada del mes»: rentabilidad del mes natural (Madrid) con las reglas de la liga: tope de ±10 % y, si la cartera
+ *  está o estuvo concentrada este mes, las ganancias cuentan la mitad. Sin cartera o sin base: 0 %. */
+export async function seasonOf(tx: Tx, userIds: string[]) {
+  const month = monthOf()
+  const [bases, values, flagged] = await Promise.all([monthBases(tx, userIds, month), portfolioValues(tx, userIds), concentratedIn(tx, userIds, [concMonthKey(month), concKey(leagueWeekKey())])])
+  const rows = new Map<string, { pct: number; concentrated: boolean }>()
+  for (const id of userIds) {
+    const b = bases.get(id)
+    const v = values.get(id)
+    if (!b || !v) {
+      rows.set(id, { pct: 0, concentrated: false })
+      continue
+    }
+    const raw = monthReturnPct(b.startValue, v.value, b.flows)
+    const conc = v.concentrated || flagged.has(id)
+    rows.set(id, { pct: seasonPct(raw, conc), concentrated: conc && raw > 0 })
+  }
+  return { month, endsAt: monthStart(nextMonth(month)), rows }
+}
+
+/** Ganadores del mes anterior entre estas personas, calculado al vuelo con las bases guardadas: la base de ese mes y,
+ *  como valor final, su última foto de ese mes (o la base de este mes, si se tomó en sus primeros días).
+ *  Sin datos no cuenta. Solo hay campeón si ganó algo (más de 0 %); con empate, varios. */
+export async function lastSeasonWinners(tx: Tx, userIds: string[]) {
+  const month = monthOf()
+  const prev = prevMonth(month)
+  if (!userIds.length) return { month: prev, pct: 0, userIds: [] as string[] }
+  const [bases, nowBases, snaps, flagged] = await Promise.all([
+    tx.monthBase.findMany({ where: { month: prev, userId: { in: userIds } } }),
+    tx.monthBase.findMany({ where: { month, userId: { in: userIds } } }),
+    tx.portfolioSnapshot.findMany({ where: { userId: { in: userIds }, day: { gte: `${prev}-01`, lte: lastDayOf(prev) } }, orderBy: { day: 'desc' } }),
+    concentratedIn(tx, userIds, [concMonthKey(prev)]),
+  ])
+  const early = monthStart(month).getTime() + 3 * DAY_MS
+  let best = 0
+  let winners: string[] = []
+  for (const b of bases) {
+    const snap = snaps.find(x => x.userId === b.userId && x.day >= dayOf(b.createdAt))
+    const cur = nowBases.find(x => x.userId === b.userId)
+    const end = snap ? Number(snap.value) : cur && cur.createdAt.getTime() < early ? Number(cur.startValue) : null
+    if (end === null) continue
+    const pct = seasonPct(monthReturnPct(Number(b.startValue), end, Number(b.flows)), flagged.has(b.userId))
+    if (pct <= 0 || pct < best) continue
+    if (pct > best) winners = []
+    best = pct
+    winners.push(b.userId)
+  }
+  return { month: prev, pct: best, userIds: winners }
 }
 
 export const league = () => withCtx(leagueFor)

@@ -19,6 +19,10 @@ import { Disclaimer, ErrorState, PageSkeleton, Seg, Sheet, TopBar } from '../ui/
 import { BadgeArt } from '../ui/badge'
 import { Lumi, stageOf } from '../ui/lumi'
 import { AssetBadge, AssetRow, assetHref, currencySymbol, decimalsFor, flagOf, fmtAssetPrice, Live, MarketSeg, useStatus, useUnit } from './market-ui'
+import { CompanyFacts, IdeasTeaser, MarketWindow } from './market-extra'
+import { ReportButton } from '../report-button'
+import { AssetMission } from '../missions'
+import { JournalLink, OrderReason } from '../journal'
 
 export { fmtAssetPrice } from './market-ui'
 
@@ -109,13 +113,16 @@ export function Market() {
             {watch.data && watch.data.length < 3 && <span className="t-cap px-0.5">{t('favHint')}</span>}
           </section>
 
+          {/* Qué bolsas están abiertas ahora mismo */}
+          <MarketWindow />
+
           {/* Lo que más se mueve hoy */}
           <section aria-label={t('movers')} className="flex min-w-0 flex-col gap-2">
             <div className="flex flex-wrap items-center justify-between gap-2 px-0.5">
               <span className="t-head">{t('movers')}</span>
-              <Seg label={t('movers')} className="w-[200px]" value={movers} onChange={setMovers} options={[{ value: 'gainers', label: t('gainers') }, { value: 'losers', label: t('losers') }]} />
+              <Seg label={t('movers')} className={`w-[200px] ${TAP}`} value={movers} onChange={setMovers} options={[{ value: 'gainers', label: t('gainers') }, { value: 'losers', label: t('losers') }]} />
             </div>
-            <div className="pills" role="group" aria-label={t('region')}>
+            <div className={`pills ${PILL_TAP}`} role="group" aria-label={t('region')}>
               {REGIONS.map(r => (
                 <button key={r} aria-pressed={region === r} onClick={() => setRegion(r)}>
                   {t(`regions.${r}`)}
@@ -131,16 +138,19 @@ export function Market() {
                 <div className="li t-foot">{t('noMovers')}</div>
               )}
             </div>
-            <Link href={exploreHref({ type: 'STOCK', region: region === 'ALL' ? undefined : region, sort: movers })} className="link px-0.5 text-[14px]">
+            <Link href={exploreHref({ type: 'STOCK', region: region === 'ALL' ? undefined : region, sort: movers })} className="link inline-flex min-h-11 items-center px-0.5 text-[14px]">
               {t('seeRanking')}
             </Link>
           </section>
+
+          {/* Listas con criterio para practicar el análisis (no son recomendaciones) */}
+          <IdeasTeaser />
 
           {/* Índices de la región */}
           <section aria-label={t('indices')} className="flex min-w-0 flex-col gap-2">
             <div className="flex items-center justify-between px-0.5">
               <span className="t-head">{t('indices')}</span>
-              <Link href={exploreHref({ type: 'INDEX', region: region === 'ALL' ? undefined : region })} className="link text-[14px]">
+              <Link href={exploreHref({ type: 'INDEX', region: region === 'ALL' ? undefined : region })} className="link inline-flex min-h-11 items-center text-[14px]">
                 {t('seeAll')}
               </Link>
             </div>
@@ -169,7 +179,7 @@ export function Market() {
               <span className="t-head px-0.5">{t('byIndex')}</span>
               <div className="flex flex-wrap gap-2">
                 {facets.data.indices.map(ix => (
-                  <Link key={ix.value} href={exploreHref({ index: ix.value })} className="chip">
+                  <Link key={ix.value} href={exploreHref({ index: ix.value })} className="chip pointer-coarse:min-h-11">
                     {ix.value} <span className="t-cap">{ix.count}</span>
                   </Link>
                 ))}
@@ -184,6 +194,10 @@ export function Market() {
     </div>
   )
 }
+
+/** Objetivos táctiles de 44 px en el móvil sin agrandar los controles con ratón */
+const TAP = 'pointer-coarse:[&>button]:h-11'
+const PILL_TAP = 'pointer-coarse:[&>button]:min-h-11'
 
 const TYPE_GLYPH: Record<AssetTypeT, string> = { STOCK: 'company', ETF: 'basket', INDEX: 'bars', CRYPTO: 'bitcoin', FX: 'exchange', COMMODITY: 'fuel' }
 
@@ -261,7 +275,7 @@ export function Explore({ initial }: { initial: Partial<AssetFilter> }) {
           <Icon name="search" size={18} className="absolute top-1/2 left-3.5 -translate-y-1/2" />
           <input className="input pl-10" style={{ background: 'var(--fill)', border: 'none' }} placeholder={t('searchGlobal')} aria-label={t('searchGlobal')} value={q} onChange={e => setQ(e.target.value)} />
         </div>
-        <div className="pills" role="group" aria-label={t('typeLabel')}>
+        <div className={`pills ${PILL_TAP}`} role="group" aria-label={t('typeLabel')}>
           <button aria-pressed={!f.type} onClick={() => set({ type: undefined, sector: undefined })}>
             {t('all')}
           </button>
@@ -272,7 +286,7 @@ export function Explore({ initial }: { initial: Partial<AssetFilter> }) {
           ))}
         </div>
         {geo && (
-          <div className="pills" role="group" aria-label={t('region')}>
+          <div className={`pills ${PILL_TAP}`} role="group" aria-label={t('region')}>
             {REGIONS.map(r => (
               <button key={r} aria-pressed={(f.region ?? 'ALL') === r} onClick={() => set({ region: r === 'ALL' ? undefined : r, country: undefined, index: undefined })}>
                 {t(`regions.${r}`)}
@@ -303,7 +317,7 @@ export function Explore({ initial }: { initial: Partial<AssetFilter> }) {
             {total === undefined ? t('loading') : t('resultsCount', { n: total })}
           </span>
           {active > 0 && (
-            <button className="link text-[14px]" onClick={() => (setF({ sort: f.sort }), setQ(''))}>
+            <button className="link min-h-11 text-[14px]" onClick={() => (setF({ sort: f.sort }), setQ(''))}>
               {t('clearFilters')}
             </button>
           )}
@@ -359,8 +373,8 @@ function FacetSelect({ label, value, onChange, options, render }: { label: strin
 function Stat({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="flex min-w-0 flex-col gap-0.5">
-      <span className="t-cap truncate">{label}</span>
-      <b className="truncate text-[15px] tabular-nums">{children}</b>
+      <span className="t-cap">{label}</span>
+      <b className="text-[15px] leading-5 tabular-nums [overflow-wrap:anywhere]">{children}</b>
     </div>
   )
 }
@@ -413,12 +427,13 @@ export function Asset({ symbol }: { symbol: string }) {
         back="/mercado"
         right={
           <div className="flex">
-            <button className="link" onClick={() => follow.mutate()} aria-pressed={watching}>
+            <button className="link min-h-11" onClick={() => follow.mutate()} aria-pressed={watching}>
               {watching ? `★ ${t('watching')}` : `☆ ${t('watch')}`}
             </button>
-            <button className="link" onClick={() => setAlertOpen(true)}>
+            <button className="link min-h-11" onClick={() => setAlertOpen(true)}>
               {t('alert')}
             </button>
+            <ReportButton kind="MARKET" context={{ symbol: a.symbol }} />
           </div>
         }
       />
@@ -426,12 +441,12 @@ export function Asset({ symbol }: { symbol: string }) {
         <div className="flex items-center gap-3">
           <AssetBadge a={a} size={48} />
           <div className="min-w-0 flex-1">
-            <span className="t-foot block truncate">
+            <span className="t-foot block">
               {flagOf(a.country)} {a.ticker} · {status(a)}
               {a.closesAt && ` · ${t('closesIn', { time: countdown(a.closesAt) })}`}
               {a.opensAt && ` · ${t('opensIn', { time: countdown(a.opensAt) })}`}
             </span>
-            <h1 className="t-title truncate">{a.name}</h1>
+            <h1 className="t-title [overflow-wrap:anywhere]">{a.name}</h1>
           </div>
         </div>
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
@@ -445,36 +460,41 @@ export function Asset({ symbol }: { symbol: string }) {
         </div>
         {a.currency !== 'EUR' && a.type !== 'FX' && a.type !== 'INDEX' && <span className="t-foot -mt-2">≈ {fmtAssetPrice({ price: a.priceInUserCurrency, currency: 'EUR', type: a.type }, locale)}</span>}
         {a.stale && <div className="banner">{t('staleAsset')}</div>}
+        <AssetMission symbol={a.symbol} />
 
         <ProChart symbol={a.symbol} decimals={dec} up={up} live={price} />
 
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-          <div className="card flex min-w-0 flex-col gap-3.5">
-            <b className="t-head">{t('keyData')}</b>
-            <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3">
-              <Stat label={t('prevClose')}>{fmt(a.prevClose)}</Stat>
-              {a.volume !== null && a.type !== 'FX' && <Stat label={t('volume')}>{compact(a.volume)}</Stat>}
-              <Stat label={t('currencyLabel')}>
-                {a.type === 'INDEX' ? t('points') : `${a.currency} (${currencySymbol(a.currency, locale)})`}
-              </Stat>
-              <Stat label={t('exchangeLabel')}>{a.type === 'CRYPTO' ? t('crypto247') : a.exchangeName}</Stat>
-              {a.country && a.type !== 'CRYPTO' && a.type !== 'FX' && <Stat label={t('countryLabel')}>{`${a.country}`}</Stat>}
-              {a.sector && <Stat label={t('sectorLabel')}>{a.sector}</Stat>}
-              <Stat label={t('delayLabel')}>{a.delayedMinutes ? t('delayed', { n: a.delayedMinutes }) : t('realtime')}</Stat>
-              <Stat label={t('timezoneLabel')}>{a.timezone.split('/').pop()?.replace('_', ' ')}</Stat>
-            </div>
-            {a.dayLow !== null && a.dayHigh !== null && <RangeBar label={t('dayRange')} low={a.dayLow} high={a.dayHigh} value={price} fmt={fmt} />}
-            {a.low52 !== null && a.high52 !== null && <RangeBar label={t('range52')} low={a.low52} high={a.high52} value={price} fmt={fmt} />}
-            {a.indices.length > 0 && (
-              <div className="flex flex-wrap items-center gap-1.5">
-                <span className="t-cap">{t('partOf')}</span>
-                {a.indices.map(ix => (
-                  <Link key={ix} href={exploreHref({ index: ix })} className="chip" style={{ background: 'var(--fill)' }}>
-                    {ix}
-                  </Link>
-                ))}
+          <div className="flex min-w-0 flex-col gap-3">
+            <div className="card flex min-w-0 flex-col gap-3.5">
+              <b className="t-head">{t('keyData')}</b>
+              <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3">
+                <Stat label={t('prevClose')}>{fmt(a.prevClose)}</Stat>
+                {a.volume !== null && a.type !== 'FX' && <Stat label={t('volume')}>{compact(a.volume)}</Stat>}
+                <Stat label={t('currencyLabel')}>
+                  {a.type === 'INDEX' ? t('points') : `${a.currency} (${currencySymbol(a.currency, locale)})`}
+                </Stat>
+                <Stat label={t('exchangeLabel')}>{a.type === 'CRYPTO' ? t('crypto247') : a.exchangeName}</Stat>
+                {a.country && a.type !== 'CRYPTO' && a.type !== 'FX' && <Stat label={t('countryLabel')}>{`${a.country}`}</Stat>}
+                {a.sector && <Stat label={t('sectorLabel')}>{a.sector}</Stat>}
+                <Stat label={t('delayLabel')}>{a.delayedMinutes ? t('delayed', { n: a.delayedMinutes }) : t('realtime')}</Stat>
+                <Stat label={t('timezoneLabel')}>{a.timezone.split('/').pop()?.replace('_', ' ')}</Stat>
               </div>
-            )}
+              {a.dayLow !== null && a.dayHigh !== null && <RangeBar label={t('dayRange')} low={a.dayLow} high={a.dayHigh} value={price} fmt={fmt} />}
+              {a.low52 !== null && a.high52 !== null && <RangeBar label={t('range52')} low={a.low52} high={a.high52} value={price} fmt={fmt} />}
+              {a.indices.length > 0 && (
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span className="t-cap">{t('partOf')}</span>
+                  {a.indices.map(ix => (
+                    <Link key={ix} href={exploreHref({ index: ix })} className="chip pointer-coarse:min-h-11" style={{ background: 'var(--fill)' }}>
+                      {ix}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+            {/* Capitalización, PER, dividendo, BPA y beta: se cargan aparte, sin frenar la ficha */}
+            <CompanyFacts a={a} />
           </div>
           <div className="flex min-w-0 flex-col gap-3">
             {pos ? (
@@ -602,7 +622,7 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
             <Icon name="close" />
           </button>
         </div>
-        <div className="seg" role="group" aria-label={t('orderType')}>
+        <div className={`seg ${TAP}`} role="group" aria-label={t('orderType')}>
           {types.map(x => (
             <button key={x.k} aria-pressed={type === x.k} onClick={() => (locked(x.k) ? setSheet('lock') : (setType(x.k), setTrigger(triggerFor(x.k))))}>
               {x.label}
@@ -635,7 +655,7 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
           </>
         ) : (
           <>
-            <Seg label={t('sellBy')} value={sellBy} onChange={v => (setSellBy(v), setSellAmount(Math.floor(posValue / 2)))} options={[{ value: 'pct', label: t('sellPct') }, { value: 'amount', label: t('sellAmount') }]} />
+            <Seg label={t('sellBy')} className={TAP} value={sellBy} onChange={v => (setSellBy(v), setSellAmount(Math.floor(posValue / 2)))} options={[{ value: 'pct', label: t('sellPct') }, { value: 'amount', label: t('sellAmount') }]} />
             {sellBy === 'pct' ? (
               <>
                 <div className="py-1.5 text-center">
@@ -694,7 +714,7 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
                     {x.label}
                     {locked(x.k) && <> <Icon name="lock" size={12} className="mb-0.5 inline-block align-middle" /></>}
                   </span>
-                  <button className="toggle" role="switch" aria-label={x.label} aria-checked={x.on} onClick={() => (locked(x.k) ? setSheet('lock') : x.setOn(!x.on))} />
+                  <button className="toggle before:absolute before:-inset-[7px] before:content-['']" role="switch" aria-label={x.label} aria-checked={x.on} onClick={() => (locked(x.k) ? setSheet('lock') : x.setOn(!x.on))} />
                 </div>
                 {x.on && (
                   <>
@@ -707,6 +727,7 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
             <span className="t-cap">{t('exitsNote')}</span>
           </div>
         )}
+        <OrderReason symbol={a.symbol} side={side} />
         <div className="card px-4 py-1" aria-live="polite">
           <div className="kv">
             <span>{t('estPrice')}</span>
@@ -923,7 +944,7 @@ function AlertSheet({ open, a, onClose }: { open: boolean; a: AssetDetailT; onCl
   return (
     <Sheet open={open} onClose={onClose} label={t('alertTitle')}>
       <span className="t-head">{t('alertTitle')} · {a.ticker}</span>
-      <Seg label={t('alertCondition')} value={cond} onChange={setCond} options={[{ value: 'BELOW', label: t('below') }, { value: 'ABOVE', label: t('above') }]} />
+      <Seg label={t('alertCondition')} className={TAP} value={cond} onChange={setCond} options={[{ value: 'BELOW', label: t('below') }, { value: 'ABOVE', label: t('above') }]} />
       <div className="field">
         <label htmlFor="al-price">
           {t('price')} ({a.type === 'FX' || a.type === 'INDEX' ? t('points') : currencySymbol(a.currency, locale)})
@@ -959,6 +980,7 @@ export function Portfolio() {
     <div className="pad">
       <h1 className="t-large px-0.5">{t('portfolio')}</h1>
       <MarketSeg active="portfolio" />
+      <JournalLink />
       <div className="card flex flex-col gap-1">
         <span className="t-foot">{t('totalValue')}</span>
         <Live value={total} className="big">
@@ -971,7 +993,7 @@ export function Portfolio() {
           {arrowPct(pf.totalReturnPct, locale)} {t('total')}
         </span>
         <div className="mt-1.5">{hist.data ? <LineChart values={hist.data.map(p => p.v)} up={totalUp} height={80} label={t('historyLabel')} format={(v, i) => `${money(v, 'EUR', locale)} · ${new Date(hist.data![i].t).toLocaleDateString(locale, { day: 'numeric', month: 'short' })}`} /> : <div className="skel h-20" />}</div>
-        <Seg label={t('range')} value={range} onChange={setRange} options={(['1W', '1M', '3M', 'ALL'] as const).map(r => ({ value: r, label: t(`pranges.${r}`) }))} />
+        <Seg label={t('range')} className={TAP} value={range} onChange={setRange} options={(['1W', '1M', '3M', 'ALL'] as const).map(r => ({ value: r, label: t(`pranges.${r}`) }))} />
       </div>
       <div className="grid grid-cols-2 gap-2.5">
         <div className="stat">
@@ -1009,12 +1031,12 @@ export function Portfolio() {
             <Link key={p.symbol} href={assetHref(p.symbol)} className="li">
               <AssetBadge a={{ ticker: tickerOf(p.symbol, p.type), type: p.type }} />
               <span className="min-w-0 flex-1">
-                <b className="block truncate">{p.name}</b>
+                <b className="block leading-5 [overflow-wrap:anywhere]">{p.name}</b>
                 <span className="t-cap">
                   {fmtQty(p.qty, locale)} {unit(p.type, tickerOf(p.symbol, p.type))} · {num(p.weightPct, locale, 0)} %
                 </span>
               </span>
-              <span className="text-right">
+              <span className="flex-none text-right whitespace-nowrap">
                 <Live value={toNum(p.marketValue)} className="font-bold">
                   {money(p.marketValue, 'EUR', locale)}
                 </Live>
@@ -1066,7 +1088,7 @@ export function Orders() {
                 <span className="t-cap">{o.triggerPrice ? t('pendingAt', { amount: money(o.amount, 'EUR', locale), price: num(toNum(o.triggerPrice), locale, Math.min(6, Math.max(2, o.triggerPrice.split('.')[1]?.length ?? 0))) }) : t('pendingOpen', { amount: money(o.amount, 'EUR', locale) })}
                   {o.parentId && ` · ${t('exitOfBuy')}`}</span>
               </span>
-              <button className="link" onClick={() => cancel.mutate(o.id)}>
+              <button className="link min-h-11" onClick={() => cancel.mutate(o.id)}>
                 {t('cancel')}
               </button>
             </div>

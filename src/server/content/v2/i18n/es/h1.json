@@ -37,7 +37,7 @@
       "Eso: pone 24.000 € y llega a más de 120.000 €.",
       "Si espera, pone 36.000 € y llega a unos 117.000 €.",
       "Si espera a los 30, con 100 € al mes",
-      "Pone 36.000 € y llega a unos 117.000 €. Empezando ya, a más de 120.000 €.",
+      "Con 36.000 € llega a unos 117.000 €. Empezando ya, a más de 120.000 €.",
       "Más o menos igual",
       "Casi, pero empezando ya pone 12.000 € menos y acaba con más.",
       "Es el **interés compuesto**: lo que ganas también gana, y el tiempo lo multiplica.",
@@ -48,9 +48,9 @@
     },
     {
      "title": "Lo que acabas de descubrir",
-     "body": "• Una **acción** es un trocito de una empresa. Con el S&P 500 tienes un trocito de 500 a la vez.\n• La bolsa a veces cae, y mucho, pero en esos 40 años quien no vendió multiplicó su dinero.\n• **Empezar pronto** pesa más que empezar con mucho.\n\nEn Lumi practicas con dinero virtual: puedes equivocarte sin perder nada de verdad.",
+     "body": "• Una **acción** es un trocito de una empresa. Con el S&P 500 tienes un trocito de 500 a la vez.\n• La bolsa a veces cae, y mucho, pero en esos 40 años quien no vendió multiplicó su dinero. Eso no garantiza que se repita.\n• **Empezar pronto** pesa más que empezar con mucho.\n\nEn Lumi practicas con dinero virtual: puedes equivocarte sin perder nada de verdad.",
      "key": "Invertir es comprar trocitos de empresas y darles tiempo para crecer.",
-     "tip": "Ahora tú: en Mercado, busca una empresa que conozcas y compra tu primera acción."
+     "tip": "Pruébalo: en Mercado, busca una empresa que conozcas y compra tu primera acción."
     }
    ]
   },
@@ -106,7 +106,7 @@
       "Una sola acción",
       "Datos reales: **10.000 €** en Tesla a finales de 2018, en dólares y sin dividendos. Así se vive la renta variable.",
       "Llega hasta el final, vendas o no.",
-      "Tesla se multiplicó por casi 19, pero llegó a caer un **72 %**, y es una excepción: solo un **4 %** de las acciones de EE. UU. generó toda la ganancia neta del mercado entre 1926 y 2016. Pruébalo: en Mercado, abre Tesla y mira cuánto ha subido y bajado este año.",
+      "Tesla se multiplicó por casi 19, pero llegó a caer un **72 %**, y es una excepción: solo un **4 %** de las acciones de EE. UU. generó toda la ganancia neta del mercado entre 1926 y 2016. Pruébalo: en Mercado, abre Tesla y mira su rango de 52 semanas: lo más bajo y lo más alto.",
       "Has vendido. Mira lo que pasa después…",
       "Un 30 % por debajo de lo que pusiste. ¿Aguantas?",
       "Ya has más que duplicado. ¿Y si ahora cae?",
@@ -246,7 +246,7 @@
      "title": "Cuatro precios por periodo",
      "body": "Cada **vela** resume un periodo (un día, una semana…) con cuatro datos (en inglés, **OHLC**):\n\n• **Apertura** (open): el primer precio.\n• **Máximo** (high) y **mínimo** (low).\n• **Cierre** (close): el último, y el más importante.\n\nEn Lumi, al pasar el dedo por una vela ves sus cuatro precios, la variación y el volumen. Leer bien un gráfico ya es una ventaja: mucha gente solo mira si está en verde o en rojo.",
      "key": "Un gráfico cuenta lo que pasó, no lo que va a pasar.",
-     "tip": "Pruébalo: en Mercado, abre un gráfico y pasa el dedo por la última vela."
+     "tip": "Pruébalo: en Mercado, abre Microsoft, pon el gráfico en velas y pasa el dedo por la última."
     }
    ]
   },
@@ -289,9 +289,9 @@
     },
     {
      "title": "También en tu contra",
-     "body": "El interés compuesto funciona igual con las deudas: una tarjeta que cobra intereses sobre intereses hace crecer lo que debes aunque no compres nada más.\n\nY recuerda: son ejemplos, no promesas. La bolsa no da un 7 % cada año.",
+     "body": "El interés compuesto funciona igual con las deudas: si una tarjeta te cobra intereses sobre intereses y no la pagas, lo que debes crece aunque no compres nada más.\n\nY recuerda: son ejemplos, no promesas. La bolsa no da un 7 % cada año.",
      "key": "Las ganancias generan nuevas ganancias: cuanto antes empiezas, más trabaja el tiempo por ti.",
-     "tip": "Pruébalo: en Mercado, busca SPY (el S&P 500) y mira su gráfico en velas mensuales."
+     "tip": "Pruébalo: abre Cartera y mira cuánto ha cambiado tu primera acción desde que la compraste."
     }
    ]
   },
@@ -383,22 +383,6 @@
    ],
    "explanation": "Una acción es una parte del capital: participas en sus beneficios y en sus riesgos. Prestar dinero a la empresa sería comprar un bono."
   },
-  "u8l1-2": {
-   "prompt": "Empareja cada término con su significado.",
-   "options": [
-    "Acción",
-    "OPV",
-    "Dividendo",
-    "Revalorización"
-   ],
-   "explanation": "Son las cuatro palabras básicas de la renta variable: qué compras, cómo llega a la bolsa y de dónde sale lo que ganas.",
-   "right": [
-    "Salida a bolsa vendiendo acciones",
-    "Beneficio repartido en efectivo",
-    "Subida del precio de la acción",
-    "Parte del capital de una empresa"
-   ]
-  },
   "u8l1-3": {
    "prompt": "Rentabilidad total = dividendos + ____.",
    "options": [
@@ -438,6 +422,20 @@
     "Que haya subido no dice lo que hará. Tesla llegó a caer un 72 %: con todo dentro, cae todo su ahorro.",
     "Si una empresa cae, las demás amortiguan el golpe: no depende de acertar la excepción.",
     "Venderá en la primera bajada normal, a menudo perdiendo, y sigue con todo en una sola empresa."
+   ]
+  },
+  "u8l1-12": {
+   "prompt": "Tesla no reparte dividendos. Tu primo dice que entonces sus acciones no sirven para ganar dinero. ¿Qué le respondes?",
+   "options": [
+    "Que tiene razón: sin dividendos no se gana nada",
+    "Que también se gana si sube el precio: es la revalorización",
+    "Que la empresa le devolverá el dinero en una fecha"
+   ],
+   "explanation": "Con una acción ganas de dos formas: con dividendos y con la revalorización, la subida del precio. Sin dividendos, todo depende del precio, que también puede bajar. La tentadora olvida que el precio puede subir.",
+   "feedback": [
+    "Se puede ganar con la subida del precio. Quien compró Tesla a finales de 2018 multiplicó su dinero sin cobrar dividendos.",
+    "Eso: sin dividendos, lo que ganas o pierdes depende de cuánto suba o baje el precio.",
+    "Eso es un bono. Una acción no tiene fecha de devolución: ganas o pierdes según su precio."
    ]
   },
   "u5l3-1": {
@@ -525,11 +523,6 @@
    ],
    "explanation": "Vendes al mejor precio de compra (bid), el que paga quien compra."
   },
-  "u6l1-5": {
-   "prompt": "Simula tu primera compra a mercado: tienes 10.000 € y no quieres arriesgar más de un 1 % (100 €). Coloca un stop por debajo del último mínimo y elige el importe.",
-   "options": [],
-   "explanation": "Con una orden a mercado entras al último precio. Primero decides dónde saldrías (el stop) y, con esa distancia, cuánto comprar para no arriesgar más de 100 €."
-  },
   "u6l1-9": {
    "prompt": "¿Orden a mercado razonable o arriesgada?",
    "options": [
@@ -554,6 +547,34 @@
     "Pulsas «comprar a mercado»"
    ],
    "explanation": "El precio final lo sabes al final, no al pulsar."
+  },
+  "u6l1-11": {
+   "prompt": "A media sesión, das la orden de comprar a mercado 500 € de Apple, una de las empresas más negociadas del mundo. ¿Qué esperas?",
+   "options": [
+    "Entrar casi al precio que ves en pantalla",
+    "Entrar exactamente al precio que ves, garantizado",
+    "Pagar bastante más de lo que ves"
+   ],
+   "explanation": "Con mucha gente comprando y vendiendo a la vez, siempre hay alguien al otro lado a un precio casi igual. La orden a mercado sale cara cuando hay pocos vendedores, no en una gran empresa a media sesión.",
+   "feedback": [
+    "Eso: en empresas muy negociadas y en horario normal, la diferencia suele ser de céntimos.",
+    "A mercado se garantiza que la orden se ejecute, no el precio exacto: puede variar un poco.",
+    "Eso pasa en valores poco negociados, en la apertura o justo tras una noticia, no aquí."
+   ]
+  },
+  "u6l1-12": {
+   "prompt": "Es sábado y das una orden de compra a mercado de una acción española. ¿Qué pasa?",
+   "options": [
+    "Espera y se ejecuta el lunes en la apertura, al precio que haya entonces",
+    "Se ejecuta ya, al último precio del viernes",
+    "Se cancela sola porque es fin de semana"
+   ],
+   "explanation": "Con la bolsa cerrada, una orden a mercado se ejecuta en la apertura, al precio que salga entonces. Si llega una noticia el fin de semana, el precio puede saltar: «ya» no significa «a este precio».",
+   "feedback": [
+    "Eso: con la bolsa cerrada, la orden espera. El precio del lunes puede ser distinto del de ahora.",
+    "Con la bolsa cerrada no hay nadie con quien cruzarla: espera a que abra.",
+    "No se cancela: queda pendiente hasta que abra la bolsa."
+   ]
   },
   "u19l1-1": {
    "prompt": "Empareja cada parte del gráfico con lo que muestra.",
@@ -650,30 +671,6 @@
    ],
    "explanation": "También en tu contra: una tarjeta revolving al 20 % duplica la deuda en menos de 4 años."
   },
-  "u1l5-6": {
-   "prompt": "Ordena de menos a más el resultado de 100 € al mes durante 30 años.",
-   "options": [
-    "Al 5 %",
-    "Al 7 %",
-    "Al 2 %",
-    "Al 0 %"
-   ],
-   "explanation": "36.000 €, 49.273 €, 83.226 € y 121.997 €: unos pocos puntos de rentabilidad cambian muchísimo el final."
-  },
-  "u1l5-7": {
-   "prompt": "Tienes 22 años y 50 € al mes para invertir. ¿Qué haces?",
-   "options": [
-    "Lo gasto: 50 € no dan para nada",
-    "Empiezo ya con 50 € y subo la aportación cuando pueda",
-    "Espero a ganar más para empezar con algo «serio»"
-   ],
-   "explanation": "Empezar pronto, aunque sea con poco, es lo que más aprovecha el interés compuesto.",
-   "feedback": [
-    "50 € al mes al 7 % durante 40 años son unos 130.000 €, con 24.000 € aportados.",
-    "Bien: con el tiempo de tu lado, empezar pronto pesa más que empezar con mucho.",
-    "Esperar cuesta caro: los primeros años son los que más tiempo tienen para componerse."
-   ]
-  },
   "u1l5-10": {
    "prompt": "Marta tiene 18 años y 1.000 € de un regalo. Piensa invertirlos «cuando acabe la carrera, dentro de 5 años». ¿Qué le aconsejas?",
    "options": [
@@ -700,6 +697,30 @@
    "right": [
     "Simple",
     "Compuesto"
+   ]
+  },
+  "u1l5-12": {
+   "prompt": "Ordena de menos a más lo que tendrías tras 30 años apartando 100 € al mes.",
+   "options": [
+    "Al 2 % al año",
+    "Al 5 % al año",
+    "Al 7 % al año",
+    "Al 0 % al año"
+   ],
+   "explanation": "Más o menos 36.000 €, 49.000 €, 82.000 € y 117.000 €. Pones lo mismo en los cuatro casos, 36.000 €: unos pocos puntos al año cambian muchísimo el final."
+  },
+  "u1l5-13": {
+   "prompt": "Tienes 22 años y puedes apartar 50 € al mes para invertir. ¿Qué haces?",
+   "options": [
+    "Espero a ganar más para empezar con algo «serio»",
+    "Empiezo ya con 50 € y subo la aportación cuando pueda",
+    "Lo gasto: 50 € no dan para nada"
+   ],
+   "explanation": "Empezar pronto, aunque sea con poco, es lo que más aprovecha el interés compuesto. El 7 % es un ejemplo para ver el efecto, no una promesa: la bolsa sube unos años y baja otros.",
+   "feedback": [
+    "Esperar cuesta caro: los primeros euros son los que más años tienen para crecer.",
+    "Bien: con el tiempo de tu lado, empezar pronto pesa más que empezar con mucho.",
+    "Al 7 % al año, 50 € al mes durante 40 años llegan a más de 120.000 €, con 24.000 € puestos."
    ]
   }
  }

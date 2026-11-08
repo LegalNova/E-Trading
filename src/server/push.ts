@@ -1,16 +1,21 @@
 import 'server-only'
 // Avisos en el móvil (Web Push con claves VAPID). Cada hora la tarea programada decide qué aviso toca a cada persona
 // según su hora local y su estado real. Límites: 6 al día como mucho, 1 hora entre uno y otro y nada de 22:00 a 9:00.
+// También aquí: el recordatorio del diario de operaciones (en la app para todos; en el móvil, con estos límites)
+// y el resumen semanal de la cartera frente al S&P 500 (domingo a las 17:00, solo con datos fiables).
 import webpush from 'web-push'
 import type { User } from '@/generated/prisma/client'
-import { dayOf } from '@/shared/time'
+import type { Tx } from './game/core'
+import { DAY_MS, dayOf, weekOf } from '@/shared/time'
+import { madridMidnight } from '@/shared/league-points'
 import { ALL_Q, pathOf } from './game/learning'
 import { priceBook } from './game/trading'
+import { candles } from './market/service'
 import { LESSON } from './content/catalog'
 import { lessonTitleT } from './content/translate'
 import { withLocale } from './locale'
 import { db } from './db'
-import { pushText, type Lang, type PushKind } from './push-messages'
+import { pushText, WHY, type Lang, type PushKind } from './push-messages'
 
 const PUB = process.env.VAPID_PUBLIC_KEY ?? ''
 const PRIV = process.env.VAPID_PRIVATE_KEY ?? ''
@@ -25,7 +30,7 @@ const GAP_MS = 60 * 60_000
 const POPULAR = ['BTC-EUR', 'ETH-EUR', 'SOL-EUR', 'NVDA', 'TSLA', 'AAPL', 'MSFT', 'AMZN', 'META', 'ITX.MC', 'SAN.MC', 'SPY', 'GC=F']
 
 // Preferencias de Ajustes: cada aviso pertenece a uno de estos grupos
-const PREF: Record<PushKind, string> = { streak: 'STREAK_RISK', streak_last: 'STREAK_RISK', comeback: 'STREAK_RISK', nudge: 'STREAK_RISK', evening: 'STREAK_RISK', unfinished: 'NEW_LESSON', unfinished2: 'NEW_LESSON', review: 'NEW_LESSON', daily: 'NEW_LESSON', trial: 'NEW_LESSON', market: 'PRICE_ALERT', morning: 'PRICE_ALERT', pos_down: 'PRICE_ALERT', pos_up: 'PRICE_ALERT', watch_down: 'PRICE_ALERT', watch_up: 'PRICE_ALERT', league: 'LEAGUE_RESULT' }
+const PREF: Record<PushKind, string> = { streak: 'STREAK_RISK', streak_last: 'STREAK_RISK', comeback: 'STREAK_RISK', nudge: 'STREAK_RISK', evening: 'STREAK_RISK', unfinished: 'NEW_LESSON', unfinished2: 'NEW_LESSON', review: 'NEW_LESSON', daily: 'NEW_LESSON', trial: 'NEW_LESSON', market: 'PRICE_ALERT', morning: 'PRICE_ALERT', pos_down: 'PRICE_ALERT', pos_up: 'PRICE_ALERT', watch_down: 'PRICE_ALERT', watch_up: 'PRICE_ALERT', league: 'LEAGUE_RESULT', journal: 'NEW_LESSON', weekly: 'PRICE_ALERT' }
 
 export async function saveSubscription(userId: string, sub: { endpoint: string; keys: { p256dh: string; auth: string } }, ua: string | null) {
   await db.pushSub.upsert({
@@ -66,7 +71,8 @@ export async function sendPush(userId: string, msg: { title: string; body: strin
 const langOf = (u: User): Lang => (u.locale === 'ca' || u.locale === 'en' ? u.locale : 'es')
 const hourIn = (tz: string, d = new Date()) => Number(new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour: '2-digit', hourCycle: 'h23' }).format(d))
 const weekdayIn = (tz: string, d = new Date()) => new Intl.DateTimeFormat('en-GB', { timeZone: tz, weekday: 'short' }).format(d)
-const pct = (v: number, lang: Lang) => `${v >= 0 ? '+' : '−'}${new Intl.NumberFormat(lang === 'en' ? 'en-GB' : lang, { maximumFractionDigits: 1, minimumFractionDigits: 1 }).format(Math.abs(v))} %`
+// (lo que redondea a 0,0 % va sin signo: «−0,0 %» no dice nada)
+const pct = (v: number, lang: Lang) => `${Math.abs(v) < 0.05 ? '' : v >= 0 ? '+' : '−'}${new Intl.NumberFormat(lang === 'en' ? 'en-GB' : lang, { maximumFractionDigits: 1, minimumFractionDigits: 1 }).format(Math.abs(v))} %`
 
 type Candidate = { kind: PushKind; vars: Record<string, string | number>; url: string; key?: string }
 type PushUser = User & { game: { streak: number; lastActiveDay: string | null; xp: number; freezes?: number } | null }
@@ -75,6 +81,72 @@ type Sent = { kind?: string; key?: string }[]
 
 const list = (xs: string[], lang: Lang) => new Intl.ListFormat(lang === 'en' ? 'en-GB' : lang, { style: 'long', type: 'conjunction' }).format(xs)
 const plural = (n: number, lang: Lang, one: Record<Lang, string>, many: Record<Lang, string>) => `${n} ${n === 1 ? one[lang] : many[lang]}`
+
+// ── Diario de operaciones: recordatorio a los 14 días ────
+/** Entradas del diario que ya toca revisar (como mucho de hace 30 días: después ya no se recuerdan) */
+const dueJournal = (userId: string | undefined, now: Date) =>
+  db.journalEntry.findMany({ where: { ...(userId ? { userId } : {}), reviewedAt: null, remindAt: { lte: now, gte: new Date(now.getTime() - 30 * DAY_MS) } }, orderBy: { remindAt: 'asc' }, take: userId ? 10 : 5000 })
+export const journalLink = (id: string) => `/mercado/diario?entrada=${id}`
+const assetName = async (symbol: string) => (await db.asset.findUnique({ where: { symbol }, select: { name: true } }))?.name ?? symbol
+/** «porque te parecía barata» (con «Otro» y una línea escrita, esa línea entre comillas) */
+const whyOf = (e: { tag: string; reason: string }, lang: Lang) => (e.tag === 'OTHER' && e.reason ? `«${e.reason.slice(0, 60)}»` : (WHY[lang][e.tag] ?? WHY[lang].OTHER))
+
+const JOURNAL_IN_APP: Record<Lang, (name: string, side: string, why: string) => [string, string]> = {
+  es: (name, side, why) => [`¿Se cumplió tu motivo con ${name}?`, `${side === 'SELL' ? 'Vendiste' : 'Compraste'} ${name} porque ${why}. ¿Se ha cumplido? Revísalo en tu diario.`],
+  ca: (name, side, why) => [`S’ha complert el teu motiu amb ${name}?`, `Vas ${side === 'SELL' ? 'vendre' : 'comprar'} ${name} perquè ${why}. S’ha complert? Revisa-ho al teu diari.`],
+  en: (name, side, why) => [`Did your reason for ${name} play out?`, `You ${side === 'SELL' ? 'sold' : 'bought'} ${name} because ${why}. Did it happen? Check it in your journal.`],
+}
+
+/** Aviso dentro de la app (para todos, tengan o no el móvil con avisos): uno por entrada y recordatorio, en horas de día */
+export async function journalReminders(now = new Date()) {
+  const due = await dueJournal(undefined, now)
+  if (!due.length) return 0
+  const users = new Map((await db.user.findMany({ where: { id: { in: [...new Set(due.map(d => d.userId))] }, blockedAt: null }, select: { id: true, timezone: true, locale: true } })).map(u => [u.id, u]))
+  const doneUsers = new Set<string>()
+  let created = 0
+  for (const e of due) {
+    const u = users.get(e.userId)
+    if (!u || doneUsers.has(u.id)) continue // uno por persona y ronda
+    const h = hourIn(u.timezone, now)
+    if (h < 9 || h >= 22) continue
+    const link = journalLink(e.id)
+    if (await db.notification.findFirst({ where: { userId: u.id, deepLink: link, createdAt: { gte: e.remindAt } }, select: { id: true } })) continue
+    const lang: Lang = u.locale === 'ca' || u.locale === 'en' ? u.locale : 'es'
+    const [title, body] = JOURNAL_IN_APP[lang](await assetName(e.symbol), e.side, whyOf(e, lang))
+    await db.notification.create({ data: { userId: u.id, type: 'ORDER_FILLED', title, body, deepLink: link } })
+    doneUsers.add(u.id)
+    created++
+  }
+  return created
+}
+
+// ── Resumen semanal: tu cartera frente al S&P 500 ────────
+/** Rentabilidad de la semana de la liga (base al entrar esta semana y dinero que entra o sale aparte, como en la liga)
+ *  y la del S&P 500 en el mismo tiempo. null si no hay datos fiables: entonces no se manda nada. */
+export async function weeklyNumbers(userId: string, now = new Date()) {
+  const weekKey = weekOf(now)
+  const m = await db.leagueMember.findUnique({ where: { weekKey_userId: { weekKey, userId } } })
+  // Tiene que cubrir casi toda la semana (entró el lunes o el martes) y tener algo invertido
+  if (!m || m.startValue === null || m.joinedAt.getTime() > madridMidnight(weekKey).getTime() + 2 * DAY_MS || m.joinedAt > now) return null
+  if (!(await db.position.count({ where: { userId } }))) return null
+  const { portfolioValues } = await import('./game/league')
+  const v = (await portfolioValues(db as unknown as Tx, [userId])).get(userId)?.value
+  if (v === undefined) return null
+  const start = Number(m.startValue)
+  const flows = Number(m.flows)
+  const base = start + Math.max(0, flows)
+  if (!(base > 0)) return null
+  const me = ((v - start - flows) / base) * 100
+  if (!Number.isFinite(me) || Math.abs(me) > 50) return null
+  // S&P 500: último cierre antes de que empezara su semana y el precio guardado de ahora (reciente)
+  const [q, days] = await Promise.all([db.quote.findUnique({ where: { symbol: '^GSPC' } }), candles('^GSPC', '1d').catch(() => [])])
+  if (!q || now.getTime() - q.asOf.getTime() > 4 * DAY_MS) return null
+  const before = days.filter(k => k.t * 1000 < m.joinedAt.getTime() && k.c > 0).at(-1)
+  if (!before || m.joinedAt.getTime() - before.t * 1000 > 5 * DAY_MS) return null
+  const idx = (Number(q.price) / before.c - 1) * 100
+  if (!Number.isFinite(idx) || Math.abs(idx) > 30) return null
+  return { me, idx }
+}
 
 /** Sus activos (cartera y favoritos) con la variación de hoy; solo precios recientes y reales */
 async function movesOf(u: User, maxAgeMs: number) {
@@ -149,6 +221,18 @@ export async function candidateFor(u: PushUser, lang: Lang, hour: number, today:
     if (mv.length && l) return { kind: 'morning', vars: { moves: mv.map(m => `${m.p.name} ${pct(m.chg, lang)}`).join(' · '), lesson: l.title }, url: '/mercado' }
     if (!activeToday && l) return { kind: 'daily', vars: { lesson: l.title, min: l.min }, url: lessonUrl(l) }
   }
+  // Domingo 17:00: la semana de su cartera frente al S&P 500 (solo con datos fiables)
+  if (hour === 17 && weekdayIn(u.timezone, now) === 'Sun' && !had('weekly')) {
+    const w = await weeklyNumbers(u.id, now)
+    if (w) return { kind: 'weekly', vars: { me: pct(w.me, lang), idx: pct(w.idx, lang) }, url: '/mercado/cartera' }
+  }
+  // De 10:00 a 20:00 (menos a las 19, la hora de la racha): «Compraste X porque …, ¿se ha cumplido?». Uno al día.
+  if (hour >= 10 && hour <= 20 && hour !== 19 && !had('journal')) {
+    for (const e of await dueJournal(u.id, now)) {
+      if (await db.event.findFirst({ where: { userId: u.id, name: 'push_sent', createdAt: { gte: e.remindAt }, props: { path: ['key'], equals: e.id } }, select: { id: true } })) continue
+      return { kind: 'journal', vars: { name: await assetName(e.symbol), side: e.side, why: whyOf(e, lang) }, url: journalLink(e.id), key: e.id }
+    }
+  }
   // De 10:00 a 20:00: si algo suyo se mueve fuerte (cartera ±3 %, favoritos ±4 %), aviso al momento; hasta 2 al día, uno por activo
   if (hour >= 10 && hour <= 20 && sent.filter(x => x.kind?.startsWith('pos_') || x.kind?.startsWith('watch_')).length < 2) {
     const mv = (await movesOf(u, 90 * 60_000)).filter(m => m.p.tradable && !sent.some(x => x.key === m.p.symbol))
@@ -218,7 +302,9 @@ export function pushSlot(u: Pick<User, 'id' | 'timezone'>, now: Date, recent: { 
 
 /** Ronda de avisos (la llama la tarea programada cada hora) */
 export async function runPushRound(now = new Date()) {
-  if (!pushEnabled) return { sent: 0, users: 0, skipped: 'sin claves VAPID' }
+  // El recordatorio del diario dentro de la app va para todos (aunque no haya avisos en el móvil)
+  const journal = await journalReminders(now).catch(e => (console.error('journal', e), 0))
+  if (!pushEnabled) return { sent: 0, users: 0, journal, skipped: 'sin claves VAPID' }
   const users = await db.user.findMany({ where: { blockedAt: null, pushSubs: { some: {} } }, include: { game: { select: { streak: true, lastActiveDay: true, xp: true, freezes: true } } }, take: 5000 })
   const since = new Date(now.getTime() - 24 * 3_600_000)
   const recent = await db.event.findMany({ where: { name: 'push_sent', userId: { in: users.map(u => u.id) }, createdAt: { gte: since } }, select: { userId: true, createdAt: true, props: true } })
@@ -247,7 +333,7 @@ export async function runPushRound(now = new Date()) {
       }
     }),
   )
-  return { sent, users: users.length }
+  return { sent, users: users.length, journal }
 }
 
 /** Primer aviso al activarlos: confirma que funcionan */

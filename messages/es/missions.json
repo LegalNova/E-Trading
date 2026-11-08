@@ -1,1 +1,133 @@
-{}
+{
+  "missions": {
+    "tryNow": "Pruébalo ahora",
+    "tryNowHint": "Lo que acabas de aprender, en el mercado de verdad (con dinero virtual).",
+    "afterQuiz": "Al aprobar, tu misión",
+    "openTitle": "Tu misión de esta clase",
+    "doneTitle": "Misión cumplida",
+    "pendingTitle": "Tu misión pendiente",
+    "fromLesson": "De la clase «{title}»",
+    "more": "{n, plural, one {Tienes # misión más abierta} other {Tienes # misiones más abiertas}}",
+    "goAria": "Ir a la misión: {text}",
+    "doneToast": "Misión cumplida: +{xp} XP",
+    "hint": "Misión: {text}",
+    "hintDone": "Misión cumplida: +{xp} XP"
+  },
+  "journal": {
+    "title": "Diario de operaciones",
+    "intro": "Apunta por qué compras o vendes. A las dos semanas te preguntamos si se cumplió: así aprendes de tus decisiones, no solo de los resultados.",
+    "whyBuy": "¿Por qué compras?",
+    "whySell": "¿Por qué vendes?",
+    "optional": "Opcional",
+    "whyHint": "Elige un motivo y lo apuntamos en tu diario.",
+    "willRemind": "Lo apuntamos en tu diario. En 14 días te preguntamos si se cumplió.",
+    "reasonPlaceholder": "Tu motivo en una línea (opcional)",
+    "reasonLabel": "Tu motivo en una línea",
+    "savedToast": "Motivo apuntado en tu diario",
+    "saveError": "No se ha podido guardar. Prueba otra vez.",
+    "linkHint": "Apunta por qué compras y comprueba si acertaste",
+    "dueCount": "{n, plural, one {# entrada para revisar} other {# entradas para revisar}}",
+    "entriesCount": "{n, plural, one {# entrada} other {# entradas}}",
+    "bought": "Compra",
+    "sold": "Venta",
+    "priceThen": "Precio entonces",
+    "priceNow": "Precio ahora",
+    "noPrice": "Sin cotización ahora",
+    "reviewQuestion": "¿Se cumplió tu motivo?",
+    "verdict": {
+      "MET": "Se cumplió",
+      "NOT_MET": "No se cumplió",
+      "TOO_EARLY": "Aún es pronto"
+    },
+    "reviewed": {
+      "MET": "Apuntado: se cumplió",
+      "NOT_MET": "Apuntado: no se cumplió",
+      "TOO_EARLY": "Te lo volvemos a preguntar en 14 días"
+    },
+    "notePlaceholder": "¿Qué has aprendido? (opcional)",
+    "noteLabel": "Nota",
+    "saveReview": "Guardar",
+    "change": "Cambiar",
+    "remindOn": "Te preguntamos el {date} si se cumplió. Puedes revisarlo antes.",
+    "tooEarlyAgain": "Te lo volvemos a preguntar el {date}.",
+    "summaryTitle": "Cómo te salen tus motivos",
+    "summaryBuy": "Tus compras {why}: {met} de {n} salieron como pensabas.",
+    "summarySell": "Tus ventas {why}: {met} de {n} salieron como pensabas.",
+    "summaryNote": "Con pocas entradas, es pronto para sacar conclusiones. Lo valioso es ver el patrón con el tiempo.",
+    "filter": "Filtrar entradas",
+    "all": "Todas",
+    "dueTab": "Para revisar ({n})",
+    "emptyTitle": "Aún no hay nada en tu diario",
+    "emptyBody": "La próxima vez que compres o vendas, elige por qué en la hoja de la orden.",
+    "goMarket": "Ir al mercado",
+    "tags": {
+      "buy": {
+        "QUALITY": "Creo en la empresa",
+        "CHEAP": "Está barata",
+        "DIVERSIFY": "Para diversificar",
+        "LONG_TERM": "A largo plazo",
+        "NEWS": "Por una noticia",
+        "SOCIAL": "Lo he visto en redes",
+        "HUNCH": "Corazonada",
+        "OTHER": "Otro"
+      },
+      "sell": {
+        "TARGET": "Llegó a mi objetivo",
+        "CHANGED": "Ya no creo en ella",
+        "REBALANCE": "Para reequilibrar",
+        "NEED_CASH": "Quiero el dinero para otra cosa",
+        "FEAR": "Miedo a que baje más",
+        "NEWS": "Por una noticia",
+        "SOCIAL": "Lo he visto en redes",
+        "HUNCH": "Corazonada",
+        "OTHER": "Otro"
+      }
+    },
+    "why": {
+      "buy": {
+        "QUALITY": "porque creías en la empresa",
+        "CHEAP": "porque estaba barata",
+        "DIVERSIFY": "para diversificar",
+        "LONG_TERM": "a largo plazo",
+        "NEWS": "por noticias",
+        "SOCIAL": "por redes",
+        "HUNCH": "por corazonada",
+        "OTHER": "por otros motivos"
+      },
+      "sell": {
+        "TARGET": "al llegar a tu objetivo",
+        "CHANGED": "porque ya no creías en ella",
+        "REBALANCE": "para reequilibrar",
+        "NEED_CASH": "para usar el dinero en otra cosa",
+        "FEAR": "por miedo a que bajara",
+        "NEWS": "por noticias",
+        "SOCIAL": "por redes",
+        "HUNCH": "por corazonada",
+        "OTHER": "por otros motivos"
+      }
+    },
+    "lessons": {
+      "buy": {
+        "QUALITY": "Creer en una empresa está bien si sabes por qué. Apunta qué tendría que pasar para que dejaras de creer en ella, y busca también lo que va en contra: es el antídoto del sesgo de confirmación.",
+        "CHEAP": "Anclaje: que haya bajado no la hace barata. Barato es pagar menos de lo que vale el negocio, y eso se mide con sus beneficios, no con el precio de antes.",
+        "DIVERSIFY": "Repartir reduce el golpe de una sola caída. Comprueba que no sean activos que se mueven igual: diversificar es tener cosas distintas, no muchas parecidas.",
+        "LONG_TERM": "Pensar a largo plazo ayuda a no reaccionar a cada bajada. Lo difícil es mantener el plan cuando cae: decide hoy qué harías si bajara un 20 %.",
+        "NEWS": "Cuando una noticia es pública, el precio suele haberla recogido en minutos. Pregúntate qué sabes tú que el mercado no sepa ya.",
+        "SOCIAL": "FOMO y efecto rebaño: comprar porque otros compran suele llevar a entrar tarde. Quien lo recomienda en redes no pierde nada si a ti te sale mal.",
+        "HUNCH": "Exceso de confianza: una corazonada se siente segura, pero no es un motivo. Apuntarla y revisarla te dirá cuánto aciertan de verdad tus corazonadas.",
+        "OTHER": "Escribir el motivo ya es un buen hábito: dentro de dos semanas podrás comprobar si pensabas bien."
+      },
+      "sell": {
+        "TARGET": "Vender al llegar a tu objetivo es seguir un plan. Vigila el efecto disposición: vender pronto lo que gana y aguantar lo que pierde.",
+        "CHANGED": "Vender porque ha cambiado tu motivo es coherente. Lo que importa es el negocio de hoy, no lo que pagaste.",
+        "REBALANCE": "Reequilibrar devuelve tu cartera al reparto que elegiste: vendes parte de lo que más ha subido sin intentar adivinar el futuro.",
+        "NEED_CASH": "Mover el dinero a otra idea tiene sentido si la nueva es mejor que la que dejas, no solo más emocionante.",
+        "FEAR": "Aversión a la pérdida: el miedo a perder más empuja a vender en el peor momento. Pregúntate si la comprarías hoy a este precio.",
+        "NEWS": "Vender tras una noticia suele llegar tarde: el precio reacciona en minutos. Pregúntate si cambia el negocio o solo el ánimo del día.",
+        "SOCIAL": "Efecto rebaño: vender porque otros venden también es seguir a la masa, solo que al salir.",
+        "HUNCH": "Una corazonada para salir es tan poco fiable como para entrar. Apúntala y compruébala: así sabrás cuánto aciertas.",
+        "OTHER": "Escribir el motivo ya es un buen hábito: dentro de dos semanas podrás comprobar si pensabas bien."
+      }
+    }
+  }
+}

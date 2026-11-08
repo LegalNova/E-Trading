@@ -22,6 +22,7 @@ export async function resolveShare(q: URLSearchParams): Promise<ShareCard | null
   const who = inviter?.valid && inviter.name ? T.who(inviter.name) : T.anon
   const base = { who, cta: T.cta, lang, code: inviter?.valid ? code : null }
   switch (q.get('t')) {
+    case 'tesis': return (await import('./share-thesis')).thesisCard(q, base, lang)
     case 'logro': {
       const a = ACHIEVEMENTS.find(x => x.code === q.get('id'))
       if (!a) return null

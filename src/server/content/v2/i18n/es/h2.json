@@ -53,7 +53,7 @@
     },
     {
      "title": "Puntos, no euros",
-     "body": "Un índice se mide en puntos, no en euros. Lo que importa es la **variación**: si pasa de 14.000 a 14.700 puntos, ha subido un 5 %.\n\nComprarlo entero, con un fondo o un ETF, es apostar por toda una economía, no por una empresa.",
+     "body": "Un índice se mide en puntos, no en euros. Lo que importa es la **variación**: si pasa de 14.000 a 14.700 puntos, ha subido un 5 %.\n\nComprarlo entero, con un fondo o un ETF, es invertir en todo ese mercado a la vez, no en una sola empresa.",
      "key": "Un índice es una cesta de referencia, no algo que se compra tal cual.",
      "tip": "Pruébalo: en Mercado, busca el IBEX 35 y mira si hoy sube o baja."
     }
@@ -108,7 +108,7 @@
      "title": "ETF UCITS",
      "body": "Un pequeño inversor (un **minorista**) en la UE compra ETF europeos **UCITS**, con su documento **KID**, que resume riesgos y costes. Muchos ETF de EE. UU. no se pueden vender a minoristas europeos porque no tienen KID.\n\nCon dinero real, busca «UCITS» en el nombre y lee su KID. En el simulador puedes practicar con ETF de EE. UU.",
      "key": "Un ETF es un fondo, casi siempre indexado, que se compra y se vende en bolsa como una acción.",
-     "tip": "Pruébalo: en Mercado, busca el ETF del S&P 500 y compáralo con el índice."
+     "tip": "Pruébalo: en Mercado, busca SPY, un ETF del S&P 500, y compara su gráfico con el del índice."
     }
    ]
   },
@@ -160,7 +160,7 @@
     },
     {
      "title": "El almuerzo gratis",
-     "body": "Cuánto sube y baja en un año típico: una acción suelta, un 30-35 %; 20-30 acciones de sectores distintos, cerca del 20 %; un índice mundial, un 15 %.\n\nHarry Markowitz, Nobel de Economía, llamó a esto **el único almuerzo gratis**: menos riesgo sin renunciar a rentabilidad esperada. Un ETF de un índice mundial te da esa cesta en una sola compra.",
+     "body": "Cuánto sube y baja en un año típico (su **volatilidad**): una acción suelta, un 25-35 %; 20-30 acciones de sectores distintos, cerca del 20 %; un índice mundial, un 15 %.\n\nA Harry Markowitz, Nobel de Economía, se le atribuye llamar a esto **el único almuerzo gratis**: menos riesgo sin renunciar a rentabilidad esperada. Un ETF de un índice mundial te da esa cesta en una sola compra.",
      "key": "Con muchas empresas, los desastres de unas se compensan con los éxitos de otras.",
      "tip": "Pruébalo: abre Cartera y mira si alguna posición pesa más del 20 %."
     }
@@ -206,7 +206,7 @@
      "title": "Con una suma grande",
      "body": "Con el sueldo, lo natural es aportar una parte cada mes. Si un día tienes una suma grande (una herencia, un finiquito), una solución intermedia razonable es repartirla en **6–12 meses** con aportaciones automáticas.\n\nLo que no funciona es esperar «a que baje»: nadie sabe cuándo es el suelo.",
      "key": "De golpe suele ganar más veces; poco a poco reduce el arrepentimiento. Lo importante es empezar y no parar.",
-     "tip": "Pruébalo: compra hoy un poco del ETF del S&P 500 y repite cada mes."
+     "tip": "Pruébalo: en Mercado, compra un poco de un ETF: será tu aportación de este mes."
     }
    ]
   },
@@ -253,7 +253,7 @@
      "title": "Los costes ocultos",
      "body": "Un indexado puede cobrar un 0,1-0,3 % al año; muchos fondos activos (con un equipo que elige empresas) en España, un 1,5 % o más. Lo verás en el **KID**, como gastos corrientes.\n\nAdemás del TER: comisión del bróker por operación, *spread* (la diferencia entre el precio de compra y el de venta), custodia (lo que cobran por guardarte los valores), cambio de divisa y, en algunos fondos, comisiones al entrar o al salir (de suscripción o de reembolso). Súmalos todos.",
      "key": "Cada 1 % anual de costes se come una parte enorme del resultado, por el interés compuesto.",
-     "tip": "Pruébalo: pregúntale a la profesora Lumi qué costes mirar en el KID de un ETF."
+     "tip": "Pruébalo: en Mercado, empieza a comprar un ETF y mira la comisión simulada antes de confirmar."
     }
    ]
   },
@@ -270,7 +270,7 @@
       "La mitad de las veces",
       "En estos 40 años, el **20,8 %** de los periodos de un año acabó en pérdida, y el peor perdió un 45 %.",
       "Encuentra a partir de cuántos años no hubo ni un solo caso con pérdida.",
-      "En estos datos, esperando **14 años o más** nunca se perdió dinero. Pero el pasado no garantiza el futuro: quien compró en 1929, o en Japón en 1989, esperó mucho más. El plazo decide el riesgo que puedes asumir.",
+      "En estos datos, sin contar dividendos, esperando **14 años o más** nunca se perdió dinero. Pero el pasado no garantiza el futuro: quien compró en 1929, o en Japón en 1989, esperó mucho más. El plazo decide el riesgo que puedes asumir.",
       "A corto plazo la bolsa es una montaña rusa: casi cualquier cosa puede pasar.",
       "Mira el peor caso: aún hay periodos largos en pérdidas (los que empezaron en 2000).",
       "Sigue alargando la espera"
@@ -278,9 +278,9 @@
     },
     {
      "title": "Ponle fecha a cada euro",
-     "body": "• **Colchón para imprevistos (siempre disponible):** cuenta remunerada, que te paga intereses, o fondo monetario, muy estable.\n• **Viaje o coche (1-3 años):** depósitos o Letras del Tesoro, es decir, prestar al banco o al Estado a plazo fijo.\n• **Entrada de un piso (3-7 años):** mezcla prudente, con más renta fija (bonos).\n• **Jubilación (15 años o más):** sobre todo acciones diversificadas.\n\nTu cartera sencilla a largo plazo: un ETF indexado de todo el mundo, comisiones bajas, una aportación cada mes y solo dinero que no vayas a necesitar en muchos años.",
+     "body": "• **Colchón para imprevistos (siempre disponible):** cuenta remunerada, que te paga intereses, o fondo monetario, muy estable.\n• **Viaje o coche (1-3 años):** depósitos o Letras del Tesoro, es decir, prestar al banco o al Estado a plazo fijo.\n• **Entrada de un piso (3-7 años):** mezcla prudente, con más renta fija (bonos).\n• **Jubilación (15 años o más):** sobre todo acciones diversificadas.\n\nUn ejemplo de cartera sencilla a largo plazo: un ETF indexado de todo el mundo, comisiones bajas, una aportación cada mes y solo dinero que no vayas a necesitar en muchos años.",
      "key": "No se invierte en bolsa el dinero que se necesita pronto: puede estar bajando justo cuando lo necesites.",
-     "tip": "Pruébalo: en Mercado, mira el S&P 500 en velas mensuales y busca sus caídas."
+     "tip": "Pruébalo: en Mercado, abre el S&P 500 en velas mensuales y mira cuánto tardó en recuperarse de 2008."
     }
    ]
   },
@@ -327,15 +327,6 @@
    ],
    "explanation": "Los ETFs y fondos indexados copian el índice con costes bajos."
   },
-  "u7l1-11": {
-   "prompt": "Este gráfico es un índice real: la media de las grandes empresas de un país, sin nombre ni fecha. ¿Qué hizo en las 10 sesiones siguientes?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Un índice resume en una sola línea cómo les fue a todas sus empresas juntas: por eso sirve de termómetro del mercado. Lo que no hace es adivinar el futuro: ni el índice entero se puede prever a dos semanas vista.",
-   "horizon": "las 10 sesiones siguientes"
-  },
   "u7l1-12": {
    "prompt": "Imagina: tu cartera de acciones españolas ha ganado un 5 % este año y el IBEX 35, un 12 %. Un amigo te dice que eres un crack. ¿Qué concluyes?",
    "options": [
@@ -366,15 +357,6 @@
     "Fondo que cotiza en bolsa"
    ]
   },
-  "u10l2-3": {
-   "prompt": "Este gráfico es un índice que copian varios ETF: un ETF de ese índice hará lo mismo, menos sus costes. ¿Qué hizo en las 10 sesiones siguientes?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Un ETF indexado no elimina los vaivenes del mercado: tienes exactamente lo que haga el índice, para bien y para mal.",
-   "horizon": "las 10 sesiones siguientes"
-  },
   "u10l2-4": {
    "prompt": "¿Qué coste anual suelen tener los grandes ETF indexados?",
    "options": [
@@ -384,6 +366,14 @@
    ],
    "explanation": "Copiar un índice es barato: no hace falta un equipo eligiendo empresas."
   },
+  "u10l2-5": {
+   "prompt": "En España, si vendes un ETF para comprar otro el mismo día, no pagas impuestos.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Los ETF no tienen el régimen de traspaso: cada venta con ganancia tributa."
+  },
   "u10l2-6": {
    "prompt": "¿Por qué un minorista europeo no puede comprar muchos ETF de EE. UU.?",
    "options": [
@@ -392,6 +382,24 @@
     "Porque cotizan de noche"
    ],
    "explanation": "Sin KID, no se pueden comercializar a minoristas en la UE."
+  },
+  "u10l2-9": {
+   "prompt": "¿Qué le contestas?",
+   "options": [
+    "No tiene ningún riesgo",
+    "Se compra como una acción, pero dentro hay una cesta de muchas empresas",
+    "Sí, igual de arriesgado"
+   ],
+   "explanation": "La forma de comprarlo es como una acción; el riesgo es el de toda la cesta.",
+   "feedback": [
+    "Tiene el riesgo del índice que copia: si el mercado cae un 30 %, el ETF también.",
+    "¡Eso! Uno del MSCI World lleva más de mil empresas de países desarrollados.",
+    "Se compra como una acción, pero dentro lleva cientos o miles de empresas."
+   ],
+   "lines": [
+    "Me han dicho que un ETF es «como una acción».",
+    "¿Entonces es igual de arriesgado que comprar una sola empresa?"
+   ]
   },
   "u10l2-10": {
    "prompt": "Los ETF que puede comprar un minorista en la UE suelen llevar la etiqueta ____.",

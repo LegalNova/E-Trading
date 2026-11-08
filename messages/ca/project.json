@@ -1,1 +1,234 @@
-{}
+{
+  "project": {
+    "title": "La teva primera tesi d'inversió",
+    "card": {
+      "kicker": "Projecte final",
+      "locked": "S'obre quan aproves «{needs}»",
+      "draft": "Tens una tesi a mitges: continua on la vas deixar",
+      "done": "{n, plural, one {# tesi acabada} other {# tesis acabades}} · fes-ne una altra",
+      "new": "Analitza una empresa real en 10 passos · +150 XP"
+    },
+    "intro": {
+      "title": "Pensa com un inversor",
+      "body": "Tria una empresa real del mercat de la Lumi i raona la teva tesi amb les seves dades: què fa, per què podria continuar guanyant diners, els seus riscos, si és cara i com gestionaries el risc.",
+      "p1": "· 8 preguntes, uns 15 minuts. Cada pas es desa.",
+      "p2": "· En acabar: la teva fitxa de tesi, una puntuació de 0 a 100 i un certificat per compartir.",
+      "p3": "· +150 XP la primera tesi i +50 les següents (una al dia)."
+    },
+    "lockedBody": "Aquest projecte s'obre quan aproves «{needs}». És el repte final de la primera secció del curs.",
+    "toClasses": "Anar a Classes",
+    "mine": "Les meves tesis",
+    "doneLine": "Acabada · {score}/100",
+    "draftLine": "Esborrany · pas {n} de {total}",
+    "disclaimer": "És un exercici per aprendre a analitzar. La Lumi no et diu què has de comprar: la tesi és teva i es practica amb diners virtuals.",
+    "pick": {
+      "title": "Tria una empresa",
+      "body": "Millor una que coneguis o de la qual facis servir els productes: et costarà menys explicar-ne el negoci.",
+      "placeholder": "Cerca pel nom o el símbol (Apple, ITX…)",
+      "none": "No trobo aquesta empresa. Prova amb un altre nom o el seu símbol.",
+      "choose": "Començar una tesi sobre {name}"
+    },
+    "err": {
+      "generic": "No s'ha pogut desar. Torna-ho a provar.",
+      "THESIS_NOT_STOCK": "Tria una empresa (una acció): la tesi analitza un negoci.",
+      "THESIS_DRAFTS": "Tens 5 tesis a mitges: acaba'n o esborra'n alguna abans de començar-ne una altra.",
+      "THESIS_MAX": "Has arribat al màxim de tesis desades: esborra'n alguna d'antiga.",
+      "THESIS_LOCKED": "Aprova el repte final de la primera secció per obrir el projecte.",
+      "THESIS_DONE": "Aquesta tesi ja està acabada.",
+      "RATE_LIMITED": "Vas molt de pressa. Espera un moment.",
+      "NOT_FOUND": "No trobo aquesta empresa."
+    },
+    "notFound": "No trobo aquesta tesi. Potser l'has esborrada.",
+    "xp": "+{n} XP per acabar la teva tesi",
+    "delete": "Esborrar la tesi",
+    "deleteTitle": "Vols esborrar aquesta tesi?",
+    "deleteBody": "S'esborren les teves respostes. No es pot desfer.",
+    "deleteDone": "S'esborren les teves respostes i el certificat deixa de veure's. No es pot desfer.",
+    "deleteYes": "Esborrar",
+    "cancel": "Cancel·lar",
+    "progress": "Pas {n} de {total}",
+    "stepN": "Pas {n} de {total}",
+    "prev": "Enrere",
+    "next": "Desar i continuar",
+    "toSummary": "Veure la meva fitxa de tesi",
+    "finish": "Acabar i veure la meva puntuació",
+    "facts": {
+      "title": "Dades de la fitxa",
+      "none": "sense dada",
+      "noSector": "Sector sense dada",
+      "asOf": "preu de les {time}",
+      "stale": "pot no estar al dia",
+      "pe": "PER",
+      "div": "Dividend",
+      "noRange": "Rang de 52 setmanes: sense dada",
+      "rangeLabel": "Rang de 52 setmanes de {low} a {high}; preu actual {price}",
+      "low": "Mín. 52 set.",
+      "high": "Màx. 52 set."
+    },
+    "s1": {
+      "q": "Què fa {name} i com guanya diners?",
+      "help": "Explica-ho com ho explicaries a un amic: què ven, a qui i qui li paga.",
+      "label": "La teva resposta",
+      "ph": "Ven… a… i guanya diners amb…",
+      "hint": "Si no saps explicar-ho en dues frases, encara no entens el negoci. Mira la descripció de la fitxa i pensa quina part li deixa més diners."
+    },
+    "s2": {
+      "q": "Per què podria continuar guanyant diners d'aquí a 5 anys?",
+      "help": "Busca el seu avantatge davant la competència: allò que als altres els costaria copiar.",
+      "choose": "El seu avantatge principal",
+      "label": "Explica per què",
+      "ph": "Perquè els clients…",
+      "hint": "Un avantatge de debò aguanta encara que arribi un competidor amb més diners. Pregunta't què passaria si demà algú vengués el mateix més barat.",
+      "hintNone": "Reconèixer que no hi veus un avantatge clar també és una bona anàlisi: aleshores el preu i el risc pesen encara més."
+    },
+    "moat": {
+      "BRAND": "Marca: la gent la prefereix i paga més per ella",
+      "NETWORK": "Efecte xarxa: com més usuaris, més útil és",
+      "COST": "Costos més baixos que els rivals",
+      "SWITCHING": "Canviar a un altre proveïdor costa molt",
+      "PATENTS": "Patents, llicències o tecnologia pròpia",
+      "SCALE": "Mida: el que fa és car de replicar",
+      "NONE": "No hi veig un avantatge clar"
+    },
+    "s3": {
+      "q": "Quins són els seus riscos principals?",
+      "help": "Escriu-ne almenys 2. El que podria fer que guanyi menys diners o que l'acció caigui molt.",
+      "label": "Risc {n}",
+      "ph0": "Per exemple: depèn molt d'un sol producte",
+      "ph1": "Per exemple: té molt deute i pugen els tipus",
+      "ph2": "Per exemple: una regulació nova o un competidor fort",
+      "add": "Afegir un altre risc",
+      "count": "{n, plural, =0 {Encara cap risc vàlid} one {# risc vàlid} other {# riscos vàlids}} (mínim 2)",
+      "hint": "Pensa en tipus de risc: competència, deute, regulació, dependència d'un client o producte, divisa i el mateix preu. Qui només veu avantatges sol caure en el biaix de confirmació."
+    },
+    "s4": {
+      "q": "És cara o barata?",
+      "help": "El PER és el preu de l'acció dividit pel benefici per acció: quants anys de beneficis d'avui pagues. Compara'l amb el del sector i amb la seva pròpia història.",
+      "pe": "PER de l'empresa",
+      "losses": "Perd diners (el PER no s'aplica)",
+      "sector": "PER mitjà del sector",
+      "peers": "{n} empreses",
+      "history": "PER mitjà dels darrers anys",
+      "compare": "El seu PER és {ratio} vegades el del sector. Per sobre d'1, el mercat paga més per cada euro de benefici que en els rivals.",
+      "noSector": "No hi ha prou empreses del seu sector amb dades per comparar. Raona-ho amb el que saps del negoci.",
+      "noPe": "No tenim el PER d'aquesta empresa. Pots raonar amb el creixement, els beneficis o comparar-la amb altres que coneguis.",
+      "noHistory": "Encara no tenim el seu PER històric a la Lumi: si el coneixes, el pots fer servir a la teva explicació.",
+      "choose": "La teva conclusió",
+      "label": "Per què?",
+      "ph": "El seu PER és… davant de… perquè…",
+      "hint": "Un PER alt no vol dir que sigui cara si el benefici creixerà molt; un de baix no vol dir ganga si el negoci empitjora. Compte amb l'ancoratge: el preu de fa un any no diu si avui és cara."
+    },
+    "valuation": {
+      "CHEAP": "Sembla barata",
+      "FAIR": "Sembla raonable",
+      "EXPENSIVE": "Sembla cara",
+      "UNSURE": "No ho tinc clar"
+    },
+    "s5": {
+      "q": "Quina part de la teva cartera li donaries i per què?",
+      "help": "Al simulador. Cap empresa no hauria de poder enfonsar la teva cartera tota sola.",
+      "label": "Pes a la teva cartera",
+      "inEur": "Amb la teva cartera simulada de {total}, serien uns {eur}.",
+      "concentrated": "Més del 10 % en una sola empresa ja és concentrar força.",
+      "why": "Per què aquest pes?",
+      "ph": "Li dono un…% perquè…",
+      "hint": "Regla de la concentració: molts inversors no posen més del 5-10 % en una sola empresa i mai més del 20 %. Al pas següent veuràs quant arrisques amb la regla de l'1 %."
+    },
+    "s6": {
+      "q": "On posaries el teu stop i el teu objectiu?",
+      "help": "L'stop és el preu al qual vendries per tallar la pèrdua; l'objectiu, el que creus que justifica la teva tesi.",
+      "now": "Preu de referència ara: {price}",
+      "stop": "Stop",
+      "target": "Objectiu",
+      "dist": "L'stop és un {pct} % per sota del preu.",
+      "up": "L'objectiu és un {pct} % per sobre.",
+      "risk": "Amb un {w} % de la cartera, si salta l'stop perdries un {risk} % de tota la cartera.",
+      "riskOk": "Dins la regla de l'1 %.",
+      "riskHigh": "Més de l'1 %: baixa el pes o apropa l'stop.",
+      "rr": "El que podries guanyar és {rr} vegades el que arrisques. Molts busquen almenys 2.",
+      "hint": "Posa l'stop on la teva tesi estaria equivocada (per exemple, per sota d'un mínim important), no on «faci poc mal». Regla de l'1 %: si salta, no perdis més de l'1 % de la cartera.",
+      "place": "Què col·loques al gràfic",
+      "chart": "Espelmes setmanals de l'últim any: toca o arrossega per col·locar el nivell",
+      "price": "Preu",
+      "drag": "Toca o arrossega al gràfic per col·locar el nivell triat, o escriu el preu a sota."
+    },
+    "s7": {
+      "q": "Quant de temps la mantindries?",
+      "help": "Una tesi sobre un negoci necessita temps per demostrar-se.",
+      "choose": "Horitzó",
+      "label": "Per què aquest termini? (opcional)",
+      "ph": "Perquè espero que…",
+      "hint": "Si la teva idea depèn del negoci, pensa en anys. Si penses en setmanes, és més especulació que inversió."
+    },
+    "horizon": {
+      "M6": "Menys de 6 mesos",
+      "Y1": "Al voltant d'1 any",
+      "Y3": "Uns 3 anys",
+      "Y5": "5 anys o més",
+      "Y10": "10 anys o més"
+    },
+    "s8": {
+      "q": "Què et faria canviar d'opinió?",
+      "help": "Decideix ara quins fets trencarien la teva tesi, abans que el preu et posi nerviós.",
+      "label": "Canviaria d'opinió si…",
+      "ph": "Si perd clients, si el benefici cau dos anys seguits…",
+      "hint": "Escriu-ho amb fets que puguis comprovar (vendes, marges, deute, una notícia concreta), no amb el preu. Així evites l'efecte disposició: aguantar el que perd per no reconèixer l'error."
+    },
+    "check": {
+      "SHORT": "Escriu una mica més: amb una o dues frases n'hi ha prou.",
+      "CHOOSE": "Tria una opció.",
+      "RISKS_MIN": "Escriu almenys 2 riscos (de poques paraules cadascun).",
+      "RISKS_SAME": "Els riscos han de ser diferents.",
+      "WEIGHT_MIN": "Indica quina part de la cartera li donaries.",
+      "WEIGHT_MAX": "No més del 20 % de la cartera en una sola empresa.",
+      "NO_PRICE": "Ara no tenim el preu d'aquesta empresa. Torna d'aquí a una estona per fixar l'stop i l'objectiu.",
+      "STOP_ZERO": "Indica on posaries l'stop.",
+      "STOP_ABOVE": "L'stop ha d'estar per sota del preu actual.",
+      "TARGET_BELOW": "L'objectiu ha d'estar per sobre del preu actual.",
+      "INCOMPLETE": "Et falta algun pas per respondre."
+    },
+    "sum": {
+      "title": "Fitxa de tesi: {name}",
+      "business": "Què fa i com guanya diners",
+      "moat": "El seu avantatge",
+      "risks": "Riscos",
+      "valuation": "Valoració",
+      "weight": "Pes a la cartera",
+      "levels": "Stop i objectiu",
+      "levelsLine": "Stop {stop} · objectiu {target} (preu de referència {price})",
+      "horizon": "Horitzó",
+      "invalidation": "Canviaria d'opinió si…",
+      "edit": "Canviar: {what}",
+      "editShort": "Canviar"
+    },
+    "done": {
+      "kicker": "Tesi acabada",
+      "body": "Has raonat una tesi completa sobre {name}. Així s'analitza una inversió: amb dades, riscos i un pla.",
+      "simulator": "Obrir la fitxa al simulador",
+      "simulatorNote": "Si vols, practica la teva tesi amb diners virtuals: tu decideixes si hi operes i quant.",
+      "another": "Fer una altra tesi",
+      "date": "Acabada el {date}"
+    },
+    "score": {
+      "title": "La teva puntuació, explicada",
+      "complete": "Completa",
+      "completeHelp": "5 punts per cada pas explicat amb una mica de detall (3 si es queda en el mínim).",
+      "risks": "Riscos",
+      "risksHelp": "2 riscos diferents, 6 punts; 3 o més, 10.",
+      "valuation": "Valoració",
+      "valuationHelp": "Argumentar amb una xifra o el PER (5), amb detall (5) i una conclusió coherent amb les dades del sector (5).",
+      "risk": "Gestió del risc",
+      "riskHelp": "Pes de fins al 10 %, 10 punts (fins al 20 %, 5) i perdre com a màxim l'1 % de la cartera si salta l'stop, 10 (fins al 2 %, 5).",
+      "plan": "Pla",
+      "planHelp": "Guany possible d'almenys 2 vegades el risc (8; d'1 vegada, 4), horitzó d'un any o més (4) i què et faria canviar d'opinió, ben explicat (3)."
+    },
+    "cert": {
+      "title": "El teu certificat",
+      "text": "He completat la meva tesi d'inversió sobre {name} amb la Lumi.",
+      "alt": "Certificat de la tesi d'inversió sobre {name}",
+      "privacy": "El certificat només mostra el teu nom de pila, l'empresa i la puntuació. Les teves respostes no es comparteixen.",
+      "share": "Compartir el certificat",
+      "copied": "Enllaç copiat"
+    }
+  }
+}

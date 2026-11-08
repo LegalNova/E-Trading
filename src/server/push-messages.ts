@@ -4,7 +4,7 @@ import 'server-only'
 // Cada tipo tiene varias versiones que rotan para que no se repitan.
 
 export type Lang = 'es' | 'ca' | 'en'
-export type PushKind = 'streak' | 'streak_last' | 'unfinished' | 'unfinished2' | 'review' | 'daily' | 'nudge' | 'market' | 'pos_down' | 'pos_up' | 'watch_down' | 'watch_up' | 'morning' | 'evening' | 'league' | 'comeback' | 'trial'
+export type PushKind = 'streak' | 'streak_last' | 'unfinished' | 'unfinished2' | 'review' | 'daily' | 'nudge' | 'market' | 'pos_down' | 'pos_up' | 'watch_down' | 'watch_up' | 'morning' | 'evening' | 'league' | 'comeback' | 'trial' | 'journal' | 'weekly'
 type V = Record<string, string | number>
 type Msg = { title: string; body: string }
 /** «1 día» / «2 días» (y en catalán e inglés) */
@@ -85,16 +85,16 @@ const T: Record<PushKind, Record<Lang, ((v: V) => Msg)[]>> = {
   },
   market: {
     es: [
-      v => ({ title: `${v.name} se mueve hoy: ${v.chg}`, body: 'Abre el mercado y mira qué está pasando. Con dinero virtual, sin riesgo.' }),
-      v => ({ title: 'Es tu momento del día en el mercado', body: `${v.name} ${v.chg} hoy. ¿Lo sigues de cerca o esperas?` }),
+      v => ({ title: `${v.name} se mueve hoy: ${v.chg}`, body: 'Entra a ver qué lo mueve. Entender un movimiento enseña más que perseguirlo.' }),
+      v => ({ title: 'Es tu momento del día en el mercado', body: `${v.name} ${v.chg} hoy. Mira el gráfico y busca la noticia: un día no cuenta toda la historia.` }),
     ],
     ca: [
-      v => ({ title: `${v.name} es mou avui: ${v.chg}`, body: 'Obre el mercat i mira què està passant. Amb diners virtuals, sense risc.' }),
-      v => ({ title: 'És el teu moment del dia al mercat', body: `${v.name} ${v.chg} avui. El segueixes de prop o esperes?` }),
+      v => ({ title: `${v.name} es mou avui: ${v.chg}`, body: 'Entra a veure què el mou. Entendre un moviment ensenya més que perseguir-lo.' }),
+      v => ({ title: 'És el teu moment del dia al mercat', body: `${v.name} ${v.chg} avui. Mira el gràfic i busca la notícia: un dia no explica tota la història.` }),
     ],
     en: [
-      v => ({ title: `${v.name} is moving today: ${v.chg}`, body: 'Open the market and see what’s happening. Virtual money, no risk.' }),
-      v => ({ title: 'Your market moment of the day', body: `${v.name} ${v.chg} today. Keep a close eye or wait?` }),
+      v => ({ title: `${v.name} is moving today: ${v.chg}`, body: 'See what’s moving it. Understanding a move teaches more than chasing it.' }),
+      v => ({ title: 'Your market moment of the day', body: `${v.name} ${v.chg} today. Check the chart and the news: one day isn’t the whole story.` }),
     ],
   },
   unfinished2: {
@@ -141,15 +141,15 @@ const T: Record<PushKind, Record<Lang, ((v: V) => Msg)[]>> = {
   },
   pos_up: {
     es: [
-      v => ({ title: `Mira: ${v.name} está subiendo`, body: `Tu posición va ${v.chg} hoy. ¿Recoges beneficios o la dejas correr?` }),
+      v => ({ title: `Mira: ${v.name} está subiendo`, body: `Tu posición va ${v.chg} hoy. Antes de decidir nada, repasa por qué la compraste.` }),
       v => ({ title: `${v.name} ${v.chg} hoy`, body: 'Lo que tienes en cartera se está moviendo a tu favor. Entra a verlo.' }),
     ],
     ca: [
-      v => ({ title: `Mira: ${v.name} està pujant`, body: `La teva posició va ${v.chg} avui. Reculls beneficis o la deixes córrer?` }),
+      v => ({ title: `Mira: ${v.name} està pujant`, body: `La teva posició va ${v.chg} avui. Abans de decidir res, repassa per què la vas comprar.` }),
       v => ({ title: `${v.name} ${v.chg} avui`, body: 'El que tens a la cartera es mou a favor teu. Entra a veure-ho.' }),
     ],
     en: [
-      v => ({ title: `Look: ${v.name} is rising`, body: `Your position is ${v.chg} today. Take profits or let it run?` }),
+      v => ({ title: `Look: ${v.name} is rising`, body: `Your position is ${v.chg} today. Before deciding anything, recall why you bought it.` }),
       v => ({ title: `${v.name} ${v.chg} today`, body: 'What you hold is moving your way. Come and see.' }),
     ],
   },
@@ -239,6 +239,23 @@ const T: Record<PushKind, Record<Lang, ((v: V) => Msg)[]>> = {
     ca: [v => ({ title: Number(v.n) === 1 ? 'Avui és el teu últim dia de Max' : `Et queden ${v.n} dies de Max`, body: 'Aprofita-ho: tot el curs obert i vides il·limitades. Avui, una classe de les avançades.' })],
     en: [v => ({ title: Number(v.n) === 1 ? 'It’s your last day of Max' : `${v.n} days of Max left`, body: 'Make the most of it: the whole course and unlimited lives. Try an advanced lesson today.' })],
   },
+  journal: {
+    es: [v => ({ title: `¿Se cumplió tu motivo con ${v.name}?`, body: `${v.side === 'SELL' ? 'Vendiste' : 'Compraste'} ${v.name} porque ${v.why}. Han pasado dos semanas: revísalo en tu diario.` })],
+    ca: [v => ({ title: `S’ha complert el teu motiu amb ${v.name}?`, body: `Vas ${v.side === 'SELL' ? 'vendre' : 'comprar'} ${v.name} perquè ${v.why}. Han passat dues setmanes: revisa-ho al teu diari.` })],
+    en: [v => ({ title: `Did your reason for ${v.name} play out?`, body: `You ${v.side === 'SELL' ? 'sold' : 'bought'} ${v.name} because ${v.why}. Two weeks on: check it in your journal.` })],
+  },
+  weekly: {
+    es: [v => ({ title: `Tu cartera esta semana: ${v.me} frente al S&P 500 (${v.idx})`, body: 'Compararte con un índice es la forma honesta de medir cómo vas. Una semana es poco: lo que cuenta es la tendencia.' })],
+    ca: [v => ({ title: `La teva cartera aquesta setmana: ${v.me} davant de l’S&P 500 (${v.idx})`, body: 'Comparar-te amb un índex és la manera honesta de mesurar com vas. Una setmana és poc: el que compta és la tendència.' })],
+    en: [v => ({ title: `Your portfolio this week: ${v.me} vs the S&P 500 (${v.idx})`, body: 'Comparing yourself with an index is the honest way to measure how you’re doing. A week is short: the trend is what counts.' })],
+  },
+}
+
+/** Por qué compró o vendió, para el recordatorio del diario («Compraste X porque …») */
+export const WHY: Record<Lang, Record<string, string>> = {
+  es: { QUALITY: 'creías en la empresa', CHEAP: 'te parecía barata', DIVERSIFY: 'querías diversificar', LONG_TERM: 'pensabas a largo plazo', NEWS: 'viste una noticia', SOCIAL: 'lo viste en redes', HUNCH: 'tenías una corazonada', OTHER: 'tenías un motivo', TARGET: 'llegó a tu objetivo', CHANGED: 'cambió lo que pensabas', REBALANCE: 'querías reequilibrar', NEED_CASH: 'querías el dinero para otra cosa', FEAR: 'temías que bajara más' },
+  ca: { QUALITY: 'creies en l’empresa', CHEAP: 'et semblava barata', DIVERSIFY: 'volies diversificar', LONG_TERM: 'pensaves a llarg termini', NEWS: 'vas veure una notícia', SOCIAL: 'ho vas veure a les xarxes', HUNCH: 'tenies una intuïció', OTHER: 'tenies un motiu', TARGET: 'va arribar al teu objectiu', CHANGED: 'va canviar el que pensaves', REBALANCE: 'volies reequilibrar', NEED_CASH: 'volies els diners per a una altra cosa', FEAR: 'temies que baixés més' },
+  en: { QUALITY: 'you believed in the company', CHEAP: 'it looked cheap', DIVERSIFY: 'you wanted to diversify', LONG_TERM: 'you were thinking long term', NEWS: 'you saw some news', SOCIAL: 'you saw it on social media', HUNCH: 'you had a hunch', OTHER: 'you had a reason', TARGET: 'it hit your target', CHANGED: 'your view changed', REBALANCE: 'you wanted to rebalance', NEED_CASH: 'you wanted the money for something else', FEAR: 'you feared it would fall further' },
 }
 
 /** Mensaje del tipo indicado; la versión depende del día, para que no se repita siempre la misma */

@@ -1,1 +1,133 @@
-{}
+{
+  "missions": {
+    "tryNow": "Try it now",
+    "tryNowHint": "What you’ve just learned, in the real market (with virtual money).",
+    "afterQuiz": "Pass the quiz to unlock your mission",
+    "openTitle": "Your mission for this lesson",
+    "doneTitle": "Mission complete",
+    "pendingTitle": "Your pending mission",
+    "fromLesson": "From the lesson «{title}»",
+    "more": "{n, plural, one {You have # more open mission} other {You have # more open missions}}",
+    "goAria": "Go to the mission: {text}",
+    "doneToast": "Mission complete: +{xp} XP",
+    "hint": "Mission: {text}",
+    "hintDone": "Mission complete: +{xp} XP"
+  },
+  "journal": {
+    "title": "Trading journal",
+    "intro": "Write down why you buy or sell. Two weeks later we’ll ask whether it played out: that way you learn from your decisions, not just the results.",
+    "whyBuy": "Why are you buying?",
+    "whySell": "Why are you selling?",
+    "optional": "Optional",
+    "whyHint": "Pick a reason and we’ll note it in your journal.",
+    "willRemind": "We’ll note it in your journal. In 14 days we’ll ask if it played out.",
+    "reasonPlaceholder": "Your reason in one line (optional)",
+    "reasonLabel": "Your reason in one line",
+    "savedToast": "Reason saved to your journal",
+    "saveError": "Couldn’t save it. Try again.",
+    "linkHint": "Note why you buy and check whether you were right",
+    "dueCount": "{n, plural, one {# entry to review} other {# entries to review}}",
+    "entriesCount": "{n, plural, one {# entry} other {# entries}}",
+    "bought": "Buy",
+    "sold": "Sell",
+    "priceThen": "Price then",
+    "priceNow": "Price now",
+    "noPrice": "No quote right now",
+    "reviewQuestion": "Did your reason play out?",
+    "verdict": {
+      "MET": "It did",
+      "NOT_MET": "It didn’t",
+      "TOO_EARLY": "Too early"
+    },
+    "reviewed": {
+      "MET": "Saved: it played out",
+      "NOT_MET": "Saved: it didn’t",
+      "TOO_EARLY": "We’ll ask again in 14 days"
+    },
+    "notePlaceholder": "What did you learn? (optional)",
+    "noteLabel": "Note",
+    "saveReview": "Save",
+    "change": "Change",
+    "remindOn": "On {date} we’ll ask if it played out. You can review it sooner.",
+    "tooEarlyAgain": "We’ll ask again on {date}.",
+    "summaryTitle": "How your reasons work out",
+    "summaryBuy": "Your buys {why}: {met} of {n} went as you expected.",
+    "summarySell": "Your sells {why}: {met} of {n} went as you expected.",
+    "summaryNote": "With only a few entries it’s too early to draw conclusions. The value is in seeing the pattern over time.",
+    "filter": "Filter entries",
+    "all": "All",
+    "dueTab": "To review ({n})",
+    "emptyTitle": "Nothing in your journal yet",
+    "emptyBody": "Next time you buy or sell, pick why in the order sheet.",
+    "goMarket": "Go to the market",
+    "tags": {
+      "buy": {
+        "QUALITY": "I believe in the company",
+        "CHEAP": "It’s cheap",
+        "DIVERSIFY": "To diversify",
+        "LONG_TERM": "Long term",
+        "NEWS": "Because of news",
+        "SOCIAL": "Saw it on social media",
+        "HUNCH": "Hunch",
+        "OTHER": "Other"
+      },
+      "sell": {
+        "TARGET": "It hit my target",
+        "CHANGED": "I no longer believe in it",
+        "REBALANCE": "To rebalance",
+        "NEED_CASH": "I want the money for something else",
+        "FEAR": "Afraid it’ll fall further",
+        "NEWS": "Because of news",
+        "SOCIAL": "Saw it on social media",
+        "HUNCH": "Hunch",
+        "OTHER": "Other"
+      }
+    },
+    "why": {
+      "buy": {
+        "QUALITY": "because you believed in the company",
+        "CHEAP": "because it looked cheap",
+        "DIVERSIFY": "to diversify",
+        "LONG_TERM": "for the long term",
+        "NEWS": "because of news",
+        "SOCIAL": "from social media",
+        "HUNCH": "on a hunch",
+        "OTHER": "for other reasons"
+      },
+      "sell": {
+        "TARGET": "at your target",
+        "CHANGED": "because you stopped believing in it",
+        "REBALANCE": "to rebalance",
+        "NEED_CASH": "to use the money elsewhere",
+        "FEAR": "out of fear it would fall",
+        "NEWS": "because of news",
+        "SOCIAL": "from social media",
+        "HUNCH": "on a hunch",
+        "OTHER": "for other reasons"
+      }
+    },
+    "lessons": {
+      "buy": {
+        "QUALITY": "Believing in a company is fine if you know why. Write down what would have to happen for you to stop believing in it, and look for the case against too: it’s the antidote to confirmation bias.",
+        "CHEAP": "Anchoring: falling doesn’t make it cheap. Cheap means paying less than the business is worth, and that’s measured by its earnings, not by the old price.",
+        "DIVERSIFY": "Spreading out softens the blow of a single fall. Check they don’t all move together: diversifying means owning different things, not many similar ones.",
+        "LONG_TERM": "Thinking long term helps you not react to every dip. The hard part is sticking to the plan when it falls: decide today what you’d do after a 20 % drop.",
+        "NEWS": "Once news is public, the price has usually priced it in within minutes. Ask yourself what you know that the market doesn’t already.",
+        "SOCIAL": "FOMO and herd behaviour: buying because others are buying usually means getting in late. Whoever recommends it online loses nothing if it goes wrong for you.",
+        "HUNCH": "Overconfidence: a hunch feels certain, but it isn’t a reason. Writing it down and reviewing it will show you how often your hunches are actually right.",
+        "OTHER": "Writing down your reason is already a good habit: in two weeks you’ll be able to check whether you were right."
+      },
+      "sell": {
+        "TARGET": "Selling at your target is following a plan. Watch out for the disposition effect: selling winners early and holding on to losers.",
+        "CHANGED": "Selling because your reason has changed is consistent. What matters is the business today, not what you paid.",
+        "REBALANCE": "Rebalancing takes your portfolio back to the mix you chose: you sell some of what rose most without trying to guess the future.",
+        "NEED_CASH": "Moving money to another idea makes sense if the new one is better than the one you’re leaving, not just more exciting.",
+        "FEAR": "Loss aversion: the fear of losing more pushes you to sell at the worst moment. Ask yourself whether you’d buy it today at this price.",
+        "NEWS": "Selling after the news usually comes too late: prices react within minutes. Ask whether the business changed or just the day’s mood.",
+        "SOCIAL": "Herd behaviour: selling because others sell is still following the crowd, just on the way out.",
+        "HUNCH": "A hunch to get out is as unreliable as one to get in. Write it down and check it: that’s how you’ll know how often you’re right.",
+        "OTHER": "Writing down your reason is already a good habit: in two weeks you’ll be able to check whether you were right."
+      }
+    }
+  }
+}

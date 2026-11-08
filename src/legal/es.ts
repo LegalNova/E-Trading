@@ -129,6 +129,7 @@ export const es: Record<LegalSlug, LegalDoc> = {
             ['Neon Inc. (sobre Amazon Web Services)', 'Base de datos', 'EE. UU. (us-east-1) · contrato de encargado y cláusulas contractuales tipo'],
             ['Google LLC', 'Inicio de sesión con Google (solo si lo usas)', 'EE. UU. · Marco de Privacidad de Datos UE-EE. UU.'],
             ['Stripe Payments Europe, Ltd.', 'Cobro de los planes de pago (solo si contratas uno): tarjeta, facturas y suscripción. Nosotros no vemos los datos completos de tu tarjeta', 'Irlanda (UE)'],
+            ['Anthropic, PBC', 'Lumi con IA (solo en Max y cuando esté activada): tus preguntas a Lumi y un resumen de tu cartera simulada, tu progreso y tu diario de operaciones, sin tu nombre ni tu email. No se usan para entrenar sus modelos', 'EE. UU. · Marco de Privacidad de Datos UE-EE. UU. y cláusulas contractuales tipo'],
             ['Resend Inc.', 'Envío de emails de la cuenta (confirmar el email, cambiar la contraseña)', 'EE. UU. · contrato de encargado y cláusulas contractuales tipo'],
           ],
         },
@@ -283,7 +284,7 @@ export const es: Record<LegalSlug, LegalDoc> = {
   },
   contratacion: {
     title: 'Condiciones de contratación',
-    intro: `Última actualización: ${LEGAL_UPDATED}. Se aplican cuando contratas un plan de pago (Plus o Max) y completan los Términos de uso. Cumplen el Real Decreto Legislativo 1/2007 (Ley General para la Defensa de los Consumidores y Usuarios) y la LSSI-CE.`,
+    intro: `Última actualización: ${LEGAL_UPDATED}. Se aplican cuando contratas un plan de pago (Plus o Max) o compras un regalo y completan los Términos de uso. Cumplen el Real Decreto Legislativo 1/2007 (Ley General para la Defensa de los Consumidores y Usuarios) y la LSSI-CE.`,
     sections: [
       {
         h: '1. Quién te vende',
@@ -373,6 +374,19 @@ export const es: Record<LegalSlug, LegalDoc> = {
           `A la atención de ${O.name}, ${O.address}, ${O.email}:`,
           'Por la presente le comunico que desisto de mi contrato del siguiente servicio: plan [Plus o Max], [mensual o anual].',
           'Contratado el: [fecha] · Nombre: [tu nombre] · Email de la cuenta: [tu email] · Fecha: [fecha de hoy] · Firma (solo si lo envías en papel).',
+        ],
+      },
+      {
+        h: '12. Regalar Lumi',
+        p: ['Puedes regalar Plus o Max durante 1 mes (30 días) o 12 meses (365 días) a otra persona. Estas condiciones se aplican al regalo junto con las anteriores.'],
+        list: [
+          'Precio: el de 1 mes o el anual del plan (Plus: 3,99 € o 29,99 €; Max: 7,99 € o 59,99 €), con impuestos incluidos. Es un pago único con tarjeta a través de Stripe: no es una suscripción, no se renueva y no habrá más cobros.',
+          'Al pagar recibes un enlace con un código personal. Quien lo tenga puede canjearlo, así que compártelo solo con la persona a la que se lo regalas. No puedes canjear un regalo que has comprado tú.',
+          'Se puede canjear una sola vez, durante los 12 meses siguientes al pago. Pasado ese plazo caduca sin canjearse y no se devuelve el importe.',
+          'Al canjearlo, quien lo recibe tiene el plan desde ese momento y durante los días del regalo. Si ya tenía un regalo o una prueba en marcha, los días se suman al final. Si paga una suscripción, su próximo cobro se retrasa esos días.',
+          'Derecho de desistimiento: tienes 14 días naturales desde la compra para desistir, siempre que el regalo no se haya canjeado. Te devolvemos el importe completo por el mismo medio de pago y el enlace deja de funcionar. Escríbenos a ' + O.email + ' con el email de tu cuenta.',
+          'Una vez canjeado, el regalo ya se ha disfrutado y no se puede devolver, porque el servicio empieza a prestarse en ese momento con el consentimiento de quien lo canjea.',
+          'Para comprar un regalo entre los 14 y los 17 años hace falta la confirmación de tu madre, padre o tutor, como en el apartado 8.',
         ],
       },
     ],

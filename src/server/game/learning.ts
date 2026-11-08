@@ -247,7 +247,8 @@ export const answer = (attemptId: string, questionId: string, value: unknown, el
     // Las preguntas de repaso mezcladas en una clase no quitan vidas y siguen el repaso espaciado
     const own = at.mode === 'LESSON' && at.lessonId && LESSON[at.lessonId] ? new Set((QUIZZES[LESSON[at.lessonId].quizId] ?? []).map(q => q.id)) : null
     const spaced = at.mode === 'REVIEW' || (!!own && !own.has(questionId))
-    const costsLife = at.mode === 'LESSON' && !spaced && !premium
+    // Las de «¿sube o baja?» no cuestan vida: aunque se razonen, tienen parte de azar
+    const costsLife = at.mode === 'LESSON' && !spaced && !premium && ALL_Q[questionId]?.type !== 'UP_DOWN'
     const q = ALL_Q[questionId]
     const loc = currentLocale()
     const tq = questionT(loc, q)

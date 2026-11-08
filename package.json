@@ -16,6 +16,7 @@
     "check:content": "tsx --conditions=react-server scripts/check-content.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^1.6.0",
     "@neondatabase/serverless": "^1.2.0",
     "@prisma/adapter-neon": "7.10.1",
     "@prisma/client": "7.10.1",

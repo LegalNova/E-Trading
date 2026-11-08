@@ -18,6 +18,7 @@ const MODES: TutorModeT[] = ['EXPLAIN', 'PATH', 'PORTFOLIO', 'BIASES']
 
 export function Tutor({ lessonTitle }: { lessonTitle?: string }) {
   const t = useTranslations('tutor')
+  const t2 = useTranslations('tutor2')
   const qc = useQueryClient()
   const toast = useToast()
   const { data: me } = useMe()
@@ -37,9 +38,9 @@ export function Tutor({ lessonTitle }: { lessonTitle?: string }) {
         const now = new Date().toISOString()
         const add: TutorMessageT[] = [
           { id: `u-${now}`, role: 'user', content: question, mode, sources: [], createdAt: now },
-          { id: `a-${now}`, role: 'assistant', content: r.answer, mode, sources: r.sources, createdAt: now },
+          { id: `a-${now}`, role: 'assistant', content: r.answer, mode, sources: r.sources, createdAt: now, engine: r.engine },
         ]
-        return { ...h, messages: [...h.messages, ...add], usage: r.usage }
+        return { ...h, messages: [...h.messages, ...add], usage: r.usage, ai: r.ai ?? h.ai }
       })
       setQ('')
     },
@@ -186,7 +187,8 @@ export function Tutor({ lessonTitle }: { lessonTitle?: string }) {
         </div>
         <span className="t-cap flex justify-between gap-2">
           <span>{t('left', { n: left, total: h.usage.limit })}</span>
-          <span>{t('engineLumi')}</span>
+          {/* Con la IA activada (Max), cuántas respuestas con IA quedan hoy; al acabarse responde el cerebro propio */}
+          <span>{h.ai?.on ? (h.ai.used < h.ai.limit ? t2('aiLeft', { n: h.ai.limit - h.ai.used, total: h.ai.limit }) : t2('aiDone')) : t('engineLumi')}</span>
         </span>
       </form>
     </div>
@@ -195,6 +197,7 @@ export function Tutor({ lessonTitle }: { lessonTitle?: string }) {
 
 function Bubble({ m, name, skin, stage }: { m: TutorMessageT; name: string; skin?: string; stage?: number }) {
   const t = useTranslations('tutor')
+  const t2 = useTranslations('tutor2')
   if (m.role === 'user')
     return (
       <div className="ml-auto max-w-[85%] rounded-[18px] rounded-br-md px-3.5 py-2.5 text-[15px] leading-[22px] whitespace-pre-wrap" style={{ background: 'var(--brand)', color: '#fff' }}>
@@ -206,6 +209,7 @@ function Bubble({ m, name, skin, stage }: { m: TutorMessageT; name: string; skin
       <Lumi mood="HAPPY" size={38} skin={skin} stage={stage} label={name} className="mt-1 flex-none" />
       <div className="card flex min-w-0 flex-1 flex-col gap-2 rounded-tl-md">
         <RichText text={m.content} />
+        {m.engine === 'AI' && <span className="t-cap">{t2('aiTag')}</span>}
         {m.sources.length > 0 && (
           <div className="flex flex-wrap items-center gap-1.5">
             <span className="t-cap">{t('sources')}</span>

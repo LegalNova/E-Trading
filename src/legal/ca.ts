@@ -108,6 +108,7 @@ export const ca: Record<LegalSlug, LegalDoc> = {
             ['Neon Inc. (sobre Amazon Web Services)', 'Base de dades', 'EUA (us-east-1) · contracte d’encarregat i clàusules contractuals tipus'],
             ['Google LLC', 'Inici de sessió amb Google (només si el fas servir)', 'EUA · Marc de privadesa de dades UE-EUA'],
             ['Stripe Payments Europe, Ltd.', 'Cobrament dels plans de pagament (només si en contractes un): targeta, factures i subscripció. Nosaltres no veiem les dades completes de la teva targeta', 'Irlanda (UE)'],
+            ['Anthropic, PBC', 'La Lumi amb IA (només a Max i quan estigui activada): les teves preguntes a la Lumi i un resum de la teva cartera simulada, el teu progrés i el teu diari d’operacions, sense el teu nom ni el teu correu. No s’utilitzen per entrenar els seus models', 'EUA · Marc de Privacitat de Dades UE-EUA i clàusules contractuals tipus'],
             ['Resend Inc.', 'Enviament de correus del compte (confirmar el correu, canviar la contrasenya)', 'EUA · contracte d’encarregat i clàusules contractuals tipus'],
           ],
         },
@@ -218,7 +219,7 @@ export const ca: Record<LegalSlug, LegalDoc> = {
   },
   contratacion: {
     title: 'Condicions de contractació',
-    intro: `Darrera actualització: ${UPDATED}. S’apliquen quan contractes un pla de pagament (Plus o Max) i completen les Condicions d’ús. Compleixen el Reial decret legislatiu 1/2007 (Llei general per a la defensa dels consumidors i usuaris) i la LSSI-CE. En cas de dubte, preval la versió en castellà.`,
+    intro: `Darrera actualització: ${UPDATED}. S’apliquen quan contractes un pla de pagament (Plus o Max) o compres un regal i completen les Condicions d’ús. Compleixen el Reial decret legislatiu 1/2007 (Llei general per a la defensa dels consumidors i usuaris) i la LSSI-CE. En cas de dubte, preval la versió en castellà.`,
     sections: [
       {
         h: '1. Qui et ven',
@@ -308,6 +309,19 @@ export const ca: Record<LegalSlug, LegalDoc> = {
           `A l’atenció de ${O.name}, ${O.address}, ${O.email}:`,
           'Per la present li comunico que desisteixo del meu contracte del servei següent: pla [Plus o Max], [mensual o anual].',
           'Contractat el: [data] · Nom: [el teu nom] · Correu del compte: [el teu correu] · Data: [data d’avui] · Signatura (només si l’envies en paper).',
+        ],
+      },
+      {
+        h: '12. Regalar la Lumi',
+        p: ['Pots regalar Plus o Max durant 1 mes (30 dies) o 12 mesos (365 dies) a una altra persona. Aquestes condicions s’apliquen al regal juntament amb les anteriors.'],
+        list: [
+          'Preu: el d’1 mes o l’anual del pla (Plus: 3,99 € o 29,99 €; Max: 7,99 € o 59,99 €), amb impostos inclosos. És un pagament únic amb targeta a través de Stripe: no és una subscripció, no es renova i no hi haurà més cobraments.',
+          'En pagar reps un enllaç amb un codi personal. Qui el tingui el pot bescanviar, així que comparteix-lo només amb la persona a qui el regales. No pots bescanviar un regal que has comprat tu.',
+          'Es pot bescanviar una sola vegada, durant els 12 mesos següents al pagament. Passat aquest termini caduca sense bescanviar-se i no es retorna l’import.',
+          'En bescanviar-lo, qui el rep té el pla des d’aquell moment i durant els dies del regal. Si ja tenia un regal o una prova en marxa, els dies se sumen al final. Si paga una subscripció, el seu proper cobrament es retarda aquests dies.',
+          'Dret de desistiment: tens 14 dies naturals des de la compra per desistir, sempre que el regal no s’hagi bescanviat. Et retornem l’import complet pel mateix mitjà de pagament i l’enllaç deixa de funcionar. Escriu-nos a ' + O.email + ' amb el correu del teu compte.',
+          'Un cop bescanviat, el regal ja s’ha gaudit i no es pot retornar, perquè el servei comença a prestar-se en aquell moment amb el consentiment de qui el bescanvia.',
+          'Per comprar un regal entre els 14 i els 17 anys cal la confirmació de la teva mare, el teu pare o el teu tutor, com a l’apartat 8.',
         ],
       },
     ],

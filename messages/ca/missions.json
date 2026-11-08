@@ -1,1 +1,133 @@
-{}
+{
+  "missions": {
+    "tryNow": "Prova-ho ara",
+    "tryNowHint": "El que acabes d’aprendre, al mercat de veritat (amb diners virtuals).",
+    "afterQuiz": "Quan aprovis, la teva missió",
+    "openTitle": "La teva missió d’aquesta classe",
+    "doneTitle": "Missió complerta",
+    "pendingTitle": "La teva missió pendent",
+    "fromLesson": "De la classe «{title}»",
+    "more": "{n, plural, one {Tens # missió més oberta} other {Tens # missions més obertes}}",
+    "goAria": "Anar a la missió: {text}",
+    "doneToast": "Missió complerta: +{xp} XP",
+    "hint": "Missió: {text}",
+    "hintDone": "Missió complerta: +{xp} XP"
+  },
+  "journal": {
+    "title": "Diari d’operacions",
+    "intro": "Apunta per què compres o vens. Al cap de dues setmanes et preguntem si s’ha complert: així aprens de les teves decisions, no només dels resultats.",
+    "whyBuy": "Per què compres?",
+    "whySell": "Per què vens?",
+    "optional": "Opcional",
+    "whyHint": "Tria un motiu i l’apuntem al teu diari.",
+    "willRemind": "L’apuntem al teu diari. D’aquí a 14 dies et preguntem si s’ha complert.",
+    "reasonPlaceholder": "El teu motiu en una línia (opcional)",
+    "reasonLabel": "El teu motiu en una línia",
+    "savedToast": "Motiu apuntat al teu diari",
+    "saveError": "No s’ha pogut desar. Torna-ho a provar.",
+    "linkHint": "Apunta per què compres i comprova si l’encertes",
+    "dueCount": "{n, plural, one {# entrada per revisar} other {# entrades per revisar}}",
+    "entriesCount": "{n, plural, one {# entrada} other {# entrades}}",
+    "bought": "Compra",
+    "sold": "Venda",
+    "priceThen": "Preu aleshores",
+    "priceNow": "Preu ara",
+    "noPrice": "Sense cotització ara",
+    "reviewQuestion": "S’ha complert el teu motiu?",
+    "verdict": {
+      "MET": "S’ha complert",
+      "NOT_MET": "No s’ha complert",
+      "TOO_EARLY": "Encara és aviat"
+    },
+    "reviewed": {
+      "MET": "Apuntat: s’ha complert",
+      "NOT_MET": "Apuntat: no s’ha complert",
+      "TOO_EARLY": "T’ho tornarem a preguntar d’aquí a 14 dies"
+    },
+    "notePlaceholder": "Què has après? (opcional)",
+    "noteLabel": "Nota",
+    "saveReview": "Desar",
+    "change": "Canviar",
+    "remindOn": "El {date} et preguntarem si s’ha complert. Ho pots revisar abans.",
+    "tooEarlyAgain": "T’ho tornarem a preguntar el {date}.",
+    "summaryTitle": "Com et surten els teus motius",
+    "summaryBuy": "Les teves compres {why}: {met} de {n} van sortir com pensaves.",
+    "summarySell": "Les teves vendes {why}: {met} de {n} van sortir com pensaves.",
+    "summaryNote": "Amb poques entrades, és aviat per treure conclusions. El valuós és veure el patró amb el temps.",
+    "filter": "Filtrar entrades",
+    "all": "Totes",
+    "dueTab": "Per revisar ({n})",
+    "emptyTitle": "Encara no hi ha res al teu diari",
+    "emptyBody": "La pròxima vegada que compris o venguis, tria per què al full de l’ordre.",
+    "goMarket": "Anar al mercat",
+    "tags": {
+      "buy": {
+        "QUALITY": "Crec en l’empresa",
+        "CHEAP": "És barata",
+        "DIVERSIFY": "Per diversificar",
+        "LONG_TERM": "A llarg termini",
+        "NEWS": "Per una notícia",
+        "SOCIAL": "Ho he vist a les xarxes",
+        "HUNCH": "Intuïció",
+        "OTHER": "Un altre"
+      },
+      "sell": {
+        "TARGET": "Ha arribat al meu objectiu",
+        "CHANGED": "Ja no hi crec",
+        "REBALANCE": "Per reequilibrar",
+        "NEED_CASH": "Vull els diners per a una altra cosa",
+        "FEAR": "Por que baixi més",
+        "NEWS": "Per una notícia",
+        "SOCIAL": "Ho he vist a les xarxes",
+        "HUNCH": "Intuïció",
+        "OTHER": "Un altre"
+      }
+    },
+    "why": {
+      "buy": {
+        "QUALITY": "perquè creies en l’empresa",
+        "CHEAP": "perquè era barata",
+        "DIVERSIFY": "per diversificar",
+        "LONG_TERM": "a llarg termini",
+        "NEWS": "per notícies",
+        "SOCIAL": "per les xarxes",
+        "HUNCH": "per intuïció",
+        "OTHER": "per altres motius"
+      },
+      "sell": {
+        "TARGET": "en arribar al teu objectiu",
+        "CHANGED": "perquè ja no hi creies",
+        "REBALANCE": "per reequilibrar",
+        "NEED_CASH": "per fer servir els diners en una altra cosa",
+        "FEAR": "per por que baixés",
+        "NEWS": "per notícies",
+        "SOCIAL": "per les xarxes",
+        "HUNCH": "per intuïció",
+        "OTHER": "per altres motius"
+      }
+    },
+    "lessons": {
+      "buy": {
+        "QUALITY": "Creure en una empresa està bé si saps per què. Apunta què hauria de passar perquè hi deixessis de creure, i busca també el que hi va en contra: és l’antídot del biaix de confirmació.",
+        "CHEAP": "Ancoratge: que hagi baixat no la fa barata. Barat és pagar menys del que val el negoci, i això es mesura amb els beneficis, no amb el preu d’abans.",
+        "DIVERSIFY": "Repartir redueix el cop d’una sola caiguda. Comprova que no siguin actius que es mouen igual: diversificar és tenir coses diferents, no moltes de semblants.",
+        "LONG_TERM": "Pensar a llarg termini ajuda a no reaccionar a cada baixada. El difícil és mantenir el pla quan cau: decideix avui què faries si baixés un 20 %.",
+        "NEWS": "Quan una notícia és pública, el preu sol haver-la recollit en minuts. Pregunta’t què saps tu que el mercat no sàpiga ja.",
+        "SOCIAL": "FOMO i efecte ramat: comprar perquè altres compren sol portar a entrar tard. Qui ho recomana a les xarxes no perd res si a tu et surt malament.",
+        "HUNCH": "Excés de confiança: una intuïció se sent segura, però no és un motiu. Apuntar-la i revisar-la et dirà quant encerten de veritat les teves intuïcions.",
+        "OTHER": "Escriure el motiu ja és un bon hàbit: d’aquí a dues setmanes podràs comprovar si pensaves bé."
+      },
+      "sell": {
+        "TARGET": "Vendre en arribar al teu objectiu és seguir un pla. Vigila l’efecte disposició: vendre aviat el que guanya i aguantar el que perd.",
+        "CHANGED": "Vendre perquè ha canviat el teu motiu és coherent. El que importa és el negoci d’avui, no el que vas pagar.",
+        "REBALANCE": "Reequilibrar torna la teva cartera al repartiment que vas triar: vens part del que més ha pujat sense intentar endevinar el futur.",
+        "NEED_CASH": "Moure els diners a una altra idea té sentit si la nova és millor que la que deixes, no només més emocionant.",
+        "FEAR": "Aversió a la pèrdua: la por de perdre més empeny a vendre en el pitjor moment. Pregunta’t si la compraries avui a aquest preu.",
+        "NEWS": "Vendre després d’una notícia sol arribar tard: el preu reacciona en minuts. Pregunta’t si canvia el negoci o només l’ànim del dia.",
+        "SOCIAL": "Efecte ramat: vendre perquè altres venen també és seguir la massa, només que en sortir.",
+        "HUNCH": "Una intuïció per sortir és tan poc fiable com per entrar. Apunta-la i comprova-la: així sabràs quant encertes.",
+        "OTHER": "Escriure el motiu ja és un bon hàbit: d’aquí a dues setmanes podràs comprovar si pensaves bé."
+      }
+    }
+  }
+}

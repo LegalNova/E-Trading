@@ -53,7 +53,7 @@
     },
     {
      "title": "Points, not euros",
-     "body": "An index is measured in points, not euros. What matters is the **change**: if it goes from 14,000 to 14,700 points, it's up 5 %.\n\nBuying the whole thing, through a fund or an ETF, is betting on an entire economy, not on one company.",
+     "body": "An index is measured in points, not euros. What matters is the **change**: if it goes from 14,000 to 14,700 points, it's up 5 %.\n\nBuying the whole thing, through a fund or an ETF, is investing in that whole market at once, not in a single company.",
      "key": "An index is a reference basket, not something you buy as such.",
      "tip": "Try it: in Market, look up the IBEX 35 and see if it's up or down today."
     }
@@ -108,7 +108,7 @@
      "title": "UCITS ETFs",
      "body": "A small investor (a **retail investor**) in the EU buys European **UCITS** ETFs, which come with a **KID** summarising risks and costs. Many US ETFs can't be sold to European retail investors because they don't have a KID.\n\nWith real money, look for «UCITS» in the name and read its KID. In the simulator you can practise with US ETFs.",
      "key": "An ETF is a fund, almost always an index one, that you buy and sell on the stock exchange like a share.",
-     "tip": "Try it: in Market, look up the S&P 500 ETF and compare it with the index."
+     "tip": "Try it: in Market, look up SPY, an S&P 500 ETF, and compare its chart with the index's."
     }
    ]
   },
@@ -160,7 +160,7 @@
     },
     {
      "title": "The free lunch",
-     "body": "How much it goes up and down in a typical year: a single share, 30-35 %; 20-30 shares from different sectors, around 20 %; a global index, 15 %.\n\nHarry Markowitz, Nobel Prize in Economics, called this **the only free lunch**: less risk without giving up expected return. An ETF on a global index gives you that basket in a single purchase.",
+     "body": "How much it goes up and down in a typical year (its **volatility**): a single share, 25-35 %; 20-30 shares from different sectors, around 20 %; a global index, 15 %.\n\nHarry Markowitz, Nobel Prize in Economics, is credited with calling this **the only free lunch**: less risk without giving up expected return. An ETF on a global index gives you that basket in a single purchase.",
      "key": "With lots of companies, the disasters of some are offset by the successes of others.",
      "tip": "Try it: open Portfolio and check whether any position weighs more than 20 %."
     }
@@ -206,7 +206,7 @@
      "title": "With a large sum",
      "body": "With a salary, the natural thing is to put in part of it every month. If one day you have a large sum (an inheritance, a severance payment), a sensible middle ground is to spread it over **6–12 months** with automatic contributions.\n\nWhat doesn't work is waiting «for it to drop»: nobody knows where the bottom is.",
      "key": "All at once wins more often; bit by bit reduces regret. What matters is starting and not stopping.",
-     "tip": "Try it: buy a little of the S&P 500 ETF today and repeat every month."
+     "tip": "Try it: in Market, buy a little of an ETF: it'll be this month's contribution."
     }
    ]
   },
@@ -253,7 +253,7 @@
      "title": "Hidden costs",
      "body": "An index fund might charge 0.1-0.3 % a year; many active funds (with a team picking companies) in Spain, 1.5 % or more. You'll see it in the **KID**, as ongoing charges.\n\nOn top of the TER: the broker's commission per trade, *spread* (the gap between the buying and selling price), custody fees (what you're charged to hold your securities), currency exchange and, for some funds, fees when you get in or out (subscription or redemption fees). Add them all up.",
      "key": "Every 1 % a year in costs eats a huge chunk of the result, because of compound interest.",
-     "tip": "Try it: ask Lumi, your teacher, which costs to check in an ETF's KID."
+     "tip": "Try it: in Market, start buying an ETF and check the simulated fee before you confirm."
     }
    ]
   },
@@ -270,7 +270,7 @@
       "Half the time",
       "Over these 40 years, **20.8 %** of one-year periods ended in a loss, and the worst one lost 45 %.",
       "Find how many years you had to wait for there to be not a single case with a loss.",
-      "In this data, waiting **14 years or more** never lost money. But the past doesn't guarantee the future: anyone who bought in 1929, or in Japan in 1989, waited much longer. Your time horizon decides how much risk you can take.",
+      "In this data, leaving out dividends, waiting **14 years or more** never lost money. But the past doesn't guarantee the future: anyone who bought in 1929, or in Japan in 1989, waited much longer. Your time horizon decides how much risk you can take.",
       "In the short term the stock market is a rollercoaster: almost anything can happen.",
       "Look at the worst case: there are still long periods in the red (the ones that started in 2000).",
       "Keep making the wait longer"
@@ -278,9 +278,9 @@
     },
     {
      "title": "Put a date on every euro",
-     "body": "• **Cushion for emergencies (always available):** an interest-paying account or a money market fund, which is very stable.\n• **Trip or car (1-3 years):** deposits or Treasury bills, that is, lending to a bank or the government for a fixed term.\n• **Deposit on a flat (3-7 years):** a cautious mix, with more fixed income (bonds).\n• **Retirement (15 years or more):** mostly diversified shares.\n\nYour simple long-term portfolio: a global index ETF, low fees, a contribution every month and only money you won't need for many years.",
+     "body": "• **Cushion for emergencies (always available):** an interest-paying account or a money market fund, which is very stable.\n• **Trip or car (1-3 years):** deposits or Treasury bills, that is, lending to a bank or the government for a fixed term.\n• **Deposit on a flat (3-7 years):** a cautious mix, with more fixed income (bonds).\n• **Retirement (15 years or more):** mostly diversified shares.\n\nAn example of a simple long-term portfolio: a global index ETF, low fees, a contribution every month and only money you won't need for many years.",
      "key": "Money you'll need soon doesn't go into the stock market: it could be falling just when you need it.",
-     "tip": "Try it: in Market, look at the S&P 500 in monthly candles and find its falls."
+     "tip": "Try it: in Market, open the S&P 500 in monthly candles and see how long it took to recover from 2008."
     }
    ]
   },
@@ -342,15 +342,6 @@
     "Basket of companies the ETF copies",
     "Fund that trades on the stock exchange"
    ]
-  },
-  "u10l2-3": {
-   "prompt": "This chart is an index that several ETFs copy: an ETF tracking it will do the same, minus its costs. What did it do over the next 10 sessions?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "An index ETF doesn't remove the market's ups and downs: you get exactly what the index does, for better and for worse.",
-   "horizon": "the next 10 sessions"
   },
   "u10l2-4": {
    "prompt": "What annual cost do the big index ETFs usually have?",
@@ -642,15 +633,6 @@
    ],
    "explanation": "Not because it's sure to fall, but because it could be falling just when you need it."
   },
-  "u7l1-11": {
-   "prompt": "This chart is a real index: the average of a country's big companies, with no name or date. What did it do over the next 10 sessions?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "An index sums up in a single line how all its companies did together: that's why it works as a thermometer for the market. What it doesn't do is predict the future: not even a whole index can be called two weeks ahead.",
-   "horizon": "the next 10 sessions"
-  },
   "u7l1-12": {
    "prompt": "Imagine: your portfolio of Spanish shares is up 5 % this year and the IBEX 35, 12 %. A friend tells you you're a genius. What do you conclude?",
    "options": [
@@ -693,6 +675,32 @@
    "right": [
     "Low, like an index fund",
     "High, like many active funds"
+   ]
+  },
+  "u10l2-5": {
+   "prompt": "In Spain, if you sell an ETF to buy another one the same day, you pay no tax.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "ETFs don't get the transfer («traspaso») regime: every sale at a gain is taxed."
+  },
+  "u10l2-9": {
+   "prompt": "What do you say?",
+   "options": [
+    "It has no risk at all",
+    "You buy it like a share, but inside there's a basket of many companies",
+    "Yes, just as risky"
+   ],
+   "explanation": "The way you buy it is like a share; the risk is that of the whole basket.",
+   "feedback": [
+    "It carries the risk of the index it copies: if the market falls 30 %, so does the ETF.",
+    "That's it! One that tracks the MSCI World holds over a thousand companies from developed countries.",
+    "You buy it like a share, but inside it holds hundreds or thousands of companies."
+   ],
+   "lines": [
+    "Someone told me an ETF is «like a share».",
+    "So is it just as risky as buying a single company?"
    ]
   }
  }

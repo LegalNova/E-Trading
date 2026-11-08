@@ -1,1 +1,234 @@
-{}
+{
+  "project": {
+    "title": "Your first investment thesis",
+    "card": {
+      "kicker": "Final project",
+      "locked": "Opens when you pass «{needs}»",
+      "draft": "You have a thesis in progress: pick up where you left off",
+      "done": "{n, plural, one {# thesis finished} other {# theses finished}} · do another",
+      "new": "Analyse a real company in 10 steps · +150 XP"
+    },
+    "intro": {
+      "title": "Think like an investor",
+      "body": "Pick a real company from Lumi's market and reason your thesis with its data: what it does, why it could keep making money, its risks, whether it's expensive and how you'd manage the risk.",
+      "p1": "· 8 questions, about 15 minutes. Every step is saved.",
+      "p2": "· At the end: your thesis sheet, a score out of 100 and a certificate to share.",
+      "p3": "· +150 XP for your first thesis and +50 for the next ones (one a day)."
+    },
+    "lockedBody": "This project opens when you pass «{needs}». It's the final challenge of the course's first section.",
+    "toClasses": "Go to Lessons",
+    "mine": "My theses",
+    "doneLine": "Finished · {score}/100",
+    "draftLine": "Draft · step {n} of {total}",
+    "disclaimer": "It's an exercise to learn how to analyse. Lumi doesn't tell you what to buy: the thesis is yours and you practise with virtual money.",
+    "pick": {
+      "title": "Pick a company",
+      "body": "Ideally one you know or whose products you use: it'll be easier to explain its business.",
+      "placeholder": "Search by name or ticker (Apple, ITX…)",
+      "none": "I can't find that company. Try another name or its ticker.",
+      "choose": "Start a thesis on {name}"
+    },
+    "err": {
+      "generic": "Couldn't save. Please try again.",
+      "THESIS_NOT_STOCK": "Pick a company (a stock): the thesis analyses a business.",
+      "THESIS_DRAFTS": "You have 5 theses in progress: finish or delete one before starting another.",
+      "THESIS_MAX": "You've reached the maximum number of saved theses: delete an old one.",
+      "THESIS_LOCKED": "Pass the final challenge of the first section to open the project.",
+      "THESIS_DONE": "This thesis is already finished.",
+      "RATE_LIMITED": "You're going very fast. Wait a moment.",
+      "NOT_FOUND": "I can't find that company."
+    },
+    "notFound": "I can't find this thesis. You may have deleted it.",
+    "xp": "+{n} XP for finishing your thesis",
+    "delete": "Delete the thesis",
+    "deleteTitle": "Delete this thesis?",
+    "deleteBody": "Your answers will be deleted. This can't be undone.",
+    "deleteDone": "Your answers will be deleted and the certificate will stop working. This can't be undone.",
+    "deleteYes": "Delete",
+    "cancel": "Cancel",
+    "progress": "Step {n} of {total}",
+    "stepN": "Step {n} of {total}",
+    "prev": "Back",
+    "next": "Save and continue",
+    "toSummary": "See my thesis sheet",
+    "finish": "Finish and see my score",
+    "facts": {
+      "title": "Data from the asset page",
+      "none": "no data",
+      "noSector": "Sector: no data",
+      "asOf": "price at {time}",
+      "stale": "may be out of date",
+      "pe": "P/E",
+      "div": "Dividend",
+      "noRange": "52-week range: no data",
+      "rangeLabel": "52-week range from {low} to {high}; current price {price}",
+      "low": "52w low",
+      "high": "52w high"
+    },
+    "s1": {
+      "q": "What does {name} do and how does it make money?",
+      "help": "Explain it as you would to a friend: what it sells, to whom and who pays it.",
+      "label": "Your answer",
+      "ph": "It sells… to… and makes money from…",
+      "hint": "If you can't explain it in two sentences, you don't understand the business yet. Read the description on the asset page and think about which part brings in the most money."
+    },
+    "s2": {
+      "q": "Why could it still be making money in 5 years?",
+      "help": "Look for its edge over competitors: what others would find hard to copy.",
+      "choose": "Its main advantage",
+      "label": "Explain why",
+      "ph": "Because customers…",
+      "hint": "A real advantage holds even if a richer competitor shows up. Ask yourself what would happen if someone sold the same thing cheaper tomorrow.",
+      "hintNone": "Admitting you don't see a clear advantage is good analysis too: then price and risk matter even more."
+    },
+    "moat": {
+      "BRAND": "Brand: people prefer it and pay more for it",
+      "NETWORK": "Network effect: the more users, the more useful it is",
+      "COST": "Lower costs than its rivals",
+      "SWITCHING": "Switching to another provider is costly",
+      "PATENTS": "Patents, licences or proprietary technology",
+      "SCALE": "Size: what it does is expensive to replicate",
+      "NONE": "I don't see a clear advantage"
+    },
+    "s3": {
+      "q": "What are its main risks?",
+      "help": "Write at least 2. Things that could make it earn less or make the share price fall a lot.",
+      "label": "Risk {n}",
+      "ph0": "For example: it depends heavily on a single product",
+      "ph1": "For example: it has a lot of debt and rates are rising",
+      "ph2": "For example: new regulation or a strong competitor",
+      "add": "Add another risk",
+      "count": "{n, plural, =0 {No valid risks yet} one {# valid risk} other {# valid risks}} (at least 2)",
+      "hint": "Think in types of risk: competition, debt, regulation, dependence on one customer or product, currency and the price itself. Seeing only upsides is often confirmation bias."
+    },
+    "s4": {
+      "q": "Is it expensive or cheap?",
+      "help": "P/E is the share price divided by earnings per share: how many years of today's earnings you're paying. Compare it with its sector and its own history.",
+      "pe": "Company P/E",
+      "losses": "Loss-making (P/E doesn't apply)",
+      "sector": "Sector median P/E",
+      "peers": "{n} companies",
+      "history": "Average P/E in recent years",
+      "compare": "Its P/E is {ratio} times its sector's. Above 1, the market pays more for each euro of earnings than for its rivals.",
+      "noSector": "Not enough companies in its sector have data to compare. Reason it out with what you know about the business.",
+      "noPe": "We don't have this company's P/E. You can reason with its growth or earnings, or compare it with others you know.",
+      "noHistory": "We don't have its historical P/E in Lumi yet: if you know it, you can use it in your explanation.",
+      "choose": "Your conclusion",
+      "label": "Why?",
+      "ph": "Its P/E is… versus… because…",
+      "hint": "A high P/E doesn't mean expensive if earnings will grow a lot; a low one isn't a bargain if the business is getting worse. Watch out for anchoring: last year's price doesn't tell you whether it's expensive today."
+    },
+    "valuation": {
+      "CHEAP": "Looks cheap",
+      "FAIR": "Looks reasonable",
+      "EXPENSIVE": "Looks expensive",
+      "UNSURE": "I'm not sure"
+    },
+    "s5": {
+      "q": "How much of your portfolio would you give it, and why?",
+      "help": "In the simulator. No single company should be able to sink your portfolio on its own.",
+      "label": "Weight in your portfolio",
+      "inEur": "With your simulated portfolio of {total}, that's about {eur}.",
+      "concentrated": "More than 10% in a single company is already quite concentrated.",
+      "why": "Why that weight?",
+      "ph": "I'd give it …% because…",
+      "hint": "Concentration rule: many investors put no more than 5-10% in a single company and never more than 20%. In the next step you'll see how much you risk with the 1% rule."
+    },
+    "s6": {
+      "q": "Where would you put your stop and your target?",
+      "help": "The stop is the price at which you'd sell to cut the loss; the target is the price you think justifies your thesis.",
+      "now": "Reference price now: {price}",
+      "stop": "Stop",
+      "target": "Target",
+      "dist": "The stop is {pct}% below the price.",
+      "up": "The target is {pct}% above.",
+      "risk": "With {w}% of your portfolio, if the stop is hit you'd lose {risk}% of your whole portfolio.",
+      "riskOk": "Within the 1% rule.",
+      "riskHigh": "More than 1%: lower the weight or move the stop closer.",
+      "rr": "What you could gain is {rr} times what you risk. Many look for at least 2.",
+      "hint": "Put the stop where your thesis would be wrong (for example below an important low), not where it \"hurts a little\". 1% rule: if it's hit, don't lose more than 1% of your portfolio.",
+      "place": "What you place on the chart",
+      "chart": "Weekly candles for the last year: tap or drag to place the level",
+      "price": "Price",
+      "drag": "Tap or drag on the chart to place the chosen level, or type the price below."
+    },
+    "s7": {
+      "q": "How long would you hold it?",
+      "help": "A thesis about a business needs time to prove itself.",
+      "choose": "Time horizon",
+      "label": "Why that timeframe? (optional)",
+      "ph": "Because I expect…",
+      "hint": "If your idea depends on the business, think in years. If you're thinking in weeks, it's more speculation than investing."
+    },
+    "horizon": {
+      "M6": "Less than 6 months",
+      "Y1": "About 1 year",
+      "Y3": "About 3 years",
+      "Y5": "5 years or more",
+      "Y10": "10 years or more"
+    },
+    "s8": {
+      "q": "What would make you change your mind?",
+      "help": "Decide now which facts would break your thesis, before the price makes you nervous.",
+      "label": "I'd change my mind if…",
+      "ph": "If it loses customers, if earnings fall two years in a row…",
+      "hint": "Write it with facts you can check (sales, margins, debt, a specific piece of news), not the price. That way you avoid the disposition effect: holding on to losers so you don't have to admit the mistake."
+    },
+    "check": {
+      "SHORT": "Write a bit more: one or two sentences is enough.",
+      "CHOOSE": "Pick an option.",
+      "RISKS_MIN": "Write at least 2 risks (a few words each).",
+      "RISKS_SAME": "The risks have to be different.",
+      "WEIGHT_MIN": "Say how much of your portfolio you'd give it.",
+      "WEIGHT_MAX": "No more than 20% of the portfolio in a single company.",
+      "NO_PRICE": "We don't have this company's price right now. Come back in a while to set the stop and target.",
+      "STOP_ZERO": "Say where you'd put the stop.",
+      "STOP_ABOVE": "The stop has to be below the current price.",
+      "TARGET_BELOW": "The target has to be above the current price.",
+      "INCOMPLETE": "There's a step you haven't answered yet."
+    },
+    "sum": {
+      "title": "Thesis sheet: {name}",
+      "business": "What it does and how it makes money",
+      "moat": "Its advantage",
+      "risks": "Risks",
+      "valuation": "Valuation",
+      "weight": "Portfolio weight",
+      "levels": "Stop and target",
+      "levelsLine": "Stop {stop} · target {target} (reference price {price})",
+      "horizon": "Time horizon",
+      "invalidation": "I'd change my mind if…",
+      "edit": "Change: {what}",
+      "editShort": "Change"
+    },
+    "done": {
+      "kicker": "Thesis finished",
+      "body": "You've reasoned a complete thesis on {name}. That's how an investment is analysed: with data, risks and a plan.",
+      "simulator": "Open the asset in the simulator",
+      "simulatorNote": "If you like, practise your thesis with virtual money: you decide whether to trade and how much.",
+      "another": "Do another thesis",
+      "date": "Finished on {date}"
+    },
+    "score": {
+      "title": "Your score, explained",
+      "complete": "Completeness",
+      "completeHelp": "5 points for each step explained in some detail (3 if it's the bare minimum).",
+      "risks": "Risks",
+      "risksHelp": "2 different risks, 6 points; 3 or more, 10.",
+      "valuation": "Valuation",
+      "valuationHelp": "Arguing with a figure or the P/E (5), in detail (5) and a conclusion consistent with its sector's data (5).",
+      "risk": "Risk management",
+      "riskHelp": "Weight up to 10%, 10 points (up to 20%, 5) and losing at most 1% of the portfolio if the stop is hit, 10 (up to 2%, 5).",
+      "plan": "Plan",
+      "planHelp": "Possible gain of at least 2 times the risk (8; 1 time, 4), a horizon of a year or more (4) and what would change your mind, well explained (3)."
+    },
+    "cert": {
+      "title": "Your certificate",
+      "text": "I've completed my investment thesis on {name} with Lumi.",
+      "alt": "Certificate for the investment thesis on {name}",
+      "privacy": "The certificate only shows your first name, the company and the score. Your answers aren't shared.",
+      "share": "Share the certificate",
+      "copied": "Link copied"
+    }
+  }
+}

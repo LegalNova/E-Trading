@@ -31,7 +31,7 @@ export const u16l1 = lesson('u16l1', 'Precio y valor no son lo mismo', [
     say('mercado', 'Todo va fatal. Te vendo mi parte por 12 €. ¡Corre!'),
     choose('Estimas que la empresa vale unos 20 € por acción. ¿Qué haces?', [
       opt('Vender: si él está asustado, algo pasará', 'bad', say('lumi', 'Venderías barato justo cuando el negocio no ha cambiado.')),
-      opt('Comprobar que el negocio sigue igual y, si es así, comprar', 'good', say('lumi', 'Eso: el precio ha bajado, el valor no. Su precio es una oferta, no una orden.')),
+      opt('Comprobar que el negocio sigue igual y, si es así, comprar', 'good', say('lumi', 'Eso: bajó el precio, no el valor. Su precio es una oferta, no una orden.')),
       opt('Comprar con todo tu dinero sin revisar nada', 'ok', say('lumi', 'Buen instinto, pero revisa tu estimación y no lo pongas todo.')),
     ]),
     say('lumi', 'A 12 €, algo que vale 20 €: un **40 %** de margen de seguridad.'),
@@ -51,7 +51,9 @@ export const u16l1 = lesson('u16l1', 'Precio y valor no son lo mismo', [
   // Nuevas (sin cuentas): decidir con el margen de seguridad y con el señor Mercado de verdad
   scenario('Estimas que una empresa vale unos 30 € por acción, pero no estás seguro del todo de tu estimación. ¿Con qué precio tiene más sentido comprarla?', [['A 20 €: bastante por debajo de lo que estimas que vale', 'Eso: aunque te hayas equivocado un poco al estimar, te queda colchón.'], ['A 29 €: casi lo que vale', 'Casi sin colchón: con un pequeño error en tu estimación, ya pagas de más.'], ['A 40 €: si sube tanto, es que es buena', 'Pagarías más de lo que crees que vale. Que el precio suba no demuestra el valor.']], 0, 'Cuanto más por debajo del valor estimado compras, más **margen de seguridad** tienes. La tentación de pagar más «porque sube» confunde precio con valor.'),
   upDown('Marzo de 2020: por la pandemia, la bolsa de EE. UU. se ha hundido en pocas semanas y casi todo el mundo vende con miedo. ¿Qué hizo en los meses siguientes?', 'hist-covid', 'Subió con fuerza. El señor Mercado vendía con pánico a cualquier precio; quien miró el negocio de las empresas y no solo su precio, no vendió en el peor momento. No siempre se recupera tan rápido.', 'los meses siguientes'),
-], { source: '5.1', minutes: 6, retire: [1, 2, 3, 4, 7, 9] })
+  // Nueva (revisión de la sección 0): sustituye a la de «capitaliza», que un principiante confunde con lo que vale la empresa
+  buckets('¿Habla del precio de la acción o del valor del negocio?', ['Precio', 'Valor'], [['La acción cerró ayer a 15,20 €', 0], ['Gana unos 100 millones de euros al año', 1], ['Ha subido un 8 % esta semana', 0], ['Tiene una marca que le permite subir precios', 1], ['Hoy la quieren comprar muchos inversores', 0], ['Sus clientes repiten año tras año', 1]], 'El precio es lo que se paga hoy en bolsa y cambia con el ánimo de quien compra y vende. El valor sale del negocio: lo que gana y lo que lo protege de la competencia.'),
+], { source: '5.1', minutes: 6, retire: [1, 2, 3, 4, 6, 7, 9] })
 
 // Antes en u17 (mismo id: conserva progreso y traducciones)
 export const u17l1 = lesson('u17l1', 'El PER', [
@@ -104,7 +106,7 @@ export const u17l1 = lesson('u17l1', 'El PER', [
       { say: 'Sube el crecimiento y mira los años', mood: 'HAPPY' },
     ],
   }),
-  key('Histórico y adelantado', 'Con el beneficio del último año es el **PER histórico**; con el previsto, el **PER adelantado**. Si el beneficio va a crecer mucho, el adelantado será más bajo.\n\nLa media del mercado ronda **15-17**. Compara con su historia y su sector: un banco a PER 8 y un software a PER 35 pueden estar «en su precio».', 'Un PER de 10 puede ser caro y uno de 30 barato: depende de lo que vaya a ganar la empresa.', 'Pruébalo: pregúntale a la profesora Lumi qué PER suele ser alto o bajo según el sector.'),
+  key('Histórico y adelantado', 'Con el beneficio del último año es el **PER histórico**; con el previsto, el **PER adelantado**. Si el beneficio va a crecer mucho, el adelantado será más bajo.\n\nLa media histórica del S&P 500 ronda **15-17**, aunque cambia mucho según la época. Compara con su historia y su sector: un banco a PER 8 y un software a PER 35 pueden estar «en su precio».', 'Un PER de 10 puede ser caro y uno de 30 barato: depende de lo que vaya a ganar la empresa.', 'Pruébalo: en Mercado, abre un banco y una tecnológica y pulsa «Seguir» en los dos para compararlos.'),
 ], [
   num('Una acción cotiza a 30 € y su BPA es de 2 €. ¿Cuál es su PER?', 15, 'veces', '30 ÷ 2 = 15: pagas 15 años del beneficio actual.'),
   num('Una empresa capitaliza 4.000 M€ y gana 250 M€ al año. ¿Cuál es su PER?', 16, 'veces', '4.000 ÷ 250 = 16. Da igual hacerlo por acción o con la empresa entera.'),
@@ -134,7 +136,7 @@ export const u20l1 = lesson('u20l1', 'Anatomía de una vela', [
     ]),
     say('lumi', 'Las velas nacieron en el mercado de arroz de **Dojima** (Osaka), en el siglo XVIII.'),
     say('lumi', 'La tradición se las atribuye al comerciante Munehisa Homma.'),
-    say('lumi', 'Steve Nison las trajo a Occidente en 1991. Hoy son el gráfico por defecto.'),
+    say('lumi', 'Steve Nison las trajo a Occidente en 1991. Hoy son el gráfico más usado.'),
   ]),
   play({
     title: '¿Verde o roja?',
@@ -223,7 +225,7 @@ export const u21l1 = lesson('u21l1', 'Soportes y resistencias', [
   num('Un soporte está en la zona de 20 €. Pones el stop un 3 % por debajo. ¿A qué precio va?', 19.4, '€', '20 × 0,97 = 19,40 €. Dejar algo de margen evita que una simple mecha te saque.'),
   // Nueva (sin cuentas): respetar el stop cuando el soporte se rompe
   scenario('Compraste cerca de un soporte y pusiste el stop un poco por debajo. Hoy el precio cae con fuerza y rompe el soporte: está a punto de tocar tu stop. ¿Qué haces?', [['Dejo que el stop haga su trabajo: mi idea de compra ya no vale', 'Eso: el stop estaba ahí justo para este momento. Pierdes poco: justo lo que habías previsto.'], ['Bajo el stop un poco más para darle margen', 'Es la trampa más común: mover el stop convierte una pérdida pequeña en una grande.'], ['Compro más, que ahora está más barato', 'Si el soporte se ha roto, ya no hay motivo para comprar ahí: solo doblas el error.']], 0, 'El stop se decide antes de comprar, cuando piensas con calma. Si el soporte se rompe, la idea falló: moverlo o comprar más es dejar que decida el miedo a perder.'),
-], { source: '9.1', minutes: 6, retire: [3, 4, 7, 8, 9] })
+], { source: '9.1', minutes: 6, retire: [3, 4, 6, 7, 8, 9] })
 
 // Antes en u24 (mismo id: conserva progreso y traducciones)
 export const u24l3 = lesson('u24l3', 'La regla del 1 %', [
@@ -258,7 +260,7 @@ export const u24l3 = lesson('u24l3', 'La regla del 1 %', [
       { say: 'Deja el 1 % y mueve el stop', mood: 'HAPPY' },
     ],
   }),
-  key('Límites que se suman', 'La mayoría de profesionales arriesga entre el **0,5 % y el 2 %** por operación; para empezar, un 1 % o menos. Además conviene limitar:\n\n• el **riesgo total abierto**: lo que perderías si saltaran todos tus stops a la vez (no más del 5–6 %);\n• el **peso de cada posición**: cuánto de tu cartera hay en una sola compra (la app te avisa a partir del 20 %).\n\nPrimero decides dónde te equivocas (el stop). Después, cuánto compras.', 'Riesgo no es lo mismo que cantidad invertida: puedes invertir un 16 % y arriesgar un 1 %.', 'Pruébalo: en tu próxima compra en Mercado, decide antes a qué precio saldrías si sale mal.'),
+  key('Límites que se suman', 'Muchos traders profesionales arriesgan entre el **0,5 % y el 2 %** por operación; para empezar, un 1 % o menos. Además conviene limitar:\n\n• el **riesgo total abierto**: lo que perderías si saltaran todos tus stops a la vez (no más del 5–6 %);\n• el **peso de cada posición**: cuánto de tu cartera hay en una sola compra (la app te avisa a partir del 20 %).\n\nPrimero decides dónde te equivocas (el stop). Después, cuánto compras.', 'Riesgo no es lo mismo que cantidad invertida: puedes invertir un 16 % y arriesgar un 1 %.', 'Pruébalo: en tu próxima compra, pon una alerta de precio donde saldrías si sale mal.'),
 ], [
   single('Tienes 10.000 € y sigues la regla del 1 %. ¿Qué significa?', ['Que solo puedes invertir 100 €', 'Que si salta el stop pierdes como mucho 100 €', 'Que esperas ganar un 1 % por operación'], 1, 'La regla limita la pérdida si te equivocas, no la cantidad invertida.'),
   num('Tu cartera simulada vale 5.000 €. Con la regla del 1 %, ¿cuánto puedes perder como máximo en una operación?', 50, '€', '5.000 × 0,01 = 50 €.'),
@@ -296,14 +298,14 @@ export const u27l4 = lesson('u27l4', 'FOMO y efecto rebaño', [
     say('alex', 'Esta acción ha subido un **200 %** en dos semanas.'),
     say('alex', 'Todos en el grupo están dentro. ¡Entra hoy o te lo pierdes!'),
     choose('No está en tu plan. ¿Qué haces?', [
-      opt('Compro ya, antes de que suba más', 'bad', say('lumi', 'Eso es **FOMO**: compras sin saber qué hace la empresa, tras una subida enorme.')),
+      opt('Compro ya, antes de que suba más', 'bad', say('lumi', 'Eso es **FOMO**, miedo a quedarse fuera: compras por la prisa, sin saber qué.')),
       opt('Espero 48 horas y me pregunto si la compraría si nadie hablara de ella', 'good', say('lumi', '¡Eso! Si en dos días sigue teniendo sentido, lo decides con calma.')),
       opt('Pido un préstamo para entrar fuerte', 'bad', say('lumi', 'Deuda y FOMO: la receta clásica de las peores pérdidas.')),
     ]),
     say('lumi', 'Cuando **todos** ya han comprado, no queda nadie para seguir empujando.'),
     say('lumi', 'La urgencia es el combustible del FOMO. Quítale tiempo y se apaga.'),
   ]),
-  key('Señales de alarma', '• Te enteras por amigos o redes que nunca habían invertido.\n• La razón es que «**sube mucho**», no qué hace el activo.\n• Sientes **urgencia**: «si no compro hoy, me lo pierdo».\n• Se dice que «**esta vez es diferente**».\n\nAntídotos: la **regla de las 48 horas** (esperar dos días antes de cualquier compra que no estaba en tu plan) y un **límite de especulación**: la parte pequeña de tu dinero que, por escrito, te permites arriesgar en apuestas.\n\nSi tu peluquero te recomienda una criptomoneda, quizá ya es tarde.', 'Cuando todo el mundo habla de algo que «solo sube», el riesgo suele ser máximo.', 'Pruébalo: si algo que sube mucho hoy te tienta, añádelo a Favoritos y decide dentro de 48 horas.'),
+  key('Señales de alarma', 'El **efecto rebaño** es comprar porque todos compran. Desconfía si:\n\n• Te enteras por amigos o redes que nunca habían invertido.\n• La razón es que «**sube mucho**», no qué hace el activo.\n• Sientes **urgencia**: «si no compro hoy, me lo pierdo».\n• Se dice que «**esta vez es diferente**».\n\nAntídotos: la **regla de las 48 horas** (esperar dos días antes de cualquier compra que no estaba en tu plan) y un **límite de especulación**: la parte pequeña de tu dinero que, por escrito, te permites arriesgar en apuestas.\n\nSi tu peluquero te recomienda una criptomoneda, quizá ya es tarde.', 'Cuando todo el mundo habla de algo que «solo sube», el riesgo suele ser máximo.', 'Pruébalo: si algo que sube mucho hoy te tienta, pulsa «Seguir» en su ficha y decide dentro de 48 horas.'),
 ], [
   spot('Marca los mensajes que intentan activar tu FOMO para venderte algo o engañarte.', [['Grupo «Lambo 2030»', '🚀 Esta cripto ha subido un 300 % en un mes. Mañana será tarde. ¡Entra YA!', true], ['Tu bróker', 'Recordatorio: tu aportación periódica de 100 € se ejecutará el día 5.', false], ['Influencer', 'Solo quedan 3 plazas en mi grupo de señales. Esta vez es diferente, no te quedes fuera.', true], ['Tu primo', 'Todo el mundo está ganando con esta acción. Mete los ahorros, no lo pienses.', true], ['CNMV', 'Consulta si una entidad está autorizada antes de invertir con ella.', false]], 'Urgencia, «esta vez es diferente» y «todo el mundo gana» son las señales clásicas del FOMO.'),
   upDown('Noviembre de 2021: bitcoin está en máximos, sale en todos los telediarios y tus amigos que nunca habían invertido están comprando. ¿Qué hizo después?', 'hist-btc-2021', 'Bitcoin cayó cerca de un 75 % en el año siguiente. El momento de máxima euforia suele ser el de máximo riesgo. Recuerda: en cripto puede perderse la totalidad de lo invertido.', 'el año siguiente'),
@@ -315,7 +317,7 @@ export const u27l4 = lesson('u27l4', 'FOMO y efecto rebaño', [
   timed(single('Rápido: ¿qué pregunta te protege del efecto rebaño?', ['¿Cuánto ha subido esta semana?', '¿Lo compraría si nadie hablara de ello?', '¿Qué dicen en el foro?'], 1, 'Separa el valor de lo que hace la multitud.'), 12),
   match('Empareja cada burbuja con su época.', [['Puntocom', '1999–2000'], ['Bolsa japonesa', '1989'], ['Meme stocks', '2021'], ['Criptomonedas (dos veces)', '2017 y 2021']], 'Cambian los activos; el FOMO es siempre el mismo.'),
   chat(['Todo el mundo en TikTok está ganando con una moneda nueva 🐶', 'Si no entro hoy, me lo pierdo.'], '¿Qué le dices a Lumi?', [['Entra ya, que vuela', 'Si entro por miedo a quedarme fuera, lo más probable es que compre cerca del techo.'], ['Espera 48 horas y piensa si la comprarías si nadie hablara de ella', 'Vale… Si sigue teniendo sentido en dos días, la meto en mi límite de especulación. Si no, nada.'], ['Mete los ahorros de emergencia', 'Eso es lo único que nunca se toca. Y en cripto se puede perder todo lo invertido.']], 1, 'La prisa es la señal: cuando sientes urgencia, para.'),
-], { source: '11.3', minutes: 6, retire: [3, 4, 6, 7] })
+], { source: '11.3', minutes: 6, retire: [2, 3, 4, 6, 7] })
 
 const lessons = [u16l1, u17l1, u20l1, u21l1, u24l3, u27l4]
 export default lessons

@@ -7,6 +7,14 @@ import type {
   TutorHistoryT,
   TutorModeT,
 } from '@/shared/contract'
+import type { GiftMineT, GiftPublicT, GiftRedeemT } from '@/shared/contract'
+import type { FriendLeaguePeekT, FriendLeaguesT, FriendLeagueT } from '@/shared/contract'
+import type { EffectsT } from '@/shared/contract'
+import type { JournalT, JournalVerdictT, LessonMissionT, MissionsT } from '@/shared/contract'
+import type { FundamentalsT, IdeasT } from '@/shared/contract'
+import type { ThesisDetailT, ThesisListT, ThesisT } from '@/shared/thesis'
+
+export interface GiftInput { tier: 'PLUS' | 'PREMIUM'; months: 1 | 12; fromName: string; toName?: string; message?: string }
 
 export class ApiFailure extends Error {
   constructor(public code: string, message: string, public status = 400) {
@@ -107,9 +115,36 @@ export interface AdminUserDetail {
   tutorQuestions: number
   badges: number
   events: { name: string; props: unknown; at: string }[]
+  admin2: AdminUserControls
 }
 export interface AdminQuestion { id: string; type: string; prompt: string; options: string[]; solution: number | number[] | string; explanation: string }
 export interface AdminContent { units: { id: string; order: number; title: string; lessons: { id: string; title: string; quizId: string }[] }[]; quizzes: Record<string, AdminQuestion[]>; achievements: number }
+// «Algo no está bien» y mandos del admin (admin2)
+export type ReportKind = 'CONTENT' | 'BUG' | 'MARKET' | 'OTHER'
+export type ReportStatus = 'OPEN' | 'DONE' | 'DISCARDED'
+export interface ReportContext { lessonId?: string; quizId?: string; questionId?: string; step?: string; symbol?: string }
+export interface AdminReport {
+  id: string
+  kind: ReportKind
+  status: ReportStatus
+  message: string
+  path: string
+  context: { lessonId: string | null; lessonTitle: string | null; quizId: string | null; questionId: string | null; step: string | null; symbol: string | null }
+  note: string | null
+  user: { id: string; name: string; email: string } | null
+  createdAt: string
+  updatedAt: string
+}
+export interface AdminUserControls {
+  plan: 'FREE' | 'PLUS' | 'PREMIUM'
+  isTeam: boolean
+  blockedAt: string | null
+  blockReason: string | null
+  subscription: { status: string; interval: string | null; stripe: boolean; until: string | null } | null
+  giftRunning: boolean
+  gifts: { id: string; tier: 'PLUS' | 'PREMIUM'; days: number; by: string | null; reason: string | null; status: string; at: string }[]
+}
+export interface AdminGift { id: string; userId: string; name: string; email: string; tier: 'PLUS' | 'PREMIUM'; days: number; by: string | null; reason: string | null; at: string; stripe: boolean; until: string | null }
 export interface AuditEntry { id: string; actor: string; action: string; entity: string; createdAt: string }
 
 export interface ContactInput { name: string; email: string; reason: 'SCHOOL' | 'PRESS' | 'SUPPORT' | 'OTHER'; message: string }
@@ -166,6 +201,13 @@ export interface Api {
   tutorHistory(): Promise<TutorHistoryT>
   tutorAsk(question: string, mode: TutorModeT): Promise<TutorAnswerT>
   tutorClear(): Promise<void>
+  // Proyecto final: tesis de inversión
+  thesisList(): Promise<ThesisListT>
+  thesisCreate(symbol: string): Promise<ThesisT>
+  thesis(id: string): Promise<ThesisDetailT>
+  thesisStep(id: string, step: number, answer: Record<string, unknown>): Promise<ThesisT>
+  thesisFinish(id: string): Promise<{ thesis: ThesisT; first: boolean; xp: number; effects: EffectsT }>
+  thesisDelete(id: string): Promise<void>
 
   // Mercado
   assets(filter?: { type?: AssetTypeT | 'WATCH'; q?: string }): Promise<AssetItemT[]>
@@ -173,6 +215,10 @@ export interface Api {
   candles(symbol: string, interval: CandleInterval): Promise<CandleT[]>
   searchAssets(f: AssetFilter): Promise<AssetPageT>
   marketOverview(region: RegionT | 'ALL'): Promise<MarketOverviewT>
+  /** Datos de empresa de la ficha (capitalización, PER, dividendo, BPA, beta) */
+  fundamentals(symbol: string): Promise<FundamentalsT>
+  /** «Ideas para estudiar»: listas con criterio transparente */
+  ideas(): Promise<IdeasT>
   facets(region?: RegionT, type?: AssetTypeT): Promise<Facets>
   watchlist(): Promise<string[]>
   toggleWatch(symbol: string): Promise<string[]>
@@ -188,12 +234,29 @@ export interface Api {
   createAlert(a: Omit<PriceAlertT, 'id' | 'active'>): Promise<PriceAlertT>
   deleteAlert(id: string): Promise<void>
   tradingStats(): Promise<TradingStatsT>
+  // Misiones «Pruébalo» y diario de operaciones
+  missions(): Promise<MissionsT>
+  lessonMission(lessonId: string): Promise<LessonMissionT>
+  missionSeen(what: { symbol?: string; portfolio?: boolean }): Promise<MissionsT>
+  journal(): Promise<JournalT>
+  createJournal(e: { orderId: string; tag: string; reason?: string }): Promise<{ id: string }>
+  reviewJournal(id: string, verdict: JournalVerdictT, note?: string): Promise<{ id: string; verdict: JournalVerdictT }>
 
   // Progreso
   streak(): Promise<StreakT>
   buyStreakFreeze(): Promise<StreakT>
   achievements(): Promise<AchievementT[]>
   league(): Promise<LeagueT>
+  // Ligas de amigos
+  friendLeagues(): Promise<FriendLeaguesT>
+  friendLeague(id: string): Promise<FriendLeagueT>
+  friendLeaguePeek(code: string): Promise<FriendLeaguePeekT>
+  createFriendLeague(name: string): Promise<{ id: string; name: string; code: string }>
+  joinFriendLeague(code: string): Promise<{ id: string; name: string; already: boolean }>
+  renameFriendLeague(id: string, name: string): Promise<{ id: string; name: string }>
+  deleteFriendLeague(id: string): Promise<void>
+  leaveFriendLeague(id: string): Promise<void>
+  removeFriendLeagueMember(id: string, key: string): Promise<void>
   notifications(): Promise<NotificationT[]>
   markNotificationsRead(ids: string[] | 'all'): Promise<void>
 
@@ -221,6 +284,24 @@ export interface Api {
   adminCampaigns(): Promise<AdminCampaign[]>
   adminCreateCampaign(name: string): Promise<{ slug: string }>
   adminDeleteCampaign(slug: string): Promise<void>
+  sendReport(r: { kind: ReportKind; message: string; path: string; context?: ReportContext }): Promise<{ id: string }>
+  adminReports(status?: ReportStatus, kind?: ReportKind): Promise<{ open: number; items: AdminReport[] }>
+  adminOpenReports(): Promise<{ open: number }>
+  adminUpdateReport(id: string, status: ReportStatus, note?: string): Promise<{ id: string; status: ReportStatus; note: string | null }>
+  adminGifts(): Promise<AdminGift[]>
+  adminGiveGift(id: string, g: { tier: 'PLUS' | 'PREMIUM'; days: number; reason?: string }): Promise<{ mode: 'DELAYED_CHARGE' | 'EXTENDED' | 'GIFT'; plan: string; until: string | null }>
+  adminRevokeGift(id: string): Promise<void>
+  adminRefillLives(id: string): Promise<{ lives: number }>
+  adminGiveGems(id: string, amount: number): Promise<{ gems: number }>
+  adminRestoreStreak(id: string, streak: number): Promise<{ streak: number }>
+  adminSetBlocked(id: string, blocked: boolean, reason?: string): Promise<{ blocked: boolean }>
+  adminResendWelcome(id: string): Promise<void>
+  // Regalos
+  myGifts(): Promise<{ payments: boolean; isGuest: boolean; fromName: string | null; gifts: GiftMineT[] }>
+  buyGift(g: GiftInput): Promise<{ url: string }>
+  confirmGift(sessionId: string): Promise<{ done: true; gift: GiftMineT } | { done: false; expired: boolean }>
+  giftByCode(code: string): Promise<GiftPublicT>
+  redeemGift(code: string): Promise<GiftRedeemT>
   // Analítica propia (no bloquea nada si falla)
   trackEvent(e: { name: 'push_open'; kind: string } | { name: 'client_error'; message: string; path: string; stack?: string } | { name: 'screen_view'; path: string; ref?: string } | { name: 'lesson_exit'; lessonId: string; step: number; of: number }): void
 }

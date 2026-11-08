@@ -14,7 +14,7 @@ import { checkoutUrl, confirmCheckout, LIVE, portalUrl, refreshAfterPortal, stri
 import { currentLocale } from '../locale'
 import { forgetMemo } from '../request'
 import { ACHIEVEMENTS } from '../content/catalog'
-import { achievementList, endFx, fail, FREEZE_PRICE, goalDefs, goalsOf, minutesOf, levelOf, levelTitle, LIVES_MAX, livesOf, lumi, MAX_FREEZES, notify, REFILL_PRICE, START_CASH, withCtx } from './core'
+import { achievementList, endFx, fail, FREEZE_PRICE, goalDefs, goalsOf, minutesOf, levelOf, levelTitle, LIVES_MAX, livesOf, lumi, MAX_FREEZES, notify, REFILL_PRICE, START_CASH, withCtx, type Tx } from './core'
 import { ALL_Q, pathOf } from './learning'
 import { portfolioIn, portfolioRow, processPendingFor, userBook } from './trading'
 import { addFlow } from './league'
@@ -437,6 +437,8 @@ export async function deleteAccount() {
       fail(502, 'PAYMENTS_UNAVAILABLE', 'No hemos podido cancelar tu suscripción. Inténtalo de nuevo o escríbenos desde Ayuda.')
     }
   }
+  // Sus ligas de amigos pasan a otro miembro (si no, se borrarían para todos)
+  await (await import('./friends')).handOverLeagues(db as unknown as Tx, u!.id)
   // Las tablas del usuario se borran en cascada; queda constancia en la auditoría (sin datos personales)
   await db.$transaction([
     db.leagueMember.deleteMany({ where: { userId: u!.id } }),

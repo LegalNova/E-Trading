@@ -11,6 +11,7 @@ import { tickerOf } from '@/shared/ticker'
 import { Prisma } from '@/generated/prisma/client'
 import { db, DB_SCHEMA } from '../db'
 import { ecbRates, yahooCandles, yahooQuotes, type Interval } from './providers'
+import { refreshFundamentals } from './fundamentals'
 
 const REFRESH_OPEN_MS = 5_000
 const REFRESH_CLOSED_MS = 60 * 60_000
@@ -171,15 +172,17 @@ export async function refreshAll(budgetMs = 38_000) {
     updated += raws.length
   }
   fxCache = null
-  return { total: all.length, updated, ms: Date.now() - t0 }
+  // Datos de empresa (una vez al día por acción): lo que quede del minuto, con un máximo de 8 s
+  const fundamentals = await refreshFundamentals(Math.min(8_000, Math.max(0, 44_000 - (Date.now() - t0)))).catch(e => (console.error('market/fundamentals', e), null))
+  return { total: all.length, updated, ms: Date.now() - t0, fundamentals }
 }
 
 /** Sirve lo guardado y actualiza en segundo plano; espera al proveedor solo si falta o es muy viejo. Devuelve si esperó. */
-async function freshen(rows: AssetRow[]): Promise<boolean> {
+async function freshen(rows: AssetRow[], mayWait = true): Promise<boolean> {
   const now = Date.now()
   const old = rows.filter(a => needsRefresh(a, now))
   if (!old.length) return false
-  const blocking = old.some(a => !a.quote || (isOpen(a.hours, new Date(now)) && now - a.quote.updatedAt.getTime() > MAX_SERVE_OLD_MS))
+  const blocking = mayWait && old.some(a => !a.quote || (isOpen(a.hours, new Date(now)) && now - a.quote.updatedAt.getTime() > MAX_SERVE_OLD_MS))
   if (!blocking) {
     // En segundo plano, y solo lo que no esté pidiendo ya otra instancia (los que aún no tienen fila no se pueden marcar: van siempre)
     const run = async () => {
@@ -207,6 +210,15 @@ export async function loadAssets(symbols: string[]): Promise<AssetRow[]> {
   const where = { symbol: { in: symbols }, enabled: true }
   const rows = await db.asset.findMany({ where, include: { quote: true } })
   if (await freshen(rows)) return db.asset.findMany({ where, include: { quote: true } })
+  return rows
+}
+
+/** Como loadAssets, pero sin esperar nunca al proveedor: sirve lo guardado y actualiza en segundo plano (listas largas) */
+export async function loadAssetsLazy(symbols: string[]): Promise<AssetRow[]> {
+  symbols = symbols.filter(validSymbol)
+  if (!symbols.length) return []
+  const rows = await db.asset.findMany({ where: { symbol: { in: symbols }, enabled: true }, include: { quote: true } })
+  await freshen(rows, false)
   return rows
 }
 

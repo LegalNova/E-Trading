@@ -51,8 +51,9 @@ async function customerOf(user: User) {
 export async function checkoutUrl(user: User, plan: PlanId, opts: { trialDays: number | null; freeUntil?: Date | null; origin: string; locale: string }) {
   const customer = await customerOf(user)
   // Pagos abiertos en otras pestañas: se cierran, para que no se pueda pagar dos suscripciones a la vez
+  // (solo los de suscripción: un regalo a medio pagar en otra pestaña no se toca)
   const open = await stripe!.checkout.sessions.list({ customer, status: 'open', limit: 10 }).catch(() => null)
-  await Promise.all((open?.data ?? []).map(s => stripe!.checkout.sessions.expire(s.id).catch(() => null)))
+  await Promise.all((open?.data ?? []).filter(s => s.mode === 'subscription').map(s => stripe!.checkout.sessions.expire(s.id).catch(() => null)))
   // Periodo sin cobro: la prueba (si la tiene) o los días de Max regalado que le queden (no se pierden al suscribirse).
   // Stripe pide que el final de un periodo gratis fijado a mano quede al menos 48 h por delante.
   const trialEnd = Math.max(opts.trialDays ? Date.now() + opts.trialDays * DAY_MS : 0, opts.freeUntil?.getTime() ?? 0)
@@ -193,3 +194,32 @@ export async function confirmCheckout(userId: string, sessionId: string) {
   if (!r || !LIVE.includes(STATUS[sub.status] ?? 'NONE')) return { done: false as const, expired: sub.status === 'incomplete_expired' }
   return { done: true as const, amount: (s.amount_total ?? 0) / 100, currency: (s.currency ?? 'eur').toUpperCase(), trial: sub.status === 'trialing' }
 }
+
+// ── Regalos: pago único (Plus o Max durante 1 o 12 meses) ────────────────
+// No hacen falta productos ni precios en Stripe: el importe va en la propia sesión (price_data).
+// La sesión lleva metadata.kind = 'gift' y el id del regalo; el aviso de Stripe y la vuelta a la app lo confirman.
+export const GIFT_KIND = 'gift'
+
+export async function giftCheckout(user: User, gift: { id: string; amount: number; name: string; description: string }, opts: { origin: string; locale: string }) {
+  const customer = await customerOf(user)
+  const meta = { kind: GIFT_KIND, giftId: gift.id, userId: user.id }
+  const session = await stripe!.checkout.sessions.create(
+    {
+      mode: 'payment',
+      customer,
+      client_reference_id: user.id,
+      line_items: [{ quantity: 1, price_data: { currency: 'eur', unit_amount: Math.round(gift.amount * 100), product_data: { name: gift.name, description: gift.description } } }],
+      metadata: meta,
+      payment_intent_data: { metadata: meta, description: gift.name },
+      locale: opts.locale === 'ca' ? 'auto' : (opts.locale as 'es' | 'en'),
+      success_url: `${opts.origin}/${opts.locale}/regalar?pago=ok&sid={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${opts.origin}/${opts.locale}/regalar?pago=no`,
+    },
+    { idempotencyKey: `gift-checkout-${gift.id}` },
+  )
+  return { id: session.id, url: session.url! }
+}
+
+/** Sesión de pago de Stripe (para confirmar un regalo al volver) */
+export const checkoutSession = (id: string) => stripe!.checkout.sessions.retrieve(id)
+

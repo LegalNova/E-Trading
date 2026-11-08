@@ -13,11 +13,12 @@ import { useGuard } from '../shell'
 import { LineChart } from '../ui/charts'
 import { Icon, Logo } from '../ui/icons'
 import { PageSkeleton, Seg } from '../ui/kit'
+import { PanelCards, ReportsTab, UserControls, useOpenReports } from './admin2'
 
-type Tab = 'metrics' | 'feedback' | 'lessons' | 'users' | 'campaigns' | 'content' | 'settings' | 'audit'
+type Tab = 'metrics' | 'reports' | 'feedback' | 'lessons' | 'users' | 'campaigns' | 'content' | 'settings' | 'audit'
 const dash = (v: number | null | undefined, locale: string, suffix = '') => (v === null || v === undefined ? '—' : num(v, locale, 0) + suffix)
 
-function Metrics() {
+function Metrics({ onOpenUser, onOpenReports }: { onOpenUser: (id: string) => void; onOpenReports: () => void }) {
   const t = useTranslations('admin')
   const locale = useLang()
   const [range, setRange] = useState<'7d' | '30d' | '90d'>('30d')
@@ -49,6 +50,7 @@ function Metrics() {
           <b>{dash(m.simulatedTrades, locale)}</b>
         </div>
       </div>
+      <PanelCards onOpenUser={onOpenUser} onOpenReports={onOpenReports} />
       <div className="grid gap-3 lg:grid-cols-[2fr_1fr]">
         <div className="card">
           <b>{t('activeByDay')}</b>
@@ -229,8 +231,7 @@ function Content() {
   )
 }
 
-function Users() {
-  const [sel, setSel] = useState<string | null>(null)
+function Users({ sel, setSel }: { sel: string | null; setSel: (id: string | null) => void }) {
   return sel ? <UserDetail id={sel} onBack={() => setSel(null)} /> : <UserList onOpen={setSel} />
 }
 
@@ -320,6 +321,7 @@ function UserDetail({ id, onBack }: { id: string; onBack: () => void }) {
         </button>
       </div>
       <p className="t-cap m-0">{t('viewAsNote')}</p>
+      <UserControls u={u} />
       <div className="grid gap-3 lg:grid-cols-3">
         <div className="card flex flex-col">
           <b className="mb-1">{t('account')}</b>
@@ -691,9 +693,13 @@ function Audit() {
 export function Admin() {
   const t = useTranslations('admin')
   const { ready } = useGuard('admin')
+  const t2 = useTranslations('admin2')
   const [tab, setTab] = useState<Tab>('metrics')
+  const [userSel, setUserSel] = useState<string | null>(null)
+  const open = useOpenReports()
   if (!ready) return <PageSkeleton />
-  const tabs: Tab[] = ['metrics', 'feedback', 'lessons', 'users', 'campaigns', 'content', 'settings', 'audit']
+  const tabs: Tab[] = ['metrics', 'reports', 'feedback', 'lessons', 'users', 'campaigns', 'content', 'settings', 'audit']
+  const openUser = (id: string) => (setUserSel(id), setTab('users'), window.scrollTo(0, 0))
   // Abre la app con la capa de datos encendida
   const openWithData = () => {
     try {
@@ -709,8 +715,13 @@ export function Admin() {
           <Logo size={26} /> Admin
         </Link>
         {tabs.map(k => (
-          <button key={k} onClick={() => setTab(k)} aria-current={tab === k ? 'page' : undefined} className="flex-none rounded-xl px-3 py-2 text-left text-sm font-bold" style={tab === k ? { background: 'color-mix(in srgb, var(--brand) 12%, transparent)', color: 'var(--brand-ink)' } : { color: 'var(--ink-2)' }}>
-            {t(`tabs.${k}`)}
+          <button key={k} onClick={() => (setTab(k), k === 'users' && setUserSel(null))} aria-current={tab === k ? 'page' : undefined} className="flex flex-none items-center gap-1.5 rounded-xl px-3 py-2 text-left text-sm font-bold" style={tab === k ? { background: 'color-mix(in srgb, var(--brand) 12%, transparent)', color: 'var(--brand-ink)' } : { color: 'var(--ink-2)' }}>
+            {k === 'reports' ? t2('tabs.reports') : t(`tabs.${k}`)}
+            {k === 'reports' && !!open && (
+              <span className="rounded-full px-1.5 text-[11px] leading-[18px] tabular-nums" style={{ background: 'var(--amber, #f5a623)', color: '#1d1d1f' }} aria-label={t2('tabs.openBadge', { n: open })}>
+                {open}
+              </span>
+            )}
           </button>
         ))}
         <Link href="/inicio" onClick={openWithData} className="btn btn-primary mt-2 hidden w-auto px-3 text-sm md:flex">
@@ -723,7 +734,7 @@ export function Admin() {
           <Icon name="back" size={16} /> {t('backToApp')}
         </Link>
       </aside>
-      <main className="mx-auto w-full max-w-[1100px] flex-1 p-4 md:p-8">{tab === 'metrics' ? <Metrics /> : tab === 'feedback' ? <FeedbackTab /> : tab === 'lessons' ? <Lessons /> : tab === 'campaigns' ? <Campaigns /> : tab === 'content' ? <Content /> : tab === 'users' ? <Users /> : tab === 'settings' ? <GlobalSettings /> : <Audit />}</main>
+      <main className="mx-auto w-full max-w-[1100px] flex-1 p-4 md:p-8">{tab === 'metrics' ? <Metrics onOpenUser={openUser} onOpenReports={() => setTab('reports')} /> : tab === 'reports' ? <ReportsTab onOpenUser={openUser} /> : tab === 'feedback' ? <FeedbackTab /> : tab === 'lessons' ? <Lessons /> : tab === 'campaigns' ? <Campaigns /> : tab === 'content' ? <Content /> : tab === 'users' ? <Users sel={userSel} setSel={setUserSel} /> : tab === 'settings' ? <GlobalSettings /> : <Audit />}</main>
     </div>
   )
 }
