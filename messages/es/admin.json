@@ -68,7 +68,9 @@
       "loading": "Cargando…",
       "delayed": "retrasa su cobro (Stripe)",
       "until": "hasta el {date}",
-      "noGifts": "No hay regalos del equipo en marcha."
+      "noGifts": "No hay regalos del equipo en marcha.",
+      "boughtBy": "Comprado por {email}",
+      "nowHas": "Ahora tiene {plan}"
     },
     "gift": {
       "d7": "7 días",
@@ -110,7 +112,8 @@
       "history": "Regalos del equipo",
       "canceled": "quitado",
       "given": "Regalo hecho. Le ha llegado el aviso.",
-      "revoked": "Regalo quitado"
+      "revoked": "Regalo quitado",
+      "purchased": "comprado en Regalar"
     },
     "user": {
       "viewOnly": "Estás viendo la app como otro usuario: los mandos están desactivados. Sal de «ver como» para usarlos.",

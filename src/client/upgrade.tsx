@@ -20,7 +20,8 @@ export function usePlanBadge() {
 export function TestCardNote() {
   const t = useTranslations('billing')
   const { data: b } = usePlanBadge()
-  if (!b?.paymentsTest) return null
+  // Solo lo ve el equipo: al resto no se le habla de pruebas
+  if (!b?.paymentsTest || !b.isAdmin) return null
   return (
     <div className="banner banner-info flex flex-col gap-0.5" role="note">
       <b>{t('testTitle')}</b>
@@ -133,6 +134,8 @@ export function BuyPlans({ id }: { id?: string }) {
   if (!b || !plans || b.status === 'GROUP') return null
   const paid = b.plan !== 'FREE' && !b.daysLeft
   if (paid && b.plan === 'PREMIUM') return null
+  // Max regalado (o en prueba) con más de 14 días por delante: aún no se le ofrece pagar (se ve en Premium si lo busca)
+  if (b.plan === 'PREMIUM' && b.daysLeft && b.daysLeft > 14) return null
   const tiers = (paid && b.plan === 'PLUS' ? ['PREMIUM'] : ['PLUS', 'PREMIUM']) as ('PLUS' | 'PREMIUM')[]
   const of = (tier: 'PLUS' | 'PREMIUM', iv: 'MONTH' | 'YEAR') => plans.find(p => p.tier === tier && p.interval === iv)!
   const saving = Math.round((1 - Number(of('PREMIUM', 'YEAR').price) / (Number(of('PREMIUM', 'MONTH').price) * 12)) * 100)

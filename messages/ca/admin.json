@@ -68,7 +68,9 @@
       "loading": "Carregant…",
       "delayed": "endarrereix el cobrament (Stripe)",
       "until": "fins al {date}",
-      "noGifts": "No hi ha regals de l’equip en marxa."
+      "noGifts": "No hi ha regals de l’equip en marxa.",
+      "boughtBy": "Comprat per {email}",
+      "nowHas": "Ara té {plan}"
     },
     "gift": {
       "d7": "7 dies",
@@ -110,7 +112,8 @@
       "history": "Regals de l’equip",
       "canceled": "tret",
       "given": "Regal fet. Li ha arribat l’avís.",
-      "revoked": "Regal tret"
+      "revoked": "Regal tret",
+      "purchased": "comprat a Regalar"
     },
     "user": {
       "viewOnly": "Estàs veient l’app com un altre usuari: els comandaments estan desactivats. Surt de «veure com» per fer-los servir.",

@@ -143,7 +143,7 @@ export interface AdminUserControls {
   blockReason: string | null
   subscription: { status: string; interval: string | null; stripe: boolean; until: string | null } | null
   giftRunning: boolean
-  gifts: { id: string; tier: 'PLUS' | 'PREMIUM'; days: number; by: string | null; reason: string | null; status: string; at: string }[]
+  gifts: { id: string; tier: 'PLUS' | 'PREMIUM'; days: number; by: string | null; reason: string | null; status: string; at: string; source?: 'ADMIN' | 'PURCHASE' }[]
 }
 export interface AdminStudentUser { id: string; name: string; email: string; studentUntil: string | null }
 export interface AdminStudents {
@@ -151,7 +151,7 @@ export interface AdminStudents {
   decided: { id: string; institution: string; status: 'APPROVED' | 'REJECTED'; note: string | null; decidedBy: string | null; decidedAt: string | null; user: AdminStudentUser }[]
 }
 export interface AdminGroup { id: string; name: string; ownerId: string; ownerName: string; ownerEmail: string; tier: 'PLUS' | 'PREMIUM'; size: number; seats: number; members: number; interval: 'MONTH' | 'YEAR'; student: boolean; status: string; price: number; renewsAt: string | null; createdAt: string; stripe: boolean }
-export interface AdminGift { id: string; userId: string; name: string; email: string; tier: 'PLUS' | 'PREMIUM'; days: number; by: string | null; reason: string | null; at: string; stripe: boolean; until: string | null }
+export interface AdminGift { id: string; userId: string; name: string; email: string; tier: 'PLUS' | 'PREMIUM'; days: number; by: string | null; reason: string | null; at: string; stripe: boolean; until: string | null; source?: 'ADMIN' | 'PURCHASE'; plan?: 'FREE' | 'PLUS' | 'PREMIUM' }
 export interface AuditEntry { id: string; actor: string; action: string; entity: string; createdAt: string }
 
 export interface ContactInput { name: string; email: string; reason: 'SCHOOL' | 'PRESS' | 'SUPPORT' | 'OTHER'; message: string }

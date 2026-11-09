@@ -68,7 +68,9 @@
       "loading": "Loading…",
       "delayed": "delays their charge (Stripe)",
       "until": "until {date}",
-      "noGifts": "No team gifts running."
+      "noGifts": "No team gifts running.",
+      "boughtBy": "Bought by {email}",
+      "nowHas": "Now has {plan}"
     },
     "gift": {
       "d7": "7 days",
@@ -110,7 +112,8 @@
       "history": "Team gifts",
       "canceled": "removed",
       "given": "Gift done. They’ve been notified.",
-      "revoked": "Gift removed"
+      "revoked": "Gift removed",
+      "purchased": "bought in Gift"
     },
     "user": {
       "viewOnly": "You’re viewing the app as another user: controls are off. Leave “view as” to use them.",

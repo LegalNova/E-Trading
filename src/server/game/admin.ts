@@ -338,7 +338,7 @@ async function controlsOf(userId: string) {
   const [u, sub, gifts] = await Promise.all([
     db.user.findUnique({ where: { id: userId }, select: { plan: true, role: true, blockedAt: true, blockReason: true } }),
     db.subscription.findUnique({ where: { userId } }),
-    db.gift.findMany({ where: { source: 'ADMIN', redeemedById: userId }, orderBy: { createdAt: 'desc' }, take: 10 }),
+    db.gift.findMany({ where: { source: { in: ['ADMIN', 'PURCHASE'] }, redeemedById: userId }, orderBy: { createdAt: 'desc' }, take: 10 }),
   ])
   const now = Date.now()
   const stripe = !!sub?.stripeSubId && LIVE.includes(sub.status)
@@ -351,7 +351,7 @@ async function controlsOf(userId: string) {
     blockReason: u?.blockReason ?? null,
     subscription: sub ? { status: sub.status, interval: sub.interval, stripe, until: until?.toISOString() ?? null } : null,
     giftRunning,
-    gifts: gifts.map(g => ({ id: g.id, tier: g.tier as 'PLUS' | 'PREMIUM', days: g.days, by: g.buyerEmail, reason: g.message, status: g.status, at: g.createdAt.toISOString() })),
+    gifts: gifts.map(g => ({ id: g.id, tier: g.tier as 'PLUS' | 'PREMIUM', days: g.days, by: g.buyerEmail, reason: g.source === 'PURCHASE' ? null : g.message, status: g.status, at: (g.redeemedAt ?? g.createdAt).toISOString(), source: g.source as 'ADMIN' | 'PURCHASE' })),
   }
 }
 
@@ -490,10 +490,10 @@ export async function resendWelcome(userId: string) {
   })
 }
 
-/** Regalos del equipo que siguen en marcha (tarjeta del panel) */
+/** Regalos en marcha (tarjeta del panel): los del equipo y los comprados en «Regalar» y ya canjeados */
 export async function adminGifts() {
   await requireAdmin()
-  const rows = await db.gift.findMany({ where: { source: 'ADMIN', status: 'REDEEMED' }, orderBy: { createdAt: 'desc' }, take: 300 })
+  const rows = await db.gift.findMany({ where: { source: { in: ['ADMIN', 'PURCHASE'] }, status: 'REDEEMED' }, orderBy: { redeemedAt: 'desc' }, take: 300 })
   const ids = [...new Set(rows.map(r => r.redeemedById).filter((x): x is string => !!x))]
   const [users, subs] = await Promise.all([db.user.findMany({ where: { id: { in: ids } }, select: { id: true, name: true, email: true, plan: true } }), db.subscription.findMany({ where: { userId: { in: ids } } })])
   const now = Date.now()
@@ -512,6 +512,6 @@ export async function adminGifts() {
       const sub = subs.find(s => s.userId === r.redeemedById)
       const stripe = !!sub?.stripeSubId && LIVE.includes(sub.status)
       const until = sub?.status === 'GIFT' ? sub.trialEndsAt : stripe || sub?.status === 'ACTIVE' ? sub.renewsAt : null
-      return { id: r.id, userId: r.redeemedById!, name: u?.name || '—', email: u?.email ?? '—', tier: r.tier as 'PLUS' | 'PREMIUM', days: r.days, by: r.buyerEmail, reason: r.message, at: r.createdAt.toISOString(), stripe, until: until?.toISOString() ?? null }
+      return { id: r.id, userId: r.redeemedById!, name: u?.name || '—', email: u?.email ?? '—', tier: r.tier as 'PLUS' | 'PREMIUM', days: r.days, by: r.buyerEmail, reason: r.source === 'PURCHASE' ? null : r.message, at: (r.redeemedAt ?? r.createdAt).toISOString(), stripe, until: until?.toISOString() ?? null, source: r.source as 'ADMIN' | 'PURCHASE', plan: (u?.plan ?? 'FREE') as 'FREE' | 'PLUS' | 'PREMIUM' }
     })
 }

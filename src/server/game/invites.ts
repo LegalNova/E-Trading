@@ -55,7 +55,8 @@ export async function linkInviter(tx: Tx, userId: string, source: string | null)
   // (por ejemplo, repitiendo el final de la bienvenida con el código de otra cuenta suya)
   const me = await tx.user.findUnique({ where: { id: userId }, select: { trialUsed: true, createdAt: true, subscription: { select: { stripeSubId: true } } } })
   if (!me || me.trialUsed || me.subscription?.stripeSubId || Date.now() - me.createdAt.getTime() > 3 * DAY_MS) return
-  if (await tx.lessonProgress.count({ where: { userId } })) return
+  // (las clases que se salta el test de nivel de la bienvenida no cuentan: se marcan antes de terminarla)
+  if (await tx.lessonProgress.count({ where: { userId, skipped: false } })) return
   const res = await tx.user.updateMany({ where: { id: userId, invitedById: null }, data: { invitedById: inviter.id } })
   if (!res.count) return
   await track(tx, userId, 'invite', { by: inviter.id })

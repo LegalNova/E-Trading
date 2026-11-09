@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
 import { num } from '@/shared/format'
+import { PLAN_NAME } from '@/shared/plans'
 import { FB_BLOCKERS, FB_LIKES, FB_PAY, FB_PRICE, FB_WANTS } from '@/shared/feedback'
 import { api, type AdminLessonRow, type LensRange } from '../api'
 import { VIEW_AS_KEY } from '../api/http'
@@ -260,7 +261,7 @@ function UserList({ onOpen }: { onOpen: (id: string) => void }) {
                 <br />
                 <span className="t-cap">{u.email}</span>
               </span>
-              <span className="flex-1">{u.plan}</span>
+              <span className="flex-1">{PLAN_NAME[u.plan as keyof typeof PLAN_NAME] ?? u.plan}</span>
               <span className="flex-1">{num(u.xp, locale, 0)}</span>
               <span className="flex-1">{u.lastActive}</span>
               <span className="flex-1">{u.source ?? '—'}</span>
@@ -313,7 +314,7 @@ function UserDetail({ id, onBack }: { id: string; onBack: () => void }) {
           <h2 className="t-title m-0">{u.name}</h2>
           <span className="t-foot">{u.email}</span>
           <div className="t-cap">
-            {u.plan} · {u.login.join(' + ') || '—'} · {u.emailVerified ? t('verified') : t('notVerified')} · {t('source')}: {u.source ?? '—'}
+            {PLAN_NAME[u.plan as keyof typeof PLAN_NAME] ?? u.plan} · {u.login.join(' + ') || '—'} · {u.emailVerified ? t('verified') : t('notVerified')} · {t('source')}: {u.source ?? '—'}
           </div>
         </div>
         <button className="btn btn-primary w-auto" onClick={() => view.mutate()} disabled={view.isPending}>

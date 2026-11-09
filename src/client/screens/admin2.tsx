@@ -193,6 +193,18 @@ export function PanelCards({ onOpenUser, onOpenReports }: { onOpenUser: (id: str
                 {g.stripe ? dur(g.days) : `${dur(g.days)} ${PLAN[g.tier]}`}
                 <br />
                 <span className="t-cap">{g.stripe ? t('delayed') : t('until', { date: date(g.until, false) })}</span>
+                {g.source === 'PURCHASE' && g.by && (
+                  <>
+                    <br />
+                    <span className="t-cap">{t('boughtBy', { email: g.by })}</span>
+                  </>
+                )}
+                {g.plan && g.plan !== g.tier && (
+                  <>
+                    <br />
+                    <span className="t-cap">{t('nowHas', { plan: PLAN[g.plan] })}</span>
+                  </>
+                )}
               </span>
             </div>
           ))
@@ -329,6 +341,7 @@ function GiftCard({ u, disabled }: { u: AdminUserDetail; disabled: boolean }) {
               <span>
                 {dur(g.days)} {PLAN[g.tier]}
                 {g.status === 'CANCELED' && ` · ${t('canceled')}`}
+                {g.source === 'PURCHASE' && <span className="t-cap"> · {t('purchased')}</span>}
                 {g.reason && <span className="t-cap"> · {g.reason}</span>}
               </span>
               <span className="t-cap">
