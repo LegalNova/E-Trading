@@ -154,10 +154,12 @@ async function main() {
   } else console.log(`! no hay aviso (webhook) para ${url}: no se crea (añade --create-webhook si de verdad hace falta)`)
 
   if (secret) {
-    const env = readFileSync('.env.local', 'utf8')
+    // Con la clave real, el secreto va a otro archivo (STRIPE_ENV_FILE) para no pisar el de prueba de .env.local
+    const file = process.env.STRIPE_ENV_FILE ?? '.env.local'
+    const env = (() => { try { return readFileSync(file, 'utf8') } catch { return '' } })()
     const line = `STRIPE_WEBHOOK_SECRET=${secret}`
-    writeFileSync('.env.local', /^STRIPE_WEBHOOK_SECRET=.*$/m.test(env) ? env.replace(/^STRIPE_WEBHOOK_SECRET=.*$/m, line) : `${env.trimEnd()}\n${line}\n`)
-    console.log('  secreto del aviso guardado en .env.local (no se muestra)')
+    writeFileSync(file, /^STRIPE_WEBHOOK_SECRET=.*$/m.test(env) ? env.replace(/^STRIPE_WEBHOOK_SECRET=.*$/m, line) : `${env.trimEnd()}\n${line}\n`, { mode: 0o600 })
+    console.log(`  secreto del aviso guardado en ${file} (no se muestra)`)
   }
   console.log('Listo.')
 }

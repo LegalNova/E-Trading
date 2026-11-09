@@ -68,11 +68,28 @@ async function portalConfig(student: boolean) {
   return id ?? undefined
 }
 
-/** Cliente de Stripe del usuario (se crea la primera vez) */
+/** Modo de la clave: los clientes de prueba no existen con la clave real (y al revés) */
+const MODE = /^(sk|rk)_live_/.test(KEY) ? 'live' : 'test'
+const goodCustomers = new Set<string>()
+/** ¿Existe este cliente en la cuenta y el modo de la clave actual? (tras pasar de prueba a real, los antiguos no) */
+async function customerExists(id: string) {
+  if (goodCustomers.has(id)) return true
+  try {
+    const c = await stripe!.customers.retrieve(id)
+    if (c.deleted) return false
+    goodCustomers.add(id)
+    return true
+  } catch (e) {
+    if ((e as { code?: string }).code === 'resource_missing') return false
+    throw e
+  }
+}
+
+/** Cliente de Stripe del usuario (se crea la primera vez, o de nuevo si el guardado era de otra cuenta o modo) */
 async function customerOf(user: User) {
   const sub = await db.subscription.findUnique({ where: { userId: user.id } })
-  if (sub?.stripeCustomerId) return sub.stripeCustomerId
-  const c = await stripe!.customers.create({ email: user.email, name: user.name || undefined, metadata: { userId: user.id } }, { idempotencyKey: `customer-${user.id}` })
+  if (sub?.stripeCustomerId && (await customerExists(sub.stripeCustomerId))) return sub.stripeCustomerId
+  const c = await stripe!.customers.create({ email: user.email, name: user.name || undefined, metadata: { userId: user.id } }, { idempotencyKey: `customer-${MODE}-${user.id}` })
   await db.subscription.upsert({ where: { userId: user.id }, create: { userId: user.id, status: 'NONE', stripeCustomerId: c.id }, update: { stripeCustomerId: c.id } })
   return c.id
 }
@@ -111,7 +128,7 @@ export async function checkoutUrl(user: User, plan: PlanId, opts: { trialDays: n
  */
 export async function portalUrl(user: User, origin: string, locale: string, plan?: PlanId) {
   const sub = await db.subscription.findUnique({ where: { userId: user.id } })
-  if (!sub?.stripeCustomerId) return null
+  if (!sub?.stripeCustomerId || !(await customerExists(sub.stripeCustomerId))) return null
   const return_url = `${origin}/${locale}/ajustes`
   // Portal con los precios que le tocan (normal o de estudiante); si aún no existe, el de por defecto
   const configuration = await portalConfig(isStudent(user))
@@ -325,7 +342,7 @@ export async function switchGroupToStudent(subId: string, g: { size: number; tie
 /** Portal de Stripe para gestionar el pago del grupo (mismo cliente que su suscripción propia) */
 export async function groupPortalUrl(user: User, origin: string, locale: string) {
   const sub = await db.subscription.findUnique({ where: { userId: user.id } })
-  if (!sub?.stripeCustomerId) return null
+  if (!sub?.stripeCustomerId || !(await customerExists(sub.stripeCustomerId))) return null
   const configuration = await portalConfig(isStudent(user))
   const s = await stripe!.billingPortal.sessions.create({ customer: sub.stripeCustomerId, return_url: `${origin}/${locale}/grupo`, ...(configuration ? { configuration } : {}) })
   return s.url
