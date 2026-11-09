@@ -11,6 +11,8 @@ import { groupLookupKey, lookupKey, type BillingInterval, type GroupSize, type P
 
 const KEY = process.env.STRIPE_SECRET_KEY ?? ''
 export const stripeEnabled = /^(sk|rk)_(test|live)_[A-Za-z0-9]{20,}$/.test(KEY)
+/** Stripe en modo de prueba: no se cobra nada (se paga con la tarjeta de prueba 4242…) */
+export const stripeTestMode = stripeEnabled && /^(sk|rk)_test_/.test(KEY)
 export const stripe = stripeEnabled ? new Stripe(KEY, { maxNetworkRetries: 2, timeout: 15_000 }) : null
 
 export type PlanId = 'plus-month' | 'plus-year' | 'premium-month' | 'premium-year'

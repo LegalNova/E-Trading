@@ -15,7 +15,7 @@ import { applyTheme, useToast } from '../providers'
 import { Icon } from '../ui/icons'
 import { ErrorState, PageSkeleton, Section, Seg, Toggle, TopBar } from '../ui/kit'
 import { Lumi } from '../ui/lumi'
-import { BuyPlans, usePlanBadge } from '../upgrade'
+import { BuyPlans, TestCardNote, usePlanBadge } from '../upgrade'
 import { PushToggle } from '../push'
 
 // ── Premium (06.1–06.2) ──────────────────────────────────
@@ -273,9 +273,12 @@ function PlansScreen({ canceled }: { canceled: boolean }) {
             </div>
           </div>
         ) : (
-          <button className="btn btn-primary" onClick={() => checkout.mutate()}>
-            {isPlus ? t('upgradeCta') : badge?.payments && (badge.trialUsed || !badge.trialUnlocked) ? t('subscribe', { plan: PLAN_NAME[tier] }) : t('tryFree', { days: chosen.trialDays, plan: PLAN_NAME[tier] })}
-          </button>
+          <>
+            <TestCardNote />
+            <button className="btn btn-primary" onClick={() => checkout.mutate()}>
+              {isPlus ? t('upgradeCta') : badge?.payments && (badge.trialUsed || !badge.trialUnlocked) ? t('subscribe', { plan: PLAN_NAME[tier] }) : t('tryFree', { days: chosen.trialDays, plan: PLAN_NAME[tier] })}
+            </button>
+          </>
         )}
         <p className="t-cap m-0 text-center">{t(badge?.payments && !isPlus && !badge.trialUsed && badge.trialUnlocked ? 'after' : 'chargedNow', { price: money(chosen.price, 'EUR', locale), per: chosen.interval === 'YEAR' ? t('perYear') : t('perMonth') })}</p>
         <p className="t-cap m-0 text-center">

@@ -16,6 +16,7 @@ import { useGuard } from '../shell'
 import { Icon, Wordmark } from '../ui/icons'
 import { ErrorState, PageSkeleton, TopBar } from '../ui/kit'
 import { Lumi } from '../ui/lumi'
+import { TestCardNote } from '../upgrade'
 
 // ── Código pendiente en el dispositivo ──────────────────────
 // Quien abre un regalo sin cuenta lo guarda aquí mientras se registra y pasa la bienvenida (solo para eso: es
@@ -404,6 +405,7 @@ function GiftForm({ defaultFrom, payments, canceled }: { defaultFrom: string; pa
           {errText}
         </p>
       )}
+      {payments && <TestCardNote />}
       <button className="btn btn-primary" disabled={buy.isPending || buy.isSuccess || !payments || !from.trim()}>
         {t('pay', { price })}
       </button>

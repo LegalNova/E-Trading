@@ -213,6 +213,8 @@
       },
       "loading": "Loading…",
       "failed": "That didn't work. Try again."
-    }
+    },
+    "testTitle": "Payments in test mode: you won't be charged",
+    "testBody": "We're testing the app. To try paying, use this card with any future date and any CVC. A real card won't work."
   }
 }

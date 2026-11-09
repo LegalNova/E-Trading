@@ -213,6 +213,8 @@
       },
       "loading": "Cargando…",
       "failed": "No se ha podido hacer. Prueba otra vez."
-    }
+    },
+    "testTitle": "Pagos en modo prueba: no se cobra nada",
+    "testBody": "Estamos probando la app. Para probar el pago, usa esta tarjeta con cualquier fecha futura y cualquier CVC. Una tarjeta real no funcionará."
   }
 }

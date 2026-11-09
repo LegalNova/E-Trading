@@ -10,7 +10,7 @@ import { db } from '../db'
 import { headers } from 'next/headers'
 import { auth, currentUser, googleEnabled, mailEnabled, realUser } from '../auth'
 import { viewAs } from '../view'
-import { checkoutUrl, confirmCheckout, isStudent, LIVE, portalUrl, refreshAfterPortal, stripe, stripeEnabled, type PlanId as StripePlanId } from '../billing/stripe'
+import { checkoutUrl, confirmCheckout, isStudent, LIVE, portalUrl, refreshAfterPortal, stripe, stripeEnabled, stripeTestMode, type PlanId as StripePlanId } from '../billing/stripe'
 import { currentLocale } from '../locale'
 import { forgetMemo } from '../request'
 import { ACHIEVEMENTS } from '../content/catalog'
@@ -305,7 +305,7 @@ export async function planBadge() {
   const daysLeft = temporary ? Math.max(1, Math.ceil((sub!.trialEndsAt!.getTime() - Date.now()) / DAY_MS)) : null
   const [g, group] = await Promise.all([db.gameState.findUnique({ where: { userId: u!.id }, select: { streak: true, bestStreak: true } }), (await import('./groups')).groupBadge(u!.id)])
   return {
-    plan, status: sub?.status ?? 'NONE', stripe: !!sub?.stripeSubId && LIVE.includes(sub.status), endsAt: temporary ? sub!.trialEndsAt!.toISOString() : null, daysLeft, trialUsed: u!.trialUsed, isGuest: !!u!.isAnonymous, streak: g?.streak ?? 0, trialUnlocked: trialUnlocked(g?.bestStreak ?? 0), trialStreak: TRIAL_STREAK, payments: stripeEnabled, isAdmin: u!.role === 'ADMIN' && !viewAs(),
+    plan, status: sub?.status ?? 'NONE', stripe: !!sub?.stripeSubId && LIVE.includes(sub.status), endsAt: temporary ? sub!.trialEndsAt!.toISOString() : null, daysLeft, trialUsed: u!.trialUsed, isGuest: !!u!.isAnonymous, streak: g?.streak ?? 0, trialUnlocked: trialUnlocked(g?.bestStreak ?? 0), trialStreak: TRIAL_STREAK, payments: stripeEnabled, paymentsTest: stripeTestMode, isAdmin: u!.role === 'ADMIN' && !viewAs(),
     // Plan de grupo (cuenta como pagado: no se le ofrece pagar) y precio de estudiante
     group: sub?.status === 'GROUP' ? group : null, inAnyGroup: !!group, student: isStudent(u!), studentUntil: u!.studentUntil?.toISOString() ?? null,
   }

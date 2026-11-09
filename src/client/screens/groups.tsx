@@ -16,6 +16,7 @@ import { useToast } from '../providers'
 import { Icon } from '../ui/icons'
 import { ErrorState, PageSkeleton, Seg, Sheet, TopBar } from '../ui/kit'
 import { Lumi } from '../ui/lumi'
+import { TestCardNote } from '../upgrade'
 
 const PLAN = { PLUS: 'Plus', PREMIUM: 'Max' } as const
 
@@ -258,6 +259,7 @@ function CreateGroup({ data, canceled }: { data: GroupViewT; canceled: boolean }
       </div>
       {data.ownPaid && <div className="banner banner-info">{t('ownPaidNote')}</div>}
       {pay.error && <p className="err m-0">{groupError(t, pay.error)}</p>}
+      <TestCardNote />
       <button className="btn btn-primary" disabled={!nameOk || pay.isPending}>
         {pay.isPending ? t('opening') : t('pay', { price: money(chosen.price, 'EUR', locale) })}
       </button>

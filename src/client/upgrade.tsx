@@ -16,6 +16,20 @@ export function usePlanBadge() {
   return useQuery({ queryKey: ['plan-badge'], queryFn: api.planBadge, staleTime: 60_000 })
 }
 
+/** Mientras Stripe está en modo de prueba: no se cobra nada y se paga con la tarjeta de prueba */
+export function TestCardNote() {
+  const t = useTranslations('billing')
+  const { data: b } = usePlanBadge()
+  if (!b?.paymentsTest) return null
+  return (
+    <div className="banner banner-info flex flex-col gap-0.5" role="note">
+      <b>{t('testTitle')}</b>
+      <span className="t-cap">{t('testBody')}</span>
+      <span className="t-body font-bold tracking-[0.04em] tabular-nums">4242 4242 4242 4242</span>
+    </div>
+  )
+}
+
 type Copy = { href: string; short: string; title: string; body: string; cta: string; progress?: number }
 
 function useCopy(): Copy | null {
@@ -171,6 +185,7 @@ export function BuyPlans({ id }: { id?: string }) {
           )
         })}
       </div>
+      <TestCardNote />
       <p className="t-cap m-0">
         {trial ? t('trialNote') : t('note')}{' '}
         <Link href="/premium" className="font-bold" style={{ color: 'var(--brand-ink)' }}>
