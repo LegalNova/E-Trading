@@ -8,6 +8,7 @@ import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { AdminLayer } from './admin-layer'
 import { PendingLeagueJoin } from './screens/friends'
 import { PendingGroupJoin } from './screens/groups'
+import { TeamMessage } from './team-message'
 import { MaxSide } from './upgrade'
 import { ThemeToggle } from './theme-toggle'
 import { api } from './api'
@@ -109,6 +110,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <PendingLeagueJoin />
       {/* Llegó por el enlace de un plan de grupo sin cuenta: al entrar, se une */}
       <PendingGroupJoin />
+      <TeamMessage />
       {/* Barra inferior flotante de cristal (estilo «liquid glass») */}
       <nav aria-label={t('label')} className="glass fixed inset-x-3 z-30 rounded-[30px] p-1.5 md:hidden" style={{ bottom: 'max(10px, env(safe-area-inset-bottom))' }}>
         <Suspense>

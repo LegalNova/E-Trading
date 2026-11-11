@@ -27,7 +27,10 @@ export async function GET(req: Request) {
   }
   if (job === 'remind') {
     const today = dayOf()
-    const atRisk = await db.gameState.findMany({ where: { streak: { gt: 0 }, lastActiveDay: { lt: today } }, include: { user: { select: { id: true, blockedAt: true, settings: true } } }, take: 5000 })
+    // Solo rachas que siguen vivas: activo ayer, o antes si los protectores cubren los días que faltan
+    // (la racha guardada no se pone a 0 hasta que la persona vuelve: sin esto se avisaba de rachas ya perdidas)
+    const atRisk = (await db.gameState.findMany({ where: { streak: { gt: 0 }, lastActiveDay: { lt: today, gte: addDays(today, -1 - MAX_FREEZES) } }, include: { user: { select: { id: true, blockedAt: true, settings: true } } }, take: 5000 }))
+      .filter(g => g.lastActiveDay! >= addDays(today, -1 - g.freezes))
     let sent = 0
     for (const g of atRisk) {
       if (g.user.blockedAt) continue

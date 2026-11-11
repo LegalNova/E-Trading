@@ -5,6 +5,8 @@ import { z } from 'zod'
 import { HttpError } from '@/server/game/core'
 import * as admin from '@/server/game/admin'
 import * as reports from '@/server/game/reports'
+import * as teamAdmin from '@/server/game/admin-messages'
+import * as team from '@/server/game/messages'
 import { recordClientEvent, recordServerError } from '@/server/game/analytics'
 import { lens, lessonTable, type LensRange } from '@/server/game/lens'
 import { realUser } from '@/server/auth'
@@ -24,6 +26,7 @@ import * as missions from '@/server/game/missions'
 import * as journal from '@/server/game/journal'
 import * as groups from '@/server/game/groups'
 import * as students from '@/server/game/students'
+import * as daily from '@/server/game/daily'
 import { requireUser } from '@/server/game/core'
 import { db } from '@/server/db'
 import { clientIp, rateLimit } from '@/server/http/ratelimit'
@@ -206,6 +209,17 @@ const routes: Route[] = [
   { method: 'POST', path: 'admin/users/:id/streak', run: (_r, p, b) => admin.restoreStreak(p[0], z.object({ streak: z.number().int().min(0).max(3650) }).parse(b).streak) },
   { method: 'POST', path: 'admin/users/:id/block', run: (_r, p, b) => { const x = z.object({ blocked: z.boolean(), reason: z.string().max(300).optional() }).parse(b); return admin.setBlocked(p[0], x.blocked, x.reason) } },
   { method: 'POST', path: 'admin/users/:id/welcome', run: (_r, p) => admin.resendWelcome(p[0]) },
+  // Repartir (dinero virtual, XP, gemas, vidas, protectores, racha) y mensajes del equipo (a una persona o a varias)
+  { method: 'GET', path: 'admin/glance', run: () => admin.glance() },
+  { method: 'POST', path: 'admin/users/:id/grant', run: (_r, p, b) => { const x = z.object({ kind: z.enum(admin.GRANT_KINDS), amount: z.number().finite().min(-1e12).max(1e12).optional(), league: z.boolean().optional(), reason: z.string().max(200).optional(), notify: z.boolean().optional(), title: z.string().max(200).optional(), text: z.string().max(2000).optional() }).parse(b); return admin.grant(z.string().max(64).parse(p[0]), x) } },
+  { method: 'POST', path: 'admin/users/:id/message', run: (_r, p, b) => { const x = z.object({ title: z.string().max(200).optional(), text: z.string().max(2000) }).parse(b); return teamAdmin.sendToUser(z.string().max(64).parse(p[0]), x) } },
+  { method: 'GET', path: 'admin/messages', run: () => teamAdmin.messageHistory() },
+  { method: 'GET', path: 'admin/messages/audience', run: r => { const s = r.nextUrl.searchParams; return teamAdmin.audiencePreview({ kind: z.enum(teamAdmin.AUDIENCES).parse(s.get('kind') ?? 'ALL'), days: s.get('days') ? z.coerce.number().int().parse(s.get('days')) : undefined, lang: z.enum(['es', 'ca', 'en']).optional().parse(s.get('lang') || undefined) }) } },
+  { method: 'POST', path: 'admin/messages/broadcast', run: (_r, _p, b) => { const x = z.object({ audience: z.object({ kind: z.enum(teamAdmin.AUDIENCES), days: z.number().int().optional(), lang: z.enum(['es', 'ca', 'en']).optional() }), title: z.string().max(200).optional(), text: z.string().max(2000), expected: z.number().int().min(1) }).parse(b); return teamAdmin.broadcast(x.audience, x) } },
+  // Mensajes del equipo que recibe la persona: los pendientes (ventana al abrir la app), uno concreto y «visto»
+  { method: 'GET', path: 'team-messages/pending', run: () => team.pendingTeamMessages() },
+  { method: 'GET', path: 'team-messages/:id', run: (_r, p) => team.teamMessage(z.string().regex(/^tm-[a-z0-9-]{4,60}$/).parse(p[0])) },
+  { method: 'POST', path: 'team-messages/:id/seen', run: async (_r, p) => { await rateLimit(`tmseen:${(await requireUser()).id}`, 60, 60); return team.seenTeamMessage(z.string().regex(/^tm-[a-z0-9-]{4,60}$/).parse(p[0])) } },
   // Regalar Lumi: comprar (pago único con Stripe), confirmar el pago, mis regalos y, con el código, ver y canjear
   { method: 'GET', path: 'gifts', run: () => gifts.myGifts() },
   { method: 'POST', path: 'gifts', run: async (_r, _p, b) => { const x = z.object({ tier: z.enum(['PLUS', 'PREMIUM']), months: z.union([z.literal(1), z.literal(12)]), fromName: z.string().max(80), toName: z.string().max(80).optional(), message: z.string().max(600).optional() }).parse(b); await rateLimit(`gift:${(await requireUser()).id}`, 12, 3600); return gifts.createGift(x) } },
@@ -214,6 +228,9 @@ const routes: Route[] = [
   { method: 'POST', path: 'gifts/code/:code/redeem', run: async (r, p) => { await rateLimit(`giftcode:${clientIp(r)}`, 60, 60); await rateLimit(`redeem:${(await requireUser()).id}`, 10, 600); return gifts.redeemGift(p[0].slice(0, 30)) } },
   // Analítica propia: pantallas vistas y dónde se deja una clase
   { method: 'POST', path: 'events', run: async (r, _p, b) => { await rateLimit(`ev:${clientIp(r)}`, 600, 60); return recordClientEvent(b) } },
+  // Regalo diario (30 días) y cofre semanal: el servidor decide el día y el premio (sin cuerpo)
+  { method: 'GET', path: 'daily', run: () => daily.daily() },
+  { method: 'POST', path: 'daily/open', run: async () => { await rateLimit(`daily:${(await requireUser()).id}`, 20, 60); return daily.openDaily() } },
 ]
 
 function match(method: string, parts: string[]) {

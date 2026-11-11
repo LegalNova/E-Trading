@@ -20,6 +20,7 @@ import { giftLinkLabel } from './gifts'
 import { ShareButton } from '../share'
 import { ReportRow } from '../report-button'
 import { Lumi, LumiSays, SKINS, stageOf } from '../ui/lumi'
+import { HelpSteps, HelpTip } from '../ui/first-time'
 
 // ── Racha (05.1) ─────────────────────────────────────────
 export function Streak() {
@@ -57,6 +58,9 @@ export function Streak() {
           </div>
           <Flame color={s.todayDone ? '#2997FF' : 'rgb(255 255 255 / 0.3)'} size={70} />
         </div>
+        <HelpTip id="streak" title={t('whatTitle')}>
+          <span>{t('whatBody')}</span>
+        </HelpTip>
         {!s.todayDone && <LumiSays mood={s.current > 0 ? 'WORRIED' : 'HAPPY'} message={s.current > 0 ? t('atRisk', { n: s.current }) : t('startOne')} />}
         {s.current >= 2 && <ShareButton what={{ t: 'racha', n: s.current }} />}
         <div className="card">
@@ -231,6 +235,10 @@ function GeneralLeague() {
     <div className="pad">
       <h1 className="t-large">{t('title')}</h1>
       <span className="t-foot -mt-2">{t('endsIn', { time: countdown(l.endsAt), n: l.promoteTop })}</span>
+      {/* La primera vez: qué es la liga y cómo se suben puntos, antes de la tabla */}
+      <HelpTip id="league" title={t('howTitle')}>
+        <HelpSteps items={[t('how1', { n: l.members.length }), t('how2'), t('how3', { up: l.promoteTop })]} />
+      </HelpTip>
       <span className="t-foot font-bold" style={{ color: 'var(--ink)' }}>
         {t('yourDivision', { name: l.division.name })}
       </span>
@@ -288,7 +296,11 @@ function GeneralLeague() {
           </div>
         ))}
       </div>
-      <p className="t-foot m-0">{t('rule')}</p>
+      {/* El reglamento completo, plegado: quien lo quiera lo abre */}
+      <details className="card">
+        <summary className="t-head flex min-h-11 cursor-pointer items-center">{t('ruleTitle')}</summary>
+        <p className="t-foot m-0 mt-1">{t('rule')}</p>
+      </details>
       {me && me.rank === 0 && <div className="banner banner-info">{t('joinHint')}</div>}
       {/* Grupo con poca gente: invitar a amigos lo anima (y les da 7 días de Max) */}
       {l.members.filter(m => m.rank > 0).length < 10 && (
@@ -439,7 +451,7 @@ function ago(iso: string, locale: string) {
   return d.toLocaleDateString(locale, { day: 'numeric', month: 'short' })
 }
 
-const NOTIF_ICON: Record<NotificationT['type'], IconName> = { STREAK_RISK: 'clock', ORDER_FILLED: 'check', PRICE_ALERT: 'bell', ACHIEVEMENT: 'star', LEAGUE_RESULT: 'league', NEW_LESSON: 'learn' }
+const NOTIF_ICON: Record<NotificationT['type'], IconName> = { STREAK_RISK: 'clock', ORDER_FILLED: 'check', PRICE_ALERT: 'bell', ACHIEVEMENT: 'star', LEAGUE_RESULT: 'league', NEW_LESSON: 'learn', TEAM: 'chat' }
 
 export function Notifications() {
   const t = useTranslations('notifications')

@@ -82,7 +82,7 @@ export const BADGES: Record<string, { g: keyof typeof G; rarity: Rarity; n?: str
   BOSS_1: { g: 'trophy', rarity: 'RARE' },
   BOSS_5: { g: 'trophy', rarity: 'EPIC', n: '5' },
   UPDOWN_10: { g: 'updown', rarity: 'COMMON', n: '10' },
-  CALC_20: { g: 'calc', rarity: 'RARE', n: '20' },
+  CALC_20: { g: 'calc', rarity: 'RARE', n: '10' },
   SCAM_5: { g: 'shieldx', rarity: 'RARE', n: '5' },
   SIM_5: { g: 'scale', rarity: 'EPIC', n: '5' },
   CANDLE_10: { g: 'candles', rarity: 'RARE', n: '10' },

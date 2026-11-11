@@ -233,6 +233,9 @@ function PlansScreen({ canceled }: { canceled: boolean }) {
           />
         )}
         <p className="t-foot m-0">{t(tier === 'PLUS' ? 'plusPitch' : 'maxPitch')}</p>
+        {/* Primero qué incluye; después cómo pagarlo (antes la lista salía debajo del botón de pago) */}
+        <FeatureList features={features(isPlus ? 'PREMIUM' : tier)} />
+        <b className="t-head mt-1">{t('chooseBilling')}</b>
         <button className="opt" aria-pressed={interval === 'YEAR'} onClick={() => setInterval_('YEAR')}>
           <span className="flex-1">
             <b>{t('yearly')}</b>
@@ -290,7 +293,6 @@ function PlansScreen({ canceled }: { canceled: boolean }) {
             ),
           })}
         </p>
-        <FeatureList features={features(isPlus ? 'PREMIUM' : tier)} />
         <div className="banner banner-info">{t('demoNote')}</div>
         <ExtraPlans student={badge?.student ? badge.studentUntil ?? null : undefined} />
       </div>

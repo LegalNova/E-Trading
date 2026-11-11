@@ -4,13 +4,14 @@ import 'server-only'
 // - Una llamada al proveedor sirve a todos: el precio se guarda en Quote (lotes de 20 símbolos).
 // - Se refresca solo lo que se está viendo (y un repaso horario de todo el catálogo desde el cron).
 import { after } from 'next/server'
-import type { AssetDetailT, AssetItemT, AssetPageT, AssetTypeT, CandleT, MarketOverviewT, RegionT } from '@/shared/contract'
+import type { AssetDetailT, AssetItemT, AssetPageT, AssetTypeT, CandleT, ChartDataT, MarketOverviewT, RegionT } from '@/shared/contract'
 import { isOpen, nextClose, nextOpen, SESSIONS } from '@/shared/market-hours'
+import { tzOffset } from '@/shared/session-times'
 import { fixPrice } from '@/shared/format'
 import { tickerOf } from '@/shared/ticker'
 import { Prisma } from '@/generated/prisma/client'
 import { db, DB_SCHEMA } from '../db'
-import { ecbRates, yahooCandles, yahooQuotes, type Interval } from './providers'
+import { ecbRates, INTERVALS, isInterval, localDay, periodStart, yahooQuotes, yahooSeries, type Interval } from './providers'
 import { refreshFundamentals } from './fundamentals'
 
 const REFRESH_OPEN_MS = 5_000
@@ -373,6 +374,18 @@ function describe(a: AssetRow): string {
   }
 }
 
+/** Tramos de la sesión (hora local de la bolsa) del día en que cae `day`, como instantes reales */
+function sessionPartsOn(code: string, day: Date): { open: string; close: string }[] {
+  const s = SESSIONS[code]
+  if (!s) return []
+  const [y, mo, d] = new Intl.DateTimeFormat('en-CA', { timeZone: s.tz, year: 'numeric', month: '2-digit', day: '2-digit' }).format(day).split('-').map(Number)
+  const at = (mins: number) => {
+    const guess = Date.UTC(y, mo - 1, d, 0, mins)
+    return new Date(guess - tzOffset(new Date(guess), s.tz)).toISOString()
+  }
+  return s.parts.map(([a, b]) => ({ open: at(a), close: at(b) }))
+}
+
 export async function assetDetail(symbol: string, userCurrency: 'EUR' | 'USD' = 'EUR'): Promise<AssetDetailT | null> {
   const [a] = await loadAssets([symbol])
   const it = a && toItem(a)
@@ -395,33 +408,141 @@ export async function assetDetail(symbol: string, userCurrency: 'EUR' | 'USD' = 
     indices: a.indices,
     exchangeName: a.exchangeName || it.exchange,
     timezone: SESSIONS[a.hours]?.tz ?? (a.hours === 'CME' ? 'America/New_York' : a.hours === 'FX' ? 'Europe/Madrid' : 'UTC'),
+    hoursKind: a.hours === 'CRYPTO' ? 'always' : a.hours === 'FX' ? 'fx' : a.hours === 'CME' ? 'futures' : 'session',
+    sessionParts: SESSIONS[a.hours] ? sessionPartsOn(a.hours, it.isOpen ? new Date() : (nextOpen(a.hours) ?? new Date())) : [],
   }
 }
 
 // ── Velas: reales del proveedor, con caché en memoria por instancia ──
-const candleCache = new Map<string, { at: number; data: CandleT[] }>()
+interface Series { at: number; data: CandleT[]; tz: string; mismatch: boolean }
+const candleCache = new Map<string, Series>()
 /** Peticiones de velas en curso: muchas personas abriendo el mismo gráfico a la vez comparten una sola llamada */
-const candleInflight = new Map<string, Promise<CandleT[]>>()
-const CANDLE_TTL: Record<string, number> = { '1m': 30_000, '5m': 60_000, '15m': 120_000, '1h': 300_000, '1d': 900_000, '1w': 3_600_000, '1M': 6 * 3_600_000 }
+const candleInflight = new Map<string, Promise<Series>>()
+const CANDLE_TTL: Record<Interval, number> = { '1m': 30_000, '5m': 60_000, '15m': 120_000, '1h': 300_000, '1d': 900_000, '1w': 3_600_000, '1M': 6 * 3_600_000 }
+const RETRY_CANDLES_MS = 30_000
 
-export async function candles(symbol: string, interval: Interval): Promise<CandleT[]> {
-  if (!validSymbol(symbol) || !Object.hasOwn(CANDLE_TTL, interval)) return []
+/** Velas de un símbolo e intervalo, en su moneda principal (libras, no peniques), con t = instante real */
+async function series(symbol: string, interval: Interval): Promise<Series> {
   const key = `${symbol}:${interval}`
   const hit = candleCache.get(key)
-  if (hit && Date.now() - hit.at < CANDLE_TTL[interval]) return hit.data
+  if (hit && Date.now() - hit.at < CANDLE_TTL[interval]) return hit
   const running = candleInflight.get(key)
   if (running) return running
-  const p = (async () => {
-    const a = await db.asset.findUnique({ where: { symbol } })
-    if (!a) return []
+  const p = (async (): Promise<Series> => {
+    const a = await db.asset.findUnique({ where: { symbol }, select: { currency: true } })
+    if (!a) return { at: Date.now(), data: [], tz: 'UTC', mismatch: false }
     const { div } = normCurrency(a.currency)
-    const raw = await yahooCandles(symbol, interval)
-    const data = raw.map(c => ({ t: c.t, o: c.o / div, h: c.h / div, l: c.l / div, c: c.c / div, v: c.v }))
+    const d = (v: number) => (div === 1 ? v : Number((v / div).toPrecision(7)))
+    const raw = await yahooSeries(symbol, interval)
+    const data = (raw?.candles ?? []).map(c => ({ t: c.t, o: d(c.o), h: d(c.h), l: d(c.l), c: d(c.c), v: c.v }))
     if (candleCache.size > 500) candleCache.clear()
-    // Si el proveedor falla se sigue sirviendo lo último que hubo, y se reintenta en 30 s (no en cada visita)
-    candleCache.set(key, data.length ? { at: Date.now(), data } : { at: Date.now() - CANDLE_TTL[interval] + 30_000, data: hit?.data ?? [] })
-    return data.length ? data : (hit?.data ?? [])
+    let entry: Series
+    if (raw && (data.length || raw.mismatch || !hit?.data.length)) entry = { at: Date.now(), data, tz: raw.tz, mismatch: raw.mismatch }
+    // Si el proveedor falla (o llega vacío cuando antes había velas) se sigue sirviendo lo último y se reintenta en 30 s
+    else entry = { at: Date.now() - CANDLE_TTL[interval] + RETRY_CANDLES_MS, data: hit?.data ?? [], tz: hit?.tz ?? raw?.tz ?? 'UTC', mismatch: false }
+    candleCache.set(key, entry)
+    return entry
   })().finally(() => candleInflight.delete(key))
   candleInflight.set(key, p)
   return p
+}
+
+/** Velas reales (t = instante real). Las usan las órdenes pendientes (5 min, un mes) y los avisos */
+export async function candles(symbol: string, interval: Interval): Promise<CandleT[]> {
+  if (!validSymbol(symbol) || !isInterval(interval)) return []
+  return (await series(symbol, interval)).data
+}
+
+/** Periodo que se ve al abrir cada intervalo: N sesiones de bolsa (acciones, ETF, índices) o N días seguidos */
+const CHART_WINDOW: Record<Interval, { sessions?: number; days: number | null }> = {
+  '1m': { sessions: 1, days: 1 },
+  '5m': { sessions: 5, days: 5 },
+  '15m': { days: 14 },
+  '1h': { days: 31 },
+  '1d': { days: 365 },
+  '1w': { days: 5 * 365 + 1 },
+  '1M': { days: null },
+}
+/** Velas de antes del periodo a la vista: para la media de 200 y para desplazarse hacia atrás */
+const WARMUP = 250
+const DAY = 86_400
+
+/** Desfase de Madrid (s) en un instante; cambia solo en horas en punto, así que se guarda por hora */
+const madridOff = new Map<number, number>()
+function madridWall(t: number) {
+  const h = Math.floor(t / 3600)
+  let off = madridOff.get(h)
+  if (off === undefined) {
+    if (madridOff.size > 20_000) madridOff.clear()
+    off = tzOffset(new Date(h * 3600 * 1000), 'Europe/Madrid') / 1000
+    madridOff.set(h, off)
+  }
+  return t + off
+}
+
+/**
+ * Gráfico de la ficha: las velas del intervalo pedido (nunca otro), con el periodo que se ve al abrir y el eje en hora de pared:
+ * intradía en hora de Madrid; diario, semanal y mensual con la fecha de la bolsa (una vela de Sídney del lunes es del lunes).
+ */
+export async function chartData(symbol: string, interval: Interval): Promise<ChartDataT | null> {
+  if (!validSymbol(symbol) || !isInterval(interval)) return null
+  const asset = await db.asset.findUnique({ where: { symbol }, select: { type: true, enabled: true } })
+  if (!asset?.enabled) return null
+  const s = await series(symbol, interval)
+  const all = s.data
+  const n = all.length
+  const bySessions = asset.type === 'STOCK' || asset.type === 'ETF' || asset.type === 'INDEX'
+  const w = CHART_WINDOW[interval]
+  const step = INTERVALS[interval].step
+  const window: ChartDataT['window'] = w.sessions && bySessions ? 'sessions' : 'rolling'
+  const base = { symbol, interval, window, unavailable: s.mismatch || n === 0 }
+  if (!n) return { ...base, candles: [], viewFrom: null, partial: false, firstAt: null, lastAt: null }
+
+  // Primera vela del periodo a la vista
+  let from = 0
+  let partial = false
+  if (window === 'sessions') {
+    let count = 0
+    let prevDay: number | null = null
+    for (let i = n - 1; i >= 0; i--) {
+      const day = localDay(all[i].t, s.tz)
+      if (day === prevDay) continue
+      prevDay = day
+      if (++count > w.sessions!) {
+        from = i + 1
+        break
+      }
+    }
+    partial = count < w.sessions!
+  } else if (w.days !== null) {
+    const start = all[n - 1].t - w.days * DAY
+    from = Math.max(0, all.findIndex(c => c.t >= start))
+    // Menos historia que el periodo (margen: un fin de semana largo o una vela)
+    partial = all[0].t > start + Math.max(4 * DAY, 2 * step)
+  }
+
+  // Hora de pared: Madrid en intradía; fecha de la bolsa en diario o más. Siempre creciente (el cambio de hora repite una hora)
+  const daily = step >= DAY
+  const out: CandleT[] = []
+  let viewFrom: number | null = null
+  for (let i = Math.max(0, from - WARMUP); i < n; i++) {
+    const c = all[i]
+    const t = daily ? periodStart(interval, c.t, s.tz) : madridWall(c.t)
+    const last = out[out.length - 1]
+    if (last && t <= last.t) {
+      last.h = Math.max(last.h, c.h)
+      last.l = Math.min(last.l, c.l)
+      last.c = c.c
+      last.v += c.v
+    } else out.push({ ...c, t })
+    if (i === from) viewFrom = out[out.length - 1].t
+  }
+  return {
+    ...base,
+    candles: out,
+    viewFrom,
+    partial,
+    firstAt: new Date(all[from].t * 1000).toISOString(),
+    lastAt: new Date(all[n - 1].t * 1000).toISOString(),
+  }
 }

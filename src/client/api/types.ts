@@ -12,7 +12,9 @@ import type { FriendLeaguePeekT, FriendLeaguesT, FriendLeagueT } from '@/shared/
 import type { EffectsT } from '@/shared/contract'
 import type { JournalT, JournalVerdictT, LessonMissionT, MissionsT } from '@/shared/contract'
 import type { FundamentalsT, IdeasT } from '@/shared/contract'
+import type { ChartDataT } from '@/shared/contract'
 import type { GroupPeekT, GroupViewT, StudentStatusT } from '@/shared/contract'
+import type { DailyOpenT, DailyT } from '@/shared/contract'
 import type { ThesisDetailT, ThesisListT, ThesisT } from '@/shared/thesis'
 
 export interface GiftInput { tier: 'PLUS' | 'PREMIUM'; months: 1 | 12; fromName: string; toName?: string; message?: string }
@@ -110,7 +112,9 @@ export interface AdminUserDetail {
   lastActive: string | null
   blocked: boolean
   onboarding: { done: boolean; step: number | null; experience: string | null; goals: string[]; minutes: number | null }
-  game: { xp: number; level: number; streak: number; bestStreak: number; gems: number; lives: number; division: number; weekXp: number } | null
+  game: { xp: number; level: number; streak: number; bestStreak: number; gems: number; lives: number; division: number; weekXp: number; freezes?: number } | null
+  guest?: boolean
+  isTeam?: boolean
   learning: { lessonsDone: number; accuracy: number | null; answers: number; last: { id: string; title: string; skipped: boolean; stars: number; at: string }[] }
   market: { cash: number | null; positions: number; trades: number; last: { symbol: string; side: string; total: number; status: string; at: string }[] }
   tutorQuestions: number
@@ -144,6 +148,8 @@ export interface AdminUserControls {
   subscription: { status: string; interval: string | null; stripe: boolean; until: string | null } | null
   giftRunning: boolean
   gifts: { id: string; tier: 'PLUS' | 'PREMIUM'; days: number; by: string | null; reason: string | null; status: string; at: string; source?: 'ADMIN' | 'PURCHASE' }[]
+  messages?: { id: string; title: string; text: string; at: string; readAt: string | null; batch: boolean }[]
+  pushDevices?: number
 }
 export interface AdminStudentUser { id: string; name: string; email: string; studentUntil: string | null }
 export interface AdminStudents {
@@ -153,6 +159,18 @@ export interface AdminStudents {
 export interface AdminGroup { id: string; name: string; ownerId: string; ownerName: string; ownerEmail: string; tier: 'PLUS' | 'PREMIUM'; size: number; seats: number; members: number; interval: 'MONTH' | 'YEAR'; student: boolean; status: string; price: number; renewsAt: string | null; createdAt: string; stripe: boolean }
 export interface AdminGift { id: string; userId: string; name: string; email: string; tier: 'PLUS' | 'PREMIUM'; days: number; by: string | null; reason: string | null; at: string; stripe: boolean; until: string | null; source?: 'ADMIN' | 'PURCHASE'; plan?: 'FREE' | 'PLUS' | 'PREMIUM' }
 export interface AuditEntry { id: string; actor: string; action: string; entity: string; createdAt: string }
+// Repartir y mensajes del equipo
+export type GrantKind = 'CASH' | 'XP' | 'GEMS' | 'LIVES' | 'FREEZES' | 'STREAK'
+export interface GrantInput { kind: GrantKind; amount?: number; league?: boolean; reason?: string; notify?: boolean; title?: string; text?: string }
+export type TeamAudienceKind = 'ALL' | 'NEW' | 'INACTIVE'
+export interface TeamAudience { kind: TeamAudienceKind; days?: number; lang?: 'es' | 'ca' | 'en' }
+export interface AdminTeamSent { id: string; kind: 'ONE' | 'MANY'; at: string; by: string; title: string | null; text: string; via: string | null; user: { id: string; name: string; email: string } | null; count: number; read: number; readAt: string | null; audience: { kind: TeamAudienceKind; days: number | null; lang: string | null } | null }
+export interface AdminGlance {
+  users: number; guests: number; new24h: number; new7d: number; activeToday: number; active7d: number; plus: number; max: number; stripe: number; blocked: number; openReports: number
+  messages: { sent7d: number; read7d: number }
+  recent: { id: string; name: string; email: string; createdAt: string; onboarded: boolean; messaged: boolean }[]
+}
+export interface TeamMessageT { id: string; header: string; title: string | null; text: string; at: string; read: boolean }
 
 export interface ContactInput { name: string; email: string; reason: 'SCHOOL' | 'PRESS' | 'SUPPORT' | 'OTHER'; message: string }
 
@@ -220,6 +238,10 @@ export interface Api {
   assets(filter?: { type?: AssetTypeT | 'WATCH'; q?: string }): Promise<AssetItemT[]>
   asset(symbol: string): Promise<AssetDetailT>
   candles(symbol: string, interval: CandleInterval): Promise<CandleT[]>
+  /** Gráfico de la ficha: velas de exactamente ese intervalo y el periodo que se ve al abrir */
+  chart(symbol: string, interval: CandleInterval): Promise<ChartDataT>
+  /** Ficha sin pedir los ajustes en cada refresco (la moneda la pasa la pantalla) */
+  assetIn(symbol: string, currency: 'EUR' | 'USD'): Promise<AssetDetailT>
   searchAssets(f: AssetFilter): Promise<AssetPageT>
   marketOverview(region: RegionT | 'ALL'): Promise<MarketOverviewT>
   /** Datos de empresa de la ficha (capitalización, PER, dividendo, BPA, beta) */
@@ -318,12 +340,24 @@ export interface Api {
   adminRestoreStreak(id: string, streak: number): Promise<{ streak: number }>
   adminSetBlocked(id: string, blocked: boolean, reason?: string): Promise<{ blocked: boolean }>
   adminResendWelcome(id: string): Promise<void>
+  adminGlance(): Promise<AdminGlance>
+  adminGrant(id: string, g: GrantInput): Promise<{ kind: GrantKind; value: number; messageId: string | null }>
+  adminSendMessage(id: string, m: { title?: string; text: string }): Promise<{ id: string }>
+  adminMessages(): Promise<AdminTeamSent[]>
+  adminAudience(a: TeamAudience): Promise<{ count: number; withPush: number; max: number; sample: string[] }>
+  adminBroadcast(a: TeamAudience, m: { title?: string; text: string; expected: number }): Promise<{ batch: string; count: number }>
+  teamPending(): Promise<{ items: TeamMessageT[] }>
+  teamMessage(id: string): Promise<TeamMessageT>
+  teamSeen(id: string): Promise<void>
   // Regalos
   myGifts(): Promise<{ payments: boolean; isGuest: boolean; fromName: string | null; gifts: GiftMineT[] }>
   buyGift(g: GiftInput): Promise<{ url: string }>
   confirmGift(sessionId: string): Promise<{ done: true; gift: GiftMineT } | { done: false; expired: boolean }>
   giftByCode(code: string): Promise<GiftPublicT>
   redeemGift(code: string): Promise<GiftRedeemT>
+  // Regalo diario (30 días) y cofre semanal
+  daily(): Promise<DailyT>
+  openDaily(): Promise<DailyOpenT>
   // Analítica propia (no bloquea nada si falla)
   trackEvent(e: { name: 'push_open'; kind: string } | { name: 'client_error'; message: string; path: string; stack?: string } | { name: 'screen_view'; path: string; ref?: string } | { name: 'lesson_exit'; lessonId: string; step: number; of: number }): void
 }

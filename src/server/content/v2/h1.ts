@@ -7,7 +7,7 @@ import { buckets, chat, choose, fill, key, lesson, match, mission, multi, note, 
 // Cifras comprobadas con charts.json y src/client/play/math.ts:
 // · series-sp500-monthly: 1.000 € en 1985-01 → 38.109 € en 2025-12 (×38,1); desde 2005-01, ×5,8; caídas de −46 % (2000-2002) y −53 % (2007-2009).
 // · growthPath: 50 €/mes 40 años al 7 % → 123.577 € (aporta 24.000 €); 100 €/mes 30 años → 116.945 € (aporta 36.000 €).
-export const h1l1 = lesson('h1l1', 'Tu primera inversión en 3 minutos', [
+export const h1l1 = lesson('h1l1', 'Tu primera inversión', [
   play({
     title: '40 años de bolsa en 20 segundos',
     intro: 'El **S&P 500** junta las 500 mayores empresas de EE. UU., como Apple o Amazon. Pones **1.000 €** virtuales en enero de 1985 y vives lo que pasó de verdad.',
@@ -246,7 +246,7 @@ export const u19l1 = lesson('u19l1', 'Qué muestra un gráfico de precios', [
   }),
   play({
     title: 'Leer no es adivinar',
-    intro: 'Tres gráficos reales de 30 velas diarias. Léelos y decide: ¿**sube o baja** en las 10 sesiones siguientes?',
+    intro: 'Cada barrita del gráfico es una **vela**: lo que hizo el precio en un día. Tienes tres gráficos reales de 30 velas. Léelos y decide: ¿**sube o baja** en las 10 sesiones siguientes?',
     widget: { kind: 'guess', rounds: ['ud-8', 'ud-24', 'ud-91'] },
     goal: { text: 'Juega las tres rondas.', when: [when('done', '==', 3)] },
     insight: 'Leer el pasado es fácil; adivinar el futuro, no. Quien estudia gráficos trabaja con **probabilidades, nunca con certezas**.',

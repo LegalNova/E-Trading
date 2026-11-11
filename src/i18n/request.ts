@@ -2,7 +2,7 @@ import { getRequestConfig } from 'next-intl/server'
 import { routing, isLocale } from './routing'
 
 /** Textos por áreas (messages/<idioma>/<área>.json) además del archivo general: cada área edita el suyo */
-const AREAS = ['admin', 'gifts', 'missions', 'leagues', 'market', 'tutor', 'project', 'billing', 'brand'] as const
+const AREAS = ['admin', 'gifts', 'missions', 'leagues', 'market', 'tutor', 'project', 'billing', 'brand', 'daily', 'inbox'] as const
 
 type Tree = Record<string, unknown>
 const isObj = (v: unknown): v is Tree => !!v && typeof v === 'object' && !Array.isArray(v)

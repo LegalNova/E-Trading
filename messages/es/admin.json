@@ -150,7 +150,219 @@
       "blockButton": "Bloquear",
       "confirmBlock": "¿Bloquear a {email}? Se cerrarán sus sesiones y no podrá entrar.",
       "blockedDone": "Cuenta bloqueada",
-      "blockNote": "No cancela su suscripción de Stripe: si paga, gestiónalo también en Stripe."
+      "blockNote": "No cancela su suscripción de Stripe: si paga, gestiónalo también en Stripe.",
+      "account": "Cuenta"
+    }
+  },
+  "admin3": {
+    "tabs": {
+      "messages": "Mensajes"
+    },
+    "glance": {
+      "title": "De un vistazo",
+      "failed": "No se han podido cargar los datos.",
+      "users": "Personas",
+      "guests": "{n} como invitado",
+      "new": "Altas en 24 h",
+      "new7d": "{n} en 7 días",
+      "active": "Activas hoy",
+      "active7d": "{n} en 7 días",
+      "plans": "Con Plus o Max",
+      "plansHint": "Plus {plus} · Max {max} · {stripe} pagan",
+      "reports": "Avisos de fallos",
+      "messages": "Mensajes (7 días)",
+      "messagesRead": "{n} leídos",
+      "messagesNone": "Ninguno enviado",
+      "blocked": "{n, plural, one {# cuenta bloqueada} other {# cuentas bloqueadas}}",
+      "recent": "Últimas altas",
+      "onboarding": "bienvenida a medias",
+      "welcomed": "Ya le has escrito",
+      "welcome": "Darle la bienvenida",
+      "noRecent": "Aún no hay altas."
+    },
+    "grant": {
+      "title": "Repartir",
+      "lead": "Dinero virtual, XP, gemas, vidas, protectores o racha. Queda en la auditoría.",
+      "what": "Qué quieres dar",
+      "kinds": {
+        "CASH": "Dinero virtual",
+        "XP": "XP",
+        "GEMS": "Gemas",
+        "LIVES": "Vidas",
+        "FREEZES": "Protectores",
+        "STREAK": "Racha"
+      },
+      "now": "Ahora tiene",
+      "noPortfolio": "sin cartera todavía",
+      "level": "nivel {n}",
+      "streakNow": "{n} días · mejor {best}",
+      "direction": "Dar o quitar",
+      "give": "Dar",
+      "take": "Quitar",
+      "amount": {
+        "CASH": "Importe en euros virtuales",
+        "XP": "XP que dar",
+        "GEMS": "Gemas que dar",
+        "FREEZES": "Protectores que dar",
+        "STREAK": "Días de racha"
+      },
+      "limit": {
+        "CASH": "Hasta 1.000.000 € de una vez. Quitar: como mucho lo que tenga en efectivo.",
+        "XP": "De 1 a 100.000 XP.",
+        "GEMS": "De 1 a 10.000 gemas.",
+        "FREEZES": "Puede tener hasta 10 en total.",
+        "STREAK": "De 0 a 3.650 días. Contará como si ayer hubiera usado la app."
+      },
+      "cashNote": "Es dinero de la simulación, no real. No cuenta como rentabilidad en la liga.",
+      "league": "Que cuente también en la liga de esta semana",
+      "leagueOn": "Ojo: contará en la liga de esta semana y le hará subir puestos frente a gente que lo ha ganado jugando.",
+      "leagueOff": "No cuenta en la liga: solo sube su XP y su nivel.",
+      "streakNote": "Los días perdidos quedan como protegidos en su calendario.",
+      "reason": "Motivo (opcional, solo lo ve el equipo)",
+      "notify": "Avisarle con un mensaje del equipo",
+      "notifyPlaceholder": "Texto propio (opcional). Usa '{nombre}' para poner su nombre.",
+      "notifyText": "Texto del mensaje",
+      "notifyHint": "Si lo dejas vacío, le llega en su idioma un mensaje como: «{example}»",
+      "noLinks": "Sin enlaces ni HTML: escribe solo texto.",
+      "notice": {
+        "CASH": "El equipo de E-Trading te ha regalado {n} virtuales para tu cartera.",
+        "CASH_NEG": "Hemos ajustado tu cartera virtual: {n} menos en efectivo.",
+        "XP": "El equipo de E-Trading te ha regalado {n} XP.",
+        "GEMS": "El equipo de E-Trading te ha regalado {n} gemas.",
+        "LIVES": "Te hemos llenado las vidas para que sigas aprendiendo.",
+        "FREEZES": "Te hemos regalado {n} protectores de racha.",
+        "STREAK": "Te hemos devuelto tu racha: {n} días."
+      },
+      "confirm": {
+        "CASH": "¿Dar {n} virtuales a {email}?",
+        "CASH_NEG": "¿Quitar {n} virtuales del efectivo de {email}?",
+        "XP": "¿Dar {n} XP a {email}?",
+        "GEMS": "¿Dar {n} gemas a {email}?",
+        "LIVES": "¿Llenar las vidas de {email}?",
+        "FREEZES": "¿Dar {n} protectores de racha a {email}?",
+        "STREAK": "¿Poner la racha de {email} en {n} días?"
+      },
+      "confirmLeague": "Contará en la liga de esta semana.",
+      "confirmNotify": "Le llegará un mensaje del equipo.",
+      "working": "Guardando…",
+      "button": {
+        "CASH": "Dar dinero",
+        "CASH_NEG": "Quitar dinero",
+        "XP": "Dar XP",
+        "GEMS": "Dar gemas",
+        "LIVES": "Llenar las vidas",
+        "FREEZES": "Dar protectores",
+        "STREAK": "Poner la racha"
+      },
+      "done": "Hecho",
+      "doneNotified": "Hecho. Le hemos mandado el mensaje.",
+      "failed": "Algo no ha ido bien. Prueba otra vez."
+    },
+    "compose": {
+      "replace": "¿Cambiar el texto que has escrito por la plantilla?",
+      "templates": "Plantillas",
+      "tpl": {
+        "welcome": "Bienvenida",
+        "comeback": "Que vuelva",
+        "congrats": "Felicitar",
+        "thanks": "Gracias por su opinión",
+        "BLANK": "En blanco"
+      },
+      "tplNote": "Las plantillas salen en {lang}. Puedes cambiarlas antes de enviar.",
+      "lang": {
+        "es": "castellano",
+        "ca": "catalán",
+        "en": "inglés"
+      },
+      "title": "Título (opcional)",
+      "text": "Mensaje",
+      "noLinks": "Sin enlaces: quítalos para poder enviar.",
+      "noHtml": "Sin HTML: escribe solo texto.",
+      "nameHint": "'{nombre}' se cambia por su nombre.",
+      "preview": "Así lo verá",
+      "sending": "Enviando…"
+    },
+    "user": {
+      "title": "Mensaje del equipo",
+      "lead": "Le sale como una ventana la próxima vez que abra la app y queda en sus Avisos. {devices, plural, =0 {No tiene avisos en el móvil.} one {Tiene avisos en el móvil: también le llega uno (si es buena hora).} other {Tiene avisos en # dispositivos: también le llega uno (si es buena hora).}}",
+      "blocked": "La cuenta está bloqueada: no verá mensajes.",
+      "sent": "Mensaje enviado",
+      "failed": "No se ha podido enviar. Prueba otra vez.",
+      "send": "Enviar el mensaje",
+      "confirm": "¿Enviar este mensaje a {email}?",
+      "history": "Mensajes que ha recibido",
+      "read": "Leído · {date}",
+      "unread": "Sin leer",
+      "batch": "envío a varios"
+    },
+    "messages": {
+      "title": "Mensajes del equipo",
+      "what": "Escribe a varias personas a la vez. Les sale como una ventana al abrir la app, queda en sus Avisos y, si tienen los avisos del móvil, les llega uno (nunca de 22:00 a 9:00 ni más de 6 al día). Para escribir a una sola persona, ábrela en Usuarios.",
+      "viewOnly": "Estás viendo la app como otro usuario: no se puede enviar nada.",
+      "toMany": "Enviar a varios",
+      "who": "A quién",
+      "kind": {
+        "NEW": "Nuevos",
+        "INACTIVE": "Sin actividad",
+        "ALL": "Todos"
+      },
+      "daysNew": "Registrados en los últimos",
+      "daysInactive": "Sin actividad desde hace",
+      "days": "días",
+      "lang": "Idioma",
+      "langs": {
+        "all": "Todos los idiomas",
+        "es": "Castellano",
+        "ca": "Catalán",
+        "en": "Inglés"
+      },
+      "badDays": "Elige entre 1 y 365 días.",
+      "counting": "Contando…",
+      "failed": "Algo no ha ido bien. Prueba otra vez.",
+      "count": "{n, plural, =0 {Nadie con estos filtros} one {# persona} other {# personas}}",
+      "countHint": "{push} con avisos en el móvil. No incluye al equipo ni las cuentas bloqueadas.",
+      "sample": "Por ejemplo: {names}",
+      "send": "{n, plural, one {Enviar a # persona} other {Enviar a # personas}}",
+      "sendNone": "No hay nadie a quien enviar",
+      "confirm1": "Vas a enviar este mensaje a {n, plural, one {# persona} other {# personas}} ({who}). ¿Seguir?",
+      "confirm2": "Última comprobación: {n, plural, one {# persona lo recibirá} other {# personas lo recibirán}} y no se puede deshacer. ¿Enviar ya?",
+      "sent": "{n, plural, one {Enviado a # persona} other {Enviado a # personas}}",
+      "limits": "Límites: un envío a varios cada 2 minutos y 5 al día como mucho.",
+      "history": "Historial",
+      "noTitle": "Sin título",
+      "readOf": "{read} de {n} leídos",
+      "read": "Leído",
+      "unread": "Sin leer",
+      "many": "{n, plural, one {# persona} other {# personas}}",
+      "aud": {
+        "ALL": "todos",
+        "NEW": "registrados en {n} días",
+        "INACTIVE": "sin actividad desde hace {n} días"
+      },
+      "viaGrant": "con un regalo",
+      "deleted": "cuenta borrada",
+      "openUser": "Abrir la ficha de {email}",
+      "empty": "Aún no se ha enviado ningún mensaje."
+    },
+    "card": {
+      "team": "Del equipo",
+      "guest": "Invitado",
+      "level": "Nivel",
+      "streak": "Racha",
+      "best": "mejor {n}",
+      "lessons": "Clases hechas",
+      "accuracy": "{n} % de aciertos",
+      "trades": "Operaciones",
+      "positions": "{n} posiciones",
+      "cash": "Efectivo",
+      "gems": "Gemas",
+      "lives": "{n} vidas",
+      "write": "Escribirle",
+      "since": "Alta: {created} · Último día activo: {active} · Última sesión: {seen} · Idioma: {lang} · Origen: {source}",
+      "controls": "Mandos",
+      "detail": "Detalle",
+      "login": "Acceso",
+      "freezes": "Protectores de racha"
     }
   }
 }

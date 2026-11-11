@@ -366,6 +366,8 @@ model Portfolio {
   resetsLeft   Int      @default(3)
   resetsYear   Int
   premiumTopUp Boolean  @default(false)
+  /// Euros virtuales regalados (regalo diario, equipo) desde el último reinicio: no cuentan como rentabilidad
+  giftCash     Decimal  @default(0) @db.Decimal(20, 2)
   updatedAt    DateTime @updatedAt
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

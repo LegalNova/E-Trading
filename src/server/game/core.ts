@@ -328,7 +328,14 @@ export async function achievementList(tx: Tx, userId: string, g: GameState, coun
 
 /** Desbloquea los logros alcanzados, da sus recompensas y los añade a los efectos */
 export async function checkAchievements(c: Ctx) {
-  const list = await achievementList(c.tx, c.user.id, c.g, c.counters)
+  let list = await achievementList(c.tx, c.user.id, c.g, c.counters)
+  // En una lectura (GET, sin bloqueo) hay algo que desbloquear: se bloquea y se vuelve a mirar. Sin bloqueo, dos
+  // peticiones a la vez chocaban al crear el mismo logro, o el logro quedaba creado y sus gemas y XP se perdían
+  // (el estado de una lectura no se guarda si otra petición escribió entretanto)
+  if (!c.locked && list.some(a => !a.unlocked && a.progress >= a.target)) {
+    await lockUser(c)
+    list = await achievementList(c.tx, c.user.id, c.g, c.counters)
+  }
   for (const a of list) {
     if (a.unlocked || a.progress < a.target) continue
     await c.tx.userAchievement.create({ data: { userId: c.user.id, code: a.code } })

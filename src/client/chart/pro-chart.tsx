@@ -1,6 +1,9 @@
 'use client'
 // Gráfico profesional del Mercado, sobre Lightweight Charts™ de TradingView (licencia Apache 2.0).
 // Velas reales del proveedor; indicadores calculados aquí; dibujos guardados en el navegador por activo.
+// Cada botón enseña velas de exactamente ese intervalo (el servidor nunca sirve otro en su lugar) y su periodo:
+// 1 min, la última sesión (24 h en cripto y divisas); 5 min, 5 sesiones; 15 min, 2 semanas; 1 h, un mes; día, un año;
+// semana, 5 años; mes, todo el histórico. El eje va en hora de Madrid (intradía) o con la fecha de la bolsa (día o más).
 import { useQuery } from '@tanstack/react-query'
 import {
   AreaSeries, BarSeries, CandlestickSeries, ColorType, CrosshairMode, HistogramSeries, LineSeries, LineStyle, createChart,
@@ -8,6 +11,7 @@ import {
 } from 'lightweight-charts'
 import { useTranslations } from 'next-intl'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { tzOffset } from '@/shared/session-times'
 import { api } from '../api'
 import { useLang } from '../hooks'
 import { Icon } from '../ui/icons'
@@ -78,15 +82,65 @@ function useThemeKey() {
 }
 
 const ts = (t: number) => t as UTCTimestamp
+const STEP: Record<ChartInterval, number> = { '1m': 60, '5m': 300, '15m': 900, '1h': 3600, '1d': 86_400, '1w': 7 * 86_400, '1M': 31 * 86_400 }
+const INTRADAY: ChartInterval[] = ['1m', '5m', '15m', '1h']
+/** Cada cuánto se vuelven a pedir las velas con la pestaña a la vista (abierto / cerrado). Con la pestaña oculta, nunca. */
+const REFETCH: Record<ChartInterval, [number, number]> = {
+  '1m': [30_000, 10 * 60_000], '5m': [60_000, 10 * 60_000], '15m': [120_000, 15 * 60_000], '1h': [300_000, 30 * 60_000],
+  '1d': [600_000, 30 * 60_000], '1w': [30 * 60_000, 60 * 60_000], '1M': [60 * 60_000, 60 * 60_000],
+}
 
-export function ProChart({ symbol, decimals, up, live }: { symbol: string; decimals: number; up: boolean; /** Precio actual (se refresca cada pocos segundos): mueve la última vela */ live?: number }) {
+/** Hora de pared de un instante, como la del eje: Madrid en intradía; en diario o más, el día, el lunes o el día 1 (fecha de la bolsa) */
+function wallOf(ms: number, interval: ChartInterval, tz: string): number {
+  if (INTRADAY.includes(interval)) return Math.floor((ms + tzOffset(new Date(ms), 'Europe/Madrid')) / 1000)
+  const day = Math.floor((ms + tzOffset(new Date(ms), tz)) / 86_400_000) * 86_400
+  if (interval === '1w') return day - ((new Date(day * 1000).getUTCDay() + 6) % 7) * 86_400
+  if (interval === '1M') {
+    const d = new Date(day * 1000)
+    return Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), 1) / 1000
+  }
+  return day
+}
+
+/** Fecha u hora de una vela (su t ya es hora de pared: se formatea como UTC) */
+function fmtWall(t: number, interval: ChartInterval, locale: string, withYear = false) {
+  const d = new Date(t * 1000)
+  const o: Intl.DateTimeFormatOptions = { timeZone: 'UTC' }
+  if (INTRADAY.includes(interval)) Object.assign(o, { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
+  else if (interval === '1M') Object.assign(o, { month: 'short', year: 'numeric' })
+  else Object.assign(o, { day: 'numeric', month: 'short', ...(withYear || interval !== '1d' ? { year: 'numeric' } : {}) })
+  try {
+    return d.toLocaleString(locale, o)
+  } catch {
+    return d.toISOString().slice(0, 16).replace('T', ' ')
+  }
+}
+
+export function ProChart({
+  symbol, decimals, up, live, liveAt, open = true, tz = 'UTC',
+}: {
+  symbol: string
+  decimals: number
+  up: boolean
+  /** Precio actual (se refresca cada pocos segundos): mueve la última vela si cae dentro de ella */
+  live?: number
+  /** Hora real (ISO) de ese precio */
+  liveAt?: string
+  /** Mercado abierto ahora (si está cerrado, las velas se piden mucho menos) */
+  open?: boolean
+  /** Zona horaria de la bolsa (para saber de qué día es el precio en directo) */
+  tz?: string
+}) {
   const t = useTranslations('chart')
   const t2 = useTranslations('market2')
   /** En el móvil las herramientas de dibujo van plegadas (ocupaban media pantalla); en md y más, siempre a la vista */
   const [toolsOpen, setToolsOpen] = useState(false)
   const locale = useLang()
   const themeKey = useThemeKey()
-  const [interval, setInterval_] = useState<ChartInterval>(() => store.get('et-chart-interval', '1d'))
+  const [interval, setInterval_] = useState<ChartInterval>(() => {
+    const v = store.get<string>('et-chart-interval', '1d')
+    return (INTERVALS as string[]).includes(v) ? (v as ChartInterval) : '1d'
+  })
   const [kind, setKind] = useState<ChartKind>(() => store.get('et-chart-kind2', 'line'))
   const [inds, setInds] = useState<IndicatorId[]>(() => store.get('et-chart-inds', ['vol']))
   const [tool, setTool] = useState<Tool>('cursor')
@@ -104,12 +158,15 @@ export function ProChart({ symbol, decimals, up, live }: { symbol: string; decim
   /** Zoom y desplazamiento del usuario: se conservan cuando llegan velas nuevas o cambia el tipo de gráfico */
   const viewRef = useRef<{ key: string; from: number; to: number } | null>(null)
 
-  const { data: candles, isLoading, isError } = useQuery({
-    queryKey: ['candles', symbol, interval],
-    queryFn: () => api.candles(symbol, interval),
-    refetchInterval: ['1m', '5m', '15m'].includes(interval) ? 15_000 : 60_000,
-    staleTime: 20_000,
+  // Una consulta por intervalo: si se cambia rápido de botón, la respuesta tardía del anterior va a su propia caché
+  // y no pisa la del nuevo. Sin datos «de relleno»: mientras llega, se ve el esqueleto, nunca el intervalo anterior.
+  const { data: chartData, isLoading, isError } = useQuery({
+    queryKey: ['chart', symbol, interval],
+    queryFn: () => api.chart(symbol, interval),
+    refetchInterval: REFETCH[interval][open ? 0 : 1],
+    staleTime: Math.min(REFETCH[interval][0], 60_000),
   })
+  const candles = chartData?.interval === interval ? chartData.candles : undefined
   const shown = useMemo(() => (candles && kind === 'heikin' ? heikinAshi(candles) : (candles ?? [])), [candles, kind])
 
   useEffect(() => store.set('et-chart-interval', interval), [interval])
@@ -125,7 +182,7 @@ export function ProChart({ symbol, decimals, up, live }: { symbol: string; decim
     const el = box.current
     if (!el || !shown.length) return
     const upC = cssVar('--up'), downC = cssVar('--down'), ink2 = cssVar('--ink-2'), line = cssVar('--line'), brand = cssVar('--brand')
-    const intraday = ['1m', '5m', '15m', '1h'].includes(interval)
+    const intraday = INTRADAY.includes(interval)
     const chart = createChart(el, {
       autoSize: true,
       layout: { background: { type: ColorType.Solid, color: 'transparent' }, textColor: ink2, fontFamily: 'var(--font-sans), system-ui', fontSize: 11, attributionLogo: true },
@@ -133,7 +190,7 @@ export function ProChart({ symbol, decimals, up, live }: { symbol: string; decim
       crosshair: { mode: CrosshairMode.Normal },
       rightPriceScale: { borderVisible: false },
       timeScale: { borderVisible: false, timeVisible: intraday, secondsVisible: false, rightOffset: 6 },
-      localization: { locale, priceFormatter: (p: number) => fmtP(p) },
+      localization: { locale, priceFormatter: (p: number) => fmtP(p), timeFormatter: (time: number) => fmtWall(time, interval, locale, true) },
     })
     chartRef.current = chart
     const data = shown.map(c => ({ time: ts(c.t), open: c.o, high: c.h, low: c.l, close: c.c }))
@@ -199,11 +256,13 @@ export function ProChart({ symbol, decimals, up, live }: { symbol: string; decim
       panes.slice(1).forEach(p => p.setHeight(Math.round(total * 0.2)))
     }
 
-    // Últimos ~120 periodos a la vista (o lo que el usuario estaba mirando)
+    // A la vista, el periodo del botón (desde viewFrom; lo de antes queda a la izquierda), o lo que el usuario estaba mirando
     const n = shown.length
     const viewKey = `${symbol}:${interval}`
     const saved = viewRef.current?.key === viewKey ? viewRef.current : null
-    chart.timeScale().setVisibleLogicalRange(saved ? { from: saved.from, to: saved.to } : { from: Math.max(0, n - (intraday ? 160 : 120)), to: n + 5 })
+    const vf = chartData?.viewFrom ?? null
+    const fromIdx = vf === null ? 0 : Math.max(0, shown.findIndex(c => c.t >= vf))
+    chart.timeScale().setVisibleLogicalRange(saved ? { from: saved.from, to: saved.to } : { from: fromIdx - 0.5, to: n - 1 + Math.max(2, Math.round((n - fromIdx) * 0.04)) })
     chart.timeScale().subscribeVisibleLogicalRangeChange(r => {
       if (r) viewRef.current = { key: viewKey, from: r.from, to: r.to }
     })
@@ -237,18 +296,23 @@ export function ProChart({ symbol, decimals, up, live }: { symbol: string; decim
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [shown, kind, inds, themeKey, interval, full, decimals])
 
-  // ── Precio en directo: la última vela se mueve con cada cotización (sin rehacer el gráfico) ──
+  // ── Precio en directo: la última vela se mueve con cada cotización (sin rehacer el gráfico), solo si el precio es
+  // de esa vela (de su minuto, su día o su mes). Si ya es de la siguiente, se espera a que lleguen las velas nuevas.
   useEffect(() => {
     const main = mainRef.current
     const last = shown[shown.length - 1]
     if (!main || !last || !live || kind === 'heikin' || Math.abs(live / last.c - 1) > 0.2) return
+    if (liveAt) {
+      const w = wallOf(new Date(liveAt).getTime(), interval, tz)
+      if (INTRADAY.includes(interval) ? !(w >= last.t && w < last.t + STEP[interval]) : w !== last.t) return
+    }
     try {
       if (kind === 'line' || kind === 'area') main.update({ time: ts(last.t), value: live })
       else main.update({ time: ts(last.t), open: last.o, high: Math.max(last.h, live), low: Math.min(last.l, live), close: live })
     } catch {
       // el gráfico se está rehaciendo: la siguiente cotización lo pondrá al día
     }
-  }, [live, shown, kind])
+  }, [live, liveAt, shown, kind, interval, tz])
 
   // ── Coordenadas de los dibujos (por tiempo y precio, valen en cualquier intervalo) ──
   const xOf = useCallback(
@@ -436,15 +500,34 @@ export function ProChart({ symbol, decimals, up, live }: { symbol: string; decim
 
   const toggleInd = (id: IndicatorId) => setInds(s => (s.includes(id) ? s.filter(x => x !== id) : [...s, id]))
   const upLegend = (legend?.chg ?? 0) >= 0
+  const ivLabel = t2(`chart.iv.${interval}`)
+
+  /** Qué se está viendo: «Velas de 5 min · últimas 5 sesiones · hora de Madrid» (y, con la bolsa cerrada, de cuándo es la última) */
+  const caption = (() => {
+    const d = chartData
+    if (!d || d.interval !== interval || !d.candles.length || d.viewFrom === null) return null
+    const intraday = INTRADAY.includes(interval)
+    const first = d.firstAt ? new Date(d.firstAt) : null
+    let period: string
+    if (interval === '1M') period = t2('chart.period.since', { date: String(new Date(d.viewFrom * 1000).getUTCFullYear()) })
+    else if (d.partial && first) period = t2('chart.period.since', { date: fmtWall(d.viewFrom, interval === '1w' ? '1d' : interval, locale, true) })
+    else if (d.window === 'sessions') period = interval === '1m' ? t2('chart.period.session', { date: fmtWall(d.viewFrom, '1d', locale) }) : t2('chart.period.sessions', { n: 5 })
+    else period = t2(`chart.period.${interval}`)
+    const parts = [t2(`chart.candles.${interval}`), period]
+    if (intraday) parts.push(t2('chart.madrid'))
+    const lastT = d.candles[d.candles.length - 1].t
+    return { text: parts.join(' · '), closed: !open && intraday ? t2('chart.lastCandle', { date: fmtWall(lastT, interval, locale) }) : null }
+  })()
+  const unavailable = !isLoading && !isError && !!chartData && chartData.interval === interval && (chartData.unavailable || !chartData.candles.length)
 
   return (
     <div className={full ? 'fixed inset-0 z-50 flex flex-col p-2 md:p-4' : 'card flex flex-col gap-2 px-2 pt-2 pb-2'} style={full ? { background: 'var(--bg)' } : undefined}>
       {/* Barra superior: intervalos (fila entera en el móvil); debajo, velas o línea, más tipos, indicadores y pantalla completa */}
       <div className="flex flex-wrap items-center gap-1.5">
-        <div className="seg w-full md:w-auto md:flex-none" role="group" aria-label={t('interval')}>
+        <div className="seg w-full md:w-auto md:flex-none" role="group" aria-label={t2('chart.ivGroup')}>
           {INTERVALS.map(i => (
-            <button key={i} aria-pressed={interval === i} onClick={() => setInterval_(i)} className="px-1.5 pointer-coarse:h-11 md:px-2.5">
-              {t(`intervals.${i}`)}
+            <button key={i} aria-pressed={interval === i} aria-label={t2(`chart.candles.${i}`)} onClick={() => setInterval_(i)} className="px-1 pointer-coarse:h-11 min-[400px]:px-1.5 md:px-2.5">
+              {t2(`chart.iv.${i}`)}
             </button>
           ))}
         </div>
@@ -498,8 +581,22 @@ export function ProChart({ symbol, decimals, up, live }: { symbol: string; decim
         </button>
       </div>
 
+      {/* Qué se está viendo */}
+      <p className="t-cap m-0 px-1" aria-live="polite">
+        {caption ? (
+          <>
+            <b style={{ color: 'var(--ink)' }}>{caption.text}</b>
+            {caption.closed && <span className="block">{caption.closed}</span>}
+          </>
+        ) : isLoading ? (
+          t2('chart.loading', { iv: ivLabel })
+        ) : (
+          '\u00a0'
+        )}
+      </p>
+
       {/* Leyenda OHLC */}
-      {legend && (
+      {legend && caption && (
         <div className="t-cap flex flex-wrap gap-x-3 px-1 tabular-nums">
           <span>O {fmtP(legend.o)}</span>
           <span>H {fmtP(legend.h)}</span>
@@ -530,8 +627,8 @@ export function ProChart({ symbol, decimals, up, live }: { symbol: string; decim
         <div className="relative min-w-0 flex-1" style={{ height: full ? undefined : inds.includes('rsi') || inds.includes('macd') ? 460 : 340 }}>
           <div ref={box} className="absolute inset-0" />
           {isLoading && <div className="skel absolute inset-0" />}
-          {isError && <p className="t-foot absolute inset-0 flex items-center justify-center">{t('error')}</p>}
-          {!isLoading && candles && candles.length === 0 && <p className="t-foot absolute inset-0 flex items-center justify-center">{t('noData')}</p>}
+          {isError && !candles && <p className="t-foot absolute inset-0 m-0 flex items-center justify-center px-6 text-center">{t2('chart.error')}</p>}
+          {unavailable && <p className="t-foot absolute inset-0 m-0 flex items-center justify-center px-6 text-center">{t2('chart.unavailable', { iv: t2(`chart.candles.${interval}`).toLowerCase() })}</p>}
           {/* eslint-disable react-hooks/refs */}
           {chart && paneH > 0 && (
             <svg className="absolute top-0 left-0 z-[3]" width={Math.max(0, plotW)} height={paneH} onPointerDown={onPointerDown} onPointerMove={onPointerMove} onClick={() => tool === 'cursor' && setSelected(null)} style={{ pointerEvents: tool === 'cursor' ? 'none' : 'all', cursor: tool === 'cursor' ? 'default' : 'crosshair', touchAction: tool === 'cursor' ? 'auto' : 'none' }}>

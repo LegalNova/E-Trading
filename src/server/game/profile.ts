@@ -215,6 +215,8 @@ export const lives = () => withCtx(async c => livesOf(c.user, c.g))
 
 export const refillLives = () =>
   withCtx(async c => {
+    if (c.user.plan !== 'FREE') fail(409, 'CONFLICT', 'Con tu plan las vidas son ilimitadas')
+    if (c.g.lives >= LIVES_MAX) fail(409, 'CONFLICT', 'Ya tienes todas las vidas')
     if (c.g.gems < REFILL_PRICE) fail(402, 'INSUFFICIENT_GEMS', `Necesitas ${REFILL_PRICE} gemas`)
     c.g.gems -= REFILL_PRICE
     c.g.lives = LIVES_MAX

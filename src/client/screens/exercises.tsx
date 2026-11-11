@@ -20,6 +20,8 @@ export function isAnswered(q: QuestionT, v: Value): boolean {
   if (q.type === 'MATCH' || q.type === 'BUCKETS') return Array.isArray(v) && v.length === q.options.length && v.every(x => x >= 0)
   if (q.type === 'PORTFOLIO') return Array.isArray(v) && Math.round(v.reduce((a, b) => a + b, 0)) === 100
   if (q.type === 'SIM_TRADE') return Array.isArray(v) && v[0] > 0
+  // Ordenar: hasta colocar todas no se puede comprobar (antes se podía mandar a medias y contaba como fallo)
+  if (q.type === 'ORDER') return Array.isArray(v) && v.length === q.options.length
   if (Array.isArray(v)) return v.length > 0
   return v !== null && v !== '' && !(typeof v === 'number' && Number.isNaN(v))
 }
@@ -47,6 +49,7 @@ export function DynamicExercise({ q, value, onChange, reveal }: { q: QuestionT; 
       const pairOf = (r: number) => v.indexOf(r)
       return (
         <div className="grid grid-cols-2 gap-2.5">
+          {!reveal && <p className="t-cap col-span-2 m-0">{t('matchHint')}</p>}
           <div className="flex flex-col gap-2">
             {q.options.map((o, i) => {
               const c = v[i] >= 0 ? PAIR_COLORS[i % PAIR_COLORS.length] : undefined
@@ -87,7 +90,6 @@ export function DynamicExercise({ q, value, onChange, reveal }: { q: QuestionT; 
           {reveal && !reveal.correct && (
             <p className="t-foot col-span-2 m-0">{t('rightPairs', { pairs: q.options.map((o, i) => `${o} → ${right[s[i]]}`).join(' · ') })}</p>
           )}
-          {!reveal && <p className="t-cap col-span-2 m-0">{t('matchHint')}</p>}
         </div>
       )
     }
@@ -253,6 +255,7 @@ export function DynamicExercise({ q, value, onChange, reveal }: { q: QuestionT; 
       const s = Array.isArray(sol) ? sol : []
       return (
         <div className="flex flex-col gap-2.5">
+          <p className="t-cap m-0">{t('spotHint')}</p>
           {q.options.map((o, i) => {
             const on = v.includes(i)
             return (
@@ -267,7 +270,6 @@ export function DynamicExercise({ q, value, onChange, reveal }: { q: QuestionT; 
               </button>
             )
           })}
-          <p className="t-cap m-0">{t('spotHint')}</p>
         </div>
       )
     }
@@ -281,7 +283,9 @@ export function DynamicExercise({ q, value, onChange, reveal }: { q: QuestionT; 
               <div className="card max-w-[85%] rounded-bl-md px-3.5 py-2.5 text-[15px]">{l}</div>
             </div>
           ))}
-          <div className="mt-1 flex flex-col items-end gap-2">
+          {/* La pregunta, después de leer los mensajes */}
+          <b className="t-head mt-1">{q.prompt}</b>
+          <div className="flex flex-col items-end gap-2">
             {q.options.map((o, i) => (
               <button key={i} className={`opt max-w-[88%] justify-end rounded-br-md text-right ${optClass(reveal, sol === i, value === i)}`} aria-pressed={value === i} disabled={locked} onClick={() => onChange(i)}>
                 {o}

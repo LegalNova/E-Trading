@@ -9,7 +9,10 @@ import 'server-only'
 //   Cuenta la cartera de ahora y la que había antes de cada venta de la semana (pasarlo todo a efectivo antes del
 //   cierre no borra que se concentró; comprar poco a poco para diversificar no penaliza).
 //   El dinero que entra o sale sin invertir (el saldo extra de Max, un reinicio de cartera) no es rentabilidad.
-// - Cierre (lunes): suben los 7 primeros (+30 gemas), bajan los puestos 26–30. Nadie baja de Novato ni sube de Experto.
+// - Cierre (lunes): con el grupo lleno (30) suben los 7 primeros (+30 gemas) y bajan los puestos 26–30; con menos gente,
+//   en proporción (leagueZones en league-points.ts: sube al menos 1 y no baja nadie en grupos de menos de 6).
+//   Para subir hace falta algo de XP en la semana. Nadie baja de Novato ni sube de Experto.
+//   Empates: más XP; luego quien entró antes en la liga esa semana.
 // - Ligas de amigos (friends.ts): «Esta semana» usa estos mismos puntos; «Temporada del mes» usa la rentabilidad del mes
 //   natural de Madrid con las mismas reglas (tope ±10 %, concentrada = ganancias a la mitad). Base del mes: MonthBase,
 //   que se apunta la primera vez que la persona usa la app ese mes (o la foto del último día del mes anterior).
@@ -21,11 +24,9 @@ import { currentLocale } from '../locale'
 import { DIVISIONS } from '../content/catalog'
 import { bump, checkAchievements, notify, START_CASH, withCtx, type Ctx, type Tx } from './core'
 import { priceBook } from './trading'
-import { lastDayOf, madridMidnight, monthOf, monthReturnPct, monthStart, nextMonth, prevMonth, score, seasonPct, tradePoints, weekReturnPct } from '@/shared/league-points'
+import { byStanding, FULL_GROUP, lastDayOf, leagueZones, madridMidnight, monthOf, monthReturnPct, monthStart, nextMonth, prevMonth, score, seasonPct, tradePoints, weekOutcome, weekReturnPct } from '@/shared/league-points'
 
-export const GROUP_SIZE = 30
-export const PROMOTE_TOP = 7
-export const DEMOTE_FROM = 26
+export const GROUP_SIZE = FULL_GROUP
 export const PROMOTE_GEMS = 30
 /** Más de este peso en una sola acción (sin contar fondos/ETF) = cartera concentrada */
 const CONCENTRATED = 0.4
@@ -63,7 +64,9 @@ export async function ensureMembership(c: Ctx, evenWithoutXp = false) {
 export async function addFlow(tx: Tx, userId: string, amount: number) {
   if (!amount || !Number.isFinite(amount)) return
   const flow = Math.round(amount * 100) / 100
-  await tx.leagueMember.updateMany({ where: { weekKey: leagueWeekKey(), userId, finalRank: null }, data: { flows: { increment: flow } } })
+  // La semana actual y cualquier semana aún sin cerrar (el lunes, entre las 00:00 y el cierre): su rentabilidad se mide
+  // con el valor de la cartera al cerrar, así que un reinicio hecho en ese rato tampoco puede borrar lo perdido
+  await tx.leagueMember.updateMany({ where: { userId, finalRank: null, weekKey: { lte: leagueWeekKey() } }, data: { flows: { increment: flow } } })
   // Temporada del mes: igual. Si aún no tiene base este mes pero hay foto del último día del mes anterior, la base es
   // esa foto (anterior a este dinero) y el dinero se apunta como entrada. Sin foto, no se apunta nada: la base se
   // tomará más tarde con el valor de después (que ya incluye este dinero), así que tampoco cuenta como rentabilidad.
@@ -246,10 +249,11 @@ async function rank(tx: Tx, weekKey: string, members: LeagueMember[]) {
       const u = users.find(x => x.id === id)
       const xp = members.find(x => x.userId === id)?.xp ?? 0
       const r = rets.get(id) ?? { pct: 0, pts: 0 }
-      return { userId: id, division: members.find(x => x.userId === id)?.division ?? 1, exists: !!u, name: u?.name ?? '', visible: u?.leagueVisible ?? true, blocked: !!u?.blockedAt, weeklyXp: xp, riskAdjReturnPct: r.pct, tradePts: r.pts, score: score(xp, r.pts) }
+      const joinedAt = members.find(x => x.userId === id)?.joinedAt.getTime() ?? 0
+      return { userId: id, division: members.find(x => x.userId === id)?.division ?? 1, exists: !!u, name: u?.name ?? '', visible: u?.leagueVisible ?? true, blocked: !!u?.blockedAt, weeklyXp: xp, riskAdjReturnPct: r.pct, tradePts: r.pts, score: score(xp, r.pts), joinedAt }
     })
     .filter(m => m.exists && !m.blocked)
-    .sort((a, b) => b.score - a.score || b.weeklyXp - a.weeklyXp)
+    .sort(byStanding)
     .map((m, i) => ({ ...m, rank: i + 1 }))
 }
 
@@ -329,7 +333,9 @@ export async function leagueFor(c: Ctx): Promise<LeagueT> {
   // De quien se oculta no se envía ni el nombre ni su identificador
   const members = rows.map(m => ({ rank: m.rank, userId: m.visible || m.userId === c.user.id ? m.userId : `anon-${m.rank}`, displayName: m.userId === c.user.id ? c.user.name || '—' : displayName(m.name, m.visible), weeklyXp: m.weeklyXp, riskAdjReturnPct: m.riskAdjReturnPct, tradePts: m.tradePts, score: m.score, isMe: m.userId === c.user.id, division: DIVISIONS[m.division - 1] }))
   if (!me) members.push({ rank: 0, userId: c.user.id, displayName: c.user.name || '—', weeklyXp: 0, riskAdjReturnPct: 0, tradePts: 0, score: 0, isMe: true, division: DIVISIONS[division - 1] })
-  return { division: { id: `d${division}`, name: DIVISIONS[division - 1], order: division }, divisions: DIVISIONS, endsAt: madridMidnight(addDays(weekKey, 7)).toISOString(), promoteTop: PROMOTE_TOP, demoteFrom: DEMOTE_FROM, members }
+  // Zonas según cuántos hay ahora en el grupo (las mismas reglas que el cierre)
+  const { promoteTop, demoteFrom } = leagueZones(rows.length)
+  return { division: { id: `d${division}`, name: DIVISIONS[division - 1], order: division }, divisions: DIVISIONS, endsAt: madridMidnight(addDays(weekKey, 7)).toISOString(), promoteTop, demoteFrom, members }
 }
 
 /** Cierra la semana indicada. Solo una vez por semana: cada persona se cierra en su propia transacción
@@ -355,8 +361,10 @@ export async function closeWeek(weekKey: string) {
         if (!first.count) return false
         // La división actual de la persona (no la que tenía al entrar): nunca se pierde ni se duplica un ascenso
         const from = c.g.division
-        const up = m.rank <= PROMOTE_TOP && from < DIVISIONS.length && m.weeklyXp > 0
-        const down = !up && m.rank >= DEMOTE_FROM && from > 1
+        // Zonas en proporción al grupo (rows.length: los que salen en la clasificación)
+        const outcome = weekOutcome(m.rank, rows.length, m.weeklyXp, from, DIVISIONS.length)
+        const up = outcome === 'UP'
+        const down = outcome === 'DOWN'
         await c.tx.leagueMember.update({ where: { weekKey_userId: { weekKey, userId: m.userId } }, data: { outcome: up ? 'UP' : down ? 'DOWN' : 'STAY' } })
         if (up) {
           c.g.division = from + 1

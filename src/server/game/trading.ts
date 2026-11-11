@@ -80,6 +80,20 @@ function triggered(o: { type: string; side: string; triggerPrice: unknown }, p: 
 const fmtPrice = (p: Px, v: number) => (p.type === 'FX' ? v.toFixed(5) : fixPrice(v))
 const n = (d: unknown) => Number(d ?? 0)
 
+/**
+ * Dinero virtual regalado (regalo diario, equipo…): entra en la cartera como aportación. No cuenta como rentabilidad
+ * ni en la cartera (giftCash sube la base) ni en la liga (addFlow). Con importe negativo se quita (sin bajar de 0 €).
+ * Devuelve lo que se ha movido de verdad.
+ */
+export async function giveCash(tx: Tx, user: User, amount: number) {
+  const pf = await portfolioRow(tx, user)
+  const moved = Math.round(Math.max(amount, -n(pf.cash)) * 100) / 100
+  if (!moved) return 0
+  await tx.portfolio.update({ where: { userId: user.id }, data: { cash: { increment: moved }, giftCash: { increment: moved } } })
+  await (await import('./league')).addFlow(tx, user.id, moved)
+  return moved
+}
+
 export async function portfolioRow(tx: Tx, user: User) {
   const pf = await tx.portfolio.findUnique({ where: { userId: user.id } })
   if (pf) return pf
@@ -279,7 +293,8 @@ export async function placeOrder(i: OrderInput, idempotencyKey?: string): Promis
     if (Number(i.takeProfit) > px.price * 10) fail(422, 'VALIDATION_ERROR', 'Take profit fuera de rango')
     if ((await c.tx.order.count({ where: { userId: c.user.id, status: 'PENDING' } })) >= 30) fail(422, 'VALIDATION_ERROR', 'Máximo 30 órdenes pendientes')
     const firstTrade = (await c.tx.trade.count({ where: { userId: c.user.id, status: 'FILLED' } })) === 0
-    if (i.followedRiskAdvice) bump(c, 'calmRisk')
+    // «Sangre fría»: hizo caso al aviso de concentración (compra que ya no supera el límite), no basta con que lo diga el cliente
+    if (i.followedRiskAdvice && i.side === 'BUY' && !pv.risk.flagged) bump(c, 'calmRisk')
     if (i.type === 'LIMIT') bump(c, 'limits')
     if (i.type === 'STOP_LOSS' || Number(i.stopLoss) > 0) bump(c, 'stops')
     if (i.type === 'TAKE_PROFIT' || Number(i.takeProfit) > 0) bump(c, 'tps')
@@ -408,7 +423,7 @@ export async function portfolioIn(c: Ctx, book: Book): Promise<PortfolioT> {
     })
     .sort((a, b) => Number(b.marketValue) - Number(a.marketValue))
   // Base de la rentabilidad: el saldo que se ha recibido (quien tuvo Max y volvió a Free conserva sus 50.000 €)
-  const start = pf.premiumTopUp ? Math.max(START_CASH[c.user.plan], START_CASH.PREMIUM) : START_CASH[c.user.plan]
+  const start = (pf.premiumTopUp ? Math.max(START_CASH[c.user.plan], START_CASH.PREMIUM) : START_CASH[c.user.plan]) + n(pf.giftCash)
   // Foto diaria real del valor de la cartera (para el gráfico de evolución)
   // (solo se escribe si cambia el valor: con precios que se actualizan cada pocos minutos, casi nunca)
   const snap = await c.tx.portfolioSnapshot.findUnique({ where: { userId_day: { userId: c.user.id, day: c.today } }, select: { value: true } })
@@ -474,7 +489,7 @@ export async function resetPortfolio() {
     await (await import('./league')).addFlow(c.tx, c.user.id, START_CASH[c.user.plan] - before)
     await c.tx.position.deleteMany({ where: { userId: c.user.id } })
     await c.tx.order.updateMany({ where: { userId: c.user.id, status: 'PENDING' }, data: { status: 'CANCELLED' } })
-    await c.tx.portfolio.update({ where: { userId: c.user.id }, data: { cash: START_CASH[c.user.plan], realized: 0, resetsLeft: left - 1, resetsYear: year, premiumTopUp: c.user.plan !== 'FREE' } })
+    await c.tx.portfolio.update({ where: { userId: c.user.id }, data: { cash: START_CASH[c.user.plan], realized: 0, resetsLeft: left - 1, resetsYear: year, premiumTopUp: c.user.plan !== 'FREE', giftCash: 0 } })
     await c.tx.auditLog.create({ data: { actorId: c.user.id, actor: c.user.email, action: 'PORTFOLIO_RESET', entity: 'Portfolio', entityId: c.user.id } })
     return portfolioIn(c, book)
   })

@@ -18,6 +18,7 @@ import { ReportButton } from '../report-button'
 import { BadgeArt } from '../ui/badge'
 import { Lumi } from '../ui/lumi'
 import { MaxCard } from '../upgrade'
+import { HelpTip } from '../ui/first-time'
 import { TryItNow } from '../missions'
 import { DYNAMIC, DynamicExercise, isAnswered } from './exercises'
 
@@ -134,6 +135,20 @@ export function QuestionView({ q, value, onChange, reveal }: { q: QuestionT; val
 
 const hasAnswer = (q: QuestionT, v: AnswerValue) => isAnswered(q, v)
 
+/** Qué falta para poder comprobar, dicho según el tipo de ejercicio (el botón desactivado lo explica) */
+const PICK: Partial<Record<QuestionT['type'], string>> = {
+  MATCH: 'pickMatch', BUCKETS: 'pickBuckets', ORDER: 'pickOrder', PORTFOLIO: 'pickPortfolio', SIM_TRADE: 'pickSim',
+  MULTIPLE: 'pickMany', SPOT: 'pickMany', PLACE_LEVEL: 'pickChart', CHART_POINT: 'pickChart', CHART_CANDLE: 'pickChart',
+}
+
+/** La respuesta buena en texto, para decirla al fallar (en el móvil el panel tapa a veces las opciones) */
+function rightAnswer(q: QuestionT, sol: AnswerResultT['correctAnswer'] | undefined): string | null {
+  if (typeof sol === 'string') return sol
+  if (typeof sol === 'number' && ['SINGLE', 'TRUE_FALSE', 'CHART_TREND', 'SCENARIO', 'CHAT', 'UP_DOWN'].includes(q.type)) return q.options[sol] ?? null
+  if (Array.isArray(sol) && q.type === 'MULTIPLE') return sol.map(i => q.options[i]).filter(Boolean).join(' · ') || null
+  return null
+}
+
 // Siempre en dos pasos: tocar elige (se puede cambiar) y «Comprobar» responde; después, «Continuar» pasa a la siguiente.
 // Nada avanza solo: así un toque de más nunca responde la pregunta siguiente sin querer.
 /** Milisegundos en los que una pregunta recién aparecida no acepta toques (evita el doble toque) */
@@ -170,36 +185,53 @@ export function NoLives({ onClose }: { onClose?: () => void }) {
     onError: e => toast(e instanceof ApiFailure ? e.message : t('error')),
   })
   const gems = me?.gems ?? 0
+  const premium = !!me && me.plan !== 'FREE'
+  // Desde el quiz (onClose) llega sin vidas seguro. Desde los corazones de Inicio puede tener vidas: entonces se explica qué son
+  const out = !!onClose || (!premium && (lives?.current ?? 0) === 0)
+  const max = lives?.max ?? 5
   return (
     <div className="pad items-center pt-2.5 text-center">
-      <Lumi mood="SAD" size={84} />
-      <h1 className="t-large">{t('noLivesTitle')}</h1>
-      <p className="t-body muted m-0">{t('noLivesBody')}</p>
-      <div className="flex justify-center gap-1">
-        {Array.from({ length: lives?.max ?? 5 }, (_, i) => (
-          <Heart key={i} size={20} color={i < (lives?.current ?? 0) ? 'var(--down)' : 'var(--fill)'} />
-        ))}
-      </div>
-      {lives?.nextRegenAt && (
+      <Lumi mood={out ? 'SAD' : 'HAPPY'} size={84} />
+      <h1 className="t-large">{out ? t('noLivesTitle') : premium ? t('livesUnlimitedTitle') : t('livesTitle', { n: lives?.current ?? 0, max })}</h1>
+      <p className="t-body muted m-0">{out ? t('noLivesBody') : premium ? t('livesUnlimitedBody') : t('livesBody', { h: lives?.regenHours ?? 4 })}</p>
+      {!premium && (
+        <div className="flex justify-center gap-1" aria-hidden>
+          {Array.from({ length: max }, (_, i) => (
+            <Heart key={i} size={20} color={i < (lives?.current ?? 0) ? 'var(--down)' : 'var(--fill)'} />
+          ))}
+        </div>
+      )}
+      {!premium && lives?.nextRegenAt && (
         <span className="t-foot">
           {t('nextLife')} <b className="tabular-nums">{clock(lives.nextRegenAt, now)}</b>
         </span>
       )}
       <div className="h-2" />
-      <Link href="/premium" className="btn btn-dark">
-        {t('unlimited')}
-      </Link>
-      <button className="btn btn-secondary" disabled={gems < 350 || refill.isPending} onClick={() => refill.mutate()}>
-        <Gem /> {t('refill', { have: gems })}
-      </button>
-      {mistakes > 0 && (
+      {!out && (
+        <Link href="/clases" className="btn btn-primary">
+          {t('keepLearning')}
+        </Link>
+      )}
+      {!premium && (
+        <Link href="/premium" className={`btn ${out ? 'btn-dark' : 'btn-secondary'}`}>
+          {t('unlimited')}
+        </Link>
+      )}
+      {!premium && (lives?.current ?? 0) < max && (
+        <button className="btn btn-secondary" disabled={gems < 350 || refill.isPending} onClick={() => refill.mutate()}>
+          <Gem /> {t('refill', { have: gems })}
+        </button>
+      )}
+      {out && mistakes > 0 && (
         <Link href="/quiz/review" className="btn btn-plain">
           {t('reviewMistakes', { n: mistakes })}
         </Link>
       )}
-      <Link href="/mercado" className="btn btn-plain">
-        {t('goMarket')}
-      </Link>
+      {out && (
+        <Link href="/mercado" className="btn btn-plain">
+          {t('goMarket')}
+        </Link>
+      )}
     </div>
   )
 }
@@ -240,7 +272,7 @@ function AnswersReview({ log }: { log: AnswerLog }) {
               <Icon name={reveal.correct ? 'check' : 'close'} size={14} /> {reveal.correct ? t('gotRight') : t('gotWrong')}
             </span>
           </span>
-          {q.type === 'SCENARIO' ? <p className="t-body m-0">{q.prompt}</p> : q.type !== 'FILL_BLANK' && <b className="t-head">{q.prompt}</b>}
+          {q.type === 'SCENARIO' ? <p className="t-body m-0">{q.prompt}</p> : q.type !== 'FILL_BLANK' && q.type !== 'CHAT' && <b className="t-head">{q.prompt}</b>}
           <div className="pointer-events-none" aria-disabled>
             <QuestionView q={q} value={value} onChange={() => {}} reveal={reveal} />
           </div>
@@ -271,6 +303,8 @@ export function QuizResult({ r, lessonId, review, testOut, onRetry, log = [] }: 
       </div>
       <h1 className="t-large">{testOut ? (passed ? t('testOutPassed') : t('testOutFailed')) : review ? t('reviewDone') : perfect ? t('perfect') : passed ? t('lessonDone') : t('almost')}</h1>
       {testOut && <p className="t-body m-0 max-w-[340px]">{passed ? t('testOutPassedBody') : t('testOutFailedBody')}</p>}
+      {/* Suspendido: qué hacía falta para aprobar y qué hacer ahora */}
+      {!testOut && !review && !passed && <p className="t-body m-0 max-w-[340px]">{t('failedBody', { pct: lessonId?.endsWith('boss') ? 80 : 60 })}</p>}
       {!review && (
         <div aria-label={t('starsLabel', { n: r.stars })}>
           <Stars n={r.stars} size={30} />
@@ -299,13 +333,22 @@ export function QuizResult({ r, lessonId, review, testOut, onRetry, log = [] }: 
       </div>
       {r.xp > 0 && (
         <p className="t-cap m-0">
-          {t('xpBreakdown', { base: r.xpBreakdown.base, perfect: r.xpBreakdown.perfectBonus, speed: r.xpBreakdown.speedBonus })}
-          {r.xp > r.xpBreakdown.total && ` · ${t('xpExtra', { n: r.xp - r.xpBreakdown.total })}`}
+          {/* Solo las partes que suman algo: «quiz perfecto +0» no dice nada */}
+          {[
+            t('xpBase', { n: r.xpBreakdown.base }),
+            r.xpBreakdown.perfectBonus > 0 && t('xpPerfect', { n: r.xpBreakdown.perfectBonus }),
+            r.xpBreakdown.speedBonus > 0 && t('xpSpeed', { n: r.xpBreakdown.speedBonus }),
+            r.xp > r.xpBreakdown.total && t('xpExtra', { n: r.xp - r.xpBreakdown.total }),
+          ]
+            .filter(Boolean)
+            .join(' · ')}
         </p>
       )}
+      <HelpTip id="xp" title={t('xpWhatTitle')} className="w-full text-left">
+        <span>{t('xpWhatBody')}</span>
+      </HelpTip>
       <div className="banner banner-info w-full justify-center">
-        <Flame /> {t('dayStreak', { n: r.streak.days })}
-        {r.streak.extendedToday ? ` · ${t('extended')}` : ''}
+        <Flame /> {r.streak.extendedToday ? (r.streak.days === 1 ? t('streakStarted') : t('streakUp', { n: r.streak.days })) : t('dayStreak', { n: r.streak.days })}
       </div>
       {r.goalsCompleted.map(g => (
         <div key={g} className="banner banner-info w-full justify-center">
@@ -476,9 +519,14 @@ function QuizInner({ id }: { id: string }) {
           <Icon name="close" />
         </button>
         <Steps total={qs.length} current={i + (reveal ? 1 : 0)} label={t('progress', { i: i + 1, n: qs.length })} />
+        {/* Como en la clase: en qué pregunta vas, también en número */}
+        <span className="t-cap flex-none tabular-nums" aria-hidden>
+          {i + 1}/{qs.length}
+        </span>
+        {/* Aciertos seguidos dentro del quiz (no es la racha de días: por eso no lleva la llama) */}
         {streak >= 2 && (
-          <span key={streak} className="chip animate-pop px-2" style={{ background: 'color-mix(in srgb, var(--amber) 22%, var(--surface))' }} aria-label={t('streak', { n: streak })}>
-            <Flame size={14} /> {streak}
+          <span key={streak} className="chip animate-pop px-2" style={{ background: 'color-mix(in srgb, var(--up) 18%, var(--surface))' }} aria-label={t('streak', { n: streak })}>
+            <Icon name="check" size={14} strokeWidth={2.4} /> ×{streak}
           </span>
         )}
         {lessonMode && (
@@ -497,7 +545,8 @@ function QuizInner({ id }: { id: string }) {
             </b>
           )}
         </span>
-        {q.type === 'SCENARIO' ? <p className="t-body card m-0 text-[17px] leading-7">{q.prompt}</p> : q.type !== 'FILL_BLANK' && <h1 className="t-title">{q.prompt}</h1>}
+        {/* En el chat la pregunta («¿Qué le contestas?») va después de los mensajes: primero el contexto */}
+        {q.type === 'SCENARIO' ? <p className="t-body card m-0 text-[17px] leading-7">{q.prompt}</p> : q.type !== 'FILL_BLANK' && q.type !== 'CHAT' && <h1 className="t-title">{q.prompt}</h1>}
         <div key={`${q.id}-${reveal ? (reveal.correct ? 'ok' : 'ko') : 'q'}`} className={reveal && !reveal.correct ? 'animate-shake' : undefined}>
           <QuestionView key={q.id} q={q} value={value} onChange={pick} reveal={reveal} />
         </div>
@@ -506,8 +555,13 @@ function QuizInner({ id }: { id: string }) {
         {reveal ? (
           <div className={`feedback ${reveal.correct ? 'ok' : 'bad'}`} aria-live="polite">
             <b className={`${reveal.correct ? 'up animate-pop' : 'down'} inline-block self-start`} style={{ fontSize: 17 }}>
-              {reveal.correct ? (streak >= 2 ? <span className="inline-flex items-center gap-1.5">{t('correctStreak', { n: streak })} <Flame size={16} /></span> : t('correct')) : reveal.livesLeft !== null ? t('wrongLife') : t('wrong')}
+              {reveal.correct ? (streak >= 2 ? t('correctStreak', { n: streak }) : t('correct')) : reveal.livesLeft !== null ? t('wrongLife', { n: reveal.livesLeft }) : t('wrong')}
             </b>
+            {!reveal.correct && rightAnswer(q, reveal.correctAnswer) && (
+              <span className="t-body">
+                <b>{t('rightAnswerIs')}</b> {rightAnswer(q, reveal.correctAnswer)}
+              </span>
+            )}
             <span className="t-body whitespace-pre-line">{reveal.explanation}</span>
             <button className={`btn ${reveal.correct ? 'btn-success' : 'btn-danger'}`} onClick={next} disabled={finish.isPending} autoFocus>
               {isLast ? t('seeResult') : reveal.correct ? t('continue') : t('gotIt')}
@@ -516,7 +570,7 @@ function QuizInner({ id }: { id: string }) {
         ) : (
           <div className="px-4 pt-2.5" style={{ paddingBottom: 'max(24px, env(safe-area-inset-bottom))' }}>
             <button className="btn btn-primary" disabled={!hasAnswer(q, value) || answer.isPending} onClick={() => answer.mutate(value)}>
-              {answer.isPending ? '…' : hasAnswer(q, value) ? t('check') : t('pick')}
+              {answer.isPending ? '…' : hasAnswer(q, value) ? t('check') : t(PICK[q.type] ?? 'pick')}
             </button>
           </div>
         )}

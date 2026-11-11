@@ -3,11 +3,12 @@ import 'server-only'
 // Reglas (como los precios, F1): datos reales de Yahoo o nada. Lo que no llega se guarda como null y no se enseña.
 // - Se piden como mucho una vez al día por símbolo: al abrir la ficha (sin bloquearla) y en el repaso horario del cron,
 //   que pone al día todo el catálogo de acciones en lotes de 50 (v7/quote, sin beta).
-// - La ficha completa (quoteSummary, con beta) se pide al abrirla si la última tiene más de un día.
+// - La ficha completa (quoteSummary, con beta y el perfil: sector, industria, descripción, empleados; en los fondos,
+//   patrimonio y gestora; en las cripto, capitalización y monedas en circulación) se pide al abrirla si tiene más de un día.
 import { after } from 'next/server'
 import type { AssetTypeT, FundamentalsT } from '@/shared/contract'
 import { db, DB_SCHEMA } from '../db'
-import { yahooFundamentalsBatch, yahooSummary, type RawFundamentals } from './providers'
+import { yahooFundamentalsBatch, yahooSummary, type RawFundamentals, type RawProfile } from './providers'
 import { fxRates, normCurrency, toEur, validSymbol } from './service'
 
 const DAY_MS = 86_400_000
@@ -16,7 +17,9 @@ const BATCH_MAX_AGE_MS = 20 * 3_600_000
 const SUMMARY_MAX_AGE_MS = DAY_MS
 /** Esperar al proveedor en la primera visita, como mucho esto (la petición de la ficha va aparte y no la frena) */
 const FIRST_WAIT_MS = 5_000
-const WITH_DATA: AssetTypeT[] = ['STOCK', 'ETF']
+const WITH_DATA: AssetTypeT[] = ['STOCK', 'ETF', 'CRYPTO']
+/** Versión de la ficha completa: las guardadas con otra (sin perfil) se vuelven a pedir */
+const PROFILE_V = 2
 
 interface Payload {
   currency?: string | null
@@ -28,6 +31,9 @@ interface Payload {
   summaryAt?: string
   /** Último lote del cron (v7/quote) */
   batchAt?: string
+  /** Perfil de la ficha completa (sector, industria, descripción…) y su versión */
+  profile?: RawProfile
+  v?: number
 }
 
 // ── Escritura ────────────────────────────────────────────
@@ -36,7 +42,7 @@ async function save(rows: RawFundamentals[], full: boolean) {
   if (!rows.length) return
   const now = new Date().toISOString()
   const data = rows.map(r => {
-    const payload: Payload = { currency: r.currency, financialCurrency: r.financialCurrency, trailingYield: r.trailingYield, ...(full ? { ter: r.ter, summaryAt: now } : { batchAt: now }) }
+    const payload: Payload = { currency: r.currency, financialCurrency: r.financialCurrency, trailingYield: r.trailingYield, ...(full ? { ter: r.ter, summaryAt: now, profile: r.profile, v: PROFILE_V } : { batchAt: now }) }
     return { symbol: r.symbol, marketCap: r.marketCap, pe: r.pe, forwardPe: r.forwardPe, dividendYield: r.dividendYield, eps: r.eps, beta: r.beta, payload }
   })
   await db
@@ -73,7 +79,7 @@ function refreshOne(symbol: string, type: AssetTypeT): Promise<void> {
   }
   if (++windowCount > 40) return Promise.resolve()
   const p = (async () => {
-    const raw = await yahooSummary(symbol, type === 'ETF')
+    const raw = await yahooSummary(symbol, type === 'ETF' ? 'ETF' : type === 'CRYPTO' ? 'CRYPTO' : 'STOCK')
     if (failedAt.size > 2000) failedAt.clear()
     // null = Yahoo no respondió (se reintenta en 5 min); una respuesta sin datos se guarda vacía (no se repite en un día)
     if (raw === null) failedAt.set(symbol, Date.now())
@@ -90,10 +96,12 @@ async function claim(symbol: string): Promise<boolean> {
   try {
     const rows = await db.$queryRawUnsafe<{ symbol: string }[]>(
       `UPDATE "${DB_SCHEMA}"."Fundamentals" SET "payload" = COALESCE("payload", '{}'::jsonb) || jsonb_build_object('summaryAt', $2::text)
-       WHERE "symbol" = $1 AND (("payload"->>'summaryAt') IS NULL OR ("payload"->>'summaryAt')::timestamptz < now() - interval '24 hours') RETURNING "symbol"`,
+       WHERE "symbol" = $1 AND (("payload"->>'summaryAt') IS NULL OR ("payload"->>'summaryAt')::timestamptz < now() - interval '24 hours'
+         OR ("payload"->>'v') IS DISTINCT FROM $3::text) RETURNING "symbol"`,
       symbol,
       // Si la petición falla, se podrá reintentar dentro de una hora
       new Date(Date.now() - 23 * 3_600_000).toISOString(),
+      String(PROFILE_V),
     )
     return rows.length > 0
   } catch (e) {
@@ -102,32 +110,41 @@ async function claim(symbol: string): Promise<boolean> {
   }
 }
 
-const summaryAge = (p: Payload | null) => (p?.summaryAt ? Date.now() - new Date(p.summaryAt).getTime() : Infinity)
+const summaryAge = (p: Payload | null) => (p?.summaryAt && p.v === PROFILE_V ? Date.now() - new Date(p.summaryAt).getTime() : Infinity)
 
 type Row = NonNullable<Awaited<ReturnType<typeof db.fundamentals.findUnique>>>
 
 async function toApi(symbol: string, type: AssetTypeT, row: Row | null): Promise<FundamentalsT> {
-  if (!row) return { symbol, available: false, marketCap: null, marketCapEur: null, currency: null, pe: null, dividendYield: null, eps: null, epsCurrency: null, beta: null, ter: null, updatedAt: null }
+  if (!row) return { symbol, available: false, marketCap: null, marketCapEur: null, currency: null, pe: null, dividendYield: null, eps: null, epsCurrency: null, beta: null, ter: null, updatedAt: null, profile: null }
   const p = (row.payload ?? {}) as Payload
   const cur = p.currency ? normCurrency(p.currency).cur : null
   // La capitalización llega en la moneda principal (libras, no peniques): sin dividir
   const eur = row.marketCap !== null && cur ? toEur(row.marketCap, cur, await fxRates()) : null
   const isFund = type === 'ETF'
+  const isCrypto = type === 'CRYPTO'
+  const pr = p.v === PROFILE_V ? p.profile : undefined
   const out: FundamentalsT = {
     symbol,
     available: false,
     marketCap: isFund ? null : row.marketCap,
     marketCapEur: isFund ? null : eur,
     currency: cur,
-    pe: isFund ? null : row.pe,
-    dividendYield: row.dividendYield,
-    eps: isFund ? null : row.eps,
+    pe: isFund || isCrypto ? null : row.pe,
+    dividendYield: isCrypto ? null : row.dividendYield,
+    eps: isFund || isCrypto ? null : row.eps,
     epsCurrency: p.financialCurrency ?? cur,
-    beta: row.beta,
+    beta: isCrypto ? null : row.beta,
     ter: isFund ? (p.ter ?? null) : null,
     updatedAt: row.updatedAt.toISOString(),
+    profile: pr
+      ? {
+          sectorKey: pr.sectorKey ?? null, industryKey: pr.industryKey ?? null, industry: pr.industry ?? null, summary: pr.summary ?? null, employees: pr.employees ?? null,
+          avgVolume: pr.avgVolume ?? null, totalAssets: pr.totalAssets ?? null, family: pr.family ?? null, category: pr.category ?? null, inception: pr.inception ?? null,
+          circulating: pr.circulating ?? null, allTimeHigh: pr.allTimeHigh ?? null,
+        }
+      : null,
   }
-  out.available = [out.marketCap, out.pe, out.dividendYield, out.eps, out.beta, out.ter].some(v => v !== null)
+  out.available = [out.marketCap, out.pe, out.dividendYield, out.eps, out.beta, out.ter].some(v => v !== null) || !!(pr && Object.values(pr).some(v => v !== null))
   return out
 }
 
@@ -139,7 +156,8 @@ export async function fundamentals(symbol: string): Promise<FundamentalsT | null
   if (!WITH_DATA.includes(asset.type)) return toApi(symbol, asset.type, null)
   let row = saved
   if (summaryAge(row?.payload as Payload | null) > SUMMARY_MAX_AGE_MS) {
-    if (!row) {
+    // Sin datos, o guardados antes de que hubiera perfil: se espera un poco al proveedor (solo una instancia lo pide)
+    if (!row || ((row.payload as Payload | null)?.v !== PROFILE_V && (await claim(symbol)))) {
       await Promise.race([refreshOne(symbol, asset.type), new Promise(r => setTimeout(r, FIRST_WAIT_MS))])
       row = await db.fundamentals.findUnique({ where: { symbol } })
     } else {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { lastDayOf, madridMidnight, monthOf, monthReturnPct, monthStart, nextMonth, prevMonth, score, seasonPct, tradePoints, weekReturnPct } from '@/shared/league-points'
+import { byStanding, lastDayOf, leagueZones, madridMidnight, monthOf, monthReturnPct, monthStart, nextMonth, prevMonth, score, seasonPct, tradePoints, weekOutcome, weekReturnPct } from '@/shared/league-points'
 
 describe('rentabilidad semanal', () => {
   it('sin cambios = 0', () => expect(weekReturnPct(10_000, 10_000, 0)).toBe(0))
@@ -70,4 +70,64 @@ describe('meses de Madrid', () => {
     expect(lastDayOf('2028-02')).toBe('2028-02-29')
   })
   it('empieza a las 00:00 de Madrid', () => expect(monthStart('2026-11').toISOString()).toBe('2026-10-31T23:00:00.000Z'))
+})
+
+describe('zonas de ascenso y descenso (en proporción al grupo)', () => {
+  it('grupo lleno: suben 7 y bajan los puestos 26–30', () => expect(leagueZones(30)).toEqual({ promoteTop: 7, demoteFrom: 26 }))
+  it('grupos pequeños: sube al menos 1 y no baja nadie con menos de 6', () => {
+    expect(leagueZones(1)).toEqual({ promoteTop: 1, demoteFrom: 2 })
+    expect(leagueZones(2)).toEqual({ promoteTop: 1, demoteFrom: 3 })
+    expect(leagueZones(5)).toEqual({ promoteTop: 1, demoteFrom: 6 })
+  })
+  it('grupos medianos: en proporción', () => {
+    expect(leagueZones(6)).toEqual({ promoteTop: 1, demoteFrom: 6 })
+    expect(leagueZones(10)).toEqual({ promoteTop: 2, demoteFrom: 10 })
+    expect(leagueZones(15)).toEqual({ promoteTop: 4, demoteFrom: 14 })
+    expect(leagueZones(20)).toEqual({ promoteTop: 5, demoteFrom: 18 })
+  })
+  it('las zonas nunca se pisan y siempre hay alguien que se mantiene o sube', () => {
+    for (let n = 1; n <= 30; n++) {
+      const z = leagueZones(n)
+      expect(z.promoteTop).toBeGreaterThanOrEqual(1)
+      expect(z.promoteTop).toBeLessThan(z.demoteFrom)
+      expect(z.demoteFrom).toBeLessThanOrEqual(n + 1)
+    }
+  })
+  it('grupo vacío: nadie', () => expect(leagueZones(0)).toEqual({ promoteTop: 0, demoteFrom: 1 }))
+})
+
+describe('resultado de la semana', () => {
+  it('en zona de ascenso y con XP: sube', () => expect(weekOutcome(1, 10, 50, 1, 5)).toBe('UP'))
+  it('en zona de ascenso sin XP: no sube', () => expect(weekOutcome(1, 10, 0, 1, 5)).toBe('STAY'))
+  it('nadie sube de la última división', () => expect(weekOutcome(1, 10, 50, 5, 5)).toBe('STAY'))
+  it('fuera de la zona de ascenso: se mantiene', () => expect(weekOutcome(3, 10, 500, 2, 5)).toBe('STAY'))
+  it('en zona de descenso: baja (salvo en la primera)', () => {
+    expect(weekOutcome(10, 10, 0, 2, 5)).toBe('DOWN')
+    expect(weekOutcome(10, 10, 0, 1, 5)).toBe('STAY')
+  })
+  it('grupo de 3: sube solo el primero y no baja nadie', () => {
+    expect(weekOutcome(1, 3, 10, 1, 5)).toBe('UP')
+    expect(weekOutcome(2, 3, 10, 1, 5)).toBe('STAY')
+    expect(weekOutcome(3, 3, 0, 3, 5)).toBe('STAY')
+  })
+  it('grupo lleno: el 7.º sube, el 8.º no; el 25.º se queda y el 26.º baja', () => {
+    expect(weekOutcome(7, 30, 10, 1, 5)).toBe('UP')
+    expect(weekOutcome(8, 30, 10, 1, 5)).toBe('STAY')
+    expect(weekOutcome(25, 30, 0, 3, 5)).toBe('STAY')
+    expect(weekOutcome(26, 30, 0, 3, 5)).toBe('DOWN')
+  })
+})
+
+describe('orden de la clasificación y empates', () => {
+  const row = (userId: string, score: number, weeklyXp: number, joinedAt: number) => ({ userId, score, weeklyXp, joinedAt })
+  it('más puntos primero', () => expect([row('a', 10, 10, 0), row('b', 20, 20, 0)].sort(byStanding).map(r => r.userId)).toEqual(['b', 'a']))
+  it('mismos puntos: más XP primero (la inversión desempata menos que estudiar)', () =>
+    expect([row('a', 100, 80, 0), row('b', 100, 100, 0)].sort(byStanding).map(r => r.userId)).toEqual(['b', 'a']))
+  it('mismos puntos y XP: quien entró antes en la liga esa semana', () =>
+    expect([row('a', 100, 100, 2000), row('b', 100, 100, 1000)].sort(byStanding).map(r => r.userId)).toEqual(['b', 'a']))
+  it('el orden no depende del orden de llegada de las filas', () => {
+    const rows = [row('c', 50, 50, 5), row('a', 50, 50, 5), row('b', 50, 50, 5)]
+    expect([...rows].sort(byStanding).map(r => r.userId)).toEqual(['a', 'b', 'c'])
+    expect([...rows].reverse().sort(byStanding).map(r => r.userId)).toEqual(['a', 'b', 'c'])
+  })
 })

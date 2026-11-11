@@ -7,20 +7,21 @@ import { Link, useRouter } from '@/i18n/navigation'
 import type { CoursePathT, LessonStepT, PathLessonT } from '@/shared/contract'
 import { money, num, signedMoney } from '@/shared/format'
 import { api, ApiFailure } from '../api'
-import { useHome, useLang, useMe, usePath } from '../hooks'
+import { useHome, useLang, useLives, useMe, usePath } from '../hooks'
 import { useGuard } from '../shell'
 import { RichText } from '../ui/rich-text'
-import { useToast } from '../providers'
 import { CandleChart, LineChart } from '../ui/charts'
 import { Flame, Gem, Heart, Icon } from '../ui/icons'
 import { Bar, ErrorState, PageSkeleton, Sheet, Stars, Steps } from '../ui/kit'
 import { BadgeArt } from '../ui/badge'
 import { Calculator } from '../ui/calculator'
+import { HelpSteps, HelpTip } from '../ui/first-time'
 import { PlayView, StoryView } from '../play/play-step'
 import { Lumi, LumiSays, stageOf } from '../ui/lumi'
 import { GlyphTile } from '../play/glyph'
 import { BuyPlans, MaxPill } from '../upgrade'
 import { InviteCard } from '../invite-card'
+import { DailyGift } from '../daily-gift'
 import { GiftBanner } from './gifts'
 import { FeedbackCard } from './feedback'
 import { PushCard } from '../push'
@@ -33,10 +34,10 @@ export function Home() {
   const t = useTranslations('home')
   const tg = useTranslations('goals')
   const locale = useLang()
-  const toast = useToast()
   const { data: h, isError, refetch } = useHome()
   const { data: me } = useMe()
   const { data: badges } = useQuery({ queryKey: ['achievements'], queryFn: api.achievements })
+  const [info, setInfo] = useState(false)
   // La siguiente clase se precarga: al tocar «Continuar» se abre al momento
   const qc = useQueryClient()
   const nextId = h?.nextLesson?.id
@@ -47,6 +48,8 @@ export function Home() {
   if (!h || !me) return <PageSkeleton />
   const done = h.dailyGoals.filter(g => g.done).length
   const premium = me.plan !== 'FREE'
+  /** Aún no ha terminado ninguna clase: la pantalla se centra en empezar */
+  const firstDay = me.lessonsCompleted === 0
   const dayUp = Number(h.portfolio.dayChange) >= 0
   return (
     <div className="pad">
@@ -54,37 +57,45 @@ export function Home() {
         <h1 className="t-title min-w-0 basis-full truncate sm:basis-auto">{t('hello', { name: h.user.name.trim().split(/\s+/)[0] || h.user.name })}</h1>
         <div className="flex flex-none items-center gap-1.5">
           <MaxPill />
-          <Link href="/perfil/racha" className="chip" aria-label={t('streakLabel', { n: h.streak.days })}>
+          {/* Los tres marcadores abren la misma hoja que explica qué es cada uno */}
+          <button className="chip min-h-11" onClick={() => setInfo(true)} aria-label={t('streakLabel', { n: h.streak.days })} aria-haspopup="dialog">
             <Flame color={h.streak.todayDone ? 'var(--brand)' : 'var(--ink-3)'} />
             {h.streak.days}
-          </Link>
-          <button className="chip" onClick={() => toast(t('gemsInfo', { n: h.gems }))} aria-label={t('gemsLabel', { n: h.gems })}>
+          </button>
+          <button className="chip min-h-11" onClick={() => setInfo(true)} aria-label={t('gemsLabel', { n: h.gems })} aria-haspopup="dialog">
             <Gem />
             {num(h.gems, locale, 0)}
           </button>
-          <Link href="/sin-vidas" className="chip" aria-label={t('livesLabel')}>
+          <button className="chip min-h-11" onClick={() => setInfo(true)} aria-label={premium ? t('livesUnlimitedLabel') : t('livesCountLabel', { n: h.lives.current })} aria-haspopup="dialog">
             <Heart />
             {premium ? '∞' : h.lives.current}
-          </Link>
-          <Link href="/avisos" className="icon-btn h-9 w-9 md:hidden" aria-label={t('notifications')}>
+          </button>
+          <Link href="/avisos" className="icon-btn h-11 w-11 md:hidden" aria-label={t('notifications')}>
             <Icon name="bell" size={20} />
           </Link>
         </div>
       </div>
 
-      {/* Lo primero al entrar: invitar a un amigo (7 días de Max para los dos) */}
-      <InviteCard />
+      {/* Lo primero al entrar: invitar a un amigo (7 días de Max para los dos).
+          Quien acaba de llegar ve antes su primera clase: aún no sabe qué es la app como para invitar a nadie. */}
+      {!firstDay && <InviteCard />}
 
       {h.nextLesson ? (
         <div className="hero flex flex-col gap-2.5">
           <div className="t-cap flex justify-between" style={{ color: 'rgb(255 255 255 / 0.65)' }}>
-            <span>{t('nextLesson', { unit: h.nextLesson.unitOrder })}</span>
+            <span>{firstDay ? t('firstLesson') : t('nextLesson', { unit: h.nextLesson.unitOrder })}</span>
             <span>{h.nextLesson.minutes} min</span>
           </div>
           <span className="text-[22px] leading-[27px] font-extrabold tracking-[-0.01em]">{h.nextLesson.title}</span>
-          <Bar pct={h.nextLesson.progressPct} color="#fff" label={t('unitProgress')} />
+          {firstDay ? (
+            <span className="t-foot" style={{ color: 'rgb(255 255 255 / 0.8)' }}>
+              {t('firstLessonHint')}
+            </span>
+          ) : (
+            <Bar pct={h.nextLesson.progressPct} color="#fff" label={t('unitProgress')} />
+          )}
           <Link href={`/leccion/${h.nextLesson.id}`} className="btn" style={{ background: '#fff', color: 'var(--brand-ink)' }}>
-            {t('continue')}
+            {firstDay ? t('start') : t('continue')}
           </Link>
         </div>
       ) : (
@@ -95,6 +106,13 @@ export function Home() {
           </Link>
         </div>
       )}
+
+      <DailyGift />
+      {/* La primera vez: qué es esto y qué se hace aquí, en tres líneas */}
+      <HelpTip id="home" title={t('howTitle')}>
+        <HelpSteps items={[t('how1'), t('how2'), t('how3')]} />
+      </HelpTip>
+      {firstDay && <InviteCard />}
 
       {/* Avisos que piden algo (activar notificaciones, dar tu opinión): solo cuando tocan */}
       {/* Aprender haciendo: la misión «Pruébalo» pendiente (o recién cumplida) */}
@@ -117,18 +135,22 @@ export function Home() {
               </span>
               {tg(g.id)}
             </span>
-            <span className="t-foot" style={g.done ? { color: 'var(--up)', fontWeight: 700 } : undefined}>
-              {g.done ? `+${g.xp} XP` : `${g.progress}/${g.target}`}
+            <span className="t-foot flex-none text-right tabular-nums" style={g.done ? { color: 'var(--up)', fontWeight: 700 } : undefined}>
+              {/* El premio se ve desde el principio: así se entiende para qué sirve cada objetivo */}
+              {g.done ? t('goalEarned', { xp: g.xp }) : t('goalPending', { progress: g.progress, target: g.target, xp: g.xp })}
             </span>
           </div>
         ))}
-        {done === h.dailyGoals.length && <span className="t-cap">{t('allGoals')}</span>}
+        <span className="t-cap">{done === h.dailyGoals.length ? t('allGoals') : t('goalsHint')}</span>
       </div>
 
       <LumiSays mood={h.companion.mood} message={h.companion.message} skin={me.companion.skinId} stage={stageOf(me.level.n)} />
 
       <Link href="/mercado/cartera" className="card flex flex-col gap-1.5" style={{ color: 'inherit' }}>
-        <span className="t-foot">{t('portfolio')}</span>
+        <span className="t-foot flex items-center justify-between gap-2">
+          {t('portfolio')}
+          <span className="t-cap">{t('portfolioVirtual')}</span>
+        </span>
         <div className="flex items-baseline justify-between gap-2">
           <span className="text-[26px] font-extrabold tracking-[-0.02em]">{money(h.portfolio.totalValue, 'EUR', locale)}</span>
           <span className={`t-foot font-bold ${dayUp ? 'up' : 'down'}`}>
@@ -169,6 +191,47 @@ export function Home() {
           {t('level', { n: me.level.n, title: me.level.title, xp: num(me.level.xp, locale, 0) })}
         </Link>
       </div>
+
+      {/* «¿Qué es esto?»: racha, gemas, vidas y XP explicados en una sola hoja */}
+      <Sheet open={info} onClose={() => setInfo(false)} label={t('infoTitle')}>
+        <b className="t-title">{t('infoTitle')}</b>
+        <div className="list">
+          <Link href="/perfil/racha" className="li items-start" onClick={() => setInfo(false)}>
+            <span className="ava"><Flame color="var(--brand)" /></span>
+            <span className="flex-1">
+              <b>{t('infoStreak', { n: h.streak.days })}</b>
+              <span className="t-foot block">{h.streak.todayDone ? t('infoStreakDone') : t('infoStreakBody')}</span>
+            </span>
+            <Icon name="chev" size={18} />
+          </Link>
+          <div className="li items-start">
+            <span className="ava"><Gem /></span>
+            <span className="flex-1">
+              <b>{t('infoGems', { n: num(h.gems, locale, 0) })}</b>
+              <span className="t-foot block">{t('infoGemsBody')}</span>
+            </span>
+          </div>
+          <Link href="/sin-vidas" className="li items-start" onClick={() => setInfo(false)}>
+            <span className="ava"><Heart /></span>
+            <span className="flex-1">
+              <b>{premium ? t('infoLivesUnlimited') : t('infoLives', { n: h.lives.current, max: h.lives.max })}</b>
+              <span className="t-foot block">{premium ? t('infoLivesPremiumBody') : t('infoLivesBody', { h: h.lives.regenHours })}</span>
+            </span>
+            <Icon name="chev" size={18} />
+          </Link>
+          <Link href="/perfil" className="li items-start" onClick={() => setInfo(false)}>
+            <span className="ava"><Icon name="star" size={18} /></span>
+            <span className="flex-1">
+              <b>{t('infoXp', { xp: num(me.level.xp, locale, 0) })}</b>
+              <span className="t-foot block">{t('infoXpBody')}</span>
+            </span>
+            <Icon name="chev" size={18} />
+          </Link>
+        </div>
+        <button className="btn btn-primary" onClick={() => setInfo(false)}>
+          {t('infoOk')}
+        </button>
+      </Sheet>
     </div>
   )
 }
@@ -196,6 +259,8 @@ function LessonRow({ l, next, onLocked }: { l: PathLessonT; next?: boolean; onLo
             t(l.requiredPlan === 'PLUS' ? 'inPlus' : 'inMax')
           ) : l.isUnitReview ? (
             t('lockedReview')
+          ) : l.id.endsWith('boss') ? (
+            t('lockedBoss')
           ) : (
             t('locked')
           )}
@@ -296,6 +361,10 @@ export function Path() {
         </div>
       </div>
       <Summary path={p} />
+      {/* La primera vez: cómo está montado el curso (sección › unidad › clase, repaso y reto final) */}
+      <HelpTip id="path" title={t('howTitle')}>
+        <HelpSteps items={[t('how1'), t('how2'), t('how3')]} />
+      </HelpTip>
       {p.units.map((u, ui) => {
         const empty = u.lessons.length === 0
         const newSection = u.section && u.section.id !== p.units[ui - 1]?.section?.id
@@ -542,6 +611,8 @@ function Illustration({ kind }: { kind: string }) {
 function StepView({ s, lessonId, onSolved, solved }: { s: LessonStepT; lessonId: string; onSolved: () => void; solved: boolean }) {
   const t = useTranslations('lesson')
   const [pick, setPick] = useState<number | null>(null)
+  const { data: me } = useMe()
+  const { data: lives } = useLives()
   const check = useMutation({ mutationFn: (i: number) => api.checkStep(lessonId, s.id, i), onSuccess: r => r.correct && onSolved() })
   const tip = 'companionTip' in s && s.companionTip ? <LumiSays mood="THINKING" message={s.companionTip} size={36} /> : null
   switch (s.type) {
@@ -646,6 +717,11 @@ function StepView({ s, lessonId, onSolved, solved }: { s: LessonStepT; lessonId:
             <Lumi mood="HAPPY" size={88} />
           </div>
           <p className="t-body m-0">{s.body}</p>
+          {/* Cómo funciona el quiz, antes de empezarlo (y no a mitad) */}
+          <div className="card flex flex-col gap-2">
+            <b className="t-head">{t('quizHowTitle')}</b>
+            <HelpSteps items={[t('quizHow1'), t('quizHow2', { pct: lessonId.endsWith('boss') ? 80 : 60 }), me && me.plan !== 'FREE' ? t('quizHow3Premium') : t('quizHow3', { n: lives?.current ?? 5 })]} />
+          </div>
         </>
       )
   }
@@ -735,7 +811,7 @@ function LessonInner({ id }: { id: string }) {
             toQuiz.current = true
             router.push(`/quiz/${l.id}`)
           }}>
-          {last ? t('startQuiz') : blocked ? (s.type === 'INTERACTIVE_CHART' ? t('tapCandle') : t('finishActivity')) : t('continue')}
+          {last ? t('startQuiz') : blocked ? (s.type === 'INTERACTIVE_CHART' ? t('tapCandle') : s.type === 'STORY' ? t('finishStory') : t('finishActivity')) : t('continue')}
         </button>
       </div>
     </div>

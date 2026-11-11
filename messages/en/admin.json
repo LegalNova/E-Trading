@@ -150,7 +150,219 @@
       "blockButton": "Block",
       "confirmBlock": "Block {email}? Their sessions will be closed and they won’t be able to sign in.",
       "blockedDone": "Account blocked",
-      "blockNote": "This doesn’t cancel their Stripe subscription: if they pay, handle it in Stripe too."
+      "blockNote": "This doesn’t cancel their Stripe subscription: if they pay, handle it in Stripe too.",
+      "account": "Account"
+    }
+  },
+  "admin3": {
+    "tabs": {
+      "messages": "Messages"
+    },
+    "glance": {
+      "title": "At a glance",
+      "failed": "Couldn’t load the data.",
+      "users": "People",
+      "guests": "{n} as guests",
+      "new": "Sign-ups in 24 h",
+      "new7d": "{n} in 7 days",
+      "active": "Active today",
+      "active7d": "{n} in 7 days",
+      "plans": "On Plus or Max",
+      "plansHint": "Plus {plus} · Max {max} · {stripe} paying",
+      "reports": "Bug reports",
+      "messages": "Messages (7 days)",
+      "messagesRead": "{n} read",
+      "messagesNone": "None sent",
+      "blocked": "{n, plural, one {# blocked account} other {# blocked accounts}}",
+      "recent": "Latest sign-ups",
+      "onboarding": "welcome unfinished",
+      "welcomed": "Already messaged",
+      "welcome": "Welcome them",
+      "noRecent": "No sign-ups yet."
+    },
+    "grant": {
+      "title": "Give out",
+      "lead": "Virtual money, XP, gems, lives, freezes or streak. Logged in the audit.",
+      "what": "What to give",
+      "kinds": {
+        "CASH": "Virtual money",
+        "XP": "XP",
+        "GEMS": "Gems",
+        "LIVES": "Lives",
+        "FREEZES": "Freezes",
+        "STREAK": "Streak"
+      },
+      "now": "Has now",
+      "noPortfolio": "no portfolio yet",
+      "level": "level {n}",
+      "streakNow": "{n} days · best {best}",
+      "direction": "Give or take",
+      "give": "Give",
+      "take": "Take",
+      "amount": {
+        "CASH": "Amount in virtual euros",
+        "XP": "XP to give",
+        "GEMS": "Gems to give",
+        "FREEZES": "Freezes to give",
+        "STREAK": "Streak days"
+      },
+      "limit": {
+        "CASH": "Up to €1,000,000 at once. Taking: at most their cash.",
+        "XP": "From 1 to 100,000 XP.",
+        "GEMS": "From 1 to 10,000 gems.",
+        "FREEZES": "Up to 10 in total.",
+        "STREAK": "From 0 to 3,650 days. Counts as if they used the app yesterday."
+      },
+      "cashNote": "Simulation money, not real. It doesn’t count as return in the league.",
+      "league": "Also count it in this week’s league",
+      "leagueOn": "Careful: it will count in this week’s league and move them up past people who earned it playing.",
+      "leagueOff": "Doesn’t count in the league: only their XP and level go up.",
+      "streakNote": "Missed days show as protected in their calendar.",
+      "reason": "Reason (optional, only the team sees it)",
+      "notify": "Let them know with a team message",
+      "notifyPlaceholder": "Your own text (optional). Use '{name}' for their name.",
+      "notifyText": "Message text",
+      "notifyHint": "If you leave it empty, they get a message in their language like: “{example}”",
+      "noLinks": "No links or HTML: plain text only.",
+      "notice": {
+        "CASH": "The E-Trading team has given you {n} in virtual money for your portfolio.",
+        "CASH_NEG": "We’ve adjusted your virtual portfolio: {n} less in cash.",
+        "XP": "The E-Trading team has given you {n} XP.",
+        "GEMS": "The E-Trading team has given you {n} gems.",
+        "LIVES": "We’ve refilled your lives so you can keep learning.",
+        "FREEZES": "We’ve given you {n} streak freezes.",
+        "STREAK": "We’ve restored your streak: {n} days."
+      },
+      "confirm": {
+        "CASH": "Give {n} in virtual money to {email}?",
+        "CASH_NEG": "Take {n} in virtual money from {email}’s cash?",
+        "XP": "Give {n} XP to {email}?",
+        "GEMS": "Give {n} gems to {email}?",
+        "LIVES": "Refill {email}’s lives?",
+        "FREEZES": "Give {n} streak freezes to {email}?",
+        "STREAK": "Set {email}’s streak to {n} days?"
+      },
+      "confirmLeague": "It will count in this week’s league.",
+      "confirmNotify": "They’ll get a team message.",
+      "working": "Saving…",
+      "button": {
+        "CASH": "Give money",
+        "CASH_NEG": "Take money",
+        "XP": "Give XP",
+        "GEMS": "Give gems",
+        "LIVES": "Refill lives",
+        "FREEZES": "Give freezes",
+        "STREAK": "Set streak"
+      },
+      "done": "Done",
+      "doneNotified": "Done. We’ve sent them the message.",
+      "failed": "Something went wrong. Try again."
+    },
+    "compose": {
+      "replace": "Replace what you’ve written with the template?",
+      "templates": "Templates",
+      "tpl": {
+        "welcome": "Welcome",
+        "comeback": "Come back",
+        "congrats": "Congratulate",
+        "thanks": "Thanks for feedback",
+        "BLANK": "Blank"
+      },
+      "tplNote": "Templates come out in {lang}. You can edit them before sending.",
+      "lang": {
+        "es": "Spanish",
+        "ca": "Catalan",
+        "en": "English"
+      },
+      "title": "Title (optional)",
+      "text": "Message",
+      "noLinks": "No links: remove them to send.",
+      "noHtml": "No HTML: plain text only.",
+      "nameHint": "'{name}' is replaced with their name.",
+      "preview": "How they’ll see it",
+      "sending": "Sending…"
+    },
+    "user": {
+      "title": "Team message",
+      "lead": "It pops up as a window next time they open the app and stays in their Notifications. {devices, plural, =0 {No phone notifications.} one {Phone notifications on: they also get one (at a sensible hour).} other {Notifications on # devices: they also get one (at a sensible hour).}}",
+      "blocked": "The account is blocked: they won’t see messages.",
+      "sent": "Message sent",
+      "failed": "Couldn’t send it. Try again.",
+      "send": "Send message",
+      "confirm": "Send this message to {email}?",
+      "history": "Messages received",
+      "read": "Read · {date}",
+      "unread": "Unread",
+      "batch": "group message"
+    },
+    "messages": {
+      "title": "Team messages",
+      "what": "Write to several people at once. It pops up as a window when they open the app, stays in their Notifications and, if they have phone notifications, they get one (never 22:00–9:00 and no more than 6 a day). To write to one person, open them in Users.",
+      "viewOnly": "You’re viewing the app as another user: nothing can be sent.",
+      "toMany": "Send to many",
+      "who": "Who",
+      "kind": {
+        "NEW": "New",
+        "INACTIVE": "Inactive",
+        "ALL": "Everyone"
+      },
+      "daysNew": "Signed up in the last",
+      "daysInactive": "Inactive for at least",
+      "days": "days",
+      "lang": "Language",
+      "langs": {
+        "all": "All languages",
+        "es": "Spanish",
+        "ca": "Catalan",
+        "en": "English"
+      },
+      "badDays": "Choose between 1 and 365 days.",
+      "counting": "Counting…",
+      "failed": "Something went wrong. Try again.",
+      "count": "{n, plural, =0 {Nobody matches these filters} one {# person} other {# people}}",
+      "countHint": "{push} with phone notifications. Excludes the team and blocked accounts.",
+      "sample": "For example: {names}",
+      "send": "{n, plural, one {Send to # person} other {Send to # people}}",
+      "sendNone": "Nobody to send to",
+      "confirm1": "You’re about to send this message to {n, plural, one {# person} other {# people}} ({who}). Continue?",
+      "confirm2": "Final check: {n, plural, one {# person will get it} other {# people will get it}} and it can’t be undone. Send now?",
+      "sent": "{n, plural, one {Sent to # person} other {Sent to # people}}",
+      "limits": "Limits: one group message every 2 minutes and 5 a day at most.",
+      "history": "History",
+      "noTitle": "No title",
+      "readOf": "{read} of {n} read",
+      "read": "Read",
+      "unread": "Unread",
+      "many": "{n, plural, one {# person} other {# people}}",
+      "aud": {
+        "ALL": "everyone",
+        "NEW": "signed up in {n} days",
+        "INACTIVE": "inactive for {n} days"
+      },
+      "viaGrant": "with a gift",
+      "deleted": "deleted account",
+      "openUser": "Open {email}’s profile",
+      "empty": "No messages sent yet."
+    },
+    "card": {
+      "team": "Team",
+      "guest": "Guest",
+      "level": "Level",
+      "streak": "Streak",
+      "best": "best {n}",
+      "lessons": "Lessons done",
+      "accuracy": "{n} % correct",
+      "trades": "Trades",
+      "positions": "{n} positions",
+      "cash": "Cash",
+      "gems": "Gems",
+      "lives": "{n} lives",
+      "write": "Message",
+      "since": "Joined: {created} · Last active day: {active} · Last session: {seen} · Language: {lang} · Source: {source}",
+      "controls": "Controls",
+      "detail": "Details",
+      "login": "Sign-in",
+      "freezes": "Streak freezes"
     }
   }
 }

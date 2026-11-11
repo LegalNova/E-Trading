@@ -14,7 +14,7 @@ import { Check, ErrorState, PageSkeleton, Seg, Steps } from '../ui/kit'
 import { Lumi, SKINS } from '../ui/lumi'
 import { QuestionView, type AnswerValue } from './quiz'
 
-const TOTAL = 7
+const TOTAL = 6
 
 function Head({ n, onBack }: { n: number; onBack?: () => void }) {
   const t = useTranslations('common')
@@ -69,12 +69,38 @@ function Placement({ onDone, onBack, onAlreadyDone }: { onDone: (r: PlacementFin
         <span className="t-foot">{t('placementHint', { i: i + 1, n: qs.length })}</span>
         <h1 className="t-title">{q.prompt}</h1>
         <QuestionView key={q.id} q={q} value={value} onChange={setValue} reveal={null} />
-        <p className="t-cap m-0">{t('placementNote')}</p>
         <button className="btn btn-primary" disabled={value === null || answer.isPending || finish.isPending} onClick={() => answer.mutate(value)}>
           {t('check')}
         </button>
         <button className="btn btn-plain" disabled={answer.isPending || finish.isPending} onClick={() => answer.mutate(null)}>
           {t('skip')}
+        </button>
+      </div>
+    </>
+  )
+}
+
+/** Antes del test: qué es, cuánto dura y que se puede saltar (antes se caía directamente en la primera pregunta) */
+function PlacementIntro({ onStart, onSkip, onBack, busy, beginner }: { onStart: () => void; onSkip: () => void; onBack: () => void; busy: boolean; beginner: boolean }) {
+  const t = useTranslations('onboarding')
+  return (
+    <>
+      <Head n={4} onBack={onBack} />
+      <div className="pad">
+        <h1 className="t-title">{t('placementTitle')}</h1>
+        <p className="t-body m-0">{t('placementIntro')}</p>
+        <ul className="t-body m-0 flex flex-col gap-1.5 pl-5">
+          <li>{t('placementPoint1')}</li>
+          <li>{t('placementPoint2')}</li>
+          <li>{t('placementPoint3')}</li>
+        </ul>
+        {beginner && <p className="t-foot m-0">{t('placementBeginner')}</p>}
+        <div className="flex-1" />
+        <button className="btn btn-primary" disabled={busy} onClick={onStart}>
+          {t('placementStart')}
+        </button>
+        <button className="btn btn-plain" disabled={busy} onClick={onSkip}>
+          {t('placementSkipAll')}
         </button>
       </div>
     </>
@@ -102,6 +128,7 @@ function Flow({ initialStep, initialDraft }: { initialStep: number; initialDraft
     return { day: day ? String(Number(day)) : '', month: m ? String(Number(m)) : '', year }
   })
   const [placement, setPlacement] = useState<PlacementFinishT | null>(null)
+  const [testing, setTesting] = useState(false)
 
   const save = useMutation({
     mutationFn: ({ n, patch }: { n: number; patch: Partial<OnboardingDraft> }) => api.saveOnboarding(n, patch),
@@ -193,6 +220,7 @@ function Flow({ initialStep, initialDraft }: { initialStep: number; initialDraft
         <Head n={3} onBack={back} />
         <div className="pad">
           <h1 className="t-title">{t('goalsTitle')}</h1>
+          <p className="t-cap m-0 -mt-1">{t('goalsHint')}</p>
           <div className="flex flex-wrap gap-2">
             {goals.map(g => {
               const on = d.goals.includes(g)
@@ -204,6 +232,7 @@ function Flow({ initialStep, initialDraft }: { initialStep: number; initialDraft
             })}
           </div>
           <h2 className="t-head m-0 mt-2">{t('dailyGoal')}</h2>
+          <p className="t-cap m-0 -mt-1">{t('dailyGoalNote')}</p>
           <div className="grid grid-cols-5 gap-2">
             {([5, 10, 15, 20, 30] as const).map(m => (
               <button key={m} className="opt flex-col gap-0 px-1.5 py-3 text-center" aria-pressed={d.dailyGoalMinutes === m} onClick={() => set({ dailyGoalMinutes: m })}>
@@ -221,12 +250,13 @@ function Flow({ initialStep, initialDraft }: { initialStep: number; initialDraft
   }
 
   if (step === 4) {
-    if (!placement) return <Placement onBack={back} onDone={setPlacement} onAlreadyDone={skipPlacement} />
+    if (!placement && !testing) return <PlacementIntro onBack={back} onStart={() => setTesting(true)} onSkip={skipPlacement} busy={save.isPending} beginner={d.experience === 'NONE'} />
+    if (!placement) return <Placement onBack={() => setTesting(false)} onDone={setPlacement} onAlreadyDone={skipPlacement} />
     return (
       <div className="pad min-h-dvh pt-10">
         <Lumi mood="CELEBRATE" size={64} skin={d.skinId} />
         <h1 className="t-large">{t('startAt', { unit: placement.startUnitTitle })}</h1>
-        <p className="t-body muted m-0">{t('placementScore', { correct: placement.correct, total: placement.total })}</p>
+        <p className="t-body muted m-0">{placement.correct === 0 ? t('placementZero') : t('placementScore', { correct: placement.correct, total: placement.total })}</p>
         {placement.skippedUnitTitles.length > 0 && <p className="t-body muted m-0">{t('skipped', { units: placement.skippedUnitTitles.join(', ') })}</p>}
         <div className="flex-1" />
         <button className="btn btn-primary" onClick={() => save.mutate({ n: 4, patch: {} })}>
@@ -270,11 +300,12 @@ function Flow({ initialStep, initialDraft }: { initialStep: number; initialDraft
 
   return (
     <>
-      <Head n={7} onBack={back} />
+      <Head n={6} onBack={back} />
       <div className="pad">
         <div className="card flex flex-col gap-1">
           <span className="t-foot">{t('balanceTitle')}</span>
           <span className="big">{money(10000, 'EUR', locale)}</span>
+          <span className="t-foot" style={{ color: 'var(--ink)' }}>{t('balanceNote')}</span>
           <span className="t-cap">{t('balancePremium', { amount: money(50000, 'EUR', locale) })}</span>
         </div>
         <div className="card flex flex-col gap-3">

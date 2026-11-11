@@ -7,10 +7,10 @@ import { useEffect, useRef, useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
 import type { CoachTipT, AssetDetailT, AssetItemT, AssetTypeT, OrderResultT, OrderSideT, OrderTypeT, PositionT, RegionT } from '@/shared/contract'
 import { tickerOf } from '@/shared/ticker'
-import { arrowPct, countdown, money, num, pct, qty as fmtQty, signedMoney, toNum, withSymbol } from '@/shared/format'
+import { arrowPct, money, num, pct, qty as fmtQty, signedMoney, toNum, withSymbol } from '@/shared/format'
 import { api, ApiFailure, type AssetFilter, type OrderInput } from '../api'
 import { ProChart } from '../chart/pro-chart'
-import { useLang, useMe, usePortfolio, useRefreshAll } from '../hooks'
+import { useLang, useMe, usePortfolio, useRefreshAll, useSettings } from '../hooks'
 import { useToast } from '../providers'
 import { Donut, LineChart, Sparkline } from '../ui/charts'
 import { GlyphTile } from '../play/glyph'
@@ -18,8 +18,9 @@ import { Gem, Icon } from '../ui/icons'
 import { Disclaimer, ErrorState, PageSkeleton, Seg, Sheet, TopBar } from '../ui/kit'
 import { BadgeArt } from '../ui/badge'
 import { Lumi, stageOf } from '../ui/lumi'
-import { AssetBadge, AssetRow, assetHref, currencySymbol, decimalsFor, flagOf, fmtAssetPrice, Live, MarketSeg, useStatus, useUnit } from './market-ui'
-import { CompanyFacts, IdeasTeaser, MarketWindow } from './market-extra'
+import { AssetBadge, AssetRow, assetHref, currencySymbol, decimalsFor, flagOf, fmtAssetPrice, Live, MarketSeg, useUnit } from './market-ui'
+import { IdeasTeaser, MarketWindow } from './market-extra'
+import { AboutAsset, AssetFacts, PriceStatus } from './market-info'
 import { ReportButton } from '../report-button'
 import { AssetMission } from '../missions'
 import { JournalLink, OrderReason } from '../journal'
@@ -370,40 +371,22 @@ function FacetSelect({ label, value, onChange, options, render }: { label: strin
 }
 
 // ── Ficha de activo ──────────────────────────────────────
-function Stat({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <div className="flex min-w-0 flex-col gap-0.5">
-      <span className="t-cap">{label}</span>
-      <b className="text-[15px] leading-5 tabular-nums [overflow-wrap:anywhere]">{children}</b>
-    </div>
-  )
-}
-
-/** Barra de rango (mínimo–máximo) con la posición del precio actual */
-function RangeBar({ low, high, value, fmt, label }: { low: number; high: number; value: number; fmt: (v: number) => string; label: string }) {
-  const p = high > low ? Math.min(1, Math.max(0, (value - low) / (high - low))) : 0.5
-  return (
-    <div className="flex flex-col gap-1">
-      <span className="t-cap">{label}</span>
-      <div className="relative h-1.5 rounded-full" style={{ background: 'var(--fill)' }} role="img" aria-label={`${label}: ${fmt(low)} – ${fmt(high)}`}>
-        <span className="absolute top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full" style={{ left: `${p * 100}%`, background: 'var(--ink)' }} />
-      </div>
-      <div className="t-cap flex justify-between tabular-nums">
-        <span>{fmt(low)}</span>
-        <span>{fmt(high)}</span>
-      </div>
-    </div>
-  )
-}
-
 export function Asset({ symbol }: { symbol: string }) {
   const t = useTranslations('market')
   const locale = useLang()
   const toast = useToast()
-  const status = useStatus()
   const unit = useUnit()
   const refresh = useRefreshAll()
-  const { data: a, isError, refetch } = useQuery({ queryKey: ['asset', symbol], queryFn: () => api.asset(symbol), refetchInterval: q => (q.state.data && !q.state.data.isOpen ? 60_000 : 5_000) })
+  // Precio en directo: cada 10 s con el mercado abierto y cada 2 min cerrado, solo con la pestaña a la vista
+  // (React Query no refresca en segundo plano). La moneda sale de los ajustes ya cargados: no se piden en cada refresco.
+  const settings = useSettings()
+  const currency = settings.data?.currency === 'USD' ? 'USD' : 'EUR'
+  const { data: a, isError, refetch } = useQuery({
+    queryKey: ['asset', symbol, currency],
+    queryFn: () => api.assetIn(symbol, currency),
+    enabled: !settings.isPending,
+    refetchInterval: q => (q.state.data && !q.state.data.isOpen ? 120_000 : 10_000),
+  })
   const { data: pf } = usePortfolio()
   const { data: watch } = useQuery({ queryKey: ['watchlist'], queryFn: api.watchlist })
   const follow = useMutation({ mutationFn: () => api.toggleWatch(symbol), onSuccess: w => (refresh(), toast(w.includes(symbol) ? t('following') : t('unfollowed'))) })
@@ -419,8 +402,6 @@ export function Asset({ symbol }: { symbol: string }) {
   const tradable = a.type !== 'INDEX'
   const price = toNum(a.price)
   const dec = decimalsFor(a.type, price)
-  const fmt = (v: number) => fmtAssetPrice({ ...a, price: String(v) }, locale)
-  const compact = (v: number) => new Intl.NumberFormat(locale, { notation: 'compact', maximumFractionDigits: 2 }).format(v)
   return (
     <>
       <TopBar
@@ -442,9 +423,8 @@ export function Asset({ symbol }: { symbol: string }) {
           <AssetBadge a={a} size={48} />
           <div className="min-w-0 flex-1">
             <span className="t-foot block">
-              {flagOf(a.country)} {a.ticker} · {status(a)}
-              {a.closesAt && ` · ${t('closesIn', { time: countdown(a.closesAt) })}`}
-              {a.opensAt && ` · ${t('opensIn', { time: countdown(a.opensAt) })}`}
+              {/* Abierto o cerrado, horario y retraso: debajo del precio (PriceStatus) */}
+              {flagOf(a.country)} {a.ticker} · {a.type === 'CRYPTO' ? t('crypto247') : a.type === 'FX' ? t('fx') : a.type === 'COMMODITY' ? t('commodity') : a.exchangeName}
             </span>
             <h1 className="t-title [overflow-wrap:anywhere]">{a.name}</h1>
           </div>
@@ -458,43 +438,17 @@ export function Asset({ symbol }: { symbol: string }) {
             {num(Math.abs(toNum(a.change)), locale, dec)} ({pct(a.changePct, locale)}) {t('today')}
           </span>
         </div>
-        {a.currency !== 'EUR' && a.type !== 'FX' && a.type !== 'INDEX' && <span className="t-foot -mt-2">≈ {fmtAssetPrice({ price: a.priceInUserCurrency, currency: 'EUR', type: a.type }, locale)}</span>}
+        {a.currency !== currency && a.type !== 'FX' && a.type !== 'INDEX' && <span className="t-foot -mt-2">≈ {fmtAssetPrice({ price: a.priceInUserCurrency, currency, type: a.type }, locale)}</span>}
+        <PriceStatus a={a} />
         {a.stale && <div className="banner">{t('staleAsset')}</div>}
         <AssetMission symbol={a.symbol} />
 
-        <ProChart symbol={a.symbol} decimals={dec} up={up} live={price} />
+        <ProChart symbol={a.symbol} decimals={dec} up={up} live={price} liveAt={a.asOf} open={a.isOpen} tz={a.timezone} />
 
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
           <div className="flex min-w-0 flex-col gap-3">
-            <div className="card flex min-w-0 flex-col gap-3.5">
-              <b className="t-head">{t('keyData')}</b>
-              <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3">
-                <Stat label={t('prevClose')}>{fmt(a.prevClose)}</Stat>
-                {a.volume !== null && a.type !== 'FX' && <Stat label={t('volume')}>{compact(a.volume)}</Stat>}
-                <Stat label={t('currencyLabel')}>
-                  {a.type === 'INDEX' ? t('points') : `${a.currency} (${currencySymbol(a.currency, locale)})`}
-                </Stat>
-                <Stat label={t('exchangeLabel')}>{a.type === 'CRYPTO' ? t('crypto247') : a.exchangeName}</Stat>
-                {a.country && a.type !== 'CRYPTO' && a.type !== 'FX' && <Stat label={t('countryLabel')}>{`${a.country}`}</Stat>}
-                {a.sector && <Stat label={t('sectorLabel')}>{a.sector}</Stat>}
-                <Stat label={t('delayLabel')}>{a.delayedMinutes ? t('delayed', { n: a.delayedMinutes }) : t('realtime')}</Stat>
-                <Stat label={t('timezoneLabel')}>{a.timezone.split('/').pop()?.replace('_', ' ')}</Stat>
-              </div>
-              {a.dayLow !== null && a.dayHigh !== null && <RangeBar label={t('dayRange')} low={a.dayLow} high={a.dayHigh} value={price} fmt={fmt} />}
-              {a.low52 !== null && a.high52 !== null && <RangeBar label={t('range52')} low={a.low52} high={a.high52} value={price} fmt={fmt} />}
-              {a.indices.length > 0 && (
-                <div className="flex flex-wrap items-center gap-1.5">
-                  <span className="t-cap">{t('partOf')}</span>
-                  {a.indices.map(ix => (
-                    <Link key={ix} href={exploreHref({ index: ix })} className="chip pointer-coarse:min-h-11" style={{ background: 'var(--fill)' }}>
-                      {ix}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-            {/* Capitalización, PER, dividendo, BPA y beta: se cargan aparte, sin frenar la ficha */}
-            <CompanyFacts a={a} />
+            {/* Lo esencial a la vista y el resto plegado; cada dato con su «¿Qué significa?» */}
+            <AssetFacts a={a} />
           </div>
           <div className="flex min-w-0 flex-col gap-3">
             {pos ? (
@@ -528,10 +482,7 @@ export function Asset({ symbol }: { symbol: string }) {
             ) : (
               <div className="card t-foot">{tradable ? t('noPosition', { name: a.name }) : t('indexNote')}</div>
             )}
-            <div className="card">
-              <b className="t-head">{t('about')}</b>
-              <p className="t-foot m-0 mt-1">{a.description}</p>
-            </div>
+            <AboutAsset a={a} />
           </div>
         </div>
         <Disclaimer />

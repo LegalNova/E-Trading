@@ -150,7 +150,219 @@
       "blockButton": "Bloquejar",
       "confirmBlock": "Bloquejar {email}? Es tancaran les sessions i no podrà entrar.",
       "blockedDone": "Compte bloquejat",
-      "blockNote": "No cancel·la la subscripció d’Stripe: si paga, gestiona-ho també a Stripe."
+      "blockNote": "No cancel·la la subscripció d’Stripe: si paga, gestiona-ho també a Stripe.",
+      "account": "Compte"
+    }
+  },
+  "admin3": {
+    "tabs": {
+      "messages": "Missatges"
+    },
+    "glance": {
+      "title": "D’un cop d’ull",
+      "failed": "No s’han pogut carregar les dades.",
+      "users": "Persones",
+      "guests": "{n} com a convidat",
+      "new": "Altes en 24 h",
+      "new7d": "{n} en 7 dies",
+      "active": "Actives avui",
+      "active7d": "{n} en 7 dies",
+      "plans": "Amb Plus o Max",
+      "plansHint": "Plus {plus} · Max {max} · {stripe} paguen",
+      "reports": "Avisos d’errors",
+      "messages": "Missatges (7 dies)",
+      "messagesRead": "{n} llegits",
+      "messagesNone": "Cap enviat",
+      "blocked": "{n, plural, one {# compte bloquejat} other {# comptes bloquejats}}",
+      "recent": "Últimes altes",
+      "onboarding": "benvinguda a mitges",
+      "welcomed": "Ja li has escrit",
+      "welcome": "Donar-li la benvinguda",
+      "noRecent": "Encara no hi ha altes."
+    },
+    "grant": {
+      "title": "Repartir",
+      "lead": "Diners virtuals, XP, gemmes, vides, protectors o ratxa. Queda a l’auditoria.",
+      "what": "Què vols donar",
+      "kinds": {
+        "CASH": "Diners virtuals",
+        "XP": "XP",
+        "GEMS": "Gemmes",
+        "LIVES": "Vides",
+        "FREEZES": "Protectors",
+        "STREAK": "Ratxa"
+      },
+      "now": "Ara té",
+      "noPortfolio": "encara sense cartera",
+      "level": "nivell {n}",
+      "streakNow": "{n} dies · millor {best}",
+      "direction": "Donar o treure",
+      "give": "Donar",
+      "take": "Treure",
+      "amount": {
+        "CASH": "Import en euros virtuals",
+        "XP": "XP per donar",
+        "GEMS": "Gemmes per donar",
+        "FREEZES": "Protectors per donar",
+        "STREAK": "Dies de ratxa"
+      },
+      "limit": {
+        "CASH": "Fins a 1.000.000 € de cop. Treure: com a molt el que tingui en efectiu.",
+        "XP": "D’1 a 100.000 XP.",
+        "GEMS": "D’1 a 10.000 gemmes.",
+        "FREEZES": "Pot tenir-ne fins a 10 en total.",
+        "STREAK": "De 0 a 3.650 dies. Comptarà com si ahir hagués fet servir l’app."
+      },
+      "cashNote": "Són diners de la simulació, no reals. No compten com a rendibilitat a la lliga.",
+      "league": "Que també compti a la lliga d’aquesta setmana",
+      "leagueOn": "Compte: comptarà a la lliga d’aquesta setmana i el farà pujar posicions davant de gent que ho ha guanyat jugant.",
+      "leagueOff": "No compta a la lliga: només puja la seva XP i el seu nivell.",
+      "streakNote": "Els dies perduts queden com a protegits al seu calendari.",
+      "reason": "Motiu (opcional, només el veu l’equip)",
+      "notify": "Avisar-lo amb un missatge de l’equip",
+      "notifyPlaceholder": "Text propi (opcional). Fes servir '{nom}' per posar el seu nom.",
+      "notifyText": "Text del missatge",
+      "notifyHint": "Si el deixes buit, li arriba en el seu idioma un missatge com: «{example}»",
+      "noLinks": "Sense enllaços ni HTML: escriu només text.",
+      "notice": {
+        "CASH": "L’equip d’E-Trading t’ha regalat {n} virtuals per a la teva cartera.",
+        "CASH_NEG": "Hem ajustat la teva cartera virtual: {n} menys en efectiu.",
+        "XP": "L’equip d’E-Trading t’ha regalat {n} XP.",
+        "GEMS": "L’equip d’E-Trading t’ha regalat {n} gemmes.",
+        "LIVES": "T’hem omplert les vides perquè continuïs aprenent.",
+        "FREEZES": "T’hem regalat {n} protectors de ratxa.",
+        "STREAK": "T’hem retornat la ratxa: {n} dies."
+      },
+      "confirm": {
+        "CASH": "Donar {n} virtuals a {email}?",
+        "CASH_NEG": "Treure {n} virtuals de l’efectiu de {email}?",
+        "XP": "Donar {n} XP a {email}?",
+        "GEMS": "Donar {n} gemmes a {email}?",
+        "LIVES": "Omplir les vides de {email}?",
+        "FREEZES": "Donar {n} protectors de ratxa a {email}?",
+        "STREAK": "Posar la ratxa de {email} a {n} dies?"
+      },
+      "confirmLeague": "Comptarà a la lliga d’aquesta setmana.",
+      "confirmNotify": "Li arribarà un missatge de l’equip.",
+      "working": "Desant…",
+      "button": {
+        "CASH": "Donar diners",
+        "CASH_NEG": "Treure diners",
+        "XP": "Donar XP",
+        "GEMS": "Donar gemmes",
+        "LIVES": "Omplir les vides",
+        "FREEZES": "Donar protectors",
+        "STREAK": "Posar la ratxa"
+      },
+      "done": "Fet",
+      "doneNotified": "Fet. Li hem enviat el missatge.",
+      "failed": "Alguna cosa no ha anat bé. Torna-ho a provar."
+    },
+    "compose": {
+      "replace": "Vols canviar el text que has escrit per la plantilla?",
+      "templates": "Plantilles",
+      "tpl": {
+        "welcome": "Benvinguda",
+        "comeback": "Que torni",
+        "congrats": "Felicitar",
+        "thanks": "Gràcies per la seva opinió",
+        "BLANK": "En blanc"
+      },
+      "tplNote": "Les plantilles surten en {lang}. Les pots canviar abans d’enviar.",
+      "lang": {
+        "es": "castellà",
+        "ca": "català",
+        "en": "anglès"
+      },
+      "title": "Títol (opcional)",
+      "text": "Missatge",
+      "noLinks": "Sense enllaços: treu-los per poder enviar.",
+      "noHtml": "Sense HTML: escriu només text.",
+      "nameHint": "'{nom}' es canvia pel seu nom.",
+      "preview": "Així el veurà",
+      "sending": "Enviant…"
+    },
+    "user": {
+      "title": "Missatge de l’equip",
+      "lead": "Li surt com una finestra la propera vegada que obri l’app i queda als seus Avisos. {devices, plural, =0 {No té avisos al mòbil.} one {Té avisos al mòbil: també n’hi arriba un (si és bona hora).} other {Té avisos en # dispositius: també n’hi arriba un (si és bona hora).}}",
+      "blocked": "El compte està bloquejat: no veurà missatges.",
+      "sent": "Missatge enviat",
+      "failed": "No s’ha pogut enviar. Torna-ho a provar.",
+      "send": "Enviar el missatge",
+      "confirm": "Enviar aquest missatge a {email}?",
+      "history": "Missatges que ha rebut",
+      "read": "Llegit · {date}",
+      "unread": "Sense llegir",
+      "batch": "enviament a diversos"
+    },
+    "messages": {
+      "title": "Missatges de l’equip",
+      "what": "Escriu a diverses persones alhora. Els surt com una finestra en obrir l’app, queda als seus Avisos i, si tenen els avisos del mòbil, els n’arriba un (mai de 22:00 a 9:00 ni més de 6 al dia). Per escriure a una sola persona, obre-la a Usuaris.",
+      "viewOnly": "Estàs veient l’app com un altre usuari: no es pot enviar res.",
+      "toMany": "Enviar a diversos",
+      "who": "A qui",
+      "kind": {
+        "NEW": "Nous",
+        "INACTIVE": "Sense activitat",
+        "ALL": "Tothom"
+      },
+      "daysNew": "Registrats en els últims",
+      "daysInactive": "Sense activitat des de fa",
+      "days": "dies",
+      "lang": "Idioma",
+      "langs": {
+        "all": "Tots els idiomes",
+        "es": "Castellà",
+        "ca": "Català",
+        "en": "Anglès"
+      },
+      "badDays": "Tria entre 1 i 365 dies.",
+      "counting": "Comptant…",
+      "failed": "Alguna cosa no ha anat bé. Torna-ho a provar.",
+      "count": "{n, plural, =0 {Ningú amb aquests filtres} one {# persona} other {# persones}}",
+      "countHint": "{push} amb avisos al mòbil. No inclou l’equip ni els comptes bloquejats.",
+      "sample": "Per exemple: {names}",
+      "send": "{n, plural, one {Enviar a # persona} other {Enviar a # persones}}",
+      "sendNone": "No hi ha ningú a qui enviar",
+      "confirm1": "Enviaràs aquest missatge a {n, plural, one {# persona} other {# persones}} ({who}). Continuar?",
+      "confirm2": "Última comprovació: {n, plural, one {# persona el rebrà} other {# persones el rebran}} i no es pot desfer. Enviar ara?",
+      "sent": "{n, plural, one {Enviat a # persona} other {Enviat a # persones}}",
+      "limits": "Límits: un enviament a diversos cada 2 minuts i 5 al dia com a molt.",
+      "history": "Historial",
+      "noTitle": "Sense títol",
+      "readOf": "{read} de {n} llegits",
+      "read": "Llegit",
+      "unread": "Sense llegir",
+      "many": "{n, plural, one {# persona} other {# persones}}",
+      "aud": {
+        "ALL": "tothom",
+        "NEW": "registrats en {n} dies",
+        "INACTIVE": "sense activitat des de fa {n} dies"
+      },
+      "viaGrant": "amb un regal",
+      "deleted": "compte esborrat",
+      "openUser": "Obrir la fitxa de {email}",
+      "empty": "Encara no s’ha enviat cap missatge."
+    },
+    "card": {
+      "team": "De l’equip",
+      "guest": "Convidat",
+      "level": "Nivell",
+      "streak": "Ratxa",
+      "best": "millor {n}",
+      "lessons": "Classes fetes",
+      "accuracy": "{n} % d’encerts",
+      "trades": "Operacions",
+      "positions": "{n} posicions",
+      "cash": "Efectiu",
+      "gems": "Gemmes",
+      "lives": "{n} vides",
+      "write": "Escriure-li",
+      "since": "Alta: {created} · Últim dia actiu: {active} · Última sessió: {seen} · Idioma: {lang} · Origen: {source}",
+      "controls": "Comandaments",
+      "detail": "Detall",
+      "login": "Accés",
+      "freezes": "Protectors de ratxa"
     }
   }
 }

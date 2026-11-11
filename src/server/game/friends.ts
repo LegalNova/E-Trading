@@ -1,7 +1,7 @@
 import 'server-only'
 // Ligas de amigos (gratis para todos). Se crean con un nombre y se entra con un código de 8 caracteres
 // (o con el enlace /liga/unirse/<código>, que además lleva el código de invitación de quien lo comparte).
-//  · Como mucho 5 ligas creadas por persona, 10 ligas en las que estar y 50 miembros por liga.
+//  · Como mucho 5 ligas creadas por persona, 10 ligas en las que estar y 100 miembros por liga (friend-leagues.ts).
 //  · Dos clasificaciones: «Esta semana» (los puntos de la liga general, league.ts) y «Temporada del mes»
 //    (rentabilidad del mes con las mismas reglas). Arriba, el campeón del mes anterior.
 //  · Nadie ve una liga a la que no pertenece: para todo lo demás, una liga ajena «no existe» (404).
@@ -226,14 +226,15 @@ export const leagueDetail = (id: string) =>
 
     // Esta semana: puntos de la liga general; quien aún no ha entrado esta semana, con 0
     const week = await weekStandingsOf(c.tx, ids)
-    const scored = new Map(week.rows.map(r => [r.userId, r]))
+    const scored = new Map(week.rows.map((r, i) => [r.userId, { ...r, pos: i }]))
+    // Mismo orden que la liga general (con sus desempates); quien aún no ha entrado esta semana, detrás
     const weekRows: FriendWeekRowT[] = members
       .map(m => {
         const r = scored.get(m.user.id)
-        return { key: keyOf(m.user.id), rank: 0, displayName: nameOf(m.user), weeklyXp: r?.weeklyXp ?? 0, tradePts: r?.tradePts ?? 0, riskAdjReturnPct: r?.riskAdjReturnPct ?? 0, score: r?.score ?? 0, isMe: m.user.id === me }
+        return { key: keyOf(m.user.id), rank: 0, displayName: nameOf(m.user), weeklyXp: r?.weeklyXp ?? 0, tradePts: r?.tradePts ?? 0, riskAdjReturnPct: r?.riskAdjReturnPct ?? 0, score: r?.score ?? 0, isMe: m.user.id === me, pos: r?.pos ?? Number.MAX_SAFE_INTEGER }
       })
-      .sort((a, b) => b.score - a.score || b.weeklyXp - a.weeklyXp)
-      .map((r, i) => ({ ...r, rank: i + 1 }))
+      .sort((a, b) => b.score - a.score || b.weeklyXp - a.weeklyXp || a.pos - b.pos)
+      .map((r, i) => ({ key: r.key, rank: i + 1, displayName: r.displayName, weeklyXp: r.weeklyXp, tradePts: r.tradePts, riskAdjReturnPct: r.riskAdjReturnPct, score: r.score, isMe: r.isMe }))
 
     // Temporada del mes: misma rentabilidad = mismo puesto
     const season = await seasonOf(c.tx, ids)

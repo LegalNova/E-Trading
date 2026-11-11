@@ -11,6 +11,7 @@ import { useToast } from '../providers'
 import { Icon } from '../ui/icons'
 import { PageSkeleton, Seg } from '../ui/kit'
 import { BillingAdmin } from './admin-billing'
+import { Grants, TeamMessageCard } from './admin3'
 
 const KINDS: ReportKind[] = ['CONTENT', 'BUG', 'MARKET', 'OTHER']
 const PLAN = { FREE: 'Free', PLUS: 'Plus', PREMIUM: 'Max' } as const
@@ -218,16 +219,22 @@ export function PanelCards({ onOpenUser, onOpenReports }: { onOpenUser: (id: str
   )
 }
 
-// ── Ficha de usuario: plan, regalos y mandos ─────────────
+// ── Ficha de usuario: mandos (repartir, mensaje, plan y cuenta) ─
 export function UserControls({ u }: { u: AdminUserDetail }) {
   const t = useTranslations('admin2.user')
   const viewing = !!useSession().data?.viewAs
   return (
     <div className="flex flex-col gap-3">
       {viewing && <div className="banner">{t('viewOnly')}</div>}
-      <div className="grid gap-3 lg:grid-cols-2">
-        <GiftCard u={u} disabled={viewing} />
-        <Commands u={u} disabled={viewing} />
+      <div className="grid items-start gap-3 lg:grid-cols-2">
+        <div className="flex min-w-0 flex-col gap-3">
+          <Grants u={u} disabled={viewing} />
+          <GiftCard u={u} disabled={viewing} />
+        </div>
+        <div className="flex min-w-0 flex-col gap-3">
+          <TeamMessageCard u={u} disabled={viewing} />
+          <Commands u={u} disabled={viewing} />
+        </div>
       </div>
     </div>
   )
@@ -359,18 +366,9 @@ function Commands({ u, disabled }: { u: AdminUserDetail; disabled: boolean }) {
   const t = useTranslations('admin2.user')
   const date = useDate()
   const c = u.admin2
-  const [gems, setGems] = useState('100')
-  const [streak, setStreak] = useState(String(u.game?.bestStreak || 1))
   const [reason, setReason] = useState('')
-  const lives = useAdminAction(u.id, () => api.adminRefillLives(u.id), t('livesDone'))
-  const giveGems = useAdminAction(u.id, (n: number) => api.adminGiveGems(u.id, n), t('gemsDone'))
-  const setStreakM = useAdminAction(u.id, (n: number) => api.adminRestoreStreak(u.id, n), t('streakDone'))
   const block = useAdminAction(u.id, (b: boolean) => api.adminSetBlocked(u.id, b, b ? reason.trim() : undefined), c.blockedAt ? t('unblocked') : t('blockedDone'))
   const welcome = useAdminAction(u.id, () => api.adminResendWelcome(u.id), t('welcomeDone'))
-  const gemsN = Number(gems)
-  const streakN = Number(streak)
-  const okGems = Number.isInteger(gemsN) && gemsN >= 1 && gemsN <= 10_000
-  const okStreak = Number.isInteger(streakN) && streakN >= 0 && streakN <= 3650
   const ask = (msg: string, go: () => void) => {
     if (confirm(msg)) go()
   }
@@ -378,33 +376,7 @@ function Commands({ u, disabled }: { u: AdminUserDetail; disabled: boolean }) {
   const line = { borderColor: 'var(--line)' }
   return (
     <div className="card flex flex-col">
-      <b className="mb-1">{t('title')}</b>
-      <div className={row} style={line}>
-        <span className="min-w-0 flex-1">
-          {t('lives')} <span className="t-cap">· {t('now', { n: u.game?.lives ?? '—' })}</span>
-        </span>
-        <button className="btn btn-secondary btn-sm" disabled={disabled || lives.isPending} onClick={() => ask(t('confirmLives', { email: u.email }), () => lives.mutate(undefined))}>
-          {t('refill')}
-        </button>
-      </div>
-      <div className={row} style={line}>
-        <span className="min-w-0 flex-1">
-          {t('gems')} <span className="t-cap">· {t('now', { n: u.game?.gems ?? '—' })}</span>
-        </span>
-        <input className="input h-10 w-24" type="number" inputMode="numeric" min={1} max={10000} value={gems} onChange={e => setGems(e.target.value)} aria-label={t('gemsAmount')} aria-invalid={!okGems} />
-        <button className="btn btn-secondary btn-sm" disabled={disabled || !okGems || giveGems.isPending} onClick={() => ask(t('confirmGems', { n: gemsN, email: u.email }), () => giveGems.mutate(gemsN))}>
-          {t('give')}
-        </button>
-      </div>
-      <div className={row} style={line}>
-        <span className="min-w-0 flex-1">
-          {t('streak')} <span className="t-cap">· {t('streakNow', { n: u.game?.streak ?? 0, best: u.game?.bestStreak ?? 0 })}</span>
-        </span>
-        <input className="input h-10 w-24" type="number" inputMode="numeric" min={0} max={3650} value={streak} onChange={e => setStreak(e.target.value)} aria-label={t('streakDays')} aria-invalid={!okStreak} />
-        <button className="btn btn-secondary btn-sm" disabled={disabled || !okStreak || setStreakM.isPending} onClick={() => ask(t('confirmStreak', { n: streakN, email: u.email }), () => setStreakM.mutate(streakN))}>
-          {t('setStreak')}
-        </button>
-      </div>
+      <b className="mb-1">{t('account')}</b>
       <div className={row} style={line}>
         <span className="min-w-0 flex-1">{t('welcome')}</span>
         <button className="btn btn-secondary btn-sm" disabled={disabled || welcome.isPending} onClick={() => ask(t('confirmWelcome', { email: u.email }), () => welcome.mutate(undefined))}>
@@ -428,7 +400,7 @@ function Commands({ u, disabled }: { u: AdminUserDetail; disabled: boolean }) {
           <>
             <span>{t('block')}</span>
             <div className="flex flex-wrap gap-2">
-              <input className="input h-10 min-w-[160px] flex-1" value={reason} onChange={e => setReason(e.target.value)} maxLength={300} placeholder={t('blockReason')} aria-label={t('blockReason')} />
+              <input className="input h-11 min-w-[160px] flex-1" value={reason} onChange={e => setReason(e.target.value)} maxLength={300} placeholder={t('blockReason')} aria-label={t('blockReason')} />
               <button className="btn btn-danger btn-sm" disabled={disabled || reason.trim().length < 3 || block.isPending} onClick={() => ask(t('confirmBlock', { email: u.email }), () => block.mutate(true))}>
                 {t('blockButton')}
               </button>

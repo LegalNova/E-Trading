@@ -136,6 +136,8 @@ export const httpApi: Api = {
     return get(`/market/assets/${encodeURIComponent(symbol)}?currency=${s?.currency ?? 'EUR'}`)
   },
   candles: (symbol, interval) => get(`/market/assets/${encodeURIComponent(symbol)}/candles?interval=${interval}`),
+  chart: (symbol, interval) => get(`/market/assets/${encodeURIComponent(symbol)}/chart?interval=${interval}`),
+  assetIn: (symbol, currency) => get(`/market/assets/${encodeURIComponent(symbol)}?currency=${currency}`),
   searchAssets: f => {
     const p = new URLSearchParams()
     for (const [k, v] of Object.entries(f)) if (v !== undefined && v !== '') p.set(k, String(v))
@@ -236,11 +238,22 @@ export const httpApi: Api = {
   adminRestoreStreak: (id, streak) => post(`/admin/users/${encodeURIComponent(id)}/streak`, { streak }),
   adminSetBlocked: (id, blocked, reason) => post(`/admin/users/${encodeURIComponent(id)}/block`, { blocked, reason }),
   adminResendWelcome: id => post(`/admin/users/${encodeURIComponent(id)}/welcome`),
+  adminGlance: () => get('/admin/glance'),
+  adminGrant: (id, g) => post(`/admin/users/${encodeURIComponent(id)}/grant`, g),
+  adminSendMessage: (id, m) => post(`/admin/users/${encodeURIComponent(id)}/message`, m),
+  adminMessages: () => get('/admin/messages'),
+  adminAudience: a => get(`/admin/messages/audience?${new URLSearchParams({ kind: a.kind, ...(a.days ? { days: String(a.days) } : {}), ...(a.lang ? { lang: a.lang } : {}) })}`),
+  adminBroadcast: (a, m) => post('/admin/messages/broadcast', { audience: a, ...m }),
+  teamPending: () => get('/team-messages/pending'),
+  teamMessage: id => get(`/team-messages/${encodeURIComponent(id)}`),
+  teamSeen: id => post(`/team-messages/${encodeURIComponent(id)}/seen`),
   myGifts: () => get('/gifts'),
   buyGift: g => post('/gifts', g),
   confirmGift: sessionId => post('/gifts/confirm', { sessionId }),
   giftByCode: code => get(`/gifts/code/${encodeURIComponent(code)}`),
   redeemGift: code => post(`/gifts/code/${encodeURIComponent(code)}/redeem`),
+  daily: () => get('/daily'),
+  openDaily: () => post('/daily/open'),
   trackEvent: e => {
     // Mientras un admin «ve como» otro usuario no se registra nada
     if (viewingAs()) return

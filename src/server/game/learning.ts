@@ -118,7 +118,7 @@ export async function lesson(user: User, tx: Tx, id: string, peek = false): Prom
   if (st.requiresPremium && !peek) await trackDaily(tx, user.id, 'paywall', { lessonId: id })
   if (st.requiresPremium) fail(403, 'FEATURE_LOCKED', st.requiredPlan === 'PLUS' ? 'Esta lección está en el plan Plus' : 'Esta lección está en el plan Max')
   // Las lecciones se abren en orden: no se puede saltar a una bloqueada desde la URL
-  if (st.status === 'LOCKED') fail(403, 'LESSON_LOCKED', 'Termina la lección anterior para abrir esta')
+  if (st.status === 'LOCKED') fail(403, 'LESSON_LOCKED', 'Termina la clase anterior para abrir esta')
   if (!peek) await trackLessonStart(tx, user.id, id)
   const loc = currentLocale()
   const e = engineT(loc)
@@ -149,7 +149,7 @@ export const checkStep = (lessonId: string, stepId: string, idx: number) =>
     // Como la propia lección: una clase cerrada por plan o aún bloqueada no se puede corregir desde fuera
     const st = (await pathOf(c.tx, c.user)).units.flatMap(u => u.lessons).find(x => x.id === lessonId)
     if (st?.requiresPremium) fail(403, 'FEATURE_LOCKED', st.requiredPlan === 'PLUS' ? 'Esta lección está en el plan Plus' : 'Esta lección está en el plan Max')
-    if (st?.status === 'LOCKED') fail(403, 'LESSON_LOCKED', 'Termina la lección anterior para abrir esta')
+    if (st?.status === 'LOCKED') fail(403, 'LESSON_LOCKED', 'Termina la clase anterior para abrir esta')
     const correct = idx === s.solution
     return { correct, explanation: correct ? s.ok : s.ko }
   })
@@ -306,13 +306,16 @@ export const quizFinish = (attemptId: string) =>
     const lessonXp = l && stars > 0 && !prev ? l.xp : 0
     // Repetir el mismo quiz da XP solo 2 veces al día (no se puede «granjear» XP)
     // (cuenta todos los intentos terminados, aprobados o no: suspender a propósito tampoco da XP infinita)
+    // El primer aprobado de una clase siempre da su XP (antes, quien había suspendido dos veces aprobaba a la tercera sin XP)
     const repeatsToday = at.lessonId ? await c.tx.quizAttempt.count({ where: { userId: c.user.id, lessonId: at.lessonId, finishedAt: { gte: new Date(Date.now() - 86_400_000) } } }) : 0
-    const farming = at.mode === 'REVIEW' ? false : repeatsToday >= 2
+    const farming = at.mode === 'REVIEW' || lessonXp > 0 ? false : repeatsToday >= 2
     const base = farming ? 0 : correct * 10 + lessonXp
     const perfectBonus = perfect && !farming ? Math.round(correct * 10 * 0.5) : 0
     const speedBonus = avgMs < 15_000 && correct > 0 && !farming ? Math.round(base * 0.1) : 0
     addXp(c, base + perfectBonus + speedBonus)
-    const extendedToday = await markActive(c)
+    // La racha cuenta con el quiz terminado (todas las preguntas respondidas): empezar y cerrar uno vacío no es un día activo
+    const complete = at.answers.length >= at.questionIds.length
+    const extendedToday = complete ? await markActive(c) : false
     if (at.lessonId && stars > 0) {
       await c.tx.lessonProgress.upsert({
         where: { userId_lessonId: { userId: c.user.id, lessonId: at.lessonId } },
@@ -346,11 +349,11 @@ async function finishTestOut(c: Ctx, at: Awaited<ReturnType<typeof attemptOf>>):
   const passed = !!unit && total > 0 && correct / total >= TESTOUT_PASS
   // Como en las clases: repetir la prueba da XP solo 2 veces al día
   const repeatsToday = await c.tx.quizAttempt.count({ where: { userId: c.user.id, lessonId: at.lessonId, finishedAt: { gte: new Date(Date.now() - 86_400_000) } } })
-  const farming = repeatsToday >= 2
+  const farming = repeatsToday >= 2 && !passed // superarla da su XP aunque sea al tercer intento (solo se supera una vez)
   const base = farming ? 0 : correct * 10 + (passed ? 50 : 0)
   if (passed) await c.tx.lessonProgress.createMany({ data: testOutLessons(unit!).map(l => ({ userId: c.user.id, lessonId: l.id, stars: 0, skipped: true })), skipDuplicates: true })
   addXp(c, base)
-  const extendedToday = await markActive(c)
+  const extendedToday = at.answers.length >= total ? await markActive(c) : false
   c.fx.companion = passed ? lumi(c, 'QUIZ_PERFECT') : lumi(c, 'QUIZ_WRONG')
   const eff = await endFx(c)
   const out: QuizFinishT = { ...eff, correct, total, stars: passed ? 3 : 0, durationMs: Date.now() - at.startedAt.getTime(), xpBreakdown: { base, perfectBonus: 0, speedBonus: 0, total: base }, streak: { days: c.g.streak, extendedToday } }

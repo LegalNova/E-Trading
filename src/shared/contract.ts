@@ -268,9 +268,32 @@ export const AssetDetail = AssetItem.extend({
   indices: z.array(z.string()),
   exchangeName: z.string(),
   timezone: z.string(),
+  /** (+) Tipo de horario: 'session' (abre y cierra cada día), 'always' (cripto, 24/7), 'fx' (domingo 23:00 – viernes 23:00, Madrid), 'futures' (CME, casi 24 h de domingo a viernes) */
+  hoursKind: z.enum(['session', 'always', 'fx', 'futures']).optional(),
+  /** (+) Tramos de la sesión de hoy (o de la próxima si hoy ya no abre), como instantes reales; en Asia, dos tramos por la pausa de mediodía */
+  sessionParts: z.array(z.object({ open: iso, close: iso })).optional(),
 })
 /** t: segundos UNIX (formato de los gráficos); v: volumen */
 export const Candle = z.object({ t: z.number(), o: z.number(), h: z.number(), l: z.number(), c: z.number(), v: z.number() })
+/** (+) Gráfico de la ficha: velas de un intervalo y el periodo que se enseña al abrirlo */
+export const ChartData = z.object({
+  symbol: z.string(),
+  interval: z.enum(['1m', '5m', '15m', '1h', '1d', '1w', '1M']),
+  /** t en «hora de pared» (para el eje del gráfico, que se pinta como si fuera UTC): en 1m–1h, la hora de Madrid;
+   *  en 1d, 1w y 1M, la fecha de la bolsa a las 00:00. Las anteriores a `viewFrom` sirven para los indicadores. */
+  candles: z.array(Candle),
+  /** t de la primera vela del periodo que se ve al abrir (null si no hay velas) */
+  viewFrom: z.number().nullable(),
+  /** 'sessions' = sesiones de bolsa (1m: la última; 5m: las 5 últimas); 'rolling' = horas seguidas (cripto, divisas, futuros) */
+  window: z.enum(['sessions', 'rolling']),
+  /** El activo tiene menos historia que el periodo del botón (p. ej. salió a bolsa hace poco) */
+  partial: z.boolean(),
+  /** Yahoo no tiene velas de este intervalo para este activo (o devolvió otro): no se enseña otro en su lugar */
+  unavailable: z.boolean(),
+  /** Instantes reales (ISO) de la primera vela a la vista y de la última */
+  firstAt: iso.nullable(),
+  lastAt: iso.nullable(),
+})
 /** (+) Portada del mercado */
 export const MarketOverview = z.object({
   indices: z.array(AssetItem),
@@ -299,6 +322,28 @@ export const Fundamentals = z.object({
   /** ETF: comisión anual en % */
   ter: z.number().nullable(),
   updatedAt: iso.nullable(),
+  /** (+) Perfil (Yahoo, ficha completa). null = aún no se ha pedido o no hay */
+  profile: z
+    .object({
+      /** Clave de Yahoo del sector y de la industria (para traducirlas) y nombre de la industria en inglés */
+      sectorKey: z.string().nullable(),
+      industryKey: z.string().nullable(),
+      industry: z.string().nullable(),
+      /** Descripción de Yahoo, en inglés: unas frases */
+      summary: z.string().nullable(),
+      employees: z.number().nullable(),
+      avgVolume: z.number().nullable(),
+      /** Fondos: patrimonio en `currency`, gestora, categoría (en inglés) y fecha de creación (AAAA-MM-DD) */
+      totalAssets: z.number().nullable(),
+      family: z.string().nullable(),
+      category: z.string().nullable(),
+      inception: z.string().nullable(),
+      /** Cripto: monedas en circulación y máximo histórico en `currency` */
+      circulating: z.number().nullable(),
+      allTimeHigh: z.number().nullable(),
+    })
+    .nullable()
+    .optional(),
 })
 /** (+) Ideas para estudiar: listas con un criterio transparente (nunca recomendaciones) */
 export const IdeaListId = z.enum(['drops', 'dividend', 'lowPe', 'ibex', 'etf'])
@@ -423,7 +468,7 @@ export const TradingStats = z.object({
   maxDrawdownPct: z.number(),
   insights: z.array(z.string()),
 })
-export const NotificationType = z.enum(['STREAK_RISK', 'ORDER_FILLED', 'PRICE_ALERT', 'ACHIEVEMENT', 'LEAGUE_RESULT', 'NEW_LESSON'])
+export const NotificationType = z.enum(['STREAK_RISK', 'ORDER_FILLED', 'PRICE_ALERT', 'ACHIEVEMENT', 'LEAGUE_RESULT', 'NEW_LESSON', 'TEAM'])
 export const Notification = z.object({
   id: z.string(),
   type: NotificationType,
@@ -506,6 +551,7 @@ export type AssetPageT = z.infer<typeof AssetPage>
 export type AssetItemT = z.infer<typeof AssetItem>
 export type AssetDetailT = z.infer<typeof AssetDetail>
 export type CandleT = z.infer<typeof Candle>
+export type ChartDataT = z.infer<typeof ChartData>
 export type FundamentalsT = z.infer<typeof Fundamentals>
 export type IdeaListIdT = z.infer<typeof IdeaListId>
 export type IdeaItemT = z.infer<typeof IdeaItem>
@@ -628,3 +674,29 @@ export type StudentStatusT = z.infer<typeof StudentStatus>
 export type GroupPriceT = z.infer<typeof GroupPrice>
 export type GroupViewT = z.infer<typeof GroupView>
 export type GroupPeekT = z.infer<typeof GroupPeek>
+
+// ── Regalo diario (30 días) y cofre semanal ──────────────
+export const DailyKind = z.enum(['CASH', 'GEMS', 'LIVES', 'FREEZE', 'XP'])
+export const DailyItem = z.object({ kind: DailyKind, amount: z.number() })
+/** Premio dado de verdad: `from` dice qué era si se cambió por gemas (vidas llenas, protectores al máximo) */
+export const DailyGranted = DailyItem.extend({ from: DailyKind.optional() })
+export const DailyDay = z.object({ n: z.number(), status: z.enum(['OPENED', 'TODAY', 'MISSED', 'UPCOMING']), big: z.boolean(), items: z.array(DailyItem) })
+export const Daily = z.object({
+  phase: z.enum(['CALENDAR', 'CHEST']),
+  /** Día de hoy en el calendario (1…30; más de 30 cuando ya toca el cofre) */
+  day: z.number(),
+  total: z.number(),
+  todayOpened: z.boolean(),
+  /** false mientras un admin «ve como» */
+  canOpen: z.boolean(),
+  days: z.array(DailyDay),
+  tomorrow: DailyDay.nullable(),
+  chest: z.object({ opened: z.boolean(), items: z.array(DailyItem) }).nullable(),
+})
+export const DailyOpen = z.object({ kind: z.enum(['DAY', 'CHEST']), day: z.number(), items: z.array(DailyGranted), daily: Daily, effects: Effects })
+export type DailyKindT = z.infer<typeof DailyKind>
+export type DailyItemT = z.infer<typeof DailyItem>
+export type DailyGrantedT = z.infer<typeof DailyGranted>
+export type DailyDayT = z.infer<typeof DailyDay>
+export type DailyT = z.infer<typeof Daily>
+export type DailyOpenT = z.infer<typeof DailyOpen>

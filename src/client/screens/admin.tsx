@@ -15,11 +15,12 @@ import { LineChart } from '../ui/charts'
 import { Icon, Logo } from '../ui/icons'
 import { PageSkeleton, Seg } from '../ui/kit'
 import { PanelCards, ReportsTab, UserControls, useOpenReports } from './admin2'
+import { Glance, MessagesTab } from './admin3'
 
-type Tab = 'metrics' | 'reports' | 'feedback' | 'lessons' | 'users' | 'campaigns' | 'content' | 'settings' | 'audit'
+type Tab = 'metrics' | 'reports' | 'messages' | 'feedback' | 'lessons' | 'users' | 'campaigns' | 'content' | 'settings' | 'audit'
 const dash = (v: number | null | undefined, locale: string, suffix = '') => (v === null || v === undefined ? '—' : num(v, locale, 0) + suffix)
 
-function Metrics({ onOpenUser, onOpenReports }: { onOpenUser: (id: string) => void; onOpenReports: () => void }) {
+function Metrics({ onOpenUser, onOpenReports, onOpenMessages }: { onOpenUser: (id: string) => void; onOpenReports: () => void; onOpenMessages: () => void }) {
   const t = useTranslations('admin')
   const locale = useLang()
   const [range, setRange] = useState<'7d' | '30d' | '90d'>('30d')
@@ -31,6 +32,8 @@ function Metrics({ onOpenUser, onOpenReports }: { onOpenUser: (id: string) => vo
         <h2 className="t-title">{t('tabs.metrics')}</h2>
         <Seg label={t('range')} className="w-[200px]" value={range} onChange={setRange} options={(['7d', '30d', '90d'] as const).map(r => ({ value: r, label: r.replace('d', ' d') }))} />
       </div>
+      {/* Lo importante de un vistazo: personas, actividad, planes, avisos, mensajes y las últimas altas */}
+      <Glance onOpenUser={onOpenUser} onOpenReports={onOpenReports} onOpenMessages={onOpenMessages} />
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         <div className="stat">
           <span className="t-cap">{t('dauMau')}</span>
@@ -279,6 +282,7 @@ function UserList({ onOpen }: { onOpen: (id: string) => void }) {
 
 function UserDetail({ id, onBack }: { id: string; onBack: () => void }) {
   const t = useTranslations('admin.userCard')
+  const t3 = useTranslations('admin3.card')
   const locale = useLang()
   const qc = useQueryClient()
   const router = useRouter()
@@ -304,25 +308,68 @@ function UserDetail({ id, onBack }: { id: string; onBack: () => void }) {
   )
   if (error) return <p className="err">{error.message}</p>
   if (!u) return <PageSkeleton />
+  const euro = (v: number) => (locale === 'en' ? `€${num(v, locale, 2)}` : `${num(v, locale, 2)} €`)
+  const chips: [string, React.CSSProperties?][] = [
+    [PLAN_NAME[u.plan as keyof typeof PLAN_NAME] ?? u.plan, { background: u.plan === 'FREE' ? 'var(--fill)' : 'color-mix(in srgb, var(--brand) 15%, transparent)', color: 'var(--ink)' }],
+    ...(u.blocked ? [[t('blocked'), { background: 'var(--down)', color: '#fff' }] as [string, React.CSSProperties]] : []),
+    ...(u.isTeam ? [[t3('team')] as [string]] : []),
+    ...(u.guest ? [[t3('guest')] as [string]] : []),
+    ...(!u.emailVerified && !u.guest ? [[t('notVerified')] as [string]] : []),
+    ...(!u.onboarding.done ? [[t('step', { n: u.onboarding.step ?? 0 })] as [string]] : []),
+  ]
+  const stats: [string, string, string?][] = [
+    [t3('level'), u.game ? String(u.game.level) : '—', u.game ? `${num(u.game.xp, locale, 0)} XP` : undefined],
+    [t3('streak'), u.game ? String(u.game.streak) : '—', u.game ? t3('best', { n: u.game.bestStreak }) : undefined],
+    [t3('lessons'), String(u.learning.lessonsDone), u.learning.accuracy === null ? undefined : t3('accuracy', { n: u.learning.accuracy })],
+    [t3('trades'), String(u.market.trades), t3('positions', { n: u.market.positions })],
+    [t3('cash'), u.market.cash === null ? '—' : euro(u.market.cash)],
+    [t3('gems'), u.game ? num(u.game.gems, locale, 0) : '—', u.game ? t3('lives', { n: u.game.lives }) : undefined],
+  ]
   return (
     <div className="flex flex-col gap-3">
-      <button className="link flex items-center gap-1 self-start text-sm" onClick={onBack}>
+      <button className="link flex min-h-11 items-center gap-1 self-start text-sm" onClick={onBack}>
         <Icon name="back" size={16} /> {t('back')}
       </button>
-      <div className="card flex flex-wrap items-center gap-3">
-        <div className="min-w-0 flex-1">
-          <h2 className="t-title m-0">{u.name}</h2>
-          <span className="t-foot">{u.email}</span>
-          <div className="t-cap">
-            {PLAN_NAME[u.plan as keyof typeof PLAN_NAME] ?? u.plan} · {u.login.join(' + ') || '—'} · {u.emailVerified ? t('verified') : t('notVerified')} · {t('source')}: {u.source ?? '—'}
+      {/* 1 · Quién es, su plan y su actividad */}
+      <div className="card flex flex-col gap-3">
+        <div className="flex flex-wrap items-start gap-3">
+          <div className="min-w-0 flex-1">
+            <h2 className="t-title m-0 break-words">{u.name}</h2>
+            <span className="t-foot break-all">{u.email}</span>
+            <div className="mt-1.5 flex flex-wrap gap-1.5">
+              {chips.map(([label, style]) => (
+                <span key={label} className="chip" style={style ?? { background: 'var(--fill)' }}>
+                  {label}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <a href="#mensaje" className="btn btn-secondary w-auto">
+              <Icon name="chat" size={18} /> {t3('write')}
+            </a>
+            <button className="btn btn-primary w-auto" onClick={() => view.mutate()} disabled={view.isPending}>
+              <Icon name="user" size={18} /> {t('viewAs')}
+            </button>
           </div>
         </div>
-        <button className="btn btn-primary w-auto" onClick={() => view.mutate()} disabled={view.isPending}>
-          <Icon name="user" size={18} /> {t('viewAs')}
-        </button>
+        <p className="t-cap m-0">{t3('since', { created: date(u.createdAt), active: u.lastActive ?? '—', seen: date(u.lastSeen), lang: u.locale, source: u.source ?? '—' })}</p>
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
+          {stats.map(([k, v, hint]) => (
+            <div key={k} className="rounded-xl px-3 py-2" style={{ background: 'var(--fill)' }}>
+              <div className="t-cap">{k}</div>
+              <b className="text-lg tabular-nums">{v}</b>
+              {hint && <div className="t-cap">{hint}</div>}
+            </div>
+          ))}
+        </div>
+        <p className="t-cap m-0">{t('viewAsNote')}</p>
       </div>
-      <p className="t-cap m-0">{t('viewAsNote')}</p>
+      {/* 2 · Mandos */}
+      <h3 className="t-head m-0 mt-1">{t3('controls')}</h3>
       <UserControls u={u} />
+      {/* 3 · Detalle técnico */}
+      <h3 className="t-head m-0 mt-1">{t3('detail')}</h3>
       <div className="grid gap-3 lg:grid-cols-3">
         <div className="card flex flex-col">
           <b className="mb-1">{t('account')}</b>
@@ -330,6 +377,7 @@ function UserDetail({ id, onBack }: { id: string; onBack: () => void }) {
           {kv(t('lastSeen'), date(u.lastSeen))}
           {kv(t('lastActive'), u.lastActive)}
           {kv(t('language'), u.locale)}
+          {kv(t3('login'), u.login.join(' + ') || '—')}
           {kv(t('onboarding'), u.onboarding.done ? t('done') : t('step', { n: u.onboarding.step ?? 0 }))}
           {kv(t('experience'), u.onboarding.experience)}
           {kv(t('goals'), u.onboarding.goals.join(', ') || '—')}
@@ -345,6 +393,7 @@ function UserDetail({ id, onBack }: { id: string; onBack: () => void }) {
               {kv('XP', num(u.game.xp, locale, 0))}
               {kv(t('weekXp'), num(u.game.weekXp, locale, 0))}
               {kv(t('streak'), `${u.game.streak} · ${t('best')} ${u.game.bestStreak}`)}
+              {kv(t3('freezes'), u.game.freezes ?? '—')}
               {kv(t('division'), u.game.division)}
               {kv(t('gems'), u.game.gems)}
               {kv(t('lives'), u.game.lives)}
@@ -360,7 +409,7 @@ function UserDetail({ id, onBack }: { id: string; onBack: () => void }) {
           {kv(t('lessonsDone'), u.learning.lessonsDone)}
           {kv(t('accuracy'), u.learning.accuracy === null ? '—' : `${u.learning.accuracy} % · ${u.learning.answers}`)}
           <b className="mt-3 mb-1">{t('market')}</b>
-          {kv(t('cash'), u.market.cash === null ? '—' : num(u.market.cash, locale, 2) + ' €')}
+          {kv(t('cash'), u.market.cash === null ? '—' : euro(u.market.cash))}
           {kv(t('positions'), u.market.positions)}
           {kv(t('trades'), u.market.trades)}
         </div>
@@ -375,12 +424,14 @@ function UserDetail({ id, onBack }: { id: string; onBack: () => void }) {
           {u.market.last.length ? u.market.last.map((x, k) => <div key={k}>{kv(`${x.side} ${x.symbol}${x.status !== 'FILLED' ? ' · ' + x.status : ''}`, `${num(x.total, locale, 2)} € · ${date(x.at)}`)}</div>) : <span className="t-cap">—</span>}
         </div>
       </div>
-      <div className="card flex flex-col">
-        <b className="mb-1">{t('events')}</b>
+      <details className="card flex flex-col">
+        <summary className="flex min-h-11 cursor-pointer items-center font-bold">
+          {t('events')} <span className="t-cap ml-2">({u.events.length})</span>
+        </summary>
         {u.events.length ? (
           u.events.map((e, k) => (
             <div key={k} className="kv">
-              <span>
+              <span className="min-w-0 break-all">
                 <b>{e.name}</b> <span className="t-cap">{e.props ? JSON.stringify(e.props).slice(0, 80) : ''}</span>
               </span>
               <span>{date(e.at)}</span>
@@ -389,7 +440,7 @@ function UserDetail({ id, onBack }: { id: string; onBack: () => void }) {
         ) : (
           <span className="t-cap">—</span>
         )}
-      </div>
+      </details>
     </div>
   )
 }
@@ -695,11 +746,12 @@ export function Admin() {
   const t = useTranslations('admin')
   const { ready } = useGuard('admin')
   const t2 = useTranslations('admin2')
+  const t3 = useTranslations('admin3')
   const [tab, setTab] = useState<Tab>('metrics')
   const [userSel, setUserSel] = useState<string | null>(null)
   const open = useOpenReports()
   if (!ready) return <PageSkeleton />
-  const tabs: Tab[] = ['metrics', 'reports', 'feedback', 'lessons', 'users', 'campaigns', 'content', 'settings', 'audit']
+  const tabs: Tab[] = ['metrics', 'reports', 'messages', 'feedback', 'lessons', 'users', 'campaigns', 'content', 'settings', 'audit']
   const openUser = (id: string) => (setUserSel(id), setTab('users'), window.scrollTo(0, 0))
   // Abre la app con la capa de datos encendida
   const openWithData = () => {
@@ -717,7 +769,7 @@ export function Admin() {
         </Link>
         {tabs.map(k => (
           <button key={k} onClick={() => (setTab(k), k === 'users' && setUserSel(null))} aria-current={tab === k ? 'page' : undefined} className="flex flex-none items-center gap-1.5 rounded-xl px-3 py-2 text-left text-sm font-bold" style={tab === k ? { background: 'color-mix(in srgb, var(--brand) 12%, transparent)', color: 'var(--brand-ink)' } : { color: 'var(--ink-2)' }}>
-            {k === 'reports' ? t2('tabs.reports') : t(`tabs.${k}`)}
+            {k === 'reports' ? t2('tabs.reports') : k === 'messages' ? t3('tabs.messages') : t(`tabs.${k}`)}
             {k === 'reports' && !!open && (
               <span className="rounded-full px-1.5 text-[11px] leading-[18px] tabular-nums" style={{ background: 'var(--amber, #f5a623)', color: '#1d1d1f' }} aria-label={t2('tabs.openBadge', { n: open })}>
                 {open}
@@ -735,7 +787,7 @@ export function Admin() {
           <Icon name="back" size={16} /> {t('backToApp')}
         </Link>
       </aside>
-      <main className="mx-auto w-full max-w-[1100px] flex-1 p-4 md:p-8">{tab === 'metrics' ? <Metrics onOpenUser={openUser} onOpenReports={() => setTab('reports')} /> : tab === 'reports' ? <ReportsTab onOpenUser={openUser} /> : tab === 'feedback' ? <FeedbackTab /> : tab === 'lessons' ? <Lessons /> : tab === 'campaigns' ? <Campaigns /> : tab === 'content' ? <Content /> : tab === 'users' ? <Users sel={userSel} setSel={setUserSel} /> : tab === 'settings' ? <GlobalSettings /> : <Audit />}</main>
+      <main className="mx-auto w-full max-w-[1100px] flex-1 p-4 md:p-8">{tab === 'metrics' ? <Metrics onOpenUser={openUser} onOpenReports={() => setTab('reports')} onOpenMessages={() => setTab('messages')} /> : tab === 'reports' ? <ReportsTab onOpenUser={openUser} /> : tab === 'messages' ? <MessagesTab onOpenUser={openUser} /> : tab === 'feedback' ? <FeedbackTab /> : tab === 'lessons' ? <Lessons /> : tab === 'campaigns' ? <Campaigns /> : tab === 'content' ? <Content /> : tab === 'users' ? <Users sel={userSel} setSel={setUserSel} /> : tab === 'settings' ? <GlobalSettings /> : <Audit />}</main>
     </div>
   )
 }

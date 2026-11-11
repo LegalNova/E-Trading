@@ -9,6 +9,7 @@ import { LIVE } from '../billing/stripe'
 import { viewAs } from '../view'
 import { fail, levelOf, LIVES_MAX, notify, type Tx } from './core'
 import { grantPlan, revokeGift } from './grants'
+import { cleanMessage, createTeamMessage, langOf as msgLang, pushLater, TEAM_PREFIX } from './messages'
 
 /** Siempre quien ha iniciado sesión de verdad: también mientras «ve como» otro usuario */
 export async function requireAdmin() {
@@ -185,7 +186,9 @@ export async function userDetail(id: string) {
     lastActive: g?.lastActiveDay ?? null,
     blocked: !!u!.blockedAt,
     onboarding: { done: u!.onboardingStep === null, step: u!.onboardingStep, experience: ob.experience ?? null, goals: ob.goals ?? [], minutes: ob.dailyGoalMinutes ?? null },
-    game: g ? { xp: g.xp, level: levelOf(g.xp).n, streak: g.streak, bestStreak: g.bestStreak, gems: g.gems, lives: g.lives, division: g.division, weekXp: g.weekXp } : null,
+    game: g ? { xp: g.xp, level: levelOf(g.xp).n, streak: g.streak, bestStreak: g.bestStreak, gems: g.gems, lives: g.lives, division: g.division, weekXp: g.weekXp, freezes: g.freezes } : null,
+    guest: !!u!.isAnonymous,
+    isTeam: u!.role === 'ADMIN',
     learning: { lessonsDone, accuracy: total ? Math.round((right / total) * 100) : null, answers: total, last: lessons.map(l => ({ id: l.lessonId, title: LESSON[l.lessonId]?.title ?? l.lessonId, skipped: l.skipped, stars: l.stars, at: l.completedAt.toISOString() })) },
     market: { cash: u!.portfolio ? Number(u!.portfolio.cash) : null, positions, trades: tradeCount, last: trades.map(t => ({ symbol: t.symbol, side: t.side, total: Number(t.total), status: t.status, at: t.createdAt.toISOString() })) },
     tutorQuestions: tutor,
@@ -307,13 +310,13 @@ const PLAN_NAME = { FREE: 'Free', PLUS: 'Plus', PREMIUM: 'Max' } as const
 type Lang = 'es' | 'ca' | 'en'
 const langOf = (l: string): Lang => (l === 'ca' || l === 'en' ? l : 'es')
 
-async function adminAction() {
+export async function adminAction() {
   const a = await requireAdmin()
   if (viewAs()) fail(403, 'VIEW_ONLY', 'Sal de «ver como» para usar los mandos del admin')
   return a
 }
 
-async function lockTarget(tx: Tx, id: string) {
+export async function lockTarget(tx: Tx, id: string) {
   await tx.$queryRawUnsafe(`SELECT 1 FROM "${DB_SCHEMA}"."user" WHERE "id" = $1 FOR UPDATE`, id)
   const u = await tx.user.findUnique({ where: { id } })
   if (!u) fail(404, 'NOT_FOUND', 'Usuario no encontrado')
@@ -327,18 +330,20 @@ async function lockGame(tx: Tx, userId: string) {
   return tx.gameState.findUniqueOrThrow({ where: { userId } })
 }
 
-type Admin = Awaited<ReturnType<typeof requireAdmin>>
-const audited = (tx: Tx, a: Admin, action: string, userId: string, before: object, after: object) =>
+export type Admin = Awaited<ReturnType<typeof requireAdmin>>
+export const audited = (tx: Tx, a: Admin, action: string, userId: string, before: object, after: object) =>
   tx.auditLog.create({ data: { actorId: a.id, actor: a.email, action, entity: 'User', entityId: userId, before, after } })
 
-const run = <T>(fn: (tx: Tx) => Promise<T>) => db.$transaction(fn, { timeout: 20_000, maxWait: 10_000 })
+export const run = <T>(fn: (tx: Tx) => Promise<T>) => db.$transaction(fn, { timeout: 20_000, maxWait: 10_000 })
 
 /** Plan, suscripción y regalos de una persona, para la ficha */
 async function controlsOf(userId: string) {
-  const [u, sub, gifts] = await Promise.all([
+  const [u, sub, gifts, messages, pushDevices] = await Promise.all([
     db.user.findUnique({ where: { id: userId }, select: { plan: true, role: true, blockedAt: true, blockReason: true } }),
     db.subscription.findUnique({ where: { userId } }),
     db.gift.findMany({ where: { source: { in: ['ADMIN', 'PURCHASE'] }, redeemedById: userId }, orderBy: { createdAt: 'desc' }, take: 10 }),
+    db.notification.findMany({ where: { userId, id: { startsWith: TEAM_PREFIX } }, orderBy: { createdAt: 'desc' }, take: 20 }),
+    db.pushSub.count({ where: { userId } }),
   ])
   const now = Date.now()
   const stripe = !!sub?.stripeSubId && LIVE.includes(sub.status)
@@ -352,6 +357,9 @@ async function controlsOf(userId: string) {
     subscription: sub ? { status: sub.status, interval: sub.interval, stripe, until: until?.toISOString() ?? null } : null,
     giftRunning,
     gifts: gifts.map(g => ({ id: g.id, tier: g.tier as 'PLUS' | 'PREMIUM', days: g.days, by: g.buyerEmail, reason: g.source === 'PURCHASE' ? null : g.message, status: g.status, at: (g.redeemedAt ?? g.createdAt).toISOString(), source: g.source as 'ADMIN' | 'PURCHASE' })),
+    // Mensajes del equipo que ha recibido (y si los ha leído) y si tiene avisos en el móvil
+    messages: messages.map(m => ({ id: m.id, title: m.title, text: m.body, at: m.createdAt.toISOString(), readAt: m.readAt?.toISOString() ?? null, batch: m.id.startsWith(`${TEAM_PREFIX}b`) })),
+    pushDevices,
   }
 }
 
@@ -438,24 +446,136 @@ export async function restoreStreak(userId: string, streak: number) {
   return run(async tx => {
     const u = await lockTarget(tx, userId)
     const g = await lockGame(tx, userId)
-    const today = dayOf(Date.now(), u.timezone)
-    const yesterday = addDays(today, -1)
-    const last = g.lastActiveDay
-    const data: { streak: number; bestStreak: number; lastActiveDay?: string } = { streak, bestStreak: Math.max(g.bestStreak, streak) }
-    if (streak > 0 && (!last || last < yesterday)) {
-      data.lastActiveDay = yesterday
-      const from = last && last > addDays(today, -60) ? addDays(last, 1) : addDays(today, -Math.min(streak, 60))
-      const days: string[] = []
-      for (let d = from; d <= yesterday; d = addDays(d, 1)) days.push(d)
-      if (days.length) {
-        await tx.streakDay.updateMany({ where: { userId, day: { in: days }, status: 'MISSED' }, data: { status: 'FROZEN' } })
-        await tx.streakDay.createMany({ data: days.map(day => ({ userId, day, status: 'FROZEN' })), skipDuplicates: true })
-      }
-    }
-    await tx.gameState.update({ where: { userId }, data })
-    await audited(tx, a, 'STREAK_RESTORED', userId, { streak: g.streak, bestStreak: g.bestStreak, lastActiveDay: last }, data)
+    const data = await applyStreak(tx, u, g, streak)
+    await audited(tx, a, 'STREAK_RESTORED', userId, { streak: g.streak, bestStreak: g.bestStreak, lastActiveDay: g.lastActiveDay }, data)
     return { streak }
   })
+}
+
+async function applyStreak(tx: Tx, u: { id: string; timezone: string }, g: { streak: number; bestStreak: number; lastActiveDay: string | null }, streak: number) {
+  const userId = u.id
+  const today = dayOf(Date.now(), u.timezone)
+  const yesterday = addDays(today, -1)
+  const last = g.lastActiveDay
+  const data: { streak: number; bestStreak: number; lastActiveDay?: string } = { streak, bestStreak: Math.max(g.bestStreak, streak) }
+  if (streak > 0 && (!last || last < yesterday)) {
+    data.lastActiveDay = yesterday
+    const from = last && last > addDays(today, -60) ? addDays(last, 1) : addDays(today, -Math.min(streak, 60))
+    const days: string[] = []
+    for (let d = from; d <= yesterday; d = addDays(d, 1)) days.push(d)
+    if (days.length) {
+      await tx.streakDay.updateMany({ where: { userId, day: { in: days }, status: 'MISSED' }, data: { status: 'FROZEN' } })
+      await tx.streakDay.createMany({ data: days.map(day => ({ userId, day, status: 'FROZEN' })), skipDuplicates: true })
+    }
+  }
+  await tx.gameState.update({ where: { userId }, data })
+  return data
+}
+
+// ── Repartir: dinero virtual, XP, gemas, vidas, protectores y racha ─────
+// Una sola ruta para todo. Cada acción va con motivo opcional (solo lo ve el equipo), queda en la auditoría
+// con el antes y el después y, si se pide, avisa a la persona con un mensaje del equipo.
+export const GRANT_KINDS = ['CASH', 'XP', 'GEMS', 'LIVES', 'FREEZES', 'STREAK'] as const
+export type GrantKind = (typeof GRANT_KINDS)[number]
+export interface GrantInput { kind: GrantKind; amount?: number; league?: boolean; reason?: string; notify?: boolean; title?: string; text?: string }
+
+export const CASH_MAX = 1_000_000
+export const XP_MAX = 100_000
+export const GEMS_MAX = 10_000
+export const FREEZES_CAP = 10
+
+const fmt = (v: number, lang: 'es' | 'ca' | 'en', unit = '') => {
+  const s = new Intl.NumberFormat(lang === 'en' ? 'en-GB' : lang === 'ca' ? 'ca-ES' : 'es-ES', { maximumFractionDigits: 2, minimumFractionDigits: Number.isInteger(v) ? 0 : 2, useGrouping: 'always' }).format(Math.abs(v))
+  return unit === '€' ? (lang === 'en' ? `€${s}` : `${s} €`) : s
+}
+
+/** Texto del aviso por defecto, en el idioma de la persona */
+function grantNotice(lang: 'es' | 'ca' | 'en', kind: GrantKind, n: number) {
+  const T = {
+    es: { gift: 'Un regalo del equipo', adjust: 'Ajuste de tu cartera', CASH: `Hola {nombre}, el equipo de E-Trading te ha regalado ${fmt(n, lang, '€')} virtuales para tu cartera. No es dinero real: es para que practiques sin miedo.`, CASH_NEG: `Hola {nombre}, hemos ajustado tu cartera virtual: ${fmt(n, lang, '€')} menos en efectivo. Si tienes cualquier duda, escríbenos.`, XP: `Hola {nombre}, el equipo de E-Trading te ha regalado ${fmt(n, lang)} XP. ¡Sigue así!`, GEMS: `Hola {nombre}, el equipo de E-Trading te ha regalado ${fmt(n, lang)} gemas.`, LIVES: 'Hola {nombre}, te hemos llenado las vidas para que sigas aprendiendo.', FREEZES: `Hola {nombre}, te hemos regalado ${n === 1 ? 'un protector' : `${fmt(n, lang)} protectores`} de racha: si un día no puedes entrar, tu racha sigue viva.`, STREAK: `Hola {nombre}, te hemos devuelto tu racha: ${fmt(n, lang)} ${n === 1 ? 'día' : 'días'}. ¡A por más!` },
+    ca: { gift: 'Un regal de l’equip', adjust: 'Ajust de la teva cartera', CASH: `Hola {nom}, l’equip d’E-Trading t’ha regalat ${fmt(n, lang, '€')} virtuals per a la teva cartera. No són diners reals: són perquè practiquis sense por.`, CASH_NEG: `Hola {nom}, hem ajustat la teva cartera virtual: ${fmt(n, lang, '€')} menys en efectiu. Si tens qualsevol dubte, escriu-nos.`, XP: `Hola {nom}, l’equip d’E-Trading t’ha regalat ${fmt(n, lang)} XP. Continua així!`, GEMS: `Hola {nom}, l’equip d’E-Trading t’ha regalat ${fmt(n, lang)} gemmes.`, LIVES: 'Hola {nom}, t’hem omplert les vides perquè continuïs aprenent.', FREEZES: `Hola {nom}, t’hem regalat ${n === 1 ? 'un protector' : `${fmt(n, lang)} protectors`} de ratxa: si un dia no pots entrar, la teva ratxa continua viva.`, STREAK: `Hola {nom}, t’hem retornat la ratxa: ${fmt(n, lang)} ${n === 1 ? 'dia' : 'dies'}. A per més!` },
+    en: { gift: 'A gift from the team', adjust: 'Portfolio adjustment', CASH: `Hi {name}, the E-Trading team has given you ${fmt(n, lang, '€')} in virtual money for your portfolio. It’s not real money: it’s there so you can practise without fear.`, CASH_NEG: `Hi {name}, we’ve adjusted your virtual portfolio: ${fmt(n, lang, '€')} less in cash. If you have any questions, write to us.`, XP: `Hi {name}, the E-Trading team has given you ${fmt(n, lang)} XP. Keep it up!`, GEMS: `Hi {name}, the E-Trading team has given you ${fmt(n, lang)} gems.`, LIVES: 'Hi {name}, we’ve refilled your lives so you can keep learning.', FREEZES: `Hi {name}, we’ve given you ${n === 1 ? 'a streak freeze' : `${fmt(n, lang)} streak freezes`}: if you miss a day, your streak stays alive.`, STREAK: `Hi {name}, we’ve restored your streak: ${fmt(n, lang)} ${n === 1 ? 'day' : 'days'}. Go for more!` },
+  }[lang]
+  const neg = kind === 'CASH' && n < 0
+  return { title: neg ? T.adjust : T.gift, text: neg ? T.CASH_NEG : T[kind] }
+}
+
+export async function grant(userId: string, input: GrantInput) {
+  const a = await adminAction()
+  const why = input.reason?.trim().slice(0, 200) || null
+  const k = input.kind
+  const raw = input.amount ?? 0
+  const amount = k === 'CASH' ? Math.round(raw * 100) / 100 : raw
+  // Topes: lo que el equipo puede repartir de una vez
+  if (k === 'CASH' && (!Number.isFinite(amount) || amount === 0 || Math.abs(amount) > CASH_MAX)) fail(422, 'VALIDATION_ERROR', 'Escribe un importe entre −1.000.000 € y 1.000.000 € (distinto de 0)')
+  if (k === 'XP' && (!Number.isInteger(amount) || amount < 1 || amount > XP_MAX)) fail(422, 'VALIDATION_ERROR', 'Elige entre 1 y 100.000 XP')
+  if (k === 'GEMS' && (!Number.isInteger(amount) || amount < 1 || amount > GEMS_MAX)) fail(422, 'VALIDATION_ERROR', 'Elige entre 1 y 10.000 gemas')
+  if (k === 'FREEZES' && (!Number.isInteger(amount) || amount < 1 || amount > FREEZES_CAP)) fail(422, 'VALIDATION_ERROR', `Elige entre 1 y ${FREEZES_CAP} protectores`)
+  if (k === 'STREAK' && (!Number.isInteger(amount) || amount < 0 || amount > 3650)) fail(422, 'VALIDATION_ERROR', 'Escribe un número entre 0 y 3.650')
+  // El texto propio del aviso se valida antes de tocar nada (sin enlaces ni HTML)
+  const custom = input.notify && input.text?.trim() ? cleanMessage(input.title, input.text) : null
+  const out = await run(async tx => {
+    const u = await lockTarget(tx, userId)
+    // El estado de juego bloqueado: las acciones del propio usuario (operar, comprar) esperan a que esto termine
+    const g = await lockGame(tx, userId)
+    let before: Record<string, unknown> = {}
+    let after: Record<string, unknown> = {}
+    let value: number
+    if (k === 'CASH') {
+      // giveCash (trading.ts): suma a la cartera y a su base de dinero regalado (no cuenta como rentabilidad) y apunta el flujo en la liga
+      const { giveCash, portfolioRow } = await import('./trading')
+      const cash = Number((await portfolioRow(tx, u)).cash)
+      if (cash + amount < 0) fail(409, 'INSUFFICIENT_FUNDS', `Solo tiene ${fmt(cash, 'es', '€')} en efectivo: no se le puede quitar más`)
+      if (cash + amount > 100_000_000) fail(422, 'VALIDATION_ERROR', 'Su efectivo pasaría de 100.000.000 €')
+      const moved = await giveCash(tx, u, amount)
+      const next = await tx.portfolio.findUniqueOrThrow({ where: { userId } })
+      before = { cash }
+      after = { cash: Number(next.cash), amount: moved }
+      value = Number(next.cash)
+    } else if (k === 'XP') {
+      const wk = weekOf(Date.now())
+      const data: { xp: number; weekKey?: string; weekXp?: number } = { xp: g.xp + amount }
+      // Solo si se marca: también suma en la liga de esta semana
+      if (input.league) Object.assign(data, { weekKey: wk, weekXp: (g.weekKey === wk ? g.weekXp : 0) + amount })
+      const next = await tx.gameState.update({ where: { userId }, data })
+      if (input.league) await tx.leagueMember.updateMany({ where: { weekKey: wk, userId, finalRank: null }, data: { xp: next.weekXp } })
+      before = { xp: g.xp, weekXp: g.weekXp, level: levelOf(g.xp).n }
+      after = { xp: next.xp, weekXp: next.weekXp, level: levelOf(next.xp).n, amount, league: !!input.league }
+      value = next.xp
+    } else if (k === 'GEMS') {
+      const next = await tx.gameState.update({ where: { userId }, data: { gems: { increment: amount } } })
+      before = { gems: g.gems }
+      after = { gems: next.gems, amount }
+      value = next.gems
+    } else if (k === 'LIVES') {
+      await tx.gameState.update({ where: { userId }, data: { lives: LIVES_MAX, livesUpdatedAt: new Date() } })
+      before = { lives: g.lives }
+      after = { lives: LIVES_MAX }
+      value = LIVES_MAX
+    } else if (k === 'FREEZES') {
+      if (g.freezes + amount > FREEZES_CAP) fail(409, 'CONFLICT', `Ya tiene ${g.freezes}: como mucho puede tener ${FREEZES_CAP}`)
+      const next = await tx.gameState.update({ where: { userId }, data: { freezes: { increment: amount } } })
+      before = { freezes: g.freezes }
+      after = { freezes: next.freezes, amount }
+      value = next.freezes
+    } else {
+      const data = await applyStreak(tx, u, g, amount)
+      before = { streak: g.streak, bestStreak: g.bestStreak, lastActiveDay: g.lastActiveDay }
+      after = { ...data }
+      value = amount
+    }
+    const ACTION: Record<GrantKind, string> = { CASH: amount < 0 ? 'CASH_REMOVED' : 'CASH_GIVEN', XP: 'XP_GIVEN', GEMS: 'GEMS_GIVEN', LIVES: 'LIVES_REFILLED', FREEZES: 'FREEZES_GIVEN', STREAK: 'STREAK_RESTORED' }
+    let sent: Awaited<ReturnType<typeof createTeamMessage>> | null = null
+    if (input.notify) {
+      const msg = custom ?? grantNotice(msgLang(u.locale), k, k === 'LIVES' ? LIVES_MAX : amount)
+      sent = await createTeamMessage(tx, u, msg)
+      await audited(tx, a, 'TEAM_MESSAGE', userId, {}, { messageId: sent.id, title: sent.title, text: sent.body, via: ACTION[k] })
+    }
+    await audited(tx, a, ACTION[k], userId, before, { ...after, reason: why, messageId: sent?.id ?? null })
+    return { kind: k, value, sent }
+  })
+  if (out.sent) pushLater([out.sent])
+  return { kind: out.kind, value: out.value, messageId: out.sent?.id ?? null }
 }
 
 /** Bloquea (con motivo) o desbloquea. Al bloquear se cierran sus sesiones abiertas */
@@ -514,4 +634,34 @@ export async function adminGifts() {
       const until = sub?.status === 'GIFT' ? sub.trialEndsAt : stripe || sub?.status === 'ACTIVE' ? sub.renewsAt : null
       return { id: r.id, userId: r.redeemedById!, name: u?.name || '—', email: u?.email ?? '—', tier: r.tier as 'PLUS' | 'PREMIUM', days: r.days, by: r.buyerEmail, reason: r.source === 'PURCHASE' ? null : r.message, at: (r.redeemedAt ?? r.createdAt).toISOString(), stripe, until: until?.toISOString() ?? null, source: r.source as 'ADMIN' | 'PURCHASE', plan: (u?.plan ?? 'FREE') as 'FREE' | 'PLUS' | 'PREMIUM' }
     })
+}
+
+/** De un vistazo (tarjeta principal del panel): personas, actividad, dinero, avisos y las últimas altas */
+export async function glance() {
+  await requireAdmin()
+  const today = dayOf()
+  const day = new Date(Date.now() - DAY_MS)
+  const week = new Date(Date.now() - 7 * DAY_MS)
+  const people = { role: 'USER' as const }
+  const [users, guests, new24h, new7d, activeToday, active7d, plus, max, stripe, blocked, openReports, sent7d, read7d, recent] = await Promise.all([
+    db.user.count({ where: people }),
+    db.user.count({ where: { ...people, isAnonymous: true } }),
+    db.user.count({ where: { ...people, createdAt: { gte: day } } }),
+    db.user.count({ where: { ...people, createdAt: { gte: week } } }),
+    db.streakDay.count({ where: { day: today, status: 'ACTIVE', user: people } }),
+    db.gameState.count({ where: { lastActiveDay: { gte: addDays(today, -6) }, user: people } }),
+    db.user.count({ where: { ...people, plan: 'PLUS' } }),
+    db.user.count({ where: { ...people, plan: 'PREMIUM' } }),
+    db.subscription.count({ where: { stripeSubId: { not: null }, status: { in: LIVE }, user: people } }),
+    db.user.count({ where: { ...people, blockedAt: { not: null } } }),
+    db.report.count({ where: { status: 'OPEN' } }),
+    db.notification.count({ where: { id: { startsWith: TEAM_PREFIX }, createdAt: { gte: week } } }),
+    db.notification.count({ where: { id: { startsWith: TEAM_PREFIX }, createdAt: { gte: week }, readAt: { not: null } } }),
+    db.user.findMany({ where: { ...people, OR: [{ isAnonymous: false }, { isAnonymous: null }] }, orderBy: { createdAt: 'desc' }, take: 6, select: { id: true, name: true, email: true, createdAt: true, onboardingStep: true, _count: { select: { notifications: { where: { id: { startsWith: TEAM_PREFIX } } } } } } }),
+  ])
+  return {
+    users, guests, new24h, new7d, activeToday, active7d, plus, max, stripe, blocked, openReports,
+    messages: { sent7d, read7d },
+    recent: recent.map(r => ({ id: r.id, name: r.name || '—', email: r.email, createdAt: r.createdAt.toISOString(), onboarded: r.onboardingStep === null, messaged: r._count.notifications > 0 })),
+  }
 }
