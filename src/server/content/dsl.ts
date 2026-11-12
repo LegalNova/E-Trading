@@ -265,9 +265,24 @@ export const scenario = (prompt: string, choices: [string, string][], best: numb
   return { type: 'SCENARIO', prompt, options: m.options, solution: m.answers[0], feedback: m.options.map(o => choices.find(c => c[0] === o)![1]), explanation }
 }
 /** Conversación con Lumi: sus mensajes y tus posibles respuestas [texto, lo que contesta Lumi] */
+/**
+ * Chat: una amiga te escribe con una duda y eliges qué contestarle. Lumi es siempre la profesora, nunca la alumna
+ * confundida (auditoría APP-15; decisión de Joan). Los enunciados antiguos dicen «¿Qué le contestas a Lumi?»: aquí se
+ * cambia «Lumi» por el nombre de quien pregunta (también en catalán e inglés, en translate.ts). Si el enunciado ya
+ * nombra a alguien («¿Qué le dices a Pablo?»), pregunta esa persona.
+ * El barajado de las opciones sigue saliendo del enunciado original: no cambia el orden ni las traducciones.
+ */
+const FRIENDS = ['Marta', 'Laura', 'Ana', 'Nora', 'Irene', 'Sara', 'Lucía', 'Paula'] as const
+export const chatFriend = (prompt: string, lines: string[]) => {
+  const named = /\ba ([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)\?$/.exec(prompt)?.[1]
+  return named && named !== 'Lumi' ? named : FRIENDS[hash(lines.join()) % FRIENDS.length]
+}
 export const chat = (lines: string[], prompt: string, replies: [string, string][], best: number, explanation: string): Q => {
   const m = mix(prompt + lines.join(), replies.map(r => r[0]), [best])
-  return { type: 'CHAT', prompt, options: m.options, solution: m.answers[0], feedback: m.options.map(o => replies.find(r => r[0] === o)![1]), explanation, meta: { lines } }
+  const from = chatFriend(prompt, lines)
+  // (el nombre sustituye a «Lumi» en todo lo que se lee en el chat: mensajes, respuestas y lo que contesta la amiga)
+  const named = (t: string) => t.replace(/\bLumi\b/g, from)
+  return { type: 'CHAT', prompt: named(prompt), options: m.options.map(named), solution: m.answers[0], feedback: m.options.map(o => named(replies.find(r => r[0] === o)![1])), explanation, meta: { lines: lines.map(named), from } }
 }
 /** Cálculo con respuesta numérica (margen relativo, 1 % por defecto) */
 export const num = (prompt: string, answer: number, unit: string, explanation: string, tolPct = 1): Q => ({ type: 'NUMBER', prompt, options: [], solution: answer, tol: tolPct / 100, explanation, meta: { unit } })

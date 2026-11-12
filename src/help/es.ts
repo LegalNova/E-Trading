@@ -20,7 +20,7 @@ export const es: HelpDoc = {
       id: 'empezar',
       title: 'Empezar',
       items: [
-        { id: 'que-es', q: '¿Qué es E-Trading?', a: ['Una app para aprender a invertir desde cero: clases cortas e interactivas, quizzes y un mercado con precios reales donde practicas con dinero virtual. Lumi, la mascota, te acompaña en cada paso.'] },
+        { id: 'que-es', q: '¿Qué es E-Trading?', a: ['Una app para aprender a invertir desde cero: clases cortas e interactivas, quizzes y un mercado con precios reales donde practicas con dinero virtual. Lumi, tu profesora (y la mascota de la app), te acompaña en cada paso.'] },
         { id: 'dinero-real', q: '¿Se usa dinero real?', a: ['No. Todo el dinero del simulador es virtual y no tiene ningún valor: no puedes ingresar ni retirar dinero, y tus operaciones no llegan a ningún mercado real.'] },
         { id: 'cuesta', q: '¿Cuesta algo?', a: ['El plan Free es gratis para siempre. Plus y Max son opcionales y amplían el curso, las vidas y Lumi.', 'Puedes suscribirte con tarjeta cuando quieras y cancelar desde Ajustes. Además, hay una prueba gratis de 7 días que se desbloquea con una racha de 5 días seguidos o llegando con la invitación de un amigo.'] },
         { id: 'saber-antes', q: '¿Necesito saber algo antes?', a: ['No. El curso empieza por lo más práctico: tu primera inversión en el simulador, qué compras cuando compras una acción y por qué se mueve su precio. Si ya sabes algo, al empezar puedes hacer un test de nivel y, en cada unidad, una prueba para darla por hecha.'] },

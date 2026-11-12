@@ -1,5 +1,7 @@
 # 02 · Gamificación
 
+> **Cambio del 12-11-2026 (auditoría, APP-38; decisión de Joan).** La liga semanal puntúa **aprender y buenos hábitos**, no la rentabilidad de la cartera: XP de clases y quizzes de la semana + hasta 80 puntos de hábitos (10 por cada operación con el motivo apuntado en el diario y 10 por cada compra con stop, hasta 3 de cada; 20 si la cartera está repartida). La XP por operar cuenta para el nivel, no para la liga. El objetivo diario «haz 2 compras o ventas» pasa a ser «revisa tu cartera o tu diario». Las semanas ya cerradas conservan sus puntos. Reglas en `src/shared/league-points.ts`. La temporada mensual de las ligas de amigos sigue yendo por rentabilidad (pendiente de decidir).
+
 > Estado: **base para aprobar** (etapa 1). El estudio detallado de Duolingo y el ajuste fino de números se hacen en la etapa 4.
 > Todos los valores numéricos viven en la tabla `Settings` y se pueden cambiar desde el panel de admin sin tocar código.
 

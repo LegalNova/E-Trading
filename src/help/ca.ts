@@ -20,7 +20,7 @@ export const ca: HelpDoc = {
       id: 'empezar',
       title: 'Començar',
       items: [
-        { id: 'que-es', q: 'Què és E-Trading?', a: ['Una app per aprendre a invertir des de zero: classes curtes i interactives, qüestionaris i un mercat amb preus reals on practiques amb diners virtuals. La Lumi, la mascota, t’acompanya a cada pas.'] },
+        { id: 'que-es', q: 'Què és E-Trading?', a: ['Una app per aprendre a invertir des de zero: classes curtes i interactives, qüestionaris i un mercat amb preus reals on practiques amb diners virtuals. La Lumi, la teva professora (i la mascota de l’app), t’acompanya a cada pas.'] },
         { id: 'dinero-real', q: 'S’hi fan servir diners reals?', a: ['No. Tots els diners del simulador són virtuals i no tenen cap valor: no pots ingressar ni retirar diners, i les teves operacions no arriben a cap mercat real.'] },
         { id: 'cuesta', q: 'Costa alguna cosa?', a: ['El pla Free és gratuït per sempre. Plus i Max són opcionals i amplien el curs, les vides i la Lumi.', 'Et pots subscriure amb targeta quan vulguis i cancel·lar des de Configuració. A més, hi ha una prova gratuïta de 7 dies que es desbloqueja amb una ratxa de 5 dies seguits o arribant amb la invitació d’un amic.'] },
         { id: 'saber-antes', q: 'Necessito saber alguna cosa abans?', a: ['No. El curs comença pel més pràctic: la teva primera inversió al simulador, què compres quan compres una acció i per què se’n mou el preu. Si ja en saps, en començar pots fer un test de nivell i, a cada unitat, una prova per donar-la per feta.'] },

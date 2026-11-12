@@ -75,17 +75,20 @@ export function questionT(loc: Loc, q: ContentQuestion): ContentQuestion {
   const t = of(loc)?.q[q.id]
   if (!t || t.options.length !== q.options.length) return q
   // (con el mismo espacio que no se rompe que las opciones: si no, «20 %» nunca coincidiría con la opción «20 %»)
+  // En los chats pregunta una amiga, no Lumi: su nombre sustituye a «Lumi» también en la traducción («a la Lumi» → «a la Marta»)
+  const from = q.type === 'CHAT' ? q.meta?.from : undefined
+  const named = (x: string) => (from ? x.replace(/\bLumi\b/g, from) : x)
   const tSol = q.type === 'FILL_BLANK' && typeof q.solution === 'string' ? t.options[q.options.indexOf(q.solution)] : undefined
   const solution = tSol !== undefined ? nb(tSol) : q.solution
   return {
     ...q,
-    prompt: nb(t.prompt),
-    options: t.options.map(nb),
+    prompt: nb(named(t.prompt)),
+    options: t.options.map(o => nb(named(o))),
     explanation: nb(t.explanation),
     solution,
     right: t.right?.map(nb) ?? q.right,
-    feedback: t.feedback?.map(nb) ?? q.feedback,
-    meta: q.meta ? { ...q.meta, lines: t.lines ?? q.meta.lines, senders: t.senders ?? q.meta.senders, unit: t.unit ?? q.meta.unit, horizon: t.horizon ?? q.meta.horizon, kinds: t.kinds ?? q.meta.kinds } : q.meta,
+    feedback: t.feedback?.map(f => nb(named(f))) ?? q.feedback,
+    meta: q.meta ? { ...q.meta, lines: t.lines?.map(named) ?? q.meta.lines, senders: t.senders ?? q.meta.senders, unit: t.unit ?? q.meta.unit, horizon: t.horizon ?? q.meta.horizon, kinds: t.kinds ?? q.meta.kinds } : q.meta,
     kindsEs: t.kinds && q.meta?.kinds ? q.meta.kinds : q.kindsEs,
     hidden: q.hidden ? { ...q.hidden, caption: captionT(loc, q.hidden.caption) } : q.hidden,
   }

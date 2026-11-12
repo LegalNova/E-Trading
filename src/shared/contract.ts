@@ -186,6 +186,8 @@ export const Question = z.object({
       unit: z.string().optional(),
       kinds: z.array(z.string()).optional(),
       lines: z.array(z.string()).optional(),
+      /** Chat: nombre de la amiga que escribe (Lumi es la profesora, no quien pregunta) */
+      from: z.string().optional(),
       senders: z.array(z.string()).optional(),
       horizon: z.string().optional(),
       /** «¿Sube o baja?» sobre un gráfico anónimo: ronda de humildad, no puntúa (src/shared/scoring.ts) */

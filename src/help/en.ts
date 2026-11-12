@@ -20,7 +20,7 @@ export const en: HelpDoc = {
       id: 'empezar',
       title: 'Getting started',
       items: [
-        { id: 'que-es', q: 'What is E-Trading?', a: ['An app to learn to invest from scratch: short interactive lessons, quizzes and a market with real prices where you practise with virtual money. Lumi, the mascot, is with you every step of the way.'] },
+        { id: 'que-es', q: 'What is E-Trading?', a: ['An app to learn to invest from scratch: short interactive lessons, quizzes and a market with real prices where you practise with virtual money. Lumi, your teacher (and the app’s mascot), is with you every step of the way.'] },
         { id: 'dinero-real', q: 'Is real money used?', a: ['No. All the money in the simulator is virtual and has no value: you can’t pay money in or take it out, and your trades never reach a real market.'] },
         { id: 'cuesta', q: 'Does it cost anything?', a: ['The Free plan is free forever. Plus and Max are optional and expand the course, your lives and Lumi.', 'You can subscribe by card whenever you like and cancel in Settings. There’s also a 7-day free trial, unlocked with a 5-day streak or by joining with a friend’s invitation.'] },
         { id: 'saber-antes', q: 'Do I need to know anything first?', a: ['No. The course starts with the practical part: your first investment in the simulator, what you buy when you buy a share and why its price moves. If you already know some of it, you can take a placement test at the start and, in every unit, a test to mark it as done.'] },

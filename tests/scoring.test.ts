@@ -60,3 +60,21 @@ describe('nota del quiz sin la ronda de humildad', () => {
     expect(tally(ids, answers, scored, id => id !== 'repaso')).toEqual({ total: 2, correct: 2 })
   })
 })
+
+// Auditoría APP-15 (decisión de Joan): en los chats pregunta una amiga; Lumi es siempre la profesora
+describe('chats: quien pregunta no es Lumi', () => {
+  const chats = own.filter(q => q.type === 'CHAT')
+  it('todos los chats tienen a alguien con nombre, y ninguno nombra a Lumi como alumna', () => {
+    expect(chats.length).toBeGreaterThan(80)
+    for (const q of chats) {
+      expect(q.meta?.from, q.id).toBeTruthy()
+      expect(q.meta?.from).not.toBe('Lumi')
+      const shown = [q.prompt, ...(q.meta?.lines ?? []), ...q.options, ...(q.feedback ?? [])].join(' ')
+      expect(shown, q.id).not.toMatch(/\bLumi\b/)
+    }
+  })
+  it('si el enunciado ya nombra a alguien, pregunta esa persona', () => {
+    const pablo = chats.find(q => /a Pablo\?$/.test(q.prompt))
+    if (pablo) expect(pablo.meta?.from).toBe('Pablo')
+  })
+})

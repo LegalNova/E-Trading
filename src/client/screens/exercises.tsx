@@ -5,13 +5,23 @@
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import type { AnswerResultT, QuestionT } from '@/shared/contract'
-import { useLang, useMe } from '../hooks'
+import { useLang } from '../hooks'
 import { ExerciseChart, type Line } from '../ui/exercise-chart'
 import { Icon } from '../ui/icons'
-import { Lumi, stageOf } from '../ui/lumi'
 
 export type Value = number | number[] | string | null
 const PAIR_COLORS = ['#0A84FF', '#FF9F0A', '#BF5AF2', '#30D158', '#FF375F', '#64D2FF', '#FFD60A', '#AC8E68']
+
+const FRIEND_COLORS = ['#7C5CBF', '#2F8F83', '#C2703D', '#3B78C4', '#B8527A', '#5B7F3A']
+/** Avatar de la amiga que escribe en un chat: su inicial, con un color fijo por nombre */
+function FriendAvatar({ name }: { name: string }) {
+  const color = FRIEND_COLORS[[...name].reduce((h, c) => h + c.charCodeAt(0), 0) % FRIEND_COLORS.length]
+  return (
+    <span className="grid h-8 w-8 flex-none place-items-center rounded-full text-[13px] font-extrabold text-white" style={{ background: color }} aria-hidden>
+      {name.slice(0, 1).toUpperCase()}
+    </span>
+  )
+}
 
 export const DYNAMIC = new Set(['MATCH', 'BUCKETS', 'CHART_CANDLE', 'UP_DOWN', 'PLACE_LEVEL', 'SIM_TRADE', 'SCENARIO', 'NUMBER', 'PORTFOLIO', 'SPOT', 'CHAT'])
 
@@ -31,7 +41,6 @@ const optClass = (reveal: AnswerResultT | null, isCorrect: boolean, isPicked: bo
 export function DynamicExercise({ q, value, onChange, reveal }: { q: QuestionT; value: Value; onChange: (v: Value) => void; reveal: AnswerResultT | null }) {
   const t = useTranslations('quiz')
   const locale = useLang()
-  const { data: me } = useMe()
   const locked = !!reveal
   const sol = reveal?.correctAnswer
   const fmt = (v: number) => v.toLocaleString(locale, { maximumFractionDigits: v >= 100 ? 2 : 4, useGrouping: 'always' } as Intl.NumberFormatOptions)
@@ -279,8 +288,12 @@ export function DynamicExercise({ q, value, onChange, reveal }: { q: QuestionT; 
         <div className="flex flex-col gap-2.5">
           {(q.meta?.lines ?? []).map((l, i) => (
             <div key={i} className="flex items-end gap-2">
-              {i === (q.meta?.lines?.length ?? 1) - 1 ? <Lumi mood="THINKING" size={32} skin={me?.companion.skinId} stage={stageOf(me?.level.n ?? 1)} /> : <span className="w-8 flex-none" />}
-              <div className="card max-w-[85%] rounded-bl-md px-3.5 py-2.5 text-[15px]">{l}</div>
+              {/* Quien escribe es una amiga con nombre; Lumi es la profesora y no aparece como alumna (APP-15) */}
+              {i === (q.meta?.lines?.length ?? 1) - 1 ? <FriendAvatar name={q.meta?.from ?? '?'} /> : <span className="w-8 flex-none" />}
+              <div className="card max-w-[85%] rounded-bl-md px-3.5 py-2.5 text-[15px]">
+                {i === 0 && q.meta?.from && <span className="t-cap block font-bold">{q.meta.from}</span>}
+                {l}
+              </div>
             </div>
           ))}
           {/* La pregunta, después de leer los mensajes */}
