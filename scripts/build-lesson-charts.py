@@ -406,6 +406,146 @@ def append_trends(per_kind=8):
         print(f'trend-{kind}: {n} en total')
     json.dump(out, open(OUT, 'w'), ensure_ascii=False, indent=1)
 
+# Activos de más solo para los lotes añadidos (auditoría RED-11 y RED-34): gráficos que el alumno no ha visto
+EXTRA_ASSETS = [
+    ('ASML.AS', 'ASML'), ('SAP.DE', 'SAP'), ('MC.PA', 'LVMH'), ('AIR.PA', 'Airbus'), ('SIE.DE', 'Siemens'), ('NESN.SW', 'Nestlé'),
+    ('NKE', 'Nike'), ('DIS', 'Disney'), ('V', 'Visa'), ('JNJ', 'Johnson & Johnson'), ('PG', 'Procter & Gamble'), ('MCD', "McDonald's"),
+    ('CABK.MC', 'CaixaBank'), ('FER.MC', 'Ferrovial'), ('AMS.MC', 'Amadeus'), ('AENA.MC', 'Aena'), ('NFLX', 'Netflix'), ('WMT', 'Walmart'),
+]
+
+
+# Criptos, divisas, metales e índices para el segundo lote (los ejercicios de esas clases piden ese tipo de activo)
+MACRO_ASSETS = [
+    ('BTC-EUR', 'Bitcoin'), ('ETH-EUR', 'Ethereum'), ('SOL-EUR', 'Solana'), ('EURUSD=X', 'EUR/USD'), ('USDJPY=X', 'USD/JPY'), ('GBPUSD=X', 'GBP/USD'),
+    ('GC=F', 'Oro'), SILVER, ('HG=F', 'Cobre'), ('CL=F', 'Petróleo WTI'), ('^GSPC', 'S&P 500'), ('^IBEX', 'IBEX 35'), ('^GDAXI', 'DAX'), ('^NDX', 'Nasdaq 100'),
+    ('^STOXX50E', 'Euro Stoxx 50'), ('^FTSE', 'FTSE 100'),
+]
+
+
+def append_lab(levels=44, per_trend=10, per_pattern=4, updown=40, assets=None, each_way=1):
+    """Añade un lote de gráficos nuevos (niveles, tendencias, velas y «¿sube o baja?») sin tocar los existentes.
+    Ningún tramo se solapa con otro ya guardado del mismo activo: son gráficos que el alumno no ha visto."""
+    out = json.load(open(OUT))
+    data = {}
+    for sym, name in assets or EXTRA_ASSETS + ASSETS:
+        try:
+            data[sym] = (name, get(sym))
+            print(f'{sym}: {len(data[sym][1])} velas')
+        except Exception as e:  # noqa: BLE001
+            print(f'⚠️  {sym}: {e}')
+        time.sleep(0.4)
+    taken = {}
+    for v in out.values():
+        if 'symbol' in v and 'from' in v and 'to' in v:
+            taken.setdefault(v['symbol'], []).append((v['from'], v['to']))
+
+    def iso(d):  # «25/03/2020» → «2020-03-25»
+        return '-'.join(reversed(d.split('/')))
+
+    def free(sym, a, b):
+        return all(iso(b) < iso(x) or iso(a) > iso(y) for x, y in taken.get(sym, []))
+
+    def take(sym, f):
+        taken.setdefault(sym, []).append((f['from'], f['to']))
+
+    def num(prefix):
+        return max([int(k.rsplit('-', 1)[1]) for k in out if k.rsplit('-', 1)[0] == prefix] or [0])
+
+    # Niveles (mismo criterio que main): como mucho 2 por activo
+    nl, added = num('lvl'), 0
+    for sym, (name, rows) in data.items():
+        k = 0
+        for e in range(len(rows) - 16, 60, -7):
+            if added >= levels or k >= 2:
+                break
+            vis, fut = rows[e - 30:e], rows[e:e + 15]
+            entry = vis[-1][4]
+            low_i = min(range(18, 28), key=lambda j: vis[j][3])
+            swing = vis[low_i][3]
+            res = max(x[2] for x in vis[:18])
+            atr = sum(rng(x) for x in vis[-14:]) / 14
+            if not (entry - 4 * atr < swing < entry - atr and res > entry + 2 * atr and vis[-1][4] > vis[0][4]) or any(flat(x) for x in vis + fut):
+                continue
+            if not free(sym, day(vis[0][0]), day(fut[-1][0])):
+                continue
+            nl += 1; k += 1; added += 1
+            fid = f'lvl-{nl}'
+            out[fid] = {'id': fid, 'symbol': sym, 'name': name, 'from': day(vis[0][0]), 'to': day(fut[-1][0]),
+                        'caption': f'{name} · velas diarias · {span(vis[0][0], fut[-1][0])}',
+                        'candles': [[r2(x[1]), r2(x[2]), r2(x[3]), r2(x[4])] for x in vis],
+                        'future': [[r2(x[1]), r2(x[2]), r2(x[3]), r2(x[4])] for x in fut],
+                        'entry': r2(entry), 'support': r2(swing), 'resistance': r2(res), 'atr': r2(atr)}
+            take(sym, out[fid])
+    print(f'niveles nuevos: {added}')
+    # Tendencias: una por activo y tipo
+    for kind in ('up', 'down', 'flat'):
+        n, added = num(f'trend-{kind}'), 0
+        for sym, (name, rows) in data.items():
+            closes = rows[::3]
+            for s0 in range(len(closes) - 15, 0, -3):
+                if added >= per_trend:
+                    break
+                seg = [x[4] for x in closes[s0:s0 + 14]]
+                sl = slope(seg); rel = (max(seg) - min(seg)) / (sum(seg) / len(seg))
+                ok = (kind == 'up' and sl > 0.012 and seg[-1] > seg[0] * 1.08) or (kind == 'down' and sl < -0.012 and seg[-1] < seg[0] * 0.92) or \
+                     (kind == 'flat' and abs(sl) < 0.0012 and 0.05 < rel < 0.12 and abs(seg[-1] / seg[0] - 1) < 0.025 and abs(seg[7] / seg[0] - 1) < 0.06)
+                sub = closes[s0:s0 + 14]
+                if not ok or any(flat(x) for x in sub) or not free(sym, day(sub[0][0]), day(sub[-1][0])):
+                    continue
+                n += 1; added += 1
+                fid = f'trend-{kind}-{n}'
+                out[fid] = {'id': fid, 'symbol': sym, 'name': name, 'from': day(sub[0][0]), 'to': day(sub[-1][0]),
+                            'caption': f'{name} · cierres cada 3 sesiones · {span(sub[0][0], sub[-1][0])}', 'closes': [r2(v) for v in seg]}
+                take(sym, out[fid])
+                break
+        print(f'trend-{kind} nuevos: {added}')
+    # Patrones de velas: uno por activo
+    counts = {}
+    for k, v in out.items():
+        if 'target' in v:
+            counts[v['target']] = counts.get(v['target'], 0) + 1
+    for pid, (det, key) in PATTERNS.items():
+        n, added = num(pid), 0
+        for sym, (name, rows) in data.items():
+            if added >= per_pattern:
+                break
+            for i in range(len(rows) - 3, 12, -1):
+                if not det(rows, i):
+                    continue
+                win = pick_window(rows, i, pid, key, dict(counts))
+                if not win or not free(sym, day(rows[win[0]][0]), day(rows[win[1] - 1][0])):
+                    continue
+                s0, e0 = win
+                n += 1; added += 1
+                out[f'{pid}-{n}'] = fixture(f'{pid}-{n}', sym, name, rows, s0, e0, i)
+                counts[i - s0] = counts.get(i - s0, 0) + 1
+                take(sym, out[f'{pid}-{n}'])
+                break
+        print(f'{pid} nuevos: {added}')
+    # «¿Sube o baja?»: como mucho uno de cada sentido por activo
+    nud, added = num('ud'), 0
+    for sym, (name, rows) in data.items():
+        thr = 0.08 if '-EUR' in sym else 0.012 if '=X' in sym else 0.05
+        got = {'UP': 0, 'DOWN': 0}
+        for e in range(len(rows) - 11, 60, -5):
+            if added >= updown:
+                break
+            vis, fut = rows[e - 30:e], rows[e:e + 10]
+            ch = fut[-1][4] / vis[-1][4] - 1
+            way = 'UP' if ch > thr else 'DOWN' if ch < -thr else None
+            if not way or got[way] >= each_way or any(flat(x) for x in vis + fut) or not free(sym, day(vis[0][0]), day(fut[-1][0])):
+                continue
+            got[way] += 1; nud += 1; added += 1
+            fid = f'ud-{nud}'
+            out[fid] = {'id': fid, 'symbol': sym, 'name': name, 'from': day(vis[0][0]), 'to': day(fut[-1][0]),
+                        'caption': f'{name} · velas diarias · {span(vis[0][0], fut[-1][0])}',
+                        'candles': [[r2(x[1]), r2(x[2]), r2(x[3]), r2(x[4])] for x in vis],
+                        'future': [[r2(x[1]), r2(x[2]), r2(x[3]), r2(x[4])] for x in fut], 'outcome': way, 'changePct': round(ch * 100, 1)}
+            take(sym, out[fid])
+    print(f'sube o baja nuevos: {added}')
+    json.dump(out, open(OUT, 'w'), ensure_ascii=False, indent=1)
+    print('Guardado', len(out), 'gráficos')
+
 
 SERIES = [
     # id, símbolo, nombre, intervalo, desde, hasta, formato de fecha, descripción
@@ -678,5 +818,9 @@ if __name__ == '__main__':
         append_series(), append_mixes()
     elif '--append-trends' in sys.argv:
         append_trends()
+    elif '--append-lab' in sys.argv:
+        append_lab()
+    elif '--append-lab-macro' in sys.argv:
+        append_lab(levels=16, per_trend=4, per_pattern=0, updown=48, assets=MACRO_ASSETS, each_way=2)
     else:
         main()

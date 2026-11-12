@@ -247,7 +247,7 @@ export const u19l1 = lesson('u19l1', 'Qué muestra un gráfico de precios', [
   play({
     title: 'Leer no es adivinar',
     intro: 'Cada barrita del gráfico es una **vela**: lo que hizo el precio en un día. Tienes tres gráficos reales de 30 velas. Léelos y decide: ¿**sube o baja** en las 10 sesiones siguientes?',
-    widget: { kind: 'guess', rounds: ['ud-8', 'ud-24', 'ud-91'] },
+    widget: { kind: 'guess', rounds: ['ud-8', 'ud-24', 'ud-108'] },
     goal: { text: 'Juega las tres rondas.', when: [when('done', '==', 3)] },
     insight: 'Leer el pasado es fácil; adivinar el futuro, no. Quien estudia gráficos trabaja con **probabilidades, nunca con certezas**.',
     lumi: [

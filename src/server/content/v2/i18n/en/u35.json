@@ -176,10 +176,11 @@
     {
      "texts": [
       "Trade with the support",
-      "Real candles: the price has a **support** 3 % below your entry and a **resistance** 6 % above. Place your stop and your target.",
+      "Real candles: the price has a **support** 3 % below your entry and a **resistance** 7.5 % above. Place your stop and your target.",
       "Put the stop below the support and the target near the resistance. Then see what happened.",
       "A **support** is an area where the price has stopped falling several times (buyers step in); a **resistance** is where it has stopped rising. **They give your stop and target a logical place**, though nothing guarantees they'll hold.",
       "Your stop is above the support: noise could trigger it.",
+      "The stop was hit: this time the support didn't hold. You lost what you'd planned to, no more.",
       "Target hit! This time the support held.",
       "Find the floor on the chart and put the stop below it"
      ]
@@ -419,13 +420,13 @@
    "horizon": "the next 10 sessions"
   },
   "u35l1-3": {
-   "prompt": "No predicting the future: what trend did this price have? (Apple · closes every 3 sessions · March–May 2026)",
+   "prompt": "No predicting the future: what trend did this price have? (Disney · closes every 3 sessions · May–June 2025)",
    "options": [
     "Uptrend",
     "Downtrend",
     "Sideways"
    ],
-   "explanation": "Ever higher highs and lows: from about $249 to about $309. Reading the past trend is easy; knowing how long it will last isn't."
+   "explanation": "Ever higher highs and lows: from about $91 to about $122. Reading the past trend is easy; knowing how long it will last isn't."
   },
   "u35l1-4": {
    "prompt": "The last few candles have been intense. Higher or lower 10 sessions later?",
@@ -446,13 +447,13 @@
    "horizon": "the next 10 sessions"
   },
   "u35l1-8": {
-   "prompt": "What trend do you see in this stretch? (Microsoft · closes every 3 sessions · December 2025 – February 2026)",
+   "prompt": "What trend do you see in this stretch? (SAP · closes every 3 sessions · February–April 2026)",
    "options": [
     "Uptrend",
     "Downtrend",
     "Sideways"
    ],
-   "explanation": "Ever lower highs and lows: from about $488 to about $384. In a downtrend, «it's already cheap» isn't an argument: it can get cheaper."
+   "explanation": "Ever lower highs and lows: from about €173 to about €152. In a downtrend, «it's already cheap» isn't an argument: it can get cheaper."
   },
   "u35l1-9": {
    "prompt": "If a stock has risen 5 days in a row, it's more likely to fall on the sixth.",
@@ -568,12 +569,12 @@
   "u35l4-1": {
    "prompt": "Tap the hammer.",
    "options": [],
-   "explanation": "A small body at the top and a lower wick at least twice the size of the body, after several down candles. (NVIDIA · daily candles · June 2026)"
+   "explanation": "A small body at the top and a lower wick at least twice the size of the body, after several down candles. (SAP · daily candles · April 2024)"
   },
   "u35l4-2": {
    "prompt": "Tap the shooting star.",
    "options": [],
-   "explanation": "A long upper wick and a small body at the bottom, after a rise: buyers tried, and sellers pushed the price back down. (Microsoft · daily candles · April 2026)"
+   "explanation": "A long upper wick and a small body at the bottom, after a rise: buyers tried, and sellers pushed the price back down. (ASML · daily candles · December 2023)"
   },
   "u35l4-3": {
    "prompt": "Match each candle with what it tells you.",
@@ -594,12 +595,12 @@
   "u35l4-4": {
    "prompt": "Tap the doji.",
    "options": [],
-   "explanation": "Open and close almost equal, with wicks on both sides: indecision. Wait for the next candle before drawing conclusions. (Apple · daily candles · September 2026)"
+   "explanation": "Open and close almost equal, with wicks on both sides: indecision. Wait for the next candle before drawing conclusions. (ASML · daily candles · July 2026)"
   },
   "u35l4-5": {
    "prompt": "Tap the candle that completes the bullish engulfing.",
    "options": [],
-   "explanation": "A green candle whose body completely engulfs the previous red body, after a fall. (Apple · daily candles · April 2025)"
+   "explanation": "A green candle whose body completely engulfs the previous red body, after a fall. (ASML · daily candles · June–July 2025)"
   },
   "u35l4-8": {
    "prompt": "A hammer guarantees that the price is going to rise.",
@@ -612,22 +613,22 @@
   "u35l4-9": {
    "prompt": "Tap the marubozu.",
    "options": [],
-   "explanation": "A long green body with almost no wicks: buyers were in charge from the start of the session to the end. (Apple · daily candles · June–July 2026)"
+   "explanation": "A long green body with almost no wicks: buyers were in charge from the start of the session to the end. (ASML · daily candles · December 2025 – January 2026)"
   },
   "u35l4-10": {
    "prompt": "Tap the third candle of the morning star.",
    "options": [],
-   "explanation": "First a big red one, then a small one showing doubt, and finally a strong green one that closes above the midpoint of the first. (Microsoft · daily candles · January–February 2026)"
+   "explanation": "First a big red one, then a small one showing doubt, and finally a strong green one that closes above the midpoint of the first. (Airbus · daily candles · June–July 2024)"
   },
   "u35l5-1": {
-   "prompt": "Sideways range. Tap the lowest point: the floor buyers are watching. (Apple · closes every 3 sessions · September–November 2024)",
+   "prompt": "Sideways range. Tap the lowest point: the floor buyers are watching. (McDonald's · closes every 3 sessions · November 2025 – January 2026)",
    "options": [],
-   "explanation": "About $222: the bottom of the range marks the support. If the price comes back there, lots of people will watch whether it holds."
+   "explanation": "About $303: the bottom of the range marks the support. If the price comes back there, lots of people will watch whether it holds."
   },
   "u35l5-2": {
-   "prompt": "Now the ceiling: tap the highest point of this range. (Microsoft · closes every 3 sessions · August–October 2024)",
+   "prompt": "Now the ceiling: tap the highest point of this range. (Johnson & Johnson · closes every 3 sessions · April–June 2024)",
    "options": [],
-   "explanation": "About $433: that's where the rises stalled. It's the resistance of the range."
+   "explanation": "About $153: that's where the rises stalled. It's the resistance of the range."
   },
   "u35l5-3": {
    "prompt": "An area where the price has stopped falling several times is called ____.",
@@ -649,9 +650,9 @@
    "horizon": "the next 10 sessions"
   },
   "u35l5-5": {
-   "prompt": "Downtrend. Tap the low: the level buyers will have to defend. (Apple · closes every 3 sessions · February–April 2025)",
+   "prompt": "Downtrend. Tap the low: the level buyers will have to defend. (Disney · closes every 3 sessions · February–April 2025)",
    "options": [],
-   "explanation": "About $172: after that low there was a bounce. A low like that becomes a reference point for the future."
+   "explanation": "About $84: after that low there was a bounce. A low like that becomes a reference point for the future."
   },
   "u35l5-8": {
    "prompt": "Another index. Can you see a clear floor near the current price? Decide: higher or lower 10 sessions later?",
@@ -663,33 +664,33 @@
    "horizon": "the next 10 sessions"
   },
   "u35l5-9": {
-   "prompt": "Sideways range with one rebel candle. Tap the low. (NVIDIA · closes every 3 sessions · December 2025 – February 2026)",
+   "prompt": "Sideways range with a drop that didn't last. Tap the low. (Visa · closes every 3 sessions · July–September 2025)",
    "options": [],
-   "explanation": "About $174: the price broke below the range for a moment and quickly came back inside. That's a false breakout, and it's why supports are zones, not lines."
+   "explanation": "About $336: the price lost the range for a few days and came back inside. That's a false breakout, and it's why supports are zones, not lines."
   },
   "u35l6-1": {
-   "prompt": "Before buying, check the trend. What is it? (NVIDIA · closes every 3 sessions · March–May 2026)",
+   "prompt": "Before buying, check the trend. What is it? (Johnson & Johnson · closes every 3 sessions · May–July 2026)",
    "options": [
     "Uptrend",
     "Downtrend",
     "Sideways"
    ],
-   "explanation": "Higher highs and higher lows: from about $168 to highs of about $236. Buying with the trend and placing the stop below the last low is the classic approach."
+   "explanation": "Higher highs and higher lows: from about $225 to highs of about $266. Buying with the trend and placing the stop below the last low is the classic approach."
   },
   "u35l6-2": {
    "prompt": "You've bought at the last price. Place your stop loss where your idea stops being valid.",
    "options": [],
-   "explanation": "Just below the last significant low (about $408), with a small margin. If the price loses that floor, the trend you were looking for is gone."
+   "explanation": "Just below the last significant low (about $264), with a small margin. If the price loses that floor, the trend you were looking for is gone."
   },
   "u35l6-3": {
    "prompt": "Now the target: place your take profit.",
    "options": [],
-   "explanation": "Near the previous high (about $195): that's where sellers showed up last time. Aiming much higher means hoping for something the price hasn't done yet."
+   "explanation": "Near the previous high (about €8.90): that's where sellers showed up last time. Aiming much higher means hoping for something the price hasn't done yet."
   },
   "u35l6-5": {
    "prompt": "Place the stop for this purchase.",
    "options": [],
-   "explanation": "Below the recent low (about €12.90). Not right next to the price, because noise would trigger it, nor so far away that the loss gets out of hand."
+   "explanation": "Below the recent low (about €39). Not right next to the price, because noise would trigger it, nor so far away that the loss gets out of hand."
   },
   "u35l6-7": {
    "prompt": "You have €10,000 and risk at most 1 %. Place the stop and choose the amount.",
@@ -699,7 +700,7 @@
   "u35l6-9": {
    "prompt": "Place the target for this trade.",
    "options": [],
-   "explanation": "Near the previous high (about $256). If the price breaks through it strongly, you can always raise your stop and let the profit run."
+   "explanation": "Near the previous high (about $172). If the price breaks through it strongly, you can always raise your stop and let the profit run."
   },
   "u35l7-2": {
    "prompt": "March 2020: Covid has put half the world in lockdown and the S&P 500 has fallen more than 30 % in a month. The headlines talk about the worst crisis in decades. What did the index do over the following months?",
@@ -790,12 +791,12 @@
   "u35l8-2": {
    "prompt": "Step 2: place the stop for this purchase.",
    "options": [],
-   "explanation": "Below the last low (about 10,530 points), with a margin for noise. That's where your idea stops being valid."
+   "explanation": "Below the last low (about €21.96), with a margin for noise. That's where your idea stops being valid."
   },
   "u35l8-3": {
    "prompt": "Step 3, in a different trade: place the target.",
    "options": [],
-   "explanation": "Near the previous high (about $785), where sellers showed up last time."
+   "explanation": "Near the previous high (about $293), where sellers showed up last time."
   },
   "u35l8-5": {
    "prompt": "Carry out the full trade: €10,000, maximum risk of 1 %. Place the stop below the low and adjust the amount.",

@@ -176,10 +176,11 @@
     {
      "texts": [
       "Opera amb el suport",
-      "Espelmes reals: el preu té un **suport** un 3 % per sota de la teva entrada i una **resistència** un 6 % per sobre. Col·loca el teu stop i el teu objectiu.",
+      "Espelmes reals: el preu té un **suport** un 3 % per sota de la teva entrada i una **resistència** un 7,5 % per sobre. Col·loca el teu stop i el teu objectiu.",
       "Posa l'stop per sota del suport i l'objectiu a prop de la resistència. Després, mira què va passar.",
       "Un **suport** és una zona on el preu ha deixat de caure diverses vegades (hi apareixen compradors); una **resistència**, on ha deixat de pujar. **Donen un lloc lògic a l'stop i a l'objectiu**, encara que res no assegura que es respectin.",
       "El teu stop és per sobre del suport: el soroll el pot fer saltar.",
+      "Ha saltat l'stop: aquesta vegada el suport no ha aguantat. Has perdut el que havies previst, no més.",
       "Objectiu! Aquesta vegada el suport va aguantar.",
       "Busca el terra al gràfic i posa l'stop a sota"
      ]
@@ -419,13 +420,13 @@
    "horizon": "les 10 sessions següents"
   },
   "u35l1-3": {
-   "prompt": "Sense endevinar el futur: quina tendència tenia aquest preu? (Apple · tancaments cada 3 sessions · març–maig del 2026)",
+   "prompt": "Sense endevinar el futur: quina tendència tenia aquest preu? (Disney · tancaments cada 3 sessions · maig–juny del 2025)",
    "options": [
     "Alcista",
     "Baixista",
     "Lateral"
    ],
-   "explanation": "Màxims i mínims cada vegada més alts: d'uns 249 $ a uns 309 $. Llegir la tendència passada és fàcil; saber quant durarà, no."
+   "explanation": "Màxims i mínims cada vegada més alts: d'uns 91 $ a uns 122 $. Llegir la tendència passada és fàcil; saber quant durarà, no."
   },
   "u35l1-4": {
    "prompt": "Les últimes espelmes han estat intenses. Més amunt o més avall 10 sessions després?",
@@ -446,13 +447,13 @@
    "horizon": "les 10 sessions següents"
   },
   "u35l1-8": {
-   "prompt": "Quina tendència veus en aquest tram? (Microsoft · tancaments cada 3 sessions · desembre del 2025 – febrer del 2026)",
+   "prompt": "Quina tendència veus en aquest tram? (SAP · tancaments cada 3 sessions · febrer–abril del 2026)",
    "options": [
     "Alcista",
     "Baixista",
     "Lateral"
    ],
-   "explanation": "Màxims i mínims cada vegada més baixos: d'uns 488 $ a uns 384 $. En una tendència baixista, «ja és barata» no és cap argument: es pot abaratir més."
+   "explanation": "Màxims i mínims cada vegada més baixos: d'uns 173 € a uns 152 €. En una tendència baixista, «ja és barata» no és cap argument: es pot abaratir més."
   },
   "u35l1-9": {
    "prompt": "Si una acció ha pujat 5 dies seguits, és més probable que baixi el sisè.",
@@ -568,12 +569,12 @@
   "u35l4-1": {
    "prompt": "Toca el martell.",
    "options": [],
-   "explanation": "Cos petit a la part alta i una metxa inferior com a mínim el doble de llarga que el cos, després de diverses espelmes a la baixa. (NVIDIA · espelmes diàries · juny del 2026)"
+   "explanation": "Cos petit a la part alta i una metxa inferior com a mínim el doble de llarga que el cos, després de diverses espelmes a la baixa. (SAP · espelmes diàries · abril del 2024)"
   },
   "u35l4-2": {
    "prompt": "Toca l'estrella fugaç.",
    "options": [],
-   "explanation": "Metxa superior llarga i cos petit a baix, després de pujar: els compradors ho van intentar i els venedors van tornar el preu avall. (Microsoft · espelmes diàries · abril del 2026)"
+   "explanation": "Metxa superior llarga i cos petit a baix, després de pujar: els compradors ho van intentar i els venedors van tornar el preu avall. (ASML · espelmes diàries · desembre del 2023)"
   },
   "u35l4-3": {
    "prompt": "Relaciona cada espelma amb el que explica.",
@@ -594,12 +595,12 @@
   "u35l4-4": {
    "prompt": "Toca el doji.",
    "options": [],
-   "explanation": "Obertura i tancament gairebé iguals, amb metxes a banda i banda: indecisió. Espera l'espelma següent abans de treure conclusions. (Apple · espelmes diàries · setembre del 2026)"
+   "explanation": "Obertura i tancament gairebé iguals, amb metxes a banda i banda: indecisió. Espera l'espelma següent abans de treure conclusions. (ASML · espelmes diàries · juliol del 2026)"
   },
   "u35l4-5": {
    "prompt": "Toca l'espelma que completa l'envolvent alcista.",
    "options": [],
-   "explanation": "Una espelma verda el cos de la qual embolcalla del tot el cos vermell anterior, després d'una caiguda. (Apple · espelmes diàries · abril del 2025)"
+   "explanation": "Una espelma verda el cos de la qual embolcalla del tot el cos vermell anterior, després d'una caiguda. (ASML · espelmes diàries · juny–juliol del 2025)"
   },
   "u35l4-8": {
    "prompt": "Un martell garanteix que el preu pujarà.",
@@ -612,22 +613,22 @@
   "u35l4-9": {
    "prompt": "Toca el marubozu.",
    "options": [],
-   "explanation": "Cos verd llarg, gairebé sense metxes: els compradors van manar de principi a fi de la sessió. (Apple · espelmes diàries · juny–juliol del 2026)"
+   "explanation": "Cos verd llarg, gairebé sense metxes: els compradors van manar de principi a fi de la sessió. (ASML · espelmes diàries · desembre del 2025 – gener del 2026)"
   },
   "u35l4-10": {
    "prompt": "Toca la tercera espelma de l'estrella del matí.",
    "options": [],
-   "explanation": "Primer una vermella grossa, després una de petita de dubte i, finalment, una verda forta que tanca per sobre de la meitat de la primera. (Microsoft · espelmes diàries · gener–febrer del 2026)"
+   "explanation": "Primer una vermella grossa, després una de petita de dubte i, finalment, una verda forta que tanca per sobre de la meitat de la primera. (Airbus · espelmes diàries · juny–juliol del 2024)"
   },
   "u35l5-1": {
-   "prompt": "Rang lateral. Toca el punt més baix: el terra que vigilen els compradors. (Apple · tancaments cada 3 sessions · setembre–novembre del 2024)",
+   "prompt": "Rang lateral. Toca el punt més baix: el terra que vigilen els compradors. (McDonald's · tancaments cada 3 sessions · novembre del 2025 – gener del 2026)",
    "options": [],
-   "explanation": "Uns 222 $: el mínim del rang marca el suport. Si el preu hi torna, molta gent mirarà si aguanta."
+   "explanation": "Uns 303 $: el mínim del rang marca el suport. Si el preu hi torna, molta gent mirarà si aguanta."
   },
   "u35l5-2": {
-   "prompt": "Ara el sostre: toca el punt més alt d'aquest rang. (Microsoft · tancaments cada 3 sessions · agost–octubre del 2024)",
+   "prompt": "Ara el sostre: toca el punt més alt d'aquest rang. (Johnson & Johnson · tancaments cada 3 sessions · abril–juny del 2024)",
    "options": [],
-   "explanation": "Uns 433 $: aquí es van frenar les pujades. És la resistència del rang."
+   "explanation": "Uns 153 $: aquí es van frenar les pujades. És la resistència del rang."
   },
   "u35l5-3": {
    "prompt": "Una zona on el preu ha deixat de caure diverses vegades s'anomena ____.",
@@ -649,9 +650,9 @@
    "horizon": "les 10 sessions següents"
   },
   "u35l5-5": {
-   "prompt": "Tendència baixista. Toca el mínim: el nivell que els compradors hauran de defensar. (Apple · tancaments cada 3 sessions · febrer–abril del 2025)",
+   "prompt": "Tendència baixista. Toca el mínim: el nivell que els compradors hauran de defensar. (Disney · tancaments cada 3 sessions · febrer–abril del 2025)",
    "options": [],
-   "explanation": "Uns 172 $: després d'aquest mínim hi va haver un rebot. Un mínim així es converteix en una referència per al futur."
+   "explanation": "Uns 84 $: després d'aquest mínim hi va haver un rebot. Un mínim així es converteix en una referència per al futur."
   },
   "u35l5-8": {
    "prompt": "Un altre índex. Veus cap terra clar a prop del preu actual? Decideix: més amunt o més avall 10 sessions després?",
@@ -663,33 +664,33 @@
    "horizon": "les 10 sessions següents"
   },
   "u35l5-9": {
-   "prompt": "Rang lateral amb una espelma rebel. Toca el mínim. (NVIDIA · tancaments cada 3 sessions · desembre del 2025 – febrer del 2026)",
+   "prompt": "Rang lateral amb una caiguda que no va durar. Toca el mínim. (Visa · tancaments cada 3 sessions · juliol–setembre del 2025)",
    "options": [],
-   "explanation": "Uns 174 $: el preu va perforar el rang un moment i va tornar a dins de seguida. Això és una falsa ruptura, i per això els suports són zones, no línies."
+   "explanation": "Uns 336 $: el preu va perdre el rang uns dies i va tornar a dins. Això és una falsa ruptura, i per això els suports són zones, no línies."
   },
   "u35l6-1": {
-   "prompt": "Abans de comprar, mira la tendència. Quina és? (NVIDIA · tancaments cada 3 sessions · març–maig del 2026)",
+   "prompt": "Abans de comprar, mira la tendència. Quina és? (Johnson & Johnson · tancaments cada 3 sessions · maig–juliol del 2026)",
    "options": [
     "Alcista",
     "Baixista",
     "Lateral"
    ],
-   "explanation": "Màxims i mínims creixents: d'uns 168 $ a màxims d'uns 236 $. Comprar a favor de la tendència i posar l'stop sota l'últim mínim és el plantejament clàssic."
+   "explanation": "Màxims i mínims creixents: d'uns 225 $ a màxims d'uns 266 $. Comprar a favor de la tendència i posar l'stop sota l'últim mínim és el plantejament clàssic."
   },
   "u35l6-2": {
    "prompt": "Has comprat a l'últim preu. Col·loca el teu stop loss on la teva idea deixa de ser vàlida.",
    "options": [],
-   "explanation": "Just per sota de l'últim mínim rellevant (uns 408 $), amb un petit marge. Si el preu perd aquest terra, la tendència que buscaves ja no hi és."
+   "explanation": "Just per sota de l'últim mínim rellevant (uns 264 $), amb un petit marge. Si el preu perd aquest terra, la tendència que buscaves ja no hi és."
   },
   "u35l6-3": {
    "prompt": "Ara l'objectiu: col·loca el teu take profit.",
    "options": [],
-   "explanation": "A prop del màxim anterior (uns 195 $): aquí van aparèixer venedors l'última vegada. Apuntar molt més amunt és esperar una cosa que el preu encara no ha fet."
+   "explanation": "A prop del màxim anterior (uns 8,90 €): aquí van aparèixer venedors l'última vegada. Apuntar molt més amunt és esperar una cosa que el preu encara no ha fet."
   },
   "u35l6-5": {
    "prompt": "Col·loca l'stop d'aquesta compra.",
    "options": [],
-   "explanation": "Per sota del mínim recent (uns 12,90 €). Ni enganxat al preu, perquè el soroll el faria saltar, ni tan lluny que la pèrdua es dispari."
+   "explanation": "Per sota del mínim recent (uns 39 €). Ni enganxat al preu, perquè el soroll el faria saltar, ni tan lluny que la pèrdua es dispari."
   },
   "u35l6-7": {
    "prompt": "Tens 10.000 € i arrisques com a màxim un 1 %. Col·loca l'stop i tria l'import.",
@@ -699,7 +700,7 @@
   "u35l6-9": {
    "prompt": "Col·loca l'objectiu d'aquesta operació.",
    "options": [],
-   "explanation": "A prop del màxim anterior (uns 256 $). Si el preu el supera amb força, sempre pots pujar l'stop i deixar córrer el guany."
+   "explanation": "A prop del màxim anterior (uns 172 $). Si el preu el supera amb força, sempre pots pujar l'stop i deixar córrer el guany."
   },
   "u35l7-2": {
    "prompt": "Març del 2020: la covid ha confinat mig món i l'S&P 500 ha caigut més d'un 30 % en un mes. Els titulars parlen de la pitjor crisi en dècades. Què va fer l'índex els mesos següents?",
@@ -790,12 +791,12 @@
   "u35l8-2": {
    "prompt": "Pas 2: col·loca l'stop d'aquesta compra.",
    "options": [],
-   "explanation": "Per sota de l'últim mínim (uns 10.530 punts), amb un marge per al soroll. Aquí és on la teva idea deixa de valer."
+   "explanation": "Per sota de l'últim mínim (uns 21,96 €), amb un marge per al soroll. Aquí és on la teva idea deixa de valer."
   },
   "u35l8-3": {
    "prompt": "Pas 3, en una altra operació: col·loca l'objectiu.",
    "options": [],
-   "explanation": "A prop del màxim anterior (uns 785 $), on l'última vegada van aparèixer venedors."
+   "explanation": "A prop del màxim anterior (uns 293 $), on l'última vegada van aparèixer venedors."
   },
   "u35l8-5": {
    "prompt": "Executa l'operació completa: 10.000 €, risc màxim de l'1 %. Posa l'stop sota el mínim i ajusta l'import.",

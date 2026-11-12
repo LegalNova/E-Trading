@@ -77,7 +77,19 @@ interface ChartFixture {
   entry?: number; support?: number; resistance?: number; atr?: number
 }
 const FIX = CHARTS as unknown as Record<string, ChartFixture>
-const fixture = (id: string) => FIX[id] ?? (() => { throw new Error(`Falta el gráfico ${id}: ejecuta scripts/build-lesson-charts.py`) })()
+// Qué gráficos usa cada pieza y cada ejercicio (auditoría RED-34): el comprobador avisa si uno se repite
+const touched: string[] = []
+const FX = new WeakMap<object, string[]>()
+const fixture = (id: string) => (touched.push(id), FIX[id] ?? (() => { throw new Error(`Falta el gráfico ${id}: ejecuta scripts/build-lesson-charts.py`) })())
+/** Apunta los gráficos que ha pedido `make` en el objeto que devuelve */
+const fx = <T extends object>(make: () => T): T => {
+  const from = touched.length
+  const out = make()
+  FX.set(out, [...new Set(touched.slice(from))])
+  return out
+}
+/** Por clase: gráficos de sus piezas (`steps`) y de cada ejercicio vivo del quiz (`quiz`: [gráfico, id del ejercicio]) */
+export const FIXTURE_USE: Record<string, { steps: string[]; quiz: [string, string][] }> = {}
 /** Pie del gráfico tal como se ve: en los momentos históricos solo llega hasta el corte (el resto se revela al responder) */
 // (cutLabel dice el corte según el tipo de vela: «el 25/03/2020», «la semana del 23/07/2012» o «diciembre de 1989»)
 const visibleCaption = (f: ChartFixture) => (f.cutDate ? `${f.caption.split(' · ').slice(0, 2).join(' · ')} · hasta ${f.cutLabel ?? `el ${f.cutDate}`}` : f.caption)
@@ -89,10 +101,10 @@ export const key = (title: string, body: string, idea: string, tip?: string): St
 export const img = (image: Illustration, title: string, body: string, tip?: string): Step => ({ kind: 'IMAGE', title, body, image, tip })
 export const sim = (title: string, body: string, task: string): Step => ({ kind: 'SIM', title, body, task })
 /** «Toca la vela…» sobre un gráfico real; la vela correcta es la que detectó el script */
-export const chart = (fixtureId: string, prompt: string, ok: string, ko: string): Step => {
+export const chart = (fixtureId: string, prompt: string, ok: string, ko: string): Step => fx(() => {
   const f = fixture(fixtureId)
   return { kind: 'CHART', prompt, caption: f.caption, candles: f.candles!, solution: f.target!, ok, ko }
-}
+})
 
 /** Calculadora interactiva con deslizadores (interés compuesto, inflación, tamaño de posición…) */
 export const calc = (kind: Calc, title: string, body: string, tip?: string): Step => ({ kind: 'CALC', calc: kind, title, body, tip })
@@ -136,9 +148,9 @@ interface PlayIn {
   lumi: PlayStepT['lumi']
 }
 /** Aprender haciendo: una pieza para tocar, con predicción, reto y reacciones de Lumi */
-export const play = (o: PlayIn): Step => ({ kind: 'PLAY', play: { ...o, ...held(o), mode: 'EXPLORE', widget: withSeries(o.widget) } })
+export const play = (o: PlayIn): Step => fx(() => ({ kind: 'PLAY', play: { ...o, ...held(o), mode: 'EXPLORE', widget: withSeries(o.widget) } }))
 /** Misión en el simulador: lo mismo, pero el reto es lo importante */
-export const mission = (o: PlayIn & { goal: PlayStepT['goal'] }): Step => ({ kind: 'PLAY', play: { ...o, ...held(o), mode: 'MISSION', widget: withSeries(o.widget) } })
+export const mission = (o: PlayIn & { goal: PlayStepT['goal'] }): Step => fx(() => ({ kind: 'PLAY', play: { ...o, ...held(o), mode: 'MISSION', widget: withSeries(o.widget) } }))
 /**
  * En las series históricas («vive lo que pasó») la predicción no se corrige al elegir: se apunta, y la respuesta la
  * descubre la propia simulación. Antes el texto decía el final («Valen 38.109 €») justo antes de vivirlo (auditoría APP-12).
@@ -205,15 +217,15 @@ export const fill = (prompt: string, answer: string, distractors: string[], expl
   return { type: 'FILL_BLANK', prompt, options: shuffle(all, prompt).map(i => all[i]), solution: answer, explanation }
 }
 const TRENDS = ['Alcista', 'Bajista', 'Lateral'] as const
-export const trend = (prompt: string, fixtureId: string, answer: (typeof TRENDS)[number], explanation: string): Q => {
+export const trend = (prompt: string, fixtureId: string, answer: (typeof TRENDS)[number], explanation: string): Q => fx(() => {
   const f = fixture(fixtureId)
   return { type: 'CHART_TREND', prompt: `${prompt} (${visibleCaption(f)})`, options: [...TRENDS], chart: f.closes!, solution: TRENDS.indexOf(answer), explanation }
-}
-export const point = (prompt: string, fixtureId: string, which: 'max' | 'min', explanation: string): Q => {
+})
+export const point = (prompt: string, fixtureId: string, which: 'max' | 'min', explanation: string): Q => fx(() => {
   const c = fixture(fixtureId).closes!
   const v = which === 'max' ? Math.max(...c) : Math.min(...c)
   return { type: 'CHART_POINT', prompt: `${prompt} (${visibleCaption(fixture(fixtureId))})`, options: [], chart: c, solution: c.indexOf(v), explanation }
-}
+})
 
 // ── Tipos dinámicos (docs/curso-v2/03-ejercicios.md) ─────
 /** Emparejar: cada par [izquierda, derecha]; la columna derecha se muestra barajada */
@@ -230,12 +242,12 @@ export const buckets = (prompt: string, groups: string[], items: [string, number
   return { type: 'BUCKETS', prompt, options: shown.map(x => x[0]), right: groups, solution: shown.map(x => x[1]), explanation }
 }
 /** Toca la vela: el patrón que detectó el script en un gráfico real */
-export const candle = (prompt: string, fixtureId: string, explanation: string): Q => {
+export const candle = (prompt: string, fixtureId: string, explanation: string): Q => fx(() => {
   const f = fixture(fixtureId)
   return { type: 'CHART_CANDLE', prompt, options: [], candles: f.candles!, solution: f.target!, explanation: `${explanation} (${f.caption})` }
-}
+})
 /** ¿Sube o baja? Gráfico real sin nombre ni fecha; al responder se revela el activo y lo que pasó */
-export const upDown = (prompt: string, fixtureId: string, explanation: string, horizon?: string): Q => {
+export const upDown = (prompt: string, fixtureId: string, explanation: string, horizon?: string): Q => fx(() => {
   const f = fixture(fixtureId)
   const up = f.outcome ? f.outcome === 'UP' : (f.changePct ?? 0) > 0
   const base = f.candles ? { candles: f.candles } : { chart: f.closes! }
@@ -245,9 +257,9 @@ export const upDown = (prompt: string, fixtureId: string, explanation: string, h
     meta: { horizon: horizon ?? (f.future ? 'las 10 sesiones siguientes' : 'los meses siguientes'), ...(f.future ? { blind: true } : {}) },
     hidden: { candles: f.future, closes: f.futureCloses, caption: f.caption, changePct: f.changePct, minPct: f.minPct },
   }
-}
+})
 /** Coloca el stop (por debajo del mínimo reciente) o el objetivo (cerca del máximo anterior) en un gráfico real */
-export const level = (prompt: string, fixtureId: string, which: 'STOP' | 'TAKE', explanation: string): Q => {
+export const level = (prompt: string, fixtureId: string, which: 'STOP' | 'TAKE', explanation: string): Q => fx(() => {
   const f = fixture(fixtureId)
   const { entry, support, resistance, atr } = f as Required<ChartFixture>
   const range: [number, number] = which === 'STOP' ? [support - 2 * atr, Math.min(support, entry - 0.2 * atr)] : [resistance - atr, resistance + 0.5 * atr]
@@ -255,15 +267,15 @@ export const level = (prompt: string, fixtureId: string, which: 'STOP' | 'TAKE',
     type: 'PLACE_LEVEL', prompt, options: [], candles: f.candles!, solution: range.map(v => Number(v.toPrecision(6))), range, explanation,
     meta: { entry, level: which }, hidden: { candles: f.future, caption: f.caption },
   }
-}
+})
 /** Simula la operación: importe y stop con la regla del riesgo; luego se reproduce lo que pasó de verdad */
-export const simTrade = (prompt: string, fixtureId: string, explanation: string, o: { cash?: number; maxRiskPct?: number } = {}): Q => {
+export const simTrade = (prompt: string, fixtureId: string, explanation: string, o: { cash?: number; maxRiskPct?: number } = {}): Q => fx(() => {
   const f = fixture(fixtureId)
   return {
     type: 'SIM_TRADE', prompt, options: [], candles: f.candles!, solution: 0, explanation,
     meta: { entry: f.entry!, cash: o.cash ?? 10_000, maxRiskPct: o.maxRiskPct ?? 1 }, hidden: { candles: f.future, caption: f.caption },
   }
-}
+})
 /** Escenario: cada opción [texto, consecuencia]; `best` es la mejor decisión */
 export const scenario = (prompt: string, choices: [string, string][], best: number, explanation: string): Q => {
   const m = mix(prompt, choices.map(c => c[0]), [best])
@@ -302,7 +314,11 @@ export const spot = (prompt: string, messages: [string, string, boolean][], expl
   return { type: 'SPOT', prompt, options: shown.map(m => m[1]), solution: shown.flatMap((m, i) => (m[2] ? [i] : [])), explanation, meta: { senders: shown.map(m => m[0]) } }
 }
 /** Reto cronometrado: la misma pregunta con cuenta atrás (si se acaba el tiempo, cuenta como fallo) */
-export const timed = (q: Q, seconds = 12): Q => ({ ...q, meta: { ...(q.meta ?? {}), timeLimit: seconds } })
+export const timed = (q: Q, seconds = 12): Q => {
+  const out = { ...q, meta: { ...(q.meta ?? {}), timeLimit: seconds } }
+  if (FX.has(q)) FX.set(out, FX.get(q)!)
+  return out
+}
 
 // ── Lecciones y unidades ─────────────────────────────────
 export const QUIZZES: Record<string, ContentQuestion[]> = {}
@@ -319,6 +335,10 @@ const nbS = (s: Step): Step =>
  */
 export function lesson(id: string, title: string, steps: Step[], questions: Q[], o: { minutes?: number; xp?: number; source?: string; retire?: number[] } = {}): ContentLesson {
   QUIZZES[`q-${id}`] = questions.flatMap((q, i) => (o.retire?.includes(i) ? [] : [{ ...nbQ(q), id: `${id}-${i + 1}` }]))
+  FIXTURE_USE[id] = {
+    steps: steps.flatMap(st => FX.get(st) ?? []),
+    quiz: questions.flatMap((q, i) => (o.retire?.includes(i) ? [] : (FX.get(q) ?? []).map((f): [string, string] => [f, `${id}-${i + 1}`]))),
+  }
   return { id, title, minutes: o.minutes ?? 5, xp: o.xp ?? 30, steps: steps.map(nbS), quizId: `q-${id}`, source: o.source }
 }
 

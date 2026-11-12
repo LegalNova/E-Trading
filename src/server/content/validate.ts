@@ -256,3 +256,39 @@ function checkStory(id: string, s: Extract<Step, { kind: 'STORY' }>['story']): s
   }
   return e
 }
+
+// ── Repeticiones (auditoría RED-34) ──────────────────────
+/** Como mucho, un tercio de las piezas de una unidad pueden ser el clasificador de tarjetas */
+export const MAX_SORT_SHARE = 1 / 3
+
+/**
+ * Tres avisos para que el curso no se repita:
+ *  1. un gráfico = una clase (si vuelve a salir en otra, se acierta de memoria);
+ *  2. cada serie histórica se vive como pieza en una sola clase;
+ *  3. no más de un tercio de las piezas de una unidad son «clasifica las tarjetas».
+ */
+export function reuseWarnings(units: ContentUnit[], use: Record<string, { steps: string[]; quiz: [string, string][] }>): string[] {
+  const out: string[] = []
+  const live = new Set(units.flatMap(u => u.lessons.map(l => l.id)))
+  // Gráfico → clases donde sale, sea en una pieza o en un ejercicio vivo. Dos usos dentro de la misma clase están bien
+  // (la tendencia y, después, qué pasó): lo que se evita es volver a verlo en otra clase, ya con el desenlace sabido.
+  const where = new Map<string, Set<string>>()
+  for (const [lessonId, u] of Object.entries(use)) {
+    if (!live.has(lessonId)) continue
+    for (const f of [...u.steps, ...u.quiz.map(x => x[0])]) where.set(f, (where.get(f) ?? new Set()).add(lessonId))
+  }
+  const isSeries = (f: string) => /^(series|mix)-/.test(f)
+  const list = (keep: (f: string) => boolean) => [...where].filter(([f, w]) => keep(f) && w.size > 1).sort((a, b) => b[1].size - a[1].size).map(([f, w]) => `${f} ×${w.size} (${[...w].join(', ')})`)
+  const charts = list(f => !isSeries(f))
+  if (charts.length) out.push(`${charts.length} gráficos salen en más de una clase: ${charts.slice(0, 14).join(' · ')}${charts.length > 14 ? '…' : ''}`)
+  const series = list(isSeries)
+  if (series.length) out.push(`${series.length} series históricas se viven como pieza en más de una clase: ${series.join(' · ')}`)
+  const sorty: string[] = []
+  for (const u of units) {
+    const kinds = u.lessons.flatMap(l => l.steps.flatMap(s => (s.kind === 'PLAY' ? [s.play.widget.kind] : [])))
+    const n = kinds.filter(k => k === 'sort').length
+    if (kinds.length >= 3 && n / kinds.length > MAX_SORT_SHARE) sorty.push(`${u.id} ${n}/${kinds.length}`)
+  }
+  if (sorty.length) out.push(`En ${sorty.length} unidades, más de un tercio de las piezas son «clasifica las tarjetas»: ${sorty.join(' · ')}`)
+  return out
+}

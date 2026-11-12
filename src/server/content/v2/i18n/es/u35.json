@@ -176,10 +176,11 @@
     {
      "texts": [
       "Opera con el soporte",
-      "Velas reales: el precio tiene un **soporte** un 3 % por debajo de tu entrada y una **resistencia** un 6 % por encima. Coloca tu stop y tu objetivo.",
+      "Velas reales: el precio tiene un **soporte** un 3 % por debajo de tu entrada y una **resistencia** un 7,5 % por encima. Coloca tu stop y tu objetivo.",
       "Pon el stop por debajo del soporte y el objetivo cerca de la resistencia. Luego, mira qué pasó.",
       "Un **soporte** es una zona donde el precio dejó de caer varias veces (aparecen compradores); una **resistencia**, donde dejó de subir. **Dan un sitio lógico al stop y al objetivo**, aunque nada asegura que se respeten.",
       "Tu stop está por encima del soporte: el ruido puede hacerlo saltar.",
+      "Saltó el stop: esta vez el soporte no aguantó. Has perdido lo previsto, no más.",
       "¡Objetivo! Esta vez el soporte aguantó.",
       "Busca el suelo en el gráfico y pon el stop debajo"
      ]
@@ -419,13 +420,13 @@
    "horizon": "las 10 sesiones siguientes"
   },
   "u35l1-3": {
-   "prompt": "Sin adivinar el futuro: ¿qué tendencia tenía este precio? (Apple · cierres cada 3 sesiones · marzo–mayo de 2026)",
+   "prompt": "Sin adivinar el futuro: ¿qué tendencia tenía este precio? (Disney · cierres cada 3 sesiones · mayo–junio de 2025)",
    "options": [
     "Alcista",
     "Bajista",
     "Lateral"
    ],
-   "explanation": "Máximos y mínimos cada vez más altos: de unos 249 $ a unos 309 $. Leer la tendencia pasada es fácil; saber cuánto durará, no."
+   "explanation": "Máximos y mínimos cada vez más altos: de unos 91 $ a unos 122 $. Leer la tendencia pasada es fácil; saber cuánto durará, no."
   },
   "u35l1-4": {
    "prompt": "Las últimas velas han sido intensas. ¿Más arriba o más abajo 10 sesiones después?",
@@ -446,13 +447,13 @@
    "horizon": "las 10 sesiones siguientes"
   },
   "u35l1-8": {
-   "prompt": "¿Qué tendencia ves en este tramo? (Microsoft · cierres cada 3 sesiones · diciembre de 2025 – febrero de 2026)",
+   "prompt": "¿Qué tendencia ves en este tramo? (SAP · cierres cada 3 sesiones · febrero–abril de 2026)",
    "options": [
     "Alcista",
     "Bajista",
     "Lateral"
    ],
-   "explanation": "Máximos y mínimos cada vez más bajos: de unos 488 $ a unos 384 $. En una tendencia bajista, «ya está barata» no es un argumento: puede abaratarse más."
+   "explanation": "Máximos y mínimos cada vez más bajos: de unos 173 € a unos 152 €. En una tendencia bajista, «ya está barata» no es un argumento: puede abaratarse más."
   },
   "u35l1-9": {
    "prompt": "Si una acción ha subido 5 días seguidos, es más probable que baje el sexto.",
@@ -568,12 +569,12 @@
   "u35l4-1": {
    "prompt": "Toca el martillo.",
    "options": [],
-   "explanation": "Cuerpo pequeño en la parte alta y una mecha inferior de al menos el doble del cuerpo, tras varias velas a la baja. (NVIDIA · velas diarias · junio de 2026)"
+   "explanation": "Cuerpo pequeño en la parte alta y una mecha inferior de al menos el doble del cuerpo, tras varias velas a la baja. (SAP · velas diarias · abril de 2024)"
   },
   "u35l4-2": {
    "prompt": "Toca la estrella fugaz.",
    "options": [],
-   "explanation": "Mecha superior larga y cuerpo pequeño abajo, después de subir: los compradores lo intentaron y los vendedores devolvieron el precio abajo. (Microsoft · velas diarias · abril de 2026)"
+   "explanation": "Mecha superior larga y cuerpo pequeño abajo, después de subir: los compradores lo intentaron y los vendedores devolvieron el precio abajo. (ASML · velas diarias · diciembre de 2023)"
   },
   "u35l4-3": {
    "prompt": "Empareja cada vela con lo que cuenta.",
@@ -594,12 +595,12 @@
   "u35l4-4": {
    "prompt": "Toca el doji.",
    "options": [],
-   "explanation": "Apertura y cierre casi iguales, con mechas a ambos lados: indecisión. Espera a la vela siguiente antes de sacar conclusiones. (Apple · velas diarias · septiembre de 2026)"
+   "explanation": "Apertura y cierre casi iguales, con mechas a ambos lados: indecisión. Espera a la vela siguiente antes de sacar conclusiones. (ASML · velas diarias · julio de 2026)"
   },
   "u35l4-5": {
    "prompt": "Toca la vela que completa la envolvente alcista.",
    "options": [],
-   "explanation": "Una vela verde cuyo cuerpo envuelve por completo el cuerpo rojo anterior, después de una caída. (Apple · velas diarias · abril de 2025)"
+   "explanation": "Una vela verde cuyo cuerpo envuelve por completo el cuerpo rojo anterior, después de una caída. (ASML · velas diarias · junio–julio de 2025)"
   },
   "u35l4-8": {
    "prompt": "Un martillo garantiza que el precio va a subir.",
@@ -612,22 +613,22 @@
   "u35l4-9": {
    "prompt": "Toca el marubozu.",
    "options": [],
-   "explanation": "Cuerpo verde largo, casi sin mechas: los compradores mandaron de principio a fin de la sesión. (Apple · velas diarias · junio–julio de 2026)"
+   "explanation": "Cuerpo verde largo, casi sin mechas: los compradores mandaron de principio a fin de la sesión. (ASML · velas diarias · diciembre de 2025 – enero de 2026)"
   },
   "u35l4-10": {
    "prompt": "Toca la tercera vela de la estrella de la mañana.",
    "options": [],
-   "explanation": "Primero una roja grande, luego una pequeña de duda y por último una verde fuerte que cierra por encima de la mitad de la primera. (Microsoft · velas diarias · enero–febrero de 2026)"
+   "explanation": "Primero una roja grande, luego una pequeña de duda y por último una verde fuerte que cierra por encima de la mitad de la primera. (Airbus · velas diarias · junio–julio de 2024)"
   },
   "u35l5-1": {
-   "prompt": "Rango lateral. Toca el punto más bajo: el suelo que vigilan los compradores. (Apple · cierres cada 3 sesiones · septiembre–noviembre de 2024)",
+   "prompt": "Rango lateral. Toca el punto más bajo: el suelo que vigilan los compradores. (McDonald's · cierres cada 3 sesiones · noviembre de 2025 – enero de 2026)",
    "options": [],
-   "explanation": "Unos 222 $: el mínimo del rango marca el soporte. Si el precio vuelve ahí, mucha gente mirará si aguanta."
+   "explanation": "Unos 303 $: el mínimo del rango marca el soporte. Si el precio vuelve ahí, mucha gente mirará si aguanta."
   },
   "u35l5-2": {
-   "prompt": "Ahora el techo: toca el punto más alto de este rango. (Microsoft · cierres cada 3 sesiones · agosto–octubre de 2024)",
+   "prompt": "Ahora el techo: toca el punto más alto de este rango. (Johnson & Johnson · cierres cada 3 sesiones · abril–junio de 2024)",
    "options": [],
-   "explanation": "Unos 433 $: ahí se frenaron las subidas. Es la resistencia del rango."
+   "explanation": "Unos 153 $: ahí se frenaron las subidas. Es la resistencia del rango."
   },
   "u35l5-3": {
    "prompt": "Una zona donde el precio ha dejado de caer varias veces se llama ____.",
@@ -649,9 +650,9 @@
    "horizon": "las 10 sesiones siguientes"
   },
   "u35l5-5": {
-   "prompt": "Tendencia bajista. Toca el mínimo: el nivel que los compradores tendrán que defender. (Apple · cierres cada 3 sesiones · febrero–abril de 2025)",
+   "prompt": "Tendencia bajista. Toca el mínimo: el nivel que los compradores tendrán que defender. (Disney · cierres cada 3 sesiones · febrero–abril de 2025)",
    "options": [],
-   "explanation": "Unos 172 $: tras ese mínimo hubo un rebote. Un mínimo así se convierte en referencia para el futuro."
+   "explanation": "Unos 84 $: tras ese mínimo hubo un rebote. Un mínimo así se convierte en referencia para el futuro."
   },
   "u35l5-8": {
    "prompt": "Otro índice. ¿Ves algún suelo claro cerca del precio actual? Decide: ¿más arriba o más abajo 10 sesiones después?",
@@ -663,33 +664,33 @@
    "horizon": "las 10 sesiones siguientes"
   },
   "u35l5-9": {
-   "prompt": "Rango lateral con una vela rebelde. Toca el mínimo. (NVIDIA · cierres cada 3 sesiones · diciembre de 2025 – febrero de 2026)",
+   "prompt": "Rango lateral con una caída que no duró. Toca el mínimo. (Visa · cierres cada 3 sesiones · julio–septiembre de 2025)",
    "options": [],
-   "explanation": "Unos 174 $: el precio perforó el rango un momento y volvió enseguida dentro. Eso es una falsa rotura, y por eso los soportes son zonas, no líneas."
+   "explanation": "Unos 336 $: el precio perdió el rango unos días y volvió dentro. Eso es una falsa rotura, y por eso los soportes son zonas, no líneas."
   },
   "u35l6-1": {
-   "prompt": "Antes de comprar, mira la tendencia. ¿Cuál es? (NVIDIA · cierres cada 3 sesiones · marzo–mayo de 2026)",
+   "prompt": "Antes de comprar, mira la tendencia. ¿Cuál es? (Johnson & Johnson · cierres cada 3 sesiones · mayo–julio de 2026)",
    "options": [
     "Alcista",
     "Bajista",
     "Lateral"
    ],
-   "explanation": "Máximos y mínimos crecientes: de unos 168 $ a máximos de unos 236 $. Comprar a favor de la tendencia y poner el stop bajo el último mínimo es el planteamiento clásico."
+   "explanation": "Máximos y mínimos crecientes: de unos 225 $ a máximos de unos 266 $. Comprar a favor de la tendencia y poner el stop bajo el último mínimo es el planteamiento clásico."
   },
   "u35l6-2": {
    "prompt": "Has comprado al último precio. Coloca tu stop loss donde tu idea deja de ser válida.",
    "options": [],
-   "explanation": "Justo por debajo del último mínimo relevante (unos 408 $), con un pequeño margen. Si el precio pierde ese suelo, la tendencia que buscabas ya no está."
+   "explanation": "Justo por debajo del último mínimo relevante (unos 264 $), con un pequeño margen. Si el precio pierde ese suelo, la tendencia que buscabas ya no está."
   },
   "u35l6-3": {
    "prompt": "Ahora el objetivo: coloca tu take profit.",
    "options": [],
-   "explanation": "Cerca del máximo anterior (unos 195 $): ahí aparecieron vendedores la última vez. Apuntar mucho más arriba es esperar algo que el precio aún no ha hecho."
+   "explanation": "Cerca del máximo anterior (unos 8,90 €): ahí aparecieron vendedores la última vez. Apuntar mucho más arriba es esperar algo que el precio aún no ha hecho."
   },
   "u35l6-5": {
    "prompt": "Coloca el stop de esta compra.",
    "options": [],
-   "explanation": "Por debajo del mínimo reciente (unos 12,90 €). Ni pegado al precio, porque el ruido lo haría saltar, ni tan lejos que la pérdida se dispare."
+   "explanation": "Por debajo del mínimo reciente (unos 39 €). Ni pegado al precio, porque el ruido lo haría saltar, ni tan lejos que la pérdida se dispare."
   },
   "u35l6-7": {
    "prompt": "Tienes 10.000 € y arriesgas como mucho un 1 %. Coloca el stop y elige el importe.",
@@ -699,7 +700,7 @@
   "u35l6-9": {
    "prompt": "Coloca el objetivo de esta operación.",
    "options": [],
-   "explanation": "Cerca del máximo anterior (unos 256 $). Si el precio lo supera con fuerza, siempre puedes subir el stop y dejar correr la ganancia."
+   "explanation": "Cerca del máximo anterior (unos 172 $). Si el precio lo supera con fuerza, siempre puedes subir el stop y dejar correr la ganancia."
   },
   "u35l7-2": {
    "prompt": "Marzo de 2020: el covid ha confinado medio mundo y el S&P 500 ha caído más de un 30 % en un mes. Los titulares hablan de la peor crisis en décadas. ¿Qué hizo el índice en los meses siguientes?",
@@ -790,12 +791,12 @@
   "u35l8-2": {
    "prompt": "Paso 2: coloca el stop de esta compra.",
    "options": [],
-   "explanation": "Por debajo del último mínimo (unos 10.530 puntos), con un margen para el ruido. Ahí es donde tu idea deja de valer."
+   "explanation": "Por debajo del último mínimo (unos 21,96 €), con un margen para el ruido. Ahí es donde tu idea deja de valer."
   },
   "u35l8-3": {
    "prompt": "Paso 3, en otra operación: coloca el objetivo.",
    "options": [],
-   "explanation": "Cerca del máximo anterior (unos 785 $), donde la última vez aparecieron vendedores."
+   "explanation": "Cerca del máximo anterior (unos 293 $), donde la última vez aparecieron vendedores."
   },
   "u35l8-5": {
    "prompt": "Ejecuta la operación completa: 10.000 €, riesgo máximo del 1 %. Pon el stop bajo el mínimo y ajusta el importe.",

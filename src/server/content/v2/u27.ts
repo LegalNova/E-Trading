@@ -132,7 +132,7 @@ export default unit({
       key('Cómo protegerte', 'Stop y plan de salida **antes** de entrar. Si la operación va a favor, la salida la decide el plan (por ejemplo, mitad en 2R y el resto con stop dinámico), no el miedo a devolver lo ganado.', 'Vendemos lo que gana por alegría rápida y aguantamos lo que pierde por no aceptar el error.', 'Pruébalo: en tu próxima compra, pon el objetivo al doble de distancia que el stop.'),
     ], [
       single('¿Qué es el efecto disposición?', ['Vender pronto lo que gana y mantener demasiado lo que pierde', 'Comprar siempre lo que más sube', 'Repartir el dinero entre muchos activos'], 0, 'Lo midió Odean en 1998 en miles de cuentas.'),
-      simTrade('Compras al último precio con una cuenta de 10.000 € y un riesgo máximo del 1 %. Fija ahora el stop, en calma, antes de que el precio se mueva.', 'lvl-2', 'Decidir el stop antes de entrar evita que, si el precio cae, la aversión a la pérdida te convenza de aguantar «hasta que vuelva».'),
+      simTrade('Compras al último precio con una cuenta de 10.000 € y un riesgo máximo del 1 %. Fija ahora el stop, en calma, antes de que el precio se mueva.', 'lvl-35', 'Decidir el stop antes de entrar evita que, si el precio cae, la aversión a la pérdida te convenza de aguantar «hasta que vuelva».'),
       simTrade('Otra compra con 10.000 € y un 1 % de riesgo. Elige stop e importe, y piensa: si va a favor, ¿saldrías por miedo o según tu plan?', 'lvl-15', 'Si la operación va a favor, la salida la decide el plan, no las ganas de asegurar una ganancia pequeña.'),
       scenario('Laura necesita 2.000 €. Tiene la acción A con un +20 % y la acción B con un −20 % (la empresa B acaba de presentar malos resultados). ¿Qué hace la mayoría y qué tendría sentido?', [['Vender A porque está en ganancias', 'Es lo que hace casi todo el mundo: el efecto disposición. Se queda con la que empeora.'], ['Decidir por el futuro de cada negocio, no por si está en verde o en rojo', 'Bien: si B ha empeorado y A no, lo lógico puede ser justo lo contrario de lo que pide el cuerpo.'], ['Vender las dos y no invertir más', 'Huir de todo no corrige el sesgo: solo lo cambia por otro.']], 1, 'Lo que importa es qué esperas de cada activo, no tu precio de compra.'),
       tf('Según Odean, las acciones ganadoras que los inversores vendieron rindieron después peor que las perdedoras que conservaron.', false, 'Fue al revés: las ganadoras vendidas siguieron rindiendo mejor de media.'),
@@ -147,7 +147,7 @@ export default unit({
       mission({
         title: '¿Tienes buen ojo?',
         intro: 'Cuatro gráficos reales, sin nombre ni fecha. ¿Sube o baja? Lleva la cuenta de tus aciertos.',
-        widget: { kind: 'guess', rounds: ['ud-6', 'ud-12', 'ud-16', 'ud-18'] },
+        widget: { kind: 'guess', rounds: ['ud-6', 'ud-12', 'ud-16', 'ud-117'] },
         goal: { text: 'Juega las cuatro rondas.', when: [when('done', '==', 4)] },
         insight: 'Con 4 intentos, acertarlos todos al azar pasa **más de una vez de cada veinte**. Para saber si tienes ventaja hacen falta **muchas operaciones registradas**.',
         lumi: [
@@ -259,7 +259,7 @@ export default unit({
       ]),
       key('Lo que te llevas', 'La **recencia** hace que lo último que ha pasado pese demasiado: tras subir, «siempre sube»; tras caer, «ya solo baja». La **supervivencia** te enseña solo a los que ganaron.\n\nAntídoto: datos de décadas y el mercado entero, no los casos que salen en redes.', 'Ni el último año ni los ganadores visibles cuentan toda la historia.', 'Pruébalo: abre en Mercado el ETF del S&P 500 y busca sus caídas pasadas.'),
     ], [
-      trend('Mira solo estos dos meses de un gráfico real. ¿Qué tendencia ves?', 'trend-up-2', 'Alcista', 'Sube con claridad. La recencia nos lleva a creer que seguirá así siempre; un tramo de dos meses no dice nada de los próximos años.'),
+      trend('Mira solo estos dos meses de un gráfico real. ¿Qué tendencia ves?', 'trend-up-17', 'Alcista', 'Sube con claridad. La recencia nos lleva a creer que seguirá así siempre; un tramo de dos meses no dice nada de los próximos años.'),
       point('Así iba el Nikkei japonés hasta diciembre de 1989. Toca el punto más alto.', 'hist-japan-1989', 'max', 'Tras años de subidas, todos creían que seguiría. El máximo de finales de 1989 tardó 34 años en recuperarse.'),
       upDown('Septiembre de 1929: la bolsa de EE. UU. lleva años subiendo y «todo el mundo» compra, muchos con dinero prestado. ¿Qué hizo el S&P 500 después?', 'hist-crash-1929', 'La caída llegó a más del 80 %. Lo que pasó en los años anteriores no predecía lo que vendría.', 'los tres años siguientes'),
       single('Tras dos años de subidas fuertes, Laura cree que la bolsa «siempre sube» y mete todos sus ahorros. ¿Qué sesgo muestra sobre todo?', ['Recencia', 'Coste hundido', 'Aversión a la pérdida'], 0, 'Da demasiado peso a lo que acaba de pasar (y probablemente hay también exceso de confianza).'),
