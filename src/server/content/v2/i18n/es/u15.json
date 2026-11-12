@@ -295,7 +295,7 @@
  },
  "questions": {
   "u15l1-1": {
-   "prompt": "Mira el oro desde 2018 hasta el verano de 2020. ¿Qué tendencia ves? (Oro · cierres semanales · hasta el 03/08/2020)",
+   "prompt": "Mira el oro desde 2018 hasta el verano de 2020. ¿Qué tendencia ves? (Oro · cierres semanales · hasta la semana del 03/08/2020)",
    "options": [
     "Alcista",
     "Bajista",
@@ -304,7 +304,7 @@
    "explanation": "De unos 1.200 $ a más de 2.000 $: miedo, tipos bajos y pandemia empujaron al refugio."
   },
   "u15l1-2": {
-   "prompt": "Toca el punto más bajo del oro en este periodo. (Oro · cierres semanales · hasta el 03/08/2020)",
+   "prompt": "Toca el punto más bajo del oro en este periodo. (Oro · cierres semanales · hasta la semana del 03/08/2020)",
    "options": [],
    "explanation": "El mínimo fue a finales de 2018, en torno a 1.190 $. Desde ahí subió alrededor de un 70 % hasta agosto de 2020."
   },
@@ -342,7 +342,7 @@
    "explanation": "Un refugio también cae: el oro llegó a perder un 42 % desde su máximo de 2011. El stop va algo por debajo del último mínimo, con margen, porque si lo pierde tu idea deja de valer. Ponerlo pegado al precio es la tentación, pero un vaivén normal lo salta."
   },
   "u15l2-2": {
-   "prompt": "Toca el punto más bajo de este periodo (cierres semanales). (Petróleo WTI · cierres semanales · hasta el 20/04/2020)",
+   "prompt": "Toca el punto más bajo de este periodo (cierres semanales). (Petróleo WTI · cierres semanales · hasta la semana del 20/04/2020)",
    "options": [],
    "explanation": "La semana del 20 de abril de 2020 cerró en unos 17 $. El −37,63 $ no aparece en cierres semanales: fue un solo día y un solo contrato, el de mayo, justo antes de vencer."
   },
@@ -532,7 +532,7 @@
    ]
   },
   "u15l5-4": {
-   "prompt": "Toca el punto más alto del WTI en este periodo (cierres semanales). (Petróleo WTI · cierres semanales · hasta el 20/04/2020)",
+   "prompt": "Toca el punto más alto del WTI en este periodo (cierres semanales). (Petróleo WTI · cierres semanales · hasta la semana del 20/04/2020)",
    "options": [],
    "explanation": "Unos 63 $ en enero de 2020. Tres meses después cerraba semanas por debajo de 20 $, y el contrato de mayo llegó a cotizar en negativo."
   },

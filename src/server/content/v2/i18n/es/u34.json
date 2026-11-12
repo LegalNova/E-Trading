@@ -172,7 +172,7 @@
     {
      "texts": [
       "Vive la burbuja de Japón",
-      "Diciembre de 1984: Japón es la economía de moda y su bolsa no para de subir. Inviertes **10.000 €** en el Nikkei 225 y lo sigues mes a mes, con datos reales, hasta 2025.",
+      "Enero de 1985: Japón es la economía de moda y su bolsa no para de subir. Inviertes **10.000 €** en el Nikkei 225 y lo sigues mes a mes, con datos reales, hasta 2025.",
       "A finales de 1989, tus 10.000 € son unos 32.000 €. ¿Cuánto tardará el Nikkei en volver a ese máximo?",
       "Unos 5 años",
       "Unos 15 años",
@@ -217,7 +217,7 @@
       "Algo menos: unos 8.500 €",
       "Menos de la mitad",
       "Más que al empezar",
-      "En abril de 2012 valía **unos 4.185 €**: un −58 %, sin contar dividendos.",
+      "En mayo de 2012 valía **unos 4.305 €**: un −57 %, sin contar dividendos.",
       "Llega hasta el final, vendas o no.",
       "Sin contar dividendos, el IBEX 35 no volvió al nivel de finales de 2006 hasta **2025**. Los dividendos ayudaron mucho, pero **quien solo tenía bolsa española sufrió más** que quien estaba diversificado por el mundo.",
       "Has vendido. Mira qué pasa después…",
@@ -476,7 +476,7 @@
    ]
   },
   "u34l2-1": {
-   "prompt": "Así se movió el S&P 500 desde enero de 1928 hasta el verano de 1929. ¿Qué tendencia ves? (S&P 500 · cierres semanales · hasta el 29/09/1929)",
+   "prompt": "Así se movió el S&P 500 desde enero de 1928 hasta el verano de 1929. ¿Qué tendencia ves? (S&P 500 · cierres semanales · hasta la semana del 30/09/1929)",
    "options": [
     "Alcista",
     "Bajista",
@@ -494,7 +494,7 @@
    "horizon": "los tres años siguientes"
   },
   "u34l2-3": {
-   "prompt": "Toca el punto más alto antes del desplome. (S&P 500 · cierres semanales · hasta el 29/09/1929)",
+   "prompt": "Toca el punto más alto antes del desplome. (S&P 500 · cierres semanales · hasta la semana del 30/09/1929)",
    "options": [],
    "explanation": "Desde ese máximo empezó una de las mayores caídas de la historia de la bolsa."
   },
@@ -524,7 +524,7 @@
    ]
   },
   "u34l3-1": {
-   "prompt": "Así se movió el Nasdaq 100 entre finales de 1997 y marzo de 2000. ¿Qué tendencia ves? (Nasdaq 100 · cierres semanales · hasta el 06/03/2000)",
+   "prompt": "Así se movió el Nasdaq 100 entre finales de 1997 y marzo de 2000. ¿Qué tendencia ves? (Nasdaq 100 · cierres semanales · hasta la semana del 06/03/2000)",
    "options": [
     "Alcista",
     "Bajista",
@@ -639,7 +639,7 @@
    "explanation": "El apalancamiento y la complejidad convirtieron un problema de hipotecas en una crisis mundial."
   },
   "u34l5-1": {
-   "prompt": "Así se movió el Nikkei 225 de Japón entre 1984 y finales de 1989. ¿Qué tendencia ves? (Nikkei 225 · cierres mensuales · hasta el 30/11/1989)",
+   "prompt": "Así se movió el Nikkei 225 de Japón entre 1985 y finales de 1989. ¿Qué tendencia ves? (Nikkei 225 · cierres mensuales · hasta diciembre de 1989)",
    "options": [
     "Alcista",
     "Bajista",
@@ -699,7 +699,7 @@
    ]
   },
   "u34l6-1": {
-   "prompt": "Así se movió el IBEX 35 de enero de 2010 a julio de 2012. ¿Qué tendencia ves? (IBEX 35 · cierres semanales · hasta el 22/07/2012)",
+   "prompt": "Así se movió el IBEX 35 de enero de 2010 a julio de 2012. ¿Qué tendencia ves? (IBEX 35 · cierres semanales · hasta la semana del 23/07/2012)",
    "options": [
     "Alcista",
     "Bajista",
@@ -708,7 +708,7 @@
    "explanation": "Dos años y medio de crisis de deuda: del entorno de 12.000 puntos a menos de 6.300."
   },
   "u34l6-2": {
-   "prompt": "Es el 22 de julio de 2012. La prima de riesgo española supera los 600 puntos y se habla de un rescate total de España. ¿Qué hizo el IBEX 35 en el año y medio siguiente?",
+   "prompt": "Es la última semana de julio de 2012. La prima de riesgo española supera los 600 puntos y se habla de un rescate total de España. ¿Qué hizo el IBEX 35 en el año y medio siguiente?",
    "options": [
     "Sube",
     "Baja"

@@ -311,7 +311,7 @@ export function Dca({ w, onMetrics }: W<'dca'>) {
   return (
     <div className="flex flex-col gap-3">
       <div className="card flex flex-col gap-1">
-        <span className="t-cap">{t('dcaHead', { from: w.series.dates[start], to: w.series.dates[r.end] })}</span>
+        <span className="t-cap">{t('dcaHead', { from: f.when(w.series.dates[start]).text, to: f.when(w.series.dates[r.end]).text })}</span>
         <Lines label={w.series.caption} height={120} lines={[{ values: span, color: 'var(--brand)', label: w.series.caption }]} marks={[{ at: Math.min(w.spread, span.length - 1), color: 'var(--amber)' }]} />
         <span className="t-cap">{w.series.caption}</span>
       </div>
@@ -319,7 +319,7 @@ export function Dca({ w, onMetrics }: W<'dca'>) {
         <Big label={t('lumpSum', { total: f.eur(w.total) })} value={f.eur(r.lump)} tone={r.lump >= r.dca ? 'up' : undefined} />
         <Big label={t('spreadOut', { n: w.spread })} value={f.eur(r.dca)} tone={r.dca > r.lump ? 'up' : undefined} />
       </Row>
-      <Slide label={t('startIn')} value={start} min={0} max={maxStart} step={1} show={w.series.dates[start]} onChange={setStart} />
+      <Slide label={t('startIn')} value={start} min={0} max={maxStart} step={1} show={f.when(w.series.dates[start]).text} onChange={setStart} />
     </div>
   )
 }

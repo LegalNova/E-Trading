@@ -28,12 +28,12 @@
     {
      "texts": [
       "¿Y si eliges mal el país?",
-      "Datos reales: la bolsa japonesa mes a mes desde 1984. Invierte en un mes cualquiera y espera unos años.",
+      "Datos reales: la bolsa japonesa mes a mes desde 1985. Invierte en un mes cualquiera y espera unos años.",
       "En Japón, si invertías un mes cualquiera y esperabas **20 años**, ¿cuántas veces perdiste dinero?",
       "Nunca: 20 años es muchísimo tiempo",
       "Más o menos la mitad de las veces",
       "Siempre",
-      "Un **51,8 %** de los periodos de 20 años acabó en pérdidas. El Nikkei tardó 34 años en recuperar su máximo de 1989.",
+      "Un **52 %** de los periodos de 20 años acabó en pérdidas. El Nikkei tardó 34 años en recuperar su máximo de 1989.",
       "Alarga la espera hasta 30 años. ¿Desaparecen las pérdidas?",
       "Ni con 30 años: un **36 %** de los periodos seguía en pérdidas. Comprar y mantener funciona mejor con **un índice amplio y mundial** que con un solo país.",
       "Ni esperando décadas desaparecen las pérdidas. Todo por depender de un país.",
@@ -390,7 +390,7 @@
  },
  "questions": {
   "u25l1-1": {
-   "prompt": "Así iba el S&P 500 hasta marzo de 2009. ¿Qué tendencia ves? (S&P 500 · cierres semanales · hasta el 02/03/2009)",
+   "prompt": "Así iba el S&P 500 hasta marzo de 2009. ¿Qué tendencia ves? (S&P 500 · cierres semanales · hasta la semana del 02/03/2009)",
    "options": [
     "Alcista",
     "Bajista",

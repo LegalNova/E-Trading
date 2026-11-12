@@ -86,7 +86,7 @@ export function Crash({ w, onMetrics }: W<'crash'>) {
     <div className="flex flex-col gap-3">
       <div className="card flex flex-col gap-1">
         <div className="flex items-baseline justify-between">
-          <span className="t-cap">{w.series.dates[i]}</span>
+          <span className="t-cap">{f.when(w.series.dates[i]).text}</span>
           <b className={`tabular-nums ${drop < 0 ? 'down' : 'up'}`}>
             {drop >= 0 ? '+' : ''}
             {f.pct(drop, 1)}
@@ -111,7 +111,7 @@ export function Crash({ w, onMetrics }: W<'crash'>) {
       </Row>
       {done ? (
         <div className="card animate-pop flex flex-col gap-1" style={{ background: 'color-mix(in srgb, var(--brand) 9%, var(--surface))' }}>
-          <b>{soldAt !== null ? t('crashSold', { at: w.series.dates[soldAt], cash: f.eur(mine), hold: f.eur(val(i)) }) : t('crashHeld', { end: f.eur(mine), date: w.series.dates[i] })}</b>
+          <b>{soldAt !== null ? t('crashSold', { at: f.when(w.series.dates[soldAt]).text, kind: f.when(w.series.dates[soldAt]).monthly ? 'month' : 'day', cash: f.eur(mine), hold: f.eur(val(i)) }) : t('crashHeld', { end: f.eur(mine), date: f.when(w.series.dates[i]).text, kind: f.when(w.series.dates[i]).monthly ? 'month' : 'day' })}</b>
           <button className="btn btn-plain" onClick={() => (setI(0), setSoldAt(null), setRun(false))}>
             <Glyph name="repeat" size={16} /> {t('again')}
           </button>

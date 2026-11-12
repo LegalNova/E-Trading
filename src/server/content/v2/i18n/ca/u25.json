@@ -28,12 +28,12 @@
     {
      "texts": [
       "I si tries malament el país?",
-      "Dades reals: la borsa japonesa mes a mes des del 1984. Inverteix en un mes qualsevol i espera uns quants anys.",
+      "Dades reals: la borsa japonesa mes a mes des del 1985. Inverteix en un mes qualsevol i espera uns quants anys.",
       "Al Japó, si inverties un mes qualsevol i esperaves **20 anys**, quantes vegades perdies diners?",
       "Mai: 20 anys és moltíssim temps",
       "Més o menys la meitat de les vegades",
       "Sempre",
-      "Un **51,8 %** dels períodes de 20 anys va acabar en pèrdues. El Nikkei va trigar 34 anys a recuperar el seu màxim del 1989.",
+      "Un **52 %** dels períodes de 20 anys va acabar en pèrdues. El Nikkei va trigar 34 anys a recuperar el seu màxim del 1989.",
       "Allarga l'espera fins a 30 anys. Desapareixen les pèrdues?",
       "Ni amb 30 anys: un **36 %** dels períodes continuava en pèrdues. Comprar i mantenir funciona millor amb **un índex ampli i mundial** que amb un sol país.",
       "Ni esperant dècades desapareixen les pèrdues. Tot per dependre d'un sol país.",
@@ -390,7 +390,7 @@
  },
  "questions": {
   "u25l1-1": {
-   "prompt": "Així anava l'S&P 500 fins al març del 2009. Quina tendència hi veus? (S&P 500 · tancaments setmanals · fins al 02/03/2009)",
+   "prompt": "Així anava l'S&P 500 fins al març del 2009. Quina tendència hi veus? (S&P 500 · tancaments setmanals · fins a la setmana del 02/03/2009)",
    "options": [
     "Alcista",
     "Baixista",

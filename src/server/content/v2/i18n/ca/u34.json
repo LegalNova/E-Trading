@@ -172,7 +172,7 @@
     {
      "texts": [
       "Viu la bombolla del Japó",
-      "Desembre de 1984: el Japó és l'economia de moda i la seva borsa no para de pujar. Inverteixes **10.000 €** al Nikkei 225 i el segueixes mes a mes, amb dades reals, fins al 2025.",
+      "Gener de 1985: el Japó és l'economia de moda i la seva borsa no para de pujar. Inverteixes **10.000 €** al Nikkei 225 i el segueixes mes a mes, amb dades reals, fins al 2025.",
       "A finals de 1989, els teus 10.000 € són uns 32.000 €. Quant trigarà el Nikkei a tornar a aquest màxim?",
       "Uns 5 anys",
       "Uns 15 anys",
@@ -217,7 +217,7 @@
       "Una mica menys: uns 8.500 €",
       "Menys de la meitat",
       "Més que al principi",
-      "L'abril de 2012 valia **uns 4.185 €**: un −58 %, sense comptar dividends.",
+      "El maig de 2012 valia **uns 4.305 €**: un −57 %, sense comptar dividends.",
       "Arriba fins al final, venguis o no.",
       "Sense comptar dividends, l'IBEX 35 no va tornar al nivell de finals de 2006 fins al **2025**. Els dividends van ajudar molt, però **qui només tenia borsa espanyola va patir més** que qui estava diversificat pel món.",
       "Has venut. Mira què passa després…",
@@ -476,7 +476,7 @@
    ]
   },
   "u34l2-1": {
-   "prompt": "Així es va moure l'S&P 500 des del gener de 1928 fins a l'estiu de 1929. Quina tendència hi veus? (S&P 500 · tancaments setmanals · fins al 29/09/1929)",
+   "prompt": "Així es va moure l'S&P 500 des del gener de 1928 fins a l'estiu de 1929. Quina tendència hi veus? (S&P 500 · tancaments setmanals · fins a la setmana del 30/09/1929)",
    "options": [
     "Alcista",
     "Baixista",
@@ -494,7 +494,7 @@
    "horizon": "els tres anys següents"
   },
   "u34l2-3": {
-   "prompt": "Toca el punt més alt abans de l'ensulsiada. (S&P 500 · tancaments setmanals · fins al 29/09/1929)",
+   "prompt": "Toca el punt més alt abans de l'ensulsiada. (S&P 500 · tancaments setmanals · fins a la setmana del 30/09/1929)",
    "options": [],
    "explanation": "Des d'aquest màxim va començar una de les caigudes més grans de la història de la borsa."
   },
@@ -524,7 +524,7 @@
    ]
   },
   "u34l3-1": {
-   "prompt": "Així es va moure el Nasdaq 100 entre finals de 1997 i el març de 2000. Quina tendència hi veus? (Nasdaq 100 · tancaments setmanals · fins al 06/03/2000)",
+   "prompt": "Així es va moure el Nasdaq 100 entre finals de 1997 i el març de 2000. Quina tendència hi veus? (Nasdaq 100 · tancaments setmanals · fins a la setmana del 06/03/2000)",
    "options": [
     "Alcista",
     "Baixista",
@@ -639,7 +639,7 @@
    "explanation": "El palanquejament i la complexitat van convertir un problema d'hipoteques en una crisi mundial."
   },
   "u34l5-1": {
-   "prompt": "Així es va moure el Nikkei 225 del Japó entre 1984 i finals de 1989. Quina tendència hi veus? (Nikkei 225 · tancaments mensuals · fins al 30/11/1989)",
+   "prompt": "Així es va moure el Nikkei 225 del Japó entre 1985 i finals de 1989. Quina tendència hi veus? (Nikkei 225 · tancaments mensuals · fins a desembre de 1989)",
    "options": [
     "Alcista",
     "Baixista",
@@ -699,7 +699,7 @@
    ]
   },
   "u34l6-1": {
-   "prompt": "Així es va moure l'IBEX 35 del gener de 2010 al juliol de 2012. Quina tendència hi veus? (IBEX 35 · tancaments setmanals · fins al 22/07/2012)",
+   "prompt": "Així es va moure l'IBEX 35 del gener de 2010 al juliol de 2012. Quina tendència hi veus? (IBEX 35 · tancaments setmanals · fins a la setmana del 23/07/2012)",
    "options": [
     "Alcista",
     "Baixista",
@@ -708,7 +708,7 @@
    "explanation": "Dos anys i mig de crisi del deute: de l'entorn dels 12.000 punts a menys de 6.300."
   },
   "u34l6-2": {
-   "prompt": "És el 22 de juliol de 2012. La prima de risc espanyola supera els 600 punts i es parla d'un rescat total d'Espanya. Què va fer l'IBEX 35 en l'any i mig següent?",
+   "prompt": "És l'última setmana de juliol de 2012. La prima de risc espanyola supera els 600 punts i es parla d'un rescat total d'Espanya. Què va fer l'IBEX 35 en l'any i mig següent?",
    "options": [
     "Puja",
     "Baixa"

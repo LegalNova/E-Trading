@@ -72,13 +72,14 @@ export interface ContentUnit {
 
 interface ChartFixture {
   id: string; symbol: string; name: string; caption: string; candles?: Ohlc[]; closes?: number[]; target?: number
-  future?: Ohlc[]; futureCloses?: number[]; outcome?: 'UP' | 'DOWN'; changePct?: number; minPct?: number; cutDate?: string
+  future?: Ohlc[]; futureCloses?: number[]; outcome?: 'UP' | 'DOWN'; changePct?: number; minPct?: number; cutDate?: string; cutLabel?: string
   entry?: number; support?: number; resistance?: number; atr?: number
 }
 const FIX = CHARTS as unknown as Record<string, ChartFixture>
 const fixture = (id: string) => FIX[id] ?? (() => { throw new Error(`Falta el gráfico ${id}: ejecuta scripts/build-lesson-charts.py`) })()
 /** Pie del gráfico tal como se ve: en los momentos históricos solo llega hasta el corte (el resto se revela al responder) */
-const visibleCaption = (f: ChartFixture) => (f.cutDate ? `${f.caption.split(' · ').slice(0, 2).join(' · ')} · hasta el ${f.cutDate}` : f.caption)
+// (cutLabel dice el corte según el tipo de vela: «el 25/03/2020», «la semana del 23/07/2012» o «diciembre de 1989»)
+const visibleCaption = (f: ChartFixture) => (f.cutDate ? `${f.caption.split(' · ').slice(0, 2).join(' · ')} · hasta ${f.cutLabel ?? `el ${f.cutDate}`}` : f.caption)
 
 // ── Pasos ────────────────────────────────────────────────
 export const text = (title: string, body: string, tip?: string): Step => ({ kind: 'TEXT', title, body, tip })

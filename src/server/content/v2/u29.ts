@@ -103,7 +103,7 @@ export default unit({
     lesson('u29l4', 'Diversificar por países y divisas', [
       mission({
         title: 'Japón, 1989',
-        intro: 'Es diciembre de 1984 y la bolsa japonesa no para de subir. Inviertes **10.000 €** en su índice, el Nikkei. **Datos reales**, mes a mes. Puedes vender cuando quieras.',
+        intro: 'Es enero de 1985 y la bolsa japonesa no para de subir. Inviertes **10.000 €** en su índice, el Nikkei. **Datos reales**, mes a mes. Puedes vender cuando quieras.',
         widget: { kind: 'crash', series: 'series-japan', amount: 10000 },
         goal: { text: 'Llega hasta 2025, vendas o no.', when: [when('played', '==', 1)] },
         insight: 'En 1989, Japón era la mayor bolsa del mundo. Desde su máximo cayó un **80 %** y tardó **34 años** en recuperarlo. Jugárselo todo a un país, sea cual sea, es concentrar.',

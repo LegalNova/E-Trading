@@ -647,7 +647,7 @@
    ]
   },
   "u17l6-1": {
-   "prompt": "Look at the Nasdaq 100 from late 1997 to March 2000. What trend do you see? (Nasdaq 100 · weekly closes · up to 06/03/2000)",
+   "prompt": "Look at the Nasdaq 100 from late 1997 to March 2000. What trend do you see? (Nasdaq 100 · weekly closes · up to the week of 06/03/2000)",
    "options": [
     "Uptrend",
     "Downtrend",
@@ -656,7 +656,7 @@
    "explanation": "A huge rise: valuations reached levels never seen before."
   },
   "u17l6-3": {
-   "prompt": "November 1989: the Japanese stock market is trading at record valuations after a decade of euphoria. What did the Nikkei 225 do in the following years?",
+   "prompt": "December 1989: the Japanese stock market is trading at record valuations after a decade of euphoria. What did the Nikkei 225 do in the following years?",
    "options": [
     "Up",
     "Down"

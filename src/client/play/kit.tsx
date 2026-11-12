@@ -1,6 +1,7 @@
 'use client'
 // Piezas comunes de las clases interactivas: deslizador grande, cifra destacada, gráfico de varias líneas y formatos.
 import { useEffect, useRef } from 'react'
+import { seriesDate } from '@/shared/format'
 import { useLang } from '../hooks'
 
 export function useFmt() {
@@ -13,7 +14,9 @@ export function useFmt() {
   /** Precios: siempre con sus decimales (10,00 · 9,98) */
   const price = (v: number, d = 2) => v.toLocaleString(locale, { minimumFractionDigits: d, maximumFractionDigits: d, useGrouping: 'always' } as Intl.NumberFormatOptions)
   const pct = (v: number, d = 1) => `${v < 0 ? '−' : ''}${n(Math.abs(v), d)} %`
-  return { n, eur, pct, price, locale }
+  /** Fecha de una serie de datos reales, escrita en el idioma de la persona */
+  const when = (raw: string) => seriesDate(raw, locale)
+  return { n, eur, pct, price, when, locale }
 }
 
 /** Avisa a la pantalla de las métricas actuales cada vez que cambian */

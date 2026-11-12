@@ -97,3 +97,17 @@ export const fixPrice = (n: number) => {
   if (a >= 1) return n.toFixed(4)
   return n.toFixed(Math.min(12, Math.max(6, 2 - Math.floor(Math.log10(a)))))
 }
+
+/**
+ * Fechas de las series de datos reales de las clases (auditoría APP-13). En charts.json van como «1985-01» (series
+ * mensuales) o «28/12/1998» (semanales y diarias): aquí se escriben como se leen, «enero de 1985» o «28 dic 1998».
+ * `monthly` sirve para elegir la preposición en los textos («en enero de 1985» frente a «el 28 dic 1998»).
+ */
+export function seriesDate(raw: string, locale = 'es'): { text: string; monthly: boolean } {
+  const tag = INTL[locale] ?? 'es-ES'
+  const m = /^(\d{4})-(\d{2})$/.exec(raw)
+  if (m) return { text: new Intl.DateTimeFormat(tag, { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(Date.UTC(Number(m[1]), Number(m[2]) - 1, 1)), monthly: true }
+  const d = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(raw)
+  if (d) return { text: new Intl.DateTimeFormat(tag, { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(Date.UTC(Number(d[3]), Number(d[2]) - 1, Number(d[1]))), monthly: false }
+  return { text: raw, monthly: false }
+}

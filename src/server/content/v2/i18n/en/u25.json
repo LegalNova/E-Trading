@@ -28,12 +28,12 @@
     {
      "texts": [
       "What if you pick the wrong country?",
-      "Real data: the Japanese stock market month by month since 1984. Invest in any month and wait a few years.",
+      "Real data: the Japanese stock market month by month since 1985. Invest in any month and wait a few years.",
       "In Japan, if you invested in any month and waited **20 years**, how often did you lose money?",
       "Never: 20 years is a very long time",
       "About half the time",
       "Always",
-      "**51.8 %** of 20-year periods ended in a loss. The Nikkei took 34 years to get back to its 1989 peak.",
+      "**52 %** of 20-year periods ended in a loss. The Nikkei took 34 years to get back to its 1989 peak.",
       "Stretch the wait to 30 years. Do the losses disappear?",
       "Not even with 30 years: **36 %** of periods were still in the red. Buy and hold works better with **a broad, global index** than with a single country.",
       "Even waiting decades doesn't make the losses go away. All from relying on one country.",
@@ -390,7 +390,7 @@
  },
  "questions": {
   "u25l1-1": {
-   "prompt": "This is how the S&P 500 was doing up to March 2009. What trend do you see? (S&P 500 · weekly closes · up to 02/03/2009)",
+   "prompt": "This is how the S&P 500 was doing up to March 2009. What trend do you see? (S&P 500 · weekly closes · up to the week of 02/03/2009)",
    "options": [
     "Uptrend",
     "Downtrend",

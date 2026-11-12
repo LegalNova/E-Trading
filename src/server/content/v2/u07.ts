@@ -112,7 +112,7 @@ export default unit({
         intro: 'Datos reales: **10.000 €** en el IBEX 35 a finales de 2006, el índice que sale en las noticias. Dale a empezar.',
         widget: { kind: 'crash', series: 'series-ibex', amount: 10000 },
         goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
-        insight: 'Con cierres mensuales, el IBEX de precios no superó su máximo de 2007 **hasta septiembre de 2025**, y 10.000 € eran 12.287 € a finales de 2025. Pero no cuenta los dividendos: **el IBEX 35 con dividendos ha estado muy por encima**.',
+        insight: 'Con cierres mensuales, el IBEX de precios no superó su máximo de 2007 **hasta octubre de 2025**, y 10.000 € eran 12.235 € a finales de 2025. Pero no cuenta los dividendos: **el IBEX 35 con dividendos ha estado muy por encima**.',
         lumi: [
           { when: when('sold', '==', 1), say: 'Has vendido. Mira lo que pasa después…', mood: 'THINKING' },
           { when: when('drop', '<=', -50), say: 'Más de la mitad abajo. Y sin contar dividendos.', mood: 'WORRIED' },
@@ -145,7 +145,7 @@ export default unit({
       num('¿Y si al 5 % le sumas un 2 % de dividendos reinvertidos (un 7 % anual durante 30 años)? (redondea)', 76123, '€', '10.000 × 1,07³⁰ ≈ 76.123 €: casi el doble que sin dividendos.'),
       single('¿Qué mide un índice de rentabilidad total?', ['El precio más los dividendos reinvertidos', 'Solo la variación del precio', 'Los beneficios de las empresas'], 0, 'Es lo que habría ganado un inversor que reinvirtiera todo.'),
       tf('El IBEX 35 que sale en las noticias incluye los dividendos.', false, 'Es un índice de precios; existe aparte el IBEX 35 con dividendos.'),
-      upDown('Nikkei 225 (Japón), noviembre de 1989: el índice lleva años de subidas espectaculares. ¿Qué hizo en los años siguientes?', 'hist-japan-1989', 'Lo que pasó lo ves en el gráfico. Recuerda que es un índice de precios: no cuenta los dividendos que cobraba quien lo tenía.', 'los años siguientes'),
+      upDown('Nikkei 225 (Japón), diciembre de 1989: el índice lleva años de subidas espectaculares. ¿Qué hizo en los años siguientes?', 'hist-japan-1989', 'Lo que pasó lo ves en el gráfico. Recuerda que es un índice de precios: no cuenta los dividendos que cobraba quien lo tenía.', 'los años siguientes'),
       match('Empareja cada término con su significado.', [['Índice de precios', 'Solo la variación de las cotizaciones'], ['Índice de rentabilidad total', 'Precio más dividendos reinvertidos'], ['Dividendo', 'Parte del beneficio que se reparte'], ['Fondo de acumulación', 'Reinvierte los dividendos por ti']], 'Para comparar bien, compara siempre «con dividendos» con «con dividendos».'),
       chat(['Mi tío dice que durante años el IBEX no subió nada desde 2007 🤷', '¿Entonces la bolsa española no da nada?'], '¿Qué le contestas a Lumi?', [['Tiene razón, no da nada', 'Le falta una parte: los dividendos.'], ['Ese IBEX no cuenta los dividendos; con ellos, la historia cambia mucho', '¡Eso! El IBEX 35 con dividendos ha estado muy por encima del de precios.'], ['Es que el IBEX está mal calculado', 'Está bien calculado: solo mide otra cosa, el precio.']], 1, 'El índice de precios cuenta solo media historia.'),
       timed(tf('A largo plazo, la diferencia entre reinvertir los dividendos o no es pequeña.', false, 'A 30 años, un 5 % frente a un 7 % es casi el doble de dinero.'), 10),

@@ -184,7 +184,7 @@ export default unit({
     lesson('u34l5', 'Japón 1989: treinta años para recuperar', [
       mission({
         title: 'Vive la burbuja de Japón',
-        intro: 'Diciembre de 1984: Japón es la economía de moda y su bolsa no para de subir. Inviertes **10.000 €** en el Nikkei 225 y lo sigues mes a mes, con datos reales, hasta 2025.',
+        intro: 'Enero de 1985: Japón es la economía de moda y su bolsa no para de subir. Inviertes **10.000 €** en el Nikkei 225 y lo sigues mes a mes, con datos reales, hasta 2025.',
         widget: { kind: 'crash', series: 'series-japan', amount: 10000 },
         predict: {
           prompt: 'A finales de 1989, tus 10.000 € son unos 32.000 €. ¿Cuánto tardará el Nikkei en volver a ese máximo?',
@@ -214,7 +214,7 @@ export default unit({
         say('lumi', 'Pruébalo: en Mercado, compara el gráfico del Nikkei 225 con el de un ETF mundial.'),
       ]),
     ], [
-      trend('Así se movió el Nikkei 225 de Japón entre 1984 y finales de 1989. ¿Qué tendencia ves?', 'hist-japan-1989', 'Alcista', 'Más que se triplicó en cinco años: parecía que Japón no podía dejar de crecer.'),
+      trend('Así se movió el Nikkei 225 de Japón entre 1985 y finales de 1989. ¿Qué tendencia ves?', 'hist-japan-1989', 'Alcista', 'Más que se triplicó en cinco años: parecía que Japón no podía dejar de crecer.'),
       upDown('Finales de 1989: el Nikkei 225 se ha triplicado en cinco años y Japón es la mayor bolsa del mundo. ¿Qué hizo en los seis años siguientes?', 'hist-japan-1989', 'Una economía fuerte no garantiza una bolsa que suba: depende también de cuánto se paga por ella.', 'los seis años siguientes'),
       single('¿Cuánto tardó el Nikkei en superar su máximo de diciembre de 1989?', ['Unos 5 años', 'Unos 15 años', 'Unos 34 años'], 2, 'Lo superó en febrero de 2024.'),
       num('El Nikkei pasó de 38.915 puntos (1989) a unos 7.055 (2009). ¿Cuánto cayó en porcentaje? (redondea)', 82, '%', '(38.915 − 7.055) ÷ 38.915 ≈ 0,82 → −82 %.', 2),
@@ -236,7 +236,7 @@ export default unit({
           prompt: 'Primero llega la crisis de 2008 y, en España, otra detrás. En el peor momento, ¿cuánto vale tu inversión?',
           options: ['Algo menos: unos 8.500 €', 'Menos de la mitad', 'Más que al empezar'],
           answer: 1,
-          why: 'En abril de 2012 valía **unos 4.185 €**: un −58 %, sin contar dividendos.',
+          why: 'En mayo de 2012 valía **unos 4.305 €**: un −57 %, sin contar dividendos.',
         },
         goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
         insight: 'Sin contar dividendos, el IBEX 35 no volvió al nivel de finales de 2006 hasta **2025**. Los dividendos ayudaron mucho, pero **quien solo tenía bolsa española sufrió más** que quien estaba diversificado por el mundo.',
@@ -262,7 +262,7 @@ export default unit({
       ]),
     ], [
       trend('Así se movió el IBEX 35 de enero de 2010 a julio de 2012. ¿Qué tendencia ves?', 'hist-ibex-2012', 'Bajista', 'Dos años y medio de crisis de deuda: del entorno de 12.000 puntos a menos de 6.300.'),
-      upDown('Es el 22 de julio de 2012. La prima de riesgo española supera los 600 puntos y se habla de un rescate total de España. ¿Qué hizo el IBEX 35 en el año y medio siguiente?', 'hist-ibex-2012', 'En pleno pánico, los precios ya reflejan muchísimo miedo: lo que pase después depende de lo que todavía nadie sabe.', 'el año y medio siguiente'),
+      upDown('Es la última semana de julio de 2012. La prima de riesgo española supera los 600 puntos y se habla de un rescate total de España. ¿Qué hizo el IBEX 35 en el año y medio siguiente?', 'hist-ibex-2012', 'En pleno pánico, los precios ya reflejan muchísimo miedo: lo que pase después depende de lo que todavía nadie sabe.', 'el año y medio siguiente'),
       num('El bono español a 10 años paga un 7,5 % y el alemán un 1,3 %. ¿Cuál es la prima de riesgo en puntos básicos?', 620, 'puntos básicos', '7,5 − 1,3 = 6,2 % = 620 puntos básicos (100 pb = 1 %).'),
       single('¿Qué es la prima de riesgo de España?', ['La diferencia entre el interés del bono español y el alemán a 10 años', 'Lo que cuesta un seguro de hogar', 'La comisión de la Bolsa de Madrid'], 0, 'Mide cuánto más exigen los inversores por prestar a España que a Alemania.'),
       scenario('Julio de 2012: tienes todos tus ahorros en el IBEX 35 y has perdido la mitad. Todo el mundo dice que España saldrá del euro. ¿Qué es lo más sensato para el futuro?', [['Venderlo todo ya y no volver a invertir nunca', 'Vender en el punto de máximo miedo es convertir la caída en pérdida. Poco después llegó el giro de Draghi.'], ['No vender con pánico, y diversificar por el mundo a partir de ahora', 'Bien: el error no era invertir, era tenerlo todo en un solo país.'], ['Meter todo en bonos españoles al 7 %', 'Cambiar una concentración en España por otra en España no resuelve el problema.']], 1, 'La crisis española enseñó que el riesgo de tu país también existe.'),

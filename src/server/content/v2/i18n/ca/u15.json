@@ -295,7 +295,7 @@
  },
  "questions": {
   "u15l1-1": {
-   "prompt": "Mira l'or des del 2018 fins a l'estiu del 2020. Quina tendència hi veus? (Or · tancaments setmanals · fins al 03/08/2020)",
+   "prompt": "Mira l'or des del 2018 fins a l'estiu del 2020. Quina tendència hi veus? (Or · tancaments setmanals · fins a la setmana del 03/08/2020)",
    "options": [
     "Alcista",
     "Baixista",
@@ -304,7 +304,7 @@
    "explanation": "D'uns 1.200 $ a més de 2.000 $: la por, els tipus baixos i la pandèmia van empènyer cap al refugi."
   },
   "u15l1-2": {
-   "prompt": "Toca el punt més baix de l'or en aquest període. (Or · tancaments setmanals · fins al 03/08/2020)",
+   "prompt": "Toca el punt més baix de l'or en aquest període. (Or · tancaments setmanals · fins a la setmana del 03/08/2020)",
    "options": [],
    "explanation": "El mínim va ser a finals del 2018, al voltant de 1.190 $. Des d'allà va pujar al voltant d'un 70 % fins a l'agost del 2020."
   },
@@ -342,7 +342,7 @@
    "explanation": "Un refugi també cau: l'or va arribar a perdre un 42 % des del seu màxim del 2011. L'stop va una mica per sota de l'últim mínim, amb marge, perquè si el perd la teva idea deixa de valer. Posar-lo enganxat al preu és la temptació, però un vaivé normal el fa saltar."
   },
   "u15l2-2": {
-   "prompt": "Toca el punt més baix d'aquest període (tancaments setmanals). (Petroli WTI · tancaments setmanals · fins al 20/04/2020)",
+   "prompt": "Toca el punt més baix d'aquest període (tancaments setmanals). (Petroli WTI · tancaments setmanals · fins a la setmana del 20/04/2020)",
    "options": [],
    "explanation": "La setmana del 20 d'abril del 2020 va tancar a uns 17 $. El −37,63 $ no apareix en tancaments setmanals: va ser un sol dia i un sol contracte, el de maig, just abans de vèncer."
   },
@@ -532,7 +532,7 @@
    ]
   },
   "u15l5-4": {
-   "prompt": "Toca el punt més alt del WTI en aquest període (tancaments setmanals). (Petroli WTI · tancaments setmanals · fins al 20/04/2020)",
+   "prompt": "Toca el punt més alt del WTI en aquest període (tancaments setmanals). (Petroli WTI · tancaments setmanals · fins a la setmana del 20/04/2020)",
    "options": [],
    "explanation": "Uns 63 $ el gener del 2020. Tres mesos després tancava setmanes per sota de 20 $, i el contracte de maig va arribar a cotitzar en negatiu."
   },

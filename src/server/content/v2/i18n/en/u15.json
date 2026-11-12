@@ -295,7 +295,7 @@
  },
  "questions": {
   "u15l1-1": {
-   "prompt": "Look at gold from 2018 to summer 2020. What trend do you see? (Gold · weekly closes · to 03/08/2020)",
+   "prompt": "Look at gold from 2018 to summer 2020. What trend do you see? (Gold · weekly closes · up to the week of 03/08/2020)",
    "options": [
     "Uptrend",
     "Downtrend",
@@ -304,7 +304,7 @@
    "explanation": "From about $1,200 to over $2,000: fear, low rates and the pandemic pushed money into the safe haven."
   },
   "u15l1-2": {
-   "prompt": "Tap gold's lowest point in this period. (Gold · weekly closes · to 03/08/2020)",
+   "prompt": "Tap gold's lowest point in this period. (Gold · weekly closes · up to the week of 03/08/2020)",
    "options": [],
    "explanation": "The low came at the end of 2018, at around $1,190. From there it rose around 70 % until August 2020."
   },
@@ -342,7 +342,7 @@
    "explanation": "A safe haven falls too: gold lost as much as 42% from its 2011 peak. The stop goes a little below the last low, with some room, because if it loses it your idea is no longer valid. Sticking it right on the price is tempting, but a normal swing will trigger it."
   },
   "u15l2-2": {
-   "prompt": "Tap the lowest point in this period (weekly closes). (WTI oil · weekly closes · to 20/04/2020)",
+   "prompt": "Tap the lowest point in this period (weekly closes). (WTI oil · weekly closes · up to the week of 20/04/2020)",
    "options": [],
    "explanation": "The week of 20 April 2020 closed at about $17. The −$37.63 doesn't show up in weekly closes: it was a single day and a single contract, the May one, just before it expired."
   },
@@ -532,7 +532,7 @@
    ]
   },
   "u15l5-4": {
-   "prompt": "Tap WTI's highest point in this period (weekly closes). (WTI oil · weekly closes · to 20/04/2020)",
+   "prompt": "Tap WTI's highest point in this period (weekly closes). (WTI oil · weekly closes · up to the week of 20/04/2020)",
    "options": [],
    "explanation": "About $63 in January 2020. Three months later it was closing weeks below $20, and the May contract even traded in negative territory."
   },

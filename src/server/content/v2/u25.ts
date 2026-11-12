@@ -20,13 +20,13 @@ export default unit({
       ]),
       mission({
         title: '¿Y si eliges mal el país?',
-        intro: 'Datos reales: la bolsa japonesa mes a mes desde 1984. Invierte en un mes cualquiera y espera unos años.',
+        intro: 'Datos reales: la bolsa japonesa mes a mes desde 1985. Invierte en un mes cualquiera y espera unos años.',
         widget: { kind: 'horizon', series: 'series-japan', years: 1, maxYears: 30 },
         predict: {
           prompt: 'En Japón, si invertías un mes cualquiera y esperabas **20 años**, ¿cuántas veces perdiste dinero?',
           options: ['Nunca: 20 años es muchísimo tiempo', 'Más o menos la mitad de las veces', 'Siempre'],
           answer: 1,
-          why: 'Un **51,8 %** de los periodos de 20 años acabó en pérdidas. El Nikkei tardó 34 años en recuperar su máximo de 1989.',
+          why: 'Un **52 %** de los periodos de 20 años acabó en pérdidas. El Nikkei tardó 34 años en recuperar su máximo de 1989.',
         },
         goal: { text: 'Alarga la espera hasta 30 años. ¿Desaparecen las pérdidas?', when: [when('years', '==', 30)] },
         insight: 'Ni con 30 años: un **36 %** de los periodos seguía en pérdidas. Comprar y mantener funciona mejor con **un índice amplio y mundial** que con un solo país.',
