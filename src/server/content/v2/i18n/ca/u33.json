@@ -10,18 +10,19 @@
    "steps": [
     {
      "texts": [
-      "Un bròquer amb regal",
-      "Pablo",
-      "He trobat un bròquer amb comissions zero i et dupliquen el primer ingrés!",
-      "L'he buscat a la CNMV i no hi surt. Però el web és superprofessional.",
-      "Què li dius?",
-      "Aprofita el bonus, són diners gratis",
-      "Els bonus són l'esquer típic. Sense autorització, no tens cap protecció.",
-      "Descarta'l: sense autorització, no hi ha res a comparar",
-      "Això! El primer filtre és l'autorització. Les comissions venen després.",
-      "Prova-ho amb poc i, si va bé, hi poses més",
-      "Moltes estafes et deixen guanyar al principi perquè hi posis més.",
-      "Un bròquer barat però no autoritzat és el més car: ho pots perdre tot."
+      "El bròquer de fora",
+      "Iván",
+      "Vaig obrir compte en un bròquer alemany: més barat i amb més ETF. Està autoritzat a la UE.",
+      "Ara m'arriba l'esborrany de la renda… i les meves vendes no hi surten.",
+      "Què ha passat?",
+      "Res: com que el bròquer és alemany, no ho ha de declarar aquí",
+      "Tributes on resideixes. Que no surti a l'esborrany no vol dir que no s'hagi de declarar.",
+      "El seu bròquer no fa la paperassa fiscal espanyola: li toca declarar-ho a ell",
+      "Això. Amb un bròquer estranger, les vendes i els dividends els poses tu, un per un.",
+      "Que el bròquer és un xiringuito",
+      "No: està autoritzat. Simplement no fa per tu la paperassa fiscal espanyola.",
+      "I he de presentar res més?",
+      "Si el 31 de desembre tens més de **50.000 €** en valors a l'estranger, també el **model 720**."
      ]
     },
     {
@@ -66,6 +67,24 @@
    "steps": [
     {
      "texts": [
+      "Quin em surt més barat?",
+      "Ana",
+      "Aporto **100 € al mes** i tinc **3.000 €** invertits. Dubto entre dos bròquers autoritzats.",
+      "L'A cobra **2 € per compra** i res més. El B no cobra per comprar, però sí un **0,5 % l'any** de custòdia.",
+      "Quin li surt més barat aquest any?",
+      "L'A: 24 € l'any",
+      "Són 24 € davant de 15 €: avui guanya el B.",
+      "El B: 15 € l'any",
+      "Això: un 0,5 % de 3.000 € són 15 €, menys que els 24 € de l'A.",
+      "Costen el mateix",
+      "No: 24 € davant de 15 €.",
+      "Doncs me'n vaig al B!",
+      "Avui sí. Però la custòdia creix amb la teva cartera: amb 20.000 €, el B et costaria **100 € l'any** i l'A, els mateixos 24 €.",
+      "El bròquer més barat **depèn de com inverteixes tu**, i pot canviar amb els anys."
+     ]
+    },
+    {
+     "texts": [
       "Barata o cara?",
       "Vols posar **100 €** en un ETF i el bròker cobra **3 € fixos**. Molt o poc? Depèn del que compris: s'endú **menys de l'1 %** o **un 1 % o més**?",
       "Menys de l'1 %",
@@ -89,25 +108,9 @@
      ]
     },
     {
-     "texts": [
-      "El que és petit es capitalitza",
-      "L'Ana aporta **100 € al mes** durant 30 anys, amb un mercat del 7 % anual (exemple). Amb uns costos totals del 0,2 % l'any… o una mica més.",
-      "Pagar un 0,3 % més l'any durant 30 anys, quant li costa a l'Ana?",
-      "Uns 60 €",
-      "Uns 6.000 €",
-      "Uns 60.000 €",
-      "**6.020 €** menys: 106.703 € davant de 112.722 €. Poc cada any, molt amb l'interès compost.",
-      "Posa un cost de l'1,5 %, com el de molts fons actius de banc.",
-      "Amb un 1,5 % l'any, els costos s'enduen **23.630 €**, més d'una cinquena part. Mira **tots** els costos: compravenda, custòdia, divisa, inactivitat i el TER de cada fons.",
-      "Una cinquena part de tot, en comissions. Sense fer res!",
-      "Amb pocs anys gairebé no es nota. Puja els anys.",
-      "Puja el cost i mira quant s'endú"
-     ]
-    },
-    {
-     "title": "Què et cobren",
-     "body": "• **Compravenda:** per cada operació (fixa, percentual o mixta).\n• **Custòdia:** per guardar els teus valors, de vegades mensual o anual.\n• **Canvi de divisa:** quan compres en una altra moneda. Sol ser el **cost ocult més alt**: del 0,1 % al 0,5 % o més per operació.\n• **Altres:** inactivitat, retirada, cobrament de dividends.\n\nI dins de cada fons o ETF, el seu **TER**.",
-     "key": "El bròker més barat és el que menys et cobra a tu, amb la teva manera d'invertir.",
+     "title": "La teva factura de l'any",
+     "body": "Per comparar dos bròquers, calcula el que et costaria **un any teu**:\n\n• **Compres:** nombre d'operacions × comissió.\n• **Custòdia:** fixa, o un percentatge de la teva cartera.\n• **Divisa:** un percentatge del que compris en una altra moneda.\n• **Altres:** inactivitat, retirada, traspàs de sortida.\n\nRepeteix el compte quan la teva cartera creixi.",
+     "key": "No hi ha un bròquer més barat per a tothom: depèn de quant aportes, quantes vegades i en quina moneda.",
      "tip": "Prova-ho: a Mercat, prepara una compra de 100 € i mira la comissió simulada."
     }
    ]
@@ -115,21 +118,6 @@
   "u33l3": {
    "title": "Neobròkers: com guanyen diners",
    "steps": [
-    {
-     "texts": [
-      "«0 € de comissió»",
-      "La teva app no cobra comissió. Però compres al millor preu de **venda** i vens al millor de **compra**: mira aquest llibre d'ordres d'exemple.",
-      "Compres 100 accions i les vens a l'instant. Què hi perds?",
-      "Res: la comissió és 0 €",
-      "La diferència entre el preu de compra i el de venda",
-      "Sempre un 5 %",
-      "Compres a 10,00 i només podries vendre a 9,98: l'**spread**, un **0,2 %**, es queda pel camí.",
-      "Fes una compra gran: busca una mida amb què el teu preu mitjà pugi més d'un 0,1 %.",
-      "L'**spread** és un cost encara que l'app digui «0 €», i en ordres grans s'hi suma el **lliscament**. A més, un intermediari pot pagar el bròquer perquè li enviï les teves ordres: és el **pagament per flux d'ordres** (PFOF).",
-      "La teva ordre es menja diversos preus del llibre: pagues més de mitjana.",
-      "Mira la diferència entre comprar i vendre"
-     ]
-    },
     {
      "texts": [
       "Com guanya diners?",
@@ -171,6 +159,11 @@
       "Un neobròker autoritzat pot ser una bona opció. Això sí, no deixis que decideixi quant operes.",
       "Prova-ho: obre el teu Historial i compta quantes operacions has fet aquest mes."
      ]
+    },
+    {
+     "title": "De què viu un bròquer «gratis»",
+     "body": "• **Forquilla i canvi de divisa:** es queda una part de cada operació.\n• **Efectiu sense remunerar** i **préstec de valors**.\n• **Productes cars:** cripto, CFD i derivats.\n• **Pagament per flux d'ordres (PFOF):** prohibit a la UE per a clients minoristes; l'última excepció va vèncer el 30 de juny del 2026.\n\nQue sigui gratis no és dolent. El que cal mirar és què t'empeny a fer.",
+     "key": "Un neobròquer autoritzat pot ser una bona opció: vigila la forquilla, la divisa i quant et fa operar."
     }
    ]
   },
@@ -179,17 +172,19 @@
    "steps": [
     {
      "texts": [
-      "Quant costa la comoditat?",
-      "Una app t'ofereix invertir els teus **10.000 €** per tu, sense que hagis de pensar. Cobra un **0,6 %** l'any entre gestió i fons; fer-ho tu amb indexats, un **0,2 %**. A 30 anys i amb un mercat del 7 % anual (exemple), compensa?",
-      "A 30 anys, quant et costa el robo-advisor comparat amb fer-ho tu?",
-      "Uns 700 €",
-      "Uns 7.700 €",
-      "Uns 30.000 €",
-      "**7.662 €**: 71.968 € davant de 64.306 €. Només val la pena si t'evita errors que costarien més.",
-      "Ara posa-hi el cost de molts fons actius de banc: un 1,5 %.",
-      "Un robo-advisor sol costar entre un **0,4 % i un 1 %** l'any en total: més que fer-ho tu (≈ 0,1-0,3 %) i menys que molts fons actius (1,5 % o més). Amb un 1,5 %, se'n van **22.128 €**, gairebé un terç.",
-      "Gairebé un terç de tot se'n va en costos.",
-      "Mou el cost i mira la diferència"
+      "Abans d'invertir, un test",
+      "Elena",
+      "El robo-advisor m'ha fet un test: edat, ingressos, per a quan vull els diners i què faria si la meva cartera caigués un 20 %.",
+      "He posat que ho vendria tot. Però vull la cartera més agressiva, que és la que més guanya.",
+      "Què farà un robo-advisor autoritzat?",
+      "Donar-li la més agressiva: ella mana",
+      "No pot: li ha d'oferir una cartera idònia per al seu perfil.",
+      "Assignar-li una cartera més prudent, d'acord amb les seves respostes",
+      "Això és el **test d'idoneïtat**: la cartera s'ajusta al que pots i vols aguantar.",
+      "Rebutjar-la com a clienta",
+      "No cal: li proposarà una cartera amb menys borsa.",
+      "I si menteixo al test perquè em donin més borsa?",
+      "T'enganyes a tu: a la primera caiguda tindràs una cartera que no aguantes."
      ]
     },
     {
@@ -271,16 +266,6 @@
     "Bròker estranger"
    ]
   },
-  "u33l1-8": {
-   "prompt": "El FOGAIN cobreix fins a ____ € per inversor.",
-   "options": [
-    "20.000",
-    "50.000",
-    "1.000.000",
-    "100.000"
-   ],
-   "explanation": "Si una entitat adherida no et pot tornar els diners o els valors."
-  },
   "u33l1-10": {
    "prompt": "Relaciona cada terme amb el seu significat.",
    "options": [
@@ -322,20 +307,6 @@
    ],
    "explanation": "Del 0,1 % al 0,5 % o més per operació, i de vegades no apareix a la portada."
   },
-  "u33l2-6": {
-   "prompt": "L'Anna aporta 100 € al mes. El bròker A cobra 3 € fixos per compra; el B, un 0,5 % sense mínim. Quin li surt més barat?",
-   "options": [
-    "Tots dos costen el mateix",
-    "El B: li costa 0,50 € per compra",
-    "L'A: 3 € és poc"
-   ],
-   "explanation": "La comissió que més et convé depèn de la mida de les teves compres.",
-   "feedback": [
-    "Amb 100 € al mes, no: 0,50 € davant de 3 €.",
-    "Exacte: 6 € l'any davant de 36 €. En canvi, amb una compra única de 10.000 €, guanyaria l'A (3 € davant de 50 €).",
-    "Sobre 100 € són un 3 %: 36 € l'any."
-   ]
-  },
   "u33l2-8": {
    "prompt": "Es paga per operació o cada any?",
    "options": [
@@ -349,20 +320,6 @@
    "right": [
     "A cada operació",
     "Cada any"
-   ]
-  },
-  "u33l2-11": {
-   "prompt": "Aportaràs 100 € cada mes a un ETF que cotitza en dòlars. Un bròker anuncia en gran «0 € de comissió». Què fas abans de triar-lo?",
-   "options": [
-    "Trio el que fa més anuncis, que serà el més fiable",
-    "Miro també quant cobra per canviar divisa i per custòdia",
-    "El trio: 0 € no es pot millorar"
-   ],
-   "explanation": "El bròker més barat és el que menys et cobra amb la teva manera d'invertir: suma tots els costos. «0 €» només mira una comissió.",
-   "feedback": [
-    "La publicitat no diu res del que et cobren a tu ni de si està autoritzat.",
-    "Bé: si compres en dòlars cada mes, el canvi de divisa pot ser el teu cost més alt encara que la compravenda sigui gratis.",
-    "La compravenda pot ser gratis i el cost ser al canvi de divisa o a la custòdia. El «0 €» en gran no diu res de la lletra petita."
    ]
   },
   "u33l3-1": {
@@ -498,6 +455,46 @@
     "Em contracto un robo-advisor o ho faig jo? 🤖",
     "No vull estar pendent de la borsa."
    ]
+  },
+  "u33l1-11": {
+   "prompt": "Si el teu bròquer és en un altre país de la UE, els teus guanys tributen en aquell país i no a Espanya.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Si resideixes a Espanya, tributes a Espanya. Amb un bròquer estranger només canvia qui fa la paperassa: tu."
+  },
+  "u33l2-12": {
+   "unit": "€",
+   "prompt": "Fas 6 compres l'any i el teu bròquer cobra 4 € per compra, més 12 € l'any de custòdia. Quant pagues en un any?",
+   "options": [],
+   "explanation": "6 × 4 = 24 € en compres, més 12 € de custòdia: 36 €."
+  },
+  "u33l2-13": {
+   "unit": "€",
+   "prompt": "El teu bròquer cobra un 0,4 % l'any de custòdia. Amb 10.000 € invertits, quant pagues cada any?",
+   "options": [],
+   "explanation": "10.000 × 0,004 = 40 €. I puja quan puja la teva cartera."
+  },
+  "u33l2-14": {
+   "prompt": "Tens 40.000 € invertits i fas dues compres l'any. El bròquer A cobra 5 € per compra i no cobra custòdia. El B no cobra per comprar, però sí un 0,3 % anual de custòdia. Quin et surt més barat?",
+   "options": [
+    "El B: no cobra per comprar",
+    "L'A: 10 € l'any",
+    "Costen el mateix"
+   ],
+   "feedback": [
+    "No cobra per comprar, però un 0,3 % de 40.000 € són 120 € l'any.",
+    "Això: dues compres a 5 € són 10 €. La custòdia del B serien 120 €.",
+    "No: 10 € davant de 120 €."
+   ],
+   "explanation": "Amb una cartera gran i poques operacions, pesa més la custòdia que la comissió per compra."
+  },
+  "u33l4-11": {
+   "unit": "€",
+   "prompt": "Un robo-advisor cobra en total un 0,6 % l'any. Amb 10.000 € invertits, quant pagues cada any?",
+   "options": [],
+   "explanation": "10.000 × 0,006 = 60 €. Fent-ho tu amb indexats al 0,2 % serien 20 €: la diferència és el que pagues perquè ho faci per tu."
   }
  }
 }

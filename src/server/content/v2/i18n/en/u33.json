@@ -10,18 +10,19 @@
    "steps": [
     {
      "texts": [
-      "A broker with a gift",
-      "Pablo",
-      "I've found a broker with zero fees and they double your first deposit!",
-      "I looked it up on the CNMV and it's not there. But the website is super professional.",
-      "What do you tell him?",
-      "Grab the bonus, it's free money",
-      "Bonuses are the classic bait. Without authorisation, you have no protection at all.",
-      "Rule it out: without authorisation, there's nothing to compare",
-      "That's it! The first filter is authorisation. Fees come after.",
-      "Try it with a little and, if it goes well, put in more",
-      "Lots of scams let you win at first so you'll put in more.",
-      "A cheap but unauthorised broker is the most expensive one: you could lose everything."
+      "The broker from abroad",
+      "Iván",
+      "I opened an account with a German broker: cheaper and with more ETFs. It's authorised in the EU.",
+      "Now my draft Spanish tax return has arrived… and my sales aren't on it.",
+      "What has happened?",
+      "Nothing: as the broker is German, he doesn't have to declare it here",
+      "You pay tax where you live. Not appearing on the draft doesn't mean it doesn't have to be declared.",
+      "His broker doesn't do the Spanish tax paperwork: he has to declare it himself",
+      "That's it. With a foreign broker, you enter the sales and dividends yourself, one by one.",
+      "The broker is an unauthorised outfit",
+      "No: it's authorised. It simply doesn't do the Spanish tax paperwork for you.",
+      "And do I have to file anything else?",
+      "If on 31 December you hold more than **€50,000** in securities abroad, the **modelo 720** form too."
      ]
     },
     {
@@ -66,6 +67,24 @@
    "steps": [
     {
      "texts": [
+      "Which one works out cheaper?",
+      "Ana",
+      "I put in **€100 a month** and have **€3,000** invested. I'm torn between two authorised brokers.",
+      "Broker A charges **€2 per purchase** and nothing else. Broker B doesn't charge for buying, but it does charge **0.5 % a year** for custody.",
+      "Which one works out cheaper for her this year?",
+      "A: €24 a year",
+      "It's €24 against €15: today B wins.",
+      "B: €15 a year",
+      "That's it: 0.5 % of €3,000 is €15, less than A's €24.",
+      "They cost the same",
+      "No: €24 against €15.",
+      "Then I'm going with B!",
+      "Today, yes. But custody grows with your portfolio: with €20,000, B would cost you **€100 a year** and A, the same €24.",
+      "The cheapest broker **depends on how you invest**, and it can change over the years."
+     ]
+    },
+    {
+     "texts": [
       "Cheap or expensive?",
       "You are about to put **€100** into an ETF and the broker charges a **flat €3**. A lot or a little? It depends on what you buy: does it take **less than 1 %** or **1 % or more**?",
       "Less than 1 %",
@@ -89,25 +108,9 @@
      ]
     },
     {
-     "texts": [
-      "Small things compound",
-      "Ana puts in **€100 a month** for 30 years, with the market returning 7 % a year (example). With total costs of 0.2 % a year… or a bit more.",
-      "Paying 0.3 % more a year for 30 years: how much does it cost Ana?",
-      "About €60",
-      "About €6,000",
-      "About €60,000",
-      "**€6,020** less: €106,703 versus €112,722. A little each year, a lot once compounded.",
-      "Set a cost of 1.5 %, like many active bank funds charge.",
-      "At 1.5 % a year, costs eat up **€23,630**, more than a fifth. Look at **all** the costs: trading, custody, currency exchange, inactivity and each fund's TER.",
-      "A fifth of everything, gone on fees. Without lifting a finger!",
-      "Over just a few years you barely notice. Add more years.",
-      "Raise the cost and see how much it takes"
-     ]
-    },
-    {
-     "title": "What they charge you",
-     "body": "• **Trading:** per trade (flat, percentage or mixed).\n• **Custody:** for holding your securities, sometimes monthly or yearly.\n• **Currency exchange:** when you buy in another currency. It's usually the **biggest hidden cost**: from 0.1 % to 0.5 % or more per trade.\n• **Others:** inactivity, withdrawals, collecting dividends.\n\nAnd inside every fund or ETF, its **TER**.",
-     "key": "The cheapest broker is the one that charges you the least, given the way you invest.",
+     "title": "Your bill for the year",
+     "body": "To compare two brokers, work out what **a year of your own investing** would cost:\n\n• **Purchases:** number of trades × commission.\n• **Custody:** fixed, or a percentage of your portfolio.\n• **Currency:** a percentage of whatever you buy in another currency.\n• **Other:** inactivity, withdrawal, transfer-out fees.\n\nDo the sum again when your portfolio grows.",
+     "key": "There's no cheapest broker for everyone: it depends on how much you put in, how often and in which currency.",
      "tip": "Try it: in Market, set up a €100 purchase and look at the simulated fee."
     }
    ]
@@ -115,21 +118,6 @@
   "u33l3": {
    "title": "Neobrokers: how they make money",
    "steps": [
-    {
-     "texts": [
-      "«€0 commission»",
-      "Your app charges no commission. But you buy at the best **asking** price and sell at the best **bid**: look at this example order book.",
-      "You buy 100 shares and sell them straight away. What do you lose?",
-      "Nothing: the commission is €0",
-      "The gap between the buying and the selling price",
-      "Always 5 %",
-      "You buy at 10.00 and could only sell at 9.98: the **spread**, **0.2 %**, gets lost along the way.",
-      "Make a big purchase: find a size that pushes your average price up by more than 0.1 %.",
-      "The **spread** is a cost even if the app says «€0», and on big orders you also get **slippage**. On top of that, a market maker can pay the broker to send it your orders: that's **payment for order flow** (PFOF).",
-      "Your order eats through several prices in the book: you pay more on average.",
-      "Look at the gap between buying and selling"
-     ]
-    },
     {
      "texts": [
       "How does it make money?",
@@ -171,6 +159,11 @@
       "An authorised neobroker can be a good option. Just don't let it decide how much you trade.",
       "Try it: open your History and count how many trades you made this month."
      ]
+    },
+    {
+     "title": "What a «free» broker lives on",
+     "body": "• **Spread and currency conversion:** it keeps a slice of every trade.\n• **Unremunerated cash** and **securities lending**.\n• **Expensive products:** crypto, CFDs and derivatives.\n• **Payment for order flow (PFOF):** banned in the EU for retail clients; the last exemption expired on 30 June 2026.\n\nBeing free isn't a bad thing. What you need to look at is what it nudges you to do.",
+     "key": "An authorised neobroker can be a good choice: keep an eye on the spread, the currency and how much it makes you trade."
     }
    ]
   },
@@ -179,17 +172,19 @@
    "steps": [
     {
      "texts": [
-      "What does convenience cost?",
-      "An app offers to invest your **€10,000** for you, without you having to think. It charges **0.6 %** a year between management and funds; doing it yourself with index funds, **0.2 %**. Over 30 years and with a 7 % annual market (example), is it worth it?",
-      "Over 30 years, how much does the robo-adviser cost you compared with doing it yourself?",
-      "About €700",
-      "About €7,700",
-      "About €30,000",
-      "**€7,662**: €71,968 versus €64,306. It's only worth it if it saves you from mistakes that would cost more.",
-      "Now set the cost of many active bank funds: 1.5 %.",
-      "A robo-adviser usually costs between **0.4 % and 1 %** a year in total: more than doing it yourself (≈ 0.1-0.3 %) and less than many active funds (1.5 % or more). At 1.5 %, **€22,128** goes, nearly a third.",
-      "Nearly a third of everything goes on costs.",
-      "Move the cost and see the difference"
+      "Before investing, a test",
+      "Elena",
+      "The robo-advisor gave me a test: age, income, when I want the money and what I'd do if my portfolio fell 20 %.",
+      "I answered that I'd sell everything. But I want the most aggressive portfolio, which is the one that makes the most.",
+      "What will an authorised robo-advisor do?",
+      "Give her the most aggressive one: she's the boss",
+      "It can't: it has to offer her a portfolio that suits her profile.",
+      "Assign her a more cautious portfolio, in line with her answers",
+      "That's the **suitability test**: the portfolio is matched to what you can and want to put up with.",
+      "Turn her down as a client",
+      "There's no need: it will propose a portfolio with fewer shares.",
+      "What if I lie on the test so they give me more shares?",
+      "You're only fooling yourself: at the first fall you'll have a portfolio you can't stomach."
      ]
     },
     {
@@ -271,16 +266,6 @@
     "Foreign broker"
    ]
   },
-  "u33l1-8": {
-   "prompt": "FOGAIN covers up to ____ € per investor.",
-   "options": [
-    "20,000",
-    "50,000",
-    "1,000,000",
-    "100,000"
-   ],
-   "explanation": "If a member firm can't return your money or securities."
-  },
   "u33l1-10": {
    "prompt": "Match each term with its meaning.",
    "options": [
@@ -322,20 +307,6 @@
    ],
    "explanation": "From 0.1 % to 0.5 % or more per trade, and sometimes it isn't on the home page."
   },
-  "u33l2-6": {
-   "prompt": "Ana puts in €100 a month. Broker A charges a flat €3 per purchase; broker B, 0.5 % with no minimum. Which one works out cheaper for her?",
-   "options": [
-    "Both cost the same",
-    "B: it costs her €0.50 per purchase",
-    "A: €3 isn't much"
-   ],
-   "explanation": "The fee that suits you best depends on the size of your purchases.",
-   "feedback": [
-    "With €100 a month, no: €0.50 versus €3.",
-    "Exactly: €6 a year versus €36. With a one-off purchase of €10,000, though, A would win (€3 versus €50).",
-    "On €100 that's 3 %: €36 a year."
-   ]
-  },
   "u33l2-8": {
    "prompt": "Paid per trade or every year?",
    "options": [
@@ -349,20 +320,6 @@
    "right": [
     "On every trade",
     "Every year"
-   ]
-  },
-  "u33l2-11": {
-   "prompt": "You are going to put €100 a month into an ETF priced in dollars. A broker advertises «€0 commission» in big letters. What do you do before choosing it?",
-   "options": [
-    "I choose the one with the most ads, it must be the most reliable",
-    "I also check what it charges for currency exchange and custody",
-    "I choose it: €0 can't be beaten"
-   ],
-   "explanation": "The cheapest broker is the one that charges you least for the way you invest: add up all the costs. «€0» only looks at one fee.",
-   "feedback": [
-    "Advertising says nothing about what they charge you or whether it is authorised.",
-    "Good: if you buy in dollars every month, currency exchange can be your biggest cost even if trading is free.",
-    "Buying and selling may be free while the cost sits in the currency exchange or custody. The big «€0» says nothing about the small print."
    ]
   },
   "u33l3-1": {
@@ -498,6 +455,46 @@
     "Should I get a robo-adviser or do it myself? 🤖",
     "I don't want to be glued to the stock market."
    ]
+  },
+  "u33l1-11": {
+   "prompt": "If your broker is in another EU country, your gains are taxed in that country and not in Spain.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "If you live in Spain, you pay tax in Spain. With a foreign broker, the only thing that changes is who does the paperwork: you."
+  },
+  "u33l2-12": {
+   "unit": "€",
+   "prompt": "You make 6 purchases a year and your broker charges €4 per purchase, plus €12 a year for custody. How much do you pay in a year?",
+   "options": [],
+   "explanation": "6 × 4 = €24 in purchases, plus €12 custody: €36."
+  },
+  "u33l2-13": {
+   "unit": "€",
+   "prompt": "Your broker charges 0.4 % a year for custody. With €10,000 invested, how much do you pay per year?",
+   "options": [],
+   "explanation": "10,000 × 0.004 = €40. And it goes up when your portfolio goes up."
+  },
+  "u33l2-14": {
+   "prompt": "You have €40,000 invested and make two purchases a year. Broker A charges €5 per purchase and no custody fee. Broker B doesn't charge for buying, but it does charge 0.3 % a year for custody. Which works out cheaper?",
+   "options": [
+    "B: it doesn't charge for buying",
+    "A: €10 a year",
+    "They cost the same"
+   ],
+   "feedback": [
+    "It doesn't charge for buying, but 0.3 % of €40,000 is €120 a year.",
+    "That's it: two purchases at €5 are €10. B's custody would be €120.",
+    "No: €10 against €120."
+   ],
+   "explanation": "With a large portfolio and few trades, custody weighs more than the commission per purchase."
+  },
+  "u33l4-11": {
+   "unit": "€",
+   "prompt": "A robo-advisor charges 0.6 % a year in total. With €10,000 invested, how much do you pay per year?",
+   "options": [],
+   "explanation": "10,000 × 0.006 = €60. Doing it yourself with index funds at 0.2 % would be €20: the difference is what you pay for it to do it for you."
   }
  }
 }
