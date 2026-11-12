@@ -107,41 +107,40 @@
     {
      "texts": [
       "Your emergency exit",
-      "You buy Tesla at the last price and go to bed. A **stop loss** will sell only if the price **falls to the level** you choose: where do you put it?",
-      "With the stop just **2 %** below, what do you think will happen?",
-      "It holds: 2 % is plenty of room",
-      "Normal price noise triggers it",
-      "The stop means you can't lose anything",
-      "The last meaningful low is **4 %** below. A stop at 2 % sits inside the normal price noise.",
-      "Place the stop where your idea stops being valid, and reach your target.",
-      "With the stop at 2 %, the noise knocked you out. **Just below the last meaningful low** (the low is 4 % away; the stop, around 5 %), it held and hit your target.",
-      "It rode out the noise and hit your target!",
-      "The stop was triggered. Was it above the last low?",
-      "Now the stop sits below the last low.",
+      "You buy Tesla at the last price and go to bed. A **stop loss** is a sleeping order: it only wakes up if the price **falls to the level** you choose.",
+      "The price falls to your stop while you're asleep. What does the order do?",
+      "It alerts you so you can decide",
+      "It sells by itself, at whatever price there is at that moment",
+      "It sells exactly at the stop price, guaranteed",
+      "When the level is touched, the stop becomes a **market** order: it sells at the best available price, without asking you.",
+      "Set a stop and a target and see which of the two orders gets executed.",
+      "The stop doesn't warn or ask: **it sells by itself** when the price touches its level. Where to put it so that noise doesn't trigger it is something you'll see in «Risk management».",
+      "It hit your target before the stop: the sale went through at a gain.",
+      "The stop was triggered: the order sold by itself.",
       "Move the stop and hit «See what happened»"
      ]
     },
     {
      "texts": [
-      "Stop first, then size",
-      "You have **€10,000** and risk at most **1 %** (€100) per trade. You buy at €50.",
-      "With the stop 10 % below (at €45), how much can you buy?",
-      "The full €10,000",
-      "About €1,000",
-      "Just €100",
-      "You risk €5 per share and €100 at most: **20 shares**, €1,000.",
-      "Bring the stop in to 5 % without changing the risk.",
-      "With the stop half as far away you can buy twice as much, €2,000, and risk the same. **The further away the stop, the less you buy.**",
-      "Over 2 % per trade: ten losses in a row really hurt.",
-      "Stop closer: you buy more for the same risk.",
-      "Stop further away: you have to buy less.",
-      "Move the distance to the stop"
+      "The stop that didn't sell",
+      "Sara",
+      "I bought at €20 and set a **stop-limit**: if it touches €18, sell, but not for less than €17.80.",
+      "Bad news before the open. The share opens straight at **€16.50**.",
+      "What happens to her order?",
+      "It sells at €18",
+      "At €18 there are no buyers left: the price has jumped below it.",
+      "It's triggered, but it doesn't sell: nobody pays €17.80",
+      "That's it. Her limit order sits there waiting, and Sara is still in while it falls.",
+      "It sells at €16.50",
+      "That's what would have happened with a market stop. With the stop-limit, it won't sell below €17.80.",
+      "So with a market stop I'd have sold at €16.50?",
+      "Yes: worse than planned, but out. **A market stop gets you out for sure; a stop-limit controls the price, but you may not get out.**"
      ]
     },
     {
-     "title": "Stop market or stop limit",
-     "body": "• **Stop (market):** when the level is hit, it sells at whatever the price is. You're sure to get out, but maybe at a worse price.\n• **Stop limit:** when the level is hit, it places a limit order. You control the worst price, but if the price jumps it may not sell and keep falling.\n\nSet your stop before you get in, with a cool head, and never move it further away.",
-     "key": "The stop decides where you get out; the size makes sure that loss is small.",
+     "title": "Before you leave it in place",
+     "body": "• **Validity:** a «day» stop expires at the close. For it to still be there tomorrow, choose «good till cancelled».\n• **Gaps:** if the price opens below your level, a market stop sells at the first price available.\n• **It doesn't move away:** you decide the stop before you enter, with a cool head.\n\nHow much to buy so that this loss stays small is something you learn in «Risk management».",
+     "key": "A stop is a sleeping order that sells by itself when the price touches its level.",
      "tip": "Pass this lesson and add a stop loss to your next purchase in Market."
     }
    ]
@@ -341,16 +340,6 @@
    "options": [],
    "explanation": "Just below the last meaningful low: if it breaks that, the rise you expected is no longer on."
   },
-  "u6l4-2": {
-   "prompt": "Another trade: place the stop loss using the same logic.",
-   "options": [],
-   "explanation": "Below the recent low, with a bit of room so day-to-day noise doesn't knock you out."
-  },
-  "u6l4-3": {
-   "prompt": "You have €10,000 and risk 1 % at most. Stop first, then the amount.",
-   "options": [],
-   "explanation": "Risk = amount × distance to the stop ÷ entry price. Once the stop is set, the amount follows."
-  },
   "u6l4-6": {
    "prompt": "Where does a stop loss make most sense?",
    "options": [
@@ -515,6 +504,43 @@
     "Without a stop, a single bad trade can wipe out many wins.",
     "Not necessarily: it depends on how much she makes when she's right versus what she loses when she's wrong."
    ]
+  },
+  "u6l4-11": {
+   "prompt": "You have a market stop at €30. The share closes at €31 and opens the next day at €27. At what price do you sell?",
+   "options": [
+    "It doesn't sell",
+    "At €30, as the stop says",
+    "Around €27: the first price available"
+   ],
+   "feedback": [
+    "A market stop is executed as long as there are buyers.",
+    "The stop doesn't guarantee the price: no trade took place at €30.",
+    "That's it: the stop is triggered at the open and sells at market."
+   ],
+   "explanation": "With a gap, a market stop sells at the first available price, which may be worse than your level."
+  },
+  "u6l4-12": {
+   "prompt": "Is it typical of a market stop or of a stop-limit?",
+   "options": [
+    "It may be left unexecuted",
+    "The selling price may be worse than planned",
+    "You set the worst price you'll accept",
+    "It sells for sure when the level is touched"
+   ],
+   "right": [
+    "Market stop",
+    "Stop-limit"
+   ],
+   "explanation": "A market stop gets you out for sure; a stop-limit controls the price, but you may not get out."
+  },
+  "u6l4-13": {
+   "prompt": "You set a «day» stop and the price doesn't touch it. What happens at the close?",
+   "options": [
+    "It stays active tomorrow",
+    "It expires: tomorrow you have no stop",
+    "It turns into a market order"
+   ],
+   "explanation": "A day order expires at the close. For it to stay in place, choose «good till cancelled»."
   }
  }
 }

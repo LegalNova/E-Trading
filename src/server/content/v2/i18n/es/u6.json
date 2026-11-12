@@ -107,41 +107,40 @@
     {
      "texts": [
       "Tu salida de emergencia",
-      "Compras Tesla al último precio y te vas a dormir. Un **stop loss** venderá solo si el precio **cae hasta el nivel** que elijas: ¿dónde lo pones?",
-      "Con el stop solo un **2 %** por debajo, ¿qué crees que pasará?",
-      "Aguanta: un 2 % es margen de sobra",
-      "El ruido normal del precio lo hace saltar",
-      "El stop impide perder nada",
-      "El último mínimo relevante está un **4 %** por debajo. Un stop al 2 % queda dentro del ruido normal del precio.",
-      "Coloca el stop donde tu idea deja de ser válida y llega a tu objetivo.",
-      "Con el stop al 2 %, el ruido te sacó. **Un poco por debajo del último mínimo relevante** (el mínimo está a un 4 %; el stop, hacia el 5 %), aguantó y tocó tu objetivo.",
-      "¡Ha aguantado el ruido y ha tocado tu objetivo!",
-      "Saltó el stop. ¿Estaba por encima del último mínimo?",
-      "Ahora el stop queda por debajo del último mínimo.",
+      "Compras Tesla al último precio y te vas a dormir. Un **stop loss** es una orden dormida: solo despierta si el precio **cae hasta el nivel** que elijas.",
+      "El precio cae hasta tu stop mientras duermes. ¿Qué hace la orden?",
+      "Te avisa para que decidas",
+      "Vende sola, al precio que haya en ese momento",
+      "Vende justo al precio del stop, garantizado",
+      "Al tocar el nivel, el stop se convierte en una orden **a mercado**: vende al mejor precio disponible, sin preguntarte.",
+      "Pon un stop y un objetivo y mira cuál de las dos órdenes se ejecuta.",
+      "El stop no avisa ni pregunta: **vende solo** cuando el precio toca su nivel. Dónde ponerlo para que el ruido no lo haga saltar lo verás en «Gestión del riesgo».",
+      "Ha tocado tu objetivo antes que el stop: se ha ejecutado la venta con ganancia.",
+      "Ha saltado el stop: la orden ha vendido sola.",
       "Mueve el stop y dale a ver qué pasó"
      ]
     },
     {
      "texts": [
-      "Primero el stop, luego el tamaño",
-      "Tienes **10.000 €** y arriesgas como mucho un **1 %** (100 €) por operación. Compras a 50 €.",
-      "Con el stop un 10 % por debajo (en 45 €), ¿cuánto puedes comprar?",
-      "Los 10.000 €",
-      "Unos 1.000 €",
-      "Solo 100 €",
-      "Arriesgas 5 € por acción y como mucho 100 €: **20 acciones**, 1.000 €.",
-      "Acerca el stop al 5 % sin cambiar el riesgo.",
-      "Con el stop a la mitad de distancia puedes comprar el doble, 2.000 €, y arriesgas lo mismo. **Cuanto más lejos el stop, menos compras.**",
-      "Más de un 2 % por operación: diez fallos seguidos duelen mucho.",
-      "Stop más cerca: compras más con el mismo riesgo.",
-      "Stop más lejos: tienes que comprar menos.",
-      "Mueve la distancia al stop"
+      "El stop que no vendió",
+      "Sara",
+      "Compré a 20 € y puse un **stop limitado**: si toca 18 €, vender, pero no por menos de 17,80 €.",
+      "Malas noticias antes de abrir. La acción abre directamente a **16,50 €**.",
+      "¿Qué pasa con su orden?",
+      "Se vende a 18 €",
+      "A 18 € ya no hay compradores: el precio ha saltado por debajo.",
+      "Se activa, pero no se vende: nadie paga 17,80 €",
+      "Eso. Su orden limitada se queda esperando, y Sara sigue dentro mientras cae.",
+      "Se vende a 16,50 €",
+      "Eso habría pasado con un stop a mercado. Con el limitado, por debajo de 17,80 € no vende.",
+      "Entonces, ¿con uno a mercado habría vendido a 16,50 €?",
+      "Sí: peor de lo previsto, pero fuera. **A mercado sales seguro; limitado controlas el precio, pero puedes no salir.**"
      ]
     },
     {
-     "title": "Stop a mercado o limitado",
-     "body": "• **Stop (a mercado):** al tocar el nivel, vende al precio que haya. Sales seguro, pero quizá peor.\n• **Stop limitado:** al tocar el nivel, lanza una limitada. Controlas el peor precio, pero si el precio salta puede no venderse y seguir cayendo.\n\nEl stop se decide antes de entrar, con la cabeza fría, y no se aleja después.",
-     "key": "El stop decide dónde sales; el tamaño, que esa pérdida sea pequeña.",
+     "title": "Antes de dejarlo puesto",
+     "body": "• **Validez:** un stop «del día» caduca al cierre. Para que siga puesto mañana, elige «hasta cancelar».\n• **Huecos:** si el precio abre por debajo de tu nivel, el stop a mercado vende al primer precio que haya.\n• **No se aleja:** el stop se decide antes de entrar, con la cabeza fría.\n\nCuánto comprar para que esa pérdida sea pequeña se aprende en «Gestión del riesgo».",
+     "key": "Un stop es una orden dormida que vende sola cuando el precio toca su nivel.",
      "tip": "Aprueba esta clase y añade un stop loss a tu próxima compra del Mercado."
     }
    ]
@@ -374,16 +373,6 @@
    "options": [],
    "explanation": "Un poco por debajo del último mínimo relevante: si lo pierde, la subida que esperabas ya no se cumple."
   },
-  "u6l4-2": {
-   "prompt": "Otra operación: coloca el stop loss con la misma lógica.",
-   "options": [],
-   "explanation": "Por debajo del mínimo reciente, con algo de margen para que el ruido diario no te saque."
-  },
-  "u6l4-3": {
-   "prompt": "Tienes 10.000 € y arriesgas como mucho un 1 %. Primero el stop, después el importe.",
-   "options": [],
-   "explanation": "Riesgo = importe × distancia al stop ÷ precio de entrada. Con el stop decidido, el importe sale solo."
-  },
   "u6l4-6": {
    "prompt": "¿Dónde tiene más lógica un stop loss?",
    "options": [
@@ -408,6 +397,43 @@
     "No sabes cuánto puedes perder",
     "Sale seguro, quizá a peor precio"
    ]
+  },
+  "u6l4-11": {
+   "prompt": "Tienes un stop a mercado en 30 €. La acción cierra a 31 € y al día siguiente abre a 27 €. ¿A qué precio vendes?",
+   "options": [
+    "No se vende",
+    "A 30 €, como marca el stop",
+    "Hacia 27 €: el primer precio que haya"
+   ],
+   "explanation": "Con un hueco, el stop a mercado vende al primer precio disponible, que puede ser peor que tu nivel.",
+   "feedback": [
+    "Un stop a mercado se ejecuta siempre que haya compradores.",
+    "El stop no garantiza el precio: a 30 € no hubo ninguna operación.",
+    "Eso: el stop se activa en la apertura y vende a mercado."
+   ]
+  },
+  "u6l4-12": {
+   "prompt": "¿Es propio de un stop a mercado o de un stop limitado?",
+   "options": [
+    "Puede quedarse sin ejecutar",
+    "El precio de venta puede ser peor de lo previsto",
+    "Fijas el peor precio que aceptas",
+    "Vende seguro al tocar el nivel"
+   ],
+   "explanation": "A mercado sales seguro; limitado controlas el precio, pero puedes no salir.",
+   "right": [
+    "Stop a mercado",
+    "Stop limitado"
+   ]
+  },
+  "u6l4-13": {
+   "prompt": "Pones un stop «del día» y el precio no lo toca. ¿Qué pasa al cierre?",
+   "options": [
+    "Sigue activo mañana",
+    "Caduca: mañana no tienes stop",
+    "Se convierte en una orden a mercado"
+   ],
+   "explanation": "Una orden del día caduca al cierre. Para que siga puesta, elige «hasta cancelar»."
   },
   "u6l5-1": {
    "prompt": "Has comprado al último precio. Coloca tu objetivo (take profit) en un sitio lógico.",

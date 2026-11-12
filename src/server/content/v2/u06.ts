@@ -104,46 +104,40 @@ export default unit({
       num('Pones una limitada de compra de 200 acciones a 12,50 € y se ejecuta a 12,46 €. ¿Cuánto pagas de menos frente a tu límite?', 8, '€', '0,04 € × 200 = 8 €. La limitada compra a tu precio o mejor.'),
     ], { source: '2.5', minutes: 6, retire: [1, 2, 6, 8, 9] }),
 
+    // Rehecha en la auditoría (RED-1): dónde va el stop, cuánto comprar y la relación riesgo-beneficio se enseñaban tres
+    // veces (aquí, en la sección 0 y en la unidad 24). Esta unidad se queda con la mecánica de las órdenes: qué hace un stop,
+    // a mercado o limitado, huecos y validez. El criterio (dónde y cuánto) es de la unidad 24.
     lesson('u6l4', 'El stop loss', [
       mission({
         title: 'Tu salida de emergencia',
-        intro: 'Compras Tesla al último precio y te vas a dormir. Un **stop loss** venderá solo si el precio **cae hasta el nivel** que elijas: ¿dónde lo pones?',
+        intro: 'Compras Tesla al último precio y te vas a dormir. Un **stop loss** es una orden dormida: solo despierta si el precio **cae hasta el nivel** que elijas.',
         widget: { kind: 'orders', chart: 'lvl-10', stopPct: 2, takePct: 6, maxPct: 12 },
         predict: {
-          prompt: 'Con el stop solo un **2 %** por debajo, ¿qué crees que pasará?',
-          options: ['Aguanta: un 2 % es margen de sobra', 'El ruido normal del precio lo hace saltar', 'El stop impide perder nada'],
+          prompt: 'El precio cae hasta tu stop mientras duermes. ¿Qué hace la orden?',
+          options: ['Te avisa para que decidas', 'Vende sola, al precio que haya en ese momento', 'Vende justo al precio del stop, garantizado'],
           answer: 1,
-          why: 'El último mínimo relevante está un **4 %** por debajo. Un stop al 2 % queda dentro del ruido normal del precio.',
+          why: 'Al tocar el nivel, el stop se convierte en una orden **a mercado**: vende al mejor precio disponible, sin preguntarte.',
         },
-        goal: { text: 'Coloca el stop donde tu idea deja de ser válida y llega a tu objetivo.', when: [when('hit', '==', 2), when('takePct', '>=', 5)] },
-        insight: 'Con el stop al 2 %, el ruido te sacó. **Un poco por debajo del último mínimo relevante** (el mínimo está a un 4 %; el stop, hacia el 5 %), aguantó y tocó tu objetivo.',
+        goal: { text: 'Pon un stop y un objetivo y mira cuál de las dos órdenes se ejecuta.', when: [when('played', '==', 1)] },
+        insight: 'El stop no avisa ni pregunta: **vende solo** cuando el precio toca su nivel. Dónde ponerlo para que el ruido no lo haga saltar lo verás en «Gestión del riesgo».',
         lumi: [
-          { when: when('hit', '==', 2), say: '¡Ha aguantado el ruido y ha tocado tu objetivo!', mood: 'CELEBRATE' },
-          { when: when('hit', '==', 1), say: 'Saltó el stop. ¿Estaba por encima del último mínimo?', mood: 'THINKING' },
-          { when: when('stopPct', '>=', 5), say: 'Ahora el stop queda por debajo del último mínimo.', mood: 'HAPPY' },
+          { when: when('hit', '==', 2), say: 'Ha tocado tu objetivo antes que el stop: se ha ejecutado la venta con ganancia.', mood: 'CELEBRATE' },
+          { when: when('hit', '==', 1), say: 'Ha saltado el stop: la orden ha vendido sola.', mood: 'THINKING' },
           { say: 'Mueve el stop y dale a ver qué pasó', mood: 'HAPPY' },
         ],
       }),
-      play({
-        title: 'Primero el stop, luego el tamaño',
-        intro: 'Tienes **10.000 €** y arriesgas como mucho un **1 %** (100 €) por operación. Compras a 50 €.',
-        widget: { kind: 'position', account: 10000, riskPct: 1, stopPct: 10, entry: 50, maxRisk: 3, maxStop: 20 },
-        predict: {
-          prompt: 'Con el stop un 10 % por debajo (en 45 €), ¿cuánto puedes comprar?',
-          options: ['Los 10.000 €', 'Unos 1.000 €', 'Solo 100 €'],
-          answer: 1,
-          why: 'Arriesgas 5 € por acción y como mucho 100 €: **20 acciones**, 1.000 €.',
-        },
-        goal: { text: 'Acerca el stop al 5 % sin cambiar el riesgo.', when: [when('stopPct', '==', 5), when('riskPct', '==', 1)] },
-        insight: 'Con el stop a la mitad de distancia puedes comprar el doble, 2.000 €, y arriesgas lo mismo. **Cuanto más lejos el stop, menos compras.**',
-        lumi: [
-          { when: when('riskPct', '>', 2), say: 'Más de un 2 % por operación: diez fallos seguidos duelen mucho.', mood: 'WORRIED' },
-          { when: when('stopPct', '<', 10), say: 'Stop más cerca: compras más con el mismo riesgo.', mood: 'HAPPY' },
-          { when: when('stopPct', '>', 10), say: 'Stop más lejos: tienes que comprar menos.', mood: 'THINKING' },
-          { say: 'Mueve la distancia al stop', mood: 'HAPPY' },
-        ],
-      }),
-      key('Stop a mercado o limitado', '• **Stop (a mercado):** al tocar el nivel, vende al precio que haya. Sales seguro, pero quizá peor.\n• **Stop limitado:** al tocar el nivel, lanza una limitada. Controlas el peor precio, pero si el precio salta puede no venderse y seguir cayendo.\n\nEl stop se decide antes de entrar, con la cabeza fría, y no se aleja después.', 'El stop decide dónde sales; el tamaño, que esa pérdida sea pequeña.', 'Aprueba esta clase y añade un stop loss a tu próxima compra del Mercado.'),
+      story('El stop que no vendió', [{ id: 'sara', name: 'Sara' }], [
+        say('sara', 'Compré a 20 € y puse un **stop limitado**: si toca 18 €, vender, pero no por menos de 17,80 €.'),
+        note('Malas noticias antes de abrir. La acción abre directamente a **16,50 €**.'),
+        choose('¿Qué pasa con su orden?', [
+          opt('Se vende a 18 €', 'bad', say('lumi', 'A 18 € ya no hay compradores: el precio ha saltado por debajo.')),
+          opt('Se activa, pero no se vende: nadie paga 17,80 €', 'good', say('lumi', 'Eso. Su orden limitada se queda esperando, y Sara sigue dentro mientras cae.')),
+          opt('Se vende a 16,50 €', 'ok', say('lumi', 'Eso habría pasado con un stop a mercado. Con el limitado, por debajo de 17,80 € no vende.')),
+        ]),
+        say('sara', 'Entonces, ¿con uno a mercado habría vendido a 16,50 €?'),
+        say('lumi', 'Sí: peor de lo previsto, pero fuera. **A mercado sales seguro; limitado controlas el precio, pero puedes no salir.**'),
+      ]),
+      key('Antes de dejarlo puesto', '• **Validez:** un stop «del día» caduca al cierre. Para que siga puesto mañana, elige «hasta cancelar».\n• **Huecos:** si el precio abre por debajo de tu nivel, el stop a mercado vende al primer precio que haya.\n• **No se aleja:** el stop se decide antes de entrar, con la cabeza fría.\n\nCuánto comprar para que esa pérdida sea pequeña se aprende en «Gestión del riesgo».', 'Un stop es una orden dormida que vende sola cuando el precio toca su nivel.', 'Aprueba esta clase y añade un stop loss a tu próxima compra del Mercado.'),
     ], [
       level('Has comprado al último precio. Coloca el stop loss donde tu idea deja de ser válida.', 'lvl-59', 'STOP', 'Un poco por debajo del último mínimo relevante: si lo pierde, la subida que esperabas ya no se cumple.'),
       level('Otra operación: coloca el stop loss con la misma lógica.', 'lvl-60', 'STOP', 'Por debajo del mínimo reciente, con algo de margen para que el ruido diario no te saque.'),
@@ -155,7 +149,10 @@ export default unit({
       timed(single('Rápido: compras a 100 € con el stop a 95 €. ¿Riesgo por acción?', ['5 €', '95 €', '0,95 €'], 0, '100 − 95 = 5 € por acción.'), 12),
       match('Empareja cada caso con lo que pasa.', [['Stop a mercado', 'Sale seguro, quizá a peor precio'], ['Stop limitado', 'Controla el precio, pero puede no ejecutarse'], ['Stop muy ajustado', 'El ruido normal te saca'], ['Sin stop', 'No sabes cuánto puedes perder']], 'No hay stop perfecto: cada opción tiene su coste.'),
       scenario('Bruno compró a 40 € con el stop a 37 €. El precio baja a 37,50 € y piensa en bajar el stop a 33 € «para darle aire». ¿Qué hace?', [['Mantiene el stop donde lo puso', 'Si salta, pierde lo que había previsto. Si no, sigue su plan.'], ['Lo baja a 33 €', 'Ahora arriesga más del doble de lo planeado: así empiezan las grandes pérdidas.'], ['Quita el stop y espera a que se recupere', 'Sin stop, la pérdida no tiene límite.']], 0, 'El stop se decide antes de entrar, con la cabeza fría, y no se aleja después.'),
-    ], { source: '2.5', minutes: 6, retire: [3, 4, 6, 7, 9] }),
+      scenario('Tienes un stop a mercado en 30 €. La acción cierra a 31 € y al día siguiente abre a 27 €. ¿A qué precio vendes?', [['A 30 €, como marca el stop', 'El stop no garantiza el precio: a 30 € no hubo ninguna operación.'], ['Hacia 27 €: el primer precio que haya', 'Eso: el stop se activa en la apertura y vende a mercado.'], ['No se vende', 'Un stop a mercado se ejecuta siempre que haya compradores.']], 1, 'Con un hueco, el stop a mercado vende al primer precio disponible, que puede ser peor que tu nivel.'),
+      buckets('¿Es propio de un stop a mercado o de un stop limitado?', ['Stop a mercado', 'Stop limitado'], [['Vende seguro al tocar el nivel', 0], ['Puede quedarse sin ejecutar', 1], ['El precio de venta puede ser peor de lo previsto', 0], ['Fijas el peor precio que aceptas', 1]], 'A mercado sales seguro; limitado controlas el precio, pero puedes no salir.'),
+      single('Pones un stop «del día» y el precio no lo toca. ¿Qué pasa al cierre?', ['Sigue activo mañana', 'Caduca: mañana no tienes stop', 'Se convierte en una orden a mercado'], 1, 'Una orden del día caduca al cierre. Para que siga puesta, elige «hasta cancelar».'),
+    ], { source: '2.5', minutes: 6, retire: [1, 2, 3, 4, 6, 7, 9] }),
 
     lesson('u6l5', 'El take profit', [
       mission({

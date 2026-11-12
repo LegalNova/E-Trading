@@ -107,41 +107,40 @@
     {
      "texts": [
       "La teva sortida d'emergència",
-      "Compres Tesla a l'últim preu i te'n vas a dormir. Un **stop loss** vendrà només si el preu **cau fins al nivell** que triïs: on el poses?",
-      "Amb l'stop només un **2 %** per sota, què creus que passarà?",
-      "Aguanta: un 2 % és marge de sobres",
-      "El soroll normal del preu el fa saltar",
-      "L'stop impedeix perdre res",
-      "L'últim mínim rellevant és un **4 %** per sota. Un stop al 2 % queda dins del soroll normal del preu.",
-      "Col·loca l'stop on la teva idea deixa de ser vàlida i arriba al teu objectiu.",
-      "Amb l'stop al 2 %, el soroll t'ha fet sortir. **Una mica per sota de l'últim mínim rellevant** (el mínim és a un 4 %; l'stop, cap al 5 %), ha aguantat i ha tocat el teu objectiu.",
-      "Ha aguantat el soroll i ha tocat el teu objectiu!",
-      "Ha saltat l'stop. Era per sobre de l'últim mínim?",
-      "Ara l'stop queda per sota de l'últim mínim.",
+      "Compres Tesla a l'últim preu i te'n vas a dormir. Un **stop loss** és una ordre adormida: només es desperta si el preu **cau fins al nivell** que triïs.",
+      "El preu cau fins al teu stop mentre dorms. Què fa l'ordre?",
+      "T'avisa perquè decideixis",
+      "Ven sola, al preu que hi hagi en aquell moment",
+      "Ven just al preu de l'stop, garantit",
+      "Quan toca el nivell, l'stop es converteix en una ordre **a mercat**: ven al millor preu disponible, sense preguntar-te res.",
+      "Posa un stop i un objectiu i mira quina de les dues ordres s'executa.",
+      "L'stop no avisa ni pregunta: **ven sol** quan el preu toca el seu nivell. On s'ha de posar perquè el soroll no el faci saltar ho veuràs a «Gestió del risc».",
+      "Ha tocat el teu objectiu abans que l'stop: s'ha executat la venda amb guany.",
+      "Ha saltat l'stop: l'ordre ha venut sola.",
       "Mou l'stop i prem «Veure què va passar»"
      ]
     },
     {
      "texts": [
-      "Primer l'stop, després la mida",
-      "Tens **10.000 €** i arrisques com a màxim un **1 %** (100 €) per operació. Compres a 50 €.",
-      "Amb l'stop un 10 % per sota (a 45 €), quant pots comprar?",
-      "Els 10.000 €",
-      "Uns 1.000 €",
-      "Només 100 €",
-      "Arrisques 5 € per acció i com a màxim 100 €: **20 accions**, 1.000 €.",
-      "Acosta l'stop al 5 % sense canviar el risc.",
-      "Amb l'stop a la meitat de distància pots comprar el doble, 2.000 €, i arrisques el mateix. **Com més lluny és l'stop, menys compres.**",
-      "Més d'un 2 % per operació: deu errades seguides fan molt de mal.",
-      "Stop més a prop: compres més amb el mateix risc.",
-      "Stop més lluny: has de comprar menys.",
-      "Mou la distància a l'stop"
+      "L'stop que no va vendre",
+      "Sara",
+      "Vaig comprar a 20 € i vaig posar un **stop limitat**: si toca 18 €, vendre, però no per menys de 17,80 €.",
+      "Males notícies abans d'obrir. L'acció obre directament a **16,50 €**.",
+      "Què passa amb la seva ordre?",
+      "Es ven a 18 €",
+      "A 18 € ja no hi ha compradors: el preu ha saltat per sota.",
+      "S'activa, però no es ven: ningú no paga 17,80 €",
+      "Això. La seva ordre limitada es queda esperant, i la Sara continua a dins mentre cau.",
+      "Es ven a 16,50 €",
+      "Això hauria passat amb un stop a mercat. Amb el limitat, per sota de 17,80 € no ven.",
+      "Aleshores, amb un a mercat hauria venut a 16,50 €?",
+      "Sí: pitjor del que havies previst, però a fora. **A mercat surts segur; limitat controles el preu, però pots no sortir.**"
      ]
     },
     {
-     "title": "Stop a mercat o limitat",
-     "body": "• **Stop (a mercat):** quan toca el nivell, ven al preu que hi hagi. Surts segur, però potser pitjor.\n• **Stop limitat:** quan toca el nivell, llança una limitada. Controles el pitjor preu, però si el preu salta pot no vendre's i continuar caient.\n\nL'stop es decideix abans d'entrar, amb el cap fred, i després no s'allunya.",
-     "key": "L'stop decideix on surts; la mida, que aquesta pèrdua sigui petita.",
+     "title": "Abans de deixar-lo posat",
+     "body": "• **Validesa:** un stop «del dia» caduca al tancament. Perquè continuï posat demà, tria «fins a cancel·lar».\n• **Buits:** si el preu obre per sota del teu nivell, l'stop a mercat ven al primer preu que hi hagi.\n• **No s'allunya:** l'stop es decideix abans d'entrar, amb el cap fred.\n\nQuant has de comprar perquè aquesta pèrdua sigui petita s'aprèn a «Gestió del risc».",
+     "key": "Un stop és una ordre adormida que ven sola quan el preu toca el seu nivell.",
      "tip": "Aprova aquesta classe i afegeix un stop loss a la teva propera compra del Mercat."
     }
    ]
@@ -341,16 +340,6 @@
    "options": [],
    "explanation": "Una mica per sota de l'últim mínim rellevant: si el perd, la pujada que esperaves ja no es compleix."
   },
-  "u6l4-2": {
-   "prompt": "Una altra operació: col·loca l'stop loss amb la mateixa lògica.",
-   "options": [],
-   "explanation": "Per sota del mínim recent, amb una mica de marge perquè el soroll diari no et faci sortir."
-  },
-  "u6l4-3": {
-   "prompt": "Tens 10.000 € i arrisques com a màxim un 1 %. Primer l'stop, després l'import.",
-   "options": [],
-   "explanation": "Risc = import × distància a l'stop ÷ preu d'entrada. Amb l'stop decidit, l'import surt sol."
-  },
   "u6l4-6": {
    "prompt": "On té més lògica un stop loss?",
    "options": [
@@ -515,6 +504,43 @@
     "Sense stop, una sola mala operació pot esborrar molts encerts.",
     "No necessàriament: depèn de quant guanya quan encerta davant del que perd quan falla."
    ]
+  },
+  "u6l4-11": {
+   "prompt": "Tens un stop a mercat a 30 €. L'acció tanca a 31 € i l'endemà obre a 27 €. A quin preu vens?",
+   "options": [
+    "No es ven",
+    "A 30 €, com marca l'stop",
+    "Cap a 27 €: el primer preu que hi hagi"
+   ],
+   "feedback": [
+    "Un stop a mercat s'executa sempre que hi hagi compradors.",
+    "L'stop no garanteix el preu: a 30 € no hi va haver cap operació.",
+    "Això: l'stop s'activa a l'obertura i ven a mercat."
+   ],
+   "explanation": "Amb un buit, l'stop a mercat ven al primer preu disponible, que pot ser pitjor que el teu nivell."
+  },
+  "u6l4-12": {
+   "prompt": "És propi d'un stop a mercat o d'un stop limitat?",
+   "options": [
+    "Pot quedar-se sense executar",
+    "El preu de venda pot ser pitjor del previst",
+    "Fixes el pitjor preu que acceptes",
+    "Ven segur quan toca el nivell"
+   ],
+   "right": [
+    "Stop a mercat",
+    "Stop limitat"
+   ],
+   "explanation": "A mercat surts segur; limitat controles el preu, però pots no sortir."
+  },
+  "u6l4-13": {
+   "prompt": "Poses un stop «del dia» i el preu no el toca. Què passa al tancament?",
+   "options": [
+    "Continua actiu demà",
+    "Caduca: demà no tens stop",
+    "Es converteix en una ordre a mercat"
+   ],
+   "explanation": "Una ordre del dia caduca al tancament. Perquè continuï posada, tria «fins a cancel·lar»."
   }
  }
 }
