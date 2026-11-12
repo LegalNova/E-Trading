@@ -313,13 +313,13 @@
   "h1l1-2": {
    "prompt": "You've put €1,000 of virtual money into the S&P 500 and within a few months it drops to €700. You won't need that money for years. What do you do?",
    "options": [
-    "Take out a loan to buy more while it's cheap",
+    "Sell half, in case it keeps falling further",
     "Hold on: I don't need it and I have time",
     "Sell everything so I don't lose more"
    ],
    "explanation": "Falls are part of investing. If you don't need the money, selling in the middle of a fall is what turns a temporary drop into a real loss.",
    "feedback": [
-    "If it keeps falling, you lose with money that isn't yours and you also owe the interest.",
+    "Selling half turns half the fall into a real loss: if you don't need the money, there's no reason to.",
     "You give it time to recover. In 2008 it fell by more than half, and those who held on ended up multiplying their money.",
     "By selling you turn a drop into a real loss, and you miss the recovery."
    ]
