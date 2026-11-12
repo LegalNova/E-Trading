@@ -423,7 +423,7 @@
    ],
    "explanation": "Fer servir paraules tècniques per prometre seguretat és una tàctica habitual de les estafes.",
    "feedback": [
-    "Molt bé: en cripto es pot perdre la totalitat del que s'ha invertit; ningú seriós no promet seguretat total.",
+    "Molt bé: la blockchain no protegeix del preu ni d'un frau; ningú seriós no promet seguretat total.",
     "Les presses són un altre senyal clàssic d'alarma.",
     "Blockchain registra transaccions; no protegeix del preu ni de la possibilitat que el projecte sigui un frau."
    ]
@@ -483,10 +483,10 @@
     "Segueix el seu pla: només hi posa el que podria perdre sencer, passi el que passi amb el halving",
     "Ho ven tot perquè, si cau, és que Bitcoin ha mort"
    ],
-   "explanation": "La bona és seguir un pla amb una quantitat que puguis perdre. La temptadora, el «sempre puja», confon escassetat programada amb preu garantit.",
+   "explanation": "La bona és seguir un pla amb una quantitat que puguis perdre. El «sempre puja» confon escassetat programada amb preu garantit.",
    "feedback": [
     "El halving només frena l'emissió de bitcoins nous. El preu depèn de la demanda, i ha caigut més d'un 70 % diverses vegades.",
-    "Molt bé: l'escassetat no garanteix el preu, i en cripto es pot perdre la totalitat del que s'ha invertit.",
+    "Molt bé: l'escassetat no garanteix el preu; el decideix el que la gent estigui disposada a pagar.",
     "Decidir per la por d'unes setmanes és tan arriscat com decidir per l'eufòria."
    ]
   },
@@ -552,7 +552,7 @@
     "Que prova amb poc, per si de cas",
     "Que un rendiment fix no encaixa amb la mineria real, i que és un senyal clar d'estafa"
    ],
-   "explanation": "La bona encerta perquè la mineria no dona un rendiment fix: depèn del preu, la dificultat i la competència. La temptadora, provar amb poc, continua sent donar diners a un possible frau.",
+   "explanation": "La bona encerta perquè la mineria no dona un rendiment fix: depèn del preu, la dificultat i la competència. Provar amb poc continua sent donar diners a un possible frau.",
    "feedback": [
     "El que guanya un miner de veritat canvia cada dia: depèn del preu, de la dificultat i de les comissions.",
     "Si és una estafa, aquest poc es perd sencer i no hi ha a qui reclamar.",
@@ -632,7 +632,7 @@
     "Els envia per Bitcoin per no pagar gas",
     "Espera un moment amb la xarxa més tranquil·la"
    ],
-   "explanation": "La bona funciona perquè el gas puja i baixa amb la demanda de la xarxa. La temptadora falla: el gas no és una tarifa fixa, sinó un preu que canvia.",
+   "explanation": "La bona funciona perquè el gas puja i baixa amb la demanda de la xarxa. El gas no és una tarifa fixa, sinó un preu que canvia.",
    "feedback": [
     "El gas no és fix: puja quan la xarxa està saturada i baixa quan hi ha poca demanda.",
     "Els tokens d'Ethereum viuen a Ethereum: no es poden enviar per la xarxa de Bitcoin.",

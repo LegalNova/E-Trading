@@ -590,7 +590,7 @@
     "A leveraged gold CFD",
     "A physical gold ETC, backed by bars"
    ],
-   "explanation": "The right one works because a physical product doesn't have to roll contracts, so contango doesn't affect it. The tempting one, the futures fund, looks the same but can fall far behind the metal.",
+   "explanation": "The right one works because a physical product doesn't have to roll contracts, so contango doesn't affect it. The futures fund looks the same, but it can fall far behind the metal.",
    "feedback": [
     "It's precisely the one that pays for rolling: in contango, every contract change subtracts.",
     "It adds leverage and the costs of holding the position: it isn't meant to be held for years.",

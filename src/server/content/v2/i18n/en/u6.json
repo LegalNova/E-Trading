@@ -475,7 +475,7 @@
     "No: every buy and sell pays the spread, and the more you trade, the more you pay",
     "Exactly: with no fees, trading costs nothing"
    ],
-   "explanation": "The tempting answer is to believe «0 fees» means free. Spread and slippage are always paid, and they multiply with every trade.",
+   "explanation": "«0 fees» isn't free: spread and slippage are always paid, and they multiply with every trade.",
    "feedback": [
     "Costs are paid on every trade, including the ones you win.",
     "That's it! Trading costs add up on every trade, win or lose.",
@@ -492,7 +492,7 @@
     "Better near the previous high, where selling tends to appear",
     "Good idea: the further away, the more you make"
    ],
-   "explanation": "The tempting answer is the distant target: it looks like it makes more, but if it's never hit it makes nothing. Selling tends to appear near the previous high, and there the target has a real chance.",
+   "explanation": "The distant target looks like it makes more, but if it's never hit it makes nothing. Selling tends to appear near the previous high, and there the target has a real chance.",
    "feedback": [
     "Without a target, greed or fear decide, right at the worst moment.",
     "That's it! A reasonable target gets hit more often: making a bit less, but for real.",
@@ -509,7 +509,7 @@
     "That she should remove the stop to lose less often",
     "That she should quit: if she's wrong more than half the time, she loses money"
    ],
-   "explanation": "What counts isn't just how many you get right, but how much you make when right versus what you lose when wrong. The tempting answer looks only at the win rate.",
+   "explanation": "What counts isn't just how many you get right, but how much you make when right versus what you lose when wrong. The usual mistake is to look only at the win rate.",
    "feedback": [
     "At 1:2, 4 wins bring in €24 and 6 losses take away €18 per share. Being wrong more often than right doesn't make her lose.",
     "Without a stop, a single bad trade can wipe out many wins.",

@@ -475,7 +475,7 @@
     "No: cada compra i venda paga la forquilla, i com més operes, més pagues",
     "Exacte: sense comissions, operar no costa res"
    ],
-   "explanation": "La temptadora és creure que «0 comissions» és gratis. L'spread i el lliscament es paguen sempre, i es multipliquen amb cada operació.",
+   "explanation": "«0 comissions» no és gratis: l'spread i el lliscament es paguen sempre, i es multipliquen amb cada operació.",
    "feedback": [
     "Els costos es paguen a cada operació, també en les que guanyes.",
     "Això mateix! Els costos d'operar se sumen a cada operació, guanyis o perdis.",
@@ -492,7 +492,7 @@
     "Millor a prop del màxim anterior, on sol aparèixer venda",
     "Bona idea: com més lluny, més guanyes"
    ],
-   "explanation": "La temptadora és l'objectiu llunyà: sembla que guanya més, però si no es toca no guanya res. A prop del màxim anterior sol aparèixer venda, i allà l'objectiu té opcions reals.",
+   "explanation": "L'objectiu llunyà sembla que guanya més, però si no es toca no guanya res. A prop del màxim anterior sol aparèixer venda, i allà l'objectiu té opcions reals.",
    "feedback": [
     "Sense objectiu decideixen l'avarícia o la por, just en el pitjor moment.",
     "Això mateix! Un objectiu raonable es toca més sovint: guanyar una mica menys, però de debò.",
@@ -509,7 +509,7 @@
     "Que tregui l'stop per fallar menys",
     "Que ho deixi: si falla més de la meitat, perd diners"
    ],
-   "explanation": "El que compta no és només quantes n'encertes, sinó quant guanyes en encertar davant del que perds en fallar. La temptadora és fixar-se només en el percentatge d'encerts.",
+   "explanation": "El que compta no és només quantes n'encertes, sinó quant guanyes en encertar davant del que perds en fallar. L'error habitual és fixar-se només en el percentatge d'encerts.",
    "feedback": [
     "Amb 1:2, 4 encerts donen 24 € i 6 errors en treuen 18 per acció. Fallar més del que encerta no la fa perdre.",
     "Sense stop, una sola mala operació pot esborrar molts encerts.",

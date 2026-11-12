@@ -310,7 +310,7 @@
     "No: cada compra y venta paga la horquilla, y cuanto más operas, más pagas",
     "Exacto: sin comisiones, operar no cuesta nada"
    ],
-   "explanation": "La tentadora es creer que «0 comisiones» es gratis. El spread y el deslizamiento se pagan siempre, y se multiplican con cada operación.",
+   "explanation": "«0 comisiones» no es gratis: el spread y el deslizamiento se pagan siempre, y se multiplican con cada operación.",
    "feedback": [
     "Los costes se pagan en cada operación, también en las que ganas.",
     "¡Eso! Los costes de operar se suman en cada operación, ganes o pierdas.",
@@ -441,7 +441,7 @@
     "Mejor cerca del máximo anterior, donde suele aparecer venta",
     "Buena idea: cuanto más lejos, más ganas"
    ],
-   "explanation": "La tentadora es el objetivo lejano: parece que gana más, pero si no se toca no gana nada. Cerca del máximo anterior suele aparecer venta, y ahí el objetivo tiene opciones reales.",
+   "explanation": "El objetivo lejano parece que gana más, pero si no se toca no gana nada. Cerca del máximo anterior suele aparecer venta, y ahí el objetivo tiene opciones reales.",
    "feedback": [
     "Sin objetivo deciden la avaricia o el miedo, justo en el peor momento.",
     "¡Eso! Un objetivo razonable se toca más a menudo: ganar algo menos, pero de verdad.",
@@ -458,7 +458,7 @@
     "Que quite el stop para fallar menos",
     "Que lo deje: si falla más de la mitad, pierde dinero"
    ],
-   "explanation": "Lo que cuenta no es solo cuántas aciertas, sino cuánto ganas al acertar frente a lo que pierdes al fallar. La tentadora es fijarse solo en el porcentaje de aciertos.",
+   "explanation": "Lo que cuenta no es solo cuántas aciertas, sino cuánto ganas al acertar frente a lo que pierdes al fallar. El error habitual es fijarse solo en el porcentaje de aciertos.",
    "feedback": [
     "Con 1:2, 4 aciertos dan 24 € y 6 fallos quitan 18 € por acción. Fallar más de lo que acierta no la hace perder.",
     "Sin stop, una sola mala operación puede borrar muchos aciertos.",
