@@ -553,7 +553,7 @@
    "prompt": "Lumi asks whether the ECB cutting rates is good or bad for the stock market. What do you reply?",
    "options": [
     "Always bad",
-    "Usually positive, but it depends on the reason",
+    "It's usually positive, but it depends on whether it was already expected and why they're cutting",
     "It has no effect at all: the stock market goes its own way"
    ],
    "explanation": "Cutting rates usually helps shares and bonds, but the surprise and the reason matter.",
@@ -629,7 +629,7 @@
    "prompt": "A company keeps selling more, but its gross margin is 5 % and falling: almost everything it takes in goes on the cost of making the sale. How does it look?",
    "options": [
     "Excellent: it's growing fast",
-    "Bad: growing like this brings no profit",
+    "Bad sign: growing like this doesn't bring it any closer to making money",
     "The margin doesn't matter if sales are going up"
    ],
    "explanation": "Look at whether each sale makes money, not just how many sales there are.",
@@ -642,7 +642,7 @@
   "u18l5-7": {
    "prompt": "Why is the P/E no use for a company that's losing money?",
    "options": [
-    "Because without earnings it makes no sense",
+    "Because without earnings it comes out negative and makes no sense",
     "Because the CNMV bans calculating it for loss-makers",
     "Because it always comes out at 15"
    ],
@@ -692,7 +692,7 @@
    "options": [
     "By its social media followers",
     "With the P/E, like all other companies",
-    "With its sales, margin and cash"
+    "With its sales, its gross margin and its months of cash"
    ],
    "explanation": "With no profit, the P/E is no use. You look at how much you pay for its sales, whether each sale makes money (gross margin) and how long its cash will last.",
    "feedback": [
@@ -744,7 +744,7 @@
    "prompt": "You apply the checklist to two made-up companies in the same sector, at the same P/E. A grows, generates cash and has more cash than debt. B grows just as much, but its profit doesn't reach its cash and it raises capital every year. Which passes the test better?",
    "options": [
     "Both the same: they have the same P/E",
-    "A: it turns profit into cash",
+    "A: it grows, turns profit into cash and is healthy",
     "B: it grows just as much"
    ],
    "explanation": "At the same price, the winner is the one that answers «does it generate cash?» and «is it healthy?» better. The red flags are usually in cash and debt, not in the profit headline.",

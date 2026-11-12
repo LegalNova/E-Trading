@@ -312,7 +312,7 @@
   "u9l1-1": {
    "prompt": "Què reps quan compres un bo?",
    "options": [
-    "Interessos i els teus diners al venciment",
+    "Interessos periòdics i la devolució dels diners al venciment",
     "Una part de l'empresa i dret a vot a la junta",
     "Un dividend que decideix la junta"
    ],
@@ -518,7 +518,7 @@
    "prompt": "La Lumi ha llegit que el banc central abaixarà els tipus i pregunta si és bo o dolent per als seus bons. Què li contestes?",
    "options": [
     "Dolent: cobraràs menys cupó a partir d'ara",
-    "Bo: el preu dels teus bons puja",
+    "Bo: si baixen els tipus, el preu dels teus bons puja",
     "Tant fa: els bons no es mouen"
    ],
    "explanation": "Si els tipus baixen, el teu cupó fix és més atractiu que el dels bons nous i el teu bo val més. El que tempta és pensar que cobraràs menys, però això només els passa als bons nous, no al teu.",
@@ -613,7 +613,7 @@
    "options": [
     "Si la inflació es queda a zero uns quants anys",
     "Sempre",
-    "Si la inflació supera el que s'esperava"
+    "Si la inflació acaba sent més alta del que esperava el mercat"
    ],
    "explanation": "Si la inflació supera la d'equilibri, l'ajust del nominal compensa de sobres el seu cupó més baix."
   },
@@ -681,7 +681,7 @@
    "prompt": "Vas comprar una lletra a 12 mesos. Al cap de 6 mesos necessites els diners, i els tipus han pujat. Què passa si la vens ara?",
    "options": [
     "No es pot vendre abans que venci: cal esperar",
-    "La venc al preu de mercat d'aquell dia",
+    "La venc al preu de mercat, que pot ser més baix del que esperava",
     "Rebo els 1.000 € igualment"
    ],
    "feedback": [

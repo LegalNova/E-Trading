@@ -366,7 +366,7 @@
   "u20l2-8": {
    "prompt": "You see a candle with a very long lower wick in the middle of a sideways range, with no prior trend. Laura says it's a crystal-clear buy signal. What do you tell her?",
    "options": [
-    "That there, that candle says little",
+    "That location matters: in the middle of a range, that candle says little",
     "That it's a sell signal",
     "That she's right: long wick, safe buy"
    ],
@@ -479,7 +479,7 @@
   "u20l4-8": {
    "prompt": "You see a textbook hammer on a daily chart, after two weeks of falls and near the low for the year. Based on what you've learnt, what do you do?",
    "options": [
-    "I wait for confirmation before going in",
+    "I wait for confirmation and, if I go in, I put the stop below the wick",
     "I ignore it: candlesticks are no use at all",
     "I buy now with everything I've got"
    ],
@@ -664,7 +664,7 @@
    "options": [
     "Looking at data in real time while you trade",
     "Using candlesticks instead of lines",
-    "Testing patterns until one happens to work"
+    "Testing lots of patterns until one seems to work by pure chance"
    ],
    "explanation": "Run enough tests and chance will always hand you some «discovery»."
   },
@@ -673,7 +673,7 @@
    "options": [
     "Never go in: candlesticks don't work",
     "Go in without a stop: with four out of four it can't fail",
-    "If he goes in, stop below the hammer and a small size"
+    "If he goes in, a stop below the hammer's low and a small position"
    ],
    "explanation": "Context improves the odds; the stop and the position size protect you when it still goes wrong.",
    "feedback": [

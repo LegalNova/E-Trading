@@ -334,7 +334,7 @@
    "prompt": "La Lumi vol comprar una acció que ha caigut un 60 % perquè «ja no pot baixar més». Què li contestes?",
    "options": [
     "Compra'n el doble per abaixar el teu preu mitjà: així recuperes abans",
-    "Primer mira per què ha caigut i quant val el negoci",
+    "Primer mira per què ha caigut i quant val el negoci: barat no és el mateix que infravalorat",
     "És clar, ja és a terra"
    ],
    "explanation": "Un preu baix només és una oportunitat si és per sota del valor.",
@@ -410,7 +410,7 @@
    "options": [
     "L'A és caríssima: un PER de 30 és massa per a qualsevol empresa",
     "La B és una ganga: té PER 6",
-    "El PER sol no n'hi ha prou: mira si el benefici creixerà"
+    "El PER sol no n'hi ha prou: cal mirar si el benefici creixerà o minvarà"
    ],
    "explanation": "Un PER alt pot estar justificat pel creixement, i un de baix pot ser una trampa si el negoci s'apaga. La temptació és mirar només el número.",
    "feedback": [

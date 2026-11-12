@@ -404,7 +404,7 @@
    "prompt": "Tens un ETF del MSCI World que cobra un 0,20 %, amb bons guanys. Descobreixes un altre del mateix índex al 0,12 %. Què fas?",
    "options": [
     "M'és igual: els costos no importen",
-    "Mantinc el meu i aporto el nou al barat",
+    "Mantinc el que tinc i porto les aportacions noves al barat",
     "Venc el meu ja i compro el barat amb tot"
    ],
    "explanation": "Entre dos ETF barats del mateix índex, la diferència és petita i vendre té un cost fiscal segur. El més assenyat és que els diners nous vagin al més barat. Canviar de cop només compensa quan la diferència és gran, com d'un 1,5 % a un 0,2 %.",
@@ -450,7 +450,7 @@
   "u30l3-10": {
    "prompt": "La Lumi només pot estalviar 50 € al mes i creu que amb això no va enlloc. Què li contestes?",
    "options": [
-    "Comença amb 50 € i apuja-ho quan puguis",
+    "Comença amb 50 € i apuja-ho quan guanyis més: el temps fa la resta",
     "Tens raó, millor gastar-los",
     "Espera a poder invertir 500 € al mes, que així sí que es nota"
    ],
@@ -643,7 +643,7 @@
    "prompt": "Primer any: la borsa cau un 25 % i la teva cartera un 18 %. Un amic et diu que ho venguis tot. Què fas?",
    "options": [
     "Ho passo tot a un dipòsit fins que es calmi",
-    "Segueixo el pla: aporto i no venc",
+    "Segueixo el pla: aporto, rebalancejo cap a accions si toca i no venc",
     "Venc abans que caigui més"
    ],
    "explanation": "Els bons van esmorteir la caiguda (−18 % davant de −25 %). Ara toca el punt 8 del teu pla.",
@@ -777,7 +777,7 @@
    "prompt": "Tens 400 € invertits i el teu banc et cobra 20 € l'any de custòdia. Què fas?",
    "options": [
     "Venc i ho deixo al compte corrent",
-    "Busco un bròquer sense custòdia",
+    "Busco un bròquer o una plataforma sense custòdia",
     "Res: 20 € és poc"
    ],
    "feedback": [

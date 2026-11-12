@@ -364,7 +364,7 @@
    "options": [
     "A legal fund with lots of fees",
     "A cheap broker",
-    "An unauthorised firm"
+    "A firm that offers investments without authorisation"
    ],
    "explanation": "It can have a flawless website and still not be authorised."
   },
@@ -391,7 +391,7 @@
   "u32l1-10": {
    "prompt": "A stranger has messaged Lumi on Instagram saying she makes 3 % a day, and sent her a link. What do you say?",
    "options": [
-    "Don't tap it: look it up on the CNMV first",
+    "Don't tap it: look the platform up on the CNMV and be wary of that profile",
     "Give her your details so she can help you get started",
     "Sign up, you might get lucky"
    ],
@@ -716,7 +716,7 @@
    "options": [
     "On its social media",
     "Straight to court, with a lawyer at your side",
-    "With the broker's customer service"
+    "To the broker's own customer service department"
    ],
    "explanation": "It's the mandatory first step; if they don't respond or don't side with you, you can go to the CNMV."
   },

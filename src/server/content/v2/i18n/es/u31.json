@@ -466,7 +466,7 @@
   "u31l2-12": {
    "prompt": "Compraste participaciones del mismo ETF en 2019 y en 2024, más caras. Vendes la mitad. ¿Cuáles cuentan como vendidas para Hacienda?",
    "options": [
-    "Las de 2019, las primeras",
+    "Las de 2019, las primeras que compraste",
     "Las de 2024, las más recientes",
     "Las que tú elijas"
    ],
@@ -679,7 +679,7 @@
    "options": [
     "De distribución: me gusta cobrar dividendos",
     "Da igual: fiscalmente son lo mismo",
-    "De acumulación: no tributo hasta vender"
+    "De acumulación: reinvierte por dentro y no tributo hasta vender"
    ],
    "explanation": "Si no necesitas rentas, la acumulación aplaza impuestos y ese dinero sigue componiéndose. Cobrar dividendos parece ganar más, pero el precio baja en esa cantidad y además tributa.",
    "feedback": [

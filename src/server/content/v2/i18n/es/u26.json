@@ -313,7 +313,7 @@
    "prompt": "Nora no quiere llevar un diario porque «ya se acuerda de sus operaciones». ¿Qué le contestas?",
    "options": [
     "Apunta solo las ganadoras",
-    "Sin diario no puedes ver tus errores",
+    "Sin diario no puedes calcular tu esperanza ni ver tus errores",
     "Tienes razón, con la memoria basta y sobra"
    ],
    "explanation": "Lo que no se mide no se puede mejorar.",
@@ -385,7 +385,7 @@
    "options": [
     "Doblar el riesgo para recuperar",
     "Dejar de usar stops",
-    "Reducir el riesgo a la mitad"
+    "Reducir el riesgo a la mitad y revisar el plan"
    ],
    "explanation": "Cuando la cuenta cae, primero se protege; después se analiza.",
    "feedback": [

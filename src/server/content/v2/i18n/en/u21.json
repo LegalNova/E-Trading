@@ -435,7 +435,7 @@
   "u21l3-12": {
    "prompt": "An uptrend line has three touches. The price drops to touch it a fourth time and Marta wants to buy without a stop «because it always bounces». What do you tell her?",
    "options": [
-    "That she can buy, but with a stop below the line",
+    "That she can buy, but with the stop below the line and the last low",
     "To redraw the line lower so she can relax",
     "That she's right: three touches are as good as a guarantee"
    ],
@@ -662,7 +662,7 @@
    "options": [
     "I buy now, before it gets away",
     "I buy double to make the most of the rise",
-    "I wait for the close and check volume"
+    "I wait for the close and check whether it clears the level with volume"
    ],
    "explanation": "Breakouts are confirmed by the close and the volume. Waiting a few hours costs little; falling into the trap, much more.",
    "feedback": [

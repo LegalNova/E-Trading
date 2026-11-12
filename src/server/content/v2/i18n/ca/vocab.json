@@ -301,7 +301,7 @@
    "options": [
     "Bid és vendre i ask és comprar",
     "Són el mateix, amb dos noms diferents segons el bròquer",
-    "Bid és el que paguen; ask, el que demanen"
+    "Bid: el màxim que algú paga ara; ask: el mínim pel qual algú ven"
    ],
    "explanation": "Compres a l'ask i vens al bid: per això, si compres i vens a l'instant, perds l'spread.",
    "feedback": [
@@ -427,7 +427,7 @@
   "vocabl3-5": {
    "prompt": "La Lumi diu que el KID és «el fill petit del fons». Què li aclareixes?",
    "options": [
-    "És el document amb riscos i costos",
+    "És el document amb els riscos i els costos del producte",
     "És el nom del gestor que porta el fons",
     "És un fons pensat per a menors"
    ],
@@ -776,7 +776,7 @@
   "vocabl6-6": {
    "prompt": "La Lumi pregunta què hi fa Fibonacci, un matemàtic italià, al seu gràfic. Què li expliques?",
    "options": [
-    "Dona nivells típics de retrocés",
+    "Els seus números donen nivells típics de retrocés: 38,2 %, 50 %, 61,8 %…",
     "Prediu el preu exacte de l'endemà",
     "És un indicador de volum"
    ],
@@ -1144,7 +1144,7 @@
   "vocabl9-9": {
    "prompt": "El CAPE és…",
    "options": [
-    "El PER amb la mitjana de 10 anys",
+    "El PER del mercat amb beneficis mitjans de 10 anys",
     "El PER d'una empresa aquest any",
     "El dividend mitjà d'un índex en 10 anys"
    ],

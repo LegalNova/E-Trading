@@ -391,7 +391,7 @@
   "u17l2-13": {
    "prompt": "Lumi asks whether a bank trading at half its book value is a sure bargain. What do you reply?",
    "options": [
-    "First look at why the market distrusts it",
+    "It may be cheap, but look at why the market distrusts its balance sheet",
     "P/B is no use for banks",
     "Yes, it's a sure bargain: buy as much as you can"
    ],
@@ -437,7 +437,7 @@
    "prompt": "Laura is comparing two companies. A: ROE of 25 % with net debt/EBITDA of 5. B: ROE of 18 %, no debt and an ROIC of 18 %. Which looks like the better business?",
    "options": [
     "A: its ROE is higher, and that's what counts",
-    "B: it earns a lot without relying on debt",
+    "B: it earns a lot on all its capital without relying on debt",
     "There's no way to tell"
    ],
    "explanation": "Look at ROE alongside ROIC and debt.",
@@ -568,7 +568,7 @@
    "prompt": "Pablo does a DCF: a company trading at €60 is «worth» €120. To get there he assumed 25 % annual growth for 10 years and a 6 % rate. What should he do?",
    "options": [
     "Go all in: it's worth double what it costs",
-    "Try more cautious assumptions",
+    "Try more cautious assumptions and see how much the value changes",
     "Post it on a forum"
    ],
    "explanation": "A DCF is only as good as its assumptions.",
@@ -591,7 +591,7 @@
   "u17l5-11": {
    "prompt": "Lumi's DCF says a share is worth exactly €47.32. What do you reply?",
    "options": [
-    "Better to think in a range of values",
+    "Better to think in terms of a range and demand a good margin of safety",
     "DCFs are useless",
     "Perfect! If it trades at €47.31, it's cheap"
    ],
@@ -618,7 +618,7 @@
    "prompt": "Iván and Sara value the same company with a 9 % rate. Iván assumes it will grow 30 % a year for 20 years; Sara, 7 % for 10 years and then 2 %. Which value is more useful for deciding?",
    "options": [
     "Iván's: it comes out higher",
-    "Sara's: her assumptions are believable",
+    "Sara's: her assumptions are prudent and believable",
     "Both the same: they use the same discount rate"
    ],
    "explanation": "A DCF is only as good as its assumptions. With prudent assumptions, the value it gives helps you decide; with dream assumptions, it only gets your hopes up.",

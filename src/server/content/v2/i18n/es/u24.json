@@ -407,7 +407,7 @@
    "prompt": "Lucía cree que sería mejor arriesgar más porque «ya recuperará lo que caiga». ¿Qué le dices?",
    "options": [
     "Mejor no invertir nunca",
-    "Ojo: cuanto más cae, más cuesta volver",
+    "Ojo: cuanto más cae, mucho más tiene que subir para volver",
     "Sí: lo que cae se recupera con una subida igual"
    ],
    "explanation": "Una caída del 50 % exige una subida del 100 %. Por eso caer menos suele valer más que subir más.",
@@ -563,7 +563,7 @@
    "options": [
     "Sí: si acierto, gano",
     "Sí, si pongo el objetivo muy por encima del máximo",
-    "No: arriesgo 1R para ganar medio R"
+    "No: arriesgo 1R para ganar medio R. Mejor esperar otra ocasión"
    ],
    "explanation": "Antes de entrar, compara la distancia al objetivo con la del stop. Con medio R de premio por 1R de riesgo, la operación no compensa.",
    "feedback": [

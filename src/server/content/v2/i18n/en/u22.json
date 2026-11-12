@@ -647,7 +647,7 @@
    "prompt": "A share is rising strongly and has touched the upper Bollinger Band for five days. A friend tells you: «Touching the band is a sell signal». What do you reply?",
    "options": [
     "That she should buy more, because the band guarantees it will keep rising",
-    "That touching the band isn’t a sell signal",
+    "That in a strong rise the price can walk along the band: touching it isn’t selling",
     "That she’s right: sell now"
    ],
    "explanation": "Bollinger Bands measure volatility. Touching the upper one in a strong rise is normal, not a sell order.",
@@ -661,7 +661,7 @@
    "prompt": "Lumi’s stop at 0.5 % on bitcoin has been hit three times this week and she wants to remove it. What do you tell her?",
    "options": [
     "Yes, remove it: stops only cause trouble",
-    "Move it away using its ATR and buy less",
+    "Move it further away using its ATR and buy less, to risk the same",
     "Put it even closer, at 0.2 %"
    ],
    "explanation": "Volatility (the ATR) sets the stop distance; the amount adjusts so the risk in euros stays the same.",
@@ -704,7 +704,7 @@
    "options": [
     "I buy everything at €50: Fibonacci guarantees it",
     "I ignore it: Fibonacci is pure magic",
-    "I mark it as a zone of interest, with a stop"
+    "I mark it as a zone of interest and, if I enter, I put the stop below it"
    ],
    "explanation": "Fibonacci organises retracement zones. It carries more weight when it lines up with other pieces, like a support, and it’s always used with a stop.",
    "feedback": [

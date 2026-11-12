@@ -301,7 +301,7 @@
    "options": [
     "Bid es vender y ask es comprar",
     "Son lo mismo, con dos nombres distintos según el bróker",
-    "Bid es lo que pagan; ask, lo que piden"
+    "Bid: lo máximo que alguien paga ahora; ask: lo mínimo por lo que alguien vende"
    ],
    "explanation": "Compras al ask y vendes al bid: por eso, si compras y vendes al instante, pierdes el spread.",
    "feedback": [
@@ -427,7 +427,7 @@
   "vocabl3-5": {
    "prompt": "Laura dice que el KID es «el hijo pequeño del fondo». ¿Qué le aclaras?",
    "options": [
-    "Es el documento con riesgos y costes",
+    "Es el documento con los riesgos y costes del producto",
     "Es el nombre del gestor que lleva el fondo",
     "Es un fondo pensado para menores"
    ],
@@ -776,7 +776,7 @@
   "vocabl6-6": {
    "prompt": "Marta pregunta qué pinta Fibonacci, un matemático italiano, en su gráfico. ¿Qué le explicas?",
    "options": [
-    "Da niveles típicos de retroceso",
+    "Sus números dan niveles típicos de retroceso: 38,2 %, 50 %, 61,8 %…",
     "Predice el precio exacto del día siguiente",
     "Es un indicador de volumen"
    ],
@@ -1144,7 +1144,7 @@
   "vocabl9-9": {
    "prompt": "El CAPE es…",
    "options": [
-    "El PER con beneficios medios de 10 años",
+    "El PER del mercado con beneficios medios de 10 años",
     "El PER de una empresa este año",
     "El dividendo medio de un índice en 10 años"
    ],

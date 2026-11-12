@@ -334,7 +334,7 @@
    "prompt": "Lumi wants to buy a share that has fallen 60 % because «it can't fall any further». What do you say?",
    "options": [
     "Buy twice as much to lower your average price: you'll recover sooner",
-    "First look at why it fell and what the business is worth",
+    "First look at why it fell and what the business is worth: cheap isn't the same as undervalued",
     "Sure, it's already hit the floor"
    ],
    "explanation": "A low price is only an opportunity if it's below the value.",
@@ -410,7 +410,7 @@
    "options": [
     "A is far too expensive: a P/E of 30 is too much for any company",
     "B is a bargain: it has a P/E of 6",
-    "P/E alone isn't enough: see whether earnings will grow"
+    "P/E alone isn't enough: you need to see whether earnings will grow or shrink"
    ],
    "explanation": "A high P/E can be justified by growth, and a low one can be a trap if the business is fading. The temptation is to look only at the number.",
    "feedback": [

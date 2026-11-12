@@ -647,7 +647,7 @@
    "prompt": "Una acció puja amb força i fa cinc dies que toca la banda superior de Bollinger. Una amiga et diu: «Tocar la banda és senyal de venda». Què li contestes?",
    "options": [
     "Que en compri més, perquè la banda garanteix que continuarà pujant",
-    "Que tocar la banda no és senyal de venda",
+    "Que en una pujada forta el preu pot caminar per la banda: tocar-la no és vendre",
     "Que té raó: cal vendre ja"
    ],
    "explanation": "Les bandes de Bollinger mesuren volatilitat. Tocar la superior en una pujada forta és normal, no una ordre de venda.",
@@ -661,7 +661,7 @@
    "prompt": "A la Lumi li ha saltat tres vegades aquesta setmana un stop a un 0,5 % en bitcoin i el vol treure. Què li dius?",
    "options": [
     "Sí, treu-lo: els stops només donen disgustos",
-    "Allunya’l segons l’ATR i compra’n menys",
+    "Allunya’l segons el seu ATR i compra’n menys, per arriscar el mateix",
     "Posa’l encara més a prop, al 0,2 %"
    ],
    "explanation": "La distància de l’stop la marca la volatilitat (l’ATR); l’import s’ajusta perquè el risc en euros continuï igual.",
@@ -704,7 +704,7 @@
    "options": [
     "Compro tot a 50 €: Fibonacci ho garanteix",
     "L’ignoro: Fibonacci és pura màgia",
-    "La marco com a zona d’interès, amb stop"
+    "La marco com a zona d’interès i, si entro, poso l’stop per sota"
    ],
    "explanation": "Fibonacci organitza zones de retrocés. Pesa més quan coincideix amb altres peces, com un suport, i sempre es fa servir amb stop.",
    "feedback": [

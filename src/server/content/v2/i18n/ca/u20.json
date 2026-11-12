@@ -366,7 +366,7 @@
   "u20l2-8": {
    "prompt": "Veus una espelma amb una metxa inferior llarguíssima al mig d'un rang lateral, sense tendència prèvia. La Laura diu que és un senyal de compra claríssim. Què li respons?",
    "options": [
-    "Que aquí aquesta espelma diu poc",
+    "Que la ubicació importa: al mig d'un rang, aquesta espelma diu poca cosa",
     "Que és un senyal de venda",
     "Que té raó: metxa llarga, compra segura"
    ],
@@ -479,7 +479,7 @@
   "u20l4-8": {
    "prompt": "Veus un martell de manual en un gràfic diari, després de dues setmanes de caiguda i a prop del mínim de l'any. Què fas segons el que has après?",
    "options": [
-    "Espero la confirmació abans d'entrar",
+    "Espero la confirmació i, si entro, poso l'stop sota la metxa",
     "L'ignoro: les espelmes no serveixen per a res",
     "Compro ja amb tot"
    ],
@@ -664,7 +664,7 @@
    "options": [
     "Mirar les dades en temps real mentre operes",
     "Fer servir espelmes en lloc de línies",
-    "Provar patrons fins que algun encerta"
+    "Provar molts patrons fins que algun sembla que funciona per casualitat"
    ],
    "explanation": "Amb prou proves, la casualitat sempre regala algun «descobriment»."
   },
@@ -673,7 +673,7 @@
    "options": [
     "No entrar mai: les espelmes no funcionen",
     "Entrar sense stop: amb quatre de quatre no pot fallar",
-    "Si entra, stop sota el martell i posició petita"
+    "Si entra, stop sota el mínim del martell i una posició petita"
    ],
    "explanation": "El context millora les probabilitats; l'stop i la mida protegeixen quan tot i així surt malament.",
    "feedback": [

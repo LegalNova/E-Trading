@@ -435,7 +435,7 @@
   "u21l3-12": {
    "prompt": "Una línea alcista lleva tres toques. El precio baja a tocarla por cuarta vez y Marta quiere comprar sin stop «porque siempre rebota». ¿Qué le dices?",
    "options": [
-    "Que puede comprar, pero con stop bajo la línea",
+    "Que puede comprar, pero con el stop por debajo de la línea y del último mínimo",
     "Que redibuje la línea más abajo para estar tranquila",
     "Que tiene razón: tres toques son una garantía"
    ],
@@ -662,7 +662,7 @@
    "options": [
     "Compro ya, antes de que se escape",
     "Compro el doble para aprovechar más la subida",
-    "Espero al cierre y miro el volumen"
+    "Espero al cierre y miro si supera el nivel con volumen"
    ],
    "explanation": "Las rupturas se confirman con el cierre y el volumen. Esperar unas horas cuesta poco; caer en la trampa, mucho más.",
    "feedback": [

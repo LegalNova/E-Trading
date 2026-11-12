@@ -323,7 +323,7 @@
    "prompt": "Which debt makes most sense?",
    "options": [
     "A revolving card to pay for a trip this summer",
-    "A mortgage you can comfortably afford",
+    "A mortgage with a payment of 25 % of your income",
     "A payday loan for a concert"
    ],
    "explanation": "Cheap, for something that lasts and with an affordable payment."
@@ -414,7 +414,7 @@
    "prompt": "Ana owes €2,000 on a revolving card at 22 % APR and pays €50 a month. She has €4,000 in an account at 2 %, and her ideal cushion is €2,000. What does she do?",
    "options": [
     "Invests the €4,000 in the stock market to earn more than 22 %",
-    "Clears the revolving card and keeps €2,000 as a cushion",
+    "Uses €2,000 to clear the revolving card and keeps €2,000 as a cushion",
     "Leaves everything as it is"
    ],
    "explanation": "Paying off expensive debt is the best guaranteed «investment» there is.",
@@ -536,7 +536,7 @@
    "prompt": "Bruno has a fixed-rate mortgage at 2 %, a 6-month cushion and another €10,000 saved that he won't need for 15 years. What does he do?",
    "options": [
     "Takes out another loan to invest more",
-    "Compares paying off at 2 % with long-term investing",
+    "Compares the guaranteed 2 % from paying off with long-term, diversified investing, without touching his cushion",
     "Puts it all into a single trendy share because the mortgage is cheap"
    ],
    "explanation": "With cheap debt there's no single right answer: what matters is comparing properly and not touching the cushion.",
@@ -572,7 +572,7 @@
   "u3l5-9": {
    "prompt": "Lumi has a mortgage at 2 % and €200 to spare each month: she can't decide whether to pay it down or invest. What do you tell her?",
    "options": [
-    "It depends: compare that 2 % with long-term investing",
+    "It depends: compare the guaranteed 2 % with investing for the long term, and check you have a cushion",
     "Invest in whatever has gone up most this year",
     "Always pay it off: any debt is bad and you should get rid of it"
    ],

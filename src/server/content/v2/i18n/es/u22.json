@@ -647,7 +647,7 @@
    "prompt": "Una acción sube con fuerza y lleva cinco días tocando la banda superior de Bollinger. Una amiga te dice: «Tocar la banda es señal de venta». ¿Qué le contestas?",
    "options": [
     "Que compre más, porque la banda garantiza que seguirá subiendo",
-    "Que tocar la banda no es señal de venta",
+    "Que en una subida fuerte el precio puede caminar por la banda: tocarla no es vender",
     "Que tiene razón: hay que vender ya"
    ],
    "explanation": "Las bandas de Bollinger miden volatilidad. Tocar la superior en una subida fuerte es normal, no una orden de venta.",
@@ -661,7 +661,7 @@
    "prompt": "A Ana le ha saltado tres veces esta semana un stop a un 0,5 % en bitcoin y quiere quitarlo. ¿Qué le dices?",
    "options": [
     "Sí, quítalo: los stops solo dan disgustos",
-    "Aléjalo según su ATR y compra menos",
+    "Aléjalo según su ATR y compra menos, para arriesgar lo mismo",
     "Ponlo aún más cerca, al 0,2 %"
    ],
    "explanation": "La distancia del stop la marca la volatilidad (el ATR); el importe se ajusta para que el riesgo en euros siga igual.",
@@ -704,7 +704,7 @@
    "options": [
     "Compro todo en 50 €: Fibonacci lo garantiza",
     "La ignoro: Fibonacci es pura magia",
-    "La marco como zona de interés, con stop"
+    "La marco como zona de interés y, si entro, pongo el stop por debajo"
    ],
    "explanation": "Fibonacci organiza zonas de retroceso. Pesa más cuando coincide con otras piezas, como un soporte, y siempre se usa con stop.",
    "feedback": [

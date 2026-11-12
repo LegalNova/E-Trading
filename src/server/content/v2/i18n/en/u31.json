@@ -466,7 +466,7 @@
   "u31l2-12": {
    "prompt": "You bought units of the same ETF in 2019 and in 2024, at a higher price. You sell half. Which ones count as sold for the tax office?",
    "options": [
-    "The 2019 ones, the first",
+    "The 2019 ones, the first you bought",
     "The 2024 ones, the most recent",
     "Whichever you choose"
    ],
@@ -679,7 +679,7 @@
    "options": [
     "Distributing: I like receiving dividends",
     "It doesn't matter: for tax they're the same",
-    "Accumulating: I'm not taxed until I sell"
+    "Accumulating: it reinvests inside and I'm not taxed until I sell"
    ],
    "explanation": "If you don't need an income, accumulation defers tax and that money keeps compounding. Receiving dividends seems to earn more, but the price falls by that amount and it's taxed as well.",
    "feedback": [

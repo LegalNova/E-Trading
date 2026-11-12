@@ -432,7 +432,7 @@
    "prompt": "Bruno sees a share with a 14 % dividend and wants to put all his savings into it. What would you do in his shoes?",
    "options": [
     "Buy right now, 14 % is a bargain",
-    "Check whether profits cover that dividend",
+    "Look into why the price has fallen and whether profits cover the dividend",
     "Buy just before the ex-dividend date, collect and sell"
    ],
    "explanation": "Dividend yield rises when the price falls; sometimes it signals problems at the company.",
@@ -481,7 +481,7 @@
    "prompt": "Why does a company usually do a split?",
    "options": [
     "To raise new money from investors",
-    "To make each share cheaper",
+    "To make each share cheaper and more manageable",
     "To pay less tax"
    ],
    "explanation": "No money comes in and the company's value doesn't change: only the price of each share falls."
@@ -529,7 +529,7 @@
    "options": [
     "No: your shares are still exactly the same ones",
     "Yes: they take away some of your shares",
-    "Yes: if you don't join in, your share falls"
+    "Yes: if you don't take part, your percentage of the company falls"
    ],
    "explanation": "In a capital increase new shares are issued: if you don't buy the ones you're entitled to, your percentage falls (dilution). It's tempting to think nothing happens because you keep your shares, but the total has grown.",
    "feedback": [
@@ -580,7 +580,7 @@
    "prompt": "Lumi wants to move everything into small caps because «small companies rise more». What do you say?",
    "options": [
     "No, small caps never go up",
-    "They can return more, but with more risk",
+    "They can return more, but with more risk, and it's not a fixed rule",
     "Yes, in the long run small caps always end up winning"
    ],
    "explanation": "Size changes the risk profile, but it doesn't guarantee a result.",
@@ -627,7 +627,7 @@
   "u8l6-6": {
    "prompt": "What is a value trap?",
    "options": [
-    "A cheap share with a worsening business",
+    "A cheap share that keeps falling because its business is deteriorating",
     "A very expensive growth share",
     "A fund that charges its clients hidden fees"
    ],
@@ -704,7 +704,7 @@
    "prompt": "A growth company with a P/E of 60 reports results: it earns more than last year, but less than expected. What's most likely?",
    "options": [
     "It doesn't move",
-    "It falls: the price expected more",
+    "It falls sharply: the price was counting on more growth",
     "It rises: it earned more than last year"
    ],
    "feedback": [

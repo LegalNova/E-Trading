@@ -345,7 +345,7 @@
   "u5l1-1": {
    "prompt": "Què és una borsa?",
    "options": [
-    "Un mercat on s'encreuen ordres de compra i venda",
+    "Un mercat regulat on s'encreuen ordres de compra i venda de valors",
     "Un banc que guarda els teus estalvis",
     "Una empresa que et ven les seves pròpies accions cada dia"
    ],
@@ -429,7 +429,7 @@
    "options": [
     "Amb els dividends de les empreses que negocia",
     "Cobrant una quota a la CNMV",
-    "Amb la diferència entre compra i venda"
+    "Amb la diferència entre el seu preu de compra i el de venda"
    ],
    "explanation": "Compra una mica més barat del que ven: aquesta diferència és el seu marge."
   },
@@ -594,7 +594,7 @@
    "prompt": "En Pablo té 60.000 € en un bròquer amb seu en un altre país de la UE i dona per fet que el cobreix el FOGAIN espanyol. Què fa?",
    "options": [
     "Res: tots els fons de garantia són iguals a tot arreu",
-    "Comprova quin fons de garantia el cobreix",
+    "Comprova quin fons de garantia li correspon i fins a quant cobreix",
     "Ho treu tot i ho guarda a casa"
    ],
    "explanation": "La protecció depèn del país de l'entitat: comprova-ho abans d'obrir un compte.",
@@ -704,7 +704,7 @@
   "u5l7-8": {
    "prompt": "En Pablo vol posar gairebé tots els seus estalvis en una empresa de BME Growth perquè «es pot multiplicar». Què té en compte?",
    "options": [
-    "Que solen ser petites i poc líquides",
+    "Que solen ser més petites, menys líquides i amb més risc",
     "Que BME Growth garanteix la inversió",
     "Que té la mateixa liquiditat que una de l'IBEX"
    ],

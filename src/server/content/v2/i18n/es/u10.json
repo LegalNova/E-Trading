@@ -318,7 +318,7 @@
    "options": [
     "No pierden: la CNMV los supervisa y garantiza el resultado",
     "Si lo vende un banco, es seguro",
-    "Un fondo sube y baja con lo que tiene dentro"
+    "Un fondo sube y baja con lo que tiene dentro: no garantiza ganancias"
    ],
    "explanation": "Un fondo normal no garantiza nada: vale lo que valen sus activos. Que lo venda un banco o lo supervise la CNMV da seguridad sobre las reglas y la custodia, no sobre la rentabilidad.",
    "feedback": [
@@ -355,7 +355,7 @@
    "options": [
     "Porque la mayoría de los gestores no sabe invertir",
     "Porque el mercado hace trampas",
-    "Porque gana lo mismo y paga más costes"
+    "Porque antes de costes gana lo mismo y luego paga más costes"
    ],
    "explanation": "Es la aritmética de la gestión activa (Sharpe, 1991)."
   },
@@ -484,7 +484,7 @@
    "prompt": "En un ETF sintético, ¿quién paga la rentabilidad del índice?",
    "options": [
     "La CNMV",
-    "La contraparte del swap",
+    "La contraparte del swap, normalmente un banco",
     "Los demás partícipes del fondo"
    ],
    "explanation": "El banco se compromete a pagar lo que haga el índice a cambio de lo que rinde la cesta del ETF."

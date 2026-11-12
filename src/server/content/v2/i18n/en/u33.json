@@ -325,7 +325,7 @@
   "u33l3-1": {
    "prompt": "What is payment for order flow (PFOF)?",
    "options": [
-    "What the broker is paid for routing your orders",
+    "What a market maker pays the broker to send it your orders",
     "A tax on trades",
     "A fee you pay the broker yourself on every order"
    ],
@@ -397,7 +397,7 @@
   "u33l4-2": {
    "prompt": "What does a robo-adviser do after your profile test?",
    "options": [
-    "It gives you a portfolio and rebalances it",
+    "It assigns you an index fund portfolio and rebalances it for you",
     "It recommends the trendiest shares each month",
     "It guarantees you a return"
    ],

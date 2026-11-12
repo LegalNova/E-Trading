@@ -340,7 +340,7 @@
    "options": [
     "Waiting until you have enough for a deposit on a flat",
     "A platform promising a guaranteed 15 % on flats",
-    "Shares in a listed SOCIMI, like Merlin"
+    "Buying shares in a SOCIMI in the IBEX 35, like Merlin Properties"
    ],
    "explanation": "A SOCIMI lets you invest in property with little money, diversified and with liquidity, in exchange for its price moving every day. A guaranteed return is tempting, but in investing it doesn't exist.",
    "feedback": [
@@ -354,7 +354,7 @@
    "options": [
     "Yes, and they're covered by the Deposit Guarantee Fund too",
     "Yes: the dividend is fixed",
-    "No: neither the dividend nor the price is guaranteed"
+    "No: the dividend isn't guaranteed and the price can fall like the stock market"
    ],
    "explanation": "A SOCIMI is a share: it pays out a lot because the law requires it, but its dividend depends on rents and its price is listed. Comparing it with a deposit is tempting because of the dividend, but it has no fixed interest and no FGD.",
    "feedback": [
@@ -485,7 +485,7 @@
    "prompt": "Pablo opened a leveraged CFD and he's losing. The broker warns him that his margin has fallen to half of what's required. What happens if it keeps falling?",
    "options": [
     "The broker gives him back the money he lost",
-    "The broker forcibly closes his position",
+    "The broker closes the position and he can't lose more than he has in the account",
     "Nothing: the broker waits for the price to recover"
    ],
    "explanation": "European rules limit the damage (close-out at 50 % and no negative balance), but they don't stop you losing what you deposited.",
@@ -500,7 +500,7 @@
    "options": [
     "As savings income, like a fund, and only on the gain",
     "It isn't taxed",
-    "As employment income, on everything you cash in"
+    "As employment income, at your marginal rate, on everything you cash in"
    ],
    "explanation": "Since contributions got tax relief on the way in, everything is taxed on the way out."
   },

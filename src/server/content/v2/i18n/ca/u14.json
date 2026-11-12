@@ -378,7 +378,7 @@
   "u14l2-12": {
    "prompt": "En Pablo té 2.000 € estalviats. El seu bròquer li ofereix passar d'1:30 a 1:100 si es declara «client professional». Què fa?",
    "options": [
-    "Ho rebutja: perdria les seves proteccions",
+    "Ho rebutja: perdria les proteccions de minorista i el risc es dispara",
     "Accepta: amb 1:100 guanya més de pressa",
     "Accepta, però es promet operar amb molt de compte"
    ],
@@ -447,7 +447,7 @@
    "prompt": "En Bruno llegeix sobre un país amb una inflació del 50 % el banc central del qual està abaixant els tipus. Un amic li proposa comprar-ne la moneda perquè «està baratíssima». Què pensa en Bruno?",
    "options": [
     "Que la inflació d'un país no afecta la seva divisa",
-    "Que així la divisa sol continuar enfonsant-se",
+    "Que una inflació tan alta amb els tipus baixant sol enfonsar la divisa",
     "Que és una ganga segura"
    ],
    "explanation": "Una inflació alta amb els tipus per sota sol depreciar la divisa.",
@@ -489,7 +489,7 @@
    "options": [
     "Només compra empreses europees",
     "Garanteix no perdre diners amb la borsa americana",
-    "Elimina gairebé tot l'efecte del dòlar"
+    "Elimina gairebé tot l'efecte del dòlar respecte a l'euro"
    ],
    "explanation": "La cobertura neutralitza la divisa, no el risc de les accions."
   },
@@ -566,7 +566,7 @@
   "u14l5-5": {
    "prompt": "Què és el carry trade amb iens?",
    "options": [
-    "Endeutar-se en iens per invertir fora",
+    "Manllevar en iens a un tipus baix per invertir on es paga més",
     "Comprar iens barats abans de viatjar al Japó",
     "Vendre accions japoneses"
    ],
@@ -575,7 +575,7 @@
   "u14l5-6": {
    "prompt": "Per què sol pujar el ien en una crisi?",
    "options": [
-    "Perquè els japonesos repatrien els seus diners",
+    "Perquè els inversors japonesos repatrien els diners que tenen fora",
     "Perquè el Banc del Japó apuja els tipus a cada crisi",
     "Perquè el ien està respaldat per or"
    ],

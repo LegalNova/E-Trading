@@ -439,7 +439,7 @@
    "prompt": "Because of a general panic, a company with stable profits, little debt and loyal customers falls 30 % in a month without its business having changed. How does a value investor see it?",
    "options": [
     "Sells: if it's falling, something bad is going on",
-    "Checks whether the business is unchanged",
+    "Checks whether the business is still the same and whether there's now a margin of safety",
     "Buys straight away: 30 % off has to be a bargain"
    ],
    "explanation": "A value investor separates the price (which changes every day) from the value of the business (which changes slowly).",
@@ -511,7 +511,7 @@
    "prompt": "Lumi is going to buy the share with the highest dividend, 12 % a year, because it's «guaranteed income». What do you say?",
    "options": [
     "Buy the one with the second-highest dividend too",
-    "First, check whether earnings cover it",
+    "First, check whether earnings cover it and why the price has fallen",
     "Perfect: the higher, the better"
    ],
    "explanation": "A sky-high dividend is sometimes the sign that it's about to be cut: what matters is that earnings cover it. The temptation is to look only at the size of the dividend.",
@@ -771,7 +771,7 @@
   "u25l9-4": {
    "prompt": "Lumi wants you to tell her right now which strategy is best, «the one that makes the most». What do you reply?",
    "options": [
-    "The one that fits my time and my horizon",
+    "The one that fits my time, my horizon and what I can take without selling",
     "Day trading, it's the fastest",
     "Whichever went up most last year: that's the one that works"
    ],
@@ -835,7 +835,7 @@
    "prompt": "You've held a value fund for six years. Your brother-in-law, with a growth fund, has made twice as much. What do you do?",
    "options": [
     "I switch to his: it's clear which one works",
-    "I check whether my reasons still hold",
+    "I check whether my reasons still hold and, if so, I stick to the plan",
     "I sell everything and stay in cash"
    ],
    "feedback": [

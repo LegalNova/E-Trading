@@ -439,7 +439,7 @@
    "prompt": "Por un pánico general, una empresa con beneficios estables, poca deuda y clientes fieles cae un 30 % en un mes sin que su negocio haya cambiado. ¿Cómo lo ve un inversor en valor?",
    "options": [
     "Vende: si cae, algo malo pasa",
-    "Revisa si el negocio sigue igual",
+    "Revisa si el negocio sigue igual y si ahora hay margen de seguridad",
     "Compra enseguida: un 30 % menos es una ganga"
    ],
    "explanation": "El inversor en valor separa el precio (que cambia cada día) del valor del negocio (que cambia despacio).",
@@ -507,7 +507,7 @@
    "prompt": "Llevas seis años con un fondo de valor. Tu cuñado, con uno de crecimiento, ha ganado el doble. ¿Qué haces?",
    "options": [
     "Me cambio al suyo: está claro cuál funciona",
-    "Reviso si mis razones siguen en pie",
+    "Reviso si mis razones siguen en pie y, si es así, mantengo el plan",
     "Vendo todo y me quedo en liquidez"
    ],
    "explanation": "Ningún estilo gana siempre. Elige uno que puedas mantener cuando va por detrás.",
@@ -535,7 +535,7 @@
    "prompt": "Lucía va a comprar la acción con el dividendo más alto, un 12 % al año, porque son «rentas aseguradas». ¿Qué le contestas?",
    "options": [
     "Compra también la del segundo dividendo más alto",
-    "Antes, mira si el beneficio lo cubre",
+    "Antes, mira si el beneficio lo cubre y por qué ha caído el precio",
     "Perfecto: cuanto más alto, mejor"
    ],
    "explanation": "Un dividendo altísimo a veces es la señal de que va a recortarse: lo que importa es que el beneficio lo cubra. La tentación es mirar solo el tamaño del dividendo.",
@@ -832,7 +832,7 @@
   "u25l9-4": {
    "prompt": "Nora quiere que le digas ya cuál es la mejor estrategia, «la que más gane». ¿Qué le contestas?",
    "options": [
-    "La que encaje con mi tiempo y mi horizonte",
+    "La que encaje con mi tiempo, mi horizonte y lo que aguanto sin vender",
     "El day trading, que es la más rápida",
     "La que más subió el año pasado, que es la que funciona"
    ],

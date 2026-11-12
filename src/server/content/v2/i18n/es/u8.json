@@ -432,7 +432,7 @@
    "prompt": "Bruno ve una acción con un dividendo del 14 % y quiere meter ahí todos sus ahorros. ¿Qué haces si estás en su lugar?",
    "options": [
     "Compro ya, un 14 % es un chollo",
-    "Miro si el beneficio cubre ese dividendo",
+    "Miro por qué ha caído el precio y si el beneficio cubre el dividendo",
     "Compro justo antes de la fecha ex-dividendo, cobro y vendo"
    ],
    "explanation": "La rentabilidad por dividendo sube cuando cae el precio; a veces anticipa problemas en la empresa.",
@@ -481,7 +481,7 @@
    "prompt": "¿Por qué suele hacer una empresa un split?",
    "options": [
     "Para conseguir dinero nuevo de los inversores",
-    "Para que cada acción sea más barata",
+    "Para que cada acción sea más barata y manejable",
     "Para pagar menos impuestos"
    ],
    "explanation": "No entra dinero ni cambia el valor de la empresa: solo baja el precio de cada acción."
@@ -529,7 +529,7 @@
    "options": [
     "No: tus acciones siguen siendo las mismas",
     "Sí: te quitan parte de tus acciones",
-    "Sí: si no acudes, tu porcentaje baja"
+    "Sí: si no acudes, tu porcentaje de la empresa baja"
    ],
    "explanation": "En una ampliación salen acciones nuevas: si no compras las que te tocan, tu porcentaje baja (dilución). Lo tentador es pensar que no pasa nada porque conservas tus acciones, pero el total ha crecido.",
    "feedback": [
@@ -580,7 +580,7 @@
    "prompt": "Lucía quiere pasarlo todo a small caps porque «las pequeñas suben más». ¿Qué le dices?",
    "options": [
     "No, las pequeñas nunca suben",
-    "Pueden rendir más, pero con más riesgo",
+    "Pueden rendir más, pero con más riesgo, y no es una regla fija",
     "Sí, a largo plazo las pequeñas siempre acaban ganando"
    ],
    "explanation": "El tamaño cambia el perfil de riesgo, pero no garantiza un resultado.",
@@ -627,7 +627,7 @@
   "u8l6-6": {
    "prompt": "¿Qué es una trampa de valor?",
    "options": [
-    "Una acción barata con un negocio que empeora",
+    "Una acción barata que sigue bajando porque su negocio se deteriora",
     "Una acción de crecimiento muy cara",
     "Un fondo que cobra comisiones ocultas a sus clientes"
    ],
@@ -646,7 +646,7 @@
    "prompt": "Una empresa de crecimiento con PER de 60 presenta resultados: gana más que el año pasado, pero menos de lo que se esperaba. ¿Qué es lo más probable?",
    "options": [
     "No se mueve",
-    "Cae: el precio esperaba más",
+    "Cae con fuerza: el precio descontaba más crecimiento",
     "Sube: ha ganado más que el año pasado"
    ],
    "explanation": "En crecimiento pagas por expectativas: lo que cuenta es si se cumplen.",

@@ -340,7 +340,7 @@
    "options": [
     "Esperar a tenir per a l'entrada d'un pis",
     "Una plataforma que promet un 15 % garantit en pisos",
-    "Accions d'una SOCIMI cotitzada, com Merlin"
+    "Comprar accions d'una SOCIMI de l'IBEX 35, com Merlin Properties"
    ],
    "explanation": "Una SOCIMI et deixa invertir en immobles amb pocs diners, diversificat i amb liquiditat, a canvi que el seu preu es mogui cada dia. La rendibilitat garantida tempta, però en inversió no existeix.",
    "feedback": [
@@ -354,7 +354,7 @@
    "options": [
     "Sí, i a més les cobreix el Fons de Garantia de Dipòsits",
     "Sí: el dividend és fix",
-    "No: ni el dividend ni el preu estan garantits"
+    "No: el dividend no està garantit i el preu pot caure com la borsa"
    ],
    "explanation": "Una SOCIMI és una acció: reparteix molt perquè la llei l'obliga, però el seu dividend depèn dels lloguers i el seu preu cotitza. Comparar-la amb un dipòsit tempta pel dividend, però no té interès fix ni FGD.",
    "feedback": [
@@ -485,7 +485,7 @@
    "prompt": "En Pablo va obrir un CFD amb palanquejament i va perdent. El bròquer l'avisa que la seva garantia ha baixat a la meitat del que s'exigeix. Què passa si continua caient?",
    "options": [
     "El bròquer li torna els diners perduts",
-    "El bròquer li tanca la posició a la força",
+    "El bròquer tanca la posició i no pot perdre més del que té al compte",
     "Res: el bròquer espera que el preu es recuperi"
    ],
    "explanation": "Les normes europees limiten el dany (tancament al 50 % i sense saldo negatiu), però no eviten perdre el que s'ha dipositat.",
@@ -500,7 +500,7 @@
    "options": [
     "A la base de l'estalvi, com un fons, i només pel guany",
     "No tributa",
-    "Com a rendiment del treball, per tot el que rescates"
+    "Com a rendiment del treball, al teu tipus marginal, per tot el que rescates"
    ],
    "explanation": "Com que les aportacions van desgravar en entrar, en sortir tributa tot."
   },

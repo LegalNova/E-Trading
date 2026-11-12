@@ -318,7 +318,7 @@
    "options": [
     "No perden: la CNMV els supervisa i en garanteix el resultat",
     "Si el ven un banc, és segur",
-    "Un fons puja i baixa amb el que té a dins"
+    "Un fons puja i baixa amb el que té a dins: no garanteix guanys"
    ],
    "explanation": "Un fons normal no garanteix res: val el que valen els seus actius. Que el vengui un banc o el supervisi la CNMV dona seguretat sobre les regles i la custòdia, no sobre la rendibilitat.",
    "feedback": [
@@ -355,7 +355,7 @@
    "options": [
     "Perquè la majoria dels gestors no saben invertir",
     "Perquè el mercat fa trampes",
-    "Perquè guanya el mateix i paga més costos"
+    "Perquè abans de costos guanya el mateix i després paga més costos"
    ],
    "explanation": "És l'aritmètica de la gestió activa (Sharpe, 1991)."
   },
@@ -484,7 +484,7 @@
    "prompt": "En un ETF sintètic, qui paga la rendibilitat de l'índex?",
    "options": [
     "La CNMV",
-    "La contrapart del swap",
+    "La contrapart del swap, normalment un banc",
     "Els altres partícips del fons"
    ],
    "explanation": "El banc es compromet a pagar el que faci l'índex a canvi del que rendeix la cistella de l'ETF."

@@ -340,7 +340,7 @@
    "options": [
     "Esperar a tener para la entrada de un piso",
     "Una plataforma que promete un 15 % garantizado en pisos",
-    "Acciones de una SOCIMI cotizada, como Merlin"
+    "Comprar acciones de una SOCIMI del IBEX 35, como Merlin Properties"
    ],
    "explanation": "Una SOCIMI te deja invertir en inmuebles con poco dinero, diversificado y con liquidez, a cambio de que su precio se mueva cada día. La rentabilidad garantizada tienta, pero en inversión no existe.",
    "feedback": [
@@ -354,7 +354,7 @@
    "options": [
     "Sí, y además las cubre el Fondo de Garantía de Depósitos",
     "Sí: el dividendo es fijo",
-    "No: ni el dividendo ni el precio están garantizados"
+    "No: el dividendo no está garantizado y el precio puede caer como la bolsa"
    ],
    "explanation": "Una SOCIMI es una acción: reparte mucho porque la ley la obliga, pero su dividendo depende de los alquileres y su precio cotiza. Compararla con un depósito tienta por el dividendo, pero no tiene interés fijo ni FGD.",
    "feedback": [
@@ -485,7 +485,7 @@
    "prompt": "Pablo abrió un CFD con apalancamiento y va perdiendo. El bróker le avisa de que su garantía ha bajado a la mitad de lo exigido. ¿Qué pasa si sigue cayendo?",
    "options": [
     "El bróker le devuelve el dinero perdido",
-    "El bróker le cierra la posición a la fuerza",
+    "El bróker cierra la posición y no puede perder más de lo que tiene en la cuenta",
     "Nada: el bróker espera a que el precio se recupere"
    ],
    "explanation": "Las normas europeas limitan el daño (cierre al 50 % y sin saldo negativo), pero no evitan perder lo depositado.",
@@ -500,7 +500,7 @@
    "options": [
     "En la base del ahorro, como un fondo, y solo por la ganancia",
     "No tributa",
-    "Como rendimiento del trabajo, por todo lo rescatado"
+    "Como rendimiento del trabajo, a tu tipo marginal, por todo lo rescatado"
    ],
    "explanation": "Como las aportaciones desgravaron al entrar, al salir tributa todo."
   },

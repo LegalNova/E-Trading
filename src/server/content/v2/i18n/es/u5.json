@@ -345,7 +345,7 @@
   "u5l1-1": {
    "prompt": "¿Qué es una bolsa?",
    "options": [
-    "Un mercado donde se cruzan órdenes de compra y venta",
+    "Un mercado regulado donde se cruzan órdenes de compra y venta de valores",
     "Un banco que guarda tus ahorros",
     "Una empresa que te vende sus propias acciones cada día"
    ],
@@ -429,7 +429,7 @@
    "options": [
     "Con los dividendos de las empresas que negocia",
     "Cobrando una cuota a la CNMV",
-    "Con la diferencia entre compra y venta"
+    "Con la diferencia entre su precio de compra y el de venta"
    ],
    "explanation": "Compra un poco más barato de lo que vende: esa diferencia es su margen."
   },
@@ -622,7 +622,7 @@
    "prompt": "Pablo tiene 60.000 € en un bróker con sede en otro país de la UE y da por hecho que le cubre el FOGAIN español. ¿Qué hace?",
    "options": [
     "Nada: todos los fondos de garantía son iguales",
-    "Comprueba qué fondo de garantía le cubre",
+    "Comprueba qué fondo de garantía le aplica y hasta cuánto cubre",
     "Lo saca todo y lo guarda en casa"
    ],
    "explanation": "La protección depende del país de la entidad: compruébalo antes de abrir cuenta.",
@@ -746,7 +746,7 @@
   "u5l7-8": {
    "prompt": "Pablo quiere meter casi todos sus ahorros en una empresa de BME Growth porque «puede multiplicarse». ¿Qué tiene en cuenta?",
    "options": [
-    "Que suelen ser pequeñas y poco líquidas",
+    "Que suelen ser más pequeñas, menos líquidas y con más riesgo",
     "Que BME Growth garantiza la inversión",
     "Que tiene la misma liquidez que una del IBEX"
    ],

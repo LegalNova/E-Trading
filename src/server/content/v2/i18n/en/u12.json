@@ -374,7 +374,7 @@
    "options": [
     "The company that created and maintains it",
     "A central bank",
-    "Nobody alone: thousands of nodes"
+    "Nobody on their own: thousands of nodes share the record"
    ],
    "explanation": "That's its key feature: the record is spread across many participants."
   },
@@ -642,7 +642,7 @@
   "u12l5-1": {
    "prompt": "What does a stablecoin try to do?",
    "options": [
-    "Always be worth the same as a currency",
+    "Always be worth the same as a currency, like 1 dollar",
     "Rise more than Bitcoin with fewer scares",
     "Pay a dividend"
    ],
@@ -697,7 +697,7 @@
    "options": [
     "Its price rising too much",
     "It paying too much interest to its holders",
-    "The reserves failing or losing value"
+    "The reserves not existing, not being available or losing value"
    ],
    "explanation": "That's why MiCA requires sufficient, segregated and auditable reserves."
   },
@@ -741,7 +741,7 @@
   "u12l6-4": {
    "prompt": "Where is it safest to keep your seed phrase?",
    "options": [
-    "On paper or metal, offline",
+    "On paper or metal, somewhere safe and offline",
     "In an email you send to yourself",
     "In a photo on your phone"
    ],
@@ -801,7 +801,7 @@
    "prompt": "According to the CNMV, from 1 July 2026, who can provide crypto-asset services in Spain?",
    "options": [
     "Anyone with a website",
-    "Only MiCA-authorised providers",
+    "Only providers authorised under MiCA",
     "Only long-established Spanish banks"
    ],
    "explanation": "That day the transition period in Spain came to an end."

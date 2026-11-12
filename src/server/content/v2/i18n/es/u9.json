@@ -312,7 +312,7 @@
   "u9l1-1": {
    "prompt": "¿Qué recibes al comprar un bono?",
    "options": [
-    "Intereses y tu dinero al vencimiento",
+    "Intereses periódicos y la devolución del dinero al vencimiento",
     "Una parte de la empresa y derecho a voto en la junta",
     "Un dividendo que decide la junta"
    ],
@@ -518,7 +518,7 @@
    "prompt": "Nora ha leído que el banco central va a bajar los tipos y pregunta si es bueno o malo para sus bonos. ¿Qué le contestas?",
    "options": [
     "Malo: cobrarás menos cupón a partir de ahora",
-    "Bueno: el precio de tus bonos sube",
+    "Bueno: si bajan los tipos, el precio de tus bonos sube",
     "Da igual: los bonos no se mueven"
    ],
    "explanation": "Si los tipos bajan, tu cupón fijo es más atractivo que el de los bonos nuevos y tu bono vale más. Lo tentador es pensar que cobrarás menos, pero eso solo les pasa a los bonos nuevos, no al tuyo.",
@@ -618,7 +618,7 @@
    "prompt": "Compraste una letra a 12 meses. A los 6 meses necesitas el dinero, y los tipos han subido. ¿Qué pasa si la vendes ahora?",
    "options": [
     "No se puede vender antes de que venza: hay que esperar",
-    "La vendo al precio de mercado de ese día",
+    "La vendo al precio de mercado, que puede ser menor de lo que esperaba",
     "Recibo los 1.000 € igualmente"
    ],
    "explanation": "Hasta el vencimiento, el precio de una letra se mueve con los tipos, aunque poco, porque su plazo es corto.",
@@ -651,7 +651,7 @@
    "options": [
     "Si la inflación se queda en cero varios años",
     "Siempre",
-    "Si la inflación supera lo esperado"
+    "Si la inflación acaba siendo mayor de lo que esperaba el mercado"
    ],
    "explanation": "Si la inflación supera la de equilibrio, el ajuste del nominal compensa de sobra su cupón más bajo."
   },

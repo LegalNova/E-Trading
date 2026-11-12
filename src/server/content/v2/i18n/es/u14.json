@@ -378,7 +378,7 @@
   "u14l2-12": {
    "prompt": "Pablo tiene 2.000 € ahorrados. Su bróker le ofrece pasar de 1:30 a 1:100 si se declara «cliente profesional». ¿Qué hace?",
    "options": [
-    "Lo rechaza: perdería sus protecciones",
+    "Lo rechaza: perdería las protecciones de minorista y el riesgo se dispara",
     "Acepta: con 1:100 gana más rápido",
     "Acepta, pero se promete operar con mucho cuidado"
    ],
@@ -447,7 +447,7 @@
    "prompt": "Bruno lee sobre un país con una inflación del 50 % cuyo banco central está bajando los tipos. Un amigo le propone comprar su moneda porque «está baratísima». ¿Qué piensa Bruno?",
    "options": [
     "Que la inflación de un país no afecta a su divisa",
-    "Que así la divisa suele seguir hundiéndose",
+    "Que una inflación tan alta con tipos bajando suele hundir la divisa",
     "Que es una ganga segura"
    ],
    "explanation": "Inflación alta con tipos por debajo de ella suele depreciar la divisa.",
@@ -489,7 +489,7 @@
    "options": [
     "Solo compra empresas europeas",
     "Garantiza no perder dinero con la bolsa americana",
-    "Elimina casi todo el efecto del dólar"
+    "Elimina casi todo el efecto del dólar frente al euro"
    ],
    "explanation": "La cobertura neutraliza la divisa, no el riesgo de las acciones."
   },
@@ -566,7 +566,7 @@
   "u14l5-5": {
    "prompt": "¿Qué es el carry trade con yenes?",
    "options": [
-    "Endeudarse en yenes para invertir fuera",
+    "Pedir prestado en yenes a tipo bajo para invertir donde se paga más",
     "Comprar yenes baratos antes de viajar a Japón",
     "Vender acciones japonesas"
    ],
@@ -575,7 +575,7 @@
   "u14l5-6": {
    "prompt": "¿Por qué suele subir el yen en una crisis?",
    "options": [
-    "Porque los japoneses repatrían su dinero",
+    "Porque los inversores japoneses repatrían el dinero que tienen fuera",
     "Porque el Banco de Japón sube los tipos en cada crisis",
     "Porque el yen está respaldado por oro"
    ],

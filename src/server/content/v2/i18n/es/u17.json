@@ -391,7 +391,7 @@
   "u17l2-13": {
    "prompt": "Ana pregunta si un banco que cotiza a la mitad de su valor contable es una ganga segura. ¿Qué le contestas?",
    "options": [
-    "Mira antes por qué el mercado desconfía",
+    "Puede ser barato, pero mira por qué el mercado desconfía de su balance",
     "El P/VC no sirve para bancos",
     "Sí, es una ganga segura: compra todo lo que puedas"
    ],
@@ -437,7 +437,7 @@
    "prompt": "Laura compara dos empresas. A: ROE del 25 % con deuda neta/EBITDA de 5. B: ROE del 18 %, sin deuda y con ROIC del 18 %. ¿Cuál parece mejor negocio?",
    "options": [
     "A: su ROE es mayor, y eso es lo que cuenta",
-    "B: gana mucho sin depender de la deuda",
+    "B: gana mucho sobre todo su capital sin depender de la deuda",
     "No se puede saber nada"
    ],
    "explanation": "Mira el ROE junto al ROIC y la deuda.",
@@ -568,7 +568,7 @@
    "prompt": "Pablo hace un DCF: una empresa que cotiza a 60 € «vale» 120 €. Para llegar ahí ha supuesto un crecimiento del 25 % anual durante 10 años y una tasa del 6 %. ¿Qué debería hacer?",
    "options": [
     "Comprar con todo: vale el doble de lo que cuesta",
-    "Probar hipótesis más prudentes",
+    "Probar hipótesis más prudentes y ver cuánto cambia el valor",
     "Publicarlo en un foro"
    ],
    "explanation": "Un DCF es tan bueno como sus hipótesis.",
@@ -591,7 +591,7 @@
   "u17l5-11": {
    "prompt": "El DCF de Paula dice que una acción vale 47,32 € exactamente. ¿Qué le contestas?",
    "options": [
-    "Mejor piensa en un rango de valores",
+    "Mejor piensa en un rango y exige un buen margen de seguridad",
     "Los DCF no sirven para nada",
     "¡Perfecto! Si cotiza a 47,31 €, está barata"
    ],
@@ -618,7 +618,7 @@
    "prompt": "Iván y Sara valoran la misma empresa con una tasa del 9 %. Iván supone que crecerá un 30 % al año durante 20 años; Sara, un 7 % durante 10 años y luego un 2 %. ¿Qué valor es más útil para decidir?",
    "options": [
     "El de Iván: sale más alto",
-    "El de Sara: sus hipótesis son creíbles",
+    "El de Sara: sus hipótesis son prudentes y creíbles",
     "Los dos igual: usan la misma tasa de descuento"
    ],
    "explanation": "Un DCF es tan bueno como sus hipótesis. Con supuestos prudentes, el valor que sale sirve para decidir; con supuestos de sueño, solo para ilusionarse.",

@@ -426,7 +426,7 @@
    "prompt": "You have two goals: €2,000 for a trip in a year's time and retirement, in 40 years. How do you organise it?",
    "options": [
     "All together in a portfolio with lots of shares: in the long run it rises",
-    "The trip, low-risk; retirement, in shares",
+    "The trip money in something low-risk and the retirement money with lots of shares",
     "Everything in a deposit, so you risk nothing"
    ],
    "explanation": "The mix is decided by goal: money with a near date doesn't depend on the stock market, and money for decades can hold lots of shares. Lumping it all together forces a bad choice for one of the two.",
@@ -500,7 +500,7 @@
   "u29l4-10": {
    "prompt": "Why do people usually choose the euro-hedged version of bond funds?",
    "options": [
-    "Because the currency moves more than the bonds",
+    "Because the currency could move more than the bonds themselves",
     "Because it's required by law",
     "Because hedged funds are always cheaper to hold"
    ],
@@ -546,7 +546,7 @@
   "u29l5-7": {
    "prompt": "Every January, Laura switches to the fund that rose most the year before. What's most likely to happen?",
    "options": [
-    "She buys high what has already risen",
+    "She ends up buying high what has already risen and paying more in costs",
     "She always holds the best fund of the moment",
     "She pays less tax"
    ],
@@ -687,7 +687,7 @@
    "options": [
     "Yes, the name is enough",
     "ESG is just marketing: forget it and save yourself the hassle",
-    "Look at its SFDR classification and holdings"
+    "Look at its SFDR classification, exclusions, holdings and cost"
    ],
    "explanation": "ESG can reflect your values, but it means reading the small print.",
    "feedback": [

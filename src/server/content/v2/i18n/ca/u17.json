@@ -391,7 +391,7 @@
   "u17l2-13": {
    "prompt": "La Lumi pregunta si un banc que cotitza a la meitat del seu valor comptable és una ganga segura. Què li contestes?",
    "options": [
-    "Mira abans per què el mercat desconfia",
+    "Pot ser barat, però mira per què el mercat desconfia del seu balanç",
     "El P/VC no serveix per a bancs",
     "Sí, és una ganga segura: compra tot el que puguis"
    ],
@@ -437,7 +437,7 @@
    "prompt": "La Laura compara dues empreses. A: ROE del 25 % amb deute net/EBITDA de 5. B: ROE del 18 %, sense deute i amb ROIC del 18 %. Quina sembla millor negoci?",
    "options": [
     "A: té un ROE més alt, i això és el que compta",
-    "B: guanya molt sense dependre del deute",
+    "B: guanya molt sobre tot el seu capital sense dependre del deute",
     "No se'n pot saber res"
    ],
    "explanation": "Mira el ROE juntament amb el ROIC i el deute.",
@@ -568,7 +568,7 @@
    "prompt": "En Pablo fa un DCF: una empresa que cotitza a 60 € «val» 120 €. Per arribar-hi ha suposat un creixement del 25 % anual durant 10 anys i una taxa del 6 %. Què hauria de fer?",
    "options": [
     "Comprar amb tot: val el doble del que costa",
-    "Provar hipòtesis més prudents",
+    "Provar hipòtesis més prudents i veure quant canvia el valor",
     "Publicar-ho en un fòrum"
    ],
    "explanation": "Un DCF és tan bo com les seves hipòtesis.",
@@ -591,7 +591,7 @@
   "u17l5-11": {
    "prompt": "El DCF de la Lumi diu que una acció val 47,32 € exactament. Què li contestes?",
    "options": [
-    "Millor pensa en un rang de valors",
+    "Millor pensa en un rang i exigeix un bon marge de seguretat",
     "Els DCF no serveixen per a res",
     "Perfecte! Si cotitza a 47,31 €, és barata"
    ],
@@ -618,7 +618,7 @@
    "prompt": "L'Iván i la Sara valoren la mateixa empresa amb una taxa del 9 %. L'Iván suposa que creixerà un 30 % l'any durant 20 anys; la Sara, un 7 % durant 10 anys i després un 2 %. Quin valor és més útil per decidir?",
    "options": [
     "El de l'Iván: surt més alt",
-    "El de la Sara: les seves hipòtesis són creïbles",
+    "El de la Sara: les seves hipòtesis són prudents i creïbles",
     "Els dos igual: fan servir la mateixa taxa de descompte"
    ],
    "explanation": "Un DCF és tan bo com les seves hipòtesis. Amb supòsits prudents, el valor que en surt serveix per decidir; amb supòsits de somni, només per il·lusionar-se.",

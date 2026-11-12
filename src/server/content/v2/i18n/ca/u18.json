@@ -553,7 +553,7 @@
    "prompt": "La Lumi pregunta si és bo o dolent per a la borsa que el BCE hagi abaixat els tipus. Què li contestes?",
    "options": [
     "Sempre dolent",
-    "Sol ser favorable, però depèn del motiu",
+    "Sol ser favorable, però depèn de si ja s'esperava i de per què els abaixen",
     "No té cap efecte: la borsa va pel seu compte"
    ],
    "explanation": "Abaixar els tipus sol afavorir la borsa i els bons, però compten la sorpresa i el motiu.",
@@ -629,7 +629,7 @@
    "prompt": "Una empresa ven cada vegada més, però el seu marge brut és del 5 % i baixant: gairebé tot el que cobra se li'n va en el que li costa vendre. Quina pinta té?",
    "options": [
     "Excel·lent: creix molt",
-    "Dolenta: créixer així no dona guanys",
+    "Mal senyal: créixer així no l'acosta a guanyar diners",
     "El marge és igual si les vendes pugen"
    ],
    "explanation": "Mira si cada venda deixa diners, no només quantes vendes hi ha.",
@@ -642,7 +642,7 @@
   "u18l5-7": {
    "prompt": "Per què el PER no serveix per a una empresa que perd diners?",
    "options": [
-    "Perquè sense benefici no té sentit",
+    "Perquè sense benefici surt negatiu i no té sentit",
     "Perquè la CNMV prohibeix calcular-lo amb pèrdues",
     "Perquè sempre surt 15"
    ],
@@ -692,7 +692,7 @@
    "options": [
     "Pels seus seguidors a les xarxes",
     "Amb el PER, com totes les altres empreses",
-    "Amb les vendes, el marge i la caixa"
+    "Amb les seves vendes, el marge brut i els mesos de caixa"
    ],
    "explanation": "Sense benefici, el PER no serveix. Es mira quant pagues per les seves vendes, si cada venda deixa diners (marge brut) i quant aguanta amb la seva caixa.",
    "feedback": [
@@ -744,7 +744,7 @@
    "prompt": "Apliques la llista a dues empreses inventades del mateix sector, al mateix PER. A creix, genera caixa i té més caixa que deute. B creix igual, però el seu benefici no arriba a la caixa i amplia capital cada any. Quina passa millor l'examen?",
    "options": [
     "Les dues igual: tenen el mateix PER",
-    "A: converteix el benefici en caixa",
+    "A: creix, converteix el benefici en caixa i està sana",
     "B: creix el mateix"
    ],
    "explanation": "Al mateix preu, guanya la que respon millor a «genera caixa?» i «està sana?». Les alarmes solen ser a la caixa i el deute, no al titular del benefici.",

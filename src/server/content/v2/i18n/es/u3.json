@@ -323,7 +323,7 @@
    "prompt": "¿Qué deuda tiene más sentido?",
    "options": [
     "Una revolving para pagar un viaje este verano",
-    "Una hipoteca que puedes pagar bien",
+    "Una hipoteca con una cuota del 25 % de tus ingresos",
     "Un minicrédito para un concierto"
    ],
    "explanation": "Barata, para algo que dura y con una cuota asumible."
@@ -414,7 +414,7 @@
    "prompt": "Ana debe 2.000 € en una revolving al 22 % TAE y paga 50 € al mes. Tiene 4.000 € en una cuenta al 2 %, y su colchón ideal es de 2.000 €. ¿Qué hace?",
    "options": [
     "Invierte los 4.000 € en bolsa para ganar más que el 22 %",
-    "Cancela la revolving y conserva 2.000 € de colchón",
+    "Usa 2.000 € para cancelar la revolving y conserva 2.000 € de colchón",
     "Lo deja todo como está"
    ],
    "explanation": "Pagar una deuda cara es la mejor «inversión» segura que existe.",
@@ -536,7 +536,7 @@
    "prompt": "Bruno tiene una hipoteca fija al 2 %, un colchón de 6 meses y 10.000 € más ahorrados que no necesitará en 15 años. ¿Qué hace?",
    "options": [
     "Pide otro préstamo para invertir más",
-    "Compara amortizar al 2 % con invertir a largo plazo",
+    "Compara el 2 % seguro de amortizar con invertir a largo plazo y diversificado, sin tocar su colchón",
     "Lo mete todo en una sola acción de moda porque la hipoteca es barata"
    ],
    "explanation": "Con deuda barata no hay una única respuesta correcta: lo importante es comparar bien y no tocar el colchón.",
@@ -572,7 +572,7 @@
   "u3l5-9": {
    "prompt": "Paula tiene una hipoteca al 2 % y le sobran 200 € al mes: duda entre amortizar o invertir. ¿Qué le contestas?",
    "options": [
-    "Depende: compara ese 2 % con invertir a largo plazo",
+    "Depende: compara el 2 % seguro con invertir a largo plazo, y si tienes colchón",
     "Invierte en lo que más haya subido este año",
     "Siempre amortizar: cualquier deuda es mala y hay que quitársela"
    ],

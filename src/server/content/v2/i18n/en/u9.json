@@ -312,7 +312,7 @@
   "u9l1-1": {
    "prompt": "What do you get when you buy a bond?",
    "options": [
-    "Interest and your money back at maturity",
+    "Regular interest and your money back at maturity",
     "A share of the company and the right to vote",
     "A dividend decided by the shareholders' meeting"
    ],
@@ -518,7 +518,7 @@
    "prompt": "Lumi has read that the central bank is going to cut rates and asks whether that's good or bad for her bonds. What do you reply?",
    "options": [
     "Bad: you'll get a smaller coupon from now on",
-    "Good: the price of your bonds rises",
+    "Good: if rates fall, the price of your bonds rises",
     "It doesn't matter: bonds don't move"
    ],
    "explanation": "If rates fall, your fixed coupon is more attractive than that of new bonds and your bond is worth more. It's tempting to think you'll get less, but that only happens to new bonds, not yours.",
@@ -613,7 +613,7 @@
    "options": [
     "If inflation stays at zero for several years",
     "Always",
-    "If inflation beats expectations"
+    "If inflation ends up higher than the market expected"
    ],
    "explanation": "If inflation beats breakeven, the face-value adjustment more than makes up for its lower coupon."
   },
@@ -681,7 +681,7 @@
    "prompt": "You bought a 12-month bill. After 6 months you need the money, and rates have gone up. What happens if you sell it now?",
    "options": [
     "It can't be sold before it matures: you have to wait",
-    "I sell it at that day's market price",
+    "I sell it at the market price, which may be lower than I expected",
     "I get the €1,000 anyway"
    ],
    "feedback": [

@@ -407,7 +407,7 @@
    "prompt": "Lumi thinks it would be better to take more risk because she'll «recover whatever falls». What do you tell her?",
    "options": [
     "Better never to invest",
-    "Careful: the more it falls, the harder to get back",
+    "Careful: the more it falls, the much more it has to rise to get back",
     "Yes: whatever falls is recovered with an equal rise"
    ],
    "explanation": "A 50 % fall requires a 100 % rise. That's why falling less is usually worth more than rising more.",
@@ -563,7 +563,7 @@
    "options": [
     "Yes: if I'm right, I win",
     "Yes, if I set the target well above the high",
-    "No: I risk 1R to win half an R"
+    "No: I risk 1R to win half an R. Better to wait for another chance"
    ],
    "explanation": "Before entering, compare the distance to the target with the distance to the stop. With half an R of reward for 1R of risk, the trade isn't worth it.",
    "feedback": [

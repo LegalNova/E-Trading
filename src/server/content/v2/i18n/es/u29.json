@@ -440,7 +440,7 @@
    "prompt": "Tienes dos objetivos: 2.000 € para un viaje dentro de un año y la jubilación, dentro de 40. ¿Cómo lo organizas?",
    "options": [
     "Todo junto en una cartera con muchas acciones: a la larga sube",
-    "El viaje, con poco riesgo; la jubilación, en acciones",
+    "El dinero del viaje en algo de poco riesgo y el de la jubilación con muchas acciones",
     "Todo en un depósito, para no arriesgar nada"
    ],
    "explanation": "El reparto se decide por objetivo: el dinero con fecha cercana no depende de la bolsa, y el de décadas puede llevar muchas acciones. Meterlo todo junto obliga a elegir mal para uno de los dos.",
@@ -514,7 +514,7 @@
   "u29l4-10": {
    "prompt": "¿Por qué en los fondos de bonos se suele elegir la versión cubierta a euros?",
    "options": [
-    "Porque la divisa se mueve más que los bonos",
+    "Porque la divisa podría moverse más que los propios bonos",
     "Porque es obligatorio por ley",
     "Porque los fondos cubiertos siempre son más baratos"
    ],
@@ -560,7 +560,7 @@
   "u29l5-7": {
    "prompt": "Laura cambia cada enero al fondo que más subió el año anterior. ¿Qué es lo más probable?",
    "options": [
-    "Que compre caro lo que ya subió",
+    "Que acabe comprando caro lo que ya subió y pague más costes",
     "Que siempre tenga el mejor fondo del momento",
     "Que pague menos impuestos"
    ],
@@ -701,7 +701,7 @@
    "options": [
     "Sí, con el nombre es suficiente",
     "El ESG es solo marketing: olvídalo y ahórrate el lío",
-    "Mira su clasificación SFDR y sus posiciones"
+    "Mira su clasificación SFDR, sus exclusiones, sus posiciones y su coste"
    ],
    "explanation": "El ESG puede reflejar tus valores, pero exige leer la letra pequeña.",
    "feedback": [

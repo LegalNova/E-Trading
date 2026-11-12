@@ -313,7 +313,7 @@
    "prompt": "Lumi doesn't want to keep a journal because she «already remembers her trades». What do you reply?",
    "options": [
     "Only log the winners",
-    "Without a journal you can't see your mistakes",
+    "Without a journal you can't work out your expectancy or see your mistakes",
     "You're right, memory is more than enough for this"
    ],
    "explanation": "What you don't measure, you can't improve.",
@@ -385,7 +385,7 @@
    "options": [
     "Double the risk to recover",
     "Stop using stops",
-    "Halve the risk"
+    "Halve the risk and review the plan"
    ],
    "explanation": "When the account falls, you protect first; then you analyse.",
    "feedback": [

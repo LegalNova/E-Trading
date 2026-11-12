@@ -374,7 +374,7 @@
    "options": [
     "La empresa que la creó y la mantiene",
     "Un banco central",
-    "Nadie en solitario: miles de nodos"
+    "Nadie en solitario: miles de nodos comparten el registro"
    ],
    "explanation": "Ese es su rasgo clave: el registro está repartido entre muchos participantes."
   },
@@ -642,7 +642,7 @@
   "u12l5-1": {
    "prompt": "¿Qué intenta una stablecoin?",
    "options": [
-    "Valer siempre lo mismo que una moneda",
+    "Valer siempre lo mismo que una moneda, como 1 dólar",
     "Subir más que Bitcoin con menos sobresaltos",
     "Pagar un dividendo"
    ],
@@ -697,7 +697,7 @@
    "options": [
     "Que su precio suba demasiado",
     "Que pague demasiados intereses a quien la tiene",
-    "Que las reservas fallen o pierdan valor"
+    "Que las reservas no existan, no estén disponibles o pierdan valor"
    ],
    "explanation": "Por eso MiCA exige reservas suficientes, separadas y auditables."
   },
@@ -741,7 +741,7 @@
   "u12l6-4": {
    "prompt": "¿Dónde es más seguro guardar tu frase semilla?",
    "options": [
-    "En papel o metal, fuera de internet",
+    "En papel o metal, en un sitio seguro fuera de internet",
     "En un correo que te envías a ti mismo",
     "En una foto del móvil"
    ],
@@ -801,7 +801,7 @@
    "prompt": "Según la CNMV, desde el 1 de julio de 2026, ¿quién puede prestar servicios de criptoactivos en España?",
    "options": [
     "Cualquiera con una web",
-    "Solo proveedores con autorización MiCA",
+    "Solo los proveedores autorizados bajo MiCA",
     "Solo los bancos españoles de toda la vida"
    ],
    "explanation": "Ese día terminó el periodo transitorio en España."

@@ -404,7 +404,7 @@
    "prompt": "You have an MSCI World ETF that charges 0.20 %, with good gains. You find another on the same index at 0.12 %. What do you do?",
    "options": [
     "I don't care: costs don't matter",
-    "I keep mine and send new money to the cheap one",
+    "I keep the one I have and send new contributions to the cheap one",
     "I sell mine now and buy the cheap one with the lot"
    ],
    "explanation": "Between two cheap ETFs on the same index, the difference is small and selling has a certain tax cost. The sensible thing is for new money to go to the cheaper one. Switching all at once only pays off when the gap is big, like from 1.5 % to 0.2 %.",
@@ -450,7 +450,7 @@
   "u30l3-10": {
    "prompt": "Lumi can only save €50 a month and thinks that won't get her anywhere. What do you reply?",
    "options": [
-    "Start with €50 and raise it when you can",
+    "Start with €50 and raise it when you earn more: time does the rest",
     "You're right, better to spend it",
     "Wait until you can invest €500 a month, then it'll count"
    ],
@@ -643,7 +643,7 @@
    "prompt": "Year one: the stock market falls 25 % and your portfolio 18 %. A friend tells you to sell everything. What do you do?",
    "options": [
     "Move it all into a deposit until things calm down",
-    "Follow the plan: contribute and don't sell",
+    "Follow the plan: contribute, rebalance into shares if needed and don't sell",
     "Sell before it falls further"
    ],
    "explanation": "Bonds cushioned the fall (−18 % versus −25 %). Now it's time for point 8 of your plan.",
@@ -777,7 +777,7 @@
    "prompt": "You have €400 invested and your bank charges you €20 a year for custody. What do you do?",
    "options": [
     "I sell and leave it in my current account",
-    "I look for a broker with no custody fee",
+    "I look for a broker or platform with no custody fee",
     "Nothing: €20 isn't much"
    ],
    "feedback": [

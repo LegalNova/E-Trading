@@ -345,7 +345,7 @@
   "u5l1-1": {
    "prompt": "What is a stock exchange?",
    "options": [
-    "A market where buy and sell orders are matched",
+    "A regulated market where buy and sell orders for securities are matched",
     "A bank that looks after your savings",
     "A company that sells you its own shares every day"
    ],
@@ -429,7 +429,7 @@
    "options": [
     "From the dividends of the companies it trades",
     "By charging the CNMV a fee",
-    "From the gap between buying and selling"
+    "From the difference between its buying and selling prices"
    ],
    "explanation": "It buys a little cheaper than it sells: that difference is its margin."
   },
@@ -594,7 +594,7 @@
    "prompt": "Pablo has €60,000 with a broker based in another EU country and assumes he's covered by Spain's FOGAIN. What does he do?",
    "options": [
     "Nothing: all guarantee funds are the same",
-    "Checks which guarantee fund covers him",
+    "Checks which guarantee fund applies to him and how much it covers",
     "Takes it all out and keeps it at home"
    ],
    "explanation": "The protection depends on the firm's country: check before opening an account.",
@@ -704,7 +704,7 @@
   "u5l7-8": {
    "prompt": "Pablo wants to put almost all his savings into a BME Growth company because «it could multiply». What does he bear in mind?",
    "options": [
-    "That they tend to be small and illiquid",
+    "That they tend to be smaller, less liquid and riskier",
     "That BME Growth guarantees the investment",
     "That it's just as liquid as an IBEX company"
    ],

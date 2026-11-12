@@ -295,7 +295,7 @@
    "options": [
     "A very large company listed on the stock market",
     "An interest rate",
-    "A figure that sums up a group of securities"
+    "A figure that sums up how a group of securities is doing"
    ],
    "explanation": "It's a reference basket with rules about what gets in and how much it weighs."
   },
@@ -408,7 +408,7 @@
   "u29l1-8": {
    "prompt": "Pablo has 80 % of his savings in shares of the company he works for: «I know it better than anyone». What do you tell him?",
    "options": [
-    "That he's putting his salary and savings in one place",
+    "That he's concentrating two risks in one place: his salary and his savings",
     "That he should move it all to another company he knows just as well",
     "He's right: knowing the company eliminates the risk"
    ],
@@ -526,7 +526,7 @@
   "u10l3-10": {
    "prompt": "Lumi says her fund charges 1.8 %, but she's never been charged anything in her account. What do you explain?",
    "options": [
-    "It's taken out of the fund's value every day",
+    "It's taken out of the fund's value every day, which is why you don't see it",
     "The tax office collects it at the end of the year",
     "Then it isn't charging it"
    ],

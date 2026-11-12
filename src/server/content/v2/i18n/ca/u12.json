@@ -374,7 +374,7 @@
    "options": [
     "L'empresa que la va crear i la manté",
     "Un banc central",
-    "Ningú tot sol: milers de nodes"
+    "Ningú tot sol: milers de nodes comparteixen el registre"
    ],
    "explanation": "Aquest és el seu tret clau: el registre està repartit entre molts participants."
   },
@@ -642,7 +642,7 @@
   "u12l5-1": {
    "prompt": "Què intenta una stablecoin?",
    "options": [
-    "Valer sempre el mateix que una moneda",
+    "Valer sempre el mateix que una moneda, com 1 dòlar",
     "Pujar més que Bitcoin amb menys ensurts",
     "Pagar un dividend"
    ],
@@ -697,7 +697,7 @@
    "options": [
     "Que el seu preu pugi massa",
     "Que pagui massa interessos a qui la tingui",
-    "Que les reserves fallin o perdin valor"
+    "Que les reserves no existeixin, no estiguin disponibles o perdin valor"
    ],
    "explanation": "Per això MiCA exigeix reserves suficients, separades i auditables."
   },
@@ -741,7 +741,7 @@
   "u12l6-4": {
    "prompt": "On és més segur guardar la teva frase llavor?",
    "options": [
-    "En paper o metall, fora d'internet",
+    "En paper o metall, en un lloc segur fora d'internet",
     "En un correu que t'envies a tu mateix",
     "En una foto del mòbil"
    ],
@@ -801,7 +801,7 @@
    "prompt": "Segons la CNMV, des de l'1 de juliol de 2026, qui pot prestar serveis de criptoactius a Espanya?",
    "options": [
     "Qualsevol amb un web",
-    "Només proveïdors amb autorització MiCA",
+    "Només els proveïdors autoritzats segons MiCA",
     "Només els bancs espanyols de tota la vida"
    ],
    "explanation": "Aquell dia es va acabar el període transitori a Espanya."

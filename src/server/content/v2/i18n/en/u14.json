@@ -378,7 +378,7 @@
   "u14l2-12": {
    "prompt": "Pablo has €2,000 saved. His broker offers to raise him from 1:30 to 1:100 if he declares himself a «professional client». What does he do?",
    "options": [
-    "He turns it down: he'd lose his protections",
+    "He turns it down: he'd lose his retail protections and the risk would soar",
     "He accepts: with 1:100 he makes money faster",
     "He accepts, but promises himself to trade very carefully"
    ],
@@ -447,7 +447,7 @@
    "prompt": "Bruno reads about a country with 50 % inflation whose central bank is cutting rates. A friend suggests buying its currency because \"it's dirt cheap\". What does Bruno think?",
    "options": [
     "That a country's inflation doesn't affect its currency",
-    "That a currency like that usually keeps sinking",
+    "That such high inflation with falling rates usually sinks the currency",
     "That it's a sure bargain"
    ],
    "explanation": "High inflation with rates below it usually makes a currency depreciate.",
@@ -489,7 +489,7 @@
    "options": [
     "Only buys European companies",
     "Guarantees you won't lose money on US shares",
-    "Removes almost all of the dollar's effect"
+    "Removes almost all of the dollar's effect against the euro"
    ],
    "explanation": "The hedge neutralises the currency, not the risk of the shares."
   },
@@ -566,7 +566,7 @@
   "u14l5-5": {
    "prompt": "What is the yen carry trade?",
    "options": [
-    "Borrowing in yen to invest elsewhere",
+    "Borrowing in yen at a low rate to invest where rates are higher",
     "Buying cheap yen before travelling to Japan",
     "Selling Japanese shares"
    ],
@@ -575,7 +575,7 @@
   "u14l5-6": {
    "prompt": "Why does the yen usually rise in a crisis?",
    "options": [
-    "Because Japanese investors bring money home",
+    "Because Japanese investors bring home the money they have abroad",
     "Because the Bank of Japan raises rates in every crisis",
     "Because the yen is backed by gold"
    ],

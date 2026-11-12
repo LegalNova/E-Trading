@@ -323,7 +323,7 @@
    "prompt": "Quin deute té més sentit?",
    "options": [
     "Una revolving per pagar un viatge aquest estiu",
-    "Una hipoteca que pots pagar bé",
+    "Una hipoteca amb una quota del 25 % dels teus ingressos",
     "Un minicrèdit per a un concert"
    ],
    "explanation": "Barat, per a una cosa que dura i amb una quota assumible."
@@ -414,7 +414,7 @@
    "prompt": "L'Ana deu 2.000 € en una revolving al 22 % TAE i paga 50 € al mes. Té 4.000 € en un compte al 2 %, i el seu coixí ideal és de 2.000 €. Què fa?",
    "options": [
     "Inverteix els 4.000 € a borsa per guanyar més del 22 %",
-    "Cancel·la la revolving i conserva 2.000 € de coixí",
+    "Fa servir 2.000 € per cancel·lar la revolving i conserva 2.000 € de coixí",
     "Ho deixa tot com està"
    ],
    "explanation": "Pagar un deute car és la millor «inversió» segura que existeix.",
@@ -536,7 +536,7 @@
    "prompt": "En Bruno té una hipoteca fixa al 2 %, un coixí de 6 mesos i 10.000 € més estalviats que no necessitarà en 15 anys. Què fa?",
    "options": [
     "Demana un altre préstec per invertir més",
-    "Compara amortitzar al 2 % amb invertir a llarg termini",
+    "Compara el 2 % segur d'amortitzar amb invertir a llarg termini i de manera diversificada, sense tocar el coixí",
     "Ho posa tot en una sola acció de moda perquè la hipoteca és barata"
    ],
    "explanation": "Amb deute barat no hi ha una única resposta correcta: l'important és comparar bé i no tocar el coixí.",
@@ -572,7 +572,7 @@
   "u3l5-9": {
    "prompt": "La Lumi té una hipoteca al 2 % i li sobren 200 € al mes: dubta entre amortitzar o invertir. Què li contestes?",
    "options": [
-    "Depèn: compara aquest 2 % amb invertir a llarg termini",
+    "Depèn: compara el 2 % segur amb invertir a llarg termini, i mira si tens coixí",
     "Inverteix en el que més hagi pujat aquest any",
     "Sempre amortitzar: qualsevol deute és dolent i cal treure-se'l"
    ],

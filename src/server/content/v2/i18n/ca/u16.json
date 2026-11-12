@@ -549,7 +549,7 @@
    "prompt": "RapiBox i LlegaYa, dues apps de repartiment inventades, guanyen 50 M€ cadascuna aquest any. RapiBox ho ha cobrat gairebé tot i la seva caixa ha crescut; LlegaYa té la caixa en negatiu perquè els seus clients li deuen cada vegada més. De quin benefici et fies més?",
    "options": [
     "El de LlegaYa: guanya el mateix",
-    "El de RapiBox: es veu a la caixa",
+    "El de RapiBox: el seu benefici es veu a la caixa",
     "Dels dos igual: el benefici és el mateix"
    ],
    "explanation": "Quan el benefici es converteix en caixa, és més fiable. Si el que li deuen els clients no para de créixer, potser no arribarà mai a cobrar-ho.",
@@ -711,7 +711,7 @@
    "prompt": "Demà presenta resultats una empresa de la cartera de la Lumi i tothom espera xifres espectaculars. Què li contestes?",
    "options": [
     "Compra'n més avui: demà es dispararà amb els resultats",
-    "Si tothom ho espera, ja és al preu",
+    "Si ja ho espera tothom, ja és al preu: compte amb el forat",
     "Posa un stop molt ajustat i llestos"
    ],
    "explanation": "El preu reacciona a la diferència amb el que s'esperava. Si tothom espera xifres espectaculars, només unes encara millors el faran pujar, i un forat pot saltar-se el teu stop.",
@@ -773,7 +773,7 @@
   "u16l7-11": {
    "prompt": "Dues empreses inventades anuncien un «benefici ajustat rècord». A A, l'ajustat i l'oficial gairebé coincideixen; a B, l'ajustat dobla l'oficial any rere any. De quina et fies més?",
    "options": [
-    "D'A: les dues xifres expliquen el mateix",
+    "D'A: la xifra ajustada i l'oficial expliquen el mateix",
     "De les dues igual: les dues tenen un rècord",
     "De B: el seu benefici ajustat és més alt"
    ],

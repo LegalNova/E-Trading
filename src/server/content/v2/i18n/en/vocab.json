@@ -301,7 +301,7 @@
    "options": [
     "Bid is selling and ask is buying",
     "They're the same thing, with different names at each broker",
-    "Bid is what buyers pay; ask, what sellers want"
+    "Bid: the most someone will pay right now; ask: the least someone will sell for"
    ],
    "explanation": "You buy at the ask and sell at the bid: that's why, if you buy and sell instantly, you lose the spread.",
    "feedback": [
@@ -427,7 +427,7 @@
   "vocabl3-5": {
    "prompt": "Lumi says the KID is «the fund's youngest child». How do you clear it up?",
    "options": [
-    "It's the document with risks and costs",
+    "It's the document with the product's risks and costs",
     "It's the name of the manager running the fund",
     "It's a fund designed for children"
    ],
@@ -776,7 +776,7 @@
   "vocabl6-6": {
    "prompt": "Lumi asks what Fibonacci, an Italian mathematician, is doing on her chart. What do you explain to her?",
    "options": [
-    "It gives typical retracement levels",
+    "Its numbers give typical retracement levels: 38.2 %, 50 %, 61.8 %…",
     "It predicts the exact price for the next day",
     "It's a volume indicator"
    ],
@@ -1144,7 +1144,7 @@
   "vocabl9-9": {
    "prompt": "The CAPE is…",
    "options": [
-    "The P/E using 10-year average earnings",
+    "The market's P/E using average earnings over 10 years",
     "A company's P/E this year",
     "An index's average dividend over 10 years"
    ],

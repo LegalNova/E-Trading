@@ -404,7 +404,7 @@
    "prompt": "Tienes un ETF del MSCI World que cobra un 0,20 %, con buenas ganancias. Descubres otro del mismo índice al 0,12 %. ¿Qué haces?",
    "options": [
     "Me da igual: los costes no importan",
-    "Mantengo el mío y lo nuevo va al barato",
+    "Mantengo el que tengo y llevo las aportaciones nuevas al barato",
     "Vendo el mío ya y compro el barato con todo"
    ],
    "explanation": "Entre dos ETF baratos del mismo índice, la diferencia es pequeña y vender tiene un coste fiscal seguro. Lo sensato es que el dinero nuevo vaya al más barato. Cambiar de golpe solo compensa cuando la diferencia es grande, como de 1,5 % a 0,2 %.",
@@ -502,7 +502,7 @@
   "u30l3-10": {
    "prompt": "Nora solo puede ahorrar 50 € al mes y cree que con eso no va a ningún sitio. ¿Qué le contestas?",
    "options": [
-    "Empieza con 50 € y súbelo cuando puedas",
+    "Empieza con 50 € y súbelo cuando ganes más: el tiempo hace el resto",
     "Tienes razón, mejor gastarlos",
     "Espera a poder invertir 500 € al mes, que así sí se nota"
    ],
@@ -555,7 +555,7 @@
    "prompt": "Tienes 400 € invertidos y tu banco te cobra 20 € al año de custodia. ¿Qué haces?",
    "options": [
     "Vendo y lo dejo en la cuenta corriente",
-    "Busco un bróker sin custodia",
+    "Busco un bróker o una plataforma sin custodia",
     "Nada: 20 € es poco"
    ],
    "explanation": "Un coste fijo se mide contra tu importe: 20 € sobre 400 € son un 5 %; sobre 40.000 €, un 0,05 %.",
@@ -715,7 +715,7 @@
    "prompt": "Primer año: la bolsa cae un 25 % y tu cartera un 18 %. Un amigo te dice que lo vendas todo. ¿Qué haces?",
    "options": [
     "Lo paso todo a un depósito hasta que se calme",
-    "Sigo el plan: aporto y no vendo",
+    "Sigo el plan: aporto, rebalanceo a acciones si toca y no vendo",
     "Vendo antes de que caiga más"
    ],
    "explanation": "Los bonos amortiguaron la caída (−18 % frente a −25 %). Ahora toca el punto 8 de tu plan.",

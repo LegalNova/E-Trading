@@ -328,7 +328,7 @@
    "prompt": "Lumi thinks investing in the stock market is like going to a casino. What do you reply?",
    "options": [
     "Only if you pick the right company",
-    "No: you buy tiny pieces of companies",
+    "No: you buy tiny pieces of companies that make money and grow",
     "Yes, it's pure luck: some days you win, some you lose"
    ],
    "explanation": "In a casino the odds are set up for you to lose. On the stock market you buy parts of businesses that make profits, and with time and many companies at once the result depends much less on luck.",
@@ -592,7 +592,7 @@
   "u19l1-11": {
    "prompt": "Lumi wants to put all her savings into a share that has been rising for three months. What do you reply?",
    "options": [
-    "The chart says what happened, not what will happen",
+    "The chart says what happened, not what will happen: don't bet everything",
     "Yes: if it's risen for three months, it'll most likely keep going",
     "No: if it's risen that much, it's bound to fall"
    ],
@@ -684,7 +684,7 @@
   "u6l1-12": {
    "prompt": "It's Saturday and you place a market buy order for a Spanish share. What happens?",
    "options": [
-    "It waits and is filled on Monday at the open",
+    "It waits and is filled on Monday at the open, at whatever price there is then",
     "It's filled right away, at Friday's last price, the one you see",
     "It cancels itself because it's the weekend"
    ],

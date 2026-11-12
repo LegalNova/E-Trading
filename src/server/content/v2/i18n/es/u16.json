@@ -549,7 +549,7 @@
    "prompt": "RapiBox y LlegaYa, dos apps de reparto inventadas, ganan 50 M€ cada una este año. RapiBox ha cobrado casi todo y su caja ha crecido; LlegaYa tiene la caja en negativo porque sus clientes le deben cada vez más. ¿De qué beneficio te fías más?",
    "options": [
     "Del de LlegaYa: gana lo mismo",
-    "Del de RapiBox: se ve en la caja",
+    "Del de RapiBox: su beneficio se ve en la caja",
     "De los dos igual: el beneficio es el mismo"
    ],
    "explanation": "Cuando el beneficio se convierte en caja, es más fiable. Si lo que le deben los clientes no para de crecer, quizá nunca llegue a cobrarlo.",
@@ -711,7 +711,7 @@
    "prompt": "Mañana presenta resultados una empresa de la cartera de Paula y todo el mundo espera cifras espectaculares. ¿Qué le contestas?",
    "options": [
     "Compra más hoy: mañana se disparará con los resultados",
-    "Si todos lo esperan, ya está en el precio",
+    "Si ya lo espera todo el mundo, ya está en el precio: ojo con el hueco",
     "Pon un stop muy ajustado y listo"
    ],
    "explanation": "El precio reacciona a la diferencia con lo esperado. Si todos esperan cifras espectaculares, solo unas aún mejores lo harán subir, y un hueco puede saltarse tu stop.",
@@ -773,7 +773,7 @@
   "u16l7-11": {
    "prompt": "Dos empresas inventadas anuncian un «beneficio ajustado récord». En A, el ajustado y el oficial casi coinciden; en B, el ajustado dobla al oficial año tras año. ¿De cuál te fías más?",
    "options": [
-    "De A: las dos cifras cuentan lo mismo",
+    "De A: su cifra ajustada y la oficial cuentan lo mismo",
     "De las dos igual: las dos tienen un récord",
     "De B: su beneficio ajustado es mayor"
    ],

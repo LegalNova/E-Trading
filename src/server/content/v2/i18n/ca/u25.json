@@ -439,7 +439,7 @@
    "prompt": "Per un pànic general, una empresa amb beneficis estables, poc deute i clients fidels cau un 30 % en un mes sense que el seu negoci hagi canviat. Com ho veu un inversor en valor?",
    "options": [
     "Ven: si cau, alguna cosa dolenta passa",
-    "Revisa si el negoci continua igual",
+    "Revisa si el negoci continua igual i si ara hi ha marge de seguretat",
     "Compra de seguida: un 30 % menys és una ganga"
    ],
    "explanation": "L'inversor en valor separa el preu (que canvia cada dia) del valor del negoci (que canvia a poc a poc).",
@@ -511,7 +511,7 @@
    "prompt": "La Lumi comprarà l'acció amb el dividend més alt, un 12 % l'any, perquè són «rendes assegurades». Què li contestes?",
    "options": [
     "Compra també la del segon dividend més alt",
-    "Abans, mira si el benefici el cobreix",
+    "Abans, mira si el benefici el cobreix i per què ha caigut el preu",
     "Perfecte: com més alt, millor"
    ],
    "explanation": "Un dividend altíssim de vegades és el senyal que es retallarà: el que importa és que el benefici el cobreixi. La temptació és mirar només la mida del dividend.",
@@ -771,7 +771,7 @@
   "u25l9-4": {
    "prompt": "La Lumi vol que li diguis ja quina és la millor estratègia, «la que més guanyi». Què li contestes?",
    "options": [
-    "La que encaixi amb el meu temps i el meu horitzó",
+    "La que encaixi amb el meu temps, el meu horitzó i el que aguanto sense vendre",
     "El day trading, que és la més ràpida",
     "La que més va pujar l'any passat, que és la que funciona"
    ],
@@ -835,7 +835,7 @@
    "prompt": "Fa sis anys que tens un fons de valor. El teu cunyat, amb un de creixement, ha guanyat el doble. Què fas?",
    "options": [
     "Em canvio al seu: és clar quin funciona",
-    "Reviso si les meves raons es mantenen",
+    "Reviso si les meves raons es mantenen i, si és així, mantinc el pla",
     "Ho venc tot i em quedo en liquiditat"
    ],
    "feedback": [

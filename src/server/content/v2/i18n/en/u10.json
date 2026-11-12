@@ -318,7 +318,7 @@
    "options": [
     "They don't lose: the CNMV supervises them and guarantees the result",
     "If a bank sells it, it's safe",
-    "A fund goes up and down with what it holds"
+    "A fund goes up and down with what it holds: it doesn't guarantee gains"
    ],
    "explanation": "A normal fund guarantees nothing: it's worth what its assets are worth. Being sold by a bank or supervised by the CNMV gives you certainty about the rules and custody, not about returns.",
    "feedback": [
@@ -355,7 +355,7 @@
    "options": [
     "Because most managers don't know how to invest",
     "Because the market cheats",
-    "Because they earn the same and pay more costs"
+    "Because before costs they earn the same, and then they pay more costs"
    ],
    "explanation": "It's the arithmetic of active management (Sharpe, 1991)."
   },
@@ -484,7 +484,7 @@
    "prompt": "In a synthetic ETF, who pays the index's return?",
    "options": [
     "The CNMV",
-    "The swap counterparty",
+    "The swap counterparty, usually a bank",
     "The fund's other unitholders"
    ],
    "explanation": "The bank commits to paying whatever the index does in exchange for what the ETF's basket returns."

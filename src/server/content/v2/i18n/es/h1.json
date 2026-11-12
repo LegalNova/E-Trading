@@ -328,7 +328,7 @@
    "prompt": "Ana cree que invertir en bolsa es como ir al casino. ¿Qué le contestas?",
    "options": [
     "Solo si eliges bien la empresa",
-    "No: compras trocitos de empresas",
+    "No: compras trocitos de empresas que ganan dinero y crecen",
     "Sí, es pura suerte: unos días ganas y otros pierdes"
    ],
    "explanation": "En el casino las cuentas están hechas para que pierdas. En bolsa compras partes de negocios que generan beneficios, y con tiempo y muchas empresas a la vez el resultado depende mucho menos de la suerte.",
@@ -565,7 +565,7 @@
   "u6l1-12": {
    "prompt": "Es sábado y das una orden de compra a mercado de una acción española. ¿Qué pasa?",
    "options": [
-    "Espera y se ejecuta el lunes, en la apertura",
+    "Espera y se ejecuta el lunes en la apertura, al precio que haya entonces",
     "Se ejecuta ya, al último precio del viernes, que es el que ves",
     "Se cancela sola porque es fin de semana"
    ],
@@ -634,7 +634,7 @@
   "u19l1-11": {
    "prompt": "Laura quiere meter todos sus ahorros en una acción que lleva tres meses subiendo. ¿Qué le contestas?",
    "options": [
-    "El gráfico dice lo que pasó, no lo que pasará",
+    "El gráfico dice lo que pasó, no lo que pasará: no lo apuestes todo",
     "Sí: si lleva tres meses subiendo, lo normal es que siga",
     "No: si ha subido tanto, seguro que cae"
    ],

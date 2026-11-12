@@ -366,7 +366,7 @@
   "u20l2-8": {
    "prompt": "Ves una vela con una mecha inferior larguísima en mitad de un rango lateral, sin tendencia previa. Laura dice que es una señal de compra clarísima. ¿Qué le contestas?",
    "options": [
-    "Que ahí esa vela dice poco",
+    "Que la ubicación importa: en mitad de un rango, esa vela dice poco",
     "Que es una señal de venta",
     "Que tiene razón: mecha larga, compra segura"
    ],
@@ -479,7 +479,7 @@
   "u20l4-8": {
    "prompt": "Ves un martillo de manual en un gráfico diario, tras dos semanas de caída y cerca del mínimo del año. ¿Qué haces según lo aprendido?",
    "options": [
-    "Espero la confirmación antes de entrar",
+    "Espero la confirmación y, si entro, pongo el stop bajo la mecha",
     "Lo ignoro: las velas no sirven para nada",
     "Compro ya con todo"
    ],
@@ -664,7 +664,7 @@
    "options": [
     "Mirar los datos en tiempo real mientras operas",
     "Usar velas en vez de líneas",
-    "Probar patrones hasta que alguno acierta"
+    "Probar muchos patrones hasta que alguno parece funcionar por casualidad"
    ],
    "explanation": "Con suficientes pruebas, la casualidad siempre regala algún «descubrimiento»."
   },
@@ -673,7 +673,7 @@
    "options": [
     "No entrar nunca: las velas no funcionan",
     "Entrar sin stop: con cuatro de cuatro no puede fallar",
-    "Si entra, stop bajo el martillo y posición pequeña"
+    "Si entra, stop bajo el mínimo del martillo y una posición pequeña"
    ],
    "explanation": "El contexto mejora las probabilidades; el stop y el tamaño protegen cuando aun así sale mal.",
    "feedback": [

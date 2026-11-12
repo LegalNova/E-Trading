@@ -432,7 +432,7 @@
    "prompt": "En Bruno veu una acció amb un dividend del 14 % i hi vol posar tots els seus estalvis. Què fas si estàs al seu lloc?",
    "options": [
     "Compro ara mateix, un 14 % és una ganga",
-    "Miro si el benefici cobreix aquest dividend",
+    "Miro per què ha caigut el preu i si el benefici cobreix el dividend",
     "Compro just abans de la data ex-dividend, cobro i venc"
    ],
    "explanation": "La rendibilitat per dividend puja quan cau el preu; de vegades anticipa problemes a l'empresa.",
@@ -481,7 +481,7 @@
    "prompt": "Per què sol fer un split una empresa?",
    "options": [
     "Per aconseguir diners nous dels inversors",
-    "Perquè cada acció sigui més barata",
+    "Perquè cada acció sigui més barata i manejable",
     "Per pagar menys impostos"
    ],
    "explanation": "No hi entren diners ni canvia el valor de l'empresa: només baixa el preu de cada acció."
@@ -529,7 +529,7 @@
    "options": [
     "No: les teves accions continuen sent les mateixes",
     "Sí: et treuen part de les teves accions",
-    "Sí: si no hi acudeixes, el teu percentatge baixa"
+    "Sí: si no hi acudeixes, el teu percentatge de l'empresa baixa"
    ],
    "explanation": "En una ampliació surten accions noves: si no compres les que et toquen, el teu percentatge baixa (dilució). El que tempta és pensar que no passa res perquè conserves les teves accions, però el total ha crescut.",
    "feedback": [
@@ -580,7 +580,7 @@
    "prompt": "La Lumi ho vol passar tot a small caps perquè «les petites pugen més». Què li dius?",
    "options": [
     "No, les petites no pugen mai",
-    "Poden rendir més, però amb més risc",
+    "Poden rendir més, però amb més risc, i no és una regla fixa",
     "Sí, a llarg termini les petites sempre acaben guanyant"
    ],
    "explanation": "La mida canvia el perfil de risc, però no garanteix cap resultat.",
@@ -627,7 +627,7 @@
   "u8l6-6": {
    "prompt": "Què és una trampa de valor?",
    "options": [
-    "Una acció barata amb un negoci que empitjora",
+    "Una acció barata que continua baixant perquè el seu negoci es deteriora",
     "Una acció de creixement molt cara",
     "Un fons que cobra comissions ocultes als seus clients"
    ],
@@ -704,7 +704,7 @@
    "prompt": "Una empresa de creixement amb PER de 60 presenta resultats: guanya més que l'any passat, però menys del que s'esperava. Què és el més probable?",
    "options": [
     "No es mou",
-    "Cau: el preu n'esperava més",
+    "Cau amb força: el preu descomptava més creixement",
     "Puja: ha guanyat més que l'any passat"
    ],
    "feedback": [

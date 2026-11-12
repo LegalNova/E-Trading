@@ -553,7 +553,7 @@
    "prompt": "Irene pregunta si es bueno o malo para la bolsa que el BCE haya bajado los tipos. ¿Qué le contestas?",
    "options": [
     "Siempre malo",
-    "Suele ser favorable, pero depende del motivo",
+    "Suele ser favorable, pero depende de si ya se esperaba y de por qué los bajan",
     "No tiene ningún efecto: la bolsa va por su cuenta"
    ],
    "explanation": "Bajar los tipos suele favorecer a bolsa y bonos, pero cuentan la sorpresa y el motivo.",
@@ -629,7 +629,7 @@
    "prompt": "Una empresa vende cada vez más, pero su margen bruto es del 5 % y bajando: casi todo lo que cobra se le va en lo que le cuesta vender. ¿Qué pinta tiene?",
    "options": [
     "Excelente: crece mucho",
-    "Mala: crecer así no da beneficios",
+    "Mala señal: crecer así no la acerca a ganar dinero",
     "Da igual el margen si las ventas suben"
    ],
    "explanation": "Mira si cada venta deja dinero, no solo cuántas ventas hay.",
@@ -642,7 +642,7 @@
   "u18l5-7": {
    "prompt": "¿Por qué el PER no sirve para una empresa que pierde dinero?",
    "options": [
-    "Porque sin beneficio no tiene sentido",
+    "Porque sin beneficio sale negativo y no tiene sentido",
     "Porque la CNMV prohíbe calcularlo con pérdidas",
     "Porque siempre sale 15"
    ],
@@ -692,7 +692,7 @@
    "options": [
     "Por sus seguidores en redes",
     "Con el PER, como todas las demás empresas",
-    "Con sus ventas, su margen y su caja"
+    "Con sus ventas, su margen bruto y sus meses de caja"
    ],
    "explanation": "Sin beneficio, el PER no sirve. Se mira cuánto pagas por sus ventas, si cada venta deja dinero (margen bruto) y cuánto aguanta con su caja.",
    "feedback": [
@@ -744,7 +744,7 @@
    "prompt": "Aplicas la lista a dos empresas inventadas del mismo sector, al mismo PER. A crece, genera caja y tiene más caja que deuda. B crece igual, pero su beneficio no llega a la caja y amplía capital cada año. ¿Cuál pasa mejor el examen?",
    "options": [
     "Las dos igual: tienen el mismo PER",
-    "A: convierte el beneficio en caja",
+    "A: crece, convierte el beneficio en caja y está sana",
     "B: crece lo mismo"
    ],
    "explanation": "Al mismo precio, gana la que responde mejor a «¿genera caja?» y «¿está sana?». Las alarmas suelen estar en la caja y la deuda, no en el titular del beneficio.",

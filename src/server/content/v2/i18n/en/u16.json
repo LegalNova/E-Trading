@@ -549,7 +549,7 @@
    "prompt": "RapiBox and LlegaYa, two made-up delivery apps, each earn €50m this year. RapiBox has been paid almost everything and its cash has grown; LlegaYa's cash is negative because its customers owe it more and more. Whose profit do you trust more?",
    "options": [
     "LlegaYa's: it earns the same",
-    "RapiBox's: it shows in its cash",
+    "RapiBox's: its profit shows up in its cash",
     "Both equally: the profit is the same"
    ],
    "explanation": "When profit turns into cash, it's more reliable. If what customers owe keeps growing, it may never get paid.",
@@ -711,7 +711,7 @@
    "prompt": "A company in Lumi's portfolio reports results tomorrow and everyone expects spectacular figures. What do you reply?",
    "options": [
     "Buy more today: tomorrow it'll shoot up on the results",
-    "If everyone expects it, it's already in the price",
+    "If everyone already expects it, it's already in the price: watch out for a gap",
     "Put a very tight stop on it and that's that"
    ],
    "explanation": "The price reacts to the difference from what was expected. If everyone expects spectacular figures, only even better ones will push it up, and a gap can jump right over your stop.",
@@ -773,7 +773,7 @@
   "u16l7-11": {
    "prompt": "Two made-up companies announce «record adjusted profit». At A, the adjusted and official figures almost match; at B, the adjusted figure is double the official one year after year. Which one do you trust more?",
    "options": [
-    "A: both figures tell the same story",
+    "A: its adjusted and official figures tell the same story",
     "Both equally: they both have a record",
     "B: its adjusted profit is higher"
    ],

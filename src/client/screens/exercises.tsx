@@ -296,8 +296,8 @@ export function DynamicExercise({ q, value, onChange, reveal }: { q: QuestionT; 
               </div>
             </div>
           ))}
-          {/* La pregunta, después de leer los mensajes */}
-          <b className="t-head mt-1">{q.prompt}</b>
+          {/* La pregunta, después de leer los mensajes: el enunciado resume antes la duda para repasos y listas (APP-16); aquí basta su pregunta final */}
+          <b className="t-head mt-1">{/(?:^|[.!?…:»]\s+)([^.!?…]*\?)\s*$/.exec(q.prompt)?.[1] ?? q.prompt}</b>
           <div className="flex flex-col items-end gap-2">
             {q.options.map((o, i) => (
               <button key={i} className={`opt max-w-[88%] justify-end rounded-br-md text-right ${optClass(reveal, sol === i, value === i)}`} aria-pressed={value === i} disabled={locked} onClick={() => onChange(i)}>
