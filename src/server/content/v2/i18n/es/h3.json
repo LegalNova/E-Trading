@@ -314,8 +314,8 @@
   "u16l1-1": {
    "prompt": "¿Qué intenta responder el análisis fundamental?",
    "options": [
-    "Cuándo entrar exactamente",
-    "Qué comprar y si está caro o barato",
+    "En qué momento exacto conviene entrar",
+    "Qué comprar y si está caro",
     "Qué vela viene mañana"
    ],
    "explanation": "El técnico intenta responder a cuándo; el fundamental, a qué y a qué precio."
@@ -334,8 +334,8 @@
    "prompt": "¿Qué le contestas a Irene?",
    "options": [
     "Claro, ya está en el suelo",
-    "Compra el doble para promediar",
-    "Primero mira por qué ha caído y cuánto vale el negocio: barato no es lo mismo que infravalorado"
+    "Compra el doble para bajar tu precio medio: así recuperas antes",
+    "Primero mira por qué ha caído y cuánto vale el negocio"
    ],
    "explanation": "Un precio bajo solo es oportunidad si está por debajo del valor.",
    "feedback": [
@@ -352,8 +352,8 @@
    "prompt": "Estimas que una empresa vale unos 30 € por acción, pero no estás seguro del todo de tu estimación. ¿Con qué precio tiene más sentido comprarla?",
    "options": [
     "A 29 €: casi lo que vale",
-    "A 40 €: si sube tanto, es que es buena",
-    "A 20 €: bastante por debajo de lo que estimas que vale"
+    "A 40 €: si el mercado paga tanto, será que vale más",
+    "A 20 €: bastante por debajo de lo que vale"
    ],
    "explanation": "Cuanto más por debajo del valor estimado compras, más **margen de seguridad** tienes. La tentación de pagar más «porque sube» confunde precio con valor.",
    "feedback": [
@@ -401,8 +401,8 @@
   "u17l1-7": {
    "prompt": "Un año, una empresa vende su sede y su beneficio se triplica. Su PER cae de 18 a 6. ¿Qué ha pasado?",
    "options": [
-    "El PER está distorsionado por un beneficio puntual",
-    "Se ha convertido en una ganga",
+    "Un beneficio puntual distorsiona el PER",
+    "Se ha convertido en una ganga: cuesta tres veces menos",
     "Su negocio ha mejorado mucho"
    ],
    "explanation": "Ese beneficio no se repetirá: hay que mirar el beneficio recurrente."
@@ -410,7 +410,7 @@
   "u17l1-11": {
    "prompt": "Dos empresas ganan lo mismo: 2 € al año por acción, y ninguna crece. La A cotiza a 20 € y la B a 40 €. ¿Cuál está más cara según su PER?",
    "options": [
-    "La A: si es tan barata, algo malo tendrá",
+    "La A: si es tan barata, algo malo tendrá que tener",
     "La B: pagas el doble por el mismo beneficio",
     "Las dos igual, porque ganan lo mismo"
    ],
@@ -424,9 +424,9 @@
   "u17l1-12": {
    "prompt": "La empresa A tiene PER 30 y sus beneficios crecen deprisa año tras año. La B tiene PER 6, pero sus ventas llevan cinco años cayendo. ¿Qué conclusión es la más sensata?",
    "options": [
-    "La A está carísima: tiene PER 30",
+    "La A está carísima: un PER de 30 es demasiado para cualquier empresa",
     "La B es una ganga: tiene PER 6",
-    "El PER solo no basta: hay que mirar si el beneficio crecerá o menguará"
+    "El PER solo no basta: mira si el beneficio crecerá"
    ],
    "explanation": "Un PER alto puede estar justificado por el crecimiento, y uno bajo puede ser una trampa si el negocio se apaga. La tentación es mirar solo el número.",
    "feedback": [
@@ -506,7 +506,7 @@
    "options": [
     "Que fue un día muy alcista, porque llegó a 58",
     "Que fue un día bajista, porque es una vela roja",
-    "Que subió mucho, pero los vendedores lo devolvieron casi a la apertura"
+    "Que subió mucho, pero acabó casi donde abrió"
    ],
    "explanation": "El cierre es el precio más importante. Una mecha superior larga dice que el precio subió y no aguantó: el final del día fue de los vendedores.",
    "feedback": [
@@ -533,18 +533,18 @@
   "u21l1-6": {
    "prompt": "¿Qué hace más relevante un soporte? Marca todo.",
    "options": [
-    "Que sea reciente",
-    "Que lo diga un anuncio en redes",
+    "Que sea de hace muchos años",
+    "Que el precio esté ahora muy lejos de él",
     "Que hubiera mucho volumen en esa zona",
     "Que el precio haya girado ahí varias veces"
    ],
-   "explanation": "Más toques, más volumen y más cercanía en el tiempo. Los niveles antiguos y lejanos pesan menos."
+   "explanation": "Más toques y más volumen lo hacen más relevante, y también que sea reciente. Los niveles antiguos o lejanos del precio actual pesan menos."
   },
   "u21l1-11": {
    "prompt": "Compraste cerca de un soporte y pusiste el stop un poco por debajo. Hoy el precio cae con fuerza y rompe el soporte: está a punto de tocar tu stop. ¿Qué haces?",
    "options": [
     "Compro más, que ahora está más barato",
-    "Dejo que el stop haga su trabajo: mi idea de compra ya no vale",
+    "Dejo que el stop haga su trabajo",
     "Bajo el stop un poco más para darle margen"
    ],
    "explanation": "El stop se decide antes de comprar, cuando piensas con calma. Si el soporte se rompe, la idea falló: moverlo o comprar más es dejar que decida el miedo a perder.",
@@ -573,11 +573,11 @@
    "prompt": "¿Qué límites de riesgo propone el curso para quien empieza? Marca todos.",
    "options": [
     "Vigilar el peso de cada posición (aviso a partir del 20 %)",
-    "Usar al menos un apalancamiento 1:10",
-    "No más del 5–6 % de riesgo abierto a la vez",
+    "Arriesgar más cuando vienes de varias pérdidas",
+    "Hasta un 20 % de riesgo abierto a la vez",
     "Arriesgar un 1 % o menos por operación"
    ],
-   "explanation": "El apalancamiento no forma parte de la regla: mientras aprendes, mejor sin él."
+   "explanation": "Un 1 % o menos por operación y vigilar el peso de cada posición; el riesgo abierto total, no más del 5–6 %. Subir el riesgo para recuperar pérdidas es justo lo contrario."
   },
   "u24l3-10": {
    "prompt": "Primero decides dónde va el ____; después, cuántas acciones compras.",
@@ -597,7 +597,7 @@
   "u24l3-13": {
    "prompt": "Tienes 10.000 €. Lucía invierte 5.000 € con un stop que, si salta, le hace perder 100 €. Marcos invierte 1.000 € sin stop. ¿Quién arriesga más?",
    "options": [
-    "Marcos: sin stop, puede perder los 1.000 €",
+    "Marcos: sin stop, puede perderlo todo",
     "Lucía: ha invertido cinco veces más",
     "Los dos igual: ninguno pierde si la acción sube"
    ],
@@ -611,7 +611,7 @@
   "u24l3-14": {
    "prompt": "Con 10.000 € y la regla del 1 %, preparas dos compras. En la A pones el stop muy cerca del precio de compra; en la B, mucho más lejos. ¿En cuál puedes comprar más acciones?",
    "options": [
-    "En la A: con el stop cerca, cada acción arriesga poco",
+    "En la A: cada acción arriesga poco",
     "En la B: con el stop lejos, tienes más margen",
     "En las dos igual: el riesgo es el mismo"
    ],
@@ -654,10 +654,10 @@
    "options": [
     "La única razón es que sube mucho",
     "Beneficios crecientes y estables durante años",
-    "Gente sin experiencia recomendándolo",
+    "Analistas que avisan de que está cara",
     "«Esta vez es diferente»"
    ],
-   "explanation": "Unos beneficios estables no son señal de burbuja: lo son la euforia y la falta de motivos."
+   "explanation": "Son señales que la única razón sea la subida y el «esta vez es diferente», y también que lo recomiende gente sin experiencia. Unos beneficios estables o unos analistas prudentes no lo son."
   },
   "u27l4-9": {
    "prompt": "Empareja cada burbuja con su época.",
@@ -678,9 +678,9 @@
   "u27l4-10": {
    "prompt": "¿Qué le dices a Marta?",
    "options": [
-    "Mete los ahorros de emergencia",
-    "Espera 48 horas y piensa si la comprarías si nadie hablara de ella",
-    "Entra ya, que vuela"
+    "Mete una parte de tu colchón: lo repones luego",
+    "Espera 48 horas antes de decidir",
+    "Entra ya, que vuela, y si baja vendes rápido"
    ],
    "explanation": "La prisa es la señal: cuando sientes urgencia, para.",
    "feedback": [

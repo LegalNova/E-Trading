@@ -314,8 +314,8 @@
   "u16l1-1": {
    "prompt": "What does fundamental analysis try to answer?",
    "options": [
-    "Exactly when to buy in",
-    "What to buy and whether it's expensive or cheap",
+    "The exact moment when it's best to buy in",
+    "What to buy and whether it's dear",
     "Which candle comes tomorrow"
    ],
    "explanation": "Technical analysis tries to answer when; fundamental analysis, what and at what price."
@@ -334,8 +334,8 @@
    "prompt": "What do you say to Lumi?",
    "options": [
     "Sure, it's already hit the floor",
-    "Buy twice as much to average down",
-    "First look at why it fell and what the business is worth: cheap isn't the same as undervalued"
+    "Buy twice as much to lower your average price: you'll recover sooner",
+    "First look at why it fell and what the business is worth"
    ],
    "explanation": "A low price is only an opportunity if it's below the value.",
    "feedback": [
@@ -352,8 +352,8 @@
    "prompt": "You estimate a company is worth about €30 a share, but you're not entirely sure of your estimate. At which price does buying it make most sense?",
    "options": [
     "At €29: almost what it's worth",
-    "At €40: if it's rising that much, it must be good",
-    "At €20: well below what you think it's worth"
+    "At €40: if the market pays that much, it must be worth more",
+    "At €20: well below what it's worth"
    ],
    "explanation": "The further below your estimated value you buy, the bigger your **margin of safety**. The temptation to pay more «because it's rising» confuses price with value.",
    "feedback": [
@@ -385,8 +385,8 @@
   "u17l1-7": {
    "prompt": "One year, a company sells its headquarters and its profit triples. Its P/E falls from 18 to 6. What has happened?",
    "options": [
-    "The P/E is distorted by a one-off profit",
-    "It has become a bargain",
+    "A one-off profit is distorting the P/E",
+    "It has become a bargain: it costs three times less",
     "Its business has improved a lot"
    ],
    "explanation": "That profit won't happen again: you need to look at recurring earnings."
@@ -408,9 +408,9 @@
   "u17l1-12": {
    "prompt": "Company A has a P/E of 30 and its earnings grow fast year after year. B has a P/E of 6, but its sales have been falling for five years. Which conclusion is the most sensible?",
    "options": [
-    "A is far too expensive: it has a P/E of 30",
+    "A is far too expensive: a P/E of 30 is too much for any company",
     "B is a bargain: it has a P/E of 6",
-    "P/E alone isn't enough: you need to see whether earnings will grow or shrink"
+    "P/E alone isn't enough: see whether earnings will grow"
    ],
    "explanation": "A high P/E can be justified by growth, and a low one can be a trap if the business is fading. The temptation is to look only at the number.",
    "feedback": [
@@ -490,7 +490,7 @@
    "options": [
     "That it was a very bullish day, because it hit 58",
     "That it was a bearish day, because it's a red candle",
-    "That it rose a lot, but sellers pushed it back almost to the open"
+    "That it rose a lot, but ended near its open"
    ],
    "explanation": "The close is the most important price. A long upper wick says the price rose and didn't hold: the end of the day belonged to the sellers.",
    "feedback": [
@@ -517,18 +517,18 @@
   "u21l1-6": {
    "prompt": "What makes a support level more relevant? Select all that apply.",
    "options": [
-    "That it’s recent",
-    "That an ad on social media says so",
+    "That it's from many years ago",
+    "That the price is now far away from it",
     "That there was a lot of volume in that zone",
     "That the price has turned there several times"
    ],
-   "explanation": "More touches, more volume and more recent. Old, distant levels carry less weight."
+   "explanation": "More touches and more volume make it more relevant, and so does being recent. Old levels, or ones far from the current price, carry less weight."
   },
   "u21l1-11": {
    "prompt": "You bought near a support level and put your stop just below it. Today the price falls hard and breaks the support: it's about to hit your stop. What do you do?",
    "options": [
     "Buy more, it's cheaper now",
-    "Let the stop do its job: my reason for buying no longer holds",
+    "Let the stop do its job",
     "Move the stop a bit lower to give it room"
    ],
    "explanation": "The stop is decided before you buy, when you're thinking calmly. If support breaks, the idea has failed: moving the stop or buying more lets the fear of losing decide.",
@@ -557,11 +557,11 @@
    "prompt": "Which risk limits does the course suggest for beginners? Select all that apply.",
    "options": [
     "Keep an eye on the weight of each position (warning from 20 %)",
-    "Use at least 1:10 leverage",
-    "No more than 5–6 % open risk at once",
+    "Risk more when you're coming off several losses",
+    "Up to 20 % open risk at once",
     "Risk 1 % or less per trade"
    ],
-   "explanation": "Leverage isn't part of the rule: while you're learning, better without it."
+   "explanation": "1 % or less per trade and keeping an eye on the weight of each position; total open risk, no more than 5–6 %. Raising your risk to win back losses is exactly the opposite."
   },
   "u24l3-10": {
    "prompt": "First you decide where the ____ goes; then, how many shares you buy.",
@@ -581,7 +581,7 @@
   "u24l3-13": {
    "prompt": "You have €10,000. Lucía invests €5,000 with a stop that, if hit, makes her lose €100. Marcos invests €1,000 with no stop. Who is risking more?",
    "options": [
-    "Marcos: with no stop, he can lose the whole €1,000",
+    "Marcos: with no stop, he can lose it all",
     "Lucía: she has invested five times as much",
     "Both the same: neither loses if the share rises"
    ],
@@ -595,7 +595,7 @@
   "u24l3-14": {
    "prompt": "With €10,000 and the 1 % rule, you're planning two purchases. In A you put the stop very close to the buy price; in B, much further away. In which one can you buy more shares?",
    "options": [
-    "In A: with the stop close, each share risks little",
+    "In A: each share risks little",
     "In B: with the stop far away, you have more room",
     "The same in both: the risk is the same"
    ],
@@ -638,10 +638,10 @@
    "options": [
     "The only reason is that it's going up a lot",
     "Steady, growing earnings for years",
-    "Inexperienced people recommending it",
+    "Analysts warning that it's expensive",
     "«This time it's different»"
    ],
-   "explanation": "Steady earnings aren't a sign of a bubble: euphoria and a lack of reasons are."
+   "explanation": "The signs are the rise being the only reason and «this time it's different», and also inexperienced people recommending it. Steady earnings or cautious analysts aren't."
   },
   "u27l4-9": {
    "prompt": "Match each bubble with its era.",
@@ -662,9 +662,9 @@
   "u27l4-10": {
    "prompt": "What do you tell Lumi?",
    "options": [
-    "Put your emergency fund in",
-    "Wait 48 hours and think about whether you'd buy it if nobody were talking about it",
-    "Get in now, it's flying"
+    "Put in part of your emergency fund: you'll top it up later",
+    "Wait 48 hours before deciding",
+    "Get in now, it's flying, and sell fast if it drops"
    ],
    "explanation": "The rush is the signal: when you feel urgency, stop.",
    "feedback": [

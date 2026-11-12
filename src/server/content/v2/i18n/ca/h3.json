@@ -314,8 +314,8 @@
   "u16l1-1": {
    "prompt": "A què intenta respondre l'anàlisi fonamental?",
    "options": [
-    "Quan entrar exactament",
-    "Què comprar i si és car o barat",
+    "En quin moment exacte convé entrar-hi",
+    "Què comprar i si és car",
     "Quina espelma ve demà"
    ],
    "explanation": "La tècnica intenta respondre a quan; la fonamental, a què i a quin preu."
@@ -334,8 +334,8 @@
    "prompt": "Què li contestes a la Lumi?",
    "options": [
     "És clar, ja és a terra",
-    "Compra'n el doble per fer mitjana",
-    "Primer mira per què ha caigut i quant val el negoci: barat no és el mateix que infravalorat"
+    "Compra'n el doble per abaixar el teu preu mitjà: així recuperes abans",
+    "Primer mira per què ha caigut i quant val el negoci"
    ],
    "explanation": "Un preu baix només és una oportunitat si és per sota del valor.",
    "feedback": [
@@ -352,8 +352,8 @@
    "prompt": "Calcules que una empresa val uns 30 € per acció, però no estàs del tot segur de la teva estimació. Amb quin preu té més sentit comprar-la?",
    "options": [
     "A 29 €: gairebé el que val",
-    "A 40 €: si puja tant, és que és bona",
-    "A 20 €: força per sota del que estimes que val"
+    "A 40 €: si el mercat en paga tant, deu ser que val més",
+    "A 20 €: força per sota del que val"
    ],
    "explanation": "Com més per sota del valor estimat compres, més **marge de seguretat** tens. La temptació de pagar més «perquè puja» confon preu amb valor.",
    "feedback": [
@@ -385,8 +385,8 @@
   "u17l1-7": {
    "prompt": "Un any, una empresa ven la seu i el benefici se li triplica. El PER cau de 18 a 6. Què ha passat?",
    "options": [
-    "El PER està distorsionat per un benefici puntual",
-    "S'ha convertit en una ganga",
+    "Un benefici puntual distorsiona el PER",
+    "S'ha convertit en una ganga: costa tres vegades menys",
     "El negoci ha millorat molt"
    ],
    "explanation": "Aquest benefici no es repetirà: cal mirar el benefici recurrent."
@@ -408,9 +408,9 @@
   "u17l1-12": {
    "prompt": "L'empresa A té PER 30 i els seus beneficis creixen de pressa any rere any. La B té PER 6, però fa cinc anys que les seves vendes cauen. Quina conclusió és la més assenyada?",
    "options": [
-    "L'A és caríssima: té PER 30",
+    "L'A és caríssima: un PER de 30 és massa per a qualsevol empresa",
     "La B és una ganga: té PER 6",
-    "El PER sol no n'hi ha prou: cal mirar si el benefici creixerà o minvarà"
+    "El PER sol no n'hi ha prou: mira si el benefici creixerà"
    ],
    "explanation": "Un PER alt pot estar justificat pel creixement, i un de baix pot ser una trampa si el negoci s'apaga. La temptació és mirar només el número.",
    "feedback": [
@@ -490,7 +490,7 @@
    "options": [
     "Que va ser un dia molt alcista, perquè va arribar a 58",
     "Que va ser un dia baixista, perquè és una espelma vermella",
-    "Que va pujar molt, però els venedors el van tornar gairebé a l'obertura"
+    "Que va pujar molt, però va acabar gairebé on va obrir"
    ],
    "explanation": "El tancament és el preu més important. Una metxa superior llarga diu que el preu va pujar i no va aguantar: el final del dia va ser dels venedors.",
    "feedback": [
@@ -517,18 +517,18 @@
   "u21l1-6": {
    "prompt": "Què fa més rellevant un suport? Marca-ho tot.",
    "options": [
-    "Que sigui recent",
-    "Que ho digui un anunci a les xarxes",
+    "Que sigui de fa molts anys",
+    "Que el preu ara en sigui molt lluny",
     "Que hi hagués molt de volum en aquella zona",
     "Que el preu hi hagi girat diverses vegades"
    ],
-   "explanation": "Més tocs, més volum i més proximitat en el temps. Els nivells antics i llunyans pesen menys."
+   "explanation": "Més tocs i més volum el fan més rellevant, i també que sigui recent. Els nivells antics o llunyans del preu actual pesen menys."
   },
   "u21l1-11": {
    "prompt": "Vas comprar a prop d’un suport i vas posar l’stop una mica per sota. Avui el preu cau amb força i trenca el suport: està a punt de tocar el teu stop. Què fas?",
    "options": [
     "En compro més, que ara és més barata",
-    "Deixo que l’stop faci la seva feina: la meva idea de compra ja no val",
+    "Deixo que l’stop faci la seva feina",
     "Baixo l’stop una mica més per donar-li marge"
    ],
    "explanation": "L’stop es decideix abans de comprar, quan penses amb calma. Si el suport es trenca, la idea ha fallat: moure’l o comprar-ne més és deixar que decideixi la por de perdre.",
@@ -557,11 +557,11 @@
    "prompt": "Quins límits de risc proposa el curs per a qui comença? Marca'ls tots.",
    "options": [
     "Vigilar el pes de cada posició (avís a partir del 20 %)",
-    "Fer servir com a mínim un palanquejament 1:10",
-    "No més del 5–6 % de risc obert alhora",
+    "Arriscar més quan vens de diverses pèrdues",
+    "Fins a un 20 % de risc obert alhora",
     "Arriscar un 1 % o menys per operació"
    ],
-   "explanation": "El palanquejament no forma part de la regla: mentre aprens, millor sense."
+   "explanation": "Un 1 % o menys per operació i vigilar el pes de cada posició; el risc obert total, no més del 5–6 %. Apujar el risc per recuperar pèrdues és just el contrari."
   },
   "u24l3-10": {
    "prompt": "Primer decideixes on va ____; després, quantes accions compres.",
@@ -581,7 +581,7 @@
   "u24l3-13": {
    "prompt": "Tens 10.000 €. La Lucía inverteix 5.000 € amb un stop que, si salta, li fa perdre 100 €. En Marcos inverteix 1.000 € sense stop. Qui arrisca més?",
    "options": [
-    "En Marcos: sense stop, pot perdre els 1.000 €",
+    "En Marcos: sense stop, ho pot perdre tot",
     "La Lucía: ha invertit cinc vegades més",
     "Tots dos igual: cap no perd si l'acció puja"
    ],
@@ -595,7 +595,7 @@
   "u24l3-14": {
    "prompt": "Amb 10.000 € i la regla de l'1 %, prepares dues compres. A l'A poses l'stop molt a prop del preu de compra; a la B, molt més lluny. En quina pots comprar més accions?",
    "options": [
-    "A l'A: amb l'stop a prop, cada acció arrisca poc",
+    "A l'A: cada acció arrisca poc",
     "A la B: amb l'stop lluny, tens més marge",
     "A totes dues igual: el risc és el mateix"
    ],
@@ -638,10 +638,10 @@
    "options": [
     "L'únic motiu és que puja molt",
     "Beneficis creixents i estables durant anys",
-    "Gent sense experiència que la recomana",
+    "Analistes que avisen que és cara",
     "«Aquesta vegada és diferent»"
    ],
-   "explanation": "Uns beneficis estables no són senyal de bombolla: ho són l'eufòria i la falta de motius."
+   "explanation": "Són senyals que l'únic motiu sigui la pujada i l'«aquesta vegada és diferent», i també que la recomani gent sense experiència. Uns beneficis estables o uns analistes prudents no ho són."
   },
   "u27l4-9": {
    "prompt": "Relaciona cada bombolla amb la seva època.",
@@ -662,9 +662,9 @@
   "u27l4-10": {
    "prompt": "Què li dius a la Lumi?",
    "options": [
-    "Fica-hi el fons d'emergència",
-    "Espera 48 hores i pensa si la compraries si ningú en parlés",
-    "Entra ja, que vola"
+    "Fica-hi una part del teu coixí: ja el refaràs després",
+    "Espera 48 hores abans de decidir",
+    "Entra ja, que vola, i si baixa vens de pressa"
    ],
    "explanation": "La pressa és el senyal: quan sents urgència, atura't.",
    "feedback": [
