@@ -567,15 +567,6 @@
     "Valorar amb dades actuals"
    ]
   },
-  "u27l6-3": {
-   "prompt": "«L'acció estava a 120 € i ara a 70 €: està regalada». Quin biaix és?",
-   "options": [
-    "FOMO",
-    "Recència",
-    "Ancoratge"
-   ],
-   "explanation": "Els 120 € són una àncora: no diuen res del valor actual de l'empresa."
-  },
   "u27l6-5": {
    "prompt": "L'Ana ha comprat una acció. Des de llavors només llegeix fòrums alcistes i silencia qui critica l'empresa. Què li recomanaries com a hàbit?",
    "options": [
@@ -678,6 +669,20 @@
     "Recència",
     "Supervivència"
    ]
+  },
+  "u27l6-11": {
+   "prompt": "Un analista publica que una certa acció «val 200 €». Setmanes després, amb pitjors resultats, tu continues pensant en aquests 200 €. Què et passa?",
+   "options": [
+    "M'he ancorat en la primera xifra que vaig veure",
+    "Tinc biaix de confirmació",
+    "Res: 200 € és el seu valor"
+   ],
+   "feedback": [
+    "Això: l'àncora pot ser el teu preu de compra, un màxim o una xifra d'un altre.",
+    "Això seria buscar només el que et dona la raó. Aquí el problema és aferrar-te a un número.",
+    "Era una estimació feta amb altres dades. Si les dades canvien, la xifra també."
+   ],
+   "explanation": "Qualsevol número pot fer d'àncora. Torna a valorar amb les dades d'avui."
   }
  }
 }

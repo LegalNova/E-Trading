@@ -420,6 +420,6 @@ export default unit({
       tf('Las crisis siempre se ven venir porque se parecen mucho a la anterior.', false, 'Cada una tiene un disfraz distinto. Lo que se repite es la psicología, no los detalles.'),
       timed(single('Rápido: ¿qué alimenta casi todas las burbujas?', ['Crédito fácil y euforia', 'Valoraciones prudentes', 'Inversores con mucho colchón'], 0, 'La deuda y el «esta vez es distinto» aparecen en casi todas.'), 12),
       fill('Las crisis siempre parecen ____, pero siempre se repite lo mismo.', 'distintas', ['iguales', 'pequeñas', 'previsibles'], 'Cambian los protagonistas; no cambian el miedo, la euforia ni la deuda.'),
-    ], { source: '3.7', minutes: 6, retire: [5, 7, 8] }),
+    ], { source: '3.7', minutes: 6, retire: [5, 6, 7, 8] }),
   ],
 })

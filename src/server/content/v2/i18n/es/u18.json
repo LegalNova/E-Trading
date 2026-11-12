@@ -434,24 +434,6 @@
     "No garantiza nada; solo indica expectativas muy altas."
    ]
   },
-  "u18l1-10": {
-   "prompt": "¿Qué le contestas a Paula?",
-   "options": [
-    "No, las marcas nunca son foso",
-    "Sí: si te gusta a ti, le gusta a todos",
-    "Puede tener foso, pero hay que verlo en sus márgenes y su ROIC, y además mirar el precio"
-   ],
-   "explanation": "Busca el foso en los números y no olvides el precio.",
-   "feedback": [
-    "Las marcas fuertes pueden ser un foso muy potente.",
-    "Que te guste es un comienzo, no un análisis.",
-    "Vale: que me guste el producto no me dice si la acción está cara."
-   ],
-   "lines": [
-    "Me encanta esta marca, la uso cada día 😍",
-    "¿Eso significa que tiene foso y que es buena inversión?"
-   ]
-  },
   "u18l2-2": {
    "prompt": "Empareja cada fase del ciclo con lo que suele pasar.",
    "options": [
@@ -781,22 +763,19 @@
     "Crece en papel, pero no genera caja y te diluye cada año."
    ]
   },
-  "u18l6-12": {
-   "prompt": "¿Qué le contestas a Nora?",
+  "u18l6-13": {
+   "prompt": "¿Es un dato para tu análisis o es ruido?",
    "options": [
-    "Sí: si es buen negocio, el precio da igual",
-    "No: los análisis no sirven para nada",
-    "Falta la pregunta 8: ¿el precio deja margen de seguridad?"
+    "De dónde vienen sus ingresos",
+    "Que ha subido un 8 % esta semana",
+    "Un mensaje que dice que la acción «va a explotar»",
+    "Las ventas de los últimos cinco años",
+    "La deuda frente a lo que gana"
    ],
-   "explanation": "La lista no termina en «es buen negocio»: también hay que decidir si el precio es razonable y qué te haría vender.",
-   "feedback": [
-    "Recuerda a Microsoft en 2000: gran negocio, precio carísimo.",
-    "Sirven para decidir con criterio, no para adivinar el precio.",
-    "Cierto: un gran negocio comprado caro puede ser mala inversión."
-   ],
-   "lines": [
-    "Ya he hecho mi análisis de Inditex: es un negocio buenísimo.",
-    "¿Compro ya?"
+   "explanation": "Un análisis se hace con el negocio y sus cuentas; lo que hizo el precio esta semana o lo que se dice en redes no cuenta.",
+   "right": [
+    "Dato",
+    "Ruido"
    ]
   }
  }

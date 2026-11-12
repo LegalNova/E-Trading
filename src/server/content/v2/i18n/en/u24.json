@@ -605,15 +605,6 @@
     "I was risking exactly €100. Was it a disaster?"
    ]
   },
-  "u24l7-3": {
-   "prompt": "System B is right 60 % of the time and loses money. Why?",
-   "options": [
-    "Because it trades too little",
-    "Because its average wins are small compared with its losses",
-    "Because it's right too often"
-   ],
-   "explanation": "It wins 0.5R and loses 1R: the losses weigh twice as much as the wins."
-  },
   "u24l7-4": {
    "prompt": "You can follow one of these three systems, all with 1R losses. Which do you choose?",
    "options": [

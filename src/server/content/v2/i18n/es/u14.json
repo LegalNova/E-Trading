@@ -333,14 +333,6 @@
    ],
    "explanation": "Los mayores combinan el dólar con otra gran divisa. USD/TRY es un par exótico: más spread y más volatilidad."
   },
-  "u14l2-7": {
-   "prompt": "En la UE, un minorista puede operar CFD sobre pares de divisas mayores con un apalancamiento de hasta 1:30.",
-   "options": [
-    "Verdadero",
-    "Falso"
-   ],
-   "explanation": "Es el límite que fijó ESMA en 2018 (en España lo aplica la CNMV). Para pares no mayores es 1:20."
-  },
   "u14l2-9": {
    "prompt": "Pablo abre 1 lote estándar de EUR/USD (100.000 €) con 4.000 € de garantía. El par cae 120 pips tras un dato de inflación. ¿Qué ha pasado?",
    "options": [

@@ -52,7 +52,7 @@ export default unit({
       order('Ordena de menor a mayor volatilidad típica.', ['Letras del Tesoro', 'Bonos del Estado', 'Índice mundial de acciones', 'Bitcoin'], 'Menos del 1 %, un 4-7 %, en torno al 15 % y un 50-80 % anual.'),
       single('Una criptomoneda cae un 90 % desde su máximo. ¿Qué tiene que pasar para que vuelva a él?', ['Que suba un 90 %, lo mismo que cayó', 'Que se multiplique por 10', 'Que suba un 100 %, que la duplique'], 1, 'Si de cada 100 € te quedan 10, hay que multiplicar por 10 para volver: un +900 %. Subir lo mismo que cayó no basta, porque el 90 % de subida se calcula sobre lo poco que queda.'),
       simTrade('Tienes 10.000 € y no quieres arriesgar más de un 1 % (100 €) en bitcoin. Coloca el stop por debajo del último mínimo y elige el importe.', 'lvl-68', 'En un activo tan volátil, el stop queda lejos del precio, así que el importe sale pequeño. Así, aunque salte el stop, solo pierdes 100 €. La tentación es comprar mucho y poner el stop muy cerca, pero cualquier vaivén normal lo salta.', { cash: 10_000, maxRiskPct: 1 }),
-    ], { source: '2.9', minutes: 6, retire: [0, 3, 4, 5, 6, 8] }),
+    ], { source: '2.9', minutes: 6, retire: [0, 3, 4, 5, 6, 8, 10] }),
 
     lesson('u13l2', 'Cuando cae un exchange: FTX', [
       story('Una semana de noviembre de 2022', [{ id: 'alex', name: 'Álex' }], [
@@ -154,7 +154,7 @@ export default unit({
       timed(tf('Si un token no te deja vender después de comprarlo, es una señal clara de estafa.', true, 'Es un honeypot: el dinero solo puede entrar.'), 10),
       single('Dogecoin nació en 2013 como…', ['Una broma', 'La moneda de un banco central', 'Una stablecoin'], 0, 'Es la memecoin más conocida: su precio depende sobre todo de la atención que recibe.'),
       fill('Inflar el precio con publicidad para vender a los que llegan tarde se llama pump and ____.', 'dump', ['pull', 'stake', 'mint'], 'Pump (inflar) and dump (soltar): los que llegan tarde compran lo que venden los organizadores.'),
-    ], { source: '2.9', minutes: 6, retire: [2, 5, 6, 7] }),
+    ], { source: '2.9', minutes: 6, retire: [2, 4, 5, 6, 7] }),
 
     lesson('u13l4', 'Staking y DeFi: de dónde sale el rendimiento', [
       story('Un 20 % por depositar', [{ id: 'sara', name: 'Sara' }], [

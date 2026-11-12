@@ -434,24 +434,6 @@
     "It doesn't guarantee anything; it just signals very high expectations."
    ]
   },
-  "u18l1-10": {
-   "prompt": "What do you reply to Lumi?",
-   "options": [
-    "No, brands are never a moat",
-    "Yes: if you like it, everyone does",
-    "It might have a moat, but you need to see it in its margins and ROIC, and look at the price as well"
-   ],
-   "explanation": "Look for the moat in the numbers and don't forget the price.",
-   "feedback": [
-    "Strong brands can be a very powerful moat.",
-    "Liking it is a starting point, not an analysis.",
-    "OK: liking the product doesn't tell me whether the share is expensive."
-   ],
-   "lines": [
-    "I love this brand, I use it every day 😍",
-    "Does that mean it has a moat and it's a good investment?"
-   ]
-  },
   "u18l2-2": {
    "prompt": "Match each phase of the cycle with what usually happens.",
    "options": [
@@ -781,23 +763,20 @@
     "It grows on paper, but doesn't generate cash and dilutes you every year."
    ]
   },
-  "u18l6-12": {
-   "prompt": "What do you reply to Lumi?",
+  "u18l6-13": {
+   "prompt": "Is it data for your analysis or is it noise?",
    "options": [
-    "Yes: if it's a good business, the price doesn't matter",
-    "No: analysis is useless",
-    "Question 8 is missing: does the price leave a margin of safety?"
+    "Where its revenue comes from",
+    "That it's up 8 % this week",
+    "A message saying the share «is going to explode»",
+    "Sales over the last five years",
+    "Its debt compared with what it earns"
    ],
-   "explanation": "The checklist doesn't end at «it's a good business»: you also have to decide whether the price is reasonable and what would make you sell.",
-   "feedback": [
-    "Remember Microsoft in 2000: great business, sky-high price.",
-    "It helps you decide with judgement, not guess the price.",
-    "True: a great business bought too dear can be a bad investment."
+   "right": [
+    "Data",
+    "Noise"
    ],
-   "lines": [
-    "I've done my analysis of Inditex: it's a brilliant business.",
-    "Shall I buy now?"
-   ]
+   "explanation": "An analysis is built on the business and its accounts; what the price did this week or what people say on social media doesn't count."
   }
  }
 }

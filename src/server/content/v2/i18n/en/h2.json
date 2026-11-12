@@ -575,20 +575,6 @@
    ],
    "explanation": "The further away the goal, the more falls you can ride out along the way."
   },
-  "u4l3-5": {
-   "prompt": "Bruno has €8,000 for the fees of a master's he pays in 10 months. A friend tells him he'll «get a bit more» in the stock market. What does he do?",
-   "options": [
-    "Puts it into a crypto that has gone up a lot",
-    "Leaves it in a deposit or Treasury bills until he pays",
-    "Puts it all in the stock market"
-   ],
-   "explanation": "Money with a close date: no risk, even if it earns little.",
-   "feedback": [
-    "Falls of 50 % in a few months aren't unusual in crypto: he could end up without his master's.",
-    "He earns little, but on the day the fees are due the €8,000 will be there.",
-    "If the market drops 20 % just before, he'd be €1,600 short for the fees."
-   ]
-  },
   "u4l3-6": {
    "prompt": "S&P 500, September 2008. Imagine this is where you've got the money for a deposit on a flat you pay in 6 months. What do you think the index did in the following months?",
    "options": [
@@ -623,20 +609,6 @@
     "soon"
    ],
    "explanation": "Not because it's sure to fall, but because it could be falling just when you need it."
-  },
-  "u7l1-12": {
-   "prompt": "Imagine: your portfolio of Spanish shares is up 5 % this year and the IBEX 35, 12 %. A friend tells you you're a genius. What do you conclude?",
-   "options": [
-    "That I did worse than the index: copying it would have given me more",
-    "That I'm a genius: I made money",
-    "That the index has nothing to do with my portfolio"
-   ],
-   "explanation": "A result is only good or bad compared with its index: at 5 % against 12 %, copying the index would have earned more. «I made money» isn't enough: a gain with no yardstick doesn't tell you whether you did well.",
-   "feedback": [
-    "That's it: a fund copying the IBEX 35 would have given you more, without picking companies.",
-    "Making money isn't enough: compare yourself with what you'd have made by copying the index.",
-    "If you own Spanish shares, the IBEX 35 is exactly your yardstick."
-   ]
   },
   "u10l3-11": {
    "prompt": "Two ETFs copy exactly the same index. One charges 0.2 % a year and the other 1 %. You're going to leave €10,000 in it for 30 years. Which do you choose?",
@@ -693,6 +665,12 @@
     "Someone told me an ETF is «like a share».",
     "So is it just as risky as buying a single company?"
    ]
+  },
+  "u7l1-13": {
+   "unit": "%",
+   "prompt": "An index goes from 5,000 to 5,200 points. How much has it risen, as a percentage?",
+   "options": [],
+   "explanation": "200 ÷ 5,000 = 0.04 → 4 %. With an index, what matters is the change, not the points."
   }
  }
 }

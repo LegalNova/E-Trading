@@ -229,7 +229,8 @@ export default unit({
       fill('Antes de comprar, escribe tres motivos por los que podrías estar ____.', 'equivocado', ['acertando', 'ganando', 'tranquilo'], 'Es el antídoto más sencillo contra el sesgo de confirmación.'),
       num('Una acción cae de 100 € a 60 €. Si te anclas en los 100 € y esperas a que vuelva, ¿cuánto tiene que subir? (redondea a un decimal)', 66.7, '%', '100 ÷ 60 − 1 ≈ 0,667 → +66,7 %. Nada garantiza que lo haga.', 2),
       chat(['Esta acción ha caído un 50 % 😍', '¡Está a mitad de precio, como en rebajas!'], '¿Qué le contestas a Lumi?', [['Sí, a mitad de precio siempre es una ganga', 'No en bolsa: puede haber caído porque el negocio vale la mitad… o menos.'], ['Barato o caro depende de lo que vale el negocio, no de a cuánto estuvo', 'Cierto. Primero miro beneficios, deuda y por qué ha caído. El precio antiguo no es una etiqueta.'], ['Espera a que caiga otro 50 % y será aún más barata', 'Eso sigue siendo mirar solo el precio, no el valor.']], 1, 'Las rebajas de la bolsa no son como las del súper: el producto también puede haber cambiado.'),
-    ], { source: '11.5', minutes: 6, retire: [0, 3, 5, 6, 8] }),
+      scenario('Un analista publica que cierta acción «vale 200 €». Semanas después, con peores resultados, tú sigues pensando en esos 200 €. ¿Qué te pasa?', [['Nada: 200 € es su valor', 'Era una estimación hecha con otros datos. Si los datos cambian, la cifra también.'], ['Me he anclado en la primera cifra que vi', 'Eso: el ancla puede ser tu precio de compra, un máximo o una cifra de otro.'], ['Tengo sesgo de confirmación', 'Eso sería buscar solo lo que te da la razón. Aquí el problema es aferrarte a un número.']], 1, 'Cualquier número puede hacer de ancla. Vuelve a valorar con los datos de hoy.'),
+    ], { source: '11.5', minutes: 6, retire: [0, 2, 3, 5, 6, 8] }),
 
     lesson('u27l7', 'Recencia y supervivencia', [
       mission({

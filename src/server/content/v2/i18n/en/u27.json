@@ -567,15 +567,6 @@
     "Value it with current data"
    ]
   },
-  "u27l6-3": {
-   "prompt": "«The share was at €120 and now it's at €70: it's going for a song». Which bias is this?",
-   "options": [
-    "FOMO",
-    "Recency",
-    "Anchoring"
-   ],
-   "explanation": "The €120 is an anchor: it says nothing about the company's current value."
-  },
   "u27l6-5": {
    "prompt": "Ana has bought a share. Since then she only reads bullish forums and mutes anyone who criticises the company. What habit would you recommend?",
    "options": [
@@ -678,6 +669,20 @@
     "Recency",
     "Survivorship"
    ]
+  },
+  "u27l6-11": {
+   "prompt": "An analyst publishes that a certain share «is worth €200». Weeks later, with worse results, you're still thinking about that €200. What's happening to you?",
+   "options": [
+    "I've anchored on the first figure I saw",
+    "I have confirmation bias",
+    "Nothing: €200 is its value"
+   ],
+   "feedback": [
+    "That's it: the anchor can be your purchase price, a high or someone else's figure.",
+    "That would be looking only for what proves you right. Here the problem is clinging to a number.",
+    "It was an estimate made with other data. If the data change, so does the figure."
+   ],
+   "explanation": "Any number can act as an anchor. Value it again with today's data."
   }
  }
 }

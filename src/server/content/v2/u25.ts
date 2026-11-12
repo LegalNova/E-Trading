@@ -386,6 +386,6 @@ export default unit({
       timed(single('Rápido: ¿qué estrategia tiene más evidencia a largo plazo para la mayoría de la gente?', ['Comprar y mantener una cartera diversificada y barata', 'Day trading', 'Seguir consejos de redes'], 0, 'Lo dicen SPIVA, Bogle, Sharpe y un siglo de datos.'), 12),
       order('Ordena los pasos para elegir tu estrategia.', ['Definir objetivo y horizonte', 'Ver cuánto tiempo puedes dedicar', 'Decidir qué caída aguantarías sin vender', 'Escribir tus reglas', 'Probarla en el simulador'], 'Primero conocerte; después escribir el plan; al final, probarlo sin dinero real.'),
       multi('¿Qué preguntas te haces antes de elegir estrategia? Marca todas.', ['¿Cuándo necesitaré este dinero?', '¿Cuánto tiempo puedo dedicarle?', '¿Qué caída aguantaría sin vender?', '¿Cuál es la que más ha subido este mes?'], [0, 1, 2], 'Lo que más ha subido este mes no te dice qué estrategia vas a poder mantener.'),
-    ], { minutes: 6, retire: [0, 4, 6, 7] }),
+    ], { minutes: 6, retire: [0, 2, 4, 6, 7] }),
   ],
 })

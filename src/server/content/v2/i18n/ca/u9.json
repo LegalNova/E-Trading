@@ -589,20 +589,6 @@
    ],
    "explanation": "La CNMV supervisa els mercats a Espanya, però no posa notes als emissors."
   },
-  "u9l4-11": {
-   "prompt": "Vols guardar en bons els diners de l'entrada d'un pis per d'aquí a 5 anys. Te n'ofereixen dos: un d'un emissor amb nota AAA i un altre d'una empresa amb nota BB que paga força més. Quin tries?",
-   "options": [
-    "El de nota AAA, encara que pagui menys",
-    "El de nota BB: paga més",
-    "Meitat i meitat, per tenir dels dos"
-   ],
-   "explanation": "Un cupó més alt és el preu d'un risc d'impagament més gran. Per a uns diners que necessites en una data, la nota alta protegeix el que importa; l'interès extra tempta, però et pot costar part de l'entrada.",
-   "feedback": [
-    "Bé: per a uns diners amb data que no pots perdre, mana la seguretat de cobrar.",
-    "Paga més perquè el risc de no cobrar és més gran, i aquests diners no te'ls pots jugar.",
-    "Millor que tot en BB, però continues arriscant part d'uns diners que necessites sí o sí."
-   ]
-  },
   "u9l5-5": {
    "prompt": "A quins terminis emet lletres el Tresor?",
    "options": [

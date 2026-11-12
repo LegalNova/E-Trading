@@ -434,24 +434,6 @@
     "No garanteix res; només indica expectatives molt altes."
    ]
   },
-  "u18l1-10": {
-   "prompt": "Què li respons a la Lumi?",
-   "options": [
-    "No, les marques mai no són fossat",
-    "Sí: si t'agrada a tu, agrada a tothom",
-    "Pot tenir fossat, però s'ha de veure en els marges i el ROIC, i a més cal mirar el preu"
-   ],
-   "explanation": "Busca el fossat en els números i no t'oblidis del preu.",
-   "feedback": [
-    "Les marques fortes poden ser un fossat molt potent.",
-    "Que t'agradi és un començament, no una anàlisi.",
-    "D'acord: que m'agradi el producte no em diu si l'acció és cara."
-   ],
-   "lines": [
-    "M'encanta aquesta marca, la faig servir cada dia 😍",
-    "Això vol dir que té fossat i que és una bona inversió?"
-   ]
-  },
   "u18l2-2": {
    "prompt": "Relaciona cada fase del cicle amb el que sol passar.",
    "options": [
@@ -781,23 +763,20 @@
     "Creix sobre el paper, però no genera caixa i et dilueix cada any."
    ]
   },
-  "u18l6-12": {
-   "prompt": "Què li respons a la Lumi?",
+  "u18l6-13": {
+   "prompt": "És una dada per a la teva anàlisi o és soroll?",
    "options": [
-    "Sí: si és un bon negoci, el preu tant se val",
-    "No: les anàlisis no serveixen de res",
-    "Falta la pregunta 8: el preu deixa marge de seguretat?"
+    "D'on venen els seus ingressos",
+    "Que ha pujat un 8 % aquesta setmana",
+    "Un missatge que diu que l'acció «explotarà»",
+    "Les vendes dels últims cinc anys",
+    "El deute davant del que guanya"
    ],
-   "explanation": "La llista no acaba en «és un bon negoci»: també cal decidir si el preu és raonable i què et faria vendre.",
-   "feedback": [
-    "Recorda Microsoft el 2000: gran negoci, preu caríssim.",
-    "Serveixen per decidir amb criteri, no per endevinar el preu.",
-    "És cert: un gran negoci comprat car pot ser una mala inversió."
+   "right": [
+    "Dada",
+    "Soroll"
    ],
-   "lines": [
-    "Ja he fet la meva anàlisi d'Inditex: és un negoci boníssim.",
-    "Compro ja?"
-   ]
+   "explanation": "Una anàlisi es fa amb el negoci i els seus comptes; el que ha fet el preu aquesta setmana o el que es diu a les xarxes no compta."
   }
  }
 }

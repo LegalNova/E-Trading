@@ -327,19 +327,11 @@
    ],
    "explanation": "Los ETFs y fondos indexados copian el índice con costes bajos."
   },
-  "u7l1-12": {
-   "prompt": "Imagina: tu cartera de acciones españolas ha ganado un 5 % este año y el IBEX 35, un 12 %. Un amigo te dice que eres un crack. ¿Qué concluyes?",
-   "options": [
-    "Que lo he hecho peor que el índice: copiarlo me habría dado más",
-    "Que soy un crack: he ganado dinero",
-    "Que el índice no tiene nada que ver con mi cartera"
-   ],
-   "explanation": "Un resultado solo es bueno o malo comparado con su índice: con un 5 % frente a un 12 %, copiar el índice habría ganado más. «He ganado dinero» no basta: una ganancia sin vara de medir no dice si lo hiciste bien.",
-   "feedback": [
-    "Eso es: un fondo que copia el IBEX 35 te habría dado más, y sin elegir empresas.",
-    "Ganar no basta: tienes que compararte con lo que habrías ganado copiando el índice.",
-    "Si tienes acciones españolas, el IBEX 35 es justo tu vara de medir."
-   ]
+  "u7l1-13": {
+   "prompt": "Un índice pasa de 5.000 a 5.200 puntos. ¿Cuánto ha subido, en porcentaje?",
+   "options": [],
+   "explanation": "200 ÷ 5.000 = 0,04 → 4 %. En un índice importa la variación, no los puntos.",
+   "unit": "%"
   },
   "u10l2-1": {
    "prompt": "Empareja cada término con su significado.",
@@ -644,20 +636,6 @@
     "Colchón de emergencia"
    ],
    "explanation": "Cuanto más lejos está el objetivo, más caídas se pueden aguantar por el camino."
-  },
-  "u4l3-5": {
-   "prompt": "Bruno tiene 8.000 € para la matrícula de un máster que paga dentro de 10 meses. Un amigo le dice que en bolsa «sacará algo más». ¿Qué hace?",
-   "options": [
-    "Lo mete en una cripto que ha subido mucho",
-    "Lo deja en un depósito o letras hasta el pago",
-    "Lo mete todo en bolsa"
-   ],
-   "explanation": "Dinero con fecha cercana: sin riesgo, aunque rinda poco.",
-   "feedback": [
-    "Caídas del 50 % en pocos meses no son raras en cripto: podría quedarse sin máster.",
-    "Gana poco, pero el día de la matrícula los 8.000 € estarán ahí.",
-    "Si la bolsa cae un 20 % justo antes, le faltarían 1.600 € para la matrícula."
-   ]
   },
   "u4l3-6": {
    "prompt": "S&P 500, septiembre de 2008. Imagina que aquí tienes el dinero de la entrada de un piso que pagas en 6 meses. ¿Qué crees que hizo el índice en los meses siguientes?",

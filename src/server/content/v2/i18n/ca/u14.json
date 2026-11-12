@@ -333,14 +333,6 @@
    ],
    "explanation": "Els principals combinen el dòlar amb una altra gran divisa. L'USD/TRY és un parell exòtic: més spread i més volatilitat."
   },
-  "u14l2-7": {
-   "prompt": "A la UE, un minorista pot operar amb CFD sobre parells de divises principals amb un palanquejament de fins a 1:30.",
-   "options": [
-    "Vertader",
-    "Fals"
-   ],
-   "explanation": "És el límit que va fixar l'ESMA el 2018 (a Espanya l'aplica la CNMV). Per als parells no principals és 1:20."
-  },
   "u14l2-9": {
    "prompt": "En Pablo obre 1 lot estàndard d'EUR/USD (100.000 €) amb 4.000 € de garantia. El parell cau 120 pips després d'una dada d'inflació. Què ha passat?",
    "options": [

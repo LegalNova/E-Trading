@@ -567,15 +567,6 @@
     "Valorar con datos actuales"
    ]
   },
-  "u27l6-3": {
-   "prompt": "«La acción estaba a 120 € y ahora a 70 €: está tirada de precio». ¿Qué sesgo es?",
-   "options": [
-    "FOMO",
-    "Recencia",
-    "Anclaje"
-   ],
-   "explanation": "El 120 € es un ancla: no dice nada del valor actual de la empresa."
-  },
   "u27l6-5": {
    "prompt": "Ana ha comprado una acción. Desde entonces solo lee foros alcistas y silencia a quien critica la empresa. ¿Qué le recomendarías como hábito?",
    "options": [
@@ -616,6 +607,20 @@
    "lines": [
     "Esta acción ha caído un 50 % 😍",
     "¡Está a mitad de precio, como en rebajas!"
+   ]
+  },
+  "u27l6-11": {
+   "prompt": "Un analista publica que cierta acción «vale 200 €». Semanas después, con peores resultados, tú sigues pensando en esos 200 €. ¿Qué te pasa?",
+   "options": [
+    "Me he anclado en la primera cifra que vi",
+    "Tengo sesgo de confirmación",
+    "Nada: 200 € es su valor"
+   ],
+   "explanation": "Cualquier número puede hacer de ancla. Vuelve a valorar con los datos de hoy.",
+   "feedback": [
+    "Eso: el ancla puede ser tu precio de compra, un máximo o una cifra de otro.",
+    "Eso sería buscar solo lo que te da la razón. Aquí el problema es aferrarte a un número.",
+    "Era una estimación hecha con otros datos. Si los datos cambian, la cifra también."
    ]
   },
   "u27l7-1": {

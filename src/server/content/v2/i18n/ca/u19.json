@@ -485,24 +485,6 @@
     "Això: qui va comprar al principi també va duplicar els diners. L'escala logarítmica ho ensenya tal com és."
    ]
   },
-  "u19l4-12": {
-   "prompt": "Què li contestes a la Lumi?",
-   "options": [
-    "Depèn de l'escala del gràfic",
-    "Sí: baixa un 75 % i puja un 75 %, es queda igual",
-    "No: després de caure un 75 % cal pujar molt més, un 300 %"
-   ],
-   "explanation": "Una caiguda gran demana una pujada molt més gran per recuperar-se: després d'un −75 % cal un +300 %. L'escala logarítmica respecta aquestes proporcions; la lineal, no.",
-   "feedback": [
-    "L'escala canvia com ho veus, no el que passa amb els teus diners.",
-    "No: després de caure un 75 %, pujar un 75 % el deixa molt per sota del màxim.",
-    "Això: els percentatges no són simètrics. El bitcoin va necessitar un 302 % per tornar-hi."
-   ],
-   "lines": [
-    "El bitcoin va caure un 75 % des del seu màxim del 2021.",
-    "Si ara puja un 75 %, torna on era?"
-   ]
-  },
   "u19l5-1": {
    "prompt": "Quina tendència té aquest gràfic? (NVIDIA · tancaments cada 3 sessions · març–maig del 2026)",
    "options": [

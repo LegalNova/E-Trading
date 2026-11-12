@@ -333,14 +333,6 @@
    ],
    "explanation": "The majors pair the dollar with another big currency. USD/TRY is an exotic pair: wider spreads and more volatility."
   },
-  "u14l2-7": {
-   "prompt": "In the EU, a retail client can trade CFDs on major currency pairs with leverage of up to 1:30.",
-   "options": [
-    "True",
-    "False"
-   ],
-   "explanation": "That's the limit ESMA set in 2018 (in Spain the CNMV applies it). For non-major pairs it's 1:20."
-  },
   "u14l2-9": {
    "prompt": "Pablo opens 1 standard lot of EUR/USD (€100,000) with €4,000 of margin. The pair falls 120 pips after an inflation figure. What has happened?",
    "options": [

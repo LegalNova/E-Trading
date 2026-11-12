@@ -381,15 +381,6 @@
    ],
    "explanation": "Less than 1 %, 4-7 %, around 15 % and 50-80 % a year."
   },
-  "u13l1-11": {
-   "prompt": "A cryptocurrency falls 90% from its peak. What has to happen for it to get back there?",
-   "options": [
-    "It has to multiply by 10",
-    "It has to rise 100%, doubling",
-    "It has to rise 90%, the same as it fell"
-   ],
-   "explanation": "If €10 is left of every €100, you need to multiply by 10 to get back: +900%. Rising as much as it fell isn't enough, because a 90% rise is calculated on the little that's left."
-  },
   "u13l1-12": {
    "prompt": "You have €10,000 and don't want to risk more than 1% (€100) on bitcoin. Place the stop below the last low and choose the amount.",
    "options": [],
@@ -502,20 +493,6 @@
     "He could end up owing money for something that's no longer worth anything.",
     "Good: if the only argument is that it's going up, the risk of losing everything is huge.",
     "He arrives just as the early buyers want to sell: the classic pump-and-dump victim."
-   ]
-  },
-  "u13l3-5": {
-   "prompt": "Some tokens Laura didn't buy appear in her wallet, and a website offers to swap them for money if she signs an authorisation. What does she do?",
-   "options": [
-    "Doesn't touch those tokens or sign anything",
-    "Sells them on any website that will let her",
-    "Signs: they're free"
-   ],
-   "explanation": "In crypto, \"free\" often costs everything you have in your wallet.",
-   "feedback": [
-    "Good: tokens you didn't ask for are a common bait to get you to sign a malicious permission.",
-    "The website that \"lets you sell them\" is usually the trap.",
-    "The signature can give permission to move all her tokens: that's how many fake airdrops work."
    ]
   },
   "u13l3-9": {

@@ -485,24 +485,6 @@
     "Eso: quien compró al principio también duplicó su dinero. La escala logarítmica lo enseña tal cual."
    ]
   },
-  "u19l4-12": {
-   "prompt": "¿Qué le contestas a Paula?",
-   "options": [
-    "Depende de la escala del gráfico",
-    "Sí: baja un 75 % y sube un 75 %, se queda igual",
-    "No: después de caer un 75 % hace falta subir mucho más, un 300 %"
-   ],
-   "explanation": "Una caída grande pide una subida mucho mayor para recuperarse: tras un −75 % hace falta un +300 %. La escala logarítmica respeta esas proporciones; la lineal, no.",
-   "feedback": [
-    "La escala cambia cómo lo ves, no lo que pasa con tu dinero.",
-    "No: tras caer un 75 %, subir un 75 % lo deja muy por debajo del máximo.",
-    "Eso: los porcentajes no son simétricos. Bitcoin necesitó un 302 % para volver."
-   ],
-   "lines": [
-    "Bitcoin cayó un 75 % desde su máximo de 2021.",
-    "Si ahora sube un 75 %, ¿vuelve a donde estaba?"
-   ]
-  },
   "u19l5-1": {
    "prompt": "¿Qué tendencia tiene este gráfico? (NVIDIA · cierres cada 3 sesiones · marzo–mayo de 2026)",
    "options": [

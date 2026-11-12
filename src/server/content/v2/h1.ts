@@ -326,7 +326,7 @@ export const u1l5 = lesson('u1l5', 'Interés simple e interés compuesto', [
   // que no cuadraban con la primera clase; ahora salen de growthPath, como las piezas
   order('Ordena de menos a más lo que tendrías tras 30 años apartando 100 € al mes.', ['Al 0 % al año', 'Al 2 % al año', 'Al 5 % al año', 'Al 7 % al año'], 'Más o menos 36.000 €, 49.000 €, 82.000 € y 117.000 €. Pones lo mismo en los cuatro casos, 36.000 €: unos pocos puntos al año cambian muchísimo el final.'),
   scenario('Tienes 22 años y puedes apartar 50 € al mes para invertir. ¿Qué haces?', [['Empiezo ya con 50 € y subo la aportación cuando pueda', 'Bien: con el tiempo de tu lado, empezar pronto pesa más que empezar con mucho.'], ['Espero a ganar más para empezar con algo «serio»', 'Esperar cuesta caro: los primeros euros son los que más años tienen para crecer.'], ['Lo gasto: 50 € no dan para nada', 'Al 7 % al año, 50 € al mes durante 40 años llegan a más de 120.000 €, con 24.000 € puestos.']], 0, 'Empezar pronto, aunque sea con poco, es lo que más aprovecha el interés compuesto. El 7 % es un ejemplo para ver el efecto, no una promesa: la bolsa sube unos años y baja otros.'),
-], { source: '1.3', minutes: 6, retire: [0, 1, 3, 5, 6, 7, 8] })
+], { source: '1.3', minutes: 6, retire: [0, 1, 3, 5, 6, 7, 8, 12] })
 
 const lessons = [h1l1, u8l1, u5l3, u6l1, u19l1, u1l5]
 export default lessons

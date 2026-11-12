@@ -589,20 +589,6 @@
    ],
    "explanation": "The CNMV supervises the markets in Spain, but it doesn't rate issuers."
   },
-  "u9l4-11": {
-   "prompt": "You want to keep the money for a flat deposit in bonds for 5 years. You're offered two: one from an AAA-rated issuer and another from a BB-rated company that pays quite a bit more. Which do you choose?",
-   "options": [
-    "The AAA-rated one, even if it pays less",
-    "The BB-rated one: it pays more",
-    "Half and half, to have some of each"
-   ],
-   "explanation": "A higher coupon is the price of a higher risk of default. For money you need on a set date, a high rating protects what matters; the extra interest is tempting, but it could cost you part of the deposit.",
-   "feedback": [
-    "Good: for money with a date that you can't afford to lose, the certainty of getting paid comes first.",
-    "It pays more because the risk of not getting paid is higher, and you can't gamble that money.",
-    "Better than all in BB, but you're still risking part of money you definitely need."
-   ]
-  },
   "u9l5-5": {
    "prompt": "What terms does the Spanish Treasury issue bills at?",
    "options": [

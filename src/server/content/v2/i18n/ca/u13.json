@@ -381,15 +381,6 @@
    ],
    "explanation": "Menys de l'1 %, un 4-7 %, al voltant del 15 % i un 50-80 % anual."
   },
-  "u13l1-11": {
-   "prompt": "Una criptomoneda cau un 90 % des del seu màxim. Què ha de passar perquè hi torni?",
-   "options": [
-    "Que es multipliqui per 10",
-    "Que pugi un 100 %, que la dupliqui",
-    "Que pugi un 90 %, el mateix que va caure"
-   ],
-   "explanation": "Si de cada 100 € te'n queden 10, cal multiplicar per 10 per tornar-hi: un +900 %. Pujar el mateix que va caure no n'hi ha prou, perquè el 90 % de pujada es calcula sobre el poc que queda."
-  },
   "u13l1-12": {
    "prompt": "Tens 10.000 € i no vols arriscar més d'un 1 % (100 €) en bitcoin. Col·loca l'stop per sota de l'últim mínim i tria l'import.",
    "options": [],
@@ -502,20 +493,6 @@
     "Podria acabar devent diners per una cosa que ja no val res.",
     "Bé: si l'únic argument és que puja, el risc de perdre-ho tot és enorme.",
     "Arriba quan els primers ja volen vendre: és just el perfil de víctima d'un pump and dump."
-   ]
-  },
-  "u13l3-5": {
-   "prompt": "A la Laura li apareixen a la wallet uns tokens que no va comprar, i una web li ofereix canviar-los per diners si signa una autorització. Què fa?",
-   "options": [
-    "No toca aquests tokens ni signa res",
-    "Els ven a qualsevol web que l'hi permeti",
-    "Signa: són gratis"
-   ],
-   "explanation": "El que és gratis en cripto sovint costa tot el que tens a la wallet.",
-   "feedback": [
-    "Bé: els tokens que no has demanat són un esquer habitual perquè signis un permís maliciós.",
-    "La web que «et deixa vendre'ls» sol ser el parany.",
-    "La signatura pot donar permís per moure tots els seus tokens: així funcionen molts falsos airdrops."
    ]
   },
   "u13l3-9": {

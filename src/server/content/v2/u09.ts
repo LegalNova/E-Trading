@@ -217,7 +217,7 @@ export default unit({
       num('Del mismo plazo, un bono alemán paga un 2,5 % y uno español un 3,2 %. ¿Cuál es la prima de riesgo en puntos básicos? (1 punto = 100 pb)', 70, 'pb', '3,2 − 2,5 = 0,7 puntos = 70 puntos básicos.'),
       timed(single('Rápido: ¿qué significa una calificación D?', ['Impago', 'Muy segura', 'Sin calificar'], 0, 'D es la nota de un emisor que ya no ha pagado.'), 10),
       scenario('Quieres guardar en bonos el dinero de la entrada de un piso para dentro de 5 años. Te ofrecen dos: uno de un emisor con nota AAA y otro de una empresa con nota BB que paga bastante más. ¿Cuál eliges?', [['El de nota BB: paga más', 'Paga más porque el riesgo de no cobrar es mayor, y ese dinero no te lo puedes jugar.'], ['El de nota AAA, aunque pague menos', 'Bien: para un dinero con fecha que no puedes perder, manda la seguridad de cobrar.'], ['Mitad y mitad, para tener de los dos', 'Mejor que todo en BB, pero sigues arriesgando parte de un dinero que necesitas sí o sí.']], 1, 'Un cupón más alto es el precio de un riesgo de impago mayor. Para un dinero que necesitas en una fecha, la nota alta protege lo que importa; el interés extra tienta, pero puede costarte parte de la entrada.'),
-    ], { source: '2.2', minutes: 6, retire: [3, 4, 5, 8, 9] }),
+    ], { source: '2.2', minutes: 6, retire: [3, 4, 5, 8, 9, 10] }),
 
     // Rehecha en la auditoría (RED-7, RED-16 y RED-31): depósitos, cuentas y garantía de depósitos se explican en u11l5.
     // Esta clase se queda con las letras: compra al descuento, subasta, cómo pedirlas e impuestos.

@@ -589,20 +589,6 @@
    ],
    "explanation": "La CNMV supervisa los mercados en España, pero no pone notas a los emisores."
   },
-  "u9l4-11": {
-   "prompt": "Quieres guardar en bonos el dinero de la entrada de un piso para dentro de 5 años. Te ofrecen dos: uno de un emisor con nota AAA y otro de una empresa con nota BB que paga bastante más. ¿Cuál eliges?",
-   "options": [
-    "El de nota AAA, aunque pague menos",
-    "El de nota BB: paga más",
-    "Mitad y mitad, para tener de los dos"
-   ],
-   "explanation": "Un cupón más alto es el precio de un riesgo de impago mayor. Para un dinero que necesitas en una fecha, la nota alta protege lo que importa; el interés extra tienta, pero puede costarte parte de la entrada.",
-   "feedback": [
-    "Bien: para un dinero con fecha que no puedes perder, manda la seguridad de cobrar.",
-    "Paga más porque el riesgo de no cobrar es mayor, y ese dinero no te lo puedes jugar.",
-    "Mejor que todo en BB, pero sigues arriesgando parte de un dinero que necesitas sí o sí."
-   ]
-  },
   "u9l5-5": {
    "prompt": "¿A qué plazos emite letras el Tesoro?",
    "options": [

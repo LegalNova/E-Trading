@@ -55,7 +55,7 @@ export default unit({
       timed(single('Rápido: una app de mensajería vale más con cada usuario nuevo. ¿Qué foso es?', ['Efecto red', 'Ventaja en costes', 'Patente'], 0, 'Cada usuario hace el producto más útil para los demás.'), 10),
       num('Microsoft tardó unos 16 años en recuperar su máximo de 2000. Si la inflación hubiera sido del 2 % anual, ¿cuánto poder de compra habría perdido quien recuperó justo ese precio? (en %)', 27, '%', '1 ÷ 1,02¹⁶ ≈ 0,728: un 27 % menos de poder de compra en 16 años, sin contar dividendos.', 3),
       chat(['Me encanta esta marca, la uso cada día 😍', '¿Eso significa que tiene foso y que es buena inversión?'], '¿Qué le contestas a Lumi?', [['Sí: si te gusta a ti, le gusta a todos', 'Que te guste es un comienzo, no un análisis.'], ['Puede tener foso, pero hay que verlo en sus márgenes y su ROIC, y además mirar el precio', 'Vale: que me guste el producto no me dice si la acción está cara.'], ['No, las marcas nunca son foso', 'Las marcas fuertes pueden ser un foso muy potente.']], 1, 'Busca el foso en los números y no olvides el precio.'),
-    ], { source: '5.7', minutes: 6, retire: [5, 6, 7, 8] }),
+    ], { source: '5.7', minutes: 6, retire: [5, 6, 7, 8, 9] }),
 
     lesson('u18l2', 'Sectores cíclicos y defensivos', [
       play({
@@ -342,6 +342,7 @@ export default unit({
       multi('¿Qué debe tener una buena tesis de inversión? Marca todo lo que corresponda.', ['Cómo gana dinero el negocio', 'Por qué el precio está por debajo del valor', 'Qué te haría vender', '«Porque está subiendo mucho»'], [0, 1, 2], 'Una tesis explica por qué el negocio vale más que su precio, y cuándo dejarías de creerlo.'),
       scenario('Aplicas la lista a dos empresas inventadas del mismo sector, al mismo PER. A crece, genera caja y tiene más caja que deuda. B crece igual, pero su beneficio no llega a la caja y amplía capital cada año. ¿Cuál pasa mejor el examen?', [['A: crece, convierte el beneficio en caja y está sana', 'Eso: al mismo precio, la que genera caja y no te diluye es mejor compra.'], ['B: crece lo mismo', 'Crece en papel, pero no genera caja y te diluye cada año.'], ['Las dos igual: tienen el mismo PER', 'El PER es igual; la calidad del beneficio, no.']], 0, 'Al mismo precio, gana la que responde mejor a «¿genera caja?» y «¿está sana?». Las alarmas suelen estar en la caja y la deuda, no en el titular del beneficio.'),
       chat(['Ya he hecho mi análisis de Inditex: es un negocio buenísimo.', '¿Compro ya?'], '¿Qué le contestas a Lumi?', [['Falta la pregunta 8: ¿el precio deja margen de seguridad?', 'Cierto: un gran negocio comprado caro puede ser mala inversión.'], ['Sí: si es buen negocio, el precio da igual', 'Recuerda a Microsoft en 2000: gran negocio, precio carísimo.'], ['No: los análisis no sirven para nada', 'Sirven para decidir con criterio, no para adivinar el precio.']], 0, 'La lista no termina en «es buen negocio»: también hay que decidir si el precio es razonable y qué te haría vender.'),
-    ], { source: '5.9', minutes: 6, retire: [1, 2, 3, 4, 5, 6, 8] }),
+      buckets('¿Es un dato para tu análisis o es ruido?', ['Dato', 'Ruido'], [['Las ventas de los últimos cinco años', 0], ['Un mensaje que dice que la acción «va a explotar»', 1], ['La deuda frente a lo que gana', 0], ['Que ha subido un 8 % esta semana', 1], ['De dónde vienen sus ingresos', 0]], 'Un análisis se hace con el negocio y sus cuentas; lo que hizo el precio esta semana o lo que se dice en redes no cuenta.'),
+    ], { source: '5.9', minutes: 6, retire: [1, 2, 3, 4, 5, 6, 8, 11] }),
   ],
 })

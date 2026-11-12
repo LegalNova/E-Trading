@@ -381,15 +381,6 @@
    ],
    "explanation": "Menos del 1 %, un 4-7 %, en torno al 15 % y un 50-80 % anual."
   },
-  "u13l1-11": {
-   "prompt": "Una criptomoneda cae un 90 % desde su máximo. ¿Qué tiene que pasar para que vuelva a él?",
-   "options": [
-    "Que se multiplique por 10",
-    "Que suba un 100 %, que la duplique",
-    "Que suba un 90 %, lo mismo que cayó"
-   ],
-   "explanation": "Si de cada 100 € te quedan 10, hay que multiplicar por 10 para volver: un +900 %. Subir lo mismo que cayó no basta, porque el 90 % de subida se calcula sobre lo poco que queda."
-  },
   "u13l1-12": {
    "prompt": "Tienes 10.000 € y no quieres arriesgar más de un 1 % (100 €) en bitcoin. Coloca el stop por debajo del último mínimo y elige el importe.",
    "options": [],
@@ -502,20 +493,6 @@
     "Podría acabar debiendo dinero por algo que ya no vale nada.",
     "Bien: si el único argumento es que sube, el riesgo de perderlo todo es enorme.",
     "Llega cuando los primeros ya quieren vender: es justo el perfil de víctima de un pump and dump."
-   ]
-  },
-  "u13l3-5": {
-   "prompt": "A Laura le aparecen en la wallet unos tokens que no compró, y una web le ofrece cambiarlos por dinero si firma una autorización. ¿Qué hace?",
-   "options": [
-    "No toca esos tokens ni firma nada",
-    "Los vende en cualquier web que se lo permita",
-    "Firma: son gratis"
-   ],
-   "explanation": "Lo gratis en cripto a menudo cuesta todo lo que tienes en la wallet.",
-   "feedback": [
-    "Bien: los tokens que no has pedido son un cebo habitual para que firmes un permiso malicioso.",
-    "La web que «te deja venderlos» suele ser la trampa.",
-    "La firma puede dar permiso para mover todos sus tokens: así funcionan muchos falsos airdrops."
    ]
   },
   "u13l3-9": {

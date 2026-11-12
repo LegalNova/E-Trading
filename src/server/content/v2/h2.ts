@@ -54,7 +54,8 @@ export const u7l1 = lesson('u7l1', 'Qué es un índice', [
   // Nuevas (sección 0): sustituyen a las dos de cálculo
   upDown('Este gráfico es un índice real: la media de las grandes empresas de un país, sin nombre ni fecha. ¿Qué hizo en las 10 sesiones siguientes?', 'ud-39', 'Un índice resume en una sola línea cómo les fue a todas sus empresas juntas: por eso sirve de termómetro del mercado. Lo que no hace es adivinar el futuro: ni el índice entero se puede prever a dos semanas vista.'),
   scenario('Imagina: tu cartera de acciones españolas ha ganado un 5 % este año y el IBEX 35, un 12 %. Un amigo te dice que eres un crack. ¿Qué concluyes?', [['Que lo he hecho peor que el índice: copiarlo me habría dado más', 'Eso es: un fondo que copia el IBEX 35 te habría dado más, y sin elegir empresas.'], ['Que soy un crack: he ganado dinero', 'Ganar no basta: tienes que compararte con lo que habrías ganado copiando el índice.'], ['Que el índice no tiene nada que ver con mi cartera', 'Si tienes acciones españolas, el IBEX 35 es justo tu vara de medir.']], 0, 'Un resultado solo es bueno o malo comparado con su índice: con un 5 % frente a un 12 %, copiar el índice habría ganado más. «He ganado dinero» no basta: una ganancia sin vara de medir no dice si lo hiciste bien.'),
-], { source: '2.6', minutes: 6, retire: [1, 2, 3, 4, 7, 8, 10] })
+  num('Un índice pasa de 5.000 a 5.200 puntos. ¿Cuánto ha subido, en porcentaje?', 4, '%', '200 ÷ 5.000 = 0,04 → 4 %. En un índice importa la variación, no los puntos.'),
+], { source: '2.6', minutes: 6, retire: [1, 2, 3, 4, 7, 8, 10, 11] })
 
 // Antes en u10 (mismo id: conserva progreso y traducciones)
 export const u10l2 = lesson('u10l2', 'Qué es un ETF', [
@@ -285,7 +286,7 @@ export const u4l3 = lesson('u4l3', 'Tu horizonte temporal', [
   buckets('¿Corto o largo plazo?', ['Corto plazo (menos de 3 años)', 'Largo plazo (más de 10 años)'], [['Jubilación', 1], ['Vacaciones del verano que viene', 0], ['Ahorro para la universidad de un bebé', 1], ['Cambiar de móvil', 0], ['Independencia financiera a los 50 (tienes 25)', 1], ['Fianza de un alquiler dentro de 6 meses', 0]], 'Lo que necesitas pronto, sin riesgo; lo lejano puede aguantar más altibajos.'),
   num('Si el S&P 500 ha caído aproximadamente uno de cada cuatro años, ¿en cuántos años de cada 40 esperarías caídas, más o menos?', 10, 'años', '40 ÷ 4 = 10 años. Las caídas son normales: lo que cambia con el plazo es el tiempo para recuperarse.'),
   fill('No se invierte en bolsa el dinero que se necesita ____.', 'pronto', ['nunca', 'en 30 años', 'para jubilarse'], 'No porque vaya a bajar seguro, sino porque puede estar bajando justo cuando lo necesites.'),
-], { source: '1.5', minutes: 6, retire: [3, 6, 8] })
+], { source: '1.5', minutes: 6, retire: [3, 4, 6, 8] })
 
 const lessons = [u7l1, u10l2, u29l1, u25l2, u10l3, u4l3]
 export default lessons

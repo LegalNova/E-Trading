@@ -485,24 +485,6 @@
     "That's it: whoever bought at the start also doubled their money. The logarithmic scale shows it as it is."
    ]
   },
-  "u19l4-12": {
-   "prompt": "What do you reply to Lumi?",
-   "options": [
-    "It depends on the chart's scale",
-    "Yes: down 75 % and up 75 %, it's back to the same",
-    "No: after falling 75 % it needs to rise much more, 300 %"
-   ],
-   "explanation": "A big fall needs a much bigger rise to recover: after −75 % you need +300 %. The logarithmic scale respects those proportions; the linear one doesn't.",
-   "feedback": [
-    "The scale changes how you see it, not what happens to your money.",
-    "No: after falling 75 %, a 75 % rise leaves it well below the high.",
-    "That's it: percentages aren't symmetrical. Bitcoin needed 302 % to get back."
-   ],
-   "lines": [
-    "Bitcoin fell 75 % from its 2021 high.",
-    "If it now rises 75 %, is it back where it was?"
-   ]
-  },
   "u19l5-1": {
    "prompt": "What's the trend on this chart? (NVIDIA · closes every 3 sessions · March–May 2026)",
    "options": [

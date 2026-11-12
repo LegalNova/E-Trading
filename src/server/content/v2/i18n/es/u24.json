@@ -605,15 +605,6 @@
     "Arriesgaba justo 100 €. ¿Ha sido un desastre?"
    ]
   },
-  "u24l7-3": {
-   "prompt": "El sistema B acierta el 60 % y pierde dinero. ¿Por qué?",
-   "options": [
-    "Porque opera poco",
-    "Porque sus ganancias medias son pequeñas frente a sus pérdidas",
-    "Porque acierta demasiado"
-   ],
-   "explanation": "Gana 0,5R y pierde 1R: los fallos pesan el doble que los aciertos."
-  },
   "u24l7-4": {
    "prompt": "Puedes seguir uno de estos tres sistemas, todos con pérdidas de 1R. ¿Cuál eliges?",
    "options": [
