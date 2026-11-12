@@ -296,8 +296,8 @@
    "prompt": "Què és una SOCIMI?",
    "options": [
     "Una hipoteca per a inversors",
-    "Una empresa cotitzada que inverteix en immobles en lloguer",
-    "Un fons garantit per l'Estat"
+    "Una cotitzada que lloga immobles",
+    "Un fons d'immobles garantit per l'Estat"
    ],
    "explanation": "És la versió espanyola dels REIT: immobles en lloguer dins d'una empresa que cotitza."
   },
@@ -329,18 +329,18 @@
    "prompt": "Quins riscos té invertir en una SOCIMI? Marca'ls tots.",
    "options": [
     "Que la perjudiquin les pujades de tipus",
-    "Que el seu sector vagi malament (per exemple, oficines buides)",
+    "Respondre dels seus deutes amb el teu patrimoni",
     "Haver de buscar llogater tu mateix",
     "Que el seu preu caigui amb la borsa"
    ],
-   "explanation": "La gestió dels immobles la fa la SOCIMI; tu assumeixes els riscos de mercat, de tipus i del sector."
+   "explanation": "El seu preu cau amb la borsa i les pujades de tipus la perjudiquen. De buscar llogaters se n'ocupa la SOCIMI i, com a accionista, no respons dels seus deutes: el màxim que pots perdre és el que has invertit."
   },
   "u11l1-11": {
    "prompt": "Tens 300 € i vols invertir en immobles espanyols. Quina opció té sentit?",
    "options": [
     "Esperar a tenir per a l'entrada d'un pis",
     "Una plataforma que promet un 15 % garantit en pisos",
-    "Comprar accions d'una SOCIMI de l'IBEX 35, com Merlin Properties"
+    "Accions d'una SOCIMI cotitzada, com Merlin"
    ],
    "explanation": "Una SOCIMI et deixa invertir en immobles amb pocs diners, diversificat i amb liquiditat, a canvi que el seu preu es mogui cada dia. La rendibilitat garantida tempta, però en inversió no existeix.",
    "feedback": [
@@ -352,9 +352,9 @@
   "u11l1-12": {
    "prompt": "Què li contestes?",
    "options": [
-    "Sí, i a més les cobreix l'FGD",
+    "Sí, i a més les cobreix el Fons de Garantia de Dipòsits",
     "Sí: el dividend és fix",
-    "No: el dividend no està garantit i el preu pot caure com la borsa"
+    "No: ni el dividend ni el preu estan garantits"
    ],
    "explanation": "Una SOCIMI és una acció: reparteix molt perquè la llei l'obliga, però el seu dividend depèn dels lloguers i el seu preu cotitza. Comparar-la amb un dipòsit tempta pel dividend, però no té interès fix ni FGD.",
    "feedback": [
@@ -413,7 +413,7 @@
    "prompt": "La Marta veu a les xarxes algú que «guanya milers al mes venent opcions» i vol provar-ho amb els seus estalvis. Què ha de tenir en compte?",
    "options": [
     "Que vendre opcions és cobrar primes fàcils sense risc",
-    "Que venent opcions pot perdre molt més del que cobra, i que primer ho ha d'entendre sense diners reals",
+    "Que pot perdre molt més del que cobra",
     "Que si surt a les xarxes és que està comprovat"
    ],
    "explanation": "Qui ven una opció cobra poc i assumeix un risc que pot ser enorme.",
@@ -475,8 +475,8 @@
   "u11l3-8": {
    "prompt": "Per què la majoria de minoristes perden diners amb CFD?",
    "options": [
-    "El palanquejament converteix moviments petits en pèrdues grans, i a més hi ha costos cada nit",
-    "Perquè només es poden operar de matinada",
+    "Pel palanquejament i els costos de cada nit",
+    "Perquè només es poden operar de matinada, amb poca liquiditat",
     "Perquè els CFD estan prohibits"
    ],
    "explanation": "Palanquejament, costos de finançament i decisions en calent: una combinació que castiga sobretot el principiant."
@@ -485,8 +485,8 @@
    "prompt": "En Pablo va obrir un CFD amb palanquejament i va perdent. El bròquer l'avisa que la seva garantia ha baixat a la meitat del que s'exigeix. Què passa si continua caient?",
    "options": [
     "El bròquer li torna els diners perduts",
-    "El bròquer tanca la posició i no pot perdre més del que té al compte",
-    "Res, el bròquer espera que es recuperi"
+    "El bròquer li tanca la posició a la força",
+    "Res: el bròquer espera que el preu es recuperi"
    ],
    "explanation": "Les normes europees limiten el dany (tancament al 50 % i sense saldo negatiu), però no eviten perdre el que s'ha dipositat.",
    "feedback": [
@@ -498,9 +498,9 @@
   "u11l4-3": {
    "prompt": "Com tributa el rescat d'un pla de pensions?",
    "options": [
-    "A la base de l'estalvi, només pel guany",
+    "A la base de l'estalvi, com un fons, i només pel guany",
     "No tributa",
-    "Com a rendiment del treball, al teu tipus marginal, per tot el que rescates"
+    "Com a rendiment del treball, per tot el que rescates"
    ],
    "explanation": "Com que les aportacions van desgravar en entrar, en sortir tributa tot."
   },
@@ -517,11 +517,11 @@
    "prompt": "Quan pots rescatar un pla de pensions? Marca-ho tot.",
    "options": [
     "Les aportacions amb més de 10 anys d'antiguitat",
-    "Quan vulguis per anar-te'n de vacances",
-    "Per atur de llarga durada",
+    "Quan vulguis, pagant una penalització",
+    "Per comprar el teu primer habitatge",
     "Quan et jubilis"
    ],
-   "explanation": "Fora d'aquests supòsits, els diners estan bloquejats."
+   "explanation": "Quan et jubilis i amb les aportacions de més de 10 anys; també en casos greus, com l'atur de llarga durada. Fora d'aquests supòsits els diners estan bloquejats: ni pagant una penalització ni per comprar un habitatge."
   },
   "u11l4-9": {
    "prompt": "Ordena la vida d'un pla de pensions.",
@@ -536,9 +536,9 @@
   "u11l4-11": {
    "prompt": "En Javier té 50 anys, un sou alt i un tipus marginal de l'IRPF alt. No necessitarà aquests diners fins que es jubili. Li ofereixen un pla indexat amb comissions baixes. Li encaixa?",
    "options": [
-    "Sí: desgrava a un tipus alt, no necessita els diners i els costos són baixos",
+    "Sí: desgrava molt i els costos són baixos",
     "Només si li garanteixen la rendibilitat",
-    "No: un pla de pensions mai no compensa"
+    "No: un pla de pensions no compensa mai a ningú"
    ],
    "explanation": "El pla compensa amb un tipus marginal alt avui, comissions baixes i uns diners que no es necessitaran, i en Javier compleix les tres condicions. Descartar-lo sempre o exigir garanties tempta, però ignora la seva situació.",
    "feedback": [
@@ -550,9 +550,9 @@
   "u11l4-12": {
    "prompt": "Què li contestes?",
    "options": [
-    "No: queda bloquejat excepte a la jubilació, en casos concrets o amb aportacions de més de 10 anys",
+    "No: queda bloquejat excepte en casos concrets",
     "Sí, funciona com un compte",
-    "Sí, pagant una petita comissió"
+    "Sí, en qualsevol moment, pagant una petita comissió"
    ],
    "explanation": "Un pla de pensions només es rescata a la jubilació, en casos concrets o amb aportacions de més de 10 anys. Fer-lo servir de coixí tempta per la desgravació, però un coixí ha d'estar disponible al moment.",
    "feedback": [
@@ -610,8 +610,8 @@
    "prompt": "Un compte anuncia un «4 % TAE». La lletra petita: només durant 3 mesos i fins a 5.000 €. Tens 10.000 € de coixí. Què fas?",
    "options": [
     "Ho poso en accions, que rendeixen més",
-    "El contracto ara mateix: un 4 % és molt",
-    "Comparo el que em donaria en tot l'any amb altres comptes sense aquests límits"
+    "El contracto ara mateix: un 4 % és molt i es pot acabar",
+    "Calculo el que em donaria en tot l'any"
    ],
    "explanation": "Les ofertes amb límit de temps o de quantitat paguen molt menys del que anuncien sobre tots els teus diners. El número gran de l'anunci tempta, però el que mana són les condicions.",
    "feedback": [

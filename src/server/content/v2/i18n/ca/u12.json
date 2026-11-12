@@ -372,9 +372,9 @@
   "u12l1-2": {
    "prompt": "Qui controla una blockchain pública com la de Bitcoin?",
    "options": [
-    "L'empresa que la va crear",
+    "L'empresa que la va crear i la manté",
     "Un banc central",
-    "Ningú tot sol: milers de nodes comparteixen el registre"
+    "Ningú tot sol: milers de nodes"
    ],
    "explanation": "Aquest és el seu tret clau: el registre està repartit entre molts participants."
   },
@@ -410,16 +410,16 @@
     "Que sigui molt difícil reescriure el passat",
     "Que el preu de la cripto no baixi",
     "Que qualsevol pugui verificar les transaccions",
-    "Un registre sense un intermediari central"
+    "Que ningú et pugui robar les criptos"
    ],
-   "explanation": "La blockchain protegeix el registre, no el preu."
+   "explanation": "La blockchain protegeix el registre: és molt difícil reescriure'l i qualsevol el pot verificar. No protegeix el preu ni les teves claus: si te les roben, perds les criptos."
   },
   "u12l1-9": {
    "prompt": "En Pablo llegeix en un anunci: «Token X, amb tecnologia blockchain: inversió segura al 100 %». Què en pensa?",
    "options": [
-    "Que blockchain no garanteix res del valor, i que «segur al 100 %» és un senyal d'alarma",
+    "Que «segur al 100 %» és un senyal d'alarma",
     "Que ha d'invertir ja, abans que pugi",
-    "Si fa servir blockchain, és segur"
+    "Que, si fa servir blockchain, la inversió és segura"
    ],
    "explanation": "Fer servir paraules tècniques per prometre seguretat és una tàctica habitual de les estafes.",
    "feedback": [
@@ -470,9 +470,9 @@
   "u12l2-10": {
    "prompt": "Què hi ha darrere del preu de Bitcoin?",
    "options": [
-    "Els beneficis d'una empresa",
+    "Els beneficis de l'empresa que l'emet",
     "Els interessos que paga",
-    "El que altres estiguin disposats a pagar-ne"
+    "El que altres vulguin pagar-ne"
    ],
    "explanation": "No genera beneficis ni interessos: el seu preu depèn de l'adopció i de la demanda."
   },
@@ -480,7 +480,7 @@
    "prompt": "Bitcoin fa setmanes que cau. En Nico en té una mica i llegeix a les xarxes: «Després de cada halving sempre puja, fica-hi tot el que puguis». Què fa?",
    "options": [
     "Hi fica tots els estalvis: el halving ho garanteix",
-    "Segueix el seu pla: només hi posa el que podria perdre sencer, passi el que passi amb el halving",
+    "Segueix el seu pla: només el que podria perdre",
     "Ho ven tot perquè, si cau, és que Bitcoin ha mort"
    ],
    "explanation": "La bona és seguir un pla amb una quantitat que puguis perdre. El «sempre puja» confon escassetat programada amb preu garantit.",
@@ -503,8 +503,8 @@
   "u12l3-2": {
    "prompt": "Què guanyen els miners per afegir un bloc?",
    "options": [
-    "Bitcoins nous i les comissions de les transaccions",
-    "Un sou del banc central",
+    "Bitcoins nous i comissions",
+    "Un sou fix del banc central",
     "Accions de Bitcoin"
    ],
    "explanation": "Amb cada halving el premi baixa, així que les comissions pesaran cada vegada més."
@@ -538,19 +538,19 @@
   "u12l3-10": {
    "prompt": "Què és cert sobre la prova de treball? Marca-ho tot.",
    "options": [
-    "Fa molt car atacar la xarxa",
+    "Fa que enviar bitcoins sigui gratis",
     "Els miners competeixen per resoldre un càlcul",
     "La fa servir Ethereum des del 2022",
     "Consumeix molta electricitat"
    ],
-   "explanation": "Ethereum la va abandonar el 2022 per passar a la prova de participació."
+   "explanation": "Els miners competeixen per resoldre un càlcul, i això consumeix molta electricitat. Enviar bitcoins no és gratis: es paguen comissions. I Ethereum la va abandonar el 2022 per passar a la prova de participació."
   },
   "u12l3-11": {
    "prompt": "Un conegut li ofereix a en Leo un «pla de mineria al núvol»: paga una quota i cobra un 2 % diari fix, sense fer res. Què en pensa en Leo?",
    "options": [
     "Que és una manera còmoda de minar sense màquines",
     "Que prova amb poc, per si de cas",
-    "Que un rendiment fix no encaixa amb la mineria real, i que és un senyal clar d'estafa"
+    "Que un rendiment fix és senyal d'estafa"
    ],
    "explanation": "La bona encerta perquè la mineria no dona un rendiment fix: depèn del preu, la dificultat i la competència. Provar amb poc continua sent donar diners a un possible frau.",
    "feedback": [
@@ -595,8 +595,8 @@
    "prompt": "Què afegeix Ethereum al que fa Bitcoin?",
    "options": [
     "Un màxim de 21 milions de monedes",
-    "La garantia d'un banc central",
-    "Executar programes (contractes intel·ligents) a la blockchain"
+    "La garantia d'un banc central al darrere",
+    "Executar programes a la blockchain"
    ],
    "explanation": "Per això sobre Ethereum s'hi construeixen tokens, DeFi i NFT."
   },
@@ -628,9 +628,9 @@
   "u12l4-11": {
    "prompt": "La Irene vol enviar uns tokens sense cap pressa. La seva wallet avisa que avui el gas és caríssim perquè la xarxa està saturada. Què fa?",
    "options": [
-    "Els envia ja: el gas és una comissió fixa",
+    "Els envia ara mateix: el gas és una comissió fixa",
     "Els envia per Bitcoin per no pagar gas",
-    "Espera un moment amb la xarxa més tranquil·la"
+    "Espera que la xarxa estigui més tranquil·la"
    ],
    "explanation": "La bona funciona perquè el gas puja i baixa amb la demanda de la xarxa. El gas no és una tarifa fixa, sinó un preu que canvia.",
    "feedback": [
@@ -642,8 +642,8 @@
   "u12l5-1": {
    "prompt": "Què intenta una stablecoin?",
    "options": [
-    "Valer sempre el mateix que una moneda, com 1 dòlar",
-    "Pujar més que Bitcoin",
+    "Valer sempre el mateix que una moneda",
+    "Pujar més que Bitcoin amb menys ensurts",
     "Pagar un dividend"
    ],
    "explanation": "El seu objectiu és l'estabilitat respecte d'una moneda, no la revaloració."
@@ -678,9 +678,9 @@
     "Tenir reserves suficients",
     "Garantir una rendibilitat anual",
     "Permetre bescanviar els tokens",
-    "Estar autoritzats"
+    "Estar coberts pel Fons de Garantia de Dipòsits"
    ],
-   "explanation": "MiCA busca que el token estigui avalat i es pugui bescanviar, no que rendeixi res."
+   "explanation": "MiCA exigeix reserves suficients i que puguis bescanviar el token. No exigeix que rendeixi res, i una stablecoin no és un dipòsit: no la cobreix el Fons de Garantia de Dipòsits."
   },
   "u12l5-9": {
    "prompt": "El març del 2023, la stablecoin ____ va caure a uns 0,87 $ per la fallida d'un banc on tenia reserves.",
@@ -696,8 +696,8 @@
    "prompt": "Quin risc principal té una stablecoin amb reserves?",
    "options": [
     "Que el seu preu pugi massa",
-    "Que pagui massa interessos",
-    "Que les reserves no existeixin, no estiguin disponibles o perdin valor"
+    "Que pagui massa interessos a qui la tingui",
+    "Que les reserves fallin o perdin valor"
    ],
    "explanation": "Per això MiCA exigeix reserves suficients, separades i auditables."
   },
@@ -732,8 +732,8 @@
   "u12l6-3": {
    "prompt": "Què permet recuperar la teva frase llavor?",
    "options": [
-    "Totes les claus i les criptos de la teva wallet",
-    "Només la contrasenya de l'exchange",
+    "Totes les claus de la teva wallet",
+    "Només la contrasenya del teu compte de l'exchange",
     "Res, és decorativa"
    ],
    "explanation": "Per això qui la tingui es pot quedar amb tot."
@@ -741,7 +741,7 @@
   "u12l6-4": {
    "prompt": "On és més segur guardar la teva frase llavor?",
    "options": [
-    "En paper o metall, en un lloc segur fora d'internet",
+    "En paper o metall, fora d'internet",
     "En un correu que t'envies a tu mateix",
     "En una foto del mòbil"
    ],
@@ -781,11 +781,11 @@
    "prompt": "Què exigeix MiCA a un exchange que opera a la UE? Marca-ho tot.",
    "options": [
     "Separar les criptos dels clients de les pròpies",
-    "Un sistema de reclamacions",
+    "Cobrir les teves criptos amb un fons de garantia",
     "Garantir que el preu no baixi",
     "Autorització d'un supervisor"
    ],
-   "explanation": "MiCA regula la plataforma, no el preu de les criptos."
+   "explanation": "MiCA exigeix autorització i separar les criptos dels clients de les pròpies. No regula el preu, i no hi ha cap fons de garantia per a criptos com el dels dipòsits."
   },
   "u12l7-2": {
    "prompt": "On comproves si un exchange està autoritzat? Marca-ho tot.",
@@ -801,8 +801,8 @@
    "prompt": "Segons la CNMV, des de l'1 de juliol de 2026, qui pot prestar serveis de criptoactius a Espanya?",
    "options": [
     "Qualsevol amb un web",
-    "Només els proveïdors autoritzats segons MiCA",
-    "Només els bancs espanyols"
+    "Només proveïdors amb autorització MiCA",
+    "Només els bancs espanyols de tota la vida"
    ],
    "explanation": "Aquell dia es va acabar el període transitori a Espanya."
   },

@@ -296,8 +296,8 @@
    "prompt": "¿Qué es una SOCIMI?",
    "options": [
     "Una hipoteca para inversores",
-    "Una empresa cotizada que invierte en inmuebles en alquiler",
-    "Un fondo garantizado por el Estado"
+    "Una cotizada que alquila inmuebles",
+    "Un fondo de inmuebles garantizado por el Estado"
    ],
    "explanation": "Es la versión española de los REIT: inmuebles en alquiler dentro de una empresa que cotiza."
   },
@@ -329,18 +329,18 @@
    "prompt": "¿Qué riesgos tiene invertir en una SOCIMI? Marca todos.",
    "options": [
     "Que le perjudiquen las subidas de tipos",
-    "Que su sector vaya mal (por ejemplo, oficinas vacías)",
+    "Responder de sus deudas con tu patrimonio",
     "Tener que buscar inquilino tú mismo",
     "Que su precio caiga con la bolsa"
    ],
-   "explanation": "La gestión de los inmuebles la hace la SOCIMI; tú asumes los riesgos de mercado, de tipos y del sector."
+   "explanation": "Su precio cae con la bolsa y las subidas de tipos la perjudican. De buscar inquilinos se ocupa la SOCIMI y, como accionista, no respondes de sus deudas: lo máximo que puedes perder es lo invertido."
   },
   "u11l1-11": {
    "prompt": "Tienes 300 € y quieres invertir en inmuebles españoles. ¿Qué opción tiene sentido?",
    "options": [
     "Esperar a tener para la entrada de un piso",
     "Una plataforma que promete un 15 % garantizado en pisos",
-    "Comprar acciones de una SOCIMI del IBEX 35, como Merlin Properties"
+    "Acciones de una SOCIMI cotizada, como Merlin"
    ],
    "explanation": "Una SOCIMI te deja invertir en inmuebles con poco dinero, diversificado y con liquidez, a cambio de que su precio se mueva cada día. La rentabilidad garantizada tienta, pero en inversión no existe.",
    "feedback": [
@@ -352,9 +352,9 @@
   "u11l1-12": {
    "prompt": "¿Qué le contestas?",
    "options": [
-    "Sí, y además las cubre el FGD",
+    "Sí, y además las cubre el Fondo de Garantía de Depósitos",
     "Sí: el dividendo es fijo",
-    "No: el dividendo no está garantizado y el precio puede caer como la bolsa"
+    "No: ni el dividendo ni el precio están garantizados"
    ],
    "explanation": "Una SOCIMI es una acción: reparte mucho porque la ley la obliga, pero su dividendo depende de los alquileres y su precio cotiza. Compararla con un depósito tienta por el dividendo, pero no tiene interés fijo ni FGD.",
    "feedback": [
@@ -413,7 +413,7 @@
    "prompt": "Marta ve en redes a alguien que «gana miles al mes vendiendo opciones» y quiere probar con sus ahorros. ¿Qué tiene en cuenta?",
    "options": [
     "Que vender opciones es cobrar primas fáciles sin riesgo",
-    "Que vendiendo opciones puede perder mucho más de lo que cobra, y que primero debe entenderlo sin dinero real",
+    "Que puede perder mucho más de lo que cobra",
     "Que si sale en redes es que está comprobado"
    ],
    "explanation": "Quien vende una opción cobra poco y asume un riesgo que puede ser enorme.",
@@ -475,8 +475,8 @@
   "u11l3-8": {
    "prompt": "¿Por qué la mayoría de minoristas pierde con CFD?",
    "options": [
-    "El apalancamiento convierte movimientos pequeños en pérdidas grandes, y además hay costes cada noche",
-    "Porque solo se pueden operar de madrugada",
+    "Por el apalancamiento y los costes de cada noche",
+    "Porque solo se pueden operar de madrugada, con poca liquidez",
     "Porque los CFD están prohibidos"
    ],
    "explanation": "Apalancamiento, costes de financiación y decisiones en caliente: una combinación que castiga sobre todo al principiante."
@@ -485,8 +485,8 @@
    "prompt": "Pablo abrió un CFD con apalancamiento y va perdiendo. El bróker le avisa de que su garantía ha bajado a la mitad de lo exigido. ¿Qué pasa si sigue cayendo?",
    "options": [
     "El bróker le devuelve el dinero perdido",
-    "El bróker cierra la posición y no puede perder más de lo que tiene en la cuenta",
-    "Nada, el bróker espera a que se recupere"
+    "El bróker le cierra la posición a la fuerza",
+    "Nada: el bróker espera a que el precio se recupere"
    ],
    "explanation": "Las normas europeas limitan el daño (cierre al 50 % y sin saldo negativo), pero no evitan perder lo depositado.",
    "feedback": [
@@ -498,9 +498,9 @@
   "u11l4-3": {
    "prompt": "¿Cómo tributa el rescate de un plan de pensiones?",
    "options": [
-    "En la base del ahorro, solo por la ganancia",
+    "En la base del ahorro, como un fondo, y solo por la ganancia",
     "No tributa",
-    "Como rendimiento del trabajo, a tu tipo marginal, por todo lo rescatado"
+    "Como rendimiento del trabajo, por todo lo rescatado"
    ],
    "explanation": "Como las aportaciones desgravaron al entrar, al salir tributa todo."
   },
@@ -517,11 +517,11 @@
    "prompt": "¿Cuándo puedes rescatar un plan de pensiones? Marca todos.",
    "options": [
     "Las aportaciones con más de 10 años de antigüedad",
-    "Cuando quieras para irte de vacaciones",
-    "Por desempleo de larga duración",
+    "Cuando quieras, pagando una penalización",
+    "Para comprar tu primera vivienda",
     "Al jubilarte"
    ],
-   "explanation": "Fuera de esos supuestos, el dinero está bloqueado."
+   "explanation": "Al jubilarte y con las aportaciones de más de 10 años; también en casos graves, como el paro de larga duración. Fuera de esos supuestos el dinero está bloqueado: ni pagando una penalización ni para comprar una vivienda."
   },
   "u11l4-9": {
    "prompt": "Ordena la vida de un plan de pensiones.",
@@ -536,9 +536,9 @@
   "u11l4-11": {
    "prompt": "Javier tiene 50 años, un sueldo alto y un tipo marginal del IRPF alto. No necesitará ese dinero hasta jubilarse. Le ofrecen un plan indexado con comisiones bajas. ¿Le encaja?",
    "options": [
-    "Sí: desgrava a un tipo alto, no necesita el dinero y los costes son bajos",
+    "Sí: desgrava mucho y los costes son bajos",
     "Solo si le garantizan la rentabilidad",
-    "No: un plan de pensiones nunca compensa"
+    "No: un plan de pensiones nunca compensa a nadie"
    ],
    "explanation": "El plan compensa con un tipo marginal alto hoy, comisiones bajas y un dinero que no se va a necesitar, y Javier cumple las tres. Descartarlo siempre o exigir garantías tienta, pero ignora su situación.",
    "feedback": [
@@ -550,9 +550,9 @@
   "u11l4-12": {
    "prompt": "¿Qué le contestas?",
    "options": [
-    "No: queda bloqueado salvo en la jubilación, en casos concretos o con aportaciones de más de 10 años",
+    "No: queda bloqueado salvo en casos concretos",
     "Sí, funciona como una cuenta",
-    "Sí, pagando una pequeña comisión"
+    "Sí, en cualquier momento, pagando una pequeña comisión"
    ],
    "explanation": "Un plan de pensiones solo se rescata en la jubilación, en casos concretos o con aportaciones de más de 10 años. Usarlo de colchón tienta por la desgravación, pero un colchón tiene que estar disponible al momento.",
    "feedback": [
@@ -610,8 +610,8 @@
    "prompt": "Una cuenta anuncia un «4 % TAE». La letra pequeña: solo durante 3 meses y hasta 5.000 €. Tienes 10.000 € de colchón. ¿Qué haces?",
    "options": [
     "Lo meto en acciones, que rinden más",
-    "La contrato ya: un 4 % es mucho",
-    "Comparo lo que me daría en todo el año con otras cuentas sin esos límites"
+    "La contrato ya: un 4 % es mucho y puede acabarse",
+    "Calculo lo que me daría en todo el año"
    ],
    "explanation": "Las ofertas con límite de tiempo o de cantidad pagan mucho menos de lo que anuncian sobre todo tu dinero. El número grande del anuncio tienta, pero lo que manda son las condiciones.",
    "feedback": [

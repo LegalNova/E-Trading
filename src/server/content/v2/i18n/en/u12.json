@@ -372,9 +372,9 @@
   "u12l1-2": {
    "prompt": "Who controls a public blockchain like Bitcoin's?",
    "options": [
-    "The company that created it",
+    "The company that created and maintains it",
     "A central bank",
-    "Nobody on their own: thousands of nodes share the record"
+    "Nobody alone: thousands of nodes"
    ],
    "explanation": "That's its key feature: the record is spread across many participants."
   },
@@ -410,16 +410,16 @@
     "Makes rewriting the past very hard",
     "Stops the crypto's price from falling",
     "Lets anyone verify the transactions",
-    "A record with no central middleman"
+    "Stops anyone stealing your crypto"
    ],
-   "explanation": "A blockchain protects the record, not the price."
+   "explanation": "A blockchain protects the record: it's very hard to rewrite and anyone can verify it. It doesn't protect the price or your keys: if they're stolen, you lose your crypto."
   },
   "u12l1-9": {
    "prompt": "Pablo reads in an ad: «Token X, powered by blockchain technology: a 100 % safe investment». What does he think?",
    "options": [
-    "That blockchain guarantees nothing about value, and «100 % safe» is a red flag",
+    "That «100 % safe» is a red flag",
     "That he has to invest now, before it goes up",
-    "If it uses blockchain, it's safe"
+    "That if it uses blockchain, the investment is safe"
    ],
    "explanation": "Using technical jargon to promise safety is a common scam tactic.",
    "feedback": [
@@ -470,9 +470,9 @@
   "u12l2-10": {
    "prompt": "What's behind Bitcoin's price?",
    "options": [
-    "A company's profits",
+    "The profits of the company that issues it",
     "The interest it pays",
-    "What others are willing to pay for it"
+    "What others will pay for it"
    ],
    "explanation": "It doesn't generate profits or interest: its price depends on adoption and demand."
   },
@@ -480,7 +480,7 @@
    "prompt": "Bitcoin has been falling for weeks. Nico owns a little and reads on social media: «After every halving it always goes up, put in everything you can». What does he do?",
    "options": [
     "He puts in all his savings: the halving guarantees it",
-    "He sticks to his plan: he only puts in what he could lose entirely, whatever happens with the halving",
+    "He sticks to his plan: only what he could lose",
     "He sells everything because, if it falls, Bitcoin must be dead"
    ],
    "explanation": "The right one is to follow a plan with an amount you can afford to lose. «It always goes up» mistakes programmed scarcity for a guaranteed price.",
@@ -503,8 +503,8 @@
   "u12l3-2": {
    "prompt": "What do miners earn for adding a block?",
    "options": [
-    "New bitcoins and the transaction fees",
-    "A salary from the central bank",
+    "New bitcoins and fees",
+    "A fixed salary from the central bank",
     "Shares in Bitcoin"
    ],
    "explanation": "With each halving the reward drops, so fees will matter more and more."
@@ -538,19 +538,19 @@
   "u12l3-10": {
    "prompt": "What's true about proof of work? Select all.",
    "options": [
-    "It makes attacking the network very expensive",
+    "It makes sending bitcoin free",
     "Miners compete to solve a calculation",
     "Ethereum has used it since 2022",
     "It uses a lot of electricity"
    ],
-   "explanation": "Ethereum dropped it in 2022 and moved to proof of stake."
+   "explanation": "Miners compete to solve a calculation, and that uses a lot of electricity. Sending bitcoin isn't free: you pay fees. And Ethereum dropped it in 2022 and moved to proof of stake."
   },
   "u12l3-11": {
    "prompt": "An acquaintance offers Leo a «cloud mining plan»: he pays a fee and earns a fixed 2% a day, without doing anything. What does Leo think?",
    "options": [
     "That it's an easy way to mine without machines",
     "That he'll try it with a little, just in case",
-    "That a fixed return doesn't fit real mining, and that it's a clear sign of a scam"
+    "That a fixed return is a sign of a scam"
    ],
    "explanation": "The right one works because mining doesn't give a fixed return: it depends on the price, the difficulty and the competition. Trying with a little still means giving money to a possible fraud.",
    "feedback": [
@@ -595,8 +595,8 @@
    "prompt": "What does Ethereum add to what Bitcoin does?",
    "options": [
     "A cap of 21 million coins",
-    "A central bank guarantee",
-    "Running programs (smart contracts) on the blockchain"
+    "The backing of a central bank guarantee",
+    "Running programs on the blockchain"
    ],
    "explanation": "That's why tokens, DeFi and NFTs are built on Ethereum."
   },
@@ -628,9 +628,9 @@
   "u12l4-11": {
    "prompt": "Irene wants to send some tokens and is in no hurry. Her wallet warns that gas is very expensive today because the network is congested. What does she do?",
    "options": [
-    "She sends them now: gas is a fixed fee",
+    "She sends them now: gas is a fixed fee anyway",
     "She sends them over Bitcoin to avoid paying gas",
-    "She waits for a moment when the network is calmer"
+    "She waits for the network to calm down"
    ],
    "explanation": "The right one works because gas rises and falls with demand on the network. Gas isn't a fixed fee but a price that changes.",
    "feedback": [
@@ -642,8 +642,8 @@
   "u12l5-1": {
    "prompt": "What does a stablecoin try to do?",
    "options": [
-    "Always be worth the same as a currency, like 1 dollar",
-    "Rise more than Bitcoin",
+    "Always be worth the same as a currency",
+    "Rise more than Bitcoin with fewer scares",
     "Pay a dividend"
    ],
    "explanation": "Its goal is stability against a currency, not growth."
@@ -678,9 +678,9 @@
     "Holding sufficient reserves",
     "Guaranteeing an annual return",
     "Letting you redeem tokens",
-    "Being authorised"
+    "Being covered by the Deposit Guarantee Fund"
    ],
-   "explanation": "MiCA aims to make sure the token is backed and redeemable, not that it earns anything."
+   "explanation": "MiCA requires sufficient reserves and that you can redeem the token. It doesn't require it to earn anything, and a stablecoin isn't a deposit: the Deposit Guarantee Fund doesn't cover it."
   },
   "u12l5-9": {
    "prompt": "In March 2023, the stablecoin ____ fell to around 0.87 $ when a bank holding its reserves collapsed.",
@@ -696,8 +696,8 @@
    "prompt": "What's the main risk of a reserve-backed stablecoin?",
    "options": [
     "Its price rising too much",
-    "It paying too much interest",
-    "The reserves not existing, not being available or losing value"
+    "It paying too much interest to its holders",
+    "The reserves failing or losing value"
    ],
    "explanation": "That's why MiCA requires sufficient, segregated and auditable reserves."
   },
@@ -732,8 +732,8 @@
   "u12l6-3": {
    "prompt": "What does your seed phrase let you recover?",
    "options": [
-    "All the keys and crypto in your wallet",
-    "Only your exchange password",
+    "All the keys in your wallet",
+    "Only your exchange account password",
     "Nothing, it's just for show"
    ],
    "explanation": "That's why whoever has it can take everything."
@@ -741,7 +741,7 @@
   "u12l6-4": {
    "prompt": "Where is it safest to keep your seed phrase?",
    "options": [
-    "On paper or metal, somewhere safe and offline",
+    "On paper or metal, offline",
     "In an email you send to yourself",
     "In a photo on your phone"
    ],
@@ -781,11 +781,11 @@
    "prompt": "What does MiCA require of an exchange operating in the EU? Select all.",
    "options": [
     "Keeping clients' crypto separate from its own",
-    "A complaints procedure",
+    "Covering your crypto with a guarantee fund",
     "Guaranteeing the price won't fall",
     "Authorisation from a supervisor"
    ],
-   "explanation": "MiCA regulates the platform, not the price of crypto."
+   "explanation": "MiCA requires authorisation and keeping clients' crypto separate from its own. It doesn't regulate the price, and there is no guarantee fund for crypto like the one for deposits."
   },
   "u12l7-2": {
    "prompt": "Where do you check whether an exchange is authorised? Select all.",
@@ -801,8 +801,8 @@
    "prompt": "According to the CNMV, from 1 July 2026, who can provide crypto-asset services in Spain?",
    "options": [
     "Anyone with a website",
-    "Only providers authorised under MiCA",
-    "Only Spanish banks"
+    "Only MiCA-authorised providers",
+    "Only long-established Spanish banks"
    ],
    "explanation": "That day the transition period in Spain came to an end."
   },

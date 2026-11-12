@@ -296,8 +296,8 @@
    "prompt": "What is a SOCIMI?",
    "options": [
     "A mortgage for investors",
-    "A listed company that invests in rental properties",
-    "A government-guaranteed fund"
+    "A listed company that rents out property",
+    "A property fund guaranteed by the government"
    ],
    "explanation": "It's the Spanish version of a REIT: rental properties inside a listed company."
   },
@@ -329,18 +329,18 @@
    "prompt": "What are the risks of investing in a SOCIMI? Select all.",
    "options": [
     "Being hurt by rate rises",
-    "Its sector doing badly (empty offices, for example)",
+    "Being liable for its debts with your own assets",
     "Having to find tenants yourself",
     "Its price falling with the stock market"
    ],
-   "explanation": "The SOCIMI manages the properties; you take on market, interest-rate and sector risks."
+   "explanation": "Its price falls with the stock market and rate rises hurt it. The SOCIMI takes care of finding tenants and, as a shareholder, you aren't liable for its debts: the most you can lose is what you invested."
   },
   "u11l1-11": {
    "prompt": "You have €300 and want to invest in Spanish property. Which option makes sense?",
    "options": [
     "Waiting until you have enough for a deposit on a flat",
     "A platform promising a guaranteed 15 % on flats",
-    "Buying shares in a SOCIMI in the IBEX 35, like Merlin Properties"
+    "Shares in a listed SOCIMI, like Merlin"
    ],
    "explanation": "A SOCIMI lets you invest in property with little money, diversified and with liquidity, in exchange for its price moving every day. A guaranteed return is tempting, but in investing it doesn't exist.",
    "feedback": [
@@ -352,9 +352,9 @@
   "u11l1-12": {
    "prompt": "What do you reply?",
    "options": [
-    "Yes, and they're covered by the FGD too",
+    "Yes, and they're covered by the Deposit Guarantee Fund too",
     "Yes: the dividend is fixed",
-    "No: the dividend isn't guaranteed and the price can fall like the stock market"
+    "No: neither the dividend nor the price is guaranteed"
    ],
    "explanation": "A SOCIMI is a share: it pays out a lot because the law requires it, but its dividend depends on rents and its price is listed. Comparing it with a deposit is tempting because of the dividend, but it has no fixed interest and no FGD.",
    "feedback": [
@@ -413,7 +413,7 @@
    "prompt": "Marta sees someone on social media who «makes thousands a month selling options» and wants to try it with her savings. What should she bear in mind?",
    "options": [
     "That selling options is collecting easy premiums with no risk",
-    "That by selling options she can lose far more than she collects, and that she should understand it first without real money",
+    "That she can lose far more than she collects",
     "That if it's on social media, it's been proven"
    ],
    "explanation": "Whoever sells an option collects a little and takes on a risk that can be huge.",
@@ -475,8 +475,8 @@
   "u11l3-8": {
    "prompt": "Why do most retail investors lose money with CFDs?",
    "options": [
-    "Leverage turns small moves into big losses, and there are costs every night on top",
-    "Because they can only be traded in the early hours",
+    "Because of leverage and the nightly costs",
+    "Because they can only be traded in the early hours, with little liquidity",
     "Because CFDs are banned"
    ],
    "explanation": "Leverage, financing costs and heat-of-the-moment decisions: a combination that hits beginners hardest."
@@ -485,8 +485,8 @@
    "prompt": "Pablo opened a leveraged CFD and he's losing. The broker warns him that his margin has fallen to half of what's required. What happens if it keeps falling?",
    "options": [
     "The broker gives him back the money he lost",
-    "The broker closes the position and he can't lose more than he has in the account",
-    "Nothing, the broker waits for it to recover"
+    "The broker forcibly closes his position",
+    "Nothing: the broker waits for the price to recover"
    ],
    "explanation": "European rules limit the damage (close-out at 50 % and no negative balance), but they don't stop you losing what you deposited.",
    "feedback": [
@@ -498,9 +498,9 @@
   "u11l4-3": {
    "prompt": "How is cashing in a pension plan taxed?",
    "options": [
-    "As savings income, only on the gain",
+    "As savings income, like a fund, and only on the gain",
     "It isn't taxed",
-    "As employment income, at your marginal rate, on everything you cash in"
+    "As employment income, on everything you cash in"
    ],
    "explanation": "Since contributions got tax relief on the way in, everything is taxed on the way out."
   },
@@ -517,11 +517,11 @@
    "prompt": "When can you cash in a pension plan? Select all.",
    "options": [
     "Contributions that are more than 10 years old",
-    "Whenever you like, to go on holiday",
-    "Due to long-term unemployment",
+    "Whenever you like, by paying a penalty",
+    "To buy your first home",
     "When you retire"
    ],
-   "explanation": "Outside those cases, the money is locked away."
+   "explanation": "When you retire and for contributions more than 10 years old; also in serious cases, such as long-term unemployment. Outside those cases the money is locked away: not by paying a penalty, and not to buy a home."
   },
   "u11l4-9": {
    "prompt": "Put the life of a pension plan in order.",
@@ -536,9 +536,9 @@
   "u11l4-11": {
    "prompt": "Javier is 50, with a high salary and a high marginal IRPF rate. He won't need the money until he retires. He's offered an index plan with low fees. Does it suit him?",
    "options": [
-    "Yes: he gets tax relief at a high rate, he doesn't need the money and costs are low",
+    "Yes: big tax relief and low costs",
     "Only if the return is guaranteed",
-    "No: a pension plan never pays off"
+    "No: a pension plan never pays off for anyone"
    ],
    "explanation": "A plan pays off with a high marginal rate today, low fees and money that won't be needed, and Javier ticks all three. Always ruling it out or demanding guarantees is tempting, but it ignores his situation.",
    "feedback": [
@@ -550,9 +550,9 @@
   "u11l4-12": {
    "prompt": "What do you reply?",
    "options": [
-    "No: it's locked away except at retirement, in specific cases or for contributions more than 10 years old",
+    "No: it's locked away except in specific cases",
     "Yes, it works like an account",
-    "Yes, by paying a small fee"
+    "Yes, at any time, as long as you pay a small fee"
    ],
    "explanation": "A pension plan can only be cashed in at retirement, in specific cases or for contributions more than 10 years old. Using it as a cushion is tempting because of the tax relief, but a cushion has to be available instantly.",
    "feedback": [
@@ -610,8 +610,8 @@
    "prompt": "An account advertises «4 % APR». The small print: only for 3 months and up to €5,000. You have a €10,000 cushion. What do you do?",
    "options": [
     "I put it in shares, they return more",
-    "I sign up now: 4 % is a lot",
-    "I compare what it would pay me over the whole year with other accounts without those limits"
+    "I sign up right away: 4 % is a lot and the offer may end",
+    "I work out what it would pay over the whole year"
    ],
    "explanation": "Offers with a time or amount limit pay much less than they advertise on all your money. The big number in the ad is tempting, but the terms are what count.",
    "feedback": [
