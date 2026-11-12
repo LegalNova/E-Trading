@@ -155,16 +155,18 @@ export default unit({
         note('15 de septiembre de 2008: quiebra Lehman Brothers. El pánico se extiende y el crédito se congela.'),
         say('lumi', 'Hasta los expertos se equivocaron. Si no entiendes un producto, no sabes su riesgo.'),
       ]),
+      // Auditoría RED-12 y RED-34: cada episodio histórico se vive en una sola clase. Aquí va otra serie real (Yahoo Finance);
+      // las cifras del texto están calculadas sobre `charts.json`.
       mission({
         title: 'Aguanta la crisis de 2008',
-        intro: 'Octubre de 2007: **10.000 €** en el S&P 500, con datos reales. Tienes colchón, no debes nada y no necesitas el dinero en años.',
-        widget: { kind: 'crash', series: 'series-crash-2008', amount: 10000 },
+        intro: 'Agosto de 2008: **10.000 €** en el S&P 500, día a día y con datos reales. Tienes colchón, no debes nada y no necesitas el dinero en años.',
+        widget: { kind: 'crash', series: 'series-lehman', amount: 10000 },
         goal: { text: 'Llega hasta el final sin vender.', when: [when('played', '==', 1), when('sold', '==', 0)] },
-        insight: 'En marzo de 2009 tus 10.000 € valían **unos 4.390 €** (−56 %), y sin vender volvieron a 10.000 € en marzo de 2013, sin dividendos. **Con colchón y sin deudas, una caída no te obliga a vender.** Pruébalo: pon una alerta un 20 % por debajo del precio del ETF del S&P 500 y decide hoy qué harás.',
+        insight: 'El 9 de marzo de 2009 tus 10.000 € valían **unos 5.368 €** (−46 %); seis meses después ya eran 8.387 €. **Con colchón y sin deudas, una caída no te obliga a vender.** Pruébalo: pon una alerta un 20 % por debajo del precio del ETF del S&P 500 y decide hoy qué harás.',
         lumi: [
           { when: when('sold', '==', 1), say: 'Has vendido. Al terminar, repite y prueba a aguantar.', mood: 'THINKING' },
-          { when: when('drop', '<=', -45), say: 'Lehman ha quebrado y se habla de otra Gran Depresión.', mood: 'WORRIED' },
-          { when: when('drop', '<=', -20), say: 'Un 20 % abajo. Tu colchón cubre tus gastos: no necesitas vender.', mood: 'CALM' },
+          { when: when('drop', '<=', -40), say: 'Casi la mitad, y se habla de otra Gran Depresión.', mood: 'WORRIED' },
+          { when: when('drop', '<=', -10), say: 'Lehman Brothers quebró el 15 de septiembre. Tu colchón cubre tus gastos: no necesitas vender.', mood: 'CALM' },
           { say: 'Dale a empezar y aguanta', mood: 'HAPPY' },
         ],
       }),
@@ -228,21 +230,23 @@ export default unit({
     ], { source: '3.7', minutes: 6, retire: [2, 3, 4, 5, 6, 7] }),
 
     lesson('u34l6', 'España: burbuja inmobiliaria y prima de riesgo', [
+      // Auditoría RED-12 y RED-34: cada episodio histórico se vive en una sola clase. Aquí va otra serie real (Yahoo Finance);
+      // las cifras del texto están calculadas sobre `charts.json`.
       mission({
         title: 'Vive la crisis española',
-        intro: 'Diciembre de 2006: el ladrillo va a toda máquina y el crédito es fácil. Inviertes **10.000 €** en el IBEX 35 y lo sigues mes a mes, con datos reales, hasta 2025.',
-        widget: { kind: 'crash', series: 'series-ibex', amount: 10000 },
+        intro: 'Finales de 2009: lo peor de 2008 parece haber pasado. Inviertes **10.000 €** en el IBEX 35 y lo sigues semana a semana, con datos reales, hasta principios de 2015.',
+        widget: { kind: 'crash', series: 'series-ibex-2012', amount: 10000 },
         predict: {
-          prompt: 'Primero llega la crisis de 2008 y, en España, otra detrás. En el peor momento, ¿cuánto vale tu inversión?',
-          options: ['Algo menos: unos 8.500 €', 'Menos de la mitad', 'Más que al empezar'],
+          prompt: 'Llega la crisis de la deuda y España pide ayuda europea para sus bancos. En el peor momento, ¿cuánto vale tu inversión?',
+          options: ['Algo menos: unos 8.500 €', 'Alrededor de la mitad', 'Más que al empezar'],
           answer: 1,
-          why: 'En mayo de 2012 valía **unos 4.305 €**: un −57 %, sin contar dividendos.',
+          why: 'A finales de mayo de 2012 valía **unos 5.080 €**: un −49 %, sin contar dividendos.',
         },
         goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
-        insight: 'Sin contar dividendos, el IBEX 35 no volvió al nivel de finales de 2006 hasta **2025**. Los dividendos ayudaron mucho, pero **quien solo tenía bolsa española sufrió más** que quien estaba diversificado por el mundo.',
+        insight: 'Cinco años después, a principios de 2015, tus 10.000 € eran 8.713 €, sin contar dividendos. Los dividendos ayudaron mucho, pero **quien solo tenía bolsa española sufrió más** que quien estaba diversificado por el mundo.',
         lumi: [
           { when: when('sold', '==', 1), say: 'Has vendido. Mira qué pasa después…', mood: 'THINKING' },
-          { when: when('drop', '<=', -50), say: 'Menos de la mitad. ¿Aguantas o vendes?', mood: 'WORRIED' },
+          { when: when('drop', '<=', -45), say: 'Cerca de la mitad. ¿Aguantas o vendes?', mood: 'WORRIED' },
           { when: when('drop', '<=', -20), say: 'Las cajas de ahorros prestaron demasiado al ladrillo.', mood: 'THINKING' },
           { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
         ],
@@ -274,18 +278,20 @@ export default unit({
     ], { minutes: 6, retire: [2, 4, 6, 7] }),
 
     lesson('u34l7', 'El crash del COVID en 2020', [
+      // Auditoría RED-12 y RED-34: cada episodio histórico se vive en una sola clase. Aquí va otra serie real (Yahoo Finance);
+      // las cifras del texto están calculadas sobre `charts.json`.
       mission({
         title: 'Vive el crash del COVID',
-        intro: 'Enero de 2020: inviertes **10.000 €** en el S&P 500 y lo sigues día a día con datos reales. Llega una pandemia que nadie esperaba.',
-        widget: { kind: 'crash', series: 'series-covid', amount: 10000 },
+        intro: 'Enero de 2020: inviertes **10.000 €** en el IBEX 35 y lo sigues día a día con datos reales. Llega una pandemia que nadie esperaba.',
+        widget: { kind: 'crash', series: 'series-ibex-2020', amount: 10000 },
         predict: {
-          prompt: 'Del máximo del 19 de febrero al suelo, ¿cuánto tardó la caída del 34 %?',
-          options: ['Una semana', 'Poco más de un mes', 'Un año'],
+          prompt: 'Del máximo del 19 de febrero al suelo, ¿cuánto tardó la caída del 39 %?',
+          options: ['Una semana', 'Menos de un mes', 'Un año'],
           answer: 1,
-          why: '**33 días**: el 23 de marzo de 2020 tocó suelo. La caída más rápida de su historia.',
+          why: '**26 días**: el 16 de marzo de 2020 tocó suelo. Cuatro días antes había caído un 14 % en una sola sesión, la mayor caída diaria de su historia.',
         },
         goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
-        insight: 'Y la recuperación más rápida: el 18 de agosto de 2020 el S&P 500 ya estaba en máximos, **unos 5 meses después**. Quien vendió «hasta que se aclare» se perdió buena parte del rebote.',
+        insight: 'El S&P 500 recuperó su máximo en agosto de 2020; el IBEX 35, año y medio después, seguía un 14 % por debajo. **Cada mercado se recupera a su ritmo**: otra razón para no depender de un solo país.',
         lumi: [
           { when: when('sold', '==', 1), say: 'Has vendido. Mira qué pasa después…', mood: 'THINKING' },
           { when: when('drop', '<=', -25), say: 'Hospitales llenos y economía cerrada. ¿Vendes o aguantas?', mood: 'WORRIED' },
@@ -319,22 +325,25 @@ export default unit({
     ], { source: '3.7', minutes: 6, retire: [3, 4, 5, 6, 8] }),
 
     lesson('u34l8', 'Cripto 2022: Terra y FTX', [
+      // Auditoría RED-12 y RED-34: cada episodio histórico se vive en una sola clase. Aquí va otra serie real (Yahoo Finance);
+      // las cifras del texto están calculadas sobre `charts.json`.
       mission({
         title: 'Vive el invierno cripto',
-        intro: 'Diciembre de 2020: inviertes **10.000 €** en bitcoin. Tu inversión sigue su precio en dólares, semana a semana, hasta 2025.',
-        widget: { kind: 'crash', series: 'series-btc', amount: 10000 },
+        intro: 'Marzo de 2022: inviertes **10.000 €** en bitcoin. Tu inversión sigue su precio en dólares, día a día, hasta enero de 2023.',
+        widget: { kind: 'crash', series: 'series-btc-2022', amount: 10000 },
         predict: {
-          prompt: 'Noviembre de 2021: tus 10.000 € son casi 20.000 €. ¿Cuánto valdrán un año después?',
-          options: ['Más de 30.000 €', 'Más o menos lo mismo', 'Unos 5.000 €'],
+          prompt: 'En mayo se hunde Terra y en noviembre quiebra FTX. ¿Cuánto valdrán tus 10.000 € a finales de noviembre?',
+          options: ['Más de 12.000 €', 'Más o menos lo mismo', 'Unos 3.500 €'],
           answer: 2,
-          why: 'En noviembre de 2022 valían **unos 4.970 €**: bitcoin cayó un 75 % desde su máximo en estos cierres semanales.',
+          why: 'El 21 de noviembre de 2022 valían **unos 3.559 €**: bitcoin había perdido un 64 % en menos de nueve meses.',
         },
         goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
-        insight: 'Bitcoin bajó de cerca de 69.000 $ a unos 15.500 $ (−77 %) y muchas criptos cayeron más de un 90 %. Esta serie se recuperó después, pero la cripto no está regulada como un depósito: **puede perderse la totalidad de lo invertido**.',
+        insight: 'Desde su máximo de noviembre de 2021, bitcoin bajó de cerca de 69.000 $ a unos 15.500 $ (−77 %), y muchas criptos cayeron más de un 90 %. Después se recuperó, pero la cripto no está regulada como un depósito: **puede perderse la totalidad de lo invertido**.',
         lumi: [
           { when: when('sold', '==', 1), say: 'Has vendido. Mira qué pasa después…', mood: 'THINKING' },
-          { when: when('drop', '<=', -40), say: 'Terra se hunde en mayo y FTX quiebra en noviembre de 2022.', mood: 'WORRIED' },
-          { when: when('drop', '>=', 80), say: 'Casi el doble o más. ¿Y cuánto podrías perder?', mood: 'THINKING' },
+          { when: when('drop', '<=', -60), say: 'Noviembre de 2022: quiebra FTX.', mood: 'WORRIED' },
+          { when: when('drop', '<=', -45), say: 'Junio de 2022: Celsius congela las retiradas.', mood: 'WORRIED' },
+          { when: when('drop', '<=', -30), say: 'Mayo de 2022: Terra se hunde y arrastra a todo el mercado.', mood: 'WORRIED' },
           { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
         ],
       }),

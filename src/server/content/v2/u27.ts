@@ -234,15 +234,17 @@ export default unit({
     ], { source: '11.5', minutes: 6, retire: [0, 2, 3, 5, 6, 8] }),
 
     lesson('u27l7', 'Recencia y supervivencia', [
+      // Auditoría RED-12 y RED-34: cada episodio histórico se vive en una sola clase. Aquí va otra serie real (Yahoo Finance);
+      // las cifras del texto están calculadas sobre `charts.json`.
       mission({
-        title: 'Vive 1929',
-        intro: 'Enero de 1929. La bolsa de EE. UU. lleva años subiendo y «todo el mundo» compra. Metes **10.000 €** en el S&P 500, con datos reales.',
-        widget: { kind: 'crash', series: 'series-crash-1929', amount: 10000 },
+        title: 'Vive la euforia de 2021',
+        intro: 'Abril de 2020. Tras el susto de la pandemia, las tecnológicas no paran de subir y «todo el mundo» compra. Metes **10.000 €** en el Nasdaq 100, con datos reales.',
+        widget: { kind: 'crash', series: 'series-ndx-2021', amount: 10000 },
         goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
-        insight: 'Desde el máximo de septiembre de 1929 cayó un **86 %** y no lo recuperó hasta 1954, sin contar dividendos. **Lo último que ha pasado no predice lo que viene**: mira datos de décadas, no de meses.',
+        insight: 'En año y medio se multiplicó por más de dos; en 2022 cayó un **35 %**. Quien entró a finales de 2021 creyendo que seguiría igual, un año y medio después aún iba perdiendo. **Lo último que ha pasado no predice lo que viene**: mira datos de décadas, no de meses.',
         lumi: [
-          { when: when('sold', '==', 1), say: 'Has vendido. Mira cuánto tardó en volver…', mood: 'THINKING' },
-          { when: when('drop', '<=', -60), say: 'Más de la mitad perdida. Y en 1929 todos creían que seguiría subiendo.', mood: 'SAD' },
+          { when: when('sold', '==', 1), say: 'Has vendido. Mira qué pasa después…', mood: 'THINKING' },
+          { when: when('drop', '>=', 100), say: 'Más del doble. Ahora parece imposible que baje.', mood: 'HAPPY' },
           { when: when('drop', '>=', 20), say: 'No para de subir. ¿Seguirá así siempre?', mood: 'HAPPY' },
           { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
         ],

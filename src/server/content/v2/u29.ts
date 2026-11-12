@@ -102,15 +102,16 @@ export default unit({
     ], { source: '4.4', minutes: 6, retire: [1, 4, 5, 7, 8, 9] }),
 
     lesson('u29l4', 'Diversificar por países y divisas', [
+      // Auditoría RED-12 y RED-34: cada episodio histórico se vive en una sola clase. Aquí va otra serie real (Yahoo Finance);
+      // las cifras del texto están calculadas sobre `charts.json`.
       mission({
-        title: 'Japón, 1989',
-        intro: 'Es enero de 1985 y la bolsa japonesa no para de subir. Inviertes **10.000 €** en su índice, el Nikkei. **Datos reales**, mes a mes. Puedes vender cuando quieras.',
-        widget: { kind: 'crash', series: 'series-japan', amount: 10000 },
+        title: 'Francia, 2000',
+        intro: 'Es enero de 1995 y la bolsa francesa va a multiplicarse por más de tres en cinco años. Inviertes **10.000 €** en su índice, el CAC 40. **Datos reales**, mes a mes. Puedes vender cuando quieras.',
+        widget: { kind: 'crash', series: 'series-cac', amount: 10000 },
         goal: { text: 'Llega hasta 2025, vendas o no.', when: [when('played', '==', 1)] },
-        insight: 'En 1989, Japón era la mayor bolsa del mundo. Desde su máximo cayó un **80 %** y tardó **34 años** en recuperarlo. Jugárselo todo a un país, sea cual sea, es concentrar.',
+        insight: 'Desde su máximo de agosto de 2000, el CAC 40 cayó un **60 %** y, sin contar dividendos, tardó **21 años** en recuperarlo. No es un caso raro: a la bolsa japonesa le costó 34. Jugárselo todo a un país, sea cual sea, es concentrar.',
         lumi: [
           { when: when('sold', '==', 1), say: 'Has vendido. Mira lo que viene después…', mood: 'THINKING' },
-          { when: when('drop', '<=', -25), say: 'Casi veinte años después, por debajo de lo que pusiste. ¿Sigues?', mood: 'WORRIED' },
           { when: when('drop', '>=', 200), say: '¡Has triplicado tu dinero! ¿Quién no querría estar aquí?', mood: 'HAPPY' },
           { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
         ],
