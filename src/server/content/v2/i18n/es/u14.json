@@ -312,7 +312,7 @@
   "u14l1-10": {
    "prompt": "Laura cobra en euros y se va de Erasmus a Londres. Ve que GBP/EUR ha pasado de 1,15 a 1,20 este mes. ¿Cómo le afecta?",
    "options": [
-    "Cada libra le cuesta más euros: todo se le encarece algo más de un 4 %",
+    "Cada libra le cuesta más euros",
     "No le afecta porque paga con tarjeta",
     "Le sale más barato el viaje"
    ],
@@ -326,18 +326,18 @@
   "u14l1-11": {
    "prompt": "¿Cuáles son pares mayores? Marca todos.",
    "options": [
-    "GBP/USD",
+    "USD/MXN (peso mexicano)",
     "USD/TRY (lira turca)",
-    "USD/JPY",
-    "EUR/USD"
+    "USD/JPY (yen japonés)",
+    "EUR/USD (euro)"
    ],
-   "explanation": "Los mayores combinan el dólar con otra gran divisa. USD/TRY es un par exótico: más spread y más volatilidad."
+   "explanation": "Los mayores combinan el dólar con otra gran divisa, como el euro o el yen. USD/TRY y USD/MXN son pares exóticos: más spread y más volatilidad."
   },
   "u14l2-9": {
    "prompt": "Pablo abre 1 lote estándar de EUR/USD (100.000 €) con 4.000 € de garantía. El par cae 120 pips tras un dato de inflación. ¿Qué ha pasado?",
    "options": [
     "No ha perdido nada hasta que cierre",
-    "Ha perdido unos 1.200 $: más de una cuarta parte de su garantía en un día",
+    "Ha perdido unos 1.200 $ en un día",
     "Ha perdido 120 $, una minucia"
    ],
    "explanation": "Con apalancamiento, un movimiento corriente del par se convierte en un golpe enorme para tu dinero.",
@@ -352,17 +352,17 @@
    "options": [
     "No poder perder más del dinero de la cuenta",
     "Garantía de no perder dinero",
-    "Cierre automático si la garantía baja al 50 %",
+    "Cobertura del Fondo de Garantía si pierdes",
     "Límite de apalancamiento (1:30 en pares mayores)"
    ],
-   "explanation": "ESMA impuso límites de apalancamiento, cierre al 50 % de la garantía y protección frente a saldo negativo. Nada garantiza no perder: entre un 74 y un 89 % de los minoristas pierde con CFD."
+   "explanation": "ESMA impuso límites de apalancamiento y protección frente a saldo negativo, además del cierre al 50 % de la garantía. Nada garantiza no perder ni te devuelve las pérdidas: entre un 74 y un 89 % de los minoristas pierde con CFD."
   },
   "u14l2-11": {
    "prompt": "¿Qué le contestas a Paula?",
    "options": [
-    "Genial, así se gana más rápido",
+    "Genial: con tan poco dinero, así se gana más rápido",
     "Mejor 1:1000, que es más",
-    "Con 1:500, un 0,2 % en contra te deja a cero; y en la UE el máximo para minoristas es 1:30"
+    "Con 1:500, un 0,2 % en contra te deja a cero"
    ],
    "explanation": "1 ÷ 500 = 0,2 %. Quien ofrece 1:500 a un minorista europeo no cumple las reglas de ESMA: mala señal.",
    "feedback": [
@@ -378,9 +378,9 @@
   "u14l2-12": {
    "prompt": "Pablo tiene 2.000 € ahorrados. Su bróker le ofrece pasar de 1:30 a 1:100 si se declara «cliente profesional». ¿Qué hace?",
    "options": [
-    "Lo rechaza: perdería las protecciones de minorista y el riesgo se dispara",
+    "Lo rechaza: perdería sus protecciones",
     "Acepta: con 1:100 gana más rápido",
-    "Acepta, pero promete operar con cuidado"
+    "Acepta, pero se promete operar con mucho cuidado"
    ],
    "explanation": "La buena acierta porque las reglas de ESMA protegen a los minoristas, y declararse profesional las quita. Con «ganar más rápido» se olvida que las pérdidas se multiplican igual.",
    "feedback": [
@@ -414,16 +414,16 @@
    "prompt": "¿Por qué un tipo de interés más alto suele atraer dinero a una divisa?",
    "options": [
     "Porque obliga a los turistas a cambiar",
-    "Porque el banco central regala divisas",
-    "Porque los depósitos y bonos en esa divisa pagan más"
+    "Porque el banco central regala divisas a los bancos",
+    "Porque sus depósitos y bonos pagan más"
    ],
    "explanation": "Los inversores compran la divisa para cobrar ese interés mayor."
   },
   "u14l3-3": {
    "prompt": "La Fed sube los tipos por sorpresa y el BCE los deja igual. Dentro de un mes tienes que pagar 1.000 $ por un curso online de EE. UU. ¿Qué es lo más probable?",
    "options": [
-    "El dólar tiende a apreciarse y el curso te puede costar algo más en euros",
-    "Nada: los tipos no afectan a las divisas",
+    "El curso te puede costar algo más en euros",
+    "Nada: los tipos de interés no afectan a las divisas",
     "El curso te costará menos euros"
    ],
    "explanation": "Una subida de tipos inesperada suele apreciar la divisa, aunque nada es automático.",
@@ -446,8 +446,8 @@
   "u14l3-9": {
    "prompt": "Bruno lee sobre un país con una inflación del 50 % cuyo banco central está bajando los tipos. Un amigo le propone comprar su moneda porque «está baratísima». ¿Qué piensa Bruno?",
    "options": [
-    "Que la inflación no afecta a las divisas",
-    "Que una inflación tan alta con tipos bajando suele hundir la divisa",
+    "Que la inflación de un país no afecta a su divisa",
+    "Que así la divisa suele seguir hundiéndose",
     "Que es una ganga segura"
    ],
    "explanation": "Inflación alta con tipos por debajo de ella suele depreciar la divisa.",
@@ -460,8 +460,8 @@
   "u14l3-10": {
    "prompt": "¿Qué le explicas a Lucía?",
    "options": [
-    "Que el mercado ya lo esperaba o esperaba más: cuenta la sorpresa, no el dato",
-    "Que los tipos no tienen nada que ver",
+    "Que cuenta la sorpresa, no el dato",
+    "Que los tipos no tienen nada que ver con la divisa",
     "Que es un error del mercado"
    ],
    "explanation": "En divisas, como en bolsa, el precio ya incorpora lo esperado.",
@@ -488,8 +488,8 @@
    "prompt": "Un fondo «S&P 500 EUR Hedged»…",
    "options": [
     "Solo compra empresas europeas",
-    "Garantiza no perder dinero",
-    "Elimina casi todo el efecto del dólar frente al euro"
+    "Garantiza no perder dinero con la bolsa americana",
+    "Elimina casi todo el efecto del dólar"
    ],
    "explanation": "La cobertura neutraliza la divisa, no el riesgo de las acciones."
   },
@@ -511,7 +511,7 @@
   "u14l4-11": {
    "prompt": "2022: la bolsa americana cae en dólares, pero el dólar sube frente al euro. Medida en euros, tu pérdida es…",
    "options": [
-    "La misma",
+    "La misma que en dólares",
     "Mayor que en dólares",
     "Menor que en dólares"
    ],
@@ -566,8 +566,8 @@
   "u14l5-5": {
    "prompt": "¿Qué es el carry trade con yenes?",
    "options": [
-    "Pedir prestado en yenes a tipo bajo para invertir donde se paga más",
-    "Comprar yenes para viajar a Japón",
+    "Endeudarse en yenes para invertir fuera",
+    "Comprar yenes baratos antes de viajar a Japón",
     "Vender acciones japonesas"
    ],
    "explanation": "Funciona mientras el yen esté tranquilo; si sube de golpe, todos deshacen a la vez (agosto de 2024)."
@@ -575,8 +575,8 @@
   "u14l5-6": {
    "prompt": "¿Por qué suele subir el yen en una crisis?",
    "options": [
-    "Porque los inversores japoneses repatrían el dinero que tienen fuera",
-    "Porque Japón sube los tipos en cada crisis",
+    "Porque los japoneses repatrían su dinero",
+    "Porque el Banco de Japón sube los tipos en cada crisis",
     "Porque el yen está respaldado por oro"
    ],
    "explanation": "Japón tiene enormes ahorros invertidos fuera: en el pánico, parte de ese dinero vuelve a casa."
@@ -598,7 +598,7 @@
   "u14l5-10": {
    "prompt": "Marzo de 2020: las bolsas se hunden por la COVID. Marta tiene que cobrar una factura de 5.000 $ de un cliente americano y la pasará a euros. ¿Qué es más probable que haga el dólar en esos días de pánico?",
    "options": [
-    "Que se aprecie: todo el mundo busca dólares",
+    "Que se aprecie",
     "Que no se mueva",
     "Que se hunda"
    ],

@@ -312,7 +312,7 @@
   "u14l1-10": {
    "prompt": "Laura is paid in euros and is going to London on Erasmus. She sees that GBP/EUR has gone from 1.15 to 1.20 this month. How does it affect her?",
    "options": [
-    "Each pound costs her more euros: everything is just over 4 % more expensive for her",
+    "Each pound costs her more euros",
     "It doesn't affect her because she pays by card",
     "Her trip works out cheaper"
    ],
@@ -326,18 +326,18 @@
   "u14l1-11": {
    "prompt": "Which are major pairs? Select all that apply.",
    "options": [
-    "GBP/USD",
+    "USD/MXN (Mexican peso)",
     "USD/TRY (Turkish lira)",
-    "USD/JPY",
-    "EUR/USD"
+    "USD/JPY (Japanese yen)",
+    "EUR/USD (euro)"
    ],
-   "explanation": "The majors pair the dollar with another big currency. USD/TRY is an exotic pair: wider spreads and more volatility."
+   "explanation": "The majors pair the dollar with another big currency, such as the euro or the yen. USD/TRY and USD/MXN are exotic pairs: wider spreads and more volatility."
   },
   "u14l2-9": {
    "prompt": "Pablo opens 1 standard lot of EUR/USD (€100,000) with €4,000 of margin. The pair falls 120 pips after an inflation figure. What has happened?",
    "options": [
     "He hasn't lost anything until he closes",
-    "He's lost about $1,200: more than a quarter of his margin in a day",
+    "He's lost about $1,200 in a day",
     "He's lost $120, a trifle"
    ],
    "explanation": "With leverage, an ordinary move in the pair turns into a huge blow to your money.",
@@ -352,17 +352,17 @@
    "options": [
     "Not being able to lose more than the money in the account",
     "A guarantee of not losing money",
-    "Automatic close-out if margin drops to 50 %",
+    "Guarantee Fund cover if you lose",
     "A leverage limit (1:30 on major pairs)"
    ],
-   "explanation": "ESMA imposed leverage limits, close-out at 50 % of margin and negative balance protection. Nothing guarantees you won't lose: between 74 and 89 % of retail clients lose money on CFDs."
+   "explanation": "ESMA imposed leverage limits and negative balance protection, as well as close-out at 50 % of margin. Nothing guarantees you won't lose or gives your losses back: between 74 and 89 % of retail clients lose money on CFDs."
   },
   "u14l2-11": {
    "prompt": "What do you say to Lumi?",
    "options": [
-    "Great, that way you make money faster",
+    "Great: with so little money, that way you make money faster",
     "Even better 1:1000, that's more",
-    "With 1:500, a 0.2 % move against you wipes you out; and in the EU the maximum for retail clients is 1:30"
+    "With 1:500, a 0.2 % move against you wipes you out"
    ],
    "explanation": "1 ÷ 500 = 0.2 %. Anyone offering 1:500 to a European retail client isn't following ESMA's rules: a bad sign.",
    "feedback": [
@@ -378,9 +378,9 @@
   "u14l2-12": {
    "prompt": "Pablo has €2,000 saved. His broker offers to raise him from 1:30 to 1:100 if he declares himself a «professional client». What does he do?",
    "options": [
-    "He turns it down: he'd lose his retail protections and the risk would soar",
+    "He turns it down: he'd lose his protections",
     "He accepts: with 1:100 he makes money faster",
-    "He accepts, but promises to trade carefully"
+    "He accepts, but promises himself to trade very carefully"
    ],
    "explanation": "The right one works because ESMA's rules protect retail clients, and declaring yourself professional removes them. With «making money faster» it's easy to forget that losses are multiplied just the same.",
    "feedback": [
@@ -414,16 +414,16 @@
    "prompt": "Why does a higher interest rate usually attract money to a currency?",
    "options": [
     "Because it forces tourists to change money",
-    "Because the central bank gives currency away",
-    "Because deposits and bonds in that currency pay more"
+    "Because the central bank gives currency away to banks",
+    "Because its deposits and bonds pay more"
    ],
    "explanation": "Investors buy the currency to earn that higher interest."
   },
   "u14l3-3": {
    "prompt": "The Fed raises rates by surprise and the ECB leaves them unchanged. In a month you have to pay $1,000 for an online course from the US. What's most likely?",
    "options": [
-    "The dollar tends to appreciate and the course may cost you a bit more in euros",
-    "Nothing: rates don't affect currencies",
+    "The course may cost you a bit more in euros",
+    "Nothing: interest rates don't affect currencies",
     "The course will cost you fewer euros"
    ],
    "explanation": "An unexpected rate rise usually makes the currency appreciate, although nothing is automatic.",
@@ -446,8 +446,8 @@
   "u14l3-9": {
    "prompt": "Bruno reads about a country with 50 % inflation whose central bank is cutting rates. A friend suggests buying its currency because \"it's dirt cheap\". What does Bruno think?",
    "options": [
-    "That inflation doesn't affect currencies",
-    "That such high inflation with falling rates usually sinks the currency",
+    "That a country's inflation doesn't affect its currency",
+    "That a currency like that usually keeps sinking",
     "That it's a sure bargain"
    ],
    "explanation": "High inflation with rates below it usually makes a currency depreciate.",
@@ -460,8 +460,8 @@
   "u14l3-10": {
    "prompt": "What do you explain to Lumi?",
    "options": [
-    "That the market already expected it, or expected more: it's the surprise that counts, not the figure",
-    "That rates have nothing to do with it",
+    "That the surprise counts, not the figure",
+    "That rates have nothing to do with the currency",
     "That it's a market mistake"
    ],
    "explanation": "In currencies, as in stocks, the price already reflects what's expected.",
@@ -488,8 +488,8 @@
    "prompt": "An \"S&P 500 EUR Hedged\" fund…",
    "options": [
     "Only buys European companies",
-    "Guarantees you won't lose money",
-    "Removes almost all of the dollar's effect against the euro"
+    "Guarantees you won't lose money on US shares",
+    "Removes almost all of the dollar's effect"
    ],
    "explanation": "The hedge neutralises the currency, not the risk of the shares."
   },
@@ -511,9 +511,9 @@
   "u14l4-11": {
    "prompt": "2022: the US stock market falls in dollars, but the dollar rises against the euro. Measured in euros, your loss is…",
    "options": [
-    "The same",
-    "Bigger than in dollars",
-    "Smaller than in dollars"
+    "The same as in dollars",
+    "More than in dollars",
+    "Less than in dollars"
    ],
    "explanation": "Each dollar you have left is worth more euros, so the dollar's rise cushions the fall. That's what happened in 2022. The temptation is to think the currency doesn't count if the fund is in euros, but the companies still earn in dollars."
   },
@@ -566,8 +566,8 @@
   "u14l5-5": {
    "prompt": "What is the yen carry trade?",
    "options": [
-    "Borrowing in yen at a low rate to invest where rates are higher",
-    "Buying yen to travel to Japan",
+    "Borrowing in yen to invest elsewhere",
+    "Buying cheap yen before travelling to Japan",
     "Selling Japanese shares"
    ],
    "explanation": "It works as long as the yen stays calm; if it jumps suddenly, everyone unwinds at once (August 2024)."
@@ -575,8 +575,8 @@
   "u14l5-6": {
    "prompt": "Why does the yen usually rise in a crisis?",
    "options": [
-    "Because Japanese investors bring home the money they have abroad",
-    "Because Japan raises rates in every crisis",
+    "Because Japanese investors bring money home",
+    "Because the Bank of Japan raises rates in every crisis",
     "Because the yen is backed by gold"
    ],
    "explanation": "Japan has huge savings invested abroad: in a panic, some of that money comes home."
@@ -598,8 +598,8 @@
   "u14l5-10": {
    "prompt": "March 2020: stock markets crash because of COVID. Marta is due to be paid a $5,000 invoice by a US client and will convert it into euros. What is the dollar most likely to do in those days of panic?",
    "options": [
-    "Appreciate: everyone wants dollars",
-    "Not move",
+    "Appreciate",
+    "Stay where it is",
     "Collapse"
    ],
    "explanation": "In the most acute crises, the dollar usually acts as a safe haven.",

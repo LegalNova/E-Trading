@@ -360,14 +360,14 @@
   "u13l1-8": {
    "prompt": "Laura bought bitcoin at a peak and is down 60 %. She reads on social media that \"it always recovers\". What does she think?",
    "options": [
-    "That she doesn't know if or when it will recover, so she decides based on her plan and what she can afford to lose",
-    "That she should take out a loan to buy more and average down",
+    "That she doesn't know if or when it will recover",
+    "That she should buy more now to lower her average price",
     "That it will definitely recover, as always"
    ],
    "explanation": "When prices drop sharply, what helps is a plan made calmly, not slogans from social media.",
    "feedback": [
     "Good: nobody knows whether it will get back to its peak; that's why position size is decided beforehand.",
-    "Borrowing for an asset that may keep falling can turn a loss into a serious problem.",
+    "Averaging down on an asset that can keep falling increases what you have at risk: it doesn't fix the loss.",
     "Bitcoin has recovered in the past after years; many other cryptos never have. The past guarantees nothing."
    ]
   },
@@ -399,9 +399,9 @@
   "u13l2-2": {
    "prompt": "What is counterparty risk?",
    "options": [
-    "The risk of the price falling",
-    "The risk that whoever holds or owes you your money can't or won't give it back",
-    "The risk of sending to the wrong address"
+    "That the price of what you hold falls",
+    "That whoever holds your money doesn't give it back",
+    "That you send your crypto to the wrong address by mistake"
    ],
    "explanation": "It doesn't depend on the asset, but on the company you're trusting."
   },
@@ -416,9 +416,9 @@
   "u13l2-6": {
    "prompt": "Ana has €1,000 in crypto on an exchange authorised under MiCA and €9,000 in an index fund. A friend tells her that, after FTX, \"all exchanges are scams\". What does she reply?",
    "options": [
-    "That counterparty risk exists, but it's reduced by using authorised platforms, separated assets and not putting everything in one place",
+    "That the risk exists, but it can be reduced",
     "That with MiCA the risk is zero",
-    "That he's right, and she sells everything"
+    "That he's right: no exchange can be trusted, authorised or not"
    ],
    "explanation": "Between \"it's all a scam\" and \"there's no risk\" lies the useful part: measuring and limiting the risk.",
    "feedback": [
@@ -474,23 +474,23 @@
   "u13l3-2": {
    "prompt": "Which are red flags in a new token? Select all that apply.",
    "options": [
-    "Promises of going x100",
+    "Being listed on several authorised exchanges",
     "Its code being published and audited",
     "Not letting you sell after you buy",
     "Anonymous creators with no track record"
    ],
-   "explanation": "A published audit guarantees nothing, but not having one is a red flag."
+   "explanation": "Not being able to sell and anonymous creators are red flags, as are promises of going x100. Audited code or a listing on authorised platforms guarantees nothing, but it isn't a red flag."
   },
   "u13l3-4": {
    "prompt": "Pablo sees a new token that has gone up 2,000 % in two days. In a group chat everyone says there's still plenty of upside. What does he do?",
    "options": [
-    "Takes out a loan to put in more",
-    "Stays out: he doesn't know what it is, who's behind it or whether he'll be able to sell",
-    "Puts his savings in: there's still time"
+    "Puts in just a little, so he doesn't miss out",
+    "Stays out: he doesn't know what it is or who's behind it",
+    "Puts his savings in: everyone says there's still plenty of time"
    ],
    "explanation": "Buying just because something has gone up a lot is what drives pump and dumps.",
    "feedback": [
-    "He could end up owing money for something that's no longer worth anything.",
+    "Even a little means buying something he doesn't understand out of fear of missing out: the likeliest outcome is losing it.",
     "Good: if the only argument is that it's going up, the risk of losing everything is huge.",
     "He arrives just as the early buyers want to sell: the classic pump-and-dump victim."
    ]
@@ -517,9 +517,9 @@
   "u13l4-4": {
    "prompt": "Where does the staking yield come from?",
    "options": [
-    "From new coins and network fees",
+    "From new coins and fees",
     "From a central bank",
-    "From a guarantee scheme"
+    "From the platform's guarantee scheme"
    ],
    "explanation": "It's the reward the network pays for validating blocks."
   },
@@ -550,12 +550,12 @@
   "u13l4-8": {
    "prompt": "What risks come with putting your crypto into DeFi? Select all that apply.",
    "options": [
-    "The crypto's price falling",
-    "The Bank of Spain fining you for using it",
+    "Your bank raising its custody fee",
+    "The Guarantee Fund taking a while to pay you back",
     "The platform getting hacked",
     "Bugs in the contract's code"
    ],
-   "explanation": "DeFi risks are technical and market risks; there's no cushion if something goes wrong."
+   "explanation": "In DeFi there's no bank and no guarantee fund: if the platform is hacked or the contract has a bug, there's no cushion. And the crypto's price can fall as well."
   },
   "u13l4-10": {
    "prompt": "Explainable yield or red flag?",
@@ -592,8 +592,8 @@
    "prompt": "Why are there no single-cryptocurrency UCITS ETFs in Europe?",
    "options": [
     "Because nobody wants them",
-    "Because UCITS rules require diversification and don't allow it",
-    "Because crypto is banned in Europe"
+    "Because UCITS requires diversification",
+    "Because crypto is banned everywhere in Europe"
    ],
    "explanation": "That's why single-crypto products are issued as ETPs or ETNs."
   },
@@ -602,7 +602,7 @@
    "options": [
     "An ETP, which removes all risks",
     "A \"guaranteed bitcoin fund\" someone offers him over the phone",
-    "A backed ETP on the stock market: no keys to manage, but he keeps all the volatility and adds the issuer's risk"
+    "A backed ETP: no keys, but just as volatile"
    ],
    "explanation": "Each way of holding crypto changes which risk you take on, but none removes the price risk.",
    "feedback": [
@@ -633,11 +633,11 @@
    "prompt": "What risks does a backed bitcoin ETP carry? Select all that apply.",
    "options": [
     "Issuer and custodian risk",
-    "The annual fee",
+    "Sending it to the wrong address",
     "Forgetting your own seed phrase",
     "Bitcoin's volatility"
    ],
-   "explanation": "The custodian keeps the keys, not you."
+   "explanation": "With an ETP you don't manage keys or addresses: the custodian does. You're left with bitcoin's volatility and issuer and custodian risk, plus an annual fee."
   },
   "u13l6-1": {
    "prompt": "Split up a sample €10,000 portfolio over 20 years. The written plan says: crypto at most 5 % in total, at least 20 % in bonds and no asset above 60 %.",
@@ -660,13 +660,13 @@
   "u13l6-6": {
    "prompt": "Pablo is 22, has no emergency fund and owes €2,000 on his credit card. He wants to put €3,000 into crypto \"because he's young and can take risks\". What does he bear in mind?",
    "options": [
-    "That he should take out a loan to put in more",
-    "That the emergency fund and paying off expensive debt come first; then, if he decides to hold crypto, a portion he could afford to lose",
+    "That he should put in just half and cut the debt with the rest",
+    "That the emergency fund and expensive debt come first",
     "That being young, the more risk he takes, the better"
    ],
    "explanation": "Age gives you time, but it doesn't replace the basics: an emergency fund and no expensive debt.",
    "feedback": [
-    "Borrowing for crypto multiplies the risk of ending up worse off than when he started.",
+    "Better than putting it all in, but he'd still have expensive debt and no emergency fund: any surprise would force him to sell.",
     "Good: the order matters. Credit card debt costs high interest for sure; crypto can be lost entirely.",
     "With no cushion and expensive debt, a sharp fall could force him to sell at the worst moment or borrow even more."
    ]
@@ -684,7 +684,7 @@
   "u13l6-10": {
    "prompt": "What do you tell him?",
    "options": [
-    "Because you only see the ones who won, not the ones who lost everything",
+    "Because you only see the ones who won",
     "Go for it: if it worked for him, it'll work for you",
     "Because crypto always goes down"
    ],
@@ -703,7 +703,7 @@
    "prompt": "You have 5% of your portfolio in crypto. If that crypto goes to zero, what is the most your portfolio can lose?",
    "options": [
     "Everything",
-    "5%: what the crypto weighs",
+    "5 %",
     "Half"
    ],
    "explanation": "The most you can lose on one part is what that part weighs in the total. That's why the weight is decided before buying. The temptation is to think that a crypto going to zero drags down the whole portfolio, and it doesn't: only if it weighs a lot."
@@ -712,7 +712,7 @@
    "prompt": "Marta had written «crypto at most 5%». After a big rise, her crypto now weighs 13.6% without her buying any more. What does she do?",
    "options": [
     "She puts more money into crypto because it's doing well",
-    "She sells crypto until she's back at 5% and moves the rest into her funds",
+    "She sells crypto until she's back at 5 %",
     "Nothing: if it's rising, let it keep rising"
    ],
    "explanation": "The right one is to rebalance: follow the plan written calmly. Letting it run turns a 5% into the asset that rules the whole portfolio.",

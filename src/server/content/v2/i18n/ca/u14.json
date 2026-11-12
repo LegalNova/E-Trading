@@ -312,7 +312,7 @@
   "u14l1-10": {
    "prompt": "La Laura cobra en euros i se'n va d'Erasmus a Londres. Veu que el GBP/EUR ha passat d'1,15 a 1,20 aquest mes. Com l'afecta?",
    "options": [
-    "Cada lliura li costa més euros: tot li surt una mica més d'un 4 % més car",
+    "Cada lliura li costa més euros",
     "No l'afecta perquè paga amb targeta",
     "El viatge li surt més barat"
    ],
@@ -326,18 +326,18 @@
   "u14l1-11": {
    "prompt": "Quins són parells principals? Marca'ls tots.",
    "options": [
-    "GBP/USD",
+    "USD/MXN (peso mexicà)",
     "USD/TRY (lira turca)",
-    "USD/JPY",
-    "EUR/USD"
+    "USD/JPY (ien japonès)",
+    "EUR/USD (euro)"
    ],
-   "explanation": "Els principals combinen el dòlar amb una altra gran divisa. L'USD/TRY és un parell exòtic: més spread i més volatilitat."
+   "explanation": "Els principals combinen el dòlar amb una altra gran divisa, com l'euro o el ien. L'USD/TRY i l'USD/MXN són parells exòtics: més spread i més volatilitat."
   },
   "u14l2-9": {
    "prompt": "En Pablo obre 1 lot estàndard d'EUR/USD (100.000 €) amb 4.000 € de garantia. El parell cau 120 pips després d'una dada d'inflació. Què ha passat?",
    "options": [
     "No ha perdut res fins que tanqui",
-    "Ha perdut uns 1.200 $: més d'una quarta part de la seva garantia en un dia",
+    "Ha perdut uns 1.200 $ en un dia",
     "Ha perdut 120 $, una minúcia"
    ],
    "explanation": "Amb palanquejament, un moviment corrent del parell es converteix en un cop enorme per als teus diners.",
@@ -352,17 +352,17 @@
    "options": [
     "No poder perdre més dels diners del compte",
     "Garantia de no perdre diners",
-    "Tancament automàtic si la garantia baixa al 50 %",
+    "Cobertura del Fons de Garantia si perds",
     "Límit de palanquejament (1:30 en parells principals)"
    ],
-   "explanation": "L'ESMA va imposar límits de palanquejament, tancament al 50 % de la garantia i protecció davant de saldo negatiu. Res no garanteix no perdre: entre un 74 i un 89 % dels minoristes perden amb CFD."
+   "explanation": "L'ESMA va imposar límits de palanquejament i protecció davant de saldo negatiu, a més del tancament al 50 % de la garantia. Res no garanteix no perdre ni et torna les pèrdues: entre un 74 i un 89 % dels minoristes perden amb CFD."
   },
   "u14l2-11": {
    "prompt": "Què li contestes a la Lumi?",
    "options": [
-    "Genial, així es guanya més ràpid",
+    "Genial: amb tan pocs diners, així es guanya més ràpid",
     "Millor 1:1000, que és més",
-    "Amb 1:500, un 0,2 % en contra et deixa a zero; i a la UE el màxim per a minoristes és 1:30"
+    "Amb 1:500, un 0,2 % en contra et deixa a zero"
    ],
    "explanation": "1 ÷ 500 = 0,2 %. Qui ofereix 1:500 a un minorista europeu no compleix les regles de l'ESMA: mal senyal.",
    "feedback": [
@@ -378,9 +378,9 @@
   "u14l2-12": {
    "prompt": "En Pablo té 2.000 € estalviats. El seu bròquer li ofereix passar d'1:30 a 1:100 si es declara «client professional». Què fa?",
    "options": [
-    "Ho rebutja: perdria les proteccions de minorista i el risc es dispara",
+    "Ho rebutja: perdria les seves proteccions",
     "Accepta: amb 1:100 guanya més de pressa",
-    "Accepta, però promet operar amb compte"
+    "Accepta, però es promet operar amb molt de compte"
    ],
    "explanation": "La bona encerta perquè les regles d'ESMA protegeixen els minoristes, i declarar-se professional les treu. Amb «guanyar més de pressa» s'oblida que les pèrdues es multipliquen igual.",
    "feedback": [
@@ -414,16 +414,16 @@
    "prompt": "Per què un tipus d'interès més alt sol atraure diners cap a una divisa?",
    "options": [
     "Perquè obliga els turistes a canviar",
-    "Perquè el banc central regala divises",
-    "Perquè els dipòsits i els bons en aquesta divisa paguen més"
+    "Perquè el banc central regala divises als bancs",
+    "Perquè els seus dipòsits i bons paguen més"
    ],
    "explanation": "Els inversors compren la divisa per cobrar aquest interès més alt."
   },
   "u14l3-3": {
    "prompt": "La Fed apuja els tipus per sorpresa i el BCE els deixa igual. D'aquí a un mes has de pagar 1.000 $ per un curs en línia dels EUA. Què és el més probable?",
    "options": [
-    "El dòlar tendeix a apreciar-se i el curs et pot costar una mica més en euros",
-    "Res: els tipus no afecten les divises",
+    "El curs et pot costar una mica més en euros",
+    "Res: els tipus d'interès no afecten les divises",
     "El curs et costarà menys euros"
    ],
    "explanation": "Una pujada de tipus inesperada sol apreciar la divisa, tot i que res no és automàtic.",
@@ -446,8 +446,8 @@
   "u14l3-9": {
    "prompt": "En Bruno llegeix sobre un país amb una inflació del 50 % el banc central del qual està abaixant els tipus. Un amic li proposa comprar-ne la moneda perquè «està baratíssima». Què pensa en Bruno?",
    "options": [
-    "Que la inflació no afecta les divises",
-    "Que una inflació tan alta amb els tipus baixant sol enfonsar la divisa",
+    "Que la inflació d'un país no afecta la seva divisa",
+    "Que així la divisa sol continuar enfonsant-se",
     "Que és una ganga segura"
    ],
    "explanation": "Una inflació alta amb els tipus per sota sol depreciar la divisa.",
@@ -460,8 +460,8 @@
   "u14l3-10": {
    "prompt": "Què li expliques a la Lumi?",
    "options": [
-    "Que el mercat ja ho esperava o n'esperava més: compta la sorpresa, no la dada",
-    "Que els tipus no hi tenen res a veure",
+    "Que compta la sorpresa, no la dada",
+    "Que els tipus no tenen res a veure amb la divisa",
     "Que és un error del mercat"
    ],
    "explanation": "En divises, com a borsa, el preu ja incorpora el que s'espera.",
@@ -488,8 +488,8 @@
    "prompt": "Un fons «S&P 500 EUR Hedged»…",
    "options": [
     "Només compra empreses europees",
-    "Garanteix no perdre diners",
-    "Elimina gairebé tot l'efecte del dòlar respecte a l'euro"
+    "Garanteix no perdre diners amb la borsa americana",
+    "Elimina gairebé tot l'efecte del dòlar"
    ],
    "explanation": "La cobertura neutralitza la divisa, no el risc de les accions."
   },
@@ -511,9 +511,9 @@
   "u14l4-11": {
    "prompt": "2022: la borsa americana cau en dòlars, però el dòlar puja respecte a l'euro. Mesurada en euros, la teva pèrdua és…",
    "options": [
-    "La mateixa",
+    "La mateixa que en dòlars",
     "Més gran que en dòlars",
-    "Més petita que en dòlars"
+    "Menor que en dòlars"
    ],
    "explanation": "Cada dòlar que et queda val més euros, així que la pujada del dòlar esmorteeix la caiguda. És el que va passar el 2022. La temptació és pensar que la divisa no compta si el fons és en euros, però les empreses continuen guanyant en dòlars."
   },
@@ -566,8 +566,8 @@
   "u14l5-5": {
    "prompt": "Què és el carry trade amb iens?",
    "options": [
-    "Manllevar en iens a un tipus baix per invertir on es paga més",
-    "Comprar iens per viatjar al Japó",
+    "Endeutar-se en iens per invertir fora",
+    "Comprar iens barats abans de viatjar al Japó",
     "Vendre accions japoneses"
    ],
    "explanation": "Funciona mentre el ien estigui tranquil; si puja de cop, tothom desfà les posicions alhora (agost del 2024)."
@@ -575,8 +575,8 @@
   "u14l5-6": {
    "prompt": "Per què sol pujar el ien en una crisi?",
    "options": [
-    "Perquè els inversors japonesos repatrien els diners que tenen fora",
-    "Perquè el Japó apuja els tipus a cada crisi",
+    "Perquè els japonesos repatrien els seus diners",
+    "Perquè el Banc del Japó apuja els tipus a cada crisi",
     "Perquè el ien està respaldat per or"
    ],
    "explanation": "El Japó té uns estalvis enormes invertits fora: en el pànic, part d'aquests diners torna a casa."
@@ -598,7 +598,7 @@
   "u14l5-10": {
    "prompt": "Març del 2020: les borses s'enfonsen per la COVID. La Marta ha de cobrar una factura de 5.000 $ d'un client americà i la passarà a euros. Què és més probable que faci el dòlar en aquests dies de pànic?",
    "options": [
-    "Que s'apreciï: tothom busca dòlars",
+    "Que s'apreciï",
     "Que no es mogui",
     "Que s'enfonsi"
    ],

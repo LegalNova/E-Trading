@@ -360,14 +360,14 @@
   "u13l1-8": {
    "prompt": "La Laura va comprar bitcoin en un màxim i perd un 60 %. Llegeix a les xarxes que «sempre es recupera». Què pensa?",
    "options": [
-    "Que no sap si es recuperarà ni quan, i decideix segons el seu pla i el que es pot permetre perdre",
-    "Que ha de demanar un préstec per comprar-ne més i fer mitjana",
+    "Que no sap si es recuperarà ni quan",
+    "Que ha de comprar-ne més ara per abaixar el preu mitjà",
     "Que es recuperarà segur, com sempre"
    ],
    "explanation": "Davant d'una caiguda forta, el que ajuda és el pla decidit amb calma, no les frases de les xarxes.",
    "feedback": [
     "Bé: ningú sap si tornarà al seu màxim; per això la mida de la posició es decideix abans.",
-    "Endeutar-se per un actiu que pot continuar caient pot convertir una pèrdua en un problema seriós.",
+    "Fer mitjana a la baixa en un actiu que pot continuar caient augmenta el que arrisques: no arregla la pèrdua.",
     "Bitcoin s'ha recuperat en el passat al cap d'anys; moltes altres criptos no ho han fet mai. El passat no garanteix res."
    ]
   },
@@ -399,9 +399,9 @@
   "u13l2-2": {
    "prompt": "Què és el risc de contrapart?",
    "options": [
-    "El risc que baixi el preu",
-    "El risc que qui guarda o et deu els teus diners no pugui o no vulgui tornar-los",
-    "El risc d'equivocar-te d'adreça en enviar"
+    "Que baixi el preu del que tens",
+    "Que qui guarda els teus diners no te'ls torni",
+    "Que t'equivoquis d'adreça en enviar les teves criptos"
    ],
    "explanation": "No depèn de l'actiu, sinó de l'empresa en què confies."
   },
@@ -416,9 +416,9 @@
   "u13l2-6": {
    "prompt": "L'Anna té 1.000 € en cripto en un exchange autoritzat sota MiCA i 9.000 € en un fons indexat. Un amic li diu que, pel que va passar amb FTX, «tots els exchanges són estafes». Què li respon?",
    "options": [
-    "Que el risc de contrapart existeix, però es redueix amb plataformes autoritzades, actius separats i sense concentrar-ho tot",
+    "Que aquest risc existeix, però es pot reduir",
     "Que amb MiCA el risc és zero",
-    "Que té raó i ho ven tot"
+    "Que té raó: cap exchange és de fiar, ni autoritzat"
    ],
    "explanation": "Entre «tot és una estafa» i «no hi ha risc» hi ha el que és útil: mesurar i limitar el risc.",
    "feedback": [
@@ -474,23 +474,23 @@
   "u13l3-2": {
    "prompt": "Quins són senyals d'alarma en un token nou? Marca'ls tots.",
    "options": [
-    "Promeses de multiplicar x100",
+    "Que cotitzi en diversos exchanges autoritzats",
     "Que el seu codi estigui publicat i auditat",
     "Que no et deixi vendre després de comprar",
     "Creadors anònims sense historial"
    ],
-   "explanation": "Una auditoria publicada no garanteix res, però que no n'hi hagi sí que és una alarma."
+   "explanation": "No poder vendre i uns creadors anònims són senyals d'alarma, igual que les promeses de multiplicar x100. Que el codi estigui auditat o que cotitzi en plataformes autoritzades no garanteix res, però no és una alarma."
   },
   "u13l3-4": {
    "prompt": "En Pablo veu un token nou que ha pujat un 2.000 % en dos dies. En un grup tothom diu que encara li queda molt. Què fa?",
    "options": [
-    "Demana un préstec per entrar-hi amb més",
-    "No hi entra: no sap què és, qui hi ha al darrere ni si podrà vendre",
-    "Hi entra amb els seus estalvis: encara hi és a temps"
+    "Hi entra només amb una mica, per no quedar-se'n fora",
+    "No hi entra: no sap què és ni qui hi ha al darrere",
+    "Hi entra amb els seus estalvis: diuen que encara hi és a temps"
    ],
    "explanation": "Comprar només perquè una cosa ha pujat molt és el motor dels pump and dump.",
    "feedback": [
-    "Podria acabar devent diners per una cosa que ja no val res.",
+    "Encara que sigui poc, és comprar una cosa que no entén per por de perdre-s'ho: el més probable és perdre-ho.",
     "Bé: si l'únic argument és que puja, el risc de perdre-ho tot és enorme.",
     "Arriba quan els primers ja volen vendre: és just el perfil de víctima d'un pump and dump."
    ]
@@ -517,9 +517,9 @@
   "u13l4-4": {
    "prompt": "D'on surt el rendiment de l'staking?",
    "options": [
-    "De monedes noves i de les comissions de la xarxa",
+    "De monedes noves i comissions",
     "D'un banc central",
-    "D'un fons de garantia"
+    "D'un fons de garantia de la plataforma"
    ],
    "explanation": "És la recompensa que paga la xarxa per validar blocs."
   },
@@ -550,12 +550,12 @@
   "u13l4-8": {
    "prompt": "Quins riscos té posar les teves criptos a DeFi? Marca'ls tots.",
    "options": [
-    "Caiguda del preu de la cripto",
-    "Que el Banc d'Espanya et multi per fer-lo servir",
+    "Que el teu banc t'apugi la comissió de custòdia",
+    "Que el Fons de Garantia trigui a tornar-te els diners",
     "Hackejos de la plataforma",
     "Errors en el codi del contracte"
    ],
-   "explanation": "Els riscos de DeFi són tècnics i de mercat; no hi ha xarxa de seguretat si alguna cosa falla."
+   "explanation": "A DeFi no hi ha banc ni fons de garantia: si hackegen la plataforma o el contracte té un error, no hi ha xarxa de seguretat. I a més el preu de la cripto pot caure."
   },
   "u13l4-10": {
    "prompt": "Rendiment explicable o senyal d'alarma?",
@@ -592,7 +592,7 @@
    "prompt": "Per què a Europa no hi ha ETF UCITS d'una sola criptomoneda?",
    "options": [
     "Perquè ningú no els vol",
-    "Perquè la norma UCITS exigeix diversificació i no ho permet",
+    "Perquè UCITS exigeix diversificar",
     "Perquè les criptos estan prohibides a Europa"
    ],
    "explanation": "Per això els productes d'una sola cripto s'emeten com a ETP o ETN."
@@ -602,7 +602,7 @@
    "options": [
     "Un ETP, que elimina tots els riscos",
     "Un «fons garantit de bitcoin» que li ofereixen per telèfon",
-    "Un ETP respaldat a borsa: no gestiona claus, però manté tota la volatilitat i hi suma el risc de l'emissor"
+    "Un ETP respaldat: sense claus, però igual de volàtil"
    ],
    "explanation": "Cada forma de tenir cripto canvia quin risc assumeixes, però cap no elimina el de preu.",
    "feedback": [
@@ -633,11 +633,11 @@
    "prompt": "Quins riscos té un ETP de bitcoin respaldat? Marca'ls tots.",
    "options": [
     "El risc de l'emissor i del custodi",
-    "La comissió anual",
+    "Equivocar-te d'adreça en enviar-lo",
     "Oblidar la teva pròpia frase llavor",
     "La volatilitat del bitcoin"
    ],
-   "explanation": "Les claus les guarda el custodi, no tu."
+   "explanation": "Amb un ETP no gestiones claus ni adreces: això ho fa el custodi. Et queden la volatilitat del bitcoin i el risc de l'emissor i del custodi, a més d'una comissió anual."
   },
   "u13l6-1": {
    "prompt": "Reparteix una cartera d'exemple de 10.000 € a 20 anys. El pla escrit diu: cripto com a màxim un 5 % en total, almenys un 20 % en bons i cap actiu per sobre del 60 %.",
@@ -660,13 +660,13 @@
   "u13l6-6": {
    "prompt": "En Pablo té 22 anys, no té coixí d'emergència i deu 2.000 € de la targeta. Vol posar 3.000 € en cripto «perquè és jove i pot arriscar». Què té en compte?",
    "options": [
-    "Que demani un préstec per posar-n'hi més",
-    "Que primer van el coixí i treure's el deute car; després, si decideix tenir cripto, una part que pugui perdre",
+    "Que hi posi només la meitat i amb la resta redueixi el deute",
+    "Que primer van el coixí i treure's el deute car",
     "Que, com que és jove, com més arrisqui, millor"
    ],
    "explanation": "L'edat dona temps, però no substitueix la base: coixí i cap deute car.",
    "feedback": [
-    "Endeutar-se per a cripto multiplica el risc d'acabar pitjor que al principi.",
+    "Millor que posar-ho tot, però continuaria amb deute car i sense coixí: qualsevol imprevist l'obligaria a vendre.",
     "Bé: l'ordre importa. El deute de la targeta costa un interès alt segur; la cripto es pot perdre sencera.",
     "Sense coixí i amb deute car, una caiguda forta el pot obligar a vendre en el pitjor moment o a endeutar-se més."
    ]
@@ -684,7 +684,7 @@
   "u13l6-10": {
    "prompt": "Què li dius?",
    "options": [
-    "Perquè només veus els que van guanyar, no els que ho van perdre tot",
+    "Perquè només veus els que van guanyar",
     "Fes-ho: si a ell li va sortir bé, a tu també",
     "Perquè la cripto sempre baixa"
    ],
@@ -703,7 +703,7 @@
    "prompt": "Tens un 5 % de la teva cartera en cripto. Si aquesta cripto va a zero, quant perd com a molt la teva cartera?",
    "options": [
     "Tot",
-    "Un 5 %: el que pesa la cripto",
+    "Un 5 %",
     "La meitat"
    ],
    "explanation": "El màxim que pots perdre amb una part és el que aquesta part pesa en el total. Per això el pes es decideix abans de comprar. La temptació és pensar que una cripto que cau a zero arrossega tota la cartera, i no: només si pesa molt."
@@ -711,8 +711,8 @@
   "u13l6-12": {
    "prompt": "La Marta tenia escrit «cripto com a màxim un 5 %». Després d'una gran pujada, la seva cripto ja pesa un 13,6 % sense que n'hagi comprat més. Què fa?",
    "options": [
-    "Hi posa més diners perquè va bé",
-    "Ven cripto fins a tornar al 5 % i porta la resta als seus fons",
+    "Hi posa més diners en cripto perquè va bé",
+    "Ven cripto fins a tornar al 5 %",
     "Res: si puja, que continuï pujant"
    ],
    "explanation": "La bona és reequilibrar: seguir el pla escrit amb calma. Deixar-ho córrer converteix un 5 % en l'actiu que mana en tota la cartera.",

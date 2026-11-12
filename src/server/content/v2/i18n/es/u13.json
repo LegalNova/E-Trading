@@ -360,14 +360,14 @@
   "u13l1-8": {
    "prompt": "Laura compró bitcoin en un máximo y va perdiendo un 60 %. Lee en redes que «siempre se recupera». ¿Qué piensa?",
    "options": [
-    "Que no sabe si se recuperará ni cuándo, y decide según su plan y lo que puede permitirse perder",
-    "Que debe pedir un préstamo para comprar más y promediar",
+    "Que no sabe si se recuperará ni cuándo",
+    "Que debe comprar más ahora para bajar su precio medio",
     "Que se recuperará seguro, como siempre"
    ],
    "explanation": "Ante una caída fuerte, lo que ayuda es el plan decidido en calma, no las frases de las redes.",
    "feedback": [
     "Bien: nadie sabe si volverá a su máximo; por eso el tamaño de la posición se decide antes.",
-    "Endeudarse para un activo que puede seguir cayendo puede convertir una pérdida en un problema serio.",
+    "Promediar a la baja en un activo que puede seguir cayendo aumenta lo que arriesgas: no arregla la pérdida.",
     "Bitcoin se ha recuperado en el pasado tras años; muchas otras criptos no lo han hecho nunca. El pasado no garantiza nada."
    ]
   },
@@ -399,9 +399,9 @@
   "u13l2-2": {
    "prompt": "¿Qué es el riesgo de contraparte?",
    "options": [
-    "El riesgo de que baje el precio",
-    "El riesgo de que quien guarda o te debe tu dinero no pueda o no quiera devolverlo",
-    "El riesgo de equivocarte de dirección al enviar"
+    "Que baje el precio de lo que tienes",
+    "Que quien guarda tu dinero no te lo devuelva",
+    "Que te equivoques de dirección al enviar tus criptos"
    ],
    "explanation": "No depende del activo, sino de la empresa en la que confías."
   },
@@ -416,9 +416,9 @@
   "u13l2-6": {
    "prompt": "Ana tiene 1.000 € en cripto en un exchange autorizado bajo MiCA y 9.000 € en un fondo indexado. Un amigo le dice que, por lo de FTX, «todos los exchanges son estafas». ¿Qué responde?",
    "options": [
-    "Que el riesgo de contraparte existe, pero se reduce con plataformas autorizadas, activos separados y sin concentrarlo todo",
+    "Que ese riesgo existe, pero se puede reducir",
     "Que con MiCA el riesgo es cero",
-    "Que tiene razón y lo vende todo"
+    "Que tiene razón: ningún exchange es de fiar, ni autorizado"
    ],
    "explanation": "Entre «todo es una estafa» y «no hay riesgo» está lo útil: medir y limitar el riesgo.",
    "feedback": [
@@ -474,23 +474,23 @@
   "u13l3-2": {
    "prompt": "¿Qué son señales de alarma en un token nuevo? Marca todas.",
    "options": [
-    "Promesas de multiplicar x100",
+    "Que cotice en varios exchanges autorizados",
     "Que su código esté publicado y auditado",
     "Que no te deje vender después de comprar",
     "Creadores anónimos sin historial"
    ],
-   "explanation": "Una auditoría publicada no garantiza nada, pero su ausencia sí es una alarma."
+   "explanation": "No poder vender y unos creadores anónimos son señales de alarma, igual que las promesas de multiplicar x100. Que el código esté auditado o que cotice en plataformas autorizadas no garantiza nada, pero no es una alarma."
   },
   "u13l3-4": {
    "prompt": "Pablo ve un token nuevo que ha subido un 2.000 % en dos días. En un grupo todos dicen que aún queda mucho. ¿Qué hace?",
    "options": [
-    "Pide un préstamo para entrar con más",
-    "No entra: no sabe qué es, quién está detrás ni si podrá vender",
-    "Entra con sus ahorros: aún está a tiempo"
+    "Entra solo con un poco, para no quedarse fuera",
+    "No entra: no sabe qué es ni quién está detrás",
+    "Entra con sus ahorros: dicen que aún está a tiempo"
    ],
    "explanation": "Comprar solo porque algo ha subido mucho es el motor de los pump and dump.",
    "feedback": [
-    "Podría acabar debiendo dinero por algo que ya no vale nada.",
+    "Aunque sea poco, es comprar algo que no entiende por miedo a perdérselo: lo más probable es perderlo.",
     "Bien: si el único argumento es que sube, el riesgo de perderlo todo es enorme.",
     "Llega cuando los primeros ya quieren vender: es justo el perfil de víctima de un pump and dump."
    ]
@@ -517,9 +517,9 @@
   "u13l4-4": {
    "prompt": "¿De dónde sale el rendimiento del staking?",
    "options": [
-    "De monedas nuevas y de las comisiones de la red",
+    "De monedas nuevas y comisiones",
     "De un banco central",
-    "De un fondo de garantía"
+    "De un fondo de garantía de la plataforma"
    ],
    "explanation": "Es la recompensa que paga la red por validar bloques."
   },
@@ -550,12 +550,12 @@
   "u13l4-8": {
    "prompt": "¿Qué riesgos tiene poner tus criptos en DeFi? Marca todos.",
    "options": [
-    "Caída del precio de la cripto",
-    "Que el Banco de España te multe por usarlo",
+    "Que tu banco te suba la comisión de custodia",
+    "Que el Fondo de Garantía tarde en devolverte el dinero",
     "Hackeos de la plataforma",
     "Fallos en el código del contrato"
    ],
-   "explanation": "Los riesgos de DeFi son técnicos y de mercado; no hay red de seguridad si algo falla."
+   "explanation": "En DeFi no hay banco ni fondo de garantía: si hackean la plataforma o el contrato tiene un fallo, no hay red de seguridad. Y además el precio de la cripto puede caer."
   },
   "u13l4-10": {
    "prompt": "¿Rendimiento explicable o señal de alarma?",
@@ -592,7 +592,7 @@
    "prompt": "¿Por qué en Europa no hay ETF UCITS de una sola criptomoneda?",
    "options": [
     "Porque nadie los quiere",
-    "Porque la norma UCITS exige diversificación y no lo permite",
+    "Porque UCITS exige diversificar",
     "Porque las criptos están prohibidas en Europa"
    ],
    "explanation": "Por eso los productos de una sola cripto se emiten como ETP o ETN."
@@ -602,7 +602,7 @@
    "options": [
     "Un ETP, que elimina todos los riesgos",
     "Un «fondo garantizado de bitcoin» que le ofrecen por teléfono",
-    "Un ETP respaldado en bolsa: no gestiona claves, pero mantiene toda la volatilidad y suma el riesgo del emisor"
+    "Un ETP respaldado: sin claves, pero igual de volátil"
    ],
    "explanation": "Cada forma de tener cripto cambia qué riesgo asumes, pero ninguna quita el de precio.",
    "feedback": [
@@ -633,11 +633,11 @@
    "prompt": "¿Qué riesgos tiene un ETP de bitcoin respaldado? Marca todos.",
    "options": [
     "El riesgo del emisor y del custodio",
-    "La comisión anual",
+    "Equivocarte de dirección al enviarlo",
     "Olvidar tu propia frase semilla",
     "La volatilidad del bitcoin"
    ],
-   "explanation": "Las claves las guarda el custodio, no tú."
+   "explanation": "Con un ETP no gestionas claves ni direcciones: eso lo hace el custodio. Te quedan la volatilidad del bitcoin y el riesgo del emisor y del custodio, además de una comisión anual."
   },
   "u13l6-1": {
    "prompt": "Reparte una cartera de ejemplo de 10.000 € a 20 años. El plan escrito dice: cripto como máximo un 5 % en total, al menos un 20 % en bonos y ningún activo por encima del 60 %.",
@@ -660,13 +660,13 @@
   "u13l6-6": {
    "prompt": "Pablo tiene 22 años, no tiene colchón de emergencia y debe 2.000 € de la tarjeta. Quiere meter 3.000 € en cripto «porque es joven y puede arriesgar». ¿Qué tiene en cuenta?",
    "options": [
-    "Que pida un préstamo para meter más",
-    "Que antes van el colchón y quitarse la deuda cara; luego, si decide tener cripto, una parte que pueda perder",
+    "Que meta solo la mitad y con el resto reduzca la deuda",
+    "Que antes van el colchón y quitarse la deuda cara",
     "Que siendo joven, cuanto más arriesgue, mejor"
    ],
    "explanation": "La edad da tiempo, pero no sustituye a la base: colchón y sin deudas caras.",
    "feedback": [
-    "Endeudarse para cripto multiplica el riesgo de acabar peor que al empezar.",
+    "Mejor que meterlo todo, pero seguiría con deuda cara y sin colchón: cualquier imprevisto le obligaría a vender.",
     "Bien: el orden importa. La deuda de tarjeta cuesta un interés alto seguro; la cripto puede perderse entera.",
     "Sin colchón y con deuda cara, una caída fuerte le puede obligar a vender en el peor momento o a endeudarse más."
    ]
@@ -684,7 +684,7 @@
   "u13l6-10": {
    "prompt": "¿Qué le dices?",
    "options": [
-    "Porque solo ves a los que ganaron, no a los que lo perdieron todo",
+    "Porque solo ves a los que ganaron",
     "Hazlo: si a él le salió bien, a ti también",
     "Porque la cripto siempre baja"
    ],
@@ -703,7 +703,7 @@
    "prompt": "Tienes un 5 % de tu cartera en cripto. Si esa cripto se va a cero, ¿cuánto pierde como mucho tu cartera?",
    "options": [
     "Todo",
-    "Un 5 %: lo que pesa la cripto",
+    "Un 5 %",
     "La mitad"
    ],
    "explanation": "Lo más que puedes perder con una parte es lo que esa parte pesa en el total. Por eso el peso se decide antes de comprar. La tentación es pensar que una cripto que cae a cero arrastra a toda la cartera, y no: solo si pesa mucho."
@@ -712,7 +712,7 @@
    "prompt": "Marta tenía escrito «cripto como máximo un 5 %». Tras una gran subida, su cripto pesa ya un 13,6 % sin que haya comprado más. ¿Qué hace?",
    "options": [
     "Mete más dinero en cripto porque va bien",
-    "Vende cripto hasta volver al 5 % y lleva el resto a sus fondos",
+    "Vende cripto hasta volver al 5 %",
     "Nada: si sube, que siga subiendo"
    ],
    "explanation": "La buena es rebalancear: seguir el plan escrito en calma. Dejarlo correr convierte un 5 % en el activo que manda en toda la cartera.",
