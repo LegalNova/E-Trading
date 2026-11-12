@@ -262,7 +262,7 @@
    "options": [
     "It's lost along with the management company",
     "It's covered by the Fondo de Garantía de Depósitos (deposit guarantee scheme)",
-    "It still belongs to the unitholders: the fund's assets are kept separate"
+    "It still belongs to the unitholders"
    ],
    "explanation": "The fund's assets don't belong to the management company. Careful: Spain's deposit guarantee scheme (FGD) covers deposits, not investment funds."
   },
@@ -292,12 +292,12 @@
   "u10l1-10": {
    "prompt": "What advantages does a fund have over buying individual shares? Select all.",
    "options": [
-    "It's run by professionals",
+    "It never charges fees",
     "In Spain it can be transferred without paying tax",
     "It has guaranteed gains",
     "You diversify with little money"
    ],
-   "explanation": "A normal investment fund doesn't guarantee gains: its value goes up and down with what it holds."
+   "explanation": "With a fund you diversify with little money and, in Spain, you can transfer it without paying tax; it's also run by professionals. But it charges fees and doesn't guarantee gains."
   },
   "u10l1-11": {
    "prompt": "Ana wants to invest €50 a month in companies from all over the world. What suits her best?",
@@ -317,8 +317,8 @@
    "prompt": "What do you reply?",
    "options": [
     "If a bank sells it, it's safe",
-    "A fund goes up and down with what it holds: it doesn't guarantee gains",
-    "They don't lose: the CNMV guarantees it"
+    "A fund goes up and down with what it holds",
+    "They don't lose: the CNMV supervises them and guarantees the result"
    ],
    "explanation": "A normal fund guarantees nothing: it's worth what its assets are worth. Being sold by a bank or supervised by the CNMV gives you certainty about the rules and custody, not about returns.",
    "feedback": [
@@ -353,9 +353,9 @@
   "u10l4-7": {
    "prompt": "According to Sharpe, why does the average active investor get less than the market?",
    "options": [
-    "Because managers don't know how to invest",
+    "Because most managers don't know how to invest",
     "Because the market cheats",
-    "Because before costs they earn the same, and then they pay more costs"
+    "Because they earn the same and pay more costs"
    ],
    "explanation": "It's the arithmetic of active management (Sharpe, 1991)."
   },
@@ -372,18 +372,18 @@
   "u10l4-10": {
    "prompt": "Which conclusions are reasonable from SPIVA? Select all.",
    "options": [
-    "Costs explain a large part of the gap",
+    "The fund that won last year will do it again",
     "It's hard to know in advance who will beat the index",
     "No active manager has ever beaten the market",
     "Most active funds don't beat their index over the long run"
    ],
-   "explanation": "Some do beat it; the problem is that they're few and almost impossible to spot in advance."
+   "explanation": "Most don't beat their index over the long run and it's hard to know in advance who will; costs explain a large part of it. Some do beat it, but having won one year doesn't predict the next."
   },
   "u10l4-11": {
    "prompt": "What do you reply?",
    "options": [
-    "Yes: if the bank says so, it must be true",
-    "First compare it with a cheap index fund in the same market and check whether it really has beaten it for many years",
+    "Yes: if the bank says so, and it's the expert, it must be true",
+    "First compare it with a cheap index fund",
     "Yes, and the more it charges, the better the manager"
    ],
    "explanation": "According to SPIVA, almost all active funds fall behind their index over 10 years, and their costs repeat every year. Trusting the bank is tempting, but whoever sells it to you gets paid for doing so.",
@@ -464,28 +464,28 @@
    "prompt": "What's true of a physically replicated ETF? Select all.",
    "options": [
     "It may buy just a representative sample",
-    "It may lend out securities in exchange for a fee",
+    "It has no cost for the investor",
     "It depends on a swap with a bank",
     "It buys the shares in the index"
    ],
-   "explanation": "The swap belongs to synthetic replication."
+   "explanation": "Physical replication buys the shares in the index, sometimes just a representative sample, and may lend out securities. The swap belongs to synthetic replication, and every ETF has costs."
   },
   "u10l6-2": {
    "prompt": "What are the features of synthetic replication? Select all.",
    "options": [
-    "Under UCITS, counterparty exposure is capped at 10 %",
+    "It holds all the shares in the index",
     "It doesn't track the index at all",
     "It uses a swap",
     "Counterparty risk"
    ],
-   "explanation": "It tracks the index, often very precisely; its particular risk is the counterparty."
+   "explanation": "Synthetic replication uses a swap, which is why it carries counterparty risk (capped at 10 % under UCITS). It tracks the index very precisely, but without holding its shares."
   },
   "u10l6-3": {
    "prompt": "In a synthetic ETF, who pays the index's return?",
    "options": [
     "The CNMV",
-    "The swap counterparty, usually a bank",
-    "The other unitholders"
+    "The swap counterparty",
+    "The fund's other unitholders"
    ],
    "explanation": "The bank commits to paying whatever the index does in exchange for what the ETF's basket returns."
   },
@@ -519,7 +519,7 @@
    "prompt": "You read that the bank your synthetic ETF has its swap with is in trouble. What do you do?",
    "options": [
     "Nothing: an ETF can't lose because of that",
-    "I check its exposure to the bank and its collateral before deciding",
+    "I check its exposure to that bank",
     "I sell everything now, before I lose it all"
    ],
    "explanation": "The risk of synthetic replication is the counterparty, but it's capped: at most 10 % of the fund, and with collateral. Panic selling is tempting, but it assumes a much bigger risk than the real one; ignoring it completely is also a mistake.",
@@ -533,7 +533,7 @@
    "prompt": "Extract from a (fictional) KID: «Example World Fund, Acc class. ISIN IE00XXXXXXXX. Objective: to replicate the MSCI World index. Risk indicator: 4 out of 7. Ongoing charges: 0.20 % a year. Recommended holding period: 5 years». What level of risk does it indicate?",
    "options": [
     "The highest possible",
-    "Medium: 4 on a scale of 1 to 7",
+    "Medium: 4 of 7",
     "Very low: 4 out of 100"
    ],
    "explanation": "A 4 out of 7 is typical for a global equity fund: it swings quite a bit, but it's diversified."
@@ -543,10 +543,10 @@
    "options": [
     "The costs",
     "The guaranteed return for the next 5 years",
-    "The recommended holding period",
+    "The price it will trade at in a year",
     "The risk indicator from 1 to 7"
    ],
-   "explanation": "The scenarios are simulations: a KID never guarantees returns."
+   "explanation": "A KID always includes the costs and the risk indicator from 1 to 7, as well as the recommended holding period. Its scenarios are simulations: it doesn't guarantee returns or prices."
   },
   "u10l7-4": {
    "prompt": "Match each item in the KID to what it tells you.",

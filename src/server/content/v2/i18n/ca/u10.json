@@ -262,7 +262,7 @@
    "options": [
     "Es perden amb la gestora",
     "Els cobreix el Fons de Garantia de Dipòsits",
-    "Continuen sent dels partícips: el patrimoni del fons està separat"
+    "Continuen sent dels partícips"
    ],
    "explanation": "El patrimoni del fons no és de la gestora. Compte: el FGD cobreix dipòsits, no fons d'inversió."
   },
@@ -292,12 +292,12 @@
   "u10l1-10": {
    "prompt": "Quins avantatges té un fons davant de comprar accions soltes? Marca'ls tots.",
    "options": [
-    "El gestionen professionals",
+    "No cobra mai comissions",
     "A Espanya es pot traspassar sense impostos",
     "Té guanys garantits",
     "Diversifiques amb pocs diners"
    ],
-   "explanation": "Un fons d'inversió normal no garanteix guanys: el seu valor puja i baixa amb el que té a dins."
+   "explanation": "Amb un fons diversifiques amb pocs diners i, a Espanya, el pots traspassar sense pagar impostos; a més, el gestionen professionals. Però cobra comissions i no garanteix guanys."
   },
   "u10l1-11": {
    "prompt": "L'Ana vol invertir 50 € al mes en empreses de tot el món. Què li encaixa més?",
@@ -317,8 +317,8 @@
    "prompt": "Què li contestes?",
    "options": [
     "Si el ven un banc, és segur",
-    "Un fons puja i baixa amb el que té a dins: no garanteix guanys",
-    "No perden: la CNMV ho garanteix"
+    "Un fons puja i baixa amb el que té a dins",
+    "No perden: la CNMV els supervisa i en garanteix el resultat"
    ],
    "explanation": "Un fons normal no garanteix res: val el que valen els seus actius. Que el vengui un banc o el supervisi la CNMV dona seguretat sobre les regles i la custòdia, no sobre la rendibilitat.",
    "feedback": [
@@ -353,9 +353,9 @@
   "u10l4-7": {
    "prompt": "Segons Sharpe, per què l'inversor actiu mitjà obté menys que el mercat?",
    "options": [
-    "Perquè els gestors no saben invertir",
+    "Perquè la majoria dels gestors no saben invertir",
     "Perquè el mercat fa trampes",
-    "Perquè abans de costos guanya el mateix i després paga més costos"
+    "Perquè guanya el mateix i paga més costos"
    ],
    "explanation": "És l'aritmètica de la gestió activa (Sharpe, 1991)."
   },
@@ -372,18 +372,18 @@
   "u10l4-10": {
    "prompt": "Quines conclusions són raonables a partir de SPIVA? Marca-les totes.",
    "options": [
-    "Els costos expliquen bona part de la diferència",
+    "El fons que va guanyar l'any passat repetirà",
     "És difícil saber per endavant qui batrà l'índex",
     "Cap gestor actiu no ha batut mai el mercat",
     "La majoria de fons actius no baten el seu índex a llarg termini"
    ],
-   "explanation": "Alguns sí que el baten; el problema és que són pocs i gairebé impossibles d'identificar per endavant."
+   "explanation": "La majoria no baten el seu índex a llarg termini i és difícil saber per endavant qui ho farà; els costos n'expliquen bona part. Alguns sí que el baten, però haver guanyat un any no prediu el següent."
   },
   "u10l4-11": {
    "prompt": "Què li contestes?",
    "options": [
-    "Sí: si ho diu el banc, serà veritat",
-    "Abans compara'l amb un indexat barat del mateix mercat i mira si de debò l'ha batut molts anys",
+    "Sí: si ho diu el banc, que és expert, deu ser veritat",
+    "Abans compara'l amb un indexat barat",
     "Sí, i com més cobri, millor gestor"
    ],
    "explanation": "Segons SPIVA, gairebé tots els fons actius queden per darrere del seu índex a 10 anys, i els seus costos es repeteixen cada any. Refiar-se del banc tempta, però qui te'l ven cobra per fer-ho.",
@@ -464,28 +464,28 @@
    "prompt": "Què és cert d'un ETF de rèplica física? Marca-ho tot.",
    "options": [
     "Pot comprar només una mostra representativa",
-    "Pot prestar valors a canvi d'una comissió",
+    "No té cap cost per a l'inversor",
     "Depèn d'un swap amb un banc",
     "Compra les accions de l'índex"
    ],
-   "explanation": "El swap és propi de la rèplica sintètica."
+   "explanation": "La rèplica física compra les accions de l'índex, de vegades només una mostra representativa, i pot prestar valors. El swap és propi de la sintètica, i tot ETF té costos."
   },
   "u10l6-2": {
    "prompt": "Quins trets té la rèplica sintètica? Marca'ls tots.",
    "options": [
-    "En UCITS, l'exposició a la contrapart està limitada al 10 %",
+    "Té a dins totes les accions de l'índex",
     "No segueix l'índex en absolut",
     "Fa servir un swap",
     "Risc de contrapart"
    ],
-   "explanation": "Segueix l'índex, sovint amb molta precisió; el seu risc particular és la contrapart."
+   "explanation": "La sintètica fa servir un swap i per això té risc de contrapart (en UCITS, limitat al 10 %). Segueix l'índex amb molta precisió, però sense tenir a dins les seves accions."
   },
   "u10l6-3": {
    "prompt": "En un ETF sintètic, qui paga la rendibilitat de l'índex?",
    "options": [
     "La CNMV",
-    "La contrapart del swap, normalment un banc",
-    "Els altres partícips"
+    "La contrapart del swap",
+    "Els altres partícips del fons"
    ],
    "explanation": "El banc es compromet a pagar el que faci l'índex a canvi del que rendeix la cistella de l'ETF."
   },
@@ -519,7 +519,7 @@
    "prompt": "Llegeixes que el banc amb què el teu ETF sintètic signa el swap té problemes. Què fas?",
    "options": [
     "Res: un ETF no pot perdre per això",
-    "Comprovo la seva exposició al banc i les seves garanties abans de decidir",
+    "Comprovo la seva exposició a aquest banc",
     "Ho venc tot ara mateix, abans de perdre-ho tot"
    ],
    "explanation": "El risc de la sintètica és la contrapart, però està acotat: com a màxim un 10 % del fons, i amb garanties. Vendre en pànic tempta, però suposa un risc molt més gran del real; ignorar-lo del tot també és un error.",
@@ -533,7 +533,7 @@
    "prompt": "Extracte d'un KID (fictici): «Fons Exemple Mundial, classe Acc. ISIN IE00XXXXXXXX. Objectiu: replicar l'índex MSCI World. Indicador de risc: 4 de 7. Costos corrents: 0,20 % anual. Període de manteniment recomanat: 5 anys». Quin nivell de risc indica?",
    "options": [
     "El màxim possible",
-    "Mitjà: 4 en una escala de l'1 al 7",
+    "Mitjà: 4 de 7",
     "Molt baix: 4 sobre 100"
    ],
    "explanation": "Un 4 de 7 és habitual en un fons d'accions mundials: oscil·la força, però està diversificat."
@@ -543,10 +543,10 @@
    "options": [
     "Els costos",
     "La rendibilitat garantida dels pròxims 5 anys",
-    "El període de manteniment recomanat",
+    "El preu a què cotitzarà d'aquí a un any",
     "L'indicador de risc de l'1 al 7"
    ],
-   "explanation": "Els escenaris són simulacions: un KID no garanteix mai rendibilitats."
+   "explanation": "Un KID porta sempre els costos i l'indicador de risc de l'1 al 7, a més del període de manteniment recomanat. Els seus escenaris són simulacions: no garanteix rendibilitats ni preus."
   },
   "u10l7-4": {
    "prompt": "Relaciona cada dada del KID amb el que et diu.",

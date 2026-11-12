@@ -262,7 +262,7 @@
    "options": [
     "Se pierde con la gestora",
     "Lo cubre el Fondo de Garantía de Depósitos",
-    "Sigue siendo de los partícipes: el patrimonio del fondo está separado"
+    "Sigue siendo de los partícipes"
    ],
    "explanation": "El patrimonio del fondo no es de la gestora. Ojo: el FGD cubre depósitos, no fondos de inversión."
   },
@@ -292,12 +292,12 @@
   "u10l1-10": {
    "prompt": "¿Qué ventajas tiene un fondo frente a comprar acciones sueltas? Marca todas.",
    "options": [
-    "Lo gestionan profesionales",
+    "Nunca cobra comisiones",
     "En España se puede traspasar sin impuestos",
     "Tiene ganancias garantizadas",
     "Diversificas con poco dinero"
    ],
-   "explanation": "Un fondo de inversión normal no garantiza ganancias: su valor sube y baja con lo que tiene dentro."
+   "explanation": "Con un fondo diversificas con poco dinero y, en España, puedes traspasarlo sin pagar impuestos; además lo gestionan profesionales. Pero cobra comisiones y no garantiza ganancias."
   },
   "u10l1-11": {
    "prompt": "Ana quiere invertir 50 € al mes en empresas de todo el mundo. ¿Qué le encaja más?",
@@ -317,8 +317,8 @@
    "prompt": "¿Qué le contestas?",
    "options": [
     "Si lo vende un banco, es seguro",
-    "Un fondo sube y baja con lo que tiene dentro: no garantiza ganancias",
-    "No pierden: la CNMV lo garantiza"
+    "Un fondo sube y baja con lo que tiene dentro",
+    "No pierden: la CNMV los supervisa y garantiza el resultado"
    ],
    "explanation": "Un fondo normal no garantiza nada: vale lo que valen sus activos. Que lo venda un banco o lo supervise la CNMV da seguridad sobre las reglas y la custodia, no sobre la rentabilidad.",
    "feedback": [
@@ -353,9 +353,9 @@
   "u10l4-7": {
    "prompt": "Según Sharpe, ¿por qué el inversor activo medio obtiene menos que el mercado?",
    "options": [
-    "Porque los gestores no saben invertir",
+    "Porque la mayoría de los gestores no sabe invertir",
     "Porque el mercado hace trampas",
-    "Porque antes de costes gana lo mismo y luego paga más costes"
+    "Porque gana lo mismo y paga más costes"
    ],
    "explanation": "Es la aritmética de la gestión activa (Sharpe, 1991)."
   },
@@ -372,18 +372,18 @@
   "u10l4-10": {
    "prompt": "¿Qué conclusiones son razonables a partir de SPIVA? Marca todas.",
    "options": [
-    "Los costes explican buena parte de la diferencia",
+    "El fondo que ganó el año pasado repetirá",
     "Es difícil saber de antemano quién batirá al índice",
     "Ningún gestor activo ha batido nunca al mercado",
     "La mayoría de fondos activos no bate a su índice a largo plazo"
    ],
-   "explanation": "Algunos sí lo baten; el problema es que son pocos y casi imposibles de identificar por adelantado."
+   "explanation": "La mayoría no bate a su índice a largo plazo y es difícil saber de antemano quién lo hará; los costes explican buena parte. Algunos sí lo baten, pero haber ganado un año no predice el siguiente."
   },
   "u10l4-11": {
    "prompt": "¿Qué le contestas?",
    "options": [
-    "Sí: si lo dice el banco, será verdad",
-    "Antes compáralo con un indexado barato del mismo mercado y mira si de verdad lo ha batido muchos años",
+    "Sí: si lo dice el banco, que es experto, será verdad",
+    "Antes compáralo con un indexado barato",
     "Sí, y cuanto más cobre, mejor gestor"
    ],
    "explanation": "Según SPIVA, casi todos los fondos activos quedan por detrás de su índice a 10 años, y sus costes se repiten cada año. Fiarse del banco tienta, pero quien te lo vende cobra por hacerlo.",
@@ -464,28 +464,28 @@
    "prompt": "¿Qué es cierto de un ETF de réplica física? Marca todo.",
    "options": [
     "Puede comprar solo una muestra representativa",
-    "Puede prestar valores a cambio de una comisión",
+    "No tiene ningún coste para el inversor",
     "Depende de un swap con un banco",
     "Compra las acciones del índice"
    ],
-   "explanation": "El swap es propio de la réplica sintética."
+   "explanation": "La réplica física compra las acciones del índice, a veces solo una muestra representativa, y puede prestar valores. El swap es propio de la sintética, y todo ETF tiene costes."
   },
   "u10l6-2": {
    "prompt": "¿Qué rasgos tiene la réplica sintética? Marca todos.",
    "options": [
-    "En UCITS, la exposición a la contraparte está limitada al 10 %",
+    "Tiene dentro todas las acciones del índice",
     "No sigue al índice en absoluto",
     "Usa un swap",
     "Riesgo de contraparte"
    ],
-   "explanation": "Sigue al índice, a menudo con mucha precisión; su riesgo particular es la contraparte."
+   "explanation": "La sintética usa un swap y por eso tiene riesgo de contraparte (en UCITS, limitado al 10 %). Sigue al índice con mucha precisión, pero sin tener dentro sus acciones."
   },
   "u10l6-3": {
    "prompt": "En un ETF sintético, ¿quién paga la rentabilidad del índice?",
    "options": [
     "La CNMV",
-    "La contraparte del swap, normalmente un banco",
-    "Los demás partícipes"
+    "La contraparte del swap",
+    "Los demás partícipes del fondo"
    ],
    "explanation": "El banco se compromete a pagar lo que haga el índice a cambio de lo que rinde la cesta del ETF."
   },
@@ -519,7 +519,7 @@
    "prompt": "Lees que el banco con el que tu ETF sintético firma el swap tiene problemas. ¿Qué haces?",
    "options": [
     "Nada: un ETF no puede perder por eso",
-    "Compruebo su exposición al banco y sus garantías antes de decidir",
+    "Compruebo su exposición a ese banco",
     "Vendo todo ya, antes de perderlo todo"
    ],
    "explanation": "El riesgo de la sintética es la contraparte, pero está acotado: como mucho un 10 % del fondo, y con garantías. Vender en pánico tienta, pero supone un riesgo mucho mayor del real; ignorarlo del todo también es un error.",
@@ -533,7 +533,7 @@
    "prompt": "Extracto de un KID (ficticio): «Fondo Ejemplo Mundial, clase Acc. ISIN IE00XXXXXXXX. Objetivo: replicar el índice MSCI World. Indicador de riesgo: 4 de 7. Costes corrientes: 0,20 % anual. Periodo de mantenimiento recomendado: 5 años». ¿Qué nivel de riesgo indica?",
    "options": [
     "El máximo posible",
-    "Medio: 4 en una escala de 1 a 7",
+    "Medio: 4 de 7",
     "Muy bajo: 4 sobre 100"
    ],
    "explanation": "Un 4 de 7 es habitual en un fondo de acciones mundiales: oscila bastante, pero está diversificado."
@@ -543,10 +543,10 @@
    "options": [
     "Los costes",
     "La rentabilidad garantizada de los próximos 5 años",
-    "El periodo de mantenimiento recomendado",
+    "El precio al que cotizará dentro de un año",
     "El indicador de riesgo del 1 al 7"
    ],
-   "explanation": "Los escenarios son simulaciones: un KID nunca garantiza rentabilidades."
+   "explanation": "Un KID trae siempre los costes y el indicador de riesgo del 1 al 7, además del periodo de mantenimiento recomendado. Sus escenarios son simulaciones: no garantiza rentabilidades ni precios."
   },
   "u10l7-4": {
    "prompt": "Empareja cada dato del KID con lo que te dice.",
