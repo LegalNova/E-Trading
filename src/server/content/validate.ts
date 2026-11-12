@@ -267,7 +267,7 @@ export const MAX_SORT_SHARE = 1 / 3
  *  2. cada serie histórica se vive como pieza en una sola clase;
  *  3. no más de un tercio de las piezas de una unidad son «clasifica las tarjetas».
  */
-export function reuseWarnings(units: ContentUnit[], use: Record<string, { steps: string[]; quiz: [string, string][] }>, charts: Record<string, { symbol?: string; from?: string; to?: string }> = {}): string[] {
+export function reuseWarnings(units: ContentUnit[], use: Record<string, { steps: string[]; quiz: [string, string][] }>, fixtures: Record<string, { symbol?: string; from?: string; to?: string }> = {}): string[] {
   const out: string[] = []
   const live = new Set(units.flatMap(u => u.lessons.map(l => l.id)))
   // Gráfico → clases donde sale, sea en una pieza o en un ejercicio vivo. Dos usos dentro de la misma clase están bien
@@ -286,10 +286,10 @@ export function reuseWarnings(units: ContentUnit[], use: Record<string, { steps:
   // Dos gráficos con distinto nombre pero del mismo activo y casi las mismas fechas se ven iguales: también cuentan
   const day = (d: string) => { const [a, b, c] = d.split('/').map(Number); return Date.UTC(c, b - 1, a) / 864e5 }
   const family = (k: string) => (k.startsWith('trend') ? 'trend' : k.split('-')[0])
-  const ids = [...where.keys()].filter(k => charts[k]?.symbol && charts[k].from && charts[k].to && !/^(hist|series|mix)/.test(k))
+  const ids = [...where.keys()].filter(k => fixtures[k]?.symbol && fixtures[k].from && fixtures[k].to && !/^(hist|series|mix)/.test(k))
   const twins: string[] = []
   for (let i = 0; i < ids.length; i++) for (let j = i + 1; j < ids.length; j++) {
-    const a = charts[ids[i]], b = charts[ids[j]]
+    const a = fixtures[ids[i]], b = fixtures[ids[j]]
     if (a.symbol !== b.symbol || family(ids[i]) !== family(ids[j])) continue
     const shared = Math.min(day(a.to!), day(b.to!)) - Math.max(day(a.from!), day(b.from!))
     if (shared / Math.min(day(a.to!) - day(a.from!), day(b.to!) - day(b.from!)) > 0.5) twins.push(`${ids[i]} ≈ ${ids[j]}`)
