@@ -294,7 +294,7 @@
   "u24l1-1": {
    "prompt": "¿Qué es lo único que controlas al 100 % en cada operación?",
    "options": [
-    "Si el precio subirá",
+    "Si el precio subirá después de comprar",
     "Lo que harán los demás inversores",
     "Cuánto arriesgas si te equivocas"
    ],
@@ -392,7 +392,7 @@
   "u24l2-11": {
    "prompt": "Tu cartera del simulador ha caído un 30 %. Para recuperarte antes, piensas duplicar el riesgo en las próximas operaciones. ¿Qué haces?",
    "options": [
-    "Mantengo el riesgo pequeño: una caída mayor costaría muchísimo más recuperarla",
+    "Mantengo el riesgo pequeño",
     "Lo vendo todo y no vuelvo a invertir",
     "Duplico el riesgo: hay que volver cuanto antes"
    ],
@@ -406,7 +406,7 @@
   "u24l2-12": {
    "prompt": "¿Qué le dices a Lucía?",
    "options": [
-    "Ojo: cuanto más cae, mucho más tiene que subir para volver",
+    "Ojo: cuanto más cae, más cuesta volver",
     "Mejor no invertir nunca",
     "Sí: lo que cae se recupera con una subida igual"
    ],
@@ -456,7 +456,7 @@
    "prompt": "Con 10.000 € y la regla del 1 %, quieres comprar dos activos: uno tranquilo, con el stop a un 2 %, y una cripto, con el stop a un 8 %. ¿Cómo repartes el dinero?",
    "options": [
     "Más importe en la cripto, que puede subir más",
-    "Más importe en el tranquilo y menos en la cripto, para arriesgar 100 € en cada uno",
+    "Más en el tranquilo y menos en la cripto",
     "El mismo importe en los dos"
    ],
    "explanation": "El importe se adapta a la distancia del stop: con el stop al 2 %, unos 5.000 €; al 8 %, unos 1.250 €. Las dos operaciones arriesgan 100 €.",
@@ -512,19 +512,19 @@
   "u24l5-10": {
    "prompt": "¿Cuáles son errores típicos con el stop? Marca todos.",
    "options": [
-    "Alejarlo cuando el precio se acerca",
+    "Decidirlo antes de comprar",
     "Ponerlo tan cerca que lo saca el ruido",
     "Ponerlo bajo el mínimo de la vela de giro",
     "Ponerlo justo en un número redondo obvio"
    ],
-   "explanation": "Bajo el mínimo de la vela de giro es un stop estructural correcto."
+   "explanation": "Ponerlo dentro del ruido o en un número redondo obvio son errores, igual que alejarlo cuando el precio se acerca. Decidirlo antes de comprar y colocarlo bajo el mínimo de la vela de giro es lo correcto."
   },
   "u24l5-11": {
    "prompt": "La operación va a favor y ya ganas 2R. ¿Qué puedes hacer con el stop?",
    "options": [
-    "Subirlo al precio de entrada o bajo el último mínimo creciente",
+    "Subirlo al precio de entrada",
     "Quitarlo, ya vas ganando",
-    "Bajarlo para que no salte"
+    "Bajarlo un poco para que no salte"
    ],
    "explanation": "Subir el stop a favor protege lo ganado sin cambiar tu plan."
   },
@@ -563,7 +563,7 @@
    "options": [
     "Sí: si acierto, gano",
     "Sí, si pongo el objetivo muy por encima del máximo",
-    "No: arriesgo 1R para ganar medio R. Mejor esperar otra ocasión"
+    "No: arriesgo 1R para ganar medio R"
    ],
    "explanation": "Antes de entrar, compara la distancia al objetivo con la del stop. Con medio R de premio por 1R de riesgo, la operación no compensa.",
    "feedback": [
@@ -576,7 +576,7 @@
    "prompt": "Dos operaciones cerradas. Ana arriesgó 100 € y ganó 300 €. Bruno arriesgó 400 € y ganó 400 €. ¿Cuál fue mejor operación?",
    "options": [
     "La de Bruno: ganó más euros",
-    "La de Ana: ganó 3R, y Bruno, solo 1R",
+    "La de Ana: ganó 3R",
     "Las dos igual: las dos ganaron"
    ],
    "explanation": "En R se comparan operaciones de cualquier tamaño: lo ganado entre lo arriesgado. Ana, 3R; Bruno, 1R.",
@@ -589,7 +589,7 @@
   "u24l6-13": {
    "prompt": "¿Qué le dices a Sara?",
    "options": [
-    "No: es −1R, justo lo que habías decidido arriesgar",
+    "No: es −1R, lo previsto",
     "Sí: perder siempre es un desastre",
     "Sí: deberías haber quitado el stop"
    ],
@@ -631,8 +631,8 @@
   "u24l7-11": {
    "prompt": "Un curso promete un sistema que «acierta el 85 % de las operaciones». ¿Qué preguntas antes de pagar nada?",
    "options": [
-    "Cuánto gana cuando acierta y cuánto pierde cuando falla, después de costes",
-    "Si hay descuento por pagar hoy",
+    "Cuánto gana y cuánto pierde, tras costes",
+    "Si hay descuento por pagar hoy mismo el curso",
     "Cuántos alumnos lo usan ya"
    ],
    "explanation": "El porcentaje de acierto solo no dice nada: la esperanza combina cuánto aciertas con cuánto ganas y pierdes en cada caso.",
@@ -645,7 +645,7 @@
   "u24l7-12": {
    "prompt": "Dos sistemas tienen la misma ventaja antes de costes. A opera 5 veces al año; B, 500 veces, y paga comisión y spread en cada una. ¿Cuál tiene más riesgo de perder dinero en la práctica?",
    "options": [
-    "B, porque paga costes en cada operación y pueden comerse la ventaja",
+    "B: paga costes en cada operación",
     "A, porque opera poco",
     "Los dos igual: tienen la misma ventaja"
    ],
@@ -661,7 +661,7 @@
    "options": [
     "Mejor un 50 %, para aprovecharlo al máximo",
     "Sí: con esperanza positiva no se puede perder",
-    "La esperanza se cumple a la larga; con un riesgo grande, una racha mala te saca antes"
+    "Una racha mala te sacaría antes"
    ],
    "explanation": "La esperanza positiva se nota con muchas operaciones. Para llegar hasta ahí hay que sobrevivir a las rachas malas con un riesgo pequeño.",
    "feedback": [

@@ -294,7 +294,7 @@
   "u24l1-1": {
    "prompt": "What's the only thing you control 100 % on every trade?",
    "options": [
-    "Whether the price will go up",
+    "Whether the price will go up after you buy",
     "What other investors will do",
     "How much you risk if you're wrong"
    ],
@@ -392,7 +392,7 @@
   "u24l2-11": {
    "prompt": "Your simulator portfolio has fallen 30 %. To recover sooner, you're thinking of doubling the risk on your next trades. What do you do?",
    "options": [
-    "I keep the risk small: a bigger fall would be far harder to recover from",
+    "I keep the risk small",
     "I sell everything and never invest again",
     "I double the risk: I need to get back as soon as possible"
    ],
@@ -406,7 +406,7 @@
   "u24l2-12": {
    "prompt": "What do you tell Lumi?",
    "options": [
-    "Careful: the more it falls, the much more it has to rise to get back",
+    "Careful: the more it falls, the harder to get back",
     "Better never to invest",
     "Yes: whatever falls is recovered with an equal rise"
    ],
@@ -456,7 +456,7 @@
    "prompt": "With €10,000 and the 1 % rule, you want to buy two assets: a calm one, with the stop at 2 %, and a crypto, with the stop at 8 %. How do you split the money?",
    "options": [
     "More money in the crypto, which can rise more",
-    "More money in the calm one and less in the crypto, to risk €100 on each",
+    "More in the calm one and less in the crypto",
     "The same amount in both"
    ],
    "explanation": "The amount adapts to the stop distance: with the stop at 2 %, about €5,000; at 8 %, about €1,250. Both trades risk €100.",
@@ -512,19 +512,19 @@
   "u24l5-10": {
    "prompt": "Which are common stop mistakes? Select all that apply.",
    "options": [
-    "Moving it further away as the price gets close",
+    "Deciding it before you buy",
     "Putting it so close that the noise knocks it out",
     "Putting it below the low of the reversal candle",
     "Putting it right on an obvious round number"
    ],
-   "explanation": "Below the low of the reversal candle is a correct structural stop."
+   "explanation": "Putting it inside the noise or on an obvious round number are mistakes, as is moving it away as the price gets close. Deciding it before you buy and placing it below the low of the reversal candle is the right way."
   },
   "u24l5-11": {
    "prompt": "The trade is going your way and you're already up 2R. What can you do with the stop?",
    "options": [
-    "Raise it to the entry price or below the latest higher low",
+    "Raise it to the entry price",
     "Remove it, you're already winning",
-    "Lower it so it doesn't get hit"
+    "Lower it a little so it doesn't get hit"
    ],
    "explanation": "Raising the stop in your favour protects your gains without changing your plan."
   },
@@ -563,7 +563,7 @@
    "options": [
     "Yes: if I'm right, I win",
     "Yes, if I set the target well above the high",
-    "No: I risk 1R to win half an R. Better to wait for another chance"
+    "No: I risk 1R to win half an R"
    ],
    "explanation": "Before entering, compare the distance to the target with the distance to the stop. With half an R of reward for 1R of risk, the trade isn't worth it.",
    "feedback": [
@@ -576,7 +576,7 @@
    "prompt": "Two closed trades. Ana risked €100 and won €300. Bruno risked €400 and won €400. Which was the better trade?",
    "options": [
     "Bruno's: he won more euros",
-    "Ana's: she won 3R, and Bruno only 1R",
+    "Ana's: she won 3R",
     "Both the same: both of them won"
    ],
    "explanation": "In R you can compare trades of any size: what you won divided by what you risked. Ana, 3R; Bruno, 1R.",
@@ -589,7 +589,7 @@
   "u24l6-13": {
    "prompt": "What do you tell Lumi?",
    "options": [
-    "No: it's −1R, exactly what you had decided to risk",
+    "No: it's −1R, as planned",
     "Yes: losing is always a disaster",
     "Yes: you should have removed the stop"
    ],
@@ -631,8 +631,8 @@
   "u24l7-11": {
    "prompt": "A course promises a system that «gets 85 % of trades right». What do you ask before paying anything?",
    "options": [
-    "How much it wins when it's right and how much it loses when it's wrong, after costs",
-    "Whether there's a discount for paying today",
+    "How much it wins and loses, after costs",
+    "Whether there's a discount for paying for the course today",
     "How many students already use it"
    ],
    "explanation": "The win rate alone says nothing: expectancy combines how often you're right with how much you win and lose each time.",
@@ -645,7 +645,7 @@
   "u24l7-12": {
    "prompt": "Two systems have the same edge before costs. A trades 5 times a year; B, 500 times, and pays commission and spread on each one. Which is more likely to lose money in practice?",
    "options": [
-    "B, because it pays costs on every trade and they can eat up the edge",
+    "B: it pays costs on every trade",
     "A, because it trades little",
     "Both the same: they have the same edge"
    ],
@@ -661,7 +661,7 @@
    "options": [
     "Better 50 %, to make the most of it",
     "Yes: with positive expectancy you can't lose",
-    "Expectancy plays out in the long run; with a big risk, a losing streak knocks you out first"
+    "A losing streak would knock you out first"
    ],
    "explanation": "Positive expectancy shows up over many trades. To get there you have to survive losing streaks with a small risk.",
    "feedback": [

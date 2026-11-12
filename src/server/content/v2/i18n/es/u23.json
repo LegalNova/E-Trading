@@ -255,7 +255,7 @@
    "prompt": "Pablo tiene 9 indicadores en pantalla: 6 dicen «compra» y 3 «venta». ¿Qué le pasa?",
    "options": [
     "Que le faltan indicadores",
-    "Que probablemente muchos miden lo mismo y la votación no significa nada",
+    "Que muchos miden lo mismo",
     "Que tiene una señal clarísima: 6 contra 3"
    ],
    "explanation": "La confluencia viene de piezas distintas, no de contar indicadores.",
@@ -269,7 +269,7 @@
    "prompt": "Tienes confluencia para comprar: tendencia alcista, soporte y volumen. El stop va un 3 % por debajo, bajo el soporte, y la resistencia más cercana está solo un 2 % por encima. ¿Entras?",
    "options": [
     "Sí: con tanta confluencia, seguro que la rompe",
-    "No: arriesgo más de lo que puedo ganar hasta la resistencia, así que no compensa",
+    "No: arriesgo más de lo que puedo ganar",
     "Sí, pero acerco el stop a un 0,5 % para que cuadre"
    ],
    "explanation": "Antes de entrar, compara: la distancia al objetivo debería ser al menos el doble que la del stop. Si no, ni la mejor confluencia compensa.",
@@ -314,8 +314,8 @@
    "prompt": "Semanal: máximos y mínimos decrecientes y precio por debajo de la SMA 200. Diario: aparece un martillo precioso. ¿Qué haces con lógica?",
    "options": [
     "Vendo todo lo que tengo en cartera",
-    "La trato como una señal contra la corriente: o la ignoro o la opero más pequeña y con stop",
-    "Compro fuerte: el martillo manda"
+    "La ignoro o la opero pequeña y con stop",
+    "Compro fuerte: el martillo manda sobre la tendencia"
    ],
    "explanation": "La temporalidad mayor pone el contexto; la menor no debería contradecirla sin más.",
    "feedback": [
@@ -374,7 +374,7 @@
    "options": [
     "Que el año 2000 queda demasiado cerca",
     "Ninguno: son empresas reales",
-    "Sesgo de supervivencia: deja fuera a las que salieron del índice o desaparecieron"
+    "Sesgo de supervivencia"
    ],
    "explanation": "Elegir los datos con información de hoy es hacer trampa sin querer.",
    "feedback": [
@@ -403,7 +403,7 @@
    "options": [
     "Si puede operar todavía más veces al día",
     "Nada: si gana antes de costes, ganará siempre",
-    "Si la ventaja sobrevive a la comisión y el spread de cada operación"
+    "Si la ventaja sobrevive a los costes"
    ],
    "explanation": "Un backtest sin costes engaña. Con muchas operaciones, una ventaja pequeña puede desaparecer al pagar comisión y spread.",
    "feedback": [
@@ -423,7 +423,7 @@
   "u23l4-5": {
    "prompt": "¿Qué idea del análisis técnico tiene más respaldo académico?",
    "options": [
-    "Los niveles de Fibonacci",
+    "Los niveles de Fibonacci y sus proporciones",
     "El momentum y el seguimiento de tendencia",
     "Las ondas de Elliott"
    ],
@@ -433,7 +433,7 @@
    "prompt": "Un canal de Telegram promete un sistema técnico que «gana el 95 % de las operaciones, sin pérdidas». ¿Qué piensas con lo aprendido?",
    "options": [
     "Que lo pruebo con poco dinero, por si acaso",
-    "Que es una promesa imposible: la evidencia habla de ventajas pequeñas, si las hay, y siempre con pérdidas",
+    "Que es una promesa imposible",
     "Que por fin alguien lo ha descubierto"
    ],
    "explanation": "Las promesas de acierto casi perfecto chocan con toda la evidencia disponible.",
@@ -446,7 +446,7 @@
   "u23l4-8": {
    "prompt": "Ana usa el análisis técnico así: marca dónde se equivoca (stop), arriesga un 1 % por operación y no persigue «el patrón perfecto». ¿Qué opinas?",
    "options": [
-    "Que lo usa de forma sensata: como herramienta para gestionar el riesgo, no como bola de cristal",
+    "Que lo usa bien: para gestionar el riesgo",
     "Que debería arriesgar un 20 % por operación para que valga la pena",
     "Que pierde el tiempo: sin el patrón perfecto no se gana"
    ],
@@ -460,7 +460,7 @@
   "u23l4-9": {
    "prompt": "¿Qué necesita cualquier herramienta técnica para servir de algo?",
    "options": [
-    "Más indicadores",
+    "Más indicadores a la vez",
     "Apalancamiento",
     "Gestión del riesgo"
    ],

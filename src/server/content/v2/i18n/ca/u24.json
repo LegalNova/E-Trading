@@ -294,7 +294,7 @@
   "u24l1-1": {
    "prompt": "Quina és l'única cosa que controles al 100 % en cada operació?",
    "options": [
-    "Si el preu pujarà",
+    "Si el preu pujarà després de comprar",
     "El que faran els altres inversors",
     "Quant arrisques si t'equivoques"
    ],
@@ -392,7 +392,7 @@
   "u24l2-11": {
    "prompt": "La teva cartera del simulador ha caigut un 30 %. Per recuperar-te abans, penses doblar el risc en les properes operacions. Què fas?",
    "options": [
-    "Mantinc el risc petit: una caiguda més gran costaria moltíssim més de recuperar",
+    "Mantinc el risc petit",
     "Ho venc tot i no torno a invertir",
     "Doblo el risc: cal tornar com més aviat millor"
    ],
@@ -406,7 +406,7 @@
   "u24l2-12": {
    "prompt": "Què li dius a la Lumi?",
    "options": [
-    "Compte: com més cau, molt més ha de pujar per recuperar-se",
+    "Compte: com més cau, més costa tornar",
     "Millor no invertir mai",
     "Sí: el que cau es recupera amb una pujada igual"
    ],
@@ -456,7 +456,7 @@
    "prompt": "Amb 10.000 € i la regla de l'1 %, vols comprar dos actius: un de tranquil, amb l'stop a un 2 %, i una cripto, amb l'stop a un 8 %. Com reparteixes els diners?",
    "options": [
     "Més import en la cripto, que pot pujar més",
-    "Més import en el tranquil i menys en la cripto, per arriscar 100 € en cadascun",
+    "Més en el tranquil i menys en la cripto",
     "El mateix import en tots dos"
    ],
    "explanation": "L'import s'adapta a la distància de l'stop: amb l'stop al 2 %, uns 5.000 €; al 8 %, uns 1.250 €. Totes dues operacions arrisquen 100 €.",
@@ -512,19 +512,19 @@
   "u24l5-10": {
    "prompt": "Quins són errors típics amb l'stop? Marca'ls tots.",
    "options": [
-    "Allunyar-lo quan el preu s'hi acosta",
+    "Decidir-lo abans de comprar",
     "Posar-lo tan a prop que el soroll el fa saltar",
     "Posar-lo sota el mínim de l'espelma de gir",
     "Posar-lo just en un número rodó evident"
    ],
-   "explanation": "Sota el mínim de l'espelma de gir és un stop estructural correcte."
+   "explanation": "Posar-lo dins del soroll o en un número rodó evident són errors, igual que allunyar-lo quan el preu s'hi acosta. Decidir-lo abans de comprar i col·locar-lo sota el mínim de l'espelma de gir és el que és correcte."
   },
   "u24l5-11": {
    "prompt": "L'operació va a favor i ja guanyes 2R. Què pots fer amb l'stop?",
    "options": [
-    "Pujar-lo al preu d'entrada o sota l'últim mínim creixent",
+    "Pujar-lo al preu d'entrada",
     "Treure'l, ja vas guanyant",
-    "Baixar-lo perquè no salti"
+    "Baixar-lo una mica perquè no salti"
    ],
    "explanation": "Pujar l'stop a favor protegeix el que has guanyat sense canviar el teu pla."
   },
@@ -563,7 +563,7 @@
    "options": [
     "Sí: si encerto, guanyo",
     "Sí, si poso l'objectiu molt per sobre del màxim",
-    "No: arrisco 1R per guanyar mig R. Millor esperar una altra ocasió"
+    "No: arrisco 1R per guanyar mig R"
    ],
    "explanation": "Abans d'entrar, compara la distància a l'objectiu amb la de l'stop. Amb mig R de premi per 1R de risc, l'operació no compensa.",
    "feedback": [
@@ -576,7 +576,7 @@
    "prompt": "Dues operacions tancades. L'Ana va arriscar 100 € i en va guanyar 300. En Bruno va arriscar 400 € i en va guanyar 400. Quina va ser millor operació?",
    "options": [
     "La d'en Bruno: va guanyar més euros",
-    "La de l'Ana: va guanyar 3R, i en Bruno, només 1R",
+    "La de l'Ana: va guanyar 3R",
     "Totes dues igual: totes dues van guanyar"
    ],
    "explanation": "En R es comparen operacions de qualsevol mida: el que s'ha guanyat entre el que s'ha arriscat. L'Ana, 3R; en Bruno, 1R.",
@@ -589,7 +589,7 @@
   "u24l6-13": {
    "prompt": "Què li dius a la Lumi?",
    "options": [
-    "No: és −1R, just el que havies decidit arriscar",
+    "No: és −1R, el previst",
     "Sí: perdre sempre és un desastre",
     "Sí: hauries d'haver tret l'stop"
    ],
@@ -631,8 +631,8 @@
   "u24l7-11": {
    "prompt": "Un curs promet un sistema que «encerta el 85 % de les operacions». Què preguntes abans de pagar res?",
    "options": [
-    "Quant guanya quan encerta i quant perd quan falla, després de costos",
-    "Si hi ha descompte per pagar avui",
+    "Quant guanya i quant perd, després de costos",
+    "Si hi ha descompte per pagar avui mateix el curs",
     "Quants alumnes el fan servir ja"
    ],
    "explanation": "El percentatge d'encert sol no diu res: l'esperança combina quant encertes amb quant guanyes i perds en cada cas.",
@@ -645,7 +645,7 @@
   "u24l7-12": {
    "prompt": "Dos sistemes tenen el mateix avantatge abans de costos. L'A opera 5 vegades l'any; el B, 500 vegades, i paga comissió i spread en cadascuna. Quin té més risc de perdre diners a la pràctica?",
    "options": [
-    "El B, perquè paga costos en cada operació i es poden menjar l'avantatge",
+    "El B: paga costos en cada operació",
     "L'A, perquè opera poc",
     "Tots dos igual: tenen el mateix avantatge"
    ],
@@ -661,7 +661,7 @@
    "options": [
     "Millor un 50 %, per aprofitar-ho al màxim",
     "Sí: amb esperança positiva no es pot perdre",
-    "L'esperança es compleix a la llarga; amb un risc gran, una mala ratxa et treu abans"
+    "Una mala ratxa et trauria abans"
    ],
    "explanation": "L'esperança positiva es nota amb moltes operacions. Per arribar-hi cal sobreviure a les ratxes dolentes amb un risc petit.",
    "feedback": [

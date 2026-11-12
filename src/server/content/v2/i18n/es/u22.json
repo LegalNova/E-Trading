@@ -420,7 +420,7 @@
   "u22l1-11": {
    "prompt": "Tu acción cotiza muy por encima de su SMA 200, que va subiendo. Corrige hasta la SMA 50 y rebota. ¿Cómo lo lees?",
    "options": [
-    "Posible soporte dinámico dentro de una tendencia alcista: una pista, con stop",
+    "Posible soporte: una pista, con stop",
     "Señal de venta: el precio ha tocado la media",
     "Compra segura: ha tocado la media"
    ],
@@ -453,7 +453,7 @@
    "options": [
     "Para ganar en cada operación",
     "Para predecir el precio exacto",
-    "Como filtro de riesgo en grandes tendencias bajistas"
+    "Como filtro de riesgo"
    ],
    "explanation": "Mantiene dentro de las grandes tendencias y fuera de muchas grandes caídas, con latigazos por el camino."
   },
@@ -501,7 +501,7 @@
   "u22l3-3": {
    "prompt": "Precio con un máximo más alto y RSI con un máximo más bajo. ¿Qué es?",
    "options": [
-    "Cruce dorado",
+    "Cruce dorado de medias",
     "Doble suelo",
     "Divergencia bajista"
    ],
@@ -586,7 +586,7 @@
    "prompt": "Una acción lleva un mes de lado. Su MACD ha cruzado la línea de señal cinco veces, arriba y abajo. Aparece un sexto cruce al alza. ¿Qué haces?",
    "options": [
     "Compro el doble para recuperar los latigazos anteriores",
-    "Lo tomo como ruido: sin tendencia, el MACD da muchas señales falsas",
+    "Lo tomo como ruido: aquí no hay tendencia",
     "Compro: esta vez sí es la buena"
    ],
    "explanation": "El MACD sirve en tendencias. En un lateral, sus cruces son sobre todo ruido, y cada operación tiene su coste.",
@@ -623,9 +623,9 @@
   "u22l5-7": {
    "prompt": "Las bandas de Bollinger se estrechan mucho. ¿Qué suele indicar?",
    "options": [
-    "Que el precio va a bajar",
-    "Que el precio va a subir",
-    "Volatilidad baja, que a menudo precede a un movimiento fuerte en cualquier dirección"
+    "Que el precio va a bajar en los próximos días",
+    "Que el precio va a subir en los próximos días",
+    "Que puede venir un movimiento fuerte"
    ],
    "explanation": "El squeeze avisa de que puede venir un movimiento, no de hacia dónde."
   },
@@ -647,7 +647,7 @@
    "prompt": "Una acción sube con fuerza y lleva cinco días tocando la banda superior de Bollinger. Una amiga te dice: «Tocar la banda es señal de venta». ¿Qué le contestas?",
    "options": [
     "Que compre más, porque la banda garantiza que seguirá subiendo",
-    "Que en una subida fuerte el precio puede caminar por la banda: tocarla no es vender",
+    "Que tocar la banda no es señal de venta",
     "Que tiene razón: hay que vender ya"
    ],
    "explanation": "Las bandas de Bollinger miden volatilidad. Tocar la superior en una subida fuerte es normal, no una orden de venta.",
@@ -660,7 +660,7 @@
   "u22l5-13": {
    "prompt": "¿Qué le dices a Ana?",
    "options": [
-    "Aléjalo según su ATR y compra menos, para arriesgar lo mismo",
+    "Aléjalo según su ATR y compra menos",
     "Sí, quítalo: los stops solo dan disgustos",
     "Ponlo aún más cerca, al 0,2 %"
    ],
@@ -704,7 +704,7 @@
    "options": [
     "Compro todo en 50 €: Fibonacci lo garantiza",
     "La ignoro: Fibonacci es pura magia",
-    "La marco como zona de interés y, si entro, pongo el stop por debajo"
+    "La marco como zona de interés, con stop"
    ],
    "explanation": "Fibonacci organiza zonas de retroceso. Pesa más cuando coincide con otras piezas, como un soporte, y siempre se usa con stop.",
    "feedback": [
@@ -766,9 +766,9 @@
   "u22l7-6": {
    "prompt": "¿Qué importa del OBV?",
    "options": [
-    "Su valor exacto",
-    "Que sea positivo",
-    "Su dirección y si acompaña al precio"
+    "Su valor exacto en cada momento",
+    "Que sea positivo y no negativo",
+    "Su dirección frente al precio"
    ],
    "explanation": "El nivel depende del día en que empiezas a contar; lo útil es la dirección."
   },
@@ -784,7 +784,7 @@
   "u22l7-11": {
    "prompt": "Tu acción marca máximos nuevos, pero su OBV lleva semanas bajando. ¿Qué haces con tu posición?",
    "options": [
-    "La tomo como una pista: reviso mi stop y no aumento la posición",
+    "La tomo como pista: reviso mi stop",
     "Compro más: los máximos nuevos son señal de fuerza",
     "Vendo todo ya: la divergencia lo dice"
    ],

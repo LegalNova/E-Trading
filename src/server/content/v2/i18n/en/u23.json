@@ -255,7 +255,7 @@
    "prompt": "Pablo has 9 indicators on screen: 6 say «buy» and 3 say «sell». What’s wrong?",
    "options": [
     "He doesn’t have enough indicators",
-    "Many of them probably measure the same thing and the vote means nothing",
+    "Many of them measure the same thing",
     "He has a crystal-clear signal: 6 to 3"
    ],
    "explanation": "Confluence comes from different pieces, not from counting indicators.",
@@ -269,7 +269,7 @@
    "prompt": "You have confluence to buy: uptrend, support and volume. The stop goes 3 % below, under the support, and the nearest resistance is only 2 % above. Do you enter?",
    "options": [
     "Yes: with so much confluence, it’s bound to break it",
-    "No: I’m risking more than I can gain up to the resistance, so it isn’t worth it",
+    "No: I’m risking more than I can gain",
     "Yes, but I move the stop closer, to 0.5 %, so it adds up"
    ],
    "explanation": "Before entering, compare: the distance to the target should be at least double the distance to the stop. If not, not even the best confluence makes it worth it.",
@@ -314,8 +314,8 @@
    "prompt": "Weekly: lower highs and lower lows, and the price below the 200 SMA. Daily: a beautiful hammer appears. What’s the sensible thing to do?",
    "options": [
     "Sell everything in my portfolio",
-    "Treat it as a counter-trend signal: either ignore it or trade it smaller and with a stop",
-    "Buy big: the hammer rules"
+    "Ignore it or trade it small, with a stop",
+    "Buy big: the hammer overrules the weekly trend"
    ],
    "explanation": "The higher timeframe sets the context; the lower one shouldn’t just contradict it.",
    "feedback": [
@@ -374,7 +374,7 @@
    "options": [
     "That the year 2000 is too recent",
     "None: they’re real companies",
-    "Survivorship bias: it leaves out the ones that dropped out of the index or disappeared"
+    "Survivorship bias"
    ],
    "explanation": "Choosing the data with today’s information is cheating without meaning to.",
    "feedback": [
@@ -403,7 +403,7 @@
    "options": [
     "Whether it can trade even more times a day",
     "Nothing: if it wins before costs, it will always win",
-    "Whether the edge survives the commission and spread on each trade"
+    "Whether the edge survives the costs"
    ],
    "explanation": "A backtest without costs is misleading. With many trades, a small edge can disappear once you pay commission and spread.",
    "feedback": [
@@ -423,7 +423,7 @@
   "u23l4-5": {
    "prompt": "Which technical analysis idea has the most academic support?",
    "options": [
-    "Fibonacci levels",
+    "Fibonacci levels and their ratios",
     "Momentum and trend following",
     "Elliott waves"
    ],
@@ -433,7 +433,7 @@
    "prompt": "A Telegram channel promises a technical system that «wins 95 % of trades, with no losses». What do you think, given what you’ve learnt?",
    "options": [
     "That I’ll try it with a little money, just in case",
-    "That it’s an impossible promise: the evidence points to small edges, if any, and always with losses",
+    "That it’s an impossible promise",
     "That someone has finally cracked it"
    ],
    "explanation": "Promises of near-perfect accuracy clash with all the available evidence.",
@@ -446,7 +446,7 @@
   "u23l4-8": {
    "prompt": "Ana uses technical analysis like this: she marks where she’s wrong (stop), risks 1 % per trade and doesn’t chase «the perfect pattern». What do you think?",
    "options": [
-    "That she uses it sensibly: as a risk management tool, not a crystal ball",
+    "That she uses it well: to manage risk",
     "That she should risk 20 % per trade to make it worthwhile",
     "That she’s wasting her time: without the perfect pattern you can’t win"
    ],
@@ -460,7 +460,7 @@
   "u23l4-9": {
    "prompt": "What does any technical tool need to be of any use?",
    "options": [
-    "More indicators",
+    "More indicators at once",
     "Leverage",
     "Risk management"
    ],

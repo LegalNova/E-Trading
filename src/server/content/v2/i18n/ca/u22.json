@@ -420,7 +420,7 @@
   "u22l1-11": {
    "prompt": "La teva acció cotitza molt per sobre de la seva SMA 200, que va pujant. Corregeix fins a la SMA 50 i rebota. Com ho llegeixes?",
    "options": [
-    "Possible suport dinàmic dins d’una tendència alcista: una pista, amb stop",
+    "Possible suport: una pista, amb stop",
     "Senyal de venda: el preu ha tocat la mitjana",
     "Compra segura: ha tocat la mitjana"
    ],
@@ -453,7 +453,7 @@
    "options": [
     "Per guanyar a cada operació",
     "Per predir el preu exacte",
-    "Com a filtre de risc en grans tendències baixistes"
+    "Com a filtre de risc"
    ],
    "explanation": "Et manté dins de les grans tendències i fora de moltes grans caigudes, amb fuetades pel camí."
   },
@@ -501,7 +501,7 @@
   "u22l3-3": {
    "prompt": "Preu amb un màxim més alt i RSI amb un màxim més baix. Què és?",
    "options": [
-    "Encreuament daurat",
+    "Encreuament daurat de mitjanes",
     "Doble terra",
     "Divergència baixista"
    ],
@@ -586,7 +586,7 @@
    "prompt": "Una acció fa un mes que va de costat. El seu MACD ha creuat la línia de senyal cinc vegades, amunt i avall. Apareix un sisè creuament a l’alça. Què fas?",
    "options": [
     "Compro el doble per recuperar les fuetades anteriors",
-    "M’ho prenc com a soroll: sense tendència, el MACD dona molts senyals falsos",
+    "M’ho prenc com a soroll: aquí no hi ha tendència",
     "Compro: aquesta vegada sí que és la bona"
    ],
    "explanation": "El MACD serveix en tendències. En un lateral, els seus creuaments són sobretot soroll, i cada operació té el seu cost.",
@@ -623,9 +623,9 @@
   "u22l5-7": {
    "prompt": "Les bandes de Bollinger s’estrenyen molt. Què sol indicar?",
    "options": [
-    "Que el preu baixarà",
-    "Que el preu pujarà",
-    "Volatilitat baixa, que sovint precedeix un moviment fort en qualsevol direcció"
+    "Que el preu baixarà en els pròxims dies",
+    "Que el preu pujarà en els pròxims dies",
+    "Que pot venir un moviment fort"
    ],
    "explanation": "L’squeeze avisa que pot venir un moviment, no cap a on."
   },
@@ -647,7 +647,7 @@
    "prompt": "Una acció puja amb força i fa cinc dies que toca la banda superior de Bollinger. Una amiga et diu: «Tocar la banda és senyal de venda». Què li contestes?",
    "options": [
     "Que en compri més, perquè la banda garanteix que continuarà pujant",
-    "Que en una pujada forta el preu pot caminar per la banda: tocar-la no és vendre",
+    "Que tocar la banda no és senyal de venda",
     "Que té raó: cal vendre ja"
    ],
    "explanation": "Les bandes de Bollinger mesuren volatilitat. Tocar la superior en una pujada forta és normal, no una ordre de venda.",
@@ -660,7 +660,7 @@
   "u22l5-13": {
    "prompt": "Què li dius a la Lumi?",
    "options": [
-    "Allunya’l segons el seu ATR i compra’n menys, per arriscar el mateix",
+    "Allunya’l segons l’ATR i compra’n menys",
     "Sí, treu-lo: els stops només donen disgustos",
     "Posa’l encara més a prop, al 0,2 %"
    ],
@@ -704,7 +704,7 @@
    "options": [
     "Compro tot a 50 €: Fibonacci ho garanteix",
     "L’ignoro: Fibonacci és pura màgia",
-    "La marco com a zona d’interès i, si entro, poso l’stop per sota"
+    "La marco com a zona d’interès, amb stop"
    ],
    "explanation": "Fibonacci organitza zones de retrocés. Pesa més quan coincideix amb altres peces, com un suport, i sempre es fa servir amb stop.",
    "feedback": [
@@ -766,9 +766,9 @@
   "u22l7-6": {
    "prompt": "Què importa de l’OBV?",
    "options": [
-    "El seu valor exacte",
-    "Que sigui positiu",
-    "La seva direcció i si acompanya el preu"
+    "El seu valor exacte a cada moment",
+    "Que sigui positiu i no negatiu",
+    "La seva direcció davant del preu"
    ],
    "explanation": "El nivell depèn del dia en què comences a comptar; el que és útil és la direcció."
   },
@@ -784,7 +784,7 @@
   "u22l7-11": {
    "prompt": "La teva acció marca màxims nous, però el seu OBV fa setmanes que baixa. Què fas amb la teva posició?",
    "options": [
-    "M’ho prenc com una pista: reviso el meu stop i no augmento la posició",
+    "M’ho prenc com una pista: reviso l’stop",
     "Compro més: els màxims nous són senyal de força",
     "Ho venc tot ja: la divergència ho diu"
    ],

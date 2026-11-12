@@ -255,7 +255,7 @@
    "prompt": "En Pablo té 9 indicadors a la pantalla: 6 diuen «compra» i 3 «venda». Què li passa?",
    "options": [
     "Que li falten indicadors",
-    "Que probablement molts mesuren el mateix i la votació no vol dir res",
+    "Que molts mesuren el mateix",
     "Que té un senyal claríssim: 6 contra 3"
    ],
    "explanation": "La confluència ve de peces diferents, no de comptar indicadors.",
@@ -269,7 +269,7 @@
    "prompt": "Tens confluència per comprar: tendència alcista, suport i volum. L’stop va un 3 % per sota, sota el suport, i la resistència més propera és només un 2 % per sobre. Hi entres?",
    "options": [
     "Sí: amb tanta confluència, segur que la trenca",
-    "No: arrisco més del que puc guanyar fins a la resistència, així que no compensa",
+    "No: arrisco més del que puc guanyar",
     "Sí, però acosto l’stop a un 0,5 % perquè quadri"
    ],
    "explanation": "Abans d’entrar, compara: la distància a l’objectiu hauria de ser almenys el doble que la de l’stop. Si no, ni la millor confluència compensa.",
@@ -314,8 +314,8 @@
    "prompt": "Setmanal: màxims i mínims decreixents i preu per sota de la SMA 200. Diari: apareix un martell preciós. Què fas amb lògica?",
    "options": [
     "Venc tot el que tinc a la cartera",
-    "El tracto com un senyal contra corrent: o l’ignoro o l’opero més petit i amb stop",
-    "Compro fort: el martell mana"
+    "L’ignoro o l’opero petit i amb stop",
+    "Compro fort: el martell mana sobre la tendència"
    ],
    "explanation": "La temporalitat major posa el context; la menor no l’hauria de contradir sense més ni més.",
    "feedback": [
@@ -374,7 +374,7 @@
    "options": [
     "Que l’any 2000 queda massa a prop",
     "Cap: són empreses reals",
-    "Biaix de supervivència: deixa fora les que van sortir de l’índex o van desaparèixer"
+    "Biaix de supervivència"
    ],
    "explanation": "Triar les dades amb informació d’avui és fer trampa sense voler.",
    "feedback": [
@@ -403,7 +403,7 @@
    "options": [
     "Si pot operar encara més vegades al dia",
     "Res: si guanya abans de costos, guanyarà sempre",
-    "Si l’avantatge sobreviu a la comissió i l’spread de cada operació"
+    "Si l’avantatge sobreviu als costos"
    ],
    "explanation": "Un backtest sense costos enganya. Amb moltes operacions, un avantatge petit pot desaparèixer en pagar comissió i spread.",
    "feedback": [
@@ -423,7 +423,7 @@
   "u23l4-5": {
    "prompt": "Quina idea de l’anàlisi tècnica té més suport acadèmic?",
    "options": [
-    "Els nivells de Fibonacci",
+    "Els nivells de Fibonacci i les seves proporcions",
     "El momentum i el seguiment de tendència",
     "Les ones d’Elliott"
    ],
@@ -433,7 +433,7 @@
    "prompt": "Un canal de Telegram promet un sistema tècnic que «guanya el 95 % de les operacions, sense pèrdues». Què en penses, amb el que has après?",
    "options": [
     "Que el provo amb pocs diners, per si de cas",
-    "Que és una promesa impossible: l’evidència parla d’avantatges petits, si n’hi ha, i sempre amb pèrdues",
+    "Que és una promesa impossible",
     "Que per fi algú ho ha descobert"
    ],
    "explanation": "Les promeses d’encert gairebé perfecte xoquen amb tota l’evidència disponible.",
@@ -446,7 +446,7 @@
   "u23l4-8": {
    "prompt": "L’Ana fa servir l’anàlisi tècnica així: marca on s’equivoca (stop), arrisca un 1 % per operació i no persegueix «el patró perfecte». Què en penses?",
    "options": [
-    "Que la fa servir de manera assenyada: com a eina per gestionar el risc, no com a bola de vidre",
+    "Que la fa servir bé: per gestionar el risc",
     "Que hauria d’arriscar un 20 % per operació perquè valgui la pena",
     "Que perd el temps: sense el patró perfecte no es guanya"
    ],
@@ -460,7 +460,7 @@
   "u23l4-9": {
    "prompt": "Què necessita qualsevol eina tècnica per servir d’alguna cosa?",
    "options": [
-    "Més indicadors",
+    "Més indicadors alhora",
     "Palanquejament",
     "Gestió del risc"
    ],

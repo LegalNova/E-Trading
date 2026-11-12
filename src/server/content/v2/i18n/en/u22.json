@@ -420,7 +420,7 @@
   "u22l1-11": {
    "prompt": "Your share trades well above its SMA 200, which is rising. It pulls back to the SMA 50 and bounces. How do you read it?",
    "options": [
-    "Possible dynamic support within an uptrend: a clue, with a stop",
+    "Possible support: a clue, with a stop",
     "Sell signal: the price has touched the average",
     "Safe buy: it has touched the average"
    ],
@@ -453,7 +453,7 @@
    "options": [
     "Winning on every trade",
     "Predicting the exact price",
-    "As a risk filter in big downtrends"
+    "As a risk filter"
    ],
    "explanation": "It keeps you in during big trends and out of many big falls, with whipsaws along the way."
   },
@@ -501,7 +501,7 @@
   "u22l3-3": {
    "prompt": "Price makes a higher high and the RSI a lower high. What is it?",
    "options": [
-    "Golden cross",
+    "Golden cross of averages",
     "Double bottom",
     "Bearish divergence"
    ],
@@ -586,7 +586,7 @@
    "prompt": "A share has moved sideways for a month. Its MACD has crossed the signal line five times, up and down. A sixth upward crossover appears. What do you do?",
    "options": [
     "I buy double to make up for the earlier whipsaws",
-    "I treat it as noise: with no trend, the MACD gives lots of false signals",
+    "I treat it as noise: there’s no trend here",
     "I buy: this time it’s the real one"
    ],
    "explanation": "The MACD works in trends. In a sideways market, its crossovers are mostly noise, and every trade has its cost.",
@@ -623,9 +623,9 @@
   "u22l5-7": {
    "prompt": "The Bollinger Bands narrow sharply. What does that usually indicate?",
    "options": [
-    "That the price is going to fall",
-    "That the price is going to rise",
-    "Low volatility, which often comes before a strong move in either direction"
+    "That the price is going to fall in the coming days",
+    "That the price is going to rise in the coming days",
+    "That a strong move may be coming"
    ],
    "explanation": "The squeeze warns that a move may be coming, not which way."
   },
@@ -647,7 +647,7 @@
    "prompt": "A share is rising strongly and has touched the upper Bollinger Band for five days. A friend tells you: «Touching the band is a sell signal». What do you reply?",
    "options": [
     "That she should buy more, because the band guarantees it will keep rising",
-    "That in a strong rise the price can walk along the band: touching it isn’t selling",
+    "That touching the band isn’t a sell signal",
     "That she’s right: sell now"
    ],
    "explanation": "Bollinger Bands measure volatility. Touching the upper one in a strong rise is normal, not a sell order.",
@@ -660,7 +660,7 @@
   "u22l5-13": {
    "prompt": "What do you tell Lumi?",
    "options": [
-    "Move it further away using its ATR and buy less, to risk the same",
+    "Move it away using its ATR and buy less",
     "Yes, remove it: stops only cause trouble",
     "Put it even closer, at 0.2 %"
    ],
@@ -704,7 +704,7 @@
    "options": [
     "I buy everything at €50: Fibonacci guarantees it",
     "I ignore it: Fibonacci is pure magic",
-    "I mark it as a zone of interest and, if I enter, I put the stop below it"
+    "I mark it as a zone of interest, with a stop"
    ],
    "explanation": "Fibonacci organises retracement zones. It carries more weight when it lines up with other pieces, like a support, and it’s always used with a stop.",
    "feedback": [
@@ -766,9 +766,9 @@
   "u22l7-6": {
    "prompt": "What matters about OBV?",
    "options": [
-    "Its exact value",
-    "That it’s positive",
-    "Its direction and whether it’s backing the price"
+    "Its exact value at each moment",
+    "That it’s positive, not negative",
+    "Its direction versus the price"
    ],
    "explanation": "The level depends on the day you start counting; what’s useful is the direction."
   },
@@ -784,7 +784,7 @@
   "u22l7-11": {
    "prompt": "Your share is making new highs, but its OBV has been falling for weeks. What do you do with your position?",
    "options": [
-    "I take it as a clue: I review my stop and don’t add to the position",
+    "I take it as a clue: I review my stop",
     "I buy more: new highs are a sign of strength",
     "I sell everything now: the divergence says so"
    ],
