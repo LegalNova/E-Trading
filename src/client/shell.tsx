@@ -12,7 +12,7 @@ import { TeamMessage } from './team-message'
 import { MaxSide } from './upgrade'
 import { ThemeToggle } from './theme-toggle'
 import { api } from './api'
-import { useSession } from './hooks'
+import { useMe, useSession } from './hooks'
 import { Icon, Wordmark, type IconName } from './ui/icons'
 import { PageSkeleton } from './ui/kit'
 
@@ -124,7 +124,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 function GuestBar() {
   const t = useTranslations('guest')
   const { data } = useSession()
-  if (!data?.isGuest) return null
+  const { data: me } = useMe()
+  // Hasta que termina su primera clase no se le pide nada: primero que vea para qué sirve (auditoría APP-6)
+  if (!data?.isGuest || !me || me.lessonsCompleted === 0) return null
   return (
     <Link href="/guardar" className="mx-4 mb-2 flex items-center gap-2 rounded-xl px-3.5 py-2.5 text-[13px] font-bold" style={{ background: 'color-mix(in srgb, var(--brand) 12%, transparent)', color: 'var(--ink)' }}>
       <Icon name="user" size={18} />

@@ -41,7 +41,8 @@ export async function session() {
 }
 
 /** El invitado guarda su progreso: su misma cuenta pasa a tener email y contraseña (no se pierde nada) */
-export async function saveGuest(email: string, password: string) {
+/** `name`: el invitado no dio su nombre en la bienvenida corta; se le pide aquí, al guardar (auditoría APP-1) */
+export async function saveGuest(email: string, password: string, name?: string) {
   const u = await currentUser()
   if (!u) fail(401, 'UNAUTHORIZED', 'Inicia sesión para continuar')
   if (!u!.isAnonymous) fail(409, 'NOT_GUEST', 'Tu cuenta ya está guardada')
@@ -51,7 +52,7 @@ export async function saveGuest(email: string, password: string) {
   if (await db.user.findUnique({ where: { email: mail } })) fail(409, 'EMAIL_IN_USE', 'Ya hay una cuenta con este email')
   const hash = await (await auth.$context).password.hash(password)
   await db.$transaction([
-    db.user.update({ where: { id: u!.id }, data: { email: mail, emailVerified: false, isAnonymous: false } }),
+    db.user.update({ where: { id: u!.id }, data: { email: mail, emailVerified: false, isAnonymous: false, ...(realName(name) ? { name: realName(name).slice(0, 30) } : {}) } }),
     db.account.create({ data: { id: crypto.randomUUID(), accountId: u!.id, providerId: 'credential', userId: u!.id, password: hash } }),
     db.event.create({ data: { userId: u!.id, name: 'guest_saved' } }),
   ])
@@ -119,7 +120,8 @@ export const completeOnboarding = (source?: unknown) =>
     await c.tx.user.update({
       where: { id: c.user.id },
       data: {
-        name: realName(d.name) || 'Tú', gender: d.gender, birthDate: d.birthDate ? new Date(d.birthDate) : null, companionName: d.companionName || 'Lumi', skinId: d.skinId,
+        // El invitado entra sin nombre (se le pide al guardar su progreso): mientras, se le saluda sin él
+        name: realName(d.name) || (c.user.isAnonymous ? '' : 'Tú'), gender: d.gender, birthDate: d.birthDate ? new Date(d.birthDate) : null, companionName: d.companionName || 'Lumi', skinId: d.skinId,
         onboardingStep: null, disclaimerAt: new Date(), settings: { ...defaultSettings(c.user), gender: d.gender, dailyGoalMinutes: d.dailyGoalMinutes },
         // Primer contacto: solo se guarda una vez
         ...(c.user.source ? {} : { source: cleanSource(source) }),

@@ -198,7 +198,7 @@ export interface Api {
   myInvites(): Promise<{ code: string; joined: number; rewarded: number; daysEarned: number; maxDays: number; days: number }>
   inviterName(code: string): Promise<{ valid: boolean; name: string | null }>
   signInGuest(): Promise<Session>
-  saveGuest(email: string, password: string): Promise<Session>
+  saveGuest(email: string, password: string, name?: string): Promise<Session>
   loginMethods(): Promise<{ hasPassword: boolean; google: boolean; isGuest: boolean }>
   setPassword(current: string | undefined, next: string): Promise<{ ok: boolean }>
   forgotPassword(email: string): Promise<void>

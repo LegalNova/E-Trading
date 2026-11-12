@@ -91,7 +91,7 @@ const routes: Route[] = [
   { method: 'GET', path: 'billing/badge', run: () => profile.planBadge() },
   { method: 'GET', path: 'account/login', run: () => profile.loginMethods() },
   { method: 'POST', path: 'account/password', run: (_r, _p, b) => { const x = z.object({ current: z.string().max(128).optional(), next: z.string().max(128) }).parse(b); return profile.setOwnPassword(x.current, x.next) } },
-  { method: 'POST', path: 'account/save', run: (_r, _p, b) => { const x = z.object({ email: z.string().max(200), password: z.string().max(128) }).parse(b); return profile.saveGuest(x.email, x.password) } },
+  { method: 'POST', path: 'account/save', run: (_r, _p, b) => { const x = z.object({ email: z.string().max(200), password: z.string().max(128), name: z.string().max(30).optional() }).parse(b); return profile.saveGuest(x.email, x.password, x.name) } },
   { method: 'POST', path: 'onboarding/complete', run: (_r, _p, b) => profile.completeOnboarding(z.object({ source: z.string().max(80).optional() }).catch({}).parse(b ?? {}).source) },
   // Inicio y perfil
   { method: 'GET', path: 'home', run: () => profile.home() },

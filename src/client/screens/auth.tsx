@@ -6,7 +6,7 @@ import { useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
 import { api, ApiFailure, type Session } from '../api'
-import { useSession } from '../hooks'
+import { useMe, useSession } from '../hooks'
 import { Wordmark } from '../ui/icons'
 import { TopBar } from '../ui/kit'
 import { Lumi } from '../ui/lumi'
@@ -91,8 +91,12 @@ export function SaveProgress() {
   const { data: session } = useSession()
   const [email, setEmail] = useState('')
   const [pass, setPass] = useState('')
+  // Quien entró con la bienvenida corta aún no ha dicho cómo se llama: se le pregunta aquí
+  const { data: me } = useMe()
+  const [name, setName] = useState('')
+  const askName = !!me && !me.name.trim()
   const m = useMutation({
-    mutationFn: () => api.saveGuest(email, pass),
+    mutationFn: () => api.saveGuest(email, pass, askName ? name : undefined),
     onSuccess: s => {
       qc.setQueryData(['session'], s)
       qc.invalidateQueries()
@@ -125,6 +129,12 @@ export function SaveProgress() {
         >
           <h1 className="t-large">{t('saveTitle')}</h1>
           <p className="t-foot m-0">{t('saveIntro')}</p>
+          {askName && (
+            <div className="field">
+              <label htmlFor="g-name">{t('nameField')}</label>
+              <input id="g-name" className="input" value={name} onChange={e => setName(e.target.value)} autoComplete="given-name" maxLength={30} required />
+            </div>
+          )}
           <div className="field">
             <label htmlFor="g-email">Email</label>
             <input id="g-email" className="input" type="email" autoComplete="email" required value={email} onChange={e => setEmail(e.target.value)} aria-invalid={err?.code === 'VALIDATION_ERROR' || err?.code === 'EMAIL_IN_USE'} />

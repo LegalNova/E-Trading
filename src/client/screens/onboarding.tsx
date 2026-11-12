@@ -7,6 +7,7 @@ import { useRouter } from '@/i18n/navigation'
 import type { GenderT, PlacementFinishT } from '@/shared/contract'
 import { money } from '@/shared/format'
 import { api, ApiFailure, type OnboardingDraft } from '../api'
+import { useSession } from '../hooks'
 import { useGuard } from '../shell'
 import { readSource } from '../attribution'
 import { Icon } from '../ui/icons'
@@ -17,7 +18,7 @@ import { QuestionView, type AnswerValue } from './quiz'
 
 const TOTAL = 6
 
-function Head({ n, onBack }: { n: number; onBack?: () => void }) {
+function Head({ n, onBack, total = TOTAL }: { n: number; onBack?: () => void; total?: number }) {
   const t = useTranslations('common')
   return (
     <div className="topbar gap-2 pr-4">
@@ -28,9 +29,9 @@ function Head({ n, onBack }: { n: number; onBack?: () => void }) {
       ) : (
         <span className="w-11" />
       )}
-      <Steps total={TOTAL} current={n} />
+      <Steps total={total} current={n} />
       <span className="t-cap w-9 text-right">
-        {n}/{TOTAL}
+        {n}/{total}
       </span>
     </div>
   )
@@ -111,8 +112,117 @@ function PlacementIntro({ onStart, onSkip, onBack, busy, beginner }: { onStart: 
 export function Onboarding() {
   const { ready } = useGuard('onboarding')
   const ob = useQuery({ queryKey: ['onboarding'], queryFn: api.onboarding, enabled: ready, staleTime: Infinity })
-  if (!ready || !ob.data) return <PageSkeleton />
+  const { data: session } = useSession()
+  if (!ready || !ob.data || !session) return <PageSkeleton />
+  // «Probar sin registrarme»: bienvenida de dos pantallas y a la primera clase (auditoría APP-1)
+  if (session.isGuest) return <GuestFlow initialDraft={ob.data.draft} />
   return <Flow initialStep={Math.min(ob.data.step, 6)} initialDraft={ob.data.draft} />
+}
+
+/**
+ * Bienvenida corta del invitado. Antes eran seis pasos y el primero pedía nombre, tratamiento y fecha de nacimiento
+ * antes de enseñar nada. Ahora: 1) ¿has invertido alguna vez? 2) año de nacimiento (la app es para mayores de 14) y el
+ * aviso educativo. El nombre se pide al guardar el progreso; lo demás (objetivos, meta diaria, aspecto de Lumi) queda
+ * con sus valores por defecto y se cambia en Ajustes.
+ * Solo se pide el día y el mes cuando el año no basta para saber si la persona tiene ya 14 o 18 años.
+ */
+function GuestFlow({ initialDraft }: { initialDraft: OnboardingDraft }) {
+  const t = useTranslations('onboarding')
+  const tc = useTranslations('common')
+  const locale = useLocale()
+  const router = useRouter()
+  const qc = useQueryClient()
+  const [step, setStep] = useState(1)
+  const [exp, setExp] = useState(initialDraft.experience)
+  const [year, setYear] = useState(initialDraft.birthDate ? initialDraft.birthDate.slice(0, 4) : '')
+  const [month, setMonth] = useState('')
+  const [day, setDay] = useState('')
+  const [accepted, setAccepted] = useState(false)
+  const now = new Date().getFullYear()
+  const y = Number(year)
+  const validYear = year.length === 4 && y > 1900 && y <= now
+  // Con el año justo de los 14 o de los 18 hace falta la fecha entera; con cualquier otro, el año basta
+  const needFull = validYear && (now - y === 14 || now - y === 18)
+  const birthDate = !validYear ? '' : needFull ? (month && day ? `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}` : '') : `${year}-12-31`
+  const validDate = !!birthDate && !Number.isNaN(new Date(birthDate).getTime())
+  const start = useMutation({
+    mutationFn: async () => {
+      await api.saveOnboarding(6, { experience: exp, birthDate, disclaimerAccepted: true })
+      await api.completeOnboarding(readSource())
+    },
+    onSuccess: async () => {
+      await qc.invalidateQueries()
+      router.replace('/inicio')
+    },
+  })
+  const err = start.error instanceof ApiFailure ? start.error : null
+
+  if (step === 1)
+    return (
+      <>
+        <Head n={1} total={2} />
+        <div className="pad">
+          <h1 className="t-title">{t('expTitle')}</h1>
+          {(['NONE', 'SOME', 'EXPERIENCED'] as const).map(k => (
+            <button key={k} className="opt" aria-pressed={exp === k} aria-label={`${t(`exp.${k}.title`)}. ${t(`exp.${k}.body`)}`} onClick={() => setExp(k)}>
+              <span className="flex flex-1 flex-col gap-0.5">
+                <span>{t(`exp.${k}.title`)}</span>
+                <span className="t-foot">{t(`exp.${k}.body`)}</span>
+              </span>
+            </button>
+          ))}
+          <button className="btn btn-primary mt-2" onClick={() => setStep(2)}>
+            {tc('continue')}
+          </button>
+        </div>
+      </>
+    )
+
+  return (
+    <>
+      <Head n={2} total={2} onBack={() => setStep(1)} />
+      <form
+        className="pad"
+        onSubmit={e => {
+          e.preventDefault()
+          start.mutate()
+        }}
+      >
+        <h1 className="t-title">{t('guestBirthTitle')}</h1>
+        <input className="input" inputMode="numeric" maxLength={4} placeholder={t('year')} aria-label={t('year')} value={year} onChange={e => setYear(e.target.value.replace(/\D/g, ''))} />
+        {needFull && (
+          <>
+            <p className="t-cap m-0">{t('guestBirthMore')}</p>
+            <div className="grid gap-2.5" style={{ gridTemplateColumns: '70px 1fr' }}>
+              <input className="input" inputMode="numeric" maxLength={2} placeholder={t('day')} aria-label={t('day')} value={day} onChange={e => setDay(e.target.value.replace(/\D/g, ''))} />
+              <select className="input" aria-label={t('month')} value={month} onChange={e => setMonth(e.target.value)}>
+                <option value="">{t('month')}</option>
+                {MONTHS.map(m => (
+                  <option key={m} value={m}>
+                    {new Intl.DateTimeFormat(locale, { month: 'long' }).format(new Date(2000, m - 1, 1))}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </>
+        )}
+        <p className="t-cap m-0">{t('guestBirthNote')}</p>
+        <div className="card flex flex-col gap-3">
+          <span className="t-head">{t('beforeStart')}</span>
+          <p className="t-body muted m-0">{t('disclaimer')}</p>
+          <button type="button" className="flex items-center gap-2.5 text-left" role="checkbox" aria-checked={accepted} aria-label={t('accept')} onClick={() => setAccepted(!accepted)}>
+            <Check on={accepted} />
+            <b>{t('accept')}</b>
+          </button>
+        </div>
+        {err && <p className="err m-0">{err.code === 'UNDER_MIN_AGE' ? t('underAge') : err.message}</p>}
+        <button className="btn btn-primary" disabled={!validDate || !accepted || start.isPending}>
+          {t('start')}
+        </button>
+        <LegalNote ns="onboarding" k="legalNote" className="t-cap m-0 text-center" newTab />
+      </form>
+    </>
+  )
 }
 
 /** El borrador guardado solo se usa como valor inicial: a partir de aquí manda el estado local */
@@ -202,7 +312,7 @@ function Flow({ initialStep, initialDraft }: { initialStep: number; initialDraft
         <div className="pad">
           <h1 className="t-title">{t('expTitle')}</h1>
           {(['NONE', 'SOME', 'EXPERIENCED'] as const).map(k => (
-            <button key={k} className="opt" aria-pressed={d.experience === k} onClick={() => set({ experience: k })}>
+            <button key={k} className="opt" aria-pressed={d.experience === k} aria-label={`${t(`exp.${k}.title`)}. ${t(`exp.${k}.body`)}`} onClick={() => set({ experience: k })}>
               <span className="flex flex-1 flex-col gap-0.5">
                 <span>{t(`exp.${k}.title`)}</span>
                 <span className="t-foot">{t(`exp.${k}.body`)}</span>
@@ -238,13 +348,14 @@ function Flow({ initialStep, initialDraft }: { initialStep: number; initialDraft
           <p className="t-cap m-0 -mt-1">{t('dailyGoalNote')}</p>
           <div className="grid grid-cols-5 gap-2">
             {([5, 10, 15, 20, 30] as const).map(m => (
-              <button key={m} className="opt flex-col gap-0 px-1.5 py-3 text-center" aria-pressed={d.dailyGoalMinutes === m} onClick={() => set({ dailyGoalMinutes: m })}>
+              <button key={m} className="opt flex-col gap-0 px-1.5 py-3 text-center" aria-pressed={d.dailyGoalMinutes === m} aria-label={`${m} min`} onClick={() => set({ dailyGoalMinutes: m })}>
                 <b className="text-xl">{m}</b>
                 <span className="t-cap">min</span>
               </button>
             ))}
           </div>
-          <button className="btn btn-primary mt-2" disabled={save.isPending} onClick={() => save.mutate({ n: 3, patch: { goals: d.goals, dailyGoalMinutes: d.dailyGoalMinutes } })}>
+          {/* Quien nunca ha invertido no pasa por el test de nivel: empieza por el principio (auditoría APP-4) */}
+          <button className="btn btn-primary mt-2" disabled={save.isPending} onClick={() => save.mutate({ n: 3, patch: { goals: d.goals, dailyGoalMinutes: d.dailyGoalMinutes } }, { onSuccess: () => void (d.experience === 'NONE' && skipPlacement()) })}>
             {tc('continue')}
           </button>
         </div>
@@ -314,7 +425,7 @@ function Flow({ initialStep, initialDraft }: { initialStep: number; initialDraft
         <div className="card flex flex-col gap-3">
           <span className="t-head">{t('beforeStart')}</span>
           <p className="t-body muted m-0">{t('disclaimer')}</p>
-          <button className="flex items-center gap-2.5 text-left" role="checkbox" aria-checked={d.disclaimerAccepted} onClick={() => set({ disclaimerAccepted: !d.disclaimerAccepted })}>
+          <button className="flex items-center gap-2.5 text-left" role="checkbox" aria-checked={d.disclaimerAccepted} aria-label={t('accept')} onClick={() => set({ disclaimerAccepted: !d.disclaimerAccepted })}>
             <Check on={d.disclaimerAccepted} />
             <b>{t('accept')}</b>
           </button>

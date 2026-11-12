@@ -90,7 +90,7 @@ export const httpApi: Api = {
     }
     return get('/session')
   },
-  saveGuest: (email, password) => post('/account/save', { email: email.trim(), password }),
+  saveGuest: (email, password, name) => post('/account/save', { email: email.trim(), password, ...(name?.trim() ? { name: name.trim() } : {}) }),
   loginMethods: () => get('/account/login'),
   setPassword: (current, next) => post('/account/password', { current, next }),
   // El servidor responde igual exista o no la cuenta (no revela quién está registrado)

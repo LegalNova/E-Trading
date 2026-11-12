@@ -107,84 +107,88 @@ export function Home() {
         </div>
       )}
 
-      <DailyGift />
+      {!firstDay && <DailyGift />}
       {/* La primera vez: qué es esto y qué se hace aquí, en tres líneas */}
       <HelpTip id="home" title={t('howTitle')}>
         <HelpSteps items={[t('how1'), t('how2'), t('how3')]} />
       </HelpTip>
-      {firstDay && <InviteCard />}
+      {/* Recién llegado (aún sin ninguna clase): solo el saludo, su primera clase y «Así funciona». Objetivos, misiones,
+          regalos, avisos y precios llegan después de la primera clase (auditoría APP-6) */}
+      {!firstDay && (
+        <>
+        {/* Avisos que piden algo (activar notificaciones, dar tu opinión): solo cuando tocan */}
+        {/* Aprender haciendo: la misión «Pruébalo» pendiente (o recién cumplida) */}
+        <HomeMission />
+        {/* Regalar Lumi (en Navidad, destacado): debajo de la clase para no quitarle el sitio a «Continuar» */}
+        <GiftBanner />
+        <PushCard />
+        <FeedbackCard />
 
-      {/* Avisos que piden algo (activar notificaciones, dar tu opinión): solo cuando tocan */}
-      {/* Aprender haciendo: la misión «Pruébalo» pendiente (o recién cumplida) */}
-      <HomeMission />
-      {/* Regalar Lumi (en Navidad, destacado): debajo de la clase para no quitarle el sitio a «Continuar» */}
-      <GiftBanner />
-      <PushCard />
-      <FeedbackCard />
-
-      <div className="card flex flex-col gap-2.5">
-        <div className="flex justify-between">
-          <span className="t-head">{t('goalsTitle')}</span>
-          <span className="t-foot">{t('goalsCount', { done, total: h.dailyGoals.length })}</span>
-        </div>
-        {h.dailyGoals.map(g => (
-          <div key={g.id} className="t-body flex items-center justify-between">
-            <span className="flex items-center gap-2">
-              <span className={`check ${g.done ? 'on' : ''}`} style={{ width: 20, height: 20, borderRadius: 6 }}>
-                {g.done && <Icon name="check" size={13} strokeWidth={2.4} />}
+        <div className="card flex flex-col gap-2.5">
+          <div className="flex justify-between">
+            <span className="t-head">{t('goalsTitle')}</span>
+            <span className="t-foot">{t('goalsCount', { done, total: h.dailyGoals.length })}</span>
+          </div>
+          {h.dailyGoals.map(g => (
+            <div key={g.id} className="t-body flex items-center justify-between">
+              <span className="flex items-center gap-2">
+                <span className={`check ${g.done ? 'on' : ''}`} style={{ width: 20, height: 20, borderRadius: 6 }}>
+                  {g.done && <Icon name="check" size={13} strokeWidth={2.4} />}
+                </span>
+                {tg(g.id)}
               </span>
-              {tg(g.id)}
-            </span>
-            <span className="t-foot flex-none text-right tabular-nums" style={g.done ? { color: 'var(--up)', fontWeight: 700 } : undefined}>
-              {/* El premio se ve desde el principio: así se entiende para qué sirve cada objetivo */}
-              {g.done ? t('goalEarned', { xp: g.xp }) : t('goalPending', { progress: g.progress, target: g.target, xp: g.xp })}
-            </span>
-          </div>
-        ))}
-        <span className="t-cap">{done === h.dailyGoals.length ? t('allGoals') : t('goalsHint')}</span>
-      </div>
-
-      <LumiSays mood={h.companion.mood} message={h.companion.message} skin={me.companion.skinId} stage={stageOf(me.level.n)} />
-
-      <Link href="/mercado/cartera" className="card flex flex-col gap-1.5" style={{ color: 'inherit' }}>
-        <span className="t-foot flex items-center justify-between gap-2">
-          {t('portfolio')}
-          <span className="t-cap">{t('portfolioVirtual')}</span>
-        </span>
-        <div className="flex items-baseline justify-between gap-2">
-          <span className="text-[26px] font-extrabold tracking-[-0.02em]">{money(h.portfolio.totalValue, 'EUR', locale)}</span>
-          <span className={`t-foot font-bold ${dayUp ? 'up' : 'down'}`}>
-            {dayUp ? '▲' : '▼'} {signedMoney(h.portfolio.dayChange, 'EUR', locale)} {t('today')}
-          </span>
-        </div>
-        <LineChart values={h.portfolio.sparkline} up={dayUp} height={50} fill={false} label={t('portfolioChart')} />
-      </Link>
-
-      {badges && (
-        <Link href="/insignias" className="card flex flex-col gap-2.5" style={{ color: 'var(--ink)' }}>
-          <div className="flex items-center justify-between">
-            <span className="t-head">{t('badgesTitle')}</span>
-            <span className="link text-[14px]">{t('badgesAll')}</span>
-          </div>
-          {badges.some(b => b.unlocked) ? (
-            <div className="flex flex-wrap gap-2">
-              {badges
-                .filter(b => b.unlocked)
-                .sort((a, b) => (b.unlockedAt ?? '').localeCompare(a.unlockedAt ?? ''))
-                .slice(0, 6)
-                .map(b => (
-                  <BadgeArt key={b.code} code={b.code} category={b.category} unlocked size={44} label={b.title} />
-                ))}
+              <span className="t-foot flex-none text-right tabular-nums" style={g.done ? { color: 'var(--up)', fontWeight: 700 } : undefined}>
+                {/* El premio se ve desde el principio: así se entiende para qué sirve cada objetivo */}
+                {g.done ? t('goalEarned', { xp: g.xp }) : t('goalPending', { progress: g.progress, target: g.target, xp: g.xp })}
+              </span>
             </div>
-          ) : (
-            <span className="t-foot">{t('badgesEmpty')}</span>
-          )}
-          <span className="t-cap">{t('badgesCount', { n: badges.filter(b => b.unlocked).length, total: badges.length })}</span>
+          ))}
+          <span className="t-cap">{done === h.dailyGoals.length ? t('allGoals') : t('goalsHint')}</span>
+        </div>
+
+        <LumiSays mood={h.companion.mood} message={h.companion.message} skin={me.companion.skinId} stage={stageOf(me.level.n)} />
+
+        <Link href="/mercado/cartera" className="card flex flex-col gap-1.5" style={{ color: 'inherit' }}>
+          <span className="t-foot flex items-center justify-between gap-2">
+            {t('portfolio')}
+            <span className="t-cap">{t('portfolioVirtual')}</span>
+          </span>
+          <div className="flex items-baseline justify-between gap-2">
+            <span className="text-[26px] font-extrabold tracking-[-0.02em]">{money(h.portfolio.totalValue, 'EUR', locale)}</span>
+            <span className={`t-foot font-bold ${dayUp ? 'up' : 'down'}`}>
+              {dayUp ? '▲' : '▼'} {signedMoney(h.portfolio.dayChange, 'EUR', locale)} {t('today')}
+            </span>
+          </div>
+          <LineChart values={h.portfolio.sparkline} up={dayUp} height={50} fill={false} label={t('portfolioChart')} />
         </Link>
+
+        {badges && (
+          <Link href="/insignias" className="card flex flex-col gap-2.5" style={{ color: 'var(--ink)' }}>
+            <div className="flex items-center justify-between">
+              <span className="t-head">{t('badgesTitle')}</span>
+              <span className="link text-[14px]">{t('badgesAll')}</span>
+            </div>
+            {badges.some(b => b.unlocked) ? (
+              <div className="flex flex-wrap gap-2">
+                {badges
+                  .filter(b => b.unlocked)
+                  .sort((a, b) => (b.unlockedAt ?? '').localeCompare(a.unlockedAt ?? ''))
+                  .slice(0, 6)
+                  .map(b => (
+                    <BadgeArt key={b.code} code={b.code} category={b.category} unlocked size={44} label={b.title} />
+                  ))}
+              </div>
+            ) : (
+              <span className="t-foot">{t('badgesEmpty')}</span>
+            )}
+            <span className="t-cap">{t('badgesCount', { n: badges.filter(b => b.unlocked).length, total: badges.length })}</span>
+          </Link>
+        )}
+        </>
       )}
 
       {/* Abajo del todo: los planes, con un botón que lleva directo al pago */}
-      <BuyPlans id="planes" />
+      {!firstDay && <BuyPlans id="planes" />}
 
       <div className="t-foot flex items-center justify-between px-1">
         <Link href="/perfil" style={{ color: 'inherit' }}>
