@@ -227,17 +227,17 @@
    "explanation": "Un tope mensual corta las espirales de operar por venganza."
   },
   "u26l1-5": {
-   "prompt": "¿Qué le dices a Sara?",
+   "prompt": "El plan de trading de Sara es «comprar barato y vender caro». ¿Qué le dices?",
    "options": [
     "Perfecto, es el plan de todo el mundo",
-    "Eso es un deseo, no un plan",
-    "No hace falta plan si tienes intuición"
+    "No hace falta plan si tienes intuición",
+    "Eso es un deseo, no un plan"
    ],
    "explanation": "Un plan son reglas comprobables, no buenas intenciones.",
    "feedback": [
     "Ese es el problema: no dice cuándo entro, dónde está el stop ni cuánto arriesgo.",
-    "Vale… Entrada en soporte con vela de giro, stop bajo el mínimo, 1 % de riesgo y salida en 2R. ¿Mejor?",
-    "La intuición no se puede revisar ni mejorar. Un plan escrito, sí."
+    "La intuición no se puede revisar ni mejorar. Un plan escrito, sí.",
+    "Vale… Entrada en soporte con vela de giro, stop bajo el mínimo, 1 % de riesgo y salida en 2R. ¿Mejor?"
    ],
    "lines": [
     "¡Ya tengo mi plan de trading! 📝",
@@ -310,17 +310,17 @@
    "explanation": "Combina el acierto con la ganancia y la pérdida media."
   },
   "u26l2-10": {
-   "prompt": "¿Qué le contestas a Nora?",
+   "prompt": "Nora no quiere llevar un diario porque «ya se acuerda de sus operaciones». ¿Qué le contestas?",
    "options": [
     "Apunta solo las ganadoras",
-    "Tienes razón, con la memoria basta y sobra",
-    "Sin diario no puedes ver tus errores"
+    "Sin diario no puedes ver tus errores",
+    "Tienes razón, con la memoria basta y sobra"
    ],
    "explanation": "Lo que no se mide no se puede mejorar.",
    "feedback": [
     "Entonces tu diario diría que eres un genio… y te arruinaría.",
-    "Tu memoria guarda la operación que salió genial y olvida las cinco pequeñas pérdidas.",
-    "Vale… Si en 20 operaciones descubro que pierdo cuando opero con prisa, merece la pena."
+    "Vale… Si en 20 operaciones descubro que pierdo cuando opero con prisa, merece la pena.",
+    "Tu memoria guarda la operación que salió genial y olvida las cinco pequeñas pérdidas."
    ],
    "lines": [
     "Llevar un diario es un rollo 😩",
@@ -448,7 +448,7 @@
    ]
   },
   "u26l4-6": {
-   "prompt": "¿Qué le respondes a Nora?",
+   "prompt": "Nora ha ganado un 20 % este mes en el simulador y pregunta si ya puede meter sus ahorros. ¿Qué le respondes?",
    "options": [
     "Sí, y mete todo de golpe para aprovechar la racha",
     "Primero, más operaciones registradas",

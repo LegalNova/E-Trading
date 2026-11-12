@@ -310,7 +310,7 @@
    "horizon": "les 10 sessions següents"
   },
   "u24l1-3": {
-   "prompt": "Un altre gràfic real, sense nom ni data. Puja o baixa després?",
+   "prompt": "Gràfic real, sense nom ni data. Puja o baixa després?",
    "options": [
     "Puja",
     "Baixa"
@@ -404,16 +404,16 @@
    ]
   },
   "u24l2-12": {
-   "prompt": "Què li dius a la Lumi?",
+   "prompt": "La Lumi creu que seria millor arriscar més perquè «ja recuperarà el que caigui». Què li dius?",
    "options": [
-    "Compte: com més cau, més costa tornar",
     "Millor no invertir mai",
+    "Compte: com més cau, més costa tornar",
     "Sí: el que cau es recupera amb una pujada igual"
    ],
    "explanation": "Una caiguda del 50 % exigeix una pujada del 100 %. Per això caure menys sol valer més que pujar més.",
    "feedback": [
-    "D'acord: evitar les grans caigudes pot valer més que buscar grans pujades.",
     "Tampoc: es tracta de no caure tant, no de quedar-se fora.",
+    "D'acord: evitar les grans caigudes pot valer més que buscar grans pujades.",
     "És el que em pensava… però després d'un −50 % caldria un +100 % per recuperar-se."
    ],
    "lines": [
@@ -587,17 +587,17 @@
    ]
   },
   "u24l6-13": {
-   "prompt": "Què li dius a la Lumi?",
+   "prompt": "A la Lumi li va saltar l'stop i va perdre 100 €, just el que arriscava. Pregunta si ha estat un desastre. Què li dius?",
    "options": [
     "No: és −1R, el previst",
-    "Sí: perdre sempre és un desastre",
-    "Sí: hauries d'haver tret l'stop"
+    "Sí: hauries d'haver tret l'stop",
+    "Sí: perdre sempre és un desastre"
    ],
    "explanation": "Si salta l'stop, el resultat és −1R: una pèrdua petita i planificada, no un desastre.",
    "feedback": [
     "Cert: −1R és una pèrdua planificada. El dolent seria perdre més per treure l'stop.",
-    "Però vaig perdre exactament el que havia previst… això no sona a desastre.",
-    "Sense stop, la pèrdua podria haver estat molt més gran que 1R."
+    "Sense stop, la pèrdua podria haver estat molt més gran que 1R.",
+    "Però vaig perdre exactament el que havia previst… això no sona a desastre."
    ],
    "lines": [
     "La meva última operació: va saltar l'stop i vaig perdre 100 €.",
@@ -657,17 +657,17 @@
    ]
   },
   "u24l7-13": {
-   "prompt": "Què li dius a la Lumi?",
+   "prompt": "La Lumi creu que, com que el seu sistema té esperança positiva, pot arriscar un 20 % per operació. Què li dius?",
    "options": [
-    "Millor un 50 %, per aprofitar-ho al màxim",
     "Sí: amb esperança positiva no es pot perdre",
-    "Una mala ratxa et trauria abans"
+    "Una mala ratxa et trauria abans",
+    "Millor un 50 %, per aprofitar-ho al màxim"
    ],
    "explanation": "L'esperança positiva es nota amb moltes operacions. Per arribar-hi cal sobreviure a les ratxes dolentes amb un risc petit.",
    "feedback": [
-    "Això només accelera la ruïna: dos errors seguits i em quedaria amb un 25 %.",
     "Amb poques operacions encara mana la sort. Una mala ratxa al 20 % em trauria.",
-    "Té sentit: millor un risc petit per arribar a aquesta «llarga»."
+    "Té sentit: millor un risc petit per arribar a aquesta «llarga».",
+    "Això només accelera la ruïna: dos errors seguits i em quedaria amb un 25 %."
    ],
    "lines": [
     "El meu sistema té esperança positiva.",

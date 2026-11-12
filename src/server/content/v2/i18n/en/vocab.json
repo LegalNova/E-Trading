@@ -194,7 +194,7 @@
    ]
   },
   "vocabl1-4": {
-   "prompt": "What do you say?",
+   "prompt": "Lumi thinks the «time horizon» is what you see from the bus window. What do you say?",
    "options": [
     "No: it's when you'll need the money",
     "Close: it's how much money you have to invest",
@@ -297,17 +297,17 @@
    "explanation": "Initial public offering: the company (or its owners) sells shares to new investors and it starts trading on the stock market."
   },
   "vocabl2-4": {
-   "prompt": "How do you clear it up?",
+   "prompt": "Lumi thinks the «bid» is an eBay bid and the «ask» is what she asks. How do you clear it up?",
    "options": [
     "Bid is selling and ask is buying",
-    "Bid is what buyers pay; ask, what sellers want",
-    "They're the same thing, with different names at each broker"
+    "They're the same thing, with different names at each broker",
+    "Bid is what buyers pay; ask, what sellers want"
    ],
    "explanation": "You buy at the ask and sell at the bid: that's why, if you buy and sell instantly, you lose the spread.",
    "feedback": [
     "It's the other way round: the bid is the buyers' price and the ask, the sellers'.",
-    "That's it! And between the two sits the spread, the invisible fee. 🕵️",
-    "If they were the same there'd be no spread… and no business for anyone. 😅"
+    "If they were the same there'd be no spread… and no business for anyone. 😅",
+    "That's it! And between the two sits the spread, the invisible fee. 🕵️"
    ],
    "lines": [
     "Someone told me a «bid» is something you do on eBay 🛒",
@@ -425,17 +425,17 @@
    "explanation": "Distributing funds pay them out; accumulating funds reinvest them, and in Spain you don't pay tax until you sell."
   },
   "vocabl3-5": {
-   "prompt": "How do you clear it up?",
+   "prompt": "Lumi says the KID is «the fund's youngest child». How do you clear it up?",
    "options": [
-    "It's a fund designed for children",
     "It's the document with risks and costs",
-    "It's the name of the manager running the fund"
+    "It's the name of the manager running the fund",
+    "It's a fund designed for children"
    ],
    "explanation": "The KID sums up in a few pages what the product is, its risk, its costs and its scenarios.",
    "feedback": [
-    "Funny, but no: it's the Key Information Document. 😄",
     "Exactly! A few mandatory pages. Reading it saves you nasty surprises. 📄",
-    "No: the KID is a document, not a person."
+    "No: the KID is a document, not a person.",
+    "Funny, but no: it's the Key Information Document. 😄"
    ],
    "lines": [
     "Lumi explains: the KID is the fund's little kid 👶",
@@ -524,17 +524,17 @@
    "unit": "%"
   },
   "vocabl4-4": {
-   "prompt": "What do you say?",
+   "prompt": "Lumi thinks leverage means the broker lends you «muscle» and it's all upside. What do you say?",
    "options": [
     "It's a type of diversification",
-    "It multiplies gains and losses",
-    "Yes, it multiplies your gains, end of story"
+    "Yes, it multiplies your gains, end of story",
+    "It multiplies gains and losses"
    ],
    "explanation": "Leverage amplifies in both directions: at 10 times, every 1 % move in the asset is 10 % of your money.",
    "feedback": [
     "No: diversifying spreads risk; leverage concentrates it.",
-    "That's it! Borrowed muscle can crush you too. 😬",
-    "And losses, Lumi. With 10x leverage, a 10 % fall wipes out all your money."
+    "And losses, Lumi. With 10x leverage, a 10 % fall wipes out all your money.",
+    "That's it! Borrowed muscle can crush you too. 😬"
    ],
    "lines": [
     "Word of the day: «leverage» 💪",
@@ -651,7 +651,7 @@
    ]
   },
   "vocabl5-5": {
-   "prompt": "What do you explain to her?",
+   "prompt": "Lumi has seen a «hanging man» on the chart and got a fright. What do you explain to her?",
    "options": [
     "A candle with a long lower wick",
     "It's the same as a hammer, wherever it shows up",
@@ -774,17 +774,17 @@
    ]
   },
   "vocabl6-6": {
-   "prompt": "What do you explain to her?",
+   "prompt": "Lumi asks what Fibonacci, an Italian mathematician, is doing on her chart. What do you explain to her?",
    "options": [
-    "It's a volume indicator",
     "It gives typical retracement levels",
-    "It predicts the exact price for the next day"
+    "It predicts the exact price for the next day",
+    "It's a volume indicator"
    ],
    "explanation": "Fibonacci retracements (23.6 %, 38.2 %, 50 %, 61.8 % and 78.6 %) flag zones where a move might stall. They're reference points, not prophecies.",
    "feedback": [
-    "No: Fibonacci marks the retracement levels of a move, not volume.",
     "And free of charge! But careful: lots of people watching them doesn't make them magic. ✨",
-    "If only. 😅 It just marks zones that lots of people are watching."
+    "If only. 😅 It just marks zones that lots of people are watching.",
+    "No: Fibonacci marks the retracement levels of a move, not volume."
    ],
    "lines": [
     "Fibonacci was an Italian mathematician, right? 🇮🇹",
@@ -893,17 +893,17 @@
    ]
   },
   "vocabl7-7": {
-   "prompt": "How do you clear it up?",
+   "prompt": "Lumi thinks expectancy is what she hopes to win when she gets up in the morning. How do you clear it up?",
    "options": [
     "It's the percentage of trades you get right",
-    "It's the return a trading course promises you",
-    "What each trade makes on average"
+    "What each trade makes on average",
+    "It's the return a trading course promises you"
    ],
    "explanation": "Expectancy = (win rate × average win) − (loss rate × average loss).",
    "feedback": [
     "Not quite: you can be right 70 % of the time and still lose money if your losses are much bigger than your wins.",
-    "Be wary of those promises. 🚩 Expectancy is calculated from your trades, not theirs.",
-    "That's it! And if it's negative, the more trades you make, the more you lose. 📉"
+    "That's it! And if it's negative, the more trades you make, the more you lose. 📉",
+    "Be wary of those promises. 🚩 Expectancy is calculated from your trades, not theirs."
    ],
    "lines": [
     "Expectancy is how much I expect from the day when I wake up in the morning ☀️",
@@ -969,7 +969,7 @@
    "explanation": "That's why it's so hard to sell at a loss and accept that you were wrong."
   },
   "vocabl8-4": {
-   "prompt": "What do you tell her?",
+   "prompt": "Lumi lost 3 trades in a row and today wants to open one three times the size: she calls it «strategy». What do you tell her?",
    "options": [
     "It's overconfidence, but done well",
     "Yes: it's the double-up-after-a-loss strategy",
@@ -1084,17 +1084,17 @@
    "explanation": "A term made popular by Warren Buffett: a brand, a network or costs that competitors can't copy."
   },
   "vocabl9-4": {
-   "prompt": "What do you explain to her?",
+   "prompt": "To Lumi, EBITDA sounds like a Harry Potter spell, and she asks what it really is. What do you explain to her?",
    "options": [
-    "Earnings before interest, taxes, depreciation and amortisation",
     "The profit left at the end, after subtracting all costs and taxes",
-    "The company's debt"
+    "The company's debt",
+    "Earnings before interest, taxes, depreciation and amortisation"
    ],
    "explanation": "EBITDA is useful for comparing businesses, but it doesn't subtract interest, taxes or investment: it isn't the money the company actually keeps.",
    "feedback": [
-    "Expecto beneficium! 🧙 Useful, but careful: it isn't cash or net profit.",
     "That's net profit. EBITDA comes before several things are taken off.",
-    "No: debt is separate. That's what net debt is for."
+    "No: debt is separate. That's what net debt is for.",
+    "Expecto beneficium! 🧙 Useful, but careful: it isn't cash or net profit."
    ],
    "lines": [
     "EBITDA sounds like a Harry Potter spell 🪄",
@@ -1210,17 +1210,17 @@
    ]
   },
   "vocabl10-5": {
-   "prompt": "What do you say to her?",
+   "prompt": "Lumi is promised a guaranteed 5 % a week on Instagram and asked for her ID. What do you say to her?",
    "options": [
-    "First, look them up on the CNMV",
+    "I'll only send them half my ID, just in case",
     "If they have lots of followers, they must be trustworthy",
-    "I'll only send them half my ID, just in case"
+    "First, look them up on the CNMV"
    ],
    "explanation": "Guaranteed returns and contact through social media are classic signs of a chiringuito. Always check the CNMV register.",
    "feedback": [
-    "OK… they're on the warnings list. Phew. 🙈 Smells like a chiringuito.",
+    "Not half, not a quarter. 😅 Check with the CNMV first.",
     "Followers can be bought. What can't be bought is authorisation from the CNMV.",
-    "Not half, not a quarter. 😅 Check with the CNMV first."
+    "OK… they're on the warnings list. Phew. 🙈 Smells like a chiringuito."
    ],
    "lines": [
     "«Inversiones Golden Lambo» messaged me on Instagram 🏎️",

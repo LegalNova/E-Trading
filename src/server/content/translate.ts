@@ -77,7 +77,8 @@ export function questionT(loc: Loc, q: ContentQuestion): ContentQuestion {
   // (con el mismo espacio que no se rompe que las opciones: si no, «20 %» nunca coincidiría con la opción «20 %»)
   // En los chats pregunta una amiga, no Lumi: su nombre sustituye a «Lumi» también en la traducción («a la Lumi» → «a la Marta»)
   const from = q.type === 'CHAT' ? q.meta?.from : undefined
-  const named = (x: string) => (from ? x.replace(/\bLumi\b/g, from) : x)
+  // (en catalán el artículo se apostrofa ante «Ana»: «la Ana» → «l'Ana»; ante «Irene» no, porque su «i» es átona)
+  const named = (x: string) => (from ? (loc === 'ca' ? x.replace(/\bLumi\b/g, from).replace(/\b([Ll])a Ana\b/g, "$1'Ana") : x.replace(/\bLumi\b/g, from)) : x)
   const tSol = q.type === 'FILL_BLANK' && typeof q.solution === 'string' ? t.options[q.options.indexOf(q.solution)] : undefined
   const solution = tSol !== undefined ? nb(tSol) : q.solution
   return {

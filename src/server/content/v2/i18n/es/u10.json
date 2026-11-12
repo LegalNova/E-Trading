@@ -314,17 +314,17 @@
    ]
   },
   "u10l1-12": {
-   "prompt": "¿Qué le contestas?",
+   "prompt": "A Lucía le ofrecen un fondo que «siempre acaba ganando» y pregunta si los fondos no pierden nunca. ¿Qué le contestas?",
    "options": [
+    "No pierden: la CNMV los supervisa y garantiza el resultado",
     "Si lo vende un banco, es seguro",
-    "Un fondo sube y baja con lo que tiene dentro",
-    "No pierden: la CNMV los supervisa y garantiza el resultado"
+    "Un fondo sube y baja con lo que tiene dentro"
    ],
    "explanation": "Un fondo normal no garantiza nada: vale lo que valen sus activos. Que lo venda un banco o lo supervise la CNMV da seguridad sobre las reglas y la custodia, no sobre la rentabilidad.",
    "feedback": [
+    "La CNMV supervisa los fondos, pero no garantiza que ganen.",
     "El banco lo vende, pero su valor depende de lo que compra el fondo.",
-    "Eso. Y el FGD no cubre los fondos de inversión.",
-    "La CNMV supervisa los fondos, pero no garantiza que ganen."
+    "Eso. Y el FGD no cubre los fondos de inversión."
    ],
    "lines": [
     "El banco me ofrece un fondo y dice que «siempre acaba ganando».",
@@ -380,7 +380,7 @@
    "explanation": "La mayoría no bate a su índice a largo plazo y es difícil saber de antemano quién lo hará; los costes explican buena parte. Algunos sí lo baten, pero haber ganado un año no predice el siguiente."
   },
   "u10l4-11": {
-   "prompt": "¿Qué le contestas?",
+   "prompt": "El banco de Lucía le recomienda un fondo que cobra un 1,8 % al año y dice que su gestor bate al mercado. ¿Qué le contestas?",
    "options": [
     "Sí: si lo dice el banco, que es experto, será verdad",
     "Antes compáralo con un indexado barato",

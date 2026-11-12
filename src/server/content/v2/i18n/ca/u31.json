@@ -413,17 +413,17 @@
    ]
   },
   "u31l1-13": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi ha cobrat dividends i ha guanyat venent un ETF, i pregunta si això se suma a la nòmina a la renda. Què li contestes?",
    "options": [
+    "Sí: tot va junt amb la nòmina",
     "No: va a la base de l'estalvi",
-    "No tributa: fins a 6.000 € és gratis",
-    "Sí: tot va junt amb la nòmina"
+    "No tributa: fins a 6.000 € és gratis"
    ],
    "explanation": "Dividends, interessos i guanys per vendes van a la base de l'estalvi, separada de la nòmina. L'error temptador és creure que els primers 6.000 € estan exempts: paguen el 19 %.",
    "feedback": [
+    "No: la nòmina va a la base general i les teves inversions, a la de l'estalvi, amb la seva escala.",
     "Això mateix! I amb 2.600 € en total, tot paga el 19 %.",
-    "No és gratis: els primers 6.000 € paguen el 19 %, el tipus més baix.",
-    "No: la nòmina va a la base general i les teves inversions, a la de l'estalvi, amb la seva escala."
+    "No és gratis: els primers 6.000 € paguen el 19 %, el tipus més baix."
    ],
    "lines": [
     "Aquest any he cobrat 600 € de dividends i he guanyat 2.000 € venent un ETF.",
@@ -618,17 +618,17 @@
    ]
   },
   "u31l4-12": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi té un ETF de l'S&P 500 amb molt de guany i pregunta si el pot traspassar a un de mundial sense pagar, com un fons. Què li contestes?",
    "options": [
+    "Millor no invertir més fins que ho decideixi",
     "Sí, els ETF es traspassen igual que els fons",
-    "No: vendre'l tributa; millor deixa'l",
-    "Millor no invertir més fins que ho decideixi"
+    "No: vendre'l tributa; millor deixa'l"
    ],
    "explanation": "Els ETF no tenen el traspàs dels fons: cada venda tributa. Si ja tens guanys, sol ser millor no vendre i dirigir les aportacions noves al producte que prefereixes.",
    "feedback": [
+    "Aturar les aportacions no arregla res: el temps invertit també compta.",
     "Tant de bo. En general, vendre un ETF tributa com vendre una acció.",
-    "Això! Sense vendre no pagues, i les aportacions noves ja van al mundial.",
-    "Aturar les aportacions no arregla res: el temps invertit també compta."
+    "Això! Sense vendre no pagues, i les aportacions noves ja van al mundial."
    ],
    "lines": [
     "Tinc un ETF del S&P 500 amb molt de guany.",
@@ -689,17 +689,17 @@
    ]
   },
   "u31l5-12": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi vol comprar una empresa només perquè paga un dividend del 8 %: «són diners gratis». Què li contestes?",
    "options": [
-    "Sí: un 8 % gratis cada any, passi el que passi",
     "No és gratis: el preu baixa el que paga",
-    "Només si l'empresa és dels EUA"
+    "Només si l'empresa és dels EUA",
+    "Sí: un 8 % gratis cada any, passi el que passi"
    ],
    "explanation": "El dividend surt del valor de l'empresa: els teus diners passen d'accions a efectiu, i aquest efectiu tributa. Un dividend alt no n'hi ha prou per comprar: importa el negoci que el paga.",
    "feedback": [
-    "No és gratis: en pagar-lo, el preu de l'acció baixa més o menys aquesta quantitat.",
     "Molt bé! Un dividend alt pot venir d'un negoci en problemes.",
-    "El país no el converteix en gratis, i a fora hi pot haver retenció extra."
+    "El país no el converteix en gratis, i a fora hi pot haver retenció extra.",
+    "No és gratis: en pagar-lo, el preu de l'acció baixa més o menys aquesta quantitat."
    ],
    "lines": [
     "Aquesta empresa paga un dividend del 8 % l'any.",

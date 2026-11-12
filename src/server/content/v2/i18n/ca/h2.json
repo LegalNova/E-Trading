@@ -430,17 +430,17 @@
    "explanation": "Redueixes el risc sense pagar a canvi menys rendibilitat esperada."
   },
   "u29l1-10": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi té 300 € en 15 criptomonedes i creu que ja té la cartera diversificada. Què li contestes?",
    "options": [
-    "No: si cauen totes alhora, és com tenir-ne una",
+    "Sí, sobretot si són noves",
     "Sí: amb 15 de diferents és difícil que caiguin totes alhora",
-    "Sí, sobretot si són noves"
+    "No: si cauen totes alhora, és com tenir-ne una"
    ],
    "explanation": "Actius molt correlacionats no diversifiquen. I recorda: en cripto es pot perdre la totalitat del que has invertit.",
    "feedback": [
-    "Ben vist! Diversificar és tenir coses que es comporten diferent, no molts noms.",
+    "Les més noves solen ser encara més volàtils. Més noms no vol dir menys risc.",
     "Tant de bo… però quan el bitcoin cau amb força, la majoria de les altres cauen amb ell.",
-    "Les més noves solen ser encara més volàtils. Més noms no vol dir menys risc."
+    "Ben vist! Diversificar és tenir coses que es comporten diferent, no molts noms."
    ],
    "lines": [
     "Tinc 300 € en 15 criptomonedes diferents 😎",
@@ -524,7 +524,7 @@
    "explanation": "Són costos el canvi de divisa i les despeses corrents (TER), i també la comissió del bròquer, l'spread, la custòdia i els impostos. El que va rendir l'any passat o quantes empreses porta no són costos."
   },
   "u10l3-10": {
-   "prompt": "Què li expliques?",
+   "prompt": "La Lumi diu que el seu fons cobra un 1,8 %, però que mai li han cobrat res al compte. Què li expliques?",
    "options": [
     "Es descompta cada dia del valor del fons",
     "El cobra Hisenda a final d'any, amb la declaració",
@@ -640,17 +640,17 @@
    "explanation": "Els ETF no tenen el règim de traspàs: cada venda amb guany tributa."
   },
   "u10l2-9": {
-   "prompt": "Què li contestes?",
+   "prompt": "La Lumi pregunta si un ETF és tan arriscat com comprar una sola empresa. Què li contestes?",
    "options": [
     "No té cap risc",
-    "Es compra com una acció, però porta moltes empreses a dins",
-    "Sí, igual d'arriscat: al final cotitza a borsa com qualsevol acció"
+    "Sí, igual d'arriscat: al final cotitza a borsa com qualsevol acció",
+    "Es compra com una acció, però porta moltes empreses a dins"
    ],
    "explanation": "La manera de comprar-lo és com una acció; el risc és el de tota la cistella.",
    "feedback": [
     "Té el risc de l'índex que copia: si el mercat cau un 30 %, l'ETF també.",
-    "Això! Un de l'MSCI World porta més de mil empreses de països desenvolupats.",
-    "Es compra com una acció, però a dins porta centenars o milers d'empreses."
+    "Es compra com una acció, però a dins porta centenars o milers d'empreses.",
+    "Això! Un de l'MSCI World porta més de mil empreses de països desenvolupats."
    ],
    "lines": [
     "M'han dit que un ETF és «com una acció».",

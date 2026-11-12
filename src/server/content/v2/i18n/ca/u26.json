@@ -227,17 +227,17 @@
    "explanation": "Un topall mensual talla les espirals d'operar per venjança."
   },
   "u26l1-5": {
-   "prompt": "Què li dius a la Lumi?",
+   "prompt": "El pla de trading de la Lumi és «comprar barat i vendre car». Què li dius?",
    "options": [
     "Perfecte, és el pla de tothom",
-    "Això és un desig, no un pla",
-    "No cal pla si tens intuïció"
+    "No cal pla si tens intuïció",
+    "Això és un desig, no un pla"
    ],
    "explanation": "Un pla són regles comprovables, no bones intencions.",
    "feedback": [
     "Aquest és el problema: no diu quan entro, on és l'stop ni quant arrisco.",
-    "D'acord… Entrada en suport amb espelma de gir, stop sota el mínim, 1 % de risc i sortida a 2R. Millor?",
-    "La intuïció no es pot revisar ni millorar. Un pla escrit, sí."
+    "La intuïció no es pot revisar ni millorar. Un pla escrit, sí.",
+    "D'acord… Entrada en suport amb espelma de gir, stop sota el mínim, 1 % de risc i sortida a 2R. Millor?"
    ],
    "lines": [
     "Ja tinc el meu pla de trading! 📝",
@@ -310,17 +310,17 @@
    "explanation": "Combina l'encert amb el guany i la pèrdua mitjans."
   },
   "u26l2-10": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi no vol portar un diari perquè «ja es recorda de les seves operacions». Què li contestes?",
    "options": [
     "Apunta només les guanyadores",
-    "Tens raó, amb la memòria n'hi ha prou i de sobres",
-    "Sense diari no pots veure els teus errors"
+    "Sense diari no pots veure els teus errors",
+    "Tens raó, amb la memòria n'hi ha prou i de sobres"
    ],
    "explanation": "El que no es mesura no es pot millorar.",
    "feedback": [
     "Llavors el teu diari diria que ets un geni… i t'arruïnaria.",
-    "La teva memòria guarda l'operació que va sortir genial i oblida les cinc petites pèrdues.",
-    "D'acord… Si en 20 operacions descobreixo que perdo quan opero amb pressa, val la pena."
+    "D'acord… Si en 20 operacions descobreixo que perdo quan opero amb pressa, val la pena.",
+    "La teva memòria guarda l'operació que va sortir genial i oblida les cinc petites pèrdues."
    ],
    "lines": [
     "Portar un diari és un rotllo 😩",
@@ -448,7 +448,7 @@
    ]
   },
   "u26l4-6": {
-   "prompt": "Què li respons a la Lumi?",
+   "prompt": "La Lumi ha guanyat un 20 % aquest mes al simulador i pregunta si ja hi pot posar els estalvis. Què li respons?",
    "options": [
     "Sí, i posa-ho tot de cop per aprofitar la ratxa",
     "Primer, més operacions registrades",

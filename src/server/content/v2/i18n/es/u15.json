@@ -516,17 +516,17 @@
    "explanation": "El oro físico hay que guardarlo y asegurarlo, y entre el precio de compra y el de venta puede haber bastante diferencia. No paga ningún cupón y se compra en muchos sitios, no solo en el banco."
   },
   "u15l4-10": {
-   "prompt": "¿Qué le contestas a Laura?",
+   "prompt": "Laura ha visto un anuncio: «Opera petróleo con 1:10 y gana un 300 % este mes». ¿Qué le contestas?",
    "options": [
-    "Con 1:10, un 10 % en contra lo pierde todo",
     "Mejor 1:100, que es más",
-    "¡Apúntate ya! Un 300 % no se ve todos los días"
+    "¡Apúntate ya! Un 300 % no se ve todos los días",
+    "Con 1:10, un 10 % en contra lo pierde todo"
    ],
    "explanation": "Con 1:10, un 10 % en contra te deja a cero. Los CFD son instrumentos complejos y están asociados a un riesgo elevado de perder dinero rápidamente debido al apalancamiento. Entre un 74 y un 89 % de los inversores minoristas pierden dinero cuando negocian con CFD.",
    "feedback": [
-    "Vale, mejor entiendo qué es un ETC antes de tocar nada apalancado.",
     "Más apalancamiento, más rápido a cero.",
-    "Con 1:10, un 10 % en contra lo pierde todo. Y prometer un 300 % es una señal de alarma."
+    "Con 1:10, un 10 % en contra lo pierde todo. Y prometer un 300 % es una señal de alarma.",
+    "Vale, mejor entiendo qué es un ETC antes de tocar nada apalancado."
    ],
    "lines": [
     "He visto un anuncio: «Opera petróleo con 1:10 y gana un 300 % este mes» 🛢️"

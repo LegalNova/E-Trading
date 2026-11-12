@@ -351,16 +351,16 @@
    "explanation": "The name comes from old paper bonds, which had cut-out coupons you handed in to collect each payment."
   },
   "u9l1-10": {
-   "prompt": "What do you tell her?",
+   "prompt": "Lumi asks what bonds are for in a portfolio if they're «for old people». What do you tell her?",
    "options": [
-    "They give predictable income and cushion falls",
     "You can't possibly lose money on them",
+    "They give predictable income and cushion falls",
     "They're useless: only shares make real money in the long run"
    ],
    "explanation": "Bonds bring income and stability, although no protection works every time.",
    "feedback": [
-    "That's it! Though not always: in 2022 they fell at the same time as shares.",
     "If the issuer doesn't pay, or if you sell after they've dropped, you can lose money.",
+    "That's it! Though not always: in 2022 they fell at the same time as shares.",
     "Shares tend to return more over the long run, but bonds give predictable income and usually cushion falls."
    ],
    "lines": [
@@ -515,17 +515,17 @@
    ]
   },
   "u9l3-13": {
-   "prompt": "What do you reply?",
+   "prompt": "Lumi has read that the central bank is going to cut rates and asks whether that's good or bad for her bonds. What do you reply?",
    "options": [
-    "It doesn't matter: bonds don't move",
     "Bad: you'll get a smaller coupon from now on",
-    "Good: the price of your bonds rises"
+    "Good: the price of your bonds rises",
+    "It doesn't matter: bonds don't move"
    ],
    "explanation": "If rates fall, your fixed coupon is more attractive than that of new bonds and your bond is worth more. It's tempting to think you'll get less, but that only happens to new bonds, not yours.",
    "feedback": [
-    "They do move: rates down, price up.",
     "Your coupon is fixed and doesn't change. What changes is the price, and it rises.",
-    "That's it. And the longer the bond, the more it rises."
+    "That's it. And the longer the bond, the more it rises.",
+    "They do move: rates down, price up."
    ],
    "lines": [
     "I've read that the central bank is going to cut rates.",
@@ -640,17 +640,17 @@
    ]
   },
   "u9l6-10": {
-   "prompt": "What do you tell her?",
+   "prompt": "Lumi asks whether inflation-linked bonds protect her from everything. What do you tell her?",
    "options": [
-    "From inflation, yes, but their price moves too",
     "Yes, from everything: inflation, rates and a default",
-    "No, they don't protect from anything"
+    "No, they don't protect from anything",
+    "From inflation, yes, but their price moves too"
    ],
    "explanation": "Each asset covers a specific risk; none covers them all.",
    "feedback": [
-    "Nice! They cover a specific risk, not all of them.",
     "They protect against inflation, not against rate rises or a default.",
-    "They do protect purchasing power if you hold them to maturity."
+    "They do protect purchasing power if you hold them to maturity.",
+    "Nice! They cover a specific risk, not all of them."
    ],
    "lines": [
     "Inflation scares me 😱",

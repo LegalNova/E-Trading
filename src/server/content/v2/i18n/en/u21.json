@@ -363,7 +363,7 @@
    "horizon": "the next 10 sessions"
   },
   "u21l2-7": {
-   "prompt": "Another real chart. Up or down over the next 10 sessions?",
+   "prompt": "A real chart. Up or down over the next 10 sessions?",
    "options": [
     "Up",
     "Down"
@@ -491,17 +491,17 @@
    ]
   },
   "u21l4-13": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "After months of falls, Lumi sees three lows with the middle one lowest and thinks it's a bearish head and shoulders. What do you reply?",
    "options": [
+    "It's bullish: I'll buy now, before the breakout",
     "It's the inverse: bullish if confirmed",
-    "Yes: all head and shoulders patterns are bearish",
-    "It's bullish: I'll buy now, before the breakout"
+    "Yes: all head and shoulders patterns are bearish"
    ],
    "explanation": "The normal H&S comes after a rise and is bearish; the inverse one comes after a fall and is bullish. Both are confirmed when they break their neckline.",
    "feedback": [
+    "Right direction, but without a close above the neckline the pattern doesn't exist.",
     "That's it: after a fall, the inverse version points upwards. And without a breakout, it isn't a pattern yet.",
-    "This one is upside down and comes after a fall: it's the inverse one, which is bullish.",
-    "Right direction, but without a close above the neckline the pattern doesn't exist."
+    "This one is upside down and comes after a fall: it's the inverse one, which is bullish."
    ],
    "lines": [
     "After months of falling I see three lows, with the middle one lowest.",
@@ -523,7 +523,7 @@
    "horizon": "the next 10 sessions"
   },
   "u21l5-9": {
-   "prompt": "Another real chart, no name. Up or down over the next 10 sessions?",
+   "prompt": "A real chart, no name. Up or down over the next 10 sessions?",
    "options": [
     "Up",
     "Down"
@@ -649,7 +649,7 @@
    "explanation": "First the stop (where the breakout fails), then the amount: with a maximum risk of €100, the further away the stop, the fewer shares you can buy."
   },
   "u21l7-7": {
-   "prompt": "Another real chart, no name, no date. Up or down over the next 10 sessions?",
+   "prompt": "A real chart, no name, no date. Up or down over the next 10 sessions?",
    "options": [
     "Up",
     "Down"
@@ -672,16 +672,16 @@
    ]
   },
   "u21l7-12": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "You bought a breakout with a close and volume, and your stop was still hit. Lumi asks whether you did it wrong. What do you reply?",
    "options": [
-    "Yes: I should have removed the stop to hold on",
     "Yes: if the stop is hit, the trade was badly set up",
+    "Yes: I should have removed the stop to hold on",
     "No: I stuck to the plan and the stop capped it"
    ],
    "explanation": "No filter eliminates every false breakout: according to Bulkowski, the H&S fails 19 % of the time and flags around 44 %. What you control is how much the mistake costs.",
    "feedback": [
-    "Removing the stop turns a small mistake into one that can be huge.",
     "Not necessarily: no filter eliminates every false breakout.",
+    "Removing the stop turns a small mistake into one that can be huge.",
     "That's it: a good decision can turn out badly. The stop has done its job."
    ],
    "lines": [

@@ -330,17 +330,17 @@
    "explanation": "The same fund gives different results depending on how you get in and out."
   },
   "u27l1-10": {
-   "prompt": "What do you explain to Lumi?",
+   "prompt": "Lumi's fund has made 10 % a year, but she's made much less, and she asks whether she's being robbed. What do you explain?",
    "options": [
     "You probably got in and out at the wrong time",
-    "It's definitely a scam",
-    "Funds always dress up their performance figures"
+    "Funds always dress up their performance figures",
+    "It's definitely a scam"
    ],
    "explanation": "Your return depends on the fund and on when you get in and out.",
    "feedback": [
     "Oops… I bought when it was at its highs and sold in the March scare. Touché.",
-    "Maybe not: if you got in after the rises and out in the falls, the difference is down to you.",
-    "The fund's performance figures are real; what changes is when you were invested."
+    "The fund's performance figures are real; what changes is when you were invested.",
+    "Maybe not: if you got in after the rises and out in the falls, the difference is down to you."
    ],
    "lines": [
     "My fund has made 10 % a year… but I've made way less! 🤨",
@@ -402,16 +402,16 @@
    ]
   },
   "u27l2-10": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi won't sell a losing share because that would mean admitting she was wrong. What do you reply?",
    "options": [
-    "Decide with what you know today",
     "Buy more to bring your average price down",
+    "Decide with what you know today",
     "Well done, hold on until it comes back"
    ],
    "explanation": "Accepting a small loss in time is part of the game, not a failure.",
    "feedback": [
-    "You're right: the market doesn't know what I paid. I'll review the business, not my pride.",
     "Averaging down without reviewing the business is putting more money into the same mistake.",
+    "You're right: the market doesn't know what I paid. I'll review the business, not my pride.",
     "Sometimes it doesn't come back. And while you wait, that money could be somewhere better."
    ],
    "lines": [
@@ -459,17 +459,17 @@
    "explanation": "The disposition effect does the exact opposite."
   },
   "u27l3-10": {
-   "prompt": "What do you tell Lumi?",
+   "prompt": "Lumi's share is up 6 % and she wants to sell it now, «before it falls». What do you tell her?",
    "options": [
-    "Yes, lock it in, you never know",
     "What did your exit plan say?",
-    "Buy more with everything you've got"
+    "Buy more with everything you've got",
+    "Yes, lock it in, you never know"
    ],
    "explanation": "The exit is decided before you get in, not when you see the first bit of green.",
    "feedback": [
-    "It might work out today, but if you always do it, you cut short your best trades.",
     "Hmm… It said half at 2R and the rest with a trailing stop. OK, I'll stick to the plan.",
-    "Swinging from fear to euphoria in a minute isn't a plan either."
+    "Swinging from fear to euphoria in a minute isn't a plan either.",
+    "It might work out today, but if you always do it, you cut short your best trades."
    ],
    "lines": [
     "My share is up 6 %! 🎉",
@@ -518,17 +518,17 @@
    "explanation": "Writing down why you could be wrong and comparing yourself with an index keep your feet on the ground, as does tracking all your results in a journal. Raising your risk after a win or looking only at your best trades is exactly what overconfidence does."
   },
   "u27l5-11": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "Lumi has got four rounds of «up or down?» right in a row and thinks she has a gift. What do you say?",
    "options": [
-    "Then raise the risk on your next buys",
     "With four tries, luck rules",
-    "Yes: four out of four is no coincidence"
+    "Yes: four out of four is no coincidence",
+    "Then raise the risk on your next buys"
    ],
    "explanation": "With few tries, luck looks a lot like talent: only a large, measured sample tells them apart. The temptation is to believe a four-round scoreboard.",
    "feedback": [
-    "Raising the risk after a short streak is textbook overconfidence.",
     "OK: I'll note it down and keep measuring. We'll see what my score says after many more.",
-    "By chance, getting all four right happens more than once in twenty. It may well be."
+    "By chance, getting all four right happens more than once in twenty. It may well be.",
+    "Raising the risk after a short streak is textbook overconfidence."
    ],
    "lines": [
     "I got all four rounds of «up or down?» right.",
@@ -591,16 +591,16 @@
    "explanation": "It's the simplest antidote to confirmation bias."
   },
   "u27l6-10": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi sees a share that has fallen 50 % and says it's «half price, like in the sales». What do you reply?",
    "options": [
-    "It depends on what the business is worth",
     "Yes, half price is always a bargain",
+    "It depends on what the business is worth",
     "Wait for it to drop another 50 % and it'll be even cheaper"
    ],
    "explanation": "Stock market sales aren't like supermarket sales: the product may have changed too.",
    "feedback": [
-    "True. First I'll look at earnings, debt and why it fell. The old price isn't a price tag.",
     "Not in the stock market: it may have fallen because the business is worth half… or less.",
+    "True. First I'll look at earnings, debt and why it fell. The old price isn't a price tag.",
     "That's still only looking at the price, not the value."
    ],
    "lines": [

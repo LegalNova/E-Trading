@@ -389,17 +389,17 @@
    "explanation": "La Comissió Nacional del Mercat de Valors supervisa els serveis d'inversió a Espanya."
   },
   "u32l1-10": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "A la Lumi li ha escrit per Instagram una desconeguda que diu que guanya un 3 % diari i li passa un enllaç. Què li contestes?",
    "options": [
-    "Registra't, potser tens sort",
     "No cliquis: busca-la abans a la CNMV",
-    "Passa-li les teves dades perquè t'ajudi a començar"
+    "Passa-li les teves dades perquè t'ajudi a començar",
+    "Registra't, potser tens sort"
    ],
    "explanation": "Contacte no demanat + rendibilitat impossible = estafa, encara que arribi amb un somriure.",
    "feedback": [
-    "Un 3 % diari no existeix: és una estafa de manual, sovint amb un perfil fals.",
     "Molt bé! Les «amistats» que acaben recomanant una plataforma són una estafa molt habitual.",
-    "Les teves dades són just el que busquen."
+    "Les teves dades són just el que busquen.",
+    "Un 3 % diari no existeix: és una estafa de manual, sovint amb un perfil fals."
    ],
    "lines": [
     "M'ha escrit per Instagram una noia molt maca 😍",
@@ -658,17 +658,17 @@
    "explanation": "Recomanar què comprar segons la teva situació és un servei d'inversió regulat."
   },
   "u32l5-10": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "Un youtuber amb 2 milions de subscriptors diu que cal comprar JA una acció, i la Lumi se'l creu. Què li contestes?",
    "options": [
-    "Comprova si li paguen per dir-ho",
+    "Compra, però només amb la meitat dels teus estalvis",
     "Si ho diu amb tanta seguretat, compra",
-    "Compra, però només amb la meitat dels teus estalvis"
+    "Comprova si li paguen per dir-ho"
    ],
    "explanation": "Abans de fer cas a algú, pregunta't què guanya ell amb la teva compra.",
    "feedback": [
-    "Molt bé! Els conflictes d'interès i la pressa són dos senyals que cal vigilar.",
+    "La meitat dels teus estalvis per un vídeo continua sent massa.",
     "La seguretat ven, però no encerta més. I potser ell ja la té i li convé que en facis pujar el preu.",
-    "La meitat dels teus estalvis per un vídeo continua sent massa."
+    "Molt bé! Els conflictes d'interès i la pressa són dos senyals que cal vigilar."
    ],
    "lines": [
     "Un youtuber diu que s'ha de comprar JA aquesta acció 📈",

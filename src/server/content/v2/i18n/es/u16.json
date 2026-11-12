@@ -396,7 +396,7 @@
    ]
   },
   "u16l2-13": {
-   "prompt": "¿Qué le contestas a Ana?",
+   "prompt": "Ana no entiende cómo una empresa puede vender el doble y ganar menos. ¿Qué le contestas?",
    "options": [
     "Que es imposible: si vende el doble, gana el doble",
     "Que sus costes han crecido más que sus ventas",
@@ -560,17 +560,17 @@
    ]
   },
   "u16l4-12": {
-   "prompt": "¿Qué le contestas a Paula?",
+   "prompt": "Paula quiere vender su empresa favorita porque este año tiene flujo de caja libre negativo. ¿Qué le contestas?",
    "options": [
     "Sí, véndela: caja negativa es quiebra segura",
-    "No pasa nada, la caja no importa",
-    "Primero mira por qué es negativa"
+    "Primero mira por qué es negativa",
+    "No pasa nada, la caja no importa"
    ],
    "explanation": "Un FCF negativo puede venir de invertir mucho (hornos, tiendas, fábricas) o de un negocio que no cobra. Lo primero puede ser bueno; lo segundo es una alarma. Hay que mirar el flujo operativo.",
    "feedback": [
     "Uf, ¿y si es porque está invirtiendo para crecer?",
-    "Importa: la caja es un hecho; el beneficio, una opinión.",
-    "Vale: si es porque abre fábricas nuevas, puede ser buena señal."
+    "Vale: si es porque abre fábricas nuevas, puede ser buena señal.",
+    "Importa: la caja es un hecho; el beneficio, una opinión."
    ],
    "lines": [
     "Mi empresa favorita tiene flujo de caja libre negativo este año.",
@@ -631,17 +631,17 @@
    ]
   },
   "u16l5-12": {
-   "prompt": "¿Qué le contestas a Paula?",
+   "prompt": "Paula pregunta si es malo que la deuda neta de una empresa sea negativa. ¿Qué le contestas?",
    "options": [
-    "Al revés: más caja que deuda",
+    "No significa nada",
     "Sí: negativa quiere decir que debe muchísimo",
-    "No significa nada"
+    "Al revés: más caja que deuda"
    ],
    "explanation": "Deuda neta = deuda financiera − caja. Si sale negativa, la empresa tiene caja neta: es la situación más cómoda. Suena mal por el signo, pero es buena noticia.",
    "feedback": [
-    "¡Ah! Entonces es como Inditex: le sobra dinero.",
+    "Sí significa algo: podría devolver todo lo que debe con su caja.",
     "Negativa significa al revés: la caja supera a la deuda.",
-    "Sí significa algo: podría devolver todo lo que debe con su caja."
+    "¡Ah! Entonces es como Inditex: le sobra dinero."
    ],
    "lines": [
     "La deuda neta de esta empresa es negativa.",
@@ -708,7 +708,7 @@
    "explanation": "Mueve el precio lo que cambia las expectativas: el BPA frente al consenso, los márgenes y, sobre todo, las previsiones. Lo que ya se sabía o coincide con lo esperado ya está en el precio."
   },
   "u16l6-11": {
-   "prompt": "¿Qué le contestas a Paula?",
+   "prompt": "Mañana presenta resultados una empresa de la cartera de Paula y todo el mundo espera cifras espectaculares. ¿Qué le contestas?",
    "options": [
     "Compra más hoy: mañana se disparará con los resultados",
     "Si todos lo esperan, ya está en el precio",

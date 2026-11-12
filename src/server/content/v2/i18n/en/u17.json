@@ -389,16 +389,16 @@
    "explanation": "Compare the P/E with growth: 30 divided by 30 gives a PEG of 1; 20 by 5, 4; 10 by 2, 5. The lowest P/E is tempting, but it isn't cheap if the company barely grows."
   },
   "u17l2-13": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi asks whether a bank trading at half its book value is a sure bargain. What do you reply?",
    "options": [
-    "P/B is no use for banks",
     "First look at why the market distrusts it",
+    "P/B is no use for banks",
     "Yes, it's a sure bargain: buy as much as you can"
    ],
    "explanation": "For banks and insurers P/B is very useful, but a very low one usually means the market doubts what its balance sheet is worth. Cheap isn't the same as safe.",
    "feedback": [
-    "Quite the opposite: for banks it's one of the most useful ratios.",
     "OK: maybe its loans are worth less than it says.",
+    "Quite the opposite: for banks it's one of the most useful ratios.",
     "If the market doubts its loans, that book value can shrink."
    ],
    "lines": [
@@ -462,17 +462,17 @@
    ]
   },
   "u17l3-12": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi thinks a company with a 60 % ROE is the best business in the world. What do you reply?",
    "options": [
-    "ROE is useless",
     "Yes: with ROE that high, buy it now without a second thought",
-    "Check its debt and its ROIC first"
+    "Check its debt and its ROIC first",
+    "ROE is useless"
    ],
    "explanation": "A very high ROE can come from a great business or from lots of debt. ROIC, which counts all the capital, tells you which it is.",
    "feedback": [
-    "It's useful, but you have to look at it alongside debt and ROIC.",
     "An ROE like that may come from debt more than from the business.",
-    "You're right: with little equity, any profit looks huge."
+    "You're right: with little equity, any profit looks huge.",
+    "It's useful, but you have to look at it alongside debt and ROIC."
    ],
    "lines": [
     "This company has an ROE of 60 %.",
@@ -589,7 +589,7 @@
    "explanation": "Future, discounting, terminal value and comparison."
   },
   "u17l5-11": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi's DCF says a share is worth exactly €47.32. What do you reply?",
    "options": [
     "Better to think in a range of values",
     "DCFs are useless",
@@ -671,17 +671,17 @@
    ]
   },
   "u17l6-13": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi wants to sell everything because people say the market is very expensive, and get back in when it falls. What do you reply?",
    "options": [
+    "The CAPE doesn't say when: adjust what you expect",
     "Yes, get out now",
-    "It's fine: this time is different, companies earn more",
-    "The CAPE doesn't say when: adjust what you expect"
+    "It's fine: this time is different, companies earn more"
    ],
    "explanation": "Getting out and back in means getting it right twice. A high CAPE calls for more modest expectations and diversifying across countries, not betting on a date.",
    "feedback": [
+    "You're right: I'd have to get it right twice, getting out and getting back in.",
     "It can stay expensive for years: the Nasdaq kept rising until March 2000.",
-    "«This time is different» has been said before every bubble: paying a high price leaves less room.",
-    "You're right: I'd have to get it right twice, getting out and getting back in."
+    "«This time is different» has been said before every bubble: paying a high price leaves less room."
    ],
    "lines": [
     "They say the market is really expensive.",

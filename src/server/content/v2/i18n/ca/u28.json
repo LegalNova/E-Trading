@@ -256,17 +256,17 @@
    ]
   },
   "u28l2-4": {
-   "prompt": "Què li contestes?",
+   "prompt": "La Lumi va perdre 300 € ahir, avui n'ha recuperat 50 i vol apujar la mida per recuperar-ho tot aquesta tarda. Què li contestes?",
    "options": [
+    "Bona idea: ja estàs en ratxa, aprofita-la",
     "Recupera-ho amb palanquejament",
-    "Continua amb el teu risc fix de sempre",
-    "Bona idea: ja estàs en ratxa, aprofita-la"
+    "Continua amb el teu risc fix de sempre"
    ],
    "explanation": "Recuperar pèrdues a la força és la manera més ràpida de fer-les més grans.",
    "feedback": [
+    "Guanyar 50 € no canvia les probabilitats de la següent operació.",
     "El palanquejament només accelera el que passi, i la pressa sol fer que sigui dolent.",
-    "D'acord. Si el meu sistema té avantatge, es recupera amb temps, no amb pressa.",
-    "Guanyar 50 € no canvia les probabilitats de la següent operació."
+    "D'acord. Si el meu sistema té avantatge, es recupera amb temps, no amb pressa."
    ],
    "lines": [
     "Ahir vaig perdre 300 € i avui n'he recuperat 50 € 😌",
@@ -344,7 +344,7 @@
    ]
   },
   "u28l3-10": {
-   "prompt": "Què li dius a la Lumi?",
+   "prompt": "La Lumi s'ha posat alertes de preu en 40 accions «per no perdre's res». Què li dius?",
    "options": [
     "Millor posa'n 100, d'alertes",
     "Genial: com més informació, millor decideixes",
@@ -425,17 +425,17 @@
    ]
   },
   "u28l4-5": {
-   "prompt": "Què li dius en la revisió mensual?",
+   "prompt": "La Lumi ha guanyat un 8 % aquest mes, però es va saltar el pla en 4 operacions. Què li dius en la revisió mensual?",
    "options": [
-    "Si has guanyat, tant és saltar-se el pla",
+    "Apuja el risc el mes que ve",
     "Revisa per què te'l vas saltar",
-    "Apuja el risc el mes que ve"
+    "Si has guanyat, tant és saltar-se el pla"
    ],
    "explanation": "La revisió mensual mira el procés, no només el resultat.",
    "feedback": [
-    "Guanyar saltant-te el pla t'ensenya a saltar-te'l. Un dia sortirà car.",
+    "Això és excés de confiança després d'un bon mes.",
     "Bona idea. Dues van ser per FOMO i una per venjança. Ho anoto com els meus biaixos del mes.",
-    "Això és excés de confiança després d'un bon mes."
+    "Guanyar saltant-te el pla t'ensenya a saltar-te'l. Un dia sortirà car."
    ],
    "lines": [
     "Aquest mes he guanyat un 8 % 😎",

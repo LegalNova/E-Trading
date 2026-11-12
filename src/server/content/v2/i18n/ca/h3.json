@@ -331,17 +331,17 @@
    "explanation": "Et protegeix si t'equivoques en l'estimació."
   },
   "u16l1-9": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi vol comprar una acció que ha caigut un 60 % perquè «ja no pot baixar més». Què li contestes?",
    "options": [
-    "És clar, ja és a terra",
     "Compra'n el doble per abaixar el teu preu mitjà: així recuperes abans",
-    "Primer mira per què ha caigut i quant val el negoci"
+    "Primer mira per què ha caigut i quant val el negoci",
+    "És clar, ja és a terra"
    ],
    "explanation": "Un preu baix només és una oportunitat si és per sota del valor.",
    "feedback": [
-    "El que ha caigut un 60 % pot caure un altre 60 %.",
     "Doblar sense analitzar és apostar més a cegues.",
-    "D'acord… I si va caure perquè el negoci s'ha trencat? Llavors el valor també va baixar."
+    "D'acord… I si va caure perquè el negoci s'ha trencat? Llavors el valor també va baixar.",
+    "El que ha caigut un 60 % pot caure un altre 60 %."
    ],
    "lines": [
     "Aquesta acció ha caigut un 60 %, ja no pot baixar més!",
@@ -660,17 +660,17 @@
    ]
   },
   "u27l4-10": {
-   "prompt": "Què li dius a la Lumi?",
+   "prompt": "La Lumi vol entrar avui en una moneda nova perquè tot TikTok hi està guanyant. Què li dius?",
    "options": [
+    "Entra ja, que vola, i si baixa vens de pressa",
     "Fica-hi una part del teu coixí: ja el refaràs després",
-    "Espera 48 hores abans de decidir",
-    "Entra ja, que vola, i si baixa vens de pressa"
+    "Espera 48 hores abans de decidir"
    ],
    "explanation": "La pressa és el senyal: quan sents urgència, atura't.",
    "feedback": [
+    "Si entro per por de quedar-me fora, el més probable és que compri a prop del sostre.",
     "Això és l'única cosa que no es toca mai. I en cripto es pot perdre tot el que has invertit.",
-    "D'acord… Si d'aquí a dos dies continua tenint sentit, la poso dins el meu límit d'especulació. Si no, res.",
-    "Si entro per por de quedar-me fora, el més probable és que compri a prop del sostre."
+    "D'acord… Si d'aquí a dos dies continua tenint sentit, la poso dins el meu límit d'especulació. Si no, res."
    ],
    "lines": [
     "Tothom a TikTok està guanyant amb una moneda nova 🐶",

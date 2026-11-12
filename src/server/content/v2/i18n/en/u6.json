@@ -453,16 +453,16 @@
    ]
   },
   "u6l2-12": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "Lumi thinks that with a 0-commission broker, buying and selling every day is free. What do you say?",
    "options": [
-    "You only pay if you lose money",
     "No: every buy and every sell pays the spread",
+    "You only pay if you lose money",
     "Exactly: if the broker charges no fee, trading costs nothing"
    ],
    "explanation": "«0 fees» isn't free: spread and slippage are always paid, and they multiply with every trade.",
    "feedback": [
-    "Costs are paid on every trade, including the ones you win.",
     "That's it! Trading costs add up on every trade, win or lose.",
+    "Costs are paid on every trade, including the ones you win.",
     "Every round trip pays the spread: you buy at the ask and sell at the bid, whether or not the broker charges a fee."
    ],
    "lines": [
@@ -470,16 +470,16 @@
    ]
   },
   "u6l5-11": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "Lumi wants to set her target 50 % above the price to make more. What do you say?",
    "options": [
-    "Better not to set a target and sell by eye",
     "Better near the previous high",
+    "Better not to set a target and sell by eye",
     "Good idea: the further away, the more you make"
    ],
    "explanation": "The distant target looks like it makes more, but if it's never hit it makes nothing. Selling tends to appear near the previous high, and there the target has a real chance.",
    "feedback": [
-    "Without a target, greed or fear decide, right at the worst moment.",
     "That's it! A reasonable target gets hit more often: making a bit less, but for real.",
+    "Without a target, greed or fear decide, right at the worst moment.",
     "Only if it gets there. A target that's too far away may never be hit and end up at the stop."
    ],
    "lines": [

@@ -256,17 +256,17 @@
    ]
   },
   "u28l2-4": {
-   "prompt": "What do you reply?",
+   "prompt": "Lumi lost €300 yesterday, has won back €50 today and wants to size up to recover it all this afternoon. What do you reply?",
    "options": [
+    "Good idea: you're on a roll now, make the most of it",
     "Win it back with leverage",
-    "Stick to your usual fixed risk",
-    "Good idea: you're on a roll now, make the most of it"
+    "Stick to your usual fixed risk"
    ],
    "explanation": "Forcing yourself to win back losses is the quickest way to make them bigger.",
    "feedback": [
+    "Making €50 doesn't change the odds of the next trade.",
     "Leverage only speeds up whatever happens, and haste usually makes it bad.",
-    "OK. If my system has an edge, it recovers with time, not with haste.",
-    "Making €50 doesn't change the odds of the next trade."
+    "OK. If my system has an edge, it recovers with time, not with haste."
    ],
    "lines": [
     "Yesterday I lost €300 and today I've made back €50 😌",
@@ -344,7 +344,7 @@
    ]
   },
   "u28l3-10": {
-   "prompt": "What do you tell Lumi?",
+   "prompt": "Lumi has set price alerts on 40 shares «so she doesn't miss anything». What do you tell her?",
    "options": [
     "Better set up 100 alerts",
     "Great: the more information, the better you decide",
@@ -425,17 +425,17 @@
    ]
   },
   "u28l4-5": {
-   "prompt": "What do you tell her in the monthly review?",
+   "prompt": "Lumi made 8 % this month, but broke her plan on 4 trades. What do you tell her in the monthly review?",
    "options": [
-    "If you made money, breaking the plan doesn't matter",
+    "Raise your risk next month",
     "Review why you broke it",
-    "Raise your risk next month"
+    "If you made money, breaking the plan doesn't matter"
    ],
    "explanation": "The monthly review looks at the process, not just the result.",
    "feedback": [
-    "Winning while breaking the plan teaches you to break it. One day it'll cost you.",
+    "That's overconfidence after a good month.",
     "Good idea. Two were FOMO and one was revenge. I'll note them down as my biases of the month.",
-    "That's overconfidence after a good month."
+    "Winning while breaking the plan teaches you to break it. One day it'll cost you."
    ],
    "lines": [
     "I made 8 % this month 😎",

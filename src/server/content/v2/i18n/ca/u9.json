@@ -351,16 +351,16 @@
    "explanation": "El nom ve dels antics bons en paper, que portaven cupons retallables per cobrar cada pagament."
   },
   "u9l1-10": {
-   "prompt": "Què li expliques?",
+   "prompt": "La Lumi pregunta per a què serveixen els bons en una cartera si són «per a gent gran». Què li expliques?",
    "options": [
-    "Donen ingressos previsibles i esmorteeixen caigudes",
     "És impossible perdre-hi diners",
+    "Donen ingressos previsibles i esmorteeixen caigudes",
     "Per a res: només les accions donen diners de debò a llarg termini"
    ],
    "explanation": "Els bons aporten ingressos i estabilitat, tot i que cap protecció no funciona sempre.",
    "feedback": [
-    "Això mateix! Tot i que no sempre: el 2022 van caure alhora que les accions.",
     "Si l'emissor no paga, o si vens quan han baixat, s'hi pot perdre.",
+    "Això mateix! Tot i que no sempre: el 2022 van caure alhora que les accions.",
     "Les accions solen rendir més a llarg termini, però els bons donen ingressos previsibles i solen esmorteir les caigudes."
    ],
    "lines": [
@@ -515,17 +515,17 @@
    ]
   },
   "u9l3-13": {
-   "prompt": "Què li contestes?",
+   "prompt": "La Lumi ha llegit que el banc central abaixarà els tipus i pregunta si és bo o dolent per als seus bons. Què li contestes?",
    "options": [
-    "Tant fa: els bons no es mouen",
     "Dolent: cobraràs menys cupó a partir d'ara",
-    "Bo: el preu dels teus bons puja"
+    "Bo: el preu dels teus bons puja",
+    "Tant fa: els bons no es mouen"
    ],
    "explanation": "Si els tipus baixen, el teu cupó fix és més atractiu que el dels bons nous i el teu bo val més. El que tempta és pensar que cobraràs menys, però això només els passa als bons nous, no al teu.",
    "feedback": [
-    "Sí que es mouen: tipus avall, preu amunt.",
     "El teu cupó és fix i no canvia. El que canvia és el preu, i puja.",
-    "Això. I com més llarg és el bo, més puja."
+    "Això. I com més llarg és el bo, més puja.",
+    "Sí que es mouen: tipus avall, preu amunt."
    ],
    "lines": [
     "He llegit que el banc central abaixarà els tipus.",
@@ -640,17 +640,17 @@
    ]
   },
   "u9l6-10": {
-   "prompt": "Què li dius?",
+   "prompt": "La Lumi pregunta si amb bons lligats a la inflació ja està protegida de tot. Què li dius?",
    "options": [
-    "De la inflació sí, però el seu preu també es mou",
     "Sí, de tot: de la inflació, dels tipus i d'un impagament",
-    "No, no protegeixen de res"
+    "No, no protegeixen de res",
+    "De la inflació sí, però el seu preu també es mou"
    ],
    "explanation": "Cada actiu cobreix un risc concret; cap no els cobreix tots.",
    "feedback": [
-    "Molt bé! Cobreixen un risc concret, no tots.",
     "Protegeixen de la inflació, no de les pujades de tipus ni d'un impagament.",
-    "Sí que protegeixen el poder adquisitiu si els mantens fins al venciment."
+    "Sí que protegeixen el poder adquisitiu si els mantens fins al venciment.",
+    "Molt bé! Cobreixen un risc concret, no tots."
    ],
    "lines": [
     "La inflació em fa por 😱",

@@ -396,7 +396,7 @@
    ]
   },
   "u16l2-13": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi doesn't understand how a company can sell twice as much and earn less. What do you reply?",
    "options": [
     "That it's impossible: if it sells twice as much, it earns twice as much",
     "That its costs have grown more than its sales",
@@ -560,17 +560,17 @@
    ]
   },
   "u16l4-12": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi wants to sell her favourite company because its free cash flow is negative this year. What do you reply?",
    "options": [
     "Yes, sell it: negative cash means certain bankruptcy",
-    "It's fine, cash doesn't matter",
-    "First look at why it's negative"
+    "First look at why it's negative",
+    "It's fine, cash doesn't matter"
    ],
    "explanation": "Negative FCF can come from investing heavily (ovens, shops, factories) or from a business that doesn't get paid. The first can be good; the second is a red flag. Look at operating cash flow.",
    "feedback": [
     "Hmm, what if it's because it's investing to grow?",
-    "It does: cash is a fact; profit, an opinion.",
-    "OK: if it's because it's opening new factories, it may be a good sign."
+    "OK: if it's because it's opening new factories, it may be a good sign.",
+    "It does: cash is a fact; profit, an opinion."
    ],
    "lines": [
     "My favourite company has negative free cash flow this year.",
@@ -631,17 +631,17 @@
    ]
   },
   "u16l5-12": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi asks whether it's bad for a company's net debt to be negative. What do you reply?",
    "options": [
-    "The opposite: more cash than debt",
+    "It doesn't mean anything",
     "Yes: negative means it owes a fortune",
-    "It doesn't mean anything"
+    "The opposite: more cash than debt"
    ],
    "explanation": "Net debt = financial debt − cash. If it comes out negative, the company has net cash: the most comfortable position. The minus sign sounds bad, but it's good news.",
    "feedback": [
-    "Oh! So it's like Inditex: it has money to spare.",
+    "It does mean something: it could pay back everything it owes with its cash.",
     "Negative means the opposite: cash is bigger than debt.",
-    "It does mean something: it could pay back everything it owes with its cash."
+    "Oh! So it's like Inditex: it has money to spare."
    ],
    "lines": [
     "This company's net debt is negative.",
@@ -708,7 +708,7 @@
    "explanation": "What moves the price is whatever changes expectations: EPS against the consensus, margins and, above all, the forecasts. What was already known or matches expectations is already in the price."
   },
   "u16l6-11": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "A company in Lumi's portfolio reports results tomorrow and everyone expects spectacular figures. What do you reply?",
    "options": [
     "Buy more today: tomorrow it'll shoot up on the results",
     "If everyone expects it, it's already in the price",

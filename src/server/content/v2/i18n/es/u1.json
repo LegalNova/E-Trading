@@ -311,17 +311,17 @@
    ]
   },
   "u1l1-11": {
-   "prompt": "¿Qué le contestas a Lucía?",
+   "prompt": "Lucía se ha comprado un coche de 25.000 € a plazos y cree que ya tiene 25.000 € de patrimonio. ¿Qué le contestas?",
    "options": [
-    "El patrimonio es lo que cobras cada mes, así que no cambia",
     "Depende de lo que aún debes y de lo que vale hoy",
-    "Sí: el coche vale 25.000 €"
+    "Sí: el coche vale 25.000 €",
+    "El patrimonio es lo que cobras cada mes, así que no cambia"
    ],
    "explanation": "El coche suma por lo que vale hoy, no por lo que costó, y el préstamo resta. Lo tentador es contar el precio de compra, pero la deuda y el desgaste se lo comen.",
    "feedback": [
-    "Eso es tu renta: el patrimonio es lo que acumulas.",
     "¡Eso! Patrimonio es lo que tienes menos lo que debes, a precio de hoy.",
-    "Falta restar lo que debes del préstamo, y el coche vale menos cada año."
+    "Falta restar lo que debes del préstamo, y el coche vale menos cada año.",
+    "Eso es tu renta: el patrimonio es lo que acumulas."
    ],
    "lines": [
     "Me he comprado un coche de 25.000 € a plazos.",
@@ -525,17 +525,17 @@
    ]
   },
   "u1l4-11": {
-   "prompt": "¿Qué le contestas a Marta?",
+   "prompt": "El banco de Marta le da un 2 % con la inflación en el 2,7 %, y ella cree que por lo menos gana algo. ¿Qué le contestas?",
    "options": [
-    "Mejor sácalo y gástalo antes de que valga menos",
     "Sí: un 2 % es ganar",
-    "Ganas euros, pero pierdes poder de compra"
+    "Ganas euros, pero pierdes poder de compra",
+    "Mejor sácalo y gástalo antes de que valga menos"
    ],
    "explanation": "Si tu dinero rinde menos que la inflación, tu rentabilidad real es negativa aunque el saldo suba. Lo tentador es mirar solo el 2 %, pero lo que importa es lo que puedes comprar con él.",
    "feedback": [
-    "Gastar por miedo no protege tu futuro: solo cambia ahorro por consumo.",
     "Ganas euros, pero los precios suben más deprisa que tu saldo.",
-    "¡Eso! Rinde menos que la inflación: lo que no necesites pronto puede buscar más."
+    "¡Eso! Rinde menos que la inflación: lo que no necesites pronto puede buscar más.",
+    "Gastar por miedo no protege tu futuro: solo cambia ahorro por consumo."
    ],
    "lines": [
     "Mi banco me da un 2 % y la inflación está en el 2,7 %.",
@@ -611,7 +611,7 @@
    ]
   },
   "u1l6-12": {
-   "prompt": "¿Qué le contestas a Irene?",
+   "prompt": "Irene tiene una tarjeta al 24 % y 1.000 €: duda entre invertirlos o pagar la tarjeta. ¿Qué le contestas?",
    "options": [
     "Paga primero la tarjeta",
     "Invierte: la bolsa sube a largo plazo",

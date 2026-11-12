@@ -440,7 +440,7 @@
    "explanation": "The opposite: by correcting for data-snooping bias, they weakened them considerably."
   },
   "u22l2-6": {
-   "prompt": "Another real chart, no name. Up or down over the next 10 sessions?",
+   "prompt": "A real chart, no name. Up or down over the next 10 sessions?",
    "options": [
     "Up",
     "Down"
@@ -536,7 +536,7 @@
    "horizon": "the next 10 sessions"
   },
   "u22l3-7": {
-   "prompt": "Another real chart. Up or down over the next 10 sessions?",
+   "prompt": "A real chart. Up or down over the next 10 sessions?",
    "options": [
     "Up",
     "Down"
@@ -658,16 +658,16 @@
    ]
   },
   "u22l5-13": {
-   "prompt": "What do you tell Lumi?",
+   "prompt": "Lumi’s stop at 0.5 % on bitcoin has been hit three times this week and she wants to remove it. What do you tell her?",
    "options": [
-    "Move it away using its ATR and buy less",
     "Yes, remove it: stops only cause trouble",
+    "Move it away using its ATR and buy less",
     "Put it even closer, at 0.2 %"
    ],
    "explanation": "Volatility (the ATR) sets the stop distance; the amount adjusts so the risk in euros stays the same.",
    "feedback": [
-    "Of course: stop outside the noise and a smaller amount. My risk in euros doesn’t change.",
     "Without a stop, one bad trade could cost me more than three small stops.",
+    "Of course: stop outside the noise and a smaller amount. My risk in euros doesn’t change.",
     "Closer, it would be hit even more: bitcoin moves much more than that in a day."
    ],
    "lines": [

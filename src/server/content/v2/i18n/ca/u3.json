@@ -278,17 +278,17 @@
    ]
   },
   "u3l1-12": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "A la Lumi li ofereixen un cotxe al 0 % TIN i creu que finançar-lo és gratis. Què li contestes?",
    "options": [
     "Demana que t'allarguin el termini per pagar menys",
-    "Abans demana la TAE i el total que pagaràs",
-    "Signa: al 0 % no pagues res"
+    "Signa: al 0 % no pagues res",
+    "Abans demana la TAE i el total que pagaràs"
    ],
    "explanation": "Un 0 % TIN pot amagar comissions d'obertura o assegurances vinculades que només apareixen a la TAE i al total a pagar. El temptador és quedar-se amb el «0 %», però el que es compara és la TAE.",
    "feedback": [
     "Quota més baixa, però més mesos pagant interessos i comissions.",
-    "Això! Amb comissions i assegurances, un 0 % TIN pot sortir car.",
-    "El TIN no inclou comissions ni assegurances obligatòries: mira la TAE."
+    "El TIN no inclou comissions ni assegurances obligatòries: mira la TAE.",
+    "Això! Amb comissions i assegurances, un 0 % TIN pot sortir car."
    ],
    "lines": [
     "El concessionari m'ofereix el cotxe al 0 % TIN.",
@@ -329,17 +329,17 @@
    "explanation": "Barat, per a una cosa que dura i amb una quota assumible."
   },
   "u3l2-8": {
-   "prompt": "Què li dius a la Lumi?",
+   "prompt": "La Lumi vol un mòbil de 1.200 € i la botiga l'hi finança a 24 mesos, «només 60 € al mes». Què li dius?",
    "options": [
-    "Genial, així no es nota!",
+    "Millor un de 2.000 €, la quota puja poc",
     "Mira la TAE i quant pagues en total",
-    "Millor un de 2.000 €, la quota puja poc"
+    "Genial, així no es nota!"
    ],
    "explanation": "Abans de finançar un caprici, multiplica la quota pels mesos.",
    "feedback": [
-    "Es nota: 60 × 24 = 1.440 €. Pagues 240 € més per una cosa que d'aquí a 2 anys valdrà molt menys.",
+    "Així només allargues el deute per una cosa que perd valor molt de pressa.",
     "Bé! 60 × 24 = 1.440 €: 240 € d'interessos. Potser estalviar uns quants mesos surt més a compte.",
-    "Així només allargues el deute per una cosa que perd valor molt de pressa."
+    "Es nota: 60 × 24 = 1.440 €. Pagues 240 € més per una cosa que d'aquí a 2 anys valdrà molt menys."
    ],
    "lines": [
     "Em vull comprar el mòbil nou de 1.200 €",
@@ -570,17 +570,17 @@
    "explanation": "El que deixes de pagar és un guany segur igual al tipus d'interès."
   },
   "u3l5-9": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi té una hipoteca al 2 % i li sobren 200 € al mes: dubta entre amortitzar o invertir. Què li contestes?",
    "options": [
+    "Depèn: compara aquest 2 % amb invertir a llarg termini",
     "Inverteix en el que més hagi pujat aquest any",
-    "Sempre amortitzar: qualsevol deute és dolent i cal treure-se'l",
-    "Depèn: compara aquest 2 % amb invertir a llarg termini"
+    "Sempre amortitzar: qualsevol deute és dolent i cal treure-se'l"
    ],
    "explanation": "Amortitzar dona una rendibilitat segura; invertir, una d'esperada. Amb deute barat, totes dues opcions poden tenir sentit.",
    "feedback": [
+    "Això: amb deute barat no hi ha una sola resposta; l'important és entendre què compares.",
     "Això no és comparar: és perseguir modes.",
-    "No sempre: al 2 % és deute barat. Depèn del teu coixí, del teu termini i de la teva tranquil·litat.",
-    "Això: amb deute barat no hi ha una sola resposta; l'important és entendre què compares."
+    "No sempre: al 2 % és deute barat. Depèn del teu coixí, del teu termini i de la teva tranquil·litat."
    ],
    "lines": [
     "Tinc una hipoteca al 2 % i em sobren 200 € al mes.",

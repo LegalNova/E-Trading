@@ -194,7 +194,7 @@
    ]
   },
   "vocabl1-4": {
-   "prompt": "¿Qué le contestas?",
+   "prompt": "Laura cree que el «horizonte temporal» es lo que se ve desde la ventanilla del autobús. ¿Qué le contestas?",
    "options": [
     "No: es cuándo vas a necesitar el dinero",
     "Casi: es cuánto dinero tienes para invertir",
@@ -297,17 +297,17 @@
    "explanation": "Oferta Pública de Venta: los dueños venden al público acciones que ya existen, y muchas empresas salen así a bolsa. Si la empresa emite acciones nuevas, es una OPS."
   },
   "vocabl2-4": {
-   "prompt": "¿Qué le aclaras?",
+   "prompt": "Laura cree que el «bid» es una puja de eBay y el «ask», lo que pregunta ella. ¿Qué le aclaras?",
    "options": [
     "Bid es vender y ask es comprar",
-    "Bid es lo que pagan; ask, lo que piden",
-    "Son lo mismo, con dos nombres distintos según el bróker"
+    "Son lo mismo, con dos nombres distintos según el bróker",
+    "Bid es lo que pagan; ask, lo que piden"
    ],
    "explanation": "Compras al ask y vendes al bid: por eso, si compras y vendes al instante, pierdes el spread.",
    "feedback": [
     "Al revés: el bid es el precio de los compradores y el ask, el de los vendedores.",
-    "¡Eso es! Y entre los dos está el spread, la comisión invisible. 🕵️",
-    "Si fueran iguales no habría spread… ni negocio para nadie. 😅"
+    "Si fueran iguales no habría spread… ni negocio para nadie. 😅",
+    "¡Eso es! Y entre los dos está el spread, la comisión invisible. 🕵️"
    ],
    "lines": [
     "Me han dicho que el «bid» es una puja de eBay 🛒",
@@ -425,17 +425,17 @@
    "explanation": "El de distribución los reparte; el de acumulación los reinvierte y no tributas hasta vender."
   },
   "vocabl3-5": {
-   "prompt": "¿Qué le aclaras?",
+   "prompt": "Laura dice que el KID es «el hijo pequeño del fondo». ¿Qué le aclaras?",
    "options": [
-    "Es un fondo pensado para menores",
     "Es el documento con riesgos y costes",
-    "Es el nombre del gestor que lleva el fondo"
+    "Es el nombre del gestor que lleva el fondo",
+    "Es un fondo pensado para menores"
    ],
    "explanation": "El KID resume en pocas páginas qué es el producto, su riesgo, sus costes y sus escenarios.",
    "feedback": [
-    "Gracioso, pero no: es el Documento de Datos Fundamentales. 😄",
     "¡Exacto! Unas pocas páginas obligatorias. Leerlo ahorra sustos. 📄",
-    "No: el KID es un documento, no una persona."
+    "No: el KID es un documento, no una persona.",
+    "Gracioso, pero no: es el Documento de Datos Fundamentales. 😄"
    ],
    "lines": [
     "Laura explica: el KID es el hijo pequeño del fondo 👶",
@@ -524,17 +524,17 @@
    "unit": "%"
   },
   "vocabl4-4": {
-   "prompt": "¿Qué le respondes?",
+   "prompt": "Irene cree que el apalancamiento es que el bróker te presta «músculo» y que todo son ventajas. ¿Qué le respondes?",
    "options": [
     "Es un tipo de diversificación",
-    "Multiplica ganancias y pérdidas",
-    "Sí, multiplica las ganancias y ya"
+    "Sí, multiplica las ganancias y ya",
+    "Multiplica ganancias y pérdidas"
    ],
    "explanation": "El apalancamiento amplifica en las dos direcciones: con 10 veces, cada 1 % del activo es un 10 % de tu dinero.",
    "feedback": [
     "No: diversificar reparte el riesgo; apalancarse lo concentra.",
-    "¡Eso! El músculo prestado también te puede aplastar. 😬",
-    "Y las pérdidas, Irene. Con 10 veces de apalancamiento, una caída del 10 % se lleva todo tu dinero."
+    "Y las pérdidas, Irene. Con 10 veces de apalancamiento, una caída del 10 % se lleva todo tu dinero.",
+    "¡Eso! El músculo prestado también te puede aplastar. 😬"
    ],
    "lines": [
     "Palabra del día: «apalancamiento» 💪",
@@ -651,7 +651,7 @@
    ]
   },
   "vocabl5-5": {
-   "prompt": "¿Qué le explicas?",
+   "prompt": "Paula ha visto un «hombre colgado» en el gráfico y se ha asustado. ¿Qué le explicas?",
    "options": [
     "Es una vela de mecha inferior larga",
     "Es lo mismo que un martillo, salga donde salga",
@@ -774,17 +774,17 @@
    ]
   },
   "vocabl6-6": {
-   "prompt": "¿Qué le explicas?",
+   "prompt": "Marta pregunta qué pinta Fibonacci, un matemático italiano, en su gráfico. ¿Qué le explicas?",
    "options": [
-    "Es un indicador de volumen",
     "Da niveles típicos de retroceso",
-    "Predice el precio exacto del día siguiente"
+    "Predice el precio exacto del día siguiente",
+    "Es un indicador de volumen"
    ],
    "explanation": "Los retrocesos de Fibonacci (23,6 %, 38,2 %, 50 %, 61,8 % y 78,6 %) señalan zonas donde un movimiento puede pararse. Son referencias, no profecías.",
    "feedback": [
-    "No: Fibonacci marca niveles de retroceso de un movimiento, no el volumen.",
     "¡Y gratis! Aunque ojo: que mucha gente los mire no los hace mágicos. ✨",
-    "Ojalá. 😅 Solo marca zonas que mucha gente vigila."
+    "Ojalá. 😅 Solo marca zonas que mucha gente vigila.",
+    "No: Fibonacci marca niveles de retroceso de un movimiento, no el volumen."
    ],
    "lines": [
     "Fibonacci era un matemático italiano, ¿no? 🇮🇹",
@@ -893,17 +893,17 @@
    ]
   },
   "vocabl7-7": {
-   "prompt": "¿Qué le aclaras?",
+   "prompt": "Ana cree que la esperanza matemática es lo que espera ganar al levantarse por la mañana. ¿Qué le aclaras?",
    "options": [
     "Es el porcentaje de operaciones que aciertas",
-    "Es la rentabilidad que promete un curso de trading",
-    "Lo que gana de media cada operación"
+    "Lo que gana de media cada operación",
+    "Es la rentabilidad que promete un curso de trading"
    ],
    "explanation": "Esperanza = (% de acierto × ganancia media) − (% de fallo × pérdida media).",
    "feedback": [
     "No exactamente: puedes acertar el 70 % y perder dinero si tus pérdidas son mucho mayores que tus ganancias.",
-    "Desconfía de esas promesas. 🚩 La esperanza se calcula con tus operaciones, no con las suyas.",
-    "¡Eso! Y si es negativa, cuantas más operaciones hagas, más pierdes. 📉"
+    "¡Eso! Y si es negativa, cuantas más operaciones hagas, más pierdes. 📉",
+    "Desconfía de esas promesas. 🚩 La esperanza se calcula con tus operaciones, no con las suyas."
    ],
    "lines": [
     "La esperanza matemática es lo que espero ganar cuando me levanto por la mañana ☀️",
@@ -969,7 +969,7 @@
    "explanation": "Por eso cuesta tanto vender con pérdidas y aceptar que te has equivocado."
   },
   "vocabl8-4": {
-   "prompt": "¿Qué le dices?",
+   "prompt": "Lucía perdió 3 operaciones seguidas y hoy quiere abrir una el triple de grande: dice que es «estrategia». ¿Qué le dices?",
    "options": [
     "Es exceso de confianza, pero bien hecho",
     "Sí: es la estrategia de doblar tras perder",
@@ -1084,17 +1084,17 @@
    "explanation": "Moat en inglés: una marca, una red o unos costes que la competencia no puede copiar."
   },
   "vocabl9-4": {
-   "prompt": "¿Qué le explicas?",
+   "prompt": "A Sara el EBITDA le suena a hechizo de Harry Potter y pregunta qué es en realidad. ¿Qué le explicas?",
    "options": [
-    "El beneficio antes de intereses, impuestos, depreciaciones y amortizaciones",
     "El beneficio que queda al final, después de restar todos los gastos e impuestos",
-    "La deuda de la empresa"
+    "La deuda de la empresa",
+    "El beneficio antes de intereses, impuestos, depreciaciones y amortizaciones"
    ],
    "explanation": "El EBITDA sirve para comparar negocios, pero no descuenta intereses, impuestos ni inversiones: no es el dinero que le queda a la empresa.",
    "feedback": [
-    "¡Expecto beneficium! 🧙 Útil, pero ojo: no es caja ni beneficio neto.",
     "Ese es el beneficio neto. El EBITDA va antes de restar varias cosas.",
-    "No: la deuda va aparte. Para eso está la deuda neta."
+    "No: la deuda va aparte. Para eso está la deuda neta.",
+    "¡Expecto beneficium! 🧙 Útil, pero ojo: no es caja ni beneficio neto."
    ],
    "lines": [
     "El EBITDA suena a hechizo de Harry Potter 🪄",
@@ -1210,17 +1210,17 @@
    ]
   },
   "vocabl10-5": {
-   "prompt": "¿Qué le contestas?",
+   "prompt": "A Ana le prometen por Instagram un 5 % semanal garantizado y le piden el DNI. ¿Qué le contestas?",
    "options": [
-    "Primero, búscalos en la CNMV",
+    "Les paso solo la mitad del DNI, por si acaso",
     "Si tienen muchos seguidores, serán fiables",
-    "Les paso solo la mitad del DNI, por si acaso"
+    "Primero, búscalos en la CNMV"
    ],
    "explanation": "Rentabilidad garantizada y contacto por redes son señales clásicas de chiringuito. Comprueba siempre el registro de la CNMV.",
    "feedback": [
-    "Vale… aparecen en la lista de advertencias. Menos mal. 🙈 Huele a chiringuito.",
+    "Ni la mitad ni un cuarto. 😅 Primero, comprobar en la CNMV.",
     "Los seguidores se compran. Lo que no se compra es una autorización de la CNMV.",
-    "Ni la mitad ni un cuarto. 😅 Primero, comprobar en la CNMV."
+    "Vale… aparecen en la lista de advertencias. Menos mal. 🙈 Huele a chiringuito."
    ],
    "lines": [
     "Me ha escrito «Inversiones Golden Lambo» por Instagram 🏎️",

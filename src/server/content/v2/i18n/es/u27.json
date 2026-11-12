@@ -330,17 +330,17 @@
    "explanation": "El mismo fondo da resultados distintos según cómo entras y sales."
   },
   "u27l1-10": {
-   "prompt": "¿Qué le explicas a Laura?",
+   "prompt": "El fondo de Laura ha ganado un 10 % al año, pero ella mucho menos, y pregunta si le están robando. ¿Qué le explicas?",
    "options": [
     "Seguramente entraste y saliste a destiempo",
-    "Seguro que es una estafa",
-    "Los fondos siempre maquillan sus datos de rentabilidad"
+    "Los fondos siempre maquillan sus datos de rentabilidad",
+    "Seguro que es una estafa"
    ],
    "explanation": "Tu rentabilidad depende del fondo y de cuándo entras y sales.",
    "feedback": [
     "Ups… Compré cuando estaba en máximos y vendí en el susto de marzo. Touché.",
-    "Puede que no: si entraste tras las subidas y saliste en las caídas, la diferencia es tuya.",
-    "Los datos de rentabilidad del fondo son reales; lo que cambia es cuándo estuviste dentro."
+    "Los datos de rentabilidad del fondo son reales; lo que cambia es cuándo estuviste dentro.",
+    "Puede que no: si entraste tras las subidas y saliste en las caídas, la diferencia es tuya."
    ],
    "lines": [
     "Mi fondo ha ganado un 10 % al año… ¡pero yo mucho menos! 🤨",
@@ -402,16 +402,16 @@
    ]
   },
   "u27l2-10": {
-   "prompt": "¿Qué le contestas a Sara?",
+   "prompt": "Sara no quiere vender una acción en pérdidas porque sería reconocer que se equivocó. ¿Qué le contestas?",
    "options": [
-    "Decide con lo que sabes hoy",
     "Compra más para bajar el precio medio",
+    "Decide con lo que sabes hoy",
     "Bien hecho, aguanta hasta que vuelva"
    ],
    "explanation": "Aceptar una pérdida pequeña a tiempo es parte del juego, no un fracaso.",
    "feedback": [
-    "Tienes razón: el mercado no sabe a cuánto compré. Voy a revisar el negocio, no mi orgullo.",
     "Promediar a la baja sin revisar el negocio es meter más dinero en el mismo error.",
+    "Tienes razón: el mercado no sabe a cuánto compré. Voy a revisar el negocio, no mi orgullo.",
     "A veces no vuelve. Y mientras esperas, ese dinero podría estar en algo mejor."
    ],
    "lines": [
@@ -459,17 +459,17 @@
    "explanation": "El efecto disposición hace justo lo contrario."
   },
   "u27l3-10": {
-   "prompt": "¿Qué le dices a Nora?",
+   "prompt": "La acción de Nora ha subido un 6 % y quiere venderla ya, «que luego baja». ¿Qué le dices?",
    "options": [
-    "Sí, asegura, nunca se sabe",
     "¿Qué decía tu plan de salida?",
-    "Compra más con todo lo que tengas"
+    "Compra más con todo lo que tengas",
+    "Sí, asegura, nunca se sabe"
    ],
    "explanation": "La salida se decide antes de entrar, no al ver el primer verde.",
    "feedback": [
-    "Puede salir bien hoy, pero si lo haces siempre, cortas tus mejores operaciones.",
     "Mmm… Decía mitad en 2R y el resto con stop dinámico. Vale, sigo el plan.",
-    "Pasar del miedo a la euforia en un minuto tampoco es un plan."
+    "Pasar del miedo a la euforia en un minuto tampoco es un plan.",
+    "Puede salir bien hoy, pero si lo haces siempre, cortas tus mejores operaciones."
    ],
    "lines": [
     "¡Mi acción ha subido un 6 %! 🎉",
@@ -518,17 +518,17 @@
    "explanation": "Escribir por qué podrías equivocarte y compararte con un índice te ponen los pies en el suelo, igual que medir todos tus resultados en un diario. Subir el riesgo tras acertar o mirar solo tus mejores operaciones es justo lo que hace el exceso de confianza."
   },
   "u27l5-11": {
-   "prompt": "¿Qué le contestas a Laura?",
+   "prompt": "Laura ha acertado cuatro rondas seguidas de «¿sube o baja?» y cree que tiene un don. ¿Qué le contestas?",
    "options": [
-    "Entonces sube el riesgo en tus próximas compras",
     "Con cuatro intentos manda la suerte",
-    "Sí: cuatro de cuatro no es casualidad"
+    "Sí: cuatro de cuatro no es casualidad",
+    "Entonces sube el riesgo en tus próximas compras"
    ],
    "explanation": "Con pocos intentos, la suerte se parece mucho al talento: solo una muestra grande y medida distingue una de otro. Lo tentador es creerse el marcador de cuatro rondas.",
    "feedback": [
-    "Subir el riesgo tras una racha corta es exceso de confianza de manual.",
     "Vale: lo apunto y sigo midiendo. Ya veré qué dice mi marcador con muchas más.",
-    "Al azar, acertar las cuatro pasa más de una vez de cada veinte. Sí puede serlo."
+    "Al azar, acertar las cuatro pasa más de una vez de cada veinte. Sí puede serlo.",
+    "Subir el riesgo tras una racha corta es exceso de confianza de manual."
    ],
    "lines": [
     "He acertado las cuatro rondas de «¿sube o baja?».",
@@ -591,16 +591,16 @@
    "explanation": "Es el antídoto más sencillo contra el sesgo de confirmación."
   },
   "u27l6-10": {
-   "prompt": "¿Qué le contestas a Sara?",
+   "prompt": "Sara ve una acción que ha caído un 50 % y dice que está «a mitad de precio, como en rebajas». ¿Qué le contestas?",
    "options": [
-    "Depende de lo que vale el negocio",
     "Sí, a mitad de precio siempre es una ganga",
+    "Depende de lo que vale el negocio",
     "Espera a que caiga otro 50 % y será aún más barata"
    ],
    "explanation": "Las rebajas de la bolsa no son como las del súper: el producto también puede haber cambiado.",
    "feedback": [
-    "Cierto. Primero miro beneficios, deuda y por qué ha caído. El precio antiguo no es una etiqueta.",
     "No en bolsa: puede haber caído porque el negocio vale la mitad… o menos.",
+    "Cierto. Primero miro beneficios, deuda y por qué ha caído. El precio antiguo no es una etiqueta.",
     "Eso sigue siendo mirar solo el precio, no el valor."
    ],
    "lines": [

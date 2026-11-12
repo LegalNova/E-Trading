@@ -363,7 +363,7 @@
    "horizon": "les 10 sessions següents"
   },
   "u21l2-7": {
-   "prompt": "Un altre gràfic real. Puja o baixa en les 10 sessions següents?",
+   "prompt": "Gràfic real. Puja o baixa en les 10 sessions següents?",
    "options": [
     "Puja",
     "Baixa"
@@ -491,17 +491,17 @@
    ]
   },
   "u21l4-13": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "Després de mesos de caiguda, la Lumi veu tres mínims amb el central més baix i creu que és un espatlla-cap-espatlla baixista. Què li contestes?",
    "options": [
+    "És alcista: compro ara, abans de la ruptura",
     "És l'invertit: alcista si es confirma",
-    "Sí: tots els espatlla-cap-espatlla són baixistes",
-    "És alcista: compro ara, abans de la ruptura"
+    "Sí: tots els espatlla-cap-espatlla són baixistes"
    ],
    "explanation": "L'ECE normal apareix després d'una pujada i és baixista; l'invertit apareix després d'una caiguda i és alcista. Tots dos es confirmen en trencar la seva clavicular.",
    "feedback": [
+    "Bé la direcció, però sense un tancament per sobre de la clavicular la figura no existeix.",
     "Això: després d'una caiguda, la versió invertida apunta a l'alça. I sense ruptura, encara no és figura.",
-    "Aquest està cap per avall i apareix després d'una caiguda: és l'invertit, que és alcista.",
-    "Bé la direcció, però sense un tancament per sobre de la clavicular la figura no existeix."
+    "Aquest està cap per avall i apareix després d'una caiguda: és l'invertit, que és alcista."
    ],
    "lines": [
     "Després de mesos de caiguda veig tres mínims, amb el central més baix.",
@@ -523,7 +523,7 @@
    "horizon": "les 10 sessions següents"
   },
   "u21l5-9": {
-   "prompt": "Un altre gràfic real, sense nom. Puja o baixa en les 10 sessions següents?",
+   "prompt": "Gràfic real, sense nom. Puja o baixa en les 10 sessions següents?",
    "options": [
     "Puja",
     "Baixa"
@@ -649,7 +649,7 @@
    "explanation": "Primer l’stop (on falla la ruptura) i després l’import: amb 100 € de risc màxim, com més lluny és l’stop, menys accions pots comprar."
   },
   "u21l7-7": {
-   "prompt": "Un altre gràfic real, sense nom ni data. Puja o baixa en les 10 sessions següents?",
+   "prompt": "Gràfic real, sense nom ni data. Puja o baixa en les 10 sessions següents?",
    "options": [
     "Puja",
     "Baixa"
@@ -672,16 +672,16 @@
    ]
   },
   "u21l7-12": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "Vas comprar una ruptura amb tancament i volum, i tot i així va tocar el teu stop. La Lumi et pregunta si ho vas fer malament. Què li contestes?",
    "options": [
-    "Sí: hauria d'haver tret l'stop per aguantar",
     "Sí: si salta l'stop, l'operació estava mal plantejada",
+    "Sí: hauria d'haver tret l'stop per aguantar",
     "No: vaig seguir el pla i l'stop va limitar la pèrdua"
    ],
    "explanation": "Cap filtre no elimina totes les ruptures falses: segons Bulkowski, l'ECE fracassa un 19 % de les vegades i les banderes, al voltant del 44 %. El que controles és quant costa l'error.",
    "feedback": [
-    "Treure l'stop converteix un error petit en un que pot ser enorme.",
     "No necessàriament: cap filtre no elimina totes les ruptures falses.",
+    "Treure l'stop converteix un error petit en un que pot ser enorme.",
     "Això: una bona decisió pot sortir malament. L'stop ha fet la seva feina."
    ],
    "lines": [

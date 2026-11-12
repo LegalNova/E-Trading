@@ -303,16 +303,16 @@
    ]
   },
   "u6l2-12": {
-   "prompt": "¿Qué le contestas a Lucía?",
+   "prompt": "Lucía cree que con un bróker de 0 comisiones comprar y vender cada día le sale gratis. ¿Qué le contestas?",
    "options": [
-    "Solo pagas si pierdes dinero",
     "No: cada compra y cada venta paga la horquilla",
+    "Solo pagas si pierdes dinero",
     "Exacto: si el bróker no cobra comisión, operar no cuesta nada"
    ],
    "explanation": "«0 comisiones» no es gratis: el spread y el deslizamiento se pagan siempre, y se multiplican con cada operación.",
    "feedback": [
-    "Los costes se pagan en cada operación, también en las que ganas.",
     "¡Eso! Los costes de operar se suman en cada operación, ganes o pierdas.",
+    "Los costes se pagan en cada operación, también en las que ganas.",
     "Cada vuelta paga la horquilla: compras al ask y vendes al bid, cobre o no comisión el bróker."
    ],
    "lines": [
@@ -456,16 +456,16 @@
    "explanation": "El take profit vende solo, sin que estés mirando, y asegura la ganancia si se llega al objetivo. No garantiza vender en el máximo, y de las caídas te protege el stop, no él."
   },
   "u6l5-11": {
-   "prompt": "¿Qué le contestas a Nora?",
+   "prompt": "Nora quiere poner su objetivo un 50 % por encima del precio para ganar más. ¿Qué le contestas?",
    "options": [
-    "Mejor no poner objetivo y vender a ojo",
     "Mejor cerca del máximo anterior",
+    "Mejor no poner objetivo y vender a ojo",
     "Buena idea: cuanto más lejos, más ganas"
    ],
    "explanation": "El objetivo lejano parece que gana más, pero si no se toca no gana nada. Cerca del máximo anterior suele aparecer venta, y ahí el objetivo tiene opciones reales.",
    "feedback": [
-    "Sin objetivo deciden la avaricia o el miedo, justo en el peor momento.",
     "¡Eso! Un objetivo razonable se toca más a menudo: ganar algo menos, pero de verdad.",
+    "Sin objetivo deciden la avaricia o el miedo, justo en el peor momento.",
     "Solo si llega. Un objetivo demasiado lejano puede no tocarse nunca y acabar en el stop."
    ],
    "lines": [

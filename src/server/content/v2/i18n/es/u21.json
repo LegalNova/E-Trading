@@ -363,7 +363,7 @@
    "horizon": "las 10 sesiones siguientes"
   },
   "u21l2-7": {
-   "prompt": "Otro gráfico real. ¿Sube o baja en las 10 sesiones siguientes?",
+   "prompt": "Gráfico real. ¿Sube o baja en las 10 sesiones siguientes?",
    "options": [
     "Sube",
     "Baja"
@@ -491,17 +491,17 @@
    ]
   },
   "u21l4-13": {
-   "prompt": "¿Qué le contestas a Nora?",
+   "prompt": "Tras meses de caída, Nora ve tres mínimos con el central más bajo y cree que es un hombro-cabeza-hombro bajista. ¿Qué le contestas?",
    "options": [
+    "Es alcista: compro ya, antes de la rotura",
     "Es el invertido: alcista si se confirma",
-    "Sí: todos los hombro-cabeza-hombro son bajistas",
-    "Es alcista: compro ya, antes de la rotura"
+    "Sí: todos los hombro-cabeza-hombro son bajistas"
    ],
    "explanation": "El HCH normal aparece tras una subida y es bajista; el invertido aparece tras una caída y es alcista. Los dos se confirman al romper su clavicular.",
    "feedback": [
+    "Bien la dirección, pero sin un cierre por encima de la clavicular la figura no existe.",
     "Eso: tras una caída, la versión invertida apunta al alza. Y sin rotura, aún no es figura.",
-    "Este está boca abajo y aparece tras una caída: es el invertido, que es alcista.",
-    "Bien la dirección, pero sin un cierre por encima de la clavicular la figura no existe."
+    "Este está boca abajo y aparece tras una caída: es el invertido, que es alcista."
    ],
    "lines": [
     "Tras meses de caída veo tres mínimos, con el central más bajo.",
@@ -523,7 +523,7 @@
    "horizon": "las 10 sesiones siguientes"
   },
   "u21l5-9": {
-   "prompt": "Otro gráfico real, sin nombre. ¿Sube o baja en las 10 sesiones siguientes?",
+   "prompt": "Gráfico real, sin nombre. ¿Sube o baja en las 10 sesiones siguientes?",
    "options": [
     "Sube",
     "Baja"
@@ -649,7 +649,7 @@
    "explanation": "Primero el stop (donde la rotura falla) y después el importe: con 100 € de riesgo máximo, cuanto más lejos el stop, menos acciones puedes comprar."
   },
   "u21l7-7": {
-   "prompt": "Otro gráfico real, sin nombre ni fecha. ¿Sube o baja en las 10 sesiones siguientes?",
+   "prompt": "Gráfico real, sin nombre ni fecha. ¿Sube o baja en las 10 sesiones siguientes?",
    "options": [
     "Sube",
     "Baja"
@@ -672,16 +672,16 @@
    ]
   },
   "u21l7-12": {
-   "prompt": "¿Qué le contestas a Lucía?",
+   "prompt": "Compraste una rotura con cierre y volumen, y aun así tocó tu stop. Lucía te pregunta si lo hiciste mal. ¿Qué le contestas?",
    "options": [
-    "Sí: tendría que haber quitado el stop para aguantar",
     "Sí: si salta el stop, la operación estaba mal planteada",
+    "Sí: tendría que haber quitado el stop para aguantar",
     "No: seguí el plan y el stop limitó la pérdida"
    ],
    "explanation": "Ningún filtro elimina todas las rupturas falsas: según Bulkowski, el HCH fracasa un 19 % de las veces y las banderas, en torno al 44 %. Lo que controlas es cuánto cuesta el error.",
    "feedback": [
-    "Quitar el stop convierte un error pequeño en uno que puede ser enorme.",
     "No necesariamente: ningún filtro elimina todas las rupturas falsas.",
+    "Quitar el stop convierte un error pequeño en uno que puede ser enorme.",
     "Eso: una buena decisión puede salir mal. El stop ha hecho su trabajo."
    ],
    "lines": [

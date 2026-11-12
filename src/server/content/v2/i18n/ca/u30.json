@@ -383,17 +383,17 @@
    "explanation": "La comissió per operar i les despeses corrents (TER); també el canvi de divisa, l'spread, la custòdia i els impostos. La rendibilitat passada o la mida del bròquer no són costos."
   },
   "u30l2-10": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "El fons de la Lumi cobra un 1,5 %, però aquest any ha pujat un 10 %, i ella creu que el cost tant és. Què li contestes?",
    "options": [
+    "Sí, amb un 10 % no importa",
     "Compara'l amb el seu índex",
-    "Doncs millor un fons que cobri un 3 %",
-    "Sí, amb un 10 % no importa"
+    "Doncs millor un fons que cobri un 3 %"
    ],
    "explanation": "Jutja un fons davant del seu índex i durant molts anys, no per un bon any.",
    "feedback": [
+    "Aquest 10 % ja és net de comissions, però sense elles hauria estat un 11,5 %. I l'any que no pugi, l'1,5 % es cobra igualment.",
     "Això! El que importa és quant et deixa davant de l'alternativa barata, any rere any.",
-    "Cobrar més no fa pujar més. L'única cosa segura d'una comissió és que es paga.",
-    "Aquest 10 % ja és net de comissions, però sense elles hauria estat un 11,5 %. I l'any que no pugi, l'1,5 % es cobra igualment."
+    "Cobrar més no fa pujar més. L'única cosa segura d'una comissió és que es paga."
    ],
    "lines": [
     "El meu fons cobra un 1,5 %, però aquest any ha pujat un 10 % 🚀",
@@ -448,17 +448,17 @@
    "explanation": "Unes dues de cada tres vegades, perquè el mercat puja més vegades de les que baixa. Amb un sou, aportar cada mes és el natural."
   },
   "u30l3-10": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi només pot estalviar 50 € al mes i creu que amb això no va enlloc. Què li contestes?",
    "options": [
     "Comença amb 50 € i apuja-ho quan puguis",
-    "Espera a poder invertir 500 € al mes, que així sí que es nota",
-    "Tens raó, millor gastar-los"
+    "Tens raó, millor gastar-los",
+    "Espera a poder invertir 500 € al mes, que així sí que es nota"
    ],
    "explanation": "Amb poc i aviat s'arriba lluny. L'important és l'hàbit.",
    "feedback": [
     "Així es fa! El que més pesa és començar aviat i no aturar-se.",
-    "Esperar a «tenir-ne més» sol voler dir no començar mai: el que més pesa és el temps.",
-    "Gastar és legítim, però 50 € al mes durant dècades poden ser desenes de milers d'euros."
+    "Gastar és legítim, però 50 € al mes durant dècades poden ser desenes de milers d'euros.",
+    "Esperar a «tenir-ne més» sol voler dir no començar mai: el que més pesa és el temps."
    ],
    "lines": [
     "Només puc estalviar 50 € al mes 😔",
@@ -698,17 +698,17 @@
    "explanation": "Primer la base i la decisió clau; després els productes i la disciplina."
   },
   "u30l6-10": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi et demana que defensis la teva cartera: per què creus que funcionarà? Què li contestes?",
    "options": [
     "Perquè la borsa sempre puja si esperes prou",
-    "Perquè he triat el que més pujarà",
-    "Està diversificada i sé què faré si cau"
+    "Està diversificada i sé què faré si cau",
+    "Perquè he triat el que més pujarà"
    ],
    "explanation": "Una cartera es defensa amb diversificació, costos i un pla, no amb prediccions.",
    "feedback": [
     "A llarg termini ha pujat, però amb caigudes de fins a un 50 % pel camí.",
-    "Ningú no sap què pujarà més. Una cartera que depèn d'encertar és fràgil.",
-    "Defensa perfecta! Has parlat del que controles, no del que endevines."
+    "Defensa perfecta! Has parlat del que controles, no del que endevines.",
+    "Ningú no sap què pujarà més. Una cartera que depèn d'encertar és fràgil."
    ],
    "lines": [
     "A veure, defensa'm la teva cartera 🧐",

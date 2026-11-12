@@ -358,17 +358,17 @@
    "explanation": "L'ESMA va imposar límits de palanquejament i protecció davant de saldo negatiu, a més del tancament al 50 % de la garantia. Res no garanteix no perdre ni et torna les pèrdues: entre un 74 i un 89 % dels minoristes perden amb CFD."
   },
   "u14l2-11": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi ha vist a TikTok que amb forex i palanquejament 1:500 «es viu d'això»: amb 200 € mouria 100.000 €. Què li contestes?",
    "options": [
-    "Genial: amb tan pocs diners, així es guanya més ràpid",
+    "Amb 1:500, un 0,2 % en contra et deixa a zero",
     "Millor 1:1000, que és més",
-    "Amb 1:500, un 0,2 % en contra et deixa a zero"
+    "Genial: amb tan pocs diners, així es guanya més ràpid"
    ],
    "explanation": "1 ÷ 500 = 0,2 %. Qui ofereix 1:500 a un minorista europeu no compleix les regles de l'ESMA: mal senyal.",
    "feedback": [
-    "I es perd més ràpid: un 0,2 % en contra s'emporta els teus 200 €.",
+    "Uf! Llavors qui m'ofereix 1:500 no juga amb les regles europees…",
     "Més palanquejament només acosta el moment de perdre-ho tot.",
-    "Uf! Llavors qui m'ofereix 1:500 no juga amb les regles europees…"
+    "I es perd més ràpid: un 0,2 % en contra s'emporta els teus 200 €."
    ],
    "lines": [
     "Un tiktoker diu que amb forex i palanquejament 1:500 es pot viure d'això 🤑",
@@ -458,17 +458,17 @@
    ]
   },
   "u14l3-10": {
-   "prompt": "Què li expliques a la Lumi?",
+   "prompt": "La Lumi no entén per què l'euro va baixar el dia que el BCE va apujar els tipus. Què li expliques?",
    "options": [
+    "Que és un error del mercat",
     "Que compta la sorpresa, no la dada",
-    "Que els tipus no tenen res a veure amb la divisa",
-    "Que és un error del mercat"
+    "Que els tipus no tenen res a veure amb la divisa"
    ],
    "explanation": "En divises, com a borsa, el preu ja incorpora el que s'espera.",
    "feedback": [
+    "No és un error: el mercat ja esperava aquesta pujada, o una de més gran.",
     "Ah! O sigui que si s'espera +0,50 i apugen +0,25, decep.",
-    "Hi tenen molt a veure, però en relació amb el que s'esperava.",
-    "No és un error: el mercat ja esperava aquesta pujada, o una de més gran."
+    "Hi tenen molt a veure, però en relació amb el que s'esperava."
    ],
    "lines": [
     "Ahir el BCE va apujar tipus i l'euro… va baixar! 🤯",

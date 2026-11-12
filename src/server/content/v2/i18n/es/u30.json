@@ -383,17 +383,17 @@
    "explanation": "La comisión por operar y los gastos corrientes (TER); también el cambio de divisa, el spread, la custodia y los impuestos. La rentabilidad pasada o el tamaño del bróker no son costes."
   },
   "u30l2-10": {
-   "prompt": "¿Qué le contestas a Ana?",
+   "prompt": "El fondo de Ana cobra un 1,5 %, pero este año ha subido un 10 %, y ella cree que el coste da igual. ¿Qué le contestas?",
    "options": [
+    "Sí, con un 10 % no importa",
     "Compáralo con su índice",
-    "Entonces mejor un fondo que cobre un 3 %",
-    "Sí, con un 10 % no importa"
+    "Entonces mejor un fondo que cobre un 3 %"
    ],
    "explanation": "Juzga un fondo frente a su índice y durante muchos años, no por un buen año.",
    "feedback": [
+    "Ese 10 % ya es neto de comisiones, pero sin ellas habría sido un 11,5 %. Y el año que no suba, el 1,5 % se cobra igual.",
     "¡Eso! Lo que importa es cuánto te deja frente a la alternativa barata, año tras año.",
-    "Cobrar más no hace subir más. Lo único seguro de una comisión es que se paga.",
-    "Ese 10 % ya es neto de comisiones, pero sin ellas habría sido un 11,5 %. Y el año que no suba, el 1,5 % se cobra igual."
+    "Cobrar más no hace subir más. Lo único seguro de una comisión es que se paga."
    ],
    "lines": [
     "Mi fondo cobra un 1,5 %, pero este año ha subido un 10 % 🚀",
@@ -500,17 +500,17 @@
    "explanation": "Unas dos de cada tres veces, porque el mercado sube más veces de las que baja. Con un sueldo, aportar cada mes es lo natural."
   },
   "u30l3-10": {
-   "prompt": "¿Qué le contestas a Nora?",
+   "prompt": "Nora solo puede ahorrar 50 € al mes y cree que con eso no va a ningún sitio. ¿Qué le contestas?",
    "options": [
     "Empieza con 50 € y súbelo cuando puedas",
-    "Espera a poder invertir 500 € al mes, que así sí se nota",
-    "Tienes razón, mejor gastarlos"
+    "Tienes razón, mejor gastarlos",
+    "Espera a poder invertir 500 € al mes, que así sí se nota"
    ],
    "explanation": "Con poco y pronto se llega lejos. Lo importante es el hábito.",
    "feedback": [
     "¡Así se hace! Lo que más pesa es empezar pronto y no parar.",
-    "Esperar a «tener más» suele significar no empezar nunca: lo que más pesa es el tiempo.",
-    "Gastar es legítimo, pero 50 € al mes durante décadas pueden ser decenas de miles de euros."
+    "Gastar es legítimo, pero 50 € al mes durante décadas pueden ser decenas de miles de euros.",
+    "Esperar a «tener más» suele significar no empezar nunca: lo que más pesa es el tiempo."
    ],
    "lines": [
     "Solo puedo ahorrar 50 € al mes 😔",
@@ -770,17 +770,17 @@
    "explanation": "Primero la base y la decisión clave; después los productos y la disciplina."
   },
   "u30l6-10": {
-   "prompt": "¿Qué le contestas a Lucía?",
+   "prompt": "Lucía te pide que defiendas tu cartera: ¿por qué crees que va a funcionar? ¿Qué le contestas?",
    "options": [
     "Porque la bolsa siempre sube si esperas lo suficiente",
-    "Porque he elegido lo que más va a subir",
-    "Está diversificada y sé qué haré si cae"
+    "Está diversificada y sé qué haré si cae",
+    "Porque he elegido lo que más va a subir"
    ],
    "explanation": "Una cartera se defiende con diversificación, costes y un plan, no con predicciones.",
    "feedback": [
     "A largo plazo ha subido, pero con caídas de hasta un 50 % por el camino.",
-    "Nadie sabe qué subirá más. Una cartera que depende de acertar es frágil.",
-    "¡Defensa perfecta! Has hablado de lo que controlas, no de lo que adivinas."
+    "¡Defensa perfecta! Has hablado de lo que controlas, no de lo que adivinas.",
+    "Nadie sabe qué subirá más. Una cartera que depende de acertar es frágil."
    ],
    "lines": [
     "A ver, defiéndeme tu cartera 🧐",

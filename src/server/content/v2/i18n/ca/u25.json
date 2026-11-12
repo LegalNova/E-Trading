@@ -476,17 +476,17 @@
    "explanation": "Vendes que cauen any rere any i un deute que no para de créixer apunten a una trampa, igual que un sector que desapareix. Els beneficis estables amb un ROIC alt són senyals de qualitat, i una caiguda per pànic general no diu res del negoci."
   },
   "u25l3-11": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi creu que el value investing és comprar el que més ha caigut: una acció que ha passat de 100 € a 40 € li sembla una ganga. Què li contestes?",
    "options": [
+    "Importa el que val avui",
     "Sí, com més cau, millor",
-    "Value és comprar el que més puja",
-    "Importa el que val avui"
+    "Value és comprar el que més puja"
    ],
    "explanation": "Value compara preu amb valor, no el preu d'avui amb el d'ahir.",
    "feedback": [
+    "Ah, d'acord: primer estimo el valor, i només si el preu és força per sota, hi ha marge.",
     "Això és ancoratge: que abans valgués 100 € no diu res del que val avui.",
-    "Això s'assembla més al momentum, una altra estratègia diferent.",
-    "Ah, d'acord: primer estimo el valor, i només si el preu és força per sota, hi ha marge."
+    "Això s'assembla més al momentum, una altra estratègia diferent."
    ],
    "lines": [
     "Value investing és comprar el que més ha caigut, oi? 📉",
@@ -508,17 +508,17 @@
    ]
   },
   "u25l4-12": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi comprarà l'acció amb el dividend més alt, un 12 % l'any, perquè són «rendes assegurades». Què li contestes?",
    "options": [
     "Compra també la del segon dividend més alt",
-    "Perfecte: com més alt, millor",
-    "Abans, mira si el benefici el cobreix"
+    "Abans, mira si el benefici el cobreix",
+    "Perfecte: com més alt, millor"
    ],
    "explanation": "Un dividend altíssim de vegades és el senyal que es retallarà: el que importa és que el benefici el cobreixi. La temptació és mirar només la mida del dividend.",
    "feedback": [
     "Dos dividends en perill no en fan un de segur.",
-    "Un 12 % sol voler dir que el preu ha caigut perquè el mercat espera una retallada.",
-    "D'acord: si els beneficis cauen, aquest 12 % és una alarma, no un regal."
+    "D'acord: si els beneficis cauen, aquest 12 % és una alarma, no un regal.",
+    "Un 12 % sol voler dir que el preu ha caigut perquè el mercat espera una retallada."
    ],
    "lines": [
     "Compraré l'acció amb el dividend més alt del Mercat.",
@@ -562,7 +562,7 @@
    "horizon": "les 10 sessions següents"
   },
   "u25l5-5": {
-   "prompt": "Un altre gràfic real d'un índex. Puja o baixa després?",
+   "prompt": "Gràfic real d'un índex. Puja o baixa després?",
    "options": [
     "Puja",
     "Baixa"
@@ -680,17 +680,17 @@
    ]
   },
   "u25l7-10": {
-   "prompt": "Què li dius a la Lumi?",
+   "prompt": "La Lumi pensa deixar la feina per fer day trading perquè ha guanyat 3 dies seguits al simulador. Què li dius?",
    "options": [
-    "Endavant, tens talent!",
     "Apuja la mida ara que estàs en ratxa",
-    "Tres dies no proven res"
+    "Tres dies no proven res",
+    "Endavant, tens talent!"
    ],
    "explanation": "Abans d'arriscar el teu sustent, mira l'evidència i les teves pròpies estadístiques amb moltes operacions.",
    "feedback": [
-    "Tres dies són una mostra ridícula… i les dades diuen que gairebé tots els qui ho intenten seriosament perden.",
     "Una ratxa de tres dies és sort fins que es demostri el contrari: apujar la mida només fa més gran la pròxima pèrdua.",
-    "D'acord, millor continuo aprenent, registro 100 operacions al simulador i mantinc la feina."
+    "D'acord, millor continuo aprenent, registro 100 operacions al simulador i mantinc la feina.",
+    "Tres dies són una mostra ridícula… i les dades diuen que gairebé tots els qui ho intenten seriosament perden."
    ],
    "lines": [
     "Estic pensant a deixar la feina per fer day trading 🚀",
@@ -769,17 +769,17 @@
    ]
   },
   "u25l9-4": {
-   "prompt": "Què li contestes?",
+   "prompt": "La Lumi vol que li diguis ja quina és la millor estratègia, «la que més guanyi». Què li contestes?",
    "options": [
-    "La que més va pujar l'any passat, que és la que funciona",
+    "La que encaixi amb el meu temps i el meu horitzó",
     "El day trading, que és la més ràpida",
-    "La que encaixi amb el meu temps i el meu horitzó"
+    "La que més va pujar l'any passat, que és la que funciona"
    ],
    "explanation": "No hi ha una estratègia millor per a tothom: hi ha la que tu pots mantenir.",
    "feedback": [
-    "Això és biaix de recència: el que va anar millor un any rarament ho repeteix l'any següent.",
+    "Això mateix! Una bona estratègia que abandones a la primera caiguda rendeix menys que una de senzilla que mantens.",
     "Ràpida sí… i les dades diuen que gairebé tothom perd.",
-    "Això mateix! Una bona estratègia que abandones a la primera caiguda rendeix menys que una de senzilla que mantens."
+    "Això és biaix de recència: el que va anar millor un any rarament ho repeteix l'any següent."
    ],
    "lines": [
     "D'acord, però digues-me ja quina és la millor estratègia 😅",

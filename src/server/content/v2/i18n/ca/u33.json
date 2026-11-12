@@ -361,16 +361,16 @@
    "explanation": "És una entitat com qualsevol altra: primer, la seguretat."
   },
   "u33l3-10": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi fa servir una app «gratis» que li envia avisos d'accions que pugen, i avui ha fet 8 compres. Què li contestes?",
    "options": [
-    "Genial! Com més operis, més aprens",
     "Aquestes 8 compres eren al pla?",
+    "Genial! Com més operis, més aprens",
     "Activa també les alertes de cripto"
    ],
    "explanation": "Una app pot ser barata i alhora empènyer-te a operar massa.",
    "feedback": [
-    "Més operacions acostuma a voler dir més costos i més decisions impulsives.",
     "Molt bé! «Gratis» gairebé mai no és gratis, i les notificacions no són un pla.",
+    "Més operacions acostuma a voler dir més costos i més decisions impulsives.",
     "Més alertes, més temptacions."
    ],
    "lines": [
@@ -439,7 +439,7 @@
    "explanation": "L'exigeix la normativa europea MiFID per a l'assessorament i la gestió de carteres."
   },
   "u33l4-10": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi no vol estar pendent de la borsa i dubta entre un robo-advisor o fer-ho ella. Què li contestes?",
    "options": [
     "Cap dels dos, millor un fons de banc amb gestor",
     "Depèn de si seràs constant",

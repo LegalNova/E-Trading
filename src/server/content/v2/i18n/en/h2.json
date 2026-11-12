@@ -430,17 +430,17 @@
    "explanation": "You reduce risk without paying for it with lower expected return."
   },
   "u29l1-10": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi has €300 in 15 cryptocurrencies and thinks her portfolio is already diversified. What do you reply?",
    "options": [
-    "No: if they all fall together, it's like owning one",
+    "Yes, especially if they're new",
     "Yes: with 15 different ones, they're unlikely to all fall at once",
-    "Yes, especially if they're new"
+    "No: if they all fall together, it's like owning one"
    ],
    "explanation": "Highly correlated assets don't diversify. And remember: with crypto you can lose everything you put in.",
    "feedback": [
-    "Well spotted! Diversifying means owning things that behave differently, not lots of names.",
+    "The newest ones tend to be even more volatile. More names doesn't mean less risk.",
     "If only… but when bitcoin falls hard, most of the others fall with it.",
-    "The newest ones tend to be even more volatile. More names doesn't mean less risk."
+    "Well spotted! Diversifying means owning things that behave differently, not lots of names."
    ],
    "lines": [
     "I've got €300 in 15 different cryptocurrencies 😎",
@@ -524,7 +524,7 @@
    "explanation": "Currency exchange and ongoing charges (TER) are costs, and so are the broker's commission, the spread, custody fees and tax. What it returned last year or how many companies it holds aren't costs."
   },
   "u10l3-10": {
-   "prompt": "What do you explain?",
+   "prompt": "Lumi says her fund charges 1.8 %, but she's never been charged anything in her account. What do you explain?",
    "options": [
     "It's taken out of the fund's value every day",
     "The tax office collects it at the end of the year",
@@ -640,17 +640,17 @@
    "explanation": "ETFs don't get the transfer («traspaso») regime: every sale at a gain is taxed."
   },
   "u10l2-9": {
-   "prompt": "What do you say?",
+   "prompt": "Lumi asks whether an ETF is as risky as buying a single company. What do you say?",
    "options": [
     "It has no risk at all",
-    "You buy it like a share, but it holds many companies",
-    "Yes, just as risky: after all, it trades on the exchange like any share"
+    "Yes, just as risky: after all, it trades on the exchange like any share",
+    "You buy it like a share, but it holds many companies"
    ],
    "explanation": "The way you buy it is like a share; the risk is that of the whole basket.",
    "feedback": [
     "It carries the risk of the index it copies: if the market falls 30 %, so does the ETF.",
-    "That's it! One that tracks the MSCI World holds over a thousand companies from developed countries.",
-    "You buy it like a share, but inside it holds hundreds or thousands of companies."
+    "You buy it like a share, but inside it holds hundreds or thousands of companies.",
+    "That's it! One that tracks the MSCI World holds over a thousand companies from developed countries."
    ],
    "lines": [
     "Someone told me an ETF is «like a share».",

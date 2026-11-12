@@ -476,17 +476,17 @@
    "explanation": "Ventas que caen año tras año y una deuda que no para de crecer apuntan a una trampa, igual que un sector que desaparece. Los beneficios estables con un ROIC alto son señales de calidad, y una caída por pánico general no dice nada del negocio."
   },
   "u25l3-11": {
-   "prompt": "¿Qué le contestas a Paula?",
+   "prompt": "Paula cree que el value investing es comprar lo que más ha caído: una acción que pasó de 100 € a 40 € le parece un chollo. ¿Qué le contestas?",
    "options": [
+    "Importa lo que vale hoy",
     "Sí, cuanto más cae, mejor",
-    "Value es comprar lo que más sube",
-    "Importa lo que vale hoy"
+    "Value es comprar lo que más sube"
    ],
    "explanation": "Value compara precio con valor, no precio de hoy con precio de ayer.",
    "feedback": [
+    "Ah, vale: primero estimo el valor, y solo si el precio está bastante por debajo, hay margen.",
     "Eso es anclaje: que antes valiera 100 € no dice nada de lo que vale hoy.",
-    "Eso se parece más al momentum, otra estrategia distinta.",
-    "Ah, vale: primero estimo el valor, y solo si el precio está bastante por debajo, hay margen."
+    "Eso se parece más al momentum, otra estrategia distinta."
    ],
    "lines": [
     "Value investing es comprar lo que más ha caído, ¿no? 📉",
@@ -532,17 +532,17 @@
    ]
   },
   "u25l4-12": {
-   "prompt": "¿Qué le contestas a Lucía?",
+   "prompt": "Lucía va a comprar la acción con el dividendo más alto, un 12 % al año, porque son «rentas aseguradas». ¿Qué le contestas?",
    "options": [
     "Compra también la del segundo dividendo más alto",
-    "Perfecto: cuanto más alto, mejor",
-    "Antes, mira si el beneficio lo cubre"
+    "Antes, mira si el beneficio lo cubre",
+    "Perfecto: cuanto más alto, mejor"
    ],
    "explanation": "Un dividendo altísimo a veces es la señal de que va a recortarse: lo que importa es que el beneficio lo cubra. La tentación es mirar solo el tamaño del dividendo.",
    "feedback": [
     "Dos dividendos en peligro no hacen uno seguro.",
-    "Un 12 % suele significar que el precio ha caído porque el mercado espera un recorte.",
-    "Vale: si los beneficios caen, ese 12 % es una alarma, no un regalo."
+    "Vale: si los beneficios caen, ese 12 % es una alarma, no un regalo.",
+    "Un 12 % suele significar que el precio ha caído porque el mercado espera un recorte."
    ],
    "lines": [
     "Voy a comprar la acción con el dividendo más alto del Mercado.",
@@ -623,7 +623,7 @@
    "horizon": "las 10 sesiones siguientes"
   },
   "u25l5-5": {
-   "prompt": "Otro gráfico real de un índice. ¿Sube o baja después?",
+   "prompt": "Gráfico real de un índice. ¿Sube o baja después?",
    "options": [
     "Sube",
     "Baja"
@@ -741,17 +741,17 @@
    ]
   },
   "u25l7-10": {
-   "prompt": "¿Qué le dices a Marta?",
+   "prompt": "Marta piensa dejar el trabajo para hacer day trading porque ha ganado 3 días seguidos en el simulador. ¿Qué le dices?",
    "options": [
-    "¡Adelante, tienes talento!",
     "Sube el tamaño ahora que estás en racha",
-    "Tres días no prueban nada"
+    "Tres días no prueban nada",
+    "¡Adelante, tienes talento!"
    ],
    "explanation": "Antes de arriesgar tu sustento, mira la evidencia y tus propias estadísticas con muchas operaciones.",
    "feedback": [
-    "Tres días son una muestra ridícula… y los datos dicen que casi todos los que lo intentan en serio pierden.",
     "Una racha de tres días es suerte hasta que se demuestre lo contrario: subir el tamaño solo agranda la próxima pérdida.",
-    "Vale, mejor sigo aprendiendo, registro 100 operaciones en el simulador y mantengo el trabajo."
+    "Vale, mejor sigo aprendiendo, registro 100 operaciones en el simulador y mantengo el trabajo.",
+    "Tres días son una muestra ridícula… y los datos dicen que casi todos los que lo intentan en serio pierden."
    ],
    "lines": [
     "Estoy pensando en dejar el trabajo para hacer day trading 🚀",
@@ -830,17 +830,17 @@
    ]
   },
   "u25l9-4": {
-   "prompt": "¿Qué le contestas?",
+   "prompt": "Nora quiere que le digas ya cuál es la mejor estrategia, «la que más gane». ¿Qué le contestas?",
    "options": [
-    "La que más subió el año pasado, que es la que funciona",
+    "La que encaje con mi tiempo y mi horizonte",
     "El day trading, que es la más rápida",
-    "La que encaje con mi tiempo y mi horizonte"
+    "La que más subió el año pasado, que es la que funciona"
    ],
    "explanation": "No hay una estrategia mejor para todos: hay la que tú puedes mantener.",
    "feedback": [
-    "Eso es recencia: lo que mejor fue un año rara vez lo repite al siguiente.",
+    "¡Eso! Una estrategia buena que abandonas en la primera caída rinde menos que una sencilla que mantienes.",
     "Rápida sí… y los datos dicen que casi todos pierden.",
-    "¡Eso! Una estrategia buena que abandonas en la primera caída rinde menos que una sencilla que mantienes."
+    "Eso es recencia: lo que mejor fue un año rara vez lo repite al siguiente."
    ],
    "lines": [
     "Vale, pero dime ya cuál es la mejor estrategia 😅",

@@ -358,17 +358,17 @@
    "explanation": "ESMA imposed leverage limits and negative balance protection, as well as close-out at 50 % of margin. Nothing guarantees you won't lose or gives your losses back: between 74 and 89 % of retail clients lose money on CFDs."
   },
   "u14l2-11": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "Lumi has seen on TikTok that with forex and 1:500 leverage you can «live off this»: with €200 she'd move €100,000. What do you say?",
    "options": [
-    "Great: with so little money, that way you make money faster",
+    "With 1:500, a 0.2 % move against you wipes you out",
     "Even better 1:1000, that's more",
-    "With 1:500, a 0.2 % move against you wipes you out"
+    "Great: with so little money, that way you make money faster"
    ],
    "explanation": "1 ÷ 500 = 0.2 %. Anyone offering 1:500 to a European retail client isn't following ESMA's rules: a bad sign.",
    "feedback": [
-    "And you lose it faster: a 0.2 % move against you takes your €200.",
+    "Phew! So whoever's offering me 1:500 isn't playing by European rules…",
     "More leverage only brings the moment you lose everything closer.",
-    "Phew! So whoever's offering me 1:500 isn't playing by European rules…"
+    "And you lose it faster: a 0.2 % move against you takes your €200."
    ],
    "lines": [
     "A TikToker says you can make a living from forex with 1:500 leverage 🤑",
@@ -458,17 +458,17 @@
    ]
   },
   "u14l3-10": {
-   "prompt": "What do you explain to Lumi?",
+   "prompt": "Lumi doesn't understand why the euro fell on the day the ECB raised rates. What do you explain?",
    "options": [
+    "That it's a market mistake",
     "That the surprise counts, not the figure",
-    "That rates have nothing to do with the currency",
-    "That it's a market mistake"
+    "That rates have nothing to do with the currency"
    ],
    "explanation": "In currencies, as in stocks, the price already reflects what's expected.",
    "feedback": [
+    "It's not a mistake: the market was already expecting that rise, or a bigger one.",
     "Oh! So if +0.50 is expected and they raise by +0.25, it's a disappointment.",
-    "They have a lot to do with it, but relative to what was expected.",
-    "It's not a mistake: the market was already expecting that rise, or a bigger one."
+    "They have a lot to do with it, but relative to what was expected."
    ],
    "lines": [
     "Yesterday the ECB raised rates and the euro… fell! 🤯",

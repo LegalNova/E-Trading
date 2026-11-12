@@ -351,16 +351,16 @@
    "explanation": "El nombre viene de los antiguos bonos en papel, que llevaban cupones recortables para cobrar cada pago."
   },
   "u9l1-10": {
-   "prompt": "¿Qué le explicas?",
+   "prompt": "Laura pregunta para qué sirven los bonos en una cartera si son «para gente mayor». ¿Qué le explicas?",
    "options": [
-    "Dan ingresos previsibles y amortiguan caídas",
     "Son imposibles de perder",
+    "Dan ingresos previsibles y amortiguan caídas",
     "Para nada: solo las acciones dan dinero de verdad a largo plazo"
    ],
    "explanation": "Los bonos aportan ingresos y estabilidad, aunque ninguna protección funciona siempre.",
    "feedback": [
-    "¡Eso! Aunque no siempre: en 2022 cayeron a la vez que las acciones.",
     "Si el emisor no paga, o si vendes cuando han bajado, se puede perder.",
+    "¡Eso! Aunque no siempre: en 2022 cayeron a la vez que las acciones.",
     "Las acciones suelen rendir más a largo plazo, pero los bonos dan ingresos previsibles y suelen amortiguar las caídas."
    ],
    "lines": [
@@ -515,17 +515,17 @@
    ]
   },
   "u9l3-13": {
-   "prompt": "¿Qué le contestas?",
+   "prompt": "Nora ha leído que el banco central va a bajar los tipos y pregunta si es bueno o malo para sus bonos. ¿Qué le contestas?",
    "options": [
-    "Da igual: los bonos no se mueven",
     "Malo: cobrarás menos cupón a partir de ahora",
-    "Bueno: el precio de tus bonos sube"
+    "Bueno: el precio de tus bonos sube",
+    "Da igual: los bonos no se mueven"
    ],
    "explanation": "Si los tipos bajan, tu cupón fijo es más atractivo que el de los bonos nuevos y tu bono vale más. Lo tentador es pensar que cobrarás menos, pero eso solo les pasa a los bonos nuevos, no al tuyo.",
    "feedback": [
-    "Sí se mueven: tipos abajo, precio arriba.",
     "Tu cupón es fijo y no cambia. Lo que cambia es el precio, y sube.",
-    "Eso. Y cuanto más largo el bono, más sube."
+    "Eso. Y cuanto más largo el bono, más sube.",
+    "Sí se mueven: tipos abajo, precio arriba."
    ],
    "lines": [
     "He leído que el banco central va a bajar los tipos.",
@@ -678,17 +678,17 @@
    ]
   },
   "u9l6-10": {
-   "prompt": "¿Qué le dices?",
+   "prompt": "Marta pregunta si con bonos ligados a la inflación ya está protegida de todo. ¿Qué le dices?",
    "options": [
-    "De la inflación sí, pero su precio también se mueve",
     "Sí, de todo: de la inflación, de los tipos y de un impago",
-    "No, no protegen de nada"
+    "No, no protegen de nada",
+    "De la inflación sí, pero su precio también se mueve"
    ],
    "explanation": "Cada activo cubre un riesgo concreto; ninguno lo cubre todo.",
    "feedback": [
-    "¡Bien! Cubren un riesgo concreto, no todos.",
     "Protegen de la inflación, no de las subidas de tipos ni de un impago.",
-    "Sí protegen el poder de compra si los mantienes hasta el vencimiento."
+    "Sí protegen el poder de compra si los mantienes hasta el vencimiento.",
+    "¡Bien! Cubren un riesgo concreto, no todos."
    ],
    "lines": [
     "La inflación me da miedo 😱",

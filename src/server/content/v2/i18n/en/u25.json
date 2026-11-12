@@ -476,17 +476,17 @@
    "explanation": "Sales falling year after year and debt that keeps growing point to a trap, as does a disappearing sector. Stable profits with a high ROIC are signs of quality, and a fall caused by a general panic says nothing about the business."
   },
   "u25l3-11": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "Lumi thinks value investing means buying whatever has fallen most: a share that went from €100 to €40 looks like a bargain to her. What do you say?",
    "options": [
+    "What matters is today's value",
     "Yes, the more it falls, the better",
-    "Value is buying whatever is rising most",
-    "What matters is today's value"
+    "Value is buying whatever is rising most"
    ],
    "explanation": "Value compares price with value, not today's price with yesterday's.",
    "feedback": [
+    "Ah, OK: first I estimate the value, and only if the price is well below it is there a margin.",
     "That's anchoring: the fact that it used to be €100 says nothing about what it's worth today.",
-    "That sounds more like momentum, which is a different strategy.",
-    "Ah, OK: first I estimate the value, and only if the price is well below it is there a margin."
+    "That sounds more like momentum, which is a different strategy."
    ],
    "lines": [
     "Value investing means buying whatever has fallen the most, right? 📉",
@@ -508,17 +508,17 @@
    ]
   },
   "u25l4-12": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "Lumi is going to buy the share with the highest dividend, 12 % a year, because it's «guaranteed income». What do you say?",
    "options": [
     "Buy the one with the second-highest dividend too",
-    "Perfect: the higher, the better",
-    "First, check whether earnings cover it"
+    "First, check whether earnings cover it",
+    "Perfect: the higher, the better"
    ],
    "explanation": "A sky-high dividend is sometimes the sign that it's about to be cut: what matters is that earnings cover it. The temptation is to look only at the size of the dividend.",
    "feedback": [
     "Two dividends at risk don't make one safe one.",
-    "A 12 % yield usually means the price has fallen because the market expects a cut.",
-    "OK: if earnings are falling, that 12 % is a red flag, not a gift."
+    "OK: if earnings are falling, that 12 % is a red flag, not a gift.",
+    "A 12 % yield usually means the price has fallen because the market expects a cut."
    ],
    "lines": [
     "I'm going to buy the share with the highest dividend in the Market.",
@@ -562,7 +562,7 @@
    "horizon": "the next 10 sessions"
   },
   "u25l5-5": {
-   "prompt": "Another real chart of an index. Does it go up or down afterwards?",
+   "prompt": "A real chart of an index. Does it go up or down afterwards?",
    "options": [
     "Up",
     "Down"
@@ -680,17 +680,17 @@
    ]
   },
   "u25l7-10": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "Lumi is thinking of quitting her job to day trade because she has won 3 days in a row on the simulator. What do you say?",
    "options": [
-    "Go for it, you're a natural!",
     "Size up now that you're on a roll",
-    "Three days prove nothing"
+    "Three days prove nothing",
+    "Go for it, you're a natural!"
    ],
    "explanation": "Before risking your livelihood, look at the evidence and at your own stats over many trades.",
    "feedback": [
-    "Three days is a ridiculously small sample… and the data says almost everyone who tries it seriously loses.",
     "A three-day streak is luck until proven otherwise: sizing up only makes the next loss bigger.",
-    "OK, I'd better keep learning, log 100 trades in the simulator and keep my job."
+    "OK, I'd better keep learning, log 100 trades in the simulator and keep my job.",
+    "Three days is a ridiculously small sample… and the data says almost everyone who tries it seriously loses."
    ],
    "lines": [
     "I'm thinking of quitting my job to day trade 🚀",
@@ -769,17 +769,17 @@
    ]
   },
   "u25l9-4": {
-   "prompt": "What do you reply?",
+   "prompt": "Lumi wants you to tell her right now which strategy is best, «the one that makes the most». What do you reply?",
    "options": [
-    "Whichever went up most last year: that's the one that works",
+    "The one that fits my time and my horizon",
     "Day trading, it's the fastest",
-    "The one that fits my time and my horizon"
+    "Whichever went up most last year: that's the one that works"
    ],
    "explanation": "There's no single best strategy for everyone: there's the one you can stick to.",
    "feedback": [
-    "That's recency bias: what did best one year rarely repeats it the next.",
+    "Exactly! A good strategy you abandon at the first fall does worse than a simple one you stick to.",
     "Fast, yes… and the data says almost everyone loses.",
-    "Exactly! A good strategy you abandon at the first fall does worse than a simple one you stick to."
+    "That's recency bias: what did best one year rarely repeats it the next."
    ],
    "lines": [
     "OK, but just tell me which strategy is best 😅",

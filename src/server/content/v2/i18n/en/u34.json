@@ -459,17 +459,17 @@
    ]
   },
   "u34l1-10": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "Lumi's neighbour and her hairdresser have got into a new coin, and one has already bought a car. What do you say?",
    "options": [
+    "That's usually a sign of euphoria",
     "If my hairdresser is making money, it must be easy",
-    "Then I'm getting in now, before it's too late!",
-    "That's usually a sign of euphoria"
+    "Then I'm getting in now, before it's too late!"
    ],
    "explanation": "Widespread euphoria is an alarm bell, not an invitation.",
    "feedback": [
+    "Well spotted! It's been one of the classic signs of a bubble since 1637.",
     "Something having gone up doesn't make it easy or safe.",
-    "When even people who never invest are in, who's left to buy?",
-    "Well spotted! It's been one of the classic signs of a bubble since 1637."
+    "When even people who never invest are in, who's left to buy?"
    ],
    "lines": [
     "My neighbour bought a car with what he made on a new coin 🤑",
@@ -567,17 +567,17 @@
    "explanation": "Companies with no profits valued in the billions and IPOs that doubled on the first day, with lots of new people buying just because it was rising. Valuations were forgotten: «the old rules don't apply any more»."
   },
   "u34l3-10": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "Lumi thinks that because AI is going to change everything, any AI company is a good buy. What do you say?",
    "options": [
-    "Yes, just like the internet in 2000: it couldn't fail",
+    "It can be real and still be too expensive",
     "No, AI is a fad",
-    "It can be real and still be too expensive"
+    "Yes, just like the internet in 2000: it couldn't fail"
    ],
    "explanation": "Being right about a technology doesn't guarantee being right about the investment.",
    "feedback": [
-    "In 2000 the internet did change everything… and the Nasdaq fell 78 %.",
+    "That's it! What matters isn't just the idea, but how much you pay for it.",
     "You don't need to decide whether it's a fad: just don't pay any price and diversify.",
-    "That's it! What matters isn't just the idea, but how much you pay for it."
+    "In 2000 the internet did change everything… and the Nasdaq fell 78 %."
    ],
    "lines": [
     "Artificial intelligence is going to change everything 🤖",
@@ -658,17 +658,17 @@
    "horizon": "the next six years"
   },
   "u34l5-9": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "Lumi wants to put everything into the S&P 500 without diversifying because «it always recovers». What do you say?",
    "options": [
     "Better to put everything in Japan, it's recovered now",
-    "Exactly, the US will never let you down",
-    "Better not to depend on a single country"
+    "Better not to depend on a single country",
+    "Exactly, the US will never let you down"
    ],
    "explanation": "The US story is the story of the market that has done best. There's no guarantee it'll repeat.",
    "feedback": [
     "Switching country is still concentrating.",
-    "In 1989 people said the same about Japan, and its stock market took 34 years to get back.",
-    "Nice! A global index already includes the US and covers you if it has its own lost decade."
+    "Nice! A global index already includes the US and covers you if it has its own lost decade.",
+    "In 1989 people said the same about Japan, and its stock market took 34 years to get back."
    ],
    "lines": [
     "The S&P 500 always recovers 💪",
@@ -782,16 +782,16 @@
    "horizon": "the following months"
   },
   "u34l7-8": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "Lumi sold everything in March 2020, planning to get back in when it fell further… and it never did. What do you say?",
    "options": [
-    "Many did the same: plan ahead next time",
     "The best thing is never to invest again",
+    "Many did the same: plan ahead next time",
     "Bad luck, next time you'll call the bottom"
    ],
    "explanation": "You write the plan when you're calm so you can stick to it when you're panicking.",
    "feedback": [
-    "That's it! Your Investment Policy Statement exists for exactly that moment.",
     "That way the mistake of March 2020 would also cost you every year that followed.",
+    "That's it! Your Investment Policy Statement exists for exactly that moment.",
     "Calling the bottom is almost impossible: nobody announced it in advance."
    ],
    "lines": [
@@ -881,17 +881,17 @@
    "explanation": "Euphoria, «this time it's different» and easy credit or leverage, with panic selling at the end. Cautious valuations are exactly what disappears in a bubble, and lots of new people always pile in."
   },
   "u34l9-2": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "Lumi asks what you're going to do when the next crisis comes. What do you say?",
    "options": [
-    "I'll keep everything in cash to buy when it falls",
+    "I'll sell everything just before it starts",
     "I'll have a cushion, no debt and a written plan",
-    "I'll sell everything just before it starts"
+    "I'll keep everything in cash to buy when it falls"
    ],
    "explanation": "It's not about predicting the crisis, it's about being ready to ride it out.",
    "feedback": [
-    "Waiting for the crisis outside the market can cost years of gains: nobody knows when it will come.",
+    "Nobody has ever known when one starts. That's a plan that depends on guessing.",
     "Perfect! You don't know when it'll come, but you do know how you'll react.",
-    "Nobody has ever known when one starts. That's a plan that depends on guessing."
+    "Waiting for the crisis outside the market can cost years of gains: nobody knows when it will come."
    ],
    "lines": [
     "Some day the next crisis will come 😬",

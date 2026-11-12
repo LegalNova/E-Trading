@@ -550,17 +550,17 @@
    "explanation": "El Nasdaq cayó más de un 30 % y los bonos largos más de un 20 %: la subida de tipos golpeó a los dos."
   },
   "u18l3-10": {
-   "prompt": "¿Qué le contestas a Irene?",
+   "prompt": "Irene pregunta si es bueno o malo para la bolsa que el BCE haya bajado los tipos. ¿Qué le contestas?",
    "options": [
-    "No tiene ningún efecto: la bolsa va por su cuenta",
+    "Siempre malo",
     "Suele ser favorable, pero depende del motivo",
-    "Siempre malo"
+    "No tiene ningún efecto: la bolsa va por su cuenta"
    ],
    "explanation": "Bajar los tipos suele favorecer a bolsa y bonos, pero cuentan la sorpresa y el motivo.",
    "feedback": [
-    "Los tipos son el precio del dinero: afectan a todo.",
+    "Al contrario: suele estimular la economía y favorecer a bolsa y bonos… salvo que se baje por miedo a una crisis.",
     "¡Ah! Si los bajan porque viene una crisis, igual no es tan buena noticia.",
-    "Al contrario: suele estimular la economía y favorecer a bolsa y bonos… salvo que se baje por miedo a una crisis."
+    "Los tipos son el precio del dinero: afectan a todo."
    ],
    "lines": [
     "El BCE ha bajado los tipos 📉",
@@ -688,7 +688,7 @@
    "explanation": "Sin beneficios, se compara lo que vale con lo que vende: 3 veces las ventas frente a 30. La cara necesita crecer muchísimo para justificar su precio."
   },
   "u18l5-14": {
-   "prompt": "¿Qué le contestas a Nora?",
+   "prompt": "Nora pregunta cómo valorar sin PER una empresa que vende un 80 % más cada año pero pierde dinero. ¿Qué le contestas?",
    "options": [
     "Por sus seguidores en redes",
     "Con el PER, como todas las demás empresas",

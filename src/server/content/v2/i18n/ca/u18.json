@@ -550,17 +550,17 @@
    "explanation": "El Nasdaq va caure més d'un 30 % i els bons llargs més d'un 20 %: la pujada de tipus va colpejar tots dos."
   },
   "u18l3-10": {
-   "prompt": "Què li respons a la Lumi?",
+   "prompt": "La Lumi pregunta si és bo o dolent per a la borsa que el BCE hagi abaixat els tipus. Què li contestes?",
    "options": [
-    "No té cap efecte: la borsa va pel seu compte",
+    "Sempre dolent",
     "Sol ser favorable, però depèn del motiu",
-    "Sempre dolent"
+    "No té cap efecte: la borsa va pel seu compte"
    ],
    "explanation": "Abaixar els tipus sol afavorir la borsa i els bons, però compten la sorpresa i el motiu.",
    "feedback": [
-    "Els tipus són el preu dels diners: afecten tot.",
+    "Al contrari: sol estimular l'economia i afavorir la borsa i els bons… tret que es faci per por d'una crisi.",
     "Ah! Si els abaixen perquè ve una crisi, potser no és tan bona notícia.",
-    "Al contrari: sol estimular l'economia i afavorir la borsa i els bons… tret que es faci per por d'una crisi."
+    "Els tipus són el preu dels diners: afecten tot."
    ],
    "lines": [
     "El BCE ha abaixat els tipus 📉",
@@ -688,7 +688,7 @@
    "explanation": "Sense beneficis, es compara el que val amb el que ven: 3 vegades les vendes davant de 30. La cara necessita créixer moltíssim per justificar el seu preu."
   },
   "u18l5-14": {
-   "prompt": "Què li respons a la Lumi?",
+   "prompt": "La Lumi pregunta com valorar sense PER una empresa que ven un 80 % més cada any però perd diners. Què li contestes?",
    "options": [
     "Pels seus seguidors a les xarxes",
     "Amb el PER, com totes les altres empreses",

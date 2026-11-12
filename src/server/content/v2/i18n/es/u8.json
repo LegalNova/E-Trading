@@ -525,17 +525,17 @@
    ]
   },
   "u8l4-12": {
-   "prompt": "¿Qué le contestas?",
+   "prompt": "La empresa de Lucía va a ampliar capital y ella no piensa comprar acciones nuevas. Pregunta si le afecta. ¿Qué le contestas?",
    "options": [
-    "Sí: si no acudes, tu porcentaje baja",
     "No: tus acciones siguen siendo las mismas",
-    "Sí: te quitan parte de tus acciones"
+    "Sí: te quitan parte de tus acciones",
+    "Sí: si no acudes, tu porcentaje baja"
    ],
    "explanation": "En una ampliación salen acciones nuevas: si no compras las que te tocan, tu porcentaje baja (dilución). Lo tentador es pensar que no pasa nada porque conservas tus acciones, pero el total ha crecido.",
    "feedback": [
-    "Eso. Hay más acciones y tú tienes las mismas: te diluyes.",
     "Las mismas acciones, pero de un pastel con más trozos: tu parte baja.",
-    "Nadie te quita nada: lo que baja es tu porcentaje."
+    "Nadie te quita nada: lo que baja es tu porcentaje.",
+    "Eso. Hay más acciones y tú tienes las mismas: te diluyes."
    ],
    "lines": [
     "Mi empresa va a ampliar capital con acciones nuevas.",
@@ -577,17 +577,17 @@
    "explanation": "Es el valor de la empresa en bolsa."
   },
   "u8l5-10": {
-   "prompt": "¿Qué le dices?",
+   "prompt": "Lucía quiere pasarlo todo a small caps porque «las pequeñas suben más». ¿Qué le dices?",
    "options": [
     "No, las pequeñas nunca suben",
-    "Sí, a largo plazo las pequeñas siempre acaban ganando",
-    "Pueden rendir más, pero con más riesgo"
+    "Pueden rendir más, pero con más riesgo",
+    "Sí, a largo plazo las pequeñas siempre acaban ganando"
    ],
    "explanation": "El tamaño cambia el perfil de riesgo, pero no garantiza un resultado.",
    "feedback": [
     "Algunas pequeñas se convierten en gigantes; lo difícil es saber cuáles de antemano.",
-    "No siempre: ha habido periodos de muchos años en que las grandes les han ganado con claridad.",
-    "¡Eso! Más potencial, más sustos y años en que van peor."
+    "¡Eso! Más potencial, más sustos y años en que van peor.",
+    "No siempre: ha habido periodos de muchos años en que las grandes les han ganado con claridad."
    ],
    "lines": [
     "Las pequeñas suben más que las grandes, ¿no?",

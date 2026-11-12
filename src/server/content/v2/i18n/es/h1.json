@@ -325,17 +325,17 @@
    ]
   },
   "h1l1-3": {
-   "prompt": "¿Qué le contestas?",
+   "prompt": "Ana cree que invertir en bolsa es como ir al casino. ¿Qué le contestas?",
    "options": [
+    "Solo si eliges bien la empresa",
     "No: compras trocitos de empresas",
-    "Sí, es pura suerte: unos días ganas y otros pierdes",
-    "Solo si eliges bien la empresa"
+    "Sí, es pura suerte: unos días ganas y otros pierdes"
    ],
    "explanation": "En el casino las cuentas están hechas para que pierdas. En bolsa compras partes de negocios que generan beneficios, y con tiempo y muchas empresas a la vez el resultado depende mucho menos de la suerte.",
    "feedback": [
+    "Acertar ayuda, pero con 500 empresas a la vez ya no dependes de acertar una.",
     "Eso. Detrás de cada acción hay un negocio real, no una ruleta.",
-    "En el casino la banca siempre gana. Una empresa que gana dinero suele valer más con los años.",
-    "Acertar ayuda, pero con 500 empresas a la vez ya no dependes de acertar una."
+    "En el casino la banca siempre gana. Una empresa que gana dinero suele valer más con los años."
    ],
    "lines": [
     "Invertir en bolsa es como ir al casino, ¿no?",
@@ -632,16 +632,16 @@
    "explanation": "Ves los cuatro precios del periodo, además de la variación y el volumen. El gráfico no dice por qué se movió ni lo que repartió la empresa."
   },
   "u19l1-11": {
-   "prompt": "¿Qué le contestas?",
+   "prompt": "Laura quiere meter todos sus ahorros en una acción que lleva tres meses subiendo. ¿Qué le contestas?",
    "options": [
-    "Sí: si lleva tres meses subiendo, lo normal es que siga",
     "El gráfico dice lo que pasó, no lo que pasará",
+    "Sí: si lleva tres meses subiendo, lo normal es que siga",
     "No: si ha subido tanto, seguro que cae"
    ],
    "explanation": "Un gráfico es el registro de lo que ya pasó. Sirve para ver cómo se ha movido el precio, pero no garantiza lo que hará: ni que siga subiendo ni que caiga.",
    "feedback": [
-    "Nadie lo sabe. Un gráfico registra el pasado: la subida puede acabar mañana.",
     "Eso. Puede seguir o darse la vuelta: son probabilidades, no certezas.",
+    "Nadie lo sabe. Un gráfico registra el pasado: la subida puede acabar mañana.",
     "Tampoco lo sabes: el gráfico no dice si va a subir o a bajar."
    ],
    "lines": [

@@ -440,7 +440,7 @@
    "explanation": "Al revés: al corregir el sesgo de búsqueda de datos, los debilitaron mucho."
   },
   "u22l2-6": {
-   "prompt": "Otro gráfico real, sin nombre. ¿Sube o baja en las 10 sesiones siguientes?",
+   "prompt": "Gráfico real, sin nombre. ¿Sube o baja en las 10 sesiones siguientes?",
    "options": [
     "Sube",
     "Baja"
@@ -536,7 +536,7 @@
    "horizon": "las 10 sesiones siguientes"
   },
   "u22l3-7": {
-   "prompt": "Otro gráfico real. ¿Sube o baja en las 10 sesiones siguientes?",
+   "prompt": "Gráfico real. ¿Sube o baja en las 10 sesiones siguientes?",
    "options": [
     "Sube",
     "Baja"
@@ -658,16 +658,16 @@
    ]
   },
   "u22l5-13": {
-   "prompt": "¿Qué le dices a Ana?",
+   "prompt": "A Ana le ha saltado tres veces esta semana un stop a un 0,5 % en bitcoin y quiere quitarlo. ¿Qué le dices?",
    "options": [
-    "Aléjalo según su ATR y compra menos",
     "Sí, quítalo: los stops solo dan disgustos",
+    "Aléjalo según su ATR y compra menos",
     "Ponlo aún más cerca, al 0,2 %"
    ],
    "explanation": "La distancia del stop la marca la volatilidad (el ATR); el importe se ajusta para que el riesgo en euros siga igual.",
    "feedback": [
-    "Claro: stop fuera del ruido y menos importe. Mi riesgo en euros no cambia.",
     "Sin stop, una sola mala operación puede costarme más que tres stops pequeños.",
+    "Claro: stop fuera del ruido y menos importe. Mi riesgo en euros no cambia.",
     "Más cerca saltaría todavía más: bitcoin se mueve mucho más en un día."
    ],
    "lines": [

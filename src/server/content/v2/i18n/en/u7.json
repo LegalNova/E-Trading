@@ -369,17 +369,17 @@
    ]
   },
   "u7l4-8": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "Lumi has been told the IBEX went nowhere for years after 2007 and asks whether Spanish shares pay nothing. What do you say?",
    "options": [
+    "The IBEX must be miscalculated",
     "That IBEX doesn't count dividends",
-    "He's right, it hasn't paid anything for years",
-    "The IBEX must be miscalculated"
+    "He's right, it hasn't paid anything for years"
    ],
    "explanation": "The price index only tells half the story.",
    "feedback": [
+    "It's calculated correctly: it just measures something else, the price.",
     "That's it! The IBEX 35 with dividends has been way above the price index.",
-    "He's missing one part: the dividends.",
-    "It's calculated correctly: it just measures something else, the price."
+    "He's missing one part: the dividends."
    ],
    "lines": [
     "My uncle says that for years the IBEX didn't go up at all from 2007 🤷",
@@ -418,34 +418,34 @@
    "explanation": "They're different risks. An equity portfolio is compared with a similar equity index."
   },
   "u7l3-12": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "Lumi thinks her S&P 500 fund barely notices if the big tech companies fall. What do you say?",
    "options": [
-    "Yes: they're just a few companies out of 500",
+    "Quite a lot: those few weigh a huge amount",
     "It doesn't notice at all: the fund is spread across 500 companies",
-    "Quite a lot: those few weigh a huge amount"
+    "Yes: they're just a few companies out of 500"
    ],
    "explanation": "Counting companies is misleading («they're just a few out of 500»): in a cap-weighted index each one weighs what it's worth, and those few make up more than a third.",
    "feedback": [
-    "They're few, but they make up more than a third of the index: if they fall, your fund feels it a lot.",
+    "That's it! In 2026, a handful of tech companies make up more than a third of the S&P 500.",
     "Diversified doesn't mean evenly spread: the big ones call the shots.",
-    "That's it! In 2026, a handful of tech companies make up more than a third of the S&P 500."
+    "They're few, but they make up more than a third of the index: if they fall, your fund feels it a lot."
    ],
    "lines": [
     "My S&P 500 fund barely notices if the big tech companies fall, right?"
    ]
   },
   "u7l5-11": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "Lumi started the year with €5,000, added €1,000, ends with €6,300 and says she has made €1,300. What do you say?",
    "options": [
     "Congratulations, €1,300 of profit!",
-    "You put part of that in yourself",
-    "You've lost money"
+    "You've lost money",
+    "You put part of that in yourself"
    ],
    "explanation": "Looking only at how much the account has grown is misleading. To measure what you earn, subtract what you've contributed: otherwise you're comparing yourself with an advantage.",
    "feedback": [
     "Not all of it is profit: you put in €1,000 yourself. What you contribute isn't return.",
-    "That's it! You made €300: the rest is money you put in.",
-    "Not that either: the portfolio is worth more than everything you put in."
+    "Not that either: the portfolio is worth more than everything you put in.",
+    "That's it! You made €300: the rest is money you put in."
    ],
    "lines": [
     "I started the year with €5,000, added €1,000 more and I'm ending it with €6,300",

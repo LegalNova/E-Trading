@@ -331,17 +331,17 @@
    "explanation": "Te protege si te equivocas en la estimación."
   },
   "u16l1-9": {
-   "prompt": "¿Qué le contestas a Irene?",
+   "prompt": "Irene quiere comprar una acción que ha caído un 60 % porque «ya no puede bajar más». ¿Qué le contestas?",
    "options": [
-    "Claro, ya está en el suelo",
     "Compra el doble para bajar tu precio medio: así recuperas antes",
-    "Primero mira por qué ha caído y cuánto vale el negocio"
+    "Primero mira por qué ha caído y cuánto vale el negocio",
+    "Claro, ya está en el suelo"
    ],
    "explanation": "Un precio bajo solo es oportunidad si está por debajo del valor.",
    "feedback": [
-    "Lo que ha caído un 60 % puede caer otro 60 %.",
     "Doblar sin analizar es apostar más a ciegas.",
-    "Vale… ¿y si cayó porque el negocio se ha roto? Entonces el valor también bajó."
+    "Vale… ¿y si cayó porque el negocio se ha roto? Entonces el valor también bajó.",
+    "Lo que ha caído un 60 % puede caer otro 60 %."
    ],
    "lines": [
     "Esta acción ha caído un 60 %, ¡ya no puede bajar más!",
@@ -676,17 +676,17 @@
    ]
   },
   "u27l4-10": {
-   "prompt": "¿Qué le dices a Marta?",
+   "prompt": "Marta quiere entrar hoy en una moneda nueva porque todo TikTok está ganando con ella. ¿Qué le dices?",
    "options": [
+    "Entra ya, que vuela, y si baja vendes rápido",
     "Mete una parte de tu colchón: lo repones luego",
-    "Espera 48 horas antes de decidir",
-    "Entra ya, que vuela, y si baja vendes rápido"
+    "Espera 48 horas antes de decidir"
    ],
    "explanation": "La prisa es la señal: cuando sientes urgencia, para.",
    "feedback": [
+    "Si entro por miedo a quedarme fuera, lo más probable es que compre cerca del techo.",
     "Eso es lo único que nunca se toca. Y en cripto se puede perder todo lo invertido.",
-    "Vale… Si sigue teniendo sentido en dos días, la meto en mi límite de especulación. Si no, nada.",
-    "Si entro por miedo a quedarme fuera, lo más probable es que compre cerca del techo."
+    "Vale… Si sigue teniendo sentido en dos días, la meto en mi límite de especulación. Si no, nada."
    ],
    "lines": [
     "Todo el mundo en TikTok está ganando con una moneda nueva 🐶",

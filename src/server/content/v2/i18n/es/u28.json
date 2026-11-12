@@ -256,17 +256,17 @@
    ]
   },
   "u28l2-4": {
-   "prompt": "¿Qué le contestas?",
+   "prompt": "Laura perdió 300 € ayer, hoy ha recuperado 50 € y quiere subir el tamaño para recuperarlo todo esta tarde. ¿Qué le contestas?",
    "options": [
+    "Buena idea: ya estás en racha, aprovéchala",
     "Recupéralo con apalancamiento",
-    "Sigue con tu riesgo fijo de siempre",
-    "Buena idea: ya estás en racha, aprovéchala"
+    "Sigue con tu riesgo fijo de siempre"
    ],
    "explanation": "Recuperar pérdidas a la fuerza es la forma más rápida de agrandarlas.",
    "feedback": [
+    "Ganar 50 € no cambia las probabilidades de la siguiente operación.",
     "El apalancamiento solo acelera lo que pase, y la prisa suele hacer que sea malo.",
-    "Vale. Si mi sistema tiene ventaja, se recupera con tiempo, no con prisa.",
-    "Ganar 50 € no cambia las probabilidades de la siguiente operación."
+    "Vale. Si mi sistema tiene ventaja, se recupera con tiempo, no con prisa."
    ],
    "lines": [
     "Ayer perdí 300 € y hoy he recuperado 50 € 😌",
@@ -344,7 +344,7 @@
    ]
   },
   "u28l3-10": {
-   "prompt": "¿Qué le dices a Irene?",
+   "prompt": "Irene se ha puesto alertas de precio en 40 acciones «para no perderse nada». ¿Qué le dices?",
    "options": [
     "Mejor pon 100 alertas",
     "Genial: cuanta más información, mejor decides",
@@ -425,17 +425,17 @@
    ]
   },
   "u28l4-5": {
-   "prompt": "¿Qué le dices en la revisión mensual?",
+   "prompt": "Paula ha ganado un 8 % este mes, pero se saltó el plan en 4 operaciones. ¿Qué le dices en la revisión mensual?",
    "options": [
-    "Si has ganado, da igual saltarse el plan",
+    "Sube el riesgo el mes que viene",
     "Revisa por qué te lo saltaste",
-    "Sube el riesgo el mes que viene"
+    "Si has ganado, da igual saltarse el plan"
    ],
    "explanation": "La revisión mensual mira el proceso, no solo el resultado.",
    "feedback": [
-    "Ganar saltándote el plan te enseña a saltártelo. Un día saldrá caro.",
+    "Eso es exceso de confianza tras un buen mes.",
     "Buena idea. Dos fueron por FOMO y una por venganza. Lo anoto como mis sesgos del mes.",
-    "Eso es exceso de confianza tras un buen mes."
+    "Ganar saltándote el plan te enseña a saltártelo. Un día saldrá caro."
    ],
    "lines": [
     "Este mes he ganado un 8 % 😎",

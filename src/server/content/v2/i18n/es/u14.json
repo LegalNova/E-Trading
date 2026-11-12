@@ -358,17 +358,17 @@
    "explanation": "ESMA impuso límites de apalancamiento y protección frente a saldo negativo, además del cierre al 50 % de la garantía. Nada garantiza no perder ni te devuelve las pérdidas: entre un 74 y un 89 % de los minoristas pierde con CFD."
   },
   "u14l2-11": {
-   "prompt": "¿Qué le contestas a Paula?",
+   "prompt": "Paula ha visto en TikTok que con forex y apalancamiento 1:500 «se vive de esto»: con 200 € movería 100.000 €. ¿Qué le contestas?",
    "options": [
-    "Genial: con tan poco dinero, así se gana más rápido",
+    "Con 1:500, un 0,2 % en contra te deja a cero",
     "Mejor 1:1000, que es más",
-    "Con 1:500, un 0,2 % en contra te deja a cero"
+    "Genial: con tan poco dinero, así se gana más rápido"
    ],
    "explanation": "1 ÷ 500 = 0,2 %. Quien ofrece 1:500 a un minorista europeo no cumple las reglas de ESMA: mala señal.",
    "feedback": [
-    "Y se pierde más rápido: un 0,2 % en contra se lleva tus 200 €.",
+    "¡Uf! Entonces quien me ofrece 1:500 no está jugando con las reglas europeas…",
     "Más apalancamiento solo acerca el momento de perderlo todo.",
-    "¡Uf! Entonces quien me ofrece 1:500 no está jugando con las reglas europeas…"
+    "Y se pierde más rápido: un 0,2 % en contra se lleva tus 200 €."
    ],
    "lines": [
     "Un tiktoker dice que con forex y apalancamiento 1:500 se vive de esto 🤑",
@@ -458,17 +458,17 @@
    ]
   },
   "u14l3-10": {
-   "prompt": "¿Qué le explicas a Lucía?",
+   "prompt": "Lucía no entiende por qué el euro bajó el día que el BCE subió los tipos. ¿Qué le explicas?",
    "options": [
+    "Que es un error del mercado",
     "Que cuenta la sorpresa, no el dato",
-    "Que los tipos no tienen nada que ver con la divisa",
-    "Que es un error del mercado"
+    "Que los tipos no tienen nada que ver con la divisa"
    ],
    "explanation": "En divisas, como en bolsa, el precio ya incorpora lo esperado.",
    "feedback": [
+    "No es un error: el mercado ya esperaba esa subida, o una mayor.",
     "¡Ah! O sea que si se espera +0,50 y suben +0,25, decepciona.",
-    "Tienen mucho que ver, pero frente a lo esperado.",
-    "No es un error: el mercado ya esperaba esa subida, o una mayor."
+    "Tienen mucho que ver, pero frente a lo esperado."
    ],
    "lines": [
     "Ayer el BCE subió tipos y el euro… ¡bajó! 🤯",

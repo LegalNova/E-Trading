@@ -396,7 +396,7 @@
    ]
   },
   "u16l2-13": {
-   "prompt": "Què li respons a la Lumi?",
+   "prompt": "La Lumi no entén com una empresa pot vendre el doble i guanyar menys. Què li contestes?",
    "options": [
     "Que és impossible: si ven el doble, guanya el doble",
     "Que els costos han crescut més que les vendes",
@@ -560,17 +560,17 @@
    ]
   },
   "u16l4-12": {
-   "prompt": "Què li respons a la Lumi?",
+   "prompt": "La Lumi vol vendre la seva empresa preferida perquè aquest any té flux de caixa lliure negatiu. Què li contestes?",
    "options": [
     "Sí, ven-la: caixa negativa és fallida segura",
-    "No passa res, la caixa no importa",
-    "Primer mira per què és negativa"
+    "Primer mira per què és negativa",
+    "No passa res, la caixa no importa"
    ],
    "explanation": "Un FCF negatiu pot venir d'invertir molt (forns, botigues, fàbriques) o d'un negoci que no cobra. El primer pot ser bo; el segon és una alarma. Cal mirar el flux operatiu.",
    "feedback": [
     "Uf, i si és perquè està invertint per créixer?",
-    "Importa: la caixa és un fet; el benefici, una opinió.",
-    "D'acord: si és perquè obre fàbriques noves, pot ser bon senyal."
+    "D'acord: si és perquè obre fàbriques noves, pot ser bon senyal.",
+    "Importa: la caixa és un fet; el benefici, una opinió."
    ],
    "lines": [
     "La meva empresa preferida té flux de caixa lliure negatiu aquest any.",
@@ -631,17 +631,17 @@
    ]
   },
   "u16l5-12": {
-   "prompt": "Què li respons a la Lumi?",
+   "prompt": "La Lumi pregunta si és dolent que el deute net d'una empresa sigui negatiu. Què li contestes?",
    "options": [
-    "Al revés: més caixa que deute",
+    "No vol dir res",
     "Sí: negativa vol dir que deu moltíssim",
-    "No vol dir res"
+    "Al revés: més caixa que deute"
    ],
    "explanation": "Deute net = deute financer − caixa. Si surt negatiu, l'empresa té caixa neta: és la situació més còmoda. Sona malament pel signe, però és una bona notícia.",
    "feedback": [
-    "Ah! Llavors és com Inditex: li sobren diners.",
+    "Sí que vol dir alguna cosa: podria tornar tot el que deu amb la seva caixa.",
     "Negatiu vol dir al revés: la caixa supera el deute.",
-    "Sí que vol dir alguna cosa: podria tornar tot el que deu amb la seva caixa."
+    "Ah! Llavors és com Inditex: li sobren diners."
    ],
    "lines": [
     "El deute net d'aquesta empresa és negatiu.",
@@ -708,7 +708,7 @@
    "explanation": "Mou el preu el que canvia les expectatives: el BPA respecte al consens, els marges i, sobretot, les previsions. El que ja se sabia o coincideix amb el que s'esperava ja és al preu."
   },
   "u16l6-11": {
-   "prompt": "Què li respons a la Lumi?",
+   "prompt": "Demà presenta resultats una empresa de la cartera de la Lumi i tothom espera xifres espectaculars. Què li contestes?",
    "options": [
     "Compra'n més avui: demà es dispararà amb els resultats",
     "Si tothom ho espera, ja és al preu",

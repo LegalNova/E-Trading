@@ -459,17 +459,17 @@
    ]
   },
   "u34l1-10": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "El veí i el perruquer de la Lumi han entrat en una moneda nova, i un ja s'ha comprat un cotxe. Què li contestes?",
    "options": [
+    "Això sol ser senyal d'eufòria",
     "Si el meu perruquer guanya, és que és fàcil",
-    "Doncs hi entro ja, que s'acaba!",
-    "Això sol ser senyal d'eufòria"
+    "Doncs hi entro ja, que s'acaba!"
    ],
    "explanation": "L'eufòria generalitzada és una alarma, no una invitació.",
    "feedback": [
+    "Ben vist! És un dels senyals clàssics de bombolla des del 1637.",
     "Que una cosa hagi pujat no la fa fàcil ni segura.",
-    "Quan fins i tot qui no inverteix mai ja hi és dins, qui queda per comprar?",
-    "Ben vist! És un dels senyals clàssics de bombolla des del 1637."
+    "Quan fins i tot qui no inverteix mai ja hi és dins, qui queda per comprar?"
    ],
    "lines": [
     "El meu veí s'ha comprat un cotxe amb el que ha guanyat amb una moneda nova 🤑",
@@ -567,17 +567,17 @@
    "explanation": "Empreses sense beneficis valorades en milers de milions i sortides a borsa que doblaven el primer dia, amb molta gent nova comprant només perquè pujava. Es van oblidar les valoracions: «les regles d'abans ja no serveixen»."
   },
   "u34l3-10": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi creu que, com que la IA ho canviarà tot, qualsevol empresa d'IA és una bona compra. Què li contestes?",
    "options": [
-    "Sí, com internet el 2000: no podia fallar",
+    "Pot ser real i, tot i així, ser cara",
     "No, la IA és una moda",
-    "Pot ser real i, tot i així, ser cara"
+    "Sí, com internet el 2000: no podia fallar"
    ],
    "explanation": "Encertar amb una tecnologia no garanteix encertar amb la inversió.",
    "feedback": [
-    "Precisament el 2000 internet ho va canviar tot… i el Nasdaq va caure un 78 %.",
+    "Això! El que importa no és només la idea, sinó quant en pagues.",
     "No cal decidir si és una moda: n'hi ha prou amb no pagar qualsevol preu i diversificar.",
-    "Això! El que importa no és només la idea, sinó quant en pagues."
+    "Precisament el 2000 internet ho va canviar tot… i el Nasdaq va caure un 78 %."
    ],
    "lines": [
     "La intel·ligència artificial ho canviarà tot 🤖",
@@ -658,17 +658,17 @@
    "horizon": "els sis anys següents"
   },
   "u34l5-9": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi ho vol posar tot a l'S&P 500 sense diversificar perquè «sempre es recupera». Què li contestes?",
    "options": [
     "Millor ho poso tot al Japó, que ja s'ha recuperat",
-    "Exacte, els EUA no fallaran mai",
-    "Millor no dependre d'un sol país"
+    "Millor no dependre d'un sol país",
+    "Exacte, els EUA no fallaran mai"
    ],
    "explanation": "La història dels EUA és la del mercat que millor ha anat. No està garantit que es repeteixi.",
    "feedback": [
     "Canviar de país continua sent concentrar.",
-    "El 1989 es deia el mateix del Japó, i la seva borsa va trigar 34 anys a tornar-hi.",
-    "Molt bé! L'índex mundial ja inclou els EUA i et cobreix si tenen la seva pròpia dècada perduda."
+    "Molt bé! L'índex mundial ja inclou els EUA i et cobreix si tenen la seva pròpia dècada perduda.",
+    "El 1989 es deia el mateix del Japó, i la seva borsa va trigar 34 anys a tornar-hi."
    ],
    "lines": [
     "L'S&P 500 sempre es recupera 💪",
@@ -782,16 +782,16 @@
    "horizon": "els mesos següents"
   },
   "u34l7-8": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi ho va vendre tot el març del 2020 pensant tornar-hi quan baixés més… i no va baixar mai. Què li contestes?",
    "options": [
-    "Li va passar a molts: decideix abans amb un pla",
     "El millor és no tornar a invertir",
+    "Li va passar a molts: decideix abans amb un pla",
     "Mala sort, la pròxima vegada encertaràs el terra"
    ],
    "explanation": "El pla s'escriu en calma per complir-lo en el pànic.",
    "feedback": [
-    "Això! La teva Declaració de Política d'Inversió existeix per a aquest moment.",
     "Així l'error del març de 2020 també et costaria tots els anys següents.",
+    "Això! La teva Declaració de Política d'Inversió existeix per a aquest moment.",
     "Encertar el terra és gairebé impossible: ningú no el va anunciar per endavant."
    ],
    "lines": [
@@ -881,17 +881,17 @@
    "explanation": "Eufòria, «aquesta vegada és diferent» i crèdit fàcil o palanquejament, amb vendes en pànic al final. Les valoracions prudents són justament el que desapareix en una bombolla, i sempre hi entra molta gent nova."
   },
   "u34l9-2": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi et pregunta què faràs tu quan arribi la pròxima crisi. Què li contestes?",
    "options": [
-    "Ho guardaré tot en liquiditat per comprar quan caigui",
+    "Ho vendré tot just abans que comenci",
     "Tindré coixí, cap deute i un pla escrit",
-    "Ho vendré tot just abans que comenci"
+    "Ho guardaré tot en liquiditat per comprar quan caigui"
    ],
    "explanation": "No es tracta de predir la crisi, sinó d'estar preparat per aguantar-la.",
    "feedback": [
-    "Esperar la crisi fora del mercat pot costar anys de pujades: ningú sap quan arriba.",
+    "Ningú no ha sabut mai quan comença. És un pla que depèn d'endevinar.",
     "Perfecte! No saps quan arribarà, però sí com reaccionaràs.",
-    "Ningú no ha sabut mai quan comença. És un pla que depèn d'endevinar."
+    "Esperar la crisi fora del mercat pot costar anys de pujades: ningú sap quan arriba."
    ],
    "lines": [
     "Algun dia arribarà la pròxima crisi 😬",

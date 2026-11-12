@@ -369,17 +369,17 @@
    ]
   },
   "u7l4-8": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "A la Lumi li han dit que l'IBEX va estar anys sense pujar des del 2007 i pregunta si la borsa espanyola no dona res. Què li contestes?",
    "options": [
+    "És que l'IBEX està mal calculat",
     "Aquest IBEX no compta els dividends",
-    "Té raó: fa molts anys que no dona res",
-    "És que l'IBEX està mal calculat"
+    "Té raó: fa molts anys que no dona res"
    ],
    "explanation": "L'índex de preus només explica mitja història.",
    "feedback": [
+    "Està ben calculat: només mesura una altra cosa, el preu.",
     "Això mateix! L'IBEX 35 amb dividends ha estat molt per sobre del de preus.",
-    "Li falta una part: els dividends.",
-    "Està ben calculat: només mesura una altra cosa, el preu."
+    "Li falta una part: els dividends."
    ],
    "lines": [
     "El meu tiet diu que durant anys l'IBEX no va pujar gens des del 2007 🤷",
@@ -418,34 +418,34 @@
    "explanation": "Són riscos diferents. Una cartera d'accions es compara amb un índex d'accions semblant."
   },
   "u7l3-12": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi creu que el seu fons de l'S&P 500 gairebé no nota si cauen les grans tecnològiques. Què li contestes?",
    "options": [
-    "Sí: són poques empreses de 500",
+    "Ho nota força: aquestes poques pesen moltíssim",
     "No ho nota gens: el fons està diversificat en 500 empreses",
-    "Ho nota força: aquestes poques pesen moltíssim"
+    "Sí: són poques empreses de 500"
    ],
    "explanation": "Comptar empreses enganya («són poques de 500»): en un índex per capitalització pesa el que val cadascuna, i aquestes poques suposen més d'un terç.",
    "feedback": [
-    "Són poques, però pesen més d'un terç de l'índex: si cauen, el teu fons ho nota molt.",
+    "Això mateix! El 2026, unes poques tecnològiques suposen més d'un terç de l'S&P 500.",
     "Diversificat no vol dir repartit per igual: les grans manen.",
-    "Això mateix! El 2026, unes poques tecnològiques suposen més d'un terç de l'S&P 500."
+    "Són poques, però pesen més d'un terç de l'índex: si cauen, el teu fons ho nota molt."
    ],
    "lines": [
     "El meu fons de l'S&P 500 gairebé no nota si cauen les grans tecnològiques, oi?"
    ]
   },
   "u7l5-11": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi va començar l'any amb 5.000 €, hi va posar 1.000 € més, acaba amb 6.300 € i diu que ha guanyat 1.300 €. Què li contestes?",
    "options": [
     "Enhorabona, 1.300 € de guany!",
-    "Part d'això ho vas posar tu",
-    "Has perdut diners"
+    "Has perdut diners",
+    "Part d'això ho vas posar tu"
    ],
    "explanation": "Mirar només quant ha crescut el compte enganya. Per mesurar el que guanyes, resta el que has aportat: si no, et compares amb avantatge.",
    "feedback": [
     "No tot és guany: 1.000 € els vas posar tu. El que aportes no és rendibilitat.",
-    "Això mateix! Has guanyat 300 €: la resta són diners que vas aportar.",
-    "Tampoc: la cartera val més que tot el que hi vas posar."
+    "Tampoc: la cartera val més que tot el que hi vas posar.",
+    "Això mateix! Has guanyat 300 €: la resta són diners que vas aportar."
    ],
    "lines": [
     "Vaig començar l'any amb 5.000 €, hi vaig posar 1.000 € més i l'acabo amb 6.300 €",

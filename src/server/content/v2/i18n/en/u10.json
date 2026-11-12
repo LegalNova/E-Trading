@@ -314,17 +314,17 @@
    ]
   },
   "u10l1-12": {
-   "prompt": "What do you reply?",
+   "prompt": "Lumi is offered a fund that «always ends up winning» and asks whether funds never lose. What do you reply?",
    "options": [
+    "They don't lose: the CNMV supervises them and guarantees the result",
     "If a bank sells it, it's safe",
-    "A fund goes up and down with what it holds",
-    "They don't lose: the CNMV supervises them and guarantees the result"
+    "A fund goes up and down with what it holds"
    ],
    "explanation": "A normal fund guarantees nothing: it's worth what its assets are worth. Being sold by a bank or supervised by the CNMV gives you certainty about the rules and custody, not about returns.",
    "feedback": [
+    "The CNMV supervises funds, but it doesn't guarantee they make money.",
     "The bank sells it, but its value depends on what the fund buys.",
-    "That's it. And the FGD doesn't cover investment funds.",
-    "The CNMV supervises funds, but it doesn't guarantee they make money."
+    "That's it. And the FGD doesn't cover investment funds."
    ],
    "lines": [
     "The bank is offering me a fund and says it «always ends up winning».",
@@ -380,7 +380,7 @@
    "explanation": "Most don't beat their index over the long run and it's hard to know in advance who will; costs explain a large part of it. Some do beat it, but having won one year doesn't predict the next."
   },
   "u10l4-11": {
-   "prompt": "What do you reply?",
+   "prompt": "Lumi's bank recommends a fund that charges 1.8 % a year and says its manager beats the market. What do you reply?",
    "options": [
     "Yes: if the bank says so, and it's the expert, it must be true",
     "First compare it with a cheap index fund",

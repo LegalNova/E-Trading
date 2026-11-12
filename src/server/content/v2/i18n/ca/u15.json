@@ -516,17 +516,17 @@
    "explanation": "L'or físic l'has de guardar i assegurar, i entre el preu de compra i el de venda hi pot haver força diferència. No paga cap cupó i es compra a molts llocs, no només al banc."
   },
   "u15l4-10": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi ha vist un anunci: «Opera petroli amb 1:10 i guanya un 300 % aquest mes». Què li contestes?",
    "options": [
-    "Amb 1:10, un 10 % en contra ho perd tot",
     "Millor 1:100, que és més",
-    "Apunta-t'hi ja! Un 300 % no es veu cada dia"
+    "Apunta-t'hi ja! Un 300 % no es veu cada dia",
+    "Amb 1:10, un 10 % en contra ho perd tot"
    ],
    "explanation": "Amb 1:10, un 10 % en contra et deixa a zero. Els CFD són instruments complexos i estan associats a un risc elevat de perdre diners ràpidament a causa del palanquejament. Entre un 74 i un 89 % dels inversors minoristes perden diners quan negocien amb CFD.",
    "feedback": [
-    "D'acord, millor que entengui què és un ETC abans de tocar res palanquejat.",
     "Més palanquejament, més ràpid a zero.",
-    "Amb 1:10, un 10 % en contra ho perd tot. I prometre un 300 % és un senyal d'alarma."
+    "Amb 1:10, un 10 % en contra ho perd tot. I prometre un 300 % és un senyal d'alarma.",
+    "D'acord, millor que entengui què és un ETC abans de tocar res palanquejat."
    ],
    "lines": [
     "He vist un anunci: «Opera amb petroli a 1:10 i guanya un 300 % aquest mes» 🛢️"

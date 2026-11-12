@@ -310,7 +310,7 @@
    "horizon": "las 10 sesiones siguientes"
   },
   "u24l1-3": {
-   "prompt": "Otro gráfico real, sin nombre ni fecha. ¿Sube o baja después?",
+   "prompt": "Gráfico real, sin nombre ni fecha. ¿Sube o baja después?",
    "options": [
     "Sube",
     "Baja"
@@ -404,16 +404,16 @@
    ]
   },
   "u24l2-12": {
-   "prompt": "¿Qué le dices a Lucía?",
+   "prompt": "Lucía cree que sería mejor arriesgar más porque «ya recuperará lo que caiga». ¿Qué le dices?",
    "options": [
-    "Ojo: cuanto más cae, más cuesta volver",
     "Mejor no invertir nunca",
+    "Ojo: cuanto más cae, más cuesta volver",
     "Sí: lo que cae se recupera con una subida igual"
    ],
    "explanation": "Una caída del 50 % exige una subida del 100 %. Por eso caer menos suele valer más que subir más.",
    "feedback": [
-    "Vale: evitar las grandes caídas puede valer más que buscar grandes subidas.",
     "Tampoco: se trata de no caer tanto, no de quedarse fuera.",
+    "Vale: evitar las grandes caídas puede valer más que buscar grandes subidas.",
     "Eso creía… pero tras un −50 % haría falta un +100 % para volver."
    ],
    "lines": [
@@ -587,17 +587,17 @@
    ]
   },
   "u24l6-13": {
-   "prompt": "¿Qué le dices a Sara?",
+   "prompt": "A Sara le saltó el stop y perdió 100 €, justo lo que arriesgaba. Pregunta si ha sido un desastre. ¿Qué le dices?",
    "options": [
     "No: es −1R, lo previsto",
-    "Sí: perder siempre es un desastre",
-    "Sí: deberías haber quitado el stop"
+    "Sí: deberías haber quitado el stop",
+    "Sí: perder siempre es un desastre"
    ],
    "explanation": "Si salta el stop, el resultado es −1R: una pérdida pequeña y planificada, no un desastre.",
    "feedback": [
     "Cierto: −1R es una pérdida planificada. Lo malo sería perder más por quitar el stop.",
-    "Pero perdí exactamente lo previsto… eso no suena a desastre.",
-    "Sin stop, la pérdida podría haber sido mucho mayor que 1R."
+    "Sin stop, la pérdida podría haber sido mucho mayor que 1R.",
+    "Pero perdí exactamente lo previsto… eso no suena a desastre."
    ],
    "lines": [
     "Mi última operación: saltó el stop y perdí 100 €.",
@@ -657,17 +657,17 @@
    ]
   },
   "u24l7-13": {
-   "prompt": "¿Qué le dices a Paula?",
+   "prompt": "Paula cree que, como su sistema tiene esperanza positiva, puede arriesgar un 20 % por operación. ¿Qué le dices?",
    "options": [
-    "Mejor un 50 %, para aprovecharlo al máximo",
     "Sí: con esperanza positiva no se puede perder",
-    "Una racha mala te sacaría antes"
+    "Una racha mala te sacaría antes",
+    "Mejor un 50 %, para aprovecharlo al máximo"
    ],
    "explanation": "La esperanza positiva se nota con muchas operaciones. Para llegar hasta ahí hay que sobrevivir a las rachas malas con un riesgo pequeño.",
    "feedback": [
-    "Eso solo acelera la ruina: dos fallos seguidos y me quedaría con un 25 %.",
     "Con pocas operaciones aún manda la suerte. Una racha mala al 20 % me sacaría.",
-    "Tiene sentido: mejor un riesgo pequeño para llegar a esa «larga»."
+    "Tiene sentido: mejor un riesgo pequeño para llegar a esa «larga».",
+    "Eso solo acelera la ruina: dos fallos seguidos y me quedaría con un 25 %."
    ],
    "lines": [
     "Mi sistema tiene esperanza positiva.",

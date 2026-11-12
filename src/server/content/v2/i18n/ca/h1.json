@@ -325,17 +325,17 @@
    ]
   },
   "h1l1-3": {
-   "prompt": "Què li contestes?",
+   "prompt": "La Lumi creu que invertir a borsa és com anar al casino. Què li contestes?",
    "options": [
+    "Només si tries bé l'empresa",
     "No: compres trossets d'empreses",
-    "Sí, és pura sort: uns dies guanyes i uns altres perds",
-    "Només si tries bé l'empresa"
+    "Sí, és pura sort: uns dies guanyes i uns altres perds"
    ],
    "explanation": "Al casino els números estan fets perquè perdis. A la borsa compres parts de negocis que generen beneficis, i amb temps i moltes empreses alhora el resultat depèn molt menys de la sort.",
    "feedback": [
+    "Encertar ajuda, però amb 500 empreses alhora ja no depens d'encertar-ne una.",
     "Això. Darrere de cada acció hi ha un negoci real, no una ruleta.",
-    "Al casino la banca sempre guanya. Una empresa que guanya diners sol valer més amb els anys.",
-    "Encertar ajuda, però amb 500 empreses alhora ja no depens d'encertar-ne una."
+    "Al casino la banca sempre guanya. Una empresa que guanya diners sol valer més amb els anys."
    ],
    "lines": [
     "Invertir en borsa és com anar al casino, oi?",
@@ -590,16 +590,16 @@
    "explanation": "Hi veus els quatre preus del període, a més de la variació i el volum. El gràfic no diu per què es va moure ni què va repartir l'empresa."
   },
   "u19l1-11": {
-   "prompt": "Què li contestes?",
+   "prompt": "La Lumi vol posar tots els estalvis en una acció que fa tres mesos que puja. Què li contestes?",
    "options": [
-    "Sí: si fa tres mesos que puja, el més normal és que continuï",
     "El gràfic diu el que va passar, no el que passarà",
+    "Sí: si fa tres mesos que puja, el més normal és que continuï",
     "No: si ha pujat tant, segur que cau"
    ],
    "explanation": "Un gràfic és el registre del que ja va passar. Serveix per veure com s'ha mogut el preu, però no garanteix el que farà: ni que continuï pujant ni que caigui.",
    "feedback": [
-    "Ningú no ho sap. Un gràfic registra el passat: la pujada pot acabar demà.",
     "Això. Pot continuar o girar-se: són probabilitats, no certeses.",
+    "Ningú no ho sap. Un gràfic registra el passat: la pujada pot acabar demà.",
     "Tampoc no ho saps: el gràfic no diu si pujarà o baixarà."
    ],
    "lines": [

@@ -311,17 +311,17 @@
    ]
   },
   "u1l1-11": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi has bought a €25,000 car on credit and thinks she now has €25,000 of net worth. What do you reply?",
    "options": [
-    "Net worth is what you earn each month, so it doesn't change",
     "It depends on what you still owe and what it's worth now",
-    "Yes: the car is worth €25,000"
+    "Yes: the car is worth €25,000",
+    "Net worth is what you earn each month, so it doesn't change"
    ],
    "explanation": "The car adds at what it's worth today, not what it cost, and the loan subtracts. It's tempting to count the purchase price, but the debt and the wear eat into it.",
    "feedback": [
-    "That's your income: net worth is what you build up.",
     "That's it! Net worth is what you own minus what you owe, at today's prices.",
-    "You still have to subtract what you owe on the loan, and the car is worth less every year."
+    "You still have to subtract what you owe on the loan, and the car is worth less every year.",
+    "That's your income: net worth is what you build up."
    ],
    "lines": [
     "I've bought a €25,000 car on finance.",
@@ -525,17 +525,17 @@
    ]
   },
   "u1l4-11": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi's bank pays her 2 % with inflation at 2.7 %, and she thinks at least she's earning something. What do you reply?",
    "options": [
-    "Better take it out and spend it before it's worth less",
     "Yes: 2 % is a gain",
-    "You gain euros, but you lose purchasing power"
+    "You gain euros, but you lose purchasing power",
+    "Better take it out and spend it before it's worth less"
    ],
    "explanation": "If your money earns less than inflation, your real return is negative even if the balance goes up. It's tempting to look only at the 2 %, but what matters is what you can buy with it.",
    "feedback": [
-    "Spending out of fear doesn't protect your future: it just swaps saving for spending.",
     "You gain euros, but prices rise faster than your balance.",
-    "That's it! It earns less than inflation: money you won't need soon can aim higher."
+    "That's it! It earns less than inflation: money you won't need soon can aim higher.",
+    "Spending out of fear doesn't protect your future: it just swaps saving for spending."
    ],
    "lines": [
     "My bank pays me 2 % and inflation is at 2.7 %.",
@@ -611,7 +611,7 @@
    ]
   },
   "u1l6-12": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi has a card at 24 % and €1,000: she can't decide whether to invest it or pay off the card. What do you reply?",
    "options": [
     "Pay off the card first",
     "Invest: the stock market goes up in the long run",

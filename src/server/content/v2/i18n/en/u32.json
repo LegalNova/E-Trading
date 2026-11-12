@@ -389,17 +389,17 @@
    "explanation": "The Comisión Nacional del Mercado de Valores supervises investment services in Spain."
   },
   "u32l1-10": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "A stranger has messaged Lumi on Instagram saying she makes 3 % a day, and sent her a link. What do you say?",
    "options": [
-    "Sign up, you might get lucky",
     "Don't tap it: look it up on the CNMV first",
-    "Give her your details so she can help you get started"
+    "Give her your details so she can help you get started",
+    "Sign up, you might get lucky"
    ],
    "explanation": "Unsolicited contact + impossible returns = scam, even if it comes with a smile.",
    "feedback": [
-    "3 % a day doesn't exist: it's a textbook scam, often with a fake profile.",
     "Nice! «Friends» who end up recommending a platform are a very common scam.",
-    "Your details are exactly what they're after."
+    "Your details are exactly what they're after.",
+    "3 % a day doesn't exist: it's a textbook scam, often with a fake profile."
    ],
    "lines": [
     "A really nice girl messaged me on Instagram 😍",
@@ -658,17 +658,17 @@
    "explanation": "Recommending what to buy based on your situation is a regulated investment service."
   },
   "u32l5-10": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "A YouTuber with 2 million subscribers says you must buy a share NOW, and Lumi believes him. What do you say?",
    "options": [
-    "Check whether he's paid to say it",
+    "Buy, but only with half your savings",
     "If he says it so confidently, buy",
-    "Buy, but only with half your savings"
+    "Check whether he's paid to say it"
    ],
    "explanation": "Before listening to someone, ask yourself what they gain from you buying.",
    "feedback": [
-    "Nice! Conflicts of interest and pressure are two signs to watch for.",
+    "Half your savings because of a video is still far too much.",
     "Confidence sells, but it isn't right any more often. And maybe he already owns it and wants you to push the price up.",
-    "Half your savings because of a video is still far too much."
+    "Nice! Conflicts of interest and pressure are two signs to watch for."
    ],
    "lines": [
     "A YouTuber says you have to buy this share NOW 📈",

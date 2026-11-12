@@ -389,17 +389,17 @@
    "explanation": "La Comisión Nacional del Mercado de Valores supervisa los servicios de inversión en España."
   },
   "u32l1-10": {
-   "prompt": "¿Qué le contestas a Laura?",
+   "prompt": "A Laura le ha escrito por Instagram una desconocida que dice ganar un 3 % diario y le pasa un enlace. ¿Qué le contestas?",
    "options": [
-    "Regístrate, igual tienes suerte",
     "No pinches: búscala antes en la CNMV",
-    "Pásale tus datos para que te ayude a empezar"
+    "Pásale tus datos para que te ayude a empezar",
+    "Regístrate, igual tienes suerte"
    ],
    "explanation": "Contacto no pedido + rentabilidad imposible = estafa, aunque llegue con una sonrisa.",
    "feedback": [
-    "Un 3 % diario no existe: es una estafa de manual, a menudo con un perfil falso.",
     "¡Bien! Las «amistades» que acaban recomendando una plataforma son una estafa muy común.",
-    "Tus datos son justo lo que buscan."
+    "Tus datos son justo lo que buscan.",
+    "Un 3 % diario no existe: es una estafa de manual, a menudo con un perfil falso."
    ],
    "lines": [
     "Me ha escrito por Instagram una chica muy maja 😍",
@@ -658,17 +658,17 @@
    "explanation": "Recomendar qué comprar según tu situación es un servicio de inversión regulado."
   },
   "u32l5-10": {
-   "prompt": "¿Qué le contestas a Marta?",
+   "prompt": "Un youtuber con 2 millones de suscriptores dice que hay que comprar YA una acción, y Marta le cree. ¿Qué le contestas?",
    "options": [
-    "Comprueba si le pagan por decirlo",
+    "Compra pero solo con la mitad de tus ahorros",
     "Si lo dice con tanta seguridad, compra",
-    "Compra pero solo con la mitad de tus ahorros"
+    "Comprueba si le pagan por decirlo"
    ],
    "explanation": "Antes de hacer caso a alguien, pregúntate qué gana él con tu compra.",
    "feedback": [
-    "¡Bien! Conflictos de interés y prisa son dos señales a vigilar.",
+    "La mitad de tus ahorros por un vídeo sigue siendo demasiado.",
     "La seguridad vende, pero no acierta más. Y quizá él ya la tiene y le conviene que subas el precio.",
-    "La mitad de tus ahorros por un vídeo sigue siendo demasiado."
+    "¡Bien! Conflictos de interés y prisa son dos señales a vigilar."
    ],
    "lines": [
     "Un youtuber dice que hay que comprar YA esta acción 📈",

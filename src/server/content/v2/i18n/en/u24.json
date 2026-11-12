@@ -310,7 +310,7 @@
    "horizon": "the next 10 sessions"
   },
   "u24l1-3": {
-   "prompt": "Another real chart, with no name or date. Does it go up or down afterwards?",
+   "prompt": "A real chart, with no name or date. Does it go up or down afterwards?",
    "options": [
     "Up",
     "Down"
@@ -404,16 +404,16 @@
    ]
   },
   "u24l2-12": {
-   "prompt": "What do you tell Lumi?",
+   "prompt": "Lumi thinks it would be better to take more risk because she'll «recover whatever falls». What do you tell her?",
    "options": [
-    "Careful: the more it falls, the harder to get back",
     "Better never to invest",
+    "Careful: the more it falls, the harder to get back",
     "Yes: whatever falls is recovered with an equal rise"
    ],
    "explanation": "A 50 % fall requires a 100 % rise. That's why falling less is usually worth more than rising more.",
    "feedback": [
-    "Okay: avoiding big falls can be worth more than chasing big rises.",
     "Not that either: it's about not falling so much, not staying out.",
+    "Okay: avoiding big falls can be worth more than chasing big rises.",
     "That's what I thought… but after −50 % you'd need +100 % to get back."
    ],
    "lines": [
@@ -587,17 +587,17 @@
    ]
   },
   "u24l6-13": {
-   "prompt": "What do you tell Lumi?",
+   "prompt": "Lumi's stop was hit and she lost €100, exactly what she was risking. She asks whether it was a disaster. What do you tell her?",
    "options": [
     "No: it's −1R, as planned",
-    "Yes: losing is always a disaster",
-    "Yes: you should have removed the stop"
+    "Yes: you should have removed the stop",
+    "Yes: losing is always a disaster"
    ],
    "explanation": "If the stop is hit, the result is −1R: a small, planned loss, not a disaster.",
    "feedback": [
     "True: −1R is a planned loss. The bad thing would be losing more by removing the stop.",
-    "But I lost exactly what I'd planned… that doesn't sound like a disaster.",
-    "Without a stop, the loss could have been much bigger than 1R."
+    "Without a stop, the loss could have been much bigger than 1R.",
+    "But I lost exactly what I'd planned… that doesn't sound like a disaster."
    ],
    "lines": [
     "My last trade: the stop was hit and I lost €100.",
@@ -657,17 +657,17 @@
    ]
   },
   "u24l7-13": {
-   "prompt": "What do you tell Lumi?",
+   "prompt": "Lumi thinks that because her system has positive expectancy, she can risk 20 % per trade. What do you tell her?",
    "options": [
-    "Better 50 %, to make the most of it",
     "Yes: with positive expectancy you can't lose",
-    "A losing streak would knock you out first"
+    "A losing streak would knock you out first",
+    "Better 50 %, to make the most of it"
    ],
    "explanation": "Positive expectancy shows up over many trades. To get there you have to survive losing streaks with a small risk.",
    "feedback": [
-    "That only speeds up ruin: two losses in a row and I'd be left with 25 %.",
     "With few trades, luck still rules. A losing streak at 20 % would knock me out.",
-    "Makes sense: better a small risk so I get to that «long run»."
+    "Makes sense: better a small risk so I get to that «long run».",
+    "That only speeds up ruin: two losses in a row and I'd be left with 25 %."
    ],
    "lines": [
     "My system has positive expectancy.",

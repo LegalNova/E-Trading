@@ -227,17 +227,17 @@
    "explanation": "A monthly cap cuts off revenge-trading spirals."
   },
   "u26l1-5": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "Lumi's trading plan is «buy low and sell high». What do you say?",
    "options": [
     "Perfect, that's everyone's plan",
-    "That's a wish, not a plan",
-    "You don't need a plan if you've got intuition"
+    "You don't need a plan if you've got intuition",
+    "That's a wish, not a plan"
    ],
    "explanation": "A plan is a set of testable rules, not good intentions.",
    "feedback": [
     "That's the problem: it doesn't say when I enter, where the stop is or how much I risk.",
-    "OK… Entry at a support with a reversal candle, stop below the low, 1 % risk and exit at 2R. Better?",
-    "Intuition can't be reviewed or improved. A written plan can."
+    "Intuition can't be reviewed or improved. A written plan can.",
+    "OK… Entry at a support with a reversal candle, stop below the low, 1 % risk and exit at 2R. Better?"
    ],
    "lines": [
     "I've got my trading plan! 📝",
@@ -310,17 +310,17 @@
    "explanation": "It combines your win rate with your average win and loss."
   },
   "u26l2-10": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi doesn't want to keep a journal because she «already remembers her trades». What do you reply?",
    "options": [
     "Only log the winners",
-    "You're right, memory is more than enough for this",
-    "Without a journal you can't see your mistakes"
+    "Without a journal you can't see your mistakes",
+    "You're right, memory is more than enough for this"
    ],
    "explanation": "What you don't measure, you can't improve.",
    "feedback": [
     "Then your journal would say you're a genius… and it would ruin you.",
-    "Your memory keeps the trade that went brilliantly and forgets the five small losses.",
-    "OK… If in 20 trades I find out I lose when I trade in a rush, it's worth it."
+    "OK… If in 20 trades I find out I lose when I trade in a rush, it's worth it.",
+    "Your memory keeps the trade that went brilliantly and forgets the five small losses."
    ],
    "lines": [
     "Keeping a journal is such a drag 😩",
@@ -448,7 +448,7 @@
    ]
   },
   "u26l4-6": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi has made 20 % this month on the simulator and asks whether she can put her savings in now. What do you reply?",
    "options": [
     "Yes, and put it all in at once to ride the streak",
     "First, more logged trades",

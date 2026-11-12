@@ -311,17 +311,17 @@
    ]
   },
   "u1l1-11": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi s'ha comprat un cotxe de 25.000 € a terminis i creu que ja té 25.000 € de patrimoni. Què li contestes?",
    "options": [
-    "El patrimoni és el que cobres cada mes, així que no canvia",
     "Depèn del que encara deus i del que val avui",
-    "Sí: el cotxe val 25.000 €"
+    "Sí: el cotxe val 25.000 €",
+    "El patrimoni és el que cobres cada mes, així que no canvia"
    ],
    "explanation": "El cotxe suma pel que val avui, no pel que va costar, i el préstec resta. El temptador és comptar el preu de compra, però el deute i el desgast se'l mengen.",
    "feedback": [
-    "Això és la teva renda: el patrimoni és el que acumules.",
     "Això! El patrimoni és el que tens menys el que deus, a preu d'avui.",
-    "Falta restar el que deus del préstec, i el cotxe val menys cada any."
+    "Falta restar el que deus del préstec, i el cotxe val menys cada any.",
+    "Això és la teva renda: el patrimoni és el que acumules."
    ],
    "lines": [
     "M'he comprat un cotxe de 25.000 € a terminis.",
@@ -525,17 +525,17 @@
    ]
   },
   "u1l4-11": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "El banc de la Lumi li dona un 2 % amb la inflació al 2,7 %, i ella creu que almenys guanya alguna cosa. Què li contestes?",
    "options": [
-    "Millor treu-los i gasta'ls abans que valguin menys",
     "Sí: un 2 % és guanyar",
-    "Guanyes euros, però perds poder de compra"
+    "Guanyes euros, però perds poder de compra",
+    "Millor treu-los i gasta'ls abans que valguin menys"
    ],
    "explanation": "Si els teus diners rendeixen menys que la inflació, la teva rendibilitat real és negativa encara que el saldo pugi. El temptador és mirar només el 2 %, però el que importa és el que pots comprar amb ells.",
    "feedback": [
-    "Gastar per por no protegeix el teu futur: només canvia estalvi per consum.",
     "Guanyes euros, però els preus pugen més de pressa que el teu saldo.",
-    "Això! Rendeix menys que la inflació: el que no necessitis aviat pot buscar més."
+    "Això! Rendeix menys que la inflació: el que no necessitis aviat pot buscar més.",
+    "Gastar per por no protegeix el teu futur: només canvia estalvi per consum."
    ],
    "lines": [
     "El meu banc em dona un 2 % i la inflació és al 2,7 %.",
@@ -611,7 +611,7 @@
    ]
   },
   "u1l6-12": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi té una targeta al 24 % i 1.000 €: dubta entre invertir-los o pagar la targeta. Què li contestes?",
    "options": [
     "Paga primer la targeta",
     "Inverteix: la borsa puja a llarg termini",

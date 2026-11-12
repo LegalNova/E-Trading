@@ -525,17 +525,17 @@
    ]
   },
   "u8l4-12": {
-   "prompt": "What do you reply?",
+   "prompt": "Lumi's company is going to issue new shares and she doesn't plan to buy any. She asks whether it affects her. What do you reply?",
    "options": [
-    "Yes: if you don't join in, your share falls",
     "No: your shares are still exactly the same ones",
-    "Yes: they take away some of your shares"
+    "Yes: they take away some of your shares",
+    "Yes: if you don't join in, your share falls"
    ],
    "explanation": "In a capital increase new shares are issued: if you don't buy the ones you're entitled to, your percentage falls (dilution). It's tempting to think nothing happens because you keep your shares, but the total has grown.",
    "feedback": [
-    "That's it. There are more shares and you have the same ones: you get diluted.",
     "The same shares, but of a pie with more slices: your share falls.",
-    "Nobody takes anything from you: what falls is your percentage."
+    "Nobody takes anything from you: what falls is your percentage.",
+    "That's it. There are more shares and you have the same ones: you get diluted."
    ],
    "lines": [
     "My company is going to raise capital with new shares.",
@@ -577,17 +577,17 @@
    "explanation": "It's the company's value on the stock market."
   },
   "u8l5-10": {
-   "prompt": "What do you say?",
+   "prompt": "Lumi wants to move everything into small caps because «small companies rise more». What do you say?",
    "options": [
     "No, small caps never go up",
-    "Yes, in the long run small caps always end up winning",
-    "They can return more, but with more risk"
+    "They can return more, but with more risk",
+    "Yes, in the long run small caps always end up winning"
    ],
    "explanation": "Size changes the risk profile, but it doesn't guarantee a result.",
    "feedback": [
     "Some small caps become giants; the hard part is knowing which ones in advance.",
-    "Not always: there have been periods of many years in which large caps clearly beat them.",
-    "That's it! More potential, more scares and years when they do worse."
+    "That's it! More potential, more scares and years when they do worse.",
+    "Not always: there have been periods of many years in which large caps clearly beat them."
    ],
    "lines": [
     "Small caps go up more than large caps, right?",

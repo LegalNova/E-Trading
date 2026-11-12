@@ -453,16 +453,16 @@
    ]
   },
   "u6l2-12": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi creu que amb un bròquer de 0 comissions comprar i vendre cada dia li surt gratis. Què li contestes?",
    "options": [
-    "Només pagues si perds diners",
     "No: cada compra i cada venda paga la forquilla",
+    "Només pagues si perds diners",
     "Exacte: si el bròquer no cobra comissió, operar no costa res"
    ],
    "explanation": "«0 comissions» no és gratis: l'spread i el lliscament es paguen sempre, i es multipliquen amb cada operació.",
    "feedback": [
-    "Els costos es paguen a cada operació, també en les que guanyes.",
     "Això mateix! Els costos d'operar se sumen a cada operació, guanyis o perdis.",
+    "Els costos es paguen a cada operació, també en les que guanyes.",
     "Cada volta paga la forquilla: compres a l'ask i vens al bid, cobri o no comissió el bròquer."
    ],
    "lines": [
@@ -470,16 +470,16 @@
    ]
   },
   "u6l5-11": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi vol posar l'objectiu un 50 % per sobre del preu per guanyar més. Què li contestes?",
    "options": [
-    "Millor no posar objectiu i vendre a ull",
     "Millor a prop del màxim anterior",
+    "Millor no posar objectiu i vendre a ull",
     "Bona idea: com més lluny, més guanyes"
    ],
    "explanation": "L'objectiu llunyà sembla que guanya més, però si no es toca no guanya res. A prop del màxim anterior sol aparèixer venda, i allà l'objectiu té opcions reals.",
    "feedback": [
-    "Sense objectiu decideixen l'avarícia o la por, just en el pitjor moment.",
     "Això mateix! Un objectiu raonable es toca més sovint: guanyar una mica menys, però de debò.",
+    "Sense objectiu decideixen l'avarícia o la por, just en el pitjor moment.",
     "Només si hi arriba. Un objectiu massa llunyà pot no tocar-se mai i acabar a l'stop."
    ],
    "lines": [

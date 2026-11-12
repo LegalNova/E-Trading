@@ -395,16 +395,16 @@
    "explanation": "Es una entidad como cualquier otra: primero la seguridad."
   },
   "u33l3-10": {
-   "prompt": "¿Qué le contestas a Paula?",
+   "prompt": "Paula usa una app «gratis» que le manda avisos de acciones que suben, y hoy ha hecho 8 compras. ¿Qué le contestas?",
    "options": [
-    "¡Genial! Cuanto más operes, más aprendes",
     "¿Esas 8 compras estaban en tu plan?",
+    "¡Genial! Cuanto más operes, más aprendes",
     "Activa también las alertas de cripto"
    ],
    "explanation": "Una app puede ser barata y a la vez empujarte a operar demasiado.",
    "feedback": [
-    "Más operaciones suele significar más costes y más decisiones impulsivas.",
     "¡Bien! «Gratis» casi nunca es gratis, y las notificaciones no son un plan.",
+    "Más operaciones suele significar más costes y más decisiones impulsivas.",
     "Más alertas, más tentaciones."
    ],
    "lines": [
@@ -473,7 +473,7 @@
    "explanation": "Lo exige la normativa europea MiFID para el asesoramiento y la gestión de carteras."
   },
   "u33l4-10": {
-   "prompt": "¿Qué le contestas a Paula?",
+   "prompt": "Paula no quiere estar pendiente de la bolsa y duda entre un robo-advisor o hacerlo ella. ¿Qué le contestas?",
    "options": [
     "Ninguno, mejor un fondo de banco con gestor",
     "Depende de si vas a ser constante",

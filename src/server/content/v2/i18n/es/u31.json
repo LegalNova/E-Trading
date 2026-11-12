@@ -413,17 +413,17 @@
    ]
   },
   "u31l1-13": {
-   "prompt": "¿Qué le contestas a Ana?",
+   "prompt": "Ana ha cobrado dividendos y ha ganado vendiendo un ETF, y pregunta si eso se suma a su nómina en la renta. ¿Qué le contestas?",
    "options": [
+    "Sí: todo va junto con la nómina",
     "No: va a la base del ahorro",
-    "No tributa: hasta 6.000 € es gratis",
-    "Sí: todo va junto con la nómina"
+    "No tributa: hasta 6.000 € es gratis"
    ],
    "explanation": "Dividendos, intereses y ganancias por ventas van a la base del ahorro, separada de la nómina. El error tentador es creer que los primeros 6.000 € están exentos: pagan el 19 %.",
    "feedback": [
+    "No: la nómina va a la base general y tus inversiones, a la del ahorro, con su escala.",
     "¡Eso es! Y con 2.600 € en total, todo paga el 19 %.",
-    "No es gratis: los primeros 6.000 € pagan el 19 %, el tipo más bajo.",
-    "No: la nómina va a la base general y tus inversiones, a la del ahorro, con su escala."
+    "No es gratis: los primeros 6.000 € pagan el 19 %, el tipo más bajo."
    ],
    "lines": [
     "Este año he cobrado 600 € de dividendos y he ganado 2.000 € vendiendo un ETF.",
@@ -618,17 +618,17 @@
    ]
   },
   "u31l4-12": {
-   "prompt": "¿Qué le contestas a Ana?",
+   "prompt": "Ana tiene un ETF del S&P 500 con mucha ganancia y pregunta si puede traspasarlo a uno mundial sin pagar, como un fondo. ¿Qué le contestas?",
    "options": [
+    "Mejor no invertir más hasta decidir",
     "Sí, los ETF se traspasan igual que los fondos",
-    "No: venderlo tributa; mejor déjalo",
-    "Mejor no invertir más hasta decidir"
+    "No: venderlo tributa; mejor déjalo"
    ],
    "explanation": "Los ETF no tienen el traspaso de los fondos: cada venta tributa. Si ya tienes ganancias, suele ser mejor no vender y dirigir las aportaciones nuevas al producto que prefieres.",
    "feedback": [
+    "Parar tus aportaciones no arregla nada: el tiempo invertido también cuenta.",
     "Ojalá. En general, vender un ETF tributa como vender una acción.",
-    "¡Eso! Sin vender no pagas, y las aportaciones nuevas ya van al mundial.",
-    "Parar tus aportaciones no arregla nada: el tiempo invertido también cuenta."
+    "¡Eso! Sin vender no pagas, y las aportaciones nuevas ya van al mundial."
    ],
    "lines": [
     "Tengo un ETF del S&P 500 con mucha ganancia.",
@@ -689,17 +689,17 @@
    ]
   },
   "u31l5-12": {
-   "prompt": "¿Qué le contestas a Nora?",
+   "prompt": "Nora quiere comprar una empresa solo porque paga un dividendo del 8 %: «es dinero gratis». ¿Qué le contestas?",
    "options": [
-    "Sí: un 8 % gratis cada año, pase lo que pase",
     "No es gratis: el precio baja lo que paga",
-    "Solo si la empresa es de EE. UU."
+    "Solo si la empresa es de EE. UU.",
+    "Sí: un 8 % gratis cada año, pase lo que pase"
    ],
    "explanation": "El dividendo sale del valor de la empresa: tu dinero pasa de acciones a efectivo, y ese efectivo tributa. Un dividendo alto no basta para comprar: importa el negocio que lo paga.",
    "feedback": [
-    "No es gratis: al pagarlo, el precio de la acción baja más o menos esa cantidad.",
     "¡Bien! Un dividendo alto puede venir de un negocio en apuros.",
-    "El país no lo convierte en gratis, y fuera puede haber retención extra."
+    "El país no lo convierte en gratis, y fuera puede haber retención extra.",
+    "No es gratis: al pagarlo, el precio de la acción baja más o menos esa cantidad."
    ],
    "lines": [
     "Esta empresa paga un dividendo del 8 % al año.",

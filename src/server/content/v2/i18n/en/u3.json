@@ -278,17 +278,17 @@
    ]
   },
   "u3l1-12": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi is offered a car at 0 % TIN and thinks financing it is free. What do you reply?",
    "options": [
     "Ask them to stretch the term so you pay less",
-    "First ask for the APR and the total cost",
-    "Sign: at 0 % you pay nothing"
+    "Sign: at 0 % you pay nothing",
+    "First ask for the APR and the total cost"
    ],
    "explanation": "A 0 % nominal rate can hide opening fees or tied insurance that only show up in the APR and the total to pay. It's tempting to stick with the «0 %», but what you compare is the APR.",
    "feedback": [
     "A lower payment, but more months paying interest and fees.",
-    "That's it! With fees and insurance, a 0 % nominal rate can turn out expensive.",
-    "The nominal rate doesn't include fees or compulsory insurance: look at the APR."
+    "The nominal rate doesn't include fees or compulsory insurance: look at the APR.",
+    "That's it! With fees and insurance, a 0 % nominal rate can turn out expensive."
    ],
    "lines": [
     "The dealer is offering me the car at a 0 % nominal rate.",
@@ -329,17 +329,17 @@
    "explanation": "Cheap, for something that lasts and with an affordable payment."
   },
   "u3l2-8": {
-   "prompt": "What do you tell Lumi?",
+   "prompt": "Lumi wants a €1,200 phone and the shop will finance it over 24 months, «only €60 a month». What do you tell her?",
    "options": [
-    "Great, that way you won't notice it!",
+    "Better get a €2,000 one, the payment barely goes up",
     "Look at the APR and how much you'll pay in total",
-    "Better get a €2,000 one, the payment barely goes up"
+    "Great, that way you won't notice it!"
    ],
    "explanation": "Before financing a treat, multiply the payment by the number of months.",
    "feedback": [
-    "You will notice: 60 × 24 = €1,440. You pay €240 more for something that will be worth much less in 2 years.",
+    "That only stretches the debt for something that loses value very quickly.",
     "Nice! 60 × 24 = €1,440: €240 in interest. Saving up for a few months might work out better.",
-    "That only stretches the debt for something that loses value very quickly."
+    "You will notice: 60 × 24 = €1,440. You pay €240 more for something that will be worth much less in 2 years."
    ],
    "lines": [
     "I want to buy the new €1,200 phone",
@@ -570,17 +570,17 @@
    "explanation": "What you no longer pay is a guaranteed gain equal to the interest rate."
   },
   "u3l5-9": {
-   "prompt": "What do you tell Lumi?",
+   "prompt": "Lumi has a mortgage at 2 % and €200 to spare each month: she can't decide whether to pay it down or invest. What do you tell her?",
    "options": [
+    "It depends: compare that 2 % with long-term investing",
     "Invest in whatever has gone up most this year",
-    "Always pay it off: any debt is bad and you should get rid of it",
-    "It depends: compare that 2 % with long-term investing"
+    "Always pay it off: any debt is bad and you should get rid of it"
    ],
    "explanation": "Paying off gives a guaranteed return; investing, an expected one. With cheap debt, both options can make sense.",
    "feedback": [
+    "That's it: with cheap debt there's no single answer; what matters is understanding what you're comparing.",
     "That's not comparing: it's chasing trends.",
-    "Not always: at 2 % it's cheap debt. It depends on your cushion, your time horizon and your peace of mind.",
-    "That's it: with cheap debt there's no single answer; what matters is understanding what you're comparing."
+    "Not always: at 2 % it's cheap debt. It depends on your cushion, your time horizon and your peace of mind."
    ],
    "lines": [
     "I've got a mortgage at 2 % and €200 a month left over.",

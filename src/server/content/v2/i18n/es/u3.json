@@ -278,17 +278,17 @@
    ]
   },
   "u3l1-12": {
-   "prompt": "¿Qué le contestas a Laura?",
+   "prompt": "A Laura le ofrecen un coche al 0 % TIN y cree que financiarlo es gratis. ¿Qué le contestas?",
    "options": [
     "Pide que te alarguen el plazo para pagar menos",
-    "Antes pide la TAE y el total que vas a pagar",
-    "Firma: al 0 % no pagas nada"
+    "Firma: al 0 % no pagas nada",
+    "Antes pide la TAE y el total que vas a pagar"
    ],
    "explanation": "Un 0 % TIN puede esconder comisiones de apertura o seguros vinculados que solo aparecen en la TAE y en el total a pagar. Lo tentador es quedarse con el «0 %», pero lo que se compara es la TAE.",
    "feedback": [
     "Cuota más baja, pero más meses pagando intereses y comisiones.",
-    "¡Eso! Con comisiones y seguros, un 0 % TIN puede salir caro.",
-    "El TIN no incluye comisiones ni seguros obligatorios: mira la TAE."
+    "El TIN no incluye comisiones ni seguros obligatorios: mira la TAE.",
+    "¡Eso! Con comisiones y seguros, un 0 % TIN puede salir caro."
    ],
    "lines": [
     "El concesionario me ofrece el coche al 0 % TIN.",
@@ -329,17 +329,17 @@
    "explanation": "Barata, para algo que dura y con una cuota asumible."
   },
   "u3l2-8": {
-   "prompt": "¿Qué le dices a Paula?",
+   "prompt": "Paula quiere un móvil de 1.200 € y la tienda se lo financia a 24 meses, «solo 60 € al mes». ¿Qué le dices?",
    "options": [
-    "¡Genial, así no se nota!",
+    "Mejor uno de 2.000 €, la cuota sube poco",
     "Mira la TAE y cuánto pagas en total",
-    "Mejor uno de 2.000 €, la cuota sube poco"
+    "¡Genial, así no se nota!"
    ],
    "explanation": "Antes de financiar un capricho, multiplica la cuota por los meses.",
    "feedback": [
-    "Se nota: 60 × 24 = 1.440 €. Pagas 240 € más por algo que en 2 años valdrá mucho menos.",
+    "Así solo alargas la deuda por algo que pierde valor muy rápido.",
     "¡Bien! 60 × 24 = 1.440 €: 240 € de intereses. Quizá ahorrar unos meses salga mejor.",
-    "Así solo alargas la deuda por algo que pierde valor muy rápido."
+    "Se nota: 60 × 24 = 1.440 €. Pagas 240 € más por algo que en 2 años valdrá mucho menos."
    ],
    "lines": [
     "Me quiero comprar el móvil nuevo de 1.200 € 📱",
@@ -570,17 +570,17 @@
    "explanation": "Lo que dejas de pagar es una ganancia segura igual al tipo de interés."
   },
   "u3l5-9": {
-   "prompt": "¿Qué le contestas a Paula?",
+   "prompt": "Paula tiene una hipoteca al 2 % y le sobran 200 € al mes: duda entre amortizar o invertir. ¿Qué le contestas?",
    "options": [
+    "Depende: compara ese 2 % con invertir a largo plazo",
     "Invierte en lo que más haya subido este año",
-    "Siempre amortizar: cualquier deuda es mala y hay que quitársela",
-    "Depende: compara ese 2 % con invertir a largo plazo"
+    "Siempre amortizar: cualquier deuda es mala y hay que quitársela"
    ],
    "explanation": "Amortizar da una rentabilidad segura; invertir, una esperada. Con deuda barata, las dos opciones pueden tener sentido.",
    "feedback": [
+    "Eso: con deuda barata no hay una sola respuesta; lo importante es entender qué comparas.",
     "Eso no es comparar: es perseguir modas.",
-    "No siempre: al 2 % es deuda barata. Depende de tu colchón, tu plazo y tu tranquilidad.",
-    "Eso: con deuda barata no hay una sola respuesta; lo importante es entender qué comparas."
+    "No siempre: al 2 % es deuda barata. Depende de tu colchón, tu plazo y tu tranquilidad."
    ],
    "lines": [
     "Tengo una hipoteca al 2 % y me sobran 200 € al mes.",

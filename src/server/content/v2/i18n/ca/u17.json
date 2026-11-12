@@ -389,16 +389,16 @@
    "explanation": "Compara el PER amb el creixement: 30 entre 30 dona un PEG d'1; 20 entre 5, de 4; 10 entre 2, de 5. El PER més baix tempta, però no és barat si l'empresa gairebé no creix."
   },
   "u17l2-13": {
-   "prompt": "Què li respons a la Lumi?",
+   "prompt": "La Lumi pregunta si un banc que cotitza a la meitat del seu valor comptable és una ganga segura. Què li contestes?",
    "options": [
-    "El P/VC no serveix per a bancs",
     "Mira abans per què el mercat desconfia",
+    "El P/VC no serveix per a bancs",
     "Sí, és una ganga segura: compra tot el que puguis"
    ],
    "explanation": "En bancs i asseguradores el P/VC és molt útil, però un de molt baix sol indicar que el mercat dubta del que val el seu balanç. Barat no és el mateix que segur.",
    "feedback": [
-    "Al contrari: en bancs és una de les ràtios més útils.",
     "D'acord: potser els seus préstecs valen menys del que diu.",
+    "Al contrari: en bancs és una de les ràtios més útils.",
     "Si el mercat dubta dels seus préstecs, aquest valor comptable es pot encongir."
    ],
    "lines": [
@@ -462,17 +462,17 @@
    ]
   },
   "u17l3-12": {
-   "prompt": "Què li respons a la Lumi?",
+   "prompt": "La Lumi creu que una empresa amb un ROE del 60 % és el millor negoci del món. Què li contestes?",
    "options": [
-    "El ROE no serveix de res",
     "Sí: amb un ROE tan alt, compra-la ja sense dubtar",
-    "Mira abans el seu deute i el seu ROIC"
+    "Mira abans el seu deute i el seu ROIC",
+    "El ROE no serveix de res"
    ],
    "explanation": "Un ROE molt alt pot sortir d'un gran negoci o de molt deute. El ROIC, que compta tot el capital, diu quina de les dues coses és.",
    "feedback": [
-    "Serveix, però cal mirar-lo juntament amb el deute i el ROIC.",
     "Un ROE així pot venir del deute més que del negoci.",
-    "Tens raó: amb poc patrimoni, qualsevol benefici sembla enorme."
+    "Tens raó: amb poc patrimoni, qualsevol benefici sembla enorme.",
+    "Serveix, però cal mirar-lo juntament amb el deute i el ROIC."
    ],
    "lines": [
     "Aquesta empresa té un ROE del 60 %.",
@@ -589,7 +589,7 @@
    "explanation": "Futur, descompte, valor terminal i comparació."
   },
   "u17l5-11": {
-   "prompt": "Què li respons a la Lumi?",
+   "prompt": "El DCF de la Lumi diu que una acció val 47,32 € exactament. Què li contestes?",
    "options": [
     "Millor pensa en un rang de valors",
     "Els DCF no serveixen per a res",
@@ -671,17 +671,17 @@
    ]
   },
   "u17l6-13": {
-   "prompt": "Què li respons a la Lumi?",
+   "prompt": "La Lumi ho vol vendre tot perquè diuen que el mercat és caríssim, i tornar-hi a entrar quan caigui. Què li contestes?",
    "options": [
+    "El CAPE no diu quan: ajusta el que esperes",
     "Sí, surt ja",
-    "No passa res: aquesta vegada és diferent, les empreses guanyen més",
-    "El CAPE no diu quan: ajusta el que esperes"
+    "No passa res: aquesta vegada és diferent, les empreses guanyen més"
    ],
    "explanation": "Sortir i tornar a entrar obliga a encertar dues vegades. Un CAPE alt demana expectatives més modestes i diversificar per països, no apostar per una data.",
    "feedback": [
+    "Tens raó: hauria d'encertar dues vegades, en sortir i en tornar.",
     "Pot continuar car anys: el Nasdaq va continuar pujant fins al març del 2000.",
-    "«Aquesta vegada és diferent» s'ha dit abans de cada bombolla: pagar car deixa menys marge.",
-    "Tens raó: hauria d'encertar dues vegades, en sortir i en tornar."
+    "«Aquesta vegada és diferent» s'ha dit abans de cada bombolla: pagar car deixa menys marge."
    ],
    "lines": [
     "Diuen que el mercat està caríssim.",

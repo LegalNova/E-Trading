@@ -314,17 +314,17 @@
    ]
   },
   "u10l1-12": {
-   "prompt": "Què li contestes?",
+   "prompt": "A la Lumi li ofereixen un fons que «sempre acaba guanyant» i pregunta si els fons no perden mai. Què li contestes?",
    "options": [
+    "No perden: la CNMV els supervisa i en garanteix el resultat",
     "Si el ven un banc, és segur",
-    "Un fons puja i baixa amb el que té a dins",
-    "No perden: la CNMV els supervisa i en garanteix el resultat"
+    "Un fons puja i baixa amb el que té a dins"
    ],
    "explanation": "Un fons normal no garanteix res: val el que valen els seus actius. Que el vengui un banc o el supervisi la CNMV dona seguretat sobre les regles i la custòdia, no sobre la rendibilitat.",
    "feedback": [
+    "La CNMV supervisa els fons, però no garanteix que guanyin.",
     "El banc el ven, però el seu valor depèn del que compra el fons.",
-    "Això. I l'FGD no cobreix els fons d'inversió.",
-    "La CNMV supervisa els fons, però no garanteix que guanyin."
+    "Això. I l'FGD no cobreix els fons d'inversió."
    ],
    "lines": [
     "El banc m'ofereix un fons i diu que «sempre acaba guanyant».",
@@ -380,7 +380,7 @@
    "explanation": "La majoria no baten el seu índex a llarg termini i és difícil saber per endavant qui ho farà; els costos n'expliquen bona part. Alguns sí que el baten, però haver guanyat un any no prediu el següent."
   },
   "u10l4-11": {
-   "prompt": "Què li contestes?",
+   "prompt": "El banc de la Lumi li recomana un fons que cobra un 1,8 % l'any i diu que el seu gestor supera el mercat. Què li contestes?",
    "options": [
     "Sí: si ho diu el banc, que és expert, deu ser veritat",
     "Abans compara'l amb un indexat barat",

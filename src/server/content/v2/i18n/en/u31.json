@@ -413,17 +413,17 @@
    ]
   },
   "u31l1-13": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi has received dividends and made a gain selling an ETF, and asks whether that's added to her salary on her tax return. What do you reply?",
    "options": [
+    "Yes: it all goes together with your salary",
     "No: it goes to the savings base",
-    "It isn't taxed: up to €6,000 is free",
-    "Yes: it all goes together with your salary"
+    "It isn't taxed: up to €6,000 is free"
    ],
    "explanation": "Dividends, interest and gains from sales go to the savings base, separate from your salary. The tempting mistake is to think the first €6,000 are exempt: they pay 19 %.",
    "feedback": [
+    "No: your salary goes to the general base and your investments to the savings base, with its own scale.",
     "That's it! And with €2,600 in total, it all pays 19 %.",
-    "It isn't free: the first €6,000 pay 19 %, the lowest rate.",
-    "No: your salary goes to the general base and your investments to the savings base, with its own scale."
+    "It isn't free: the first €6,000 pay 19 %, the lowest rate."
    ],
    "lines": [
     "This year I've received €600 in dividends and made €2,000 selling an ETF.",
@@ -618,17 +618,17 @@
    ]
   },
   "u31l4-12": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi has an S&P 500 ETF with a big gain and asks whether she can transfer it to a global one without paying tax, like a fund. What do you reply?",
    "options": [
+    "Better not to invest any more until I decide",
     "Yes, ETFs can be transferred just like funds",
-    "No: selling it is taxed; better keep it",
-    "Better not to invest any more until I decide"
+    "No: selling it is taxed; better keep it"
    ],
    "explanation": "ETFs don't have the funds' transfer: every sale is taxed. If you already have gains, it's usually better not to sell and to send new contributions to the product you prefer.",
    "feedback": [
+    "Stopping your contributions doesn't fix anything: time invested counts too.",
     "If only. In general, selling an ETF is taxed like selling a share.",
-    "That's it! Without selling you don't pay, and new contributions already go to the global one.",
-    "Stopping your contributions doesn't fix anything: time invested counts too."
+    "That's it! Without selling you don't pay, and new contributions already go to the global one."
    ],
    "lines": [
     "I have an S&P 500 ETF with a big gain.",
@@ -689,17 +689,17 @@
    ]
   },
   "u31l5-12": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi wants to buy a company just because it pays an 8 % dividend: «it's free money». What do you reply?",
    "options": [
-    "Yes: 8 % for free every year, whatever happens",
     "It isn't free: the price falls by that much",
-    "Only if the company is from the US"
+    "Only if the company is from the US",
+    "Yes: 8 % for free every year, whatever happens"
    ],
    "explanation": "The dividend comes out of the company's value: your money moves from shares to cash, and that cash is taxed. A high dividend isn't enough reason to buy: what matters is the business paying it.",
    "feedback": [
-    "It isn't free: when it's paid, the share price falls by roughly that amount.",
     "Good! A high dividend can come from a business in trouble.",
-    "The country doesn't make it free, and abroad there may be extra withholding."
+    "The country doesn't make it free, and abroad there may be extra withholding.",
+    "It isn't free: when it's paid, the share price falls by roughly that amount."
    ],
    "lines": [
     "This company pays an 8 % dividend a year.",

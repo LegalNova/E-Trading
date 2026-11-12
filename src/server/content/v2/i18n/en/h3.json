@@ -331,17 +331,17 @@
    "explanation": "It protects you if your estimate is wrong."
   },
   "u16l1-9": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "Lumi wants to buy a share that has fallen 60 % because «it can't fall any further». What do you say?",
    "options": [
-    "Sure, it's already hit the floor",
     "Buy twice as much to lower your average price: you'll recover sooner",
-    "First look at why it fell and what the business is worth"
+    "First look at why it fell and what the business is worth",
+    "Sure, it's already hit the floor"
    ],
    "explanation": "A low price is only an opportunity if it's below the value.",
    "feedback": [
-    "Something that's fallen 60 % can fall another 60 %.",
     "Doubling up without analysing is just betting more blindly.",
-    "OK… and what if it fell because the business is broken? Then the value fell too."
+    "OK… and what if it fell because the business is broken? Then the value fell too.",
+    "Something that's fallen 60 % can fall another 60 %."
    ],
    "lines": [
     "This share has fallen 60 %, it can't go any lower!",
@@ -660,17 +660,17 @@
    ]
   },
   "u27l4-10": {
-   "prompt": "What do you tell Lumi?",
+   "prompt": "Lumi wants to get into a new coin today because everyone on TikTok is making money on it. What do you tell her?",
    "options": [
+    "Get in now, it's flying, and sell fast if it drops",
     "Put in part of your emergency fund: you'll top it up later",
-    "Wait 48 hours before deciding",
-    "Get in now, it's flying, and sell fast if it drops"
+    "Wait 48 hours before deciding"
    ],
    "explanation": "The rush is the signal: when you feel urgency, stop.",
    "feedback": [
+    "If I get in out of fear of missing out, I'll most likely buy near the top.",
     "That's the one thing you never touch. And with crypto you can lose everything you put in.",
-    "OK… If it still makes sense in two days, I'll put it within my speculation limit. If not, nothing.",
-    "If I get in out of fear of missing out, I'll most likely buy near the top."
+    "OK… If it still makes sense in two days, I'll put it within my speculation limit. If not, nothing."
    ],
    "lines": [
     "Everyone on TikTok is making money on a new coin 🐶",

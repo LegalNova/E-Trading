@@ -525,17 +525,17 @@
    ]
   },
   "u8l4-12": {
-   "prompt": "Què li contestes?",
+   "prompt": "L'empresa de la Lumi ampliarà capital i ella no pensa comprar accions noves. Pregunta si l'afecta. Què li contestes?",
    "options": [
-    "Sí: si no hi acudeixes, el teu percentatge baixa",
     "No: les teves accions continuen sent les mateixes",
-    "Sí: et treuen part de les teves accions"
+    "Sí: et treuen part de les teves accions",
+    "Sí: si no hi acudeixes, el teu percentatge baixa"
    ],
    "explanation": "En una ampliació surten accions noves: si no compres les que et toquen, el teu percentatge baixa (dilució). El que tempta és pensar que no passa res perquè conserves les teves accions, però el total ha crescut.",
    "feedback": [
-    "Això. Hi ha més accions i tu tens les mateixes: et dilueixes.",
     "Les mateixes accions, però d'un pastís amb més trossos: la teva part baixa.",
-    "Ningú no et treu res: el que baixa és el teu percentatge."
+    "Ningú no et treu res: el que baixa és el teu percentatge.",
+    "Això. Hi ha més accions i tu tens les mateixes: et dilueixes."
    ],
    "lines": [
     "La meva empresa farà una ampliació de capital amb accions noves.",
@@ -577,17 +577,17 @@
    "explanation": "És el valor de l'empresa a borsa."
   },
   "u8l5-10": {
-   "prompt": "Què li dius?",
+   "prompt": "La Lumi ho vol passar tot a small caps perquè «les petites pugen més». Què li dius?",
    "options": [
     "No, les petites no pugen mai",
-    "Sí, a llarg termini les petites sempre acaben guanyant",
-    "Poden rendir més, però amb més risc"
+    "Poden rendir més, però amb més risc",
+    "Sí, a llarg termini les petites sempre acaben guanyant"
    ],
    "explanation": "La mida canvia el perfil de risc, però no garanteix cap resultat.",
    "feedback": [
     "Algunes petites es converteixen en gegants; el difícil és saber quines per endavant.",
-    "No sempre: hi ha hagut períodes de molts anys en què les grans les han guanyat amb claredat.",
-    "Això mateix! Més potencial, més ensurts i anys en què van pitjor."
+    "Això mateix! Més potencial, més ensurts i anys en què van pitjor.",
+    "No sempre: hi ha hagut períodes de molts anys en què les grans les han guanyat amb claredat."
    ],
    "lines": [
     "Les petites pugen més que les grans, oi?",

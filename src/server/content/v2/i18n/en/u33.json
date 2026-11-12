@@ -361,16 +361,16 @@
    "explanation": "It's a firm like any other: safety first."
   },
   "u33l3-10": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "Lumi uses a «free» app that sends her alerts about rising shares, and today she has made 8 purchases. What do you say?",
    "options": [
-    "Brilliant! The more you trade, the more you learn",
     "Were those 8 purchases in your plan?",
+    "Brilliant! The more you trade, the more you learn",
     "Turn on the crypto alerts too"
    ],
    "explanation": "An app can be cheap and at the same time push you to trade too much.",
    "feedback": [
-    "More trades usually means more costs and more impulsive decisions.",
     "Nice! «Free» is almost never free, and notifications aren't a plan.",
+    "More trades usually means more costs and more impulsive decisions.",
     "More alerts, more temptation."
    ],
    "lines": [
@@ -439,7 +439,7 @@
    "explanation": "The EU's MiFID rules require it for advice and portfolio management."
   },
   "u33l4-10": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "Lumi doesn't want to keep an eye on the market and can't decide between a robo-adviser and doing it herself. What do you say?",
    "options": [
     "Neither, a bank fund with a manager is better",
     "It depends on whether you'll be consistent",

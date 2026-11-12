@@ -330,17 +330,17 @@
    "explanation": "El mateix fons dona resultats diferents segons com hi entres i en surts."
   },
   "u27l1-10": {
-   "prompt": "Què li expliques a la Lumi?",
+   "prompt": "El fons de la Lumi ha guanyat un 10 % l'any, però ella molt menys, i pregunta si li estan robant. Què li expliques?",
    "options": [
     "Segurament vas entrar i sortir a deshora",
-    "Segur que és una estafa",
-    "Els fons sempre maquillen les seves dades de rendibilitat"
+    "Els fons sempre maquillen les seves dades de rendibilitat",
+    "Segur que és una estafa"
    ],
    "explanation": "La teva rendibilitat depèn del fons i de quan hi entres i en surts.",
    "feedback": [
     "Ups… Vaig comprar quan estava en màxims i vaig vendre amb l'ensurt de març. Touché.",
-    "Potser no: si vas entrar després de les pujades i vas sortir en les caigudes, la diferència és teva.",
-    "Les dades de rendibilitat del fons són reals; el que canvia és quan hi vas ser dins."
+    "Les dades de rendibilitat del fons són reals; el que canvia és quan hi vas ser dins.",
+    "Potser no: si vas entrar després de les pujades i vas sortir en les caigudes, la diferència és teva."
    ],
    "lines": [
     "El meu fons ha guanyat un 10 % l'any… però jo molt menys! 🤨",
@@ -402,16 +402,16 @@
    ]
   },
   "u27l2-10": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi no vol vendre una acció en pèrdues perquè seria reconèixer que es va equivocar. Què li contestes?",
    "options": [
-    "Decideix amb el que saps avui",
     "Compra'n més per abaixar el preu mitjà",
+    "Decideix amb el que saps avui",
     "Ben fet, aguanta fins que torni"
    ],
    "explanation": "Acceptar una pèrdua petita a temps forma part del joc, no és un fracàs.",
    "feedback": [
-    "Tens raó: el mercat no sap a quant vaig comprar. Revisaré el negoci, no el meu orgull.",
     "Fer mitjana a la baixa sense revisar el negoci és posar més diners en el mateix error.",
+    "Tens raó: el mercat no sap a quant vaig comprar. Revisaré el negoci, no el meu orgull.",
     "De vegades no torna. I mentre esperes, aquests diners podrien estar en alguna cosa millor."
    ],
    "lines": [
@@ -459,17 +459,17 @@
    "explanation": "L'efecte disposició fa just el contrari."
   },
   "u27l3-10": {
-   "prompt": "Què li dius a la Lumi?",
+   "prompt": "L'acció de la Lumi ha pujat un 6 % i la vol vendre ja, «que després baixa». Què li dius?",
    "options": [
-    "Sí, assegura, mai se sap",
     "Què deia el teu pla de sortida?",
-    "Compra'n més amb tot el que tinguis"
+    "Compra'n més amb tot el que tinguis",
+    "Sí, assegura, mai se sap"
    ],
    "explanation": "La sortida es decideix abans d'entrar, no en veure el primer verd.",
    "feedback": [
-    "Pot sortir bé avui, però si ho fas sempre, talles les teves millors operacions.",
     "Mmm… Deia la meitat a 2R i la resta amb stop dinàmic. D'acord, segueixo el pla.",
-    "Passar de la por a l'eufòria en un minut tampoc és un pla."
+    "Passar de la por a l'eufòria en un minut tampoc és un pla.",
+    "Pot sortir bé avui, però si ho fas sempre, talles les teves millors operacions."
    ],
    "lines": [
     "La meva acció ha pujat un 6 %! 🎉",
@@ -518,17 +518,17 @@
    "explanation": "Escriure per què et podries equivocar i comparar-te amb un índex et fan tocar de peus a terra, igual que mesurar tots els teus resultats en un diari. Apujar el risc després d'encertar o mirar només les teves millors operacions és just el que fa l'excés de confiança."
   },
   "u27l5-11": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi ha encertat quatre rondes seguides de «puja o baixa?» i creu que té un do. Què li contestes?",
    "options": [
-    "Doncs apuja el risc a les teves properes compres",
     "Amb quatre intents mana la sort",
-    "Sí: quatre de quatre no és casualitat"
+    "Sí: quatre de quatre no és casualitat",
+    "Doncs apuja el risc a les teves properes compres"
    ],
    "explanation": "Amb pocs intents, la sort s'assembla molt al talent: només una mostra gran i mesurada distingeix l'una de l'altre. El temptador és creure's el marcador de quatre rondes.",
    "feedback": [
-    "Apujar el risc després d'una ratxa curta és excés de confiança de manual.",
     "D'acord: ho apunto i continuo mesurant. Ja veurem què diu el meu marcador amb moltes més.",
-    "A l'atzar, encertar-les totes quatre passa més d'una vegada de cada vint. Sí que pot ser-ho."
+    "A l'atzar, encertar-les totes quatre passa més d'una vegada de cada vint. Sí que pot ser-ho.",
+    "Apujar el risc després d'una ratxa curta és excés de confiança de manual."
    ],
    "lines": [
     "He encertat les quatre rondes de «puja o baixa?».",
@@ -591,16 +591,16 @@
    "explanation": "És l'antídot més senzill contra el biaix de confirmació."
   },
   "u27l6-10": {
-   "prompt": "Què li contestes a la Lumi?",
+   "prompt": "La Lumi veu una acció que ha caigut un 50 % i diu que és «a meitat de preu, com a les rebaixes». Què li contestes?",
    "options": [
-    "Depèn del que val el negoci",
     "Sí, a meitat de preu sempre és una ganga",
+    "Depèn del que val el negoci",
     "Espera que caigui un altre 50 % i serà encara més barata"
    ],
    "explanation": "Les rebaixes de la borsa no són com les del súper: el producte també pot haver canviat.",
    "feedback": [
-    "Cert. Primer miro beneficis, deute i per què ha caigut. El preu antic no és una etiqueta.",
     "No a la borsa: pot haver caigut perquè el negoci val la meitat… o menys.",
+    "Cert. Primer miro beneficis, deute i per què ha caigut. El preu antic no és una etiqueta.",
     "Això continua sent mirar només el preu, no el valor."
    ],
    "lines": [

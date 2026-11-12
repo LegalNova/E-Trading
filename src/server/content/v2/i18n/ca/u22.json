@@ -440,7 +440,7 @@
    "explanation": "Al contrari: en corregir el biaix de cerca de dades, els van afeblir molt."
   },
   "u22l2-6": {
-   "prompt": "Un altre gràfic real, sense nom. Puja o baixa en les 10 sessions següents?",
+   "prompt": "Gràfic real, sense nom. Puja o baixa en les 10 sessions següents?",
    "options": [
     "Puja",
     "Baixa"
@@ -536,7 +536,7 @@
    "horizon": "les 10 sessions següents"
   },
   "u22l3-7": {
-   "prompt": "Un altre gràfic real. Puja o baixa en les 10 sessions següents?",
+   "prompt": "Gràfic real. Puja o baixa en les 10 sessions següents?",
    "options": [
     "Puja",
     "Baixa"
@@ -658,16 +658,16 @@
    ]
   },
   "u22l5-13": {
-   "prompt": "Què li dius a la Lumi?",
+   "prompt": "A la Lumi li ha saltat tres vegades aquesta setmana un stop a un 0,5 % en bitcoin i el vol treure. Què li dius?",
    "options": [
-    "Allunya’l segons l’ATR i compra’n menys",
     "Sí, treu-lo: els stops només donen disgustos",
+    "Allunya’l segons l’ATR i compra’n menys",
     "Posa’l encara més a prop, al 0,2 %"
    ],
    "explanation": "La distància de l’stop la marca la volatilitat (l’ATR); l’import s’ajusta perquè el risc en euros continuï igual.",
    "feedback": [
-    "És clar: stop fora del soroll i menys import. El meu risc en euros no canvia.",
     "Sense stop, una sola mala operació em pot costar més que tres stops petits.",
+    "És clar: stop fora del soroll i menys import. El meu risc en euros no canvia.",
     "Més a prop saltaria encara més: el bitcoin es mou molt més en un dia."
    ],
    "lines": [

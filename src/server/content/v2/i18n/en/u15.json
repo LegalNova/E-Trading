@@ -516,17 +516,17 @@
    "explanation": "Physical gold has to be stored and insured, and there can be quite a gap between the buying and selling price. It pays no coupon and can be bought in many places, not only at a bank."
   },
   "u15l4-10": {
-   "prompt": "What do you say to Lumi?",
+   "prompt": "Lumi has seen an ad: «Trade oil with 1:10 and make 300 % this month». What do you say?",
    "options": [
-    "With 1:10, a 10 % move against you loses it all",
     "Even better 1:100, that's more",
-    "Sign up now! You don't see a 300 % return every day"
+    "Sign up now! You don't see a 300 % return every day",
+    "With 1:10, a 10 % move against you loses it all"
    ],
    "explanation": "At 1:10, a 10 % move against you takes you to zero. CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. Between 74 and 89 % of retail investor accounts lose money when trading CFDs.",
    "feedback": [
-    "OK, I'd better understand what an ETC is before touching anything leveraged.",
     "More leverage, faster to zero.",
-    "At 1:10, a 10 % move against you wipes out everything. And promising 300 % is a red flag."
+    "At 1:10, a 10 % move against you wipes out everything. And promising 300 % is a red flag.",
+    "OK, I'd better understand what an ETC is before touching anything leveraged."
    ],
    "lines": [
     "I saw an ad: \"Trade oil at 1:10 and make 300 % this month\" 🛢️"

@@ -683,16 +683,16 @@
    ]
   },
   "u20l7-11": {
-   "prompt": "¿Qué le contestas a Sara?",
+   "prompt": "Un influencer vende un curso de velas «con un 90 % de acierto» y Sara te pide tu opinión. ¿Qué le contestas?",
    "options": [
-    "Que depende de cuántos seguidores tenga la cuenta",
     "Que un 90 % es una pasada",
+    "Que depende de cuántos seguidores tenga la cuenta",
     "Que desconfío: ningún estudio serio da eso"
    ],
    "explanation": "Desconfía de cualquier porcentaje de acierto espectacular: la evidencia dice otra cosa.",
    "feedback": [
-    "Tener muchos seguidores no hace verdadera una cifra.",
     "Los mejores patrones que mide Bulkowski giran en torno al 70–80 % de las veces, sin costes. Un 90 % es una señal de alarma.",
+    "Tener muchos seguidores no hace verdadera una cifra.",
     "¡Bien visto! Muchas velas famosas están en el 50–60 %, y los estudios académicos no encuentran valor tras costes."
    ],
    "lines": [

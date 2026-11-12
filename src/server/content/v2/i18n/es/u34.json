@@ -459,17 +459,17 @@
    ]
   },
   "u34l1-10": {
-   "prompt": "¿Qué le contestas a Sara?",
+   "prompt": "El vecino y el peluquero de Sara han entrado en una moneda nueva, y uno ya se ha comprado un coche. ¿Qué le contestas?",
    "options": [
+    "Eso suele ser señal de euforia",
     "Si mi peluquero gana, es que es fácil",
-    "¡Pues entro ya, que se acaba!",
-    "Eso suele ser señal de euforia"
+    "¡Pues entro ya, que se acaba!"
    ],
    "explanation": "La euforia generalizada es una alarma, no una invitación.",
    "feedback": [
+    "¡Bien visto! Es una de las señales clásicas de burbuja desde 1637.",
     "Que algo haya subido no lo convierte en fácil ni en seguro.",
-    "Cuando hasta quien nunca invierte está dentro, ¿quién queda por comprar?",
-    "¡Bien visto! Es una de las señales clásicas de burbuja desde 1637."
+    "Cuando hasta quien nunca invierte está dentro, ¿quién queda por comprar?"
    ],
    "lines": [
     "Mi vecino se ha comprado un coche con lo que ha ganado con una moneda nueva 🤑",
@@ -567,17 +567,17 @@
    "explanation": "Empresas sin beneficios valoradas en miles de millones y salidas a bolsa que doblaban el primer día, con mucha gente nueva comprando solo porque subía. Las valoraciones se olvidaron: «las reglas de antes ya no sirven»."
   },
   "u34l3-10": {
-   "prompt": "¿Qué le contestas a Sara?",
+   "prompt": "Sara cree que, como la IA va a cambiarlo todo, cualquier empresa de IA es buena compra. ¿Qué le contestas?",
    "options": [
-    "Sí, como internet en 2000: no podía fallar",
+    "Puede ser real y aun así estar cara",
     "No, la IA es una moda",
-    "Puede ser real y aun así estar cara"
+    "Sí, como internet en 2000: no podía fallar"
    ],
    "explanation": "Acertar con una tecnología no garantiza acertar con la inversión.",
    "feedback": [
-    "Precisamente en 2000 internet cambió todo… y el Nasdaq cayó un 78 %.",
+    "¡Eso! Lo que importa no es solo la idea, sino cuánto pagas por ella.",
     "No hace falta decidir si es una moda: basta con no pagar cualquier precio y diversificar.",
-    "¡Eso! Lo que importa no es solo la idea, sino cuánto pagas por ella."
+    "Precisamente en 2000 internet cambió todo… y el Nasdaq cayó un 78 %."
    ],
    "lines": [
     "La inteligencia artificial va a cambiarlo todo 🤖",
@@ -658,17 +658,17 @@
    "horizon": "los seis años siguientes"
   },
   "u34l5-9": {
-   "prompt": "¿Qué le contestas a Sara?",
+   "prompt": "Sara quiere meterlo todo en el S&P 500 sin diversificar porque «siempre se recupera». ¿Qué le contestas?",
    "options": [
     "Mejor lo meto todo en Japón, que ya se ha recuperado",
-    "Exacto, EE. UU. nunca fallará",
-    "Mejor no depender de un solo país"
+    "Mejor no depender de un solo país",
+    "Exacto, EE. UU. nunca fallará"
    ],
    "explanation": "La historia de EE. UU. es la del mercado que mejor ha ido. No está garantizado que se repita.",
    "feedback": [
     "Cambiar de país sigue siendo concentrar.",
-    "En 1989 se decía lo mismo de Japón, y su bolsa tardó 34 años en volver.",
-    "¡Bien! El índice mundial ya incluye EE. UU. y te cubre si tiene su propia década perdida."
+    "¡Bien! El índice mundial ya incluye EE. UU. y te cubre si tiene su propia década perdida.",
+    "En 1989 se decía lo mismo de Japón, y su bolsa tardó 34 años en volver."
    ],
    "lines": [
     "El S&P 500 siempre se recupera 💪",
@@ -782,16 +782,16 @@
    "horizon": "los meses siguientes"
   },
   "u34l7-8": {
-   "prompt": "¿Qué le contestas a Lucía?",
+   "prompt": "Lucía vendió todo en marzo de 2020 pensando en volver cuando bajara más… y nunca bajó. ¿Qué le contestas?",
    "options": [
-    "Le pasó a muchos: decide antes con un plan",
     "Lo mejor es no volver a invertir",
+    "Le pasó a muchos: decide antes con un plan",
     "Mala suerte, la próxima vez acertarás el suelo"
    ],
    "explanation": "El plan se escribe en calma para cumplirlo en el pánico.",
    "feedback": [
-    "¡Eso! Tu Declaración de Política de Inversión existe para ese momento.",
     "Así el error de marzo de 2020 te costaría también todos los años siguientes.",
+    "¡Eso! Tu Declaración de Política de Inversión existe para ese momento.",
     "Acertar el suelo es casi imposible: nadie lo anunció de antemano."
    ],
    "lines": [
@@ -881,17 +881,17 @@
    "explanation": "Euforia, «esta vez es distinto» y crédito fácil o apalancamiento, con ventas en pánico al final. Las valoraciones prudentes son justo lo que desaparece en una burbuja, y siempre entra mucha gente nueva."
   },
   "u34l9-2": {
-   "prompt": "¿Qué le contestas a Nora?",
+   "prompt": "Nora te pregunta qué vas a hacer tú cuando llegue la próxima crisis. ¿Qué le contestas?",
    "options": [
-    "Guardaré todo en liquidez para comprar cuando caiga",
+    "Venderé todo justo antes de que empiece",
     "Tendré colchón, sin deudas y un plan escrito",
-    "Venderé todo justo antes de que empiece"
+    "Guardaré todo en liquidez para comprar cuando caiga"
    ],
    "explanation": "No se trata de predecir la crisis, sino de estar preparado para aguantarla.",
    "feedback": [
-    "Esperar la crisis fuera del mercado puede costar años de subidas: nadie sabe cuándo llega.",
+    "Nadie ha sabido nunca cuándo empieza. Es un plan que depende de adivinar.",
     "¡Perfecto! No sabes cuándo llegará, pero sí cómo vas a reaccionar.",
-    "Nadie ha sabido nunca cuándo empieza. Es un plan que depende de adivinar."
+    "Esperar la crisis fuera del mercado puede costar años de subidas: nadie sabe cuándo llega."
    ],
    "lines": [
     "Algún día llegará la próxima crisis 😬",

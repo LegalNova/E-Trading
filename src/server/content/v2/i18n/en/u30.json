@@ -383,17 +383,17 @@
    "explanation": "The trading commission and the ongoing charges (TER); also currency exchange, the spread, custody fees and taxes. Past returns or the broker's size aren't costs."
   },
   "u30l2-10": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi's fund charges 1.5 %, but it rose 10 % this year, and she thinks the cost doesn't matter. What do you reply?",
    "options": [
+    "Yes, with 10 % it doesn't matter",
     "Compare it with its index",
-    "Then better a fund that charges 3 %",
-    "Yes, with 10 % it doesn't matter"
+    "Then better a fund that charges 3 %"
    ],
    "explanation": "Judge a fund against its index and over many years, not on one good year.",
    "feedback": [
+    "That 10 % is already net of fees, but without them it would have been 11.5 %. And in a year it doesn't rise, you still pay the 1.5 %.",
     "That's it! What matters is how much it leaves you compared with the cheap alternative, year after year.",
-    "Charging more doesn't make it rise more. The only sure thing about a fee is that you pay it.",
-    "That 10 % is already net of fees, but without them it would have been 11.5 %. And in a year it doesn't rise, you still pay the 1.5 %."
+    "Charging more doesn't make it rise more. The only sure thing about a fee is that you pay it."
    ],
    "lines": [
     "My fund charges 1.5 %, but it's up 10 % this year 🚀",
@@ -448,17 +448,17 @@
    "explanation": "About two times out of three, because the market rises more often than it falls. With a salary, investing every month is the natural thing to do."
   },
   "u30l3-10": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi can only save €50 a month and thinks that won't get her anywhere. What do you reply?",
    "options": [
     "Start with €50 and raise it when you can",
-    "Wait until you can invest €500 a month, then it'll count",
-    "You're right, better to spend it"
+    "You're right, better to spend it",
+    "Wait until you can invest €500 a month, then it'll count"
    ],
    "explanation": "A little, started early, goes a long way. What matters is the habit.",
    "feedback": [
     "That's the way! What counts most is starting early and not stopping.",
-    "Waiting until you «have more» usually means never starting: what counts most is time.",
-    "Spending is fine, but €50 a month over decades can turn into tens of thousands of euros."
+    "Spending is fine, but €50 a month over decades can turn into tens of thousands of euros.",
+    "Waiting until you «have more» usually means never starting: what counts most is time."
    ],
    "lines": [
     "I can only save €50 a month 😔",
@@ -698,17 +698,17 @@
    "explanation": "First the foundation and the key decision; then the products and the discipline."
   },
   "u30l6-10": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi asks you to defend your portfolio: why do you think it will work? What do you reply?",
    "options": [
     "Because the stock market always goes up if you wait long enough",
-    "Because I've picked whatever will rise most",
-    "It's diversified and I know what I'll do in a fall"
+    "It's diversified and I know what I'll do in a fall",
+    "Because I've picked whatever will rise most"
    ],
    "explanation": "You defend a portfolio with diversification, costs and a plan, not with predictions.",
    "feedback": [
     "Over the long term it has gone up, but with falls of up to 50 % along the way.",
-    "Nobody knows what will rise most. A portfolio that depends on guessing right is fragile.",
-    "Perfect defence! You talked about what you control, not what you're guessing."
+    "Perfect defence! You talked about what you control, not what you're guessing.",
+    "Nobody knows what will rise most. A portfolio that depends on guessing right is fragile."
    ],
    "lines": [
     "Go on then, defend your portfolio 🧐",

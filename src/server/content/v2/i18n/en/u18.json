@@ -550,17 +550,17 @@
    "explanation": "The Nasdaq fell more than 30 % and long-dated bonds more than 20 %: rising rates hit both."
   },
   "u18l3-10": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi asks whether the ECB cutting rates is good or bad for the stock market. What do you reply?",
    "options": [
-    "It has no effect at all: the stock market goes its own way",
+    "Always bad",
     "Usually positive, but it depends on the reason",
-    "Always bad"
+    "It has no effect at all: the stock market goes its own way"
    ],
    "explanation": "Cutting rates usually helps shares and bonds, but the surprise and the reason matter.",
    "feedback": [
-    "Interest rates are the price of money: they affect everything.",
+    "The opposite: it usually boosts the economy and helps shares and bonds… unless it's done out of fear of a crisis.",
     "Ah! If they're cutting because a crisis is coming, maybe it's not such good news.",
-    "The opposite: it usually boosts the economy and helps shares and bonds… unless it's done out of fear of a crisis."
+    "Interest rates are the price of money: they affect everything."
    ],
    "lines": [
     "The ECB has cut interest rates 📉",
@@ -688,7 +688,7 @@
    "explanation": "With no profits, you compare what it's worth with what it sells: 3 times sales versus 30. The expensive one needs to grow enormously to justify its price."
   },
   "u18l5-14": {
-   "prompt": "What do you reply to Lumi?",
+   "prompt": "Lumi asks how to value, without a P/E, a company that sells 80 % more each year but loses money. What do you reply?",
    "options": [
     "By its social media followers",
     "With the P/E, like all other companies",
