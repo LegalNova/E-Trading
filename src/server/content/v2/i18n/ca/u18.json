@@ -400,18 +400,18 @@
    "prompt": "Quins senyals en els números suggereixen un fossat? Marca'ls tots.",
    "options": [
     "Apujar preus sense perdre clients",
-    "ROIC alt durant una dècada",
+    "Vendes que es doblen en un sol any",
     "Pèrdues constants",
     "Marges alts i estables durant anys"
    ],
-   "explanation": "Les pèrdues constants indiquen just el contrari."
+   "explanation": "Marges alts i estables i poder apujar preus sense perdre clients suggereixen un fossat, igual que un ROIC alt durant anys. Un any de molt creixement pot ser una moda, i les pèrdues constants indiquen el contrari."
   },
   "u18l1-4": {
    "prompt": "L'Ana analitza una cafeteria de moda amb cues a la porta que va guanyar molt l'any passat. A 50 metres n'acaben d'obrir tres més de semblants. Què en conclou sobre el seu fossat?",
    "options": [
     "El fossat depèn de la decoració del local",
-    "Té un fossat enorme: hi ha cues",
-    "El seu fossat és feble: és fàcil de copiar i ja la copien"
+    "Té un fossat enorme: hi ha cues a la porta",
+    "El seu fossat és feble: és fàcil de copiar"
    ],
    "explanation": "Si un negoci guanya molt i és fàcil de copiar, la competència arribarà.",
    "feedback": [
@@ -423,7 +423,7 @@
   "u18l1-5": {
    "prompt": "En Bruno troba una empresa amb un fossat claríssim… que cotitza a PER 90 i creix al 10 % anual. Què té en compte?",
    "options": [
-    "Que el seu PEG és 9: el preu ja descompta moltíssim",
+    "Que el seu PEG és 9: és caríssima",
     "Que amb aquest fossat qualsevol preu està bé",
     "Que un PER alt garanteix que continuarà pujant"
    ],
@@ -462,7 +462,7 @@
   "u18l2-5": {
    "prompt": "Què és tècnicament una recessió?",
    "options": [
-    "Una caiguda de la borsa del 10 %",
+    "Una caiguda de la borsa de més del 10 % en un any",
     "Una pujada de tipus",
     "Dos trimestres seguits de caiguda del PIB"
    ],
@@ -471,9 +471,9 @@
   "u18l2-7": {
    "prompt": "Les dades apunten a una desacceleració. En Pablo té gairebé tota la cartera en bancs, automoció i hotels. Quin risc té?",
    "options": [
-    "Està molt concentrat en cíclics, que solen caure més si arriba una recessió",
+    "Està molt concentrat en sectors cíclics",
     "Que els sectors defensius no existeixen",
-    "Cap: aquests sectors sempre pugen"
+    "Cap: aquests sectors sempre acaben pujant"
    ],
    "explanation": "Repartir entre cíclics i defensius redueix la dependència del cicle.",
    "feedback": [
@@ -488,9 +488,9 @@
     "Alimentació",
     "Construcció",
     "Salut",
-    "Elèctriques"
+    "Automoció"
    ],
-   "explanation": "La construcció és molt cíclica."
+   "explanation": "L'alimentació i la salut es compren igual a les crisis, com la llum. La construcció i l'automoció són molt cícliques."
   },
   "u18l3-2": {
    "prompt": "Ordena el que passa quan el banc central apuja els tipus.",
@@ -552,8 +552,8 @@
   "u18l3-10": {
    "prompt": "Què li respons a la Lumi?",
    "options": [
-    "No té cap efecte",
-    "Sol ser favorable, però depèn de si ja s'esperava i de per què els abaixen",
+    "No té cap efecte: la borsa va pel seu compte",
+    "Sol ser favorable, però depèn del motiu",
     "Sempre dolent"
    ],
    "explanation": "Abaixar els tipus sol afavorir la borsa i els bons, però compten la sorpresa i el motiu.",
@@ -586,8 +586,8 @@
   "u18l4-4": {
    "prompt": "S'espera una inflació del 2,8 % i surt un 3,3 %. Tens una posició gran en bons llargs. Què és el més probable aquell dia?",
    "options": [
-    "Res, ja se sabia",
-    "Que els bons caiguin: el mercat passa a esperar tipus més alts",
+    "Res, ja se sabia per endavant",
+    "Que els bons caiguin",
     "Que els bons pugin"
    ],
    "explanation": "Compta la diferència entre la dada i el que s'esperava.",
@@ -610,18 +610,18 @@
    "prompt": "Quines dades solen moure més els mercats? Marca-les totes.",
    "options": [
     "La inflació",
-    "L'ocupació dels EUA",
-    "El nombre de visitants d'un museu",
+    "El PIB de fa dos anys",
+    "El resultat d'una empresa petita",
     "Les decisions de tipus del BCE i la Fed"
    ],
-   "explanation": "Tipus, inflació i ocupació decideixen la política monetària."
+   "explanation": "La inflació i les decisions de tipus del BCE i la Fed són el que més mou els mercats, juntament amb l'ocupació dels EUA. Una dada antiga o el resultat d'una empresa petita gairebé no canvien les expectatives."
   },
   "u18l4-10": {
    "prompt": "S'esperava un PIB del +0,3 % i surt un +0,3 %. Reacció més probable?",
    "options": [
-    "Una caiguda enorme",
-    "Una pujada enorme",
-    "Poca: ja era en el preu"
+    "Una caiguda enorme de la borsa",
+    "Una pujada enorme de la borsa",
+    "Poca: ja s'esperava"
    ],
    "explanation": "Sense sorpresa, no hi ha gaire res a ajustar."
   },
@@ -629,7 +629,7 @@
    "prompt": "Una empresa ven cada vegada més, però el seu marge brut és del 5 % i baixant: gairebé tot el que cobra se li'n va en el que li costa vendre. Quina pinta té?",
    "options": [
     "Excel·lent: creix molt",
-    "Mal senyal: créixer així no l'acosta a guanyar diners",
+    "Dolenta: créixer així no dona guanys",
     "El marge és igual si les vendes pugen"
    ],
    "explanation": "Mira si cada venda deixa diners, no només quantes vendes hi ha.",
@@ -642,8 +642,8 @@
   "u18l5-7": {
    "prompt": "Per què el PER no serveix per a una empresa que perd diners?",
    "options": [
-    "Perquè sense benefici surt negatiu i no té sentit",
-    "Perquè està prohibit calcular-lo",
+    "Perquè sense benefici no té sentit",
+    "Perquè la CNMV prohibeix calcular-lo amb pèrdues",
     "Perquè sempre surt 15"
    ],
    "explanation": "Per això es miren vendes, marges i caixa."
@@ -668,7 +668,7 @@
    "prompt": "Tens accions d'una empresa jove que perd diners. Anuncia una ampliació de capital: emetrà moltes accions noves i tu no en compraràs cap. Què passa amb la teva part de l'empresa?",
    "options": [
     "Creix: entren diners nous a l'empresa",
-    "Es fa més petita: el pastís es reparteix entre més accions",
+    "Es fa més petita: hi ha més accions",
     "No canvia: continuo tenint les mateixes accions"
    ],
    "explanation": "Si hi ha més accions i tu no en compres, el teu percentatge baixa: és la dilució. En empreses que cremen caixa és d'allò més habitual, per això es miren els mesos de caixa.",
@@ -681,8 +681,8 @@
   "u18l5-13": {
    "prompt": "Dues empreses inventades sense beneficis venen 100 M€ l'any. Una val 300 M€ a borsa; l'altra, 3.000 M€. Quina és més cara segons el seu preu/vendes?",
    "options": [
-    "La de 3.000 M€: pagues 30 vegades les seves vendes",
-    "Les dues igual: venen el mateix",
+    "La de 3.000 M€: 30 vegades les vendes",
+    "Les dues igual: venen el mateix cada any",
     "La de 300 M€: és més petita"
    ],
    "explanation": "Sense beneficis, es compara el que val amb el que ven: 3 vegades les vendes davant de 30. La cara necessita créixer moltíssim per justificar el seu preu."
@@ -691,8 +691,8 @@
    "prompt": "Què li respons a la Lumi?",
    "options": [
     "Pels seus seguidors a les xarxes",
-    "Amb el PER, com totes",
-    "Amb les seves vendes, el marge brut i els mesos de caixa"
+    "Amb el PER, com totes les altres empreses",
+    "Amb les vendes, el marge i la caixa"
    ],
    "explanation": "Sense benefici, el PER no serveix. Es mira quant pagues per les seves vendes, si cada venda deixa diners (marge brut) i quant aguanta amb la seva caixa.",
    "feedback": [
@@ -719,9 +719,9 @@
   "u18l6-8": {
    "prompt": "Has aplicat la llista a una empresa: creix, guanya molt, genera caixa, no té deute i té una marca forta. Però cotitza a un PER molt per sobre de la seva mitjana històrica. Què en conclous?",
    "options": [
-    "Compra segura: és un gran negoci",
+    "Compra segura: un gran negoci sempre compensa",
     "És una estafa",
-    "És un gran negoci, però he de decidir si el preu deixa marge de seguretat"
+    "Gran negoci, però falta mirar el preu"
    ],
    "explanation": "Un bon negoci necessita, a més, un bon preu.",
    "feedback": [
@@ -736,15 +736,15 @@
     "Per què el preu és per sota del valor",
     "Què et faria vendre",
     "«Perquè està pujant molt»",
-    "Com guanya diners el negoci"
+    "El preu a què cotitzarà d'aquí a un any"
    ],
-   "explanation": "Una tesi explica per què el negoci val més que el seu preu, i quan deixaries de creure-hi."
+   "explanation": "Una tesi explica per què el negoci val més que el seu preu i què et faria vendre, i parteix d'entendre com guanya diners. «Està pujant» no és una raó, i ningú sap a quin preu cotitzarà d'aquí a un any."
   },
   "u18l6-11": {
    "prompt": "Apliques la llista a dues empreses inventades del mateix sector, al mateix PER. A creix, genera caixa i té més caixa que deute. B creix igual, però el seu benefici no arriba a la caixa i amplia capital cada any. Quina passa millor l'examen?",
    "options": [
     "Les dues igual: tenen el mateix PER",
-    "A: creix, converteix el benefici en caixa i està sana",
+    "A: converteix el benefici en caixa",
     "B: creix el mateix"
    ],
    "explanation": "Al mateix preu, guanya la que respon millor a «genera caixa?» i «està sana?». Les alarmes solen ser a la caixa i el deute, no al titular del benefici.",

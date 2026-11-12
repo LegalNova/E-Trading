@@ -323,7 +323,7 @@
   "u17l2-6": {
    "prompt": "¿Por qué el EV/EBITDA sirve para comparar empresas con distinta deuda?",
    "options": [
-    "Porque suma la deuda neta al valor de la empresa",
+    "Porque incluye la deuda neta",
     "Porque solo mira el dividendo",
     "Porque ignora la deuda"
    ],
@@ -342,7 +342,7 @@
    "options": [
     "Que B es más barata porque tiene deuda",
     "Que tiene razón: capitalizan lo mismo",
-    "Que B es más cara: EV/EBITDA de 18 frente a 10"
+    "Que B sale más cara: debe 800 M€"
    ],
    "explanation": "El valor de empresa mira la empresa entera, deuda incluida.",
    "feedback": [
@@ -368,7 +368,7 @@
   "u17l2-11": {
    "prompt": "FitA y FitB, dos cadenas de gimnasios inventadas, cotizan a PER 15. FitA no tiene deuda; FitB tiene una deuda neta igual a lo que vale en bolsa. Si compraras la empresa entera, ¿cuál sería más cara?",
    "options": [
-    "FitB: con su deuda, su valor de empresa es el doble",
+    "FitB: su deuda también se paga",
     "Las dos igual: tienen el mismo PER",
     "FitA, porque no aprovecha la deuda"
    ],
@@ -392,7 +392,7 @@
    "prompt": "¿Qué le contestas a Ana?",
    "options": [
     "El P/VC no sirve para bancos",
-    "Puede ser barato, pero mira por qué el mercado desconfía de su balance",
+    "Mira antes por qué el mercado desconfía",
     "Sí, es una ganga segura: compra todo lo que puedas"
    ],
    "explanation": "En bancos y aseguradoras el P/VC es muy útil, pero uno muy bajo suele indicar que el mercado duda de lo que vale su balance. Barato no es lo mismo que seguro.",
@@ -419,7 +419,7 @@
    "options": [
     "Porque lo calcula Hacienda",
     "Porque incluye la deuda en el capital",
-    "Porque siempre sale más alto"
+    "Porque siempre sale más alto que el ROE"
    ],
    "explanation": "El ROE se dispara si la empresa se endeuda; el ROIC, no tanto."
   },
@@ -436,8 +436,8 @@
   "u17l3-9": {
    "prompt": "Laura compara dos empresas. A: ROE del 25 % con deuda neta/EBITDA de 5. B: ROE del 18 %, sin deuda y con ROIC del 18 %. ¿Cuál parece mejor negocio?",
    "options": [
-    "A: su ROE es mayor",
-    "B: gana mucho sobre todo su capital sin depender de la deuda",
+    "A: su ROE es mayor, y eso es lo que cuenta",
+    "B: gana mucho sin depender de la deuda",
     "No se puede saber nada"
    ],
    "explanation": "Mira el ROE junto al ROIC y la deuda.",
@@ -450,9 +450,9 @@
   "u17l3-11": {
    "prompt": "Dos cafeterías inventadas ganan 100.000 € al año cada una. La primera necesitó 200.000 € para abrir; la segunda, 2 millones. ¿Cuál es mejor negocio?",
    "options": [
-    "La segunda: es más grande",
-    "Las dos igual: ganan lo mismo",
-    "La primera: gana lo mismo con mucho menos capital"
+    "La segunda: es más grande y vale más",
+    "Las dos igual: ganan lo mismo cada año",
+    "La primera: necesita menos capital"
    ],
    "explanation": "El ROIC compara lo que gana un negocio con el capital que necesita. Con el mismo beneficio, el que necesita menos capital es mejor negocio y puede crecer sin pedir tanto dinero.",
    "feedback": [
@@ -465,8 +465,8 @@
    "prompt": "¿Qué le contestas a Nora?",
    "options": [
     "El ROE no sirve para nada",
-    "Sí: compra ya",
-    "Mira antes su deuda y su ROIC: la deuda infla el ROE"
+    "Sí: con un ROE tan alto, cómprala ya sin dudar",
+    "Mira antes su deuda y su ROIC"
    ],
    "explanation": "Un ROE muy alto puede salir de un gran negocio o de mucha deuda. El ROIC, que cuenta todo el capital, dice cuál de las dos cosas es.",
    "feedback": [
@@ -511,8 +511,8 @@
    "prompt": "Bruno compara dos acciones por su dividendo. A: rentabilidad del 3,5 %, payout del 50 % y caja libre que cubre el dividendo dos veces. B: rentabilidad del 9 %, payout del 130 % y deuda creciendo. ¿Qué tiene más sentido?",
    "options": [
     "Da igual: los dividendos están garantizados",
-    "Fijarse en B: paga casi el triple",
-    "Fijarse en A: su dividendo está cubierto por el beneficio y la caja"
+    "Fijarse en B: paga casi el triple cada año",
+    "Fijarse en A: su dividendo está cubierto"
    ],
    "explanation": "Antes de mirar cuánto paga, mira de dónde sale.",
    "feedback": [
@@ -535,8 +535,8 @@
    "prompt": "Cobras un dividendo de 1 € por acción y ese mismo día la acción pasa de 20 € a 19 €, sin otras noticias. ¿Has ganado dinero?",
    "options": [
     "He perdido 1 € por acción",
-    "Sí: 1 € gratis por acción",
-    "No por el dividendo en sí: ese euro ha pasado de la acción a tu bolsillo"
+    "Sí: 1 € gratis por cada acción que tengo",
+    "No: ese euro ha salido de la acción"
    ],
    "explanation": "El dividendo no es un regalo: sale del valor de la empresa. Lo que importa es la rentabilidad total, precio más dividendos.",
    "feedback": [
@@ -560,15 +560,15 @@
    "options": [
     "Para obtener el valor exacto de una empresa",
     "Para saber cuándo subirá la acción",
-    "Para pensar qué crecimiento descuenta el precio"
+    "Para ver qué descuenta el precio"
    ],
    "explanation": "Pequeños cambios en las hipótesis cambian mucho el resultado."
   },
   "u17l5-8": {
    "prompt": "Pablo hace un DCF: una empresa que cotiza a 60 € «vale» 120 €. Para llegar ahí ha supuesto un crecimiento del 25 % anual durante 10 años y una tasa del 6 %. ¿Qué debería hacer?",
    "options": [
-    "Comprar con todo: vale el doble",
-    "Probar hipótesis más prudentes y ver cuánto cambia el valor",
+    "Comprar con todo: vale el doble de lo que cuesta",
+    "Probar hipótesis más prudentes",
     "Publicarlo en un foro"
    ],
    "explanation": "Un DCF es tan bueno como sus hipótesis.",
@@ -591,7 +591,7 @@
   "u17l5-11": {
    "prompt": "¿Qué le contestas a Paula?",
    "options": [
-    "Mejor piensa en un rango y exige un buen margen de seguridad",
+    "Mejor piensa en un rango de valores",
     "Los DCF no sirven para nada",
     "¡Perfecto! Si cotiza a 47,31 €, está barata"
    ],
@@ -618,8 +618,8 @@
    "prompt": "Iván y Sara valoran la misma empresa con una tasa del 9 %. Iván supone que crecerá un 30 % al año durante 20 años; Sara, un 7 % durante 10 años y luego un 2 %. ¿Qué valor es más útil para decidir?",
    "options": [
     "El de Iván: sale más alto",
-    "El de Sara: sus hipótesis son prudentes y creíbles",
-    "Los dos igual: usan la misma tasa"
+    "El de Sara: sus hipótesis son creíbles",
+    "Los dos igual: usan la misma tasa de descuento"
    ],
    "explanation": "Un DCF es tan bueno como sus hipótesis. Con supuestos prudentes, el valor que sale sirve para decidir; con supuestos de sueño, solo para ilusionarse.",
    "feedback": [
@@ -660,7 +660,7 @@
    "prompt": "Dos bolsas inventadas: la A cotiza a un CAPE de 40 y la B, a uno de 15. Inviertes para los próximos 10 años. ¿Qué es más razonable esperar?",
    "options": [
     "Que la A caiga este año seguro",
-    "Que la A rinda menos que la B, aunque no sé cuándo ni cuánto",
+    "Que la A rinda menos que la B",
     "Que la A rinda más: si está cara, es porque va bien"
    ],
    "explanation": "Históricamente, un CAPE alto se ha asociado a rentabilidades más bajas a 10 años. Sirve para ajustar lo que esperas y diversificar, no para adivinar el momento.",
@@ -674,13 +674,13 @@
    "prompt": "¿Qué le contestas a Laura?",
    "options": [
     "Sí, sal ya",
-    "Compra más con un préstamo",
-    "El CAPE no dice cuándo: mejor ajusta lo que esperas y diversifica"
+    "No pasa nada: esta vez es distinto, las empresas ganan más",
+    "El CAPE no dice cuándo: ajusta lo que esperas"
    ],
    "explanation": "Salir y volver a entrar obliga a acertar dos veces. Un CAPE alto pide expectativas más modestas y diversificar por países, no apostar por una fecha.",
    "feedback": [
     "Puede seguir caro años: el Nasdaq siguió subiendo hasta marzo de 2000.",
-    "Deuda en un mercado caro: riesgo sobre riesgo.",
+    "«Esta vez es distinto» se ha dicho antes de cada burbuja: pagar caro deja menos margen.",
     "Tienes razón: tendría que acertar dos veces, al salir y al volver."
    ],
    "lines": [

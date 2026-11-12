@@ -400,18 +400,18 @@
    "prompt": "Which signs in the numbers suggest a moat? Tick all that apply.",
    "options": [
     "Raising prices without losing customers",
-    "High ROIC for a decade",
+    "Sales doubling in a single year",
     "Constant losses",
     "High, stable margins for years"
    ],
-   "explanation": "Constant losses point to exactly the opposite."
+   "explanation": "High, stable margins and being able to raise prices without losing customers suggest a moat, as does a high ROIC for years. One year of strong growth may be a fad, and constant losses point to the opposite."
   },
   "u18l1-4": {
    "prompt": "Ana is analysing a trendy café with queues out the door that made a lot of money last year. Three similar ones have just opened 50 metres away. What does she conclude about its moat?",
    "options": [
     "The moat depends on how the place is decorated",
-    "It has a huge moat: there are queues",
-    "Its moat is weak: it's easy to copy and people are already copying it"
+    "It has a huge moat: there are queues at the door",
+    "Its moat is weak: it's easy to copy"
    ],
    "explanation": "If a business makes a lot of money and is easy to copy, competition will arrive.",
    "feedback": [
@@ -423,7 +423,7 @@
   "u18l1-5": {
    "prompt": "Bruno finds a company with a crystal-clear moat… trading on a P/E of 90 and growing at 10 % a year. What does he bear in mind?",
    "options": [
-    "That its PEG is 9: the price already assumes a huge amount",
+    "That its PEG is 9: it's very expensive",
     "That with a moat like that, any price is fine",
     "That a high P/E guarantees it will keep rising"
    ],
@@ -462,7 +462,7 @@
   "u18l2-5": {
    "prompt": "What, technically, is a recession?",
    "options": [
-    "A 10 % fall in the stock market",
+    "A fall in the stock market of more than 10 % in a year",
     "An interest rate rise",
     "Two quarters in a row of falling GDP"
    ],
@@ -471,9 +471,9 @@
   "u18l2-7": {
    "prompt": "The data points to a slowdown. Pablo has almost his whole portfolio in banks, carmakers and hotels. What risk is he running?",
    "options": [
-    "He's heavily concentrated in cyclicals, which usually fall more if a recession comes",
+    "He's heavily concentrated in cyclicals",
     "That defensive sectors don't exist",
-    "None: those sectors always go up"
+    "None: those sectors always end up rising"
    ],
    "explanation": "Spreading across cyclical and defensive sectors makes you less dependent on the cycle.",
    "feedback": [
@@ -488,9 +488,9 @@
     "Food",
     "Construction",
     "Healthcare",
-    "Utilities"
+    "Carmakers"
    ],
-   "explanation": "Construction is very cyclical."
+   "explanation": "People buy food and healthcare just the same in a crisis, like electricity. Construction and carmakers are very cyclical."
   },
   "u18l3-2": {
    "prompt": "Put in order what happens when the central bank raises rates.",
@@ -552,8 +552,8 @@
   "u18l3-10": {
    "prompt": "What do you reply to Lumi?",
    "options": [
-    "It has no effect at all",
-    "It's usually positive, but it depends on whether it was already expected and why they're cutting",
+    "It has no effect at all: the stock market goes its own way",
+    "Usually positive, but it depends on the reason",
     "Always bad"
    ],
    "explanation": "Cutting rates usually helps shares and bonds, but the surprise and the reason matter.",
@@ -587,7 +587,7 @@
    "prompt": "Inflation is expected at 2.8 % and comes in at 3.3 %. You have a big position in long-dated bonds. What's most likely to happen that day?",
    "options": [
     "Nothing, it was already known",
-    "The bonds fall: the market now expects higher rates",
+    "The bonds fall",
     "The bonds rise"
    ],
    "explanation": "What counts is the gap between the figure and what was expected.",
@@ -610,18 +610,18 @@
    "prompt": "Which data usually moves markets most? Tick all that apply.",
    "options": [
     "Inflation",
-    "US jobs data",
-    "The number of visitors to a museum",
+    "GDP from two years ago",
+    "A small company's results",
     "Interest rate decisions by the ECB and the Fed"
    ],
-   "explanation": "Rates, inflation and jobs shape monetary policy."
+   "explanation": "Inflation and the ECB's and Fed's rate decisions move markets the most, along with US jobs data. An old figure or a small company's results barely change expectations."
   },
   "u18l4-10": {
    "prompt": "GDP was expected at +0.3 % and comes in at +0.3 %. Most likely reaction?",
    "options": [
-    "A huge fall",
-    "A huge rise",
-    "Not much: it was already priced in"
+    "A huge fall in the market",
+    "A huge rise in the market",
+    "Little: as expected"
    ],
    "explanation": "Without a surprise, there's not much to adjust."
   },
@@ -629,7 +629,7 @@
    "prompt": "A company keeps selling more, but its gross margin is 5 % and falling: almost everything it takes in goes on the cost of making the sale. How does it look?",
    "options": [
     "Excellent: it's growing fast",
-    "Bad sign: growing like this doesn't bring it any closer to making money",
+    "Bad: growing like this brings no profit",
     "The margin doesn't matter if sales are going up"
    ],
    "explanation": "Look at whether each sale makes money, not just how many sales there are.",
@@ -642,8 +642,8 @@
   "u18l5-7": {
    "prompt": "Why is the P/E no use for a company that's losing money?",
    "options": [
-    "Because without earnings it comes out negative and makes no sense",
-    "Because it's forbidden to calculate it",
+    "Because without earnings it makes no sense",
+    "Because the CNMV bans calculating it for loss-makers",
     "Because it always comes out at 15"
    ],
    "explanation": "That's why you look at sales, margins and cash."
@@ -668,7 +668,7 @@
    "prompt": "You own shares in a young company that loses money. It announces a capital increase: it will issue lots of new shares and you won't buy any. What happens to your share of the company?",
    "options": [
     "It grows: new money comes into the company",
-    "It gets smaller: the cake is shared among more shares",
+    "It gets smaller: there are more shares",
     "It doesn't change: I still have the same shares"
    ],
    "explanation": "If there are more shares and you don't buy, your percentage falls: that's dilution. It's very common in companies that burn cash, which is why you look at months of cash.",
@@ -681,8 +681,8 @@
   "u18l5-13": {
    "prompt": "Two made-up companies with no profits sell €100m a year. One is worth €300m on the stock market; the other, €3,000m. Which is more expensive by price/sales?",
    "options": [
-    "The €3,000m one: you pay 30 times its sales",
-    "Both the same: they sell the same",
+    "The €3,000m one: 30 times its sales",
+    "Both the same: they sell the same each year",
     "The €300m one: it's smaller"
    ],
    "explanation": "With no profits, you compare what it's worth with what it sells: 3 times sales versus 30. The expensive one needs to grow enormously to justify its price."
@@ -691,8 +691,8 @@
    "prompt": "What do you reply to Lumi?",
    "options": [
     "By its social media followers",
-    "With the P/E, like all of them",
-    "With its sales, its gross margin and its months of cash"
+    "With the P/E, like all other companies",
+    "With its sales, margin and cash"
    ],
    "explanation": "With no profit, the P/E is no use. You look at how much you pay for its sales, whether each sale makes money (gross margin) and how long its cash will last.",
    "feedback": [
@@ -719,9 +719,9 @@
   "u18l6-8": {
    "prompt": "You've run the checklist on a company: it's growing, very profitable, generates cash, has no debt and has a strong brand. But it trades on a P/E well above its historical average. What do you conclude?",
    "options": [
-    "A safe buy: it's a great business",
+    "A safe buy: a great business always pays off",
     "It's a scam",
-    "It's a great business, but I need to decide whether the price leaves a margin of safety"
+    "Great business, but the price still matters"
    ],
    "explanation": "A good business also needs a good price.",
    "feedback": [
@@ -736,15 +736,15 @@
     "Why the price is below the value",
     "What would make you sell",
     "«Because it's going up a lot»",
-    "How the business makes money"
+    "The price it will trade at in a year"
    ],
-   "explanation": "A thesis explains why the business is worth more than its price, and when you'd stop believing it."
+   "explanation": "A thesis explains why the business is worth more than its price and what would make you sell, and starts from understanding how it makes money. «It's going up» isn't a reason, and nobody knows what price it will trade at in a year."
   },
   "u18l6-11": {
    "prompt": "You apply the checklist to two made-up companies in the same sector, at the same P/E. A grows, generates cash and has more cash than debt. B grows just as much, but its profit doesn't reach its cash and it raises capital every year. Which passes the test better?",
    "options": [
     "Both the same: they have the same P/E",
-    "A: it grows, turns profit into cash and is healthy",
+    "A: it turns profit into cash",
     "B: it grows just as much"
    ],
    "explanation": "At the same price, the winner is the one that answers «does it generate cash?» and «is it healthy?» better. The red flags are usually in cash and debt, not in the profit headline.",

@@ -323,7 +323,7 @@
   "u17l2-6": {
    "prompt": "Per què l'EV/EBITDA serveix per comparar empreses amb nivells de deute diferents?",
    "options": [
-    "Perquè suma el deute net al valor de l'empresa",
+    "Perquè inclou el deute net",
     "Perquè només mira el dividend",
     "Perquè ignora el deute"
    ],
@@ -342,7 +342,7 @@
    "options": [
     "Que B és més barata perquè té deute",
     "Que té raó: capitalitzen el mateix",
-    "Que B és més cara: EV/EBITDA de 18 davant de 10"
+    "Que B surt més cara: deu 800 M€"
    ],
    "explanation": "El valor d'empresa mira l'empresa sencera, deute inclòs.",
    "feedback": [
@@ -368,7 +368,7 @@
   "u17l2-11": {
    "prompt": "FitA i FitB, dues cadenes de gimnasos inventades, cotitzen a PER 15. FitA no té deute; FitB té un deute net igual al que val a borsa. Si compressis l'empresa sencera, quina seria més cara?",
    "options": [
-    "FitB: amb el seu deute, el seu valor d'empresa és el doble",
+    "FitB: el seu deute també es paga",
     "Les dues igual: tenen el mateix PER",
     "FitA, perquè no aprofita el deute"
    ],
@@ -392,7 +392,7 @@
    "prompt": "Què li respons a la Lumi?",
    "options": [
     "El P/VC no serveix per a bancs",
-    "Pot ser barat, però mira per què el mercat desconfia del seu balanç",
+    "Mira abans per què el mercat desconfia",
     "Sí, és una ganga segura: compra tot el que puguis"
    ],
    "explanation": "En bancs i asseguradores el P/VC és molt útil, però un de molt baix sol indicar que el mercat dubta del que val el seu balanç. Barat no és el mateix que segur.",
@@ -419,7 +419,7 @@
    "options": [
     "Perquè el calcula Hisenda",
     "Perquè inclou el deute en el capital",
-    "Perquè sempre surt més alt"
+    "Perquè sempre surt més alt que el ROE"
    ],
    "explanation": "El ROE es dispara si l'empresa s'endeuta; el ROIC, no tant."
   },
@@ -436,8 +436,8 @@
   "u17l3-9": {
    "prompt": "La Laura compara dues empreses. A: ROE del 25 % amb deute net/EBITDA de 5. B: ROE del 18 %, sense deute i amb ROIC del 18 %. Quina sembla millor negoci?",
    "options": [
-    "A: té un ROE més alt",
-    "B: guanya molt sobre tot el seu capital sense dependre del deute",
+    "A: té un ROE més alt, i això és el que compta",
+    "B: guanya molt sense dependre del deute",
     "No se'n pot saber res"
    ],
    "explanation": "Mira el ROE juntament amb el ROIC i el deute.",
@@ -450,9 +450,9 @@
   "u17l3-11": {
    "prompt": "Dues cafeteries inventades guanyen 100.000 € l'any cadascuna. La primera va necessitar 200.000 € per obrir; la segona, 2 milions. Quin és millor negoci?",
    "options": [
-    "La segona: és més gran",
-    "Les dues igual: guanyen el mateix",
-    "La primera: guanya el mateix amb molt menys capital"
+    "La segona: és més gran i val més",
+    "Les dues igual: guanyen el mateix cada any",
+    "La primera: necessita menys capital"
    ],
    "explanation": "El ROIC compara el que guanya un negoci amb el capital que necessita. Amb el mateix benefici, el que necessita menys capital és millor negoci i pot créixer sense demanar tants diners.",
    "feedback": [
@@ -465,8 +465,8 @@
    "prompt": "Què li respons a la Lumi?",
    "options": [
     "El ROE no serveix de res",
-    "Sí: compra ja",
-    "Mira abans el seu deute i el seu ROIC: el deute infla el ROE"
+    "Sí: amb un ROE tan alt, compra-la ja sense dubtar",
+    "Mira abans el seu deute i el seu ROIC"
    ],
    "explanation": "Un ROE molt alt pot sortir d'un gran negoci o de molt deute. El ROIC, que compta tot el capital, diu quina de les dues coses és.",
    "feedback": [
@@ -511,8 +511,8 @@
    "prompt": "En Bruno compara dues accions pel dividend. A: rendibilitat del 3,5 %, payout del 50 % i caixa lliure que cobreix el dividend dues vegades. B: rendibilitat del 9 %, payout del 130 % i un deute que no para de créixer. Què té més sentit?",
    "options": [
     "És igual: els dividends estan garantits",
-    "Fixar-se en B: paga gairebé el triple",
-    "Fixar-se en A: el seu dividend està cobert pel benefici i la caixa"
+    "Fixar-se en B: paga gairebé el triple cada any",
+    "Fixar-se en A: el seu dividend està cobert"
    ],
    "explanation": "Abans de mirar quant paga, mira d'on surt.",
    "feedback": [
@@ -535,8 +535,8 @@
    "prompt": "Cobres un dividend d'1 € per acció i aquell mateix dia l'acció passa de 20 € a 19 €, sense altres notícies. Has guanyat diners?",
    "options": [
     "He perdut 1 € per acció",
-    "Sí: 1 € gratis per acció",
-    "No pel dividend en si: aquest euro ha passat de l'acció a la teva butxaca"
+    "Sí: 1 € gratis per cada acció que tinc",
+    "No: aquest euro ha sortit de l'acció"
    ],
    "explanation": "El dividend no és un regal: surt del valor de l'empresa. El que importa és la rendibilitat total, preu més dividends.",
    "feedback": [
@@ -560,15 +560,15 @@
    "options": [
     "Per obtenir el valor exacte d'una empresa",
     "Per saber quan pujarà l'acció",
-    "Per pensar quin creixement descompta el preu"
+    "Per veure què descompta el preu"
    ],
    "explanation": "Petits canvis en les hipòtesis canvien molt el resultat."
   },
   "u17l5-8": {
    "prompt": "En Pablo fa un DCF: una empresa que cotitza a 60 € «val» 120 €. Per arribar-hi ha suposat un creixement del 25 % anual durant 10 anys i una taxa del 6 %. Què hauria de fer?",
    "options": [
-    "Comprar amb tot: val el doble",
-    "Provar hipòtesis més prudents i veure quant canvia el valor",
+    "Comprar amb tot: val el doble del que costa",
+    "Provar hipòtesis més prudents",
     "Publicar-ho en un fòrum"
    ],
    "explanation": "Un DCF és tan bo com les seves hipòtesis.",
@@ -591,7 +591,7 @@
   "u17l5-11": {
    "prompt": "Què li respons a la Lumi?",
    "options": [
-    "Millor pensa en un rang i exigeix un bon marge de seguretat",
+    "Millor pensa en un rang de valors",
     "Els DCF no serveixen per a res",
     "Perfecte! Si cotitza a 47,31 €, és barata"
    ],
@@ -618,8 +618,8 @@
    "prompt": "L'Iván i la Sara valoren la mateixa empresa amb una taxa del 9 %. L'Iván suposa que creixerà un 30 % l'any durant 20 anys; la Sara, un 7 % durant 10 anys i després un 2 %. Quin valor és més útil per decidir?",
    "options": [
     "El de l'Iván: surt més alt",
-    "El de la Sara: les seves hipòtesis són prudents i creïbles",
-    "Els dos igual: fan servir la mateixa taxa"
+    "El de la Sara: les seves hipòtesis són creïbles",
+    "Els dos igual: fan servir la mateixa taxa de descompte"
    ],
    "explanation": "Un DCF és tan bo com les seves hipòtesis. Amb supòsits prudents, el valor que en surt serveix per decidir; amb supòsits de somni, només per il·lusionar-se.",
    "feedback": [
@@ -660,7 +660,7 @@
    "prompt": "Dues borses inventades: la A cotitza a un CAPE de 40 i la B, a un de 15. Inverteixes per als pròxims 10 anys. Què és més raonable esperar?",
    "options": [
     "Que la A caigui aquest any segur",
-    "Que la A rendeixi menys que la B, tot i que no sé quan ni quant",
+    "Que la A rendeixi menys que la B",
     "Que la A rendeixi més: si és cara, és perquè va bé"
    ],
    "explanation": "Històricament, un CAPE alt s'ha associat a rendibilitats més baixes a 10 anys. Serveix per ajustar el que esperes i diversificar, no per endevinar el moment.",
@@ -674,13 +674,13 @@
    "prompt": "Què li respons a la Lumi?",
    "options": [
     "Sí, surt ja",
-    "Compra'n més amb un préstec",
-    "El CAPE no diu quan: millor ajusta el que esperes i diversifica"
+    "No passa res: aquesta vegada és diferent, les empreses guanyen més",
+    "El CAPE no diu quan: ajusta el que esperes"
    ],
    "explanation": "Sortir i tornar a entrar obliga a encertar dues vegades. Un CAPE alt demana expectatives més modestes i diversificar per països, no apostar per una data.",
    "feedback": [
     "Pot continuar car anys: el Nasdaq va continuar pujant fins al març del 2000.",
-    "Deute en un mercat car: risc sobre risc.",
+    "«Aquesta vegada és diferent» s'ha dit abans de cada bombolla: pagar car deixa menys marge.",
     "Tens raó: hauria d'encertar dues vegades, en sortir i en tornar."
    ],
    "lines": [

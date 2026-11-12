@@ -323,7 +323,7 @@
   "u17l2-6": {
    "prompt": "Why is EV/EBITDA useful for comparing companies with different levels of debt?",
    "options": [
-    "Because it adds net debt to the company's value",
+    "Because it includes net debt",
     "Because it only looks at the dividend",
     "Because it ignores debt"
    ],
@@ -342,7 +342,7 @@
    "options": [
     "That B is cheaper because it has debt",
     "That they're right: the market caps are the same",
-    "That B is more expensive: EV/EBITDA of 18 versus 10"
+    "That B is dearer: it owes €800m"
    ],
    "explanation": "Enterprise value looks at the whole company, debt included.",
    "feedback": [
@@ -368,7 +368,7 @@
   "u17l2-11": {
    "prompt": "FitA and FitB, two made-up gym chains, trade at a P/E of 15. FitA has no debt; FitB has net debt equal to its stock market value. If you bought the whole company, which would be more expensive?",
    "options": [
-    "FitB: with its debt, its enterprise value is double",
+    "FitB: you pay for its debt too",
     "Both the same: they have the same P/E",
     "FitA, because it doesn't make use of debt"
    ],
@@ -392,7 +392,7 @@
    "prompt": "What do you reply to Lumi?",
    "options": [
     "P/B is no use for banks",
-    "It may be cheap, but look at why the market distrusts its balance sheet",
+    "First look at why the market distrusts it",
     "Yes, it's a sure bargain: buy as much as you can"
    ],
    "explanation": "For banks and insurers P/B is very useful, but a very low one usually means the market doubts what its balance sheet is worth. Cheap isn't the same as safe.",
@@ -419,7 +419,7 @@
    "options": [
     "Because the tax authority calculates it",
     "Because it includes debt in the capital",
-    "Because it always comes out higher"
+    "Because it always comes out higher than ROE"
    ],
    "explanation": "ROE shoots up if the company takes on debt; ROIC, not so much."
   },
@@ -436,8 +436,8 @@
   "u17l3-9": {
    "prompt": "Laura is comparing two companies. A: ROE of 25 % with net debt/EBITDA of 5. B: ROE of 18 %, no debt and an ROIC of 18 %. Which looks like the better business?",
    "options": [
-    "A: its ROE is higher",
-    "B: it earns a lot on all its capital without relying on debt",
+    "A: its ROE is higher, and that's what counts",
+    "B: it earns a lot without relying on debt",
     "There's no way to tell"
    ],
    "explanation": "Look at ROE alongside ROIC and debt.",
@@ -450,9 +450,9 @@
   "u17l3-11": {
    "prompt": "Two made-up cafés earn €100,000 a year each. The first needed €200,000 to open; the second, 2 million. Which is the better business?",
    "options": [
-    "The second: it's bigger",
-    "Both the same: they earn the same",
-    "The first: it earns the same with much less capital"
+    "The second: it's bigger and worth more",
+    "Both the same: they earn the same each year",
+    "The first: it needs less capital"
    ],
    "explanation": "ROIC compares what a business earns with the capital it needs. With the same profit, the one that needs less capital is the better business and can grow without asking for as much money.",
    "feedback": [
@@ -465,8 +465,8 @@
    "prompt": "What do you reply to Lumi?",
    "options": [
     "ROE is useless",
-    "Yes: buy now",
-    "Check its debt and its ROIC first: debt inflates ROE"
+    "Yes: with ROE that high, buy it now without a second thought",
+    "Check its debt and its ROIC first"
    ],
    "explanation": "A very high ROE can come from a great business or from lots of debt. ROIC, which counts all the capital, tells you which it is.",
    "feedback": [
@@ -512,7 +512,7 @@
    "options": [
     "It doesn't matter: dividends are guaranteed",
     "Go for B: it pays almost three times as much",
-    "Go for A: its dividend is covered by earnings and cash"
+    "Go for A: its dividend is covered"
    ],
    "explanation": "Before looking at how much it pays, look at where the money comes from.",
    "feedback": [
@@ -535,8 +535,8 @@
    "prompt": "You receive a dividend of €1 per share and that same day the share goes from €20 to €19, with no other news. Have you made money?",
    "options": [
     "I've lost €1 per share",
-    "Yes: €1 free per share",
-    "Not from the dividend itself: that euro has moved from the share to your pocket"
+    "Yes: €1 for free on every share I hold",
+    "No: that euro came out of the share"
    ],
    "explanation": "A dividend isn't a gift: it comes out of the company's value. What matters is total return, price plus dividends.",
    "feedback": [
@@ -560,15 +560,15 @@
    "options": [
     "Getting the exact value of a company",
     "Knowing when the share price will go up",
-    "Thinking about what growth the price is assuming"
+    "Seeing what the price is assuming"
    ],
    "explanation": "Small changes in the assumptions change the result a lot."
   },
   "u17l5-8": {
    "prompt": "Pablo does a DCF: a company trading at €60 is «worth» €120. To get there he assumed 25 % annual growth for 10 years and a 6 % rate. What should he do?",
    "options": [
-    "Go all in: it's worth double",
-    "Try more cautious assumptions and see how much the value changes",
+    "Go all in: it's worth double what it costs",
+    "Try more cautious assumptions",
     "Post it on a forum"
    ],
    "explanation": "A DCF is only as good as its assumptions.",
@@ -591,7 +591,7 @@
   "u17l5-11": {
    "prompt": "What do you reply to Lumi?",
    "options": [
-    "Better to think in terms of a range and demand a good margin of safety",
+    "Better to think in a range of values",
     "DCFs are useless",
     "Perfect! If it trades at €47.31, it's cheap"
    ],
@@ -618,8 +618,8 @@
    "prompt": "Iván and Sara value the same company with a 9 % rate. Iván assumes it will grow 30 % a year for 20 years; Sara, 7 % for 10 years and then 2 %. Which value is more useful for deciding?",
    "options": [
     "Iván's: it comes out higher",
-    "Sara's: her assumptions are prudent and believable",
-    "Both the same: they use the same rate"
+    "Sara's: her assumptions are believable",
+    "Both the same: they use the same discount rate"
    ],
    "explanation": "A DCF is only as good as its assumptions. With prudent assumptions, the value it gives helps you decide; with dream assumptions, it only gets your hopes up.",
    "feedback": [
@@ -660,7 +660,7 @@
    "prompt": "Two made-up stock markets: A trades at a CAPE of 40 and B at one of 15. You're investing for the next 10 years. What's most reasonable to expect?",
    "options": [
     "That A will definitely fall this year",
-    "That A returns less than B, though I don't know when or by how much",
+    "That A returns less than B",
     "That A returns more: if it's expensive, it's because it's doing well"
    ],
    "explanation": "Historically, a high CAPE has gone with lower returns over 10 years. It helps you adjust what you expect and diversify, not guess the timing.",
@@ -674,13 +674,13 @@
    "prompt": "What do you reply to Lumi?",
    "options": [
     "Yes, get out now",
-    "Buy more with a loan",
-    "The CAPE doesn't say when: better adjust what you expect and diversify"
+    "It's fine: this time is different, companies earn more",
+    "The CAPE doesn't say when: adjust what you expect"
    ],
    "explanation": "Getting out and back in means getting it right twice. A high CAPE calls for more modest expectations and diversifying across countries, not betting on a date.",
    "feedback": [
     "It can stay expensive for years: the Nasdaq kept rising until March 2000.",
-    "Debt in an expensive market: risk on top of risk.",
+    "«This time is different» has been said before every bubble: paying a high price leaves less room.",
     "You're right: I'd have to get it right twice, getting out and getting back in."
    ],
    "lines": [

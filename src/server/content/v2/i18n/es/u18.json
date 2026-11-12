@@ -400,18 +400,18 @@
    "prompt": "¿Qué señales en los números sugieren un foso? Marca todas.",
    "options": [
     "Subir precios sin perder clientes",
-    "ROIC alto durante una década",
+    "Ventas que se doblan en un solo año",
     "Pérdidas constantes",
     "Márgenes altos y estables durante años"
    ],
-   "explanation": "Las pérdidas constantes indican justo lo contrario."
+   "explanation": "Márgenes altos y estables y poder subir precios sin perder clientes sugieren un foso, igual que un ROIC alto durante años. Un año de mucho crecimiento puede ser una moda, y las pérdidas constantes indican lo contrario."
   },
   "u18l1-4": {
    "prompt": "Ana analiza una cafetería de moda con colas en la puerta que ganó mucho el año pasado. A 50 metros acaban de abrir otras tres parecidas. ¿Qué concluye sobre su foso?",
    "options": [
     "El foso depende de la decoración del local",
-    "Tiene un foso enorme: hay colas",
-    "Su foso es débil: es fácil de copiar y ya la están copiando"
+    "Tiene un foso enorme: hay colas en la puerta",
+    "Su foso es débil: es fácil de copiar"
    ],
    "explanation": "Si un negocio gana mucho y es fácil de copiar, la competencia llegará.",
    "feedback": [
@@ -423,7 +423,7 @@
   "u18l1-5": {
    "prompt": "Bruno encuentra una empresa con un foso clarísimo… que cotiza a PER 90 y crece al 10 % anual. ¿Qué tiene en cuenta?",
    "options": [
-    "Que su PEG es 9: el precio ya descuenta muchísimo",
+    "Que su PEG es 9: está carísima",
     "Que con ese foso cualquier precio está bien",
     "Que un PER alto garantiza que seguirá subiendo"
    ],
@@ -462,7 +462,7 @@
   "u18l2-5": {
    "prompt": "¿Qué es técnicamente una recesión?",
    "options": [
-    "Una caída de la bolsa del 10 %",
+    "Una caída de la bolsa de más del 10 % en un año",
     "Una subida de tipos",
     "Dos trimestres seguidos de caída del PIB"
    ],
@@ -471,9 +471,9 @@
   "u18l2-7": {
    "prompt": "Los datos apuntan a una desaceleración. Pablo tiene casi toda su cartera en bancos, automoción y hoteles. ¿Qué riesgo tiene?",
    "options": [
-    "Está muy concentrado en cíclicos, que suelen caer más si llega una recesión",
+    "Está muy concentrado en sectores cíclicos",
     "Que los sectores defensivos no existen",
-    "Ninguno: esos sectores siempre suben"
+    "Ninguno: esos sectores siempre acaban subiendo"
    ],
    "explanation": "Repartir entre cíclicos y defensivos reduce la dependencia del ciclo.",
    "feedback": [
@@ -488,9 +488,9 @@
     "Alimentación",
     "Construcción",
     "Salud",
-    "Eléctricas"
+    "Automoción"
    ],
-   "explanation": "La construcción es muy cíclica."
+   "explanation": "La alimentación y la salud se compran igual en las crisis, como la luz. La construcción y la automoción son muy cíclicas."
   },
   "u18l3-2": {
    "prompt": "Ordena lo que pasa cuando el banco central sube los tipos.",
@@ -552,8 +552,8 @@
   "u18l3-10": {
    "prompt": "¿Qué le contestas a Irene?",
    "options": [
-    "No tiene ningún efecto",
-    "Suele ser favorable, pero depende de si ya se esperaba y de por qué los bajan",
+    "No tiene ningún efecto: la bolsa va por su cuenta",
+    "Suele ser favorable, pero depende del motivo",
     "Siempre malo"
    ],
    "explanation": "Bajar los tipos suele favorecer a bolsa y bonos, pero cuentan la sorpresa y el motivo.",
@@ -586,8 +586,8 @@
   "u18l4-4": {
    "prompt": "Se espera una inflación del 2,8 % y sale un 3,3 %. Tienes una posición grande en bonos largos. ¿Qué es lo más probable ese día?",
    "options": [
-    "Nada, ya se sabía",
-    "Que los bonos caigan: el mercado pasa a esperar tipos más altos",
+    "Nada, ya se sabía de antemano",
+    "Que los bonos caigan",
     "Que los bonos suban"
    ],
    "explanation": "Cuenta la diferencia entre el dato y lo esperado.",
@@ -610,18 +610,18 @@
    "prompt": "¿Qué datos suelen mover más los mercados? Marca todos.",
    "options": [
     "La inflación",
-    "El empleo de EE. UU.",
-    "El número de visitantes de un museo",
+    "El PIB de hace dos años",
+    "El resultado de una empresa pequeña",
     "Las decisiones de tipos del BCE y la Fed"
    ],
-   "explanation": "Tipos, inflación y empleo deciden la política monetaria."
+   "explanation": "La inflación y las decisiones de tipos del BCE y la Fed son lo que más mueve los mercados, junto con el empleo de EE. UU. Un dato antiguo o el resultado de una empresa pequeña apenas cambian las expectativas."
   },
   "u18l4-10": {
    "prompt": "Se esperaba un PIB del +0,3 % y sale un +0,3 %. ¿Reacción más probable?",
    "options": [
-    "Una caída enorme",
-    "Una subida enorme",
-    "Poca: ya estaba en el precio"
+    "Una caída enorme de la bolsa",
+    "Una subida enorme de la bolsa",
+    "Poca: ya se esperaba"
    ],
    "explanation": "Sin sorpresa, no hay mucho que ajustar."
   },
@@ -629,7 +629,7 @@
    "prompt": "Una empresa vende cada vez más, pero su margen bruto es del 5 % y bajando: casi todo lo que cobra se le va en lo que le cuesta vender. ¿Qué pinta tiene?",
    "options": [
     "Excelente: crece mucho",
-    "Mala señal: crecer así no la acerca a ganar dinero",
+    "Mala: crecer así no da beneficios",
     "Da igual el margen si las ventas suben"
    ],
    "explanation": "Mira si cada venta deja dinero, no solo cuántas ventas hay.",
@@ -642,8 +642,8 @@
   "u18l5-7": {
    "prompt": "¿Por qué el PER no sirve para una empresa que pierde dinero?",
    "options": [
-    "Porque sin beneficio sale negativo y no tiene sentido",
-    "Porque está prohibido calcularlo",
+    "Porque sin beneficio no tiene sentido",
+    "Porque la CNMV prohíbe calcularlo con pérdidas",
     "Porque siempre sale 15"
    ],
    "explanation": "Por eso se miran ventas, márgenes y caja."
@@ -668,7 +668,7 @@
    "prompt": "Tienes acciones de una empresa joven que pierde dinero. Anuncia una ampliación de capital: emitirá muchas acciones nuevas y tú no vas a comprar ninguna. ¿Qué pasa con tu parte de la empresa?",
    "options": [
     "Crece: entra dinero nuevo en la empresa",
-    "Se hace más pequeña: el pastel se reparte entre más acciones",
+    "Se hace más pequeña: hay más acciones",
     "No cambia: sigo teniendo las mismas acciones"
    ],
    "explanation": "Si hay más acciones y tú no compras, tu porcentaje baja: es la dilución. En empresas que queman caja es de lo más habitual, por eso se miran los meses de caja.",
@@ -681,8 +681,8 @@
   "u18l5-13": {
    "prompt": "Dos empresas inventadas sin beneficios venden 100 M€ al año. Una vale 300 M€ en bolsa; la otra, 3.000 M€. ¿Cuál está más cara según su precio/ventas?",
    "options": [
-    "La de 3.000 M€: pagas 30 veces sus ventas",
-    "Las dos igual: venden lo mismo",
+    "La de 3.000 M€: 30 veces sus ventas",
+    "Las dos igual: venden lo mismo cada año",
     "La de 300 M€: es más pequeña"
    ],
    "explanation": "Sin beneficios, se compara lo que vale con lo que vende: 3 veces las ventas frente a 30. La cara necesita crecer muchísimo para justificar su precio."
@@ -691,8 +691,8 @@
    "prompt": "¿Qué le contestas a Nora?",
    "options": [
     "Por sus seguidores en redes",
-    "Con el PER, como todas",
-    "Con sus ventas, su margen bruto y sus meses de caja"
+    "Con el PER, como todas las demás empresas",
+    "Con sus ventas, su margen y su caja"
    ],
    "explanation": "Sin beneficio, el PER no sirve. Se mira cuánto pagas por sus ventas, si cada venta deja dinero (margen bruto) y cuánto aguanta con su caja.",
    "feedback": [
@@ -719,9 +719,9 @@
   "u18l6-8": {
    "prompt": "Has aplicado la lista a una empresa: crece, gana mucho, genera caja, no tiene deuda y tiene una marca fuerte. Pero cotiza a un PER muy por encima de su media histórica. ¿Qué concluyes?",
    "options": [
-    "Compra segura: es un gran negocio",
+    "Compra segura: un gran negocio siempre compensa",
     "Es una estafa",
-    "Es un gran negocio, pero tengo que decidir si el precio deja margen de seguridad"
+    "Gran negocio, pero falta mirar el precio"
    ],
    "explanation": "Un buen negocio necesita, además, un buen precio.",
    "feedback": [
@@ -736,15 +736,15 @@
     "Por qué el precio está por debajo del valor",
     "Qué te haría vender",
     "«Porque está subiendo mucho»",
-    "Cómo gana dinero el negocio"
+    "El precio al que cotizará en un año"
    ],
-   "explanation": "Una tesis explica por qué el negocio vale más que su precio, y cuándo dejarías de creerlo."
+   "explanation": "Una tesis explica por qué el negocio vale más que su precio y qué te haría vender, y parte de entender cómo gana dinero. «Está subiendo» no es una razón, y nadie sabe a qué precio cotizará dentro de un año."
   },
   "u18l6-11": {
    "prompt": "Aplicas la lista a dos empresas inventadas del mismo sector, al mismo PER. A crece, genera caja y tiene más caja que deuda. B crece igual, pero su beneficio no llega a la caja y amplía capital cada año. ¿Cuál pasa mejor el examen?",
    "options": [
     "Las dos igual: tienen el mismo PER",
-    "A: crece, convierte el beneficio en caja y está sana",
+    "A: convierte el beneficio en caja",
     "B: crece lo mismo"
    ],
    "explanation": "Al mismo precio, gana la que responde mejor a «¿genera caja?» y «¿está sana?». Las alarmas suelen estar en la caja y la deuda, no en el titular del beneficio.",
