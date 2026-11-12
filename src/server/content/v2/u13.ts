@@ -157,16 +157,19 @@ export default unit({
     ], { source: '2.9', minutes: 6, retire: [2, 4, 5, 6, 7] }),
 
     lesson('u13l4', 'Staking y DeFi: de dónde sale el rendimiento', [
-      story('Un 20 % por depositar', [{ id: 'sara', name: 'Sara' }], [
-        say('sara', 'Una plataforma paga casi un 20 % al año por depositar UST.'),
-        say('sara', 'Es una stablecoin, una moneda estable. Así que no hay riesgo, ¿no?'),
+      // Auditoría RED-22: el caso del UST al 20 % se cuenta en u12l5; aquí va Celsius, que es el de esta clase (prestar criptos).
+      // Fuente (12-11-2026): regulador financiero de Vermont, https://dfr.vermont.gov/node/2406 — Celsius suspendió las
+      // retiradas el 12-6-2022 y pidió el concurso (Chapter 11) el 13-7-2022.
+      story('Intereses por prestar tus criptos', [{ id: 'sara', name: 'Sara' }], [
+        say('sara', 'Una plataforma me paga intereses muy altos por dejarle mis criptos. Dice que las presta y me da una parte.'),
+        say('sara', 'Lo llaman «cuenta de ahorro». Suena a banco, así que no hay riesgo, ¿no?'),
         choose('¿Qué le preguntas primero?', [
           opt('¿Cuánto puedo depositar como máximo?', 'bad', say('lumi', 'Antes del cuánto, el **de dónde**. Si nadie lo explica, desconfía.')),
-          opt('¿Quién paga ese 20 % y con qué dinero?', 'good', say('lumi', 'Esa es la pregunta. Aquí lo pagaban **subsidios**, y no eran infinitos.')),
+          opt('¿A quién le presta mis criptos, y qué pasa si no se las devuelven?', 'good', say('lumi', 'Esa es la pregunta. Si quien las recibe no paga, la plataforma tampoco puede pagarte a ti.')),
           opt('¿Gano más si traigo a mis amigos?', 'bad', say('lumi', 'Ganar por traer gente es la señal típica de un esquema piramidal.')),
         ]),
-        note('2022: los subsidios dejan de bastar y todo se hunde.'),
-        say('lumi', 'Ese mismo año quebró Celsius, que también prometía intereses altos.'),
+        note('Junio de 2022: Celsius, una de las mayores plataformas de este tipo, congela las retiradas. Un mes después se declara en quiebra.'),
+        say('lumi', 'No era un banco: no había fondo de garantía que cubriera a sus clientes.'),
         say('lumi', 'Si no sabes de dónde sale el rendimiento, quizá el rendimiento eres tú.'),
       ]),
       play({
