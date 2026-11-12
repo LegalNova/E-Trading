@@ -47,7 +47,7 @@ export const en: HelpDoc = {
       items: [
         { id: 'saldo', q: 'How much money do I start with?', a: ['€10,000 in virtual money on Free and €50,000 on Plus and Max.'] },
         { id: 'precios', q: 'Are the prices real?', a: ['Yes: they come from public market data sources. They may be delayed (15 minutes or more on some exchanges) or occasionally wrong. They’re for learning only.'] },
-        { id: 'ordenes', q: 'Which order types can I use?', a: ['Market orders from the start. Limit, stop loss and take profit orders unlock when you finish the stop loss lesson (on Max, from day one).'] },
+        { id: 'ordenes', q: 'Which order types can I use?', a: ['Market orders from the start. Limit, stop loss and take profit orders unlock when you finish the lesson «The 1 % rule», in the first section (on Max, from day one).'] },
         { id: 'no-ejecuta', q: 'Why hasn’t my order gone through?', a: ['The usual reasons: that asset’s market is closed (the order waits for it to open), the price hasn’t reached the one you set in a limit or stop order, or you don’t have enough balance.'] },
         { id: 'comisiones', q: 'Are there fees?', a: ['Yes, simulated ones, so it feels like the real thing: 0.1 % of each trade, with a minimum of €1 in virtual money.'] },
         { id: 'reiniciar', q: 'Can I start my portfolio from scratch?', a: ['Yes, up to 3 times a year, from the portfolio screen. You go back to the starting balance and your positions are closed; you keep your XP, streak and achievements.'] },

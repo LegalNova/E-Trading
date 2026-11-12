@@ -117,33 +117,6 @@ export function Market() {
           {/* Qué bolsas están abiertas ahora mismo */}
           <MarketWindow />
 
-          {/* Lo que más se mueve hoy */}
-          <section aria-label={t('movers')} className="flex min-w-0 flex-col gap-2">
-            <div className="flex flex-wrap items-center justify-between gap-2 px-0.5">
-              <span className="t-head">{t('movers')}</span>
-              <Seg label={t('movers')} className={`w-[200px] ${TAP}`} value={movers} onChange={setMovers} options={[{ value: 'gainers', label: t('gainers') }, { value: 'losers', label: t('losers') }]} />
-            </div>
-            <div className={`pills ${PILL_TAP}`} role="group" aria-label={t('region')}>
-              {REGIONS.map(r => (
-                <button key={r} aria-pressed={region === r} onClick={() => setRegion(r)}>
-                  {t(`regions.${r}`)}
-                </button>
-              ))}
-            </div>
-            <div className="list">
-              {!ov ? (
-                <div className="li t-foot">{t('loading')}</div>
-              ) : ov[movers].length ? (
-                ov[movers].map((a, i) => <AssetRow key={a.symbol} a={a} rank={i + 1} />)
-              ) : (
-                <div className="li t-foot">{t('noMovers')}</div>
-              )}
-            </div>
-            <Link href={exploreHref({ type: 'STOCK', region: region === 'ALL' ? undefined : region, sort: movers })} className="link inline-flex min-h-11 items-center px-0.5 text-[14px]">
-              {t('seeRanking')}
-            </Link>
-          </section>
-
           {/* Listas con criterio para practicar el análisis (no son recomendaciones) */}
           <IdeasTeaser />
 
@@ -154,6 +127,13 @@ export function Market() {
               <Link href={exploreHref({ type: 'INDEX', region: region === 'ALL' ? undefined : region })} className="link inline-flex min-h-11 items-center text-[14px]">
                 {t('seeAll')}
               </Link>
+            </div>
+            <div className={`pills ${PILL_TAP}`} role="group" aria-label={t('region')}>
+              {REGIONS.map(r => (
+                <button key={r} aria-pressed={region === r} onClick={() => setRegion(r)}>
+                  {t(`regions.${r}`)}
+                </button>
+              ))}
             </div>
             <div className="pills pb-1">
               {!ov ? [0, 1, 2, 3].map(i => <div key={i} className="skel h-[92px] w-[156px] flex-none rounded-2xl" />) : ov.indices.map(a => <IndexCard key={a.symbol} a={a} />)}
@@ -173,6 +153,28 @@ export function Market() {
               ))}
             </div>
           </section>
+
+          {/* Lo que más se mueve hoy: al final y con aviso. Es el reclamo que el curso enseña a no perseguir (auditoría APP-25) */}
+          <section aria-label={t('movers')} className="flex min-w-0 flex-col gap-2">
+            <div className="flex flex-wrap items-center justify-between gap-2 px-0.5">
+              <span className="t-head">{t('movers')}</span>
+              <Seg label={t('movers')} className={`w-[200px] ${TAP}`} value={movers} onChange={setMovers} options={[{ value: 'gainers', label: t('gainers') }, { value: 'losers', label: t('losers') }]} />
+            </div>
+            <p className="t-cap m-0 px-0.5">{t('moversNote')}</p>
+            <div className="list">
+              {!ov ? (
+                <div className="li t-foot">{t('loading')}</div>
+              ) : ov[movers].length ? (
+                ov[movers].map((a, i) => <AssetRow key={a.symbol} a={a} rank={i + 1} />)
+              ) : (
+                <div className="li t-foot">{t('noMovers')}</div>
+              )}
+            </div>
+            <Link href={exploreHref({ type: 'STOCK', region: region === 'ALL' ? undefined : region, sort: movers })} className="link inline-flex min-h-11 items-center px-0.5 text-[14px]">
+              {t('seeRanking')}
+            </Link>
+          </section>
+
 
           {/* Explorar por índice */}
           {facets.data && facets.data.indices.length > 0 && (

@@ -4,7 +4,7 @@ import { isScored, tally } from '@/shared/scoring'
 import type { AnswerResultT, CoursePathT, LessonStepT, LessonT, PathUnitT, PlacementFinishT, QuestionT, QuizFinishT, QuizStartT, StepCheckT } from '@/shared/contract'
 import type { User } from '@/generated/prisma/client'
 import { walkTexts } from '@/shared/play'
-import { courseMinutes, lessonMinutes, LESSON, PLACEMENT, QUIZZES, RISK_LESSON, UNITS, type ContentQuestion } from '../content/catalog'
+import { courseMinutes, lessonMinutes, LESSON, PLACEMENT, QUIZZES, RISK_LESSONS, UNITS, type ContentQuestion } from '../content/catalog'
 import { canOpen, FULL_UNIT_COUNT, minPlan } from '@/shared/plans'
 import { grade } from '../content/grading'
 import { numChoices } from '../content/choices'
@@ -336,7 +336,8 @@ export const quizFinish = (attemptId: string) =>
         await bumpGoal(c, 'lesson')
         // Primera clase de alguien que llegó invitado: mes de Max para los dos
         await maybeRewardInvite(c.tx, c.user.id)
-        if (at.lessonId === RISK_LESSON && c.user.plan !== 'PREMIUM') c.fx.features = ['LIMIT', 'STOP_LOSS', 'TAKE_PROFIT']
+        // Órdenes avanzadas: se desbloquean con la primera de las clases que las abren (no se anuncia dos veces)
+        if (RISK_LESSONS.includes(at.lessonId) && c.user.plan !== 'PREMIUM' && (await c.tx.lessonProgress.count({ where: { userId: c.user.id, lessonId: { in: RISK_LESSONS.filter(x => x !== at.lessonId) } } })) === 0) c.fx.features = ['LIMIT', 'STOP_LOSS', 'TAKE_PROFIT']
       }
     }
     if (perfect && at.mode === 'LESSON' && !farming) {

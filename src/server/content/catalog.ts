@@ -17,8 +17,14 @@ export const SECONDS_PER_QUESTION = 25
 export const lessonMinutes = (l: ContentLesson) => l.minutes + ((QUIZZES[l.quizId]?.length ?? 0) * SECONDS_PER_QUESTION) / 60
 export const courseMinutes = () => Math.round(UNITS.flatMap(u => u.lessons).reduce((a, l) => a + lessonMinutes(l), 0))
 const V2 = UNITS.some(u => u.section)
-/** Lección cuyo aprobado desbloquea las órdenes límite, stop loss y take profit */
-export const RISK_LESSON = V2 ? 'u6l4' : 'u10l3'
+/**
+ * Lección cuyo aprobado desbloquea las órdenes límite, stop loss y take profit: «La regla del 1 %» (u24l3), en la
+ * sección gratuita, que es donde se enseña a poner el stop (auditoría APP-23). Antes era «El stop loss» (u6l4), dos
+ * secciones después: se enseñaba el stop y no se podía usar.
+ */
+export const RISK_LESSON = V2 ? 'u24l3' : 'u10l3'
+/** Cualquiera de estas lo desbloquea: quien ya aprobó la clase antigua (u6l4) conserva sus órdenes */
+export const RISK_LESSONS: readonly string[] = V2 ? ['u24l3', 'u6l4'] : ['u10l3']
 /** Enlace a una lección escrito con los ids del curso anterior (avisos de Lumi): en el curso v2, su equivalente */
 export const lessonRef = (id: string | null) => (id && V2 ? (LEGACY_TO_V2[id] ?? id) : id)
 

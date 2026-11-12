@@ -6,7 +6,7 @@ import { addDays, dayOf, weekOf } from '@/shared/time'
 import { Prisma, type GameState, type User } from '@/generated/prisma/client'
 import { db, DB_SCHEMA } from '../db'
 import { asTeam, currentUser } from '../auth'
-import { ACHIEVEMENTS, LEVEL_TITLES, LUMI, RISK_LESSON, UNITS } from '../content/catalog'
+import { ACHIEVEMENTS, LEVEL_TITLES, LUMI, RISK_LESSONS, UNITS } from '../content/catalog'
 import { achievementT } from '../content/translate'
 import { currentLocale } from '../locale'
 import { viewAs } from '../view'
@@ -359,4 +359,4 @@ export async function endFx(c: Ctx): Promise<EffectsT> {
 }
 
 export const unlockedFeatures = async (tx: Tx, user: User): Promise<FeatureT[]> =>
-  user.plan === 'PREMIUM' || (await tx.lessonProgress.count({ where: { userId: user.id, lessonId: RISK_LESSON } })) > 0 ? ['LIMIT', 'STOP_LOSS', 'TAKE_PROFIT'] : []
+  user.plan === 'PREMIUM' || (await tx.lessonProgress.count({ where: { userId: user.id, lessonId: { in: [...RISK_LESSONS] } } })) > 0 ? ['LIMIT', 'STOP_LOSS', 'TAKE_PROFIT'] : []

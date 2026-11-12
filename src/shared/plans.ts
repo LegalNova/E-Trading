@@ -14,7 +14,7 @@ const FULL_UNITS: Record<PlanId, string[]> = { FREE: ['h1', 'h2', 'h3'], PLUS: [
 /** Cuántas unidades completas da cada plan (las superadas con la prueba de unidad no cuentan) */
 export const FULL_UNIT_COUNT: Record<PlanId, number> = { FREE: 3, PLUS: 5, PREMIUM: Infinity }
 const FIRST_LESSONS: Record<PlanId, number> = { FREE: 3, PLUS: 5, PREMIUM: Infinity }
-/** Siempre gratis: la clase del stop loss, que desbloquea las órdenes límite, stop y take profit del Mercado (curso v2) */
+/** Siempre gratis: la clase del stop loss (sigue desbloqueando las órdenes avanzadas; desde la auditoría también las abre u24l3, en la sección 0) */
 const ALWAYS_FREE = new Set(['u6l4'])
 
 /**

@@ -47,7 +47,7 @@ export const es: HelpDoc = {
       items: [
         { id: 'saldo', q: '¿Con cuánto dinero empiezo?', a: ['Con 10.000 € virtuales en Free y 50.000 € en Plus y Max.'] },
         { id: 'precios', q: '¿Los precios son reales?', a: ['Sí: salen de fuentes públicas de datos de mercado. Pueden llegar con retraso (en algunas bolsas, 15 minutos o más) o tener errores puntuales. Solo sirven para aprender.'] },
-        { id: 'ordenes', q: '¿Qué tipos de orden puedo usar?', a: ['Desde el principio, órdenes a mercado. Las órdenes limitadas, stop loss y take profit se abren cuando terminas la clase del stop loss (en Max, desde el primer día).'] },
+        { id: 'ordenes', q: '¿Qué tipos de orden puedo usar?', a: ['Desde el principio, órdenes a mercado. Las órdenes limitadas, stop loss y take profit se abren cuando terminas la clase «La regla del 1 %», en la primera sección (en Max, desde el primer día).'] },
         { id: 'no-ejecuta', q: '¿Por qué no se ejecuta mi orden?', a: ['Las causas más habituales: el mercado de ese activo está cerrado (la orden espera a que abra), el precio aún no ha llegado al que pusiste en una orden limitada o stop, o no tienes saldo suficiente.'] },
         { id: 'comisiones', q: '¿Hay comisiones?', a: ['Sí, simuladas, para que se parezca a la realidad: el 0,1 % de cada operación, con un mínimo de 1 € virtual.'] },
         { id: 'reiniciar', q: '¿Puedo empezar de cero con la cartera?', a: ['Sí, hasta 3 veces al año desde la cartera. Vuelves al saldo inicial y se cierran tus posiciones; conservas tu XP, tu racha y tus logros.'] },

@@ -51,10 +51,11 @@ const units: ContentUnit[] = [
   ...section('s0', 'Invierte desde hoy', [], [
     hook('h1', 'Tu primera inversión', 'Compra tu primera acción, entiende por qué se mueve y por qué invertir pronto lo cambia todo', h1),
     hook('h2', 'Invertir como los que ganan', 'Índices, ETFs, diversificar y aportar cada mes: la cartera sencilla que funciona a largo plazo', h2),
-    hook('h3', 'Tu primer análisis', 'Mira una empresa, un gráfico y tu propio miedo con criterio antes de comprar', h3),
+    // Aprobar «La regla del 1 %» (u24l3, en esta unidad) desbloquea las órdenes límite, stop y take profit del Mercado
+    { ...hook('h3', 'Tu primer análisis', 'Mira una empresa, un gráfico y tu propio miedo con criterio antes de comprar', h3), unlocksFeature: 'STOP_LOSS' },
   ]),
-  // Aprobar «El stop loss» (u6l4) desbloquea las órdenes límite, stop y take profit del Mercado
-  ...section('s2', 'Cómo funcionan los mercados', ['s0'], [u05, { ...u06, unlocksFeature: 'STOP_LOSS' }, u07]),
+  // (quien aprobó «El stop loss», u6l4, antes de este cambio también las tiene: RISK_LESSONS en catalog.ts)
+  ...section('s2', 'Cómo funcionan los mercados', ['s0'], [u05, u06, u07]),
   ...section('s3', 'Productos de inversión', ['s2'], [u08, u09, u10, u11]),
   ...section('s4', 'Criptomonedas y blockchain', ['s2'], [u12, u13]),
   ...section('s5', 'Divisas y materias primas', ['s3'], [u14, u15]),

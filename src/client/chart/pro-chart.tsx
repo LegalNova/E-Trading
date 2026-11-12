@@ -139,7 +139,9 @@ export function ProChart({
   const themeKey = useThemeKey()
   const [interval, setInterval_] = useState<ChartInterval>(() => {
     const v = store.get<string>('et-chart-interval', '1d')
-    return (INTERVALS as string[]).includes(v) ? (v as ChartInterval) : '1d'
+    // La ficha abre siempre en velas de un día o más: el corto plazo es ruido (auditoría APP-24). Quien quiera el
+    // intradía lo tiene a un toque, pero no se le vuelve a abrir solo en la siguiente ficha.
+    return (INTERVALS as string[]).includes(v) && !(INTRADAY as string[]).includes(v) ? (v as ChartInterval) : '1d'
   })
   const [kind, setKind] = useState<ChartKind>(() => store.get('et-chart-kind2', 'line'))
   const [inds, setInds] = useState<IndicatorId[]>(() => store.get('et-chart-inds', ['vol']))

@@ -47,7 +47,7 @@ export const ca: HelpDoc = {
       items: [
         { id: 'saldo', q: 'Amb quants diners començo?', a: ['Amb 10.000 € virtuals a Free i 50.000 € a Plus i Max.'] },
         { id: 'precios', q: 'Els preus són reals?', a: ['Sí: surten de fonts públiques de dades de mercat. Poden arribar amb retard (en algunes borses, 15 minuts o més) o tenir errors puntuals. Només serveixen per aprendre.'] },
-        { id: 'ordenes', q: 'Quins tipus d’ordre puc fer servir?', a: ['Des del principi, ordres a mercat. Les ordres limitades, stop loss i take profit s’obren quan acabes la classe de l’stop loss (a Max, des del primer dia).'] },
+        { id: 'ordenes', q: 'Quins tipus d’ordre puc fer servir?', a: ['Des del principi, ordres a mercat. Les ordres limitades, stop loss i take profit s’obren quan acabes la classe «La regla de l’1 %», a la primera secció (a Max, des del primer dia).'] },
         { id: 'no-ejecuta', q: 'Per què no s’executa la meva ordre?', a: ['Les causes més habituals: el mercat d’aquell actiu està tancat (l’ordre espera que obri), el preu encara no ha arribat al que vas posar en una ordre limitada o stop, o no tens prou saldo.'] },
         { id: 'comisiones', q: 'Hi ha comissions?', a: ['Sí, simulades, perquè s’assembli a la realitat: el 0,1 % de cada operació, amb un mínim d’1 € virtual.'] },
         { id: 'reiniciar', q: 'Puc començar de zero amb la cartera?', a: ['Sí, fins a 3 vegades l’any des de la cartera. Tornes al saldo inicial i es tanquen les posicions; conserves l’XP, la ratxa i els assoliments.'] },
