@@ -110,60 +110,45 @@
    "steps": [
     {
      "texts": [
-      "50 € al mes",
-      "No cal tenir milers d'euros. Aportes **50 € al mes** i el mercat dona un 7 % anual (exemple, no promesa).",
-      "A 30 anys, amb quant acabes?",
-      "Amb el que hi has posat, 18.000 €",
-      "Amb més del triple del que hi poses",
-      "Amb més d'un milió",
-      "Hi poses 18.000 € i acabes amb uns **58.500 €**: més del triple. La resta la fa l'interès compost.",
-      "Sense passar de 50 € al mes, busca amb quants anys superes els 100.000 €.",
-      "Amb 50 € al mes, passar de 30 a 40 anys només afegeix 6.000 € de la teva butxaca, però el final salta d'uns 58.500 € a **més de 123.000 €**. El **temps** fa la major part de la feina.",
-      "Sis xifres amb 50 € al mes! El temps treballa per tu.",
-      "Posar-hi més ajuda… però prova d'allargar els anys.",
-      "Allarga els anys i mira la corba"
+      "3 € de cada 50",
+      "Dani",
+      "Ja aporto **50 € al mes** a un ETF mundial. El meu bròquer cobra **3 €** per cada compra. És poc, oi?",
+      "Quina part de cada aportació es queda en comissió?",
+      "Un 0,6 %: gairebé res",
+      "Fes el compte: 3 ÷ 50 = 0,06. És un **6 %**, deu vegades més.",
+      "Un 6 %: cada aportació comença perdent",
+      "Això. De cada 50 €, només 47 € arriben a invertir-se.",
+      "Tant és: l'important és aportar",
+      "Aportar importa, sí. Però un 6 % menys cada mes, durant anys, són molts diners.",
+      "I si ajunto tres mesos i compro 150 € de cop?",
+      "Aleshores pagues 3 € sobre 150 €: un **2 %**. Ajuntar aportacions redueix el pes d'una comissió fixa.",
+      "I el millor: un pla d'aportació periòdica **sense comissió per compra**."
      ]
     },
     {
      "texts": [
-      "Esperar a tenir 5.000 €",
-      "Pablo",
-      "Tinc 22 anys. Vull esperar a reunir 5.000 € per invertir «de debò».",
-      "Trigaré uns 4 anys. Amb poc no val la pena, oi?",
-      "Què li dius?",
-      "Espera't: amb poc no val la pena",
-      "Mentre espera, la inflació mossega i perd anys d'interès compost.",
-      "Comença ja amb poc i de manera automàtica",
-      "Això! Comença l'hàbit i el temps treballa per tu des d'avui.",
-      "Posa-ho tot en una cripto per arribar-hi abans",
-      "Això és apostar, no invertir: ho pot perdre tot.",
-      "I si un mes la borsa baixa, els teus 50 € compren **més participacions**.",
-      "I com ho faig perquè les comissions no se'ls mengin?"
+      "Les fuites de la teva aportació",
+      "Aportes **50 € al mes**: 600 € l'any. Aquests costos fixos es cobren igual tant si hi poses 50 € com 5.000 €. Apaga els que podries evitar canviant de bròquer.",
+      "Comissió per compra",
+      "Custòdia",
+      "Manteniment del compte",
+      "Una comissió de 3 € per cada compra mensual. Quina part dels teus 600 € l'any s'emporta?",
+      "Un 0,6 %",
+      "Un 6 %",
+      "Un 16 %",
+      "3 × 12 = **36 € l'any**: un 6 % del que aportes. Amb la custòdia i el manteniment són 78 €: un 13 %.",
+      "Apaga els tres costos fixos.",
+      "Aquests 78 € l'any, invertits 30 anys al 7 % (exemple, no promesa), serien **7.601 €**: més de dotze anys de les teves aportacions. Amb pocs diners, **el primer és no pagar costos fixos**.",
+      "Zero costos fixos! Ara els teus 50 € treballen sencers.",
+      "Bé. I els altres?",
+      "Apaga cada cost i mira quant suma cada any"
      ]
     },
     {
-     "texts": [
-      "Ajuda o complica?",
-      "Amb pocs diners, els **costos fixos** pesen molt. Això t'ajuda o t'ho complica?",
-      "Ajuda",
-      "Complica",
-      "Fons indexats sense import mínim",
-      "Pots començar amb 50 € sense entrebancs.",
-      "Aportació automàtica el dia que cobres",
-      "Inverteixes abans de gastar, sense haver-hi de pensar cada mes.",
-      "Una comissió fixa de 10 € per compra",
-      "Amb 50 € al mes, s'emporta una cinquena part de cada aportació.",
-      "Esperar a tenir molt per començar",
-      "Perds anys d'interès compost.",
-      "Una custòdia mínima de 30 € l'any",
-      "Amb 600 € aportats l'any, se'n menja un 5 %.",
-      "Un pla d'aportació periòdica sense cost",
-      "Tots els teus diners es posen a treballar.",
-      "Classifica les sis opcions.",
-      "Amb pocs diners, busca **zero comissions fixes** i automatitza l'aportació. Prova-ho: a Mercat, compra 50 € d'un ETF mundial, com VWCE, amb els teus diners virtuals.",
-      "Pregunta't: es menja una part fixa de cada aportació?",
-      "Classifica cada opció"
-     ]
+     "title": "Invertir amb poc, sense fuites",
+     "body": "• **Sense comissió per compra**: busca un pla d'aportació periòdica gratuït.\n• **Sense custòdia ni manteniment.**\n• **Sense import mínim**, o amb un de baix.\n• **Automàtic**: el dia que cobres.\n\nSi el teu bròquer cobra una comissió fixa, ajunta diverses aportacions en una sola compra.",
+     "key": "Amb pocs diners, un cost fix pesa molt més que una dècima de comissió anual.",
+     "tip": "Prova-ho: a Mercat, compra 50 € d'un ETF mundial, com VWCE, amb els teus diners virtuals."
     }
    ]
   },
@@ -781,6 +766,26 @@
     "Fals"
    ],
    "explanation": "Pot cobrar pel canvi de divisa, per la custòdia o en el preu a què executa la teva ordre. Mira la tarifa completa."
+  },
+  "u30l3-13": {
+   "unit": "%",
+   "prompt": "Aportes 50 € al mes i pagues 3 € per compra. Si fas una sola compra de 150 € cada tres mesos, quin percentatge s'emporta la comissió?",
+   "options": [],
+   "explanation": "3 ÷ 150 = 0,02 → 2 %, en lloc del 6 % de comprar cada mes."
+  },
+  "u30l3-14": {
+   "prompt": "Tens 400 € invertits i el teu banc et cobra 20 € l'any de custòdia. Què fas?",
+   "options": [
+    "Venc i ho deixo al compte",
+    "Busco un bròquer o una plataforma sense custòdia",
+    "Res: 20 € és poc"
+   ],
+   "feedback": [
+    "Deixes d'invertir per un cost que s'evita canviant d'entitat.",
+    "Això: amb pocs diners, treure un cost fix val més que afinar el producte.",
+    "Sobre 400 € és un 5 % cada any, guanyis o perdis."
+   ],
+   "explanation": "Un cost fix es mesura contra el teu import: 20 € sobre 400 € són un 5 %; sobre 40.000 €, un 0,05 %."
   }
  }
 }

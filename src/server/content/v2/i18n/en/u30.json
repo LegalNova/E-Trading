@@ -110,60 +110,45 @@
    "steps": [
     {
      "texts": [
-      "€50 a month",
-      "You don't need thousands of euros. You put in **€50 a month** and the market returns 7 % a year (an example, not a promise).",
-      "Over 30 years, how much do you end up with?",
-      "What you put in, €18,000",
-      "More than three times what you put in",
-      "Over a million",
-      "You put in €18,000 and end up with about **€58,500**: more than three times as much. Compound interest does the rest.",
-      "Without going above €50 a month, find how many years it takes to pass €100,000.",
-      "With €50 a month, going from 30 to 40 years only adds €6,000 from your pocket, but the end result jumps from about €58,500 to **more than €123,000**. **Time** does most of the work.",
-      "Six figures with €50 a month! Time is working for you.",
-      "Putting in more helps… but try stretching the years.",
-      "Stretch the years and watch the curve"
+      "€3 out of every €50",
+      "Dani",
+      "I already put **€50 a month** into a global ETF. My broker charges **€3** per purchase. That's not much, is it?",
+      "What share of each contribution goes on commission?",
+      "0.6 %: almost nothing",
+      "Do the sum: 3 ÷ 50 = 0.06. That's **6 %**, ten times more.",
+      "6 %: every contribution starts off losing",
+      "That's it. Out of every €50, only €47 actually gets invested.",
+      "It doesn't matter: what counts is contributing",
+      "Contributing matters, yes. But 6 % less every month, for years, is a lot of money.",
+      "What if I save up three months and buy €150 in one go?",
+      "Then you pay €3 on €150: **2 %**. Bundling contributions reduces the weight of a fixed commission.",
+      "Better still: a regular savings plan with **no commission per purchase**."
      ]
     },
     {
      "texts": [
-      "Waiting until I have €5,000",
-      "Pablo",
-      "I'm 22. I want to wait until I've saved €5,000 to invest «properly».",
-      "It'll take me about 4 years. It's not worth it with a small amount, is it?",
-      "What do you tell him?",
-      "Wait: it's not worth it with a small amount",
-      "While he waits, inflation bites and he loses years of compound interest.",
-      "Start now with a little, on autopilot",
-      "That's it! Build the habit and let time work for you from today.",
-      "Put it all into one crypto to get there faster",
-      "That's gambling, not investing: he could lose the lot.",
-      "And if the market falls one month, your €50 buys **more units**.",
-      "And how do I stop fees from eating it up?"
+      "The leaks in your contribution",
+      "You put in **€50 a month**: €600 a year. These fixed costs are charged the same whether you put in €50 or €5,000. Switch off the ones you could avoid by changing broker.",
+      "Commission per purchase",
+      "Custody",
+      "Account maintenance",
+      "A €3 commission on each monthly purchase. What share of your €600 a year does it take?",
+      "0.6 %",
+      "6 %",
+      "16 %",
+      "3 × 12 = **€36 a year**: 6 % of what you contribute. With custody and maintenance it's €78: 13 %.",
+      "Switch off all three fixed costs.",
+      "That €78 a year, invested for 30 years at 7 % (an example, not a promise), would be **€7,601**: more than twelve years of your contributions. With little money, **the first thing is to pay no fixed costs**.",
+      "Zero fixed costs! Now your whole €50 goes to work.",
+      "Good. And the others?",
+      "Switch off each cost and see what it adds up to per year"
      ]
     },
     {
-     "texts": [
-      "Help or hindrance?",
-      "With little money, **fixed costs** weigh heavily. Does this help you or get in your way?",
-      "Helps",
-      "Hinders",
-      "Index funds with no minimum amount",
-      "You can start with €50, no hurdles.",
-      "Automatic contribution on payday",
-      "You invest before you spend, without having to think about it every month.",
-      "A fixed €10 fee per purchase",
-      "With €50 a month, it takes a fifth of every contribution.",
-      "Waiting until you have a lot to start",
-      "You lose years of compound interest.",
-      "A minimum custody fee of €30 a year",
-      "With €600 put in a year, it eats up 5 %.",
-      "A free regular investment plan",
-      "All your money gets put to work.",
-      "Sort the six options.",
-      "With little money, look for **zero fixed fees** and automate your contribution. Try it: in Market, buy €50 of a global ETF, such as VWCE, with your virtual money.",
-      "Ask yourself: does it eat a fixed chunk of every contribution?",
-      "Sort each option"
-     ]
+     "title": "Investing with little, without leaks",
+     "body": "• **No commission per purchase**: look for a free regular savings plan.\n• **No custody or maintenance fees.**\n• **No minimum amount**, or a low one.\n• **Automatic**: on the day you get paid.\n\nIf your broker charges a fixed commission, bundle several contributions into a single purchase.",
+     "key": "With little money, a fixed cost weighs far more than a tenth of a point in annual fees.",
+     "tip": "Try it: in Market, buy €50 of a global ETF, such as VWCE, with your virtual money."
     }
    ]
   },
@@ -781,6 +766,26 @@
     "False"
    ],
    "explanation": "It may charge for currency conversion, for custody or through the price at which it executes your order. Check the full fee schedule."
+  },
+  "u30l3-13": {
+   "unit": "%",
+   "prompt": "You put in €50 a month and pay €3 per purchase. If you make a single €150 purchase every three months, what percentage does the commission take?",
+   "options": [],
+   "explanation": "3 ÷ 150 = 0.02 → 2 %, instead of the 6 % of buying every month."
+  },
+  "u30l3-14": {
+   "prompt": "You have €400 invested and your bank charges you €20 a year for custody. What do you do?",
+   "options": [
+    "I sell and leave it in the account",
+    "I look for a broker or platform with no custody fee",
+    "Nothing: €20 isn't much"
+   ],
+   "feedback": [
+    "You stop investing over a cost you can avoid by switching provider.",
+    "That's it: with little money, removing a fixed cost is worth more than fine-tuning the product.",
+    "On €400 that's 5 % every year, win or lose."
+   ],
+   "explanation": "A fixed cost is measured against your amount: €20 on €400 is 5 %; on €40,000, it's 0.05 %."
   }
  }
 }

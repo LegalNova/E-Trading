@@ -118,58 +118,46 @@ export default unit({
       tf('Si un bróker anuncia «0 € de comisión», comprar con él no cuesta nada.', false, 'Puede cobrar por el cambio de divisa, por la custodia o en el precio al que ejecuta tu orden. Mira la tarifa completa.'),
     ], { source: '4.2', minutes: 6, retire: [0, 1, 3, 5, 6, 7, 8] }),
 
+    // Rehecha en la auditoría (RED-8): repetía el caso de h1l1 (50 € al mes) y el de u1l5 («¿espero a tener más?»).
+    // Ahora trata lo propio de invertir con poco: cuánto pesan los costes fijos sobre un importe pequeño.
     lesson('u30l3', 'Invertir con poco: 50 € al mes', [
-      play({
-        title: '50 € al mes',
-        intro: 'No hace falta tener miles de euros. Aportas **50 € al mes** y el mercado da un 7 % anual (ejemplo, no promesa).',
-        widget: { kind: 'growth', initial: 0, monthly: 50, rate: 7, years: 30, maxInitial: 1000, maxMonthly: 300, maxRate: 10, maxYears: 40, lines: ['mattress', 'compound'], controls: ['monthly', 'years'] },
-        predict: {
-          prompt: 'A 30 años, ¿con cuánto acabas?',
-          options: ['Con lo que has puesto, 18.000 €', 'Con más del triple de lo que pones', 'Con más de un millón'],
-          answer: 1,
-          why: 'Pones 18.000 € y acabas con unos **58.500 €**: más del triple. El resto lo hace el interés compuesto.',
-        },
-        goal: { text: 'Sin subir de 50 € al mes, busca con cuántos años pasas de 100.000 €.', when: [when('monthly', '==', 50), when('final', '>=', 100000)] },
-        insight: 'Con 50 € al mes, pasar de 30 a 40 años solo añade 6.000 € de tu bolsillo, pero el final salta de unos 58.500 € a **más de 123.000 €**. El **tiempo** hace la mayor parte del trabajo.',
-        lumi: [
-          { when: when('final', '>=', 100000), say: '¡Seis cifras con 50 € al mes! El tiempo trabaja por ti.', mood: 'CELEBRATE' },
-          { when: when('monthly', '>', 50), say: 'Poner más ayuda… pero prueba a alargar los años.', mood: 'THINKING' },
-          { say: 'Alarga los años y mira la curva', mood: 'HAPPY' },
-        ],
-      }),
-      story('Esperar a tener 5.000 €', [{ id: 'pablo', name: 'Pablo' }], [
-        say('pablo', 'Tengo 22 años. Quiero esperar a juntar 5.000 € para invertir «en serio».'),
-        say('pablo', 'Tardaré unos 4 años. Con poco no merece la pena, ¿no?'),
-        choose('¿Qué le dices?', [
-          opt('Espera: con poco no merece la pena', 'bad', say('lumi', 'Mientras espera, la inflación muerde y pierde años de interés compuesto.')),
-          opt('Empieza ya con poco y de forma automática', 'good', say('lumi', '¡Eso! Empieza el hábito y el tiempo trabaja desde hoy.')),
-          opt('Mételo todo en una cripto para llegar antes', 'bad', say('lumi', 'Eso es apostar, no invertir: puede perderlo todo.')),
+      story('3 € de cada 50', [{ id: 'dani', name: 'Dani' }], [
+        say('dani', 'Ya aporto **50 € al mes** a un ETF mundial. Mi bróker cobra **3 €** por cada compra. Es poco, ¿no?'),
+        choose('¿Qué parte de cada aportación se queda en comisión?', [
+          opt('Un 0,6 %: casi nada', 'bad', say('lumi', 'Haz la cuenta: 3 ÷ 50 = 0,06. Es un **6 %**, diez veces más.')),
+          opt('Un 6 %: cada aportación empieza perdiendo', 'good', say('lumi', 'Eso. De cada 50 €, solo 47 € llegan a invertirse.')),
+          opt('Da igual: lo importante es aportar', 'ok', say('lumi', 'Aportar importa, sí. Pero un 6 % menos cada mes, durante años, es mucho dinero.')),
         ]),
-        say('lumi', 'Y si un mes la bolsa baja, tus 50 € compran **más participaciones**.'),
-        say('pablo', '¿Y cómo hago para que las comisiones no se lo coman?'),
+        say('dani', '¿Y si junto tres meses y compro 150 € de una vez?'),
+        say('lumi', 'Entonces pagas 3 € sobre 150 €: un **2 %**. Juntar aportaciones reduce el peso de una comisión fija.'),
+        say('lumi', 'Y lo mejor: un plan de aportación periódica **sin comisión por compra**.'),
       ]),
       play({
-        title: '¿Ayuda o complica?',
-        intro: 'Con poco dinero, los **costes fijos** pesan mucho. ¿Esto te ayuda o te complica?',
+        title: 'Las fugas de tu aportación',
+        intro: 'Aportas **50 € al mes**: 600 € al año. Estos costes fijos se cobran igual pongas 50 € que 5.000 €. Apaga los que podrías evitar cambiando de bróker.',
         widget: {
-          kind: 'sort',
-          bins: [{ label: 'Ayuda' }, { label: 'Complica' }],
-          cards: [
-            { icon: 'pie', label: 'Fondos indexados sin importe mínimo', bin: 0, why: 'Puedes empezar con 50 € sin trabas.' },
-            { icon: 'calendar', label: 'Aportación automática el día que cobras', bin: 0, why: 'Inviertes antes de gastar, sin tener que pensarlo cada mes.' },
-            { icon: 'receipt', label: 'Una comisión fija de 10 € por compra', bin: 1, why: 'Con 50 € al mes, se lleva una quinta parte de cada aportación.' },
-            { icon: 'hourglass', label: 'Esperar a tener mucho para empezar', bin: 1, why: 'Pierdes años de interés compuesto.' },
-            { icon: 'lock', label: 'Una custodia mínima de 30 € al año', bin: 1, why: 'Con 600 € aportados al año, se come un 5 %.' },
-            { icon: 'repeat', label: 'Un plan de aportación periódica sin coste', bin: 0, why: 'Todo tu dinero se pone a trabajar.' },
+          kind: 'leaks', rate: 7, years: 30,
+          items: [
+            { icon: 'receipt', name: 'Comisión por compra', amount: 3, per: 'month', on: true },
+            { icon: 'lock', name: 'Custodia', amount: 2.5, per: 'month', on: true },
+            { icon: 'bank', name: 'Mantenimiento de la cuenta', amount: 1, per: 'month', on: true },
           ],
         },
-        goal: { text: 'Clasifica las seis opciones.', when: [when('done', '==', 6)] },
-        insight: 'Con poco dinero, busca **cero comisiones fijas** y automatiza la aportación. Pruébalo: en Mercado, compra 50 € de un ETF mundial, como VWCE, con tu dinero virtual.',
+        predict: {
+          prompt: 'Una comisión de 3 € por cada compra mensual. ¿Qué parte de tus 600 € al año se lleva?',
+          options: ['Un 0,6 %', 'Un 6 %', 'Un 16 %'],
+          answer: 1,
+          why: '3 × 12 = **36 € al año**: un 6 % de lo que aportas. Con la custodia y el mantenimiento son 78 €: un 13 %.',
+        },
+        goal: { text: 'Apaga los tres costes fijos.', when: [when('on', '==', 0)] },
+        insight: 'Esos 78 € al año, invertidos 30 años al 7 % (ejemplo, no promesa), serían **7.601 €**: más de doce años de tus aportaciones. Con poco dinero, **lo primero es no pagar costes fijos**.',
         lumi: [
-          { when: when('wrong', '>=', 2), say: 'Pregúntate: ¿se come una parte fija de cada aportación?', mood: 'THINKING' },
-          { say: 'Clasifica cada opción', mood: 'HAPPY' },
+          { when: when('on', '==', 0), say: '¡Cero costes fijos! Ahora tus 50 € trabajan enteros.', mood: 'CELEBRATE' },
+          { when: when('cut', '>=', 30), say: 'Bien. ¿Y los otros?', mood: 'THINKING' },
+          { say: 'Apaga cada coste y mira cuánto suma al año', mood: 'HAPPY' },
         ],
       }),
+      key('Invertir con poco, sin fugas', '• **Sin comisión por compra**: busca un plan de aportación periódica gratuito.\n• **Sin custodia ni mantenimiento.**\n• **Sin importe mínimo**, o con uno bajo.\n• **Automático**: el día que cobras.\n\nSi tu bróker cobra una comisión fija, junta varias aportaciones en una sola compra.', 'Con poco dinero, un coste fijo pesa mucho más que una décima de comisión anual.', 'Pruébalo: en Mercado, compra 50 € de un ETF mundial, como VWCE, con tu dinero virtual.'),
     ], [
       num('50 € al mes durante 30 años con un 7 % anual (ejemplo, no promesa). ¿Con cuánto acabarías aproximadamente?', 61000, '€', 'Unos 60.999 €, de los que 18.000 € son tus aportaciones y el resto, interés compuesto.', 2),
       num('En ese mismo caso, ¿cuánto dinero habrías aportado tú en total?', 18000, '€', '50 € × 12 meses × 30 años = 18.000 €. Los otros 43.000 € los genera el tiempo.'),
@@ -183,6 +171,8 @@ export default unit({
       chat(['Solo puedo ahorrar 50 € al mes 😔', 'Con eso no voy a ningún sitio, ¿verdad?'], '¿Qué le contestas a Lumi?', [['Tienes razón, mejor gastarlos', 'Gastar es legítimo, pero 50 € al mes durante décadas pueden ser decenas de miles de euros.'], ['Empieza con 50 € y súbelo cuando ganes más: el tiempo hace el resto', '¡Así se hace! Lo que más pesa es empezar pronto y no parar.'], ['Pide un préstamo para invertir más', 'Invertir con dinero prestado convierte una caída en un problema serio.']], 1, 'Con poco y pronto se llega lejos. Lo importante es el hábito.'),
       scenario('Aportas 50 € cada mes a un fondo indexado. Este mes la bolsa ha caído un 20 %. ¿Qué haces con la aportación?', [['La paro hasta que la bolsa se recupere', 'Justo cuando está barato dejas de comprar: te pierdes las participaciones a mejor precio.'], ['La mantengo: con los mismos 50 € compro más participaciones', '¡Eso! Aportar en las caídas baja tu precio medio sin que tengas que adivinar nada.'], ['Vendo lo que llevo para no perder más', 'Vender en la caída convierte una bajada temporal en una pérdida definitiva.']], 1, 'Con una aportación fija, cuando el precio baja compras más participaciones y tu precio medio baja. Parar en las caídas parece prudente, pero es dejar de comprar justo cuando está más barato.'),
       scenario('Vas a invertir 50 € al mes. El bróker A cobra 3 € por cada compra y su ETF, un 0,10 % al año. El B no cobra por comprar y su ETF cuesta un 0,20 %. ¿Cuál te conviene?', [['El A: su ETF es más barato', 'Su ETF sí, pero 3 € de cada 50 € se van antes de invertir: eso pesa mucho más.'], ['El B: sin comisión fija, todo tu dinero se pone a trabajar', 'Exacto. Con aportaciones pequeñas, una comisión fija por compra es lo más caro.'], ['Da igual: la diferencia es mínima', 'No lo es: con 50 € al mes, 3 € por compra se lleva una parte grande de cada aportación.']], 1, 'Con poco dinero, una comisión fija se come un trozo de cada aportación (3 € de 50 € es mucho más que una décima de punto al año). Por eso el ETF más barato no siempre es la opción más barata.'),
+      num('Aportas 50 € al mes y pagas 3 € por compra. Si haces una sola compra de 150 € cada tres meses, ¿qué porcentaje se lleva la comisión?', 2, '%', '3 ÷ 150 = 0,02 → 2 %, en lugar del 6 % de comprar cada mes.'),
+      scenario('Tienes 400 € invertidos y tu banco te cobra 20 € al año de custodia. ¿Qué haces?', [['Nada: 20 € es poco', 'Sobre 400 € es un 5 % cada año, ganes o pierdas.'], ['Busco un bróker o una plataforma sin custodia', 'Eso: con poco dinero, quitar un coste fijo vale más que afinar el producto.'], ['Vendo y lo dejo en la cuenta', 'Dejas de invertir por un coste que se evita cambiando de entidad.']], 1, 'Un coste fijo se mide contra tu importe: 20 € sobre 400 € son un 5 %; sobre 40.000 €, un 0,05 %.'),
     ], { source: '4.3', minutes: 6, retire: [0, 1, 2, 3, 5, 7] }),
 
     lesson('u30l4', 'Medir tu rentabilidad bien', [
