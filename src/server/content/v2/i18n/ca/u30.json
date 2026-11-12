@@ -61,45 +61,47 @@
    ]
   },
   "u30l2": {
-   "title": "El cost de les comissions a llarg termini",
+   "title": "Els costos a la pràctica",
    "steps": [
     {
      "texts": [
-      "El que s'emporta una comissió",
-      "Inverteixes **10.000 €** durant 30 anys i el mercat dona un 7 % anual (exemple, no promesa). Un fons indexat cobra un **0,2 %**; un altre, un **1,5 %**.",
-      "A 30 anys, quant et costa triar el fons de l'1,5 %?",
-      "Gairebé res: només és una mica més cada any",
-      "Gairebé un terç del que tindries",
-      "Més del que tindries amb el barat",
-      "Amb el barat acabes amb **71.968 €**; amb el car, **49.840 €**. La comissió de més s'emporta 22.128 €, un 31 %.",
-      "A 30 anys, busca la comissió amb què perds més d'un terç.",
-      "Les comissions també **es componen, però en contra teu**. Un 1,5 % l'any sembla poc; a 30 anys s'emporta gairebé un terç dels teus diners.",
-      "Més d'un terç per al fons! I el risc el corres tu.",
-      "A 10 anys encara sembla poc. Allarga el termini.",
-      "Apuja la comissió del fons car"
+      "«Comissió: 0 €»",
+      "Irene",
+      "He comprat 1.000 € d'un ETF que cotitza en **dòlars**. Comissió de compra: 0 €. Gratis!",
+      "A l'extracte hi ha una altra línia: «Canvi de divisa: 0,5 %».",
+      "Quant li ha costat de debò la compra?",
+      "Res: la comissió era de 0 €",
+      "La de compra, sí. Però canviar els seus euros a dòlars s'ha endut **5 €**.",
+      "5 € ara, i un altre canvi el dia que vengui",
+      "Això: el canvi es paga en entrar i en sortir. Anada i tornada, un 1 % del que has invertit.",
+      "5 € cada any",
+      "No és anual: es paga cada vegada que es canvien euros per dòlars, en comprar i en vendre.",
+      "I com ho evito?",
+      "Molts índexs tenen un ETF que **cotitza en euros**: si el compres, no hi ha cap canvi a pagar.",
+      "Mira també la **custòdia**: alguns bròquers cobren una quota per guardar els teus valors, operis o no."
      ]
     },
     {
      "texts": [
-      "El gestor estrella",
-      "El teu banc",
-      "Et recomano el nostre fons estrella. Despeses: **1,9 %**. El gestor és boníssim.",
-      "L'alternativa és un indexat mundial al 0,2 %…",
-      "Què en penses?",
-      "El gestor estrella compensarà la comissió",
-      "SPIVA: en 10 anys, el 97 % d'aquests fons va quedar per darrere del seu índex.",
-      "Hauria de batre l'índex per 1,7 punts l'any només per empatar",
-      "Exacte: cada any, durant dècades. Gairebé ningú no ho aconsegueix.",
-      "Tant és, la diferència és petita",
-      "A 30 anys, aquesta diferència pot ser un terç dels teus diners.",
-      "Una comissió alta és un **llast segur**. Batre l'índex, una esperança incerta."
+      "El cost que ningú no et factura",
+      "Comences amb 1.000 € i aportes **150 € al mes** durant 25 anys, amb un mercat al 6 % anual (exemple, no promesa). Les **despeses corrents** no arriben en cap factura: es descompten del valor del fons. Un cobra un **0,2 %**; l'altre, un **1,2 %**.",
+      "A 25 anys, quant s'emporta aquest punt de més cada any?",
+      "Uns 1.400 €",
+      "Uns 14.000 €",
+      "Uns 46.000 €",
+      "Amb el barat acabes amb **102.639 €**; amb el car, **88.629 €**. Aquest punt s'emporta 14.010 €, i de la teva butxaca en van sortir 46.000 €.",
+      "Allarga el termini a 40 anys i mira la diferència.",
+      "Les despeses corrents **ja estan restades** de la rendibilitat que veus: no surten al teu extracte. La dada s'ha de buscar al document del fons, el **KID**.",
+      "Més de 60.000 € a 40 anys. I no va arribar mai cap factura.",
+      "Com més termini, més pesa cada dècima.",
+      "Mou els anys i la comissió del fons car"
      ]
     },
     {
-     "title": "Tots els costos",
-     "body": "Despeses corrents o **TER** (les trobaràs al KID), comissió per operació, spread, custòdia, canvi de divisa i impostos.\n\nJohn Bogle, fundador de Vanguard, ho resumia així: «En inversió, obtens allò per què no pagues».",
-     "key": "Cada punt de comissió anual es menja una part enorme del resultat per l'interès compost.",
-     "tip": "Prova-ho: pregunta a la Lumi quin TER és barat per a un ETF indexat."
+     "title": "La taula de costos del KID",
+     "body": "El document de dades fonamentals (**KID**) porta la taula «Composició dels costos»:\n\n• **Costos d'entrada i de sortida**: en comprar i en vendre.\n• **Costos corrents**: gestió i despeses, cada any.\n• **Costos d'operació**: el que gasta el fons en comprar i vendre els seus valors.\n• **Comissions de rendiment**: només en alguns fons.\n\nA això s'hi suma el que cobra el teu bròquer: comissió per operació, custòdia i canvi de divisa.",
+     "key": "Suma els costos del producte (KID) i els del teu bròquer: el que compta és el total de cada any.",
+     "tip": "Prova-ho: pregunta a la Lumi on pots trobar el KID d'un ETF."
     }
    ]
   },
@@ -394,26 +396,6 @@
     "Les despeses corrents o TER del fons"
    ],
    "explanation": "També l'spread, la custòdia i els impostos."
-  },
-  "u30l2-6": {
-   "prompt": "El cost anual d'un fons o ETF s'anomena despeses corrents o ____.",
-   "options": [
-    "IVA",
-    "PER",
-    "IPC",
-    "TER"
-   ],
-   "explanation": "Apareix al document de dades fonamentals (KID)."
-  },
-  "u30l2-7": {
-   "prompt": "10.000 € a 30 anys amb un mercat al 7 %. Ordena de més a menys diners finals.",
-   "options": [
-    "Costos del 0,2 %",
-    "Costos de l'1,5 %",
-    "Costos de l'1,8 %",
-    "Sense costos"
-   ],
-   "explanation": "76.123 €, 71.968 €, 49.840 € i uns 45.759 €."
   },
   "u30l2-10": {
    "prompt": "Què li contestes a la Lumi?",
@@ -747,6 +729,58 @@
     "A veure, defensa'm la teva cartera 🧐",
     "Per què creus que funcionarà?"
    ]
+  },
+  "u30l2-12": {
+   "unit": "€",
+   "prompt": "Compres 2.000 € d'un ETF que cotitza en dòlars i el teu bròquer cobra un 0,5 % pel canvi de divisa. Quant pagues pel canvi en comprar?",
+   "options": [],
+   "explanation": "2.000 × 0,005 = 10 €. Quan venguis tornaràs a pagar el canvi."
+  },
+  "u30l2-13": {
+   "prompt": "És un cost del producte o del teu bròquer?",
+   "options": [
+    "Canvi de divisa",
+    "Custòdia",
+    "Costos d'operació del fons",
+    "Comissió de rendiment",
+    "Comissió per compra i venda",
+    "Despeses corrents (TER)"
+   ],
+   "explanation": "Els del producte són a la taula de costos del KID; els del bròquer, a la seva pàgina de tarifes. Cal sumar-los tots dos.",
+   "right": [
+    "Producte: és al KID",
+    "Bròquer: és a les seves tarifes"
+   ]
+  },
+  "u30l2-14": {
+   "unit": "%",
+   "prompt": "El teu bròquer no cobra per comprar, però sí 2 € al mes de custòdia. Tens 600 € invertits. Quin percentatge de la teva inversió et costa cada any?",
+   "options": [],
+   "explanation": "2 × 12 = 24 € l'any; 24 ÷ 600 = 0,04 → 4 %. Amb pocs diners, una quota fixa es menja la rendibilitat."
+  },
+  "u30l2-15": {
+   "prompt": "Aparella cada línia de la taula de costos del KID amb el que és.",
+   "options": [
+    "Costos d'entrada",
+    "Costos corrents",
+    "Costos d'operació",
+    "Comissió de rendiment"
+   ],
+   "explanation": "La taula «Composició dels costos» és igual a tots els KID: així pots comparar dos productes línia a línia.",
+   "right": [
+    "Gestió i despeses, cada any",
+    "Un extra si el fons supera un objectiu",
+    "El que gasta el fons en moure els seus valors",
+    "El que pagues en comprar"
+   ]
+  },
+  "u30l2-16": {
+   "prompt": "Si un bròquer anuncia «0 € de comissió», comprar-hi no costa res.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Pot cobrar pel canvi de divisa, per la custòdia o en el preu a què executa la teva ordre. Mira la tarifa completa."
   }
  }
 }

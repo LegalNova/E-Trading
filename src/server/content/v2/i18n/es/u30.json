@@ -61,45 +61,47 @@
    ]
   },
   "u30l2": {
-   "title": "El coste de las comisiones a largo plazo",
+   "title": "Los costes en la práctica",
    "steps": [
     {
      "texts": [
-      "Lo que se lleva una comisión",
-      "Inviertes **10.000 €** durante 30 años y el mercado da un 7 % anual (ejemplo, no promesa). Un fondo indexado cobra un **0,2 %**; otro, un **1,5 %**.",
-      "A 30 años, ¿cuánto te cuesta elegir el fondo del 1,5 %?",
-      "Casi nada: es solo un poco más al año",
-      "Casi un tercio de lo que tendrías",
-      "Más de lo que tendrías con el barato",
-      "Con el barato acabas con **71.968 €**; con el caro, **49.840 €**. La comisión de más se lleva 22.128 €, un 31 %.",
-      "A 30 años, busca la comisión con la que pierdes más de un tercio.",
-      "Las comisiones también **se componen, pero en tu contra**. Un 1,5 % al año suena a poco; a 30 años se lleva casi un tercio de tu dinero.",
-      "¡Más de un tercio para el fondo! Y el riesgo lo corres tú.",
-      "A 10 años aún parece poco. Alarga el plazo.",
-      "Sube la comisión del fondo caro"
+      "«Comisión: 0 €»",
+      "Irene",
+      "He comprado 1.000 € de un ETF que cotiza en **dólares**. Comisión de compra: 0 €. ¡Gratis!",
+      "En el extracto hay otra línea: «Cambio de divisa: 0,5 %».",
+      "¿Cuánto le ha costado de verdad la compra?",
+      "Nada: la comisión era de 0 €",
+      "La de compra, sí. Pero cambiar sus euros a dólares se ha llevado **5 €**.",
+      "5 € ahora, y otro cambio el día que venda",
+      "Eso: el cambio se paga al entrar y al salir. Ida y vuelta, un 1 % de lo invertido.",
+      "5 € cada año",
+      "No es anual: se paga cada vez que se cambian euros por dólares, al comprar y al vender.",
+      "¿Y cómo lo evito?",
+      "Muchos índices tienen un ETF que **cotiza en euros**: al comprarlo no hay cambio que pagar.",
+      "Mira también la **custodia**: algunos brókeres cobran una cuota por guardar tus valores, operes o no."
      ]
     },
     {
      "texts": [
-      "El gestor estrella",
-      "Tu banco",
-      "Te recomiendo nuestro fondo estrella. Gastos: **1,9 %**. El gestor es buenísimo.",
-      "La alternativa es un indexado mundial al 0,2 %…",
-      "¿Qué piensas?",
-      "El gestor estrella compensará la comisión",
-      "SPIVA: en 10 años, el 97 % de estos fondos quedó tras su índice.",
-      "Tendría que batir al índice por 1,7 puntos al año solo para empatar",
-      "Exacto: cada año, durante décadas. Casi nadie lo consigue.",
-      "Da igual, la diferencia es pequeña",
-      "A 30 años, esa diferencia puede ser un tercio de tu dinero.",
-      "Una comisión alta es un **lastre seguro**. Batir al índice, una esperanza incierta."
+      "El coste que nadie te factura",
+      "Empiezas con 1.000 € y aportas **150 € al mes** durante 25 años, con un mercado al 6 % anual (ejemplo, no promesa). Los **gastos corrientes** no llegan en ninguna factura: se descuentan del valor del fondo. Uno cobra un **0,2 %**; otro, un **1,2 %**.",
+      "A 25 años, ¿cuánto se lleva ese punto de más al año?",
+      "Unos 1.400 €",
+      "Unos 14.000 €",
+      "Unos 46.000 €",
+      "Con el barato acabas con **102.639 €**; con el caro, **88.629 €**. Ese punto se lleva 14.010 €, y de tu bolsillo salieron 46.000 €.",
+      "Alarga el plazo a 40 años y mira la diferencia.",
+      "Los gastos corrientes **ya están restados** de la rentabilidad que ves: no aparecen en tu extracto. El dato hay que buscarlo en el documento del fondo, el **KID**.",
+      "Más de 60.000 € a 40 años. Y nunca llegó una factura.",
+      "Cuanto más plazo, más pesa cada décima.",
+      "Mueve los años y la comisión del fondo caro"
      ]
     },
     {
-     "title": "Todos los costes",
-     "body": "Gastos corrientes o **TER** (vienen en el KID), comisión por operación, spread, custodia, cambio de divisa e impuestos.\n\nJohn Bogle, fundador de Vanguard, lo resumía así: «En inversión, obtienes aquello por lo que no pagas».",
-     "key": "Cada punto de comisión anual se come una parte enorme del resultado por el interés compuesto.",
-     "tip": "Pruébalo: pregúntale a Lumi qué TER es barato para un ETF indexado."
+     "title": "La tabla de costes del KID",
+     "body": "El documento de datos fundamentales (**KID**) trae la tabla «Composición de los costes»:\n\n• **Costes de entrada y de salida**: al comprar y al vender.\n• **Costes corrientes**: gestión y gastos, cada año.\n• **Costes de operación**: lo que gasta el fondo al comprar y vender sus valores.\n• **Comisiones de rendimiento**: solo en algunos fondos.\n\nA eso se suma lo que cobra tu bróker: comisión por operación, custodia y cambio de divisa.",
+     "key": "Suma los costes del producto (KID) y los de tu bróker: lo que cuenta es el total de cada año.",
+     "tip": "Pruébalo: pregúntale a Lumi dónde encontrar el KID de un ETF."
     }
    ]
   },
@@ -395,26 +397,6 @@
    ],
    "explanation": "También el spread, la custodia y los impuestos."
   },
-  "u30l2-6": {
-   "prompt": "El coste anual de un fondo o ETF se llama gastos corrientes o ____.",
-   "options": [
-    "IVA",
-    "PER",
-    "IPC",
-    "TER"
-   ],
-   "explanation": "Viene en el documento de datos fundamentales (KID)."
-  },
-  "u30l2-7": {
-   "prompt": "10.000 € a 30 años con un mercado al 7 %. Ordena de más a menos dinero final.",
-   "options": [
-    "Costes del 0,2 %",
-    "Costes del 1,5 %",
-    "Costes del 1,8 %",
-    "Sin costes"
-   ],
-   "explanation": "76.123 €, 71.968 €, 49.840 € y unos 45.759 €."
-  },
   "u30l2-10": {
    "prompt": "¿Qué le contestas a Ana?",
    "options": [
@@ -446,6 +428,58 @@
     "¡Eso! Ahorras costes en lo nuevo sin pagar impuestos por vender lo viejo.",
     "Vender un ETF con ganancias tributa hoy: pagarías impuestos para ahorrar un 0,08 % al año."
    ]
+  },
+  "u30l2-12": {
+   "prompt": "Compras 2.000 € de un ETF que cotiza en dólares y tu bróker cobra un 0,5 % por el cambio de divisa. ¿Cuánto pagas por el cambio al comprar?",
+   "options": [],
+   "explanation": "2.000 × 0,005 = 10 €. Al vender volverás a pagar el cambio.",
+   "unit": "€"
+  },
+  "u30l2-13": {
+   "prompt": "¿Es un coste del producto o de tu bróker?",
+   "options": [
+    "Cambio de divisa",
+    "Custodia",
+    "Costes de operación del fondo",
+    "Comisión de rendimiento",
+    "Comisión por compra y venta",
+    "Gastos corrientes (TER)"
+   ],
+   "explanation": "Los del producto vienen en la tabla de costes del KID; los del bróker, en su página de tarifas. Hay que sumar los dos.",
+   "right": [
+    "Producto: está en el KID",
+    "Bróker: está en sus tarifas"
+   ]
+  },
+  "u30l2-14": {
+   "prompt": "Tu bróker no cobra por comprar, pero sí 2 € al mes de custodia. Tienes 600 € invertidos. ¿Qué porcentaje de tu inversión te cuesta al año?",
+   "options": [],
+   "explanation": "2 × 12 = 24 € al año; 24 ÷ 600 = 0,04 → 4 %. Con poco dinero, una cuota fija se come la rentabilidad.",
+   "unit": "%"
+  },
+  "u30l2-15": {
+   "prompt": "Empareja cada línea de la tabla de costes del KID con lo que es.",
+   "options": [
+    "Costes de entrada",
+    "Costes corrientes",
+    "Costes de operación",
+    "Comisión de rendimiento"
+   ],
+   "explanation": "La tabla «Composición de los costes» es igual en todos los KID: así puedes comparar dos productos línea a línea.",
+   "right": [
+    "Gestión y gastos, cada año",
+    "Un extra si el fondo supera un objetivo",
+    "Lo que gasta el fondo al mover sus valores",
+    "Lo que pagas al comprar"
+   ]
+  },
+  "u30l2-16": {
+   "prompt": "Si un bróker anuncia «0 € de comisión», comprar con él no cuesta nada.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Puede cobrar por el cambio de divisa, por la custodia o en el precio al que ejecuta tu orden. Mira la tarifa completa."
   },
   "u30l3-5": {
    "prompt": "Repartes tus 50 € al mes. Reglas: al menos 2 productos, ninguno por encima del 85 %, como máximo un 5 % en cripto y un 10 % en una acción suelta.",

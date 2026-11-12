@@ -61,45 +61,47 @@
    ]
   },
   "u30l2": {
-   "title": "The long-term cost of fees",
+   "title": "Costs in practice",
    "steps": [
     {
      "texts": [
-      "What a fee takes",
-      "You invest **€10,000** for 30 years and the market returns 7 % a year (an example, not a promise). One index fund charges **0.2 %**; another fund, **1.5 %**.",
-      "Over 30 years, how much does choosing the 1.5 % fund cost you?",
-      "Almost nothing: it's just a little more each year",
-      "Almost a third of what you'd have",
-      "More than you'd have with the cheap one",
-      "With the cheap one you end up with **€71,968**; with the expensive one, **€49,840**. The extra fee takes €22,128, or 31 %.",
-      "Over 30 years, find the fee at which you lose more than a third.",
-      "Fees **compound too, but against you**. 1.5 % a year sounds small; over 30 years it takes almost a third of your money.",
-      "More than a third to the fund! And you're the one taking the risk.",
-      "Over 10 years it still looks small. Stretch the time frame.",
-      "Raise the expensive fund's fee"
+      "«Commission: €0»",
+      "Irene",
+      "I've bought €1,000 of an ETF that trades in **dollars**. Purchase commission: €0. Free!",
+      "There's another line on the statement: «Currency conversion: 0.5 %».",
+      "What did the purchase really cost her?",
+      "Nothing: the commission was €0",
+      "The purchase commission, yes. But converting her euros to dollars took **€5**.",
+      "€5 now, and another conversion the day she sells",
+      "That's it: you pay the conversion going in and coming out. Round trip, 1 % of what you invested.",
+      "€5 every year",
+      "It isn't yearly: you pay it each time euros are converted to dollars, when buying and when selling.",
+      "And how do I avoid it?",
+      "Many indices have an ETF that **trades in euros**: buy that one and there's no conversion to pay.",
+      "Check **custody** too: some brokers charge a fee for holding your securities, whether you trade or not."
      ]
     },
     {
      "texts": [
-      "The star manager",
-      "Your bank",
-      "I recommend our star fund. Charges: **1.9 %**. The manager is brilliant.",
-      "The alternative is a global index fund at 0.2 %…",
-      "What do you think?",
-      "The star manager will make up for the fee",
-      "SPIVA: over 10 years, 97 % of these funds lagged their index.",
-      "The manager would have to beat the index by 1.7 points a year just to break even",
-      "Exactly: every year, for decades. Hardly anyone manages it.",
-      "Doesn't matter, the difference is small",
-      "Over 30 years, that difference can be a third of your money.",
-      "A high fee is a **guaranteed drag**. Beating the index is an uncertain hope."
+      "The cost nobody invoices",
+      "You start with €1,000 and add **€150 a month** for 25 years, with the market at 6 % a year (an example, not a promise). **Ongoing charges** never arrive on an invoice: they're taken out of the fund's value. One fund charges **0.2 %**; the other, **1.2 %**.",
+      "Over 25 years, how much does that extra point a year take?",
+      "About €1,400",
+      "About €14,000",
+      "About €46,000",
+      "With the cheap one you end up with **€102,639**; with the expensive one, **€88,629**. That point takes €14,010, and €46,000 came out of your pocket.",
+      "Stretch the period to 40 years and look at the gap.",
+      "Ongoing charges are **already subtracted** from the return you see: they don't show on your statement. You have to look for the figure in the fund's document, the **KID**.",
+      "More than €60,000 over 40 years. And no invoice ever arrived.",
+      "The longer the period, the more each tenth of a point weighs.",
+      "Move the years and the expensive fund's fee"
      ]
     },
     {
-     "title": "All the costs",
-     "body": "Ongoing charges or **TER** (you'll find them in the KID), commission per trade, spread, custody, currency exchange and taxes.\n\nJohn Bogle, founder of Vanguard, summed it up like this: «In investing, you get what you don't pay for».",
-     "key": "Every point of annual fees eats up a huge part of the result because of compound interest.",
-     "tip": "Try it: ask Lumi what TER is cheap for an index ETF."
+     "title": "The KID cost table",
+     "body": "The key information document (**KID**) includes the table «Composition of costs»:\n\n• **Entry and exit costs**: when you buy and when you sell.\n• **Ongoing costs**: management and expenses, every year.\n• **Transaction costs**: what the fund spends buying and selling its holdings.\n• **Performance fees**: only in some funds.\n\nOn top of that comes what your broker charges: commission per trade, custody and currency conversion.",
+     "key": "Add up the product's costs (KID) and your broker's: what counts is the total for each year.",
+     "tip": "Try it: ask Lumi where to find an ETF's KID."
     }
    ]
   },
@@ -394,26 +396,6 @@
     "The fund's ongoing charges or TER"
    ],
    "explanation": "Also the spread, custody fees and taxes."
-  },
-  "u30l2-6": {
-   "prompt": "The annual cost of a fund or ETF is called ongoing charges or ____.",
-   "options": [
-    "VAT",
-    "P/E",
-    "CPI",
-    "TER"
-   ],
-   "explanation": "You'll find it in the key information document (KID)."
-  },
-  "u30l2-7": {
-   "prompt": "€10,000 over 30 years with the market at 7 %. Put them in order from most to least money at the end.",
-   "options": [
-    "0.2 % costs",
-    "1.5 % costs",
-    "1.8 % costs",
-    "No costs"
-   ],
-   "explanation": "€76,123, €71,968, €49,840 and about €45,759."
   },
   "u30l2-10": {
    "prompt": "What do you reply to Lumi?",
@@ -747,6 +729,58 @@
     "Go on then, defend your portfolio 🧐",
     "Why do you think it's going to work?"
    ]
+  },
+  "u30l2-12": {
+   "unit": "€",
+   "prompt": "You buy €2,000 of an ETF that trades in dollars and your broker charges 0.5 % for currency conversion. How much do you pay for the conversion when you buy?",
+   "options": [],
+   "explanation": "2,000 × 0.005 = €10. When you sell you'll pay the conversion again."
+  },
+  "u30l2-13": {
+   "prompt": "Is it a cost of the product or of your broker?",
+   "options": [
+    "Currency conversion",
+    "Custody",
+    "The fund's transaction costs",
+    "Performance fee",
+    "Commission for buying and selling",
+    "Ongoing charges (TER)"
+   ],
+   "explanation": "The product's costs are in the KID cost table; the broker's are on its fees page. You have to add both.",
+   "right": [
+    "Product: it's in the KID",
+    "Broker: it's in its fees"
+   ]
+  },
+  "u30l2-14": {
+   "unit": "%",
+   "prompt": "Your broker doesn't charge for buying, but it does charge €2 a month for custody. You have €600 invested. What percentage of your investment does it cost you per year?",
+   "options": [],
+   "explanation": "2 × 12 = €24 a year; 24 ÷ 600 = 0.04 → 4 %. With little money, a fixed fee eats up the return."
+  },
+  "u30l2-15": {
+   "prompt": "Match each line of the KID cost table with what it is.",
+   "options": [
+    "Entry costs",
+    "Ongoing costs",
+    "Transaction costs",
+    "Performance fee"
+   ],
+   "explanation": "The «Composition of costs» table is the same in every KID, so you can compare two products line by line.",
+   "right": [
+    "Management and expenses, every year",
+    "An extra if the fund beats a target",
+    "What the fund spends moving its holdings",
+    "What you pay when you buy"
+   ]
+  },
+  "u30l2-16": {
+   "prompt": "If a broker advertises «€0 commission», buying with it costs nothing.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It may charge for currency conversion, for custody or through the price at which it executes your order. Check the full fee schedule."
   }
  }
 }

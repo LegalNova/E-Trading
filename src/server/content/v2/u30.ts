@@ -63,36 +63,42 @@ export default unit({
       scenario('Tu plan es 70 % acciones y 30 % bonos, y tras un buen año estás en 78/22. Este mes vas a aportar 300 €. ¿Qué haces?', [['Aporto los 300 € a acciones, que son las que van bien', 'Así te alejas aún más del plan: cada vez más riesgo del que elegiste.'], ['Aporto los 300 € a bonos, y lo mismo los meses siguientes hasta volver al 70/30', '¡Bien! Rebalanceas sin vender nada, así que no pagas impuestos.'], ['Vendo ya todas las acciones que sobran', 'Funciona, pero si son ETF o acciones, vender con ganancias tributa. Con las aportaciones lo evitas.']], 1, 'Rebalancear con las aportaciones devuelve la cartera a tu plan sin vender, así que no generas impuestos. Meter el dinero en lo que más sube parece lógico, pero te aleja del riesgo que elegiste.'),
     ], { source: '4.6', minutes: 6, retire: [1, 2, 3, 6, 7] }),
 
-    lesson('u30l2', 'El coste de las comisiones a largo plazo', [
+    // Rehecha en la auditoría (RED-2): antes repetía la pieza y la historia de u10l3. Ahora trata los costes que no son
+    // la comisión de gestión: cambio de divisa, custodia, costes corrientes que nadie factura y la tabla de costes del KID.
+    // Tabla de costes del KID: Reglamento Delegado (UE) 2017/653, anexo VII, modificado por el (UE) 2021/2268
+    // («Composición de los costes»: entrada, salida, costes corrientes, costes de operación y comisiones de rendimiento).
+    lesson('u30l2', 'Los costes en la práctica', [
+      story('«Comisión: 0 €»', [{ id: 'irene', name: 'Irene' }], [
+        say('irene', 'He comprado 1.000 € de un ETF que cotiza en **dólares**. Comisión de compra: 0 €. ¡Gratis!'),
+        note('En el extracto hay otra línea: «Cambio de divisa: 0,5 %».'),
+        choose('¿Cuánto le ha costado de verdad la compra?', [
+          opt('Nada: la comisión era de 0 €', 'bad', say('lumi', 'La de compra, sí. Pero cambiar sus euros a dólares se ha llevado **5 €**.')),
+          opt('5 € ahora, y otro cambio el día que venda', 'good', say('lumi', 'Eso: el cambio se paga al entrar y al salir. Ida y vuelta, un 1 % de lo invertido.')),
+          opt('5 € cada año', 'bad', say('lumi', 'No es anual: se paga cada vez que se cambian euros por dólares, al comprar y al vender.')),
+        ]),
+        say('irene', '¿Y cómo lo evito?'),
+        say('lumi', 'Muchos índices tienen un ETF que **cotiza en euros**: al comprarlo no hay cambio que pagar.'),
+        say('lumi', 'Mira también la **custodia**: algunos brókeres cobran una cuota por guardar tus valores, operes o no.'),
+      ]),
       play({
-        title: 'Lo que se lleva una comisión',
-        intro: 'Inviertes **10.000 €** durante 30 años y el mercado da un 7 % anual (ejemplo, no promesa). Un fondo indexado cobra un **0,2 %**; otro, un **1,5 %**.',
-        widget: { kind: 'fees', amount: 10000, monthly: 0, gross: 7, feeA: 0.2, feeB: 1.5, years: 30, maxFee: 2.5, maxYears: 40 },
+        title: 'El coste que nadie te factura',
+        intro: 'Empiezas con 1.000 € y aportas **150 € al mes** durante 25 años, con un mercado al 6 % anual (ejemplo, no promesa). Los **gastos corrientes** no llegan en ninguna factura: se descuentan del valor del fondo. Uno cobra un **0,2 %**; otro, un **1,2 %**.',
+        widget: { kind: 'fees', amount: 1000, monthly: 150, gross: 6, feeA: 0.2, feeB: 1.2, years: 25, maxFee: 2.5, maxYears: 40 },
         predict: {
-          prompt: 'A 30 años, ¿cuánto te cuesta elegir el fondo del 1,5 %?',
-          options: ['Casi nada: es solo un poco más al año', 'Casi un tercio de lo que tendrías', 'Más de lo que tendrías con el barato'],
+          prompt: 'A 25 años, ¿cuánto se lleva ese punto de más al año?',
+          options: ['Unos 1.400 €', 'Unos 14.000 €', 'Unos 46.000 €'],
           answer: 1,
-          why: 'Con el barato acabas con **71.968 €**; con el caro, **49.840 €**. La comisión de más se lleva 22.128 €, un 31 %.',
+          why: 'Con el barato acabas con **102.639 €**; con el caro, **88.629 €**. Ese punto se lleva 14.010 €, y de tu bolsillo salieron 46.000 €.',
         },
-        goal: { text: 'A 30 años, busca la comisión con la que pierdes más de un tercio.', when: [when('years', '==', 30), when('lostPct', '>=', 34)] },
-        insight: 'Las comisiones también **se componen, pero en tu contra**. Un 1,5 % al año suena a poco; a 30 años se lleva casi un tercio de tu dinero.',
+        goal: { text: 'Alarga el plazo a 40 años y mira la diferencia.', when: [when('years', '==', 40)] },
+        insight: 'Los gastos corrientes **ya están restados** de la rentabilidad que ves: no aparecen en tu extracto. El dato hay que buscarlo en el documento del fondo, el **KID**.',
         lumi: [
-          { when: when('lostPct', '>=', 34), say: '¡Más de un tercio para el fondo! Y el riesgo lo corres tú.', mood: 'SAD' },
-          { when: when('years', '<=', 10), say: 'A 10 años aún parece poco. Alarga el plazo.', mood: 'THINKING' },
-          { say: 'Sube la comisión del fondo caro', mood: 'HAPPY' },
+          { when: when('lost', '>=', 60000), say: 'Más de 60.000 € a 40 años. Y nunca llegó una factura.', mood: 'SAD' },
+          { when: when('years', '>=', 30), say: 'Cuanto más plazo, más pesa cada décima.', mood: 'THINKING' },
+          { say: 'Mueve los años y la comisión del fondo caro', mood: 'HAPPY' },
         ],
       }),
-      story('El gestor estrella', [{ id: 'banco', name: 'Tu banco' }], [
-        say('banco', 'Te recomiendo nuestro fondo estrella. Gastos: **1,9 %**. El gestor es buenísimo.'),
-        say('me', 'La alternativa es un indexado mundial al 0,2 %…'),
-        choose('¿Qué piensas?', [
-          opt('El gestor estrella compensará la comisión', 'bad', say('lumi', 'SPIVA: en 10 años, el 97 % de estos fondos quedó tras su índice.')),
-          opt('Tendría que batir al índice por 1,7 puntos al año solo para empatar', 'good', say('lumi', 'Exacto: cada año, durante décadas. Casi nadie lo consigue.')),
-          opt('Da igual, la diferencia es pequeña', 'bad', say('lumi', 'A 30 años, esa diferencia puede ser un tercio de tu dinero.')),
-        ]),
-        say('lumi', 'Una comisión alta es un **lastre seguro**. Batir al índice, una esperanza incierta.'),
-      ]),
-      key('Todos los costes', 'Gastos corrientes o **TER** (vienen en el KID), comisión por operación, spread, custodia, cambio de divisa e impuestos.\n\nJohn Bogle, fundador de Vanguard, lo resumía así: «En inversión, obtienes aquello por lo que no pagas».', 'Cada punto de comisión anual se come una parte enorme del resultado por el interés compuesto.', 'Pruébalo: pregúntale a Lumi qué TER es barato para un ETF indexado.'),
+      key('La tabla de costes del KID', 'El documento de datos fundamentales (**KID**) trae la tabla «Composición de los costes»:\n\n• **Costes de entrada y de salida**: al comprar y al vender.\n• **Costes corrientes**: gestión y gastos, cada año.\n• **Costes de operación**: lo que gasta el fondo al comprar y vender sus valores.\n• **Comisiones de rendimiento**: solo en algunos fondos.\n\nA eso se suma lo que cobra tu bróker: comisión por operación, custodia y cambio de divisa.', 'Suma los costes del producto (KID) y los de tu bróker: lo que cuenta es el total de cada año.', 'Pruébalo: pregúntale a Lumi dónde encontrar el KID de un ETF.'),
     ], [
       num('10.000 € a 30 años con un mercado al 7 %. Sin costes acabas con 76.123 € y con un 1,5 % anual con 49.840 €. ¿Cuánto se ha llevado la comisión?', 26283, '€', '76.123 − 49.840 = 26.283 €: más de un tercio del resultado.', 1),
       num('Mismo caso, pero con un 1,8 % de costes (rentabilidad neta del 5,2 %). ¿Cuánto tendrías a los 30 años? (redondea)', 45759, '€', '10.000 × 1,052³⁰ ≈ 45.759 €, frente a 71.968 € con un 0,2 %.', 2),
@@ -105,7 +111,12 @@ export default unit({
       scenario('Tu banco te ofrece un fondo con un 1,9 % de gastos «con un gestor estrella». La alternativa es un indexado mundial al 0,2 %. ¿Qué piensas?', [['El gestor estrella compensará la comisión', 'Según SPIVA, en 10 años un 97 % de los fondos de acciones europeos quedó por detrás de su índice. La estrella tendría que ser excepcional… durante décadas.'], ['Necesitaría batir al índice por 1,7 puntos al año, cada año, para empatar', 'Exacto: es un listón altísimo que casi nadie supera de forma sostenida.'], ['Da igual, la diferencia es pequeña', 'A 30 años, esa diferencia puede ser un tercio de tu dinero.']], 1, 'Una comisión alta es un handicap seguro; batir al índice, una esperanza incierta.'),
       chat(['Mi fondo cobra un 1,5 %, pero este año ha subido un 10 % 🚀', 'Así que el coste da igual, ¿no?'], '¿Qué le contestas a Lumi?', [['Sí, con un 10 % no importa', 'Ese 10 % ya es neto de comisiones, pero sin ellas habría sido un 11,5 %. Y el año que no suba, el 1,5 % se cobra igual.'], ['Compáralo con su índice: si el índice subió un 12 %, el fondo lo hizo peor', '¡Eso! Lo que importa es cuánto te deja frente a la alternativa barata, año tras año.'], ['Entonces mejor un fondo que cobre un 3 %', 'Cobrar más no hace subir más. Lo único seguro de una comisión es que se paga.']], 1, 'Juzga un fondo frente a su índice y durante muchos años, no por un buen año.'),
       scenario('Tienes un ETF del MSCI World que cobra un 0,20 %, con buenas ganancias. Descubres otro del mismo índice al 0,12 %. ¿Qué haces?', [['Vendo el mío ya y compro el barato', 'Vender un ETF con ganancias tributa hoy: pagarías impuestos para ahorrar un 0,08 % al año.'], ['Mantengo el que tengo y llevo las aportaciones nuevas al barato', '¡Eso! Ahorras costes en lo nuevo sin pagar impuestos por vender lo viejo.'], ['Me da igual: los costes no importan', 'Sí importan, pero aquí la diferencia es pequeña. Lo caro sería vender con prisa.']], 1, 'Entre dos ETF baratos del mismo índice, la diferencia es pequeña y vender tiene un coste fiscal seguro. Lo sensato es que el dinero nuevo vaya al más barato. Cambiar de golpe solo compensa cuando la diferencia es grande, como de 1,5 % a 0,2 %.'),
-    ], { source: '4.2', minutes: 6, retire: [0, 1, 3, 7, 8] }),
+      num('Compras 2.000 € de un ETF que cotiza en dólares y tu bróker cobra un 0,5 % por el cambio de divisa. ¿Cuánto pagas por el cambio al comprar?', 10, '€', '2.000 × 0,005 = 10 €. Al vender volverás a pagar el cambio.'),
+      buckets('¿Es un coste del producto o de tu bróker?', ['Producto: está en el KID', 'Bróker: está en sus tarifas'], [['Gastos corrientes (TER)', 0], ['Comisión por compra y venta', 1], ['Custodia', 1], ['Costes de operación del fondo', 0], ['Cambio de divisa', 1], ['Comisión de rendimiento', 0]], 'Los del producto vienen en la tabla de costes del KID; los del bróker, en su página de tarifas. Hay que sumar los dos.'),
+      num('Tu bróker no cobra por comprar, pero sí 2 € al mes de custodia. Tienes 600 € invertidos. ¿Qué porcentaje de tu inversión te cuesta al año?', 4, '%', '2 × 12 = 24 € al año; 24 ÷ 600 = 0,04 → 4 %. Con poco dinero, una cuota fija se come la rentabilidad.'),
+      match('Empareja cada línea de la tabla de costes del KID con lo que es.', [['Costes de entrada', 'Lo que pagas al comprar'], ['Costes corrientes', 'Gestión y gastos, cada año'], ['Costes de operación', 'Lo que gasta el fondo al mover sus valores'], ['Comisión de rendimiento', 'Un extra si el fondo supera un objetivo']], 'La tabla «Composición de los costes» es igual en todos los KID: así puedes comparar dos productos línea a línea.'),
+      tf('Si un bróker anuncia «0 € de comisión», comprar con él no cuesta nada.', false, 'Puede cobrar por el cambio de divisa, por la custodia o en el precio al que ejecuta tu orden. Mira la tarifa completa.'),
+    ], { source: '4.2', minutes: 6, retire: [0, 1, 3, 5, 6, 7, 8] }),
 
     lesson('u30l3', 'Invertir con poco: 50 € al mes', [
       play({
