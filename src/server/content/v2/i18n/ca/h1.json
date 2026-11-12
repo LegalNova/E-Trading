@@ -327,8 +327,8 @@
   "h1l1-3": {
    "prompt": "Què li contestes?",
    "options": [
-    "No: compres trossets d'empreses que guanyen diners i creixen",
-    "Sí, és pura sort",
+    "No: compres trossets d'empreses",
+    "Sí, és pura sort: uns dies guanyes i uns altres perds",
     "Només si tries bé l'empresa"
    ],
    "explanation": "Al casino els números estan fets perquè perdis. A la borsa compres parts de negocis que generen beneficis, i amb temps i moltes empreses alhora el resultat depèn molt menys de la sort.",
@@ -377,9 +377,9 @@
   "u8l1-1": {
    "prompt": "Compres una acció d'Inditex. Què ets?",
    "options": [
-    "Copropietari d'una part minúscula de l'empresa",
-    "Client amb descompte a les seves botigues",
-    "Prestador de l'empresa"
+    "Copropietari d'una part minúscula",
+    "Client amb descompte a totes les seves botigues",
+    "Prestador: l'empresa et deu aquests diners"
    ],
    "explanation": "Una acció és una part del capital: participes dels seus beneficis i dels seus riscos. Deixar diners a l'empresa seria comprar un bo."
   },
@@ -405,8 +405,8 @@
    "prompt": "Segons Bessembinder (2018), d'unes 26.000 accions dels EUA entre el 1926 i el 2016, quina part va generar tot el guany net del mercat?",
    "options": [
     "Al voltant d'un 4 %",
-    "Gairebé totes",
-    "La meitat"
+    "Gairebé totes: la majoria va guanyar diners",
+    "Més o menys la meitat"
    ],
    "explanation": "Només un 4 % va explicar tot el guany net, i més de la meitat va rendir menys que les lletres del Tresor. Per això una sola acció és arriscada i convé diversificar."
   },
@@ -414,7 +414,7 @@
    "prompt": "La teva cosina vol posar tots els seus estalvis en una sola acció de moda perquè «no para de pujar». Què li aconselles?",
    "options": [
     "Tot a aquesta acció: si puja tant, continuarà pujant",
-    "Repartir entre moltes empreses, per exemple amb un fons que compra les 500 de l'S&P 500",
+    "Repartir entre moltes empreses amb un fons",
     "Comprar-la, però vendre tan bon punt baixi una mica"
    ],
    "explanation": "Una sola acció es pot multiplicar o enfonsar, i molt poques generen gairebé tot el guany. Repartir entre moltes evita que tot depengui d'una de sola; la temptació de «si puja, continuarà pujant» oblida que també pot caure molt.",
@@ -456,19 +456,19 @@
   "u5l3-8": {
    "prompt": "Què pot moure el preu d'una acció? Marca-ho tot.",
    "options": [
-    "Una dada econòmica",
+    "El preu a què va sortir a borsa fa anys",
     "Que arribin més venedors que compradors",
-    "El color del seu logotip",
+    "El preu que vas pagar tu quan la vas comprar",
     "Els resultats de l'empresa"
    ],
-   "explanation": "Tot el que canvia el que la gent està disposada a pagar mou el preu."
+   "explanation": "El preu el mou el que canvia quant està disposada a pagar la gent avui: més venedors, resultats, notícies. El que vas pagar tu o el preu de sortida ja no compten."
   },
   "u5l3-9": {
    "prompt": "L'Ana vol vendre ara mateix 2.000 accions d'una empresa petita. Al llibre de compra n'hi ha 300 a 5,00 €, 500 a 4,90 € i 1.200 a 4,70 €. Què fa?",
    "options": [
     "Posa una ordre limitada a 5,00 € i ven a poc a poc",
     "Ven les 2.000 a mercat",
-    "Ven a mercat i, a més, posa més ordres alhora"
+    "Ven a mercat i posa més ordres de venda alhora, per si de cas"
    ],
    "explanation": "En valors poc líquids, una ordre gran a mercat mou el preu en contra teu.",
    "feedback": [
@@ -553,9 +553,9 @@
   "u19l1-2": {
    "prompt": "Quin preu de cada període es considera el més important?",
    "options": [
-    "El màxim",
+    "El màxim del període",
     "El tancament",
-    "L'obertura"
+    "L'obertura del període"
    ],
    "explanation": "El tancament és el preu en què compradors i venedors es van quedar al final del període. Gairebé tots els indicadors es calculen amb tancaments."
   },
@@ -583,17 +583,17 @@
    "prompt": "Passes el dit per una espelma al gràfic d'E-Trading. Quines dades hi veus? Marca-les totes.",
    "options": [
     "El tancament",
-    "El preu de demà",
+    "El motiu de la pujada o la baixada",
     "El màxim i el mínim",
-    "L'obertura"
+    "El dividend que va pagar aquell dia"
    ],
-   "explanation": "Hi veus els quatre preus del període, a més de la variació i el volum. El preu de demà no el sap ningú."
+   "explanation": "Hi veus els quatre preus del període, a més de la variació i el volum. El gràfic no diu per què es va moure ni què va repartir l'empresa."
   },
   "u19l1-11": {
    "prompt": "Què li contestes?",
    "options": [
-    "Sí: si puja tres mesos, continuarà",
-    "El gràfic diu el que va passar, no el que passarà: no t'ho juguis tot",
+    "Sí: si fa tres mesos que puja, el més normal és que continuï",
+    "El gràfic diu el que va passar, no el que passarà",
     "No: si ha pujat tant, segur que cau"
    ],
    "explanation": "Un gràfic és el registre del que ja va passar. Serveix per veure com s'ha mogut el preu, però no garanteix el que farà: ni que continuï pujant ni que caigui.",
@@ -633,7 +633,7 @@
    "prompt": "La Marta té 18 anys i 1.000 € d'un regal. Pensa invertir-los «quan acabi la carrera, d'aquí a 5 anys». Què li aconselles?",
    "options": [
     "Començar ja, encara que sigui amb una part",
-    "Esperar: amb 18 anys és aviat per invertir",
+    "Esperar: amb 18 anys encara és aviat per invertir",
     "Guardar-los a casa fins aleshores"
    ],
    "explanation": "El temps pesa tant com la rendibilitat: començar 5 anys abans deixa que l'interès compost treballi 5 anys més. Esperar sembla prudent, però té un cost que no es veu.",
@@ -671,7 +671,7 @@
    "prompt": "A mitja sessió, dones l'ordre de comprar a mercat 500 € d'Apple, una de les empreses més negociades del món. Què esperes?",
    "options": [
     "Entrar gairebé al preu que veus a la pantalla",
-    "Entrar exactament al preu que veus, garantit",
+    "Entrar exactament al preu que veus, garantit del tot",
     "Pagar bastant més del que veus"
    ],
    "explanation": "Amb molta gent comprant i venent alhora, sempre hi ha algú a l'altre costat a un preu gairebé igual. L'ordre a mercat surt cara quan hi ha pocs venedors, no en una gran empresa a mitja sessió.",
@@ -684,8 +684,8 @@
   "u6l1-12": {
    "prompt": "És dissabte i dones una ordre de compra a mercat d'una acció espanyola. Què passa?",
    "options": [
-    "Espera i s'executa dilluns a l'obertura, al preu que hi hagi llavors",
-    "S'executa ja, a l'últim preu de divendres",
+    "Espera i s'executa dilluns, a l'obertura",
+    "S'executa ja, a l'últim preu de divendres, que és el que veus",
     "Es cancel·la sola perquè és cap de setmana"
    ],
    "explanation": "Amb la borsa tancada, una ordre a mercat s'executa a l'obertura, al preu que surti llavors. Si arriba una notícia el cap de setmana, el preu pot saltar: «ja» no vol dir «a aquest preu».",
@@ -699,7 +699,7 @@
    "prompt": "Tesla no reparteix dividends. El teu cosí diu que llavors les seves accions no serveixen per guanyar diners. Què li respons?",
    "options": [
     "Que té raó: sense dividends no es guanya res",
-    "Que també es guanya si puja el preu: és la revaloració",
+    "Que també es guanya si puja el preu",
     "Que l'empresa li tornarà els diners en una data"
    ],
    "explanation": "Amb una acció guanyes de dues maneres: amb dividends i amb la revaloració, la pujada del preu. Sense dividends, tot depèn del preu, que pot pujar i també baixar.",

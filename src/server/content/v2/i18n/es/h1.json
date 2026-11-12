@@ -327,8 +327,8 @@
   "h1l1-3": {
    "prompt": "¿Qué le contestas?",
    "options": [
-    "No: compras trocitos de empresas que ganan dinero y crecen",
-    "Sí, es pura suerte",
+    "No: compras trocitos de empresas",
+    "Sí, es pura suerte: unos días ganas y otros pierdes",
     "Solo si eliges bien la empresa"
    ],
    "explanation": "En el casino las cuentas están hechas para que pierdas. En bolsa compras partes de negocios que generan beneficios, y con tiempo y muchas empresas a la vez el resultado depende mucho menos de la suerte.",
@@ -377,9 +377,9 @@
   "u8l1-1": {
    "prompt": "Compras una acción de Inditex. ¿Qué eres?",
    "options": [
-    "Copropietario de una parte diminuta de la empresa",
-    "Cliente con descuento en sus tiendas",
-    "Prestamista de la empresa"
+    "Copropietario de una parte diminuta",
+    "Cliente con descuento en todas sus tiendas",
+    "Prestamista: la empresa te debe ese dinero"
    ],
    "explanation": "Una acción es una parte del capital: participas en sus beneficios y en sus riesgos. Prestar dinero a la empresa sería comprar un bono."
   },
@@ -405,8 +405,8 @@
    "prompt": "Según Bessembinder (2018), de unas 26.000 acciones de EE. UU. entre 1926 y 2016, ¿qué parte generó toda la ganancia neta del mercado?",
    "options": [
     "Alrededor de un 4 %",
-    "Casi todas",
-    "La mitad"
+    "Casi todas: la mayoría ganó dinero",
+    "Más o menos la mitad"
    ],
    "explanation": "Solo un 4 % explicó toda la ganancia neta, y más de la mitad rindió menos que las letras del Tesoro. Por eso una sola acción es arriesgada y conviene diversificar."
   },
@@ -414,7 +414,7 @@
    "prompt": "Tu prima quiere meter todos sus ahorros en una sola acción de moda porque «no para de subir». ¿Qué le aconsejas?",
    "options": [
     "Todo a esa acción: si sube tanto, seguirá subiendo",
-    "Repartir entre muchas empresas, por ejemplo con un fondo que compra las 500 del S&P 500",
+    "Repartir entre muchas empresas con un fondo",
     "Comprarla, pero vender en cuanto baje un poco"
    ],
    "explanation": "Una sola acción puede multiplicarse o hundirse, y muy pocas generan casi toda la ganancia. Repartir entre muchas evita que todo dependa de una sola; la tentación de «si sube, seguirá subiendo» olvida que también puede caer mucho.",
@@ -428,7 +428,7 @@
    "prompt": "Tesla no reparte dividendos. Tu primo dice que entonces sus acciones no sirven para ganar dinero. ¿Qué le respondes?",
    "options": [
     "Que tiene razón: sin dividendos no se gana nada",
-    "Que también se gana si sube el precio: es la revalorización",
+    "Que también se gana si sube el precio",
     "Que la empresa le devolverá el dinero en una fecha"
    ],
    "explanation": "Con una acción ganas de dos formas: con dividendos y con la revalorización, la subida del precio. Sin dividendos, todo depende del precio, que puede subir y también bajar.",
@@ -470,19 +470,19 @@
   "u5l3-8": {
    "prompt": "¿Qué puede mover el precio de una acción? Marca todos.",
    "options": [
-    "Un dato económico",
+    "El precio al que salió a bolsa hace años",
     "Que lleguen más vendedores que compradores",
-    "El color de su logotipo",
+    "El precio que pagaste tú al comprarla",
     "Los resultados de la empresa"
    ],
-   "explanation": "Todo lo que cambia lo que la gente está dispuesta a pagar mueve el precio."
+   "explanation": "El precio lo mueve lo que cambia cuánto está dispuesta a pagar la gente hoy: más vendedores, resultados, noticias. Lo que pagaste tú o el precio de salida ya no cuentan."
   },
   "u5l3-9": {
    "prompt": "Ana quiere vender ya 2.000 acciones de una empresa pequeña. En el libro de compra hay 300 a 5,00 €, 500 a 4,90 € y 1.200 a 4,70 €. ¿Qué hace?",
    "options": [
     "Pone una orden limitada a 5,00 € y vende poco a poco",
     "Vende las 2.000 a mercado",
-    "Vende a mercado y además pone más órdenes a la vez"
+    "Vende a mercado y pone más órdenes de venta a la vez, por si acaso"
    ],
    "explanation": "En valores poco líquidos, una orden grande a mercado mueve el precio en tu contra.",
    "feedback": [
@@ -565,8 +565,8 @@
   "u6l1-12": {
    "prompt": "Es sábado y das una orden de compra a mercado de una acción española. ¿Qué pasa?",
    "options": [
-    "Espera y se ejecuta el lunes en la apertura, al precio que haya entonces",
-    "Se ejecuta ya, al último precio del viernes",
+    "Espera y se ejecuta el lunes, en la apertura",
+    "Se ejecuta ya, al último precio del viernes, que es el que ves",
     "Se cancela sola porque es fin de semana"
    ],
    "explanation": "Con la bolsa cerrada, una orden a mercado se ejecuta en la apertura, al precio que salga entonces. Si llega una noticia el fin de semana, el precio puede saltar: «ya» no significa «a este precio».",
@@ -595,9 +595,9 @@
   "u19l1-2": {
    "prompt": "¿Qué precio de cada periodo se considera el más importante?",
    "options": [
-    "El máximo",
+    "El máximo del periodo",
     "El cierre",
-    "La apertura"
+    "La apertura del periodo"
    ],
    "explanation": "El cierre es el precio en el que compradores y vendedores se quedaron al final del periodo. Casi todos los indicadores se calculan con cierres."
   },
@@ -625,17 +625,17 @@
    "prompt": "Pasas el dedo por una vela en el gráfico de E-Trading. ¿Qué datos ves? Marca todos.",
    "options": [
     "El cierre",
-    "El precio de mañana",
+    "El motivo de la subida o la bajada",
     "El máximo y el mínimo",
-    "La apertura"
+    "El dividendo que pagó ese día"
    ],
-   "explanation": "Ves los cuatro precios del periodo, además de la variación y el volumen. El precio de mañana no lo sabe nadie."
+   "explanation": "Ves los cuatro precios del periodo, además de la variación y el volumen. El gráfico no dice por qué se movió ni lo que repartió la empresa."
   },
   "u19l1-11": {
    "prompt": "¿Qué le contestas?",
    "options": [
-    "Sí: si sube tres meses, seguirá",
-    "El gráfico dice lo que pasó, no lo que pasará: no lo apuestes todo",
+    "Sí: si lleva tres meses subiendo, lo normal es que siga",
+    "El gráfico dice lo que pasó, no lo que pasará",
     "No: si ha subido tanto, seguro que cae"
    ],
    "explanation": "Un gráfico es el registro de lo que ya pasó. Sirve para ver cómo se ha movido el precio, pero no garantiza lo que hará: ni que siga subiendo ni que caiga.",

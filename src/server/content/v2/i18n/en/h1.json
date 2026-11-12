@@ -327,8 +327,8 @@
   "h1l1-3": {
    "prompt": "What do you reply?",
    "options": [
-    "No: you buy tiny pieces of companies that make money and grow",
-    "Yes, it's pure luck",
+    "No: you buy tiny pieces of companies",
+    "Yes, it's pure luck: some days you win, some you lose",
     "Only if you pick the right company"
    ],
    "explanation": "In a casino the odds are set up for you to lose. On the stock market you buy parts of businesses that make profits, and with time and many companies at once the result depends much less on luck.",
@@ -377,9 +377,9 @@
   "u8l1-1": {
    "prompt": "You buy an Inditex share. What are you?",
    "options": [
-    "Co-owner of a minuscule part of the company",
-    "A customer with a discount in its shops",
-    "A lender to the company"
+    "Co-owner of a tiny part of it",
+    "A customer with a discount in all its shops",
+    "A lender: the company owes you that money"
    ],
    "explanation": "A share is part of the company's capital: you share in its profits and its risks. Lending money to the company would mean buying a bond."
   },
@@ -405,8 +405,8 @@
    "prompt": "According to Bessembinder (2018), out of some 26,000 US stocks between 1926 and 2016, what share generated all of the market's net gain?",
    "options": [
     "Around 4 %",
-    "Almost all of them",
-    "Half"
+    "Almost all: most of them made money",
+    "Roughly half of them"
    ],
    "explanation": "Just 4 % accounted for the entire net gain, and more than half returned less than Treasury bills. That's why a single share is risky and it pays to diversify."
   },
@@ -414,7 +414,7 @@
    "prompt": "Your cousin wants to put all her savings into a single trendy share because «it just keeps going up». What do you advise?",
    "options": [
     "All into that share: if it's rising so much, it'll keep rising",
-    "Spread it across many companies, for example with a fund that buys all 500 in the S&P 500",
+    "Spread it across many companies with a fund",
     "Buy it, but sell as soon as it dips a little"
    ],
    "explanation": "A single share can multiply or sink, and very few generate almost all the gains. Spreading across many stops everything depending on just one; the temptation of «if it's rising, it'll keep rising» forgets that it can also fall a long way.",
@@ -456,19 +456,19 @@
   "u5l3-8": {
    "prompt": "What can move a share's price? Select all that apply.",
    "options": [
-    "An economic data release",
+    "The price it floated at years ago",
     "More sellers turning up than buyers",
-    "The colour of its logo",
+    "The price you paid when you bought it",
     "The company's results"
    ],
-   "explanation": "Anything that changes what people are willing to pay moves the price."
+   "explanation": "The price is moved by whatever changes what people are willing to pay today: more sellers, results, news. What you paid or the flotation price no longer count."
   },
   "u5l3-9": {
    "prompt": "Ana wants to sell 2,000 shares in a small company right now. On the buy side of the book there are 300 at €5.00, 500 at €4.90 and 1,200 at €4.70. What does she do?",
    "options": [
     "Places a limit order at €5.00 and sells bit by bit",
     "Sells all 2,000 at market",
-    "Sells at market and places more orders at the same time"
+    "Sells at market and places more sell orders at the same time, just in case"
    ],
    "explanation": "With illiquid securities, a large market order moves the price against you.",
    "feedback": [
@@ -553,9 +553,9 @@
   "u19l1-2": {
    "prompt": "Which price in each period is considered the most important?",
    "options": [
-    "The high",
+    "The high of the period",
     "The close",
-    "The open"
+    "The open of the period"
    ],
    "explanation": "The close is the price buyers and sellers settled on at the end of the period. Almost all indicators are calculated using closes."
   },
@@ -583,17 +583,17 @@
    "prompt": "You run your finger over a candle on the E-Trading chart. What data do you see? Tick all that apply.",
    "options": [
     "The close",
-    "Tomorrow's price",
+    "The reason for the rise or the fall",
     "The high and the low",
-    "The open"
+    "The dividend it paid that day"
    ],
-   "explanation": "You see the period's four prices, plus the change and the volume. Nobody knows tomorrow's price."
+   "explanation": "You see the period's four prices, plus the change and the volume. The chart doesn't tell you why it moved or what the company paid out."
   },
   "u19l1-11": {
    "prompt": "What do you reply?",
    "options": [
-    "Yes: if it's risen for three months, it'll keep going",
-    "The chart says what happened, not what will happen: don't bet everything",
+    "Yes: if it's risen for three months, it'll most likely keep going",
+    "The chart says what happened, not what will happen",
     "No: if it's risen that much, it's bound to fall"
    ],
    "explanation": "A chart is the record of what has already happened. It shows how the price has moved, but it doesn't guarantee what it will do: neither that it keeps rising nor that it falls.",
@@ -633,7 +633,7 @@
    "prompt": "Marta is 18 and has €1,000 from a gift. She plans to invest it «when I finish my degree, in 5 years». What do you advise?",
    "options": [
     "Start now, even if only with part of it",
-    "Wait: at 18 it's too early to invest",
+    "Wait: at 18 it's still too early to invest",
     "Keep it at home until then"
    ],
    "explanation": "Time matters as much as the return: starting 5 years earlier lets compound interest work for 5 more years. Waiting seems prudent, but it has a cost you can't see.",
@@ -684,8 +684,8 @@
   "u6l1-12": {
    "prompt": "It's Saturday and you place a market buy order for a Spanish share. What happens?",
    "options": [
-    "It waits and is filled on Monday at the open, at whatever price there is then",
-    "It's filled right away, at Friday's last price",
+    "It waits and is filled on Monday at the open",
+    "It's filled right away, at Friday's last price, the one you see",
     "It cancels itself because it's the weekend"
    ],
    "explanation": "With the market closed, a market order is filled at the open, at whatever price comes out then. If news breaks over the weekend, the price can jump: «now» doesn't mean «at this price».",
@@ -699,7 +699,7 @@
    "prompt": "Tesla doesn't pay dividends. Your cousin says that means its shares are no good for making money. What do you tell him?",
    "options": [
     "That he's right: without dividends you make nothing",
-    "That you also make money if the price goes up: that's capital growth",
+    "That you also make money if the price goes up",
     "That the company will give him his money back on a set date"
    ],
    "explanation": "With a share you make money in two ways: dividends and capital growth, the rise in the price. Without dividends, everything depends on the price, which can rise and can also fall.",
