@@ -576,6 +576,7 @@ MIXES = [
     ('mix-growth', '2003-10-01', '2025-12-01', [('nasdaq', 'QQQ', 'Acciones tecnológicas (Nasdaq 100)'), ('stocks', 'SPY', 'Acciones de EE. UU. (S&P 500)'), ('bonds', 'AGG', 'Bonos de EE. UU.')]),
     ('mix-crises', '2000-01-01', '2025-12-01', [('stocks', 'SPY', 'Acciones de EE. UU. (S&P 500)'), ('intl', 'VGTSX', 'Acciones del resto del mundo'), ('bonds', 'VBMFX', 'Bonos de EE. UU.')]),
     ('mix-styles-2000', '2000-06-01', '2006-12-01', [('value', 'IWD', 'Acciones «de valor» de EE. UU.'), ('growth', 'IWF', 'Acciones «de crecimiento» de EE. UU.')]),
+    ('mix-gold-miners', '2007-01-01', '2025-12-01', [('gold', 'GLD', 'Oro'), ('miners', 'GDX', 'Empresas mineras de oro')]),
     ('mix-2000s', '2000-01-01', '2012-12-01', [('stocks', 'SPY', 'Acciones de EE. UU. (S&P 500)'), ('bonds', 'VBMFX', 'Bonos de EE. UU.'), ('em', 'VEIEX', 'Acciones de países emergentes')]),
 ]
 

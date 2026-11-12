@@ -207,22 +207,25 @@ export default unit({
           { say: '¿Directa o a través de una empresa?', mood: 'HAPPY' },
         ],
       }),
+      // Auditoría RED-21: la pieza del apalancamiento se queda en u11l3 y u25l8. Aquí va la idea propia de la clase:
+      // invertir en el metal no es lo mismo que invertir en quien lo extrae. Datos: ETF SPDR Gold Shares (GLD) y VanEck Gold
+      // Miners (GDX), cierres mensuales ajustados de Yahoo Finance, enero de 2007 a diciembre de 2025: 10.000 → 61.131 y 25.451;
+      // peor caída −42,9 % y −77,5 %. Fixture `mix-gold-miners`.
       play({
-        title: 'Petróleo con 1:10',
-        intro: 'Un anuncio te ofrece operar petróleo con **apalancamiento 1:10**: con **1.000 €** de garantía mueves 10.000 €. Mueve el precio del crudo.',
-        widget: { kind: 'leverage', margin: 1000, lev: 10, move: 0, maxLev: 20, maxMove: 15 },
+        title: 'El oro o quien lo saca',
+        intro: 'Datos reales de 2007 a 2025: tienes **10.000 €** en oro. Pásalos a acciones de **empresas mineras de oro** y compara.',
+        widget: { kind: 'mix', series: 'mix-gold-miners', weights: [100, 0], amount: 10000 },
         predict: {
-          prompt: 'Con 1:10, ¿qué caída del crudo se lleva toda tu garantía?',
-          options: ['Un 50 %', 'Un 25 %', 'Un 10 %'],
-          answer: 2,
-          why: '1 ÷ 10 = **10 %**. Y en marzo de 2020 el WTI cayó un 29 % en una sola semana (cierres semanales).',
+          prompt: 'Si el oro se multiplicó por seis en esos años, ¿qué hicieron las mineras de oro?',
+          options: ['Ganaron todavía más', 'Ganaron menos de la mitad y cayeron mucho más por el camino', 'Lo mismo que el oro'],
+          answer: 1,
+          why: 'El oro acabó en **61.131 €**; las mineras, en **25.451 €**. Y en su peor momento las mineras perdían un 77 %, frente a un 43 % del oro.',
         },
-        goal: { text: 'Con 1:10, busca la caída que te deja a cero.', when: [when('lev', '==', 10), when('wiped', '==', 1)] },
-        insight: '**Con 1:10, un 10 % en contra te deja a cero**, y el crudo se ha movido más que eso en una semana. Los futuros y CFD apalancados no son para empezar.',
+        goal: { text: 'Pasa todo a mineras y mira la peor caída.', when: [when('w1', '==', 100)] },
+        insight: 'Una minera es un **negocio**: tiene costes, deuda y gestores. Su acción depende del oro, pero también de todo eso. **No es lo mismo invertir en oro que en una minera de oro.**',
         lumi: [
-          { when: when('wiped', '==', 1), say: 'Garantía a cero. El crudo ha caído más que esto en una semana.', mood: 'WORRIED' },
-          { when: when('pnlPct', '>=', 50), say: 'Ganas mucho… pero el mismo movimiento al revés duele igual.', mood: 'THINKING' },
-          { say: 'Mueve el precio del crudo y mira tu garantía', mood: 'HAPPY' },
+          { when: when('w1', '==', 100), say: 'Un 77 % de caída: para recuperarlo hay que multiplicar por más de cuatro.', mood: 'WORRIED' },
+          { say: 'Mueve el peso entre el oro y las mineras', mood: 'HAPPY' },
         ],
       }),
       key('Antes de comprar', '• **Físico:** tienes el metal, pero hay que guardarlo y se compra y vende con margen.\n• **ETC:** cotiza como un ETF; técnicamente es un título de deuda. Los de oro suelen estar respaldados por metal físico; los de petróleo o agrícolas usan **futuros**, con un coste oculto que verás en la próxima clase.\n\nEn España, los ETC no son fondos: no permiten traspasos sin pagar impuestos y Hacienda trata su resultado de forma distinta a la de un ETF. Lee el documento de datos fundamentales y mira si el producto es **físico** o replica con **futuros**.', 'No es lo mismo invertir en oro que en una minera de oro.', 'Pruébalo: en Mercado, compara el gráfico del oro con el del ETF GDX de mineras.'),

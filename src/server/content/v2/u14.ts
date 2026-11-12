@@ -68,25 +68,19 @@ export default unit({
         say('lumi', 'Ojo: 50 pips en contra serían 500 $ menos.'),
         say('lumi', 'Mini lote: 10.000 unidades; micro: 1.000. En los pares del yen, el pip es 0,01.'),
       ]),
-      play({
-        title: '1.000 € que mueven 30.000 €',
-        intro: 'Con apalancamiento **1:30**, el máximo para minoristas en la UE en pares mayores, tu garantía de **1.000 €** mueve 30.000 €. Mueve el precio del par.',
-        widget: { kind: 'leverage', margin: 1000, lev: 30, move: 0, maxLev: 30, maxMove: 5 },
-        predict: {
-          prompt: 'Con 1:30, ¿qué movimiento en contra se come toda tu garantía?',
-          options: ['Un 30 %', 'Un 10 %', 'Algo más de un 3 %'],
-          answer: 2,
-          why: '1 ÷ 30 ≈ **3,3 %**: un 3,3 % de 30.000 € son tus 1.000 €.',
-        },
-        goal: { text: 'Con 1:30, busca el primer movimiento en contra que te deja a cero.', when: [when('lev', '==', 30), when('wiped', '==', 1), when('move', '>=', -3.5)] },
-        insight: 'Las pérdidas se multiplican igual que las ganancias: con 1:30, un **3,3 %** en contra se lleva toda tu garantía. El tamaño lo decide **lo que estás dispuesto a perder**, no el apalancamiento que te ofrecen.',
-        lumi: [
-          { when: when('wiped', '==', 1), say: 'Garantía a cero. En divisas, eso pasa en semanas, o en minutos con una sorpresa.', mood: 'WORRIED' },
-          { when: when('pnlPct', '<=', -50), say: 'Media garantía perdida, y el precio apenas se ha movido.', mood: 'WORRIED' },
-          { when: when('lev', '<=', 3), say: 'Con poco apalancamiento, un mal día no te tumba.', mood: 'CALM' },
-          { say: 'Mueve el precio en contra y mira tu garantía', mood: 'HAPPY' },
-        ],
-      }),
+      // Auditoría RED-21: la pieza del apalancamiento se queda en u11l3 y u25l8. Aquí va lo propio de las divisas:
+      // el tamaño de la operación sale del riesgo y de los pips del stop, no del apalancamiento que ofrece el bróker.
+      story('¿Qué lote me toca?', [{ id: 'leo', name: 'Leo' }], [
+        say('leo', 'Tengo **2.000 $** en la cuenta y no quiero perder más de **20 $** por operación. Mi stop está a **40 pips**.'),
+        say('leo', 'El bróker me deja abrir un lote estándar con apalancamiento 1:30. ¿Lo abro?'),
+        choose('¿Qué tamaño encaja con lo que quiere arriesgar?', [
+          opt('Un lote estándar: 10 $ por pip', 'bad', say('lumi', '40 pips × 10 $ = 400 $ si salta el stop: veinte veces lo que quería arriesgar.')),
+          opt('Cinco micro lotes: 0,50 $ por pip', 'good', say('lumi', 'Eso: 40 pips × 0,50 $ = 20 $. El tamaño sale de tu riesgo y de tu stop, no de lo que el bróker te deja.')),
+          opt('Un mini lote: 1 $ por pip', 'ok', say('lumi', '40 pips × 1 $ = 40 $: el doble de lo que quería perder.')),
+        ]),
+        say('leo', 'Entonces el 1:30 ni lo toco…'),
+        say('lumi', 'El apalancamiento es un límite que te ponen, no un objetivo. Con 1:30, un **3,3 %** en contra se lleva toda la garantía.'),
+      ]),
       key('Pips, lotes y un aviso', 'En EUR/USD, un pip (0,0001) vale **10 $** con un lote estándar (100.000 unidades), **1 $** con un mini lote (10.000) y **0,10 $** con un micro lote (1.000). Así, 50 pips en contra son 500 $, 50 $ o 5 $. En los pares con yen, el pip es 0,01.\n\nAviso obligatorio de la CNMV: «Los CFD son instrumentos complejos y están asociados a un riesgo elevado de perder dinero rápidamente debido al apalancamiento. Entre un 74 y un 89 % de los inversores minoristas pierden dinero cuando negocian con CFD.»', 'El apalancamiento no te hace mejor inversor: solo hace más grandes tus errores.', 'Pruébalo: en Mercado, compara cuánto se mueve hoy EUR/USD frente a Tesla.'),
     ], [
       num('EUR/USD pasa de 1,1600 a 1,1675. ¿Cuántos pips se ha movido?', 75, 'pips', '1,1675 − 1,1600 = 0,0075 = 75 pips (cada pip es 0,0001).'),
