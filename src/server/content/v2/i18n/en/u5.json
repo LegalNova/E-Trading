@@ -211,7 +211,7 @@
     },
     {
      "title": "Settlement and custody",
-     "body": "Once matched, the trade **settles**: the money goes to the seller and the shares to you. In Europe it takes two business days (**T+2**); in the US, one (T+1) since 2024. In Spain the central register is **Iberclear**.\n\nWith a broker from another EU country, that country's fund covers you, and it may cover less (the EU minimum is €20,000). Before you open an account, check on the CNMV website that the broker is authorised.",
+     "body": "Once matched, the trade **settles**: the money goes to the seller and the shares to you. In Europe it takes two business days (**T+2**) and will move to one (T+1) on 11 October 2027; in the US it has been one since 2024. In Spain the central register is **Iberclear**.\n\nWith a broker from another EU country, that country's fund covers you, and it may cover less (the EU minimum is €20,000). Before you open an account, check on the CNMV website that the broker is authorised.",
      "key": "The broker is your way in; your securities are held in your name.",
      "tip": "Try it: make a purchase in Market and find the trade in your Portfolio."
     }
@@ -588,7 +588,7 @@
     "five",
     "two"
    ],
-   "explanation": "T+2: the trade date plus two business days."
+   "explanation": "T+2: the trade date plus two business days. From 11 October 2027 it will be one (T+1)."
   },
   "u5l5-10": {
    "prompt": "Pablo has €60,000 with a broker based in another EU country and assumes he's covered by Spain's FOGAIN. What does he do?",

@@ -211,7 +211,7 @@
     },
     {
      "title": "Liquidació i custòdia",
-     "body": "Després de l'encreuament, l'operació es **liquida**: els diners van al venedor i les accions a tu. A Europa triga dos dies hàbils (**T+2**); als EUA, un (T+1) des del 2024. A Espanya el registre central és **Iberclear**.\n\nAmb un bròquer d'un altre país de la UE et cobreix el fons d'aquell país, que pot ser menor (el mínim europeu és de 20.000 €). Abans d'obrir-hi un compte, comprova al web de la CNMV que el bròquer està autoritzat.",
+     "body": "Després de l'encreuament, l'operació es **liquida**: els diners van al venedor i les accions a tu. A Europa triga dos dies hàbils (**T+2**) i passarà a un (T+1) l'11 d'octubre del 2027; als EUA ja és un des del 2024. A Espanya el registre central és **Iberclear**.\n\nAmb un bròquer d'un altre país de la UE et cobreix el fons d'aquell país, que pot ser menor (el mínim europeu és de 20.000 €). Abans d'obrir-hi un compte, comprova al web de la CNMV que el bròquer està autoritzat.",
      "key": "El bròquer és la teva porta d'entrada; els teus valors es guarden a nom teu.",
      "tip": "Prova-ho: fes una compra al Mercat i busca l'operació a la teva Cartera."
     }
@@ -588,7 +588,7 @@
     "cinc",
     "dos"
    ],
-   "explanation": "T+2: el dia de l'operació més dos dies hàbils."
+   "explanation": "T+2: el dia de l'operació més dos dies hàbils. Des de l'11 d'octubre del 2027 serà un (T+1)."
   },
   "u5l5-10": {
    "prompt": "En Pablo té 60.000 € en un bròquer amb seu en un altre país de la UE i dona per fet que el cobreix el FOGAIN espanyol. Què fa?",

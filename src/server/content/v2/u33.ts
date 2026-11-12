@@ -149,7 +149,7 @@ export default unit({
           ],
         },
         goal: { text: 'Clasifica las seis fuentes de ingresos.', when: [when('done', '==', 6)] },
-        insight: 'Saber de dónde vienen sus ingresos te dice **qué comportamiento te va a fomentar**. El reglamento europeo MiFIR (2024) **prohíbe el PFOF** a minoristas, con una excepción en algunos países hasta el 30 de junio de 2026.',
+        insight: 'Saber de dónde vienen sus ingresos te dice **qué comportamiento te va a fomentar**. El reglamento europeo MiFIR **prohíbe el PFOF** a minoristas. Alemania mantuvo una excepción hasta junio de 2026; desde julio de 2026 está prohibido en toda la UE.',
         lumi: [
           { when: when('wrong', '>=', 2), say: 'Pregúntate: ¿cobra solo cuando pulsas «comprar»?', mood: 'THINKING' },
           { say: 'Coloca cada fuente de ingresos', mood: 'HAPPY' },

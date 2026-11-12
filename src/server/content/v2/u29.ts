@@ -277,7 +277,7 @@ export default unit({
       }),
       play({
         title: 'La etiqueta europea',
-        intro: 'El reglamento europeo **SFDR** clasifica los fondos en tres artículos. Coloca cada fondo en el suyo.',
+        intro: 'El reglamento europeo **SFDR** clasifica los fondos en tres artículos (la UE lo está reformando y las categorías cambiarán de nombre). Coloca cada fondo en el suyo.',
         widget: {
           kind: 'sort',
           bins: [{ label: 'Artículo 6' }, { label: 'Artículo 8' }, { label: 'Artículo 9' }],

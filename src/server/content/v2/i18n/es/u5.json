@@ -211,7 +211,7 @@
     },
     {
      "title": "Liquidación y custodia",
-     "body": "Tras el cruce, la operación se **liquida**: el dinero va al vendedor y las acciones a ti. En Europa tarda dos días hábiles (**T+2**); en EE. UU., uno (T+1) desde 2024. En España el registro central es **Iberclear**.\n\nCon un bróker de otro país de la UE te cubre el fondo de ese país, que puede ser menor (el mínimo europeo es 20.000 €). Antes de abrir cuenta, comprueba en la web de la CNMV que el bróker está autorizado.",
+     "body": "Tras el cruce, la operación se **liquida**: el dinero va al vendedor y las acciones a ti. En Europa tarda dos días hábiles (**T+2**) y pasará a uno (T+1) el 11 de octubre de 2027; en EE. UU. ya es uno desde 2024. En España el registro central es **Iberclear**.\n\nCon un bróker de otro país de la UE te cubre el fondo de ese país, que puede ser menor (el mínimo europeo es 20.000 €). Antes de abrir cuenta, comprueba en la web de la CNMV que el bróker está autorizado.",
      "key": "El bróker es tu puerta de entrada; tus valores se guardan a tu nombre.",
      "tip": "Pruébalo: haz una compra en el Mercado y busca la operación en tu Cartera."
     }
@@ -616,7 +616,7 @@
     "cinco",
     "dos"
    ],
-   "explanation": "T+2: el día de la operación más dos días hábiles."
+   "explanation": "T+2: el día de la operación más dos días hábiles. Desde el 11 de octubre de 2027 será uno (T+1)."
   },
   "u5l5-10": {
    "prompt": "Pablo tiene 60.000 € en un bróker con sede en otro país de la UE y da por hecho que le cubre el FOGAIN español. ¿Qué hace?",

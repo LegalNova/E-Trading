@@ -1,6 +1,7 @@
 import 'server-only'
 // Sección 6 · Unidad 18 · Calidad del negocio y macro (docs/curso-v2/02-curriculo.md)
 // Datos reales de Inditex (ejercicio 2024) solo como ejemplo para practicar, nunca como recomendación.
+import { esNum, FACTS } from '../facts'
 import { buckets, chat, choose, fill, key, lesson, match, mission, multi, note, num, opt, order, play, point, say, scenario, single, story, tf, timed, unit, upDown, when } from '../dsl'
 
 export default unit({
@@ -168,7 +169,7 @@ export default unit({
           { say: 'Clasifica cada uno', mood: 'HAPPY' },
         ],
       }),
-      key('El precio del dinero', '• **BCE:** objetivo de inflación del **2 %** a medio plazo.\n• **Reserva Federal:** precios estables y máximo empleo.\n\nEl tipo de referencia del BCE es la **facilidad de depósito**: en junio de 2026 lo subió al **2,25 %**. Consulta el valor vigente en ecb.europa.eu, porque cambia varias veces al año.', 'Cuando el dinero se encarece, el futuro vale menos.', 'Pruébalo: busca en Mercado el ETF TLT de bonos largos y mira su 2022.'),
+      key('El precio del dinero', `• **BCE:** objetivo de inflación del **2 %** a medio plazo.\n• **Reserva Federal:** precios estables y máximo empleo.\n\nEl tipo de referencia del BCE es la **facilidad de depósito**: desde septiembre de 2026 está en el **${esNum(FACTS.ecbDepositRate.value)} %**. Consulta el valor vigente en ecb.europa.eu, porque cambia varias veces al año.`, 'Cuando el dinero se encarece, el futuro vale menos.', 'Pruébalo: busca en Mercado el ETF TLT de bonos largos y mira su 2022.'),
     ], [
       upDown('Enero de 2022: la inflación en EE. UU. está en máximos de casi 40 años y la Fed prepara subidas de tipos. Este es un ETF de bonos del Tesoro de EE. UU. a más de 20 años. ¿Qué hizo después?', 'hist-rates-2022', 'Los bonos largos son muy sensibles a los tipos: cuanto más lejos está el dinero que pagan, más cambia su valor de hoy cuando el tipo se mueve.', 'hasta octubre de 2023'),
       order('Ordena lo que pasa cuando el banco central sube los tipos.', ['Los préstamos se encarecen', 'Se consume e invierte menos', 'La economía se enfría', 'La inflación baja con retraso'], 'Con un retraso de 12 a 24 meses entre el primer paso y el último.'),

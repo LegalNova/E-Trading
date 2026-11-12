@@ -12,7 +12,7 @@ export default unit({
         intro: 'Diciembre de 2020. Metes **10.000 €** en bitcoin y lo ves semana a semana, con datos reales. Puedes vender cuando quieras.',
         widget: { kind: 'crash', series: 'series-btc', amount: 10000 },
         goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
-        insight: 'Comprar tras las subidas y vender tras las caídas fabrica la **brecha del inversor**. En los ETF de bitcoin al contado, sus inversores obtuvieron un **−5,8 %** frente al **+8,5 %** del propio ETF.',
+        insight: 'Comprar tras las subidas y vender tras las caídas fabrica la **brecha del inversor**. En los ETF de bitcoin al contado, entre enero de 2024 y junio de 2026, sus inversores obtuvieron un **−5,8 %** al año frente al **+8,5 %** del propio ETF.',
         lumi: [
           { when: when('sold', '==', 1), say: 'Has vendido. ¿Lo decidió tu plan o tu estómago?', mood: 'THINKING' },
           { when: when('drop', '<=', -40), say: 'Casi la mitad, en rojo. Tu cerebro grita: «¡Vende ya!».', mood: 'WORRIED' },
@@ -48,7 +48,7 @@ export default unit({
       tf('El sistema 1 de Kahneman es lento y analítico.', false, 'Es el rápido, intuitivo y emocional. El lento y analítico es el sistema 2.'),
       num('Imagina 10.000 € durante 10 años al 9,9 % anual (el fondo) o al 8,7 % (sus inversores). ¿Cuánta diferencia hay al final? (redondea a euros)', 2673, '€', '10.000 × 1,099¹⁰ ≈ 25.703 € frente a 10.000 × 1,087¹⁰ ≈ 23.030 €: unos 2.673 € perdidos solo por el comportamiento.'),
       scenario('Un lunes lees: «Las bolsas se desploman un 4 %». Tienes un fondo indexado para dentro de 20 años y el corazón a mil. ¿Qué haces?', [['Vendo ya, antes de que caiga más', 'Es el sistema 1 al mando. Así se fabrica la brecha del inversor: vender después de caer.'], ['Respiro, releo mi plan y no toco nada hoy', 'Bien: le das tiempo al sistema 2. Un día malo no cambia un plan a 20 años.'], ['Compro mucho más con todo mi colchón', 'Reaccionar con el colchón también es decidir en caliente.']], 1, 'Las decisiones importantes, nunca con el corazón a mil.'),
-      single('En los ETF de bitcoin al contado, ¿qué obtuvieron los inversores frente al propio ETF?', ['Bastante más que el ETF', 'Mucho menos: alrededor de −5,8 % frente a +8,5 %', 'Exactamente lo mismo'], 1, 'Compraron en los picos y vendieron en las caídas.'),
+      single('En los ETF de bitcoin al contado, ¿qué obtuvieron los inversores frente al propio ETF?', ['Bastante más que el ETF', 'Mucho menos: alrededor de −5,8 % frente a +8,5 %', 'Exactamente lo mismo'], 1, 'Compraron en los picos y vendieron en las caídas. Son rentabilidades anuales entre enero de 2024 y junio de 2026.'),
       timed(single('Rápido: ¿dónde fue mayor la brecha del inversor?', ['En los fondos más volátiles', 'En los más tranquilos', 'Fue igual en todos'], 0, '−2,1 puntos en los más volátiles frente a −0,4 en los tranquilos: más sustos, más errores.'), 12),
       multi('¿Qué suele poner al sistema 1 a decidir? Marca todas.', ['El miedo', 'La prisa', 'La euforia', 'Una lista de comprobación escrita'], [0, 1, 2], 'Una lista escrita obliga a pensar despacio: es una herramienta del sistema 2.'),
       fill('El problema de la brecha no es el producto, sino el ____ del inversor.', 'comportamiento', ['sueldo', 'bróker', 'país'], 'El mismo fondo da resultados distintos según cómo entras y sales.'),
