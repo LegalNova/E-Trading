@@ -1,4 +1,5 @@
 import 'server-only'
+import { realName } from '@/shared/names'
 import { cleanSource, track, trackDaily } from './analytics'
 import { linkInviter, maybeRewardInvite } from './invites'
 import { priceOf, tierOf, TRIAL_DAYS, TRIAL_STREAK, trialUnlocked } from '@/shared/plans'
@@ -86,9 +87,14 @@ export async function setOwnPassword(current: string | undefined, next: string) 
 }
 
 export interface Draft { name: string; gender: 'F' | 'M' | 'N'; birthDate: string; experience: 'NONE' | 'SOME' | 'EXPERIENCED'; goals: string[]; dailyGoalMinutes: 5 | 10 | 15 | 20 | 30; skinId: string; companionName: string; disclaimerAccepted: boolean }
-const emptyDraft = (u: User): Draft => ({ name: u.name ?? '', gender: 'N', birthDate: '', experience: 'NONE', goals: [], dailyGoalMinutes: 10, skinId: 'azul', companionName: 'Lumi', disclaimerAccepted: false })
+const emptyDraft = (u: User): Draft => ({ name: realName(u.name), gender: 'N', birthDate: '', experience: 'NONE', goals: [], dailyGoalMinutes: 10, skinId: 'azul', companionName: 'Lumi', disclaimerAccepted: false })
 
-export const onboarding = () => withCtx(async c => ({ step: c.user.onboardingStep ?? 1, draft: { ...emptyDraft(c.user), ...((c.user.onboarding as object) ?? {}) } as Draft }))
+export const onboarding = () =>
+  withCtx(async c => {
+    const draft = { ...emptyDraft(c.user), ...((c.user.onboarding as object) ?? {}) } as Draft
+    // Un borrador guardado antes del arreglo puede traer el «Anonymous» de la cuenta de invitado
+    return { step: c.user.onboardingStep ?? 1, draft: { ...draft, name: realName(draft.name) } }
+  })
 
 export const saveOnboarding = (step: number, patch: Partial<Draft>) =>
   withCtx(async c => {
@@ -97,7 +103,7 @@ export const saveOnboarding = (step: number, patch: Partial<Draft>) =>
       if (!Number.isFinite(t)) fail(422, 'VALIDATION_ERROR', 'Fecha no válida')
       if ((Date.now() - t) / (365.25 * DAY_MS) < 14) fail(403, 'UNDER_MIN_AGE', 'E-Trading es para mayores de 14 años')
     }
-    if (patch.name !== undefined && (patch.name.trim().length < 1 || patch.name.length > 30)) fail(422, 'VALIDATION_ERROR', 'Nombre no válido')
+    if (patch.name !== undefined && (realName(patch.name).length < 1 || patch.name.length > 30)) fail(422, 'VALIDATION_ERROR', 'Nombre no válido')
     const draft = { ...emptyDraft(c.user), ...((c.user.onboarding as object) ?? {}), ...patch }
     await c.tx.user.update({ where: { id: c.user.id }, data: { onboarding: draft, onboardingStep: Math.max(c.user.onboardingStep ?? 1, step + 1) } })
   })
@@ -113,7 +119,7 @@ export const completeOnboarding = (source?: unknown) =>
     await c.tx.user.update({
       where: { id: c.user.id },
       data: {
-        name: d.name.trim() || 'Tú', gender: d.gender, birthDate: d.birthDate ? new Date(d.birthDate) : null, companionName: d.companionName || 'Lumi', skinId: d.skinId,
+        name: realName(d.name) || 'Tú', gender: d.gender, birthDate: d.birthDate ? new Date(d.birthDate) : null, companionName: d.companionName || 'Lumi', skinId: d.skinId,
         onboardingStep: null, disclaimerAt: new Date(), settings: { ...defaultSettings(c.user), gender: d.gender, dailyGoalMinutes: d.dailyGoalMinutes },
         // Primer contacto: solo se guarda una vez
         ...(c.user.source ? {} : { source: cleanSource(source) }),

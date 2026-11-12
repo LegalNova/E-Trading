@@ -36,8 +36,37 @@ function OrEmail() {
   return data?.googleEnabled ? <div className="t-cap text-center">{t('orEmail')}</div> : null
 }
 
-/** «Probar sin registrarme»: entra al momento con una cuenta de invitado */
-export function GuestButton({ className = 'btn btn-plain' }: { className?: string }) {
+/**
+ * Frase con los enlaces a los Términos y a la Privacidad. Va allí donde se crea una cuenta o se piden datos
+ * (RGPD art. 13: informar en el momento de recogerlos). `newTab` abre los textos en otra pestaña para no perder
+ * lo que la persona lleva escrito.
+ */
+export function LegalNote({ ns, k, className = 't-cap my-1', newTab = false }: { ns: 'auth' | 'onboarding'; k: string; className?: string; newTab?: boolean }) {
+  const t = useTranslations(ns)
+  const extra = newTab ? { target: '_blank', rel: 'noopener' } : {}
+  return (
+    <p className={className}>
+      {t.rich(k, {
+        terms: c => (
+          <Link href="/legal/terminos" className="font-bold underline" {...extra}>
+            {c}
+          </Link>
+        ),
+        privacy: c => (
+          <Link href="/legal/privacidad" className="font-bold underline" {...extra}>
+            {c}
+          </Link>
+        ),
+      })}
+    </p>
+  )
+}
+
+/**
+ * «Probar sin registrarme»: entra al momento con una cuenta de invitado. `terms` añade debajo la frase legal
+ * (en la pantalla de registro ya está encima del botón, así que allí no se repite).
+ */
+export function GuestButton({ className = 'btn btn-plain', terms = false }: { className?: string; terms?: boolean }) {
   const t = useTranslations('auth')
   const done = useAfterAuth()
   const m = useMutation({ mutationFn: api.signInGuest, onSuccess: done })
@@ -48,6 +77,7 @@ export function GuestButton({ className = 'btn btn-plain' }: { className?: strin
         {t('guest')}
       </button>
       {err && <p className="err m-0">{t.has(`errors.${err.code}`) ? t(`errors.${err.code}`) : err.message}</p>}
+      {terms && <LegalNote ns="auth" k="guestTerms" className="t-cap m-0 text-center" />}
     </>
   )
 }
@@ -166,20 +196,7 @@ export function SignUp() {
           <span className={err?.code === 'WEAK_PASSWORD' ? 'err' : 't-cap'}>{t('passwordRule')}</span>
         </div>
         {err && err.code !== 'WEAK_PASSWORD' && <p className="err m-0">{t.has(`errors.${err.code}`) ? t(`errors.${err.code}`) : err.message}</p>}
-        <p className="t-cap my-1">
-          {t.rich('acceptTerms', {
-            terms: c => (
-              <Link href="/legal/terminos" className="font-bold underline">
-                {c}
-              </Link>
-            ),
-            privacy: c => (
-              <Link href="/legal/privacidad" className="font-bold underline">
-                {c}
-              </Link>
-            ),
-          })}
-        </p>
+        <LegalNote ns="auth" k="acceptTerms" />
         <button className="btn btn-primary" disabled={m.isPending}>
           {t('signUp')}
         </button>
@@ -242,7 +259,7 @@ export function SignIn() {
         <button className="btn btn-primary" disabled={m.isPending}>
           {t('signIn')}
         </button>
-        <GuestButton />
+        <GuestButton terms />
         <p className="t-foot m-0 text-center">
           {t('noAccount')}{' '}
           <Link href="/registro" className="link">

@@ -2,6 +2,8 @@
   "tutor2": {
     "aiLeft": "Amb IA: et queden {n} de {total} respostes avui",
     "aiDone": "Respostes amb IA d'avui esgotades: la Lumi segueix responent amb el curs",
-    "aiTag": "Resposta generada amb IA a partir del curs. Es pot equivocar i no és un consell d'inversió."
+    "aiTag": "Resposta generada amb IA (Anthropic) a partir del curs. Es pot equivocar i no és un consell d’inversió.",
+    "aiNote": "A Max, {name} pot respondre amb IA d’Anthropic: rep la teva pregunta i un resum de la teva cartera simulada, el teu progrés i el teu diari, sense el teu nom ni el teu correu.",
+    "aiMore": "Més informació"
   }
 }

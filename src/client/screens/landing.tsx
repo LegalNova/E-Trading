@@ -8,7 +8,7 @@ import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
 import { arrowPct, money, num } from '@/shared/format'
 import { PRICES } from '@/shared/plans'
-import { GuestButton } from './auth'
+import { GuestButton, LegalNote } from './auth'
 import { api, ApiFailure, type ContactInput } from '../api'
 import { Icon, Wordmark } from '../ui/icons'
 import { Lumi } from '../ui/lumi'
@@ -205,6 +205,7 @@ export function Landing({ lessons }: { lessons: number }) {
           <div className="-mt-2 flex flex-col items-start">
             <GuestButton className="link text-[15px] font-bold" />
             <span className="t-cap">{t('guestNote')}</span>
+            <LegalNote ns="auth" k="guestTerms" className="t-cap m-0 mt-1" />
           </div>
           <div className="mt-2 w-full">
             <p className="t-foot mb-2 font-bold" style={{ color: 'var(--ink)' }}>

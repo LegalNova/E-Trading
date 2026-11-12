@@ -118,6 +118,7 @@
     "hide": "Amagar",
     "passwordRule": "Mínim 8 caràcters i un número.",
     "acceptTerms": "En crear el compte acceptes les <terms>Condicions d’ús</terms> i has llegit la <privacy>Política de privadesa</privacy>. Has de tenir almenys 14 anys.",
+    "guestTerms": "En entrar acceptes les <terms>Condicions d’ús</terms> i confirmes que has llegit la <privacy>Política de privadesa</privacy>. Has de tenir almenys 14 anys.",
     "signUp": "Crear compte",
     "signIn": "Entrar",
     "haveAccount": "Ja tens compte?",
@@ -164,6 +165,7 @@
     "month": "Mes",
     "year": "Any",
     "birthNote": "Ho fem servir per adaptar el contingut i per motius legals. No es mostra a ningú. Si tens menys de 18 anys, un adult haurà de confirmar els pagaments.",
+    "legalNote": "En continuar acceptes les <terms>Condicions d’ús</terms> i confirmes que has llegit la <privacy>Política de privadesa</privacy>, que explica què fem amb aquestes dades.",
     "underAge": "E-Trading és per a majors de 14 anys.",
     "expTitle": "Has invertit mai?",
     "exp": {
@@ -231,6 +233,7 @@
   },
   "home": {
     "hello": "Hola, {name}",
+    "helloNoName": "Hola",
     "streakLabel": "Ratxa de {n} dies",
     "gemsLabel": "{n} gemmes",
     "gemsInfo": "Tens {n} gemmes. Es guanyen amb assoliments i objectius; serveixen per a vides i protectors de ratxa.",
@@ -1212,7 +1215,7 @@
       "npsNote": "NPS = % que posa 9-10 menys % que posa 0-6. Per sobre de 0 és bo; per sobre de 30, molt bo.",
       "likes": "El que més agrada",
       "blockers": "El que frena",
-      "pay": "Pagarien Max a 7,99 €/mes?",
+      "pay": "Pagarien Max a {price} al mes?",
       "price": "Preu just (dels que el volien més barat)",
       "wants": "El que demanen",
       "comments": "Comentaris",

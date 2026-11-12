@@ -1,4 +1,9 @@
+import { planPrice } from '@/legal/prices'
 import type { HelpDoc } from './types'
+
+// Los precios salen de src/legal/prices.ts (las mismas tablas con las que se cobra): no escribirlos a mano.
+const L = 'es' as const
+const both = (tier: 'PLUS' | 'PREMIUM', student = false) => `${planPrice(tier, 'MONTH', L, student)} o ${planPrice(tier, 'YEAR', L, student)}`
 
 export const es: HelpDoc = {
   title: 'Centro de ayuda',
@@ -54,14 +59,14 @@ export const es: HelpDoc = {
       items: [
         { id: 'que-hace', q: '¿Qué puedo preguntarle a Lumi?', a: ['Dudas del curso, conceptos que no entiendes, qué estudiar ahora y, en los planes de pago, cómo va tu cartera o qué sesgos se ven en tus operaciones. Responde con el contenido del curso y tu progreso.'] },
         { id: 'limite', q: '¿Cuántas preguntas puedo hacer?', a: ['5 al día en Free, 30 en Plus y 100 en Max. El contador se reinicia cada día.'] },
-        { id: 'privacidad-lumi', q: '¿Mis preguntas salen de Lumi?', a: ['No. Lumi funciona en nuestros propios servidores: tus preguntas no se envían a ningún servicio de inteligencia artificial de terceros. Puedes borrar el historial cuando quieras desde la propia conversación.'] },
+        { id: 'privacidad-lumi', q: '¿Adónde van mis preguntas a Lumi?', a: ['En Free y Plus, Lumi responde con nuestro propio motor: tus preguntas no salen de nuestros servidores.', 'En Max, algunas respuestas las genera un modelo de inteligencia artificial de Anthropic. Para eso se le envía tu pregunta, los últimos mensajes de la conversación y un resumen de tu cartera simulada, tu progreso y tu diario, sin tu nombre ni tu email. Esas respuestas llevan la etiqueta «generada con IA»: pueden contener errores y no son un consejo de inversión.', 'Puedes borrar el historial cuando quieras desde la propia conversación.'], links: [{ href: '/legal/privacidad', label: 'Política de privacidad' }] },
       ],
     },
     {
       id: 'planes',
       title: 'Planes y pagos',
       items: [
-        { id: 'diferencias', q: '¿Qué diferencia hay entre Free, Plus y Max?', a: ['Free: unidades 1 a 3 completas y las 3 primeras clases de cada unidad, con 5 vidas y 5 preguntas al día a Lumi.', 'Plus (3,99 €/mes o 29,99 €/año): unidades 1 a 5 completas y las 5 primeras clases de cada unidad, vidas ilimitadas, 50.000 € virtuales y 30 preguntas al día.', 'Max (7,99 €/mes o 59,99 €/año): todo el curso, vidas ilimitadas, órdenes avanzadas desde el primer día, 100 preguntas al día con todos los modos y un protector de racha cada semana.'], links: [{ href: '/premium', label: 'Ver los planes' }] },
+        { id: 'diferencias', q: '¿Qué diferencia hay entre Free, Plus y Max?', a: ['Free: unidades 1 a 3 completas y las 3 primeras clases de cada unidad, con 5 vidas y 5 preguntas al día a Lumi.', `Plus (${both('PLUS')}): unidades 1 a 5 completas y las 5 primeras clases de cada unidad, vidas ilimitadas, 50.000 € virtuales y 30 preguntas al día.`, `Max (${both('PREMIUM')}): todo el curso, vidas ilimitadas, órdenes avanzadas desde el primer día, 100 preguntas al día con todos los modos y un protector de racha cada semana.`, `Si estudias, puedes pedir el precio de estudiante: Plus, ${both('PLUS', true)}; Max, ${both('PREMIUM', true)}. También hay planes de grupo para familias, clases y empresas.`], links: [{ href: '/premium', label: 'Ver los planes' }, { href: '/legal/contratacion', label: 'Todos los precios' }] },
         { id: 'prueba', q: '¿Cómo funciona la prueba gratis?', a: ['Tienes 7 días gratis, una vez por persona. Se desbloquean de dos maneras: con una racha de 5 días seguidos o llegando con la invitación de un amigo (en ese caso son 7 días de Max que empiezan nada más entrar, sin tarjeta).', 'Con la racha, eliges Plus o Max y pones tu tarjeta en la página de pago segura de Stripe. No se te cobra nada durante la prueba: te avisamos en la app antes de que acabe y, si la cancelas antes desde Ajustes, no pagas nada.'] },
         { id: 'cancelar', q: '¿Cómo cancelo mi plan?', a: ['En Ajustes, Suscripción, «Cancelar suscripción»: se abre la página segura de Stripe y lo cancelas con un toque. Sin llamadas ni preguntas. Conservas el plan hasta el final del periodo que ya has pagado y no se te vuelve a cobrar.'] },
         { id: 'reembolso', q: '¿Puedo pedir que me devolváis el dinero?', a: ['Sí. Tienes 14 días para desistir desde que contratas y, además, si nos lo pides en los 14 días siguientes a tu primer cobro, te devolvemos el importe completo.'], links: [{ href: '/legal/contratacion', label: 'Condiciones de contratación' }] },

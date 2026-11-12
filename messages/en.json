@@ -118,6 +118,7 @@
     "hide": "Hide",
     "passwordRule": "At least 8 characters and one number.",
     "acceptTerms": "By creating an account you accept the <terms>Terms of use</terms> and confirm you have read the <privacy>Privacy policy</privacy>. You must be at least 14.",
+    "guestTerms": "By continuing you accept the <terms>Terms of use</terms> and confirm you have read the <privacy>Privacy policy</privacy>. You must be at least 14.",
     "signUp": "Create account",
     "signIn": "Sign in",
     "haveAccount": "Already have an account?",
@@ -164,6 +165,7 @@
     "month": "Month",
     "year": "Year",
     "birthNote": "We use it to adapt the content and for legal reasons. It isn't shown to anyone. If you're under 18, an adult will need to confirm payments.",
+    "legalNote": "By continuing you accept the <terms>Terms of use</terms> and confirm you have read the <privacy>Privacy policy</privacy>, which explains what we do with this data.",
     "underAge": "E-Trading is for people aged 14 and over.",
     "expTitle": "Have you ever invested?",
     "exp": {
@@ -231,6 +233,7 @@
   },
   "home": {
     "hello": "Hi, {name}",
+    "helloNoName": "Hi",
     "streakLabel": "{n}-day streak",
     "gemsLabel": "{n} gems",
     "gemsInfo": "You have {n} gems. You earn them with achievements and goals; use them for lives and streak freezes.",
@@ -1212,7 +1215,7 @@
       "npsNote": "NPS = % giving 9-10 minus % giving 0-6. Above 0 is good; above 30, very good.",
       "likes": "What they like most",
       "blockers": "What holds them back",
-      "pay": "Would they pay €7.99/month for Max?",
+      "pay": "Would they pay {price} a month for Max?",
       "price": "Fair price (from those wanting it cheaper)",
       "wants": "What they ask for",
       "comments": "Comments",

@@ -1,6 +1,7 @@
 // Proyecto final «Tu primera tesis de inversión»: pasos, comprobaciones y puntuación.
 // Lo usan el servidor (que manda) y la pantalla (para avisar al momento). Criterios fijos y explicados en la app.
 import { z } from 'zod'
+import { realName } from './names'
 
 export const MOATS = ['BRAND', 'NETWORK', 'COST', 'SWITCHING', 'PATENTS', 'SCALE', 'NONE'] as const
 export const VALUATIONS = ['CHEAP', 'FAIR', 'EXPENSIVE', 'UNSURE'] as const
@@ -201,7 +202,7 @@ export function scoreThesis(a: ThesisAnswersT, f: Pick<ThesisFactsT, 'pe' | 'sec
 
 /** Nombre de pila para el certificado público: sin apellidos ni nada que no sean letras */
 export const firstName = (name: string | null | undefined) => {
-  const w = (name ?? '').trim().split(/\s+/)[0] ?? ''
+  const w = realName(name).split(/\s+/)[0] ?? ''
   const clean = w.replace(/[^\p{L}'-]/gu, '').slice(0, 20)
   return clean.length >= 2 ? clean : null
 }

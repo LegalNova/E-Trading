@@ -99,6 +99,15 @@ export function Tutor({ lessonTitle }: { lessonTitle?: string }) {
           })}
         </div>
         <p className="t-cap m-0 px-0.5">{t(`modeHint.${mode}`)}</p>
+        {/* Transparencia (P0-3): con la IA activada se dice aquí mismo qué sale hacia el proveedor */}
+        {h.ai?.on && (
+          <p className="t-cap m-0 px-0.5">
+            {t2('aiNote', { name })}{' '}
+            <Link href="/ayuda#privacidad-lumi" className="font-bold underline">
+              {t2('aiMore')}
+            </Link>
+          </p>
+        )}
 
         {h.messages.length === 0 && !pending && (
           <div className="card flex flex-col items-center gap-3 py-6 text-center">

@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
 import { FB_BLOCKERS, FB_LIKES, FB_PAY, FB_PRICE, FB_WANTS } from '@/shared/feedback'
 import { money } from '@/shared/format'
+import { PRICES } from '@/shared/plans'
 import { api, ApiFailure } from '../api'
 import { useGuard } from '../shell'
 import { Icon } from '../ui/icons'
@@ -136,7 +137,7 @@ function FeedbackFlow() {
         <div className="flex items-start gap-3">
           <Lumi mood={step === 'nps' ? 'HAPPY' : step === 'blockers' ? 'THINKING' : step === 'comment' ? 'CALM' : 'HAPPY'} size={52} />
           <div className="card m-0 flex-1 rounded-tl-md">
-            <b className="text-[17px] leading-[23px]">{t(`q.${step}`, { price: money(7.99, 'EUR', locale), year: money(59.99, 'EUR', locale) })}</b>
+            <b className="text-[17px] leading-[23px]">{t(`q.${step}`, { price: money(PRICES.normal.PREMIUM.MONTH, 'EUR', locale), year: money(PRICES.normal.PREMIUM.YEAR, 'EUR', locale) })}</b>
             {step === 'nps' && <p className="t-cap m-0 mt-1">{t('npsHint')}</p>}
           </div>
         </div>

@@ -54,7 +54,7 @@ export function Home() {
   return (
     <div className="pad">
       <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-2 px-0.5">
-        <h1 className="t-title min-w-0 basis-full truncate sm:basis-auto">{t('hello', { name: h.user.name.trim().split(/\s+/)[0] || h.user.name })}</h1>
+        <h1 className="t-title min-w-0 basis-full truncate sm:basis-auto">{h.user.name.trim() ? t('hello', { name: h.user.name.trim().split(/\s+/)[0] }) : t('helloNoName')}</h1>
         <div className="flex flex-none items-center gap-1.5">
           <MaxPill />
           {/* Los tres marcadores abren la misma hoja que explica qué es cada uno */}

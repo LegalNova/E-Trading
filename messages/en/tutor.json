@@ -2,6 +2,8 @@
   "tutor2": {
     "aiLeft": "With AI: {n} of {total} answers left today",
     "aiDone": "No AI answers left today: Lumi keeps answering from the course",
-    "aiTag": "AI-generated answer based on the course. It can be wrong and it is not investment advice."
+    "aiTag": "Answer generated with AI (Anthropic) from the course. It can be wrong and is not investment advice.",
+    "aiNote": "On Max, {name} may answer with Anthropic AI: it receives your question and a summary of your simulated portfolio, progress and journal, without your name or email.",
+    "aiMore": "More information"
   }
 }

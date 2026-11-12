@@ -81,7 +81,13 @@ export const httpApi: Api = {
   myInvites: () => get('/invite'),
   inviterName: code => get(`/invite/${encodeURIComponent(code)}`),
   signInGuest: async () => {
-    await auth('/sign-in/anonymous', {})
+    try {
+      await auth('/sign-in/anonymous', {})
+    } catch (e) {
+      // Ya había entrado como invitado en este dispositivo (volvió a la portada y pulsó otra vez): sigue con su
+      // cuenta de invitado en vez de ver un error en inglés de la librería de acceso
+      if (!(e instanceof ApiFailure) || !/ANONYMOUS/.test(e.code)) throw e
+    }
     return get('/session')
   },
   saveGuest: (email, password) => post('/account/save', { email: email.trim(), password }),

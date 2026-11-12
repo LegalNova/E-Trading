@@ -1,4 +1,6 @@
 // Mensajes del equipo: plantillas (con el nombre de la persona) y reglas del texto, iguales en el panel y en el servidor.
+import { realName } from './names'
+
 export type TeamLang = 'es' | 'ca' | 'en'
 export const TEAM_TEMPLATES = ['welcome', 'comeback', 'congrats', 'thanks'] as const
 export type TeamTemplate = (typeof TEAM_TEMPLATES)[number]
@@ -38,7 +40,7 @@ export const TEMPLATE_TEXT: Record<TeamLang, Record<TeamTemplate, { title: strin
 const NAME_TOKEN = /\{(nombre|nom|name)\}/gi
 
 /** Primer nombre de la persona («Marta Ruiz» → «Marta»); vacío si no lo sabemos */
-export const firstName = (name: string | null | undefined) => (name ?? '').trim().split(/\s+/)[0]?.slice(0, 30) ?? ''
+export const firstName = (name: string | null | undefined) => realName(name).split(/\s+/)[0]?.slice(0, 30) ?? ''
 
 /** Pone el nombre. Sin nombre, quita el hueco: «Hola {nombre}, gracias» → «Hola, gracias» */
 export function personalize(text: string, name: string | null | undefined) {

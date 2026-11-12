@@ -5,8 +5,11 @@ import 'server-only'
 import Anthropic from '@anthropic-ai/sdk'
 import type { TutorModeT } from '@/shared/contract'
 
-/** Respuestas con IA al día por persona (plan Max) */
-/** Respuestas con IA al día en Max: con 15, un uso intensivo cuesta unos 6 $ al mes (el plan son 7,99 €) */
+/**
+ * Respuestas con IA al día por persona (plan Max): con 15, un uso intensivo cuesta unos 6 $ al mes.
+ * El plan Max cuesta lo que diga PRICES en src/shared/plans.ts (menos con el precio de estudiante): revisar este
+ * número si cambian los precios o el modelo.
+ */
 export const AI_DAILY_LIMIT = 15
 /** Tope de respuestas con IA al día para toda la app (protege la factura si algo se dispara). Cambiable con TUTOR_AI_DAILY_CAP */
 export const aiGlobalCap = (env: NodeJS.ProcessEnv = process.env) => {

@@ -8,12 +8,25 @@ import { db } from '../db'
 import { HttpError, START_CASH, type Tx } from '../game/core'
 import { addFlow } from '../game/league'
 import { groupLookupKey, lookupKey, type BillingInterval, type GroupSize, type PaidTier } from '@/shared/plans'
+import { chargeBlockedBy } from '@/legal/owner'
 
 const KEY = process.env.STRIPE_SECRET_KEY ?? ''
 export const stripeEnabled = /^(sk|rk)_(test|live)_[A-Za-z0-9]{20,}$/.test(KEY)
 /** Stripe en modo de prueba: no se cobra nada (se paga con la tarjeta de prueba 4242…) */
 export const stripeTestMode = stripeEnabled && /^(sk|rk)_test_/.test(KEY)
 export const stripe = stripeEnabled ? new Stripe(KEY, { maxNetworkRetries: 2, timeout: 15_000 }) : null
+
+/**
+ * Cobros reales solo con el titular identificado (auditoría P0-1): la ley obliga a decir quién vende antes de cobrar.
+ * Con claves reales de Stripe y el NIF o el domicilio sin rellenar en src/legal/owner.ts, no se abre ningún pago nuevo
+ * (las suscripciones que ya existan siguen su curso). En modo de prueba no se cobra nada, así que no se bloquea.
+ */
+export function assertCanCharge() {
+  const missing = chargeBlockedBy(stripeTestMode)
+  if (!missing.length) return
+  console.error(`Stripe: cobros reales bloqueados, faltan datos del titular en src/legal/owner.ts (${missing.join(', ')})`)
+  throw new HttpError(503, 'PAYMENTS_UNAVAILABLE', 'Los pagos se están preparando. Vuelve a intentarlo en unos días.')
+}
 
 export type PlanId = 'plus-month' | 'plus-year' | 'premium-month' | 'premium-year'
 const PLAN_OF: Record<PlanId, { tier: PaidTier; interval: BillingInterval }> = {
@@ -98,6 +111,7 @@ async function customerOf(user: User) {
 
 /** Página de pago de Stripe (con la prueba de 7 días si la ha desbloqueado) */
 export async function checkoutUrl(user: User, plan: PlanId, opts: { trialDays: number | null; freeUntil?: Date | null; origin: string; locale: string; student: boolean }) {
+  assertCanCharge()
   const customer = await customerOf(user)
   // Pagos abiertos en otras pestañas: se cierran, para que no se pueda pagar dos suscripciones a la vez
   // (solo los de suscripción: un regalo a medio pagar en otra pestaña no se toca)
@@ -263,6 +277,7 @@ export async function confirmCheckout(userId: string, sessionId: string) {
 export const GIFT_KIND = 'gift'
 
 export async function giftCheckout(user: User, gift: { id: string; amount: number; name: string; description: string }, opts: { origin: string; locale: string }) {
+  assertCanCharge()
   const customer = await customerOf(user)
   const meta = { kind: GIFT_KIND, giftId: gift.id, userId: user.id }
   const session = await stripe!.checkout.sessions.create(
@@ -310,6 +325,7 @@ export async function switchToStudentPrice(userId: string) {
 export const groupLookup = (g: { size: number; tier: PaidTier; interval: BillingInterval }, student: boolean) => groupLookupKey(g.size as GroupSize, g.tier, g.interval, student)
 
 export async function groupCheckout(user: User, g: { id: string; name: string; size: number; tier: PaidTier; interval: BillingInterval; student: boolean }, opts: { origin: string; locale: string }) {
+  assertCanCharge()
   const customer = await customerOf(user)
   const meta = { kind: GROUP_KIND, groupId: g.id, userId: user.id }
   const session = await stripe!.checkout.sessions.create(

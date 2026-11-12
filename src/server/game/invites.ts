@@ -4,6 +4,7 @@ import 'server-only'
 //  · Quien invita recibe 7 días más cuando su amigo guarda la cuenta y termina su primera clase
 //    (así no se ganan días con cuentas vacías). Como mucho 52 amigos premiados: un año de Max.
 import { randomInt } from 'node:crypto'
+import { realName } from '@/shared/names'
 import { db } from '../db'
 import { fail, notify, START_CASH, type Tx } from './core'
 import { track } from './analytics'
@@ -43,7 +44,7 @@ export async function myInvites(userId: string, isGuest: boolean) {
 export async function inviterName(code: string) {
   const u = await db.user.findUnique({ where: { inviteCode: code.toLowerCase().slice(0, 12) }, select: { name: true, blockedAt: true } })
   if (!u || u.blockedAt) return { valid: false, name: null }
-  return { valid: true, name: u.name?.trim().split(/\s+/)[0] || null }
+  return { valid: true, name: realName(u.name).split(/\s+/)[0] || null }
 }
 
 /** Al terminar la bienvenida: si llegó por un enlace de invitación, se apunta quién le invitó */

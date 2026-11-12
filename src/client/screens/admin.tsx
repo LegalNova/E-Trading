@@ -4,8 +4,8 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
-import { num } from '@/shared/format'
-import { PLAN_NAME } from '@/shared/plans'
+import { money, num } from '@/shared/format'
+import { PLAN_NAME, PRICES } from '@/shared/plans'
 import { FB_BLOCKERS, FB_LIKES, FB_PAY, FB_PRICE, FB_WANTS } from '@/shared/feedback'
 import { api, type AdminLessonRow, type LensRange } from '../api'
 import { VIEW_AS_KEY } from '../api/http'
@@ -512,7 +512,7 @@ function FeedbackTab() {
       <div className="grid gap-3 lg:grid-cols-2">
         {bars(t('likes'), 'likes', FB_LIKES)}
         {bars(t('blockers'), 'blockers', FB_BLOCKERS)}
-        {bars(t('pay'), 'pay', FB_PAY)}
+        {bars(t('pay', { price: money(PRICES.normal.PREMIUM.MONTH, 'EUR', locale) }), 'pay', FB_PAY)}
         {bars(t('price'), 'price', FB_PRICE)}
         {bars(t('wants'), 'wants', FB_WANTS)}
       </div>

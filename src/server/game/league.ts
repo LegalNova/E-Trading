@@ -16,6 +16,7 @@ import 'server-only'
 // - Ligas de amigos (friends.ts): «Esta semana» usa estos mismos puntos; «Temporada del mes» usa la rentabilidad del mes
 //   natural de Madrid con las mismas reglas (tope ±10 %, concentrada = ganancias a la mitad). Base del mes: MonthBase,
 //   que se apunta la primera vez que la persona usa la app ese mes (o la foto del último día del mes anterior).
+import { guestName, realName } from '@/shared/names'
 import type { LeagueT } from '@/shared/contract'
 import type { LeagueMember } from '@/generated/prisma/client'
 import { addDays, DAY_MS, dayOf, weekOf } from '@/shared/time'
@@ -228,8 +229,9 @@ const ANON = { es: 'Jugador anónimo', ca: 'Jugador anònim', en: 'Anonymous pla
 /** Nombre en las clasificaciones: nombre e inicial, o «Jugador anónimo» si la persona lo eligió (leagueVisible) */
 export function displayName(name: string, visible: boolean, locale: keyof typeof ANON = currentLocale()) {
   if (!visible) return ANON[locale] ?? ANON.es
-  const parts = name.trim().split(/\s+/)
-  return parts.length > 1 ? `${parts[0]} ${parts[1][0].toLocaleUpperCase('es')}.` : parts[0] || '—'
+  // Sin nombre (invitado que aún no lo ha dicho): «Invitado», nunca el «Anonymous» de la librería de acceso
+  const parts = realName(name).split(/\s+/).filter(Boolean)
+  return parts.length > 1 ? `${parts[0]} ${parts[1][0].toLocaleUpperCase('es')}.` : parts[0] || guestName(locale)
 }
 
 /** Clasificación de un grupo (la usan la pantalla y el cierre semanal) */
@@ -331,8 +333,8 @@ export async function leagueFor(c: Ctx): Promise<LeagueT> {
   const me = await c.tx.leagueMember.findUnique({ where: { weekKey_userId: { weekKey, userId: c.user.id } } })
   const rows = me ? await standings(c.tx, weekKey, me.groupNo) : []
   // De quien se oculta no se envía ni el nombre ni su identificador
-  const members = rows.map(m => ({ rank: m.rank, userId: m.visible || m.userId === c.user.id ? m.userId : `anon-${m.rank}`, displayName: m.userId === c.user.id ? c.user.name || '—' : displayName(m.name, m.visible), weeklyXp: m.weeklyXp, riskAdjReturnPct: m.riskAdjReturnPct, tradePts: m.tradePts, score: m.score, isMe: m.userId === c.user.id, division: DIVISIONS[m.division - 1] }))
-  if (!me) members.push({ rank: 0, userId: c.user.id, displayName: c.user.name || '—', weeklyXp: 0, riskAdjReturnPct: 0, tradePts: 0, score: 0, isMe: true, division: DIVISIONS[division - 1] })
+  const members = rows.map(m => ({ rank: m.rank, userId: m.visible || m.userId === c.user.id ? m.userId : `anon-${m.rank}`, displayName: m.userId === c.user.id ? c.user.name || guestName(currentLocale()) : displayName(m.name, m.visible), weeklyXp: m.weeklyXp, riskAdjReturnPct: m.riskAdjReturnPct, tradePts: m.tradePts, score: m.score, isMe: m.userId === c.user.id, division: DIVISIONS[m.division - 1] }))
+  if (!me) members.push({ rank: 0, userId: c.user.id, displayName: c.user.name || guestName(currentLocale()), weeklyXp: 0, riskAdjReturnPct: 0, tradePts: 0, score: 0, isMe: true, division: DIVISIONS[division - 1] })
   // Zonas según cuántos hay ahora en el grupo (las mismas reglas que el cierre)
   const { promoteTop, demoteFrom } = leagueZones(rows.length)
   return { division: { id: `d${division}`, name: DIVISIONS[division - 1], order: division }, divisions: DIVISIONS, endsAt: madridMidnight(addDays(weekKey, 7)).toISOString(), promoteTop, demoteFrom, members }

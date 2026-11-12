@@ -11,6 +11,7 @@ import type Stripe from 'stripe'
 import type { Gift } from '@/generated/prisma/client'
 import type { GiftMineT, GiftPublicT, GiftRedeemT } from '@/shared/contract'
 import { cleanGiftCode, GIFT_ALPHABET, GIFT_CODE_LEN, GIFT_DAYS, GIFT_MESSAGE_MAX, GIFT_NAME_MAX, GIFT_PRICE, GIFT_REDEEM_MONTHS, isGiftCode, type GiftMonths, type GiftTier } from '@/shared/gifts'
+import { realName } from '@/shared/names'
 import { PLAN_NAME } from '@/shared/plans'
 import { db } from '../db'
 import { currentUser } from '../auth'
@@ -21,7 +22,7 @@ import { grantPlan } from './grants'
 
 const DAY_MS = 86_400_000
 const monthsOf = (days: number): GiftMonths => (days >= 365 ? 12 : 1)
-const firstName = (s: string | null | undefined) => s?.trim().split(/\s+/)[0] || null
+const firstName = (s: string | null | undefined) => realName(s).split(/\s+/)[0] || null
 
 // ── Avisos (en el idioma de quien los recibe) ─────────────
 type Lang = 'es' | 'ca' | 'en'

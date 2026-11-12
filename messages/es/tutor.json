@@ -2,6 +2,8 @@
   "tutor2": {
     "aiLeft": "Con IA: te quedan {n} de {total} respuestas hoy",
     "aiDone": "Respuestas con IA de hoy agotadas: sigue respondiendo con el curso",
-    "aiTag": "Respuesta generada con IA a partir del curso. Puede equivocarse y no es un consejo de inversión."
+    "aiTag": "Respuesta generada con IA (Anthropic) a partir del curso. Puede equivocarse y no es un consejo de inversión.",
+    "aiNote": "En Max, {name} puede responder con IA de Anthropic: recibe tu pregunta y un resumen de tu cartera simulada, tu progreso y tu diario, sin tu nombre ni tu email.",
+    "aiMore": "Más información"
   }
 }

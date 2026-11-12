@@ -118,6 +118,7 @@
     "hide": "Ocultar",
     "passwordRule": "Mínimo 8 caracteres y un número.",
     "acceptTerms": "Al crear la cuenta aceptas los <terms>Términos de uso</terms> y has leído la <privacy>Política de privacidad</privacy>. Debes tener al menos 14 años.",
+    "guestTerms": "Al entrar aceptas los <terms>Términos de uso</terms> y confirmas que has leído la <privacy>Política de privacidad</privacy>. Debes tener al menos 14 años.",
     "signUp": "Crear cuenta",
     "signIn": "Entrar",
     "haveAccount": "¿Ya tienes cuenta?",
@@ -164,6 +165,7 @@
     "month": "Mes",
     "year": "Año",
     "birthNote": "Lo usamos para adaptar el contenido y por motivos legales. No se muestra a nadie. Si tienes menos de 18 años, un adulto tendrá que confirmar los pagos.",
+    "legalNote": "Al continuar aceptas los <terms>Términos de uso</terms> y confirmas que has leído la <privacy>Política de privacidad</privacy>, que explica qué hacemos con estos datos.",
     "underAge": "E-Trading es para mayores de 14 años.",
     "expTitle": "¿Has invertido alguna vez?",
     "exp": {
@@ -231,6 +233,7 @@
   },
   "home": {
     "hello": "Hola, {name}",
+    "helloNoName": "Hola",
     "streakLabel": "Racha de {n} días",
     "gemsLabel": "{n} gemas",
     "gemsInfo": "Tienes {n} gemas. Se ganan con logros y objetivos; sirven para vidas y protectores de racha.",
@@ -1212,7 +1215,7 @@
       "npsNote": "NPS = % que pone 9-10 menos % que pone 0-6. Por encima de 0 es bueno; por encima de 30, muy bueno.",
       "likes": "Lo que más gusta",
       "blockers": "Lo que frena",
-      "pay": "¿Pagarían Max a 7,99 €/mes?",
+      "pay": "¿Pagarían Max a {price} al mes?",
       "price": "Precio justo (de los que querían más barato)",
       "wants": "Lo que piden",
       "comments": "Comentarios",

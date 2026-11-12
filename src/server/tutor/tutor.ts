@@ -1,7 +1,7 @@
 import 'server-only'
 // Lumi, la profesora: responde con el manual del curso, cálculos y los datos del propio alumno.
 // Por defecto es 100 % autónoma (src/server/tutor/brain.ts). En Max, si hay una clave real de Anthropic, responde con IA
-// (Claude, src/server/tutor/ai.ts) hasta 30 veces al día; sin clave, sin cupo o si la IA falla, vuelve al cerebro propio.
+// (Claude, src/server/tutor/ai.ts) hasta AI_DAILY_LIMIT veces al día; sin clave, sin cupo o si la IA falla, vuelve al cerebro propio.
 // Límites por plan (src/shared/plans.ts): Free 5 preguntas/día, Plus 30 y «Mi cartera», Max 100 y todos los modos.
 import type { TutorAnswerT, TutorHistoryT, TutorModeT } from '@/shared/contract'
 import { tierOf, TUTOR_LIMITS, TUTOR_MODE_PLAN } from '@/shared/plans'

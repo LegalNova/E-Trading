@@ -12,6 +12,7 @@ import { readSource } from '../attribution'
 import { Icon } from '../ui/icons'
 import { Check, ErrorState, PageSkeleton, Seg, Steps } from '../ui/kit'
 import { Lumi, SKINS } from '../ui/lumi'
+import { LegalNote } from './auth'
 import { QuestionView, type AnswerValue } from './quiz'
 
 const TOTAL = 6
@@ -187,6 +188,8 @@ function Flow({ initialStep, initialDraft }: { initialStep: number; initialDraft
           <button className="btn btn-primary mt-2" disabled={!d.name.trim() || !validDate || save.isPending}>
             {tc('continue')}
           </button>
+          {/* Aquí se piden los primeros datos (nombre y fecha de nacimiento): se informa en este mismo momento */}
+          <LegalNote ns="onboarding" k="legalNote" className="t-cap m-0 text-center" newTab />
         </form>
       </>
     )

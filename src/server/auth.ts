@@ -10,6 +10,7 @@ import { nextCookies } from 'better-auth/next-js'
 import { anonymous } from 'better-auth/plugins'
 import { headers } from 'next/headers'
 import { LEGAL_VERSION } from '@/shared/legal'
+import { realName } from '@/shared/names'
 import { db } from './db'
 import { langOf, mailEnabled, sendTemplate } from './mail'
 import { memo } from './request'
@@ -75,7 +76,8 @@ export const auth = betterAuth({
     user: {
       create: {
         // Al crear la cuenta se acepta la versión vigente de los términos y la privacidad
-        before: async user => ({ data: { ...user, role: user.emailVerified && admins.includes(user.email.toLowerCase()) ? 'ADMIN' : 'USER', legalVersion: LEGAL_VERSION, legalAcceptedAt: new Date() } }),
+        // (y el invitado nace sin nombre: la librería le ponía «Anonymous», ver src/shared/names.ts)
+        before: async user => ({ data: { ...user, name: realName(user.name), role: user.emailVerified && admins.includes(user.email.toLowerCase()) ? 'ADMIN' : 'USER', legalVersion: LEGAL_VERSION, legalAcceptedAt: new Date() } }),
       },
       update: {
         // Si Google verifica más tarde el email de un admin, se le da el rol
@@ -86,8 +88,9 @@ export const auth = betterAuth({
     },
   },
   plugins: [
-    // «Probar sin registrarme»: cuenta de invitado al momento; guarda su progreso al poner email y contraseña
-    anonymous({ generateName: () => '', emailDomainName: 'invitado.lumi.app' }),
+    // «Probar sin registrarme»: cuenta de invitado al momento; guarda su progreso al poner email y contraseña.
+    // Sin generateName la librería pone «Anonymous» (y con '' también): el nombre se vacía en databaseHooks.user.create
+    anonymous({ emailDomainName: 'invitado.lumi.app' }),
     nextCookies(),
   ],
 })
@@ -101,9 +104,12 @@ export function realUser() {
     const s = await auth.api.getSession({ headers: await headers() })
     if (!s) return null
     const u = await db.user.findUnique({ where: { id: s.user.id } })
-    return u && !u.blockedAt ? asTeam(u) : null
+    return u && !u.blockedAt ? asTeam(named(u)) : null
   })
 }
+
+/** Quita el «Anonymous» que heredaron las cuentas de invitado antiguas (src/shared/names.ts) */
+const named = <T extends { name: string }>(u: T): T => (realName(u.name) === u.name ? u : { ...u, name: realName(u.name) })
 
 /** El equipo (ADMIN) usa la app con todo abierto: se trata como Max (solo en memoria; su plan real no cambia) */
 export const asTeam = <T extends { role: string; plan: string }>(u: T): T => (u.role === 'ADMIN' ? { ...u, plan: 'PREMIUM' } : u)
@@ -111,6 +117,6 @@ export const asTeam = <T extends { role: string; plan: string }>(u: T): T => (u.
 /** Usuario de la sesión actual: el real o, si un admin está «viendo como», el usuario elegido */
 export async function currentUser() {
   const v = viewAs()
-  if (v) return memo('viewAsUser', () => db.user.findUnique({ where: { id: v.targetId } }))
+  if (v) return memo('viewAsUser', async () => { const u = await db.user.findUnique({ where: { id: v.targetId } }); return u && named(u) })
   return realUser()
 }

@@ -1,4 +1,9 @@
+import { planPrice } from '@/legal/prices'
 import type { HelpDoc } from './types'
+
+// Los precios salen de src/legal/prices.ts (las mismas tablas con las que se cobra): no escribirlos a mano.
+const L = 'ca' as const
+const both = (tier: 'PLUS' | 'PREMIUM', student = false) => `${planPrice(tier, 'MONTH', L, student)} o ${planPrice(tier, 'YEAR', L, student)}`
 
 export const ca: HelpDoc = {
   title: 'Centre d’ajuda',
@@ -54,14 +59,14 @@ export const ca: HelpDoc = {
       items: [
         { id: 'que-hace', q: 'Què li puc preguntar a la Lumi?', a: ['Dubtes del curs, conceptes que no entens, què estudiar ara i, als plans de pagament, com va la teva cartera o quins biaixos es veuen a les teves operacions. Respon amb el contingut del curs i el teu progrés.'] },
         { id: 'limite', q: 'Quantes preguntes puc fer?', a: ['5 al dia a Free, 30 a Plus i 100 a Max. El comptador es reinicia cada dia.'] },
-        { id: 'privacidad-lumi', q: 'Les meves preguntes surten de la Lumi?', a: ['No. La Lumi funciona als nostres propis servidors: les teves preguntes no s’envien a cap servei d’intel·ligència artificial de tercers. Pots esborrar l’historial quan vulguis des de la mateixa conversa.'] },
+        { id: 'privacidad-lumi', q: 'On van les meves preguntes a la Lumi?', a: ['A Free i Plus, la Lumi respon amb el nostre propi motor: les teves preguntes no surten dels nostres servidors.', 'A Max, algunes respostes les genera un model d’intel·ligència artificial d’Anthropic. Per fer-ho se li envia la teva pregunta, els darrers missatges de la conversa i un resum de la teva cartera simulada, el teu progrés i el teu diari, sense el teu nom ni el teu correu. Aquestes respostes porten l’etiqueta «generada amb IA»: poden contenir errors i no són un consell d’inversió.', 'Pots esborrar l’historial quan vulguis des de la mateixa conversa.'], links: [{ href: '/legal/privacidad', label: 'Política de privadesa' }] },
       ],
     },
     {
       id: 'planes',
       title: 'Plans i pagaments',
       items: [
-        { id: 'diferencias', q: 'Quina diferència hi ha entre Free, Plus i Max?', a: ['Free: unitats 1 a 3 completes i les 3 primeres classes de cada unitat, amb 5 vides i 5 preguntes al dia a la Lumi.', 'Plus (3,99 €/mes o 29,99 €/any): unitats 1 a 5 completes i les 5 primeres classes de cada unitat, vides il·limitades, 50.000 € virtuals i 30 preguntes al dia.', 'Max (7,99 €/mes o 59,99 €/any): tot el curs, vides il·limitades, ordres avançades des del primer dia, 100 preguntes al dia amb tots els modes i un protector de ratxa cada setmana.'], links: [{ href: '/premium', label: 'Veure els plans' }] },
+        { id: 'diferencias', q: 'Quina diferència hi ha entre Free, Plus i Max?', a: ['Free: unitats 1 a 3 completes i les 3 primeres classes de cada unitat, amb 5 vides i 5 preguntes al dia a la Lumi.', `Plus (${both('PLUS')}): unitats 1 a 5 completes i les 5 primeres classes de cada unitat, vides il·limitades, 50.000 € virtuals i 30 preguntes al dia.`, `Max (${both('PREMIUM')}): tot el curs, vides il·limitades, ordres avançades des del primer dia, 100 preguntes al dia amb tots els modes i un protector de ratxa cada setmana.`, `Si estudies, pots demanar el preu d’estudiant: Plus, ${both('PLUS', true)}; Max, ${both('PREMIUM', true)}. També hi ha plans de grup per a famílies, classes i empreses.`], links: [{ href: '/premium', label: 'Veure els plans' }, { href: '/legal/contratacion', label: 'Tots els preus' }] },
         { id: 'prueba', q: 'Com funciona la prova gratuïta?', a: ['Tens 7 dies gratis, una vegada per persona. Es desbloquegen de dues maneres: amb una ratxa de 5 dies seguits o arribant amb la invitació d’un amic (en aquest cas són 7 dies de Max que comencen només entrar, sense targeta).', 'Amb la ratxa, tries Plus o Max i poses la teva targeta a la pàgina de pagament segura de Stripe. No se’t cobra res durant la prova: t’avisem a l’app abans que s’acabi i, si la cancel·les abans des de Configuració, no pagues res.'] },
         { id: 'cancelar', q: 'Com cancel·lo el meu pla?', a: ['A Configuració, Subscripció, «Cancel·lar la subscripció»: s’obre la pàgina segura de Stripe i la cancel·les amb un toc. Sense trucades ni preguntes. Conserves el pla fins al final del període que ja has pagat i no se’t torna a cobrar.'] },
         { id: 'reembolso', q: 'Puc demanar que em torneu els diners?', a: ['Sí. Tens 14 dies per desistir des que contractes i, a més, si ens ho demanes en els 14 dies següents al teu primer cobrament, et tornem l’import complet.'], links: [{ href: '/legal/contratacion', label: 'Condicions de contractació' }] },

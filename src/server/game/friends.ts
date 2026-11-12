@@ -221,7 +221,7 @@ export const leagueDetail = (id: string) =>
     const members = rows.filter(r => !r.user.blockedAt)
     const ids = members.map(m => m.user.id)
     const me = c.user.id
-    const nameOf = (u: { id: string; name: string; leagueVisible: boolean }) => (u.id === me ? c.user.name || '—' : displayName(u.name, u.leagueVisible))
+    const nameOf = (u: { id: string; name: string; leagueVisible: boolean }) => (u.id === me ? c.user.name || displayName('', true) : displayName(u.name, u.leagueVisible))
     const keyOf = (userId: string) => memberKey(id, userId)
 
     // Esta semana: puntos de la liga general; quien aún no ha entrado esta semana, con 0
