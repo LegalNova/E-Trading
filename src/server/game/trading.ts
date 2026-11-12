@@ -9,7 +9,7 @@ import { db } from '../db'
 import { candles, fxRates, loadAssets, normCurrency, toEur } from '../market/service'
 import { LESSON, lessonRef, RISK_LESSON } from '../content/catalog'
 import { coach } from '../tutor/coach'
-import { lockUser, addXp, bump, bumpGoal, endFx, fail, lumi, markActive, notify, requireUser, RISK_PCT, START_CASH, unlockedFeatures, withCtx, type Ctx, type Tx } from './core'
+import { lockUser, addXp, bump, endFx, fail, lumi, markActive, notify, requireUser, RISK_PCT, START_CASH, unlockedFeatures, withCtx, type Ctx, type Tx } from './core'
 
 // ── Libro de precios (solo los activos que necesita la petición) ──
 export interface Px {
@@ -237,9 +237,9 @@ async function fill(c: Ctx, book: Book, o: Order, silent = false, at?: number): 
   await c.tx.trade.create({ data: { userId: c.user.id, orderId: o.id, side: o.side, type: o.type, symbol: o.symbol, qty: fix8(qty), price: fmtPrice(px, px.price), fee: fix2(f), total: fix2(amount), realizedPnl: pnl === null ? null : fix2(pnl), status: 'FILLED' } })
   // XP solo en las 3 primeras operaciones del día (D-017)
   // XP solo cuando la operación la hace la persona (no cuando la ejecuta la tarea programada en su ausencia)
-  if (silent && c.g.tradesToday < 3) addXp(c, 15)
+  // (cuenta para el nivel, pero no para la liga: allí solo puntúan aprender y los buenos hábitos, APP-38)
+  if (silent && c.g.tradesToday < 3) addXp(c, 15, { league: false })
   c.g.tradesToday++
-  await bumpGoal(c, 'ops')
   // La racha solo se alarga cuando la persona opera (silent: orden recién colocada); no cuando la ejecuta la tarea programada o una lectura
   if (silent) await markActive(c)
   if (!silent) await notify(c, 'ORDER_FILLED', `Orden ejecutada: ${px.name}`, `${o.side === 'BUY' ? 'Compra' : 'Venta'} a ${fmtPrice(px, px.price)} ${px.currency}.`, '/mercado/cartera')

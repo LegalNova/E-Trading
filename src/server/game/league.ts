@@ -25,7 +25,7 @@ import { currentLocale } from '../locale'
 import { DIVISIONS } from '../content/catalog'
 import { bump, checkAchievements, notify, START_CASH, withCtx, type Ctx, type Tx } from './core'
 import { priceBook } from './trading'
-import { byStanding, FULL_GROUP, lastDayOf, leagueZones, madridMidnight, monthOf, monthReturnPct, monthStart, nextMonth, prevMonth, score, seasonPct, tradePoints, weekOutcome, weekReturnPct } from '@/shared/league-points'
+import { byStanding, FULL_GROUP, habitPoints, lastDayOf, leagueZones, madridMidnight, monthOf, monthReturnPct, monthStart, nextMonth, prevMonth, score, seasonPct, weekOutcome, weekReturnPct } from '@/shared/league-points'
 
 export const GROUP_SIZE = FULL_GROUP
 export const PROMOTE_GEMS = 30
@@ -166,10 +166,11 @@ export async function portfolioValues(tx: Tx, userIds: string[]) {
     tx.position.findMany({ where: { userId: { in: userIds } }, select: { userId: true, symbol: true, qty: true, avgPrice: true } }),
   ])
   const book = positions.length ? await priceBook(positions.map(p => p.symbol)) : new Map()
-  const out = new Map<string, { value: number; concentrated: boolean }>()
+  const out = new Map<string, { value: number; concentrated: boolean; positions: number }>()
   for (const pf of pfs) {
-    const h = holdings(positions.filter(p => p.userId === pf.userId).map(p => ({ symbol: p.symbol, qty: Number(p.qty), avgPrice: Number(p.avgPrice) })), book)
-    out.set(pf.userId, { value: Number(pf.cash) + h.invested, concentrated: h.concentrated })
+    const mine = positions.filter(p => p.userId === pf.userId)
+    const h = holdings(mine.map(p => ({ symbol: p.symbol, qty: Number(p.qty), avgPrice: Number(p.avgPrice) })), book)
+    out.set(pf.userId, { value: Number(pf.cash) + h.invested, concentrated: h.concentrated, positions: mine.length })
   }
   return out
 }
@@ -195,13 +196,22 @@ export async function compactWeek(tx: Tx, weekKey: string) {
   return moved
 }
 
-/** Rentabilidad de la semana y puntos de inversión de cada miembro. A quien entró antes de que existiera la base
+/** Rentabilidad de la semana (solo informativa) y puntos de buenos hábitos de cada miembro (APP-38: la rentabilidad ya no
+ *  puntúa). Las semanas ya cerradas conservan los puntos con que se cerraron. A quien entró antes de que existiera la base
  *  se le pone una: la última foto de su cartera antes de la semana (o su valor de ahora, sin entradas de dinero). */
 async function returnsOf(tx: Tx, weekKey: string, members: { userId: string; startValue: unknown; flows: unknown; finalRank: number | null; tradePts: number }[]) {
   const ids = members.map(m => m.userId)
   const [values, states] = await Promise.all([portfolioValues(tx, ids), tx.gameState.findMany({ where: { userId: { in: ids } }, select: { userId: true, counters: true } })])
   // Concentrada ahora o en algún momento de la semana después de operar
   const concWeek = new Set(states.filter(g => (g.counters as Record<string, number> | null)?.[concKey(weekKey)]).map(g => g.userId))
+  // Hábitos de la semana (hora de Madrid): motivos apuntados en el diario y stops puestos por la persona
+  const span = { gte: madridMidnight(weekKey), lt: madridMidnight(addDays(weekKey, 7)) }
+  const [journal, stops] = await Promise.all([
+    tx.journalEntry.groupBy({ by: ['userId'], where: { userId: { in: ids }, createdAt: span }, _count: { _all: true } }),
+    tx.order.groupBy({ by: ['userId'], where: { userId: { in: ids }, createdAt: span, parentId: null, status: { in: ['PENDING', 'FILLED'] }, OR: [{ type: 'STOP_LOSS' }, { side: 'BUY', stopLoss: { not: null } }] }, _count: { _all: true } }),
+  ])
+  const journalOf = new Map(journal.map(j => [j.userId, j._count._all]))
+  const stopsOf = new Map(stops.map(s => [s.userId, s._count._all]))
   const out = new Map<string, { pct: number; pts: number }>()
   for (const m of members) {
     const v = values.get(m.userId)
@@ -218,7 +228,8 @@ async function returnsOf(tx: Tx, weekKey: string, members: { userId: string; sta
       await tx.leagueMember.updateMany({ where: { weekKey, userId: m.userId, startValue: null }, data: { startValue: start, flows } })
     }
     const pct = weekReturnPct(start, v.value, flows)
-    out.set(m.userId, { pct, pts: m.finalRank !== null ? m.tradePts : tradePoints(pct, v.concentrated || concWeek.has(m.userId)) })
+    const diversified = v.positions >= 3 && !v.concentrated && !concWeek.has(m.userId)
+    out.set(m.userId, { pct, pts: m.finalRank !== null ? m.tradePts : habitPoints({ journal: journalOf.get(m.userId) ?? 0, stops: stopsOf.get(m.userId) ?? 0, diversified }) })
   }
   return out
 }

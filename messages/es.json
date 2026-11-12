@@ -228,7 +228,7 @@
   },
   "goals": {
     "lesson": "Completa una clase",
-    "ops": "Haz 2 compras o ventas en el Mercado",
+    "ops": "Revisa tu cartera o tu diario",
     "perfect": "Acierta todo en un quiz"
   },
   "home": {
@@ -809,18 +809,18 @@
     "promoteZone": "Zona de ascenso hasta el {n}.º",
     "demoteZone": "Zona de descenso desde el {n}.º",
     "you": "Tú · {name}",
-    "rule": "Puntos = XP de la semana + inversión. Tu cartera suma 10 puntos por cada 1 % que gane en la semana y resta 10 por cada 1 % que pierda (como mucho ±100). Si más del 40 % está en una sola acción, las ganancias valen la mitad: diversificar puntúa. Todo vuelve a cero el lunes.",
+    "rule": "Puntos = XP de aprender en la semana + buenos hábitos. Hábitos: 10 puntos por cada operación con su motivo apuntado en el diario y 10 por cada compra con stop (hasta 3 de cada a la semana), y 20 si tu cartera está repartida (3 posiciones o más y ninguna acción con más del 40 %). Lo que gane o pierda tu cartera no puntúa. Todo vuelve a cero el lunes.",
     "pointsCol": "Puntos",
     "joinHint": "Ya estás en la liga de esta semana. Haz una clase o una operación para sumar tus primeros puntos.",
     "inviteTitle": "Trae a tus amigos a la liga",
     "inviteBody": "Con tu enlace entran con 7 días de Max y competís cada semana.",
     "yourDivision": "Tu división: {name}",
     "rowXp": "{xp} XP",
-    "rowTrade": "cartera {pct} % ({pts})",
-    "breakdown": "{xp} XP {pts} por invertir",
+    "rowTrade": "hábitos {pts}",
+    "breakdown": "{xp} XP {pts} por buenos hábitos",
     "howTitle": "Cómo funciona la liga",
     "how1": "Esta semana compites en un grupo de {n, plural, one {# persona} other {# personas}}.",
-    "how2": "Sumas puntos con el XP de clases y quizzes, y con lo que gane tu cartera virtual.",
+    "how2": "Sumas puntos con el XP de clases y quizzes, y con buenos hábitos en tu cartera virtual: apuntar el motivo, poner stop y diversificar.",
     "how3": "El lunes, los {up} primeros suben de división y los últimos bajan. Luego todo vuelve a cero.",
     "ruleTitle": "¿Cómo se calculan los puntos?"
   },

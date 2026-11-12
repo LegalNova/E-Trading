@@ -1,6 +1,8 @@
 // Puntos de la liga, zonas de ascenso y descenso y orden de la clasificación (lógica pura, con pruebas en tests/league-points.test.ts).
-// Puntos = XP de la semana + puntos de inversión. Inversión: +10 por cada +1 % de rentabilidad semanal y −10 por cada −1 %,
-// con tope de ±100. Cartera concentrada (más del 40 % en una sola acción): las ganancias valen la mitad. Total ≥ 0.
+// Desde la auditoría del 12-11-2026 (decisión de Joan, APP-38): Puntos = XP de aprender en la semana + puntos de buenos
+// hábitos (apuntar el motivo en el diario, poner stop, cartera diversificada). La rentabilidad de la cartera ya no puntúa:
+// premiaba el riesgo a corto plazo, lo contrario de lo que enseña el curso. Las semanas ya cerradas conservan sus puntos.
+// (tradePoints, la regla antigua, se conserva para leer esas semanas y para sus pruebas.)
 // Temporada del mes (ligas de amigos): la rentabilidad del mes natural de Madrid con las mismas reglas
 // (tope de ±10 % y, con la cartera concentrada, las ganancias cuentan la mitad).
 import { addDays, dayOf } from './time'
@@ -40,7 +42,27 @@ export function seasonPct(pct: number, concentrated: boolean) {
   return Math.round(Math.max(-SEASON_CAP_PCT, Math.min(SEASON_CAP_PCT, r)) * 100) / 100
 }
 
-/** Puntos de la liga: XP de la semana + puntos de inversión (nunca por debajo de 0) */
+/** Buenos hábitos de la semana que puntúan en la liga */
+export interface WeekHabits {
+  /** Operaciones con el motivo apuntado en el diario */
+  journal: number
+  /** Compras con stop loss, u órdenes stop colocadas */
+  stops: number
+  /** Cartera repartida: al menos 3 posiciones y ninguna acción con más del 40 % de lo invertido */
+  diversified: boolean
+}
+/** Puntos por cada hábito; los dos primeros cuentan hasta HABIT_TIMES veces por semana (no se premia operar más) */
+export const HABIT_PTS = { journal: 10, stop: 10, diversified: 20 } as const
+export const HABIT_TIMES = 3
+/** Máximo de puntos de hábitos en una semana (80): por debajo de una sola clase (unos 100 XP) */
+export const HABIT_MAX = HABIT_TIMES * (HABIT_PTS.journal + HABIT_PTS.stop) + HABIT_PTS.diversified
+
+/** Puntos de hábitos de la semana: nunca negativos y con tope */
+export function habitPoints(h: WeekHabits) {
+  return Math.min(HABIT_TIMES, Math.max(0, h.journal)) * HABIT_PTS.journal + Math.min(HABIT_TIMES, Math.max(0, h.stops)) * HABIT_PTS.stop + (h.diversified ? HABIT_PTS.diversified : 0)
+}
+
+/** Puntos de la liga: XP de la semana + puntos de hábitos (en semanas antiguas, de inversión); nunca por debajo de 0 */
 export const score = (xp: number, tradePts: number) => Math.max(0, xp + tradePts)
 
 // ── Ascensos y descensos (en proporción al tamaño del grupo) ─────

@@ -382,10 +382,10 @@ function LeagueBody({ l }: { l: FriendLeagueT }) {
                     {m.isMe ? tl('you', { name: m.displayName }) : m.displayName}
                     <span className="t-cap block truncate font-normal">
                       {tl('rowXp', { xp: num(m.weeklyXp, locale, 0) })}
-                      {(m.tradePts !== 0 || Math.abs(m.riskAdjReturnPct) >= 0.05) && (
+                      {m.tradePts > 0 && (
                         <>
                           {' · '}
-                          <span className={m.tradePts > 0 ? 'up' : m.tradePts < 0 ? 'down' : undefined}>{tl('rowTrade', { pct: signed(m.riskAdjReturnPct, locale), pts: `${m.tradePts > 0 ? '+' : m.tradePts < 0 ? '−' : ''}${Math.abs(m.tradePts)}` })}</span>
+                          <span className="up">{tl('rowTrade', { pts: `+${m.tradePts}` })}</span>
                         </>
                       )}
                     </span>

@@ -23,6 +23,7 @@ import * as trading from '@/server/game/trading'
 import * as tutor from '@/server/tutor/tutor'
 import * as thesis from '@/server/game/thesis'
 import * as missions from '@/server/game/missions'
+import { reviewGoalOnView } from '@/server/game/goals'
 import * as journal from '@/server/game/journal'
 import * as groups from '@/server/game/groups'
 import * as students from '@/server/game/students'
@@ -227,7 +228,7 @@ const routes: Route[] = [
   { method: 'GET', path: 'gifts/code/:code', run: async (r, p) => { await rateLimit(`giftcode:${clientIp(r)}`, 60, 60); return gifts.publicGift(p[0].slice(0, 30)) } },
   { method: 'POST', path: 'gifts/code/:code/redeem', run: async (r, p) => { await rateLimit(`giftcode:${clientIp(r)}`, 60, 60); await rateLimit(`redeem:${(await requireUser()).id}`, 10, 600); return gifts.redeemGift(p[0].slice(0, 30)) } },
   // Analítica propia: pantallas vistas y dónde se deja una clase
-  { method: 'POST', path: 'events', run: async (r, _p, b) => { await rateLimit(`ev:${clientIp(r)}`, 600, 60); return recordClientEvent(b) } },
+  { method: 'POST', path: 'events', run: async (r, _p, b) => { await rateLimit(`ev:${clientIp(r)}`, 600, 60); await recordClientEvent(b); await reviewGoalOnView(b) } },
   // Regalo diario (30 días) y cofre semanal: el servidor decide el día y el premio (sin cuerpo)
   { method: 'GET', path: 'daily', run: () => daily.daily() },
   { method: 'POST', path: 'daily/open', run: async () => { await rateLimit(`daily:${(await requireUser()).id}`, 20, 60); return daily.openDaily() } },

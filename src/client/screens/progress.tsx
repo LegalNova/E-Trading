@@ -280,12 +280,11 @@ function GeneralLeague() {
                 {m.isMe ? t('you', { name: m.displayName }) : m.displayName}
                 <span className="t-cap block truncate font-normal">
                   {t('rowXp', { xp: num(m.weeklyXp, locale, 0) })}
-                  {(m.tradePts !== 0 || Math.abs(m.riskAdjReturnPct) >= 0.05) && (
+                  {/* Puntos de buenos hábitos (diario, stop, cartera repartida): la rentabilidad ya no puntúa (APP-38) */}
+                  {m.tradePts > 0 && (
                     <>
                       {' · '}
-                      <span className={m.tradePts > 0 ? 'up' : m.tradePts < 0 ? 'down' : undefined}>
-                        {t('rowTrade', { pct: `${m.riskAdjReturnPct > 0 ? '+' : m.riskAdjReturnPct < 0 ? '−' : ''}${num(Math.abs(m.riskAdjReturnPct), locale, 1)}`, pts: `${m.tradePts > 0 ? '+' : m.tradePts < 0 ? '−' : ''}${Math.abs(m.tradePts)}` })}
-                      </span>
+                      <span className="up">{t('rowTrade', { pts: `+${m.tradePts}` })}</span>
                     </>
                   )}
                   {m.division ? ` · ${m.division}` : ''}

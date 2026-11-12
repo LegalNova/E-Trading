@@ -228,7 +228,7 @@
   },
   "goals": {
     "lesson": "Completa una classe",
-    "ops": "Fes 2 compres o vendes al Mercat",
+    "ops": "Revisa la teva cartera o el teu diari",
     "perfect": "Encerta-ho tot en un qüestionari"
   },
   "home": {
@@ -809,18 +809,18 @@
     "promoteZone": "Zona d'ascens fins al {n}è",
     "demoteZone": "Zona de descens des del {n}è",
     "you": "Tu · {name}",
-    "rule": "Punts = XP de la setmana + inversió. La teva cartera suma 10 punts per cada 1 % que guanyi a la setmana i en resta 10 per cada 1 % que perdi (com a màxim ±100). Si més del 40 % és en una sola acció, els guanys valen la meitat: diversificar puntua. Tot torna a zero el dilluns.",
+    "rule": "Punts = XP d’aprendre a la setmana + bons hàbits. Hàbits: 10 punts per cada operació amb el motiu apuntat al diari i 10 per cada compra amb stop (fins a 3 de cada a la setmana), i 20 si la teva cartera està repartida (3 posicions o més i cap acció amb més del 40 %). El que guanyi o perdi la teva cartera no puntua. Tot torna a zero el dilluns.",
     "pointsCol": "Punts",
     "joinHint": "Ja ets a la lliga d’aquesta setmana. Fes una classe o una operació per sumar els teus primers punts.",
     "inviteTitle": "Porta els teus amics a la lliga",
     "inviteBody": "Amb el teu enllaç entren amb 7 dies de Max i competiu cada setmana.",
     "yourDivision": "La teva divisió: {name}",
     "rowXp": "{xp} XP",
-    "rowTrade": "cartera {pct} % ({pts})",
-    "breakdown": "{xp} XP {pts} per invertir",
+    "rowTrade": "hàbits {pts}",
+    "breakdown": "{xp} XP {pts} per bons hàbits",
     "howTitle": "Com funciona la lliga",
     "how1": "Aquesta setmana competeixes en un grup de {n, plural, one {# persona} other {# persones}}.",
-    "how2": "Sumes punts amb l’XP de classes i qüestionaris, i amb el que guanyi la teva cartera virtual.",
+    "how2": "Sumes punts amb l’XP de classes i qüestionaris, i amb bons hàbits a la teva cartera virtual: apuntar el motiu, posar stop i diversificar.",
     "how3": "El dilluns, els {up} primers pugen de divisió i els últims baixen. Després tot torna a zero.",
     "ruleTitle": "Com es calculen els punts?"
   },

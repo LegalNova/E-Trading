@@ -228,7 +228,7 @@
   },
   "goals": {
     "lesson": "Complete a lesson",
-    "ops": "Make 2 buys or sells in the Market",
+    "ops": "Review your portfolio or your journal",
     "perfect": "Get every answer right in a quiz"
   },
   "home": {
@@ -809,18 +809,18 @@
     "promoteZone": "Promotion zone up to #{n}",
     "demoteZone": "Relegation zone from #{n}",
     "you": "You · {name}",
-    "rule": "Points = this week’s XP + investing. Your portfolio adds 10 points for every 1 % it gains during the week and takes away 10 for every 1 % it loses (±100 at most). If more than 40 % is in a single stock, gains count half: diversifying scores. Everything resets on Monday.",
+    "rule": "Points = this week’s learning XP + good habits. Habits: 10 points for every trade with its reason noted in the journal and 10 for every buy with a stop (up to 3 of each per week), and 20 if your portfolio is spread out (3 or more positions and no single stock above 40 %). What your portfolio gains or loses doesn’t score. Everything resets on Monday.",
     "pointsCol": "Points",
     "joinHint": "You’re in this week’s league. Take a lesson or make a trade to score your first points.",
     "inviteTitle": "Bring your friends into the league",
     "inviteBody": "With your link they join with 7 days of Max and you compete every week.",
     "yourDivision": "Your division: {name}",
     "rowXp": "{xp} XP",
-    "rowTrade": "portfolio {pct} % ({pts})",
-    "breakdown": "{xp} XP {pts} from investing",
+    "rowTrade": "habits {pts}",
+    "breakdown": "{xp} XP {pts} from good habits",
     "howTitle": "How the league works",
     "how1": "This week you’re competing in a group of {n, plural, one {# person} other {# people}}.",
-    "how2": "You earn points with XP from lessons and quizzes, and with what your virtual portfolio gains.",
+    "how2": "You earn points with XP from lessons and quizzes, and with good habits in your virtual portfolio: noting your reason, setting a stop and diversifying.",
     "how3": "On Monday, the top {up} move up a division and the bottom ones move down. Then everything resets.",
     "ruleTitle": "How are points worked out?"
   },

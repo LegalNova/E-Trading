@@ -209,9 +209,10 @@ async function rollover(c: Ctx) {
 }
 
 // ── XP, racha y objetivos ────────────────────────────────
-export function addXp(c: Ctx, n: number) {
+/** Suma XP. `league: false` para la XP que no es de aprender (operar): cuenta para el nivel, no para la liga (APP-38) */
+export function addXp(c: Ctx, n: number, o: { league?: boolean } = {}) {
   c.g.xp += n
-  c.g.weekXp += n
+  if (o.league !== false) c.g.weekXp += n
   c.fx.xp += n
 }
 
@@ -237,7 +238,9 @@ export function goalDefs(minutes: number): { id: GoalId; target: number; xp: num
   const m = [5, 10, 15, 20, 30].includes(minutes) ? minutes : 10
   return [
     { id: 'lesson', target: m >= 30 ? 4 : m >= 15 ? 2 : 1, xp: m >= 15 ? 30 : 20 },
-    { id: 'ops', target: m === 5 ? 1 : m >= 20 ? 3 : 2, xp: 15 },
+    // Antes: «haz 2 compras o ventas» (invitaba a operar por operar). Ahora: revisar la cartera o el diario, una vez al día (APP-38).
+    // El objetivo conserva su nombre interno, «ops», y su columna en la base de datos.
+    { id: 'ops', target: 1, xp: 15 },
     { id: 'perfect', target: m >= 30 ? 3 : m === 20 ? 2 : 1, xp: 25 },
   ]
 }

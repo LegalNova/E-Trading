@@ -33,6 +33,8 @@ export const MISSION_DAYS = 30
 
 // Grupos de activos que las clases nombran de forma genérica
 const SP500_ETF = 'SPY|VOO|IVV|CSPX.L|SXR8.DE|VUAA.DE|VUSA.AS'
+// Los consejos «Pruébalo» nombran primero el ETF europeo (UCITS); los de EE. UU. siguen valiendo para cumplir la misión (auditoría APP-27)
+const SP500_UCITS = 'SXR8.DE|CSPX.L|VUAA.DE|VUSA.AS|SPY|VOO|IVV'
 const WORLD_ETF = 'VWCE.DE|IWDA.AS|EUNL.DE|SWDA.L|XDWD.DE|SPPW.DE|CW8.PA|VGWL.DE'
 const MSCI_WORLD = 'IWDA.AS|EUNL.DE|SWDA.L|XDWD.DE|SPPW.DE|CW8.PA'
 
@@ -57,7 +59,7 @@ export const MISSIONS: Record<string, MissionDef> = {
   u19l1: view('MSFT'),
   u1l5: PORTFOLIO,
   u7l1: view('^IBEX'),
-  u10l2: view('SPY'),
+  u10l2: view(SP500_UCITS),
   u29l1: PORTFOLIO,
   u25l2: buyType('ETF'),
   u10l3: buyType('ETF'),
@@ -66,7 +68,7 @@ export const MISSIONS: Record<string, MissionDef> = {
   u17l1: watch(),
   u20l1: view('AAPL'),
   u21l1: alert(),
-  u24l3: alert(), // el texto actual pide una alerta; si la frase pasa a hablar del diario, cambiar a JOURNAL
+  u24l3: stop(), // al aprobar esta clase se desbloquean las órdenes stop (auditoría APP-23): el consejo ya pide poner el stop
   u27l4: watch(),
   // La bolsa
   u5l1: view('ITX.MC'),
@@ -88,11 +90,11 @@ export const MISSIONS: Record<string, MissionDef> = {
   u8l2: watch(),
   u8l3: watch('IBE.MC'),
   u8l4: view('NVDA'),
-  u8l5: view('IWM'),
+  u8l5: view('IUSN.DE|IWM'),
   u8l6: view('NVDA'),
   u8l7: watch('AAPL'),
   // Bonos
-  u9l1: view('SHY'),
+  u9l1: view('IBGS.AS|SHY'),
   u9l2: explore('ETF', '/mercado/explorar?type=ETF&sector=ETF%20renta%20fija'),
   u9l3: view('TLT'),
   u9l4: view('EMB'),
@@ -192,7 +194,7 @@ export const MISSIONS: Record<string, MissionDef> = {
   u28l2: PORTFOLIO,
   u28l4: JOURNAL,
   // Carteras
-  u29l2: watch('SPY|TLT|GLD'),
+  u29l2: watch('SXR8.DE|TLT|4GLD.DE|SPY|GLD'),
   u29l3: PORTFOLIO,
   u29l4: PORTFOLIO,
   u29l5: watch('VWCE.DE'),
