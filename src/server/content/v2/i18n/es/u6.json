@@ -157,8 +157,8 @@
       "Puede que no se toque nunca",
       "Se toca seguro: solo hay que esperar",
       "El máximo anterior está un **10,7 %** arriba: ahí muchos vendieron y suele volver a aparecer venta.",
-      "Toca tu objetivo buscando ganar al menos el doble de lo que arriesgas (1:2).",
-      "Al 15 %, el objetivo no se toca en estas velas (acaban en +5,5 %); **cerca del máximo anterior**, sí. Y con **1:2**, aunque aciertes solo 4 de cada 10, ganas más de lo que pierdes (antes de costes).",
+      "Pon el objetivo donde el precio pueda llegar y mira si se ejecuta.",
+      "Al 15 %, el objetivo no se toca en estas velas (acaban en +5,5 %); **cerca del máximo anterior**, sí. Un take profit es una **orden limitada de venta**: si el precio no llega, no se ejecuta.",
       "¡Objetivo tocado! La venta se hizo sola.",
       "Saltó el stop. Ponlo bajo el último mínimo.",
       "Ni stop ni objetivo. ¿Y si lo acercas al máximo anterior?",
@@ -183,8 +183,8 @@
      ]
     },
     {
-     "title": "Riesgo y beneficio",
-     "body": "Compras a 50 €, stop a 47 € (arriesgas 3 €) y objetivo a 56 € (puedes ganar 6 €): la relación es **1:2**.\n\nCon 1:2, si aciertas 4 de cada 10 operaciones, ganas 24 € y pierdes 18 € por acción (antes de costes).\n\nDecide el objetivo antes de entrar, no cuando ya vas ganando.",
+     "title": "Lo que hace un take profit",
+     "body": "Es una **orden limitada de venta** por encima del precio: vende sola si el precio sube hasta tu objetivo.\n\n• Si el precio **no llega**, no se ejecuta y sigues dentro.\n• Como toda orden, tiene **validez**: del día o hasta cancelar.\n• Se decide **antes de entrar**, no cuando ya vas ganando.\n\nCuánto conviene ganar por cada euro que arriesgas se aprende en «Gestión del riesgo».",
      "key": "El take profit sale por arriba; el stop, por abajo.",
      "tip": "Pruébalo: en tu próxima compra del Mercado, añade un take profit cerca del máximo anterior."
     }
@@ -445,11 +445,6 @@
    "options": [],
    "explanation": "Cerca del máximo anterior, sin pasarte: un objetivo demasiado ambicioso puede no tocarse nunca."
   },
-  "u6l5-3": {
-   "prompt": "Tienes 8.000 € y arriesgas como mucho un 1 % (80 €). Elige el importe y el stop.",
-   "options": [],
-   "explanation": "Con un stop cerca del mínimo reciente, la distancia es corta y puedes comprar más sin pasar de 80 € de riesgo."
-  },
   "u6l5-10": {
    "prompt": "¿Qué hace un take profit? Marca todas.",
    "options": [
@@ -477,18 +472,29 @@
     "Pongo el objetivo un 50 % por encima: así, cuando llegue, gano mucho más"
    ]
   },
-  "u6l5-12": {
-   "prompt": "Laura usa siempre una relación 1:2: arriesga 3 € para ganar 6 €. Acierta 4 de cada 10 operaciones y cree que es mala trader. ¿Qué le dirías?",
+  "u6l5-13": {
+   "prompt": "Tu take profit está en 36 €, con validez «del día». El precio sube hasta 35,90 € y la sesión cierra. ¿Qué pasa?",
    "options": [
-    "Que, antes de costes, va ganando: cada acierto vale el doble que cada fallo",
-    "Que quite el stop para fallar menos",
-    "Que lo deje: si falla más de la mitad, pierde dinero"
+    "Se vende mañana a 36 €",
+    "Se vende a 35,90 €",
+    "No se vende, y la orden caduca"
    ],
-   "explanation": "Lo que cuenta no es solo cuántas aciertas, sino cuánto ganas al acertar frente a lo que pierdes al fallar. El error habitual es fijarse solo en el porcentaje de aciertos.",
-   "feedback": [
-    "Con 1:2, 4 aciertos dan 24 € y 6 fallos quitan 18 € por acción. Fallar más de lo que acierta no la hace perder.",
-    "Sin stop, una sola mala operación puede borrar muchos aciertos.",
-    "No necesariamente: depende de cuánto gana al acertar frente a lo que pierde al fallar."
+   "explanation": "Una limitada de venta solo se ejecuta a su precio o mejor. Y si era del día, mañana ya no está puesta."
+  },
+  "u6l5-14": {
+   "prompt": "¿Take profit o stop loss?",
+   "options": [
+    "Va por debajo del precio de compra",
+    "Limita una pérdida",
+    "Asegura una ganancia",
+    "Va por encima del precio de compra",
+    "Al activarse, vende a mercado",
+    "Es una orden limitada de venta"
+   ],
+   "explanation": "El take profit sale por arriba, con una limitada; el stop, por abajo, a mercado.",
+   "right": [
+    "Take profit",
+    "Stop loss"
    ]
   },
   "u6l6-1": {

@@ -157,8 +157,8 @@
       "It might never get hit",
       "It's bound to get hit: you just have to wait",
       "The previous high is **10.7 %** up: lots of people sold there and selling tends to show up again.",
-      "Hit your target while aiming to make at least twice what you risk (1:2).",
-      "At 15 %, the target isn't hit in these candles (they end at +5.5 %); **near the previous high**, it is. And at **1:2**, even if you're right only 4 times in 10, you make more than you lose (before costs).",
+      "Put the target where the price can get to and see whether it's executed.",
+      "At 15 %, the target isn't hit in these candles (they end at +5.5 %); **near the previous high**, it is. A take profit is a **limit sell order**: if the price doesn't get there, it isn't executed.",
       "Target hit! The sale happened on its own.",
       "The stop was triggered. Put it below the last low.",
       "Neither stop nor target. What if you move it closer to the previous high?",
@@ -183,8 +183,8 @@
      ]
     },
     {
-     "title": "Risk and reward",
-     "body": "You buy at €50, stop at €47 (you risk €3) and target at €56 (you could make €6): the ratio is **1:2**.\n\nAt 1:2, if you get 4 out of 10 trades right, you make €24 and lose €18 per share (before costs).\n\nDecide your target before you get in, not when you're already winning.",
+     "title": "What a take profit does",
+     "body": "It's a **limit sell order** above the price: it sells by itself if the price rises to your target.\n\n• If the price **doesn't get there**, it isn't executed and you stay in.\n• Like any order, it has a **validity**: day or good till cancelled.\n• You decide it **before you enter**, not once you're already winning.\n\nHow much it's worth making for each euro you risk is something you learn in «Risk management».",
      "key": "The take profit gets you out at the top; the stop, at the bottom.",
      "tip": "Try it: on your next purchase in Market, add a take profit near the previous high."
     }
@@ -375,11 +375,6 @@
    "options": [],
    "explanation": "Near the previous high, without overdoing it: an overambitious target may never be hit."
   },
-  "u6l5-3": {
-   "prompt": "You have €8,000 and risk 1 % at most (€80). Choose the amount and the stop.",
-   "options": [],
-   "explanation": "With a stop near the recent low, the distance is short and you can buy more without going over €80 of risk."
-  },
   "u6l5-10": {
    "prompt": "What does a take profit do? Select all that apply.",
    "options": [
@@ -491,20 +486,6 @@
     "I'll set my target 50 % higher: that way, when it gets there, I make much more"
    ]
   },
-  "u6l5-12": {
-   "prompt": "Laura always uses a 1:2 ratio: she risks €3 to make €6. She gets 4 out of 10 trades right and thinks she's a bad trader. What would you tell her?",
-   "options": [
-    "That, before costs, she's ahead: each win is worth twice each loss",
-    "That she should remove the stop to lose less often",
-    "That she should quit: if she's wrong more than half the time, she loses money"
-   ],
-   "explanation": "What counts isn't just how many you get right, but how much you make when right versus what you lose when wrong. The usual mistake is to look only at the win rate.",
-   "feedback": [
-    "At 1:2, 4 wins bring in €24 and 6 losses take away €18 per share. Being wrong more often than right doesn't make her lose.",
-    "Without a stop, a single bad trade can wipe out many wins.",
-    "Not necessarily: it depends on how much she makes when she's right versus what she loses when she's wrong."
-   ]
-  },
   "u6l4-11": {
    "prompt": "You have a market stop at €30. The share closes at €31 and opens the next day at €27. At what price do you sell?",
    "options": [
@@ -541,6 +522,31 @@
     "It turns into a market order"
    ],
    "explanation": "A day order expires at the close. For it to stay in place, choose «good till cancelled»."
+  },
+  "u6l5-13": {
+   "prompt": "Your take profit is at €36, valid «for the day». The price rises to €35.90 and the session closes. What happens?",
+   "options": [
+    "It sells tomorrow at €36",
+    "It sells at €35.90",
+    "It doesn't sell, and the order expires"
+   ],
+   "explanation": "A limit sell order is only executed at its price or better. And if it was a day order, tomorrow it's no longer there."
+  },
+  "u6l5-14": {
+   "prompt": "Take profit or stop loss?",
+   "options": [
+    "It sits below the purchase price",
+    "It limits a loss",
+    "It locks in a gain",
+    "It sits above the purchase price",
+    "When triggered, it sells at market",
+    "It's a limit sell order"
+   ],
+   "right": [
+    "Take profit",
+    "Stop loss"
+   ],
+   "explanation": "The take profit gets you out at the top, with a limit order; the stop, at the bottom, at market."
   }
  }
 }

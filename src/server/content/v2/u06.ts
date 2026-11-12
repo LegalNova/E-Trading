@@ -165,8 +165,8 @@ export default unit({
           answer: 1,
           why: 'El máximo anterior está un **10,7 %** arriba: ahí muchos vendieron y suele volver a aparecer venta.',
         },
-        goal: { text: 'Toca tu objetivo buscando ganar al menos el doble de lo que arriesgas (1:2).', when: [when('hit', '==', 2), when('rr', '>=', 2)] },
-        insight: 'Al 15 %, el objetivo no se toca en estas velas (acaban en +5,5 %); **cerca del máximo anterior**, sí. Y con **1:2**, aunque aciertes solo 4 de cada 10, ganas más de lo que pierdes (antes de costes).',
+        goal: { text: 'Pon el objetivo donde el precio pueda llegar y mira si se ejecuta.', when: [when('hit', '==', 2)] },
+        insight: 'Al 15 %, el objetivo no se toca en estas velas (acaban en +5,5 %); **cerca del máximo anterior**, sí. Un take profit es una **orden limitada de venta**: si el precio no llega, no se ejecuta.',
         lumi: [
           { when: when('hit', '==', 2), say: '¡Objetivo tocado! La venta se hizo sola.', mood: 'CELEBRATE' },
           { when: when('hit', '==', 1), say: 'Saltó el stop. Ponlo bajo el último mínimo.', mood: 'THINKING' },
@@ -185,7 +185,8 @@ export default unit({
         say('lumi', 'Lo que sube después de tu objetivo ya no es tuyo.'),
         say('lumi', 'Es el precio de tener un plan. Decide el objetivo antes de entrar.'),
       ]),
-      key('Riesgo y beneficio', 'Compras a 50 €, stop a 47 € (arriesgas 3 €) y objetivo a 56 € (puedes ganar 6 €): la relación es **1:2**.\n\nCon 1:2, si aciertas 4 de cada 10 operaciones, ganas 24 € y pierdes 18 € por acción (antes de costes).\n\nDecide el objetivo antes de entrar, no cuando ya vas ganando.', 'El take profit sale por arriba; el stop, por abajo.', 'Pruébalo: en tu próxima compra del Mercado, añade un take profit cerca del máximo anterior.'),
+      // RED-1: la relación riesgo-beneficio (1:2, cuántas aciertas) es de u24l6 y u24l7; aquí queda la mecánica de la orden
+      key('Lo que hace un take profit', 'Es una **orden limitada de venta** por encima del precio: vende sola si el precio sube hasta tu objetivo.\n\n• Si el precio **no llega**, no se ejecuta y sigues dentro.\n• Como toda orden, tiene **validez**: del día o hasta cancelar.\n• Se decide **antes de entrar**, no cuando ya vas ganando.\n\nCuánto conviene ganar por cada euro que arriesgas se aprende en «Gestión del riesgo».', 'El take profit sale por arriba; el stop, por abajo.', 'Pruébalo: en tu próxima compra del Mercado, añade un take profit cerca del máximo anterior.'),
     ], [
       level('Has comprado al último precio. Coloca tu objetivo (take profit) en un sitio lógico.', 'lvl-61', 'TAKE', 'Cerca del máximo anterior: es donde muchos vendieron y suele aparecer venta otra vez.'),
       level('Otra operación: coloca el take profit.', 'lvl-13', 'TAKE', 'Cerca del máximo anterior, sin pasarte: un objetivo demasiado ambicioso puede no tocarse nunca.'),
@@ -199,7 +200,9 @@ export default unit({
       multi('¿Qué hace un take profit? Marca todas.', ['Vende sin que estés mirando', 'Asegura la ganancia si se llega al objetivo', 'Garantiza vender en el máximo', 'Evita que la avaricia decida por ti'], [0, 1, 3], 'Nadie vende siempre en el máximo; el take profit vende en tu objetivo.'),
       chat(['Pongo el objetivo un 50 % por encima: así, cuando llegue, gano mucho más'], '¿Qué le contestas a Lumi?', [['Buena idea: cuanto más lejos, más ganas', 'Solo si llega. Un objetivo demasiado lejano puede no tocarse nunca y acabar en el stop.'], ['Mejor cerca del máximo anterior, donde suele aparecer venta', '¡Eso! Un objetivo razonable se toca más a menudo: ganar algo menos, pero de verdad.'], ['Mejor no poner objetivo y vender a ojo', 'Sin objetivo deciden la avaricia o el miedo, justo en el peor momento.']], 1, 'El objetivo lejano parece que gana más, pero si no se toca no gana nada. Cerca del máximo anterior suele aparecer venta, y ahí el objetivo tiene opciones reales.'),
       scenario('Laura usa siempre una relación 1:2: arriesga 3 € para ganar 6 €. Acierta 4 de cada 10 operaciones y cree que es mala trader. ¿Qué le dirías?', [['Que, antes de costes, va ganando: cada acierto vale el doble que cada fallo', 'Con 1:2, 4 aciertos dan 24 € y 6 fallos quitan 18 € por acción. Fallar más de lo que acierta no la hace perder.'], ['Que lo deje: si falla más de la mitad, pierde dinero', 'No necesariamente: depende de cuánto gana al acertar frente a lo que pierde al fallar.'], ['Que quite el stop para fallar menos', 'Sin stop, una sola mala operación puede borrar muchos aciertos.']], 0, 'Lo que cuenta no es solo cuántas aciertas, sino cuánto ganas al acertar frente a lo que pierdes al fallar. El error habitual es fijarse solo en el porcentaje de aciertos.'),
-    ], { source: '2.5', minutes: 6, retire: [3, 4, 5, 6, 7, 8] }),
+      single('Tu take profit está en 36 €, con validez «del día». El precio sube hasta 35,90 € y la sesión cierra. ¿Qué pasa?', ['Se vende a 35,90 €', 'No se vende, y la orden caduca', 'Se vende mañana a 36 €'], 1, 'Una limitada de venta solo se ejecuta a su precio o mejor. Y si era del día, mañana ya no está puesta.'),
+      buckets('¿Take profit o stop loss?', ['Take profit', 'Stop loss'], [['Va por encima del precio de compra', 0], ['Va por debajo del precio de compra', 1], ['Es una orden limitada de venta', 0], ['Al activarse, vende a mercado', 1], ['Asegura una ganancia', 0], ['Limita una pérdida', 1]], 'El take profit sale por arriba, con una limitada; el stop, por abajo, a mercado.'),
+    ], { source: '2.5', minutes: 6, retire: [2, 3, 4, 5, 6, 7, 8, 11] }),
 
     lesson('u6l6', 'Combinar órdenes: OCO', [
       mission({

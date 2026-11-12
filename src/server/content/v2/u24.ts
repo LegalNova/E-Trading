@@ -150,20 +150,22 @@ export default unit({
     lesson('u24l5', 'Dónde poner el stop loss', [
       mission({
         title: 'Stop con margen',
-        intro: 'Velas reales de Tesla: compras al último precio. El **soporte** está un 4 % por debajo y el precio se mueve de media un 3,5 % al día (su ATR).',
-        widget: { kind: 'orders', chart: 'lvl-10', stopPct: 4, takePct: 6, maxPct: 12 },
+        // RED-1: gráfico propio (antes era el mismo de u6l4). Siemens, mayo-julio de 2025: soporte a −2,1 %, ATR 1,7 %;
+        // después el precio baja hasta −3,4 % (día 4) y sube hasta +5,6 % (día 12). Fixture `lvl-32`.
+        intro: 'Velas reales de Siemens: compras al último precio. El **soporte** está un 2 % por debajo y el precio se mueve de media un 1,7 % al día (su ATR).',
+        widget: { kind: 'orders', chart: 'lvl-32', stopPct: 2, takePct: 5, maxPct: 10 },
         predict: {
           prompt: '¿Dónde va el stop de esta compra?',
           options: ['Justo en el soporte', 'Por debajo del soporte, con margen para el ruido', 'Donde me duela perder'],
           answer: 1,
           why: 'Justo en el soporte, cualquier mecha lo salta. Con margen (por ejemplo, una parte del ATR), solo salta si la idea falla de verdad.',
         },
-        goal: { text: 'Pon el stop bajo el soporte con margen y el objetivo a no más de un 8 %.', when: [when('stopPct', '>=', 5), when('takePct', '<=', 8), when('played', '==', 1), when('hit', '==', 2)] },
+        goal: { text: 'Pon el stop bajo el soporte con margen y el objetivo a no más de un 5,5 %.', when: [when('stopPct', '>=', 3.5), when('takePct', '<=', 5.5), when('played', '==', 1), when('hit', '==', 2)] },
         insight: 'El stop va **donde tu idea deja de ser válida**, con margen para el ruido. Pegado al soporte, una simple mecha te saca justo antes de la subida.',
         lumi: [
           { when: when('hit', '==', 2), say: '¡Bien! Con margen, el ruido no te sacó.', mood: 'CELEBRATE' },
           { when: when('hit', '==', 1), say: 'Saltó por poco. ¿Tenía margen bajo el soporte?', mood: 'WORRIED' },
-          { when: when('stopPct', '<', 5), say: 'Ese stop está pegado al soporte, o por encima.', mood: 'THINKING' },
+          { when: when('stopPct', '<', 3.5), say: 'Ese stop está pegado al soporte, o por encima.', mood: 'THINKING' },
           { say: 'Coloca el stop y el objetivo, y mira qué pasó', mood: 'HAPPY' },
         ],
       }),
@@ -195,8 +197,10 @@ export default unit({
     lesson('u24l6', 'Pensar en R: riesgo y beneficio', [
       mission({
         title: 'Mide en R',
-        intro: 'Velas reales de ethereum: compras al último precio. Lo que te separa del stop es **1R**, lo que arriesgas.',
-        widget: { kind: 'orders', chart: 'lvl-16', stopPct: 3, takePct: 3, maxPct: 12 },
+        // RED-1: gráfico propio (antes era el mismo de u6l5). SAP, agosto-octubre de 2026: después el precio baja como
+        // mucho un 1,9 % y sube hasta +8,7 %. Fixture `lvl-26`.
+        intro: 'Velas reales de SAP: compras al último precio. Lo que te separa del stop es **1R**, lo que arriesgas.',
+        widget: { kind: 'orders', chart: 'lvl-26', stopPct: 3, takePct: 3, maxPct: 12 },
         predict: {
           prompt: 'Con el objetivo a la misma distancia que el stop, ¿qué te juegas?',
           options: ['Ganar 1R o perder 1R', 'Ganar 3R o perder 1R', 'Nada'],
@@ -204,7 +208,7 @@ export default unit({
           why: 'Con un **1:1**, necesitas acertar más de la mitad de las veces para ganar. Por eso muchos no entran por debajo de **2:1**.',
         },
         goal: { text: 'Coloca el objetivo al menos a 2R y mira qué pasa.', when: [when('rr', '>=', 2), when('played', '==', 1), when('hit', '==', 2)] },
-        insight: 'Resultado en R = lo ganado ÷ lo arriesgado: arriesgando un 3 % y ganando un 9 %, son **+3R**. Así comparas operaciones de **cualquier tamaño**.',
+        insight: 'Resultado en R = lo ganado ÷ lo arriesgado: arriesgando un 3 % y ganando un 6 %, son **+2R**. Así comparas operaciones de **cualquier tamaño**.',
         lumi: [
           { when: when('hit', '==', 2), say: '¡Objetivo! Mira la relación: esos son los R que has ganado.', mood: 'CELEBRATE' },
           { when: when('hit', '==', 1), say: 'Saltó el stop: −1R. Ni más ni menos de lo previsto.', mood: 'CALM' },

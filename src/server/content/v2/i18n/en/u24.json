@@ -148,13 +148,13 @@
     {
      "texts": [
       "A stop with room",
-      "Real Tesla candles: you buy at the last price. **Support** is 4 % below and the price moves 3.5 % a day on average (its ATR).",
+      "Real Siemens candles: you buy at the last price. **Support** is 2 % below and the price moves 1.7 % a day on average (its ATR).",
       "Where does the stop go on this trade?",
       "Right at support",
       "Below support, with room for noise",
       "Where losing would hurt",
       "Right at support, any wick triggers it. With some room (for example, part of the ATR), it only gets hit if the idea really fails.",
-      "Put the stop below support with some room and the target no more than 8 % away.",
+      "Put the stop below support with some room and the target no more than 5.5 % away.",
       "The stop goes **where your idea stops being valid**, with room for noise. Hugging support, a mere wick knocks you out just before the rise.",
       "Nice! With some room, the noise didn't knock you out.",
       "Stopped out by a hair. Did it have room below support?",
@@ -191,14 +191,14 @@
     {
      "texts": [
       "Measure in R",
-      "Real ethereum candles: you buy at the last price. The distance to your stop is **1R**, what you're risking.",
+      "Real SAP candles: you buy at the last price. The distance to your stop is **1R**, what you're risking.",
       "With the target the same distance away as the stop, what's at stake?",
       "Win 1R or lose 1R",
       "Win 3R or lose 1R",
       "Nothing",
       "At **1:1**, you need to be right more than half the time to make money. That's why many traders won't enter below **2:1**.",
       "Put the target at least 2R away and see what happens.",
-      "Result in R = what you made ÷ what you risked: risking 3 % and making 9 % is **+3R**. That way you can compare trades of **any size**.",
+      "Result in R = what you made ÷ what you risked: risking 3 % and making 6 % is **+2R**. That way you can compare trades of **any size**.",
       "Target hit! Look at the ratio: that's how many R you've made.",
       "Stopped out: −1R. No more, no less than planned.",
       "Still below 2:1. Raise the target or bring the stop closer.",

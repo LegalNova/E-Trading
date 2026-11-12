@@ -157,8 +157,8 @@
       "Potser no es toca mai",
       "Es toca segur: només cal esperar",
       "El màxim anterior és un **10,7 %** amunt: allà molts van vendre i sol tornar a aparèixer venda.",
-      "Toca el teu objectiu buscant guanyar com a mínim el doble del que arrisques (1:2).",
-      "Al 15 %, l'objectiu no es toca en aquestes espelmes (acaben en +5,5 %); **a prop del màxim anterior**, sí. I amb **1:2**, encara que només l'encertis 4 de cada 10 vegades, guanyes més del que perds (abans de costos).",
+      "Posa l'objectiu on el preu pugui arribar i mira si s'executa.",
+      "Al 15 %, l'objectiu no es toca en aquestes espelmes (acaben en +5,5 %); **a prop del màxim anterior**, sí. Un take profit és una **ordre limitada de venda**: si el preu no hi arriba, no s'executa.",
       "Objectiu tocat! La venda s'ha fet sola.",
       "Ha saltat l'stop. Posa'l sota l'últim mínim.",
       "Ni stop ni objectiu. I si l'acostes al màxim anterior?",
@@ -183,8 +183,8 @@
      ]
     },
     {
-     "title": "Risc i benefici",
-     "body": "Compres a 50 €, stop a 47 € (arrisques 3 €) i objectiu a 56 € (pots guanyar 6 €): la relació és **1:2**.\n\nAmb 1:2, si l'encertes en 4 de cada 10 operacions, guanyes 24 € i perds 18 € per acció (abans de costos).\n\nDecideix l'objectiu abans d'entrar, no quan ja vas guanyant.",
+     "title": "El que fa un take profit",
+     "body": "És una **ordre limitada de venda** per sobre del preu: ven sola si el preu puja fins al teu objectiu.\n\n• Si el preu **no hi arriba**, no s'executa i continues a dins.\n• Com tota ordre, té **validesa**: del dia o fins a cancel·lar.\n• Es decideix **abans d'entrar**, no quan ja vas guanyant.\n\nQuant convé guanyar per cada euro que arrisques s'aprèn a «Gestió del risc».",
      "key": "El take profit surt per dalt; l'stop, per baix.",
      "tip": "Prova-ho: a la teva propera compra del Mercat, afegeix un take profit a prop del màxim anterior."
     }
@@ -375,11 +375,6 @@
    "options": [],
    "explanation": "A prop del màxim anterior, sense passar-te: un objectiu massa ambiciós pot no tocar-se mai."
   },
-  "u6l5-3": {
-   "prompt": "Tens 8.000 € i arrisques com a màxim un 1 % (80 €). Tria l'import i l'stop.",
-   "options": [],
-   "explanation": "Amb un stop a prop del mínim recent, la distància és curta i pots comprar més sense passar de 80 € de risc."
-  },
   "u6l5-10": {
    "prompt": "Què fa un take profit? Marca-les totes.",
    "options": [
@@ -491,20 +486,6 @@
     "Poso l'objectiu un 50 % per sobre: així, quan hi arribi, guanyo molt més"
    ]
   },
-  "u6l5-12": {
-   "prompt": "La Laura fa servir sempre una relació 1:2: arrisca 3 € per guanyar-ne 6. Encerta 4 de cada 10 operacions i creu que és mala trader. Què li diries?",
-   "options": [
-    "Que, abans de costos, va guanyant: cada encert val el doble que cada error",
-    "Que tregui l'stop per fallar menys",
-    "Que ho deixi: si falla més de la meitat, perd diners"
-   ],
-   "explanation": "El que compta no és només quantes n'encertes, sinó quant guanyes en encertar davant del que perds en fallar. L'error habitual és fixar-se només en el percentatge d'encerts.",
-   "feedback": [
-    "Amb 1:2, 4 encerts donen 24 € i 6 errors en treuen 18 per acció. Fallar més del que encerta no la fa perdre.",
-    "Sense stop, una sola mala operació pot esborrar molts encerts.",
-    "No necessàriament: depèn de quant guanya quan encerta davant del que perd quan falla."
-   ]
-  },
   "u6l4-11": {
    "prompt": "Tens un stop a mercat a 30 €. L'acció tanca a 31 € i l'endemà obre a 27 €. A quin preu vens?",
    "options": [
@@ -541,6 +522,31 @@
     "Es converteix en una ordre a mercat"
    ],
    "explanation": "Una ordre del dia caduca al tancament. Perquè continuï posada, tria «fins a cancel·lar»."
+  },
+  "u6l5-13": {
+   "prompt": "El teu take profit és a 36 €, amb validesa «del dia». El preu puja fins a 35,90 € i la sessió tanca. Què passa?",
+   "options": [
+    "Es ven demà a 36 €",
+    "Es ven a 35,90 €",
+    "No es ven, i l'ordre caduca"
+   ],
+   "explanation": "Una limitada de venda només s'executa al seu preu o millor. I si era del dia, demà ja no hi és."
+  },
+  "u6l5-14": {
+   "prompt": "Take profit o stop loss?",
+   "options": [
+    "Va per sota del preu de compra",
+    "Limita una pèrdua",
+    "Assegura un guany",
+    "Va per sobre del preu de compra",
+    "Quan s'activa, ven a mercat",
+    "És una ordre limitada de venda"
+   ],
+   "right": [
+    "Take profit",
+    "Stop loss"
+   ],
+   "explanation": "El take profit surt per dalt, amb una limitada; l'stop, per baix, a mercat."
   }
  }
 }
