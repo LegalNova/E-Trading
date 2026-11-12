@@ -414,13 +414,13 @@
   "u25l1-7": {
    "prompt": "Marzo de 2020: el S&P 500 cae un 34 % en un mes por el covid. Pablo tiene un fondo indexado para su jubilación, dentro de 35 años. ¿Qué hace?",
    "options": [
-    "Pide un préstamo para comprar más",
+    "Para sus aportaciones hasta que se calme",
     "Vende todo y espera a que pase",
-    "Sigue con su plan y sus aportaciones"
+    "Sigue con su plan"
    ],
    "explanation": "Comprar y mantener exige aguantar las caídas: ahí se gana o se pierde la estrategia.",
    "feedback": [
-    "Invertir con deuda en plena crisis puede obligarte a vender en el peor momento.",
+    "Parar las aportaciones es dejar de comprar justo cuando está más barato: a 35 años, le perjudica.",
     "El índice recuperó su máximo en unos 5 meses. Pablo se habría perdido los rebotes más fuertes.",
     "Bien: sus aportaciones compraron barato y en unos meses el índice volvió a máximos."
    ]
@@ -428,19 +428,19 @@
   "u25l1-9": {
    "prompt": "¿Qué necesita la estrategia de comprar y mantener para funcionar? Marca todas.",
    "options": [
-    "Costes bajos",
+    "Acertar el mejor momento de entrada",
     "Vender cada vez que cae un 10 %",
     "Aguantar las caídas sin vender",
     "Diversificar mucho (un índice amplio)"
    ],
-   "explanation": "Vender en cada caída es justo lo contrario: te pierde los rebotes."
+   "explanation": "Necesita diversificar mucho y aguantar las caídas sin vender, además de costes bajos. No necesita acertar el momento, y vender en cada caída es justo lo contrario: te pierde los rebotes."
   },
   "u25l3-4": {
    "prompt": "Por un pánico general, una empresa con beneficios estables, poca deuda y clientes fieles cae un 30 % en un mes sin que su negocio haya cambiado. ¿Cómo lo ve un inversor en valor?",
    "options": [
     "Vende: si cae, algo malo pasa",
-    "Revisa si el negocio sigue igual y si ahora hay margen de seguridad",
-    "Compra con todo su dinero sin mirar nada"
+    "Revisa si el negocio sigue igual",
+    "Compra enseguida: un 30 % menos es una ganga"
    ],
    "explanation": "El inversor en valor separa el precio (que cambia cada día) del valor del negocio (que cambia despacio).",
    "feedback": [
@@ -468,19 +468,19 @@
   "u25l3-10": {
    "prompt": "¿Qué señales apuntan a una posible trampa de valor? Marca todas.",
    "options": [
-    "Un sector que está desapareciendo",
+    "Una caída del precio por un pánico general",
     "Beneficios estables y un ROIC alto",
     "Deuda que no para de crecer",
     "Ventas que caen año tras año"
    ],
-   "explanation": "Beneficios estables y alta rentabilidad sobre el capital son señales de calidad, no de trampa."
+   "explanation": "Ventas que caen año tras año y una deuda que no para de crecer apuntan a una trampa, igual que un sector que desaparece. Los beneficios estables con un ROIC alto son señales de calidad, y una caída por pánico general no dice nada del negocio."
   },
   "u25l3-11": {
    "prompt": "¿Qué le contestas a Paula?",
    "options": [
     "Sí, cuanto más cae, mejor",
     "Value es comprar lo que más sube",
-    "Lo que importa es cuánto vale el negocio, no a cuánto estuvo"
+    "Importa lo que vale hoy"
    ],
    "explanation": "Value compara precio con valor, no precio de hoy con precio de ayer.",
    "feedback": [
@@ -507,7 +507,7 @@
    "prompt": "Llevas seis años con un fondo de valor. Tu cuñado, con uno de crecimiento, ha ganado el doble. ¿Qué haces?",
    "options": [
     "Me cambio al suyo: está claro cuál funciona",
-    "Reviso si mis razones siguen en pie y, si es así, mantengo el plan",
+    "Reviso si mis razones siguen en pie",
     "Vendo todo y me quedo en liquidez"
    ],
    "explanation": "Ningún estilo gana siempre. Elige uno que puedas mantener cuando va por detrás.",
@@ -536,7 +536,7 @@
    "options": [
     "Compra también la del segundo dividendo más alto",
     "Perfecto: cuanto más alto, mejor",
-    "Antes, mira si el beneficio lo cubre y por qué ha caído el precio"
+    "Antes, mira si el beneficio lo cubre"
    ],
    "explanation": "Un dividendo altísimo a veces es la señal de que va a recortarse: lo que importa es que el beneficio lo cubra. La tentación es mirar solo el tamaño del dividendo.",
    "feedback": [
@@ -552,7 +552,7 @@
   "u25l4-13": {
    "prompt": "Una empresa paga un 2,5 % de dividendo y lo sube cada año. ¿Qué mira quien invierte en dividendos crecientes?",
    "options": [
-    "Si el beneficio crece y sostiene las subidas",
+    "Si el beneficio crece también",
     "Solo el porcentaje que paga hoy",
     "Cuánto ha caído desde su máximo"
    ],
@@ -720,10 +720,10 @@
    "options": [
     "La competencia de profesionales y algoritmos",
     "Que está prohibido en España",
-    "El ruido de los gráficos de minutos",
+    "Que les faltan indicadores",
     "Los costes de operar tanto"
    ],
-   "explanation": "No está prohibido: simplemente, las cuentas juegan en contra."
+   "explanation": "Compiten con profesionales y algoritmos, y operar tanto multiplica los costes; el ruido de los gráficos de minutos hace el resto. No está prohibido ni se arregla con más indicadores: las cuentas juegan en contra."
   },
   "u25l7-8": {
    "prompt": "¿Dato real o mito?",
@@ -744,13 +744,13 @@
    "prompt": "¿Qué le dices a Marta?",
    "options": [
     "¡Adelante, tienes talento!",
-    "Pide un préstamo para tener más capital",
-    "Tres días no prueban nada; los estudios dicen que casi todos pierden"
+    "Sube el tamaño ahora que estás en racha",
+    "Tres días no prueban nada"
    ],
    "explanation": "Antes de arriesgar tu sustento, mira la evidencia y tus propias estadísticas con muchas operaciones.",
    "feedback": [
     "Tres días son una muestra ridícula… y los datos dicen que casi todos los que lo intentan en serio pierden.",
-    "Eso convierte una mala idea en una peor: pérdidas y deudas.",
+    "Una racha de tres días es suerte hasta que se demuestre lo contrario: subir el tamaño solo agranda la próxima pérdida.",
     "Vale, mejor sigo aprendiendo, registro 100 operaciones en el simulador y mantengo el trabajo."
    ],
    "lines": [
@@ -769,7 +769,7 @@
   "u25l8-6": {
    "prompt": "Laura quiere abrir un CFD sobre un índice con 1.000 € y el apalancamiento máximo «para que cunda». No ha usado nunca un stop. ¿Qué le dirías como concepto?",
    "options": [
-    "Primero aprender sin apalancamiento; si algún día lo usa, poco, con stop y calculando sobre la exposición total",
+    "Primero, aprender sin apalancamiento",
     "Mejor ponerse corto, que es más seguro",
     "Adelante, así gana más rápido"
    ],
@@ -783,7 +783,7 @@
   "u25l8-7": {
    "prompt": "¿Por qué la pérdida de una posición corta es potencialmente ilimitada?",
    "options": [
-    "Porque el bróker no permite stops",
+    "Porque el bróker no permite poner stops en cortos",
     "Porque el precio puede subir sin límite",
     "Porque los cortos no pagan comisión"
    ],
@@ -820,7 +820,7 @@
    "options": [
     "Day trading con apalancamiento para compensar el poco tiempo",
     "Day trading en los descansos",
-    "Una estrategia que no dependa de mirar el mercado, como aportar cada mes a un indexado"
+    "Una estrategia que no exija mirar el mercado"
    ],
    "explanation": "La estrategia tiene que caber en tu vida real.",
    "feedback": [
@@ -832,9 +832,9 @@
   "u25l9-4": {
    "prompt": "¿Qué le contestas?",
    "options": [
-    "La que más subió el año pasado",
+    "La que más subió el año pasado, que es la que funciona",
     "El day trading, que es la más rápida",
-    "La que encaje con mi tiempo, mi horizonte y lo que aguanto sin vender"
+    "La que encaje con mi tiempo y mi horizonte"
    ],
    "explanation": "No hay una estrategia mejor para todos: hay la que tú puedes mantener.",
    "feedback": [
@@ -875,12 +875,12 @@
   "u25l9-10": {
    "prompt": "¿Qué preguntas te haces antes de elegir estrategia? Marca todas.",
    "options": [
-    "¿Cuánto tiempo puedo dedicarle?",
+    "¿Cuál recomiendan más en redes?",
     "¿Cuál es la que más ha subido este mes?",
     "¿Qué caída aguantaría sin vender?",
     "¿Cuándo necesitaré este dinero?"
    ],
-   "explanation": "Lo que más ha subido este mes no te dice qué estrategia vas a poder mantener."
+   "explanation": "Cuándo necesitarás el dinero y qué caída aguantarías deciden qué estrategia podrás mantener, junto con el tiempo que puedes dedicarle. Lo que más ha subido este mes o lo que recomiendan en redes no te dice nada de ti."
   }
  }
 }

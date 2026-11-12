@@ -280,8 +280,8 @@
   "u27l1-1": {
    "prompt": "According to Morningstar, how much less a year did the average investor earn than their own funds over the 10 years to 2025?",
    "options": [
-    "Nothing",
-    "Around 1.2 points",
+    "Nothing: they earned the same",
+    "About 1.2 points",
     "About 10 points"
    ],
    "explanation": "9.9 % for the funds versus 8.7 % for their investors, from buying and selling at the wrong time."
@@ -291,7 +291,7 @@
    "options": [
     "Buy loads more with my whole emergency fund",
     "Sell now, before it falls further",
-    "Take a breath, reread my plan and touch nothing today"
+    "Reread my plan and touch nothing today"
    ],
    "explanation": "Big decisions should never be made with your heart racing.",
    "feedback": [
@@ -305,7 +305,7 @@
    "options": [
     "Exactly the same",
     "Quite a bit more than the ETF",
-    "Much less: around −5.8 % versus +8.5 %"
+    "Much less than the ETF"
    ],
    "explanation": "They bought at the peaks and sold in the dips. These are annual returns between January 2024 and June 2026."
   },
@@ -313,11 +313,11 @@
    "prompt": "What tends to put system 1 in charge? Select all that apply.",
    "options": [
     "Being in a hurry",
-    "Euphoria",
+    "A plan decided in advance",
     "A written checklist",
     "Fear"
    ],
-   "explanation": "A written checklist forces you to think slowly: it's a system 2 tool."
+   "explanation": "Hurry and fear, and euphoria too, put system 1 in charge. A written checklist or a plan decided in advance forces you to think slowly: they're system 2 tools."
   },
   "u27l1-9": {
    "prompt": "The problem behind the gap isn't the product, it's the investor's ____.",
@@ -332,9 +332,9 @@
   "u27l1-10": {
    "prompt": "What do you explain to Lumi?",
    "options": [
-    "You probably got in and out at the wrong time: that's the investor gap",
+    "You probably got in and out at the wrong time",
     "It's definitely a scam",
-    "Funds always lie in their figures"
+    "Funds always dress up their performance figures"
    ],
    "explanation": "Your return depends on the fund and on when you get in and out.",
    "feedback": [
@@ -352,7 +352,7 @@
    "options": [
     "As much as winning €100 feels good",
     "Half as much",
-    "Twice as much as winning €100 feels good"
+    "Twice as much"
    ],
    "explanation": "Kahneman and Tversky, 1979."
   },
@@ -366,8 +366,8 @@
    "prompt": "Marta has a share that's down 30 %. The company has cut its forecasts and lost its biggest customer. She says: «I'm not selling until I'm back to even». What question should she ask herself?",
    "options": [
     "What are they saying on the forum?",
-    "If I didn't own it, would I buy it today at this price, knowing what I know?",
-    "How much have I lost already?"
+    "If I didn't own it, would I buy it today?",
+    "How much have I lost and how far is it from breaking even?"
    ],
    "explanation": "The right decision looks at the business's future, not at your purchase price.",
    "feedback": [
@@ -404,7 +404,7 @@
   "u27l2-10": {
    "prompt": "What do you reply to Lumi?",
    "options": [
-    "Being wrong is normal; what matters is deciding with what you know today",
+    "Decide with what you know today",
     "Buy more to bring your average price down",
     "Well done, hold on until it comes back"
    ],
@@ -422,8 +422,8 @@
   "u27l3-1": {
    "prompt": "What is the disposition effect?",
    "options": [
-    "Spreading your money across lots of assets",
-    "Selling winners too early and holding losers too long",
+    "Spreading your money across lots of different assets at once",
+    "Selling winners early and holding on to losers",
     "Always buying whatever is rising most"
    ],
    "explanation": "Odean measured it in 1998 across thousands of accounts."
@@ -462,7 +462,7 @@
    "prompt": "What do you tell Lumi?",
    "options": [
     "Yes, lock it in, you never know",
-    "What did your exit plan say before you got in?",
+    "What did your exit plan say?",
     "Buy more with everything you've got"
    ],
    "explanation": "The exit is decided before you get in, not when you see the first bit of green.",
@@ -496,7 +496,7 @@
   "u27l5-9": {
    "prompt": "Bruno has got 3 trades in a row right in the simulator. He wants to triple his size «because he's got the hang of it now». What's going on?",
    "options": [
-    "Overconfidence: he should keep the same risk and keep recording",
+    "Overconfidence: he should keep the same risk",
     "He should stop using stops",
     "Nothing, three in a row prove he knows what he's doing"
    ],
@@ -513,15 +513,15 @@
     "Writing down three reasons you could be wrong",
     "Raising your risk after every win",
     "Comparing yourself with an index over several years",
-    "Tracking your results in a journal"
+    "Looking only at your best trades"
    ],
-   "explanation": "Raising your risk after a win is exactly what overconfidence does."
+   "explanation": "Writing down why you could be wrong and comparing yourself with an index keep your feet on the ground, as does tracking all your results in a journal. Raising your risk after a win or looking only at your best trades is exactly what overconfidence does."
   },
   "u27l5-11": {
    "prompt": "What do you say to Lumi?",
    "options": [
     "Then raise the risk on your next buys",
-    "With four tries, luck rules: you need many more recorded trades",
+    "With four tries, luck rules",
     "Yes: four out of four is no coincidence"
    ],
    "explanation": "With few tries, luck looks a lot like talent: only a large, measured sample tells them apart. The temptation is to believe a four-round scoreboard.",
@@ -569,9 +569,9 @@
   "u27l6-5": {
    "prompt": "Ana has bought a share. Since then she only reads bullish forums and mutes anyone who criticises the company. What habit would you recommend?",
    "options": [
-    "Write down three reasons she could be wrong and read opposing views",
+    "Read opposing views too",
     "Sell immediately",
-    "Carry on like this, it's good vibes"
+    "Carry on like this, it gives her good vibes"
    ],
    "explanation": "You fight confirmation bias by deliberately looking for what contradicts you.",
    "feedback": [
@@ -593,7 +593,7 @@
   "u27l6-10": {
    "prompt": "What do you reply to Lumi?",
    "options": [
-    "Cheap or expensive depends on what the business is worth, not on where the price used to be",
+    "It depends on what the business is worth",
     "Yes, half price is always a bargain",
     "Wait for it to drop another 50 % and it'll be even cheaper"
    ],
@@ -629,7 +629,7 @@
   "u27l7-7": {
    "prompt": "After a 30 % fall, Marta is convinced the market «can only go down now» and wants to sell her long-term index fund. What would you tell her?",
    "options": [
-    "To look at decades of data and reread her plan before deciding",
+    "To reread her plan before deciding",
     "To wait for it to rise 30 % before buying back in",
     "She's right: what falls keeps falling"
    ],
@@ -646,9 +646,9 @@
     "Influencers who only show their wins",
     "An index that includes every company in the market",
     "Testing a system only on companies that exist today",
-    "Fund rankings that leave out the ones that closed"
+    "A journal with all your trades, the bad ones too"
    ],
-   "explanation": "A broad index doesn't pick winners after the fact: it buys the whole market."
+   "explanation": "The bias appears when you only see the ones left standing: influencers showing their wins, tests on companies that exist today or rankings without the funds that closed. An index of the whole market or a journal with all your trades doesn't pick winners after the fact."
   },
   "u27l7-10": {
    "prompt": "Recency or survivorship?",
@@ -667,9 +667,9 @@
   "u27l6-11": {
    "prompt": "An analyst publishes that a certain share «is worth €200». Weeks later, with worse results, you're still thinking about that €200. What's happening to you?",
    "options": [
-    "I've anchored on the first figure I saw",
+    "I've anchored on that figure",
     "I have confirmation bias",
-    "Nothing: €200 is its value"
+    "Nothing: €200 is still its value"
    ],
    "feedback": [
     "That's it: the anchor can be your purchase price, a high or someone else's figure.",

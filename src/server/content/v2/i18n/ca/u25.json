@@ -414,13 +414,13 @@
   "u25l1-7": {
    "prompt": "Març del 2020: l'S&P 500 cau un 34 % en un mes per la covid. En Pablo té un fons indexat per a la seva jubilació, d'aquí a 35 anys. Què fa?",
    "options": [
-    "Demana un préstec per comprar-ne més",
+    "Atura les aportacions fins que es calmi",
     "Ho ven tot i espera que passi",
-    "Continua amb el seu pla i les seves aportacions"
+    "Continua amb el seu pla"
    ],
    "explanation": "Comprar i mantenir obliga a aguantar les caigudes: és on es guanya o es perd l'estratègia.",
    "feedback": [
-    "Invertir amb deute en plena crisi et pot obligar a vendre en el pitjor moment.",
+    "Aturar les aportacions és deixar de comprar just quan és més barat: a 35 anys, el perjudica.",
     "L'índex va recuperar el seu màxim en uns 5 mesos. En Pablo s'hauria perdut els rebots més forts.",
     "Bé: les seves aportacions van comprar barat i en pocs mesos l'índex va tornar a màxims."
    ]
@@ -428,19 +428,19 @@
   "u25l1-9": {
    "prompt": "Què necessita l'estratègia de comprar i mantenir per funcionar? Marca-les totes.",
    "options": [
-    "Costos baixos",
+    "Encertar el millor moment d'entrada",
     "Vendre cada vegada que cau un 10 %",
     "Aguantar les caigudes sense vendre",
     "Diversificar molt (un índex ampli)"
    ],
-   "explanation": "Vendre a cada caiguda és just el contrari: et fa perdre els rebots."
+   "explanation": "Necessita diversificar molt i aguantar les caigudes sense vendre, a més de costos baixos. No necessita encertar el moment, i vendre a cada caiguda és just el contrari: et fa perdre els rebots."
   },
   "u25l3-4": {
    "prompt": "Per un pànic general, una empresa amb beneficis estables, poc deute i clients fidels cau un 30 % en un mes sense que el seu negoci hagi canviat. Com ho veu un inversor en valor?",
    "options": [
     "Ven: si cau, alguna cosa dolenta passa",
-    "Revisa si el negoci continua igual i si ara hi ha marge de seguretat",
-    "Compra amb tots els seus diners sense mirar res"
+    "Revisa si el negoci continua igual",
+    "Compra de seguida: un 30 % menys és una ganga"
    ],
    "explanation": "L'inversor en valor separa el preu (que canvia cada dia) del valor del negoci (que canvia a poc a poc).",
    "feedback": [
@@ -468,19 +468,19 @@
   "u25l3-10": {
    "prompt": "Quins senyals apunten a una possible trampa de valor? Marca'ls tots.",
    "options": [
-    "Un sector que està desapareixent",
+    "Una caiguda del preu per un pànic general",
     "Beneficis estables i un ROIC alt",
     "Deute que no para de créixer",
     "Vendes que cauen any rere any"
    ],
-   "explanation": "Beneficis estables i alta rendibilitat sobre el capital són senyals de qualitat, no de trampa."
+   "explanation": "Vendes que cauen any rere any i un deute que no para de créixer apunten a una trampa, igual que un sector que desapareix. Els beneficis estables amb un ROIC alt són senyals de qualitat, i una caiguda per pànic general no diu res del negoci."
   },
   "u25l3-11": {
    "prompt": "Què li contestes a la Lumi?",
    "options": [
     "Sí, com més cau, millor",
     "Value és comprar el que més puja",
-    "El que importa és quant val el negoci, no a quant va estar"
+    "Importa el que val avui"
    ],
    "explanation": "Value compara preu amb valor, no el preu d'avui amb el d'ahir.",
    "feedback": [
@@ -512,7 +512,7 @@
    "options": [
     "Compra també la del segon dividend més alt",
     "Perfecte: com més alt, millor",
-    "Abans, mira si el benefici el cobreix i per què ha caigut el preu"
+    "Abans, mira si el benefici el cobreix"
    ],
    "explanation": "Un dividend altíssim de vegades és el senyal que es retallarà: el que importa és que el benefici el cobreixi. La temptació és mirar només la mida del dividend.",
    "feedback": [
@@ -659,10 +659,10 @@
    "options": [
     "La competència de professionals i algoritmes",
     "Que està prohibit a Espanya",
-    "El soroll dels gràfics de minuts",
+    "Que els falten indicadors",
     "Els costos d'operar tant"
    ],
-   "explanation": "No està prohibit: simplement, els números juguen en contra."
+   "explanation": "Competeixen amb professionals i algoritmes, i operar tant multiplica els costos; el soroll dels gràfics de minuts fa la resta. No està prohibit ni s'arregla amb més indicadors: els números juguen en contra."
   },
   "u25l7-8": {
    "prompt": "Dada real o mite?",
@@ -683,13 +683,13 @@
    "prompt": "Què li dius a la Lumi?",
    "options": [
     "Endavant, tens talent!",
-    "Demana un préstec per tenir més capital",
-    "Tres dies no proven res; els estudis diuen que gairebé tothom perd"
+    "Apuja la mida ara que estàs en ratxa",
+    "Tres dies no proven res"
    ],
    "explanation": "Abans d'arriscar el teu sustent, mira l'evidència i les teves pròpies estadístiques amb moltes operacions.",
    "feedback": [
     "Tres dies són una mostra ridícula… i les dades diuen que gairebé tots els qui ho intenten seriosament perden.",
-    "Això converteix una mala idea en una de pitjor: pèrdues i deutes.",
+    "Una ratxa de tres dies és sort fins que es demostri el contrari: apujar la mida només fa més gran la pròxima pèrdua.",
     "D'acord, millor continuo aprenent, registro 100 operacions al simulador i mantinc la feina."
    ],
    "lines": [
@@ -708,7 +708,7 @@
   "u25l8-6": {
    "prompt": "La Laura vol obrir un CFD sobre un índex amb 1.000 € i el palanquejament màxim «perquè doni més de si». No ha fet servir mai un stop. Què li diries com a concepte?",
    "options": [
-    "Primer aprendre sense palanquejament; si algun dia el fa servir, poc, amb stop i calculant sobre l'exposició total",
+    "Primer, aprendre sense palanquejament",
     "Millor posar-se curta, que és més segur",
     "Endavant, així guanya més ràpid"
    ],
@@ -722,7 +722,7 @@
   "u25l8-7": {
    "prompt": "Per què la pèrdua d'una posició curta és potencialment il·limitada?",
    "options": [
-    "Perquè el bròquer no permet stops",
+    "Perquè el bròquer no permet posar stops en curts",
     "Perquè el preu pot pujar sense límit",
     "Perquè les posicions curtes no paguen comissió"
    ],
@@ -759,7 +759,7 @@
    "options": [
     "Day trading amb palanquejament per compensar el poc temps",
     "Day trading a les pauses",
-    "Una estratègia que no depengui de mirar el mercat, com aportar cada mes a un fons indexat"
+    "Una estratègia que no exigeixi mirar el mercat"
    ],
    "explanation": "L'estratègia ha de cabre en la teva vida real.",
    "feedback": [
@@ -771,9 +771,9 @@
   "u25l9-4": {
    "prompt": "Què li contestes?",
    "options": [
-    "La que més va pujar l'any passat",
+    "La que més va pujar l'any passat, que és la que funciona",
     "El day trading, que és la més ràpida",
-    "La que encaixi amb el meu temps, el meu horitzó i el que aguanto sense vendre"
+    "La que encaixi amb el meu temps i el meu horitzó"
    ],
    "explanation": "No hi ha una estratègia millor per a tothom: hi ha la que tu pots mantenir.",
    "feedback": [
@@ -814,12 +814,12 @@
   "u25l9-10": {
    "prompt": "Quines preguntes et fas abans de triar estratègia? Marca-les totes.",
    "options": [
-    "Quant de temps hi puc dedicar?",
+    "Quina recomanen més a les xarxes?",
     "Quina és la que més ha pujat aquest mes?",
     "Quina caiguda aguantaria sense vendre?",
     "Quan necessitaré aquests diners?"
    ],
-   "explanation": "El que més ha pujat aquest mes no et diu quina estratègia podràs mantenir."
+   "explanation": "Quan necessitaràs els diners i quina caiguda aguantaries decideixen quina estratègia podràs mantenir, juntament amb el temps que hi pots dedicar. El que més ha pujat aquest mes o el que recomanen a les xarxes no et diu res de tu."
   },
   "u25l3-12": {
    "prompt": "Ordena els passos d'un inversor en valor.",
@@ -835,7 +835,7 @@
    "prompt": "Fa sis anys que tens un fons de valor. El teu cunyat, amb un de creixement, ha guanyat el doble. Què fas?",
    "options": [
     "Em canvio al seu: és clar quin funciona",
-    "Reviso si les meves raons es mantenen i, si és així, mantinc el pla",
+    "Reviso si les meves raons es mantenen",
     "Ho venc tot i em quedo en liquiditat"
    ],
    "feedback": [
@@ -848,7 +848,7 @@
   "u25l4-13": {
    "prompt": "Una empresa paga un 2,5 % de dividend i l'apuja cada any. Què mira qui inverteix en dividends creixents?",
    "options": [
-    "Si el benefici creix i sosté les pujades",
+    "Si el benefici també creix",
     "Només el percentatge que paga avui",
     "Quant ha caigut des del seu màxim"
    ],

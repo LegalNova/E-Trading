@@ -230,7 +230,7 @@
    "prompt": "What do you say to Lumi?",
    "options": [
     "Perfect, that's everyone's plan",
-    "That's a wish; a plan says when you enter, where the stop is and how much you risk",
+    "That's a wish, not a plan",
     "You don't need a plan if you've got intuition"
    ],
    "explanation": "A plan is a set of testable rules, not good intentions.",
@@ -250,9 +250,9 @@
     "I don't average down",
     "I never set a stop",
     "I don't move the stop against me",
-    "I don't trade on earnings day"
+    "I don't buy if the market has fallen"
    ],
-   "explanation": "Not setting a stop would mean skipping the foundation of the plan."
+   "explanation": "The example plan says «I don't average down» and «I don't move the stop against me», and it doesn't trade on earnings day either. Not setting a stop would mean skipping the foundation of the plan, and it says nothing about not buying after a fall."
   },
   "u26l1-10": {
    "prompt": "Your plan says: «stop below the recent low». Apply it to this buy on a real chart.",
@@ -303,7 +303,7 @@
   "u26l2-6": {
    "prompt": "Which journal statistic tells you whether your system makes money in the long run?",
    "options": [
-    "The number of trades",
+    "The total number of trades",
     "Expectancy",
     "The time of entry"
    ],
@@ -313,8 +313,8 @@
    "prompt": "What do you reply to Lumi?",
    "options": [
     "Only log the winners",
-    "You're right, memory is enough",
-    "Without a journal you can't work out your expectancy or see your mistakes"
+    "You're right, memory is more than enough for this",
+    "Without a journal you can't see your mistakes"
    ],
    "explanation": "What you don't measure, you can't improve.",
    "feedback": [
@@ -332,7 +332,7 @@
    "options": [
     "Trade faster so the hurry has no time to kick in",
     "Stop writing down the emotion, it stresses me out",
-    "Add a rule to the plan: if I feel rushed, I don't enter today"
+    "Add a rule: if rushed, I don't enter today"
    ],
    "explanation": "The journal is there to change the plan with data: if an emotion keeps showing up in your losses, it becomes a rule. The temptation is to stop looking at what makes you uncomfortable.",
    "feedback": [
@@ -385,7 +385,7 @@
    "options": [
     "Double the risk to recover",
     "Stop using stops",
-    "Halve the risk and review the plan"
+    "Halve the risk"
    ],
    "explanation": "When the account falls, you protect first; then you analyse.",
    "feedback": [
@@ -438,7 +438,7 @@
    "options": [
     "With all the capital she planned and the same risk as in the simulator",
     "With double the risk to make up for lost time",
-    "With a small fraction of her capital and half the risk per trade"
+    "With little capital and half the risk"
    ],
    "explanation": "The move to real money is made in small steps and only scaled up with data.",
    "feedback": [
@@ -450,13 +450,13 @@
   "u26l4-6": {
    "prompt": "What do you reply to Lumi?",
    "options": [
-    "Better with a loan, so you make more",
-    "First more logged trades; then a small part and half the risk",
+    "Yes, and put it all in at once to ride the streak",
+    "First, more logged trades",
     "Of course, you're ready!"
    ],
    "explanation": "A good month on the simulator is a starting point, not proof.",
    "feedback": [
-    "With debt, a bad streak can be a serious problem.",
+    "Going all in after one good month is overconfidence: a losing streak would knock you out.",
     "OK: 100 trades in the journal, expectancy after costs and start small.",
     "A month is very little… and with real money, fear and impatience change how I trade."
    ],
@@ -490,11 +490,11 @@
    "prompt": "What changes when you move from the simulator to real money? Select all that apply.",
    "options": [
     "Slippage when orders are executed",
-    "Tax on gains",
+    "How you work out position size",
     "The maths of expectancy",
     "Your emotions when you see real losses"
    ],
-   "explanation": "The maths is the same; what changes is how you react, real costs and the taxman."
+   "explanation": "The maths and the way you work out size are the same. What changes is your emotions when you see real losses and real costs, such as slippage; and the taxman shows up too."
   }
  }
 }

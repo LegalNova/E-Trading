@@ -414,13 +414,13 @@
   "u25l1-7": {
    "prompt": "March 2020: the S&P 500 falls 34 % in a month because of covid. Pablo has an index fund for his retirement, 35 years away. What does he do?",
    "options": [
-    "Takes out a loan to buy more",
+    "Pauses his contributions until things calm down",
     "Sells everything and waits for it to pass",
-    "Sticks to his plan and his contributions"
+    "Sticks to his plan"
    ],
    "explanation": "Buy and hold means sitting through the falls: that's where the strategy is won or lost.",
    "feedback": [
-    "Investing with debt in the middle of a crisis can force you to sell at the worst moment.",
+    "Pausing contributions means not buying just when it's cheapest: over 35 years, that hurts him.",
     "The index got back to its high in about 5 months. Pablo would have missed the strongest rebounds.",
     "Good: his contributions bought cheap and within a few months the index was back at its highs."
    ]
@@ -428,19 +428,19 @@
   "u25l1-9": {
    "prompt": "What does buy and hold need to work? Select all that apply.",
    "options": [
-    "Low costs",
+    "Getting the entry timing right",
     "Selling every time it falls 10 %",
     "Sitting through falls without selling",
     "Plenty of diversification (a broad index)"
    ],
-   "explanation": "Selling at every fall is exactly the opposite: it makes you miss the rebounds."
+   "explanation": "It needs plenty of diversification and sitting through falls without selling, as well as low costs. It doesn't need good timing, and selling at every fall is exactly the opposite: it makes you miss the rebounds."
   },
   "u25l3-4": {
    "prompt": "Because of a general panic, a company with stable profits, little debt and loyal customers falls 30 % in a month without its business having changed. How does a value investor see it?",
    "options": [
     "Sells: if it's falling, something bad is going on",
-    "Checks whether the business is still the same and whether there's now a margin of safety",
-    "Buys with all their money without looking at anything"
+    "Checks whether the business is unchanged",
+    "Buys straight away: 30 % off has to be a bargain"
    ],
    "explanation": "A value investor separates the price (which changes every day) from the value of the business (which changes slowly).",
    "feedback": [
@@ -468,19 +468,19 @@
   "u25l3-10": {
    "prompt": "Which signs point to a possible value trap? Select all that apply.",
    "options": [
-    "A sector that's disappearing",
+    "A price fall caused by a general panic",
     "Stable profits and a high ROIC",
     "Debt that keeps growing",
     "Sales falling year after year"
    ],
-   "explanation": "Stable profits and a high return on capital are signs of quality, not of a trap."
+   "explanation": "Sales falling year after year and debt that keeps growing point to a trap, as does a disappearing sector. Stable profits with a high ROIC are signs of quality, and a fall caused by a general panic says nothing about the business."
   },
   "u25l3-11": {
    "prompt": "What do you say to Lumi?",
    "options": [
     "Yes, the more it falls, the better",
     "Value is buying whatever is rising most",
-    "What matters is what the business is worth, not what it used to trade at"
+    "What matters is today's value"
    ],
    "explanation": "Value compares price with value, not today's price with yesterday's.",
    "feedback": [
@@ -512,7 +512,7 @@
    "options": [
     "Buy the one with the second-highest dividend too",
     "Perfect: the higher, the better",
-    "First, check whether earnings cover it and why the price has fallen"
+    "First, check whether earnings cover it"
    ],
    "explanation": "A sky-high dividend is sometimes the sign that it's about to be cut: what matters is that earnings cover it. The temptation is to look only at the size of the dividend.",
    "feedback": [
@@ -659,10 +659,10 @@
    "options": [
     "Competition from professionals and algorithms",
     "Because it's banned in Spain",
-    "The noise on minute charts",
+    "A lack of indicators",
     "The costs of trading so much"
    ],
-   "explanation": "It isn't banned: the maths simply works against you."
+   "explanation": "They compete with professionals and algorithms, and trading so much multiplies the costs; the noise on minute charts does the rest. It isn't banned and more indicators won't fix it: the maths works against you."
   },
   "u25l7-8": {
    "prompt": "Real fact or myth?",
@@ -683,13 +683,13 @@
    "prompt": "What do you say to Lumi?",
    "options": [
     "Go for it, you're a natural!",
-    "Take out a loan to have more capital",
-    "Three days prove nothing; the studies say almost everyone loses"
+    "Size up now that you're on a roll",
+    "Three days prove nothing"
    ],
    "explanation": "Before risking your livelihood, look at the evidence and at your own stats over many trades.",
    "feedback": [
     "Three days is a ridiculously small sample… and the data says almost everyone who tries it seriously loses.",
-    "That turns a bad idea into a worse one: losses and debts.",
+    "A three-day streak is luck until proven otherwise: sizing up only makes the next loss bigger.",
     "OK, I'd better keep learning, log 100 trades in the simulator and keep my job."
    ],
    "lines": [
@@ -708,7 +708,7 @@
   "u25l8-6": {
    "prompt": "Laura wants to open a CFD on an index with €1,000 and maximum leverage «to make it go further». She's never used a stop. What would you tell her, as a concept?",
    "options": [
-    "Learn without leverage first; if she ever uses it, a little, with a stop and calculated on the total exposure",
+    "First, learn without leverage",
     "Better to go short, it's safer",
     "Go for it, that way she makes money faster"
    ],
@@ -722,7 +722,7 @@
   "u25l8-7": {
    "prompt": "Why is the loss on a short position potentially unlimited?",
    "options": [
-    "Because the broker doesn't allow stops",
+    "Because the broker doesn't allow stops on shorts",
     "Because the price can rise without limit",
     "Because shorts don't pay commission"
    ],
@@ -759,7 +759,7 @@
    "options": [
     "Day trading with leverage to make up for the lack of time",
     "Day trading on his breaks",
-    "A strategy that doesn't depend on watching the market, like investing every month in an index fund"
+    "A strategy that doesn't need him watching the market"
    ],
    "explanation": "The strategy has to fit into your real life.",
    "feedback": [
@@ -771,9 +771,9 @@
   "u25l9-4": {
    "prompt": "What do you reply?",
    "options": [
-    "Whichever went up most last year",
+    "Whichever went up most last year: that's the one that works",
     "Day trading, it's the fastest",
-    "The one that fits my time, my horizon and what I can take without selling"
+    "The one that fits my time and my horizon"
    ],
    "explanation": "There's no single best strategy for everyone: there's the one you can stick to.",
    "feedback": [
@@ -814,12 +814,12 @@
   "u25l9-10": {
    "prompt": "What questions do you ask yourself before choosing a strategy? Select all that apply.",
    "options": [
-    "How much time can I dedicate to it?",
+    "Which one is most recommended on social media?",
     "Which one has risen most this month?",
     "What fall could I take without selling?",
     "When will I need this money?"
    ],
-   "explanation": "Whatever has risen most this month doesn't tell you which strategy you'll be able to stick to."
+   "explanation": "When you'll need the money and what fall you could take decide which strategy you'll be able to stick to, along with the time you can give it. Whatever has risen most this month or is recommended on social media tells you nothing about you."
   },
   "u25l3-12": {
    "prompt": "Put a value investor's steps in order.",
@@ -835,7 +835,7 @@
    "prompt": "You've held a value fund for six years. Your brother-in-law, with a growth fund, has made twice as much. What do you do?",
    "options": [
     "I switch to his: it's clear which one works",
-    "I check whether my reasons still hold and, if so, I stick to the plan",
+    "I check whether my reasons still hold",
     "I sell everything and stay in cash"
    ],
    "feedback": [
@@ -848,7 +848,7 @@
   "u25l4-13": {
    "prompt": "A company pays a 2.5 % dividend and raises it every year. What does a dividend-growth investor look at?",
    "options": [
-    "Whether profits are growing and can support the increases",
+    "Whether profits are growing too",
     "Only the percentage it pays today",
     "How far it has fallen from its high"
    ],
@@ -864,7 +864,7 @@
    "prompt": "Your «dividend» portfolio holds five stocks: two banks, two utilities and a telecom. What risk do you see?",
    "options": [
     "That's too many stocks",
-    "None: they all pay a good dividend",
+    "None: every one of them pays a good dividend",
     "It's concentrated in three sectors"
    ],
    "feedback": [

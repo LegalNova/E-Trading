@@ -280,8 +280,8 @@
   "u27l1-1": {
    "prompt": "Segons Morningstar, quant va guanyar de menys l'any l'inversor mitjà davant dels seus propis fons en els 10 anys fins al 2025?",
    "options": [
-    "Res",
-    "Al voltant d'1,2 punts",
+    "Res: va guanyar el mateix",
+    "Uns 1,2 punts",
     "Uns 10 punts"
    ],
    "explanation": "9,9 % dels fons davant del 8,7 % dels seus inversors, per comprar i vendre en mal moment."
@@ -291,7 +291,7 @@
    "options": [
     "Compro molt més amb tot el meu coixí",
     "Venc ja, abans que caigui més",
-    "Respiro, rellegeixo el meu pla i avui no toco res"
+    "Rellegeixo el pla i avui no toco res"
    ],
    "explanation": "Les decisions importants, mai amb el cor a mil.",
    "feedback": [
@@ -305,7 +305,7 @@
    "options": [
     "Exactament el mateix",
     "Bastant més que l'ETF",
-    "Molt menys: al voltant de −5,8 % davant de +8,5 %"
+    "Molt menys que l'ETF"
    ],
    "explanation": "Van comprar als pics i van vendre a les caigudes. Són rendibilitats anuals entre el gener del 2024 i el juny del 2026."
   },
@@ -313,11 +313,11 @@
    "prompt": "Què sol posar el sistema 1 a decidir? Marca-les totes.",
    "options": [
     "La pressa",
-    "L'eufòria",
+    "Un pla decidit per endavant",
     "Una llista de comprovació escrita",
     "La por"
    ],
-   "explanation": "Una llista escrita obliga a pensar a poc a poc: és una eina del sistema 2."
+   "explanation": "La pressa i la por, i també l'eufòria, posen el sistema 1 al comandament. Una llista escrita o un pla decidit per endavant obliguen a pensar a poc a poc: són eines del sistema 2."
   },
   "u27l1-9": {
    "prompt": "El problema de la bretxa no és el producte, sinó el ____ de l'inversor.",
@@ -332,9 +332,9 @@
   "u27l1-10": {
    "prompt": "Què li expliques a la Lumi?",
    "options": [
-    "Probablement vas entrar i sortir en mal moment: és la bretxa de l'inversor",
+    "Segurament vas entrar i sortir a deshora",
     "Segur que és una estafa",
-    "Els fons sempre menteixen en les seves dades"
+    "Els fons sempre maquillen les seves dades de rendibilitat"
    ],
    "explanation": "La teva rendibilitat depèn del fons i de quan hi entres i en surts.",
    "feedback": [
@@ -352,7 +352,7 @@
    "options": [
     "El mateix mal que l'alegria de guanyar 100 €",
     "La meitat de mal",
-    "El doble de mal del que alegra guanyar 100 €"
+    "El doble de mal"
    ],
    "explanation": "Kahneman i Tversky, 1979."
   },
@@ -366,8 +366,8 @@
    "prompt": "La Marta té una acció que cau un 30 %. L'empresa ha retallat previsions i ha perdut el seu client més gran. Diu: «No venc fins que recuperi». Quina pregunta s'hauria de fer?",
    "options": [
     "Què diuen al fòrum?",
-    "Si no la tingués, la compraria avui a aquest preu sabent el que sé?",
-    "Quant he perdut ja?"
+    "Si no la tingués, la compraria avui?",
+    "Quant he perdut ja i quant falta per recuperar-ho?"
    ],
    "explanation": "La decisió correcta mira al futur del negoci, no al teu preu de compra.",
    "feedback": [
@@ -404,7 +404,7 @@
   "u27l2-10": {
    "prompt": "Què li contestes a la Lumi?",
    "options": [
-    "Equivocar-se és normal; l'important és decidir amb el que saps avui",
+    "Decideix amb el que saps avui",
     "Compra'n més per abaixar el preu mitjà",
     "Ben fet, aguanta fins que torni"
    ],
@@ -422,8 +422,8 @@
   "u27l3-1": {
    "prompt": "Què és l'efecte disposició?",
    "options": [
-    "Repartir els diners entre molts actius",
-    "Vendre aviat el que guanya i mantenir massa temps el que perd",
+    "Repartir els diners entre molts actius diferents alhora",
+    "Vendre aviat el que guanya i aguantar el que perd",
     "Comprar sempre el que més puja"
    ],
    "explanation": "El va mesurar Odean el 1998 en milers de comptes."
@@ -462,7 +462,7 @@
    "prompt": "Què li dius a la Lumi?",
    "options": [
     "Sí, assegura, mai se sap",
-    "Què deia el teu pla de sortida abans d'entrar?",
+    "Què deia el teu pla de sortida?",
     "Compra'n més amb tot el que tinguis"
    ],
    "explanation": "La sortida es decideix abans d'entrar, no en veure el primer verd.",
@@ -496,9 +496,9 @@
   "u27l5-9": {
    "prompt": "En Bruno ha encertat 3 operacions seguides al simulador. Vol triplicar la mida «perquè ja li ha agafat el truc». Què li passa?",
    "options": [
-    "Excés de confiança: hauria de mantenir el mateix risc i continuar registrant",
+    "Excés de confiança: que mantingui el risc",
     "Hauria de deixar de fer servir stops",
-    "Res, tres de seguides demostren que en sap"
+    "Res: tres de seguides demostren que ja en sap"
    ],
    "explanation": "Després de diversos guanys, la regla és la mateixa: el risc per operació no es toca.",
    "feedback": [
@@ -513,15 +513,15 @@
     "Escriure tres motius pels quals et podries equivocar",
     "Apujar el risc després de cada encert",
     "Comparar-te amb un índex durant diversos anys",
-    "Mesurar els teus resultats en un diari"
+    "Fixar-te només en les teves millors operacions"
    ],
-   "explanation": "Apujar el risc després d'encertar és just el que fa l'excés de confiança."
+   "explanation": "Escriure per què et podries equivocar i comparar-te amb un índex et fan tocar de peus a terra, igual que mesurar tots els teus resultats en un diari. Apujar el risc després d'encertar o mirar només les teves millors operacions és just el que fa l'excés de confiança."
   },
   "u27l5-11": {
    "prompt": "Què li contestes a la Lumi?",
    "options": [
     "Doncs apuja el risc a les teves properes compres",
-    "Amb quatre intents mana la sort: calen moltes més operacions registrades",
+    "Amb quatre intents mana la sort",
     "Sí: quatre de quatre no és casualitat"
    ],
    "explanation": "Amb pocs intents, la sort s'assembla molt al talent: només una mostra gran i mesurada distingeix l'una de l'altre. El temptador és creure's el marcador de quatre rondes.",
@@ -569,9 +569,9 @@
   "u27l6-5": {
    "prompt": "L'Ana ha comprat una acció. Des de llavors només llegeix fòrums alcistes i silencia qui critica l'empresa. Què li recomanaries com a hàbit?",
    "options": [
-    "Escriure tres motius pels quals es podria equivocar i llegir opinions contràries",
+    "Llegir també opinions contràries",
     "Vendre immediatament",
-    "Continuar així, que dona bona energia"
+    "Continuar així, que li dona bona energia"
    ],
    "explanation": "El biaix de confirmació es combat buscant expressament el que et porta la contrària.",
    "feedback": [
@@ -593,7 +593,7 @@
   "u27l6-10": {
    "prompt": "Què li contestes a la Lumi?",
    "options": [
-    "Barat o car depèn del que val el negoci, no de a quant va estar",
+    "Depèn del que val el negoci",
     "Sí, a meitat de preu sempre és una ganga",
     "Espera que caigui un altre 50 % i serà encara més barata"
    ],
@@ -629,7 +629,7 @@
   "u27l7-7": {
    "prompt": "Després d'una caiguda del 30 %, la Marta està convençuda que la borsa «ja només pot baixar» i vol vendre el seu fons indexat de llarg termini. Què li diries?",
    "options": [
-    "Que miri dades de dècades i rellegeixi el seu pla abans de decidir",
+    "Que rellegeixi el seu pla abans de decidir",
     "Que esperi que pugi un 30 % per tornar a comprar",
     "Té raó: el que cau continua caient"
    ],
@@ -646,9 +646,9 @@
     "Influencers que només ensenyen els seus guanys",
     "Un índex que inclou totes les empreses del mercat",
     "Proves d'un sistema només amb empreses que existeixen avui",
-    "Rànquings de fons que no inclouen els que van tancar"
+    "Un diari amb totes les teves operacions, també les dolentes"
    ],
-   "explanation": "Un índex ampli no tria guanyadors a posteriori: compra el mercat sencer."
+   "explanation": "El biaix apareix quan només veus els que han quedat: influencers que ensenyen els seus guanys, proves amb les empreses que existeixen avui o rànquings sense els fons que van tancar. Un índex de tot el mercat o un diari amb totes les teves operacions no trien guanyadors a posteriori."
   },
   "u27l7-10": {
    "prompt": "Recència o supervivència?",
@@ -667,9 +667,9 @@
   "u27l6-11": {
    "prompt": "Un analista publica que una certa acció «val 200 €». Setmanes després, amb pitjors resultats, tu continues pensant en aquests 200 €. Què et passa?",
    "options": [
-    "M'he ancorat en la primera xifra que vaig veure",
+    "M'he ancorat en aquesta xifra",
     "Tinc biaix de confirmació",
-    "Res: 200 € és el seu valor"
+    "Res: 200 € continua sent el seu valor"
    ],
    "feedback": [
     "Això: l'àncora pot ser el teu preu de compra, un màxim o una xifra d'un altre.",

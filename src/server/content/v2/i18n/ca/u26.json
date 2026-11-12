@@ -230,7 +230,7 @@
    "prompt": "Què li dius a la Lumi?",
    "options": [
     "Perfecte, és el pla de tothom",
-    "Això és un desig; un pla diu quan entres, on és l'stop i quant arrisques",
+    "Això és un desig, no un pla",
     "No cal pla si tens intuïció"
    ],
    "explanation": "Un pla són regles comprovables, no bones intencions.",
@@ -250,9 +250,9 @@
     "No faig mitjana a la baixa",
     "No poso mai stop",
     "No moc l'stop en contra",
-    "No opero el dia de resultats"
+    "No compro si la borsa ha caigut"
    ],
-   "explanation": "No posar stop seria saltar-se la base del pla."
+   "explanation": "El pla d'exemple diu «no faig mitjana a la baixa» i «no moc l'stop en contra», i tampoc opera el dia de resultats. No posar stop seria saltar-se la base del pla, i no diu res de deixar de comprar després d'una caiguda."
   },
   "u26l1-10": {
    "prompt": "El teu pla diu: «stop sota el mínim recent». Aplica-ho a aquesta compra en un gràfic real.",
@@ -303,7 +303,7 @@
   "u26l2-6": {
    "prompt": "Quina estadística del diari diu si el teu sistema guanya a llarg termini?",
    "options": [
-    "El nombre d'operacions",
+    "El nombre total d'operacions",
     "L'esperança matemàtica",
     "L'hora d'entrada"
    ],
@@ -313,8 +313,8 @@
    "prompt": "Què li contestes a la Lumi?",
    "options": [
     "Apunta només les guanyadores",
-    "Tens raó, amb la memòria n'hi ha prou",
-    "Sense diari no pots calcular la teva esperança ni veure els teus errors"
+    "Tens raó, amb la memòria n'hi ha prou i de sobres",
+    "Sense diari no pots veure els teus errors"
    ],
    "explanation": "El que no es mesura no es pot millorar.",
    "feedback": [
@@ -332,7 +332,7 @@
    "options": [
     "Opero més de pressa per no donar temps a la pressa",
     "Deixo d'apuntar l'emoció, que m'agobia",
-    "Afegeixo una regla al pla: si tinc pressa, avui no entro"
+    "Afegeixo una regla: amb pressa, avui no entro"
    ],
    "explanation": "El diari serveix per canviar el pla amb dades: si una emoció es repeteix en les pèrdues, es converteix en una regla. La temptació és deixar de mirar el que incomoda.",
    "feedback": [
@@ -385,7 +385,7 @@
    "options": [
     "Doblar el risc per recuperar",
     "Deixar de fer servir stops",
-    "Reduir el risc a la meitat i revisar el pla"
+    "Reduir el risc a la meitat"
    ],
    "explanation": "Quan el compte cau, primer es protegeix; després s'analitza.",
    "feedback": [
@@ -438,7 +438,7 @@
    "options": [
     "Amb tot el capital previst i el mateix risc del simulador",
     "Amb el doble de risc per recuperar el temps perdut",
-    "Amb una fracció petita del capital i la meitat del risc per operació"
+    "Amb poc capital i la meitat del risc"
    ],
    "explanation": "El pas als diners reals es fa en petit i només s'amplia amb dades.",
    "feedback": [
@@ -450,13 +450,13 @@
   "u26l4-6": {
    "prompt": "Què li respons a la Lumi?",
    "options": [
-    "Millor amb un préstec, així guanyes més",
-    "Primer més operacions registrades; després, una part petita i amb la meitat del risc",
+    "Sí, i posa-ho tot de cop per aprofitar la ratxa",
+    "Primer, més operacions registrades",
     "És clar, ja estàs preparada!"
    ],
    "explanation": "Un bon mes al simulador és un punt de partida, no una prova.",
    "feedback": [
-    "Amb deute, una mala ratxa pot ser un problema seriós.",
+    "Entrar amb tot després d'un bon mes és excés de confiança: una mala ratxa et deixaria fora.",
     "D'acord: 100 operacions al diari, esperança després de costos i començar amb poc.",
     "Un mes és molt poc… i amb diners reals la por i la pressa canvien com opero."
    ],
@@ -490,11 +490,11 @@
    "prompt": "Què canvia quan passes del simulador als diners reals? Marca-les totes.",
    "options": [
     "El lliscament en executar ordres",
-    "Els impostos sobre els guanys",
+    "La manera de calcular la mida de la posició",
     "Les matemàtiques de l'esperança",
     "Les emocions en veure pèrdues reals"
    ],
-   "explanation": "Les matemàtiques són les mateixes; el que canvia és com reacciones, els costos reals i Hisenda."
+   "explanation": "Les matemàtiques i la manera de calcular la mida són les mateixes. Canvien les teves emocions en veure pèrdues reals i els costos reals, com el lliscament; i a més apareix Hisenda."
   }
  }
 }

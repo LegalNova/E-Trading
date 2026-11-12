@@ -230,7 +230,7 @@
    "prompt": "¿Qué le dices a Sara?",
    "options": [
     "Perfecto, es el plan de todo el mundo",
-    "Eso es un deseo; un plan dice cuándo entras, dónde está el stop y cuánto arriesgas",
+    "Eso es un deseo, no un plan",
     "No hace falta plan si tienes intuición"
    ],
    "explanation": "Un plan son reglas comprobables, no buenas intenciones.",
@@ -250,9 +250,9 @@
     "No promedio a la baja",
     "No pongo nunca stop",
     "No muevo el stop en contra",
-    "No opero el día de resultados"
+    "No compro si la bolsa ha caído"
    ],
-   "explanation": "No poner stop sería saltarse la base del plan."
+   "explanation": "El plan de ejemplo dice «no promedio a la baja» y «no muevo el stop en contra», y tampoco opera el día de resultados. No poner stop sería saltarse la base del plan, y no dice nada de dejar de comprar tras una caída."
   },
   "u26l1-10": {
    "prompt": "Tu plan dice: «stop bajo el mínimo reciente». Aplícalo a esta compra en un gráfico real.",
@@ -303,7 +303,7 @@
   "u26l2-6": {
    "prompt": "¿Qué estadística del diario dice si tu sistema gana a largo plazo?",
    "options": [
-    "El número de operaciones",
+    "El número total de operaciones",
     "La esperanza matemática",
     "La hora de entrada"
    ],
@@ -313,8 +313,8 @@
    "prompt": "¿Qué le contestas a Nora?",
    "options": [
     "Apunta solo las ganadoras",
-    "Tienes razón, con la memoria basta",
-    "Sin diario no puedes calcular tu esperanza ni ver tus errores"
+    "Tienes razón, con la memoria basta y sobra",
+    "Sin diario no puedes ver tus errores"
    ],
    "explanation": "Lo que no se mide no se puede mejorar.",
    "feedback": [
@@ -332,7 +332,7 @@
    "options": [
     "Opero más rápido para no darle tiempo a la prisa",
     "Dejo de apuntar la emoción, que me agobia",
-    "Añado una regla al plan: si siento prisa, hoy no entro"
+    "Añado una regla: con prisa, hoy no entro"
    ],
    "explanation": "El diario sirve para cambiar el plan con datos: si una emoción se repite en las pérdidas, se convierte en una regla. La tentación es dejar de mirar lo que incomoda.",
    "feedback": [
@@ -385,7 +385,7 @@
    "options": [
     "Doblar el riesgo para recuperar",
     "Dejar de usar stops",
-    "Reducir el riesgo a la mitad y revisar el plan"
+    "Reducir el riesgo a la mitad"
    ],
    "explanation": "Cuando la cuenta cae, primero se protege; después se analiza.",
    "feedback": [
@@ -438,7 +438,7 @@
    "options": [
     "Con todo el capital previsto y el mismo riesgo del simulador",
     "Con el doble de riesgo para recuperar el tiempo perdido",
-    "Con una fracción pequeña del capital y la mitad del riesgo por operación"
+    "Con poco capital y la mitad del riesgo"
    ],
    "explanation": "El paso al dinero real se da en pequeño y se amplía solo con datos.",
    "feedback": [
@@ -450,13 +450,13 @@
   "u26l4-6": {
    "prompt": "¿Qué le respondes a Nora?",
    "options": [
-    "Mejor con un préstamo, así ganas más",
-    "Primero más operaciones registradas; luego, una parte pequeña y con la mitad del riesgo",
+    "Sí, y mete todo de golpe para aprovechar la racha",
+    "Primero, más operaciones registradas",
     "¡Claro, ya estás preparada!"
    ],
    "explanation": "Un buen mes en el simulador es un punto de partida, no una prueba.",
    "feedback": [
-    "Con deuda, una racha mala puede ser un problema serio.",
+    "Entrar con todo tras un buen mes es exceso de confianza: una racha mala te dejaría fuera.",
     "Vale: 100 operaciones en el diario, esperanza tras costes y empezar con poco.",
     "Un mes es muy poco… y con dinero real el miedo y la prisa cambian cómo opero."
    ],
@@ -490,11 +490,11 @@
    "prompt": "¿Qué cambia al pasar del simulador al dinero real? Marca todas.",
    "options": [
     "El deslizamiento al ejecutar órdenes",
-    "Los impuestos sobre las ganancias",
+    "La forma de calcular el tamaño de la posición",
     "Las matemáticas de la esperanza",
     "Las emociones al ver pérdidas reales"
    ],
-   "explanation": "Las matemáticas son las mismas; lo que cambia es cómo reaccionas, los costes reales y Hacienda."
+   "explanation": "Las matemáticas y la forma de calcular el tamaño son las mismas. Cambian tus emociones al ver pérdidas reales y los costes reales, como el deslizamiento; y además aparece Hacienda."
   }
  }
 }

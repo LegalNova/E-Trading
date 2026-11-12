@@ -280,8 +280,8 @@
   "u27l1-1": {
    "prompt": "Según Morningstar, ¿cuánto ganó de menos al año el inversor medio frente a sus propios fondos en los 10 años hasta 2025?",
    "options": [
-    "Nada",
-    "Alrededor de 1,2 puntos",
+    "Nada: ganó lo mismo",
+    "Unos 1,2 puntos",
     "Unos 10 puntos"
    ],
    "explanation": "9,9 % de los fondos frente a 8,7 % de sus inversores, por comprar y vender en mal momento."
@@ -291,7 +291,7 @@
    "options": [
     "Compro mucho más con todo mi colchón",
     "Vendo ya, antes de que caiga más",
-    "Respiro, releo mi plan y no toco nada hoy"
+    "Releo mi plan y hoy no toco nada"
    ],
    "explanation": "Las decisiones importantes, nunca con el corazón a mil.",
    "feedback": [
@@ -305,7 +305,7 @@
    "options": [
     "Exactamente lo mismo",
     "Bastante más que el ETF",
-    "Mucho menos: alrededor de −5,8 % frente a +8,5 %"
+    "Mucho menos que el ETF"
    ],
    "explanation": "Compraron en los picos y vendieron en las caídas. Son rentabilidades anuales entre enero de 2024 y junio de 2026."
   },
@@ -313,11 +313,11 @@
    "prompt": "¿Qué suele poner al sistema 1 a decidir? Marca todas.",
    "options": [
     "La prisa",
-    "La euforia",
+    "Un plan decidido de antemano",
     "Una lista de comprobación escrita",
     "El miedo"
    ],
-   "explanation": "Una lista escrita obliga a pensar despacio: es una herramienta del sistema 2."
+   "explanation": "La prisa y el miedo, y también la euforia, ponen al sistema 1 al mando. Una lista escrita o un plan decidido de antemano obligan a pensar despacio: son herramientas del sistema 2."
   },
   "u27l1-9": {
    "prompt": "El problema de la brecha no es el producto, sino el ____ del inversor.",
@@ -332,9 +332,9 @@
   "u27l1-10": {
    "prompt": "¿Qué le explicas a Laura?",
    "options": [
-    "Probablemente entraste y saliste en mal momento: es la brecha del inversor",
+    "Seguramente entraste y saliste a destiempo",
     "Seguro que es una estafa",
-    "Los fondos siempre mienten en sus datos"
+    "Los fondos siempre maquillan sus datos de rentabilidad"
    ],
    "explanation": "Tu rentabilidad depende del fondo y de cuándo entras y sales.",
    "feedback": [
@@ -352,7 +352,7 @@
    "options": [
     "Lo mismo que alegra ganar 100 €",
     "La mitad",
-    "El doble de lo que alegra ganar 100 €"
+    "El doble"
    ],
    "explanation": "Kahneman y Tversky, 1979."
   },
@@ -366,8 +366,8 @@
    "prompt": "Marta tiene una acción que cae un 30 %. La empresa ha recortado previsiones y perdido su mayor cliente. Dice: «No vendo hasta recuperar». ¿Qué pregunta debería hacerse?",
    "options": [
     "¿Qué dicen en el foro?",
-    "Si no la tuviera, ¿la compraría hoy a este precio sabiendo lo que sé?",
-    "¿Cuánto he perdido ya?"
+    "Si no la tuviera, ¿la compraría hoy?",
+    "¿Cuánto he perdido ya y cuánto falta para recuperarlo?"
    ],
    "explanation": "La decisión correcta mira al futuro del negocio, no a tu precio de compra.",
    "feedback": [
@@ -404,7 +404,7 @@
   "u27l2-10": {
    "prompt": "¿Qué le contestas a Sara?",
    "options": [
-    "Equivocarse es normal; lo importante es decidir con lo que sabes hoy",
+    "Decide con lo que sabes hoy",
     "Compra más para bajar el precio medio",
     "Bien hecho, aguanta hasta que vuelva"
    ],
@@ -422,8 +422,8 @@
   "u27l3-1": {
    "prompt": "¿Qué es el efecto disposición?",
    "options": [
-    "Repartir el dinero entre muchos activos",
-    "Vender pronto lo que gana y mantener demasiado lo que pierde",
+    "Repartir el dinero entre muchos activos distintos a la vez",
+    "Vender pronto lo que gana y aguantar lo que pierde",
     "Comprar siempre lo que más sube"
    ],
    "explanation": "Lo midió Odean en 1998 en miles de cuentas."
@@ -462,7 +462,7 @@
    "prompt": "¿Qué le dices a Nora?",
    "options": [
     "Sí, asegura, nunca se sabe",
-    "¿Qué decía tu plan de salida antes de entrar?",
+    "¿Qué decía tu plan de salida?",
     "Compra más con todo lo que tengas"
    ],
    "explanation": "La salida se decide antes de entrar, no al ver el primer verde.",
@@ -496,9 +496,9 @@
   "u27l5-9": {
    "prompt": "Bruno ha acertado 3 operaciones seguidas en el simulador. Quiere triplicar el tamaño «porque ya le ha pillado el truco». ¿Qué le pasa?",
    "options": [
-    "Exceso de confianza: debería mantener el mismo riesgo y seguir registrando",
+    "Exceso de confianza: que mantenga el riesgo",
     "Debería dejar de usar stops",
-    "Nada, tres seguidas prueban que sabe"
+    "Nada: tres seguidas prueban que ya sabe operar"
    ],
    "explanation": "Tras varias ganancias, la regla es la misma: el riesgo por operación no se toca.",
    "feedback": [
@@ -513,15 +513,15 @@
     "Escribir tres motivos por los que podrías equivocarte",
     "Subir el riesgo después de cada acierto",
     "Compararte con un índice durante varios años",
-    "Medir tus resultados en un diario"
+    "Fijarte solo en tus mejores operaciones"
    ],
-   "explanation": "Subir el riesgo tras acertar es justo lo que hace el exceso de confianza."
+   "explanation": "Escribir por qué podrías equivocarte y compararte con un índice te ponen los pies en el suelo, igual que medir todos tus resultados en un diario. Subir el riesgo tras acertar o mirar solo tus mejores operaciones es justo lo que hace el exceso de confianza."
   },
   "u27l5-11": {
    "prompt": "¿Qué le contestas a Laura?",
    "options": [
     "Entonces sube el riesgo en tus próximas compras",
-    "Con cuatro intentos manda la suerte: hacen falta muchas más operaciones registradas",
+    "Con cuatro intentos manda la suerte",
     "Sí: cuatro de cuatro no es casualidad"
    ],
    "explanation": "Con pocos intentos, la suerte se parece mucho al talento: solo una muestra grande y medida distingue una de otro. Lo tentador es creerse el marcador de cuatro rondas.",
@@ -569,9 +569,9 @@
   "u27l6-5": {
    "prompt": "Ana ha comprado una acción. Desde entonces solo lee foros alcistas y silencia a quien critica la empresa. ¿Qué le recomendarías como hábito?",
    "options": [
-    "Escribir tres motivos por los que podría equivocarse y leer opiniones contrarias",
+    "Leer también opiniones contrarias",
     "Vender inmediatamente",
-    "Seguir así, que da buena energía"
+    "Seguir así, que le da buena energía"
    ],
    "explanation": "El sesgo de confirmación se combate buscando a propósito lo que te lleva la contraria.",
    "feedback": [
@@ -593,7 +593,7 @@
   "u27l6-10": {
    "prompt": "¿Qué le contestas a Sara?",
    "options": [
-    "Barato o caro depende de lo que vale el negocio, no de a cuánto estuvo",
+    "Depende de lo que vale el negocio",
     "Sí, a mitad de precio siempre es una ganga",
     "Espera a que caiga otro 50 % y será aún más barata"
    ],
@@ -611,9 +611,9 @@
   "u27l6-11": {
    "prompt": "Un analista publica que cierta acción «vale 200 €». Semanas después, con peores resultados, tú sigues pensando en esos 200 €. ¿Qué te pasa?",
    "options": [
-    "Me he anclado en la primera cifra que vi",
+    "Me he anclado en esa cifra",
     "Tengo sesgo de confirmación",
-    "Nada: 200 € es su valor"
+    "Nada: 200 € sigue siendo su valor"
    ],
    "explanation": "Cualquier número puede hacer de ancla. Vuelve a valorar con los datos de hoy.",
    "feedback": [
@@ -643,7 +643,7 @@
   "u27l7-7": {
    "prompt": "Tras una caída del 30 %, Marta está convencida de que la bolsa «ya solo puede bajar» y quiere vender su fondo indexado de largo plazo. ¿Qué le dirías?",
    "options": [
-    "Que mire datos de décadas y relea su plan antes de decidir",
+    "Que relea su plan antes de decidir",
     "Que espere a que suba un 30 % para volver a comprar",
     "Tiene razón: lo que cae, sigue cayendo"
    ],
@@ -660,9 +660,9 @@
     "Influencers que solo enseñan sus ganancias",
     "Un índice que incluye a todas las empresas del mercado",
     "Pruebas de un sistema solo con empresas que existen hoy",
-    "Rankings de fondos que no incluyen los que cerraron"
+    "Un diario con todas tus operaciones, también las malas"
    ],
-   "explanation": "Un índice amplio no elige ganadores a posteriori: compra el mercado entero."
+   "explanation": "El sesgo aparece cuando solo ves a los que quedaron: influencers que enseñan sus ganancias, pruebas con las empresas que existen hoy o rankings sin los fondos que cerraron. Un índice de todo el mercado o un diario con todas tus operaciones no eligen ganadores a posteriori."
   },
   "u27l7-10": {
    "prompt": "¿Recencia o supervivencia?",
