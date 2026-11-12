@@ -219,41 +219,42 @@ export default unit({
       scenario('Quieres guardar en bonos el dinero de la entrada de un piso para dentro de 5 años. Te ofrecen dos: uno de un emisor con nota AAA y otro de una empresa con nota BB que paga bastante más. ¿Cuál eliges?', [['El de nota BB: paga más', 'Paga más porque el riesgo de no cobrar es mayor, y ese dinero no te lo puedes jugar.'], ['El de nota AAA, aunque pague menos', 'Bien: para un dinero con fecha que no puedes perder, manda la seguridad de cobrar.'], ['Mitad y mitad, para tener de los dos', 'Mejor que todo en BB, pero sigues arriesgando parte de un dinero que necesitas sí o sí.']], 1, 'Un cupón más alto es el precio de un riesgo de impago mayor. Para un dinero que necesitas en una fecha, la nota alta protege lo que importa; el interés extra tienta, pero puede costarte parte de la entrada.'),
     ], { source: '2.2', minutes: 6, retire: [3, 4, 5, 8, 9] }),
 
-    lesson('u9l5', 'Letras del Tesoro y depósitos', [
-      story('La entrada del piso', [{ id: 'laura', name: 'Laura' }], [
-        say('laura', 'Tengo 15.000 € para la entrada de un piso. Firmo dentro de 10 meses.'),
-        say('laura', 'Mi primo dice que en bolsa sacaría mucho más.'),
-        choose('¿Qué le recomiendas?', [
-          opt('Acciones, para que crezca más', 'bad', say('lumi', 'En 10 meses la bolsa puede caer un 20 % justo cuando lo necesite.')),
-          opt('Una letra o un depósito que venza antes de la firma', 'good', say('lumi', '¡Bien! Poco riesgo, y el dinero estará ahí el día que firme.')),
-          opt('Dejarlo en la cuenta al 0 %', 'ok', say('lumi', 'Es seguro, pero renuncia a un interés casi sin riesgo.')),
+    // Rehecha en la auditoría (RED-7, RED-16 y RED-31): depósitos, cuentas y garantía de depósitos se explican en u11l5.
+    // Esta clase se queda con las letras: compra al descuento, subasta, cómo pedirlas e impuestos.
+    // Fuente (12-11-2026): Tesoro Público, «Letras del Tesoro», https://www.tesoro.es/deuda-publica/los-valores-del-tesoro/letras-del-tesoro
+    // (plazos de 3, 6, 9 y 12 meses; petición mínima de 1.000 €; emisión por subasta, al descuento; rendimientos sin retención a cuenta).
+    lesson('u9l5', 'Letras del Tesoro', [
+      story('Pagar 970 € por 1.000 €', [{ id: 'marc', name: 'Marc' }], [
+        say('marc', 'He pedido una letra a 12 meses en la subasta del Tesoro. Me han cobrado **970 €** y dentro de un año me devuelven **1.000 €**.'),
+        say('marc', '¿Y los intereses? No veo ningún cupón.'),
+        choose('¿Dónde está su interés?', [
+          opt('No tiene: las letras no pagan nada', 'bad', say('lumi', 'Sí paga, pero no con cupones.')),
+          opt('En los 30 € que hay entre lo que paga y lo que recibe', 'good', say('lumi', 'Eso es comprar **al descuento**: 30 ÷ 970 = un 3,09 %.')),
+          opt('En un cupón que cobrará al final', 'ok', say('lumi', 'No hay cupón: el interés es la diferencia entre los 970 € y los 1.000 €.')),
         ]),
-        say('laura', '¿Y si mi banco quebrara?'),
-        say('lumi', 'El FGD cubre hasta 100.000 € por titular y entidad: sus 15.000 € estarían cubiertos.'),
+        say('marc', '¿Y si necesito el dinero antes del año?'),
+        say('lumi', 'Puedes venderla en el mercado, al precio de ese día: algo más o algo menos de lo que esperabas.'),
+        say('lumi', 'Si esperas al vencimiento, recibes los 1.000 €, hayan hecho lo que hayan hecho los tipos.'),
       ]),
       play({
-        title: '¿Letra o depósito?',
-        intro: 'Dos sitios para el dinero que vas a necesitar pronto: una **letra del Tesoro** o un **depósito a plazo** en un banco. ¿De cuál es cada rasgo?',
-        widget: {
-          kind: 'sort',
-          bins: [{ label: 'Letra del Tesoro' }, { label: 'Depósito a plazo' }],
-          cards: [
-            { icon: 'tag', label: 'Pagas 980 € y al vencimiento recibes 1.000 €', bin: 0, why: 'Las letras no pagan cupón: se compran al descuento y esos 20 € son tu interés.' },
-            { icon: 'shield', label: 'Cubierto por el FGD hasta 100.000 €', bin: 1, why: 'El Fondo de Garantía de Depósitos cubre hasta 100.000 € por titular y entidad.' },
-            { icon: 'calendar', label: 'Plazos de 3, 6, 9 o 12 meses', bin: 0, why: 'Las letras son deuda del Estado a un año o menos.' },
-            { icon: 'bank', label: 'Lo respalda el propio Estado', bin: 0, why: 'Las letras no tienen FGD: su garantía es el Estado.' },
-            { icon: 'lock', label: 'Si lo sacas antes, puede haber penalización', bin: 1, why: 'Dejas el dinero en el banco durante un plazo, a un tipo pactado.' },
-            { icon: 'building', label: 'Se compra en las subastas del Tesoro, desde 1.000 €', bin: 0, why: 'Directamente o a través de tu banco o bróker.' },
-          ],
+        title: 'El descuento lo pone el tipo',
+        intro: 'Una letra a 12 meses devuelve siempre **1.000 €**. Mueve el tipo de interés y mira cuánto pagarías hoy por ella.',
+        widget: { kind: 'bond', head: 'Lo que pagas hoy por una letra que devuelve 1.000 € dentro de un año', face: 1000, coupon: 0, years: 1, rate: 3, maxRate: 6, maxYears: 1 },
+        predict: {
+          prompt: 'Si el tipo de las letras sube del 2 % al 4 %, ¿qué pasa con el precio de una letra nueva?',
+          options: ['Sube: pagas más', 'Baja: pagas menos por los mismos 1.000 €', 'No cambia'],
+          answer: 1,
+          why: 'Al 2 % pagarías **980,39 €**; al 4 %, **961,54 €**. Cuanto más alto es el tipo, mayor es el descuento.',
         },
-        goal: { text: 'Clasifica los seis rasgos.', when: [when('done', '==', 6)] },
-        insight: 'Las letras se compran **al descuento** y las respalda el Estado; los depósitos los cubre el **FGD** hasta 100.000 € por titular y entidad.',
+        goal: { text: 'Busca el tipo con el que la letra cuesta menos de 955 €.', when: [when('price', '<', 955)] },
+        insight: 'Lo que cambia de una letra a otra es **cuánto pagas hoy**: ese descuento es tu interés, y lo fija cada **subasta**.',
         lumi: [
-          { when: when('wrong', '>=', 2), say: 'Pista: ¿te lo debe el Estado o un banco?', mood: 'THINKING' },
-          { say: 'Clasifica cada rasgo', mood: 'HAPPY' },
+          { when: when('price', '<', 955), say: 'Con tipos altos, la letra se compra más barata y rinde más.', mood: 'HAPPY' },
+          { when: when('rate', '<=', 1), say: 'Con tipos casi a cero, apenas hay descuento.', mood: 'THINKING' },
+          { say: 'Sube y baja el tipo de interés', mood: 'HAPPY' },
         ],
       }),
-      key('Cómo comparar', 'Compara siempre la rentabilidad **anual** (TAE o TIR) neta de comisiones. Los intereses de letras y depósitos tributan en la base del ahorro (desde el 19 %).\n\nNinguno de los dos es para hacerse rico: son para el dinero que necesitarás pronto. Y por encima de 100.000 € en un banco, reparte entre varias entidades.', 'Letras y depósitos: poco riesgo y poca rentabilidad, para el corto plazo.', 'Pruébalo: en Mercado, busca SGOV, un ETF de letras del Tesoro de EE. UU. a muy corto plazo, y mira lo poco que se mueve.'),
+      key('Cómo se compra una letra', 'El Tesoro las emite por **subasta**, a 3, 6, 9 y 12 meses. Cada petición es de **1.000 €** como mínimo.\n\n• **Dónde**: en la web del Tesoro, con una cuenta directa en el Banco de España, o a través de tu banco o bróker (pregunta la comisión).\n• **Petición no competitiva**: aceptas el precio medio de la subasta. Es la habitual para un particular.\n• **Impuestos**: el interés no lleva retención, pero se declara en la renta.', 'Una letra es un préstamo corto al Estado: pagas menos de 1.000 € hoy y recibes 1.000 € al vencimiento.', 'Pruébalo: pregúntale a Lumi cómo se pide una letra en la web del Tesoro.'),
     ], [
       num('Compras una letra a 12 meses por 980 € y al vencimiento recibes 1.000 €. ¿Qué rentabilidad obtienes? (dos decimales)', 2.04, '%', '20 ÷ 980 = 2,04 %.'),
       num('Un depósito de 10.000 € al 2,5 % TAE durante un año. Con la retención del 19 %, ¿cuánto ganas neto?', 202.5, '€', '10.000 × 2,5 % = 250 € brutos; 250 × 0,81 = 202,50 € netos.'),
@@ -267,7 +268,11 @@ export default unit({
       fill('Las letras del Tesoro se compran desde ____ €.', '1.000', ['100', '10.000', '50'], 'Es el importe mínimo en las subastas del Tesoro.'),
       scenario('Tu banco te ofrece un depósito a 12 meses, pero no sabes si necesitarás el dinero antes. ¿Qué miras antes de firmar?', [['Solo la TAE: cuanto más alta, mejor', 'La TAE importa, pero si lo cancelas antes, la penalización puede comerse el interés.'], ['La penalización por sacarlo antes y si el plazo encaja con cuándo lo necesitarás', 'Bien: un depósito encaja si el plazo coincide con tu plan. Si no, quizá te convenga una letra más corta.'], ['Nada: todos los depósitos son iguales', 'Cambian el tipo, el plazo y la penalización: compáralos.']], 1, 'Un depósito te ata durante un plazo: lo primero es que encaje con cuándo necesitarás el dinero. Fijarse solo en la TAE más alta tienta, pero cancelar antes puede salir caro.'),
       chat(['Tengo 3.000 € para el viaje de fin de curso, dentro de 6 meses.', '¿Los meto en un ETF de acciones para sacar algo más?'], '¿Qué le contestas?', [['Mejor una letra a 6 meses o un depósito: en 6 meses la bolsa puede caer', 'Eso. Para un dinero con fecha tan cercana, prima que esté ahí.'], ['Sí: en 6 meses seguro que sube', 'Nadie lo sabe. Puede caer justo antes del viaje.'], ['Mejor en bitcoin, que sube más', 'Aún más volátil: podrías quedarte sin viaje.']], 0, 'El plazo manda: en 6 meses la bolsa puede estar abajo justo cuando necesites el dinero. Una letra o un depósito que venza a tiempo rinde poco, pero el dinero estará ahí; la bolsa tienta porque rinde más a largo plazo, no en unos meses.'),
-    ], { source: '2.2', minutes: 6, retire: [0, 1, 3, 5, 7, 8] }),
+      num('Compras una letra a 12 meses por 960 € y al vencimiento recibes 1.000 €. ¿Qué rentabilidad obtienes? (dos decimales)', 4.17, '%', '40 ÷ 960 = 0,0417 → 4,17 %.'),
+      scenario('Compraste una letra a 12 meses. A los 6 meses necesitas el dinero, y los tipos han subido. ¿Qué pasa si la vendes ahora?', [['Recibo los 1.000 € igualmente', 'Los 1.000 € solo están asegurados al vencimiento.'], ['La vendo al precio de mercado, que puede ser menor de lo que esperaba', 'Eso: si los tipos han subido, las letras nuevas rinden más y la tuya vale algo menos.'], ['No se puede vender antes de que venza', 'Sí se puede: hay un mercado donde se compran y venden.']], 1, 'Hasta el vencimiento, el precio de una letra se mueve con los tipos, aunque poco, porque su plazo es corto.'),
+      tf('El interés de una letra del Tesoro no lleva retención, pero hay que declararlo en la renta.', true, 'Está exento de retención a cuenta, no de impuestos: tributa en la base del ahorro.'),
+      order('Ordena lo que pasa desde que pides una letra hasta que vence.', ['Haces una petición no competitiva', 'Se celebra la subasta y se fija el precio', 'Te cobran ese precio', 'Al vencimiento recibes 1.000 €'], 'Pides, la subasta fija el precio, lo pagas y al final recibes el nominal.'),
+    ], { source: '2.2', minutes: 6, retire: [0, 1, 2, 3, 5, 6, 7, 8, 10, 11] }),
 
     lesson('u9l6', 'Bonos ligados a la inflación', [
       story('Protegida… ¿de todo?', [{ id: 'marta', name: 'Marta' }], [

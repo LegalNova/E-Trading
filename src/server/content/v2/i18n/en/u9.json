@@ -222,54 +222,48 @@
    ]
   },
   "u9l5": {
-   "title": "Treasury bills and deposits",
+   "title": "Treasury bills",
    "steps": [
     {
      "texts": [
-      "Saving for a flat",
-      "Laura",
-      "I've got €15,000 for the deposit on a flat. I sign in 10 months.",
-      "My cousin says I'd make way more on the stock market.",
-      "What do you recommend?",
-      "Shares, so it grows more",
-      "In 10 months the market could drop 20 % right when she needs the money.",
-      "A Treasury bill or fixed-term deposit that matures before she signs",
-      "Nice! Low risk, and the money will be there on the day she signs.",
-      "Leave it in her account at 0 %",
-      "It's safe, but she's giving up almost risk-free interest.",
-      "And what if my bank went bust?",
-      "The FGD covers up to €100,000 per holder and per bank: her €15,000 would be covered."
+      "Paying €970 for €1,000",
+      "Marc",
+      "I've asked for a 12-month bill at the Treasury auction. They charged me **€970** and in a year they'll pay me back **€1,000**.",
+      "And the interest? I don't see any coupon.",
+      "Where is his interest?",
+      "There isn't any: bills pay nothing",
+      "They do pay, just not with coupons.",
+      "In the €30 between what he pays and what he gets back",
+      "That's buying **at a discount**: 30 ÷ 970 = 3.09 %.",
+      "In a coupon he'll collect at the end",
+      "There's no coupon: the interest is the difference between the €970 and the €1,000.",
+      "And what if I need the money before the year is up?",
+      "You can sell it in the market, at that day's price: a bit more or a bit less than you expected.",
+      "If you wait until maturity, you get the €1,000 whatever rates have done."
      ]
     },
     {
      "texts": [
-      "Bill or deposit?",
-      "Two places for money you'll need soon: a **Treasury bill** or a **fixed-term deposit** at a bank. Which one does each feature belong to?",
-      "Treasury bill",
-      "Fixed-term deposit",
-      "You pay €980 and get €1,000 at maturity",
-      "Bills don't pay a coupon: they're bought at a discount and those €20 are your interest.",
-      "Covered by the FGD up to €100,000",
-      "The Fondo de Garantía de Depósitos (Spain's deposit guarantee scheme) covers up to €100,000 per holder and per bank.",
-      "Terms of 3, 6, 9 or 12 months",
-      "Bills are government debt for a year or less.",
-      "Backed by the state itself",
-      "Bills aren't covered by the FGD: their guarantee is the state.",
-      "If you take the money out early, there may be a penalty",
-      "You leave the money in the bank for a set term, at an agreed rate.",
-      "Bought at Treasury auctions, from €1,000",
-      "Directly or through your bank or broker.",
-      "Sort all six features.",
-      "Bills are bought **at a discount** and backed by the state; deposits are covered by the **FGD** up to €100,000 per holder and per bank.",
-      "Hint: does the state owe it to you, or a bank?",
-      "Sort each feature"
+      "The rate sets the discount",
+      "A 12-month bill always pays back **€1,000**. Move the interest rate and see how much you'd pay for it today.",
+      "What you pay today for a bill that pays back €1,000 in a year",
+      "If the rate on bills rises from 2 % to 4 %, what happens to the price of a new bill?",
+      "It goes up: you pay more",
+      "It goes down: you pay less for the same €1,000",
+      "It doesn't change",
+      "At 2 % you'd pay **€980.39**; at 4 %, **€961.54**. The higher the rate, the bigger the discount.",
+      "Find the rate at which the bill costs less than €955.",
+      "What changes from one bill to another is **how much you pay today**: that discount is your interest, and each **auction** sets it.",
+      "With high rates, the bill is cheaper to buy and yields more.",
+      "With rates close to zero, there's hardly any discount.",
+      "Move the interest rate up and down"
      ]
     },
     {
-     "title": "How to compare",
-     "body": "Always compare the **annual** return (APR or YTM) after fees. Interest from bills and deposits is taxed in the savings income band (from 19 %).\n\nNeither will make you rich: they're for money you'll need soon. And above €100,000 in one bank, spread it across several banks.",
-     "key": "Bills and deposits: low risk and low return, for the short term.",
-     "tip": "Try it: in Market, search for SGOV, an ETF of very short-term US Treasury bills, and see how little it moves."
+     "title": "How to buy a bill",
+     "body": "The Spanish Treasury issues them by **auction**, at 3, 6, 9 and 12 months. Each request is for at least **€1,000**.\n\n• **Where**: on the Treasury's website, with a direct account at the Banco de España, or through your bank or broker (ask about the commission).\n• **Non-competitive bid**: you accept the auction's average price. It's the usual choice for an individual.\n• **Tax**: no tax is withheld on the interest, but you declare it on your tax return.",
+     "key": "A bill is a short loan to the State: you pay less than €1,000 today and get €1,000 at maturity.",
+     "tip": "Try it: ask Lumi how to request a bill on the Treasury's website."
     }
    ]
   },
@@ -617,12 +611,6 @@
     "Better than all in BB, but you're still risking part of money you definitely need."
    ]
   },
-  "u9l5-3": {
-   "prompt": "You have €130,000 in a deposit at a single bank. If the bank goes bust, how much falls outside the deposit guarantee scheme (FGD)?",
-   "options": [],
-   "explanation": "It covers up to €100,000 per holder and per bank: 130,000 − 100,000 = €30,000 uncovered.",
-   "unit": "€"
-  },
   "u9l5-5": {
    "prompt": "What terms does the Spanish Treasury issue bills at?",
    "options": [
@@ -631,21 +619,6 @@
     "10 and 30 years"
    ],
    "explanation": "Bills are always one year or less."
-  },
-  "u9l5-7": {
-   "prompt": "Which time horizon does each product suit best?",
-   "options": [
-    "Global equity index fund",
-    "Money market fund",
-    "Monthly contribution to a global ETF",
-    "6-month bill",
-    "12-month deposit"
-   ],
-   "explanation": "For the short term, safety comes first; over decades, long-term returns matter more than the ups and downs.",
-   "right": [
-    "Money I'll need in under 1 year",
-    "Money for 20 years from now"
-   ]
   },
   "u9l5-10": {
    "prompt": "Spanish Treasury bills can be bought from ____ €.",
@@ -656,38 +629,6 @@
     "1,000"
    ],
    "explanation": "It's the minimum amount at Treasury auctions."
-  },
-  "u9l5-11": {
-   "prompt": "Your bank offers you a 12-month deposit, but you don't know whether you'll need the money sooner. What do you check before signing?",
-   "options": [
-    "The penalty for taking it out early and whether the term fits when you'll need it",
-    "Nothing: all deposits are the same",
-    "Just the APR: the higher, the better"
-   ],
-   "explanation": "A deposit ties you in for a term: the first thing is that it fits when you'll need the money. Looking only at the highest APR is tempting, but cancelling early can be costly.",
-   "feedback": [
-    "Good: a deposit fits if the term matches your plan. If not, a shorter bill may suit you better.",
-    "The rate, the term and the penalty differ: compare them.",
-    "The APR matters, but if you cancel early, the penalty can eat up the interest."
-   ]
-  },
-  "u9l5-12": {
-   "prompt": "What do you reply?",
-   "options": [
-    "Yes: in 6 months it's sure to go up",
-    "Better in bitcoin, it rises more",
-    "Better a 6-month bill or a deposit: in 6 months the stock market could fall"
-   ],
-   "explanation": "The term rules: in 6 months the stock market may be down just when you need the money. A bill or deposit that matures in time returns little, but the money will be there; the stock market is tempting because it returns more over the long run, not in a few months.",
-   "feedback": [
-    "Nobody knows. It could fall just before the trip.",
-    "Even more volatile: you could end up with no trip.",
-    "That's it. For money needed so soon, what counts is that it's there."
-   ],
-   "lines": [
-    "I have €3,000 for the end-of-year trip, in 6 months.",
-    "Should I put it in an equity ETF to make a bit more?"
-   ]
   },
   "u9l6-4": {
    "prompt": "When does the inflation-linked bond beat the regular one?",
@@ -751,6 +692,44 @@
     "Good: its face value rises with inflation. If inflation is higher than expected, it beats the normal one.",
     "The linked one is designed exactly for that, if you hold it to the end."
    ]
+  },
+  "u9l5-13": {
+   "unit": "%",
+   "prompt": "You buy a 12-month bill for €960 and at maturity you get €1,000. What return do you get? (two decimals)",
+   "options": [],
+   "explanation": "40 ÷ 960 = 0.0417 → 4.17 %."
+  },
+  "u9l5-14": {
+   "prompt": "You bought a 12-month bill. After 6 months you need the money, and rates have gone up. What happens if you sell it now?",
+   "options": [
+    "It can't be sold before it matures",
+    "I sell it at the market price, which may be lower than I expected",
+    "I get the €1,000 anyway"
+   ],
+   "feedback": [
+    "It can: there's a market where bills are bought and sold.",
+    "That's it: if rates have risen, new bills yield more and yours is worth a little less.",
+    "The €1,000 is only guaranteed at maturity."
+   ],
+   "explanation": "Until maturity, a bill's price moves with rates, though only a little, because its term is short."
+  },
+  "u9l5-15": {
+   "prompt": "No tax is withheld on the interest from a Spanish Treasury bill, but you have to declare it on your tax return.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It's exempt from withholding, not from tax: it's taxed as savings income."
+  },
+  "u9l5-16": {
+   "prompt": "Put in order what happens from the moment you request a bill until it matures.",
+   "options": [
+    "You're charged that price",
+    "At maturity you get €1,000",
+    "The auction is held and the price is set",
+    "You place a non-competitive bid"
+   ],
+   "explanation": "You place the request, the auction sets the price, you pay it and at the end you get the face value."
   }
  }
 }

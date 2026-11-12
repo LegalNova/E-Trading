@@ -222,54 +222,48 @@
    ]
   },
   "u9l5": {
-   "title": "Lletres del Tresor i dipòsits",
+   "title": "Lletres del Tresor",
    "steps": [
     {
      "texts": [
-      "L'entrada del pis",
-      "Laura",
-      "Tinc 15.000 € per a l'entrada d'un pis. Signo d'aquí a 10 mesos.",
-      "El meu cosí diu que a la borsa en trauria molt més.",
-      "Què li recomanes?",
-      "Accions, perquè creixin més",
-      "En 10 mesos la borsa pot caure un 20 % just quan els necessiti.",
-      "Una lletra o un dipòsit que venci abans de signar",
-      "Molt bé! Poc risc, i els diners hi seran el dia que signi.",
-      "Deixar-los al compte al 0 %",
-      "És segur, però renuncia a un interès gairebé sense risc.",
-      "I si el meu banc fes fallida?",
-      "El FGD cobreix fins a 100.000 € per titular i entitat: els seus 15.000 € estarien coberts."
+      "Pagar 970 € per 1.000 €",
+      "Marc",
+      "He demanat una lletra a 12 mesos a la subhasta del Tresor. M'han cobrat **970 €** i d'aquí a un any me'n tornen **1.000 €**.",
+      "I els interessos? No veig cap cupó.",
+      "On és el seu interès?",
+      "No en té: les lletres no paguen res",
+      "Sí que paga, però no amb cupons.",
+      "En els 30 € que hi ha entre el que paga i el que rep",
+      "Això és comprar **al descompte**: 30 ÷ 970 = un 3,09 %.",
+      "En un cupó que cobrarà al final",
+      "No hi ha cupó: l'interès és la diferència entre els 970 € i els 1.000 €.",
+      "I si necessito els diners abans de l'any?",
+      "La pots vendre al mercat, al preu d'aquell dia: una mica més o una mica menys del que esperaves.",
+      "Si esperes al venciment, reps els 1.000 €, hagin fet el que hagin fet els tipus."
      ]
     },
     {
      "texts": [
-      "Lletra o dipòsit?",
-      "Dos llocs per als diners que necessitaràs aviat: una **lletra del Tresor** o un **dipòsit a termini** en un banc. De quin és cada tret?",
-      "Lletra del Tresor",
-      "Dipòsit a termini",
-      "Pagues 980 € i al venciment en reps 1.000 €",
-      "Les lletres no paguen cupó: es compren al descompte i aquests 20 € són el teu interès.",
-      "Cobert pel FGD fins a 100.000 €",
-      "El Fons de Garantia de Dipòsits cobreix fins a 100.000 € per titular i entitat.",
-      "Terminis de 3, 6, 9 o 12 mesos",
-      "Les lletres són deute de l'Estat a un any o menys.",
-      "L'avala el mateix Estat",
-      "Les lletres no tenen FGD: la seva garantia és l'Estat.",
-      "Si els treus abans, hi pot haver penalització",
-      "Deixes els diners al banc durant un termini, a un tipus pactat.",
-      "Es compra a les subhastes del Tresor, des de 1.000 €",
-      "Directament o a través del teu banc o bròquer.",
-      "Classifica els sis trets.",
-      "Les lletres es compren **al descompte** i les avala l'Estat; els dipòsits els cobreix el **FGD** fins a 100.000 € per titular i entitat.",
-      "Pista: t'ho deu l'Estat o un banc?",
-      "Classifica cada tret"
+      "El descompte el posa el tipus",
+      "Una lletra a 12 mesos torna sempre **1.000 €**. Mou el tipus d'interès i mira quant pagaries avui per ella.",
+      "El que pagues avui per una lletra que torna 1.000 € d'aquí a un any",
+      "Si el tipus de les lletres puja del 2 % al 4 %, què passa amb el preu d'una lletra nova?",
+      "Puja: pagues més",
+      "Baixa: pagues menys pels mateixos 1.000 €",
+      "No canvia",
+      "Al 2 % pagaries **980,39 €**; al 4 %, **961,54 €**. Com més alt és el tipus, més gran és el descompte.",
+      "Busca el tipus amb què la lletra costa menys de 955 €.",
+      "El que canvia d'una lletra a una altra és **quant pagues avui**: aquest descompte és el teu interès, i el fixa cada **subhasta**.",
+      "Amb tipus alts, la lletra es compra més barata i rendeix més.",
+      "Amb tipus gairebé a zero, amb prou feines hi ha descompte.",
+      "Apuja i abaixa el tipus d'interès"
      ]
     },
     {
-     "title": "Com comparar",
-     "body": "Compara sempre la rendibilitat **anual** (TAE o TIR) neta de comissions. Els interessos de lletres i dipòsits tributen a la base de l'estalvi (des del 19 %).\n\nCap dels dos no serveix per fer-se ric: són per als diners que necessitaràs aviat. I per sobre de 100.000 € en un banc, reparteix-los entre diverses entitats.",
-     "key": "Lletres i dipòsits: poc risc i poca rendibilitat, per al curt termini.",
-     "tip": "Prova-ho: a Mercat, cerca SGOV, un ETF de lletres del Tresor dels EUA a molt curt termini, i mira que poc es mou."
+     "title": "Com es compra una lletra",
+     "body": "El Tresor les emet per **subhasta**, a 3, 6, 9 i 12 mesos. Cada petició és d'**1.000 €** com a mínim.\n\n• **On**: al web del Tresor, amb un compte directe al Banc d'Espanya, o a través del teu banc o bròquer (pregunta'n la comissió).\n• **Petició no competitiva**: acceptes el preu mitjà de la subhasta. És l'habitual per a un particular.\n• **Impostos**: l'interès no porta retenció, però es declara a la renda.",
+     "key": "Una lletra és un préstec curt a l'Estat: pagues menys de 1.000 € avui i reps 1.000 € al venciment.",
+     "tip": "Prova-ho: pregunta a la Lumi com es demana una lletra al web del Tresor."
     }
    ]
   },
@@ -617,12 +611,6 @@
     "Millor que tot en BB, però continues arriscant part d'uns diners que necessites sí o sí."
    ]
   },
-  "u9l5-3": {
-   "prompt": "Tens 130.000 € en un dipòsit d'un sol banc. Si el banc fa fallida, quant queda fora del Fons de Garantia de Dipòsits?",
-   "options": [],
-   "explanation": "Cobreix fins a 100.000 € per titular i entitat: 130.000 − 100.000 = 30.000 € sense cobrir.",
-   "unit": "€"
-  },
   "u9l5-5": {
    "prompt": "A quins terminis emet lletres el Tresor?",
    "options": [
@@ -631,21 +619,6 @@
     "10 i 30 anys"
    ],
    "explanation": "Les lletres són sempre d'un any o menys."
-  },
-  "u9l5-7": {
-   "prompt": "Per a quin horitzó encaixa millor cada producte?",
-   "options": [
-    "Fons indexat d'accions mundials",
-    "Fons monetari",
-    "Aportació mensual a un ETF mundial",
-    "Lletra a 6 mesos",
-    "Dipòsit a 12 mesos"
-   ],
-   "explanation": "Per al curt termini preval la seguretat; per a dècades, la rendibilitat a llarg termini pesa més que les oscil·lacions.",
-   "right": [
-    "Diners que necessitaré en menys d'1 any",
-    "Diners per d'aquí a 20 anys"
-   ]
   },
   "u9l5-10": {
    "prompt": "Les lletres del Tresor es compren des de ____ €.",
@@ -656,38 +629,6 @@
     "1.000"
    ],
    "explanation": "És l'import mínim a les subhastes del Tresor."
-  },
-  "u9l5-11": {
-   "prompt": "El teu banc t'ofereix un dipòsit a 12 mesos, però no saps si necessitaràs els diners abans. Què mires abans de signar?",
-   "options": [
-    "La penalització per treure'ls abans i si el termini encaixa amb quan els necessitaràs",
-    "Res: tots els dipòsits són iguals",
-    "Només la TAE: com més alta, millor"
-   ],
-   "explanation": "Un dipòsit et lliga durant un termini: el primer és que encaixi amb quan necessitaràs els diners. Fixar-se només en la TAE més alta tempta, però cancel·lar abans pot sortir car.",
-   "feedback": [
-    "Bé: un dipòsit encaixa si el termini coincideix amb el teu pla. Si no, potser et convé una lletra més curta.",
-    "Canvien el tipus, el termini i la penalització: compara'ls.",
-    "La TAE importa, però si el cancel·les abans, la penalització es pot menjar l'interès."
-   ]
-  },
-  "u9l5-12": {
-   "prompt": "Què li contestes?",
-   "options": [
-    "Sí: en 6 mesos segur que puja",
-    "Millor en bitcoin, que puja més",
-    "Millor una lletra a 6 mesos o un dipòsit: en 6 mesos la borsa pot caure"
-   ],
-   "explanation": "El termini mana: en 6 mesos la borsa pot estar avall just quan necessitis els diners. Una lletra o un dipòsit que venci a temps rendeix poc, però els diners hi seran; la borsa tempta perquè rendeix més a llarg termini, no en uns quants mesos.",
-   "feedback": [
-    "Ningú no ho sap. Pot caure just abans del viatge.",
-    "Encara més volàtil: et podries quedar sense viatge.",
-    "Això. Per a uns diners amb una data tan propera, el primer és que hi siguin."
-   ],
-   "lines": [
-    "Tinc 3.000 € per al viatge de final de curs, d'aquí a 6 mesos.",
-    "Els poso en un ETF d'accions per treure'n una mica més?"
-   ]
   },
   "u9l6-4": {
    "prompt": "Quan guanya el bo lligat a la inflació davant del normal?",
@@ -751,6 +692,44 @@
     "Bé: el seu nominal puja amb la inflació. Si és més alta de l'esperada, guanya el normal.",
     "El lligat està pensat justament per a això, si el mantens fins al final."
    ]
+  },
+  "u9l5-13": {
+   "unit": "%",
+   "prompt": "Compres una lletra a 12 mesos per 960 € i al venciment reps 1.000 €. Quina rendibilitat obtens? (dos decimals)",
+   "options": [],
+   "explanation": "40 ÷ 960 = 0,0417 → 4,17 %."
+  },
+  "u9l5-14": {
+   "prompt": "Vas comprar una lletra a 12 mesos. Al cap de 6 mesos necessites els diners, i els tipus han pujat. Què passa si la vens ara?",
+   "options": [
+    "No es pot vendre abans que venci",
+    "La venc al preu de mercat, que pot ser més baix del que esperava",
+    "Rebo els 1.000 € igualment"
+   ],
+   "feedback": [
+    "Sí que es pot: hi ha un mercat on es compren i es venen.",
+    "Això: si els tipus han pujat, les lletres noves rendeixen més i la teva val una mica menys.",
+    "Els 1.000 € només estan assegurats al venciment."
+   ],
+   "explanation": "Fins al venciment, el preu d'una lletra es mou amb els tipus, tot i que poc, perquè el seu termini és curt."
+  },
+  "u9l5-15": {
+   "prompt": "L'interès d'una lletra del Tresor no porta retenció, però s'ha de declarar a la renda.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Està exempt de retenció a compte, no d'impostos: tributa a la base de l'estalvi."
+  },
+  "u9l5-16": {
+   "prompt": "Ordena el que passa des que demanes una lletra fins que venç.",
+   "options": [
+    "Et cobren aquest preu",
+    "Al venciment reps 1.000 €",
+    "Es fa la subhasta i es fixa el preu",
+    "Fas una petició no competitiva"
+   ],
+   "explanation": "Demanes, la subhasta fixa el preu, el pagues i al final reps el nominal."
   }
  }
 }
