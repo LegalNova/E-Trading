@@ -320,5 +320,42 @@ export const u27l4 = lesson('u27l4', 'FOMO y efecto rebaño', [
   chat(['Todo el mundo en TikTok está ganando con una moneda nueva 🐶', 'Si no entro hoy, me lo pierdo.'], 'Lumi quiere entrar hoy en una moneda nueva porque todo TikTok está ganando con ella. ¿Qué le dices?', [['Entra ya, que vuela, y si baja vendes rápido', 'Si entro por miedo a quedarme fuera, lo más probable es que compre cerca del techo.'], ['Espera 48 horas antes de decidir', 'Vale… Si sigue teniendo sentido en dos días, la meto en mi límite de especulación. Si no, nada.'], ['Mete una parte de tu colchón: lo repones luego', 'Eso es lo único que nunca se toca. Y en cripto se puede perder todo lo invertido.']], 1, 'La prisa es la señal: cuando sientes urgencia, para.'),
 ], { source: '11.3', minutes: 6, retire: [2, 3, 4, 6, 7] })
 
-const lessons = [u16l1, u17l1, u20l1, u21l1, u24l3, u27l4]
+// Auditoría FAL-5 (y la nota del auditor en TEM-5): una clase de estafas al principio del curso, gratis para todo el
+// mundo (toda la sección de inicio lo es). Enseña las estafas de ahora, que no estaban en la unidad de estafas: vídeos
+// y audios falsos hechos con IA, «bots» que prometen ganar solos, la estafa romántica con inversión y prestar la cuenta.
+// Sin cifras. Lleva id de la unidad de estafas (u32) aunque vive aquí, como el resto de clases de esta sección.
+export const u32l7 = lesson('u32l7', 'Que no te engañen: las estafas de ahora', [
+  story('«Lo dice él, en vídeo»', [{ id: 'ana', name: 'Ana' }], [
+    say('ana', 'He visto un vídeo de un empresario famoso recomendando una plataforma para invertir. Sale él, **con su voz**.'),
+    say('ana', 'Dice que con 250 € se gana un sueldo. Si lo dice él, será verdad, ¿no?'),
+    choose('¿Qué prueba ese vídeo?', [
+      opt('Que la plataforma es de fiar: él no se arriesgaría', 'bad', say('lumi', 'Ese vídeo puede no ser suyo. Hoy una cara y una voz se copian con inteligencia artificial.')),
+      opt('Nada: hoy un vídeo o un audio se pueden falsificar', 'good', say('lumi', 'Eso es. Ni la cara ni la voz prueban ya quién habla.')),
+      opt('Que al menos algo de verdad habrá', 'ok', say('lumi', 'Lo único cierto es que alguien quiere tu dinero. Lo demás hay que comprobarlo fuera del vídeo.')),
+    ]),
+    say('lumi', 'En España, quien ofrece inversiones **tiene que estar autorizado**. Se comprueba en la web de la CNMV, no en el anuncio.'),
+  ]),
+  story('Alguien muy majo', [{ id: 'marta', name: 'Marta' }], [
+    say('marta', 'Llevo un mes hablando cada día con alguien que conocí en una app. Es encantador.'),
+    say('marta', 'Nunca puede hacer videollamada. Pero me enseña lo que gana invirtiendo y quiere que **ganemos juntos**.'),
+    choose('¿Qué está pasando?', [
+      opt('Que quiere ayudarla: se nota que le importa', 'bad', say('lumi', 'Quien te quiere no necesita que metas dinero en una plataforma que él te pasa.')),
+      opt('Tiene la forma de una estafa romántica con inversión', 'good', say('lumi', 'Así funcionan: semanas de confianza y, después, la «oportunidad».')),
+      opt('Que puede probar con poco para no quedar mal', 'bad', say('lumi', 'Ese poco se pierde. Y la primera vez suelen dejarte «ganar» para que metas más.')),
+    ]),
+    say('lumi', 'La regla: **nadie a quien acabas de conocer por internet te hace ganar dinero**.'),
+  ]),
+  key('Cuatro estafas de ahora', '• **Vídeos y audios falsos**: un famoso, o alguien de tu familia, hechos con inteligencia artificial.\n• **«Bots» que ganan solos**: prometen un tanto fijo al día sin que hagas nada.\n• **Estafa romántica**: semanas de confianza y, luego, una plataforma «para ganar juntos».\n• **Prestar tu cuenta**: te pagan por recibir dinero y reenviarlo. Te convierte en «mula», y puede ser delito.\n\n**Qué hacer siempre:** no pinchar el enlace, comprobar por otro camino (la web oficial, una llamada a esa persona) y no decidir con prisa.', 'Ni una cara, ni una voz, ni un mes de mensajes prueban nada: se comprueba fuera del mensaje.', 'Pruébalo: busca en la web de la CNMV el nombre de la última plataforma de inversión que hayas visto anunciada.'),
+], [
+  spot('Marca los mensajes que tienen pinta de estafa.', [['Anuncio en redes', 'Un conocido presentador revela su secreto: puso 250 € y hoy vive de esto. Mira el vídeo antes de que lo borren.', true], ['Tu bróker', 'Ya está disponible en la app el resumen de tus operaciones del mes.', false], ['TraderBot IA', 'Nuestro bot con inteligencia artificial opera por ti y gana un 2 % cada día. Sin riesgo.', true], ['Álex 💕', 'Mi tío trabaja en un fondo. Te paso la plataforma donde invierto yo y ganamos los dos.', true], ['Tu banco', 'Recuerda: nunca te pediremos tus claves por mensaje ni por teléfono.', false]], 'Un famoso que «revela un secreto», una ganancia fija sin riesgo y alguien de internet que te lleva a su plataforma: las tres son señales de estafa.'),
+  scenario('Un desconocido te ofrece 200 € por recibir una transferencia en tu cuenta y reenviarla a otra. «Es solo un favor», dice. ¿Qué haces?', [['Acepto: el dinero no es mío y no arriesgo nada', 'Arriesgas mucho: ese dinero suele venir de otra estafa, y la cuenta que aparece es la tuya.'], ['Digo que no', 'Bien: prestar tu cuenta para mover dinero de otros puede ser delito, aunque no sepas de dónde viene.'], ['Acepto solo una vez, para probar', 'Con una vez basta para que tu cuenta quede ligada a ese dinero.']], 1, 'A quien presta su cuenta se le llama «mula». Los estafadores la usan para borrar el rastro del dinero que han robado a otros.'),
+  tf('Si en un vídeo sale un famoso recomendando una inversión con su propia voz, la oferta es real.', false, 'Una cara y una voz se pueden falsificar con inteligencia artificial. La oferta se comprueba fuera del vídeo.'),
+  single('Un «bot de trading con IA» promete ganar un 2 % cada día sin riesgo. ¿Qué está prometiendo?', ['Una ventaja que da la tecnología', 'Algo que nadie puede cumplir', 'Lo mismo que un fondo indexado'], 1, 'Nadie puede prometer una ganancia fija y sin riesgo, la haga una persona o un programa. Es la promesa típica de una estafa.'),
+  multi('¿Qué señales encajan con una estafa romántica con inversión? Marca todas.', ['Nunca puede hacer una videollamada ni quedar', 'Tarda unas horas en contestar', 'Te enseña lo que gana y te anima a invertir', 'Te cuenta que ha tenido un mal día'], [0, 2], 'No dejarse ver y llevar la conversación hacia una plataforma de inversión son las dos señales. Tardar en contestar o contar su día lo hace cualquiera.'),
+  order('Te llega un vídeo de un famoso recomendando una plataforma. Ordena lo que haces.', ['No pincho el enlace', 'Busco la plataforma en la web de la CNMV', 'Compruebo si un medio fiable habla de ello', 'Aviso a quien me lo envió'], 'Primero no tocar; después comprobar por tu cuenta, fuera del mensaje; y al final avisar para que no caiga otro.'),
+  chat(['He conocido a alguien en una app hace un mes 💕', 'Me ha enseñado cómo gana con cripto. ¿Pruebo con 500 €?'], 'Lumi ha conocido a alguien en una app hace un mes, que le enseña cómo gana con cripto y la anima a probar con 500 €. ¿Qué le contestas?', [['Prueba: 500 € no es tanto', 'Esos 500 € se pierden, y suelen ser solo el principio.'], ['No metas dinero en nada que venga de alguien de internet', '¡Eso! Y si de verdad le importas, no cambiará nada por decirle que no.'], ['Pídele antes que te enseñe sus ganancias', 'Unas capturas se falsifican en un minuto. No prueban nada.']], 1, 'Semanas de confianza y luego una inversión «juntos»: es el guion de la estafa romántica. La respuesta es no poner dinero, no poner poco.'),
+  fill('Quien presta su cuenta para mover dinero de otros se convierte en una ____ de dinero.', 'mula', ['fuente', 'llave', 'reserva'], 'Así se llama a quien, a veces sin saberlo, ayuda a esconder dinero robado. Puede acabar respondiendo ante la justicia.'),
+], { minutes: 6 })
+
+const lessons = [u16l1, u17l1, u20l1, u21l1, u24l3, u27l4, u32l7]
 export default lessons

@@ -308,6 +308,49 @@
   "s0boss": {
    "title": "Final challenge: Invest from today",
    "steps": []
+  },
+  "u32l7": {
+   "title": "Don't get fooled: today's scams",
+   "steps": [
+    {
+     "texts": [
+      "«He says so himself, on video»",
+      "Ana",
+      "I've seen a video of a famous businessman recommending an investment platform. It's him, **with his own voice**.",
+      "He says €250 earns you a salary. If he says so, it must be true, right?",
+      "What does that video prove?",
+      "That the platform can be trusted: he wouldn't risk it",
+      "That video may not be his. Today a face and a voice can be copied with artificial intelligence.",
+      "Nothing: today a video or an audio clip can be faked",
+      "That's it. Neither the face nor the voice proves who's speaking any more.",
+      "That there must be at least some truth in it",
+      "The only sure thing is that someone wants your money. The rest has to be checked outside the video.",
+      "In Spain, anyone offering investments **has to be authorised**. You check that on the CNMV website, not in the ad."
+     ]
+    },
+    {
+     "texts": [
+      "Someone really nice",
+      "Marta",
+      "For a month I've been chatting every day with someone I met on an app. He's charming.",
+      "He can never do a video call. But he shows me what he makes investing and wants us to **make money together**.",
+      "What's going on?",
+      "He wants to help her: you can tell he cares",
+      "Someone who loves you doesn't need you to put money into a platform he sends you.",
+      "It has the shape of a romance scam with an investment twist",
+      "That's how they work: weeks of trust and then the «opportunity».",
+      "She can try with a little so as not to seem rude",
+      "That little is lost. And the first time they usually let you «win» so that you put in more.",
+      "The rule: **nobody you've just met online makes you money**."
+     ]
+    },
+    {
+     "title": "Four scams of today",
+     "body": "• **Fake videos and audio**: a celebrity, or someone in your family, made with artificial intelligence.\n• **«Bots» that win on their own**: they promise a fixed amount a day without you doing anything.\n• **Romance scam**: weeks of trust and then a platform «to make money together».\n• **Lending your account**: you're paid to receive money and send it on. It makes you a «mule», and it can be a crime.\n\n**What to do every time:** don't tap the link, check another way (the official website, a call to that person) and don't decide in a hurry.",
+     "key": "Not a face, not a voice, not a month of messages proves anything: you check outside the message.",
+     "tip": "Try it: look up on the CNMV website the name of the last investment platform you saw advertised."
+    }
+   ]
   }
  },
  "questions": {
@@ -692,6 +735,103 @@
     "Price",
     "Value"
    ]
+  },
+  "u32l7-1": {
+   "senders": [
+    "Your broker",
+    "Your bank",
+    "TraderBot AI",
+    "Social media ad",
+    "Alex 💕"
+   ],
+   "prompt": "Tick the messages that look like a scam.",
+   "options": [
+    "Your summary of this month's trades is now available in the app.",
+    "Remember: we will never ask for your passwords by message or phone.",
+    "Our artificial intelligence bot trades for you and makes 2 % every day. No risk.",
+    "A well-known presenter reveals his secret: he put in €250 and now lives off it. Watch the video before it's taken down.",
+    "My uncle works at a fund. I'll send you the platform where I invest and we'll both win."
+   ],
+   "explanation": "A celebrity «revealing a secret», a fixed gain with no risk and someone online steering you to their platform: all three are signs of a scam."
+  },
+  "u32l7-2": {
+   "prompt": "A stranger offers you €200 to receive a transfer in your account and send it on to another one. «It's just a favour», he says. What do you do?",
+   "options": [
+    "I accept just once, to try it",
+    "I say no",
+    "I accept: the money isn't mine and I'm risking nothing"
+   ],
+   "explanation": "Someone who lends their account is called a «mule». Scammers use them to erase the trail of the money they've stolen from others.",
+   "feedback": [
+    "Once is enough for your account to be tied to that money.",
+    "Good: lending your account to move other people's money can be a crime, even if you don't know where it comes from.",
+    "You're risking a lot: that money usually comes from another scam, and the account that shows up is yours."
+   ]
+  },
+  "u32l7-3": {
+   "prompt": "If a video shows a celebrity recommending an investment in their own voice, the offer is real.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "A face and a voice can be faked with artificial intelligence. You check the offer outside the video."
+  },
+  "u32l7-4": {
+   "prompt": "An «AI trading bot» promises to make 2 % every day with no risk. What is it promising?",
+   "options": [
+    "An edge that technology provides",
+    "The same as an index fund",
+    "Something nobody can deliver"
+   ],
+   "explanation": "Nobody can promise a fixed gain with no risk, whether a person or a program. It's the classic promise of a scam."
+  },
+  "u32l7-5": {
+   "prompt": "Which signs fit a romance scam with an investment twist? Tick all that apply.",
+   "options": [
+    "They take a few hours to reply",
+    "They tell you they've had a bad day",
+    "They show you what they make and urge you to invest",
+    "They can never do a video call or meet up"
+   ],
+   "explanation": "Never showing themselves and steering the conversation towards an investment platform are the two signs. Taking a while to reply or talking about their day is something anyone does."
+  },
+  "u32l7-6": {
+   "prompt": "You get a video of a celebrity recommending a platform. Put what you do in order.",
+   "options": [
+    "I look the platform up on the CNMV website",
+    "I check whether a reliable news outlet mentions it",
+    "I warn whoever sent it to me",
+    "I don't tap the link"
+   ],
+   "explanation": "First, don't touch anything; then check for yourself, outside the message; and finally warn others so nobody else falls for it."
+  },
+  "u32l7-7": {
+   "prompt": "Lumi met someone on an app a month ago, who shows her how he makes money with crypto and urges her to try with €500. What do you reply?",
+   "options": [
+    "Ask him to show you his gains first",
+    "Don't put money into anything that comes from someone online",
+    "Try it: €500 isn't that much"
+   ],
+   "explanation": "Weeks of trust and then an investment «together»: that's the script of a romance scam. The answer is to put in no money, not a little money.",
+   "feedback": [
+    "Screenshots can be faked in a minute. They prove nothing.",
+    "Exactly! And if he really cares about you, saying no won't change anything.",
+    "That €500 is lost, and it's usually just the start."
+   ],
+   "lines": [
+    "I met someone on an app a month ago 💕",
+    "He's shown me how he makes money with crypto. Shall I try with €500?"
+   ]
+  },
+  "u32l7-8": {
+   "prompt": "Someone who lends their account to move other people's money becomes a money ____.",
+   "options": [
+    "source",
+    "reserve",
+    "key",
+    "mule"
+   ],
+   "explanation": "That's the name for someone who, sometimes without knowing it, helps hide stolen money. They can end up answering to the courts."
   }
  }
 }

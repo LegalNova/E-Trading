@@ -308,6 +308,49 @@
   "s0boss": {
    "title": "Repte final: Inverteix des d’avui",
    "steps": []
+  },
+  "u32l7": {
+   "title": "Que no t'enganyin: les estafes d'ara",
+   "steps": [
+    {
+     "texts": [
+      "«Ho diu ell, en vídeo»",
+      "Ana",
+      "He vist un vídeo d'un empresari famós recomanant una plataforma per invertir. Hi surt ell, **amb la seva veu**.",
+      "Diu que amb 250 € es guanya un sou. Si ho diu ell, deu ser veritat, oi?",
+      "Què prova aquest vídeo?",
+      "Que la plataforma és de fiar: ell no s'arriscaria",
+      "Aquest vídeo pot no ser seu. Avui una cara i una veu es copien amb intel·ligència artificial.",
+      "Res: avui un vídeo o un àudio es poden falsificar",
+      "Això mateix. Ni la cara ni la veu proven ja qui parla.",
+      "Que almenys alguna cosa de veritat hi deu haver",
+      "L'únic que és cert és que algú vol els teus diners. La resta s'ha de comprovar fora del vídeo.",
+      "A Espanya, qui ofereix inversions **ha d'estar autoritzat**. Es comprova al web de la CNMV, no a l'anunci."
+     ]
+    },
+    {
+     "texts": [
+      "Algú molt simpàtic",
+      "Marta",
+      "Fa un mes que parlo cada dia amb algú que vaig conèixer en una app. És encantador.",
+      "No pot fer mai videotrucada. Però m'ensenya el que guanya invertint i vol que **guanyem junts**.",
+      "Què està passant?",
+      "Que la vol ajudar: es nota que li importa",
+      "Qui t'estima no necessita que posis diners en una plataforma que ell et passa.",
+      "Té la forma d'una estafa romàntica amb inversió",
+      "Així funcionen: setmanes de confiança i, després, l'«oportunitat».",
+      "Que pot provar amb poc per no quedar malament",
+      "Aquest poc es perd. I la primera vegada solen deixar-te «guanyar» perquè hi posis més.",
+      "La regla: **ningú que acabes de conèixer per internet et fa guanyar diners**."
+     ]
+    },
+    {
+     "title": "Quatre estafes d'ara",
+     "body": "• **Vídeos i àudios falsos**: un famós, o algú de la teva família, fets amb intel·ligència artificial.\n• **«Bots» que guanyen sols**: prometen un tant fix al dia sense que facis res.\n• **Estafa romàntica**: setmanes de confiança i, després, una plataforma «per guanyar junts».\n• **Deixar el teu compte**: et paguen per rebre diners i reenviar-los. Et converteix en «mula», i pot ser delicte.\n\n**Què cal fer sempre:** no clicar l'enllaç, comprovar-ho per un altre camí (el web oficial, una trucada a aquella persona) i no decidir amb pressa.",
+     "key": "Ni una cara, ni una veu, ni un mes de missatges proven res: es comprova fora del missatge.",
+     "tip": "Prova-ho: busca al web de la CNMV el nom de l'última plataforma d'inversió que hagis vist anunciada."
+    }
+   ]
   }
  },
  "questions": {
@@ -692,6 +735,103 @@
     "Preu",
     "Valor"
    ]
+  },
+  "u32l7-1": {
+   "senders": [
+    "El teu bròquer",
+    "El teu banc",
+    "TraderBot IA",
+    "Anunci a les xarxes",
+    "Àlex 💕"
+   ],
+   "prompt": "Marca els missatges que fan pinta d'estafa.",
+   "options": [
+    "Ja tens disponible a l'app el resum de les teves operacions del mes.",
+    "Recorda: mai no et demanarem les claus per missatge ni per telèfon.",
+    "El nostre bot amb intel·ligència artificial opera per tu i guanya un 2 % cada dia. Sense risc.",
+    "Un presentador conegut revela el seu secret: hi va posar 250 € i avui viu d'això. Mira el vídeo abans que l'esborrin.",
+    "El meu oncle treballa en un fons. Et passo la plataforma on inverteixo jo i hi guanyem tots dos."
+   ],
+   "explanation": "Un famós que «revela un secret», un guany fix sense risc i algú d'internet que et porta a la seva plataforma: totes tres són senyals d'estafa."
+  },
+  "u32l7-2": {
+   "prompt": "Un desconegut t'ofereix 200 € per rebre una transferència al teu compte i reenviar-la a un altre. «És només un favor», diu. Què fas?",
+   "options": [
+    "Accepto només una vegada, per provar",
+    "Dic que no",
+    "Accepto: els diners no són meus i no arrisco res"
+   ],
+   "explanation": "A qui deixa el seu compte se li diu «mula». Els estafadors la fan servir per esborrar el rastre dels diners que han robat a altres.",
+   "feedback": [
+    "Amb una vegada n'hi ha prou perquè el teu compte quedi lligat a aquests diners.",
+    "Bé: deixar el teu compte per moure diners d'altres pot ser delicte, encara que no sàpigues d'on venen.",
+    "Arrisques molt: aquests diners solen venir d'una altra estafa, i el compte que hi surt és el teu."
+   ]
+  },
+  "u32l7-3": {
+   "prompt": "Si en un vídeo surt un famós recomanant una inversió amb la seva pròpia veu, l'oferta és real.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Una cara i una veu es poden falsificar amb intel·ligència artificial. L'oferta es comprova fora del vídeo."
+  },
+  "u32l7-4": {
+   "prompt": "Un «bot de trading amb IA» promet guanyar un 2 % cada dia sense risc. Què està prometent?",
+   "options": [
+    "Un avantatge que dona la tecnologia",
+    "El mateix que un fons indexat",
+    "Una cosa que ningú pot complir"
+   ],
+   "explanation": "Ningú pot prometre un guany fix i sense risc, el faci una persona o un programa. És la promesa típica d'una estafa."
+  },
+  "u32l7-5": {
+   "prompt": "Quins senyals encaixen amb una estafa romàntica amb inversió? Marca'ls tots.",
+   "options": [
+    "Triga unes hores a contestar",
+    "T'explica que ha tingut un mal dia",
+    "T'ensenya el que guanya i t'anima a invertir",
+    "No pot fer mai una videotrucada ni quedar"
+   ],
+   "explanation": "No deixar-se veure i portar la conversa cap a una plataforma d'inversió són els dos senyals. Trigar a contestar o explicar el seu dia ho fa qualsevol."
+  },
+  "u32l7-6": {
+   "prompt": "T'arriba un vídeo d'un famós recomanant una plataforma. Ordena el que fas.",
+   "options": [
+    "Busco la plataforma al web de la CNMV",
+    "Comprovo si un mitjà fiable en parla",
+    "Aviso qui me'l va enviar",
+    "No clico l'enllaç"
+   ],
+   "explanation": "Primer no tocar res; després comprovar-ho pel teu compte, fora del missatge; i al final avisar perquè no hi caigui un altre."
+  },
+  "u32l7-7": {
+   "prompt": "La Lumi ha conegut algú en una app fa un mes, que li ensenya com guanya amb cripto i l'anima a provar amb 500 €. Què li contestes?",
+   "options": [
+    "Demana-li abans que t'ensenyi els seus guanys",
+    "No posis diners en res que vingui d'algú d'internet",
+    "Prova-ho: 500 € no és tant"
+   ],
+   "explanation": "Setmanes de confiança i després una inversió «junts»: és el guió de l'estafa romàntica. La resposta és no posar-hi diners, no posar-n'hi pocs.",
+   "feedback": [
+    "Unes captures es falsifiquen en un minut. No proven res.",
+    "Això! I si de debò li importes, no canviarà res per dir-li que no.",
+    "Aquests 500 € es perden, i solen ser només el principi."
+   ],
+   "lines": [
+    "He conegut algú en una app fa un mes 💕",
+    "M'ha ensenyat com guanya amb cripto. Provo amb 500 €?"
+   ]
+  },
+  "u32l7-8": {
+   "prompt": "Qui deixa el seu compte per moure diners d'altres es converteix en una ____ de diners.",
+   "options": [
+    "font",
+    "reserva",
+    "clau",
+    "mula"
+   ],
+   "explanation": "Així es diu a qui, de vegades sense saber-ho, ajuda a amagar diners robats. Pot acabar responent davant la justícia."
   }
  }
 }

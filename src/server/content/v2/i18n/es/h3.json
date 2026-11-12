@@ -301,6 +301,49 @@
     }
    ]
   },
+  "u32l7": {
+   "title": "Que no te engañen: las estafas de ahora",
+   "steps": [
+    {
+     "texts": [
+      "«Lo dice él, en vídeo»",
+      "Ana",
+      "He visto un vídeo de un empresario famoso recomendando una plataforma para invertir. Sale él, **con su voz**.",
+      "Dice que con 250 € se gana un sueldo. Si lo dice él, será verdad, ¿no?",
+      "¿Qué prueba ese vídeo?",
+      "Que la plataforma es de fiar: él no se arriesgaría",
+      "Ese vídeo puede no ser suyo. Hoy una cara y una voz se copian con inteligencia artificial.",
+      "Nada: hoy un vídeo o un audio se pueden falsificar",
+      "Eso es. Ni la cara ni la voz prueban ya quién habla.",
+      "Que al menos algo de verdad habrá",
+      "Lo único cierto es que alguien quiere tu dinero. Lo demás hay que comprobarlo fuera del vídeo.",
+      "En España, quien ofrece inversiones **tiene que estar autorizado**. Se comprueba en la web de la CNMV, no en el anuncio."
+     ]
+    },
+    {
+     "texts": [
+      "Alguien muy majo",
+      "Marta",
+      "Llevo un mes hablando cada día con alguien que conocí en una app. Es encantador.",
+      "Nunca puede hacer videollamada. Pero me enseña lo que gana invirtiendo y quiere que **ganemos juntos**.",
+      "¿Qué está pasando?",
+      "Que quiere ayudarla: se nota que le importa",
+      "Quien te quiere no necesita que metas dinero en una plataforma que él te pasa.",
+      "Tiene la forma de una estafa romántica con inversión",
+      "Así funcionan: semanas de confianza y, después, la «oportunidad».",
+      "Que puede probar con poco para no quedar mal",
+      "Ese poco se pierde. Y la primera vez suelen dejarte «ganar» para que metas más.",
+      "La regla: **nadie a quien acabas de conocer por internet te hace ganar dinero**."
+     ]
+    },
+    {
+     "title": "Cuatro estafas de ahora",
+     "body": "• **Vídeos y audios falsos**: un famoso, o alguien de tu familia, hechos con inteligencia artificial.\n• **«Bots» que ganan solos**: prometen un tanto fijo al día sin que hagas nada.\n• **Estafa romántica**: semanas de confianza y, luego, una plataforma «para ganar juntos».\n• **Prestar tu cuenta**: te pagan por recibir dinero y reenviarlo. Te convierte en «mula», y puede ser delito.\n\n**Qué hacer siempre:** no pinchar el enlace, comprobar por otro camino (la web oficial, una llamada a esa persona) y no decidir con prisa.",
+     "key": "Ni una cara, ni una voz, ni un mes de mensajes prueban nada: se comprueba fuera del mensaje.",
+     "tip": "Pruébalo: busca en la web de la CNMV el nombre de la última plataforma de inversión que hayas visto anunciada."
+    }
+   ]
+  },
   "h3r": {
    "title": "Repaso de la unidad",
    "steps": []
@@ -692,6 +735,103 @@
     "Todo el mundo en TikTok está ganando con una moneda nueva 🐶",
     "Si no entro hoy, me lo pierdo."
    ]
+  },
+  "u32l7-1": {
+   "prompt": "Marca los mensajes que tienen pinta de estafa.",
+   "options": [
+    "Ya está disponible en la app el resumen de tus operaciones del mes.",
+    "Recuerda: nunca te pediremos tus claves por mensaje ni por teléfono.",
+    "Nuestro bot con inteligencia artificial opera por ti y gana un 2 % cada día. Sin riesgo.",
+    "Un conocido presentador revela su secreto: puso 250 € y hoy vive de esto. Mira el vídeo antes de que lo borren.",
+    "Mi tío trabaja en un fondo. Te paso la plataforma donde invierto yo y ganamos los dos."
+   ],
+   "explanation": "Un famoso que «revela un secreto», una ganancia fija sin riesgo y alguien de internet que te lleva a su plataforma: las tres son señales de estafa.",
+   "senders": [
+    "Tu bróker",
+    "Tu banco",
+    "TraderBot IA",
+    "Anuncio en redes",
+    "Álex 💕"
+   ]
+  },
+  "u32l7-2": {
+   "prompt": "Un desconocido te ofrece 200 € por recibir una transferencia en tu cuenta y reenviarla a otra. «Es solo un favor», dice. ¿Qué haces?",
+   "options": [
+    "Acepto solo una vez, para probar",
+    "Digo que no",
+    "Acepto: el dinero no es mío y no arriesgo nada"
+   ],
+   "explanation": "A quien presta su cuenta se le llama «mula». Los estafadores la usan para borrar el rastro del dinero que han robado a otros.",
+   "feedback": [
+    "Con una vez basta para que tu cuenta quede ligada a ese dinero.",
+    "Bien: prestar tu cuenta para mover dinero de otros puede ser delito, aunque no sepas de dónde viene.",
+    "Arriesgas mucho: ese dinero suele venir de otra estafa, y la cuenta que aparece es la tuya."
+   ]
+  },
+  "u32l7-3": {
+   "prompt": "Si en un vídeo sale un famoso recomendando una inversión con su propia voz, la oferta es real.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Una cara y una voz se pueden falsificar con inteligencia artificial. La oferta se comprueba fuera del vídeo."
+  },
+  "u32l7-4": {
+   "prompt": "Un «bot de trading con IA» promete ganar un 2 % cada día sin riesgo. ¿Qué está prometiendo?",
+   "options": [
+    "Una ventaja que da la tecnología",
+    "Lo mismo que un fondo indexado",
+    "Algo que nadie puede cumplir"
+   ],
+   "explanation": "Nadie puede prometer una ganancia fija y sin riesgo, la haga una persona o un programa. Es la promesa típica de una estafa."
+  },
+  "u32l7-5": {
+   "prompt": "¿Qué señales encajan con una estafa romántica con inversión? Marca todas.",
+   "options": [
+    "Tarda unas horas en contestar",
+    "Te cuenta que ha tenido un mal día",
+    "Te enseña lo que gana y te anima a invertir",
+    "Nunca puede hacer una videollamada ni quedar"
+   ],
+   "explanation": "No dejarse ver y llevar la conversación hacia una plataforma de inversión son las dos señales. Tardar en contestar o contar su día lo hace cualquiera."
+  },
+  "u32l7-6": {
+   "prompt": "Te llega un vídeo de un famoso recomendando una plataforma. Ordena lo que haces.",
+   "options": [
+    "Busco la plataforma en la web de la CNMV",
+    "Compruebo si un medio fiable habla de ello",
+    "Aviso a quien me lo envió",
+    "No pincho el enlace"
+   ],
+   "explanation": "Primero no tocar; después comprobar por tu cuenta, fuera del mensaje; y al final avisar para que no caiga otro."
+  },
+  "u32l7-7": {
+   "prompt": "Nora ha conocido a alguien en una app hace un mes, que le enseña cómo gana con cripto y la anima a probar con 500 €. ¿Qué le contestas?",
+   "options": [
+    "Pídele antes que te enseñe sus ganancias",
+    "No metas dinero en nada que venga de alguien de internet",
+    "Prueba: 500 € no es tanto"
+   ],
+   "explanation": "Semanas de confianza y luego una inversión «juntos»: es el guion de la estafa romántica. La respuesta es no poner dinero, no poner poco.",
+   "feedback": [
+    "Unas capturas se falsifican en un minuto. No prueban nada.",
+    "¡Eso! Y si de verdad le importas, no cambiará nada por decirle que no.",
+    "Esos 500 € se pierden, y suelen ser solo el principio."
+   ],
+   "lines": [
+    "He conocido a alguien en una app hace un mes 💕",
+    "Me ha enseñado cómo gana con cripto. ¿Pruebo con 500 €?"
+   ]
+  },
+  "u32l7-8": {
+   "prompt": "Quien presta su cuenta para mover dinero de otros se convierte en una ____ de dinero.",
+   "options": [
+    "fuente",
+    "reserva",
+    "llave",
+    "mula"
+   ],
+   "explanation": "Así se llama a quien, a veces sin saberlo, ayuda a esconder dinero robado. Puede acabar respondiendo ante la justicia."
   }
  }
 }
