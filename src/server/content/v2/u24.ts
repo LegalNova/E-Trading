@@ -223,7 +223,7 @@ export default unit({
             { icon: 'scale', label: 'Entrada 40 €, stop 38 €, objetivo 42 €', bin: 1, why: 'Arriesgas 2 € para ganar 2 €: 1:1.' },
             { icon: 'flag', label: 'Entrada 10 €, stop 9 €, objetivo 12 €', bin: 0, why: 'Arriesgas 1 € para ganar 2 €: justo 2:1.' },
             { icon: 'bars', label: 'Entrada 60 €, stop 54 €, objetivo 66 €', bin: 1, why: 'Arriesgas 6 € para ganar 6 €: 1:1.' },
-            { icon: 'alert', label: 'Entrada 25 €, stop 24 €, objetivo 25,50 €', bin: 1, why: 'Arriesgas 1 € para ganar 0,50 €: el doble de lo que buscas.' },
+            { icon: 'alert', label: 'Entrada 25 €, stop 24 €, objetivo 25,50 €', bin: 1, why: 'Arriesgas 1 € para ganar 0,50 €: arriesgas el doble de lo que puedes ganar.' },
           ],
         },
         goal: { text: 'Clasifica las cinco operaciones.', when: [when('done', '==', 5)] },

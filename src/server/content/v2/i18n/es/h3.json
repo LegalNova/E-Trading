@@ -245,7 +245,7 @@
       "Sí: 100 € y ni un euro más",
       "No: lo que inviertes depende de dónde va el stop",
       "No: puedes invertir lo que quieras, sin stop",
-      "Con el stop al 2 %, puedes invertir **5.000 €** y, si salta, pierdes 100 €. Riesgo no es lo mismo que cantidad invertida.",
+      "Con el stop al 2 %, la fórmula te deja invertir **5.000 €** y, si salta, pierdes 100 €. Riesgo no es lo mismo que cantidad invertida. Además hay un techo: no más del 20 % de la cuenta en una sola posición.",
       "Con el riesgo en el 1 %, busca el stop que deja la posición en 2.000 €.",
       "**Tamaño = riesgo ÷ distancia al stop.** Stop cerca, compras más; stop lejos, compras menos. La pérdida máxima es siempre la misma.",
       "Más de un 2 % por operación es mucho, sobre todo al empezar.",
@@ -257,7 +257,7 @@
     {
      "title": "Límites que se suman",
      "body": "Muchos traders profesionales arriesgan entre el **0,5 % y el 2 %** por operación; para empezar, un 1 % o menos. Además conviene limitar:\n\n• el **riesgo total abierto**: lo que perderías si saltaran todos tus stops a la vez (no más del 5–6 %);\n• el **peso de cada posición**: cuánto de tu cartera hay en una sola compra (la app te avisa a partir del 20 %).\n\nPrimero decides dónde te equivocas (el stop). Después, cuánto compras.",
-     "key": "Riesgo no es lo mismo que cantidad invertida: puedes invertir un 16 % y arriesgar un 1 %.",
+     "key": "Riesgo no es lo mismo que cantidad invertida: puedes invertir un 20 % (con el stop al 5 %) y arriesgar un 1 %.",
      "tip": "Pruébalo: en tu próxima compra, pon una alerta de precio donde saldrías si sale mal."
     }
    ]

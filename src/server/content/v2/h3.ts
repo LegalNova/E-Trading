@@ -249,7 +249,7 @@ export const u24l3 = lesson('u24l3', 'La regla del 1 %', [
       prompt: '¿Significa que solo puedes invertir 100 €?',
       options: ['Sí: 100 € y ni un euro más', 'No: lo que inviertes depende de dónde va el stop', 'No: puedes invertir lo que quieras, sin stop'],
       answer: 1,
-      why: 'Con el stop al 2 %, puedes invertir **5.000 €** y, si salta, pierdes 100 €. Riesgo no es lo mismo que cantidad invertida.',
+      why: 'Con el stop al 2 %, la fórmula te deja invertir **5.000 €** y, si salta, pierdes 100 €. Riesgo no es lo mismo que cantidad invertida. Además hay un techo: no más del 20 % de la cuenta en una sola posición.',
     },
     goal: { text: 'Con el riesgo en el 1 %, busca el stop que deja la posición en 2.000 €.', when: [when('riskEur', '==', 100), when('size', '==', 2000)] },
     insight: '**Tamaño = riesgo ÷ distancia al stop.** Stop cerca, compras más; stop lejos, compras menos. La pérdida máxima es siempre la misma.',
@@ -260,7 +260,7 @@ export const u24l3 = lesson('u24l3', 'La regla del 1 %', [
       { say: 'Deja el 1 % y mueve el stop', mood: 'HAPPY' },
     ],
   }),
-  key('Límites que se suman', 'Muchos traders profesionales arriesgan entre el **0,5 % y el 2 %** por operación; para empezar, un 1 % o menos. Además conviene limitar:\n\n• el **riesgo total abierto**: lo que perderías si saltaran todos tus stops a la vez (no más del 5–6 %);\n• el **peso de cada posición**: cuánto de tu cartera hay en una sola compra (la app te avisa a partir del 20 %).\n\nPrimero decides dónde te equivocas (el stop). Después, cuánto compras.', 'Riesgo no es lo mismo que cantidad invertida: puedes invertir un 16 % y arriesgar un 1 %.', 'Pruébalo: en tu próxima compra, pon una alerta de precio donde saldrías si sale mal.'),
+  key('Límites que se suman', 'Muchos traders profesionales arriesgan entre el **0,5 % y el 2 %** por operación; para empezar, un 1 % o menos. Además conviene limitar:\n\n• el **riesgo total abierto**: lo que perderías si saltaran todos tus stops a la vez (no más del 5–6 %);\n• el **peso de cada posición**: cuánto de tu cartera hay en una sola compra (la app te avisa a partir del 20 %).\n\nPrimero decides dónde te equivocas (el stop). Después, cuánto compras.', 'Riesgo no es lo mismo que cantidad invertida: puedes invertir un 20 % (con el stop al 5 %) y arriesgar un 1 %.', 'Pruébalo: en tu próxima compra, pon una alerta de precio donde saldrías si sale mal.'),
 ], [
   single('Tienes 10.000 € y sigues la regla del 1 %. ¿Qué significa?', ['Que solo puedes invertir 100 €', 'Que si salta el stop pierdes como mucho 100 €', 'Que esperas ganar un 1 % por operación'], 1, 'La regla limita la pérdida si te equivocas, no la cantidad invertida.'),
   num('Tu cartera simulada vale 5.000 €. Con la regla del 1 %, ¿cuánto puedes perder como máximo en una operación?', 50, '€', '5.000 × 0,01 = 50 €.'),

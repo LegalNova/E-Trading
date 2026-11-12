@@ -24,7 +24,7 @@
    "steps": [
     {
      "title": "Les paraules del mercat",
-     "body": "• **Acció:** una part d'una empresa.\n• **Dividend:** part del benefici que es reparteix entre els accionistes.\n• **Capitalització:** preu × nombre d'accions.\n• **Índex:** resumeix un grup d'empreses (IBEX 35, S&P 500).\n• **OPV:** sortida a borsa.\n• **Bròker:** qui porta les teves ordres al mercat i custodia els teus valors."
+     "body": "• **Acció:** una part d'una empresa.\n• **Dividend:** part del benefici que es reparteix entre els accionistes.\n• **Capitalització:** preu × nombre d'accions.\n• **Índex:** resumeix un grup d'empreses (IBEX 35, S&P 500).\n• **OPV:** venda al públic d'accions que ja existeixen; moltes empreses surten així a borsa.\n• **Bròker:** qui porta les teves ordres al mercat i custodia els teus valors."
     },
     {
      "title": "Comprar i vendre",
@@ -292,9 +292,9 @@
    "options": [
     "Un tipus de bo públic",
     "Una ordre de venda urgent",
-    "La sortida a borsa d'una empresa"
+    "Una venda al públic d'accions, sovint per sortir a borsa"
    ],
-   "explanation": "Oferta pública de venda: l'empresa (o els seus propietaris) ven accions a nous inversors i comença a cotitzar."
+   "explanation": "Oferta pública de venda: els propietaris venen al públic accions que ja existeixen, i moltes empreses surten així a borsa. Si l'empresa emet accions noves, és una OPS."
   },
   "vocabl2-4": {
    "prompt": "Què li aclareixes?",
@@ -334,7 +334,7 @@
    "explanation": "Índex, dividend, bròker i OPV apareixen en gairebé qualsevol notícia de borsa.",
    "right": [
     "Qui porta la teva ordre al mercat",
-    "Una empresa comença a cotitzar",
+    "Els propietaris venen les seves accions al públic",
     "0,50 € per acció que reparteix l'empresa",
     "IBEX 35"
    ]

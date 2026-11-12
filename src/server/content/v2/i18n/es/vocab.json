@@ -24,7 +24,7 @@
    "steps": [
     {
      "title": "Las palabras del mercado",
-     "body": "• **Acción:** una parte de una empresa.\n• **Dividendo:** parte del beneficio que se reparte a los accionistas.\n• **Capitalización:** precio × número de acciones.\n• **Índice:** resume un grupo de empresas (IBEX 35, S&P 500).\n• **OPV:** salida a bolsa.\n• **Bróker:** quien lleva tus órdenes al mercado y custodia tus valores."
+     "body": "• **Acción:** una parte de una empresa.\n• **Dividendo:** parte del beneficio que se reparte a los accionistas.\n• **Capitalización:** precio × número de acciones.\n• **Índice:** resume un grupo de empresas (IBEX 35, S&P 500).\n• **OPV:** venta al público de acciones que ya existen; muchas empresas salen así a bolsa.\n• **Bróker:** quien lleva tus órdenes al mercado y custodia tus valores."
     },
     {
      "title": "Comprar y vender",
@@ -292,9 +292,9 @@
    "options": [
     "Un tipo de bono público",
     "Una orden de venta urgente",
-    "La salida a bolsa de una empresa"
+    "Una venta al público de acciones, a menudo para salir a bolsa"
    ],
-   "explanation": "Oferta Pública de Venta: la empresa (o sus dueños) vende acciones a nuevos inversores y empieza a cotizar."
+   "explanation": "Oferta Pública de Venta: los dueños venden al público acciones que ya existen, y muchas empresas salen así a bolsa. Si la empresa emite acciones nuevas, es una OPS."
   },
   "vocabl2-4": {
    "prompt": "¿Qué le aclaras?",
@@ -334,7 +334,7 @@
    "explanation": "Índice, dividendo, bróker y OPV aparecen en casi cualquier noticia de bolsa.",
    "right": [
     "Quien lleva tu orden al mercado",
-    "Una empresa empieza a cotizar",
+    "Los dueños venden sus acciones al público",
     "0,50 € por acción que reparte la empresa",
     "IBEX 35"
    ]

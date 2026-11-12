@@ -65,18 +65,19 @@ export default unit({
           cats: [
             { icon: 'home', label: 'Alquiler', group: 0, amount: 450, min: 350, max: 700 },
             { icon: 'cart', label: 'Supermercado', group: 0, amount: 270, min: 180, max: 350 },
-            { icon: 'train', label: 'Transporte', group: 0, amount: 20, min: 20, max: 120 },
-            { icon: 'power', label: 'Luz, agua e internet', group: 0, amount: 60, min: 40, max: 100 },
+            { icon: 'train', label: 'Abono de transporte', group: 0, amount: 20, min: 20, max: 120 },
+            { icon: 'phone', label: 'Tarifa del móvil', group: 0, amount: 20, min: 10, max: 50 },
             { icon: 'ticket', label: 'Salidas y ocio', group: 1, amount: 280, min: 0, max: 400 },
             { icon: 'pizza', label: 'Comida a domicilio', group: 1, amount: 160, min: 0, max: 250 },
             { icon: 'clothes', label: 'Ropa', group: 1, amount: 150, min: 0, max: 250 },
+            { icon: 'movie', label: 'Dos plataformas de series', group: 1, amount: 22, min: 0, max: 40 },
           ],
         },
         predict: {
           prompt: 'Con estos gastos, ¿cuánto puede ahorrar Laura cada mes?',
-          options: ['Unos 10 €', 'Unos 150 €', 'Unos 280 €, el 20 %'],
+          options: ['Unos 30 €', 'Unos 150 €', 'Unos 280 €, el 20 %'],
           answer: 0,
-          why: 'Necesidades, 800 €; deseos, 590 €: le quedan **10 €**. No es que gane poco: es que todo se va en el día a día.',
+          why: 'Los mismos gastos de la clase anterior: necesidades, 760 €; deseos, 612 €. Le quedan **28 €**. No es que gane poco: es que todo se va en el día a día.',
         },
         goal: { text: 'Ajusta los gastos para que Laura ahorre al menos el 20 %.', when: [when('savePct', '>=', 20)] },
         insight: 'Con el ahorro **reservado**, el resto se reparte solo. Ese 20 % es el que llena tu colchón y, después, tus aportaciones para invertir.',
@@ -151,7 +152,7 @@ export default unit({
     lesson('u2l4', 'El fondo de emergencia', [
       mission({
         title: 'Un año con imprevistos',
-        intro: 'Laura cobra 1.400 € y gasta 1.200 € al mes. Este año le van a pasar cosas, como a todo el mundo. Decide cuánto aparta cada mes y vive el año.',
+        intro: 'Laura cobra 1.400 € y, tras ajustar su presupuesto, gasta 1.200 € al mes. Este año le van a pasar cosas, como a todo el mundo. Decide cuánto aparta cada mes y vive el año.',
         widget: {
           kind: 'emergency', salary: 1400, spend: 1200, start: 0, maxSave: 200, loanRate: 22,
           events: [

@@ -231,13 +231,13 @@ export default unit({
       }),
       play({
         title: 'El valor de aplazar',
-        intro: 'Si traspasas en vez de reembolsar, los **950 €** de impuestos que no pagas hoy siguen invertidos (7 % anual, ejemplo, no promesa).',
-        widget: { kind: 'growth', initial: 950, monthly: 0, rate: 7, years: 1, maxInitial: 2000, maxMonthly: 100, maxRate: 10, maxYears: 30, lines: ['mattress', 'compound'], controls: ['years'] },
+        intro: 'Si traspasas en vez de reembolsar, los **1.140 €** de impuestos que no pagas hoy siguen invertidos (7 % anual, ejemplo, no promesa).',
+        widget: { kind: 'growth', initial: 1140, monthly: 0, rate: 7, years: 1, maxInitial: 2000, maxMonthly: 100, maxRate: 10, maxYears: 30, lines: ['mattress', 'compound'], controls: ['years'] },
         predict: {
-          prompt: '¿En cuánto se convierten esos 950 € en 20 años?',
-          options: ['En unos 1.900 €', 'En unos 3.700 €', 'En unos 19.000 €'],
+          prompt: '¿En cuánto se convierten esos 1.140 € en 20 años?',
+          options: ['En unos 2.300 €', 'En unos 4.400 €', 'En unos 23.000 €'],
           answer: 1,
-          why: 'Al 7 %, el dinero se duplica más o menos cada 10 años: dos veces en 20. Son **3.676 €**.',
+          why: 'Al 7 %, el dinero se duplica más o menos cada 10 años: dos veces en 20. Son **4.411 €**.',
         },
         goal: { text: 'Llévalos a 20 años.', when: [when('years', '>=', 20)] },
         insight: 'Aplazar impuestos también **se compone**: al final pagarás, pero sobre una bola más grande. Pruébalo: en tu Cartera de ETF, rebalancea con la próxima compra en vez de vender.',
