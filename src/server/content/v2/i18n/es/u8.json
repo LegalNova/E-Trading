@@ -239,18 +239,19 @@
     },
     {
      "texts": [
-      "¿Cuántos años de beneficios pagas?",
-      "Esta acción cuesta **100 €** y gana **2 € por acción** al año. El **PER** es el precio ÷ el beneficio por acción.",
-      "Si el beneficio no crece nada, ¿cuántos años tardas en recuperar los 100 € con los beneficios?",
-      "Unos 5 años",
-      "Unos 20 años",
-      "50 años",
-      "PER = 100 ÷ 2 = **50**: pagas 50 años de los beneficios actuales. El mercado espera mucho crecimiento.",
-      "Sin tocar el precio, busca cuánto tendría que crecer el beneficio para recuperarlo en 15 años.",
-      "Con un PER de 50, recuperas el precio en 15 años solo si el beneficio crece un **16 % al año**, sin fallar. Eso es pagar por **crecimiento**: si decepciona, un PER alto se desinfla de golpe.",
-      "Ese crecimiento ya está en el precio. ¿Y si no llega?",
-      "Más crecimiento, menos años para recuperar lo que pagas.",
-      "Sube el crecimiento del beneficio"
+      "Ningún estilo gana siempre",
+      "Datos reales, de junio de 2000 a diciembre de 2006, justo después de la burbuja tecnológica: tienes **10.000 €** en acciones «de crecimiento» de EE. UU. Pásalos a acciones «de valor» y compara.",
+      "Acciones «de valor» de EE. UU.",
+      "Acciones «de crecimiento» de EE. UU.",
+      "En esos años, ¿qué estilo salió mejor parado?",
+      "El crecimiento: las tecnológicas siempre ganan",
+      "El valor, con mucha diferencia",
+      "Más o menos igual",
+      "Los 10.000 € en crecimiento se quedaron en **6.711 €**; en valor, subieron a **17.301 €**.",
+      "Pasa todo a valor y compara.",
+      "Tras la burbuja, el crecimiento perdió un tercio y el valor ganó un 73 %. En los catorce años siguientes pasó lo contrario. **Ningún estilo gana siempre**: por eso muchos inversores tienen de los dos.",
+      "Aquí ganó el valor. Entre 2007 y 2020 ganó el crecimiento.",
+      "Mueve el peso entre crecimiento y valor"
      ]
     },
     {
@@ -641,16 +642,6 @@
    ],
    "explanation": "Un PER bajo puede reflejar que los beneficios van a caer: lo barato a veces es barato por algo."
   },
-  "u8l6-8": {
-   "prompt": "PER = precio ÷ ____ por acción.",
-   "options": [
-    "ventas",
-    "deuda",
-    "dividendo",
-    "beneficio"
-   ],
-   "explanation": "El PER mide cuántos años de beneficios actuales estás pagando."
-  },
   "u8l6-10": {
    "prompt": "¿Qué estilo sufre más si el crecimiento esperado decepciona?",
    "options": [
@@ -659,6 +650,26 @@
     "El de crecimiento"
    ],
    "explanation": "Con un PER alto, el precio descuenta beneficios futuros; si no llegan, el PER se desinfla."
+  },
+  "u8l6-11": {
+   "prompt": "Una empresa de crecimiento con PER de 60 presenta resultados: gana más que el año pasado, pero menos de lo que se esperaba. ¿Qué es lo más probable?",
+   "options": [
+    "No se mueve",
+    "Cae con fuerza: el precio descontaba más crecimiento",
+    "Sube: ha ganado más"
+   ],
+   "explanation": "En crecimiento pagas por expectativas: lo que cuenta es si se cumplen.",
+   "feedback": [
+    "Los resultados que sorprenden mueven el precio.",
+    "Eso: con un PER alto, una decepción pequeña se paga cara.",
+    "Ganar más no basta si el precio ya contaba con todavía más."
+   ]
+  },
+  "u8l6-12": {
+   "prompt": "Una empresa de valor paga 2 € de dividendo al año y cotiza a 40 €. ¿Qué rentabilidad por dividendo ofrece?",
+   "options": [],
+   "explanation": "2 ÷ 40 = 0,05 → 5 %. Las empresas de valor suelen repartir una parte mayor de lo que ganan.",
+   "unit": "%"
   },
   "u8l7-1": {
    "prompt": "¿Qué hace una empresa en una recompra de acciones?",

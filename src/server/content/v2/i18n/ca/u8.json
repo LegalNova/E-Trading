@@ -239,18 +239,19 @@
     },
     {
      "texts": [
-      "Quants anys de beneficis pagues?",
-      "Aquesta acció costa **100 €** i guanya **2 € per acció** l'any. El **PER** és el preu ÷ el benefici per acció.",
-      "Si el benefici no creix gens, quants anys trigues a recuperar els 100 € amb els beneficis?",
-      "Uns 5 anys",
-      "Uns 20 anys",
-      "50 anys",
-      "PER = 100 ÷ 2 = **50**: pagues 50 anys dels beneficis actuals. El mercat espera molt creixement.",
-      "Sense tocar el preu, busca quant hauria de créixer el benefici per recuperar-lo en 15 anys.",
-      "Amb un PER de 50, recuperes el preu en 15 anys només si el benefici creix un **16 % l'any**, sense fallar. Això és pagar per **creixement**: si decep, un PER alt es desinfla de cop.",
-      "Aquest creixement ja és al preu. I si no arriba?",
-      "Més creixement, menys anys per recuperar el que pagues.",
-      "Apuja el creixement del benefici"
+      "Cap estil guanya sempre",
+      "Dades reals, de juny del 2000 a desembre del 2006, just després de la bombolla tecnològica: tens **10.000 €** en accions «de creixement» dels EUA. Passa'ls a accions «de valor» i compara.",
+      "Accions «de valor» dels EUA",
+      "Accions «de creixement» dels EUA",
+      "En aquells anys, quin estil en va sortir més ben parat?",
+      "El creixement: les tecnològiques sempre guanyen",
+      "El valor, amb molta diferència",
+      "Més o menys igual",
+      "Els 10.000 € en creixement es van quedar en **6.711 €**; en valor, van pujar a **17.301 €**.",
+      "Passa-ho tot a valor i compara.",
+      "Després de la bombolla, el creixement va perdre un terç i el valor va guanyar un 73 %. En els catorze anys següents va passar el contrari. **Cap estil guanya sempre**: per això molts inversors en tenen de tots dos.",
+      "Aquí va guanyar el valor. Entre el 2007 i el 2020 va guanyar el creixement.",
+      "Mou el pes entre creixement i valor"
      ]
     },
     {
@@ -641,16 +642,6 @@
    ],
    "explanation": "Un PER baix pot reflectir que els beneficis cauran: el que és barat de vegades és barat per alguna cosa."
   },
-  "u8l6-8": {
-   "prompt": "PER = preu ÷ ____ per acció.",
-   "options": [
-    "vendes",
-    "deute",
-    "dividend",
-    "benefici"
-   ],
-   "explanation": "El PER mesura quants anys de beneficis actuals estàs pagant."
-  },
   "u8l6-10": {
    "prompt": "Quin estil pateix més si el creixement esperat decep?",
    "options": [
@@ -717,6 +708,26 @@
     "Perquè són més segures"
    ],
    "explanation": "El dividend tributa quan el cobres; amb la recompra, el teu guany s'acumula al preu i pagues quan vens."
+  },
+  "u8l6-11": {
+   "prompt": "Una empresa de creixement amb PER de 60 presenta resultats: guanya més que l'any passat, però menys del que s'esperava. Què és el més probable?",
+   "options": [
+    "No es mou",
+    "Cau amb força: el preu descomptava més creixement",
+    "Puja: ha guanyat més"
+   ],
+   "feedback": [
+    "Els resultats que sorprenen mouen el preu.",
+    "Això: amb un PER alt, una decepció petita es paga cara.",
+    "Guanyar més no n'hi ha prou si el preu ja comptava amb encara més."
+   ],
+   "explanation": "En creixement pagues per expectatives: el que compta és si es compleixen."
+  },
+  "u8l6-12": {
+   "unit": "%",
+   "prompt": "Una empresa de valor paga 2 € de dividend l'any i cotitza a 40 €. Quina rendibilitat per dividend ofereix?",
+   "options": [],
+   "explanation": "2 ÷ 40 = 0,05 → 5 %. Les empreses de valor solen repartir una part més gran del que guanyen."
   }
  }
 }

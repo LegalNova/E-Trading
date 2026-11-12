@@ -18,26 +18,24 @@ export default unit({
         ]),
         say('lumi', 'Prestar: cobras un **cupón** y, al **vencimiento**, te devuelven el **nominal**.'),
       ]),
+      // Auditoría RED-14: la pieza de clasificar «bono o acción» era el espejo de la de u8l1 («dueño o prestamista»).
+      // Aquí el alumno calcula lo que cobra quien presta: cupón × años + nominal.
       play({
-        title: '¿Bono o acción?',
-        intro: 'Con una acción eres **dueño** de un trocito de la empresa; con un bono le **prestas** dinero. ¿De cuál es cada rasgo?',
-        widget: {
-          kind: 'sort',
-          bins: [{ label: 'Bono: prestas' }, { label: 'Acción: eres dueño' }],
-          cards: [
-            { icon: 'calendar', label: 'Tiene fecha de vencimiento', bin: 0, why: 'El préstamo acaba en una fecha pactada y te devuelven el nominal.' },
-            { icon: 'company', label: 'Te hace copropietario de la empresa', bin: 1, why: 'Con acciones eres dueño de una parte, con voto en la junta.' },
-            { icon: 'percent', label: 'Paga un cupón pactado desde el principio', bin: 0, why: 'Por eso se llama renta fija: lo que cobras está pactado.' },
-            { icon: 'up', label: 'Ganas más si a la empresa le va muy bien', bin: 1, why: 'El accionista comparte el éxito; el bonista cobra lo mismo.' },
-            { icon: 'shield', label: 'Si la empresa quiebra, cobras antes', bin: 0, why: 'Los acreedores cobran primero; los accionistas, los últimos.' },
-            { icon: 'bank', label: 'Letras, bonos y obligaciones del Tesoro', bin: 0, why: 'Son deuda del Estado: le prestas dinero a distintos plazos.' },
-          ],
+        title: 'Lo que cobra quien presta',
+        intro: 'El bono de Irene: prestas **1.000 €** a 5 años con un cupón del **3 %**. Cada año cobras lo pactado, le vaya como le vaya a la panadería (salvo que quiebre).',
+        widget: { kind: 'growth', initial: 1000, monthly: 0, rate: 3, years: 5, maxInitial: 1000, maxMonthly: 0, maxRate: 8, maxYears: 30, lines: ['mattress', 'simple'], controls: ['rate', 'years'] },
+        predict: {
+          prompt: 'Si a la panadería le va de maravilla y multiplica sus beneficios por diez, ¿cuánto cobras tú con tu bono?',
+          options: ['Diez veces más', 'Lo mismo: 30 € al año y mis 1.000 € al final', 'Nada: eso es para los socios'],
+          answer: 1,
+          why: 'Quien presta cobra **lo pactado**: cinco cupones de 30 € y el nominal, 1.150 € en total. El éxito extra es para los dueños.',
         },
-        goal: { text: 'Clasifica los seis rasgos.', when: [when('done', '==', 6)] },
-        insight: 'Con un bono eres **prestamista**: cobras lo pactado y, si hay quiebra, antes que los accionistas. Por eso se llama **renta fija**.',
+        goal: { text: 'Busca un bono a 10 años con el que acabes cobrando 1.400 € en total.', when: [when('years', '==', 10), when('final', '==', 1400)] },
+        insight: 'Con un bono sabes de antemano lo que vas a cobrar: **cupón × años + nominal**. Por eso se llama **renta fija**. Si a la empresa le va muy bien, no ganas más; si quiebra, cobras antes que los accionistas.',
         lumi: [
-          { when: when('wrong', '>=', 2), say: 'Pista: ¿prestas dinero o compras un trozo del negocio?', mood: 'THINKING' },
-          { say: 'Clasifica cada rasgo', mood: 'HAPPY' },
+          { when: when('final', '>=', 1400), say: 'Diez cupones de 40 € y tus 1.000 € de vuelta.', mood: 'HAPPY' },
+          { when: when('rate', '>=', 6), say: 'Un cupón alto suele avisar de más riesgo de que no te paguen.', mood: 'THINKING' },
+          { say: 'Mueve el cupón y los años', mood: 'HAPPY' },
         ],
       }),
       // Auditoría RED-34: la mezcla «acciones, bonos y oro 2008-2025» se vivía en siete clases. Aquí va otra serie real

@@ -239,18 +239,19 @@
     },
     {
      "texts": [
-      "How many years of profits are you paying for?",
-      "This share costs **€100** and earns **€2 per share** a year. The **P/E** is the price ÷ earnings per share.",
-      "If earnings don't grow at all, how many years does it take to get the €100 back from profits?",
-      "About 5 years",
-      "About 20 years",
-      "50 years",
-      "P/E = 100 ÷ 2 = **50**: you're paying for 50 years of current earnings. The market expects a lot of growth.",
-      "Without touching the price, find how much earnings would need to grow to get it back in 15 years.",
-      "With a P/E of 50, you get the price back in 15 years only if earnings grow **16 % a year**, without fail. That's paying for **growth**: if it disappoints, a high P/E deflates in one go.",
-      "That growth is already in the price. What if it doesn't come?",
-      "More growth, fewer years to get back what you pay.",
-      "Raise the earnings growth"
+      "No style wins all the time",
+      "Real data, from June 2000 to December 2006, right after the tech bubble: you have **€10,000** in US «growth» shares. Move them into «value» shares and compare.",
+      "US «value» shares",
+      "US «growth» shares",
+      "In those years, which style came out better?",
+      "Growth: tech companies always win",
+      "Value, by a wide margin",
+      "About the same",
+      "The €10,000 in growth was left at **€6,711**; in value, it rose to **€17,301**.",
+      "Move everything to value and compare.",
+      "After the bubble, growth lost a third and value gained 73 %. In the fourteen years that followed, the opposite happened. **No style wins all the time**: that's why many investors hold both.",
+      "Here value won. Between 2007 and 2020, growth won.",
+      "Move the weight between growth and value"
      ]
     },
     {
@@ -641,16 +642,6 @@
    ],
    "explanation": "A low P/E may reflect that profits are about to fall: sometimes cheap is cheap for a reason."
   },
-  "u8l6-8": {
-   "prompt": "P/E = price ÷ ____ per share.",
-   "options": [
-    "sales",
-    "debt",
-    "dividend",
-    "earnings"
-   ],
-   "explanation": "The P/E measures how many years of current earnings you're paying for."
-  },
   "u8l6-10": {
    "prompt": "Which style suffers more if expected growth disappoints?",
    "options": [
@@ -717,6 +708,26 @@
     "Because they're safer"
    ],
    "explanation": "A dividend is taxed when you receive it; with a buyback, your gain builds up in the price and you pay when you sell."
+  },
+  "u8l6-11": {
+   "prompt": "A growth company with a P/E of 60 reports results: it earns more than last year, but less than expected. What's most likely?",
+   "options": [
+    "It doesn't move",
+    "It falls sharply: the price was counting on more growth",
+    "It rises: it earned more"
+   ],
+   "feedback": [
+    "Results that surprise move the price.",
+    "That's it: with a high P/E, a small disappointment is punished hard.",
+    "Earning more isn't enough if the price was already counting on even more."
+   ],
+   "explanation": "With growth you pay for expectations: what counts is whether they're met."
+  },
+  "u8l6-12": {
+   "unit": "%",
+   "prompt": "A value company pays a €2 dividend a year and trades at €40. What dividend yield does it offer?",
+   "options": [],
+   "explanation": "2 ÷ 40 = 0.05 → 5 %. Value companies tend to pay out a larger share of what they earn."
   }
  }
 }

@@ -216,22 +216,24 @@ export default unit({
         say('lumi', 'Lo barato a veces es barato por algo: es la **trampa de valor**.'),
         say('lumi', 'Una gran empresa no siempre es una gran inversión: depende del precio.'),
       ]),
+      // Auditoría RED-15: el PER y su pieza son de u17l1 (sección 0); aquí se da por sabido y la clase va de los dos estilos.
+      // Datos de la pieza: ETF iShares Russell 1000 Value (IWD) y Growth (IWF), cierres mensuales ajustados de Yahoo Finance,
+      // de junio de 2000 a diciembre de 2006: 10.000 → 17.301 y 6.711. Fixture `mix-styles-2000` (u25l3 vive 2007-2020).
       play({
-        title: '¿Cuántos años de beneficios pagas?',
-        intro: 'Esta acción cuesta **100 €** y gana **2 € por acción** al año. El **PER** es el precio ÷ el beneficio por acción.',
-        widget: { kind: 'valuation', price: 100, eps: 2, growth: 0, maxPrice: 200, maxGrowth: 40 },
+        title: 'Ningún estilo gana siempre',
+        intro: 'Datos reales, de junio de 2000 a diciembre de 2006, justo después de la burbuja tecnológica: tienes **10.000 €** en acciones «de crecimiento» de EE. UU. Pásalos a acciones «de valor» y compara.',
+        widget: { kind: 'mix', series: 'mix-styles-2000', weights: [0, 100], amount: 10000 },
         predict: {
-          prompt: 'Si el beneficio no crece nada, ¿cuántos años tardas en recuperar los 100 € con los beneficios?',
-          options: ['Unos 5 años', 'Unos 20 años', '50 años'],
-          answer: 2,
-          why: 'PER = 100 ÷ 2 = **50**: pagas 50 años de los beneficios actuales. El mercado espera mucho crecimiento.',
+          prompt: 'En esos años, ¿qué estilo salió mejor parado?',
+          options: ['El crecimiento: las tecnológicas siempre ganan', 'El valor, con mucha diferencia', 'Más o menos igual'],
+          answer: 1,
+          why: 'Los 10.000 € en crecimiento se quedaron en **6.711 €**; en valor, subieron a **17.301 €**.',
         },
-        goal: { text: 'Sin tocar el precio, busca cuánto tendría que crecer el beneficio para recuperarlo en 15 años.', when: [when('payback', '<=', 15), when('price', '==', 100)] },
-        insight: 'Con un PER de 50, recuperas el precio en 15 años solo si el beneficio crece un **16 % al año**, sin fallar. Eso es pagar por **crecimiento**: si decepciona, un PER alto se desinfla de golpe.',
+        goal: { text: 'Pasa todo a valor y compara.', when: [when('w0', '==', 100)] },
+        insight: 'Tras la burbuja, el crecimiento perdió un tercio y el valor ganó un 73 %. En los catorce años siguientes pasó lo contrario. **Ningún estilo gana siempre**: por eso muchos inversores tienen de los dos.',
         lumi: [
-          { when: when('payback', '<=', 15), say: 'Ese crecimiento ya está en el precio. ¿Y si no llega?', mood: 'THINKING' },
-          { when: when('growth', '>=', 5), say: 'Más crecimiento, menos años para recuperar lo que pagas.', mood: 'HAPPY' },
-          { say: 'Sube el crecimiento del beneficio', mood: 'HAPPY' },
+          { when: when('w0', '==', 100), say: 'Aquí ganó el valor. Entre 2007 y 2020 ganó el crecimiento.', mood: 'THINKING' },
+          { say: 'Mueve el peso entre crecimiento y valor', mood: 'HAPPY' },
         ],
       }),
       play({
@@ -268,7 +270,9 @@ export default unit({
       timed(fill('PER = precio ÷ ____ por acción.', 'beneficio', ['dividendo', 'ventas', 'deuda'], 'El PER mide cuántos años de beneficios actuales estás pagando.'), 15),
       scenario('Laura duda entre una tecnológica con PER de 70 que crece un 40 % al año y una aseguradora con PER de 9 que crece un 3 %. ¿Qué razonamiento es el bueno?', [['La de PER 70 es mejor porque crece más', 'Si ese crecimiento ya está en el precio, cualquier decepción puede hundirla.'], ['La de PER 9 es mejor porque es barata', 'Puede ser barata por algo: un negocio que se estanca también decepciona.'], ['Ninguna es mejor por sí sola: depende de si el precio refleja bien su futuro', 'Exacto: crecimiento y valor son estilos, no garantías. Importa lo que pagas por lo que recibes.']], 2, 'Ni «crece mucho» ni «es barata» bastan: hay que comparar el precio con lo que la empresa puede ganar.'),
       single('¿Qué estilo sufre más si el crecimiento esperado decepciona?', ['El de valor', 'El de crecimiento', 'Los dos igual'], 1, 'Con un PER alto, el precio descuenta beneficios futuros; si no llegan, el PER se desinfla.'),
-    ], { source: '5.5', minutes: 6, retire: [1, 2, 4, 6, 8] }),
+      scenario('Una empresa de crecimiento con PER de 60 presenta resultados: gana más que el año pasado, pero menos de lo que se esperaba. ¿Qué es lo más probable?', [['Sube: ha ganado más', 'Ganar más no basta si el precio ya contaba con todavía más.'], ['Cae con fuerza: el precio descontaba más crecimiento', 'Eso: con un PER alto, una decepción pequeña se paga cara.'], ['No se mueve', 'Los resultados que sorprenden mueven el precio.']], 1, 'En crecimiento pagas por expectativas: lo que cuenta es si se cumplen.'),
+      num('Una empresa de valor paga 2 € de dividendo al año y cotiza a 40 €. ¿Qué rentabilidad por dividendo ofrece?', 5, '%', '2 ÷ 40 = 0,05 → 5 %. Las empresas de valor suelen repartir una parte mayor de lo que ganan.'),
+    ], { source: '5.5', minutes: 6, retire: [1, 2, 4, 6, 7, 8] }),
 
     lesson('u8l7', 'Recompras de acciones', [
       story('Menos acciones, más beneficio', [{ id: 'leo', name: 'Leo' }], [
