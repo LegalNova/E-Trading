@@ -106,7 +106,7 @@ export default unit({
       // sale en u10l3 y u30l2 (auditoría CON-18). Ahora: operar sin ventaja pagando 6 € cada vez.
       play({
         title: 'Cada operación paga peaje',
-        intro: 'Simulación: 1.000 personas operan **sin ninguna ventaja**, como a cara o cruz. Cada operación paga **6 €** entre comisión y *spread*. Sube el número de operaciones.',
+        intro: 'Simulación: 1.000 personas operan **sin ninguna ventaja**, como a cara o cruz. Cada operación paga **6 €** entre comisión y spread. Sube el número de operaciones.',
         widget: { kind: 'coinflip', traders: 1000, trades: 20, maxTrades: 500, fee: 6, stake: 100, win: 1 },
         predict: {
           prompt: 'Con 104 operaciones (2 a la semana durante un año), ¿cuánto ha pagado cada persona en costes?',
