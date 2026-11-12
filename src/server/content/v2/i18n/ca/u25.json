@@ -54,49 +54,42 @@
    "steps": [
     {
      "texts": [
-      "El senyor Mercat",
-      "Senyor Mercat",
-      "Graham s'imaginava la borsa com un soci d'humor canviant: el senyor Mercat.",
-      "Has estudiat l'empresa: calcules que cada acció val uns **19,60 €**.",
-      "Avui estic eufòric! Et venc la meva part a 30 € l'acció.",
-      "Una setmana després, el negoci continua igual.",
-      "Tot s'enfonsa. Te la deixo a 15 €, emporta-te-la!",
-      "Què fas?",
-      "Venc el que tinc: si cau, alguna cosa dolenta passa",
-      "Això és deixar que el senyor Mercat decideixi per tu el seu dia de pànic.",
-      "Compro a 15 €: el negoci no ha canviat",
-      "Això mateix! Un **23 %** per sota de la teva estimació: el teu **marge de seguretat**.",
-      "No li faig cas: està boig",
-      "No li has de fer cas cada dia. Però els seus dies de pànic poden ser oportunitats.",
-      "Buffett: «El preu és el que pagues; el valor és el que obtens»."
+      "La llista de la Carla",
+      "Carla",
+      "He passat un filtre: PER per sota de 10 i poc deute. Em surten **40 empreses**.",
+      "Compro les deu més barates i llestos, oi?",
+      "Què li falta?",
+      "Res: el filtre ja ha fet la feina",
+      "Un filtre només diu què cal mirar. No diu **per què** són barates.",
+      "Llegir cada negoci i quedar-se amb els que entén",
+      "Això és el **cercle de competència**: només es valora bé el que s'entén.",
+      "Comprar les 40 per repartir",
+      "Reparteixes el risc, però també compres les trampes. Abans cal mirar cada negoci.",
+      "De les 40, n'entenc de debò quatre. I només una cotitza molt per sota del que crec que val.",
+      "Aleshores tens **una** idea, no quaranta. Un inversor en valor diu «no» gairebé sempre."
      ]
     },
     {
      "texts": [
-      "Ganga o trampa?",
-      "Un inversor en valor només compra si el preu és clarament per sota del que val el negoci. Hi ha valor o és una trampa?",
-      "Hi pot haver valor",
-      "Possible trampa de valor",
-      "Beneficis estables i poc deute; cau un 30 % per un pànic general",
-      "El negoci no ha canviat i el preu sí: hi pot haver marge. Primer cal comprovar-ho.",
-      "PER 4, amb les vendes caient des de fa 5 anys",
-      "El PER baix reflecteix que el mercat espera que els beneficis continuïn caient.",
-      "Clients fidels i un avantatge difícil de copiar (un fossat)",
-      "Un fossat protegeix el negoci de la competència: és un senyal de qualitat.",
-      "Un sector que desapareix i un deute que no para de créixer",
-      "Barat no és el mateix que infravalorat: el negoci s'està encongint.",
-      "Era a 100 € i ara és a 40 €, sense mirar res més",
-      "Que abans valgués 100 € no diu res del que val avui.",
-      "Classifica les cinc empreses.",
-      "**Barat no és el mateix que infravalorat.** Un PER baix pot amagar un negoci en declivi: una **trampa de valor**.",
-      "Pista: mira el negoci, no només el preu.",
-      "Valor o trampa? Classifica cada empresa"
+      "Catorze anys per darrere",
+      "Dades reals, de gener del 2007 a desembre del 2020: poses **10.000 €** en un fons d'accions «de valor» dels EUA (les barates segons els seus comptes) o en un «de creixement».",
+      "Accions «de valor» dels EUA",
+      "Accions «de creixement» dels EUA",
+      "En aquests 14 anys, quin estil va guanyar més?",
+      "El valor, amb diferència",
+      "Més o menys igual",
+      "El creixement, amb més del doble",
+      "Els 10.000 € en valor van acabar en **22.849 €**; en creixement, en **51.293 €**.",
+      "Passa-ho tot a creixement i compara.",
+      "El valor no «va deixar de funcionar»: va guanyar un 128 %. Però qui el va triar va passar **més d'una dècada veient guanyar l'altre**. Un estil només serveix si aguantes els seus anys dolents.",
+      "Mira la diferència. I el 2007 ningú no sabia quin guanyaria.",
+      "Mou el pes entre valor i creixement"
      ]
     },
     {
-     "title": "El que no és",
-     "body": "Value no és comprar el que ha caigut molt ni el que té el PER més baix. Un PER baix pot ser un negoci en declivi: una **trampa de valor**. I l'estil pot passar anys per darrere del mercat.",
-     "key": "Comprar negocis per menys del que valen, amb marge per si t'equivoques.",
+     "title": "Com treballa un inversor en valor",
+     "body": "1. **Filtra**: busca empreses barates segons els seus comptes.\n2. **Entén**: queda't amb els negocis que saps explicar.\n3. **Valora**: estima quant val cadascun i exigeix un marge de seguretat.\n4. **Espera**: compra només si el preu hi arriba, i aguanta anys.\n\nBuffett en diu el seu **cercle de competència**: no importa que sigui gran, sinó saber on s'acaba.",
+     "key": "El value és més paciència que fórmula: poques compres, ben enteses, i anys d'espera.",
      "tip": "Prova-ho: posa una alerta de preu per sota del que creus que val la teva empresa preferida."
     }
    ]
@@ -459,20 +452,6 @@
     "Això és deixar que el senyor Mercat decideixi per tu, just el seu dia de pànic.",
     "Bé: si el valor no ha canviat i el preu sí, hi pot haver una oportunitat. Primer es comprova.",
     "Sense anàlisi ni diversificació no és value investing: és apostar."
-   ]
-  },
-  "u25l3-5": {
-   "prompt": "En Bruno troba una acció amb PER 4. Les vendes cauen des de fa 5 anys, el deute no para de pujar i el sector està desapareixent. Què és?",
-   "options": [
-    "Una empresa de creixement",
-    "Una ganga segura pel seu PER baix",
-    "Probablement una trampa de valor"
-   ],
-   "explanation": "Amb una ràtio baixa no n'hi ha prou: cal mirar si el negoci es manté.",
-   "feedback": [
-    "Les seves vendes cauen: és el contrari.",
-    "El PER baix reflecteix que el mercat espera que els beneficis continuïn caient.",
-    "Exacte: barat no és el mateix que infravalorat. El negoci s'està encongint."
    ]
   },
   "u25l3-6": {
@@ -916,6 +895,30 @@
     "Quan necessitaré aquests diners?"
    ],
    "explanation": "El que més ha pujat aquest mes no et diu quina estratègia podràs mantenir."
+  },
+  "u25l3-12": {
+   "prompt": "Ordena els passos d'un inversor en valor.",
+   "options": [
+    "Estimar quant val cadascun",
+    "Comprar només si el preu deixa marge de seguretat",
+    "Quedar-se amb els negocis que entén",
+    "Filtrar empreses barates segons els seus comptes"
+   ],
+   "explanation": "Filtrar, entendre, valorar i esperar el preu: en aquest ordre."
+  },
+  "u25l3-13": {
+   "prompt": "Fa sis anys que tens un fons de valor. El teu cunyat, amb un de creixement, ha guanyat el doble. Què fas?",
+   "options": [
+    "Em canvio al seu: és clar quin funciona",
+    "Reviso si les meves raons es mantenen i, si és així, mantinc el pla",
+    "Ho venc tot i em quedo en liquiditat"
+   ],
+   "feedback": [
+    "Canviar-te a l'estil que acaba de guanyar és comprar car el que ja ha pujat.",
+    "Això. Un estil es tria sabent que tindrà anys dolents; el que el trenca és abandonar-lo en aquests anys.",
+    "Surts del mercat per una comparació, no perquè el teu pla hagi fallat."
+   ],
+   "explanation": "Cap estil guanya sempre. Tria'n un que puguis mantenir quan va per darrere."
   }
  }
 }

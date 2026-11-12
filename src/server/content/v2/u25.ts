@@ -50,42 +50,41 @@ export default unit({
       chat(['Comprar y mantener es de abuelos 👴', 'Yo prefiero algo con emoción.'], '¿Qué le respondes a Lumi?', [['Tienes razón, aburrido es malo', 'Pues según SPIVA, el 97 % de los fondos activos europeos rinde menos que el índice en 10 años…'], ['Aburrido no es malo: es la estrategia con más evidencia a largo plazo', 'Vale, vale. Lo aburrido para el dinero de largo plazo, y la emoción, con una parte pequeña.'], ['Mejor busca la acción que más suba este año', 'Eso es apostar: la mayoría de acciones individuales rinden menos que el índice.']], 1, 'La emoción no paga: lo que paga es estar invertido, diversificado y con costes bajos durante años.'),
     ], { source: '4.1', minutes: 6, retire: [2, 4, 5, 7, 9] }),
 
+    // Rehecha en la auditoría (RED-4): «El señor Mercado» es de u16l1 y la trampa de valor (PER 4 con ventas cayendo), de u8l6 y u17l1.
+    // Ahora enseña cómo se trabaja: filtro, círculo de competencia, margen y paciencia, con datos reales de valor frente a crecimiento.
+    // Datos de la pieza: ETF iShares Russell 1000 Value (IWD) y Growth (IWF), cierres mensuales ajustados de Yahoo Finance,
+    // de enero de 2007 a diciembre de 2020: +128,5 % y +412,9 % (10.000 → 22.849 y 51.293). Fixture `mix-value-growth`.
+    // «Círculo de competencia»: carta de Warren Buffett a los accionistas de Berkshire Hathaway de 1996.
     lesson('u25l3', 'Value investing al estilo Buffett', [
-      story('El señor Mercado', [{ id: 'mercado', name: 'Señor Mercado' }], [
-        note('Graham imaginaba a la bolsa como un socio de humor cambiante: el señor Mercado.'),
-        say('lumi', 'Has estudiado la empresa: estimas que cada acción vale unos **19,60 €**.'),
-        say('mercado', '¡Hoy estoy eufórico! Te vendo mi parte a 30 € la acción.'),
-        note('Una semana después, el negocio sigue igual.'),
-        say('mercado', 'Todo se hunde. ¡Te la dejo a 15 €, llévatela!'),
-        choose('¿Qué haces?', [
-          opt('Vendo lo que tengo: si cae, algo malo pasa', 'bad', say('lumi', 'Eso es dejar que el señor Mercado decida por ti en su día de pánico.')),
-          opt('Compro a 15 €: el negocio no ha cambiado', 'good', say('lumi', '¡Eso! Un **23 %** por debajo de tu estimación: tu **margen de seguridad**.')),
-          opt('No le hago caso: está loco', 'ok', say('lumi', 'No tienes que hacerle caso cada día. Pero sus días de pánico pueden ser oportunidades.')),
+      story('La lista de Carla', [{ id: 'carla', name: 'Carla' }], [
+        say('carla', 'He pasado un filtro: PER por debajo de 10 y poca deuda. Me salen **40 empresas**.'),
+        say('carla', 'Compro las diez más baratas y listo, ¿no?'),
+        choose('¿Qué le falta?', [
+          opt('Nada: el filtro ya ha hecho el trabajo', 'bad', say('lumi', 'Un filtro solo dice qué mirar. No dice **por qué** están baratas.')),
+          opt('Leer cada negocio y quedarse con los que entiende', 'good', say('lumi', 'Eso es el **círculo de competencia**: solo se valora bien lo que se entiende.')),
+          opt('Comprar las 40 para repartir', 'ok', say('lumi', 'Repartes el riesgo, pero también compras las trampas. Antes hay que mirar cada negocio.')),
         ]),
-        say('lumi', 'Buffett: «El precio es lo que pagas; el valor es lo que obtienes».'),
+        say('carla', 'De las 40, entiendo de verdad cuatro. Y solo una cotiza muy por debajo de lo que creo que vale.'),
+        say('lumi', 'Entonces tienes **una** idea, no cuarenta. Un inversor en valor dice «no» casi siempre.'),
       ]),
       play({
-        title: '¿Ganga o trampa?',
-        intro: 'Un inversor en valor solo compra si el precio está claramente por debajo de lo que vale el negocio. ¿Hay valor o es una trampa?',
-        widget: {
-          kind: 'sort',
-          bins: [{ label: 'Puede haber valor' }, { label: 'Posible trampa de valor' }],
-          cards: [
-            { icon: 'company', label: 'Beneficios estables y poca deuda; cae un 30 % por un pánico general', bin: 0, why: 'El negocio no ha cambiado y el precio sí: puede haber margen. Primero se comprueba.' },
-            { icon: 'down', label: 'PER 4, con las ventas cayendo desde hace 5 años', bin: 1, why: 'El PER bajo refleja que el mercado espera que los beneficios sigan cayendo.' },
-            { icon: 'shield', label: 'Clientes fieles y una ventaja difícil de copiar (un foso)', bin: 0, why: 'Un foso protege el negocio de la competencia: es una señal de calidad.' },
-            { icon: 'factory', label: 'Un sector que desaparece y una deuda que no para de crecer', bin: 1, why: 'Barato no es lo mismo que infravalorado: el negocio se está encogiendo.' },
-            { icon: 'tag', label: 'Estaba a 100 € y ahora a 40 €, sin mirar nada más', bin: 1, why: 'Que antes valiera 100 € no dice nada de lo que vale hoy.' },
-          ],
+        title: 'Catorce años por detrás',
+        intro: 'Datos reales, de enero de 2007 a diciembre de 2020: pones **10.000 €** en un fondo de acciones «de valor» de EE. UU. (las baratas según sus cuentas) o en uno «de crecimiento».',
+        widget: { kind: 'mix', series: 'mix-value-growth', weights: [100, 0], amount: 10000 },
+        predict: {
+          prompt: 'En esos 14 años, ¿qué estilo ganó más?',
+          options: ['El valor, con diferencia', 'Más o menos igual', 'El crecimiento, con más del doble'],
+          answer: 2,
+          why: 'Los 10.000 € en valor acabaron en **22.849 €**; en crecimiento, en **51.293 €**.',
         },
-        goal: { text: 'Clasifica las cinco empresas.', when: [when('done', '==', 5)] },
-        insight: '**Barato no es lo mismo que infravalorado.** Un PER bajo puede esconder un negocio en declive: una **trampa de valor**.',
+        goal: { text: 'Pasa todo a crecimiento y compara.', when: [when('w1', '==', 100)] },
+        insight: 'El valor no «dejó de funcionar»: ganó un 128 %. Pero quien lo eligió pasó **más de una década viendo ganar al otro**. Un estilo solo sirve si aguantas sus años malos.',
         lumi: [
-          { when: when('wrong', '>=', 2), say: 'Pista: mira el negocio, no solo el precio.', mood: 'THINKING' },
-          { say: '¿Valor o trampa? Clasifica cada empresa', mood: 'HAPPY' },
+          { when: when('w1', '==', 100), say: 'Mira la diferencia. Y en 2007 nadie sabía cuál iba a ganar.', mood: 'THINKING' },
+          { say: 'Mueve el peso entre valor y crecimiento', mood: 'HAPPY' },
         ],
       }),
-      key('Lo que no es', 'Value no es comprar lo que ha caído mucho ni lo que tiene el PER más bajo. Un PER bajo puede ser un negocio en declive: una **trampa de valor**. Y el estilo puede pasar años por detrás del mercado.', 'Comprar negocios por menos de lo que valen, con margen por si te equivocas.', 'Pruébalo: pon una alerta de precio bajo lo que crees que vale tu empresa favorita.'),
+      key('Cómo trabaja un inversor en valor', '1. **Filtra**: busca empresas baratas según sus cuentas.\n2. **Entiende**: quédate con los negocios que sabes explicar.\n3. **Valora**: estima cuánto vale cada uno y exige un margen de seguridad.\n4. **Espera**: compra solo si el precio llega, y aguanta años.\n\nBuffett lo llama su **círculo de competencia**: no importa que sea grande, sino saber dónde acaba.', 'El value es más paciencia que fórmula: pocas compras, bien entendidas, y años de espera.', 'Pruébalo: pon una alerta de precio bajo lo que crees que vale tu empresa favorita.'),
     ], [
       num('Estimas que una acción vale 20 € y cotiza a 15 €. ¿Qué margen de seguridad tienes respecto a tu valor estimado?', 25, '%', '(20 − 15) ÷ 20 = 0,25 → 25 %.'),
       num('Estimas que una empresa vale 40 € por acción y exiges un margen de seguridad del 30 %. ¿Qué precio máximo pagarías?', 28, '€', '40 × (1 − 0,30) = 28 €.'),
@@ -98,7 +97,9 @@ export default unit({
       timed(fill('Buffett: «El precio es lo que pagas; el ____ es lo que obtienes».', 'valor', ['dividendo', 'beneficio', 'riesgo'], 'Precio y valor no son lo mismo: el value investing vive de esa diferencia.'), 12),
       multi('¿Qué señales apuntan a una posible trampa de valor? Marca todas.', ['Ventas que caen año tras año', 'Deuda que no para de crecer', 'Un sector que está desapareciendo', 'Beneficios estables y un ROIC alto'], [0, 1, 2], 'Beneficios estables y alta rentabilidad sobre el capital son señales de calidad, no de trampa.'),
       chat(['Value investing es comprar lo que más ha caído, ¿no? 📉', 'Esta acción estaba a 100 € y ahora a 40 €: ¡chollo!'], '¿Qué le contestas a Lumi?', [['Sí, cuanto más cae, mejor', 'Eso es anclaje: que antes valiera 100 € no dice nada de lo que vale hoy.'], ['Lo que importa es cuánto vale el negocio, no a cuánto estuvo', 'Ah, vale: primero estimo el valor, y solo si el precio está bastante por debajo, hay margen.'], ['Value es comprar lo que más sube', 'Eso se parece más al momentum, otra estrategia distinta.']], 1, 'Value compara precio con valor, no precio de hoy con precio de ayer.'),
-    ], { source: '5.1', minutes: 6, retire: [0, 1, 2, 6, 7, 8] }),
+      order('Ordena los pasos de un inversor en valor.', ['Filtrar empresas baratas según sus cuentas', 'Quedarse con los negocios que entiende', 'Estimar cuánto vale cada uno', 'Comprar solo si el precio deja margen de seguridad'], 'Filtrar, entender, valorar y esperar el precio: en ese orden.'),
+      scenario('Llevas seis años con un fondo de valor. Tu cuñado, con uno de crecimiento, ha ganado el doble. ¿Qué haces?', [['Me cambio al suyo: está claro cuál funciona', 'Cambiarte al estilo que acaba de ganar es comprar caro lo que ya ha subido.'], ['Reviso si mis razones siguen en pie y, si es así, mantengo el plan', 'Eso. Un estilo se elige sabiendo que tendrá años malos; lo que lo rompe es abandonarlo en ellos.'], ['Vendo todo y me quedo en liquidez', 'Sales del mercado por una comparación, no porque tu plan haya fallado.']], 1, 'Ningún estilo gana siempre. Elige uno que puedas mantener cuando va por detrás.'),
+    ], { source: '5.1', minutes: 6, retire: [0, 1, 2, 4, 6, 7, 8] }),
 
     lesson('u25l4', 'Invertir por dividendos', [
       story('El euro «gratis»', [{ id: 'ines', name: 'Inés' }], [

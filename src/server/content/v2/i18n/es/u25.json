@@ -54,49 +54,42 @@
    "steps": [
     {
      "texts": [
-      "El señor Mercado",
-      "Señor Mercado",
-      "Graham imaginaba a la bolsa como un socio de humor cambiante: el señor Mercado.",
-      "Has estudiado la empresa: estimas que cada acción vale unos **19,60 €**.",
-      "¡Hoy estoy eufórico! Te vendo mi parte a 30 € la acción.",
-      "Una semana después, el negocio sigue igual.",
-      "Todo se hunde. ¡Te la dejo a 15 €, llévatela!",
-      "¿Qué haces?",
-      "Vendo lo que tengo: si cae, algo malo pasa",
-      "Eso es dejar que el señor Mercado decida por ti en su día de pánico.",
-      "Compro a 15 €: el negocio no ha cambiado",
-      "¡Eso! Un **23 %** por debajo de tu estimación: tu **margen de seguridad**.",
-      "No le hago caso: está loco",
-      "No tienes que hacerle caso cada día. Pero sus días de pánico pueden ser oportunidades.",
-      "Buffett: «El precio es lo que pagas; el valor es lo que obtienes»."
+      "La lista de Carla",
+      "Carla",
+      "He pasado un filtro: PER por debajo de 10 y poca deuda. Me salen **40 empresas**.",
+      "Compro las diez más baratas y listo, ¿no?",
+      "¿Qué le falta?",
+      "Nada: el filtro ya ha hecho el trabajo",
+      "Un filtro solo dice qué mirar. No dice **por qué** están baratas.",
+      "Leer cada negocio y quedarse con los que entiende",
+      "Eso es el **círculo de competencia**: solo se valora bien lo que se entiende.",
+      "Comprar las 40 para repartir",
+      "Repartes el riesgo, pero también compras las trampas. Antes hay que mirar cada negocio.",
+      "De las 40, entiendo de verdad cuatro. Y solo una cotiza muy por debajo de lo que creo que vale.",
+      "Entonces tienes **una** idea, no cuarenta. Un inversor en valor dice «no» casi siempre."
      ]
     },
     {
      "texts": [
-      "¿Ganga o trampa?",
-      "Un inversor en valor solo compra si el precio está claramente por debajo de lo que vale el negocio. ¿Hay valor o es una trampa?",
-      "Puede haber valor",
-      "Posible trampa de valor",
-      "Beneficios estables y poca deuda; cae un 30 % por un pánico general",
-      "El negocio no ha cambiado y el precio sí: puede haber margen. Primero se comprueba.",
-      "PER 4, con las ventas cayendo desde hace 5 años",
-      "El PER bajo refleja que el mercado espera que los beneficios sigan cayendo.",
-      "Clientes fieles y una ventaja difícil de copiar (un foso)",
-      "Un foso protege el negocio de la competencia: es una señal de calidad.",
-      "Un sector que desaparece y una deuda que no para de crecer",
-      "Barato no es lo mismo que infravalorado: el negocio se está encogiendo.",
-      "Estaba a 100 € y ahora a 40 €, sin mirar nada más",
-      "Que antes valiera 100 € no dice nada de lo que vale hoy.",
-      "Clasifica las cinco empresas.",
-      "**Barato no es lo mismo que infravalorado.** Un PER bajo puede esconder un negocio en declive: una **trampa de valor**.",
-      "Pista: mira el negocio, no solo el precio.",
-      "¿Valor o trampa? Clasifica cada empresa"
+      "Catorce años por detrás",
+      "Datos reales, de enero de 2007 a diciembre de 2020: pones **10.000 €** en un fondo de acciones «de valor» de EE. UU. (las baratas según sus cuentas) o en uno «de crecimiento».",
+      "Acciones «de valor» de EE. UU.",
+      "Acciones «de crecimiento» de EE. UU.",
+      "En esos 14 años, ¿qué estilo ganó más?",
+      "El valor, con diferencia",
+      "Más o menos igual",
+      "El crecimiento, con más del doble",
+      "Los 10.000 € en valor acabaron en **22.849 €**; en crecimiento, en **51.293 €**.",
+      "Pasa todo a crecimiento y compara.",
+      "El valor no «dejó de funcionar»: ganó un 128 %. Pero quien lo eligió pasó **más de una década viendo ganar al otro**. Un estilo solo sirve si aguantas sus años malos.",
+      "Mira la diferencia. Y en 2007 nadie sabía cuál iba a ganar.",
+      "Mueve el peso entre valor y crecimiento"
      ]
     },
     {
-     "title": "Lo que no es",
-     "body": "Value no es comprar lo que ha caído mucho ni lo que tiene el PER más bajo. Un PER bajo puede ser un negocio en declive: una **trampa de valor**. Y el estilo puede pasar años por detrás del mercado.",
-     "key": "Comprar negocios por menos de lo que valen, con margen por si te equivocas.",
+     "title": "Cómo trabaja un inversor en valor",
+     "body": "1. **Filtra**: busca empresas baratas según sus cuentas.\n2. **Entiende**: quédate con los negocios que sabes explicar.\n3. **Valora**: estima cuánto vale cada uno y exige un margen de seguridad.\n4. **Espera**: compra solo si el precio llega, y aguanta años.\n\nBuffett lo llama su **círculo de competencia**: no importa que sea grande, sino saber dónde acaba.",
+     "key": "El value es más paciencia que fórmula: pocas compras, bien entendidas, y años de espera.",
      "tip": "Pruébalo: pon una alerta de precio bajo lo que crees que vale tu empresa favorita."
     }
    ]
@@ -461,20 +454,6 @@
     "Sin análisis ni diversificación no es value investing: es apostar."
    ]
   },
-  "u25l3-5": {
-   "prompt": "Bruno encuentra una acción con PER 4. Las ventas caen desde hace 5 años, la deuda no para de subir y el sector está desapareciendo. ¿Qué es?",
-   "options": [
-    "Una empresa de crecimiento",
-    "Una ganga segura por su PER bajo",
-    "Probablemente una trampa de valor"
-   ],
-   "explanation": "Un ratio bajo no basta: hay que mirar si el negocio se mantiene.",
-   "feedback": [
-    "Sus ventas caen: es lo contrario.",
-    "El PER bajo refleja que el mercado espera que los beneficios sigan cayendo.",
-    "Exacto: barato no es lo mismo que infravalorado. El negocio se está encogiendo."
-   ]
-  },
   "u25l3-6": {
    "prompt": "Empareja cada concepto con su significado.",
    "options": [
@@ -517,6 +496,30 @@
    "lines": [
     "Value investing es comprar lo que más ha caído, ¿no? 📉",
     "Esta acción estaba a 100 € y ahora a 40 €: ¡chollo!"
+   ]
+  },
+  "u25l3-12": {
+   "prompt": "Ordena los pasos de un inversor en valor.",
+   "options": [
+    "Estimar cuánto vale cada uno",
+    "Comprar solo si el precio deja margen de seguridad",
+    "Quedarse con los negocios que entiende",
+    "Filtrar empresas baratas según sus cuentas"
+   ],
+   "explanation": "Filtrar, entender, valorar y esperar el precio: en ese orden."
+  },
+  "u25l3-13": {
+   "prompt": "Llevas seis años con un fondo de valor. Tu cuñado, con uno de crecimiento, ha ganado el doble. ¿Qué haces?",
+   "options": [
+    "Me cambio al suyo: está claro cuál funciona",
+    "Reviso si mis razones siguen en pie y, si es así, mantengo el plan",
+    "Vendo todo y me quedo en liquidez"
+   ],
+   "explanation": "Ningún estilo gana siempre. Elige uno que puedas mantener cuando va por detrás.",
+   "feedback": [
+    "Cambiarte al estilo que acaba de ganar es comprar caro lo que ya ha subido.",
+    "Eso. Un estilo se elige sabiendo que tendrá años malos; lo que lo rompe es abandonarlo en ellos.",
+    "Sales del mercado por una comparación, no porque tu plan haya fallado."
    ]
   },
   "u25l4-4": {

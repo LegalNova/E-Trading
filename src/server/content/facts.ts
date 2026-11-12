@@ -58,7 +58,7 @@ export const FACTS = {
   spivaEurope: {
     what: 'SPIVA Europa, cierre de 2025: fondos activos de renta variable que quedaron por detrás de su índice', value: '81,8 % a 1 año · 97,0 % a 10 años', asOf: '2025-12-31', checked: '2026-11-12', kind: 'secundaria',
     source: 'Resumen de S&P (blog Indexology, abril de 2026): «el 81,8 % de los fondos activos de renta variable quedó por detrás en un año y el 97,0 % en diez». Es el conjunto de fondos de renta variable del informe europeo, no solo los que invierten en acciones europeas: por eso las clases dicen «fondos europeos de acciones». El PDF de S&P no se ha podido abrir (acceso bloqueado). https://www.indexologyblog.com/tag/spiva-europe/',
-    usedIn: ['u7l5', 'u10l4', 'u25l1', 'u30l2'], review: 'Si se consigue el PDF, anotar la tabla exacta.',
+    usedIn: ['u7l5', 'u10l4', 'u25l1'], review: 'Si se consigue el PDF, anotar la tabla exacta.',
   },
   msciWorldCount: {
     what: 'Número de empresas del MSCI World', value: 1249, asOf: '2026-09-30', checked: '2026-11-12', kind: 'oficial',

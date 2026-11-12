@@ -54,49 +54,42 @@
    "steps": [
     {
      "texts": [
-      "Meet Mr Market",
-      "Mr Market",
-      "Graham pictured the stock market as a moody business partner: Mr Market.",
-      "You've studied the company: you reckon each share is worth about **€19.60**.",
-      "I'm euphoric today! I'll sell you my stake at €30 a share.",
-      "A week later, the business is exactly the same.",
-      "Everything's collapsing. It's yours for €15, take it!",
-      "What do you do?",
-      "Sell what I have: if it's falling, something bad is going on",
-      "That's letting Mr Market decide for you on his day of panic.",
-      "Buy at €15: the business hasn't changed",
-      "Exactly! **23 %** below your estimate: your **margin of safety**.",
-      "Ignore him: he's mad",
-      "You don't have to listen to him every day. But his days of panic can be opportunities.",
-      "Buffett: «Price is what you pay; value is what you get»."
+      "Carla's list",
+      "Carla",
+      "I've run a screen: P/E below 10 and little debt. I get **40 companies**.",
+      "I buy the ten cheapest and that's it, right?",
+      "What's missing?",
+      "Nothing: the screen has done the work",
+      "A screen only tells you what to look at. It doesn't tell you **why** they're cheap.",
+      "Reading up on each business and keeping the ones she understands",
+      "That's the **circle of competence**: you can only value well what you understand.",
+      "Buying all 40 to spread the risk",
+      "You spread the risk, but you also buy the traps. First you have to look at each business.",
+      "Of the 40, I truly understand four. And only one trades well below what I think it's worth.",
+      "Then you have **one** idea, not forty. A value investor says «no» almost every time."
      ]
     },
     {
      "texts": [
-      "Bargain or trap?",
-      "A value investor only buys if the price is clearly below what the business is worth. Is there value, or is it a trap?",
-      "Could be value",
-      "Possible value trap",
-      "Steady earnings and little debt; down 30 % in a market-wide panic",
-      "The business hasn't changed but the price has: there may be a margin. Check first.",
-      "P/E of 4, with sales falling for 5 years",
-      "The low P/E shows the market expects earnings to keep falling.",
-      "Loyal customers and an edge that's hard to copy (a moat)",
-      "A moat protects the business from competitors: it's a sign of quality.",
-      "A dying industry and debt that keeps on growing",
-      "Cheap isn't the same as undervalued: the business is shrinking.",
-      "It was at €100 and now it's at €40, without looking at anything else",
-      "Having been worth €100 says nothing about what it's worth today.",
-      "Sort the five companies.",
-      "**Cheap isn't the same as undervalued.** A low P/E can hide a business in decline: a **value trap**.",
-      "Hint: look at the business, not just the price.",
-      "Value or trap? Sort each company"
+      "Fourteen years behind",
+      "Real data, from January 2007 to December 2020: you put **€10,000** into a fund of US «value» stocks (the cheap ones according to their accounts) or into a «growth» one.",
+      "US «value» stocks",
+      "US «growth» stocks",
+      "Over those 14 years, which style gained more?",
+      "Value, by a wide margin",
+      "About the same",
+      "Growth, with more than double",
+      "The €10,000 in value ended at **€22,849**; in growth, at **€51,293**.",
+      "Move everything to growth and compare.",
+      "Value didn't «stop working»: it gained 128 %. But whoever chose it spent **more than a decade watching the other one win**. A style only works if you can sit through its bad years.",
+      "Look at the gap. And in 2007 nobody knew which one would win.",
+      "Move the weight between value and growth"
      ]
     },
     {
-     "title": "What it isn't",
-     "body": "Value isn't buying whatever has fallen a lot or has the lowest P/E. A low P/E can be a business in decline: a **value trap**. And the style can spend years lagging the market.",
-     "key": "Buying businesses for less than they're worth, with a margin in case you're wrong.",
+     "title": "How a value investor works",
+     "body": "1. **Screen**: look for companies that are cheap according to their accounts.\n2. **Understand**: keep the businesses you can explain.\n3. **Value**: estimate what each one is worth and demand a margin of safety.\n4. **Wait**: buy only if the price gets there, and hold for years.\n\nBuffett calls it his **circle of competence**: it doesn't matter how big it is, but knowing where it ends.",
+     "key": "Value investing is more patience than formula: few purchases, well understood, and years of waiting.",
      "tip": "Try it: set a price alert below what you think your favourite company is worth."
     }
    ]
@@ -459,20 +452,6 @@
     "That's letting Mr Market decide for you, right on his panic day.",
     "Good: if the value hasn't changed but the price has, there may be an opportunity. You check first.",
     "Without analysis or diversification it isn't value investing: it's gambling."
-   ]
-  },
-  "u25l3-5": {
-   "prompt": "Bruno finds a share with a P/E of 4. Sales have been falling for 5 years, debt keeps rising and the sector is disappearing. What is it?",
-   "options": [
-    "A growth company",
-    "A sure bargain because of its low P/E",
-    "Probably a value trap"
-   ],
-   "explanation": "A low ratio isn't enough: you have to check whether the business is holding up.",
-   "feedback": [
-    "Its sales are falling: that's the opposite.",
-    "The low P/E reflects that the market expects profits to keep falling.",
-    "Exactly: cheap isn't the same as undervalued. The business is shrinking."
    ]
   },
   "u25l3-6": {
@@ -916,6 +895,30 @@
     "When will I need this money?"
    ],
    "explanation": "Whatever has risen most this month doesn't tell you which strategy you'll be able to stick to."
+  },
+  "u25l3-12": {
+   "prompt": "Put a value investor's steps in order.",
+   "options": [
+    "Estimating what each one is worth",
+    "Buying only if the price leaves a margin of safety",
+    "Keeping the businesses they understand",
+    "Screening for companies that are cheap according to their accounts"
+   ],
+   "explanation": "Screen, understand, value and wait for the price: in that order."
+  },
+  "u25l3-13": {
+   "prompt": "You've held a value fund for six years. Your brother-in-law, with a growth fund, has made twice as much. What do you do?",
+   "options": [
+    "I switch to his: it's clear which one works",
+    "I check whether my reasons still hold and, if so, I stick to the plan",
+    "I sell everything and stay in cash"
+   ],
+   "feedback": [
+    "Switching to the style that has just won means buying what has already gone up, at a high price.",
+    "That's it. You choose a style knowing it will have bad years; what breaks it is abandoning it during them.",
+    "You leave the market because of a comparison, not because your plan has failed."
+   ],
+   "explanation": "No style wins all the time. Choose one you can stick with when it's lagging."
   }
  }
 }
