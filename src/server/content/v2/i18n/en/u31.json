@@ -354,6 +354,92 @@
   "u31r": {
    "title": "Unit review",
    "steps": []
+  },
+  "u31l7": {
+   "title": "Withholding: what's paid in advance and what you declare",
+   "steps": [
+    {
+     "texts": [
+      "«Some money is missing»",
+      "Ana",
+      "I've cashed in a fund. I had a gain of **€1,000** and only **€810** of that gain has reached me.",
+      "Have I been charged a €190 fee?",
+      "What is that €190?",
+      "A fee from the fund manager for redeeming",
+      "It isn't the manager's: that money has gone to the tax office in your name.",
+      "Withholding: a 19 % advance on the tax",
+      "That's it. Whoever pays you sends the tax office 19 % of the gain in advance.",
+      "A penalty for selling early",
+      "There's no penalty for redeeming. It's a payment on account of the tax.",
+      "Careful: **withholding isn't paying the final tax**. On your tax return the whole sum is done: if too much was withheld, you get a refund; if too little, you pay the difference."
+     ]
+    },
+    {
+     "texts": [
+      "A broker from another country",
+      "Bruno",
+      "My broker is foreign. This year I've received dividends and sold at a profit, and **nothing has been withheld**.",
+      "Better, right? That way I don't pay.",
+      "What do you tell him?",
+      "Yes: if nobody withholds, there's no tax",
+      "The tax is the same. Only who does the paperwork changes.",
+      "No: he has to declare it himself on his tax return",
+      "That's it. With no withholding, he pays it in full when he files.",
+      "He only pays if he brings the money to his bank",
+      "You're taxed on the gain in the year you make it, wherever the money is.",
+      "Also, those trades **may not appear in his tax data**. He has to keep the statements and enter them himself.",
+      "Selling shares or an ETF at a profit carries no withholding in Spain: you pay on your tax return. Redeeming an investment fund does."
+     ]
+    },
+    {
+     "title": "Withholding isn't paying",
+     "body": "• **Withholding**: a **19 %** advance made by whoever pays you. It applies to dividends, interest and the gain when you redeem a fund.\n• **It isn't the final tax**: on your return it's adjusted, with a refund or a payment.\n• **Foreign broker**: it usually doesn't withhold or fill in your tax data. You declare it yourself, using its statements.\n\n**Do I have to file a return?** General rule for the 2025 tax year: you aren't obliged if your salary is no more than **€22,000** from a single payer and your interest, dividends and gains subject to withholding are no more than **€1,600**. There are exceptions: check on the Agencia Tributaria website.",
+     "key": "Withholding is an advance. The real tax is worked out on your return.",
+     "tip": "Try it: look in your Portfolio at which positions pay a dividend and work out how much would be withheld from €100."
+    }
+   ]
+  },
+  "u31l8": {
+   "title": "The 0.2 % on buying and automatic crypto reporting",
+   "steps": [
+    {
+     "texts": [
+      "An odd line on the statement",
+      "Laura",
+      "I've bought **€5,000** of shares in a big Spanish bank. The statement says «ITF: €10».",
+      "What is that ITF?",
+      "Another fee my broker keeps",
+      "The broker collects it but doesn't keep it: it pays it to the tax office.",
+      "A 0.2 % tax on the purchase",
+      "That's it: the Financial Transactions Tax. 5,000 × 0.2 % = €10.",
+      "Withholding on account of income tax",
+      "It isn't deducted from anything later: it's a separate tax.",
+      "It's only paid when **buying** shares in large Spanish companies: those worth more than €1,000 million on the stock market. Selling doesn't pay it.",
+      "If you buy and sell the same shares on the same day, that purchase doesn't pay it. The Agencia Tributaria publishes the list of companies every December."
+     ]
+    },
+    {
+     "texts": [
+      "«The tax office won't find out»",
+      "Pablo",
+      "I hold crypto on a platform and I've never told the tax office anything. After all, **they won't find out**.",
+      "Is that so?",
+      "Yes: crypto is anonymous",
+      "On a platform your account carries your name and your ID.",
+      "No: platforms already collect your data for the tax authorities",
+      "It's a European rule. They collect the data from 1 January 2026 and the first report is sent in 2027.",
+      "Only if he has a lot of money",
+      "The platform reports on all its customers, not only the big ones.",
+      "**Reporting isn't paying.** There's no new tax: you pay, as always, on the gain when you sell or swap."
+     ]
+    },
+    {
+     "title": "Two things worth knowing",
+     "body": "**The 0.2 % on buying (ITF)**\n\n• Only when **buying** shares in Spanish companies worth more than €1,000 million on the stock market.\n• Your broker collects it and pays it to the tax office.\n• Selling doesn't pay it. Nor do foreign shares.\n\n**Automatic crypto reporting**\n\n• A European rule requires platforms to report their customers to the tax authorities.\n• They collect the data from 1 January 2026; the first report is sent in 2027.\n• It doesn't change how much you pay: it changes that the tax office already knows.",
+     "key": "The ITF is one more cost when buying large Spanish shares. And crypto on a platform isn't invisible.",
+     "tip": "Try it: work out 0.2 % of your last purchase of a Spanish share on the simulator."
+    }
+   ]
   }
  },
  "questions": {
@@ -755,6 +841,195 @@
     "Exactly! The tax office only wants to know. You'll pay when you sell at a gain.",
     "Selling would be taxed on the gain. Reporting, on the other hand, costs you no tax."
    ]
+  },
+  "u31l7-1": {
+   "unit": "€",
+   "prompt": "You redeem a fund with a €1,000 gain. With 19 % withholding, how many euros are withheld?",
+   "options": [],
+   "explanation": "1,000 × 0.19 = €190. You receive the rest and that €190 is recorded in your name at the tax office."
+  },
+  "u31l7-2": {
+   "prompt": "Withholding is the final tax: after that there's nothing more to do.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It's an advance. On your return the whole year's tax is worked out and compared with what has already been withheld."
+  },
+  "u31l7-3": {
+   "prompt": "Bruno's broker is foreign and has withheld nothing on his dividends or his profitable sales. What does Bruno do?",
+   "options": [
+    "Keeps the statements and declares it on his return",
+    "Declares it only if he moves the money to his bank",
+    "Nothing: no withholding means no tax"
+   ],
+   "explanation": "With a foreign broker the tax is the same: what changes is that you do the paperwork.",
+   "feedback": [
+    "Good: he's the one who has to enter those trades, because they may not appear in his tax data.",
+    "You're taxed in the year you make the gain, even if the money stays at the broker.",
+    "The tax exists all the same. With no withholding, he pays it in full on his return."
+   ]
+  },
+  "u31l7-4": {
+   "prompt": "Does it carry withholding in Spain?",
+   "options": [
+    "The gain from selling shares",
+    "Interest on a deposit",
+    "The gain from redeeming a fund",
+    "Dividends from a Spanish company",
+    "The gain from selling an ETF"
+   ],
+   "explanation": "Dividends, interest and fund redemptions carry withholding. Selling shares and ETFs doesn't: you pay when you file your return.",
+   "right": [
+    "It does",
+    "It doesn't"
+   ]
+  },
+  "u31l7-5": {
+   "prompt": "€190 was withheld from Ana. When she files, the tax on that gain comes to €210. What happens?",
+   "options": [
+    "She gets the €190 back",
+    "Nothing: she already paid through withholding",
+    "She pays the missing €20"
+   ],
+   "explanation": "Withholding is subtracted from the final tax. If the tax is higher, you pay the difference; if it's lower, you get a refund."
+  },
+  "u31l7-6": {
+   "prompt": "Withholding is an ____ on the tax, not the final tax.",
+   "options": [
+    "extra charge",
+    "exemption",
+    "allowance",
+    "advance"
+   ],
+   "explanation": "Whoever pays you sends it to the tax office in your name, and on your return it's deducted from what you owe."
+  },
+  "u31l7-7": {
+   "prompt": "Lumi's foreign broker withholds nothing and she thinks that means she pays no tax. What do you reply?",
+   "options": [
+    "You only pay if you make a lot",
+    "You pay the same, but you declare it yourself",
+    "Exactly: that's the advantage of a foreign broker"
+   ],
+   "explanation": "No withholding doesn't remove the tax: it moves all of it to the moment you file your return.",
+   "feedback": [
+    "You're taxed on the gain, whether large or small.",
+    "Exactly! And keep the statements: you'll need them.",
+    "There's no such advantage: the tax is the same."
+   ],
+   "lines": [
+    "My foreign broker doesn't withhold anything 😎",
+    "So I don't pay tax, right?"
+   ]
+  },
+  "u31l7-8": {
+   "prompt": "Your broker is foreign. What is worth keeping for your tax return? Tick all that apply.",
+   "options": [
+    "A screenshot of today's balance",
+    "The broker's marketing emails",
+    "The price and date of each purchase",
+    "The annual statement with dividends and sales"
+   ],
+   "explanation": "With the statement and the purchase prices you can work out each gain. Today's balance or the advertising says nothing about what you made."
+  },
+  "u31l7-9": {
+   "prompt": "General rule for the 2025 tax year: up to what amount of interest, dividends and gains subject to withholding are you not obliged, on that basis alone, to file?",
+   "options": [
+    "€22,000",
+    "€1,600",
+    "€6,000"
+   ],
+   "explanation": "The joint limit is €1,600 a year. €22,000 is the limit for a salary from a single payer. The rule has exceptions."
+  },
+  "u31l8-1": {
+   "unit": "€",
+   "prompt": "You buy €5,000 of shares in a large Spanish company. How many euros of ITF (0.2 %) do you pay?",
+   "options": [],
+   "explanation": "5,000 × 0.002 = €10. It's added to your broker's commission."
+  },
+  "u31l8-2": {
+   "prompt": "The ITF is paid both when buying and when selling.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Only when buying. When you sell you pay, if anything, the broker's commission and tax on the gain on your return."
+  },
+  "u31l8-3": {
+   "prompt": "Does it pay the 0.2 %?",
+   "options": [
+    "Buying shares in a US company",
+    "Buying shares in a big Spanish utility",
+    "Selling those same shares",
+    "Buying shares in a big Spanish bank",
+    "Buying shares in a small Spanish company"
+   ],
+   "explanation": "Only buying shares in Spanish companies worth more than €1,000 million on the stock market.",
+   "right": [
+    "It does",
+    "It doesn't"
+   ]
+  },
+  "u31l8-4": {
+   "prompt": "Who pays the ITF to the tax office?",
+   "options": [
+    "Your broker, who charges you on the purchase",
+    "The company whose shares you buy",
+    "You, when you file your return"
+   ],
+   "explanation": "The intermediary collects it at the time of purchase. You only see it on the statement."
+  },
+  "u31l8-5": {
+   "prompt": "Pablo holds crypto on a platform and has never declared it. He reads that from 2026 platforms report to the tax authorities. What changes for him?",
+   "options": [
+    "He'll have to pay a new tax",
+    "The tax office will know what he holds and what he has sold",
+    "Nothing: crypto is anonymous"
+   ],
+   "explanation": "Reporting doesn't create a tax. It makes visible what already had to be declared: gains when selling or swapping.",
+   "feedback": [
+    "There's no new tax: it's information reporting.",
+    "That's it. The tax was the same as before: what changes is that it no longer depends on him telling them.",
+    "On a platform his account is in his name."
+   ]
+  },
+  "u31l8-6": {
+   "prompt": "Crypto platforms collect their customers' data for European tax authorities from 1 January ____.",
+   "options": [
+    "2023",
+    "2030",
+    "2020",
+    "2026"
+   ],
+   "explanation": "The first report of that data to the tax authorities is sent in 2027."
+  },
+  "u31l8-7": {
+   "prompt": "Lumi holds crypto on a platform and declares nothing because she thinks the tax office won't find out. What do you reply?",
+   "options": [
+    "Platforms already report: declare your gains",
+    "Move it to another platform and that's that",
+    "Relax: nobody can know"
+   ],
+   "explanation": "From 2026 platforms collect their customers' data for the tax authorities. The sensible thing is to declare what's due.",
+   "feedback": [
+    "Exactly! And if you sold at a loss, declaring it helps you too.",
+    "Every platform serving the EU has the same obligation.",
+    "The platform knows who she is and reports it."
+   ],
+   "lines": [
+    "I keep my crypto on a platform 🤫",
+    "The tax office won't find out, so I'm not declaring anything."
+   ]
+  },
+  "u31l8-8": {
+   "prompt": "What is true about automatic crypto reporting? Tick all that apply.",
+   "options": [
+    "The first report to the tax authorities is in 2027",
+    "It only affects those with more than €50,000",
+    "It's a new tax on crypto",
+    "The platform does it, not you"
+   ],
+   "explanation": "It's the platform that reports, and the first report is sent in 2027. It isn't a tax and it has no minimum: the €50,000 belongs to a different procedure, the one for assets held abroad."
   }
  }
 }

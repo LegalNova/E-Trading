@@ -3,7 +3,7 @@ import 'server-only'
 // Normativa estatal vigente en 2026 (territorio común; País Vasco y Navarra tienen normas propias). Escala del ahorro
 // comprobada en el Manual práctico de Renta 2025 de la AEAT (estatal 9,5/10,5/11,5/13,5/15 % + autonómica igual).
 // Clases interactivas (docs/curso-v2/05-clases-interactivas.md): cifras con savingsTax y growthPath (src/client/play/math.ts).
-import { buckets, chat, choose, fill, key, lesson, match, multi, num, opt, order, play, say, scenario, single, story, tf, timed, unit, when } from '../dsl'
+import { buckets, chat, choose, fill, key, lesson, match, multi, note, num, opt, order, play, say, scenario, single, story, tf, timed, unit, when } from '../dsl'
 
 export default unit({
   id: 'u31', order: 31, title: 'Fiscalidad de tus inversiones', description: 'Cuánto pagas a Hacienda por invertir en España y cómo pagar lo justo legalmente',
@@ -358,5 +358,80 @@ export default unit({
       fill('El modelo informativo para cripto custodiada en el extranjero por más de 50.000 € es el ____.', '721', ['720', '100', '303'], 'El 720 es para cuentas, valores e inmuebles; el 100, la renta; el 303, el IVA.'),
       scenario('Tienes cripto en un exchange extranjero. El 31 de diciembre vale 56.000 €. No has vendido nada. ¿Qué te toca?', [['Vender una parte antes del 31 para quedarme por debajo de 50.000 €', 'Vender sí tributaría por la ganancia. Informar, en cambio, no te cuesta impuestos.'], ['Presentar el modelo 721: informar no es pagar', '¡Exacto! Hacienda solo quiere saberlo. Pagarás cuando vendas con ganancias.'], ['Nada: mientras no pase a euros, no cuenta', 'Para el 721 cuenta lo que tienes fuera a 31 de diciembre, lo hayas vendido o no.']], 1, 'Pasar de 50.000 € en cripto custodiada fuera obliga a presentar el 721, que es solo informativo. Vender para evitarlo es la tentación, pero convierte un trámite gratis en un impuesto real.'),
     ], { source: '12.6', minutes: 6, retire: [3, 4, 5, 7, 8, 9] }),
+
+    // Auditoría FAL-4 y FAL-1: la retención (qué es, quién la hace y que no es el impuesto final) y qué cambia con un
+    // bróker extranjero. Datos comprobados en la Agencia Tributaria el 12-11-2026 y apuntados en facts.ts
+    // (`withholding19` y `filingLimits`): retención del 19 % (cuadro de tipos de 2025, art. 101 LIRPF) y límites para
+    // no estar obligado a declarar en la Renta de 2025 (22.000 € y 1.600 €). Al final de la unidad, como las demás nuevas.
+    lesson('u31l7', 'Retenciones: lo que te adelantan y lo que declaras tú', [
+      story('«Me falta dinero»', [{ id: 'ana', name: 'Ana' }], [
+        say('ana', 'He reembolsado un fondo. Ganaba **1.000 €** y de esa ganancia solo me han llegado **810 €**.'),
+        say('ana', '¿Me han cobrado una comisión de 190 €?'),
+        choose('¿Qué son esos 190 €?', [
+          opt('Una comisión de la gestora por reembolsar', 'bad', say('lumi', 'No es de la gestora: ese dinero ha ido a Hacienda a tu nombre.')),
+          opt('La retención: un adelanto del 19 % del impuesto', 'good', say('lumi', 'Eso es. Quien te paga adelanta a Hacienda un 19 % de la ganancia.')),
+          opt('Una multa por vender antes de tiempo', 'bad', say('lumi', 'No hay multa por reembolsar. Es un pago a cuenta del impuesto.')),
+        ]),
+        say('lumi', 'Ojo: **retener no es pagar el impuesto final**. En la renta se hace la cuenta entera: si te retuvieron de más, te devuelven; si de menos, pagas la diferencia.'),
+      ]),
+      story('Un bróker de otro país', [{ id: 'bruno', name: 'Bruno' }], [
+        say('bruno', 'Mi bróker es extranjero. Este año he cobrado dividendos y he vendido con ganancia, y **no me ha retenido nada**.'),
+        say('bruno', 'Mejor, ¿no? Así no pago.'),
+        choose('¿Qué le dices?', [
+          opt('Sí: si nadie retiene, no hay impuesto', 'bad', say('lumi', 'El impuesto es el mismo. Solo cambia quién hace el trámite.')),
+          opt('No: tiene que declararlo él en la renta', 'good', say('lumi', 'Eso. Sin retención, lo paga entero al hacer la declaración.')),
+          opt('Solo paga si trae el dinero a su banco', 'bad', say('lumi', 'Se tributa por la ganancia el año en que se obtiene, esté donde esté el dinero.')),
+        ]),
+        say('lumi', 'Además, puede que esas operaciones **no aparezcan en sus datos fiscales**. Tiene que guardar los extractos y apuntarlas él.'),
+        note('Vender acciones o un ETF con ganancia no lleva retención en España: se paga en la renta. El reembolso de un fondo de inversión sí la lleva.'),
+      ]),
+      key('Retener no es pagar', '• **Retención**: un adelanto del **19 %** que hace quien te paga. La llevan los dividendos, los intereses y la ganancia al reembolsar un fondo.\n• **No es el impuesto final**: en la renta se ajusta, a devolver o a pagar.\n• **Bróker extranjero**: normalmente no retiene ni rellena tus datos fiscales. Lo declaras tú, con sus extractos.\n\n**¿Tengo que presentar la renta?** Regla general de la Renta de 2025: no estás obligado si tu sueldo no pasa de **22.000 €** de un solo pagador y tus intereses, dividendos y ganancias con retención no pasan de **1.600 €**. Tiene excepciones: compruébalo en la web de la Agencia Tributaria.', 'La retención es un adelanto. El impuesto de verdad se calcula en la renta.', 'Pruébalo: mira en tu Cartera qué posiciones pagan dividendo y calcula cuánto te retendrían de 100 €.'),
+    ], [
+      num('Reembolsas un fondo con 1.000 € de ganancia. Con una retención del 19 %, ¿cuántos euros te retienen?', 190, '€', '1.000 × 0,19 = 190 €. Recibes el resto y esos 190 € quedan apuntados a tu nombre en Hacienda.'),
+      tf('La retención es el impuesto definitivo: después ya no hay que hacer nada.', false, 'Es un adelanto. En la renta se calcula el impuesto de todo el año y se compara con lo ya retenido.'),
+      scenario('El bróker de Bruno es extranjero y no le ha retenido nada por sus dividendos ni por sus ventas con ganancia. ¿Qué hace Bruno?', [['Nada: si no hay retención, no hay impuesto', 'El impuesto existe igual. Sin retención, lo paga entero en la declaración.'], ['Guarda los extractos y lo declara en la renta', 'Bien: es él quien tiene que apuntar esas operaciones, porque puede que no aparezcan en sus datos fiscales.'], ['Lo declara solo si pasa el dinero a su banco', 'Se tributa el año en que se gana, aunque el dinero siga en el bróker.']], 1, 'Con un bróker extranjero el impuesto es el mismo: cambia que el trámite lo haces tú.'),
+      buckets('¿Lleva retención en España?', ['Sí lleva retención', 'No lleva retención'], [['Dividendos de una empresa española', 0], ['La ganancia al vender acciones', 1], ['Los intereses de un depósito', 0], ['La ganancia al vender un ETF', 1], ['La ganancia al reembolsar un fondo', 0]], 'Dividendos, intereses y reembolsos de fondos llevan retención. La venta de acciones y de ETF no: se paga al hacer la renta.'),
+      single('A Ana le retuvieron 190 €. Al hacer la renta, por esa ganancia le salen 210 € de impuesto. ¿Qué pasa?', ['Nada: ya pagó con la retención', 'Paga los 20 € que faltan', 'Le devuelven los 190 €'], 1, 'La retención se resta del impuesto final. Si el impuesto es mayor, se paga la diferencia; si es menor, se devuelve.'),
+      fill('La retención es un ____ del impuesto, no el impuesto final.', 'adelanto', ['descuento', 'recargo', 'perdón'], 'Quien te paga lo ingresa en Hacienda a tu nombre, y en la renta se descuenta de lo que te toque.'),
+      chat(['Mi bróker extranjero no me retiene nada 😎', 'Así no pago impuestos, ¿no?'], 'El bróker extranjero de Lumi no le retiene nada y ella cree que así no paga impuestos. ¿Qué le contestas?', [['Exacto: es la ventaja de un bróker de fuera', 'No hay tal ventaja: el impuesto es el mismo.'], ['Pagas lo mismo, pero lo declaras tú', '¡Eso! Y guarda los extractos: los vas a necesitar.'], ['Solo pagas si ganas mucho', 'Se tributa por la ganancia, sea grande o pequeña.']], 1, 'Que no retengan no quita el impuesto: lo traslada entero al momento de hacer la renta.'),
+      multi('Tu bróker es extranjero. ¿Qué conviene guardar para la renta? Marca todo.', ['El extracto anual con dividendos y ventas', 'Una captura de tu saldo de hoy', 'El precio y la fecha de cada compra', 'Los correos de publicidad del bróker'], [0, 2], 'Con el extracto y los precios de compra puedes calcular cada ganancia. El saldo de hoy o la publicidad no dicen nada de lo que ganaste.'),
+      single('Regla general de la Renta de 2025: ¿hasta qué importe de intereses, dividendos y ganancias con retención no estás obligado, solo por eso, a declarar?', ['6.000 €', '1.600 €', '22.000 €'], 1, 'El límite conjunto es de 1.600 € al año. Los 22.000 € son el límite del sueldo con un solo pagador. La regla tiene excepciones.'),
+    ], { minutes: 6 }),
+
+    // Auditoría FAL-3 y FAL-2: el impuesto del 0,2 % al comprar acciones españolas grandes (Ley 5/2020, en vigor desde el
+    // 16-1-2021; confirmado en el apartado 5.3 del informe) y el intercambio automático de información sobre cripto
+    // (Directiva (UE) 2023/2226, «DAC8»: recogida de datos desde el 1-1-2026 y primer envío en 2027). El estado de la norma
+    // española que la incorpora no se pudo confirmar en el BOE el 12-11-2026: la clase solo cita las fechas europeas.
+    lesson('u31l8', 'El 0,2 % al comprar y el aviso automático de cripto', [
+      story('Una línea rara en el extracto', [{ id: 'laura', name: 'Laura' }], [
+        say('laura', 'He comprado **5.000 €** en acciones de un gran banco español. En el extracto pone «ITF: 10 €».'),
+        choose('¿Qué es ese ITF?', [
+          opt('Otra comisión que se queda mi bróker', 'bad', say('lumi', 'El bróker lo cobra, pero no se lo queda: lo ingresa en Hacienda.')),
+          opt('Un impuesto del 0,2 % sobre la compra', 'good', say('lumi', 'Eso: el Impuesto sobre Transacciones Financieras. 5.000 × 0,2 % = 10 €.')),
+          opt('Una retención a cuenta de la renta', 'bad', say('lumi', 'No se descuenta de nada después: es un impuesto aparte.')),
+        ]),
+        say('lumi', 'Solo se paga al **comprar** acciones de empresas españolas grandes: las que valen más de 1.000 millones de euros en bolsa. Vender no lo paga.'),
+        note('Si compras y vendes las mismas acciones el mismo día, esa compra no lo paga. La Agencia Tributaria publica cada diciembre la lista de empresas.'),
+      ]),
+      story('«Hacienda no se entera»', [{ id: 'pablo', name: 'Pablo' }], [
+        say('pablo', 'Tengo cripto en una plataforma y nunca he dicho nada a Hacienda. Total, **no se enteran**.'),
+        choose('¿Es así?', [
+          opt('Sí: la cripto es anónima', 'bad', say('lumi', 'En una plataforma tu cuenta lleva tu nombre y tu documento.')),
+          opt('No: las plataformas ya recogen tus datos para las haciendas', 'good', say('lumi', 'Es una norma europea. Recogen los datos desde el 1 de enero de 2026 y el primer envío es en 2027.')),
+          opt('Solo si tiene mucho dinero', 'bad', say('lumi', 'Ese aviso lo hace la plataforma de todos sus clientes, no solo de los grandes.')),
+        ]),
+        say('lumi', '**Informar no es pagar.** No hay un impuesto nuevo: pagas, como siempre, por la ganancia al vender o cambiar.'),
+      ]),
+      key('Dos cosas que conviene saber', '**El 0,2 % al comprar (ITF)**\n\n• Solo al **comprar** acciones de empresas españolas de más de 1.000 millones de euros en bolsa.\n• Lo cobra tu bróker y lo ingresa en Hacienda.\n• Vender no lo paga. Las acciones de fuera, tampoco.\n\n**El aviso automático de cripto**\n\n• Una norma europea obliga a las plataformas a informar de sus clientes a las haciendas.\n• Recogen los datos desde el 1 de enero de 2026; el primer envío es en 2027.\n• No cambia cuánto pagas: cambia que Hacienda ya lo sabe.', 'El ITF es un coste más al comprar acciones españolas grandes. Y la cripto en una plataforma no es invisible.', 'Pruébalo: calcula el 0,2 % de tu última compra de una acción española en el simulador.'),
+    ], [
+      num('Compras 5.000 € en acciones de una gran empresa española. ¿Cuántos euros pagas de ITF (0,2 %)?', 10, '€', '5.000 × 0,002 = 10 €. Se suma a la comisión de tu bróker.'),
+      tf('El ITF se paga tanto al comprar como al vender.', false, 'Solo al comprar. Al vender pagas, si acaso, la comisión del bróker y el impuesto por la ganancia en la renta.'),
+      buckets('¿Paga el 0,2 %?', ['Sí lo paga', 'No lo paga'], [['Comprar acciones de un gran banco español', 0], ['Vender esas mismas acciones', 1], ['Comprar acciones de una empresa de Estados Unidos', 1], ['Comprar acciones de una gran eléctrica española', 0], ['Comprar acciones de una empresa española pequeña', 1]], 'Solo la compra de acciones de empresas españolas de más de 1.000 millones de euros en bolsa.'),
+      single('¿Quién ingresa el ITF en Hacienda?', ['Tú, al hacer la renta', 'Tu bróker, que te lo cobra en la compra', 'La empresa cuyas acciones compras'], 1, 'Lo cobra el intermediario en el momento de la compra. Tú solo lo ves en el extracto.'),
+      scenario('Pablo tiene cripto en una plataforma y nunca la ha declarado. Lee que desde 2026 las plataformas informan a las haciendas. ¿Qué cambia para él?', [['Nada: la cripto es anónima', 'En una plataforma su cuenta está a su nombre.'], ['Que Hacienda sabrá lo que tiene y lo que ha vendido', 'Eso. El impuesto era el mismo de antes: lo que cambia es que ya no depende de que él lo cuente.'], ['Que tendrá que pagar un impuesto nuevo', 'No hay impuesto nuevo: es un aviso de información.']], 1, 'El aviso no crea un impuesto. Hace visible lo que ya había que declarar: las ganancias al vender o cambiar.'),
+      fill('Las plataformas de cripto recogen los datos de sus clientes para las haciendas europeas desde el 1 de enero de ____.', '2026', ['2020', '2023', '2030'], 'El primer envío de esos datos a las haciendas es en 2027.'),
+      chat(['Tengo mi cripto en una plataforma 🤫', 'Hacienda no se entera, así que no declaro nada.'], 'Lumi tiene cripto en una plataforma y no declara nada porque cree que Hacienda no se entera. ¿Qué le contestas?', [['Tranquila: nadie puede saberlo', 'La plataforma sabe quién es y lo comunica.'], ['Las plataformas ya informan: declara tus ganancias', '¡Eso! Y si vendiste con pérdida, declararla también te conviene.'], ['Pásala a otra plataforma y listo', 'Todas las que dan servicio en la UE tienen la misma obligación.']], 1, 'Desde 2026 las plataformas recogen los datos de sus clientes para las haciendas. Lo sensato es declarar lo que toque.'),
+      multi('¿Qué es cierto sobre el aviso automático de cripto? Marca todo.', ['Lo hace la plataforma, no tú', 'Es un impuesto nuevo sobre la cripto', 'El primer envío a las haciendas es en 2027', 'Solo afecta a quien tiene más de 50.000 €'], [0, 2], 'Es la plataforma la que informa, y el primer envío es en 2027. No es un impuesto ni tiene un mínimo: los 50.000 € son de otro trámite, el de los bienes en el extranjero.'),
+    ], { minutes: 6 }),
   ],
 })

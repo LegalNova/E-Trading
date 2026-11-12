@@ -351,6 +351,92 @@
     }
    ]
   },
+  "u31l7": {
+   "title": "Retenciones: lo que te adelantan y lo que declaras tú",
+   "steps": [
+    {
+     "texts": [
+      "«Me falta dinero»",
+      "Ana",
+      "He reembolsado un fondo. Ganaba **1.000 €** y de esa ganancia solo me han llegado **810 €**.",
+      "¿Me han cobrado una comisión de 190 €?",
+      "¿Qué son esos 190 €?",
+      "Una comisión de la gestora por reembolsar",
+      "No es de la gestora: ese dinero ha ido a Hacienda a tu nombre.",
+      "La retención: un adelanto del 19 % del impuesto",
+      "Eso es. Quien te paga adelanta a Hacienda un 19 % de la ganancia.",
+      "Una multa por vender antes de tiempo",
+      "No hay multa por reembolsar. Es un pago a cuenta del impuesto.",
+      "Ojo: **retener no es pagar el impuesto final**. En la renta se hace la cuenta entera: si te retuvieron de más, te devuelven; si de menos, pagas la diferencia."
+     ]
+    },
+    {
+     "texts": [
+      "Un bróker de otro país",
+      "Bruno",
+      "Mi bróker es extranjero. Este año he cobrado dividendos y he vendido con ganancia, y **no me ha retenido nada**.",
+      "Mejor, ¿no? Así no pago.",
+      "¿Qué le dices?",
+      "Sí: si nadie retiene, no hay impuesto",
+      "El impuesto es el mismo. Solo cambia quién hace el trámite.",
+      "No: tiene que declararlo él en la renta",
+      "Eso. Sin retención, lo paga entero al hacer la declaración.",
+      "Solo paga si trae el dinero a su banco",
+      "Se tributa por la ganancia el año en que se obtiene, esté donde esté el dinero.",
+      "Además, puede que esas operaciones **no aparezcan en sus datos fiscales**. Tiene que guardar los extractos y apuntarlas él.",
+      "Vender acciones o un ETF con ganancia no lleva retención en España: se paga en la renta. El reembolso de un fondo de inversión sí la lleva."
+     ]
+    },
+    {
+     "title": "Retener no es pagar",
+     "body": "• **Retención**: un adelanto del **19 %** que hace quien te paga. La llevan los dividendos, los intereses y la ganancia al reembolsar un fondo.\n• **No es el impuesto final**: en la renta se ajusta, a devolver o a pagar.\n• **Bróker extranjero**: normalmente no retiene ni rellena tus datos fiscales. Lo declaras tú, con sus extractos.\n\n**¿Tengo que presentar la renta?** Regla general de la Renta de 2025: no estás obligado si tu sueldo no pasa de **22.000 €** de un solo pagador y tus intereses, dividendos y ganancias con retención no pasan de **1.600 €**. Tiene excepciones: compruébalo en la web de la Agencia Tributaria.",
+     "key": "La retención es un adelanto. El impuesto de verdad se calcula en la renta.",
+     "tip": "Pruébalo: mira en tu Cartera qué posiciones pagan dividendo y calcula cuánto te retendrían de 100 €."
+    }
+   ]
+  },
+  "u31l8": {
+   "title": "El 0,2 % al comprar y el aviso automático de cripto",
+   "steps": [
+    {
+     "texts": [
+      "Una línea rara en el extracto",
+      "Laura",
+      "He comprado **5.000 €** en acciones de un gran banco español. En el extracto pone «ITF: 10 €».",
+      "¿Qué es ese ITF?",
+      "Otra comisión que se queda mi bróker",
+      "El bróker lo cobra, pero no se lo queda: lo ingresa en Hacienda.",
+      "Un impuesto del 0,2 % sobre la compra",
+      "Eso: el Impuesto sobre Transacciones Financieras. 5.000 × 0,2 % = 10 €.",
+      "Una retención a cuenta de la renta",
+      "No se descuenta de nada después: es un impuesto aparte.",
+      "Solo se paga al **comprar** acciones de empresas españolas grandes: las que valen más de 1.000 millones de euros en bolsa. Vender no lo paga.",
+      "Si compras y vendes las mismas acciones el mismo día, esa compra no lo paga. La Agencia Tributaria publica cada diciembre la lista de empresas."
+     ]
+    },
+    {
+     "texts": [
+      "«Hacienda no se entera»",
+      "Pablo",
+      "Tengo cripto en una plataforma y nunca he dicho nada a Hacienda. Total, **no se enteran**.",
+      "¿Es así?",
+      "Sí: la cripto es anónima",
+      "En una plataforma tu cuenta lleva tu nombre y tu documento.",
+      "No: las plataformas ya recogen tus datos para las haciendas",
+      "Es una norma europea. Recogen los datos desde el 1 de enero de 2026 y el primer envío es en 2027.",
+      "Solo si tiene mucho dinero",
+      "Ese aviso lo hace la plataforma de todos sus clientes, no solo de los grandes.",
+      "**Informar no es pagar.** No hay un impuesto nuevo: pagas, como siempre, por la ganancia al vender o cambiar."
+     ]
+    },
+    {
+     "title": "Dos cosas que conviene saber",
+     "body": "**El 0,2 % al comprar (ITF)**\n\n• Solo al **comprar** acciones de empresas españolas de más de 1.000 millones de euros en bolsa.\n• Lo cobra tu bróker y lo ingresa en Hacienda.\n• Vender no lo paga. Las acciones de fuera, tampoco.\n\n**El aviso automático de cripto**\n\n• Una norma europea obliga a las plataformas a informar de sus clientes a las haciendas.\n• Recogen los datos desde el 1 de enero de 2026; el primer envío es en 2027.\n• No cambia cuánto pagas: cambia que Hacienda ya lo sabe.",
+     "key": "El ITF es un coste más al comprar acciones españolas grandes. Y la cripto en una plataforma no es invisible.",
+     "tip": "Pruébalo: calcula el 0,2 % de tu última compra de una acción española en el simulador."
+    }
+   ]
+  },
   "u31r": {
    "title": "Repaso de la unidad",
    "steps": []
@@ -755,6 +841,195 @@
     "¡Exacto! Hacienda solo quiere saberlo. Pagarás cuando vendas con ganancias.",
     "Vender sí tributaría por la ganancia. Informar, en cambio, no te cuesta impuestos."
    ]
+  },
+  "u31l7-1": {
+   "prompt": "Reembolsas un fondo con 1.000 € de ganancia. Con una retención del 19 %, ¿cuántos euros te retienen?",
+   "options": [],
+   "explanation": "1.000 × 0,19 = 190 €. Recibes el resto y esos 190 € quedan apuntados a tu nombre en Hacienda.",
+   "unit": "€"
+  },
+  "u31l7-2": {
+   "prompt": "La retención es el impuesto definitivo: después ya no hay que hacer nada.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Es un adelanto. En la renta se calcula el impuesto de todo el año y se compara con lo ya retenido."
+  },
+  "u31l7-3": {
+   "prompt": "El bróker de Bruno es extranjero y no le ha retenido nada por sus dividendos ni por sus ventas con ganancia. ¿Qué hace Bruno?",
+   "options": [
+    "Guarda los extractos y lo declara en la renta",
+    "Lo declara solo si pasa el dinero a su banco",
+    "Nada: si no hay retención, no hay impuesto"
+   ],
+   "explanation": "Con un bróker extranjero el impuesto es el mismo: cambia que el trámite lo haces tú.",
+   "feedback": [
+    "Bien: es él quien tiene que apuntar esas operaciones, porque puede que no aparezcan en sus datos fiscales.",
+    "Se tributa el año en que se gana, aunque el dinero siga en el bróker.",
+    "El impuesto existe igual. Sin retención, lo paga entero en la declaración."
+   ]
+  },
+  "u31l7-4": {
+   "prompt": "¿Lleva retención en España?",
+   "options": [
+    "La ganancia al vender acciones",
+    "Los intereses de un depósito",
+    "La ganancia al reembolsar un fondo",
+    "Dividendos de una empresa española",
+    "La ganancia al vender un ETF"
+   ],
+   "explanation": "Dividendos, intereses y reembolsos de fondos llevan retención. La venta de acciones y de ETF no: se paga al hacer la renta.",
+   "right": [
+    "Sí lleva retención",
+    "No lleva retención"
+   ]
+  },
+  "u31l7-5": {
+   "prompt": "A Ana le retuvieron 190 €. Al hacer la renta, por esa ganancia le salen 210 € de impuesto. ¿Qué pasa?",
+   "options": [
+    "Le devuelven los 190 €",
+    "Nada: ya pagó con la retención",
+    "Paga los 20 € que faltan"
+   ],
+   "explanation": "La retención se resta del impuesto final. Si el impuesto es mayor, se paga la diferencia; si es menor, se devuelve."
+  },
+  "u31l7-6": {
+   "prompt": "La retención es un ____ del impuesto, no el impuesto final.",
+   "options": [
+    "recargo",
+    "perdón",
+    "descuento",
+    "adelanto"
+   ],
+   "explanation": "Quien te paga lo ingresa en Hacienda a tu nombre, y en la renta se descuenta de lo que te toque."
+  },
+  "u31l7-7": {
+   "prompt": "El bróker extranjero de Nora no le retiene nada y ella cree que así no paga impuestos. ¿Qué le contestas?",
+   "options": [
+    "Solo pagas si ganas mucho",
+    "Pagas lo mismo, pero lo declaras tú",
+    "Exacto: es la ventaja de un bróker de fuera"
+   ],
+   "explanation": "Que no retengan no quita el impuesto: lo traslada entero al momento de hacer la renta.",
+   "feedback": [
+    "Se tributa por la ganancia, sea grande o pequeña.",
+    "¡Eso! Y guarda los extractos: los vas a necesitar.",
+    "No hay tal ventaja: el impuesto es el mismo."
+   ],
+   "lines": [
+    "Mi bróker extranjero no me retiene nada 😎",
+    "Así no pago impuestos, ¿no?"
+   ]
+  },
+  "u31l7-8": {
+   "prompt": "Tu bróker es extranjero. ¿Qué conviene guardar para la renta? Marca todo.",
+   "options": [
+    "Una captura de tu saldo de hoy",
+    "Los correos de publicidad del bróker",
+    "El precio y la fecha de cada compra",
+    "El extracto anual con dividendos y ventas"
+   ],
+   "explanation": "Con el extracto y los precios de compra puedes calcular cada ganancia. El saldo de hoy o la publicidad no dicen nada de lo que ganaste."
+  },
+  "u31l7-9": {
+   "prompt": "Regla general de la Renta de 2025: ¿hasta qué importe de intereses, dividendos y ganancias con retención no estás obligado, solo por eso, a declarar?",
+   "options": [
+    "22.000 €",
+    "1.600 €",
+    "6.000 €"
+   ],
+   "explanation": "El límite conjunto es de 1.600 € al año. Los 22.000 € son el límite del sueldo con un solo pagador. La regla tiene excepciones."
+  },
+  "u31l8-1": {
+   "prompt": "Compras 5.000 € en acciones de una gran empresa española. ¿Cuántos euros pagas de ITF (0,2 %)?",
+   "options": [],
+   "explanation": "5.000 × 0,002 = 10 €. Se suma a la comisión de tu bróker.",
+   "unit": "€"
+  },
+  "u31l8-2": {
+   "prompt": "El ITF se paga tanto al comprar como al vender.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Solo al comprar. Al vender pagas, si acaso, la comisión del bróker y el impuesto por la ganancia en la renta."
+  },
+  "u31l8-3": {
+   "prompt": "¿Paga el 0,2 %?",
+   "options": [
+    "Comprar acciones de una empresa de Estados Unidos",
+    "Comprar acciones de una gran eléctrica española",
+    "Vender esas mismas acciones",
+    "Comprar acciones de un gran banco español",
+    "Comprar acciones de una empresa española pequeña"
+   ],
+   "explanation": "Solo la compra de acciones de empresas españolas de más de 1.000 millones de euros en bolsa.",
+   "right": [
+    "Sí lo paga",
+    "No lo paga"
+   ]
+  },
+  "u31l8-4": {
+   "prompt": "¿Quién ingresa el ITF en Hacienda?",
+   "options": [
+    "Tu bróker, que te lo cobra en la compra",
+    "La empresa cuyas acciones compras",
+    "Tú, al hacer la renta"
+   ],
+   "explanation": "Lo cobra el intermediario en el momento de la compra. Tú solo lo ves en el extracto."
+  },
+  "u31l8-5": {
+   "prompt": "Pablo tiene cripto en una plataforma y nunca la ha declarado. Lee que desde 2026 las plataformas informan a las haciendas. ¿Qué cambia para él?",
+   "options": [
+    "Que tendrá que pagar un impuesto nuevo",
+    "Que Hacienda sabrá lo que tiene y lo que ha vendido",
+    "Nada: la cripto es anónima"
+   ],
+   "explanation": "El aviso no crea un impuesto. Hace visible lo que ya había que declarar: las ganancias al vender o cambiar.",
+   "feedback": [
+    "No hay impuesto nuevo: es un aviso de información.",
+    "Eso. El impuesto era el mismo de antes: lo que cambia es que ya no depende de que él lo cuente.",
+    "En una plataforma su cuenta está a su nombre."
+   ]
+  },
+  "u31l8-6": {
+   "prompt": "Las plataformas de cripto recogen los datos de sus clientes para las haciendas europeas desde el 1 de enero de ____.",
+   "options": [
+    "2023",
+    "2030",
+    "2020",
+    "2026"
+   ],
+   "explanation": "El primer envío de esos datos a las haciendas es en 2027."
+  },
+  "u31l8-7": {
+   "prompt": "Paula tiene cripto en una plataforma y no declara nada porque cree que Hacienda no se entera. ¿Qué le contestas?",
+   "options": [
+    "Las plataformas ya informan: declara tus ganancias",
+    "Pásala a otra plataforma y listo",
+    "Tranquila: nadie puede saberlo"
+   ],
+   "explanation": "Desde 2026 las plataformas recogen los datos de sus clientes para las haciendas. Lo sensato es declarar lo que toque.",
+   "feedback": [
+    "¡Eso! Y si vendiste con pérdida, declararla también te conviene.",
+    "Todas las que dan servicio en la UE tienen la misma obligación.",
+    "La plataforma sabe quién es y lo comunica."
+   ],
+   "lines": [
+    "Tengo mi cripto en una plataforma 🤫",
+    "Hacienda no se entera, así que no declaro nada."
+   ]
+  },
+  "u31l8-8": {
+   "prompt": "¿Qué es cierto sobre el aviso automático de cripto? Marca todo.",
+   "options": [
+    "El primer envío a las haciendas es en 2027",
+    "Solo afecta a quien tiene más de 50.000 €",
+    "Es un impuesto nuevo sobre la cripto",
+    "Lo hace la plataforma, no tú"
+   ],
+   "explanation": "Es la plataforma la que informa, y el primer envío es en 2027. No es un impuesto ni tiene un mínimo: los 50.000 € son de otro trámite, el de los bienes en el extranjero."
   }
  }
 }

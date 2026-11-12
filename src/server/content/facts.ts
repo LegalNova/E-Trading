@@ -90,6 +90,26 @@ export const FACTS = {
     source: 'Guías fiscales de 2026 coincidentes (p. ej. https://guiafiscal.es/irpf/tramos-irpf-2026/). Falta confirmarlo en la web de la Agencia Tributaria.',
     usedIn: ['u31l1', 'u31l2', 'u31l4'], review: 'Cada enero, con los presupuestos del año. Toda la unidad u31 usa estos tramos en sus cálculos.',
   },
+  withholding19: {
+    what: 'Retención a cuenta del IRPF sobre dividendos, intereses y ganancias por transmisión de participaciones de fondos de inversión (%)', value: 19, asOf: '2025-12-31', checked: '2026-11-12', kind: 'oficial',
+    source: 'Agencia Tributaria, cuadro de tipos de retención («tipo aplicable 2025», actualizado el 30-4-2026): capital mobiliario 19 % (arts. 25.1 y 101.4 LIRPF) y fondos de inversión 19 % (art. 101.6 LIRPF). https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/folleto-actividades-economicas/7-otras-obligaciones-fiscales-retenciones/7_1-cuadro-relacion-tipos-retencion-porcentaje.html',
+    usedIn: ['u31l7'], review: 'Cada enero: comprobar el cuadro de tipos del año nuevo.',
+  },
+  filingLimits: {
+    what: 'Límites para no estar obligado a declarar el IRPF (Renta de 2025): 22.000 € de rendimientos del trabajo de un solo pagador y 1.600 € conjuntos de rendimientos del capital mobiliario y ganancias patrimoniales sometidos a retención', value: '22.000 € · 1.600 €', asOf: '2025-12-31', checked: '2026-11-12', kind: 'oficial',
+    source: 'Agencia Tributaria, Manual práctico de Renta 2025, «Contribuyentes no obligados a declarar: cuadro resumen». Tiene más supuestos (varios pagadores: 15.876 €; regla de los 1.000 €), que la clase resume como «tiene excepciones». https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c01-campana-declaracion-renta/quienes-estan-obligados-presentar-declaracion-irpf/contribuyentes-no-obligados-declarar-cuadro-resumen.html',
+    usedIn: ['u31l7'], review: 'Cada abril, con el manual de la nueva campaña de renta.',
+  },
+  itf: {
+    what: 'Impuesto sobre Transacciones Financieras: 0,2 % sobre la compra de acciones de sociedades españolas de más de 1.000 millones de euros de capitalización', value: '0,2 %', asOf: '2021-01-16', checked: '2026-11-12', kind: 'oficial',
+    source: 'Ley 5/2020, de 15 de octubre, en vigor desde el 16-1-2021 (informe de auditoría, apartado 5.3, FAL-3). La Agencia Tributaria publica cada diciembre la lista de sociedades.',
+    usedIn: ['u31l8'], review: 'Cada diciembre, con la lista nueva de sociedades.',
+  },
+  dac8: {
+    what: 'Intercambio automático de información sobre criptoactivos (Directiva (UE) 2023/2226, «DAC8»): los proveedores recogen datos desde el 1-1-2026 y el primer envío a las haciendas es en 2027', value: '2026 · 2027', asOf: '2026-01-01', checked: '2026-11-12', kind: 'secundaria',
+    source: 'Informe de auditoría, apartado 5.3 (FAL-2): fechas europeas confirmadas. El 12-11-2026 no se pudo confirmar en el BOE el estado de la ley española que la incorpora (había proyecto de ley y un real decreto en audiencia pública desde el 28-7-2025); por eso la clase solo cita las fechas europeas.',
+    usedIn: ['u31l8'], review: 'Comprobar en el BOE cuando se publique la ley española y revisar la clase.',
+  },
 } as const satisfies Record<string, Fact>
 
 const DAY_MS = 86_400_000

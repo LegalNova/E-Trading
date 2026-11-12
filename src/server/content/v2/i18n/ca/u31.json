@@ -354,6 +354,92 @@
   "u31r": {
    "title": "Repàs de la unitat",
    "steps": []
+  },
+  "u31l7": {
+   "title": "Retencions: el que t'avancen i el que declares tu",
+   "steps": [
+    {
+     "texts": [
+      "«Em falten diners»",
+      "Ana",
+      "He reemborsat un fons. Hi guanyava **1.000 €** i d'aquest guany només me n'han arribat **810 €**.",
+      "M'han cobrat una comissió de 190 €?",
+      "Què són aquests 190 €?",
+      "Una comissió de la gestora per reemborsar",
+      "No és de la gestora: aquests diners han anat a Hisenda a nom teu.",
+      "La retenció: un avançament del 19 % de l'impost",
+      "Això mateix. Qui et paga avança a Hisenda un 19 % del guany.",
+      "Una multa per vendre abans d'hora",
+      "No hi ha cap multa per reemborsar. És un pagament a compte de l'impost.",
+      "Compte: **retenir no és pagar l'impost final**. A la renda es fa el compte sencer: si et van retenir de més, et tornen; si de menys, pagues la diferència."
+     ]
+    },
+    {
+     "texts": [
+      "Un bròquer d'un altre país",
+      "Bruno",
+      "El meu bròquer és estranger. Aquest any he cobrat dividends i he venut amb guany, i **no m'ha retingut res**.",
+      "Millor, oi? Així no pago.",
+      "Què li dius?",
+      "Sí: si ningú reté, no hi ha impost",
+      "L'impost és el mateix. Només canvia qui fa el tràmit.",
+      "No: ho ha de declarar ell a la renda",
+      "Això. Sense retenció, el paga sencer en fer la declaració.",
+      "Només paga si porta els diners al seu banc",
+      "Es tributa pel guany l'any en què s'obté, siguin on siguin els diners.",
+      "A més, pot ser que aquestes operacions **no surtin a les seves dades fiscals**. Ha de guardar els extractes i apuntar-les ell.",
+      "Vendre accions o un ETF amb guany no porta retenció a Espanya: es paga a la renda. El reemborsament d'un fons d'inversió sí que en porta."
+     ]
+    },
+    {
+     "title": "Retenir no és pagar",
+     "body": "• **Retenció**: un avançament del **19 %** que fa qui et paga. La porten els dividends, els interessos i el guany en reemborsar un fons.\n• **No és l'impost final**: a la renda s'ajusta, a tornar o a pagar.\n• **Bròquer estranger**: normalment no reté ni omple les teves dades fiscals. Ho declares tu, amb els seus extractes.\n\n**He de presentar la renda?** Regla general de la Renda del 2025: no hi estàs obligat si el teu sou no passa de **22.000 €** d'un sol pagador i els teus interessos, dividends i guanys amb retenció no passen de **1.600 €**. Té excepcions: comprova-ho al web de l'Agència Tributària.",
+     "key": "La retenció és un avançament. L'impost de debò es calcula a la renda.",
+     "tip": "Prova-ho: mira a la teva Cartera quines posicions paguen dividend i calcula quant et retindrien de 100 €."
+    }
+   ]
+  },
+  "u31l8": {
+   "title": "El 0,2 % en comprar i l'avís automàtic de cripto",
+   "steps": [
+    {
+     "texts": [
+      "Una línia estranya a l'extracte",
+      "Laura",
+      "He comprat **5.000 €** en accions d'un gran banc espanyol. A l'extracte hi posa «ITF: 10 €».",
+      "Què és aquest ITF?",
+      "Una altra comissió que es queda el meu bròquer",
+      "El bròquer el cobra, però no se'l queda: l'ingressa a Hisenda.",
+      "Un impost del 0,2 % sobre la compra",
+      "Això: l'Impost sobre Transaccions Financeres. 5.000 × 0,2 % = 10 €.",
+      "Una retenció a compte de la renda",
+      "No es descompta de res després: és un impost a part.",
+      "Només es paga en **comprar** accions d'empreses espanyoles grans: les que valen més de 1.000 milions d'euros a borsa. Vendre no el paga.",
+      "Si compres i vens les mateixes accions el mateix dia, aquesta compra no el paga. L'Agència Tributària publica cada desembre la llista d'empreses."
+     ]
+    },
+    {
+     "texts": [
+      "«Hisenda no se n'assabenta»",
+      "Pablo",
+      "Tinc cripto en una plataforma i mai no he dit res a Hisenda. Total, **no se n'assabenten**.",
+      "És així?",
+      "Sí: la cripto és anònima",
+      "En una plataforma el teu compte porta el teu nom i el teu document.",
+      "No: les plataformes ja recullen les teves dades per a les hisendes",
+      "És una norma europea. Recullen les dades des de l'1 de gener del 2026 i el primer enviament és el 2027.",
+      "Només si té molts diners",
+      "Aquest avís el fa la plataforma de tots els seus clients, no només dels grans.",
+      "**Informar no és pagar.** No hi ha cap impost nou: pagues, com sempre, pel guany en vendre o canviar."
+     ]
+    },
+    {
+     "title": "Dues coses que convé saber",
+     "body": "**El 0,2 % en comprar (ITF)**\n\n• Només en **comprar** accions d'empreses espanyoles de més de 1.000 milions d'euros a borsa.\n• El cobra el teu bròquer i l'ingressa a Hisenda.\n• Vendre no el paga. Les accions de fora, tampoc.\n\n**L'avís automàtic de cripto**\n\n• Una norma europea obliga les plataformes a informar dels seus clients a les hisendes.\n• Recullen les dades des de l'1 de gener del 2026; el primer enviament és el 2027.\n• No canvia quant pagues: canvia que Hisenda ja ho sap.",
+     "key": "L'ITF és un cost més en comprar accions espanyoles grans. I la cripto en una plataforma no és invisible.",
+     "tip": "Prova-ho: calcula el 0,2 % de la teva última compra d'una acció espanyola al simulador."
+    }
+   ]
   }
  },
  "questions": {
@@ -755,6 +841,195 @@
     "Exacte! Hisenda només ho vol saber. Pagaràs quan venguis amb guanys.",
     "Vendre sí que tributaria pel guany. Informar, en canvi, no et costa impostos."
    ]
+  },
+  "u31l7-1": {
+   "unit": "€",
+   "prompt": "Reemborses un fons amb 1.000 € de guany. Amb una retenció del 19 %, quants euros et retenen?",
+   "options": [],
+   "explanation": "1.000 × 0,19 = 190 €. Reps la resta i aquests 190 € queden apuntats a nom teu a Hisenda."
+  },
+  "u31l7-2": {
+   "prompt": "La retenció és l'impost definitiu: després ja no cal fer res.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "És un avançament. A la renda es calcula l'impost de tot l'any i es compara amb el que ja s'ha retingut."
+  },
+  "u31l7-3": {
+   "prompt": "El bròquer d'en Bruno és estranger i no li ha retingut res pels dividends ni per les vendes amb guany. Què fa en Bruno?",
+   "options": [
+    "Guarda els extractes i ho declara a la renda",
+    "Ho declara només si passa els diners al seu banc",
+    "Res: si no hi ha retenció, no hi ha impost"
+   ],
+   "explanation": "Amb un bròquer estranger l'impost és el mateix: canvia que el tràmit el fas tu.",
+   "feedback": [
+    "Bé: és ell qui ha d'apuntar aquestes operacions, perquè pot ser que no surtin a les seves dades fiscals.",
+    "Es tributa l'any en què es guanya, encara que els diners continuïn al bròquer.",
+    "L'impost existeix igualment. Sense retenció, el paga sencer a la declaració."
+   ]
+  },
+  "u31l7-4": {
+   "prompt": "Porta retenció a Espanya?",
+   "options": [
+    "El guany en vendre accions",
+    "Els interessos d'un dipòsit",
+    "El guany en reemborsar un fons",
+    "Dividends d'una empresa espanyola",
+    "El guany en vendre un ETF"
+   ],
+   "explanation": "Dividends, interessos i reemborsaments de fons porten retenció. La venda d'accions i d'ETF no: es paga en fer la renda.",
+   "right": [
+    "Sí que porta retenció",
+    "No porta retenció"
+   ]
+  },
+  "u31l7-5": {
+   "prompt": "A l'Ana li van retenir 190 €. En fer la renda, per aquest guany li surten 210 € d'impost. Què passa?",
+   "options": [
+    "Li tornen els 190 €",
+    "Res: ja va pagar amb la retenció",
+    "Paga els 20 € que falten"
+   ],
+   "explanation": "La retenció es resta de l'impost final. Si l'impost és més alt, es paga la diferència; si és més baix, es torna."
+  },
+  "u31l7-6": {
+   "prompt": "La retenció és un ____ de l'impost, no l'impost final.",
+   "options": [
+    "recàrrec",
+    "perdó",
+    "descompte",
+    "avançament"
+   ],
+   "explanation": "Qui et paga l'ingressa a Hisenda a nom teu, i a la renda es descompta del que et toqui."
+  },
+  "u31l7-7": {
+   "prompt": "El bròquer estranger de la Lumi no li reté res i ella creu que així no paga impostos. Què li contestes?",
+   "options": [
+    "Només pagues si guanyes molt",
+    "Pagues el mateix, però ho declares tu",
+    "Exacte: és l'avantatge d'un bròquer de fora"
+   ],
+   "explanation": "Que no retinguin no treu l'impost: el trasllada sencer al moment de fer la renda.",
+   "feedback": [
+    "Es tributa pel guany, sigui gran o petit.",
+    "Això! I guarda els extractes: els necessitaràs.",
+    "No hi ha cap avantatge: l'impost és el mateix."
+   ],
+   "lines": [
+    "El meu bròquer estranger no em reté res 😎",
+    "Així no pago impostos, oi?"
+   ]
+  },
+  "u31l7-8": {
+   "prompt": "El teu bròquer és estranger. Què convé guardar per a la renda? Marca-ho tot.",
+   "options": [
+    "Una captura del teu saldo d'avui",
+    "Els correus de publicitat del bròquer",
+    "El preu i la data de cada compra",
+    "L'extracte anual amb dividends i vendes"
+   ],
+   "explanation": "Amb l'extracte i els preus de compra pots calcular cada guany. El saldo d'avui o la publicitat no diuen res del que vas guanyar."
+  },
+  "u31l7-9": {
+   "prompt": "Regla general de la Renda del 2025: fins a quin import d'interessos, dividends i guanys amb retenció no estàs obligat, només per això, a declarar?",
+   "options": [
+    "22.000 €",
+    "1.600 €",
+    "6.000 €"
+   ],
+   "explanation": "El límit conjunt és de 1.600 € l'any. Els 22.000 € són el límit del sou amb un sol pagador. La regla té excepcions."
+  },
+  "u31l8-1": {
+   "unit": "€",
+   "prompt": "Compres 5.000 € en accions d'una gran empresa espanyola. Quants euros pagues d'ITF (0,2 %)?",
+   "options": [],
+   "explanation": "5.000 × 0,002 = 10 €. Se suma a la comissió del teu bròquer."
+  },
+  "u31l8-2": {
+   "prompt": "L'ITF es paga tant en comprar com en vendre.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Només en comprar. En vendre pagues, si de cas, la comissió del bròquer i l'impost pel guany a la renda."
+  },
+  "u31l8-3": {
+   "prompt": "Paga el 0,2 %?",
+   "options": [
+    "Comprar accions d'una empresa dels Estats Units",
+    "Comprar accions d'una gran elèctrica espanyola",
+    "Vendre aquestes mateixes accions",
+    "Comprar accions d'un gran banc espanyol",
+    "Comprar accions d'una empresa espanyola petita"
+   ],
+   "explanation": "Només la compra d'accions d'empreses espanyoles de més de 1.000 milions d'euros a borsa.",
+   "right": [
+    "Sí que el paga",
+    "No el paga"
+   ]
+  },
+  "u31l8-4": {
+   "prompt": "Qui ingressa l'ITF a Hisenda?",
+   "options": [
+    "El teu bròquer, que te'l cobra a la compra",
+    "L'empresa de la qual compres accions",
+    "Tu, en fer la renda"
+   ],
+   "explanation": "El cobra l'intermediari en el moment de la compra. Tu només el veus a l'extracte."
+  },
+  "u31l8-5": {
+   "prompt": "En Pablo té cripto en una plataforma i no l'ha declarat mai. Llegeix que des del 2026 les plataformes informen les hisendes. Què canvia per a ell?",
+   "options": [
+    "Que haurà de pagar un impost nou",
+    "Que Hisenda sabrà el que té i el que ha venut",
+    "Res: la cripto és anònima"
+   ],
+   "explanation": "L'avís no crea cap impost. Fa visible el que ja calia declarar: els guanys en vendre o canviar.",
+   "feedback": [
+    "No hi ha cap impost nou: és un avís d'informació.",
+    "Això. L'impost era el mateix d'abans: el que canvia és que ja no depèn que ell ho expliqui.",
+    "En una plataforma el seu compte és a nom seu."
+   ]
+  },
+  "u31l8-6": {
+   "prompt": "Les plataformes de cripto recullen les dades dels seus clients per a les hisendes europees des de l'1 de gener del ____.",
+   "options": [
+    "2023",
+    "2030",
+    "2020",
+    "2026"
+   ],
+   "explanation": "El primer enviament d'aquestes dades a les hisendes és el 2027."
+  },
+  "u31l8-7": {
+   "prompt": "La Lumi té cripto en una plataforma i no declara res perquè creu que Hisenda no se n'assabenta. Què li contestes?",
+   "options": [
+    "Les plataformes ja informen: declara els teus guanys",
+    "Passa-la a una altra plataforma i llestos",
+    "Tranquil·la: ningú ho pot saber"
+   ],
+   "explanation": "Des del 2026 les plataformes recullen les dades dels seus clients per a les hisendes. El més assenyat és declarar el que toqui.",
+   "feedback": [
+    "Això! I si vas vendre amb pèrdua, declarar-la també et convé.",
+    "Totes les que donen servei a la UE tenen la mateixa obligació.",
+    "La plataforma sap qui és i ho comunica."
+   ],
+   "lines": [
+    "Tinc la meva cripto en una plataforma 🤫",
+    "Hisenda no se n'assabenta, o sigui que no declaro res."
+   ]
+  },
+  "u31l8-8": {
+   "prompt": "Què és cert sobre l'avís automàtic de cripto? Marca-ho tot.",
+   "options": [
+    "El primer enviament a les hisendes és el 2027",
+    "Només afecta qui té més de 50.000 €",
+    "És un impost nou sobre la cripto",
+    "El fa la plataforma, no tu"
+   ],
+   "explanation": "És la plataforma la que informa, i el primer enviament és el 2027. No és un impost ni té cap mínim: els 50.000 € són d'un altre tràmit, el dels béns a l'estranger."
   }
  }
 }
