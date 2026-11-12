@@ -16,7 +16,8 @@ import { currentLocale } from '../locale'
 import { forgetMemo } from '../request'
 import { ACHIEVEMENTS, LESSON } from '../content/catalog'
 import { achievementList, endFx, fail, FREEZE_PRICE, goalDefs, goalsOf, minutesOf, levelOf, levelTitle, LIVES_MAX, livesOf, lumi, MAX_FREEZES, notify, REFILL_PRICE, START_CASH, withCtx, type Tx } from './core'
-import { pathOf, SCORED_IDS } from './learning'
+import { pathOf, ROUTE_GRAPH, SCORED_IDS } from './learning'
+import { closure } from '@/shared/route'
 import { portfolioIn, portfolioRow, processPendingFor, userBook } from './trading'
 import { addFlow } from './league'
 
@@ -160,6 +161,8 @@ export const updateSettings = (patch: Partial<SettingsT> & { name?: string; comp
     if (skinId === 'hielo' && levelOf(c.g.xp).n < 5) fail(403, 'FEATURE_LOCKED', 'Este color se desbloquea en el nivel 5')
     const base = settingsOf(c.user)
     if (rest.notificationPrefs) rest.notificationPrefs = Object.fromEntries(Object.keys(base.notificationPrefs).map(k => [k, rest.notificationPrefs![k] ?? base.notificationPrefs[k]]))
+    // La ruta se guarda ya coherente: lo elegido más lo que hace falta antes (el cliente también lo calcula, pero manda el servidor)
+    if (rest.route) rest.route = { preset: rest.route.preset, units: closure(ROUTE_GRAPH, rest.route.units) }
     // Si toca los avisos, se apunta: a partir de ahí se respetan tal cual (si no, valen los de por defecto)
     const next = { ...base, ...rest, ...(rest.notificationPrefs ? { prefsTouched: true } : {}) }
     const u = await c.tx.user.update({

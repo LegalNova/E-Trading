@@ -4,6 +4,7 @@ import { isScored, tally } from '@/shared/scoring'
 import type { AnswerResultT, CoursePathT, LessonStepT, LessonT, PathUnitT, PlacementFinishT, QuestionT, QuizFinishT, QuizStartT, StepCheckT } from '@/shared/contract'
 import type { User } from '@/generated/prisma/client'
 import { walkTexts } from '@/shared/play'
+import { closure, ordered, suggestedRoute, suggestedSections, type RouteChoice, type RouteUnit } from '@/shared/route'
 import { courseMinutes, lessonMinutes, LESSON, PLACEMENT, QUIZZES, RISK_LESSONS, UNITS, type ContentQuestion } from '../content/catalog'
 import { canOpen, FULL_UNIT_COUNT, minPlan } from '@/shared/plans'
 import { grade } from '../content/grading'
@@ -42,6 +43,14 @@ const publicQ = (q: ContentQuestion): QuestionT => ({
   meta: q.type === 'NUMBER' ? { ...q.meta, choices: numChoices(q.id, q.solution as number, q.tol ?? 0.01) } : q.meta && { ...q.meta, lines: q.meta.lines?.map(clean), senders: q.meta.senders?.map(clean) },
 })
 
+/** El curso tal como lo necesitan las rutas: unidades en orden, con su sección y lo que esa sección necesita */
+export const ROUTE_GRAPH: RouteUnit[] = UNITS.filter(u => !u.side).map(u => ({ id: u.id, section: u.section?.id ?? null, requires: u.section?.requires ?? [] }))
+/** La ruta guardada del usuario, ya coherente (undefined: aún no ha elegido; sin unidades: curso entero) */
+export function routeOf(user: User): RouteChoice | undefined {
+  const r = (user.settings as { route?: Partial<RouteChoice> | null } | null)?.route
+  if (!r) return undefined
+  return { preset: r.preset === 'LONG' || r.preset === 'TRADING' ? r.preset : null, units: closure(ROUTE_GRAPH, Array.isArray(r.units) ? r.units.filter(x => typeof x === 'string') : []) }
+}
 /** El camino principal en orden (sin «Tu dinero en orden», que es opcional, ni las unidades paralelas) */
 const MAIN_PATH = UNITS.filter(u => !u.side && u.section?.id !== 's1')
 /**
@@ -114,12 +123,27 @@ export async function pathOf(tx: Tx, user: User): Promise<CoursePathT> {
       return (x && unitT(loc, x.id)?.section) ?? x?.section?.title ?? sid
     }
     const ut = unitT(loc, u.id)
-    const section = u.section ? { id: u.section.id, title: ut?.section ?? u.section.title, open: sectionOpen(u), needs: u.section.requires.filter(r => !bossDone(r)).map(titleOf) } : undefined
+    const section = u.section ? { id: u.section.id, title: ut?.section ?? u.section.title, open: sectionOpen(u), needs: u.section.requires.filter(r => !bossDone(r)).map(titleOf), requires: u.section.requires } : undefined
     // Prueba de unidad: en una sección abierta, con la unidad a su alcance y aún sin terminar
     const testOut = !u.side && sectionOpen(u) && testOutLessons(u).some(l => !done.has(l.id)) && lessons.every(l => !l.requiresPremium)
     return { id: u.id, order: u.order, title: ut?.title ?? u.title, description: ut?.description ?? u.description, progressPct: u.lessons.length ? Math.round((n / u.lessons.length) * 100) : 0, access, side: !!u.side, unlocksFeature: u.unlocksFeature, section, testOut, lessons }
   })
-  return { courseId: 'de-cero-a-inversor', title: engineT(loc).course, currentUnitId, units, minutesTotal: courseMinutes(), dailyGoalMinutes: minutesOf(user) }
+  // La ruta elegida (auditoría TEM-5): decide por dónde seguir y qué se enseña primero. No abre ni cierra nada.
+  const choice = routeOf(user)
+  const goals = ((user.onboarding as { goals?: unknown } | null)?.goals as unknown[] | undefined)?.filter((g): g is string => typeof g === 'string') ?? []
+  const routeHint = { preset: suggestedRoute(goals), sections: suggestedSections(goals) }
+  let route: CoursePathT['route'] = null
+  if (choice?.units.length) {
+    const order = ordered(ROUTE_GRAPH, choice.units, choice.preset)
+    const mine = order.map(id => units.find(u => u.id === id)!).filter(Boolean)
+    for (const u of mine) u.inRoute = true
+    // (como en el resumen del curso: clases de contenido, sin repasos ni retos finales)
+    const content = mine.flatMap(u => u.lessons).filter(l => !l.isUnitReview && !l.id.endsWith('boss'))
+    const next = mine.flatMap(u => u.lessons.map(l => ({ l, u }))).find(x => x.l.status === 'AVAILABLE')
+    if (next) currentUnitId = next.u.id
+    route = { preset: choice.preset, units: order, done: content.filter(l => l.status === 'COMPLETED').length, total: content.length, minutesLeft: content.filter(l => l.status !== 'COMPLETED').reduce((a, l) => a + l.minutes, 0), nextLessonId: next?.l.id ?? null }
+  }
+  return { courseId: 'de-cero-a-inversor', title: engineT(loc).course, currentUnitId, units, minutesTotal: courseMinutes(), dailyGoalMinutes: minutesOf(user), route, routeChosen: !!choice, routeHint }
 }
 
 export async function lesson(user: User, tx: Tx, id: string, peek = false): Promise<LessonT> {

@@ -4,7 +4,8 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useTranslations } from 'next-intl'
 import { useEffect, useRef, useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
-import type { CoursePathT, LessonStepT, PathLessonT } from '@/shared/contract'
+import type { CoursePathT, LessonStepT, PathLessonT, PathUnitT } from '@/shared/contract'
+import { ROUTE_SECTIONS } from '@/shared/route'
 import { money, num, signedMoney } from '@/shared/format'
 import { api, ApiFailure } from '../api'
 import { useHome, useLang, useLives, useMe, usePath } from '../hooks'
@@ -295,19 +296,36 @@ function LessonRow({ l, next, onLocked }: { l: PathLessonT; next?: boolean; onLo
 /** Resumen de arriba: cuánto llevas, cuánto falta a tu ritmo y un botón para seguir donde lo dejaste */
 function Summary({ path }: { path: CoursePathT }) {
   const t = useTranslations('path')
-  // Clases de contenido (sin repasos ni retos finales)
+  const tr = useTranslations('route')
+  // Clases de contenido (sin repasos ni retos finales). Con una ruta elegida, el resumen cuenta la ruta, no el curso entero.
+  const r = path.route
   const all = path.units.flatMap(u => u.lessons).filter(l => !l.isUnitReview && !l.id.endsWith('boss'))
-  const done = all.filter(l => l.status === 'COMPLETED').length
-  const left = all.filter(l => l.status !== 'COMPLETED').reduce((a, l) => a + l.minutes, 0)
+  const total = r ? r.total : all.length
+  const done = r ? r.done : all.filter(l => l.status === 'COMPLETED').length
+  const left = r ? r.minutesLeft : all.filter(l => l.status !== 'COMPLETED').reduce((a, l) => a + l.minutes, 0)
   const next = path.units.find(u => u.id === path.currentUnitId)?.lessons.find(l => l.status === 'AVAILABLE') ?? all.find(l => l.status === 'AVAILABLE')
+  // ¿La ajustó? (no coincide con ninguna de las dos de partida tal cual)
+  const custom = !!r && (!r.preset || r.units.length !== path.units.filter(u => !u.side && u.section && ROUTE_SECTIONS[r.preset!].includes(u.section.id)).length)
   return (
     <div className="card flex flex-col gap-2.5">
+      {r && (
+        <div className="flex items-center justify-between gap-2">
+          <span className="t-cap font-extrabold" style={{ color: 'var(--brand-ink)' }}>
+            {tr('summary', { name: tr(`names.${r.preset ?? 'CUSTOM'}`) })}
+            {custom && r.preset ? ` · ${tr('custom')}` : ''}
+          </span>
+          <Link href="/clases/ruta" className="link flex-none text-sm">
+            {tr('change')}
+          </Link>
+        </div>
+      )}
       <div className="flex items-baseline justify-between gap-2">
-        <b className="t-head">{t('summary', { done, total: all.length })}</b>
-        <span className="t-foot">{all.length ? Math.round((done / all.length) * 100) : 0} %</span>
+        <b className="t-head">{r ? tr('progress', { done, total }) : t('summary', { done, total })}</b>
+        <span className="t-foot">{total ? Math.round((done / total) * 100) : 0} %</span>
       </div>
-      <Bar pct={all.length ? (done / all.length) * 100 : 0} />
+      <Bar pct={total ? (done / total) * 100 : 0} />
       {left > 0 && <span className="t-cap">{t('daysAtPace', { days: Math.ceil(left / path.dailyGoalMinutes), pace: path.dailyGoalMinutes })}</span>}
+      {r && left === 0 && <span className="t-cap">{tr('finished')}</span>}
       {next && (
         <>
           <span className="t-foot" style={{ color: 'var(--ink)' }}>
@@ -318,6 +336,31 @@ function Summary({ path }: { path: CoursePathT }) {
           </Link>
         </>
       )}
+      {!r && path.routeChosen && (
+        <Link href="/clases/ruta" className="link self-start text-sm">
+          {tr('choose')}
+        </Link>
+      )}
+    </div>
+  )
+}
+
+/** Quien aún no ha elegido (ni una ruta ni el curso entero): Lumi le invita a hacerlo (auditoría TEM-5) */
+function RouteInvite() {
+  const t = useTranslations('route')
+  const { data: me } = useMe()
+  return (
+    <div className="card flex flex-col gap-2.5">
+      <div className="flex items-center gap-3">
+        <Lumi mood="HAPPY" size={44} skin={me?.companion.skinId} stage={stageOf(me?.level.n ?? 1)} label={me?.companion.name || 'Lumi'} />
+        <span className="min-w-0 flex-1">
+          <b className="t-head block">{t('inviteTitle')}</b>
+          <span className="t-cap">{t('inviteBody')}</span>
+        </span>
+      </div>
+      <Link href="/clases/ruta" className="btn btn-secondary">
+        {t('inviteBtn')}
+      </Link>
     </div>
   )
 }
@@ -341,6 +384,7 @@ function AskLumi() {
 
 export function Path() {
   const t = useTranslations('path')
+  const tr = useTranslations('route')
   const router = useRouter()
   const { data: p, isError, refetch } = usePath()
   const { data: me } = useMe()
@@ -351,6 +395,9 @@ export function Path() {
   if (!p) return <PageSkeleton />
   const current = p.units.find(u => u.id === p.currentUnitId) ?? p.units[0]
   const nextId = current.lessons.find(l => l.status === 'AVAILABLE')?.id
+  // Con una ruta elegida: primero sus unidades, en el orden en que se recorren; después, el resto («Para saber más»), siempre abierto
+  const mine = p.route ? p.route.units.map(id => p.units.find(u => u.id === id)).filter((u): u is PathUnitT => !!u) : []
+  const list = p.route ? [...mine, ...p.units.filter(u => !mine.includes(u))] : p.units
   return (
     <div className="pad">
       <div className="flex items-center justify-between px-0.5">
@@ -364,18 +411,28 @@ export function Path() {
           <MaxPill />
         </div>
       </div>
+      {!p.routeChosen && <RouteInvite />}
       <Summary path={p} />
       {/* La primera vez: cómo está montado el curso (sección › unidad › clase, repaso y reto final) */}
       <HelpTip id="path" title={t('howTitle')}>
         <HelpSteps items={[t('how1'), t('how2'), t('how3')]} />
       </HelpTip>
-      {p.units.map((u, ui) => {
+      {list.map((u, ui) => {
         const empty = u.lessons.length === 0
-        const newSection = u.section && u.section.id !== p.units[ui - 1]?.section?.id
+        const more = !!p.route && ui === mine.length
+        // Con una ruta, el número es el puesto dentro de la ruta (el del curso entero despistaría: «Unidad 30» tras «Unidad 3»); fuera de ella, sin número
+        const n = p.route ? (ui < mine.length ? ui + 1 : null) : u.order
+        const newSection = u.section && (more || u.section.id !== list[ui - 1]?.section?.id)
         const isCurrent = u.id === current.id
         const expanded = isCurrent || openUnits.has(u.id)
         return (
           <section key={u.id} className="flex flex-col gap-3" aria-labelledby={`unit-${u.id}`}>
+            {more && (
+              <div className="mt-6 flex flex-col gap-0.5 px-1">
+                <h2 className="t-head m-0">{tr('moreTitle')}</h2>
+                <span className="t-cap">{tr('moreHint')}</span>
+              </div>
+            )}
             {newSection && u.section && (
               <div className="mt-3 flex items-center gap-2 px-1">
                 <span className="t-cap font-extrabold tracking-wide uppercase" style={{ color: u.section.open ? 'var(--brand-ink)' : 'var(--ink-3)' }}>
@@ -389,7 +446,7 @@ export function Path() {
             {isCurrent ? (
               <div className="hero flex flex-col gap-2">
                 <span className="t-cap" style={{ color: 'rgb(255 255 255 / 0.65)' }}>
-                  {t('unitOf', { n: u.order, total: p.units.length })}
+                  {n ? t('unitOf', { n, total: p.route ? mine.length : p.units.length }) : (u.section?.title ?? '')}
                 </span>
                 <span id={`unit-${u.id}`} className="text-2xl font-extrabold tracking-[-0.02em]">
                   {u.title}
@@ -413,7 +470,8 @@ export function Path() {
               >
                 <span className="min-w-0 flex-1">
                   <b id={`unit-${u.id}`} className="t-head">
-                    {u.side ? t('sideUnit') : t('unitN', { n: u.order })} · {u.title}
+                    {u.side ? `${t('sideUnit')} · ` : n ? `${t('unitN', { n })} · ` : ''}
+                    {u.title}
                   </b>
                   <br />
                   <span className="t-cap line-clamp-2">{empty ? t('soon') : u.description}</span>

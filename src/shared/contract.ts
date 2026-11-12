@@ -122,12 +122,26 @@ export const PathUnit = z.object({
   side: z.boolean(),
   unlocksFeature: Feature.optional(),
   /** Sección (curso v2): abierta o no y, si no, qué retos finales faltan */
-  section: z.object({ id: z.string(), title: z.string(), open: z.boolean(), needs: z.array(z.string()) }).optional(),
+  section: z.object({ id: z.string(), title: z.string(), open: z.boolean(), needs: z.array(z.string()), /** (+) Secciones cuyo reto final hay que aprobar para abrir esta */ requires: z.array(z.string()).optional() }).optional(),
+  /** (+) Está en la ruta que eligió la persona (si eligió alguna) */
+  inRoute: z.boolean().optional(),
   /** Se puede superar con la prueba de unidad («¿ya lo sabes?») */
   testOut: z.boolean().optional(),
   lessons: z.array(PathLesson),
 })
-export const CoursePath = z.object({ courseId: z.string(), title: z.string(), currentUnitId: z.string(), units: z.array(PathUnit), minutesTotal: z.number(), dailyGoalMinutes: z.number() })
+/** Ruta de partida (auditoría TEM-5): «Inversor a largo plazo» o «Quiero entender el trading» */
+export const RoutePreset = z.enum(['LONG', 'TRADING'])
+/** Lo que elige la persona: una ruta de partida (o ninguna) y sus unidades. Sin unidades = el curso entero, como siempre */
+export const RouteChoice = z.object({ preset: RoutePreset.nullable(), units: z.array(z.string().max(12)).max(80) })
+export const CoursePath = z.object({
+  courseId: z.string(), title: z.string(), currentUnitId: z.string(), units: z.array(PathUnit), minutesTotal: z.number(), dailyGoalMinutes: z.number(),
+  /** (+) La ruta elegida, ya en el orden en que se recorre, con su avance (null: curso entero) */
+  route: z.object({ preset: RoutePreset.nullable(), units: z.array(z.string()), done: z.number(), total: z.number(), minutesLeft: z.number(), nextLessonId: z.string().nullable() }).nullable().optional(),
+  /** (+) ¿Ha elegido ya (una ruta o el curso entero)? Mientras no, se le invita a elegir */
+  routeChosen: z.boolean().optional(),
+  /** (+) Lo que recomienda Lumi por lo que la persona dijo en la bienvenida: una ruta (o ninguna) y secciones que le pueden interesar */
+  routeHint: z.object({ preset: RoutePreset.nullable(), sections: z.array(z.string()) }).optional(),
+})
 
 export const LessonStep = z.discriminatedUnion('type', [
   z.object({ id: z.string(), type: z.literal('TEXT'), title: z.string(), body: z.string(), keyIdea: z.string().optional(), companionTip: z.string().optional() }),
@@ -495,6 +509,8 @@ export const Settings = z.object({
   notificationPrefs: z.record(z.string(), z.object({ inApp: z.boolean(), email: z.boolean(), push: z.boolean() })),
   /** (+) Privacidad: mostrar el nombre en la liga o aparecer como «Jugador anónimo» */
   leagueVisible: z.boolean(),
+  /** (+) Ruta del curso elegida (sin elegir: no viene) */
+  route: RouteChoice.nullable().optional(),
 })
 export const BillingPlan = z.object({
   id: z.string(),

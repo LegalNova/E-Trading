@@ -2,6 +2,7 @@
 import type { NextRequest } from 'next/server'
 import { withLocale } from '@/server/locale'
 import { z } from 'zod'
+import { RouteChoice } from '@/shared/contract'
 import { HttpError } from '@/server/game/core'
 import * as admin from '@/server/game/admin'
 import * as reports from '@/server/game/reports'
@@ -58,6 +59,7 @@ const settings = z
   .object({
     locale: z.enum(['es', 'ca', 'en']), currency: z.enum(['EUR', 'USD']), dailyGoalMinutes: z.union([z.literal(5), z.literal(10), z.literal(15), z.literal(20), z.literal(30)]), theme: z.enum(['AUTO', 'LIGHT', 'DARK']),
     gender: z.enum(['F', 'M', 'N']), notificationPrefs: z.record(z.string(), z.object({ inApp: z.boolean(), email: z.boolean(), push: z.boolean() })), name: z.string().max(30), companionName: z.string().max(14), skinId: z.enum(['azul', 'grafito', 'plata', 'hielo']), leagueVisible: z.boolean(),
+    route: RouteChoice,
   })
   .partial()
 const range = (req: NextRequest) => {
