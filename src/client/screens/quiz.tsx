@@ -268,16 +268,20 @@ function AnswersReview({ log }: { log: AnswerLog }) {
         <div key={q.id + k} className="card flex flex-col gap-2.5">
           <span className="t-cap flex items-center justify-between gap-2 font-bold">
             <span>{t('questionN', { n: k + 1 })} · {hint(q)}</span>
-            <span className={`chip ${reveal.correct ? 'up' : 'down'}`}>
-              <Icon name={reveal.correct ? 'check' : 'close'} size={14} /> {reveal.correct ? t('gotRight') : t('gotWrong')}
-            </span>
+            {reveal.scored === false ? (
+              <span className="chip">{t('humilityChip')}</span>
+            ) : (
+              <span className={`chip ${reveal.correct ? 'up' : 'down'}`}>
+                <Icon name={reveal.correct ? 'check' : 'close'} size={14} /> {reveal.correct ? t('gotRight') : t('gotWrong')}
+              </span>
+            )}
           </span>
           {q.type === 'SCENARIO' ? <p className="t-body m-0">{q.prompt}</p> : q.type !== 'FILL_BLANK' && q.type !== 'CHAT' && <b className="t-head">{q.prompt}</b>}
           <div className="pointer-events-none" aria-disabled>
             <QuestionView q={q} value={value} onChange={() => {}} reveal={reveal} />
           </div>
-          <div className={`feedback ${reveal.correct ? 'ok' : 'bad'} rounded-2xl`} style={{ position: 'static' }}>
-            <b className={reveal.correct ? 'up' : 'down'}>{reveal.correct ? t('whyRight') : t('whyWrong')}</b>
+          <div className={`feedback ${reveal.scored === false ? 'neutral' : reveal.correct ? 'ok' : 'bad'} rounded-2xl`} style={{ position: 'static' }}>
+            <b className={reveal.scored === false ? undefined : reveal.correct ? 'up' : 'down'}>{reveal.scored === false ? t('humilityWhy') : reveal.correct ? t('whyRight') : t('whyWrong')}</b>
             <span className="t-body whitespace-pre-line">{reveal.explanation}</span>
           </div>
         </div>
@@ -289,7 +293,8 @@ function AnswersReview({ log }: { log: AnswerLog }) {
 export function QuizResult({ r, lessonId, review, testOut, onRetry, log = [] }: { r: QuizFinishT; lessonId: string | null; review?: boolean; testOut?: boolean; onRetry: () => void; log?: AnswerLog }) {
   const t = useTranslations('quiz')
   const [showAnswers, setShowAnswers] = useState(false)
-  const misses = log.filter(x => !x.reveal.correct).length
+  // La ronda de humildad no cuenta como fallo
+  const misses = log.filter(x => !x.reveal.correct && x.reveal.scored !== false).length
   const tg = useTranslations('goals')
   const locale = useLang()
   const { data: me } = useMe()
@@ -440,7 +445,8 @@ function QuizInner({ id }: { id: string }) {
       setReveal(r)
       const q = start.data?.questions[i]
       if (q) setLog(l => [...l.filter(x => x.q.id !== q.id), { q, value: v, reveal: r }])
-      setStreak(n => (r.correct ? n + 1 : 0))
+      // La ronda de humildad ni suma ni corta la cadena de aciertos: no puntúa
+      if (r.scored !== false) setStreak(n => (r.correct ? n + 1 : 0))
       if (r.livesLeft !== null) setLives(r.livesLeft)
     },
     // Sin esto, un fallo (sin vidas, quiz caducado o cerrado, sin conexión) dejaba el botón sin hacer nada
@@ -547,12 +553,28 @@ function QuizInner({ id }: { id: string }) {
         </span>
         {/* En el chat la pregunta («¿Qué le contestas?») va después de los mensajes: primero el contexto */}
         {q.type === 'SCENARIO' ? <p className="t-body card m-0 text-[17px] leading-7">{q.prompt}</p> : q.type !== 'FILL_BLANK' && q.type !== 'CHAT' && <h1 className="t-title">{q.prompt}</h1>}
-        <div key={`${q.id}-${reveal ? (reveal.correct ? 'ok' : 'ko') : 'q'}`} className={reveal && !reveal.correct ? 'animate-shake' : undefined}>
+        {/* Ronda de humildad: se avisa antes de responder de que no puntúa ni quita vida (P0-7) */}
+        {q.meta?.blind && (
+          <span className="chip self-start" style={{ background: 'color-mix(in srgb, var(--brand) 12%, var(--surface))' }}>
+            {t('humilityTag')}
+          </span>
+        )}
+        <div key={`${q.id}-${reveal ? (reveal.correct ? 'ok' : 'ko') : 'q'}`} className={reveal && !reveal.correct && reveal.scored !== false ? 'animate-shake' : undefined}>
           <QuestionView key={q.id} q={q} value={value} onChange={pick} reveal={reveal} />
         </div>
       </div>
       <div className="sticky bottom-0" style={{ background: 'var(--bg)' }}>
-        {reveal ? (
+        {reveal && reveal.scored === false ? (
+          <div className="feedback neutral" aria-live="polite">
+            <b className="inline-block self-start" style={{ fontSize: 17 }}>
+              {reveal.correct ? t('humilityRight') : t('humilityWrong')}
+            </b>
+            <span className="t-body whitespace-pre-line">{reveal.explanation}</span>
+            <button className="btn btn-primary" onClick={next} disabled={finish.isPending} autoFocus>
+              {isLast ? t('seeResult') : t('continue')}
+            </button>
+          </div>
+        ) : reveal ? (
           <div className={`feedback ${reveal.correct ? 'ok' : 'bad'}`} aria-live="polite">
             <b className={`${reveal.correct ? 'up animate-pop' : 'down'} inline-block self-start`} style={{ fontSize: 17 }}>
               {reveal.correct ? (streak >= 2 ? t('correctStreak', { n: streak }) : t('correct')) : reveal.livesLeft !== null ? t('wrongLife', { n: reveal.livesLeft }) : t('wrong')}

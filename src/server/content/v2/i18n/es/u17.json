@@ -359,7 +359,7 @@
     "PER 24, crece al 8 %",
     "PER 15, crece al 15 %"
    ],
-   "explanation": "PEG de 1; 4; 0,83; y 3.",
+   "explanation": "PEG = PER ÷ crecimiento. 15 ÷ 15 = 1 y 10 ÷ 12 = 0,83: razonables. 40 ÷ 10 = 4 y 24 ÷ 8 = 3: caras para lo que crecen.",
    "right": [
     "Razonable (PEG de 1 o menos)",
     "Cara (PEG de 2 o más)"

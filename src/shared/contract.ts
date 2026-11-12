@@ -188,6 +188,8 @@ export const Question = z.object({
       lines: z.array(z.string()).optional(),
       senders: z.array(z.string()).optional(),
       horizon: z.string().optional(),
+      /** «¿Sube o baja?» sobre un gráfico anónimo: ronda de humildad, no puntúa (src/shared/scoring.ts) */
+      blind: z.boolean().optional(),
       timeLimit: z.number().optional(),
       /** Preguntas de cifra: opciones para tocar (una es la buena), nunca hay que escribir ni hacer cuentas a mano */
       choices: z.array(z.number()).optional(),
@@ -203,6 +205,8 @@ export const AnswerResult = z.object({
   explanation: z.string(),
   livesLeft: z.number().nullable(),
   xpGained: z.number(),
+  /** false en la ronda de humildad: la respuesta no cuenta para la nota (si falta, cuenta) */
+  scored: z.boolean().optional(),
   /** Lo que pasó de verdad (ejercicios con gráfico real): velas siguientes, activo y fechas, resultado */
   reveal: z
     .object({

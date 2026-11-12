@@ -1,5 +1,6 @@
 import 'server-only'
 // Clases, quiz, test de nivel y repaso de fallos (docs/02 §2, docs/07 §3–4)
+import { isScored, tally } from '@/shared/scoring'
 import type { AnswerResultT, CoursePathT, LessonStepT, LessonT, PathUnitT, PlacementFinishT, QuestionT, QuizFinishT, QuizStartT, StepCheckT } from '@/shared/contract'
 import type { User } from '@/generated/prisma/client'
 import { walkTexts } from '@/shared/play'
@@ -15,6 +16,9 @@ import { maybeRewardInvite } from './invites'
 import { addXp, bump, bumpGoal, endFx, fail, LIVES_MAX, livesOf, lumi, markActive, minutesOf, withCtx, type Ctx, type Tx } from './core'
 
 export const ALL_Q: Record<string, ContentQuestion> = Object.fromEntries([...Object.values(QUIZZES).flat(), ...PLACEMENT].map(q => [q.id, q]))
+/** Preguntas que cuentan para la nota y pueden ir a la lista de fallos (sin la ronda de humildad, src/shared/scoring.ts) */
+export const SCORED_IDS = Object.keys(ALL_Q).filter(id => isScored(ALL_Q[id]))
+const scoredId = (id: string) => isScored(ALL_Q[id])
 /** Lo que ve el alumno: nunca la solución, las consecuencias ni el futuro del gráfico */
 /**
  * Sin emojis en lo que se enseña (quedan poco profesionales). Se quitan al enviar y no en el contenido: el orden en
@@ -166,7 +170,7 @@ function testOutQuestions(unitId: string) {
   const u = UNITS.find(x => x.id === unitId)
   if (!u) return []
   const lists = u.lessons.filter(l => !l.isUnitReview && !l.isBoss).map(l => {
-    const qs = (QUIZZES[l.quizId] ?? []).filter(q => q.type !== 'NUMBER')
+    const qs = (QUIZZES[l.quizId] ?? []).filter(q => q.type !== 'NUMBER' && isScored(q))
     const dyn = qs.filter(q => !['SINGLE', 'TRUE_FALSE', 'FILL_BLANK'].includes(q.type))
     return [...dyn.slice(0, 1), ...qs.filter(q => q !== dyn[0]).slice(0, 1)]
   })
@@ -196,7 +200,7 @@ export const quizStart = (id: string) =>
       qs = PLACEMENT
     } else if (id === 'review') {
       mode = 'REVIEW'
-      const m = await c.tx.mistake.findMany({ where: { userId: c.user.id, questionId: { in: Object.keys(ALL_Q) }, dueAt: { lte: new Date() } }, orderBy: { dueAt: 'asc' }, take: 8 })
+      const m = await c.tx.mistake.findMany({ where: { userId: c.user.id, questionId: { in: SCORED_IDS }, dueAt: { lte: new Date() } }, orderBy: { dueAt: 'asc' }, take: 8 })
       qs = m.map(x => ALL_Q[x.questionId]).filter(Boolean)
       if (!qs.length) fail(404, 'NOT_FOUND', 'Hoy no te toca repasar nada: vuelve mañana')
       // Un solo repaso abierto a la vez: con varios abiertos se responderían los mismos fallos en cada uno
@@ -214,7 +218,7 @@ export const quizStart = (id: string) =>
       qs = trimmed.length >= 4 ? trimmed : own
       // Lo aprendido vuelve: hasta 2 fallos de clases anteriores que ya tocaba repasar
       const ownIds = new Set(own.map(q => q.id))
-      const due = await c.tx.mistake.findMany({ where: { userId: c.user.id, dueAt: { lte: new Date() }, questionId: { in: Object.keys(ALL_Q) } }, orderBy: { dueAt: 'asc' }, take: 6 })
+      const due = await c.tx.mistake.findMany({ where: { userId: c.user.id, dueAt: { lte: new Date() }, questionId: { in: SCORED_IDS } }, orderBy: { dueAt: 'asc' }, take: 6 })
       for (const m of due.filter(x => !ownIds.has(x.questionId) && ALL_Q[x.questionId].type !== 'NUMBER').slice(0, MIXED_REVIEW)) {
         qs = [...qs, ALL_Q[m.questionId]]
         reviewIds.add(m.questionId)
@@ -247,9 +251,11 @@ export const answer = (attemptId: string, questionId: string, value: unknown, el
     // Las preguntas de repaso mezcladas en una clase no quitan vidas y siguen el repaso espaciado
     const own = at.mode === 'LESSON' && at.lessonId && LESSON[at.lessonId] ? new Set((QUIZZES[LESSON[at.lessonId].quizId] ?? []).map(q => q.id)) : null
     const spaced = at.mode === 'REVIEW' || (!!own && !own.has(questionId))
-    // Las de «¿sube o baja?» no cuestan vida: aunque se razonen, tienen parte de azar
-    const costsLife = at.mode === 'LESSON' && !spaced && !premium && ALL_Q[questionId]?.type !== 'UP_DOWN'
     const q = ALL_Q[questionId]
+    // Ronda de humildad («¿sube o baja?» sobre un gráfico anónimo): se responde y se revela, pero no puntúa
+    const scored = isScored(q)
+    // Las de «¿sube o baja?» no cuestan vida: aunque se razonen, tienen parte de azar
+    const costsLife = at.mode === 'LESSON' && !spaced && !premium && q?.type !== 'UP_DOWN'
     const loc = currentLocale()
     const tq = questionT(loc, q)
     // «Completa el hueco» llega con el texto que se vio (sin emojis): se corrige con la opción original
@@ -263,10 +269,13 @@ export const answer = (attemptId: string, questionId: string, value: unknown, el
     }
     if (at.mode !== 'PLACEMENT') {
       // Contadores de las insignias de ejercicios (cálculo, estafas, simulación, velas, «¿sube o baja?»)
-      if (correct) bump(c, `ok_${q.type}`)
+      if (correct && scored) bump(c, `ok_${q.type}`)
       if (q.type === 'UP_DOWN') bump(c, 'updown')
       const key = { userId_questionId: { userId: c.user.id, questionId } }
-      if (spaced) {
+      if (!scored) {
+        // Si quedó en la lista de fallos de antes, se quita: aquí no hay nada que repasar
+        await c.tx.mistake.deleteMany({ where: { userId: c.user.id, questionId } })
+      } else if (spaced) {
         // Repaso espaciado: cada acierto lo aplaza (1, 3, 7 y 16 días) y el último lo da por dominado
         const m = await c.tx.mistake.findUnique({ where: key })
         const step = afterReview(m?.box ?? 0, correct)
@@ -276,7 +285,7 @@ export const answer = (attemptId: string, questionId: string, value: unknown, el
       } else if (!correct) await c.tx.mistake.upsert({ where: key, create: { userId: c.user.id, questionId }, update: { box: 0, dueAt: new Date() } })
     }
     // La buena, tal como se vio (en «completa el hueco», la opción en su idioma)
-    return { correct, correctAnswer: typeof tq.solution === 'string' ? clean(tq.solution) : tq.solution, explanation: clean(g.explanation), reveal: g.reveal, livesLeft: costsLife ? c.g.lives : null, xpGained: correct && at.mode !== 'PLACEMENT' ? 10 : 0 }
+    return { correct, correctAnswer: typeof tq.solution === 'string' ? clean(tq.solution) : tq.solution, explanation: clean(g.explanation), reveal: g.reveal, livesLeft: costsLife ? c.g.lives : null, xpGained: correct && scored && at.mode !== 'PLACEMENT' ? 10 : 0, scored }
   })
 
 export const quizFinish = (attemptId: string) =>
@@ -286,13 +295,14 @@ export const quizFinish = (attemptId: string) =>
     if (at.mode === 'PLACEMENT') fail(400, 'VALIDATION_ERROR', 'Usa el final del test de nivel')
     if (at.finishedAt) fail(409, 'CONFLICT', 'Este repaso se ha cerrado porque has empezado otro')
     if (at.mode === 'TESTOUT') return finishTestOut(c, at)
-    const correct = at.answers.filter(a => a.correct).length
-    const total = at.questionIds.length
+    // La ronda de humildad no cuenta: ni en los aciertos ni en el total (src/shared/scoring.ts)
+    const { correct, total } = tally(at.questionIds, at.answers, scoredId)
     const l = at.lessonId ? LESSON[at.lessonId] : null
     // Las estrellas se ganan con las preguntas de la clase (las de repaso mezcladas suman XP, pero no cuentan aquí)
     const ownIds = l ? new Set((QUIZZES[l.quizId] ?? []).map(q => q.id)) : null
-    const ownTotal = ownIds ? at.questionIds.filter(q => ownIds.has(q)).length : total
-    const ownCorrect = ownIds ? at.answers.filter(a => a.correct && ownIds.has(a.questionId)).length : correct
+    const own = ownIds ? tally(at.questionIds, at.answers, scoredId, id => ownIds.has(id)) : { correct, total }
+    const ownTotal = own.total
+    const ownCorrect = own.correct
     const ratio = ownTotal ? ownCorrect / ownTotal : 0
     const perfect = ownCorrect === ownTotal && ownTotal > 0
     // Se aprueba con el 60 %; el reto final de sección exige su propio mínimo (80 %)
@@ -344,8 +354,7 @@ export const quizFinish = (attemptId: string) =>
 /** Final de la prueba de unidad: con el 80 % la unidad queda superada (sus clases, marcadas como saltadas) */
 async function finishTestOut(c: Ctx, at: Awaited<ReturnType<typeof attemptOf>>): Promise<QuizFinishT> {
   const unit = UNITS.find(u => `testout:${u.id}` === at.lessonId)
-  const correct = at.answers.filter(a => a.correct).length
-  const total = at.questionIds.length
+  const { correct, total } = tally(at.questionIds, at.answers, scoredId)
   const passed = !!unit && total > 0 && correct / total >= TESTOUT_PASS
   // Como en las clases: repetir la prueba da XP solo 2 veces al día
   const repeatsToday = await c.tx.quizAttempt.count({ where: { userId: c.user.id, lessonId: at.lessonId, finishedAt: { gte: new Date(Date.now() - 86_400_000) } } })

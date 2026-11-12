@@ -1,5 +1,6 @@
 // Validación del contenido (pura): soluciones de cada tipo de ejercicio, ids únicos, dependencias y reglas del curso v2.
 // La usan scripts/check-content.ts (curso entero) y scripts/check-units.ts (unidades sueltas mientras se escriben).
+import { isScored } from '@/shared/scoring'
 import type { ContentQuestion, ContentUnit, Step } from './dsl'
 import { GLYPHS } from '@/shared/glyphs'
 
@@ -137,7 +138,60 @@ export function validateUnits(units: ContentUnit[], quizzes: Record<string, Cont
   for (const q of o.placement ?? []) r.errors.push(...checkQuestion(q, false))
   for (const [id, req] of sections) for (const x of req) if (!sections.has(x)) r.errors.push(`sección ${id}: requiere ${x}, que no existe`)
   r.sections = sections.size
+  const fair = examFairness(units, quizzes, o.placement)
+  r.errors.push(...fair.errors)
+  r.warnings.push(...fair.warnings)
   return r
+}
+
+/** A partir de qué proporción «la opción correcta es la más larga» delata la respuesta (al azar, con 3 opciones, un 33 %) */
+export const MAX_LONGEST_SHARE = 0.45
+
+/**
+ * Exámenes justos (auditoría EXA-7): que no se pueda aprobar por la forma de las preguntas ni suspender por azar.
+ *   · Error: una pregunta de la ronda de humildad («¿sube o baja?» anónimo) dentro de un repaso, un reto final
+ *     o el test de nivel (P0-7).
+ *   · Aviso: unidades donde la opción correcta es la más larga demasiadas veces (EXA-1).
+ *   · Aviso: «marca todas» con una sola opción falsa (EXA-2).
+ * La posición de la vela en «toca la vela» se vigila en charts-check.ts.
+ */
+export function examFairness(units: ContentUnit[], quizzes: Record<string, ContentQuestion[]>, placement: ContentQuestion[] = []): { errors: string[]; warnings: string[] } {
+  const errors: string[] = []
+  const warnings: string[] = []
+  for (const u of units) for (const l of u.lessons) if (l.isUnitReview || l.isBoss) for (const q of quizzes[l.quizId] ?? []) if (!isScored(q)) errors.push(`${l.id}: ${q.id} es de la ronda de humildad (no puntúa) y no puede entrar en un repaso ni en un reto`)
+  for (const q of placement) if (!isScored(q)) errors.push(`test de nivel: ${q.id} es de la ronda de humildad`)
+
+  const seen = new Set<string>()
+  const longest: string[] = []
+  let oneAll = 0
+  let longAll = 0
+  const oneFalse: string[] = []
+  let multi = 0
+  for (const u of units) {
+    let one = 0
+    let long = 0
+    for (const l of u.lessons) {
+      if (l.isUnitReview || l.isBoss) continue
+      for (const q of quizzes[l.quizId] ?? []) {
+        if (seen.has(q.id)) continue
+        seen.add(q.id)
+        if (['SINGLE', 'SCENARIO', 'CHAT'].includes(q.type) && q.options.length >= 3 && typeof q.solution === 'number') {
+          one++
+          if (q.options[q.solution].length === Math.max(...q.options.map(x => x.length))) long++
+        }
+        if (q.type === 'MULTIPLE' && Array.isArray(q.solution)) {
+          multi++
+          if (q.options.length - q.solution.length === 1) oneFalse.push(q.id)
+        }
+      }
+    }
+    oneAll += one
+    longAll += long
+    if (one >= 6 && long / one > MAX_LONGEST_SHARE) longest.push(`${u.id} ${Math.round((long / one) * 100)} %`)
+  }
+  if (longest.length) warnings.push(`La opción correcta es la más larga en el ${Math.round((longAll / Math.max(1, oneAll)) * 100)} % de las preguntas de opción única (objetivo: menos del ${Math.round(MAX_LONGEST_SHARE * 100)} %). Unidades por encima: ${longest.join(' · ')}`)
+  if (oneFalse.length) warnings.push(`${oneFalse.length} de ${multi} preguntas «marca todas» tienen una sola opción falsa: ${oneFalse.slice(0, 12).join(', ')}${oneFalse.length > 12 ? '…' : ''}`)
+  return { errors, warnings }
 }
 
 /** Pieza interactiva: la predicción tiene respuesta válida, hay frase de Lumi por defecto y las métricas existen */

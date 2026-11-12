@@ -16,7 +16,7 @@ import { currentLocale } from '../locale'
 import { forgetMemo } from '../request'
 import { ACHIEVEMENTS } from '../content/catalog'
 import { achievementList, endFx, fail, FREEZE_PRICE, goalDefs, goalsOf, minutesOf, levelOf, levelTitle, LIVES_MAX, livesOf, lumi, MAX_FREEZES, notify, REFILL_PRICE, START_CASH, withCtx, type Tx } from './core'
-import { ALL_Q, pathOf } from './learning'
+import { pathOf, SCORED_IDS } from './learning'
 import { portfolioIn, portfolioRow, processPendingFor, userBook } from './trading'
 import { addFlow } from './league'
 
@@ -231,7 +231,7 @@ export const refillLives = () =>
   })
 
 // Fallos que toca repasar hoy (repaso espaciado), solo de preguntas que siguen en el curso
-export const mistakesCount = () => withCtx(c => c.tx.mistake.count({ where: { userId: c.user.id, questionId: { in: Object.keys(ALL_Q) }, dueAt: { lte: new Date() } } }))
+export const mistakesCount = () => withCtx(c => c.tx.mistake.count({ where: { userId: c.user.id, questionId: { in: SCORED_IDS }, dueAt: { lte: new Date() } } }))
 export const path = () => withCtx(c => pathOf(c.tx, c.user))
 
 // ── Racha y logros ───────────────────────────────────────

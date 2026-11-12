@@ -8,7 +8,7 @@ import type { User } from '@/generated/prisma/client'
 import type { Tx } from './game/core'
 import { DAY_MS, dayOf, weekOf } from '@/shared/time'
 import { madridMidnight } from '@/shared/league-points'
-import { ALL_Q, pathOf } from './game/learning'
+import { pathOf, SCORED_IDS } from './game/learning'
 import { priceBook } from './game/trading'
 import { candles } from './market/service'
 import { LESSON } from './content/catalog'
@@ -252,7 +252,7 @@ export async function candidateFor(u: PushUser, lang: Lang, hour: number, today:
   }
   // 12:00 repaso de lo que falló (si tiene 3 o más pendientes)
   if (hour === 12 && !activeToday) {
-    const due = await db.mistake.count({ where: { userId: u.id, questionId: { in: Object.keys(ALL_Q) }, dueAt: { lte: new Date() } } })
+    const due = await db.mistake.count({ where: { userId: u.id, questionId: { in: SCORED_IDS }, dueAt: { lte: new Date() } } })
     if (due >= 3) return { kind: 'review', vars: { n: due }, url: '/quiz/review' }
   }
   // 13:00 clase a medias · 18:00 segundo aviso si sigue sin terminarla

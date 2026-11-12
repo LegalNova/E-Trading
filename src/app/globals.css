@@ -265,6 +265,8 @@ button { cursor: pointer; }
   .feedback { border-radius: 18px 18px 0 0; padding: 18px 18px 22px; display: flex; flex-direction: column; gap: 10px; animation: rise 0.22s ease-out; }
   .feedback.ok { background: color-mix(in srgb, var(--up) 14%, var(--surface)); }
   .feedback.bad { background: color-mix(in srgb, var(--down) 12%, var(--surface)); }
+  /* Ronda de humildad: ni acierto ni fallo, no puntúa */
+  .feedback.neutral { background: color-mix(in srgb, var(--brand) 9%, var(--surface)); }
 
   .field { display: flex; flex-direction: column; gap: 6px; }
   .field > label { font-size: 13px; font-weight: 700; }

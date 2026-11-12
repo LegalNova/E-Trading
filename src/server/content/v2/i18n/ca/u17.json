@@ -359,7 +359,7 @@
     "PER 24, creix al 8 %",
     "PER 15, creix al 15 %"
    ],
-   "explanation": "PEG d'1; 4; 0,83; i 3.",
+   "explanation": "PEG = PER ÷ creixement. 15 ÷ 15 = 1 i 10 ÷ 12 = 0,83: raonables. 40 ÷ 10 = 4 i 24 ÷ 8 = 3: cares per al que creixen.",
    "right": [
     "Raonable (PEG d'1 o menys)",
     "Cara (PEG de 2 o més)"

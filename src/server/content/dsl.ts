@@ -1,3 +1,4 @@
+import { isScored } from '@/shared/scoring'
 import 'server-only'
 // Pequeño lenguaje para escribir el curso (docs/curso) como contenido de la app.
 // Cada lección: pasos de ~5 minutos + quiz. Las soluciones viven solo en el servidor.
@@ -235,7 +236,8 @@ export const upDown = (prompt: string, fixtureId: string, explanation: string, h
   const base = f.candles ? { candles: f.candles } : { chart: f.closes! }
   return {
     type: 'UP_DOWN', prompt, options: ['Sube', 'Baja'], ...base, solution: up ? 0 : 1, explanation,
-    meta: { horizon: horizon ?? (f.future ? 'las 10 sesiones siguientes' : 'los meses siguientes') },
+    // Gráfico anónimo de 30 sesiones (tiene `future`): ronda de humildad, no puntúa. Los históricos con contexto sí.
+    meta: { horizon: horizon ?? (f.future ? 'las 10 sesiones siguientes' : 'los meses siguientes'), ...(f.future ? { blind: true } : {}) },
     hidden: { candles: f.future, closes: f.futureCloses, caption: f.caption, changePct: f.changePct, minPct: f.minPct },
   }
 }
@@ -307,11 +309,12 @@ function interleave<T>(lists: T[][], max: number): T[] {
   return out
 }
 
-/** Repaso de unidad: preguntas de todas sus lecciones intercaladas (las de ejercicio dinámico primero), hasta 10 */
+/** Repaso de unidad: preguntas de todas sus lecciones intercaladas (las de ejercicio dinámico primero), hasta 10.
+ * Sin las de la ronda de humildad: en un repaso o en un reto solo entra lo que se puede saber (P0-7). */
 export function unit(u: ContentUnit): ContentUnit {
   const id = `${u.id}r`
   const lists = u.lessons.map(l => {
-    const qs = QUIZZES[l.quizId] ?? []
+    const qs = (QUIZZES[l.quizId] ?? []).filter(isScored)
     const dyn = qs.filter(q => !['SINGLE', 'TRUE_FALSE'].includes(q.type))
     return [...dyn.slice(-1), ...qs.filter(q => !dyn.slice(-1).includes(q)).slice(1, 2)]
   })
@@ -329,7 +332,7 @@ export function section(id: string, title: string, requires: string[], units: Co
   const tagged = units.map(u => ({ ...u, section: { id, title, requires }, lessons: u.lessons.map(l => (l.isUnitReview ? l : { ...l, minutes: Math.max(1, Math.round(l.steps.reduce((m, s) => m + stepMinutes(s), 0))) })) }))
   // Una lista por clase (no por unidad): así el reto pregunta por clases de toda la sección.
   // Con más de 12 clases se eligen 12 repartidas de principio a fin.
-  const perLesson = tagged.flatMap(u => u.lessons.filter(l => !l.isUnitReview).map(l => (QUIZZES[l.quizId] ?? []).slice(-3))).filter(l => l.length)
+  const perLesson = tagged.flatMap(u => u.lessons.filter(l => !l.isUnitReview).map(l => (QUIZZES[l.quizId] ?? []).filter(isScored).slice(-3))).filter(l => l.length)
   const lists = perLesson.length > 12 ? Array.from({ length: 12 }, (_, i) => perLesson[Math.round((i * (perLesson.length - 1)) / 11)]) : perLesson
   const bid = `${id}boss`
   QUIZZES[`q-${bid}`] = interleave(lists, 12)
