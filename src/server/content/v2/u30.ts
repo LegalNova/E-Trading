@@ -299,5 +299,65 @@ export default unit({
       order('Ordena los pasos para poner en marcha la cartera.', ['Tener el colchón aparte', 'Decidir el reparto', 'Elegir productos baratos', 'Automatizar las aportaciones', 'Rebalancear una vez al año'], 'Primero la base y la decisión clave; después los productos y la disciplina.'),
       chat(['A ver, defiéndeme tu cartera 🧐', '¿Por qué crees que va a funcionar?'], 'Lumi te pide que defiendas tu cartera: ¿por qué crees que va a funcionar? ¿Qué le contestas?', [['Porque he elegido lo que más va a subir', 'Nadie sabe qué subirá más. Una cartera que depende de acertar es frágil.'], ['Está diversificada y sé qué haré si cae', '¡Defensa perfecta! Has hablado de lo que controlas, no de lo que adivinas.'], ['Porque la bolsa siempre sube si esperas lo suficiente', 'A largo plazo ha subido, pero con caídas de hasta un 50 % por el camino.']], 1, 'Una cartera se defiende con diversificación, costes y un plan, no con predicciones.'),
     ], { source: '4.5', retire: [5, 7] }),
+
+    // Auditoría FAL-7: cuándo vender para quien invierte a largo plazo. Va al final de la unidad (después del reto) para
+    // no mover de sitio ninguna clase anterior: el plan decide qué clases abre por su posición dentro de la unidad.
+    lesson('u30l7', 'Cuándo vender (y cuándo no)', [
+      story('«Lo vendo y ya está»', [{ id: 'marta', name: 'Marta' }], [
+        say('marta', 'Mi fondo indexado ha caído un **15 %** en dos meses. Lo vendo antes de que caiga más.'),
+        say('lumi', 'Antes de vender, una pregunta: ¿por qué lo compraste?'),
+        say('marta', 'Para jubilarme, dentro de 25 años.'),
+        choose('¿Ha cambiado algo de eso?', [
+          opt('Sí: ha bajado el precio', 'bad', say('lumi', 'El precio no era tu motivo. Tu motivo era tener ese dinero dentro de 25 años.')),
+          opt('No: sigo sin necesitar ese dinero hasta dentro de 25 años', 'good', say('lumi', 'Entonces no ha cambiado nada de lo que importa. Solo el precio de hoy.')),
+          opt('No lo sé, pero prefiero no arriesgar', 'ok', say('lumi', 'Es humano. Por eso conviene decidir **antes** qué te haría vender.')),
+        ]),
+        say('lumi', 'Se vende cuando cambia **tu vida** o **tu plan**. Casi nunca porque haya cambiado el precio.'),
+      ]),
+      play({
+        title: '¿Es motivo para vender?',
+        intro: 'Seis situaciones de alguien que invierte a largo plazo. Separa los **motivos de verdad** de los que solo son ruido.',
+        widget: {
+          kind: 'sort',
+          bins: [{ label: 'Puede ser motivo' }, { label: 'No es motivo' }],
+          cards: [
+            { icon: 'home', label: 'En dos años necesitas el dinero para la entrada de un piso', bin: 0, why: 'El plazo se ha acortado: toca bajar el riesgo poco a poco.' },
+            { icon: 'down', label: 'La bolsa ha caído un 20 % este mes', bin: 1, why: 'Una caída es parte del camino. Si no necesitas el dinero, no cambia tu plan.' },
+            { icon: 'scale', label: 'Las acciones pesan un 85 % y tu plan dice un 70 %', bin: 0, why: 'Es rebalancear: vendes lo que sobra para volver a tu reparto.' },
+            { icon: 'news', label: 'Un titular anuncia «la peor crisis en décadas»', bin: 1, why: 'Los titulares no avisan del suelo ni del techo.' },
+            { icon: 'company', label: 'Compraste una empresa por su negocio y ese negocio ya no existe', bin: 0, why: 'Tu razón para tenerla ha desaparecido: la tesis está rota.' },
+            { icon: 'up', label: 'Tu fondo ha subido un 30 % y «hay que asegurar»', bin: 1, why: 'Que haya subido no dice nada de lo que hará. Tu plan no hablaba de un precio.' },
+          ],
+        },
+        goal: { text: 'Clasifica las seis situaciones.', when: [when('done', '==', 6)] },
+        insight: 'Los tres motivos de verdad: **necesitas el dinero**, **toca rebalancear** o **se ha roto la razón por la que compraste**. El precio de hoy, por sí solo, no es ninguno de los tres.',
+        lumi: [
+          { when: when('wrong', '>=', 2), say: '¿Ha cambiado tu vida, tu plan o solo el precio?', mood: 'THINKING' },
+          { say: 'Clasifica cada situación', mood: 'HAPPY' },
+        ],
+      }),
+      story('La razón por la que compraste', [{ id: 'bruno', name: 'Bruno' }], [
+        say('bruno', 'Compré acciones de una cadena de tiendas porque abría locales y ganaba más cada año.'),
+        say('bruno', 'Ahora cierra tiendas, pierde dinero y debe cada vez más. Pero voy perdiendo un 40 %: espero a recuperar.'),
+        choose('¿Qué le dices?', [
+          opt('Que espere: si vende, la pérdida se hace real', 'bad', say('lumi', 'La pérdida ya es real. La pregunta es si hoy volvería a comprarla.')),
+          opt('Que se pregunte si hoy la compraría, sabiendo lo que sabe', 'good', say('lumi', 'Esa es la pregunta. Si la respuesta es no, su razón para tenerla ya no existe.')),
+          opt('Que compre más para bajar su precio medio', 'bad', say('lumi', 'Eso es meter más dinero en una razón que ya no se sostiene.')),
+        ]),
+        say('lumi', 'A eso se le llama **tesis rota**. Con un fondo que tiene miles de empresas casi nunca pasa; con una acción suelta, sí.'),
+        note('Vender también tiene costes: comisiones y, si hay ganancia, impuestos. Entre fondos de inversión en España se puede traspasar sin tributar.'),
+      ]),
+      key('Tres motivos, y uno que no lo es', '**Sí son motivo para vender:**\n\n• **Necesitas el dinero** o tu objetivo está cerca: baja el riesgo poco a poco, no de golpe.\n• **Rebalancear**: vuelves al reparto de tu plan.\n• **Tesis rota**: ha desaparecido la razón por la que compraste.\n\n**No es motivo:** que el precio haya subido o bajado, un titular o lo que diga otra persona.\n\nAntes de vender, pregúntate: «si hoy no lo tuviera, ¿lo compraría?».', 'Se vende por lo que ha cambiado en tu vida o en tu plan, no por lo que ha hecho el precio.', 'Pruébalo: abre tu Cartera y escribe en el diario, para cada posición, qué tendría que pasar para que la vendieras.'),
+    ], [
+      buckets('¿Puede ser motivo para vender?', ['Puede ser motivo', 'No es motivo'], [['Necesitas el dinero dentro de dos años', 0], ['La bolsa ha caído un 20 % este mes', 1], ['Las acciones pesan más de lo que dice tu plan', 0], ['Un titular anuncia una crisis', 1], ['La razón por la que compraste ya no existe', 0], ['Tu fondo ha subido un 30 %', 1]], 'Tu vida, tu plan o tu tesis pueden ser motivo. El precio de hoy o un titular, no.'),
+      scenario('Ana tiene 20.000 € en un fondo de bolsa mundial. Dentro de dos años los necesitará para la entrada de un piso. La bolsa está en máximos. ¿Qué hace?', [['Lo deja todo: la bolsa va muy bien', 'En dos años una caída fuerte la dejaría sin entrada. El plazo ya no es largo.'], ['Va pasando el dinero a algo de poco riesgo', 'Bien: el motivo no es el precio, es que su plazo se ha acortado.'], ['Espera a que caiga un poco para vender mejor', 'Esperar una caída para vender es apostar justo a lo que le haría daño.']], 1, 'Cuando el objetivo se acerca, se baja el riesgo poco a poco. No tiene que ver con que la bolsa esté alta o baja.'),
+      single('¿Qué es una «tesis rota»?', ['Que la acción ha caído más de un 20 %', 'Que ya no existe la razón por la que compraste', 'Que un analista ha bajado su recomendación'], 1, 'La tesis es tu razón para tener algo. Si esa razón desaparece, mantenerlo es solo esperar.'),
+      tf('Si tu fondo ha subido mucho, lo sensato es vender para asegurar la ganancia.', false, 'Que haya subido no dice qué hará después. Se vende si lo necesitas, si toca rebalancear o si tu plan lo decía.'),
+      num('Tu plan es 70 % acciones y 30 % bonos. Tu cartera vale 10.000 € y las acciones pesan un 80 %. ¿Cuántos euros de acciones vendes para volver al plan?', 1000, '€', 'Tienes 8.000 € en acciones y tu plan dice 7.000 €: vendes 1.000 € y los llevas a bonos.'),
+      order('Ordena lo que conviene preguntarse antes de vender.', ['¿Por qué lo compré?', '¿Ha cambiado esa razón?', '¿Qué dice mi plan?', '¿Cuánto me cuesta vender?', 'Decido'], 'Primero la razón y si sigue en pie; después el plan y los costes. La decisión llega al final, no al principio.'),
+      multi('¿Cuáles son motivos razonables para vender? Marca todos.', ['Vuelves al reparto de tu plan', 'El precio ha caído y te da miedo', 'Tu objetivo está a dos años', 'Un amigo ha vendido el suyo'], [0, 2], 'Rebalancear y acercarte a tu objetivo son motivos. El miedo a una caída o lo que haga otra persona no cambian tu plan.'),
+      chat(['Mi fondo indexado lleva un año sin subir 😒', 'Lo vendo y busco otro que vaya mejor, ¿no?'], 'El fondo indexado de Lumi lleva un año sin subir y quiere venderlo para buscar otro que vaya mejor. ¿Qué le contestas?', [['Sí: un año entero sin subir es mala señal', 'Un año plano es normal en bolsa. Cambiar de fondo por eso es perseguir lo que ya subió.'], ['¿Ha cambiado tu plazo o tu plan? Si no, un año no es motivo', '¡Eso! El fondo sigue siendo lo que compraste. Lo que ha cambiado es tu paciencia.'], ['Vende la mitad y prueba con otro', 'Vender la mitad por impaciencia es el mismo error, a medias.']], 1, 'Un año sin subir no rompe ninguna tesis ni cambia tu plazo. Cambiar al fondo que más subió el año pasado suele salir caro.'),
+      fill('Antes de vender, pregúntate: «si hoy no lo tuviera, ¿lo ____?».', 'compraría', ['vendería', 'recomendaría', 'miraría'], 'Si la respuesta es sí, no hay motivo para vender. Si es no, pregúntate por qué lo sigues teniendo.'),
+    ], { minutes: 6 }),
   ],
 })

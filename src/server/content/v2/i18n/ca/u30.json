@@ -288,6 +288,75 @@
   "s10boss": {
    "title": "Repte final: Construir la teva cartera",
    "steps": []
+  },
+  "u30l7": {
+   "title": "Quan vendre (i quan no)",
+   "steps": [
+    {
+     "texts": [
+      "«Ho venc i ja està»",
+      "Marta",
+      "El meu fons indexat ha caigut un **15 %** en dos mesos. El venc abans que caigui més.",
+      "Abans de vendre, una pregunta: per què el vas comprar?",
+      "Per jubilar-me, d'aquí a 25 anys.",
+      "Ha canviat res d'això?",
+      "Sí: ha baixat el preu",
+      "El preu no era el teu motiu. El teu motiu era tenir aquests diners d'aquí a 25 anys.",
+      "No: continuo sense necessitar aquests diners fins d'aquí a 25 anys",
+      "Aleshores no ha canviat res del que importa. Només el preu d'avui.",
+      "No ho sé, però prefereixo no arriscar",
+      "És humà. Per això convé decidir **abans** què et faria vendre.",
+      "Es ven quan canvia **la teva vida** o **el teu pla**. Gairebé mai perquè hagi canviat el preu."
+     ]
+    },
+    {
+     "texts": [
+      "És motiu per vendre?",
+      "Sis situacions d'algú que inverteix a llarg termini. Separa els **motius de debò** dels que només són soroll.",
+      "Pot ser motiu",
+      "No és motiu",
+      "D'aquí a dos anys necessites els diners per a l'entrada d'un pis",
+      "El termini s'ha escurçat: toca abaixar el risc a poc a poc.",
+      "La borsa ha caigut un 20 % aquest mes",
+      "Una caiguda forma part del camí. Si no necessites els diners, no canvia el teu pla.",
+      "Les accions pesen un 85 % i el teu pla diu un 70 %",
+      "És rebalancejar: vens el que sobra per tornar al teu repartiment.",
+      "Un titular anuncia «la pitjor crisi en dècades»",
+      "Els titulars no avisen del terra ni del sostre.",
+      "Vas comprar una empresa pel seu negoci i aquest negoci ja no existeix",
+      "La teva raó per tenir-la ha desaparegut: la tesi està trencada.",
+      "El teu fons ha pujat un 30 % i «cal assegurar»",
+      "Que hagi pujat no diu res del que farà. El teu pla no parlava d'un preu.",
+      "Classifica les sis situacions.",
+      "Els tres motius de debò: **necessites els diners**, **toca rebalancejar** o **s'ha trencat la raó per la qual vas comprar**. El preu d'avui, per si sol, no és cap dels tres.",
+      "Ha canviat la teva vida, el teu pla o només el preu?",
+      "Classifica cada situació"
+     ]
+    },
+    {
+     "texts": [
+      "La raó per la qual vas comprar",
+      "Bruno",
+      "Vaig comprar accions d'una cadena de botigues perquè obria locals i guanyava més cada any.",
+      "Ara tanca botigues, perd diners i deu cada vegada més. Però vaig perdent un 40 %: espero a recuperar.",
+      "Què li dius?",
+      "Que esperi: si ven, la pèrdua es fa real",
+      "La pèrdua ja és real. La pregunta és si avui la tornaria a comprar.",
+      "Que es pregunti si avui la compraria, sabent el que sap",
+      "Aquesta és la pregunta. Si la resposta és no, la seva raó per tenir-la ja no existeix.",
+      "Que en compri més per abaixar el preu mitjà",
+      "Això és posar més diners en una raó que ja no s'aguanta.",
+      "D'això se'n diu **tesi trencada**. Amb un fons que té milers d'empreses gairebé no passa mai; amb una acció solta, sí.",
+      "Vendre també té costos: comissions i, si hi ha guany, impostos. Entre fons d'inversió a Espanya es pot traspassar sense tributar."
+     ]
+    },
+    {
+     "title": "Tres motius, i un que no ho és",
+     "body": "**Sí que són motiu per vendre:**\n\n• **Necessites els diners** o el teu objectiu és a prop: abaixa el risc a poc a poc, no de cop.\n• **Rebalancejar**: tornes al repartiment del teu pla.\n• **Tesi trencada**: ha desaparegut la raó per la qual vas comprar.\n\n**No és motiu:** que el preu hagi pujat o baixat, un titular o el que digui una altra persona.\n\nAbans de vendre, pregunta't: «si avui no ho tingués, ho compraria?».",
+     "key": "Es ven pel que ha canviat a la teva vida o al teu pla, no pel que ha fet el preu.",
+     "tip": "Prova-ho: obre la teva Cartera i escriu al diari, per a cada posició, què hauria de passar perquè la venguessis."
+    }
+   ]
   }
  },
  "questions": {
@@ -786,6 +855,108 @@
     "Sobre 400 € és un 5 % cada any, guanyis o perdis."
    ],
    "explanation": "Un cost fix es mesura contra el teu import: 20 € sobre 400 € són un 5 %; sobre 40.000 €, un 0,05 %."
+  },
+  "u30l7-1": {
+   "prompt": "Pot ser motiu per vendre?",
+   "options": [
+    "El teu fons ha pujat un 30 %",
+    "Les accions pesen més del que diu el teu pla",
+    "Un titular anuncia una crisi",
+    "Necessites els diners d'aquí a dos anys",
+    "La borsa ha caigut un 20 % aquest mes",
+    "La raó per la qual vas comprar ja no existeix"
+   ],
+   "right": [
+    "Pot ser motiu",
+    "No és motiu"
+   ],
+   "explanation": "La teva vida, el teu pla o la teva tesi poden ser motiu. El preu d'avui o un titular, no."
+  },
+  "u30l7-2": {
+   "prompt": "L'Ana té 20.000 € en un fons de borsa mundial. D'aquí a dos anys els necessitarà per a l'entrada d'un pis. La borsa és a màxims. Què fa?",
+   "options": [
+    "Espera que caigui una mica per vendre millor",
+    "Ho deixa tot: la borsa va molt bé",
+    "Va passant els diners a alguna cosa de poc risc"
+   ],
+   "feedback": [
+    "Esperar una caiguda per vendre és apostar just pel que li faria mal.",
+    "En dos anys una caiguda forta la deixaria sense entrada. El termini ja no és llarg.",
+    "Bé: el motiu no és el preu, és que el seu termini s'ha escurçat."
+   ],
+   "explanation": "Quan l'objectiu s'acosta, s'abaixa el risc a poc a poc. No té a veure amb si la borsa és alta o baixa."
+  },
+  "u30l7-3": {
+   "prompt": "Què és una «tesi trencada»?",
+   "options": [
+    "Que un analista ha abaixat la seva recomanació",
+    "Que ja no existeix la raó per la qual vas comprar",
+    "Que l'acció ha caigut més d'un 20 %"
+   ],
+   "explanation": "La tesi és la teva raó per tenir una cosa. Si aquesta raó desapareix, mantenir-la és només esperar."
+  },
+  "u30l7-4": {
+   "prompt": "Si el teu fons ha pujat molt, el més assenyat és vendre per assegurar el guany.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Que hagi pujat no diu què farà després. Es ven si ho necessites, si toca rebalancejar o si el teu pla ho deia."
+  },
+  "u30l7-5": {
+   "unit": "€",
+   "prompt": "El teu pla és 70 % accions i 30 % bons. La teva cartera val 10.000 € i les accions pesen un 80 %. Quants euros d'accions vens per tornar al pla?",
+   "options": [],
+   "explanation": "Tens 8.000 € en accions i el teu pla diu 7.000 €: en vens 1.000 € i els portes a bons."
+  },
+  "u30l7-6": {
+   "prompt": "Ordena el que convé preguntar-se abans de vendre.",
+   "options": [
+    "Ha canviat aquesta raó?",
+    "Quant em costa vendre?",
+    "Què diu el meu pla?",
+    "Per què ho vaig comprar?",
+    "Decideixo"
+   ],
+   "explanation": "Primer la raó i si continua dempeus; després el pla i els costos. La decisió arriba al final, no al principi."
+  },
+  "u30l7-7": {
+   "prompt": "Quins són motius raonables per vendre? Marca'ls tots.",
+   "options": [
+    "El preu ha caigut i et fa por",
+    "Un amic ha venut el seu",
+    "El teu objectiu és a dos anys",
+    "Tornes al repartiment del teu pla"
+   ],
+   "explanation": "Rebalancejar i acostar-te al teu objectiu són motius. La por d'una caiguda o el que faci una altra persona no canvien el teu pla."
+  },
+  "u30l7-8": {
+   "lines": [
+    "El meu fons indexat fa un any que no puja 😒",
+    "El venc i en busco un altre que vagi millor, oi?"
+   ],
+   "prompt": "El fons indexat de la Lumi fa un any que no puja i el vol vendre per buscar-ne un altre que vagi millor. Què li contestes?",
+   "options": [
+    "Sí: un any sencer sense pujar és mal senyal",
+    "Ha canviat el teu termini o el teu pla? Si no, un any no és motiu",
+    "Ven-ne la meitat i prova amb un altre"
+   ],
+   "feedback": [
+    "Un any pla és normal a borsa. Canviar de fons per això és perseguir el que ja ha pujat.",
+    "Això! El fons continua sent el que vas comprar. El que ha canviat és la teva paciència.",
+    "Vendre'n la meitat per impaciència és el mateix error, a mitges."
+   ],
+   "explanation": "Un any sense pujar no trenca cap tesi ni canvia el teu termini. Canviar al fons que més va pujar l'any passat sol sortir car."
+  },
+  "u30l7-9": {
+   "prompt": "Abans de vendre, pregunta't: «si avui no ho tingués, ho ____?».",
+   "options": [
+    "vendria",
+    "miraria",
+    "recomanaria",
+    "compraria"
+   ],
+   "explanation": "Si la resposta és sí, no hi ha motiu per vendre. Si és no, pregunta't per què ho continues tenint."
   }
  }
 }

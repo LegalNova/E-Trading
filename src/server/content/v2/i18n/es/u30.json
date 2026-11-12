@@ -281,6 +281,75 @@
     }
    ]
   },
+  "u30l7": {
+   "title": "Cuándo vender (y cuándo no)",
+   "steps": [
+    {
+     "texts": [
+      "«Lo vendo y ya está»",
+      "Marta",
+      "Mi fondo indexado ha caído un **15 %** en dos meses. Lo vendo antes de que caiga más.",
+      "Antes de vender, una pregunta: ¿por qué lo compraste?",
+      "Para jubilarme, dentro de 25 años.",
+      "¿Ha cambiado algo de eso?",
+      "Sí: ha bajado el precio",
+      "El precio no era tu motivo. Tu motivo era tener ese dinero dentro de 25 años.",
+      "No: sigo sin necesitar ese dinero hasta dentro de 25 años",
+      "Entonces no ha cambiado nada de lo que importa. Solo el precio de hoy.",
+      "No lo sé, pero prefiero no arriesgar",
+      "Es humano. Por eso conviene decidir **antes** qué te haría vender.",
+      "Se vende cuando cambia **tu vida** o **tu plan**. Casi nunca porque haya cambiado el precio."
+     ]
+    },
+    {
+     "texts": [
+      "¿Es motivo para vender?",
+      "Seis situaciones de alguien que invierte a largo plazo. Separa los **motivos de verdad** de los que solo son ruido.",
+      "Puede ser motivo",
+      "No es motivo",
+      "En dos años necesitas el dinero para la entrada de un piso",
+      "El plazo se ha acortado: toca bajar el riesgo poco a poco.",
+      "La bolsa ha caído un 20 % este mes",
+      "Una caída es parte del camino. Si no necesitas el dinero, no cambia tu plan.",
+      "Las acciones pesan un 85 % y tu plan dice un 70 %",
+      "Es rebalancear: vendes lo que sobra para volver a tu reparto.",
+      "Un titular anuncia «la peor crisis en décadas»",
+      "Los titulares no avisan del suelo ni del techo.",
+      "Compraste una empresa por su negocio y ese negocio ya no existe",
+      "Tu razón para tenerla ha desaparecido: la tesis está rota.",
+      "Tu fondo ha subido un 30 % y «hay que asegurar»",
+      "Que haya subido no dice nada de lo que hará. Tu plan no hablaba de un precio.",
+      "Clasifica las seis situaciones.",
+      "Los tres motivos de verdad: **necesitas el dinero**, **toca rebalancear** o **se ha roto la razón por la que compraste**. El precio de hoy, por sí solo, no es ninguno de los tres.",
+      "¿Ha cambiado tu vida, tu plan o solo el precio?",
+      "Clasifica cada situación"
+     ]
+    },
+    {
+     "texts": [
+      "La razón por la que compraste",
+      "Bruno",
+      "Compré acciones de una cadena de tiendas porque abría locales y ganaba más cada año.",
+      "Ahora cierra tiendas, pierde dinero y debe cada vez más. Pero voy perdiendo un 40 %: espero a recuperar.",
+      "¿Qué le dices?",
+      "Que espere: si vende, la pérdida se hace real",
+      "La pérdida ya es real. La pregunta es si hoy volvería a comprarla.",
+      "Que se pregunte si hoy la compraría, sabiendo lo que sabe",
+      "Esa es la pregunta. Si la respuesta es no, su razón para tenerla ya no existe.",
+      "Que compre más para bajar su precio medio",
+      "Eso es meter más dinero en una razón que ya no se sostiene.",
+      "A eso se le llama **tesis rota**. Con un fondo que tiene miles de empresas casi nunca pasa; con una acción suelta, sí.",
+      "Vender también tiene costes: comisiones y, si hay ganancia, impuestos. Entre fondos de inversión en España se puede traspasar sin tributar."
+     ]
+    },
+    {
+     "title": "Tres motivos, y uno que no lo es",
+     "body": "**Sí son motivo para vender:**\n\n• **Necesitas el dinero** o tu objetivo está cerca: baja el riesgo poco a poco, no de golpe.\n• **Rebalancear**: vuelves al reparto de tu plan.\n• **Tesis rota**: ha desaparecido la razón por la que compraste.\n\n**No es motivo:** que el precio haya subido o bajado, un titular o lo que diga otra persona.\n\nAntes de vender, pregúntate: «si hoy no lo tuviera, ¿lo compraría?».",
+     "key": "Se vende por lo que ha cambiado en tu vida o en tu plan, no por lo que ha hecho el precio.",
+     "tip": "Pruébalo: abre tu Cartera y escribe en el diario, para cada posición, qué tendría que pasar para que la vendieras."
+    }
+   ]
+  },
   "u30r": {
    "title": "Repaso de la unidad",
    "steps": []
@@ -786,6 +855,108 @@
     "A ver, defiéndeme tu cartera 🧐",
     "¿Por qué crees que va a funcionar?"
    ]
+  },
+  "u30l7-1": {
+   "prompt": "¿Puede ser motivo para vender?",
+   "options": [
+    "Tu fondo ha subido un 30 %",
+    "Las acciones pesan más de lo que dice tu plan",
+    "Un titular anuncia una crisis",
+    "Necesitas el dinero dentro de dos años",
+    "La bolsa ha caído un 20 % este mes",
+    "La razón por la que compraste ya no existe"
+   ],
+   "explanation": "Tu vida, tu plan o tu tesis pueden ser motivo. El precio de hoy o un titular, no.",
+   "right": [
+    "Puede ser motivo",
+    "No es motivo"
+   ]
+  },
+  "u30l7-2": {
+   "prompt": "Ana tiene 20.000 € en un fondo de bolsa mundial. Dentro de dos años los necesitará para la entrada de un piso. La bolsa está en máximos. ¿Qué hace?",
+   "options": [
+    "Espera a que caiga un poco para vender mejor",
+    "Lo deja todo: la bolsa va muy bien",
+    "Va pasando el dinero a algo de poco riesgo"
+   ],
+   "explanation": "Cuando el objetivo se acerca, se baja el riesgo poco a poco. No tiene que ver con que la bolsa esté alta o baja.",
+   "feedback": [
+    "Esperar una caída para vender es apostar justo a lo que le haría daño.",
+    "En dos años una caída fuerte la dejaría sin entrada. El plazo ya no es largo.",
+    "Bien: el motivo no es el precio, es que su plazo se ha acortado."
+   ]
+  },
+  "u30l7-3": {
+   "prompt": "¿Qué es una «tesis rota»?",
+   "options": [
+    "Que un analista ha bajado su recomendación",
+    "Que ya no existe la razón por la que compraste",
+    "Que la acción ha caído más de un 20 %"
+   ],
+   "explanation": "La tesis es tu razón para tener algo. Si esa razón desaparece, mantenerlo es solo esperar."
+  },
+  "u30l7-4": {
+   "prompt": "Si tu fondo ha subido mucho, lo sensato es vender para asegurar la ganancia.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Que haya subido no dice qué hará después. Se vende si lo necesitas, si toca rebalancear o si tu plan lo decía."
+  },
+  "u30l7-5": {
+   "prompt": "Tu plan es 70 % acciones y 30 % bonos. Tu cartera vale 10.000 € y las acciones pesan un 80 %. ¿Cuántos euros de acciones vendes para volver al plan?",
+   "options": [],
+   "explanation": "Tienes 8.000 € en acciones y tu plan dice 7.000 €: vendes 1.000 € y los llevas a bonos.",
+   "unit": "€"
+  },
+  "u30l7-6": {
+   "prompt": "Ordena lo que conviene preguntarse antes de vender.",
+   "options": [
+    "¿Ha cambiado esa razón?",
+    "¿Cuánto me cuesta vender?",
+    "¿Qué dice mi plan?",
+    "¿Por qué lo compré?",
+    "Decido"
+   ],
+   "explanation": "Primero la razón y si sigue en pie; después el plan y los costes. La decisión llega al final, no al principio."
+  },
+  "u30l7-7": {
+   "prompt": "¿Cuáles son motivos razonables para vender? Marca todos.",
+   "options": [
+    "El precio ha caído y te da miedo",
+    "Un amigo ha vendido el suyo",
+    "Tu objetivo está a dos años",
+    "Vuelves al reparto de tu plan"
+   ],
+   "explanation": "Rebalancear y acercarte a tu objetivo son motivos. El miedo a una caída o lo que haga otra persona no cambian tu plan."
+  },
+  "u30l7-8": {
+   "prompt": "El fondo indexado de Nora lleva un año sin subir y quiere venderlo para buscar otro que vaya mejor. ¿Qué le contestas?",
+   "options": [
+    "Sí: un año entero sin subir es mala señal",
+    "¿Ha cambiado tu plazo o tu plan? Si no, un año no es motivo",
+    "Vende la mitad y prueba con otro"
+   ],
+   "explanation": "Un año sin subir no rompe ninguna tesis ni cambia tu plazo. Cambiar al fondo que más subió el año pasado suele salir caro.",
+   "feedback": [
+    "Un año plano es normal en bolsa. Cambiar de fondo por eso es perseguir lo que ya subió.",
+    "¡Eso! El fondo sigue siendo lo que compraste. Lo que ha cambiado es tu paciencia.",
+    "Vender la mitad por impaciencia es el mismo error, a medias."
+   ],
+   "lines": [
+    "Mi fondo indexado lleva un año sin subir 😒",
+    "Lo vendo y busco otro que vaya mejor, ¿no?"
+   ]
+  },
+  "u30l7-9": {
+   "prompt": "Antes de vender, pregúntate: «si hoy no lo tuviera, ¿lo ____?».",
+   "options": [
+    "vendería",
+    "miraría",
+    "recomendaría",
+    "compraría"
+   ],
+   "explanation": "Si la respuesta es sí, no hay motivo para vender. Si es no, pregúntate por qué lo sigues teniendo."
   }
  }
 }

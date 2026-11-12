@@ -288,6 +288,75 @@
   "s10boss": {
    "title": "Final challenge: Building your portfolio",
    "steps": []
+  },
+  "u30l7": {
+   "title": "When to sell (and when not to)",
+   "steps": [
+    {
+     "texts": [
+      "«I'll just sell it»",
+      "Marta",
+      "My index fund has fallen **15 %** in two months. I'm selling before it falls further.",
+      "Before you sell, one question: why did you buy it?",
+      "To retire, 25 years from now.",
+      "Has any of that changed?",
+      "Yes: the price has gone down",
+      "The price wasn't your reason. Your reason was having that money 25 years from now.",
+      "No: I still won't need that money for 25 years",
+      "Then nothing that matters has changed. Only today's price.",
+      "I don't know, but I'd rather not risk it",
+      "That's human. Which is why it helps to decide **beforehand** what would make you sell.",
+      "You sell when **your life** or **your plan** changes. Hardly ever because the price has."
+     ]
+    },
+    {
+     "texts": [
+      "Is it a reason to sell?",
+      "Six situations for someone investing for the long term. Separate the **real reasons** from the ones that are just noise.",
+      "Could be a reason",
+      "Not a reason",
+      "In two years you'll need the money for a deposit on a flat",
+      "Your time horizon has shortened: time to lower the risk little by little.",
+      "The stock market has fallen 20 % this month",
+      "A fall is part of the journey. If you don't need the money, it doesn't change your plan.",
+      "Shares make up 85 % and your plan says 70 %",
+      "That's rebalancing: you sell the excess to get back to your allocation.",
+      "A headline announces «the worst crisis in decades»",
+      "Headlines don't call the bottom or the top.",
+      "You bought a company for its business and that business no longer exists",
+      "Your reason for holding it has gone: the thesis is broken.",
+      "Your fund is up 30 % and «you should lock it in»",
+      "Having risen says nothing about what it will do. Your plan never mentioned a price.",
+      "Sort the six situations.",
+      "The three real reasons: **you need the money**, **it's time to rebalance** or **the reason you bought is broken**. Today's price, on its own, is none of the three.",
+      "Has your life changed, your plan, or only the price?",
+      "Sort each situation"
+     ]
+    },
+    {
+     "texts": [
+      "The reason you bought",
+      "Bruno",
+      "I bought shares in a chain of shops because it was opening stores and earning more every year.",
+      "Now it's closing shops, losing money and owing more and more. But I'm down 40 %: I'll wait to get it back.",
+      "What do you tell him?",
+      "To wait: if he sells, the loss becomes real",
+      "The loss is already real. The question is whether he'd buy it again today.",
+      "To ask himself whether he'd buy it today, knowing what he knows",
+      "That's the question. If the answer is no, his reason for holding it no longer exists.",
+      "To buy more to lower his average price",
+      "That's putting more money into a reason that no longer stands up.",
+      "That's called a **broken thesis**. With a fund holding thousands of companies it hardly ever happens; with a single share, it does.",
+      "Selling has costs too: commissions and, if there's a gain, tax. Between investment funds in Spain you can transfer without paying tax."
+     ]
+    },
+    {
+     "title": "Three reasons, and one that isn't",
+     "body": "**Reasons to sell:**\n\n• **You need the money** or your goal is close: lower the risk little by little, not all at once.\n• **Rebalancing**: you go back to your plan's allocation.\n• **Broken thesis**: the reason you bought has gone.\n\n**Not a reason:** the price having gone up or down, a headline or what someone else says.\n\nBefore selling, ask yourself: «if I didn't own it today, would I buy it?».",
+     "key": "You sell because of what has changed in your life or your plan, not because of what the price has done.",
+     "tip": "Try it: open your Portfolio and write in the journal, for each position, what would have to happen for you to sell it."
+    }
+   ]
   }
  },
  "questions": {
@@ -786,6 +855,108 @@
     "On €400 that's 5 % every year, win or lose."
    ],
    "explanation": "A fixed cost is measured against your amount: €20 on €400 is 5 %; on €40,000, it's 0.05 %."
+  },
+  "u30l7-1": {
+   "prompt": "Could it be a reason to sell?",
+   "options": [
+    "Your fund is up 30 %",
+    "Shares weigh more than your plan says",
+    "A headline announces a crisis",
+    "You need the money in two years",
+    "The stock market has fallen 20 % this month",
+    "The reason you bought no longer exists"
+   ],
+   "right": [
+    "Could be a reason",
+    "Not a reason"
+   ],
+   "explanation": "Your life, your plan or your thesis can be a reason. Today's price or a headline can't."
+  },
+  "u30l7-2": {
+   "prompt": "Ana has €20,000 in a global equity fund. In two years she'll need it for a deposit on a flat. The stock market is at record highs. What does she do?",
+   "options": [
+    "Waits for it to fall a little to sell better",
+    "Leaves it all: the market is doing great",
+    "Gradually moves the money into something low-risk"
+   ],
+   "feedback": [
+    "Waiting for a fall in order to sell is betting on exactly what would hurt her.",
+    "In two years a sharp fall would leave her without a deposit. Her horizon is no longer long.",
+    "Good: the reason isn't the price, it's that her time horizon has shortened."
+   ],
+   "explanation": "When the goal gets close, you lower the risk little by little. It has nothing to do with whether the market is high or low."
+  },
+  "u30l7-3": {
+   "prompt": "What is a «broken thesis»?",
+   "options": [
+    "An analyst has lowered their recommendation",
+    "The reason you bought no longer exists",
+    "The share has fallen more than 20 %"
+   ],
+   "explanation": "The thesis is your reason for holding something. If that reason goes, holding on is just waiting."
+  },
+  "u30l7-4": {
+   "prompt": "If your fund has risen a lot, the sensible thing is to sell to lock in the gain.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Having risen says nothing about what it will do next. You sell if you need it, if it's time to rebalance or if your plan said so."
+  },
+  "u30l7-5": {
+   "unit": "€",
+   "prompt": "Your plan is 70 % shares and 30 % bonds. Your portfolio is worth €10,000 and shares make up 80 %. How many euros of shares do you sell to get back to the plan?",
+   "options": [],
+   "explanation": "You have €8,000 in shares and your plan says €7,000: you sell €1,000 and move it into bonds."
+  },
+  "u30l7-6": {
+   "prompt": "Put in order what to ask yourself before selling.",
+   "options": [
+    "Has that reason changed?",
+    "What does selling cost me?",
+    "What does my plan say?",
+    "Why did I buy it?",
+    "I decide"
+   ],
+   "explanation": "First the reason and whether it still stands; then the plan and the costs. The decision comes at the end, not the beginning."
+  },
+  "u30l7-7": {
+   "prompt": "Which are reasonable grounds for selling? Tick all that apply.",
+   "options": [
+    "The price has fallen and you're scared",
+    "A friend has sold theirs",
+    "Your goal is two years away",
+    "You're going back to your plan's allocation"
+   ],
+   "explanation": "Rebalancing and getting close to your goal are reasons. Fear of a fall or what someone else does doesn't change your plan."
+  },
+  "u30l7-8": {
+   "lines": [
+    "My index fund has gone a year without rising 😒",
+    "I'll sell it and find one that does better, right?"
+   ],
+   "prompt": "Lumi's index fund has gone a year without rising and she wants to sell it to find one that does better. What do you reply?",
+   "options": [
+    "Yes: a whole year without rising is a bad sign",
+    "Has your horizon or your plan changed? If not, a year isn't a reason",
+    "Sell half and try another one"
+   ],
+   "feedback": [
+    "A flat year is normal in the stock market. Switching funds over that is chasing what has already risen.",
+    "Exactly! The fund is still what you bought. What has changed is your patience.",
+    "Selling half out of impatience is the same mistake, by halves."
+   ],
+   "explanation": "A year without rising doesn't break any thesis or change your horizon. Switching to the fund that rose most last year usually works out expensive."
+  },
+  "u30l7-9": {
+   "prompt": "Before selling, ask yourself: «if I didn't own it today, would I ____ it?».",
+   "options": [
+    "sell",
+    "look at",
+    "recommend",
+    "buy"
+   ],
+   "explanation": "If the answer is yes, there's no reason to sell. If it's no, ask yourself why you still hold it."
   }
  }
 }
