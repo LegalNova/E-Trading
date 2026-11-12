@@ -236,18 +236,18 @@
   "u33l1-2": {
    "prompt": "What do you check before opening an account? Select all that apply.",
    "options": [
-    "Which compensation scheme protects it",
+    "That it has the best-rated app",
     "Its trading, custody and currency fees",
     "How many followers it has on social media",
     "That it's authorised in the CNMV registers"
    ],
-   "explanation": "Popularity on social media says nothing about how safe it is."
+   "explanation": "That it's authorised in the CNMV registers, and its trading, custody and currency fees; also which compensation scheme protects it. Popularity on social media or the app's rating says nothing about how safe it is."
   },
   "u33l1-4": {
    "prompt": "What does FOGAIN cover?",
    "options": [
-    "Up to €100,000 if a member firm can't return your money or securities",
-    "Everything you invest, with no limit",
+    "Up to €100,000 if the firm fails",
+    "Everything you invest, with no limit at all",
     "Losses when the stock market falls"
    ],
    "explanation": "It protects you against the firm failing, not against how the market performs."
@@ -303,7 +303,7 @@
    "options": [
     "Currency exchange",
     "Custody",
-    "The app subscription"
+    "The app's monthly fee"
    ],
    "explanation": "From 0.1 % to 0.5 % or more per trade, and sometimes it isn't on the home page."
   },
@@ -325,21 +325,21 @@
   "u33l3-1": {
    "prompt": "What is payment for order flow (PFOF)?",
    "options": [
-    "What a market maker pays the broker to send it your orders",
+    "What the broker is paid for routing your orders",
     "A tax on trades",
-    "A fee you pay the broker"
+    "A fee you pay the broker yourself on every order"
    ],
    "explanation": "That's why a broker can advertise €0 trading and still make money from your orders."
   },
   "u33l3-3": {
    "prompt": "In what ways can a «commission-free» neobroker make money? Select all that apply.",
    "options": [
-    "By lending your shares to others",
-    "By giving money away to its customers",
-    "With the interest on cash it doesn't pay you anything on",
+    "With public subsidies from the CNMV",
+    "With a fixed fee on every purchase",
+    "With the interest on your cash",
     "With currency exchange"
    ],
-   "explanation": "And also with subscriptions, spreads and products like crypto or CFDs."
+   "explanation": "With currency exchange and the interest on cash it doesn't pay you for; also by lending your shares, with subscriptions, spreads and products like crypto or CFDs. It doesn't charge a fixed fee per purchase or receive public subsidies."
   },
   "u33l3-8": {
    "prompt": "Payment for order ____ is what a market maker pays the broker to send it your orders.",
@@ -354,9 +354,9 @@
   "u33l3-9": {
    "prompt": "What should you check about a neobroker before anything else?",
    "options": [
-    "That it has dark mode",
-    "That it's authorised and which compensation scheme protects you",
-    "That it gives you more confetti"
+    "That it charges no fees",
+    "That it's authorised",
+    "That it has lots of shares to choose from"
    ],
    "explanation": "It's a firm like any other: safety first."
   },
@@ -364,7 +364,7 @@
    "prompt": "What do you say to Lumi?",
    "options": [
     "Brilliant! The more you trade, the more you learn",
-    "Look at how the app makes money and whether those 8 purchases were in your plan",
+    "Were those 8 purchases in your plan?",
     "Turn on the crypto alerts too"
    ],
    "explanation": "An app can be cheap and at the same time push you to trade too much.",
@@ -397,8 +397,8 @@
   "u33l4-2": {
    "prompt": "What does a robo-adviser do after your profile test?",
    "options": [
-    "It assigns you an index fund portfolio and rebalances it for you",
-    "It recommends trendy shares",
+    "It gives you a portfolio and rebalances it",
+    "It recommends the trendiest shares each month",
     "It guarantees you a return"
    ],
    "explanation": "It automates the allocation, the contributions and the rebalancing."
@@ -421,12 +421,12 @@
   "u33l4-8": {
    "prompt": "What should you look at before signing up to a robo-adviser? Select all that apply.",
    "options": [
-    "Which funds it uses and how it rebalances",
+    "That it beat everyone last year",
     "That it promises the highest return",
     "The total cost: management plus funds",
     "That it's authorised by the CNMV"
    ],
-   "explanation": "Nobody serious promises returns."
+   "explanation": "The total cost (management plus funds) and that it's authorised by the CNMV; also which funds it uses and how it rebalances. Nobody serious promises returns, and having won most last year says nothing about the next."
   },
   "u33l4-9": {
    "prompt": "The questionnaire that measures your knowledge, goals and risk tolerance before managing your money is called the ____ test.",
@@ -442,7 +442,7 @@
    "prompt": "What do you say to Lumi?",
    "options": [
     "Neither, a bank fund with a manager is better",
-    "It depends: if you'll be consistent, doing it yourself is cheaper; if not, the robot helps you not slip up",
+    "It depends on whether you'll be consistent",
     "Robo-adviser, always: robots don't make mistakes"
    ],
    "explanation": "There's no single answer: cost versus discipline.",

@@ -362,21 +362,21 @@
   "u32l1-3": {
    "prompt": "Què és una entitat financera pirata («chiringuito»)?",
    "options": [
-    "Un fons amb moltes comissions",
+    "Un fons legal amb moltes comissions",
     "Un bròker barat",
-    "Una entitat que ofereix inversions sense autorització"
+    "Una entitat sense autorització"
    ],
    "explanation": "Pot tenir un web impecable i, tot i així, no estar autoritzada."
   },
   "u32l1-4": {
    "prompt": "Quins són senyals d'alarma? Marca'ls tots.",
    "options": [
-    "No pots retirar el saldo sense pagar abans",
+    "T'envia el contracte abans de signar",
     "Rendibilitat garantida molt alta",
     "Apareix com a autoritzada als registres de cnmv.es",
     "Et demanen que instal·lis un programa d'accés remot"
    ],
-   "explanation": "Estar autoritzada als registres oficials és el que ha de tenir una entitat legal (encara que això no garanteix que una inversió vagi bé)."
+   "explanation": "Una rendibilitat garantida molt alta i que et demanin que instal·lis un programa d'accés remot són alarmes, igual que no poder retirar el saldo sense pagar abans. Ser als registres oficials i enviar el contracte abans de signar és el normal en una entitat legal (encara que no garanteix que una inversió vagi bé)."
   },
   "u32l1-7": {
    "prompt": "Per comprovar si una entitat està autoritzada, busca al web de la ____.",
@@ -392,8 +392,8 @@
    "prompt": "Què li contestes a la Lumi?",
    "options": [
     "Registra't, potser tens sort",
-    "No cliquis: busca la plataforma a la CNMV i desconfia del perfil",
-    "Passa-li les teves dades perquè t'ajudi"
+    "No cliquis: busca-la abans a la CNMV",
+    "Passa-li les teves dades perquè t'ajudi a començar"
    ],
    "explanation": "Contacte no demanat + rendibilitat impossible = estafa, encara que arribi amb un somriure.",
    "feedback": [
@@ -409,7 +409,7 @@
   "u32l2-1": {
    "prompt": "Com paga un esquema Ponzi els seus primers inversors?",
    "options": [
-    "Amb els diners que aporten els nous",
+    "Amb els diners dels nous",
     "Amb préstecs de l'Estat",
     "Amb els beneficis d'un negoci real"
    ],
@@ -458,7 +458,7 @@
   "u32l2-9": {
    "prompt": "Què va demostrar el cas de Bernard Madoff, descobert el 2008?",
    "options": [
-    "Que un Ponzi pot durar dècades i enganyar inversors professionals",
+    "Que un Ponzi pot durar dècades",
     "Que els Ponzi només enganyen principiants",
     "Que la CNMV el va destapar a Espanya"
    ],
@@ -494,12 +494,12 @@
   "u32l3-5": {
    "prompt": "Quins senyals delaten un grup de pump and dump? Marca'ls tots.",
    "options": [
-    "Actius molt petits i amb poc volum",
+    "Avisos que ho pots perdre tot",
     "Explicacions amb dades de l'empresa i els seus riscos",
     "Objectius tipus «x10» o «x100»",
     "Hora fixa perquè tothom compri alhora"
    ],
-   "explanation": "L'anàlisi seriosa explica riscos; la manipulació només promet coets."
+   "explanation": "Una hora fixa per comprar tothom alhora i objectius tipus «x10» delaten la manipulació, gairebé sempre amb actius molt petits. L'anàlisi seriosa explica dades i riscos; la manipulació només promet coets."
   },
   "u32l3-8": {
    "prompt": "L'estratègia d'inflar un preu i vendre a dalt de tot es diu pump and ____.",
@@ -514,7 +514,7 @@
   "u32l3-9": {
    "prompt": "En un pump and dump, qui sol guanyar?",
    "options": [
-    "Els organitzadors, que han comprat abans",
+    "Els organitzadors",
     "Els que compren amb el senyal",
     "Tothom, si ningú no ven"
    ],
@@ -523,7 +523,7 @@
   "u32l3-11": {
    "prompt": "Una cripto diminuta que segueixes a la teva llista puja un 300 % en una hora, sense cap notícia. En un fòrum, centenars de missatges criden «a la lluna!». Què fas?",
    "options": [
-    "No compro i busco si hi ha alguna notícia oficial que expliqui la pujada",
+    "No compro i busco una notícia oficial",
     "Compro ja, abans que se m'escapi",
     "Compro amb diners prestats per guanyar més en poc temps"
    ],
@@ -555,12 +555,12 @@
   "u32l4-2": {
    "prompt": "Què et protegeix del phishing? Marca-ho tot.",
    "options": [
-    "Entrar sempre a l'app o al web escrivint tu l'adreça",
+    "Entrar escrivint tu l'adreça",
     "Clicar els enllaços dels SMS per anar més de pressa",
-    "Fer servir contrasenyes diferents per a cada servei",
+    "Fer servir la mateixa contrasenya per no oblidar-la",
     "Activar la verificació en dos passos"
    ],
-   "explanation": "Els enllaços de missatges inesperats són la porta d'entrada més habitual."
+   "explanation": "Entrar escrivint tu l'adreça i activar la verificació en dos passos et protegeixen, igual que fer servir contrasenyes diferents. Els enllaços de missatges inesperats són la porta d'entrada més habitual, i repetir contrasenya converteix un robatori en diversos."
   },
   "u32l4-4": {
    "prompt": "Relaciona cada tècnica amb com arriba.",
@@ -581,9 +581,9 @@
   "u32l4-8": {
    "prompt": "Cliques un enllaç d'un SMS i hi poses la contrasenya del teu bròker. Te n'adones al moment. Què fas primer?",
    "options": [
-    "Canviar la contrasenya des de l'app oficial i avisar el bròker o el banc",
+    "Canviar la contrasenya i avisar el bròker",
     "Esborrar l'SMS i oblidar-ho",
-    "Esperar a veure si passa alguna cosa"
+    "Esperar uns dies a veure si passa alguna cosa estranya"
    ],
    "explanation": "Actua ràpid: canvia les claus, avisa l'entitat i revisa els moviments.",
    "feedback": [
@@ -640,12 +640,12 @@
   "u32l5-6": {
    "prompt": "Quines preguntes et protegeixen davant d'un finfluencer? Marca-les totes.",
    "options": [
-    "Mostra també les seves pèrdues?",
+    "Parla amb molta seguretat?",
     "Quants seguidors té?",
     "Em posa pressa per comprar?",
     "Guanya diners si jo compro?"
    ],
-   "explanation": "El nombre de seguidors no diu res sobre si sap invertir."
+   "explanation": "Pregunta't si guanya diners quan tu compres i si et posa pressa, i també si ensenya les seves pèrdues. Els seguidors o la seguretat amb què parla no diuen res de si sap invertir."
   },
   "u32l5-8": {
    "prompt": "Per donar-te assessorament personalitzat, cal ____ de la CNMV.",
@@ -660,7 +660,7 @@
   "u32l5-10": {
    "prompt": "Què li contestes a la Lumi?",
    "options": [
-    "Comprova si li paguen o si ja la té, i no compris per pressa",
+    "Comprova si li paguen per dir-ho",
     "Si ho diu amb tanta seguretat, compra",
     "Compra, però només amb la meitat dels teus estalvis"
    ],
@@ -690,11 +690,11 @@
    "prompt": "Quines proves convé guardar? Marca-les totes.",
    "options": [
     "Justificants de les transferències",
-    "Res, per oblidar-ho abans",
-    "L'adreça del web i el seu nom",
+    "Res: sense contracte signat no serveix",
+    "Les opinions d'altres usuaris en fòrums",
     "Captures dels xats i missatges"
    ],
-   "explanation": "Sense proves, la denúncia i qualsevol reclamació són molt més difícils."
+   "explanation": "Guarda els justificants de les transferències i les captures de xats i missatges, a més de l'adreça del web. Les opinions de fòrums no proven el teu cas, i sense proves la denúncia i qualsevol reclamació són molt més difícils."
   },
   "u32l6-8": {
    "prompt": "És ajuda legítima o una segona estafa?",
@@ -715,8 +715,8 @@
    "prompt": "Tens un problema amb un bròker autoritzat. On reclames primer?",
    "options": [
     "A les seves xarxes socials",
-    "Directament al jutjat",
-    "Al servei d'atenció al client del mateix bròker"
+    "Directament al jutjat, amb un advocat",
+    "A l'atenció al client del bròker"
    ],
    "explanation": "És el primer pas obligatori; si no respon o no et dona la raó, pots anar a la CNMV."
   },

@@ -362,21 +362,21 @@
   "u32l1-3": {
    "prompt": "¿Qué es un chiringuito financiero?",
    "options": [
-    "Un fondo con muchas comisiones",
+    "Un fondo legal con muchas comisiones",
     "Un bróker barato",
-    "Una entidad que ofrece inversiones sin autorización"
+    "Una entidad sin autorización"
    ],
    "explanation": "Puede tener una web impecable y aun así no estar autorizado."
   },
   "u32l1-4": {
    "prompt": "¿Qué son señales de alarma? Marca todas.",
    "options": [
-    "No puedes retirar tu saldo sin pagar antes",
+    "Te envía el contrato antes de firmar",
     "Rentabilidad garantizada muy alta",
     "Aparece como autorizada en los registros de cnmv.es",
     "Te piden instalar un programa de acceso remoto"
    ],
-   "explanation": "Estar autorizada en los registros oficiales es lo que debe tener una entidad legal (aunque eso no garantiza que una inversión vaya bien)."
+   "explanation": "Una rentabilidad garantizada muy alta y que te pidan instalar un programa de acceso remoto son alarmas, igual que no poder retirar tu saldo sin pagar antes. Estar en los registros oficiales y enviar el contrato antes de firmar es lo normal en una entidad legal (aunque no garantiza que una inversión vaya bien)."
   },
   "u32l1-7": {
    "prompt": "Para comprobar si una entidad está autorizada, busca en la web de la ____.",
@@ -392,8 +392,8 @@
    "prompt": "¿Qué le contestas a Laura?",
    "options": [
     "Regístrate, igual tienes suerte",
-    "No pinches: busca la plataforma en la CNMV y desconfía del perfil",
-    "Pásale tus datos para que te ayude"
+    "No pinches: búscala antes en la CNMV",
+    "Pásale tus datos para que te ayude a empezar"
    ],
    "explanation": "Contacto no pedido + rentabilidad imposible = estafa, aunque llegue con una sonrisa.",
    "feedback": [
@@ -409,7 +409,7 @@
   "u32l2-1": {
    "prompt": "¿Cómo paga un esquema Ponzi a sus primeros inversores?",
    "options": [
-    "Con el dinero que aportan los nuevos",
+    "Con el dinero de los nuevos",
     "Con préstamos del Estado",
     "Con los beneficios de un negocio real"
    ],
@@ -458,7 +458,7 @@
   "u32l2-9": {
    "prompt": "¿Qué demostró el caso de Bernard Madoff, descubierto en 2008?",
    "options": [
-    "Que un Ponzi puede durar décadas y engañar a inversores profesionales",
+    "Que un Ponzi puede durar décadas",
     "Que los Ponzi solo engañan a principiantes",
     "Que la CNMV lo destapó en España"
    ],
@@ -494,12 +494,12 @@
   "u32l3-5": {
    "prompt": "¿Qué señales delatan un grupo de pump and dump? Marca todas.",
    "options": [
-    "Activos muy pequeños y con poco volumen",
+    "Avisos de que puedes perderlo todo",
     "Explicaciones con datos de la empresa y sus riesgos",
     "Objetivos tipo «x10» o «x100»",
     "Hora fija para que todos compren a la vez"
    ],
-   "explanation": "El análisis serio explica riesgos; la manipulación solo promete cohetes."
+   "explanation": "Una hora fija para comprar todos a la vez y objetivos tipo «x10» delatan la manipulación, casi siempre con activos muy pequeños. El análisis serio explica datos y riesgos; la manipulación solo promete cohetes."
   },
   "u32l3-8": {
    "prompt": "La estrategia de inflar un precio y venderlo en lo alto se llama pump and ____.",
@@ -514,7 +514,7 @@
   "u32l3-9": {
    "prompt": "En un pump and dump, ¿quién suele ganar?",
    "options": [
-    "Los organizadores, que compraron antes",
+    "Los organizadores",
     "Los que compran con la señal",
     "Todos, si nadie vende"
    ],
@@ -523,7 +523,7 @@
   "u32l3-11": {
    "prompt": "Una cripto diminuta que sigues en tu lista sube un 300 % en una hora, sin ninguna noticia. En un foro, cientos de mensajes gritan «¡a la luna!». ¿Qué haces?",
    "options": [
-    "No compro y busco si hay alguna noticia oficial que explique la subida",
+    "No compro y busco una noticia oficial",
     "Compro ya, antes de que se escape",
     "Compro con dinero prestado para ganar más en poco tiempo"
    ],
@@ -555,12 +555,12 @@
   "u32l4-2": {
    "prompt": "¿Qué te protege del phishing? Marca todo.",
    "options": [
-    "Entrar siempre en la app o la web escribiendo tú la dirección",
+    "Entrar escribiendo tú la dirección",
     "Pinchar los enlaces de los SMS para ir más rápido",
-    "Usar contraseñas distintas en cada servicio",
+    "Usar la misma contraseña para no olvidarla",
     "Activar la verificación en dos pasos"
    ],
-   "explanation": "Los enlaces de mensajes inesperados son la puerta de entrada más común."
+   "explanation": "Entrar escribiendo tú la dirección y activar la verificación en dos pasos te protegen, igual que usar contraseñas distintas. Los enlaces de mensajes inesperados son la puerta de entrada más común, y repetir contraseña convierte un robo en varios."
   },
   "u32l4-4": {
    "prompt": "Empareja cada técnica con cómo llega.",
@@ -581,9 +581,9 @@
   "u32l4-8": {
    "prompt": "Pinchas un enlace de un SMS y metes la contraseña de tu bróker. Al momento te das cuenta. ¿Qué haces primero?",
    "options": [
-    "Cambiar la contraseña desde la app oficial y avisar a tu bróker o banco",
+    "Cambiar la contraseña y avisar al bróker",
     "Borrar el SMS y olvidarlo",
-    "Esperar a ver si pasa algo"
+    "Esperar unos días a ver si pasa algo raro"
    ],
    "explanation": "Actúa rápido: cambia claves, avisa a la entidad y revisa movimientos.",
    "feedback": [
@@ -640,12 +640,12 @@
   "u32l5-6": {
    "prompt": "¿Qué preguntas te protegen ante un finfluencer? Marca todas.",
    "options": [
-    "¿Muestra también sus pérdidas?",
+    "¿Habla con mucha seguridad?",
     "¿Cuántos seguidores tiene?",
     "¿Me mete prisa para comprar?",
     "¿Gana dinero si yo compro?"
    ],
-   "explanation": "El número de seguidores no dice nada de si sabe invertir."
+   "explanation": "Pregúntate si gana dinero cuando tú compras y si te mete prisa, y también si enseña sus pérdidas. Los seguidores o la seguridad con que habla no dicen nada de si sabe invertir."
   },
   "u32l5-8": {
    "prompt": "Para darte asesoramiento personalizado, hace falta ____ de la CNMV.",
@@ -660,7 +660,7 @@
   "u32l5-10": {
    "prompt": "¿Qué le contestas a Marta?",
    "options": [
-    "Comprueba si le pagan o si ya la tiene, y no compres por prisa",
+    "Comprueba si le pagan por decirlo",
     "Si lo dice con tanta seguridad, compra",
     "Compra pero solo con la mitad de tus ahorros"
    ],
@@ -690,11 +690,11 @@
    "prompt": "¿Qué pruebas conviene guardar? Marca todas.",
    "options": [
     "Justificantes de las transferencias",
-    "Nada, para olvidarlo antes",
-    "La dirección de la web y su nombre",
+    "Nada: sin contrato firmado no sirve",
+    "Las opiniones de otros usuarios en foros",
     "Capturas de los chats y mensajes"
    ],
-   "explanation": "Sin pruebas, la denuncia y cualquier reclamación son mucho más difíciles."
+   "explanation": "Guarda los justificantes de las transferencias y las capturas de chats y mensajes, además de la dirección de la web. Las opiniones de foros no prueban tu caso, y sin pruebas la denuncia y cualquier reclamación son mucho más difíciles."
   },
   "u32l6-8": {
    "prompt": "¿Es ayuda legítima o una segunda estafa?",
@@ -715,8 +715,8 @@
    "prompt": "Tienes un problema con un bróker autorizado. ¿Dónde reclamas primero?",
    "options": [
     "En sus redes sociales",
-    "Directamente en el juzgado",
-    "En el servicio de atención al cliente del propio bróker"
+    "Directamente en el juzgado, con un abogado",
+    "En la atención al cliente del bróker"
    ],
    "explanation": "Es el primer paso obligatorio; si no responde o no te da la razón, puedes ir a la CNMV."
   },

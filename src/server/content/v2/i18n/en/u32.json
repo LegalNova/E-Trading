@@ -362,21 +362,21 @@
   "u32l1-3": {
    "prompt": "What is a «chiringuito financiero»?",
    "options": [
-    "A fund with lots of fees",
+    "A legal fund with lots of fees",
     "A cheap broker",
-    "A firm that offers investments without authorisation"
+    "An unauthorised firm"
    ],
    "explanation": "It can have a flawless website and still not be authorised."
   },
   "u32l1-4": {
    "prompt": "Which ones are red flags? Select all that apply.",
    "options": [
-    "You can't withdraw your balance without paying first",
+    "It sends you the contract before you sign",
     "Very high guaranteed returns",
     "It appears as authorised in the cnmv.es registers",
     "They ask you to install remote access software"
    ],
-   "explanation": "Being authorised in the official registers is what a legal firm should have (although that doesn't guarantee an investment will go well)."
+   "explanation": "Very high guaranteed returns and being asked to install remote access software are red flags, as is not being able to withdraw your balance without paying first. Being in the official registers and sending the contract before you sign is normal for a legal firm (although it doesn't guarantee an investment will go well)."
   },
   "u32l1-7": {
    "prompt": "To check whether a firm is authorised, search the ____ website.",
@@ -392,8 +392,8 @@
    "prompt": "What do you say to Lumi?",
    "options": [
     "Sign up, you might get lucky",
-    "Don't tap it: look the platform up on the CNMV and be wary of that profile",
-    "Give her your details so she can help you"
+    "Don't tap it: look it up on the CNMV first",
+    "Give her your details so she can help you get started"
    ],
    "explanation": "Unsolicited contact + impossible returns = scam, even if it comes with a smile.",
    "feedback": [
@@ -409,7 +409,7 @@
   "u32l2-1": {
    "prompt": "How does a Ponzi scheme pay its early investors?",
    "options": [
-    "With money paid in by new investors",
+    "With new investors' money",
     "With government loans",
     "With profits from a real business"
    ],
@@ -458,7 +458,7 @@
   "u32l2-9": {
    "prompt": "What did the Bernard Madoff case, uncovered in 2008, show?",
    "options": [
-    "That a Ponzi can last decades and fool professional investors",
+    "That a Ponzi can last decades",
     "That Ponzi schemes only fool beginners",
     "That the CNMV exposed it in Spain"
    ],
@@ -494,12 +494,12 @@
   "u32l3-5": {
    "prompt": "Which signs give away a pump and dump group? Select all that apply.",
    "options": [
-    "Very small assets with low trading volume",
+    "Warnings that you could lose everything",
     "Explanations with company data and its risks",
     "Targets like «x10» or «x100»",
     "A set time for everyone to buy at once"
    ],
-   "explanation": "Serious analysis explains risks; manipulation only promises rockets."
+   "explanation": "A set time for everyone to buy at once and targets like «x10» give manipulation away, almost always with very small assets. Serious analysis explains data and risks; manipulation only promises rockets."
   },
   "u32l3-8": {
    "prompt": "The strategy of inflating a price and selling at the top is called pump and ____.",
@@ -514,7 +514,7 @@
   "u32l3-9": {
    "prompt": "In a pump and dump, who usually wins?",
    "options": [
-    "The organisers, who bought earlier",
+    "The organisers",
     "Those who buy on the signal",
     "Everyone, if nobody sells"
    ],
@@ -523,7 +523,7 @@
   "u32l3-11": {
    "prompt": "A tiny crypto on your watchlist rises 300 % in an hour, with no news at all. On a forum, hundreds of messages shout «to the moon!». What do you do?",
    "options": [
-    "I don't buy and look for any official news that explains the rise",
+    "I don't buy and look for official news",
     "I buy now, before it gets away",
     "I buy with borrowed money to make more in less time"
    ],
@@ -555,12 +555,12 @@
   "u32l4-2": {
    "prompt": "What protects you from phishing? Select all that apply.",
    "options": [
-    "Always going into the app or website by typing the address yourself",
+    "Typing the address yourself",
     "Tapping links in text messages to save time",
-    "Using a different password for each service",
+    "Using the same password so you don't forget it",
     "Turning on two-step verification"
    ],
-   "explanation": "Links in unexpected messages are the most common way in."
+   "explanation": "Typing the address yourself and turning on two-step verification protect you, as does using different passwords. Links in unexpected messages are the most common way in, and reusing a password turns one theft into several."
   },
   "u32l4-4": {
    "prompt": "Match each technique with how it reaches you.",
@@ -581,9 +581,9 @@
   "u32l4-8": {
    "prompt": "You tap a link in a text message and enter your broker password. You realise straight away. What do you do first?",
    "options": [
-    "Change the password from the official app and tell your broker or bank",
+    "Change the password and tell your broker",
     "Delete the text and forget about it",
-    "Wait and see if anything happens"
+    "Wait a few days and see if anything odd happens"
    ],
    "explanation": "Act fast: change your passwords, tell the provider and check your transactions.",
    "feedback": [
@@ -640,12 +640,12 @@
   "u32l5-6": {
    "prompt": "Which questions protect you when dealing with a finfluencer? Select all that apply.",
    "options": [
-    "Do they show their losses too?",
+    "Do they sound very confident?",
     "How many followers do they have?",
     "Are they rushing me to buy?",
     "Do they make money if I buy?"
    ],
-   "explanation": "Follower count says nothing about whether they know how to invest."
+   "explanation": "Ask whether they make money when you buy and whether they're rushing you, and also whether they show their losses. Follower count or how confident they sound says nothing about whether they know how to invest."
   },
   "u32l5-8": {
    "prompt": "To give you personalised advice, you need ____ from the CNMV.",
@@ -660,7 +660,7 @@
   "u32l5-10": {
    "prompt": "What do you say to Lumi?",
    "options": [
-    "Check whether he's being paid or already owns it, and don't buy in a rush",
+    "Check whether he's paid to say it",
     "If he says it so confidently, buy",
     "Buy, but only with half your savings"
    ],
@@ -690,11 +690,11 @@
    "prompt": "What evidence is worth keeping? Select all that apply.",
    "options": [
     "Transfer receipts",
-    "Nothing, so you can forget about it sooner",
-    "The website address and its name",
+    "Nothing: without a signed contract it's no use",
+    "Other users' opinions on forums",
     "Screenshots of chats and messages"
    ],
-   "explanation": "Without evidence, reporting it and making any claim are much harder."
+   "explanation": "Keep the transfer receipts and screenshots of chats and messages, as well as the website address. Forum opinions don't prove your case, and without evidence, reporting it and making any claim are much harder."
   },
   "u32l6-8": {
    "prompt": "Legitimate help or a second scam?",
@@ -715,8 +715,8 @@
    "prompt": "You have a problem with an authorised broker. Where do you complain first?",
    "options": [
     "On its social media",
-    "Straight to court",
-    "To the broker's own customer service department"
+    "Straight to court, with a lawyer at your side",
+    "With the broker's customer service"
    ],
    "explanation": "It's the mandatory first step; if they don't respond or don't side with you, you can go to the CNMV."
   },

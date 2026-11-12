@@ -236,18 +236,18 @@
   "u33l1-2": {
    "prompt": "¿Qué compruebas antes de abrir una cuenta? Marca todo.",
    "options": [
-    "Qué fondo de garantía le protege",
+    "Que tenga la app mejor valorada",
     "Sus comisiones de compraventa, custodia y divisa",
     "Cuántos seguidores tiene en redes",
     "Que esté autorizado en los registros de la CNMV"
    ],
-   "explanation": "La popularidad en redes no dice nada sobre su seguridad."
+   "explanation": "Que esté autorizado en los registros de la CNMV y sus comisiones de compraventa, custodia y divisa; también qué fondo de garantía lo protege. La popularidad en redes o la nota de la app no dicen nada sobre su seguridad."
   },
   "u33l1-4": {
    "prompt": "¿Qué cubre el FOGAIN?",
    "options": [
-    "Hasta 100.000 € si una entidad adherida no puede devolverte tu dinero o tus valores",
-    "Todo lo que inviertas, sin límite",
+    "Hasta 100.000 € si la entidad falla",
+    "Todo lo que inviertas, sin ningún límite",
     "Las pérdidas cuando cae la bolsa"
    ],
    "explanation": "Protege frente a fallos de la entidad, no frente a la evolución del mercado."
@@ -311,7 +311,7 @@
    "options": [
     "El cambio de divisa",
     "La custodia",
-    "La cuota de la app"
+    "La cuota mensual de la app"
    ],
    "explanation": "Del 0,1 % al 0,5 % o más por operación, y a veces no aparece en la portada."
   },
@@ -359,21 +359,21 @@
   "u33l3-1": {
    "prompt": "¿Qué es el pago por flujo de órdenes (PFOF)?",
    "options": [
-    "Lo que un intermediario paga al bróker por enviarle tus órdenes",
+    "Lo que cobra el bróker por enviar tus órdenes",
     "Un impuesto sobre las operaciones",
-    "Una comisión que pagas tú al bróker"
+    "Una comisión que pagas tú al bróker en cada orden"
    ],
    "explanation": "Por eso un bróker puede anunciar compraventa a 0 € y aun así ganar con tus órdenes."
   },
   "u33l3-3": {
    "prompt": "¿De qué formas puede ganar dinero un neobróker «sin comisiones»? Marca todas.",
    "options": [
-    "Prestando tus acciones a otros",
-    "Regalando dinero a sus clientes",
-    "Con los intereses del efectivo que no te remunera",
+    "Con ayudas públicas de la CNMV",
+    "Con una comisión fija por cada compra",
+    "Con los intereses de tu efectivo",
     "Con el cambio de divisa"
    ],
-   "explanation": "Y también con suscripciones, spreads y productos como cripto o CFD."
+   "explanation": "Con el cambio de divisa y con los intereses del efectivo que no te remunera; también prestando tus acciones, con suscripciones, spreads y productos como cripto o CFD. No cobra comisión fija por compra ni recibe ayudas públicas."
   },
   "u33l3-8": {
    "prompt": "El pago por ____ de órdenes es lo que un intermediario paga al bróker por enviarle tus órdenes.",
@@ -388,9 +388,9 @@
   "u33l3-9": {
    "prompt": "¿Qué deberías comprobar antes que nada de un neobróker?",
    "options": [
-    "Que tenga modo oscuro",
-    "Que esté autorizado y qué fondo de garantía te protege",
-    "Que dé más confeti"
+    "Que no cobre comisiones",
+    "Que esté autorizado",
+    "Que tenga muchas acciones para elegir"
    ],
    "explanation": "Es una entidad como cualquier otra: primero la seguridad."
   },
@@ -398,7 +398,7 @@
    "prompt": "¿Qué le contestas a Paula?",
    "options": [
     "¡Genial! Cuanto más operes, más aprendes",
-    "Mira cómo gana dinero la app y si esas 8 compras estaban en tu plan",
+    "¿Esas 8 compras estaban en tu plan?",
     "Activa también las alertas de cripto"
    ],
    "explanation": "Una app puede ser barata y a la vez empujarte a operar demasiado.",
@@ -431,8 +431,8 @@
   "u33l4-2": {
    "prompt": "¿Qué hace un robo-advisor después de tu test de perfil?",
    "options": [
-    "Te asigna una cartera de indexados y la rebalancea por ti",
-    "Te recomienda acciones de moda",
+    "Te asigna una cartera y la rebalancea",
+    "Te recomienda las acciones de moda de cada mes",
     "Te garantiza una rentabilidad"
    ],
    "explanation": "Automatiza el reparto, las aportaciones y el rebalanceo."
@@ -455,12 +455,12 @@
   "u33l4-8": {
    "prompt": "¿Qué deberías mirar antes de contratar un robo-advisor? Marca todo.",
    "options": [
-    "Qué fondos usa y cómo rebalancea",
+    "Que haya ganado más que nadie el último año",
     "Que prometa la mayor rentabilidad",
     "El coste total: gestión más fondos",
     "Que esté autorizado por la CNMV"
    ],
-   "explanation": "Nadie serio promete rentabilidades."
+   "explanation": "El coste total (gestión más fondos) y que esté autorizado por la CNMV; también qué fondos usa y cómo rebalancea. Nadie serio promete rentabilidades, y haber ganado más el último año no dice nada del siguiente."
   },
   "u33l4-9": {
    "prompt": "El cuestionario que mide tus conocimientos, objetivos y tolerancia al riesgo antes de gestionar tu dinero se llama test de ____.",
@@ -476,7 +476,7 @@
    "prompt": "¿Qué le contestas a Paula?",
    "options": [
     "Ninguno, mejor un fondo de banco con gestor",
-    "Depende: si vas a ser constante, tú es más barato; si no, el robot te ayuda a no fallar",
+    "Depende de si vas a ser constante",
     "Robo-advisor siempre, los robots no se equivocan"
    ],
    "explanation": "No hay una respuesta única: coste frente a disciplina.",

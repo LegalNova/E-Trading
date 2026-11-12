@@ -378,7 +378,7 @@
   "u31l1-10": {
    "prompt": "Quins territoris tenen una normativa d'IRPF pròpia?",
    "options": [
-    "Ceuta i Melilla",
+    "Ceuta i Melilla, pel seu règim especial",
     "País Basc i Navarra",
     "Canàries i Balears"
    ],
@@ -388,7 +388,7 @@
    "prompt": "És desembre. Aquest any ja has guanyat 4.000 € venent unes accions. Ara vols vendre un ETF amb 5.000 € de guany, però no necessites els diners fins al març. Quan vens?",
    "options": [
     "Mai, per no pagar impostos",
-    "Al gener: cada any, els seus primers 6.000 € de guany paguen el 19 %",
+    "Al gener: així no passo al 21 %",
     "Ara: tant és l'any en què vengui"
    ],
    "explanation": "L'escala s'aplica al que guanyes cada any. Si pots esperar unes setmanes, repartir les vendes entre dos anys pot deixar-ho tot al tram del 19 %. Vendre ja sembla el mateix, però suma els dos guanys en el mateix any.",
@@ -401,7 +401,7 @@
   "u31l1-12": {
    "prompt": "Aquest any portes 5.900 € de guany per vendes. Si vens una mica més, passaràs de 6.000 € i entraràs al tram del 21 %. Et frena?",
    "options": [
-    "No: només la part que passi de 6.000 € paga el 21 %",
+    "No: només el que passi de 6.000 €",
     "Sí: tot el que guanyi passarà a pagar un 21 %",
     "Sí: millor vendre amb pèrdues per compensar"
    ],
@@ -415,7 +415,7 @@
   "u31l1-13": {
    "prompt": "Què li contestes a la Lumi?",
    "options": [
-    "No: va a la base de l'estalvi, que té la seva pròpia escala del 19 % al 30 %",
+    "No: va a la base de l'estalvi",
     "No tributa: fins a 6.000 € és gratis",
     "Sí: tot va junt amb la nòmina"
    ],
@@ -452,7 +452,7 @@
   "u31l2-11": {
    "prompt": "És novembre. Aquest any has guanyat 4.000 € venent un ETF. Tens una altra acció que va 1.500 € en pèrdues i en què ja no creus. Què et convé?",
    "options": [
-    "Vendre-la abans del 31 de desembre: la pèrdua resta del guany d'aquest any",
+    "Vendre-la abans del 31 de desembre",
     "Vendre-la al gener",
     "Esperar que torni a pujar per no perdre"
    ],
@@ -466,8 +466,8 @@
   "u31l2-12": {
    "prompt": "Vas comprar participacions del mateix ETF el 2019 i el 2024, més cares. Vens la meitat. Quines compten com a venudes per a Hisenda?",
    "options": [
-    "Les del 2019, les primeres que vas comprar",
-    "Les del 2024, les últimes",
+    "Les del 2019, les primeres",
+    "Les del 2024, les més recents",
     "Les que tu triïs"
    ],
    "explanation": "S'aplica FIFO: el primer que entra és el primer que surt. Per això no pots triar vendre les del 2024 per declarar menys guany."
@@ -492,7 +492,7 @@
    "options": [
     "Obliga a mantenir les accions dos mesos",
     "Prohibeix vendre amb pèrdues al desembre",
-    "Ajorna la pèrdua si compres els mateixos valors dos mesos abans o després de vendre'ls"
+    "Ajorna la pèrdua si recompres el mateix"
    ],
    "explanation": "Evita que algú vengui només per pagar menys i torni a comprar de seguida."
   },
@@ -501,7 +501,7 @@
    "options": [
     "Perd les accions comprades al febrer",
     "Res, la regla només mira el que compres després",
-    "La pèrdua queda ajornada perquè va comprar valors iguals en els dos mesos anteriors"
+    "La pèrdua queda ajornada"
    ],
    "explanation": "La regla mira els dos mesos anteriors i els dos posteriors a la venda.",
    "feedback": [
@@ -526,16 +526,16 @@
     "Només afecta les pèrdues",
     "Prohibeix vendre abans de dos mesos des de la compra",
     "Ajorna la pèrdua, no l'elimina",
-    "És a l'article 33.5 de la Llei de l'IRPF"
+    "Només s'aplica a les criptomonedes"
    ],
-   "explanation": "Pots vendre quan vulguis; el que canvia és quan pots fer servir la pèrdua."
+   "explanation": "Només afecta les pèrdues i les ajorna, no les elimina (article 33.5 de la Llei de l'IRPF). Pots vendre quan vulguis, i s'aplica a valors cotitzats, com les accions i els ETF: el que canvia és quan pots fer servir la pèrdua."
   },
   "u31l3-11": {
    "prompt": "És 20 de desembre. El teu ETF del MSCI World va 2.000 € en pèrdues i aquest any has guanyat 3.000 € amb una altra venda. Vols continuar invertit en borsa mundial. Què fas?",
    "options": [
     "No faig res",
     "El venc i recompro el mateix ETF el 2 de gener",
-    "El venc i compro alhora un ETF d'un altre índex mundial semblant"
+    "El venc i compro un altre ETF semblant"
    ],
    "explanation": "La regla només ajorna la pèrdua si recompres els mateixos valors. Canviar a un producte diferent que replica un índex semblant és legal i et deixa continuar invertit. Recomprar el mateix al gener sembla llest, però és just el que la regla desactiva.",
    "feedback": [
@@ -549,7 +549,7 @@
    "options": [
     "Mai: aquest ETF queda prohibit",
     "Des del 2 de gener: ja és un altre any",
-    "Passats dos mesos, a partir del 2 de febrer"
+    "A partir del 2 de febrer"
    ],
    "explanation": "Per als valors cotitzats, la finestra és de dos mesos abans i després de la venda, sigui quin sigui l'any. Recomprar al gener és el parany típic: l'any canvia, però continues dins dels dos mesos.",
    "feedback": [
@@ -578,7 +578,7 @@
    "prompt": "Quant pagues d'impostos en traspassar d'un fons a un altre?",
    "options": [
     "El 19 % del guany",
-    "Res fins que reemborsis",
+    "Res, de moment",
     "Una taxa fixa de 50 €"
    ],
    "explanation": "L'impost s'ajorna fins al reemborsament definitiu."
@@ -608,7 +608,7 @@
    "options": [
     "El reemborso i el poso en un dipòsit",
     "El deixo en borsa: a la llarga puja",
-    "Traspasso els diners a un fons monetari"
+    "El traspasso a un fons monetari"
    ],
    "explanation": "Amb fons, canviar de risc es fa per traspàs, sense tributar fins al reemborsament final. Reemborsar també baixa el risc, però avança l'impost i aquests diners deixen de treballar per a tu.",
    "feedback": [
@@ -621,7 +621,7 @@
    "prompt": "Què li contestes a la Lumi?",
    "options": [
     "Sí, els ETF es traspassen igual que els fons",
-    "No: vendre'l tributa; pots deixar-lo i portar el nou al mundial",
+    "No: vendre'l tributa; millor deixa'l",
     "Millor no invertir més fins que ho decideixi"
    ],
    "explanation": "Els ETF no tenen el traspàs dels fons: cada venda tributa. Si ja tens guanys, sol ser millor no vendre i dirigir les aportacions noves al producte que prefereixes.",
@@ -663,7 +663,7 @@
   "u31l5-9": {
    "prompt": "En Pablo cobra dividends d'una empresa suïssa. Suïssa li reté un 35 % i el conveni amb Espanya només en permet un 15 %. Què passa amb la diferència?",
    "options": [
-    "Per recuperar l'excés l'ha de reclamar a Suïssa, amb els seus tràmits",
+    "Ha de reclamar l'excés a Suïssa",
     "Se la dedueix sencera a Espanya",
     "Res, Suïssa l'hi torna automàticament"
    ],
@@ -679,7 +679,7 @@
    "options": [
     "De distribució: m'agrada cobrar dividends",
     "Tant és: fiscalment són el mateix",
-    "D'acumulació: reinverteix per dins i no tributo fins que vengui"
+    "D'acumulació: no tributo fins que vengui"
    ],
    "explanation": "Si no necessites rendes, l'acumulació ajorna impostos i aquests diners continuen component-se. Cobrar dividends sembla guanyar més, però el preu baixa en aquesta quantitat i a més tributa.",
    "feedback": [
@@ -691,8 +691,8 @@
   "u31l5-12": {
    "prompt": "Què li contestes a la Lumi?",
    "options": [
-    "Sí: un 8 % gratis cada any",
-    "El preu baixa el que paga i a més tributa: mira si el negoci és bo",
+    "Sí: un 8 % gratis cada any, passi el que passi",
+    "No és gratis: el preu baixa el que paga",
     "Només si l'empresa és dels EUA"
    ],
    "explanation": "El dividend surt del valor de l'empresa: els teus diners passen d'accions a efectiu, i aquest efectiu tributa. Un dividend alt no n'hi ha prou per comprar: importa el negoci que el paga.",
@@ -709,7 +709,7 @@
   "u31l6-1": {
    "prompt": "Canvies 0,5 ether per solana sense passar per euros. Què és per a Hisenda?",
    "options": [
-    "Una venda que pot generar guany o pèrdua",
+    "Una venda, amb guany o pèrdua",
     "Res: només compta quan passes a euros",
     "Una donació"
    ],
@@ -746,7 +746,7 @@
    "prompt": "Tens cripto en un exchange estranger. El 31 de desembre val 56.000 €. No has venut res. Què et toca?",
    "options": [
     "Res: mentre no passi a euros, no compta",
-    "Presentar el model 721 entre gener i març: informar no és pagar",
+    "Presentar el model 721: informar no és pagar",
     "Vendre'n una part abans del 31 per quedar-me per sota de 50.000 €"
    ],
    "explanation": "Passar de 50.000 € en cripto custodiada a fora obliga a presentar el 721, que és només informatiu. Vendre per evitar-ho és la temptació, però converteix un tràmit gratuït en un impost real.",

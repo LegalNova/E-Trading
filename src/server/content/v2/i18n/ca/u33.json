@@ -236,18 +236,18 @@
   "u33l1-2": {
    "prompt": "Què comproves abans d'obrir un compte? Marca-ho tot.",
    "options": [
-    "Quin fons de garantia el protegeix",
+    "Que tingui l'app més ben valorada",
     "Les seves comissions de compravenda, custòdia i divisa",
     "Quants seguidors té a les xarxes",
     "Que estigui autoritzat als registres de la CNMV"
    ],
-   "explanation": "La popularitat a les xarxes no diu res sobre la seva seguretat."
+   "explanation": "Que estigui autoritzat als registres de la CNMV i les seves comissions de compravenda, custòdia i divisa; també quin fons de garantia el protegeix. La popularitat a les xarxes o la nota de l'app no diuen res sobre la seva seguretat."
   },
   "u33l1-4": {
    "prompt": "Què cobreix el FOGAIN?",
    "options": [
-    "Fins a 100.000 € si una entitat adherida no et pot tornar els diners o els valors",
-    "Tot el que inverteixis, sense límit",
+    "Fins a 100.000 € si l'entitat falla",
+    "Tot el que inverteixis, sense cap límit",
     "Les pèrdues quan cau la borsa"
    ],
    "explanation": "Protegeix davant de fallades de l'entitat, no davant de l'evolució del mercat."
@@ -303,7 +303,7 @@
    "options": [
     "El canvi de divisa",
     "La custòdia",
-    "La quota de l'app"
+    "La quota mensual de l'app"
    ],
    "explanation": "Del 0,1 % al 0,5 % o més per operació, i de vegades no apareix a la portada."
   },
@@ -325,21 +325,21 @@
   "u33l3-1": {
    "prompt": "Què és el pagament per flux d'ordres (PFOF)?",
    "options": [
-    "El que un intermediari paga al bròker per enviar-li les teves ordres",
+    "El que cobra el bròker per enviar les ordres",
     "Un impost sobre les operacions",
-    "Una comissió que pagues tu al bròker"
+    "Una comissió que pagues tu al bròker en cada ordre"
    ],
    "explanation": "Per això un bròker pot anunciar compravenda a 0 € i, tot i així, guanyar amb les teves ordres."
   },
   "u33l3-3": {
    "prompt": "De quines maneres pot guanyar diners un neobròker «sense comissions»? Marca-les totes.",
    "options": [
-    "Prestant les teves accions a altres",
-    "Regalant diners als seus clients",
-    "Amb els interessos de l'efectiu que no et remunera",
+    "Amb ajudes públiques de la CNMV",
+    "Amb una comissió fixa per cada compra",
+    "Amb els interessos del teu efectiu",
     "Amb el canvi de divisa"
    ],
-   "explanation": "I també amb subscripcions, spreads i productes com cripto o CFD."
+   "explanation": "Amb el canvi de divisa i amb els interessos de l'efectiu que no et remunera; també prestant les teves accions, amb subscripcions, spreads i productes com cripto o CFD. No cobra comissió fixa per compra ni rep ajudes públiques."
   },
   "u33l3-8": {
    "prompt": "El pagament per ____ d'ordres és el que un intermediari paga al bròker per enviar-li les teves ordres.",
@@ -354,9 +354,9 @@
   "u33l3-9": {
    "prompt": "Què hauries de comprovar abans que res d'un neobròker?",
    "options": [
-    "Que tingui mode fosc",
-    "Que estigui autoritzat i quin fons de garantia et protegeix",
-    "Que doni més confeti"
+    "Que no cobri comissions",
+    "Que estigui autoritzat",
+    "Que tingui moltes accions per triar"
    ],
    "explanation": "És una entitat com qualsevol altra: primer, la seguretat."
   },
@@ -364,7 +364,7 @@
    "prompt": "Què li contestes a la Lumi?",
    "options": [
     "Genial! Com més operis, més aprens",
-    "Mira com guanya diners l'app i si aquestes 8 compres eren al teu pla",
+    "Aquestes 8 compres eren al teu pla?",
     "Activa també les alertes de cripto"
    ],
    "explanation": "Una app pot ser barata i alhora empènyer-te a operar massa.",
@@ -397,8 +397,8 @@
   "u33l4-2": {
    "prompt": "Què fa un robo-advisor després del teu test de perfil?",
    "options": [
-    "T'assigna una cartera d'indexats i la reequilibra per tu",
-    "Et recomana accions de moda",
+    "T'assigna una cartera i la reequilibra",
+    "Et recomana les accions de moda de cada mes",
     "Et garanteix una rendibilitat"
    ],
    "explanation": "Automatitza el repartiment, les aportacions i el reequilibri."
@@ -421,12 +421,12 @@
   "u33l4-8": {
    "prompt": "Què hauries de mirar abans de contractar un robo-advisor? Marca-ho tot.",
    "options": [
-    "Quins fons fa servir i com reequilibra",
+    "Que hagi guanyat més que ningú l'últim any",
     "Que prometi la rendibilitat més alta",
     "El cost total: gestió més fons",
     "Que estigui autoritzat per la CNMV"
    ],
-   "explanation": "Ningú seriós no promet rendibilitats."
+   "explanation": "El cost total (gestió més fons) i que estigui autoritzat per la CNMV; també quins fons fa servir i com reequilibra. Ningú seriós promet rendibilitats, i haver guanyat més l'últim any no diu res del següent."
   },
   "u33l4-9": {
    "prompt": "El qüestionari que mesura els teus coneixements, objectius i tolerància al risc abans de gestionar els teus diners s'anomena ____.",
@@ -442,7 +442,7 @@
    "prompt": "Què li contestes a la Lumi?",
    "options": [
     "Cap dels dos, millor un fons de banc amb gestor",
-    "Depèn: si seràs constant, fer-ho tu és més barat; si no, el robot t'ajuda a no fallar",
+    "Depèn de si seràs constant",
     "Robo-advisor sempre, els robots no s'equivoquen"
    ],
    "explanation": "No hi ha una resposta única: cost davant de disciplina.",

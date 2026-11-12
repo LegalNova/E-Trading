@@ -378,7 +378,7 @@
   "u31l1-10": {
    "prompt": "Which regions have their own IRPF rules?",
    "options": [
-    "Ceuta and Melilla",
+    "Ceuta and Melilla, under their special regime",
     "The Basque Country and Navarre",
     "The Canary Islands and the Balearic Islands"
    ],
@@ -388,7 +388,7 @@
    "prompt": "It's December. This year you've already made €4,000 selling some shares. Now you want to sell an ETF with a €5,000 gain, but you don't need the money until March. When do you sell?",
    "options": [
     "Never, so I don't pay tax",
-    "In January: each year, its first €6,000 of gains pay 19 %",
+    "In January: that way I don't reach 21 %",
     "Now: it doesn't matter which year I sell"
    ],
    "explanation": "The scale applies to what you make each year. If you can wait a few weeks, splitting your sales over two years can keep everything in the 19 % band. Selling now looks the same, but it adds both gains in the same year.",
@@ -401,7 +401,7 @@
   "u31l1-12": {
    "prompt": "This year you have €5,900 of gains from sales. If you sell a bit more, you'll go over €6,000 and into the 21 % band. Does that stop you?",
    "options": [
-    "No: only the part above €6,000 pays 21 %",
+    "No: only the part above €6,000",
     "Yes: everything I've made will start paying 21 %",
     "Yes: better to sell at a loss to offset it"
    ],
@@ -415,7 +415,7 @@
   "u31l1-13": {
    "prompt": "What do you reply to Lumi?",
    "options": [
-    "No: it goes to the savings base, which has its own scale from 19 % to 30 %",
+    "No: it goes to the savings base",
     "It isn't taxed: up to €6,000 is free",
     "Yes: it all goes together with your salary"
    ],
@@ -452,7 +452,7 @@
   "u31l2-11": {
    "prompt": "It's November. This year you've made €4,000 selling an ETF. You have another share that's €1,500 down and that you no longer believe in. What's best for you?",
    "options": [
-    "Sell it before 31 December: the loss comes off this year's gain",
+    "Sell it before 31 December",
     "Sell it in January",
     "Wait for it to rise again so I don't lose"
    ],
@@ -466,8 +466,8 @@
   "u31l2-12": {
    "prompt": "You bought units of the same ETF in 2019 and in 2024, at a higher price. You sell half. Which ones count as sold for the tax office?",
    "options": [
-    "The 2019 ones, the first you bought",
-    "The 2024 ones, the latest",
+    "The 2019 ones, the first",
+    "The 2024 ones, the most recent",
     "Whichever you choose"
    ],
    "explanation": "FIFO applies: first in, first out. That's why you can't choose to sell the 2024 ones to declare a smaller gain."
@@ -492,7 +492,7 @@
    "options": [
     "It forces you to hold shares for two months",
     "It bans selling at a loss in December",
-    "It defers the loss if you buy the same securities two months before or after selling them"
+    "It defers the loss if you rebuy the same"
    ],
    "explanation": "It stops people selling just to pay less and then buying straight back."
   },
@@ -501,7 +501,7 @@
    "options": [
     "He loses the shares bought in February",
     "Nothing, the rule only looks at what you buy afterwards",
-    "The loss is deferred because he bought identical securities in the previous two months"
+    "The loss is deferred"
    ],
    "explanation": "The rule looks at the two months before and the two months after the sale.",
    "feedback": [
@@ -526,16 +526,16 @@
     "It only affects losses",
     "It bans selling within two months of buying",
     "It defers the loss, it doesn't cancel it",
-    "It's in Article 33.5 of the IRPF Act"
+    "It only applies to cryptocurrencies"
    ],
-   "explanation": "You can sell whenever you like; what changes is when you can use the loss."
+   "explanation": "It only affects losses and defers them, it doesn't cancel them (Article 33.5 of the IRPF Act). You can sell whenever you like, and it applies to listed securities such as shares and ETFs: what changes is when you can use the loss."
   },
   "u31l3-11": {
    "prompt": "It's 20 December. Your MSCI World ETF is €2,000 down and this year you made €3,000 on another sale. You want to stay invested in global shares. What do you do?",
    "options": [
     "I do nothing",
     "I sell it and buy the same ETF back on 2 January",
-    "I sell it and at the same time buy an ETF on another similar global index"
+    "I sell it and buy another similar ETF"
    ],
    "explanation": "The rule only defers the loss if you buy back the same securities. Switching to a different product that tracks a similar index is legal and keeps you invested. Buying the same back in January looks clever, but it's exactly what the rule switches off.",
    "feedback": [
@@ -549,7 +549,7 @@
    "options": [
     "Never: that ETF is banned",
     "From 2 January: it's a new year",
-    "After two months, from 2 February"
+    "From 2 February"
    ],
    "explanation": "For listed securities, the window is two months before and after the sale, whatever the year. Buying back in January is the classic trap: the year changes, but you're still inside the two months.",
    "feedback": [
@@ -578,7 +578,7 @@
    "prompt": "How much tax do you pay when you transfer from one fund to another?",
    "options": [
     "19 % of the gain",
-    "Nothing until you redeem",
+    "Nothing, for now",
     "A flat fee of €50"
    ],
    "explanation": "The tax is deferred until you finally redeem."
@@ -608,7 +608,7 @@
    "options": [
     "I redeem it and put it in a deposit",
     "I leave it in shares: in the long run it rises",
-    "I transfer the money to a money market fund"
+    "I transfer it to a money market fund"
    ],
    "explanation": "With funds, changing risk is done by transfer, without tax until the final redemption. Redeeming also lowers the risk, but it brings the tax forward and that money stops working for you.",
    "feedback": [
@@ -621,7 +621,7 @@
    "prompt": "What do you reply to Lumi?",
    "options": [
     "Yes, ETFs can be transferred just like funds",
-    "No: selling it is taxed; you can keep it and send new money to the global one",
+    "No: selling it is taxed; better keep it",
     "Better not to invest any more until I decide"
    ],
    "explanation": "ETFs don't have the funds' transfer: every sale is taxed. If you already have gains, it's usually better not to sell and to send new contributions to the product you prefer.",
@@ -663,7 +663,7 @@
   "u31l5-9": {
    "prompt": "Pablo receives dividends from a Swiss company. Switzerland withholds 35 % and the treaty with Spain only allows 15 %. What happens to the difference?",
    "options": [
-    "To get the excess back he has to claim it from Switzerland, with all the paperwork",
+    "He has to claim the excess from Switzerland",
     "He deducts all of it in Spain",
     "Nothing, Switzerland refunds it automatically"
    ],
@@ -679,7 +679,7 @@
    "options": [
     "Distributing: I like receiving dividends",
     "It doesn't matter: for tax they're the same",
-    "Accumulating: it reinvests inside and I'm not taxed until I sell"
+    "Accumulating: I'm not taxed until I sell"
    ],
    "explanation": "If you don't need an income, accumulation defers tax and that money keeps compounding. Receiving dividends seems to earn more, but the price falls by that amount and it's taxed as well.",
    "feedback": [
@@ -691,8 +691,8 @@
   "u31l5-12": {
    "prompt": "What do you reply to Lumi?",
    "options": [
-    "Yes: 8 % for free every year",
-    "The price falls by what it pays and it's taxed too: check whether the business is good",
+    "Yes: 8 % for free every year, whatever happens",
+    "It isn't free: the price falls by what it pays",
     "Only if the company is from the US"
    ],
    "explanation": "The dividend comes out of the company's value: your money moves from shares to cash, and that cash is taxed. A high dividend isn't enough reason to buy: what matters is the business paying it.",
@@ -709,7 +709,7 @@
   "u31l6-1": {
    "prompt": "You swap 0.5 ether for solana without going through euros. What is it for Hacienda?",
    "options": [
-    "A sale that can produce a gain or a loss",
+    "A sale, with a gain or a loss",
     "Nothing: it only counts when you go back to euros",
     "A gift"
    ],
@@ -746,7 +746,7 @@
    "prompt": "You hold crypto on a foreign exchange. On 31 December it's worth €56,000. You haven't sold anything. What do you have to do?",
    "options": [
     "Nothing: as long as I don't switch to euros, it doesn't count",
-    "File form 721 between January and March: reporting isn't paying",
+    "File form 721: reporting isn't paying",
     "Sell part of it before the 31st to stay below €50,000"
    ],
    "explanation": "Going over €50,000 in crypto held abroad means filing form 721, which is only informative. Selling to avoid it is the temptation, but it turns a free formality into a real tax.",

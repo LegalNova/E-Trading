@@ -556,7 +556,7 @@
    "prompt": "Fund A advertises «+60 % in 10 years». Fund B, «6 % a year over the last 5 years». Which did better each year?",
    "options": [
     "A: 60 % is much more than 6 %",
-    "B: A doesn't reach 5 % a year",
+    "B: A is under 5 % a year",
     "They can't be compared"
    ],
    "explanation": "To compare, everything has to be in % a year. 60 divided by 10 would be 6 %, but because it compounds you need less each year to reach 60 %, so A is behind B.",

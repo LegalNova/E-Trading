@@ -378,7 +378,7 @@
   "u31l1-10": {
    "prompt": "¿Qué territorios tienen su propia normativa de IRPF?",
    "options": [
-    "Ceuta y Melilla",
+    "Ceuta y Melilla, por su régimen especial",
     "País Vasco y Navarra",
     "Canarias y Baleares"
    ],
@@ -388,7 +388,7 @@
    "prompt": "Es diciembre. Este año ya ganaste 4.000 € vendiendo unas acciones. Ahora quieres vender un ETF con 5.000 € de ganancia, pero no necesitas el dinero hasta marzo. ¿Cuándo vendes?",
    "options": [
     "Nunca, para no pagar impuestos",
-    "En enero: cada año, sus primeros 6.000 € de ganancia pagan el 19 %",
+    "En enero: así no paso al 21 %",
     "Ahora: da igual el año en que venda"
    ],
    "explanation": "La escala se aplica a lo que ganas en cada año. Si puedes esperar unas semanas, repartir las ventas entre dos años puede dejar todo en el tramo del 19 %. Vender ya parece lo mismo, pero suma las dos ganancias en el mismo año.",
@@ -401,7 +401,7 @@
   "u31l1-12": {
    "prompt": "Este año llevas 5.900 € de ganancia por ventas. Si vendes un poco más, pasarás de 6.000 € y entrarás en el tramo del 21 %. ¿Te frena?",
    "options": [
-    "No: solo la parte que pase de 6.000 € paga el 21 %",
+    "No: solo lo que pase de 6.000 €",
     "Sí: todo lo que gane pasará a pagar un 21 %",
     "Sí: mejor vender a pérdidas para compensar"
    ],
@@ -415,7 +415,7 @@
   "u31l1-13": {
    "prompt": "¿Qué le contestas a Ana?",
    "options": [
-    "No: va a la base del ahorro, que tiene su propia escala del 19 % al 30 %",
+    "No: va a la base del ahorro",
     "No tributa: hasta 6.000 € es gratis",
     "Sí: todo va junto con la nómina"
    ],
@@ -452,7 +452,7 @@
   "u31l2-11": {
    "prompt": "Es noviembre. Este año has ganado 4.000 € vendiendo un ETF. Tienes otra acción que va 1.500 € en pérdidas y en la que ya no crees. ¿Qué te conviene?",
    "options": [
-    "Venderla antes del 31 de diciembre: la pérdida resta de la ganancia de este año",
+    "Venderla antes del 31 de diciembre",
     "Venderla en enero",
     "Esperar a que vuelva a subir para no perder"
    ],
@@ -466,8 +466,8 @@
   "u31l2-12": {
    "prompt": "Compraste participaciones del mismo ETF en 2019 y en 2024, más caras. Vendes la mitad. ¿Cuáles cuentan como vendidas para Hacienda?",
    "options": [
-    "Las de 2019, las primeras que compraste",
-    "Las de 2024, las últimas",
+    "Las de 2019, las primeras",
+    "Las de 2024, las más recientes",
     "Las que tú elijas"
    ],
    "explanation": "Se aplica FIFO: lo primero que entra es lo primero que sale. Por eso no puedes elegir vender las de 2024 para declarar menos ganancia."
@@ -492,7 +492,7 @@
    "options": [
     "Obliga a mantener las acciones dos meses",
     "Prohíbe vender con pérdidas en diciembre",
-    "Aplaza la pérdida si compras los mismos valores dos meses antes o después de venderlos"
+    "Aplaza la pérdida si recompras lo mismo"
    ],
    "explanation": "Evita vender solo para pagar menos y recomprar enseguida."
   },
@@ -501,7 +501,7 @@
    "options": [
     "Pierde las acciones compradas en febrero",
     "Nada, la regla solo mira lo que compras después",
-    "La pérdida queda aplazada porque compró valores iguales dos meses antes"
+    "La pérdida queda aplazada"
    ],
    "explanation": "La regla mira los dos meses anteriores y los dos posteriores a la venta.",
    "feedback": [
@@ -526,16 +526,16 @@
     "Solo afecta a las pérdidas",
     "Prohíbe vender antes de dos meses desde la compra",
     "Aplaza la pérdida, no la elimina",
-    "Está en el artículo 33.5 de la Ley del IRPF"
+    "Solo se aplica a las criptomonedas"
    ],
-   "explanation": "Puedes vender cuando quieras; lo que cambia es cuándo puedes usar la pérdida."
+   "explanation": "Solo afecta a las pérdidas y las aplaza, no las elimina (artículo 33.5 de la Ley del IRPF). Puedes vender cuando quieras, y se aplica a valores cotizados, como las acciones y los ETF: lo que cambia es cuándo puedes usar la pérdida."
   },
   "u31l3-11": {
    "prompt": "Es 20 de diciembre. Tu ETF del MSCI World va 2.000 € en pérdidas y este año ganaste 3.000 € con otra venta. Quieres seguir invertido en bolsa mundial. ¿Qué haces?",
    "options": [
     "No hago nada",
     "Lo vendo y recompro el mismo ETF el 2 de enero",
-    "Lo vendo y compro a la vez un ETF de otro índice mundial parecido"
+    "Lo vendo y compro otro ETF parecido"
    ],
    "explanation": "La regla solo aplaza la pérdida si recompras los mismos valores. Cambiar a un producto distinto que replica un índice parecido es legal y te deja seguir invertido. Recomprar lo mismo en enero parece listo, pero es justo lo que la regla desactiva.",
    "feedback": [
@@ -549,7 +549,7 @@
    "options": [
     "Nunca: ese ETF queda prohibido",
     "Desde el 2 de enero: ya es otro año",
-    "Pasados dos meses, a partir del 2 de febrero"
+    "A partir del 2 de febrero"
    ],
    "explanation": "Para valores cotizados, la ventana es de dos meses antes y después de la venta, sin importar el año. Recomprar en enero es la trampa típica: el año cambia, pero sigues dentro de los dos meses.",
    "feedback": [
@@ -578,7 +578,7 @@
    "prompt": "¿Cuánto pagas de impuestos al traspasar de un fondo a otro?",
    "options": [
     "El 19 % de la ganancia",
-    "Nada hasta que reembolses",
+    "Nada, de momento",
     "Una tasa fija de 50 €"
    ],
    "explanation": "El impuesto se aplaza hasta el reembolso definitivo."
@@ -608,7 +608,7 @@
    "options": [
     "Lo reembolso y lo meto en un depósito",
     "Lo dejo en bolsa: a la larga sube",
-    "Traspaso el dinero a un fondo monetario"
+    "Lo traspaso a un fondo monetario"
    ],
    "explanation": "Con fondos, cambiar de riesgo se hace por traspaso, sin tributar hasta el reembolso final. Reembolsar también baja el riesgo, pero adelanta el impuesto y ese dinero deja de trabajar para ti.",
    "feedback": [
@@ -621,7 +621,7 @@
    "prompt": "¿Qué le contestas a Ana?",
    "options": [
     "Sí, los ETF se traspasan igual que los fondos",
-    "No: venderlo tributa; puedes dejarlo y llevar lo nuevo al mundial",
+    "No: venderlo tributa; mejor déjalo",
     "Mejor no invertir más hasta decidir"
    ],
    "explanation": "Los ETF no tienen el traspaso de los fondos: cada venta tributa. Si ya tienes ganancias, suele ser mejor no vender y dirigir las aportaciones nuevas al producto que prefieres.",
@@ -663,7 +663,7 @@
   "u31l5-9": {
    "prompt": "Pablo cobra dividendos de una empresa suiza. Suiza le retiene un 35 % y el convenio con España solo permite un 15 %. ¿Qué pasa con la diferencia?",
    "options": [
-    "Para recuperar el exceso tiene que reclamarlo a Suiza con sus trámites",
+    "Tiene que reclamar el exceso a Suiza",
     "Se la deduce entera en España",
     "Nada, Suiza se lo devuelve automáticamente"
    ],
@@ -679,7 +679,7 @@
    "options": [
     "De distribución: me gusta cobrar dividendos",
     "Da igual: fiscalmente son lo mismo",
-    "De acumulación: reinvierte por dentro y no tributo hasta vender"
+    "De acumulación: no tributo hasta vender"
    ],
    "explanation": "Si no necesitas rentas, la acumulación aplaza impuestos y ese dinero sigue componiéndose. Cobrar dividendos parece ganar más, pero el precio baja en esa cantidad y además tributa.",
    "feedback": [
@@ -691,8 +691,8 @@
   "u31l5-12": {
    "prompt": "¿Qué le contestas a Nora?",
    "options": [
-    "Sí: un 8 % gratis cada año",
-    "El precio baja lo que paga y además tributa: mira si el negocio es bueno",
+    "Sí: un 8 % gratis cada año, pase lo que pase",
+    "No es gratis: el precio baja lo que paga",
     "Solo si la empresa es de EE. UU."
    ],
    "explanation": "El dividendo sale del valor de la empresa: tu dinero pasa de acciones a efectivo, y ese efectivo tributa. Un dividendo alto no basta para comprar: importa el negocio que lo paga.",
@@ -709,7 +709,7 @@
   "u31l6-1": {
    "prompt": "Cambias 0,5 ether por solana sin pasar por euros. ¿Qué es para Hacienda?",
    "options": [
-    "Una venta que puede generar ganancia o pérdida",
+    "Una venta, con ganancia o pérdida",
     "Nada: solo cuenta al pasar a euros",
     "Una donación"
    ],
@@ -746,7 +746,7 @@
    "prompt": "Tienes cripto en un exchange extranjero. El 31 de diciembre vale 56.000 €. No has vendido nada. ¿Qué te toca?",
    "options": [
     "Nada: mientras no pase a euros, no cuenta",
-    "Presentar el modelo 721 entre enero y marzo: informar no es pagar",
+    "Presentar el modelo 721: informar no es pagar",
     "Vender una parte antes del 31 para quedarme por debajo de 50.000 €"
    ],
    "explanation": "Pasar de 50.000 € en cripto custodiada fuera obliga a presentar el 721, que es solo informativo. Vender para evitarlo es la tentación, pero convierte un trámite gratis en un impuesto real.",
