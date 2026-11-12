@@ -387,5 +387,42 @@ export default unit({
       order('Ordena los pasos para elegir tu estrategia.', ['Definir objetivo y horizonte', 'Ver cuánto tiempo puedes dedicar', 'Decidir qué caída aguantarías sin vender', 'Escribir tus reglas', 'Probarla en el simulador'], 'Primero conocerte; después escribir el plan; al final, probarlo sin dinero real.'),
       multi('¿Qué preguntas te haces antes de elegir estrategia? Marca todas.', ['¿Cuándo necesitaré este dinero?', '¿Cuál recomiendan más en redes?', '¿Qué caída aguantaría sin vender?', '¿Cuál es la que más ha subido este mes?'], [0, 2], 'Cuándo necesitarás el dinero y qué caída aguantarías deciden qué estrategia podrás mantener, junto con el tiempo que puedes dedicarle. Lo que más ha subido este mes o lo que recomiendan en redes no te dice nada de ti.'),
     ], { minutes: 6, retire: [0, 2, 4, 6, 7] }),
+
+    // Auditoría FAL-6: indexarse como estrategia completa. La evidencia (SPIVA, la aritmética de Sharpe) ya está en u10l4
+    // y comprar y mantener en u25l1: aquí va lo que faltaba, qué promete y qué no, y qué decisiones siguen siendo tuyas.
+    // Sin cifras nuevas. Va al final de la unidad para no cambiar qué clases abre cada plan.
+    lesson('u25l10', 'Indexarse: lo que promete y lo que no', [
+      story('«Me indexo y me olvido»', [{ id: 'sara', name: 'Sara' }], [
+        say('sara', 'Ya tengo estrategia: me indexo. Compro un fondo indexado y listo: **sin riesgo y sin pensar**.'),
+        say('lumi', 'Indexarse es una estrategia seria. Pero esa frase tiene dos errores.'),
+        choose('¿Qué riesgo te quita indexarte?', [
+          opt('Todos: un índice no puede perder', 'bad', say('lumi', 'Si la bolsa cae un 30 %, tu fondo indexado cae un 30 %. Lo sigue también hacia abajo.')),
+          opt('El de elegir mal: una empresa o un gestor', 'good', say('lumi', 'Eso es. Te quedas con el mercado entero, con sus subidas y sus caídas.')),
+          opt('El de las caídas, porque está diversificado', 'ok', say('lumi', 'Diversificar te protege de que falle una empresa, no de que caiga todo el mercado.')),
+        ]),
+        say('lumi', 'Y «sin pensar» tampoco: tú decides **cuánto** pones en bolsa, **qué índice** sigues y **qué harás** cuando caiga.'),
+      ]),
+      story('No todo lo que se llama «indexado» lo es', [{ id: 'bruno', name: 'Bruno' }], [
+        say('bruno', 'He encontrado tres ETF «indexados». Uno sigue a miles de empresas de todo el mundo.'),
+        say('bruno', 'Otro sigue a 40 empresas de robótica. Y el tercero multiplica por tres lo que haga un índice cada día.'),
+        choose('¿Cuál es «indexarse» como estrategia?', [
+          opt('Los tres: todos siguen un índice', 'bad', say('lumi', 'Seguir un índice no basta. Importa qué índice es y cómo lo sigue.')),
+          opt('El primero: amplio, barato y sin apalancamiento', 'good', say('lumi', 'Ese. La estrategia es tener el mercado entero, no una parte que alguien ha escogido.')),
+          opt('El de robótica: el futuro está ahí', 'bad', say('lumi', 'Eso es apostar por un sector. Puede salir bien, pero ya no es no elegir.')),
+        ]),
+        say('lumi', 'Un índice estrecho es una **apuesta**. Uno apalancado es otro producto, con otros riesgos.'),
+      ]),
+      key('La estrategia, en limpio', '**Qué promete:** la rentabilidad del mercado menos un coste pequeño, sin depender de acertar con una empresa o un gestor.\n\n**Qué no promete:**\n\n• No caer cuando cae la bolsa.\n• Ganar más que el mercado: por definición, nunca lo hará.\n• Que no tengas que decidir nada.\n\n**Lo que sigue siendo cosa tuya:** cuánto en bolsa y cuánto en bonos, qué índice (amplio, no de moda), cuánto cuesta el producto, aportar con regularidad y no vender en las caídas.\n\nEs una forma de invertir que muchos estudios respaldan, no una recomendación para ti: depende de tu plazo y de lo que aguantes.', 'Indexarse es renunciar a batir al mercado a cambio de no quedarse por detrás de él.', 'Pruébalo: en Mercado, busca un ETF mundial como VWCE y mira en su ficha cuántas empresas tiene dentro.'),
+    ], [
+      buckets('¿Lo promete indexarse?', ['Sí lo promete', 'No lo promete'], [['Seguir al mercado, menos un coste pequeño', 0], ['No caer cuando cae la bolsa', 1], ['No depender de acertar con un gestor', 0], ['Ganar más que el mercado', 1], ['Tener muchas empresas con un solo producto', 0], ['Que no tengas que decidir nada', 1]], 'Te da el mercado entero a bajo coste. No te quita las caídas, no bate al mercado y no decide por ti.'),
+      scenario('Tres ETF se anuncian como «indexados»: uno sigue a miles de empresas de todo el mundo, otro a 40 empresas de un sector de moda y otro multiplica por tres un índice cada día. ¿Cuál encaja con indexarse como estrategia?', [['El del sector de moda: es el que más ha subido', 'Un índice estrecho es una apuesta por un sector: ya estás eligiendo.'], ['El de miles de empresas', 'Eso es: amplio, barato y sin apalancamiento. El mercado entero, no una parte escogida.'], ['El que multiplica por tres: sigue un índice igual', 'Un producto apalancado tiene otros riesgos y no está pensado para mantenerlo años.']], 1, 'Que algo siga un índice no lo convierte en esta estrategia. Importa que el índice sea amplio y que el producto sea sencillo y barato.'),
+      tf('Un fondo indexado a la bolsa mundial no puede perder valor.', false, 'Sigue al mercado también cuando cae: si la bolsa baja un 30 %, el fondo baja más o menos lo mismo.'),
+      single('Si cada vez más gente se indexa, ¿quién pone los precios?', ['Nadie: los precios dejan de moverse', 'Quienes siguen comprando y vendiendo cada día', 'El supervisor del mercado'], 1, 'Los precios los siguen fijando quienes analizan, compran y venden. Quien se indexa acepta ese precio sin pagar por buscarlo.'),
+      order('Ordena los pasos de indexarse como estrategia.', ['Decidir cuánto va a bolsa y cuánto a bonos', 'Elegir un índice amplio', 'Elegir un producto barato', 'Aportar con regularidad', 'Rebalancear y no vender en las caídas'], 'Primero el reparto, que es la decisión que más pesa; después el índice y el producto; y luego la disciplina de todos los años.'),
+      multi('Aunque te indexes, ¿qué decisiones siguen siendo tuyas? Marca todas.', ['Cuánto pones en bolsa y cuánto en bonos', 'Qué empresa subirá más este año', 'Qué índice sigues', 'Cuándo va a caer la bolsa'], [0, 2], 'El reparto y el índice los eliges tú. Adivinar qué empresa subirá o cuándo caerá la bolsa es justo lo que esta estrategia deja de intentar.'),
+      scenario('La bolsa mundial cae un 30 % y tu fondo indexado cae un 30 %. ¿Ha fallado la estrategia?', [['Sí: un buen fondo habría caído menos', 'Un fondo indexado no intenta caer menos: sigue al mercado. Para caer menos está el reparto con bonos.'], ['No: ha hecho lo que promete', 'Exacto. Seguir al mercado incluye seguirlo hacia abajo. Tu plan ya contaba con eso.'], ['Sí: hay que pasarse a un fondo con gestor', 'Cambiar tras la caída es vender abajo, y la mayoría de gestores tampoco evita las caídas.']], 1, 'Indexarse no evita las caídas. Lo que amortigua una caída es cuánto tienes en bolsa, y eso lo decidiste tú antes.'),
+      chat(['Me he comprado un ETF que hace el triple que el Nasdaq cada día 🚀', 'Es indexado, así que es lo que tú haces, ¿no?'], 'Lumi ha comprado un ETF que multiplica por tres un índice cada día y cree que eso es indexarse. ¿Qué le contestas?', [['Sí: si sigue un índice, es lo mismo', 'No lo es: multiplicar por tres cambia por completo el riesgo.'], ['No: es un producto apalancado, con otros riesgos', '¡Eso! Indexarse es tener el mercado tal cual, sin multiplicarlo.'], ['Mejor aún: ganarás el triple', 'Y perderás el triple cuando caiga. Además, mantenido mucho tiempo no da el triple del índice.']], 1, 'Un ETF apalancado multiplica el movimiento de cada día. A largo plazo su resultado puede alejarse mucho del índice, y las caídas se agrandan.'),
+      fill('Indexarse es renunciar a ____ al mercado a cambio de no quedarse por detrás de él.', 'batir', ['seguir', 'entender', 'vigilar'], 'No intenta ganar al mercado: se queda con lo que el mercado dé, menos un coste pequeño.'),
+    ], { minutes: 6 }),
   ],
 })

@@ -374,6 +374,49 @@
   "u25r": {
    "title": "Unit review",
    "steps": []
+  },
+  "u25l10": {
+   "title": "Indexing: what it promises and what it doesn't",
+   "steps": [
+    {
+     "texts": [
+      "«I'll index and forget about it»",
+      "Sara",
+      "I've got my strategy: I'm indexing. I buy an index fund and that's it: **no risk and no thinking**.",
+      "Indexing is a serious strategy. But that sentence has two mistakes.",
+      "Which risk does indexing take away?",
+      "All of them: an index can't lose",
+      "If the market falls 30 %, your index fund falls 30 %. It follows it on the way down too.",
+      "The risk of choosing badly: a company or a manager",
+      "That's it. You get the whole market, with its rises and its falls.",
+      "The risk of falls, because it's diversified",
+      "Diversifying protects you from one company failing, not from the whole market falling.",
+      "And «no thinking» isn't right either: you decide **how much** goes into shares, **which index** you follow and **what you'll do** when it falls."
+     ]
+    },
+    {
+     "texts": [
+      "Not everything called «index» is indexing",
+      "Bruno",
+      "I've found three «index» ETFs. One tracks thousands of companies around the world.",
+      "Another tracks 40 robotics companies. And the third multiplies by three whatever an index does each day.",
+      "Which one is «indexing» as a strategy?",
+      "All three: they all track an index",
+      "Tracking an index isn't enough. What matters is which index and how it tracks it.",
+      "The first: broad, cheap and with no leverage",
+      "That one. The strategy is to hold the whole market, not a part someone has picked.",
+      "The robotics one: that's where the future is",
+      "That's betting on a sector. It may work out, but it's no longer not choosing.",
+      "A narrow index is a **bet**. A leveraged one is a different product, with different risks."
+     ]
+    },
+    {
+     "title": "The strategy, in plain terms",
+     "body": "**What it promises:** the market's return minus a small cost, without depending on picking the right company or manager.\n\n**What it doesn't promise:**\n\n• Not falling when the market falls.\n• Earning more than the market: by definition, it never will.\n• That you won't have to decide anything.\n\n**What's still up to you:** how much in shares and how much in bonds, which index (broad, not fashionable), what the product costs, contributing regularly and not selling in the falls.\n\nIt's a way of investing that many studies support, not a recommendation for you: it depends on your time horizon and what you can stomach.",
+     "key": "Indexing means giving up beating the market in exchange for not falling behind it.",
+     "tip": "Try it: in Market, look up a global ETF like VWCE and check on its page how many companies it holds."
+    }
+   ]
   }
  },
  "questions": {
@@ -881,6 +924,116 @@
     "False"
    ],
    "explanation": "Total return is price plus dividends. What's paid out comes out of the fund's value."
+  },
+  "u25l10-1": {
+   "prompt": "Does indexing promise it?",
+   "options": [
+    "Not falling when the market falls",
+    "Earning more than the market",
+    "Not depending on picking the right manager",
+    "Tracking the market, minus a small cost",
+    "That you won't have to decide anything",
+    "Holding lots of companies with a single product"
+   ],
+   "right": [
+    "It does",
+    "It doesn't"
+   ],
+   "explanation": "It gives you the whole market at low cost. It doesn't take away the falls, it doesn't beat the market and it doesn't decide for you."
+  },
+  "u25l10-2": {
+   "prompt": "Three ETFs are advertised as «index» funds: one tracks thousands of companies around the world, another 40 companies in a fashionable sector, and another multiplies an index by three each day. Which one fits indexing as a strategy?",
+   "options": [
+    "The fashionable sector one: it has risen the most",
+    "The one with thousands of companies",
+    "The one that multiplies by three: it still tracks an index"
+   ],
+   "feedback": [
+    "A narrow index is a bet on a sector: you're already choosing.",
+    "That's it: broad, cheap and with no leverage. The whole market, not a chosen part.",
+    "A leveraged product has different risks and isn't designed to be held for years."
+   ],
+   "explanation": "Tracking an index doesn't make something this strategy. What matters is that the index is broad and the product simple and cheap."
+  },
+  "u25l10-3": {
+   "prompt": "A fund indexed to the global stock market can't lose value.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It follows the market when it falls too: if the market drops 30 %, the fund drops about the same."
+  },
+  "u25l10-4": {
+   "prompt": "If more and more people index, who sets the prices?",
+   "options": [
+    "Those who keep buying and selling every day",
+    "The market supervisor",
+    "Nobody: prices stop moving"
+   ],
+   "explanation": "Prices are still set by those who analyse, buy and sell. Someone who indexes accepts that price without paying to look for it."
+  },
+  "u25l10-5": {
+   "prompt": "Put the steps of indexing as a strategy in order.",
+   "options": [
+    "Choose a broad index",
+    "Choose a cheap product",
+    "Rebalance and don't sell in the falls",
+    "Decide how much goes into shares and how much into bonds",
+    "Contribute regularly"
+   ],
+   "explanation": "First the allocation, which is the decision that weighs most; then the index and the product; and then the discipline, year after year."
+  },
+  "u25l10-6": {
+   "prompt": "Even if you index, which decisions are still yours? Tick all that apply.",
+   "options": [
+    "Which company will rise most this year",
+    "When the market is going to fall",
+    "Which index you follow",
+    "How much you put into shares and how much into bonds"
+   ],
+   "explanation": "You choose the allocation and the index. Guessing which company will rise or when the market will fall is exactly what this strategy stops trying to do."
+  },
+  "u25l10-7": {
+   "prompt": "The global stock market falls 30 % and your index fund falls 30 %. Has the strategy failed?",
+   "options": [
+    "Yes: a good fund would have fallen less",
+    "Yes: time to switch to a fund with a manager",
+    "No: it has done what it promises"
+   ],
+   "feedback": [
+    "An index fund doesn't try to fall less: it follows the market. Falling less is what your bond allocation is for.",
+    "Switching after the fall is selling low, and most managers don't avoid the falls either.",
+    "Exactly. Following the market includes following it down. Your plan already counted on that."
+   ],
+   "explanation": "Indexing doesn't avoid falls. What cushions a fall is how much you hold in shares, and you decided that beforehand."
+  },
+  "u25l10-8": {
+   "lines": [
+    "I've bought an ETF that does three times what the Nasdaq does each day 🚀",
+    "It's an index fund, so it's what you do, right?"
+   ],
+   "prompt": "Lumi has bought an ETF that multiplies an index by three each day and thinks that's indexing. What do you reply?",
+   "options": [
+    "Even better: you'll make three times as much",
+    "No: it's a leveraged product, with different risks",
+    "Yes: if it tracks an index, it's the same thing"
+   ],
+   "feedback": [
+    "And you'll lose three times as much when it falls. Besides, held for a long time it doesn't give you three times the index.",
+    "Exactly! Indexing means holding the market as it is, without multiplying it.",
+    "It isn't: multiplying by three completely changes the risk."
+   ],
+   "explanation": "A leveraged ETF multiplies each day's move. Over the long run its result can drift a long way from the index, and falls get bigger."
+  },
+  "u25l10-9": {
+   "prompt": "Indexing means giving up ____ the market in exchange for not falling behind it.",
+   "options": [
+    "tracking",
+    "understanding",
+    "watching",
+    "beating"
+   ],
+   "explanation": "It doesn't try to outdo the market: it takes whatever the market gives, minus a small cost."
   }
  }
 }

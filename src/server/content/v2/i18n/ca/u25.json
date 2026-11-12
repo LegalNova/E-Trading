@@ -374,6 +374,49 @@
   "u25r": {
    "title": "Repàs de la unitat",
    "steps": []
+  },
+  "u25l10": {
+   "title": "Indexar-se: què promet i què no",
+   "steps": [
+    {
+     "texts": [
+      "«M'indexo i me n'oblido»",
+      "Sara",
+      "Ja tinc estratègia: m'indexo. Compro un fons indexat i llestos: **sense risc i sense pensar**.",
+      "Indexar-se és una estratègia seriosa. Però aquesta frase té dos errors.",
+      "Quin risc et treu indexar-te?",
+      "Tots: un índex no pot perdre",
+      "Si la borsa cau un 30 %, el teu fons indexat cau un 30 %. El segueix també cap avall.",
+      "El de triar malament: una empresa o un gestor",
+      "Això mateix. Et quedes amb el mercat sencer, amb les seves pujades i les seves caigudes.",
+      "El de les caigudes, perquè està diversificat",
+      "Diversificar et protegeix que falli una empresa, no que caigui tot el mercat.",
+      "I «sense pensar» tampoc: tu decideixes **quant** poses a borsa, **quin índex** segueixes i **què faràs** quan caigui."
+     ]
+    },
+    {
+     "texts": [
+      "No tot el que es diu «indexat» ho és",
+      "Bruno",
+      "He trobat tres ETF «indexats». Un segueix milers d'empreses de tot el món.",
+      "Un altre segueix 40 empreses de robòtica. I el tercer multiplica per tres el que faci un índex cada dia.",
+      "Quin és «indexar-se» com a estratègia?",
+      "Tots tres: tots segueixen un índex",
+      "Seguir un índex no és suficient. Importa quin índex és i com el segueix.",
+      "El primer: ampli, barat i sense palanquejament",
+      "Aquest. L'estratègia és tenir el mercat sencer, no una part que algú ha triat.",
+      "El de robòtica: el futur és aquí",
+      "Això és apostar per un sector. Pot sortir bé, però ja no és no triar.",
+      "Un índex estret és una **aposta**. Un de palanquejat és un altre producte, amb altres riscos."
+     ]
+    },
+    {
+     "title": "L'estratègia, en net",
+     "body": "**Què promet:** la rendibilitat del mercat menys un cost petit, sense dependre d'encertar una empresa o un gestor.\n\n**Què no promet:**\n\n• No caure quan cau la borsa.\n• Guanyar més que el mercat: per definició, no ho farà mai.\n• Que no hagis de decidir res.\n\n**El que continua sent cosa teva:** quant a borsa i quant a bons, quin índex (ampli, no de moda), quant costa el producte, aportar amb regularitat i no vendre a les caigudes.\n\nÉs una manera d'invertir que molts estudis avalen, no una recomanació per a tu: depèn del teu termini i del que aguantis.",
+     "key": "Indexar-se és renunciar a batre el mercat a canvi de no quedar-se'n enrere.",
+     "tip": "Prova-ho: a Mercat, busca un ETF mundial com VWCE i mira a la seva fitxa quantes empreses té a dins."
+    }
+   ]
   }
  },
  "questions": {
@@ -881,6 +924,116 @@
     "Fals"
    ],
    "explanation": "La rendibilitat total és preu més dividends. El que es reparteix surt del valor del fons."
+  },
+  "u25l10-1": {
+   "prompt": "Ho promet indexar-se?",
+   "options": [
+    "No caure quan cau la borsa",
+    "Guanyar més que el mercat",
+    "No dependre d'encertar un gestor",
+    "Seguir el mercat, menys un cost petit",
+    "Que no hagis de decidir res",
+    "Tenir moltes empreses amb un sol producte"
+   ],
+   "right": [
+    "Sí que ho promet",
+    "No ho promet"
+   ],
+   "explanation": "Et dona el mercat sencer a baix cost. No et treu les caigudes, no bat el mercat i no decideix per tu."
+  },
+  "u25l10-2": {
+   "prompt": "Tres ETF s'anuncien com a «indexats»: un segueix milers d'empreses de tot el món, un altre 40 empreses d'un sector de moda i un altre multiplica per tres un índex cada dia. Quin encaixa amb indexar-se com a estratègia?",
+   "options": [
+    "El del sector de moda: és el que més ha pujat",
+    "El de milers d'empreses",
+    "El que multiplica per tres: segueix un índex igualment"
+   ],
+   "feedback": [
+    "Un índex estret és una aposta per un sector: ja estàs triant.",
+    "Això mateix: ampli, barat i sense palanquejament. El mercat sencer, no una part triada.",
+    "Un producte palanquejat té altres riscos i no està pensat per mantenir-lo anys."
+   ],
+   "explanation": "Que una cosa segueixi un índex no la converteix en aquesta estratègia. Importa que l'índex sigui ampli i que el producte sigui senzill i barat."
+  },
+  "u25l10-3": {
+   "prompt": "Un fons indexat a la borsa mundial no pot perdre valor.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Segueix el mercat també quan cau: si la borsa baixa un 30 %, el fons baixa més o menys el mateix."
+  },
+  "u25l10-4": {
+   "prompt": "Si cada vegada més gent s'indexa, qui posa els preus?",
+   "options": [
+    "Els qui continuen comprant i venent cada dia",
+    "El supervisor del mercat",
+    "Ningú: els preus deixen de moure's"
+   ],
+   "explanation": "Els preus els continuen fixant els qui analitzen, compren i venen. Qui s'indexa accepta aquest preu sense pagar per buscar-lo."
+  },
+  "u25l10-5": {
+   "prompt": "Ordena els passos d'indexar-se com a estratègia.",
+   "options": [
+    "Triar un índex ampli",
+    "Triar un producte barat",
+    "Rebalancejar i no vendre a les caigudes",
+    "Decidir quant va a borsa i quant a bons",
+    "Aportar amb regularitat"
+   ],
+   "explanation": "Primer el repartiment, que és la decisió que més pesa; després l'índex i el producte; i després la disciplina de cada any."
+  },
+  "u25l10-6": {
+   "prompt": "Encara que t'indexis, quines decisions continuen sent teves? Marca-les totes.",
+   "options": [
+    "Quina empresa pujarà més aquest any",
+    "Quan caurà la borsa",
+    "Quin índex segueixes",
+    "Quant poses a borsa i quant a bons"
+   ],
+   "explanation": "El repartiment i l'índex els tries tu. Endevinar quina empresa pujarà o quan caurà la borsa és just el que aquesta estratègia deixa d'intentar."
+  },
+  "u25l10-7": {
+   "prompt": "La borsa mundial cau un 30 % i el teu fons indexat cau un 30 %. Ha fallat l'estratègia?",
+   "options": [
+    "Sí: un bon fons hauria caigut menys",
+    "Sí: cal passar-se a un fons amb gestor",
+    "No: ha fet el que promet"
+   ],
+   "feedback": [
+    "Un fons indexat no intenta caure menys: segueix el mercat. Per caure menys hi ha el repartiment amb bons.",
+    "Canviar després de la caiguda és vendre a baix, i la majoria de gestors tampoc eviten les caigudes.",
+    "Exacte. Seguir el mercat inclou seguir-lo cap avall. El teu pla ja hi comptava."
+   ],
+   "explanation": "Indexar-se no evita les caigudes. El que esmorteeix una caiguda és quant tens a borsa, i això ho vas decidir tu abans."
+  },
+  "u25l10-8": {
+   "lines": [
+    "M'he comprat un ETF que fa el triple que el Nasdaq cada dia 🚀",
+    "És indexat, o sigui que és el que fas tu, oi?"
+   ],
+   "prompt": "La Lumi ha comprat un ETF que multiplica per tres un índex cada dia i creu que això és indexar-se. Què li contestes?",
+   "options": [
+    "Encara millor: guanyaràs el triple",
+    "No: és un producte palanquejat, amb altres riscos",
+    "Sí: si segueix un índex, és el mateix"
+   ],
+   "feedback": [
+    "I perdràs el triple quan caigui. A més, mantingut molt de temps no dona el triple de l'índex.",
+    "Això! Indexar-se és tenir el mercat tal com és, sense multiplicar-lo.",
+    "No ho és: multiplicar per tres canvia del tot el risc."
+   ],
+   "explanation": "Un ETF palanquejat multiplica el moviment de cada dia. A llarg termini el seu resultat es pot allunyar molt de l'índex, i les caigudes es fan més grans."
+  },
+  "u25l10-9": {
+   "prompt": "Indexar-se és renunciar a ____ el mercat a canvi de no quedar-se'n enrere.",
+   "options": [
+    "seguir",
+    "entendre",
+    "vigilar",
+    "batre"
+   ],
+   "explanation": "No intenta guanyar el mercat: es queda amb el que el mercat doni, menys un cost petit."
   }
  }
 }
