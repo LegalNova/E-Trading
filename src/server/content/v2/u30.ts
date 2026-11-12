@@ -8,18 +8,20 @@ export default unit({
   id: 'u30', order: 30, title: 'Gestionar tu cartera', description: 'Rebalancear, vigilar costes, aportar poco a poco, medir bien y escribir tu plan',
   lessons: [
     lesson('u30l1', 'Rebalancear', [
+      // Auditoría RED-34: la mezcla «acciones, bonos y oro 2008-2025» se vivía en siete clases. Aquí va otra serie real
+      // (cierres mensuales ajustados de Yahoo Finance); las cifras del texto salen de `charts.json` con la cuenta de la pieza.
       play({
         title: 'Un 60/40 que vuelve a su sitio',
-        intro: 'Datos reales de 2008 a 2025. Tu cartera es **60 % acciones y 40 % bonos**, y cada enero **vuelves a ese reparto**: rebalanceas.',
-        widget: { kind: 'mix', series: 'mix-classic', weights: [60, 40, 0], amount: 10000, rebalance: true },
+        intro: 'Datos reales de 2000 a 2012, con dos grandes caídas de la bolsa. Tu cartera es **60 % acciones y 40 % bonos**, y cada enero **vuelves a ese reparto**: rebalanceas.',
+        widget: { kind: 'mix', series: 'mix-2000s', weights: [60, 40, 0], amount: 10000, rebalance: true },
         predict: {
-          prompt: 'Si no la hubieras tocado nunca, ¿cuántas acciones tendría tu 60/40 en 2025?',
-          options: ['Más o menos un 60 %', 'Más de un 80 %', 'Menos de un 40 %'],
-          answer: 1,
-          why: 'Las acciones subieron mucho más que los bonos: sin tocarla, acabó con un **86 % en acciones**. Mucho más riesgo del que elegiste.',
+          prompt: 'Si no la hubieras tocado nunca, ¿cuántas acciones tendría tu 60/40 en 2012?',
+          options: ['Más o menos un 60 %', 'Más de un 80 %', 'Menos de un 50 %'],
+          answer: 2,
+          why: 'En esos años los bonos subieron mucho más que las acciones: sin tocarla, acabó con un **47 % en acciones**. Ya no era la cartera que elegiste.',
         },
         goal: { text: 'Busca un reparto rebalanceado cuya peor caída no pase del 20 %.', when: [when('maxDD', '>=', -20)] },
-        insight: 'Rebalancear mantiene **el riesgo que elegiste**. Sin tocarlo, aquel 60/40 habría ganado más (48.150 € frente a 42.007 €), pero habría acabado con un 86 % en acciones.',
+        insight: 'Rebalancear mantiene **el riesgo que elegiste**. Y esta vez, además, sumó: vender bonos caros para comprar acciones baratas dejó 17.073 € frente a 16.373 € sin tocarla.',
         lumi: [
           { when: when('maxDD', '<=', -35), say: 'Mucha bolsa: aunque rebalancees, la caída es grande.', mood: 'WORRIED' },
           { when: when('maxDD', '>=', -20), say: '¡Eso es! Menos acciones, caídas más pequeñas.', mood: 'CELEBRATE' },

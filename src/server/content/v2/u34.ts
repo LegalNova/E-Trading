@@ -388,18 +388,20 @@ export default unit({
           { say: 'Clasifica cada cosa', mood: 'HAPPY' },
         ],
       }),
+      // Auditoría RED-34: la mezcla «acciones, bonos y oro 2008-2025» se vivía en siete clases. Aquí va otra serie real
+      // (cierres mensuales ajustados de Yahoo Finance); las cifras del texto salen de `charts.json` con la cuenta de la pieza.
       play({
         title: 'Diversificar en las crisis',
-        intro: 'Datos reales desde 2008, con dividendos y cupones: acciones de EE. UU., bonos y oro. Empiezas con todo en acciones.',
-        widget: { kind: 'mix', series: 'mix-classic', weights: [100, 0, 0], amount: 10000 },
+        intro: 'Datos reales de 2000 a 2025, con dividendos y cupones: acciones de EE. UU., acciones del resto del mundo y bonos. Empiezas con todo en acciones de EE. UU.',
+        widget: { kind: 'mix', series: 'mix-crises', weights: [100, 0, 0], amount: 10000 },
         predict: {
-          prompt: 'Con todo en acciones desde 2008, ¿cuánto llegó a caer la cartera en el peor momento?',
-          options: ['Un 10 %', 'Casi la mitad', 'Nunca cayó'],
-          answer: 1,
-          why: 'Un **−46 %** en la crisis de 2008. Aun así, quien aguantó multiplicó su dinero casi por 7 (+593 %).',
+          prompt: 'En la crisis de 2008, las acciones de EE. UU. cayeron un 51 %. ¿Qué hicieron las del resto del mundo?',
+          options: ['Subieron y compensaron la caída', 'Aguantaron casi planas', 'Cayeron todavía más'],
+          answer: 2,
+          why: 'Cayeron un **58 %**. En las cuatro grandes caídas desde 2000, las bolsas del mundo bajaron juntas. Los bonos, en cambio, subieron en tres de ellas.',
         },
         goal: { text: 'Reparte entre los tres hasta que la peor caída no pase del 25 %.', when: [when('maxDD', '>=', -25)] },
-        insight: 'Con **50 % acciones, 30 % bonos y 20 % oro**, la peor caída fue del **22 %** y la cartera ganó un 383 %. Menos susto y menos ganancia: **una caída que aguantas es una caída en la que no vendes**.',
+        insight: 'Repartir entre bolsas de distintos países **no bastó**: mitad y mitad, la peor caída fue del 55 %. Con **60 % en acciones de EE. UU. y 40 % en bonos**, fue del **25 %** y la cartera ganó un 473 %. **Una caída que aguantas es una caída en la que no vendes.**',
         lumi: [
           { when: when('maxDD', '>=', -25), say: 'Menos susto. Mira cuánto dejas de ganar a cambio.', mood: 'THINKING' },
           { when: when('w0', '>=', 90), say: 'Todo en acciones: mira el bache de 2008.', mood: 'WORRIED' },

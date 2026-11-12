@@ -333,21 +333,23 @@ export default unit({
     ], { source: '10.7', minutes: 6, retire: [0, 1, 2, 3, 8] }),
 
     lesson('u25l9', 'Elegir tu estrategia', [
+      // Auditoría RED-34: la mezcla «acciones, bonos y oro 2008-2025» se vivía en siete clases. Aquí va otra serie real
+      // (cierres mensuales ajustados de Yahoo Finance); las cifras del texto salen de `charts.json` con la cuenta de la pieza.
       mission({
         title: '¿Qué caída aguantarías?',
-        intro: 'Datos reales de 2008 a 2025, con dividendos y cupones. Pones **10.000 €** y eliges la mezcla.',
-        widget: { kind: 'mix', series: 'mix-classic', weights: [100, 0, 0], amount: 10000 },
+        intro: 'Datos reales de octubre de 2003 a 2025, con dividendos y cupones. Pones **10.000 €** y eliges la mezcla.',
+        widget: { kind: 'mix', series: 'mix-growth', weights: [100, 0, 0], amount: 10000 },
         predict: {
-          prompt: 'Con todo en acciones de EE. UU., ¿cuánto llegó a caer la cartera en su peor momento?',
-          options: ['Un 10 %', 'Casi la mitad', 'Nunca cayó'],
+          prompt: 'Con todo en acciones tecnológicas, ¿cuánto llegó a caer la cartera en su peor momento?',
+          options: ['Un 10 %', 'La mitad', 'Nunca cayó'],
           answer: 1,
-          why: 'Cayó un **46 %** en la crisis de 2008. Al final ganó un 593 %… para quien no vendió.',
+          why: 'Cayó un **50 %** en la crisis de 2008. Al final multiplicó el dinero por más de 20… para quien no vendió.',
         },
-        goal: { text: 'Busca una mezcla cuya peor caída no pase del 30 %.', when: [when('maxDD', '>=', -30)] },
-        insight: 'Con un **60 %** en acciones, la peor caída se quedó en un 27 % y aun así ganó más de un 380 %. **La mejor estrategia es la que vas a poder mantener** cuando vaya mal.',
+        goal: { text: 'Busca una mezcla cuya peor caída no pase del 32 %.', when: [when('maxDD', '>=', -32)] },
+        insight: 'Con un **60 %** en tecnológicas y el resto en bonos, la peor caída se quedó en un 31 % y aun así ganó más de un 1.200 %. **La mejor estrategia es la que vas a poder mantener** cuando vaya mal.',
         lumi: [
-          { when: when('maxDD', '<=', -40), say: 'Casi la mitad de tu dinero, en rojo. ¿Lo aguantarías sin vender?', mood: 'WORRIED' },
-          { when: when('maxDD', '>=', -30), say: 'Una caída más llevadera. Mira cuánto ganó igualmente.', mood: 'HAPPY' },
+          { when: when('maxDD', '<=', -40), say: 'La mitad de tu dinero, en rojo. ¿Lo aguantarías sin vender?', mood: 'WORRIED' },
+          { when: when('maxDD', '>=', -32), say: 'Una caída más llevadera. Mira cuánto ganó igualmente.', mood: 'HAPPY' },
           { say: 'Mueve los porcentajes y mira la peor caída', mood: 'HAPPY' },
         ],
       }),

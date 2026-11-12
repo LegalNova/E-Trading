@@ -54,21 +54,22 @@ export default unit({
     ], { source: '3.5', minutes: 6, retire: [3, 5, 6, 7, 8] }),
 
     lesson('u29l3', 'Tu reparto de activos', [
+      // Auditoría RED-34: la mezcla «acciones, bonos y oro 2008-2025» se vivía en siete clases. Aquí va otra serie real
+      // (cierres mensuales ajustados de Yahoo Finance); las cifras del texto salen de `charts.json` con la cuenta de la pieza.
       mission({
         title: 'Elige tu reparto',
-        intro: 'Datos reales de 2008 a 2025. Empiezas con **10.000 €** todo en bonos. Sube las acciones y mira cuánto llegó a caer la cartera en lo peor.',
-        widget: { kind: 'mix', series: 'mix-classic', weights: [0, 100, 0], amount: 10000 },
+        intro: 'Datos reales de 2012 a 2025. Empiezas con **10.000 €** todo en bonos. Sube las acciones del mundo desarrollado y mira cuánto llegó a caer la cartera en lo peor.',
+        widget: { kind: 'mix', series: 'mix-world', weights: [0, 0, 100], amount: 10000 },
         predict: {
-          prompt: 'Con todo en acciones desde 2008, ¿cuánto llegó a caer la cartera en lo peor?',
-          options: ['Un 10 %', 'Casi la mitad', 'Todo'],
+          prompt: 'Con todo en acciones del mundo desarrollado desde 2012, ¿cuánto llegó a caer la cartera en lo peor?',
+          options: ['Un 5 %', 'Una cuarta parte', 'Todo'],
           answer: 1,
-          why: 'Un **46 %** entre 2008 y 2009, con dividendos incluidos. Con 60 % en acciones y 40 % en bonos, un 27 %.',
+          why: 'Algo más de un **25 %** en 2022, con dividendos incluidos. Con 60 % en acciones y 40 % en bonos, un 23 %: ese año los bonos también cayeron.',
         },
-        goal: { text: 'Pon al menos un 60 % en acciones sin que la peor caída pase del 30 %.', when: [when('w0', '>=', 60), when('maxDD', '>=', -30)] },
-        insight: 'El **reparto entre acciones, bonos y liquidez** decide cuánto puede caer tu cartera. Aquí, con el resto en bonos: 40 % en acciones, −21 %; 60 %, −27 %; 80 %, −37 %; 100 %, −46 %.',
+        goal: { text: 'Pon al menos un 60 % en acciones sin que la peor caída pase del 24 %.', when: [when('w0', '>=', 60), when('maxDD', '>=', -24)] },
+        insight: 'El **reparto entre acciones, bonos y liquidez** decide cuánto cae tu cartera y cuánto crece. Aquí, con el resto en bonos: 40 % en acciones, −21 % y un 155 % de ganancia; 60 %, −23 % y un 217 %; 100 %, −26 % y un 342 %.',
         lumi: [
-          { when: when('maxDD', '<=', -40), say: 'Casi la mitad, evaporada. ¿Aguantarías sin vender?', mood: 'WORRIED' },
-          { when: when('maxDD', '<', -30), say: 'Te pasas del 30 %: baja un poco las acciones.', mood: 'THINKING' },
+          { when: when('maxDD', '<', -24), say: 'Te pasas del 24 %: baja un poco las acciones.', mood: 'THINKING' },
           { when: when('w0', '<=', 20), say: 'Muy tranquilo… pero mira lo poco que crece.', mood: 'CALM' },
           { when: when('w0', '>=', 60), say: 'Más crecimiento, con caídas que todavía se aguantan.', mood: 'CELEBRATE' },
           { say: 'Sube las acciones poco a poco', mood: 'HAPPY' },

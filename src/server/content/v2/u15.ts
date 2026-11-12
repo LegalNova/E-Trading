@@ -28,21 +28,23 @@ export default unit({
           { say: 'Dale a empezar: 25 años de oro, mes a mes', mood: 'HAPPY' },
         ],
       }),
+      // Auditoría RED-34: la mezcla «acciones, bonos y oro 2008-2025» se vivía en siete clases. Aquí va otra serie real
+      // (cierres mensuales ajustados de Yahoo Finance); las cifras del texto salen de `charts.json` con la cuenta de la pieza.
       play({
         title: 'Un poco de oro en la cartera',
-        intro: 'Enero de 2008: **10.000 €** en acciones y bonos de EE. UU., rebalanceando cada año (datos reales hasta 2025). Añade algo de oro y mira la peor caída.',
-        widget: { kind: 'mix', series: 'mix-classic', weights: [60, 40, 0], amount: 10000, rebalance: true },
+        intro: 'Enero de 2007: **10.000 €** en acciones de EE. UU., rebalanceando cada año (datos reales hasta 2025). Añade algo de oro y mira la peor caída.',
+        widget: { kind: 'mix', series: 'mix-commodities', weights: [100, 0, 0], amount: 10000, rebalance: true },
         predict: {
           prompt: 'En la crisis de 2008, mientras las acciones se hundían, ¿qué hizo el oro?',
-          options: ['Se hundió igual que las acciones', 'Aguantó: acabó casi plano', 'Se multiplicó por dos'],
+          options: ['Se hundió igual que las acciones', 'Subió mientras la bolsa caía', 'Se multiplicó por dos'],
           answer: 1,
-          why: 'De enero de 2008 a febrero de 2009, las acciones cayeron un 45 % y el oro subió un 1 %.',
+          why: 'De octubre de 2007 a febrero de 2009, las acciones cayeron un 51 % y el oro subió un 18 %.',
         },
-        goal: { text: 'Con al menos un 10 % de oro, consigue que la peor caída no pase del −25 %.', when: [when('w2', '>=', 10), when('maxDD', '>=', -25)] },
-        insight: 'Como a veces sube cuando la bolsa cae, **un poco de oro suavizó la peor caída**: del −28 % al −22 % con un 20 %. Pero solo, el oro también llegó a caer un 43 %.',
+        goal: { text: 'Con al menos un 10 % de oro, consigue que la peor caída no pase del −40 %.', when: [when('w1', '>=', 10), when('maxDD', '>=', -40)] },
+        insight: 'Como a veces sube cuando la bolsa cae, **un poco de oro suavizó la peor caída**: del −51 % al −40 % con un 20 %. Pero solo, el oro también llegó a caer un 43 %. Y no todas las materias primas son refugio: la cesta variada cayó un 75 % y en 19 años apenas ganó un 15 %.',
         lumi: [
-          { when: when('w2', '>=', 50), say: 'Mucho oro: recuerda que no paga intereses ni dividendos.', mood: 'THINKING' },
-          { when: when('maxDD', '>=', -25), say: '¡Mira cómo se suaviza la peor caída!', mood: 'HAPPY' },
+          { when: when('w1', '>=', 50), say: 'Mucho oro: recuerda que no paga intereses ni dividendos.', mood: 'THINKING' },
+          { when: when('maxDD', '>=', -40), say: '¡Mira cómo se suaviza la peor caída!', mood: 'HAPPY' },
           { say: 'Sube el oro poco a poco y mira la peor caída', mood: 'HAPPY' },
         ],
       }),

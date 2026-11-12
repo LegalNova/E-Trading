@@ -40,10 +40,12 @@ export default unit({
           { say: 'Clasifica cada rasgo', mood: 'HAPPY' },
         ],
       }),
+      // Auditoría RED-34: la mezcla «acciones, bonos y oro 2008-2025» se vivía en siete clases. Aquí va otra serie real
+      // (cierres mensuales ajustados de Yahoo Finance); las cifras del texto salen de `charts.json` con la cuenta de la pieza.
       mission({
         title: 'Para qué sirven los bonos',
-        intro: 'Datos reales de 2008 a 2025: empiezas con **10.000 €**, todo en acciones de EE. UU. Pasa una parte a bonos y mira qué cambia.',
-        widget: { kind: 'mix', series: 'mix-classic', weights: [100, 0, 0], amount: 10000, rebalance: true },
+        intro: 'Datos reales de 2003 a 2025: empiezas con **10.000 €**, todo en acciones de EE. UU. Pasa una parte a bonos del Tesoro, de largo o de corto plazo, y mira qué cambia.',
+        widget: { kind: 'mix', series: 'mix-bonds', weights: [100, 0, 0], amount: 10000, rebalance: true },
         predict: {
           prompt: 'Si pasas una parte de las acciones a bonos, ¿qué crees que pasa?',
           options: ['Ganas más y caes menos', 'Caes menos, pero acabas con menos', 'No cambia nada'],
@@ -51,10 +53,10 @@ export default unit({
           why: 'Los bonos suelen moverse menos que las acciones: **amortiguan** las caídas, pero a largo plazo rinden menos.',
         },
         goal: { text: 'Añade bonos hasta que la peor caída no pase del 30 %.', when: [when('maxDD', '>=', -30)] },
-        insight: 'Con un 40 % en bonos, la peor caída baja del 46 % al 28 %, a cambio de acabar con 42.007 € en vez de 69.328 €. Los bonos **amortiguan**, aunque no siempre: en 2022 cayeron a la vez que las acciones.',
+        insight: 'Con un 40 % en bonos a corto plazo, la peor caída baja del 51 % al 30 %, a cambio de acabar con 58.694 € en vez de 120.980 €. Los bonos **amortiguan**, aunque no siempre: en 2022 los de largo plazo cayeron a la vez que las acciones.',
         lumi: [
           { when: when('maxDD', '<', -40), say: 'Mira esa caída: en 2008 y 2009 dolió de verdad.', mood: 'WORRIED' },
-          { when: when('w1', '>=', 70), say: 'Muy tranquila… pero mira cuánto menos acabas teniendo.', mood: 'THINKING' },
+          { when: when('w2', '>=', 70), say: 'Muy tranquila… pero mira cuánto menos acabas teniendo.', mood: 'THINKING' },
           { when: when('maxDD', '>=', -30), say: '¡Eso es! Menos sustos por el camino.', mood: 'CELEBRATE' },
           { say: 'Pasa una parte de acciones a bonos', mood: 'HAPPY' },
         ],

@@ -573,6 +573,8 @@ MIXES = [
     ('mix-commodities', '2007-01-01', '2025-12-01', [('stocks', 'SPY', 'Acciones de EE. UU. (S&P 500)'), ('gold', 'GLD', 'Oro'), ('basket', 'DBC', 'Cesta de materias primas')]),
     ('mix-world', '2012-02-01', '2025-12-01', [('world', 'URTH', 'Acciones del mundo desarrollado'), ('em', 'EEM', 'Acciones de países emergentes'), ('bonds', 'AGG', 'Bonos de EE. UU.')]),
     ('mix-dividend', '2007-01-01', '2025-12-01', [('dividend', 'VYM', 'Acciones de dividendo alto de EE. UU.'), ('market', 'SPY', 'Acciones de EE. UU. (S&P 500)')]),
+    ('mix-growth', '2003-10-01', '2025-12-01', [('nasdaq', 'QQQ', 'Acciones tecnológicas (Nasdaq 100)'), ('stocks', 'SPY', 'Acciones de EE. UU. (S&P 500)'), ('bonds', 'AGG', 'Bonos de EE. UU.')]),
+    ('mix-crises', '2000-01-01', '2025-12-01', [('stocks', 'SPY', 'Acciones de EE. UU. (S&P 500)'), ('intl', 'VGTSX', 'Acciones del resto del mundo'), ('bonds', 'VBMFX', 'Bonos de EE. UU.')]),
     ('mix-2000s', '2000-01-01', '2012-12-01', [('stocks', 'SPY', 'Acciones de EE. UU. (S&P 500)'), ('bonds', 'VBMFX', 'Bonos de EE. UU.'), ('em', 'VEIEX', 'Acciones de países emergentes')]),
 ]
 
