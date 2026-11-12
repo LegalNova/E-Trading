@@ -14,12 +14,14 @@ import { viewAs } from '../view'
 import { checkoutUrl, confirmCheckout, isStudent, LIVE, portalUrl, refreshAfterPortal, stripe, stripeEnabled, stripeTestMode, type PlanId as StripePlanId } from '../billing/stripe'
 import { currentLocale } from '../locale'
 import { forgetMemo } from '../request'
-import { ACHIEVEMENTS } from '../content/catalog'
+import { ACHIEVEMENTS, LESSON } from '../content/catalog'
 import { achievementList, endFx, fail, FREEZE_PRICE, goalDefs, goalsOf, minutesOf, levelOf, levelTitle, LIVES_MAX, livesOf, lumi, MAX_FREEZES, notify, REFILL_PRICE, START_CASH, withCtx, type Tx } from './core'
 import { pathOf, SCORED_IDS } from './learning'
 import { portfolioIn, portfolioRow, processPendingFor, userBook } from './trading'
 import { addFlow } from './league'
 
+/** Clases de verdad del curso actual (226): las que cuentan como «clases hechas» en el perfil y en el inicio */
+const REAL_LESSON_IDS = Object.values(LESSON).filter(l => !l.isUnitReview && !l.isBoss).map(l => l.id)
 const DAY_MS = 86_400_000
 
 // ── Sesión y onboarding ──────────────────────────────────
@@ -206,7 +208,8 @@ export const me = () =>
   withCtx(async (c): Promise<MeT> => {
     const lv = levelOf(c.g.xp)
     const [lessons, ach, sub] = await Promise.all([
-      c.tx.lessonProgress.count({ where: { userId: c.user.id, skipped: false } }),
+      // Solo las clases del curso actual: sin repasos, retos finales ni clases de versiones anteriores (auditoría APP-20)
+      c.tx.lessonProgress.count({ where: { userId: c.user.id, skipped: false, lessonId: { in: REAL_LESSON_IDS } } }),
       c.tx.userAchievement.count({ where: { userId: c.user.id } }),
       c.tx.subscription.findUnique({ where: { userId: c.user.id } }),
     ])

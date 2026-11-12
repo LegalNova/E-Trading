@@ -114,7 +114,7 @@ export function DynamicExercise({ q, value, onChange, reveal }: { q: QuestionT; 
               <b className="text-[15px]">{o}</b>
               <div className="seg wrap" role="group" aria-label={o}>
                 {groups.map((g, k) => (
-                  <button key={k} aria-pressed={v[i] === k} disabled={locked} onClick={() => onChange(v.map((x, j) => (j === i ? k : x)))}>
+                  <button key={k} aria-pressed={v[i] === k} aria-label={`${g}: ${o}`} disabled={locked} onClick={() => onChange(v.map((x, j) => (j === i ? k : x)))}>
                     {g}
                   </button>
                 ))}

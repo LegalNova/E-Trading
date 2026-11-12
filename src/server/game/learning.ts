@@ -19,6 +19,12 @@ export const ALL_Q: Record<string, ContentQuestion> = Object.fromEntries([...Obj
 /** Preguntas que cuentan para la nota y pueden ir a la lista de fallos (sin la ronda de humildad, src/shared/scoring.ts) */
 export const SCORED_IDS = Object.keys(ALL_Q).filter(id => isScored(ALL_Q[id]))
 const scoredId = (id: string) => isScored(ALL_Q[id])
+/**
+ * XP que se anuncia en la lista de clases: la de aprobarla más 10 por cada pregunta que puntúa (lo que se gana
+ * acertándolas todas, sin contar los extras de pleno y rapidez). Antes se anunciaban «+30 XP» y al terminar llegaban
+ * más de 100 (auditoría APP-17).
+ */
+const shownXp = (l: { xp: number; quizId: string }) => l.xp + 10 * (QUIZZES[l.quizId] ?? []).filter(isScored).length
 /** Lo que ve el alumno: nunca la solución, las consecuencias ni el futuro del gráfico */
 /**
  * Sin emojis en lo que se enseña (quedan poco profesionales). Se quitan al enviar y no en el contenido: el orden en
@@ -98,7 +104,7 @@ export async function pathOf(tx: Tx, user: User): Promise<CoursePathT> {
           }
         }
       }
-      return { id: l.id, title: lessonTitleT(loc, l.id, l.title), status, stars: p?.stars ?? 0, minutes: Math.max(1, Math.round(lessonMinutes(l))), xp: l.xp, isUnitReview: !!l.isUnitReview, requiresPremium, requiredPlan }
+      return { id: l.id, title: lessonTitleT(loc, l.id, l.title), status, stars: p?.stars ?? 0, minutes: Math.max(1, Math.round(lessonMinutes(l))), xp: shownXp(l), isUnitReview: !!l.isUnitReview, requiresPremium, requiredPlan }
     })
     const n = lessons.filter(l => l.status === 'COMPLETED').length
     const plans = new Set(lessons.map(l => l.requiredPlan))
@@ -141,7 +147,7 @@ export async function lesson(user: User, tx: Tx, id: string, peek = false): Prom
     return { id: sid, type: 'SIMULATOR_TASK', title: s.title, body: s.body, task: s.task }
   })
   steps.push({ id: `${id}-quiz`, type: 'QUIZ', quizId: l.quizId, title: e.quizTitle, body: e.quizBody((QUIZZES[l.quizId] ?? []).length, user.plan === 'FREE') }) // vidas ilimitadas en Plus y Max
-  return { id, title, unitTitle, minutes: l.minutes, xp: l.xp, steps: steps.map(st => walkTexts(st, brand)) }
+  return { id, title, unitTitle, minutes: l.minutes, xp: shownXp(l), steps: steps.map(st => walkTexts(st, brand)) }
 }
 
 export const checkStep = (lessonId: string, stepId: string, idx: number) =>

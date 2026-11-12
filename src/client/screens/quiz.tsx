@@ -592,7 +592,7 @@ function QuizInner({ id }: { id: string }) {
         ) : (
           <div className="px-4 pt-2.5" style={{ paddingBottom: 'max(24px, env(safe-area-inset-bottom))' }}>
             <button className="btn btn-primary" disabled={!hasAnswer(q, value) || answer.isPending} onClick={() => answer.mutate(value)}>
-              {answer.isPending ? '…' : hasAnswer(q, value) ? t('check') : t(PICK[q.type] ?? 'pick')}
+              {answer.isPending ? t('checking') : hasAnswer(q, value) ? t('check') : t(PICK[q.type] ?? 'pick')}
             </button>
           </div>
         )}

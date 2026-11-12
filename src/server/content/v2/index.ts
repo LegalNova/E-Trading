@@ -71,4 +71,5 @@ const units: ContentUnit[] = [
   ...section('s13', 'Laboratorio de mercado', ['s7', 's8'], [u35]),
 ]
 /** Número de unidad en el orden en que se muestran */
-export const V2_UNITS: ContentUnit[] = [...units.map((u, i) => ({ ...u, order: i + 1 })), vocab]
+// El vocabulario va aparte: su número de orden es el siguiente al último, para que no coincida con ninguna unidad (APP-21)
+export const V2_UNITS: ContentUnit[] = [...units.map((u, i) => ({ ...u, order: i + 1 })), { ...vocab, order: units.length + 1 }]

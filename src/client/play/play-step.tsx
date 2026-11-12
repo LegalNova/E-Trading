@@ -55,6 +55,8 @@ export function PlayView({ s, done, onDone }: { s: PlayStepT; done: boolean; onD
     setM(x)
   }
   const goalMet = touched && (s.goal ? s.goal.when.every(c => holds(c, m)) : true)
+  // Predicción «en espera»: se apunta al elegir y se corrige cuando la actividad ha enseñado el resultado
+  const revealed = guess !== null && (!s.predict?.hold || goalMet || done)
   useEffect(() => {
     if (goalMet && !done) onDone()
   }, [goalMet, done, onDone])
@@ -63,7 +65,10 @@ export function PlayView({ s, done, onDone }: { s: PlayStepT; done: boolean; onD
     const id = setTimeout(() => setCanSkip(true), SKIP_AFTER * 1000)
     return () => clearTimeout(id)
   }, [open, done])
-  const line = s.lumi.find(l => !l.when || holds(l.when, m))
+  const found = s.lumi.find(l => !l.when || holds(l.when, m))
+  // En las series históricas la frase por defecto es «Dale a empezar»: con la simulación ya en marcha se cambia por
+  // otra que no pida algo que ya se ha hecho (auditoría APP-14)
+  const line = found && !found.when && touched && s.widget.kind === 'crash' ? { ...found, say: t('crashRunning') } : found
   const mission = s.mode === 'MISSION'
   return (
     <div className="flex flex-col gap-3">
@@ -85,20 +90,25 @@ export function PlayView({ s, done, onDone }: { s: PlayStepT; done: boolean; onD
           <div className="flex flex-col gap-1.5">
             {s.predict.options.map((o, k) => {
               const picked = guess === k
-              const right = guess !== null && k === s.predict!.answer
+              const right = revealed && k === s.predict!.answer
               return (
                 <button
                   key={o}
                   aria-pressed={picked}
                   onClick={() => guess === null && setGuess(k)}
-                  className={`opt ${guess === null ? '' : right ? 'ok' : picked ? 'bad' : 'dim'}`}
+                  className={`opt ${guess === null || !revealed ? '' : right ? 'ok' : picked ? 'bad' : 'dim'}`}
                 >
                   {inline(o)}
                 </button>
               )
             })}
           </div>
-          {guess !== null && (
+          {guess !== null && !revealed && (
+            <p className="t-foot m-0 animate-rise" style={{ color: 'var(--ink)' }}>
+              {t('letsSee')}
+            </p>
+          )}
+          {revealed && (
             <p className="t-foot m-0 animate-rise" style={{ color: 'var(--ink)' }}>
               <b className={guess === s.predict.answer ? 'up' : 'down'}>{guess === s.predict.answer ? t('goodGuess') : t('surprise')}</b> {inline(s.predict.why)}
             </p>

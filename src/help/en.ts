@@ -32,7 +32,7 @@ export const en: HelpDoc = {
       id: 'clases',
       title: 'Lessons and progress',
       items: [
-        { id: 'como-clases', q: 'What are the lessons like?', a: ['About 6 minutes each. First you do something (a story with choices, a piece to play with or a mission with real data), then you understand the idea. Every lesson ends with a short quiz.'] },
+        { id: 'como-clases', q: 'What are the lessons like?', a: ['About 5 minutes each. First you do something (a story with choices, a piece to play with or a mission with real data), then you understand the idea. Every lesson ends with a short quiz.'] },
         { id: 'bloqueadas', q: 'Why are some lessons locked?', a: ['Lessons open in order: when you finish one, the next one opens. Each section opens when you pass the final challenge of the previous one.', 'Some lessons belong to Plus or Max: you’ll see them with a padlock and the plan name.'] },
         { id: 'vidas', q: 'What are lives?', a: ['On the Free plan you have 5 lives for quizzes. You lose one when you get a question wrong and get one back every 4 hours. You can also refill them with gems.', 'On Plus and Max, lives are unlimited.'] },
         { id: 'racha', q: 'How does the streak work?', a: ['It grows by one day each day you finish a lesson or a quiz, or make a trade in the simulator. If you skip a day, it starts again.', 'A streak freeze saves it on a day you can’t make it: you buy it with gems (you can hold 2 at most). On Max you get one every week.'] },

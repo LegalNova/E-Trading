@@ -15,8 +15,10 @@ function GoogleButton({ onDone }: { onDone: (s: Session) => void }) {
   const t = useTranslations('auth')
   const { data: session } = useSession()
   const m = useMutation({ mutationFn: api.signInWithGoogle, onSuccess: onDone })
+  // Mientras no se sabe si hay Google, se guarda su hueco: así el botón «Entrar» no se mueve al aparecer (auditoría APP-10)
+  if (!session) return <div className="btn" aria-hidden="true" style={{ visibility: 'hidden' }} />
   // Solo cuando Google está configurado en el servidor
-  if (!session?.googleEnabled) return null
+  if (!session.googleEnabled) return null
   return (
     <button className="btn btn-secondary" onClick={() => m.mutate()} disabled={m.isPending}>
       <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
@@ -33,7 +35,12 @@ function GoogleButton({ onDone }: { onDone: (s: Session) => void }) {
 function OrEmail() {
   const t = useTranslations('auth')
   const { data } = useSession()
-  return data?.googleEnabled ? <div className="t-cap text-center">{t('orEmail')}</div> : null
+  if (data && !data.googleEnabled) return null
+  return (
+    <div className="t-cap text-center" aria-hidden={data ? undefined : true} style={data ? undefined : { visibility: 'hidden' }}>
+      {t('orEmail')}
+    </div>
+  )
 }
 
 /**

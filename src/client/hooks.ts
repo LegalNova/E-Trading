@@ -13,10 +13,15 @@ export const useLives = () => useQuery({ queryKey: ['lives'], queryFn: api.lives
 export const usePortfolio = () => useQuery({ queryKey: ['portfolio'], queryFn: api.portfolio, refetchInterval: 10_000 })
 export const useSettings = () => useQuery({ queryKey: ['settings'], queryFn: api.settings })
 
-/** Tras una acción que da progreso, se refresca todo (en la simulación es barato) */
+/**
+ * Tras una acción que da progreso, se refresca todo (en la simulación es barato)… menos el arranque de un quiz o de
+ * un test de nivel: «refrescarlos» es pedir al servidor un intento nuevo, que quedaba abierto y sin usar cada vez que
+ * se terminaba un quiz (auditoría APP-18).
+ */
+const STARTS_ATTEMPT = new Set(['quiz-start', 'placement'])
 export function useRefreshAll() {
   const qc = useQueryClient()
-  return useCallback(() => qc.invalidateQueries(), [qc])
+  return useCallback(() => qc.invalidateQueries({ predicate: q => !STARTS_ATTEMPT.has(String(q.queryKey[0])) }), [qc])
 }
 
 /** Idioma activo para formatear cifras */

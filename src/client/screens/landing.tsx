@@ -22,7 +22,7 @@ export function LanguageSwitch() {
   return (
     <div className="flex gap-1 text-xs font-bold" role="group" aria-label={ts('language')}>
       {routing.locales.map(l => (
-        <button key={l} onClick={() => router.replace(path, { locale: l })} aria-pressed={l === locale} className="rounded-md px-1.5 py-1 uppercase" style={{ color: l === locale ? 'var(--ink)' : 'var(--ink-3)' }}>
+        <button key={l} onClick={() => router.replace(path, { locale: l })} aria-pressed={l === locale} className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md px-1.5 uppercase" style={{ color: l === locale ? 'var(--ink)' : 'var(--ink-3)' }}>
           {l}
         </button>
       ))}
@@ -152,7 +152,7 @@ export function Landing({ lessons }: { lessons: number }) {
     <div className="min-h-dvh overflow-x-clip" style={{ background: 'var(--bg)' }}>
       <header className="sticky top-0 z-20 border-b" style={{ borderColor: 'var(--line)', background: 'color-mix(in srgb, var(--bg) 85%, transparent)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}>
         <div className="mx-auto flex h-14 max-w-[1120px] items-center gap-6 px-4">
-          <Link href="/" className="flex items-center gap-2 text-[17px] font-extrabold tracking-tight" style={{ color: 'var(--ink)' }}>
+          <Link href="/" className="flex min-h-11 items-center gap-2 text-[17px] font-extrabold tracking-tight" style={{ color: 'var(--ink)' }}>
             <Wordmark size={21} />
           </Link>
           <nav className="hidden flex-1 gap-5 text-sm font-semibold md:flex" style={{ color: 'var(--ink-2)' }}>
@@ -163,7 +163,7 @@ export function Landing({ lessons }: { lessons: number }) {
             <a href="#contacto">{t('navSchools')}</a>
           </nav>
           <div className="ml-auto flex items-center gap-2 md:ml-0">
-            <Link href="/entrar" className="link">
+            <Link href="/entrar" className="link inline-flex min-h-11 items-center">
               {t('signIn')}
             </Link>
             <Link href="/registro" className="btn btn-primary btn-sm hidden sm:flex">
@@ -203,7 +203,7 @@ export function Landing({ lessons }: { lessons: number }) {
             </Link>
           </div>
           <div className="-mt-2 flex flex-col items-start">
-            <GuestButton className="link text-[15px] font-bold" />
+            <GuestButton className="link inline-flex min-h-11 items-center text-[15px] font-bold" />
             <span className="t-cap">{t('guestNote')}</span>
             <LegalNote ns="auth" k="guestTerms" className="t-cap m-0 mt-1" />
           </div>
@@ -370,7 +370,8 @@ export function Landing({ lessons }: { lessons: number }) {
         <div className="mx-auto flex max-w-[1120px] flex-col gap-4 px-4 py-8 md:flex-row md:items-center">
           <Wordmark size={17} />
           <p className="t-cap m-0 max-w-[620px] flex-1">{t('legal')}</p>
-          <div className="t-cap flex flex-wrap gap-x-4 gap-y-1.5">
+          {/* Enlaces con 44 px de alto para el dedo (auditoría APP-11) */}
+          <div className="t-cap flex flex-wrap gap-x-4 [&>a]:inline-flex [&>a]:min-h-11 [&>a]:items-center">
             <Link href="/ayuda">{t('help')}</Link>
             <Link href="/legal/aviso-legal">{t('legalNotice')}</Link>
             <Link href="/legal/privacidad">{t('privacy')}</Link>

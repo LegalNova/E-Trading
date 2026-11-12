@@ -32,7 +32,7 @@ export const ca: HelpDoc = {
       id: 'clases',
       title: 'Classes i progrés',
       items: [
-        { id: 'como-clases', q: 'Com són les classes?', a: ['Uns 6 minuts cadascuna. Primer fas (una història amb decisions, una peça per tocar o una missió amb dades reals) i després entens la idea. Cada classe acaba amb un qüestionari curt.'] },
+        { id: 'como-clases', q: 'Com són les classes?', a: ['Uns 5 minuts cadascuna. Primer fas (una història amb decisions, una peça per tocar o una missió amb dades reals) i després entens la idea. Cada classe acaba amb un qüestionari curt.'] },
         { id: 'bloqueadas', q: 'Per què hi ha classes bloquejades?', a: ['Les classes s’obren en ordre: quan n’acabes una, s’obre la següent. Cada secció s’obre quan superes el repte final de l’anterior.', 'Algunes classes són de Plus o Max: les veuràs amb un cadenat i el nom del pla.'] },
         { id: 'vidas', q: 'Què són les vides?', a: ['Al pla Free tens 5 vides per als qüestionaris. En perds una quan falles una pregunta i en recuperes una cada 4 hores. També les pots recarregar amb gemmes.', 'A Plus i Max les vides són il·limitades.'] },
         { id: 'racha', q: 'Com funciona la ratxa?', a: ['Suma un dia cada dia que acabes una classe o un qüestionari, o fas una operació al simulador. Si un dia no fas res, torna a començar.', 'Un protector de ratxa la salva un dia que no puguis: es compra amb gemmes (en pots tenir 2 com a màxim). A Max en reps un cada setmana.'] },

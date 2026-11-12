@@ -101,7 +101,8 @@ export const PlayStep = z.object({
   intro: z.string(),
   widget: Widget,
   /** Antes de tocar: ¿qué crees que pasará? (no resta vidas) */
-  predict: z.object({ prompt: z.string(), options: z.array(z.string()), answer: z.number(), why: z.string() }).optional(),
+  /** `hold`: la respuesta no se desvela al elegir, sino al terminar la actividad (la pieza es la que la descubre) */
+  predict: z.object({ prompt: z.string(), options: z.array(z.string()), answer: z.number(), why: z.string(), hold: z.boolean().optional() }).optional(),
   /** El reto de la pantalla: se cumple cuando todas las condiciones son ciertas */
   goal: z.object({ text: z.string(), when: z.array(Cmp) }).optional(),
   /** Lo que acabas de descubrir, en una o dos frases */

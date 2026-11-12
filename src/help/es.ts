@@ -32,7 +32,7 @@ export const es: HelpDoc = {
       id: 'clases',
       title: 'Clases y progreso',
       items: [
-        { id: 'como-clases', q: '¿Cómo son las clases?', a: ['Unos 6 minutos cada una. Primero haces (una historia con decisiones, una pieza para tocar o una misión con datos reales) y después entiendes la idea. Cada clase termina con un quiz corto.'] },
+        { id: 'como-clases', q: '¿Cómo son las clases?', a: ['Unos 5 minutos cada una. Primero haces (una historia con decisiones, una pieza para tocar o una misión con datos reales) y después entiendes la idea. Cada clase termina con un quiz corto.'] },
         { id: 'bloqueadas', q: '¿Por qué hay clases bloqueadas?', a: ['Las clases se abren en orden: al terminar una, se abre la siguiente. Cada sección se abre al superar el reto final de la anterior.', 'Algunas clases son de Plus o Max: las verás con un candado y el nombre del plan.'] },
         { id: 'vidas', q: '¿Qué son las vidas?', a: ['En el plan Free tienes 5 vidas para los quizzes. Pierdes una cuando fallas una pregunta y recuperas una cada 4 horas. También puedes recargarlas con gemas.', 'En Plus y Max las vidas son ilimitadas.'] },
         { id: 'racha', q: '¿Cómo funciona la racha?', a: ['Suma un día cada día que terminas una clase o un quiz, o haces una operación en el simulador. Si un día no haces nada, vuelve a empezar.', 'Un protector de racha la salva un día que no puedas: se compra con gemas (puedes tener 2 como mucho). En Max recibes uno cada semana.'] },

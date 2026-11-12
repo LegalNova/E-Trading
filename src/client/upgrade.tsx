@@ -138,7 +138,10 @@ export function BuyPlans({ id }: { id?: string }) {
   if (b.plan === 'PREMIUM' && b.daysLeft && b.daysLeft > 14) return null
   const tiers = (paid && b.plan === 'PLUS' ? ['PREMIUM'] : ['PLUS', 'PREMIUM']) as ('PLUS' | 'PREMIUM')[]
   const of = (tier: 'PLUS' | 'PREMIUM', iv: 'MONTH' | 'YEAR') => plans.find(p => p.tier === tier && p.interval === iv)!
-  const saving = Math.round((1 - Number(of('PREMIUM', 'YEAR').price) / (Number(of('PREMIUM', 'MONTH').price) * 12)) * 100)
+  // Ahorro del pago anual de cada plan que se ofrece. Si no coinciden (Plus 33 %, Max 37 %) se dice «hasta» (auditoría APP-7)
+  const savings = tiers.map(tier => Math.round((1 - Number(of(tier, 'YEAR').price) / (Number(of(tier, 'MONTH').price) * 12)) * 100))
+  const saving = Math.max(...savings)
+  const sameSaving = savings.every(x => x === saving)
   const trial = b.payments && !b.trialUsed && b.trialUnlocked
   return (
     <section id={id} aria-labelledby="buy-title" className="card flex scroll-mt-4 flex-col gap-3">
@@ -148,7 +151,7 @@ export function BuyPlans({ id }: { id?: string }) {
         </h2>
         <span className="t-foot">{b.daysLeft ? t('keepBody', { n: b.daysLeft }) : t('body')}</span>
       </div>
-      <Seg label={t('billing')} value={interval} onChange={setInterval_} options={[{ value: 'MONTH', label: t('monthly') }, { value: 'YEAR', label: t('yearly', { n: saving }) }]} />
+      <Seg label={t('billing')} value={interval} onChange={setInterval_} options={[{ value: 'MONTH', label: t('monthly') }, { value: 'YEAR', label: t(sameSaving ? 'yearly' : 'yearlyUpTo', { n: saving }) }]} />
       <div className={`grid gap-2.5 ${tiers.length > 1 ? 'grid-cols-2' : 'grid-cols-1'}`}>
         {tiers.map(tier => {
           const p = of(tier, interval)

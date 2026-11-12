@@ -136,9 +136,14 @@ interface PlayIn {
   lumi: PlayStepT['lumi']
 }
 /** Aprender haciendo: una pieza para tocar, con predicción, reto y reacciones de Lumi */
-export const play = (o: PlayIn): Step => ({ kind: 'PLAY', play: { ...o, mode: 'EXPLORE', widget: withSeries(o.widget) } })
+export const play = (o: PlayIn): Step => ({ kind: 'PLAY', play: { ...o, ...held(o), mode: 'EXPLORE', widget: withSeries(o.widget) } })
 /** Misión en el simulador: lo mismo, pero el reto es lo importante */
-export const mission = (o: PlayIn & { goal: PlayStepT['goal'] }): Step => ({ kind: 'PLAY', play: { ...o, mode: 'MISSION', widget: withSeries(o.widget) } })
+export const mission = (o: PlayIn & { goal: PlayStepT['goal'] }): Step => ({ kind: 'PLAY', play: { ...o, ...held(o), mode: 'MISSION', widget: withSeries(o.widget) } })
+/**
+ * En las series históricas («vive lo que pasó») la predicción no se corrige al elegir: se apunta, y la respuesta la
+ * descubre la propia simulación. Antes el texto decía el final («Valen 38.109 €») justo antes de vivirlo (auditoría APP-12).
+ */
+const held = (o: PlayIn) => (o.predict && o.widget.kind === 'crash' && o.predict.hold === undefined ? { predict: { ...o.predict, hold: true } } : {})
 /** Historia con decisiones: personajes, mensajes y elecciones con consecuencias */
 export const story = (title: string, cast: StoryStepT['cast'], beats: BeatT[]): Step => ({ kind: 'STORY', story: { title, cast, beats } })
 /** Frases de la historia: say('laura', '…'), note('Tres meses después…'), choose('¿Qué haces?', [opt(…), …]) */

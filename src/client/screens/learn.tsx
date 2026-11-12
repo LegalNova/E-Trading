@@ -800,7 +800,8 @@ function LessonInner({ id }: { id: string }) {
         <ReportButton context={{ lessonId: l.id, step: s.id }} />
       </div>
       <div key={s.id} className="pad flex-1 animate-rise">
-        {i === 0 && <span className="t-foot">{l.unitTitle} · {l.title}</span>}
+        {/* Si la unidad y la clase se llaman igual («Tu primera inversión»), el nombre va una sola vez */}
+        {i === 0 && <span className="t-foot">{l.unitTitle === l.title ? l.title : `${l.unitTitle} · ${l.title}`}</span>}
         <StepView s={s} lessonId={l.id} solved={!!solved[s.id]} onSolved={() => setSolved(x => ({ ...x, [s.id]: true }))} />
         {last && <MissionPreview lessonId={l.id} />}
       </div>
