@@ -370,7 +370,7 @@
    "options": [
     "Les dues igual: venen el mateix",
     "Zancada: ven el mateix",
-    "Ritmo: amb més marge, pot absorbir la pujada de costos"
+    "Ritmo: té més marge"
    ],
    "explanation": "Amb les mateixes vendes, el marge diu quant coixí hi ha abans de perdre diners. La temptació és mirar només les vendes, i aquí són iguals.",
    "feedback": [
@@ -399,7 +399,7 @@
    "prompt": "Què li respons a la Lumi?",
    "options": [
     "Que és impossible: si ven el doble, guanya el doble",
-    "Que els seus costos han crescut més de pressa que les vendes",
+    "Que els costos han crescut més que les vendes",
     "Que les vendes no importen gens"
    ],
    "explanation": "El benefici és el que queda després de restar tots els costos. Si creixen més de pressa que les vendes, el marge s'encongeix i el benefici pot baixar encara que es vengui el doble.",
@@ -443,8 +443,8 @@
    "prompt": "Actius a curt termini de 250 M€ i deutes a curt termini de 300 M€. Què indica?",
    "options": [
     "Res rellevant",
-    "Podria tenir problemes per pagar el que venç aviat",
-    "Que és molt solvent"
+    "Li pot costar pagar el que venç aviat",
+    "Que és molt solvent: té 250 M€ en actius"
    ],
    "explanation": "El que venç durant l'any supera el que pot convertir en diners durant l'any."
   },
@@ -474,8 +474,8 @@
    "prompt": "Dues empreses inventades cotitzen a 20 € per acció. Segons el seu balanç, A té 10 € de patrimoni net per acció i B, 2 €. Per quina pagues més en relació amb el que té en llibres?",
    "options": [
     "Per les dues igual: costen 20 €",
-    "Per B: pagues 10 vegades el seu valor comptable",
-    "Per A: té més patrimoni"
+    "Per B: 10 vegades el seu valor comptable",
+    "Per A: té més patrimoni i costa el mateix"
    ],
    "explanation": "A A pagues el doble del que té en llibres; a B, deu vegades. No vol dir que B sigui pitjor (una marca o un programa poden valer més del que diu el balanç), però convé saber què pagues."
   },
@@ -525,8 +525,8 @@
    "prompt": "Una cadena de botigues té FCF negatiu aquest any perquè ha obert 200 botigues, però el seu flux operatiu és alt i creixent. Com ho interpretes?",
    "options": [
     "Tant se val, la caixa no importa",
-    "Alarma: està a punt de fer fallida",
-    "Pot ser raonable: inverteix per créixer, sempre que les botigues noves acabin rendint"
+    "Alarma: amb caixa negativa està a punt de fer fallida",
+    "Pot ser raonable: inverteix per créixer"
    ],
    "explanation": "Un FCF negatiu per invertir molt no és el mateix que un negoci que no cobra.",
    "feedback": [
@@ -538,18 +538,18 @@
   "u16l4-10": {
    "prompt": "Què pot fer una empresa amb el seu flux de caixa lliure? Marca-ho tot.",
    "options": [
-    "Reduir deute",
+    "Esborrar les pèrdues d'anys anteriors",
     "Comptar-lo com a vendes de l'any següent",
     "Recomprar accions",
     "Pagar dividends"
    ],
-   "explanation": "L'FCF són diners disponibles; no és una venda."
+   "explanation": "Amb l'FCF pot pagar dividends, recomprar accions o reduir deute. Són diners disponibles: no és una venda ni canvia els comptes d'anys anteriors."
   },
   "u16l4-11": {
    "prompt": "RapiBox i LlegaYa, dues apps de repartiment inventades, guanyen 50 M€ cadascuna aquest any. RapiBox ho ha cobrat gairebé tot i la seva caixa ha crescut; LlegaYa té la caixa en negatiu perquè els seus clients li deuen cada vegada més. De quin benefici et fies més?",
    "options": [
     "El de LlegaYa: guanya el mateix",
-    "El de RapiBox: el seu benefici es veu a la caixa",
+    "El de RapiBox: es veu a la caixa",
     "Dels dos igual: el benefici és el mateix"
    ],
    "explanation": "Quan el benefici es converteix en caixa, és més fiable. Si el que li deuen els clients no para de créixer, potser no arribarà mai a cobrar-ho.",
@@ -564,7 +564,7 @@
    "options": [
     "Sí, ven-la: caixa negativa és fallida segura",
     "No passa res, la caixa no importa",
-    "Primer mira per què: no és el mateix invertir per créixer que no cobrar"
+    "Primer mira per què és negativa"
    ],
    "explanation": "Un FCF negatiu pot venir d'invertir molt (forns, botigues, fàbriques) o d'un negoci que no cobra. El primer pot ser bo; el segon és una alarma. Cal mirar el flux operatiu.",
    "feedback": [
@@ -607,7 +607,7 @@
    "options": [
     "Que el deute no importa si l'empresa guanya diners",
     "Que la B és millor: el seu ROE és més alt",
-    "Que el ROE de la B pot estar inflat pel deute i que en una crisi ho passarà pitjor"
+    "Que el deute pot inflar el ROE de la B"
    ],
    "explanation": "Mira el ROE juntament amb el deute: el deute infla la rendibilitat i el risc.",
    "feedback": [
@@ -633,8 +633,8 @@
   "u16l5-12": {
    "prompt": "Què li respons a la Lumi?",
    "options": [
-    "Al contrari: té més caixa que deute",
-    "Sí: deu moltíssim",
+    "Al revés: més caixa que deute",
+    "Sí: negativa vol dir que deu moltíssim",
     "No vol dir res"
    ],
    "explanation": "Deute net = deute financer − caixa. Si surt negatiu, l'empresa té caixa neta: és la situació més còmoda. Sona malament pel signe, però és una bona notícia.",
@@ -662,8 +662,8 @@
    "prompt": "En Bruno té accions d'una tecnològica que presenta resultats demà. Ha llegit que «seran boníssims» i vol triplicar la seva posició just abans. Què se li escapa?",
    "options": [
     "Que demà és festiu",
-    "Que el preu ja descompta el que s'espera i que pot obrir amb un buit en qualsevol direcció",
-    "Res: si són boníssims, puja"
+    "Que el preu ja descompta el que s'espera",
+    "Res: si són boníssims, l'acció puja segur"
    ],
    "explanation": "Abans dels resultats, el risc és més gran del que sembla: l'stop no et protegeix d'un buit.",
    "feedback": [
@@ -700,18 +700,18 @@
   "u16l6-10": {
    "prompt": "Què pot moure una acció el dia de resultats? Marca-ho tot.",
    "options": [
-    "Els marges respecte al que s'esperava",
-    "El color de la presentació",
+    "Una dada igual a la que tothom esperava",
+    "El benefici de fa cinc anys",
     "Les previsions per als pròxims trimestres",
     "El BPA respecte al consens"
    ],
-   "explanation": "Tot el que canvia el que el mercat espera del futur."
+   "explanation": "Mou el preu el que canvia les expectatives: el BPA respecte al consens, els marges i, sobretot, les previsions. El que ja se sabia o coincideix amb el que s'esperava ja és al preu."
   },
   "u16l6-11": {
    "prompt": "Què li respons a la Lumi?",
    "options": [
-    "Compra'n més avui: demà es dispararà",
-    "Si ja ho espera tothom, ja és al preu: compte amb el forat",
+    "Compra'n més avui: demà es dispararà amb els resultats",
+    "Si tothom ho espera, ja és al preu",
     "Posa un stop molt ajustat i llestos"
    ],
    "explanation": "El preu reacciona a la diferència amb el que s'esperava. Si tothom espera xifres espectaculars, només unes encara millors el faran pujar, i un forat pot saltar-se el teu stop.",
@@ -765,7 +765,7 @@
    "options": [
     "El flux de caixa lliure",
     "El deute net",
-    "Les fotos de les botigues",
+    "La llista completa d'oficines",
     "L'evolució de les vendes i del benefici"
    ],
    "explanation": "Creixement, caixa i deute: l'essencial en poc temps."
@@ -773,7 +773,7 @@
   "u16l7-11": {
    "prompt": "Dues empreses inventades anuncien un «benefici ajustat rècord». A A, l'ajustat i l'oficial gairebé coincideixen; a B, l'ajustat dobla l'oficial any rere any. De quina et fies més?",
    "options": [
-    "D'A: la xifra ajustada i l'oficial expliquen el mateix",
+    "D'A: les dues xifres expliquen el mateix",
     "De les dues igual: les dues tenen un rècord",
     "De B: el seu benefici ajustat és més alt"
    ],

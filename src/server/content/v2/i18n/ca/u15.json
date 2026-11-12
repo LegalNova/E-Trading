@@ -314,7 +314,7 @@
    "options": [
     "Un cupó fix",
     "Dividends de les mines",
-    "Res: ni interessos ni dividends"
+    "Res: no dona rendes"
    ],
    "explanation": "Només guanyes si un altre paga més demà. Per això no es pot valorar amb un PER."
   },
@@ -333,9 +333,9 @@
     "Baixades dels tipus d'interès reals",
     "Tipus reals molt alts i pujant",
     "Compres dels bancs centrals",
-    "Por als mercats"
+    "Borses en calma i pujant"
    ],
-   "explanation": "Amb tipus reals alts, un bo que paga competeix amb avantatge davant d'un actiu que no paga res."
+   "explanation": "A l'or el solen afavorir les baixades dels tipus reals, les compres dels bancs centrals i la por. Amb tipus reals alts o amb les borses tranquil·les i pujant, un actiu que no paga res perd atractiu."
   },
   "u15l1-11": {
    "prompt": "Has comprat or a l'últim preu. Encara que sigui un refugi, col·loca l'stop una mica per sota de l'últim mínim.",
@@ -350,13 +350,13 @@
   "u15l2-4": {
    "prompt": "Març del 2022: esclata la guerra a Ucraïna i el Brent es dispara. En Pablo vol comprar ja accions de petrolieres «perquè això només pot pujar». Què li dius?",
    "options": [
-    "Que vengui tot el que tingui a borsa",
+    "Que esperi un dia i compri si continua pujant",
     "Que en compri tant com pugui",
-    "Que el preu ja reflecteix la notícia i pot girar-se ràpid: que no decideixi per titulars"
+    "Que el preu ja reflecteix la notícia"
    ],
    "explanation": "Les matèries primeres reaccionen molt ràpid a la geopolítica: quan llegeixes el titular, el preu ja ha saltat.",
    "feedback": [
-    "Una notícia no justifica desfer tota una cartera.",
+    "Esperar un dia no canvia el fons: continuaria comprant per un titular i a prop del pic.",
     "Entrar en ple pic per eufòria és molt arriscat: el cru també baixa amb violència (2008).",
     "Bé: després del pic de març del 2022, el cru va baixar amb força els mesos següents."
    ]
@@ -365,8 +365,8 @@
    "prompt": "Què és l'OPEP+?",
    "options": [
     "Una petroliera estatal saudita",
-    "L'OPEP més altres productors com Rússia, que pacten quotes de producció",
-    "Un índex de preus del petroli"
+    "L'OPEP més altres productors, com Rússia",
+    "Un índex que mesura els preus del petroli"
    ],
    "explanation": "Des del 2016 coordina la producció d'una vintena de països."
   },
@@ -437,7 +437,7 @@
   "u15l3-8": {
    "prompt": "Una glaçada al Brasil amenaça la collita de cafè. La Marta té una cafeteria a València. Què és el més probable?",
    "options": [
-    "Que el cafè en gra s'encareixi i li pugin els costos",
+    "Que el cafè en gra se li encareixi",
     "Que el cafè en gra s'abarateixi",
     "Que no l'afecti perquè compra a un proveïdor espanyol"
    ],
@@ -453,10 +453,10 @@
    "options": [
     "Una guerra que bloqueja ports",
     "Una collita rècord",
-    "Plagues o malalties als conreus",
+    "Una caiguda de la demanda mundial",
     "Una sequera en un gran productor"
    ],
-   "explanation": "Una collita rècord augmenta l'oferta i sol fer baixar el preu."
+   "explanation": "Una sequera o una guerra redueixen l'oferta i fan pujar el preu, igual que una plaga. Una collita rècord o una caiguda de la demanda fan el contrari."
   },
   "u15l4-1": {
    "prompt": "Relaciona cada manera d'invertir amb la seva característica.",
@@ -477,9 +477,9 @@
   "u15l4-2": {
    "prompt": "Què és un ETC?",
    "options": [
-    "Un producte cotitzat que replica una matèria primera",
+    "Un cotitzat que replica una matèria primera",
     "Un fons d'empreses tecnològiques",
-    "Un compte d'estalvi en or del banc"
+    "Un compte d'estalvi en or que ofereix el banc"
    ],
    "explanation": "Cotitza a borsa com un ETF, però segueix una matèria primera."
   },
@@ -496,7 +496,7 @@
    "options": [
     "Un fons d'accions del sector energètic",
     "Un ETC sobre futurs del WTI",
-    "Futurs del WTI palanquejats des d'una app"
+    "Futurs del WTI palanquejats"
    ],
    "explanation": "Els futurs palanquejats no són per començar: es pot perdre molt de pressa.",
    "feedback": [
@@ -508,19 +508,19 @@
   "u15l4-9": {
    "prompt": "Quins inconvenients té l'or en lingots? Marca'ls tots.",
    "options": [
-    "La diferència entre el preu de compra i el de venda pot ser gran",
-    "Vendre'l ràpid pot costar més",
+    "La diferència entre compra i venda pot ser gran",
+    "Només es pot comprar a través del banc",
     "Paga un cupó anual",
     "L'has de guardar i assegurar"
    ],
-   "explanation": "L'or no paga res; i comprar-lo i vendre'l en físic té costos."
+   "explanation": "L'or físic l'has de guardar i assegurar, i entre el preu de compra i el de venda hi pot haver força diferència. No paga cap cupó i es compra a molts llocs, no només al banc."
   },
   "u15l4-10": {
    "prompt": "Què li contestes a la Lumi?",
    "options": [
-    "Això són CFD o futurs palanquejats: un 10 % en contra ho perd tot, i prometre guanys és mal senyal",
+    "Amb 1:10, un 10 % en contra ho perd tot",
     "Millor 1:100, que és més",
-    "Apunta-t'hi ja!"
+    "Apunta-t'hi ja! Un 300 % no es veu cada dia"
    ],
    "explanation": "Amb 1:10, un 10 % en contra et deixa a zero. Els CFD són instruments complexos i estan associats a un risc elevat de perdre diners ràpidament a causa del palanquejament. Entre un 74 i un 89 % dels inversors minoristes perden diners quan negocien amb CFD.",
    "feedback": [

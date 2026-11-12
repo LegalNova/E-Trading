@@ -314,7 +314,7 @@
    "options": [
     "A fixed coupon",
     "Dividends from the mines",
-    "Nothing: no interest and no dividends"
+    "Nothing: no income"
    ],
    "explanation": "You only make money if someone pays more tomorrow. That's why you can't value it with a P/E ratio."
   },
@@ -333,9 +333,9 @@
     "Falling real interest rates",
     "Very high and rising real rates",
     "Central bank buying",
-    "Fear in the markets"
+    "Calm, rising stock markets"
    ],
-   "explanation": "With high real rates, a bond that pays something has the edge over an asset that pays nothing."
+   "explanation": "Gold tends to benefit from falling real rates, central bank buying and fear. With high real rates or calm, rising stock markets, an asset that pays nothing loses its appeal."
   },
   "u15l1-11": {
    "prompt": "You've bought gold at the last price. Even though it's a safe haven, place the stop a little below the last low.",
@@ -350,13 +350,13 @@
   "u15l2-4": {
    "prompt": "March 2022: war breaks out in Ukraine and Brent soars. Pablo wants to buy oil company shares right now \"because this can only go up\". What do you tell him?",
    "options": [
-    "To sell everything he has in the stock market",
+    "To wait a day and then buy if it keeps rising",
     "To buy as much as he can",
-    "That the price already reflects the news and can turn quickly: he shouldn't decide based on headlines"
+    "That the price already reflects the news"
    ],
    "explanation": "Commodities react very fast to geopolitics: by the time you read the headline, the price has already jumped.",
    "feedback": [
-    "One piece of news doesn't justify dismantling a whole portfolio.",
+    "Waiting a day doesn't change the point: he'd still be buying on a headline, close to the peak.",
     "Buying right at the peak out of euphoria is very risky: crude falls violently too (2008).",
     "Good: after the March 2022 peak, crude fell sharply over the following months."
    ]
@@ -365,8 +365,8 @@
    "prompt": "What is OPEC+?",
    "options": [
     "A Saudi state-owned oil company",
-    "OPEC plus other producers such as Russia, who agree production quotas",
-    "An oil price index"
+    "OPEC plus other producers, such as Russia",
+    "An index that tracks oil prices around the world"
    ],
    "explanation": "Since 2016 it has coordinated production across around twenty countries."
   },
@@ -389,7 +389,7 @@
   "u15l2-10": {
    "prompt": "Why does a strong euro make oil cheaper for Spain?",
    "options": [
-    "Because crude is paid for in dollars",
+    "Because crude is priced in dollars",
     "Because OPEC charges in euros",
     "Because Spain produces a lot of oil"
    ],
@@ -437,7 +437,7 @@
   "u15l3-8": {
    "prompt": "A frost in Brazil threatens the coffee harvest. Marta runs a café in Valencia. What's most likely?",
    "options": [
-    "Coffee beans get more expensive and her costs go up",
+    "Coffee beans cost her more",
     "Coffee beans get cheaper",
     "It won't affect her because she buys from a Spanish supplier"
    ],
@@ -453,10 +453,10 @@
    "options": [
     "A war that blockades ports",
     "A record harvest",
-    "Pests or crop diseases",
+    "A fall in world demand",
     "A drought in a big producer"
    ],
-   "explanation": "A record harvest increases supply and usually lowers the price."
+   "explanation": "A drought or a war reduces supply and pushes the price up, as does a pest. A record harvest or a fall in demand does the opposite."
   },
   "u15l4-1": {
    "prompt": "Match each way of investing with its feature.",
@@ -477,9 +477,9 @@
   "u15l4-2": {
    "prompt": "What is an ETC?",
    "options": [
-    "A listed product that tracks a commodity",
+    "A listed product tracking a commodity",
     "A fund of tech companies",
-    "A bank gold savings account"
+    "A gold savings account offered by the bank"
    ],
    "explanation": "It trades on an exchange like an ETF, but tracks a commodity."
   },
@@ -496,7 +496,7 @@
    "options": [
     "An energy sector equity fund",
     "An ETC on WTI futures",
-    "Leveraged WTI futures from an app"
+    "Leveraged WTI futures"
    ],
    "explanation": "Leveraged futures aren't for beginners: you can lose money very fast.",
    "feedback": [
@@ -508,19 +508,19 @@
   "u15l4-9": {
    "prompt": "What are the drawbacks of gold bars? Select all that apply.",
    "options": [
-    "The gap between buying and selling price can be large",
-    "Selling quickly can cost more",
+    "The gap between buying and selling can be large",
+    "It can only be bought through a bank",
     "It pays an annual coupon",
     "You have to store and insure it"
    ],
-   "explanation": "Gold pays nothing; and buying and selling it physically has costs."
+   "explanation": "Physical gold has to be stored and insured, and there can be quite a gap between the buying and selling price. It pays no coupon and can be bought in many places, not only at a bank."
   },
   "u15l4-10": {
    "prompt": "What do you say to Lumi?",
    "options": [
-    "That's CFDs or leveraged futures: a 10 % move against you wipes out everything, and promising profits is a bad sign",
+    "With 1:10, a 10 % move against you loses it all",
     "Even better 1:100, that's more",
-    "Sign up now!"
+    "Sign up now! You don't see a 300 % return every day"
    ],
    "explanation": "At 1:10, a 10 % move against you takes you to zero. CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. Between 74 and 89 % of retail investor accounts lose money when trading CFDs.",
    "feedback": [

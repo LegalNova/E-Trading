@@ -370,7 +370,7 @@
    "options": [
     "Both the same: they sell the same",
     "Zancada: it sells the same",
-    "Ritmo: with a bigger margin, it can absorb the rise in costs"
+    "Ritmo: it has more margin"
    ],
    "explanation": "With the same sales, the margin tells you how much cushion there is before losing money. The temptation is to look only at sales, and there they're equal.",
    "feedback": [
@@ -399,7 +399,7 @@
    "prompt": "What do you reply to Lumi?",
    "options": [
     "That it's impossible: if it sells twice as much, it earns twice as much",
-    "That its costs have grown faster than its sales",
+    "That its costs have grown more than its sales",
     "That sales don't matter at all"
    ],
    "explanation": "Profit is what's left after taking away all the costs. If they grow faster than sales, the margin shrinks and profit can fall even if sales double.",
@@ -443,8 +443,8 @@
    "prompt": "Short-term assets of €250m and short-term debts of €300m. What does it indicate?",
    "options": [
     "Nothing relevant",
-    "It could struggle to pay what falls due soon",
-    "That it's very solvent"
+    "It may struggle to pay what's due soon",
+    "That it's very solvent: it has €250m in assets"
    ],
    "explanation": "What falls due within the year is more than what it can turn into money within the year."
   },
@@ -474,8 +474,8 @@
    "prompt": "Two made-up companies trade at €20 a share. According to their balance sheets, A has €10 of equity per share and B, €2. Which one are you paying more for relative to what it has on its books?",
    "options": [
     "Both the same: they cost €20",
-    "B: you pay 10 times its book value",
-    "A: it has more equity"
+    "B: 10 times its book value",
+    "A: it has more equity for the same price"
    ],
    "explanation": "With A you pay twice what it has on its books; with B, ten times. That doesn't mean B is worse (a brand or a piece of software can be worth more than the balance sheet says), but you should know what you're paying for."
   },
@@ -525,8 +525,8 @@
    "prompt": "A retail chain has negative FCF this year because it has opened 200 shops, but its operating cash flow is high and growing. How do you read it?",
    "options": [
     "It doesn't matter, cash isn't important",
-    "Alarm: it's about to go bust",
-    "It may be reasonable: it's investing to grow, as long as the new shops end up paying off"
+    "Alarm: with negative cash it's about to go bust",
+    "It may be reasonable: it's investing to grow"
    ],
    "explanation": "Negative FCF from heavy investment isn't the same as a business that doesn't get paid.",
    "feedback": [
@@ -538,18 +538,18 @@
   "u16l4-10": {
    "prompt": "What can a company do with its free cash flow? Select all that apply.",
    "options": [
-    "Reduce debt",
+    "Erase previous years' losses",
     "Count it as next year's sales",
     "Buy back shares",
     "Pay dividends"
    ],
-   "explanation": "FCF is money available; it isn't a sale."
+   "explanation": "With FCF it can pay dividends, buy back shares or reduce debt. It's money available: it isn't a sale and it doesn't change previous years' accounts."
   },
   "u16l4-11": {
    "prompt": "RapiBox and LlegaYa, two made-up delivery apps, each earn €50m this year. RapiBox has been paid almost everything and its cash has grown; LlegaYa's cash is negative because its customers owe it more and more. Whose profit do you trust more?",
    "options": [
     "LlegaYa's: it earns the same",
-    "RapiBox's: its profit shows up in its cash",
+    "RapiBox's: it shows in its cash",
     "Both equally: the profit is the same"
    ],
    "explanation": "When profit turns into cash, it's more reliable. If what customers owe keeps growing, it may never get paid.",
@@ -564,7 +564,7 @@
    "options": [
     "Yes, sell it: negative cash means certain bankruptcy",
     "It's fine, cash doesn't matter",
-    "First look at why: investing to grow isn't the same as not getting paid"
+    "First look at why it's negative"
    ],
    "explanation": "Negative FCF can come from investing heavily (ovens, shops, factories) or from a business that doesn't get paid. The first can be good; the second is a red flag. Look at operating cash flow.",
    "feedback": [
@@ -607,7 +607,7 @@
    "options": [
     "That debt doesn't matter if the company makes money",
     "That B is better: its ROE is higher",
-    "That B's ROE may be inflated by debt and that it will fare worse in a crisis"
+    "That debt may be inflating B's ROE"
    ],
    "explanation": "Look at ROE alongside debt: debt inflates both returns and risk.",
    "feedback": [
@@ -633,8 +633,8 @@
   "u16l5-12": {
    "prompt": "What do you reply to Lumi?",
    "options": [
-    "Quite the opposite: it has more cash than debt",
-    "Yes: it owes a fortune",
+    "The opposite: more cash than debt",
+    "Yes: negative means it owes a fortune",
     "It doesn't mean anything"
    ],
    "explanation": "Net debt = financial debt − cash. If it comes out negative, the company has net cash: the most comfortable position. The minus sign sounds bad, but it's good news.",
@@ -662,8 +662,8 @@
    "prompt": "Bruno owns shares in a tech company that reports results tomorrow. He's read they'll be \"amazing\" and wants to triple his position just beforehand. What is he missing?",
    "options": [
     "That tomorrow is a bank holiday",
-    "That the price already reflects what's expected and it can open with a gap in either direction",
-    "Nothing: if they're amazing, it'll go up"
+    "That the price already reflects what's expected",
+    "Nothing: if they're amazing, the share is sure to go up"
    ],
    "explanation": "Before results, the risk is bigger than it looks: a stop doesn't protect you from a gap.",
    "feedback": [
@@ -700,18 +700,18 @@
   "u16l6-10": {
    "prompt": "What can move a share on results day? Select all that apply.",
    "options": [
-    "Margins compared with expectations",
-    "The colour of the presentation",
+    "A figure exactly as everyone expected",
+    "The profit from five years ago",
     "The forecasts for the coming quarters",
     "EPS compared with the consensus"
    ],
-   "explanation": "Anything that changes what the market expects of the future."
+   "explanation": "What moves the price is whatever changes expectations: EPS against the consensus, margins and, above all, the forecasts. What was already known or matches expectations is already in the price."
   },
   "u16l6-11": {
    "prompt": "What do you reply to Lumi?",
    "options": [
-    "Buy more today: tomorrow it'll shoot up",
-    "If everyone already expects it, it's already in the price: watch out for a gap",
+    "Buy more today: tomorrow it'll shoot up on the results",
+    "If everyone expects it, it's already in the price",
     "Put a very tight stop on it and that's that"
    ],
    "explanation": "The price reacts to the difference from what was expected. If everyone expects spectacular figures, only even better ones will push it up, and a gap can jump right over your stop.",
@@ -765,7 +765,7 @@
    "options": [
     "Free cash flow",
     "Net debt",
-    "The photos of the shops",
+    "The full list of offices",
     "How sales and profit have developed"
    ],
    "explanation": "Growth, cash and debt: the essentials in little time."
@@ -773,7 +773,7 @@
   "u16l7-11": {
    "prompt": "Two made-up companies announce «record adjusted profit». At A, the adjusted and official figures almost match; at B, the adjusted figure is double the official one year after year. Which one do you trust more?",
    "options": [
-    "A: its adjusted and official figures tell the same story",
+    "A: both figures tell the same story",
     "Both equally: they both have a record",
     "B: its adjusted profit is higher"
    ],

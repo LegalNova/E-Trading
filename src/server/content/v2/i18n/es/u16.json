@@ -370,7 +370,7 @@
    "options": [
     "Las dos igual: venden lo mismo",
     "Zancada: vende lo mismo",
-    "Ritmo: con más margen, le cabe la subida de costes"
+    "Ritmo: tiene más margen"
    ],
    "explanation": "Con las mismas ventas, el margen dice cuánto colchón hay antes de perder dinero. La tentación es mirar solo las ventas, y ahí son iguales.",
    "feedback": [
@@ -399,7 +399,7 @@
    "prompt": "¿Qué le contestas a Ana?",
    "options": [
     "Que es imposible: si vende el doble, gana el doble",
-    "Que sus costes han crecido más deprisa que sus ventas",
+    "Que sus costes han crecido más que sus ventas",
     "Que las ventas no importan nada"
    ],
    "explanation": "El beneficio es lo que queda tras restar todos los costes. Si crecen más deprisa que las ventas, el margen se encoge y el beneficio puede bajar aunque se venda el doble.",
@@ -443,8 +443,8 @@
    "prompt": "Activos a corto de 250 M€ y deudas a corto de 300 M€. ¿Qué indica?",
    "options": [
     "Nada relevante",
-    "Podría tener problemas para pagar lo que vence pronto",
-    "Que es muy solvente"
+    "Puede costarle pagar lo que vence pronto",
+    "Que es muy solvente: tiene 250 M€ en activos"
    ],
    "explanation": "Lo que vence en el año supera a lo que puede convertir en dinero en el año."
   },
@@ -474,8 +474,8 @@
    "prompt": "Dos empresas inventadas cotizan a 20 € por acción. Según su balance, A tiene 10 € de patrimonio neto por acción y B, 2 €. ¿Por cuál pagas más en relación con lo que tiene en libros?",
    "options": [
     "Por las dos igual: cuestan 20 €",
-    "Por B: pagas 10 veces su valor contable",
-    "Por A: tiene más patrimonio"
+    "Por B: 10 veces su valor contable",
+    "Por A: tiene más patrimonio y cuesta lo mismo"
    ],
    "explanation": "En A pagas el doble de lo que tiene en libros; en B, diez veces. No significa que B sea peor (una marca o un programa pueden valer más de lo que dice el balance), pero conviene saber qué pagas."
   },
@@ -525,8 +525,8 @@
    "prompt": "Una cadena de tiendas tiene FCF negativo este año porque ha abierto 200 tiendas, pero su flujo operativo es alto y creciente. ¿Cómo lo interpretas?",
    "options": [
     "Da igual, la caja no importa",
-    "Alarma: está a punto de quebrar",
-    "Puede ser razonable: invierte para crecer, siempre que las tiendas nuevas acaben rindiendo"
+    "Alarma: con caja negativa está a punto de quebrar",
+    "Puede ser razonable: invierte para crecer"
    ],
    "explanation": "Un FCF negativo por invertir mucho no es lo mismo que un negocio que no cobra.",
    "feedback": [
@@ -538,18 +538,18 @@
   "u16l4-10": {
    "prompt": "¿Qué puede hacer una empresa con su flujo de caja libre? Marca todas.",
    "options": [
-    "Reducir deuda",
+    "Borrar las pérdidas de años anteriores",
     "Contarlo como ventas del año siguiente",
     "Recomprar acciones",
     "Pagar dividendos"
    ],
-   "explanation": "El FCF es dinero disponible; no es una venta."
+   "explanation": "Con el FCF puede pagar dividendos, recomprar acciones o reducir deuda. Es dinero disponible: no es una venta ni cambia las cuentas de años anteriores."
   },
   "u16l4-11": {
    "prompt": "RapiBox y LlegaYa, dos apps de reparto inventadas, ganan 50 M€ cada una este año. RapiBox ha cobrado casi todo y su caja ha crecido; LlegaYa tiene la caja en negativo porque sus clientes le deben cada vez más. ¿De qué beneficio te fías más?",
    "options": [
     "Del de LlegaYa: gana lo mismo",
-    "Del de RapiBox: su beneficio se ve en la caja",
+    "Del de RapiBox: se ve en la caja",
     "De los dos igual: el beneficio es el mismo"
    ],
    "explanation": "Cuando el beneficio se convierte en caja, es más fiable. Si lo que le deben los clientes no para de crecer, quizá nunca llegue a cobrarlo.",
@@ -564,7 +564,7 @@
    "options": [
     "Sí, véndela: caja negativa es quiebra segura",
     "No pasa nada, la caja no importa",
-    "Primero mira por qué: no es lo mismo invertir para crecer que no cobrar"
+    "Primero mira por qué es negativa"
    ],
    "explanation": "Un FCF negativo puede venir de invertir mucho (hornos, tiendas, fábricas) o de un negocio que no cobra. Lo primero puede ser bueno; lo segundo es una alarma. Hay que mirar el flujo operativo.",
    "feedback": [
@@ -607,7 +607,7 @@
    "options": [
     "Que la deuda da igual si la empresa gana dinero",
     "Que B es mejor: su ROE es mayor",
-    "Que el ROE de B puede estar inflado por la deuda y que en una crisis lo pasará peor"
+    "Que la deuda puede inflar el ROE de B"
    ],
    "explanation": "Mira el ROE junto a la deuda: la deuda infla la rentabilidad y el riesgo.",
    "feedback": [
@@ -633,8 +633,8 @@
   "u16l5-12": {
    "prompt": "¿Qué le contestas a Paula?",
    "options": [
-    "Al contrario: tiene más caja que deuda",
-    "Sí: debe muchísimo",
+    "Al revés: más caja que deuda",
+    "Sí: negativa quiere decir que debe muchísimo",
     "No significa nada"
    ],
    "explanation": "Deuda neta = deuda financiera − caja. Si sale negativa, la empresa tiene caja neta: es la situación más cómoda. Suena mal por el signo, pero es buena noticia.",
@@ -662,8 +662,8 @@
    "prompt": "Bruno tiene acciones de una tecnológica que presenta resultados mañana. Ha leído que «serán buenísimos» y quiere triplicar su posición justo antes. ¿Qué se le escapa?",
    "options": [
     "Que mañana es festivo",
-    "Que el precio ya descuenta lo esperado y que puede abrir con un hueco en cualquier dirección",
-    "Nada: si son buenísimos, sube"
+    "Que el precio ya descuenta lo esperado",
+    "Nada: si son buenísimos, la acción sube seguro"
    ],
    "explanation": "Antes de resultados, el riesgo es mayor de lo que parece: el stop no te protege de un hueco.",
    "feedback": [
@@ -700,18 +700,18 @@
   "u16l6-10": {
    "prompt": "¿Qué puede mover una acción el día de resultados? Marca todas.",
    "options": [
-    "Los márgenes frente a lo esperado",
-    "El color de la presentación",
+    "Un dato igual al que todos esperaban",
+    "El beneficio de hace cinco años",
     "Las previsiones para los próximos trimestres",
     "El BPA frente al consenso"
    ],
-   "explanation": "Todo lo que cambia lo que el mercado espera del futuro."
+   "explanation": "Mueve el precio lo que cambia las expectativas: el BPA frente al consenso, los márgenes y, sobre todo, las previsiones. Lo que ya se sabía o coincide con lo esperado ya está en el precio."
   },
   "u16l6-11": {
    "prompt": "¿Qué le contestas a Paula?",
    "options": [
-    "Compra más hoy: mañana se disparará",
-    "Si ya lo espera todo el mundo, ya está en el precio: ojo con el hueco",
+    "Compra más hoy: mañana se disparará con los resultados",
+    "Si todos lo esperan, ya está en el precio",
     "Pon un stop muy ajustado y listo"
    ],
    "explanation": "El precio reacciona a la diferencia con lo esperado. Si todos esperan cifras espectaculares, solo unas aún mejores lo harán subir, y un hueco puede saltarse tu stop.",
@@ -765,7 +765,7 @@
    "options": [
     "El flujo de caja libre",
     "La deuda neta",
-    "Las fotos de las tiendas",
+    "La lista completa de oficinas",
     "La evolución de ventas y beneficio"
    ],
    "explanation": "Crecimiento, caja y deuda: lo esencial en poco tiempo."
@@ -773,7 +773,7 @@
   "u16l7-11": {
    "prompt": "Dos empresas inventadas anuncian un «beneficio ajustado récord». En A, el ajustado y el oficial casi coinciden; en B, el ajustado dobla al oficial año tras año. ¿De cuál te fías más?",
    "options": [
-    "De A: su cifra ajustada y la oficial cuentan lo mismo",
+    "De A: las dos cifras cuentan lo mismo",
     "De las dos igual: las dos tienen un récord",
     "De B: su beneficio ajustado es mayor"
    ],
