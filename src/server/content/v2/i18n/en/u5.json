@@ -345,7 +345,7 @@
   "u5l1-1": {
    "prompt": "What is a stock exchange?",
    "options": [
-    "A regulated market where buy and sell orders for securities are matched",
+    "A market where buy and sell orders are matched",
     "A bank that looks after your savings",
     "A company that sells you its own shares every day"
    ],
@@ -427,9 +427,9 @@
   "u5l2-2": {
    "prompt": "How does a market maker make money?",
    "options": [
-    "From company dividends",
+    "From the dividends of the companies it trades",
     "By charging the CNMV a fee",
-    "From the difference between its buying and selling prices"
+    "From the gap between buying and selling"
    ],
    "explanation": "It buys a little cheaper than it sells: that difference is its margin."
   },
@@ -461,10 +461,10 @@
    "options": [
     "Doesn't need to make money every quarter",
     "Gets information before anyone else",
-    "Can keep costs very low",
+    "Trades faster than the algorithms",
     "Can wait for years without answering to anyone"
    ],
-   "explanation": "Information and speed aren't on their side; patience and costs are."
+   "explanation": "Information and speed aren't on their side. Patience is: they don't answer to anyone each quarter and can wait for years. And they can keep costs very low too."
   },
   "u5l2-9": {
    "prompt": "Every time you buy a share, another investor ____ it.",
@@ -540,7 +540,7 @@
    "options": [
     "Decides which companies get listed",
     "Guarantees that your investments go up",
-    "Receives your order and takes it to the market"
+    "Takes your order to the market"
    ],
    "explanation": "It's the intermediary between you and the market."
   },
@@ -594,7 +594,7 @@
    "prompt": "Pablo has €60,000 with a broker based in another EU country and assumes he's covered by Spain's FOGAIN. What does he do?",
    "options": [
     "Nothing: all guarantee funds are the same",
-    "Checks which guarantee fund applies to him and how much it covers",
+    "Checks which guarantee fund covers him",
     "Takes it all out and keeps it at home"
    ],
    "explanation": "The protection depends on the firm's country: check before opening an account.",
@@ -624,7 +624,7 @@
    "prompt": "Today you buy Inditex shares on the stock market. Who gets your money?",
    "options": [
     "The investor selling them to you",
-    "Inditex",
+    "Inditex, the company that owns the shares",
     "The CNMV"
    ],
    "explanation": "It's the secondary market: Inditex gets nothing from that purchase."
@@ -640,7 +640,7 @@
   "u5l6-6": {
    "prompt": "Which document should you read before taking part in a listing?",
    "options": [
-    "Comments on social media",
+    "The comments about it on social media",
     "An influencer's summary",
     "The prospectus approved by the CNMV"
    ],
@@ -704,9 +704,9 @@
   "u5l7-8": {
    "prompt": "Pablo wants to put almost all his savings into a BME Growth company because «it could multiply». What does he bear in mind?",
    "options": [
-    "That they tend to be smaller, less liquid and riskier",
+    "That they tend to be small and illiquid",
     "That BME Growth guarantees the investment",
-    "That it's as liquid as an IBEX company"
+    "That it's just as liquid as an IBEX company"
    ],
    "explanation": "Small company: more potential, but also more risk and less liquidity.",
    "feedback": [
@@ -718,8 +718,8 @@
   "u5l7-9": {
    "prompt": "How does the IBEX 35 weight its companies?",
    "options": [
-    "By market capitalisation, counting freely traded shares",
-    "They all weigh the same",
+    "By market capitalisation",
+    "They all weigh exactly the same",
     "By number of employees"
    ],
    "explanation": "The biggest companies by market value carry more weight in the index."
@@ -727,7 +727,7 @@
   "u5l2-11": {
    "prompt": "Leo invests €50 a month in an index fund. A friend tells him he'll never beat the professionals that way and should trade every day. What does he do?",
    "options": [
-    "Sticks to his plan: his edge is time and low costs",
+    "Sticks to his plan: he has time and low costs",
     "Stops investing: the stock market is only for professionals",
     "Starts trading every day to beat them"
    ],
@@ -742,7 +742,7 @@
    "prompt": "Leo works from 9:00 to 18:00 and wants to buy Microsoft shares while the New York Stock Exchange is open. When can he do it on a normal day?",
    "options": [
     "At midnight, in peace",
-    "At lunchtime, at 14:00",
+    "At lunchtime, at around 14:00",
     "After work, before 22:00"
    ],
    "explanation": "New York opens in the afternoon Spanish time, from 15:30 to 22:00. Buying outside those hours is tempting because it's convenient, but the order waits for the open and may fill at a different price.",
@@ -756,7 +756,7 @@
    "prompt": "A company announces its stock market listing. The prospectus says all the shares on offer belong to its founders, who are selling part of their stake. What does that mean?",
    "options": [
     "It's an OPS: the company gets money to grow",
-    "It's an OPV: the money goes to the founders, not the company",
+    "It's an OPV: the money goes to the founders",
     "It's a good sign: if they're listing, it must be doing great"
    ],
    "explanation": "If no new shares are issued, it's an OPV and the company gets nothing. The temptation is to read it as a good sign, but whoever sells picks the moment that suits them.",

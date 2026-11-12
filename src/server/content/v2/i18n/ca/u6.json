@@ -268,15 +268,15 @@
     "Amb ordres grans en valors poc líquids",
     "Amb una ordre petita en una gran empresa a mitja sessió",
     "En moments de pànic, amb el preu movent-se molt de pressa",
-    "A l'obertura, després d'una notícia"
+    "Amb una ordre limitada que fixa el teu preu"
    ],
-   "explanation": "El lliscament apareix quan falta liquiditat o el preu corre."
+   "explanation": "El lliscament apareix quan falta liquiditat o el preu corre: ordres grans en valors poc líquids, moments de pànic, obertures després d'una notícia. Una limitada fixa el teu preu."
   },
   "u6l2-10": {
    "prompt": "La Marta vol comprar 3.000 € d'una empresa petita amb un spread d'un 1 %. Què fa?",
    "options": [
     "Compra a mercat i ven tan bon punt guanyi una mica",
-    "Fa servir una ordre limitada i evita operar sovint amb aquest valor",
+    "Fa servir una ordre limitada i opera poc amb aquest valor",
     "Compra i ven diverses vegades al dia per aprofitar els moviments"
    ],
    "explanation": "En valors amb un spread alt, operar molt és perdre diners segur.",
@@ -290,7 +290,7 @@
    "prompt": "Vols comprar, però només si el preu baixa a 45 €. Quina ordre fas servir?",
    "options": [
     "Take profit a 45 €",
-    "A mercat",
+    "A mercat, quan baixi a 45 €",
     "Limitada de compra a 45 €"
    ],
    "explanation": "La limitada només s'executa a 45 € o menys."
@@ -310,7 +310,7 @@
    "options": [
     "Limitada de compra a 8,45 €",
     "Compra a mercat",
-    "Limitada de compra a 9,50 €"
+    "Limitada de compra a 9,50 €, per assegurar"
    ],
    "explanation": "Un límit útil és a prop del preu que de debò vols pagar.",
    "feedback": [
@@ -343,9 +343,9 @@
   "u6l4-6": {
    "prompt": "On té més lògica un stop loss?",
    "options": [
-    "A pocs cèntims del preu de compra",
+    "A pocs cèntims del preu de compra, per perdre poc",
     "En un nombre rodó qualsevol",
-    "Una mica per sota de l'últim mínim rellevant"
+    "Una mica per sota de l'últim mínim"
    ],
    "explanation": "Allà la teva idea deixa de ser vàlida; molt a prop, el soroll normal et fa sortir sense motiu."
   },
@@ -379,11 +379,11 @@
    "prompt": "Què fa un take profit? Marca-les totes.",
    "options": [
     "Garanteix vendre al màxim",
-    "Evita que l'avarícia decideixi per tu",
+    "Et protegeix si el preu cau",
     "Assegura el guany si s'arriba a l'objectiu",
     "Ven sense que estiguis mirant"
    ],
-   "explanation": "Ningú no ven sempre al màxim; el take profit ven al teu objectiu."
+   "explanation": "El take profit ven sol, sense que estiguis mirant, i assegura el guany si s'arriba a l'objectiu. No garanteix vendre al màxim, i de les caigudes et protegeix l'stop, no pas ell."
   },
   "u6l6-1": {
    "prompt": "Munta la teva OCO. Primer, col·loca l'stop loss.",
@@ -410,7 +410,7 @@
    "prompt": "En Bruno mantindrà unes accions el dia que l'empresa presenta resultats i sap que hi pot haver un buit. Què fa?",
    "options": [
     "Confia que l'stop el protegeix segur",
-    "Redueix la mida perquè un buit del 15 % no li faci gaire mal",
+    "Redueix la mida de la posició",
     "Duplica la posició perquè té stop"
    ],
    "explanation": "Contra els buits, la millor defensa és la mida de la posició.",
@@ -456,8 +456,8 @@
    "prompt": "Què li contestes a la Lumi?",
    "options": [
     "Només pagues si perds diners",
-    "No: cada compra i venda paga la forquilla, i com més operes, més pagues",
-    "Exacte: sense comissions, operar no costa res"
+    "No: cada compra i cada venda paga la forquilla",
+    "Exacte: si el bròquer no cobra comissió, operar no costa res"
    ],
    "explanation": "«0 comissions» no és gratis: l'spread i el lliscament es paguen sempre, i es multipliquen amb cada operació.",
    "feedback": [
@@ -473,7 +473,7 @@
    "prompt": "Què li contestes a la Lumi?",
    "options": [
     "Millor no posar objectiu i vendre a ull",
-    "Millor a prop del màxim anterior, on sol aparèixer venda",
+    "Millor a prop del màxim anterior",
     "Bona idea: com més lluny, més guanyes"
    ],
    "explanation": "L'objectiu llunyà sembla que guanya més, però si no es toca no guanya res. A prop del màxim anterior sol aparèixer venda, i allà l'objectiu té opcions reals.",
@@ -491,7 +491,7 @@
    "options": [
     "No es ven",
     "A 30 €, com marca l'stop",
-    "Cap a 27 €: el primer preu que hi hagi"
+    "Cap a 27 €"
    ],
    "feedback": [
     "Un stop a mercat s'executa sempre que hi hagi compradors.",
@@ -526,9 +526,9 @@
   "u6l5-13": {
    "prompt": "El teu take profit és a 36 €, amb validesa «del dia». El preu puja fins a 35,90 € i la sessió tanca. Què passa?",
    "options": [
-    "Es ven demà a 36 €",
+    "Es ven demà, quan toqui 36 €",
     "Es ven a 35,90 €",
-    "No es ven, i l'ordre caduca"
+    "No es ven i caduca"
    ],
    "explanation": "Una limitada de venda només s'executa al seu preu o millor. I si era del dia, demà ja no hi és."
   },

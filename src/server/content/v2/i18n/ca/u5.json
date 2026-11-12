@@ -345,7 +345,7 @@
   "u5l1-1": {
    "prompt": "Què és una borsa?",
    "options": [
-    "Un mercat regulat on s'encreuen ordres de compra i venda de valors",
+    "Un mercat on s'encreuen ordres de compra i venda",
     "Un banc que guarda els teus estalvis",
     "Una empresa que et ven les seves pròpies accions cada dia"
    ],
@@ -427,9 +427,9 @@
   "u5l2-2": {
    "prompt": "Com guanya diners un creador de mercat?",
    "options": [
-    "Amb els dividends de les empreses",
+    "Amb els dividends de les empreses que negocia",
     "Cobrant una quota a la CNMV",
-    "Amb la diferència entre el seu preu de compra i el de venda"
+    "Amb la diferència entre compra i venda"
    ],
    "explanation": "Compra una mica més barat del que ven: aquesta diferència és el seu marge."
   },
@@ -461,10 +461,10 @@
    "options": [
     "No necessita guanyar cada trimestre",
     "Té la informació abans que ningú",
-    "Pot mantenir costos molt baixos",
+    "Opera més de pressa que els algoritmes",
     "Pot esperar anys sense retre comptes a ningú"
    ],
-   "explanation": "La informació i la velocitat no són del seu costat; la paciència i els costos, sí."
+   "explanation": "La informació i la velocitat no són del seu costat. La paciència sí: no ret comptes cada trimestre i pot esperar anys. I a més pot mantenir costos molt baixos."
   },
   "u5l2-9": {
    "prompt": "Cada vegada que compres una acció, un altre inversor te la ____.",
@@ -540,7 +540,7 @@
    "options": [
     "Decideix quines empreses cotitzen",
     "Garanteix que les teves inversions pugin",
-    "Rep la teva ordre i la porta al mercat"
+    "Porta la teva ordre al mercat"
    ],
    "explanation": "És l'intermediari entre tu i el mercat."
   },
@@ -593,8 +593,8 @@
   "u5l5-10": {
    "prompt": "En Pablo té 60.000 € en un bròquer amb seu en un altre país de la UE i dona per fet que el cobreix el FOGAIN espanyol. Què fa?",
    "options": [
-    "Res: tots els fons de garantia són iguals",
-    "Comprova quin fons de garantia li correspon i fins a quant cobreix",
+    "Res: tots els fons de garantia són iguals a tot arreu",
+    "Comprova quin fons de garantia el cobreix",
     "Ho treu tot i ho guarda a casa"
    ],
    "explanation": "La protecció depèn del país de l'entitat: comprova-ho abans d'obrir un compte.",
@@ -624,7 +624,7 @@
    "prompt": "Avui compres accions d'Inditex a borsa. Qui rep els teus diners?",
    "options": [
     "L'inversor que te les ven",
-    "Inditex",
+    "Inditex, que és la propietària de les accions",
     "La CNMV"
    ],
    "explanation": "És mercat secundari: Inditex no rep res d'aquesta compra."
@@ -704,7 +704,7 @@
   "u5l7-8": {
    "prompt": "En Pablo vol posar gairebé tots els seus estalvis en una empresa de BME Growth perquè «es pot multiplicar». Què té en compte?",
    "options": [
-    "Que solen ser més petites, menys líquides i amb més risc",
+    "Que solen ser petites i poc líquides",
     "Que BME Growth garanteix la inversió",
     "Que té la mateixa liquiditat que una de l'IBEX"
    ],
@@ -718,8 +718,8 @@
   "u5l7-9": {
    "prompt": "Com pondera l'IBEX 35 les seves empreses?",
    "options": [
-    "Per capitalització, comptant les accions que es negocien lliurement",
-    "Totes pesen el mateix",
+    "Per capitalització",
+    "Totes pesen exactament el mateix",
     "Per nombre d'empleats"
    ],
    "explanation": "Les més grans en borsa pesen més a l'índex."
@@ -727,7 +727,7 @@
   "u5l2-11": {
    "prompt": "En Leo inverteix 50 € al mes en un fons indexat. Un amic li diu que així mai no guanyarà els professionals i que hauria d'operar cada dia. Què fa?",
    "options": [
-    "Continua amb el seu pla: el seu avantatge és el temps i els costos baixos",
+    "Continua amb el seu pla: té temps i costos baixos",
     "Deixa d'invertir: la borsa és només per a professionals",
     "Comença a operar cada dia per guanyar-los"
    ],
@@ -742,8 +742,8 @@
    "prompt": "En Leo treballa de 9:00 a 18:00 i vol comprar accions de Microsoft amb la borsa de Nova York oberta. Quan ho pot fer un dia normal?",
    "options": [
     "A mitjanit, amb calma",
-    "A l'hora de dinar, a les 14:00",
-    "En sortir de la feina, abans de les 22:00"
+    "A l'hora de dinar, cap a les 14:00",
+    "En sortir, abans de les 22:00"
    ],
    "explanation": "Nova York obre a la tarda a Espanya, de 15:30 a 22:00. Comprar fora d'aquest horari és temptador per comoditat, però l'ordre espera a l'obertura i pot sortir a un altre preu.",
    "feedback": [
@@ -756,7 +756,7 @@
    "prompt": "Una empresa anuncia la seva sortida a borsa. El fullet diu que totes les accions que s'ofereixen són dels fundadors, que venen part del que tenen. Què vol dir?",
    "options": [
     "És una OPS: l'empresa rep diners per créixer",
-    "És una OPV: els diners van als fundadors, no a l'empresa",
+    "És una OPV: els diners van als fundadors",
     "Que és bon senyal: si surten a borsa, és que va molt bé"
    ],
    "explanation": "Si no s'emeten accions noves, és una OPV i l'empresa no cobra. La temptació és llegir-ho com a bon senyal, però qui ven tria el moment que li convé.",

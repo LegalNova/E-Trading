@@ -268,15 +268,15 @@
     "With large orders in illiquid securities",
     "With a small order in a big company mid-session",
     "In moments of panic, with the price moving very fast",
-    "At the open, after news"
+    "With a limit order that fixes your price"
    ],
-   "explanation": "Slippage shows up when liquidity is thin or the price is racing."
+   "explanation": "Slippage shows up when liquidity is thin or the price is racing: large orders in illiquid securities, moments of panic, opens after news. A limit order fixes your price."
   },
   "u6l2-10": {
    "prompt": "Marta wants to buy €3,000 of a small company with a 1 % spread. What does she do?",
    "options": [
     "Buys at market and sells as soon as she's slightly up",
-    "Uses a limit order and avoids trading that stock often",
+    "Uses a limit order and rarely trades that stock",
     "Buys and sells several times a day to catch the moves"
    ],
    "explanation": "With high-spread securities, trading a lot is a sure way to lose money.",
@@ -290,7 +290,7 @@
    "prompt": "You want to buy, but only if the price drops to €45. Which order do you use?",
    "options": [
     "Take profit at €45",
-    "Market order",
+    "Market order, when it falls to €45",
     "Buy limit at €45"
    ],
    "explanation": "The limit order only executes at €45 or less."
@@ -310,7 +310,7 @@
    "options": [
     "Buy limit at €8.45",
     "Market buy",
-    "Buy limit at €9.50"
+    "Buy limit at €9.50, to be sure"
    ],
    "explanation": "A useful limit sits close to the price you actually want to pay.",
    "feedback": [
@@ -343,9 +343,9 @@
   "u6l4-6": {
    "prompt": "Where does a stop loss make most sense?",
    "options": [
-    "A few cents from the purchase price",
+    "A few cents from the purchase price, to lose little",
     "At any old round number",
-    "Just below the last meaningful low"
+    "Just below the last low"
    ],
    "explanation": "That's where your idea stops being valid; too close, and normal noise knocks you out for no reason."
   },
@@ -379,11 +379,11 @@
    "prompt": "What does a take profit do? Select all that apply.",
    "options": [
     "Guarantees selling at the top",
-    "Stops greed from deciding for you",
+    "Protects you if the price falls",
     "Locks in the gain if the target is reached",
     "Sells without you watching"
    ],
-   "explanation": "Nobody always sells at the top; the take profit sells at your target."
+   "explanation": "The take profit sells by itself, without you watching, and locks in the gain if the target is reached. It doesn't guarantee selling at the top, and it's the stop, not the take profit, that protects you from falls."
   },
   "u6l6-1": {
    "prompt": "Build your OCO. First, place the stop loss.",
@@ -410,7 +410,7 @@
    "prompt": "Bruno is going to hold some shares through the company's results day and knows there could be a gap. What does he do?",
    "options": [
     "Trusts that the stop will definitely protect him",
-    "Cuts the size so a 15 % gap doesn't hurt him much",
+    "Cuts the size of the position",
     "Doubles the position because he has a stop"
    ],
    "explanation": "Against gaps, the best defence is position size.",
@@ -456,8 +456,8 @@
    "prompt": "What do you say to Lumi?",
    "options": [
     "You only pay if you lose money",
-    "No: every buy and sell pays the spread, and the more you trade, the more you pay",
-    "Exactly: with no fees, trading costs nothing"
+    "No: every buy and every sell pays the spread",
+    "Exactly: if the broker charges no fee, trading costs nothing"
    ],
    "explanation": "«0 fees» isn't free: spread and slippage are always paid, and they multiply with every trade.",
    "feedback": [
@@ -473,7 +473,7 @@
    "prompt": "What do you say to Lumi?",
    "options": [
     "Better not to set a target and sell by eye",
-    "Better near the previous high, where selling tends to appear",
+    "Better near the previous high",
     "Good idea: the further away, the more you make"
    ],
    "explanation": "The distant target looks like it makes more, but if it's never hit it makes nothing. Selling tends to appear near the previous high, and there the target has a real chance.",
@@ -491,7 +491,7 @@
    "options": [
     "It doesn't sell",
     "At €30, as the stop says",
-    "Around €27: the first price available"
+    "Around €27"
    ],
    "feedback": [
     "A market stop is executed as long as there are buyers.",
@@ -519,16 +519,16 @@
    "options": [
     "It stays active tomorrow",
     "It expires: tomorrow you have no stop",
-    "It turns into a market order"
+    "It turns into a market order at the close"
    ],
    "explanation": "A day order expires at the close. For it to stay in place, choose «good till cancelled»."
   },
   "u6l5-13": {
    "prompt": "Your take profit is at €36, valid «for the day». The price rises to €35.90 and the session closes. What happens?",
    "options": [
-    "It sells tomorrow at €36",
+    "It sells tomorrow, when it touches €36",
     "It sells at €35.90",
-    "It doesn't sell, and the order expires"
+    "It doesn't sell and expires"
    ],
    "explanation": "A limit sell order is only executed at its price or better. And if it was a day order, tomorrow it's no longer there."
   },

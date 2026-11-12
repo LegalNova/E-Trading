@@ -268,15 +268,15 @@
     "Con órdenes grandes en valores poco líquidos",
     "Con una orden pequeña en una gran empresa a media sesión",
     "En momentos de pánico, con el precio moviéndose muy rápido",
-    "En la apertura, tras una noticia"
+    "Con una orden limitada que fija tu precio"
    ],
-   "explanation": "El deslizamiento aparece cuando falta liquidez o el precio corre."
+   "explanation": "El deslizamiento aparece cuando falta liquidez o el precio corre: órdenes grandes en valores poco líquidos, momentos de pánico, aperturas tras una noticia. Una limitada fija tu precio."
   },
   "u6l2-10": {
    "prompt": "Marta quiere comprar 3.000 € de una empresa pequeña con un spread de un 1 %. ¿Qué hace?",
    "options": [
     "Compra a mercado y vende en cuanto gane un poco",
-    "Usa una orden limitada y evita operar con frecuencia ese valor",
+    "Usa una orden limitada y opera poco ese valor",
     "Compra y vende varias veces al día para aprovechar los movimientos"
    ],
    "explanation": "En valores con spread alto, operar mucho es perder dinero seguro.",
@@ -306,8 +306,8 @@
    "prompt": "¿Qué le contestas a Lucía?",
    "options": [
     "Solo pagas si pierdes dinero",
-    "No: cada compra y venta paga la horquilla, y cuanto más operas, más pagas",
-    "Exacto: sin comisiones, operar no cuesta nada"
+    "No: cada compra y cada venta paga la horquilla",
+    "Exacto: si el bróker no cobra comisión, operar no cuesta nada"
    ],
    "explanation": "«0 comisiones» no es gratis: el spread y el deslizamiento se pagan siempre, y se multiplican con cada operación.",
    "feedback": [
@@ -323,7 +323,7 @@
    "prompt": "Quieres comprar, pero solo si el precio baja a 45 €. ¿Qué orden usas?",
    "options": [
     "Take profit a 45 €",
-    "A mercado",
+    "A mercado, cuando baje a 45 €",
     "Limitada de compra a 45 €"
    ],
    "explanation": "La limitada solo se ejecuta a 45 € o menos."
@@ -343,7 +343,7 @@
    "options": [
     "Limitada de compra a 8,45 €",
     "Compra a mercado",
-    "Limitada de compra a 9,50 €"
+    "Limitada de compra a 9,50 €, para asegurar"
    ],
    "explanation": "Un límite útil está cerca del precio que de verdad quieres pagar.",
    "feedback": [
@@ -376,9 +376,9 @@
   "u6l4-6": {
    "prompt": "¿Dónde tiene más lógica un stop loss?",
    "options": [
-    "A unos céntimos del precio de compra",
+    "A unos céntimos del precio de compra, para perder poco",
     "En un número redondo cualquiera",
-    "Un poco por debajo del último mínimo relevante"
+    "Algo por debajo del último mínimo"
    ],
    "explanation": "Ahí tu idea deja de ser válida; muy cerca, el ruido normal te saca sin motivo."
   },
@@ -403,7 +403,7 @@
    "options": [
     "No se vende",
     "A 30 €, como marca el stop",
-    "Hacia 27 €: el primer precio que haya"
+    "Hacia 27 €"
    ],
    "explanation": "Con un hueco, el stop a mercado vende al primer precio disponible, que puede ser peor que tu nivel.",
    "feedback": [
@@ -449,17 +449,17 @@
    "prompt": "¿Qué hace un take profit? Marca todas.",
    "options": [
     "Garantiza vender en el máximo",
-    "Evita que la avaricia decida por ti",
+    "Te protege si el precio cae",
     "Asegura la ganancia si se llega al objetivo",
     "Vende sin que estés mirando"
    ],
-   "explanation": "Nadie vende siempre en el máximo; el take profit vende en tu objetivo."
+   "explanation": "El take profit vende solo, sin que estés mirando, y asegura la ganancia si se llega al objetivo. No garantiza vender en el máximo, y de las caídas te protege el stop, no él."
   },
   "u6l5-11": {
    "prompt": "¿Qué le contestas a Nora?",
    "options": [
     "Mejor no poner objetivo y vender a ojo",
-    "Mejor cerca del máximo anterior, donde suele aparecer venta",
+    "Mejor cerca del máximo anterior",
     "Buena idea: cuanto más lejos, más ganas"
    ],
    "explanation": "El objetivo lejano parece que gana más, pero si no se toca no gana nada. Cerca del máximo anterior suele aparecer venta, y ahí el objetivo tiene opciones reales.",
@@ -475,9 +475,9 @@
   "u6l5-13": {
    "prompt": "Tu take profit está en 36 €, con validez «del día». El precio sube hasta 35,90 € y la sesión cierra. ¿Qué pasa?",
    "options": [
-    "Se vende mañana a 36 €",
+    "Se vende mañana, cuando toque 36 €",
     "Se vende a 35,90 €",
-    "No se vende, y la orden caduca"
+    "No se vende y caduca"
    ],
    "explanation": "Una limitada de venta solo se ejecuta a su precio o mejor. Y si era del día, mañana ya no está puesta."
   },
@@ -522,7 +522,7 @@
    "prompt": "Bruno va a mantener unas acciones el día que la empresa presenta resultados y sabe que puede haber un hueco. ¿Qué hace?",
    "options": [
     "Confía en que el stop le protege seguro",
-    "Reduce el tamaño para que un hueco del 15 % no le haga mucho daño",
+    "Reduce el tamaño de la posición",
     "Duplica la posición porque tiene stop"
    ],
    "explanation": "Contra los huecos, la mejor defensa es el tamaño de la posición.",

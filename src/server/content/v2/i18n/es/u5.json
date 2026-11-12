@@ -345,7 +345,7 @@
   "u5l1-1": {
    "prompt": "¿Qué es una bolsa?",
    "options": [
-    "Un mercado regulado donde se cruzan órdenes de compra y venta de valores",
+    "Un mercado donde se cruzan órdenes de compra y venta",
     "Un banco que guarda tus ahorros",
     "Una empresa que te vende sus propias acciones cada día"
    ],
@@ -427,9 +427,9 @@
   "u5l2-2": {
    "prompt": "¿Cómo gana dinero un creador de mercado?",
    "options": [
-    "Con los dividendos de las empresas",
+    "Con los dividendos de las empresas que negocia",
     "Cobrando una cuota a la CNMV",
-    "Con la diferencia entre su precio de compra y el de venta"
+    "Con la diferencia entre compra y venta"
    ],
    "explanation": "Compra un poco más barato de lo que vende: esa diferencia es su margen."
   },
@@ -461,10 +461,10 @@
    "options": [
     "No necesita ganar cada trimestre",
     "Tiene la información antes que nadie",
-    "Puede mantener costes muy bajos",
+    "Opera más rápido que los algoritmos",
     "Puede esperar años sin rendir cuentas a nadie"
    ],
-   "explanation": "La información y la velocidad no están de su lado; la paciencia y los costes, sí."
+   "explanation": "La información y la velocidad no están de su lado. La paciencia sí: no rinde cuentas cada trimestre y puede esperar años. Y además puede mantener costes muy bajos."
   },
   "u5l2-9": {
    "prompt": "Cada vez que compras una acción, otro inversor la ____.",
@@ -479,7 +479,7 @@
   "u5l2-11": {
    "prompt": "Leo invierte 50 € al mes en un fondo indexado. Un amigo le dice que así nunca ganará a los profesionales y que debería operar cada día. ¿Qué hace?",
    "options": [
-    "Sigue con su plan: su ventaja es el tiempo y los costes bajos",
+    "Sigue con su plan: tiene tiempo y costes bajos",
     "Deja de invertir: la bolsa es solo para profesionales",
     "Empieza a operar cada día para ganarles"
    ],
@@ -553,8 +553,8 @@
    "prompt": "Leo trabaja de 9:00 a 18:00 y quiere comprar acciones de Microsoft con la bolsa de Nueva York abierta. ¿Cuándo puede hacerlo un día normal?",
    "options": [
     "A medianoche, con calma",
-    "A la hora de comer, a las 14:00",
-    "Al salir del trabajo, antes de las 22:00"
+    "A la hora de comer, sobre las 14:00",
+    "Al salir, antes de las 22:00"
    ],
    "explanation": "Nueva York abre por la tarde en España, de 15:30 a 22:00. Comprar fuera de ese horario es tentador por comodidad, pero la orden espera a la apertura y puede salir a otro precio.",
    "feedback": [
@@ -568,7 +568,7 @@
    "options": [
     "Decide qué empresas cotizan",
     "Garantiza que tus inversiones suban",
-    "Recibe tu orden y la lleva al mercado"
+    "Lleva tu orden al mercado"
    ],
    "explanation": "Es el intermediario entre tú y el mercado."
   },
@@ -622,7 +622,7 @@
    "prompt": "Pablo tiene 60.000 € en un bróker con sede en otro país de la UE y da por hecho que le cubre el FOGAIN español. ¿Qué hace?",
    "options": [
     "Nada: todos los fondos de garantía son iguales",
-    "Comprueba qué fondo de garantía le aplica y hasta cuánto cubre",
+    "Comprueba qué fondo de garantía le cubre",
     "Lo saca todo y lo guarda en casa"
    ],
    "explanation": "La protección depende del país de la entidad: compruébalo antes de abrir cuenta.",
@@ -652,7 +652,7 @@
    "prompt": "Compras hoy acciones de Inditex en bolsa. ¿Quién recibe tu dinero?",
    "options": [
     "El inversor que te las vende",
-    "Inditex",
+    "Inditex, que es la dueña de las acciones",
     "La CNMV"
    ],
    "explanation": "Es mercado secundario: Inditex no recibe nada de esa compra."
@@ -698,7 +698,7 @@
    "prompt": "Una empresa anuncia su salida a bolsa. El folleto dice que todas las acciones que se ofrecen son de sus fundadores, que venden parte de lo suyo. ¿Qué significa?",
    "options": [
     "Es una OPS: la empresa recibe dinero para crecer",
-    "Es una OPV: el dinero va a los fundadores, no a la empresa",
+    "Es una OPV: el dinero va a los fundadores",
     "Que es buena señal: si salen a bolsa, es que va muy bien"
    ],
    "explanation": "Si no se emiten acciones nuevas, es una OPV y la empresa no cobra. La tentación es leerlo como buena señal, pero quien vende elige el momento que le conviene.",
@@ -746,7 +746,7 @@
   "u5l7-8": {
    "prompt": "Pablo quiere meter casi todos sus ahorros en una empresa de BME Growth porque «puede multiplicarse». ¿Qué tiene en cuenta?",
    "options": [
-    "Que suelen ser más pequeñas, menos líquidas y con más riesgo",
+    "Que suelen ser pequeñas y poco líquidas",
     "Que BME Growth garantiza la inversión",
     "Que tiene la misma liquidez que una del IBEX"
    ],
@@ -760,8 +760,8 @@
   "u5l7-9": {
    "prompt": "¿Cómo pondera el IBEX 35 a sus empresas?",
    "options": [
-    "Por capitalización, contando las acciones que se negocian libremente",
-    "Todas pesan lo mismo",
+    "Por capitalización",
+    "Todas pesan exactamente lo mismo",
     "Por número de empleados"
    ],
    "explanation": "Las más grandes en bolsa pesan más en el índice."
