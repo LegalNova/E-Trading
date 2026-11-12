@@ -126,21 +126,6 @@
    "steps": [
     {
      "texts": [
-      "1.000 traders a cara o creu",
-      "Imagina 1.000 persones que operen sense cap avantatge: cada operació és com **llançar una moneda**. Però cada vegada paguen una petita comissió.",
-      "Si cadascú fa cada cop més operacions, què creus que passa?",
-      "La meitat guanya i la meitat perd, sempre",
-      "Cada cop perden més, per les comissions",
-      "Acaba guanyant gairebé tothom",
-      "Sense avantatge, la moneda és neutra… però les **comissions** sempre resten. Com més operes, més pesen.",
-      "Apuja les operacions fins que perdin més de 6 de cada 10.",
-      "Les dades reals són pitjors: entre el **74 % i el 89 %** dels comptes minoristes de CFD perden diners (ESMA), i al Brasil el **97 %** dels qui van fer *day trading* més de 300 dies van perdre. El que funciona: aportar amb regularitat, diversificar, poques comissions i molt de temps.",
-      "Fixa't en la mitjana: cada cop més en vermell. Ningú no és pitjor que ningú: són les comissions.",
-      "Apuja les operacions de cadascú"
-     ]
-    },
-    {
-     "texts": [
       "El guru d'Instagram",
       "@MilionariAls22",
       "Fa un any era cambrer. Avui guanyo **5.000 € al mes** fent trading des de la platja",
@@ -155,6 +140,27 @@
       "Abans de pagar ningú, busca'l a la **CNMV** i a la seva llista de «chiringuitos».",
       "Prova-ho: al simulador, fes el que és avorrit: aporta cada mes a un ETF mundial."
      ]
+    },
+    {
+     "texts": [
+      "«Un 5 % cada setmana»",
+      "Ana",
+      "M'han passat una plataforma que dona un **5 % cada setmana**. Garantit!",
+      "A aquest ritme, en quant es convertirien 1.000 € en tres anys?",
+      "En uns 9.000 €",
+      "Això seria sumant. Component cada setmana, són més de **2 milions d'euros**.",
+      "En més de 2 milions d'euros",
+      "Això: 1.000 € × 1,05 cada setmana, 156 setmanes. Ningú que pogués fer això necessitaria els teus diners.",
+      "No ho sé, però sona bé",
+      "Fes sempre el compte: a aquest ritme, 1.000 € serien més de 2 milions en tres anys.",
+      "Dit així… i d'on surten els diners que paguen els primers?",
+      "Moltes vegades, dels que entren després. Quan deixen d'entrar-ne, s'acaba."
+     ]
+    },
+    {
+     "title": "Abans de pagar a ningú",
+     "body": "• **Està autoritzat?** Busca'l al registre de la CNMV i a la seva llista d'advertències sobre «xiringuitos financers».\n• **Ensenya tot el seu historial?** Unes captures de dies bons no ho són.\n• **De què viu?** Si cobra per cursos, senyals o per portar-te a un bròquer, guanya encara que tu perdis.\n• **Promet?** Rendibilitat alta i segura no existeix.",
+     "key": "Qui de debò sap guanyar diners invertint no necessita vendre't el mètode."
     }
    ]
   },
@@ -388,15 +394,6 @@
    ],
    "explanation": "Després de caure a la meitat, recuperar-se exigeix duplicar el que queda: un 100 %. El temptador és pensar que n'hi ha prou amb un 50 %, però aquest 50 % es calcula sobre una quantitat ja molt més petita. Per això les caigudes grans costen tant de recuperar."
   },
-  "u4l5-2": {
-   "prompt": "Segons l'ESMA, quin percentatge de comptes minoristes de CFD perd diners?",
-   "options": [
-    "20-30 %",
-    "74-89 %",
-    "Al voltant del 50 %"
-   ],
-   "explanation": "Per això des del 2018 el palanquejament està limitat per als minoristes i els bròquers han de mostrar l'avís."
-  },
   "u4l5-3": {
    "prompt": "Marca els missatges que fan pinta d'estafa o de guru.",
    "options": [
@@ -414,15 +411,6 @@
     "@TraderLibre",
     "Grup de Telegram"
    ]
-  },
-  "u4l5-5": {
-   "prompt": "Al Brasil, dels qui van fer day trading més de 300 dies, quants van perdre diners?",
-   "options": [
-    "El 60 %",
-    "El 97 %",
-    "El 30 %"
-   ],
-   "explanation": "I només un 1,1 % va guanyar més que el salari mínim (Chague, De-Losso i Giovannetti, 2020)."
   },
   "u4l5-6": {
    "prompt": "Què són senyals d'estafa? Marca-les totes.",
@@ -457,6 +445,36 @@
     "per pànic"
    ],
    "explanation": "Vendre per pànic converteix les caigudes temporals en pèrdues reals."
+  },
+  "u4l5-11": {
+   "prompt": "Aparella cada frase d'un guru amb el truc que amaga.",
+   "options": [
+    "«Només queden 10 places»",
+    "«Mira què vaig guanyar ahir»",
+    "«Obre compte amb el meu enllaç»",
+    "«Rendibilitat garantida»"
+   ],
+   "right": [
+    "Ensenya només els dies bons",
+    "Promet el que ningú no pot assegurar",
+    "Cobra una comissió del bròquer",
+    "Fica pressa perquè no t'ho pensis"
+   ],
+   "explanation": "Pressa, captures, enllaços d'afiliat i garanties: quatre trucs que es repeteixen."
+  },
+  "u4l5-12": {
+   "prompt": "Et truca un «assessor». La seva empresa no surt al registre de la CNMV, però té una web molt professional i opinions de clients. Què fas?",
+   "options": [
+    "Provo amb pocs diners",
+    "Hi confio: la web és molt seriosa",
+    "No li dono diners: sense autorització no hi ha res més a mirar"
+   ],
+   "feedback": [
+    "Amb pocs diners també es perd, i després te'n demanaran més per «recuperar-ho».",
+    "Una web i unes opinions es fabriquen en una tarda. Una autorització, no.",
+    "Això. Si no està autoritzada, no et pot prestar serveis d'inversió, per bé que soni."
+   ],
+   "explanation": "El primer és comprovar l'autorització a la CNMV. Sense això, no segueixis."
   }
  }
 }

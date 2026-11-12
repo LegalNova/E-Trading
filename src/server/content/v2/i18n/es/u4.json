@@ -126,21 +126,6 @@
    "steps": [
     {
      "texts": [
-      "1.000 traders a cara o cruz",
-      "Imagina 1.000 personas que operan sin ninguna ventaja: cada operación es como **lanzar una moneda**. Pero cada vez pagan una pequeña comisión.",
-      "Si cada uno hace cada vez más operaciones, ¿qué crees que pasa?",
-      "La mitad gana y la mitad pierde, siempre",
-      "Cada vez pierden más, por las comisiones",
-      "Acaba ganando casi todo el mundo",
-      "Sin ventaja, la moneda es neutra… pero las **comisiones** siempre restan. Cuanto más operas, más pesan.",
-      "Sube las operaciones hasta que pierdan más de 6 de cada 10.",
-      "Los datos reales son peores: entre el **74 % y el 89 %** de las cuentas minoristas de CFD pierden dinero (ESMA), y en Brasil el **97 %** de quienes hicieron *day trading* más de 300 días perdió. Lo que funciona: aportar con regularidad, diversificar, pocas comisiones y mucho tiempo.",
-      "Fíjate en la media: cada vez más en rojo. Nadie es peor que nadie: son las comisiones.",
-      "Sube las operaciones de cada uno"
-     ]
-    },
-    {
-     "texts": [
       "El gurú de Instagram",
       "@MillonarioA22",
       "Hace un año era camarero. Hoy gano **5.000 € al mes** haciendo trading desde la playa",
@@ -155,6 +140,27 @@
       "Antes de pagar a nadie, búscalo en la **CNMV** y en su lista de «chiringuitos».",
       "Pruébalo: en el simulador, haz lo aburrido: aporta cada mes a un ETF mundial."
      ]
+    },
+    {
+     "texts": [
+      "«Un 5 % cada semana»",
+      "Ana",
+      "Me han pasado una plataforma que da un **5 % cada semana**. ¡Garantizado!",
+      "A ese ritmo, ¿en cuánto se convertirían 1.000 € en tres años?",
+      "En unos 9.000 €",
+      "Eso sería sumando. Componiendo cada semana, son más de **2 millones de euros**.",
+      "En más de 2 millones de euros",
+      "Eso: 1.000 € × 1,05 cada semana, 156 semanas. Nadie que pudiera hacer eso necesitaría tu dinero.",
+      "No lo sé, pero suena bien",
+      "Haz siempre la cuenta: a ese ritmo, 1.000 € serían más de 2 millones en tres años.",
+      "Dicho así… ¿y de dónde sale el dinero que paga a los primeros?",
+      "Muchas veces, de los que entran después. Cuando dejan de entrar, se acaba."
+     ]
+    },
+    {
+     "title": "Antes de pagar a nadie",
+     "body": "• **¿Está autorizado?** Búscalo en el registro de la CNMV y en su lista de advertencias sobre «chiringuitos financieros».\n• **¿Enseña todo su historial?** Unas capturas de días buenos no lo son.\n• **¿De qué vive?** Si cobra por cursos, señales o por llevarte a un bróker, gana aunque tú pierdas.\n• **¿Promete?** Rentabilidad alta y segura no existe.",
+     "key": "Quien de verdad sabe ganar dinero invirtiendo no necesita venderte el método."
     }
    ]
   },
@@ -388,15 +394,6 @@
    ],
    "explanation": "Tras caer a la mitad, recuperarse exige duplicar lo que queda: un 100 %. Lo tentador es pensar que basta con un 50 %, pero ese 50 % se calcula sobre una cantidad ya mucho más pequeña. Por eso las caídas grandes cuestan tanto de recuperar."
   },
-  "u4l5-2": {
-   "prompt": "Según la ESMA, ¿qué porcentaje de cuentas minoristas de CFD pierde dinero?",
-   "options": [
-    "20-30 %",
-    "74-89 %",
-    "Alrededor del 50 %"
-   ],
-   "explanation": "Por eso desde 2018 el apalancamiento está limitado para minoristas y los brókers tienen que mostrar el aviso."
-  },
   "u4l5-3": {
    "prompt": "Marca los mensajes que tienen pinta de estafa o de gurú.",
    "options": [
@@ -414,15 +411,6 @@
     "@TraderLibre",
     "Grupo de Telegram"
    ]
-  },
-  "u4l5-5": {
-   "prompt": "En Brasil, de quienes hicieron day trading más de 300 días, ¿cuántos perdieron dinero?",
-   "options": [
-    "El 60 %",
-    "El 97 %",
-    "El 30 %"
-   ],
-   "explanation": "Y solo un 1,1 % ganó más que el salario mínimo (Chague, De-Losso y Giovannetti, 2020)."
   },
   "u4l5-6": {
    "prompt": "¿Qué son señales de estafa? Marca todas.",
@@ -457,6 +445,36 @@
     "pánico"
    ],
    "explanation": "Vender en pánico convierte las caídas temporales en pérdidas reales."
+  },
+  "u4l5-11": {
+   "prompt": "Empareja cada frase de un gurú con el truco que esconde.",
+   "options": [
+    "«Solo quedan 10 plazas»",
+    "«Mira lo que gané ayer»",
+    "«Abre cuenta con mi enlace»",
+    "«Rentabilidad garantizada»"
+   ],
+   "explanation": "Prisa, capturas, enlaces de afiliado y garantías: cuatro trucos que se repiten.",
+   "right": [
+    "Enseña solo los días buenos",
+    "Promete lo que nadie puede asegurar",
+    "Cobra una comisión del bróker",
+    "Mete prisa para que no lo pienses"
+   ]
+  },
+  "u4l5-12": {
+   "prompt": "Te llama un «asesor». Su empresa no aparece en el registro de la CNMV, pero tiene una web muy profesional y opiniones de clientes. ¿Qué haces?",
+   "options": [
+    "Pruebo con poco dinero",
+    "Confío: la web es muy seria",
+    "No le doy dinero: sin autorización no hay nada más que mirar"
+   ],
+   "explanation": "Lo primero es comprobar la autorización en la CNMV. Sin ella, no sigas.",
+   "feedback": [
+    "Con poco también se pierde, y después te pedirán más para «recuperarlo».",
+    "Una web y unas opiniones se fabrican en una tarde. Una autorización, no.",
+    "Eso. Si no está autorizada, no puede prestarte servicios de inversión, por bien que suene."
+   ]
   }
  }
 }

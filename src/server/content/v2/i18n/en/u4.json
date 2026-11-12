@@ -126,21 +126,6 @@
    "steps": [
     {
      "texts": [
-      "1,000 traders flipping coins",
-      "Imagine 1,000 people trading with no edge at all: every trade is like **tossing a coin**. But each time they pay a small fee.",
-      "If each of them makes more and more trades, what do you think happens?",
-      "Half win and half lose, always",
-      "They lose more and more, because of the fees",
-      "Almost everyone ends up winning",
-      "With no edge, the coin is neutral… but the **fees** always eat into it. The more you trade, the more they weigh.",
-      "Raise the number of trades until more than 6 in 10 lose.",
-      "The real data is worse: between **74 % and 89 %** of retail CFD accounts lose money (ESMA), and in Brazil **97 %** of people who *day traded* for more than 300 days lost. What works: investing regularly, diversifying, low fees and lots of time.",
-      "Look at the average: deeper and deeper in the red. Nobody's worse than anyone else: it's the fees.",
-      "Raise everyone's number of trades"
-     ]
-    },
-    {
-     "texts": [
       "The Instagram guru",
       "@MillionaireAt22",
       "A year ago I was a waiter. Now I make **€5,000 a month** trading from the beach",
@@ -155,6 +140,27 @@
       "Before paying anyone, look them up with the **CNMV** and on its list of unauthorised firms.",
       "Try it: in the simulator, do the boring thing: put money into a global ETF every month."
      ]
+    },
+    {
+     "texts": [
+      "«5 % every week»",
+      "Ana",
+      "Someone's sent me a platform that pays **5 % every week**. Guaranteed!",
+      "At that rate, what would €1,000 turn into in three years?",
+      "About €9,000",
+      "That would be just adding. Compounding every week, it's more than **€2 million**.",
+      "More than €2 million",
+      "That's it: €1,000 × 1.05 every week, for 156 weeks. Nobody who could do that would need your money.",
+      "I don't know, but it sounds good",
+      "Always do the sum: at that rate, €1,000 would be more than €2 million in three years.",
+      "Put like that… so where does the money that pays the first ones come from?",
+      "Often, from those who join later. When they stop coming in, it's over."
+     ]
+    },
+    {
+     "title": "Before you pay anyone",
+     "body": "• **Are they authorised?** Look them up in the CNMV register and on its list of warnings about unauthorised firms («chiringuitos financieros»).\n• **Do they show their whole track record?** A few screenshots of good days aren't one.\n• **What do they live on?** If they charge for courses, signals or for sending you to a broker, they win even if you lose.\n• **Do they promise?** High and safe returns don't exist.",
+     "key": "Someone who really knows how to make money investing doesn't need to sell you the method."
     }
    ]
   },
@@ -388,15 +394,6 @@
    ],
    "explanation": "After falling by half, recovering means doubling what's left: 100 %. It's tempting to think 50 % is enough, but that 50 % is worked out on a much smaller amount. That's why big falls are so hard to recover from."
   },
-  "u4l5-2": {
-   "prompt": "According to ESMA, what percentage of retail CFD accounts lose money?",
-   "options": [
-    "20-30 %",
-    "74-89 %",
-    "Around 50 %"
-   ],
-   "explanation": "That's why since 2018 leverage has been capped for retail clients and brokers must show the warning."
-  },
   "u4l5-3": {
    "prompt": "Tick the messages that look like a scam or a guru.",
    "options": [
@@ -414,15 +411,6 @@
     "@TraderLibre",
     "Telegram group"
    ]
-  },
-  "u4l5-5": {
-   "prompt": "In Brazil, of those who day traded for more than 300 days, how many lost money?",
-   "options": [
-    "60 %",
-    "97 %",
-    "30 %"
-   ],
-   "explanation": "And only 1.1 % earned more than the minimum wage (Chague, De-Losso and Giovannetti, 2020)."
   },
   "u4l5-6": {
    "prompt": "What are signs of a scam? Tick all.",
@@ -457,6 +445,36 @@
     "panic"
    ],
    "explanation": "Panic selling turns temporary falls into real losses."
+  },
+  "u4l5-11": {
+   "prompt": "Match each guru line with the trick behind it.",
+   "options": [
+    "«Only 10 places left»",
+    "«Look what I made yesterday»",
+    "«Open an account with my link»",
+    "«Guaranteed returns»"
+   ],
+   "right": [
+    "Shows only the good days",
+    "Promises what nobody can guarantee",
+    "Earns a commission from the broker",
+    "Rushes you so you don't think it over"
+   ],
+   "explanation": "Hurry, screenshots, affiliate links and guarantees: four tricks that keep coming back."
+  },
+  "u4l5-12": {
+   "prompt": "An «adviser» calls you. His firm isn't in the CNMV register, but it has a very professional website and customer reviews. What do you do?",
+   "options": [
+    "I try with a small amount",
+    "I trust him: the website looks very serious",
+    "I give him no money: without authorisation there's nothing more to look at"
+   ],
+   "feedback": [
+    "You can lose a small amount too, and then they'll ask for more to «win it back».",
+    "A website and some reviews can be made up in an afternoon. An authorisation can't.",
+    "That's it. If the firm isn't authorised, it can't provide you with investment services, however good it sounds."
+   ],
+   "explanation": "The first thing is to check the authorisation with the CNMV. Without it, go no further."
   }
  }
 }

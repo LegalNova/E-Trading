@@ -133,24 +133,10 @@ export default unit({
       single('Tu cartera cae un 50 %. Para volver a donde estaba, ¿cuánto tiene que subir después?', ['Un 50 %', 'Un 100 %: tiene que duplicarse', 'Un 25 %'], 1, 'Tras caer a la mitad, recuperarse exige duplicar lo que queda: un 100 %. Lo tentador es pensar que basta con un 50 %, pero ese 50 % se calcula sobre una cantidad ya mucho más pequeña. Por eso las caídas grandes cuestan tanto de recuperar.'),
     ], { source: '1.6', minutes: 6, retire: [3, 4, 5, 7, 8] }),
 
+    // Rehecha en la auditoría (RED-6 y RED-19): la pieza de la moneda y el dato de Brasil son de u25l7 («Day trading: lo que
+    // dicen los datos»). Esta clase se queda con lo suyo: cómo reconocer una promesa imposible y a quien vive de venderla.
+    // Advertencias de la CNMV sobre entidades no autorizadas («chiringuitos financieros»): https://www.cnmv.es (Advertencias al público)
     lesson('u4l5', 'La verdad sobre hacerse rico rápido', [
-      play({
-        title: '1.000 traders a cara o cruz',
-        intro: 'Imagina 1.000 personas que operan sin ninguna ventaja: cada operación es como **lanzar una moneda**. Pero cada vez pagan una pequeña comisión.',
-        widget: { kind: 'coinflip', traders: 1000, trades: 20, maxTrades: 500, fee: 2, stake: 100, win: 1 },
-        predict: {
-          prompt: 'Si cada uno hace cada vez más operaciones, ¿qué crees que pasa?',
-          options: ['La mitad gana y la mitad pierde, siempre', 'Cada vez pierden más, por las comisiones', 'Acaba ganando casi todo el mundo'],
-          answer: 1,
-          why: 'Sin ventaja, la moneda es neutra… pero las **comisiones** siempre restan. Cuanto más operas, más pesan.',
-        },
-        goal: { text: 'Sube las operaciones hasta que pierdan más de 6 de cada 10.', when: [when('losersPct', '>', 60)] },
-        insight: 'Los datos reales son peores: entre el **74 % y el 89 %** de las cuentas minoristas de CFD pierden dinero (ESMA), y en Brasil el **97 %** de quienes hicieron *day trading* más de 300 días perdió. Lo que funciona: aportar con regularidad, diversificar, pocas comisiones y mucho tiempo.',
-        lumi: [
-          { when: when('trades', '>=', 100), say: 'Fíjate en la media: cada vez más en rojo. Nadie es peor que nadie: son las comisiones.', mood: 'WORRIED' },
-          { say: 'Sube las operaciones de cada uno', mood: 'HAPPY' },
-        ],
-      }),
       story('El gurú de Instagram', [{ id: 'guru', name: '@MillonarioA22' }], [
         say('guru', 'Hace un año era camarero. Hoy gano **5.000 € al mes** haciendo trading desde la playa'),
         say('guru', 'Copia mis operaciones por solo **99 € al mes**. ¡Quedan 10 plazas! Abre cuenta en este bróker con mi enlace'),
@@ -162,6 +148,17 @@ export default unit({
         say('lumi', 'Antes de pagar a nadie, búscalo en la **CNMV** y en su lista de «chiringuitos».'),
         say('lumi', 'Pruébalo: en el simulador, haz lo aburrido: aporta cada mes a un ETF mundial.'),
       ]),
+      story('«Un 5 % cada semana»', [{ id: 'ana', name: 'Ana' }], [
+        say('ana', 'Me han pasado una plataforma que da un **5 % cada semana**. ¡Garantizado!'),
+        choose('A ese ritmo, ¿en cuánto se convertirían 1.000 € en tres años?', [
+          opt('En unos 9.000 €', 'bad', say('lumi', 'Eso sería sumando. Componiendo cada semana, son más de **2 millones de euros**.')),
+          opt('En más de 2 millones de euros', 'good', say('lumi', 'Eso: 1.000 € × 1,05 cada semana, 156 semanas. Nadie que pudiera hacer eso necesitaría tu dinero.')),
+          opt('No lo sé, pero suena bien', 'ok', say('lumi', 'Haz siempre la cuenta: a ese ritmo, 1.000 € serían más de 2 millones en tres años.')),
+        ]),
+        say('ana', 'Dicho así… ¿y de dónde sale el dinero que paga a los primeros?'),
+        say('lumi', 'Muchas veces, de los que entran después. Cuando dejan de entrar, se acaba.'),
+      ]),
+      key('Antes de pagar a nadie', '• **¿Está autorizado?** Búscalo en el registro de la CNMV y en su lista de advertencias sobre «chiringuitos financieros».\n• **¿Enseña todo su historial?** Unas capturas de días buenos no lo son.\n• **¿De qué vive?** Si cobra por cursos, señales o por llevarte a un bróker, gana aunque tú pierdas.\n• **¿Promete?** Rentabilidad alta y segura no existe.', 'Quien de verdad sabe ganar dinero invirtiendo no necesita venderte el método.'),
     ], [
       tf('La mayoría de quienes hacen day trading de forma continuada gana dinero.', false, 'En Brasil, el 97 % de quienes lo hicieron más de 300 días perdió dinero.'),
       single('Según la ESMA, ¿qué porcentaje de cuentas minoristas de CFD pierde dinero?', ['20-30 %', 'Alrededor del 50 %', '74-89 %'], 2, 'Por eso desde 2018 el apalancamiento está limitado para minoristas y los brókers tienen que mostrar el aviso.'),
@@ -173,6 +170,8 @@ export default unit({
       num('Según Barber y Odean, los hogares que más operaban ganaban un 11,4 % anual y el mercado un 17,9 %. ¿Cuántos puntos al año se dejaban?', 6.5, 'puntos', '17,9 − 11,4 = 6,5 puntos al año, sobre todo por costes y exceso de confianza.'),
       timed(tf('Si alguien te promete rentabilidad alta sin riesgo, es una señal de alarma.', true, 'Rentabilidad y riesgo van juntos: lo «alto y seguro» no existe.'), 8),
       fill('Lo que funciona: aportar con regularidad, diversificar, costes bajos, mucho tiempo y no vender en ____.', 'pánico', ['euros', 'verano', 'Navidad'], 'Vender en pánico convierte las caídas temporales en pérdidas reales.'),
-    ], { source: '1.7', minutes: 6, retire: [0, 3, 7, 8] }),
+      match('Empareja cada frase de un gurú con el truco que esconde.', [['«Solo quedan 10 plazas»', 'Mete prisa para que no lo pienses'], ['«Mira lo que gané ayer»', 'Enseña solo los días buenos'], ['«Abre cuenta con mi enlace»', 'Cobra una comisión del bróker'], ['«Rentabilidad garantizada»', 'Promete lo que nadie puede asegurar']], 'Prisa, capturas, enlaces de afiliado y garantías: cuatro trucos que se repiten.'),
+      scenario('Te llama un «asesor». Su empresa no aparece en el registro de la CNMV, pero tiene una web muy profesional y opiniones de clientes. ¿Qué haces?', [['Confío: la web es muy seria', 'Una web y unas opiniones se fabrican en una tarde. Una autorización, no.'], ['No le doy dinero: sin autorización no hay nada más que mirar', 'Eso. Si no está autorizada, no puede prestarte servicios de inversión, por bien que suene.'], ['Pruebo con poco dinero', 'Con poco también se pierde, y después te pedirán más para «recuperarlo».']], 1, 'Lo primero es comprobar la autorización en la CNMV. Sin ella, no sigas.'),
+    ], { source: '1.7', minutes: 6, retire: [0, 1, 3, 4, 7, 8] }),
   ],
 })
