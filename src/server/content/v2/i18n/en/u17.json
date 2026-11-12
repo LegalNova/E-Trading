@@ -545,24 +545,6 @@
     "That's it: what counts is total return, and on top of that the taxman takes his share."
    ]
   },
-  "u17l4-12": {
-   "prompt": "What do you reply to Lumi?",
-   "options": [
-    "Go for it: 15 % is unbeatable",
-    "High dividends are always a scam",
-    "First check whether it earns what it pays out: that fall warns of a cut"
-   ],
-   "explanation": "When the price sinks, the dividend yield shoots up without the company paying more. It's usually a sign the market expects a cut.",
-   "feedback": [
-    "If they cut the dividend, the 15 % disappears and the price may fall further.",
-    "Not always, but one that high means you must check where it comes from.",
-    "You're right: 15 % with the price sunk sounds like a trap."
-   ],
-   "lines": [
-    "I've found a share that pays a 15 % dividend.",
-    "Its price has halved this year. Shall I go for it?"
-   ]
-  },
   "u17l4-13": {
    "prompt": "Order these dividends from safest to most at risk.",
    "options": [

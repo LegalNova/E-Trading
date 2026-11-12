@@ -447,24 +447,6 @@
    ],
    "explanation": "Vendre a cada caiguda és just el contrari: et fa perdre els rebots."
   },
-  "u25l1-10": {
-   "prompt": "Què li respons a la Lumi?",
-   "options": [
-    "Millor busca l'acció que més pugi aquest any",
-    "Avorrit no vol dir dolent: és l'estratègia amb més evidència a llarg termini",
-    "Tens raó, avorrit és dolent"
-   ],
-   "explanation": "L'emoció no paga: el que paga és estar invertit, diversificat i amb costos baixos durant anys.",
-   "feedback": [
-    "Això és apostar: la majoria d'accions individuals rendeixen menys que l'índex.",
-    "D'acord, d'acord. L'avorrit per als diners de llarg termini, i l'emoció, amb una part petita.",
-    "Doncs segons SPIVA, el 97 % dels fons actius europeus rendeix menys que l'índex en 10 anys…"
-   ],
-   "lines": [
-    "Comprar i mantenir és cosa d'avis 👴",
-    "Jo prefereixo alguna cosa amb emoció."
-   ]
-  },
   "u25l3-4": {
    "prompt": "Per un pànic general, una empresa amb beneficis estables, poc deute i clients fidels cau un 30 % en un mes sense que el seu negoci hagi canviat. Com ho veu un inversor en valor?",
    "options": [
@@ -635,7 +617,7 @@
    "explanation": "Màxims i mínims cada cop més alts: és el terreny del seguidor de tendències."
   },
   "u25l5-2": {
-   "prompt": "I en aquest altre? (NVIDIA · tancaments cada 3 sessions · febrer–abril del 2025)",
+   "prompt": "I en aquest altre? (Airbus · tancaments cada 3 sessions · febrer–abril del 2026)",
    "options": [
     "Alcista",
     "Baixista",
@@ -706,7 +688,7 @@
    "explanation": "A prop del màxim anterior, on sol aparèixer venda. Compara-ho amb la distància a l'stop."
   },
   "u25l6-5": {
-   "prompt": "Un swing trader busca rangs i tendències. Què hi veus? (NVIDIA · tancaments cada 3 sessions · desembre del 2025 – febrer del 2026)",
+   "prompt": "Un swing trader busca rangs i tendències. Què hi veus? (CaixaBank · tancaments cada 3 sessions · maig–juliol del 2025)",
    "options": [
     "Alcista",
     "Baixista",

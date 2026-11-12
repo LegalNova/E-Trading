@@ -308,7 +308,7 @@ export default unit({
       upDown('Diciembre de 2020: Tesla entra en el S&P 500 tras subir más de un 700 % en el año, y los fondos indexados tienen que comprar sus acciones. ¿Qué hizo el precio en los dos años siguientes?', 'hist-tsla-2020', 'Una compra obligada y anunciada con semanas de antelación es una noticia que conoce todo el mundo: el precio suele moverse antes del día señalado. Lo de después depende de otras cosas: beneficios, tipos y expectativas.', 'hasta enero de 2023'),
       timed(single('¡Rápido! El mercado esperaba una inflación del 3 % y sale del 3,4 %. ¿Qué es más probable a corto plazo?', ['Que la bolsa reaccione a la baja por la sorpresa', 'Que la bolsa suba porque la inflación es baja', 'Que no pase nada porque el dato ya se conocía'], 0, 'Lo que mueve es la sorpresa: un dato peor de lo esperado suele pesar aunque la inflación esté bajando respecto al mes anterior.'), 15),
       chat(['¡Notición! 📱 Una gran marca de móviles presenta su nuevo modelo hoy.', 'Compro sus acciones ya, que van a subir, ¿no?'], '¿Qué le contestas a Lumi?', [['Seguro, es una buena noticia', 'Las presentaciones se anuncian con semanas de antelación: el precio ya lo sabía antes que tú.'], ['Esa noticia ya la sabía todo el mundo: lo que mueve el precio es la sorpresa', '¡Exacto! Precio = expectativas. Si pasa lo esperado, ya estaba dentro. 🧠'], ['Mejor vendo: con las buenas noticias siempre cae', 'Tampoco hay regla fija al revés. Depende de lo que esperaba el mercado.']], 1, 'Lo que el mercado ya espera está en el precio. Solo la sorpresa, buena o mala, lo mueve.'),
-    ], { minutes: 6, retire: [0, 4, 9, 10] }),
+    ], { minutes: 6, retire: [0, 4, 6, 9, 10] }),
 
     lesson('u35l8', 'Operación completa', [
       mission({

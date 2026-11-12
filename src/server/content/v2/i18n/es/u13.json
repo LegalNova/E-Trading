@@ -537,20 +537,6 @@
    ],
    "explanation": "Pump (inflar) and dump (soltar): los que llegan tarde compran lo que venden los organizadores."
   },
-  "u13l4-2": {
-   "prompt": "Ana hace staking de una cripto que le paga un 3 % anual en esa misma cripto. En un año, su precio cae un 40 %. ¿Cómo le ha ido?",
-   "options": [
-    "Pierde: el rendimiento del staking no compensa una caída del 40 %",
-    "Igual: el staking la protege de las caídas",
-    "Bien: ha cobrado el staking"
-   ],
-   "explanation": "Un rendimiento pequeño no compensa la volatilidad de lo que tienes debajo.",
-   "feedback": [
-    "Exacto: el staking no protege del precio.",
-    "No protege: solo añade más unidades de una moneda que ha bajado.",
-    "El rendimiento se cobra en la misma cripto: si cae un 40 %, pierde mucho más de lo que gana con el staking."
-   ]
-  },
   "u13l4-4": {
    "prompt": "¿De dónde sale el rendimiento del staking?",
    "options": [

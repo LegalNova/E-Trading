@@ -48,7 +48,7 @@ export default unit({
       timed(single('Rápido: según SPIVA, ¿qué proporción de fondos de acciones europeos quedó por detrás de su índice en 10 años?', ['El 30 %', 'El 60 %', 'El 97 %'], 2, 'Cierre de 2025. Y casi ninguno de los que lo baten repite.'), 12),
       multi('¿Qué necesita la estrategia de comprar y mantener para funcionar? Marca todas.', ['Diversificar mucho (un índice amplio)', 'Costes bajos', 'Aguantar las caídas sin vender', 'Vender cada vez que cae un 10 %'], [0, 1, 2], 'Vender en cada caída es justo lo contrario: te pierde los rebotes.'),
       chat(['Comprar y mantener es de abuelos 👴', 'Yo prefiero algo con emoción.'], '¿Qué le respondes a Lumi?', [['Tienes razón, aburrido es malo', 'Pues según SPIVA, el 97 % de los fondos activos europeos rinde menos que el índice en 10 años…'], ['Aburrido no es malo: es la estrategia con más evidencia a largo plazo', 'Vale, vale. Lo aburrido para el dinero de largo plazo, y la emoción, con una parte pequeña.'], ['Mejor busca la acción que más suba este año', 'Eso es apostar: la mayoría de acciones individuales rinden menos que el índice.']], 1, 'La emoción no paga: lo que paga es estar invertido, diversificado y con costes bajos durante años.'),
-    ], { source: '4.1', minutes: 6, retire: [2, 4, 5, 7] }),
+    ], { source: '4.1', minutes: 6, retire: [2, 4, 5, 7, 9] }),
 
     lesson('u25l3', 'Value investing al estilo Buffett', [
       story('El señor Mercado', [{ id: 'mercado', name: 'Señor Mercado' }], [
@@ -184,7 +184,7 @@ export default unit({
       key('Una regla típica', 'Comprar cuando el precio supera su media de muchas sesiones, con stop bajo el último mínimo creciente, y subir el stop a medida que avanza.', 'El momentum es una de las anomalías más estudiadas, pero solo funciona con disciplina y gestión del riesgo.', 'Pruébalo: busca en Mercado un activo en tendencia alcista y añádelo a Favoritos.'),
     ], [
       trend('¿Qué tendencia ves en este gráfico real?', 'trend-up-13', 'Alcista', 'Máximos y mínimos cada vez más altos: es el terreno del seguidor de tendencias.'),
-      trend('¿Y en este otro?', 'trend-down-6', 'Bajista', 'Máximos y mínimos cada vez más bajos: un seguidor de tendencias en compras se quedaría fuera.'),
+      trend('¿Y en este otro?', 'trend-down-12', 'Bajista', 'Máximos y mínimos cada vez más bajos: un seguidor de tendencias en compras se quedaría fuera.'),
       trend('Último gráfico. ¿Qué tendencia hay?', 'trend-flat-5', 'Lateral', 'Sin dirección clara: aquí las estrategias de tendencia sufren señales falsas.'),
       upDown('Este activo venía subiendo. Como seguidor de tendencias, ¿qué crees que hizo en las sesiones siguientes?', 'ud-138', 'Que una tendencia persista más veces de las que se gira no significa que lo haga siempre: por eso el stop.'),
       upDown('Otro gráfico real de un índice. ¿Sube o baja después?', 'ud-184', 'La ventaja del momentum es estadística, sobre muchas operaciones. En un caso suelto, cualquier cosa puede pasar.'),
@@ -231,7 +231,7 @@ export default unit({
       simTrade('Otra operación, ahora con una cuenta de 5.000 €. Mismo límite: 1 % como máximo.', 'lvl-21', 'Si el precio va en contra, el stop limita la pérdida a lo previsto. Por eso se decide antes de entrar.', { cash: 5000 }),
       level('Swing en un índice. Coloca el stop de esta compra.', 'lvl-83', 'STOP', 'Por debajo del mínimo reciente: si se pierde, el retroceso se ha convertido en otra cosa.'),
       level('Ahora coloca el objetivo de esta compra.', 'lvl-37', 'TAKE', 'Cerca del máximo anterior, donde suele aparecer venta. Compáralo con la distancia al stop.'),
-      trend('Un swing trader busca rangos y tendencias. ¿Qué ves aquí?', 'trend-flat-6', 'Lateral', 'En un lateral, el swing trader compra cerca del suelo del rango y vende cerca del techo, con stop bajo el suelo.'),
+      trend('Un swing trader busca rangos y tendencias. ¿Qué ves aquí?', 'trend-flat-18', 'Lateral', 'En un lateral, el swing trader compra cerca del suelo del rango y vende cerca del techo, con stop bajo el suelo.'),
       point('En un rango, el objetivo de una compra suele ir cerca del techo. Toca el punto más alto.', 'trend-flat-13', 'max', 'El techo del rango es donde otras veces apareció la venta.'),
       match('Empareja cada estilo con su plazo típico.', [['Day trading', 'Minutos u horas; cierra el mismo día'], ['Swing trading', 'De días a semanas'], ['Seguimiento de tendencia', 'De meses'], ['Comprar y mantener', 'Años o décadas']], 'Cuanto más corto el plazo, más ruido y más costes por cada euro ganado.'),
       single('¿Qué riesgo tiene el swing trading que no tiene el day trading?', ['Los huecos de precio entre una sesión y la siguiente', 'Que no hay comisiones', 'Que no se usan stops'], 0, 'Al dejar posiciones abiertas por la noche, el precio puede abrir lejos de tu stop.'),

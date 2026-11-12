@@ -106,7 +106,7 @@ export default unit({
     ], [
       single('Una línea de tendencia alcista une…', ['Máximos decrecientes', 'Mínimos crecientes', 'Cierres elegidos al azar'], 1, 'Dos mínimos crecientes la trazan y un tercer toque la confirma.'),
       trend('Fíjate en los mínimos: ¿qué tendencia marcan?', 'trend-up-4', 'Alcista', 'Cada mínimo queda por encima del anterior: se podría trazar una línea alcista por debajo.'),
-      trend('Ahora fíjate en los máximos: ¿qué tendencia marcan?', 'trend-down-4', 'Bajista', 'Los máximos son cada vez más bajos: una línea bajista los uniría por encima.'),
+      trend('Ahora fíjate en los máximos: ¿qué tendencia marcan?', 'trend-down-15', 'Bajista', 'Los máximos son cada vez más bajos: una línea bajista los uniría por encima.'),
       point('Para trazar la línea bajista hace falta el punto de partida: toca el cierre más alto', 'trend-down-9', 'max', 'Es el primer cierre: desde ahí, cada máximo fue más bajo. La línea bajista uniría ese pico con los siguientes máximos.'),
       point('En esta subida, toca el cierre más bajo: el arranque de la línea alcista', 'trend-up-9', 'min', 'Desde ese mínimo, cada caída se quedó más arriba: es el primer apoyo de la línea.'),
       tf('Romper una línea de tendencia alcista significa siempre que empieza una tendencia bajista.', false, 'Puede empezar un lateral. Hay que mirarlo junto a la estructura de máximos y mínimos.'),

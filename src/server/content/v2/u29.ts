@@ -51,7 +51,7 @@ export default unit({
       timed(tf('En un pánico de mercado, las correlaciones entre activos de riesgo suelen subir.', true, 'Casi todo lo arriesgado cae a la vez: por eso la liquidez y los bonos de calidad son los que suelen proteger.'), 10),
       fill('Una correlación de ____ significa que dos activos se mueven siempre en sentido contrario.', '−1', ['+1', '0', '0,5'], 'Es el extremo opuesto: cuando uno sube, el otro baja.'),
       single('En la mayoría de los pánicos bursátiles, ¿qué ha protegido mejor una cartera?', ['Más acciones de otros países desarrollados', 'Bonos de calidad y liquidez', 'Criptomonedas'], 1, 'Las bolsas de otros países suelen caer a la vez. Los bonos de calidad y la liquidez son los que menos se mueven con ellas.'),
-    ], { source: '3.5', minutes: 6, retire: [6, 7, 8] }),
+    ], { source: '3.5', minutes: 6, retire: [3, 5, 6, 7, 8] }),
 
     lesson('u29l3', 'Tu reparto de activos', [
       mission({

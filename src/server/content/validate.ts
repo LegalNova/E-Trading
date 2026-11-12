@@ -267,7 +267,7 @@ export const MAX_SORT_SHARE = 1 / 3
  *  2. cada serie histórica se vive como pieza en una sola clase;
  *  3. no más de un tercio de las piezas de una unidad son «clasifica las tarjetas».
  */
-export function reuseWarnings(units: ContentUnit[], use: Record<string, { steps: string[]; quiz: [string, string][] }>): string[] {
+export function reuseWarnings(units: ContentUnit[], use: Record<string, { steps: string[]; quiz: [string, string][] }>, charts: Record<string, { symbol?: string; from?: string; to?: string }> = {}): string[] {
   const out: string[] = []
   const live = new Set(units.flatMap(u => u.lessons.map(l => l.id)))
   // Gráfico → clases donde sale, sea en una pieza o en un ejercicio vivo. Dos usos dentro de la misma clase están bien
@@ -283,6 +283,18 @@ export function reuseWarnings(units: ContentUnit[], use: Record<string, { steps:
   if (charts.length) out.push(`${charts.length} gráficos salen en más de una clase: ${charts.slice(0, 14).join(' · ')}${charts.length > 14 ? '…' : ''}`)
   const series = list(isSeries)
   if (series.length) out.push(`${series.length} series históricas se viven como pieza en más de una clase: ${series.join(' · ')}`)
+  // Dos gráficos con distinto nombre pero del mismo activo y casi las mismas fechas se ven iguales: también cuentan
+  const day = (d: string) => { const [a, b, c] = d.split('/').map(Number); return Date.UTC(c, b - 1, a) / 864e5 }
+  const family = (k: string) => (k.startsWith('trend') ? 'trend' : k.split('-')[0])
+  const ids = [...where.keys()].filter(k => charts[k]?.symbol && charts[k].from && charts[k].to && !/^(hist|series|mix)/.test(k))
+  const twins: string[] = []
+  for (let i = 0; i < ids.length; i++) for (let j = i + 1; j < ids.length; j++) {
+    const a = charts[ids[i]], b = charts[ids[j]]
+    if (a.symbol !== b.symbol || family(ids[i]) !== family(ids[j])) continue
+    const shared = Math.min(day(a.to!), day(b.to!)) - Math.max(day(a.from!), day(b.from!))
+    if (shared / Math.min(day(a.to!) - day(a.from!), day(b.to!) - day(b.from!)) > 0.5) twins.push(`${ids[i]} ≈ ${ids[j]}`)
+  }
+  if (twins.length) out.push(`${twins.length} parejas de gráficos muestran casi el mismo tramo del mismo activo: ${twins.join(' · ')}`)
   const sorty: string[] = []
   for (const u of units) {
     const kinds = u.lessons.flatMap(l => l.steps.flatMap(s => (s.kind === 'PLAY' ? [s.play.widget.kind] : [])))

@@ -358,15 +358,6 @@
    ],
    "explanation": "Mentre les borses s'enfonsaven, l'or va seguir el seu camí: per això es diu que la seva correlació amb les accions és baixa."
   },
-  "u29l2-4": {
-   "prompt": "Gener del 2022: bons del Tresor dels EUA a més de 20 anys. La inflació es dispara i la Reserva Federal anuncia pujades de tipus. Què van fer els mesos següents?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "El preu d'un bo depèn molt dels tipus d'interès: per això la seva relació amb les accions canvia segons la inflació.",
-   "horizon": "els mesos següents"
-  },
   "u29l2-5": {
    "prompt": "Correlació alta o baixa?",
    "options": [
@@ -380,20 +371,6 @@
    "right": [
     "Alta: es mouen de manera semblant",
     "Baixa o variable"
-   ]
-  },
-  "u29l2-6": {
-   "prompt": "La Marta té tres fons: un de l'MSCI World, un altre de l'S&P 500 i un altre del Nasdaq 100. Diu que està molt diversificada. Què en penses?",
-   "options": [
-    "Només estaria diversificada amb 10 fons",
-    "Se solapen molt: es mouran gairebé igual",
-    "Té raó: són tres índexs diferents"
-   ],
-   "explanation": "El que diversifica és combinar actius amb correlació baixa, no sumar fons semblants.",
-   "feedback": [
-    "Més fons que compren el mateix no redueixen el risc.",
-    "Exacte: la seva correlació és molt alta. Un fons mundial faria gairebé el mateix amb menys embolic.",
-    "Tres noms, gairebé la mateixa cartera: els EUA pesen molt en tots tres i les grans tecnològiques es repeteixen."
    ]
   },
   "u29l2-10": {

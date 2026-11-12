@@ -447,24 +447,6 @@
    ],
    "explanation": "Selling at every fall is exactly the opposite: it makes you miss the rebounds."
   },
-  "u25l1-10": {
-   "prompt": "What do you reply to Lumi?",
-   "options": [
-    "Better look for the share that rises most this year",
-    "Boring isn't bad: it's the strategy with the most long-term evidence",
-    "You're right, boring is bad"
-   ],
-   "explanation": "Excitement doesn't pay: what pays is staying invested, diversified and with low costs for years.",
-   "feedback": [
-    "That's gambling: most individual shares do worse than the index.",
-    "OK, OK. Boring for long-term money, and the excitement with a small part.",
-    "Well, according to SPIVA, 97 % of European active funds do worse than the index over 10 years…"
-   ],
-   "lines": [
-    "Buy and hold is for grandparents 👴",
-    "I'd rather have something exciting."
-   ]
-  },
   "u25l3-4": {
    "prompt": "Because of a general panic, a company with stable profits, little debt and loyal customers falls 30 % in a month without its business having changed. How does a value investor see it?",
    "options": [
@@ -635,7 +617,7 @@
    "explanation": "Higher and higher highs and lows: this is trend-follower territory."
   },
   "u25l5-2": {
-   "prompt": "And in this one? (NVIDIA · closes every 3 sessions · February–April 2025)",
+   "prompt": "And in this one? (Airbus · closes every 3 sessions · February–April 2026)",
    "options": [
     "Uptrend",
     "Downtrend",
@@ -706,7 +688,7 @@
    "explanation": "Near the previous high, where selling tends to show up. Compare it with the distance to the stop."
   },
   "u25l6-5": {
-   "prompt": "A swing trader looks for ranges and trends. What do you see here? (NVIDIA · closes every 3 sessions · December 2025 – February 2026)",
+   "prompt": "A swing trader looks for ranges and trends. What do you see here? (CaixaBank · closes every 3 sessions · May–July 2025)",
    "options": [
     "Uptrend",
     "Downtrend",

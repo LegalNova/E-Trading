@@ -358,15 +358,6 @@
    ],
    "explanation": "While stock markets were sinking, gold went its own way: that's why its correlation with shares is said to be low."
   },
-  "u29l2-4": {
-   "prompt": "January 2022: US Treasury bonds with more than 20 years to maturity. Inflation is soaring and the Federal Reserve announces rate rises. What did they do over the following months?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "A bond's price depends heavily on interest rates: that's why its relationship with shares changes with inflation.",
-   "horizon": "the following months"
-  },
   "u29l2-5": {
    "prompt": "High or low correlation?",
    "options": [
@@ -380,20 +371,6 @@
    "right": [
     "High: they move similarly",
     "Low or variable"
-   ]
-  },
-  "u29l2-6": {
-   "prompt": "Marta has three funds: one tracking the MSCI World, another the S&P 500 and another the Nasdaq 100. She says she's very diversified. What do you think?",
-   "options": [
-    "She'd only be diversified with 10 funds",
-    "They overlap a lot: they'll move almost the same",
-    "She's right: they're three different indices"
-   ],
-   "explanation": "What diversifies is combining assets with low correlation, not adding up similar funds.",
-   "feedback": [
-    "More funds buying the same thing don't reduce risk.",
-    "Exactly: their correlation is very high. One global fund would do almost the same with less hassle.",
-    "Three names, almost the same portfolio: the US weighs heavily in all three and the big tech companies repeat."
    ]
   },
   "u29l2-10": {

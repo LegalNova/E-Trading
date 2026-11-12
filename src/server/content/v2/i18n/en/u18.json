@@ -519,15 +519,6 @@
    ],
    "explanation": "Construction is very cyclical."
   },
-  "u18l3-1": {
-   "prompt": "January 2022: US inflation is at a near 40-year high and the Fed is preparing to raise rates. This is an ETF of US Treasury bonds with more than 20 years to maturity. What did it do next?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "Long-dated bonds are very sensitive to interest rates: the further away the money they pay, the more their value today changes when rates move.",
-   "horizon": "until October 2023"
-  },
   "u18l3-2": {
    "prompt": "Put in order what happens when the central bank raises rates.",
    "options": [

@@ -537,20 +537,6 @@
    ],
    "explanation": "Pump (inflate) and dump (offload): latecomers buy what the organisers are selling."
   },
-  "u13l4-2": {
-   "prompt": "Ana stakes a crypto that pays her 3 % a year in that same crypto. Over a year, its price falls 40 %. How has she done?",
-   "options": [
-    "She loses: the staking yield doesn't make up for a 40 % fall",
-    "Broke even: staking protects her from falls",
-    "Well: she's earned the staking reward"
-   ],
-   "explanation": "A small yield doesn't make up for the volatility of what's underneath.",
-   "feedback": [
-    "Exactly: staking doesn't protect you from the price.",
-    "It doesn't protect her: it just adds more units of a coin that has fallen.",
-    "The yield is paid in the same crypto: if it falls 40 %, she loses far more than she earns from staking."
-   ]
-  },
   "u13l4-4": {
    "prompt": "Where does the staking yield come from?",
    "options": [

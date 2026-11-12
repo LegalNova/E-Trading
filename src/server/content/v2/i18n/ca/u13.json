@@ -537,20 +537,6 @@
    ],
    "explanation": "Pump (inflar) and dump (deixar anar): els que arriben tard compren el que venen els organitzadors."
   },
-  "u13l4-2": {
-   "prompt": "L'Anna fa staking d'una cripto que li paga un 3 % anual en aquesta mateixa cripto. En un any, el seu preu cau un 40 %. Com li ha anat?",
-   "options": [
-    "Perd: el rendiment de l'staking no compensa una caiguda del 40 %",
-    "Igual: l'staking la protegeix de les caigudes",
-    "Bé: ha cobrat l'staking"
-   ],
-   "explanation": "Un rendiment petit no compensa la volatilitat del que tens a sota.",
-   "feedback": [
-    "Exacte: l'staking no protegeix del preu.",
-    "No protegeix: només afegeix més unitats d'una moneda que ha baixat.",
-    "El rendiment es cobra en la mateixa cripto: si cau un 40 %, perd molt més del que guanya amb l'staking."
-   ]
-  },
   "u13l4-4": {
    "prompt": "D'on surt el rendiment de l'staking?",
    "options": [

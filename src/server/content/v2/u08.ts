@@ -202,7 +202,7 @@ export default unit({
       tf('Las acciones pequeñas suelen tener spreads (horquillas) más amplios que las grandes.', true, 'Hay menos compradores y vendedores, así que comprar y vender cuesta más.'),
       chat(['Las pequeñas suben más que las grandes, ¿no?', 'Pues me paso todo a small caps 🚀'], '¿Qué le dices?', [['Sí, a largo plazo siempre ganan', 'No siempre: ha habido periodos de muchos años en que las grandes les han ganado con claridad.'], ['Pueden rendir más, pero con más riesgo, y no es una regla fija', '¡Eso! Más potencial, más sustos y años en que van peor.'], ['No, las pequeñas nunca suben', 'Algunas pequeñas se convierten en gigantes; lo difícil es saber cuáles de antemano.']], 1, 'El tamaño cambia el perfil de riesgo, pero no garantiza un resultado.'),
       scenario('Quieres invertir en pequeñas empresas de EE. UU., pero sin jugártelo todo a una. ¿Qué haces?', [['Compro un ETF del Russell 2000, que reúne unas 2.000 pequeñas', 'Bien: tienes el potencial de las pequeñas, repartido entre muchas. Si una quiebra, apenas lo notas.'], ['Compro la pequeña que más ha subido este mes', 'Lo que más ha subido no es lo que más subirá, y sigues con todo en una sola empresa.'], ['Compro la micro cap que recomiendan en un foro', 'Una sola empresa diminuta y poco líquida: si sale mal, lo pierdes casi todo.']], 0, 'Un ETF de pequeñas te da su potencial sin depender de una sola. Elegir una suelta por lo que ha subido o por un foro es tentador, pero concentra todo el riesgo de quiebra.'),
-    ], { source: '2.6', minutes: 6, retire: [0, 4, 5, 6, 8] }),
+    ], { source: '2.6', minutes: 6, retire: [0, 2, 4, 5, 6, 8] }),
 
     lesson('u8l6', 'Crecimiento y valor', [
       story('PER de 70 o PER de 9', [{ id: 'laura', name: 'Laura' }], [

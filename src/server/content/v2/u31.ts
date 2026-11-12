@@ -357,6 +357,6 @@ export default unit({
       timed(tf('Tras presentar el 720, solo hay que volver a presentarlo si el valor sube más de 20.000 € o dejas de tener esos bienes.', true, 'Esa es la regla general para los años siguientes.'), 12),
       fill('El modelo informativo para cripto custodiada en el extranjero por más de 50.000 € es el ____.', '721', ['720', '100', '303'], 'El 720 es para cuentas, valores e inmuebles; el 100, la renta; el 303, el IVA.'),
       scenario('Tienes cripto en un exchange extranjero. El 31 de diciembre vale 56.000 €. No has vendido nada. ¿Qué te toca?', [['Vender una parte antes del 31 para quedarme por debajo de 50.000 €', 'Vender sí tributaría por la ganancia. Informar, en cambio, no te cuesta impuestos.'], ['Presentar el modelo 721 entre enero y marzo: informar no es pagar', '¡Exacto! Hacienda solo quiere saberlo. Pagarás cuando vendas con ganancias.'], ['Nada: mientras no pase a euros, no cuenta', 'Para el 721 cuenta lo que tienes fuera a 31 de diciembre, lo hayas vendido o no.']], 1, 'Pasar de 50.000 € en cripto custodiada fuera obliga a presentar el 721, que es solo informativo. Vender para evitarlo es la tentación, pero convierte un trámite gratis en un impuesto real.'),
-    ], { source: '12.6', minutes: 6, retire: [3, 4, 5, 7, 8] }),
+    ], { source: '12.6', minutes: 6, retire: [3, 4, 5, 7, 8, 9] }),
   ],
 })

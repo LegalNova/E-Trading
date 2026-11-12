@@ -181,7 +181,7 @@ export default unit({
       timed(single('Rápido: suben los tipos. ¿Qué empresa suele sufrir más en bolsa?', ['Tecnológica joven sin beneficios', 'Supermercado', 'Eléctrica sin deuda'], 0, 'Su valor depende de beneficios lejanos, que se descuentan más.'), 10),
       tf('En 2022 cayeron a la vez las acciones tecnológicas y los bonos largos.', true, 'El Nasdaq cayó más de un 30 % y los bonos largos más de un 20 %: la subida de tipos golpeó a los dos.'),
       chat(['El BCE ha bajado los tipos 📉', '¿Eso es bueno o malo para la bolsa?'], '¿Qué le contestas a Lumi?', [['Siempre malo', 'Al contrario: suele estimular la economía y favorecer a bolsa y bonos… salvo que se baje por miedo a una crisis.'], ['Suele ser favorable, pero depende de si ya se esperaba y de por qué los bajan', '¡Ah! Si los bajan porque viene una crisis, igual no es tan buena noticia.'], ['No tiene ningún efecto', 'Los tipos son el precio del dinero: afectan a todo.']], 1, 'Bajar los tipos suele favorecer a bolsa y bonos, pero cuentan la sorpresa y el motivo.'),
-    ], { source: '6.1', minutes: 6, retire: [4, 5, 7] }),
+    ], { source: '6.1', minutes: 6, retire: [0, 4, 5, 7] }),
 
     lesson('u18l4', 'Los datos que mueven el mercado', [
       story('Buen dato, bolsa en rojo', [{ id: 'hugo', name: 'Hugo' }], [

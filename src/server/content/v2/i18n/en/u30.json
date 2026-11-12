@@ -640,20 +640,6 @@
    ],
    "explanation": "Contributing every month is part of the plan, not something to avoid."
   },
-  "u30l5-11": {
-   "prompt": "Your Statement says «at most 5 % for speculating». A year later, your bet on a crypto has tripled and now weighs 14 % of your portfolio. What do you do?",
-   "options": [
-    "I let it run: it's working",
-    "I sell what's above 5 % and move it to the rest of the portfolio",
-    "I buy more, it's going really well"
-   ],
-   "explanation": "The limit for speculating is respected when it goes well too: if the bet grows, you trim it back to its weight. Letting it run seems to win more, but it turns the small part into the riskiest one.",
-   "feedback": [
-    "Now 14 % of your money depends on something that can be lost entirely. Your limit was for this.",
-    "That's following the plan! You keep part of the gain and the risk goes back where it belongs.",
-    "Raising the bet after a rise is letting euphoria decide for you."
-   ]
-  },
   "u30l5-12": {
    "prompt": "Your Statement says «in the speculative part, always with a stop». You buy bitcoin at the last price. Place the stop a little below the recent low.",
    "options": [],

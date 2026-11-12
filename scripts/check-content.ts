@@ -15,7 +15,7 @@ r.errors.push(...charts.errors)
 r.warnings.push(...charts.warnings)
 // Datos con fecha (tipos del BCE, normas, informes): aviso cuando llevan más de 12 meses sin comprobar
 r.warnings.push(...staleFacts().map(f => `Dato por revisar · ${f}`))
-r.warnings.push(...reuseWarnings(UNITS, FIXTURE_USE))
+r.warnings.push(...reuseWarnings(UNITS, FIXTURE_USE, CHARTS as unknown as Record<string, { symbol?: string; from?: string; to?: string }>))
 if (UNITS.some(u => u.section) && r.content < 200) r.errors.push(`solo ${r.content} clases (mínimo 200)`)
 console.log(`${UNITS.length} unidades · ${r.sections} secciones · ${r.lessons} lecciones (${r.content} de contenido) · ${r.steps} pasos · ${r.questions} ejercicios · ~${r.words} palabras en pasos`)
 console.log('Ejercicios por tipo:', Object.entries(r.byType).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k} ${v}`).join(' · '))

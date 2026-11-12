@@ -334,20 +334,6 @@
     "No ho controlo"
    ]
   },
-  "u24l1-11": {
-   "prompt": "Comences amb 10.000 € al simulador. Saps que fins i tot un bon sistema encadena de vegades 10 pèrdues seguides. Quant arrisques en cada operació?",
-   "options": [
-    "Un 10 %: així guanyo ràpid",
-    "Depèn de com estigui de segur de cada operació",
-    "Un 1 %: deu errors serien un mal mes, no el final"
-   ],
-   "explanation": "El risc per operació ha de ser petit per sobreviure a les ratxes dolentes, que arriben fins i tot amb un bon sistema.",
-   "feedback": [
-    "Amb un 10 %, deu errors seguits et deixen amb 3.487 €, i hauries de guanyar un 187 % per recuperar-te.",
-    "Ningú no sap quina operació sortirà bé: sentir-te segur no canvia el risc.",
-    "Això: amb un 1 %, després de deu errors et queda el 90,4 % del compte."
-   ]
-  },
   "u24l1-12": {
    "prompt": "Encadenes deu pèrdues seguides. Continues en joc o et deixa molt tocat?",
    "options": [

@@ -358,15 +358,6 @@
    ],
    "explanation": "Mientras las bolsas se hundían, el oro siguió su camino: por eso se dice que su correlación con las acciones es baja."
   },
-  "u29l2-4": {
-   "prompt": "Enero de 2022: bonos del Tesoro de EE. UU. a más de 20 años. La inflación se dispara y la Reserva Federal anuncia subidas de tipos. ¿Qué hicieron en los meses siguientes?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "El precio de un bono depende mucho de los tipos de interés: por eso su relación con las acciones cambia según la inflación.",
-   "horizon": "los meses siguientes"
-  },
   "u29l2-5": {
    "prompt": "¿Correlación alta o baja?",
    "options": [
@@ -380,20 +371,6 @@
    "right": [
     "Alta: se mueven parecido",
     "Baja o variable"
-   ]
-  },
-  "u29l2-6": {
-   "prompt": "Marta tiene tres fondos: uno del MSCI World, otro del S&P 500 y otro del Nasdaq 100. Dice que está muy diversificada. ¿Qué opinas?",
-   "options": [
-    "Solo estaría diversificada con 10 fondos",
-    "Se solapan mucho: se moverán casi igual",
-    "Tiene razón: son tres índices distintos"
-   ],
-   "explanation": "Lo que diversifica es combinar activos con correlación baja, no sumar fondos parecidos.",
-   "feedback": [
-    "Más fondos que compran lo mismo no reducen el riesgo.",
-    "Exacto: su correlación es muy alta. Un fondo mundial haría casi lo mismo con menos lío.",
-    "Tres nombres, casi la misma cartera: EE. UU. pesa mucho en los tres y las grandes tecnológicas se repiten."
    ]
   },
   "u29l2-10": {

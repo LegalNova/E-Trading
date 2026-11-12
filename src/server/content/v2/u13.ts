@@ -222,7 +222,7 @@ export default unit({
       multi('¿Qué riesgos tiene poner tus criptos en DeFi? Marca todos.', ['Fallos en el código del contrato', 'Hackeos de la plataforma', 'Caída del precio de la cripto', 'Que el Banco de España te multe por usarlo'], [0, 1, 2], 'Los riesgos de DeFi son técnicos y de mercado; no hay red de seguridad si algo falla.'),
       timed(fill('La pregunta clave ante cualquier rendimiento: ¿quién ____ el interés?', 'paga', ['cobra', 'decide', 'publica'], 'Si nadie puede explicar quién paga y por qué, desconfía.'), 12),
       buckets('¿Rendimiento explicable o señal de alarma?', ['Se puede explicar', 'Señal de alarma'], [['Interés de un préstamo con garantía', 0], ['«30 % mensual sin riesgo»', 1], ['Recompensa de staking en una red de prueba de participación', 0], ['Ganas más por cada amigo que traes', 1], ['«Rentabilidad garantizada» en una plataforma no autorizada', 1]], 'Explicable no significa sin riesgo, pero lo inexplicable casi siempre acaba mal.'),
-    ], { source: '2.9', minutes: 6, retire: [0, 2, 5, 8] }),
+    ], { source: '2.9', minutes: 6, retire: [0, 1, 2, 5, 8] }),
 
     lesson('u13l5', 'ETFs y ETPs de cripto', [
       story('El ETP de Iker', [{ id: 'iker', name: 'Iker' }], [
