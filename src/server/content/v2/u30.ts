@@ -205,7 +205,7 @@ export default unit({
           { say: 'Mueve el % anual hasta llegar a 15.000 €', mood: 'HAPPY' },
         ],
       }),
-      key('Medir con honestidad', 'Resta comisiones e impuestos, compara con un índice de referencia y recuerda la inflación.\n\nUna app que te dice «+40 % desde el inicio» sin decir en cuántos años no te dice casi nada.', 'Para comparar, usa la rentabilidad anualizada; para saber cuánto ganaste tú, la ponderada por dinero.', 'Pruébalo: compara la «Rentabilidad» de tu Cartera con la de SPY en ese tiempo.'),
+      key('Medir con honestidad', 'Resta comisiones e impuestos, compara con un índice de referencia y recuerda la inflación.\n\nUna app que te dice «+40 % desde el inicio» sin decir en cuántos años no te dice casi nada.', 'Para comparar, usa la rentabilidad anualizada; para saber cuánto ganaste tú, la ponderada por dinero.', 'Pruébalo: compara la «Rentabilidad» de tu Cartera con la de SXR8, un ETF del S&P 500, en ese tiempo.'),
     ], [
       num('Inviertes 2.000 € y hoy valen 2.600 €. ¿Cuál es tu rentabilidad simple?', 30, '%', '(2.600 − 2.000) ÷ 2.000 = 0,30 → 30 %.'),
       num('Una inversión gana un 50 % en total en 5 años. ¿Cuál es su rentabilidad anualizada? (un decimal)', 8.4, '%', '1,5^(1/5) − 1 ≈ 0,084 → 8,4 % anual. No es 10 %: el interés se compone.', 2),

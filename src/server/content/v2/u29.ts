@@ -39,7 +39,7 @@ export default unit({
         say('lumi', 'Suelen proteger los bonos de calidad y la liquidez.'),
         say('lumi', 'Pero no siempre: en 2022, acciones −18 % y bonos −13 %.'),
       ]),
-      key('Cómo se mide', 'La **correlación** dice si dos activos se mueven a la vez. Va de **+1** (siempre igual) a **−1** (siempre al contrario). Un **0** significa que no hay relación.\n\n• S&P 500 y Euro Stoxx 50: alta (0,7-0,9).\n• Dos criptos grandes: muy alta.\n• Acciones y bonos de calidad: baja o negativa en muchas crisis.\n• Acciones y oro: baja y variable.', 'Diversificar de verdad es tener cosas que no se hundan todas el mismo día.', 'Pruébalo: sigue SPY, TLT y GLD en Mercado y compáralos el próximo día rojo.'),
+      key('Cómo se mide', 'La **correlación** dice si dos activos se mueven a la vez. Va de **+1** (siempre igual) a **−1** (siempre al contrario). Un **0** significa que no hay relación.\n\n• S&P 500 y Euro Stoxx 50: alta (0,7-0,9).\n• Dos criptos grandes: muy alta.\n• Acciones y bonos de calidad: baja o negativa en muchas crisis.\n• Acciones y oro: baja y variable.', 'Diversificar de verdad es tener cosas que no se hundan todas el mismo día.', 'Pruébalo: sigue SXR8 (acciones), TLT (bonos largos de EE. UU.) y 4GLD (oro) en Mercado y compáralos el próximo día rojo.'),
     ], [
       match('Empareja cada correlación con su significado.', [['+1', 'Se mueven siempre igual'], ['−1', 'Se mueven siempre al contrario'], ['0', 'No hay relación entre ellos'], ['0,8', 'Suelen moverse en la misma dirección']], 'Cuanto más cerca de +1, menos te protege uno del otro.'),
       single('¿Qué pareja suele tener una correlación más alta?', ['Bitcoin y ethereum', 'Acciones y bonos del Estado de calidad', 'Acciones y oro'], 0, 'Las grandes criptos tienden a subir y caer juntas: combinarlas apenas diversifica.'),
@@ -291,7 +291,7 @@ export default unit({
           ],
         },
         goal: { text: 'Coloca los seis fondos.', when: [when('done', '==', 6)] },
-        insight: 'Desde 2025, la ESMA exige que un fondo con términos ESG en el nombre invierta **al menos un 80 %** en activos que cumplan esas características. Lee **qué hay dentro**, no solo el nombre. Pruébalo: en Mercado, compara el último año de ICLN, un ETF de energía limpia, con el de SPY.',
+        insight: 'Desde 2025, la ESMA exige que un fondo con términos ESG en el nombre invierta **al menos un 80 %** en activos que cumplan esas características. Lee **qué hay dentro**, no solo el nombre. Pruébalo: en Mercado, compara el último año de ICLN, un ETF de energía limpia, con el de SXR8, del S&P 500.',
         lumi: [
           { when: when('wrong', '>=', 2), say: '6: nada. 8: lo promueve. 9: es su objetivo.', mood: 'THINKING' },
           { say: 'Coloca cada fondo', mood: 'HAPPY' },

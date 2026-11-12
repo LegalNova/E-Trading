@@ -443,6 +443,8 @@ export function Asset({ symbol }: { symbol: string }) {
         {a.currency !== currency && a.type !== 'FX' && a.type !== 'INDEX' && <span className="t-foot -mt-2">≈ {fmtAssetPrice({ price: a.priceInUserCurrency, currency, type: a.type }, locale)}</span>}
         <PriceStatus a={a} />
         {a.stale && <div className="banner">{t('staleAsset')}</div>}
+        {/* Los ETF de EE. UU. no se venden a particulares en la UE (no tienen KID): aquí sirven para practicar (auditoría APP-27) */}
+        {a.type === 'ETF' && a.country === 'Estados Unidos' && <div className="banner banner-info">{t('usEtfNote')}</div>}
         <AssetMission symbol={a.symbol} />
 
         <ProChart symbol={a.symbol} decimals={dec} up={up} live={price} liveAt={a.asOf} open={a.isOpen} tz={a.timezone} />
