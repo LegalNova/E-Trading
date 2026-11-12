@@ -365,15 +365,6 @@
    ],
    "explanation": "Mide cuánto beneficio operativo deja cada euro vendido."
   },
-  "u16l2-9": {
-   "prompt": "Este es el precio real de una acción durante dos meses. ¿Qué tendencia tiene? (Apple · cierres cada 3 sesiones · marzo–mayo de 2026)",
-   "options": [
-    "Alcista",
-    "Bajista",
-    "Lateral"
-   ],
-   "explanation": "A corto plazo el precio lo mueven las expectativas; a largo plazo suele seguir a los beneficios. La cuenta de resultados te dice si hay beneficios detrás de la subida."
-  },
   "u16l2-11": {
    "prompt": "Ritmo y Zancada, dos marcas de zapatillas inventadas, venden 100 M€ cada una. A Ritmo le quedan 20 M€ de beneficio operativo; a Zancada, 5 M€. Suben mucho los materiales. ¿Cuál aguanta mejor?",
    "options": [
@@ -690,15 +681,6 @@
    "explanation": "Aunque conocieras sus cifras antes que nadie, no sabrías cómo reaccionaría el mercado: depende de lo que esperaba.",
    "horizon": "las 10 sesiones siguientes"
   },
-  "u16l6-4": {
-   "prompt": "Otra acción real, otras 30 sesiones. ¿Sube o baja?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Sin conocer lo que espera el mercado, el gráfico solo no basta para saber qué viene.",
-   "horizon": "las 10 sesiones siguientes"
-  },
   "u16l6-7": {
    "prompt": "Empareja cada término con su significado.",
    "options": [
@@ -768,15 +750,6 @@
     "Supervisor donde consultar a las cotizadas españolas",
     "Informe anual de una empresa de EE. UU."
    ]
-  },
-  "u16l7-4": {
-   "prompt": "Mientras lees el informe, miras el precio de la acción en los últimos dos meses. ¿Qué tendencia tiene? (Apple · cierres cada 3 sesiones · febrero–abril de 2025)",
-   "options": [
-    "Alcista",
-    "Bajista",
-    "Lateral"
-   ],
-   "explanation": "El gráfico dice qué ha hecho el precio; el informe, si el negocio ha cambiado. No es lo mismo una caída sin cambios en el negocio que una caída porque la tesis se ha roto."
   },
   "u16l7-6": {
    "prompt": "¿Dónde encuentras los informes oficiales de una empresa de EE. UU.?",

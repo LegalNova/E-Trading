@@ -65,7 +65,7 @@
       "Haz de gestor activo",
       "Tu trabajo: adivinar hacia dónde va el mercado. Cuatro índices reales: ¿suben o bajan en las sesiones siguientes?",
       "Juega las cuatro rondas.",
-      "Acertar a veces es fácil; acertar **año tras año**, casi imposible. Según SPIVA, en 10 años el **97 %** de los fondos de acciones europeas quedó por detrás de su índice.",
+      "Acertar a veces es fácil; acertar **año tras año**, casi imposible. Según SPIVA, en 10 años el **97 %** de los fondos europeos de acciones quedó por detrás de su índice.",
       "¡Cuatro de cuatro! ¿Podrías repetirlo diez años seguidos?",
       "Acertar a veces es fácil. Acertar siempre, casi imposible.",
       "¿Sube o baja? Elige en cada ronda"
@@ -89,7 +89,7 @@
     },
     {
      "title": "La aritmética de Sharpe",
-     "body": "1. Todos los inversores juntos **son** el mercado.\n2. Antes de costes, el inversor activo medio gana lo mismo que el mercado.\n3. Después de costes, **tiene que** ganar menos.\n\nNo es que los gestores sean malos: compiten entre ellos y cobran más. SPIVA (Europa, cierre de 2025): en solo **1 año**, el **81,8 %** de los fondos de acciones europeas ya quedó por detrás de su índice. Buffett ganó una apuesta de 10 años con un indexado del S&P 500 frente a una selección de *hedge funds*. Si casi nadie bate al índice, comprar el índice ya te pone por delante de casi todos.",
+     "body": "1. Todos los inversores juntos **son** el mercado.\n2. Antes de costes, el inversor activo medio gana lo mismo que el mercado.\n3. Después de costes, **tiene que** ganar menos.\n\nNo es que los gestores sean malos: compiten entre ellos y cobran más. SPIVA (Europa, cierre de 2025): en solo **1 año**, el **81,8 %** de los fondos europeos de acciones ya quedó por detrás de su índice. Buffett ganó una apuesta de 10 años con un indexado del S&P 500 frente a una selección de *hedge funds*. Si casi nadie bate al índice, comprar el índice ya te pone por delante de casi todos.",
      "key": "A largo plazo, la gran mayoría de fondos activos rinde menos que su índice, sobre todo por los costes.",
      "tip": "Pruébalo: en el simulador, compra un poco de CSPX, un ETF que copia el S&P 500, y déjalo crecer."
     }
@@ -332,11 +332,11 @@
    ]
   },
   "u10l4-1": {
-   "prompt": "Según SPIVA (Europa, cierre de 2025), ¿qué porcentaje de fondos de acciones europeas quedó por detrás de su índice en 10 años?",
+   "prompt": "Según SPIVA (Europa, cierre de 2025), ¿qué porcentaje de fondos europeos de acciones quedó por detrás de su índice en 10 años?",
    "options": [
-    "Un 40 %",
+    "Un 65 %",
     "Un 97 %",
-    "Un 65 %"
+    "Un 40 %"
    ],
    "explanation": "En 1 año ya era el 81,8 %; a 10 años, casi todos."
   },

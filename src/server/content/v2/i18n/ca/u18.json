@@ -752,20 +752,6 @@
    ],
    "explanation": "Primer, entendre el negoci; després, els seus números."
   },
-  "u18l6-5": {
-   "prompt": "Gràfic real d'una acció de l'IBEX 35: 30 sessions sense nom ni data. Encara que haguessis fet la teva anàlisi de 30 minuts, sabries què va fer en les 10 següents?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Una bona anàlisi et diu si el negoci és bo i si el preu és raonable; no et diu què farà el preu d'aquí a dues setmanes.",
-   "horizon": "les 10 sessions següents"
-  },
-  "u18l6-6": {
-   "prompt": "Preu real d'una gran tecnològica durant dos mesos. Toca el punt més alt. (Microsoft · tancaments cada 3 sessions · juny–agost del 2026)",
-   "options": [],
-   "explanation": "El màxim de dos mesos no diu si el negoci és bo: això ho respon la llista de comprovació."
-  },
   "u18l6-8": {
    "prompt": "Has aplicat la llista a una empresa: creix, guanya molt, genera caixa, no té deute i té una marca forta. Però cotitza a un PER molt per sobre de la seva mitjana històrica. Què en conclous?",
    "options": [

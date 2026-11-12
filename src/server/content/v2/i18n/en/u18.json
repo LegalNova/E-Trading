@@ -752,20 +752,6 @@
    ],
    "explanation": "First understand the business; then its numbers."
   },
-  "u18l6-5": {
-   "prompt": "Real chart of an IBEX 35 share: 30 sessions with no name or date. Even if you'd done your 30-minute analysis, would you know what it did over the next 10?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "A good analysis tells you whether the business is good and whether its price is reasonable; it doesn't tell you what the price will do in two weeks.",
-   "horizon": "the next 10 sessions"
-  },
-  "u18l6-6": {
-   "prompt": "Real price of a big tech company over two months. Tap the highest point. (Microsoft · closes every 3 sessions · June–August 2026)",
-   "options": [],
-   "explanation": "A two-month high doesn't tell you whether the business is good: the checklist answers that."
-  },
   "u18l6-8": {
    "prompt": "You've run the checklist on a company: it's growing, very profitable, generates cash, has no debt and has a strong brand. But it trades on a P/E well above its historical average. What do you conclude?",
    "options": [

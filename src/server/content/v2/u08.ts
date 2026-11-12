@@ -268,7 +268,7 @@ export default unit({
       timed(fill('PER = precio ÷ ____ por acción.', 'beneficio', ['dividendo', 'ventas', 'deuda'], 'El PER mide cuántos años de beneficios actuales estás pagando.'), 15),
       scenario('Laura duda entre una tecnológica con PER de 70 que crece un 40 % al año y una aseguradora con PER de 9 que crece un 3 %. ¿Qué razonamiento es el bueno?', [['La de PER 70 es mejor porque crece más', 'Si ese crecimiento ya está en el precio, cualquier decepción puede hundirla.'], ['La de PER 9 es mejor porque es barata', 'Puede ser barata por algo: un negocio que se estanca también decepciona.'], ['Ninguna es mejor por sí sola: depende de si el precio refleja bien su futuro', 'Exacto: crecimiento y valor son estilos, no garantías. Importa lo que pagas por lo que recibes.']], 2, 'Ni «crece mucho» ni «es barata» bastan: hay que comparar el precio con lo que la empresa puede ganar.'),
       single('¿Qué estilo sufre más si el crecimiento esperado decepciona?', ['El de valor', 'El de crecimiento', 'Los dos igual'], 1, 'Con un PER alto, el precio descuenta beneficios futuros; si no llegan, el PER se desinfla.'),
-    ], { source: '5.5', minutes: 6, retire: [1, 2, 6, 8] }),
+    ], { source: '5.5', minutes: 6, retire: [1, 2, 4, 6, 8] }),
 
     lesson('u8l7', 'Recompras de acciones', [
       story('Menos acciones, más beneficio', [{ id: 'leo', name: 'Leo' }], [

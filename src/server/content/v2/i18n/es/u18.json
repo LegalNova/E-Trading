@@ -752,20 +752,6 @@
    ],
    "explanation": "Primero entender el negocio; después, sus números."
   },
-  "u18l6-5": {
-   "prompt": "Gráfico real de una acción del IBEX 35: 30 sesiones sin nombre ni fecha. Aunque hubieras hecho tu análisis de 30 minutos, ¿sabrías qué hizo en las 10 siguientes?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Un buen análisis te dice si el negocio es bueno y si su precio es razonable; no te dice qué hará el precio en dos semanas.",
-   "horizon": "las 10 sesiones siguientes"
-  },
-  "u18l6-6": {
-   "prompt": "Precio real de una gran tecnológica durante dos meses. Toca el punto más alto. (Microsoft · cierres cada 3 sesiones · junio–agosto de 2026)",
-   "options": [],
-   "explanation": "El máximo de dos meses no dice si el negocio es bueno: eso lo responde la lista de comprobación."
-  },
   "u18l6-8": {
    "prompt": "Has aplicado la lista a una empresa: crece, gana mucho, genera caja, no tiene deuda y tiene una marca fuerte. Pero cotiza a un PER muy por encima de su media histórica. ¿Qué concluyes?",
    "options": [

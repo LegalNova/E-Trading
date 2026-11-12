@@ -62,7 +62,7 @@ export default unit({
         intro: 'Tu trabajo: adivinar hacia dónde va el mercado. Cuatro índices reales: ¿suben o bajan en las sesiones siguientes?',
         widget: { kind: 'guess', rounds: ['ud-35', 'ud-38', 'ud-39', 'ud-87'] },
         goal: { text: 'Juega las cuatro rondas.', when: [when('done', '==', 4)] },
-        insight: 'Acertar a veces es fácil; acertar **año tras año**, casi imposible. Según SPIVA, en 10 años el **97 %** de los fondos de acciones europeas quedó por detrás de su índice.',
+        insight: 'Acertar a veces es fácil; acertar **año tras año**, casi imposible. Según SPIVA, en 10 años el **97 %** de los fondos europeos de acciones quedó por detrás de su índice.',
         lumi: [
           { when: when('right', '==', 4), say: '¡Cuatro de cuatro! ¿Podrías repetirlo diez años seguidos?', mood: 'CELEBRATE' },
           { when: when('done', '==', 4), say: 'Acertar a veces es fácil. Acertar siempre, casi imposible.', mood: 'THINKING' },
@@ -79,10 +79,10 @@ export default unit({
         ]),
         say('lumi', 'La rentabilidad pasada dice poco del futuro. Los costes, en cambio, se repiten.'),
       ]),
-      key('La aritmética de Sharpe', '1. Todos los inversores juntos **son** el mercado.\n2. Antes de costes, el inversor activo medio gana lo mismo que el mercado.\n3. Después de costes, **tiene que** ganar menos.\n\nNo es que los gestores sean malos: compiten entre ellos y cobran más. SPIVA (Europa, cierre de 2025): en solo **1 año**, el **81,8 %** de los fondos de acciones europeas ya quedó por detrás de su índice. Buffett ganó una apuesta de 10 años con un indexado del S&P 500 frente a una selección de *hedge funds*. Si casi nadie bate al índice, comprar el índice ya te pone por delante de casi todos.', 'A largo plazo, la gran mayoría de fondos activos rinde menos que su índice, sobre todo por los costes.', 'Pruébalo: en el simulador, compra un poco de CSPX, un ETF que copia el S&P 500, y déjalo crecer.'),
+      key('La aritmética de Sharpe', '1. Todos los inversores juntos **son** el mercado.\n2. Antes de costes, el inversor activo medio gana lo mismo que el mercado.\n3. Después de costes, **tiene que** ganar menos.\n\nNo es que los gestores sean malos: compiten entre ellos y cobran más. SPIVA (Europa, cierre de 2025): en solo **1 año**, el **81,8 %** de los fondos europeos de acciones ya quedó por detrás de su índice. Buffett ganó una apuesta de 10 años con un indexado del S&P 500 frente a una selección de *hedge funds*. Si casi nadie bate al índice, comprar el índice ya te pone por delante de casi todos.', 'A largo plazo, la gran mayoría de fondos activos rinde menos que su índice, sobre todo por los costes.', 'Pruébalo: en el simulador, compra un poco de CSPX, un ETF que copia el S&P 500, y déjalo crecer.'),
     ], [
-      single('Según SPIVA (Europa, cierre de 2025), ¿qué porcentaje de fondos de acciones europeas quedó por detrás de su índice en 10 años?', ['Un 40 %', 'Un 65 %', 'Un 97 %'], 2, 'En 1 año ya era el 81,8 %; a 10 años, casi todos.'),
-      num('De 100 fondos activos de acciones europeas, ¿cuántos batieron a su índice en 10 años, según ese 97 %?', 3, 'fondos', '100 − 97 = 3. Y el verdadero problema es encontrar esos 3 por adelantado.'),
+      single('Según SPIVA (Europa, cierre de 2025), ¿qué porcentaje de fondos europeos de acciones quedó por detrás de su índice en 10 años?', ['Un 40 %', 'Un 65 %', 'Un 97 %'], 2, 'En 1 año ya era el 81,8 %; a 10 años, casi todos.'),
+      num('De 100 fondos activos europeos de acciones, ¿cuántos batieron a su índice en 10 años, según ese 97 %?', 3, 'fondos', '100 − 97 = 3. Y el verdadero problema es encontrar esos 3 por adelantado.'),
       order('Ordena el razonamiento de William Sharpe.', ['Todos los inversores juntos son el mercado', 'Antes de costes, el inversor activo medio gana lo mismo que el mercado', 'El activo paga más comisiones y opera más', 'Después de costes, el activo medio gana menos'], 'Es pura aritmética: no depende de que los gestores sean buenos o malos.'),
       tf('Los fondos que baten a su índice un año suelen repetirlo los años siguientes.', false, 'SPIVA también mide la persistencia: muy pocos repiten. El éxito pasado no predice el futuro.'),
       upDown('Imagina que eres gestor activo y tu trabajo es acertar hacia dónde va el mercado. Esto es un gran índice de acciones. ¿Qué hizo en las 10 sesiones siguientes?', 'ud-34', 'Acertar una y otra vez el próximo movimiento del mercado es lo que intenta la gestión activa, y lo que casi nadie consigue de forma constante.'),

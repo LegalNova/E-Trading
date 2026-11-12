@@ -207,7 +207,7 @@
       "Gairebé tot",
       "El barat acaba en **71.968 €** i el car, en **45.759 €**: es perden 26.209 €, un 36 %.",
       "Porta el termini a 30 anys.",
-      "Batre l'índex és difícil fins i tot per als professionals: segons SPIVA (tancament del 2025), un **97 %** dels fons actius d'accions europees va quedar per darrere en 10 anys. I l'inversor mitjà guanya **1,2 punts menys l'any** que els seus fons per comprar i vendre en mal moment (Morningstar). Prova-ho: busca al Mercat l'índex que s'assembla a la teva cartera i afegeix-lo a Preferits.",
+      "Batre l'índex és difícil fins i tot per als professionals: segons SPIVA (tancament del 2025), un **97 %** dels fons actius europeus d'accions va quedar per darrere en 10 anys. I l'inversor mitjà guanya **1,2 punts menys l'any** que els seus fons per comprar i vendre en mal moment (Morningstar). Prova-ho: busca al Mercat l'índex que s'assembla a la teva cartera i afegeix-lo a Preferits.",
       "Més d'un terç, només per quedar-se enrere cada any.",
       "Continua: els punts que perds també es composen.",
       "Allarga els anys i mira la diferència"
@@ -242,15 +242,6 @@
     "Unes 500 grans empreses dels EUA",
     "Les 35 més líquides d'Espanya"
    ]
-  },
-  "u7l2-2": {
-   "prompt": "Espelmes diàries reals d'un dels índexs d'aquesta classe, sense nom ni dates. Puja o baixa en les sessions següents?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Ningú no llegeix de manera fiable dues setmanes d'un índex: per això els índexs serveixen de referència, no de bola de vidre.",
-   "horizon": "les 10 sessions següents"
   },
   "u7l2-3": {
    "prompt": "Quin índex inclou també països emergents com la Xina o l'Índia?",
@@ -412,11 +403,11 @@
    ]
   },
   "u7l5-7": {
-   "prompt": "Segons SPIVA (tancament del 2025), quin percentatge de fons actius d'accions europees va quedar per darrere del seu índex en 10 anys?",
+   "prompt": "Segons SPIVA (tancament del 2025), quin percentatge de fons actius europeus d'accions va quedar per darrere del seu índex en 10 anys?",
    "options": [
+    "Un 97 %",
     "Al voltant del 60 %",
-    "Al voltant del 30 %",
-    "Un 97 %"
+    "Al voltant del 30 %"
    ],
    "explanation": "Gairebé tots: els costos i la competència fan molt difícil batre l'índex durant anys."
   },

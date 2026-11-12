@@ -365,15 +365,6 @@
    ],
    "explanation": "Mesura quant benefici operatiu deixa cada euro venut."
   },
-  "u16l2-9": {
-   "prompt": "Aquest és el preu real d'una acció durant dos mesos. Quina tendència té? (Apple · tancaments cada 3 sessions · març–maig del 2026)",
-   "options": [
-    "Alcista",
-    "Baixista",
-    "Lateral"
-   ],
-   "explanation": "A curt termini el preu el mouen les expectatives; a llarg termini sol seguir els beneficis. El compte de resultats et diu si hi ha beneficis darrere de la pujada."
-  },
   "u16l2-11": {
    "prompt": "Ritmo i Zancada, dues marques de vambes inventades, venen 100 M€ cadascuna. A Ritmo li queden 20 M€ de benefici operatiu; a Zancada, 5 M€. Els materials pugen molt. Quina aguanta millor?",
    "options": [
@@ -690,15 +681,6 @@
    "explanation": "Encara que en coneguessis les xifres abans que ningú, no sabries com reaccionaria el mercat: depèn del que esperava.",
    "horizon": "les 10 sessions següents"
   },
-  "u16l6-4": {
-   "prompt": "Una altra acció real, unes altres 30 sessions. Puja o baixa?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Sense saber què espera el mercat, el gràfic sol no n'hi ha prou per saber què ve.",
-   "horizon": "les 10 sessions següents"
-  },
   "u16l6-7": {
    "prompt": "Relaciona cada terme amb el seu significat.",
    "options": [
@@ -768,15 +750,6 @@
     "Supervisor on consultar les cotitzades espanyoles",
     "Informe anual d'una empresa dels EUA"
    ]
-  },
-  "u16l7-4": {
-   "prompt": "Mentre llegeixes l'informe, mires el preu de l'acció els últims dos mesos. Quina tendència té? (Apple · tancaments cada 3 sessions · febrer–abril del 2025)",
-   "options": [
-    "Alcista",
-    "Baixista",
-    "Lateral"
-   ],
-   "explanation": "El gràfic diu què ha fet el preu; l'informe, si el negoci ha canviat. No és el mateix una caiguda sense canvis en el negoci que una caiguda perquè la tesi s'ha trencat."
   },
   "u16l7-6": {
    "prompt": "On trobes els informes oficials d'una empresa dels EUA?",

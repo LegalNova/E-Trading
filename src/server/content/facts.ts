@@ -57,8 +57,8 @@ export const FACTS = {
   },
   spivaEurope: {
     what: 'SPIVA Europa, cierre de 2025: fondos activos de renta variable que quedaron por detrás de su índice', value: '81,8 % a 1 año · 97,0 % a 10 años', asOf: '2025-12-31', checked: '2026-11-12', kind: 'secundaria',
-    source: 'Resumen de S&P (Indexology). Falta abrir el PDF para confirmar si es el conjunto de la renta variable o solo «acciones europeas». https://www.spglobal.com/spdji/en/spiva/article/spiva-europe-year-end-2025/',
-    usedIn: ['u7l5', 'u10l4', 'u25l1', 'u30l2'], review: 'Pendiente: confirmar la categoría exacta en el PDF de S&P.',
+    source: 'Resumen de S&P (blog Indexology, abril de 2026): «el 81,8 % de los fondos activos de renta variable quedó por detrás en un año y el 97,0 % en diez». Es el conjunto de fondos de renta variable del informe europeo, no solo los que invierten en acciones europeas: por eso las clases dicen «fondos europeos de acciones». El PDF de S&P no se ha podido abrir (acceso bloqueado). https://www.indexologyblog.com/tag/spiva-europe/',
+    usedIn: ['u7l5', 'u10l4', 'u25l1', 'u30l2'], review: 'Si se consigue el PDF, anotar la tabla exacta.',
   },
   msciWorldCount: {
     what: 'Número de empresas del MSCI World', value: 1249, asOf: '2026-09-30', checked: '2026-11-12', kind: 'oficial',
@@ -79,6 +79,16 @@ export const FACTS = {
     what: 'Fiscalidad de los ETC y ETN en España: su resultado no se trata como el de un ETF', value: 'rendimiento del capital mobiliario (según la consulta citada)', asOf: '2025-03-13', checked: '2026-11-12', kind: 'secundaria',
     source: 'Consulta de la Dirección General de Tributos V0267-25, citada por asesorías; no se ha abierto en la base oficial.',
     usedIn: ['u15l4'], review: 'Pendiente: confirmarlo con un fiscalista antes de afirmar más en la clase.',
+  },
+  inflationSpain: {
+    what: 'Inflación media de España (IPC, media anual) que usan los ejemplos de las clases (%)', value: 2.7, asOf: '2025-12-31', checked: '2026-11-12', kind: 'secundaria',
+    source: 'INE, media anual de 2025 recogida por Funcas (https://www.funcas.es/wp-content/uploads/2026/01/IPC2512.pdf) y la prensa. Falta abrir la nota del INE de enero de 2026.',
+    usedIn: ['u1l2', 'u1l4', 'u11l5'], review: 'Cada enero, cuando el INE publica la media del año anterior. Cambiar a la vez los ejemplos que usan esta cifra (u1l4, u11l5).',
+  },
+  savingsTaxScale: {
+    what: 'Escala del ahorro del IRPF (territorio común): 19 % hasta 6.000 €, 21 % hasta 50.000 €, 23 % hasta 200.000 €, 27 % hasta 300.000 € y 30 % por encima', value: '19 · 21 · 23 · 27 · 30 %', asOf: '2026-01-01', checked: '2026-11-12', kind: 'secundaria',
+    source: 'Guías fiscales de 2026 coincidentes (p. ej. https://guiafiscal.es/irpf/tramos-irpf-2026/). Falta confirmarlo en la web de la Agencia Tributaria.',
+    usedIn: ['u31l1', 'u31l2', 'u31l4'], review: 'Cada enero, con los presupuestos del año. Toda la unidad u31 usa estos tramos en sus cálculos.',
   },
 } as const satisfies Record<string, Fact>
 

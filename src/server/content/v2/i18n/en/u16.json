@@ -365,15 +365,6 @@
    ],
    "explanation": "It measures how much operating profit each euro of sales leaves behind."
   },
-  "u16l2-9": {
-   "prompt": "This is the real price of a share over two months. What trend does it show? (Apple · closes every 3 sessions · March–May 2026)",
-   "options": [
-    "Uptrend",
-    "Downtrend",
-    "Sideways"
-   ],
-   "explanation": "In the short term, prices are driven by expectations; in the long term they tend to follow profits. The income statement tells you whether there are profits behind the rise."
-  },
   "u16l2-11": {
    "prompt": "Ritmo and Zancada, two made-up trainer brands, sell €100m each. Ritmo is left with €20m of operating profit; Zancada, with €5m. Materials get much more expensive. Which one copes better?",
    "options": [
@@ -690,15 +681,6 @@
    "explanation": "Even if you knew its figures before anyone else, you wouldn't know how the market would react: it depends on what it was expecting.",
    "horizon": "the next 10 sessions"
   },
-  "u16l6-4": {
-   "prompt": "Another real share, another 30 sessions. Up or down?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "Without knowing what the market expects, the chart alone isn't enough to tell what's coming.",
-   "horizon": "the next 10 sessions"
-  },
   "u16l6-7": {
    "prompt": "Match each term with its meaning.",
    "options": [
@@ -768,15 +750,6 @@
     "Regulator where you can look up Spanish listed companies",
     "Annual report of a US company"
    ]
-  },
-  "u16l7-4": {
-   "prompt": "While you read the report, you look at the share price over the last two months. What trend does it show? (Apple · closes every 3 sessions · February–April 2025)",
-   "options": [
-    "Uptrend",
-    "Downtrend",
-    "Sideways"
-   ],
-   "explanation": "The chart tells you what the price has done; the report, whether the business has changed. A fall with no change in the business isn't the same as a fall because the investment case has broken."
   },
   "u16l7-6": {
    "prompt": "Where do you find the official reports of a US company?",

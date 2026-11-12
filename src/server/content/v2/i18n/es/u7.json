@@ -207,7 +207,7 @@
       "Casi todo",
       "El barato acaba en **71.968 €** y el caro, en **45.759 €**: se pierden 26.209 €, un 36 %.",
       "Lleva el plazo a 30 años.",
-      "Batir al índice es difícil incluso para profesionales: según SPIVA (cierre de 2025), un **97 %** de los fondos activos de acciones europeas quedó por detrás en 10 años. Y el inversor medio gana **1,2 puntos al año menos** que sus fondos por comprar y vender en mal momento (Morningstar). Pruébalo: busca en Mercado el índice que se parece a tu cartera y añádelo a Favoritos.",
+      "Batir al índice es difícil incluso para profesionales: según SPIVA (cierre de 2025), un **97 %** de los fondos activos europeos de acciones quedó por detrás en 10 años. Y el inversor medio gana **1,2 puntos al año menos** que sus fondos por comprar y vender en mal momento (Morningstar). Pruébalo: busca en Mercado el índice que se parece a tu cartera y añádelo a Favoritos.",
       "Más de un tercio, solo por quedarse atrás cada año.",
       "Sigue: los puntos que pierdes también se componen.",
       "Alarga los años y mira la diferencia"
@@ -242,15 +242,6 @@
     "Unas 500 grandes empresas de EE. UU.",
     "Las 35 más líquidas de España"
    ]
-  },
-  "u7l2-2": {
-   "prompt": "Velas diarias reales de uno de los índices de esta clase, sin nombre ni fechas. ¿Sube o baja en las sesiones siguientes?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Nadie lee de forma fiable dos semanas de un índice: por eso los índices sirven de referencia, no de bola de cristal.",
-   "horizon": "las 10 sesiones siguientes"
   },
   "u7l2-3": {
    "prompt": "¿Qué índice incluye también países emergentes como China o India?",
@@ -429,11 +420,11 @@
    ]
   },
   "u7l5-7": {
-   "prompt": "Según SPIVA (cierre de 2025), ¿qué porcentaje de fondos activos de acciones europeas quedó por detrás de su índice en 10 años?",
+   "prompt": "Según SPIVA (cierre de 2025), ¿qué porcentaje de fondos activos europeos de acciones quedó por detrás de su índice en 10 años?",
    "options": [
+    "Un 97 %",
     "Alrededor del 60 %",
-    "Alrededor del 30 %",
-    "Un 97 %"
+    "Alrededor del 30 %"
    ],
    "explanation": "Casi todos: los costes y la competencia hacen muy difícil batir al índice durante años."
   },

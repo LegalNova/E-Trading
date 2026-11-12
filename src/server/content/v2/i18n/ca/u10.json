@@ -65,7 +65,7 @@
       "Fes de gestor actiu",
       "La teva feina: endevinar cap on va el mercat. Quatre índexs reals: pugen o baixen en les sessions següents?",
       "Juga les quatre rondes.",
-      "Encertar de vegades és fàcil; encertar **any rere any**, gairebé impossible. Segons l'SPIVA, en 10 anys el **97 %** dels fons d'accions europees va quedar per darrere del seu índex.",
+      "Encertar de vegades és fàcil; encertar **any rere any**, gairebé impossible. Segons l'SPIVA, en 10 anys el **97 %** dels fons europeus d'accions va quedar per darrere del seu índex.",
       "Quatre de quatre! Ho podries repetir deu anys seguits?",
       "Encertar de vegades és fàcil. Encertar sempre, gairebé impossible.",
       "Puja o baixa? Tria a cada ronda"
@@ -89,7 +89,7 @@
     },
     {
      "title": "L'aritmètica de Sharpe",
-     "body": "1. Tots els inversors junts **són** el mercat.\n2. Abans de costos, l'inversor actiu mitjà guanya el mateix que el mercat.\n3. Després de costos, **ha de** guanyar menys.\n\nNo és que els gestors siguin dolents: competeixen entre ells i cobren més. SPIVA (Europa, tancament del 2025): en només **1 any**, el **81,8 %** dels fons d'accions europees ja va quedar per darrere del seu índex. Buffett va guanyar una aposta de 10 anys amb un indexat de l'S&P 500 davant d'una selecció de *hedge funds*. Si gairebé ningú no bat l'índex, comprar l'índex ja et posa per davant de gairebé tothom.",
+     "body": "1. Tots els inversors junts **són** el mercat.\n2. Abans de costos, l'inversor actiu mitjà guanya el mateix que el mercat.\n3. Després de costos, **ha de** guanyar menys.\n\nNo és que els gestors siguin dolents: competeixen entre ells i cobren més. SPIVA (Europa, tancament del 2025): en només **1 any**, el **81,8 %** dels fons europeus d'accions ja va quedar per darrere del seu índex. Buffett va guanyar una aposta de 10 anys amb un indexat de l'S&P 500 davant d'una selecció de *hedge funds*. Si gairebé ningú no bat l'índex, comprar l'índex ja et posa per davant de gairebé tothom.",
      "key": "A llarg termini, la gran majoria de fons actius rendeix menys que el seu índex, sobretot pels costos.",
      "tip": "Prova-ho: al simulador, compra una mica de CSPX, un ETF que copia l'S&P 500, i deixa'l créixer."
     }
@@ -332,11 +332,11 @@
    ]
   },
   "u10l4-1": {
-   "prompt": "Segons SPIVA (Europa, tancament del 2025), quin percentatge de fons d'accions europees va quedar per darrere del seu índex en 10 anys?",
+   "prompt": "Segons SPIVA (Europa, tancament del 2025), quin percentatge de fons europeus d'accions va quedar per darrere del seu índex en 10 anys?",
    "options": [
-    "Un 40 %",
+    "Un 65 %",
     "Un 97 %",
-    "Un 65 %"
+    "Un 40 %"
    ],
    "explanation": "En 1 any ja era el 81,8 %; a 10 anys, gairebé tots."
   },

@@ -243,15 +243,6 @@
     "Spain's 35 most liquid companies"
    ]
   },
-  "u7l2-2": {
-   "prompt": "Real daily candlesticks from one of the indices in this lesson, with no name or dates. Does it go up or down over the next sessions?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "Nobody can reliably read two weeks of an index: that's why indices are benchmarks, not crystal balls.",
-   "horizon": "the next 10 sessions"
-  },
   "u7l2-3": {
    "prompt": "Which index also includes emerging markets such as China or India?",
    "options": [
@@ -414,9 +405,9 @@
   "u7l5-7": {
    "prompt": "According to SPIVA (end of 2025), what percentage of active European equity funds lagged their index over 10 years?",
    "options": [
+    "97 %",
     "Around 60 %",
-    "Around 30 %",
-    "97 %"
+    "Around 30 %"
    ],
    "explanation": "Almost all of them: costs and competition make beating the index for years very hard."
   },
