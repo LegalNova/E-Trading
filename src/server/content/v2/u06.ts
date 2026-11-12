@@ -116,7 +116,7 @@ export default unit({
           why: 'El último mínimo relevante está un **4 %** por debajo. Un stop al 2 % queda dentro del ruido normal del precio.',
         },
         goal: { text: 'Coloca el stop donde tu idea deja de ser válida y llega a tu objetivo.', when: [when('hit', '==', 2), when('takePct', '>=', 5)] },
-        insight: 'Con el stop al 2 %, el ruido te sacó. **Un poco por debajo del último mínimo relevante** (a partir del 5 %), aguantó y tocó tu objetivo.',
+        insight: 'Con el stop al 2 %, el ruido te sacó. **Un poco por debajo del último mínimo relevante** (el mínimo está a un 4 %; el stop, hacia el 5 %), aguantó y tocó tu objetivo.',
         lumi: [
           { when: when('hit', '==', 2), say: '¡Ha aguantado el ruido y ha tocado tu objetivo!', mood: 'CELEBRATE' },
           { when: when('hit', '==', 1), say: 'Saltó el stop. ¿Estaba por encima del último mínimo?', mood: 'THINKING' },

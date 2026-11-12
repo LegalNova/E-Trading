@@ -196,7 +196,7 @@
     },
     {
      "title": "Cuándo sale cara",
-     "body": "• **Valores poco líquidos** (los que casi nadie compra ni vende): tu orden se come varios escalones del libro.\n• **Apertura o justo tras una noticia:** los precios saltan.\n• **Bolsa cerrada:** se ejecutará en la apertura, al precio que haya entonces.\n\nEn el simulador, la compra a mercado entra al último precio. Antes de comprar, piensa también tu **stop**: el precio al que venderías para cortar la pérdida si baja.",
+     "body": "• **Valores poco líquidos** (los que casi nadie compra ni vende): tu orden se come varios escalones del libro.\n• **Apertura o justo tras una noticia:** los precios saltan.\n• **Bolsa cerrada:** se ejecutará en la apertura, al precio que haya entonces.\n\nEn el simulador, la compra a mercado entra al último precio; en un bróker real pagarías algo más (la horquilla). Antes de comprar, piensa también tu **stop**: el precio al que venderías para cortar la pérdida si baja.",
      "key": "A mercado = rapidez garantizada, precio no garantizado.",
      "tip": "Pruébalo: en Mercado, compra a mercado una gran empresa y mira a qué precio entras."
     }

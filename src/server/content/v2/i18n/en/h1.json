@@ -196,7 +196,7 @@
     },
     {
      "title": "When it gets expensive",
-     "body": "• **Illiquid securities** (ones almost nobody buys or sells): your order eats through several steps of the book.\n• **The open, or right after news:** prices jump.\n• **Exchange closed:** it'll execute at the open, at whatever the price is then.\n\nIn the simulator, a market buy goes in at the last price. Before buying, also think about your **stop**: the price at which you'd sell to cut your loss if it falls.",
+     "body": "• **Illiquid securities** (ones almost nobody buys or sells): your order eats through several steps of the book.\n• **The open, or right after news:** prices jump.\n• **Exchange closed:** it'll execute at the open, at whatever the price is then.\n\nIn the simulator, a market buy goes in at the last price; at a real broker you would pay a little more (the spread). Before buying, also think about your **stop**: the price at which you'd sell to cut your loss if it falls.",
      "key": "Market order = guaranteed speed, no guaranteed price.",
      "tip": "Try it: in Market, buy a big company at market and see what price you get in at."
     }

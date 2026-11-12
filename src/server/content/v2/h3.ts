@@ -243,7 +243,7 @@ export const u24l3 = lesson('u24l3', 'La regla del 1 %', [
   ]),
   play({
     title: 'Arriesgar no es invertir',
-    intro: 'Ahora tú, con **10.000 €**. La regla del 1 %: si te equivocas y salta el stop, pierdes como mucho **100 €**.',
+    intro: 'Ahora tú, con **10.000 €**. La regla del 1 %: si te equivocas y salta el stop, pierdes unos **100 €** (algo más si el precio da un salto y el stop se ejecuta más abajo).',
     widget: { kind: 'position', account: 10000, riskPct: 1, stopPct: 2, entry: 50, maxRisk: 5, maxStop: 15 },
     predict: {
       prompt: '¿Significa que solo puedes invertir 100 €?',

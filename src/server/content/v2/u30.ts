@@ -96,7 +96,7 @@ export default unit({
     ], [
       num('10.000 € a 30 años con un mercado al 7 %. Sin costes acabas con 76.123 € y con un 1,5 % anual con 49.840 €. ¿Cuánto se ha llevado la comisión?', 26283, '€', '76.123 − 49.840 = 26.283 €: más de un tercio del resultado.', 1),
       num('Mismo caso, pero con un 1,8 % de costes (rentabilidad neta del 5,2 %). ¿Cuánto tendrías a los 30 años? (redondea)', 45759, '€', '10.000 × 1,052³⁰ ≈ 45.759 €, frente a 71.968 € con un 0,2 %.', 2),
-      single('Aportando 300 € al mes durante 30 años, ¿cuánto separa un 0,2 % de costes de un 1,8 %?', ['Unos 9.000 €', 'Unos 30.000 €', 'Más de 90.000 €'], 2, 'Unos 351.900 € frente a unos 259.100 € con un mercado al 7 %.'),
+      single('Aportando 300 € al mes durante 30 años, ¿cuánto separa un 0,2 % de costes de un 1,8 %?', ['Unos 9.000 €', 'Unos 30.000 €', 'Más de 80.000 €'], 2, 'Unos 338.200 € frente a unos 253.400 € con un mercado al 7 %: casi 85.000 € de diferencia.'),
       tf('Un 1 % anual de comisiones apenas importa a 30 años.', false, 'Por el interés compuesto, cada punto anual se lleva una parte enorme del resultado final.'),
       multi('¿Qué costes debes mirar antes de invertir? Marca todos.', ['Los gastos corrientes o TER del fondo', 'La comisión por compra y venta', 'El cambio de divisa', 'El color de la app'], [0, 1, 2], 'También el spread, la custodia y los impuestos.'),
       fill('El coste anual de un fondo o ETF se llama gastos corrientes o ____.', 'TER', ['IVA', 'IPC', 'PER'], 'Viene en el documento de datos fundamentales (KID).'),
