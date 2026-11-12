@@ -293,9 +293,9 @@
   "u7l1-1": {
    "prompt": "What is a stock market index?",
    "options": [
-    "A company listed on the stock market",
+    "A very large company listed on the stock market",
     "An interest rate",
-    "A figure that sums up how a group of securities is doing"
+    "A figure that sums up a group of securities"
    ],
    "explanation": "It's a reference basket with rules about what gets in and how much it weighs."
   },
@@ -311,11 +311,11 @@
    "prompt": "What do an index's rules set? Select all that apply.",
    "options": [
     "How much each one weighs",
-    "Whatever a TV pundit thinks that day",
-    "How often it's reviewed",
+    "What price it will trade at tomorrow",
+    "What dividend each company must pay",
     "Which companies get in"
    ],
-   "explanation": "The rules are public and objective: that's why the index works as a benchmark."
+   "explanation": "The rules say which companies get in and how much each one weighs, and they're public: that's why the index works as a benchmark. They don't set prices or dividends."
   },
   "u7l1-10": {
    "prompt": "You can't buy an index directly: you buy a fund or an ____ that tracks it.",
@@ -346,7 +346,7 @@
   "u10l2-4": {
    "prompt": "What annual cost do the big index ETFs usually have?",
    "options": [
-    "From 1.5 % to 2 %",
+    "Between 1.50 % and 2.00 %",
     "From 0.03 % to 0.30 %",
     "From 5 % to 10 %"
    ],
@@ -366,8 +366,8 @@
    "prompt": "Which risk do you eliminate by spreading your money across hundreds of shares?",
    "options": [
     "All risk",
-    "Market risk",
-    "Each company's specific risk"
+    "The risk of the whole market falling",
+    "Each company's own risk"
    ],
    "explanation": "A bankruptcy stops being a drama if it's 0.1 % of your money. But if the whole market falls, they all fall: that risk is only softened with bonds or cash."
   },
@@ -401,15 +401,15 @@
     "A global share fund and a bond fund",
     "Having almost everything in shares of the company you work for",
     "Owning 15 different cryptocurrencies",
-    "Owning 10 funds that all buy the same 50 tech companies"
+    "A fund of 1,500 companies from 23 countries"
    ],
-   "explanation": "Different names aren't different assets: cryptos tend to fall together and overlapping funds buy the same things."
+   "explanation": "Different names aren't different assets: cryptos tend to fall together, and your company already pays your salary. A global fund or mixing shares with bonds does spread the risk."
   },
   "u29l1-8": {
    "prompt": "Pablo has 80 % of his savings in shares of the company he works for: «I know it better than anyone». What do you tell him?",
    "options": [
-    "That he's concentrating two risks in one place: his salary and his savings",
-    "That he should move everything to another company he likes more",
+    "That he's putting his salary and savings in one place",
+    "That he should move it all to another company he knows just as well",
     "He's right: knowing the company eliminates the risk"
    ],
    "explanation": "Concentrating in your own employer is a double risk. Diversifying reduces it without giving up expected return.",
@@ -432,8 +432,8 @@
   "u29l1-10": {
    "prompt": "What do you reply to Lumi?",
    "options": [
-    "No: if they all fall at once, it's like owning just one",
-    "Yes, 15 is loads",
+    "No: if they all fall together, it's like owning one",
+    "Yes: with 15 different ones, they're unlikely to all fall at once",
     "Yes, especially if they're new"
    ],
    "explanation": "Highly correlated assets don't diversify. And remember: with crypto you can lose everything you put in.",
@@ -468,8 +468,8 @@
   "u25l2-5": {
    "prompt": "Ana inherits €30,000 to invest for the long term. She knows from experience that if she invests it all and it falls 20 % the next month, she'd sell everything out of nerves. Which option fits best with what she knows about herself?",
    "options": [
-    "Spread it over 6–12 months with automatic contributions",
-    "Wait for the market to drop",
+    "Spread it over 6–12 months, automatically",
+    "Wait for the market to drop 10 % and then go all in",
     "Invest it all today"
    ],
    "explanation": "The best strategy is the one you'll be able to stick to. Waiting for «the right moment» is usually the worst.",
@@ -508,7 +508,7 @@
    "prompt": "Where do you find a fund's ongoing charges?",
    "options": [
     "Only in the bank's adverts",
-    "In the KID (Key Information Document)",
+    "In the KID, its key information document",
     "On a monthly bill from the management company"
    ],
    "explanation": "They're required to appear in the KID, along with the other costs."
@@ -516,18 +516,18 @@
   "u10l3-5": {
    "prompt": "Which costs can reduce your return? Select all.",
    "options": [
-    "Broker's commission",
+    "The number of companies it holds",
     "Currency exchange",
-    "The fund having lots of unitholders",
+    "The return it made last year",
     "TER or ongoing charges"
    ],
-   "explanation": "So can the spread, custody fees and tax. The number of unitholders isn't a cost."
+   "explanation": "Currency exchange and ongoing charges (TER) are costs, and so are the broker's commission, the spread, custody fees and tax. What it returned last year or how many companies it holds aren't costs."
   },
   "u10l3-10": {
    "prompt": "What do you explain?",
    "options": [
-    "It's taken out of the fund's value every day, which is why you don't see it",
-    "Hacienda (the tax authority) collects it at the end of the year",
+    "It's taken out of the fund's value every day",
+    "The tax office collects it at the end of the year",
     "Then it isn't charging it"
    ],
    "explanation": "Not seeing a charge doesn't mean you're not paying: the TER has already been taken out of the net asset value.",
@@ -561,7 +561,7 @@
    "options": [
     "Deposits or a money market fund",
     "Cryptocurrencies",
-    "100 % in tech shares"
+    "All in tech shares, which rise more"
    ],
    "explanation": "With 18 months to go, a 30 % fall would wreck the plan."
   },
@@ -606,7 +606,7 @@
    "options": [
     "The 1 % one: if it charges more, it must be better",
     "It doesn't matter: it's less than a point of difference",
-    "The 0.2 % one: if they copy the same thing, the cheap one leaves you more"
+    "The 0.2 % one: they copy the same thing"
    ],
    "explanation": "With the same index inside, the cost is the only thing that changes. With a market at 7 %, the 0.2 % one ends at €71,968 and the 1 % one at €57,435. «Less than a point» looks small, but it's charged every year on everything accumulated.",
    "feedback": [
@@ -643,8 +643,8 @@
    "prompt": "What do you say?",
    "options": [
     "It has no risk at all",
-    "You buy it like a share, but inside there's a basket of many companies",
-    "Yes, just as risky"
+    "You buy it like a share, but it holds many companies",
+    "Yes, just as risky: after all, it trades on the exchange like any share"
    ],
    "explanation": "The way you buy it is like a share; the risk is that of the whole basket.",
    "feedback": [

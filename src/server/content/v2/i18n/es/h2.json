@@ -293,9 +293,9 @@
   "u7l1-1": {
    "prompt": "¿Qué es un índice bursátil?",
    "options": [
-    "Una empresa que cotiza en bolsa",
+    "Una empresa muy grande que cotiza en la bolsa",
     "Un tipo de interés",
-    "Una cifra que resume cómo va un grupo de valores"
+    "Una cifra que resume un grupo de valores"
    ],
    "explanation": "Es una cesta de referencia con reglas sobre qué entra y cuánto pesa."
   },
@@ -311,11 +311,11 @@
    "prompt": "¿Qué fijan las reglas de un índice? Marca todas.",
    "options": [
     "Cuánto pesa cada una",
-    "Lo que opine cada día un tertuliano",
-    "Cada cuánto se revisa",
+    "A qué precio cotizará mañana",
+    "Cuánto dividendo debe pagar cada empresa",
     "Qué empresas entran"
    ],
-   "explanation": "Las reglas son públicas y objetivas: por eso el índice sirve de referencia."
+   "explanation": "Las reglas dicen qué empresas entran y cuánto pesa cada una, y son públicas: por eso el índice sirve de referencia. No fijan precios ni dividendos."
   },
   "u7l1-10": {
    "prompt": "Un índice no se compra directamente: se compra un fondo o un ____ que lo replica.",
@@ -352,7 +352,7 @@
   "u10l2-4": {
    "prompt": "¿Qué coste anual suelen tener los grandes ETF indexados?",
    "options": [
-    "Del 1,5 % al 2 %",
+    "Entre el 1,50 % y el 2,00 %",
     "Del 0,03 % al 0,30 %",
     "Del 5 % al 10 %"
    ],
@@ -370,8 +370,8 @@
    "prompt": "¿Qué le contestas?",
    "options": [
     "No tiene ningún riesgo",
-    "Se compra como una acción, pero dentro hay una cesta de muchas empresas",
-    "Sí, igual de arriesgado"
+    "Se compra como una acción, pero lleva muchas empresas dentro",
+    "Sí, igual de arriesgado: al final cotiza en bolsa como cualquier acción"
    ],
    "explanation": "La forma de comprarlo es como una acción; el riesgo es el de toda la cesta.",
    "feedback": [
@@ -398,8 +398,8 @@
    "prompt": "¿Qué riesgo elimina repartir tu dinero entre cientos de acciones?",
    "options": [
     "Todo el riesgo",
-    "El riesgo de mercado",
-    "El riesgo específico de cada empresa"
+    "El riesgo de que caiga todo el mercado",
+    "El específico de cada empresa"
    ],
    "explanation": "Una quiebra deja de ser un drama si pesa un 0,1 %. Pero si cae todo el mercado, caen todas: ese riesgo solo se suaviza con bonos o liquidez."
   },
@@ -433,15 +433,15 @@
     "Un fondo de acciones de todo el mundo y otro de bonos",
     "Tener casi todo en acciones de la empresa donde trabajas",
     "Tener 15 criptomonedas distintas",
-    "Tener 10 fondos que compran las mismas 50 tecnológicas"
+    "Un fondo de 1.500 empresas de 23 países"
    ],
-   "explanation": "Nombres distintos no son activos distintos: las criptos suelen caer juntas y los fondos repetidos compran lo mismo."
+   "explanation": "Nombres distintos no son activos distintos: las criptos suelen caer juntas, y tu empresa ya te paga el sueldo. Un fondo mundial o mezclar acciones con bonos sí reparte el riesgo."
   },
   "u29l1-8": {
    "prompt": "Pablo tiene el 80 % de sus ahorros en acciones de la empresa donde trabaja: «La conozco mejor que nadie». ¿Qué le dices?",
    "options": [
-    "Que concentra dos riesgos en el mismo sitio: su sueldo y sus ahorros",
-    "Que pase todo a otra empresa que le guste más",
+    "Que junta su sueldo y sus ahorros en el mismo sitio",
+    "Que lo pase todo a otra empresa que conozca igual de bien",
     "Tiene razón: conocer la empresa elimina el riesgo"
    ],
    "explanation": "Concentrar en tu propia empresa es doble riesgo. Diversificar lo reduce sin renunciar a rentabilidad esperada.",
@@ -464,8 +464,8 @@
   "u29l1-10": {
    "prompt": "¿Qué le contestas a Ana?",
    "options": [
-    "No: si todas caen a la vez, es como tener una sola",
-    "Sí, 15 son muchísimas",
+    "No: si caen todas a la vez, es como tener una",
+    "Sí: con 15 distintas es difícil que caigan todas a la vez",
     "Sí, sobre todo si son nuevas"
    ],
    "explanation": "Activos muy correlacionados no diversifican. Y recuerda: en cripto puede perderse la totalidad de lo invertido.",
@@ -500,8 +500,8 @@
   "u25l2-5": {
    "prompt": "Ana hereda 30.000 € para invertir a largo plazo. Sabe por experiencia que si lo invierte todo y cae un 20 % al mes siguiente, lo vendería todo por nervios. ¿Qué opción encaja mejor con lo que sabe de sí misma?",
    "options": [
-    "Repartirlo en 6–12 meses con aportaciones automáticas",
-    "Esperar a que la bolsa baje",
+    "Repartirlo en 6–12 meses, de forma automática",
+    "Esperar a que la bolsa baje un 10 % y entonces entrar con todo",
     "Invertirlo todo hoy"
    ],
    "explanation": "La mejor estrategia es la que vas a poder mantener. Esperar «el momento» suele ser la peor.",
@@ -540,7 +540,7 @@
    "prompt": "¿Dónde encuentras los gastos corrientes de un fondo?",
    "options": [
     "Solo en la publicidad del banco",
-    "En el KID (Documento de Datos Fundamentales)",
+    "En el KID, su documento de datos",
     "En una factura mensual de la gestora"
    ],
    "explanation": "Es obligatorio que aparezcan en el KID, junto al resto de costes."
@@ -548,18 +548,18 @@
   "u10l3-5": {
    "prompt": "¿Qué costes pueden reducir tu rentabilidad? Marca todos.",
    "options": [
-    "Comisión del bróker",
+    "El número de empresas que lleva dentro",
     "Cambio de divisa",
-    "Que el fondo tenga muchos partícipes",
+    "La rentabilidad que tuvo el año pasado",
     "TER o gastos corrientes"
    ],
-   "explanation": "También el spread, la custodia y los impuestos. El número de partícipes no es un coste."
+   "explanation": "Son costes el cambio de divisa y los gastos corrientes (TER), y también la comisión del bróker, el spread, la custodia y los impuestos. Lo que rindió el año pasado o cuántas empresas lleva no son costes."
   },
   "u10l3-10": {
    "prompt": "¿Qué le explicas?",
    "options": [
-    "Se descuenta cada día del valor del fondo, por eso no lo ves",
-    "Lo cobra Hacienda a final de año",
+    "Se descuenta cada día del valor del fondo",
+    "Lo cobra Hacienda a final de año, con la declaración",
     "Entonces no lo cobra"
    ],
    "explanation": "Que no veas un cargo no significa que no pagues: el TER ya está restado del valor liquidativo.",
@@ -577,7 +577,7 @@
    "options": [
     "El del 1 %: si cobra más, será mejor",
     "Da igual: es menos de un punto de diferencia",
-    "El del 0,2 %: si copian lo mismo, el barato te deja más"
+    "El del 0,2 %: copian lo mismo"
    ],
    "explanation": "Con el mismo índice dentro, el coste es lo único que cambia. Con un mercado al 7 %, el del 0,2 % acaba en 71.968 € y el del 1 %, en 57.435 €. «Menos de un punto» parece poco, pero se cobra cada año sobre todo lo acumulado.",
    "feedback": [
@@ -623,7 +623,7 @@
    "options": [
     "Depósitos o un fondo monetario",
     "Criptomonedas",
-    "100 % en acciones tecnológicas"
+    "Todo en acciones tecnológicas, que suben más"
    ],
    "explanation": "A 18 meses, una caída del 30 % arruinaría el plan."
   },

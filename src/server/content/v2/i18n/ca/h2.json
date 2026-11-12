@@ -293,9 +293,9 @@
   "u7l1-1": {
    "prompt": "Què és un índex borsari?",
    "options": [
-    "Una empresa que cotitza a borsa",
+    "Una empresa molt gran que cotitza a la borsa",
     "Un tipus d'interès",
-    "Una xifra que resumeix com va un grup de valors"
+    "Una xifra que resumeix un grup de valors"
    ],
    "explanation": "És una cistella de referència amb regles sobre què hi entra i quant pesa."
   },
@@ -311,11 +311,11 @@
    "prompt": "Què fixen les regles d'un índex? Marca-les totes.",
    "options": [
     "Quant pesa cadascuna",
-    "El que opini cada dia un tertulià",
-    "Cada quant es revisa",
+    "A quin preu cotitzarà demà",
+    "Quin dividend ha de pagar cada empresa",
     "Quines empreses hi entren"
    ],
-   "explanation": "Les regles són públiques i objectives: per això l'índex serveix de referència."
+   "explanation": "Les regles diuen quines empreses hi entren i quant pesa cadascuna, i són públiques: per això l'índex serveix de referència. No fixen preus ni dividends."
   },
   "u7l1-10": {
    "prompt": "Un índex no es compra directament: es compra un fons o un ____ que el replica.",
@@ -346,7 +346,7 @@
   "u10l2-4": {
    "prompt": "Quin cost anual solen tenir els grans ETF indexats?",
    "options": [
-    "De l'1,5 % al 2 %",
+    "Entre l'1,50 % i el 2,00 %",
     "Del 0,03 % al 0,30 %",
     "Del 5 % al 10 %"
    ],
@@ -366,8 +366,8 @@
    "prompt": "Quin risc elimina repartir els teus diners entre centenars d'accions?",
    "options": [
     "Tot el risc",
-    "El risc de mercat",
-    "El risc específic de cada empresa"
+    "El risc que caigui tot el mercat",
+    "L'específic de cada empresa"
    ],
    "explanation": "Una fallida deixa de ser un drama si pesa un 0,1 %. Però si cau tot el mercat, cauen totes: aquest risc només se suavitza amb bons o liquiditat."
   },
@@ -401,15 +401,15 @@
     "Un fons d'accions de tot el món i un altre de bons",
     "Tenir gairebé tot en accions de l'empresa on treballes",
     "Tenir 15 criptomonedes diferents",
-    "Tenir 10 fons que compren les mateixes 50 tecnològiques"
+    "Un fons de 1.500 empreses de 23 països"
    ],
-   "explanation": "Noms diferents no són actius diferents: les criptos solen caure juntes i els fons repetits compren el mateix."
+   "explanation": "Noms diferents no són actius diferents: les criptos solen caure juntes, i la teva empresa ja et paga el sou. Un fons mundial o barrejar accions amb bons sí que reparteix el risc."
   },
   "u29l1-8": {
    "prompt": "En Pablo té el 80 % dels seus estalvis en accions de l'empresa on treballa: «La conec millor que ningú». Què li dius?",
    "options": [
-    "Que concentra dos riscos al mateix lloc: el seu sou i els seus estalvis",
-    "Que ho passi tot a una altra empresa que li agradi més",
+    "Que ajunta el sou i els estalvis al mateix lloc",
+    "Que ho passi tot a una altra empresa que conegui igual de bé",
     "Té raó: conèixer l'empresa elimina el risc"
    ],
    "explanation": "Concentrar en la teva pròpia empresa és doble risc. Diversificar el redueix sense renunciar a rendibilitat esperada.",
@@ -432,8 +432,8 @@
   "u29l1-10": {
    "prompt": "Què li contestes a la Lumi?",
    "options": [
-    "No: si totes cauen alhora, és com tenir-ne una de sola",
-    "Sí, 15 són moltíssimes",
+    "No: si cauen totes alhora, és com tenir-ne una",
+    "Sí: amb 15 de diferents és difícil que caiguin totes alhora",
     "Sí, sobretot si són noves"
    ],
    "explanation": "Actius molt correlacionats no diversifiquen. I recorda: en cripto es pot perdre la totalitat del que has invertit.",
@@ -468,8 +468,8 @@
   "u25l2-5": {
    "prompt": "L'Ana hereta 30.000 € per invertir a llarg termini. Sap per experiència que si ho inverteix tot i cau un 20 % el mes següent, ho vendria tot pels nervis. Quina opció encaixa millor amb el que sap d'ella mateixa?",
    "options": [
-    "Repartir-ho en 6–12 mesos amb aportacions automàtiques",
-    "Esperar que la borsa baixi",
+    "Repartir-ho en 6–12 mesos, de manera automàtica",
+    "Esperar que la borsa baixi un 10 % i aleshores entrar-hi amb tot",
     "Invertir-ho tot avui"
    ],
    "explanation": "La millor estratègia és la que podràs mantenir. Esperar «el moment» sol ser la pitjor.",
@@ -508,7 +508,7 @@
    "prompt": "On trobes les despeses corrents d'un fons?",
    "options": [
     "Només a la publicitat del banc",
-    "Al KID (Document de Dades Fonamentals)",
+    "Al KID, el seu document de dades",
     "En una factura mensual de la gestora"
    ],
    "explanation": "És obligatori que apareguin al KID, juntament amb la resta de costos."
@@ -516,18 +516,18 @@
   "u10l3-5": {
    "prompt": "Quins costos poden reduir la teva rendibilitat? Marca'ls tots.",
    "options": [
-    "Comissió del bròquer",
+    "El nombre d'empreses que porta a dins",
     "Canvi de divisa",
-    "Que el fons tingui molts partícips",
+    "La rendibilitat que va tenir l'any passat",
     "TER o despeses corrents"
    ],
-   "explanation": "També l'spread, la custòdia i els impostos. El nombre de partícips no és un cost."
+   "explanation": "Són costos el canvi de divisa i les despeses corrents (TER), i també la comissió del bròquer, l'spread, la custòdia i els impostos. El que va rendir l'any passat o quantes empreses porta no són costos."
   },
   "u10l3-10": {
    "prompt": "Què li expliques?",
    "options": [
-    "Es descompta cada dia del valor del fons, per això no el veus",
-    "El cobra Hisenda a final d'any",
+    "Es descompta cada dia del valor del fons",
+    "El cobra Hisenda a final d'any, amb la declaració",
     "Llavors no el cobra"
    ],
    "explanation": "Que no vegis cap càrrec no vol dir que no paguis: el TER ja està restat del valor liquidatiu.",
@@ -561,7 +561,7 @@
    "options": [
     "Dipòsits o un fons monetari",
     "Criptomonedes",
-    "100 % en accions tecnològiques"
+    "Tot en accions tecnològiques, que pugen més"
    ],
    "explanation": "A 18 mesos, una caiguda del 30 % arruïnaria el pla."
   },
@@ -606,7 +606,7 @@
    "options": [
     "El de l'1 %: si cobra més, serà millor",
     "Tant és: és menys d'un punt de diferència",
-    "El del 0,2 %: si copien el mateix, el barat et deixa més"
+    "El del 0,2 %: copien el mateix"
    ],
    "explanation": "Amb el mateix índex a dins, el cost és l'únic que canvia. Amb un mercat al 7 %, el del 0,2 % acaba en 71.968 € i el de l'1 %, en 57.435 €. «Menys d'un punt» sembla poc, però es cobra cada any sobre tot el que s'ha acumulat.",
    "feedback": [
@@ -643,8 +643,8 @@
    "prompt": "Què li contestes?",
    "options": [
     "No té cap risc",
-    "Es compra com una acció, però a dins hi ha una cistella de moltes empreses",
-    "Sí, igual d'arriscat"
+    "Es compra com una acció, però porta moltes empreses a dins",
+    "Sí, igual d'arriscat: al final cotitza a borsa com qualsevol acció"
    ],
    "explanation": "La manera de comprar-lo és com una acció; el risc és el de tota la cistella.",
    "feedback": [
