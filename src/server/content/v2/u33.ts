@@ -203,5 +203,44 @@ export default unit({
       chat(['¿Me cojo un robo-advisor o lo hago yo? 🤖', 'No quiero estar pendiente de la bolsa.'], 'Lumi no quiere estar pendiente de la bolsa y duda entre un robo-advisor o hacerlo ella. ¿Qué le contestas?', [['Robo-advisor siempre, los robots no se equivocan', 'Los robots siguen reglas, pero el mercado puede caer igual. Y cobran por el servicio.'], ['Depende de si vas a ser constante', '¡Eso! Compara el coste extra con los errores que te evitaría.'], ['Ninguno, mejor un fondo de banco con gestor', 'Suele ser la opción más cara y, de media, rinde menos que su índice.']], 1, 'No hay una respuesta única: coste frente a disciplina.'),
       num('Un robo-advisor cobra en total un 0,6 % al año. Con 10.000 € invertidos, ¿cuánto pagas al año?', 60, '€', '10.000 × 0,006 = 60 €. Haciéndolo tú con indexados al 0,2 % serían 20 €: la diferencia es lo que pagas por que lo haga por ti.'),
     ], { minutes: 6, retire: [2, 3, 4, 6] }),
+
+    // Auditoría FAL-10 (y FAL-12): el primer día con dinero real, paso a paso, y lo que el simulador no enseña
+    // (las emociones y todos los costes). Sin cifras nuevas. Al final de la unidad para no cambiar qué abre cada plan.
+    lesson('u33l5', 'Tu primer día con dinero real', [
+      story('Del simulador a tu cuenta', [{ id: 'dani', name: 'Dani' }], [
+        say('dani', 'Llevo seis meses ganando en el simulador. Mañana abro una cuenta de verdad y paso **todos mis ahorros**.'),
+        say('lumi', 'El simulador te ha enseñado cómo funciona. Hay dos cosas que no puede enseñarte.'),
+        choose('¿Cuáles son?', [
+          opt('Cómo se pone una orden y cómo se lee un gráfico', 'bad', say('lumi', 'Eso sí lo has practicado aquí, y funciona igual.')),
+          opt('Lo que se siente al perder dinero tuyo y lo que cuesta de verdad operar', 'good', say('lumi', 'Eso. Aquí perder no duele, y no pagas todas las comisiones ni impuestos.')),
+          opt('Nada: si gano aquí, ganaré fuera', 'bad', say('lumi', 'Con dinero real el miedo y la prisa cambian cómo decides.')),
+        ]),
+        say('lumi', 'Por eso el primer día se empieza **con poco**: para conocer el proceso y conocerte a ti.'),
+      ]),
+      story('El primer día, paso a paso', [{ id: 'elena', name: 'Elena' }], [
+        say('elena', 'Ya he comprobado que mi bróker está autorizado. Ahora me pide el DNI y un montón de datos. ¿Es normal?'),
+        say('lumi', 'Sí: una entidad autorizada **tiene que identificarte**. Desconfía de la que no te pida nada.'),
+        say('elena', 'También me ofrece un test para operar con productos «complejos».'),
+        choose('¿Para qué sirve ese test?', [
+          opt('Para ver si entiendes esos productos antes de usarlos', 'good', say('lumi', 'Es el **test de conveniencia**. Si no los entiendes, lo sensato es no operarlos.')),
+          opt('Para saber cuánto dinero tienes', 'bad', say('lumi', 'No mide tu dinero: mide si conoces el producto y sus riesgos.')),
+          opt('Es un trámite: se contesta lo que haga falta para pasarlo', 'bad', say('lumi', 'Si lo pasas mintiendo, operarás algo que no entiendes. Te engañas a ti.')),
+        ]),
+        say('lumi', 'Después: una **transferencia pequeña** desde una cuenta a tu nombre y una **primera compra pequeña**.'),
+        say('lumi', 'Y guarda la confirmación. La necesitarás para saber qué pagaste y para la renta.'),
+        note('Para comprar acciones o fondos sencillos no hace falta ese test. Sí se exige para productos complejos, como los derivados (MiFID II).'),
+      ]),
+      key('Tu primer día, en cinco pasos', '1. **Comprueba** que la entidad está autorizada.\n2. **Abre la cuenta** e identifícate.\n3. **Transfiere poco** desde una cuenta a tu nombre.\n4. **Haz una compra pequeña** y mira lo que te cobran de verdad.\n5. **Guarda** la confirmación de cada operación y el resumen fiscal de cada año.\n\nEl simulador no reproduce dos cosas: **tus emociones** con dinero real y **todos los costes** (comisiones, cambio de divisa e impuestos). Por eso se empieza con poco y con el mismo plan que aquí.', 'El primer día no se trata de ganar: se trata de aprender el proceso con poco dinero.', 'Pruébalo: repasa tu diario del simulador y apunta qué regla te costaría más cumplir con dinero real.'),
+    ], [
+      order('Ordena los pasos de tu primer día con dinero real.', ['Comprobar que la entidad está autorizada', 'Abrir la cuenta e identificarte', 'Transferir un importe pequeño', 'Hacer una primera compra pequeña', 'Guardar la confirmación'], 'Primero la seguridad, después el dinero, y al final guardar lo que prueba cada operación.'),
+      scenario('Dani lleva seis meses ganando en el simulador. Mañana abre una cuenta real y quiere transferir todos sus ahorros. ¿Qué le dirías?', [['Que adelante: seis meses ganando lo demuestran', 'En el simulador no arriesgaba nada suyo. Con dinero real se decide distinto.'], ['Que empiece con una parte pequeña y el mismo plan', 'Bien: así conoce el proceso y sus propias reacciones sin jugarse sus ahorros.'], ['Que espere un año más en el simulador', 'Más tiempo de simulador no le enseñará lo que solo enseña el dinero real. Mejor empezar con poco.']], 1, 'El simulador enseña cómo funciona el mercado. Cómo reaccionas tú cuando el dinero es tuyo solo lo aprendes con poco dinero real.'),
+      tf('En el simulador se siente lo mismo que al invertir dinero real.', false, 'Perder dinero virtual no duele. Con dinero real aparecen el miedo y la prisa, y cambian las decisiones.'),
+      buckets('¿Lo reproduce el simulador?', ['Sí lo reproduce', 'No lo reproduce'], [['Cómo funciona una orden', 0], ['El miedo a perder tu dinero', 1], ['Cómo se mueve el precio', 0], ['Todas las comisiones e impuestos', 1], ['Cómo se calcula una ganancia', 0], ['La prisa por recuperar una pérdida', 1]], 'La mecánica es la misma. Lo que cambia eres tú, y los costes reales.'),
+      multi('¿Qué conviene guardar de tu cuenta real? Marca todo.', ['La confirmación de cada compra y venta', 'Una captura del precio de cada día', 'El resumen fiscal anual del bróker', 'Los mensajes de un grupo de inversión'], [0, 2], 'Las confirmaciones y el resumen fiscal dicen qué compraste, cuándo y a qué precio: lo necesitas para tus cuentas y para la renta. El precio de cada día y lo que digan otros no prueban nada tuyo.'),
+      single('¿Para qué sirve el test de conveniencia?', ['Para comprobar que tienes dinero suficiente', 'Para ver si entiendes un producto complejo antes de operarlo', 'Para decidir qué acciones te convienen'], 1, 'Mide tus conocimientos y experiencia con ese producto. No es un examen que haya que aprobar: es un aviso.'),
+      chat(['¡Ya tengo la cuenta abierta! 🎉', '¿Meto todo hoy y compro lo que más está subiendo?'], 'Lumi acaba de abrir su cuenta real y quiere meter todo hoy y comprar lo que más está subiendo. ¿Qué le contestas?', [['Sí: cuanto antes entres, antes ganas', 'Entrar con todo y persiguiendo lo que sube es empezar con las dos prisas a la vez.'], ['Empieza con poco y con lo que decía tu plan', '¡Eso! El primer día es para aprender el proceso, no para ganar.'], ['Mete la mitad hoy y la otra mitad mañana', 'Repartirlo en dos días no cambia nada: sigue siendo todo, y sin plan.']], 1, 'El primer día se empieza con un importe pequeño y con el plan que ya tenías. Lo que más sube hoy no estaba en ese plan.'),
+      fill('La primera transferencia a tu bróker conviene hacerla desde una cuenta a tu ____.', 'nombre', ['alcance', 'gusto', 'cargo'], 'Lo habitual es que el bróker solo acepte dinero de cuentas del propio titular. Es también una protección frente al fraude.'),
+      scenario('Haces tu primera compra real. Al día siguiente cae un 3 % y sientes ganas de vender. ¿Qué haces?', [['Vendo: no quiero empezar perdiendo', 'Un 3 % en un día es ruido. Vender por eso es dejar que decida el susto.'], ['Releo mi plan: no ha cambiado nada', 'Eso es. Lo que sientes es justo lo que el simulador no enseñaba, y para eso está el plan.'], ['Compro más para compensar', 'Aumentar por un impulso es tan poco plan como vender por un susto.']], 1, 'La primera caída con dinero real impresiona. Si tu plazo y tu plan no han cambiado, no hay nada que hacer.'),
+    ], { minutes: 6 }),
   ],
 })

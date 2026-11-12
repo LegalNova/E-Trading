@@ -219,6 +219,52 @@
   "s11boss": {
    "title": "Repte final: Espanya: impostos i estafes",
    "steps": []
+  },
+  "u33l5": {
+   "title": "El teu primer dia amb diners reals",
+   "steps": [
+    {
+     "texts": [
+      "Del simulador al teu compte",
+      "Dani",
+      "Fa sis mesos que guanyo al simulador. Demà obro un compte de debò i hi passo **tots els meus estalvis**.",
+      "El simulador t'ha ensenyat com funciona. Hi ha dues coses que no et pot ensenyar.",
+      "Quines són?",
+      "Com es posa una ordre i com es llegeix un gràfic",
+      "Això sí que ho has practicat aquí, i funciona igual.",
+      "El que se sent en perdre diners teus i el que costa de debò operar",
+      "Això. Aquí perdre no fa mal, i no pagues totes les comissions ni impostos.",
+      "Res: si guanyo aquí, guanyaré fora",
+      "Amb diners reals la por i la pressa canvien com decideixes.",
+      "Per això el primer dia es comença **amb poc**: per conèixer el procés i conèixer-te a tu."
+     ]
+    },
+    {
+     "texts": [
+      "El primer dia, pas a pas",
+      "Elena",
+      "Ja he comprovat que el meu bròquer està autoritzat. Ara em demana el DNI i un munt de dades. És normal?",
+      "Sí: una entitat autoritzada **t'ha d'identificar**. Desconfia de la que no et demani res.",
+      "També m'ofereix un test per operar amb productes «complexos».",
+      "Per a què serveix aquest test?",
+      "Per veure si entens aquests productes abans de fer-los servir",
+      "És el **test de conveniència**. Si no els entens, el més assenyat és no operar-hi.",
+      "Per saber quants diners tens",
+      "No mesura els teus diners: mesura si coneixes el producte i els seus riscos.",
+      "És un tràmit: es contesta el que calgui per passar-lo",
+      "Si el passes mentint, operaràs amb una cosa que no entens. T'enganyes a tu.",
+      "Després: una **transferència petita** des d'un compte al teu nom i una **primera compra petita**.",
+      "I guarda la confirmació. La necessitaràs per saber què vas pagar i per a la renda.",
+      "Per comprar accions o fons senzills no cal aquest test. Sí que s'exigeix per a productes complexos, com els derivats (MiFID II)."
+     ]
+    },
+    {
+     "title": "El teu primer dia, en cinc passos",
+     "body": "1. **Comprova** que l'entitat està autoritzada.\n2. **Obre el compte** i identifica't.\n3. **Transfereix poc** des d'un compte al teu nom.\n4. **Fes una compra petita** i mira què et cobren de debò.\n5. **Guarda** la confirmació de cada operació i el resum fiscal de cada any.\n\nEl simulador no reprodueix dues coses: **les teves emocions** amb diners reals i **tots els costos** (comissions, canvi de divisa i impostos). Per això es comença amb poc i amb el mateix pla que aquí.",
+     "key": "El primer dia no es tracta de guanyar: es tracta d'aprendre el procés amb pocs diners.",
+     "tip": "Prova-ho: repassa el teu diari del simulador i apunta quina regla et costaria més complir amb diners reals."
+    }
+   ]
   }
  },
  "questions": {
@@ -495,6 +541,116 @@
    "prompt": "Un robo-advisor cobra en total un 0,6 % l'any. Amb 10.000 € invertits, quant pagues cada any?",
    "options": [],
    "explanation": "10.000 × 0,006 = 60 €. Fent-ho tu amb indexats al 0,2 % serien 20 €: la diferència és el que pagues perquè ho faci per tu."
+  },
+  "u33l5-1": {
+   "prompt": "Ordena els passos del teu primer dia amb diners reals.",
+   "options": [
+    "Guardar la confirmació",
+    "Transferir un import petit",
+    "Fer una primera compra petita",
+    "Comprovar que l'entitat està autoritzada",
+    "Obrir el compte i identificar-te"
+   ],
+   "explanation": "Primer la seguretat, després els diners, i al final guardar el que prova cada operació."
+  },
+  "u33l5-2": {
+   "prompt": "En Dani fa sis mesos que guanya al simulador. Demà obre un compte real i hi vol transferir tots els estalvis. Què li diries?",
+   "options": [
+    "Que endavant: sis mesos guanyant ho demostren",
+    "Que esperi un any més al simulador",
+    "Que comenci amb una part petita i el mateix pla"
+   ],
+   "explanation": "El simulador ensenya com funciona el mercat. Com reacciones tu quan els diners són teus només ho aprens amb pocs diners reals.",
+   "feedback": [
+    "Al simulador no arriscava res seu. Amb diners reals es decideix diferent.",
+    "Més temps de simulador no li ensenyarà el que només ensenyen els diners reals. Val més començar amb poc.",
+    "Bé: així coneix el procés i les seves pròpies reaccions sense jugar-se els estalvis."
+   ]
+  },
+  "u33l5-3": {
+   "prompt": "Al simulador se sent el mateix que quan s'inverteixen diners reals.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "Perdre diners virtuals no fa mal. Amb diners reals apareixen la por i la pressa, i canvien les decisions."
+  },
+  "u33l5-4": {
+   "prompt": "Ho reprodueix el simulador?",
+   "options": [
+    "La por de perdre els teus diners",
+    "Totes les comissions i impostos",
+    "Com es mou el preu",
+    "La pressa per recuperar una pèrdua",
+    "Com es calcula un guany",
+    "Com funciona una ordre"
+   ],
+   "explanation": "La mecànica és la mateixa. El que canvia ets tu, i els costos reals.",
+   "right": [
+    "Sí que ho reprodueix",
+    "No ho reprodueix"
+   ]
+  },
+  "u33l5-5": {
+   "prompt": "Què convé guardar del teu compte real? Marca-ho tot.",
+   "options": [
+    "Una captura del preu de cada dia",
+    "El resum fiscal anual del bròquer",
+    "Els missatges d'un grup d'inversió",
+    "La confirmació de cada compra i venda"
+   ],
+   "explanation": "Les confirmacions i el resum fiscal diuen què vas comprar, quan i a quin preu: ho necessites per als teus comptes i per a la renda. El preu de cada dia i el que diguin altres no proven res teu."
+  },
+  "u33l5-6": {
+   "prompt": "Per a què serveix el test de conveniència?",
+   "options": [
+    "Per comprovar que tens prou diners",
+    "Per decidir quines accions et convenen",
+    "Per veure si entens un producte complex abans d'operar-hi"
+   ],
+   "explanation": "Mesura els teus coneixements i experiència amb aquest producte. No és un examen que calgui aprovar: és un avís."
+  },
+  "u33l5-7": {
+   "prompt": "La Lumi acaba d'obrir el seu compte real i hi vol posar tot avui i comprar el que més està pujant. Què li contestes?",
+   "options": [
+    "Sí: com més aviat hi entris, més aviat guanyes",
+    "Comença amb poc i amb el que deia el teu pla",
+    "Posa-hi la meitat avui i l'altra meitat demà"
+   ],
+   "explanation": "El primer dia es comença amb un import petit i amb el pla que ja tenies. El que més puja avui no era en aquest pla.",
+   "feedback": [
+    "Entrar-hi amb tot i perseguint el que puja és començar amb les dues presses alhora.",
+    "Això! El primer dia és per aprendre el procés, no per guanyar.",
+    "Repartir-ho en dos dies no canvia res: continua sent tot, i sense pla."
+   ],
+   "lines": [
+    "Ja tinc el compte obert! 🎉",
+    "Hi poso tot avui i compro el que més està pujant?"
+   ]
+  },
+  "u33l5-8": {
+   "prompt": "La primera transferència al teu bròquer convé fer-la des d'un compte al teu ____.",
+   "options": [
+    "gust",
+    "càrrec",
+    "abast",
+    "nom"
+   ],
+   "explanation": "El més habitual és que el bròquer només accepti diners de comptes del mateix titular. També és una protecció davant del frau."
+  },
+  "u33l5-9": {
+   "prompt": "Fas la teva primera compra real. L'endemà cau un 3 % i tens ganes de vendre. Què fas?",
+   "options": [
+    "En compro més per compensar",
+    "Venc: no vull començar perdent",
+    "Rellegeixo el meu pla: no ha canviat res"
+   ],
+   "explanation": "La primera caiguda amb diners reals impressiona. Si el teu termini i el teu pla no han canviat, no hi ha res a fer.",
+   "feedback": [
+    "Augmentar per un impuls és tan poc pla com vendre per un ensurt.",
+    "Un 3 % en un dia és soroll. Vendre per això és deixar que decideixi l'ensurt.",
+    "Això mateix. El que sents és just el que el simulador no ensenyava, i per això hi ha el pla."
+   ]
   }
  }
 }

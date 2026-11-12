@@ -219,6 +219,52 @@
   "s11boss": {
    "title": "Final challenge: Spain: taxes and scams",
    "steps": []
+  },
+  "u33l5": {
+   "title": "Your first day with real money",
+   "steps": [
+    {
+     "texts": [
+      "From the simulator to your account",
+      "Dani",
+      "I've been winning on the simulator for six months. Tomorrow I'm opening a real account and moving **all my savings** in.",
+      "The simulator has taught you how it works. There are two things it can't teach you.",
+      "What are they?",
+      "How to place an order and how to read a chart",
+      "You have practised that here, and it works the same way.",
+      "What it feels like to lose your own money and what trading really costs",
+      "That's it. Here, losing doesn't hurt, and you don't pay all the fees or taxes.",
+      "Nothing: if I win here, I'll win out there",
+      "With real money, fear and hurry change how you decide.",
+      "That's why you start the first day **with a little**: to get to know the process and to get to know yourself."
+     ]
+    },
+    {
+     "texts": [
+      "The first day, step by step",
+      "Elena",
+      "I've checked that my broker is authorised. Now it's asking for my ID and a pile of details. Is that normal?",
+      "Yes: an authorised firm **has to identify you**. Be wary of one that asks for nothing.",
+      "It's also offering me a test so I can trade «complex» products.",
+      "What is that test for?",
+      "To see whether you understand those products before using them",
+      "That's the **appropriateness test**. If you don't understand them, the sensible thing is not to trade them.",
+      "To find out how much money you have",
+      "It doesn't measure your money: it measures whether you know the product and its risks.",
+      "It's a formality: you answer whatever it takes to pass",
+      "If you pass by lying, you'll be trading something you don't understand. You're fooling yourself.",
+      "After that: a **small transfer** from an account in your name and a **small first purchase**.",
+      "And keep the confirmation. You'll need it to know what you paid and for your tax return.",
+      "You don't need that test to buy shares or simple funds. It is required for complex products, such as derivatives (MiFID II)."
+     ]
+    },
+    {
+     "title": "Your first day, in five steps",
+     "body": "1. **Check** that the firm is authorised.\n2. **Open the account** and identify yourself.\n3. **Transfer a little** from an account in your name.\n4. **Make a small purchase** and see what you're really charged.\n5. **Keep** the confirmation of every trade and each year's tax summary.\n\nThe simulator doesn't reproduce two things: **your emotions** with real money and **all the costs** (fees, currency exchange and taxes). That's why you start small and with the same plan as here.",
+     "key": "The first day isn't about winning: it's about learning the process with little money.",
+     "tip": "Try it: go back over your simulator journal and note which rule you'd find hardest to keep with real money."
+    }
+   ]
   }
  },
  "questions": {
@@ -495,6 +541,116 @@
    "prompt": "A robo-advisor charges 0.6 % a year in total. With €10,000 invested, how much do you pay per year?",
    "options": [],
    "explanation": "10,000 × 0.006 = €60. Doing it yourself with index funds at 0.2 % would be €20: the difference is what you pay for it to do it for you."
+  },
+  "u33l5-1": {
+   "prompt": "Put the steps of your first day with real money in order.",
+   "options": [
+    "Keep the confirmation",
+    "Transfer a small amount",
+    "Make a small first purchase",
+    "Check that the firm is authorised",
+    "Open the account and identify yourself"
+   ],
+   "explanation": "Safety first, then the money, and finally keeping what proves each trade."
+  },
+  "u33l5-2": {
+   "prompt": "Dani has been winning on the simulator for six months. Tomorrow he opens a real account and wants to transfer all his savings. What would you tell him?",
+   "options": [
+    "Go ahead: six months of winning proves it",
+    "Wait another year on the simulator",
+    "Start with a small part and the same plan"
+   ],
+   "explanation": "The simulator teaches how the market works. How you react when the money is yours is something you only learn with a little real money.",
+   "feedback": [
+    "On the simulator he wasn't risking anything of his own. With real money you decide differently.",
+    "More simulator time won't teach him what only real money teaches. Better to start small.",
+    "Good: that way he learns the process and his own reactions without gambling his savings."
+   ]
+  },
+  "u33l5-3": {
+   "prompt": "On the simulator it feels the same as investing real money.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Losing virtual money doesn't hurt. With real money, fear and hurry appear, and decisions change."
+  },
+  "u33l5-4": {
+   "prompt": "Does the simulator reproduce it?",
+   "options": [
+    "The fear of losing your money",
+    "All the fees and taxes",
+    "How the price moves",
+    "The rush to win back a loss",
+    "How a gain is calculated",
+    "How an order works"
+   ],
+   "explanation": "The mechanics are the same. What changes is you, and the real costs.",
+   "right": [
+    "It does",
+    "It doesn't"
+   ]
+  },
+  "u33l5-5": {
+   "prompt": "What is worth keeping from your real account? Tick all that apply.",
+   "options": [
+    "A screenshot of each day's price",
+    "The broker's annual tax summary",
+    "Messages from an investment group",
+    "The confirmation of every purchase and sale"
+   ],
+   "explanation": "The confirmations and the tax summary say what you bought, when and at what price: you need them for your own records and for your tax return. Each day's price and what others say prove nothing about you."
+  },
+  "u33l5-6": {
+   "prompt": "What is the appropriateness test for?",
+   "options": [
+    "To check that you have enough money",
+    "To decide which shares suit you",
+    "To see whether you understand a complex product before trading it"
+   ],
+   "explanation": "It measures your knowledge of and experience with that product. It isn't an exam you have to pass: it's a warning."
+  },
+  "u33l5-7": {
+   "prompt": "Lumi has just opened her real account and wants to put everything in today and buy whatever is rising most. What do you reply?",
+   "options": [
+    "Yes: the sooner you're in, the sooner you win",
+    "Start small, with what your plan said",
+    "Put half in today and the other half tomorrow"
+   ],
+   "explanation": "You start the first day with a small amount and with the plan you already had. Whatever is rising most today wasn't in that plan.",
+   "feedback": [
+    "Going all in and chasing what's rising means starting with both kinds of hurry at once.",
+    "Exactly! The first day is for learning the process, not for winning.",
+    "Splitting it over two days changes nothing: it's still everything, and with no plan."
+   ],
+   "lines": [
+    "I've got the account open! 🎉",
+    "Shall I put everything in today and buy whatever is rising most?"
+   ]
+  },
+  "u33l5-8": {
+   "prompt": "Your first transfer to your broker should come from an account in your own ____.",
+   "options": [
+    "taste",
+    "charge",
+    "reach",
+    "name"
+   ],
+   "explanation": "Brokers usually only accept money from accounts held by the same person. It's also a protection against fraud."
+  },
+  "u33l5-9": {
+   "prompt": "You make your first real purchase. The next day it falls 3 % and you feel like selling. What do you do?",
+   "options": [
+    "I buy more to make up for it",
+    "I sell: I don't want to start with a loss",
+    "I reread my plan: nothing has changed"
+   ],
+   "explanation": "The first fall with real money is unsettling. If your horizon and your plan haven't changed, there's nothing to do.",
+   "feedback": [
+    "Adding on impulse is as little of a plan as selling out of fright.",
+    "3 % in a day is noise. Selling over that is letting the fright decide.",
+    "That's it. What you're feeling is exactly what the simulator didn't teach, and that's what the plan is for."
+   ]
   }
  }
 }

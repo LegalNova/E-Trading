@@ -212,6 +212,52 @@
     }
    ]
   },
+  "u33l5": {
+   "title": "Tu primer día con dinero real",
+   "steps": [
+    {
+     "texts": [
+      "Del simulador a tu cuenta",
+      "Dani",
+      "Llevo seis meses ganando en el simulador. Mañana abro una cuenta de verdad y paso **todos mis ahorros**.",
+      "El simulador te ha enseñado cómo funciona. Hay dos cosas que no puede enseñarte.",
+      "¿Cuáles son?",
+      "Cómo se pone una orden y cómo se lee un gráfico",
+      "Eso sí lo has practicado aquí, y funciona igual.",
+      "Lo que se siente al perder dinero tuyo y lo que cuesta de verdad operar",
+      "Eso. Aquí perder no duele, y no pagas todas las comisiones ni impuestos.",
+      "Nada: si gano aquí, ganaré fuera",
+      "Con dinero real el miedo y la prisa cambian cómo decides.",
+      "Por eso el primer día se empieza **con poco**: para conocer el proceso y conocerte a ti."
+     ]
+    },
+    {
+     "texts": [
+      "El primer día, paso a paso",
+      "Elena",
+      "Ya he comprobado que mi bróker está autorizado. Ahora me pide el DNI y un montón de datos. ¿Es normal?",
+      "Sí: una entidad autorizada **tiene que identificarte**. Desconfía de la que no te pida nada.",
+      "También me ofrece un test para operar con productos «complejos».",
+      "¿Para qué sirve ese test?",
+      "Para ver si entiendes esos productos antes de usarlos",
+      "Es el **test de conveniencia**. Si no los entiendes, lo sensato es no operarlos.",
+      "Para saber cuánto dinero tienes",
+      "No mide tu dinero: mide si conoces el producto y sus riesgos.",
+      "Es un trámite: se contesta lo que haga falta para pasarlo",
+      "Si lo pasas mintiendo, operarás algo que no entiendes. Te engañas a ti.",
+      "Después: una **transferencia pequeña** desde una cuenta a tu nombre y una **primera compra pequeña**.",
+      "Y guarda la confirmación. La necesitarás para saber qué pagaste y para la renta.",
+      "Para comprar acciones o fondos sencillos no hace falta ese test. Sí se exige para productos complejos, como los derivados (MiFID II)."
+     ]
+    },
+    {
+     "title": "Tu primer día, en cinco pasos",
+     "body": "1. **Comprueba** que la entidad está autorizada.\n2. **Abre la cuenta** e identifícate.\n3. **Transfiere poco** desde una cuenta a tu nombre.\n4. **Haz una compra pequeña** y mira lo que te cobran de verdad.\n5. **Guarda** la confirmación de cada operación y el resumen fiscal de cada año.\n\nEl simulador no reproduce dos cosas: **tus emociones** con dinero real y **todos los costes** (comisiones, cambio de divisa e impuestos). Por eso se empieza con poco y con el mismo plan que aquí.",
+     "key": "El primer día no se trata de ganar: se trata de aprender el proceso con poco dinero.",
+     "tip": "Pruébalo: repasa tu diario del simulador y apunta qué regla te costaría más cumplir con dinero real."
+    }
+   ]
+  },
   "u33r": {
    "title": "Repaso de la unidad",
    "steps": []
@@ -495,6 +541,116 @@
    "options": [],
    "explanation": "10.000 × 0,006 = 60 €. Haciéndolo tú con indexados al 0,2 % serían 20 €: la diferencia es lo que pagas por que lo haga por ti.",
    "unit": "€"
+  },
+  "u33l5-1": {
+   "prompt": "Ordena los pasos de tu primer día con dinero real.",
+   "options": [
+    "Guardar la confirmación",
+    "Transferir un importe pequeño",
+    "Hacer una primera compra pequeña",
+    "Comprobar que la entidad está autorizada",
+    "Abrir la cuenta e identificarte"
+   ],
+   "explanation": "Primero la seguridad, después el dinero, y al final guardar lo que prueba cada operación."
+  },
+  "u33l5-2": {
+   "prompt": "Dani lleva seis meses ganando en el simulador. Mañana abre una cuenta real y quiere transferir todos sus ahorros. ¿Qué le dirías?",
+   "options": [
+    "Que adelante: seis meses ganando lo demuestran",
+    "Que espere un año más en el simulador",
+    "Que empiece con una parte pequeña y el mismo plan"
+   ],
+   "explanation": "El simulador enseña cómo funciona el mercado. Cómo reaccionas tú cuando el dinero es tuyo solo lo aprendes con poco dinero real.",
+   "feedback": [
+    "En el simulador no arriesgaba nada suyo. Con dinero real se decide distinto.",
+    "Más tiempo de simulador no le enseñará lo que solo enseña el dinero real. Mejor empezar con poco.",
+    "Bien: así conoce el proceso y sus propias reacciones sin jugarse sus ahorros."
+   ]
+  },
+  "u33l5-3": {
+   "prompt": "En el simulador se siente lo mismo que al invertir dinero real.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "Perder dinero virtual no duele. Con dinero real aparecen el miedo y la prisa, y cambian las decisiones."
+  },
+  "u33l5-4": {
+   "prompt": "¿Lo reproduce el simulador?",
+   "options": [
+    "El miedo a perder tu dinero",
+    "Todas las comisiones e impuestos",
+    "Cómo se mueve el precio",
+    "La prisa por recuperar una pérdida",
+    "Cómo se calcula una ganancia",
+    "Cómo funciona una orden"
+   ],
+   "explanation": "La mecánica es la misma. Lo que cambia eres tú, y los costes reales.",
+   "right": [
+    "Sí lo reproduce",
+    "No lo reproduce"
+   ]
+  },
+  "u33l5-5": {
+   "prompt": "¿Qué conviene guardar de tu cuenta real? Marca todo.",
+   "options": [
+    "Una captura del precio de cada día",
+    "El resumen fiscal anual del bróker",
+    "Los mensajes de un grupo de inversión",
+    "La confirmación de cada compra y venta"
+   ],
+   "explanation": "Las confirmaciones y el resumen fiscal dicen qué compraste, cuándo y a qué precio: lo necesitas para tus cuentas y para la renta. El precio de cada día y lo que digan otros no prueban nada tuyo."
+  },
+  "u33l5-6": {
+   "prompt": "¿Para qué sirve el test de conveniencia?",
+   "options": [
+    "Para comprobar que tienes dinero suficiente",
+    "Para decidir qué acciones te convienen",
+    "Para ver si entiendes un producto complejo antes de operarlo"
+   ],
+   "explanation": "Mide tus conocimientos y experiencia con ese producto. No es un examen que haya que aprobar: es un aviso."
+  },
+  "u33l5-7": {
+   "prompt": "Lucía acaba de abrir su cuenta real y quiere meter todo hoy y comprar lo que más está subiendo. ¿Qué le contestas?",
+   "options": [
+    "Sí: cuanto antes entres, antes ganas",
+    "Empieza con poco y con lo que decía tu plan",
+    "Mete la mitad hoy y la otra mitad mañana"
+   ],
+   "explanation": "El primer día se empieza con un importe pequeño y con el plan que ya tenías. Lo que más sube hoy no estaba en ese plan.",
+   "feedback": [
+    "Entrar con todo y persiguiendo lo que sube es empezar con las dos prisas a la vez.",
+    "¡Eso! El primer día es para aprender el proceso, no para ganar.",
+    "Repartirlo en dos días no cambia nada: sigue siendo todo, y sin plan."
+   ],
+   "lines": [
+    "¡Ya tengo la cuenta abierta! 🎉",
+    "¿Meto todo hoy y compro lo que más está subiendo?"
+   ]
+  },
+  "u33l5-8": {
+   "prompt": "La primera transferencia a tu bróker conviene hacerla desde una cuenta a tu ____.",
+   "options": [
+    "gusto",
+    "cargo",
+    "alcance",
+    "nombre"
+   ],
+   "explanation": "Lo habitual es que el bróker solo acepte dinero de cuentas del propio titular. Es también una protección frente al fraude."
+  },
+  "u33l5-9": {
+   "prompt": "Haces tu primera compra real. Al día siguiente cae un 3 % y sientes ganas de vender. ¿Qué haces?",
+   "options": [
+    "Compro más para compensar",
+    "Vendo: no quiero empezar perdiendo",
+    "Releo mi plan: no ha cambiado nada"
+   ],
+   "explanation": "La primera caída con dinero real impresiona. Si tu plazo y tu plan no han cambiado, no hay nada que hacer.",
+   "feedback": [
+    "Aumentar por un impulso es tan poco plan como vender por un susto.",
+    "Un 3 % en un día es ruido. Vender por eso es dejar que decida el susto.",
+    "Eso es. Lo que sientes es justo lo que el simulador no enseñaba, y para eso está el plan."
+   ]
   }
  }
 }
