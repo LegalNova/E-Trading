@@ -136,10 +136,12 @@ export default unit({
         say('lumi', '**Logarítmica:** cada centímetro vale el mismo porcentaje.'),
         say('lumi', 'En logarítmica, de 10 a 20 € ocupa lo que de 100 a 200 €.'),
       ]),
+      // Auditoría RED-12 y RED-34: cada episodio histórico se vive en una sola clase. Aquí va otra serie real (Yahoo Finance);
+      // las cifras del texto están calculadas sobre `charts.json`.
       mission({
-        title: 'Bitcoin, arriba y abajo',
-        intro: 'Finales de 2020. Inviertes **10.000 €** en bitcoin. Datos reales, semana a semana. Fíjate en los porcentajes.',
-        widget: { kind: 'crash', series: 'series-btc', amount: 10000 },
+        title: 'Ethereum, arriba y abajo',
+        intro: 'Finales de 2020. Inviertes **10.000 €** en ethereum, la segunda criptomoneda. Datos reales, semana a semana. Fíjate en los porcentajes.',
+        widget: { kind: 'crash', series: 'series-eth', amount: 10000 },
         predict: {
           prompt: 'Si algo cae un 75 %, ¿cuánto tiene que subir después para volver a donde estaba?',
           options: ['Un 75 %', 'Un 150 %', 'Un 300 %'],
@@ -147,11 +149,11 @@ export default unit({
           why: 'De 100 a 25 es −75 %; de 25 a 100 hay que multiplicar por 4: **+300 %**.',
         },
         goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
-        insight: 'Bitcoin cayó un **75 %** desde su máximo de 2021 y necesitó subir un **302 %** para volver. Los porcentajes **no son simétricos**, y la escala logarítmica respeta esas proporciones; la lineal, no.',
+        insight: 'Ethereum cayó un **77 %** desde su máximo de 2021 y necesitó subir un **331 %** para volver: no lo consiguió hasta agosto de 2025. Los porcentajes **no son simétricos**, y la escala logarítmica respeta esas proporciones; la lineal, no.',
         lumi: [
           { when: when('sold', '==', 1), say: 'Has vendido. Mira qué pasa después…', mood: 'THINKING' },
-          { when: when('drop', '<=', -40), say: 'Casi la mitad de lo que pusiste. ¿Cuánto haría falta para recuperarlo?', mood: 'WORRIED' },
-          { when: when('drop', '>=', 80), say: '¡Casi el doble! Bitcoin se mueve mucho en los dos sentidos.', mood: 'HAPPY' },
+          { when: when('drop', '>=', 300), say: 'Casi cinco veces lo que pusiste. ¿Cuánto tendría que caer para volver al principio?', mood: 'THINKING' },
+          { when: when('drop', '>=', 80), say: '¡Casi el doble! Ethereum se mueve mucho en los dos sentidos.', mood: 'HAPPY' },
           { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
         ],
       }),

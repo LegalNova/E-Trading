@@ -82,21 +82,23 @@ export default unit({
           { say: 'Clasifica cada negocio', mood: 'HAPPY' },
         ],
       }),
+      // Auditoría RED-12 y RED-34: cada episodio histórico se vive en una sola clase. Aquí va otra serie real (Yahoo Finance);
+      // las cifras del texto están calculadas sobre `charts.json`.
       mission({
         title: 'Marzo de 2020',
-        intro: 'Enero de 2020. Inviertes **10.000 €** en el S&P 500. Llega una pandemia y la economía se para. Datos reales, día a día.',
-        widget: { kind: 'crash', series: 'series-covid', amount: 10000 },
+        intro: 'Enero de 2020. Inviertes **10.000 €** en el Nasdaq 100, el índice de las grandes tecnológicas. Llega una pandemia y la economía se para. Datos reales, día a día.',
+        widget: { kind: 'crash', series: 'series-ndx-2020', amount: 10000 },
         predict: {
           prompt: 'En marzo de 2020 los titulares hablan de recesión y paro récord. ¿Cuándo crees que tocó fondo la bolsa?',
           options: ['Cuando mejoraron los datos económicos', 'Con las noticias aún terribles', 'No se recuperó en todo el año'],
           answer: 1,
-          why: 'Tocó fondo el **23 de marzo de 2020**, un 34 % por debajo de su máximo de febrero, cuando las noticias aún eran terribles.',
+          why: 'Tocó fondo el **20 de marzo de 2020**, un 28 % por debajo de su máximo de febrero, cuando las noticias aún eran terribles.',
         },
         goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
-        insight: 'La bolsa **se adelanta**: mira lo que espera dentro de 6 o 12 meses. En 2020 tocó fondo el 23 de marzo y en agosto ya había recuperado su máximo.',
+        insight: 'La bolsa **se adelanta**: mira lo que espera dentro de 6 o 12 meses. En 2020, el Nasdaq 100 tocó fondo el 20 de marzo y a principios de junio ya había recuperado su máximo.',
         lumi: [
           { when: when('sold', '==', 1), say: 'Has vendido. Mira qué pasa después…', mood: 'THINKING' },
-          { when: when('drop', '<=', -25), say: 'Más de un 25 % abajo en semanas. Los titulares dan miedo. ¿Aguantas?', mood: 'WORRIED' },
+          { when: when('drop', '<=', -20), say: 'Más de un 20 % abajo en semanas. Los titulares dan miedo. ¿Aguantas?', mood: 'WORRIED' },
           { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
         ],
       }),

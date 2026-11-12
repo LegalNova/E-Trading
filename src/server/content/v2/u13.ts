@@ -7,22 +7,24 @@ export default unit({
   id: 'u13', order: 13, title: 'Riesgos y realidad cripto', description: 'Volatilidad, quiebras, estafas, rendimientos y cuánto pesa la cripto en una cartera',
   lessons: [
     lesson('u13l1', 'La volatilidad cripto', [
+      // Auditoría RED-12 y RED-34: cada episodio histórico se vive en una sola clase. Aquí va otra serie real (Yahoo Finance);
+      // las cifras del texto están calculadas sobre `charts.json`.
       mission({
         title: 'Cuatro años en bitcoin',
-        intro: 'Finales de 2020: entras con **1.000 €** en bitcoin. Vívelo semana a semana con **datos reales**; puedes vender cuando quieras.',
-        widget: { kind: 'crash', series: 'series-btc', amount: 1000 },
+        intro: 'Finales de 2016: entras con **1.000 €** en bitcoin. Vívelo semana a semana con **datos reales**; puedes vender cuando quieras.',
+        widget: { kind: 'crash', series: 'series-btc-2017', amount: 1000 },
         predict: {
-          prompt: 'En noviembre de 2021, bitcoin marca un máximo. ¿Cuánto llegó a caer desde ahí?',
-          options: ['Un 20 %, como una mala racha de la bolsa', 'Alrededor de un 40 %', 'Unas tres cuartas partes'],
+          prompt: 'En diciembre de 2017, bitcoin marca un máximo tras multiplicarse por 19 en un año. ¿Cuánto llegó a caer desde ahí?',
+          options: ['Un 20 %, como una mala racha de la bolsa', 'Alrededor de un 40 %', 'Más de cuatro quintas partes'],
           answer: 2,
-          why: 'En cierres semanales, de 65.467 $ en noviembre de 2021 a 16.292 $ un año después: **−75 %**. No recuperó aquel máximo hasta marzo de 2024.',
+          why: 'En cierres semanales, de 19.141 $ en diciembre de 2017 a 3.253 $ un año después: **−83 %**. No recuperó aquel máximo hasta noviembre de 2020.',
         },
         goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
-        insight: 'Quien aguantó multiplicó su dinero por 3 en cuatro años, pasando antes por un **−75 %** desde el máximo. En cripto, esa montaña rusa es lo normal, no la excepción.',
+        insight: 'Quien aguantó multiplicó su dinero por 33 en cuatro años, pasando antes por un **−83 %** desde el máximo. En cripto, esa montaña rusa es lo normal, no la excepción.',
         lumi: [
           { when: when('sold', '==', 1), say: 'Has vendido. Mira qué pasa después…', mood: 'THINKING' },
-          { when: when('played', '==', 1), say: 'De 1.000 € a unos 3.200 €, con un −75 % por el camino.', mood: 'CALM' },
-          { when: when('drop', '<=', -40), say: 'Tus 1.000 € valen menos de 600 €. ¿Aguantas?', mood: 'WORRIED' },
+          { when: when('played', '==', 1), say: 'De 1.000 € a unos 33.000 €, con un −83 % por el camino.', mood: 'CALM' },
+          { when: when('drop', '<=', -15), say: 'Tus 1.000 € valen menos de 850 €. ¿Aguantas?', mood: 'WORRIED' },
           { when: when('drop', '>=', 50), say: '¡Sube como un cohete! ¿Y si cae igual de rápido?', mood: 'THINKING' },
           { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
         ],

@@ -281,16 +281,17 @@ export const u24l3 = lesson('u24l3', 'La regla del 1 %', [
 
 // Antes en u27 (mismo id: conserva progreso y traducciones)
 export const u27l4 = lesson('u27l4', 'FOMO y efecto rebaño', [
+  // Auditoría RED-12 y RED-34: cada episodio histórico se vive en una sola clase. Aquí va otra serie real (Yahoo Finance);
+  // las cifras del texto están calculadas sobre `charts.json`.
   mission({
-    title: 'Vive la fiebre puntocom',
-    intro: 'Diciembre de 1998. Internet lo va a cambiar todo y tus amigos solo hablan de tecnológicas. Metes **10.000 €** en el Nasdaq 100, con datos reales.',
-    widget: { kind: 'crash', series: 'series-dotcom', amount: 10000 },
+    title: 'Vive la fiebre de GameStop',
+    intro: 'Última semana de enero de 2021. GameStop, una cadena de tiendas de videojuegos, se ha multiplicado por más de 15 en un mes: miles de personas se animan unas a otras a comprarla en un foro de internet, y sale en todos los telediarios. Metes **10.000 €**, con datos reales.',
+    widget: { kind: 'crash', series: 'series-gme', amount: 10000 },
     goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
-    insight: 'Subió un **156 %** en 15 meses; luego cayó un **83 %** desde el máximo y no lo recuperó hasta 2015. **Cuando todo el mundo habla de algo que «solo sube», el riesgo suele ser máximo.**',
+    insight: 'Una semana después valía un **80 %** menos; a las tres semanas, un **87 %** menos, y un año más tarde seguía un 70 % por debajo. **Cuando todo el mundo habla de algo que «solo sube», el riesgo suele ser máximo.**',
     lumi: [
       { when: when('sold', '==', 1), say: 'Has vendido. Mira qué pasa después…', mood: 'THINKING' },
       { when: when('drop', '<=', -40), say: 'De la euforia al desplome. Y nadie avisó del techo.', mood: 'WORRIED' },
-      { when: when('drop', '>=', 100), say: '¡Más del doble! Ahora todo el mundo quiere entrar.', mood: 'HAPPY' },
       { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
     ],
   }),

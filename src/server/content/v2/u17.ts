@@ -272,16 +272,18 @@ export default unit({
     ], { source: '5.8', minutes: 6, retire: [0, 1, 2, 3, 4, 6, 8] }),
 
     lesson('u17l6', 'El CAPE y la valoración del mercado', [
+      // Auditoría RED-12 y RED-34: cada episodio histórico se vive en una sola clase. Aquí va otra serie real (Yahoo Finance);
+      // las cifras del texto están calculadas sobre `charts.json`.
       mission({
-        title: 'Vive la burbuja puntocom',
-        intro: 'Finales de 1998. Las tecnológicas están de moda y la bolsa cotiza cada vez más cara. Inviertes **10.000 €** en el Nasdaq 100, con datos reales. Puedes vender cuando quieras.',
-        widget: { kind: 'crash', series: 'series-dotcom', amount: 10000 },
+        title: 'Comprar caro: de 2000 a 2013',
+        intro: 'Diciembre de 1999. La bolsa de EE. UU. nunca había cotizado tan cara frente a sus beneficios. Inviertes **10.000 €** en el S&P 500, con datos reales, mes a mes. Puedes vender cuando quieras.',
+        widget: { kind: 'crash', series: 'series-sp500-2000s', amount: 10000 },
         goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
-        insight: 'Con el CAPE del S&P 500 en su récord (44, diciembre de 1999), el Nasdaq 100 aún subió hasta marzo de 2000. Después cayó un **83 %** y no recuperó el máximo hasta 2015: **una valoración extrema no dice cuándo**, pero el riesgo era enorme.',
+        insight: 'Con el CAPE del S&P 500 en su récord (44, diciembre de 1999), quien compró entonces vio caer su dinero cerca de la mitad **dos veces** y, sin contar dividendos, trece años después seguía sin ganar nada. **Una valoración extrema no dice cuándo**, pero avisa de lo que puedes esperar.',
         lumi: [
           { when: when('sold', '==', 1), say: 'Has vendido. Mira qué pasa después…', mood: 'THINKING' },
-          { when: when('drop', '<=', -50), say: 'Tus 10.000 € valen menos de la mitad. ¿Aguantas?', mood: 'WORRIED' },
-          { when: when('drop', '>=', 100), say: '¡Más que duplicado! Las valoraciones ya son de récord…', mood: 'HAPPY' },
+          { when: when('drop', '<=', -40), say: 'Tus 10.000 € valen poco más de la mitad. ¿Aguantas?', mood: 'WORRIED' },
+          { when: when('drop', '>=', 5), say: 'Por fin por encima de lo que pusiste. ¿Ya ha pasado todo?', mood: 'HAPPY' },
           { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
         ],
       }),

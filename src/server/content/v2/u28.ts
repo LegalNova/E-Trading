@@ -7,15 +7,17 @@ export default unit({
   id: 'u28', order: 28, title: 'Emociones y hábitos', description: 'Miedo, avaricia, venganza y exceso de operaciones: reglas para que no decidan por ti',
   lessons: [
     lesson('u28l1', 'Miedo y avaricia', [
+      // Auditoría RED-12 y RED-34: cada episodio histórico se vive en una sola clase. Aquí va otra serie real (Yahoo Finance);
+      // las cifras del texto están calculadas sobre `charts.json`.
       mission({
-        title: 'Vive el pánico de 2020',
-        intro: 'Enero de 2020. Tienes **10.000 €** en el S&P 500 para dentro de muchos años. Datos reales, día a día. Puedes vender cuando quieras.',
-        widget: { kind: 'crash', series: 'series-covid', amount: 10000 },
+        title: 'Vive el lunes negro de 1987',
+        intro: 'Junio de 1987. Tienes **10.000 €** en el S&P 500 para dentro de muchos años. Datos reales, día a día. Puedes vender cuando quieras.',
+        widget: { kind: 'crash', series: 'series-crash-1987', amount: 10000 },
         goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
-        insight: 'En marzo de 2020 cayó un **34 %** en un mes, y en unos 5 meses volvió a su máximo. **El momento de más miedo suele ser el de más oportunidad**, y el pánico pide justo lo contrario.',
+        insight: 'El 19 de octubre de 1987 cayó un **20,5 %** en un solo día, la mayor caída diaria de su historia, y en menos de dos años volvió a su máximo. **El momento de más miedo suele ser el de más oportunidad**, y el pánico pide justo lo contrario.',
         lumi: [
           { when: when('sold', '==', 1), say: 'Has vendido. Mira qué pasa después…', mood: 'THINKING' },
-          { when: when('drop', '<=', -25), say: 'Los telediarios solo hablan de pánico. ¿Aguantas?', mood: 'WORRIED' },
+          { when: when('drop', '<=', -20), say: 'Los telediarios solo hablan de pánico. ¿Aguantas?', mood: 'WORRIED' },
           { when: when('drop', '>=', 5), say: 'Ya estás por encima de lo que pusiste.', mood: 'HAPPY' },
           { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
         ],

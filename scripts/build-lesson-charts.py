@@ -561,6 +561,22 @@ SERIES = [
     ('series-eurusd', 'EURUSD=X', 'Euro/dólar', '1mo', '2004-01-01', '2025-12-01', '%Y-%m', 'cierres mensuales, dólares por euro'),
     ('series-oil', 'CL=F', 'Petróleo WTI', '1wk', '2019-06-01', '2022-12-31', '%d/%m/%Y', 'cierres semanales, en dólares por barril'),
     ('series-tsla', 'TSLA', 'Tesla', '1wk', '2019-01-01', '2024-12-31', '%d/%m/%Y', 'cierres semanales, en dólares'),
+    # Auditoría, ronda 7 (RED-12 y RED-34): cada episodio histórico se vive en una sola clase; estas series dan a las demás
+    # otro tramo real (otro activo, otra época o un acercamiento día a día)
+    ('series-btc-2017', 'BTC-USD', 'Bitcoin', '1wk', '2017-01-01', '2020-12-31', '%d/%m/%Y', 'cierres semanales, en dólares'),
+    ('series-eth', 'ETH-USD', 'Ethereum', '1wk', '2021-01-01', '2025-12-31', '%d/%m/%Y', 'cierres semanales, en dólares'),
+    ('series-btc-etf', 'BTC-USD', 'Bitcoin', '1wk', '2024-01-08', '2026-06-30', '%d/%m/%Y', 'cierres semanales, en dólares'),
+    ('series-btc-2022', 'BTC-USD', 'Bitcoin', '1d', '2022-03-01', '2022-12-31', '%d/%m/%Y', 'cierres diarios, en dólares'),
+    ('series-gme', 'GME', 'GameStop', '1wk', '2021-01-25', '2021-12-31', '%d/%m/%Y', 'cierres semanales, en dólares'),
+    ('series-sp500-2000s', '^GSPC', 'S&P 500', '1mo', '1999-12-01', '2013-12-01', '%Y-%m', 'cierres mensuales, sin dividendos'),
+    ('series-meta', 'META', 'Meta', '1wk', '2021-06-01', '2024-03-31', '%d/%m/%Y', 'cierres semanales, en dólares'),
+    ('series-ndx-2020', '^NDX', 'Nasdaq 100', '1d', '2020-01-02', '2020-12-31', '%d/%m/%Y', 'cierres diarios, sin dividendos'),
+    ('series-crash-1987', '^GSPC', 'S&P 500', '1d', '1987-06-01', '1989-09-30', '%d/%m/%Y', 'cierres diarios, sin dividendos'),
+    ('series-ibex-2020', '^IBEX', 'IBEX 35', '1d', '2020-01-02', '2021-06-30', '%d/%m/%Y', 'cierres diarios, sin dividendos'),
+    ('series-cac', '^FCHI', 'CAC 40 (Francia)', '1mo', '1995-01-01', '2025-12-01', '%Y-%m', 'cierres mensuales, sin dividendos'),
+    ('series-lehman', '^GSPC', 'S&P 500', '1d', '2008-08-01', '2009-08-31', '%d/%m/%Y', 'cierres diarios, sin dividendos'),
+    ('series-ibex-2012', '^IBEX', 'IBEX 35', '1wk', '2010-01-01', '2014-12-31', '%d/%m/%Y', 'cierres semanales, sin dividendos'),
+    ('series-ndx-2021', '^NDX', 'Nasdaq 100', '1wk', '2020-04-01', '2023-06-30', '%d/%m/%Y', 'cierres semanales, sin dividendos'),
 ]
 
 # Carteras: varios activos con las mismas fechas, rentabilidad total (con dividendos y cupones reinvertidos)

@@ -7,15 +7,16 @@ export default unit({
   id: 'u27', order: 27, title: 'Los sesgos que cuestan dinero', description: 'Los atajos mentales que te hacen comprar caro, vender barato y creerte un genio',
   lessons: [
     lesson('u27l1', 'Tu cerebro no está hecho para invertir', [
+      // Auditoría RED-12 y RED-34: cada episodio histórico se vive en una sola clase. Aquí va otra serie real (Yahoo Finance);
+      // las cifras del texto están calculadas sobre `charts.json`.
       mission({
-        title: 'Cuatro años de montaña rusa',
-        intro: 'Diciembre de 2020. Metes **10.000 €** en bitcoin y lo ves semana a semana, con datos reales. Puedes vender cuando quieras.',
-        widget: { kind: 'crash', series: 'series-btc', amount: 10000 },
+        title: 'Dos años y medio de montaña rusa',
+        intro: 'Enero de 2024: se estrenan en EE. UU. los ETF de bitcoin al contado. Metes **10.000 €** en bitcoin y lo ves semana a semana, con datos reales. Puedes vender cuando quieras.',
+        widget: { kind: 'crash', series: 'series-btc-etf', amount: 10000 },
         goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
         insight: 'Comprar tras las subidas y vender tras las caídas fabrica la **brecha del inversor**. En los ETF de bitcoin al contado, entre enero de 2024 y junio de 2026, sus inversores obtuvieron un **−5,8 %** al año frente al **+8,5 %** del propio ETF.',
         lumi: [
           { when: when('sold', '==', 1), say: 'Has vendido. ¿Lo decidió tu plan o tu estómago?', mood: 'THINKING' },
-          { when: when('drop', '<=', -40), say: 'Casi la mitad, en rojo. Tu cerebro grita: «¡Vende ya!».', mood: 'WORRIED' },
           { when: when('drop', '>=', 80), say: '¡Muy por encima de lo que pusiste! Tu cerebro grita: «¡Mete más!».', mood: 'HAPPY' },
           { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
         ],

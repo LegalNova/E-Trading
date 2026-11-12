@@ -54,10 +54,12 @@ export default unit({
     ], { source: '10.1', minutes: 6, retire: [3, 4, 5, 6, 8, 9, 10] }),
 
     lesson('u24l2', 'Las matemáticas de las pérdidas', [
+      // Auditoría RED-12 y RED-34: cada episodio histórico se vive en una sola clase. Aquí va otra serie real (Yahoo Finance);
+      // las cifras del texto están calculadas sobre `charts.json`.
       mission({
-        title: 'Vive la burbuja puntocom',
-        intro: 'Datos reales: el Nasdaq 100 semana a semana desde diciembre de 1998. Inviertes **10.000 €** y puedes vender cuando quieras.',
-        widget: { kind: 'crash', series: 'series-dotcom', amount: 10000 },
+        title: 'Vive una caída del 76 %',
+        intro: 'Datos reales: las acciones de Meta (Facebook) semana a semana desde mayo de 2021. Inviertes **10.000 €** y puedes vender cuando quieras.',
+        widget: { kind: 'crash', series: 'series-meta', amount: 10000 },
         predict: {
           prompt: 'Si tu inversión cae a la mitad, ¿cuánto tiene que subir después para volver?',
           options: ['Un 50 %', 'Un 100 %: tiene que duplicarse', 'Un 25 %'],
@@ -65,12 +67,11 @@ export default unit({
           why: 'De 10.000 € a 5.000 €: para volver a 10.000 € tienes que **duplicar**. Pierdes la mitad y necesitas ganar el doble.',
         },
         goal: { text: 'Llega hasta el final, vendas o no.', when: [when('played', '==', 1)] },
-        insight: 'Del máximo de marzo de 2000 al mínimo de 2002, el índice cayó un **82,6 %**: para volver hacía falta subir un **475 %**. No recuperó aquel máximo hasta noviembre de 2015.',
+        insight: 'Del máximo de septiembre de 2021 al mínimo de octubre de 2022, la acción cayó un **76 %**: para volver hacía falta subir un **317 %**. Esta vez lo consiguió, en enero de 2024; no siempre pasa.',
         lumi: [
           { when: when('played', '==', 1), say: 'Fin. ¿Ves por qué evitar las grandes caídas importa tanto?', mood: 'CALM' },
           { when: when('drop', '<=', -50), say: 'Con un −50 %, volver a tus 10.000 € exige un +100 %.', mood: 'WORRIED' },
           { when: when('drop', '<=', -20), say: 'Un −20 %: para volver ya necesitas un +25 %.', mood: 'WORRIED' },
-          { when: when('drop', '>=', 100), say: '¡Tus 10.000 € ya valen más del doble! ¿Sigues?', mood: 'HAPPY' },
           { say: 'Dale a empezar. Puedes vender cuando quieras', mood: 'HAPPY' },
         ],
       }),
