@@ -197,7 +197,7 @@
    "prompt": "¿Qué le contestas?",
    "options": [
     "No: es cuándo vas a necesitar el dinero",
-    "Casi: es cuánto dinero tienes",
+    "Casi: es cuánto dinero tienes para invertir",
     "Es el plazo de un préstamo"
    ],
    "explanation": "El horizonte temporal decide cuánto riesgo puedes asumir: cuanto más lejos, más tiempo para recuperarte de las caídas.",
@@ -290,9 +290,9 @@
   "vocabl2-3": {
    "prompt": "Una OPV es…",
    "options": [
-    "Un tipo de bono público",
+    "Un tipo de bono público a largo plazo",
     "Una orden de venta urgente",
-    "Una venta al público de acciones, a menudo para salir a bolsa"
+    "Una venta de acciones al público"
    ],
    "explanation": "Oferta Pública de Venta: los dueños venden al público acciones que ya existen, y muchas empresas salen así a bolsa. Si la empresa emite acciones nuevas, es una OPS."
   },
@@ -300,8 +300,8 @@
    "prompt": "¿Qué le aclaras?",
    "options": [
     "Bid es vender y ask es comprar",
-    "Bid: lo máximo que alguien paga ahora; ask: lo mínimo por lo que alguien vende",
-    "Son lo mismo con nombres distintos"
+    "Bid es lo que pagan; ask, lo que piden",
+    "Son lo mismo, con dos nombres distintos según el bróker"
    ],
    "explanation": "Compras al ask y vendes al bid: por eso, si compras y vendes al instante, pierdes el spread.",
    "feedback": [
@@ -428,8 +428,8 @@
    "prompt": "¿Qué le aclaras?",
    "options": [
     "Es un fondo pensado para menores",
-    "Es el documento con los riesgos y costes del producto",
-    "Es el nombre del gestor del fondo"
+    "Es el documento con riesgos y costes",
+    "Es el nombre del gestor que lleva el fondo"
    ],
    "explanation": "El KID resume en pocas páginas qué es el producto, su riesgo, sus costes y sus escenarios.",
    "feedback": [
@@ -453,7 +453,7 @@
   "vocabl3-7": {
    "prompt": "¿Qué mide la duración de un bono?",
    "options": [
-    "Cuánto se mueve su precio si cambian los tipos",
+    "Cuánto le afectan los tipos",
     "El interés que paga cada año",
     "Los años que lleva emitido"
    ],
@@ -527,7 +527,7 @@
    "prompt": "¿Qué le respondes?",
    "options": [
     "Es un tipo de diversificación",
-    "Multiplica las ganancias y las pérdidas por igual",
+    "Multiplica ganancias y pérdidas",
     "Sí, multiplica las ganancias y ya"
    ],
    "explanation": "El apalancamiento amplifica en las dos direcciones: con 10 veces, cada 1 % del activo es un 10 % de tu dinero.",
@@ -653,7 +653,7 @@
   "vocabl5-5": {
    "prompt": "¿Qué le explicas?",
    "options": [
-    "Tranquila: es una vela con mecha inferior larga que aparece tras una subida",
+    "Es una vela de mecha inferior larga",
     "Es lo mismo que un martillo, salga donde salga",
     "Es un doji con mucho volumen"
    ],
@@ -710,7 +710,7 @@
    "options": [
     "Cuánto subió el precio",
     "La distancia entre las mechas",
-    "Cuánto se negoció en un periodo"
+    "Cuánto se negoció"
    ],
    "explanation": "Un movimiento con mucho volumen tiene más gente detrás que uno con poco."
   },
@@ -777,7 +777,7 @@
    "prompt": "¿Qué le explicas?",
    "options": [
     "Es un indicador de volumen",
-    "Sus números dan niveles típicos de retroceso: 38,2 %, 50 %, 61,8 %…",
+    "Da niveles típicos de retroceso",
     "Predice el precio exacto del día siguiente"
    ],
    "explanation": "Los retrocesos de Fibonacci (23,6 %, 38,2 %, 50 %, 61,8 % y 78,6 %) señalan zonas donde un movimiento puede pararse. Son referencias, no profecías.",
@@ -862,7 +862,7 @@
   "vocabl7-4": {
    "prompt": "Ajustar un sistema hasta que el pasado sale perfecto, para que luego falle en el futuro, es…",
    "options": [
-    "Indexar",
+    "Rebalancear la cartera",
     "Sobreoptimizar",
     "Diversificar"
    ],
@@ -897,7 +897,7 @@
    "options": [
     "Es el porcentaje de operaciones que aciertas",
     "Es la rentabilidad que promete un curso de trading",
-    "Es lo que gana de media cada operación, contando aciertos y fallos"
+    "Lo que gana de media cada operación"
    ],
    "explanation": "Esperanza = (% de acierto × ganancia media) − (% de fallo × pérdida media).",
    "feedback": [
@@ -931,7 +931,7 @@
    "options": [
     "Estás diversificando",
     "Estás haciendo backtesting",
-    "Estás apostando, no operando"
+    "Estás apostando"
    ],
    "explanation": "Sin un 1R definido no hay forma de controlar las pérdidas."
   },
@@ -973,7 +973,7 @@
    "options": [
     "Es exceso de confianza, pero bien hecho",
     "Sí: es la estrategia de doblar tras perder",
-    "No, Lucía: eso se llama operar por venganza"
+    "No: eso es operar por venganza"
    ],
    "explanation": "Operar por venganza es uno de los errores más caros. La regla: tras tres pérdidas seguidas, se para el día.",
    "feedback": [
@@ -989,8 +989,8 @@
   "vocabl8-5": {
    "prompt": "Vender pronto lo que gana y aguantar lo que pierde es…",
    "options": [
-    "La recencia",
-    "El anclaje",
+    "El sesgo de confirmación",
+    "El efecto anclaje",
     "El efecto disposición"
    ],
    "explanation": "Así se cortan las ganancias y se dejan correr las pérdidas: justo al revés de lo que conviene."
@@ -1013,7 +1013,7 @@
   "vocabl8-7": {
    "prompt": "Pablo lleva un mes leyendo que una acción «va a petar». Solo sigue cuentas que opinan lo mismo. ¿Qué debería hacer?",
    "options": [
-    "Buscar a propósito la opinión contraria antes de decidir",
+    "Buscar a propósito la opinión contraria",
     "Comprar más: si todos lo dicen, será verdad",
     "Bloquear a quien opine distinto para no ponerse nervioso"
    ],
@@ -1087,7 +1087,7 @@
    "prompt": "¿Qué le explicas?",
    "options": [
     "El beneficio antes de intereses, impuestos, depreciaciones y amortizaciones",
-    "El beneficio que queda al final, después de todo",
+    "El beneficio que queda al final, después de restar todos los gastos e impuestos",
     "La deuda de la empresa"
    ],
    "explanation": "El EBITDA sirve para comparar negocios, pero no descuenta intereses, impuestos ni inversiones: no es el dinero que le queda a la empresa.",
@@ -1144,9 +1144,9 @@
   "vocabl9-9": {
    "prompt": "El CAPE es…",
    "options": [
-    "El PER del mercado con beneficios medios de 10 años",
+    "El PER con beneficios medios de 10 años",
     "El PER de una empresa este año",
-    "El dividendo medio de un índice"
+    "El dividendo medio de un índice en 10 años"
    ],
    "explanation": "También se llama PER de Shiller. Muy alto se ha asociado a rentabilidades futuras más bajas."
   },
@@ -1190,7 +1190,7 @@
    "prompt": "Una entidad que ofrece inversiones sin autorización es un…",
    "options": [
     "Chiringuito financiero",
-    "Bróker low cost",
+    "Bróker low cost sin oficinas",
     "Neobanco"
    ],
    "explanation": "La CNMV publica una lista de advertencias con los chiringuitos detectados."
@@ -1212,7 +1212,7 @@
   "vocabl10-5": {
    "prompt": "¿Qué le contestas?",
    "options": [
-    "Antes de nada, búscalos en la web de la CNMV",
+    "Primero, búscalos en la CNMV",
     "Si tienen muchos seguidores, serán fiables",
     "Les paso solo la mitad del DNI, por si acaso"
    ],
@@ -1248,8 +1248,8 @@
   "vocabl10-8": {
    "prompt": "Vendes unas acciones con pérdidas y recompras las mismas al mes siguiente. ¿Qué pasa con la pérdida?",
    "options": [
-    "No puedes aplicarla todavía: lo impide la regla de los dos meses",
-    "La compensas igual que siempre",
+    "Aún no puedes aplicarla",
+    "La compensas igual que siempre, en la próxima renta",
     "Desaparece para siempre"
    ],
    "explanation": "No se pierde: se aplaza hasta que vendas las acciones recompradas."

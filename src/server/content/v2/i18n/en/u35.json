@@ -475,13 +475,13 @@
   "u35l2-4": {
    "prompt": "Bruno sees that a crypto has gone up 40 % in a week and social media is talking about nothing else. He has €1,000 set aside for next month's rent. What does he do?",
    "options": [
-    "Takes out a loan to put in even more",
-    "Leaves the rent money alone; if he wants to try, he only uses money he could lose entirely",
+    "Puts in half the rent: better than nothing",
+    "Leaves the rent money alone",
     "Puts in the €1,000 before it goes up even more"
    ],
    "explanation": "FOMO pushes you to buy after a big rise and with money you shouldn't touch. In crypto, only use money you could afford to lose completely.",
    "feedback": [
-    "Debt to buy the most volatile asset on the market: if it falls, he still owes the money and no longer has the crypto.",
+    "It's still money he needs in a month: if it falls, he'll be short on rent.",
     "Good: only money whose total loss wouldn't change your life goes into crypto.",
     "It's his rent money. If it drops 30 % in a few days, as it has many times, he can't pay. Textbook FOMO."
    ]
@@ -517,7 +517,7 @@
    "options": [
     "The dollar has appreciated against the euro",
     "The euro has appreciated against the dollar",
-    "Both have lost the same amount of value"
+    "Both have lost the same amount of value at once"
    ],
    "explanation": "EUR/USD = how many dollars one euro costs. If it takes more dollars to buy one euro, the euro is worth more."
   },
@@ -552,7 +552,7 @@
    "prompt": "Over the medium term, what usually moves a major currency the most?",
    "options": [
     "What forex influencers are saying",
-    "Interest rates and economic surprises in its country",
+    "Its country's interest rates",
     "Last week's candlestick patterns"
    ],
    "explanation": "If a central bank raises rates more than expected, its currency tends to attract money. Candles reflect those changes; they don't cause them."
@@ -705,7 +705,7 @@
   "u35l7-3": {
    "prompt": "Pablo reads on his phone: «The Federal Reserve raises rates more than expected». The index falls 2 % in minutes and Pablo has an open position with his stop in place. What does he do?",
    "options": [
-    "Lets his plan work: the stop already sets how much he's willing to lose",
+    "Lets his plan and his stop do their job",
     "Buys more because «it's bound to bounce»",
     "Sells everything at market right now, before it falls further"
    ],
@@ -728,7 +728,7 @@
   "u35l7-6": {
    "prompt": "Marta reads on a forum that a company is «definitely going to be taken over». The share price has already risen 25 % in three days. What does she do?",
    "options": [
-    "She's wary: the rumour is already in the price and she doesn't know who's spreading it or why",
+    "She's wary: the rumour is already in the price",
     "She goes short because «it's bound to be a lie»",
     "She buys now: if it's confirmed, it'll rise even more"
    ],
@@ -744,10 +744,10 @@
    "options": [
     "Who's publishing the news, and with what interest?",
     "How many «likes» does the post have?",
-    "How much do I lose if I'm wrong?",
+    "How much has it already risen today?",
     "Did the market already expect it?"
    ],
-   "explanation": "Expectations, source and risk. How popular a post is says nothing about the price… except that you may already be late."
+   "explanation": "Who's publishing it and whether the market already expected it; and, before acting, how much you lose if you're wrong. The «likes» or how much it has already risen say nothing about the price… except that you may already be late."
   },
   "u35l8-1": {
    "prompt": "Put the steps of a well-executed trade in order.",
@@ -780,7 +780,7 @@
    "prompt": "Ana has lost three trades in a row, all of them following her plan. She's angry and sees another opportunity. What does she do?",
    "options": [
     "Opens a trade twice as big to win it back",
-    "Calls it a day and reviews her journal calmly tomorrow",
+    "Stops for today and reviews her journal tomorrow",
     "Changes strategy right away, because «it doesn't work»"
    ],
    "explanation": "Losing streaks are normal. The rule: after three losses in a row, you stop for the day.",
@@ -797,9 +797,9 @@
     "How you were feeling",
     "What an influencer thought that day",
     "The reason for entering",
-    "The result in R"
+    "The price of ten other shares"
    ],
-   "explanation": "Plan, result and emotions: that's how you spot your repeated mistakes. What someone else says doesn't explain your decisions."
+   "explanation": "Plan (reason, stop and target), result and emotions: that's how you spot your repeated mistakes. What someone else says or the price of other shares doesn't explain your decisions."
   },
   "u35l8-9": {
    "prompt": "Second trade: €3,000 of capital and a maximum risk of 1 %.",
@@ -828,8 +828,8 @@
    "prompt": "Wednesday: you put 10 % into bitcoin and it's gone up 25 % this week. It now makes up 12 % of the portfolio and your rule says 10 % at most. What do you do?",
    "options": [
     "I leave it: it's going up",
-    "I buy more to ride the streak",
-    "I sell the excess to get back to 10 % and spread it across the rest"
+    "I buy more to ride the streak while it lasts",
+    "I sell the excess to get back to 10 %"
    ],
    "explanation": "Rebalancing brings your portfolio back to the risk you chose with a cool head.",
    "feedback": [

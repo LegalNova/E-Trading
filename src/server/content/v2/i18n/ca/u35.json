@@ -475,13 +475,13 @@
   "u35l2-4": {
    "prompt": "En Bruno veu que una cripto ha pujat un 40 % en una setmana i a les xarxes no es parla de res més. Té 1.000 € reservats per al lloguer del mes que ve. Què fa?",
    "options": [
-    "Demana un préstec per posar-n'hi més",
-    "No toca el lloguer; si vol provar-ho, fa servir només diners que podria perdre sencers",
+    "Hi posa la meitat del lloguer: alguna cosa és alguna cosa",
+    "No toca els diners del lloguer",
     "Hi posa els 1.000 € abans que pugi més"
    ],
    "explanation": "El FOMO t'empeny a comprar després d'una gran pujada i amb diners que no toca. En cripto, només diners que puguis perdre del tot.",
    "feedback": [
-    "Deute per comprar l'actiu més volàtil del mercat: si cau, continua devent els diners i ja no té la cripto.",
+    "Continuen sent diners que necessita d'aquí a un mes: si cau, li'n faltarà per al lloguer.",
     "Molt bé: en cripto només hi entren diners la pèrdua total dels quals no et canviï la vida.",
     "Són els diners del lloguer. Si cau un 30 % en pocs dies, com ha passat moltes vegades, no podrà pagar. FOMO de manual."
    ]
@@ -517,7 +517,7 @@
    "options": [
     "El dòlar s'ha apreciat davant de l'euro",
     "L'euro s'ha apreciat davant del dòlar",
-    "Tots dos han perdut el mateix valor"
+    "Tots dos han perdut el mateix valor alhora"
    ],
    "explanation": "EUR/USD = dòlars que costa un euro. Si calen més dòlars per comprar un euro, l'euro val més."
   },
@@ -552,7 +552,7 @@
    "prompt": "A mitjà termini, què sol moure més una divisa principal?",
    "options": [
     "El que comenten els influencers de forex",
-    "Els tipus d'interès i les sorpreses econòmiques del seu país",
+    "Els tipus d'interès del seu país",
     "Els patrons d'espelmes de l'última setmana"
    ],
    "explanation": "Si un banc central apuja els tipus més del que s'esperava, la seva moneda sol atreure diners. Les espelmes reflecteixen aquests canvis; no els causen."
@@ -705,7 +705,7 @@
   "u35l7-3": {
    "prompt": "En Pablo llegeix al mòbil: «La Reserva Federal apuja els tipus més del que s'esperava». L'índex cau un 2 % en minuts i en Pablo té una posició oberta amb l'stop posat. Què fa?",
    "options": [
-    "Deixa treballar el seu pla: l'stop ja marca quant està disposat a perdre",
+    "Deixa treballar el seu pla i l'stop",
     "Compra més perquè «segur que rebota»",
     "Ho ven tot a mercat ara mateix, abans que caigui més"
    ],
@@ -728,7 +728,7 @@
   "u35l7-6": {
    "prompt": "La Marta llegeix en un fòrum que una empresa «segur que la compraran». L'acció ja ha pujat un 25 % en tres dies. Què fa?",
    "options": [
-    "Desconfia: el rumor ja és al preu i no sap qui el difon ni per què",
+    "Desconfia: el rumor ja és al preu",
     "Es posa curta perquè «segur que és mentida»",
     "Compra ara: si es confirma, pujarà més"
    ],
@@ -744,10 +744,10 @@
    "options": [
     "Qui publica la notícia i amb quin interès?",
     "Quants «m'agrada» té la publicació?",
-    "Quant perdo si m'equivoco?",
+    "Quant ha pujat ja avui?",
     "Ja ho esperava el mercat?"
    ],
-   "explanation": "Expectatives, font i risc. La popularitat d'una publicació no diu res del preu… tret que potser ja hi arribes tard."
+   "explanation": "Qui ho publica i si el mercat ja ho esperava; i, abans d'actuar, quant perds si t'equivoques. Els «m'agrada» o el que ja ha pujat no diuen res del preu… tret que potser ja hi arribes tard."
   },
   "u35l8-1": {
    "prompt": "Ordena els passos d'una operació ben feta.",
@@ -780,7 +780,7 @@
    "prompt": "L'Ana ha perdut tres operacions seguides, totes seguint el seu pla. Està enfadada i veu una altra oportunitat. Què fa?",
    "options": [
     "Obre una operació el doble de grossa per recuperar-ho",
-    "Para per avui i demà revisa el diari amb calma",
+    "Para per avui i demà revisa el diari",
     "Canvia d'estratègia ara mateix, perquè «no funciona»"
    ],
    "explanation": "Les ratxes de pèrdues són normals. La regla: després de tres pèrdues seguides, es para el dia.",
@@ -797,9 +797,9 @@
     "Com et senties",
     "El que opinava un influencer aquell dia",
     "El motiu de l'entrada",
-    "El resultat en R"
+    "El preu de deu accions més"
    ],
-   "explanation": "Pla, resultat i emocions: amb això descobreixes els teus errors repetits. El que digui un altre no explica les teves decisions."
+   "explanation": "Pla (motiu, stop i objectiu), resultat i emocions: amb això descobreixes els teus errors repetits. El que digui un altre o el preu d'altres valors no explica les teves decisions."
   },
   "u35l8-9": {
    "prompt": "Segona operació: 3.000 € de capital i un risc màxim de l'1 %.",
@@ -828,8 +828,8 @@
    "prompt": "Dimecres: vas posar un 10 % en bitcoin i aquesta setmana ha pujat un 25 %. Ara pesa un 12 % de la cartera i la teva regla diu un 10 % com a màxim. Què fas?",
    "options": [
     "El deixo: està pujant",
-    "En compro més per aprofitar la ratxa",
-    "Venc el que sobra per tornar al 10 % i ho reparteixo en la resta"
+    "En compro més per aprofitar la ratxa mentre duri",
+    "Venc el que sobra per tornar al 10 %"
    ],
    "explanation": "Reequilibrar torna la cartera al risc que vas triar amb el cap fred.",
    "feedback": [

@@ -197,7 +197,7 @@
    "prompt": "Què li contestes?",
    "options": [
     "No: és quan necessitaràs els diners",
-    "Gairebé: és quants diners tens",
+    "Gairebé: és quants diners tens per invertir",
     "És el termini d'un préstec"
    ],
    "explanation": "L'horitzó temporal decideix quant risc pots assumir: com més lluny, més temps per recuperar-te de les caigudes.",
@@ -290,9 +290,9 @@
   "vocabl2-3": {
    "prompt": "Una OPV és…",
    "options": [
-    "Un tipus de bo públic",
+    "Un tipus de bo públic a llarg termini",
     "Una ordre de venda urgent",
-    "Una venda al públic d'accions, sovint per sortir a borsa"
+    "Una venda d'accions al públic"
    ],
    "explanation": "Oferta pública de venda: els propietaris venen al públic accions que ja existeixen, i moltes empreses surten així a borsa. Si l'empresa emet accions noves, és una OPS."
   },
@@ -300,8 +300,8 @@
    "prompt": "Què li aclareixes?",
    "options": [
     "Bid és vendre i ask és comprar",
-    "Bid: el màxim que algú paga ara; ask: el mínim pel qual algú ven",
-    "Són el mateix amb noms diferents"
+    "Bid és el que paguen; ask, el que demanen",
+    "Són el mateix, amb dos noms diferents segons el bròquer"
    ],
    "explanation": "Compres a l'ask i vens al bid: per això, si compres i vens a l'instant, perds l'spread.",
    "feedback": [
@@ -428,8 +428,8 @@
    "prompt": "Què li aclareixes?",
    "options": [
     "És un fons pensat per a menors",
-    "És el document amb els riscos i els costos del producte",
-    "És el nom del gestor del fons"
+    "És el document amb riscos i costos",
+    "És el nom del gestor que porta el fons"
    ],
    "explanation": "El KID resumeix en poques pàgines què és el producte, el seu risc, els seus costos i els seus escenaris.",
    "feedback": [
@@ -453,7 +453,7 @@
   "vocabl3-7": {
    "prompt": "Què mesura la durada d'un bo?",
    "options": [
-    "Quant es mou el seu preu si canvien els tipus",
+    "Quant l'afecten els tipus",
     "L'interès que paga cada any",
     "Els anys que fa que es va emetre"
    ],
@@ -527,7 +527,7 @@
    "prompt": "Què li respons?",
    "options": [
     "És un tipus de diversificació",
-    "Multiplica els guanys i les pèrdues per igual",
+    "Multiplica guanys i pèrdues",
     "Sí, multiplica els guanys i prou"
    ],
    "explanation": "El palanquejament amplifica en les dues direccions: amb 10 vegades, cada 1 % de l'actiu és un 10 % dels teus diners.",
@@ -653,7 +653,7 @@
   "vocabl5-5": {
    "prompt": "Què li expliques?",
    "options": [
-    "Tranquil·la: és una espelma amb una metxa inferior llarga que apareix després d'una pujada",
+    "És una espelma de metxa inferior llarga",
     "És el mateix que un martell, surti on surti",
     "És un doji amb molt de volum"
    ],
@@ -710,7 +710,7 @@
    "options": [
     "Quant ha pujat el preu",
     "La distància entre les metxes",
-    "Quant s'ha negociat en un període"
+    "Quant s'ha negociat"
    ],
    "explanation": "Un moviment amb molt de volum té més gent al darrere que un amb poc."
   },
@@ -777,7 +777,7 @@
    "prompt": "Què li expliques?",
    "options": [
     "És un indicador de volum",
-    "Els seus números donen nivells típics de retrocés: 38,2 %, 50 %, 61,8 %…",
+    "Dona nivells típics de retrocés",
     "Prediu el preu exacte de l'endemà"
    ],
    "explanation": "Els retrocessos de Fibonacci (23,6 %, 38,2 %, 50 %, 61,8 % i 78,6 %) assenyalen zones on un moviment es pot aturar. Són referències, no profecies.",
@@ -862,7 +862,7 @@
   "vocabl7-4": {
    "prompt": "Ajustar un sistema fins que el passat surt perfecte, i que després falli en el futur, és…",
    "options": [
-    "Indexar",
+    "Reequilibrar la cartera",
     "Sobreoptimitzar",
     "Diversificar"
    ],
@@ -897,7 +897,7 @@
    "options": [
     "És el percentatge d'operacions que encertes",
     "És la rendibilitat que promet un curs de trading",
-    "És el que guanya de mitjana cada operació, comptant encerts i errors"
+    "El que guanya de mitjana cada operació"
    ],
    "explanation": "Esperança = (% d'encert × guany mitjà) − (% d'error × pèrdua mitjana).",
    "feedback": [
@@ -931,7 +931,7 @@
    "options": [
     "Estàs diversificant",
     "Estàs fent backtesting",
-    "Estàs apostant, no operant"
+    "Estàs apostant"
    ],
    "explanation": "Sense un 1R definit no hi ha manera de controlar les pèrdues."
   },
@@ -973,7 +973,7 @@
    "options": [
     "És excés de confiança, però ben fet",
     "Sí: és l'estratègia de doblar després de perdre",
-    "No, Lumi: això es diu operar per venjança"
+    "No: això és operar per venjança"
    ],
    "explanation": "Operar per venjança és un dels errors més cars. La regla: després de tres pèrdues seguides, es para el dia.",
    "feedback": [
@@ -989,8 +989,8 @@
   "vocabl8-5": {
    "prompt": "Vendre aviat el que guanya i aguantar el que perd és…",
    "options": [
-    "La recència",
-    "L'ancoratge",
+    "El biaix de confirmació",
+    "L'efecte ancoratge",
     "L'efecte disposició"
    ],
    "explanation": "Així es tallen els guanys i es deixen córrer les pèrdues: just al revés del que convé."
@@ -1013,7 +1013,7 @@
   "vocabl8-7": {
    "prompt": "En Pablo fa un mes que llegeix que una acció «petarà». Només segueix comptes que opinen el mateix. Què hauria de fer?",
    "options": [
-    "Buscar expressament l'opinió contrària abans de decidir",
+    "Buscar expressament l'opinió contrària",
     "Comprar-ne més: si tothom ho diu, deu ser veritat",
     "Bloquejar qui opini diferent per no posar-se nerviós"
    ],
@@ -1087,7 +1087,7 @@
    "prompt": "Què li expliques?",
    "options": [
     "El benefici abans d'interessos, impostos, depreciacions i amortitzacions",
-    "El benefici que queda al final, després de tot",
+    "El benefici que queda al final, després de restar totes les despeses i impostos",
     "El deute de l'empresa"
    ],
    "explanation": "L'EBITDA serveix per comparar negocis, però no descompta interessos, impostos ni inversions: no són els diners que li queden a l'empresa.",
@@ -1144,9 +1144,9 @@
   "vocabl9-9": {
    "prompt": "El CAPE és…",
    "options": [
-    "El PER del mercat amb beneficis mitjans de 10 anys",
+    "El PER amb beneficis mitjans de 10 anys",
     "El PER d'una empresa aquest any",
-    "El dividend mitjà d'un índex"
+    "El dividend mitjà d'un índex en 10 anys"
    ],
    "explanation": "També s'anomena PER de Shiller. Un CAPE molt alt s'ha associat a rendibilitats futures més baixes."
   },
@@ -1190,7 +1190,7 @@
    "prompt": "Una entitat que ofereix inversions sense autorització és un…",
    "options": [
     "Xiringuito financer",
-    "Bròker low cost",
+    "Bròker low cost sense oficines",
     "Neobanc"
    ],
    "explanation": "La CNMV publica una llista d'advertiments amb els xiringuitos detectats."
@@ -1212,7 +1212,7 @@
   "vocabl10-5": {
    "prompt": "Què li contestes?",
    "options": [
-    "Abans de res, busca'ls al web de la CNMV",
+    "Primer, busca'ls a la CNMV",
     "Si tenen molts seguidors, deuen ser de fiar",
     "Els passo només la meitat del DNI, per si de cas"
    ],
@@ -1248,8 +1248,8 @@
   "vocabl10-8": {
    "prompt": "Vens unes accions amb pèrdues i recompres les mateixes el mes següent. Què passa amb la pèrdua?",
    "options": [
-    "Encara no la pots aplicar: ho impedeix la regla dels dos mesos",
-    "La compenses igual que sempre",
+    "Encara no la pots aplicar",
+    "La compenses igual que sempre, a la pròxima renda",
     "Desapareix per sempre"
    ],
    "explanation": "No es perd: s'ajorna fins que vens les accions recomprades."

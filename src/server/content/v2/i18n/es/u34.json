@@ -411,9 +411,9 @@
   "u34l1-2": {
    "prompt": "¿Dónde y cuándo ocurrió la tulipomanía?",
    "options": [
-    "En Londres, en 1720",
-    "En las Provincias Unidas (Holanda), hacia 1637",
-    "En París, en 1929"
+    "En Inglaterra, hacia 1720",
+    "En Holanda, hacia 1637",
+    "En Francia, hacia 1929"
    ],
    "explanation": "Londres 1720 es la Compañía de los Mares del Sur."
   },
@@ -463,7 +463,7 @@
    "options": [
     "Si mi peluquero gana, es que es fácil",
     "¡Pues entro ya, que se acaba!",
-    "Cuando todo el mundo habla de algo, suele ser señal de euforia, no de oportunidad"
+    "Eso suele ser señal de euforia"
    ],
    "explanation": "La euforia generalizada es una alarma, no una invitación.",
    "feedback": [
@@ -560,18 +560,18 @@
    "prompt": "¿Qué señales de burbuja se vieron en 1999-2000? Marca todas.",
    "options": [
     "Valoraciones prudentes respecto a los beneficios",
-    "Mucha gente nueva comprando solo porque subía",
+    "Poca gente hablando de bolsa",
     "Salidas a bolsa que doblaban su precio el primer día",
     "Empresas sin beneficios valoradas en miles de millones"
    ],
-   "explanation": "Las valoraciones se olvidaron: «las reglas de antes ya no sirven»."
+   "explanation": "Empresas sin beneficios valoradas en miles de millones y salidas a bolsa que doblaban el primer día, con mucha gente nueva comprando solo porque subía. Las valoraciones se olvidaron: «las reglas de antes ya no sirven»."
   },
   "u34l3-10": {
    "prompt": "¿Qué le contestas a Sara?",
    "options": [
-    "Sí, como internet en 2000",
+    "Sí, como internet en 2000: no podía fallar",
     "No, la IA es una moda",
-    "La tecnología puede ser real y aun así el precio puede estar caro"
+    "Puede ser real y aun así estar cara"
    ],
    "explanation": "Acertar con una tecnología no garantiza acertar con la inversión.",
    "feedback": [
@@ -632,12 +632,12 @@
   "u34l4-10": {
    "prompt": "¿Qué hizo la crisis de 2008 mucho peor? Marca todo.",
    "options": [
-    "Notas de riesgo demasiado optimistas",
+    "Bancos con mucho capital de reserva",
     "Que la gente tuviera mucho colchón de ahorro",
     "Productos complejos que casi nadie entendía",
     "Bancos muy endeudados"
    ],
-   "explanation": "El apalancamiento y la complejidad convirtieron un problema de hipotecas en una crisis mundial."
+   "explanation": "Los bancos muy endeudados y los productos complejos que casi nadie entendía, con notas de riesgo demasiado optimistas, convirtieron un problema de hipotecas en una crisis mundial. El ahorro y el capital de reserva habrían amortiguado el golpe."
   },
   "u34l5-1": {
    "prompt": "Así se movió el Nikkei 225 de Japón entre 1985 y finales de 1989. ¿Qué tendencia ves? (Nikkei 225 · cierres mensuales · hasta diciembre de 1989)",
@@ -662,7 +662,7 @@
    "options": [
     "Mejor lo meto todo en Japón, que ya se ha recuperado",
     "Exacto, EE. UU. nunca fallará",
-    "Japón también «siempre se recuperaba»: mejor no depender de un solo país"
+    "Mejor no depender de un solo país"
    ],
    "explanation": "La historia de EE. UU. es la del mercado que mejor ha ido. No está garantizado que se repita.",
    "feedback": [
@@ -680,22 +680,22 @@
    "options": [
     "Bolsa y suelo disparados a la vez",
     "Una bolsa pequeña y poco conocida",
-    "Valoraciones muy altas",
+    "Empresas baratas respecto a sus beneficios",
     "Crédito barato"
    ],
-   "explanation": "Era la mayor bolsa del mundo, no una pequeña."
+   "explanation": "Bolsa y suelo se dispararon a la vez con crédito barato, y las valoraciones eran altísimas. Era la mayor bolsa del mundo, no una pequeña, y sus empresas no estaban baratas."
   },
   "u34l5-11": {
    "prompt": "Es 1990. El Nikkei ya ha empezado a bajar desde su máximo de 1989 y un amigo te dice: «Japón es la mayor bolsa del mundo y siempre se recupera: mete aquí todos tus ahorros». ¿Qué haces?",
    "options": [
     "Lo meto todo en el Nikkei: Japón siempre se recupera",
-    "Pido un préstamo para comprar más ahora que ha bajado",
-    "Invierto repartido por todo el mundo, con Japón como una parte más"
+    "Meto la mitad ahora y la otra mitad si baja más",
+    "Invierto repartido por todo el mundo"
    ],
    "explanation": "Repartir por países te protege de elegir el país equivocado. «Siempre se recupera» falla porque un país puede tardar décadas: Japón tardó 34 años.",
    "feedback": [
     "El Nikkei no superó su máximo de 1989 hasta febrero de 2024: 34 años de espera.",
-    "Con deuda no puedes esperar décadas: te obligarían a vender mucho antes.",
+    "Entrar en dos veces no cambia el fondo: todos tus ahorros acabarían en un solo país.",
     "Bien: si un país vive su década perdida, el resto de la cartera sigue adelante."
    ]
   },
@@ -720,8 +720,8 @@
   "u34l6-4": {
    "prompt": "¿Qué es la prima de riesgo de España?",
    "options": [
-    "La comisión de la Bolsa de Madrid",
-    "La diferencia entre el interés del bono español y el alemán a 10 años",
+    "La comisión que cobra la Bolsa de Madrid por operar",
+    "La diferencia entre el bono español y el alemán",
     "Lo que cuesta un seguro de hogar"
    ],
    "explanation": "Mide cuánto más exigen los inversores por prestar a España que a Alemania."
@@ -756,11 +756,11 @@
    "prompt": "¿Qué lecciones deja la crisis española? Marca todas.",
    "options": [
     "Concentrarte en tu país te protege",
-    "Vender en el máximo miedo suele salir caro",
+    "El ladrillo nunca baja",
     "El crédito fácil y el ladrillo pueden formar una burbuja",
     "Tu propio país también puede tener una crisis muy dura"
    ],
-   "explanation": "Concentrarte en casa no protege: concentra."
+   "explanation": "El crédito fácil y el ladrillo pueden formar una burbuja, y tu propio país también puede tener una crisis muy dura. Concentrarte en casa no protege: concentra. Y quien vendió en el máximo miedo lo pagó caro."
   },
   "u34l7-1": {
    "prompt": "Toca el máximo del S&P 500 antes de la caída del COVID. (S&P 500 · cierres diarios · hasta el 25/03/2020)",
@@ -784,7 +784,7 @@
   "u34l7-8": {
    "prompt": "¿Qué le contestas a Lucía?",
    "options": [
-    "Le pasó a muchísima gente: la próxima vez, decide antes con un plan escrito",
+    "Le pasó a muchos: decide antes con un plan",
     "Lo mejor es no volver a invertir",
     "Mala suerte, la próxima vez acertarás el suelo"
    ],
@@ -804,10 +804,10 @@
    "options": [
     "Seguir aportando cada mes",
     "Esperar fuera a que «se aclarara»",
-    "Rebalancear hacia acciones",
+    "Pasarlo todo a liquidez en marzo",
     "No vender en pánico"
    ],
-   "explanation": "Cuando se aclaró, la bolsa ya había recuperado casi todo."
+   "explanation": "No vender en pánico y seguir aportando cada mes, y también rebalancear hacia acciones. Quien salió en marzo o esperó fuera a que «se aclarara» se perdió el rebote: cuando se aclaró, la bolsa ya había recuperado casi todo."
   },
   "u34l8-2": {
    "prompt": "Estás en 2022. Marca los mensajes que deberían haberte hecho desconfiar.",
@@ -829,8 +829,8 @@
    "prompt": "¿Qué es una moneda estable «algorítmica» como UST?",
    "options": [
     "Un depósito en dólares garantizado por un banco",
-    "Una cripto que intenta valer 1 $ con un mecanismo automático, sin reservas sólidas detrás",
-    "Una moneda emitida por la Reserva Federal"
+    "Una cripto que intenta valer 1 $ sin reservas",
+    "Una moneda digital emitida por la Reserva Federal"
    ],
    "explanation": "Cuando la confianza se rompió, el mecanismo no pudo sostener la paridad."
   },
@@ -854,11 +854,11 @@
    "prompt": "¿Qué lecciones deja la cripto en 2022? Marca todas.",
    "options": [
     "Un exchange puede quebrar con tu dinero dentro",
-    "Lo especulativo debe ser una parte pequeña que puedas perder entera",
+    "Lo especulativo, una parte pequeña que puedas perder",
     "Si todos lo compran, es seguro",
-    "Una rentabilidad altísima y «estable» es una alarma"
+    "Las criptos grandes no pueden caer mucho"
    ],
-   "explanation": "La popularidad no protegió a nadie en 2022."
+   "explanation": "Un exchange puede quebrar con tu dinero dentro, y lo especulativo debe ser una parte pequeña que puedas perder entera; una rentabilidad altísima y «estable» es una alarma. Ni la popularidad ni el tamaño protegieron a nadie en 2022."
   },
   "u34l8-10": {
    "prompt": "En cripto se dice: «si no tienes tus claves, no son tus ____».",
@@ -875,21 +875,21 @@
    "options": [
     "Euforia y «esta vez es distinto»",
     "Valoraciones prudentes",
-    "Ventas en pánico al final",
+    "Poca gente nueva invirtiendo",
     "Crédito fácil o apalancamiento"
    ],
-   "explanation": "Las valoraciones prudentes son justo lo que desaparece en una burbuja."
+   "explanation": "Euforia, «esta vez es distinto» y crédito fácil o apalancamiento, con ventas en pánico al final. Las valoraciones prudentes son justo lo que desaparece en una burbuja, y siempre entra mucha gente nueva."
   },
   "u34l9-2": {
    "prompt": "¿Qué le contestas a Nora?",
    "options": [
-    "Pediré un préstamo para comprar barato",
-    "Tendré colchón, cartera diversificada, sin deudas y seguiré mi plan escrito",
+    "Guardaré todo en liquidez para comprar cuando caiga",
+    "Tendré colchón, sin deudas y un plan escrito",
     "Venderé todo justo antes de que empiece"
    ],
    "explanation": "No se trata de predecir la crisis, sino de estar preparado para aguantarla.",
    "feedback": [
-    "Comprar con deuda en una crisis puede obligarte a vender si cae aún más.",
+    "Esperar la crisis fuera del mercado puede costar años de subidas: nadie sabe cuándo llega.",
     "¡Perfecto! No sabes cuándo llegará, pero sí cómo vas a reaccionar.",
     "Nadie ha sabido nunca cuándo empieza. Es un plan que depende de adivinar."
    ],

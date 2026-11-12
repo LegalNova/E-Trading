@@ -475,13 +475,13 @@
   "u35l2-4": {
    "prompt": "Bruno ve que una cripto ha subido un 40 % en una semana y en redes no se habla de otra cosa. Tiene 1.000 € apartados para el alquiler del mes que viene. ¿Qué hace?",
    "options": [
-    "Pide un préstamo para meter más",
-    "No toca el alquiler; si quiere probar, usa solo dinero que podría perder entero",
+    "Mete la mitad del alquiler: algo es algo",
+    "No toca el dinero del alquiler",
     "Mete los 1.000 € antes de que suba más"
    ],
    "explanation": "El FOMO empuja a comprar después de una gran subida y con dinero que no toca. En cripto, solo dinero que puedas perder del todo.",
    "feedback": [
-    "Deuda para comprar el activo más volátil del mercado: si cae, sigue debiendo el dinero y ya no tiene la cripto.",
+    "Sigue siendo dinero que necesita en un mes: si cae, le faltará para el alquiler.",
     "Bien: en cripto solo entra dinero cuya pérdida total no te cambie la vida.",
     "Es el dinero del alquiler. Si cae un 30 % en pocos días, como ha pasado muchas veces, no puede pagar. FOMO de manual."
    ]
@@ -517,7 +517,7 @@
    "options": [
     "El dólar se ha apreciado frente al euro",
     "El euro se ha apreciado frente al dólar",
-    "Los dos han perdido el mismo valor"
+    "Los dos han perdido el mismo valor a la vez"
    ],
    "explanation": "EUR/USD = dólares que cuesta un euro. Si hacen falta más dólares para comprar un euro, el euro vale más."
   },
@@ -561,7 +561,7 @@
    "prompt": "A medio plazo, ¿qué suele mover más una divisa principal?",
    "options": [
     "Lo que comentan los influencers de forex",
-    "Los tipos de interés y las sorpresas económicas de su país",
+    "Los tipos de interés de su país",
     "Los patrones de velas de la última semana"
    ],
    "explanation": "Si un banco central sube tipos más de lo esperado, su moneda suele atraer dinero. Las velas reflejan esos cambios; no los causan."
@@ -714,7 +714,7 @@
   "u35l7-3": {
    "prompt": "Pablo lee en el móvil: «La Reserva Federal sube los tipos más de lo esperado». El índice cae un 2 % en minutos y Pablo tiene una posición abierta con su stop puesto. ¿Qué hace?",
    "options": [
-    "Deja trabajar su plan: el stop ya marca cuánto está dispuesto a perder",
+    "Deja trabajar su plan y su stop",
     "Compra más porque «seguro que rebota»",
     "Vende todo a mercado ya, antes de que caiga más"
    ],
@@ -737,7 +737,7 @@
   "u35l7-6": {
    "prompt": "Marta lee en un foro que una empresa «va a ser comprada seguro». La acción ya ha subido un 25 % en tres días. ¿Qué hace?",
    "options": [
-    "Desconfía: el rumor ya está en el precio y no sabe quién lo difunde ni por qué",
+    "Desconfía: el rumor ya está en el precio",
     "Se pone corta porque «seguro que es mentira»",
     "Compra ya: si se confirma, subirá más"
    ],
@@ -753,10 +753,10 @@
    "options": [
     "¿Quién publica la noticia y con qué interés?",
     "¿Cuántos «me gusta» tiene la publicación?",
-    "¿Cuánto pierdo si me equivoco?",
+    "¿Cuánto ha subido ya hoy?",
     "¿Lo esperaba ya el mercado?"
    ],
-   "explanation": "Expectativas, fuente y riesgo. La popularidad de un post no dice nada del precio… salvo que quizá ya llegas tarde."
+   "explanation": "Quién lo publica y si el mercado ya lo esperaba; y, antes de actuar, cuánto pierdes si te equivocas. Los «me gusta» o lo que ya ha subido no dicen nada del precio… salvo que quizá ya llegas tarde."
   },
   "u35l8-1": {
    "prompt": "Ordena los pasos de una operación bien hecha.",
@@ -789,7 +789,7 @@
    "prompt": "Ana ha perdido tres operaciones seguidas, todas siguiendo su plan. Está enfadada y ve otra oportunidad. ¿Qué hace?",
    "options": [
     "Abre una operación el doble de grande para recuperar",
-    "Para por hoy y revisa el diario mañana con calma",
+    "Para por hoy y revisa el diario mañana",
     "Cambia de estrategia ya, porque «no funciona»"
    ],
    "explanation": "Las rachas de pérdidas son normales. La regla: tras tres pérdidas seguidas, se para el día.",
@@ -806,9 +806,9 @@
     "Cómo te sentías",
     "Lo que opinaba un influencer ese día",
     "El motivo de la entrada",
-    "El resultado en R"
+    "El precio de otras diez acciones"
    ],
-   "explanation": "Plan, resultado y emociones: con eso descubres tus errores repetidos. Lo que diga otro no explica tus decisiones."
+   "explanation": "Plan (motivo, stop y objetivo), resultado y emociones: con eso descubres tus errores repetidos. Lo que diga otro o el precio de otros valores no explica tus decisiones."
   },
   "u35l8-9": {
    "prompt": "Segunda operación: 3.000 € de capital y un riesgo máximo del 1 %.",
@@ -837,8 +837,8 @@
    "prompt": "Miércoles: pusiste un 10 % en bitcoin y esta semana ha subido un 25 %. Ahora pesa un 12 % de la cartera y tu regla dice 10 % como máximo. ¿Qué haces?",
    "options": [
     "Lo dejo: está subiendo",
-    "Compro más para aprovechar la racha",
-    "Vendo lo que sobra para volver al 10 % y lo reparto en el resto"
+    "Compro más para aprovechar la racha mientras dure",
+    "Vendo lo que sobra para volver al 10 %"
    ],
    "explanation": "Rebalancear devuelve la cartera al riesgo que elegiste con la cabeza fría.",
    "feedback": [

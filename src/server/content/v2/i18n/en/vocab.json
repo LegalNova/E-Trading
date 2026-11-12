@@ -197,7 +197,7 @@
    "prompt": "What do you say?",
    "options": [
     "No: it's when you'll need the money",
-    "Close: it's how much money you have",
+    "Close: it's how much money you have to invest",
     "It's the term of a loan"
    ],
    "explanation": "Your time horizon decides how much risk you can take: the further away it is, the more time you have to recover from falls.",
@@ -290,9 +290,9 @@
   "vocabl2-3": {
    "prompt": "An IPO is…",
    "options": [
-    "A type of government bond",
+    "A type of long-term government bond",
     "An urgent sell order",
-    "A company's stock market debut"
+    "A sale of shares to the public"
    ],
    "explanation": "Initial public offering: the company (or its owners) sells shares to new investors and it starts trading on the stock market."
   },
@@ -300,8 +300,8 @@
    "prompt": "How do you clear it up?",
    "options": [
     "Bid is selling and ask is buying",
-    "Bid: the most someone will pay right now; ask: the least someone will sell for",
-    "They're the same thing with different names"
+    "Bid is what buyers pay; ask, what sellers want",
+    "They're the same thing, with different names at each broker"
    ],
    "explanation": "You buy at the ask and sell at the bid: that's why, if you buy and sell instantly, you lose the spread.",
    "feedback": [
@@ -428,8 +428,8 @@
    "prompt": "How do you clear it up?",
    "options": [
     "It's a fund designed for children",
-    "It's the document with the product's risks and costs",
-    "It's the name of the fund manager"
+    "It's the document with risks and costs",
+    "It's the name of the manager running the fund"
    ],
    "explanation": "The KID sums up in a few pages what the product is, its risk, its costs and its scenarios.",
    "feedback": [
@@ -453,7 +453,7 @@
   "vocabl3-7": {
    "prompt": "What does a bond's duration measure?",
    "options": [
-    "How much its price moves if interest rates change",
+    "How much rates affect it",
     "The interest it pays each year",
     "How many years since it was issued"
    ],
@@ -527,7 +527,7 @@
    "prompt": "What do you say?",
    "options": [
     "It's a type of diversification",
-    "It multiplies gains and losses alike",
+    "It multiplies gains and losses",
     "Yes, it multiplies your gains, end of story"
    ],
    "explanation": "Leverage amplifies in both directions: at 10 times, every 1 % move in the asset is 10 % of your money.",
@@ -653,7 +653,7 @@
   "vocabl5-5": {
    "prompt": "What do you explain to her?",
    "options": [
-    "Relax: it's a candle with a long lower wick that appears after a rise",
+    "A candle with a long lower wick",
     "It's the same as a hammer, wherever it shows up",
     "It's a doji with lots of volume"
    ],
@@ -710,7 +710,7 @@
    "options": [
     "How much the price rose",
     "The distance between the wicks",
-    "How much was traded in a period"
+    "How much was traded"
    ],
    "explanation": "A move on high volume has more people behind it than one on low volume."
   },
@@ -777,7 +777,7 @@
    "prompt": "What do you explain to her?",
    "options": [
     "It's a volume indicator",
-    "Its numbers give typical retracement levels: 38.2 %, 50 %, 61.8 %…",
+    "It gives typical retracement levels",
     "It predicts the exact price for the next day"
    ],
    "explanation": "Fibonacci retracements (23.6 %, 38.2 %, 50 %, 61.8 % and 78.6 %) flag zones where a move might stall. They're reference points, not prophecies.",
@@ -862,7 +862,7 @@
   "vocabl7-4": {
    "prompt": "Tuning a system until the past looks perfect, only for it to fail in the future, is…",
    "options": [
-    "Indexing",
+    "Rebalancing a portfolio",
     "Overfitting",
     "Diversifying"
    ],
@@ -897,7 +897,7 @@
    "options": [
     "It's the percentage of trades you get right",
     "It's the return a trading course promises you",
-    "It's what each trade makes on average, counting wins and losses"
+    "What each trade makes on average"
    ],
    "explanation": "Expectancy = (win rate × average win) − (loss rate × average loss).",
    "feedback": [
@@ -931,7 +931,7 @@
    "options": [
     "You're diversifying",
     "You're backtesting",
-    "You're gambling, not trading"
+    "You're gambling"
    ],
    "explanation": "Without a defined 1R, there's no way to keep your losses under control."
   },
@@ -973,7 +973,7 @@
    "options": [
     "It's overconfidence, but done well",
     "Yes: it's the double-up-after-a-loss strategy",
-    "No, Lumi: that's called revenge trading"
+    "No: that's revenge trading"
    ],
    "explanation": "Revenge trading is one of the most expensive mistakes. The rule: after three losses in a row, you stop for the day.",
    "feedback": [
@@ -989,9 +989,9 @@
   "vocabl8-5": {
    "prompt": "Selling winners too soon and holding on to losers is…",
    "options": [
-    "Recency bias",
-    "Anchoring",
-    "The disposition effect"
+    "Confirmation bias",
+    "The anchoring effect",
+    "Disposition effect"
    ],
    "explanation": "That's how you cut your profits short and let your losses run: exactly the opposite of what you should do."
   },
@@ -1013,7 +1013,7 @@
   "vocabl8-7": {
    "prompt": "Pablo has spent a month reading that a stock «is about to explode». He only follows accounts that agree. What should he do?",
    "options": [
-    "Deliberately look for the opposite view before deciding",
+    "Deliberately look for the opposite view",
     "Buy more: if everyone says so, it must be true",
     "Block anyone who disagrees so he doesn't get nervous"
    ],
@@ -1087,7 +1087,7 @@
    "prompt": "What do you explain to her?",
    "options": [
     "Earnings before interest, taxes, depreciation and amortisation",
-    "The profit left at the end, after everything",
+    "The profit left at the end, after subtracting all costs and taxes",
     "The company's debt"
    ],
    "explanation": "EBITDA is useful for comparing businesses, but it doesn't subtract interest, taxes or investment: it isn't the money the company actually keeps.",
@@ -1144,9 +1144,9 @@
   "vocabl9-9": {
    "prompt": "The CAPE is…",
    "options": [
-    "The market's P/E using average earnings over 10 years",
+    "The P/E using 10-year average earnings",
     "A company's P/E this year",
-    "An index's average dividend"
+    "An index's average dividend over 10 years"
    ],
    "explanation": "It's also known as the Shiller P/E. Very high readings have been linked to lower future returns."
   },
@@ -1190,7 +1190,7 @@
    "prompt": "A firm that offers investments without authorisation is a…",
    "options": [
     "«Chiringuito financiero»",
-    "Low-cost broker",
+    "Low-cost broker with no branches",
     "Neobank"
    ],
    "explanation": "The CNMV publishes a warnings list of the chiringuitos it has detected."
@@ -1212,7 +1212,7 @@
   "vocabl10-5": {
    "prompt": "What do you say to her?",
    "options": [
-    "First of all, look them up on the CNMV website",
+    "First, look them up on the CNMV",
     "If they have lots of followers, they must be trustworthy",
     "I'll only send them half my ID, just in case"
    ],
@@ -1248,8 +1248,8 @@
   "vocabl10-8": {
    "prompt": "You sell some shares at a loss and buy the same ones back the following month. What happens to the loss?",
    "options": [
-    "You can't use it yet: the two-month rule prevents it",
-    "You offset it as usual",
+    "You can't use it yet",
+    "You offset it as usual, in your next tax return",
     "It disappears for good"
    ],
    "explanation": "It isn't lost: it's deferred until you sell the shares you bought back."

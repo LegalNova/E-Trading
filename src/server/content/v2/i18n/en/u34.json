@@ -411,9 +411,9 @@
   "u34l1-2": {
    "prompt": "Where and when did tulip mania happen?",
    "options": [
-    "In London, in 1720",
-    "In the Dutch Republic (the Netherlands), around 1637",
-    "In Paris, in 1929"
+    "In England, in about 1720",
+    "In Holland, around 1637",
+    "In France, around 1929"
    ],
    "explanation": "London 1720 is the South Sea Company."
   },
@@ -463,7 +463,7 @@
    "options": [
     "If my hairdresser is making money, it must be easy",
     "Then I'm getting in now, before it's too late!",
-    "When everyone's talking about something, it's usually a sign of euphoria, not opportunity"
+    "That's usually a sign of euphoria"
    ],
    "explanation": "Widespread euphoria is an alarm bell, not an invitation.",
    "feedback": [
@@ -560,18 +560,18 @@
    "prompt": "What signs of a bubble were there in 1999-2000? Select all that apply.",
    "options": [
     "Cautious valuations relative to profits",
-    "Lots of new people buying just because it was rising",
+    "Few people talking about the stock market",
     "IPOs that doubled in price on the first day",
     "Companies with no profits valued in the billions"
    ],
-   "explanation": "Valuations were forgotten: «the old rules don't apply any more»."
+   "explanation": "Companies with no profits valued in the billions and IPOs that doubled on the first day, with lots of new people buying just because it was rising. Valuations were forgotten: «the old rules don't apply any more»."
   },
   "u34l3-10": {
    "prompt": "What do you say to Lumi?",
    "options": [
-    "Yes, just like the internet in 2000",
+    "Yes, just like the internet in 2000: it couldn't fail",
     "No, AI is a fad",
-    "The technology can be real and the price can still be too high"
+    "It can be real and still be too expensive"
    ],
    "explanation": "Being right about a technology doesn't guarantee being right about the investment.",
    "feedback": [
@@ -632,12 +632,12 @@
   "u34l4-10": {
    "prompt": "What made the 2008 crisis much worse? Select all that apply.",
    "options": [
-    "Overly optimistic risk ratings",
+    "Banks with plenty of spare capital",
     "People having large savings cushions",
     "Complex products that hardly anyone understood",
     "Heavily indebted banks"
    ],
-   "explanation": "Leverage and complexity turned a mortgage problem into a global crisis."
+   "explanation": "Heavily indebted banks and complex products that hardly anyone understood, with overly optimistic risk ratings, turned a mortgage problem into a global crisis. Savings and spare capital would have cushioned the blow."
   },
   "u34l5-1": {
    "prompt": "This is how Japan's Nikkei 225 moved between 1985 and late 1989. What trend do you see? (Nikkei 225 · monthly closes · up to December 1989)",
@@ -662,7 +662,7 @@
    "options": [
     "Better to put everything in Japan, it's recovered now",
     "Exactly, the US will never let you down",
-    "Japan also «always recovered»: better not to depend on a single country"
+    "Better not to depend on a single country"
    ],
    "explanation": "The US story is the story of the market that has done best. There's no guarantee it'll repeat.",
    "feedback": [
@@ -680,22 +680,22 @@
    "options": [
     "Shares and land prices soaring at the same time",
     "A small, little-known stock market",
-    "Very high valuations",
+    "Companies cheap relative to their profits",
     "Cheap credit"
    ],
-   "explanation": "It was the largest stock market in the world, not a small one."
+   "explanation": "Shares and land prices soared at the same time on cheap credit, and valuations were sky-high. It was the largest stock market in the world, not a small one, and its companies weren't cheap."
   },
   "u34l5-11": {
    "prompt": "It is 1990. The Nikkei has already started to fall from its 1989 peak and a friend tells you: «Japan is the biggest stock market in the world and it always recovers: put all your savings here». What do you do?",
    "options": [
     "I put everything in the Nikkei: Japan always recovers",
-    "I take out a loan to buy more now that it has fallen",
-    "I invest spread across the whole world, with Japan as just one part"
+    "I put half in now and the other half if it falls further",
+    "I invest spread across the whole world"
    ],
    "explanation": "Spreading across countries protects you from picking the wrong one. «It always recovers» fails because a country can take decades: Japan took 34 years.",
    "feedback": [
     "The Nikkei did not beat its 1989 peak until February 2024: a 34-year wait.",
-    "With debt you cannot wait for decades: you would be forced to sell long before.",
+    "Going in twice doesn't change the point: all your savings would end up in a single country.",
     "Good: if one country has its lost decade, the rest of the portfolio keeps going."
    ]
   },
@@ -720,8 +720,8 @@
   "u34l6-4": {
    "prompt": "What is Spain's risk premium?",
    "options": [
-    "The Madrid Stock Exchange's fee",
-    "The difference between the interest on the Spanish and German 10-year bonds",
+    "The fee the Madrid Stock Exchange charges for trading",
+    "The gap between Spanish and German bonds",
     "What home insurance costs"
    ],
    "explanation": "It measures how much more investors demand to lend to Spain than to Germany."
@@ -756,11 +756,11 @@
    "prompt": "What lessons does the Spanish crisis leave? Select all that apply.",
    "options": [
     "Concentrating on your own country protects you",
-    "Selling at peak fear usually turns out to be expensive",
+    "Property never falls",
     "Easy credit and property can form a bubble",
     "Your own country can have a very harsh crisis too"
    ],
-   "explanation": "Concentrating at home doesn't protect you: it concentrates your risk."
+   "explanation": "Easy credit and property can form a bubble, and your own country can have a very harsh crisis too. Concentrating at home doesn't protect you: it concentrates your risk. And those who sold at peak fear paid dearly."
   },
   "u34l7-1": {
    "prompt": "Tap the S&P 500's peak before the COVID fall. (S&P 500 · daily closes · to 25/03/2020)",
@@ -784,7 +784,7 @@
   "u34l7-8": {
    "prompt": "What do you say to Lumi?",
    "options": [
-    "It happened to loads of people: next time, decide in advance with a written plan",
+    "Many did the same: plan ahead next time",
     "The best thing is never to invest again",
     "Bad luck, next time you'll call the bottom"
    ],
@@ -804,10 +804,10 @@
    "options": [
     "Keeping up monthly contributions",
     "Waiting on the sidelines until things «became clearer»",
-    "Rebalancing towards shares",
+    "Moving everything into cash in March",
     "Not panic selling"
    ],
-   "explanation": "By the time things became clearer, the market had already recovered almost everything."
+   "explanation": "Not panic selling and keeping up monthly contributions, and also rebalancing towards shares. Those who got out in March or waited on the sidelines until things «became clearer» missed the rebound: by then, the market had already recovered almost everything."
   },
   "u34l8-2": {
    "prompt": "It's 2022. Select the messages that should have made you suspicious.",
@@ -829,8 +829,8 @@
    "prompt": "What is an «algorithmic» stablecoin like UST?",
    "options": [
     "A dollar deposit guaranteed by a bank",
-    "A crypto that tries to be worth $1 through an automatic mechanism, with no solid reserves behind it",
-    "A currency issued by the Federal Reserve"
+    "A crypto pegged to $1 with no reserves",
+    "A digital currency issued by the Federal Reserve"
    ],
    "explanation": "When confidence broke, the mechanism couldn't hold the peg."
   },
@@ -854,11 +854,11 @@
    "prompt": "What lessons did crypto leave in 2022? Select all that apply.",
    "options": [
     "An exchange can go bust with your money inside",
-    "Speculative bets should be a small part you could lose entirely",
+    "Speculative bets: a small part you could lose",
     "If everyone's buying it, it's safe",
-    "A sky-high, «stable» return is an alarm bell"
+    "Big cryptos can't fall much"
    ],
-   "explanation": "Popularity didn't protect anyone in 2022."
+   "explanation": "An exchange can go bust with your money inside, and speculative bets should be a small part you could lose entirely; a sky-high, «stable» return is an alarm bell. Neither popularity nor size protected anyone in 2022."
   },
   "u34l8-10": {
    "prompt": "In crypto they say: «not your keys, not your ____».",
@@ -875,21 +875,21 @@
    "options": [
     "Euphoria and «this time it's different»",
     "Cautious valuations",
-    "Panic selling at the end",
+    "Few new people investing",
     "Easy credit or leverage"
    ],
-   "explanation": "Cautious valuations are exactly what disappears in a bubble."
+   "explanation": "Euphoria, «this time it's different» and easy credit or leverage, with panic selling at the end. Cautious valuations are exactly what disappears in a bubble, and lots of new people always pile in."
   },
   "u34l9-2": {
    "prompt": "What do you say to Lumi?",
    "options": [
-    "I'll take out a loan to buy cheap",
-    "I'll have an emergency fund, a diversified portfolio, no debt, and I'll follow my written plan",
+    "I'll keep everything in cash to buy when it falls",
+    "I'll have a cushion, no debt and a written plan",
     "I'll sell everything just before it starts"
    ],
    "explanation": "It's not about predicting the crisis, it's about being ready to ride it out.",
    "feedback": [
-    "Buying with debt in a crisis can force you to sell if it falls further.",
+    "Waiting for the crisis outside the market can cost years of gains: nobody knows when it will come.",
     "Perfect! You don't know when it'll come, but you do know how you'll react.",
     "Nobody has ever known when one starts. That's a plan that depends on guessing."
    ],
@@ -901,7 +901,7 @@
   "u34l9-3": {
    "prompt": "A new crisis hits: your portfolio falls 35 % in two months. You have 6 months of emergency fund, no debt and a 20-year horizon. What do you do?",
    "options": [
-    "Stick to the plan: don't sell, keep contributing and rebalance if needed",
+    "Stick to the plan: don't sell, keep contributing",
     "Switch everything to the latest trend to recover quickly",
     "Sell so I don't lose any more"
    ],

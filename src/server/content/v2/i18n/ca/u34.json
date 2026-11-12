@@ -411,9 +411,9 @@
   "u34l1-2": {
    "prompt": "On i quan va passar la tulipomania?",
    "options": [
-    "A Londres, el 1720",
-    "A les Províncies Unides (Holanda), cap al 1637",
-    "A París, el 1929"
+    "A Anglaterra, cap al 1720",
+    "A Holanda, cap al 1637",
+    "A França, cap al 1929"
    ],
    "explanation": "Londres 1720 és la Companyia dels Mars del Sud."
   },
@@ -463,7 +463,7 @@
    "options": [
     "Si el meu perruquer guanya, és que és fàcil",
     "Doncs hi entro ja, que s'acaba!",
-    "Quan tothom parla d'una cosa, sol ser senyal d'eufòria, no d'oportunitat"
+    "Això sol ser senyal d'eufòria"
    ],
    "explanation": "L'eufòria generalitzada és una alarma, no una invitació.",
    "feedback": [
@@ -560,18 +560,18 @@
    "prompt": "Quins senyals de bombolla es van veure el 1999-2000? Marca'ls tots.",
    "options": [
     "Valoracions prudents respecte als beneficis",
-    "Molta gent nova comprant només perquè pujava",
+    "Poca gent parlant de borsa",
     "Sortides a borsa que doblaven el preu el primer dia",
     "Empreses sense beneficis valorades en milers de milions"
    ],
-   "explanation": "Es van oblidar les valoracions: «les regles d'abans ja no serveixen»."
+   "explanation": "Empreses sense beneficis valorades en milers de milions i sortides a borsa que doblaven el primer dia, amb molta gent nova comprant només perquè pujava. Es van oblidar les valoracions: «les regles d'abans ja no serveixen»."
   },
   "u34l3-10": {
    "prompt": "Què li contestes a la Lumi?",
    "options": [
-    "Sí, com internet el 2000",
+    "Sí, com internet el 2000: no podia fallar",
     "No, la IA és una moda",
-    "La tecnologia pot ser real i, tot i així, el preu pot ser car"
+    "Pot ser real i, tot i així, ser cara"
    ],
    "explanation": "Encertar amb una tecnologia no garanteix encertar amb la inversió.",
    "feedback": [
@@ -632,12 +632,12 @@
   "u34l4-10": {
    "prompt": "Què va fer molt pitjor la crisi del 2008? Marca-ho tot.",
    "options": [
-    "Notes de risc massa optimistes",
+    "Bancs amb molt capital de reserva",
     "Que la gent tingués molt coixí d'estalvi",
     "Productes complexos que gairebé ningú no entenia",
     "Bancs molt endeutats"
    ],
-   "explanation": "El palanquejament i la complexitat van convertir un problema d'hipoteques en una crisi mundial."
+   "explanation": "Els bancs molt endeutats i els productes complexos que gairebé ningú entenia, amb notes de risc massa optimistes, van convertir un problema d'hipoteques en una crisi mundial. L'estalvi i el capital de reserva haurien esmorteït el cop."
   },
   "u34l5-1": {
    "prompt": "Així es va moure el Nikkei 225 del Japó entre 1985 i finals de 1989. Quina tendència hi veus? (Nikkei 225 · tancaments mensuals · fins a desembre de 1989)",
@@ -662,7 +662,7 @@
    "options": [
     "Millor ho poso tot al Japó, que ja s'ha recuperat",
     "Exacte, els EUA no fallaran mai",
-    "El Japó també «sempre es recuperava»: millor no dependre d'un sol país"
+    "Millor no dependre d'un sol país"
    ],
    "explanation": "La història dels EUA és la del mercat que millor ha anat. No està garantit que es repeteixi.",
    "feedback": [
@@ -680,22 +680,22 @@
    "options": [
     "Borsa i sòl disparats alhora",
     "Una borsa petita i poc coneguda",
-    "Valoracions molt altes",
+    "Empreses barates respecte als seus beneficis",
     "Crèdit barat"
    ],
-   "explanation": "Era la borsa més gran del món, no una de petita."
+   "explanation": "Borsa i sòl es van disparar alhora amb crèdit barat, i les valoracions eren altíssimes. Era la borsa més gran del món, no una de petita, i les seves empreses no eren barates."
   },
   "u34l5-11": {
    "prompt": "És el 1990. El Nikkei ja ha començat a baixar des del seu màxim del 1989 i un amic et diu: «El Japó és la borsa més gran del món i sempre es recupera: posa-hi tots els teus estalvis». Què fas?",
    "options": [
     "Ho poso tot al Nikkei: el Japó sempre es recupera",
-    "Demano un préstec per comprar més ara que ha baixat",
-    "Inverteixo repartit per tot el món, amb el Japó com una part més"
+    "Hi poso la meitat ara i l'altra meitat si baixa més",
+    "Inverteixo repartit per tot el món"
    ],
    "explanation": "Repartir per països et protegeix de triar el país equivocat. «Sempre es recupera» falla perquè un país pot trigar dècades: el Japó va trigar 34 anys.",
    "feedback": [
     "El Nikkei no va superar el seu màxim del 1989 fins al febrer del 2024: 34 anys d'espera.",
-    "Amb deute no pots esperar dècades: t'obligarien a vendre molt abans.",
+    "Entrar-hi en dues vegades no canvia el fons: tots els teus estalvis acabarien en un sol país.",
     "Bé: si un país viu la seva dècada perduda, la resta de la cartera continua endavant."
    ]
   },
@@ -720,8 +720,8 @@
   "u34l6-4": {
    "prompt": "Què és la prima de risc d'Espanya?",
    "options": [
-    "La comissió de la Borsa de Madrid",
-    "La diferència entre l'interès del bo espanyol i el de l'alemany a 10 anys",
+    "La comissió que cobra la Borsa de Madrid per operar",
+    "La diferència entre el bo espanyol i l'alemany",
     "El que costa una assegurança de la llar"
    ],
    "explanation": "Mesura quant més exigeixen els inversors per prestar a Espanya que a Alemanya."
@@ -756,11 +756,11 @@
    "prompt": "Quines lliçons deixa la crisi espanyola? Marca-les totes.",
    "options": [
     "Concentrar-te en el teu país et protegeix",
-    "Vendre en el moment de màxima por sol sortir car",
+    "El totxo no baixa mai",
     "El crèdit fàcil i el totxo poden formar una bombolla",
     "El teu propi país també pot tenir una crisi molt dura"
    ],
-   "explanation": "Concentrar-te a casa no protegeix: concentra."
+   "explanation": "El crèdit fàcil i el totxo poden formar una bombolla, i el teu propi país també pot tenir una crisi molt dura. Concentrar-te a casa no protegeix: concentra. I qui va vendre en el moment de màxima por ho va pagar car."
   },
   "u34l7-1": {
    "prompt": "Toca el màxim de l'S&P 500 abans de la caiguda de la COVID. (S&P 500 · tancaments diaris · fins al 25/03/2020)",
@@ -784,7 +784,7 @@
   "u34l7-8": {
    "prompt": "Què li contestes a la Lumi?",
    "options": [
-    "Li va passar a moltíssima gent: la pròxima vegada, decideix abans amb un pla escrit",
+    "Li va passar a molts: decideix abans amb un pla",
     "El millor és no tornar a invertir",
     "Mala sort, la pròxima vegada encertaràs el terra"
    ],
@@ -804,10 +804,10 @@
    "options": [
     "Continuar aportant cada mes",
     "Esperar fora fins que «s'aclarís»",
-    "Reequilibrar cap a accions",
+    "Passar-ho tot a liquiditat al març",
     "No vendre en pànic"
    ],
-   "explanation": "Quan es va aclarir, la borsa ja ho havia recuperat gairebé tot."
+   "explanation": "No vendre en pànic i continuar aportant cada mes, i també reequilibrar cap a accions. Qui va sortir al març o va esperar fora fins que «s'aclarís» es va perdre el rebot: quan es va aclarir, la borsa ja ho havia recuperat gairebé tot."
   },
   "u34l8-2": {
    "prompt": "Som al 2022. Marca els missatges que t'haurien d'haver fet desconfiar.",
@@ -829,8 +829,8 @@
    "prompt": "Què és una moneda estable «algorítmica» com UST?",
    "options": [
     "Un dipòsit en dòlars garantit per un banc",
-    "Una cripto que intenta valer 1 $ amb un mecanisme automàtic, sense reserves sòlides al darrere",
-    "Una moneda emesa per la Reserva Federal"
+    "Una cripto que intenta valer 1 $ sense reserves",
+    "Una moneda digital emesa per la Reserva Federal"
    ],
    "explanation": "Quan la confiança es va trencar, el mecanisme no va poder sostenir la paritat."
   },
@@ -854,11 +854,11 @@
    "prompt": "Quines lliçons deixa la cripto el 2022? Marca-les totes.",
    "options": [
     "Un exchange pot fer fallida amb els teus diners a dins",
-    "L'especulatiu ha de ser una part petita que puguis perdre sencera",
+    "L'especulatiu, una part petita que puguis perdre",
     "Si tothom ho compra, és segur",
-    "Una rendibilitat altíssima i «estable» és una alarma"
+    "Les criptos grans no poden caure gaire"
    ],
-   "explanation": "La popularitat no va protegir ningú el 2022."
+   "explanation": "Un exchange pot fer fallida amb els teus diners a dins, i l'especulatiu ha de ser una part petita que puguis perdre sencera; una rendibilitat altíssima i «estable» és una alarma. Ni la popularitat ni la mida van protegir ningú el 2022."
   },
   "u34l8-10": {
    "prompt": "En cripto es diu: «si no tens les claus, no són les teves ____».",
@@ -875,21 +875,21 @@
    "options": [
     "Eufòria i «aquesta vegada és diferent»",
     "Valoracions prudents",
-    "Vendes en pànic al final",
+    "Poca gent nova invertint",
     "Crèdit fàcil o palanquejament"
    ],
-   "explanation": "Les valoracions prudents són justament el que desapareix en una bombolla."
+   "explanation": "Eufòria, «aquesta vegada és diferent» i crèdit fàcil o palanquejament, amb vendes en pànic al final. Les valoracions prudents són justament el que desapareix en una bombolla, i sempre hi entra molta gent nova."
   },
   "u34l9-2": {
    "prompt": "Què li contestes a la Lumi?",
    "options": [
-    "Demanaré un préstec per comprar barat",
-    "Tindré coixí, una cartera diversificada, cap deute i seguiré el meu pla escrit",
+    "Ho guardaré tot en liquiditat per comprar quan caigui",
+    "Tindré coixí, cap deute i un pla escrit",
     "Ho vendré tot just abans que comenci"
    ],
    "explanation": "No es tracta de predir la crisi, sinó d'estar preparat per aguantar-la.",
    "feedback": [
-    "Comprar amb deute en una crisi et pot obligar a vendre si encara cau més.",
+    "Esperar la crisi fora del mercat pot costar anys de pujades: ningú sap quan arriba.",
     "Perfecte! No saps quan arribarà, però sí com reaccionaràs.",
     "Ningú no ha sabut mai quan comença. És un pla que depèn d'endevinar."
    ],
