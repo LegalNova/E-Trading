@@ -105,8 +105,8 @@
      ]
     },
     {
-     "title": "ETF UCITS",
-     "body": "Un petit inversor (un **minorista**) a la UE compra ETF europeus **UCITS**, amb el seu document **KID**, que resumeix riscos i costos. Molts ETF dels EUA no es poden vendre a minoristes europeus perquè no tenen KID.\n\nAmb diners reals, busca «UCITS» al nom i llegeix-ne el KID. Al simulador pots practicar amb ETF dels EUA.",
+     "title": "Una cistella que cotitza",
+     "body": "Amb una sola compra portes totes les empreses de l'índex, i els ETF grans costen molt poc a l'any.\n\nAmb diners reals, a Europa es compren ETF europeus: porten «**UCITS**» al nom. Què vol dir aquesta etiqueta i com es llegeix la fitxa d'un fons ho veuràs més endavant. Al simulador també pots practicar amb ETF dels EUA.",
      "key": "Un ETF és un fons, gairebé sempre indexat, que es compra i es ven en borsa com una acció.",
      "tip": "Prova-ho: a Mercat, busca SPY, un ETF de l'S&P 500, i compara'n el gràfic amb el de l'índex."
     }
@@ -331,14 +331,14 @@
    "prompt": "Relaciona cada terme amb el seu significat.",
    "options": [
     "ETF",
-    "UCITS",
-    "KID",
+    "Participació",
+    "Cost anual",
     "Índex"
    ],
    "explanation": "Són les quatre paraules que veuràs quan busquis qualsevol ETF.",
    "right": [
-    "Norma europea de fons per a minoristes",
-    "Document amb riscos i costos",
+    "Cada part de l'ETF que compres",
+    "El que cobra el fons cada any",
     "Cistella d'empreses que copia l'ETF",
     "Fons que cotitza en borsa"
    ]
@@ -351,15 +351,6 @@
     "Del 5 % al 10 %"
    ],
    "explanation": "Copiar un índex és barat: no cal un equip que triï empreses."
-  },
-  "u10l2-6": {
-   "prompt": "Per què un minorista europeu no pot comprar molts ETF dels EUA?",
-   "options": [
-    "Perquè està prohibit invertir en dòlars",
-    "Perquè no tenen el document KID",
-    "Perquè cotitzen de nit"
-   ],
-   "explanation": "Sense KID, no es poden comercialitzar a minoristes a la UE."
   },
   "u10l2-10": {
    "prompt": "Els ETF que pot comprar un minorista a la UE solen portar l'etiqueta ____.",

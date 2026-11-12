@@ -105,8 +105,8 @@
      ]
     },
     {
-     "title": "UCITS ETFs",
-     "body": "A small investor (a **retail investor**) in the EU buys European **UCITS** ETFs, which come with a **KID** summarising risks and costs. Many US ETFs can't be sold to European retail investors because they don't have a KID.\n\nWith real money, look for «UCITS» in the name and read its KID. In the simulator you can practise with US ETFs.",
+     "title": "A basket that trades",
+     "body": "With a single purchase you hold every company in the index, and the big ETFs cost very little a year.\n\nWith real money, in Europe you buy European ETFs: they have «**UCITS**» in the name. You'll see later what that label means and how to read a fund's fact sheet. In the simulator you can also practise with US ETFs.",
      "key": "An ETF is a fund, almost always an index one, that you buy and sell on the stock exchange like a share.",
      "tip": "Try it: in Market, look up SPY, an S&P 500 ETF, and compare its chart with the index's."
     }
@@ -331,14 +331,14 @@
    "prompt": "Match each term to its meaning.",
    "options": [
     "ETF",
-    "UCITS",
-    "KID",
+    "Share (unit)",
+    "Annual cost",
     "Index"
    ],
    "explanation": "These are the four words you'll see when you look up any ETF.",
    "right": [
-    "European rules for retail funds",
-    "Document with risks and costs",
+    "Each piece of the ETF you buy",
+    "What the fund charges every year",
     "Basket of companies the ETF copies",
     "Fund that trades on the stock exchange"
    ]
@@ -351,15 +351,6 @@
     "From 5 % to 10 %"
    ],
    "explanation": "Copying an index is cheap: you don't need a team picking companies."
-  },
-  "u10l2-6": {
-   "prompt": "Why can't a European retail investor buy many US ETFs?",
-   "options": [
-    "Because investing in dollars is banned",
-    "Because they don't have a KID",
-    "Because they trade at night"
-   ],
-   "explanation": "Without a KID, they can't be marketed to retail investors in the EU."
   },
   "u10l2-10": {
    "prompt": "The ETFs a retail investor can buy in the EU usually carry the ____ label.",

@@ -87,7 +87,7 @@ export default unit({
           { say: 'Mueve el precio en contra y mira tu garantía', mood: 'HAPPY' },
         ],
       }),
-      key('Advertencia de la CNMV', '«Los CFD son instrumentos complejos y están asociados a un riesgo elevado de perder dinero rápidamente debido al apalancamiento. Entre un 74 y un 89 % de los inversores minoristas pierden dinero cuando negocian con CFD.»', 'El apalancamiento no te hace mejor inversor: solo hace más grandes tus errores.', 'Pruébalo: en Mercado, compara cuánto se mueve hoy EUR/USD frente a Tesla.'),
+      key('Pips, lotes y un aviso', 'En EUR/USD, un pip (0,0001) vale **10 $** con un lote estándar (100.000 unidades), **1 $** con un mini lote (10.000) y **0,10 $** con un micro lote (1.000). Así, 50 pips en contra son 500 $, 50 $ o 5 $. En los pares con yen, el pip es 0,01.\n\nAviso obligatorio de la CNMV: «Los CFD son instrumentos complejos y están asociados a un riesgo elevado de perder dinero rápidamente debido al apalancamiento. Entre un 74 y un 89 % de los inversores minoristas pierden dinero cuando negocian con CFD.»', 'El apalancamiento no te hace mejor inversor: solo hace más grandes tus errores.', 'Pruébalo: en Mercado, compara cuánto se mueve hoy EUR/USD frente a Tesla.'),
     ], [
       num('EUR/USD pasa de 1,1600 a 1,1675. ¿Cuántos pips se ha movido?', 75, 'pips', '1,1675 − 1,1600 = 0,0075 = 75 pips (cada pip es 0,0001).'),
       num('Con 1 lote estándar de EUR/USD (1 pip = 10 $), el par se mueve 40 pips a tu favor. ¿Cuánto ganas?', 400, '$', '40 × 10 $ = 400 $. Si se mueve 40 en contra, pierdes lo mismo.'),

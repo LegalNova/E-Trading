@@ -92,9 +92,9 @@ export const u10l2 = lesson('u10l2', 'Qué es un ETF', [
       { say: 'Clasifica cada rasgo', mood: 'HAPPY' },
     ],
   }),
-  key('ETF UCITS', 'Un pequeño inversor (un **minorista**) en la UE compra ETF europeos **UCITS**, con su documento **KID**, que resume riesgos y costes. Muchos ETF de EE. UU. no se pueden vender a minoristas europeos porque no tienen KID.\n\nCon dinero real, busca «UCITS» en el nombre y lee su KID. En el simulador puedes practicar con ETF de EE. UU.', 'Un ETF es un fondo, casi siempre indexado, que se compra y se vende en bolsa como una acción.', 'Pruébalo: en Mercado, busca SPY, un ETF del S&P 500, y compara su gráfico con el del índice.'),
+  key('Una cesta que cotiza', 'Con una sola compra llevas todas las empresas del índice, y los ETF grandes cuestan muy poco al año.\n\nCon dinero real, en Europa se compran ETF europeos: llevan «**UCITS**» en el nombre. Qué significa esa etiqueta y cómo leer la ficha de un fondo lo verás más adelante. En el simulador puedes practicar también con ETF de EE. UU.', 'Un ETF es un fondo, casi siempre indexado, que se compra y se vende en bolsa como una acción.', 'Pruébalo: en Mercado, busca SPY, un ETF del S&P 500, y compara su gráfico con el del índice.'),
 ], [
-  match('Empareja cada término con su significado.', [['ETF', 'Fondo que cotiza en bolsa'], ['UCITS', 'Norma europea de fondos para minoristas'], ['KID', 'Documento con riesgos y costes'], ['Índice', 'Cesta de empresas que copia el ETF']], 'Son las cuatro palabras que verás al buscar cualquier ETF.'),
+  match('Empareja cada término con su significado.', [['ETF', 'Fondo que cotiza en bolsa'], ['Participación', 'Cada parte del ETF que compras'], ['Coste anual', 'Lo que cobra el fondo cada año'], ['Índice', 'Cesta de empresas que copia el ETF']], 'Son las cuatro palabras que verás al buscar cualquier ETF.'),
   buckets('¿ETF o fondo tradicional?', ['ETF', 'Fondo tradicional'], [['Lo compras a las 11:37 al precio que ves en pantalla', 0], ['Se traspasa sin pagar impuestos en España', 1], ['Pagas comisión del bróker y spread', 0], ['Su precio se calcula una vez al día', 1], ['Puedes venderlo en cualquier momento de la sesión', 0]], 'Cotizar en bolsa da flexibilidad al ETF; el régimen de traspaso es la gran ventaja del fondo en España.'),
   upDown('Este gráfico es un índice que copian varios ETF: un ETF de ese índice hará lo mismo, menos sus costes. ¿Qué hizo en las 10 sesiones siguientes?', 'ud-37', 'Un ETF indexado no elimina los vaivenes del mercado: tienes exactamente lo que haga el índice, para bien y para mal.'),
   single('¿Qué coste anual suelen tener los grandes ETF indexados?', ['Del 0,03 % al 0,30 %', 'Del 1,5 % al 2 %', 'Del 5 % al 10 %'], 0, 'Copiar un índice es barato: no hace falta un equipo eligiendo empresas.'),
@@ -104,7 +104,8 @@ export const u10l2 = lesson('u10l2', 'Qué es un ETF', [
   timed(tf('Un ETF se puede comprar y vender durante toda la sesión de bolsa.', true, 'Cotiza como una acción, con un precio que cambia a cada momento.'), 10),
   chat(['Me han dicho que un ETF es «como una acción».', '¿Entonces es igual de arriesgado que comprar una sola empresa?'], '¿Qué le contestas?', [['Sí, igual de arriesgado', 'Se compra como una acción, pero dentro lleva cientos o miles de empresas.'], ['Se compra como una acción, pero dentro hay una cesta de muchas empresas', '¡Eso! Uno del MSCI World lleva más de mil empresas de países desarrollados.'], ['No tiene ningún riesgo', 'Tiene el riesgo del índice que copia: si el mercado cae un 30 %, el ETF también.']], 1, 'La forma de comprarlo es como una acción; el riesgo es el de toda la cesta.'),
   fill('Los ETF que puede comprar un minorista en la UE suelen llevar la etiqueta ____.', 'UCITS', ['TIPS', 'REIT', 'SPIVA'], 'Es la norma europea que fija reglas de diversificación, custodia e información.'),
-], { source: '2.7', minutes: 6, retire: [1, 2, 6, 7] })
+  // Retirada la 6.ª (por qué no se venden aquí muchos ETF de EE. UU.: el KID se explica en u10l7, auditoría CON-21)
+], { source: '2.7', minutes: 6, retire: [1, 2, 5, 6, 7] })
 
 // Antes en u29 (mismo id: conserva progreso y traducciones)
 export const u29l1 = lesson('u29l1', 'Diversificar: lo único gratis en finanzas', [
