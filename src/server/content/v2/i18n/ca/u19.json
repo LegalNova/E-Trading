@@ -365,7 +365,7 @@
    "options": [
     "Ben fet: és el tancament de l'espelma",
     "Que esperi que el Heikin Ashi es posi verd",
-    "Que miri els preus reals en espelmes o barres abans de fixar l'ordre"
+    "Que miri abans els preus reals"
    ],
    "explanation": "Cada tipus de gràfic té el seu ús: el Heikin Ashi per a la tendència; les espelmes o les barres per als preus reals.",
    "feedback": [
@@ -416,7 +416,7 @@
    "prompt": "En el mètode de les tres pantalles, per a què serveix la temporalitat més gran?",
    "options": [
     "Per triar el bròquer",
-    "Per afinar l'entrada",
+    "Per afinar el punt d'entrada",
     "Per decidir la direcció"
    ],
    "explanation": "La més gran marca la direcció: si el setmanal és alcista, només es busquen compres. La més petita afina l'entrada i l'stop."
@@ -425,7 +425,7 @@
    "prompt": "En Leo manté les seves operacions unes quantes setmanes. En el gràfic setmanal, l'acció fa màxims i mínims cada vegada més baixos. En el diari, avui puja amb força. Què fa?",
    "options": [
     "Mira el gràfic d'1 minut per decidir",
-    "No busca compres mentre el setmanal continuï baixista",
+    "No busca compres: el setmanal és baixista",
     "Compra ara: el diari mana perquè és més recent"
    ],
    "explanation": "Mètode d'Elder: la temporalitat més gran decideix la direcció i la més petita només afina l'entrada. Comprar contra el setmanal és nedar contra corrent.",
@@ -476,7 +476,7 @@
    "options": [
     "Que la primera va ser millor perquè l'acció era més barata",
     "Que té raó: es veu més gran, així que va ser millor",
-    "Que totes dues van ser un +100 %: en logarítmica ocuparien el mateix"
+    "Que totes dues van ser un +100 %"
    ],
    "explanation": "Als teus diners els importa el percentatge. L'escala lineal engrandeix els trams amb preus alts; la logarítmica els compara de debò.",
    "feedback": [
@@ -529,9 +529,9 @@
   "u19l5-7": {
    "prompt": "Una acció puja durant mesos. Marca un màxim a 60 €, cau a 54 €, rebota només fins a 58 € i després cau a 52 €. Què ha passat?",
    "options": [
-    "La tendència alcista s'ha posat en dubte",
+    "La tendència alcista està en dubte",
     "Segur que caurà un 50 %",
-    "Res: continua la tendència alcista"
+    "Res: la tendència alcista continua intacta"
    ],
    "explanation": "Segons la teoria de Dow, una tendència alcista es posa en dubte quan no supera l'últim màxim i perd l'últim mínim.",
    "feedback": [
@@ -601,12 +601,12 @@
   "u19l6-10": {
    "prompt": "En quins casos la dada de volum és menys fiable? Marca'ls tots.",
    "options": [
-    "Índexs, segons com el calculi cada proveïdor",
+    "Accions de l'IBEX 35, a la borsa espanyola",
     "Cap: el volum sempre és exacte",
     "Criptomonedes, repartides entre moltes plataformes",
     "Divises, sense borsa central"
    ],
-   "explanation": "En divises no hi ha volum centralitzat, en cripto es reparteix i una part pot ser artificial, i en índexs depèn del proveïdor."
+   "explanation": "En divises no hi ha volum centralitzat, i en cripto es reparteix entre plataformes i una part pot ser artificial; en índexs depèn del proveïdor. En accions d'una borsa regulada la dada és força fiable, tot i que mai perfecta."
   }
  }
 }

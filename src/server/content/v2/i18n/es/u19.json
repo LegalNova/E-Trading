@@ -365,7 +365,7 @@
    "options": [
     "Bien hecho: es el cierre de la vela",
     "Que espere a que el Heikin Ashi se ponga verde",
-    "Que mire los precios reales en velas o barras antes de fijar la orden"
+    "Que mire antes los precios reales"
    ],
    "explanation": "Cada tipo de gráfico tiene su uso: Heikin Ashi para la tendencia, velas o barras para los precios reales.",
    "feedback": [
@@ -416,7 +416,7 @@
    "prompt": "En el método de las tres pantallas, ¿para qué sirve la temporalidad mayor?",
    "options": [
     "Para elegir el bróker",
-    "Para afinar la entrada",
+    "Para afinar el punto de entrada",
     "Para decidir la dirección"
    ],
    "explanation": "La mayor marca la dirección: si el semanal es alcista, solo se buscan compras. La menor afina la entrada y el stop."
@@ -425,7 +425,7 @@
    "prompt": "Leo mantiene sus operaciones unas semanas. En el gráfico semanal, la acción hace máximos y mínimos cada vez más bajos. En el diario, hoy sube con fuerza. ¿Qué hace?",
    "options": [
     "Mira el gráfico de 1 minuto para decidir",
-    "No busca compras mientras el semanal siga bajista",
+    "No busca compras: el semanal es bajista",
     "Compra ya: el diario manda porque es más reciente"
    ],
    "explanation": "Método de Elder: la temporalidad mayor decide la dirección y la menor solo afina la entrada. Comprar contra el semanal es nadar contra la corriente.",
@@ -476,7 +476,7 @@
    "options": [
     "Que la primera fue mejor porque la acción era más barata",
     "Que tiene razón: se ve más grande, así que fue mejor",
-    "Que las dos fueron un +100 %: en logarítmica ocuparían lo mismo"
+    "Que las dos fueron un +100 %"
    ],
    "explanation": "A tu dinero le importa el porcentaje. La escala lineal agranda los tramos con precios altos; la logarítmica los compara de verdad.",
    "feedback": [
@@ -529,9 +529,9 @@
   "u19l5-7": {
    "prompt": "Una acción sube durante meses. Marca un máximo en 60 €, cae a 54 €, rebota solo hasta 58 € y después cae a 52 €. ¿Qué ha pasado?",
    "options": [
-    "La tendencia alcista se ha puesto en duda",
+    "La tendencia alcista está en duda",
     "Va a caer seguro un 50 %",
-    "Nada: sigue la tendencia alcista"
+    "Nada: la tendencia alcista sigue intacta"
    ],
    "explanation": "Según la teoría de Dow, una tendencia alcista se pone en duda cuando no supera el último máximo y pierde el último mínimo.",
    "feedback": [
@@ -601,12 +601,12 @@
   "u19l6-10": {
    "prompt": "¿En qué casos el dato de volumen es menos fiable? Marca todos.",
    "options": [
-    "Índices, según cómo lo calcule cada proveedor",
+    "Acciones del IBEX 35, en la bolsa española",
     "Ninguno: el volumen siempre es exacto",
     "Criptomonedas, repartidas entre muchas plataformas",
     "Divisas, sin bolsa central"
    ],
-   "explanation": "En divisas no hay volumen centralizado, en cripto se reparte y parte puede ser artificial, y en índices depende del proveedor."
+   "explanation": "En divisas no hay volumen centralizado, y en cripto se reparte entre plataformas y parte puede ser artificial; en índices depende del proveedor. En acciones de una bolsa regulada el dato es bastante fiable, aunque nunca perfecto."
   }
  }
 }

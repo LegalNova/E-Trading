@@ -366,7 +366,7 @@
   "u20l2-8": {
    "prompt": "You see a candle with a very long lower wick in the middle of a sideways range, with no prior trend. Laura says it's a crystal-clear buy signal. What do you tell her?",
    "options": [
-    "That location matters: in the middle of a range, that candle says little",
+    "That there, that candle says little",
     "That it's a sell signal",
     "That she's right: long wick, safe buy"
    ],
@@ -439,7 +439,7 @@
    "options": [
     "To sell everything now",
     "To buy more: the doji is bullish",
-    "To wait for the next candle to see who wins"
+    "To wait for the next candle"
    ],
    "explanation": "A doji calls for attention and confirmation, not an immediate decision.",
    "feedback": [
@@ -462,8 +462,8 @@
    "prompt": "Where does the logical stop go if you buy after a confirmed hammer?",
    "options": [
     "You don't need a stop",
-    "Just below the hammer's low",
-    "Just above its high"
+    "Below the hammer's low",
+    "Just above the hammer's high"
    ],
    "explanation": "If the price breaks below the low of the wick, the idea that lower prices were rejected has failed."
   },
@@ -479,8 +479,8 @@
   "u20l4-8": {
    "prompt": "You see a textbook hammer on a daily chart, after two weeks of falls and near the low for the year. Based on what you've learnt, what do you do?",
    "options": [
-    "I wait for confirmation and, if I go in, I put the stop below the wick",
-    "I ignore it: candlesticks are useless",
+    "I wait for confirmation before going in",
+    "I ignore it: candlesticks are no use at all",
     "I buy now with everything I've got"
    ],
    "explanation": "A hammer is a clue, not an order: confirmation, a stop and a cautious position size.",
@@ -493,9 +493,9 @@
   "u20l4-10": {
    "prompt": "According to Bulkowski, what improves the hammer's results?",
    "options": [
-    "Appearing in the middle of a range",
+    "Appearing right in the middle of a range",
     "Having a red body",
-    "Appearing near the low for the year"
+    "Being near the yearly low"
    ],
    "explanation": "It works better in the lower third of the yearly range, and ones with a green body do better."
   },
@@ -519,7 +519,7 @@
    "options": [
     "Sits inside the first one's body",
     "Has no wicks",
-    "Engulfs the first one's body"
+    "Completely engulfs the first one's body"
    ],
    "explanation": "It's the opposite of an engulfing pattern: a small candle inside the big one shows the momentum is stalling."
   },
@@ -597,7 +597,7 @@
   "u20l6-5": {
    "prompt": "If three-candle patterns have better numbers, why don't they solve everything?",
    "options": [
-    "Because they don't come up very often",
+    "Because they're rare",
     "Because they only exist in Japan",
     "Because they don't have a name"
    ],
@@ -662,9 +662,9 @@
   "u20l7-8": {
    "prompt": "What is data-snooping bias?",
    "options": [
-    "Looking at data in real time",
+    "Looking at data in real time while you trade",
     "Using candlesticks instead of lines",
-    "Testing lots of patterns until one seems to work by pure chance"
+    "Testing patterns until one happens to work"
    ],
    "explanation": "Run enough tests and chance will always hand you some «discovery»."
   },
@@ -673,7 +673,7 @@
    "options": [
     "Never go in: candlesticks don't work",
     "Go in without a stop: with four out of four it can't fail",
-    "If he goes in, a stop below the hammer's low and a small position"
+    "If he goes in, stop below the hammer and a small size"
    ],
    "explanation": "Context improves the odds; the stop and the position size protect you when it still goes wrong.",
    "feedback": [
@@ -685,9 +685,9 @@
   "u20l7-11": {
    "prompt": "What do you reply to Lumi?",
    "options": [
-    "It depends on how many followers they have",
+    "It depends on how many followers the account has",
     "90 % is amazing",
-    "I'm sceptical: no serious study shows anything like that, and costs eat up a big chunk of it"
+    "I'm sceptical: no serious study shows that"
    ],
    "explanation": "Be wary of any spectacular success rate: the evidence says otherwise.",
    "feedback": [

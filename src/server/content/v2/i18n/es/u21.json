@@ -332,9 +332,9 @@
   "u21l2-3": {
    "prompt": "Bruno compró tras la rotura de una resistencia en 100 €. El precio sube a 106 € y vuelve a 101 €. ¿Qué hace con lógica?",
    "options": [
-    "Compra el triple para promediar",
-    "Vende en pánico: todo se ha acabado",
-    "Vigila si 100 € aguanta como soporte; su stop ya estaba por debajo de esa zona"
+    "Compra más para bajar su precio medio",
+    "Vende enseguida: la rotura ha fracasado seguro",
+    "Vigila si 100 € aguanta como soporte"
    ],
    "explanation": "La vuelta al nivel roto es normal; lo que decide es si aguanta.",
    "feedback": [
@@ -435,7 +435,7 @@
   "u21l3-12": {
    "prompt": "Una línea alcista lleva tres toques. El precio baja a tocarla por cuarta vez y Marta quiere comprar sin stop «porque siempre rebota». ¿Qué le dices?",
    "options": [
-    "Que puede comprar, pero con el stop por debajo de la línea y del último mínimo",
+    "Que puede comprar, pero con stop bajo la línea",
     "Que redibuje la línea más abajo para estar tranquila",
     "Que tiene razón: tres toques son una garantía"
    ],
@@ -467,7 +467,7 @@
    "options": [
     "Nada: las figuras fallan, así que las ignoro",
     "Compro más: ahora está más barata",
-    "Reviso mi plan: vender una parte o proteger lo ganado, porque la figura se ha confirmado"
+    "Reviso mi plan: la figura se ha confirmado"
    ],
    "explanation": "Una figura confirmada no es una certeza, pero cambia el plan: según Bulkowski, la caída media tras la rotura es del 16 %.",
    "feedback": [
@@ -479,7 +479,7 @@
   "u21l4-12": {
    "prompt": "Hombro-cabeza-hombro confirmado, con la cabeza en 120 € y la clavicular en 100 €. Ana espera a que caiga hasta el objetivo clásico de 80 € para volver a comprar. ¿Qué le dices?",
    "options": [
-    "Que solo la mitad llega a 80 €: un objetivo prudente sería 90 €",
+    "Que solo la mitad llega a 80 €",
     "Que la figura no da ninguna pista sobre hasta dónde cae",
     "Que seguro que llega a 80 €: es el objetivo de la figura"
    ],
@@ -493,7 +493,7 @@
   "u21l4-13": {
    "prompt": "¿Qué le contestas a Nora?",
    "options": [
-    "Es un HCH invertido: alcista, y se confirma al cerrar por encima de su clavicular",
+    "Es el invertido: alcista si se confirma",
     "Sí: todos los hombro-cabeza-hombro son bajistas",
     "Es alcista: compro ya, antes de la rotura"
    ],
@@ -536,7 +536,7 @@
    "options": [
     "Es el momento de comprar el doble",
     "Nada: el objetivo sigue en 60 €",
-    "La rotura ha fallado: ha vuelto a cerrar claramente por debajo de 50 €"
+    "La rotura ha fallado"
    ],
    "explanation": "Una figura confirmada también puede fallar. Si el precio vuelve a cerrar claramente al otro lado de la línea clave, la rotura era falsa.",
    "feedback": [
@@ -548,7 +548,7 @@
   "u21l5-12": {
    "prompt": "Mismo doble suelo: mínimos en 40 €, máximo intermedio en 50 € y cierre en 51 €. ¿Dónde tiene más sentido el stop de Bruno?",
    "options": [
-    "Algo por debajo de 50 €, donde la rotura fallaría",
+    "Algo por debajo de 50 €",
     "Por debajo de 40 €, bajo los dos suelos",
     "No hace falta: la figura está confirmada"
    ],
@@ -608,9 +608,9 @@
   "u21l6-5": {
    "prompt": "Según Bulkowski, ¿qué porcentaje de banderas fracasa (no avanza ni un 5 %) en mercados alcistas?",
    "options": [
-    "Alrededor del 5 %",
+    "En torno al 5 %",
     "En torno al 44 %",
-    "El 90 %"
+    "En torno al 90 %"
    ],
    "explanation": "Son figuras de recorrido corto: casi la mitad no llega ni a un 5 %."
   },
@@ -662,7 +662,7 @@
    "options": [
     "Compro ya, antes de que se escape",
     "Compro el doble para aprovechar más la subida",
-    "Espero al cierre y miro si supera el nivel con volumen"
+    "Espero al cierre y miro el volumen"
    ],
    "explanation": "Las rupturas se confirman con el cierre y el volumen. Esperar unas horas cuesta poco; caer en la trampa, mucho más.",
    "feedback": [
@@ -676,7 +676,7 @@
    "options": [
     "Sí: tendría que haber quitado el stop para aguantar",
     "Sí: si salta el stop, la operación estaba mal planteada",
-    "No: seguí los filtros y el stop limitó la pérdida; a veces sale mal igual"
+    "No: seguí el plan y el stop limitó la pérdida"
    ],
    "explanation": "Ningún filtro elimina todas las rupturas falsas: según Bulkowski, el HCH fracasa un 19 % de las veces y las banderas, en torno al 44 %. Lo que controlas es cuánto cuesta el error.",
    "feedback": [

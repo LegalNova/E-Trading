@@ -366,7 +366,7 @@
   "u20l2-8": {
    "prompt": "Ves una vela con una mecha inferior larguísima en mitad de un rango lateral, sin tendencia previa. Laura dice que es una señal de compra clarísima. ¿Qué le contestas?",
    "options": [
-    "Que la ubicación importa: en mitad de un rango, esa vela dice poco",
+    "Que ahí esa vela dice poco",
     "Que es una señal de venta",
     "Que tiene razón: mecha larga, compra segura"
    ],
@@ -439,7 +439,7 @@
    "options": [
     "Que venda todo ya",
     "Que compre más: el doji es alcista",
-    "Que espere a la vela siguiente para ver quién gana"
+    "Que espere a la vela siguiente"
    ],
    "explanation": "Un doji pide atención y confirmación, no una decisión inmediata.",
    "feedback": [
@@ -462,7 +462,7 @@
    "prompt": "¿Dónde va el stop lógico si compras tras un martillo confirmado?",
    "options": [
     "No hace falta stop",
-    "Justo por debajo del mínimo del martillo",
+    "Bajo el mínimo del martillo",
     "Justo por encima de su máximo"
    ],
    "explanation": "Si el precio pierde el mínimo de la mecha, la idea del rechazo de los precios bajos ha fallado."
@@ -479,7 +479,7 @@
   "u20l4-8": {
    "prompt": "Ves un martillo de manual en un gráfico diario, tras dos semanas de caída y cerca del mínimo del año. ¿Qué haces según lo aprendido?",
    "options": [
-    "Espero la confirmación y, si entro, pongo el stop bajo la mecha",
+    "Espero la confirmación antes de entrar",
     "Lo ignoro: las velas no sirven para nada",
     "Compro ya con todo"
    ],
@@ -493,9 +493,9 @@
   "u20l4-10": {
    "prompt": "Según Bulkowski, ¿qué mejora los resultados del martillo?",
    "options": [
-    "Que aparezca en mitad de un rango",
+    "Que aparezca justo en mitad de un rango",
     "Que tenga el cuerpo rojo",
-    "Que aparezca cerca del mínimo del año"
+    "Que esté cerca del mínimo anual"
    ],
    "explanation": "Funciona mejor en el tercio inferior del rango anual, y los de cuerpo verde van mejor."
   },
@@ -519,7 +519,7 @@
    "options": [
     "Queda dentro del cuerpo de la primera",
     "No tiene mechas",
-    "Envuelve el cuerpo de la primera"
+    "Envuelve por completo el cuerpo de la primera"
    ],
    "explanation": "Es lo contrario de una envolvente: una vela pequeña dentro de la grande indica que el impulso se frena."
   },
@@ -597,7 +597,7 @@
   "u20l6-5": {
    "prompt": "Si los patrones de tres velas tienen mejores números, ¿por qué no lo resuelven todo?",
    "options": [
-    "Porque aparecen pocas veces",
+    "Porque aparecen poco",
     "Porque solo existen en Japón",
     "Porque no tienen nombre"
    ],
@@ -662,9 +662,9 @@
   "u20l7-8": {
    "prompt": "¿Qué es el sesgo de búsqueda de datos (data snooping)?",
    "options": [
-    "Mirar los datos en tiempo real",
+    "Mirar los datos en tiempo real mientras operas",
     "Usar velas en vez de líneas",
-    "Probar muchos patrones hasta que alguno parece funcionar por casualidad"
+    "Probar patrones hasta que alguno acierta"
    ],
    "explanation": "Con suficientes pruebas, la casualidad siempre regala algún «descubrimiento»."
   },
@@ -673,7 +673,7 @@
    "options": [
     "No entrar nunca: las velas no funcionan",
     "Entrar sin stop: con cuatro de cuatro no puede fallar",
-    "Si entra, stop bajo el mínimo del martillo y una posición pequeña"
+    "Si entra, stop bajo el martillo y posición pequeña"
    ],
    "explanation": "El contexto mejora las probabilidades; el stop y el tamaño protegen cuando aun así sale mal.",
    "feedback": [
@@ -685,9 +685,9 @@
   "u20l7-11": {
    "prompt": "¿Qué le contestas a Sara?",
    "options": [
-    "Que depende de cuántos seguidores tenga",
+    "Que depende de cuántos seguidores tenga la cuenta",
     "Que un 90 % es una pasada",
-    "Que desconfío: ningún estudio serio da algo así, y los costes se comen gran parte"
+    "Que desconfío: ningún estudio serio da eso"
    ],
    "explanation": "Desconfía de cualquier porcentaje de acierto espectacular: la evidencia dice otra cosa.",
    "feedback": [

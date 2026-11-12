@@ -332,9 +332,9 @@
   "u21l2-3": {
    "prompt": "Bruno bought after resistance at €100 was broken. The price rises to €106 and falls back to €101. What’s the sensible thing to do?",
    "options": [
-    "Buy three times as much to average down",
-    "Sell in a panic: it’s all over",
-    "Watch whether €100 holds as support; his stop was already below that zone"
+    "Buy more to lower his average price",
+    "Sell at once: the breakout has surely failed",
+    "Watch whether €100 holds as support"
    ],
    "explanation": "Returning to the broken level is normal; what matters is whether it holds.",
    "feedback": [
@@ -435,9 +435,9 @@
   "u21l3-12": {
    "prompt": "An uptrend line has three touches. The price drops to touch it a fourth time and Marta wants to buy without a stop «because it always bounces». What do you tell her?",
    "options": [
-    "That she can buy, but with the stop below the line and the last low",
+    "That she can buy, but with a stop below the line",
     "To redraw the line lower so she can relax",
-    "That she's right: three touches are a guarantee"
+    "That she's right: three touches are as good as a guarantee"
    ],
    "explanation": "A trendline tells you where the idea stops being valid. That's why the stop goes on the other side: if it breaks, you get out losing little.",
    "feedback": [
@@ -465,9 +465,9 @@
   "u21l4-11": {
    "prompt": "You own shares in a company. After a big rise it forms a head and shoulders and today closes below the neckline on high volume. What do you do?",
    "options": [
-    "Nothing: patterns fail, so I ignore them",
+    "Nothing: patterns fail, so I just ignore them",
     "I buy more: it's cheaper now",
-    "I review my plan: sell part or protect my gains, because the pattern has been confirmed"
+    "I review my plan: the pattern is confirmed"
    ],
    "explanation": "A confirmed pattern isn't a certainty, but it changes the plan: according to Bulkowski, the average fall after the breakout is 16 %.",
    "feedback": [
@@ -479,7 +479,7 @@
   "u21l4-12": {
    "prompt": "Confirmed head and shoulders, with the head at €120 and the neckline at €100. Ana is waiting for it to fall to the classic target of €80 to buy back in. What do you tell her?",
    "options": [
-    "That only half reach €80: a prudent target would be €90",
+    "That only half reach €80",
     "That the pattern gives no clue about how far it falls",
     "That it'll surely reach €80: it's the pattern's target"
    ],
@@ -493,7 +493,7 @@
   "u21l4-13": {
    "prompt": "What do you reply to Lumi?",
    "options": [
-    "It's an inverse H&S: bullish, and it's confirmed when it closes above its neckline",
+    "It's the inverse: bullish if confirmed",
     "Yes: all head and shoulders patterns are bearish",
     "It's bullish: I'll buy now, before the breakout"
    ],
@@ -536,7 +536,7 @@
    "options": [
     "It's time to buy double",
     "Nothing: the target is still €60",
-    "The breakout has failed: it has closed clearly below €50 again"
+    "The breakout has failed"
    ],
    "explanation": "A confirmed pattern can still fail. If the price closes clearly back on the other side of the key line, the breakout was false.",
    "feedback": [
@@ -548,7 +548,7 @@
   "u21l5-12": {
    "prompt": "Same double bottom: lows at €40, intermediate high at €50 and a close at €51. Where does Bruno's stop make most sense?",
    "options": [
-    "A little below €50, where the breakout would fail",
+    "A little below €50",
     "Below €40, under both bottoms",
     "No need: the pattern is confirmed"
    ],
@@ -610,7 +610,7 @@
    "options": [
     "Around 5 %",
     "Around 44 %",
-    "90 %"
+    "Around 90 %"
    ],
    "explanation": "They’re short-range patterns: almost half don’t even reach 5 %."
   },
@@ -662,7 +662,7 @@
    "options": [
     "I buy now, before it gets away",
     "I buy double to make the most of the rise",
-    "I wait for the close and check whether it clears the level with volume"
+    "I wait for the close and check volume"
    ],
    "explanation": "Breakouts are confirmed by the close and the volume. Waiting a few hours costs little; falling into the trap, much more.",
    "feedback": [
@@ -676,7 +676,7 @@
    "options": [
     "Yes: I should have removed the stop to hold on",
     "Yes: if the stop is hit, the trade was badly set up",
-    "No: I followed the filters and the stop limited the loss; sometimes it goes wrong anyway"
+    "No: I stuck to the plan and the stop capped it"
    ],
    "explanation": "No filter eliminates every false breakout: according to Bulkowski, the H&S fails 19 % of the time and flags around 44 %. What you control is how much the mistake costs.",
    "feedback": [

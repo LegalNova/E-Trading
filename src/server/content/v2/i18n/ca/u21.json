@@ -332,9 +332,9 @@
   "u21l2-3": {
    "prompt": "En Bruno va comprar després de la ruptura d’una resistència a 100 €. El preu puja a 106 € i torna a 101 €. Què fa amb lògica?",
    "options": [
-    "Compra el triple per fer mitjana",
-    "Ven en pànic: tot s’ha acabat",
-    "Vigila si els 100 € aguanten com a suport; el seu stop ja era per sota d’aquesta zona"
+    "Compra més per abaixar el seu preu mitjà",
+    "Ven de seguida: la ruptura ha fracassat segur",
+    "Vigila si els 100 € aguanten com a suport"
    ],
    "explanation": "La tornada al nivell trencat és normal; el que decideix és si aguanta.",
    "feedback": [
@@ -435,7 +435,7 @@
   "u21l3-12": {
    "prompt": "Una línia alcista porta tres tocs. El preu baixa a tocar-la per quarta vegada i la Marta vol comprar sense stop «perquè sempre rebota». Què li dius?",
    "options": [
-    "Que pot comprar, però amb l'stop per sota de la línia i de l'últim mínim",
+    "Que pot comprar, però amb stop sota la línia",
     "Que redibuixi la línia més avall per estar tranquil·la",
     "Que té raó: tres tocs són una garantia"
    ],
@@ -467,7 +467,7 @@
    "options": [
     "Res: les figures fallen, així que les ignoro",
     "Compro més: ara és més barata",
-    "Reviso el meu pla: vendre'n una part o protegir el que he guanyat, perquè la figura s'ha confirmat"
+    "Reviso el meu pla: la figura s'ha confirmat"
    ],
    "explanation": "Una figura confirmada no és una certesa, però canvia el pla: segons Bulkowski, la caiguda mitjana després de la ruptura és del 16 %.",
    "feedback": [
@@ -479,7 +479,7 @@
   "u21l4-12": {
    "prompt": "Espatlla-cap-espatlla confirmat, amb el cap a 120 € i la clavicular a 100 €. L'Ana espera que caigui fins a l'objectiu clàssic de 80 € per tornar a comprar. Què li dius?",
    "options": [
-    "Que només la meitat arriba a 80 €: un objectiu prudent seria 90 €",
+    "Que només la meitat arriba a 80 €",
     "Que la figura no dona cap pista de fins on cau",
     "Que segur que arriba a 80 €: és l'objectiu de la figura"
    ],
@@ -493,7 +493,7 @@
   "u21l4-13": {
    "prompt": "Què li contestes a la Lumi?",
    "options": [
-    "És un ECE invertit: alcista, i es confirma en tancar per sobre de la seva clavicular",
+    "És l'invertit: alcista si es confirma",
     "Sí: tots els espatlla-cap-espatlla són baixistes",
     "És alcista: compro ara, abans de la ruptura"
    ],
@@ -536,7 +536,7 @@
    "options": [
     "És el moment de comprar-ne el doble",
     "Res: l'objectiu continua a 60 €",
-    "La ruptura ha fallat: ha tornat a tancar clarament per sota de 50 €"
+    "La ruptura ha fallat"
    ],
    "explanation": "Una figura confirmada també pot fallar. Si el preu torna a tancar clarament a l'altre costat de la línia clau, la ruptura era falsa.",
    "feedback": [
@@ -548,7 +548,7 @@
   "u21l5-12": {
    "prompt": "El mateix doble terra: mínims a 40 €, màxim intermedi a 50 € i tancament a 51 €. On té més sentit l'stop d'en Bruno?",
    "options": [
-    "Una mica per sota de 50 €, on la ruptura fallaria",
+    "Una mica per sota de 50 €",
     "Per sota de 40 €, sota els dos terres",
     "No cal: la figura està confirmada"
    ],
@@ -610,7 +610,7 @@
    "options": [
     "Al voltant del 5 %",
     "Al voltant del 44 %",
-    "El 90 %"
+    "Al voltant del 90 %"
    ],
    "explanation": "Són figures de recorregut curt: gairebé la meitat no arriba ni a un 5 %."
   },
@@ -662,7 +662,7 @@
    "options": [
     "Compro ara, abans que se m'escapi",
     "Compro el doble per aprofitar més la pujada",
-    "Espero al tancament i miro si supera el nivell amb volum"
+    "Espero al tancament i miro el volum"
    ],
    "explanation": "Les ruptures es confirmen amb el tancament i el volum. Esperar unes hores costa poc; caure al parany, molt més.",
    "feedback": [
@@ -676,7 +676,7 @@
    "options": [
     "Sí: hauria d'haver tret l'stop per aguantar",
     "Sí: si salta l'stop, l'operació estava mal plantejada",
-    "No: vaig seguir els filtres i l'stop va limitar la pèrdua; de vegades surt malament igualment"
+    "No: vaig seguir el pla i l'stop va limitar la pèrdua"
    ],
    "explanation": "Cap filtre no elimina totes les ruptures falses: segons Bulkowski, l'ECE fracassa un 19 % de les vegades i les banderes, al voltant del 44 %. El que controles és quant costa l'error.",
    "feedback": [

@@ -365,7 +365,7 @@
    "options": [
     "Well done: that's the candle's close",
     "To wait for the Heikin Ashi to turn green",
-    "To check the real prices on candlesticks or bars before setting the order"
+    "To check the real prices first"
    ],
    "explanation": "Each chart type has its use: Heikin Ashi for the trend, candlesticks or bars for real prices.",
    "feedback": [
@@ -416,7 +416,7 @@
    "prompt": "In the triple screen method, what is the longest timeframe for?",
    "options": [
     "Choosing the broker",
-    "Fine-tuning the entry",
+    "Fine-tuning the entry point",
     "Deciding the direction"
    ],
    "explanation": "The longest one sets the direction: if the weekly is in an uptrend, you only look for buys. The shortest fine-tunes the entry and the stop."
@@ -425,7 +425,7 @@
    "prompt": "Leo holds his trades for a few weeks. On the weekly chart, the stock is making lower highs and lower lows. On the daily, it's rising strongly today. What does he do?",
    "options": [
     "Looks at the 1-minute chart to decide",
-    "Doesn't look for buys while the weekly is still bearish",
+    "Doesn't look for buys: the weekly is bearish",
     "Buys now: the daily rules because it's more recent"
    ],
    "explanation": "Elder's method: the longer timeframe decides the direction and the shorter one only fine-tunes the entry. Buying against the weekly is swimming against the current.",
@@ -476,7 +476,7 @@
    "options": [
     "That the first was better because the stock was cheaper",
     "That he's right: it looks bigger, so it was better",
-    "That both were +100 %: on a logarithmic scale they'd take up the same space"
+    "That both were +100 %"
    ],
    "explanation": "What matters to your money is the percentage. The linear scale enlarges the stretches with high prices; the logarithmic one compares them properly.",
    "feedback": [
@@ -529,9 +529,9 @@
   "u19l5-7": {
    "prompt": "A share rises for months. It makes a high at €60, falls to €54, bounces only as far as €58 and then falls to €52. What has happened?",
    "options": [
-    "The uptrend has been called into question",
+    "The uptrend is in doubt",
     "It's definitely going to fall 50 %",
-    "Nothing: the uptrend continues"
+    "Nothing: the uptrend is still intact"
    ],
    "explanation": "According to Dow theory, an uptrend is called into question when it fails to beat the last high and breaks below the last low.",
    "feedback": [
@@ -552,7 +552,7 @@
   "u19l6-2": {
    "prompt": "The price breaks through a resistance level on volume well below average. What's the risk?",
    "options": [
-    "That trading is suspended",
+    "That trading gets suspended",
     "That it's a false breakout",
     "None"
    ],
@@ -601,12 +601,12 @@
   "u19l6-10": {
    "prompt": "In which cases is volume data less reliable? Tick all that apply.",
    "options": [
-    "Indices, depending on how each provider calculates it",
+    "IBEX 35 shares, on the Spanish exchange",
     "None: volume is always exact",
     "Cryptocurrencies, spread across lots of platforms",
     "Forex, with no central exchange"
    ],
-   "explanation": "In forex there's no centralised volume, in crypto it's spread out and some of it may be artificial, and for indices it depends on the provider."
+   "explanation": "In forex there's no centralised volume, and in crypto it's spread across platforms and some of it may be artificial; for indices it depends on the provider. For shares on a regulated exchange the figure is fairly reliable, though never perfect."
   }
  }
 }
