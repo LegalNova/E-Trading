@@ -297,8 +297,8 @@
   "u7l3-5": {
    "prompt": "En un índex ponderat per preu, com el Dow Jones, què pesa més?",
    "options": [
-    "L'acció amb el preu per acció més alt",
-    "L'empresa que val més a borsa",
+    "L'acció amb el preu més alt",
+    "L'empresa que val més a borsa en total",
     "La que té més empleats"
    ],
    "explanation": "Per això és un mètode poc lògic: el preu d'una acció no diu com és de gran l'empresa."
@@ -338,8 +338,8 @@
    "prompt": "Què mesura un índex de rendibilitat total?",
    "options": [
     "Només la variació del preu",
-    "Els beneficis de les empreses",
-    "El preu més els dividends reinvertits"
+    "Els beneficis totals de les empreses",
+    "El preu més els dividends"
    ],
    "explanation": "És el que hauria guanyat un inversor que ho hagués reinvertit tot."
   },
@@ -371,8 +371,8 @@
   "u7l4-8": {
    "prompt": "Què li contestes a la Lumi?",
    "options": [
-    "Aquest IBEX no compta els dividends; amb els dividends, la història canvia molt",
-    "Té raó, no dona res",
+    "Aquest IBEX no compta els dividends",
+    "Té raó: fa molts anys que no dona res",
     "És que l'IBEX està mal calculat"
    ],
    "explanation": "L'índex de preus només explica mitja història.",
@@ -389,7 +389,7 @@
   "u7l4-10": {
    "prompt": "Compares la teva cartera, comptant els dividends que vas cobrar, amb l'IBEX 35 de preus. Què passa?",
    "options": [
-    "Et compares amb avantatge: hauries de fer servir l'IBEX amb dividends",
+    "Et compares amb avantatge",
     "És la comparació correcta",
     "Et compares amb desavantatge"
    ],
@@ -399,8 +399,8 @@
    "prompt": "La Marta tria un fons perquè va batre el seu índex l'any passat. Què li convé?",
    "options": [
     "Triar el que va perdre més per «comprar barat»",
-    "Invertir-ho tot: si va guanyar, guanyarà",
-    "Mirar també el seu historial a 5-10 anys i els seus costos"
+    "Invertir-ho tot: si va guanyar l'índex, el tornarà a guanyar",
+    "Mirar el seu historial llarg i els seus costos"
    ],
    "explanation": "L'èxit passat no prediu el futur: mira períodes llargs i costos.",
    "feedback": [
@@ -421,8 +421,8 @@
    "prompt": "Què li contestes a la Lumi?",
    "options": [
     "Sí: són poques empreses de 500",
-    "No ho nota gens: el fons està diversificat",
-    "Ho nota força: per capitalització, aquestes poques pesen moltíssim"
+    "No ho nota gens: el fons està diversificat en 500 empreses",
+    "Ho nota força: aquestes poques pesen moltíssim"
    ],
    "explanation": "Comptar empreses enganya («són poques de 500»): en un índex per capitalització pesa el que val cadascuna, i aquestes poques suposen més d'un terç.",
    "feedback": [
@@ -438,7 +438,7 @@
    "prompt": "Què li contestes a la Lumi?",
    "options": [
     "Enhorabona, 1.300 € de guany!",
-    "Part d'això ho vas posar tu: el guany de debò és molt menor",
+    "Part d'això ho vas posar tu",
     "Has perdut diners"
    ],
    "explanation": "Mirar només quant ha crescut el compte enganya. Per mesurar el que guanyes, resta el que has aportat: si no, et compares amb avantatge.",
@@ -456,8 +456,8 @@
    "prompt": "En Leo té un fons de grans empreses dels EUA. Aquest any el seu fons ha pujat i l'IBEX 35 ha baixat, i en Leo presumeix: «Ho faig millor que la borsa». Què li dius?",
    "options": [
     "Que té raó: ha batut l'IBEX",
-    "Que es compari amb un dipòsit",
-    "Que es compari amb l'S&P 500 amb dividends, que s'assembla al seu fons"
+    "Que es compari amb el que dona un dipòsit a un any",
+    "Que es compari amb l'S&P 500 amb dividends"
    ],
    "explanation": "La referència s'ha d'assemblar al que inverteixes. Comparar-se amb l'índex que el deixa millor és fer-se trampes: així qualsevol «bat el mercat».",
    "feedback": [

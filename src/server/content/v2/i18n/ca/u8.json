@@ -362,7 +362,7 @@
    "options": [
     "El mateix que el d'un gran fons",
     "Segons el que vas pagar per cada acció",
-    "Segons el nombre d'accions que tinguis"
+    "Segons quantes accions tinguis"
    ],
    "explanation": "Per regla general, una acció = un vot. Qui té més accions, té més vots."
   },
@@ -379,7 +379,7 @@
   "u8l2-8": {
    "prompt": "Què és el dret de subscripció preferent?",
    "options": [
-    "Poder comprar accions noves abans que altres en una ampliació, per no perdre el teu percentatge",
+    "Comprar abans que altres en una ampliació",
     "Votar dues vegades a la junta",
     "Cobrar el dividend abans que la resta d'accionistes"
    ],
@@ -391,15 +391,15 @@
     "Aprovar el repartiment de dividends",
     "Fixar el preu de l'acció a borsa",
     "Nomenar els consellers",
-    "Aprovar els comptes anuals"
+    "Decidir a qui vens les teves accions"
    ],
-   "explanation": "El preu el fixa el mercat amb l'oferta i la demanda, no la junta."
+   "explanation": "La junta aprova el dividend i nomena els consellers, i també aprova els comptes. El preu el fixa el mercat, i les teves accions les vens tu a qui vulguis."
   },
   "u8l2-11": {
    "prompt": "L'empresa de la qual la Sara té accions anuncia una ampliació de capital: emetrà accions noves per aconseguir diners. La Sara no vol perdre el seu percentatge. Què fa?",
    "options": [
     "Vota en contra a la junta i se n'oblida",
-    "Fa servir el seu dret de subscripció preferent i compra les accions noves que li toquen",
+    "Fa servir el dret preferent i compra les noves",
     "No fa res: les seves accions continuen sent seves"
    ],
    "explanation": "La subscripció preferent existeix per a això: comprar primer el que et toca i no perdre la teva part. Quedar-se quiet sembla neutre, però amb més accions en circulació el teu percentatge baixa.",
@@ -432,7 +432,7 @@
    "prompt": "En Bruno veu una acció amb un dividend del 14 % i hi vol posar tots els seus estalvis. Què fas si estàs al seu lloc?",
    "options": [
     "Compro ara mateix, un 14 % és una ganga",
-    "Miro per què ha caigut el preu i si el benefici cobreix el dividend",
+    "Miro si el benefici cobreix aquest dividend",
     "Compro just abans de la data ex-dividend, cobro i venc"
    ],
    "explanation": "La rendibilitat per dividend puja quan cau el preu; de vegades anticipa problemes a l'empresa.",
@@ -480,8 +480,8 @@
   "u8l4-6": {
    "prompt": "Per què sol fer un split una empresa?",
    "options": [
-    "Per aconseguir diners nous",
-    "Perquè cada acció sigui més barata i manejable",
+    "Per aconseguir diners nous dels inversors",
+    "Perquè cada acció sigui més barata",
     "Per pagar menys impostos"
    ],
    "explanation": "No hi entren diners ni canvia el valor de l'empresa: només baixa el preu de cada acció."
@@ -514,7 +514,7 @@
    "prompt": "NVIDIA anuncia un split 10×1 i un amic et diu: «Ara que cada acció costa deu vegades menys, és el moment de comprar». Què li contestes?",
    "options": [
     "Que vengui les que tingui abans del split per no perdre",
-    "Que el split no canvia el que val l'empresa: cal decidir pel negoci i el seu preu total",
+    "Que el split no canvia el que val l'empresa",
     "Que té raó: ara és molt més barata"
    ],
    "explanation": "Un split canvia el preu de cada acció, no el valor de l'empresa. El que tempta és veure una ganga en el preu per acció més baix, però el que pagues per tot el negoci no ha canviat.",
@@ -527,7 +527,7 @@
   "u8l4-12": {
    "prompt": "Què li contestes?",
    "options": [
-    "Sí: si no hi acudeixes, el teu percentatge de l'empresa baixa",
+    "Sí: si no hi acudeixes, el teu percentatge baixa",
     "No: les teves accions continuen sent les mateixes",
     "Sí: et treuen part de les teves accions"
    ],
@@ -561,8 +561,8 @@
   "u8l5-4": {
    "prompt": "Què sol tenir una empresa petita respecte a una de gegant?",
    "options": [
-    "Més analistes que la segueixen",
-    "Més potencial de creixement i més risc",
+    "Més analistes que la segueixen de prop",
+    "Més potencial i més risc",
     "Menys volatilitat"
    ],
    "explanation": "Pot créixer més de pressa, però els seus preus es mouen més i fa fallida amb més freqüència."
@@ -572,7 +572,7 @@
    "options": [
     "Preu × nombre d'accions",
     "Benefici × preu",
-    "Vendes ÷ nombre d'accions"
+    "Vendes ÷ nombre d'accions a borsa"
    ],
    "explanation": "És el valor de l'empresa a borsa."
   },
@@ -580,8 +580,8 @@
    "prompt": "Què li dius?",
    "options": [
     "No, les petites no pugen mai",
-    "Sí, a llarg termini sempre guanyen",
-    "Poden rendir més, però amb més risc, i no és una regla fixa"
+    "Sí, a llarg termini les petites sempre acaben guanyant",
+    "Poden rendir més, però amb més risc"
    ],
    "explanation": "La mida canvia el perfil de risc, però no garanteix cap resultat.",
    "feedback": [
@@ -597,9 +597,9 @@
   "u8l5-11": {
    "prompt": "Vols invertir en petites empreses dels EUA, però sense jugar-t'ho tot a una. Què fas?",
    "options": [
-    "Compro un ETF del Russell 2000, que reuneix unes 2.000 petites",
+    "Compro un fons que reuneixi unes 2.000 petites",
     "Compro la micro cap que recomanen en un fòrum",
-    "Compro la petita que més ha pujat aquest mes"
+    "Compro la petita que més ha pujat aquest mes, que va llançada"
    ],
    "explanation": "Un ETF de petites et dona el seu potencial sense dependre d'una de sola. Triar-ne una de solta pel que ha pujat o per un fòrum és temptador, però concentra tot el risc de fallida.",
    "feedback": [
@@ -627,9 +627,9 @@
   "u8l6-6": {
    "prompt": "Què és una trampa de valor?",
    "options": [
-    "Una acció barata que continua baixant perquè el seu negoci es deteriora",
+    "Una acció barata amb un negoci que empitjora",
     "Una acció de creixement molt cara",
-    "Un fons que cobra comissions ocultes"
+    "Un fons que cobra comissions ocultes als seus clients"
    ],
    "explanation": "Un PER baix pot reflectir que els beneficis cauran: el que és barat de vegades és barat per alguna cosa."
   },
@@ -637,7 +637,7 @@
    "prompt": "Quin estil pateix més si el creixement esperat decep?",
    "options": [
     "El de valor",
-    "Tots dos igual",
+    "Tots dos pateixen igual",
     "El de creixement"
    ],
    "explanation": "Amb un PER alt, el preu descompta beneficis futurs; si no arriben, el PER es desinfla."
@@ -646,7 +646,7 @@
    "prompt": "Què fa una empresa en una recompra d'accions?",
    "options": [
     "Deixa diners als seus accionistes",
-    "Compra les seves pròpies accions i normalment les amortitza",
+    "Compra les seves pròpies accions",
     "Emet accions noves"
    ],
    "explanation": "Quan les amortitza, hi ha menys accions i cadascuna val una part més gran de l'empresa."
@@ -670,8 +670,8 @@
   "u8l7-7": {
    "prompt": "Una empresa anuncia una gran recompra pagada amb un préstec, just quan la seva acció és en màxims històrics i té un PER molt alt. Com ho valores?",
    "options": [
-    "Genial: tota recompra és bona",
-    "Amb cautela: el preu i el deute importen",
+    "Genial: tota recompra és bona per a l'accionista",
+    "Amb cautela: importa el preu",
     "Malament: les recompres són il·legals"
    ],
    "explanation": "Una recompra és tan bona com el preu al qual es fa i la manera de pagar-la.",
@@ -696,7 +696,7 @@
    "options": [
     "Perquè no tributen fins que vens",
     "Perquè les paga Hisenda",
-    "Perquè són més segures"
+    "Perquè són més segures que un dividend"
    ],
    "explanation": "El dividend tributa quan el cobres; amb la recompra, el teu guany s'acumula al preu i pagues quan vens."
   },
@@ -704,8 +704,8 @@
    "prompt": "Una empresa de creixement amb PER de 60 presenta resultats: guanya més que l'any passat, però menys del que s'esperava. Què és el més probable?",
    "options": [
     "No es mou",
-    "Cau amb força: el preu descomptava més creixement",
-    "Puja: ha guanyat més"
+    "Cau: el preu n'esperava més",
+    "Puja: ha guanyat més que l'any passat"
    ],
    "feedback": [
     "Els resultats que sorprenen mouen el preu.",

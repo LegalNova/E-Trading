@@ -297,7 +297,7 @@
   "u7l3-5": {
    "prompt": "In a price-weighted index, such as the Dow Jones, what weighs most?",
    "options": [
-    "The share with the highest price per share",
+    "The share with the highest price",
     "The company worth most on the stock market",
     "The one with the most employees"
    ],
@@ -338,8 +338,8 @@
    "prompt": "What does a total return index measure?",
    "options": [
     "Just the change in price",
-    "Companies' profits",
-    "The price plus reinvested dividends"
+    "The companies' total profits",
+    "The price plus dividends"
    ],
    "explanation": "It's what an investor who reinvested everything would have made."
   },
@@ -371,8 +371,8 @@
   "u7l4-8": {
    "prompt": "What do you say to Lumi?",
    "options": [
-    "That IBEX doesn't count dividends; with them, it's a very different story",
-    "He's right, it doesn't pay anything",
+    "That IBEX doesn't count dividends",
+    "He's right, it hasn't paid anything for years",
     "The IBEX must be miscalculated"
    ],
    "explanation": "The price index only tells half the story.",
@@ -389,7 +389,7 @@
   "u7l4-10": {
    "prompt": "You compare your portfolio, counting the dividends you received, with the IBEX 35 price index. What happens?",
    "options": [
-    "You're giving yourself an advantage: you should use the IBEX with dividends",
+    "You're giving yourself an advantage",
     "It's the right comparison",
     "You're putting yourself at a disadvantage"
    ],
@@ -399,8 +399,8 @@
    "prompt": "Marta picks a fund because it beat its index last year. What should she do?",
    "options": [
     "Pick the one that lost most to «buy cheap»",
-    "Invest everything: if it won, it'll win again",
-    "Also look at its 5-10 year track record and its costs"
+    "Invest everything: if it beat the index, it'll beat it again",
+    "Look at its long track record and its costs"
    ],
    "explanation": "Past success doesn't predict the future: look at long periods and costs.",
    "feedback": [
@@ -421,8 +421,8 @@
    "prompt": "What do you say to Lumi?",
    "options": [
     "Yes: they're just a few companies out of 500",
-    "It doesn't notice at all: the fund is diversified",
-    "It notices quite a lot: by market cap, those few weigh a huge amount"
+    "It doesn't notice at all: the fund is spread across 500 companies",
+    "Quite a lot: those few weigh a huge amount"
    ],
    "explanation": "Counting companies is misleading («they're just a few out of 500»): in a cap-weighted index each one weighs what it's worth, and those few make up more than a third.",
    "feedback": [
@@ -438,7 +438,7 @@
    "prompt": "What do you say to Lumi?",
    "options": [
     "Congratulations, €1,300 of profit!",
-    "You put part of that in yourself: the real gain is much smaller",
+    "You put part of that in yourself",
     "You've lost money"
    ],
    "explanation": "Looking only at how much the account has grown is misleading. To measure what you earn, subtract what you've contributed: otherwise you're comparing yourself with an advantage.",
@@ -456,8 +456,8 @@
    "prompt": "Leo has a fund of large US companies. This year his fund went up and the IBEX 35 went down, and Leo boasts: «I'm doing better than the stock market». What do you tell him?",
    "options": [
     "That he's right: he beat the IBEX",
-    "That he should compare himself with a deposit",
-    "That he should compare himself with the S&P 500 with dividends, which looks like his fund"
+    "That he should compare himself with a one-year deposit",
+    "That he should compare himself with the S&P 500"
    ],
    "explanation": "Your benchmark has to look like what you invest in. Comparing yourself with whichever index makes you look best is cheating: that way anyone «beats the market».",
    "feedback": [

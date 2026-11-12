@@ -297,8 +297,8 @@
   "u7l3-5": {
    "prompt": "En un índice ponderado por precio, como el Dow Jones, ¿qué pesa más?",
    "options": [
-    "La acción con el precio por acción más alto",
-    "La empresa que más vale en bolsa",
+    "La acción con el precio más alto",
+    "La empresa que más vale en bolsa en total",
     "La que tiene más empleados"
    ],
    "explanation": "Por eso es un método poco lógico: el precio de una acción no dice lo grande que es la empresa."
@@ -338,8 +338,8 @@
    "prompt": "¿Qué le contestas a Paula?",
    "options": [
     "Sí: son pocas empresas de 500",
-    "No lo nota nada: el fondo está diversificado",
-    "Lo nota bastante: por capitalización, esas pocas pesan muchísimo"
+    "No lo nota nada: el fondo está diversificado en 500 empresas",
+    "Lo nota bastante: esas pocas pesan muchísimo"
    ],
    "explanation": "Contar empresas engaña («son pocas de 500»): en un índice por capitalización pesa lo que vale cada una, y esas pocas suponen más de un tercio.",
    "feedback": [
@@ -355,8 +355,8 @@
    "prompt": "¿Qué mide un índice de rentabilidad total?",
    "options": [
     "Solo la variación del precio",
-    "Los beneficios de las empresas",
-    "El precio más los dividendos reinvertidos"
+    "Los beneficios totales de las empresas",
+    "El precio más los dividendos"
    ],
    "explanation": "Es lo que habría ganado un inversor que reinvirtiera todo."
   },
@@ -388,8 +388,8 @@
   "u7l4-8": {
    "prompt": "¿Qué le contestas a Paula?",
    "options": [
-    "Ese IBEX no cuenta los dividendos; con ellos, la historia cambia mucho",
-    "Tiene razón, no da nada",
+    "Ese IBEX no cuenta los dividendos",
+    "Tiene razón: lleva años sin dar nada",
     "Es que el IBEX está mal calculado"
    ],
    "explanation": "El índice de precios cuenta solo media historia.",
@@ -406,7 +406,7 @@
   "u7l4-10": {
    "prompt": "Comparas tu cartera, contando los dividendos que cobraste, con el IBEX 35 de precios. ¿Qué pasa?",
    "options": [
-    "Te comparas con ventaja: deberías usar el IBEX con dividendos",
+    "Te comparas con ventaja",
     "Es la comparación correcta",
     "Te comparas con desventaja"
    ],
@@ -416,8 +416,8 @@
    "prompt": "Marta elige un fondo porque batió a su índice el año pasado. ¿Qué le conviene?",
    "options": [
     "Elegir el que más perdió para «comprar barato»",
-    "Invertir todo: si ganó, ganará",
-    "Mirar también su historial a 5-10 años y sus costes"
+    "Invertir todo: si ganó al índice, volverá a ganarle",
+    "Mirar su historial largo y sus costes"
    ],
    "explanation": "El éxito pasado no predice el futuro: mira periodos largos y costes.",
    "feedback": [
@@ -438,7 +438,7 @@
    "prompt": "¿Qué le contestas a Laura?",
    "options": [
     "¡Enhorabuena, 1.300 € de ganancia!",
-    "Parte de eso lo pusiste tú: la ganancia de verdad es mucho menor",
+    "Parte de eso lo pusiste tú",
     "Has perdido dinero"
    ],
    "explanation": "Mirar solo cuánto ha crecido la cuenta engaña. Para medir lo que ganas, resta lo que has aportado: si no, te comparas con ventaja.",
@@ -456,8 +456,8 @@
    "prompt": "Leo tiene un fondo de grandes empresas de EE. UU. Este año su fondo ha subido y el IBEX 35 ha bajado, y Leo presume: «Lo hago mejor que la bolsa». ¿Qué le dices?",
    "options": [
     "Que tiene razón: ha batido al IBEX",
-    "Que se compare con un depósito",
-    "Que se compare con el S&P 500 con dividendos, que se parece a su fondo"
+    "Que se compare con lo que da un depósito a un año",
+    "Que se compare con el S&P 500 con dividendos"
    ],
    "explanation": "La referencia tiene que parecerse a lo que inviertes. Compararse con el índice que le deja mejor es hacerse trampas: así cualquiera «bate al mercado».",
    "feedback": [

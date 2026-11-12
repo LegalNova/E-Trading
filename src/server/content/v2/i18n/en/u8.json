@@ -362,7 +362,7 @@
    "options": [
     "The same as a big fund's",
     "According to what you paid for each share",
-    "According to the number of shares you hold"
+    "By how many shares you hold"
    ],
    "explanation": "As a general rule, one share = one vote. Whoever has more shares has more votes."
   },
@@ -379,7 +379,7 @@
   "u8l2-8": {
    "prompt": "What are pre-emptive rights?",
    "options": [
-    "Being able to buy new shares before others in a capital increase, so you don't lose your percentage",
+    "Buying before others in a capital increase",
     "Voting twice at the general meeting",
     "Getting the dividend before other shareholders"
    ],
@@ -391,15 +391,15 @@
     "Approving the dividend payout",
     "Setting the share price on the stock market",
     "Appointing the directors",
-    "Approving the annual accounts"
+    "Deciding who you sell your shares to"
    ],
-   "explanation": "The price is set by the market through supply and demand, not by the meeting."
+   "explanation": "The meeting approves the dividend and appoints the directors, and also approves the accounts. The price is set by the market, and you sell your shares to whoever you like."
   },
   "u8l2-11": {
    "prompt": "The company Sara holds shares in announces a capital increase: it will issue new shares to raise money. Sara doesn't want to lose her percentage. What does she do?",
    "options": [
     "She votes against it at the meeting and forgets about it",
-    "She uses her pre-emptive rights and buys the new shares she's entitled to",
+    "She uses her pre-emptive rights and buys the new ones",
     "She does nothing: her shares are still hers"
    ],
    "explanation": "That's what pre-emptive rights are for: buying what you're entitled to first so you don't lose your share. Doing nothing seems neutral, but with more shares in circulation your percentage falls.",
@@ -432,7 +432,7 @@
    "prompt": "Bruno sees a share with a 14 % dividend and wants to put all his savings into it. What would you do in his shoes?",
    "options": [
     "Buy right now, 14 % is a bargain",
-    "Look into why the price has fallen and whether profits cover the dividend",
+    "Check whether profits cover that dividend",
     "Buy just before the ex-dividend date, collect and sell"
    ],
    "explanation": "Dividend yield rises when the price falls; sometimes it signals problems at the company.",
@@ -480,8 +480,8 @@
   "u8l4-6": {
    "prompt": "Why does a company usually do a split?",
    "options": [
-    "To raise new money",
-    "To make each share cheaper and more manageable",
+    "To raise new money from investors",
+    "To make each share cheaper",
     "To pay less tax"
    ],
    "explanation": "No money comes in and the company's value doesn't change: only the price of each share falls."
@@ -514,7 +514,7 @@
    "prompt": "NVIDIA announces a 10×1 split and a friend tells you: «Now that each share costs ten times less, it's the time to buy». What do you reply?",
    "options": [
     "That he should sell any he has before the split so as not to lose out",
-    "That the split doesn't change what the company is worth: you have to decide on the business and its total price",
+    "That the split doesn't change what the company is worth",
     "That he's right: it's much cheaper now"
    ],
    "explanation": "A split changes the price of each share, not the value of the company. The temptation is to see a bargain in the lower price per share, but what you pay for the whole business hasn't changed.",
@@ -527,8 +527,8 @@
   "u8l4-12": {
    "prompt": "What do you reply?",
    "options": [
-    "Yes: if you don't take part, your percentage of the company falls",
-    "No: your shares are still the same",
+    "Yes: if you don't join in, your share falls",
+    "No: your shares are still exactly the same ones",
     "Yes: they take away some of your shares"
    ],
    "explanation": "In a capital increase new shares are issued: if you don't buy the ones you're entitled to, your percentage falls (dilution). It's tempting to think nothing happens because you keep your shares, but the total has grown.",
@@ -561,8 +561,8 @@
   "u8l5-4": {
    "prompt": "What does a small company usually have compared with a giant?",
    "options": [
-    "More analysts following it",
-    "More growth potential and more risk",
+    "More analysts following it closely",
+    "More potential and more risk",
     "Less volatility"
    ],
    "explanation": "It can grow faster, but its price moves more and it goes bust more often."
@@ -572,7 +572,7 @@
    "options": [
     "Price × number of shares",
     "Earnings × price",
-    "Sales ÷ number of shares"
+    "Sales ÷ number of listed shares"
    ],
    "explanation": "It's the company's value on the stock market."
   },
@@ -580,8 +580,8 @@
    "prompt": "What do you say?",
    "options": [
     "No, small caps never go up",
-    "Yes, in the long run they always win",
-    "They can return more, but with more risk, and it's not a fixed rule"
+    "Yes, in the long run small caps always end up winning",
+    "They can return more, but with more risk"
    ],
    "explanation": "Size changes the risk profile, but it doesn't guarantee a result.",
    "feedback": [
@@ -597,7 +597,7 @@
   "u8l5-11": {
    "prompt": "You want to invest in small US companies, but without betting everything on one. What do you do?",
    "options": [
-    "I buy a Russell 2000 ETF, which holds around 2,000 small caps",
+    "I buy a fund that holds around 2,000 small caps",
     "I buy the micro cap a forum recommends",
     "I buy the small cap that has risen most this month"
    ],
@@ -627,9 +627,9 @@
   "u8l6-6": {
    "prompt": "What is a value trap?",
    "options": [
-    "A cheap share that keeps falling because its business is deteriorating",
+    "A cheap share with a worsening business",
     "A very expensive growth share",
-    "A fund that charges hidden fees"
+    "A fund that charges its clients hidden fees"
    ],
    "explanation": "A low P/E may reflect that profits are about to fall: sometimes cheap is cheap for a reason."
   },
@@ -637,7 +637,7 @@
    "prompt": "Which style suffers more if expected growth disappoints?",
    "options": [
     "Value",
-    "Both equally",
+    "Both suffer equally",
     "Growth"
    ],
    "explanation": "With a high P/E, the price already reflects future earnings; if they don't arrive, the P/E deflates."
@@ -646,7 +646,7 @@
    "prompt": "What does a company do in a share buyback?",
    "options": [
     "Lends money to its shareholders",
-    "Buys its own shares and usually cancels them",
+    "Buys its own shares",
     "Issues new shares"
    ],
    "explanation": "When they're cancelled, there are fewer shares and each one is worth a bigger part of the company."
@@ -670,8 +670,8 @@
   "u8l7-7": {
    "prompt": "A company announces a big buyback funded by a loan, right when its share is at an all-time high with a very high P/E. How do you see it?",
    "options": [
-    "Great: every buyback is good",
-    "With caution: price and debt matter",
+    "Great: every buyback is good for shareholders",
+    "With caution: price matters",
     "Badly: buybacks are illegal"
    ],
    "explanation": "A buyback is only as good as the price it's done at and how it's paid for.",
@@ -696,7 +696,7 @@
    "options": [
     "Because they're not taxed until you sell",
     "Because Hacienda (the Spanish tax office) pays for them",
-    "Because they're safer"
+    "Because they're safer than a dividend"
    ],
    "explanation": "A dividend is taxed when you receive it; with a buyback, your gain builds up in the price and you pay when you sell."
   },
@@ -704,8 +704,8 @@
    "prompt": "A growth company with a P/E of 60 reports results: it earns more than last year, but less than expected. What's most likely?",
    "options": [
     "It doesn't move",
-    "It falls sharply: the price was counting on more growth",
-    "It rises: it earned more"
+    "It falls: the price expected more",
+    "It rises: it earned more than last year"
    ],
    "feedback": [
     "Results that surprise move the price.",

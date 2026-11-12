@@ -362,7 +362,7 @@
    "options": [
     "Lo mismo que el de un gran fondo",
     "Según lo que pagaste por cada acción",
-    "Según el número de acciones que tengas"
+    "Según cuántas acciones tengas"
    ],
    "explanation": "Por regla general, una acción = un voto. Quien tiene más acciones, tiene más votos."
   },
@@ -379,7 +379,7 @@
   "u8l2-8": {
    "prompt": "¿Qué es el derecho de suscripción preferente?",
    "options": [
-    "Poder comprar acciones nuevas antes que otros en una ampliación, para no perder tu porcentaje",
+    "Comprar antes que otros en una ampliación",
     "Votar dos veces en la junta",
     "Cobrar el dividendo antes que los demás accionistas"
    ],
@@ -391,15 +391,15 @@
     "Aprobar el reparto de dividendos",
     "Fijar el precio de la acción en bolsa",
     "Nombrar a los consejeros",
-    "Aprobar las cuentas anuales"
+    "Decidir a quién vendes tus acciones"
    ],
-   "explanation": "El precio lo fija el mercado con la oferta y la demanda, no la junta."
+   "explanation": "La junta aprueba el dividendo y nombra a los consejeros, y también aprueba las cuentas. El precio lo fija el mercado, y tus acciones las vendes tú a quien quieras."
   },
   "u8l2-11": {
    "prompt": "La empresa de la que Sara tiene acciones anuncia una ampliación de capital: emitirá acciones nuevas para conseguir dinero. Sara no quiere perder su porcentaje. ¿Qué hace?",
    "options": [
     "Vota en contra en la junta y se olvida",
-    "Usa su derecho de suscripción preferente y compra las acciones nuevas que le tocan",
+    "Usa su derecho preferente y compra las nuevas",
     "No hace nada: sus acciones siguen siendo suyas"
    ],
    "explanation": "La suscripción preferente existe para esto: comprar primero lo que te toca y no perder tu parte. Quedarse quieto parece neutro, pero con más acciones en circulación tu porcentaje baja.",
@@ -432,7 +432,7 @@
    "prompt": "Bruno ve una acción con un dividendo del 14 % y quiere meter ahí todos sus ahorros. ¿Qué haces si estás en su lugar?",
    "options": [
     "Compro ya, un 14 % es un chollo",
-    "Miro por qué ha caído el precio y si el beneficio cubre el dividendo",
+    "Miro si el beneficio cubre ese dividendo",
     "Compro justo antes de la fecha ex-dividendo, cobro y vendo"
    ],
    "explanation": "La rentabilidad por dividendo sube cuando cae el precio; a veces anticipa problemas en la empresa.",
@@ -480,8 +480,8 @@
   "u8l4-6": {
    "prompt": "¿Por qué suele hacer una empresa un split?",
    "options": [
-    "Para conseguir dinero nuevo",
-    "Para que cada acción sea más barata y manejable",
+    "Para conseguir dinero nuevo de los inversores",
+    "Para que cada acción sea más barata",
     "Para pagar menos impuestos"
    ],
    "explanation": "No entra dinero ni cambia el valor de la empresa: solo baja el precio de cada acción."
@@ -514,7 +514,7 @@
    "prompt": "NVIDIA anuncia un split 10×1 y un amigo te dice: «Ahora que cada acción cuesta diez veces menos, es el momento de comprar». ¿Qué le contestas?",
    "options": [
     "Que venda las que tenga antes del split para no perder",
-    "Que el split no cambia lo que vale la empresa: hay que decidir por el negocio y su precio total",
+    "Que el split no cambia lo que vale la empresa",
     "Que tiene razón: ahora está mucho más barata"
    ],
    "explanation": "Un split cambia el precio de cada acción, no el valor de la empresa. Lo tentador es ver una ganga en el precio por acción más bajo, pero lo que pagas por todo el negocio no ha cambiado.",
@@ -527,7 +527,7 @@
   "u8l4-12": {
    "prompt": "¿Qué le contestas?",
    "options": [
-    "Sí: si no acudes, tu porcentaje de la empresa baja",
+    "Sí: si no acudes, tu porcentaje baja",
     "No: tus acciones siguen siendo las mismas",
     "Sí: te quitan parte de tus acciones"
    ],
@@ -561,8 +561,8 @@
   "u8l5-4": {
    "prompt": "¿Qué suele tener una empresa pequeña frente a una gigante?",
    "options": [
-    "Más analistas siguiéndola",
-    "Más potencial de crecimiento y más riesgo",
+    "Más analistas siguiéndola de cerca",
+    "Más potencial y más riesgo",
     "Menos volatilidad"
    ],
    "explanation": "Puede crecer más deprisa, pero sus precios se mueven más y quiebra con más frecuencia."
@@ -572,7 +572,7 @@
    "options": [
     "Precio × número de acciones",
     "Beneficio × precio",
-    "Ventas ÷ número de acciones"
+    "Ventas ÷ número de acciones en bolsa"
    ],
    "explanation": "Es el valor de la empresa en bolsa."
   },
@@ -580,8 +580,8 @@
    "prompt": "¿Qué le dices?",
    "options": [
     "No, las pequeñas nunca suben",
-    "Sí, a largo plazo siempre ganan",
-    "Pueden rendir más, pero con más riesgo, y no es una regla fija"
+    "Sí, a largo plazo las pequeñas siempre acaban ganando",
+    "Pueden rendir más, pero con más riesgo"
    ],
    "explanation": "El tamaño cambia el perfil de riesgo, pero no garantiza un resultado.",
    "feedback": [
@@ -597,9 +597,9 @@
   "u8l5-11": {
    "prompt": "Quieres invertir en pequeñas empresas de EE. UU., pero sin jugártelo todo a una. ¿Qué haces?",
    "options": [
-    "Compro un ETF del Russell 2000, que reúne unas 2.000 pequeñas",
+    "Compro un fondo que reúna unas 2.000 pequeñas",
     "Compro la micro cap que recomiendan en un foro",
-    "Compro la pequeña que más ha subido este mes"
+    "Compro la pequeña que más ha subido este mes, que va lanzada"
    ],
    "explanation": "Un ETF de pequeñas te da su potencial sin depender de una sola. Elegir una suelta por lo que ha subido o por un foro es tentador, pero concentra todo el riesgo de quiebra.",
    "feedback": [
@@ -627,9 +627,9 @@
   "u8l6-6": {
    "prompt": "¿Qué es una trampa de valor?",
    "options": [
-    "Una acción barata que sigue bajando porque su negocio se deteriora",
+    "Una acción barata con un negocio que empeora",
     "Una acción de crecimiento muy cara",
-    "Un fondo que cobra comisiones ocultas"
+    "Un fondo que cobra comisiones ocultas a sus clientes"
    ],
    "explanation": "Un PER bajo puede reflejar que los beneficios van a caer: lo barato a veces es barato por algo."
   },
@@ -637,7 +637,7 @@
    "prompt": "¿Qué estilo sufre más si el crecimiento esperado decepciona?",
    "options": [
     "El de valor",
-    "Los dos igual",
+    "Los dos sufren igual",
     "El de crecimiento"
    ],
    "explanation": "Con un PER alto, el precio descuenta beneficios futuros; si no llegan, el PER se desinfla."
@@ -646,8 +646,8 @@
    "prompt": "Una empresa de crecimiento con PER de 60 presenta resultados: gana más que el año pasado, pero menos de lo que se esperaba. ¿Qué es lo más probable?",
    "options": [
     "No se mueve",
-    "Cae con fuerza: el precio descontaba más crecimiento",
-    "Sube: ha ganado más"
+    "Cae: el precio esperaba más",
+    "Sube: ha ganado más que el año pasado"
    ],
    "explanation": "En crecimiento pagas por expectativas: lo que cuenta es si se cumplen.",
    "feedback": [
@@ -666,7 +666,7 @@
    "prompt": "¿Qué hace una empresa en una recompra de acciones?",
    "options": [
     "Presta dinero a sus accionistas",
-    "Compra sus propias acciones y normalmente las amortiza",
+    "Compra sus propias acciones",
     "Emite acciones nuevas"
    ],
    "explanation": "Al amortizarlas, hay menos acciones y cada una vale una parte mayor de la empresa."
@@ -690,8 +690,8 @@
   "u8l7-7": {
    "prompt": "Una empresa anuncia una gran recompra pagada con un préstamo, justo con su acción en máximos históricos y un PER muy alto. ¿Cómo lo valoras?",
    "options": [
-    "Genial: toda recompra es buena",
-    "Con cautela: el precio y la deuda importan",
+    "Genial: toda recompra es buena para el accionista",
+    "Con cautela: importa el precio",
     "Mal: las recompras son ilegales"
    ],
    "explanation": "Una recompra es tan buena como el precio al que se hace y la forma de pagarla.",
@@ -714,9 +714,9 @@
   "u8l7-10": {
    "prompt": "¿Por qué algunos inversores prefieren las recompras a los dividendos?",
    "options": [
-    "Porque no tributan hasta que vendes",
+    "Porque no tributan hasta vender",
     "Porque las paga Hacienda",
-    "Porque son más seguras"
+    "Porque son más seguras que un dividendo"
    ],
    "explanation": "El dividendo tributa al cobrarlo; con la recompra, tu ganancia se acumula en el precio y pagas al vender."
   }
