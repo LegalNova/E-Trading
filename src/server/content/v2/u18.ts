@@ -128,22 +128,24 @@ export default unit({
         say('dani', '¿Y la bolsa?'),
         say('lumi', 'Los beneficios futuros valen menos hoy. Y depósitos y bonos le hacen competencia.'),
       ]),
+      // Auditoría RED-10: la pieza del bono a 30 años es de u9l3 («Si suben los tipos, bajan los bonos»). Aquí va cómo llegan
+      // los tipos a una familia: la cuota de una hipoteca variable (préstamo francés, la misma fórmula que u3l1).
       play({
-        title: 'Tu bono cuando suben los tipos',
-        intro: 'Compraste un bono de **1.000 €** que paga un 2 % al año durante 30 años. Entonces, el banco central sube los tipos…',
-        widget: { kind: 'bond', face: 1000, coupon: 2, years: 30, rate: 2, maxRate: 8, maxYears: 30 },
+        title: 'Tu hipoteca cuando suben los tipos',
+        intro: 'Una hipoteca variable de **150.000 €** a 25 años. Hoy pagas un **2 %**. El banco central sube los tipos y tu hipoteca se revisa…',
+        widget: { kind: 'loan', amount: 150000, tin: 2, months: 300, fee: 0, maxAmount: 300000, maxTin: 6, maxMonths: 360 },
         predict: {
-          prompt: 'Si los tipos del mercado pasan del 2 % al 4 %, ¿qué le pasa a tu bono a 30 años?',
-          options: ['Sube: ahora los tipos son mayores', 'Baja un poco', 'Baja mucho, más de un 30 %'],
-          answer: 2,
-          why: 'Vale unos **654 €**, un 35 % menos. Nadie paga 1.000 € por tu 2 % si los bonos nuevos dan un 4 %.',
+          prompt: 'Si tu tipo pasa del 2 % al 4 %, ¿cuánto sube la cuota de cada mes?',
+          options: ['Unos 15 €', 'Unos 155 €', 'Se duplica'],
+          answer: 1,
+          why: 'Pasa de **635,78 €** a **791,76 €**: 156 € más cada mes, casi 1.900 € al año.',
         },
-        goal: { text: 'Con los tipos al 4 %, busca un plazo con el que el bono pierda menos de un 10 %.', when: [when('rate', '==', 4), when('change', '>=', -10)] },
-        insight: 'Cuando suben los tipos, **los bonos que ya tienes bajan**, y **cuanto más largos, más**. En 2022, los bonos largos cayeron más de un 20 %.',
+        goal: { text: 'Sube el tipo al 4 % y mira la cuota.', when: [when('tin', '==', 4)] },
+        insight: 'Los tipos son el **precio del dinero**: cuando suben, las familias con hipoteca variable tienen menos para gastar, y las empresas endeudadas, menos para invertir. Así se enfría la economía.',
         lumi: [
-          { when: when('change', '<=', -30), say: 'Un tercio menos. Los bonos largos sufren mucho.', mood: 'WORRIED' },
-          { when: when('change', '>', 0), say: 'Si bajan los tipos, tu bono vale más. ¡Al revés!', mood: 'HAPPY' },
-          { say: 'Sube el tipo del mercado y mira tu bono', mood: 'THINKING' },
+          { when: when('tin', '>=', 5), say: 'Con un 5 %, casi 880 € al mes: 240 € más que al principio.', mood: 'WORRIED' },
+          { when: when('tin', '<', 2), say: 'Si bajan los tipos pasa lo contrario: la cuota baja y queda más para gastar.', mood: 'HAPPY' },
+          { say: 'Sube el TIN y mira la cuota', mood: 'THINKING' },
         ],
       }),
       play({
