@@ -152,18 +152,38 @@ export default unit({
       single('Comparas tu cartera, contando los dividendos que cobraste, con el IBEX 35 de precios. ¿Qué pasa?', ['Te comparas con ventaja: deberías usar el IBEX con dividendos', 'Es la comparación correcta', 'Te comparas con desventaja'], 0, 'Tú cuentas dividendos y el índice no: parecerá que lo haces mejor de lo que lo haces.'),
     ], { source: '2.6', minutes: 6, retire: [0, 1, 2, 4, 8] }),
 
+    // Rehecha en la auditoría (RED-9, RED-18 y RED-20): la historia repetía la de u7l1 y la pieza de comisiones, la de u10l3.
+    // Ahora enseña a comparar lo mismo con lo mismo: moneda, dividendos, comisiones y aportaciones.
     lesson('u7l5', 'Comparar tu rentabilidad', [
-      story('«He ganado»', [{ id: 'pablo', name: 'Pablo' }], [
-        say('pablo', 'Este año mi cartera de acciones españolas ha ganado un 4 %. ¡Bien!'),
-        note('Ese año, el IBEX 35 con dividendos subió un 12 %.'),
-        choose('¿Qué le dices a Pablo?', [
-          opt('Genial: ganar es ganar', 'bad', say('lumi', 'Ganar menos que la alternativa más sencilla también es perder.')),
-          opt('Ha quedado 8 puntos por detrás de su referencia', 'good', say('lumi', 'Eso. Un fondo indexado del IBEX le habría dado el triple.')),
-          opt('Que se compare con un depósito al 2 %', 'ok', say('lumi', 'Es otro riesgo: unas acciones se comparan con un índice de acciones.')),
+      story('«Le he sacado 8 puntos»', [{ id: 'nora', name: 'Nora' }], [
+        say('nora', 'Mi fondo de bolsa de EE. UU. ha subido un **20 %** este año y el S&P 500, solo un **12 %**. ¡Le he sacado 8 puntos!'),
+        note('Ese 12 % es el del índice de precios, en dólares. Ese año repartió además un 1 % en dividendos, y el dólar subió un 7 % frente al euro.'),
+        choose('¿Qué falla en su comparación?', [
+          opt('Nada: 20 es más que 12', 'bad', say('lumi', 'Está comparando euros con dólares, y un fondo que cobra dividendos con un índice que no los cuenta.')),
+          opt('Compara su fondo en euros con un índice en dólares y sin dividendos', 'good', say('lumi', 'Eso. Con dividendos y en euros, el índice ganó un 20,9 %: Nora quedó casi un punto por detrás.')),
+          opt('Debería compararlo con el IBEX 35', 'bad', say('lumi', 'No: su fondo es de EE. UU. El índice es el correcto; fallan la moneda y los dividendos.')),
         ]),
-        say('pablo', 'Vaya… ¿y cómo me comparo bien?'),
-        say('lumi', 'Mismo periodo, misma moneda, con dividendos y después de comisiones.'),
+        say('nora', 'O sea, que no le he ganado…'),
+        say('lumi', 'Compara siempre **lo mismo con lo mismo**: mismo periodo, misma moneda, con dividendos y después de comisiones.'),
       ]),
+      play({
+        title: 'El índice, en tu moneda',
+        intro: 'El S&P 500 con dividendos gana un **13 %** en dólares. Tú inviertes en euros: mueve el dólar y mira cuánto gana ese mismo índice **medido en euros**.',
+        widget: { kind: 'fx', amount: 1000, asset: 13, fx: 0, maxAsset: 30, maxFx: 20, currency: 'dólar' },
+        predict: {
+          prompt: 'El índice sube un 13 % en dólares y el dólar sube un 7 % frente al euro. ¿Cuánto gana el índice medido en euros?',
+          options: ['Un 6 %: se restan', 'Un 13 %: la moneda no cuenta', 'Casi un 21 %: se acumulan'],
+          answer: 2,
+          why: '1,13 × 1,07 = 1,209: un **20,9 %** en euros. Si el dólar hubiera caído un 7 %, serían solo un 5,1 %.',
+        },
+        goal: { text: 'Deja el índice en un 13 % y sube el dólar un 7 %.', when: [when('asset', '==', 13), when('fx', '==', 7)] },
+        insight: 'El mismo índice da un resultado distinto según la moneda en que lo midas. **Compara tu cartera en euros con el índice en euros.**',
+        lumi: [
+          { when: when('fx', '<', 0), say: 'Con el dólar a la baja, el índice en euros gana menos que en dólares.', mood: 'THINKING' },
+          { when: when('eurPct', '>=', 20), say: 'Casi un 21 % en euros: esa es la vara de medir de Nora.', mood: 'HAPPY' },
+          { say: 'Mueve el dólar arriba y abajo', mood: 'HAPPY' },
+        ],
+      }),
       play({
         title: '¿Con qué índice te comparas?',
         intro: 'Tu **índice de referencia** (*benchmark*) tiene que parecerse a lo que inviertes. Y siempre, con dividendos.',
@@ -187,24 +207,7 @@ export default unit({
           { say: 'Toca cada cartera: ¿con qué índice la comparas?', mood: 'HAPPY' },
         ],
       }),
-      play({
-        title: 'Quedarse atrás también se compone',
-        intro: 'Dos fondos del mismo mercado rinden un 7 % bruto. Uno cuesta un 0,2 % al año; el otro, un 1,8 %: **1,6 puntos por detrás** cada año.',
-        widget: { kind: 'fees', amount: 10000, monthly: 0, gross: 7, feeA: 0.2, feeB: 1.8, years: 10, maxFee: 2.5, maxYears: 40 },
-        predict: {
-          prompt: 'Con 10.000 € durante 30 años, ¿cuánto del resultado se llevan esos 1,6 puntos?',
-          options: ['Un 1,6 %, poca cosa', 'Algo más de un tercio', 'Casi todo'],
-          answer: 1,
-          why: 'El barato acaba en **71.968 €** y el caro, en **45.759 €**: se pierden 26.209 €, un 36 %.',
-        },
-        goal: { text: 'Lleva el plazo a 30 años.', when: [when('years', '==', 30), when('feeB', '>=', 1.75)] },
-        insight: 'Batir al índice es difícil incluso para profesionales: según SPIVA (cierre de 2025), un **97 %** de los fondos activos europeos de acciones quedó por detrás en 10 años. Y el inversor medio gana **1,2 puntos al año menos** que sus fondos por comprar y vender en mal momento (Morningstar). Pruébalo: busca en Mercado el índice que se parece a tu cartera y añádelo a Favoritos.',
-        lumi: [
-          { when: when('lostPct', '>=', 30), say: 'Más de un tercio, solo por quedarse atrás cada año.', mood: 'WORRIED' },
-          { when: when('years', '>=', 20), say: 'Sigue: los puntos que pierdes también se componen.', mood: 'THINKING' },
-          { say: 'Alarga los años y mira la diferencia', mood: 'HAPPY' },
-        ],
-      }),
+      key('Una comparación justa', '• **Mismo periodo**: de la misma fecha a la misma fecha.\n• **Misma moneda**: tu cartera en euros, el índice en euros.\n• **Con dividendos**: el índice de rentabilidad total, no el de precios.\n• **Después de comisiones**: lo que te queda a ti.\n• **Sin aportaciones**: lo que metes no es ganancia.', 'Antes de decir «he batido al índice», comprueba que comparas lo mismo con lo mismo.', 'Pruébalo: pregúntale a Lumi con qué índice comparar tu cartera.'),
     ], [
       num('Tu cartera ganó un 6 % y su índice de referencia un 9 %. ¿Cuántos puntos quedaste por detrás?', 3, 'puntos', '9 − 6 = 3 puntos.'),
       num('Empiezas el año con 5.000 €, no aportas nada y lo acabas con 5.400 €. ¿Qué rentabilidad has tenido?', 8, '%', '400 ÷ 5.000 = 0,08 → 8 %.'),
@@ -218,6 +221,9 @@ export default unit({
       tf('Comparar una cartera de acciones con un depósito al 2 % es una buena forma de saber si la gestionas bien.', false, 'Son riesgos distintos. Una cartera de acciones se compara con un índice de acciones parecido.'),
       chat(['Empecé el año con 5.000 €, metí 1.000 € más y acabo con 6.300 €', '¡He ganado 1.300 €!'], '¿Qué le contestas a Lumi?', [['¡Enhorabuena, 1.300 € de ganancia!', 'No todo es ganancia: 1.000 € los pusiste tú. Lo que aportas no es rentabilidad.'], ['Parte de eso lo pusiste tú: la ganancia de verdad es mucho menor', '¡Eso! Has ganado 300 €: el resto es dinero que aportaste.'], ['Has perdido dinero', 'Tampoco: la cartera vale más que todo lo que metiste.']], 1, 'Mirar solo cuánto ha crecido la cuenta engaña. Para medir lo que ganas, resta lo que has aportado: si no, te comparas con ventaja.'),
       scenario('Leo tiene un fondo de grandes empresas de EE. UU. Este año su fondo ha subido y el IBEX 35 ha bajado, y Leo presume: «Lo hago mejor que la bolsa». ¿Qué le dices?', [['Que se compare con el S&P 500 con dividendos, que se parece a su fondo', 'Su fondo es de grandes empresas de EE. UU.: esa es su vara de medir, no la bolsa española.'], ['Que tiene razón: ha batido al IBEX', 'Batir a un índice que no se parece a tu cartera no dice nada de cómo lo haces.'], ['Que se compare con un depósito', 'Es otro riesgo: unas acciones se comparan con un índice de acciones parecido.']], 0, 'La referencia tiene que parecerse a lo que inviertes. Compararse con el índice que le deja mejor es hacerse trampas: así cualquiera «bate al mercado».'),
-    ], { source: '4.1', minutes: 6, retire: [0, 1, 2, 3, 4, 7, 8] }),
+      num('Un índice sube un 20 % en dólares y el dólar sube un 5 % frente al euro. ¿Cuánto ha ganado el índice medido en euros?', 26, '%', '1,20 × 1,05 = 1,26 → 26 %. Las dos subidas se acumulan, no se suman.'),
+      buckets('¿Comparación justa o tramposa?', ['Justa', 'Tramposa'], [['Mi fondo en euros frente a su índice en euros', 0], ['Mi cartera con dividendos frente al IBEX 35 de precios', 1], ['Mi rentabilidad después de comisiones frente al índice con dividendos', 0], ['Mi mejor trimestre frente al año entero del índice', 1], ['Lo que ha crecido mi cuenta, aportaciones incluidas, frente al índice', 1], ['Mi cartera mundial frente al MSCI World con dividendos, en el mismo periodo', 0]], 'Justa es la que compara lo mismo con lo mismo: periodo, moneda, dividendos, comisiones y sin contar lo que aportas.'),
+      scenario('Tu fondo de bolsa japonesa, en euros, ha perdido un 2 % este año. Su índice ha subido un 8 % en yenes, pero el yen ha caído un 10 % frente al euro. ¿Cómo lo ha hecho tu fondo?', [['Fatal: el índice ganó un 8 % y el fondo perdió un 2 %', 'Ese 8 % está en yenes. Medido en euros, el índice perdió un 2,8 %.'], ['Algo mejor que su índice medido en euros', 'Eso: 1,08 × 0,90 = 0,972, un −2,8 % en euros. Tu fondo perdió menos.'], ['No se puede saber', 'Sí se puede: basta con pasar el índice a euros.']], 1, 'Antes de juzgar un fondo, pon su índice en tu moneda.'),
+    ], { source: '4.1', minutes: 6, retire: [0, 1, 2, 3, 4, 6, 7, 8] }),
   ],
 })

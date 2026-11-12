@@ -156,19 +156,36 @@
    "steps": [
     {
      "texts": [
-      "«I made money»",
-      "Pablo",
-      "This year my portfolio of Spanish shares made 4 %. Nice!",
-      "That year, the IBEX 35 with dividends rose 12 %.",
-      "What do you tell Pablo?",
-      "Great: a gain is a gain",
-      "Making less than the simplest alternative is also losing.",
-      "He came in 8 points behind his benchmark",
-      "Exactly. An IBEX index fund would have given him three times as much.",
-      "Compare himself with a deposit at 2 %",
-      "That's a different risk: shares get compared with a share index.",
-      "Oh… so how do I compare myself properly?",
-      "Same period, same currency, with dividends and after fees."
+      "«I beat it by 8 points»",
+      "Nora",
+      "My US equity fund is up **20 %** this year and the S&P 500 only **12 %**. I beat it by 8 points!",
+      "That 12 % is the price index, in dollars. That year it also paid out 1 % in dividends, and the dollar rose 7 % against the euro.",
+      "What's wrong with her comparison?",
+      "Nothing: 20 is more than 12",
+      "She's comparing euros with dollars, and a fund that collects dividends with an index that doesn't count them.",
+      "She's comparing her fund in euros with an index in dollars and without dividends",
+      "That's it. With dividends and in euros, the index gained 20.9 %: Nora ended up almost a point behind.",
+      "She should compare it with the IBEX 35",
+      "No: her fund is a US fund. The index is the right one; the currency and the dividends are what's off.",
+      "So I didn't beat it…",
+      "Always compare **like with like**: same period, same currency, with dividends and after fees."
+     ]
+    },
+    {
+     "texts": [
+      "The index, in your currency",
+      "The S&P 500 with dividends gains **13 %** in dollars. You invest in euros: move the dollar and see how much that same index gains **measured in euros**.",
+      "dollar",
+      "The index rises 13 % in dollars and the dollar rises 7 % against the euro. How much does the index gain measured in euros?",
+      "6 %: they cancel out",
+      "13 %: the currency doesn't count",
+      "Almost 21 %: they compound",
+      "1.13 × 1.07 = 1.209: **20.9 %** in euros. If the dollar had fallen 7 %, it would be just 5.1 %.",
+      "Leave the index at 13 % and raise the dollar by 7 %.",
+      "The same index gives a different result depending on the currency you measure it in. **Compare your portfolio in euros with the index in euros.**",
+      "With the dollar falling, the index gains less in euros than in dollars.",
+      "Almost 21 % in euros: that's Nora's yardstick.",
+      "Move the dollar up and down"
      ]
     },
     {
@@ -198,20 +215,10 @@
      ]
     },
     {
-     "texts": [
-      "Falling behind compounds too",
-      "Two funds in the same market return 7 % gross. One costs 0.2 % a year; the other, 1.8 %: **1.6 points behind** every year.",
-      "With €10,000 over 30 years, how much of the result do those 1.6 points eat up?",
-      "1.6 %, not much",
-      "Just over a third",
-      "Almost all of it",
-      "The cheap one ends up at **€71,968** and the expensive one at **€45,759**: €26,209 lost, 36 %.",
-      "Take the timeframe to 30 years.",
-      "Beating the index is hard even for professionals: according to SPIVA (end of 2025), **97 %** of active European equity funds lagged it over 10 years. And the average investor earns **1.2 points a year less** than their funds by buying and selling at the wrong time (Morningstar). Try it: find the index in Market that looks like your portfolio and add it to your Favourites.",
-      "Over a third, just from falling behind every year.",
-      "Keep going: the points you lose compound too.",
-      "Stretch the years and watch the difference"
-     ]
+     "title": "A fair comparison",
+     "body": "• **Same period**: from the same date to the same date.\n• **Same currency**: your portfolio in euros, the index in euros.\n• **With dividends**: the total return index, not the price index.\n• **After fees**: what's left for you.\n• **Without contributions**: what you put in isn't a gain.",
+     "key": "Before saying «I beat the index», check you're comparing like with like.",
+     "tip": "Try it: ask Lumi which index to compare your portfolio with."
     }
    ]
   },
@@ -402,15 +409,6 @@
     "She checks whether it was one year's luck or something consistent, and how much it costs."
    ]
   },
-  "u7l5-7": {
-   "prompt": "According to SPIVA (end of 2025), what percentage of active European equity funds lagged their index over 10 years?",
-   "options": [
-    "97 %",
-    "Around 60 %",
-    "Around 30 %"
-   ],
-   "explanation": "Almost all of them: costs and competition make beating the index for years very hard."
-  },
   "u7l5-10": {
    "prompt": "Comparing an equity portfolio with a deposit at 2 % is a good way to tell whether you're managing it well.",
    "options": [
@@ -467,6 +465,42 @@
     "It's a different risk: shares are compared with a similar share index.",
     "His fund is made of large US companies: that's his yardstick, not the Spanish stock market."
    ]
+  },
+  "u7l5-13": {
+   "unit": "%",
+   "prompt": "An index rises 20 % in dollars and the dollar rises 5 % against the euro. How much has the index gained measured in euros?",
+   "options": [],
+   "explanation": "1.20 × 1.05 = 1.26 → 26 %. The two rises compound; they don't just add up."
+  },
+  "u7l5-14": {
+   "prompt": "Fair comparison or a cheat?",
+   "options": [
+    "My portfolio with dividends against the IBEX 35 price index",
+    "My return after fees against the index with dividends",
+    "My best quarter against the index's whole year",
+    "My fund in euros against its index in euros",
+    "My global portfolio against the MSCI World with dividends, over the same period",
+    "How much my account has grown, contributions included, against the index"
+   ],
+   "explanation": "A fair one compares like with like: period, currency, dividends, fees and without counting what you put in.",
+   "right": [
+    "Fair",
+    "Cheat"
+   ]
+  },
+  "u7l5-15": {
+   "prompt": "Your Japanese equity fund, in euros, has lost 2 % this year. Its index has risen 8 % in yen, but the yen has fallen 10 % against the euro. How has your fund done?",
+   "options": [
+    "A bit better than its index measured in euros",
+    "There's no way to know",
+    "Terribly: the index gained 8 % and the fund lost 2 %"
+   ],
+   "feedback": [
+    "That's it: 1.08 × 0.90 = 0.972, −2.8 % in euros. Your fund lost less.",
+    "There is: just convert the index into euros.",
+    "That 8 % is in yen. Measured in euros, the index lost 2.8 %."
+   ],
+   "explanation": "Before judging a fund, put its index in your currency."
   }
  }
 }

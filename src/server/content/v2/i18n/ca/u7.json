@@ -156,19 +156,36 @@
    "steps": [
     {
      "texts": [
-      "«He guanyat»",
-      "Pablo",
-      "Aquest any la meva cartera d'accions espanyoles ha guanyat un 4 %. Bé!",
-      "Aquell any, l'IBEX 35 amb dividends va pujar un 12 %.",
-      "Què li dius a en Pablo?",
-      "Genial: guanyar és guanyar",
-      "Guanyar menys que l'alternativa més senzilla també és perdre.",
-      "Ha quedat 8 punts per darrere de la seva referència",
-      "Exacte. Un fons indexat de l'IBEX li hauria donat el triple.",
-      "Que es compari amb un dipòsit al 2 %",
-      "És un altre risc: unes accions es comparen amb un índex d'accions.",
-      "Vaja… i com em comparo bé?",
-      "Mateix període, mateixa moneda, amb dividends i després de comissions."
+      "«Li he tret 8 punts»",
+      "Nora",
+      "El meu fons de borsa dels EUA ha pujat un **20 %** aquest any i l'S&P 500, només un **12 %**. Li he tret 8 punts!",
+      "Aquest 12 % és el de l'índex de preus, en dòlars. Aquell any va repartir a més un 1 % en dividends, i el dòlar va pujar un 7 % davant de l'euro.",
+      "Què falla en la seva comparació?",
+      "Res: 20 és més que 12",
+      "Està comparant euros amb dòlars, i un fons que cobra dividends amb un índex que no els compta.",
+      "Compara el seu fons en euros amb un índex en dòlars i sense dividends",
+      "Això. Amb dividends i en euros, l'índex va guanyar un 20,9 %: la Nora va quedar gairebé un punt per darrere.",
+      "Hauria de comparar-lo amb l'IBEX 35",
+      "No: el seu fons és dels EUA. L'índex és el correcte; fallen la moneda i els dividends.",
+      "O sigui, que no l'he guanyat…",
+      "Compara sempre **el mateix amb el mateix**: mateix període, mateixa moneda, amb dividends i després de comissions."
+     ]
+    },
+    {
+     "texts": [
+      "L'índex, en la teva moneda",
+      "L'S&P 500 amb dividends guanya un **13 %** en dòlars. Tu inverteixes en euros: mou el dòlar i mira quant guanya aquest mateix índex **mesurat en euros**.",
+      "dòlar",
+      "L'índex puja un 13 % en dòlars i el dòlar puja un 7 % davant de l'euro. Quant guanya l'índex mesurat en euros?",
+      "Un 6 %: es resten",
+      "Un 13 %: la moneda no compta",
+      "Gairebé un 21 %: s'acumulen",
+      "1,13 × 1,07 = 1,209: un **20,9 %** en euros. Si el dòlar hagués caigut un 7 %, només serien un 5,1 %.",
+      "Deixa l'índex en un 13 % i apuja el dòlar un 7 %.",
+      "El mateix índex dona un resultat diferent segons la moneda en què el mesuris. **Compara la teva cartera en euros amb l'índex en euros.**",
+      "Amb el dòlar a la baixa, l'índex en euros guanya menys que en dòlars.",
+      "Gairebé un 21 % en euros: aquesta és la vara de mesurar de la Nora.",
+      "Mou el dòlar amunt i avall"
      ]
     },
     {
@@ -198,20 +215,10 @@
      ]
     },
     {
-     "texts": [
-      "Quedar-se enrere també es composa",
-      "Dos fons del mateix mercat rendeixen un 7 % brut. Un costa un 0,2 % l'any; l'altre, un 1,8 %: **1,6 punts per darrere** cada any.",
-      "Amb 10.000 € durant 30 anys, quina part del resultat s'enduen aquests 1,6 punts?",
-      "Un 1,6 %, poca cosa",
-      "Una mica més d'un terç",
-      "Gairebé tot",
-      "El barat acaba en **71.968 €** i el car, en **45.759 €**: es perden 26.209 €, un 36 %.",
-      "Porta el termini a 30 anys.",
-      "Batre l'índex és difícil fins i tot per als professionals: segons SPIVA (tancament del 2025), un **97 %** dels fons actius europeus d'accions va quedar per darrere en 10 anys. I l'inversor mitjà guanya **1,2 punts menys l'any** que els seus fons per comprar i vendre en mal moment (Morningstar). Prova-ho: busca al Mercat l'índex que s'assembla a la teva cartera i afegeix-lo a Preferits.",
-      "Més d'un terç, només per quedar-se enrere cada any.",
-      "Continua: els punts que perds també es composen.",
-      "Allarga els anys i mira la diferència"
-     ]
+     "title": "Una comparació justa",
+     "body": "• **Mateix període**: de la mateixa data a la mateixa data.\n• **Mateixa moneda**: la teva cartera en euros, l'índex en euros.\n• **Amb dividends**: l'índex de rendibilitat total, no el de preus.\n• **Després de comissions**: el que et queda a tu.\n• **Sense aportacions**: el que hi poses no és guany.",
+     "key": "Abans de dir «he batut l'índex», comprova que compares el mateix amb el mateix.",
+     "tip": "Prova-ho: pregunta a la Lumi amb quin índex has de comparar la teva cartera."
     }
    ]
   },
@@ -402,15 +409,6 @@
     "Comprova si va ser sort d'un any o una cosa constant, i quant li costa."
    ]
   },
-  "u7l5-7": {
-   "prompt": "Segons SPIVA (tancament del 2025), quin percentatge de fons actius europeus d'accions va quedar per darrere del seu índex en 10 anys?",
-   "options": [
-    "Un 97 %",
-    "Al voltant del 60 %",
-    "Al voltant del 30 %"
-   ],
-   "explanation": "Gairebé tots: els costos i la competència fan molt difícil batre l'índex durant anys."
-  },
   "u7l5-10": {
    "prompt": "Comparar una cartera d'accions amb un dipòsit al 2 % és una bona manera de saber si la gestiones bé.",
    "options": [
@@ -467,6 +465,42 @@
     "És un altre risc: unes accions es comparen amb un índex d'accions semblant.",
     "El seu fons és de grans empreses dels EUA: aquesta és la seva vara de mesurar, no la borsa espanyola."
    ]
+  },
+  "u7l5-13": {
+   "unit": "%",
+   "prompt": "Un índex puja un 20 % en dòlars i el dòlar puja un 5 % davant de l'euro. Quant ha guanyat l'índex mesurat en euros?",
+   "options": [],
+   "explanation": "1,20 × 1,05 = 1,26 → 26 %. Les dues pujades s'acumulen, no se sumen."
+  },
+  "u7l5-14": {
+   "prompt": "Comparació justa o tramposa?",
+   "options": [
+    "La meva cartera amb dividends davant de l'IBEX 35 de preus",
+    "La meva rendibilitat després de comissions davant de l'índex amb dividends",
+    "El meu millor trimestre davant de l'any sencer de l'índex",
+    "El meu fons en euros davant del seu índex en euros",
+    "La meva cartera mundial davant de l'MSCI World amb dividends, en el mateix període",
+    "El que ha crescut el meu compte, aportacions incloses, davant de l'índex"
+   ],
+   "explanation": "Justa és la que compara el mateix amb el mateix: període, moneda, dividends, comissions i sense comptar el que hi aportes.",
+   "right": [
+    "Justa",
+    "Tramposa"
+   ]
+  },
+  "u7l5-15": {
+   "prompt": "El teu fons de borsa japonesa, en euros, ha perdut un 2 % aquest any. El seu índex ha pujat un 8 % en iens, però el ien ha caigut un 10 % davant de l'euro. Com ho ha fet el teu fons?",
+   "options": [
+    "Una mica millor que el seu índex mesurat en euros",
+    "No es pot saber",
+    "Fatal: l'índex va guanyar un 8 % i el fons va perdre un 2 %"
+   ],
+   "feedback": [
+    "Això: 1,08 × 0,90 = 0,972, un −2,8 % en euros. El teu fons ha perdut menys.",
+    "Sí que es pot: n'hi ha prou de passar l'índex a euros.",
+    "Aquest 8 % és en iens. Mesurat en euros, l'índex va perdre un 2,8 %."
+   ],
+   "explanation": "Abans de jutjar un fons, posa el seu índex en la teva moneda."
   }
  }
 }

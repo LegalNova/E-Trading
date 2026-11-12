@@ -156,19 +156,36 @@
    "steps": [
     {
      "texts": [
-      "«He ganado»",
-      "Pablo",
-      "Este año mi cartera de acciones españolas ha ganado un 4 %. ¡Bien!",
-      "Ese año, el IBEX 35 con dividendos subió un 12 %.",
-      "¿Qué le dices a Pablo?",
-      "Genial: ganar es ganar",
-      "Ganar menos que la alternativa más sencilla también es perder.",
-      "Ha quedado 8 puntos por detrás de su referencia",
-      "Eso. Un fondo indexado del IBEX le habría dado el triple.",
-      "Que se compare con un depósito al 2 %",
-      "Es otro riesgo: unas acciones se comparan con un índice de acciones.",
-      "Vaya… ¿y cómo me comparo bien?",
-      "Mismo periodo, misma moneda, con dividendos y después de comisiones."
+      "«Le he sacado 8 puntos»",
+      "Nora",
+      "Mi fondo de bolsa de EE. UU. ha subido un **20 %** este año y el S&P 500, solo un **12 %**. ¡Le he sacado 8 puntos!",
+      "Ese 12 % es el del índice de precios, en dólares. Ese año repartió además un 1 % en dividendos, y el dólar subió un 7 % frente al euro.",
+      "¿Qué falla en su comparación?",
+      "Nada: 20 es más que 12",
+      "Está comparando euros con dólares, y un fondo que cobra dividendos con un índice que no los cuenta.",
+      "Compara su fondo en euros con un índice en dólares y sin dividendos",
+      "Eso. Con dividendos y en euros, el índice ganó un 20,9 %: Nora quedó casi un punto por detrás.",
+      "Debería compararlo con el IBEX 35",
+      "No: su fondo es de EE. UU. El índice es el correcto; fallan la moneda y los dividendos.",
+      "O sea, que no le he ganado…",
+      "Compara siempre **lo mismo con lo mismo**: mismo periodo, misma moneda, con dividendos y después de comisiones."
+     ]
+    },
+    {
+     "texts": [
+      "El índice, en tu moneda",
+      "El S&P 500 con dividendos gana un **13 %** en dólares. Tú inviertes en euros: mueve el dólar y mira cuánto gana ese mismo índice **medido en euros**.",
+      "dólar",
+      "El índice sube un 13 % en dólares y el dólar sube un 7 % frente al euro. ¿Cuánto gana el índice medido en euros?",
+      "Un 6 %: se restan",
+      "Un 13 %: la moneda no cuenta",
+      "Casi un 21 %: se acumulan",
+      "1,13 × 1,07 = 1,209: un **20,9 %** en euros. Si el dólar hubiera caído un 7 %, serían solo un 5,1 %.",
+      "Deja el índice en un 13 % y sube el dólar un 7 %.",
+      "El mismo índice da un resultado distinto según la moneda en que lo midas. **Compara tu cartera en euros con el índice en euros.**",
+      "Con el dólar a la baja, el índice en euros gana menos que en dólares.",
+      "Casi un 21 % en euros: esa es la vara de medir de Nora.",
+      "Mueve el dólar arriba y abajo"
      ]
     },
     {
@@ -198,20 +215,10 @@
      ]
     },
     {
-     "texts": [
-      "Quedarse atrás también se compone",
-      "Dos fondos del mismo mercado rinden un 7 % bruto. Uno cuesta un 0,2 % al año; el otro, un 1,8 %: **1,6 puntos por detrás** cada año.",
-      "Con 10.000 € durante 30 años, ¿cuánto del resultado se llevan esos 1,6 puntos?",
-      "Un 1,6 %, poca cosa",
-      "Algo más de un tercio",
-      "Casi todo",
-      "El barato acaba en **71.968 €** y el caro, en **45.759 €**: se pierden 26.209 €, un 36 %.",
-      "Lleva el plazo a 30 años.",
-      "Batir al índice es difícil incluso para profesionales: según SPIVA (cierre de 2025), un **97 %** de los fondos activos europeos de acciones quedó por detrás en 10 años. Y el inversor medio gana **1,2 puntos al año menos** que sus fondos por comprar y vender en mal momento (Morningstar). Pruébalo: busca en Mercado el índice que se parece a tu cartera y añádelo a Favoritos.",
-      "Más de un tercio, solo por quedarse atrás cada año.",
-      "Sigue: los puntos que pierdes también se componen.",
-      "Alarga los años y mira la diferencia"
-     ]
+     "title": "Una comparación justa",
+     "body": "• **Mismo periodo**: de la misma fecha a la misma fecha.\n• **Misma moneda**: tu cartera en euros, el índice en euros.\n• **Con dividendos**: el índice de rentabilidad total, no el de precios.\n• **Después de comisiones**: lo que te queda a ti.\n• **Sin aportaciones**: lo que metes no es ganancia.",
+     "key": "Antes de decir «he batido al índice», comprueba que comparas lo mismo con lo mismo.",
+     "tip": "Pruébalo: pregúntale a Lumi con qué índice comparar tu cartera."
     }
    ]
   },
@@ -419,15 +426,6 @@
     "Comprueba si fue suerte de un año o algo constante, y cuánto le cuesta."
    ]
   },
-  "u7l5-7": {
-   "prompt": "Según SPIVA (cierre de 2025), ¿qué porcentaje de fondos activos europeos de acciones quedó por detrás de su índice en 10 años?",
-   "options": [
-    "Un 97 %",
-    "Alrededor del 60 %",
-    "Alrededor del 30 %"
-   ],
-   "explanation": "Casi todos: los costes y la competencia hacen muy difícil batir al índice durante años."
-  },
   "u7l5-10": {
    "prompt": "Comparar una cartera de acciones con un depósito al 2 % es una buena forma de saber si la gestionas bien.",
    "options": [
@@ -466,6 +464,42 @@
     "Batir a un índice que no se parece a tu cartera no dice nada de cómo lo haces.",
     "Es otro riesgo: unas acciones se comparan con un índice de acciones parecido.",
     "Su fondo es de grandes empresas de EE. UU.: esa es su vara de medir, no la bolsa española."
+   ]
+  },
+  "u7l5-13": {
+   "prompt": "Un índice sube un 20 % en dólares y el dólar sube un 5 % frente al euro. ¿Cuánto ha ganado el índice medido en euros?",
+   "options": [],
+   "explanation": "1,20 × 1,05 = 1,26 → 26 %. Las dos subidas se acumulan, no se suman.",
+   "unit": "%"
+  },
+  "u7l5-14": {
+   "prompt": "¿Comparación justa o tramposa?",
+   "options": [
+    "Mi cartera con dividendos frente al IBEX 35 de precios",
+    "Mi rentabilidad después de comisiones frente al índice con dividendos",
+    "Mi mejor trimestre frente al año entero del índice",
+    "Mi fondo en euros frente a su índice en euros",
+    "Mi cartera mundial frente al MSCI World con dividendos, en el mismo periodo",
+    "Lo que ha crecido mi cuenta, aportaciones incluidas, frente al índice"
+   ],
+   "explanation": "Justa es la que compara lo mismo con lo mismo: periodo, moneda, dividendos, comisiones y sin contar lo que aportas.",
+   "right": [
+    "Justa",
+    "Tramposa"
+   ]
+  },
+  "u7l5-15": {
+   "prompt": "Tu fondo de bolsa japonesa, en euros, ha perdido un 2 % este año. Su índice ha subido un 8 % en yenes, pero el yen ha caído un 10 % frente al euro. ¿Cómo lo ha hecho tu fondo?",
+   "options": [
+    "Algo mejor que su índice medido en euros",
+    "No se puede saber",
+    "Fatal: el índice ganó un 8 % y el fondo perdió un 2 %"
+   ],
+   "explanation": "Antes de juzgar un fondo, pon su índice en tu moneda.",
+   "feedback": [
+    "Eso: 1,08 × 0,90 = 0,972, un −2,8 % en euros. Tu fondo perdió menos.",
+    "Sí se puede: basta con pasar el índice a euros.",
+    "Ese 8 % está en yenes. Medido en euros, el índice perdió un 2,8 %."
    ]
   }
  }
