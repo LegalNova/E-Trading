@@ -132,7 +132,8 @@
       "Tapar un deute car amb un altre de car és la manera més ràpida d'entrar en una espiral.",
       "Regla d'or: si t'ofereixen diners **ràpids i fàcils**, solen ser **cars**.",
       "Si un interès et sembla abusiu, reclama al banc i després al Banc d'Espanya.",
-      "Prova-ho: al Mercat, mira com puja i baixa l'S&P 500; la teva revolving cobra sempre."
+      "Prova-ho: al Mercat, mira com puja i baixa l'S&P 500; la teva revolving cobra sempre.",
+      "El Tribunal Suprem va fixar el criteri el 2023: l'interès d'una revolving és abusiu si supera en **més de 6 punts** el tipus mitjà d'aquestes targetes que publica el Banc d'Espanya, en la data del contracte. En aquest cas es pot reclamar."
      ]
     }
    ]
@@ -596,6 +597,15 @@
     "Saber quant gastes"
    ],
    "explanation": "La piràmide dels diners: sense base, qualsevol imprevist t'obliga a vendre en el pitjor moment."
+  },
+  "u3l3-11": {
+   "prompt": "Segons el Tribunal Suprem, quan és abusiu l'interès d'una targeta revolving?",
+   "options": [
+    "Quan la quota mensual no arriba a 50 €",
+    "Quan supera en més de 6 punts el tipus mitjà d'aquestes targetes",
+    "Quan passa del 10 % TAE"
+   ],
+   "explanation": "Es compara amb el tipus mitjà de les revolving que publica el Banc d'Espanya en la data del contracte. Si el supera en més de 6 punts, es pot reclamar: primer al banc."
   }
  }
 }

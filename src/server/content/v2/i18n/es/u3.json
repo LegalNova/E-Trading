@@ -132,7 +132,8 @@
       "Tapar una deuda cara con otra cara es la forma más rápida de entrar en una espiral.",
       "Regla de oro: si te ofrecen dinero **rápido y fácil**, suele ser **caro**.",
       "Si un interés te parece abusivo, reclama al banco y luego al Banco de España.",
-      "Pruébalo: en Mercado, mira cómo sube y baja el S&P 500; tu revolving cobra siempre."
+      "Pruébalo: en Mercado, mira cómo sube y baja el S&P 500; tu revolving cobra siempre.",
+      "El Tribunal Supremo fijó el criterio en 2023: el interés de una revolving es abusivo si supera en **más de 6 puntos** el tipo medio de esas tarjetas que publica el Banco de España, en la fecha del contrato. En ese caso se puede reclamar."
      ]
     }
    ]
@@ -443,6 +444,15 @@
     "2.300 %"
    ],
    "explanation": "Un 30 % en un mes, compuesto durante un año, supera el 2.300 %."
+  },
+  "u3l3-11": {
+   "prompt": "Según el Tribunal Supremo, ¿cuándo es abusivo el interés de una tarjeta revolving?",
+   "options": [
+    "Cuando la cuota mensual no llega a 50 €",
+    "Cuando supera en más de 6 puntos el tipo medio de esas tarjetas",
+    "Cuando pasa del 10 % TAE"
+   ],
+   "explanation": "Se compara con el tipo medio de las revolving que publica el Banco de España en la fecha del contrato. Si lo supera en más de 6 puntos, se puede reclamar: primero al banco."
   },
   "u3l4-1": {
    "prompt": "Método avalancha: ordena qué deuda atacas primero.",

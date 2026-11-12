@@ -132,7 +132,8 @@
       "Covering one expensive debt with another is the fastest way into a spiral.",
       "Golden rule: if someone offers you **quick, easy** money, it's usually **expensive**.",
       "If an interest rate seems abusive, complain to the bank and then to the Bank of Spain.",
-      "Try it: in Market, see how the S&P 500 goes up and down; your revolving card always charges."
+      "Try it: in Market, see how the S&P 500 goes up and down; your revolving card always charges.",
+      "Spain's Supreme Court set the test in 2023: a revolving card's interest is abusive if it is **more than 6 points** above the average rate for those cards published by the Bank of Spain, at the date of the contract. In that case you can make a claim."
      ]
     }
    ]
@@ -596,6 +597,15 @@
     "Knowing how much you spend"
    ],
    "explanation": "The money pyramid: without a base, any surprise forces you to sell at the worst moment."
+  },
+  "u3l3-11": {
+   "prompt": "According to Spain's Supreme Court, when is a revolving card's interest abusive?",
+   "options": [
+    "When the monthly payment is under €50",
+    "When it is more than 6 points above the average rate for those cards",
+    "When it goes above 10 % APR"
+   ],
+   "explanation": "It's compared with the average rate for revolving cards published by the Bank of Spain at the date of the contract. If it's more than 6 points above, you can make a claim: first to the bank."
   }
  }
 }

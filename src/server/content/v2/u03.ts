@@ -1,6 +1,6 @@
 import 'server-only'
 // Sección 1 · Unidad 3 · Deudas y crédito (docs/curso-v2/02-curriculo.md)
-import { buckets, chat, choose, fill, key, lesson, match, multi, num, opt, order, play, say, scenario, single, spot, story, tf, timed, unit, when } from '../dsl'
+import { buckets, chat, choose, fill, key, lesson, match, multi, note, num, opt, order, play, say, scenario, single, spot, story, tf, timed, unit, when } from '../dsl'
 
 export default unit({
   id: 'u3', order: 3, title: 'Deudas y crédito', description: 'Cuánto cuesta de verdad una deuda, cuáles evitar y por qué la cara va antes que invertir',
@@ -126,6 +126,8 @@ export default unit({
         say('lumi', 'Regla de oro: si te ofrecen dinero **rápido y fácil**, suele ser **caro**.'),
         say('lumi', 'Si un interés te parece abusivo, reclama al banco y luego al Banco de España.'),
         say('lumi', 'Pruébalo: en Mercado, mira cómo sube y baja el S&P 500; tu revolving cobra siempre.'),
+        // Auditoría FAL-8 / FEC-13: criterio del Pleno del Tribunal Supremo (sentencia 258/2023, de 15-2-2023), apuntado en facts.ts
+        note('El Tribunal Supremo fijó el criterio en 2023: el interés de una revolving es abusivo si supera en **más de 6 puntos** el tipo medio de esas tarjetas que publica el Banco de España, en la fecha del contrato. En ese caso se puede reclamar.'),
       ]),
     ], [
       num('Debes 1.000 € en una revolving al 2 % mensual. ¿Cuántos euros de intereses pagas el primer mes?', 20, '€', '1.000 × 0,02 = 20 €.'),
@@ -138,6 +140,7 @@ export default unit({
       timed(single('Rápido: ¿qué deuda es más cara?', ['Préstamo personal al 8 % TAE', 'Revolving al 22 % TAE', 'Hipoteca al 3 % TAE'], 1, 'La revolving: casi tres veces el préstamo personal y más de siete la hipoteca.'), 10),
       fill('Un minicrédito de 300 € por el que devuelves 390 € a los 30 días tiene una TAE de más del ____.', '2.300 %', ['30 %', '39 %', '90 %'], 'Un 30 % en un mes, compuesto durante un año, supera el 2.300 %.'),
       chat(['Mi tarjeta me deja pagar solo 25 € al mes de lo que debo 😌', 'Así voy tranquila, ¿no?'], '¿Qué le contestas a Lumi?', [['Sí, así no te agobias', 'Con 1.000 € al 2 % mensual, a 25 € al mes tardarías unos 81 meses y pagarías más de 2.000 €.'], ['Cuidado: con esa cuota casi todo son intereses', '¡Eso! Sube la cuota todo lo que puedas y deja de usarla hasta liquidarla.'], ['Pide otra tarjeta para pagar esta', 'Así tendrías dos deudas caras en lugar de una.']], 1, 'Una cuota cómoda puede esconder una deuda que dura años.'),
+      single('Según el Tribunal Supremo, ¿cuándo es abusivo el interés de una tarjeta revolving?', ['Cuando pasa del 10 % TAE', 'Cuando supera en más de 6 puntos el tipo medio de esas tarjetas', 'Cuando la cuota mensual no llega a 50 €'], 1, 'Se compara con el tipo medio de las revolving que publica el Banco de España en la fecha del contrato. Si lo supera en más de 6 puntos, se puede reclamar: primero al banco.'),
     ], { minutes: 6, retire: [0, 1, 7, 9] }),
 
     lesson('u3l4', 'Bola de nieve o avalancha', [

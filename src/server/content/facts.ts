@@ -90,6 +90,11 @@ export const FACTS = {
     source: 'Guías fiscales de 2026 coincidentes (p. ej. https://guiafiscal.es/irpf/tramos-irpf-2026/). Falta confirmarlo en la web de la Agencia Tributaria.',
     usedIn: ['u31l1', 'u31l2', 'u31l4'], review: 'Cada enero, con los presupuestos del año. Toda la unidad u31 usa estos tramos en sus cálculos.',
   },
+  revolvingUsury: {
+    what: 'Criterio del Tribunal Supremo sobre la usura en tarjetas revolving: el interés es «notablemente superior» si supera en más de 6 puntos el tipo medio que publica el Banco de España para esas tarjetas en la fecha del contrato', value: '6 puntos', asOf: '2023-02-15', checked: '2026-11-12', kind: 'oficial',
+    source: 'Sentencia del Pleno de la Sala de lo Civil del Tribunal Supremo 258/2023, de 15 de febrero de 2023 (informe de auditoría, apartado 5.3, FEC-13 / FAL-8: confirmado).',
+    usedIn: ['u3l3'], review: 'Si el Supremo cambia de criterio o una ley fija un límite.',
+  },
   withholding19: {
     what: 'Retención a cuenta del IRPF sobre dividendos, intereses y ganancias por transmisión de participaciones de fondos de inversión (%)', value: 19, asOf: '2025-12-31', checked: '2026-11-12', kind: 'oficial',
     source: 'Agencia Tributaria, cuadro de tipos de retención («tipo aplicable 2025», actualizado el 30-4-2026): capital mobiliario 19 % (arts. 25.1 y 101.4 LIRPF) y fondos de inversión 19 % (art. 101.6 LIRPF). https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/folleto-actividades-economicas/7-otras-obligaciones-fiscales-retenciones/7_1-cuadro-relacion-tipos-retencion-porcentaje.html',
