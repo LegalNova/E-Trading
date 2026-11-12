@@ -319,6 +319,49 @@
   "u29r": {
    "title": "Unit review",
    "steps": []
+  },
+  "u29l8": {
+   "title": "In euros or in dollars? Your ETF's currency",
+   "steps": [
+    {
+     "texts": [
+      "«I'll buy it in euros and that's that»",
+      "Pablo",
+      "I want a US stock market ETF. There's one that trades in dollars and an identical one that trades in euros.",
+      "I'll buy the euro one, so **the dollar won't affect me**.",
+      "Is he right?",
+      "Yes: if he pays in euros, his risk is in euros",
+      "The companies inside still earn and are valued in dollars.",
+      "No: the risk comes from what's inside, not from the currency he buys it in",
+      "That's it. Both ETFs hold the same companies: the dollar affects them in exactly the same way.",
+      "Partly: the euro one moves less",
+      "They move the same. The euro price already has the day's exchange rate built in.",
+      "A fund has two currencies that matter: that of **its assets**, which is the one that carries the risk, and the **trading currency**, which is the one you buy it in."
+     ]
+    },
+    {
+     "texts": [
+      "So what's the point of choosing?",
+      "Elena",
+      "If the risk is the same, what difference does it make whether I buy the one trading in euros or the dollar one?",
+      "What changes?",
+      "Nothing: it's exactly the same",
+      "The risk, yes. But to buy the dollar one your broker has to convert your euros, and usually charges for it.",
+      "What you pay for currency exchange on each purchase",
+      "That's it. With the one trading in euros there's no conversion to pay for when buying or selling.",
+      "The return: you make more in dollars",
+      "What's inside is the same. The currency of the price doesn't make you more.",
+      "And what if I really don't want the dollar to affect me?",
+      "That's what **hedged** classes («EUR Hedged») are for: they reduce the effect of the exchange rate, cost a little more and **don't remove stock market risk**."
+     ]
+    },
+    {
+     "title": "Two currencies and one decision",
+     "body": "• **Currency of the assets**: that of the companies or bonds inside. It's the one that exposes you to exchange rates.\n• **Trading currency**: that of the price you see when you buy. It doesn't change your risk; it can change what you pay your broker.\n\nBuying a fund of US companies in euros **doesn't remove** the dollar's effect. A **hedged** class reduces it, at a cost.\n\nIn practice: if there's a version that trades in euros, you save the currency exchange on every purchase.",
+     "key": "Currency risk depends on what the fund holds, not on the currency you buy it in.",
+     "tip": "Try it: open an ETF's page in Market and look at which currency it trades in and which countries its companies are from."
+    }
+   ]
   }
  },
  "questions": {
@@ -713,6 +756,111 @@
     "It made up for part of it, not all: gold rose less than shares fell."
    ],
    "explanation": "Two assets that don't move together soften the fall of the whole: that's what a low correlation gives you."
+  },
+  "u29l8-1": {
+   "prompt": "Match each idea with what it means.",
+   "options": [
+    "Currency of the assets",
+    "Trading currency",
+    "Hedged class",
+    "Currency exchange"
+   ],
+   "explanation": "The risk is in the assets; the cost, in the conversion.",
+   "right": [
+    "That of the price you buy at",
+    "Reduces the exchange-rate effect, at a cost",
+    "What the broker charges to convert your euros",
+    "That of the companies or bonds inside"
+   ]
+  },
+  "u29l8-2": {
+   "unit": "%",
+   "prompt": "Your US stock market ETF rises 10 % in dollars in a year. That year the dollar falls 5 % against the euro. How much have you made in euros, as a percentage?",
+   "options": [],
+   "explanation": "1.10 × 0.95 = 1.045: 4.5 %. It makes no difference whether you bought it in euros or in dollars."
+  },
+  "u29l8-3": {
+   "prompt": "Buying an ETF of US companies in euros removes the dollar's effect.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "The euro price already includes the day's exchange rate. The dollar's effect is still there."
+  },
+  "u29l8-4": {
+   "prompt": "Laura contributes every month to a global ETF. Her broker charges for every currency conversion. The same ETF trades in euros on one exchange and in dollars on another. Which does she buy?",
+   "options": [
+    "The one that trades in euros",
+    "One each month, to spread it out",
+    "The dollar one: that's the fund's «real» currency"
+   ],
+   "explanation": "Both hold the same companies. The difference is what it costs to buy them.",
+   "feedback": [
+    "Good: same fund, same risk, and no conversion to pay on each contribution.",
+    "Splitting between the two diversifies nothing: it's the same fund.",
+    "She'd have to convert euros to dollars every month and pay for it, with nothing gained in return."
+   ]
+  },
+  "u29l8-5": {
+   "prompt": "In a hedged («EUR Hedged») class of a US equity fund, what stays the same?",
+   "options": [
+    "The risk of the stock market falling",
+    "The dollar's effect on your result",
+    "The fund's cost"
+   ],
+   "explanation": "Hedging reduces the effect of the exchange rate and usually costs a little more. The stock market can fall just the same."
+  },
+  "u29l8-6": {
+   "prompt": "Which currency does it depend on?",
+   "options": [
+    "Paying for currency exchange when you buy",
+    "Your long-term result in euros",
+    "The price you see on the order",
+    "Being affected by a fall in the dollar"
+   ],
+   "explanation": "Risk and result depend on what's inside. The price you see and the cost of buying depend on where it trades.",
+   "right": [
+    "On the currency of the assets",
+    "On the trading currency"
+   ]
+  },
+  "u29l8-7": {
+   "prompt": "Lumi has bought a global ETF that trades in euros and thinks the dollar no longer affects her. What do you reply?",
+   "options": [
+    "It affects you half as much as in dollars",
+    "Exactly: in euros there's no currency risk",
+    "It affects you just the same: what counts is what's inside"
+   ],
+   "explanation": "A global ETF holds lots of US companies. Wherever it trades, the dollar influences your result.",
+   "feedback": [
+    "Neither half nor double: exactly the same.",
+    "There is: a large share of those companies earn and are valued in dollars.",
+    "Exactly! In euros you save the conversion when you buy, not the risk."
+   ],
+   "lines": [
+    "I've bought the global ETF in euros 😌",
+    "So the dollar doesn't affect me any more, right?"
+   ]
+  },
+  "u29l8-8": {
+   "prompt": "You contribute every month and want to pay less for currency conversion. What helps? Tick all that apply.",
+   "options": [
+    "Buying a hedged class",
+    "Using a broker that charges little for conversion",
+    "Selling before the dollar falls",
+    "Buying the version that trades in euros"
+   ],
+   "explanation": "You avoid the conversion cost by buying in euros or with a broker that's cheap for that. A hedged class deals with the risk, not that fee; and nobody knows when the dollar will fall."
+  },
+  "u29l8-9": {
+   "prompt": "A fund's currency risk depends on the currency of its ____.",
+   "options": [
+    "fees",
+    "prospectuses",
+    "managers",
+    "assets"
+   ],
+   "explanation": "What's inside decides which currencies you're exposed to."
   }
  }
 }

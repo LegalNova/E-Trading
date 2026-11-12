@@ -313,5 +313,42 @@ export default unit({
       single('¿Qué hace un fondo ESG «de exclusión»?', ['Deja fuera sectores enteros', 'Invierte solo en empresas pequeñas', 'Elimina el riesgo de mercado'], 0, 'Otra forma es «best in class»: elegir a las mejores de cada sector.'),
       chat(['Quiero que mi dinero apoye empresas responsables 🌱', '¿Basta con que el fondo ponga ESG en el nombre?'], 'Lumi quiere apoyar empresas responsables y pregunta si basta con que el fondo ponga «ESG» en el nombre. ¿Qué le contestas?', [['Sí, con el nombre es suficiente', 'Ojalá. Ahí entra el greenwashing: hay que mirar dentro.'], ['Mira su clasificación SFDR, sus exclusiones, sus posiciones y su coste', '¡Perfecto! Y compáralo con un indexado normal: el coste también cuenta.'], ['El ESG es solo marketing: olvídalo y ahórrate el lío', 'Hay de todo. Con información puedes elegir con criterio.']], 1, 'El ESG puede reflejar tus valores, pero exige leer la letra pequeña.'),
     ], { minutes: 6, retire: [2, 3, 4, 6] }),
+
+    // Auditoría FAL-11: la divisa al comprar un ETF, en la práctica. El efecto del dólar sobre la cartera ya está en
+    // u14l4 y u29l4; aquí va lo que faltaba: la moneda en que cotiza no es la moneda del riesgo, y sí decide el coste
+    // del cambio. La única cuenta (1,10 × 0,95 = 1,045) es aritmética. Al final de la unidad, como las demás nuevas.
+    lesson('u29l8', '¿En euros o en dólares? La divisa de tu ETF', [
+      story('«Lo compro en euros y listo»', [{ id: 'pablo', name: 'Pablo' }], [
+        say('pablo', 'Quiero un ETF de la bolsa de Estados Unidos. Hay uno que cotiza en dólares y otro igual que cotiza en euros.'),
+        say('pablo', 'Compro el de euros y así **el dólar no me afecta**.'),
+        choose('¿Tiene razón?', [
+          opt('Sí: si lo paga en euros, su riesgo es en euros', 'bad', say('lumi', 'Las empresas que hay dentro siguen ganando y valiendo en dólares.')),
+          opt('No: el riesgo viene de lo que hay dentro, no de la moneda en que lo compra', 'good', say('lumi', 'Eso es. Los dos ETF tienen las mismas empresas: les afecta el dólar exactamente igual.')),
+          opt('A medias: el de euros se mueve menos', 'bad', say('lumi', 'Se mueven igual. El precio en euros ya lleva dentro el cambio del día.')),
+        ]),
+        say('lumi', 'Un fondo tiene dos monedas que importan: la de **sus activos**, que es la del riesgo, y la de **cotización**, que es en la que tú lo compras.'),
+      ]),
+      story('Entonces, ¿para qué sirve elegir?', [{ id: 'elena', name: 'Elena' }], [
+        say('elena', 'Si el riesgo es el mismo, ¿qué más da comprar el que cotiza en euros o el de dólares?'),
+        choose('¿Qué cambia?', [
+          opt('Nada: es exactamente igual', 'ok', say('lumi', 'El riesgo, sí. Pero para comprar el de dólares tu bróker tiene que cambiarte los euros, y suele cobrar por ello.')),
+          opt('Lo que pagas por el cambio de divisa en cada compra', 'good', say('lumi', 'Eso. Con el que cotiza en euros no hay cambio que pagar al comprar ni al vender.')),
+          opt('La rentabilidad: en dólares se gana más', 'bad', say('lumi', 'Lo de dentro es lo mismo. La moneda del precio no hace ganar más.')),
+        ]),
+        say('elena', '¿Y si de verdad no quiero que el dólar me afecte?'),
+        say('lumi', 'Para eso existen las clases **cubiertas** («EUR Hedged»): reducen el efecto del cambio, cuestan algo más y **no quitan el riesgo de la bolsa**.'),
+      ]),
+      key('Dos monedas y una decisión', '• **Moneda de los activos**: la de las empresas o bonos que hay dentro. Es la que te expone al cambio de divisa.\n• **Moneda de cotización**: la del precio que ves al comprar. No cambia tu riesgo; sí puede cambiar lo que pagas a tu bróker.\n\nComprar en euros un fondo de empresas americanas **no elimina** el efecto del dólar. Lo reduce una clase **cubierta**, con un coste.\n\nEn la práctica: si existe la versión que cotiza en euros, te ahorras el cambio de divisa en cada compra.', 'El riesgo de divisa depende de lo que el fondo tiene dentro, no de la moneda en que lo compras.', 'Pruébalo: abre la ficha de un ETF en Mercado y mira en qué moneda cotiza y de qué países son sus empresas.'),
+    ], [
+      match('Empareja cada idea con lo que significa.', [['Moneda de los activos', 'La de las empresas o bonos que hay dentro'], ['Moneda de cotización', 'La del precio al que compras'], ['Clase cubierta', 'Reduce el efecto del cambio, con un coste'], ['Cambio de divisa', 'Lo que cobra el bróker por convertir tus euros']], 'El riesgo está en los activos; el coste, en la conversión.'),
+      num('Tu ETF de bolsa americana sube un 10 % en dólares en un año. Ese año el dólar cae un 5 % frente al euro. ¿Cuánto has ganado en euros, en porcentaje?', 4.5, '%', '1,10 × 0,95 = 1,045: un 4,5 %. Da igual que lo compraras en euros o en dólares.', 2),
+      tf('Comprar en euros un ETF de empresas americanas elimina el efecto del dólar.', false, 'El precio en euros ya incluye el cambio del día. El efecto del dólar sigue ahí.'),
+      scenario('Laura aporta cada mes a un ETF mundial. Su bróker cobra por cada cambio de divisa. El mismo ETF cotiza en euros en una bolsa y en dólares en otra. ¿Cuál compra?', [['El de dólares: es la moneda «de verdad» del fondo', 'Tendría que cambiar euros a dólares cada mes y pagar por ello, sin ganar nada a cambio.'], ['El que cotiza en euros', 'Bien: mismo fondo, mismo riesgo, y sin pagar el cambio en cada aportación.'], ['Uno cada mes, para repartir', 'Repartir entre los dos no diversifica nada: es el mismo fondo.']], 1, 'Los dos tienen las mismas empresas. La diferencia está en lo que cuesta comprarlos.'),
+      single('En una clase cubierta («EUR Hedged») de un fondo de bolsa americana, ¿qué sigue igual?', ['El efecto del dólar sobre tu resultado', 'El riesgo de que caiga la bolsa', 'El coste del fondo'], 1, 'La cobertura reduce el efecto del cambio de divisa y suele costar algo más. La bolsa puede caer igual.'),
+      buckets('¿De qué moneda depende?', ['De la moneda de los activos', 'De la moneda de cotización'], [['Que te afecte una caída del dólar', 0], ['Pagar cambio de divisa al comprar', 1], ['Tu resultado en euros a largo plazo', 0], ['El precio que ves en la orden', 1]], 'El riesgo y el resultado dependen de lo que hay dentro. El precio que ves y el coste de comprar, de dónde cotiza.'),
+      chat(['He comprado el ETF mundial en euros 😌', 'Así el dólar ya no me afecta, ¿verdad?'], 'Lumi ha comprado un ETF mundial que cotiza en euros y cree que así el dólar ya no le afecta. ¿Qué le contestas?', [['Exacto: en euros no hay riesgo de divisa', 'Lo hay: buena parte de esas empresas gana y vale en dólares.'], ['Te afecta igual: lo que cuenta es lo que hay dentro', '¡Eso! En euros te ahorras el cambio al comprar, no el riesgo.'], ['Te afecta la mitad que en dólares', 'Ni la mitad ni el doble: exactamente lo mismo.']], 1, 'Un ETF mundial tiene muchas empresas americanas. Cotice donde cotice, el dólar influye en tu resultado.'),
+      multi('Aportas cada mes y quieres pagar menos por cambiar de divisa. ¿Qué ayuda? Marca todo.', ['Comprar la versión que cotiza en euros', 'Comprar una clase cubierta', 'Usar un bróker que cobre poco por el cambio', 'Vender antes de que baje el dólar'], [0, 2], 'El coste del cambio se evita comprando en euros o con un bróker barato en eso. La clase cubierta trata el riesgo, no esa comisión; y nadie sabe cuándo bajará el dólar.'),
+      fill('El riesgo de divisa de un fondo depende de la moneda de sus ____.', 'activos', ['comisiones', 'gestores', 'folletos'], 'Lo que hay dentro decide a qué monedas estás expuesto.'),
+    ], { minutes: 6 }),
   ],
 })

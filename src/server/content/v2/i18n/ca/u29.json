@@ -319,6 +319,49 @@
   "u29r": {
    "title": "Repàs de la unitat",
    "steps": []
+  },
+  "u29l8": {
+   "title": "En euros o en dòlars? La divisa del teu ETF",
+   "steps": [
+    {
+     "texts": [
+      "«El compro en euros i llestos»",
+      "Pablo",
+      "Vull un ETF de la borsa dels Estats Units. N'hi ha un que cotitza en dòlars i un altre d'igual que cotitza en euros.",
+      "Compro el d'euros i així **el dòlar no m'afecta**.",
+      "Té raó?",
+      "Sí: si el paga en euros, el seu risc és en euros",
+      "Les empreses que hi ha a dins continuen guanyant i valent en dòlars.",
+      "No: el risc ve del que hi ha a dins, no de la moneda en què el compra",
+      "Això mateix. Els dos ETF tenen les mateixes empreses: el dòlar els afecta exactament igual.",
+      "A mitges: el d'euros es mou menys",
+      "Es mouen igual. El preu en euros ja porta a dins el canvi del dia.",
+      "Un fons té dues monedes que importen: la dels **seus actius**, que és la del risc, i la de **cotització**, que és amb la qual tu el compres."
+     ]
+    },
+    {
+     "texts": [
+      "Aleshores, per a què serveix triar?",
+      "Elena",
+      "Si el risc és el mateix, què més dona comprar el que cotitza en euros o el de dòlars?",
+      "Què canvia?",
+      "Res: és exactament igual",
+      "El risc, sí. Però per comprar el de dòlars el teu bròquer t'ha de canviar els euros, i sol cobrar per això.",
+      "El que pagues pel canvi de divisa a cada compra",
+      "Això. Amb el que cotitza en euros no hi ha cap canvi per pagar ni en comprar ni en vendre.",
+      "La rendibilitat: en dòlars es guanya més",
+      "El de dins és el mateix. La moneda del preu no fa guanyar més.",
+      "I si de debò no vull que el dòlar m'afecti?",
+      "Per a això hi ha les classes **cobertes** («EUR Hedged»): redueixen l'efecte del canvi, costen una mica més i **no treuen el risc de la borsa**."
+     ]
+    },
+    {
+     "title": "Dues monedes i una decisió",
+     "body": "• **Moneda dels actius**: la de les empreses o bons que hi ha a dins. És la que t'exposa al canvi de divisa.\n• **Moneda de cotització**: la del preu que veus quan compres. No canvia el teu risc; sí que pot canviar el que pagues al teu bròquer.\n\nComprar en euros un fons d'empreses americanes **no elimina** l'efecte del dòlar. El redueix una classe **coberta**, amb un cost.\n\nA la pràctica: si hi ha la versió que cotitza en euros, t'estalvies el canvi de divisa a cada compra.",
+     "key": "El risc de divisa depèn del que el fons té a dins, no de la moneda en què el compres.",
+     "tip": "Prova-ho: obre la fitxa d'un ETF a Mercat i mira en quina moneda cotitza i de quins països són les seves empreses."
+    }
+   ]
   }
  },
  "questions": {
@@ -713,6 +756,111 @@
     "En va compensar una part, no tota: l'or va pujar menys del que van caure les accions."
    ],
    "explanation": "Dos actius que no es mouen alhora suavitzen la caiguda del conjunt: això és el que aporta una correlació baixa."
+  },
+  "u29l8-1": {
+   "prompt": "Aparella cada idea amb el que significa.",
+   "options": [
+    "Moneda dels actius",
+    "Moneda de cotització",
+    "Classe coberta",
+    "Canvi de divisa"
+   ],
+   "explanation": "El risc és als actius; el cost, a la conversió.",
+   "right": [
+    "La del preu al qual compres",
+    "Redueix l'efecte del canvi, amb un cost",
+    "El que cobra el bròquer per convertir els teus euros",
+    "La de les empreses o bons que hi ha a dins"
+   ]
+  },
+  "u29l8-2": {
+   "unit": "%",
+   "prompt": "El teu ETF de borsa americana puja un 10 % en dòlars en un any. Aquell any el dòlar cau un 5 % respecte a l'euro. Quant has guanyat en euros, en percentatge?",
+   "options": [],
+   "explanation": "1,10 × 0,95 = 1,045: un 4,5 %. Tant és que el compressis en euros o en dòlars."
+  },
+  "u29l8-3": {
+   "prompt": "Comprar en euros un ETF d'empreses americanes elimina l'efecte del dòlar.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "El preu en euros ja inclou el canvi del dia. L'efecte del dòlar continua allà."
+  },
+  "u29l8-4": {
+   "prompt": "La Laura aporta cada mes a un ETF mundial. El seu bròquer cobra per cada canvi de divisa. El mateix ETF cotitza en euros en una borsa i en dòlars en una altra. Quin compra?",
+   "options": [
+    "El que cotitza en euros",
+    "Un cada mes, per repartir",
+    "El de dòlars: és la moneda «de debò» del fons"
+   ],
+   "explanation": "Tots dos tenen les mateixes empreses. La diferència és el que costa comprar-los.",
+   "feedback": [
+    "Bé: mateix fons, mateix risc, i sense pagar el canvi a cada aportació.",
+    "Repartir entre tots dos no diversifica res: és el mateix fons.",
+    "Hauria de canviar euros a dòlars cada mes i pagar per això, sense guanyar res a canvi."
+   ]
+  },
+  "u29l8-5": {
+   "prompt": "En una classe coberta («EUR Hedged») d'un fons de borsa americana, què continua igual?",
+   "options": [
+    "El risc que caigui la borsa",
+    "L'efecte del dòlar sobre el teu resultat",
+    "El cost del fons"
+   ],
+   "explanation": "La cobertura redueix l'efecte del canvi de divisa i sol costar una mica més. La borsa pot caure igualment."
+  },
+  "u29l8-6": {
+   "prompt": "De quina moneda depèn?",
+   "options": [
+    "Pagar canvi de divisa en comprar",
+    "El teu resultat en euros a llarg termini",
+    "El preu que veus a l'ordre",
+    "Que t'afecti una caiguda del dòlar"
+   ],
+   "explanation": "El risc i el resultat depenen del que hi ha a dins. El preu que veus i el cost de comprar, d'on cotitza.",
+   "right": [
+    "De la moneda dels actius",
+    "De la moneda de cotització"
+   ]
+  },
+  "u29l8-7": {
+   "prompt": "La Lumi ha comprat un ETF mundial que cotitza en euros i creu que així el dòlar ja no l'afecta. Què li contestes?",
+   "options": [
+    "T'afecta la meitat que en dòlars",
+    "Exacte: en euros no hi ha risc de divisa",
+    "T'afecta igual: el que compta és el que hi ha a dins"
+   ],
+   "explanation": "Un ETF mundial té moltes empreses americanes. Cotitzi on cotitzi, el dòlar influeix en el teu resultat.",
+   "feedback": [
+    "Ni la meitat ni el doble: exactament el mateix.",
+    "N'hi ha: bona part d'aquestes empreses guanya i val en dòlars.",
+    "Això! En euros t'estalvies el canvi en comprar, no el risc."
+   ],
+   "lines": [
+    "He comprat l'ETF mundial en euros 😌",
+    "Així el dòlar ja no m'afecta, oi?"
+   ]
+  },
+  "u29l8-8": {
+   "prompt": "Aportes cada mes i vols pagar menys per canviar de divisa. Què hi ajuda? Marca-ho tot.",
+   "options": [
+    "Comprar una classe coberta",
+    "Fer servir un bròquer que cobri poc pel canvi",
+    "Vendre abans que baixi el dòlar",
+    "Comprar la versió que cotitza en euros"
+   ],
+   "explanation": "El cost del canvi s'evita comprant en euros o amb un bròquer barat en això. La classe coberta tracta el risc, no aquesta comissió; i ningú sap quan baixarà el dòlar."
+  },
+  "u29l8-9": {
+   "prompt": "El risc de divisa d'un fons depèn de la moneda dels seus ____.",
+   "options": [
+    "comissions",
+    "fullets",
+    "gestors",
+    "actius"
+   ],
+   "explanation": "El que hi ha a dins decideix a quines monedes estàs exposat."
   }
  }
 }

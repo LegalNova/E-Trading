@@ -316,6 +316,49 @@
     }
    ]
   },
+  "u29l8": {
+   "title": "¿En euros o en dólares? La divisa de tu ETF",
+   "steps": [
+    {
+     "texts": [
+      "«Lo compro en euros y listo»",
+      "Pablo",
+      "Quiero un ETF de la bolsa de Estados Unidos. Hay uno que cotiza en dólares y otro igual que cotiza en euros.",
+      "Compro el de euros y así **el dólar no me afecta**.",
+      "¿Tiene razón?",
+      "Sí: si lo paga en euros, su riesgo es en euros",
+      "Las empresas que hay dentro siguen ganando y valiendo en dólares.",
+      "No: el riesgo viene de lo que hay dentro, no de la moneda en que lo compra",
+      "Eso es. Los dos ETF tienen las mismas empresas: les afecta el dólar exactamente igual.",
+      "A medias: el de euros se mueve menos",
+      "Se mueven igual. El precio en euros ya lleva dentro el cambio del día.",
+      "Un fondo tiene dos monedas que importan: la de **sus activos**, que es la del riesgo, y la de **cotización**, que es en la que tú lo compras."
+     ]
+    },
+    {
+     "texts": [
+      "Entonces, ¿para qué sirve elegir?",
+      "Elena",
+      "Si el riesgo es el mismo, ¿qué más da comprar el que cotiza en euros o el de dólares?",
+      "¿Qué cambia?",
+      "Nada: es exactamente igual",
+      "El riesgo, sí. Pero para comprar el de dólares tu bróker tiene que cambiarte los euros, y suele cobrar por ello.",
+      "Lo que pagas por el cambio de divisa en cada compra",
+      "Eso. Con el que cotiza en euros no hay cambio que pagar al comprar ni al vender.",
+      "La rentabilidad: en dólares se gana más",
+      "Lo de dentro es lo mismo. La moneda del precio no hace ganar más.",
+      "¿Y si de verdad no quiero que el dólar me afecte?",
+      "Para eso existen las clases **cubiertas** («EUR Hedged»): reducen el efecto del cambio, cuestan algo más y **no quitan el riesgo de la bolsa**."
+     ]
+    },
+    {
+     "title": "Dos monedas y una decisión",
+     "body": "• **Moneda de los activos**: la de las empresas o bonos que hay dentro. Es la que te expone al cambio de divisa.\n• **Moneda de cotización**: la del precio que ves al comprar. No cambia tu riesgo; sí puede cambiar lo que pagas a tu bróker.\n\nComprar en euros un fondo de empresas americanas **no elimina** el efecto del dólar. Lo reduce una clase **cubierta**, con un coste.\n\nEn la práctica: si existe la versión que cotiza en euros, te ahorras el cambio de divisa en cada compra.",
+     "key": "El riesgo de divisa depende de lo que el fondo tiene dentro, no de la moneda en que lo compras.",
+     "tip": "Pruébalo: abre la ficha de un ETF en Mercado y mira en qué moneda cotiza y de qué países son sus empresas."
+    }
+   ]
+  },
   "u29r": {
    "title": "Repaso de la unidad",
    "steps": []
@@ -713,6 +756,111 @@
     "Quiero que mi dinero apoye empresas responsables 🌱",
     "¿Basta con que el fondo ponga ESG en el nombre?"
    ]
+  },
+  "u29l8-1": {
+   "prompt": "Empareja cada idea con lo que significa.",
+   "options": [
+    "Moneda de los activos",
+    "Moneda de cotización",
+    "Clase cubierta",
+    "Cambio de divisa"
+   ],
+   "explanation": "El riesgo está en los activos; el coste, en la conversión.",
+   "right": [
+    "La del precio al que compras",
+    "Reduce el efecto del cambio, con un coste",
+    "Lo que cobra el bróker por convertir tus euros",
+    "La de las empresas o bonos que hay dentro"
+   ]
+  },
+  "u29l8-2": {
+   "prompt": "Tu ETF de bolsa americana sube un 10 % en dólares en un año. Ese año el dólar cae un 5 % frente al euro. ¿Cuánto has ganado en euros, en porcentaje?",
+   "options": [],
+   "explanation": "1,10 × 0,95 = 1,045: un 4,5 %. Da igual que lo compraras en euros o en dólares.",
+   "unit": "%"
+  },
+  "u29l8-3": {
+   "prompt": "Comprar en euros un ETF de empresas americanas elimina el efecto del dólar.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "explanation": "El precio en euros ya incluye el cambio del día. El efecto del dólar sigue ahí."
+  },
+  "u29l8-4": {
+   "prompt": "Laura aporta cada mes a un ETF mundial. Su bróker cobra por cada cambio de divisa. El mismo ETF cotiza en euros en una bolsa y en dólares en otra. ¿Cuál compra?",
+   "options": [
+    "El que cotiza en euros",
+    "Uno cada mes, para repartir",
+    "El de dólares: es la moneda «de verdad» del fondo"
+   ],
+   "explanation": "Los dos tienen las mismas empresas. La diferencia está en lo que cuesta comprarlos.",
+   "feedback": [
+    "Bien: mismo fondo, mismo riesgo, y sin pagar el cambio en cada aportación.",
+    "Repartir entre los dos no diversifica nada: es el mismo fondo.",
+    "Tendría que cambiar euros a dólares cada mes y pagar por ello, sin ganar nada a cambio."
+   ]
+  },
+  "u29l8-5": {
+   "prompt": "En una clase cubierta («EUR Hedged») de un fondo de bolsa americana, ¿qué sigue igual?",
+   "options": [
+    "El riesgo de que caiga la bolsa",
+    "El efecto del dólar sobre tu resultado",
+    "El coste del fondo"
+   ],
+   "explanation": "La cobertura reduce el efecto del cambio de divisa y suele costar algo más. La bolsa puede caer igual."
+  },
+  "u29l8-6": {
+   "prompt": "¿De qué moneda depende?",
+   "options": [
+    "Pagar cambio de divisa al comprar",
+    "Tu resultado en euros a largo plazo",
+    "El precio que ves en la orden",
+    "Que te afecte una caída del dólar"
+   ],
+   "explanation": "El riesgo y el resultado dependen de lo que hay dentro. El precio que ves y el coste de comprar, de dónde cotiza.",
+   "right": [
+    "De la moneda de los activos",
+    "De la moneda de cotización"
+   ]
+  },
+  "u29l8-7": {
+   "prompt": "Irene ha comprado un ETF mundial que cotiza en euros y cree que así el dólar ya no le afecta. ¿Qué le contestas?",
+   "options": [
+    "Te afecta la mitad que en dólares",
+    "Exacto: en euros no hay riesgo de divisa",
+    "Te afecta igual: lo que cuenta es lo que hay dentro"
+   ],
+   "explanation": "Un ETF mundial tiene muchas empresas americanas. Cotice donde cotice, el dólar influye en tu resultado.",
+   "feedback": [
+    "Ni la mitad ni el doble: exactamente lo mismo.",
+    "Lo hay: buena parte de esas empresas gana y vale en dólares.",
+    "¡Eso! En euros te ahorras el cambio al comprar, no el riesgo."
+   ],
+   "lines": [
+    "He comprado el ETF mundial en euros 😌",
+    "Así el dólar ya no me afecta, ¿verdad?"
+   ]
+  },
+  "u29l8-8": {
+   "prompt": "Aportas cada mes y quieres pagar menos por cambiar de divisa. ¿Qué ayuda? Marca todo.",
+   "options": [
+    "Comprar una clase cubierta",
+    "Usar un bróker que cobre poco por el cambio",
+    "Vender antes de que baje el dólar",
+    "Comprar la versión que cotiza en euros"
+   ],
+   "explanation": "El coste del cambio se evita comprando en euros o con un bróker barato en eso. La clase cubierta trata el riesgo, no esa comisión; y nadie sabe cuándo bajará el dólar."
+  },
+  "u29l8-9": {
+   "prompt": "El riesgo de divisa de un fondo depende de la moneda de sus ____.",
+   "options": [
+    "comisiones",
+    "folletos",
+    "gestores",
+    "activos"
+   ],
+   "explanation": "Lo que hay dentro decide a qué monedas estás expuesto."
   }
  }
 }
