@@ -101,40 +101,41 @@ export default unit({
       scenario('Llevas seis años con un fondo de valor. Tu cuñado, con uno de crecimiento, ha ganado el doble. ¿Qué haces?', [['Me cambio al suyo: está claro cuál funciona', 'Cambiarte al estilo que acaba de ganar es comprar caro lo que ya ha subido.'], ['Reviso si mis razones siguen en pie y, si es así, mantengo el plan', 'Eso. Un estilo se elige sabiendo que tendrá años malos; lo que lo rompe es abandonarlo en ellos.'], ['Vendo todo y me quedo en liquidez', 'Sales del mercado por una comparación, no porque tu plan haya fallado.']], 1, 'Ningún estilo gana siempre. Elige uno que puedas mantener cuando va por detrás.'),
     ], { source: '5.1', minutes: 6, retire: [0, 1, 2, 4, 6, 7, 8] }),
 
+    // Rehecha en la auditoría (RED-3 y RED-26): repetía u8l3 (el euro «gratis»), u17l4 (dividendo sano o alarma) y u10l5
+    // (acumulación o distribución). Ahora es la estrategia: dividendo creciente frente a dividendo alto, rentabilidad total,
+    // el impuesto de cobrar cada año y la concentración en pocos sectores.
+    // Datos de la pieza: ETF Vanguard High Dividend Yield (VYM) y SPDR S&P 500 (SPY), cierres mensuales ajustados de
+    // Yahoo Finance, de enero de 2007 a diciembre de 2025: 10.000 → 49.550 y 67.475; peor caída −51,8 % y −50,8 %. Fixture `mix-dividend`.
     lesson('u25l4', 'Invertir por dividendos', [
-      story('El euro «gratis»', [{ id: 'ines', name: 'Inés' }], [
-        say('ines', '¡Mi acción me ha pagado 1 € de dividendo! Dinero gratis.'),
-        note('Ese mismo día, la acción cotiza 1 € más barata: es la fecha ex-dividendo.'),
-        choose('¿Inés es ahora más rica?', [
-          opt('Sí: tiene 1 € más por acción', 'bad', say('lumi', 'Tiene 1 € en efectivo y 1 € menos en acciones. Se queda igual.')),
-          opt('No: ese euro ha salido del valor de la empresa', 'good', say('lumi', '¡Exacto! El dividendo no es dinero gratis: sale de la empresa.')),
-          opt('Sí, y además sin impuestos', 'bad', say('lumi', 'Tributa en el IRPF, del 19 % al 30 %. Suelen retener un 19 %.')),
+      story('Un 8 % quieto o un 3 % que crece', [{ id: 'hugo', name: 'Hugo' }], [
+        say('hugo', 'Quiero vivir de dividendos algún día. Dudo entre dos empresas.'),
+        say('hugo', 'Una paga un **8 %** y lleva años sin subirlo. La otra paga un **3 %** y lo sube un **8 % cada año**.'),
+        choose('Por cada 1.000 € invertidos hoy, ¿cuál le pagará más dentro de 15 años?', [
+          opt('La del 8 %: empieza muy por delante', 'ok', say('lumi', 'Empieza por delante, sí: 80 € frente a 30 €. Pero 30 € que crecen un 8 % cada año son **95 €** en el año 15.')),
+          opt('La del 3 %: para entonces paga más', 'good', say('lumi', 'Eso: 30 € que crecen un 8 % al año son **95 €** en el año 15, frente a los 80 € de siempre.')),
+          opt('Las dos lo mismo', 'bad', say('lumi', 'No: 80 € fijos frente a 30 € que crecen. A partir del año 13, la segunda paga más.')),
         ]),
-        say('ines', 'Entonces, ¿qué miro?'),
-        say('lumi', 'La **rentabilidad total**: precio más dividendos. Y que el dividendo sea sostenible.'),
+        say('hugo', 'Trece años es mucho esperar…'),
+        say('lumi', 'Por eso es una estrategia de décadas. Y ojo con el 8 %: un dividendo muy alto a menudo avisa de un recorte.'),
       ]),
       play({
-        title: '¿Dividendo sano o alarma?',
-        intro: 'Dos ratios ayudan: la **rentabilidad por dividendo** (dividendo ÷ precio) y el ***pay-out*** (dividendo ÷ beneficio). Clasifica cada caso.',
-        widget: {
-          kind: 'sort',
-          bins: [{ label: 'Parece sostenible' }, { label: 'Señal de alarma' }],
-          cards: [
-            { icon: 'percent', label: 'Un dividendo del 3 % cubierto con holgura por el beneficio', bin: 0, why: 'Un dividendo moderado que el beneficio cubre de sobra.' },
-            { icon: 'down', label: 'Un dividendo del 12 % con los beneficios en caída', bin: 1, why: 'Muchas veces el precio ha caído porque el mercado espera un recorte.' },
-            { icon: 'gauge', label: 'Un pay-out del 95 % durante años', bin: 1, why: 'Reparte casi todo lo que gana: poco margen si los beneficios bajan.' },
-            { icon: 'warning', label: 'Un 15 % de dividendo «garantizado», solo hoy', bin: 1, why: 'Ninguna acción garantiza su dividendo: es la señal clásica de fraude.' },
-            { icon: 'bank', label: 'Un dividendo cubierto por el beneficio y por el flujo de caja', bin: 0, why: 'Si lo cubren el beneficio y la caja, es más probable que se mantenga.' },
-          ],
+        title: '¿Más dividendo, más ganancia?',
+        intro: 'Datos reales, de enero de 2007 a diciembre de 2025: pones **10.000 €** en un fondo de acciones de **dividendo alto** de EE. UU. o en el **S&P 500** entero. Los dos, con los dividendos reinvertidos.',
+        widget: { kind: 'mix', series: 'mix-dividend', weights: [100, 0], amount: 10000 },
+        predict: {
+          prompt: '¿Cuál acabó con más dinero?',
+          options: ['El de dividendo alto: cobra más cada año', 'El S&P 500 entero', 'Empataron'],
+          answer: 1,
+          why: 'El de dividendo alto acabó en **49.550 €**; el S&P 500, en **67.475 €**. Y en la crisis de 2008 cayeron casi lo mismo: un 52 % y un 51 %.',
         },
-        goal: { text: 'Clasifica los cinco dividendos.', when: [when('done', '==', 5)] },
-        insight: 'Un dividendo altísimo a veces es una **alarma**, no un regalo. Con un *pay-out* por encima del **80–90 %** de forma continuada, el dividendo puede estar en peligro.',
+        goal: { text: 'Pasa todo al S&P 500 y compara.', when: [when('w1', '==', 100)] },
+        insight: 'Cobrar más dividendo **no dio más rentabilidad total** en este periodo, ni protegió en la caída. El dividendo es una forma de cobrar, no una ganancia extra.',
         lumi: [
-          { when: when('wrong', '>=', 2), say: 'Pista: cuanto más alto y más «seguro», más sospechoso.', mood: 'THINKING' },
-          { say: '¿Sano o alarma? Clasifica cada dividendo', mood: 'HAPPY' },
+          { when: when('w1', '==', 100), say: 'Lo que cuenta es el total: precio más dividendos.', mood: 'THINKING' },
+          { say: 'Mueve el peso entre los dos fondos', mood: 'HAPPY' },
         ],
       }),
-      key('Acumulación o distribución', 'Los fondos de **distribución** te pagan los dividendos en la cuenta: útiles si necesitas rentas.\n\nPara acumular patrimonio, los de **acumulación** reinvierten sin pagar impuestos hasta la venta.', 'El dividendo no es dinero gratis: sale del valor de la empresa. Lo que importa es la rentabilidad total.', 'Pruébalo: abre en Mercado una empresa de dividendo alto y mira si su precio crece.'),
+      key('El peaje de cobrar cada año', 'Cada dividendo que cobras tributa **ese mismo año** en la base del ahorro (desde el 19 %). Un fondo de **acumulación** lo reinvierte dentro y no pagas hasta que vendes.\n\nY mira la **concentración**: los dividendos altos suelen agruparse en pocos sectores, como bancos, eléctricas y telecos. Una cartera «de dividendos» puede acabar siendo una apuesta por tres sectores.', 'El dividendo es una forma de cobrar, no una rentabilidad extra: mira siempre la rentabilidad total.', 'Pruébalo: pregúntale a Lumi qué sectores pagan más dividendo en el IBEX 35.'),
     ], [
       num('Una acción cotiza a 15 € y paga 0,50 € de dividendo al año. ¿Cuál es su rentabilidad por dividendo? (redondea a un decimal)', 3.3, '%', '0,50 ÷ 15 ≈ 0,033 → 3,3 %.', 2),
       num('Una empresa gana 2 € por acción y paga 1,80 € de dividendo. ¿Cuál es su pay-out?', 90, '%', '1,80 ÷ 2 = 0,9 → 90 %: reparte casi todo lo que gana. Si los beneficios bajan, el dividendo peligra.'),
@@ -148,7 +149,11 @@ export default unit({
       fill('El día en que la acción empieza a cotizar sin derecho al dividendo se llama fecha ____.', 'ex-dividendo', ['de pago', 'de valor', 'de emisión'], 'Ese día el precio baja aproximadamente lo que se paga de dividendo.'),
       scenario('Tienes 20 años y quieres hacer crecer tu dinero durante décadas, sin necesitar rentas. Dudas entre la versión de acumulación y la de distribución del mismo fondo indexado. ¿Cuál encaja mejor?', [['La de distribución: así cobro algo cada año', 'Cobrarías dividendos que no necesitas y que tributan cada año: te retienen un 19 % antes de reinvertir.'], ['La de acumulación: reinvierte sola y no pagas impuestos hasta vender', 'Bien: todo el dividendo sigue trabajando dentro del fondo, y Hacienda espera a que vendas.'], ['Da igual: son el mismo fondo', 'Invierten en lo mismo, pero no tributan igual: para acumular, la diferencia suma con los años.']], 1, 'Si no necesitas rentas, la acumulación es más eficiente: el dividendo se reinvierte entero. La distribución tienta porque «cobras», pero cada pago tributa antes de volver a invertirlo.'),
       chat(['Voy a comprar la acción con el dividendo más alto del Mercado.', 'Un 12 % al año: rentas aseguradas.'], '¿Qué le contestas a Lumi?', [['Perfecto: cuanto más alto, mejor', 'Un 12 % suele significar que el precio ha caído porque el mercado espera un recorte.'], ['Antes, mira si el beneficio lo cubre y por qué ha caído el precio', 'Vale: si los beneficios caen, ese 12 % es una alarma, no un regalo.'], ['Compra también la del segundo dividendo más alto', 'Dos dividendos en peligro no hacen uno seguro.']], 1, 'Un dividendo altísimo a veces es la señal de que va a recortarse: lo que importa es que el beneficio lo cubra. La tentación es mirar solo el tamaño del dividendo.'),
-    ], { source: '4.7', minutes: 6, retire: [0, 1, 2, 4, 5, 7] }),
+      single('Una empresa paga un 2,5 % de dividendo y lo sube cada año. ¿Qué mira quien invierte en dividendos crecientes?', ['Solo el porcentaje que paga hoy', 'Si el beneficio crece y sostiene las subidas', 'Cuánto ha caído desde su máximo'], 1, 'Un dividendo solo puede crecer durante años si el beneficio crece con él.'),
+      num('Cobras 600 € de dividendos al año y tributan al 19 %. ¿Cuánto pagas de impuestos cada año por cobrarlos?', 114, '€', '600 × 0,19 = 114 €. En un fondo de acumulación, ese dinero seguiría invertido hasta que vendas.'),
+      scenario('Tu cartera «de dividendos» tiene cinco acciones: dos bancos, dos eléctricas y una teleco. ¿Qué riesgo ves?', [['Ninguno: todas pagan buen dividendo', 'Pagan, pero dependen de las mismas cosas: una mala racha del sector les llega a todas a la vez.'], ['Está concentrada en tres sectores', 'Eso: elegir por dividendo te ha llevado, sin querer, a una apuesta sectorial.'], ['Son demasiadas acciones', 'Cinco son pocas, no muchas.']], 1, 'Elegir solo por dividendo suele concentrar la cartera en pocos sectores. Mira también cómo está repartida.'),
+      tf('Un fondo que reparte más dividendos da, por eso mismo, más rentabilidad total.', false, 'La rentabilidad total es precio más dividendos. Lo que se reparte sale del valor del fondo.'),
+    ], { source: '4.7', minutes: 6, retire: [0, 1, 2, 3, 4, 5, 7, 8, 9, 10] }),
 
     lesson('u25l5', 'Seguir la tendencia y el momentum', [
       story('Las 20 operaciones de Hugo', [{ id: 'hugo', name: 'Hugo' }], [

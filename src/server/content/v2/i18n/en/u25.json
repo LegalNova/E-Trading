@@ -99,48 +99,43 @@
    "steps": [
     {
      "texts": [
-      "The «free» euro",
-      "Inés",
-      "My share has paid me a €1 dividend! Free money.",
-      "That same day, the share trades €1 cheaper: it's the ex-dividend date.",
-      "Is Inés richer now?",
-      "Yes: she has €1 more per share",
-      "She has €1 in cash and €1 less in shares. She's no better off.",
-      "No: that euro came out of the company's value",
-      "Exactly! A dividend isn't free money: it comes out of the company.",
-      "Yes, and tax-free too",
-      "It's taxed under IRPF (Spanish income tax), at 19 % to 30 %. Usually 19 % is withheld.",
-      "So what should I look at?",
-      "**Total return**: price plus dividends. And whether the dividend is sustainable."
+      "A flat 8 % or a growing 3 %",
+      "Hugo",
+      "I want to live off dividends one day. I'm torn between two companies.",
+      "One pays **8 %** and hasn't raised it in years. The other pays **3 %** and raises it by **8 % every year**.",
+      "For every €1,000 invested today, which will pay him more in 15 years?",
+      "The 8 % one: it starts far ahead",
+      "It does start ahead: €80 against €30. But €30 growing 8 % every year is **€95** in year 15.",
+      "The 3 % one: by then it pays more",
+      "That's it: €30 growing 8 % a year is **€95** in year 15, against the same old €80.",
+      "Both the same",
+      "No: a fixed €80 against €30 that keeps growing. From year 13 on, the second one pays more.",
+      "Thirteen years is a long wait…",
+      "That's why it's a strategy for decades. And watch that 8 %: a very high dividend is often a warning of a cut."
      ]
     },
     {
      "texts": [
-      "Healthy dividend or red flag?",
-      "Two ratios help: the **dividend yield** (dividend ÷ price) and the ***payout ratio*** (dividend ÷ earnings). Sort each case.",
-      "Looks sustainable",
-      "Red flag",
-      "A 3 % dividend comfortably covered by earnings",
-      "A moderate dividend that earnings cover with room to spare.",
-      "A 12 % dividend with earnings falling",
-      "Often the price has fallen because the market expects a cut.",
-      "A 95 % payout ratio for years",
-      "It hands out almost everything it earns: little margin if earnings drop.",
-      "A «guaranteed» 15 % dividend, today only",
-      "No share guarantees its dividend: it's the classic sign of fraud.",
-      "A dividend covered by earnings and by cash flow",
-      "If earnings and cash cover it, it's more likely to last.",
-      "Sort the five dividends.",
-      "A sky-high dividend is sometimes a **red flag**, not a gift. With a *payout ratio* above **80–90 %** year after year, the dividend may be at risk.",
-      "Hint: the higher and more «certain» it is, the more suspicious.",
-      "Healthy or red flag? Sort each dividend"
+      "More dividend, more gain?",
+      "Real data, from January 2007 to December 2025: you put **€10,000** into a fund of US **high-dividend** stocks or into the whole **S&P 500**. Both with dividends reinvested.",
+      "US high-dividend stocks",
+      "US stocks (S&P 500)",
+      "Which one ended up with more money?",
+      "The high-dividend one: it pays out more every year",
+      "The whole S&P 500",
+      "They tied",
+      "The high-dividend fund ended at **€49,550**; the S&P 500, at **€67,475**. And in the 2008 crisis they fell almost the same: 52 % and 51 %.",
+      "Move everything to the S&P 500 and compare.",
+      "Collecting more dividends **didn't give a higher total return** over this period, nor did it protect in the fall. A dividend is a way of getting paid, not an extra gain.",
+      "What counts is the total: price plus dividends.",
+      "Move the weight between the two funds"
      ]
     },
     {
-     "title": "Accumulating or distributing",
-     "body": "**Distributing** funds pay the dividends into your account: useful if you need an income.\n\nTo build wealth, **accumulating** funds reinvest them without paying tax until you sell.",
-     "key": "A dividend isn't free money: it comes out of the company's value. What matters is total return.",
-     "tip": "Try it: in Market, open a high-dividend company and check whether its price grows."
+     "title": "The toll of getting paid every year",
+     "body": "In Spain, every dividend you collect is taxed **that same year** as savings income (from 19 %). An **accumulating** fund reinvests it inside and you pay nothing until you sell.\n\nAnd look at **concentration**: high dividends tend to cluster in a few sectors, such as banks, utilities and telecoms. A «dividend» portfolio can end up being a bet on three sectors.",
+     "key": "A dividend is a way of getting paid, not an extra return: always look at total return.",
+     "tip": "Try it: ask Lumi which sectors pay the highest dividends in the IBEX 35."
     }
    ]
   },
@@ -498,24 +493,6 @@
     "This share was at €100 and now it's at €40: bargain!"
    ]
   },
-  "u25l4-4": {
-   "prompt": "Select the messages that are a scam or an obvious trap.",
-   "options": [
-    "Exclusive fund: 1 % dividend every month guaranteed, no risk. Transfer to this account today.",
-    "Live off dividends with just €1,000 💸 Join my paid group and I'll tell you which ones.",
-    "The company you hold shares in will pay a dividend of €0.40 per share. Ex-dividend date: the 12th.",
-    "Reminder: dividends are declared as investment income in your IRPF (Spanish income tax) return.",
-    "🔥 Share paying a GUARANTEED 15 % dividend. Today only, limited places."
-   ],
-   "explanation": "Promises of guaranteed dividends, urgency and «living off your investments with €1,000» are signs of fraud. No share guarantees its dividend.",
-   "senders": [
-    "Unknown",
-    "Influencer",
-    "Your broker",
-    "Spanish Tax Agency",
-    "«VIP Income» channel"
-   ]
-  },
   "u25l4-7": {
    "prompt": "Is it a feature of an accumulating fund or a distributing fund?",
    "options": [
@@ -528,44 +505,6 @@
    "right": [
     "Accumulating",
     "Distributing"
-   ]
-  },
-  "u25l4-9": {
-   "prompt": "Bruno is looking for income. He's torn between a company with a 12 % dividend, falling profits and rising debt, and another with a 3 % dividend comfortably covered by earnings. What's the more prudent criterion?",
-   "options": [
-    "Pick whichever has risen most this month",
-    "Look at how sustainable the dividend is, not just its size",
-    "The 12 % one: it pays four times as much"
-   ],
-   "explanation": "What matters is total return and that the dividend is sustainable.",
-   "feedback": [
-    "That says nothing about whether the dividend is sustainable.",
-    "Good: a covered, stable dividend is worth more than a high one at risk.",
-    "If it cuts the dividend and the share falls, Bruno loses income and capital at the same time."
-   ]
-  },
-  "u25l4-10": {
-   "prompt": "The day a share starts trading without the right to the dividend is called the ____ date.",
-   "options": [
-    "payment",
-    "value",
-    "issue",
-    "ex-dividend"
-   ],
-   "explanation": "On that day the price drops by roughly the amount paid out as a dividend."
-  },
-  "u25l4-11": {
-   "prompt": "You're 20 and want to grow your money over decades, without needing an income. You're torn between the accumulating and the distributing version of the same index fund. Which fits better?",
-   "options": [
-    "It doesn't matter: they're the same fund",
-    "The accumulating one: it reinvests on its own and you pay no tax until you sell",
-    "The distributing one: that way I get paid something every year"
-   ],
-   "explanation": "If you don't need an income, accumulating is more efficient: the whole dividend is reinvested. Distributing is tempting because you «get paid», but each payment is taxed before you can reinvest it.",
-   "feedback": [
-    "They invest in the same thing, but they're not taxed the same: when building wealth, the difference adds up over the years.",
-    "Good: the whole dividend keeps working inside the fund, and the taxman waits until you sell.",
-    "You'd receive dividends you don't need, taxed every year: 19 % is withheld before you can reinvest."
    ]
   },
   "u25l4-12": {
@@ -919,6 +858,43 @@
     "You leave the market because of a comparison, not because your plan has failed."
    ],
    "explanation": "No style wins all the time. Choose one you can stick with when it's lagging."
+  },
+  "u25l4-13": {
+   "prompt": "A company pays a 2.5 % dividend and raises it every year. What does a dividend-growth investor look at?",
+   "options": [
+    "Whether profits are growing and can support the increases",
+    "Only the percentage it pays today",
+    "How far it has fallen from its high"
+   ],
+   "explanation": "A dividend can only grow for years if profits grow with it."
+  },
+  "u25l4-14": {
+   "unit": "€",
+   "prompt": "You collect €600 in dividends a year and they're taxed at 19 %. How much tax do you pay each year for collecting them?",
+   "options": [],
+   "explanation": "600 × 0.19 = €114. In an accumulating fund, that money would stay invested until you sell."
+  },
+  "u25l4-15": {
+   "prompt": "Your «dividend» portfolio holds five stocks: two banks, two utilities and a telecom. What risk do you see?",
+   "options": [
+    "That's too many stocks",
+    "None: they all pay a good dividend",
+    "It's concentrated in three sectors"
+   ],
+   "feedback": [
+    "Five is few, not many.",
+    "They do pay, but they depend on the same things: a bad spell for the sector hits them all at once.",
+    "That's it: choosing by dividend has led you, without meaning to, into a sector bet."
+   ],
+   "explanation": "Choosing by dividend alone tends to concentrate a portfolio in a few sectors. Look at how it's spread too."
+  },
+  "u25l4-16": {
+   "prompt": "A fund that pays out more dividends gives, for that very reason, a higher total return.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Total return is price plus dividends. What's paid out comes out of the fund's value."
   }
  }
 }

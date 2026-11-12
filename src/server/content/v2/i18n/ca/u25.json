@@ -99,48 +99,43 @@
    "steps": [
     {
      "texts": [
-      "L'euro «gratis»",
-      "Inés",
-      "La meva acció m'ha pagat 1 € de dividend! Diners gratis.",
-      "Aquell mateix dia, l'acció cotitza 1 € més barata: és la data ex-dividend.",
-      "Ara la Inés és més rica?",
-      "Sí: té 1 € més per acció",
-      "Té 1 € en efectiu i 1 € menys en accions. Es queda igual.",
-      "No: aquest euro ha sortit del valor de l'empresa",
-      "Exacte! El dividend no són diners gratis: surt de l'empresa.",
-      "Sí, i a més sense impostos",
-      "Tributa a l'IRPF, del 19 % al 30 %. Normalment et retenen un 19 %.",
-      "Aleshores, què he de mirar?",
-      "La **rendibilitat total**: preu més dividends. I que el dividend sigui sostenible."
+      "Un 8 % quiet o un 3 % que creix",
+      "Hugo",
+      "Vull viure de dividends algun dia. Dubto entre dues empreses.",
+      "Una paga un **8 %** i fa anys que no l'apuja. L'altra paga un **3 %** i l'apuja un **8 % cada any**.",
+      "Per cada 1.000 € invertits avui, quina li pagarà més d'aquí a 15 anys?",
+      "La del 8 %: comença molt per davant",
+      "Comença per davant, sí: 80 € davant de 30 €. Però 30 € que creixen un 8 % cada any són **95 €** l'any 15.",
+      "La del 3 %: aleshores ja paga més",
+      "Això: 30 € que creixen un 8 % l'any són **95 €** l'any 15, davant dels 80 € de sempre.",
+      "Totes dues el mateix",
+      "No: 80 € fixos davant de 30 € que creixen. A partir de l'any 13, la segona paga més.",
+      "Tretze anys és molt d'esperar…",
+      "Per això és una estratègia de dècades. I compte amb el 8 %: un dividend molt alt sovint avisa d'una retallada."
      ]
     },
     {
      "texts": [
-      "Dividend sa o alarma?",
-      "Dues ràtios ajuden: la **rendibilitat per dividend** (dividend ÷ preu) i el ***pay-out*** (dividend ÷ benefici). Classifica cada cas.",
-      "Sembla sostenible",
-      "Senyal d'alarma",
-      "Un dividend del 3 % que el benefici cobreix amb marge",
-      "Un dividend moderat que el benefici cobreix de sobres.",
-      "Un dividend del 12 % amb els beneficis en caiguda",
-      "Moltes vegades el preu ha caigut perquè el mercat espera una retallada.",
-      "Un pay-out del 95 % durant anys",
-      "Reparteix gairebé tot el que guanya: poc marge si els beneficis baixen.",
-      "Un 15 % de dividend «garantit», només avui",
-      "Cap acció no garanteix el seu dividend: és el senyal clàssic de frau.",
-      "Un dividend cobert pel benefici i pel flux de caixa",
-      "Si el cobreixen el benefici i la caixa, és més probable que es mantingui.",
-      "Classifica els cinc dividends.",
-      "Un dividend altíssim de vegades és una **alarma**, no un regal. Amb un *pay-out* per sobre del **80–90 %** de manera continuada, el dividend pot estar en perill.",
-      "Pista: com més alt i més «segur», més sospitós.",
-      "Sa o alarma? Classifica cada dividend"
+      "Més dividend, més guany?",
+      "Dades reals, de gener del 2007 a desembre del 2025: poses **10.000 €** en un fons d'accions de **dividend alt** dels EUA o en l'**S&P 500** sencer. Tots dos, amb els dividends reinvertits.",
+      "Accions de dividend alt dels EUA",
+      "Accions dels EUA (S&P 500)",
+      "Quin va acabar amb més diners?",
+      "El de dividend alt: cobra més cada any",
+      "L'S&P 500 sencer",
+      "Van empatar",
+      "El de dividend alt va acabar en **49.550 €**; l'S&P 500, en **67.475 €**. I en la crisi del 2008 van caure gairebé el mateix: un 52 % i un 51 %.",
+      "Passa-ho tot a l'S&P 500 i compara.",
+      "Cobrar més dividend **no va donar més rendibilitat total** en aquest període, ni va protegir en la caiguda. El dividend és una manera de cobrar, no un guany extra.",
+      "El que compta és el total: preu més dividends.",
+      "Mou el pes entre els dos fons"
      ]
     },
     {
-     "title": "Acumulació o distribució",
-     "body": "Els fons de **distribució** et paguen els dividends al compte: són útils si necessites rendes.\n\nPer acumular patrimoni, els d'**acumulació** reinverteixen sense pagar impostos fins a la venda.",
-     "key": "El dividend no són diners gratis: surt del valor de l'empresa. El que importa és la rendibilitat total.",
-     "tip": "Prova-ho: obre a Mercat una empresa de dividend alt i mira si el seu preu creix."
+     "title": "El peatge de cobrar cada any",
+     "body": "Cada dividend que cobres tributa **aquell mateix any** a la base de l'estalvi (des del 19 %). Un fons d'**acumulació** el reinverteix a dins i no pagues fins que vens.\n\nI mira la **concentració**: els dividends alts solen agrupar-se en pocs sectors, com ara bancs, elèctriques i telecos. Una cartera «de dividends» pot acabar sent una aposta per tres sectors.",
+     "key": "El dividend és una manera de cobrar, no una rendibilitat extra: mira sempre la rendibilitat total.",
+     "tip": "Prova-ho: pregunta a la Lumi quins sectors paguen més dividend a l'IBEX 35."
     }
    ]
   },
@@ -498,24 +493,6 @@
     "Aquesta acció estava a 100 € i ara a 40 €: ganga!"
    ]
   },
-  "u25l4-4": {
-   "prompt": "Marca els missatges que són una estafa o una trampa evident.",
-   "options": [
-    "Fons exclusiu: 1 % de dividend cada mes assegurat, sense risc. Transfereix avui a aquest compte.",
-    "Viu de dividends amb només 1.000 € 💸 Uneix-te al meu grup de pagament i et dic quins.",
-    "L'empresa de la qual tens accions pagarà un dividend de 0,40 € per acció. Data ex-dividend: el dia 12.",
-    "Recorda: els dividends es declaren com a rendiments del capital mobiliari a l'IRPF.",
-    "🔥 Acció que paga un 15 % de dividend GARANTIT. Només avui, places limitades."
-   ],
-   "explanation": "Promeses de dividends garantits, urgència i «viure de rendes amb 1.000 €» són senyals de frau. Cap acció no garanteix el seu dividend.",
-   "senders": [
-    "Desconegut",
-    "Influencer",
-    "El teu bròquer",
-    "Agència Tributària",
-    "Canal «Rendes VIP»"
-   ]
-  },
   "u25l4-7": {
    "prompt": "És propi d'un fons d'acumulació o de distribució?",
    "options": [
@@ -528,44 +505,6 @@
    "right": [
     "Acumulació",
     "Distribució"
-   ]
-  },
-  "u25l4-9": {
-   "prompt": "En Bruno busca rendes. Dubta entre una empresa amb un dividend del 12 %, beneficis en caiguda i deute creixent, i una altra amb un 3 % cobert de sobres pel benefici. Quin és el criteri més prudent?",
-   "options": [
-    "Triar segons la que més ha pujat aquest mes",
-    "Mirar la sostenibilitat del dividend, no només la mida",
-    "La del 12 %: cobra quatre vegades més"
-   ],
-   "explanation": "L'important és la rendibilitat total i que el dividend sigui sostenible.",
-   "feedback": [
-    "Això no diu res de si el dividend és sostenible.",
-    "Bé: un dividend cobert i estable val més que un d'alt en perill.",
-    "Si retalla el dividend i l'acció cau, en Bruno perd rendes i capital alhora."
-   ]
-  },
-  "u25l4-10": {
-   "prompt": "El dia en què l'acció comença a cotitzar sense dret al dividend s'anomena data ____.",
-   "options": [
-    "de pagament",
-    "de valor",
-    "d'emissió",
-    "ex-dividend"
-   ],
-   "explanation": "Aquell dia el preu baixa aproximadament el que es paga de dividend."
-  },
-  "u25l4-11": {
-   "prompt": "Tens 20 anys i vols fer créixer els teus diners durant dècades, sense necessitar rendes. Dubtes entre la versió d'acumulació i la de distribució del mateix fons indexat. Quina encaixa millor?",
-   "options": [
-    "Tant és: són el mateix fons",
-    "La d'acumulació: reinverteix sola i no pagues impostos fins que vens",
-    "La de distribució: així cobro alguna cosa cada any"
-   ],
-   "explanation": "Si no necessites rendes, l'acumulació és més eficient: el dividend es reinverteix sencer. La distribució tempta perquè «cobres», però cada pagament tributa abans de tornar-lo a invertir.",
-   "feedback": [
-    "Inverteixen en el mateix, però no tributen igual: per acumular, la diferència suma amb els anys.",
-    "Bé: tot el dividend continua treballant dins del fons, i Hisenda espera que vengis.",
-    "Cobraries dividends que no necessites i que tributen cada any: et retenen un 19 % abans de reinvertir."
    ]
   },
   "u25l4-12": {
@@ -919,6 +858,43 @@
     "Surts del mercat per una comparació, no perquè el teu pla hagi fallat."
    ],
    "explanation": "Cap estil guanya sempre. Tria'n un que puguis mantenir quan va per darrere."
+  },
+  "u25l4-13": {
+   "prompt": "Una empresa paga un 2,5 % de dividend i l'apuja cada any. Què mira qui inverteix en dividends creixents?",
+   "options": [
+    "Si el benefici creix i sosté les pujades",
+    "Només el percentatge que paga avui",
+    "Quant ha caigut des del seu màxim"
+   ],
+   "explanation": "Un dividend només pot créixer durant anys si el benefici creix amb ell."
+  },
+  "u25l4-14": {
+   "unit": "€",
+   "prompt": "Cobres 600 € de dividends l'any i tributen al 19 %. Quant pagues d'impostos cada any per cobrar-los?",
+   "options": [],
+   "explanation": "600 × 0,19 = 114 €. En un fons d'acumulació, aquests diners continuarien invertits fins que venguis."
+  },
+  "u25l4-15": {
+   "prompt": "La teva cartera «de dividends» té cinc accions: dos bancs, dues elèctriques i una teleco. Quin risc hi veus?",
+   "options": [
+    "Són massa accions",
+    "Cap: totes paguen un bon dividend",
+    "Està concentrada en tres sectors"
+   ],
+   "feedback": [
+    "Cinc són poques, no moltes.",
+    "Paguen, però depenen de les mateixes coses: una mala ratxa del sector els arriba a totes alhora.",
+    "Això: triar per dividend t'ha portat, sense voler, a una aposta sectorial."
+   ],
+   "explanation": "Triar només per dividend sol concentrar la cartera en pocs sectors. Mira també com està repartida."
+  },
+  "u25l4-16": {
+   "prompt": "Un fons que reparteix més dividends dona, per això mateix, més rendibilitat total.",
+   "options": [
+    "Vertader",
+    "Fals"
+   ],
+   "explanation": "La rendibilitat total és preu més dividends. El que es reparteix surt del valor del fons."
   }
  }
 }

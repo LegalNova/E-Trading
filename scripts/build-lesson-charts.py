@@ -572,6 +572,7 @@ MIXES = [
     ('mix-bonds', '2003-01-01', '2025-12-01', [('stocks', 'SPY', 'Acciones de EE. UU. (S&P 500)'), ('long', 'TLT', 'Bonos del Tesoro de EE. UU. a más de 20 años'), ('short', 'SHY', 'Bonos del Tesoro de EE. UU. a 1-3 años')]),
     ('mix-commodities', '2007-01-01', '2025-12-01', [('stocks', 'SPY', 'Acciones de EE. UU. (S&P 500)'), ('gold', 'GLD', 'Oro'), ('basket', 'DBC', 'Cesta de materias primas')]),
     ('mix-world', '2012-02-01', '2025-12-01', [('world', 'URTH', 'Acciones del mundo desarrollado'), ('em', 'EEM', 'Acciones de países emergentes'), ('bonds', 'AGG', 'Bonos de EE. UU.')]),
+    ('mix-dividend', '2007-01-01', '2025-12-01', [('dividend', 'VYM', 'Acciones de dividendo alto de EE. UU.'), ('market', 'SPY', 'Acciones de EE. UU. (S&P 500)')]),
     ('mix-2000s', '2000-01-01', '2012-12-01', [('stocks', 'SPY', 'Acciones de EE. UU. (S&P 500)'), ('bonds', 'VBMFX', 'Bonos de EE. UU.'), ('em', 'VEIEX', 'Acciones de países emergentes')]),
 ]
 
