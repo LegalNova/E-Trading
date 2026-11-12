@@ -357,6 +357,93 @@
      "tip": "Try it: open your Portfolio and write in the journal, for each position, what would have to happen for you to sell it."
     }
    ]
+  },
+  "u30l8": {
+   "title": "How much do I need to retire? The 4 % rule",
+   "steps": [
+    {
+     "texts": [
+      "A number to start with",
+      "Elena",
+      "I want to know how much I'd need saved to stop working. Is there a sum for that?",
+      "There's a widely used one: the **4 % rule**. Work out what you'd spend a year from your savings and **multiply it by 25**.",
+      "Elena would need €20,000 a year from her savings, on top of her pension. What capital does that give?",
+      "€200,000",
+      "That's ten years of spending. The rule multiplies by 25.",
+      "€500,000",
+      "20,000 × 25 = €500,000. Taking 4 % of €500,000 is exactly €20,000.",
+      "€80,000",
+      "That's multiplying by 4. The rule says you withdraw 4 %, not that four years is enough.",
+      "It's the same sum seen the other way round: having **25 times** your spending means being able to withdraw **4 %** a year."
+     ]
+    },
+    {
+     "texts": [
+      "What the rule doesn't say",
+      "Bruno",
+      "So with €500,000 that's it: I take out €20,000 every year and the money **never runs out**.",
+      "Is that so?",
+      "Yes: that's why it's called a rule",
+      "It's a rule of thumb for doing the numbers, not a law. Nobody guarantees the future.",
+      "No: it came from past data and retirements of about 30 years",
+      "That's it. It was worked out with US shares and bonds from the last century, for about 30 years.",
+      "Yes, if he has it all in shares",
+      "All in shares makes the ride rougher, not safer.",
+      "It doesn't count **taxes or fees** either. And if you retire very young, 30 years falls short.",
+      "It's useful for an order of magnitude. After that, what you control matters most: **how much you spend**, when you start saving and your pension."
+     ]
+    },
+    {
+     "title": "The 4 % rule, with its limits",
+     "body": "**The sum:** what you need a year from your savings × 25. Or the other way round: of whatever you have, 4 % a year.\n\n**Where it comes from:** studies using US data (Bengen, 1994) for retirements of about 30 years.\n\n**Its limits:**\n\n• It isn't a guarantee: the future may differ from the past.\n• For more than 30 years you need to be more cautious.\n• It doesn't deduct taxes or fees.\n\nUse it to see roughly where your number lies, and review it every few years.",
+     "key": "Twenty-five times your annual spending is a starting point, not a promise.",
+     "tip": "Try it: work out a year of your spending, multiply it by 25 and note the figure in your journal."
+    }
+   ]
+  },
+  "u30l9": {
+   "title": "Investing for your children",
+   "steps": [
+    {
+     "texts": [
+      "Eighteen years ahead",
+      "Laura",
+      "My daughter has just been born. I want to set aside **€50 a month** for when she turns 18.",
+      "I'll put it in a no-risk account: you don't gamble with children.",
+      "What's special about this money?",
+      "That it can never lose: everything risk-free",
+      "No stock market risk, true. But over 18 years inflation eats a large part of it.",
+      "That it has 18 years ahead of it",
+      "That's it. With that much time it can hold quite a lot in shares: there's time to recover from falls.",
+      "That it should go into whatever rises most",
+      "Chasing what rises most is betting. The usual rule applies here too: diversified and cheap.",
+      "And when there are only a few years left before it's needed, you lower the risk little by little. As with any goal."
+     ]
+    },
+    {
+     "texts": [
+      "In whose name?",
+      "Pablo",
+      "I'm going to open a fund for my son. Do I put it in his name or mine?",
+      "They're two different paths, and it's worth choosing knowing what changes.",
+      "If he puts it in his son's name, what changes?",
+      "Nothing: the father always runs it just the same",
+      "He manages it while his son is a minor. But the money is no longer his.",
+      "The money is the son's: at 18 he decides",
+      "That's it. And the father can't take it back for himself, even if he needs it.",
+      "It earns more",
+      "The fund is the same. What changes is whose it is, not how much it makes.",
+      "In the father's name, he controls it and hands it over when he likes. Neither option is better: it depends on what you're after.",
+      "Putting money in a child's name is a gift. Find out how it's declared in your region before doing it."
+     ]
+    },
+    {
+     "title": "A plan for a child",
+     "body": "• **What for and for when**: studies, a first car, a boost at 18.\n• **Long horizon**: with many years ahead there's room for quite a lot in shares, diversified and cheap.\n• **A little, but every month**: €50 a month for 18 years at 5 % a year (an example, not a promise) comes to about **€17,460**, of which €10,800 is what you put in.\n• **In whose name**: the child's (it's theirs, and at 18 they decide) or yours (you control it).\n• **As the date gets close**, lower the risk.\n\nWhat's worth most isn't the money: it's your child understanding how it was built.",
+     "key": "For a child, the long horizon is the advantage. And deciding in whose name is the question not to skip.",
+     "tip": "Try it: in Market, look at how much a global ETF has risen in recent years and think about what horizon your goal would have."
+    }
+   ]
   }
  },
  "questions": {
@@ -957,6 +1044,196 @@
     "buy"
    ],
    "explanation": "If the answer is yes, there's no reason to sell. If it's no, ask yourself why you still hold it."
+  },
+  "u30l8-1": {
+   "unit": "€",
+   "prompt": "You reckon you'd need €24,000 a year from your savings. According to the 4 % rule, what capital would you need?",
+   "options": [],
+   "explanation": "24,000 × 25 = €600,000. That's the same as saying 4 % of €600,000 is €24,000."
+  },
+  "u30l8-2": {
+   "unit": "€",
+   "prompt": "You have €300,000 saved. According to the 4 % rule, how many euros could you withdraw in the first year?",
+   "options": [],
+   "explanation": "300,000 × 0.04 = €12,000."
+  },
+  "u30l8-3": {
+   "prompt": "The 4 % rule guarantees your savings will never run out.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "It's a rule of thumb for doing the numbers with past data. It guarantees nothing."
+  },
+  "u30l8-4": {
+   "prompt": "What limits does the 4 % rule have? Tick all that apply.",
+   "options": [
+    "It only works for crypto investors",
+    "It forces you to sell everything when you retire",
+    "It was worked out for about 30 years of retirement",
+    "It comes from past US data"
+   ],
+   "explanation": "It comes from past US data and retirements of about 30 years; it also doesn't deduct taxes or fees. It says nothing about crypto and doesn't force you to sell anything."
+  },
+  "u30l8-5": {
+   "prompt": "Marta is 30 and wants to stop working at 45. She does her sums with the 4 % rule. What would you tell her?",
+   "options": [
+    "No sums are needed",
+    "It works as it is: that's the rule",
+    "Be more cautious: her retirement would last much longer than 30 years"
+   ],
+   "explanation": "The more years the money has to last, the more cautious you need to be about what you withdraw.",
+   "feedback": [
+    "Without a number she doesn't know whether she's on track. The rule works as a starting point.",
+    "The rule was worked out for about 30 years of retirement. Hers could last 50.",
+    "Good: with more years ahead you need more capital, or to withdraw less each year."
+   ]
+  },
+  "u30l8-6": {
+   "prompt": "Put the steps for working out your number in order.",
+   "options": [
+    "Multiply the rest by 25",
+    "Review it every few years",
+    "Subtract what your pension will cover",
+    "Work out a year of your spending"
+   ],
+   "explanation": "First how much you spend; then what share your savings will have to cover; and the figure gets reviewed, because your life changes."
+  },
+  "u30l8-7": {
+   "prompt": "Lumi has read that you need a million euros to retire and thinks she'll never get there. What do you reply?",
+   "options": [
+    "It depends on what you spend: do your own sums",
+    "It's true: no million, no retirement",
+    "Then saving isn't worth it"
+   ],
+   "explanation": "Each person's figure comes from their annual spending and what their pension covers. A headline knows neither.",
+   "feedback": [
+    "Exactly! Your number comes from your spending and your pension, not from a headline.",
+    "There's no single figure for everyone: it depends on what each person spends.",
+    "Every euro saved brings your number closer, whatever it is."
+   ],
+   "lines": [
+    "I've read you need a million euros to retire 😩",
+    "I'll never get there."
+   ]
+  },
+  "u30l8-8": {
+   "prompt": "Having 25 times your annual spending is the same as withdrawing ____ % a year.",
+   "options": [
+    "2",
+    "10",
+    "25",
+    "4"
+   ],
+   "explanation": "100 ÷ 25 = 4. They're the same sum."
+  },
+  "u30l8-9": {
+   "prompt": "Of everything that affects your number, what weighs most and is up to you?",
+   "options": [
+    "The exact day you retire",
+    "How much you spend a year",
+    "The broker you use"
+   ],
+   "explanation": "Every euro less of annual spending is 25 euros less of capital needed."
+  },
+  "u30l9-1": {
+   "unit": "€",
+   "prompt": "You contribute €50 a month for 18 years. How much money have you put in yourself in total?",
+   "options": [],
+   "explanation": "50 × 12 × 18 = €10,800. The rest, if any, is whatever it has earned."
+  },
+  "u30l9-2": {
+   "prompt": "For a newborn, the most prudent thing is to leave the money for 18 years in an account paying no interest.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "explanation": "Over 18 years inflation takes away a large part of its value. Such a long horizon allows for some risk."
+  },
+  "u30l9-3": {
+   "prompt": "Which option does it belong to?",
+   "options": [
+    "You can use it yourself if you need it",
+    "You decide when to hand it over",
+    "You can't take it back for yourself",
+    "At 18 they decide"
+   ],
+   "explanation": "In their name, the money is theirs. In yours, you keep deciding.",
+   "right": [
+    "In the child's name",
+    "In your name"
+   ]
+  },
+  "u30l9-4": {
+   "prompt": "Laura's daughter turns 16. In two years she'll use the money for her studies, and it's all in an equity fund. What does Laura do?",
+   "options": [
+    "Waits until the last month to sell it all",
+    "Leaves it: it has done very well for 16 years",
+    "Gradually moves the money into something low-risk"
+   ],
+   "explanation": "The same money that could go into shares with an 18-year horizon no longer can with two years to go.",
+   "feedback": [
+    "Staking everything on a single day's price is the biggest risk she could take.",
+    "In two years a sharp fall would leave the money short just when it's needed.",
+    "Good: the horizon is no longer long, so the risk comes down little by little."
+   ]
+  },
+  "u30l9-5": {
+   "prompt": "Why can savings for a newborn hold quite a lot in shares?",
+   "options": [
+    "Because it has many years to recover from falls",
+    "Because the stock market rises more for them",
+    "Because children don't pay tax"
+   ],
+   "explanation": "What allows you to take risk is the time horizon, not the age of whoever will receive it."
+  },
+  "u30l9-6": {
+   "prompt": "Put the steps of a plan for a child in order.",
+   "options": [
+    "Choose whose name it goes in",
+    "Lower the risk as the date gets close",
+    "Contribute automatically every month",
+    "Decide what for and for when"
+   ],
+   "explanation": "First the goal and whose money it will be; then consistency; and finally, protecting what has been built."
+  },
+  "u30l9-7": {
+   "prompt": "Lumi has opened an account paying no interest for her grandson for when he turns 18. What do you reply?",
+   "options": [
+    "Over 18 years inflation eats part of it: look at options that beat it",
+    "Better buy him the trendy share",
+    "Perfect: with children, zero risk"
+   ],
+   "explanation": "Eighteen years is a very long horizon. Leaving the money idle isn't avoiding risk: it's a certain loss of purchasing power.",
+   "feedback": [
+    "Exactly! With that much time it can afford something more than an account.",
+    "A single share is a bet, not an 18-year plan.",
+    "With no interest, in 18 years that money will buy quite a bit less."
+   ],
+   "lines": [
+    "I've opened an account with no interest for my grandson 👶",
+    "That way his money will be safe when he turns 18."
+   ]
+  },
+  "u30l9-8": {
+   "prompt": "What helps in an 18-year plan? Tick all that apply.",
+   "options": [
+    "Switching funds every year",
+    "Waiting until you have a large amount",
+    "The product being cheap",
+    "Contributing a little, but every month"
+   ],
+   "explanation": "Consistency and low costs work in your favour over 18 years. Switching funds every year or waiting until you «have more» works against you."
+  },
+  "u30l9-9": {
+   "prompt": "When there are only a few years left before the money is needed, it's time to lower the ____.",
+   "options": [
+    "saving",
+    "goal",
+    "horizon",
+    "risk"
+   ],
+   "explanation": "With little time ahead there's no room to recover from a fall."
   }
  }
 }

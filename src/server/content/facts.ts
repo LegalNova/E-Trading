@@ -90,6 +90,11 @@ export const FACTS = {
     source: 'Guías fiscales de 2026 coincidentes (p. ej. https://guiafiscal.es/irpf/tramos-irpf-2026/). Falta confirmarlo en la web de la Agencia Tributaria.',
     usedIn: ['u31l1', 'u31l2', 'u31l4'], review: 'Cada enero, con los presupuestos del año. Toda la unidad u31 usa estos tramos en sus cálculos.',
   },
+  fourPercentRule: {
+    what: 'Origen de la «regla del 4 %»: estudios con datos de Estados Unidos para jubilaciones de unos 30 años', value: '4 % · ×25', asOf: '1998-02-01', checked: '2026-11-12', kind: 'secundaria',
+    source: 'W. Bengen, «Determining Withdrawal Rates Using Historical Data», Journal of Financial Planning, 1994; Cooley, Hubbard y Walz, «Retirement Spending: Choosing a Sustainable Withdrawal Rate» (el «estudio Trinity»), AAII Journal, febrero de 1998. Resúmenes coincidentes (p. ej. https://en.wikipedia.org/wiki/Trinity_study). No se han abierto los artículos originales: la clase solo dice de dónde sale la regla y sus límites, sin dar probabilidades.',
+    usedIn: ['u30l8'], review: 'Si se quiere dar una probabilidad de éxito, leer antes los artículos originales.',
+  },
   revolvingUsury: {
     what: 'Criterio del Tribunal Supremo sobre la usura en tarjetas revolving: el interés es «notablemente superior» si supera en más de 6 puntos el tipo medio que publica el Banco de España para esas tarjetas en la fecha del contrato', value: '6 puntos', asOf: '2023-02-15', checked: '2026-11-12', kind: 'oficial',
     source: 'Sentencia del Pleno de la Sala de lo Civil del Tribunal Supremo 258/2023, de 15 de febrero de 2023 (informe de auditoría, apartado 5.3, FEC-13 / FAL-8: confirmado).',

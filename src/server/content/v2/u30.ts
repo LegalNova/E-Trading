@@ -359,5 +359,78 @@ export default unit({
       chat(['Mi fondo indexado lleva un año sin subir 😒', 'Lo vendo y busco otro que vaya mejor, ¿no?'], 'El fondo indexado de Lumi lleva un año sin subir y quiere venderlo para buscar otro que vaya mejor. ¿Qué le contestas?', [['Sí: un año entero sin subir es mala señal', 'Un año plano es normal en bolsa. Cambiar de fondo por eso es perseguir lo que ya subió.'], ['¿Ha cambiado tu plazo o tu plan? Si no, un año no es motivo', '¡Eso! El fondo sigue siendo lo que compraste. Lo que ha cambiado es tu paciencia.'], ['Vende la mitad y prueba con otro', 'Vender la mitad por impaciencia es el mismo error, a medias.']], 1, 'Un año sin subir no rompe ninguna tesis ni cambia tu plazo. Cambiar al fondo que más subió el año pasado suele salir caro.'),
       fill('Antes de vender, pregúntate: «si hoy no lo tuviera, ¿lo ____?».', 'compraría', ['vendería', 'recomendaría', 'miraría'], 'Si la respuesta es sí, no hay motivo para vender. Si es no, pregúntate por qué lo sigues teniendo.'),
     ], { minutes: 6 }),
+
+    // Auditoría FAL-9: planificar por objetivos. El informe proponía una unidad corta nueva; van como dos clases al final
+    // de esta unidad para no crear una unidad (cambiaría la numeración, el reto final de la sección y lo que abre cada
+    // plan). Amortizar hipoteca o invertir ya está en u3l5. La regla del 4 % viene de Bengen (1994) y del «estudio
+    // Trinity» (1998), con datos de EE. UU. y jubilaciones de 30 años: apuntado en facts.ts (`fourPercentRule`).
+    lesson('u30l8', '¿Cuánto necesito para jubilarme? La regla del 4 %', [
+      story('Un número para empezar', [{ id: 'elena', name: 'Elena' }], [
+        say('elena', 'Quiero saber cuánto tendría que tener ahorrado para dejar de trabajar. ¿Hay alguna cuenta?'),
+        say('lumi', 'Hay una muy usada: la **regla del 4 %**. Calcula lo que gastarías al año de tus ahorros y **multiplícalo por 25**.'),
+        choose('Elena necesitaría 20.000 € al año de sus ahorros, además de su pensión. ¿Cuánto capital sale?', [
+          opt('200.000 €', 'bad', say('lumi', 'Eso son diez años de gasto. La regla multiplica por 25.')),
+          opt('500.000 €', 'good', say('lumi', '20.000 × 25 = 500.000 €. Sacar un 4 % de 500.000 € son justo 20.000 €.')),
+          opt('80.000 €', 'bad', say('lumi', 'Eso es multiplicar por 4. La regla dice que retiras un 4 %, no que te basta con cuatro años.')),
+        ]),
+        say('lumi', 'Es la misma cuenta vista al revés: tener **25 veces** tu gasto es poder retirar un **4 %** al año.'),
+      ]),
+      story('Lo que la regla no dice', [{ id: 'bruno', name: 'Bruno' }], [
+        say('bruno', 'Entonces con 500.000 € ya está: saco 20.000 € cada año y el dinero **no se acaba nunca**.'),
+        choose('¿Es así?', [
+          opt('Sí: por eso se llama regla', 'bad', say('lumi', 'Es una regla para hacer números, no una ley. Nadie garantiza el futuro.')),
+          opt('No: salió de datos pasados y de jubilaciones de unos 30 años', 'good', say('lumi', 'Eso. Se calculó con la bolsa y los bonos de Estados Unidos del siglo pasado, para unos 30 años.')),
+          opt('Sí, si lo tiene todo en bolsa', 'bad', say('lumi', 'Todo en bolsa hace el camino más brusco, no más seguro.')),
+        ]),
+        say('lumi', 'Tampoco cuenta **impuestos ni comisiones**. Y si te jubilas muy joven, 30 años se quedan cortos.'),
+        say('lumi', 'Sirve para tener un orden de magnitud. Después manda lo que tú controlas: **cuánto gastas**, cuándo empiezas a ahorrar y tu pensión.'),
+      ]),
+      key('La regla del 4 %, con sus límites', '**La cuenta:** lo que necesitas al año de tus ahorros × 25. O al revés: de lo que tengas, un 4 % al año.\n\n**De dónde sale:** de estudios con datos de Estados Unidos (Bengen, 1994) para jubilaciones de unos 30 años.\n\n**Sus límites:**\n\n• No es una garantía: el futuro puede ser distinto del pasado.\n• Para más de 30 años hace falta más prudencia.\n• No descuenta impuestos ni comisiones.\n\nÚsala para saber por dónde anda tu número, y revísalo cada pocos años.', 'Veinticinco veces tu gasto anual es un punto de partida, no una promesa.', 'Pruébalo: calcula tu gasto de un año, multiplícalo por 25 y apunta la cifra en tu diario.'),
+    ], [
+      num('Calculas que necesitarías 24.000 € al año de tus ahorros. Según la regla del 4 %, ¿qué capital te haría falta?', 600000, '€', '24.000 × 25 = 600.000 €. Es lo mismo que decir que el 4 % de 600.000 € son 24.000 €.'),
+      num('Tienes 300.000 € ahorrados. Según la regla del 4 %, ¿cuántos euros podrías retirar el primer año?', 12000, '€', '300.000 × 0,04 = 12.000 €.'),
+      tf('La regla del 4 % garantiza que tus ahorros no se acabarán nunca.', false, 'Es una regla para hacer números con datos del pasado. No garantiza nada.'),
+      multi('¿Qué límites tiene la regla del 4 %? Marca todos.', ['Sale de datos pasados de Estados Unidos', 'Solo sirve para quien invierte en cripto', 'Se calculó para unos 30 años de jubilación', 'Obliga a venderlo todo al jubilarte'], [0, 2], 'Viene de datos pasados de Estados Unidos y de jubilaciones de unos 30 años; además no descuenta impuestos ni comisiones. No habla de cripto ni obliga a vender nada.'),
+      scenario('Marta tiene 30 años y quiere dejar de trabajar a los 45. Hace su cuenta con la regla del 4 %. ¿Qué le dirías?', [['Que le vale tal cual: es la regla', 'La regla se calculó para unos 30 años de jubilación. La suya podría durar 50.'], ['Que sea más prudente: su jubilación duraría mucho más de 30 años', 'Bien: con más años por delante hace falta más capital o retirar menos cada año.'], ['Que no hace falta ningún cálculo', 'Sin un número no sabe si va bien o mal. La regla sirve como punto de partida.']], 1, 'Cuantos más años tiene que durar el dinero, más prudente hay que ser con lo que se retira.'),
+      order('Ordena los pasos para calcular tu número.', ['Calcular tu gasto de un año', 'Restar lo que cubrirá tu pensión', 'Multiplicar el resto por 25', 'Revisarlo cada pocos años'], 'Primero cuánto gastas; después qué parte tendrán que cubrir tus ahorros; y la cifra se revisa, porque tu vida cambia.'),
+      chat(['He leído que hace falta un millón de euros para jubilarse 😩', 'Yo no llego ni de broma.'], 'Lumi ha leído que hace falta un millón de euros para jubilarse y cree que nunca llegará. ¿Qué le contestas?', [['Es verdad: sin un millón no hay jubilación', 'No hay una cifra igual para todos: depende de lo que gaste cada uno.'], ['Depende de lo que gastes: haz tu cuenta', '¡Eso! Tu número sale de tu gasto y de tu pensión, no de un titular.'], ['Entonces no merece la pena ahorrar', 'Cada euro ahorrado acerca tu número, sea el que sea.']], 1, 'La cifra de cada persona sale de su gasto anual y de lo que cubra su pensión. Un titular no sabe ninguna de las dos cosas.'),
+      fill('Tener 25 veces tu gasto anual equivale a retirar un ____ % al año.', '4', ['2', '10', '25'], '100 ÷ 25 = 4. Son la misma cuenta.'),
+      single('De todo lo que influye en tu número, ¿qué pesa más y depende de ti?', ['El bróker que uses', 'Cuánto gastas al año', 'El día exacto en que te jubiles'], 1, 'Cada euro menos de gasto anual son 25 euros menos de capital necesario.'),
+    ], { minutes: 6 }),
+
+    lesson('u30l9', 'Invertir para tus hijos', [
+      story('Dieciocho años por delante', [{ id: 'laura', name: 'Laura' }], [
+        say('laura', 'Acaba de nacer mi hija. Quiero apartar **50 € al mes** para cuando cumpla 18 años.'),
+        say('laura', 'Lo pongo en una cuenta sin riesgo, que con los niños no se juega.'),
+        choose('¿Qué tiene de especial este dinero?', [
+          opt('Que no puede perder nunca: todo sin riesgo', 'ok', say('lumi', 'Sin riesgo de bolsa, sí. Pero en 18 años la inflación se come una parte grande.')),
+          opt('Que tiene 18 años por delante', 'good', say('lumi', 'Eso. Con tanto plazo puede llevar bastante bolsa: hay tiempo para recuperarse de las caídas.')),
+          opt('Que hay que invertirlo en lo que más suba', 'bad', say('lumi', 'Perseguir lo que más sube es apostar. Aquí también vale lo de siempre: diversificado y barato.')),
+        ]),
+        say('lumi', 'Y cuando falten pocos años para usarlo, se baja el riesgo poco a poco. Como con cualquier objetivo.'),
+      ]),
+      story('¿A nombre de quién?', [{ id: 'pablo', name: 'Pablo' }], [
+        say('pablo', 'Voy a abrir un fondo para mi hijo. ¿Lo pongo a su nombre o al mío?'),
+        say('lumi', 'Son dos caminos distintos, y conviene elegir sabiendo qué cambia.'),
+        choose('Si lo pone a nombre de su hijo, ¿qué cambia?', [
+          opt('Nada: el padre lo maneja igual siempre', 'bad', say('lumi', 'Lo administra mientras su hijo es menor. Pero el dinero ya no es suyo.')),
+          opt('Que el dinero es del hijo: a los 18 años decide él', 'good', say('lumi', 'Eso. Y el padre no puede recuperarlo para sí, aunque lo necesite.')),
+          opt('Que rinde más', 'bad', say('lumi', 'El fondo es el mismo. Cambia de quién es, no cuánto gana.')),
+        ]),
+        say('lumi', 'A nombre del padre, lo controla él y se lo da cuando quiera. No hay una opción mejor: depende de lo que busques.'),
+        note('Poner dinero a nombre de un hijo es una donación. Infórmate de cómo se declara en tu comunidad antes de hacerlo.'),
+      ]),
+      key('Un plan para un hijo', '• **Para qué y para cuándo**: estudios, un primer coche, un empujón a los 18.\n• **Plazo largo**: con muchos años por delante cabe bastante bolsa, diversificada y barata.\n• **Poco, pero cada mes**: 50 € al mes durante 18 años al 5 % anual (ejemplo, no promesa) son unos **17.460 €**, de los que 10.800 € los has puesto tú.\n• **A nombre de quién**: del hijo (es suyo, y a los 18 decide él) o tuyo (lo controlas tú).\n• **Al acercarse la fecha**, baja el riesgo.\n\nLo que más vale no es el dinero: es que tu hijo entienda cómo se ha hecho.', 'Para un hijo, el plazo largo es la ventaja. Y decidir a nombre de quién, la pregunta que no hay que saltarse.', 'Pruébalo: en Mercado, mira cuánto ha subido un ETF mundial en los últimos años y piensa qué plazo tendría tu objetivo.'),
+    ], [
+      num('Aportas 50 € al mes durante 18 años. ¿Cuánto dinero has puesto tú en total?', 10800, '€', '50 × 12 × 18 = 10.800 €. Lo demás, si lo hay, es lo que haya rendido.'),
+      tf('Para un recién nacido, lo más prudente es dejar el dinero 18 años en una cuenta sin interés.', false, 'En 18 años la inflación le quita una parte grande de su valor. Un plazo tan largo permite asumir algo de riesgo.'),
+      buckets('¿De qué opción es propio?', ['A nombre del hijo', 'A tu nombre'], [['A los 18 años decide él', 0], ['Puedes usarlo tú si lo necesitas', 1], ['No puedes recuperarlo para ti', 0], ['Decides tú cuándo dárselo', 1]], 'A su nombre, el dinero es suyo. Al tuyo, sigues decidiendo tú.'),
+      scenario('La hija de Laura cumple 16 años. Dentro de dos usará el dinero para estudiar, y está todo en un fondo de bolsa. ¿Qué hace Laura?', [['Lo deja: ha ido muy bien 16 años', 'En dos años una caída fuerte dejaría el dinero corto justo cuando hace falta.'], ['Va pasando el dinero a algo de poco riesgo', 'Bien: el plazo ya no es largo, así que el riesgo baja poco a poco.'], ['Espera al último mes para venderlo todo', 'Fiar todo al precio de un solo día es el mayor riesgo que puede correr.']], 1, 'El mismo dinero que podía ir a bolsa con 18 años de plazo ya no puede cuando faltan dos.'),
+      single('¿Por qué el ahorro para un recién nacido puede llevar bastante bolsa?', ['Porque los niños no pagan impuestos', 'Porque tiene muchos años para recuperarse de las caídas', 'Porque la bolsa sube más para ellos'], 1, 'Lo que permite asumir riesgo es el plazo, no la edad de quien lo recibirá.'),
+      order('Ordena los pasos de un plan para un hijo.', ['Decidir para qué y para cuándo', 'Elegir a nombre de quién va', 'Aportar cada mes de forma automática', 'Bajar el riesgo al acercarse la fecha'], 'Primero el objetivo y de quién será el dinero; después la constancia; y al final, proteger lo conseguido.'),
+      chat(['Le he abierto a mi nieto una cuenta sin interés 👶', 'Así tendrá su dinero seguro cuando cumpla 18.'], 'Lumi ha abierto a su nieto una cuenta sin interés para cuando cumpla 18 años. ¿Qué le contestas?', [['Perfecto: con los niños, cero riesgo', 'Sin interés, en 18 años ese dinero comprará bastante menos.'], ['En 18 años la inflación se come parte: mira opciones que la superen', '¡Eso! Con tanto plazo puede permitirse algo más que una cuenta.'], ['Mejor cómprale la acción de moda', 'Una sola acción es una apuesta, no un plan a 18 años.']], 1, 'Dieciocho años es un plazo muy largo. Dejar el dinero quieto no es no arriesgar: es perder poder de compra seguro.'),
+      multi('¿Qué ayuda en un plan a 18 años? Marca todo.', ['Aportar poco, pero cada mes', 'Cambiar de fondo cada año', 'Que el producto sea barato', 'Esperar a tener una cantidad grande'], [0, 2], 'La constancia y los costes bajos trabajan a tu favor durante 18 años. Cambiar de fondo cada año o esperar a «tener más» juegan en contra.'),
+      fill('Cuando faltan pocos años para usar el dinero, toca bajar el ____.', 'riesgo', ['ahorro', 'plazo', 'objetivo'], 'Con poco tiempo por delante no hay margen para recuperarse de una caída.'),
+    ], { minutes: 6 }),
   ],
 })
