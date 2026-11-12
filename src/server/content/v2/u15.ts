@@ -291,6 +291,6 @@ export default unit({
       timed(single('Rápido: en backwardation, renovar futuros…', ['Suele sumar rentabilidad', 'Siempre resta', 'No tiene ningún efecto'], 0, 'Vendes el cercano caro y compras el lejano barato: con el mismo dinero tienes más barriles.'), 12),
       num('Un fondo pierde un 68 %. ¿Cuánto tiene que subir después para volver al punto de partida?', 212.5, '%', '1 ÷ 0,32 = 3,125 → hace falta un +212,5 %. Las caídas grandes cuestan muchísimo de recuperar.', 2),
       scenario('Laura quiere seguir el precio del oro durante años, sin pagar el coste de renovar futuros. ¿Qué producto mira primero?', [['Un fondo de futuros de oro que renueva contratos cada mes', 'Es justo el que paga la renovación: en contango, cada cambio de contrato le resta.'], ['Un ETC de oro físico, respaldado por lingotes', 'Bien: no renueva futuros, porque tiene el metal guardado. Sigue al oro de cerca, menos su comisión anual.'], ['Un CFD de oro con apalancamiento', 'Suma apalancamiento y costes de mantener la posición: no es para tenerlo años.']], 1, 'La buena acierta porque un producto físico no tiene que renovar contratos, así que el contango no le afecta. El fondo de futuros parece igual, pero puede quedarse muy por detrás del metal.'),
-    ], { source: '2.8', minutes: 6, retire: [0, 1, 2, 8, 9] }),
+    ], { source: '2.8', minutes: 6, retire: [0, 1, 2, 3, 8, 9] }),
   ],
 })

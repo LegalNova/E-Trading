@@ -6,7 +6,7 @@
 
 type Ohlc = [number, number, number, number]
 export interface ChartEntry {
-  id: string; symbol?: string; from?: string; to?: string; cutDate?: string; cutLabel?: string
+  id: string; symbol?: string; from?: string; to?: string; cutDate?: string; cutLabel?: string; caption?: string
   candles?: Ohlc[]; future?: Ohlc[]; closes?: number[]; futureCloses?: number[]; dates?: string[]; target?: number
 }
 
@@ -54,7 +54,7 @@ export function checkCharts(charts: Record<string, ChartEntry>): { errors: strin
     if (flat) errors.push(`${f.id}: ${flat} velas sin rango (hueco de datos)`)
     if (f.cutDate && !f.cutLabel) errors.push(`${f.id}: falta cutLabel (cómo se dice el corte del gráfico)`)
     // Las series mensuales guardan el día 1 de cada mes (no una sesión): ahí un sábado o un domingo no es un fallo de zona horaria
-    const monthly = /^\d{4}-\d{2}$/.test(f.dates?.[0] ?? '')
+    const monthly = /^\d{4}-\d{2}$/.test(f.dates?.[0] ?? '') || /cierres mensuales/.test(f.caption ?? '')
     if (f.symbol && !CRYPTO.test(f.symbol) && !monthly) for (const k of ['from', 'to', 'cutDate'] as const) if (f[k] && /^\d{2}\/\d{2}\/\d{4}$/.test(f[k]!) && weekend(f[k]!)) errors.push(`${f.id}: ${k} cae en fin de semana (${f[k]}): ¿zona horaria?`)
   }
 

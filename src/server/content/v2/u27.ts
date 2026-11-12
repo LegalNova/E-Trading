@@ -273,6 +273,6 @@ export default unit({
       timed(single('Rápido: ¿qué es el sesgo de supervivencia?', ['Fijarse solo en los que sobrevivieron y olvidar a los que fracasaron', 'Guardar un colchón de emergencia', 'Vender en pánico'], 0, 'Los fondos cerrados y los traders arruinados no salen en las estadísticas ni en las redes.'), 12),
       multi('¿Dónde puede esconderse el sesgo de supervivencia? Marca todos.', ['Rankings de fondos que no incluyen los que cerraron', 'Influencers que solo enseñan sus ganancias', 'Pruebas de un sistema solo con empresas que existen hoy', 'Un índice que incluye a todas las empresas del mercado'], [0, 1, 2], 'Un índice amplio no elige ganadores a posteriori: compra el mercado entero.'),
       buckets('¿Recencia o supervivencia?', ['Recencia', 'Supervivencia'], [['«La bolsa ha subido dos años: siempre sube»', 0], ['«Mira cuántos se han hecho ricos con esto»', 1], ['«Tras esta caída, ya solo puede bajar»', 0], ['«Los fondos de esta gestora siempre ganan» (los malos ya cerraron)', 1]], 'Recencia: el pasado reciente pesa demasiado. Supervivencia: solo ves a los que quedaron.'),
-    ], { source: '11.5', minutes: 6, retire: [2, 4, 5, 7] }),
+    ], { source: '11.5', minutes: 6, retire: [1, 2, 4, 5, 7] }),
   ],
 })

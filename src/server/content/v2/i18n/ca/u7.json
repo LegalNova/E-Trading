@@ -276,13 +276,13 @@
    ]
   },
   "u7l2-8": {
-   "prompt": "Nasdaq 100, març del 2000: la tecnologia fa anys que està disparada i tothom parla d'internet. Què va fer l'índex els anys següents?",
+   "horizon": "l'any següent",
+   "prompt": "Nasdaq 100, novembre del 2021: les tecnològiques s'han més que duplicat des del març del 2020 i tothom en parla. Què va fer l'índex després?",
    "options": [
     "Puja",
     "Baixa"
    ],
-   "explanation": "Un índex molt concentrat en un sector depèn del que li passi a aquest sector, per a bé i per a mal.",
-   "horizon": "els anys següents"
+   "explanation": "Un índex molt concentrat en un sector depèn del que li passi a aquest sector, per a bé i per a mal."
   },
   "u7l2-10": {
    "prompt": "L'MSCI World cobreix empreses grans i mitjanes de ____ països desenvolupats.",
@@ -344,13 +344,13 @@
    "explanation": "És el que hauria guanyat un inversor que ho hagués reinvertit tot."
   },
   "u7l4-6": {
-   "prompt": "Nikkei 225 (Japó), desembre del 1989: l'índex fa anys que puja de manera espectacular. Què va fer els anys següents?",
+   "horizon": "els anys següents",
+   "prompt": "FTSE 100 (Regne Unit), desembre del 1999: l'índex s'ha més que duplicat en cinc anys. Què va fer els anys següents?",
    "options": [
     "Puja",
     "Baixa"
    ],
-   "explanation": "El que va passar ho veus al gràfic. Recorda que és un índex de preus: no compta els dividends que cobrava qui el tenia.",
-   "horizon": "els anys següents"
+   "explanation": "El que va passar ho veus al gràfic. Recorda que és un índex de preus: no compta els dividends que cobrava qui el tenia."
   },
   "u7l4-7": {
    "prompt": "Relaciona cada terme amb el seu significat.",

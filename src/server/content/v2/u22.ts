@@ -101,7 +101,7 @@ export default unit({
       single('Según la evidencia, ¿para qué ha mostrado más utilidad la SMA 200?', ['Como filtro de riesgo en grandes tendencias bajistas', 'Para ganar en cada operación', 'Para predecir el precio exacto'], 0, 'Mantiene dentro de las grandes tendencias y fuera de muchas grandes caídas, con latigazos por el camino.'),
       match('Empareja cada término con su significado.', [['Cruce dorado', 'SMA 50 por encima de la SMA 200'], ['Cruce de la muerte', 'SMA 50 por debajo de la SMA 200'], ['Latigazo', 'Señal falsa en un mercado lateral'], ['Filtro de riesgo', 'Reducir exposición en tendencias bajistas']], 'Los nombres son dramáticos; el uso sensato, mucho más aburrido.'),
       trend('En tramos como este, los cruces fallan mucho. ¿Qué tendencia tiene?', 'trend-flat-11', 'Lateral', 'En un lateral, las medias se aplanan y se cruzan una y otra vez: es el terreno de los latigazos.'),
-    ], { source: '9.5', minutes: 6, retire: [0, 1, 3, 6] }),
+    ], { source: '9.5', minutes: 6, retire: [0, 1, 3, 4, 6] }),
 
     lesson('u22l3', 'El RSI', [
       story('Sobrecompra… y sigue subiendo', [{ id: 'sara', name: 'Sara' }], [

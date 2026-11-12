@@ -317,6 +317,6 @@ export default unit({
       fill('El IBEX 35 empezó con una base de ____ puntos a finales de 1989.', '3.000', ['100', '1.000', '35'], 'Desde esa base se mide cuánto ha subido o bajado.'),
       scenario('Pablo quiere meter casi todos sus ahorros en una empresa de BME Growth porque «puede multiplicarse». ¿Qué tiene en cuenta?', [['Que suelen ser más pequeñas, menos líquidas y con más riesgo', 'Si invierte, lo hace con una parte pequeña y sabiendo que puede costar vender.'], ['Que tiene la misma liquidez que una del IBEX', 'No: con poco volumen, vender rápido puede obligarle a bajar mucho el precio.'], ['Que BME Growth garantiza la inversión', 'Ningún segmento de la bolsa garantiza nada.']], 0, 'Empresa pequeña: más potencial y también más riesgo y menos liquidez.'),
       single('¿Cómo pondera el IBEX 35 a sus empresas?', ['Por capitalización, contando las acciones que se negocian libremente', 'Todas pesan lo mismo', 'Por número de empleados'], 0, 'Las más grandes en bolsa pesan más en el índice.'),
-    ], { source: '2.6', minutes: 6, retire: [3, 4, 5] }),
+    ], { source: '2.6', minutes: 6, retire: [2, 3, 4, 5] }),
   ],
 })

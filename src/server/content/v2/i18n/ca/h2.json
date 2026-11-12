@@ -448,22 +448,22 @@
    ]
   },
   "u25l2-3": {
-   "prompt": "Setembre del 2008. Comences a aportar 200 € al mes a un fons de l'S&P 500. Què va fer l'índex els mesos següents?",
+   "horizon": "l'any següent",
+   "prompt": "Desembre del 2018. L'S&P 500 ha caigut un 15 % en tres mesos. Comences a aportar 200 € al mes a un fons de l'S&P 500. Què va fer l'índex després?",
    "options": [
     "Puja",
     "Baixa"
    ],
-   "explanation": "Amb aportacions periòdiques, quan el preu cau compres més participacions amb els mateixos diners: les caigudes treballen a favor teu si no pares.",
-   "horizon": "els mesos següents"
+   "explanation": "Amb aportacions periòdiques, quan el preu cau compres més participacions amb els mateixos diners: les caigudes treballen a favor teu si no pares."
   },
   "u25l2-4": {
-   "prompt": "Juliol del 2012: l'IBEX 35 fa anys que està en crisi i gairebé ningú no vol invertir a Espanya. Si aportaves cada mes, què va passar després?",
+   "horizon": "els quatre anys següents",
+   "prompt": "Març del 2003: la borsa alemanya ha perdut dos terços del seu valor en tres anys i gairebé ningú no vol invertir. Si aportaves cada mes, què va passar després?",
    "options": [
     "Puja",
     "Baixa"
    ],
-   "explanation": "Qui aportava cada mes va comprar moltes participacions barates en el pitjor moment de la crisi. El DCA no obliga a endevinar el terra.",
-   "horizon": "l'any i mig següent"
+   "explanation": "Qui aportava cada mes va comprar moltes participacions barates en el pitjor moment de la crisi. El DCA no obliga a endevinar el terra."
   },
   "u25l2-5": {
    "prompt": "L'Ana hereta 30.000 € per invertir a llarg termini. Sap per experiència que si ho inverteix tot i cau un 20 % el mes següent, ho vendria tot pels nervis. Quina opció encaixa millor amb el que sap d'ella mateixa?",
@@ -574,15 +574,6 @@
     "Coixí d'emergència"
    ],
    "explanation": "Com més lluny és l'objectiu, més caigudes es poden aguantar pel camí."
-  },
-  "u4l3-6": {
-   "prompt": "S&P 500, setembre del 2008. Imagina que aquí tens els diners de l'entrada d'un pis que pagues en 6 mesos. Què creus que va fer l'índex els mesos següents?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Sigui quin sigui el resultat, els diners que necessites en pocs mesos no haurien de dependre del que faci la borsa en aquest termini.",
-   "horizon": "els mesos següents"
   },
   "u4l3-8": {
    "prompt": "Curt o llarg termini?",

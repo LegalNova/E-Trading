@@ -372,6 +372,35 @@ def history(fid, sym, name, iv, a, cut, b, legacy=False):
             'changePct': round((fut[-1][4] / vis[-1][4] - 1) * 100, 1), 'minPct': round((min(x[3] for x in fut) / vis[-1][4] - 1) * 100, 1)}
 
 
+# Auditoría, ronda 7 (RED-34): momentos históricos nuevos para que cada clase pregunte por un episodio distinto
+MORE_HISTORY = [
+    ('hist-sp500-2022', '^GSPC', 'S&P 500', '1wk', '2021-01-01', '2022-10-10', '2023-12-25'),
+    ('hist-sp500-2018', '^GSPC', 'S&P 500', '1wk', '2017-06-01', '2018-12-24', '2019-12-30'),
+    ('hist-dax-2003', '^GDAXI', 'DAX (Alemania)', '1wk', '2000-01-01', '2003-03-10', '2007-06-25'),
+    ('hist-btc-2017', 'BTC-USD', 'Bitcoin', '1wk', '2016-12-01', '2017-12-11', '2018-12-17'),
+    ('hist-1987', '^GSPC', 'S&P 500', '1wk', '1985-01-01', '1987-08-24', '1988-12-26'),
+    ('hist-ndx-2021', '^NDX', 'Nasdaq 100', '1wk', '2020-03-23', '2021-11-15', '2022-12-26'),
+    ('hist-ftse-1999', '^FTSE', 'FTSE 100 (Reino Unido)', '1mo', '1995-01-01', '1999-12-01', '2003-03-01'),
+    ('hist-meta-2022', 'META', 'Meta', '1wk', '2021-06-01', '2022-10-31', '2023-10-30'),
+    ('hist-nflx-2022', 'NFLX', 'Netflix', '1wk', '2021-06-01', '2022-04-18', '2023-04-24'),
+    ('hist-sp500-1999', '^GSPC', 'S&P 500', '1wk', '1997-01-01', '1999-12-27', '2002-12-30'),
+    ('hist-sp500-2002', '^GSPC', 'S&P 500', '1wk', '2000-01-01', '2002-10-07', '2004-12-27'),
+]
+
+
+def append_history():
+    """Añade los momentos históricos de MORE_HISTORY que falten, sin tocar los existentes"""
+    out = json.load(open(OUT))
+    for item in MORE_HISTORY:
+        if item[0] in out:
+            print(f'{item[0]}: ya existe'); continue
+        out[item[0]] = history(*item)
+        f = out[item[0]]
+        print(item[0], f['caption'], '· corte', f['cutLabel'], '· visible', len(f['closes']), f['closes'][0], '→', f['closes'][-1], '· después', f['changePct'], '% (mínimo', f['minPct'], '%)')
+        time.sleep(0.4)
+    json.dump(out, open(OUT, 'w'), ensure_ascii=False, indent=1)
+
+
 def append_trends(per_kind=8):
     """Añade gráficos de tendencia nuevos sin tocar los existentes (las clases ya usan sus ids)"""
     out = json.load(open(OUT))
@@ -845,6 +874,8 @@ if __name__ == '__main__':
         append_series(), append_mixes()
     elif '--append-trends' in sys.argv:
         append_trends()
+    elif '--append-history' in sys.argv:
+        append_history()
     elif '--append-lab' in sys.argv:
         append_lab()
     elif '--append-lab-macro' in sys.argv:

@@ -439,15 +439,6 @@
    ],
    "explanation": "Al contrari: en corregir el biaix de cerca de dades, els van afeblir molt."
   },
-  "u22l2-5": {
-   "prompt": "S&P 500, 8 de setembre del 2008: gairebé un any després del seu màxim d’octubre del 2007, l’índex continua per sota. Què creus que va passar els mesos següents?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "La SMA 200 no endevina mínims ni màxims: només diu si la tendència de fons és alcista o baixista. Segons l’evidència, la seva utilitat és reduir l’exposició en les grans tendències baixistes, amb senyals falsos pel camí.",
-   "horizon": "els mesos següents"
-  },
   "u22l2-6": {
    "prompt": "Un altre gràfic real, sense nom. Puja o baixa en les 10 sessions següents?",
    "options": [

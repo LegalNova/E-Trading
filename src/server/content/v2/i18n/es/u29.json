@@ -347,15 +347,6 @@
    ],
    "explanation": "Las grandes criptos tienden a subir y caer juntas: combinarlas apenas diversifica."
   },
-  "u29l2-3": {
-   "prompt": "Así se movió el oro entre 2018 y el verano de 2020, incluido el desplome de las bolsas de marzo de 2020. ¿Qué tendencia ves? (Oro · cierres semanales · hasta la semana del 03/08/2020)",
-   "options": [
-    "Alcista",
-    "Bajista",
-    "Lateral"
-   ],
-   "explanation": "Mientras las bolsas se hundían, el oro siguió su camino: por eso se dice que su correlación con las acciones es baja."
-  },
   "u29l2-5": {
    "prompt": "¿Correlación alta o baja?",
    "options": [
@@ -379,6 +370,20 @@
     "Criptomonedas"
    ],
    "explanation": "Las bolsas de otros países suelen caer a la vez. Los bonos de calidad y la liquidez son los que menos se mueven con ellas."
+  },
+  "u29l2-11": {
+   "prompt": "Entre octubre de 2007 y febrero de 2009, las acciones de EE. UU. cayeron un 51 % y el oro subió un 18 %. Con la mitad de tu dinero en cada uno, ¿cuánto habrías perdido, más o menos?",
+   "options": [
+    "Un 51 %, como las acciones",
+    "Alrededor de un 16 %",
+    "Nada: el oro lo compensó todo"
+   ],
+   "explanation": "Dos activos que no se mueven a la vez suavizan la caída del conjunto: eso es lo que aporta una correlación baja.",
+   "feedback": [
+    "Eso sería con todo en acciones. La mitad en oro compensó parte de la caída.",
+    "Eso: la mitad pierde un 51 % y la otra mitad gana un 18 %. Juntas, cerca de un −16 %.",
+    "Compensó una parte, no toda: el oro subió menos de lo que cayeron las acciones."
+   ]
   },
   "u29l3-1": {
    "prompt": "¿Qué decisión explica la mayor parte de las oscilaciones de una cartera diversificada?",

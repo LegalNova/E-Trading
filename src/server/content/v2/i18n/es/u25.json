@@ -378,22 +378,22 @@
  },
  "questions": {
   "u25l1-1": {
-   "prompt": "Así iba el S&P 500 hasta marzo de 2009. ¿Qué tendencia ves? (S&P 500 · cierres semanales · hasta la semana del 02/03/2009)",
+   "prompt": "Así iba el S&P 500 hasta octubre de 2002. ¿Qué tendencia ves? (S&P 500 · cierres semanales · hasta la semana del 07/10/2002)",
    "options": [
     "Alcista",
     "Bajista",
     "Lateral"
    ],
-   "explanation": "Caída de más de un 50 % desde 2007: el momento en que más gente abandonó el «comprar y mantener»."
+   "explanation": "Una caída del 45 % desde el máximo de 2000: uno de esos momentos en que más gente abandona el «comprar y mantener»."
   },
   "u25l1-2": {
-   "prompt": "Marzo de 2009: tras la peor crisis en décadas, mucha gente vende para «no perder más». ¿Qué hizo el S&P 500 después?",
+   "prompt": "Octubre de 2002: tras casi tres años de caídas, mucha gente vende para «no perder más». ¿Qué hizo el S&P 500 después?",
    "options": [
     "Sube",
     "Baja"
    ],
-   "explanation": "Quien aguantó (o siguió aportando) recuperó. Quien vendió en el pánico convirtió una caída temporal en una pérdida definitiva.",
-   "horizon": "el año y medio siguiente"
+   "explanation": "Quien aguantó (o siguió aportando) fue recuperando. Quien vendió en el pánico convirtió una caída temporal en una pérdida definitiva.",
+   "horizon": "los dos años siguientes"
   },
   "u25l1-4": {
    "prompt": "Empareja cada plazo con la proporción histórica de periodos con ganancia en el S&P 500.",

@@ -487,13 +487,13 @@
    ]
   },
   "u35l2-6": {
-   "prompt": "Novembre del 2021: el bitcoin marca màxims històrics per sobre de 65.000 $ i fa unes setmanes es va estrenar als EUA el primer ETF de futurs de bitcoin. Què va fer el preu l'any següent?",
+   "horizon": "el període fins al desembre del 2018",
+   "prompt": "Desembre del 2017: el bitcoin s'ha multiplicat per més de 20 en un any i surt a tots els telenotícies. Què va fer el preu l'any següent?",
    "options": [
     "Puja",
     "Baixa"
    ],
-   "explanation": "Quan un actiu és en màxims i a totes les portades, la sensació de seguretat és la més gran possible, però aquest optimisme ja és al preu. Pregunta't sempre quant perdries si t'equivoques, no només quant podries guanyar.",
-   "horizon": "el període fins al desembre del 2022"
+   "explanation": "Quan un actiu és en màxims i a totes les portades, la sensació de seguretat és la més gran possible, però aquest optimisme ja és al preu. Pregunta't sempre quant perdries si t'equivoques, no només quant podries guanyar."
   },
   "u35l2-9": {
    "prompt": "Si la teva cartera té dues criptomonedes diferents, ja està ben diversificada.",
@@ -538,15 +538,6 @@
    ],
    "explanation": "L'or no té beneficis per valorar: el mouen els tipus d'interès, el dòlar i la por. Cap dels tres no es veu en un gràfic de 30 espelmes.",
    "horizon": "les 10 sessions següents"
-  },
-  "u35l3-5": {
-   "prompt": "Mira el tram visible de l'or fins a l'agost del 2020. Quina tendència tenia? (Or · tancaments setmanals · fins a la setmana del 03/08/2020)",
-   "options": [
-    "Alcista",
-    "Baixista",
-    "Lateral"
-   ],
-   "explanation": "D'uns 1.200 $ a més de 2.000 $ l'unça en dos anys, amb màxims i mínims creixents: una tendència alcista de manual."
   },
   "u35l3-6": {
    "prompt": "Un altre parell de divises. Més amunt o més avall 10 sessions després?",
@@ -703,13 +694,13 @@
    "explanation": "A prop del màxim anterior (uns 172 $). Si el preu el supera amb força, sempre pots pujar l'stop i deixar córrer el guany."
   },
   "u35l7-2": {
-   "prompt": "Març del 2020: la covid ha confinat mig món i l'S&P 500 ha caigut més d'un 30 % en un mes. Els titulars parlen de la pitjor crisi en dècades. Què va fer l'índex els mesos següents?",
+   "horizon": "fins a l'octubre del 2023",
+   "prompt": "Octubre del 2022: Meta (Facebook) ha perdut tres quartes parts del seu valor en un any, els seus ingressos cauen per primera vegada i gasta milers de milions en el metavers. Què va fer l'acció després?",
    "options": [
     "Puja",
     "Baixa"
    ],
-   "explanation": "La borsa es mou pel que espera del futur, no pels titulars d'avui. Davant de notícies terribles, la pregunta clau és si el que ve serà pitjor o millor del que el preu ja reflecteix.",
-   "horizon": "els mesos següents"
+   "explanation": "La borsa es mou pel que espera del futur, no pels titulars d'avui. Davant de notícies terribles, la pregunta clau és si el que ve serà pitjor o millor del que el preu ja reflecteix."
   },
   "u35l7-3": {
    "prompt": "En Pablo llegeix al mòbil: «La Reserva Federal apuja els tipus més del que s'esperava». L'índex cau un 2 % en minuts i en Pablo té una posició oberta amb l'stop posat. Què fa?",
@@ -726,13 +717,13 @@
    ]
   },
   "u35l7-4": {
-   "prompt": "20 d'abril del 2020: amb mig món confinat i els dipòsits plens, el contracte de maig del petroli WTI tanca a −37,63 $ per barril, en negatiu per primera vegada a la història. Què va fer el preu l'any següent?",
+   "horizon": "fins a l'abril del 2023",
+   "prompt": "Abril del 2022: Netflix anuncia que ha perdut subscriptors per primera vegada en més de deu anys i la seva acció cau un 35 % en un sol dia. Què va fer després?",
    "options": [
     "Puja",
     "Baixa"
    ],
-   "explanation": "El preu negatiu va ser un problema d'un contracte concret: qui havia de rebre barrils físics no tenia on guardar-los. Els titulars extrems descriuen el moment; no diuen què ve després.",
-   "horizon": "els 14 mesos següents"
+   "explanation": "Els titulars extrems descriuen el moment; no diuen què ve després. Un any més tard, l'acció era un 53 % per sobre."
   },
   "u35l7-6": {
    "prompt": "La Marta llegeix en un fòrum que una empresa «segur que la compraran». L'acció ja ha pujat un 25 % en tres dies. Què fa?",
@@ -757,15 +748,6 @@
     "Ja ho esperava el mercat?"
    ],
    "explanation": "Expectatives, font i risc. La popularitat d'una publicació no diu res del preu… tret que potser ja hi arribes tard."
-  },
-  "u35l7-9": {
-   "prompt": "Desembre del 2020: Tesla entra a l'S&P 500 després de pujar més d'un 700 % en l'any, i els fons indexats han de comprar-ne accions. Què va fer el preu els dos anys següents?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Una compra obligada i anunciada amb setmanes d'antelació és una notícia que coneix tothom: el preu se sol moure abans del dia assenyalat. El que passa després depèn d'altres coses: beneficis, tipus i expectatives.",
-   "horizon": "el període fins al gener del 2023"
   },
   "u35l8-1": {
    "prompt": "Ordena els passos d'una operació ben feta.",
@@ -889,6 +871,15 @@
     "OR",
     "CRIPTO"
    ]
+  },
+  "u35l3-5": {
+   "prompt": "Mira aquest tram de la plata. Quina tendència tenia? (Plata (ETC físic) · tancaments cada 3 sessions · octubre–desembre del 2025)",
+   "options": [
+    "Alcista",
+    "Baixista",
+    "Lateral"
+   ],
+   "explanation": "D'uns 45 $ a uns 60 $ en dos mesos, amb màxims i mínims creixents: una tendència alcista de manual."
   }
  }
 }

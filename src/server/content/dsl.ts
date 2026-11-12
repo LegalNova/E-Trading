@@ -88,8 +88,9 @@ const fx = <T extends object>(make: () => T): T => {
   FX.set(out, [...new Set(touched.slice(from))])
   return out
 }
-/** Por clase: gráficos de sus piezas (`steps`) y de cada ejercicio vivo del quiz (`quiz`: [gráfico, id del ejercicio]) */
-export const FIXTURE_USE: Record<string, { steps: string[]; quiz: [string, string][] }> = {}
+/** Por clase: gráficos de sus piezas (`steps`), de cada ejercicio vivo del quiz (`quiz`: [gráfico, id del ejercicio]) y
+ * series que se «viven» de principio a fin (`lived`: piezas `crash` y `mix`; las calculadoras `horizon` y `dca` no cuentan) */
+export const FIXTURE_USE: Record<string, { steps: string[]; quiz: [string, string][]; lived: string[] }> = {}
 /** Pie del gráfico tal como se ve: en los momentos históricos solo llega hasta el corte (el resto se revela al responder) */
 // (cutLabel dice el corte según el tipo de vela: «el 25/03/2020», «la semana del 23/07/2012» o «diciembre de 1989»)
 const visibleCaption = (f: ChartFixture) => (f.cutDate ? `${f.caption.split(' · ').slice(0, 2).join(' · ')} · hasta ${f.cutLabel ?? `el ${f.cutDate}`}` : f.caption)
@@ -337,6 +338,7 @@ export function lesson(id: string, title: string, steps: Step[], questions: Q[],
   QUIZZES[`q-${id}`] = questions.flatMap((q, i) => (o.retire?.includes(i) ? [] : [{ ...nbQ(q), id: `${id}-${i + 1}` }]))
   FIXTURE_USE[id] = {
     steps: steps.flatMap(st => FX.get(st) ?? []),
+    lived: steps.flatMap(st => (st.kind === 'PLAY' && (st.play.widget.kind === 'crash' || st.play.widget.kind === 'mix') ? FX.get(st) ?? [] : [])),
     quiz: questions.flatMap((q, i) => (o.retire?.includes(i) ? [] : (FX.get(q) ?? []).map((f): [string, string] => [f, `${id}-${i + 1}`]))),
   }
   return { id, title, minutes: o.minutes ?? 5, xp: o.xp ?? 30, steps: steps.map(nbS), quizId: `q-${id}`, source: o.source }

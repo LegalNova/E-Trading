@@ -629,22 +629,13 @@
    ]
   },
   "u17l6-1": {
-   "prompt": "Mira el Nasdaq 100 desde finales de 1997 hasta marzo de 2000. ¿Qué tendencia ves? (Nasdaq 100 · cierres semanales · hasta la semana del 06/03/2000)",
+   "prompt": "Mira el S&P 500 desde finales de 1996 hasta diciembre de 1999. ¿Qué tendencia ves? (S&P 500 · cierres semanales · hasta la semana del 27/12/1999)",
    "options": [
     "Alcista",
     "Bajista",
     "Lateral"
    ],
-   "explanation": "Una subida enorme: las valoraciones llegaron a niveles nunca vistos."
-  },
-  "u17l6-3": {
-   "prompt": "Diciembre de 1989: la bolsa japonesa cotiza a valoraciones de récord tras una década de euforia. ¿Qué hizo el Nikkei 225 en los años siguientes?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Igual que con el CAPE de EE. UU., una valoración muy alta no fija una fecha: solo cambia las probabilidades de lo que vendrá.",
-   "horizon": "hasta noviembre de 1995"
+   "explanation": "Casi se duplicó en tres años, y las valoraciones llegaron a niveles nunca vistos."
   },
   "u17l6-4": {
    "prompt": "El CAPE divide el precio entre la media de los beneficios reales de los últimos ____ años.",

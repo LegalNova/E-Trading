@@ -267,7 +267,7 @@ export const MAX_SORT_SHARE = 1 / 3
  *  2. cada serie histórica se vive como pieza en una sola clase;
  *  3. no más de un tercio de las piezas de una unidad son «clasifica las tarjetas».
  */
-export function reuseWarnings(units: ContentUnit[], use: Record<string, { steps: string[]; quiz: [string, string][] }>, fixtures: Record<string, { symbol?: string; from?: string; to?: string }> = {}): string[] {
+export function reuseWarnings(units: ContentUnit[], use: Record<string, { steps: string[]; quiz: [string, string][]; lived?: string[] }>, fixtures: Record<string, { symbol?: string; from?: string; to?: string }> = {}): string[] {
   const out: string[] = []
   const live = new Set(units.flatMap(u => u.lessons.map(l => l.id)))
   // Gráfico → clases donde sale, sea en una pieza o en un ejercicio vivo. Dos usos dentro de la misma clase están bien
@@ -281,7 +281,11 @@ export function reuseWarnings(units: ContentUnit[], use: Record<string, { steps:
   const list = (keep: (f: string) => boolean) => [...where].filter(([f, w]) => keep(f) && w.size > 1).sort((a, b) => b[1].size - a[1].size).map(([f, w]) => `${f} ×${w.size} (${[...w].join(', ')})`)
   const charts = list(f => !isSeries(f))
   if (charts.length) out.push(`${charts.length} gráficos salen en más de una clase: ${charts.slice(0, 14).join(' · ')}${charts.length > 14 ? '…' : ''}`)
-  const series = list(isSeries)
+  // Una serie histórica se «vive» (pieza que la recorre de principio a fin) en una sola clase. Que la misma serie alimente
+  // además una calculadora (horizonte, aportaciones) en otra clase no destripa nada, y no cuenta.
+  const lived = new Map<string, Set<string>>()
+  for (const [lessonId, u] of Object.entries(use)) if (live.has(lessonId)) for (const f of u.lived ?? []) lived.set(f, (lived.get(f) ?? new Set()).add(lessonId))
+  const series = [...lived].filter(([, w]) => w.size > 1).sort((a, b) => b[1].size - a[1].size).map(([f, w]) => `${f} ×${w.size} (${[...w].join(', ')})`)
   if (series.length) out.push(`${series.length} series históricas se viven como pieza en más de una clase: ${series.join(' · ')}`)
   // Dos gráficos con distinto nombre pero del mismo activo y casi las mismas fechas se ven iguales: también cuentan
   const day = (d: string) => { const [a, b, c] = d.split('/').map(Number); return Date.UTC(c, b - 1, a) / 864e5 }

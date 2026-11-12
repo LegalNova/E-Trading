@@ -451,22 +451,13 @@
    ]
   },
   "u18l2-3": {
-   "prompt": "Primera semana de septiembre de 2008: EE. UU. acaba de intervenir Fannie Mae y Freddie Mac y se habla de recesión. ¿Qué hizo el S&P 500 en los meses siguientes?",
+   "prompt": "Octubre de 2022: la inflación en EE. UU. supera el 8 %, la Reserva Federal sube los tipos al ritmo más rápido en décadas y casi todo el mundo espera una recesión. ¿Qué hizo el S&P 500 después?",
    "options": [
     "Sube",
     "Baja"
    ],
-   "explanation": "En plena crisis financiera nadie sabía hasta dónde llegaría el contagio a la economía real. Los cíclicos, como la banca o la industria, eran los más expuestos.",
-   "horizon": "hasta diciembre de 2009"
-  },
-  "u18l2-4": {
-   "prompt": "Marzo de 2009: el paro se dispara y los titulares son terribles. El S&P 500 ha caído más de un 50 % desde su máximo. ¿Qué hizo después?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Con noticias tan malas, casi nadie se atrevía a decidir nada. Recuerda que la bolsa mira lo que espera dentro de meses, no lo que pasa hoy.",
-   "horizon": "hasta diciembre de 2010"
+   "explanation": "El índice tocó suelo ese mismo mes, con las noticias aún malas, y subió un 33 % hasta finales de 2023. La bolsa mira lo que espera, no lo que dicen hoy los titulares.",
+   "horizon": "hasta diciembre de 2023"
   },
   "u18l2-5": {
    "prompt": "¿Qué es técnicamente una recesión?",

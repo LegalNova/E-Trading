@@ -448,22 +448,22 @@
    ]
   },
   "u25l2-3": {
-   "prompt": "September 2008. You start putting €200 a month into an S&P 500 fund. What did the index do over the following months?",
+   "horizon": "the following year",
+   "prompt": "December 2018. The S&P 500 has fallen 15 % in three months. You start putting €200 a month into an S&P 500 fund. What did the index do next?",
    "options": [
     "Up",
     "Down"
    ],
-   "explanation": "With regular contributions, when the price falls you buy more units with the same money: falls work in your favour if you don't stop.",
-   "horizon": "the following months"
+   "explanation": "With regular contributions, when the price falls you buy more units with the same money: falls work in your favour if you don't stop."
   },
   "u25l2-4": {
-   "prompt": "July 2012: the IBEX 35 has had years of crisis and hardly anyone wants to invest in Spain. If you were investing every month, what happened next?",
+   "horizon": "the next four years",
+   "prompt": "March 2003: the German stock market has lost two thirds of its value in three years and almost nobody wants to invest. If you were investing every month, what happened next?",
    "options": [
     "Up",
     "Down"
    ],
-   "explanation": "Anyone investing every month bought lots of cheap units at the worst of the crisis. DCA doesn't require guessing the bottom.",
-   "horizon": "the next year and a half"
+   "explanation": "Anyone investing every month bought lots of cheap units at the worst of the crisis. DCA doesn't require guessing the bottom."
   },
   "u25l2-5": {
    "prompt": "Ana inherits €30,000 to invest for the long term. She knows from experience that if she invests it all and it falls 20 % the next month, she'd sell everything out of nerves. Which option fits best with what she knows about herself?",
@@ -574,15 +574,6 @@
     "Emergency cushion"
    ],
    "explanation": "The further away the goal, the more falls you can ride out along the way."
-  },
-  "u4l3-6": {
-   "prompt": "S&P 500, September 2008. Imagine this is where you've got the money for a deposit on a flat you pay in 6 months. What do you think the index did in the following months?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "Whatever the outcome, money you need in a few months shouldn't depend on what the stock market does in that time.",
-   "horizon": "the following months"
   },
   "u4l3-8": {
    "prompt": "Short or long term?",

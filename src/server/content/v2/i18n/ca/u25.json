@@ -378,22 +378,22 @@
  },
  "questions": {
   "u25l1-1": {
-   "prompt": "Així anava l'S&P 500 fins al març del 2009. Quina tendència hi veus? (S&P 500 · tancaments setmanals · fins a la setmana del 02/03/2009)",
+   "prompt": "Així anava l'S&P 500 fins a l'octubre del 2002. Quina tendència hi veus? (S&P 500 · tancaments setmanals · fins a la setmana del 07/10/2002)",
    "options": [
     "Alcista",
     "Baixista",
     "Lateral"
    ],
-   "explanation": "Caiguda de més d'un 50 % des del 2007: el moment en què més gent va abandonar el «comprar i mantenir»."
+   "explanation": "Una caiguda del 45 % des del màxim del 2000: un d'aquells moments en què més gent abandona el «comprar i mantenir»."
   },
   "u25l1-2": {
-   "prompt": "Març del 2009: després de la pitjor crisi en dècades, molta gent ven per «no perdre més». Què va fer l'S&P 500 després?",
+   "horizon": "els dos anys següents",
+   "prompt": "Octubre del 2002: després de gairebé tres anys de caigudes, molta gent ven per «no perdre més». Què va fer l'S&P 500 després?",
    "options": [
     "Puja",
     "Baixa"
    ],
-   "explanation": "Qui va aguantar (o va continuar aportant) va recuperar. Qui va vendre en el pànic va convertir una caiguda temporal en una pèrdua definitiva.",
-   "horizon": "l'any i mig següent"
+   "explanation": "Qui va aguantar (o va continuar aportant) va anar recuperant. Qui va vendre en el pànic va convertir una caiguda temporal en una pèrdua definitiva."
   },
   "u25l1-4": {
    "prompt": "Relaciona cada termini amb la proporció històrica de períodes amb guany a l'S&P 500.",

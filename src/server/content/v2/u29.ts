@@ -51,7 +51,9 @@ export default unit({
       timed(tf('En un pánico de mercado, las correlaciones entre activos de riesgo suelen subir.', true, 'Casi todo lo arriesgado cae a la vez: por eso la liquidez y los bonos de calidad son los que suelen proteger.'), 10),
       fill('Una correlación de ____ significa que dos activos se mueven siempre en sentido contrario.', '−1', ['+1', '0', '0,5'], 'Es el extremo opuesto: cuando uno sube, el otro baja.'),
       single('En la mayoría de los pánicos bursátiles, ¿qué ha protegido mejor una cartera?', ['Más acciones de otros países desarrollados', 'Bonos de calidad y liquidez', 'Criptomonedas'], 1, 'Las bolsas de otros países suelen caer a la vez. Los bonos de calidad y la liquidez son los que menos se mueven con ellas.'),
-    ], { source: '3.5', minutes: 6, retire: [3, 5, 6, 7, 8] }),
+      // Datos: SPY y GLD, cierres mensuales ajustados de Yahoo Finance, octubre de 2007 a febrero de 2009 (fixture `mix-commodities`)
+      scenario('Entre octubre de 2007 y febrero de 2009, las acciones de EE. UU. cayeron un 51 % y el oro subió un 18 %. Con la mitad de tu dinero en cada uno, ¿cuánto habrías perdido, más o menos?', [['Un 51 %, como las acciones', 'Eso sería con todo en acciones. La mitad en oro compensó parte de la caída.'], ['Alrededor de un 16 %', 'Eso: la mitad pierde un 51 % y la otra mitad gana un 18 %. Juntas, cerca de un −16 %.'], ['Nada: el oro lo compensó todo', 'Compensó una parte, no toda: el oro subió menos de lo que cayeron las acciones.']], 1, 'Dos activos que no se mueven a la vez suavizan la caída del conjunto: eso es lo que aporta una correlación baja.'),
+    ], { source: '3.5', minutes: 6, retire: [2, 3, 5, 6, 7, 8] }),
 
     lesson('u29l3', 'Tu reparto de activos', [
       // Auditoría RED-34: la mezcla «acciones, bonos y oro 2008-2025» se vivía en siete clases. Aquí va otra serie real

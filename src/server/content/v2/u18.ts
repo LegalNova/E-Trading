@@ -106,7 +106,8 @@ export default unit({
     ], [
       buckets('¿Cíclico o defensivo?', ['Cíclico', 'Defensivo'], [['Fabricante de coches', 0], ['Eléctrica', 1], ['Cadena de hoteles', 0], ['Farmacéutica', 1], ['Marca de lujo', 0], ['Supermercado', 1]], 'Lo que se compra igual en una crisis es defensivo; lo que se aplaza, cíclico.'),
       match('Empareja cada fase del ciclo con lo que suele pasar.', [['Recuperación', 'Tipos bajos y la economía empieza a crecer'], ['Expansión', 'Empleo alto y beneficios al alza'], ['Desaceleración', 'Suben los tipos y se frena el crecimiento'], ['Recesión', 'Cae el PIB y sube el paro']], 'Y vuelta a empezar.'),
-      upDown('Primera semana de septiembre de 2008: EE. UU. acaba de intervenir Fannie Mae y Freddie Mac y se habla de recesión. ¿Qué hizo el S&P 500 en los meses siguientes?', 'hist-2008', 'En plena crisis financiera nadie sabía hasta dónde llegaría el contagio a la economía real. Los cíclicos, como la banca o la industria, eran los más expuestos.', 'hasta diciembre de 2009'),
+      // RED-34: antes, septiembre de 2008 (que se vive en la unidad de crisis). Inflación de EE. UU. de septiembre de 2022: 8,2 % interanual (BLS, publicada el 13-10-2022)
+      upDown('Octubre de 2022: la inflación en EE. UU. supera el 8 %, la Reserva Federal sube los tipos al ritmo más rápido en décadas y casi todo el mundo espera una recesión. ¿Qué hizo el S&P 500 después?', 'hist-sp500-2022', 'El índice tocó suelo ese mismo mes, con las noticias aún malas, y subió un 33 % hasta finales de 2023. La bolsa mira lo que espera, no lo que dicen hoy los titulares.', 'hasta diciembre de 2023'),
       upDown('Marzo de 2009: el paro se dispara y los titulares son terribles. El S&P 500 ha caído más de un 50 % desde su máximo. ¿Qué hizo después?', 'hist-2009-bottom', 'Con noticias tan malas, casi nadie se atrevía a decidir nada. Recuerda que la bolsa mira lo que espera dentro de meses, no lo que pasa hoy.', 'hasta diciembre de 2010'),
       single('¿Qué es técnicamente una recesión?', ['Dos trimestres seguidos de caída del PIB', 'Una caída de la bolsa del 10 %', 'Una subida de tipos'], 0, 'Es la definición habitual.'),
       tf('La bolsa suele tocar fondo cuando ya han mejorado los datos económicos.', false, 'Suele adelantarse: en 2009 y en 2020 tocó fondo con las noticias todavía muy malas.'),
@@ -114,7 +115,7 @@ export default unit({
       timed(single('Rápido: ¿qué sector suele caer menos en una recesión?', ['Alimentación', 'Aerolíneas', 'Automoción'], 0, 'La gente sigue comprando comida en las crisis.'), 10),
       multi('¿Qué sectores son defensivos? Marca todos.', ['Eléctricas', 'Salud', 'Alimentación', 'Construcción'], [0, 1, 2], 'La construcción es muy cíclica.'),
       num('En una recesión, un sector cíclico cae un 40 %. ¿Cuánto tiene que subir después para volver a su nivel?', 66.7, '%', '1 ÷ 0,60 ≈ 1,667 → +66,7 %. Un defensivo que cae un 15 % solo necesita un +17,6 %.', 2),
-    ], { source: '6.3', minutes: 6, retire: [0, 5, 7, 9] }),
+    ], { source: '6.3', minutes: 6, retire: [0, 3, 5, 7, 9] }),
 
     lesson('u18l3', 'Bancos centrales y tipos de interés', [
       story('El BCE sube los tipos', [{ id: 'dani', name: 'Dani' }], [

@@ -480,22 +480,22 @@
    ]
   },
   "u25l2-3": {
-   "prompt": "Septiembre de 2008. Empiezas a aportar 200 € al mes a un fondo del S&P 500. ¿Qué hizo el índice en los meses siguientes?",
+   "prompt": "Diciembre de 2018. El S&P 500 ha caído un 15 % en tres meses. Empiezas a aportar 200 € al mes a un fondo del S&P 500. ¿Qué hizo el índice después?",
    "options": [
     "Sube",
     "Baja"
    ],
    "explanation": "Con aportaciones periódicas, cuando el precio cae compras más participaciones con el mismo dinero: las caídas trabajan a tu favor si no paras.",
-   "horizon": "los meses siguientes"
+   "horizon": "el año siguiente"
   },
   "u25l2-4": {
-   "prompt": "Julio de 2012: el IBEX 35 lleva años de crisis y casi nadie quiere invertir en España. Si aportabas cada mes, ¿qué pasó después?",
+   "prompt": "Marzo de 2003: la bolsa alemana ha perdido dos tercios de su valor en tres años y casi nadie quiere invertir. Si aportabas cada mes, ¿qué pasó después?",
    "options": [
     "Sube",
     "Baja"
    ],
    "explanation": "Quien aportaba cada mes compró muchas participaciones baratas en lo peor de la crisis. El DCA no exige adivinar el suelo.",
-   "horizon": "el año y medio siguiente"
+   "horizon": "los cuatro años siguientes"
   },
   "u25l2-5": {
    "prompt": "Ana hereda 30.000 € para invertir a largo plazo. Sabe por experiencia que si lo invierte todo y cae un 20 % al mes siguiente, lo vendería todo por nervios. ¿Qué opción encaja mejor con lo que sabe de sí misma?",
@@ -636,15 +636,6 @@
     "Colchón de emergencia"
    ],
    "explanation": "Cuanto más lejos está el objetivo, más caídas se pueden aguantar por el camino."
-  },
-  "u4l3-6": {
-   "prompt": "S&P 500, septiembre de 2008. Imagina que aquí tienes el dinero de la entrada de un piso que pagas en 6 meses. ¿Qué crees que hizo el índice en los meses siguientes?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Sea cual sea el resultado, el dinero que necesitas en pocos meses no debería depender de lo que haga la bolsa en ese plazo.",
-   "horizon": "los meses siguientes"
   },
   "u4l3-8": {
    "prompt": "¿Corto o largo plazo?",

@@ -439,15 +439,6 @@
    ],
    "explanation": "Al revés: al corregir el sesgo de búsqueda de datos, los debilitaron mucho."
   },
-  "u22l2-5": {
-   "prompt": "S&P 500, 8 de septiembre de 2008: casi un año después de su máximo de octubre de 2007, el índice sigue por debajo. ¿Qué crees que pasó en los meses siguientes?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "La SMA 200 no adivina suelos ni techos: solo dice si la tendencia de fondo es alcista o bajista. Según la evidencia, su utilidad está en reducir exposición en las grandes tendencias bajistas, con señales falsas por el camino.",
-   "horizon": "los meses siguientes"
-  },
   "u22l2-6": {
    "prompt": "Otro gráfico real, sin nombre. ¿Sube o baja en las 10 sesiones siguientes?",
    "options": [

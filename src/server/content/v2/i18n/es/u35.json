@@ -487,13 +487,13 @@
    ]
   },
   "u35l2-6": {
-   "prompt": "Noviembre de 2021: el bitcoin marca máximos históricos por encima de 65.000 $ y hace unas semanas se estrenó en EE. UU. el primer ETF de futuros de bitcoin. ¿Qué hizo el precio en el año siguiente?",
+   "prompt": "Diciembre de 2017: el bitcoin se ha multiplicado por más de 20 en un año y sale en todos los telediarios. ¿Qué hizo el precio en el año siguiente?",
    "options": [
     "Sube",
     "Baja"
    ],
    "explanation": "Cuando un activo está en máximos y en todas las portadas, la sensación de seguridad es la mayor posible, pero ese optimismo ya está en el precio. Pregúntate siempre cuánto perderías si te equivocas, no solo cuánto podrías ganar.",
-   "horizon": "hasta diciembre de 2022"
+   "horizon": "hasta diciembre de 2018"
   },
   "u35l2-9": {
    "prompt": "Si tu cartera tiene dos criptomonedas distintas, ya está bien diversificada.",
@@ -540,13 +540,13 @@
    "horizon": "las 10 sesiones siguientes"
   },
   "u35l3-5": {
-   "prompt": "Mira el tramo visible del oro hasta agosto de 2020. ¿Qué tendencia tenía? (Oro · cierres semanales · hasta la semana del 03/08/2020)",
+   "prompt": "Mira este tramo de la plata. ¿Qué tendencia tenía? (Plata (ETC físico) · cierres cada 3 sesiones · octubre–diciembre de 2025)",
    "options": [
     "Alcista",
     "Bajista",
     "Lateral"
    ],
-   "explanation": "De unos 1.200 $ a más de 2.000 $ la onza en dos años, con máximos y mínimos crecientes: una tendencia alcista de libro."
+   "explanation": "De unos 45 $ a unos 60 $ en dos meses, con máximos y mínimos crecientes: una tendencia alcista de libro."
   },
   "u35l3-6": {
    "prompt": "Otro par de divisas. ¿Más arriba o más abajo 10 sesiones después?",
@@ -703,13 +703,13 @@
    "explanation": "Cerca del máximo anterior (unos 172 $). Si el precio lo supera con fuerza, siempre puedes subir el stop y dejar correr la ganancia."
   },
   "u35l7-2": {
-   "prompt": "Marzo de 2020: el covid ha confinado medio mundo y el S&P 500 ha caído más de un 30 % en un mes. Los titulares hablan de la peor crisis en décadas. ¿Qué hizo el índice en los meses siguientes?",
+   "prompt": "Octubre de 2022: Meta (Facebook) ha perdido tres cuartas partes de su valor en un año, sus ingresos caen por primera vez y gasta miles de millones en el metaverso. ¿Qué hizo la acción después?",
    "options": [
     "Sube",
     "Baja"
    ],
    "explanation": "La bolsa se mueve por lo que espera del futuro, no por los titulares de hoy. Ante noticias terribles, la pregunta clave es si lo que viene será peor o mejor de lo que el precio ya refleja.",
-   "horizon": "los meses siguientes"
+   "horizon": "hasta octubre de 2023"
   },
   "u35l7-3": {
    "prompt": "Pablo lee en el móvil: «La Reserva Federal sube los tipos más de lo esperado». El índice cae un 2 % en minutos y Pablo tiene una posición abierta con su stop puesto. ¿Qué hace?",
@@ -726,13 +726,13 @@
    ]
   },
   "u35l7-4": {
-   "prompt": "20 de abril de 2020: con medio mundo confinado y los depósitos llenos, el contrato de mayo del petróleo WTI cierra a −37,63 $ por barril, en negativo por primera vez en la historia. ¿Qué hizo el precio en el año siguiente?",
+   "prompt": "Abril de 2022: Netflix anuncia que ha perdido suscriptores por primera vez en más de diez años y su acción cae un 35 % en un solo día. ¿Qué hizo después?",
    "options": [
     "Sube",
     "Baja"
    ],
-   "explanation": "El precio negativo fue un problema de un contrato concreto: quien debía recibir barriles físicos no tenía dónde guardarlos. Los titulares extremos describen el momento; no dicen qué viene después.",
-   "horizon": "los 14 meses siguientes"
+   "explanation": "Los titulares extremos describen el momento; no dicen qué viene después. Un año más tarde, la acción estaba un 53 % por encima.",
+   "horizon": "hasta abril de 2023"
   },
   "u35l7-6": {
    "prompt": "Marta lee en un foro que una empresa «va a ser comprada seguro». La acción ya ha subido un 25 % en tres días. ¿Qué hace?",
@@ -757,15 +757,6 @@
     "¿Lo esperaba ya el mercado?"
    ],
    "explanation": "Expectativas, fuente y riesgo. La popularidad de un post no dice nada del precio… salvo que quizá ya llegas tarde."
-  },
-  "u35l7-9": {
-   "prompt": "Diciembre de 2020: Tesla entra en el S&P 500 tras subir más de un 700 % en el año, y los fondos indexados tienen que comprar sus acciones. ¿Qué hizo el precio en los dos años siguientes?",
-   "options": [
-    "Sube",
-    "Baja"
-   ],
-   "explanation": "Una compra obligada y anunciada con semanas de antelación es una noticia que conoce todo el mundo: el precio suele moverse antes del día señalado. Lo de después depende de otras cosas: beneficios, tipos y expectativas.",
-   "horizon": "hasta enero de 2023"
   },
   "u35l8-1": {
    "prompt": "Ordena los pasos de una operación bien hecha.",

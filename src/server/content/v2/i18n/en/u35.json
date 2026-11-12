@@ -487,13 +487,13 @@
    ]
   },
   "u35l2-6": {
-   "prompt": "November 2021: bitcoin hits all-time highs above $65,000, and a few weeks earlier the first bitcoin futures ETF launched in the US. What did the price do over the following year?",
+   "horizon": "the period up to December 2018",
+   "prompt": "December 2017: bitcoin has multiplied more than 20 times in a year and is on every news bulletin. What did the price do over the following year?",
    "options": [
     "Up",
     "Down"
    ],
-   "explanation": "When an asset is at its highs and on every front page, the feeling of safety is at its peak, but that optimism is already in the price. Always ask yourself how much you'd lose if you're wrong, not just how much you could make.",
-   "horizon": "the period up to December 2022"
+   "explanation": "When an asset is at its highs and on every front page, the feeling of safety is at its peak, but that optimism is already in the price. Always ask yourself how much you'd lose if you're wrong, not just how much you could make."
   },
   "u35l2-9": {
    "prompt": "If your portfolio holds two different cryptocurrencies, it's already well diversified.",
@@ -538,15 +538,6 @@
    ],
    "explanation": "Gold has no earnings to value: it's moved by interest rates, the dollar and fear. None of the three shows up on a 30-candle chart.",
    "horizon": "the next 10 sessions"
-  },
-  "u35l3-5": {
-   "prompt": "Look at the visible stretch of gold up to August 2020. What trend did it have? (Gold · weekly closes · up to the week of 03/08/2020)",
-   "options": [
-    "Uptrend",
-    "Downtrend",
-    "Sideways"
-   ],
-   "explanation": "From about $1,200 to over $2,000 an ounce in two years, with higher highs and higher lows: a textbook uptrend."
   },
   "u35l3-6": {
    "prompt": "Another currency pair. Higher or lower 10 sessions later?",
@@ -703,13 +694,13 @@
    "explanation": "Near the previous high (about $172). If the price breaks through it strongly, you can always raise your stop and let the profit run."
   },
   "u35l7-2": {
-   "prompt": "March 2020: Covid has put half the world in lockdown and the S&P 500 has fallen more than 30 % in a month. The headlines talk about the worst crisis in decades. What did the index do over the following months?",
+   "horizon": "until October 2023",
+   "prompt": "October 2022: Meta (Facebook) has lost three quarters of its value in a year, its revenue is falling for the first time and it's spending billions on the metaverse. What did the share do next?",
    "options": [
     "Up",
     "Down"
    ],
-   "explanation": "The stock market moves on what it expects from the future, not on today's headlines. When the news is terrible, the key question is whether what's coming will be worse or better than what the price already reflects.",
-   "horizon": "the following months"
+   "explanation": "The stock market moves on what it expects from the future, not on today's headlines. When the news is terrible, the key question is whether what's coming will be worse or better than what the price already reflects."
   },
   "u35l7-3": {
    "prompt": "Pablo reads on his phone: «The Federal Reserve raises rates more than expected». The index falls 2 % in minutes and Pablo has an open position with his stop in place. What does he do?",
@@ -726,13 +717,13 @@
    ]
   },
   "u35l7-4": {
-   "prompt": "20 April 2020: with half the world in lockdown and storage tanks full, the May WTI oil contract closes at −$37.63 a barrel, negative for the first time in history. What did the price do over the following year?",
+   "horizon": "until April 2023",
+   "prompt": "April 2022: Netflix announces it has lost subscribers for the first time in more than ten years and its share falls 35 % in a single day. What did it do next?",
    "options": [
     "Up",
     "Down"
    ],
-   "explanation": "The negative price was a problem with one specific contract: those who were due to take delivery of physical barrels had nowhere to store them. Extreme headlines describe the moment; they don't tell you what comes next.",
-   "horizon": "the next 14 months"
+   "explanation": "Extreme headlines describe the moment; they don't tell you what comes next. A year later, the share was 53 % higher."
   },
   "u35l7-6": {
    "prompt": "Marta reads on a forum that a company is «definitely going to be taken over». The share price has already risen 25 % in three days. What does she do?",
@@ -757,15 +748,6 @@
     "Did the market already expect it?"
    ],
    "explanation": "Expectations, source and risk. How popular a post is says nothing about the price… except that you may already be late."
-  },
-  "u35l7-9": {
-   "prompt": "December 2020: Tesla joins the S&P 500 after rising more than 700 % in the year, and index funds have to buy its shares. What did the price do over the next two years?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "A forced purchase announced weeks in advance is news everyone knows: the price usually moves before the big day. What happens afterwards depends on other things: earnings, interest rates and expectations.",
-   "horizon": "the period up to January 2023"
   },
   "u35l8-1": {
    "prompt": "Put the steps of a well-executed trade in order.",
@@ -889,6 +871,15 @@
     "GOLD",
     "CRYPTO"
    ]
+  },
+  "u35l3-5": {
+   "prompt": "Look at this stretch of silver. What trend did it have? (Silver (physical ETC) · closes every 3 sessions · October–December 2025)",
+   "options": [
+    "Uptrend",
+    "Downtrend",
+    "Sideways"
+   ],
+   "explanation": "From about $45 to about $60 in two months, with rising highs and lows: a textbook uptrend."
   }
  }
 }

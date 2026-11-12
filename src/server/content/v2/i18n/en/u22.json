@@ -439,15 +439,6 @@
    ],
    "explanation": "The opposite: by correcting for data-snooping bias, they weakened them considerably."
   },
-  "u22l2-5": {
-   "prompt": "S&P 500, 8 September 2008: almost a year after its October 2007 high, the index is still below it. What do you think happened over the following months?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "The 200 SMA doesn’t predict bottoms or tops: it only tells you whether the long-term trend is up or down. According to the evidence, its usefulness lies in reducing exposure during big downtrends, with false signals along the way.",
-   "horizon": "the following months"
-  },
   "u22l2-6": {
    "prompt": "Another real chart, no name. Up or down over the next 10 sessions?",
    "options": [

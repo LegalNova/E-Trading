@@ -272,7 +272,7 @@ export default unit({
       single('¿Qué estilo sufre más si el crecimiento esperado decepciona?', ['El de valor', 'El de crecimiento', 'Los dos igual'], 1, 'Con un PER alto, el precio descuenta beneficios futuros; si no llegan, el PER se desinfla.'),
       scenario('Una empresa de crecimiento con PER de 60 presenta resultados: gana más que el año pasado, pero menos de lo que se esperaba. ¿Qué es lo más probable?', [['Sube: ha ganado más', 'Ganar más no basta si el precio ya contaba con todavía más.'], ['Cae con fuerza: el precio descontaba más crecimiento', 'Eso: con un PER alto, una decepción pequeña se paga cara.'], ['No se mueve', 'Los resultados que sorprenden mueven el precio.']], 1, 'En crecimiento pagas por expectativas: lo que cuenta es si se cumplen.'),
       num('Una empresa de valor paga 2 € de dividendo al año y cotiza a 40 €. ¿Qué rentabilidad por dividendo ofrece?', 5, '%', '2 ÷ 40 = 0,05 → 5 %. Las empresas de valor suelen repartir una parte mayor de lo que ganan.'),
-    ], { source: '5.5', minutes: 6, retire: [1, 2, 4, 6, 7, 8] }),
+    ], { source: '5.5', minutes: 6, retire: [1, 2, 3, 4, 6, 7, 8] }),
 
     lesson('u8l7', 'Recompras de acciones', [
       story('Menos acciones, más beneficio', [{ id: 'leo', name: 'Leo' }], [

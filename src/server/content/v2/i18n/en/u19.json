@@ -453,13 +453,13 @@
    "explanation": "That's what happens on a logarithmic scale. On a linear one, 100 to €200 takes up ten times more space than 10 to €20."
   },
   "u19l4-7": {
-   "prompt": "S&P 500, late September 1929: weekly closes have been rising for almost two years. What do you think happened next?",
+   "horizon": "the next year and a half",
+   "prompt": "S&P 500, late August 1987: weekly closes have been rising for more than two and a half years and the index has doubled. What do you think happened next?",
    "options": [
     "Up",
     "Down"
    ],
-   "explanation": "With moves this big, the scale decides what you see: on a hundred-year linear chart, any early stretch looks like a flat line. To compare eras, look at percentages.",
-   "horizon": "the following three years"
+   "explanation": "With moves this big, the scale decides what you see: on a hundred-year linear chart, any early stretch looks like a flat line. To compare eras, look at percentages."
   },
   "u19l4-8": {
    "prompt": "On a logarithmic scale, the same vertical distance represents the same ____.",

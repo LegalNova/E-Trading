@@ -53,7 +53,7 @@ export const u16l1 = lesson('u16l1', 'Precio y valor no son lo mismo', [
   upDown('Marzo de 2020: por la pandemia, la bolsa de EE. UU. se ha hundido en pocas semanas y casi todo el mundo vende con miedo. ¿Qué hizo en los meses siguientes?', 'hist-covid', 'Subió con fuerza. El señor Mercado vendía con pánico a cualquier precio; quien miró el negocio de las empresas y no solo su precio, no vendió en el peor momento. No siempre se recupera tan rápido.', 'los meses siguientes'),
   // Nueva (revisión de la sección 0): sustituye a la de «capitaliza», que un principiante confunde con lo que vale la empresa
   buckets('¿Habla del precio de la acción o del valor del negocio?', ['Precio', 'Valor'], [['La acción cerró ayer a 15,20 €', 0], ['Gana unos 100 millones de euros al año', 1], ['Ha subido un 8 % esta semana', 0], ['Tiene una marca que le permite subir precios', 1], ['Hoy la quieren comprar muchos inversores', 0], ['Sus clientes repiten año tras año', 1]], 'El precio es lo que se paga hoy en bolsa y cambia con el ánimo de quien compra y vende. El valor sale del negocio: lo que gana y lo que lo protege de la competencia.'),
-], { source: '5.1', minutes: 6, retire: [1, 2, 3, 4, 6, 7, 9] })
+], { source: '5.1', minutes: 6, retire: [1, 2, 3, 4, 6, 7, 9, 11] })
 
 // Antes en u17 (mismo id: conserva progreso y traducciones)
 export const u17l1 = lesson('u17l1', 'El PER', [

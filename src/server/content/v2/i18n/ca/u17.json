@@ -629,22 +629,13 @@
    ]
   },
   "u17l6-1": {
-   "prompt": "Mira el Nasdaq 100 des de finals del 1997 fins al març del 2000. Quina tendència hi veus? (Nasdaq 100 · tancaments setmanals · fins a la setmana del 06/03/2000)",
+   "prompt": "Mira l'S&P 500 des de finals del 1996 fins al desembre del 1999. Quina tendència hi veus? (S&P 500 · tancaments setmanals · fins a la setmana del 27/12/1999)",
    "options": [
     "Alcista",
     "Baixista",
     "Lateral"
    ],
-   "explanation": "Una pujada enorme: les valoracions van arribar a nivells mai vistos."
-  },
-  "u17l6-3": {
-   "prompt": "Desembre del 1989: la borsa japonesa cotitza a valoracions de rècord després d'una dècada d'eufòria. Què va fer el Nikkei 225 els anys següents?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Igual que amb el CAPE dels EUA, una valoració molt alta no fixa cap data: només canvia les probabilitats del que vindrà.",
-   "horizon": "fins al novembre del 1995"
+   "explanation": "Gairebé es va duplicar en tres anys, i les valoracions van arribar a nivells mai vistos."
   },
   "u17l6-4": {
    "prompt": "El CAPE divideix el preu entre la mitjana dels beneficis reals dels últims ____ anys.",

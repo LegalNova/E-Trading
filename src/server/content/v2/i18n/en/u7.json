@@ -276,13 +276,13 @@
    ]
   },
   "u7l2-8": {
-   "prompt": "Nasdaq 100, March 2000: tech has been soaring for years and everyone's talking about the internet. What did the index do over the following years?",
+   "horizon": "the following year",
+   "prompt": "Nasdaq 100, November 2021: tech shares have more than doubled since March 2020 and everyone's talking about them. What did the index do next?",
    "options": [
     "Up",
     "Down"
    ],
-   "explanation": "An index heavily concentrated in one sector depends on what happens to that sector, for better and for worse.",
-   "horizon": "the following years"
+   "explanation": "An index heavily concentrated in one sector depends on what happens to that sector, for better and for worse."
   },
   "u7l2-10": {
    "prompt": "The MSCI World covers large and mid-sized companies from ____ developed countries.",
@@ -344,13 +344,13 @@
    "explanation": "It's what an investor who reinvested everything would have made."
   },
   "u7l4-6": {
-   "prompt": "Nikkei 225 (Japan), December 1989: the index has had years of spectacular gains. What did it do over the following years?",
+   "horizon": "the following years",
+   "prompt": "FTSE 100 (United Kingdom), December 1999: the index has more than doubled in five years. What did it do over the following years?",
    "options": [
     "Up",
     "Down"
    ],
-   "explanation": "You can see what happened on the chart. Remember it's a price index: it doesn't count the dividends its holders received.",
-   "horizon": "the following years"
+   "explanation": "You can see what happened on the chart. Remember it's a price index: it doesn't count the dividends its holders received."
   },
   "u7l4-7": {
    "prompt": "Match each term with its meaning.",

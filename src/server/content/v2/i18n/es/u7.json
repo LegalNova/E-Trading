@@ -276,13 +276,13 @@
    ]
   },
   "u7l2-8": {
-   "prompt": "Nasdaq 100, marzo de 2000: la tecnología lleva años disparada y todo el mundo habla de internet. ¿Qué hizo el índice en los años siguientes?",
+   "prompt": "Nasdaq 100, noviembre de 2021: las tecnológicas se han más que duplicado desde marzo de 2020 y todo el mundo habla de ellas. ¿Qué hizo el índice después?",
    "options": [
     "Sube",
     "Baja"
    ],
    "explanation": "Un índice muy concentrado en un sector depende de lo que le pase a ese sector, para bien y para mal.",
-   "horizon": "los años siguientes"
+   "horizon": "el año siguiente"
   },
   "u7l2-10": {
    "prompt": "El MSCI World cubre grandes y medianas empresas de ____ países desarrollados.",
@@ -361,7 +361,7 @@
    "explanation": "Es lo que habría ganado un inversor que reinvirtiera todo."
   },
   "u7l4-6": {
-   "prompt": "Nikkei 225 (Japón), diciembre de 1989: el índice lleva años de subidas espectaculares. ¿Qué hizo en los años siguientes?",
+   "prompt": "FTSE 100 (Reino Unido), diciembre de 1999: el índice se ha más que duplicado en cinco años. ¿Qué hizo en los años siguientes?",
    "options": [
     "Sube",
     "Baja"

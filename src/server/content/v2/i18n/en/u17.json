@@ -629,22 +629,13 @@
    ]
   },
   "u17l6-1": {
-   "prompt": "Look at the Nasdaq 100 from late 1997 to March 2000. What trend do you see? (Nasdaq 100 · weekly closes · up to the week of 06/03/2000)",
+   "prompt": "Look at the S&P 500 from late 1996 to December 1999. What trend do you see? (S&P 500 · weekly closes · up to the week of 27/12/1999)",
    "options": [
     "Uptrend",
     "Downtrend",
     "Sideways"
    ],
-   "explanation": "A huge rise: valuations reached levels never seen before."
-  },
-  "u17l6-3": {
-   "prompt": "December 1989: the Japanese stock market is trading at record valuations after a decade of euphoria. What did the Nikkei 225 do in the following years?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "As with the US CAPE, a very high valuation doesn't set a date: it only shifts the odds of what comes next.",
-   "horizon": "until November 1995"
+   "explanation": "It almost doubled in three years, and valuations reached levels never seen before."
   },
   "u17l6-4": {
    "prompt": "The CAPE divides the price by the average real earnings of the last ____ years.",

@@ -347,15 +347,6 @@
    ],
    "explanation": "Les grans criptos tendeixen a pujar i caure juntes: combinar-les gairebé no diversifica."
   },
-  "u29l2-3": {
-   "prompt": "Així es va moure l'or entre el 2018 i l'estiu del 2020, inclosa l'ensulsiada de les borses del març del 2020. Quina tendència hi veus? (Or · tancaments setmanals · fins a la setmana del 03/08/2020)",
-   "options": [
-    "Alcista",
-    "Baixista",
-    "Lateral"
-   ],
-   "explanation": "Mentre les borses s'enfonsaven, l'or va seguir el seu camí: per això es diu que la seva correlació amb les accions és baixa."
-  },
   "u29l2-5": {
    "prompt": "Correlació alta o baixa?",
    "options": [
@@ -708,6 +699,20 @@
     "Vull que els meus diners donin suport a empreses responsables 🌱",
     "N'hi ha prou que el fons posi ESG al nom?"
    ]
+  },
+  "u29l2-11": {
+   "prompt": "Entre l'octubre del 2007 i el febrer del 2009, les accions dels EUA van caure un 51 % i l'or va pujar un 18 %. Amb la meitat dels teus diners en cadascun, quant hauries perdut, més o menys?",
+   "options": [
+    "Un 51 %, com les accions",
+    "Al voltant d'un 16 %",
+    "Res: l'or ho va compensar tot"
+   ],
+   "feedback": [
+    "Això seria amb tot en accions. La meitat en or va compensar part de la caiguda.",
+    "Això: la meitat perd un 51 % i l'altra meitat guanya un 18 %. Juntes, prop d'un −16 %.",
+    "En va compensar una part, no tota: l'or va pujar menys del que van caure les accions."
+   ],
+   "explanation": "Dos actius que no es mouen alhora suavitzen la caiguda del conjunt: això és el que aporta una correlació baixa."
   }
  }
 }

@@ -46,7 +46,7 @@ export default unit({
       timed(tf('Lo habitual es que los inversores compren en el pánico y vendan en la euforia.', false, 'Suelen hacer justo lo contrario: comprar en la euforia y vender en el pánico.'), 10),
       match('Empareja cada momento de una operación con la emoción típica.', [['Antes de entrar', 'Prisa, FOMO'], ['La operación va en contra', 'Miedo, negación'], ['Tras una pérdida', 'Rabia, ganas de recuperar'], ['Tras varias ganancias', 'Euforia, exceso de confianza']], 'Conocer la emoción de cada momento te deja preparar la regla antes.'),
       buckets('¿Es miedo o es avaricia?', ['Miedo', 'Avaricia'], [['Vender todo tras un titular alarmante', 0], ['Subir el riesgo porque «estoy en racha»', 1], ['Quitar el stop porque «no puede bajar más»', 0], ['Entrar en algo que ha subido un 200 % para no quedarte fuera', 1], ['Cerrar una ganancia pequeña por pánico a devolverla', 0]], 'Las dos emociones empujan a saltarse el plan, en direcciones opuestas.'),
-    ], { source: '11.6', minutes: 6, retire: [2, 4, 5, 7] }),
+    ], { source: '11.6', minutes: 6, retire: [1, 2, 4, 5, 7] }),
 
     lesson('u28l2', 'Operar por venganza', [
       story('Tres pérdidas antes de comer', [{ id: 'ana', name: 'Ana' }], [

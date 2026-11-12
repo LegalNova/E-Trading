@@ -451,22 +451,13 @@
    ]
   },
   "u18l2-3": {
-   "prompt": "Primera setmana de setembre del 2008: els EUA acaben d'intervenir Fannie Mae i Freddie Mac i es parla de recessió. Què va fer el S&P 500 els mesos següents?",
+   "horizon": "fins al desembre del 2023",
+   "prompt": "Octubre del 2022: la inflació als EUA supera el 8 %, la Reserva Federal apuja els tipus al ritme més ràpid en dècades i gairebé tothom espera una recessió. Què va fer l'S&P 500 després?",
    "options": [
     "Puja",
     "Baixa"
    ],
-   "explanation": "En plena crisi financera ningú no sabia fins on arribaria el contagi a l'economia real. Els cíclics, com la banca o la indústria, eren els més exposats.",
-   "horizon": "fins al desembre del 2009"
-  },
-  "u18l2-4": {
-   "prompt": "Març del 2009: l'atur es dispara i els titulars són terribles. El S&P 500 ha caigut més d'un 50 % des del màxim. Què va fer després?",
-   "options": [
-    "Puja",
-    "Baixa"
-   ],
-   "explanation": "Amb notícies tan dolentes, gairebé ningú no s'atrevia a decidir res. Recorda que la borsa mira el que espera d'aquí a uns mesos, no el que passa avui.",
-   "horizon": "fins al desembre del 2010"
+   "explanation": "L'índex va tocar terra aquell mateix mes, amb les notícies encara dolentes, i va pujar un 33 % fins a finals del 2023. La borsa mira el que espera, no el que diuen avui els titulars."
   },
   "u18l2-5": {
    "prompt": "Què és tècnicament una recessió?",

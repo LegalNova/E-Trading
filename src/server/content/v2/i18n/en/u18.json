@@ -451,22 +451,13 @@
    ]
   },
   "u18l2-3": {
-   "prompt": "First week of September 2008: the US has just taken over Fannie Mae and Freddie Mac and there's talk of recession. What did the S&P 500 do in the following months?",
+   "horizon": "until December 2023",
+   "prompt": "October 2022: US inflation is above 8 %, the Federal Reserve is raising rates at the fastest pace in decades and almost everyone expects a recession. What did the S&P 500 do next?",
    "options": [
     "Up",
     "Down"
    ],
-   "explanation": "In the middle of the financial crisis, nobody knew how far the contagion to the real economy would spread. Cyclicals, like banks and industrials, were the most exposed.",
-   "horizon": "until December 2009"
-  },
-  "u18l2-4": {
-   "prompt": "March 2009: unemployment is soaring and the headlines are terrible. The S&P 500 has fallen more than 50 % from its peak. What did it do next?",
-   "options": [
-    "Up",
-    "Down"
-   ],
-   "explanation": "With news that bad, almost nobody dared to make a decision. Remember that the stock market looks at what it expects months ahead, not at what's happening today.",
-   "horizon": "until December 2010"
+   "explanation": "The index bottomed out that same month, with the news still bad, and rose 33 % by the end of 2023. The stock market looks at what it expects, not at what today's headlines say."
   },
   "u18l2-5": {
    "prompt": "What, technically, is a recession?",

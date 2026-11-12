@@ -453,13 +453,13 @@
    "explanation": "Eso pasa en la logarítmica. En lineal, de 100 a 200 € ocupa diez veces más que de 10 a 20 €."
   },
   "u19l4-7": {
-   "prompt": "S&P 500, finales de septiembre de 1929: los cierres semanales llevan casi dos años subiendo. ¿Qué crees que pasó después?",
+   "prompt": "S&P 500, finales de agosto de 1987: los cierres semanales llevan más de dos años y medio subiendo y el índice se ha duplicado. ¿Qué crees que pasó después?",
    "options": [
     "Sube",
     "Baja"
    ],
    "explanation": "Con movimientos tan grandes, la escala decide lo que ves: en un gráfico lineal de cien años, cualquier tramo antiguo parece una línea plana. Para comparar épocas, mira porcentajes.",
-   "horizon": "los tres años siguientes"
+   "horizon": "el año y medio siguiente"
   },
   "u19l4-8": {
    "prompt": "En escala logarítmica, la misma distancia vertical representa el mismo ____.",

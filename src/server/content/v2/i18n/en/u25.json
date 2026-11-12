@@ -378,22 +378,22 @@
  },
  "questions": {
   "u25l1-1": {
-   "prompt": "This is how the S&P 500 was doing up to March 2009. What trend do you see? (S&P 500 · weekly closes · up to the week of 02/03/2009)",
+   "prompt": "This is how the S&P 500 was doing up to October 2002. What trend do you see? (S&P 500 · weekly closes · up to the week of 07/10/2002)",
    "options": [
     "Uptrend",
     "Downtrend",
     "Sideways"
    ],
-   "explanation": "A fall of more than 50 % from 2007: the moment when the most people gave up on «buy and hold»."
+   "explanation": "A 45 % fall from the 2000 high: one of those moments when the most people give up on «buy and hold»."
   },
   "u25l1-2": {
-   "prompt": "March 2009: after the worst crisis in decades, lots of people sell «so as not to lose any more». What did the S&P 500 do next?",
+   "horizon": "the next two years",
+   "prompt": "October 2002: after almost three years of falls, lots of people sell so as «not to lose any more». What did the S&P 500 do next?",
    "options": [
     "Up",
     "Down"
    ],
-   "explanation": "Those who held on (or kept investing) recovered. Those who sold in the panic turned a temporary fall into a permanent loss.",
-   "horizon": "the next year and a half"
+   "explanation": "Those who held on (or kept investing) gradually recovered. Those who sold in the panic turned a temporary fall into a permanent loss."
   },
   "u25l1-4": {
    "prompt": "Match each time frame with the historical share of periods with a gain in the S&P 500.",

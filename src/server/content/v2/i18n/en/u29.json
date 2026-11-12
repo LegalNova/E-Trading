@@ -347,15 +347,6 @@
    ],
    "explanation": "The big cryptos tend to rise and fall together: combining them barely diversifies at all."
   },
-  "u29l2-3": {
-   "prompt": "This is how gold moved between 2018 and summer 2020, including the stock market crash of March 2020. What trend do you see? (Gold · weekly closes · up to the week of 03/08/2020)",
-   "options": [
-    "Uptrend",
-    "Downtrend",
-    "Sideways"
-   ],
-   "explanation": "While stock markets were sinking, gold went its own way: that's why its correlation with shares is said to be low."
-  },
   "u29l2-5": {
    "prompt": "High or low correlation?",
    "options": [
@@ -708,6 +699,20 @@
     "I want my money to support responsible companies 🌱",
     "Is it enough for the fund to have ESG in its name?"
    ]
+  },
+  "u29l2-11": {
+   "prompt": "Between October 2007 and February 2009, US shares fell 51 % and gold rose 18 %. With half your money in each, roughly how much would you have lost?",
+   "options": [
+    "51 %, like shares",
+    "About 16 %",
+    "Nothing: gold made up for it all"
+   ],
+   "feedback": [
+    "That would be with everything in shares. The half in gold made up for part of the fall.",
+    "That's it: one half loses 51 % and the other half gains 18 %. Together, close to −16 %.",
+    "It made up for part of it, not all: gold rose less than shares fell."
+   ],
+   "explanation": "Two assets that don't move together soften the fall of the whole: that's what a low correlation gives you."
   }
  }
 }

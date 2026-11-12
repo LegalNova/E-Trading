@@ -453,13 +453,13 @@
    "explanation": "Això passa en la logarítmica. En lineal, de 100 a 200 € ocupa deu vegades més que de 10 a 20 €."
   },
   "u19l4-7": {
-   "prompt": "S&P 500, finals de setembre del 1929: els tancaments setmanals fa gairebé dos anys que pugen. Què creus que va passar després?",
+   "horizon": "l'any i mig següent",
+   "prompt": "S&P 500, finals d'agost del 1987: els tancaments setmanals fa més de dos anys i mig que pugen i l'índex s'ha duplicat. Què creus que va passar després?",
    "options": [
     "Puja",
     "Baixa"
    ],
-   "explanation": "Amb moviments tan grans, l'escala decideix el que veus: en un gràfic lineal de cent anys, qualsevol tram antic sembla una línia plana. Per comparar èpoques, mira percentatges.",
-   "horizon": "els tres anys següents"
+   "explanation": "Amb moviments tan grans, l'escala decideix el que veus: en un gràfic lineal de cent anys, qualsevol tram antic sembla una línia plana. Per comparar èpoques, mira percentatges."
   },
   "u19l4-8": {
    "prompt": "En escala logarítmica, la mateixa distància vertical representa el mateix ____.",
