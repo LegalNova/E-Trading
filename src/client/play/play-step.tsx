@@ -200,7 +200,8 @@ export function StoryView({ s, done, onDone }: { s: StoryStepT; done: boolean; o
         {shown.map((l, i) =>
           'note' in l ? (
             <p key={i} className="t-cap m-0 animate-rise py-1 text-center italic">
-              {l.note}
+              {/* Las notas también pueden llevar negritas (antes se veían los asteriscos) */}
+              {inline(l.note)}
             </p>
           ) : l.who === 'me' ? (
             <div key={i} className="flex animate-pop justify-end">
