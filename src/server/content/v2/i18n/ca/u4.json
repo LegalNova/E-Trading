@@ -191,8 +191,8 @@
   "u4l1-3": {
    "prompt": "Necessites els diners per a un viatge d'aquí a un any. Què té més sentit?",
    "options": [
-    "Estalviar-los en un compte o un dipòsit",
-    "Invertir-los en accions",
+    "Estalviar-los en un compte",
+    "Invertir-los en accions, que rendeixen més",
     "Especular amb criptomonedes"
    ],
    "explanation": "A un any vista, els diners no han d'estar en una cosa que pot caure un 30 %."
@@ -200,9 +200,9 @@
   "u4l1-4": {
    "prompt": "D'on surt el guany de qui inverteix en una empresa a llarg termini?",
    "options": [
-    "D'un altre inversor que perd",
+    "D'un altre inversor que perd el que tu guanyes",
     "De la sort",
-    "Dels beneficis que genera l'empresa"
+    "Del que guanya l'empresa"
    ],
    "explanation": "Invertir és participar en el que produeix l'actiu: beneficis, interessos o rendes."
   },
@@ -228,11 +228,11 @@
    "prompt": "Quins són exemples d'especulació? Marca'ls tots.",
    "options": [
     "Comprar una moneda de moda perquè puja",
-    "Fer servir molt de palanquejament",
+    "Comprar un fons indexat i mantenir-lo anys",
     "Aportar cada mes a un fons mundial durant 20 anys",
     "Operar cada pocs minuts"
    ],
-   "explanation": "Aportar a llarg termini a un fons diversificat és invertir."
+   "explanation": "Comprar una cosa només perquè puja o operar cada pocs minuts és especular, igual que fer servir molt de palanquejament. Aportar a llarg termini a un fons diversificat, o comprar-lo i mantenir-lo, és invertir."
   },
   "u4l2-1": {
    "prompt": "Ordena els passos per calcular la teva aportació mensual.",
@@ -257,9 +257,9 @@
   "u4l2-5": {
    "prompt": "Quin objectiu està ben plantejat?",
    "options": [
-    "Tenir 12.000 € per a un cotxe el 2029 aportant 250 € al mes",
-    "Estalviar molt",
-    "Ser ric"
+    "12.000 € per a un cotxe el 2029",
+    "Estalviar tot el que pugui cada mes",
+    "Ser ric abans dels 40"
    ],
    "explanation": "Té quantitat, data i pla: es pot mesurar i seguir."
   },
@@ -282,7 +282,7 @@
    "prompt": "L'Ana vol un coixí de 3.000 €, un viatge de 1.500 € a l'estiu i l'entrada d'un pis d'aquí a 6 anys. Ho guarda tot junt al mateix compte. Què li convé?",
    "options": [
     "Continuar amb tot junt: és més senzill",
-    "Separar cada objectiu en el seu propi compte o guardiola",
+    "Separar cada objectiu en la seva guardiola",
     "Anar a per un objectiu cada vegada i oblidar els altres"
    ],
    "explanation": "Un calaix per objectiu: així els diners de cada meta no es barregen.",
@@ -311,7 +311,7 @@
    "prompt": "La Sara vol 1.200 € per a un portàtil d'aquí a 8 mesos. Un amic li diu que els posi en accions «perquè creixin més». Què fa?",
    "options": [
     "Els estalvia en un compte remunerat",
-    "Els posa tots en accions",
+    "Els posa tots en accions, com li diu el seu amic",
     "Els posa en una cripto que està de moda"
    ],
    "explanation": "A 8 mesos, els diners han d'estar disponibles i sense risc de caiguda. Les accions temptent perquè acostumen a créixer més, però només a llarg termini i amb caigudes pel camí.",
@@ -325,7 +325,7 @@
    "prompt": "Quin és el teu perfil de risc real?",
    "options": [
     "El més baix entre capacitat i tolerància",
-    "El més alt entre capacitat i tolerància",
+    "El més alt entre la teva capacitat i la teva tolerància",
     "El que tingui el teu millor amic"
    ],
    "explanation": "Si pots perdre molt però no ho suportes, vendràs en pànic; si ho suportes però no t'ho pots permetre, t'arrisques massa."
@@ -349,15 +349,15 @@
   "u4l4-3": {
    "prompt": "La Marta té 23 anys, contracte estable, un coixí de 6 mesos i inverteix per a d'aquí a 30 anys en una cartera diversificada. La seva cartera cau un 35 %. Quina decisió encaixa amb el seu pla?",
    "options": [
-    "Ho ven tot per no perdre més",
-    "Manté el pla i continua amb les seves aportacions",
-    "Demana un préstec per comprar-ne més"
+    "Ho ven tot per no perdre més i tornar-hi quan es calmi",
+    "Manté el pla i continua aportant",
+    "Ven la meitat, per si continua caient"
    ],
    "explanation": "Amb capacitat i termini, el pla importa més que el titular del dia.",
    "feedback": [
     "Converteix una caiguda temporal en una pèrdua definitiva i, si després hi ha rebot, se'l perd.",
     "El seu termini i el seu coixí li permeten esperar: la caiguda només és una pèrdua real si ven.",
-    "Endeutar-se per invertir multiplica el risc: si continua caient, deu diners i perd."
+    "Vendre'n una part en plena caiguda també fa definitiva aquesta pèrdua, i el seu pla a 30 anys no ha canviat."
    ]
   },
   "u4l4-7": {
@@ -388,7 +388,7 @@
   "u4l4-11": {
    "prompt": "La teva cartera cau un 50 %. Per tornar on era, quant ha de pujar després?",
    "options": [
-    "Un 100 %: s'ha de duplicar",
+    "Un 100 %",
     "Un 50 %",
     "Un 25 %"
    ],
@@ -417,17 +417,17 @@
    "options": [
     "Registre a la CNMV i document de riscos",
     "Només ensenya captures de guanys",
-    "Pressa per decidir",
+    "T'explica els costos abans de contractar",
     "Rendibilitat alta garantida"
    ],
-   "explanation": "Una entitat legal està registrada i explica els seus riscos i costos."
+   "explanation": "Les captures de guanys i la rendibilitat alta garantida són senyals d'estafa, igual que ficar pressa. Una entitat legal està registrada i explica els seus riscos i els seus costos."
   },
   "u4l5-7": {
    "prompt": "Un influencer amb un cotxe de luxe t'ofereix copiar les seves operacions per 99 € al mes: «el mes passat vaig guanyar un 40 %». Què fas?",
    "options": [
     "També li passo les meves claus del bròquer perquè operi per mi",
     "M'hi subscric: els resultats parlen sols",
-    "Busco si està registrat a la CNMV i li demano l'historial complet"
+    "Busco si està registrat a la CNMV"
    ],
    "explanation": "Abans de pagar ningú: registre a la CNMV, historial complet i zero presses.",
    "feedback": [
@@ -466,8 +466,8 @@
    "prompt": "Et truca un «assessor». La seva empresa no surt al registre de la CNMV, però té una web molt professional i opinions de clients. Què fas?",
    "options": [
     "Provo amb pocs diners",
-    "Hi confio: la web és molt seriosa",
-    "No li dono diners: sense autorització no hi ha res més a mirar"
+    "Hi confio: una web tan seriosa no la munta qualsevol",
+    "No li dono diners: no està autoritzat"
    ],
    "feedback": [
     "Amb pocs diners també es perd, i després te'n demanaran més per «recuperar-ho».",

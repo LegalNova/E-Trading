@@ -259,15 +259,15 @@
     "A longer term",
     "Paying it back early with no penalty",
     "Compulsory linked insurance",
-    "An arrangement fee"
+    "A lower nominal rate with the same fees"
    ],
-   "explanation": "Paying back early with no penalty cuts the interest: it's the only thing on the list that makes it cheaper."
+   "explanation": "A longer term and compulsory insurance make the loan dearer, as does an arrangement fee. Paying it back early with no penalty or a lower nominal rate make it cheaper."
   },
   "u3l1-11": {
    "prompt": "You want to start investing and the bank offers you a personal loan at 9 % APR to do it «in a big way». What do you do?",
    "options": [
-    "I don't take it: I start with what I save each month",
-    "I take it: the stock market goes up in the long run",
+    "I don't take it: I start with what I save",
+    "I take it: the stock market goes up more than 9 % in the long run",
     "I borrow half, just in case"
    ],
    "explanation": "The debt charges a guaranteed 9 %; the investment, on the other hand, can fall just when the payment is due. It's tempting to think the market always goes up, but in the short run nobody guarantees it.",
@@ -281,7 +281,7 @@
    "prompt": "What do you reply to Lumi?",
    "options": [
     "Ask them to stretch the term so you pay less",
-    "First ask for the APR and the total you'll pay",
+    "First ask for the APR and the total cost",
     "Sign: at 0 % you pay nothing"
    ],
    "explanation": "A 0 % nominal rate can hide opening fees or tied insurance that only show up in the APR and the total to pay. It's tempting to stick with the «0 %», but what you compare is the APR.",
@@ -322,8 +322,8 @@
   "u3l2-7": {
    "prompt": "Which debt makes most sense?",
    "options": [
-    "A revolving card to pay for a trip",
-    "A mortgage with a payment of 25 % of your income",
+    "A revolving card to pay for a trip this summer",
+    "A mortgage you can comfortably afford",
     "A payday loan for a concert"
    ],
    "explanation": "Cheap, for something that lasts and with an affordable payment."
@@ -351,7 +351,7 @@
    "options": [
     "Puts it on the revolving card so as not to take out a loan",
     "Borrows €10,000 to treat himself to something too",
-    "Checks the payment fits his budget and takes the loan"
+    "Checks the payment fits and takes the loan"
    ],
    "explanation": "The same debt can be good or bad: it depends on the cost and what it gives you back.",
    "feedback": [
@@ -398,7 +398,7 @@
    "options": [
     "Because it charges a fee on every purchase in shops",
     "Because it can only be used outside Spain",
-    "Because the small payment barely reduces the debt and the interest piles up"
+    "Because the payment barely reduces the debt"
    ],
    "explanation": "With a €30 payment on €1,000 at 2 % a month, only €10 reduces the debt in the first month."
   },
@@ -414,7 +414,7 @@
    "prompt": "Ana owes €2,000 on a revolving card at 22 % APR and pays €50 a month. She has €4,000 in an account at 2 %, and her ideal cushion is €2,000. What does she do?",
    "options": [
     "Invests the €4,000 in the stock market to earn more than 22 %",
-    "Uses €2,000 to clear the revolving card and keeps €2,000 as a cushion",
+    "Clears the revolving card and keeps €2,000 as a cushion",
     "Leaves everything as it is"
    ],
    "explanation": "Paying off expensive debt is the best guaranteed «investment» there is.",
@@ -428,11 +428,11 @@
    "prompt": "What helps you get out of a revolving card? Tick all.",
    "options": [
     "Paying it off with a payday loan",
-    "Asking to switch it to paying at the end of the month",
+    "Paying only the minimum each month",
     "Raising the monthly payment",
     "Stopping using it"
    ],
-   "explanation": "Paying off an expensive debt with an even more expensive one only makes the problem worse."
+   "explanation": "Stopping using it and raising the payment (or switching to paying at the end of the month) cuts the debt. Paying only the minimum drags it out for years, and covering it with a payday loan makes it dearer."
   },
   "u3l3-9": {
    "prompt": "A €300 payday loan where you pay back €390 after 30 days has an APR of over ____.",
@@ -513,17 +513,17 @@
    "options": [
     "Stopping paying the minimum on one of them",
     "Paying the minimum on all and the extra on one",
-    "Carrying on buying with the revolving card",
+    "Starting with the debt with the highest interest",
     "Taking out a payday loan to pay off the card"
    ],
-   "explanation": "Paying the minimum on all and putting the extra into one is exactly the basis of both methods."
+   "explanation": "Missing a minimum payment or covering the card with a payday loan makes things worse. Paying the minimum on all and putting the extra into one, starting with the dearest, is exactly the method."
   },
   "u3l4-11": {
    "prompt": "Pablo has just paid off his last expensive debt and now has €300 a month free that used to go on payments. He already has an emergency fund. What does he do?",
    "options": [
     "He leaves it in his current account",
-    "He raises his spending: he's earned it",
-    "He turns it into an automatic contribution to an index ETF"
+    "He raises his spending: he's earned it after all that effort",
+    "He turns it into automatic saving and investing"
    ],
    "explanation": "Pablo was already living without that €300, so investing it costs him nothing day to day. Raising his spending is tempting as a reward, but it stops dead the momentum he'd built.",
    "feedback": [
@@ -536,7 +536,7 @@
    "prompt": "Bruno has a fixed-rate mortgage at 2 %, a 6-month cushion and another €10,000 saved that he won't need for 15 years. What does he do?",
    "options": [
     "Takes out another loan to invest more",
-    "Compares the guaranteed 2 % from paying off with long-term, diversified investing, without touching his cushion",
+    "Compares paying off at 2 % with long-term investing",
     "Puts it all into a single trendy share because the mortgage is cheap"
    ],
    "explanation": "With cheap debt there's no single right answer: what matters is comparing properly and not touching the cushion.",
@@ -573,8 +573,8 @@
    "prompt": "What do you tell Lumi?",
    "options": [
     "Invest in whatever has gone up most this year",
-    "Always pay it off: debt is bad",
-    "It depends: compare the guaranteed 2 % with investing for the long term, and check you have a cushion"
+    "Always pay it off: any debt is bad and you should get rid of it",
+    "It depends: compare that 2 % with long-term investing"
    ],
    "explanation": "Paying off gives a guaranteed return; investing, an expected one. With cheap debt, both options can make sense.",
    "feedback": [

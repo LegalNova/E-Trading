@@ -191,8 +191,8 @@
   "u4l1-3": {
    "prompt": "You need the money for a trip in a year's time. What makes most sense?",
    "options": [
-    "Saving it in an account or deposit",
-    "Investing it in shares",
+    "Saving it in an account",
+    "Investing it in shares, which earn more",
     "Speculating with cryptocurrencies"
    ],
    "explanation": "With a one-year horizon, the money shouldn't be in something that can drop 30 %."
@@ -200,9 +200,9 @@
   "u4l1-4": {
    "prompt": "Where does the gain come from for someone who invests in a company for the long term?",
    "options": [
-    "From another investor who loses",
+    "From another investor who loses what you gain",
     "From luck",
-    "From the profits the company makes"
+    "From what the company earns"
    ],
    "explanation": "Investing means sharing in what the asset produces: profits, interest or rent."
   },
@@ -228,11 +228,11 @@
    "prompt": "Which are examples of speculating? Tick all.",
    "options": [
     "Buying a trendy coin because it's going up",
-    "Using a lot of leverage",
+    "Buying an index fund and holding it for years",
     "Paying into a global fund every month for 20 years",
     "Trading every few minutes"
    ],
-   "explanation": "Paying into a diversified fund for the long term is investing."
+   "explanation": "Buying something only because it's rising or trading every few minutes is speculating, as is using a lot of leverage. Paying into a diversified fund for the long term, or buying and holding it, is investing."
   },
   "u4l2-1": {
    "prompt": "Put the steps for working out your monthly contribution in order.",
@@ -257,9 +257,9 @@
   "u4l2-5": {
    "prompt": "Which goal is well framed?",
    "options": [
-    "Having €12,000 for a car in 2029 by putting in €250 a month",
-    "Saving a lot",
-    "Being rich"
+    "€12,000 for a car in 2029",
+    "Saving as much as I can every month",
+    "Being rich before 40"
    ],
    "explanation": "It has an amount, a date and a plan: it can be measured and tracked."
   },
@@ -282,7 +282,7 @@
    "prompt": "Ana wants a €3,000 cushion, a €1,500 trip in the summer and a deposit on a flat in 6 years. She keeps it all together in the same account. What should she do?",
    "options": [
     "Keep it all together: it's simpler",
-    "Put each goal in its own account or savings pot",
+    "Put each goal in its own savings pot",
     "Go for one goal at a time and forget the rest"
    ],
    "explanation": "One pot per goal: that way the money for each target doesn't get mixed up.",
@@ -311,7 +311,7 @@
    "prompt": "Sara wants €1,200 for a laptop in 8 months. A friend tells her to put it in shares «so it grows more». What does she do?",
    "options": [
     "She saves it in an interest-bearing account",
-    "She puts it all in shares",
+    "She puts it all in shares, as her friend says",
     "She puts it in a trendy crypto"
    ],
    "explanation": "Over 8 months, the money has to be available and safe from falls. Shares are tempting because they usually grow more, but only over the long run and with falls along the way.",
@@ -325,7 +325,7 @@
    "prompt": "What's your real risk profile?",
    "options": [
     "The lower of capacity and tolerance",
-    "The higher of capacity and tolerance",
+    "The higher of your capacity and your tolerance",
     "Whatever your best friend's is"
    ],
    "explanation": "If you can lose a lot but can't stomach it, you'll panic sell; if you can stomach it but can't afford it, you're taking too much risk."
@@ -349,15 +349,15 @@
   "u4l4-3": {
    "prompt": "Marta is 23, has a stable job, a 6-month cushion and invests for 30 years from now in a diversified portfolio. Her portfolio drops 35 %. Which decision fits her plan?",
    "options": [
-    "Sells everything so as not to lose more",
-    "Sticks to the plan and keeps up her contributions",
-    "Takes out a loan to buy more"
+    "Sells everything so as not to lose more, to return when it calms down",
+    "Sticks to the plan and keeps contributing",
+    "Sells half, in case it keeps falling"
    ],
    "explanation": "With capacity and time on her side, the plan matters more than the day's headline.",
    "feedback": [
     "She turns a temporary fall into a permanent loss and, if there's a rebound later, she misses it.",
     "Her time horizon and her cushion let her wait: the fall is only a real loss if she sells.",
-    "Borrowing to invest multiplies the risk: if it keeps falling, she owes money and loses."
+    "Selling part in the middle of a fall also locks in that loss, and her 30-year plan hasn't changed."
    ]
   },
   "u4l4-7": {
@@ -388,7 +388,7 @@
   "u4l4-11": {
    "prompt": "Your portfolio falls 50 %. To get back to where it was, how much does it then have to rise?",
    "options": [
-    "100 %: it has to double",
+    "100 %",
     "50 %",
     "25 %"
    ],
@@ -417,17 +417,17 @@
    "options": [
     "Registered with the CNMV, with a risk document",
     "Only shows screenshots of gains",
-    "Pressure to decide fast",
+    "They explain the costs before you sign up",
     "Guaranteed high returns"
    ],
-   "explanation": "A legitimate firm is registered and explains its risks and costs."
+   "explanation": "Screenshots of gains and guaranteed high returns are signs of a scam, as is rushing you. A legitimate firm is registered and explains its risks and costs."
   },
   "u4l5-7": {
    "prompt": "An influencer with a luxury car offers to let you copy his trades for €99 a month: «last month I made 40 %». What do you do?",
    "options": [
     "I also give him my broker login so he can trade for me",
     "I sign up: the results speak for themselves",
-    "I check whether he's registered with the CNMV and ask for his full track record"
+    "I check whether he's registered with the CNMV"
    ],
    "explanation": "Before paying anyone: CNMV registration, full track record and no rushing.",
    "feedback": [
@@ -467,7 +467,7 @@
    "options": [
     "I try with a small amount",
     "I trust him: the website looks very serious",
-    "I give him no money: without authorisation there's nothing more to look at"
+    "I give him no money: he isn't authorised"
    ],
    "feedback": [
     "You can lose a small amount too, and then they'll ask for more to «win it back».",

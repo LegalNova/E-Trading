@@ -191,8 +191,8 @@
   "u4l1-3": {
    "prompt": "Necesitas el dinero para un viaje dentro de un año. ¿Qué tiene más sentido?",
    "options": [
-    "Ahorrarlo en una cuenta o depósito",
-    "Invertirlo en acciones",
+    "Ahorrarlo en una cuenta",
+    "Invertirlo en acciones, que rinden más",
     "Especular con criptomonedas"
    ],
    "explanation": "A un año, el dinero no debe estar en algo que puede caer un 30 %."
@@ -200,9 +200,9 @@
   "u4l1-4": {
    "prompt": "¿De dónde sale la ganancia de quien invierte en una empresa a largo plazo?",
    "options": [
-    "De otro inversor que pierde",
+    "De otro inversor que pierde lo que tú ganas",
     "De la suerte",
-    "De los beneficios que genera la empresa"
+    "De lo que gana la empresa"
    ],
    "explanation": "Invertir es participar en lo que el activo produce: beneficios, intereses o rentas."
   },
@@ -228,11 +228,11 @@
    "prompt": "¿Cuáles son ejemplos de especulación? Marca todos.",
    "options": [
     "Comprar una moneda de moda porque sube",
-    "Usar mucho apalancamiento",
+    "Comprar un fondo indexado y mantenerlo años",
     "Aportar cada mes a un fondo mundial durante 20 años",
     "Operar cada pocos minutos"
    ],
-   "explanation": "Aportar a largo plazo a un fondo diversificado es invertir."
+   "explanation": "Comprar algo solo porque sube u operar cada pocos minutos es especular, igual que usar mucho apalancamiento. Aportar a largo plazo a un fondo diversificado, o comprarlo y mantenerlo, es invertir."
   },
   "u4l2-1": {
    "prompt": "Ordena los pasos para calcular tu aportación mensual.",
@@ -257,9 +257,9 @@
   "u4l2-5": {
    "prompt": "¿Qué objetivo está bien planteado?",
    "options": [
-    "Tener 12.000 € para un coche en 2029 aportando 250 € al mes",
-    "Ahorrar mucho",
-    "Ser rico"
+    "12.000 € para un coche en 2029",
+    "Ahorrar todo lo que pueda cada mes",
+    "Ser rico antes de los 40"
    ],
    "explanation": "Tiene cantidad, fecha y plan: se puede medir y seguir."
   },
@@ -282,7 +282,7 @@
    "prompt": "Ana quiere un colchón de 3.000 €, un viaje de 1.500 € en verano y la entrada de un piso dentro de 6 años. Lo guarda todo junto en la misma cuenta. ¿Qué le conviene?",
    "options": [
     "Seguir con todo junto: es más sencillo",
-    "Separar cada objetivo en su propia cuenta o hucha",
+    "Separar cada objetivo en su propia hucha",
     "Ir a por un objetivo cada vez y olvidar los demás"
    ],
    "explanation": "Un cajón por objetivo: así el dinero de cada meta no se mezcla.",
@@ -311,7 +311,7 @@
    "prompt": "Sara quiere 1.200 € para un portátil dentro de 8 meses. Un amigo le dice que los meta en acciones «para que crezcan más». ¿Qué hace?",
    "options": [
     "Los ahorra en una cuenta remunerada",
-    "Los mete todos en acciones",
+    "Los mete todos en acciones, como le dice su amigo",
     "Los mete en una cripto que está de moda"
    ],
    "explanation": "A 8 meses, el dinero tiene que estar disponible y sin riesgo de caída. Las acciones tientan porque suelen crecer más, pero solo a largo plazo y con caídas por el camino.",
@@ -325,7 +325,7 @@
    "prompt": "¿Cuál es tu perfil de riesgo real?",
    "options": [
     "El menor entre capacidad y tolerancia",
-    "El mayor entre capacidad y tolerancia",
+    "El mayor entre tu capacidad y tu tolerancia",
     "El que tenga tu mejor amigo"
    ],
    "explanation": "Si puedes perder mucho pero no lo soportas, venderás en pánico; si lo soportas pero no puedes permitírtelo, te arriesgas demasiado."
@@ -349,15 +349,15 @@
   "u4l4-3": {
    "prompt": "Marta tiene 23 años, contrato estable, un colchón de 6 meses e invierte para dentro de 30 años en una cartera diversificada. Su cartera cae un 35 %. ¿Qué decisión encaja con su plan?",
    "options": [
-    "Vende todo para no perder más",
-    "Mantiene el plan y sigue con sus aportaciones",
-    "Pide un préstamo para comprar más"
+    "Vende todo para no perder más y volver cuando se calme",
+    "Mantiene el plan y sigue aportando",
+    "Vende la mitad, por si sigue cayendo"
    ],
    "explanation": "Con capacidad y plazo, el plan importa más que el titular del día.",
    "feedback": [
     "Convierte una caída temporal en pérdida definitiva y, si luego hay rebote, se lo pierde.",
     "Su plazo y su colchón le permiten esperar: la caída solo es pérdida real si vende.",
-    "Endeudarse para invertir multiplica el riesgo: si sigue cayendo, debe dinero y pierde."
+    "Vender una parte en plena caída también hace definitiva esa pérdida, y su plan a 30 años no ha cambiado."
    ]
   },
   "u4l4-7": {
@@ -388,7 +388,7 @@
   "u4l4-11": {
    "prompt": "Tu cartera cae un 50 %. Para volver a donde estaba, ¿cuánto tiene que subir después?",
    "options": [
-    "Un 100 %: tiene que duplicarse",
+    "Un 100 %",
     "Un 50 %",
     "Un 25 %"
    ],
@@ -417,17 +417,17 @@
    "options": [
     "Registro en la CNMV y documento de riesgos",
     "Solo enseña capturas de ganancias",
-    "Prisa por decidir",
+    "Te explica los costes antes de contratar",
     "Rentabilidad alta garantizada"
    ],
-   "explanation": "Una entidad legal está registrada y explica sus riesgos y costes."
+   "explanation": "Las capturas de ganancias y la rentabilidad alta garantizada son señales de estafa, igual que meter prisa. Una entidad legal está registrada y explica sus riesgos y sus costes."
   },
   "u4l5-7": {
    "prompt": "Un influencer con un coche de lujo te ofrece copiar sus operaciones por 99 € al mes: «el mes pasado gané un 40 %». ¿Qué haces?",
    "options": [
     "Le paso también mis claves del bróker para que opere por mí",
     "Me suscribo: los resultados hablan solos",
-    "Busco si está registrado en la CNMV y pido su historial completo"
+    "Busco si está registrado en la CNMV"
    ],
    "explanation": "Antes de pagar a nadie: registro en la CNMV, historial completo y cero prisas.",
    "feedback": [
@@ -466,8 +466,8 @@
    "prompt": "Te llama un «asesor». Su empresa no aparece en el registro de la CNMV, pero tiene una web muy profesional y opiniones de clientes. ¿Qué haces?",
    "options": [
     "Pruebo con poco dinero",
-    "Confío: la web es muy seria",
-    "No le doy dinero: sin autorización no hay nada más que mirar"
+    "Confío: una web tan seria no la monta cualquiera",
+    "No le doy dinero: no está autorizado"
    ],
    "explanation": "Lo primero es comprobar la autorización en la CNMV. Sin ella, no sigas.",
    "feedback": [

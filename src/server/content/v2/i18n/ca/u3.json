@@ -233,7 +233,7 @@
    "options": [
     "Costen el mateix",
     "El B, perquè la seva TAE és més baixa",
-    "L'A, perquè el seu TIN és més baix"
+    "L'A, perquè el seu TIN és força més baix"
    ],
    "explanation": "TAE de l'A ≈ 8,36 %; del B ≈ 7,76 %. La comissió d'obertura encareix l'A encara que el seu TIN sigui més baix."
   },
@@ -259,15 +259,15 @@
     "Un termini més llarg",
     "Tornar-lo abans sense penalització",
     "Una assegurança obligatòria vinculada",
-    "Una comissió d'obertura"
+    "Un TIN més baix amb les mateixes comissions"
    ],
-   "explanation": "Tornar-lo abans sense penalització redueix els interessos: és l'única cosa de la llista que l'abarateix."
+   "explanation": "Un termini més llarg i una assegurança obligatòria encareixen el préstec, igual que una comissió d'obertura. Tornar-lo abans sense penalització o un TIN més baix l'abarateixen."
   },
   "u3l1-11": {
    "prompt": "Vols començar a invertir i el banc t'ofereix un préstec personal al 9 % TAE per fer-ho «a l'engròs». Què fas?",
    "options": [
-    "No el demano: començo amb el que estalvio cada mes",
-    "El demano: la borsa puja a llarg termini",
+    "No el demano: començo amb el que estalvio",
+    "El demano: la borsa puja a llarg termini més que aquest 9 %",
     "Demano la meitat, per si de cas"
    ],
    "explanation": "El deute cobra un 9 % segur; la inversió, en canvi, pot caure just quan toca pagar la quota. El temptador és pensar que la borsa sempre puja, però a curt termini ningú no ho garanteix.",
@@ -322,8 +322,8 @@
   "u3l2-7": {
    "prompt": "Quin deute té més sentit?",
    "options": [
-    "Una revolving per pagar un viatge",
-    "Una hipoteca amb una quota del 25 % dels teus ingressos",
+    "Una revolving per pagar un viatge aquest estiu",
+    "Una hipoteca que pots pagar bé",
     "Un minicrèdit per a un concert"
    ],
    "explanation": "Barat, per a una cosa que dura i amb una quota assumible."
@@ -351,7 +351,7 @@
    "options": [
     "El posa a la revolving per no demanar cap préstec",
     "Demana 10.000 € per donar-se algun caprici també",
-    "Comprova que la quota li cap al pressupost i el demana"
+    "Comprova que la quota li cap i el demana"
    ],
    "explanation": "El mateix deute pot ser bo o dolent: depèn del cost i del que et retorna.",
    "feedback": [
@@ -398,7 +398,7 @@
    "options": [
     "Perquè cobra una comissió per cada compra a les botigues",
     "Perquè només es pot fer servir fora d'Espanya",
-    "Perquè la quota petita gairebé no redueix el deute i els interessos s'acumulen"
+    "Perquè la quota gairebé no redueix el deute"
    ],
    "explanation": "Amb 30 € de quota sobre 1.000 € al 2 % mensual, només 10 € fan baixar el deute el primer mes."
   },
@@ -414,7 +414,7 @@
    "prompt": "L'Ana deu 2.000 € en una revolving al 22 % TAE i paga 50 € al mes. Té 4.000 € en un compte al 2 %, i el seu coixí ideal és de 2.000 €. Què fa?",
    "options": [
     "Inverteix els 4.000 € a borsa per guanyar més del 22 %",
-    "Fa servir 2.000 € per cancel·lar la revolving i conserva 2.000 € de coixí",
+    "Cancel·la la revolving i conserva 2.000 € de coixí",
     "Ho deixa tot com està"
    ],
    "explanation": "Pagar un deute car és la millor «inversió» segura que existeix.",
@@ -428,11 +428,11 @@
    "prompt": "Què ajuda a sortir d'una revolving? Marca-les totes.",
    "options": [
     "Pagar-la amb un minicrèdit",
-    "Demanar passar-la a pagament a final de mes",
+    "Pagar només el mínim cada mes",
     "Apujar la quota mensual",
     "Deixar de fer-la servir"
    ],
-   "explanation": "Pagar un deute car amb un altre encara més car només empitjora el problema."
+   "explanation": "Deixar de fer-la servir i apujar la quota (o passar-la a pagament a final de mes) retalla el deute. Pagar només el mínim l'allarga anys, i tapar-la amb un minicrèdit l'encareix."
   },
   "u3l3-9": {
    "prompt": "Un minicrèdit de 300 € pel qual en tornes 390 al cap de 30 dies té una TAE de més del ____.",
@@ -513,17 +513,17 @@
    "options": [
     "Deixar de pagar el mínim d'algun",
     "Pagar el mínim en tots i l'extra a un",
-    "Continuar comprant amb la revolving",
+    "Començar pel deute amb l'interès més alt",
     "Demanar un minicrèdit per pagar la targeta"
    ],
-   "explanation": "Pagar el mínim en tots i concentrar l'extra és justament la base dels dos mètodes."
+   "explanation": "Deixar de pagar un mínim o tapar la targeta amb un minicrèdit empitjora les coses. Pagar el mínim en tots i concentrar l'extra, començant pel més car, és justament el mètode."
   },
   "u3l4-11": {
    "prompt": "En Pablo acaba de liquidar el seu últim deute car i li queden lliures 300 € al mes que abans anaven a quotes. Ja té coixí. Què fa?",
    "options": [
     "Els deixa al compte corrent",
-    "Apuja el seu nivell de despesa: s'ho ha guanyat",
-    "Els converteix en una aportació automàtica a un ETF indexat"
+    "Apuja el seu nivell de despesa: s'ho ha guanyat després de tant d'esforç",
+    "Els converteix en estalvi i inversió automàtics"
    ],
    "explanation": "En Pablo ja vivia sense aquests 300 €, així que invertir-los no li costa res en el seu dia a dia. Apujar la despesa tempta com a premi, però frena en sec l'impuls que havia agafat.",
    "feedback": [
@@ -536,7 +536,7 @@
    "prompt": "En Bruno té una hipoteca fixa al 2 %, un coixí de 6 mesos i 10.000 € més estalviats que no necessitarà en 15 anys. Què fa?",
    "options": [
     "Demana un altre préstec per invertir més",
-    "Compara el 2 % segur d'amortitzar amb invertir a llarg termini i de manera diversificada, sense tocar el coixí",
+    "Compara amortitzar al 2 % amb invertir a llarg termini",
     "Ho posa tot en una sola acció de moda perquè la hipoteca és barata"
    ],
    "explanation": "Amb deute barat no hi ha una única resposta correcta: l'important és comparar bé i no tocar el coixí.",
@@ -573,8 +573,8 @@
    "prompt": "Què li contestes a la Lumi?",
    "options": [
     "Inverteix en el que més hagi pujat aquest any",
-    "Sempre amortitzar: els deutes són dolents",
-    "Depèn: compara el 2 % segur amb invertir a llarg termini, i mira si tens coixí"
+    "Sempre amortitzar: qualsevol deute és dolent i cal treure-se'l",
+    "Depèn: compara aquest 2 % amb invertir a llarg termini"
    ],
    "explanation": "Amortitzar dona una rendibilitat segura; invertir, una d'esperada. Amb deute barat, totes dues opcions poden tenir sentit.",
    "feedback": [
