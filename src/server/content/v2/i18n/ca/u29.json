@@ -375,7 +375,7 @@
    "prompt": "Quina decisió explica la major part de les oscil·lacions d'una cartera diversificada?",
    "options": [
     "Triar el fons que més va pujar l'any passat",
-    "El repartiment entre accions, bons i liquiditat",
+    "El repartiment entre accions i bons",
     "Quin dia de la setmana compres"
    ],
    "explanation": "És l'assignació d'actius: la palanca principal del risc que assumeixes."
@@ -426,7 +426,7 @@
    "prompt": "Tens dos objectius: 2.000 € per a un viatge d'aquí a un any i la jubilació, d'aquí a 40. Com ho organitzes?",
    "options": [
     "Tot junt en una cartera amb moltes accions: a la llarga puja",
-    "Els diners del viatge en alguna cosa de poc risc i els de la jubilació amb moltes accions",
+    "El viatge, amb poc risc; la jubilació, en accions",
     "Tot en un dipòsit, per no arriscar res"
    ],
    "explanation": "El repartiment es decideix per objectiu: els diners amb data propera no depenen de la borsa, i els de dècades poden portar moltes accions. Ficar-ho tot junt obliga a triar malament per a un dels dos.",
@@ -439,8 +439,8 @@
   "u29l4-1": {
    "prompt": "Quin pes aproximat té la borsa espanyola en la borsa mundial?",
    "options": [
-    "Un 10 %",
-    "Un 25 %",
+    "Al voltant del 10 %",
+    "Al voltant del 25 %",
     "Menys de l'1 %"
    ],
    "explanation": "Per això una cartera només espanyola concentra molt, encara que tingui 35 empreses."
@@ -466,7 +466,7 @@
   "u29l4-5": {
    "prompt": "En Bruno ho inverteix tot a l'IBEX 35: «Són les empreses que conec». Què li dius?",
    "options": [
-    "Que és el biaix domèstic: concentra en menys de l'1 % del món",
+    "Que és el biaix domèstic",
     "Ben fet: conèixer les empreses redueix el risc",
     "Que ho canviï tot al Japó, que està més barat"
    ],
@@ -492,17 +492,17 @@
    "options": [
     "Elimina les caigudes de la borsa",
     "Redueix la dependència de l'economia d'un sol país",
-    "Et dona accés a empreses i sectors que no hi ha al teu país",
+    "Garanteix més rendibilitat que el teu país",
     "Si una regió té una dècada dolenta, no la pagues tota tu"
    ],
-   "explanation": "Redueix el risc d'un país, no el risc de mercat: si cau el món, cau la teva cartera."
+   "explanation": "Redueix la dependència d'un sol país: si una regió té una dècada dolenta, no la pagues tota tu, i t'obre empreses i sectors que no hi ha al teu. No elimina les caigudes ni garanteix més rendibilitat: si cau el món, cau la teva cartera."
   },
   "u29l4-10": {
    "prompt": "Per què en els fons de bons se sol triar la versió coberta a euros?",
    "options": [
-    "Perquè la divisa es podria moure més que els mateixos bons",
+    "Perquè la divisa es mou més que els bons",
     "Perquè és obligatori per llei",
-    "Perquè sempre són més barats"
+    "Perquè els fons coberts sempre són més barats"
    ],
    "explanation": "Un bo de qualitat es pot moure poc; un 10 % de canvi de divisa esborraria el seu paper d'estabilitzador."
   },
@@ -523,9 +523,9 @@
   "u29l5-2": {
    "prompt": "Quantes empreses té aproximadament un índex mundial com l'MSCI ACWI o el FTSE All-World?",
    "options": [
-    "Unes 50",
-    "Unes 500",
-    "Entre 2.500 i més de 4.000"
+    "Unes 50 empreses",
+    "Unes 500 empreses",
+    "Uns quants milers"
    ],
    "explanation": "De desenes de països desenvolupats i emergents, en un sol producte."
   },
@@ -546,8 +546,8 @@
   "u29l5-7": {
    "prompt": "La Laura canvia cada gener al fons que més va pujar l'any anterior. Què és el més probable?",
    "options": [
-    "Que acabi comprant car el que ja ha pujat i pagui més costos",
-    "Que sempre tingui el millor fons",
+    "Que compri car el que ja ha pujat",
+    "Que sempre tingui el millor fons del moment",
     "Que pagui menys impostos"
    ],
    "explanation": "L'èxit passat gairebé mai no prediu el futur. Una cartera simple i estable guanya a la majoria dels canvis.",
@@ -623,12 +623,12 @@
   "u29l6-10": {
    "prompt": "Quins límits tenen els factors? Marca'ls tots.",
    "options": [
-    "Els seus fons solen ser més cars",
+    "Només funcionen a la borsa americana",
     "Quan molts els coneixen, la prima es pot reduir",
     "Garanteixen superar el mercat",
     "Poden anar per darrere de l'índex durant anys"
    ],
-   "explanation": "Res no garanteix superar el mercat: els factors són una aposta raonable, no una certesa."
+   "explanation": "Poden anar per darrere de l'índex durant anys i, quan molts els coneixen, la prima es pot reduir; a més, els seus fons solen ser més cars. No garanteixen superar el mercat, i s'han observat en molts països, no només als EUA."
   },
   "u29l7-1": {
    "prompt": "Relaciona cada lletra amb el que mesura.",
@@ -658,10 +658,10 @@
    "options": [
     "Publica el seu mètode de selecció i les seves exclusions",
     "Promeses vagues com «invertir en un planeta millor» sense dades",
-    "Entre les seves posicions més grans hi ha empreses molt contaminants sense explicar per què",
-    "Molt de màrqueting verd i poca informació concreta"
+    "Grans contaminants entre les posicions més grans, sense explicació",
+    "Detalla quant pesa cada empresa a la cartera"
    ],
-   "explanation": "La transparència (mètode, exclusions, posicions) és el contrari del greenwashing."
+   "explanation": "Les promeses vagues sense dades i les empreses molt contaminants sense explicació són senyals de greenwashing. Publicar el mètode, les exclusions i les posicions és just el contrari: transparència."
   },
   "u29l7-8": {
    "prompt": "Presentar com a sostenible una cosa que no ho és tant s'anomena ____.",
@@ -678,7 +678,7 @@
    "options": [
     "Inverteix només en empreses petites",
     "Elimina el risc de mercat",
-    "Deixa fora sectors sencers, com el tabac o les armes"
+    "Deixa fora sectors sencers"
    ],
    "explanation": "Una altra manera és el «best in class»: triar les millors de cada sector."
   },
@@ -686,8 +686,8 @@
    "prompt": "Què li contestes a la Lumi?",
    "options": [
     "Sí, amb el nom n'hi ha prou",
-    "L'ESG és només màrqueting, oblida-te'n",
-    "Mira'n la classificació SFDR, les exclusions, les posicions i el cost"
+    "L'ESG és només màrqueting: oblida-te'n i estalvia't l'embolic",
+    "Mira'n la classificació SFDR i les posicions"
    ],
    "explanation": "L'ESG pot reflectir els teus valors, però exigeix llegir la lletra petita.",
    "feedback": [

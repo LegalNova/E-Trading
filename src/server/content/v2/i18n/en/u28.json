@@ -259,8 +259,8 @@
    "prompt": "What do you reply?",
    "options": [
     "Win it back with leverage",
-    "Your size doesn't depend on what you lost yesterday: stick to your fixed risk",
-    "Good idea, you're on a roll now"
+    "Stick to your usual fixed risk",
+    "Good idea: you're on a roll now, make the most of it"
    ],
    "explanation": "Forcing yourself to win back losses is the quickest way to make them bigger.",
    "feedback": [
@@ -286,12 +286,12 @@
   "u28l2-8": {
    "prompt": "Which signs show you're revenge trading? Select all that apply.",
    "options": [
-    "You feel angry or rushed",
+    "You wait for your signal to be met",
     "You follow your plan with your usual risk",
     "You raise your size to win it back",
     "You go in without your signal being met"
    ],
-   "explanation": "Following the plan with your usual risk is exactly the opposite."
+   "explanation": "Raising your size to win it back and going in without a signal are revenge, almost always with anger or hurry behind them. Waiting for your signal and following the plan with your usual risk is exactly the opposite."
   },
   "u28l2-9": {
    "prompt": "Ready-made rule: after ____ losses in a row, I stop for the rest of the day.",
@@ -306,8 +306,8 @@
   "u28l2-10": {
    "prompt": "What do revenge trading and loss aversion have in common?",
    "options": [
-    "They both reduce risk",
-    "They both make us take on more risk to avoid accepting a loss",
+    "They both reduce the risk we take without meaning to",
+    "They both make us take on more risk",
     "They have nothing in common"
    ],
    "explanation": "When we're losing, we become more reckless: «I'll double up to win it back»."
@@ -347,8 +347,8 @@
    "prompt": "What do you tell Lumi?",
    "options": [
     "Better set up 100 alerts",
-    "Great, more information is better",
-    "Careful: more triggers usually lead to more trades and more costs"
+    "Great: the more information, the better you decide",
+    "Careful: more triggers, more trades"
    ],
    "explanation": "You don't need to see every move: you need to act only when your plan says so.",
    "feedback": [
@@ -365,7 +365,7 @@
    "prompt": "Your long-term index fund drops 1 % on a Tuesday. You've been opening the app every hour for three days. What do you do?",
    "options": [
     "I switch to the fund that's rising most today",
-    "I leave it alone: I keep up my contributions and check it now and then",
+    "I leave it alone and keep contributing",
     "I sell today and buy back when it falls further"
    ],
    "explanation": "For the long term, a bad day calls for no decision: every extra trade pays costs and rarely improves the result. The temptation is to «do something» because you're watching.",
@@ -379,11 +379,11 @@
    "prompt": "What do you pay again every time you buy or sell? Tick all that apply.",
    "options": [
     "The spread between the buying and selling price",
-    "Taxes, if you sell at a profit",
+    "The account's annual maintenance fee",
     "The index's return",
     "The broker's commission"
    ],
-   "explanation": "Commission, spread and taxes are paid on every trade: that's why trading a lot eats up a small edge. The index's return isn't a cost: it's what you earn if you stay put."
+   "explanation": "Commission and spread are paid on every trade, and taxes every time you sell at a profit: that's why trading a lot eats up a small edge. An annual fee doesn't depend on how much you trade, and the index's return isn't a cost: it's what you earn if you stay put."
   },
   "u28l4-1": {
    "prompt": "Put your anti-bias routine for a trade in order.",
@@ -401,16 +401,16 @@
    "options": [
     "How much has it gone up this week?",
     "Is it in my plan?",
-    "Am I calm?",
+    "What are they saying on social media today?",
     "Do I know where my stop is?"
    ],
-   "explanation": "How much it's gone up feeds FOMO, not the decision."
+   "explanation": "The checklist asks whether it's in your plan and whether you know where your stop is, and also whether you're calm. How much it's gone up or what social media says feeds FOMO, not the decision."
   },
   "u28l4-4": {
    "prompt": "Lumi asks you to go through the checklist. What do you reply?",
    "options": [
-    "Question 7: would you buy it if nobody were talking about it?",
-    "Buy half now and go through the checklist later",
+    "Question 7: what if nobody were talking about it?",
+    "Buy half now and go through the checklist afterwards",
     "No need, it's crystal clear"
    ],
    "explanation": "The checklist only works if you go through it beforehand and in full.",
@@ -428,7 +428,7 @@
    "prompt": "What do you tell her in the monthly review?",
    "options": [
     "If you made money, breaking the plan doesn't matter",
-    "Review those 4 trades: what made you break it and how did they turn out?",
+    "Review why you broke it",
     "Raise your risk next month"
    ],
    "explanation": "The monthly review looks at the process, not just the result.",
@@ -462,7 +462,7 @@
    "prompt": "Which monthly review question tells you whether your active management is worth it?",
    "options": [
     "How many trades have I made?",
-    "Does my return beat a comparable index?",
+    "Do I beat a comparable index?",
     "How long have I spent looking at the screen?"
    ],
    "explanation": "If you don't beat the index over several years, buying the index would have served you better."

@@ -294,7 +294,7 @@
   "u30l1-1": {
    "prompt": "Your plan is 60/40 and after a good run you're at 72/28. Rebalancing means…",
    "options": [
-    "Selling shares or adding to bonds until you're back at 60/40",
+    "Getting back to 60/40",
     "Never touching anything",
     "Buying more shares, since they're doing well"
    ],
@@ -344,7 +344,7 @@
    "prompt": "With investment funds in Spain, how can you rebalance without paying tax?",
    "options": [
     "You can't",
-    "Through a fund-to-fund transfer («traspaso»)",
+    "With a fund transfer («traspaso»)",
     "By selling and buying on the same day"
    ],
    "explanation": "A transfer between funds isn't taxed until you finally cash out. ETFs don't have this advantage."
@@ -352,7 +352,7 @@
   "u30l1-11": {
    "prompt": "Your plan is 70 % shares and 30 % bonds, and after a good year you're at 78/22. This month you're putting in €300. What do you do?",
    "options": [
-    "I put the €300 into bonds, and the same in the following months until I'm back at 70/30",
+    "I put the €300 into bonds",
     "I sell all the extra shares right now",
     "I put the €300 into shares, since they're the ones doing well"
    ],
@@ -366,9 +366,9 @@
   "u30l2-3": {
    "prompt": "Putting in €300 a month for 30 years, how much separates 0.2 % in costs from 1.8 %?",
    "options": [
-    "About €30,000",
+    "Roughly €30,000",
     "About €9,000",
-    "More than €80,000"
+    "Over €80,000"
    ],
    "explanation": "About €338,200 versus about €253,400 with the market at 7 %: almost €85,000 of difference."
   },
@@ -376,16 +376,16 @@
    "prompt": "Which costs should you check before investing? Select all that apply.",
    "options": [
     "The commission on buying and selling",
-    "The colour of the app",
-    "Currency exchange",
+    "Last year's return",
+    "The broker's number of clients",
     "The fund's ongoing charges or TER"
    ],
-   "explanation": "Also the spread, custody fees and taxes."
+   "explanation": "The trading commission and the ongoing charges (TER); also currency exchange, the spread, custody fees and taxes. Past returns or the broker's size aren't costs."
   },
   "u30l2-10": {
    "prompt": "What do you reply to Lumi?",
    "options": [
-    "Compare it with its index: if the index rose 12 %, the fund did worse",
+    "Compare it with its index",
     "Then better a fund that charges 3 %",
     "Yes, with 10 % it doesn't matter"
    ],
@@ -404,8 +404,8 @@
    "prompt": "You have an MSCI World ETF that charges 0.20 %, with good gains. You find another on the same index at 0.12 %. What do you do?",
    "options": [
     "I don't care: costs don't matter",
-    "I keep the one I have and send new contributions to the cheap one",
-    "I sell mine now and buy the cheap one"
+    "I keep mine and send new money to the cheap one",
+    "I sell mine now and buy the cheap one with the lot"
    ],
    "explanation": "Between two cheap ETFs on the same index, the difference is small and selling has a certain tax cost. The sensible thing is for new money to go to the cheaper one. Switching all at once only pays off when the gap is big, like from 1.5 % to 0.2 %.",
    "feedback": [
@@ -450,14 +450,14 @@
   "u30l3-10": {
    "prompt": "What do you reply to Lumi?",
    "options": [
-    "Start with €50 and raise it when you earn more: time does the rest",
-    "Take out a loan to invest more",
+    "Start with €50 and raise it when you can",
+    "Wait until you can invest €500 a month, then it'll count",
     "You're right, better to spend it"
    ],
    "explanation": "A little, started early, goes a long way. What matters is the habit.",
    "feedback": [
     "That's the way! What counts most is starting early and not stopping.",
-    "Investing with borrowed money turns a fall into a serious problem.",
+    "Waiting until you «have more» usually means never starting: what counts most is time.",
     "Spending is fine, but €50 a month over decades can turn into tens of thousands of euros."
    ],
    "lines": [
@@ -468,7 +468,7 @@
   "u30l3-11": {
    "prompt": "You put €50 a month into an index fund. This month the stock market has fallen 20 %. What do you do with the contribution?",
    "options": [
-    "I keep it: with the same €50 I buy more units",
+    "I keep it: I buy cheaper",
     "I sell what I have so I don't lose more",
     "I pause it until the market recovers"
    ],
@@ -483,7 +483,7 @@
    "prompt": "You're going to invest €50 a month. Broker A charges €3 per purchase and its ETF 0.10 % a year. Broker B charges nothing to buy and its ETF costs 0.20 %. Which suits you?",
    "options": [
     "A: its ETF is cheaper",
-    "B: with no fixed fee, all your money goes to work",
+    "B: no charge on each purchase",
     "It doesn't matter: the difference is tiny"
    ],
    "explanation": "With little money, a fixed fee eats a chunk of every contribution (€3 out of €50 is far more than a tenth of a point a year). That's why the cheapest ETF isn't always the cheapest option.",
@@ -498,7 +498,7 @@
    "options": [
     "20 % a year",
     "10 % a year",
-    "About 7.2 % a year"
+    "7.2 % a year"
    ],
    "explanation": "2^(1/10) − 1 ≈ 7.2 %. It fits the rule of 72: 72 ÷ 7.2 = 10 years."
   },
@@ -531,8 +531,8 @@
   "u30l4-9": {
    "prompt": "An app boasts that your portfolio is «+40 % since you started». You started 7 years ago. A global index fund has returned 7 % a year over that time. How do you rate it?",
    "options": [
-    "Brilliant: 40 % is loads",
-    "I annualise it: 1.4^(1/7) − 1 ≈ 4.9 % a year, below the index",
+    "Brilliant: 40 % is an awful lot of money",
+    "I annualise it: about 4.9 % a year",
     "Better not to look at the return"
    ],
    "explanation": "A total figure without a timeframe says nothing. Annualise it and compare with a benchmark index.",
@@ -548,15 +548,15 @@
     "Compare it with a benchmark index",
     "Look only at your best year",
     "Take inflation into account",
-    "Subtract fees and taxes"
+    "Count only the investments that won"
    ],
-   "explanation": "Your best year says little: what matters is the net result, over the long term and against an alternative."
+   "explanation": "What counts is the result net of fees and taxes, after inflation and against an index. Looking at your best year or only at what won tells a nicer story than the real one."
   },
   "u30l4-11": {
    "prompt": "Fund A advertises «+60 % in 10 years». Fund B, «6 % a year over the last 5 years». Which did better each year?",
    "options": [
     "A: 60 % is much more than 6 %",
-    "B: +60 % in 10 years is less than 6 % a year, because interest compounds",
+    "B: A doesn't reach 5 % a year",
     "They can't be compared"
    ],
    "explanation": "To compare, everything has to be in % a year. 60 divided by 10 would be 6 %, but because it compounds you need less each year to reach 60 %, so A is behind B.",
@@ -591,7 +591,7 @@
   "u30l5-3": {
    "prompt": "Which point in the Statement protects you most from panic?",
    "options": [
-    "What you'll do if the market falls 30 %",
+    "Your plan for a 30 % fall",
     "The list of trendy shares",
     "Your prediction for next year"
    ],
@@ -602,10 +602,10 @@
    "options": [
     "Buy something I don't understand",
     "Contribute every month automatically",
-    "Put more than 20 % into a single asset",
+    "Review the portfolio once a year",
     "Invest with borrowed money"
    ],
-   "explanation": "Contributing every month is part of the plan, not something to avoid."
+   "explanation": "«Never» is for what hurts you: buying what you don't understand, investing with borrowed money or concentrating too much in a single asset. Contributing every month and reviewing once a year are part of the plan."
   },
   "u30l5-12": {
    "prompt": "Your Statement says «in the speculative part, always with a stop». You buy bitcoin at the last price. Place the stop a little below the recent low.",
@@ -642,13 +642,13 @@
   "u30l6-3": {
    "prompt": "Year one: the stock market falls 25 % and your portfolio 18 %. A friend tells you to sell everything. What do you do?",
    "options": [
-    "Move everything into bitcoin to recover quickly",
-    "Follow the plan: contribute, rebalance into shares if needed and don't sell",
+    "Move it all into a deposit until things calm down",
+    "Follow the plan: contribute and don't sell",
     "Sell before it falls further"
    ],
    "explanation": "Bonds cushioned the fall (−18 % versus −25 %). Now it's time for point 8 of your plan.",
    "feedback": [
-    "Chasing the recovery with more risk usually makes the hole deeper.",
+    "Getting out «until things calm down» is selling low: nobody tells you when to return, and rebounds come without warning.",
     "Good: with a 20-year horizon, a bad year is part of the journey.",
     "Turning a fall into a permanent loss is the most expensive mistake in market history."
    ]
@@ -656,7 +656,7 @@
   "u30l6-4": {
    "prompt": "A colleague tells you: «Sell the bonds and put everything into the share that's risen most this year». What do you reply?",
    "options": [
-    "That my portfolio has an allocation chosen for 20 years and I don't chase trends",
+    "That my allocation is for 20 years",
     "That I'll think about it if it rises another 20 %",
     "I take their advice: bonds don't earn anything"
    ],
@@ -670,7 +670,7 @@
   "u30l6-5": {
    "prompt": "Which argument best defends a diversified portfolio?",
    "options": [
-    "«It holds thousands of companies, has low costs and an allocation I can stick with in a fall»",
+    "«Thousands of companies and low costs»",
     "«An influencer says it's going to go up»",
     "«Last year it rose more than my cousin's»"
    ],
@@ -680,11 +680,11 @@
    "prompt": "What should your €10,000 portfolio over 20 years have? Select all that apply.",
    "options": [
     "Low costs",
-    "A rule for rebalancing",
+    "A change of funds every few months",
     "A big bet on the latest trend",
     "Diversification across companies and countries"
    ],
-   "explanation": "The speculative part, if there is one, small and limited."
+   "explanation": "Low costs and diversification across companies and countries, with a rule for rebalancing. Changing funds every few months or betting big on the latest trend works against that; the speculative part, if there is one, small and limited."
   },
   "u30l6-9": {
    "prompt": "Put the steps for getting your portfolio up and running in order.",
@@ -700,9 +700,9 @@
   "u30l6-10": {
    "prompt": "What do you reply to Lumi?",
    "options": [
-    "Because the stock market always goes up",
+    "Because the stock market always goes up if you wait long enough",
     "Because I've picked whatever will rise most",
-    "I don't know if it'll go up this year, but it's diversified, it's cheap and I know what I'll do in a fall"
+    "It's diversified and I know what I'll do in a fall"
    ],
    "explanation": "You defend a portfolio with diversification, costs and a plan, not with predictions.",
    "feedback": [
@@ -776,8 +776,8 @@
   "u30l3-14": {
    "prompt": "You have €400 invested and your bank charges you €20 a year for custody. What do you do?",
    "options": [
-    "I sell and leave it in the account",
-    "I look for a broker or platform with no custody fee",
+    "I sell and leave it in my current account",
+    "I look for a broker with no custody fee",
     "Nothing: €20 isn't much"
    ],
    "feedback": [

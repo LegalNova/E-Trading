@@ -375,7 +375,7 @@
    "prompt": "Which decision explains most of the swings in a diversified portfolio?",
    "options": [
     "Picking the fund that rose most last year",
-    "The split between shares, bonds and cash",
+    "The split between shares and bonds",
     "Which day of the week you buy"
    ],
    "explanation": "It's asset allocation: the main lever for the risk you take on."
@@ -426,7 +426,7 @@
    "prompt": "You have two goals: €2,000 for a trip in a year's time and retirement, in 40 years. How do you organise it?",
    "options": [
     "All together in a portfolio with lots of shares: in the long run it rises",
-    "The trip money in something low-risk and the retirement money with lots of shares",
+    "The trip, low-risk; retirement, in shares",
     "Everything in a deposit, so you risk nothing"
    ],
    "explanation": "The mix is decided by goal: money with a near date doesn't depend on the stock market, and money for decades can hold lots of shares. Lumping it all together forces a bad choice for one of the two.",
@@ -439,9 +439,9 @@
   "u29l4-1": {
    "prompt": "Roughly how much does the Spanish stock market weigh in the global stock market?",
    "options": [
-    "10 %",
-    "25 %",
-    "Less than 1 %"
+    "Around 10 %",
+    "Around 25 %",
+    "Under 1 %"
    ],
    "explanation": "That's why a Spain-only portfolio is very concentrated, even with 35 companies."
   },
@@ -466,7 +466,7 @@
   "u29l4-5": {
    "prompt": "Bruno puts everything in the IBEX 35: «They're the companies I know». What do you tell him?",
    "options": [
-    "That it's home bias: he's concentrated in less than 1 % of the world",
+    "That it's home bias",
     "Well done: knowing the companies reduces risk",
     "That he should switch everything to Japan, it's cheaper"
    ],
@@ -492,17 +492,17 @@
    "options": [
     "It eliminates stock market falls",
     "It reduces dependence on a single country's economy",
-    "It gives you access to companies and sectors your country doesn't have",
+    "It guarantees a higher return than your country",
     "If one region has a bad decade, you don't bear the whole cost"
    ],
-   "explanation": "It reduces country risk, not market risk: if the world falls, your portfolio falls."
+   "explanation": "It reduces dependence on a single country: if one region has a bad decade, you don't bear the whole cost, and it opens up companies and sectors yours doesn't have. It doesn't eliminate falls or guarantee a higher return: if the world falls, your portfolio falls."
   },
   "u29l4-10": {
    "prompt": "Why do people usually choose the euro-hedged version of bond funds?",
    "options": [
-    "Because the currency could move more than the bonds themselves",
+    "Because the currency moves more than the bonds",
     "Because it's required by law",
-    "Because they're always cheaper"
+    "Because hedged funds are always cheaper to hold"
    ],
    "explanation": "A high-quality bond may barely move; a 10 % currency swing would wipe out its role as a stabiliser."
   },
@@ -523,9 +523,9 @@
   "u29l5-2": {
    "prompt": "Roughly how many companies does a global index like the MSCI ACWI or the FTSE All-World hold?",
    "options": [
-    "About 50",
-    "About 500",
-    "Between 2,500 and more than 4,000"
+    "About 50 companies",
+    "About 500 companies",
+    "Several thousand"
    ],
    "explanation": "From dozens of developed and emerging countries, in a single product."
   },
@@ -546,8 +546,8 @@
   "u29l5-7": {
    "prompt": "Every January, Laura switches to the fund that rose most the year before. What's most likely to happen?",
    "options": [
-    "She ends up buying high what has already risen and paying more in costs",
-    "She always has the best fund",
+    "She buys high what has already risen",
+    "She always holds the best fund of the moment",
     "She pays less tax"
    ],
    "explanation": "Past success hardly ever predicts the future. A simple, stable portfolio beats most switching.",
@@ -623,12 +623,12 @@
   "u29l6-10": {
    "prompt": "What are the limits of factors? Select all that apply.",
    "options": [
-    "Their funds tend to be more expensive",
+    "They only work in the US market",
     "When lots of people know about them, the premium can shrink",
     "They guarantee beating the market",
     "They can lag the index for years"
    ],
-   "explanation": "Nothing guarantees beating the market: factors are a reasonable bet, not a certainty."
+   "explanation": "They can lag the index for years and, when lots of people know about them, the premium can shrink; their funds also tend to be more expensive. They don't guarantee beating the market, and they've been observed in many countries, not only in the US."
   },
   "u29l7-1": {
    "prompt": "Match each letter with what it measures.",
@@ -658,10 +658,10 @@
    "options": [
     "It publishes its selection method and exclusions",
     "Vague promises like «investing in a better planet» with no data",
-    "Heavy polluters among its largest holdings with no explanation why",
-    "Lots of green marketing and little concrete information"
+    "Heavy polluters among its largest holdings, unexplained",
+    "It details each company's weight in the portfolio"
    ],
-   "explanation": "Transparency (method, exclusions, holdings) is the opposite of greenwashing."
+   "explanation": "Vague promises with no data and unexplained heavy polluters are signs of greenwashing. Publishing the method, exclusions and holdings is exactly the opposite: transparency."
   },
   "u29l7-8": {
    "prompt": "Presenting something as sustainable when it isn't really is called ____.",
@@ -678,7 +678,7 @@
    "options": [
     "Invests only in small companies",
     "Eliminates market risk",
-    "Leaves out entire sectors, such as tobacco or weapons"
+    "Leaves out entire sectors"
    ],
    "explanation": "Another approach is «best in class»: picking the best companies in each sector."
   },
@@ -686,8 +686,8 @@
    "prompt": "What do you reply to Lumi?",
    "options": [
     "Yes, the name is enough",
-    "ESG is just marketing, forget it",
-    "Look at its SFDR classification, exclusions, holdings and cost"
+    "ESG is just marketing: forget it and save yourself the hassle",
+    "Look at its SFDR classification and holdings"
    ],
    "explanation": "ESG can reflect your values, but it means reading the small print.",
    "feedback": [

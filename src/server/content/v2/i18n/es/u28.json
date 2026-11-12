@@ -259,8 +259,8 @@
    "prompt": "¿Qué le contestas?",
    "options": [
     "Recupéralo con apalancamiento",
-    "El tamaño no depende de lo que perdiste ayer: sigue con tu riesgo fijo",
-    "Buena idea, ya estás en racha"
+    "Sigue con tu riesgo fijo de siempre",
+    "Buena idea: ya estás en racha, aprovéchala"
    ],
    "explanation": "Recuperar pérdidas a la fuerza es la forma más rápida de agrandarlas.",
    "feedback": [
@@ -286,12 +286,12 @@
   "u28l2-8": {
    "prompt": "¿Qué señales indican que estás operando por venganza? Marca todas.",
    "options": [
-    "Sientes rabia o prisa",
+    "Esperas a que se cumpla tu señal",
     "Sigues tu plan con el riesgo habitual",
     "Subes el tamaño para recuperar",
     "Entras sin que se cumpla tu señal"
    ],
-   "explanation": "Seguir el plan con el riesgo habitual es justo lo contrario."
+   "explanation": "Subir el tamaño para recuperar y entrar sin señal son venganza, casi siempre con rabia o prisa detrás. Esperar tu señal y seguir el plan con el riesgo habitual es justo lo contrario."
   },
   "u28l2-9": {
    "prompt": "Regla preparada: tras ____ pérdidas seguidas, paro el resto del día.",
@@ -306,8 +306,8 @@
   "u28l2-10": {
    "prompt": "¿Qué tiene en común operar por venganza con la aversión a la pérdida?",
    "options": [
-    "Las dos reducen el riesgo",
-    "Las dos nos hacen asumir más riesgo para no aceptar una pérdida",
+    "Las dos reducen el riesgo que asumimos sin querer",
+    "Las dos nos hacen asumir más riesgo",
     "No tienen nada en común"
    ],
    "explanation": "Cuando perdemos, nos volvemos más arriesgados: «doblo para recuperar»."
@@ -347,8 +347,8 @@
    "prompt": "¿Qué le dices a Irene?",
    "options": [
     "Mejor pon 100 alertas",
-    "Genial, más información es mejor",
-    "Cuidado: más estímulos suelen acabar en más operaciones y más costes"
+    "Genial: cuanta más información, mejor decides",
+    "Cuidado: más estímulos, más operaciones"
    ],
    "explanation": "No necesitas ver cada movimiento: necesitas actuar solo cuando lo dice tu plan.",
    "feedback": [
@@ -365,7 +365,7 @@
    "prompt": "Tu fondo indexado de largo plazo baja un 1 % un martes. Llevas tres días abriendo la app cada hora. ¿Qué haces?",
    "options": [
     "Me paso al fondo que más sube hoy",
-    "No lo toco: sigo con mis aportaciones y lo reviso de vez en cuando",
+    "No lo toco: sigo aportando",
     "Vendo hoy y recompro cuando baje más"
    ],
    "explanation": "Para el largo plazo, un día malo no pide ninguna decisión: cada operación de más paga costes y rara vez mejora el resultado. Lo tentador es «hacer algo» porque lo estás mirando.",
@@ -379,11 +379,11 @@
    "prompt": "¿Qué pagas otra vez cada vez que compras o vendes? Marca todo.",
    "options": [
     "El spread entre el precio de compra y el de venta",
-    "Los impuestos, si vendes con ganancias",
+    "La cuota anual de mantenimiento de la cuenta",
     "La rentabilidad del índice",
     "La comisión del bróker"
    ],
-   "explanation": "Comisión, spread e impuestos se pagan en cada operación: por eso operar mucho se come una ventaja pequeña. La rentabilidad del índice no es un coste: es lo que ganas si no te mueves."
+   "explanation": "La comisión y el spread se pagan en cada operación, y los impuestos, cada vez que vendes con ganancias: por eso operar mucho se come una ventaja pequeña. Una cuota anual no depende de cuánto operes, y la rentabilidad del índice no es un coste: es lo que ganas si no te mueves."
   },
   "u28l4-1": {
    "prompt": "Ordena tu rutina anti-sesgos de una operación.",
@@ -401,16 +401,16 @@
    "options": [
     "¿Cuánto ha subido esta semana?",
     "¿Está en mi plan?",
-    "¿Estoy tranquilo?",
+    "¿Qué dicen hoy en las redes?",
     "¿Sé dónde está mi stop?"
    ],
-   "explanation": "Cuánto ha subido alimenta el FOMO, no la decisión."
+   "explanation": "La lista pregunta si está en tu plan y si sabes dónde está tu stop, y también si estás tranquilo. Cuánto ha subido o qué dicen en redes alimenta el FOMO, no la decisión."
   },
   "u28l4-4": {
    "prompt": "Nora te pide que pases la lista. ¿Qué le respondes?",
    "options": [
-    "Pregunta 7: ¿la comprarías si nadie hablara de ella?",
-    "Compra la mitad y luego pasas la lista",
+    "Pregunta 7: ¿y si nadie hablara de ella?",
+    "Compra la mitad ahora y luego pasas la lista",
     "No hace falta, se ve clarísimo"
    ],
    "explanation": "La lista solo funciona si se pasa antes y entera.",
@@ -428,7 +428,7 @@
    "prompt": "¿Qué le dices en la revisión mensual?",
    "options": [
     "Si has ganado, da igual saltarse el plan",
-    "Revisa esas 4 operaciones: ¿qué te hizo saltarlo y cómo salieron?",
+    "Revisa por qué te lo saltaste",
     "Sube el riesgo el mes que viene"
    ],
    "explanation": "La revisión mensual mira el proceso, no solo el resultado.",
@@ -462,7 +462,7 @@
    "prompt": "¿Qué pregunta de la revisión mensual dice si tu gestión activa compensa?",
    "options": [
     "¿Cuántas operaciones he hecho?",
-    "¿Mi rentabilidad bate a la de un índice comparable?",
+    "¿Bato a un índice comparable?",
     "¿Cuánto tiempo he mirado la pantalla?"
    ],
    "explanation": "Si en varios años no bates al índice, comprar el índice te habría ido mejor."

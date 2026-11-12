@@ -294,7 +294,7 @@
   "u30l1-1": {
    "prompt": "Tu plan es 60/40 y tras una racha buena estás en 72/28. Rebalancear es…",
    "options": [
-    "Vender acciones o aportar a bonos hasta volver al 60/40",
+    "Volver al 60/40",
     "No tocar nada nunca",
     "Comprar más acciones, que van bien"
    ],
@@ -344,7 +344,7 @@
    "prompt": "Con fondos de inversión en España, ¿cómo puedes rebalancear sin pagar impuestos?",
    "options": [
     "No se puede",
-    "Mediante un traspaso entre fondos",
+    "Con un traspaso entre fondos",
     "Vendiendo y comprando en el mismo día"
    ],
    "explanation": "El traspaso entre fondos no tributa hasta el reembolso final. Los ETF no tienen esta ventaja."
@@ -352,7 +352,7 @@
   "u30l1-11": {
    "prompt": "Tu plan es 70 % acciones y 30 % bonos, y tras un buen año estás en 78/22. Este mes vas a aportar 300 €. ¿Qué haces?",
    "options": [
-    "Aporto los 300 € a bonos, y lo mismo los meses siguientes hasta volver al 70/30",
+    "Aporto los 300 € a bonos",
     "Vendo ya todas las acciones que sobran",
     "Aporto los 300 € a acciones, que son las que van bien"
    ],
@@ -366,7 +366,7 @@
   "u30l2-3": {
    "prompt": "Aportando 300 € al mes durante 30 años, ¿cuánto separa un 0,2 % de costes de un 1,8 %?",
    "options": [
-    "Unos 30.000 €",
+    "Cerca de 30.000 €",
     "Unos 9.000 €",
     "Más de 80.000 €"
    ],
@@ -376,16 +376,16 @@
    "prompt": "¿Qué costes debes mirar antes de invertir? Marca todos.",
    "options": [
     "La comisión por compra y venta",
-    "El color de la app",
-    "El cambio de divisa",
+    "La rentabilidad del año pasado",
+    "El número de clientes del bróker",
     "Los gastos corrientes o TER del fondo"
    ],
-   "explanation": "También el spread, la custodia y los impuestos."
+   "explanation": "La comisión por operar y los gastos corrientes (TER); también el cambio de divisa, el spread, la custodia y los impuestos. La rentabilidad pasada o el tamaño del bróker no son costes."
   },
   "u30l2-10": {
    "prompt": "¿Qué le contestas a Ana?",
    "options": [
-    "Compáralo con su índice: si el índice subió un 12 %, el fondo lo hizo peor",
+    "Compáralo con su índice",
     "Entonces mejor un fondo que cobre un 3 %",
     "Sí, con un 10 % no importa"
    ],
@@ -404,8 +404,8 @@
    "prompt": "Tienes un ETF del MSCI World que cobra un 0,20 %, con buenas ganancias. Descubres otro del mismo índice al 0,12 %. ¿Qué haces?",
    "options": [
     "Me da igual: los costes no importan",
-    "Mantengo el que tengo y llevo las aportaciones nuevas al barato",
-    "Vendo el mío ya y compro el barato"
+    "Mantengo el mío y aporto lo nuevo al barato",
+    "Vendo el mío ya y compro el barato con todo"
    ],
    "explanation": "Entre dos ETF baratos del mismo índice, la diferencia es pequeña y vender tiene un coste fiscal seguro. Lo sensato es que el dinero nuevo vaya al más barato. Cambiar de golpe solo compensa cuando la diferencia es grande, como de 1,5 % a 0,2 %.",
    "feedback": [
@@ -502,14 +502,14 @@
   "u30l3-10": {
    "prompt": "¿Qué le contestas a Nora?",
    "options": [
-    "Empieza con 50 € y súbelo cuando ganes más: el tiempo hace el resto",
-    "Pide un préstamo para invertir más",
+    "Empieza con 50 € y súbelo cuando puedas",
+    "Espera a poder invertir 500 € al mes, que así sí se nota",
     "Tienes razón, mejor gastarlos"
    ],
    "explanation": "Con poco y pronto se llega lejos. Lo importante es el hábito.",
    "feedback": [
     "¡Así se hace! Lo que más pesa es empezar pronto y no parar.",
-    "Invertir con dinero prestado convierte una caída en un problema serio.",
+    "Esperar a «tener más» suele significar no empezar nunca: lo que más pesa es el tiempo.",
     "Gastar es legítimo, pero 50 € al mes durante décadas pueden ser decenas de miles de euros."
    ],
    "lines": [
@@ -520,7 +520,7 @@
   "u30l3-11": {
    "prompt": "Aportas 50 € cada mes a un fondo indexado. Este mes la bolsa ha caído un 20 %. ¿Qué haces con la aportación?",
    "options": [
-    "La mantengo: con los mismos 50 € compro más participaciones",
+    "La mantengo: compro más barato",
     "Vendo lo que llevo para no perder más",
     "La paro hasta que la bolsa se recupere"
    ],
@@ -535,7 +535,7 @@
    "prompt": "Vas a invertir 50 € al mes. El bróker A cobra 3 € por cada compra y su ETF, un 0,10 % al año. El B no cobra por comprar y su ETF cuesta un 0,20 %. ¿Cuál te conviene?",
    "options": [
     "El A: su ETF es más barato",
-    "El B: sin comisión fija, todo tu dinero se pone a trabajar",
+    "El B: no cobra por cada compra",
     "Da igual: la diferencia es mínima"
    ],
    "explanation": "Con poco dinero, una comisión fija se come un trozo de cada aportación (3 € de 50 € es mucho más que una décima de punto al año). Por eso el ETF más barato no siempre es la opción más barata.",
@@ -554,8 +554,8 @@
   "u30l3-14": {
    "prompt": "Tienes 400 € invertidos y tu banco te cobra 20 € al año de custodia. ¿Qué haces?",
    "options": [
-    "Vendo y lo dejo en la cuenta",
-    "Busco un bróker o una plataforma sin custodia",
+    "Vendo y lo dejo en la cuenta corriente",
+    "Busco un bróker sin custodia",
     "Nada: 20 € es poco"
    ],
    "explanation": "Un coste fijo se mide contra tu importe: 20 € sobre 400 € son un 5 %; sobre 40.000 €, un 0,05 %.",
@@ -570,7 +570,7 @@
    "options": [
     "20 % anual",
     "10 % anual",
-    "Unos 7,2 % anual"
+    "7,2 % anual"
    ],
    "explanation": "2^(1/10) − 1 ≈ 7,2 %. Cuadra con la regla del 72: 72 ÷ 7,2 = 10 años."
   },
@@ -603,8 +603,8 @@
   "u30l4-9": {
    "prompt": "Una app presume de que tu cartera lleva «+40 % desde el inicio». Empezaste hace 7 años. Un fondo indexado mundial ha dado un 7 % anual en ese tiempo. ¿Cómo lo valoras?",
    "options": [
-    "Genial: un 40 % es muchísimo",
-    "Lo anualizo: 1,4^(1/7) − 1 ≈ 4,9 % anual, por debajo del índice",
+    "Genial: un 40 % es muchísimo dinero",
+    "Lo anualizo: sale un 4,9 % anual",
     "Mejor no mirar la rentabilidad"
    ],
    "explanation": "Una cifra total sin plazo no dice nada. Anualiza y compara con un índice de referencia.",
@@ -620,15 +620,15 @@
     "Compararla con un índice de referencia",
     "Fijarte solo en el mejor año",
     "Tener en cuenta la inflación",
-    "Restar comisiones e impuestos"
+    "Contar solo las inversiones que ganaron"
    ],
-   "explanation": "El mejor año dice poco: importa el resultado neto, a largo plazo y frente a una alternativa."
+   "explanation": "Cuenta el resultado neto de comisiones e impuestos, después de la inflación y frente a un índice. Fijarte en tu mejor año o solo en lo que ganó te cuenta una historia más bonita que la real."
   },
   "u30l4-11": {
    "prompt": "El fondo A anuncia «+60 % en 10 años». El fondo B, «un 6 % anual durante los últimos 5 años». ¿Cuál ha ido mejor cada año?",
    "options": [
     "El A: un 60 % es mucho más que un 6 %",
-    "El B: +60 % en 10 años es menos de un 6 % al año, porque el interés se compone",
+    "El B: el A no llega al 5 % anual",
     "No se pueden comparar"
    ],
    "explanation": "Para comparar, todo tiene que estar en % anual. 60 entre 10 sería un 6 %, pero al componerse hace falta menos cada año para llegar al 60 %, así que A va por detrás de B.",
@@ -674,10 +674,10 @@
    "options": [
     "Comprar algo que no entiendo",
     "Aportar cada mes de forma automática",
-    "Poner más del 20 % en un solo activo",
+    "Revisar la cartera una vez al año",
     "Invertir con dinero prestado"
    ],
-   "explanation": "Aportar cada mes es parte del plan, no algo que evitar."
+   "explanation": "«Nunca» es para lo que te hace daño: comprar lo que no entiendes, invertir con dinero prestado o concentrar demasiado en un solo activo. Aportar cada mes y revisar una vez al año forman parte del plan."
   },
   "u30l5-12": {
    "prompt": "Tu Declaración dice «en la parte para especular, siempre con stop». Compras bitcoin al último precio. Coloca el stop algo por debajo del mínimo reciente.",
@@ -714,13 +714,13 @@
   "u30l6-3": {
    "prompt": "Primer año: la bolsa cae un 25 % y tu cartera un 18 %. Un amigo te dice que lo vendas todo. ¿Qué haces?",
    "options": [
-    "Paso todo a bitcoin para recuperar rápido",
-    "Sigo el plan: aporto, rebalanceo a acciones si toca y no vendo",
+    "Lo paso todo a un depósito hasta que se calme",
+    "Sigo el plan: aporto y no vendo",
     "Vendo antes de que caiga más"
    ],
    "explanation": "Los bonos amortiguaron la caída (−18 % frente a −25 %). Ahora toca el punto 8 de tu plan.",
    "feedback": [
-    "Perseguir la recuperación con más riesgo suele agrandar el agujero.",
+    "Salir «hasta que se calme» es vender abajo: nadie avisa del día de volver, y los rebotes llegan sin aviso.",
     "Bien: con 20 años de horizonte, un mal año es parte del camino.",
     "Convertir una caída en pérdida definitiva es el error más caro de la historia de los mercados."
    ]
@@ -728,7 +728,7 @@
   "u30l6-4": {
    "prompt": "Un compañero te dice: «Vende los bonos y mete todo en la acción que más ha subido este año». ¿Qué le contestas?",
    "options": [
-    "Que mi cartera tiene un reparto elegido para 20 años y no persigo modas",
+    "Que mi reparto es para 20 años",
     "Que lo pensaré si sube otro 20 %",
     "Le hago caso: los bonos no rinden"
    ],
@@ -742,7 +742,7 @@
   "u30l6-5": {
    "prompt": "¿Qué argumento defiende mejor una cartera diversificada?",
    "options": [
-    "«Tiene miles de empresas, costes bajos y un reparto que aguanto en una caída»",
+    "«Miles de empresas y costes bajos»",
     "«Un influencer dice que va a subir»",
     "«El año pasado subió más que la de mi primo»"
    ],
@@ -752,11 +752,11 @@
    "prompt": "¿Qué debería tener tu cartera de 10.000 € a 20 años? Marca todo.",
    "options": [
     "Costes bajos",
-    "Una regla para rebalancear",
+    "Un cambio de fondos cada pocos meses",
     "Una apuesta fuerte en la moda del momento",
     "Diversificación por empresas y países"
    ],
-   "explanation": "Lo especulativo, si lo hay, pequeño y limitado."
+   "explanation": "Costes bajos y diversificación por empresas y países, con una regla para rebalancear. Cambiar de fondos cada poco o apostar fuerte por la moda va en contra; lo especulativo, si lo hay, pequeño y limitado."
   },
   "u30l6-9": {
    "prompt": "Ordena los pasos para poner en marcha la cartera.",
@@ -772,9 +772,9 @@
   "u30l6-10": {
    "prompt": "¿Qué le contestas a Lucía?",
    "options": [
-    "Porque la bolsa siempre sube",
+    "Porque la bolsa siempre sube si esperas lo suficiente",
     "Porque he elegido lo que más va a subir",
-    "No sé si subirá este año, pero está diversificada, es barata y sé qué haré en una caída"
+    "Está diversificada y sé qué haré si cae"
    ],
    "explanation": "Una cartera se defiende con diversificación, costes y un plan, no con predicciones.",
    "feedback": [

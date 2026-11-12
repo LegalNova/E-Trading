@@ -389,7 +389,7 @@
    "prompt": "¿Qué decisión explica la mayor parte de las oscilaciones de una cartera diversificada?",
    "options": [
     "Elegir el fondo que más subió el año pasado",
-    "El reparto entre acciones, bonos y liquidez",
+    "El reparto entre acciones y bonos",
     "Qué día de la semana compras"
    ],
    "explanation": "Es la asignación de activos: la palanca principal del riesgo que asumes."
@@ -440,7 +440,7 @@
    "prompt": "Tienes dos objetivos: 2.000 € para un viaje dentro de un año y la jubilación, dentro de 40. ¿Cómo lo organizas?",
    "options": [
     "Todo junto en una cartera con muchas acciones: a la larga sube",
-    "El dinero del viaje en algo de poco riesgo y el de la jubilación con muchas acciones",
+    "El viaje, con poco riesgo; la jubilación, en acciones",
     "Todo en un depósito, para no arriesgar nada"
    ],
    "explanation": "El reparto se decide por objetivo: el dinero con fecha cercana no depende de la bolsa, y el de décadas puede llevar muchas acciones. Meterlo todo junto obliga a elegir mal para uno de los dos.",
@@ -453,8 +453,8 @@
   "u29l4-1": {
    "prompt": "¿Qué peso aproximado tiene la bolsa española en la bolsa mundial?",
    "options": [
-    "Un 10 %",
-    "Un 25 %",
+    "Alrededor del 10 %",
+    "Alrededor del 25 %",
     "Menos del 1 %"
    ],
    "explanation": "Por eso una cartera solo española concentra mucho, aunque tenga 35 empresas."
@@ -480,7 +480,7 @@
   "u29l4-5": {
    "prompt": "Bruno invierte todo en el IBEX 35: «Son las empresas que conozco». ¿Qué le dices?",
    "options": [
-    "Que es el sesgo doméstico: concentra en menos del 1 % del mundo",
+    "Que es el sesgo doméstico",
     "Bien hecho: conocer las empresas reduce el riesgo",
     "Que cambie todo a Japón, que está más barato"
    ],
@@ -506,17 +506,17 @@
    "options": [
     "Elimina las caídas de la bolsa",
     "Reduce la dependencia de la economía de un solo país",
-    "Te da acceso a empresas y sectores que no hay en tu país",
+    "Garantiza más rentabilidad que tu país",
     "Si una región tiene una década mala, no lo pagas todo"
    ],
-   "explanation": "Reduce el riesgo de un país, no el riesgo de mercado: si cae el mundo, cae tu cartera."
+   "explanation": "Reduce la dependencia de un solo país: si una región tiene una década mala, no lo pagas todo, y te abre empresas y sectores que no hay en el tuyo. No elimina las caídas ni garantiza más rentabilidad: si cae el mundo, cae tu cartera."
   },
   "u29l4-10": {
    "prompt": "¿Por qué en los fondos de bonos se suele elegir la versión cubierta a euros?",
    "options": [
-    "Porque la divisa podría moverse más que los propios bonos",
+    "Porque la divisa se mueve más que los bonos",
     "Porque es obligatorio por ley",
-    "Porque son más baratos siempre"
+    "Porque los fondos cubiertos siempre son más baratos"
    ],
    "explanation": "Un bono de calidad puede moverse poco; un 10 % de cambio de divisa borraría su papel de estabilizador."
   },
@@ -537,9 +537,9 @@
   "u29l5-2": {
    "prompt": "¿Cuántas empresas tiene aproximadamente un índice mundial como el MSCI ACWI o el FTSE All-World?",
    "options": [
-    "Unas 50",
-    "Unas 500",
-    "Entre 2.500 y más de 4.000"
+    "Unas 50 empresas",
+    "Unas 500 empresas",
+    "Varios miles"
    ],
    "explanation": "De decenas de países desarrollados y emergentes, en un solo producto."
   },
@@ -560,8 +560,8 @@
   "u29l5-7": {
    "prompt": "Laura cambia cada enero al fondo que más subió el año anterior. ¿Qué es lo más probable?",
    "options": [
-    "Que acabe comprando caro lo que ya subió y pague más costes",
-    "Que siempre tenga el mejor fondo",
+    "Que compre caro lo que ya subió",
+    "Que siempre tenga el mejor fondo del momento",
     "Que pague menos impuestos"
    ],
    "explanation": "El éxito pasado casi nunca predice el futuro. Una cartera simple y estable gana a la mayoría de los cambios.",
@@ -637,12 +637,12 @@
   "u29l6-10": {
    "prompt": "¿Qué límites tienen los factores? Marca todos.",
    "options": [
-    "Sus fondos suelen ser más caros",
+    "Solo funcionan en la bolsa americana",
     "Cuando muchos los conocen, la prima puede reducirse",
     "Garantizan batir al mercado",
     "Pueden ir por detrás del índice durante años"
    ],
-   "explanation": "Nada garantiza batir al mercado: los factores son una apuesta razonable, no una certeza."
+   "explanation": "Pueden ir por detrás del índice durante años y, cuando muchos los conocen, la prima puede reducirse; además, sus fondos suelen ser más caros. No garantizan batir al mercado, y se han observado en muchos países, no solo en EE. UU."
   },
   "u29l7-1": {
    "prompt": "Empareja cada letra con lo que mide.",
@@ -672,10 +672,10 @@
    "options": [
     "Publica su método de selección y sus exclusiones",
     "Promesas vagas como «invertir en un planeta mejor» sin datos",
-    "Entre sus mayores posiciones hay empresas muy contaminantes sin explicar por qué",
-    "Mucho marketing verde y poca información concreta"
+    "Grandes contaminantes entre sus mayores posiciones, sin explicación",
+    "Detalla cuánto pesa cada empresa en la cartera"
    ],
-   "explanation": "La transparencia (método, exclusiones, posiciones) es lo contrario del greenwashing."
+   "explanation": "Las promesas vagas sin datos y las empresas muy contaminantes sin explicación son señales de greenwashing. Publicar el método, las exclusiones y las posiciones es justo lo contrario: transparencia."
   },
   "u29l7-8": {
    "prompt": "Presentar como sostenible algo que no lo es tanto se llama ____.",
@@ -692,7 +692,7 @@
    "options": [
     "Invierte solo en empresas pequeñas",
     "Elimina el riesgo de mercado",
-    "Deja fuera sectores enteros, como tabaco o armas"
+    "Deja fuera sectores enteros"
    ],
    "explanation": "Otra forma es «best in class»: elegir a las mejores de cada sector."
   },
@@ -700,8 +700,8 @@
    "prompt": "¿Qué le contestas a Sara?",
    "options": [
     "Sí, con el nombre es suficiente",
-    "El ESG es solo marketing, olvídalo",
-    "Mira su clasificación SFDR, sus exclusiones, sus posiciones y su coste"
+    "El ESG es solo marketing: olvídalo y ahórrate el lío",
+    "Mira su clasificación SFDR y sus posiciones"
    ],
    "explanation": "El ESG puede reflejar tus valores, pero exige leer la letra pequeña.",
    "feedback": [

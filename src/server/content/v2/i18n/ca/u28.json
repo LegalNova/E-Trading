@@ -259,8 +259,8 @@
    "prompt": "Què li contestes?",
    "options": [
     "Recupera-ho amb palanquejament",
-    "La mida no depèn del que vas perdre ahir: continua amb el teu risc fix",
-    "Bona idea, ja estàs en ratxa"
+    "Continua amb el teu risc fix de sempre",
+    "Bona idea: ja estàs en ratxa, aprofita-la"
    ],
    "explanation": "Recuperar pèrdues a la força és la manera més ràpida de fer-les més grans.",
    "feedback": [
@@ -286,12 +286,12 @@
   "u28l2-8": {
    "prompt": "Quins senyals indiquen que estàs operant per venjança? Marca'ls tots.",
    "options": [
-    "Sents ràbia o pressa",
+    "Esperes que es compleixi el teu senyal",
     "Segueixes el teu pla amb el risc habitual",
     "Apuges la mida per recuperar",
     "Entres sense que es compleixi el teu senyal"
    ],
-   "explanation": "Seguir el pla amb el risc habitual és just el contrari."
+   "explanation": "Apujar la mida per recuperar i entrar sense senyal són venjança, gairebé sempre amb ràbia o pressa al darrere. Esperar el teu senyal i seguir el pla amb el risc habitual és just el contrari."
   },
   "u28l2-9": {
    "prompt": "Regla preparada: després de ____ pèrdues seguides, m'aturo la resta del dia.",
@@ -306,8 +306,8 @@
   "u28l2-10": {
    "prompt": "Què tenen en comú operar per venjança i l'aversió a la pèrdua?",
    "options": [
-    "Totes dues redueixen el risc",
-    "Totes dues ens fan assumir més risc per no acceptar una pèrdua",
+    "Totes dues redueixen el risc que assumim sense voler",
+    "Totes dues ens fan assumir més risc",
     "No tenen res en comú"
    ],
    "explanation": "Quan perdem, ens tornem més arriscats: «doblo per recuperar»."
@@ -347,8 +347,8 @@
    "prompt": "Què li dius a la Lumi?",
    "options": [
     "Millor posa'n 100, d'alertes",
-    "Genial, més informació és millor",
-    "Compte: més estímuls solen acabar en més operacions i més costos"
+    "Genial: com més informació, millor decideixes",
+    "Compte: més estímuls, més operacions"
    ],
    "explanation": "No cal que vegis cada moviment: cal que actuïs només quan ho diu el teu pla.",
    "feedback": [
@@ -365,7 +365,7 @@
    "prompt": "El teu fons indexat de llarg termini baixa un 1 % un dimarts. Fa tres dies que obres l'app cada hora. Què fas?",
    "options": [
     "Em passo al fons que més puja avui",
-    "No el toco: continuo amb les aportacions i el reviso de tant en tant",
+    "No el toco: continuo aportant",
     "Venc avui i recompro quan baixi més"
    ],
    "explanation": "Per al llarg termini, un dia dolent no demana cap decisió: cada operació de més paga costos i poques vegades millora el resultat. El temptador és «fer alguna cosa» perquè ho estàs mirant.",
@@ -379,11 +379,11 @@
    "prompt": "Què tornes a pagar cada vegada que compres o vens? Marca-ho tot.",
    "options": [
     "L'spread entre el preu de compra i el de venda",
-    "Els impostos, si vens amb guanys",
+    "La quota anual de manteniment del compte",
     "La rendibilitat de l'índex",
     "La comissió del bròker"
    ],
-   "explanation": "Comissió, spread i impostos es paguen en cada operació: per això operar molt es menja un avantatge petit. La rendibilitat de l'índex no és un cost: és el que guanyes si no et mous."
+   "explanation": "La comissió i l'spread es paguen en cada operació, i els impostos, cada vegada que vens amb guanys: per això operar molt es menja un avantatge petit. Una quota anual no depèn de quant operis, i la rendibilitat de l'índex no és un cost: és el que guanyes si no et mous."
   },
   "u28l4-1": {
    "prompt": "Ordena la teva rutina antibiaixos d'una operació.",
@@ -401,16 +401,16 @@
    "options": [
     "Quant ha pujat aquesta setmana?",
     "És al meu pla?",
-    "Estic tranquil?",
+    "Què diuen avui a les xarxes?",
     "Sé on és el meu stop?"
    ],
-   "explanation": "Quant ha pujat alimenta el FOMO, no la decisió."
+   "explanation": "La llista pregunta si és al teu pla i si saps on és el teu stop, i també si estàs tranquil. Quant ha pujat o què diuen a les xarxes alimenta el FOMO, no la decisió."
   },
   "u28l4-4": {
    "prompt": "La Lumi et demana que passis la llista. Què li respons?",
    "options": [
-    "Pregunta 7: la compraries si ningú en parlés?",
-    "Compra'n la meitat i després passes la llista",
+    "Pregunta 7: i si ningú en parlés?",
+    "Compra'n la meitat ara i després passes la llista",
     "No cal, es veu claríssim"
    ],
    "explanation": "La llista només funciona si es passa abans i sencera.",
@@ -428,7 +428,7 @@
    "prompt": "Què li dius en la revisió mensual?",
    "options": [
     "Si has guanyat, tant és saltar-se el pla",
-    "Revisa aquestes 4 operacions: què et va fer saltar-te'l i com van sortir?",
+    "Revisa per què te'l vas saltar",
     "Apuja el risc el mes que ve"
    ],
    "explanation": "La revisió mensual mira el procés, no només el resultat.",
@@ -462,7 +462,7 @@
    "prompt": "Quina pregunta de la revisió mensual et diu si la teva gestió activa compensa?",
    "options": [
     "Quantes operacions he fet?",
-    "La meva rendibilitat supera la d'un índex comparable?",
+    "Supero un índex comparable?",
     "Quant temps he mirat la pantalla?"
    ],
    "explanation": "Si en diversos anys no superes l'índex, comprar l'índex t'hauria anat millor."
