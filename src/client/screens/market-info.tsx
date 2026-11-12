@@ -11,7 +11,7 @@ import { tzOffset } from '@/shared/session-times'
 import { pct, toNum } from '@/shared/format'
 import { api } from '../api'
 import { useLang } from '../hooks'
-import { currencySymbol, fmtAssetPrice } from './market-ui'
+import { currencySymbol, decimalsFor, fmtAssetPrice } from './market-ui'
 import { bigMoney } from './market-extra'
 
 const MADRID = 'Europe/Madrid'
@@ -126,7 +126,7 @@ function RangeBar({ low, high, value, fmt, label }: { low: number; high: number;
   )
 }
 
-const dec = (v: number, locale: string, d: number) => new Intl.NumberFormat(locale, { minimumFractionDigits: d, maximumFractionDigits: d }).format(v)
+const dec = (v: number, locale: string, d: number) => new Intl.NumberFormat(locale, { useGrouping: 'always', minimumFractionDigits: d, maximumFractionDigits: d } as Intl.NumberFormatOptions).format(v)
 const compact = (v: number, locale: string) => new Intl.NumberFormat(locale, { notation: 'compact', maximumFractionDigits: 2 }).format(v)
 function plainMoney(v: number, currency: string, locale: string) {
   try {
@@ -157,7 +157,8 @@ function useRows(a: AssetDetailT, f: FundamentalsT | undefined): [Row[], Row[]] 
   // Variación del día (frente al cierre anterior; en las cripto, frente a las 00:00 UTC)
   const ch = toNum(a.change)
   const sign = ch > 0 ? '+' : ch < 0 ? '−' : ''
-  const absCh = type === 'INDEX' || type === 'FX' ? dec(Math.abs(ch), locale, type === 'FX' ? 4 : 2) : fmt(Math.abs(ch))
+  // Con los mismos decimales que el precio: «−0,05 €», no «−0,0480 €» junto a un precio con dos (auditoría APP-28)
+  const absCh = type === 'INDEX' || type === 'FX' ? dec(Math.abs(ch), locale, type === 'FX' ? 4 : 2) : fmtAssetPrice({ ...a, price: String(Math.abs(ch)) }, locale, decimalsFor(type, price))
   add(ess, {
     k: 'change',
     label: L('change', type === 'CRYPTO' ? 'crypto' : undefined),

@@ -32,6 +32,9 @@ const REGIONS: RegionSel[] = ['ALL', 'AMERICA', 'EUROPE', 'ASIA']
 const TYPES: AssetTypeT[] = ['STOCK', 'ETF', 'INDEX', 'CRYPTO', 'FX', 'COMMODITY']
 
 /** Valor que se actualiza tras una pausa al escribir */
+/** Un importe escrito en un campo se ve con la coma decimal del idioma («10,68»), aunque por dentro vaya con punto (auditoría APP-28) */
+const decShown = (v: string, locale: string) => (locale === 'en' ? v : v.replace('.', ','))
+
 function useDebounced<T>(value: T, ms = 300) {
   const [v, setV] = useState(value)
   useEffect(() => {
@@ -598,6 +601,8 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
               <span className="t-foot">
                 ≈ {p ? fmtQty(p.qty, locale) : '—'} {unit(a.type, a.ticker)} · {fmtAssetPrice(a, locale)}
               </span>
+              {/* El simulador no tiene horquilla ni deslizamiento: se dice aquí, donde se decide (auditoría APP-37) */}
+              <span className="t-cap text-center">{t('simNote')}</span>
             </div>
             <div className="grid grid-cols-4 gap-2.5">
               {[100, 500, 1000, 2500].map(v => (
@@ -648,7 +653,7 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
             <label htmlFor="o-trigger">
               {t('triggerPrice')} ({a.type === 'FX' || a.type === 'INDEX' ? a.currency : currencySymbol(a.currency, locale)})
             </label>
-            <input id="o-trigger" className="input" inputMode="decimal" value={trigger} onChange={e => setTrigger(e.target.value.replace(',', '.').replace(/[^\d.]/g, ''))} />
+            <input id="o-trigger" className="input" inputMode="decimal" value={decShown(trigger, locale)} onChange={e => setTrigger(e.target.value.replace(',', '.').replace(/[^\d.]/g, ''))} />
             <span className="t-cap">{triggerHelp}</span>
           </div>
         )}
@@ -673,7 +678,7 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
                 </div>
                 {x.on && (
                   <>
-                    <input className="input" inputMode="decimal" aria-label={x.label} value={x.v} onChange={e => x.setV(e.target.value.replace(',', '.').replace(/[^\d.]/g, ''))} />
+                    <input className="input" inputMode="decimal" aria-label={x.label} value={decShown(x.v, locale)} onChange={e => x.setV(e.target.value.replace(',', '.').replace(/[^\d.]/g, ''))} />
                     {x.hint && <span className={`t-cap ${x.k === 'STOP_LOSS' ? 'down' : 'up'}`}>{x.hint}</span>}
                   </>
                 )}
@@ -712,7 +717,8 @@ function OrderFlow({ a, side, position, cash, onClose, onDone }: { a: AssetDetai
         {/* El botón de confirmar queda siempre a la vista, aunque la hoja sea larga */}
         <div className="sticky -mx-4 mt-auto px-4 pt-2" style={{ background: 'var(--bg)', bottom: 'calc(-1 * max(24px, env(safe-area-inset-bottom)))', paddingBottom: 'max(12px, env(safe-area-inset-bottom))' }}>
           <button className="btn btn-primary" disabled={ctaDisabled} onClick={review}>
-            {errorText ?? (type === 'MARKET' ? (buy ? t('confirmBuy') : t('confirmSell')) : t('placeOrder'))}
+            {/* Mientras se envía se dice, además de desactivar el botón (auditoría APP-34) */}
+            {place.isPending ? t('sendingOrder') : (errorText ?? (type === 'MARKET' ? (buy ? t('confirmBuy') : t('confirmSell')) : t('placeOrder')))}
           </button>
         </div>
       </Sheet>
@@ -904,7 +910,7 @@ function AlertSheet({ open, a, onClose }: { open: boolean; a: AssetDetailT; onCl
         <label htmlFor="al-price">
           {t('price')} ({a.type === 'FX' || a.type === 'INDEX' ? t('points') : currencySymbol(a.currency, locale)})
         </label>
-        <input id="al-price" className="input" inputMode="decimal" value={price} onChange={e => setPrice(e.target.value.replace(',', '.').replace(/[^\d.]/g, ''))} />
+        <input id="al-price" className="input" inputMode="decimal" value={decShown(price, locale)} onChange={e => setPrice(e.target.value.replace(',', '.').replace(/[^\d.]/g, ''))} />
       </div>
       <p className="t-cap m-0">{t('alertNote')}</p>
       <button className="btn btn-primary" disabled={!(toNum(price) > 0) || m.isPending} onClick={() => m.mutate()}>
@@ -1040,7 +1046,7 @@ export function Orders() {
                   {t(`types.${o.type}`)} · {o.side === 'BUY' ? t('buy') : t('sell')} {o.symbol}
                 </b>
                 <br />
-                <span className="t-cap">{o.triggerPrice ? t('pendingAt', { amount: money(o.amount, 'EUR', locale), price: num(toNum(o.triggerPrice), locale, Math.min(6, Math.max(2, o.triggerPrice.split('.')[1]?.length ?? 0))) }) : t('pendingOpen', { amount: money(o.amount, 'EUR', locale) })}
+                <span className="t-cap">{o.triggerPrice ? t('pendingAt', { amount: money(o.amount, 'EUR', locale), price: `${num(toNum(o.triggerPrice), locale, Math.min(6, Math.max(2, o.triggerPrice.split('.')[1]?.length ?? 0)))}${o.currency ? ` ${currencySymbol(o.currency, locale)}` : ''}` }) : t('pendingOpen', { amount: money(o.amount, 'EUR', locale) })}
                   {o.parentId && ` · ${t('exitOfBuy')}`}</span>
               </span>
               <button className="link min-h-11" onClick={() => cancel.mutate(o.id)}>

@@ -515,7 +515,8 @@ export function ProChart({
     else if (d.partial && first) period = t2('chart.period.since', { date: fmtWall(d.viewFrom, interval === '1w' ? '1d' : interval, locale, true) })
     else if (d.window === 'sessions') period = interval === '1m' ? t2('chart.period.session', { date: fmtWall(d.viewFrom, '1d', locale) }) : t2('chart.period.sessions', { n: 5 })
     else period = t2(`chart.period.${interval}`)
-    const parts = [t2(`chart.candles.${interval}`), period]
+    // En línea o área no hay velas: el pie lo dice como es (auditoría APP-31)
+    const parts = [t2(`chart.${kind === 'line' || kind === 'area' ? 'points' : 'candles'}.${interval}`), period]
     if (intraday) parts.push(t2('chart.madrid'))
     const lastT = d.candles[d.candles.length - 1].t
     return { text: parts.join(' · '), closed: !open && intraday ? t2('chart.lastCandle', { date: fmtWall(lastT, interval, locale) }) : null }
@@ -600,10 +601,18 @@ export function ProChart({
       {/* Leyenda OHLC */}
       {legend && caption && (
         <div className="t-cap flex flex-wrap gap-x-3 px-1 tabular-nums">
-          <span>O {fmtP(legend.o)}</span>
-          <span>H {fmtP(legend.h)}</span>
-          <span>L {fmtP(legend.l)}</span>
-          <span>C {fmtP(legend.c)}</span>
+          {kind === 'line' || kind === 'area' ? (
+            <span>
+              {t2('chart.closeLabel')} {fmtP(legend.c)}
+            </span>
+          ) : (
+            <>
+              <span>O {fmtP(legend.o)}</span>
+              <span>H {fmtP(legend.h)}</span>
+              <span>L {fmtP(legend.l)}</span>
+              <span>C {fmtP(legend.c)}</span>
+            </>
+          )}
           <span className={upLegend ? 'up font-bold' : 'down font-bold'}>
             {legend.chg >= 0 ? '+' : ''}
             {legend.chg.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} %

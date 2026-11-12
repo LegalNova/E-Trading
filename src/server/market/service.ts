@@ -269,10 +269,12 @@ async function rankSearch(where: Prisma.AssetWhereInput, q: string, offset: numb
   const rows = await db.asset.findMany({ where, include: { quote: true }, orderBy: [{ sortOrder: 'asc' }], take: 400 })
   const Q = q.toUpperCase()
   const score = (a: AssetRow) => {
-    const t = tickerOf(a.symbol, a.type).toUpperCase()
+    // Las divisas se muestran como «EUR/USD»: se encuentran igual escribiendo «EURUSD» o «EUR/USD»
+    const t = tickerOf(a.symbol, a.type).toUpperCase().replace('/', '')
+    const Qt = Q.replace('/', '')
     const n = a.name.toUpperCase()
-    if (t === Q || a.symbol.toUpperCase() === Q) return 0
-    if (t.startsWith(Q)) return 1
+    if (t === Qt || a.symbol.toUpperCase() === Q) return 0
+    if (t.startsWith(Qt)) return 1
     if (n.startsWith(Q)) return 2
     if (n.split(/[\s.,()-]+/).some(w => w.startsWith(Q))) return 3
     return 4

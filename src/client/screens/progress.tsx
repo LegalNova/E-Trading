@@ -416,7 +416,7 @@ export function Profile() {
           </div>
           <div className="kv">
             <span>{t('winRate')}</span>
-            <span>{num(stats.winRatePct, locale, 0)} %</span>
+            <span>{stats.sells === 0 ? '—' : `${num(stats.winRatePct, locale, 0)} %`}</span>
           </div>
           <div className="kv">
             <span>{t('drawdown')}</span>

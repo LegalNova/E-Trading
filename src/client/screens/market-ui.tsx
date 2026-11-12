@@ -7,6 +7,7 @@ import type { AssetItemT, AssetTypeT } from '@/shared/contract'
 import { arrowPct, toNum } from '@/shared/format'
 import { useLang } from '../hooks'
 import { Sparkline } from '../ui/charts'
+import { Icon } from '../ui/icons'
 import { Seg } from '../ui/kit'
 
 /** Decimales adecuados al tamaño del precio y al tipo de activo */
@@ -20,16 +21,19 @@ export function decimalsFor(type: AssetTypeT, v: number) {
 }
 
 /** Precio en su moneda: 333,57 $ · 1.352,00 £ · ¥3.105 · 11,51 € (índices y divisas, sin símbolo) */
-export function fmtAssetPrice(a: { price: string; currency: string; type: AssetTypeT }, locale: string) {
+export function fmtAssetPrice(a: { price: string; currency: string; type: AssetTypeT }, locale: string, decimals?: number) {
   const v = toNum(a.price)
-  const d = decimalsFor(a.type, v)
-  if (a.type === 'FX' || a.type === 'INDEX') return new Intl.NumberFormat(locale, { minimumFractionDigits: d, maximumFractionDigits: d }).format(v)
+  // `decimals`: para importes derivados del precio (la variación del día) que deben llevar los mismos decimales que él
+  const d = decimals ?? decimalsFor(a.type, v)
+  // Punto de millar también por debajo de 10.000 (auditoría APP-28: «7619,38» junto a «19.987,00»)
+  const G = { useGrouping: 'always' } as Intl.NumberFormatOptions
+  if (a.type === 'FX' || a.type === 'INDEX') return new Intl.NumberFormat(locale, { ...G, minimumFractionDigits: d, maximumFractionDigits: d }).format(v)
   try {
     const f = new Intl.NumberFormat(locale, { style: 'currency', currency: a.currency, currencyDisplay: 'narrowSymbol' })
     const def = f.resolvedOptions().maximumFractionDigits ?? 2
     // Monedas sin decimales (JPY, KRW) se respetan; el resto según el tamaño
     const digits = def === 0 ? 0 : d
-    return new Intl.NumberFormat(locale, { style: 'currency', currency: a.currency, currencyDisplay: 'narrowSymbol', minimumFractionDigits: digits, maximumFractionDigits: digits }).format(v)
+    return new Intl.NumberFormat(locale, { ...G, style: 'currency', currency: a.currency, currencyDisplay: 'narrowSymbol', minimumFractionDigits: digits, maximumFractionDigits: digits }).format(v)
   } catch {
     return `${v.toFixed(d)} ${a.currency}`
   }
@@ -90,7 +94,8 @@ export function AssetBadge({ a, size = 40 }: { a: Pick<AssetItemT, 'ticker' | 't
   const dark = a.type === 'INDEX' || a.type === 'CRYPTO'
   return (
     <span className="flex flex-none items-center justify-center rounded-xl font-extrabold" style={{ width: size, height: size, fontSize: size * 0.27, background: dark ? 'var(--ink)' : 'var(--fill)', color: dark ? 'var(--bg)' : 'var(--ink)' }}>
-      {a.ticker.replace(/[^A-Za-z0-9]/g, '').slice(0, 4)}
+      {/* Índices: un icono en lugar de un código recortado («GSPC»); divisas: la moneda base («EUR»), no «EURU» (auditoría APP-29) */}
+      {a.type === 'INDEX' ? <Icon name="chart" size={size * 0.5} /> : a.ticker.replace(/[^A-Za-z0-9]/g, '').slice(0, a.type === 'FX' ? 3 : 4)}
     </span>
   )
 }

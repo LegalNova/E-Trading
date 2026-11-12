@@ -298,7 +298,7 @@ export function manualAnswer(question: string, found: Chunk[]): string {
 }
 
 const ADVICE = (name: string) =>
-  [`Eso no te lo puedo decir, ${name}: E-Trading es una simulación educativa y nadie sabe qué subirá mañana. Lo que sí puedo es enseñarte a decidirlo tú.`, 'Antes de comprar algo, comprueba:\n• ¿Entiendo cómo gana dinero?\n• ¿Está sana (deuda, caja) y tiene ventaja competitiva?\n• ¿Está cara para lo que crece?\n• ¿Encaja en mi plan y no pasa del 20 % de mi cartera?\n• ¿Sé dónde está mi stop o qué me haría vender?', 'La lista completa está en la lección «Analizar una empresa en 30 minutos». Y si lo que buscas es invertir sin elegir empresas, mira «Carteras sencillas con fondos indexados».'].join('\n\n')
+  [`Eso no te lo puedo decir, ${name}: E-Trading es una simulación educativa y nadie sabe qué subirá mañana. Lo que sí puedo es enseñarte a decidirlo tú.`, 'Antes de comprar algo, comprueba:\n• ¿Entiendo cómo gana dinero?\n• ¿Está sana (deuda, caja) y tiene ventaja competitiva?\n• ¿Está cara para lo que crece?\n• ¿Encaja en mi plan y no pasa del 20 % de mi cartera?\n• ¿Sé dónde está mi stop o qué me haría vender?\n• ¿Es dinero que no voy a necesitar pronto? Si lo necesitas pronto, no va a bolsa.', 'La lista completa está en la lección «Analizar una empresa en 30 minutos». Y si lo que buscas es invertir sin elegir empresas, mira «Carteras sencillas con fondos indexados».'].join('\n\n')
 
 /** Punto de entrada: decide qué tipo de respuesta toca y la construye */
 export function think(question: string, c: BrainCtx): BrainOut {

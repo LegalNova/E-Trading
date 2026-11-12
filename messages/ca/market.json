@@ -60,12 +60,12 @@
       "asOf": "Dades del {date}",
       "empty": "Encara no hi ha dades. Torna d'aquí a una estona.",
       "emptyShort": "Encara no hi ha dades",
-      "follow": "Seguir",
-      "following": "Seguint",
-      "followAria": "Seguir {name} per estudiar-la",
-      "unfollowAria": "Deixar de seguir {name}",
-      "followed": "Afegida als teus preferits per estudiar-la",
-      "unfollowed": "Treta dels teus preferits",
+      "follow": "Preferits",
+      "following": "A Preferits",
+      "followAria": "Afegir {name} a Preferits per estudiar-la",
+      "unfollowAria": "Treure {name} de Preferits",
+      "followed": "Afegida a Preferits per estudiar-la",
+      "unfollowed": "Treta de Preferits",
       "followError": "No s'ha pogut desar. Torna-ho a provar.",
       "metric": {
         "drops": "va baixar un {v}",
@@ -148,7 +148,17 @@
       "lastCandle": "Mercat tancat: l'última espelma és del {date}.",
       "loading": "Carregant {iv}…",
       "error": "No s'ha pogut carregar el gràfic. Ho tornem a provar sols.",
-      "unavailable": "Yahoo Finance no té {iv} per a aquest actiu. Prova amb un altre botó."
+      "unavailable": "Yahoo Finance no té {iv} per a aquest actiu. Prova amb un altre botó.",
+      "points": {
+        "1m": "Un punt per minut",
+        "5m": "Un punt cada 5 minuts",
+        "15m": "Un punt cada 15 minuts",
+        "1h": "Un punt per hora",
+        "1d": "Un punt per dia",
+        "1w": "Un punt per setmana",
+        "1M": "Un punt per mes"
+      },
+      "closeLabel": "Tancament"
     },
     "units": {
       "t": "{n} bilions {cur}",

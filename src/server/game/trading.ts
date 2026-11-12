@@ -422,8 +422,10 @@ export async function portfolioIn(c: Ctx, book: Book): Promise<PortfolioT> {
       return { symbol: p.symbol, name: px?.name ?? p.symbol, type: (px?.type ?? 'STOCK') as PortfolioT['positions'][number]['type'], qty: fix8(n(p.qty)), avgPrice: fixPrice(n(p.avgPrice)), marketValue: fix2(v), unrealizedPnl: fix2(pnl), pnlPct: cost ? (pnl / cost) * 100 : 0, weightPct: total ? (v / total) * 100 : 0 }
     })
     .sort((a, b) => Number(b.marketValue) - Number(a.marketValue))
-  // Base de la rentabilidad: el saldo que se ha recibido (quien tuvo Max y volvió a Free conserva sus 50.000 €)
-  const start = (pf.premiumTopUp ? Math.max(START_CASH[c.user.plan], START_CASH.PREMIUM) : START_CASH[c.user.plan]) + n(pf.giftCash)
+  // Base de la rentabilidad: el saldo que de verdad se ha entregado (quien tuvo Max y volvió a Free conserva sus 50.000 €).
+  // Manda la recarga recibida, no el plan aparente: una cuenta de equipo se ve como Max pero su cartera pudo crearse con
+  // 10.000 €, y salía «−78 % total» (auditoría APP-35).
+  const start = (pf.premiumTopUp ? START_CASH.PREMIUM : START_CASH.FREE) + n(pf.giftCash)
   // Foto diaria real del valor de la cartera (para el gráfico de evolución)
   // (solo se escribe si cambia el valor: con precios que se actualizan cada pocos minutos, casi nunca)
   const snap = await c.tx.portfolioSnapshot.findUnique({ where: { userId_day: { userId: c.user.id, day: c.today } }, select: { value: true } })
@@ -465,7 +467,10 @@ export async function orders() {
   const book = await userBook()
   return withCtx(async c => {
     await processPendingFor(c, book)
-    const out = (await c.tx.order.findMany({ where: { userId: c.user.id, status: 'PENDING' }, orderBy: { createdAt: 'desc' } })).map(toOrderT)
+    const rows = await c.tx.order.findMany({ where: { userId: c.user.id, status: 'PENDING' }, orderBy: { createdAt: 'desc' } })
+    // La moneda del activo, para que el precio de activación se lea con su símbolo (auditoría APP-28)
+    const cur = new Map((await c.tx.asset.findMany({ where: { symbol: { in: [...new Set(rows.map(o => o.symbol))] } }, select: { symbol: true, currency: true } })).map(a => [a.symbol, a.currency]))
+    const out = rows.map(o => ({ ...toOrderT(o), currency: cur.get(o.symbol) }))
     await endFx(c)
     return out
   })
@@ -554,6 +559,6 @@ export async function tradingStats(): Promise<TradingStatsT> {
       peak = Math.max(peak, p.v)
       dd = Math.min(dd, (p.v - peak) / peak)
     }
-    return { tradesPerDay: filled.length / days, winRatePct: sells.length ? (wins / sells.length) * 100 : 0, maxDrawdownPct: dd * 100, insights }
+    return { tradesPerDay: filled.length / days, winRatePct: sells.length ? (wins / sells.length) * 100 : 0, sells: sells.length, maxDrawdownPct: dd * 100, insights }
   })
 }

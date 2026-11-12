@@ -411,6 +411,8 @@ export const Order = z.object({
   stopLoss: money.nullable(),
   takeProfit: money.nullable(),
   parentId: z.string().nullable(),
+  /** (+) Moneda en la que cotiza el activo, para escribir el precio de activación con su símbolo (solo en la lista de pendientes) */
+  currency: z.string().optional(),
 })
 export const OrderResult = Effects.extend({ order: Order })
 export const Position = z.object({
@@ -485,6 +487,8 @@ export const League = z.object({
 export const TradingStats = z.object({
   tradesPerDay: z.number(),
   winRatePct: z.number(),
+  /** (+) Ventas hechas: sin ninguna, el porcentaje de arriba no significa nada y se enseña «—» (auditoría APP-39) */
+  sells: z.number().optional(),
   maxDrawdownPct: z.number(),
   insights: z.array(z.string()),
 })

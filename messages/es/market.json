@@ -60,12 +60,12 @@
       "asOf": "Datos del {date}",
       "empty": "Sin datos por ahora. Vuelve en un rato.",
       "emptyShort": "Sin datos por ahora",
-      "follow": "Seguir",
-      "following": "Siguiendo",
-      "followAria": "Seguir {name} para estudiarla",
-      "unfollowAria": "Dejar de seguir {name}",
-      "followed": "Añadida a tus favoritos para estudiarla",
-      "unfollowed": "Quitada de tus favoritos",
+      "follow": "Favoritos",
+      "following": "En Favoritos",
+      "followAria": "Añadir {name} a Favoritos para estudiarla",
+      "unfollowAria": "Quitar {name} de Favoritos",
+      "followed": "Añadida a Favoritos para estudiarla",
+      "unfollowed": "Quitada de Favoritos",
       "followError": "No se ha podido guardar. Inténtalo de nuevo.",
       "metric": {
         "drops": "bajó un {v}",
@@ -148,7 +148,17 @@
       "lastCandle": "Mercado cerrado: la última vela es del {date}.",
       "loading": "Cargando {iv}…",
       "error": "No se ha podido cargar el gráfico. Lo volvemos a intentar solo.",
-      "unavailable": "Yahoo Finance no tiene {iv} para este activo. Prueba con otro botón."
+      "unavailable": "Yahoo Finance no tiene {iv} para este activo. Prueba con otro botón.",
+      "points": {
+        "1m": "Un punto por minuto",
+        "5m": "Un punto cada 5 minutos",
+        "15m": "Un punto cada 15 minutos",
+        "1h": "Un punto por hora",
+        "1d": "Un punto por día",
+        "1w": "Un punto por semana",
+        "1M": "Un punto por mes"
+      },
+      "closeLabel": "Cierre"
     },
     "units": {
       "t": "{n} billones {cur}",

@@ -79,7 +79,7 @@ function LensToggle() {
   return open ? (
     <LensPanel onClose={() => toggle(false)} />
   ) : (
-    <button onClick={() => toggle(true)} className="fixed right-3 bottom-[calc(96px+env(safe-area-inset-bottom))] z-50 flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-bold shadow-lg md:right-5 md:bottom-5" style={{ background: 'var(--ink)', color: 'var(--bg)' }} aria-label={t('open')}>
+    <button onClick={() => toggle(true)} className="fixed bottom-[calc(150px+env(safe-area-inset-bottom))] left-3 z-50 flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-bold shadow-lg md:right-5 md:bottom-5 md:left-auto" style={{ background: 'var(--ink)', color: 'var(--bg)' }} aria-label={t('open')}>
       <Icon name="chart" size={16} />
       {t('button')}
     </button>

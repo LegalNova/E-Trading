@@ -60,12 +60,12 @@
       "asOf": "Data from {date}",
       "empty": "No data yet. Check back in a while.",
       "emptyShort": "No data yet",
-      "follow": "Follow",
-      "following": "Following",
-      "followAria": "Follow {name} to study it",
-      "unfollowAria": "Unfollow {name}",
-      "followed": "Added to your favourites to study it",
-      "unfollowed": "Removed from your favourites",
+      "follow": "Favourites",
+      "following": "In Favourites",
+      "followAria": "Add {name} to Favourites to study it",
+      "unfollowAria": "Remove {name} from Favourites",
+      "followed": "Added to Favourites to study it",
+      "unfollowed": "Removed from Favourites",
       "followError": "Couldn't save it. Please try again.",
       "metric": {
         "drops": "fell {v}",
@@ -148,7 +148,17 @@
       "lastCandle": "Market closed: the last candle is from {date}.",
       "loading": "Loading {iv}…",
       "error": "Couldn't load the chart. We'll keep trying.",
-      "unavailable": "Yahoo Finance has no {iv} for this asset. Try another button."
+      "unavailable": "Yahoo Finance has no {iv} for this asset. Try another button.",
+      "points": {
+        "1m": "One point per minute",
+        "5m": "One point every 5 minutes",
+        "15m": "One point every 15 minutes",
+        "1h": "One point per hour",
+        "1d": "One point per day",
+        "1w": "One point per week",
+        "1M": "One point per month"
+      },
+      "closeLabel": "Close"
     },
     "units": {
       "t": "{cur}{n} trillion",
