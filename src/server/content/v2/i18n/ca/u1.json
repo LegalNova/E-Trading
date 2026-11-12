@@ -300,7 +300,7 @@
    "prompt": "T'apugen el sou 200 € al mes. Ja tens coixí i cap deute car. Què farà créixer més el teu patrimoni d'aquí a 10 anys?",
    "options": [
     "Canviar de cotxe, ara que pots pagar una quota més alta",
-    "Programar cada mes una aportació d'una part a un ETF indexat",
+    "Invertir-ne una part cada mes, de manera automàtica",
     "Deixar-ho al compte corrent i ja decidiràs"
    ],
    "explanation": "El patrimoni creix apartant la diferència i invertint-la. Canviar de cotxe tempta, però converteix l'augment en un deute sobre una cosa que perd valor.",
@@ -313,8 +313,8 @@
   "u1l1-11": {
    "prompt": "Què li contestes a la Lumi?",
    "options": [
-    "El patrimoni és el que cobres cada mes",
-    "Depèn del que encara deus i del que val avui el cotxe",
+    "El patrimoni és el que cobres cada mes, així que no canvia",
+    "Depèn del que encara deus i del que val avui",
     "Sí: el cotxe val 25.000 €"
    ],
    "explanation": "El cotxe suma pel que val avui, no pel que va costar, i el préstec resta. El temptador és comptar el preu de compra, però el deute i el desgast se'l mengen.",
@@ -341,10 +341,10 @@
    "options": [
     "Que el banc central apugi molt els tipus",
     "Que es creïn molts diners molt de pressa",
-    "Que hi hagi molta més demanda que productes",
+    "Que la gent estalviï més i gasti menys",
     "Que l'energia s'encareixi"
    ],
-   "explanation": "Apujar els tipus serveix precisament per frenar la inflació: encareix el crèdit i refreda la demanda."
+   "explanation": "Crear molts diners de pressa o que l'energia s'encareixi empeny els preus, igual que una demanda més gran que l'oferta. Apujar els tipus o gastar menys els frena."
   },
   "u1l2-5": {
    "prompt": "Relaciona cada situació amb el seu efecte en els preus.",
@@ -363,8 +363,8 @@
   "u1l2-6": {
    "prompt": "És el 2022: la inflació a Espanya arriba al 8 % i el teu compte paga un 0 %. Tens 10.000 € que no necessites en 10 anys. Què fas?",
    "options": [
-    "Estudio opcions que almenys intentin superar la inflació a llarg termini",
-    "Res: els diners al banc estan segurs",
+    "Busco opcions que puguin batre la inflació",
+    "Res: al banc estan segurs i no poden perdre valor",
     "M'ho gasto tot abans que valgui menys"
    ],
    "explanation": "Els diners aturats no estan protegits de la inflació. Per al que no necessites en anys, convé que treballin.",
@@ -392,7 +392,7 @@
   "u1l2-9": {
    "prompt": "Surt la notícia: la inflació puja més del previst i es parla que el BCE apujarà els tipus. El teu ETF mundial baixa una mica aquell dia. Inverteixes per d'aquí a 20 anys. Què fas?",
    "options": [
-    "Ho venc tot fins que baixi la inflació",
+    "Ho venc tot i hi torno a entrar quan baixi la inflació",
     "Continuo amb les meves aportacions com sempre",
     "Ho passo tot al compte corrent"
    ],
@@ -406,9 +406,9 @@
   "u1l3-1": {
    "prompt": "Què mesura l'IPC?",
    "options": [
-    "Quant canvien els preus d'un cistell de consum",
+    "Quant canvien els preus de consum",
     "El preu de les accions",
-    "El que guanya de mitjana una llar"
+    "El que guanya de mitjana una llar espanyola l'any"
    ],
    "explanation": "És un índex de preus de consum: compara el mateix cistell en el temps."
   },
@@ -448,17 +448,17 @@
    "prompt": "Què és cert sobre l'IPC? Marca-les totes.",
    "options": [
     "Compara preus amb el mateix mes de l'any anterior",
-    "Mesura la rendibilitat de la borsa",
+    "Mesura quant pugen els sous",
     "Cada producte pesa segons la despesa mitjana de les llars",
-    "El publica l'INE cada mes"
+    "El publica el Banc d'Espanya cada any"
    ],
-   "explanation": "L'IPC és una mitjana ponderada de preus de consum."
+   "explanation": "L'IPC compara preus amb el mateix mes de l'any anterior i pondera cada producte segons la despesa mitjana de les llars. El publica l'INE cada mes, i no mesura sous."
   },
   "u1l3-10": {
    "prompt": "Lloges en una ciutat cara i la teva inflació personal és del 5 %, encara que l'IPC oficial sigui del 3 %. Inverteixes per d'aquí a 20 anys. Què et diu això?",
    "options": [
     "Res: l'únic que compta és l'IPC oficial",
-    "Que els meus diners han de rendir més que la meva pròpia inflació",
+    "Que he de batre la meva pròpia inflació",
     "Que no val la pena invertir si els preus pugen tant"
    ],
    "explanation": "La teva inflació personal és el llistó que han de superar els teus diners. El temptador és mirar només la xifra oficial, però el teu cistell pot pujar més que la mitjana.",
@@ -495,7 +495,7 @@
    "prompt": "Què protegeix el Fons de Garantia de Dipòsits?",
    "options": [
     "Les teves inversions en borsa",
-    "Fins a 100.000 € per persona i entitat si el banc fa fallida",
+    "Fins a 100.000 € per persona i banc",
     "El teu poder de compra davant la inflació"
    ],
    "explanation": "Protegeix els euros dipositats si el banc fa fallida, no davant la inflació ni davant les caigudes de la borsa."
@@ -513,8 +513,8 @@
   "u1l4-10": {
    "prompt": "Tens 6.000 €: 3.000 € són el teu coixí i els altres 3.000 € no els tocaràs en 15 anys. Com ho organitzes?",
    "options": [
-    "Tot al compte al 0 %: així està segur",
-    "El coixí en un compte remunerat i la resta en un ETF indexat mundial",
+    "Tot al compte al 0 %: així està segur i el tinc sempre a mà",
+    "El coixí, a mà; la resta, invertida a llarg termini",
     "Tot a l'ETF, coixí inclòs"
    ],
    "explanation": "Cada euro segons el seu termini: el que pots necessitar demà, disponible i sense risc; el que no tocaràs en anys, invertit. Posar-ho tot a l'ETF tempta, però et deixa sense coixí.",

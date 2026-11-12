@@ -300,7 +300,7 @@
    "prompt": "Te suben el sueldo 200 € al mes. Ya tienes colchón y ninguna deuda cara. ¿Qué hará crecer más tu patrimonio dentro de 10 años?",
    "options": [
     "Cambiar de coche, ahora que puedes pagar una cuota mayor",
-    "Programar cada mes una aportación de una parte a un ETF indexado",
+    "Invertir una parte cada mes, de forma automática",
     "Dejarlo en la cuenta corriente y ya decidirás"
    ],
    "explanation": "El patrimonio crece apartando la diferencia e invirtiéndola. Cambiar de coche tienta, pero convierte el aumento en una deuda sobre algo que pierde valor.",
@@ -313,8 +313,8 @@
   "u1l1-11": {
    "prompt": "¿Qué le contestas a Lucía?",
    "options": [
-    "El patrimonio es lo que cobras cada mes",
-    "Depende de lo que debes aún y de lo que vale hoy el coche",
+    "El patrimonio es lo que cobras cada mes, así que no cambia",
+    "Depende de lo que aún debes y de lo que vale hoy",
     "Sí: el coche vale 25.000 €"
    ],
    "explanation": "El coche suma por lo que vale hoy, no por lo que costó, y el préstamo resta. Lo tentador es contar el precio de compra, pero la deuda y el desgaste se lo comen.",
@@ -341,10 +341,10 @@
    "options": [
     "Que el banco central suba mucho los tipos",
     "Que se cree mucho dinero muy deprisa",
-    "Que haya mucha más demanda que productos",
+    "Que la gente ahorre más y gaste menos",
     "Que se encarezca la energía"
    ],
-   "explanation": "Subir los tipos sirve justo para frenar la inflación: encarece el crédito y enfría la demanda."
+   "explanation": "Crear mucho dinero deprisa o que se encarezca la energía empuja los precios, igual que una demanda mayor que la oferta. Subir los tipos o gastar menos los frena."
   },
   "u1l2-5": {
    "prompt": "Empareja cada situación con su efecto en los precios.",
@@ -363,8 +363,8 @@
   "u1l2-6": {
    "prompt": "Es 2022: la inflación en España llega al 8 % y tu cuenta paga un 0 %. Tienes 10.000 € que no necesitas en 10 años. ¿Qué haces?",
    "options": [
-    "Estudio opciones que al menos busquen superar la inflación a largo plazo",
-    "Nada: el dinero en el banco está seguro",
+    "Busco opciones que puedan batir a la inflación",
+    "Nada: en el banco está seguro y no puede perder valor",
     "Lo gasto todo antes de que valga menos"
    ],
    "explanation": "El dinero parado no está a salvo de la inflación. Para lo que no necesitas en años, conviene que trabaje.",
@@ -392,7 +392,7 @@
   "u1l2-9": {
    "prompt": "Sale la noticia: la inflación sube más de lo esperado y se habla de que el BCE subirá los tipos. Tu ETF mundial baja un poco ese día. Inviertes para dentro de 20 años. ¿Qué haces?",
    "options": [
-    "Vendo todo hasta que baje la inflación",
+    "Vendo todo y vuelvo a entrar cuando baje la inflación",
     "Sigo con mis aportaciones como siempre",
     "Lo paso todo a la cuenta corriente"
    ],
@@ -406,9 +406,9 @@
   "u1l3-1": {
    "prompt": "¿Qué mide el IPC?",
    "options": [
-    "Cuánto cambian los precios de una cesta de consumo",
+    "Cuánto cambian los precios de consumo",
     "El precio de las acciones",
-    "Lo que gana de media un hogar"
+    "Lo que gana de media un hogar español al año"
    ],
    "explanation": "Es un índice de precios de consumo: compara la misma cesta en el tiempo."
   },
@@ -448,17 +448,17 @@
    "prompt": "¿Qué es cierto sobre el IPC? Marca todas.",
    "options": [
     "Compara precios con el mismo mes del año anterior",
-    "Mide la rentabilidad de la bolsa",
+    "Mide cuánto suben los sueldos",
     "Cada producto pesa según el gasto medio de los hogares",
-    "Lo publica el INE cada mes"
+    "Lo publica el Banco de España cada año"
    ],
-   "explanation": "El IPC es una media ponderada de precios de consumo."
+   "explanation": "El IPC compara precios con el mismo mes del año anterior y pondera cada producto según el gasto medio de los hogares. Lo publica el INE cada mes, y no mide sueldos."
   },
   "u1l3-10": {
    "prompt": "Alquilas en una ciudad cara y tu inflación personal es del 5 %, aunque el IPC oficial sea del 3 %. Inviertes para dentro de 20 años. ¿Qué te dice esto?",
    "options": [
     "Nada: lo único que cuenta es el IPC oficial",
-    "Que mi dinero tiene que rendir más que mi propia inflación",
+    "Que tengo que batir mi propia inflación",
     "Que no merece la pena invertir si los precios suben tanto"
    ],
    "explanation": "Tu inflación personal es el listón que tiene que superar tu dinero. Lo tentador es mirar solo la cifra oficial, pero tu cesta puede subir más que la media.",
@@ -495,7 +495,7 @@
    "prompt": "¿Qué protege el Fondo de Garantía de Depósitos?",
    "options": [
     "Tus inversiones en bolsa",
-    "Hasta 100.000 € por persona y entidad si el banco quiebra",
+    "Hasta 100.000 € por persona y banco",
     "Tu poder de compra frente a la inflación"
    ],
    "explanation": "Protege los euros depositados si quiebra el banco, no frente a la inflación ni frente a caídas de la bolsa."
@@ -513,8 +513,8 @@
   "u1l4-10": {
    "prompt": "Tienes 6.000 €: 3.000 € son tu colchón y los otros 3.000 € no los tocarás en 15 años. ¿Cómo lo organizas?",
    "options": [
-    "Todo en la cuenta al 0 %: así está seguro",
-    "El colchón en una cuenta remunerada y el resto en un ETF indexado mundial",
+    "Todo en la cuenta al 0 %: así está seguro y lo tengo siempre a mano",
+    "El colchón, a mano; el resto, invertido a largo plazo",
     "Todo en el ETF, colchón incluido"
    ],
    "explanation": "Cada euro según su plazo: lo que puedes necesitar mañana, disponible y sin riesgo; lo que no tocarás en años, invertido. Meterlo todo en el ETF tienta, pero te deja sin colchón.",

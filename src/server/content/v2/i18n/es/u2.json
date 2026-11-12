@@ -245,7 +245,7 @@
    "prompt": "¿Cuál es la mejor forma de empezar un presupuesto?",
    "options": [
     "Calcular de memoria lo que crees que gastas",
-    "Revisar los movimientos del banco de los últimos meses",
+    "Revisar los movimientos del banco",
     "Esperar a cobrar más para empezar"
    ],
    "explanation": "La memoria engaña: casi todos creemos gastar menos de lo que gastamos. El extracto del banco es la foto real."
@@ -273,17 +273,17 @@
    "options": [
     "Lo que cobras por dar clases particulares",
     "Lo que pagas de alquiler",
-    "La devolución de Hacienda",
+    "Lo que te presta el banco",
     "La nómina"
    ],
-   "explanation": "Ingreso es todo lo que entra; el alquiler que pagas es un gasto fijo."
+   "explanation": "Ingreso es lo que entra y es tuyo: la nómina, lo que cobras por unas clases. El alquiler es un gasto, y un préstamo hay que devolverlo: no es un ingreso."
   },
   "u2l1-11": {
    "prompt": "Laura descubre que se le van 160 € al mes en comida a domicilio y lo deja en la mitad. Aún no tiene colchón. ¿Qué hace con los 80 € que libera?",
    "options": [
     "Los deja en la cuenta corriente, sin plan",
-    "Los aparta cada mes: primero para el colchón y luego para invertir",
-    "Los gasta en ropa: total, ya ha recortado"
+    "Los aparta: primero el colchón, luego invertir",
+    "Los gasta en ropa: total, ya ha recortado bastante este mes"
    ],
    "explanation": "Un recorte solo sirve si ese dinero tiene destino: primero el colchón, después invertir. Dejarlo en la cuenta parece igual de bueno, pero sin plan se acaba gastando.",
    "feedback": [
@@ -295,9 +295,9 @@
   "u2l1-12": {
    "prompt": "¿Qué le contestas a Lucía?",
    "options": [
-    "Invierte todo lo que tengas en la cuenta",
+    "Invierte todo lo que tengas en la cuenta: cuanto antes, mejor",
     "Espera a ganar más para empezar",
-    "Mira tus movimientos del último mes y calcula lo que te sobra"
+    "Mira tus movimientos y calcula lo que te sobra"
    ],
    "explanation": "Lo que puedes invertir sale de tu presupuesto real, no de una cifra a ojo. Invertirlo todo tienta, pero sin colchón cualquier susto te obliga a vender.",
    "feedback": [
@@ -351,9 +351,9 @@
   "u2l2-9": {
    "prompt": "Laura cobra 1.800 € netos y sus necesidades ya suman 1.000 € (un 56 %). ¿Qué hace?",
    "options": [
-    "Recorta un poco los deseos y mantiene el ahorro en 360 €",
+    "Recorta un poco los deseos y sigue ahorrando",
     "Deja de ahorrar hasta que le suban el sueldo",
-    "Paga los deseos con la tarjeta a plazos"
+    "Paga los deseos con la tarjeta a plazos y los va devolviendo"
    ],
    "explanation": "La regla se adapta: si las necesidades pesan más, se recortan los deseos, no el ahorro.",
    "feedback": [
@@ -380,26 +380,26 @@
    "prompt": "¿Qué va en el 20 % de ahorro de la regla? Marca todas.",
    "options": [
     "Pagar antes una deuda cara",
-    "La cena de los viernes",
-    "Tu aportación mensual a un ETF",
+    "La cuota del gimnasio",
+    "El alquiler y los suministros",
     "Llenar tu fondo de emergencia"
    ],
-   "explanation": "El 20 % es para tu yo del futuro: colchón, quitarte deudas caras e invertir. La cena es un deseo y va en el 30 %, por mucho que parezca imprescindible."
+   "explanation": "El 20 % es para tu yo del futuro: colchón, quitarte deudas caras e invertir. El alquiler va en el 50 % de necesidades y el gimnasio, en el 30 % de deseos."
   },
   "u2l3-4": {
    "prompt": "¿Cuáles son gastos hormiga típicos? Marca todos.",
    "options": [
     "El alquiler",
     "Las microcompras dentro de un juego",
-    "Los gastos de envío de pedidos pequeños",
+    "La cuota mensual de la hipoteca",
     "El café para llevar de cada mañana"
    ],
-   "explanation": "El alquiler es un gasto fijo grande; los hormiga son pequeños, frecuentes y casi invisibles."
+   "explanation": "Los hormiga son pequeños, frecuentes y casi invisibles: el café, las microcompras, los gastos de envío. El alquiler o la hipoteca son gastos fijos grandes."
   },
   "u2l3-6": {
    "prompt": "Marta revisa su extracto y encuentra cinco suscripciones: dos las usa cada semana y tres no las abre desde hace meses. ¿Qué hace?",
    "options": [
-    "Cancela todas, también las que usa a diario",
+    "Cancela todas, incluidas las que usa cada semana",
     "Cancela las que no usa y se queda las otras",
     "No toca nada: son poco dinero"
    ],
@@ -432,7 +432,7 @@
   "u2l3-11": {
    "prompt": "Recortas 60 € al mes en suscripciones que no usabas. Ya tienes colchón. ¿Qué haces para que ese dinero no se esfume?",
    "options": [
-    "Programo ese mismo día una aportación de 60 € a un ETF",
+    "Le pongo destino ese mismo día",
     "Me doy un capricho de 60 € para celebrarlo",
     "Lo dejo en la cuenta corriente, ya veré"
    ],
@@ -446,9 +446,9 @@
   "u2l3-12": {
    "prompt": "¿Qué le contestas a Paula?",
    "options": [
-    "Solo si lo inviertes en cripto, que sube más",
+    "Solo si lo inviertes en cripto, que es lo que más sube",
     "Nada: 3 € no son dinero",
-    "Sí: lo pequeño y repetido, invertido años, se nota mucho"
+    "Sí: lo pequeño y repetido acaba sumando mucho"
    ],
    "explanation": "Un gasto pequeño repetido cada día suma mucho al año, y si se invierte, el interés compuesto lo agranda. Pensar «son solo 3 €» tienta, pero lo que pesa es la frecuencia.",
    "feedback": [
@@ -504,17 +504,17 @@
    "prompt": "¿Cuáles son emergencias de verdad? Marca todas.",
    "options": [
     "Las rebajas de enero",
-    "Una factura inesperada del dentista",
+    "Las vacaciones de verano",
     "Una avería del coche que usas para trabajar",
     "Quedarte sin trabajo"
    ],
-   "explanation": "Las rebajas se pueden planificar: no son una emergencia."
+   "explanation": "Una emergencia es imprevista y necesaria: la avería del coche con el que trabajas, quedarte sin empleo, una factura médica inesperada. Las rebajas y las vacaciones se pueden planificar."
   },
   "u2l4-9": {
    "prompt": "Bruno tiene 10.000 €, ninguna deuda y gasta 1.000 € al mes. ¿Cómo lo organiza?",
    "options": [
-    "Todo en bolsa, que rinde más",
-    "6.000 € de colchón en una cuenta remunerada y 4.000 € para invertir a largo plazo",
+    "Todo en bolsa, que rinde más que tenerlo parado",
+    "6.000 € de colchón y 4.000 € a largo plazo",
     "Todo en la cuenta corriente al 0 %"
    ],
    "explanation": "Primero el colchón, luego invertir lo que no necesitarás en años.",
@@ -538,7 +538,7 @@
    "prompt": "Tu cartera de ETF cae un 25 % y, la misma semana, te llega una avería de 900 €. Tienes un colchón de 3 meses. ¿Qué haces?",
    "options": [
     "Vendo parte del ETF para pagarla",
-    "Pago la avería con el colchón y no toco la cartera",
+    "La pago con el colchón",
     "La pago con la tarjeta a plazos"
    ],
    "explanation": "El colchón existe para que nunca tengas que vender tus inversiones en plena caída. Vender un poco parece prudente, pero fija la pérdida justo en el peor momento.",
@@ -578,8 +578,8 @@
    "prompt": "A Pablo le suben el sueldo 200 € al mes. ¿Qué hace?",
    "options": [
     "Lo gasta todo: ya ahorrará cuando gane más",
-    "Sube su transferencia automática 100 € y disfruta del resto",
-    "Se compra un coche con una cuota de 200 € al mes"
+    "Sube 100 € su ahorro automático y disfruta el resto",
+    "Se compra un coche mejor con una cuota de 200 € al mes"
    ],
    "explanation": "Destinar parte de cada subida al ahorro es la forma más indolora de ahorrar más.",
    "feedback": [
@@ -601,7 +601,7 @@
   "u2l5-9": {
    "prompt": "Marta cobra 2.000 € y quiere ahorrar 300 € al mes. ¿Cuándo programa la transferencia?",
    "options": [
-    "El día 30, si sobra algo",
+    "El día 30, si le ha sobrado algo",
     "El día después de cobrar",
     "Cuando se acuerde"
    ],
@@ -610,7 +610,7 @@
   "u2l5-11": {
    "prompt": "Pablo ya tiene su colchón completo, y su transferencia de 150 € sigue saliendo cada mes. ¿Qué hace con ella ahora?",
    "options": [
-    "La dirige a una aportación periódica a un ETF indexado",
+    "La pasa a invertir a largo plazo",
     "La para y se gasta esos 150 €",
     "Sigue engordando el colchón para siempre"
    ],

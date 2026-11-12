@@ -245,7 +245,7 @@
    "prompt": "Quina és la millor manera de començar un pressupost?",
    "options": [
     "Calcular de memòria el que et sembla que gastes",
-    "Revisar els moviments del banc dels últims mesos",
+    "Revisar els moviments del banc",
     "Esperar a cobrar més per començar"
    ],
    "explanation": "La memòria enganya: gairebé tots ens pensem que gastem menys del que gastem. L'extracte del banc és la foto real."
@@ -273,17 +273,17 @@
    "options": [
     "El que cobres per fer classes particulars",
     "El que pagues de lloguer",
-    "La devolució d'Hisenda",
+    "El que et deixa el banc",
     "La nòmina"
    ],
-   "explanation": "Ingrés és tot el que entra; el lloguer que pagues és una despesa fixa."
+   "explanation": "Ingrés és el que entra i és teu: la nòmina, el que cobres per unes classes. El lloguer és una despesa, i un préstec s'ha de tornar: no és un ingrés."
   },
   "u2l1-11": {
    "prompt": "La Laura descobreix que se li'n van 160 € al mes en menjar a domicili i ho deixa a la meitat. Encara no té coixí. Què fa amb els 80 € que allibera?",
    "options": [
     "Els deixa al compte corrent, sense pla",
-    "Els aparta cada mes: primer per al coixí i després per invertir",
-    "Se'ls gasta en roba: total, ja ha retallat"
+    "Els aparta: primer el coixí, després invertir",
+    "Se'ls gasta en roba: total, ja ha retallat prou aquest mes"
    ],
    "explanation": "Una retallada només serveix si aquests diners tenen destinació: primer el coixí, després invertir. Deixar-los al compte sembla igual de bo, però sense pla s'acaben gastant.",
    "feedback": [
@@ -295,9 +295,9 @@
   "u2l1-12": {
    "prompt": "Què li contestes a la Lumi?",
    "options": [
-    "Inverteix tot el que tinguis al compte",
+    "Inverteix tot el que tinguis al compte: com més aviat, millor",
     "Espera a guanyar més per començar",
-    "Mira els teus moviments de l'últim mes i calcula el que et sobra"
+    "Mira els teus moviments i calcula el que et sobra"
    ],
    "explanation": "El que pots invertir surt del teu pressupost real, no d'una xifra a ull. Invertir-ho tot tempta, però sense coixí qualsevol ensurt t'obliga a vendre.",
    "feedback": [
@@ -351,9 +351,9 @@
   "u2l2-9": {
    "prompt": "La Laura cobra 1.800 € nets i les seves necessitats ja sumen 1.000 € (un 56 %). Què fa?",
    "options": [
-    "Retalla una mica els desitjos i manté l'estalvi en 360 €",
+    "Retalla una mica els desitjos i continua estalviant",
     "Deixa d'estalviar fins que li apugin el sou",
-    "Paga els desitjos amb la targeta a terminis"
+    "Paga els desitjos amb la targeta a terminis i els va tornant"
    ],
    "explanation": "La regla s'adapta: si les necessitats pesen més, es retallen els desitjos, no l'estalvi.",
    "feedback": [
@@ -380,21 +380,21 @@
    "prompt": "Què va al 20 % d'estalvi de la regla? Marca-les totes.",
    "options": [
     "Pagar abans un deute car",
-    "El sopar dels divendres",
-    "La teva aportació mensual a un ETF",
+    "La quota del gimnàs",
+    "El lloguer i els subministraments",
     "Omplir el teu fons d'emergència"
    ],
-   "explanation": "El 20 % és per al teu jo del futur: coixí, treure't deutes cars i invertir. El sopar és un desig i va al 30 %, per molt que sembli imprescindible."
+   "explanation": "El 20 % és per al teu jo del futur: coixí, treure't deutes cars i invertir. El lloguer va al 50 % de necessitats i el gimnàs, al 30 % de desitjos."
   },
   "u2l3-4": {
    "prompt": "Quines són despeses formiga típiques? Marca-les totes.",
    "options": [
     "El lloguer",
     "Les microcompres dins d'un joc",
-    "Les despeses d'enviament de comandes petites",
+    "La quota mensual de la hipoteca",
     "El cafè per emportar de cada matí"
    ],
-   "explanation": "El lloguer és una despesa fixa gran; les formiga són petites, freqüents i gairebé invisibles."
+   "explanation": "Les formiga són petites, freqüents i gairebé invisibles: el cafè, les microcompres, les despeses d'enviament. El lloguer o la hipoteca són despeses fixes grans."
   },
   "u2l3-6": {
    "prompt": "La Marta revisa el seu extracte i troba cinc subscripcions: dues les fa servir cada setmana i tres no les obre des de fa mesos. Què fa?",
@@ -432,7 +432,7 @@
   "u2l3-11": {
    "prompt": "Retalles 60 € al mes en subscripcions que no feies servir. Ja tens coixí. Què fas perquè aquests diners no s'esfumin?",
    "options": [
-    "Programo aquell mateix dia una aportació de 60 € a un ETF",
+    "Li poso destí aquell mateix dia",
     "Em dono un caprici de 60 € per celebrar-ho",
     "Els deixo al compte corrent, ja veuré"
    ],
@@ -446,9 +446,9 @@
   "u2l3-12": {
    "prompt": "Què li contestes a la Lumi?",
    "options": [
-    "Només si ho inverteixes en cripto, que puja més",
+    "Només si ho inverteixes en cripto, que és el que més puja",
     "Res: 3 € no són diners",
-    "Sí: el que és petit i repetit, invertit anys, es nota molt"
+    "Sí: el que és petit i repetit acaba sumant molt"
    ],
    "explanation": "Una despesa petita repetida cada dia suma molt a l'any, i si s'inverteix, l'interès compost la fa més gran. Pensar «només són 3 €» tempta, però el que pesa és la freqüència.",
    "feedback": [
@@ -504,17 +504,17 @@
    "prompt": "Quines són emergències de debò? Marca-les totes.",
    "options": [
     "Les rebaixes de gener",
-    "Una factura inesperada del dentista",
+    "Les vacances d'estiu",
     "Una avaria del cotxe que fas servir per treballar",
     "Quedar-te sense feina"
    ],
-   "explanation": "Les rebaixes es poden planificar: no són una emergència."
+   "explanation": "Una emergència és imprevista i necessària: l'avaria del cotxe amb què treballes, quedar-te sense feina, una factura mèdica inesperada. Les rebaixes i les vacances es poden planificar."
   },
   "u2l4-9": {
    "prompt": "En Bruno té 10.000 €, cap deute i gasta 1.000 € al mes. Com ho organitza?",
    "options": [
-    "Tot a borsa, que rendeix més",
-    "6.000 € de coixí en un compte remunerat i 4.000 € per invertir a llarg termini",
+    "Tot a borsa, que rendeix més que tenir-los aturats",
+    "6.000 € de coixí i 4.000 € a llarg termini",
     "Tot al compte corrent al 0 %"
    ],
    "explanation": "Primer el coixí, després invertir el que no necessitaràs en anys.",
@@ -538,7 +538,7 @@
    "prompt": "La teva cartera d'ETF cau un 25 % i, la mateixa setmana, et ve una avaria de 900 €. Tens un coixí de 3 mesos. Què fas?",
    "options": [
     "Venc part de l'ETF per pagar-la",
-    "Pago l'avaria amb el coixí i no toco la cartera",
+    "La pago amb el coixí",
     "La pago amb la targeta a terminis"
    ],
    "explanation": "El coixí existeix perquè mai no hagis de vendre les teves inversions en plena caiguda. Vendre una mica sembla prudent, però fixa la pèrdua just en el pitjor moment.",
@@ -578,8 +578,8 @@
    "prompt": "Al Pablo li apugen el sou 200 € al mes. Què fa?",
    "options": [
     "Ho gasta tot: ja estalviarà quan guanyi més",
-    "Apuja la seva transferència automàtica 100 € i gaudeix de la resta",
-    "Es compra un cotxe amb una quota de 200 € al mes"
+    "Apuja 100 € l'estalvi automàtic i gaudeix de la resta",
+    "Es compra un cotxe millor amb una quota de 200 € al mes"
    ],
    "explanation": "Destinar part de cada pujada a l'estalvi és la manera menys dolorosa d'estalviar més.",
    "feedback": [
@@ -601,7 +601,7 @@
   "u2l5-9": {
    "prompt": "La Marta cobra 2.000 € i vol estalviar 300 € al mes. Quan programa la transferència?",
    "options": [
-    "El dia 30, si sobra res",
+    "El dia 30, si li ha sobrat res",
     "El dia després de cobrar",
     "Quan se'n recordi"
    ],
@@ -610,7 +610,7 @@
   "u2l5-11": {
    "prompt": "En Pablo ja té el coixí complet, i la seva transferència de 150 € continua sortint cada mes. Què en fa ara?",
    "options": [
-    "La dirigeix a una aportació periòdica a un ETF indexat",
+    "La passa a invertir a llarg termini",
     "L'atura i es gasta aquests 150 €",
     "Continua engreixant el coixí per sempre"
    ],

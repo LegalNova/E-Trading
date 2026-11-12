@@ -300,7 +300,7 @@
    "prompt": "You get a €200 a month pay rise. You already have an emergency fund and no expensive debt. What will grow your net worth most over the next 10 years?",
    "options": [
     "Changing your car, now that you can afford a bigger instalment",
-    "Setting up a monthly contribution of part of it to an index ETF",
+    "Investing part of it every month, automatically",
     "Leaving it in your current account and deciding later"
    ],
    "explanation": "Net worth grows by putting the difference aside and investing it. A new car is tempting, but it turns the rise into debt on something that loses value.",
@@ -313,8 +313,8 @@
   "u1l1-11": {
    "prompt": "What do you reply to Lumi?",
    "options": [
-    "Net worth is what you earn each month",
-    "It depends on what you still owe and what the car is worth today",
+    "Net worth is what you earn each month, so it doesn't change",
+    "It depends on what you still owe and what it's worth now",
     "Yes: the car is worth €25,000"
    ],
    "explanation": "The car adds at what it's worth today, not what it cost, and the loan subtracts. It's tempting to count the purchase price, but the debt and the wear eat into it.",
@@ -341,10 +341,10 @@
    "options": [
     "The central bank raising rates sharply",
     "A lot of money being created very quickly",
-    "Far more demand than there are products",
+    "People saving more and spending less",
     "Energy getting more expensive"
    ],
-   "explanation": "Raising rates is precisely how inflation is curbed: it makes credit dearer and cools demand."
+   "explanation": "Creating a lot of money quickly or dearer energy pushes prices up, just as demand outstripping supply does. Raising rates or spending less holds them back."
   },
   "u1l2-5": {
    "prompt": "Match each situation with its effect on prices.",
@@ -363,8 +363,8 @@
   "u1l2-6": {
    "prompt": "It's 2022: inflation in Spain hits 8 % and your account pays 0 %. You have €10,000 you won't need for 10 years. What do you do?",
    "options": [
-    "Look into options that at least aim to beat inflation in the long run",
-    "Nothing: money in the bank is safe",
+    "Look for options that can beat inflation",
+    "Nothing: in the bank it's safe and can't lose value",
     "Spend it all before it's worth less"
    ],
    "explanation": "Idle money isn't safe from inflation. Money you won't need for years should be put to work.",
@@ -392,7 +392,7 @@
   "u1l2-9": {
    "prompt": "The news breaks: inflation is rising more than expected and there's talk of the ECB raising rates. Your global ETF dips a little that day. You're investing for 20 years from now. What do you do?",
    "options": [
-    "Sell everything until inflation comes down",
+    "Sell everything and get back in when inflation comes down",
     "Carry on with my contributions as usual",
     "Move it all to my current account"
    ],
@@ -406,9 +406,9 @@
   "u1l3-1": {
    "prompt": "What does the CPI measure?",
    "options": [
-    "How much the prices of a consumer basket change",
+    "How much consumer prices change",
     "The price of shares",
-    "What a household earns on average"
+    "What an average Spanish household earns a year"
    ],
    "explanation": "It's a consumer price index: it compares the same basket over time."
   },
@@ -448,17 +448,17 @@
    "prompt": "What's true about the CPI? Tick all.",
    "options": [
     "It compares prices with the same month the year before",
-    "It measures stock market returns",
+    "It measures how much wages rise",
     "Each product is weighted by average household spending",
-    "The INE publishes it every month"
+    "The Banco de España publishes it once a year"
    ],
-   "explanation": "The CPI is a weighted average of consumer prices."
+   "explanation": "The CPI compares prices with the same month the year before and weights each product by average household spending. The INE publishes it every month, and it doesn't measure wages."
   },
   "u1l3-10": {
    "prompt": "You rent in an expensive city and your personal inflation is 5 %, even though official CPI is 3 %. You're investing for 20 years from now. What does this tell you?",
    "options": [
     "Nothing: only the official CPI counts",
-    "That my money has to earn more than my own inflation",
+    "That I have to beat my own inflation",
     "That investing isn't worth it if prices rise that much"
    ],
    "explanation": "Your personal inflation is the bar your money has to clear. It's tempting to look only at the official figure, but your basket can rise more than the average.",
@@ -495,7 +495,7 @@
    "prompt": "What does the Fondo de Garantía de Depósitos (Spain's deposit guarantee scheme) protect?",
    "options": [
     "Your stock market investments",
-    "Up to €100,000 per person per bank if the bank goes bust",
+    "Up to €100,000 per person per bank",
     "Your purchasing power against inflation"
    ],
    "explanation": "It protects the euros you've deposited if the bank goes bust, not against inflation or stock market falls."
@@ -513,8 +513,8 @@
   "u1l4-10": {
    "prompt": "You have €6,000: €3,000 is your emergency fund and you won't touch the other €3,000 for 15 years. How do you organise it?",
    "options": [
-    "All in the 0 % account: that way it's safe",
-    "The emergency fund in an interest-bearing account and the rest in a global index ETF",
+    "All in the 0 % account: that way it's safe and always within reach",
+    "The cushion within reach; the rest invested long term",
     "All in the ETF, emergency fund included"
    ],
    "explanation": "Each euro according to its time frame: what you might need tomorrow, available and risk-free; what you won't touch for years, invested. Putting it all in the ETF is tempting, but it leaves you with no emergency fund.",

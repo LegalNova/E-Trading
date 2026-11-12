@@ -245,7 +245,7 @@
    "prompt": "What's the best way to start a budget?",
    "options": [
     "Work out from memory what you think you spend",
-    "Go through your bank transactions for the last few months",
+    "Go through your bank transactions",
     "Wait until you earn more to start"
    ],
    "explanation": "Memory plays tricks: nearly all of us think we spend less than we do. Your bank statement is the real picture."
@@ -273,16 +273,16 @@
    "options": [
     "What you're paid for private tutoring",
     "What you pay in rent",
-    "A tax refund from Hacienda (the Spanish tax agency)",
+    "What the bank lends you",
     "Your salary"
    ],
-   "explanation": "Income is everything that comes in; the rent you pay is a fixed cost."
+   "explanation": "Income is what comes in and is yours: your salary, what you're paid for tutoring. Rent is an expense, and a loan has to be paid back: it isn't income."
   },
   "u2l1-11": {
    "prompt": "Laura finds she spends €160 a month on takeaway food and cuts it in half. She doesn't have an emergency fund yet. What does she do with the €80 she frees up?",
    "options": [
     "She leaves it in her current account, with no plan",
-    "She puts it aside every month: first for the emergency fund and then to invest",
+    "She sets it aside: first the cushion, then investing",
     "She spends it on clothes: she's already cut back, after all"
    ],
    "explanation": "A cut only works if that money has somewhere to go: first the emergency fund, then investing. Leaving it in the account seems just as good, but without a plan it ends up spent.",
@@ -295,9 +295,9 @@
   "u2l1-12": {
    "prompt": "What do you reply to Lumi?",
    "options": [
-    "Invest everything you have in your account",
+    "Invest everything you have in your account: the sooner the better",
     "Wait until you earn more to start",
-    "Look at last month's transactions and work out what you have left"
+    "Look at your transactions and work out what's left"
    ],
    "explanation": "What you can invest comes from your real budget, not a guess. Investing everything is tempting, but without an emergency fund any scare forces you to sell.",
    "feedback": [
@@ -351,7 +351,7 @@
   "u2l2-9": {
    "prompt": "Laura takes home €1,800 and her needs already add up to €1,000 (56 %). What does she do?",
    "options": [
-    "Trims her wants a little and keeps saving €360",
+    "Trims her wants a little and keeps saving",
     "Stops saving until she gets a pay rise",
     "Pays for her wants on her credit card in instalments"
    ],
@@ -380,21 +380,21 @@
    "prompt": "What goes in the rule's 20 % for saving? Mark all that apply.",
    "options": [
     "Paying off an expensive debt early",
-    "Friday night dinner out",
-    "Your monthly contribution to an ETF",
+    "Your gym membership",
+    "Rent and utilities",
     "Filling your emergency fund"
    ],
-   "explanation": "The 20 % is for your future self: emergency fund, getting rid of expensive debt and investing. The dinner is a want and goes in the 30 %, however essential it feels."
+   "explanation": "The 20 % is for your future self: emergency fund, getting rid of expensive debt and investing. Rent goes in the 50 % for needs and the gym in the 30 % for wants."
   },
   "u2l3-4": {
    "prompt": "Which are typical small leaks? Tick all.",
    "options": [
     "Rent",
     "In-game micro-purchases",
-    "Delivery fees on small orders",
+    "The monthly mortgage payment",
     "The takeaway coffee every morning"
    ],
-   "explanation": "Rent is a big fixed cost; small leaks are small, frequent and almost invisible."
+   "explanation": "Small leaks are small, frequent and almost invisible: coffee, micro-purchases, delivery fees. Rent or a mortgage are big fixed costs."
   },
   "u2l3-6": {
    "prompt": "Marta checks her statement and finds five subscriptions: she uses two every week and hasn't opened three in months. What does she do?",
@@ -432,7 +432,7 @@
   "u2l3-11": {
    "prompt": "You cut €60 a month on subscriptions you weren't using. You already have an emergency fund. What do you do so the money doesn't just vanish?",
    "options": [
-    "That same day I set up a €60 contribution to an ETF",
+    "I give it a purpose that same day",
     "I treat myself to something for €60 to celebrate",
     "I leave it in my current account, I'll see"
    ],
@@ -446,9 +446,9 @@
   "u2l3-12": {
    "prompt": "What do you reply to Lumi?",
    "options": [
-    "Only if you invest it in crypto, which goes up more",
+    "Only if you invest it in crypto, which is what rises most",
     "Nothing: €3 isn't real money",
-    "Yes: small and repeated, invested for years, really shows"
+    "Yes: small and repeated ends up adding up to a lot"
    ],
    "explanation": "A small expense repeated every day adds up to a lot over a year, and if it's invested, compound interest makes it bigger. Thinking «it's only €3» is tempting, but what weighs is how often.",
    "feedback": [
@@ -504,17 +504,17 @@
    "prompt": "Which are real emergencies? Tick all.",
    "options": [
     "The January sales",
-    "An unexpected dentist's bill",
+    "Your summer holiday",
     "A breakdown of the car you use for work",
     "Losing your job"
    ],
-   "explanation": "The sales can be planned for: they're not an emergency."
+   "explanation": "An emergency is unexpected and necessary: a breakdown of the car you work with, losing your job, an unexpected medical bill. The sales and holidays can be planned for."
   },
   "u2l4-9": {
    "prompt": "Bruno has €10,000, no debt and spends €1,000 a month. How does he organise it?",
    "options": [
-    "All in the stock market, it earns more",
-    "€6,000 as a cushion in an interest-paying account and €4,000 to invest for the long term",
+    "All in the stock market, it earns more than sitting idle",
+    "€6,000 as a cushion and €4,000 for the long term",
     "All in his current account at 0 %"
    ],
    "explanation": "First the cushion, then invest what you won't need for years.",
@@ -538,7 +538,7 @@
    "prompt": "Your ETF portfolio falls 25 % and, the same week, you get a €900 repair bill. You have a 3-month emergency fund. What do you do?",
    "options": [
     "Sell part of the ETF to pay for it",
-    "Pay the repair from the emergency fund and leave the portfolio alone",
+    "Pay it from the emergency fund",
     "Pay it on the card in instalments"
    ],
    "explanation": "The emergency fund exists so you never have to sell your investments in the middle of a fall. Selling a little seems prudent, but it locks in the loss at exactly the worst moment.",
@@ -578,8 +578,8 @@
    "prompt": "Pablo gets a €200 a month pay rise. What does he do?",
    "options": [
     "Spends it all: he'll save when he earns more",
-    "Raises his automatic transfer by €100 and enjoys the rest",
-    "Buys a car with a €200 monthly payment"
+    "Raises his automatic saving by €100 and enjoys the rest",
+    "Buys a better car with a payment of €200 a month, every month"
    ],
    "explanation": "Putting part of every pay rise into savings is the most painless way to save more.",
    "feedback": [
@@ -610,7 +610,7 @@
   "u2l5-11": {
    "prompt": "Pablo's emergency fund is now full, and his €150 transfer still goes out every month. What does he do with it now?",
    "options": [
-    "He points it at a regular contribution to an index ETF",
+    "He switches it to long-term investing",
     "He stops it and spends the €150",
     "He keeps growing the emergency fund forever"
    ],
