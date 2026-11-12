@@ -99,8 +99,8 @@ export default unit({
           opt('Quedarse solo con las pocas que cumplen su plan', 'good', say('lumi', '¡Eso! Menos operaciones, mejor elegidas, y los costes dejan de comérselo todo.')),
           opt('Pasarse a algo más volátil', 'ok', say('lumi', 'Más volatilidad no da ventaja: solo agranda las pérdidas.')),
         ]),
-        say('lumi', 'Barber y Odean: el 20 % de hogares que más operaba ganó un **11,4 %**.'),
-        say('lumi', 'El mercado, un **17,9 %** al año. Cada operación paga comisión y *spread*.'),
+        say('lumi', 'Haz su cuenta: 20 operaciones a la semana son más de **1.000 al año**, y cada una paga comisión y *spread*.'),
+        say('lumi', 'Para ganar, primero tiene que recuperar todos esos peajes. Ya viste en «Exceso de confianza» lo que les pasa a quienes más operan.'),
       ]),
       // Antes: la pieza de comisiones de fondos (0,2 % frente a 1,5 %), que no es el coste por operación y ya
       // sale en u10l3 y u30l2 (auditoría CON-18). Ahora: operar sin ventaja pagando 6 € cada vez.
