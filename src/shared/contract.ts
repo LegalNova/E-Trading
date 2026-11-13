@@ -93,6 +93,14 @@ export const Home = z.object({
     .nullable(),
   dailyGoals: z.array(DailyGoal),
   portfolio: z.object({ totalValue: money, dayChange: money, dayChangePct: z.number(), sparkline: z.array(z.number()) }),
+  /** (+) «Hoy toca» (auditoría PRO-28 y PRO-29): por qué esa clase, fallos por repasar y una idea sobre la cartera */
+  today: z
+    .object({
+      why: z.object({ kind: z.enum(['ROUTE', 'UNIT']), preset: z.enum(['LONG', 'TRADING']).nullable(), done: z.number(), total: z.number(), left: z.number(), unit: z.string() }).nullable(),
+      review: z.number(),
+      coach: z.object({ code: z.enum(['EMPTY', 'CONCENTRATED', 'CRYPTO', 'BUSY', 'NO_STOP', 'FEW', 'CASH', 'OK']), params: z.record(z.string(), z.union([z.string(), z.number()])) }),
+    })
+    .optional(),
 })
 
 // ── Clases ───────────────────────────────────────────────
@@ -170,6 +178,8 @@ export const Lesson = z.object({
   minutes: z.number(),
   xp: z.number(),
   steps: z.array(LessonStep),
+  /** (+) Palabras del glosario que salen en la clase: se pueden tocar para ver qué significan (auditoría PRO-17) */
+  glossary: z.array(z.object({ term: z.string(), def: z.string() })).optional(),
 })
 export const StepCheck = z.object({ correct: z.boolean(), explanation: z.string() })
 

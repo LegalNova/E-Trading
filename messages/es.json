@@ -293,7 +293,26 @@
     "infoLivesPremiumBody": "Con tu plan, fallar en un quiz no te quita vidas.",
     "infoXp": "XP: {xp}",
     "infoXpBody": "Tus puntos de experiencia. Los ganas con clases, quizzes y operaciones: suben tu nivel y cuentan en la liga.",
-    "infoOk": "Entendido"
+    "infoOk": "Entendido",
+    "todayPlan": {
+      "title": "Tu plan de hoy",
+      "lesson": "Clase: {title}",
+      "whyRoute": "Es la siguiente de tu ruta «{route}». Llevas {done} de {total} clases.",
+      "whyUnit": "{n, plural, one {Te queda 1 clase para acabar «{unit}».} other {Te quedan # clases para acabar «{unit}».}}",
+      "review": "{n, plural, one {Repasar 1 fallo} other {Repasar # fallos}}",
+      "reviewWhy": "Repasar lo que fallaste es lo que más ayuda a recordarlo.",
+      "coachTitle": "Tu cartera, en una idea",
+      "coach": {
+        "EMPTY": "Aún no tienes nada en tu cartera virtual. ¿Hay alguna empresa que conozcas bien? Mirar su ficha es un buen primer paso.",
+        "CONCENTRATED": "{name} es el {pct} % de tu cartera. Si bajara un 20 %, tu cartera perdería un {loss} %. ¿Te parece mucho?",
+        "CRYPTO": "Las criptomonedas son el {pct} % de tu cartera. Suben y bajan mucho más que las acciones: ¿es el riesgo que quieres?",
+        "BUSY": "Hoy llevas {n} operaciones. Cada una paga comisión: ¿sabes cuánto te han costado en total?",
+        "NO_STOP": "{name} va un {pct} % abajo y no tiene stop. ¿Hasta dónde estarías dispuesto a aguantar?",
+        "FEW": "{n, plural, one {Tienes 1 solo valor. Si le va mal, le va mal a toda tu cartera.} other {Tienes # valores. Con tan pocos, si a uno le va mal se nota mucho.}}",
+        "CASH": "El {pct} % de tu cartera está en efectivo. Así no pierdes, pero tampoco aprendes cómo se mueve el mercado.",
+        "OK": "Tienes {n} valores y ninguno pasa del 20 %. Buen reparto: así un mal día de uno se nota poco."
+      }
+    }
   },
   "path": {
     "title": "Clases",
@@ -392,7 +411,8 @@
     "quizHow1": "Lee la pregunta, elige tu respuesta y pulsa «Comprobar».",
     "quizHow2": "Al momento ves si has acertado y por qué. Apruebas con el {pct} % de aciertos.",
     "quizHow3": "Tienes {n, plural, one {# vida} other {# vidas}}: cada fallo gasta una.",
-    "quizHow3Premium": "Con tu plan, fallar no te quita vidas."
+    "quizHow3Premium": "Con tu plan, fallar no te quita vidas.",
+    "glossaryClose": "Toca para cerrar"
   },
   "quiz": {
     "types": {
@@ -524,7 +544,13 @@
     "livesBody": "Cada fallo en un quiz gasta una. Se recuperan solas, una cada {h} horas. Si te quedas sin ninguna, puedes repasar tus fallos sin gastar vidas.",
     "livesUnlimitedTitle": "Vidas ilimitadas",
     "livesUnlimitedBody": "Con tu plan, fallar en un quiz no te quita vidas. Equivocarse también es aprender.",
-    "keepLearning": "Seguir aprendiendo"
+    "keepLearning": "Seguir aprendiendo",
+    "notClear": "No lo entiendo",
+    "otherWay": "Dicho de otra forma:",
+    "commonMistake": "Compara «{mine}» con la respuesta buena: ¿qué detalle las separa?",
+    "askLumi": "Pregúntale a Lumi por qué",
+    "askMine": "En la pregunta «{prompt}» elegí «{mine}» y la buena era «{right}». ¿Por qué la mía no es correcta?",
+    "askPlain": "No entiendo la respuesta de esta pregunta: «{prompt}». ¿Me lo explicas de otra forma?"
   },
   "market": {
     "title": "Mercado",

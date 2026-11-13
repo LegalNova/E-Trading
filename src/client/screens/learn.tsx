@@ -4,7 +4,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useTranslations } from 'next-intl'
 import { useEffect, useRef, useState } from 'react'
 import { Link, useRouter } from '@/i18n/navigation'
-import type { CoursePathT, LessonStepT, PathLessonT, PathUnitT } from '@/shared/contract'
+import type { CoursePathT, HomeT, LessonStepT, PathLessonT, PathUnitT } from '@/shared/contract'
 import { ROUTE_SECTIONS } from '@/shared/route'
 import { GEM_PRICES } from '@/shared/gem-shop'
 import { useToast } from '../providers'
@@ -12,7 +12,7 @@ import { money, num, signedMoney } from '@/shared/format'
 import { api, ApiFailure } from '../api'
 import { useHome, useLang, useLives, useMe, usePath } from '../hooks'
 import { useGuard } from '../shell'
-import { RichText } from '../ui/rich-text'
+import { RichText, type Gloss } from '../ui/rich-text'
 import { CandleChart, LineChart } from '../ui/charts'
 import { Flame, Gem, Heart, Icon } from '../ui/icons'
 import { Bar, ErrorState, PageSkeleton, Sheet, Stars, Steps } from '../ui/kit'
@@ -33,6 +33,54 @@ import { ReportButton } from '../report-button'
 import { ProjectCard } from './project'
 
 // ── Inicio ───────────────────────────────────────────────
+/** «Hoy toca» (auditoría PRO-28 y PRO-29): por qué esa clase, los fallos por repasar y una idea sobre la cartera.
+ *  El coach de la cartera pregunta o da un dato; nunca dice qué comprar ni qué vender. */
+function TodayCard({ today, lesson }: { today: NonNullable<HomeT['today']>; lesson: HomeT['nextLesson'] }) {
+  const t = useTranslations('home.todayPlan')
+  const tr = useTranslations('route.names')
+  const w = today.why
+  const why = !w ? null : w.kind === 'ROUTE' ? t('whyRoute', { route: tr(w.preset ?? 'CUSTOM'), done: w.done, total: w.total }) : t('whyUnit', { n: w.left, unit: w.unit })
+  return (
+    <div className="card flex flex-col gap-3">
+      <span className="t-head">{t('title')}</span>
+      {lesson && (
+        <Link href={`/leccion/${lesson.id}`} className="flex items-start gap-3" style={{ color: 'inherit' }}>
+          <span className="grid h-9 w-9 flex-none place-items-center rounded-xl" style={{ background: 'var(--brand-soft, color-mix(in srgb, var(--brand) 14%, transparent))', color: 'var(--brand)' }}>
+            <Icon name="learn" size={18} />
+          </span>
+          <span className="min-w-0 flex-1">
+            <b className="block text-[15px]">{t('lesson', { title: lesson.title })}</b>
+            {why && <span className="t-foot">{why}</span>}
+          </span>
+          <Icon name="chev" size={16} />
+        </Link>
+      )}
+      {today.review > 0 && (
+        <Link href="/quiz/review" className="flex items-start gap-3" style={{ color: 'inherit' }}>
+          <span className="grid h-9 w-9 flex-none place-items-center rounded-xl" style={{ background: 'color-mix(in srgb, var(--down) 12%, transparent)', color: 'var(--down)' }}>
+            <Icon name="refresh" size={18} />
+          </span>
+          <span className="min-w-0 flex-1">
+            <b className="block text-[15px]">{t('review', { n: today.review })}</b>
+            <span className="t-foot">{t('reviewWhy')}</span>
+          </span>
+          <Icon name="chev" size={16} />
+        </Link>
+      )}
+      <Link href="/mercado/cartera" className="flex items-start gap-3" style={{ color: 'inherit' }}>
+        <span className="grid h-9 w-9 flex-none place-items-center rounded-xl" style={{ background: 'color-mix(in srgb, var(--up) 12%, transparent)', color: 'var(--up)' }}>
+          <Icon name="wallet" size={18} />
+        </span>
+        <span className="min-w-0 flex-1">
+          <b className="block text-[15px]">{t('coachTitle')}</b>
+          <span className="t-foot">{t(`coach.${today.coach.code}`, today.coach.params)}</span>
+        </span>
+        <Icon name="chev" size={16} />
+      </Link>
+    </div>
+  )
+}
+
 export function Home() {
   const t = useTranslations('home')
   const tg = useTranslations('goals')
@@ -110,6 +158,7 @@ export function Home() {
         </div>
       )}
 
+      {!firstDay && h.today && <TodayCard today={h.today} lesson={h.nextLesson} />}
       {!firstDay && <DailyGift />}
       {/* La primera vez: qué es esto y qué se hace aquí, en tres líneas */}
       <HelpTip id="home" title={t('howTitle')}>
@@ -686,7 +735,7 @@ function Illustration({ kind }: { kind: string }) {
   )
 }
 
-function StepView({ s, lessonId, onSolved, solved }: { s: LessonStepT; lessonId: string; onSolved: () => void; solved: boolean }) {
+function StepView({ s, lessonId, onSolved, solved, glossary }: { s: LessonStepT; lessonId: string; onSolved: () => void; solved: boolean; glossary?: Gloss[] }) {
   const t = useTranslations('lesson')
   const [pick, setPick] = useState<number | null>(null)
   const { data: me } = useMe()
@@ -698,7 +747,7 @@ function StepView({ s, lessonId, onSolved, solved }: { s: LessonStepT; lessonId:
       return (
         <>
           <h1 className="t-title">{s.title}</h1>
-          <RichText text={s.body} />
+          <RichText text={s.body} glossary={glossary} />
           {s.keyIdea && (
             <div className="card" style={{ background: 'color-mix(in srgb, var(--brand) 9%, var(--surface))' }}>
               <span className="t-cap font-bold" style={{ color: 'var(--brand-ink)' }}>
@@ -715,7 +764,7 @@ function StepView({ s, lessonId, onSolved, solved }: { s: LessonStepT; lessonId:
         <>
           <h1 className="t-title">{s.title}</h1>
           <Illustration kind={s.image} />
-          <RichText text={s.body} />
+          <RichText text={s.body} glossary={glossary} />
           {tip}
         </>
       )
@@ -723,7 +772,7 @@ function StepView({ s, lessonId, onSolved, solved }: { s: LessonStepT; lessonId:
       return (
         <>
           <h1 className="t-title">{s.title}</h1>
-          <RichText text={s.body} />
+          <RichText text={s.body} glossary={glossary} />
           <Calculator kind={s.calc} />
           {tip}
         </>
@@ -784,7 +833,7 @@ function StepView({ s, lessonId, onSolved, solved }: { s: LessonStepT; lessonId:
         </>
       )
     case 'PLAY':
-      return <PlayView s={s} done={solved} onDone={onSolved} />
+      return <PlayView s={s} done={solved} onDone={onSolved} glossary={glossary} />
     case 'STORY':
       return <StoryView s={s} done={solved} onDone={onSolved} />
     case 'QUIZ':
@@ -876,7 +925,7 @@ function LessonInner({ id }: { id: string }) {
       <div key={s.id} className="pad flex-1 animate-rise">
         {/* Si la unidad y la clase se llaman igual («Tu primera inversión»), el nombre va una sola vez */}
         {i === 0 && <span className="t-foot">{l.unitTitle === l.title ? l.title : `${l.unitTitle} · ${l.title}`}</span>}
-        <StepView s={s} lessonId={l.id} solved={!!solved[s.id]} onSolved={() => setSolved(x => ({ ...x, [s.id]: true }))} />
+        <StepView s={s} lessonId={l.id} glossary={l.glossary} solved={!!solved[s.id]} onSolved={() => setSolved(x => ({ ...x, [s.id]: true }))} />
         {last && <MissionPreview lessonId={l.id} />}
       </div>
       <div className="sticky bottom-0 flex gap-2.5 px-4 pt-2.5" style={{ background: 'var(--bg)', paddingBottom: 'max(24px, env(safe-area-inset-bottom))' }}>

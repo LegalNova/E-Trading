@@ -11,6 +11,7 @@ import { canOpen, FULL_UNIT_COUNT, minPlan } from '@/shared/plans'
 import { grade } from '../content/grading'
 import { numChoices } from '../content/choices'
 import { engineT, lessonTitleT, questionT, stepsT, unitT } from '../content/translate'
+import { glossaryFor } from '../content/glossary'
 import { currentLocale } from '../locale'
 import { afterReview } from './srs'
 import { trackDaily, trackLessonStart } from './analytics'
@@ -174,7 +175,10 @@ export async function lesson(user: User, tx: Tx, id: string, peek = false): Prom
     return { id: sid, type: 'SIMULATOR_TASK', title: s.title, body: s.body, task: s.task }
   })
   steps.push({ id: `${id}-quiz`, type: 'QUIZ', quizId: l.quizId, title: e.quizTitle, body: e.quizBody((QUIZZES[l.quizId] ?? []).length, user.plan === 'FREE') }) // vidas ilimitadas en Plus y Max
-  return { id, title, unitTitle, minutes: l.minutes, xp: shownXp(l), steps: steps.map(st => walkTexts(st, brand)) }
+  const out = steps.map(st => walkTexts(st, brand))
+  // En la propia unidad de vocabulario no: allí las palabras ya vienen definidas
+  const glossary = l.unit.id === 'vocab' ? [] : glossaryFor(loc, out.flatMap(st => (st.type === 'TEXT' || st.type === 'IMAGE' ? [st.body] : st.type === 'PLAY' ? [st.intro] : [])))
+  return { id, title, unitTitle, minutes: l.minutes, xp: shownXp(l), steps: out, ...(glossary.length ? { glossary } : {}) }
 }
 
 export const checkStep = (lessonId: string, stepId: string, idx: number) =>

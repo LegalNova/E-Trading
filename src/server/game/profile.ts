@@ -18,6 +18,7 @@ import { forgetMemo } from '../request'
 import { ACHIEVEMENTS, LESSON } from '../content/catalog'
 import { achievementList, endFx, fail, FREEZE_PRICE, goalDefs, goalsOf, minutesOf, levelOf, levelTitle, LIVES_MAX, livesOf, lumi, MAX_FREEZES, notify, REFILL_PRICE, START_CASH, withCtx, type Tx } from './core'
 import { pathOf, ROUTE_GRAPH, SCORED_IDS } from './learning'
+import { portfolioTip } from '../tutor/portfolio-coach'
 import { closure } from '@/shared/route'
 import { giveCash, portfolioIn, portfolioRow, processPendingFor, userBook } from './trading'
 import { addFlow } from './league'
@@ -191,11 +192,33 @@ export async function home(): Promise<HomeT> {
   return withCtx(async c => {
     await processPendingFor(c, book)
     const [path, pf, goals] = await Promise.all([pathOf(c.tx, c.user), portfolioIn(c, book), goalsOf(c)])
-    const next = path.units.flatMap(u => u.lessons.map(l => ({ l, u }))).find(x => x.l.status === 'AVAILABLE')
+    // Con ruta elegida, la siguiente es la de la ruta (auditoría PRO-29)
+    const all = path.units.flatMap(u => u.lessons.map(l => ({ l, u })))
+    const next = (path.route?.nextLessonId && all.find(x => x.l.id === path.route!.nextLessonId)) || all.find(x => x.l.status === 'AVAILABLE')
     const todayDone = c.g.lastActiveDay === c.today
     // Minigráfica real: fotos diarias de la cartera (sin puntos inventados)
     const snaps = await c.tx.portfolioSnapshot.findMany({ where: { userId: c.user.id }, orderBy: { day: 'desc' }, take: 30 })
     const spark = snaps.reverse().map(s => Number(s.value))
+    // «Hoy toca»: fallos pendientes, stops puestos y operaciones de hoy para el coach de la cartera
+    const dayStart = new Date(Date.now() - 24 * 3_600_000)
+    const [review, stops, tradesRecent] = await Promise.all([
+      c.tx.mistake.count({ where: { userId: c.user.id, questionId: { in: SCORED_IDS }, dueAt: { lte: new Date() } } }),
+      c.tx.order.findMany({ where: { userId: c.user.id, status: 'PENDING', type: 'STOP_LOSS' }, select: { symbol: true } }),
+      c.tx.trade.findMany({ where: { userId: c.user.id, status: 'FILLED', createdAt: { gte: dayStart } }, select: { createdAt: true } }),
+    ])
+    const total = Number(pf.totalValue)
+    const stopSet = new Set(stops.map(s => s.symbol))
+    const coach = portfolioTip({
+      holdings: pf.positions.map(p => ({ name: p.name, type: p.type, weightPct: p.weightPct, pnlPct: p.pnlPct, hasStop: stopSet.has(p.symbol) })),
+      cashPct: total > 0 ? (Number(pf.cash) / total) * 100 : 100,
+      tradesToday: tradesRecent.filter(t => dayOf(t.createdAt, c.user.timezone) === c.today).length,
+    })
+    const unitLeft = next ? next.u.lessons.filter(l => l.status !== 'COMPLETED' && !l.isUnitReview).length : 0
+    const why = !next
+      ? null
+      : path.route && path.route.nextLessonId === next.l.id
+        ? { kind: 'ROUTE' as const, preset: path.route.preset, done: path.route.done, total: path.route.total, left: unitLeft, unit: next.u.title }
+        : { kind: 'UNIT' as const, preset: null, done: 0, total: 0, left: unitLeft, unit: next.u.title }
     await endFx(c)
     return {
       user: { name: c.user.name },
@@ -206,6 +229,7 @@ export async function home(): Promise<HomeT> {
       nextLesson: next ? { id: next.l.id, title: next.l.title, unitTitle: next.u.title, unitOrder: next.u.order, minutes: next.l.minutes, progressPct: next.u.progressPct } : null,
       dailyGoals: goalDefs(minutesOf(c.user)).map(g => ({ id: g.id, label: g.id, progress: goals[g.id], target: g.target, xp: g.xp, done: goals[g.id] >= g.target })),
       portfolio: { totalValue: pf.totalValue, dayChange: pf.dayChange, dayChangePct: pf.dayChangePct, sparkline: spark.length > 1 ? spark : [Number(pf.totalValue), Number(pf.totalValue)] },
+      today: { why, review, coach },
     }
   })
 }

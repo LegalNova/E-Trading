@@ -151,6 +151,54 @@ function rightAnswer(q: QuestionT, sol: AnswerResultT['correctAnswer'] | undefin
   return null
 }
 
+/** Idea clave de la clase que más se parece a la pregunta (por palabras en común) */
+function closestIdea(ideas: string[], text: string): string | null {
+  const words = (x: string) => new Set(x.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').match(/[a-z0-9]{4,}/g) ?? [])
+  const w = words(text)
+  let best: string | null = null
+  let score = 0
+  for (const idea of ideas) {
+    const n = [...words(idea)].filter(x => w.has(x)).length
+    if (n > score) {
+      best = idea
+      score = n
+    }
+  }
+  return best ?? ideas[0] ?? null
+}
+
+/** «No lo entiendo» tras un fallo (auditoría PRO-18, PRO-20 y PRO-27): una segunda explicación con otras palabras
+ *  (la idea clave de la clase) y Lumi, con la pregunta ya escrita, para que explique por qué esa opción no era. */
+function NotClear({ q, value, reveal, lessonId }: { q: QuestionT; value: AnswerValue; reveal: AnswerResultT; lessonId: string | null }) {
+  const t = useTranslations('quiz')
+  const [open, setOpen] = useState(false)
+  const { data: lesson } = useQuery({ queryKey: ['lesson', lessonId], queryFn: () => api.lesson(lessonId!, true), enabled: open && !!lessonId, staleTime: Infinity })
+  const ideas = (lesson?.steps ?? []).flatMap(s => (s.type === 'TEXT' && s.keyIdea ? [s.keyIdea] : []))
+  const idea = closestIdea(ideas, `${q.prompt} ${reveal.explanation}`)
+  const mine = typeof value === 'number' && q.options[value] ? q.options[value] : null
+  const right = rightAnswer(q, reveal.correctAnswer)
+  const ask = (mine && right ? t('askMine', { prompt: q.prompt, mine, right }) : t('askPlain', { prompt: q.prompt })).slice(0, 480)
+  if (!open)
+    return (
+      <button className="btn btn-plain btn-sm self-start" onClick={() => setOpen(true)}>
+        {t('notClear')}
+      </button>
+    )
+  return (
+    <div className="animate-rise flex flex-col gap-2 rounded-2xl px-3.5 py-3" style={{ background: 'var(--surface)', color: 'var(--ink)' }}>
+      {idea && (
+        <span className="t-body">
+          <b>{t('otherWay')}</b> {idea}
+        </span>
+      )}
+      {mine && <span className="t-foot">{t('commonMistake', { mine })}</span>}
+      <Link href={`/profesora?q=${encodeURIComponent(ask)}`} className="link text-[15px]">
+        {t('askLumi')}
+      </Link>
+    </div>
+  )
+}
+
 // Siempre en dos pasos: tocar elige (se puede cambiar) y «Comprobar» responde; después, «Continuar» pasa a la siguiente.
 // Nada avanza solo: así un toque de más nunca responde la pregunta siguiente sin querer.
 /** Milisegundos en los que una pregunta recién aparecida no acepta toques (evita el doble toque) */
@@ -655,6 +703,7 @@ function QuizInner({ id }: { id: string }) {
               </span>
             )}
             <span className="t-body whitespace-pre-line">{reveal.explanation}</span>
+            {!reveal.correct && <NotClear key={q.id} q={q} value={value} reveal={reveal} lessonId={start.data?.lessonId ?? null} />}
             <button className={`btn ${reveal.correct ? 'btn-success' : 'btn-danger'}`} onClick={next} disabled={finish.isPending} autoFocus>
               {isLast ? t('seeResult') : reveal.correct ? t('continue') : t('gotIt')}
             </button>

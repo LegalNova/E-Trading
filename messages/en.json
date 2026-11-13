@@ -293,7 +293,26 @@
     "infoLivesPremiumBody": "With your plan, mistakes in a quiz don’t cost you lives.",
     "infoXp": "XP: {xp}",
     "infoXpBody": "Your experience points. You earn them with lessons, quizzes and trades: they raise your level and count in the league.",
-    "infoOk": "Got it"
+    "infoOk": "Got it",
+    "todayPlan": {
+      "title": "Your plan for today",
+      "lesson": "Lesson: {title}",
+      "whyRoute": "It's the next one on your “{route}” route. You've done {done} of {total} lessons.",
+      "whyUnit": "{n, plural, one {1 lesson left to finish “{unit}”.} other {# lessons left to finish “{unit}”.}}",
+      "review": "{n, plural, one {Review 1 mistake} other {Review # mistakes}}",
+      "reviewWhy": "Going over what you got wrong is what helps you remember it most.",
+      "coachTitle": "Your portfolio, in one idea",
+      "coach": {
+        "EMPTY": "Your virtual portfolio is still empty. Is there a company you know well? Looking at its page is a good first step.",
+        "CONCENTRATED": "{name} is {pct}% of your portfolio. If it fell 20%, your portfolio would lose {loss}%. Does that feel like a lot?",
+        "CRYPTO": "Crypto is {pct}% of your portfolio. It moves up and down much more than shares: is that the risk you want?",
+        "BUSY": "You've made {n} trades today. Each one pays a fee: do you know how much they've cost you in total?",
+        "NO_STOP": "{name} is down {pct}% and has no stop. How far would you be willing to let it fall?",
+        "FEW": "{n, plural, one {You only hold 1 asset. If it does badly, your whole portfolio does badly.} other {You hold # assets. With so few, one bad one shows a lot.}}",
+        "CASH": "{pct}% of your portfolio is in cash. That way you don't lose, but you don't learn how the market moves either.",
+        "OK": "You hold {n} assets and none is over 20%. Nicely spread: one asset's bad day barely shows."
+      }
+    }
   },
   "path": {
     "title": "Lessons",
@@ -392,7 +411,8 @@
     "quizHow1": "Read the question, choose your answer and tap «Check».",
     "quizHow2": "You’ll see straight away whether you got it right and why. You pass with {pct}% correct.",
     "quizHow3": "You have {n, plural, one {# life} other {# lives}}: each mistake uses one.",
-    "quizHow3Premium": "With your plan, mistakes don’t cost you lives."
+    "quizHow3Premium": "With your plan, mistakes don’t cost you lives.",
+    "glossaryClose": "Tap to close"
   },
   "quiz": {
     "types": {
@@ -524,7 +544,13 @@
     "livesBody": "Each mistake in a quiz uses one. They come back on their own, one every {h} hours. If you run out, you can still review your mistakes without using lives.",
     "livesUnlimitedTitle": "Unlimited lives",
     "livesUnlimitedBody": "With your plan, mistakes in a quiz don’t cost you lives. Getting things wrong is part of learning.",
-    "keepLearning": "Keep learning"
+    "keepLearning": "Keep learning",
+    "notClear": "I don't get it",
+    "otherWay": "Put another way:",
+    "commonMistake": "Compare “{mine}” with the right answer: what detail sets them apart?",
+    "askLumi": "Ask Lumi why",
+    "askMine": "In the question “{prompt}” I chose “{mine}” and the right one was “{right}”. Why isn't mine correct?",
+    "askPlain": "I don't understand the answer to this question: “{prompt}”. Can you explain it another way?"
   },
   "market": {
     "title": "Market",

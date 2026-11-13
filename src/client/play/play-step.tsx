@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { holds, type BeatT, type PlayStepT, type StoryStepT, type WidgetT } from '@/shared/play'
-import { inline, RichText } from '../ui/rich-text'
+import { inline, RichText, type Gloss } from '../ui/rich-text'
 import { Lumi, LumiSays } from '../ui/lumi'
 import { Basket, Doubling, Growth, Race, RealRate } from './w-money'
 import { Budget, Emergency, GoalPlan, Leaks, Sort } from './w-budget'
@@ -41,7 +41,7 @@ function WidgetView({ w, onMetrics }: { w: WidgetT; onMetrics: OnM }) {
 /** Segundos tras los que se puede seguir sin cumplir el reto (para no atascar a nadie) */
 const SKIP_AFTER = 25
 
-export function PlayView({ s, done, onDone }: { s: PlayStepT; done: boolean; onDone: () => void }) {
+export function PlayView({ s, done, onDone, glossary }: { s: PlayStepT; done: boolean; onDone: () => void; glossary?: Gloss[] }) {
   const t = useTranslations('play')
   const [guess, setGuess] = useState<number | null>(null)
   const [m, setM] = useState<Record<string, number>>({})
@@ -80,7 +80,7 @@ export function PlayView({ s, done, onDone }: { s: PlayStepT; done: boolean; onD
         </span>
       )}
       <h1 className="t-title m-0">{s.title}</h1>
-      <RichText text={s.intro} />
+      <RichText text={s.intro} glossary={glossary} />
       {s.predict && (
         <div className="card flex flex-col gap-2" style={guess === null ? { boxShadow: 'inset 0 0 0 2px var(--brand)' } : undefined}>
           <span className="t-cap font-bold" style={{ color: 'var(--brand-ink)' }}>

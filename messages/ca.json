@@ -293,7 +293,26 @@
     "infoLivesPremiumBody": "Amb el teu pla, equivocar-te en un qüestionari no et treu vides.",
     "infoXp": "XP: {xp}",
     "infoXpBody": "Els teus punts d’experiència. Els guanyes amb classes, qüestionaris i operacions: et fan pujar de nivell i compten a la lliga.",
-    "infoOk": "Entesos"
+    "infoOk": "Entesos",
+    "todayPlan": {
+      "title": "El teu pla d'avui",
+      "lesson": "Classe: {title}",
+      "whyRoute": "És la següent de la teva ruta «{route}». En portes {done} de {total} classes.",
+      "whyUnit": "{n, plural, one {Et queda 1 classe per acabar «{unit}».} other {Et queden # classes per acabar «{unit}».}}",
+      "review": "{n, plural, one {Repassar 1 error} other {Repassar # errors}}",
+      "reviewWhy": "Repassar el que vas fallar és el que més ajuda a recordar-ho.",
+      "coachTitle": "La teva cartera, en una idea",
+      "coach": {
+        "EMPTY": "Encara no tens res a la teva cartera virtual. Hi ha alguna empresa que coneguis bé? Mirar-ne la fitxa és un bon primer pas.",
+        "CONCENTRATED": "{name} és el {pct} % de la teva cartera. Si baixés un 20 %, la teva cartera perdria un {loss} %. Et sembla molt?",
+        "CRYPTO": "Les criptomonedes són el {pct} % de la teva cartera. Pugen i baixen molt més que les accions: és el risc que vols?",
+        "BUSY": "Avui portes {n} operacions. Cadascuna paga comissió: saps quant t'han costat en total?",
+        "NO_STOP": "{name} va un {pct} % avall i no té stop. Fins on estaries disposat a aguantar?",
+        "FEW": "{n, plural, one {Només tens 1 valor. Si li va malament, li va malament a tota la cartera.} other {Tens # valors. Amb tan pocs, si a un li va malament es nota molt.}}",
+        "CASH": "El {pct} % de la teva cartera és en efectiu. Així no perds, però tampoc aprens com es mou el mercat.",
+        "OK": "Tens {n} valors i cap passa del 20 %. Bon repartiment: així un mal dia d'un es nota poc."
+      }
+    }
   },
   "path": {
     "title": "Classes",
@@ -392,7 +411,8 @@
     "quizHow1": "Llegeix la pregunta, tria la resposta i prem «Comprovar».",
     "quizHow2": "Al moment veus si l’has encertada i per què. Aproves amb el {pct} % d’encerts.",
     "quizHow3": "Tens {n, plural, one {# vida} other {# vides}}: cada error en gasta una.",
-    "quizHow3Premium": "Amb el teu pla, equivocar-te no et treu vides."
+    "quizHow3Premium": "Amb el teu pla, equivocar-te no et treu vides.",
+    "glossaryClose": "Toca per tancar"
   },
   "quiz": {
     "types": {
@@ -524,7 +544,13 @@
     "livesBody": "Cada error en un qüestionari en gasta una. Es recuperen soles, una cada {h} hores. Si et quedes sense cap, pots repassar els errors sense gastar vides.",
     "livesUnlimitedTitle": "Vides il·limitades",
     "livesUnlimitedBody": "Amb el teu pla, equivocar-te en un qüestionari no et treu vides. Equivocar-se també és aprendre.",
-    "keepLearning": "Continuar aprenent"
+    "keepLearning": "Continuar aprenent",
+    "notClear": "No ho entenc",
+    "otherWay": "Dit d'una altra manera:",
+    "commonMistake": "Compara «{mine}» amb la resposta bona: quin detall les separa?",
+    "askLumi": "Pregunta-li a la Lumi per què",
+    "askMine": "A la pregunta «{prompt}» vaig triar «{mine}» i la bona era «{right}». Per què la meva no és correcta?",
+    "askPlain": "No entenc la resposta d'aquesta pregunta: «{prompt}». M'ho expliques d'una altra manera?"
   },
   "market": {
     "title": "Mercat",

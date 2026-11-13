@@ -16,7 +16,7 @@ import { RichText } from '../ui/rich-text'
 
 const MODES: TutorModeT[] = ['EXPLAIN', 'PATH', 'PORTFOLIO', 'BIASES']
 
-export function Tutor({ lessonTitle }: { lessonTitle?: string }) {
+export function Tutor({ lessonTitle, initial }: { lessonTitle?: string; initial?: string }) {
   const t = useTranslations('tutor')
   const tsh = useTranslations('shop')
   const t2 = useTranslations('tutor2')
@@ -25,7 +25,7 @@ export function Tutor({ lessonTitle }: { lessonTitle?: string }) {
   const { data: me } = useMe()
   const hist = useQuery({ queryKey: ['tutor'], queryFn: api.tutorHistory })
   const [mode, setMode] = useState<TutorModeT>('EXPLAIN')
-  const [q, setQ] = useState(lessonTitle ? t('aboutLesson', { title: lessonTitle }) : '')
+  const [q, setQ] = useState(initial ?? (lessonTitle ? t('aboutLesson', { title: lessonTitle }) : ''))
   const [pending, setPending] = useState<string | null>(null)
   const end = useRef<HTMLDivElement>(null)
   const name = me?.companion.name || 'Lumi'
